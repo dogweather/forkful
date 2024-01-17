@@ -16,7 +16,7 @@ Jämföra två datum kan vara användbart för programmörer när man behöver i
 ## Hur?
 För att jämföra två datum i C++ använder man sig oftast av funktionen ```std::chrono::time_point```, som representerar ett specifikt tidspunkt i tiden. Här är ett exempel på hur man kan jämföra två datum och skriva ut resultatet:
 
-```{C++}
+```C++
 #include <iostream>
 #include <chrono>
 
