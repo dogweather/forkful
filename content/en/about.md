@@ -21,6 +21,10 @@ As in,
 
 **That's** something my small brain can understand.
 
+
+{{< figure src="/our-team.jpeg" alt="Our Team" caption="_Our Team_" >}}
+
+
 Now, is the 
 [Forkful Haskell page for debug print](/en/haskell/printing-debug-output/) as understandable? It's not as dead simple as I imagined,
 but I think the me of a month ago would have understood it. I'm actively fine-tuning my AI code.
