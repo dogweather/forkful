@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "Elixir: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän lukeminen merkkijonosta"
+html_title:           "Elixir: Päivämäärän lukeminen merkkijonosta"
+simple_title:         "Päivämäärän lukeminen merkkijonosta"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Päivämäärän jäsentäminen merkkijonosta Elixir-kielessä
+```markdown
+## Mitä & Miksi
+Stringin päivämääräparsinta tarkoittaa päivämäärän erottamista merkkijonoista. Ohjelmoijat tekevät tämän, koska on tärkeää ymmärtää ja käsitellä päivämääriä tiedonkäsittelyssä.
 
-## Mikä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärän luomista tekstitiedosta koodissa. Ohjelmoijat tekevät tämän, jotta he voivat hallita ja käyttää päivämääriä tehokkaasti koodissaan.
+## Näin teet
+Elixirissä voit käyttää `Date.from_iso8601/2`-funktiota stringin päivämääräparsintaan. Tässä esimerkki sen käytöstä:
 
-## Näin se tehdään:
 ```Elixir
-Elixir-koodissa päivämäärän jäsentäminen merkkijonosta tehdään yleensä `Date.from_iso8601/1` -funktiolla. Tässä esimerkki:
-
-```elixir
-{:ok, date} = Date.from_iso8601("2021-09-15")
-IO.inspect(date)
+dt_string = "2023-10-15"
+{:ok, date} = Date.from_iso8601(dt_string)
+IO.puts(day)
+```
+Tämän koodin odotetaan antavan seuraavan tulosteen:
+```
+~D[2023-10-15]
 ```
 
-Koodin suorittamiseksi saat:
-```elixir
-~D[2021-09-15]
+## Syvempi syöksy
+Elixirin `Date.from_iso8601/2` perustuu kansainväliseen ISO 8601 -päivämääräformaattiin, joka on ollut olemassa yli 30 vuotta. Se on tärkeä, koska se tekee päivämäärien ymmärtämisen helpoksi kaikille, riippumatta heidän sijainnistaan tai kulttuuristaan.
+
+Vaihtoehtoisesti voit käyttää myös muita kirjastoja, kuten `Timex` tai `Calendar`, jos haluat enemmän joustavuutta päivämääräformaattien suhteen. 
+
+`Date.from_iso8601/2`:n toteutuksessa on kaksi osaa, ensimmäinen osa tarkistaa, onko annettu stringi hyväksyttävässä ISO 8601 formaatissa ja toinen osa palauttaa päivämäärän erityisessä formaatissa.
+
+## Lisätietoja
+1. Elixirin virallinen Date.from_iso8601 dokumentaatio: https://hexdocs.pm/elixir/Date.html#from_iso8601/2
+2. Timex-kirjasto: https://hexdocs.pm/timex/Timex.html
+3. Calendar-kirjasto: https://hexdocs.pm/calendar/Calendar.html
 ```
-
-## Syvällisemmin
-Historiallisesti päivämäärän jäsentäminen merkkijonosta on ollut osa ohjelmointia lähes sen alkumetreiltä saakka. Tämä herättää kysymyksen, onko muita tapoja jäsentää päivämäärä merkkijonosta.
-
-Elixirissä on muitakin tapoja, kuten `DateTime.from_iso8601/1`, joka sisältää myös kellonajan. Elixirin sisäisesti päivämäärän käsittely perustuu Erlang-virtuaalikoneen kalenterimoduuliin, joka käsittelee ajan ISO8601-standardin mukaisesti.
-
-## Katso myös
-1. Elixir-lang virallinen dokumentaatio: [Date.from_iso8601/1](https://hexdocs.pm/elixir/Date.html#from_iso8601/1)
-2. Elixir school - [Working with dates and times in Elixir](https://elixirschool.com/en/lessons/basics/date-and-time/)
