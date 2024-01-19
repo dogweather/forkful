@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Artikkeli: Päivämäärän haku merkkijonosta Elixir-ohjelmointikielellä
+# Päivämäärän jäsentäminen merkkijonosta Elixir-kielessä
 
 ## Mikä & Miksi?
-Päivämäärän haku merkkijonosta on prosessi, jossa päivämäärä eritellään ja muunnetaan merkkijonosta päivämääräobjektiksi. Ohjelmoijat tekevät tämän usein, jotta voisivat käsitellä päivämäärätietoja tehokkaammin ja helpommin.
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärän luomista tekstitiedosta koodissa. Ohjelmoijat tekevät tämän, jotta he voivat hallita ja käyttää päivämääriä tehokkaasti koodissaan.
 
-## Kuinka tehdä:
-Elixirin avulla voimme tehdä tämän helposti käyttämällä `DateTime` -moduulia.
-
+## Näin se tehdään:
 ```Elixir
-# Esimerkki step-by-step
-merkkijono = "2022-03-01 10:30:15"
+Elixir-koodissa päivämäärän jäsentäminen merkkijonosta tehdään yleensä `Date.from_iso8601/1` -funktiolla. Tässä esimerkki:
 
-# Otetaan Käyttöön DateTime
-{:ok, datetime} = DateTime.from_iso8601(merkkijono)
-IO.inspect(datetime)
+```elixir
+{:ok, date} = Date.from_iso8601("2021-09-15")
+IO.inspect(date)
 ```
 
-Ajamisen jälkeen saamme tämän tuloksen:
-
-```Elixir
-~U[2022-03-01T10:30:15Z]
+Koodin suorittamiseksi saat:
+```elixir
+~D[2021-09-15]
 ```
 
-## Deep Dive
-Historiallinen konteksti: Elixir käyttää peruskielensä Erlangin päivämäärän ja kellonajojen käsittelyä.
+## Syvällisemmin
+Historiallisesti päivämäärän jäsentäminen merkkijonosta on ollut osa ohjelmointia lähes sen alkumetreiltä saakka. Tämä herättää kysymyksen, onko muita tapoja jäsentää päivämäärä merkkijonosta.
 
-Vaihtoehdot: Voisit käyttää `Date` tai `Time` moduuleja, jos tarvitset vain päivämäärän tai ajan. Ne noudattavat samaa formaattia kuin `DateTime`.
+Elixirissä on muitakin tapoja, kuten `DateTime.from_iso8601/1`, joka sisältää myös kellonajan. Elixirin sisäisesti päivämäärän käsittely perustuu Erlang-virtuaalikoneen kalenterimoduuliin, joka käsittelee ajan ISO8601-standardin mukaisesti.
 
-Implementointi tiedot: `DateTime.from_iso8601/1` -funktio tulkitsee päivämäärän ISO 8601 -muotoon. Jos kaikki ei mene suunnitellusti, palautetaan virhekuvauksen sisältävä tuple.
-
-## Katso myös:
-1. [Elixir DateTime dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
-2. [Elixirin tutustumispolku DateTime-toimintojen käyttöön](https://elixirschool.com/en/lessons/basics/date_time/)
+## Katso myös
+1. Elixir-lang virallinen dokumentaatio: [Date.from_iso8601/1](https://hexdocs.pm/elixir/Date.html#from_iso8601/1)
+2. Elixir school - [Working with dates and times in Elixir](https://elixirschool.com/en/lessons/basics/date-and-time/)
