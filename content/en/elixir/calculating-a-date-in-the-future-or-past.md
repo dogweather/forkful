@@ -10,34 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Calculating Future and Past Dates in Elixir: An Insightful Guide
+
 ## What & Why?
 
-Calculating a date in the future or past is the process of determining a date that occurs either before or after a given date by a specified amount of time. Programmers often do this in order to schedule events or tasks, determine deadlines, or track the lifespan of an object.
+Calculating a future or past date is about determining a specific date relative to a given one. Programmers do this for tasks like setting expirations for cookies, scheduling events, or tracking deadlines—any situation where date manipulation is involved.
 
 ## How to:
 
-Calculating a date in the future or past in Elixir is made easy with the `Calendar` module. First, we need to import the module with `import Calendar`. Then we can use the `add/2` function to calculate a future date by providing the start date and the time interval in seconds. Similarly, the `sub/2` function can be used to calculate a past date.
+In Elixir, the `DateTime` module provides functions to manipulate dates. Here's how you add or subtract days:
 
 ```Elixir
-import Calendar
+dt = DateTime.utc_now()
+# DateTime<2022-03-28 11:04:04Z>
 
-future_date = Calendar.add({2020, 12, 31}, 86400)
-#=> {{2021, 1, 1}, {0, 0, 0}}
+DateTime.add(dt, 7*24*60*60, :second)
+# DateTime<2022-04-04 11:04:04Z>
 
-past_date = Calendar.sub({2020, 12, 31}, 86400)
-#=> {{2020, 12, 30}, {0, 0, 0}}
+DateTime.add(dt, -7*24*60*60, :second)
+# DateTime<2022-03-21 11:04:04Z>
 ```
 
-## Deep Dive:
+This code uses `DateTime.utc_now()` to get the current date and time. To add/subtract days, `DateTime.add` adds/subtracts seconds from the date (7 days * 24 hours/day * 60 minutes/hour * 60 seconds/minute).
 
-Calculating dates in the future or past has been a common programming task for a long time. In Elixir, the `Calendar` module was introduced in version 1.3 as a more modern and cleaner approach to date and time calculations compared to the existing `:calendar` module. The module uses the DateTime struct, which contains the date and time in a convenient format.
+## Deep Dive
 
-An alternative to using the `Calendar` module is the `:calendar` module, which provides many functions for performing date and time calculations as well. However, some developers prefer to use the newer `Calendar` module due to its cleaner syntax.
+While Elixir is a fairly new programming language, conceived in 2012, its `DateTime` library has a good deal of versatility borrowed from Erlang. Before Elixir's approach, calculating future/past dates in Erlang posed some difficulties due to the language's immutability.
 
-The `add/2` and `sub/2` functions in the `Calendar` module use the Erlang BIF (Built-In Function) `calendar:time_add/2` and `calendar:time_sub/2` underneath, which perform the actual date calculation. This ensures accurate and efficient date calculation in Elixir.
+However, if Elixir's `DateTime` isn’t to your liking, you have alternatives!
 
-## See Also:
+One of these is the `Timex` library, a rich, versatile date/time library for Elixir that offers more functionalities:
 
-- [Official Elixir Documentation for Calendar Module](https://hexdocs.pm/elixir/Calendar.html)
-- [Blog post on why Elixir's Calendar module is better than :calendar](https://thinkingelixir.com/valid-timezones-elixir-1.3/)
-- [Erlang Calendar module BIFs documentation](http://erlang.org/doc/man/calendar.html)
+```Elixir
+use Timex
+
+Timex.now() |> Timex.shift(days: 2)
+# "2022-03-30T11:04:04Z"
+
+Timex.now() |> Timex.shift(days: -2)
+# "2022-03-26T11:04:04Z"
+```
+
+Also, Elixir computations are made using simple arithmetic rather than objects and methods that some other languages use. This means there's less room for unexpected behavior.
+
+## See Also
+
+1. [Elixir's Official DateTime docs](https://hexdocs.pm/elixir/DateTime.html)
+2. [Elixir School guide to Dates and Times](https://elixirschool.com/en/lessons/basics/date-time/)
+3. [Timex Library Documentation](https://hexdocs.pm/timex/readme.html)
+4. [Erlang DateTime Docs](https://erlang.org/doc/apps/stdlib/time.html)
+5. [Why programming languages have their own date/time libraries](https://www.toptal.com/software/why-do-programming-languages-have-their-own-date-time-libs)
+
+Enjoy date calculation on your Elixir journey!

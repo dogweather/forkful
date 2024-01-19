@@ -12,44 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Writing a text file means creating a digital document that contains plain text, such as letters, numbers, or symbols. Programmers use text files to store data, write code, and configure applications because they are easy to read and manipulate.
+Writing a text file is the process of creating and filling a .txt file using code. We do it to store data persistently, automate document generation, or output the results of operations.
 
 ## How to:
 
-Writing a text file in Elixir is a simple and straightforward process. First, we need to import the `File` module which provides functions for working with files. Then, we can use the `write` function to create a new text file and write some content into it.
+In Elixir, we use `File.write/2`. It needs a file path and content.
 
-```elixir
-import File
-write("my_text_file.txt", "Hello, world!")
+```Elixir
+{:ok, _} = File.write("your_file.txt", "Some text")
 ```
 
-This will create a new text file named `my_text_file.txt` and write the text "Hello, world!" into it. We can also use the `write!` function to append the content to an existing file, or the `mkdir` function to create a new directory.
+Done! Now you've got "your_file.txt". It says, "Some text".
 
-```elixir
-write!("my_text_file.txt", "New line added!")
-mkdir("my_directory")
+Another way, write lines as a list:
+
+```Elixir
+{:ok, _} = File.write("your_file.txt", ["A line", "Another line"])
 ```
 
-We can also use the `append` function to add content to an existing text file without overwriting it, or the `del_dir` function to delete a directory. Here's an example of appending to a file:
+The lines will be simply concatenated, no line breaks added.
 
-```elixir
-append("my_text_file.txt", "Another line!")
+If you need to append text instead of totally rewriting it, use `File.write/3`:
+
+```Elixir
+{:ok, _} = File.write("your_file.txt", "Some appended text", [:append])
 ```
 
-To read the content of a text file, we can use the `read` function. This will return the content of the file as a string.
-
-```elixir
-read("my_text_file.txt")
-# => "Hello, world!\nNew line added!\nAnother line!"
-```
+Here, `:append` means, "Don't delete what was there."
 
 ## Deep Dive
 
-Text files have been around since the earliest days of computing and are still widely used today. They are versatile and can be opened and edited by a variety of programs and operating systems. Alternatives to writing text files include using databases or JSON files, but text files remain a popular choice due to their simplicity and portability.
+Elixir's `File.write/*` is straightforward due to Erlang's powerful 'file' module, borrowing its simple design.
 
-Writing a text file in Elixir uses a combination of the `File` and `IO` modules. The `write` and `write!` functions internally call the `IO.puts` function, which writes the content to the specified file. This makes use of the underlying operating system's file handling capabilities. Similarly, the `read` function internally uses the `IO.binread` function to read the content of the file as a binary, and then returns it as a string.
+If Elixir isn't your only language, Python's `open` with `'w'` flag, and Java's `FileWriter` work like `File.write/2`, and their 'append' versions like `File.write/3`.
+
+Elixir writes text files in binary by default. "Binary" here doesn't mean unreadable non-text; it means the OS won't translate line endings. Thus, on Windows, you may want to write lines with `\r\n` endings, and on Unix-style systems, just `\n`. To insert such line endings when writing lines, you'll need to join them with the appropriate line ending:
+
+```Elixir
+{:ok, _} = File.write("your_file.txt", ["A line", "Another line"] |> Enum.join("\n"))
+```
 
 ## See Also
 
-- [Elixir Documentation on the File module](https://hexdocs.pm/elixir/File.html)
-- [Elixir Documentation on the IO module](https://hexdocs.pm/elixir/IO.html)
+Check out Erlang's 'file' documentation for everything Elixir's `File` can do: http://erlang.org/doc/man/file.html
+
+Also, Elixir's `File` has even more handy functions hidden in its own doc: https://hexdocs.pm/elixir/File.html
+
+A good text file can be just a part of good logging. Read 'Logger' next: https://hexdocs.pm/elixir/Logger.html

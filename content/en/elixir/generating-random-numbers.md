@@ -11,53 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Generating random numbers is a common task in computer programming. It involves generating numbers that are unpredictable and appear to be chosen by chance. Programmers use this technique for a variety of reasons, such as creating randomized passwords, simulating real-life scenarios, or selecting random elements from a list.
+
+Generating random numbers is the process of producing a sequence that doesn't follow a discernable pattern. Programmers use random numbers for various purposes like creating unique IDs, in game development, and implementing encryption algorithms.
 
 ## How to:
-To generate random numbers in Elixir, we use the `:rand` module and its `uniform/1` function. This function takes in a range and returns a random number within that range. Here's a simple example:
 
+Elixir provides a `rand/0` function to generate random numbers. Here's how you can generate a random number between 0 and 1 using it:
+
+```Elixir
+random_number = :rand.uniform()
+IO.inspect(random_number)
 ```
-Elixir
-# Generates a random number between 1 and 10
-:rand.uniform(1..10) 
+You might see something like this as output:
 ```
-Output:
+0.5764609727982293
+```
+If you want a random integer within a specific range, say 1 and 10, you'd use the `uniform/1` function:
+
+```Elixir
+random_integer = :rand.uniform(10)
+IO.inspect(random_integer)
+```
+
+Sample output could be:
+
 ```
 7
 ```
 
-We can also use the `uniform/0` function to generate a decimal number between 0 and 1. Here's an example:
+## Deep Dive
 
-```
-Elixir
-# Generates a random decimal between 0 and 1
-:rand.uniform() 
-```
-Output:
-```
-0.3845605058804908
-```
+Historically, generating random numbers was not truly random in many languages. There were algorithms like linear congruential generators, used due to their efficiency but not offering true randomness.
 
-We can even generate a random boolean value using `uniform/1` and a range of `true` and `false`:
+Elixir, by relying on the Erlang/OTP, uses an improved random number generation algorithm known as `exsplus` which provides better randomness.
 
-```
-Elixir
-# Generates a random boolean value
-:rand.uniform([true, false]) 
-```
-Output:
-```
-true
-```
+An alternative to `:rand.uniform/0,1` would be using external libraries like `:crypto.strong_rand_bytes/1` - often used when you need stronger randomness for cryptography.
 
-## Deep Dive:
-Random number generation has a long and interesting history in the realm of computer science. In the early days, random numbers were generated using physical phenomena like radioactive decay or electronic components. With the advent of computers, pseudorandom number generators (PRNGs) were introduced, which use mathematical algorithms to create a sequence of numbers that appear to be random.
-
-There are also alternatives to using the `:rand` module for generating random numbers in Elixir. For example, the `:crypto` module provides the `strong_rand_bytes/1` function for generating cryptographically secure random numbers. This is important when security is a concern, such as creating random encryption keys.
-
-The `:rand` module also allows us to set a seed value, which ensures that the same sequence of random numbers is generated every time. This can be useful for testing purposes or creating reproducible results in simulations.
+Always keep in mind that the `:rand` functions use a pseudo-random number generator, and it has a state that persists for each process. This means that the random numbers generated in different processes will not affect each other.
 
 ## See Also:
-- [Elixir documentation for the :rand module](https://hexdocs.pm/elixir/Random.html)
-- [Elixir documentation for the :crypto module](https://hexdocs.pm/elixir/Crypto.html)
-- [Wikipedia article on random number generation](https://en.wikipedia.org/wiki/Random_number_generation)
+
+1. Elixir's official documentation on `:rand` module: [https://erlang.org/doc/man/rand.html](https://erlang.org/doc/man/rand.html)
+2. More on random number generation history: [https://en.wikipedia.org/wiki/Random_number_generation](https://en.wikipedia.org/wiki/Random_number_generation)
+3. External library for randomness: [https://hexdocs.pm/elixir/Crypto.html](https://hexdocs.pm/elixir/Crypto.html)

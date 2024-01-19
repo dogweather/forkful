@@ -10,51 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Let's Talk About Date Comparison in Gleam 
+
 ## What & Why?
 
-Comparing two dates is a commonly used operation in programming where the dates are compared and the results are evaluated to check which one is earlier or later. This is often done to compare the dates of events, appointments, or deadlines. Programmers use this to efficiently organize tasks and prioritize them based on their date.
+Comparing two dates is figuring out which comes first, or if they're the same. Programmers do this to sort events, calculate durations, or check deadlines.
 
 ## How to:
 
-To compare two dates in Gleam, we can use the `Date.compare/2` function. This function takes two dates as arguments and returns `-1` if the first date is earlier, `1` if the second date is earlier, or `0` if they are equal. Let's see some examples:
+In Gleam, dates are compared using the standard comparison operators.
 
 ```Gleam
-let first_date = Date.from_tuple((2021, 9, 1))
-let second_date = Date.from_tuple((2021, 9, 15))
+import gleam/date.{from_timestamp, Date}
+import gleam/order.{Order}
 
-Date.compare(first_date, second_date)
-// Output: -1
+fun compare_dates() {
+    let date1 = from_timestamp(1609459200) 
+    let date2 = from_timestamp(1612137600) 
+
+    assert Ok(date1) = from_timestamp(1609459200)
+    assert Ok(date2) = from_timestamp(1612137600)
+
+    case Order.compare(date1, date2) {
+        Equal -> "Dates are equal"
+        Lt -> "Date1 is earlier than Date2"
+        Gt -> "Date1 is later than Date2"
+    }
+}
 ```
 
-In the above example, we compared two dates using the `Date.compare/2` function and got the expected output of `-1` indicating that the first date is earlier than the second date. Let's see another example:
-
-```Gleam
-let task1 = {
-    title: "Meeting with team",
-    date: Date.from_tuple((2021, 9, 10))
-}
-
-let task2 = {
-    title: "Submit project proposal",
-    date: Date.from_tuple((2021, 9, 1))
-}
-
-Date.compare(task1.date, task2.date)
-// Output: 1
-```
-
-In this example, we compared the dates of two tasks and got the output `1` indicating that task1 needs to be done before task2 as it has an earlier date.
+In this above example, we compare two sets of Unix timestamps.
 
 ## Deep Dive
 
-In the past, comparing dates was more complex and required more coding as dates were stored in various formats such as Year-Month-Day and Day-Month-Year. With the standardization of the ISO 8601 date format (YYYY-MM-DD), comparing dates has become easier and more efficient.
+Comparing dates has been a common practice since early programming. Historical context shows it's critical in time-based computing tasks. In Gleam, implementation uses the Erlang :calendar module for date operations under the hood.
 
-In addition to the `Date.compare/2` function, there are other alternatives for comparing dates in Gleam such as using the `timer:compare/2` function from the `gleam_timer` package. However, the `Date.compare/2` function is specifically designed for comparing dates and is recommended for this purpose.
+Various alternatives exist for date comparison especially with convenience libraries or in languages with built-in date types. The Date module in Gleam handles the basic comparison and arithmetic tasks using the standard comparison operators.
 
-The implementation details of the `Date.compare/2` function may vary depending on the platform it is used on. For example, on the BEAM (Erlang Virtual Machine), the function is implemented using the `calendar:compare_days/2` function.
+## See Also:
 
-## See Also
+For more about date comparison in Gleam and for further reading:
 
-- Official Gleam documentation: [Date module](https://gleam.run/documentation/std/date#compare) 
-- ISO 8601 date format: [ISO 8601 - Wikipedia](https://en.wikipedia.org/wiki/ISO_8601)
-- Alternative date comparison function: [gleam_timer package](https://gleam.run/packages/gleam_timer/latest/)
+1. Gleam documentation - [Gleam API](https://hexdocs.pm/gleam_stdlib/gleam/date.html)
+2. Erlang Module - [:calendar](http://erlang.org/doc/man/calendar.html) 
+3. Examples and Tutorials - [Gleam School](https://gleam.run/tour/)

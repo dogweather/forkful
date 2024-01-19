@@ -10,45 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Downloading Web Pages in Gleam
-
 ## What & Why?
-
-Downloading a web page in programming is the act of retrieving the content of a web page from the internet. Programmers do this to incorporate data from websites into their own programs, or to scrape information for analysis or automation purposes.
+Downloading a web page is the act of retrieving all resources of the site, including HTML, CSS, JavaScript, and media files. Programmers do this for offline browsing, site backup, or data scraping, essentially making the web content accessible regardless of network connection.
 
 ## How to:
-
-To download a web page in Gleam, we can use the `curl` module. First, we need to add it to our project dependencies:
-
-```Gleam
-  gleam_deps = [
-    "lumihq/curl 0.8.0"
-  ]
-```
-
-Next, we can use the `curl` module's `get` function to specify the URL of the webpage we want to download. We can then use the `body` function to retrieve the content as a string and print it to the console.
+In Gleam, we can use the `reqw` module to make HTTP requests. Here's a Gleam code sample to download a web page:
 
 ```Gleam
-import curl
+import gleam/result.{Ok}
+import reqw
 
-let url = "https://example.com"
+pub fn main(url: String) {
+  let resp = reqw.get(url)
 
-test "Downloading a webpage" {
-  let result = curl.get(url)
-  let content = result.body()
-  assert.equals(content, "This is the webpage content!")
+  case resp {
+    Ok(response) -> 
+      case response.body {
+        Ok(body) -> 
+          io.println(body)
+        Error(reason) -> 
+          io.println(reason)
+      }
+    Error(_reason) -> 
+      io.println("Failed to fetch page.")
+  }
 }
 ```
 
-## Deep Dive:
+Running this code with a valid URL will output the HTML of the requested page. If the URL is not accessible or invalid, it will output an error message.
 
-Downloading web pages has long been an essential task in programming, used for a variety of purposes such as data extraction, API integration, and web scraping. Historically, libraries like Python's `urllib` were popular for this task, but newer languages like Gleam offer more efficient and reliable methods.
+## Deep Dive
+Web page downloading has a rich history, tracing back to the initial days of the internet when offline browsing was a necessity due to expensive and unreliable connections. Alternatives include using web scraping libraries in Python (like BeautifulSoup or Scrapy), or JavaScript API methods (like `fetch`). 
 
-Alternatives to using the `curl` module include using a web scraping tool like Selenium or using an HTTP client library such as `reqwest` for more complex web interactions.
+In Gleam, the `reqw` module allows us to make HTTP requests. The HTTP response contains the body that is the HTML of the webpage, which can then be parsed or saved as required. It’s simple and effective but lacks features you might find in more full-featured libraries.
 
-The `curl` module in Gleam is a wrapper around the cURL command-line tool, providing an ergonomic and safe API for downloading web pages without the need for external programs or dependencies.
-
-## See Also:
-
-- [Gleam Documentation on `curl`](https://gleam.run/modules/lumihq/curl/latest/)
-- [Comparison of cURL and `reqwest`](https://www.tecmint.com/curl-vs-wget-vs-httrack-best-linux-download-managers/)
+## See Also
+- [Gleam `reqw` docs](https://hexdocs.pm/reqw/reqw.html)
+- [Python Web Scraping with BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [JavaScript fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

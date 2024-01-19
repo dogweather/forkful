@@ -12,37 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Printing debug output is the process of displaying information about a program's operations and variables, which allows programmers to identify and fix issues in their code. It helps in understanding the flow of the program and identifying the cause of errors.
+Printing debug output is a means of examining your Elixir program as it runs, displaying values and states of elements to the console for inspection. It’s crucial during development or debugging as it helps to understand the actual sequence of code execution or to check some values/classes/structures during the runtime.
 
-## How to:
+## How To:
 
-To print debug output in Elixir, programmers can use the `IO.inspect/2` function. This function takes in two arguments: the variable or expression to be inspected, and an optional message to be displayed along with the output.
+Elixir provides several methods for debug output, the most common ones are `IO.puts/2` and `IO.inspect/2`. Here is an example:
 
 ```Elixir
-# Example 1: Inspecting a variable
-name = "John"
-IO.inspect(name)
-
-# Output: "John"
-
-# Example 2: Inspecting an expression with a message
-num1 = 5
-num2 = 10
-IO.inspect(num1 + num2, "The sum is:")
-
-# Output: The sum is: 15
+x = 5
+IO.puts("The value of x is #{x}")
 ```
+```Output
+The value of x is 5
+```
+`IO.puts/2` prints the argument given to the standard output.
 
-## Deep Dive:
+```Elixir
+list = [1, 2, 3, 4, 5]
+IO.inspect(list)
+```
+```Output
+[1, 2, 3, 4, 5]
+```
+`IO.inspect/2` can be even more valuable as it can handle more complex data types, printing a detailed, readable output of your data's structure.
 
-In the past, printing debug output was a common practice due to limited debugging tools. However, with the advancement of tools like debuggers and IDEs, it is now considered as a last resort for debugging and is mainly used for troubleshooting in production environments.
+## Deep Dive
 
-Alternative methods for debugging include using a debugger or logging statements. Logging allows for more fine-grained control over what is being outputted and is preferred for long-term troubleshooting.
+Originally with roots in Erlang, Elixir brings along the `io` module from its parent language. While it may not seem as fancy as integrated development environment (IDE) debuggers, in-place printing has value in its simplicity and directness. 
 
-In Elixir, the `IO.inspect/2` function is implemented using the `IO` module, which provides a variety of formatting options and allows for the printing of complex data structures.
+There are alternatives to directly printing to the console, for instance, using Elixir's powerful tracing and debugging tools like `:debugger` module or libraries like `:observer`. These tools allow for stepping through code and inspecting program state at different points of execution, offering a deeper but more complex approach.
 
-## See Also:
+Using `IO.inspect/2` directly modifies the codebase which might not be the best practice. One preferred approach is to use a logging library, like `Logger`, that won't interfere with production code and offers various options for output format and destination.
 
-- [Elixir IO module documentation](https://hexdocs.pm/elixir/IO.html)
-- [Elixir Logger module documentation](https://hexdocs.pm/elixir/Logger.html)
-- [Elixir debugging techniques](https://pragmaticstudio.com/tutorials/elixir-debugging-techniques)
+## See Also
+
+- [IO.puts/2 official documentation](https://hexdocs.pm/elixir/IO.html#puts/2)
+- [IO.inspect/2 official documentation](https://hexdocs.pm/elixir/IO.html#inspect/2)
+- [`:debugger` official documentation](https://erlang.org/doc/man/debugger.html)
+- [`:observer` official documentation](https://erlang.org/doc/man/observer.html)

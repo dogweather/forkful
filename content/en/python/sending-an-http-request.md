@@ -12,29 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request means making a request to a web server to retrieve information. Programmers use this to communicate with web servers and get data such as web pages, images, or files. It is an essential part of web development and allows us to access and use information from the internet.
+Sending an HTTP request is asking a server for some form of response. Coders do this to interact with web services, get data, or perform operations online.
 
 ## How to:
 
-To send an HTTP request in Python, we can use the built-in `requests` library. First, we import the library using `import requests`. Then, we use the `get()` method to make a GET request to a specific URL. For example:
+Python has its built-in `http` module, but using the `requests` module makes the task easier. Make sure you have it installed:
+
+```Python
+pip install requests
+```
+
+Then here's a basic GET request:
 
 ```Python
 import requests
-response = requests.get("https://www.example.com")
+
+response = requests.get('https://www.example.com')
+
+print(response.status_code)
 print(response.text)
 ```
+Output will display the status code (like '200' for success) and the webpage content.
 
-This will send a request to the URL and print out the response data. We can also specify additional parameters such as headers or data to send with the request. For more information on the `requests` library, check out their official documentation.
+Part of interacting with web services involves sending data in a POST request:
+```Python
+data = {'name':'John', 'job':'developer'}
+response = requests.post('https://www.example.com', data=data)
 
-## Deep Dive:
+print(response.status_code)
+print(response.json())
+```
+This sends data to the server and also receives a response.
 
-The Hypertext Transfer Protocol (HTTP) was created in 1989 and has since become the standard for communication between web servers and clients. In addition to GET requests, there are also other types of requests such as POST, PUT, and DELETE. These allow programmers to interact with web servers and update information, not just retrieve it.
+## Deep Dive
 
-There are also alternative methods for sending HTTP requests in Python, such as using the `urllib` library or the `httplib` library. However, the `requests` library is generally preferred for its simpler syntax and more user-friendly interface.
+HTTP request methods have been around since the inception of web development. HTTP, or HyperText Transfer Protocol, is the set of rules guiding communication between browsers and servers.
 
-When we send an HTTP request, we are using the client-server model, where the client (our program) sends a request to the server (the web server) and waits for a response. This process involves several steps, including establishing a TCP connection, sending the request, and receiving the response.
+Alternatives? Definitely! Libraries like `httplib2`, `treq`, and `aiohttp` are out there, but `requests` stands out for its simplicity.
+
+As for the guts, `requests` uses urllib3 underneath. When you send a request, it constructs an HTTP message, sends it to the server, waits for a response, and provides you with a `response` object packed with useful methods.
 
 ## See Also:
 
-- [Requests library documentation](https://docs.python-requests.org/en/master/)
-- [Introduction to HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- Official Requests documentation (http://docs.python-requests.org/)
+- Python 'http' package detailed info (https://docs.python.org/3/library/http.html)
+- More on HTTP (https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- Alternatives to ‘requests’ (http://docs.python-requests.org/en/latest/community/other-projects/)

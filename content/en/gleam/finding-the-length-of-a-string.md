@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+## What & Why?
 
-Finding the length of a string is the process of determining the number of characters in a given string. This is a common task in programming, as it allows us to manipulate and work with strings in more efficient ways. By knowing the length of a string, we can access specific characters and perform various operations on the string.
+Finding the length of a string refers to determining the number of characters (including spaces and punctuation) contained in a text string. Programmers often do it to control text data, validate inputs, or allocate memory.
 
-# How to:
-To find the length of a string in Gleam, we can use the built-in function ```Gleam.String.length()```. Let's look at an example of how this works:
+## How to:
+
+Here's how you find the length of a string in Gleam:
 
 ```Gleam
-let my_string = "Hello, world!"
-let length = Gleam.String.length(my_string)
+import gleam/string.{length}
+
+fn main() {
+  let text_string = "Hello, Gleam!"
+  let str_length = length(text_string)
+  print(str_length)
+}
 ```
 
-In this example, we declare a string variable ```my_string``` with the value "Hello, world!" and then call the ```length()``` function on it, assigning the result to a new variable ```length```. The ```length``` variable will now contain the value 13.
+When you run this program, you should see the following output:
 
-# Deep Dive
-## Historical Context
-The concept of strings and string manipulation has been around since the early days of computer programming. In the past, determining the length of a string was a more complex and time-consuming task. However, with the advancement of programming languages and the creation of built-in string functions, finding the length of a string has become a much more straightforward and efficient process.
+```Gleam
+13
+```
 
-## Alternatives
-In Gleam, we can use a variety of other functions to work with strings, such as ```substring()```, ```concat()```, and ```replace()```. These functions allow us to manipulate and modify strings in different ways, depending on our specific needs.
+## Deep Dive
 
-## Implementation Details
-The ```Gleam.String.length()``` function works by using a looping mechanism to iterate through the characters in the string and count them until the end of the string is reached. This is done behind the scenes and allows us to get the length of the string in a single line of code.
+- **Historical context**: String length determination is not a new concept; it's a standard function present in almost every programming language, each implemented based on the language's design principles.
 
-# See Also
-To learn more about Gleam and its string manipulation capabilities, check out the official documentation here: https://gleam.run/.
+- **Alternatives**: While most languages, including Gleam, provide built-in functions for length determination, an alternative manual approach involves iterating through the string until the end is reached and counting the iterations.
 
-For a more in-depth understanding of strings and string manipulation in programming, you can refer to this article from W3Schools: https://www.w3schools.com/python/python_strings.asp.
+- **Implementation details**: Gleam’s `length` function internally utilizes the Erlang `byte_size` function, which returns the length of a string in bytes. However, in UTF-8 (which Gleam uses for strings), it's important to note that a single character can span multiple bytes, depending on its complexity. 
+
+## See Also
+
+For a deeper understanding of strings in Gleam, check out these resources:
+
+- [Gleam `string` module documentation](https://hexdocs.pm/gleam_stdlib/gleam/string/)
+- [Erlang `byte_size` function](https://erlang.org/doc/man/erlang.html#byte_size-1)
+- [Understanding UTF-8](https://en.wikipedia.org/wiki/UTF-8)

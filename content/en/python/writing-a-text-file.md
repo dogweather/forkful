@@ -10,42 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##
+# Writing a Text File in Python: A No-Fuss Guide
+
+Let's plunge right in.
+
 ## What & Why?
 
-Writing a text file is the process of creating a new file on your computer and filling it with text data. Programmers often use this method to store and organize important information that can be easily accessed and modified later on.
+When we talk about writing a text file in Python, we're referring to the process of sending data to a file stored on your computer. This is useful for organizing and storing data for future use, like logging information, storing configurations or even data for a machine learning model.
 
 ## How to:
 
-```Python
-# Creating/opening a text file
-myfile = open("sample.txt", "w")
+Below, we'll go through a simple example of writing a text file using Python's built-in `open()` function. 
 
-# Write to the file
-myfile.write("Hello Python!")
+```python
+with open('test.txt', 'w') as file:
+    file.write("Hello, World!")
 
-# Close the file
-myfile.close()
-
-# Reading the contents
-with open("sample.txt", "r") as myfile:
-    data = myfile.read()
-    print(data)
 ```
+The 'w' parameter here means we're opening the file in write mode. "Hello, World!" is the string we're writing into our 'test.txt' file.
 
-Output:
+If you open 'test.txt', it should show:
 ```
-Hello Python!
+Hello, World!
 ```
+## Deep Dive
 
-## Deep Dive:
+Python's `open()` function comes from its early iterations, way back in the 90s, and has since been a simple, effective tool for dealing with files. While there are modules like `os` and `shutil` providing more file system functionality, `open()` handles the task of writing text files just fine.
 
-Writing text files has been a fundamental practice in computer programming for decades. Before the rise of databases and other advanced data storage methods, text files were the go-to option for storing and organizing data. They are also useful for creating log files to track program activities and errors. Other methods like databases or document formats, such as XML or JSON, have their advantages in terms of structure and organization, but plain text files remain simple, lightweight, and easy to manipulate.
+Another way is using `os` module, but it's more low-level and complex for this task. The beauty about writing a text file this way in Python is simplicity. 
 
-To create a new text file, the `open()` function is used, which takes in two arguments: the name of the file and the mode in which it will be opened. The `write()` method is used to add content to the file, and the `close()` method closes the file once the writing is complete. To read from a file, the `open()` function is again used, this time in read mode ("r"), and the `read()` method is used to retrieve the contents.
+As for implementation details, `open()` returns a file object, and it's often used with two arguments: open(filename, mode). The second argument is optional; 'r' will be assumed if it’s omitted. Some commonly used modes are:
+* 'r' for reading,
+* 'w' for writing (an existing file with the same name will be erased),
+* 'a' for appending,
+* '+' opens the file for updating (reading and writing).
 
-## See Also:
+Note: Always be sure to close the file after use to free up system resources.
 
-- [Python Text File Operations](https://www.w3schools.com/python/python_file_handling.asp)
-- [Working with Files in Python](https://realpython.com/read-write-files-python/)
-- [Understanding the open() function](https://www.programiz.com/python-programming/built-in-function/open)
+## See Also
+
+Check out these resources for more in-depth look on working with files in Python:
+
+1. [Python's Official Documentation on Reading and Writing Files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+2. [Python File Handling: Create, Open, Append, Read, Write](https://www.guru99.com/reading-and-writing-files-in-python.html)
+3. [Working With Files in Python – Real Python](https://realpython.com/working-with-files-in-python/)
+4. [Python File I/O: Tutorialspoint](https://www.tutorialspoint.com/python/python_files_io.htm)

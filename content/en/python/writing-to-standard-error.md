@@ -10,35 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Writing to Standard Error in Python
 
-Writing to standard error in Python is a way for programmers to communicate specific information or errors to the user within their code. It allows for separate output from regular print statements and can be useful for debugging and troubleshooting.
+## What & Why?
+Standard error (`stderr`) is a special type of output stream typically used by programs to output error messages or diagnostics. It helps developers differentiate regular output from error messages and is particularly useful for debugging and for logs.
 
 ## How to:
+Writing to stderr in Python is straightforward. Use the built-in `sys` module:
 
 ```Python
 import sys
-sys.stderr.write("This message will be printed to standard error")
+
+sys.stderr.write("This is an error message\n")
 ```
 
-Running this code will produce the output:
+The string you put inside `write()` will be printed to stderr. It would be a good practice to include `\n` at the end of the message to ensure it ends with a newline.
 
+The output will be like:
+
+```Python
+This is an error message
 ```
-This message will be printed to standard error
+
+## Deep Dive
+Historically, stderr originated in the Unix tradition, and Python acquired it naturally from there. It's important to note that using stderr does not stop the execution of a program, but does express a statement that an error has occurred.
+
+Although `sys.stderr.write()` is one common way to print to stderr, `print()` function can direct output to stderr with the `file` parameter:
+
+```Python
+print('This is an error message', file=sys.stderr)
 ```
 
-## Deep Dive:
+Underneath the surface, Python's `sys.stderr` and `sys.stdout` are file objects representing stderr and stdout (standard output) respectively. When these are called, the interpreter employs the underlying operating system routines to complete the task.
 
-Writing to standard error originated from the UNIX operating system in the 1970s. It was standardized as a way for programs to communicate error messages to the user, separate from regular output. This is helpful for troubleshooting and debugging, as error messages can be easily identified and separated.
-
-An alternative to writing to standard error is using the ```logging``` module in Python. This allows for more advanced logging capabilities, such as different levels of severity for messages.
-
-In order to write to standard error, the ```sys``` module must be imported and the ```sys.stderr.write()``` function must be used. The ```stderr``` attribute of the ```sys``` module refers to the standard error stream.
-
-## See Also:
-
-The [official Python documentation](https://docs.python.org/3/library/sys.html#sys.stderr) for the ```sys.stderr``` attribute.
-
-The [Python logging tutorial](https://docs.python.org/3/howto/logging.html) for more information on advanced logging techniques.
-
-The [wikipedia entry](https://en.wikipedia.org/wiki/Standard_streams) on standard streams, which includes information on standard error and its history.
+## See Also
+For more information, take a look at:
+- [Python sys module](https://docs.python.org/3/library/sys.html)
+- [Python built-in print()](https://docs.python.org/3/library/functions.html#print)
+- [Differentiate stdout and stderr](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))

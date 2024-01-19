@@ -11,31 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Writing tests in Python is essentially creating automated scripts to check the functionality of your code. It allows developers to catch bugs and ensure the accuracy of their code, ultimately resulting in more reliable software.
+Tests in programming are code snippets that check if your main code is functioning properly. They're essential because they help coders catch errors early, saving time and money in the long run.
 
 ## How to:
+Let's take the example of a simple Python function that a code tests.
 
-Writing tests in Python is as simple as creating functions that test specific aspects of your code. Let's take a look at an example:
-
+Function:
+```Python
+def add_numbers(a, b):
+    return a + b
 ```
-def test_addition():
-    assert 2+2 == 4
+And its test:
+```Python
+def test_add_numbers():
+    assert add_numbers(2, 3) == 5, "Should be 5"
+    assert add_numbers(-1, 1) == 0, "Should be 0"
 ```
-The above function is testing if the result of 2+2 equals 4. If you run this test and see no output, that means the test passed. However, if you were to change the assert statement to something like `assert 2+2 == 5`, the test would fail and you would see an output indicating that the test failed.
+Running the script:
+```Python
+test_add_numbers() 
+```
+If there's no output, it means your test passed. If there's an error with the function `add_numbers()`, you'll get an error message like `AssertionError: Should be 5`.
 
-To run this test, simply type `pytest` in your terminal while in the directory containing your tests. You can also specify which test file to run by using `pytest <test_file_name>`.
+## Deep Dive
+Historically, testing software was an afterthought. Bayerin Marick's "The rise and fall of the Chaos model", depicts how the community shifted towards test-driven development around the 1990s. 
 
-## Deep Dive:
+Now, there are various tools and types, like unit tests, integration tests, acceptance tests, etc., each serving a specific purpose. Alternatives to writing tests yourself include using static typing and formal verification although these methods are not foolproof.
 
-Writing tests has been around for a long time and is a fundamental part of software development. It allows for a more structured approach to writing code and helps catch errors that might otherwise be missed during manual testing.
+Python's `unittest` library is commonly used for writing tests, but PyTest is simpler and more Pythonic. Implementation varies depending on the system, though the basics are often running the code under different scenarios and checking the output.
 
-There are also alternatives to writing tests in Python, such as using external testing frameworks like Selenium or unit testing frameworks like unittest or nose.
+## See Also
+- "Test Driven Development: By Example" by Kent Beck - seminal work that championed the idea of writing tests first.
+- PyTest Documentation - provides several examples and best practices.
+- "The Art of Unit Testing" by Roy Osherove - presents the basics of unit testing.
 
-When it comes to actually implementing tests, it's important to keep them organized and separate from your actual code. This allows for easier maintenance and prevents clutter in your codebase.
-
-## See Also:
-
-- [Python Testing Tutorial](https://realpython.com/python-testing/)
-- [Pytest Documentation](https://docs.pytest.org/en/6.2.x/)
-- [Unittest Documentation](https://docs.python.org/3/library/unittest.html)
+Try to always keep your codebase written with tests. Happy coding!

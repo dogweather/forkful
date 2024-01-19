@@ -10,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Gleaming the Current Date: Why and How
-
-## What & Why?
-
-Getting the current date is a common task in programming, as it allows us to keep track of time and create timestamped data. By using Gleam's built-in Date module, we can easily retrieve the current date and time in any desired format. This helps programmers accurately record and manipulate data, making their code more efficient and reliable.
+## What & Why? 
+Grabbing the current date in your program is exactly what it sounds like — getting today's date. This lets you timestamp data, sort by recent activity, and schedule things.
 
 ## How to:
-
-To get the current date in Gleam, we will use the `Date.now` function from the Date module. This function returns a tuple containing the date and time in the ISO 8601 format, which is widely used in data storage and transfer. Let's take a look at a simple code example:
+Gleam doesn't have built-in methods for date & time, but you can use Erlang's builtin `:calendar` module.
 
 ```Gleam
-import Date
+import erlang 
 
-fn main() {
-  current_date = Date.now()
-  io.print(current_date)
+fn get_current_date() {
+   let { date, _ } = erlang.time()
+   date
 }
 ```
-
-This code will output the current date and time in the format: `{year-}{month}-{day}T{hour}:{minute}:{second}.000{timezone}`. For example, the output may look like this: `2020-09-09T13:27:35.000+0000`.
+This will return a tuple like: {year, month, day} 
 
 ## Deep Dive
+Historically, Gleam hasn't included date and time libraries due to its focus on type safety. It relies heavily on Erlang's `:calendar` module for date and time functionality, making it directly accessible via Erlang interoperability. 
 
-Historically, getting the current date in programming has been a more complicated task, often involving complex date libraries and manual calculations. However, with the advancement of programming languages and frameworks, it has become much simpler and more standardized.
+If not comfortable with `:calendar`, you can check out third-party libs like 'gleam-calendar' or 'gleam_datetime'.
 
-Some alternatives to using Gleam's built-in Date module include using a third-party library, such as Moment.js or Day.js, or using the system's built-in functions to retrieve the current date. However, these options may require additional setup and can be less efficient than using Gleam's native Date functionality.
-
-Internally, Gleam uses the Erlang standard library's `calendar` module for handling dates and times. This module provides functions for creating, converting, and manipulating dates and times in various formats.
+While getting the current date may seem straightforward, what's actually happening under the hood is our program asking the system clock of the OS for the current date, which is then translated into a format that's useful for the program.
 
 ## See Also
-
-For more information on Gleam's built-in Date module and its functions, check out the official documentation. You can also explore the `calendar` module in the Erlang standard library for a deeper dive into handling dates and times in programming. Happy coding!
+Check these for more scoop on Date & Time handling in Gleam:
+1. `:calendar` docs: https://erlang.org/doc/man/calendar.html
+2. 'gleam-calendar': https://hex.pm/packages/gleam_calendar
+3. 'gleam_datetime': https://hex.pm/packages/gleam_datetime

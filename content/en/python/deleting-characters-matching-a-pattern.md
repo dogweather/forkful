@@ -10,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Delete Characters Matching a Pattern in Python
+
 ## What & Why?
 
-Deleting characters matching a pattern is the process of removing specific characters or sequences of characters from a given string. Programmers use this technique to manipulate strings and remove unwanted characters, making their code more efficient and streamlined.
+Deleting characters matching a specific pattern refers to the process of removing any instances of patterned sequences in strings. Programmers frequently do this when elements within the data cause confusion or malfunction in code, or when a data set should be reduced for easier reading and utilization.
 
 ## How to:
 
-To delete characters matching a pattern in Python, you can use the built-in `re` (regular expression) library. This library allows you to use patterns and rules to search and replace strings in your code. Here is a simple example of using `re` to delete all numbers from a given string:
+To teach this, we'll use Python's built-in `re` module, specifically the `re.sub()` function.
 
 ```Python
 import re
 
-text = "abc123def456ghi789"
-pattern = "\d" # \d matches all digits
-result = re.sub(pattern, "", text)
-print(result) # Output: abcdefghi
-```
+# Example string
+text = "B1C2D3F4A5"
 
-You can use regex (regular expressions) to build more complex patterns and rules for deleting characters. For example, you can target specific sequences of characters or replace them with new characters.
+# Define the pattern to delete - say we remove all numerical characters
+pattern = "[0-9]"
+
+# Use re.sub()
+replaced_text = re.sub(pattern, "", text)
+print(replaced_text)
+```
+The above code will output:
 
 ```Python
-import re
-
-text = "Hello World!"
-pattern = "o[a-z]+"
-replacement = "O"
-result = re.sub(pattern, replacement, text)
-print(result) # Output: HellO World!
+BCDFA
 ```
 
-## Deep Dive:
+## Deep Dive
 
-The concept of deleting characters from a string has been around for a long time and has evolved with different programming languages. In Python, the use of regular expressions for string manipulation has made deleting characters a simple and effective process.
+Historically, data cleaning and manipulation has been indispensable in programming and data analysis. With the `re` module's inception (module supporting RegEx operations), Python made string manipulation significantly easier.
 
-An alternative to using `re` for deleting characters is to use built-in string methods such as `replace()`. However, these methods have limitations in terms of flexibility and efficiency compared to using regular expressions. `re` allows for more complex patterns and rules to be used, making it a powerful tool for string manipulation.
+As for alternatives, there's the string method `replace()`. However, it's less powerful as it doesn't support RegEx, meaning it can only remove exact, hard-coded strings.
 
-When using `re` for deleting characters, it is important to understand the syntax and patterns used. The reference documentation for `re` provides detailed information on the different metacharacters and functions that can be used for matching and replacing strings.
+In terms of implementation, `re.sub(pattern, repl, string, count=0)` works by substituting occurrences of the pattern in the string with `repl`. The optional `count` argument specifies the max number of pattern occurrences to replace.
 
-## See Also:
+## See Also
 
-- [Python re documentation](https://docs.python.org/3/library/re.html)
-- [Regular expressions explained](https://www.regular-expressions.info/)
-- [Python string methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+1. Python `re` module documentation: https://docs.python.org/3/library/re.html
+2. More deep insights on RegEx: https://www.regular-expressions.info/
+3. Python `str.replace()` method: https://docs.python.org/3/library/stdtypes.html#str.replace

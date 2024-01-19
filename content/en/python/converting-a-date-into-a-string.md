@@ -11,37 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Converting a date into a string is the process of changing a date object in Python to a human-readable string format. Programmers do it to display dates in a more readable format, make comparisons between dates, or storing dates in databases.
 
-## How to:
-Converting a date into a string is a simple process in Python. First, we need to import the datetime module, which is a built-in module in Python that allows us to work with dates and time. Then, we can use the ```datetime``` class to create a date object:
+Converting a date into a string in Python is all about changing the format of a datetime object into a readable string representation. This comes in handy when you want to display a date in a user-friendly way or when you want to manipulate or compare dates more flexibly.
+
+## How To:
+
+To convert a date into a string in Python, you will use the `strftime()` function from the `datetime` module. Here's a simple example:
 
 ```Python
-import datetime
+from datetime import datetime
 
-date = datetime.datetime(2021, 2, 20)
+# current date and time
+now = datetime.now()
+
+# convert the date into a string format
+date_string = now.strftime("%m-%d-%Y, %H:%M:%S")
+
+print("Date and Time:", date_string)
 ```
-Next, we can use the ```.strftime()``` method to convert the date object into a string with a specific format. We need to provide a format string to specify how we want the date to be displayed. For example, if we want the date to be displayed as "Feb 20 2021", we can use the following code:
+When you run this code, it gives an output like this:
 
-```Python
-date.strftime("%b %d %Y")
 ```
-
-The output will be:
-
-```Python
-'Feb 20 2021'
+Date and Time: 08-30-2022, 14:45:37
 ```
 
 ## Deep Dive:
-Converting a date into a string is a common task in programming, especially when working with dates and time. Before the ```datetime``` module was introduced in Python 2.3, the most common way to represent and manipulate dates was using the time module. However, with the introduction of the ```datetime``` module, converting dates into strings has become much easier and more efficient.
 
-There are also alternative ways to convert a date into a string in Python, such as using the ```str()``` function or the ```.isoformat()``` method. However, these methods may not provide the flexibility to specify a specific date format.
+The `strftime()` function has been part of Python's `datetime` module since its release in Python 2.3 back in 2002. It's heavily influenced by the C library's 'strftime' function. 
 
-The ```strftime()``` method follows the C language's ```strftime()``` function, which stands for "string format time". It allows us to create a custom format string to display the date in the desired format. This allows programmers to display dates in a familiar or consistent format across different applications.
+Alternatives to `strftime()` includes:
+- The `ctime()` function, which returns a string representing the datetime in the format: 'Sun Sep 16 01:03:52 2022'.
+- For Python 3.7 and above, there's `isoformat()`, which returns a string representing a date in ISO 8601 format.
+
+Underneath the hood, `strftime()`'s implementation makes extensive use of the `tm` struct in C. It converts the date elements into a `tm` struct, and then uses format codes to convert this into a string form.
 
 ## See Also:
-- [Python datetime Module](https://docs.python.org/3/library/datetime.html)
-- [Python strftime() Method](https://docs.python.org/3/library/datetime.html#datetime.datetime.strftime)
-- [Python time Module](https://docs.python.org/3/library/time.html)
-- [strftime() function in C](https://www.cplusplus.com/reference/ctime/strftime/)
+
+For a complete list of `strftime()` and `strptime()` behavior, refer to Python [official documentation](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior). 
+
+For more guidance with formats, refer to this helpful resource on [Python `strftime()`](http://strftime.org/). 
+
+For a quick comparison between `strftime()`, `ctime()`, and `isoformat()`, refer to this [Stackoverflow discussion](https://stackoverflow.com/questions/466345/converting-date-from-yyyy-mm-dd-to-dd-mm-yyyy).

@@ -10,42 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Diving into HTML Parsing with Elixir
 
-Parsing HTML is the process of reading and analyzing HTML code to extract data and information from a webpage. This is an essential task for programmers as it allows them to access and manipulate the content of a webpage in their code. It is particularly useful for web scraping, data extraction, and web automation.
+## What & Why?
+HTML parsing is the process of analyzing HTML code to extract meaningful structure - essentially turning HTML into data. Programmers do this to enable the extraction, automation, and manipulation of web content.
 
 ## How to:
 
-To parse HTML in Elixir, we can use the `Floki` library, which provides a simple yet powerful interface for working with HTML documents. 
+Let's dive right into the action. In Elixir, we can use the package named `Floki` for parsing HTML. Assume that you have installed this dependency.
 
-```
-# Install `Floki` in your project's `mix.exs` file
+```elixir
 def deps do
-  [{:floki, "~> 0.26.0"}]
+  [
+    {:floki, "~> 0.30"}
+  ]
 end
 ```
 
+Here is a basic example of how to extract all `href` links from a webpage:
+
+```elixir
+{:ok, body} = HTTPoison.get("https://www.example.com/")
+links = body |> Floki.find("a[href]") |> Floki.attribute("href")
+IO.inspect(links)
 ```
-# Import `Floki` and fetch HTML document from a URL
-import Floki
-html = Floki.html("https://www.example.com")
 
-# Find and extract information from the HTML document
-titles = ["h1", "h2"] |> Floki.find(html) |> Floki.extract_text
-```
+This script will print a list of all URLs found in the "href" attributes of anchor tags on "https://www.example.com".
 
-The above code fetches the HTML document from a URL and uses `Floki.find` to find all the `h1` and `h2` elements in the document. Then, `Floki.extract_text` is used to extract the text content of these elements, which is assigned to the `titles` variable.
+## Deep Dive
 
-## Deep Dive:
+HTML Parsing has been a popular task since the inception of the web. Initially, it was quite simple with basic HTML documents. However, as sites grew more complex, parsing became more involved.
 
-Parsing HTML has been a fundamental task in web development since the early days of the internet. In the past, this was done mainly using regular expressions, but with the rise of structured data and complex web pages, specialized HTML parsing libraries like `Floki` have become essential.
+As for alternatives, you might consider using `meeseeks` or `sweet_xml`. These offer similar parsing capabilities as `floki` but can differ in syntax and processing power.
 
-Alternatives to `Floki` for HTML parsing in Elixir include `ExAgent`, `Meeseeks`, and `Erlsom`. However, `Floki` stands out for its simplicity and ease of use. 
+An interesting point about `Floki`'s implementation is it leverages the underlying Cascading Style Sheets (CSS) selector engine; this is what allows for the querying of HTML elements using CSS-like selectors, leading to seamless, intuitive querying of HTML documents.
 
-Under the hood, `Floki` uses the `leex` and `yecc` parser generators from Erlang, making it efficient and robust. It also uses an internal data representation called FDOM (Floki Document Object Model) for faster and more flexible handling of HTML data.
+## See Also 
 
-## See Also:
+- `Floki` documentation: [hexdocs.pm/floki](https://hexdocs.pm/floki)
+- `Meeseeks` documentation: [hexdocs.pm/meeseeks](https://hexdocs.pm/meeseeks)
+- `SweetXML` documentation: [hexdocs.pm/sweet_xml](https://hexdocs.pm/sweet_xml) 
+- Elixir Language Website: [elixir-lang.org](https://elixir-lang.org) 
 
-- Official `Floki` documentation: https://hexdocs.pm/floki
-- Source code for `Floki` on GitHub: https://github.com/philss/floki
-- Alternatives to `Floki` for HTML parsing in Elixir: https://github.com/h4cc/awesome-elixir#xml--html-parsing
+Enjoy parsing!

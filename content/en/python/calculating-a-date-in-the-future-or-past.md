@@ -11,48 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Calculating a date in the future or past refers to the process of determining a specific date that is either ahead of or behind a given date. In programming, this is often done to track deadlines, schedule tasks, or perform calculations based on specific timeframes.
 
-Programmers use date calculations to automate tasks and create reliable systems that require specific actions to take place on certain dates. This eliminates the need for manual calculations and reduces the risk of human error. 
+Calculating a date in the future or past involves manipulating a given date by specific days, weeks, months, or years. Programmers do this to handle time-based data, enabling tasks like scheduling events, setting deadlines, or determining intervals.
 
-## How to:
-Calculating a date in the future or past can be achieved in Python using the datetime module. 
+## How To:
 
-To calculate a future date, you can use the timedelta object to add a specific number of days, months, or years to a given date. For example, if we want to get the date 90 days from today, we can use the following code:
+Python’s built-in `datetime` module does the job. Let's create a date and then subtract or add days to it.
 
-```Python
+```
 import datetime
+
+# Current date
 today = datetime.date.today()
-future_date = today + datetime.timedelta(days=90)
-print(future_date)
-```
+print("Today's date:", today)
 
-Output:
-```
-2021-10-25
-```
+# Add 5 days to current date
+future_date = today + datetime.timedelta(days=5)
+print("Date 5 days from today:", future_date)
 
-To calculate a past date, we can use the same timedelta object but with a negative value. For instance, to get the date 2 weeks before today, we can use the following code:
-
-```Python
-import datetime
-today = datetime.date.today()
+# Subtract 2 weeks from current date
 past_date = today - datetime.timedelta(weeks=2)
-print(past_date)
+print("Date 2 weeks ago from today:", past_date)
 ```
 
-Output:
+When you run the code, it might output something like:
+
 ```
-2021-07-12
+Today's date: 2022-03-30
+Date 5 days from today: 2022-04-04
+Date 2 weeks ago from today: 2022-03-16
 ```
 
-## Deep Dive:
-Calculating dates has been an essential aspect of computing since the early days. In the past, programmers had to write complex code to perform date calculations. However, with the introduction of modules like datetime in Python, this process has become much more straightforward and efficient.
+## Deep Dive
 
-An alternative way of calculating dates in Python is by using the calendar module. This module provides functions for working with dates, including determining leap years, the number of days in a month, and the day of the week for a given date. While it offers more flexibility, it requires more complex code compared to using the datetime module.
+Python's `datetime` module has been around since version 2.3, making it a reliable choice for date calculations. However, if you want a more powerful tool, consider `dateutil.relativedelta`. It provides a more flexible way to perform date arithmetic, including the ability to jump forward or backward by a number of weekdays.
 
-Behind the scenes, the datetime module uses a timestamp, which is the number of seconds elapsed since the Unix epoch (January 1, 1970). This makes date calculations more accurate and efficient.
+However, these methods only work with standard Gregorian calendar dates. For alternative calendar systems or more extensive date manipulation, look into libraries like `pendulum`, `arrow`, or `moment`.
+
+Here's the code again, but this time, using `relativedelta`:
+
+```
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
+# Current date
+today = datetime.now()
+
+# Add 2 months to current date
+future_date = today + relativedelta(months=2)
+print("Date 2 months from now:", future_date)
+
+# Subtract 1 year from current date
+past_date = today - relativedelta(years=1)
+print("Date 1 Year ago from now:", past_date)
+```
 
 ## See Also:
-- Python datetime module documentation: https://docs.python.org/3/library/datetime.html
-- Python calendar module documentation: https://docs.python.org/3/library/calendar.html
+
+- Python's official [`datetime`](https://docs.python.org/3/library/datetime.html) documentation.
+- The [`dateutil`](https://dateutil.readthedocs.io/en/stable/) library documentation.
+- For more advanced date manipulation, check out [`pendulum`](https://pendulum.eustace.io/docs/), [`arrow`](https://arrow.readthedocs.io/en/latest/), and [`moment`](https://moment.readthedocs.io/en/latest/).

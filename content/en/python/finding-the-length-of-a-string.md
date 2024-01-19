@@ -10,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Exploring String Length in Python: Brevity and Simplicity Rule
 
-Finding the length of a string means determining the number of characters in a given string. This is a common task for programmers, as it allows for manipulating and analyzing text data in various ways. Whether it's for data validation, formatting, or analysis purposes, knowing the length of a string is essential in many programming applications.
+## What & Why?
+Determining the size of a string – the number of characters it contains – is a common task in Python. Seeing this count lets programmers handle large data, time-consuming operations, or user input efficiently.
 
 ## How to:
+Finding the length of a string in Python is accomplished using the `len()` function. This function takes a string as its argument and returns the count of characters (including spaces) in it.
+Here’s how you can do it:
 
-Calculating the length of a string in Python is a simple task. Use the `len()` function and pass the string as an argument to it. For example:
-
-```Python
-string = "Hello, World!"
-print(len(string))
+```python
+str = "Hello, World!"
+print(len(str))  # Returns 13
 ```
 
-This will output `13`, as the string contains 13 characters. Additionally, you can also use the `len()` function on other data types, such as lists, tuples, and dictionaries.
-
-```Python
-list = [1, 2, 3, 4, 5]
-print(len(list))
-
-tuple = (6, 7, 8, 9)
-print(len(tuple))
-
-dictionary = {'a': 1, 'b': 2, 'c': 3}
-print(len(dictionary))
-```
-
-The output for these examples would be `5`, `4`, and `3` respectively.
+The output will be `13`. The comma, space, and exclamation mark are all counted as characters.
 
 ## Deep Dive:
 
-Calculating the length of a string is a relatively simple concept, but it has evolved over time. In the early days of programming, the length of a string was determined by finding the string's null terminator, which is a character used to indicate the end of a string. However, with the introduction of high-level programming languages, this process has become more efficient and less complicated.
+The `len()` function has been around since the birth of Python and is a built-in function, a testament to its practicality. It's simple, direct, and efficient, being O(1) complexity, meaning it takes constant time regardless of the string size.
 
-While the `len()` function is the most common way of finding the length of a string in Python, there are other approaches as well. For example, using a for loop to iterate through each character in the string and incrementing a counter variable could also achieve the same result. However, this method is less efficient and recommended only for learning purposes.
+In Python, strings are objects and have several built-in methods. These include `__len__()` - you can call `str.__len__()` to get the same result:
 
-Internally, the `len()` function uses a hidden attribute of an object called `__len__()` to calculate the length of a string and return it. All built-in objects in Python have this attribute, allowing them to be used with the `len()` function.
+```python
+str = "Hello, World!"
+print(str.__len__())  # Returns 13
+```
+
+But it's more Pythonic to use `len(str)`. It's simpler and cleaner code.
+
+The `len()` function is preferable over manually iterating through the string with a for-loop and incrementing a counter. Such an approach is more cumbersome, prone to errors from overlooking special characters or forgetting edge cases, and slower because it has an O(n) complexity.
 
 ## See Also:
 
-- [Python String Methods](https://www.w3schools.com/python/python_ref_string.asp) - other useful methods for manipulating strings.
-- [Python Documentation on len()](https://docs.python.org/3/library/functions.html#len) - official documentation for the `len()` function in Python.
-- [Python Strings](https://realpython.com/python-strings/) - a comprehensive guide on strings in Python.
+For more about Python's string built-ins, see the [official documentation](https://docs.python.org/3/library/stdtypes.html#string-methods).
+
+For more on computational complexity in Python, this [TimeComplexity Wiki](https://wiki.python.org/moin/TimeComplexity) sheds light.
+
+For an insightful understanding of Python's `len()` function, check out this [Stackoverflow Discussion](https://stackoverflow.com/questions/2485466/pythons-len-function-performance).

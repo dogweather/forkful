@@ -10,34 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**What & Why?**
+# Working with JSON in Gleam Programming 
 
-Working with JSON in programming is all about efficiently handling data. JSON (JavaScript Object Notation) is a lightweight and easy-to-read format for storing and transmitting data between different systems. Programmers use it to transfer data over the internet, store data in databases, and manipulate data within their programs.
+## What & Why?
 
-**How to:**
+JavaScript Object Notation, JSON, often plays key roles in server-to-server communication and storage of complex data. Programmers use it as a language-independent format to pass data across network connections.
 
-The Gleam language has built-in support for dealing with JSON data. Here's a quick example of how to encode and decode JSON using Gleam:
+## How to:
 
-```gleam
-// Encode a JSON object
-let user = Json.encode({ name: "John", age: 30, is_active: true })
+We'll learn to encode and decode JSON in Gleam. For decoding, we'll define our type to map JSON and then "decode" it. 
 
-// Decode JSON into a Gleam record
-let user_data = Json.decode(user)
+```Gleam
+import gleam/decode.{Decoder, int, map2, field}
+import gleam_codecs.json
+
+type Person {
+  Person(name: String, age: Int)
+}
+
+// Our decoder
+fn decode_person(json: String) -> Result(Person, String) {
+  let decoder: Decoder(Person) =
+    map2(name: field("name", string), age: field("age", int), Person)
+
+  json_codecs.decode(json, decoder)
+}
 ```
 
-The ```encode()``` function takes in a Gleam record and returns a JSON string. The ```decode()``` function takes in a JSON string and converts it into a Gleam record. It's as simple as that!
+This 'decode_person' function takes a JSON string and returns the 'Person'.
 
-**Deep Dive:**
+Encoding is straightforward, just serialize it using 'encode'
 
-JSON was created in 2002 as a simpler alternative to XML for data transmission. It quickly gained popularity due to its simplicity and flexibility, and is now the preferred format for data exchange in many applications.
+```Gleam
+import gleam_codecs.json
 
-While there are other data formats like XML and YAML, JSON is still widely used because of its easy integration with web-based systems and its ability to represent complex data structures in a human-readable format. Other programming languages like JavaScript and Python also have built-in support for JSON, making it a popular choice for data communication.
+fn encode_person(person: Person) -> String {
+  json_codecs.encode(person)
+}
+```
 
-Internally, Gleam uses the popular Jiffy library for encoding and decoding JSON. Jiffy is written in Erlang and is known for its fast performance and error handling capabilities.
+The output would be:
 
-**See Also:**
+```
+{ "name": "Gleam", "age": 2 }
+```
 
-- [Official Gleam documentation for handling JSON](https://gleam.run/book/tutorials_and_guides/json.html)
-- [Introduction to JSON by W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [Jiffy library for working with JSON in Erlang](https://github.com/davisp/jiffy)
+## Deep Dive
+
+JSON, derived from JavaScript but language-agnostic, became popular in late 2000s as a payload format for web APIs and config files. It's human-readable and easy to parse, thus a great choice for data interchange.
+
+Alternatives include XML and YAML, though JSON's less verbosity gives it an edge. CSV is used mostly for simpler data.
+
+For JSON in Gleam, we use the 'gleam/decode' lib. Decoding is explicit due to statically typed nature of Gleam. We first define our type, then tell Gleam how to decode it. Encoding, on the other hand, is pretty straightforward.
+
+## See Also
+
+For detailed JSON and Gleam understanding, look at:
+1. Gleam JSON Decoding [Docs](https://hexdocs.pm/gleam_decode/readme.html)
+2. Gleam's Github [Repo](https://github.com/gleam-lang/gleam)
+3. JSON Documentation on [MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)

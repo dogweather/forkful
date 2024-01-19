@@ -11,37 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Capitalizing a string means changing the first letter of each word in the string to its uppercase form. Programmers often do this for consistency, readability, and stylistic purposes. For example, in English, the titles of books, documents, or variable names commonly follow this convention.
+Capitalizing a string means changing the first letter of the string to upper case. Programmers do this to make text more readable or to meet certain data formatting requirements.
 
 ## How to:
-To capitalize a string in Gleam, use the `String.capitalize_words` function. Here is an example:
 
-```Gleam
-let string = "hello world"
-let capitalized_string = String.capitalize_words(string)
+There is no built-in function to capitalize a string in Gleam (as of current version). Here's a hand-rolled version :
 
-// Output: "Hello World"
-``` 
+```gleam
+import gleam/string
 
-The `capitalize_words` function takes in a string as an argument and returns a new string with the first letter of each word capitalized.
+fn capitalize(s: String) -> String {
+  case string.split_at(s, 1) {
+    [] -> s
+    [first | rest] -> string.concat([string.to_upper(first), string.concat(rest)])
+  }
+}
 
-You can also use the `capitalize` function if you only want to capitalize the first letter of the string. Here's an example:
-
-```Gleam
-let string = "hello world"
-let capitalized_string = String.capitalize(string)
-
-// Output: "Hello world"
+let example = capitalize("hello, world!")
+assert example == "Hello, world!"
 ```
+When run, the sample script will output a capitalized "Hello, world!".
 
 ## Deep Dive
-Capitalization in programming has roots in the English language, where uppercase letters were used for emphasis, headings, and titles. This convention eventually made its way into programming languages, where it serves both functional and aesthetic purposes.
 
-Some alternative ways to capitalize a string include using regular expressions or manually looping through and capitalizing each letter. However, these methods are more verbose and not always the most efficient.
+The capitalize function example splits the string into a list of characters, converts the first character to uppercase, and then joins them back into a string. The history of string capitalization in any programming language is a mix of built-in functions and tricks like this. If Gleam introduces a built-in capitalize function in the future, it will likely implement it in a similar way.
 
-Internally, the `capitalize_words` function in Gleam converts the string to a list of words, capitalizes the first letters, and then joins them back together to form a new string. This process ensures that only the first letter of each word is capitalized, and the rest of the string remains as it is.
+Different languages have different built-in functions to capitalize a string - JavaScript has `toUpperCase()`, Python has `.capitalize()`, and Ruby has `.capitalize()` among many others. Gleam falls back on `split_at()`, `to_upper()`, and `concat()` for this task.
 
 ## See Also
-To learn more about string manipulation in Gleam, check out the official documentation on string operations: <https://gleam.run/documentation/stdlib/string/#operations>
 
-For a deeper dive into the history of capitalization in programming, this article by the Association for Computing Machinery is a great resource: <https://cacm.acm.org/news/210703-camel-case/history>
+For an overview about text handling in Gleam, see the official Gleam String documentation at: https://hexdocs.pm/gleam_stdlib/gleam/string.
+
+For the detailed explanation of `split_at()`, `to_upper()`, and `concat()`, visit https://hexdocs.pm/gleam_stdlib/gleam/string.html#split_at2, https://hexdocs.pm/gleam_stdlib/gleam/string.html#to_upper1, and https://hexdocs.pm/gleam_stdlib/gleam/string.html#concat1, respectively.
+
+Running the code samples locally requires Gleam to be installed. You can find setup instructions on the official website: https://gleam.run/getting-started/.

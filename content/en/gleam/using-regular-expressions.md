@@ -12,44 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Regular expressions are a useful tool for programmers to search, extract, and manipulate text based on patterns. They are used in programming languages, text editors, and other programs to perform complex text processing tasks. Programmers use regular expressions to save time and effort by automating tasks that would otherwise be tedious to do manually.
+In the Gleam universe, Regular Expressions (regex) allow us to find, match, and manipulate strings by establishing patterns. They're vital because, well - they're the ultimate power tools for string operations.
 
 ## How to:
 
-Using regular expressions in Gleam is simple and efficient. Here are a few examples to help you get started:
+Deploying regex in Gleam is straightforward.
+
+Suppose we're dealing with a standard use case: searching for a pattern within a string. Let's say you're trying to find e-mail addresses in text. Here's a snippet to show you how.
+
+```Gleam
+
+import gleam/regex
+
+let email_regex = regex.from_string("[a-z0-9.+_\-]+@[a-z0-9]+\.[a-z]+").unwrap()
+let text = "Here's an email: person@domain.com."
+
+regex.find(&email_regex, text)
+  |> result.unwrap_or(Nil)
+  |> io.println
 
 ```
-Gleam
-let email_regex = Regex.new("^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$")
 
-let email = "example@email.com"
+In the console, you see an output exactly like this:
 
-match email_regex.match(email) {
-  | Ok(match) -> match.string
-  // Output: "example@email.com"
-  | Error(_) -> "Invalid email"
-}
-
-let sentence_regex = Regex.new("([a-z]+) ([0-9]+)")
-
-let text = "I have 3 cats and 2 dogs"
-
-text
-|> sentence_regex.matches
-|> List.filter(_, Fn.and(is_match(_), Fn.compose(is_even, count)))
-|> List.map(_, Fn.compose(get_value(_, 1), get_values))
-
-//Output: [ "have", "and" ]
+```Gleam
+#{match=[49..62], named_groups=[], pre_match=[0..22], post_match=[62..67]}
 ```
 
-## Deep Dive:
+## Deep Dive
 
-Regular expressions have a long history dating back to the 1950s. They were originally developed to simplify pattern matching in the field of computer science. Today, they are widely used in various programming languages and tools, such as Perl, Python, and Vim.
+The concept of regex has been around since the '50s - amazing right? Ken Thompson brought regex to prominence in the '70s with the UNIX 'ed' editor. And, thanks to the POSIX Standard, regex has become a common utility in programming languages since the '80s. 
 
-Alternatives to regular expressions include string manipulation using built-in functions or using other libraries specifically designed for text processing. However, regular expressions remain a popular choice due to their flexibility and powerful pattern matching capabilities.
+In Gleam context, Gleam uses Rust's regex library, which is a significant advantage as it makes regex very fast. The drawback? Well, it doesn't support all regex features you might find elsewhere. 
 
-In Gleam, regular expressions are implemented using the Rust library, regex. This allows for efficient and reliable pattern matching, making it a robust tool for programmers.
+As for alternatives, case matching and string functions can sometimes replace regex, but generally, regex is the most convenient and powerful.
 
 ## See Also:
 
-To learn more about regular expressions, check out the official Rust regex library documentation [here](https://docs.rs/regex/1.4.3/regex/). You can also explore other useful resources such as [Mastering Regular Expressions](http://regex.info/) by Jeffrey Friedl and [Regular-Expressions.info](https://www.regular-expressions.info/) by Jan Goyvaerts.
+Looking for more? Check out these links:
+
+* [Gleam regex documentation](https://hexdocs.pm/gleam_stdlib/gleam/regex/): The official docs are always a trusted starting point.
+* [Rust regex library](https://github.com/rust-lang/regex): This is the Rust library Gleam's regex is built on. A great place for the curious. 
+* [Regular-Expressions.Info](https://www.regular-expressions.info/): If regex has caught your fancy, this is a resource dedicated to all things regex. You'll get an understanding of it beyond Gleam or even Rust.

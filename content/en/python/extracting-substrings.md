@@ -11,30 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Extracting substrings is the process of obtaining a smaller section of characters from a larger string. Programmers often do this in order to manipulate or analyze specific parts of a larger string without having to work with the entire string. This can make coding tasks more efficient and organized.
 
-## How to:
+Extracting substrings means pulling specific sections out from entire strings in Python. Programmers do this to filter, parse, or manipulate data efficiently.
+
+## How To:
+
+The simplest way to extract a substring in Python is by using slicing:
+
 ```Python
-# To extract a substring using square brackets
-my_string = "Hello World"
-print(my_string[0:5]) # Output: Hello
+s = "Hello, World!"
+print(s[0:5])  # Expected output: 'Hello'
+```
 
-# To extract a substring using the slice() function
-print(my_string[slice(6, 11)]) # Output: World
+Or, you can extract substrings using the split() method:
 
-# Extracting a substring with negative indexing
-print(my_string[-5:-1]) # Output: Worl
-
-# Extracting a substring with a step
-print(my_string[::2]) # Output: HloWrd
+```Python
+s = "Hello, World!"
+print(s.split(", ")[0])  # Expected output: 'Hello'
 ```
 
 ## Deep Dive:
-Extracting substrings has been a vital technique in computer programming since the early days of string manipulation. Before the introduction of built-in string methods, programmers used to write their own functions to extract substrings. Nowadays, there are alternative methods in Python such as using the re library for regular expressions or splitting strings by a specific delimiter.
 
-When extracting a substring, the syntax is [start_index:stop_index:step]. The start_index is inclusive while the stop_index is exclusive. This means that the character located at the stop_index will not be included in the extracted substring. If the step is not specified, it will default to 1. Negative indexes can also be used to extract substrings from the end of the string. If the step is negative, the substring will be reversed.
+The concept of extracting substrings has been around almost as long as programming itself. Early languages like Fortran realized the importance of working with parts of strings, although the implementation was clunkier than what we have today.
+
+You may also use functions such as find() and index() in combination with slicing to extract substrings.
+
+```Python
+s = "Hello, World!"
+start = s.find("World")
+print(s[start:])  # Expected output: 'World!'
+```
+
+Though, remember that the find() function will return -1 if the substring is not found. The index() function, however, raises a ValueError exception.
+
+The Python substring methods are designed with efficiency in mind. Python strings are immutable; thus, these methods don't modify the original string but return a new string.
 
 ## See Also:
-- [Python String Methods](https://www.geeksforgeeks.org/python-string-methods-set-1-find-rjust-split-replace/)
-- [Regular Expressions in Python](https://www.geeksforgeeks.org/regular-expressions-python-examples-set-1/)
-- [Python Slicing](https://www.geeksforgeeks.org/python-list-slicing/)
+
+1. [Python Official Documentation on Strings](https://docs.python.org/3/tutorial/introduction.html#strings)
+2. [Python Basics: String Manipulation](https://pythonbasics.org/string-manipulation/)
+3. [Real Python: An Introduction to String Functions in Python 3](https://realpython.com/python-strings/)

@@ -12,35 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Interpolating a string is a technique used by programmers to insert variables or values into a string dynamically, without having to concatenate multiple strings together. This improves the readability and efficiency of the code.
+Interpolating a string is a method of injecting variables into a string. It reduces complexity and increases readability by providing an alternative to unwieldy concatenation.
 
 ## How to:
 
-Interpolation is done in Gleam by using the `format` function and using curly braces `{}` around the variables or values that need to be inserted. Here's a simple example:
+Here's an easy interpolation example in Gleam:
 
-```Gleam
-let name = "Jane"
-let message = format("Hello, {}", name)
+```gleam
+let name = "Gleam"
+let output = "Hello, #(name) programmer!"
+
+// Outputs: "Hello, Gleam programmer!"
 ```
 
-The `message` variable now contains the string "Hello, Jane". We can also interpolate multiple variables or values, and format them as desired. Here's another example:
+It's a matter of using `#()` to contain variables you want to interpolate in your text.
 
-```Gleam
-let age = 25
-let message = format("I am {} years old and my name is {}", age, name)
+## Deep Dive
+
+Interpolation was initially popularized by Perl before becoming staples in languages like Ruby and JavaScript. Before interpolation, the common approach was string concatenation, splitting a string into separate pieces that are constructed with variables and appended together, like so:
+
+```gleam
+let name = "Gleam"
+let output = "Hello, " ++ name ++ " programmer!"
 ```
 
-The `message` variable now contains the string "I am 25 years old and my name is Jane". 
+This can get out of hand pretty quickly for longer, more complex strings. Thus, we use string interpolation as a more effective alternative.
 
-## Deep Dive:
+Now, the `#()` used in Gleam's string interpolation isn't magic. Under the hood, the compiler translates them into function calls. Which means `#(name)` is equivalent to: 
 
-Interpolating strings has been around for a long time and is commonly used in many programming languages. It helps in avoiding repetitive concatenation of strings and also makes the code more concise and readable. 
+```gleam
+let name = "Gleam"
+let output = "Hello, " ++ name.toString() ++ " programmer!"
+```
 
-There are alternative methods of string interpolation, such as using string concatenation or format specifiers, but they are not as efficient as using the `format` function in Gleam. Using concatenation can result in complex and unreadable code, while format specifiers may not offer the degree of flexibility and customization that Gleam's `format` function provides.
-
-Under the hood, the `format` function uses string formatting syntax from the [RFC 5424](https://tools.ietf.org/html/rfc5424) standard, allowing for a wide range of formatting options. This makes it a powerful tool for handling strings in a concise and efficient manner.
+Gleam simply makes it easier to use these calls in the context of string manipulation.
 
 ## See Also:
 
-- [Gleam's Official Documentation](https://gleam.run/documentation)
-- [String Interpolation in Other Programming Languages](https://en.wikipedia.org/wiki/String_interpolation#In_other_languages)
+For further reading:
+
+1. The Gleam code style guide - [https://gleam.run/book/tour/](https://gleam.run/book/tour/)
+2. Detailed overview of Gleam's string manipulation approaches - [https://gleam.run/book/tour/string-manipulation.html](https://gleam.run/book/tour/string-manipulation.html)

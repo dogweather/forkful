@@ -10,27 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
-Starting a new project in programming means creating something new using code. It can be a web app, a mobile app, a game, or anything else you can think of. Programmers start new projects for various reasons, such as building a new and innovative product, learning a new language or technology, or simply for fun.
+## What & Why?
+Starting a new project is the process of initializing a new development environment for a specific idea or application. Programmers do it to create a separate workspace where they can build and manage the different components of their program in a structured manner.
 
-# How to:
-To start a new project in Gleam, follow these simple steps:
+## How to:
+To kick off a Gleam (v0.13.2) project, first, you must install the Gleam compiler and rebar3 on your computer. Afterward, call `gleam new hello_world` in your terminal. This will generate your new project.
 
-1. Create a new directory for your project: ```mkdir my_project```
-2. Navigate to the project directory: ```cd my_project```
-3. Initialize a new Gleam project: ```gleam init```
-4. This will generate some boilerplate code to get you started, including a ```src``` folder for your source code and a ```tests``` folder for your tests.
-5. Open the ```src/main.gleam``` file and start coding your project.
-6. Once you are done, run ```gleam build``` to compile your project.
-7. You can then run your project by typing ```gleam run```.
-8. That's it! You have successfully started a new project in Gleam.
+```Gleam
+$ gleam new hello_world
+* creating hello_world/README.md
+* creating hello_world/.gitignore
+* creating hello_world/rebar.config
+* creating hello_world/.formatter.exs
+* creating hello_world/lib/hello_world.gleam
+Your Gleam project hello_world has been successfully created.
+The rebar3 program needs to be in your PATH. See https://www.rebar3.org/ for installation instructions.
+```
 
-# Deep Dive
-Gleam is a relatively new programming language, created in 2020 by Louis Pilfold and other contributors. It is a compiled, statically-typed language that runs on the Erlang Virtual Machine, making it highly performant and fault-tolerant. Starting a new project in Gleam gives you access to its powerful type system, excellent tooling, and functional programming paradigm.
+## Deep Dive
+Starting a new project is a strategy that has its roots in the inception of program development. It allows developers to compartmentalize their work and manage complex applications effectively. The Gleam's approach derives from this principle. 
 
-If you are familiar with other languages like Rust, Elm, or Haskell, you will find some similarities in Gleam's syntax and features. However, Gleam has its unique features, including lightweight processes, pattern matching, and automatic memory management.
+Alternatives include starting a minimal project with just a handful of files or simply running scripts without frameworks. However, Gleam's method offers a more organized structure suitable for complex or large-scale applications. 
 
-In the past, starting a new project in a functional language was not as simple as it is now. With Gleam, you no longer need to worry about complicated setup processes or dependency management. The language's tooling takes care of all that for you, so you can focus on writing code and building your project.
+Under the hood, `gleam new` command creates the necessary files and directory structures, providing a ready-to-use development environment. It also generates a .gitignore file for version control providers and a rebar.config file for project configuration.
 
-# See Also
-To learn more about Gleam and its features, check out the official documentation at https://gleam.run/documentation. You can also join the vibrant community on the Gleam Discord server at https://discord.gg/RZexrjq, where you can ask questions, share ideas, and learn from other developers. Happy coding!
+## See Also
+- The Gleam book: https://gleam.run/book/tour/hello-gleam.html
+- Gleam GitHub Repository: https://github.com/gleam-lang/gleam
+- Rebar3 Official Site: https://www.rebar3.org/

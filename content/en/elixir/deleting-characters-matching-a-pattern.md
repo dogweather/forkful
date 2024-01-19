@@ -12,30 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Deleting characters that match a specific pattern is a common task in programming. It involves removing specific characters from a string or text that meet a certain condition or match a given pattern. Programmers often need to delete characters matching a pattern to clean up or extract specific information from a given text.
+Deleting characters matching a pattern allows manipulation of strings by removing certain specified recurring features. Software developers do this to boost efficiency, improve code readability, and cater to specific data requirements.
 
-## How to:
+## How To:
 
-To delete characters matching a pattern in Elixir, we can use the `String.replace/3` function. This function takes three arguments: the original string, the pattern to be matched, and the replacement string. The function will then replace all instances of the pattern with the replacement string.
+For basic string manipulations in Elixir, we use the `String.replace/3` function. Ruthlessly practical code below:
 
-```Elixir 
-# Example 1: Removing vowels from a text
-text = "Hello, how are you?"
-String.replace(text, ~r/[aeiou]/, "")
+```Elixir
+iex> String.replace("Programming is fun!", " ", "")
+"Programmingisfun!"
 
-# Output: "Hll, hw r y?"
-
-# Example 2: Removing numbers from a string
-string = "Elixir123"
-String.replace(string, ~r/[0-9]/, "")
-
-# Output: "Elixir"
+iex> String.replace("123abc123", "123", "")
+"abc"
 ```
+
+In these examples, we're taking out all spaces in the first, and in the second, we're removing patterns '123'.
+
+Now, if the pattern to be replaced is complex, we use 'regex'. Get a load of this:
+
+```Elixir
+iex> Regex.replace(~r/\d/, "Elixir1234", "")
+"Elixir"
+```
+
+In this case, we're removing all numerical characters (denoted by `\d`) from "Elixir1234".
 
 ## Deep Dive:
 
-In Elixir, regular expressions can be used to create patterns to match specific characters. Regular expressions, often shortened to "regex", are a powerful tool for pattern matching and are widely used in programming to manipulate strings. Elixir uses the `~r` sigil to represent regular expressions and the `~r/<pattern>/` syntax to define a regex pattern. Alternative ways to delete characters matching a pattern in Elixir include using the `String.delete/2` function or writing a custom function using `String.replace/2` and `Regex.replace/3` to handle more complex patterns.
+Historically, Elixir's native functionalities derive from Erlang. Pattern matching was (and remains) a core feature for readability and simplification.
+
+Alternatives? Shell out extra time and energy with building custom functions if regex doesn't cut it for you. There's also the `tr` Unix command for character removal.
+
+Under the hood, Elixir transforms your code into Abstract Syntax Tree (AST) format, then compiles into BEAM bytecode. Elixir's `String.replace/3` and `Regex.replace/3` methods handle the grunt work of pattern removal.
 
 ## See Also:
 
-To learn more about regular expressions in Elixir, check out the [Elixir documentation](https://hexdocs.pm/elixir/Regex.html) on regex. You can also explore the [String](https://hexdocs.pm/elixir/String.html) and [Regex](https://hexdocs.pm/elixir/Regex.html) modules for more information on manipulating strings in Elixir. Other useful resources include online regex testers like [Regex101](https://regex101.com/) and [Rubular](https://rubular.com/) for practicing and testing your regex patterns.
+For all your Elixir textual needs, check out the official HexDocs:
+
+- Elixir Strings: https://hexdocs.pm/elixir/String.html
+- Elixir Regex: https://hexdocs.pm/elixir/Regex.html
+
+And of course, Erlang's underlying string package documentation:
+
+- Erlang Documentation: http://erlang.org/doc/man/string.html
+
+Happy coding!

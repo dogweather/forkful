@@ -11,23 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Reading command line arguments is the process of retrieving information entered by a user in the command line interface. Programmers use this to allow users to provide specific instructions or input data to their programs at runtime. This helps make their programs more dynamic and customizable.
+
+Reading command line arguments is all about obtaining user inputs passed via the terminal when launching the program. Programmers do it to customize the behavior of their programs - pretty cool.
 
 ## How to:
-To read command line arguments in Gleam, we can use the `os.args` function. This will return a list of strings, with each element representing a command line argument entered by the user. Let's see an example:
 
-``` gleam
-// Retrieving command line arguments
-let args = os.args
+Fire up your terminal. Below is a simple program to read the command-line arguments using Gleam.
+
+```Gleam
+import gleam/io.{println}
+import gleam/option.{to_result}
+import gleam/result.{Ok}
+
+fn start(args: List(String)) -> Result(Never, Nil) {
+  args
+  |> list.pop
+  |> option.to_result(Nil)
+  |> result.map(println)
+  |> result.unwrap(Never)
+}
 ```
+To test it, compile the program and pass some argument like “Hello, Gleam!”:
 
-If a user enters `gleam run program.gleam arg1 arg2`, the `args` list will contain `["arg1", "arg2"]`. We can then use these arguments in our program as needed.
+```command
+$ ./my_program "Hello, Gleam!"
+Hello, Gleam!
+```
+## Deep Dive
 
-## Deep Dive:
-Command line arguments have been a crucial aspect of programming since the early days of computing. They allow for more flexible and user-friendly programs, as users can provide input without having to modify the source code. Alternatives to reading command line arguments in Gleam include using environment variables or configuration files, but these may not be as convenient for users.
+Historically, command-line arguments exist since the early Unix days, when GUIs were more a dream than reality. Loved by shell scripters worldwide, they significantly enhance a program's flexibility.
 
-In Gleam, the `os.args` function is implemented by the `gleam_stdlib.os` module, which utilizes the Erlang `init:get_plain_arguments()` function. This ensures proper handling of command line arguments, including quoting and escaping characters.
+In Gleam, you may notice the absence of a specific function to read command-line arguments as in other languages. Instead, `start/1` gets a list of arguments, the first being the script name. It's part of Gleam's philosophy to keep core language lightweight.
 
-## See Also:
-- [Official Gleam Documentation](https://gleam.run/book/embedding-the-vm.html#parsing-command-line-arguments)
-- [Erlang init:get_plain_arguments() documentation](https://erlang.org/doc/man/init.html#get_plain_arguments-0)
+Also, there's the `gleam/option` and `gleam/result` modules. `option.to_result/2` converts an option into a result and `result.map/2` then prints the argument, while `result.unwrap/1` crashes the program in the Nil case. Gleam’s take on error handling, indeed. 
+
+## See Also: 
+
+- The Gleam Book: [https://gleam.run/book/](https://gleam.run/book/)
+- Gleam GitHub Repository: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
+- Erlang -- init:get_argument/1: [https://erlang.org/doc/man/init.html#get_argument-1](https://erlang.org/doc/man/init.html#get_argument-1)
+
+Dive in. Get your hands dirty with Gleam. It's fun and pretty darn powerful. Happy coding, folks.

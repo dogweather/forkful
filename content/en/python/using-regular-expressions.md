@@ -10,39 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Getting to Grips with Python Regular Expressions
+
 ## What & Why?
 
-Regular expressions are a way to search for and manipulate text strings by using specific patterns. Programmers use regular expressions to efficiently search, match, and manipulate strings of text or data. It's a powerful tool for data cleaning, text parsing, and data extraction.
+Regular expressions (regex) are sequences of characters that form search patterns, used largely for "find" or "find and replace" functions in textual data. Programmers whip them out to sift through data quickly and efficiently, like a digital truffle pig.
 
-## How to:
+## How to
 
-To use regular expressions in Python, you need to import the `re` module. Once imported, you can use the built-in `re` functions to search and manipulate strings.
+Here's a basic example of how to use regular expressions in Python:
 
-```Python
+```python
 import re
 
-# Let's define a simple string
-text = "Hello World!"
+string = 'Hello, my name is AI and my serial number is 123456'
+pattern = '\\bis\\b'
 
-# Use the search function to check if "World" is present in the string
-if re.search("World", text):
-  print("Found it!")
+match = re.search(pattern, string)
 
-# Replace "Hello" with "Hi" in the string
-new_text = re.sub("Hello", "Hi", text)
-print(new_text) # Outputs: Hi World!
+if match:
+  print("Match found")
+else:
+  print("No match")
 ```
+
+If you run this, you'll see `Match found` because `is` exists in `string`.
 
 ## Deep Dive
 
-Regular expressions have been around since the 1950s, and they were first introduced by mathematician Stephen Kleene. They have since become an essential tool for text processing and manipulation in various programming languages.
+Now let's pull back the curtains a bit:
 
-While regular expressions are commonly used in Python, there are alternative libraries such as `regex` and `re2` that offer extended features and a different syntax. However, the `re` module in Python offers a user-friendly and powerful solution, making it a popular choice among programmers.
+Historically, regex comes from UNIX world, gaining popularity for its use in text processing tasks. While Python's built-in regex module (`re`) packs enough punch for most tasks, there are third-party libraries, like `regex`, offering more sophistication at the cost of complexity.
 
-Regular expressions work by using special characters and metacharacters to define patterns that match specific strings. For example, the dot character `.` matches any single character, and the asterisk `*` matches any number of characters. These are just a couple of the many metacharacters available in regular expressions.
+Key python.string methods such as `str.find()` or `str.replace()` can perform basic regex-like operations. For heavy-duty tasks though, `re` is the go-to choice. 
+
+Under the hood, when `re.search()` or `re.match()` is called, Python compiles the regular expression to a series of bytecodes which can be executed by a matching engine written in C. Fascinating stuff.
+
+Few things to keep in mind with Python regex: (1) Python’s raw string notation (`r"text"`) is often used as regex patterns, it saves you from battling escape sequences like double backslashes; (2) Remember methods like `re.findall()` to return all non-overlapping matches of pattern in string, as a list; (3) Don’t forget `re.split()`, a handy way to split your string using a regex pattern.
 
 ## See Also
 
-- [Regular Expression Operations in Python](https://docs.python.org/3/library/re.html)
-- [Python Regular Expression Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/python)
-- [Alternative Regular Expression Libraries for Python](https://pypi.org/search/?q=regex)
+Looking to go waist-deep into Python regex? Check out:
+- [Python's official Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html),
+- [Python's `re` module](https://docs.python.org/3/library/re.html) documentation.
+- [PyMOTW’s introduction to the `re` module](https://pymotw.com/3/re/)
+- Joe Marini’s [course on LinkedIn learning](https://www.linkedin.com/learning/learning-regular-expressions) —a thorough walkthrough to mastering regex.
+
+As you climb the programming ranks, mastering regex is a vital feather in your cap. So, get crackin'.

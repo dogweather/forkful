@@ -12,35 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing a date from a string is the process of extracting the date information (e.g. day, month, year) from a string of characters. This is useful for programmers as it allows them to convert date inputs in various formats to standardized values that can be easily manipulated and compared in their code.
+Parsing a date from a string means converting, or "parsing," human-readable text into a machine-readable date. This is essential for times when an app needs to process time-based data entered by a user in their preferred date format.
 
 ## How to:
 
-To parse a date from a string in Gleam, we can use the `Date.from_text` function. This function takes in a string and returns a `Date` record with the corresponding date information.
+To get started, Gleam doesn't offer a built-in way for date parsing. We'll need to use external libraries such as `erlang.date`.
 
+Here's how to do it:
+
+```Gleam
+import erlang
+
+fn parse_date(date_str: String) {
+  erlang.list_to_tuple(date_str
+    |> string.split("/") 
+    |> list.map(
+        fn(i) { 
+          case int.from_string(i) {
+            Ok(n) -> n
+            Error(_) -> 0
+          }
+        })
+      )
+}
 ```
-Gleam ... 
-let date = Date.from_text("10/12/2021")
+
+Example usage and output:
+
+```Gleam
+parse_date("12/31/2021")
+// Output: #(2021, 12, 31)
 ```
-The `date` variable will now hold a `Date` record with the day as `10`, month as `12`, and year as `2021`.
 
-We can also use the `format` parameter to specify the format of the input string. For example:
-```
-let date = Date.from_text("Dec 03, 2021", "%b %d, %Y")
-```
-In this case, the `format` parameter follows the same rules as `strftime` in the C programming language.
+## Deep Dive
 
-## Deep Dive:
+Historically, date parsing was a complex process due to the variety of date format conventions across cultures and computing systems. It's now made simpler, thanks to robust libraries and standardized date formats like ISO 8601.
 
-Parsing a date from a string has been a common task for many programming languages, and it is no different in Gleam. In fact, many other programming languages have similar functionalities for parsing dates, such as `dateutil` in Python and `DateTime::parse` in Ruby.
+When choosing methods to parse dates, consider available libraries, project requirements, and the date format you'll mainly deal with. For instance, `erlang.date` is a good choice for Unix timestamp parsing, but may not fit other use cases.
 
-Besides the `format` parameter, the `Date.from_text` function in Gleam also has an optional `locale` parameter for dealing with different date formats in different languages.
+An important detail in the implementation of date parsing is error handling. Since it involves user inputs, invalid dates, month, and year values are possible. Our code above defaults these to zero if conversion fails, but deeper validation should be implemented in a production application.
 
-Internally, `Date.from_text` uses the `DateTime.Parse` library, which leverages the power of the `DateTime::parse` function in Ruby and Rust's `chrono` library.
+## See Also
 
-## See Also:
-
-- [Gleam's Date module documentation](https://gleam.run/stdlib/date.html)
-- [Python's dateutil documentation](https://dateutil.readthedocs.io/en/stable/)
-- [Ruby's DateTime::parse documentation](https://ruby-doc.org/stdlib/libdoc/date/rdoc/DateTime.html#method-c-parse)
-- [Rust's chrono library documentation](https://docs.rs/chrono/latest/chrono/)
+* [Gleam's official documentation](https://gleam.run/docs/introduction/)
+* [Erlang's date-related functions](http://erlang.org/doc/man/calendar.html)
+* [DateTime Libraries in Gleam programming Language](https://stackoverflow.com/questions/tagged/gleam)

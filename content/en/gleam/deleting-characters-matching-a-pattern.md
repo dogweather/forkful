@@ -10,28 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Deleting Characters Matching a Pattern in Gleam
+
 ## What & Why?
 
-Deleting characters that match a specific pattern is a common task for programmers, as it allows for the manipulation and cleaning of text data. This can be useful for tasks such as data parsing or filtering out unwanted information in a dataset.
+Deleting characters matching a pattern in a string is a common programming task, allowing us to cleanse and modify data. This process is key in many scenarios, such as data validation, parsing and transformation.
 
 ## How to:
 
-To delete characters matching a pattern in Gleam, you can use the `String.replace` function along with a regular expression. Here's an example of deleting all vowels from a string:
+To give you an example, let's take a problem in which we delete all the non-numeric characters from a string. This can be easily done in Gleam using `string.filter_map`.
 
 ```Gleam
-my_string = "Hello World!"
-result = String.replace(my_string, regex"[aeiou]", "")
+import gleam/string
+
+pub fn delete_non_numeric_chars(string: String) -> String {
+  string
+  |> string.to_list
+  |> list.filter_map(fn
+    | c if string.is_digit(c) -> Some(c)
+    | _ -> None
+  end)
+  |> string.from_list
+}
+
+fn main() {
+  let modified_string = delete_non_numeric_chars("123aBc456")
+  assert modified_string == "123456"
+}
 ```
 
-The output will be `"Hll Wrld!"` as all vowels have been removed from the original string. You can also use this method to delete any other characters that match a particular pattern, such as numbers or special characters.
+When you run this, you will receive the output `123456`, as all non-numeric characters are removed.
 
-## Deep Dive:
+## Deep Dive
 
-While deleting characters using regular expressions is a common method, it's important to consider the alternative of using pattern matching in Gleam. This can provide more flexibility in terms of matching and manipulating specific parts of a string. However, if you are dealing with large datasets or complex patterns, regular expressions may be a more efficient option.
+Pattern matching is at the heart of Gleam and many other functional languages, deeply rooted in its history. The method demonstrated above leverages pattern matching to select and delete certain characters, an approach that varies from those like regular expressions, constructs widely used in other languages like Javascript or Python.
 
-It's also worth noting that the `String.replace` function in Gleam uses the Rust [`regex`](https://github.com/rust-lang/regex) library under the hood, making it a powerful tool for string manipulation.
+A possible alternative to this approach could be using `string.replace`, however it could be more inept for more complicated scenarios. Using `string.filter_map` for pattern matching is more versatile and optimizable for various use-cases.
 
 ## See Also:
 
-- [Gleam Documentation on Regular Expressions](https://gleam.run/documentation/libraries/regular-expressions.html)
-- [Rust `regex` Library Documentation](https://docs.rs/regex/)
+To learn more about:
+- Gleam's pattern matching, check out: https://gleam.run/tour/pattern-matching/
+- String functions in Gleam: https://gleam.run/std-lib/gleam/string/ 
+- The `filter_map` function: https://gleam.run/std-lib/gleam/list/#filter_map

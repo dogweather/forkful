@@ -11,35 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Creating a temporary file provides a storage spot for data over a brief period. Programmers do this to reduce memory usage and manage file interactions within programs efficiently. 
 
-Temporary files are temporary files created by programmers to store data temporarily during the execution of a program. These files are used to store data that is only needed for a short period of time and can be discarded once the program is finished.
-
-## How to:
-
-To create a temporary file in Elixir, we can use the [File] module's [open!] function. This function takes in a file path as a parameter and returns a tuple containing the file's handle and a temporary file path. The temporary file will automatically be deleted once the file handle is closed. 
-
-Sample code:
+## How to
+Elixir has a built-in module, ':file', for file manipulation tasks. This module can generate a temporary file for you:
 
 ```Elixir
-{file_handle, temp_file_path} = File.open!( "my_temp_file.txt" )
-File.write!(file_handle, "This is a temporary file created using Elixir!")
-File.close(file_handle)
+{:ok, {path, device}} = :file.mkstemp("/tmp/tempfile")
+IO.write(device, "Hello World")
 ```
 
-Sample output:
+In this code, the `:file.mkstemp` function creates a new temporary file in the "/tmp" directory with "tempfile" as the prefix. The function returns a tuple {:ok, {path, device}}, where path is the path to the temporary file, and the device is the IO device that represents the temporary file.
 
-No output will be printed, but the temporary file "my_temp_file.txt" will be created in the current directory and will contain the text "This is a temporary file created using Elixir!".
+## Deep Dive
+Elixir, although a modern language, has roots in the functional programming principles of the Erlang language and hence provides ample built-in functionality for file handling.
 
-## Deep Dive:
+Creating a temporary file is not the only option. Often, you may require a temporary directory, not just a single file. Elixir's `:file` module has the function `:file.mkdtemp`, which creates a temporary directory:
 
-Temporary files have been a common practice in programming for a long time. They are commonly used for situations where data needs to be stored temporarily, such as caching, logging, or file transfers. 
+```Elixir 
+{:ok, path} = :file.mkdtemp("/tmp/tempdir")
+```
 
-An alternative to creating a temporary file is to use in-memory data structures such as Maps or Lists, which are faster but have limited capacity. Another alternative is to utilize a database, although this may introduce unnecessary complexity and potential performance issues.
+Elixir's approach to file handling provides a high level of control over the lifecycle of the file. The creation of temporary files is handled by the operating system which ensures the file is unique, and it's the responsibility of your program to remove it when done.
 
-The [File] module in Elixir handles the creation and management of temporary files. It uses the underlying OS's file system to create and delete temporary files. Additionally, the [Path] module can be used to manipulate file paths if needed.
-
-## See Also:
-
-- [File Module](https://hexdocs.pm/elixir/File.html)
-- [Path Module](https://hexdocs.pm/elixir/Path.html)
-- [Temporary Files in Programming](https://www.baeldung.com/java-temporary-files)
+## See Also
+For more about the ':file' module and file manipulation in Elixir, take a look at these sources:
+* [:file module documentation in Elixir](https://hexdocs.pm/elixir/File.html)
+* [Working with files and directories in Elixir](http://elixir-recipes.github.io/files-directories/working-with-files-in-elixir/)
+* [Elixir's Approach to Data and Disk Interaction](https://medium.com/the-erlang-rookie/elixir-s-approach-to-data-and-disk-interaction-96d8f1302a4d)

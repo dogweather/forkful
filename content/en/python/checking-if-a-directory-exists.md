@@ -12,41 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-In Python, checking if a directory exists is the process of verifying if a specific file path corresponds to a directory on the machine. This is important for programmers because it allows them to handle different scenarios depending on whether the directory already exists or needs to be created.
+Checking if a directory exists in Python involves confirming if a specified folder or directory is present in a file system. Programmers do this to avoid runtime exceptions while attempting to access nonexistent directories.
 
-## How to:
+## How To:
 
-To check if a directory exists in Python, we can use the ```os.path.exists()``` function.
-```python
+You can check if a directory exists by using the `os.path` module in Python. Here's a simple example:
+
+```Python
 import os
 
-dir_path = "/path/to/directory"
+# specify the directory name
+directory_name = '/path/to/your/directory'
 
-if os.path.exists(dir_path):
-  print("Directory exists")
+# check directory
+if os.path.isdir(directory_name):
+    print('Directory exists.')
 else:
-  print("Directory does not exist")
+    print('Directory does not exist.')
 ```
-Sample output:
+If your directory exists, the output will be:
+
+```'Directory exists.'```
+
+Otherwise, you'd see:
+
+```'Directory does not exist.'```
+
+## Deep Dive:
+
+The method above uses the Python built-in module `os.path`. This module has been part of Python since its initial releases in the late 1990s, so it's pretty reliable and universally accepted.
+
+However, if you're using Python 3.4 and above, you also have the option of using the `pathlib` module. This module is object-oriented, meaning it represents filesystem paths as objects instead of plain strings. Here's how it works:
+
+```Python
+from pathlib import Path
+
+# specify the directory name
+directory_name = '/path/to/your/directory'
+
+# check directory
+if Path(directory_name).is_dir():
+    print('Directory exists.')
+else:
+    print('Directory does not exist.')
 ```
-Directory exists
-```
 
-## Deep Dive
+This newer, object-oriented approach provides a more intuitive and pythonic way to interact with filesystem paths. However, for compatibility and simplicity, many folks still prefer the good old-fashioned `os.path` module.
 
-### Historical Context:
+## See Also:
 
-The ```os.path.exists()``` function was introduced in Python 2.4 as part of the ```os.path``` module. Before this, developers had to use the ```os.path.isfile()``` and ```os.path.isdir()``` functions separately to check if a file or directory exists respectively.
+Here are some additional resources you might find helpful:
 
-### Alternatives:
-
-There are a few other ways to check if a directory exists in Python, such as using the ```os.access()``` function or the ```Path.exists()``` method from the ```pathlib``` module. However, the most commonly used and recommended method is still using ```os.path.exists()```.
-
-### Implementation Details:
-
-The ```os.path.exists()``` function takes in a path as an argument and returns a Boolean value ```True``` if the path exists and ```False``` if it does not. It can take both absolute and relative paths. It is worth noting that this function only checks for the existence of the path and does not differentiate between files and directories.
-
-## See Also
-
-- [Official documentation for ```os.path.exists()```](https://docs.python.org/3/library/os.path.html#os.path.exists)
-- [Geeks for Geeks article on checking file and directory existence in Python](https://www.geeksforgeeks.org/python-os-path-exists-method/)
+1. [Python `os.path` official documentation](https://docs.python.org/3/library/os.path.html)
+2. [Python `pathlib` official documentation](https://docs.python.org/3/library/pathlib.html)
+3. [Dive Into Python's Chapter on Files](http://diveintopython3.problemsolving.io/files.html)
+4. [Python's `os` module's useful filesystem methods](https://docs.python.org/3/library/os.html)

@@ -11,40 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-String interpolation in Python refers to the process of embedding variables or expressions within a string. This allows for the dynamic creation of strings based on the values of these variables or expressions. Programmers use string interpolation to make their code more concise and readable, as well as to reduce the amount of coding required for creating and formatting strings.
+String interpolation is a method for substituting values into placeholders within a string. Programmers can use this process to inject dynamically altered values into strings, making it a breeze to construct and manage sophisticated string formats.
 
 ## How to:
-
-String interpolation in Python is achieved using the string formatting operator % or the format() function. Let's see some examples:
+Here's how you can use Python’s built-in f-string method for string interpolation. The format is `{variable_name}` within the string.
 
 ```Python
-# Using the % operator
-age = 25
-name = "John"
-print("Hello, my name is %s and I am %d years old." % (name, age))
+# Define variables
+name = 'John'
+age = 30
+
+# Interpolation using f-string
+print(f"My name is {name}, and I am {age} years old.")
+
+# Output:
+# "My name is John, and I am 30 years old."
 ```
-Output: Hello, my name is John and I am 25 years old.
+You can even do computations within `{...}`.
 
-```Python 
-# Using the format() function
-company = "ABC Corp"
-employees = 100
-print("The company {} has {} employees.".format(company, employees))
+```Python
+n = 5
+m = 10
+
+print(f"The sum of {n} and {m} is {n+m}.")
+
+# Output:
+# "The sum of 5 and 10 is 15."
 ```
-Output: The company ABC Corp has 100 employees.
+## Deep Dive
+Historically, Python offered the `%` operator and `str.format()` method for string formatting. The f-string method was introduced in Python 3.6 to make string formatting more intuitive and readable. 
 
-In these examples, we have inserted the values of the variables ```name```, ```age```, ```company``` and ```employees``` into our strings using the % operator and the format() function, respectively.
+Although older methods still work, the f-string method is more pythonic, meaning it aligns with the Python community's best practices for clarity and efficiency.
 
-## Deep Dive:
+Implementation-play: Python’s f-string string interpolation undergoes the process at runtime, meaning interpolation expressions get evaluated when the program runs, adding extra flexibility.
 
-In older versions of Python (before 3.6), string interpolation was done using the % operator. However, in Python 3.6 and above, the recommended way of string interpolation is through f-strings. F-strings allow for even simpler string interpolation by directly formatting the string with the values of the variables or expressions enclosed in curly braces.
+## See Also
+[Official Python Docs on String Interpolation](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
 
-Besides f-strings, another alternative to string interpolation in Python is the string Template class from the string module. This allows for more advanced string interpolation techniques, such as substituting values from dictionaries or using placeholder values for missing variables.
+[Python String Interpolation Tutorial](https://www.programiz.com/python-programming/string-interpolation)
 
-In terms of implementation, string interpolation involves parsing the string and replacing the placeholders with the values of the variables or expressions. This is done by calling the __mod__() method in the case of % operator or the __format__() method for the format() function.
-
-## See Also:
-
-- Official Python documentation on [string formatting operations](https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting)
-- Real Python's [guide on string interpolation](https://realpython.com/python-string-formatting/) for a more detailed explanation and examples of different string interpolation methods.
+[String formatting in Python](https://realpython.com/python-f-strings/#f-strings-a-new-and-improved-way-to-format-strings-in-python)

@@ -12,42 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Concatenating strings is the process of combining two or more strings into one larger string. This is a commonly used technique in programming to manipulate and create dynamic text output.
+Concatenating strings is the process of joining two or more strings end-to-end to form a new string. We do it to dynamically create sentences, content, or data.
 
 ## How to:
 
-Concatenating strings in Elixir is simple and efficient. We can use the `<>` operator to join two strings together. Let's take a look at an example:
+In Elixir, we concatenate strings with the `<>` operator. Check this out:
 
-```Elixir
-name = "John"
-greeting = "Hello "
-
-puts greeting <> name
+```elixir
+name = "Charlie"
+greeting = "Hello, " <> name <> "!"
+IO.puts greeting
 ```
 
-This will output: `Hello John`
+The output you'll see is:
 
-We can also use the `<>` operator to concatenate multiple strings at once:
-
-```Elixir
-first_name = "Jane"
-last_name = "Doe"
-full_name = first_name <> " " <> last_name
-
-puts full_name
+```elixir
+"Hello, Charlie!"
 ```
 
-This will output: `Jane Doe`
+Easy, right? Strings are just glued together in the order you stake them.
 
-## Deep Dive:
+## Deep Dive
 
-Concatenating strings has been around since the early days of programming. It allows programmers to manipulate text in a more efficient way, compared to manually manipulating each individual character.
+In the past, Elixir employed concatenation method similar to other languages like JavaScript (`+` operator) or Python (`join` function). However, it now uses the `<>` operator, unique, and more explicit.
 
-In Elixir, there are other ways to concatenate strings as well. One alternative is using the `Enum.join` function, which can be used to join a list of strings together with a delimiter.
+Are there alternatives? Well, you could use `String.concat/2` or `String.concat/1` from the built-in String module. But the `<>` operator is faster owing to being a compiler directive.
 
-The `<>` operator is not limited to only strings, it can also be used to concatenate other data types, such as numbers. This makes it a versatile tool in programming.
+Why is this important? Concatenation might seem trivial, but it’s frequently used in creating dynamic content, merging pieces of text from different sources, etc. Since Elixir is an immutable language, every concatenation operation creates a new string. Knowing these details helps you manage memory better and write more efficient code.
 
-## See Also:
+## See Also
 
-- [Elixir Documentation on String Concatenation](https://hexdocs.pm/elixir/String.html#concatenation)
-- [Elixir Repl Example of String Concatenation](https://hexdocs.pm/elixir/String.html#concatenation)
+- Official Elixir docs on the String module: [elixir-lang.org/getting-started/basic-types.html#strings](https://elixir-lang.org/getting-started/basic-types.html#strings)
+- Discussion on Elixir Forum: [string concatenation vs <> operator](https://elixirforum.com/t/string-concatenation-vs-operator/884)

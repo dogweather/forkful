@@ -12,36 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Interpolating a string in Elixir simply means inserting data into a string. Instead of manually concatenating strings and variables, this method allows for easier and cleaner string manipulation. It is a common practice among programmers to make their code more readable and maintainable.
+Interpolating a string is the process of injecting variables into a string. Programmers use it to create dynamic messages and enhance the readability of their code.
 
 ## How to:
 
-To interpolate a string in Elixir, use the `#{...}` syntax within a double-quoted string. The expression within the brackets will be evaluated and the result will be inserted into the string. Let's look at an example:
+Let's demonstrate string interpolation in Elixir with code samples. We'll begin with a name variable, then inject it into a greeting. 
 
 ```Elixir
-name = "John"
-age = 28
-"Hello, my name is #{name} and I am #{age} years old."
+name = "Bob"
+IO.puts "Hello, #{name}!"
 ```
 
-The output would be: `Hello, my name is John and I am 28 years old.`
-
-You can also use interpolation with function calls, as shown below:
+Upon executing, you'll see:
 
 ```Elixir
-"Today is #{Date.utc_today()}."
+Hello, Bob!
 ```
 
-Output: `Today is 2019-11-14`.
+You could even embed Elixir expressions into the string. Let's multiply 2 by 3 using string interpolation:
+
+```Elixir
+IO.puts "Twice of 3 is #{2 * 3}"
+```
+
+The output would display:
+
+```Elixir
+Twice of 3 is 6
+```
 
 ## Deep Dive
 
-Interpolating strings is a feature that originated from the Ruby programming language, which inspired the creators of Elixir. This helpful feature also exists in other popular languages such as JavaScript and Python.
+String interpolation, introduced with Elixir, borrows its concept from other languages like Ruby. It's a more readable alternative to concatenating strings using the `<>` operator. You would rewrite `"Hello, " <> name <> "!"` as `"Hello, #{name}!"`.
 
-An alternative to interpolation in Elixir is the `<>` concatenation operator. It works similarly but can become cumbersome for longer strings and multiple variables.
+Behind the scenes, the `#{}` syntax tells Elixir to evaluate the expression inside and convert it to a string. Note that you can only interpolate into double-quoted strings because single-quoted strings, called charlists, are a different datatype.
 
-Internally, Elixir makes use of the `String.Chars` protocol to convert any data type into a string, making it possible to interpolate any type of data.
+## See Also:
 
-## See Also
-
-To learn more about string interpolation in Elixir, check out the [official documentation](https://hexdocs.pm/elixir/String.html#interpolation) and [ElixirSchool](https://elixirschool.com/en/lessons/basics/string-interpolation/). You can also explore other useful features of Elixir such as pattern matching and concurrency. Happy coding!
+- [Elixir School](https://elixirschool.com/en/lessons/basics/basics/) offers a splendid elementary course to grasp Elixir's basics. 
+- [Elixir's official guide](https://elixir-lang.org/getting-started/basic-types.html) sheds light on basic types and operations, including string interpolation.
+- For further reading, you can delve into how Elixir implements this feature at its core, on the [Elixir GitHub Repository](https://github.com/elixir-lang/elixir).

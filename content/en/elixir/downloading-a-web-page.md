@@ -12,38 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Downloading a web page means retrieving the HTML code and resources of a website from a remote server to display it on a local device. Programmers do this to access website content, scrape data, or automate tasks such as filling out web forms.
+Downloading a web page means retrieving its content, typically an HTML file, over the internet. Programmers do it to automate data extraction (web scraping), run functional tests, or monitor up-time. 
 
 ## How to:
 
-Using Elixir, downloading a web page can be done in just a few lines of code. First, we need to install the `HTTPoison` dependency. Then, we can use the `get` function to specify the URL of the webpage we want to download.
+Elixir provides a high-level HTTP client called `:httpc` to download web pages. Here's an example:
 
-```
-Elixir
-def deps do
-  [
-    {:httpoison, "~> 1.8"}
-  ]
-end
+```elixir
+{:ok, {{’HTTP/1.1’, 200, ‘OK’}, _headers, body}} = :httpc.request('http://example.com')
+IO.puts body
 ```
 
-```
-Elixir
-url = "https://www.example.com"
-response = HTTPoison.get(url)
-```
-
-The `response` variable will now contain the HTML code of the webpage as well as information about the response, such as status code and headers. We can access the HTML code by using `response.body` in our code.
+This code makes a GET request to 'http://example.com', and prints the response body, which is the content of the web page.
 
 ## Deep Dive:
 
-Downloading web pages has long been an essential task for programmers, especially for those involved in web scraping or automation. Before Elixir, it was primarily done using languages such as Python, JavaScript, or Ruby.
+`:httpc` is part of Erlang’s `inets` application, which Elixir inherits as it runs on the Erlang virtual machine, BEAM. 
 
-In Elixir, besides `HTTPoison`, there are other libraries available for downloading web pages, such as `Mint`, `Finch`, and `Crawly`. Each offers different features, and it's up to the programmer to choose the most suitable one for their project.
+There are alternative libraries to `:httpc`, such as `HTTPoison` and `Tesla`. They offer additional features like better error handling, instrumentation, and session support.
 
-Behind the scenes, Elixir uses the Erlang-based `httpc` client to handle the requests. This client supports features such as redirects, authentication, and HTTPS.
+When you do `:httpc.request(url)`, BEAM spawns a new lightweight process, making a non-blocking HTTP request. It's highly concurrent, and it won't block the execution of your Elixir application.
 
-## See Also:
+## See Also: 
 
-- Documentation for `HTTPoison`: https://hexdocs.pm/httpoison/1.0.3/HTTPoison.html
-- Comparison of web scraping libraries in Elixir: https://akoutmos.com/post/comparing-web-scraping-libraries-in-elixir/
+- Erlang `:httpc` documentation, to understand its full capabilities: http://erlang.org/doc/man/httpc.html
+- Elixir `HTTPoison` library documentation, for a more feature-rich library: https://hexdocs.pm/httpoison/readme.html
+- Elixir `Tesla` library documentation, for the swiss-army knife of HTTP clients in Elixir: https://hexdocs.pm/tesla/readme.html
+- Elixir School, for learning more about Elixir: https://elixirschool.com/

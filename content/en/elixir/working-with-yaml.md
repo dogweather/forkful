@@ -12,32 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Working with YAML in Elixir refers to the process of manipulating YAML files to store and retrieve data. YAML stands for "YAML Ain't Markup Language" and is a human-readable data serialization format. Programmers use YAML because it is easy to read and write, making it a popular choice for storing configuration or data files for applications.
+YAML, short for "YAML Ain't Markup Language", is a human-readable data serialization standard that has been commonly used for configuration files, but is also used in data exchange between languages with different data structures. Developers use it since it's more readable than formats like JSON and XML, and it allows representation of complex data types, hierarchy, and references.
 
 ## How to:
 
-To work with YAML in Elixir, you will need to install the "yaml" package, which can be done by adding `{:yaml, "~> 0.9.0"}` to your project's `mix.exs` file and running `mix deps.get`. Once the package is installed, you can use it with `require YAML` in your modules.
+Elixir doesn't have built-in YAML parsing, so we'll need an external library like `yamerl`. You can add it to your dependencies in `mix.exs`:
 
-To read a YAML file, you can use `YAML.load_file("file.yaml")`, which will return a map with the data from the file. To write to a YAML file, you can use `YAML.dump(data, "file.yaml")`, where `data` is a map or struct containing the information you want to store.
-
-```
-Elixir
-# Load data from YAML file
-data = YAML.load_file("config.yaml")
-# Write data to YAML file
-YAML.dump(data, "new_config.yaml")
+```Elixir
+defp deps do
+  [
+    {:yamerl, "~> 0.8.1"}
+  ]
+end
 ```
 
-## Deep Dive:
+Reading from a YAML file:
 
-YAML was first released in 2001 and has gained popularity as a data serialization format due to its simplicity and readability. It is often used for configuration files in applications or for storing data in a human-readable format.
+```Elixir
+{:ok, yamerl_app} = Application.ensure_all_started(:yamerl)
+{:ok, yaml_content} = YamerlConvenience.load_file("path/to/yourFile.yaml")
 
-An alternative to YAML is JSON, which is also human-readable but has a stricter syntax. Elixir provides built-in support for working with JSON, but YAML can be a better choice for more complex data structures or situations where readability is more important.
+IO.inspect(yaml_content)
+```
 
-Internally, the "yaml" package uses the LibYAML library, a C library for parsing and emitting YAML. This makes it faster and more efficient than other Elixir libraries that use pure Elixir implementations.
+Writing to a YAML file, you’ll have to serialize Elixir data structures into YAML by manually writing a method:
 
-## See Also:
+```Elixir
+def write_yaml(my_map) do
+  yaml_string = YamerlConvenience.dump(my_map)
+  File.write("path/to/yourFile.yaml", yaml_string)
+end
+```
 
-- [YAML tutorial](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
-- [Elixir "yaml" package documentation](https://hexdocs.pm/yaml/YAML.html)
-- [LibYAML homepage](https://pyyaml.org/wiki/LibYAML)
+Run `mix deps.get` to fetch the dependency and you're good to go!
+
+## Deep Dive
+
+YAML was first proposed by Clark Evans in 2001, and then developed together with Oren Ben-Kiki and Ingy döt Net. It's written to integrate well with languages like Perl, Python, JavaScript, and Ruby - but there's no native support in Elixir, hence plug-ins like `yamerl`.
+
+If you don't need complex data types, hierarchy, or reference abilities, JSON could be easier and is built into Elixir with the `Jason` library. 
+
+`yamerl` itself does not support YAML document creation. For that converting Elixir map into handwritten YAML string or using template libraries is required, which is something you might consider when deciding on a format for data exchange or configuration.
+
+## See Also
+
+For more information on YAML, visit the official YAML site: 
+https://yaml.org/
+
+To further explore `yamerl`, you can visit its repo:
+https://github.com/yakaz/yamerl
+
+For more about `Jason` as a JSON alternative:
+https://hexdocs.pm/jason/readme.html

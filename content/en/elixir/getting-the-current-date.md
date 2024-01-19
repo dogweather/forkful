@@ -12,44 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Getting the current date is the process of retrieving the current date and time from your computer's system clock. It is a common task for programmers who want to keep track of time-sensitive events or display the current date and time in their applications.
+Getting the current date is pretty self-explanatory - it's a process of obtaining today's date from the system. Programmers usually need it to log events, timestamp records, or to handle date-specific functions in applications.
 
-## How to:
+## How To:
+
+### Getting current date in Elixir:
+In Elixir, you can obtain the current date using the `Date.utc_today/0` function from the `Date` module. Here's how you do it:
 
 ```Elixir
 Date.utc_today()
-#=> ~D[2021-09-29]
-
-Date.utc_today() |> Date.to_string()
-#=> "2021-09-29"
 ```
-
-The `Date.utc_today()` function returns the current date in the UTC format. The resulting date is represented using the `~D[YYYY-MM-DD]` syntax. To convert it into a string, we can use the `Date.to_string()` function.
+To demonstrate, let's run it in Elixir's interactive shell (IEx):
 
 ```Elixir
-Date.to_string(Date.utc_today(), [{:format, "{ISO}"}, {:width, 1}])
-#=> "{2021-09-29T00:00:00.000Z}"
-
-Date.to_string(Date.utc_today(), [{:format, "{ISO8601}"}, {:width, 1}])
-#=> "{2021-09-29T00:00:00Z}"
-
-Date.strftime(Date.utc_today(), "%m/%d/%Y")
-#=> "09/29/2021"
+iex> Date.utc_today()
+~D[2022-03-18]
 ```
+In this example, the output is `~D[2022-03-18]`, which represents March 18, 2022, in UTC timezone (replace with current date when used as a sample).
 
-If we want to customize the format of the date, we can use the `Date.to_string()` or the `Date.strftime()` functions. The `Date.to_string()` function accepts various options like `{:format, "{ISO8601}"} or {:width, 1}` to specify the output format. On the other hand, `Date.strftime()` uses the [strftime](https://man7.org/linux/man-pages/man3/strftime.3.html) format specifiers to define the output format.
+## Deep Dive
 
-## Deep Dive:
+### Historical Context:
+The `Date.utc_today/0` function in Elixir is built upon Erlang, Elixir's underlying language. Erlang provides fantastic support for native date and time handling, which Elixir leverages.
 
-In Elixir, dates and times are represented using the `Date` and `Time` modules. The `Date` module provides functions for manipulating dates, while the `Time` module handles time-related functions.
+### Alternatives:
+Elixir also offers alternatives to get current date:
+- `NaiveDateTime.utc_now/0`: This method returns both the current date and time.
+- `DateTime.utc_now/0`: Similar to `NaiveDateTime.utc_now/0`, but this one also includes timezone information.
 
-Alternative methods for getting the current date in Elixir include using the built-in `:os.timestamp()` function or the [Timex](https://github.com/bitwalker/timex) library. These methods offer additional features such as timezone handling and date manipulation.
-
-Under the hood, Elixir uses the `erlang:now()` function to get the current date and time from the Erlang VM. The `Date.utc_today()` function then converts the Erlang timestamp into a `Date` struct. This approach ensures consistent date and time across different systems and platforms.
+### Implementation Details:
+`Date.utc_today/0` returns a `Date` struct which represents a date keeping year, month, and day fields only. It's important to note that it does not consider timezone, and always returns the date in UTC.
 
 ## See Also:
 
-- [Elixir Date module documentation](https://hexdocs.pm/elixir/Date.html)
-- [Elixir Time module documentation](https://hexdocs.pm/elixir/Time.html)
-- [Erlang :os.timestamp() function documentation](https://erlang.org/doc/man/os.html#timestamp-0)
-- [Timex library documentation](https://hexdocs.pm/timex/index.html)
+To delve deeper into Elixir's date and time manipulation, take a look at these:
+1. Elixir's official docs about `Date` module: [https://hexdocs.pm/elixir/Date.html](https://hexdocs.pm/elixir/Date.html)
+2. Elixir School's guide to Date & Time: [https://elixirschool.com/en/lessons/basics/date-time/](https://elixirschool.com/en/lessons/basics/date-time/)
+3. Erlang's official docs on time module: [https://erlang.org/doc/man/time.html](https://erlang.org/doc/man/time.html)

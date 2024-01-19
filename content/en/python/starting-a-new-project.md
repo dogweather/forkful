@@ -11,46 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Starting a new project in Python means creating a new software project using the Python programming language. Programmers do this to develop new software applications, tools, or libraries that can be used by others or for their own personal use. This allows for a versatile and customizable approach to creating software solutions.
+Starting a new project means creating the initial foundation for your code. Doing so allows programmers to plan out their code structure, design their data flow, and create an adaptable framework for future development.
 
 ## How to:
+Let's start a new Python project. Here's a basic setup:
 
-Creating a new project in Python is easy and can be done in just a few simple steps.
+Directory structure:
+```
+project/
+├── bin/
+├── docs/
+├── project/
+│   └── __init__.py
+├── tests/
+│   └── __init__.py
+├── setup.py
+└── README.md
+```
+`__init__.py` tells Python that the directory should be treated as a package.
 
-First, open your preferred IDE or code editor. Some popular options for Python include PyCharm, Visual Studio Code, and Sublime Text.
+`setup.py`:
+```python
+from setuptools import setup, find_packages
 
-Next, create a new file with a .py extension, which indicates that it is a Python file. This file will serve as your main program file.
-
-Now, it's time to start coding! Below is a simple example of a "Hello World" program in Python.
-
-```Python
-# This is a comment. It won't affect the code.
-print("Hello, World!")
+setup(name='YourProject',
+      version='0.1',
+      description='Project Description',
+      author='Your Name',
+      packages=find_packages())
 ```
 
-To run this program, simply click the run button or use the command line to navigate to the file directory and type `python filename.py`.
+Run `python setup.py install` for installing package.
 
-The output should be:
-
-```Python
-Hello, World!
+Initial test in `tests/test_initial.py`:
+```python
+def test_initial():
+    assert 1 == 1
 ```
 
-Congratulations, you have just created your first Python project!
+Run `pytest tests` for starting tests.
 
-## Deep Dive:
+## Deep Dive
+Historically, Python developers used folder structures, and setup files to manage their projects manually. Over time, tools like `setuptools` and `pip` showed up to help automate and standardize practices.
 
-Python was first created in the late 1980s by Guido van Rossum, with the goal of creating a language that was easy to learn and understand. Since then, it has become one of the most popular and widely used programming languages, especially in the scientific and data analysis communities.
+There are alternatives to manual project creation: cookiecutter provides project templates, and IDEs often include their own project management systems. But rolling your own can make sure your project structure suits your needs exactly.
 
-While Python is a great choice for starting new projects, there are alternative languages such as Java, C++, and JavaScript, that offer different features and capabilities. Ultimately, the choice of language depends on the specific needs of the project and the preferences of the programmer.
+Implementing a new project implies setting necessary directories, initializing your code base, and choosing your tech stack. This structure aids in managing source code, tests, and documentation, and helps other contributors get started easily.
 
-When creating a new project, it is important to structure the code in an organized and modular way. This allows for easier maintenance and future updates. Using functions, classes, and modules is a great way to achieve this. Additionally, using virtual environments can help manage dependencies and ensure consistency across different machines.
+## See Also
+Some helpful links:
+- [The Hitchhiker’s Guide to Python!](https://docs.python-guide.org/)
+- [setuptools documentation](https://setuptools.readthedocs.io/)
+- [cookiecutter GitHub](https://github.com/cookiecutter/cookiecutter)
+- [pytest documentation](https://docs.pytest.org/)
 
-## See Also:
-
-To learn more about starting a new project in Python, check out these resources:
-
-- [Official Python documentation](https://www.python.org/doc/)
-- [Python tutorials on W3Schools](https://www.w3schools.com/python/)
-- [Stack Overflow discussions on creating new projects](https://stackoverflow.com/questions/tagged/new+project+python)
+Now you're all set to start your own Python project! Happy coding!

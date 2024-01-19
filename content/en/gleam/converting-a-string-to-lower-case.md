@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Gleam: The Efficient Way to Convert Strings to Lower Case
-
 ## What & Why?
-
-Converting a string to lower case is a common task in programming that involves changing all the characters in a string to their lower case equivalents. This is useful for various reasons, such as improving readability, making data more consistent, and comparing strings without worrying about case sensitivity. Most programming languages have built-in functions for this, and Gleam is no exception.
+Converting a string to lower case means changing all the uppercase characters in a string to their lower case equivalents. It's a regular operation when comparing string data where case-sensitivity can lead to incorrect comparisons.
 
 ## How to:
+Here's a small chunk of Gleam code implementing this operation.
+```Gleam
+import gleam/string
 
-Converting a string to lower case in Gleam is a simple and straightforward process. You can use the ```String.to_lower_case()``` function, which takes a string as an argument and returns a new string with all lower case characters. Let's look at an example:
-
-```
-Gleam> let my_string = "Gleam is Awesome"
-Gleam> String.to_lower_case(my_string)
-"gleam is awesome"
-```
-
-As you can see, all the characters have been converted to lower case, making the string easier to read and manipulate. You can also directly use the ```to_lower_case()``` method on any string variable, like this:
-
-```
-Gleam> let my_string = "Gleam is Awesome"
-Gleam> my_string.to_lower_case()
-"gleam is awesome"
+pub fn lower_case_string(word: String) -> String {
+  string.lower(word)
+}
 ```
 
-It's that simple!
+When running this function:
+```Gleam
+let result = lower_case_string("HELLO, WORLD!")
+assert result == "hello, world!"
+```
+We'll get `"hello, world!"` as a result.
 
-## Deep Dive:
+## Deep Dive
+Converting strings to lower case is as old as computer programming itself. It's often vital when comparing or searching strings. For example, when comparing a user input like "EMAIL" with a stored value, "Email", they won't match unless you lower both to "email".
 
-Historically, converting strings to lower case has been a challenging task for developers due to the varying case handling among different languages. Gleam handles this issue by using the Unicode standard, which ensures consistency in case handling across different languages. Some alternative methods for converting strings to lower case include using regular expressions or creating a custom function that iterates over each character. However, these methods may not be as efficient or reliable as using Gleam's built-in function.
+Gleam deals elegantly with this common operation using the `string.lower` function. However, you could build it from scratch iterating over characters of the string and replacing uppercase characters with their lower version.
 
-## See Also:
+Alternatives are few, because the crux of the operation essentially remains the same despite language or platform. The implementation may differ in internals, efficiency, or method, but the objective stays constant: ensure string comparisons are case-insensitive.
 
-- [Gleam documentation on string functions](https://gleam.run/articles/strings)
-- [Unicode case mapping](https://unicode.org/charts/collation/)
-- [Gleam's GitHub repository](https://github.com/gleam-lang/gleam)
+## See Also
+- Gleam's `gleam/string` library documentation at "https://hexdocs.pm/gleam_stdlib/gleam/string"
+- ASCII Table for a full list of characters and their codes at "http://www.asciitable.com/"
+- String comparison in the Gleam Book at "https://gleam.run/book/tour/basic-types.html#comparing"

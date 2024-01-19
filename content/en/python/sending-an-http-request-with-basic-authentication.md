@@ -12,39 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-When sending an HTTP request with basic authentication, programmers are including a set of credentials in the request header in order to access protected resources. This method of authentication is commonly used for simple applications that do not require high levels of security. 
+Sending an HTTP request with basic authentication involves adding an 'Authorization' header to the request. Programmers do this to access web services that require user validation, making sure only authorized personnel gets in.
 
 ## How to:
 
+In Python, you can use the `requests` library to send an HTTP request with basic authentication. Here's how:
+
 ```Python
 import requests
+from requests.auth import HTTPBasicAuth
 
-url = "https://www.example.com/api/protected_resource"
-username = "username"
-password = "password"
-
-r = requests.get(url, auth=(username, password))
-
-print(r.status_code)
+response = requests.get('https://api.github.com/user', auth=HTTPBasicAuth('username', 'password'))
+print(response.json())
 ```
-Output: 200
+The output will be your user data in a JSON format if the username and password are correct. In case of incorrect credentials, you'll get the relevant error message.
 
-## Deep Dive:
+## Deep Dive
 
-### Historical Context:
+HTTP Basic Authentication has been there since the dawn of the world wide web. Back then, its simplicity and effective method of user validation made it widely adopted.   
+Alternative methods include Digest Access Authentication, which is a tad more secure, and Bearer Token method, widely used in OAuth 2.0.
+Basic Auth smoothly transforms into these alternatives when you need to up the authentication game in your app. 
 
-HTTP basic authentication has been around since the early days of the internet, and was originally designed to be a simple and easy way to authenticate users for web applications. 
-
-### Alternatives:
-
-While basic authentication is still commonly used, it is not considered the most secure option. Alternatives such as OAuth and token-based authentication have been developed to provide more secure methods of authentication.
-
-### Implementation Details:
-
-When sending an HTTP request with basic authentication, the username and password must be encoded in a specific format and added to the request header. The server then checks these credentials against the ones stored on its end to allow access to the resource. 
+While sending a basic auth request in Python, your username and password are base64 encoded. Note that this is not in any way encryption. The credentials can be easily decoded using the base64 encoding. That’s why it's mostly preferable to use an HTTPS connection to ensure your credentials don't get exposed.
 
 ## See Also:
 
-- [HTTP Authentication: Basic and Digest Access Authentication | Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [OAuth Official Website](https://oauth.net/)
-- [Token-Based Authentication for WebAPIs: ASP.NET Cors + Custom Delegating Handler](https://docs.microsoft.com/en-us/archive/blogs/azureossds/token-based-authentication-for-webapis-asp-net-cors-custom-delegating-handler)
+To learn more, check out these articles:
+- [HTTP Basic Auth](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Digest Access Authentication](https://en.wikipedia.org/wiki/Digest_access_authentication)
+- [HTTP Authentication from Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Python requests library](http://docs.python-requests.org/en/latest/) 
+
+Just remember, with Basic Auth, always use HTTPS. Happy coding!

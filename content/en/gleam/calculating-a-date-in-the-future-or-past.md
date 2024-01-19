@@ -12,44 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Calculating a date in the future or past is the process of obtaining a specific date by adding or subtracting a certain number of days, weeks, months, or years to or from a given date. Programmers often need to perform this task in order to create features such as scheduling, countdowns, and reminders in their applications.
+"Calculating a date in the future or past" refers to time manipulation in programming. Programmers do it to perform tasks like event scheduling, reminders, or data analysis.
 
 ## How to:
 
-```
-Gleam.DateTime.date_shift(
-    date: DateTime,
-    time_unit: DateTime.TimeUnit,
-    value: Int
-) -> DateTime
+Gleam currently doesn't have a built-in date/time library, therefore, you would typically need to use the Erlang runtime to perform such operations. Let's see how we can add days to the current date.
+
+```erlang
+import erlang
+import erlang/time.{Now}
+
+pub fn add_days_to_current_date(days: Int) {
+  current_date = Now.milliseconds() 
+  future_date = current_date + (days * 24 * 60 * 60)
+  future_timestamp = erlang:system_time_to_universal_time(future_date)
+  future_timestamp
+}
 ```
 
-This function takes in a date, a time unit (day, week, month, or year), and a value to add or subtract. Let's say we want to find the date that is 5 days after January 1, 2022.
-
-```
-let date = DateTime.from_naive_date(2022, 1, 1)
-let future_date = 
-    DateTime.date_shift(date, DateTime.Day, 5)
-```
-
-The ```future_date``` will then be March 6, 2022. Similarly, if we want to find the date 2 months before October 15, 2020:
-
-```
-let date = DateTime.from_naive_date(2020, 10, 15)
-let past_date = 
-    DateTime.date_shift(date, DateTime.Month, -2)
-```
-
-The ```past_date``` will be August 15, 2020.
+In the above code, `Now.milliseconds()` gets the time in milliseconds since Unix Epoch. We're adding to it the number of milliseconds equivalent to the number of days passed. `erlang:system_time_to_universal_time/1` function, converts it back to a date-time tuple we can interpret more easily.
 
 ## Deep Dive
 
-Calculating dates in the past or future has been made easier with the introduction of date and time libraries like Gleam's DateTime module. Before these libraries, programmers would have to manually calculate the date using arithmetic operations, which can be tedious and prone to error.
-
-Other programming languages also have built-in functions for date shifting, such as Python's ```datetime.timedelta()``` and Ruby's ```Date.new()``` methods. However, Gleam's DateTime module is specifically designed for functional programming, making it easier and more efficient to use for functional programmers.
-
-The implementation of the ```date_shift()``` function in Gleam is based on the concept of ```Duration```, which is the amount of time between two DateTime objects. This ensures that the function is accurate and consistent when calculating dates.
+Manipulation of dates dates back to the inception of structured programming, with increasing sophistication as more complex needs become evident in technology evolution. Alternatives within the BEAM languages, which Gleam is a part of, include the Erlang date/time library and Elixir's Timex. In Gleam, as it does not yet have a built-in functionality, we utilise the Erlang libraries as shown above under the interoperability premise.
 
 ## See Also
 
-- Gleam DateTime documentation: https://gleam.run/packages/gleam
+* Erlang's date/time library: http://erlang.org/doc/man/erlang.html#type-system_time
+* Elixir's Timex library: https://hexdocs.pm/timex/readme.html
+* More on Gleam's Interoperability with Erlang: https://gleam.run/book/tour/interop-with-erlang.html

@@ -11,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Capitalizing a string in Python refers to converting the first letter of each word in a string to uppercase, while the remaining letters are converted to lowercase. Programmers often do this to standardize the formatting of strings and make them more readable.
+
+To capitalize a string in Python means to make the first character uppercase and the rest lower. It's often done for formatting text or for making comparisons case-insensitive.
 
 ## How to:
-To capitalize a string in Python, you can use the built-in function `capitalize()`. This function takes the string as its argument and returns a new string with the first letter of each word capitalized.
+
+Python provides built-in string methods for capitalizing strings: `capitalize()`, `lower()`, and `upper()`. Here's how you do it:
 
 ```Python
-# Example string
-my_string = "this is an example string"
-# Capitalize the string
-new_string = my_string.capitalize()
-print(new_string) # Output: This is an example string
+# using capitalize()
+text = "hello world"
+text = text.capitalize()
+print(text)  # Output: Hello world
+
+# changing all to uppercase
+text = "hello world"
+text = text.upper()
+print(text)  # Output: HELLO WORLD
+
+# changing all to lowercase
+text = "HELLO WORLD"
+text = text.lower()
+print(text)  # Output: hello world
 ```
 
-You can also use string slicing to capitalize a string in Python. In this technique, you first convert the string to lowercase using the `lower()` function, then capitalize the first letter of the string using the `upper()` function, and finally concatenate it with the rest of the string.
+## Deep Dive
+
+Historically, text-capitalization was vital in programming to handle variations in user input. With capitalized format, we have a standardized form, reducing errors due to differences in case.
+
+While Python's `capitalize()`, `upper()`, and `lower()` methods are the most common, you can also use `title()` to capitalize the first letter of each word:
 
 ```Python
-# Example string
-my_string = "this is an example string"
-# Capitalize the string
-capitalized_string = my_string[0].upper() + my_string[1:].lower()
-print(capitalized_string) # Output: This is an example string
+text = "hello world"
+text = text.title()
+print(text)  # Output: Hello World
 ```
 
-## Deep Dive:
-Capitalizing strings has been a common practice in programming since the early days. It is often used for formatting purposes or to make strings more human-readable. In some programming languages, such as Java and C++, there are specific functions for capitalizing strings, but in Python, you can easily achieve this by using the `capitalize()` function or the string slicing technique.
-
-There are a few alternatives to capitalizing strings in Python, such as using regular expressions or third-party libraries like `titlecase` or `pytitlecase`. However, these options may require more code and may not always produce the desired result.
-
-The `capitalize()` function in Python uses the `unicode` module internally to handle non-ASCII characters. This ensures accuracy and consistency in string capitalization, regardless of the encoding used. It also has special handling for apostrophes and other punctuation marks.
+The built-in methods are implemented in C. These methods traverse through each character in the input string, changing them to their equivalent uppercase or lowercase ASCII value. For non-ASCII characters, it uses Unicode mappings.
 
 ## See Also:
-- [Python String capitalize() method](https://www.programiz.com/python-programming/methods/string/capitalize)
-- [Python String Methods](https://www.w3schools.com/python/python_ref_string.asp)
+
+- Python's Official Documentation on String Methods: https://docs.python.org/3/library/stdtypes.html#string-methods
+- On Efficient String Concatenation: https://waymoot.org/home/python_string/
+- A Tutorial on Python Strings and Their Built-in Functions: https://realpython.com/python-strings/

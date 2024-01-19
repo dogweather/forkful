@@ -11,44 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Getting the current date is a common task in programming. It simply means finding out what the current date is according to the system. Programmers often need to get the current date in order to perform various tasks such as timestamping, scheduling tasks, or displaying the current date to the user.
 
-## How to:
-To get the current date in Python, we can use the built-in `datetime` module. We first import the module using `import datetime`. Then, we can use the `datetime.today()` method to get the current date. Here's an example:
+Getting the current date in programming is about retrieving today's date. Programmers usually do this to track real-time events, log timestamps, or calculate time intervals.
 
-```python
+## How To:
+
+In Python, the built-in `datetime` module makes accessing the current date dirt simple. Here's how:
+
+```Python
 import datetime
 
-current_date = datetime.today()
-print(current_date)
+# Get today's date
+today = datetime.date.today()
+
+print(today)
 ```
-
-This will output the current date and time in a `datetime` format, which looks like this: `2021-01-01 12:00:00`. If we want to display the current date in a specific format, we can use the `strftime()` method. Here's an example:
-
-```python
-import datetime
-
-current_date = datetime.today()
-formatted_date = current_date.strftime('%d/%m/%Y')
-print(formatted_date)
+You run the code, it'll spit out something similar:
+```Python
+2021-10-14  
 ```
+It's simply the Year-Month-Day. Pretty straightforward, right?
 
-This will output the current date in the format `01/01/2021`. You can change the format by changing the string provided to the `strftime()` method. The table below shows some common format codes:
+## Deep Dive
 
-| Code | Meaning     |
-|------|-------------|
-| %d   | Day (01-31) |
-| %m   | Month (01-12)|
-| %Y   | Year (e.g. 2021) |
-| %H   | Hour (00-23) |
-| %M   | Minute (00-59) |
-| %S   | Second (00-59) |
+Historically, manipulating dates and times wasn't a side job. Several languages devised their own models, some clunkier than others. Python smoothly traversed this history, and the `datetime` module we use today is the result.
 
-## Deep Dive:
-The `datetime` module was introduced in Python 2.4 as a replacement for the outdated `time` module. It provides more functionality and is easier to use. Another alternative for getting the current date in Python is using the `date` module from the `datetime` package. 
+There are alternatives. Libraries like `time` or `calendar` can also get the job done. Yet, they lack the simplicity and functionality that `datetime` offers.
 
-Under the hood, the `datetime` module uses the C language's standard library `libc` to access the system's clock. This means that the accuracy of the current date and time depends on the operating system's clock. In some cases, the system clock can be affected by time drift or synchronization issues, so it's always a good practice to check the system's clock before relying on the current date.
+Under the hood, `datetime` works by interfacing with the system clock, retrieving data, and formatting it to a human-friendly output. Remember, Python prides itself on being user-friendly and readable. That's why `datetime.date.today()` simply makes sense.
 
-## See Also:
-- [Python's datetime module documentation](https://docs.python.org/3/library/datetime.html)
-- [Python's strftime() documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
+## See Also
+
+For more details, head over to the Python docs:
+[datetime — Basic date and time types](https://docs.python.org/3/library/datetime.html)
+
+For advanced date/time handling, check out third-party libraries like Arrow:
+[Arrow: Better dates & times for Python](https://arrow.readthedocs.io/en/latest/)

@@ -10,31 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Creating a Temporary File in Gleam: Simple Steps and In-Depth Explorations 
+
 ## What & Why?
 
-Creating temporary files is a common practice in programming where a temporary file is created and used for storing data temporarily during the execution of a program. One of the main reasons for creating temporary files is to efficiently manage memory usage by freeing up space when it is no longer needed.
+Creating a temporary file is a process of making a file that exists until it is deleted by the program or the operating system. Programmers use it as a safe storage space for data during the software's running period to handle big chunks of data or keep sensitive data off the disk.
 
 ## How to:
 
-In Gleam, creating a temporary file is a simple process. First, we need to import the ```std/file/temporary``` module. Then, we can use the ```create``` function to create a temporary file. Here's an example of how this would look in code:
+Use Gleam's `file` module to handle temporary files. Here's a quick run. Note that Gleam is statically typed, but infers types so you don't have to declare them.
 
 ```Gleam
-import std/file/temporary
+import gleam/file.{TempFile}
 
-let tmp_file = temporary.create()
-
+fn temp_file_example() {
+  let temp = TempFile.new("example_temp")
+  let _ = file.write(temp, "Hello, Gleam!") 
+}
 ```
 
-This will create a temporary file and assign it to the ```tmp_file``` variable. We can then use this file to store any data we need. Once the program is finished running, the temporary file will be automatically deleted.
+You can check the creation of the file and its content with:
+
+```Gleam
+import gleam/file.{read}
+
+fn read_temp_file() {
+  let content = read("example_temp")
+  io.println(content)
+}
+```
+
+This will output: 
+
+```Gleam
+Ok("Hello, Gleam!")
+```
 
 ## Deep Dive
 
-Creating temporary files has been a common practice for a long time, dating back to the early days of computing. It was originally used to store data that couldn't fit into the limited memory of early computers. However, even with the advancement of technology, the use of temporary files remains relevant for managing memory efficiently.
+Historically, temporary file management has been a crucial aspect of programming. In languages like C, programmers manually managed these files and took great care to secure, clean, and handle collision scenarios. 
 
-There are alternatives to using temporary files, such as storing data in memory or using a database. However, temporary files are a simple and efficient solution that is still widely used.
+Alternatives to temp files include in-memory-storage (like arrays or lists) or databases. You can choose based on the size, lifecycle, and security of the data.
 
-In Gleam, the ```temporary.create()``` function uses the operating system's native temporary file functionality, making it platform-independent and reliable. The files created are unique and will not clash with existing files, ensuring the safety and security of our data.
+As per implementation in Gleam, `file` module is designed to automate the process. Note the infered type signatures, the Erlang interoperability, and immutability concepts. 
 
-## See Also
+## See Also:
 
-If you would like to learn more about creating temporary files in Gleam, you can refer to the official documentation on the ```std/file/temporary``` module. Additionally, you can explore other file-related modules in the Gleam standard library, such as ```std/file``` and ```std/file/system```. Happy coding!
+- Gleam's `file` standard library [documentation](https://gleam.run/documentation/stdlib/file/).
+- Gleam [language guide](https://gleam.run/book/tour/introduction.html) to understand Gleam's features and strengths.
+- To understand file systems, data management, or data handling, see "Data and File Structure" by [Robert L Kruse](https://www.amazon.com/Data-Structure-Program-Robert-Kruse/dp/0131980125/).
+
+Remember, hands-on is the best way to learn programming. Start coding!

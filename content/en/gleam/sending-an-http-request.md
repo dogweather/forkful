@@ -10,57 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Light Up Your Coding With Gleam: Sending HTTP Requests 
+
 ## What & Why?
 
-Sending an HTTP request is a fundamental task for web developers. It involves requesting resources, such as files or data, from a server in order to build a website or web application. This is done through the use of the HTTP protocol, which allows for communication between a client (e.g. a web browser) and a server.
-
-Programmers send HTTP requests to obtain information or perform actions, such as retrieving data from a database or posting form data. This process is essential for creating dynamic and interactive websites, as well as for integrating various systems and services.
+In the programming world, sending an HTTP Request is the act of requesting a particular action from a server, such as fetching, updating or deleting data. Whether you're working on a weather app or a food delivery service, you'll use HTTP requests to interact with live data from various APIs.
 
 ## How to:
 
-To send an HTTP request in Gleam, we will need to use the built-in `Http` module. This module provides functions for making different types of HTTP requests, such as `get`, `post`, `put`, and `delete`.
+Here is a simple example of making a `GET` request with Gleam's `gleam/httpc`:
 
-### Example 1: Making a GET request
+```gleam
+import gleam/httpc.{get}
 
-```Gleam
-result: Http.Response.t(H) =
-  Http.get("https://jsonplaceholder.typicode.com/posts/1")
+pub fn fetch_data() {
+  let response = get("https://api.example.com/data")
+  case response {
+    Ok(response) -> io.println(response.body)
+    Error(err) -> io.println(err)
+  }
+}
 ```
 
-### Sample Output:
+To run this code, call `fetch_data()` in your main function. The output will show the body of the http response, or the error if there is one.
 
-```Gleam
-result := Ok
-```
+## Deep Dive
 
-In this example, we make a `get` request to the JSONPlaceholder API and store the result in a variable called `result`. The `get` function takes in the URL of the resource we want to request and returns an HTTP `Response` containing the data from that resource.
+Historically, the HTTP's simple design was a major factor in the rapid adoption and widespread use of the internet. As for the alternatives, there are other data transfer protocols like FTP, but HTTP(S) tends to be the go-to due to its simplicity, statelessness, and interoperability.
 
-### Example 2: Making a POST request
+In terms of sending HTTP requests in Gleam, the `get` function used in our example is asynchronous, making a non-blocking request. It returns `Result(HttpClient.Response, HttpClient.Error)`, representing either a successful response or an error. 
 
-```Gleam
-result: Http.Response.t(H) =
-  Http.post("https://jsonplaceholder.typicode.com/posts",
-    Http.postBodyJson({id=1, title="Sample Post", body="This is a sample post."}))
-```
+## See Also
 
-### Sample Output:
+For further reading, check out these great resources on the subject:
 
-```Gleam
-result := Created
-```
-
-In this example, we make a `post` request to the JSONPlaceholder API with the JSON data containing the properties of a new post. This time, the `post` function also returns an HTTP `Response`, but the response code is `Created` indicating that the post was successfully added.
-
-## Deep Dive:
-
-Sending HTTP requests has been a crucial aspect of web development since the early days of the internet. In the past, developers used to make requests using lower-level network programming languages such as C or Perl. However, with the rise of web development frameworks and high-level languages, the process has become much simpler and more accessible.
-
-While Gleam provides a convenient and efficient way to make HTTP requests, there are other popular libraries and tools available for this purpose. Some examples include `ureq`, `rustful`, and `hyper`.
-
-Internally, Gleam uses the powerful Rust library `hreq` for handling HTTP requests and responses. This allows for a robust and performant implementation of HTTP communication in Gleam.
-
-## See Also:
-
-- Gleam HTTP Module documentation: https://gleam.run/documentation/library/http/
-- `hreq` library documentation: https://docs.rs/hreq/
-- Using Gleam to build a REST API: https://medium.com/@naodev12/creating-a-rest-api-with-gleam-16beb17b5be3
+- Gleam's official docs on HTTP Requests: [Gleam Http Library](https://hexdocs.pm/gleam_http/)
+- The history and evolution of HTTP: [HTTP - Wikipedia](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+- A comparison of data transfer protocols: [Comparison of Data Transfer Protocols](https://en.wikipedia.org/wiki/Comparison_of_data_transfer_protocols)

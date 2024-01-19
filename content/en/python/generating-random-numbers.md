@@ -11,39 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Generating random numbers refers to the process of generating a sequence of numbers that appear to be random. Programmers use this technique for a variety of reasons, including creating randomized data for testing or simulating real-world scenarios in their code.
 
-## How to:
+Generating random numbers is making numbers appear "out of nowhere," without a discernible pattern. We use randomness in programs for tasks like anonymizing data, running statistical simulations, or adding gameplay variety.
+
+## How To
+
+Python’s built-in `random` module makes this simple:
+
 ```Python
 import random
 
-# Generate a random integer between 1 and 10
-random_num = random.randint(1, 10)
-
-# Generate a random floating point number between 0 and 1
-random_float = random.random()
-
-# Generate a random number from a given range
-random_range = random.randrange(5, 20, 3)
-
-# Print the results
-print(random_num)
-print(random_float)
-print(random_range)
+# random float between 0 - 1
+print(random.random())
 ```
 
-Output:
-3
-0.758904815
-11
+Or get a random integer within a range:
 
-## Deep Dive:
-Generating random numbers has been a topic of interest for centuries, with the first recorded use dating back to ancient China. In modern times, computer programs are used to generate random numbers, with many languages, including Python, offering built-in functions for this purpose.
+```Python
+import random
 
-One alternative to using a built-in function is to use a pseudorandom number generator. These generators use an algorithm to produce a sequence of numbers that appear to be random, but are actually deterministic. This means that the same sequence of numbers will be generated each time, unless the seed is changed.
+# random integer between 1 - 10
+print(random.randint(1, 10))
+```
 
-Implementations of random number generators can differ, with some focusing on producing numbers that pass statistical tests for randomness, while others prioritize speed and simplicity.
+## Deep Dive
 
-## See Also:
-- [Python documentation for random module](https://docs.python.org/3/library/random.html)
-- [Wikipedia article on random number generation](https://en.wikipedia.org/wiki/Random_number_generation)
+Python's `random` module first appeared in version 1.1 (1994). It implements pseudo-random number generators (PRNGs), that generate seemingly random sequences from deterministic initial conditions, a "seed."
+
+An alternative is Python's `secrets` module, which generates true random numbers, safe for cryptographic use.
+
+We can even implement our own PRNG; Linear Congruential Generator (LCG) is the simplest:
+
+```Python
+def lcg(modulus, a, c, seed):
+    """Linear congruential generator."""
+    while True:
+        seed = (a * seed + c) % modulus
+        yield seed
+
+gen = lcg(9, 2, 0, 1)
+for _ in range(10):
+    print(next(gen))
+```
+A bit complex, it's generally useful to stick with built-ins.
+
+## See Also
+
+- Official [Python `random` module documentation](https://docs.python.org/3/library/random.html)
+- [Module `secrets` official documentation](https://docs.python.org/3/library/secrets.html)
+- Wiki article on [Pseudo-random number generators](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- A tech post about [random vs. secrets in Python](https://yasoob.me/posts/understanding-more-about-python-random-and-secrets-module/)

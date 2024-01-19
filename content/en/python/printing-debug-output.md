@@ -12,41 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Printing debug output is a way for programmers to track and understand the flow of their code while it is running. It allows them to see the values of variables and the execution of functions throughout the program.
-
-Programmers use printing debug output to catch errors and troubleshoot issues in their code. By logging important information, they can identify where a problem may be occurring and make necessary changes to fix it.
+Printing debug output is a method where a programmer outputs the status of a program to console or file. It's an invaluable tool for diagnicating issues, understanding program flow, and unearthing potentially hidden bugs.
 
 ## How to:
 
+Printing debug output in Python is as simple as using the built-in `print()` method. But `logging` module allows more flexibility and control.
+
 ```Python
-# To print a variable's value:
-x = 3
-print(x) # Output: 3
+# Basic print statement
+x = 10
+print("Value of x is:", x)
 
-# To log a message:
-print("Hello World!") # Output: Hello World!
-
-# To print multiple values:
-a = 2
-b = 5
-print("a =", a, "and b =", b) # Output: a = 2 and b = 5
-
-# To format output:
-name = "John"
-age = 26
-print("My name is {} and I am {} years old.".format(name, age)) # Output: My name is John and I am 26 years old.
+# Debugging using logging
+import logging
+logging.basicConfig(level=logging.DEBUG)
+logging.debug("Value of x is: %s", x)
 ```
+
+Output of both commands will be `Value of x is: 10`.
 
 ## Deep Dive:
 
-When programming was first introduced, debugging was done by physically checking and removing errors in the hardware. However, with the advent of high-level languages, printing debug output has become a crucial tool for all programmers.
+Printing debug output is an age-old technique of debugging. It can date back to the dawn of programming itself. In Python, while `print` is straightforward, `logging` allows output to various targets, customizable format, and filtering logs by severity.
 
-An alternative to printing debug output is using a debugger, which is a software tool that allows developers to step through their code line by line to understand its execution. Another alternative is using logging libraries, which offer more extensive features for tracking and managing log messages.
+Alternatives of printing debug output are debuggers like pdb or IDE integrated debuggers. They offer more 'real-time' insight into the program.
 
-In Python, there are two main methods for printing debug output - `print()` and `logging`. The `print()` function is built-in and allows for easy and quick debugging. The `logging` library offers more advanced features such as custom logging levels and formatting.
+Implementation-wise, `print` simply outputs to sys.stdout while `logging` consists of several classes like Logger, Handler, Filter, and Formatter, forming a more complex system that can handle different scenarios.
 
 ## See Also:
 
-- [Python Official Documentation on Debugging](https://docs.python.org/3/debugging.html)
-- [Real Python's Guide to Debugging Python Programs](https://realpython.com/python-debugging-pdb/)
-- [How Debugging is Used in the Software Development Process](https://www.algoworks.com/blog/debugging-in-software-development-process/)
+- Official Python Documentation on Logging: https://docs.python.org/3/library/logging.html
+- Python tips on effective logging: https://realpython.com/python-logging/
+- Brief history of debugging: https://www.toptal.com/developers/blog/the-evolution-of-debugging
+- Using pdb in Python: https://docs.python.org/3/library/pdb.html

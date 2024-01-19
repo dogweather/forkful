@@ -10,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Joining Strings in Gleam: A Quick Dive 
+
 ## What & Why?
+Concatenating strings is simply joining two or more strings together. It's like tying a string of words into a longer sentence, making it easier to display, store or send compound messages in your code.
 
-Concatenating strings is the process of combining two or more strings together into one string. This is a common task in programming, as it allows for the creation of more complex and dynamic strings. 
- 
 ## How to:
+In Gleam, string concatenation is done with the `+` operator.
 
+Here's an example:
+
+```Gleam
+let string1 = "Hello, "
+let string2 = "world!"
+let message = string1 + string2
 ```
-Gleam program 
 
-import gleam/string 
+The `message` variable now holds the value `"Hello, world!"`.
 
-fn main() { 
-  let first = "Hello "; 
-  let second = "World!"; 
-  let combined = string.concat(first, second); 
-  
-  // Output: Hello World! 
-  io.println("combined"); 
-} 
+## Deep Dive
+Historically, string concatenation has existed in most programming languages. In Gleam, it is implemented using an efficient algorithm that prevents excessive memory allocation, ensuring your code runs swiftly.
+
+While the `+` operator is a common method for concatenating strings, you could use `string.append` (from Gleam's `string` module):
+
+```Gleam
+let string1 = "Hello, "
+let string2 = "world!"
+let message = string.append([string1, string2])
 ```
- 
-In the above code, we import the `gleam/string` module which provides the `concat` function. This function takes in two string arguments and returns a new string that is the combination of those two strings. We then print out the result using the `io.println` function. 
- 
-## Deep Dive 
- 
-The process of concatenating strings has been used in programming for a long time. It is often used for tasks such as creating user-friendly messages, formatting data, and building dynamic web pages. 
- 
-There are other methods for combining strings, such as interpolation and formatting, but concatenation is a simple and straightforward method. 
- 
-Internally, the Gleam `concat` function uses the Rust `String` type which allows for efficient and flexible manipulation of strings. 
- 
+
+The `string.append` function takes a list of strings and returns a new string containing all the input strings combined. 
+
+But there's a catch: the `+` operator often performs better for concatenating two strings, while `string.append` shines when dealing with multiple strings.
+
 ## See Also 
- 
-- [Gleam documentation](https://gleam.run/documentation/)
-- [Rust documentation on strings](https://doc.rust-lang.org/std/string/struct.String.html)
+To explore more on Gleam string manipulations, check out the sources below:
+- Gleam's `string` module documentation: [Gleam `string` module](https://hexdocs.pm/gleam_stdlib/gleam/string)
+- String operations in Gleam: [Gleam School](https://gleam.run/tour/string/)

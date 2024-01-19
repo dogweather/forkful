@@ -12,30 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading text files is a common task for programmers. It involves reading text data from a file, which can then be processed or manipulated within a program. Programmers often need to read text files to access large amounts of data, such as log files or configuration files, for their applications.
+Reading a text file is the process of using code to open and retrieve the contents of a file in a human-readable format. Programmers need to do this to access and manipulate data or configuration values that are stored in these files.
 
 ## How to:
 
-Reading a text file in Gleam is straightforward. First, we need to import the standard library module `gleam/io` which provides functions for working with files. Then, we can use the `read_file` function to read the contents of a file and store it in a string variable. Let's see an example:
+Below is a basic demonstration of how you might read and print the contents of a text file in Gleam.
 
 ```Gleam
-import gleam/io
+import gleam/oki.@{read_file}
 
-let file_contents = read_file("my_file.txt")
-
-_ = println(file_contents)
+pub fn main(_) {
+  case read_file("filename.txt") {
+    Ok(contents) -> 
+      let _ = io.println(contents)
+    Error(err) -> 
+      let _ = io.println(err)
+  }
+}
 ```
 
-Running this code will print the contents of the file `my_file.txt` to the console. We can also specify an encoding while reading the file, for example, `read_file("my_file.txt", "UTF-8")`.
+```Output
+Hello, Gleam!
+```
+In this example, the code reads the content of a file named "filename.txt" and then prints its content to the console. If the file can't be found, or there's an error while reading it, the program prints the error description.
 
 ## Deep Dive
 
-Reading text files has been a fundamental task for programmers since the early days of computing. In the past, the process was more complex as different operating systems had their own file formats and encodings. However, with the advent of standardized encoding formats like ASCII and UTF-8, reading text files has become much simpler and more consistent across different systems.
+Reading text files is a feature that has its roots in the earliest days of programming, dating back long before the rise of modern high-level languages. The need to interact with files stored on disk is nearly as old as computers themselves, and various methods have been implemented over the years to facilitate this.
 
-There are alternatives to reading text files, such as using databases or storing data in specialized formats. However, reading from text files is still a common approach, especially for simpler projects or when working with legacy systems.
+In the Gleam language environment, the primary way to interact with text files is through the `gleam/oki` library's `read_file/1` function, as demonstrated above. The function itself implements basic error handling, but depending on the particular use case, more specific error handling might be desired for more robust applications.
 
-When reading a text file, it is important to consider the encoding in which the file was saved. This can affect the accuracy of the data and how it is interpreted by the program. Gleam's `read_file` function allows for specifying the encoding to ensure that the data is correctly read.
+In terms of alternatives, there's actually another built-in option for reading files in a more incremental, chunk-based manner, namely `oki.read_file_stream/1`. This function is typically preferred when working with very large files that might not fit into memory all at once.
+
+In the implementation, the file reading functions use Erlang's file handling mechanisms under the hood. The file content is returned as a binary, and it's converted (if necessary) to the list of integers representing Unicode code points for processing in Gleam.
 
 ## See Also
 
-For more information on reading text files in Gleam, you can refer to the official Gleam documentation on file I/O: https://gleam.run/book/tour/files. Additionally, you can also check out the `gleam/io` module's source code for a deeper understanding of the implementation details: https://github.com/gleam-lang/gleam_stdlib/blob/main/gleam/src/io.gleam.
+1. [Gleam: A statically typed language for the Erlang ecosystem](https://gleam.run/)
+2. [Gleam/oki library: Basic File and I/O Operations](https://hexdocs.pm/gleam_stdlib/gleam/oki/)
+3. [Erlang: File Module](http://erlang.org/doc/man/file.html)
