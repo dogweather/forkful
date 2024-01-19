@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Päivämäärän parsiminen merkkijonosta on prosessi, jossa päivämäärä muunnetaan tietokoneen ymmärtämään muotoon. Tätä tarvitaan esimerkiksi, kun halutaan käsitellä käyttäjän syöttämiä päivämääriä sovelluksissa. Päivämäärän parsinta on tärkeä osa ohjelmointia, sillä se mahdollistaa päivämäärien käsittelyn ja muokkaamisen tietokoneen avulla.
+# Artikkeli: Päivämäärän haku merkkijonosta Elixir-ohjelmointikielellä
 
-## Kuinka se tehdään?
-Päivämäärän parsiminen merkkijonosta on helppoa Elixir-ohjelmointikielessä. Alla on esimerkki, jossa käytetään Date-pakettia ja sen toimintoa `parse`:
+## Mikä & Miksi?
+Päivämäärän haku merkkijonosta on prosessi, jossa päivämäärä eritellään ja muunnetaan merkkijonosta päivämääräobjektiksi. Ohjelmoijat tekevät tämän usein, jotta voisivat käsitellä päivämäärätietoja tehokkaammin ja helpommin.
 
-```elixir
-date = Date.parse("23.05.2021", "~d.~m.~Y")
-IO.inspect date
+## Kuinka tehdä:
+Elixirin avulla voimme tehdä tämän helposti käyttämällä `DateTime` -moduulia.
+
+```Elixir
+# Esimerkki step-by-step
+merkkijono = "2022-03-01 10:30:15"
+
+# Otetaan Käyttöön DateTime
+{:ok, datetime} = DateTime.from_iso8601(merkkijono)
+IO.inspect(datetime)
 ```
 
-Tämä tuottaa seuraavan tulosteen:
+Ajamisen jälkeen saamme tämän tuloksen:
 
-```ShellSession
-{:ok, ~D[2021-05-23]}
+```Elixir
+~U[2022-03-01T10:30:15Z]
 ```
 
-Pakettiin annetaan ensin parsittava merkkijono ja sen jälkeen miten päivämäärä on muotoiltu merkkijonossa "~d.~m.~Y". Tämä merkintätapa tarkoittaa, että päivämäärä on muotoa päivä.kuukausi.vuosi. Jos päivämäärä onnistuu parsimaan onnistuneesti, Date-paketti palauttaa tuplen, jossa ensimmäinen arvo on `:ok` ja toinen arvo on parsittu päivämäärä.
+## Deep Dive
+Historiallinen konteksti: Elixir käyttää peruskielensä Erlangin päivämäärän ja kellonajojen käsittelyä.
 
-## Syväkatsaus
-Päivämäärän parsinta on ollut tärkeä osa ohjelmointia jo pitkään. Ennen oli yleistä, että päivämäärät esitettiin useissa eri muodoissa, mikä vaikeutti niiden käsittelyä. Nykyään onneksi on olemassa erilaisia paketteja ja toimintoja, kuten Elixirin Date-paketti, jotka tekevät päivämäärien käsittelystä ja parsimisesta helppoa.
+Vaihtoehdot: Voisit käyttää `Date` tai `Time` moduuleja, jos tarvitset vain päivämäärän tai ajan. Ne noudattavat samaa formaattia kuin `DateTime`.
 
-On myös olemassa muita vaihtoehtoja päivämäärän parsimiselle, kuten Ruby:ssa käytetty Date-paketti ja Pythonin datetime-moduuli. Näissä kielissä päivämäärän parsinta toteutetaan hieman eri tavalla, mutta idea on kuitenkin sama.
+Implementointi tiedot: `DateTime.from_iso8601/1` -funktio tulkitsee päivämäärän ISO 8601 -muotoon. Jos kaikki ei mene suunnitellusti, palautetaan virhekuvauksen sisältävä tuple.
 
-## Katso myös
-Jos haluat lukea lisää Elixir-kielen Date-paketista, tarkista Elixirin viralliset dokumentaatiot osoitteesta https://hexdocs.pm/elixir/Date.html.
-
-Voit myös harkita osallistumista Elixir-yhteisön keskusteluihin ja saada lisätietoa ohjelmointikielestä osoitteesta https://elixirforum.com/.
-
-Happy coding! 🚀
+## Katso myös:
+1. [Elixir DateTime dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
+2. [Elixirin tutustumispolku DateTime-toimintojen käyttöön](https://elixirschool.com/en/lessons/basics/date_time/)

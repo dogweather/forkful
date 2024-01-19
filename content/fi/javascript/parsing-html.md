@@ -10,24 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Vedonlyöjät saattavat ihmetellä, mitä tarkalleen ottaen HTML-analysointi tarkoittaa. Se on yksinkertaisesti tapa lukea ja käsitellä HTML-koodia verkkosivuilta. Ohjelmoijat tekevät tätä usein automatisoidun työn helpottamiseksi, kuten tiettyjen elementtien löytämiseksi ja datan keräämiseksi verkkosivuilta.
+# HTML-Parsinnan Käyttö JavaScriptissä
 
-## Miten:
-Seuraavassa on esimerkki koodista, jonka avulla voit lukea ja tulostaa HTML-koodia käyttämällä JavaScriptia:
+## Mikä & Miksi?
 
+Parsing HTML tarkoittaa HTML-tiedoston koodin jäsentämistä ja sen rakenteen analysointia. Ohjelmoijat tekevät tämän ymmärtääkseen paremmin HTML-sivun rakenteen, järjestääkseen HTML-elementtejä, tai muuttaakseen niiden sisältöä.
+
+## Näin se toimii:
 ```Javascript
-const parser = new DOMParser();
-const html = "<html><body><h1>Tervetuloa!</h1></body></html>";
-const doc = parser.parseFromString(html, "text/html");
-const title = doc.querySelector("h1").innerHTML;
-console.log(title); //tulostaa "Tervetuloa!"
+let parser = new DOMParser();
+let doc = parser.parseFromString('<p>Tervetuloa!</p>', 'text/html');
+console.log(doc.body.innerHTML);  // Tulostaa: <p>Tervetuloa!</p>
 ```
+Esimerkkikoodimme käyttää DOMParser-objektia, joka luo uuden DOM-objektin merkkijonosta. Tämä DOM-objekti jäljittelee todellista HTML-sivua.
 
-## Syväsukellus:
-HTML-analysointi on ollut olennainen osa verkkosivujen luomista ja analysointia alusta alkaen. Ennen JavaScriptin keksimistä JavaScriptin avulla voitiin analysoida vain staattista dataa. Nyt on olemassa myös muita vaihtoehtoja, kuten erilaisia kirjastoja ja ohjelmistoja, jotka voivat auttaa HTML-koodin analysoinnissa. HTML-analysointiin kuuluu myös useita erilaisia tekniikoita ja algoritmeja, joita voidaan käyttää analysoinnin helpottamiseksi.
+## Syvemmälle sukellus
 
-## Katso myös:
-- [Creating an HTML Parser using JavaScript](https://www.codeproject.com/Articles/395453/Creating-an-HTML-Parser-using-JavaScript)
-- [A Beginner's Guide to Parsing HTML using JavaScript](https://blog.bitsrc.io/a-beginners-guide-to-parsing-html-using-javascript-9c6d43dc4c25)
-- [Introduction to HTML parsing using JavaScript](https://www.internalpointers.com/post/introduction-html-parsing-using-javascript)
+HTML-parsintaan on käytetty useita eri tekniikoita historiallisesti, ja se on kehittynyt HTML:n ja JavaScriptin kehityksen mukana. Vanhemmissa JavaScript-versioissa saattoi nähdä "innerHTML"-ominaisuuden käyttöä, joka toimii yhä, mutta DOMParser on nykyisin suositeltu tapa.
+
+Vaihtoehtoisesti ohjelmoijat voivat käyttää serveripuolen tekniikoita, kuten Node.js:ää ja 'cheerio' kirjastoa. Näitä käytetään yleensä suurten HTML-massojen käsittelyyn, tai tilanteissa, joissa ohjelmoijan täytyy käsitellä HTML:ää, jota hän ei varsinaisesti itse tuota.
+
+DOMParserin käyttämisen yksityiskohta on, että sen "parseFromString" metodi palauttaa aina uuden "Document"-objektin. Tämä tarkoittaa, että voit aina luoda tarkkaan harkitun HTML-rakenteen, jota voit muokata ja käsitellä ilman, että se vaikuttaa alkuperäiseen HTML-sivuun.
+
+## Katso myös
+
+1. [DOMParser MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+2. [HTML parsing algorithm in HTML5](https://html.spec.whatwg.org/multipage/parsing.html)
+3. [Cheerio library Github page](https://github.com/cheeriojs/cheerio)
