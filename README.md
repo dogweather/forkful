@@ -11,7 +11,7 @@ A special programming cookbook:
  
 **Multilingual**: 16 world languages
 
-**Polyglot**: 21 programming languages
+**Polyglot**: 23 programming languages
 
 ---
 
