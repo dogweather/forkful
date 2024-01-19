@@ -10,25 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Parsing a Date from a String: An Elixir Guide
+
 ## What & Why?
-Parsing a date from a string is the process of converting a date in string format to a more usable data structure. This is an important task for programmers as it allows them to manipulate and work with dates in various applications.
+
+Parsing a date from a string is about transforming a string, e.g. "2020-12-30", into a structured Date object. Programmers do this to process, manipulate, and use date data in their code in a more convenient and accurate manner.
 
 ## How to:
-```Elixir
-# Using the built-in Date module:
-iex> Date.from_iso8601("2021-01-01")
-{:ok, ~D[2021-01-01]}
 
-# Using the Timex library:
-iex> {:ok, datetime} = Timex.parse("Jan 1, 2021", "{Month: MMM, Day: D, Year: YYYY}")
-iex> datetime
-~U[2021-01-01 00:00:00Z]
+Let's get straight to how you can get this done in Elixir.
+
+```elixir
+iex> {:ok, date} = Date.from_iso8601("2022-05-14")
+{:ok, ~D[2022-05-14]}
+
+iex> date
+~D[2022-05-14]
 ```
 
-## Deep Dive:
-Parsing dates has been a common task for programming languages since the early days. Elixir, being a functional language, offers a variety of options for date parsing. Apart from the built-in Date module, you can also use libraries like Timex or sweet_xml. These libraries not only handle date parsing but also offer additional features like timezone support and date formatting.
+`Date.from_iso8601/1` is a built-in function in Elixir that transforms an ISO8601 date string into a date struct.
 
-## See Also:
-- [Date module documentation](https://hexdocs.pm/elixir/Date.html)
-- [Timex library](https://hexdocs.pm/timex/Timex.html)
-- [Sweet_xml library](https://hexdocs.pm/sweet_xml/SweetXml.html)
+Notice when the string isn't a valid ISO8601 date, it'll return an error tuple:
+
+```elixir
+iex> {:error, reason} = Date.from_iso8601("Not a date")
+{:error, :invalid_format}
+```
+
+## Deep Dive
+
+Elixir's approach to date parsing is inspired by the Erlang/OTP's robustness principle - programs should be "liberal in what they accept and conservative in what they send". Using simple and explicit tuple forms, `{:ok, result}` or `{:error, reason}` for results is a distinctive and robust feature in Elixir.
+
+You have alternatives for parsing dates like using the `Timex` library if you're dealing with complex date formats. However, for standard ISO8601 dates, Elixir's built-in `Date.from_iso8601/1` function is sufficient.
+
+Parsing dates from strings in Elixir is straightforward but remember it depends heavily on the input data being in the correct format. Always validate your input string before using it.
+
+## See Also
+
+- Elixir's [official documentation on Date](https://hexdocs.pm/elixir/Date.html)
+- [Robustness Principle](https://en.wikipedia.org/wiki/Robustness_principle)
+- [Parsing Dates with Timex in Elixir](https://hexdocs.pm/timex/Timex.html#parse/2)
