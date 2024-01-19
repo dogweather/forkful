@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottelu merkkijonosta."
-html_title:           "Elixir: Päivämäärän erottelu merkkijonosta."
-simple_title:         "Päivämäärän erottelu merkkijonosta."
+title:                "Päivämäärän erottaminen merkkijonosta"
+html_title:           "Elixir: Päivämäärän erottaminen merkkijonosta"
+simple_title:         "Päivämäärän erottaminen merkkijonosta"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,37 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Stringistä Päivämäärän Parsiminen Elixirissä
+# Päivämäärän Parsiminen Merkkijonosta Elixir-ohjelmointikielessä
+Tässä artikkelissa opimme, miten päivämäärä parsitaan merkkijonosta Elixirin nykyversiolla. 
 
 ## Mikä & Miksi?
+Päivämäärän parsiminen merkkijonosta tarkoittaa merkkijonossa olevan päivämäärän muuttamista päivämääräobjektiksi. Ohjelmoijat tarvitsevat tätä tietojen analysointiin ja tietojen järjestämiseen ajan mukaan.
 
-Päivämäärän parsiminen merkkijonosta tarkoittaa tiedon muuntamista string-muodosta järjestelmän ymmärtämään Date-tyyppiin. Tätä tarvitaan, kun käsitellään päivämääriä merkkijonojen muodossa, esimerkiksi tiedostoista, tietokannoista tai rajapinnoista saaduissa syötteissä.
+## Kuinka:
+Parsiminen Elixirissä voidaan tehdä `Date.from_iso8601/1` -funktiolla.
 
-## Näin teet:
-
-```Elixir
-String.to_charlist("2022-12-24")
-|> Enum.map(&String.to_integer/1)
-|> Date.new()
+```elixir
+{:ok, date} = Date.from_iso8601("2021-07-07")
+IO.inspect(date)
+```
+Elixir palauttaa seuraavat teikstikonsolille:
+```elixir
+~D[2021-07-07]
 ```
 
-Tulos:
-
-```bash
-{:ok, ~D[2022-12-24]}
-```
-
-Ensin muunnetaan merkkijono charlistiksi, sitten jokainen osa muutetaan kokonaisluvuksi ja viimein uudeksi päivämääräksi.
-
-## Syvällisempi tieto
-
-Date.new-funktiota on käytetty Elixirin varhaisimmista versioista lähtien, koska se on perustavanlaatuinen päivämäärähallinnassa. `Date.from_iso8601/1` on myös hyvä vaihtoehto, jos syöte noudattaa ISO 8601 -päivämäärämuotoa.
-
-Elixir käsittelee päivämäärät tuplena. Ensimmäinen elementti kuvaa vuotta, toinen kuukautta ja kolmas päivää.
+## Syvällisempi katsaus
+Elixirin päivämääräparsiminen perustuu ISO8601-standardiin, joka on kansainvälinen standardi päivämäärän ja ajan esittämiseen. On myös mahdollista käyttää muita kirjastoja, kuten Timex, monimutkaisempien päivämäärämuotojen käsittelyyn.
+Joskus merkkijonopäivämäärän tulkinta voi olla virheellinen aikavyöhykkeen takia, joten on tärkeää tarkistaa aikavyöhykkeet datatiedostoissa.
 
 ## Katso myös
-
-Lisätietoja saat seuraavista linkeistä:
-
-- Elixirin virallinen dokumentaatio: [Date.new/1](https://hexdocs.pm/elixir/Date.html#new/1) ja [Date.from_iso8601/1](https://hexdocs.pm/elixir/Date.html#from_iso8601/1)
-- Elixir School: [Date and Time Basics](https://elixirschool.com/en/lessons/basics/date_time/)
+[Elixirin virallinen dokumentaatio päivämäärän parsimisesta](https://hexdocs.pm/elixir/Date.html#from_iso8601/1)  
+[Elixirin Timex-kirjaston dokumentaatio](https://hexdocs.pm/timex/readme.html)
+[Elixirin School-tietosivusto](https://elixirschool.com/en/)
