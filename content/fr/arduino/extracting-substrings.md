@@ -10,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Quoi & Pourquoi?
 
-L'extraction des sous-chaînes consiste à prendre une partie spécifique d'une chaîne de caractères plus longue. Les programmeurs le font souvent pour extraire des informations précises d'une chaîne plus grande ou pour faciliter le traitement de données.
+Extraire des sous-chaînes consiste à prélever une partie spécifique d'une chaîne de caractères donner. C'est un outil majeur pour les programmeurs recherchant précision et flexibilité dans le traitement des données textuelles.
 
-## Comment :
+## Comment faire:
 
-Voici deux exemples simples d'extraction de sous-chaînes en utilisant la fonction ```substring()``` de l'Arduino. Cette fonction prend deux paramètres : l'index de départ et la longueur de la sous-chaîne.
+Je vais vous montrer comment faire cela avec Arduino. Prenons cette chaîne de caractères "Bonjour tout le monde!" et extrayons "tout le monde" d'elle.
 
-Exemple 1: Extraction à partir de l'index 3 jusqu'à la fin de la chaîne
 ```Arduino
-String str = "Bonjour tout le monde!";
-String substr = str.substring(3);
-Serial.println(substr);
+String maChaine = "Bonjour tout le monde!";
+String sousChaine = maChaine.substring(8, 20);
+Serial.println(sousChaine);
 ```
-Output: `jour tout le monde!`
+Si vous exécutez cela, la sortie sera `tout le monde`.
 
-Exemple 2: Extraction d'une sous-chaîne de 5 caractères à partir de l'index 0
-```Arduino
-String str = "123456789";
-String substr = str.substring(0, 5);
-Serial.println(substr);
-```
-Output: `12345`
+## Plongée en profondeur
 
-Notez que la numérotation des index commence à 0 et non à 1.
+Sur le plan historique, le besoin d'extraire des sous-chaînes est presque aussi ancien que le codage. Développé pour traiter des situations où seules certaines parties d'un texte sont nécessaires, il demeure essentiel dans de nombreux contextes modernes comme l'analyse des données.
 
-## Plongée en profondeur :
+En termes d'alternatives, plusieurs autres langages de programmation offrent des fonctionnalités similaires, parfois avec des syntaxes différentes. Par exemple, en Python, vous utiliseriez la fonction slice tandis qu'en Java, vous utiliseriez également la méthode substring.
 
-L'extraction de sous-chaînes est une fonctionnalité courante dans de nombreux langages de programmation. Elle est souvent utilisée dans le traitement de données, l'analyse de texte et la manipulation de chaînes complexes.
+En ce qui concerne les détails de mise en œuvre, la méthode substring commence à extraire à l'index de début jusqu'à, mais sans inclure, l'index de fin. Et souvenez-vous que l'index commence à 0 en programmation.
 
-Alternatives : En plus de la fonction ```substring()```, Arduino propose également la fonction ```subString()``` qui fonctionne de la même manière, mais n'utilise pas de mémoire dynamique. Cela permet d'économiser de la mémoire si vous travaillez avec de grandes chaînes de caractères.
+## Voir aussi
 
-Détails d'implémentation : La fonction ```substring()``` utilise la méthode ```substring()``` de la classe String de l'Arduino pour extraire les sous-chaînes. Elle est basée sur la bibliothèque standard C++ et peut donc être utilisée dans vos projets sans aucun problème.
+Pour plus d'informations sur la manipulation de chaînes avec Arduino, consultez ces ressources:
 
-## Voir aussi :
-
-- [Documentation officielle de la classe String de l'Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Guide de référence rapide pour l'Arduino](https://www.arduino.cc/reference/en/)
+1. La documentation officielle d'Arduino sur la classe String: [Lien](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+2. Une explication détaillée sur Instructables de l'utilisation des chaînes avec Arduino: [Lien](https://www.instructables.com/Arduino-String-Manipulation-Using-String-Functions/)
+3. Un guide complet de MakeUseOf sur la programmation Arduio pour débutants: [Lien](https://www.makeuseof.com/tag/arduino-programming-for-beginners/)

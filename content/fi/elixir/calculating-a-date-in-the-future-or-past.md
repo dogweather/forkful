@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
-html_title:           "Elixir: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
-simple_title:         "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "Elixir: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -12,46 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä tarkoittaa päivämäärän määrittämistä tietyn ajanjakson päässä nykyajasta. Tätä tehdään usein ohjelmoinnissa, jotta voidaan suunnitella ja seurata tapahtumia tulevaisuudessa tai hakea tietoja menneisyydestä.
+Laskenta tulevaisuudessa tai menneisyydessä olevaan päivämäärään tarkoittaa tietyssä ajankohtassa tapahtuvan siirron laskemista ajan yli. Ohjelmoijat suorittavat tämän toimenpiteen erilaisten ajankohtaisten tarpeiden, kuten vanhenevien tunnusten tai eräpäivien määrittämiseksi.
 
 ## Miten:
 
-### Tulevaisuuden päivämäärän laskeminen:
+Elixirissä voit laskea tulevat tai menneet päivämäärät `DateTime.add/3` -funktiolla.
 
 ```Elixir
-DateTime.utc_now() |> DateTime.add(weeks: 2)
+start_date = DateTime.utc_now()
+IO.inspect(start_date)
+
+# +3 days
+new_date = DateTime.add(start_date, 3 * 24 * 60 * 60, :second)
+IO.inspect(new_date)
+
+# -3 days
+new_date = DateTime.add(start_date, -3 * 24 * 60 * 60, :second)
+IO.inspect(new_date)
 ```
-
-Tämä koodi esittää päivämäärän kaksi viikkoa nykyhetkestä. Tämän koodin tulostus voi näyttää esimerkiksi tältä:
-
+Havainnollistavan esimerkin tulostus olisi seuraava:
 ```Elixir
-#=> ~N[2021-12-28 00:00:00]
+~U[2022-07-07T18:20:30Z] 
+~U[2022-07-10T18:20:30Z]
+~U[2022-07-04T18:20:30Z]
 ```
 
-### Menneisyyden päivämäärän laskeminen:
+## Syvempi sukellus:
 
-```Elixir
-~N[2021-12-28 00:00:00] |> DateTime.add(days: -30)
-```
+Historiaa: Elixirin DateTime-moduuli on ollut käytössä sitten version 1.3. Monia muita käyttäjäystävällisiä päivämäärä- ja aika-toimintoja on lisätty alusta lähtien.
 
-Tämä koodi esittää päivämäärän 30 päivää taaksepäin. Koodin tuloste voi olla esimerkiksi:
+Vaihtoehdot: Voit käyttää myös `Time.add/3` ja `Date.add/2` lähtökohtana, riippuen siitä, haluatko muuttaa vain ajan tai päivämäärän.
 
-```Elixir
-#=> ~N[2021-11-28 00:00:00]
-```
-
-## Syventyminen:
-
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä on ollut tärkeä osa ohjelmointia jo pitkään. Ennen vanhaan tämä tehtiin manuaalisesti laskemalla päiviä huolellisesti tai käyttämällä erikoisia kalentereita. Nykyään tämän voi tehdä helposti käyttämällä ohjelmointikieliä, kuten Elixir.
-
-Toinen tapa laskea päivämäärä tulevaisuudessa tai menneisyydessä on käyttää Date-pakettia Elixirissä. Tämä tarjoaa lisää toiminnallisuuksia, kuten arkipäivien huomioimisen päivämäärän laskemisessa.
-
-Implementaatiotiedot:
-
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä perustuu aika- ja päivämäärätoimintojen hyödyntämiseen Elixirin sisäänrakennetussa DateTime-moduulissa. Tästä moduulista löytyy monia hyödyllisiä toimintoja, kuten päivän lisääminen tai vähentäminen nykyhetkestä tai tietyn päivämäärän luominen.
+Toteutuksen yksityiskohdat: DateTime.add käyttää Erlangin :calendar-moduulia aikaa ja päivämääriä koskevien yksityiskohtien käsittelyyn. Siinä on kaikki tarvittavat työkalut aika-arvojen lisäämiseen tai vähentämiseen.
 
 ## Katso myös:
 
-- [Elixir Date-paketti](https://hexdocs.pm/elixir/Date.html)
-- [DateTime-moduulin dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
-- [Aikapäiväkirja - laskeskeleva päivämääräpainike](https://www.matematiikkalehti.com/wp-content/uploads/matikka5-2013-sivut_26_31.pdf) historiallisesta kontekstista
+- [Elixir School: Dates and Times](https://elixirschool.com/en/lessons/basics/date_time/)
+- [HexDocs: DateTime Module](https://hexdocs.pm/elixir/DateTime.html)
+- [HexDocs: Time add Function](https://hexdocs.pm/elixir/Time.html#add/3)
+- [HexDocs: Date add Function](https://hexdocs.pm/elixir/Date.html#add/2)

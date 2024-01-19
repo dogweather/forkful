@@ -1,7 +1,7 @@
 ---
-title:                "パターンに一致する文字を削除"
-html_title:           "Elixir: パターンに一致する文字を削除"
-simple_title:         "パターンに一致する文字を削除"
+title:                "パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,29 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何となぜ？
+## 何となぜ？
 
-パターンに一致する文字を削除するとは、文字列から特定のパターンを持つ文字を削除することを指します。プログラマーは、データの整形やトークンの作成など、文字列操作をする際にしばしばこの操作を行います。
+文字列からパターンに一致する文字を削除するとは、特定の文字列から特定のパターンを見つけ出し、それを取り除くプロセスを指します。プログラマーがこれを行う主な理由は、不要なスペースや特殊文字を削除してデータをクリーンにするためです。
 
-# 方法：
+## 方法：
+
+Elixirでこのタスクを実行するためのコードサンプルを見てみましょう。
 
 ```Elixir
-String.replace("Hello World!", ~r/[aeiou]/, "")
+defmodule Sample do
+  def delete_matching_chars(str, pattern) do
+    String.replace(str, pattern, "")
+  end
+end
+
+IO.puts Sample.delete_matching_chars("Hello, World!", ",")
 ```
+
+上記のスクリプトを実行すると、次の出力が得られます：
+
+```Elixir
+Hello World!
 ```
-Hll Wrld!
-```
-上記のコード例では、文字列 "Hello World!" から母音を削除しています。文字列操作は、`String` モジュールの `replace` 関数を使用することで簡単に行うことができます。`~r` の後にパターンを指定し、その後ろに変換後の文字列を指定します。
 
-# 深堀り：
+この例では、我々はカンマを削除しました。
 
-(1) 削除操作のルーツは、正規表現という技術にあります。正規表現は、文字列パターンを記述するための仕組みであり、プログラミング言語やテキストエディタなどで広く使用されています。(2) 一致する文字を置換する代わりに、文字列から一致する文字を抽出することもできます。これには `String.split/3` 関数を使用することができます。(3) 実際には、文字の削除ではなく、新しい文字列を生成することで削除を行っています。
+## ディープダイブ：
 
-# 参考資料：
+パターンに一致する文字の削除は、多くのプログラミング言語で実装されている基本的な文字列操作です。これにより、ノイズとなる可能性のあるデータから特定のパターンを効果的に削除できます。また、パターンマッチングでさらに強力な制御を持つことができます。
 
-この記事では、パターンに一致する文字の削除について紹介しましたが、他にも様々な文字列操作をする方法があります。詳細については、Elixir 公式ドキュメントやコミュニティのフォーラムなどを参照してみてください。
+Elixirの場合、`String.replace/3`関数はこの目的のために使用されます。この関数は、指定されたパターンが見つかった場合に文字列内の該当部分を新しい文字列で置き換えます。パターンが空文字列("")の場合、該当部分は削除されます。
 
-- [Elixir 公式ドキュメント](https://elixir-lang.org/docs.html)
-- [Elixir Forum](https://elixirforum.com/)
-- [Elixir School](https://elixirschool.com/ja/lessons/basics/basics/)
-- [Elixir JapanのSlackチャンネル](https://elixir-jp.connpass.com/event/215747/)
+一方、Elixir以外の言語でも似たような機能を提供するものがあります。例えば、JavaScriptには`replace()`メソッド、Rubyには`gsub()`メソッドがあります。
+
+## 参考資料：
+
+以下のリンクでは、Elixirの文字列操作についてさらに詳しく見ることができます。
+
+1. Elixir公式ドキュメンテーションの[Stringモジュール](https://hexdocs.pm/elixir/String.html)
+2. Elixir Schoolの[Strings and Character Lists](https://elixirschool.com/jp/lessons/basics/strings-and-characters/)
+3. [Elixirでの文字列の使用](https://elixir-lang.jp/getting-started/io-and-the-file-system.html) - 初心者向けのチュートリアル

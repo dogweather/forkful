@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie istnienia folderu"
-html_title:           "Haskell: Sprawdzanie istnienia folderu"
-simple_title:         "Sprawdzanie istnienia folderu"
+title:                "Sprawdzanie, czy katalog istnieje"
+html_title:           "Haskell: Sprawdzanie, czy katalog istnieje"
+simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Sprawdzanie czy istnieje folder to proces, w którym sprawdzamy czy dana ścieżka na naszym komputerze odpowiada za istnienie folderu. Programiści wykonują tę czynność, aby upewnić się, że ich program działa poprawnie i aby uniknąć błędów związanych z brakiem folderu.
+## Co to jest i po co?
+
+Sprawdzanie, czy katalog istnieje, to po prostu mechanizm, który umożliwia programom zrozumienie struktury plików na dysku. Programiści robią to, aby uniknąć błędów podczas prób odczytu lub zapisu do lokalizacji, których może nie być.
 
 ## Jak to zrobić:
-```Haskell
-import System.Directory  -- moduł do obsługi operacji na plikach i folderach
 
-main :: IO ()
-main = do
-  let path = "ścieżka/do/folderu"  -- zmienna z ścieżką folderu
-  dirExists <- doesDirectoryExist path  -- funkcja sprawdzająca czy folder istnieje
-  if dirExists
-    then putStrLn "Folder istnieje!"
-    else putStrLn "Brak folderu... :("
+```haskell
+import System.Directory
+
+sprawdzKatalog :: FilePath -> IO Bool
+sprawdzKatalog = doesDirectoryExist
 ```
+Gdy teraz wywołasz `sprawdzKatalog "./mojKatalog"`, dostaniesz `True` lub `False` w zależności od tego, czy katalog istnieje.
 
-## Głębsze wody:
-1. Kontekst historyczny:
-Sprawdzanie czy istnieje folder było często używaną czynnością w starszych językach programowania, takich jak C i C++, ponieważ nie zawierały one wbudowanych funkcji do obsługi operacji na plikach i folderach.
+## Wgłębne spojrzenie
 
-2. Alternatywy:
-Istnieją inne sposoby na sprawdzenie czy istnieje folder, takie jak użycie biblioteki "System.Directory.Tree". Jednak używanie wbudowanych funkcji jest łatwiejsze i szybsze.
+Jak sugerują stare źródła biblioteki `System.Directory`, możliwość sprawdzania istnienia katalogów jest dostępna od czasów Haskell 98, co podkreśla użyteczność i konieczność takiej funkcji. Alternatywa to używanie `getPermissions` i `readable`, ale są one mniej bezpośrednie i mogą prowadzić do wołania błędów, jeśli katalog nie istnieje.
 
-3. Szczegóły implementacji:
-Funkcja "doesDirectoryExist" wykorzystuje metodę "stat" systemu operacyjnego, która zwraca informacje o danym pliku lub folderze. Jeśli folder istnieje, metoda zwróci informacje o nim, w przeciwnym razie zwróci błąd.
+Konkretnie, `doesDirectoryExist` zaczyna od sprawdzenia, czy ścieżka istnieje za pomocą `doesPathExist`, a następnie sprawdza, czy to jest katalog. To ważne, bo świat systemów plików jest pełen różnych przypadków. Możliwe jest na przykład, że ścieżka existuje, ale nie jest katalogiem.
 
-## Zobacz też:
-- [Dokumentacja System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Tutorial o obsłudze folderów w Haskellu](https://www.tutorialspoint.com/haskell/haskell_working_with_files.htm)
+## Zobacz też
+
+* Ogólne informacje o System.Directory można znaleźć [tutaj](https://hackage.haskell.org/package/directory-1.3.6.0/docs/System-Directory.html)
+* Historyczne źródło informacji o Haskell 98 można znaleźć [tutaj](https://www.haskell.org/onlinereport/haskell98/).
+* Niezmiernie przydatne wprowadzenie do programowania w Haskellu znajdziesz [tutaj](http://learnyouahaskell.com/).

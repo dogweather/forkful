@@ -1,7 +1,7 @@
 ---
-title:                "サブストリングの抽出"
-html_title:           "Fish Shell: サブストリングの抽出"
-simple_title:         "サブストリングの抽出"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,47 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が&どうして？
-文字列を抽出するとは何かを説明し、プログラマーがそれをする理由を2〜3文で説明します。
+## 何となぜ?
 
-## 方法：
-```Fish Shell ...``` コードブロック内のコーディング例とサンプル出力。
+文字列抽出とは、大きな文字列から特定の部分を取り出す技術です。プログラマーがこれを行う理由は、必要なデータのみを操作したり、特定の情報を検索したりするためです。
 
-### テキストを抽出する方法：
-```
-set text "これはテキストです。"
-echo $text[0:3]
-```
-#### 出力：
-```
-これ
-```
+## どうやって:
 
-### リストの要素を抽出する方法：
-```
-set list (1 2 3 4 5)
-echo $list[0]
-```
-#### 出力：
-```
-1
+Fish Shellでは、`string sub`コマンドを使用して文字列を抽出します。
+
+例えば、以下のコードは、"Hello, world!"から"world"を抽出します。
+
+```fish
+set string "Hello, world!"
+string sub -s 8 -l 5 $string
 ```
 
-## 深堀り：
-(1) 歴史的な背景、(2) 代替方法、(3)抽出する方法の実装の詳細など、文字列の抽出についての深い情報。
+このコードの出力は次のようになります：
 
-### 歴史的な背景：
-文字列の抽出は、プログラミング言語が誕生した頃から存在しています。現在では、特定の文字列を抽出するために様々な方法が開発されています。
+```fish
+world
+```
 
-### 代替方法：
-文字列の抽出は、他の言語でも可能ですが、Fish Shellでは特に簡単に実行できます。例えば、Pythonではスライスを使用する必要がありますが、Fish Shellでは短いコードで実現できます。
+## ディープダイブ:
 
-### 実装の詳細：
-Fish Shellでは、文字列を抽出するための組み込み関数が用意されています。これは、内部的には文字列を配列として扱っています。そのため、リストの要素を抽出する方法と同様に、文字列を抽出することができます。
+Fish Shellの `string sub`コマンドは、文字列の指定された範囲を抽出するための便利な道具です。しかしながら、より複雑な条件や状況下では、正規表現や`string match`を使用した方が良い場合もあります。
 
-## 関連情報：
-文字列の抽出についての関連情報へのリンク。
+また、Fish Shellでは他にもさまざまなテキスト処理コマンドが用意されており、`string replace`, `string split`, `string join`, 等を組み合わせることで、文字列操作の可能性をさらに広げることができます。
 
-- [Fish Shellのドキュメンテーション](https://fishshell.com/docs/current/cmds/set.html)
-- [Pythonの文字列のスライスについて](https://docs.python.org/ja/3/tutorial/introduction.html#strings)
-- [別のプログラミング言語での文字列の抽出方法](https://programming.org/substring-extraction/)
+## 参考資料:
+
+Fish Shellの公式ドキュメンテーションは非常に詳しいので、さらに学びたい方は以下のリンクをチェックしてみてください:
+
+1. [Fish Shell 文字列操作](https://fishshell.com/docs/current/commands.html#string)
+2. [Fish Shell コマンドライン使い方](https://fishshell.com/docs/current/tutorial.html)
+3. [Fish Shell 正規表現マッチング](https://fishshell.com/docs/current/commands.html#string-match)

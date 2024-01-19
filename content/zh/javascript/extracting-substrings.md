@@ -1,6 +1,6 @@
 ---
 title:                "提取子字符串"
-html_title:           "Javascript: 提取子字符串"
+html_title:           "Arduino: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,29 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 什么 & 为什么？
-提取子字符串是指从给定字符串中获取特定字符的方法。程序员经常会使用这种技术来处理大量的文本数据，以便能够精确获取所需的信息。
 
-## 如何操作：
-``` Javascript
-// 使用substring方法提取子字符串
-let exampleString = "这是一个例句";
-let subString = exampleString.substring(2, 4); // 将返回 "是一"
+字符串子集提取是从字符串中取出某些字符的过程。程序员之所以需要这么做，主要是因为在处理用户输入或解析复杂字符串等情况时，他们可能需要处理字符串的某一部分。
 
-// 使用split方法提取子字符串（以空格为分隔符）
-let exampleString = "这是一个例句";
-let subString = exampleString.split(" "); // 将返回 ["这是一个例句"]
+## 如何：
 
-// 使用正则表达式提取子字符串
-let exampleString = "这是一个例句";
-let subString = exampleString.match(/例句/); // 将返回 ["例句"]
+以下是一些提取字符串子集的JavaScript代码示例以及它们的输出：
+```Javascript
+let str = "欢迎来到Javascript世界！";
+let subStr1 = str.substring(4, 14);
+console.log(subStr1);  //输出: 来到JavaScript
+
+let subStr2 = str.slice(4, 14);
+console.log(subStr2);  //输出: 来到JavaScript
+
+let subStr3 = str.substr(4,10);
+console.log(subStr3);  //输出: 来到JavaScript
 ```
+每种方法都会按照指定的开始（和结束）索引来提取字符串。
 
 ## 深入了解：
-提取子字符串的技术在编程中有着悠久的历史。除了上述提到的方法外，还有其他一些技术也可以实现类似的功能，例如使用indexOf和slice方法。在实现时，需要注意负数索引的使用和空字符串的处理。
 
-## 参考文献：
-- [MDN documentation on substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN documentation on split](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [MDN documentation on match](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match)
-- [MDN documentation on indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf)
-- [MDN documentation on slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+1. 历史背景：早期的Javascript版本只提供了`substring()`和`substr()`方法来提取子串。然而，为了与Array的 slice 方法保持一致性，后来引入了`slice()`方法。
+
+2. 其他方法：你也可以用`split()`方法将字符串分拆成数组，然后用`join()`方法将需要的部分连起来。
+
+3. 实现细节：`substring()`和`slice()`在处理负值输入时的表现不同。如果给`slice()`传递负值，它会将其解释为从字符串末尾开始计算的索引，而`substring()`则会将负值转换为0。
+
+## 参见：
+
+1. [MDN: String.prototype.substring()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+2. [MDN: String.prototype.slice()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+3. [MDN: String.prototype.substr()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+4. [Javascript Info: Extracting a substring](https://javascript.info/string#extracting-a-substring)

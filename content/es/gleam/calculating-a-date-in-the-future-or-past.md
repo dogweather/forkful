@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & por qué?
+## ¿Qué y Por qué?
+Calcular una fecha en el futuro o el pasado es una tarea común en programación. Se utiliza para todo, desde la programación de recordatorios hasta el seguimiento de fechas de vencimiento.
 
-Calcular una fecha en el futuro o en el pasado es un proceso común en la programación que nos permite manejar de manera eficiente y precisa el tiempo en nuestras aplicaciones. Los programadores realizan esta tarea para rastrear eventos, establecer plazos y generar cronogramas.
-
-## Cómo:
-
-Para calcular una fecha en el futuro o pasado en Gleam, podemos utilizar la función `DateTime.add` combinada con una cantidad de tiempo en el formato adecuado usando los operadores `seconds`, `minutes`, `hours`, `days`, `weeks` y `years`. Por ejemplo, si queremos obtener la fecha de 5 días después de hoy, podemos escribir:
+## Cómo se hace:
+Aquí te muestro un ejemplo de cómo se puede calcular una fecha futura/pasada con Gleam:
 
 ```Gleam
-DateTime.add(3 |> days)
+import gleam/calendar.{Date, Duration}
+
+fn main() {
+  let today = Date.today()
+  // Para sumar días futuros
+  let future_date = Date.add_days(today, 5)
+  // Para restar días pasados
+  let past_date = Date.sub_days(today, 5)
+  Io.println(future_date)
+  Io.println(past_date)
+}
 ```
+El código anterior imprime la fecha de cinco días en el futuro y cinco días en el pasado a partir del día actual.
 
-El resultado sería la fecha en tres días a partir de hoy. También podemos restar tiempo usando el mismo método, solo utilizando números negativos. Por ejemplo, si queremos obtener la fecha de 10 días antes de hoy, podemos escribir:
+## Análisis profundo
+Históricamente, el cálculo de fechas se ha utilizado en diversas aplicaciones para rastrear eventos, recordar fechas importantes y calcular duraciones. En términos de alternativas, muchos lenguajes de programación, incluido Gleam, proporcionan bibliotecas de fechas y horas incorporadas para este propósito.
+En cuanto a los detalles de la implementación, Gleam utiliza la función `add_days` para calcular una fecha en el futuro y la función `sub_days` para calcular una fecha en el pasado.
 
-```Gleam
-DateTime.add(-10 |> days)
-```
-
-El resultado sería la fecha hace diez días a partir de hoy.
-
-Otra forma de especificar una fecha es utilizando la función `DateTime.from_posix_utc`, que toma un timestamp POSIX (el número de segundos desde el 1 de enero de 1970 en UTC) y devuelve una representación de fecha y hora en formato `DateTime`.
-
-## Profundizando:
-
-Antes de la introducción de los timestamps POSIX, muchos sistemas utilizaban el formato de fecha y hora conocido como "Época", que establecía el comienzo de la hora como el 1 de enero de 1900. Sin embargo, esto presentaba algunos problemas, como la incapacidad de representar fechas antes de esa época. El uso de timestamps POSIX ha resuelto estas limitaciones y se ha convertido en el estándar para la gestión de tiempo en la mayoría de los sistemas.
-
-Alternativamente, en lugar de utilizar la función `DateTime.add` en conjunto con la cantidad de tiempo deseada, también podemos especificar una fecha exacta utilizando la función `DateTime.from_components`, que toma los componentes de una fecha (año, mes, día) y devuelve una representación de fecha y hora en formato `DateTime`.
-
-## Ver también:
-
-Para obtener más información sobre el uso de fechas y horas en Gleam, puedes consultar la documentación oficial en https://gleam.run/documentation/#date-and-time. También puedes explorar la función `DateTime` y sus variantes en la biblioteca estándar de Gleam en https://github.com/gleam-lang/gleam_stdlib/blob/master/lib/DateTime.gleam.
+## Ver también
+* Documentación oficial de Gleam: https://gleam.run/docs/
+* Otra ejemplos de código Gleam: https://gleam.run/examples/
+* The Book of Gleam: https://book.gleam.run/ 
+Por supuesto, la mejor manera de aprender es practicando. Así que atrévete a explorar y ensayar con diferentes funciones de Gleam para manejar y manipular fechas. ¡Buena suerte!

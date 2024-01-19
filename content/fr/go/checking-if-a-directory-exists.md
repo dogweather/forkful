@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi & Pourquoi?
-Vérifier si un répertoire existe est un processus courant dans la programmation pour s'assurer qu'un chemin donné existe et peut être utilisé dans le code. Les programmeurs font cela pour éviter les erreurs ou les problèmes lors de l'exécution de leur programme.
+## Quoi et Pourquoi? 
+Contrôler si un répertoire existe consiste à vérifier qu'un dossier spécifique est présent sur le système de fichiers. Les programmeurs le font pour éviter les erreurs lors de l'accès, de la lecture ou de l'écriture des données dans ce dossier.
 
-# Comment faire :
-```
-Go existe le package `os` avec la fonction `Mkdir` pour créer un nouveau répertoire et la fonction `Stat` pour vérifier l'existence d'un répertoire. Voici un exemple de code pour vérifier si un répertoire existe et afficher un message en conséquence :
+## Comment faire :
+Voici comment vous pouvez faire cela en Go:
 
-```Go
+``` Go
+package main
+
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
-  
-func main() {
-  // créer un nouveau répertoire
-  err := os.Mkdir("nouveau_repertoire", 0755)
-  
-  // vérifier s'il y a une erreur
-  if err != nil {
-    // afficher le message d'erreur
-    fmt.Println("Le répertoire existe déjà !")
-  } else {
-    // si aucun erreur, afficher un message de succès
-    fmt.Println("Répertoire créé avec succès !")
-  }
 
-  // vérifier si le répertoire existe avant de le supprimer
-  if _, err := os.Stat("nouveau_repertoire"); !os.IsNotExist(err) {
-    // supprimer le répertoire
-    os.Remove("nouveau_repertoire")
-    // afficher un message de succès
-    fmt.Println("Répertoire supprimé avec succès !")
-  }
+func main() {
+    dirPath := "/chemin/vers/le/dossier"
+    _, err := os.Stat(dirPath)
+
+    if os.IsNotExist(err) {
+        fmt.Printf("Le répertoire %v n'existe pas\n", dirPath)
+    } else {
+        fmt.Printf("Le répertoire %v existe\n", dirPath)
+    }
 }
 ```
 
-# Plongée en profondeur :
-La vérification de l'existence d'un répertoire est un processus important pour s'assurer que notre code peut fonctionner correctement. Auparavant, les programmeurs utilisaient la fonction `syscall.Stat` pour vérifier si un répertoire existe, mais elle était limitée car elle ne fonctionnait que sur les systèmes UNIX. Avec le package `os`, nous pouvons vérifier l'existence d'un répertoire à la fois sur les systèmes UNIX et Windows. De plus, en utilisant la fonction `os.Stat`, nous pouvons également obtenir des informations sur un fichier ou un répertoire telles que la taille, les permissions, etc.
+Dans cet exemple, si le répertoire existe, il affiche "Le répertoire /chemin/vers/le/dossier existe". Sinon, il affiche "Le répertoire /chemin/vers/le/dossier n'existe pas".
 
-# Voir aussi :
+## Plongée en profondeur 
+La fonction globale "os.Stat()" a été introduite dans Go depuis la sortie initiale du langage en 2007. Elle renvoie une structure "FileInfo" et une erreur. Si l'erreur est de type "IsNotExist", alors le fichier ou le répertoire n'est pas présent. 
 
-- [Package `os` dans la documentation officielle de Go](https://golang.org/pkg/os/)
-- [La fonction `Mkdir` dans la documentation officielle de Go](https://golang.org/pkg/os/#Mkdir)
-- [La fonction `Stat` dans la documentation officielle de Go](https://golang.org/pkg/os/#Stat)
+Il y a d'autres façons de faire cela. La bibliothèque "ioutil" de Go a aussi une fonction "ReadDir" qui peut être utilisée pour lister tous les fichiers dans un répertoire et vérifier si un répertoire spécifique y existe. C'est plus utile lorsque vous voulez faire plus qu'une simple vérification d'existence.
+
+La bibliothèque "os" emploie des appels système pour vérifier l'existence des répertoires, ce qui signifie que sa performance dépend du système d'exploitation sous-jacent.
+
+## Voir aussi 
+Pour plus d'informations sur la bibliothèque "os" et comment l'utiliser pour interagir avec le système de fichiers, vous pouvez consulter ce lien: https://pkg.go.dev/os 
+
+Pour une discussion détaillée sur le traitement des erreurs en Go (comme "os.IsNotExist(err)"), regardez ceci: https://blog.golang.org/error-handling-and-go

@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Lua: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Merkkijonon muuntaminen pieniksi kirjaimiksi (tunnetaan myös nimellä lowercasing) tarkoittaa, että kaikki merkkijonon kirjaimet muutetaan pieniksi kirjaimiksi. Tämä on hyödyllistä esimerkiksi silloin, kun merkkijonoa käsitellään ja vertaillaan muihin merkkijonoihin, sillä pieniksi muutetut kirjaimet eivät ole CaSe sEnSiTivE (isompien ja pienempien kirjainten huomioon ottaminen). Ohjelmoijat käyttävät tätä toimintoa helpottamaan ja tarkentamaan merkkijonojen vertailuja ja käsittelyjä.
+## Mitä & Miksi?
 
-## Kuinka tehdä:
-``` Lua
--- Esimerkkimerkkijono
-local merkkijono = "Hei MAAILMA!"
+Muuttaa merkkijono pieniksi kirjaimiksi tarkoittaa sitä, että muutetaan merkkijonon kaikki kirjaimet pieniksi kirjaimiksi. Tätä tehdään yleensä verrattaessa tekstiä, silloin kirjainkoon erilaisuudet eivät vaikuta tulokseen.
 
--- Pienennetään kirjaimet
-merkkijono = string.lower(merkkijono)
+## Näin teet:
 
--- Tulostaa: hei maailma!
-print(merkkijono)
+Lua tarjoaa valmiin toiminnon merkkijonon muuttamiseksi pieniksi kirjaimiksi: `string.lower()`. Tässä esimerkki sen käytöstä:
+
+```Lua
+local lause = "Moi, Miten Menee?"
+print(string.lower(lause))
 ```
 
-``` Lua
--- Toinen vaihtoehtoinen tapa
-local merkkijono = "HELLO world!"
+Suoritettaessa tämä koodi, tuloste on:
 
--- Käytetään pienaakkosfunktiota
-merkkijono = merkkijono:lower()
-
--- Tulostaa: hello world!
-print(merkkijono)
+```
+moi, miten menee?
 ```
 
-## Syväsukellus:
-Historiallisesti, merkkijonojen muuntaminen pieniksi kirjaimiksi liittyi tietokoneiden rajoitettuun muistiin. Isojen ja pienten kirjainten ero oli hankala huomioida, joten pieniksi muuntaminen helpotti tekstin käsittelyä. Nykyään tämä toiminto on vieläkin relevantti, sillä se auttaa kirjainten erojen huomioon ottamisessa, kuten vertailuissa. Vaihtoehtoisesti, on olemassa myös iso- ja pienikirjaimen huomioonottavia funktioita, kuten `string.upper()` ja `string.islower()`.
+## Syvä sukellus
 
-## Katso myös:
-- [Lua string library](https://www.lua.org/manual/5.3/manual.html#6.4)
-- [The Power of Lowercasing in Programming](https://medium.com/@zacharyefisher/the-power-of-lowercasing-in-programming-357f062299f7)
+Historiallisesti merkkijonojen muuntaminen pieniksi kirjaimiksi on ensin tehty C-ohjelmointikielessä, josta se on levinnyt muihin kieliin. Lua perii tämän toiminnon C-kielestä. 
+
+Vaihtoehtoina voisi käyttää painotonta tekstivertailua (case-insensitive comparison), mutta tämä ei ole aina mahdollista tai johdonmukaista eri ohjelmointikielissä tai ympäristöissä. Siksi usein valitaan tämä perinteinen tapa.
+
+`string.lower()` toimii hyvin useimmilla länsimaisilla kielillä. Joillakin kielillä, kuten turkissa, ei ole yksinkertaista yhtä-merkkiä-yhteen vastaavuutta isoille ja pienille kirjaimille.
+
+Tämä toiminto vaatii sisäisesti muistinvarauksen ja kopiointia, koska Lua-merkkijonot ovat muuttumattomia (immutable).
+
+## Katso myös
+
+1. Lua 5.4 Reference Manual - string.lower: [linkki](https://www.lua.org/manual/5.4/manual.html#6.4.2)
+2. Wikipedia - Case Folding: [linkki](https://en.wikipedia.org/wiki/Case_folding) 
+
+Tarkista nämä lähteet lisätietojen saamiseksi ja syvällisemmän ymmärryksen saavuttamiseksi.

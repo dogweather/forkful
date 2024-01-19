@@ -1,7 +1,7 @@
 ---
-title:                "2つの日付の比較"
-html_title:           "Haskell: 2つの日付の比較"
-simple_title:         "2つの日付の比較"
+title:                "2つの日付を比較する"
+html_title:           "Elixir: 2つの日付を比較する"
+simple_title:         "2つの日付を比較する"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,25 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何やってるの？：
-日付の比較とは、２つの日付を見て、どちらが前後するかを決めることです。プログラマーがこの作業をするのは、日付処理がプログラムにとってとても重要だからです。
+# 比較的価値: Haskellで二つの日付を比較する方法 
 
-## やり方：
-```Haskell
-import Data.Time.Clock
+## 何でしょうか？& なぜですか？
+日付の比較とは、プログラムの一部として二つの日付を比較することです。この技術は、特定のイベントが他のイベントより前に発生したか、あるいはそれらの間に何日間が経過したかを知るために行われます。
 
--- 日付を比較する関数
-compareDates :: UTCTime -> UTCTime -> Ordering
+## どのように？
+以下に簡単な例を示します：  
 
--- 例
-date1 = UTCTime (fromGregorian 2020 10 1) 0
-date2 = UTCTime (fromGregorian 2020 9 10) 0
-compareDates date1 date2 -- GT (Greater Than)
+``` Haskell
+import Data.Time
+
+main = do
+    let date1 = fromGregorian 2020 1 1
+    let date2 = fromGregorian 2020 1 31
+    print (diffDays date2 date1)
+```
+出力： 
+
+``` Haskell
+30 
 ```
 
-## 深入り：
-日付の比較は、歴史的にはとても難しい問題でした。しかし、Haskellを使えば簡単に解決できます。また、より高度な日付処理をするためのライブラリもいくつかあります。また、日付オブジェクトにはより詳しい情報があり、異なるタイムゾーンや夏時間の扱い方についても理解する必要があります。
+## ディープダイブ
+Haskellでは、日付の操作は "Data.Time" モジュールを使用して行われます。このモジュールの歴史は古く、Haskell の初期から存在しています。なお、日付の比較の代替手段として `UTCTime` や `ZonedTime` を使用することも可能です。
 
-## 関連情報：
-- [Haskell公式ドキュメント](https://www.haskell.org/)
-- [Hackage - 日付処理についてのライブラリ](https://hackage.haskell.org/packages/search?terms=date)
+## その他の参考文献
+- [Haskellの公式ドキュメンテーション](https://www.haskell.org/documentation/)
+- [Haskellでの日付と時刻（Data.Time）](http://learnyouahaskell.com/dates-and-times)

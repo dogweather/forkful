@@ -1,7 +1,7 @@
 ---
-title:                "Analiza daty z ciągu znaków"
-html_title:           "Haskell: Analiza daty z ciągu znaków"
-simple_title:         "Analiza daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co & Dlaczego?
 
-Paroszerowanie daty z ciągu znaków to proces, w którym programista przekształca dane zapisane w postaci tekstu na obiekty daty, które mogą być przetwarzane przez program. Jest to przydatne w wielu przypadkach, np. w systemach rezerwacji, przetwarzaniu danych finansowych lub w prostych aplikacjach kalendarza.
+Przetwarzanie daty z ciągu znaków to proces zamiany tekstowej reprezentacji daty (np. "20-12-2022") na odpowiednią strukturę danych. Programiści robią to, aby manipulować datami i czasem w bardziej wymiarowy sposób.
 
 ## Jak to zrobić:
 
+Haskell oferuje nam wiele możliwości do parsowania dat. Możemy skorzystać z biblioteki `Data.Time` i użyć funkcji `parseTimeM`. Oto, jak to zrobić:
+
 ```Haskell
+import Data.Time
 import Data.Time.Format
 
--- funkcja do parsowania daty z ciągu znaków w formacie ISO
-parseISODate :: String -> Maybe UTCTime
-parseISODate = parseTimeM True defaultTimeLocale "%Y-%m-%dT%H:%M:%S%z"
-
--- przykładowe użycie
--- przykładowy ciąg znaków: "2021-06-15T16:30:00+02:00"
-parseISODate "2021-06-15T16:30:00+02:00"
--- wynik: Just 2021-06-15 16:30:00 CEST
+main = do
+  let dateString = "2022-12-20"
+  let format = "%Y-%m-%d"
+  let maybeDate = parseTimeM True defaultTimeLocale format dateString
+  print (maybeDate :: Maybe Day)
 ```
 
-## Głębszy zanurzenie:
+Po uruchomieniu tego kodu otrzymasz taki wynik:
 
-Paroszerowanie daty z ciągu znaków jest szerszym zagadnieniem związanym z przetwarzaniem danych. Historia parsowania sięga lat 70., gdy popularne stało się przetwarzanie danych w formie tekstowej. Alternatywnym sposobem na obsługę dat jest wykorzystanie bibliotek do obsługi czasu i stref czasowych, takich jak ```Data.Time``` w języku Haskell. W implementacji parsowania daty z ciągu znaków ważną rolę odgrywa formatowanie i analiza tekstu w celu wydobycia informacji o dacie.
+```Haskell
+Just 2022-12-20
+```
 
-## Zobacz także:
+## Deep Dive
 
-- Dokumentacja biblioteki Data.Time.Format: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html
-- Wprowadzenie do parsowania daty w języku Haskell: https://wiki.haskell.org/Parsing_a_datetime
-- Porównanie różnych sposobów obsługi dat w języku Haskell: https://www.yesodweb.com/book/time-and-date
+Jeżeli mówimy o przetwarzaniu dat z ciągu znaków, warto znać historię. Analiza danych była od zawsze ważnym elementem programowania, przede wszystkim dlatego, że dane wejściowe są często postrzegane jako ciągi znaków, a parsowanie pozwala na ich łatwe użycie. 
+
+Mniejsze projekty mogą skorzystać z innych funkcji do przekształcenia ciągu znaków w datę, takich jak `read` i `show`, ale nie oferują one takiej elastyczności jak `parseTimeM`. 
+
+`parseTimeM` pochodzi z biblioteki `Data.Time`. To bardzo wydajne narzędzie, które daje nam dużo opcji, ale wszystko sprowadza się do Tru, False, formule formatu i ciągu.
+  
+## Zobacz Też:
+
+- [Dokumentacja biblioteki Data.Time](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Poradnik o parsowaniu dat w Haskellu](https://riptutorial.com/haskell/example/5805/parsing-a-date-and-time)

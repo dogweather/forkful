@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Javascript recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,34 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Parsing a Date from a String in JavaScript
+
 ## What & Why?
-Parsing a date from a string in Javascript refers to converting a date written in a string format into a date object that can be recognized and manipulated by the computer. Programmers frequently do this to store and manipulate dates in their code, such as creating a calendar or setting an expiration date for a product.
+Parsing a date from a string is extracting or converting a date stored in string format into a date object that JavaScript can recognize and manipulate. Programmers commonly do this to handle date and time data retrieved in string format from various sources, be it APIs, text files, user input or databases.
 
 ## How to:
-To parse a date from a string in Javascript, use the built-in Date.parse() method. This method takes in a string representing a date and returns the number of milliseconds since January 1, 1970. 
+Let's take a look at how you can parse a date from a string using JavaScript's built-in Date object. Suppose you have a string "2020-12-31".
 
-Example:
 ```Javascript
-const dateString = 'January 12, 2021';
-const date = Date.parse(dateString);
-console.log(date); // Output: 1610448000000
+let dateString = "2020-12-31";
+let dateObject = new Date(dateString);
+console.log(dateObject);
 ```
 
-To convert this number of milliseconds into a readable date, use the Date() constructor.
+When you run this code, the output will be:
 
-Example:
 ```Javascript
-const date = new Date(1610448000000);
-console.log(date.toDateString()); // Output: Tue Jan 12 2021
+Date Thu Dec 31 2020 00:00:00 GMT+0000 (Coordinated Universal Time)
 ```
+JavaScript automatically recognizes the date string in "YYYY-MM-DD" format and converts it to a Date object.
 
-## Deep Dive:
-Parsing dates from strings has been a common problem for programmers since the early days of computing. Prior to the creation of built-in methods, developers had to create their own algorithms to parse dates. However, with the advent of the Date.parse() method in Javascript, this task has become much simpler.
+## Deep Dive
+In the early days, there wasn't a standard way of parsing a date string in JavaScript. Different browsers interpreted dates in different ways. This discrepancy made handling dates a hectic task for developers. Thus, JavaScript introduces the standard ISO-8601 date format, which most date functions respect and understand nowadays for consistency.
 
-An alternative to the Date.parse() method is using a library like Moment.js. This library provides a more comprehensive and user-friendly way to parse and manipulate dates in Javascript. 
+You can also use libraries like Moment.js for more formatting options and better browser compatibility. Here's how you use Moment.js to parse a date.
 
-Implementation details of the Date.parse() method differ between browsers and can sometimes lead to unexpected results. It's important to test your code thoroughly across different browsers and versions to ensure consistent behavior.
+```Javascript
+let moment = require('moment');
+let dateString = "31-12-2020";
+let dateObject = moment(dateString, "DD-MM-YYYY");
+console.log(dateObject.format());
+```
+In JavaScript, the Date object is built based on the time value that represents the number of milliseconds since the Unix Epoch (January 1, 1970, 00:00:00 UTC). When a date string is parsed, it is converted to this time value. This explains why date strings without time components default to midnight (00:00:00).
 
-## See Also:
-- [MDN Web Docs: Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
-- [Moment.js](https://momentjs.com/)
+Keep in mind that the behavior of date parsing in JavaScript is slightly different when dealing with two-digit years. For example, new Date('01-01-70') considers 70 as 1970, not 2070.
+
+## See Also
+Visit the following resources to understand more about JavaScript date parsing.
+- [MDN Web Docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js Documentation](https://momentjs.com/docs/)
+- [ECMAScript® 2018 Language Specification - Date Objects](https://www.ecma-international.org/ecma-262/9.0/index.html#sec-date-objects)

@@ -1,7 +1,7 @@
 ---
-title:                "拼接字符串"
-html_title:           "Elixir: 拼接字符串"
-simple_title:         "拼接字符串"
+title:                "连接字符串"
+html_title:           "C: 连接字符串"
+simple_title:         "连接字符串"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -12,32 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 什么 & 为什么？
 
-从字面上理解，连接字符串就是将两个或多个字符串合并成一个新的字符串。程序员经常这样做是因为需要动态地构建特定的字符串，比如打印日志信息、生成文件路径等等。
+在编程中，字符串连接是指将两个或多个字符串组合在一起。程序员进行字符串连接以便处理用户输入，生成报告，构建动态SQL查询等等。
 
 ## 如何操作：
 
-使用Elixir编程语言可以轻松地连接字符串。以下示例展示了如何使用加号和String.concat/2函数来连接两个字符串，并打印出结果。
-```
-Elixir
-string1 = "Hello"
-string2 = "World"
-result = string1 <> " " <> string2
-IO.puts(result)
+在Elixir中，我们可以使用`<>`运算符来连接字符串。
+
+```Elixir
+IO.puts("Hello" <> " World!")
 ```
 
-输出结果：
+运行这段代码，将在控制台输出：
+
 ```
-Hello World
+Hello World!
 ```
 
-## 深入了解：
+另外，还可以使用`String.concat/2`函数组合字符串：
 
-字符串连接有着悠久的历史，在早期的编程语言中就已经存在。除了使用加号和String.concat/2函数外，还有其他的实现方法，比如使用String.join/2函数、IO.write函数等。通过深入探讨这些不同的实现方式，可以帮助我们更好地理解实现原理，并选择适合自己的方法。
+```Elixir
+IO.puts(String.concat("Hello", " World!"))
+```
 
-## 查看更多：
+输出将是：
 
-想了解更多关于字符串连接的知识，请参考以下资源：
+```
+Hello World!
+```
 
-- Elixir官方文档：https://hexdocs.pm/elixir/String.html#concat/2
-- 《Elixir-言简意赅》一书中关于字符串操作的章节：https://ileigar.com/book/code/index.html#elixir_1
-- Stack Overflow上与字符串连接相关的问题和答案：https://stackoverflow.com/questions/tagged/elixir+string+concatenation
+## 深入探讨
+
+- **历史背景**：Elixir语言是在2011年由 José Valim创建，目的是改进Erlang语言的某些方面，包括字符串连接。
+
+- **替代方案**：在Elixir中，除了使用 `<>` 运算符和 `String.concat/2` 函数外，也可以使用 `String.join/1` 和 `String.join/2` 函数来连接字符串。
+
+- **实现细节**：在内部，`<>` 是由 `Kernel.def` 函数定义的。`String.concat/2` 也是如此。当程序使用这些函数时，它们会调用底层的Erlang函数以提高性能。
+
+## 参考资料
+
+如果你想更深入了解Elixir时，下面是一些可能会有用的资源：
+
+- [Elixir Guide](https://elixir-lang.org/getting-started/introduction.html)
+- [Elixirschool](https://elixirschool.com/)
+- [Erlang and Elixir Docs](https://erlang.org/doc/)
+- [The Pragmatic Studio - Elixir](https://pragmaticstudio.com/elixir)

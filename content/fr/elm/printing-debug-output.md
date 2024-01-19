@@ -1,7 +1,7 @@
 ---
-title:                "Affichage des sorties de débogage"
-html_title:           "Elm: Affichage des sorties de débogage"
-simple_title:         "Affichage des sorties de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi & Pourquoi?
+## Quoi & Pourquoi ?
+L'affichage des sorties de débogage, c'est écrire des informations de contrôle qui sont affichées pendant ou après l'exécution du programme. Les programmeurs le font pour comprendre comment leur programme fonctionne réellement, inspecter les bugs et vérifier la logique.
 
-L'impression de sortie de débogage est une pratique courante pour les programmeurs Elm. Elle consiste à afficher des informations sur l'état et le fonctionnement du programme dans la console du navigateur. Cela permet aux développeurs de comprendre plus facilement ce qui se passe dans leur code et de détecter les éventuels problèmes.
+## Comment faire :
+Voici comment vous pouvez utilisez `Debug.log` en Elm pour afficher des sorties de débogage.
 
-# Comment faire:
-
-Voici un exemple simple d'utilisation de l'impression de sortie de débogage en Elm:
-
-```
-elm-sandbox 0.19.1
-
+```Elm
 import Html exposing (text)
 import Debug
 
 main =
-  text (Debug.toString 42)
+    text (Debug.log "This is logged" "that the function will display")
+```
+La fonction `Debug.log` prend deux arguments : le message à enregistrer et la valeur à afficher. Le programme ci-dessus générera la sortie de débogage suivante dans la console de votre navigateur :
+
+```Elm
+This is logged : that the function will display
 ```
 
-Le résultat de cette impression sera ```42``` dans la console du navigateur.
+## Deep Dive :
+Historiquement parlant, l'affichage de la sortie de débogage est une pratique qui remonte aux premiers jours de la programmation. C'est une technique de débogage simple mais puissante.
 
-# Plongée en profondeur:
+En Elm, l'alternatives à `Debug.log` peut être `Debug.todo` qui arrête l'exécution du programme avec une erreur spécifique. Autre différente technique inclue l'usage de `Debug.toString` qui convertit une expression complexe en une chaîne de caractères.
 
-L'impression de sortie de débogage était déjà présente dans la version précédente d'Elm, mais elle a été améliorée dans la version actuelle. Il existe également d'autres alternatives pour le débogage en Elm, telles que l'utilisation d'outils de débogage externes ou la mise en place de tests unitaires. Pour mettre en place l'impression de sortie de débogage, Elm utilise la fonction ```toString``` pour convertir les valeurs en chaînes de caractères.
+Côté implementation, `Debug.log` utilise le système de console de JavaScript sous-jacent pour afficher les informations de débogage.
 
-# Voir aussi:
-
-Pour plus d'informations sur l'impression de sortie de débogage en Elm, consultez la documentation officielle de Elm sur le débogage: https://guide.elm-lang.org/debugging/
+## Voir aussi : 
+* Documentation de Elm sur la débogage : https://guide.elm-lang.org/effects/log.html
+* Discussion sur les différentes techniques de débogage en Elm : https://stackoverflow.com/questions/35525514/how-to-print-to-the-console-in-elm

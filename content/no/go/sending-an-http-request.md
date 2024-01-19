@@ -1,6 +1,6 @@
 ---
 title:                "Å sende en http-forespørsel"
-html_title:           "Go: Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
 simple_title:         "Å sende en http-forespørsel"
 programming_language: "Go"
 category:             "Go"
@@ -10,27 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Når man bruker Go programmeringsspråket, kan man enkelt sende en HTTP for å be om informasjon fra en nettside eller API. Dette lar programmerere hente og behandle data på en effektiv måte.
+## Hva & Hvorfor?
 
-# Hvordan:
-Go har innebygde funksjoner for å sende HTTP-forespørsler. Her er et eksempel på å sende en GET-forespørsel:
+Å sende en HTTP-forespørsel innebærer å kommunisere med en server over internett ved bruk av HTTP (Hypertext Transfer Protocol). Programmerere gjør dette for å hente eller sende data til/fra en server, som når de bruker en API.
 
+## Hvordan:
+
+Her er en grunnleggende HTTP GET-forespørsel i Go:
 ```Go
-resp, err := http.Get("https://example.com")
-if err != nil {
-    // håndter feil
+package main
+
+import (
+  "io/ioutil"
+  "net/http"
+  "log"
+)
+
+func main() {
+  resp, err := http.Get("http://example.com/")
+  if err != nil {
+    log.Fatalln(err)
+  }
+
+  body, err := ioutil.ReadAll(resp.Body)
+  if err != nil {
+    log.Fatalln(err)
+  }
+
+  log.Println(string(body))
 }
-defer resp.Body.Close()
-body, err := ioutil.ReadAll(resp.Body)
-fmt.Println(string(body))
 ```
+Utførelse av dette programmet vil føre til at innholdet på nettsiden "http://example.com/" blir skrevet ut til konsollen.
 
-Output: HTML-koden fra nettsiden vil bli skrevet ut.
+## Dypdykk:
 
-# Dykke dypere:
-Å sende HTTP-forespørsler er en viktig del av å bygge webapplikasjoner og å samhandle med eksterne tjenester. Alternativene til å bruke Go for å gjøre dette inkluderer JavaScript for frontend eller Python for backend. Implementeringen av HTTP-forespørsler i Go bruker standardbiblioteker som net/http og io/ioutil.
+HTTP ble utformet i 1991 og har vært ryggraden i dataoverføring på internett siden da. Alternativer til HTTP inkluderer andre overføringsprotokoller som FTP eller moderne protokoller som gRPC, men HTTP forblir mest brukt.
 
-# Se også:
-- Offisiell Go dokumentasjon for å sende HTTP-forespørsler: https://golang.org/pkg/net/http/
-- En guide for å bruke Go med RESTful API-er: https://www.thepolyglotdeveloper.com/2017/02/consume-restful-api-endpoints-golang-application/
+I Go må du være oppmerksom på at en vellykket http.Get()-forespørsel ikke nødvendigvis betyr at serveren returnerte en 200 OK-status. Du må manuelt sjekke StatusCode-feltet i resp-objektet.
+
+Du har også mulighet til å tilpasse HTTP-forespørsler ved å bruke http.NewRequest() og http.Client.Do(), hvor du kan tilpasse detaljer som HTTP-metode, overskrifter og timeout-oppførsel.
+
+## Se Også:
+
+Her er noen lenker til relatert informasjon og ressurser for videre læring:
+
+- Go dokumentasjonen på net/http pakken: https://golang.org/pkg/net/http/
+- En mer detaljert guide til net/http pakka: https://gobyexample.com/http-clients
+- HTTP/2 i Go: https://blog.golang.org/http2
+- HTTP.StatusCodes forklaring: http://golang.org/pkg/net/http/#pkg-constants

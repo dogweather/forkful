@@ -1,6 +1,6 @@
 ---
 title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "Python: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Python"
 category:             "Python"
@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
-HTTP अनुरोध भेजना और बुनियादी प्रमाणीकरण के साथ इसका उपयोग क्या है, ये दोहाई हैं।
-HTTP अनुरोध भेजने से, हमारे संदेश एक सर्वर से एक सुरक्षित स्थान के बीच भेजे जाते हैं। प्रोग्रामर्स यह करते हैं क्योंकि वे एक स्थान से दूसरे स्थान पर डेटा संचालित करने के लिए अनुमति देता है।
+## क्या & क्यों?
 
-## कैसे करें: 
-पायथन कुछ कामगार कोड द्वारा HTTP अनुरोध भेजने के दौरान कैसे प्रमाणीकरण करने के लिए इस्तेमाल किया जा सकता है प्रदर्शित होता है।
+HTTP सत्यापन के साथ अनुरोध भेजना क्या है और क्यों प्रोग्रामर्स इसका उपयोग करते हैं, आइए जानते हैं। 
+HTTP सत्यापन के साथ अनुरोध भेजना एक प्रक्रिया है जिसमें हम HTTP अनुरोध के माध्यम से वेबसर्वर से वार्तालाप करते हैं। यह एक सुरक्षित तरीका होता है वेबसर्वर से डेटा एक्सेस करने का, अक्सर उपयोगकर्ता नाम और पासवर्ड के साथ। 
 
-```python
+## कैसे करें?
+
+Python की "requests" library का उपयोग करके HTTP अनुरोध भेजने का कोडिंग उदाहरण देखते हैं।
+
+```Python
 import requests
+from requests.auth import HTTPBasicAuth 
 
-url = "http://www.example.com"
-username = "john"
-password = "1234"
+response = requests.get('https://mywebsite.com', auth=HTTPBasicAuth('user', 'pass')) 
 
-response = requests.get(url, auth=(username, password))
 print(response.status_code)
-# Output: 200
 ```
 
-## गहरी खोज करें: 
-HTTP अनुरोध भेजने का इतिहास, वैकल्पिक विकल्प और प्रमाणीकरण के बारे में वैश्विक जानकारी आपको और अधिक निर्देशित करेंगी।
+ऊपरी कोड पर चलाने से आपको अपने अनुरोध की स्थिति कोड मिलेगा। यदि सब कुछ ठिक है, तो आपको 200 प्राप्त होगा।
 
-### इतिहास: 
-HTTP अनुरोध भेजने का इतिहास 1995 में पहले कोड लिखा गया था। यह दोहराया और सुधारित किया गया है और आज भी व्यापक रूप से उपयोग किया जाता है।
+## गहराई में:
 
-### वैकल्पिक विकल्प: 
-प्रमाणीकरण के अलावा, HTTP अनुरोध भेजने के अन्य विकल्प भी हैं जैसे Token प्रमाणीकरण और OpenID प्रमाणीकरण।
+HTTP Basic Authentication निम्न प्रकार के कोड को लागू करने की प्राचीन तकनीक है, जिसका इस्तेमाल उन साइटों द्वारा किया जाता है जो प्रथम प्रवेश के समय सत्यापन करती हैं। विकल्प के रूप में, आप OAuth या जावा वेब टोकन (JWT) का उपयोग कर सकते हैं। भारी लोड संचालन की स्थिति में, HTTP अनुरोधों को क्लस्टर में वितरित किया जा सकता है।
 
-### अमलीय तथ्य:
-Python कोड के साथ HTTP अनुरोध भेजने के लिए, हम थर्ड पार्टी मॉड्यूल का उपयोग करते हैं जैसे Requests। इसमें प्रमाणीकरण के लिए उपयोगकर्ता का नाम और पासवर्ड का प्रदान करना आसान है।
+## देखें भी :
 
-## देखें भी: 
-संख्यागणितीय कोड और यात्रा अनुसारित संयंत्र जानकारी प्राप्त करने के लिए, HTTP अनुरोध भेजने के अलावा, प्रोग्रामर्स को अन्य डेटा परिवर्तन के साथ मदद कर सकता है।
+HTTP सत्यापन के साथ अनुरोध भेजने के बारे में और जानने के लिए निम्नलिखित लिंक पर जाएं:
 
-यहां से और अधिक जानें।
-http://docs.python-requests.org/en/master/
-http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+- Python Requests Library: [https://requests.readthedocs.io/en/latest/](https://requests.readthedocs.io/en/latest/)
+- HTTP Basic Authentication: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- OAuth 2.0: [https://oauth.net/2/](https://oauth.net/2/)
+- JSON Web Tokens: [https://jwt.io/introduction/](https://jwt.io/introduction/)

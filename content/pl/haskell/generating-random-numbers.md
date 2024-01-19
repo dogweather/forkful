@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "Haskell: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Numbers"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co & Dlaczego?
 
-Generowanie losowych liczb to proces wykorzystywany przez programistów do tworzenia przypadkowych danych w celu testowania i symulacji różnych scenariuszy. Jest to przydatne w tworzeniu gier, algorytmów lub w celu analizowania zachowania systemów.
+Generowanie liczb losowych to sposób nakreślenia przypadkowego ciągu liczb, które nie mają żadnego widocznego schematu. Programiści używają tych liczb m.in. do symulacji, gier czy bezpieczeństwa danych.
 
 ## Jak to zrobić:
 
-Możemy generować losowe liczby w Haskellu za pomocą funkcji `random`. Na przykład, jeśli chcemy wygenerować liczbę całkowitą od 1 do 10, możemy użyć następującego kodu:
+Zacznijmy przez importowanie modułu `System.Random`. Wygenerujmy losową liczbę całkowitą:
 
 ```Haskell
 import System.Random
 
 main = do
-    num <- randomRIO (1,10)
-    print num
+  gen <- newStdGen
+  print (take 5 $ randoms gen :: [Int])
 ```
+W wyniku ujrzymy pięć liczb losowych.
 
-Powyższy kod wykorzystuje moduł `System.Random` i funkcję `randomRIO` do wygenerowania losowej liczby całkowitej w zakresie od 1 do 10. Wynik zostanie wyświetlony w konsoli.
+## Głębsze spojrzenie
 
-## Vertigo
+Generowanie liczb losowych jest z nami od czasów wcześniejszych komputerów. Ewoluowało wraz z rozwojem teorii prawdopodobieństwa i matematyki.
 
-Generowanie losowych liczb jest procesem wykorzystywanym w wielu językach programowania i istnieje wiele alternatywnych sposobów, jak np. wykorzystanie generatorów liczb pseudolosowych, które są oparte na złożonych obliczeniach matematycznych. W Haskellu, funkcja `random` wykorzystuje generator liczb pseudolosowych o nazwie Mersenne Twister.
+Ich Ważne jest, że generowane liczby są pseudolosowe; w rzeczywistości powstają z precyzyjnie określonego algorytmu. 
+
+W Haskellu domyślnie używamy generatora Mersenne Twister, choć dostępne są inne (jak porównywalny Xorshift).
 
 ## Zobacz także:
 
-Możesz przeczytać więcej o funkcji `random` i innych funkcjach z modułu `System.Random` w oficjalnej dokumentacji Haskell (https://hackage.haskell.org/package/random). Inną przydatną funkcją do generowania losowych danych w Haskellu jest `randomIO`, która jest podobna do `randomRIO`, ale nie wymaga podawania przedziału.
+Jak już potraficie tworzyć proste liczby losowe, możecie zainteresować się bardziej skomplikowanymi technikami. Tutaj są linki, które mogą pomóc:
+
+1. [Tutorial na generowanie rozkładów probabilistycznych w Haskellu](http://random.mat.sbg.ac.at/results/karl/server/node3.html)
+2. [Dokumentacja System.Random](http://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
+3. [Artykuł na temat jakości różnych generatorów liczb losowych](https://www.jstatsoft.org/article/view/v008i14)

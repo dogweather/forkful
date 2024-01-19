@@ -1,7 +1,7 @@
 ---
-title:                "उपसामग्री निकालना"
-html_title:           "Java: उपसामग्री निकालना"
-simple_title:         "उपसामग्री निकालना"
+title:                "सबस्ट्रिंग्स निकालना"
+html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# जावा में उपवाक्यांश निकालना
+
 ## क्या और क्यों?
-जब एक प्रोग्रामर अपने कोड में एक स्ट्रिंग का एक उपस्टरिंग निकालता है, तो वह स्ट्रिंग के कुछ हिस्सों को अलग ढंग से प्रदर्शित करता है। इसे स्ट्रिंग का सबस्ट्रिंग निकालना कहा जाता है। कई प्रोग्रामिंग स्थितियों में, यह स्ट्रिंग का उपयोग आसानी से किया जा सकता है और कोड को अधिक स्पष्ट बनाता है।
 
-## कैसे:
-जावा में स्ट्रिंग का सबस्ट्रिंग निकलने के लिए substring() मेथड का उपयोग किया जा सकता है। इसमें दो पैरामीटर होते हैं - शुरुआती और अंतिम इंडेक्स। उदाहरण के लिए: 
+उपवाक्यांश निकालना एक वाक्यांश या स्ट्रिंग निकालने की एक क्रिया है। प्रोग्रामर इसे डेटा को छोटे खंडों में विभाजित करने और प्रबंधित करने के लिए करते हैं।
 
-```java 
-String str = "Hello World!";
-String subStr = str.substring(0, 5);
-System.out.println(subStr);
+## कैसे करें:
 
-// Output: Hello
+```Java
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello, world!";
+        String substr = str.substring(7, 12);
+        System.out.println(substr);  // Outputs "world"
+    }
+}
 ```
+इस कोड का उदाहरण फ़ंक्शन `substring(7, 12)` का उपयोग करके `"Hello, world!"` वाक्यांश से `"world"` उपवाक्यांश को निकालता है।
 
-यहां, हमने 0 से शुरू होने वाले प्रथम 5 इंडेक्स को उपयोग करके स्ट्रिंग "Hello World!" का पहला शब्द निकाला है।
+## बारीकी से समझना
 
-## गहराई में खोजें:
-इस तकनीक की शुरुआत 1976 में यूएसबी में दर्ज एक विशेषता थी। आज के समय में भी, अधिकांश प्रोग्रामिंग भाषाओं में स्ट्रिंग का सबस्ट्रिंग निकालने का यही तरीका है। उनमें से एक है C और C++ में। इसके अलावा, पाइथन में भी स्ट्रिंग का सबस्ट्रिंग निकालने के लिए substring() मेथड मौजूद है। स्वचालित रूप से स्ट्रिंग की लंबाई प्राप्त करने या विशिष्ट शब्दों को तालिका में बदलने के लिए भी substring() का उपयोग किया जाता है।
+जावा भाषा में `substring` क्रिया का प्रयोग 1990 वीं सताब्दी में हुआ था। इसके विकल्पों में `split`, `indexOf` और `charAt` शामिल हैं, परन्तु `substring` बहुत ही लोकप्रिय हुआ। इसे जब कोई वाक्यांश छोटे खण्डों में विभाजित करना होता है तो इसका उपयोग किया जाता है।
 
-## और देखें:
-यदि आपको स्ट्रिंग का सबस्ट्रिंग निकालने के बारे में और जानना है, तो नीचे दिए गए स्रोतों को जरूर देखें:
+`substring` क्रिया अंत सूचक को छोड़कर सभी वर्णों को शामिल करती है। यदि आपके पास एक स्ट्रिंग `"Hello, world!"` है और आप `substring(0, 5)` का उपयोग करते हैं, तो आपको `"Hello"` मिलेगा।
 
-- [जावा substring() डॉक्यूमेंटेशन](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int, int))
-- [C में स्ट्रिंग सम्बंधित (Substring-related) फ़ंक्शंस](https://www.programiz.com/c-programming/library-function/string.h/strstr)
-- [पाइथन substring() फ़ंक्शंस](https://www.programiz.com/python-programming/methods/string/substring)
+## जोर देखें
+
+1. [Java String substring() Method](https://www.javatpoint.com/java-string-substring)
+2. [Java - String substring() Method](https://www.tutorialspoint.com/java/java_string_substring.htm)

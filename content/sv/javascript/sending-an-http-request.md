@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran"
-html_title:           "Javascript: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Skicka en http-förfrågan"
+html_title:           "Javascript: Skicka en http-förfrågan"
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Att skicka en HTTP förfrågan är en vanlig uppgift för programmerare. Det är helt enkelt begreppet för att skicka en begäran till en server för att hämta data eller utföra en åtgärd. Detta är en grundläggande del av många webbapplikationer och API:er.
+# Skicka HTTP-förfrågan med Javascript
 
-## Hur man:
-För att skicka en HTTP förfrågan i Javascript, behöver du ett sätt att kommunicera med en server. Det finns flera sätt att göra detta, men ett populärt val är att använda det inbyggda XMLHttpRequest-objektet. Nedan finns ett enkelt exempel på hur det kan implementeras:
+## Vad & Varför?
+Att skicka en HTTP-förfrågan innebär att din applikation initierar en åtgärd på en annan server över webben. Detta är avgörande för front-end-utvecklare eftersom det låter dem interagera och utbyta data med webbservrar.
 
-```Javascript
-const xhr = new XMLHttpRequest();
-xhr.open("GET", "https://api.example.com/users");
-xhr.send();
-
-xhr.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        console.log(xhr.responseText);
-    }
-}
-```
-
-I detta exempel skickar vi en GET-förfrågan till API:et för att hämta en lista med användare. Vi lyssnar också på xhr-objektets readyState för att kontrollera om förfrågan har slutförts och kontrollerar status för att säkerställa att det är en lyckad förfrågan innan vi loggar svaret till konsolen.
-
-## Deep Dive:
-Historiskt sett, var XMLHttpRequest det primära sättet att skicka HTTP förfrågningar i Javascript, men i modern utveckling har det blivit allt vanligare att använda fetch API:et, som tillhandahåller ett enklare och smidigare gränssnitt för att skicka och hantera förfrågningar.
-
-Exempelvis ser en GET-förfrågan med fetch API ut så här:
+## Hur gör man
+Användningen av `fetch()` i Javascript är ett snabbt och lätt sätt att skicka HTTP-förfrågningar. Här är ett grundläggande exempel:
 
 ```Javascript
-fetch("https://api.example.com/users")
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => console.log(error));
+fetch('https://api.mittwebbplats.se/data', {
+  method: 'GET',
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch((error) => {
+  console.error('Error:', error);
+});
 ```
 
-Här använder vi istället en inbyggd metod för fetch-funktionen för att skicka förfrågan och sedan hämta och hantera svaret. Detta är bara ett av många alternativ för att skicka HTTP förfrågningar i Javascript.
+Vid körning av koden ovan får du ett JSON-svar från 'https://api.mittwebbplats.se/data'.
 
-## See Also:
-Det finns många resurser för att lära sig mer om att skicka HTTP förfrågningar i Javascript, inklusive dokumentation och tutorials online. Här är några att utforska:
+## Djupdykning
+`Fetch()` är den moderna lösningen för att skicka HTTP-förfrågningar och är inbyggd i de flesta moderna webbläsare. Men tidigare använde utvecklare `XMLHttpRequest`.
 
-- [MDN - XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-- [MDN - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [W3Schools - XMLHttpRequest Tutorial](https://www.w3schools.com/xml/xml_http.asp)
-- [W3Schools - Fetch Tutorial](https://www.w3schools.com/js/js_api_fetch.asp)
+Ett alternativ till `fetch()` är `axios`, en tredjeparts paketleverantör med fler funktioner än `fetch()`. Axios erbjuder automatisk omvandling av JSON data, felhantering, och har stöd för äldre webbläsare.
+
+Både `fetch()` och `axios` är verk för asynkron programmering, ett koncept i Javascript för att hantera operationer som tar tid, som nätverksförfrågningar. De returnerar ett `Promise` -objekt, en indikation på det eventuella slutförandet av en asynkron operation och dess värde.
+
+## Se även
+För vidare läsning och mer djupgående kunskap kan följande källor vara till nytta:
+
+- [MDN-webbdokumentation för Fetch](https://developer.mozilla.org/sv-SE/docs/Web/API/Fetch_API)
+- [Detaljerad guide för Axios](https://axios-http.com/docs/intro)
+- [Asynkron programmering i Javascript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)

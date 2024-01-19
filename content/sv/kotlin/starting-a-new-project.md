@@ -1,7 +1,7 @@
 ---
-title:                "Att börja ett nytt projekt"
-html_title:           "Kotlin: Att börja ett nytt projekt"
-simple_title:         "Att börja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
@@ -11,30 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att starta ett nytt projekt är när man börjar arbeta på ett nytt kodprojekt från grunden. Programrammare gör detta för att skapa ny mjukvara eller förbättra och uppdatera befintlig mjukvara.
 
-## How to:
+Ett nytt projekt innebär att börja utveckla en ny programvara från grunden, formulerad av unika idéer och strategier. Programmerare startar nya projekt för att lösa specifika problem, skapa verktyg eller implementera nya idéer.
+
+## Hur man gör:
+
+Här är ett exempel på hur man skapar en function i Kotlin.
+
 ```Kotlin
-// Skapa en ny klass
-class Person(var namn: String, var ålder: Int)
+fun helloFunction(name: String) {
+    println("Hej $name, välkommen till Kotlin!")
+}
 
-// Skapa ett nytt objekt av klassen
-var person = Person("Anna", 25)
-
-// Anropa data från objektet
-println(person.namn)
-println(person.ålder)
+fun main() {
+    helloFunction("Svensk kodare")
+}
 ```
 
-Output:
+När du kör denna kod, kommer outputen vara: 
+
 ```Kotlin
-Anna
-25
+> Task :run
+Hej Svensk kodare, välkommen till Kotlin!
 ```
 
-## Deep Dive:
-När man startar ett nytt projekt är det viktigt att ha en klar vision för vad man vill uppnå och att välja rätt programmeringsspråk och ramverk för att nå målet. I historien har det funnits flera populära programmeringsspråk som C++ och Java, men med tiden har nya språk som Kotlin utvecklats för att förenkla och förbättra arbetsprocessen för programmerare. Andra alternativ för att starta ett nytt projekt kan vara att använda färdiga mallar eller att bygga vidare på befintlig kod.
+## Fördjupning
 
-## See Also:
-- Officiell Kotlin hemsida (https://kotlinlang.org/)
-- 10 anledningar till varför Kotlin är bättre än Java (https://dzone.com/articles/kotlin-is-better-than-java-for-android-development)
+1. **Historisk kontext:** Kotlin, som är relativt nytt i programmeringsspråkens värld, släpptes officiellt år 2011 av JetBrains teamet. Det utvecklades som ett mer kodningseffektivt och säkrare alternativ till Java, speciellt för Android-utveckling.
+2. **Alternativ:** Det finns flera andra programmeringsspråk som du kan använda för att starta ett nytt projekt, som Java, Python, C++, och så vidare. Men Kotlin har blivit populärt tack vare dess utmärkta funktioner och enkelhet.
+3. **Implementeringsinformation:** När du startar ett nytt Kotlin-projekt, måste du först installera Kotlin-kompilatorn och ett integrerat utvecklingsverktyg (IDE) som IntelliJ IDEA. Därefter kan du skapa en ny Kotlin-fil och börja skriva din kod.
+
+## Se även:
+
+- [Kotlin’s officiella dokumentation](https://kotlinlang.org/docs/home.html) ger mycket mer detaljerad information för varje aspekt av språket.
+- [Codecademy's kurs på Kotlin](https://www.codecademy.com/learn/learn-kotlin) är en bra resurs för att studera språket mer i djupet.
+- [JetBrains community forum](https://discuss.kotlinlang.org/) där du kan ställa frågor och diskutera Kotlin-relaterade emnen med andra programmerare.

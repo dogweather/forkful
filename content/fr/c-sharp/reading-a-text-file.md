@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "C#: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "C#"
 category:             "C#"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi et comment lire un fichier texte en C#
+## Quoi et pourquoi?
 
-## Quoi & Pourquoi?
-Lire un fichier texte en programmation signifie extraire et afficher le contenu d'un fichier texte sur l'ordinateur. Les programmeurs le font souvent pour accéder à des données stockées dans des fichiers ou traiter des textes volumineux.
+Lire un fichier texte en programmation, ça signifie récupérer et interpréter des informations stockées dans un fichier texte. Les programmeurs le font pour manipuler facilement des données externes, que ce soit pour une utilisation ultérieure dans l'application ou pour communiquer avec d'autres systèmes.
 
 ## Comment faire:
-Voici un exemple simple en ```C#``` montrant comment lire un fichier texte et afficher son contenu:
+
+En C#, lire un fichier texte est assez simple. Voici un exemple :
 
 ```C#
-// Créer une instance de StreamReader pour lire le fichier
-StreamReader reader = new StreamReader("mon_fichier.txt");
-// Lire et afficher chaque ligne du fichier
-string line;
-while((line = reader.ReadLine()) != null) 
+using System;
+using System.IO;
+
+class Program
 {
-    Console.WriteLine(line);
+    static void Main()
+    {
+        string text = System.IO.File.ReadAllText(@"C:\test.txt");
+        System.Console.WriteLine("Contenu du fichier: \n{0}", text);
+    }
 }
-// Fermer le lecteur pour libérer les ressources 
-reader.Close();
 ```
 
-## Plongée profonde:
-- Contexte historique: La méthode ```StreamReader``` a été introduite dans le Framework .NET 1.0.
-- Alternatives: D'autres méthodes pour lire un fichier texte incluent l'utilisation de ```File.ReadAllText()``` ou ```File.ReadAllLines()```.
-- Détails de mise en œuvre: Lorsque vous utilisez la méthode ```StreamReader```, assurez-vous de fermer le lecteur pour libérer les ressources après utilisation.
+Dans cet exemple, votre sortie ressemblera à ceci s'il y a du texte dans votre fichier `C:\test.txt` :
 
-## Voir aussi:
-- [Documentation Microsoft sur la classe StreamReader](https://docs.microsoft.com/fr-fr/dotnet/api/system.io.streamreader?view=netcore-3.1)
-- [Lire et écrire des fichiers en C#](https://www.microsoft.com/fr-fr/learn/modules/csharp-read-write-to-file/6-introduction)
-- [Tutorial vidéo sur la lecture de fichiers texte en C#](https://www.youtube.com/watch?v=TVsgSQ_8mzY)
+```
+Contenu du fichier: 
+Bonjour le monde!
+```
+
+## Plongée profonde
+
+C#'s `File.ReadAllText` est en réalité une méthode d'une classe plus grande, `System.IO.File`. C'est une surcouche de la méthode `StreamReader.ReadToEnd`, qui existe depuis les débuts de .NET Framework. 
+
+Il existe des alternatives à `File.ReadAllText` comme `File.ReadLines` ou `StreamReader.ReadLine`. Ces méthodes sont utiles quand vous voulez préserver la mémoire ou manipuler des fichiers très volumineux. 
+
+`File.ReadAllText` lit le fichier texte entier en mémoire, ce qui peut s'avérer coûteux en termes de performance pour des fichiers très volumineux. Dans ce cas, l'utilisation de `StreamReader.ReadLine` ou de `File.ReadLines` peut être bénéfique car elles lisent le fichier ligne par ligne plutôt qu'en entier.
+
+## À voir également
+
+- File and Stream I/O: https://docs.microsoft.com/en-us/dotnet/standard/io/
+- How to read a text file in C#: https://www.pluralsight.com/guides/how-to-read-a-text-file-in-csharp
+- Reading Text File in C#: https://www.c-sharpcorner.com/UploadFile/mahesh/read-write-text-files-C-Sharp/

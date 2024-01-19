@@ -1,7 +1,7 @@
 ---
-title:                "कम्प्यूटर प्रोग्रामिंग पर आधारित: कमांड लाइन तर्क पठन"
-html_title:           "Javascript: कम्प्यूटर प्रोग्रामिंग पर आधारित: कमांड लाइन तर्क पठन"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग पर आधारित: कमांड लाइन तर्क पठन"
+title:                "कमांड लाइन तर्कों को पढ़ना"
+html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
+simple_title:         "कमांड लाइन तर्कों को पढ़ना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,23 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## यह क्या है और क्यों?
-कमांड लाइन आर्ग्यूमेंट पढ़ना क्या है, इसके बारे में दो-तीन वाक्यों में समझाने की कोशिश करते हैं। इसका मतलब है कि हम अपने कोड को किसी कमांड लाइन से पास किए गए आर्ग्यूमेंट परिवर्तित कर सकते हैं, जो हमें अपनी अनुकूलता के अनुसार कार्य कराने में मदद करता है। इसका प्रयोग करने से हम अपने कोड को दोहराने से बच सकते हैं और अपनी कार्य प्रणाली को सुचारू बना सकते हैं।
+## क्या और क्यों?
+
+Command line arguments, कोड को चलाते समय input की तरह काम करते हैं। ये प्रोग्रामर्स को उनके कोड को अधिक flexible बनाने में मदद करते हैं।
 
 ## कैसे करें:
-```Javascript
-// कॉमन्ट: अंतराल से अलग किया गया आर्ग्यूमेंट रीड करने का उदाहरण
-const args = process.argv.slice(2);
-console.log(args);
 
-// इनपुट: node index.js hello world
-// आउटपुट: [ 'hello', 'world' ]
+आप इसे Node.js के process.argv array का उपयोग करके प्राप्त कर सकते हैं। 
+
+```Javascript
+// सभी command line arguments प्रिंट करो
+process.argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
+});
 ```
 
-## गूर्घाशी:
-कमांड लाइन आर्ग्यूमेंट पढ़ने के इतिहास की बात करें, तो साल 1969 में एक निजी क्रॉस-प्लेटफ़ॉर्म सिस्टम वाले कंप्यूटर विज्ञानी डगलस माकरोयन ने पहला कमांड लाइन इंटरेकेटिव शेल का निर्माण किया। यह लोकप्रिय युक्तियों में से एक है जो प्रोग्रामिंग भाषाओं का आविष्कार करते हुए कई नए तरीकों से कोड लिखने में हमें मदद करती है। दूसरे विकल्प के रूप में, हम यह निष्कर्ष निकाल सकते हैं कि कमांड लाइन आर्ग्यूमेंट पढ़ना एक बहुत ही उपयोगी डेवलपर फीचर है। अतः, हम अपने कोड में इसका प्रयोग करना कभी भी न भूलें।
+ यदि आप निम्नलिखित कोड को `node test.js one two=three four` के साथ चलाते हैं, तो आपको निम्नलिखित आउटपुट मिलेगा:
 
-## और भी देखें:
-- [Node.js documentation on Command-line Arguments](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [Medium article on Understanding Command-Line Arguments in Node.js](https://medium.com/@sumn2u/understanding-command-line-arguments-in-node-js-a530d1f1c233)
-- [GeeksforGeeks article on Command-Line Arguments in JavaScript](https://www.geeksforgeeks.org/command-line-arguments-in-javascript/)
+```Javascript
+0: node
+1: /path/to/your/test.js
+2: one
+3: two=three
+4: four
+```
+
+## गहरी डाइव:
+
+- **ऐतिहासिक प्रक्षेप**: Days of old में, shell scripts और Perl ही command line arguments के साथ काम करने के लिए सबसे पहली भाषाओं में संगनक थीं।
+- **वैकल्पिक विधियां**: Yargs, commander, minimist जैसे कई third-party लाइब्ररीज का उपयोग करके भी command line arguments को परिवर्तित किया जा सकता है।
+- **विवरण**: Node.js में, process.argv array में command line input को पसंत करने की process का एक विस्तारित विवरण लिखा है।
+
+## देखें भी:
+
+- [Node.js Documentation: Process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [NPM: Yargs](https://www.npmjs.com/package/yargs)
+- [NPM: Commander](https://www.npmjs.com/package/commander)
+- [NPM: Minimist](https://www.npmjs.com/package/minimist)

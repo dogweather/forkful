@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 파일 읽기"
-html_title:           "Kotlin: 텍스트 파일 읽기"
+html_title:           "Bash: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,31 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
-텍스트 파일 읽기란 무엇일까요? 텍스트 파일 읽기는 파일의 내용을 읽어오는 것을 말합니다. 프로그래머들은 텍스트 파일을 읽는 이유는 다양합니다. 예를 들어, 사용자의 입력을 받기 위해 설정 파일을 읽는 경우나, 데이터베이스의 쿼리 결과를 파일로 저장하기 위해 사용하는 경우 등이 있습니다.
 
-## 방법:
+텍스트 파일 읽기는 컴퓨터 프로그램이 텍스트 파일의 내용을 해석하고 메모리로 읽어드리는 것을 말합니다. 프로그래머들이 이를 수행하는 주요 이유는 파일에 저장된 데이터를 사용하여 프로그램의 기능을 실행하기 위해서입니다.
+
+## 방법은?
+
+아래는 Kotlin에서 텍스트 파일을 읽는 간단한 방법입니다.
+
 ```kotlin
+import java.io.File
+
 fun main() {
-    val file = File("data.txt") // 파일 경로 설정
-    val lines = file.readLines() // 파일의 각 줄을 리스트로 읽어옴
-    lines.forEach { line ->
-        println(line) // 각 줄을 출력
-    }
+    val fileName = "test.txt"
+    val fileContent = File(fileName).readText()
+
+    println(fileContent)
 }
 ```
 
-**결과:**
-```
-첫 번째 줄
-두 번째 줄
-세 번째 줄
-네 번째 줄
-```
+이 코드는 "test.txt"라는 이름의 파일의 모든 텍스트를 읽어서 그 내용을 출력합니다. 파일의 내용은 `readText()` 함수를 사용하여 읽혀진다.
 
-## 딥 다이브:
-텍스트 파일 읽기는 오랜 역사를 가지고 있습니다. 초기 컴퓨터들은 데이터를 저장하기 위해 테이프를 사용했는데, 이 테이프들은 텍스트 파일을 읽고 쓸 수 있었습니다. 하지만 현재는 텍스트 파일 뿐만 아니라 다양한 형식의 파일도 읽고 쓸 수 있습니다. 또 텍스트 파일을 읽는 대안으로는 바이너리 파일 읽기가 있습니다. 텍스트 파일은 사람이 읽고 쓰기 쉽지만 바이너리 파일은 기계가 빠르게 처리할 수 있습니다. 텍스트 파일을 읽는 방법은 운영체제마다 다를 수 있지만, 코틀린에서는 `File` 클래스를 사용하면 쉽게 파일을 읽고 쓸 수 있습니다.
+## 심층적으로 알아보기
 
-## 참고하기:
-- [코틀린 공식 문서 - 파일 읽고 쓰기](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/index.html)
-- [텍스트 파일 vs 바이너리 파일](https://ko.wikipedia.org/wiki/%ED%85%8D%EC%8A%A4%ED%8A%B8_%ED%8C%8C%EC%9D%BC)
-- [오래된 컴퓨터들의 데이터 저장 방식](https://ko.wikipedia.org/wiki/%EC%9A%B0%EB%A6%AC%EC%98%A8_%EC%BB%B4%ED%93%A8%ED%84%B0_%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A0%84_%EC%A0%84%EC%9B%90)
+텍스트 파일을 읽는 것은 분산 시스템이나 데이터베이스에서 심화 학습하는 데 있어서 근본적이고 실질적인 기술입니다. 
+
+이 메커니즘이 역사적으로 어떻게 발전해 왔는지에 대해서 알아보려면, 파일을 블럭 또는 스트림으로 처리하는 기본 개념이 1950년대의 초창기 컴퓨터 시스템에서부터 시작되었다는 것에 주목해야 합니다.
+
+대안적인 방법으로는 `BufferedReader`, `InputStreamReader` 및 `FileReader`와 같은 다른 자바 API를 사용하여 텍스트 파일을 읽는 것이 있습니다. 이들은 메모리 할당 및 성능 최적화에서 더 많은 통제를 가능하게 합니다.
+
+Kotlin에서 `readText()` 함수는 모든 바이트를 한 번에 읽는다는 특징이 있습니다. 이는 큰 파일을 처리할 때 문제가 될 수 있으므로, 이 경우 `readLines()`나 `forEachLine()`과 같은 다른 함수를 사용하는 것이 더 효율적일 수 있습니다.
+
+## 추가로 보기
+
+참고를 위해 다음 사이트들을 방문해보세요:
+
+1. [Kotlin의 공식 문서](https://kotlinlang.org/docs/)에서 파일 처리에 대해 더 자세히 알아볼 수 있습니다.
+2. [Stack Overflow에서 Kotlin으로 텍스트 파일 읽기에 대한 질문들](https://stackoverflow.com/questions/tagged/kotlin+file-io)을 살펴보는 것도 도움이 될 수 있습니다.
+3. 또한, [Baeldung의 Kotlin 튜토리얼](https://www.baeldung.com/kotlin/read-file)에서는 파일을 읽는 다양한 방법을 다루고 있습니다.

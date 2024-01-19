@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Java: Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Java"
 category:             "Java"
@@ -10,52 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+# Java Ohjelmointi: Kuinka lukea tekstitiedosto?
 
-Lukemaan tekstitiedostoa tarkoittaa tietojen saamista tiedostosta ja niiden käsittelyä ohjelmassa. Ohjelmoijat tekevät tätä usein tarvittavien tietojen saamiseksi ja niiden käyttämiseksi ohjelmassa.
+#### ## Mitä & Miksi?
+Tekstitiedoston lukeminen Java-ohjelmointikielessä tarkoittaa tiedoston sisällön hankkimista niin, että ohjelma voi sitä käsitellä. Tätä käytetään usein datan analysointiin, tiedon jakeluun ja moniin muihin tarkoituksiin, kuten verkkokehitys tai tietojenkäsittely.
 
-## Miten:
+#### ## Kuinka:
+Alla on perusesimerkki siitä, miten voit lukea tekstitiedoston Java-ohjelmoinnissa.
 
 ```Java
-import java.io.File; // tarvitaan tiedoston käsittelyyn
-import java.util.Scanner; // käytetty tiedoston lukemiseen
+import java.nio.file.*;
 
-public class Tekstitiedosto {
-    public static void main(String[] args) throws Exception { 
-        File tiedosto = new File("tekstitiedosto.txt"); // luodaan tiedosto-olio
-        Scanner lukija = new Scanner(tiedosto); // luodaan lukija-olio
-        while(lukija.hasNextLine()) { // käydään läpi tiedoston rivit
-            String rivi = lukija.nextLine(); // tallennetaan rivi muuttujaan
-            System.out.println(rivi); // tulostetaan rivi
-        }
-        lukija.close(); // suljetaan lukija
+public class ReadFile {
+    public static void main(String[] args) throws Exception {
+        Path filePath = Paths.get("file.txt");
+        String content = Files.readString(filePath);
+        System.out.println(content);
     }
 }
 ```
-Esimerkki tiedostossa olevasta tekstistä ja koodin tulostamasta:
-
-Tiedosto sisältää seuraavan tekstin:
+Kun suoritat tämän koodin ja `file.txt` sisältää esimerkiksi tekstin "Hei maailma", saadaan tulosteeksi:
 ```
-Tämä on esimerkkirivi.
-Käytä tätä tiedostoa opetellaksesi tekstitiedoston lukemista.
+Hei maailma
 ```
+#### ## Syvälle menevä
+Tekstitiedoston lukeminen on ollut keskeinen osa ohjelmointia sen alkuajoista lähtien ja se on peräisin C-ohjelmointikielen tehtävistä. Vaikka modernit tarpeet ovat johtaneet uusiin lähestymistapoihin ja työkaluihin, peruskonsepti on pysynyt samana.
 
-Koodin tulostama tulos:
-```
-Tämä on esimerkkirivi.
-Käytä tätä tiedostoa opetellaksesi tekstitiedoston lukemista.
-```
+Java tarjoaa myös vaihtoehtoisia tapoja tekstitiedostojen käsittelyyn, kuten `Scanner` luokan ja `BufferedReader` luokan. Kumpikin niistä on hyödyllinen erilaisissa tilanteissa, riippuen esimerkiksi tiedoston koosta ja käsittelyn monimutkaisuudesta.
 
-## Syvällinen sukellus:
+Tekstitiedoston lukeminen voi vaatia käyttöjärjestelmän resursseja, mukaan lukien muistia ja suorittimia. On tärkeää huomioida nämä seikat, erityisesti suurten tiedostojen tai useiden tiedostojen samanaikaisen käsittelyn yhteydessä.
 
-Tekstitiedostojen lukeminen on ollut tärkeä osa ohjelmointia jo pitkään. Se mahdollistaa tietojen saamisen ja hyödyntämisen ohjelmassa ilman, että niitä täytyy kovakoodata suoraan ohjelmaan. Tämä tekee ohjelmista joustavampia ja helpommin muokattavia.
-
-Vaihtoehtoisia tapoja lukea tekstitiedostoja ovat esimerkiksi BufferedReader ja FileReader-luokat. Näitä voi käyttää myös tiedoston lukemiseen, mutta Scanner-luokan käyttäminen on yleensä helpompaa ja selkeämpää.
-
-Tekstitiedostojen lukeminen voi sisältää myös tietojen erottelemista (parsing) ja käsittelyä. Tämä voi vaatia enemmän koodia ja erikoistoimintoja, mutta se antaa enemmän mahdollisuuksia tietojen käsittelyyn ja hyödyntämiseen.
-
-## Katso myös:
-
-Lue lisää tekstitiedostojen lukemisesta: https://www.tutorialspoint.com/java/java_files_io.htm
-
-Tutustu Scanner-luokkaan: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html
+#### ## Katso myös
+- Java API [Files.readString](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/file/Files.html) dokumentaatio
+- Oracle artikkeli: [Basic I/O](https://docs.oracle.com/javase/tutorial/essential/io/index.html)
+- Stack Overflow keskustelu: [How to read a large text file line by line using Java?](https://stackoverflow.com/questions/5868369)

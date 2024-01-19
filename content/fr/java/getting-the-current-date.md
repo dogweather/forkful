@@ -1,6 +1,6 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Java: Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Java"
 category:             "Java"
@@ -10,37 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
-Obtenir la date actuelle est une fonctionnalité courante dans la programmation Java. Cela permet aux programmeurs de connaître la date et l'heure actuelles et de les utiliser dans leurs programmes pour effectuer différentes actions. Par exemple, cela peut être utilisé pour enregistrer un horodatage dans une base de données ou pour créer des fichiers avec un nom de date spécifique.
+## Qu'est-ce et Pourquoi?
+Obtenir la date actuelle en Java se réfère simplement à recevoir la date du moment où le programme s'exécute. Les programmeurs l'utilisent souvent pour suivre les événements, les journaux d'audit ou simplement pour ajouter des informations temporelles aux données.
 
-## Comment faire :
-Voici un exemple de code Java simple pour obtenir la date actuelle :
+## Comment faire:
+La classe `LocalDate` de Java, qui fait partie de l'API `java.time`, est couramment utilisée pour obtenir la date actuelle. Voici comment:
 
 ```Java
 import java.time.LocalDate;
 
-public class CurrentDateExample {
+public class Main {
     public static void main(String[] args) {
-        // Utilise la classe LocalDate pour obtenir la date actuelle
-        LocalDate current = LocalDate.now();
-        // Affiche la date au format jour/mois/année
-        System.out.println("La date actuelle est : " + current);
+        LocalDate currentDate = LocalDate.now();
+        System.out.println("La date actuelle est: " + currentDate);
     }
 }
 ```
 
-Voici la sortie de ce code :
+Lors de l'exécution, ce code renvoie quelque chose comme:
 
+```Java
+La date actuelle est: 2022-03-28
 ```
-La date actuelle est : 12/05/2021
+
+## Plongée Profonde
+Historiquement, les programmeurs utilisaient la classe `Date` de `java.util`. Cependant, à partir de Java 8, l'API Date/Time a connu une refonte majeure améliorant sa lisibilité et sa précision.
+
+En alternative, `LocalDateTime` peut être utilisé pour obtenir l'heure en plus de la date. Son utilisation est presque identique à `LocalDate` :
+
+```Java
+import java.time.LocalDateTime;
+
+public class Main {
+    public static void main(String[] args) {
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        System.out.println("La date et l'heure actuelles sont: " + currentDateTime);
+    }
+}
 ```
 
-## Profondeur de plongée :
-Obtenir la date actuelle peut sembler simple, mais cela a nécessité des améliorations dans le langage Java au fil des ans. Avant Java 8, la classe Date était utilisée, mais elle n'était pas thread-safe, ce qui signifie qu'elle pouvait causer des problèmes lors d'une utilisation simultanée par plusieurs threads. Avec l'introduction du package java.time en Java 8, les classes LocalDate, LocalDateTime et Instant ont été introduites pour gérer les dates et les heures de manière plus efficace. Il existe également d'autres options telles que l'utilisation d'une bibliothèque externe comme JodaTime pour gérer les dates et les heures.
+Rappelez-vous, `java.time` est immuable et thread-safe, contrairement à `java.util.Date`, ce qui le rend plus sûre d'utilisation dans un environnement multi-thread.
 
-## Voir aussi :
-Pour en savoir plus sur l'utilisation des dates et des heures en Java, vous pouvez consulter les ressources suivantes :
-
-- [Documentation officielle Java : java.time Package](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Tutoriel Java : Comment travailler avec les dates en Java](https://www.baeldung.com/java-datetime)
-- [Site officiel JodaTime](https://www.joda.org/joda-time/)
+## Voir Aussi
+1. Documentation officielle de Java sur `java.time`: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+2. Guide Oracle sur le travail avec les dates et les heures: https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html
+3. Une intro de Baeldung à 'java.time': https://www.baeldung.com/java-8-date-time-intro

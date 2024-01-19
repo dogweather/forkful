@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en temporär fil"
-html_title:           "Elm: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,39 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Skapandet av temporära filer är en vanligt förekommande praxis inom programmering där tillfälliga filer skapas för att lagra data temporärt under en körtid. Detta är ofta användbart när man behöver bearbeta stora mängder data eller behöver göra ändringar i en fil utan att ändra den ursprungliga filen.
+## Vad & Varför?
+Att skapa en temporär fil är processen där en fil tillfälligt skapas för att tillfälligt lagra data under programkörning. Programmerare gör detta för lagra data som behövs under aktiviteter utan att påverka huvudfilerna.
 
-Hur man gör:
-Elm har ett inbyggt bibliotek, "File", som gör det enkelt att skapa temporära filer. Nedan följer ett exempel på hur man kan använda detta bibliotek för att skapa en temporär fil och läsa in text till den.
+## Så här gör du:
+I Elm, vi skapar inte filer direkt, eftersom det är en frontend språk. Men vi kan stimulera data lagring inom vårt program genom användning av `Dict String String`, som kan fungera som en temporär lokal fil. Nedan är ett kodexempel.
 
+```Elm 
+modul Main exposing (..)
+import Dict
+
+type alias TempFile = Dict String String
+
+createTempFile : TempFile
+createTempFile = Dict.fromList [("TempData", "Data to be temporarily stored")]
+
+writeToFile : String -> String -> TempFile -> TempFile
+writeToFile key value tempFile = Dict.insert key value tempFile
+
+readFromFile : String -> TempFile -> Maybe String
+readFromFile key tempFile = Dict.get key tempFile
+
+main = 
+    let 
+        tempFile = createTempFile
+        updatedFile = writeToFile "MoreTempData" "More data to store" tempFile
+    in 
+        Debug.log "Read from file:" (readFromFile "MoreTempData" updatedFile)
 ```
-Elm .File.create { filename = "temp.txt", content = "Hej världen!" } 
-  |> Task.perform 
-    (\result -> 
-      case result of 
-        Ok tempFile -> 
-          Elm .File.read tempFile
-            |> Task.map
-              (\result -> 
-                case result of
-                  Ok content -> 
-                    "Innehållet i den temporära filen är: " ++ content
-                  Err error -> 
-                    "Fel uppstod vid inläsning av den temporära filen: " ++ toString error
-              )
-            |> Task.perform (\result -> Html.text result)
-        Err error -> 
-          "Fel uppstod vid skapandet av den temporära filen: " ++ toString error
-    )
-```
 
-I detta exempel skapas en temporär fil med namnet "temp.txt" och innehållet "Hej världen!". Därefter läses innehållet från filen och visas som text på skärmen.
+## Fördjupning
+Historiskt sett, temporära filer används i många programmeringsspråk för att tillfälligt lagra data. I Elm, en ren funktionell språk, vi har inte direkt tillgång till filsystemet.
 
-Deep Dive:
-Skapandet av temporära filer har använts inom programmering sedan tidiga dagar för att göra tillfälliga ändringar i filer eller hantera stora mängder data utan att påverka den ursprungliga filen. Alternativ till skapandet av temporära filer inkluderar användning av buffrar och minnesallokering, men skapandet av en temporär fil kan vara enklare och mer effektivt i vissa fall.
+Alternativen till temporära filer i Elm innefattar `LocalStorage` och `SessionStorage` i webbläsarmiljön, vilket fungerar mycket lika temporära filer.
 
-See Also:
-- Elm File documentation: https://package.elm-lang.org/packages/elm/file/latest/
-- Introduction to File Operations in Elm: https://dev.to/jupp0r/elm-file-operations-4e23
-- Understanding Temporary Files in Programming: https://www.lifewire.com/temporary-file-2626066
+Implementationen av temporära filer i Elm är begränsad till datalagring inom programmet, då det inte kan interagera med filsystemet direkt.
+
+## Se också
+Data lagring i Elm: https://elmprogramming.com/dict.html
+
+LocalStorage i Elm: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Storage

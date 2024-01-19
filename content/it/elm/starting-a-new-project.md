@@ -1,7 +1,7 @@
 ---
-title:                "Avviare un nuovo progetto"
-html_title:           "Elm: Avviare un nuovo progetto"
-simple_title:         "Avviare un nuovo progetto"
+title:                "Iniziare un nuovo progetto"
+html_title:           "Arduino: Iniziare un nuovo progetto"
+simple_title:         "Iniziare un nuovo progetto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cosa e Perché?
+# Inizia un nuovo progetto in Elm: Guida passo dopo passo
 
-Iniziare un nuovo progetto è il primo passo per creare un'applicazione o un sito web con Elm. I programmatori creano nuovi progetti per sviluppare idee e risolvere problemi specifici utilizzando il linguaggio di programmazione Elm.
+## Che cosa & Perché?
 
-# Come:
+Iniziare un nuovo progetto significa creare le fondamenta per il tuo codice. I programmatori lo fanno per organizzare meglio il loro lavoro ed evitare caos.
 
-Per iniziare un nuovo progetto in Elm, segui questi passi:
+## Come fare:
 
-1. Assicurati di aver installato Elm sul tuo computer.
-2. Crea una nuova directory per il tuo progetto.
-3. Utilizza il comando "elm init" per inizializzare il tuo progetto Elm.
-4. Inizia a scrivere il codice Elm nel tuo editor di testo o nell'IDE preferito.
-5. Utilizza il comando "elm make <file-name>.elm" per compilare il tuo codice e creare un file HTML eseguibile.
-6. Visualizza il risultato nel tuo browser preferito aprendo il file HTML generato.
+Ilm è molto intuitivo. Vediamo come creare un progetto.
 
-Ecco un esempio di codice che stampa "Ciao mondo!" nella console:
+Per iniziare un nuovo progetto Elm, esegui:
 
 ```Elm
-module Main exposing (..)
-
-import Html exposing (..)
-import Html.Console
-
-main : Html.Html msg
-main =
-    Html.Console.log "Ciao mondo!"
+elm init
 ```
+Risponderà qualcosa del genere:
+```Elm
+Here is my plan:
 
-## Approfondimento:
+  Create a new project in the empty directory '../your-directory'?
 
-Alcuni dei vantaggi di utilizzare Elm per iniziare un nuovo progetto includono una sintassi semplice e pulita, una forte tipizzazione dei dati e una gestione degli errori più accurata. Inoltre, Elm ha una ricca libreria standard e una community attiva che offre supporto e risorse per lo sviluppo di progetti.
+Do you approve of this plan? [Yn]
+```
+Digita `Y`, quindi premi invio. Creerà una struttura di file/directory di base.
 
-Un'alternativa a Elm per iniziare un nuovo progetto potrebbe essere JavaScript o TypeScript, ma questi linguaggi possono essere più complessi e soggetti a errori.
+## Approfondimento
 
-La libreria Elm Architecture è un concetto importante da conoscere quando si inizia un nuovo progetto in Elm. Questa architettura è diventata uno standard per la struttura delle applicazioni front-end in Elm ed è progettata per creare applicazioni robuste e facili da mantenere.
+1. **Contesto storico**: Elm nasce nel 2012 per rendere la programmazione web più semplice e piacevole. Da allora è cresciuto in popolarità per le sue caratteristiche uniche riguardo alla sicurezza di tipo e al design friendly.
 
-## Vedi anche:
+2. **Alternative**: Altre lingue funzionali popolari per il front-end includono PureScript e Reason. Tuttavia, Elm si distingue per la sua gestione dei segnalini di errore e per le sue guide utente.
 
-- Guida ufficiale di Elm
-- Libreria standard di Elm
-- Risorsa Learning Elm per principianti
+3. **Dettagli di implementazione**: Quando inizi un nuovo progetto Elm, crea una struttura di base composta da un file `elm.json` (contiene informazioni sul progetto e sulle dipendenze) e da una directory `src` (destinata al codice sorgente).
+
+## Leggi anche
+
+Controlla il [Manuale Elm](https://guide.elm-lang.it/) per approfondire questa e altre tematiche. Puoi anche consultare dei codici di esempio direttamente sul [github di Elm](https://github.com/elm).

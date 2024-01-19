@@ -1,7 +1,7 @@
 ---
-title:                "Jämföra två datum"
-html_title:           "Go: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,29 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att jämföra två datum är en vanlig uppgift för programmerare. Genom att kunna jämföra datum kan vi kontrollera om ett datum är före eller efter ett annat, eller om de är samma dag. Detta är användbart när man hanterar tid och datum i program.
+## Vad och varför?
+Att jämföra två datum innebär att bedöma deras kronologiska ordning - vilket är tidigare, samma tidpunkt eller senare. Programmerare gör detta för att utföra åtgärder baserat på datumvärden, som schemaläggning eller tidsspårning.
 
-# Så här gör du:
-För att jämföra två datum i Go kan du använda funktionen `Equal` från paketet "time". För att använda denna funktion måste du först konvertera dina datum till "Time" typen. Du kan sedan använda `Equal` för att jämföra de två datum och få ett boolskt värde som resultat.
+## Hur gör man:
+Använda `Time`-paketet i Go för att jämföra två datum. Här är ett kodexempel: 
+
+```Go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	datum1 := time.Date(2020, 01, 01, 0, 0, 0, 0, time.UTC)
+	datum2 := time.Date(2021, 01, 01, 0, 0, 0, 0, time.UTC)
+
+	if datum1.Before(datum2) {
+		fmt.Println("Datum1 är före Datum2")
+	}
+
+	if datum1.After(datum2) {
+		fmt.Println("Datum1 är efter Datum2")
+	}
+
+	if datum1.Equal(datum2) {
+		fmt.Println("Datum1 är samma som Datum2")
+	}
+}
+```
+Ovanstående kod kommer att producera följande utdata:
 
 ```
-Go date1 := time.Date(2021, time.August, 19, 0, 0, 0, 0, time.UTC)
-Go date2 := time.Date(2021, time.August, 20, 0, 0, 0, 0, time.UTC)
-
-Go result := date1.Equal(date2)
-
-// Resultatet blir false eftersom date2 är en dag efter date1.
+Datum1 är före Datum2
 ```
 
-# Djupdykning:
-Att hantera tid kan vara en utmaning, särskilt när det kommer till att hantera tidszoner och sommartid. Go har dock ett välfungerande paket för tidshantering, "time", som tar hand om dessa utmaningar på ett enkelt sätt.
+## Djupdykning
+Att jämföra datum i Go är enkel tack vare designen bakom `Time`-paketet. Innan datumjämförelser blev enklare, var programmerare tvungna att skriva betydligt mer kod för att hantera olika tidszoner, skottår, och så vidare. Alternativen till inbyggda funktioner liknande `Before`, `After` och `Equal` kan inkludera i egna funktioner för att extrahera och jämföra årtal, månad och dag separat. Men detta är inte rekommenderat eftersom det skulle vara mer susceptibelt för fel och kräva mer kod. 
 
-Som en alternativ metod för att jämföra datum kan du också använda `Before` och `After` funktionerna från "time" paketet. Dessa funktioner returnerar ett boolskt värde baserat på om ett datum är före eller efter det andra.
+## Se även
+För mer information om datum och tider i Go, se följande resurser: 
+1. Go Docs: [Time Package](https://golang.org/pkg/time/)
+2. GoByExample: [Time](https://gobyexample.com/time) 
 
-När du jämför två datum bör du också ta hänsyn till tidszoner och sommartid för att få korrekta resultat.
-
-# Se även:
-Läs mer om "time" paketet och dess funktioner på Go's officiella dokumentationssida: https://golang.org/pkg/time/
-
-För en mer ingående förklaring om tidszoner och sommartid, se denna artikel på Medium: https://medium.com/@arjunpatel/time-zones-in-go-489f52e05228
+Observera att dessa resurser är skrivna på engelska, men de erbjuder detaljerad information om hur du arbetar med tid och datum i Go.

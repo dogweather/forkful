@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "PHP: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wysyłanie żądań HTTP jest niezbędnym elementem procesu tworzenia stron internetowych. Służy ono do pobierania danych z serwera i wyświetlania ich na stronie lub do przekazywania danych z formularzy do serwera. Programiści często korzystają z tego narzędzia, aby zadbać o płynne i bezproblemowe działanie stron internetowych.
+## Co i Dlaczego?
 
-## Jak:
-Oto przykładowy kod PHP, który wysyła żądanie HTTP i wyświetla otrzymaną odpowiedź:
+Wysyłanie żądania HTTP to proste zapytanie do serwera, które można porównać do prośby o informacje. Programiści wykonują to, aby komunikować się z serwerami, pobierać dane, przesyłać dane itp.
+
+## Jak To Zrobić:
+
+PHP udostępnia kilka wbudowanych funkcji do obsługi żądań HTTP. Oto przykład użycia `file_get_contents` do wykonania zapytania GET:
+
 ```PHP
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://example.com");
-curl_exec($ch);
-curl_close($ch);
-
-// Output:
-Welcome to Example.com!
+<?php
+$response = file_get_contents('http://example.com');
+echo $response;
+?>
 ```
-W powyższym przykładzie użyto funkcji `curl_init()` do utworzenia obsługi żądania HTTP. Następnie, przy użyciu `curl_setopt()`, ustawiono adres URL, do którego ma zostać wysłane żądanie. W kolejnym wierszu użyto funkcji `curl_exec()`, która wysyła żądanie i zwraca odpowiedź. Na koniec, przy użyciu `curl_close()`, zamknięto zasoby połączenia. 
 
-Warto pamiętać, że funkcja `curl_setopt()` pozwala też na ustawianie innych opcji, takich jak metoda żądania, dane do wysłania czy nagłówki żądania. Możliwości jest wiele, więc warto zapoznać się z dokumentacją funkcji `curl_setopt()` lub zajrzeć do sekcji "Zobacz też".
+Odpowiedź serwera zostanie wyświetlona przy użyciu funkcji `echo`. Możesz również wysłać zapytania POST, takie jak:
+
+```PHP
+<?php
+$options = array(
+    'http' => array(
+        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method'  => 'POST',
+        'content' => http_build_query(array('key' => 'value')),
+    ),
+);
+$context = stream_context_create($options);
+$response = file_get_contents('http://example.com', false, $context);
+echo $response;
+?>
+```
 
 ## Deep Dive:
-Wysyłanie żądań HTTP jest jednym z wielu sposobów komunikacji między klientem a serwerem. Alternatywami do funkcji `curl_exec()` są np. funkcje `file_get_contents()`, `fopen()` czy `fsockopen()`. Każda z tych funkcji ma swoje zalety i wady, ale `curl_exec()` jest najczęściej wybierane ze względu na swoją elastyczność i dużą liczbę dostępnych opcji. 
 
-Funkcja `curl_exec()` korzysta z biblioteki cURL, która powstała w 1997 roku i jest ciągle rozwijana. Jest ona wysoce wydajna i obsługuje wiele protokołów, takich jak HTTP, HTTPS, FTP czy FTPS. Dzięki niej możemy nie tylko wysyłać żądania, ale także pobierać zawartość stron internetowych, przesyłać pliki czy ustawiać nagłówki. 
+Choć `file_get_contents` jest prosta i popularna, istnieje wiele innych sposobów wysyłania zapytań HTTP w PHP. Biblioteka cURL jest jednym z popularnych wyborów ze względu na jej wszechstronność.
 
-## Zobacz też:
-- [Dokumentacja funkcji `curl_setopt()` w języku polskim](https://www.php.net/manual/pl/function.curl-setopt.php)
-- [Oficjalna dokumentacja biblioteki cURL](https://curl.haxx.se/libcurl/)
-- [Porównanie funkcji do wysyłania żądań HTTP w PHP](https://www.php.net/manual/en/function.file-get-contents.php)
+Warto zauważyć, że pierwotna wersja PHP nie obsługiwała żądań HTTP. Funkcje te zostały dodane w późniejszych wersjach, gdy stało się jasne, że PHP jest doskonałym narzędziem do tworzenia dynamicznych stron internetowych opartych na danych serwera.
+
+## Zobacz Również:
+
+1. [Dokumentacja PHP na temat `file_get_contents`](https://www.php.net/manual/pl/function.file-get-contents.php)
+2. [Dokumentacja PHP na temat stream_context_create](https://www.php.net/manual/pl/function.stream-context-create.php)
+3. [Dokumentacja PHP na temat cURL](https://www.php.net/manual/pl/book.curl.php)

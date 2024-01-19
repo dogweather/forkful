@@ -1,7 +1,7 @@
 ---
-title:                "Parsa ett datum från en sträng"
-html_title:           "Rust: Parsa ett datum från en sträng"
-simple_title:         "Parsa ett datum från en sträng"
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att "parsing" ett datum från en sträng innebär att konvertera ett datum i textformat till ett hanterbart datumobjekt i ett programmeringsspråk. Detta är ett vanligt problem som programmerare stöter på när de behöver hantera datum och tider i sina program.
+## Vad och varför?
+Att parsa ett datum från en sträng innebär att vi omvandlar en textrepresentation av ett datum till ett datumobjekt. Programmerare gör detta för att enkelt kunna manipulera och använda datum i deras kod.
 
-## Så här gör du:
+## Hur man gör:
+Här är ett exempel på hur man gör det i Rust:
+
 ```Rust
-use std::str::FromStr;
-use chrono::NaiveDate;
-
-let date_str = "2021-08-09";
-let date = NaiveDate::from_str(date_str).unwrap();
-println!("{}", date); // Output: 2021-08-09
+use chrono::{DateTime, NaiveDateTime, Datelike, Utc, FixedOffset, offset::TimeZone};
+let dt = Utc.datetime_from_str("2021-09-15 12:34:56", "%Y-%m-%d %H:%M:%S");
+println!("{}", dt.unwrap());
 ```
 
-För detta exempel används Rusts `NaiveDate` objekt tillsammans med `FromStr` trait för att konvertera en sträng till ett datumobjekt. Detta inkluderar inte tid eller tidszon information.
+När du kör det här kodstycket kommer utskriften se ut såhär: 
 
-## Djupdykning:
-Parsing av datum från en sträng har varit ett problem inom programmering sedan länge. Tidigare användes bibliotek som `time.h` i C för att hantera datum, men med tiden har bättre lösningar utvecklats, som Chrono biblioteket i Rust. Det finns också alternativ som `serde`, som fokuserar på att serialisera och deserialisera data, vilket också inkluderar parsing av datum från strängar.
+```Rust
+2021-09-15T12:34:56Z
+```
 
-När det gäller implementationen så kan `FromStr` trait användes för att konvertera en sträng till ett datumobjekt, men det finns också andra metoder, som att använda ett reguljärt uttryck för att matcha och extrahera datum från en sträng.
+## Djupdykning
+Dokumenthanteringssystem och databaser har traditionellt lagrat data som strängar. Därför har det varit nödvändigt att omvandla dessa strängrepresentationer av datum till ett format som kan tolkas av maskinen.
 
-## Se även:
-- [Chrono biblioteket i Rust](https://docs.rs/chrono/latest/chrono/index.html)
-- [Serde biblioteket i Rust](https://serde.rs/)
+Det finns olika sätt att parsa ett datum. Ett alternativ är att använda "time" biblioteket som är mer lättviktig men bär på mindre funktionalitet än "chrono".
+
+Designen av `chrono` är tänkt att vara robust. Det innebär att biblioteket försöker minimera antalet fel du kan göra genom att eliminera "ogiltiga" datum och tider.
+
+## Se även
+Chrono bibliotekets dokumentation: https://docs.rs/chrono/0.4.19/
+Rust datum och tid guide: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misunderstandings.html
+Rust 'time' biblioteket: https://docs.rs/time/0.3.5/time/

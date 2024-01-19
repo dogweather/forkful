@@ -1,7 +1,7 @@
 ---
-title:                "Kuvion mukaisesti sopivien merkkien poistaminen"
-html_title:           "Java: Kuvion mukaisesti sopivien merkkien poistaminen"
-simple_title:         "Kuvion mukaisesti sopivien merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,28 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Merkkijonon yhteensovittaminen poistaa kaikki merkit, jotka vastaavat tiettyä kaavaa. Tämä on hyödyllinen työkalu ohjelmoijille, jotka haluavat nopeasti ja tehokkaasti muokata merkkijonoja.
+## Mikä & Miksi?
+Merkkijonosta tiettyyn malliin sopivien merkkien poistaminen on tyypillinen ohjelmointitehtävä. Tämä auttaa puhdistamaan tietoja tai räätälöimään merkkijonojen esitystä.
 
-## Miten:
-Seuraavat Java-esimerkit näyttävät, kuinka voit poistaa merkkejä, jotka vastaavat haluttua kaavaa:
+## Kuinka:
+Käytetään `replaceFirst` ja `replaceAll` metodeja `String` luokassa. Aloitetaan tekemällä merkkijonosta otos, josta haluamme poistaa numerot.
 
+```Java
+String sample = "Java, julkaistu 1995 versio 1.0.0";
+String result = sample.replaceAll("\\d", "");
+System.out.println(result);
 ```
-// Poistaa kaikki numeromerkit
-String s = "Hei 123 maailma!";
-String s2 = s.replaceAll("[0-9]", "");
-System.out.println(s2); // Hei maailma!
-```
-```
-// Poistaa kaikki välimerkit
-String s = "Tervetuloa, maailma!";
-String s2 = s.replaceAll("[,.!?]", "");
-System.out.println(s2); // Tervetuloa maailma
-```
+Output:
 
-## Syvällinen sukellus:
-Merkkijonon yhteensovittamisen käsite tulee sanoista "regular expression" ja se on käytännössä jäsentelykieli, joka määrittää merkkijonojen rakenteen ja säännöt. Tämä tekniikka on ollut käytössä jo vuosikymmeniä ja on vakiinnuttanut paikkansa ohjelmoinnin työkalupakissa. On myös muita tapoja poistaa merkkejä kuten substring-metodi, mutta merkkijonon yhteensovittaminen on yleisesti pidetty tehokkaampana ja monipuolisempana vaihtoehtona.
+```shell
+Java, julkaistu  versio . .
+```
+Tässä `"\\d"` on kuvio, joka vastaa minkä tahansa numeron ja "" korvaa löydetyt numerot.
 
-## Katso myös:
-- [Java Regex Tutorial](https://www.baeldung.com/java-regex)
-- [Java String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+## Syvä Sukellus
+Ensimmäinen versio Javasta julkaistiin vuonna 1995, ja se sisälsi `String` luokan ja `replaceFirst`, `replaceAll` metodit. Vaihtoehtoina voit käyttää `StringBuffer` tai `StringBuilder`, mutta niiden käyttäminen edellyttää useita vaiheita, joten `String` luokka on kätevämpää käyttää.
+
+```Java
+StringBuilder sb = new StringBuilder(sample);
+for (int i = 0; i < sb.length(); i++) {
+    if (Character.isDigit(sb.charAt(i))) {
+        sb.deleteCharAt(i--);
+    }
+}
+```
+Output:
+
+```shell
+Java, julkaistu  versio . .
+```
+Koska Java merkkijono on muuttumaton, `replaceAll` -menetelmä palauttaa uuden merkkijonon. Vanha merkkijono on edelleen muistissa kunnes roskankerääjä poistaa sen.
+
+## Katso myös
+JavaSE-dokumentaatio merkkijonoista: https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html
+
+Oracle-dokumentaatio regexistä: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+
+TutorialsPoint artikkeli Javan merkkijonoista: https://www.tutorialspoint.com/java/java_string_replaceall.htm

@@ -1,7 +1,7 @@
 ---
-title:                "Ottenere la data corrente."
-html_title:           "Ruby: Ottenere la data corrente."
-simple_title:         "Ottenere la data corrente."
+title:                "Ottenere la data corrente"
+html_title:           "Java: Ottenere la data corrente"
+simple_title:         "Ottenere la data corrente"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,29 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa e perché?
-Ottenere la data attuale è un'operazione comune mentre si scrive un programma Ruby. Ciò consente ai programmatori di aggiungere stampe di data dinamiche, utilizzare la data nelle operazioni matematiche o semplicemente tenere traccia del tempo.
+# Ottenere la data corrente in Ruby
+Una guida rapida e concisa
 
-Come fare:
-È possibile ottenere la data attuale utilizzando il metodo "now" nell'oggetto Time. Ad esempio, per stampare la data attuale, è sufficiente utilizzare il seguente codice:
+## Che cos'è & Perché?
+Ottenere la data corrente nel tuo codice significa programmazione per accedere alla data e all'ora correnti del tuo sistema. Questo è effettuato dai programmatori per tracciare gli eventi, segnare i timestamp e per funzioni di data e ora relative alle operazioni.
 
-```Ruby
-data_attuale = Time.now
-puts data_attuale
-```
-
-Questo dovrebbe stampare qualcosa del genere: "2022-01-19 12:00:00".
-
-Se si vuole personalizzare il formato della data, è possibile utilizzare il metodo "strftime" e specificare il formato desiderato come parametro. Ad esempio, il seguente codice stamperebbe solo la data nel formato gg/mm/aaaa:
+## Come fare:
+Ecco un esempio di codice su come ottenere la data corrente in Ruby.
 
 ```Ruby
-data_attuale.strftime("%d/%m/%Y")
+require 'date'
+
+data_corrente = Date.today
+puts data_corrente
 ```
 
-Deep Dive:
-Ottenere la data attuale è un'operazione relativamente semplice grazie all'oggetto Time di Ruby. Tuttavia, esistono anche altre alternative per ottenere la data, come l'utilizzo di librerie esterne come la gemma "date", che offre funzionalità più avanzate per la manipolazione delle date.
+L'output sarà la data corrente nel formato AAAA-MM-GG.
 
-Inoltre, è importante notare che la data attuale viene ottenuta in base alle impostazioni del sistema in cui viene eseguito il programma. Ad esempio, se il sistema è impostato su un fuso orario diverso, la data attuale verrà restituita in base a quel fuso orario.
+```Ruby
+# Ex: 2023-06-01
+```
 
-Vedi anche:
-Per ulteriori informazioni su come ottenere la data attuale in Ruby, puoi consultare la documentazione ufficiale di Ruby o esplorare risorse online come Stack Overflow.
+## Approfondimenti
+Ruby, creato nel 1995, offre una diversità di metodi per gestire date e orari. Oltre a `Date.today`, metodi come `Time.now` restituiscono l'ora corrente insieme alla data.
+
+```Ruby
+ora_corrente = Time.now
+puts ora_corrente
+```
+
+Questo restituirà un output nel formato AAAA-MM-GG hh:mm:ss +timezone.
+
+Inolti, ci sono gemme (librerie) come `ActiveSupport` che rendono più facile la manipolazione delle date.
+
+Relativamente alla implementazione, `Date.today` e `Time.now` in Ruby accedono direttamente al clock del sistema del tuo computer per ottenere la data e l'ora correnti.
+
+## Vedi anche
+Per una comprensione più approfondita di come Ruby gestisce le date e gli orari, consulta queste fonti:
+
+- Documentation: [https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
+- StackOverflow: [https://stackoverflow.com/questions/8512562/how-to-get-current-date-time-in-ruby](https://stackoverflow.com/questions/8512562/how-to-get-current-date-time-in-ruby)
+- Ruby Inside Custom Date and Time Formats: [https://www.rubyinside.com/custom-rails-date-and-time-formats-2874.html](https://www.rubyinside.com/custom-rails-date-and-time-formats-2874.html)

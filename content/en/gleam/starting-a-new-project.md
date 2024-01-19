@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Gleam recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,30 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Starting a new project is the process of initializing a new development environment for a specific idea or application. Programmers do it to create a separate workspace where they can build and manage the different components of their program in a structured manner.
+
+Starting a new project is the creation of a fresh idea on a blank canvas; it's where innovation births. Coders kickstart new projects to materialize designs, solve problems, create applications, or just to explore the depths of a new technology.
 
 ## How to:
-To kick off a Gleam (v0.13.2) project, first, you must install the Gleam compiler and rebar3 on your computer. Afterward, call `gleam new hello_world` in your terminal. This will generate your new project.
+
+In Gleam, creating a new project is a breeze, using predefined templates, elements, and the `gleam new` command.
 
 ```Gleam
-$ gleam new hello_world
-* creating hello_world/README.md
-* creating hello_world/.gitignore
-* creating hello_world/rebar.config
-* creating hello_world/.formatter.exs
-* creating hello_world/lib/hello_world.gleam
-Your Gleam project hello_world has been successfully created.
-The rebar3 program needs to be in your PATH. See https://www.rebar3.org/ for installation instructions.
+$ gleam new my_cool_project
 ```
 
-## Deep Dive
-Starting a new project is a strategy that has its roots in the inception of program development. It allows developers to compartmentalize their work and manage complex applications effectively. The Gleam's approach derives from this principle. 
+If you're looking for a back-end application: 
 
-Alternatives include starting a minimal project with just a handful of files or simply running scripts without frameworks. However, Gleam's method offers a more organized structure suitable for complex or large-scale applications. 
+```Gleam
+$ gleam new my_cool_project --template gleam/http
+```
 
-Under the hood, `gleam new` command creates the necessary files and directory structures, providing a ready-to-use development environment. It also generates a .gitignore file for version control providers and a rebar.config file for project configuration.
+Running these commands sets up a standard, ready-to-go project architecture in a directory called "my_cool_project". 
+
+## Deep Dive 
+
+Gleam stems from the Erlang ecosystem's roots. Its 'new project' generation utilizes Rebar3 (Erlang's build tool), yielding cross-compatibility with Erlang and Elixir.
+
+Alternatively, you can also start projects manually, crafting each file and folder from scratch, but it's not recommended because of the efficiency and convenience provided by the built-in project generator.
+
+Once a project is created, it will follow a pre-defined structure:
+
+```Gleam
+src/                  # Source Gleam files
+test/                 # Test Gleam files
+rebar.config          # Rebar3 config file
+gleam.toml            # Gleam configuration file
+.gitignore            # Whitelist for version control
+```
 
 ## See Also
-- The Gleam book: https://gleam.run/book/tour/hello-gleam.html
-- Gleam GitHub Repository: https://github.com/gleam-lang/gleam
-- Rebar3 Official Site: https://www.rebar3.org/
+
+- [Gleam's Official Tutorial](https://gleam.run/tour/)
+- [Project Setup in Gleam](https://gleam.run/guides/creating-our-first-project/)
+- [Rebar3 Docs](https://www.rebar3.org/docs/getting-started)
+- [Erlang Language Basics](http://erlang.org/doc/getting_started/users_guide.html)

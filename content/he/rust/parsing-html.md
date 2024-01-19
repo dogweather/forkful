@@ -1,6 +1,6 @@
 ---
 title:                "ניתוח HTML"
-html_title:           "Rust: ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,49 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-לנו למדי תבחר לעבד עם מסמך ווב כגון מה שאנו כולם מכירים, HTML. לפעמים הקוד שלנו צריך לקרוא את המידע מתוך הדף ווב ולשנות אותו כך שיתאים לצורכיים שלנו. בכדי לעשות זאת, אנחנו צריכים להשתמש בתהליך שנקרא פירוק. פעולת פירוק נועדה לקרוא את הדף ווב ולהפוך אותו למבנה נתונים שנוכל להשתמש בו בצורה נוחה יותר בקוד שלנו.
+## מַה וְלָמָּה?
+פירוס HTML הוא התהליך בו מנתחים קוד HTML כדי ליצור תוכנה מרוחקת. מתכנתים עושים את זה כדי לפענח דפים אינטרנט, לשלוט בתוכן, או להתממשק עם API.
 
-## איך לעשות?
-<strong>HTML<p>פרק מחרוזת לחלוקה בשכבות</strong>
-
+## אֵיךְ לְעַשׂוֹת 
+נגזור בקוד זרם המסיבי(Html) באמצעות Rust.
 ```Rust
-use html_parser::Html;
+use html5ever::rcdom::RcDom;
+use html5ever::tendril::TendrilSink;
+use html5ever::Driver;
+use html5ever::interface::tokenizer::TokenSink;
 
-let html = r##"
-<!DOCTYPE html>
-<html>
-<head>
-    <title>משלוחים לישראל</title>
-</head>
-<body>
-    <h1>ברוכים הבאים לאתר שלנו!</h1>
-    <p>אנחנו שמחים להציע לכם משלוחים מהירים ואמינים לישראל.</p>
-</body>
-</html>
-"##;
-
-let doc = Html::parse_str(&html).expect("Failed to parse HTML");
-let title = doc.children()[0].children()[2].children()[1].as_text();
-let text = doc.children()[0].children()[3].children()[1].as_text();
-
-println!("כותרת: {}", title);
-println!("תוכן: {}", text);
+fn main() {
+    let html = "<html><body><h1>Hello, World!</h1></body></html>";
+    let dom: RcDom = html5ever::parse_document(RcDom::default(), Default::default())
+        .from_utf8()
+        .read_from(&mut html.as_bytes())
+        .unwrap();
+}
 ```
 
-הפלט יהיה:
-כותרת: משלוחים לישראל
-תוכן: אנחנו שמחים להציע לכם משלוחים מהירים ואמינים לישראל.
+## שְׁחִיפַת עוֹמֶק
+הפירוס של HTML כפי שאנחנו מבינים אותו היום מתפתח לאורך שנים. במקור, האינטרנט לא יוצר עם הכוונה של תמיכה במסמכים מורכבים של HTML, אך חדשנות ושיפורים תוך כדי הפעלה הביאו ליכולת שלנו לפענח מסמכים אלה.
 
-## חטיבה עמוקה
-העיבוד של HTML עם עזרת פירוק הוא תהליך שכבר נהג להשתמש בו מאז תחילת פיתוח דפי האינטרנט. אחת האלטרנטיבות הנפוצות של פירוק HTML היא שימוש בתשתית של jQuery או בספריית BeautifulSoup. בכל זאת, פירוק ה-HTML בעזרת פייתון ו- JavaScript חשובים להבנת העבודה עם דפי האינטרנט ולחיים של מפתחי כלים לקוד.
+החלופה הנפוצה ביותר לפירוס HTML היא XML. XML הוא שפה שזויה מוחלטת שאותה מכונה, אך אינה מספקת את הגמישות של HTML לייצג תוכן דינמי.
 
-גם עקרונות אחרים לפני ומסגרת עקרונות את רעיונות לתכניות תכנות
-דברים חשובים שאנחנו צריכים לדעת על פירוק HTML כוללים:
-- הוא תלוי בעלילה על סטרימים של דאטה, כך שאתה יכול לקרוא דפי האינטרנט בצורה יעילה ביותר באמצעות פונקציות כמו read_to_end.
-- אתה רוצה לשלב אלמנטים אחד עם אלמנטים אחרים, אם אתה רוצה לבנות את המבנה הנתונים שלך עם אינדקסים משותפים.
-- אכיפת כללי והגנה על איכת הגישה שהוכרזה תנסה לוודא כי הצגת אינדקס ודפי כמו כמו לא.
-כאן תוכלו למצוא עוד מידע על טכניקות נוספות לפירוק HTML.
+בהקשר של Rust, html5ever הוא דרייברים מבוססי Rust שמאפשרים פירוס של HTML5. 
 
-## ראו גם
-לצורך מידע נוסף על פירוק HTML בשפת Rust, כדאי לקרוא את המדריך המפורט באתר הרשמי של Rust. כמו כן, ניתן למצוא הרבה משאבים נוספים
+## ראה גם
+- [html5ever on crates.io](https://crates.io/crates/html5ever)
+- [html5ever on Github](https://github.com/servo/html5ever)
+- [Rust Documentation](https://www.rust-lang.org/learn)

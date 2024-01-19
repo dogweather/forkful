@@ -1,7 +1,7 @@
 ---
-title:                "「CSV形式との作業」"
-html_title:           "Arduino: 「CSV形式との作業」"
-simple_title:         "「CSV形式との作業」"
+title:                "「csvとの作業」"
+html_title:           "Arduino: 「csvとの作業」"
+simple_title:         "「csvとの作業」"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## CSVとは?
-CSVとはデータの表現形式の一つで、コンマ区切り形式と呼ばれています。プログラマーがCSVを使用する理由は、データを表形式で簡単に保存したり、読み込んだりすることができるためです。
+## 何となぜ？
 
-## 方法:
-CSVを使用するには、Arduinoのライブラリ「CSV」をインストールする必要があります。その後、ファイルを読み込んだり、データを表形式で保存したりすることができます。以下に、ライブラリを使用したサンプルコードと出力を示します。
+CSVは "Comma-Separated Values" の略で、テキストベースのデータ共有形式の一つです。プログラマは、効率的かつ簡単にデータを保存・取得するためにこれを使用します。
+
+## 実践：  
+
+ArduinoでCSVファイルを扱うサンプルコードを以下に示します。
 
 ```Arduino
-#include <CSV.h>
+#include <SPI.h>
+#include <SD.h>
+
+// SDカードのピン設定
+const int chipSelect = 4;
 
 void setup() {
-  // CSVファイルを読み込む
-  CSV file("data.csv");
-  // データを表形式で保存する
-  String data = "Name, Age, Gender\nJohn, 25, Male\nJane, 30, Female";
-  file.println(data);
-  // ファイルから1行ずつ読み込んで表示する
-  String line = file.readStringUntil('\n');
-  Serial.println(line);
+  // シリアル通信の開始
+  Serial.begin(9600);
+
+  // SDカードの初期化
+  if (!SD.begin(chipSelect)) {
+    Serial.println("SDカードの初期化に失敗しました");
+    return;
+  }
+  Serial.println("SDカードの初期化に成功しました");
+
+  // CSV fileの読み込み
+  File dataFile = SD.open("data.csv");
+
+  if (dataFile) {
+    while (dataFile.available()) {
+      Serial.write(dataFile.read());
+    }
+    dataFile.close();
+  }
 }
 
 void loop() {
-  // ここで何かを行う
+  // nothing happens after setup
 }
 ```
+このコードは以下の出力を生成します：
 
-### 出力:
+```Arduino
+123, "Tokyo", 36.5
+456, "Osaka", 35.4
+789, "Fukuoka", 33.6
 ```
-Name, Age, Gender
-John, 25, Male
-```
+## ディープダイブ
 
-## 詳細:
-CSVは主にデータベースやスプレッドシートで使用される形式ですが、プログラミング言語でもよく使われています。CSV以外のデータ表現形式には、XMLやJSONがありますが、CSVはシンプルで使いやすいため、比較的人気があります。
+CSVは、IBMのFORTRAN（FORmula TRANslation）プログラミング言語にその歴史を遡ります。多くの場合、行はレコードを、各列はフィールドを表現します。しかし、タブ、セミコロン、スペースなどが区切り文字として用いられる場合もあり、"TSV"（Tab-Separated Values）、 "DSV"（Delimiter-Separated Values）と呼ばれる形式も存在します。
 
-ライブラリ「CSV」は、ArduinoでCSVファイルを操作するための便利なツールです。データの読み込みや保存を簡単に行うことができます。また、Arduino以外にも利用できるため、プログラミングにおける汎用性が高いことも特徴の一つです。
+ArduinoのCSVライブラリには、CSVデータの読み書きに特化した関数が提供されています。
 
-具体的な実装の詳細は、Arduinoの公式ドキュメントやライブラリのページを参照してください。
+## 参照
 
-## 参考リンク:
-- Arduino公式ドキュメント: https://www.arduino.cc/en/Reference/Libraries/CSV
-- CSVライブラリのページ: https://github.com/4996fj/CSV
+1. Arduino CSVライブラリ：
+https://www.arduino.cc/en/Reference/SD
+
+2. SDカードのハンドリングについて：
+https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite
+
+3. CSVデータ形式について：
+https://ja.wikipedia.org/wiki/Comma-Separated_Values
+
+4. 拡張できる代替ライブラリ：
+https://www.arduino.cc/en/Reference/Libraries
+
+これらのリンクは、ArduinoプログラミングにおけるCSVファイルの操作に深く関与しています。詳細を理解することで、さらに応用的なプログラミングが可能となります。

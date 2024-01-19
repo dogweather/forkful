@@ -1,6 +1,6 @@
 ---
 title:                "Comparando duas datas"
-html_title:           "Javascript: Comparando duas datas"
+html_title:           "C#: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O quê & Por quê?
 
-Comparar duas datas é uma tarefa comum para programadores. Isso envolve verificar se uma data é anterior, posterior ou igual a outra data. Os programadores geralmente fazem isso para validação de formulários, cálculos de tempo ou para classificar informações em ordem cronológica.
+Comparar duas datas é o ato de verificar a diferença entre duas datas na programação. Programadores geralmente precisam disso para efetuar cálculos relacionados a tempo, como determinar a diferença entre duas datas, eventos programados, durações, dentre outras coisas.
 
 ## Como fazer:
 
-Para comparar duas datas em Javascript, podemos usar o operador de comparação `>`,` <` ou `==`. Por exemplo:
+```Javascript
+// Criando duas datas
+var data1 = new Date('2021-01-01');
+var data2 = new Date('2022-01-01');
 
-```javascript
-let data1 = new Date (2021, 7, 10);
-let data2 = new Date (2021, 7, 15);
-//Verificar se a data1 é anterior à data2
-console.log (data1 < data2); // true
-//Verificar se a data1 é posterior à data2
-console.log (data1 > data2); // falso
-// Verificar se as duas datas são iguais
-console.log (data1 == data2); // falso
+// Comparando as duas datas
+if(data1.getTime()==data2.getTime()){
+   console.log("As datas são iguais"); 
+}
+else if(data1.getTime()<data2.getTime()){
+   console.log("A data1 é menor do que a data2"); 
+}
+else{
+   console.log("A data1 é maior do que a data2");
+}
 ```
+A saída será: "A data1 é menor do que a data2"
 
-No exemplo acima, criamos duas datas através do construtor `Date` e usamos os operadores de comparação para verificar a relação entre elas. O operador `==` compara as instâncias de data enquanto que `>, <` comparam os valores representados pelas datas.
+## Deep Dive
 
-## Mergulho Profundo:
+Na verdade, dados os objetos de data no JavaScript, é possível comprar duas datas diretamente em vez de pegar sua representação em milissegundos, mas usar `getTime()` frequentemente proporciona desempenho melhor e nos assegura que estamos realmente comparando o valor temporal. 
 
-No passado, antes do Javascript, comparar datas era uma tarefa complexa e exigia muito código para levar em consideração questões como anos bissextos e fuso horário. Com a introdução do objeto `Date` no Javascript, essa tarefa ficou muito mais fácil e eficiente.
+As alternativas para comparar duas datas no JavaScript dependem do que você realmente precisa. Se você precisa apenas verificar se duas datas são iguais até o dia, você pode tornar as datas strings e então compará-las, ou ainda pode usar bibliotecas externas, como o Moment.js, que possui ampla variedade de funções para manipulação e comparação de datas.
 
-Além do operador de comparação, também é possível comparar datas usando os métodos `getTime()` e `getTimezoneOffset()`. O primeiro retorna o tempo em milissegundos a partir de 1º de janeiro de 1970 (conhecido como época Unix) até a data em questão, enquanto o segundo retorna a diferença em minutos entre o fuso horário local e o UTC. Esses métodos podem ser úteis para casos específicos de comparação de datas.
-
-Outras formas de comparar datas em Javascript incluem o uso de bibliotecas externas, como o Moment.js, ou escrever uma função personalizada para lidar com casos mais complexos.
+Historicamente, o JavaScript teve algumas inconsistências no manuseio de datas, e ainda hoje é um ponto onde muitos programadores novatos e até mesmo experientes se confundem. Entender as peculiaridades das datas no JavaScript é um passo fundamental para criar programas robustos.
 
 ## Veja também:
 
-- [Documentação do objeto Date em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js - Biblioteca para manipulação de datas em Javascript](https://momentjs.com/)
-- [Comparação de datas em Javascript – Como funciona? [Parte 1]](https://www.tentacode.net/blog/comparacao-de-datas-javascript-parte-1/)
+MDN Web Docs for Date: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+Moment.js: https://momentjs.com/
+
+Stack Overflow thread "how to compare dates in JavaScript": https://stackoverflow.com/questions/492994/compare-two-dates-with-javascript
+
+A compreensão do manuseio de datas em JavaScript: https://blog.logrocket.com/a-guide-to-dates-in-javascript/

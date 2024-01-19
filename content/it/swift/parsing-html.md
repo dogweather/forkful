@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di html"
-html_title:           "Swift: Estrazione di html"
-simple_title:         "Estrazione di html"
+title:                "Analisi sintattica dell'html"
+html_title:           "Bash: Analisi sintattica dell'html"
+simple_title:         "Analisi sintattica dell'html"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,52 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché si fa
+## Che cos'è e perché?
 
-Il parsing HTML è il processo di analisi di codice HTML per estrarre informazioni utili dai siti web. I programmatori lo fanno per creare strumenti in grado di elaborare e manipolare i dati HTML in modo più preciso ed efficiente.
+Il parsing HTML significa analizzare un documento HTML per estrarre dati o manipolarne la struttura. Lo fanno i programmatori per accedere direttamente ai dati nel documento, per pulire o trasformare HTML, o per analizzare le pagine web.
 
-## Come fare
+## Come fare:
 
-Ecco un semplice esempio di come analizzare una pagina HTML utilizzando Swift:
+Ora impareremo a fare il parsing HTML in Swift usando il pacchetto SwiftSoup. Ecco un esempio di codice:
 
 ```Swift
-// importa il framework HTMLString
-import HTMLString 
+import SwiftSoup
 
-// definisci una funzione che esegue il parsing della pagina HTML
-func parseHTML() {
-    // scarica la pagina HTML desiderata
-    guard let url = URL(string: "https://www.example.com") else {
-        print("Impossibile scaricare la pagina")
-        return
-    }
-    do {
-        // utilizza il metodo .contents() per estrarre il contenuto della pagina
-        let htmlText = try String(contentsOf: url)
-        // crea un oggetto HTMLDocument utilizzando il contenuto della pagina
-        let htmlDocument = try HTMLDocument(string: htmlText)
-        
-        // utilizza il metodo .forEachNode() per scorrere tutti i nodi del documento HTML
-        htmlDocument.forEachNode { node in
-            // se il nodo ha un elemento "a", stampa il suo valore attributo href
-            if let a = node as? HTMLHyperLink {
-                print(a.href)
-            }
-        }
-    } catch {
-        print("Errore durante il parsing HTML")
-    }
+let html = "<html><head><title>Ciao, mondo!</title></head></html>"
+do {
+    let doc: Document = try SwiftSoup.parse(html)
+    let titolo: Element = try doc.select("title").first()!
+    print(titolo.text())
+} catch Exception.Error(let type, let message) {
+    print(message)
+} catch {
+    print("Errore sconosciuto")
 }
 ```
 
-Esempio di output: ```https://www.example.com/links```
+Nell'output vedrai:
+
+```
+Ciao, mondo!
+```
 
 ## Approfondimento
 
-Il parsing HTML è stato introdotto per la prima volta nel 1986 nell'ambito del progetto SGML (Standard Generalized Markup Language). Una delle alternative più diffuse al parsing HTML è l'utilizzo di librerie come BeautifulSoup o libxml2.
+Il parsing HTML ha una lunga storia e vi sono molte alternative su come farlo. Nei primi giorni del web, molti programmatori eseguivano direttamente il parsing HTML. Con l'avvento di JavaScript e jQuery, è diventato più comune usare il DOM per ottenere accesso e manipolare HTML.
 
-Per implementare il parsing HTML, Swift utilizza il framework HTMLString, che permette di manipolare e analizzare facilmente il codice HTML. Esso fornisce anche una serie di metodi utili per gestire i dati estratti dai siti web.
+SwiftSoup è un'ottima scelta per fare parsing HTML in Swift, perché è completamente Swift e supporta molte delle funzionalità di JSoup, un popolare pacchetto Java per il parsing HTML. Tuttavia, ci sono anche altre opzioni come le API del WebKit o Kanna.
+
+Le implementazioni dei parser HTML possono variare ampiamente. Alcuni lavorano direttamente con stringhe e utilizzano espressioni regolari, mentre altri, come SwiftSoup, costruiscono un DOM intero dell'HTML che quindi può essere manipolato.
 
 ## Vedi anche
 
-Per ulteriori informazioni sul parsing HTML in Swift, puoi consultare la documentazione ufficiale del framework HTMLString o il repository GitHub relativo. Inoltre, puoi trovare ulteriori esempi ed esercizi su siti come Ray Wenderlich o Hacking with Swift.
+Per ulteriori informazioni sulle possibilità con SwiftSoup e il parsing HTML, consulta le seguenti fonti:
+
+- Documentazione SwiftSoup: [https://github.com/scinfu/SwiftSoup](https://github.com/scinfu/SwiftSoup)
+- Tutorial di raywenderlich.com su SwiftSoup: [https://www.raywenderlich.com/347-swiftsoup-tutorial-getting-started](https://www.raywenderlich.com/347-swiftsoup-tutorial-getting-started)
+
+Per capire meglio altre alternative per fare parsing HTML in Swift, dai un'occhiata a questi link:
+
+- Documentazione Kanna: [https://github.com/tid-kijyun/Kanna](https://github.com/tid-kijyun/Kanna)
+- WebKit DOM Parsing API: [https://developer.apple.com/documentation/webkit](https://developer.apple.com/documentation/webkit)

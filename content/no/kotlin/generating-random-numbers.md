@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "Kotlin: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Genererer tilfeldige tall"
+html_title:           "PHP: Genererer tilfeldige tall"
+simple_title:         "Genererer tilfeldige tall"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
@@ -11,27 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Generering av tilfeldige tall er en vanlig praksis i programmering for å få tilfeldig data eller gjenskape tilfeldige situasjoner. Dette kan være nyttig for spill, sikkerhetsfunksjoner, eller testing av kode.
+
+Kort sagt, å generere tilfeldige tall er prosessen med å produsere nummersekvenser uten noen mønstersløyfe. Programmerere gjør dette for å legge til uforutsigbarhet i applikasjoner, og for å sikre dataintegritet i sikkerhetskryptering.
 
 ## Hvordan:
+
+La oss dykke rett inn i koden.
+
+For å lage et tilfeldig tall i Kotlin, kan du bruke `fun Random.nextInt(range: IntRange) : Int` funksjonen. 
+
 ```Kotlin
-//Eksempel på generering av tilfeldig tall innenfor et bestemt område
-val randomNum = (1..10).random()
-print(randomNum) // Output: tilfeldig tall mellom 1 og 10
-
-//Eksempel på generering av tilfeldig tall fra en liste av verdier
-val options = listOf("hund", "katt", "fisk", "fugl")
-val randomChoice = options.random()
-print(randomChoice) // Output: en tilfeldig valgt verdi fra listen
-
-//Eksempel på generering av flere tilfeldige tall
-val randomList = (1..7).map { (1..10).random() }
-print(randomList) // Output: en liste med syv tilfeldige tall mellom 1 og 10
+import kotlin.random.Random
+fun main() {
+   val random = Random.nextInt(0, 100)
+   println("Tilfeldig tall: $random")
+}
 ```
 
-## Dypdykk:
-Generering av tilfeldige tall har vært en utfordring i dataprogrammering på grunn av dets avhengighet av deterministiske algoritmer. Tidligere, var pseudorandom tallgenerering (PRNG) den vanligste metoden, hvor en algoritme bruker en startverdi for å produsere tall som kan virke tilfeldige, men er egentlig forutsigbare. I Kotlin, er det flere alternativer for tilfeldig tallgenerering, som inkluderer bruk av PRNG, eksterne APIer eller maskinvarebaserte tilfeldig tallgeneratorer.
+Når du kjører programmet, kan du få noe slikt: 
 
-## Se også:
-- [Offisiell Kotlin dokumentasjon for tilfeldig tallgenerering](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-r-a-n-d-o-m/)
-- [Artikkel om tilfeldig tallgenerering og sikkerhet i Kotlin](https://blog.jetbrains.com/kotlin/2019/04/security-and-randomness/)
+```
+Tilfeldig tall: 66
+```
+
+## Dyp Dykk
+
+Generering av tilfeldige tall har en rik historie som strekker seg tilbake til antikkens tider, og det er mange forskjellige algoritmer og teknikker for å utføre det. Kotlin har valgt å bruke pseudotilfeldige tallgeneratorer, som bruker matematiske formler eller forhåndsbestemte tabeller for å lage nummersekvenser som ser tilfeldige ut, men ikke egentlig er det.
+
+Noen alternativer til `Random.nextInt` inkluderer `Random.nextFloat`, `Random.nextBoolean`, og mer. 
+
+Ved nærmere øyekast på implementeringen av `Random` funksjonen, kan det være interessant å merke seg at under panseret bruker Kotlin java.util.Random klassen for tilfeldig tallgenerering.
+
+## Se Også
+
+For mer informasjon om dette emnet, kan du kikke på disse linkene:
+
+1. [Kotlin Random Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html)
+2. [Eric Lippert's series on Pseudorandom Number Generation](https://ericlippert.com/2013/12/16/how-much-bias-is-introduced-by-the-remainder-technique/)
+3. [Java.util.Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)

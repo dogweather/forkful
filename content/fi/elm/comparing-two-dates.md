@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu."
-html_title:           "Elm: Kahden päivämäärän vertailu."
-simple_title:         "Kahden päivämäärän vertailu."
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-
-Vertaaminen kahden päivämäärän välillä on tärkeä osa ohjelmoinnissa ja se auttaa meitä käsittelemään aikaa ja päiviä tarkasti. Päivämäärien vertailu mahdollistaa esimerkiksi tapahtumien järjestämisen aikajärjestykseen tai tietyn päivämäärän tarkistamisen.
+## Mikä & Miksi?
+Vertaamme kahta päivämäärää tarkistaksemme, kumpi on varhaisempi tai myöhäisempi. Tämän tiedon avulla voidaan esimerkiksi järjestää tapahtumia ajoissa tai seurata vanhenemisia.
 
 ## Miten:
+Elm tarjoaa `Date.compare` -funktion, jolla voimme vertailla päivämääriä. 
 
-Tässä on esimerkkejä siitä, kuinka voit vertailla kahta päivämäärää Elm-kielellä:
+```elm
+import Date exposing (fromString, compare)
+import Result exposing (withDefault)
 
-```Elm
-comparison: Date -> Date -> Ordering
-comparison date1 date2 =
-    if Date.isBefore date1 date2 then
-        LT
-    else if Date.isAfter date1 date2 then
-        GT
-    else
-        EQ
+date1 = withDefault (Date.fromTime 0) (fromString "2021-01-01")
+date2 = withDefault (Date.fromTime 0) (fromString "2021-12-01")
+
+main =
+    compare date1 date2
 ```
 
-Tämä funktio vertaa kahta päivämäärää ja palauttaa joko "LT" (alle), "GT" (yli) tai "EQ" (yhtä suuri) sen perusteella, mikä päivämäärä on aiempi.
+Tämän koodin tuloste on `LT`, mikä tarkoittaa, että `date1` on varhaisempi kuin `date2`. 
 
-```Elm
-birthdayCheck: Date -> Date -> Bool
-birthdayCheck date birthdate =
-    Date.month date == Date.month birthdate
-    && Date.day date == Date.day birthdate
-```
+## Syvä sukellus:
+`Date.compare` -funktio on osa Elm:n ydinkirjastoa. Se käyttää aikaleimoja (millisekunteja vuodesta 1970) päivämäärien vertaamiseen. Vaihtoehtoinen tapa päivämäärien vertaamiseen on muuntaa ne ensin aikaleimoiksi ja verrata sen jälkeen tätä arvoa.
 
-Tämä funktio tarkistaa, onko annettuna päivämääränä syntymäpäivä.
 
-## Syväsukellus:
+## Katso myös: 
+Kannattaa tutustua näihin lähteisiin, jos haluat lisätietoja päivämäärien vertaamisesta Elm:ssä.
 
-Historiallisessa kontekstissa päivämäärien vertailuun käytettiin paljon käsin koodattuja algoritmeja ennen valmiiksi kirjoitettuja funktioita, kuten Elm-kielessä. Joissakin kielissä, kuten C, päivämäärät voidaan esittää lukuna, ja niitä voidaan sitten vertailla toisiinsa. Yksi vaihtoehto Elm-kielellä on käyttää DateTime-pikakirjoitusta, joka tarjoaa lisätoiminnallisuuksia päivämäärien vertailuun.
-
-## Katso myös:
-
-- [Official Elm Date documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Elm DateTime package](https://package.elm-lang.org/packages/justinmimbs/elm-date-extra/latest/DateTime)
-- [Date comparison in other programming languages](https://www.tutorialspoint.com/how-to-compare-two-dates-in-c-cplusplus)
+- Elm:n virallinen [Date](https://package.elm-lang.org/packages/elm/core/latest/Date) moduuli.
+- Tietoa [aikaleimoista](https://en.wikipedia.org/wiki/Timestamp) ja niiden merkityksestä datan vertaamisessa.
+- Stack overflow opas päivämäärien [vertaamisesta](https://stackoverflow.com/questions/3708355/compare-dates-in-javascript) muissa ohjelmointikielissä, kuten JavaScript.

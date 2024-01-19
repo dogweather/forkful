@@ -1,7 +1,7 @@
 ---
-title:                "Wczytywanie argumentów wiersza poleceń"
-html_title:           "Gleam: Wczytywanie argumentów wiersza poleceń"
-simple_title:         "Wczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,39 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co chodzi?
+## Co i Dlaczego?
 
-Czy kiedykolwiek zastanawiałeś się, jak programy w terminalu są w stanie odtworzyć polecenia, które wpisujesz po zakończeniu ich uruchamiania? Właśnie wtedy wychodzi na scenę czytanie argumentów wiersza poleceń. Programiści często wykorzystują tę umiejętność, aby wpływać na zachowanie swoich programów poprzez różne opcje lub parametry.
+Czytanie argumentów z linii poleceń to proces, dzięki któremu program może otrzymać dane wejściowe bezpośrednio podczas uruchamiania. Programiści używają tego mechanizmu do konfigurowania swoich aplikacji w czasie rzeczywistym.
 
 ## Jak to zrobić:
 
-Możesz łatwo odczytać argumenty wiersza poleceń w Gleam dzięki modułowi ```sys```. W poniższym przykładzie użyjemy go do wyświetlenia wszystkich przekazanych argumentów:
+Przykłady kodowania i wyniki w blokach kodu Gleam:
 
 ```Gleam
-let args = sys.args
-List.foreach(args, fn(arg) {
-  IO.println(arg)
-})
+import gleam/list
+import gleam/string.{from}
+
+pub fn print_args() {
+  let args = sys.args()
+  let message = String.from(args)
+  io.println(message)
+}
 ```
 
-Kiedy uruchomisz ten kod z argumentami ```"Gleam"``` i ```"jest"```, zobaczysz następujący wynik:
+Gdy uruchomisz ten kod z argumentami z linii poleceń, zobaczysz coś takiego:
 
-```Gleam
-"bin/program"
-"Gleam"
-"jest"
+```Sh
+$ gleam run my_program arg1 arg2 arg3
+arg1, arg2, arg3
 ```
 
-## Głębszy zanurzenie:
+## Deep Dive
 
-Korzystanie z argumentów wiersza poleceń stało się powszechne w programowaniu terminalowym z powodu ich prostoty i wszechstronności. Alternatywnymi sposobami przekazywania informacji do programów są zapisywanie ich w plikach konfiguracyjnych lub ustawieniach programu. Jednak czytanie argumentów wiersza poleceń jest szybsze i nie wymaga edycji dodatkowych plików.
+Czytanie argumentów z linii poleceń nie jest nowym konceptem. Został on zapoczątkowany w latach 70. XX wieku z narodzinami języków UNIX i C. W języku Gleam jest to składowa wbudowana w moduł `sys`.
 
-Moduł ```sys``` w Gleam dostarcza również funkcje umożliwiające dostęp do wielu innych komponentów systemu operacyjnego, w tym zmiennych środowiskowych i ścieżki do bieżącego katalogu. Dlatego używanie go jest bardzo przydatne podczas tworzenia programów, które muszą interakcjonować z systemem.
+Alternatywą do czytania argumentów z linii poleceń może być korzystanie z plików konfiguracyjnych. Ale ta druga technika wymaga zrozumienia, gdzie pliki te należy umieścić i jak je sformatować, co może być bardziej skomplikowane dla użytkownika.
 
-## Zobacz również:
+Szczegóły implementacji Gleam mogą się różnić. Argumenty z linii poleceń są przechowywane w liście, dzięki czemu można je łatwo przefiltrować lub zmapować.
 
-Jeśli jesteś zainteresowany dowiedzeniem się więcej na temat modułu ```sys``` w Gleam, możesz przeczytać dokumentację na oficjalnej stronie języka: https://gleam.run/modules/sys.html.
+## Zobacz także:
 
-Jeśli chciałbyś poznać inne sposoby przekazywania danych do programów w terminalu, możesz zapoznać się z różnymi opcjami w narzędziu ```argparse```: https://github.com/moscow-python-raise/dotstarsuperstar/tree/master/ReadTheDocs/argparse.
+Możesz znaleźć więcej informacji na ten temat w oficjalnych dokumentach Gleam:
 
-Pamiętaj, że czytanie argumentów wiersza poleceń jest jedną z podstawowych umiejętności każdego programisty, więc warto zrobić to porządnie!
+1. [Dokumentacja Gleam](https://hexdocs.pm/gleam_erlang_stdlib/sys.html#args)
+2. [Poradnik "komenda linii poleceń" na mdn](https://developer.mozilla.org/pl/docs/Learn/JavaScript/First_steps/CommandLine)

@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "C#: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,37 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Päivämäärien vertaaminen on yksinkertaisesti kahden eri päivämäärän vertailemista keskenään. Ohjelmoijat tekevät tätä yleensä saadakseen selville, kumpi päivämäärä on aikaisempi tai myöhempi, tai halutakseen tehdä tiettyjä toimintoja sen perusteella.
+# Vertailu kahden päivämäärän välillä C#-kielellä
 
-## Miten:
-Päivämäärien vertaaminen C#:lla on helppoa. Voit käyttää `DateTime.Compare` -metodia, joka vertailee kahta päivämäärää ja palauttaa arvon suhteessa toisiinsa. Tässä on yksinkertainen esimerkki:
+## Mikä & Miksi?
+
+Päivämäärien vertailulla tarkoitetalemme tilannetta, jossa tarkastelemme kahta eri päivämäärää ja määritämme niiden välisen ajanjakson. Ohjelmoijat tekevät tämän tiedon analysoimiseksi, aikataulutuksen helpottamiseksi tai ajanjaksojen määrittelemiseksi esimerkiksi varauksissa ja istunnoissa.
+
+## Kuinka tehdä:
+
+Alla on esimerkki siitä, kuinka vertailla kahta päivämäärää C#-kielellä.
 
 ```C#
-DateTime date1 = new DateTime(2020, 04, 26);
-DateTime date2 = new DateTime(2021, 10, 15);
-
+DateTime date1 = new DateTime(2021, 6, 15);
+DateTime date2 = new DateTime(2022, 6, 15);
 int result = DateTime.Compare(date1, date2);
 
 if (result < 0)
-{
-    Console.WriteLine("Ensimmäinen päivämäärä on aikaisempi.");
-}
-else if (result > 0)
-{
-    Console.WriteLine("Toinen päivämäärä on aikaisempi.");
-}
+   Console.WriteLine("date1 is earlier than date2.");
+else if (result == 0)
+   Console.WriteLine("date1 is the same as date2.");
 else
-{
-    Console.WriteLine("Päivämäärät ovat samat.");
-}
+   Console.WriteLine("date1 is later than date2.");
+```
+Esimerkin tuloste:
 
-// Output:
-// Ensimmäinen päivämäärä on aikaisempi.
+```
+date1 is earlier than date2.
 ```
 
-## Syvemmälle:
-Päivämäärien vertaaminen on tärkeä osa ohjelmointia, erityisesti aikajärjestelmiin liittyvissä sovelluksissa. Tämän lisäksi on olemassa muita tapoja vertailla päivämääriä, kuten käyttämällä `DateTime.CompareTo` -metodia tai käsin kirjoittamalla vertailulogiikka. Kaikissa näissä tapauksissa kannattaa olla tarkkana, koska esimerkiksi vuoden 2020 helmikuu 29. päivää ei ole olemassa, joten päivämäärien vertaamiseen tulee kiinnittää huomiota.
+## Syvällisempi katsaus:
 
-## Katso myös:
-Voit oppia lisää päivämäärien vertaamisesta C#:lla täältä: [C# DateTime.Compare() Method](https://www.c-sharpcorner.com/UploadFile/puranindia/datetime-compare-in-C-Sharp/).
+**Historiallinen tausta**: Aikaisempi C#-versio käytti TimeSpan-objektia päivämäärien välisten erotusten määrittelemiseksi. Myöhemmissä versioissa käytämme DateTime.Compare-menetelmää, joka on enemmän intuitiivinen ja joustava.
+
+**Vaihtoehdot**: DateTime.Compare ei ole ainoa tapa, jolla voimme verrata kahta päivämäärää C#-ohjelmointikielessä. Voimme myös vähentää kaksi päivämäärää toisistaan luomaan TimeSpan-objektin ja sitten analysoida sitä.
+
+```C#
+DateTime date1 = new DateTime(2021, 6, 15);
+DateTime date2 = new DateTime(2022, 6, 15); 
+TimeSpan span = date2 - date1;   
+Console.WriteLine("There are {0} days between date1 and date2.", span.TotalDays);
+```
+
+**Implementaation yksityiskohdat**: DateTime.Compare vie parametrikseen kaksi DateTime-objektia ja palauttaa kokonaisluvun. Tämä kokonaisluku osoittaa ovatko päivämäärät samat, onko ensimmäinen päivämäärä aikaisempi tai myöhempi kuin toinen.
+
+## Näe myös:
+
+- DateTime luokka: [https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime?view=net-5.0](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime?view=net-5.0)
+  
+- Microsoftin ohjeet päivämäärien vertailusta: [https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/datetime/how-to-compare-dates-and-times](https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/datetime/how-to-compare-dates-and-times)
+  
+- Lisätietoja TimeSpan luokasta: [https://docs.microsoft.com/fi-fi/dotnet/api/system.timespan?view=net-5.0](https://docs.microsoft.com/fi-fi/dotnet/api/system.timespan?view=net-5.0)

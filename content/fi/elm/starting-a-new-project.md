@@ -1,7 +1,7 @@
 ---
-title:                "Aloittaa uusi projekti"
-html_title:           "Elm: Aloittaa uusi projekti"
-simple_title:         "Aloittaa uusi projekti"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,29 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Aloittaa uusi projekti tarkoittaa uuden ohjelmiston, sovelluksen tai verkkosivuston luomista. Ohjelmoijat tekevät tätä saadakseen aikaan parempia, tehokkaampia tai luotettavampia ohjelmia.
+## Mikä & Miksi?
 
-## Miten:
-Alkavat uudet projektit Elm-kielellä on helppoa! Tässä esimerkki kuinka aloitamme uuden projektin ja luomme yksinkertaisen "hei maailma" -ohjelman:
+Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelman kehittämisen aloittamista tyhjästä. Ohjelmoijat tekevät tämän, koska se on tapa luoda räätälöityjä ratkaisuja, jotka vastaavat tiettyihin tarpeisiin.
 
-Elm Ohjelmointikieli
+## Kuinka:
 
+Aloitetaan asentamalla Elm: 
+```Bash
+npm install -g elm
 ```
-module Main exposing (main)
+Sitten luodaan uusi projekti komennolla:
+```Elm
+elm init
+```
+Tämä luo `elm.json` tiedoston sekä `src` hakemiston. Sovelluksen pääfunktio sijoitetaan esimerkiksi `src/Main.elm` tiedostoon:
+```Elm
+module Main exposing (..)
 
-import Html exposing (text)
+import Html exposing (h1, text)
+
 
 main =
-    text "Hei maailma!"
+    h1 [] [ text "Hello, Elm!" ]
 ```
+Sovelluksen voi nyt ajaa selaimessa:
+```Bash
+elm reactor
+```
+Ja avata selaimessa osoitteella: [http://localhost:8000/src/Main.elm](http://localhost:8000/src/Main.elm)
 
-Kun ajat tämän koodin, näet "Hei maailma!" tulostettuna ruudulle. Voit nyt alkaa rakentaa omaa projektiasi tämän pohjan päälle.
+## Syväsukellus
 
-## Syvemmälle:
-Elm on funktionaalinen ohjelmointikieli, joka on suunniteltu tuottamaan selkeää ja virheetöntä koodia. Se on myös avoimen lähdekoodin ja sen syntaksi on yksinkertainen ja helppo oppia. Vaihtoehtona on esimerkiksi JavaScript, mutta Elm tarjoaa useita etuja, kuten paremman virheidenhallinnan ja skaalautuvuuden.
+Elm lanseerattiin vuonna 2012 tuomaan parempaa luotettavuutta ja ylläpidettävyyttä web-sovelluskehitykseen. Elm tarjoaa vahvan tyypityksen ja ajonaikaisen virheiden poiston, jonka avulla ohjelmoijat voivat kehittää turvallisempia ja luotettavampia sovelluksia.
 
-## Katso myös:
-- [Elm oppaan aloittelijoille](https://guide.elm-lang.org/)
-- [Elm yhteisö](https://elm-lang.org/community)
-- [JavaScript vs Elm](https://www.freecodecamp.org/news/javascript-vs-elm-9faa8ba1fc04/)
+Vaihtoehtoisia tapoja uuden projektin aloittamiselle ovat esimerkiksi kehitettyjen projektimallien, kuten 'elm-spa-example' tai 'elm-architecture-tutorial' käyttö.
+
+Hankkeen luomisessa, `elm init` komento luo konfiguraatiotiedoston `elm.json`, joka määrittää projektin riippuvuudet. Tämän lisäksi luodaan `src` hakemisto, johon Elm-lähdekooditiedostot, kuten `Main.elm`, sijoitetaan.
+
+## Katso Myös
+
+1. Elm-kielen kotisivu: https://elm-lang.org/
+2. 'Building Web Apps with Elm' -kirja, jonka kirjoittanut James A. Garfield: https://pragprog.com/titles/jgelm/
+3. Elm-ohjelmointiopas: https://elmprogramming.com/

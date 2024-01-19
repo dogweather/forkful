@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti della linea di comando"
-html_title:           "PHP: Lettura degli argomenti della linea di comando"
-simple_title:         "Lettura degli argomenti della linea di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,24 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Leggere gli argomenti della riga di comando è il processo di acquisire gli input specificati quando si avvia un programma da riga di comando. I programmatori spesso lo fanno per consentire agli utenti di personalizzare l'esecuzione del programma.
+## Che cosa & Perché?
+
+Leggere gli argomenti della riga di comando stabilisce la comunicazione tra l'utente e lo script. Questo è vitale quando si programmano script che necessitano di input personalizzati per eseguire operazioni dinamiche.
 
 ## Come fare:
-```PHP
-//Esempio di lettura di argomenti dalla riga di comando
-// php script.php arg1 arg2
 
-$args = $argv; //Salva gli argomenti in una variabile
-echo "Primo argomento: " . $args[1]; //Output: Primo argomento: arg1
-echo "Secondo argomento: " . $args[2]; //Output: Secondo argomento: arg2
+PHP fornisce un array superglobale ```$argv``` per leggere gli argomenti della riga di comando.
+
+```PHP
+<?php
+    // stampa il nome dello script
+    echo 'Nome script: ' . $argv[0] . "\n";
+    
+    // stampa il primo argomento
+    echo 'Primo argomento: ' . $argv[1] . "\n";
+?>
 ```
 
-## Approfondimento:
-La lettura degli argomenti della riga di comando è un'azione comune nei linguaggi di programmazione da riga di comando come PHP, ma è meno utilizzata nei linguaggi di programmazione orientati agli oggetti come Java. Gli sviluppatori possono scegliere di utilizzare un framework come Symfony o Laravel per semplificare la gestione degli argomenti della riga di comando.
+Eseguendo `php script.php ciao` si otterrà il seguente output:
 
-## Vedi anche:
-Altre risorse utili sul linguaggio PHP e sulla gestione degli argomenti della riga di comando:
-- [PHP: Argv](https://www.php.net/manual/en/reserved.variables.argv.php)
-- [Symfony Console Component](https://symfony.com/doc/current/components/console.html)
-- [Laravel Console Commands](https://laravel.com/docs/8.x/artisan)
+```PHP
+Nome script: script.php
+Primo argomento: ciao
+```
+
+Attenzione che `$argv[0]` sarà sempre il nome del tuo script.
+
+## Approfondimento
+
+### Contesto storico
+
+La lettura degli argomenti da riga di comando non è una funzione specifica di PHP; è una funzionalità comune in molti linguaggi di programmazione, risalente alle origini di Unix.
+
+### Alternative
+
+Esiste un'alternativa alla superglobale `$argv` che è la funzione `getopt()`. Questa funzione analizza le opzioni e gli argomenti del comando in base a delle specifiche che si definiscono.
+
+```PHP
+<?php
+    $options = getopt("a:b:c:");
+    print_r($options);
+?>
+```
+
+### Dettagli implementativi
+
+L'array `$argv` include sempre il nome dello script come primo elemento. Se non si passano argomenti, l'array avrà solo questo elemento; altrimenti, ogni argomento sarà un elemento successivo dell'array.
+
+## Vedi anche
+
+[Manuale PHP: Argomenti della riga di comando](https://www.php.net/manual/it/features.commandline.arguments.php)
+
+[Manuale PHP: getopt()](https://www.php.net/manual/it/function.getopt.php)

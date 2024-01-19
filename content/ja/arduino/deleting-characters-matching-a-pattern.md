@@ -1,7 +1,7 @@
 ---
-title:                "パターンにマッチする文字を削除する"
-html_title:           "Arduino: パターンにマッチする文字を削除する"
-simple_title:         "パターンにマッチする文字を削除する"
+title:                "パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,48 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-文字のパターンに一致する文字を削除することは、プログラマーがよく行う作業です。これを行う理由は、データの整理や処理を行うためです。
+## 何となぜ？
 
-## 方法：
+文字パターンに一致する文字を削除する、これは具体的には特定のパターンに一致する全ての文字を対象の文字列から削除することを指します。これは、不要なホワイトスペースを削除したり、特定の記号を除去したりする際などによく使用されます。
 
-```arduino
-// コード例１：文字列から特定の文字を削除する
-String inputString = "Hello, world!"; // 入力文字列
-char charToRemove = 'o'; // 削除したい文字
-String outputString = ""; // 出力文字列
+## 実践方法：
 
-for (int i = 0; i < inputString.length(); i++) {
-  // 入力文字列の文字を１文字ずつ取り出す
-  char currentChar = inputString.charAt(i);
-  
-  // 削除したい文字と一致するかチェックする
-  if (currentChar != charToRemove) {
-    // 一致しない場合は、出力文字列に追加する
-    outputString += currentChar;
-  }
-}
+以下に、`Arduino`のコード例を示します。文字列から特定の文字('a'と'b')を削除します。
 
-// 出力結果をシリアルモニターに表示する
-Serial.println(outputString); // Hello, wrld!
+```Arduino
+String sentence = "This is a basic Arduino example.";
+sentence.replace("a", ""); 
+sentence.replace("b", ""); 
+Serial.println(sentence);
 ```
 
-```arduino
-// コード例２：正規表現を使用して文字列から特定のパターンに一致する文字を削除する
-String inputString = "I have 10 apples and 5 oranges."; // 入力文字列
-String outputString = ""; // 出力文字列
+出力：
 
-// 正規表現パターンを作成し、一致する部分を空文字で置き換える
-regex pattern = " \\d+ "; // スペースの前後に数字がある部分を削除する
-outputString = regex_replace(inputString, pattern, "");
-    
-// 出力結果をシリアルモニターに表示する
-Serial.println(outputString); // I have apples and oranges.
+```Arduino
+"This is sic Arduio exmple."
 ```
 
-## 詳細：
-削除する文字やパターンを指定することで、より効率的にデータを処理することができます。正規表現を使用することで、柔軟に文字列を指定することができるため、より高度な削除が可能です。また、代替手段として文字列の置換を行う方法もありますが、削除することでデータの一部を維持することができます。実装の詳細については、プログラミング言語やライブラリによって異なります。
+これは、`replace()`関数を使用してパターンに一致する文字をブランク('')に置き換えることで、特定の文字を削除しています。
 
-## 関連リンク：
-- [正規表現チュートリアル (W3Schools)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [regex_replaceの参考ドキュメント (Arduino)](https://www.arduino.cc/reference/en/language/functions/strings/stringobject/regexreplace/)
+## さらに深く:
+
+この特性は、コンピュータプログラミングの初期段階から存在しており、文字列操作の基本とも言える機能です。他の方法としては正規表現を使用したパターンマッチングがありますが、Arduinoでは直接サポートされていないため利用が難しいです。
+
+実装については、`replace()`関数の内部ではループと文字列の比較が行われており、適切な文字列の挿入と削除が管理されています。そのため、大量のデータで使用すると処理速度が遅くなる可能性がある点には注意が必要です。
+
+## 参考情報：
+
+以下のリンクから関連するトピックについて学ぶことができます:
+- Arduinoの文字列操作: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/
+- 更に詳しい文字列操作テクニック: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/

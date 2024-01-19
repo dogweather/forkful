@@ -1,7 +1,7 @@
 ---
-title:                "Análise de html"
-html_title:           "C++: Análise de html"
-simple_title:         "Análise de html"
+title:                "Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,42 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Por quê?
 
-Analisar HTML é o processo de ler e interpretar o código de uma página da web, permitindo que os programadores possam acessar e manipular informações específicas dentro de uma página. Os programadores muitas vezes fazem isso para extrair dados de um site ou para criar aplicativos que interagem com sites existentes.
+Analisar HTML (parser HTML) é o processo de examinar e interpretar um código HTML para transformá-lo em uma estrutura de dados compreensível. Os programadores fazem isso para extrair informações, manipular e interagir com elementos web em um nível mais profundo.
 
 ## Como fazer:
 
-Existem várias maneiras de realizar a análise de HTML em C++, mas uma das formas mais populares é usando uma biblioteca externa chamada "libxml2". Aqui está um exemplo de como usar essa biblioteca para obter o título de uma página da web:
+Aqui temos um exemplo básico de análise de HTML utilizando a biblioteca Gumbo do Google para C++. Este pequeno trecho de código vai analisar um documento HTML e imprimir o título do documento na saída padrão.
 
-```
-#include <libxml/HTMLparser.h> // inclua a biblioteca
+```C++
+#include <iostream>
+#include "gumbo.h"
 
 int main() {
-    const char * htmlInput; // entrada HTML
-    htmlDocPtr doc = htmlReadMemory(htmlInput, strlen(htmlInput), NULL, NULL, HTML_PARSE_RECOVER); // cria um documento a partir da entrada HTML
-    xmlNode * root = xmlDocGetRootElement(doc); // obtém o elemento raiz do documento
-    xmlNode * head = root->children; // obtém o elemento "head" dentro do elemento raiz
-    xmlNode * title = head->children; // obtém o elemento "title" dentro do elemento "head"
-    xmlChar * titleContent = xmlNodeGetContent(title); // obtém o conteúdo do elemento "title"
-    printf("%s\n", titleContent); // imprime o título
-    xmlFreeDoc(doc); // libera o documento
-    xmlCleanupParser(); // limpa o parser
+    const std::string html = "<!DOCTYPE html><html><head><title>Olá mundo!</title></head><body><p>Exemplo de parser HTML.</p></body></html>";
+
+    GumboOutput* output = gumbo_parse(html.c_str());
+
+    GumboNode* node = output->root;
+
+    if (node->v.element.children.length >= 2) {
+        GumboNode* title = static_cast<GumboNode*>(node->v.element.children.data[1]);
+        if (title->type == GUMBO_NODE_ELEMENT && title->v.element.tag == GUMBO_TAG_TITLE) {
+            std::cout << "Titulo: " << std::string(static_cast<GumboText*>(title->v.element.children.data[0])->text) << std::endl;
+        }
+    }
+
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
     return 0;
 }
 ```
+A saída desse código será:
+```
+Titulo: Olá mundo!
+```
 
-A saída desse código seria o título da página da web.
+## Aprofundamento
 
-## Mergulho profundo:
+A necessidade de analisar HTML remonta aos primeiros dias da web. Originalmente, o HTML era uma linguagem de marcação simples que permitia aos desenvolvedores criar páginas da web estáticas. Com o tempo, no entanto, tornou-se necessário interagir com essas páginas em um nível mais profundo, e assim a análise de HTML nasceu.
 
-A análise de HTML é uma prática antiga na programação, que remonta aos primeiros dias da internet. Existem várias bibliotecas disponíveis para análise de código HTML em C++, como a "libxml2" mencionada anteriormente e a "libhtmlcxx". Além disso, muitas linguagens de programação modernas, como Python e JavaScript, têm recursos embutidos para análise de HTML, tornando essa tarefa ainda mais fácil.
+Há várias alternativas para a análise de HTML em C++. Além da biblioteca Gumbo, temos também o MyHTML, htmlcxx, e muitos outros. A decisão de usar uma biblioteca ou outra depende das necessidades do seu projeto. 
 
-## Veja também:
+A implementação da análise de HTML é uma tarefa complexa, pois precisa lidar com a natureza muitas vezes mal definida e inconsistente do HTML na web. No entanto, as bibliotecas modernas, como o Gumbo, aproveitam algoritmos sofisticados e uma profunda compreensão da especificação HTML para superar esses obstáculos.
 
-Para saber mais sobre análise de HTML em C++, confira os seguintes recursos:
+## Veja Também
 
-- [Site oficial da biblioteca libxml2](http://www.xmlsoft.org/)
-- [Tutorial de análise de HTML usando a biblioteca libxml2](https://www.xmlsoft.org/html/libxml-HTMLparser.html)
-- [Documentação da biblioteca libhtmlcxx](http://www.mbayer.de/htmlcxx/)
-- [Tutoriais de análise de HTML em outras linguagens de programação](https://realpython.com/html-and-python/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+Para mais informações sobre a biblioteca Gumbo, você pode acessar a documentação oficial do Google nesta [link](https://github.com/google/gumbo-parser).
+
+Para aprender mais sobre análise HTML em geral, este [artigo](https://www.w3.org/TR/html51/syntax.html#parsing) do W3C é um ótimo recurso. 
+
+Além disso, aqui está uma [comparação](https://kripken.github.io/compare-parser/) entre várias bibliotecas de análise HTML em C++.

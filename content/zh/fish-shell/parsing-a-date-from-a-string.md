@@ -1,7 +1,7 @@
 ---
-title:                "从字符串中解析日期"
-html_title:           "Fish Shell: 从字符串中解析日期"
-simple_title:         "从字符串中解析日期"
+title:                "从字符串解析日期"
+html_title:           "C: 从字符串解析日期"
+simple_title:         "从字符串解析日期"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是日期字符串解析？ 为什么程序员会这样做？
+## 什么与为什么？
+解析日期帮助从字符串提取日期信息。程序员经常处理各种格式的日期，并从其中获取特定信息，像修改并标准化日期格式等。
 
-日期字符串解析是指从字符串中提取日期，并将其转换为特定的格式。程序员通常需要这样做是因为他们需要处理大量的日期数据，并将其转换为标准的日期格式以便进一步处理。
+## 如何做：
+在 Fish Shell 中，我们使用 `date` 命令解析日期。以下是示例：
 
-# 如何进行日期字符串解析：
+```
+set birthday "2000年12月31日"
+set parsed_birthday (date -d $birthday +%F)
 
-```Fish Shell
-set date (date -f "%Y-%m-%d" "2021-05-20")
-echo $date
+echo $parsed_birthday
 ```
 
-输出：2021-05-20
-```Fish Shell
-set date (date -f "%m/%d/%Y" "05/20/2021")
-echo $date
+执行上述代码，将打印出：
+
+```
+2000-12-31
 ```
 
-输出：05/20/2021
+我们首先设置了一个包含生日的变量，并使用 `date -d` 将其解析为我们想要的格式 `%F`（`YYYY-MM-DD`）。
 
-# 深入探讨：
+## 深入研究
+穆里透斯·A·劳改良过试图使日期解析过程更简单的许多算法。使用 `date -d` 是 Fish Shell 中一种快速且有效的方式，不过还有其他棒的shell可以做同样的事。
 
-日期字符串解析已经成为程序员处理日期数据的标准做法。在过去，一些程序员会手动提取日期信息并将其转换为所需的格式，但这样做效率低下且容易出错。除了Fish Shell外，其他一些解析日期字符串的工具和编程语言也十分流行，例如Python中的datetime模块和GNU grep中的日期格式化功能。在实现日期字符串解析时，程序员需要特别注意日期格式的差异，以免出现错误的转换结果。
+Fish Shell 用 C 写成，为 UNIX 系统设计。它的设计简化了很多在其他 shell 中复杂的任务。使用 `date -d` 这样的简洁命令，我们可以方便地进行日期解析。
 
-# 相关链接：
-
-- Fish Shell文档：https://fishshell.com/docs/current/index.html
-- Python datetime模块：https://docs.python.org/3/library/datetime.html
-- GNU grep日期格式化：https://www.gnu.org/software/grep/manual/html_node/Date-time.html
+## 参考链接
+- Fish Shell 文档: https://fishshell.com/docs/current/index.html
+- 学习解析日期: https://en.wikipedia.org/wiki/Date_parsing
+- UNIX 类型系统下的日期和时间 : http://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html

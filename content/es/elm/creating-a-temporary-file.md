@@ -1,6 +1,6 @@
 ---
 title:                "Creando un archivo temporal"
-html_title:           "Elm: Creando un archivo temporal"
+html_title:           "Arduino: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,52 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Crear un archivo temporal es una herramienta útil para los programadores de Elm. Un archivo temporal es un archivo temporal que se crea para almacenar datos de forma temporal y se elimina cuando ya no es necesario. Los programadores suelen hacer esto para evitar el sobrecargamiento del disco duro con archivos innecesarios y para mantener un sistema organizado y eficiente.
+Crear un archivo temporal implica generar un archivo de uso corto durante la ejecución de un programa. Los programadores lo hacen para almacenar datos de manera transitoria, especialmente útil cuando se manejan grandes volúmenes de información o para guardar el estado en operaciones complejas.
 
 ## Cómo hacerlo:
 
-Para crear un archivo temporal en Elm, podemos utilizar la función `File.temp` que toma como argumentos una lista de extensión de archivo y un `Result` que contiene un `String` con el nombre del archivo temporal.
- 
-```Elm
-import File
-
-tempFile = File.temp ["txt"] "tempFile" 
-
-```
-Este código crea un archivo temporal llamado "tempFile.txt" en la ubicación predeterminada del sistema operativo.
-
-Para escribir en un archivo temporal, podemos utilizar la función `File.write` que toma como argumentos el nombre del archivo temporal y el contenido que queremos escribir en ese archivo.
+Debido a las características de la interacción de Elm con el sistema operativo, Elm en sí no permite la creación directa de archivos temporales. Pero podemos interactuar a través de sus funciones externas (port en elm) para lograr esta tarea en el entorno Javascript. Aquí te mostramos un ejemplo.
 
 ```Elm
-import File
+port module TempFile exposing (..)
 
-tempFile = File.temp ["txt"] "tempFile"
+type alias Flag =
+  { flag : String }
 
-File.write tempFile "Este es un archivo temporal creado en Elm."
+type alias FileOptions =
+  { encoding : String
+  , flag : Flag
+  }
 
+port tempFile : FileOptions -> (Result String String -> msg) -> Cmd msg
 ```
 
-Para leer el contenido de un archivo temporal, podemos utilizar la función `File.read` que toma como argumento el nombre del archivo temporal y devuelve un `Result` que contiene un `String` con el contenido del archivo.
+En este ejemplo, hemos creado un módulo llamado TempFile con una función `tempFile`. Esta función solicita opciones de archivo y envía una command (Cmd msg) que maneja la creación de un archivo temporal en el entorno Javascript.
 
-```Elm
-import File
+Ahora aquí está la parte de Javascript,
 
-tempFile = File.temp ["txt"] "tempFile"
-
-let contenido = File.read tempFile
+```Javascript
+app.ports.tempFile.subscribe((fileOptions) => {
+  const tmp = require('tmp');
+  tmp.file(fileOptions, function(err, path, fd, cleanupCallback) {
+    if (err) throw err;
+    console.log("File: ", path);
+    console.log("Filedescriptor: ", fd);
+  });
+});
 ```
 
-## Inmersión profunda:
+Asegúrate de importar el paquete 'tmp' en tu archivo Javascript.
 
-Crear archivos temporales es una práctica común en la programación ya que permite a los programadores almacenar datos de forma temporal sin tener que preocuparse por eliminar manualmente estos archivos. Esta técnica se ha utilizado desde los primeros años de la informática y sigue siendo relevante en la programación moderna.
+## Profundizando
 
-Aunque crear archivos temporales es una forma efectiva de almacenar datos de forma temporal, también existen alternativas como el uso de bases de datos o la implementación de cachés en la memoria. Sin embargo, estas opciones pueden ser más complejas y requieren más recursos, por lo que crear archivos temporales sigue siendo una opción popular entre los programadores.
+Elm prioriza la interacción segura con el sistema en lugar de proporcionar un acceso directo a las operaciones del sistema operativo, razón por la cual las operaciones de E/S de archivos a menudo se realizan a través de las puertas de enlace a Javascript. Alternativamente, podrías considerar un enfoque diferente para almacenar datos temporalmente, como almacenar en `localStorage` si estás en un entorno de navegador, o usar una base de datos en memoria si estás en un entorno de servidor.
 
-En términos de implementación, la función `File.temp` en Elm utiliza el módulo `System` y la función `File.write` utiliza el módulo `Write`. Ambos módulos son parte de la biblioteca estándar de Elm y son fáciles de usar para crear y escribir en archivos temporales.
+Los detalles de implementación aquí mostrados son a nivel básico. La creación de archivos temporales puede conseguirse a través de diversas bibliotecas en Javascript y el manejo de errores, la limpieza de archivos y las llamadas a las funciones se pueden customizar según las necesidades.
 
-## Ver también:
+## Ver También
 
-- Documentación oficial de Elm sobre la función `File.temp`: https://package.elm-lang.org/packages/elm/file/latest/File#temp
-- Alternativas a la creación de archivos temporales en Elm: https://discourse.elm-lang.org/t/alternatives-to-file-temp-oneliner/4043/2
+- [Documentación oficial de Elm](http://elm-lang.org/)
+- [Biblioteca 'tmp' en Javascript](https://www.npmjs.com/package/tmp)
+- [Documentación de puertas de enlace (port) en Elm](https://guide.elm-lang.org/interop/ports.html)
+- [Almacenamiento en el navegador con `localStorage`](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)

@@ -1,6 +1,6 @@
 ---
 title:                "比较两个日期"
-html_title:           "PHP: 比较两个日期"
+html_title:           "Clojure: 比较两个日期"
 simple_title:         "比较两个日期"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,53 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是日期比较？ 为什么程序员会这么做？
+## 什么 & 为什么？
 
-日期比较是指在编程中，比较两个不同的日期以确定它们之间的关系。程序员常常需要进行日期比较是因为他们需要处理时间相关的任务，例如计算两个日期之间的天数差，或者检查某个日期是否在另一个日期之后。
+比较两个日期是一个在日期和时间中确定两个特定实例之间的相对大小的过程。程序员做这个是为了对日程、事件或是在特定时间跨度内发生的其他任何东西进行排序或调度。
 
-## 如何进行日期比较？
+## 如何做：
 
-在PHP中，可以使用日期函数`strtotime()`和`date()`来比较两个日期。下面是一个简单的示例代码：
-
-```PHP
-$date1 = "2021-01-01";
-$date2 = "2021-05-01";
-
-if(strtotime($date1) > strtotime($date2)) {
-  // $date1 is after $date2
-  echo "Date 1 is after Date 2";
-} else if(strtotime($date1) < strtotime($date2)) {
-  // $date1 is before $date2
-  echo "Date 1 is before Date 2";
-} else {
-  // $date1 is equal to $date2
-  echo "Date 1 is equal to Date 2";
-}
-```
-代码的运行结果将是 `Date 1 is before Date 2`。你也可以使用`date()`函数来格式化日期，并输出更加直观的结果，例如：
+PHP 提供了几种建立和比较日期的方式。我们最常用的工具是 DateTime 对象。
 
 ```PHP
-$date1 = "2021-01-01";
-$date2 = "2021-05-01";
+<?php
+    $date1 = new DateTime('2022-01-01');
+    $date2 = new DateTime('2022-01-31');
 
-if(date("F", strtotime($date1)) == date("F", strtotime($date2))) {
-  // 两个日期的月份相同
-  echo "Both dates are in the same month";
-} else {
-  echo "Dates are in different months";
-}
+    if ($date1 > $date2) {
+        echo "Date1 是之后的日期";
+    } else {
+        echo "Date2 是之后的日期";
+    }
+?>
 ```
 
-## 深入解析
+上述代码的输出将会是 "Date2 是之后的日期"。
 
-历史背景：在早期的编程语言中，日期比较并不容易，程序员需要自己编写复杂的算法来处理日期比较。随着时间的发展，日期处理函数和类库逐渐出现，使得日期比较变得更加简单和高效。
+## 深入了解
 
-替代方案：除了使用PHP的日期函数，程序员也可以使用其他语言和类库来进行日期比较，例如JavaScript的`Date`对象和Moment.js类库。
+历史上，PHP 中日期的比较曾经给编程带来许多麻烦，因为比较两个日期意味着需要对每一个组成部分（年，月，日）分别进行比较。在 PHP 5.2.0 后，引入了 DateTime 对象，极大地简化了日期和时间的管理。
 
-实现细节：PHP日期函数中的`strtotime()`函数可以将字符串形式的日期转换为时间戳，而`date()`函数则可以根据指定的格式输出日期。这两个函数的结合使得日期比较变得简单。
+您也可以使用其他一些方法比如 `strtotime() `函数进行比较，但实际上，这些方法效率更低，也更容易产生错误。
 
-## 参考资料
+```PHP
+<?php
+    $date1 = strtotime('2022-01-01');
+    $date2 = strtotime('2022-01-31');
 
-- [PHP日期函数参考手册](https://www.php.net/manual/en/ref.datetime.php)
-- [JavaScript的`Date`对象](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js类库](https://momentjs.com/)
+    if ($date1 > $date2) {
+        echo "Date1 是之后的日期";
+    } else {
+        echo "Date2 是之后的日期";
+    }
+?>
+```
+
+这段代码执行的结果与前面一致，但它的执行效率低于使用 DateTime 对象的方式。
+
+## 参考文献
+
+PHP 官方文档为您提供了更多关于日期比较的信息。下述链接是一些您可能会感兴趣的主题：
+
+- DateTime 对象：[点击这里](https://www.php.net/manual/en/book.datetime.php)
+- strtotime 函数：[点击这里](https://www.php.net/manual/en/function.strtotime.php)

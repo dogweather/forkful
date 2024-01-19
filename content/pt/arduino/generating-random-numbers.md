@@ -1,6 +1,6 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "Arduino: Gerando números aleatórios"
+html_title:           "C: Gerando números aleatórios"
 simple_title:         "Gerando números aleatórios"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que & Por quê?
+# Gerando Números Aleatórios no Arduino
 
-Gerar números aleatórios é uma função muito útil em programação, pois permite a criação de valores imprevisíveis para diversas aplicações, como jogos, criptografia e simulações. Os programadores utilizam essa funcionalidade para adicionar uma camada de imprevisibilidade aos seus códigos e torná-los mais interessantes e seguros.
+## O que e Por quê?
 
-# Como fazer:
+Gerar números aleatórios significa criar números que não possuem nenhuma relação previsível entre si. Os programadores fazem isso para adicionar imprevisibilidade e variedade a um programa, jogo, experiência do usuário, etc.
 
-Para gerar números aleatórios em um código Arduino, você pode utilizar a função random(). Ela recebe dois parâmetros: o valor mínimo e máximo que você deseja gerar. Por exemplo, se você quiser gerar um número entre 1 e 10, seu código ficaria assim:
+## Como Fazer:
 
+Vamos começar com um simples exemplo de como utilizar a função `random()` no Arduino.
+
+```Arduino
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int numero = random(0, 100); // Gera número aleatório entre 0 e 100.
+  Serial.println(numero);
+  delay(1000); // Espera por 1 segundo
+}
 ```
-random(1, 10);
-```
-A cada execução do código, um número aleatório entre 1 e 10 será gerado.
 
-Você também pode utilizar a função randomSeed() para definir uma semente para a geração dos números aleatórios, o que garante que a sequência de números seja diferente a cada execução do código. Veja um exemplo:
+O código acima imprime um número aleatório entre 0 e 100 a cada segundo.
 
-```
-randomSeed(analogRead(A0));
-```
+## Mergulho Profundo:
 
-# Mergulho Profundo:
+A função `random()` no Arduino usa um gerador de números pseudorandom, que na verdade não são verdadeiramente aleatórios. Eles seguem um padrão predefinido que parece aleatório se você não sabe o padrão específico. 
 
-A geração de números aleatórios é um assunto muito importante em programação, principalmente na área de criptografia. No passado, as pessoas utilizavam métodos analógicos, como lançamentos de dados ou cartas, para gerar números aleatórios. Com o avanço da tecnologia e a criação de computadores, surgiram os geradores de números pseudoaleatórios, que utilizam algoritmos para criar sequências de números que parecem ser aleatórias.
+Há uma alternativa que é usar uma combinação de leituras de sensores ou ruído de rádio para gerar números realmente aleatórios. 
 
-No Arduino, a função random() também é baseada em um gerador de números pseudoaleatórios. Mas é importante ressaltar que esses números não são completamente aleatórios, pois seguem um padrão determinístico. Portanto, se a mesma semente for utilizada, a mesma sequência de números será gerada.
+Na implementação da função `random()`, o Arduino usa a função C `rand()`, que é implementado como um Gerador Linear Congruencial.
 
-Existem outras alternativas para geração de números aleatórios no Arduino, como utilizar um circuito externo ou até mesmo um sensor de temperatura para obter valores mais imprevisíveis.
+## Veja Também:
 
-# Veja Também:
-
-- Documentação oficial do Arduino sobre a função random(): https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
-- Tutorial da Adafruit sobre geradores de números aleatórios: https://learn.adafruit.com/random-numbers-in-arduino/overview
+- Documentação oficial do Arduino para a função `random()`: [https://www.arduino.cc/en/Reference/random](https://www.arduino.cc/en/Reference/random)
+- Detalhes técnicos sobre Geradores Lineares Congruenciais: [https://en.wikipedia.org/wiki/Linear_congruential_generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)
+- Utilizando leituras de sensores para gerar números realmente aleatórios: [https://www.instructables.com/True-Random-Number-Generation/](https://www.instructables.com/True-Random-Number-Generation/)

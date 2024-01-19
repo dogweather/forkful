@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków."
-html_title:           "Swift: Konwertowanie daty na ciąg znaków."
-simple_title:         "Konwertowanie daty na ciąg znaków."
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,36 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Konwersja daty na string to proces przekształcania wartości daty (np. 31.12.2020) na postać tekstową (np. "31 grudnia 2020"). Programiści często wykonują tę operację w celu wyświetlenia daty w przystępniejszej formie dla użytkownika lub dla zapisania jej w bazie danych.
+# Zamiana daty na ciąg znaków w Swift
+
+## Co to i dlaczego?
+
+Zamiana daty na ciąg znaków w Swift oznacza przekształcenie obiektu typu 'Date' w czytelny dla człowieka format, przy pomocy klasy DateFormatter. Programiści robią to, by uprościć wyświetlanie dat i godzin dla użytkowników.
 
 ## Jak to zrobić:
-W języku Swift istnieje wbudowany typ danych `Date`, który przechowuje datę i godzinę. Aby przekonwertować tę wartość na string, należy użyć metody `String(describing:)` i podać jako argument datę, którą chcemy przekonwertować. Poniżej znajduje się przykładowy kod wraz z wynikiem:
 
-```Swift
+Poniżej znajduje się proste użycie DateFormatter w Swift:
+
+```swift
 let date = Date()
-let dateString = String(describing: date)
-print(dateString)
+let dateFormatter = DateFormatter()
 
-Wynik: "2020-06-15 16:32:41 +0000" 
+dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+let dateInStringFormat = dateFormatter.string(from: date)
+
+print(dateInStringFormat)
 ```
-
-Możesz również użyć klasy `DateFormatter` i dostosować format wyjściowy. Na przykład:
-
-```Swift
-let formatter = DateFormatter()
-formatter.dateFormat = "dd/MM/yyyy"
-let date = Date()
-let dateString = formatter.string(from: date)
-print(dateString)
-
-Wynik: "15/06/2020"
+Wyjście:
+```swift
+2021-11-19 14:54:23
 ```
+Proces jest prosty - tworzysz instancję DateFormatter, ustawiasz format, a następnie używasz metody 'string(from:)' by przekształcić datę na ciąg znaków.
 
-## Głębszy Zanurzenie:
-Konwersja daty na string jest powszechnym zadaniem w programowaniu, ponieważ umożliwia wyświetlanie dat w różnych formatach, co jest przydatne dla użytkowników lub jako format danych w bazie. Istnieje również wiele innych metod konwersji daty, takich jak przekształcanie jej w timestamp. W języku Swift możesz również wybrać różne formaty językowe dla dat, dzięki czemu użytkownicy z różnych regionów mogą wyświetlać daty w odpowiednich dla siebie formatach.
+## Przyjrzyjmy się bliżej:
 
-## Zobacz również:
-- [Oficjalna dokumentacja Swift na temat klasy Date](https://developer.apple.com/documentation/foundation/date)
-- [Poradnik na temat konwersji daty na string w Swift](https://www.hackingwithswift.com/example-code/system/how-to-convert-dates-and-times-to-a-string-using-dateformatter)
-- [Inne metody formatowania dat w języku Swift](https://www.raywenderlich.com/6742-tutorial-nsformatter-in-detail)
+Metoda przekształcania daty na ciąg znaków ma swoje korzenie w języku Objective-C, z którego wywodzi się Swift. Formatowanie daty było często używane w aplikacjach iOS, które musiały wyświetlać daty i czas w czytelnej formie.
+
+Alternatywnie możemy używać ISO8601DateFormatter dla formatowania daty zgodnie z międzynarodowym standardem. Możemy również samodzielnie określać style dla daty i czasu, przy pomocy DateComponents.
+
+```swift
+let formatter = ISO8601DateFormatter()
+let stringDate = formatter.string(from: Date())
+print(stringDate)
+```
+Zaletą używania DateFormatter jest to, że obsługuje on lokalizację, co jest niezwykle przydatne w przypadku tworzenia aplikacji dla użytkowników z różnych krajów.
+
+## Zobacz także:
+
+1. [Dokumentacja Apple na temat DateFormattera](https://developer.apple.com/documentation/foundation/dateformatter)
+2. [Dokumentacja Apple na temat ISO8601DateFormattera](https://developer.apple.com/documentation/foundation/iso8601dateformatter)
+3. [Jak używać Date, DateFormatter i DateComponents](https://www.hackingwithswift.com/articles/141/how-to-use-dates-and-time-in-swift)

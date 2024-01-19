@@ -1,7 +1,7 @@
 ---
-title:                "Convirtiendo una fecha en una cadena"
-html_title:           "PowerShell: Convirtiendo una fecha en una cadena"
-simple_title:         "Convirtiendo una fecha en una cadena"
+title:                "Convirtiendo una fecha en una cadena de texto"
+html_title:           "C++: Convirtiendo una fecha en una cadena de texto"
+simple_title:         "Convirtiendo una fecha en una cadena de texto"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,27 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-Convertir una fecha en una cadena de texto es simplemente tomar una fecha en formato de fecha y hora y convertirla en una representación visual más legible para los humanos. Los programadores hacen esto para facilitar la lectura y el manejo de fechas en sus scripts de PowerShell.
+## ¿Qué & Por qué?
 
-## Cómo:
+Convertir una fecha en una cadena en PowerShell implica transformar una variable de tipo `DateTime` en un `string` para su manipulación o presentación. Los programadores lo hacen para hacer complejas operaciones de fecha y hora más manejables y para presentar la información en un formato legible para el usuario.
+
+## ¿Cómo hacerlo?
+
+El siguiente muestra cómo convertir una fecha en una cadena en PowerShell:
+
 ```PowerShell
-# Ejemplo 1: Convertir una fecha a una cadena de texto en formato dd/mm/yyyy
-Get-Date -Format "dd/mm/yyyy"
-# Salida: 07/08/2021
-
-# Ejemplo 2: Convertir una fecha a una cadena de texto en formato MMMM d, yyyy
-Get-Date -Format "MMMM d, yyyy"
-# Salida: agosto 7, 2021
-
-# Ejemplo 3: Convertir una fecha a una cadena de texto en formato yyyy/MM/dd HH:mm:ss
-Get-Date -Format "yyyy/MM/dd HH:mm:ss"
-# Salida: 2021/08/07 19:21:37
+$Fecha = Get-Date
+$Cadena = $Fecha.ToString('yyyy-MM-dd')
+$Cadena
 ```
 
-## Profundizando:
-Hay varias formas de convertir una fecha en una cadena de texto en PowerShell. Una forma común es utilizar el cmdlet `Get-Date` con el parámetro `-Format` para especificar el formato deseado. También se pueden utilizar expresiones y métodos de formato de .NET como `ToString()` para personalizar aún más la salida. Alternativamente, se pueden utilizar módulos de terceros como [Carbon](https://get-carbon.org/) que ofrecen cmdlets y funciones adicionales para manejar fechas y formatos en PowerShell de forma más avanzada.
+En esto, `$Fecha` recibe la fecha y hora actuales. `$Fecha.ToString('yyyy-MM-dd')` convierte la fecha en una cadena en el formato "año-mes-día", que se asigna a `$Cadena`. La instrucción final imprime la cadena.
 
-## Ver También:
-- [Referencia de `Get-Date` en la documentación oficial de Microsoft](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/get-date)
-- [Cómo cambiar el formato de fecha y hora en PowerShell](https://www.windowscentral.com/how-change-date-and-time-formats-powershell)
+El resultado es similarmente:
+
+```
+2021-12-26
+```
+## Inmersión profunda
+
+Para entender esto más a fondo, observe que la función `ToString()` es extremadamente flexible, capaz de adoptar muchos formatos diferentes. 
+
+Históricamente, esta flexibilidad proviene porque .NET, desde su lanzamiento en 2002, siempre ha manejado fechas y horas con el mismo tipo de objeto (`DateTime`). PowerShell, basado en .NET, hereda esto y puede acceder a todos sus métodos.
+
+Este proceso tiene alternativas. Por ejemplo, puede usar el comando `Cmdlet` de PowerShell `Format-Date`:
+
+```PowerShell
+$Fecha = Get-Date
+$Cadena = $Fecha | Format-Date -Format 'yyyy-MM-dd'
+$Cadena
+```
+
+Este código hace esencialmente lo mismo que el anterior, pero utiliza tuberías y `Cmdlet`, que es más habitual en PowerShell.
+
+Acerca los detalles de la implementación, `ToString()` no sólo convierte objetos en cadenas, también formatea estos objetos. Puede elegir entre una gran cantidad de códigos predefinidos para personalizar la cadena de salida para que se ajuste a sus necesidades. 
+
+Por ejemplo, `ToString('MM/dd/yyyy')` dará la fecha en formato "mes/día/año”, mientras que `ToString('dddd')` nos mostrará el nombre del día de la semana.
+
+## Ver también
+
+- [Formato de cadena personalizado para DateTime](https://docs.microsoft.com/es-es/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.7.2)
+- [Clase DateTime](https://docs.microsoft.com/es-es/dotnet/api/system.datetime?view=net-5.0)
+- [Get-Date (Cmdlet de PowerShell)](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7)
+- [Cómo formatear fechas y horas](https://www.powershellmagazine.com/2012/10/03/pstip-how-to-format-datetime/)

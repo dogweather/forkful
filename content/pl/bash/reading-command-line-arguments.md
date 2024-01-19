@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "Bash: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
 
-Czy kiedykolwiek zastanawiałeś się, jak programiści mogą wpłynąć na działanie swoich programów z poziomu wiersza poleceń? Rozwiązaniem jest czytanie argumentów przekazanych do linii poleceń. W ten sposób programista może dostosować działanie programu w zależności od użytkownika, bez konieczności zmiany samego kodu.
+Czytanie argumentów z linii poleceń to proces pobierania danych wprowadzonych przy uruchomieniu skryptu. Programiści robią to, aby umożliwić użytkownikom dostosowywanie działania programu zamiast tworzyć stałe skrypty.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Aby czytać argumenty z wiersza poleceń, wystarczy użyć specjalnej składni w języku Bash. Przykładowo, programista może odczytać argumenty zapisane po dyrektywie ```$1```, ```$2```, itd. Poniżej przedstawiony jest prosty skrypt, który wypisze pierwszy i drugi argument przekazany do programu.
+Here's how you read command line arguments in a bash script:
 
 ```Bash
 #!/bin/bash
 echo "Pierwszy argument: $1"
 echo "Drugi argument: $2"
+echo "Wszystkie argumenty: $@"
+```
+Przykładowe wyjście dla `./myscript.sh argument1 argument2`:
+
+```Bash
+Pierwszy argument: argument1
+Drugi argument: argument2
+Wszystkie argumenty: argument1 argument2
 ```
 
-Po uruchomieniu skryptu z argumentami np. ```./skrypt.sh hello world```, program wyświetli następujący wynik:
+## Pogłębione informacje
 
-```
-Pierwszy argument: hello
-Drugi argument: world
-```
+1) Kontekst historyczny: Bash (Bourne Again Shell) pojawił się w 1989 roku jako ulepszona wersja Bourne Shell (sh). Zasady przekazywania argumentów z linii poleceń zostały z niego zaczerpnięte.
 
-## Głębsza analiza
+2) Alternatywy: Inne shelle jak zsh czy fish mają podobne mechanizmy obsługi argumentów, ale mogą zawierać dodatkowe funkcje.
 
-Czytanie argumentów z wiersza poleceń jest powszechnie używane od lat w programowaniu. Podczas gdy można to zrobić z użyciem innych języków programowania, język Bash jest idealny do tego rodzaju zadań, ze względu na wygodną składnię i dostępność na większości systemów operacyjnych. Istnieją również inne metody odczytywania argumentów, takie jak wtyczki dla IDE czy specjalne biblioteki, ale odczytywanie z wiersza poleceń jest często szybsze i wygodniejsze.
+3) Szczegóły implementacji: Argumenty z linii poleceń są dostępne jako specjalne zmienne: $1, $2, ..., $n, gdzie n to numer argumentu. $@ to specjalna zmienna zawierająca wszystkie argumenty.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o odczytywaniu argumentów z wiersza poleceń w języku Bash, znajdziesz wiele przydatnych informacji w dokumentacji oficjalnego składni systemu Bash, dostępnej na stronie [GNU](https://www.gnu.org/software/bash/manual/html_node/index.html). Możesz również przeczytać artykuł na temat przetwarzania argumentów z wiersza poleceń w języku Bash na [Medium](https://medium.com/@jasonrigden/a-guide-to-constructing-a-bash-scripting-arguments-54dd5c2f6c2f). Śmiało, eksperymentuj i udoskonalaj swoje umiejętności w Bash!
+- Przewodnik Bash dla początkujących: https://www.gnu.org/software/bash/manual/bash.html
+- Porównanie różnych shelli: https://www.tecmint.com/different-linux-shells/
+- Wyjaśnienie o zmiennej $@: https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html

@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "C recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "C"
 category:             "C"
@@ -12,48 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Getting the current date in C is a way for programmers to obtain the current date and time on a computer. This information is important for various reasons, such as tracking when a program was executed or organizing data in a chronological manner.
+Getting the current date within a software is often required when you want to log activities, apply time stamps or query data based on date. C programmers do it to keep track of real-time events or schedule tasks.
 
 ## How to:
 
-To get the current date in C, we can use the standard library function, `time()`. This function returns the number of seconds that have passed since January 1, 1970. Here's an example of using `time()` to print the current date and time:
+C library provides `time.h` header file that houses several functions to get and manipulate date and time. Here's a quick example:
 
-```
+```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-  time_t currentTime;
-  struct tm *localTime;
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
 
-  // Getting current time
-  currentTime = time(NULL);
+    printf("Current date: %02d-%02d-%04d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
 
-  // Converting to local time
-  localTime = localtime(&currentTime);
-
-  // Printing the current date and time
-  printf("Current date and time: %s", asctime(localTime));
-
-  return 0;
+    return 0;
 }
 ```
+This will output:
 
-The output of this code snippet will be something like this:
-
+```C
+Current date: xx-xx-xxxx
 ```
-Current date and time: Sun Oct 17 21:30:02 2021
-```
+'Replace the `xx-xx-xxxx` with the current date.
 
 ## Deep Dive:
 
-The use of `time()` function for getting the current date can be traced back to the Unix operating system, where it was first implemented. It has since become a standard function in various programming languages and is widely used for time tracking and other related tasks.
+Using `time.h` for getting the current date is standard from C89/C90 standard. However, beware of the `tm_year` field as it is years since 1900. Also, `tm_mon` operates with range 0-11, these idiosyncrasies cause confusion.
 
-Alternative ways to get the date and time include using third-party libraries or APIs that provide more features and customization options. However, the `time()` function is a reliable and straightforward solution for most basic use cases.
+An alternative for getting the current date is using external libraries like `boost` in C++, but it tends to increase complexity with its heavy features.
 
-Behind the scenes, `time()` makes use of the computer's internal clock or Real Time Clock (RTC). The clock is a hardware component that keeps track of the current time and date. The `time()` function retrieves this information and converts it into seconds since the Unix epoch (January 1, 1970).
+Implementation-wise, `time.h` generates the date based on your operating system's Internal Clock. Remember the precision is up to seconds and doesn't cover milliseconds.
 
 ## See Also:
 
-- [C time functions](https://www.tutorialspoint.com/c_standard_library/time_h.htm): A comprehensive list of time-related functions in the standard C library.
-- [Using a third-party library for getting current date and time](https://www.gnu.org/software/libc/manual/html_node/Calendar-Time.html#Calendar-Time): An alternative approach using the GNU C Library.
+- C library function - time(): https://www.tutorialspoint.com/c_standard_library/c_function_time.htm
+- struct tm: https://www.tutorialspoint.com/c_standard_library/c_struct_tm.htm
+- C date and time programming: https://en.wikibooks.org/wiki/C_Programming/time.h
+- Boost Date Time Library: https://www.boost.org/doc/libs/1_72_0/doc/html/date_time.html

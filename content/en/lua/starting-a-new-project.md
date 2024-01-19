@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Lua recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,32 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Starting a new project means creating a new program or application from scratch. Programmers often start new projects to solve a specific problem or create something new that doesn't already exist. It's a way to put their coding skills to use and bring their ideas to life.
 
-## How to:
-To start a new project in Lua, you first need to make sure that Lua is installed on your system. Once that's done, you can follow these steps:
+Starting a new project is about turning a blank slate into a meaningful codebase. Programmers initiate a new project to bring a novel idea to reality or improve existing systems.
 
-1. Create a new directory for your project and change to that directory in your terminal.
-2. Within the directory, create a file with the extension `.lua`, for example, `main.lua`.
-3. Open the file in a text editor and start writing your code. For example:
+## How To:
 
-```
--- This is a comment in Lua
-print("Hello World")
+Here's how to create a basic Hello World program in Lua:
+
+```lua
+print("Hello, World!")
 ```
 
-4. Save the file and return to your terminal.
-5. Run the program by typing `Lua main.lua` in your terminal.
-6. You should see the output `Hello World` printed in your terminal, indicating that your project has successfully started.
+And the output will be:
+
+```
+Hello, World!
+```
+
+Let's kick it up a notch. Here's a Lua function for adding two numbers:
+
+```lua
+function add(a, b)
+  return a + b
+end
+
+print(add(5, 3))
+```
+
+Run it, you'll see:
+
+```
+8
+```
+In Lua, creating a new "project" often starts with such fundamental building blocks.
 
 ## Deep Dive:
-Lua was first created in 1993 by Roberto Ierusalimschy, Luiz Henrique de Figueiredo, and Waldemar Celes at the Pontifical Catholic University of Rio de Janeiro. It was originally designed as a data description language for applications. However, due to its simplicity and flexibility, it has since gained popularity as a general-purpose scripting language.
 
-Alternatives to starting a new project in Lua include using other programming languages such as Python, Java, or C++. However, Lua's lightweight nature and small core make it an attractive choice for smaller projects that require fast and efficient code execution.
+Historical Context:
+Lua was born in 1993, designed to be a lightweight language for configuring and extending software, with an emphasis on embeddability.
 
-For more in-depth information on getting started with Lua, check out the official documentation available at [lua.org](https://www.lua.org/).
+Alternatives:
+There are alternatives languages such as Python, JavaScript, Ruby, etc. However, Lua's lightweight design and speed make it the favored language for game scripting.
+
+Implementation Details:
+Lua embraces a minimalist philosophy. It aligns different lines of codes into a single thread and follows the sequential execution.
 
 ## See Also:
-- [Lua Programming Gems](https://www.lua.org/gems/) - A collection of articles by Lua users and developers.
-- [Learn Lua in Y minutes](https://learnxinyminutes.com/docs/lua/) - A quick reference guide for those familiar with other programming languages.
-- [Lua on Reddit](https://www.reddit.com/r/lua/) - A community of Lua programmers who share tips, tricks, and discuss all things Lua.
+
+- For more advanced concepts, check out Lua's official documentation: [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/).
+- For more practical exercises, consider visiting [Lua-Exercises](https://exercism.io/tracks/lua).
+- Looking to contribute? Join the Lua Community at [Lua-Users](http://lua-users.org/).

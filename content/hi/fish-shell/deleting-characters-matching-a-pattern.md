@@ -1,7 +1,7 @@
 ---
-title:                "एक पैटर्न से मेल खाते अक्षरों को हटाना"
-html_title:           "Fish Shell: एक पैटर्न से मेल खाते अक्षरों को हटाना"
-simple_title:         "एक पैटर्न से मेल खाते अक्षरों को हटाना"
+title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
+html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
+simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,31 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-अगर आप एक प्रोग्रामर हैं, तो आपने कभी न कभी किसी पैटर्न के समान चरित्रों को हटाने के बारे में सुना होगा। इसका मतलब है कि आप एक पैटर्न द्वारा निर्दिष्ट चरित्रों को संसाधित करके उन्हें हटाना चाहिए। प्रोग्रामर इसका यूज़ क्यों करते हैं? यह आमतौर पर text processing और data manipulation के लिए इस्तेमाल किया जाता है।
+जो भी शब्द संगति से मेल खाते हैं, उन्हें मिटाना एक सामान्य प्रोग्रामिंग टैस्क है। किसी शब्द, संख्या, या अनुच्छेद को खोजना और उसे मिटाना या बदलना यदि वह हमारे कोड के संगत नियमों से मेल खाता है।
 
-## कैसे करें:
-तो अब हम आपको बताएंगे कि आप फिश शैल में पैटर्न के समान चरित्रों को कैसे हटा सकते हैं।
+## कैसे:
+फिॅश शेल में, हम 'string match' और 'string replace' कमांड का उपयोग करके शब्दों को मिटा सकते हैं:
 
+```Fish Shell
+set string "I love programming"
+echo $string | string match -r -v "programming"
 ```
-Fish Shell में चरित्रों को हटाने का उदाहरण:
+और इसका परिणाम होगा:
 
-# जब सारे बड़े अक्षरों को हटाएँ
-$ tr -cd '[:lower:]'
-
-इनपुट:
-Hello World!
-
-आउटपुट:
-ello orld
-
+```Fish Shell
+"I love")
 ```
+अगर हम किसी शब्द को बदलना चाहते हैं तो:
+```Fish Shell
+echo $string | string replace "programming" "coding"
+```
+और इसका परिणाम होगा:
 
-## गहराई में जाएं:
-अधिक गहराई में जाने से पहले, आपको पता होना चाहिए कि यह कोडिंग टेक्निक कैसे develop हुई। इसका पहला रूप 'tr' command ने Bell Labs में 1969 में अपने original UNIX में किया था। लेकिन आजकल यह feature हमें बहुत सारे different तरीकों से मिल रहा है, जिनमें Perl Compatible Regular Expressions (PCRE) एवं Glob patterns शामिल हैं। Fish Shell का उसे करने का तरीका Perl पर based है।
+```Fish Shell
+"I love coding"
+```
+## गहराई की ओर:
+फ़िश शेल, किसी विशेष शब्द को मिटाने या बदलने का एक शक्तिशाली तरीका प्रदान करती है। भाग्यशाली रूप से, 'string match' और 'string replace' संरचनाएं ईर्द-गिर्द कैरेट सैशन में उपयोग होने वाले प्रमुख विधियों में से हैं। 'awk' और 'sed' जैसे उपकरण भी उपलब्ध हैं, लेकिन फ़िश चयन करने के लिए एक मार्गदर्शक भूमिका निभाती है, क्योंकि यह प्रस्तावित ढंग से काम करती है, यदि आप इसे अपेक्षित तरीके से उपयोग करते हैं।
 
-## इससे संबंधित:
-अगर आपको फिश शैल के बारे में और अधिक जानना है तो आप ये लिंक्स check कर सकते हैं:
-
-- [Fish Shell वेबसाइट](https://fishshell.com/)
-- [Fish Shell की डॉक्यूमेंटेशन](https://fishshell.com/docs/current/index.html)
-- [फिश शैल के अधिकरों के लेख](https://github.com/fish-shell/fish-shell/wiki/More-reads)
+## और देखें:
+निम्नलिखित स्रोत फ़िश शेल के अन्य मार्गदर्शन का प्रदान करते हैं:
+1. [रशमियाँ] (https://fishshell.com/docs/current/index.html)
+2. [शब्द संगति] (https://fishshell.com/docs/current/cmds/string-match.html)
+3. [शब्द बदले] (https://fishshell.com/docs/current/cmds/string-replace.html)

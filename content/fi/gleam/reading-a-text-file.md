@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Gleam: Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Tiedostojen lukeminen ohjelmoinnissa tarkoittaa tekstin lukemista tiedostosta ja sen käsittelyä ohjelmassa. Tätä hyödynnetään usein ohjelmissa, jotka tarvitsevat tietoa ulkopuolisista lähteistä, kuten tiedostoista tai tietokannoista.
+## Mikä & Miksi?
 
-## Miten:
-### Avaus
-```
-Gleam.IO.File.open("tekstitiedosto.txt", \get_contents)
-__debug__
-```
-### Esimerkki
-```
-person = [name("Matti"), age(32), occupation("Developer")]
+Lukeminen tekstitiedostosta on prosessi, jossa ohjelmisto lukee tietoja tekstitiedostosta. Ohjelmoijat tekevät sen usein, koska tiedostojen käsittely on olennainen osa ohjelmointia, auttaa tiedon tallentamisessa ja jakamisessa.
 
-person = [name("Liisa"), age(24), occupation("Designer")] gleam_sys.IO.File.open("henkilötiedot.txt", \get_contents)
-__debug__
-```
-### Tuotanto
-```
-person = [name("Matti"), age(32), occupation("Developer")]
-person = [name("Liisa"), age(24), occupation("Designer")]
+## Miten tehdään:
+
+```Gleam
+import gleam/otp/process
+import gleam/file.{File, OpenMode}
+
+fn read_file(path: String) -> Result(List(String), String) {
+  let file = File.open(path, OpenMode.Read)
+  case file {
+     Ok(_) -> 
+         let lines = file.unwrap().read_lines()
+         case lines {
+            Ok(lines) -> 
+                Ok(lines)
+            Error(err) ->
+                Error(err)
+         }
+     Error(err) ->
+         Error(err)
+  }
+}
+
+fn main(argv) {
+  case read_file("test.txt") {
+     Ok(lines) ->
+         process.display(lines)
+     Error(err) ->
+         process.display(err)
+  }
+}
 ```
 
-## Syväsukellus
-Tiedostojen lukemisella on pitkä historia ohjelmoinnissa ja se on vakiinnuttanut paikkansa ohjelmointikielten perustoimintojen joukossa. On myös olemassa muita tapoja lukea tekstitiedostoja, kuten tiedostojen lukeminen binääritietoina tai käyttämällä erikoisempia kirjastoja, kuten Regular Expressions.
+## Syvempi sukellus:
 
-## Katso myös:
-- [Gleam dokumentaatio](https://gleam.run)
-- [Tekstitiedostojen lukeminen Pythonilla](https://realpython.com/read-write-files-python/)
-- [Hex luokan hyödyntäminen tekstitiedostojen lukemisessa Java:ssa](https://www.baeldung.com/java-hex-class-reading-file)
+Lukeminen tekstitiedostoista on ollut olennainen osa ohjelmointia sen alkuperästä lähtien. Se on yksinkertainen ja tehokas tapa tallettaa ja jakaa tietoa. Gleam tarjoaa `file` moduulin tiedostojen käsittelyyn, joka sisältää `open` ja `read_lines` toiminnot tiedostojen lukemiseksi.
+
+Vaihtoehtoisesti voit käyttää `read` funktiota lukeaksesi koko tiedoston kerralla, tai `read_bytes` funktiota jos haluat lukea tiedoston tavuina.
+
+Tiedoston lukemisessa on tärkeää käsittellä virheitä asianmukaisesti. Gleam:n `Result` tyyppi tarjoaa turvallisen tavan käsitellä virheitä.
+
+## Myös katso:
+
+[Gleam:n virallinen dokumentaatio](https://gleam.run/book/)
+
+[`File` moduuli](https://hexdocs.pm/gleam_stdlib/gleam/file.html)
+
+[Tiedostojen luku Gleam:lla](https://www.learn-gleam.dev/tutorials/how-to-read-files/)

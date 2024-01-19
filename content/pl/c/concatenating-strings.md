@@ -1,7 +1,7 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "C: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Konkatenacja ciągów znaków"
+html_title:           "Bash: Konkatenacja ciągów znaków"
+simple_title:         "Konkatenacja ciągów znaków"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,36 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Konkatenacja lub łączenie ciągów znaków to proces łączenia dwóch lub więcej ciągów znaków w jeden dłuższy ciąg. Programiści często stosują tę operację, aby tworzyć wyrażenia lub komunikaty składające się z kilku części.
+
+Łączenie łańcuchów znakowych, znane jako "concatenation", pozwala nam łączyć dwa lub więcej łańcuchów znakowych w jeden. Programiści robią to, aby tworzyć dynamiczne dane wyjściowe, łącząc wartości zmiennych z ciągłymi ciągami tekstowymi.
 
 ## Jak to zrobić:
-```c
-// Przykładowy kod w języku C
+
+```C
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    char message_one[] = "Witaj";
-    char message_two[] = "Karol!";
-    
-    char concatenated[50]; // odpowiednio duża tablica dla naszych dwóch wiadomości
-    
-    // konkatenacja za pomocą funkcji sprintf
-    sprintf(concatenated, "%s %s", message_one, message_two);
+    char pierwszyLancuch[] = "Cześć, ";
+    char drugiLancuch[] = "to jest łańcuch znaków.";
+    char polaczonyLancuch[50];
 
-    printf("%s", concatenated);
+    strcpy(polaczonyLancuch, pierwszyLancuch);
+    strcat(polaczonyLancuch, drugiLancuch);
 
+    printf("%s\n", polaczonyLancuch);  // Wyjście: Cześć, to jest łańcuch znaków.
     return 0;
 }
 ```
-Wynik:
-```
-Witaj Karol!
-```
 
-## W zagłębienie:
-Konkatenacja ciągów znaków ma długą historię w programowaniu. W języku C jest to jedna z najczęściej stosowanych operacji, ale na przestrzeni lat powstały też inne metody, takie jak funkcja `strcat` czy operator `+` w języku Python. Warto pamiętać, że operacja ta może być czasochłonna i wymagać odpowiedniej alokacji pamięci dla nowego ciągu.
+## Głębsze zrozumienie:
+
+Łączenie łańcuchów znakowych jest istotnym konceptem, który powstał już we wczesnych językach programowania. W C, proces ten opiera się na przeniesieniu null-terminatora łańcucha źródłowego do końca łańcucha docelowego, a następnie kopii pozostałych znaków.
+Alternatywą jest użycie funkcji `sprintf()`, która może być nieco bardziej elastyczna, ale również nieco mniej efektywna pod względem wydajności. Co więcej, łączenie łańcuchów znakowych jest operacją kosztowną. Dlatego, zawsze warto używać tego rozwiązania z rozwagą.
 
 ## Zobacz także:
-- [Funkcja `strcat` w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
-- [Konkatenacja ciągów w języku Python](https://python.pl/konkatenacja-ciągów-znakowych/)
-- [Porównanie wydajności konkatenacji w różnych językach programowania](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/csharp.html)
+
+- [Dokumentacja strcat()](http://www.cplusplus.com/reference/cstring/strcat/)
+- [Dokumentacja strcpy()](http://www.cplusplus.com/reference/cstring/strcpy/)
+- [Szczegóły na temat łączenia łańcuchów znakowych w C](https://www.geeksforgeeks.org/concatenating-strings-in-c/)

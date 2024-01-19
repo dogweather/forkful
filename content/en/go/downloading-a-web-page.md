@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Go recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Go"
 category:             "Go"
@@ -11,74 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Downloading a web page refers to the process of retrieving the content and code of a webpage from a server and displaying it on a device. Programmers often do this in order to create web crawlers, scrapers, or simply to gather data from websites for analysis.
+Downloading a webpage is the process of pulling down data from a specific URL to your machine. This is something programmers often do when building web scrapers or bots, or when testing their own sites for performance and compatibility.
 
 ## How to:
+In Go, we use the `net/http` package to make this happen. Here, I'll download Google's homepage and print it:
 
 ```Go
 package main
 
 import (
-	"fmt"
+	"io/ioutil"
 	"net/http"
+	"fmt"
 )
 
 func main() {
-	// Specify the URL of the webpage you want to download
-	url := "https://www.example.com"
-
-	// Make a GET request to the URL
-	response, err := http.Get(url)
+	resp, err := http.Get("http://www.google.com")
 	if err != nil {
-		fmt.Println("Error fetching webpage:", err)
-		return
+		panic(err)
 	}
-
-	// Read the response body
-	defer response.Body.Close()
-	body, err := ioutil.ReadAll(response.Body)
+	body, err := ioutil.ReadAll(resp.Body)
 	if err != nil {
-		fmt.Println("Error reading response body:", err)
-		return
+		panic(err)
 	}
-
-	// Print the webpage content
 	fmt.Println(string(body))
 }
 ```
+In this example, we send a GET request to www.google.com using `http.Get`. Then, we read the response body into `body` variable and print it out. If errors occur, we use `panic` to fail immediately.
 
-Output:
-```
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Example Domain</title>
-	<meta charset="utf-8" />
-	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<style type="text/css">
-		body {
-			background-color: #f0f0f2;
-			margin: 0;
-			padding: 0;
-			font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-			
-		}
-		...
-		...
-		...
-</html>
-```
+## Deep Dive
+This technique of downloading a page has been around since the early days of the internet when pages were simple HTML. Today, it's often not as simple as just pulling down a webpage due to dynamic content rendered on the client-side with JavaScript. 
 
-## Deep Dive:
+Alternatives to simple HTTP get requests are numerous, and selection should be based on the complexity of the page. You might need to use something like Selenium WebDriver if you're dealing with complex and highly interactive webpages.
 
-Downloading web pages became popular in the late 1990s with the rise of the World Wide Web. It is commonly used for tasks such as web scraping, where data is collected from websites for various purposes such as market analysis, price comparisons, or content aggregation. Other alternatives to downloading web pages include using web APIs or using browser automation tools.
+Implementation-wise, `http.Get` in our example is pretty straightforward. It establishes an HTTP connection and returns a pointer to the `Response` which contains the server's response to the HTTP request. `ioutil.ReadAll` is reading the response body. It's important to always check for errors when making network calls and handle them appropriately to avoid crashes and undefined behavior in Go.
 
-In Go, the `http` package provides the `Get()` function to make a GET request to a URL and retrieve the webpage content. By default, the `Get()` function follows any redirects and handles any network errors, making it a simple and efficient solution for downloading web pages.
-
-## See Also:
-
-- [Official Golang documentation for the `http` package](https://golang.org/pkg/net/http/)
-- [Ben Johnson's blog post on web scraping in Go](https://www.usegolang.com/web-scraping-in-go/)
-- [A comparison between web scraping and web APIs](https://rapidapi.com/blog/web-scraping-vs-web-apis/)
+## See Also
+- [`net/http` package documentation](http://golang.org/pkg/net/http/)
+- [A more advanced web scraper written in Go](https://github.com/gocolly/colly)
+- [Selenium WebDriver documentation](https://www.selenium.dev/documentation/en/)
+- [An example of using Selenium with Go](https://github.com/tebeka/selenium)

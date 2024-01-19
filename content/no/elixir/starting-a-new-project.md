@@ -1,6 +1,6 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "Elixir: Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+# Komme i Gang med Elixir: Hvordan Starter man et Nytt Prosjekt!
 
-Når vi starter et nytt prosjekt, er det vanligvis for å utvikle en ny applikasjon eller forbedre en eksisterende en. Dette gjøres vanligvis av utviklere for å løse et spesifikt problem eller forbedre en prosess.
+## Hva & Hvorfor?
+Å starte et nytt prosjekt betyr å skape en ny, frisk utviklingsarena der programmer fungere og skapes. Vi gjør dette for å organisere og adskille forskjellige applikasjoner eller komponenter vi jobber med, noe som fører til mer effektiv og mindre forvirrende programmering.
 
-# Hvordan:
+## Hvordan Gjøre Det:
+I Elixir starter vi et nytt prosjekt med Mix, en bygningsverktøy som leveres med Elixir som hjelper deg med å lage, utvikle og teste dine prosjekter.
 
-Et nytt Elixir-prosjekt kan opprettes ved å først installere Elixir-språket og deretter bruke kommandoen "mix new [prosjektnavn]". Dette vil opprette en mappe med prosjektnavnet og nødvendige filer for å kjøre en Elixir-applikasjon.
+Her er en kodeeksempel på hvordan opprette et helt nytt Elixir-prosjekt:
 
-```elixir
+```Elixir
+# Starter et nytt mix-prosjekt
 mix new my_project
+
+# Navigerer til prosjektet
+cd my_project
 ```
 
-Etter å ha opprettet prosjektet, kan du navigere til mappen og åpne filen "lib/my_project.ex" for å begynne å skrive koden din.
+Dette vil lage et nytt Elixir-prosjekt med navnet 'my_project'. Det lager også en grunnleggende mappestruktur og noen viktige filer som README.md, .formatter.exs og mix.exs filene.
 
-```elixir
-defmodule MyProject do
-  # skriv koden din her
-end
-```
+## Dypdykk
+Historisk har det å begynne et nytt prosjekt i mange programmeringsspråk, inkludert eldre versjoner av Elixir, vært mye mer arbeidskrevende. Før Mix, hadde utviklere å manuelt sette opp filer og mapper, noe som kan være tidkrevende og feilfôr.
 
-For å kjøre prosjektet, bruk "mix run [filnavn]" kommandoen i terminalen.
+Alternativer til 'mix' eksisterer, som rebar3 for Erlang, men Mix er innebygd i Elixir og er derfor det mest brukt for Elixir-prosjekter.
 
-```elixir
-mix run lib/my_project.ex
-```
+Mix gjør ikke bare å starte nye prosjekter enklere. Det hjelper deg også med å håndtere avhengigheter, kjøre tester, og har mange andre nyttige funksjoner som er godt verdt å utforske.
 
-# Dypdykk:
+## Se Også
+1. Offisielt Elixir nettsted - https://elixir-lang.org/
+2. Mix dokumentasjon - https://hexdocs.pm/mix/Mix.html
+3. Elixir School - https://elixirschool.com/ 
+4. Getting Started guide i Elixir Docs - https://elixir-lang.org/getting-started/introduction.html
 
-Elixir er et funksjonelt programmeringsspråk som ble utgitt i 2011. Det er inspirert av språk som Ruby og Erlang, og er designet for å være skalerbart og robust for distribuerte systemer.
-
-Et alternativ til å starte et nytt Elixir-prosjekt er å bruke en ferdiglaget ramme, eller "framework". Eksempler på populære Elixir-rammer er Phoenix og Ecto.
-
-Når du starter et nytt prosjekt, vil mix kommandoen generere følgende mapper og filer: "config", "lib", "priv", "test", "mix.exs" og "mix.lock".
-
-# Se også:
-
-For mer informasjon om Elixir, kan du sjekke ut offisiell dokumentasjon [https://elixir-lang.org/].
-
-For å lære mer om Phoenix-rammen, kan du besøke [https://phoenixframework.org/].
+Elixir er et kraftig, pålitelig og skalerbart programmeringsspråk. Ved å bruke Mix for å styre prosjektene dine, kan du effektivisere arbeidsflyten din og fokusere på selve programmeringen.

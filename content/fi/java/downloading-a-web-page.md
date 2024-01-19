@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "Java: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Java"
 category:             "Java"
@@ -10,46 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?
-Verkkosivun lataaminen tarkoittaa web-sivun koodin kopioimista internetsivulta tietokoneellesi. Tämä on hyödyllistä ohjelmoijille, sillä se sallii heidän käyttää verkkosivun dataa ja sisältöä sovellustensa kehittämiseen.
+## Mikä & Miksi?
 
-Kuinka tehdä:
-Java-koodi lohkoissa esitetyt koodiesimerkit ja tulostustulos.
+Lataamalla verkkosivu on tapa tuoda verkkosivun tiedot tietokoneellesi koodin avulla. Tekijät tekevät tämän, jotta he voivat käsitellä sivun tietoja automaattisesti, esimerkiksi web-skraping- tai datanlouhintahankkeissa.
+
+## Miten tehdään?
+
+Tässä on yksinkertainen Java-koodi, joka lataa verkkosivun:
 
 ```Java
-// Käytetään URL-olioita ja BufferedReader-luokkaa
-URL osoite = new URL("https://www.esimerkkisivu.com");
-BufferedReader lukija = new BufferedReader(new InputStreamReader(osoite.openStream()));
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
 
-// Luetaan tiedosto rivi riviltä
-String rivi;
-while ((rivi = lukija.readLine()) != null) {
-    System.out.println(rivi);
+public class Downloader {
+    public static void main(String[] args) throws Exception {
+        URL url = new URL("http://www.example.com"); 
+        BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+        String line;
+        
+        while ((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
+    }
 }
-
-// Suljetaan lukija
-lukija.close();
 ```
+Kun suoritat tämän koodin, se näyttäisi jotakin alla olevaa vastaavaa:
 
-Tulostus:
-
-```
+```Java
+<!doctype html>
 <html>
 <head>
-<title>Esimerkkisivu</title>
-</head>
-<body>
-<p>Tämä on esimerkkisivu!</p>
-</body>
-</html>
+    <title>Example Domain</title>
+...
 ```
+##Erittäin yksityiskohtaisesti
 
-Deep Dive:
-Verkkosivujen lataaminen on tärkeä osa web-kehitystä ja ohjelmointia. Sitä voidaan käyttää monissa eri tilanteissa, kuten datan hakemiseen, web-robottien luomiseen tai tiedon muokkaamiseen.
+Aikoinaan, kun WWW (World Wide Web) oli vasta syntymässä, web-sivuja ei voitu ladata automaattisesti koodilla. Nykypäivänä meillä on paljon erilaisia keinoja ja työkaluja, kuten yllä mainittu Java-esimerkki.
 
-Vaihtoehtoisia tapoja verkkosivujen lataamiseen ovat esimerkiksi JavaScript-ohjelmointikielen käyttö, joka sallii dynaamisten sivujen lataamisen, sekä CURL-komento, joka mahdollistaa tiedon lähettämisen ja vastaanottamisen käyttäen erilaisia protokollia.
+Java-tiedoston streaming-luokkien avulla pystymme lataamaan web-sivuja, mutta on myös olemassa muita vaihtoehtoja, kuten HttpClient ja Jsoup-kirjasto. Nämä mahdollistavat entistä monimutkaisempien tehtävien tekemisen, kuten evästeiden hallinnan ja Javascriptin manipuloinnin.
 
-Tarkemmin katsottuna verkkosivun lataaminen käyttää HTTP-protokollaa kommunikoidessaan verkkosivun kanssa, ja se käyttää myös Java IO-pakettia tiedoston lukemiseen ja käsittelyyn.
+Merkittävä yksityiskohta verkkosivujen lataamisessa on URL-yhteyden avaaminen ja sen lukeminen strategisesti puskuroivan lukijan avulla. Tämän avulla voimme käsitellä suurempia tietomääriä ilman muistin ylikuormittumista.
 
-See Also:
-Lisätietoa verkkosivujen lataamisesta Java-kielellä löytyy Java SE:n verkkosivuilta. Lisäksi täältä löytyy jQuery-kirjastoon perustuva esimerkki lataamisesta.
+## Katso myös
+
+- Oracle Java-dokumentaatio: [Lue verkkoresurssista](https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html)
+- Apache HttpClient: [Käyttöohje](https://hc.apache.org/httpcomponents-client-4.5.x/tutorial/html/fundamentals.html)
+- Jsoup: [Java HTML Parserin dokumentaatio](https://jsoup.org/)

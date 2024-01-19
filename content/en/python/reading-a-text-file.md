@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "Python recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Python"
 category:             "Python"
@@ -12,40 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading a text file in Python refers to the process of opening and retrieving data stored as plain text within a .txt or similar file. Programmers do this because it's a common way to input, output, and store data.
+Reading a text file is the task of accessing and interpreting the contents of a file as text, not binary. Programmers do it to obtain data, analyze text, and manipulate string content within a file.
 
 ## How to:
 
-To read a text file in Python, you don't need anything fancy - just built-in Python functions will do. Let's have a look at an example:
+Let's start by reading a file line-by-line followed by the whole file at once.
 
+For line-by-line:
 ```Python
-file_path = 'your_file_path_here.txt'
-
-# Using the built-in open function
-with open(file_path, 'r') as file:
-    print(file.read())
+with open('hello.txt', 'r') as file:
+    for line in file:
+        print(line, end='')
 ```
 
-Just replace the `'your_file_path_here.txt'` with the path to your file, and the script will print the contents of the file into your console.
+For the whole file at once:
+```Python
+with open('hello.txt', 'r') as file:
+    content = file.read()
+print(content)
+```
+
+Both snippets presume 'hello.txt' file is in the same directory and you've permission to read it.
+
+The `with` keyword is used to ensure proper file handling.
 
 ## Deep Dive
 
-Python's built-in `open` function dates back to its earliest versions. From Python 2.5 onward, the preferred method has been to use the `with` keyword, leading to better cleanup of resources.
+Historically, dealing with files in Python was somewhat tedious. You had to manage file opening, reading, and closing manually. Problems like forgetting to close a file could lead to memory leaks. The `with` statement (introduced in Python 2.5, 2006) simplified this, ensuring the file is closed when the block inside `with` is exited.
 
-There are multiple ways to read a file such as readline(), readlines().  Or you can directly iterate over the file object. Here's an example:
+Alternatives to `open()` function include the `fileinput` module, which is helpful when reading from multiple files.
 
-```Python
-with open(file_path, 'r') as file:
-    for line in file:
-        print(line)
-```
+Also, libraries like `pandas` provide powerful methods to read complex text files, especially great for data analysis. 
 
-This script prints one line of the file at a time. It's a more memory-friendly approach when you're dealing with a very large file and you only want to process one line at a time.
+About implementation, when Python reads a file, it's not loading the entire thing into memory at once. It's reading and returning one line at a time when iterated using a for loop. On the other hand, `file.read()` reads the entire content at once and could exhaust memory for very large files.
 
 ## See Also
 
-For a deeper understanding of file input and output in Python and different methods to read a file, see these sources:
-
-- Python's official docs on Input and Output: https://docs.python.org/3/tutorial/inputoutput.html
-- Real Python's tutorial on reading and writing files: https://realpython.com/read-write-files-python/
-- W3Schools tutorial on file handling: https://www.w3schools.com/python/python_file_handling.asp
+- [Python Official Docs: Reading and Writing Files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Python Official Docs: Fileinput](https://docs.python.org/3/library/fileinput.html)
+- [Pandas Read_CSV](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)

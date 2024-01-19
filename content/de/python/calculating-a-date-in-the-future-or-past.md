@@ -1,7 +1,7 @@
 ---
-title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Python: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines zukünftigen oder vergangenen Datums"
+html_title:           "Python: Berechnung eines zukünftigen oder vergangenen Datums"
+simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Artikel: Datenberechnung in der Zukunft und Vergangenheit in Python
+
 ## Was & Warum?
-Die Berechnung eines Datums in der Zukunft oder Vergangenheit ist ein häufiger Programmiertask, bei dem ein Programmierer ein bestimmtes Datum jenseits des aktuellen Datums berechnen muss. Dies kann nützlich sein, um beispielsweise wiederkehrende Ereignisse zu planen oder um mit verschiedenen Zeitzonen umzugehen.
+Die Berechnung eines zukünftigen oder vergangenen Datums bezieht sich auf die Manipulation von Datumsangaben basierend auf Tagen, Wochen oder Monaten. Programmierer führen dies aus, um Aufgaben wie Fristenpflege, Ereignis-Countdowns oder Zeitspannenrechnung effizient zu handhaben.
 
-## Wie geht's?
-```Python
-# Importieren des datetime-Moduls
-import datetime
+## Anleitung:
+In Python verwenden wir die `datetime`- und `date`-Bibliotheken, um dies zu erreichen. Hier sind einige einfache Beispiele:
 
-# Berechnung des Datums in der Zukunft
-future_date = datetime.datetime.now() + datetime.timedelta(days=7)
-print("Das Datum in 7 Tagen wird sein:", future_date.date())
+Fügen Sie 100 Tage zu einem Datum hinzu:
 
-# Berechnung des Datums in der Vergangenheit
-past_date = datetime.datetime.now() - datetime.timedelta(days=14)
-print("Das Datum vor 14 Tagen war:", past_date.date())
+```python
+from datetime import datetime, timedelta
+heute = datetime.today()
+in_100_tagen = heute + timedelta(days=100)
+print(in_100_tagen)
+```
+Subtrahieren Sie 2 Wochen von einem Datum:
+
+```python
+from datetime import datetime, timedelta
+heute = datetime.today()
+vor_2_wochen = heute - timedelta(weeks=2)
+print(vor_2_wochen)
 ```
 
-Output:
-Das Datum in 7 Tagen wird sein: 2021-09-29
-Das Datum vor 14 Tagen war: 2021-09-09
+Laufen diese Codes aus, erhalten Sie das Datum von heute plus 100 Tagen bzw. minus 2 Wochen.
 
-## Tiefgehende Informationen
-Die Berechnung von Datumswerten in der Zukunft oder Vergangenheit wurde durch die Notwendigkeit geschaffen, mit wechselnden Kalendern und Zeitzonen umzugehen. Es gibt jedoch auch alternative Methoden, wie die Verwendung von Libraries wie "arrow" oder "dateutil". Bei der Implementierung ist es wichtig, das richtige Zeitformat zu verwenden und mit der Zeitzone korrekt umzugehen.
+## Vertiefung:
+Die `datetime`- und `timedelta`-Bibliotheken haben ihre Wurzeln in der Unix-Ära. Sie basieren auf dem Konzept der Unix-Zeit, bei der die Zeit als Anzahl der Sekunden seit dem 1. Januar 1970 gemessen wird.
 
-## Siehe auch
-- [Python datetime-Modul Dokumentation](https://docs.python.org/3/library/datetime.html)
-- [Python arrow-Modul](https://arrow.readthedocs.io/en/latest/index.html)
-- [Python dateutil-Modul](https://dateutil.readthedocs.io/en/stable/index.html)
+Alternativ kann man auch externe Bibliotheken wie Dateutil, Arrow und Pendulum verwenden, die erweitere Funktionen für die Datums- und Zeitmanipulation bieten.
+
+Zur Berechnung des zukünftigen oder vergangenen Datums wird das aktuelle Datum (`datetime.today()`) genommen und mittels `timedelta` die gewünschte Zeitspanne hinzugefügt oder abgezogen.
+
+## Siehe auch:
+
+* Offizielle Python-Dokumentation für datetime: https://docs.python.org/3/library/datetime.html
+* Dateutil-Bibliothek: https://dateutil.readthedocs.io/en/stable/
+* Arrow-Bibliothek: https://arrow.readthedocs.io/en/latest/
+* Pendulum-Bibliothek: https://pendulum.eustace.io/docs/

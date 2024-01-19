@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http запиту"
-html_title:           "PowerShell: Надсилання http запиту"
-simple_title:         "Надсилання http запиту"
+title:                "Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
-Відправка HTTP-запиту є процесом взаємодії з веб-сервером, коли вам потрібно отримати інформацію з Інтернету, наприклад, сторінку веб-сайту чи дані з API. Програмісти роблять це для того, щоб отримати доступ до потрібної інформації і використовувати її в своїх програмах.
+## Що & навіщо?
 
-Як це зробити:
+Відправлення HTTP-запиту це запит до веб-сервера для отримання або надсилання даних. Програмісти роблять це, щоб взаємодіяти з API, веб-сайтами та іншими веб-сервісами.
+
+## Як це робити:
+
+Отже, як ви можете відправити HTTP-запит за допомогою PowerShell? Дуже просто. Використовуйте командлет `Invoke-WebRequest`.
+
 ```PowerShell
-# Надсилання GET-запиту та виведення статусного коду
-Invoke-RestMethod -Uri "https://example.com/api" -Method GET
+# Все, що вам потрібно, це URI
+$uri = 'http://example.com'
 
-# Надсилання POST-запиту з параметрами та виведення відповіді в JSON-форматі
-$body = @{
-    name = "John"
-    age = 25
-}
-Invoke-RestMethod -Uri "https://example.com/api" -Method POST -Body $body | ConvertTo-Json
+# Надсилаємо запит GET
+$response = Invoke-WebRequest -Uri $uri
+
+# Виводимо відповідь
+$response.StatusCode
+$response.StatusDescription
 ```
 
-Вглиб?
-Історичний контекст: перед появою PowerShell, програмісти використовували інструменти, такі як cURL або wget, для взаємодії з веб-серверами. Однак, з випуском PowerShell 3.0, був доданий модуль `Microsoft.PowerShell.Utility`, який включає команду `Invoke-WebRequest` для відправки HTTP-запитів.
+Коли ви виконуєте цей код, ви отримаєте вивід:
 
-Альтернативи: окрім `Invoke-RestMethod`, ви також можете використовувати `Invoke-WebRequest` для взаємодії з веб-серверами. Ця команда дає вам більшу гнучкість та можливість налаштовувати параметри запиту.
+```PowerShell
+200
+OK
+```
 
-Деталі реалізації: при використанні `Invoke-RestMethod`, PowerShell автоматично здійснює перетворення відповіді в об'єкт PowerShell, що полегшує обробку даних. Крім того, ви можете використовувати параметр `-Headers` для передачі додаткової інформації, такої як заголовки HTTP-запиту.
+## Більш глибокий огляд:
 
-Як бачите, надсилання HTTP-запитів у PowerShell досить просто, але зручно для взаємодії з веб-серверами. Будьте впевнені у своїх даних та бережіться SQL-ін'єкцій, коли отримуєте вхідні дані для відправки в запиті.
+PowerShell почав використовувати HTTP-запити з її появи в 2006 році, щоб полегшити взаємодію з веб-сервісами.
 
-Дивіться також:
-- [Документація Microsoft для Invoke-RestMethod](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod)
-- [Документація Microsoft для Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+Головною альтернативою є командлет `Invoke-RestMethod`, який аналізує JSON-відповіді автоматично.
+
+Під капотом, `Invoke-WebRequest` використовує .NET класи `System.Net.WebRequest` та `System.Net.WebResponse` для надсилання HTTP-запитів.
+
+## Дізнайтеся більше:
+
+1. [Повний огляд командлета `Invoke-WebRequest`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+2. [Альтернативне використання `Invoke-RestMethod`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
+3. [Більше про HTTP-запити і як PowerShell їх використовує](https://adamtheautomator.com/powershell-http-request/)

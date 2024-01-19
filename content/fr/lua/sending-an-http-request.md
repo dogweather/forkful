@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http"
-html_title:           "Lua: Envoi d'une requête http"
-simple_title:         "Envoi d'une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi & Pourquoi? 
-Envoyer une requête HTTP est simplement le fait d'envoyer une demande ou une question à un serveur web. Les programmeurs le font souvent pour récupérer des données depuis un site web ou pour effectuer une action sur celui-ci.
+## Quoi & Pourquoi?
 
-# Comment faire: 
-Pour envoyer une requête HTTP en Lua, nous utiliserons la bibliothèque LuaSocket. Voici un exemple de code qui envoie une requête GET à l'URL "www.example.com" et affiche le code de réponse et la réponse elle-même:
+Envoyer une requête HTTP, c'est comme envoyer une lettre demandant des données à un serveur web. Les programmeurs le font pour interagir avec les API web, récupérer des informations, soumettre des données, entre autres.
+
+## Comment faire:
+
+Voici un exemple simple pour envoyer une requête GET en utilisant la bibliothèque Lua `http.request`:
 
 ```Lua
-local socket = require("socket.http")
-local response, code = socket.request("http://www.example.com")
-print(code)
-print(response)
+local http = require("socket.http")
+local body, code = http.request("http://example.com")
+if code == 200 then
+    print(body)
+else
+    print("Erreur: ".. code)
+end
 ```
+Dans cet exemple, une requête est envoyée à `http://example.com`. Si la requête réussit (code de statut HTTP 200), le contenu de la page est affiché. En cas d'erreur, le code d'erreur est affiché.
 
-La sortie sera quelque chose comme:
+## Plongée en profondeur:
 
-```
-200
-<!DOCTYPE html>
-<html>
-<head>
-... (rest of the HTML code)
-```
+Historiquement, envoyer des requêtes HTTP en Lua nécessitait l'utilisation de bibliothèques externes car le 'core' Lua n'inclut pas ce support. De nos jours, de nombreuses bibliothèques permettent cela, comme `lua-http` ou `luasocket`.
 
-# Plongeons plus en profondeur: 
-Avant de pouvoir envoyer une requête HTTP, il faut comprendre le fonctionnement de ce protocole de communication. Il a été créé dans les années 90 pour permettre aux utilisateurs d'intéragir avec les ressources en ligne. Il existe d'autres alternatives telles que FTP ou SMTP pour communiquer avec des serveurs, mais HTTP est le plus couramment utilisé pour les sites web. En implémentant une requête HTTP, il faut également prendre en compte des détails tels que les en-têtes et les types de contenu.
+Il existe également d'autres méthodes pour envoyer des requêtes HTTP, par exemple, avec `luasec` pour des requêtes HTTPS.
 
-# Voir aussi: 
-Pour en savoir plus sur l'envoi de requêtes HTTP en Lua, voici quelques liens utiles:
+Quant à l'implémentation, dans les coulisses, une requête HTTP est envoyée au serveur en utilisant le protocole TCP. Le serveur répond avec un message de statut (par exemple, 200 pour OK) et les données demandées.
 
-- La documentation officielle de la bibliothèque LuaSocket: http://w3.impa.br/~diego/software/luasocket/http.html
-- Un tutoriel détaillé sur l'envoi et la réception de requêtes HTTP en Lua: https://coronalabs.com/blog/2013/04/16/networking-with-lua/
-- Le protocole HTTP sur le site de l'Internet Engineering Task Force (IETF): https://www.ietf.org/rfc/rfc2616.txt
+## Voir aussi:
+
+* Documentation LuaSocket : http://w3.impa.br/~diego/software/luasocket/http.html
+* Bibliothèque lua-http : https://github.com/daurnimator/lua-http
+* Documentation luasec: https://github.com/brunoos/luasec/wiki

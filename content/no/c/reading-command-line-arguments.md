@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinje-argumenter"
-html_title:           "C: Lesing av kommandolinje-argumenter"
-simple_title:         "Lesing av kommandolinje-argumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,52 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+## Hva & Hvorfor?
+Å lese kommandolinjeargumenter er prosessen med å hente data gitt til ditt C-program via kommandolinjen. Det er en typisk måte for programmererne å parametere og konfigurere programmer på.
 
-Lesing av kommandolinje argumenter er en viktig del av å utvikle C-programmer. Dette tillater programmerere å gi instruksjoner til programmet mens det kjører, i stedet for å hardkode dem direkte i kildekoden. Dette gir større fleksibilitet og gjør det enklere å endre programmet uten å måtte endre selve koden.
+## Hvordan gjøre det:
+Her er et grunnleggende eksempel på hvordan du leser kommandolinjeargumentene i C:
 
-Hvordan:
-
-For å lese kommandolinje argumenter i C, bruker vi funksjonen `main()` og dens to parametere: `argc` og `argv`. Her er et eksempel på hvordan du kan bruke dette i praksis:
-
-```c
+```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    printf("Antall argumenter: %d\n", argc);
-
-    for (int i = 0; i < argc; i++) {
-        printf("Argument %d: %s\n", i, argv[i]);
+    int tel = 0;
+    printf("Program navn er %s\n", argv[0]);
+    for(tel = 1; tel < argc; tel++) {
+       printf("Argument nummer %d er %s\n", tel, argv[tel]);
     }
-
     return 0;
 }
 ```
-
-La oss si at vi kjører programmet med følgende kommandolinje argumenter:
-
-```
-./program navn alder
-```
-
-Da blir følgende resultat:
+Når du kjører programmet med argumenter (for eksempel `./programmet ditt Hei alle sammen`), vil output være:
 
 ```
-Antall argumenter: 3
-Argument 0: ./program
-Argument 1: navn
-Argument 2: alder
+Program navn er ./programmet ditt
+Argument nummer 1 er Hei
+Argument nummer 2 er alle
+Argument nummer 3 er sammen
 ```
 
-Det første argumentet (`argv[0]`) er alltid navnet på programmet.
+## Dyp Dykk
+Historisk sett har kommandolinjeargumenter blitt brukt siden de tidligste dagene av programmering, spesielt i Unix- og Linux-baserte systemer, for å manipulere programmet på kjøretid.
 
-Deep Dive:
+Alternativene inkluderer bruk av filer for inn- og utdata, interaktiv brukerinput og data hentet fra nettverket. Kommandolinjeargumenter kan være en effektiv måte å sende informasjon til et program, men de er ikke alltid den mest praktiske eller sikreste metoden.
 
-Å lese kommandolinje argumenter har vært en viktig del av programmering siden tidlig på 1970-tallet da C ble utviklet av Dennis Ritchie og Ken Thompson. Det er flere alternative måter å lese argumenter på, for eksempel ved bruk av biblioteker som `getopt` eller ved å lese innholdet i en fil i stedet for kommandolinjen. For å lese argumenter i en mer kompleks programstruktur, kan du bruke `getopt_long` funksjonen.
+Den grunnleggende implementeringen av kommandolinjeargumenter i C er gjennom bruk av to funksjonsparametere i `main()`: `int argc` og `char *argv[]`. `argc` teller antall argumenter, og `argv` er en peker til peker-array som holder argumentene selv.
 
-Implementeringen av å lese kommandolinje argumenter er avhengig av operativsystemet og C-kompilatoren som brukes. Derfor bør du alltid sjekke dokumentasjonen for å sikre at koden din er kompatibel.
-
-Se også:
-
-- [C Programming Language](https://en.wikipedia.org/wiki/C_(programming_language))
-- [getopt Long Function](https://www.gnu.org/software/libc/manual/html_node/Using-Getopt-Long.html)
+## Se også
+For mer detaljert informasjon, sjekk ut disse nyttige lenkene:
+1. [Command Line Arguments in C](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
+2. [Understanding main function](https://www.learncpp.com/cpp-tutorial/main-function-command-line-arguments/)
+3. [Command Line Arguments in Unix](https://www.ibm.com/docs/en/aix/7.2?topic=applications-command-line-arguments)

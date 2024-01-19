@@ -10,36 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Quê e Por Quê?
 
-Capitalizar uma string é simplesmente transformar a primeira letra de cada palavra em maiúscula e converter as demais letras em minúsculas. Os programadores o fazem para tornar a string mais legível e seguir uma convenção de escrita padrão.
+Capitalizar uma string significa transformar a primeira letra de cada palavra em maiúscula. Os programadores fazem isso para melhorar a legibilidade dos textos e dados do usuário.
 
-## Como fazer:
+## Como Faz:
 
+Para capitalizar uma string no JavaScript, usamos a função `replace()`. Vamos dar uma olhada agora:
+
+```Javascript
+function capitalizarString(str) { 
+  return str.replace(/\b\w/g, function(char) { 
+    return char.toUpperCase(); 
+  }); 
+}
+
+console.log(capitalizarString("olá, mundo!")); 
+// Saída: "Olá, Mundo!"
 ```
- // Exemplo 1:
- let string = "capitalize this string";
- string = string.toLowerCase().replace(/(^|\s)[a-z]/g,function(f){return f.toUpperCase();});
- console.log(string);
-// Saída: "Capitalize This String"
+Neste exemplo, `/\b\w/g` é uma expressão regular que encontra a primeira letra de cada palavra. A função então transforma cada letra encontrada em maiúscula.
 
-// Exemplo 2:
- let string = "I want to capitalize every word";
- let words = string.split(' ');
+## O Mergulho
 
- for (let i = 0; i < words.length; i++) {
-     words[i] = words[i].charAt(0).toUpperCase() + words[i].substring(1).toLowerCase();
- }
- console.log(words.join(' '));
-// Saída: "I Want To Capitalize Every Word"
+A função `replace()` foi introduzida no JavaScript desde o seu início - a sua versatilidade e uso extensivo definem a sua longevidade. As alternativas para capitalização no JavaScript incluem o uso de `charAt()` com `substring()`, e a aplicação da função `map()` em um array criado através da função `split()`. 
 
+No entanto, devemos ter cuidado com esses métodos em situações de alto desempenho. O método `replace()` com expressão regular pode ser mais lento que os outros quando lidando com textos muito grandes, pelo fato de que as expressões regulares tendem a ser mais lentas que os métodos de string nativa.
+
+Aqui está um exemplo alternativo usando `charAt()` e `substring()`:
+```Javascript
+function capitalizarString(str) { 
+  return str
+    .split(' ')
+    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
+    .join(' '); 
+}
+
+console.log(capitalizarString("olá, mundo!")); 
+// Saída: "Olá, Mundo!"
 ```
 
-## Detalhando mais:
+## Veja Também
 
-Existem várias maneiras de capitalizar uma string em Javascript, como utilizado nos exemplos acima. No entanto, essa funcionalidade também pode ser alcançada utilizando bibliotecas ou métodos específicos, dependendo do framework utilizado pelo programador. Além disso, é importante notar que a capitalização pode ser aplicada não apenas a letras, mas também a outras partes de uma string, como números e símbolos.
+Para mais explicações e exemplos sobre modificações de string no JavaScript, você pode visitar os seguintes links:
 
-## Veja também:
-
-- [Sitepoint - Quick Tip: Capitalize First Letter of a String in JavaScript](https://www.sitepoint.com/community/t/quick-tip-capitalize-first-letter-of-a-string-in-javascript/890)
-- [Stackoverflow - How do I make the first letter of a string uppercase in JavaScript?](https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript)
+1. [MDN Web Docs on replace()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace) - Documentação oficial sobre a função `replace()`.
+2. [MDN Web Docs on charAt()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/charAt) - Documentação oficial sobre a função `charAt()`.
+3. [MDN Web Docs on substring()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring) - Documentação oficial sobre a função `substring()`.
+4. [JavaScript.info: String Methods](https://javascript.info/string#capitalizing) - Uma visão geral útil de outros métodos de string no JavaScript.

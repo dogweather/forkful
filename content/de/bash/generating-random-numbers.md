@@ -1,7 +1,7 @@
 ---
-title:                "Erzeugung von Zufallszahlen"
-html_title:           "Bash: Erzeugung von Zufallszahlen"
-simple_title:         "Erzeugung von Zufallszahlen"
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,18 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum? 
-Das Generieren von Zufallszahlen ist ein häufig eingesetztes Werkzeug in der Programmierung. Es wird verwendet, um Zufallsereignisse zu simulieren oder um in Spielen oder Verschlüsselungssystemen eine zufällige Komponente hinzuzufügen.
+## Was & Warum?
 
-Wie geht's: 
-Bash bietet verschiedene Möglichkeiten, um Zufallszahlen zu generieren. Eine Möglichkeit ist die Verwendung des Befehls "shuf", der eine Liste von zufälligen Nummern ausgibt. Beispiel: ```Bash shuf -i 1-10 ``` liefert zehn zufällige Nummern zwischen 1 und 10. 
+Die Generierung von Zufallszahlen ist ein Verfahren, mit dem nicht vorhersehbare Zahlen erzeugt werden. Programmierer verwenden dies häufig für Anwendungen in Kryptographie, Simulationen, Spielen und mehr.
 
-Eine andere Möglichkeit ist die Verwendung der Variablen $RANDOM, die eine zufällige Zahl zwischen 0 und 32767 zurückgibt. Beispiel: ```Bash echo $RANDOM ``` gibt eine zufällige Zahl aus. 
+## So geht's:
+Mit Bash können Sie ganz leicht Zufallszahlen generieren. Hier sind einige Beispiele:
 
-Tiefer tauchen: 
-Die Generierung von Zufallszahlen hat eine lange Geschichte und wird in verschiedenen Bereichen wie Statistik, Kryptographie und Simulationen eingesetzt. Es gibt auch alternative Methoden, um Zufallszahlen zu generieren, wie z.B. die Verwendung von physikalischen Phänomenen wie Rauschen oder Wetterereignissen. 
+```bash
+# Generiere eine zufällige Zahl
+echo $RANDOM
+```
 
-Weitere Infos: 
-https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html#Shell-Arithmetic 
-https://de.wikipedia.org/wiki/Zufallszahlengenerator 
-https://www.howtogeek.com/362428/how-to-generate-random-numbers-in-the-linux-shell/
+Ausgabe könnte so etwas sein:
+
+```bash
+28421
+```
+
+Wenn Sie eine zufällige Zahl zwischen 1 und 100 wollen, können Sie den Modulo Operator (%) verwenden:
+
+```bash
+echo $((RANDOM%100+1))
+```
+
+Ausgabe könnte sein:
+
+```bash
+42
+```
+
+## Deep Dive:
+
+Die Bash-Funktion $RANDOM existiert bereits seit vielen Jahren und ist eine eingebaute Funktion der Bash Shell. Sie liefert Zahlen im Bereich 0 bis 32767.
+
+Alternativ können Sie auch `openssl` oder `shuf` verwenden, um Zufallszahlen zu generieren, abhängig von Ihren spezifischen Anforderungen. Mit `shuf` können Sie zum Beispiel leicht eine zufällige Reihenfolge einer Liste von Elementen erzeugen.
+
+Einige mögen denken, dass die Nutzung von `$RANDOM` begrenzt ist aufgrund seiner maximalen Größe, das muss jedoch nicht der Fall sein. Sie können mehrere Male `$RANDOM` in Kombination nutzen, um größere Zahlen zu generieren.
+
+Es gibt viele Methoden, um Zufallszahlen in Bash zu erzeugen, aber die Wahl der Methode hängt von dem spezifischen Anwendungsfall oder von der benötigten Zufallsgüte ab.
+
+## Siehe auch:
+
+Für mehr Informationen, folgenden Sie bitte diesen Links:
+
+1. Das Bash Handbuch - https://www.gnu.org/software/bash/manual/
+2. OpenSSL Dokumentation - https://www.openssl.org/docs/
+3. Shuf Mann-Seite - https://linux.die.net/man/1/shuf

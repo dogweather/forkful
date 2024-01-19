@@ -11,53 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Porównywanie dwóch dat jest procesem porównywania dwóch dat na podstawie ich wartości. Programiści często używają tej metody w swoich programach, aby ustalić, który dzień był wcześniejszy lub późniejszy.
+Porównywanie dwóch dat polega na ustaleniu, która data jest wcześniejsza, późniejsza, lub czy obie są takie same. Programiści robią to, żeby monitorować i sortować wydarzenia chronologicznie w ich aplikacjach.
 
 ## Jak to zrobić:
+Poniżej znajdują się przykłady kodowania i próbki wyjściowe:
 
 ```C++
 #include <iostream>
-#include <ctime>
+#include <chrono> 
 using namespace std;
+int main () {
+  chrono::system_clock::time_point today = chrono::system_clock::now();
+  chrono::system_clock::time_point past = chrono::system_clock::now() - chrono::hours(24*365);
 
-int main() {
-    // Tworzymy dwie zmienne typu time and date
-    time_t now = time(0);
-    tm *ltm = localtime(&now);
-
-    // Ustawiamy pierwszą datę jako teraz
-    cout << "Dzisiaj jest: " << ltm->tm_mday << "/" << 1 + ltm->tm_mon << "/" << 1900 + ltm->tm_year << endl;
-
-    // Ustawiamy drugą datę jako dwa dni później
-    ltm->tm_mday += 2;
-
-    cout << "Za dwa dni będzie: " << ltm->tm_mday << "/" << 1 + ltm->tm_mon << "/" << 1900 + ltm->tm_year << endl;
-
-    // Sprawdzamy, która data jest wcześniejsza
-    if (difftime(mktime(ltm), now) > 0) {
-        cout << "Druga data jest późniejsza." << endl;
-    } else {
-        cout << "Pierwsza data jest późniejsza." << endl;
-    }
-
-    return 0;
+  if(today > past)
+    cout << "Today is later than one year ago.";
+  else if(today == past)
+    cout << "Impossible! Time travel?";
+  else
+    cout << "Something went wrong!";
+  
+  return 0;
 }
 ```
+Gdy uruchomisz ten kod, wyświetli ci się napis "Today is later than one year ago."
 
-Output:
-```
-Dzisiaj jest: 21/6/2021
-Za dwa dni będzie: 23/6/2021
-Druga data jest późniejsza.
-```
+## Pogłębione zagłębienie:
+Porównywanie dat bywało trudniejsze, zanim wprowadzono bibliotekę chrono w C++11. Wcześniej trzeba było używać czasu strukturalnego i robić dużo ręcznego porównywania. Alternatywnie, można użyć innych bibliotek, takich jak Boost.DateTime.
 
-## Głębsza analiza
+Choć biblioteka chrono sprawia, że porównywanie dat jest prostsze, nadal wymaga zrozumienia podstawowych jednostek czasu. Biblioteka traktuje daty jako punkty w czasie i pozwala na porównywanie tych punktów bezpośrednio.
 
-Historia porównywania dat sięga czasów starożytnych, kiedy ludzie musieli używać różnych kalendarzy do śledzenia czasu. Dziś istnieje wiele alternatywnych metod porównywania dat, takich jak funkcja `compare()` w C++ lub biblioteki zewnętrzne. Implementacja porównywania dat ma kluczowe znaczenie, aby unikać błędów i nieprawidłowych wyników.
-
-## Zobacz także:
-
-- [Porównywanie Dat w C++](https://www.tutorialspoint.com/cplusplus-program-to-compare-dates)
-- [Funkcja Compare w C++](https://www.geeksforgeeks.org/c-program-compare-two-dates/)
-- [Biblioteka Boost - porównywanie dat](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time/date_time_io.html#date_time.io_facet_compare)
+## Zobacz też:
+1. [Dokumentacja biblioteki chrono](https://en.cppreference.com/w/cpp/chrono) 
+2. [Poradnik porównywania dat w C++ z użyciem biblioteki Boost.DateTime](https://www.boost.org/doc/libs/1_63_0/doc/html/date_time/examples.html#date_time.examples.comp_op_eg)
+3. [Poradnik jak reprezentować daty i godziny w C++](https://howardhinnant.github.io/date_algorithms.html)

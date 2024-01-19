@@ -1,7 +1,7 @@
 ---
-title:                "एक http अनुरोध भेजना"
-html_title:           "Python: एक http अनुरोध भेजना"
-simple_title:         "एक http अनुरोध भेजना"
+title:                "http अनुरोध भेजना"
+html_title:           "Elixir: http अनुरोध भेजना"
+simple_title:         "http अनुरोध भेजना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,36 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-HTTP अनुरोध भेजने का अर्थ है किसी वेब सर्वर से डेटा को आपके कम्प्यूटर या अन्य डिवाइस पर लाने का अनुरोध करना। यह प्रोग्रामर्स खुद वेब पेज देखने के स्थान पर रोबोट को पर्याप्त संख्या में सर्वर से डेटा लाने के लिए करते हैं।
+Title: HTTP अनुरोध को पायथन में कैसे भेजें: एक गाइड
+
+## क्या & क्यों?
+HTTP अनुरोध भेजना इसका मतलब है कि आप एक वेब सर्वर से डेटा मांग रहे हैं या उसमें डेटा भेज रहे हैं। कार्यक्रमकर्ता इसे वेब में डेटा को प्राप्त और प्रसारित करने के लिए इस्तेमाल करते हैं।
 
 ## कैसे करें:
-इस उदाहरण में, हम www.google.com से एक GET अनुरोध भेजेंगे और उसका जवाब प्राप्त करेंगे। हम अपने कोड में urllib और requests प्रकार का उपयोग करेंगे।
-
-```python
-import urllib
+```Python
 import requests
-
-# GET अनुरोध भेजें
-response = urllib.request.urlopen('http://www.google.com')
-
-# जवाब की स्थिति परीक्षण करें
-if response.code == 200:
-    # डेटा प्राप्त करें
-    data = response.read()
-    print(data) # अब आप डिकोड्ड डेटा को प्रिंट कर सकते हैं।
-else:
-    print('अनुरोध विफल हुआ।')
+response = requests.get('https://www.example.com')
+print(response.status_code)
 ```
+ऊपरी कोड माइक्रोसॉफ्ट के वेबसाइट से HTTP अनुरोध भेजता है। यदि आपका अनुरोध सफल होता है, इसका मतलब है कि आपको 200 का स्थिति कोड दिखाई देगा।
 
-आउटपुट:
-```
-<HTTP data>
-```
+## गहराई में:
+HTTP अनुरोध का इतिहास 1991 में शुरू होता है जब तिम बर्नेर्स-ली ने इंटरनेट प्रोटोकॉल के रूप में इसकी विकास यात्रा शुरू की। इसके विकल्प में gRPC, GraphQL, और अन्य HTTP/2-आधारित प्रोटोकॉल शामिल हैं, जो कि HTTP/1.1 की तुलना में कई मामलों में बेहतर परिणाम देते हैं। जब पांच हाथ लाइब्रेरी HTTP अनुरोध भेजती है, तो यह वास्तव में आपके ब्राउज़र की तरह TCP/IP माध्यम से सर्वर से कनेक्ट हो जाती है।
 
-## डीप डाइव:
-HTTP (HyperText Transfer Protocol) एक ट्रांसफर प्रोटोकॉल है जो दो डिजिटल डिवाइस आपस में कनेक्ट करता है। यह वेब और इंटरनेट के विकास में महत्वपूर्ण भूमिका निभाता है। अल्टर्नेटिव के रूप में, आप हैडर और डेटा की स्वरूपण पर ध्यान देने के लिए अन्य कड़ी हो सकते हैं। HTTP अनुरोध python के SFU कोड क्लास से संबंधित है।
-
-## देखें:
-- [Requests: HTTP for Humans](https://requests.readthedocs.io/en/master/)
-- [urllib: URL handling modules](https://docs.python.org/3/library/urllib.html)
+## और भी देखें:
+HTTP के बारे में अधिक जाने के लिए, आप निम्नलिखित लिंक की जांच कर सकते हैं। 
+- Mozilla Developer Network पर HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP
+- रिक्वेस्ट्स लाइब्रेरी डॉक्युमेंटेशन: http://docs.python-requests.org/en/latest/
+- Real Python 'रिक्वेस्ट्स' पायथन लाइब्रेरी गाइड: https://realpython.com/python-requests/

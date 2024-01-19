@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Go: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Go"
 category:             "Go"
@@ -10,47 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi & Pourquoi?
+## Quoi et pourquoi?
 
-Lire un fichier texte est une tâche courante pour les programmeurs en Go. Cela signifie simplement ouvrir un fichier contenant du texte et le lire, ligne par ligne. Les programmeurs le font pour diverses raisons, comme lire des données stockées dans un format spécifique ou écrire des scripts pour traiter de grandes quantités de données.
+Lire un fichier texte dans la programmation signifie extraire des informations à partir d'un fichier texte. Les programmeurs le font généralement pour analyser et manipuler des données sous forme de texte.
 
-# Comment Faire:
+## Comment faire:
 
-Voici un exemple de code simple pour lire un fichier texte en utilisant Go:
+Voici un exemple de code qui montre comment lire un fichier texte en Go. Supposons que nous ayons un fichier texte appelé "example.txt".
 
+```Go
+package main
+
+import (
+    "bufio"
+    "fmt"
+    "os"
+    "log"
+)
+
+func main() {
+    file, err := os.Open("example.txt")
+    if err != nil {
+        log.Fatalf("failed to open file: %s", err)
+    }
+
+    scanner := bufio.NewScanner(file)
+    scanner.Split(bufio.ScanLines)
+    var txtlines []string
+
+    for scanner.Scan() {
+        txtlines = append(txtlines, scanner.Text())
+    }
+
+    file.Close()
+
+    for _, eachline := range txtlines {
+        fmt.Println(eachline)
+    }
+}
 ```
-fichier, err := ouvrir ("chemin/vers/mon-fichier.txt")
+Ce script commencera par ouvrir le fichier 'example.txt'. Ensuite, il lira le fichier ligne par ligne et stockera chaque ligne dans le tableau 'txtlines'. Enfin, il fermera le fichier et affichera toutes les lignes du fichier à partir du tableau 'txtlines'.
 
-if err ! = nil {
-    fmt.Println (err)
-    retourne
-}
+## Plongée en profondeur:
 
-// boucle pour lire le fichier ligne par ligne
-scanner := nouveau scanner (fichier)
-pour scanner.Scan () {
-    ligne := scanner.Text ()
-    fmt.Println (ligne)
-}
+Historiquement, la fonctionnalité de lecture de fichiers est l'une des plus anciennes dans le domaine de la programmation car elle est essentielle pour manipuler les données. En Go, le package `os` est couramment utilisé pour interagir avec le système de fichiers de l'ordinateur.
 
-err = scanner.Err ()
-if err ! = nil {
-    fmt.Println (err)
-}
-```
+D'autres alternatives pour lire un fichier existent, comme ioutil.ReadFile dans le package ioutil, mais c'est moins efficace pour les gros fichiers texte car il lit tout le fichier en mémoire en une seul fois.
 
-Lorsque ce code est exécuté, chaque ligne du fichier texte sera imprimée à l'écran. Ce n'est qu'un exemple basique, mais il peut être adapté pour répondre aux besoins spécifiques de chaque programmeur.
+L’imbrication des fonctions Go os.Open, bufio.NewScanner et scanner.Scan fournit une méthode efficace pour lire séquentiellement de grands fichiers sans consommer beaucoup de mémoire.
 
-# Plongée en Profondeur:
+## Voir aussi:
 
-La lecture de fichiers texte est une tâche courante qui existe depuis longtemps dans le monde de la programmation. Avant l'avènement des ordinateurs, les programmeurs devaient utiliser des cartes perforées pour stocker leurs données, et les lire impliquait de passer chaque carte à travers une machine de lecture. Aujourd'hui, il existe d'autres alternatives à la lecture de fichiers texte, comme l'utilisation d'une base de données pour stocker et gérer les données. Cependant, la lecture de fichiers reste une méthode simple et efficace pour de nombreuses tâches de programmation.
+Les ressources suivantes fournissent des informations supplémentaires sur ce sujet:
 
-En ce qui concerne l'implémentation de la lecture de fichiers en Go, il existe plusieurs packages disponibles, tels que "bufio" et "ioutil", qui offrent différentes méthodes pour lire des fichiers texte. Il est important de comprendre les différences entre ces packages et choisir celui qui convient le mieux à votre projet.
-
-# Voir Aussi:
-
-Pour en savoir plus sur la manipulation des fichiers en Go, voici quelques liens utiles:
-
-- La documentation officielle du package "bufio": https://golang.org/pkg/bufio/
-- La documentation officielle du package "ioutil": https://golang.org/pkg/io/ioutil/
-- Un tutoriel pratique sur la lecture de fichiers en Go: https://www.javatpoint.com/golang-read-file
+1. Documentation officielle de Go sur le package 'os': https://golang.org/pkg/os/
+2. Documentation officielle de Go sur le package 'bufio': https://golang.org/pkg/bufio/
+3. Article de blog sur la lecture de fichiers en Go: https://www.devdungeon.com/content/working-files-go

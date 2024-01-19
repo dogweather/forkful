@@ -1,7 +1,7 @@
 ---
-title:                "Å sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "TypeScript: Å sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -12,49 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Sending av en HTTP-forespørsel med grunnleggende autentisering er en måte å autentisere deg selv som bruker når du kommuniserer med en server. Dette er nyttig for programmerere fordi det hjelper dem med å sikre at bare autoriserte brukere har tilgang til bestemte ressurser på serveren.
+Å sende en HTTP-forespørsel med grunnleggende autentisering innebærer å gi brukernavn og passord for å få tilgang til serverressurser. Våre programmer gjør dette for å sikre trygg og autorisert kommunikasjon.
 
-## Hvordan:
+## Slik gjør du det:
+
+Du kan bruke `Axios`, et populært TypeScript HTTP-klientbibliotek, som støtter grunnleggende autentisering. Installere dependency først:
 
 ```TypeScript
-import * as http from 'http';
-
-// Definerer forespørsel og autentiseringsinformasjon
-const options = {
-  host: 'localhost',
-  port: 3000,
-  path: '/example',
-  // Legg til brukernavn og passord for autentisering
-  auth: 'brukernavn:passord'
-};
-
-// Sender forespørselen med autentisering
-http.get(options, (res) => {
-  let data = '';
-
-  // Leser responsen fra serveren
-  res.on('data', (chunk) => {
-    data += chunk;
-  });
-
-  // Endelig utskrift av responsen
-  res.on('end', () => {
-    console.log(data);
-  });
-
-}).on('error', (err) => {
-  console.log("Error: " + err.message);
-});
+npm install axios
 ```
 
-Output: Innehållet på den beskyttede ressursen fra serveren.
+Nå, her er enkel kode for å sende en GET-forespørsel med grunnleggende autentisering:
 
-## Deep Dive:
+```TypeScript
+import axios from 'axios';
 
-Sending av en HTTP-forespørsel med grunnleggende autentisering er en av de enkleste formene for autentisering og har vært i bruk siden tidlig på 90-tallet. I tillegg til autentisering av brukeren, kan det også brukes til å autentisere applikasjoner når de kommuniserer med servere. Alternativene til grunnleggende autentisering inkluderer blant annet OAuth og JWT (JSON Web Tokens). Når du sender en HTTP-forespørsel med grunnleggende autentisering, vil brukernavnet og passordet bli kodet som Base64 før det sendes til serveren.
+async function fetchData() {
+    const response = await axios.get('http://dinwebside.com', {
+        auth: {
+            username: 'brukernavn',
+            password: 'passord'
+        }
+    });
+    
+    console.log(response.data);
+}
+
+fetchData();
+```
+
+Utdata skal være responsdataene fra serveren.
+
+## Dypdykk:
+
+Grunnleggende autentisering ble først definert i HTTP/1.0-standarder på 90-tallet som en måte å kontrollere tilgang til webservressurser på. Det har stått testen av tid, men det er viktig å merke seg at ved å bruke HTTPS-transmisjon blir dataene kryptert og er trygge fra "man-in-the-middle"-angrep.
+
+Alternativer som OAuth og tokenbasert autentisering har blitt mer populære fordi de gir mer sikkerhet og fleksibilitet.
+
+Når Axios sender en HTTP-forespørsel med grunnleggende autentisering, kodes brukernavn og passord til et "Authorization"-header i base64 format.
 
 ## Se også:
 
-- [HTTP Dokumentasjon](https://developer.mozilla.org/en-US/docs/Web/HTTP)
-- [Basic Access Authentication RFC](https://tools.ietf.org/html/rfc7617)
-- [OAuth Dokumentasjon](https://oauth.net/2/)
+For mer informasjon, sjekk linkene nedenfor:
+
+1. TypeScript (Offisiell Dokumentasjon): https://www.typescriptlang.org/docs/
+2. Axios (GitHub Repository): https://github.com/axios/axios
+3. MDN Web Docs (HTTP Autentisering): https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

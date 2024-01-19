@@ -1,7 +1,7 @@
 ---
-title:                "Envío de una solicitud http con autenticación básica"
-html_title:           "Clojure: Envío de una solicitud http con autenticación básica"
-simple_title:         "Envío de una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
+simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,26 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Enviar una solicitud HTTP con autenticación básica es simplemente incluir un nombre de usuario y una contraseña en la solicitud para acceder a recursos protegidos. Los programadores lo hacen para asegurarse de que solo los usuarios autorizados puedan acceder a ciertas funciones o información en sus aplicaciones.
+## ¿Qué & Por qué?
 
-## Cómo:
+En programación, enviar una solicitud HTTP con autenticación básica es equivalente a autenticar el acceso a un servidor web. Los programadores hacen esto para proteger los datos, asegurando que sólo las partes autorizadas los pueden ver.
+
+## Cómo se hace:
+
+Para enviar una solicitud HTTP con autenticación básica en Clojure, podemos hacer uso de la biblioteca de clj-http.
+
 ```Clojure
-(require '[clj-http.client :as client]) ; importar la biblioteca clj-http
+(require '[clj-http.client :as client])
 
-; realizar una solicitud GET con autenticación básica
-(def response (client/get "https://ejemplo.com" :basic-auth "usuario" "contraseña"))
-
-; realizar una solicitud POST con autenticación básica y enviar datos
-(def response (client/post "https://ejemplo.com" {:basic-auth ["usuario" "contraseña"] :form-params {"dato1" "valor1" "dato2" "valor2"}}))
+(defn send-request
+  []
+  (client/get "http://ejemplo.com" {:basic-auth ["usuario" "contraseña"]}))
 ```
 
-## Profundizando:
-La autenticación básica es un método de autenticación simple y común utilizado en aplicaciones web. Fue introducido en HTTP desde su versión 1.0 y sigue siendo ampliamente utilizado hoy en día. Sin embargo, algunos programadores prefieren utilizar otras formas de autenticación más seguras, como OAuth.
+La respuesta será algo como esto:
 
-Para implementar la autenticación básica en Clojure, podemos utilizar la biblioteca clj-http o incluso escribir nuestra propia función de autenticación. Al enviar una solicitud con autenticación básica, es importante asegurarse de que la conexión sea segura, por lo que se recomienda utilizar HTTPS en lugar de HTTP.
+```Clojure
+{:status 200, :headers {"Content-Type" "text/html"}, :body ...}
+```
 
-## Ver también:
-- [Documentación de clj-http](https://github.com/dakrone/clj-http)
-- [Tutorial de autenticación básica en Clojure](https://medium.com/@helena_53282/basic-authentication-in-a-clojure-api-application-30a6e05cfec0)
-- [Comparación entre autenticación básica y OAuth](https://medium.com/@darutk/basics-of-authentication-with-rest-api-443665ef76bd)
+## Buceo profundo
+
+Históricamente, la autenticación básica es uno de los esquemas de autenticación más simples desarrollados como parte del protocolo HTTP. Sin embargo, es importante tener en cuenta que no ofrece una seguridad completa y debe utilizarse en conjunto con otros protocolos de seguridad, como HTTPS.
+
+Como alternativas para enviar solicitudes HTTP con autenticación básica en Clojure, podríamos considerar otras bibliotecas como http-kit o aleph, pero clj-http es la más popular debido a su amplio soporte y facilidad de uso.
+
+La implementación de la solicitud HTTP con autenticación básica en clj-http es bastante directa y su código está bien documentado. Consiste en construir una solicitud HTTP y agregar la cabecera de autenticación. La cabecera de autenticación es una codificación Base64 de la cadena "usuario:contraseña".
+
+## Ver también
+
+Para más información, puedes consultar las siguientes fuentes:
+
+- Documentación de clj-http: https://github.com/dakrone/clj-http
+- Especificación de autenticación básica HTTP: https://tools.ietf.org/html/rfc7617
+- Biblioteca alternativa http-kit: http://www.http-kit.org/
+- Biblioteca alternativa aleph: https://github.com/ztellman/aleph

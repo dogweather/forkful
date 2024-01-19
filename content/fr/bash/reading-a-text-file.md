@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Bash: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,40 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Pourquoi et Pour Quoi?
+Lire un fichier texte en Bash signifie récupérer ses données, ligne par ligne, du début à la fin. Les programmeurs utilisent cela pour manipuler une variété de tâches automatisées, comme l'analyse de logs, générer des rapports, ou même programmer des scripts de maintenance.
 
-Lire un fichier texte (text file) signifie simplement ouvrir un fichier qui contient du texte et en afficher le contenu. Les programmeurs le font souvent pour accéder à des données stockées dans un format lisible par l'homme et les utiliser dans leur code.
-
-## Comment faire:
-
-Voici un exemple de code Bash pour lire un fichier texte et afficher chaque ligne:
+## Comment Faire :
+Lisons un fichier texte simple en Bash. Mettons que vous avez le fichier `fichier.txt` qui contient les lignes :
 
 ```Bash
-#!/bin/bash
-
-# Définit la variable FICHIER avec le chemin du fichier à lire
-FICHIER="/chemin/fichier.txt"
-
-# Utilise la commande "cat" pour afficher le contenu du fichier
-cat $FICHIER
+Bonjour le monde
+Je suis un développeur
+J'aime bash
 ```
 
-Exemple de résultat en utilisant un fichier contenant les lignes "Bonjour" et "Au revoir":
+Une façon commune de lire ce fichier est :
+
 ```Bash
-Bonjour
-Au revoir
+while IFS= read -r line
+do
+    echo "$line"
+done < "fichier.txt"
 ```
 
-## Plongée en profondeur:
+Ce qui vous donnera en sortie :
 
-La lecture de fichiers texte a toujours été une fonctionnalité essentielle pour les programmeurs, car elle offre une façon pratique d'échanger des données entre les différentes parties d'un programme. Avant l'avènement de l'informatique moderne, les programmeurs utilisaient des cartes perforées et d'autres formes de stockage physique pour enregistrer leurs données. Cela rendait la lecture des informations beaucoup plus compliquée et sujette aux erreurs.
+```Bash
+Bonjour le monde
+Je suis un développeur
+J'aime bash
+```
 
-De nos jours, il existe de nombreuses alternatives pour lire des fichiers texte, telles que les commandes awk, sed et grep, qui permettent de filtrer et de manipuler le contenu du fichier. Des langages comme Python offrent également des solutions efficaces pour lire, écrire et traiter des fichiers texte.
+## Un Peu Plus Profond :
+Historiquement, Bash (Bourne Again SHell) a été créé pour remplacer le Shell Bourne dans les systèmes Unix. Lire un fichier en Bash est une fonction présente depuis les premières versions.
 
-En termes d'implémentation, la lecture d'un fichier texte implique principalement d'utiliser des commandes système pour ouvrir, lire et fermer le fichier. Les programmeurs doivent également tenir compte des différentes encodages de caractères et des caractères spéciaux pouvant être présents dans le fichier.
+Il y a des alternatives pour lire un fichier. Par exemple, la commande `cat` peut être utilisée pour afficher le contenu d'un fichier directement, sans boucle.
 
-## Voir aussi:
+```Bash
+cat fichier.txt
+```
 
-- [La commande "cat" sur Linuxize.com](https://linuxize.com/post/cat-command-in-linux/)
-- [La différence entre lire des fichiers binaires et texte sur StackOverflow (en anglais)](https://stackoverflow.com/questions/1359810/difference-between-binary-and-text-file)
-- [Documentation Bash officielle sur la commande "cat"](https://www.gnu.org/software/bash/manual/html_node/cat.html)
+Notez que cette méthode n'est pas recommandée si vous voulez manipuler le contenu ligne par ligne.
+
+Le `read` dans la boucle `while` récupère tour à tour chaque ligne du fichier. L'option `-r` empêche le traitement des backslashes (\) comme des caractères d'échappement.
+
+## Voir Aussi :
+Pour plus d`'informations sur la programmation bash, consultez ces liens :
+- GNU Bash : https://www.gnu.org/software/bash/ 
+- Référence Bash: https://www.gnu.org/software/bash/manual/bash.html
+- Guide avancé de Bash-Scripting : http://tldp.org/LDP/abs/html/

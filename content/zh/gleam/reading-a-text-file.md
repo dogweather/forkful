@@ -1,6 +1,6 @@
 ---
 title:                "读取文本文件"
-html_title:           "Gleam: 读取文本文件"
+html_title:           "Kotlin: 读取文本文件"
 simple_title:         "读取文本文件"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,38 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是读取文本文件，以及为什么程序员要这样做？
+## 什么与为什么？
+读取文本文件是编程中常见的一种操作，它指的是程序从硬盘或内存中读取并解析一个特定的文本文件。程序员这么做是为了获取、使用或分析文件中的数据。
 
-读取文本文件是从计算机上的一个文件中读取文本内容的过程。程序员经常这样做是因为他们需要使用文件中的文本数据来完成各种任务，比如创建报告、分析数据等等。
+## 如何操作：
+```Gleam 
+案例1：读取文件所有内容
+import gleam/io.{assert, console, file}
 
-如何进行读取文本文件？
+pub fn read_file() {
+  let path = "_data/hello.txt"
+  case file.read(path) {
+    Ok(data) -> console.println(data)
+    Error(err) -> console.println(err)
+  }
+}
+```  
+输出：
+```
+Hello, Gleam!
+```
 
-请参考以下示例代码：
-
+案例2：逐行读取文件
 ```Gleam
-import gleam/io
+import gleam/io.{assert, console, file}
 
-file_content := io.read_file("text_file.txt")
-
-io.print(file_content)
+pub fn read_file_line_by_line() {
+  let path = "_data/hello.txt"
+  let lines = file.read_lines(path)
+  
+  case lines {
+    Ok(lines) -> lines.iter().for_each(|line| console.println(line))
+    Error(err) -> console.println(err)
+  }
+}
 ```
-样例输出：
-
+输出：
 ```
-This is an example text file.
-It contains some text for demonstration purposes.
+Hello,
+Gleam!
 ```
 
-深入了解
+## 深入剖析
+历史背景：当计算机初诞生的时候，遗憾的是，硬盘是很昂贵、并且容量十分有限的。因此只能通过将数据分散存储来提高存储效率。这就是为什么文件有了行的概念，每一行数据都可以分别读取。
 
-关于读取文本文件，您可能会想知道一些更底层的细节。历史背景方面，读取文件在早期的编程语言中是一个比较耗时的操作，因为需要使用系统调用。现在的编程语言通常都会提供各种读取文件的函数，使得这一操作更加简单和高效。
+替代方案：有时，数据太大，无法一次性读入内存，那么我们可以使用流式读取，从而提高内存效率。另一个方案是数据结构存储，比如数据库、键值对等。
 
-除了读取文本文件，还有其他一些方法可以获取文件内容，比如使用网络请求来获取在线文本文件。然而，读取本地文件仍然是最常见的方法，因为它是最简单和可靠的方法，并且对于需要处理大量数据的任务来说也更有效率。
+实现细节：读文件操作通常分为打开文件、读取文件、关闭文件三个步骤。在某些语言中(例如 C)，你需要手动关闭文件。而在 Gleam 中，这一切工作都由编译器自动完成。
 
-相关资源
-
-想要了解更多关于读取文本文件的知识？请查阅以下链接：
-
-- [Python 文档：读取和处理文件](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Java 文档：使用 FileReader 读取文本文件](https://docs.oracle.com/javase/tutorial/essential/io/file.html#reading-files)
-- [Ruby 文档：文件输入输出](https://ruby-doc.org/core-2.2.0/File.html)
+## 参见
+1. 官方文档 - [Gleam 文件操作文档](https://gleam.run/book/tour/files.html)
+2. 相关课程 - [Gleam 语言学习教程](https://gleam.run/learning/)
+3. 参考代码 - [GitHub 上的 Gleam 代码例子](https://github.com/gleam-lang/example/)
+4. 讨论区 - [Gleam 论坛](https://community.gleam.run/)

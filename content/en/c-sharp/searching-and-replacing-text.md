@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "C# recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "C#"
 category:             "C#"
@@ -12,39 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Searching and replacing text is a common task in programming that involves finding specific words or phrases in a piece of code and replacing them with something else. Programmers do this to make their code more readable, to fix errors, or to make changes to a large amount of code at once.
+Searching and replacing text means finding a certain text in a string and swapping it out for something new. It's a key part of programming as it streamlines data modification, allowing things like formatting, cleaning data, and changing content on-the-fly.
 
 ## How to:
 
-To search and replace text in C#, you can use the built-in `string.Replace()` method. This method takes in two parameters: the text to search for and the text to replace it with. Here's an example:
+Here's a simple C# example of searching and replacing text. We're using the `String.Replace()` method:
 
 ```C#
-string oldString = "Hello World!";
-string newString = oldString.Replace("World", "Universe");
-Console.WriteLine(newString);
+string OGString = "Hello, World!";
+string NewString = OGString.Replace("Hello", "Goodbye");
+Console.WriteLine(NewString);
 ```
 
-The output of this code would be `Hello Universe!`. We first created a string containing the phrase "Hello World!" and then used the `Replace()` method to replace the word "World" with "Universe". The result was assigned to a new variable called `newString` and then printed to the console.
-
-You can also perform a case-sensitive search and replace by using the overload of the `Replace()` method that takes in a `StringComparison` parameter. Here's an example:
+When you run this code, it outputs:
 
 ```C#
-string oldString = "Hello World!";
-string newString = oldString.Replace("world", "Universe", StringComparison.CurrentCulture);
+Goodbye, World!
 ```
 
-In this case, the word "World" would not be replaced because the capitalization does not match with the searched word.
+We just replaced "Hello" with "Goodbye."
 
-## Deep Dive:
+## Deep Dive
 
-Before the advent of integrated development environments (IDEs), programmers had to manually search through their code to find and replace text. This was a tedious and time-consuming process. With the use of IDEs and the `string.Replace()` method, this task has become much easier and quicker. 
+The `String.Replace()` method has been around since the first version of C#. Before it or in its absence, you'd have to find the position of your search text, remove it, and then insert the replacement—a much slower process.
 
-Aside from the `Replace()` method, there are also other ways to search and replace text in C#. One option is to use regular expressions, which allows for more complex pattern matching. Another option is to use third-party libraries or packages that offer advanced search and replace functionality.
+Alternatives exist. If you needed to replace text based on a pattern instead of exact matches, you'd use `Regex.Replace()`. This method employs regular expressions to match search patterns, providing a powerful tool for complex replacements:
 
-Under the hood, the `Replace()` method uses the `StringBuilder` class to perform the replacement. This class provides efficient string manipulation methods, making the `Replace()` method faster than traditional string concatenation.
+```C#
+string OGString = "The date is 2022-08-20.";
+string NewString = Regex.Replace(OGString, @"\d{4}-\d{2}-\d{2}", "YYYY-MM-DD");
+Console.WriteLine(NewString);
+```
 
-## See Also:
+Here, we're replacing generic date format with the text "YYYY-MM-DD." Running this, you'd see:
 
-- [String.Replace Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
-- [StringBuilder Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-5.0)
-- [Regular Expressions in C# (C# Corner)](https://www.c-sharpcorner.com/UploadFile/972c03/regular-expression-with-C-Sharp-console-application/)
+```C#
+The date is YYYY-MM-DD.
+```
+
+Under the hood, these methods turn the provided string into a character array, iterate through each character, identify matches, and swap out the desired text where applicable.
+
+## See Also
+
+Need more? Start with basics of `String.Replace()` in Microsoft Docs: [link](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
+
+A deep dive into C# Regex Class: [link](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)
+
+For a complete C# string guide, check here: [link](https://www.tutorialsteacher.com/csharp/csharp-string)

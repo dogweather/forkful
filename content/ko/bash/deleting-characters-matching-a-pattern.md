@@ -1,7 +1,7 @@
 ---
-title:                "패턴과 일치하는 문자 삭제"
-html_title:           "Bash: 패턴과 일치하는 문자 삭제"
-simple_title:         "패턴과 일치하는 문자 삭제"
+title:                "패턴에 일치하는 문자 삭제"
+html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-패턴과 일치하는 문자를 삭제하는 것은 쉘 스크립트에서 종종 사용되는 기술입니다. 예를 들어, 파일 이름에서 특정 문자를 제거하거나, 문자열에서 특정 패턴을 가진 부분을 삭제할 수 있습니다. 프로그래머는 이를 사용하는 이유로는 문자열을 정제하거나 코드를 간결하게 유지하기 위해서입니다.
+## 이게 무엇이고 왜 사용하는가?
 
-## 사용 방법:
+패턴에 일치하는 문자를 삭제하는 것은 텍스트 문자열에서 특정 패턴에 일치하는 모든 문자를 제거하는 과정입니다.이를 통해 불필요한 문자를 제거하고 데이터를 정리하거나, 분석 가능한 형식으로 변환하는데 사용됩니다.
+
+## 어떻게 사용하나?
+
+Bash에서는 tr 명령어와 함께 -d 옵션을 사용하여 문자를 삭제할 수 있습니다.
+
 ```Bash
-# 파일 이름에서 .txt 확장자 제거하기
-filename="sample.txt"
-new_filename="${filename%.*}"
-echo "${new_filename}" # sample
-
-# 문자열에서 숫자 문자 제거하기
-string="abc123"
-new_string="${string//[0-9]}" 
-echo "${new_string}" # abc
+echo "Hello World!" | tr -d '!'
 ```
- 
-## 깊게 파헤치기:
-1. 패턴과 일치하는 문자를 삭제하는 기술은 grep이나 sed 같은 다른 명령어와 함께 사용될 수 있습니다.
-2. 또한, 사용자가 직접 삭제 함수를 정의해서 이를 사용할 수도 있습니다.
-3. 이 기능은 Bash 버전 2 이후부터 사용할 수 있습니다.
+이 코드를 실행하면 아래 출력이 나옵니다:
 
-## 관련 정보:
-- [리눅스 명령어 grep 사용법](https://www.clien.net/service/board/cm_linux/45795)
-- [리눅스 명령어 sed 사용법](https://www.clien.net/service/board/cm_linux/45886)
-- [Bash 버전 업데이트 내역](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+```Bash
+Hello World
+```
+
+위 코드에서 '!' 문자가 "Hello World!" 문자열에서 제거된 것을 볼 수 있습니다.
+
+## 깊이 들여다보기
+
+이것의 역사는 UNIX 시스템의 초창기로 거슬러 올라갑니다. tr 명령어는 UNIX의 초기 버전부터 있었으며, 문자 변환 및 삭제에 사용되었습니다. 
+
+전문가는 대체할 수 있는 방법을 사용할 것을 권장하며, sed, awk 또는 Perl을 사용해도 동일한 결과를 도출할 수 있습니다. 
+
+tr -d 명령어의 내부 로직은 일련의 문자를 읽고, 제거를 위한 문자에 해당하는 문자열을 찾습니다. 일치하는 경우 이 문자는 출력에서 제외됩니다.
+
+## 참고 자료
+
+1. [Shell Scripting 튜토리얼](https://www.shellscript.sh/tutorials/)
+2. [대체할 수 있는 방법: Sed](https://www.grymoire.com/Unix/Sed.html)
+3. [Bash에서의 문자열 조작](https://tldp.org/LDP/abs/html/string-manipulation.html)

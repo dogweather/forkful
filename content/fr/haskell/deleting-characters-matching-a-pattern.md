@@ -1,7 +1,7 @@
 ---
-title:                "Supprimer les caractères correspondant à un motif"
-html_title:           "Haskell: Supprimer les caractères correspondant à un motif"
-simple_title:         "Supprimer les caractères correspondant à un motif"
+title:                "Suppression de caractères correspondant à un motif"
+html_title:           "C: Suppression de caractères correspondant à un motif"
+simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi?
 
-La suppression de caractères correspondant à un modèle est un processus couramment utilisé par les programmeurs pour supprimer des éléments spécifiques d'une chaîne de caractères ou d'une liste. Cela peut être utile lors de la manipulation de données ou de la validation des entrées utilisateur.
+Supprimer des caractères correspondant à un motif ("pattern matching") en programmation sert à filtrer les informations inutiles. C'est généralement fait pour simplifier les données ou pour extraire des informations spécifiques.
 
-## Comment faire:
+## Comment Faire :
 
-Voici un exemple de code Haskell montrant comment supprimer tous les espaces d'une chaîne de caractères:
+On utilise la fonction ‘filter’ de Haskell pour supprimer les caractères correspondant à un motif. La fonction 'filter' prend une fonction Boolean et une liste comme arguments et renvoie une liste de tous les éléments pour lesquels la fonction Boolean renvoie True.
 
 ```Haskell
-deleteSpaces :: String -> String
-deleteSpaces str = filter (/= ' ') str
-
+import Data.Char(isDigit)
+effacer = filter (not . isDigit)
 main :: IO ()
-main = do
-    let str = "Haskell est un langage de programmation fonctionnel"
-    let result = deleteSpaces str
-    putStrLn result
+main = putStrLn $ effacer "abc123"
 ```
 
-Résultat:
+Le programme ci-dessus supprime tous les chiffres de la chaîne de caractères. Il affiche :
 
+```Haskell
+abc
 ```
-Haskellestunlangagedeprogrammationfonctionnel
-```
 
-## Un aperçu plus approfondi:
+## Plongée Profonde :
 
-### Contexte historique:
-La suppression de caractères correspondant à un modèle a été largement popularisée dans les langages de programmation fonctionnels tels que Haskell. Cependant, cette technique a également été utilisée dans des langages impératifs tels que C ou Java.
+Historiquement, le filtrage par motif est une technique centrale en programmation fonctionnelle et a été originellement utilisé dans le langage de programmation ML. En Haskell, les alternatives pour supprimer les caractères correspondent à un motif impliquent l'utilisation de listes comprehension ou de folds.
 
-### Alternatives:
-Il existe différentes approches pour supprimer des caractères en fonction d'un modèle, telles que l'utilisation d'expressions régulières ou de fonctions de manipulation de chaînes de caractères. Cependant, la méthode de suppression de caractères correspondant à un modèle en utilisant la fonction ```filter``` de Haskell est souvent la plus simple et la plus efficace.
+Du point de vue de l'implémentation, Haskell utilise des arbres de décision pour le filtrage par motif. Ces arbres sont optimisés pour effectuer le minimum de tests et d'accès aux données.
 
-### Détails d'implémentation:
-La fonction ```filter``` de Haskell prend en entrée une fonction de prédicat et une liste, et retourne une nouvelle liste contenant uniquement les éléments pour lesquels la fonction de prédicat renvoie ```True```. Dans le cas de la suppression de caractères correspondant à un modèle, la fonction de prédicat peut être définie comme ```(/= ' ')```, ce qui signifie que tous les caractères qui ne sont pas des espaces seront conservés.
+## À Voir Également :
 
-## Voir aussi:
-
-- [Documentation officielle de la fonction ```filter``` de Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:filter)
-- [Un tutoriel sur la manipulation de chaînes de caractères en Haskell](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
-- [Un guide sur l'utilisation d'expressions régulières en Haskell](https://www.fpcomplete.com/blog/2017/09/definitive-guide-to-conduit)
+- Documentation du Haskell : https://www.haskell.org/documentation/
+- Projet Haskell: https://www.haskell.org/onlinereport/haskell2010/
+- Conseils sur le filtrage de motifs en Haskell : https://kowainik.github.io/posts/haskell-mini-patterns
+- Fonctionnement interne du filtrage de motifs : https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/p29-sulzmann.pdf

@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie istnienia katalogu"
-html_title:           "Swift: Sprawdzanie istnienia katalogu"
-simple_title:         "Sprawdzanie istnienia katalogu"
+title:                "Sprawdzanie, czy katalog istnieje"
+html_title:           "Lua: Sprawdzanie, czy katalog istnieje"
+simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,25 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Sprawdzanie, czy istnieje katalog, jest procesem, który pozwala programistom na potwierdzenie istnienia danego katalogu na komputerze. Jest to ważny krok w wielu aplikacjach, ponieważ pozwala na sprawdzenie, czy potrzebny katalog jest dostępny przed wykonaniem operacji na plikach wewnątrz niego.
+## Co i dlaczego?
+
+Sprawdzenie, czy katalog istnieje, to proces, w którym program sprawdza, czy dany katalog jest obecny w systemie plików. Programiści wykonują to w celu zapobieżenia błędom związanym z próbą dostępu do katalogu, który nie istnieje.
 
 ## Jak to zrobić:
+
+Korzystając z Swifta, możemy użyć FileManager klasy do sprawdzenia, czy katalog istnieje. Oto przykład:
+
 ```Swift
-if FileManager.default.fileExists(atPath: "/Users/UserName/Desktop") { //dostosuj ścieżkę katalogu do swoich potrzeb
-    print("Katalog istnieje!")
+import Foundation
+
+let fileManager = FileManager.default
+let path = "/ścieżka/do/katalogu"
+
+if fileManager.fileExists(atPath: path) {
+    print("Katalog istnieje")
 } else {
-    print("Katalog nie istnieje.")
+    print("Katalog nie istnieje")
 }
 ```
-Wyjście:
-```
-Katalog istnieje!
+
+Jeśli katalog istnieje, program wydrukuje "Katalog istnieje". W przeciwnym razie, otrzymasz "Katalog nie istnieje". 
+
+## Głębszy wgląd
+
+1. Kontekst historyczny: Sprawdzanie, czy katalog istnieje, to stara praktyka, która istnieje od początków programowania komputerowego. Było to niezbędne, aby zapewnić poprawne funkcjonowanie programów, które zależą od określonych struktur katalogów.
+ 
+2. Alternatywy: W niektórych przypadkach, zamiast sprawdzać, czy katalog istnieje, programiści mogą po prostu próbować utworzyć katalog. Jeżeli katalog już istnieje, operacja jest ignorowana.
+
+```Swift
+do {
+    try fileManager.createDirectory(atPath: path, withIntermediateDirectories: false, attributes: nil)
+} catch {
+    print("Błąd: \(error)")
+}
 ```
 
-## Głębszy przegląd:
-Sprawdzanie, czy istnieje katalog, jest często stosowane w aplikacjach do zarządzania plikami, na przykład w edytorach tekstu czy programach do przetwarzania obrazów. Innym sposobem na sprawdzenie istnienia katalogu jest użycie metody ```fileExists``` w klasie ```NSFileManager```. W nowych wersjach Swift używane jest po prostu ```FileManager``` zamiast ```NSFileManager```.
+3. Szczegóły implementacji: W Swiftie, metoda `fileExists(atPath:)` zwraca `true` jeśli katalog lub plik istnieje pod podaną ścieżką. Wykorzystuje ona API systemu plików, aby sprawdzić obecność katalogu.
 
-## Zobacz także:
-[Oficjalna dokumentacja Swift](https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-ID82) - dostęp do wersji języka Swift w którym ogłoszono zmiany w klasach i strukturach.
-[NSFileManager w iOS](https://developer.apple.com/documentation/foundation/nsfilemanager) - dokumentacja Apple dla klas NSFileManager.
+## Zobacz też
+
+- Apple Developer Documentation: [FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- Stack Overflow: [How do I check if a directory exists in Swift?](https://stackoverflow.com/questions/24097826/read-and-write-a-string-from-text-file)
+- Ray Wenderlich: [Working With Files & Directories in Swift](https://www.raywenderlich.com/6664-working-with-files-and-directories-in-swift)

@@ -1,7 +1,7 @@
 ---
-title:                "Interpolación de una cadena"
-html_title:           "Go: Interpolación de una cadena"
-simple_title:         "Interpolación de una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,29 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-La interpolación de cadenas es una técnica común en programación que permite insertar valores variables dentro de una cadena de texto. Los programadores utilizan esta técnica para crear cadenas dinámicas que contengan información específica.
+## ¿Qué y Por Qué?
+
+La interpolación de cadenas es un método para unir o incrustar variables en una cadena. Los programadores hacen esto para simplificar la manipulación de la cadena y mejorar la legibilidad.
 
 ## Cómo hacerlo:
-Para realizar la interpolación de cadenas en Go, primero se debe declarar la cadena con la que se desea trabajar, seguido por el símbolo de porcentaje (%) que indica dónde se insertará el valor variable. Luego, se debe usar el verbo correspondiente al tipo de valor que se desea insertar, como por ejemplo "%s" para cadenas, "%d" para enteros y "%f" para decimales.
+
+Aquí mostramos un ejemplo.
 
 ```Go
-cadena := "Hola, %s"
-nombre := "Juan"
-fmt.Printf(cadena, nombre)
+package main
 
-// Output: Hola, Juan
+import(
+	"fmt"
+)
+
+func main() {
+	var nombre string = "Juan"
+	fmt.Printf("¡Hola, %s!", nombre)
+}
 ```
+La salida de este programa será "¡Hola, Juan!". 
 
-## Profundizando:
-La interpolación de cadenas es una técnica comúnmente usada en lenguajes de programación, que surge de la necesidad de combinar información de manera dinámica. En otros lenguajes, esta técnica se realiza a través de la concatenación de cadenas, pero en Go se prefiere esta forma más simple y eficiente.
+## Un Vistazo más Profundo:
 
-Una alternativa a la interpolación de cadenas en Go sería el uso de la función `fmt.Sprintf()` que, al igual que `fmt.Printf()`, permite insertar valores variables en una cadena, pero retorna el resultado en lugar de imprimirlo directamente.
+La interpolación de strings tiene un largo recorrido en la historia de la programación; es útil y común en muchos lenguajes de programación, como Perl y Ruby.
 
-La implementación de la interpolación de cadenas en Go se basa en el paquete `fmt` y el uso de verbos específicos para cada tipo de valor. Además, se pueden utilizar más de un verbo en una sola cadena, y luego proveer los valores correspondientes en el orden adecuado.
+En Go, puede utilizar la función `fmt.Sprintf()` como alternativa. Esta función devuelve una cadena en lugar de imprimir directamente la cadena. 
 
-## Ver también:
-Para más información sobre la interpolación de cadenas en Go, se pueden consultar los siguientes recursos:
+```Go
+package main
 
-- [Documentación oficial de Go](https://golang.org/pkg/fmt/)
-- [Post de blog sobre interpolación de cadenas en Go](https://blog.learngoprogramming.com/golang-sprintf-cad23e350f45)
+import(
+	"fmt"
+)
+
+func main() {
+	var nombre string = "Juan"
+	saludo := fmt.Sprintf("¡Hola, %s!", nombre)
+	fmt.Println(saludo)
+}
+```
+El programa de arriba también tiene la salida: "¡Hola, Juan!". 
+
+## Ver También:
+
+1. Documentación oficial de Go: [fmt](https://golang.org/pkg/fmt/)
+2. Guía de programación en Go: [A Tour of Go](https://tour.golang.org/welcome/1) en español. 
+3. String formatting in Go: [Go by Example](https://gobyexample.com/string-formatting).

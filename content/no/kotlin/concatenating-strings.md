@@ -1,6 +1,6 @@
 ---
 title:                "Sammenslåing av strenger"
-html_title:           "Kotlin: Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
 simple_title:         "Sammenslåing av strenger"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å sette sammen flere tekststrenger, eller "concatenating strings" på engelsk, er en vanlig operasjon i programmering. Det innebærer å kombinere to eller flere tekststrenger for å danne en enkelt streng. Dette er nyttig når du vil lage en lengre tekst fra mindre deler, for eksempel når du skriver ut en komplett setning eller en beskrivelse.
+## Hva og Hvorfor?
 
-Programmerere bruker ofte concatenating strings for å programmere dynamiske og fleksible løsninger. Det lar dem sette sammen tekst på forskjellige måter basert på brukerens input eller andre variabler. Dette gjør det enklere å lage mer allsidige programmer.
+Tekstsammensetning, eller 'string concatenation', er hvor du slår sammen to eller flere strenger til en. Dette brukes av programmerere for å lage eller manipulere tekst i programmet.
 
 ## Hvordan:
-Du kan enkelt concatenate strings i Kotlin ved å bruke "+" -operatøren eller "plus" -funksjonen. Denne operatøren/funksjonen kombinerer to eller flere tekststrenger og returnerer en ny streng som inneholder alle de opprinnelige strengene.
 
 ```Kotlin
-val fornavn = "Kari"
-val etternavn = "Nordmann"
-val fulltNavn = fornavn + " " + etternavn
-println(fulltNavn)
-
-// Output: Kari Nordmann
+fun main() {
+    val start = "Hei, "
+    val end = "Norge!"
+    val greeting = start + end
+    println(greeting)  // Skriver ut "Hei, Norge!"
+}
 ```
 
-Du kan også bruke plus-operatør med en variabel og en tekststreng:
+## Dyp Dykk:
+
+Historisk sett har tekst-sammenslåing vært en fundamental funksjon i programmering. I Kotlin, kan du også bruke `StringBuilder` for effektiv sammenslåing: 
 
 ```Kotlin
-val alder = 25
-val beskrivelse = "Jeg er " + alder.toString() + " år gammel"
-println(beskrivelse)
-
-// Output: Jeg er 25 år gammel
+fun main() {
+    val sb = StringBuilder()
+    sb.append("Hei, ").append("Norge!")
+    println(sb.toString())  // Skriver ut "Hei, Norge!"
+}
 ```
 
-## Dypdykk:
-Å sette sammen tekststrenger er en viktig del av moderne programmering og har vært en del av programmeringsspråk siden begynnelsen. Først ble det utført ved å bruke spesielle funksjoner eller operatører for å kombinere tegn, men med fremveksten av objektorientert programmering ble det enklere å manipulere tekststrenger som variabler.
+Alternativt kan du bruke `${}` for å slå sammen variabler og strenger; dette er kjent som 'string interpolation':
 
-I Kotlin er det også alternativer for å concatenate strings, som "plusAssign" -operatøren som kan brukes for å legge til en tekststreng til slutten av en eksisterende variabel uten å måtte opprette en ny variabel.
+```Kotlin
+fun main() {
+    val land = "Norge"
+    val greeting = "Hei, $land!"
+    println(greeting)  // Skriver ut "Hei, Norge!"
+}
+```
 
 ## Se også:
-- [Kotlin Docs for Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Java String Concatenation History](https://en.wikipedia.org/wiki/Concatenation#History)
+
+1. [Kotlin dokumentasjon om tegnstrenger](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+2. [Kotlin 'StringBuilder' API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)
+3. [Kotlin dokumentasjon om streng interpolasjon](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)

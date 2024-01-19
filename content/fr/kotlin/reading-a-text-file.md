@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Kotlin: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce et Pourquoi ?
 
-Lecture d'un fichier texte est une méthode courante utilisée par les programmeurs pour extraire des données à partir d'un fichier texte. Les fichiers texte sont des fichiers simples contenant du texte et aucun formatage ou code spécial. La lecture d'un fichier texte peut aider les programmeurs à gérer de grandes quantités de données de manière plus efficace.
+Lire un fichier texte est l'action d'interpréter et de traiter les informations contenues dans un fichier au format texte dans votre programme. Les développeurs le font pour ingérer des donnés, configurer des paramètres, ou analyse de contenu.
 
-## Comment faire:
+## Comment faire :
 
-Voici un exemple de code simple en Kotlin pour lire un fichier texte et imprimer chaque ligne:
+Lisant un fichier texte est simple avec Kotlin. Voici comment on fait.
 
 ```Kotlin
-fun main() {
-    val file = File("fichier.txt")
-    file.forEachLine {
-        println(it)
-    }
+import java.io.File
+
+fun main(args: Array<String>) {
+    val fileName = "chemin_vers_votre_fichier.txt"
+    val lines: List<String> = File(fileName).readLines()
+
+    lines.forEach { line -> println(line) }
 }
 ```
+La sortie sera le contenu de votre fichier texte.
 
-Output:
-```
-Première ligne de texte
-Deuxième ligne de texte
-Troisième ligne de texte
-...
-```
+## Deep Dive
 
-## Plongée en profondeur:
+Historiquement, la lecture de fichiers texte est l'une des tâches les plus basiques qu'un système d'exploitation doit accomplir. Dans cet exemple, nous utilisons l'API `java.io.File` qui a été intégrée à Kotlin pour maintenir la compatibilité avec Java.
 
-La lecture de fichiers textes est disponible depuis les premiers langages de programmation et a été utilisée pour stocker et récupérer des données avant l'avènement des bases de données. D'autres options pour stocker des données incluent les bases de données relationnelles et les fichiers CSV (valeurs séparées par des virgules). La méthode de lecture de fichiers textes peut être utilisée pour manipuler différents types de données, y compris du texte, des nombres et d'autres caractères.
+Il existe plusieurs façons de lire un fichier en Kotlin. L'appel à `readLines()` renvoie une liste d'énoncés. Si vous voulez lire le fichier en une seule chaîne, vous pouvez utiliser `readText()`. 
 
-## À voir également:
+Ces méthodes sont assez simples pour les fichiers petits à moyens. Pour de très gros fichiers, la méthode `bufferedReader().use { }` est plus efficace car elle utilise un tampon pour réduire les accès au disque.
 
-Pour en savoir plus sur la lecture de fichiers textes en Kotlin, vous pouvez consulter la documentation officielle de Kotlin sur les opérations de fichiers: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/kotlin.-file-reader.html
+## Voir aussi :
+
+1. [Documentation de Kotlin sur la lecture de fichiers](https://kotlinlang.org/docs/tutorials/kotlin-for-py/io.html)
+2. [Tutorial: Lire un fichier en Kotlin](https://www.baeldung.com/kotlin/read-file)
+3. [API Java.io.File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)

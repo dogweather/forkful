@@ -1,7 +1,7 @@
 ---
-title:                "Calculando uma data no futuro ou no passado"
-html_title:           "Kotlin: Calculando uma data no futuro ou no passado"
-simple_title:         "Calculando uma data no futuro ou no passado"
+title:                "Calculando uma data no futuro ou passado"
+html_title:           "Kotlin: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,27 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Trabalhando com Datas em Kotlin: Um Guia Rápido
+
 ## O que & Por quê?
-Calcular uma data no futuro ou passado é uma tarefa comum para programadores. Isso envolve determinar uma data específica com base em uma data inicial e um determinado número de unidades de tempo, como dias ou meses. Programadores geralmente calculam datas para automatizar tarefas e criar funcionalidades como lembretes e agendamentos.
+
+Calcular uma data futura ou passada é a tarefa de adicionar ou subtrair uma quantidade específica de tempo a uma data inicial. Programadores o fazem para resolver problemas do mundo real como o cálculo de prazos, aniversários e muito mais.
 
 ## Como fazer:
+
+No Kotlin, podemos utilizar a biblioteca java.time disponível a partir do JDK 8.
+
 ```kotlin
-val initialDate = LocalDate.of(2021, 8, 1)
-val futureDate = initialDate.plusDays(5)
-val pastDate = initialDate.minusMonths(3)
-println("Data inicial: $initialDate")
-println("Data no futuro: $futureDate")
-println("Data no passado: $pastDate")
+import java.time.LocalDate
+import java.time.temporal.ChronoUnit
+
+fun main() {
+    val hoje = LocalDate.now()
+    println("Hoje: $hoje")
+
+    val umaSemanaDepois = hoje.plus(1, ChronoUnit.WEEKS)
+    println("Uma semana depois: $umaSemanaDepois")
+
+    val umMesAntes = hoje.minus(1, ChronoUnit.MONTHS)
+    println("Um mês antes: $umMesAntes")
+}
 ```
-Output:
-Data inicial: 2021-08-01
-Data no futuro: 2021-08-06
-Data no passado: 2021-05-01
+Na saída, você verá algo assim:
+```output
+Hoje: 2022-01-01
+Uma semana depois: 2022-01-08
+Um mês antes: 2021-12-01
+```
 
-## Mergulho profundo:
-Calcular datas no passado ou futuro tem sido uma tarefa importante desde os primórdios da computação. A linguagem de programação COBOL, lançada em 1959, possuía uma função integrada para calcular datas. Hoje, existem muitas outras linguagens de programação que suportam essa funcionalidade. Além do método apresentado acima, também é possível utilizar outras bibliotecas e funções para realizar esses cálculos em Kotlin.
+## Deep Dive:
 
-## Veja também:
-- [Documentação oficial do Kotlin sobre manipulação de datas](https://kotlinlang.org/docs/datetime.html)
-- [Como calcular uma data no futuro ou passado em Java](https://www.baeldung.com/java-dates-in-future-past)
-- [Outras bibliotecas para manipulação de datas em Kotlin](https://www.bezkoder.com/kotlin-date-time-getting-started/)
+Historicamente, muitos programadores usaram as bibliotecas de datas e horas de Java, como java.util.Date e java.util.Calendar, mas essas classes são propensas a erros e menos intuitivas.
+
+Uma alternativa é a biblioteca Joda-Time, que foi a base para a nova API java.time. No entanto, java.time é mais aprimorado e recomendado para uso atual.
+
+Como estamos trabalhando com datas, temos que estar cientes dos detalhes de implementação como as variações do fuso horário e a mudança para o horário de verão.
+
+## Veja Também:
+
+1. [Documentação Oficial Java.time](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+2. [Joda-Time](https://www.joda.org/joda-time/)
+3. [Treinamento de Kotlin na plataforma Udemy](https://www.udemy.com/topic/kotlin/) - a seção sobre o manuseio de datas é relevante.

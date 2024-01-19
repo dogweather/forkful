@@ -10,41 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何 & なぜ？
-文字列を連結することって何？プログラマーがこれをする理由はなぜなの？
+# Bashプログラミング：文字列の連結
 
-文字列を連結することは、複数の文字列を結合して一つの長い文字列を作ることです。プログラマーがこれをする理由は、一つの大きな文字列を作ることでプログラムをより柔軟に操作できるようにするためです。
+## 何と、なぜ？
 
-## 方法：
-以下のコードを使用して、文字列を連結する方法をご紹介します。
+文字列の連結は、1つ以上の文字列を1つに結合するプロセスのことです。これは、情報生成または動的コード生成などのためによく使用されます。
 
-```Bash
-# 最も基本的な方法は、二つの文字列を `+` 記号で連結することです。
-echo "こんにちは" + " 世界"
-```
-このコードの実行結果は、`こんにちは 世界`となります。
+## 使い方：
+Bashでの文字列連結は直感的で簡単です。変数内に存在する文字列を直接連結することができます。例を見てみましょう:
 
 ```Bash
-# 変数を使用して、動的に文字列を連結することもできます。
-greeting="こんにちは"
-name="太郎"
-echo "${greeting} ${name}"
+string1="こんにちは、"
+string2="世界！"
+greeting="$string1$string2"
+echo $greeting
 ```
-このコードの実行結果は、`こんにちは 太郎`となります。
+このコードは "こんにちは、世界！" を出力します。
 
-## 詳細:
-文字列を連結する方法についてもう少し深く掘り下げると、以下のような情報があります。
+## 深掘り：
 
-1. 歴史的な背景: 文字列の連結は、プログラミング言語の大昔からある基本的な操作です。初期のプログラミング言語では、連結には特別なコマンドが必要でしたが、現在では組み込みのコマンドや関数を使用することができます。
-2. 代替手段: 文字列を連結するためには、他にもPerlやPythonなどのスクリプト言語を使用することもできます。それぞれの言語には独自の方法がありますので、使用する言語によって最適な方法を選択することが大切です。
-3. 実装の詳細: 実際のコードを見ると、文字列を連結する方法は様々あります。しかし、基本的な考え方はいつも同じです。プログラマーは、必要な文字列を組み合わせることで、より複雑な操作を簡単に実現することができます。
+文字列の連結は、古いUNIXのシェルスクリプト言語から継承された機能です。Bashやその他の現代のシェルスクリプト言語は、この基本的な機能を引き継ぎ、改善しました。
 
-## 関連情報:
-文字列の連結についてもっと知りたい場合は、以下のリンクを参考にしてください。
+また、連結の代わりに `printf` 関数を使用することも可能です。
 
-- [Bashの公式ガイド](https://www.gnu.org/software/bash/)
-- [文字列の連結についての記事](https://linuxcommandlibrary.com/man/bash/concatenation.html)
-- [PerlやPythonでの文字列の連結方法](https://www.perl.com/pub/2000/10/begperl3.html)
-- [文字列操作を学べるオンラインチュートリアル](https://www.learnshell.org/en/Multiple_Commands)
+```Bash
+string1="こんにちは、"
+string2="世界！"
+printf -v greeting "%s%s" "$string1" "$string2"
+echo $greeting
+```
+このコードも "こんにちは、世界！" を出力します。
 
-このように、文字列を連結する方法はプログラマーにとって非常に重要なスキルです。ぜひこの記事を参考にして、プログラミングの幅を広げてみてください。
+しかし、`printf` 関数は連結よりも多くの動作を可能にします。例えば、変数を特定の形式に整形したり、複数の異なる文字列を一度に連結したりできます。
+
+## 参考文献：
+
+1. Bash 文字列操作ガイド: https://www.tldp.org/LDP/abs/html/string-manipulation.html
+2. Bash Scripting チュートリアル: https://ryanstutorials.net/bash-scripting-tutorial/bash-string-manipulation.php
+3. Unix ＆ Linux Stack Exchangeのスレッド、 "How to concatenate strings in bash": https://unix.stackexchange.com/questions/63923/how-to-concatenate-strings-in-bash

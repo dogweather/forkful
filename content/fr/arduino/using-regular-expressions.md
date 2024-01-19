@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser des expressions régulières"
-html_title:           "Arduino: Utiliser des expressions régulières"
-simple_title:         "Utiliser des expressions régulières"
+title:                "Utiliser les expressions régulières"
+html_title:           "C: Utiliser les expressions régulières"
+simple_title:         "Utiliser les expressions régulières"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi c'est important?
-Les expressions régulières sont un moyen de rechercher et de manipuler des chaînes de caractères selon des motifs spécifiques. Les programmeurs les utilisent pour traiter rapidement et efficacement des données textuelles complexes, telles que des adresses email, des numéros de téléphone ou des mots de passe.
+## Quoi & Pourquoi?
 
-## Comment faire:
-Voici un exemple de code montrant comment utiliser des expressions régulières pour vérifier si une chaîne de caractères contient une adresse email valide:
+Les expressions régulières sont des séquences de caractères formulant un motif de recherche. Les programmeurs les utilisent pour rechercher, correspondre et manipuler des chaînes de caractères dans le texte.
 
-```
-Arduino
+## Comment:
 
-#include <Regex.h>
+Écrivez l'expression régulière entre des guillemets pour commencer.
 
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  // chaîne de caractères à vérifier
-  String email = "john.doe@email.com";
-  
-  // expression régulière pour vérifier que la chaîne contient un " @"
-  Regex emailPattern("[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}");
-
-  // vérifie si la chaîne correspond au motif donné
-  if (emailPattern.match(email)) {
-    Serial.println("Email valide !");
-  } else {
-    Serial.println("Email invalide !");
-  }
-}
+```Arduino
+String data = "Arduino 2.34"; 
+Serial.println(data.matches("Arduino \\d\\.\\d\\d")); 
 ```
 
-## Plongée en profondeur:
-Les expressions régulières ont été inventées dans les années 1950 par le mathématicien Stephen Kleene pour décrire des langages formels. Aujourd'hui, elles sont utilisées dans de nombreux langages de programmation et sont souvent considérées comme un outil puissant pour la manipulation de chaînes de caractères. Alternativement, un programmeur peut utiliser des fonctions de chaînes de caractères spécifiques pour atteindre le même résultat, mais cela peut être plus fastidieux et moins efficace.
+Cela renverra `true` si votre chaîne correspond au motif que vous avez spécifié. Le `\\d` signifie un chiffre, donc nous cherchons le mot "Arduino" suivi d'un espace, d'un chiffre, d'un point et de deux autres chiffres.
 
-## À voir aussi:
-- [Documentation officielle d'Arduino](https://www.arduino.cc/reference/en/language/functions/strings/string/)
-- [Regex101 - Tester des expressions régulières en ligne](https://regex101.com/)
+## Plongée en Profondeur
+
+Historiquement, les expressions régulières ont des racines dans les mathématiques théoriques du XXe siècle. Conçues en 1956, elles sont devenues une caractéristique inévitable de nombreux langages de programmation. Cependant, Arduino n'a pas de support natif pour les expressions régulières, mais plusieurs bibliothèques tierces peuvent être utilisées.
+
+En ce qui concerne les alternatives, vous pouvez utiliser la manipulation de chaînes classique, mais elle peut devenir complexe pour les motifs plus difficiles à gérer.
+
+Concernant la mise en œuvre, la correspondance de motif implique souvent un backtracking, un processus récursif qui peut être coûteux en termes de performance, il est donc important d'utiliser judicieusement les expressions régulières.
+
+## Voir Aussi
+
+Pour plus d'informations sur la programmation Arduino avec les expressions régulières, vous pouvez consulter les sources suivantes :
+
+- Site officiel d'Arduino : https://www.arduino.cc/
+- Documentation des expressions régulières : https://regexone.com/
+- Stack Overflow en Français : https://fr.stackoverflow.com/questions/tagged/arduino.

@@ -1,7 +1,7 @@
 ---
-title:                "Konvertere en streng til stor bokstav"
-html_title:           "Elm: Konvertere en streng til stor bokstav"
-simple_title:         "Konvertere en streng til stor bokstav"
+title:                "Gjøre en streng stor"
+html_title:           "Elm: Gjøre en streng stor"
+simple_title:         "Gjøre en streng stor"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,24 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og Hvorfor?
-Når vi snakker om å "kapitalisere" en streng i programmering, betyr det rett og slett å gjøre alle bokstavene i strengen store bokstaver (store bokstaver). Så hvis vi for eksempel har strengen "heIiVerDen", vil en kapitalisert versjon av denne strengen være "HEIIVERDEN". Programmerere gjør dette fordi det kan være nyttig å ha en standardisert versjon av en streng, spesielt når man jobber med input fra brukere.
+## Hva & Hvorfor?
+Setninger på kaptal er når det første tegnet i en streng (eller hvert ord) er et stort tegn. Programmerere gjør dette for å skape mer lesbare betingelser, eller å formaterer data for å matche visse regler.
 
-# Slik gjør du det:
-En kapitalisert streng kan enkelt opprettes ved å bruke funksjonen "String.toUpper" i Elm. La oss se på et eksempel:
+## Hvordan Gjør Man Det:
+Å bytte til store) bokstaver i Elm er rett fram. Du kan bruke `String.toUpper` funksjon
+
+Her er et eksempel:
+
 ```Elm
-kapitalisertStreng = String.toUpper "heIiVerDen"
+import String
+
+main =
+  String.toUpper "dette er en setning."
 ```
-Dette vil gi oss outputen "HEIIVERDEN". Det er også mulig å kapitalisere individuelle ord eller setninger ved å bruke funksjonen "String.words" og deretter "List.map" for å anvende "String.toUpper" på hvert element i listen. For eksempel:
+
+Og utdata vil være:
+
+`DETTE ER EN SETNING.`
+
+For å bare sette den første bokstaven til stor kan du dele opp strengen og hente den første bokstaven, sette den til stor, og deretter sette sammen strengen igjen:
+
 ```Elm
-kapitalisertOrd = String.words "heIiVerDen" |> List.map String.toUpper
+import String
+
+capitalize : String -> String
+capitalize str =
+    case String.uncons str of
+        Nothing ->
+            ""
+
+        Just ( first, rest ) ->
+            String.toUpper (String.fromChar first) ++ rest
+
+main =
+  capitalize "dette er en setning."
 ```
-Dette vil gi oss outputen ["HEIIVERDEN"]. 
 
-# Dypdykk:
-Kapitalisering av strenger har vært en vanlig praksis i programmering i lang tid, og brukes fortsatt mye i dag. Det finnes imidlertid noen alternativer som kan brukes, for eksempel å konvertere strenger til små bokstaver i stedet for store bokstaver. Dette kan være nyttig i visse tilfeller, for eksempel når man jobber med data som skal sammenlignes eller sorteres alfabetisk. Implementeringen av kapitalisering kan også variere avhengig av programmeringsspråk, men prinsippet er det samme.
+Og utdata skal være:
 
-# Se også:
-- [Elm dokumentasjon om strenger](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Fordeler og ulemper med å kapitalisere strenger i programmering](https://www.geeksforgeeks.org/capitalize-first-letter-of-each-word-in-string/)
-- [Andre nyttige strengmanipuleringsfunksjoner i Elm](https://package.elm-lang.org/packages/elm/core/latest/String)
+`Dette er en setning.`
+
+## Dypdykk
+Det å sette tegn til stor bokstav i strenger er en viktig programmeringsfunksjon som har vært tilgjengelig i mange språk lenge. I eldre språk kan du ha måtte skrive din egen funksjon for å gjøre det. Elm tillater dette gjennom innebygde funksjoner som `String.toUpper` og `String.uncons`.
+
+Det er verdt å merke seg at det finnes alternative metoder for å oppnå det samme målet. Du kan bruke regex (også tilgjengelig i andre språk) for å oppnå lignende resultater.
+
+Implementeringsdetaljer handler om hvordan Elm håndterer strenger. Elm ser på strenger som lister av tegn, som gjør det lett å bruke funksjoner som `String.uncons` for å hente ut og manipulere enkelttegn.
+
+## Se Også
+Elms offisielle dokumentasjon gir mer informasjon om strenger og innebygde string-funksjoner som kan være nyttige:
+
+- Elm String API: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Utforsk mer om strenger i Elm: [https://elmprogramming.com/strings.html](https://elmprogramming.com/strings.html)
+- For dem som ønsker å dykke dypere inn i hvordan strenger håndteres i Elm: [https://guide.elm-lang.org/core_language.html](https://guide.elm-lang.org/core_language.html)

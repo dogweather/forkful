@@ -1,6 +1,6 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-html_title:           "PHP: Suchen und Ersetzen von Text"
+html_title:           "C#: Suchen und Ersetzen von Text"
 simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,36 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Suchen und Ersetzen von Text ist ein gängiges Verfahren in der Programmierung, bei dem ein bestimmtes Zeichen oder eine bestimmte Sequenz innerhalb eines Textes gefunden und durch einen anderen Text ersetzt wird. Programmierer verwenden diese Methode, um schnell und effizient Änderungen in ihrem Code durchzuführen, anstatt den Text manuell zu bearbeiten. Dies spart Zeit und verringert die Möglichkeit von Tippfehlern.
+
+Suchen und Ersetzen von Text ist eine grundlegende Funktion, die sich auf die Identifizierung und Änderung bestimmter Sequenzen von Zeichen in einer Zeichenkette bezieht. Sie ist besonders nützlich beim Automatisieren von Code-Revisionen und Manipulationen von Benutzereingaben. 
 
 ## So geht's:
-Um in PHP Text zu suchen und zu ersetzen, können wir die Funktion `str_replace()` verwenden. Hier ist ein Beispiel, um alle Vorkommen des Wortes "Hallo" im String "Hallo Welt" durch "Guten Tag" zu ersetzen:
+
+PHP bietet eine Reihe von Funktionen zum Suchen und Ersetzen von Text. Eine der am häufigsten verwendeten ist `str_replace()`. Hier ist ein einfaches Beispiel:
 
 ```PHP
 <?php
-$string = "Hallo Welt";
-$new_string = str_replace("Hallo", "Guten Tag", $string);
-echo $new_string; // Ausgabe: Guten Tag Welt
+$text = "Hallo, Welt!";
+$text = str_replace("Welt", "Nutzer", $text);
+echo $text; // Ausgabe: "Hallo, Nutzer!"
 ?>
 ```
 
-Wir können auch mithilfe von regulären Ausdrücken (Regex) nach bestimmten Mustern suchen und diese ersetzen. In diesem Beispiel ersetzen wir alle Zahlen im String "Hallo 123" durch das Wort "Welt":
+Mit dieser Funktion kann man auch Arrays verwenden, um mehrere Begriffe gleichzeitig zu suchen und zu ersetzen:
 
 ```PHP
 <?php
-$string = "Hallo 123";
-$new_string = preg_replace("/\d+/", "Welt", $string);
-echo $new_string; // Ausgabe: Hallo Welt
+$text = "Ich liebe Äpfel und Bananen.";
+$find = array("Äpfel", "Bananen");
+$replace = array("Birnen", "Erdbeeren");
+$text = str_replace($find, $replace, $text);
+echo $text; // Ausgabe: "Ich liebe Birnen und Erdbeeren."
 ?>
 ```
 
-## Tiefere Einblicke:
-Das Suchen und Ersetzen von Text hat eine lange Geschichte und wird in vielen Programmiersprachen verwendet. In PHP gibt es neben der `str_replace()`- und `preg_replace()`-Funktion auch noch die `substr_replace()`-Funktion, die es uns ermöglicht, nur einen Teil des Strings zu ersetzen. Alternativ können wir auch die `strtr()`-Funktion verwenden, um Zeichen für Zeichen zu ersetzen.
+## Vertiefung:
 
-Es gibt auch alternative Wege, um Text zu suchen und zu ersetzen, wie zum Beispiel in der Datenbank oder mit Hilfe von Shell-Befehlen. Es ist wichtig zu wissen, welche Methode für welchen Zweck am besten geeignet ist.
+Die PHP-Funktion `str_replace()` ist seit Version 4.0.0 verfügbar und hat sich im Laufe der Zeit weiterentwickelt. Alternativen zu `str_replace()` sind `preg_replace()` für reguläre Ausdrücke und `str_ireplace()` für die Groß- und Kleinschreibung.
+
+Das Verständnis des genauen Prozesses, wie `str_replace()` arbeitet, kann Ihnen helfen, effektiver zu programmieren. Die Funktion durchläuft die Zeichenkette von Anfang bis Ende und ersetzt jedes Vorkommen des Suchstrings durch den Ersetzungsstring, wobei sie immer den ersten Vorkommen des Strings ersetzt, den sie findet.
 
 ## Siehe auch:
-- [PHP-Dokumentation für str_replace()](https://www.php.net/manual/en/function.str-replace.php)
-- [PHP-Dokumentation für preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
-- [PHP-Dokumentation für substr_replace()](https://www.php.net/manual/en/function.substr-replace.php)
-- [PHP-Dokumentation für strtr()](https://www.php.net/manual/en/function.strtr.php)
+
+1. PHP-Handbuch zu `str_replace()`: [https://www.php.net/manual/de/function.str-replace.php](https://www.php.net/manual/de/function.str-replace.php)
+2. Unterschied zwischen `str_replace()` und `preg_replace()`: [https://www.geekhideout.com/str_replace-vs-preg_replace.shtml](https://www.geekhideout.com/str_replace-vs-preg_replace.shtml)
+3. PHP-Dokumentation zu `preg_replace()`: [https://www.php.net/manual/de/function.preg-replace.php](https://www.php.net/manual/de/function.preg-replace.php)
+4. PHP-Dokumentation zu `str_ireplace()`: [https://www.php.net/manual/de/function.str-ireplace.php](https://www.php.net/manual/de/function.str-ireplace.php)

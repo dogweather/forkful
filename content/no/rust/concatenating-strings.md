@@ -1,6 +1,6 @@
 ---
 title:                "Sammenslåing av strenger"
-html_title:           "Rust: Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
 simple_title:         "Sammenslåing av strenger"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Konkatenering av strenger i Rust
+
 ## Hva & Hvorfor?
-Sammenføyning av strenger, også kjent som "string concatenation" på engelsk, er en vanlig praksis blant programmerere. Dette innebærer å kombinere to eller flere strenger til en enkelt streng. Dette kan være nyttig for å skape mer dynamiske og tilpassede utdata i programmering.
+**Konkatenering av strenger** er prosessen med å slå sammen to eller flere strenger til én. Det brukes ofte for å lage dynamiske meldinger og håndtere brukerinput mer effektivt.
 
 ## Hvordan:
-I Rust kan vi enkelt sammenføye strenger ved hjelp av operatoren `+`. La oss se på et eksempel:
+I Rust kan du konkatenerer strenger ved hjelp av `+` operatøren eller `format!` makroen. Her er noen eksempler:
 
 ```Rust
-let navn = "Elin";
-let yrke = "utvikler";
-let setning = navn + " er en " + yrke;
-println!("{}", setning);
+let hello = String::from("Hei, ");
+let world = String::from("verden!");
+let hello_world = hello + &world; 
+println!("{}", hello_world); // Output: "Hei, verden!"
 ```
 
-Dette vil gi oss følgende utput:
+Bruk av `format!` makroen:
 
 ```Rust
-Elin er en utvikler
+let hello = String::from("Hei, ");
+let world = String::from("verden!");
+let hello_world = format!("{}{}", hello, world);
+println!("{}", hello_world); // Output: "Hei, verden!"
 ```
 
-Vi kan også bruke `&` operatoren for å sammenføye strenger på en mer effektiv måte. La oss se på et annet eksempel:
+## Dyp Dykk
+Historisk har konkatenering av strenger vært en grunnleggende del av programmering. Rust har valgt en litt annerledes tilnærming sammenlignet med andre språk. I stedet for å tillate direkte konkatenering med `+` operatøren mellom to strenger, krever Rust at det første uttrykket er en streng og det andre en referanse til en streng.
 
-```Rust
-let bilmerke = "Tesla";
-let årsmodell = 2021;
-let setning = format!("Jeg kjøpte en {} i {}", bilmerke, årsmodell);
-println!("{}", setning);
-```
+Alternativt kan `format!` makroen brukes for en mer lesbar konkatenering, spesielt med flere strenger. Denne makroen returnerer en ny streng og unngår feller som kan oppstå med `+` operatøren.
 
-Dette vil gi oss følgende utput:
+Når det gjelder implementeringsdetaljer, fører konkatenering med `+` til at Rust flytter eierskapet til den nye strengen. Dette betyr at den første strengen ikke kan brukes igjen etter operasjonen. Derimot, når vi bruker `format!`, beholdes de opprinnelige strengene og en ny streng blir returnert.
 
-```Rust
-Jeg kjøpte en Tesla i 2021.
-```
+## Se Også
+For mer informasjon om konkatenering av strenger i Rust, ta en titt på følgende ressurser:
 
-## Dypdykk:
-Siden strenger er uforanderlige i Rust, vil det å sammenføye flere strenger resultere i å lage en ny streng hver gang. Dette kan være ineffektivt og føre til ytelsesproblemer. Alternativt kan vi bruke `String` typen, som kan endres og sammenføyes mer effektivt. Dette kan være spesielt nyttig for større programmer som må håndtere mange strenger.
-
-## Se også:
-- [String concatenation in Rust](https://rust-lang-nursery.github.io/rust-cookbook/data/string.html#concatenation)
-- [Rust Strings](https://doc.rust-lang.org/std/string/index.html)
+- [The Rust Programming Language - The Book](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/std/str.html)
+- [StackOverflow - How to concatenate strings](https://stackoverflow.com/questions/30154541/rust-how-to-concatenate-strings)

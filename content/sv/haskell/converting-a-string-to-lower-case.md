@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla en sträng till gemener"
-html_title:           "Haskell: Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
 simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,20 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Konvertering av en sträng till gemener är en vanlig åtgärd i programmering. Det innebär att alla bokstäver i en sträng ändras till små bokstäver. Detta kan vara användbart för att göra strängar jämförbara eller för att uppnå en enhetlig formatering. 
+## Vad och Varför?
 
-# Hur man gör:
+Att konvertera en sträng till gemener innebär att ändra alla stor bokstäver i strängen till små bokstäver. Detta utförs ofta av programmerare för att jämföra strängar på ett sätt som är oberoende av versalisering.
+
+## Hur Fungerar Det:
+
+I Haskell konvertera vi en sträng till gemener med hjälp av funktionen `map toLower`. Vi måste dock importera `Data.Char` paketet först.
+Här är ett exempel:
+
 ```Haskell
-import Data.Char (toLower)
-toLower "HEJ" -- ger "hej"
-toLower "Haskell" -- ger "haskell"
+import Data.Char
+
+toLowerString :: String -> String
+toLowerString = map toLower
+
+main :: IO ()
+main = do
+    let test = "GODT NYTT ÅR"
+    putStrLn $ toLowerString test
 ```
+När vi kör detta program kommer utdatan att vara `godt nytt år`.
 
-# Djupdykning:
-Konverteringen av strängar till gemener har varit en funktionelliteten som funnits sedan tidiga språk som C och UNIX shell. Det finns alternativa sätt att åstadkomma detta, en vanlig metod är att använda sig av ASCII-värden för bokstäverna och göra en omvandling. I Haskell används istället den inbyggda funktionen `toLower` från modulen `Data.Char` som effektivt hanterar olika språk och specialtecken.
+## Fördjupning
 
-# Se även:
-- [Haskell Dokumentation](https://www.haskell.org/ghc/docs/latest/html/libraries/base-4.9.1.0/Data-Char.html#v:toLower)
-- [Wikipedia: Case Sensitivity](https://en.wikipedia.org/wiki/Case_sensitivity)
-- [Coderbyte: Convert string to lower case](https://www.coderbyte.com/algorithm/convert-string-to-lowercase)
+- Historisk kontext: Funktionen `toLower`, definierad i paketet `Data.Char`, tillhandahålls som en del av biblioteket Preludium i Haskell. Preludium är det bibliotek som importerar allt man behöver för grundläggande programmering i Haskell.
+- Alternativ: Det finns andra sätt att konvertera en sträng till små bokstäver i Haskell, t.ex. använda komposition istället för mappning: `toLowerString = foldr ((:) . toLower) []`.
+- Implementation detaljer: Funktionen `toLower` arbetar på enskilda `Char` värden. I Haskell är en `String` verkligen bara en lista av `Char`, så en `map` operation fördelar `toLower` funktion till varje `Char` i listan.
+
+## Se Även
+
+- [Haskell Prelude Dokumentation | Hackage](http://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html): För mer information om grundläggande Haskell-funktioner.
+- [Data.Char Dokumentation | Hackage](http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html): För detaljer om `toLower` och andra `Char` relaterade funktioner.

@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "Ruby: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Tworzenie tymczasowych plików w programowaniu odnosi się do tworzenia tymczasowego pliku w systemie operacyjnym w celu przechowywania tymczasowych danych. Programiści często używają tymczasowych plików w celu przechowywania danych, które są potrzebne tylko przez krótki czas lub w celu uniknięcia powielania istniejących plików.
+## Co i dlaczego?
 
-## Jak?
-```ruby
+Tworzenie plików tymczasowych, to praktyka znana niemal każdemu programiście. Pliki tymczasowe służą jako bufor dla danych, które są zbyt duże, aby przechowywać je w pamięci albo które muszą być zachowane przez krótki czas między operacjami.
+
+## Jak to zrobić:
+
+W Ruby tworzyć pliki tymczasowe jest bardzo proste dzięki wbudowanej bibliotece 'tempfile'. Oto proste przykładowe użycie:
+
+```Ruby
 require 'tempfile'
-temp_file = Tempfile.new("temporary_file")
-puts temp_file.path
-puts temp_file.write("This is a temporary file.")
-puts temp_file.read
-temp_file.close
-```
-Output:
-```
-/tmp/temporary_file20210612-15440-1ofz1g1
-23
-This is a temporary file.
+
+tempfile = Tempfile.new('mojplik')
+puts tempfile.path      # Wypisuje ścieżkę do pliku na dysku
+
+tempfile.puts("Witaj, świecie!")
+tempfile.rewind         # Przewija plik do początku
+
+puts tempfile.read      # Wypisuje: "Witaj, świecie!"
+tempfile.close
 ```
 
-## Pogłębione Zagadnienia
-1. Historyczny kontekst: Tworzenie tymczasowych plików jest powszechną praktyką w programowaniu, ale ma swoje korzenie w wcześniejszych systemach operacyjnych, gdzie pamięć operacyjna była ograniczona i programiści musieli ciężko pracować, aby oszczędzać miejsce na dysku.
-2. Alternatywy: Istnieją inne metody przechowywania tymczasowych danych, takie jak korzystanie z pamięci RAM lub tworzenie zmiennych tymczasowych w kodzie programu. Jednak używanie tymczasowych plików jest często najbardziej uniwersalne i wygodne.
-3. Szczegóły implementacji: W Ruby, klasa Tempfile dostarcza łatwą do używania funkcjonalność do tworzenia tymczasowych plików. Podczas gdy domyślnie plik jest usuwany po zamknięciu, można także wyłączyć automatyczne usuwanie i ręcznie usunąć plik za pomocą metody #unlink.
+## Pogłębione spojrzenie
 
-## Zobacz także
-- [Dokumentacja Ruby dla klasy Tempfile](https://docstore.mik.ua/orelly/webprog/pcook/ch13_16.htm)
-- [Tutorial dla początkujących o tworzeniu tymczasowych plików w Ruby](https://www.rubyguides.com/2015/07/reading-and-writing-files-in-ruby/)
-- [Blog post o używaniu tymczasowych plików w Ruby on Rails](https://www.davidverhasselt.com/create-tmp-directories-and-temporary-files-in-ruby/)
+Tworzenie plików tymczasowych to technika wykorzystywana od początków informatyki. Ułatwia ona prace z dużymi ilościami danych oraz zapewnia bezpieczeństwo, dzięki izolacji procesów.
+
+Jako alternatywę dla 'tempfile', można bezpośrednio obsługiwać system plików, ale to jest bardziej skomplikowane i podatne na błędy. Tempfile automatycznie dba o czyszczenie i usuwanie plików po ich użyciu.
+
+Szczegół implementacyjny: Tempfile tworzy pliki w katalogu określonym przez zmienną środowiskową `TMPDIR` lub `/tmp` jeśli `TMPDIR` nie jest ustawione.
+
+## Zobacz też
+
+Dokumentacja Tempfile: <https://ruby-doc.org/stdlib-2.5.1/libdoc/tempfile/rdoc/Tempfile.html>
+
+Krótki tutorial na StackOverflow: <https://stackoverflow.com/questions/6959214/how-do-i-make-a-temporary-file-in-ruby>
+
+Dokumentacja Ruby File and I/O: <https://ruby-doc.org/core-2.2.0/File.html>

@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Elm recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,65 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Interpolating a string in Elm refers to the process of inserting values into a string at runtime. This allows programmers to dynamically create strings with variable data, making code more efficient and flexible.
+String interpolation is the process of evaluating expressions within string literals to create a new string. It makes your life easier when you need to inject dynamic data into static strings, and it makes your code cleaner too.
 
 ## How to:
 
-Interpolating a string in Elm is simple. All you have to do is use the `toString` function and the `++` operator. Take a look at the example below:
+In current versions of Elm, you typically concatenate strings and expressions using the `++` operator:
 
-```
-import Html exposing (text)
-
--- Define a variable with the value we want to insert
-variable = 5
-
--- Interpolate the string with the variable
-myString = "The value of the variable is" ++ (toString variable)
-
--- Display the interpolated string on the screen
+```Elm
 main =
-    text myString
+    let
+        name = "John Doe"
+    in
+    Text.fromString ("Hello, " ++ name ++ "!")
 ```
 
-The output of this code will be:
+Output:
 
 ```
-The value of the variable is 5
-```
-
-You can also interpolate multiple variables in a string by using the `++` operator multiple times. For example:
-
-```
-import Html exposing (text)
-
--- Define variables with the values we want to insert
-name = "John"
-age = 30
-
--- Interpolate the string with the variables
-myString = "My name is " ++ name ++ " and I am " ++ (toString age) ++ " years old."
-
--- Display the interpolated string on the screen
-main =
-    text myString
-```
-
-The output of this code will be:
-
-```
-My name is John and I am 30 years old.
+Hello, John Doe!
 ```
 
 ## Deep Dive
 
-Interpolating strings is a popular practice in programming languages as it allows for more dynamic and flexible code. It is particularly useful when dealing with user input, where values may change and need to be displayed in a string.
+Historically, some languages have provided special syntax for string interpolation, but Elm has chosen a simpler path. While direct string interpolation mechanisms aren't part of Elm, you can utilize functions to emulate similar functionality. For instance:
 
-In Elm, there are alternatives to interpolating strings, such as using the `concat` function or using the `Text.format` module. However, interpolating strings with `toString` and `++` remains the preferred method for its simplicity and readability.
+```Elm
+greeting name =
+    "Hello, " ++ name ++ "!"
+```
 
-When interpolating strings in Elm, it is important to keep in mind that the `toString` function can only convert basic types like integers and strings. Complex types like records or custom types will need to be converted first using the `Debug.toString` function.
+One benefit of this approach is the increased control over how your data gets interpolated. It pushes you to think about data conversion and prevents potential type mismatch issues.
+
+As for alternatives, if you're handling complex strings with many variables, consider using `List.join` or `String.concat`:
+
+```Elm
+sentence name age =
+    List.join ["Hello, ", name, "! You are ", String.fromInt age, " years old."]
+```
 
 ## See Also
 
-To learn more about string interpolation in Elm, check out the official documentation: https://guide.elm-lang.org/interop/strings.html
-
-You can also explore other string manipulation functions in Elm, such as `String.concat` and `String.join` here: https://package.elm-lang.org/packages/elm/core/latest/String#concat
+- [The Official Elm Guide to Strings](https://guide.elm-lang.org/interop/strings.html): Dive deeper into Elm's approach to strings and concatenation.
+- [Elm's Syntax Documentation](https://elm-lang.org/docs/syntax): Brush up on how Elm structures its syntax, including how it handles strings.
+- [Discussion on String Interpolation in Elm](https://discourse.elm-lang.org/t/the-absence-of-string-interpolation/6676): Community discussion on why Elm doesn't have built-in string interpolation.

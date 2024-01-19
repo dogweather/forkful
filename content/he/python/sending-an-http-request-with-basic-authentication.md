@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "Python: שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Python"
 category:             "Python"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה? 
-שלחו בקשת HTTP עם אימות בסיסי היא פעולה נפוצה בתכנות המתבצעת על ידי מפתחים. כאשר מתבצעת בקשה זו, התוכנית שלנו מפעילה בקשת 'GET' או 'POST' לשרת עם פרטי הכניסה מצורפים בחיבור HTTP. השימוש באימות בסיסי מבטיח כי רק משתמשים מורשים יוכלו לקבל את התוכן של הבקשה.
+## מה ולמה?
 
-## איך לעשות את זה:
-השימוש באימות בסיסי בפייתון פשוט וקל. הנה כמה דוגמאות לשימוש בפקודת "requests" בכדי לשלוח בקשת HTTP עם אימות בסיסי:
+שליחת בקשת HTTP עם אימות בסיסי היא דרך לשלב את הזיהוי שלך בבקשה השולחת. מתכנתים ערים כזאת כדי לדאוג לבטיחות המידע שלהם, תוך השגת הרשאות משתמש מסויימות מהשרת.
+
+## איך ל:
 
 ```Python
 import requests
+from requests.auth import HTTPBasicAuth
 
-# שליחת בקשה מסוג GET
-response = requests.get('https://example.com/', auth=('username', 'password'))
+def send_request():
+    res = requests.get('https://api.github.com/user', auth=HTTPBasicAuth('user', 'pass'))
+    if res.status_code == 200:
+        return 'Success!'
+    else:
+        return 'Failed to authenticate.'
 
-# שליחת בקשה מסוג POST
-payload = {'key1': 'value1', 'key2': 'value2'}
-response = requests.post('https://example.com/', auth=('username', 'password'), data=payload)
-
-# קבלת התוכן של התגובה
-print(response.text)
+print(send_request())
 ```
+הפלט יהיה 'Success!' אם האימות הצליח ו'Failed to authenticate.' אם לא.
 
-בכל אחת מהדוגמאות הנלה מוצגת השימוש בפקודת "auth" כדי להצהיר על פרטי הכניסה הנחוצים כדי לאמת את הבקשה.
+## צלילה עמוקה:
 
-## חקירה מעמיקה:
-אימות בסיסי הוא אחד האמצעיים המשמשים לאמת את המשתמשים על ידי שימוש במזהה משתמש וסיסמה. השיטה נוצרה כחלק מהמפרוט המרוכז של פרוטוקול ההעברה האמיני (HTTP) ונמשלה עם פרוטוקולי התקשורת המשתמשים המאוחדים (UTN) וה-\"ערך המינכוש\". פתרונות אלטרנטיביים לאימות בסיסי כוללים אימות קשור למפתח ציבורי, אימות שמעורב בשימושים של חומרים מוצפנים או מעט נשירים, כגון GPG, ויחידים או קבצים של איפשור לגישה אחת.
+אותמן אימות HTTP בייסיק הגיע עם פרט REST API כדרך מוכרת ופשוטה לאמת את הלקוחות. אפשרויות חלופיות יכולות לכלול OAuth ו-API Key, אך שליחת בקשת HTTP עם אימות בסיסי היא דרך אבטחה קלה לשימוש המועדפת על רבים בגלל משקלה הנמוך של ביצועים והפשטות.
 
 ## ראו גם:
-למידע נוסף על כיצד לשלוח בקשות HTTP חתומות באמצעות אימות בסיסי, כדאי לעיין במדריכים והקוד המתואר ברשת. אפילו כאן ניתן למצוא את התיעוד המלא של הפקודה "requests" באתר הרשמי של פייתון, על מנת להבין את הפונקציונליות והאפשרויות של הפקודה.
+
+1. [HTTP Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+2. [Python requests library documentation](https://docs.python-requests.org/en/latest/)
+3. [REST API Authentication Basics](https://www.youtube.com/watch?v=501dpx2IjGY)

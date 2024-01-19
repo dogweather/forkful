@@ -1,7 +1,7 @@
 ---
-title:                "경석HTML 작업"
-html_title:           "Rust: 경석HTML 작업"
-simple_title:         "경석HTML 작업"
+title:                "HTML 파싱"
+html_title:           "Fish Shell: HTML 파싱"
+simple_title:         "HTML 파싱"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,51 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-오늘 우리는 HTML 파싱에 대해 이야기할 것입니다. HTML 파싱이란 HTML 문서에서 데이터를 추출하는 과정입니다. 프로그래머들은 주로 웹 스크래핑, 웹 크롤링 및 웹 데이터 마이닝과 같은 작업을 위해 HTML 파싱을 합니다.
+## 무엇 & 왜?
 
-## What & Why?
-HTML 파싱은 HTML 문서에서 데이터를 추출하는 과정입니다. 웹 페이지의 개별 요소를 식별하고 원하는 데이터를 추출하기 위해 필요합니다. 이를 통해 프로그래머들은 웹 사이트에서 원하는 정보를 손쉽게 가져올 수 있습니다.
+HTML 파싱이란 일련의 문자열을 의미 있는 요소로 해석하는 것입니다. 프로그래머들이 이를 수행하는 이유는 HTML 문서에서 데이터를 추출하거나, 페이지의 특정 섹션에 접근하기 위해서입니다.
 
-## How to:
-Rust는 HTML 파싱을 수행하기 위해 여러 라이브러리를 제공합니다. 가장 인기있는 라이브러리는 `html5ever`입니다. 이 라이브러리는 HTML5 판별자와 연결된 파서를 제공합니다. 아래는 HTML 문서에서 `<title>` 태그 안의 텍스트를 추출하는 예제입니다.
+## 어떻게:
+
+Rust에서는 `scraper`라는 크레이트를 사용하여 HTML 파싱을 할 수 있습니다. 아래는 기본적인 사용 방법을 보여주는 코드입니다:
 
 ```Rust
-use html5ever::parse_document;
-use html5ever::rcdom::{Handle, RcDom};
-use html5ever::tendril::TendrilSink;
-use tendril::stream::TendrilSink;
+use scraper::{Html, Selector};
 
-let input = r#"
-  <html>
-    <head>
-      <title>Hello, world!</title>
-    </head>
-    <body>
-      <h1>Hello, Rust!</h1>
-    </body>
-  </html>
-"#;
+fn main() {
+    let html = r#"<p class='foo'>Hello, world!<p>"#;
+    let document = Html::parse_document(html);
+    let selector = Selector::parse(".foo").unwrap();
 
-let dom = parse_document(RcDom::default(), Default::default())
-  .from_utf8()
-  .read_from(&mut input.as_bytes());
-let window = dom.document.children.borrow()[0].clone();
-
-for child in window.children.borrow().iter() {
-  if let Handle::Text(text) = child.data {
-    println!("{}", text);
-  }
+    for element in document.select(&selector) {
+        println!("{:?}", element.value().attr("class").unwrap());
+    }
 }
-
-// Output:
-// Hello, world!
 ```
+이 코드를 실행하면, 파싱된 HTML 문서에서 선택한 클래스 요소를 찾아 출력합니다.
 
-## Deep Dive:
-HTML 파싱에는 여러 가지 라이브러리와 방법이 있지만, Rust에서는 `html5ever`와 `kuchiki`가 가장 인기가 있습니다. `html5ever`는 W3C HTML5 파서 스펙을 따르는 라이브러리이며, `kuchiki`는 jQuery와 유사한 CSS 선택기 기능을 제공합니다.
+## Deep Dive: 
 
-`html5ever`는 기본적으로 HTML5 문서를 처리하는 파서를 제공하지만, 다른 문서 유형의 처리를 위한 설정도 제공할 수 있습니다. `kuchiki`는 HTML 파서를 사용하여 일반 DOM 트리를 제공합니다. 이 두 라이브러리는 각각의 특징을 가지고 있으므로 프로젝트 요구 사항에 따라 선택해야 합니다.
+1. HTML 파싱은 웹의 초창기부터 있었습니다. 웹 개발이 발전함에 따라, HTML 파싱 기법과 도구는 점차 정교해졌습니다.
+2. 단순 파싱 외에도, 웹 접근성을 높이는 데 도움이 되는 DOM 파싱, SAX 파싱 등의 เ안법도 있습니다.
+3. Rust에서 HTML 파싱을 구현할 때, `Html`와 `Selector` 구조체를 이용합니다. `Html::parse_document()` 함수는 HTML 문자열을 문서로 변환하고, `Selector::parse()` 함수는 CSS 셀렉터를 파싱합니다.
 
-## See Also:
-- [html5ever 문서](https://docs.rs/html5ever/)
-- [kuchiki 레포지토리](https://github.com/kuchiki-rs/kuchiki)
+## 참고 자료:
+
+- Rust `scraper` 크레이트 문서: https://docs.rs/scraper/0.12.0/scraper/
+- HTML 파싱에 대한 MDN 가이드: https://developer.mozilla.org/en-US/docs/Web/HTML/Parser 
+- 파싱 알고리즘에 대한 Mozilla Hacks 블로그: https://hacks.mozilla.org/2015/04/inside-the-brackets-html-parsing/

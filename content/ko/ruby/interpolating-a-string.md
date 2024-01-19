@@ -1,7 +1,7 @@
 ---
-title:                "문자열 보간"
-html_title:           "Ruby: 문자열 보간"
-simple_title:         "문자열 보간"
+title:                "문자열 보간하기"
+html_title:           "Clojure: 문자열 보간하기"
+simple_title:         "문자열 보간하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,43 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 이게 무엇이고 왜 필요한가요?
+문자열 내삽(String Interpolation)이란, 문자열 안에 Ruby 코드를 넣어 그 값을 바로 출력할 수 있는 기법을 일컫습니다. 이를 통해 반복적으로 값을 더하거나 변경하지 않아도 되므로 코드를 깔끔하게 유지할 수 있습니다.
 
-문자열 보간은 문자열 내에 다른 변수나 값을 삽입하는 것을 말합니다. 프로그래머들은 이를 사용하여 동적인 문자열을 만들거나 좀 더 가독성 있게 코드를 작성하기 위해 사용합니다.
-
-## 방법:
-
-### 기본적인 보간:
+## 어떻게 사용해야 할까요?
+```Ruby
+name = 'Kim'
+puts "Hey #{name}, How are you?"
+```
+위의 코드를 실행하면, `#{name}` 부분이 'Kim'으로 치환되어 "Hey Kim, How are you?"라는 결과가 출력됩니다.
 
 ```Ruby
-name = "John"
-puts "Hello #{name}!" #=> Hello John!
+x = 10
+y = 20
+puts "Sum of #{x} and #{y} is #{x + y}"
 ```
+이란 코드는 "#{x + y}" 부분이 두 수의 합인 '30'으로 치환되어 "Sum of 10 and 20 is 30"이라는 결과를 출력합니다.
 
-### 표현식과 함께 보간:
+## 깊게 알아보기
+문자열 내삽은 Ruby의 역사적인 부분으로, 그 기원은 Perl에서 찾을 수 있습니다. Perl보다 더 강력한 표현력을 가지며, JavaScript의 Template Literals, Python의 F-strings 같은 다른 언어의 비슷한 기능과 비교됩니다.
 
-```Ruby
-x = 5
-y = 10
-puts "The sum of x and y is #{x+y}" #=> The sum of x and y is 15
-```
+Ruby에서는 '%' 기호나 '+'처럼 다른 기호를 사용해 문자열을 연결하는 대신, "#{...}" 형태로 보다 간결하게 코드를 작성할 수 있습니다.
 
-### 조건문과 보간:
+문자열 내삽은 실제로 문자열의 `to_s` 메소드를 호출하여 값을 문자열로 변환합니다. 이 점은 숫자나 객체를 문자열에 내삽할 때 특히 유용합니다.
 
-```Ruby
-age = 25
-puts "You are #{age} years old."
-puts "You are #{age < 30 ? "still young": "getting older"}." #=> You are 25 years old.
-                                                                  You are still young.
-```
-
-## 깊게 들어가보기:
-
-일반적으로 보간은 문자열 내에 변수나 값을 삽입하는것을 말하지만, 루비에서는 보간이 더 다양한 기능들을 포함하고 있습니다. 보간은 또한 다른 여러가지 표현식과 결합하여 사용될 수도 있습니다. 예를 들어, 조건문과 함께 사용하여 더 복잡한 문자열을 만들 수 있습니다.
-
-또한 이전 버전의 루비에서는 ```#{}``` 대신에 ```%{}```을 보간에 사용할 수 있었지만, 현재는 거의 사용되지 않는 방식입니다.
-
-## 관련 자료:
-
-- [루비 공식 문서 - 문자열 보간](https://ruby-doc.org/core-2.7.2/doc/syntax/literals_rdoc.html#label-String+Interpolation)
-- [루비뻐이어(mybbyr) - 문자열 보간에 대한 더 자세한 설명](https://mybbyr.gitbooks.io/study-ruby-on-rails/content/chapter02/string-interpolation.html)
+## 참고 자료
+1. [Ruby Documentation: String Interpolation](https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings)
+2. [Ruby Learning](http://rubylearning.com/satishtalim/ruby_string_interpolation.html)
+3. [Geeks for Geeks: Ruby String Interpolation](https://www.geeksforgeeks.org/ruby-string-interpolation/)

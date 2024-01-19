@@ -1,6 +1,6 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "PowerShell: Gerando números aleatórios"
+html_title:           "C: Gerando números aleatórios"
 simple_title:         "Gerando números aleatórios"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que & Por Quê?
 
-Gerar números aleatórios é uma técnica utilizada por programadores para produzir valores imprevisíveis de forma automatizada. Isso pode ser útil para simulações, criptografia, jogos e muitas outras aplicações que requerem elementos aleatórios.
+A geração de números aleatórios é a criação de números de uma forma que não pode ser razoavelmente prevista. Programadores o fazem para inúmeros propósitos, como jogos, criptografia ou mesmo testes de software.
 
-## Como fazer:
+## Como Fazer:
 
-Para gerar números aleatórios no PowerShell, podemos utilizar o comando Get-Random. Veja abaixo um exemplo simples de como gerar um número aleatório de 1 a 10:
-
-```PowerShell
-Get-Random -Minimum 1 -Maximum 10
-```
-
-O resultado pode ser qualquer número inteiro entre 1 e 10, como por exemplo 7. Podemos também gerar uma lista de números aleatórios com o parâmetro -Count, que especifica quantos números devem ser gerados. Por exemplo:
+Aqui estão alguns exemplos de como gerar números aleatórios no PowerShell.
 
 ```PowerShell
-Get-Random -Minimum 1 -Maximum 10 -Count 5
-```
+# gerar um número aleatório entre 0 e a capacidade máxima do int32
+$randomNumber = Get-Random
+Write-Host "Número aleatório: $randomNumber"
 
-Isso irá gerar uma lista de 5 números aleatórios de 1 a 10, tal como: 2, 6, 9, 3 e 1.
+# gerar um número aleatório entre 1 e 100
+$randomNumber = Get-Random -Minimum 1 -Maximum 100
+Write-Host "Número aleatório entre 1 e 100: $randomNumber"
+
+# gerar um elemento aleatório de um array
+$array = 1..10
+$randomElement = Get-Random -InputObject $array
+Write-Host "Elemento aleatório: $randomElement"
+```
 
 ## Mergulho Profundo:
 
-Gerar números aleatórios é uma tarefa desafiadora que tem sido estudada por séculos. No passado, dados físicos como moedas, dados e cartas eram usados para simular aleatoriedade. Hoje, com o avanço da tecnologia, é possível gerar números aleatórios sem precisar de nenhum elemento físico. Existem diversas técnicas e algoritmos para gerar números aleatórios, cada um com suas particularidades e níveis de segurança.
+O comando Get-Random do PowerShell usa um gerador de números pseudoaleatórios, chamado "System.Random". Ele foi introduzido na versão 2.0 do PowerShell, lançada em 2009.
 
-Escolher um bom algoritmo para gerar números aleatórios é importante para garantir que a sequência gerada seja o mais próximo possível de uma sequência verdadeiramente aleatória. Além do comando Get-Random, existem outras opções para gerar números aleatórios no PowerShell, como a classe `System.Random` do .NET Framework.
+Existem outras maneiras de gerar números aleatórios, talvez por meio de uma função matemática ou um hardware especializado. Mas o método System.Random é simples, eficiente e bom o suficiente para a maioria das aplicações.
 
-## Veja também:
+O comando Get-Random gera um número que é determinado por uma semente. Se a semente for a mesma, a sequência de números aleatórios gerados será a mesma. A semente padrão é baseada no tempo do sistema, portanto, na prática, a sequência de números é quase sempre diferente.
 
-- [Documentação do Get-Random no Microsoft Docs](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.core/get-random)
-- [Artigo sobre geração de números aleatórios no Wikipedia](https://pt.wikipedia.org/wiki/Gera%C3%A7%C3%A3o_de_n%C3%BAmeros_aleat%C3%B3rios)
-- [Tutorial sobre como escolher um bom algoritmo para gerar números aleatórios](https://www.random.org/randomness)
+## Veja Também:
+
+Aqui estão alguns links para fontes relacionadas:
+
+- [Documentação oficial do comando Get-Random](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1).
+- [Discussão sobre números aleatórios em StackOverflow](https://stackoverflow.com/questions/1646428/what-is-the-best-way-to-generate-random-numbers-in-powershell).
+- [Detalhes sobre o método System.Random](https://docs.microsoft.com/pt-br/dotnet/api/system.random?view=net-5.0).

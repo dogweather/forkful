@@ -1,6 +1,6 @@
 ---
 title:                "Vérifier si un répertoire existe"
-html_title:           "Rust: Vérifier si un répertoire existe"
+html_title:           "Lua: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,32 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi?
 
-Vérifier si un répertoire existe signifie simplement de vérifier si un dossier spécifique se trouve sur un système de fichiers. Les programmeurs le font pour s'assurer que leur code peut accéder à des fichiers ou des sous-dossiers avant de les manipuler.
+Vérifier si un répertoire existe est une opération courante qui consiste à déterminer si un chemin particulier mène à un répertoire existant ou non. Les programmeurs le font pour éviter les erreurs inattendues lors de l'interaction avec des fichiers et des répertoires.
 
 ## Comment faire:
+
+Pour vérifier si un répertoire existe en Rust, on utilise les méthodes `metadata()` ou `exists()` de la classe `std::fs::Path`. Voici un exemple:
 
 ```Rust
 use std::path::Path;
 
-let directory = Path::new("/chemin/vers/dossier");
+fn main() {
+    let path = Path::new("/chemin/vers/le/repertoire");
+    let existe = path.metadata().is_ok();
 
-if directory.exists() {
-    println!("Le dossier existe !");
-} else {
-    println!("Le dossier n'existe pas.");
+    println!("Le repertoire existe: {}", existe);
 }
 ```
 
-## Plongée en profondeur:
+Et voici ce que vous verrez comme sortie:
 
-- Contexte historique: La vérification de l'existence de répertoires est une fonctionnalité de base dans la programmation depuis de nombreuses années.
-- Alternatives: Il existe plusieurs façons de vérifier si un répertoire existe, telles que la création de fonctions personnalisées ou l'utilisation de bibliothèques tierces.
-- Détails de mise en œuvre: En utilisant la bibliothèque standard de Rust, la fonction "exists()" utilise essentiellement un appel système pour vérifier si un chemin de fichier est valide.
+```
+Le repertoire existe: true
+```
+
+Si le chemin mène à un répertoire existant, la valeur retournée sera "true". Sinon, elle sera "false".
+
+## Détails techniques
+
+Historiquement, Rust utilise des classes de la bibliothèque standard `std::fs::Path` pour manipuler les chemins de fichiers. L'approche présentée ici - utiliser `metadata()` ou `exists()` - est un choix simple et efficace pour vérifier l'existence d'un répertoire.
+
+Les alternatives peuvent être plus complexes et moins efficaces. Vous pourriez par exemple tenter d'ouvrir le répertoire avec `std::fs::read_dir()` et vérifier si une erreur se produit. Cependant, utiliser `metadata()` ou `exists()` a l'avantage d'être plus rapide et direct.
+
+En effet, ces deux méthodes vérifient simplement si le système de fichiers peut obtenir des métadonnées pour le chemin donné. Aucun fichier ou répertoire n'est ouvert. Par conséquent, il n'y a pratiquement aucune performance à perdre.
 
 ## Voir aussi:
 
-- [Documentation de la bibliothèque standard de Rust pour la vérification de l'existence de répertoires](https://doc.rust-lang.org/std/fs/fn.metadata.html#method.exists)
-- [Article sur la gestion des fichiers et des répertoires en Rust](https://medium.com/@aidanhs/rust-ownership-and-the-filesystem-part-1-e48e19285991)
-- [Exemples de code pour la vérification de l'existence de répertoires en Rust](https://github.com/gamache/check-dir-exists)
+Pour plus d'informations sur la manipulation de fichiers et de répertoires en Rust, consultez les ressources suivantes:
+
+- Documentation officielle de Rust sur std::fs: https://doc.rust-lang.org/std/fs/index.html
+- Un excellent tutoriel sur la manipulation des fichiers en Rust par le site tuto.com : https://www.tuto.com/rust/manipulation-fichiers-rust,2345.html

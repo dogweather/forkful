@@ -1,6 +1,6 @@
 ---
 title:                "日付を文字列に変換する"
-html_title:           "Arduino: 日付を文字列に変換する"
+html_title:           "C++: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,39 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## この記事は何のためにあるの? 
-Arduinoの最新バージョンを使ったプログラミングの方法を教える記事だよ。特に、「日付を文字列に変換する方法」について詳しく説明するよ。プログラマーたちは、日付を文字列に変換することができると、データの処理や表示がより簡単になるから、この方法を使うんだ。
+# Arduinoでの日付を文字列に変換方法
+あなたのプロジェクトに日付を使用していますか？それとも、Arduinoで時間スタンプを利用したいですか？それなら、この記事はあなたのためです。
 
-## どうやってやるの? 
-以下のコードをArduinoソフトウェアにコピーして、マイクロコントローラーに書き込むことで、日付を文字列に変換することができるよ！また、変換した日付をシリアルモニターに表示させることもできるよ。
+## 何となぜ？
+日付を文字列に変えるとは、日付を「2021/12/01」のような形式の文字列に変える手法を指します。これは、日付を表示したり、日付に基づいたデータをログとして保存したりするためにプログラマが行うものです。
+
+## 実施方法：
+Arduinoエコシステムでは、「**sprintf**」関数を使用して日付を文字列に変換するための一貫した方法が提供されています。以下に簡単なコード例を示します： 
 
 ```Arduino
-// 日付を取得
-int day = day(); // 日
-int month = month(); // 月
-int year = year(); // 年
+char dateStr[11]; // 'YYYY/MM/DD\0'
+sprintf(dateStr, "%04d/%02d/%02d", year, month, day);
 
-// 日付を文字列に変換
-String date = String(day) + "/" + String(month) + "/" + String(year);
-
-// シリアルモニターに表示
-Serial.println("今日の日付は" + date + "です。");
+// 出力: 2021/12/01
+Serial.println(dateStr);
 ```
 
-表示される結果は以下のようになるよ！
-今日の日付は25/12/2020です。
+## ディープダイブ：
+- **歴史的背景**：初期のプログラミング言語では、データタイプの変換機能は限定的で、日付から文字列への変換は一般的ではありませんでした。しかし、時間の経過とともに、この機能が一般的になり、現在では多くのプログラミング言語がこの機能をサポートしています。
+- **代替手段**：Arduinoでは、別のライブラリーを使って日付を文字列に変換することもできます。例えば、「**TimeLib**」や「**RTClib**」などがあります。
+- **実装の詳細**：上記のコード例では、「sprintf」関数を使って日付を「YYYY/MM/DD」形式の文字列に変換しています。ここで言う「%04d」や「%02d」は、整数を4桁や2桁の文字列に変換する書式指定子です。
 
-## さらに詳しく 
-### 歴史的背景 
-もともと、日付を文字列に変換するためには、プログラマーが手作業で数字を文字に変える必要がありました。しかし、Arduinoのようなマイクロコントローラーの登場により、日付を文字列に変換する方法も簡単になりました。
+## 参照資料：
+1. Arduino `sprintf`関数のドキュメンテーション: [Arduino sprintf](https://www.arduino.cc/reference/en/language/functions/characters/sprintf/)
+2. 日付を文字列に変換する他の手法: [Using Time Library](https://playground.arduino.cc/code/time)
 
-### 他の方法 
-日付を扱う上で、文字列に変換する方法以外にも、さまざまな手法があります。例えば、日付を数値として取得し、計算や比較を行うことでも、日付の処理ができます。
-
-### 実装の詳細 
-Arduinoでは、```String```というデータ型を使用することで、文字列を扱うことができます。この記事のコードでは、日付を文字列に直す際に、```String```を使用しています。
-
-## 関連情報を見てみよう 
-- [公式Arduinoチュートリアル: 文字列の操作](https://www.arduino.cc/en/Tutorial/StringConstructors)
-- [Arduinoリファレンス: day(), month(), year()](https://www.arduino.cc/reference/en/language/functions/time/day/)
-- [日付を扱うためのC/C++標準ライブラリ](https://www-use.cs.york.ac.uk/supple/software/qn_anon/trol/doc/mirrors/c_cpp_lib/c_time.html)
+この記事があなたのプロジェクトに役立つことを願っています。幸運を祈ります！

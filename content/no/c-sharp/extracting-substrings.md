@@ -1,7 +1,7 @@
 ---
-title:                "Utvinning av delstrenger"
-html_title:           "C#: Utvinning av delstrenger"
-simple_title:         "Utvinning av delstrenger"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## Hva og hvorfor?
 
-Noen ganger vil du som programmerer trenge å hente ut deler av en tekststreng, i stedet for å bruke hele strengen. Dette kalles å utvinne (extract) substrings, og det kan være nyttig for å lage mer fleksible og dynamiske kode.
+Å splitte opp strenger er teknikken ved å hente ut mindre deler ("substrings") fra en lengre tekst ("string"), basert på gitt indeksposisjon. Programmerere gjør dette for å analysere eller bearbeide data effektivt og på en måte som gir mening i gitte kontekster.
 
-## Hvordan:
+## Hvordan: 
 
-Her er to måter å utvinne substrings på i C#:
+Koden nedenfor viser hvordan man uthenter en substring i C#.
 
-```C#
-string sentence = "Hei, jeg er en setning";
-// Eksempel 1: Hent ut "jeg er"
-string substring1 = sentence.Substring(5, 7);
-Console.WriteLine(substring1); // utskrift: jeg er
-// Eksempel 2: Hent ut "setning"
-string substring2 = sentence.Substring(sentence.Length - 7);
-Console.WriteLine(substring2); // utskrift: setning
+```csharp
+string tekst = "Hei, Verden!";
+string delTekst = tekst.Substring(4, 6);
+
+Console.WriteLine(delTekst);
 ```
 
-## Dykk dypere:
+Output:
 
-Metoden "Substring" har eksistert i C# siden den første versjonen ble lansert i 2002. Men i nyere versjoner, som C# 8.0, har det blitt introdusert en mer moderne og intuitiv måte å utvinne substrings på ved hjelp av "Range" og operatorer. Dette gjør koden mer lesbar og lettere å forstå. En alternativ metode for å utvinne substrings er bruken av Regular Expressions, som lar deg søke og filtrere tekst på en mer avansert og fleksibel måte.
+```csharp
+", Verd"
+```
+
+Her har vi tatt ut teksten som starter på den 4. posisjonen, og går 6 tegn fremover i teksten. Merk at vi teller posisjonene fra 0.
+
+## Dyp Dykk:
+
+Substring-metoden har vært tilstede i mange varianter av programmeringsspråk gjennom alle år, og er en standard virkemåte for å manipulere tekststrenger. Det fins flere alternativer, spesielt i C#, som `Remove()`, `IndexOf()` og `Split()`, og hvilken en bør velge kommer an på den spesifikke oppgaven.
+
+Implementasjonen av `Substring()`-metoden i C# er rask og effektiv, men man bør være oppmerksom på potensielle unntak som kan oppstå dersom startindeksen er utenfor tegnrekkevidden, eller hvis antall tegn som skal hentes ut overstiger den gjenværende lengden på teksten fra startindeksen.
 
 ## Se også:
 
-[Microsoft sin dokumentasjon om substrings i C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=netcore-3.1)
-
-[Eksempler på bruk av Range og operatorer for å utvinne substrings](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8#indices)
-
-[En introduksjon til Regular Expressions i C#](https://www.codeproject.com/Articles/9099/The-30-Minute-Regex-Tutorial)
+1. MSDN String.Substring Method: [Link](https://msdn.microsoft.com/library/aka44szs.aspx)
+2. C# Corner: Understanding String Manipulation in C#: [Link](https://www.c-sharpcorner.com/article/understanding-string-manipulation-in-c-sharp/)
+3. Dot Net Perls - Substring: [Link](https://www.dotnetperls.com/substring)

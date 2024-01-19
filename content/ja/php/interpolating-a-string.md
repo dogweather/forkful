@@ -1,7 +1,7 @@
 ---
-title:                "文字列の内挿"
-html_title:           "PHP: 文字列の内挿"
-simple_title:         "文字列の内挿"
+title:                "文字列の補間"
+html_title:           "Arduino: 文字列の補間"
+simple_title:         "文字列の補間"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,30 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何なんだっけ? (What & Why?)
+## 何となぜ？ (What & Why?)
+文字列を補間するとは、文字列内に変数を直接埋め込むことを示します。プログラマーがこれを行う主要な理由は、コードの読みやすさと効率を向上させるためです。
 
-PHPは、文字列を挿入することができるようにスクリプト言語を許可する。これを「インターポレーション」と呼び、一般的に変数を文字列に挿入するために使用される。プログラマーは、コードをより効率的にかつ読みやすくするために、インターポレーションを使用する。
-
-## どうやるの? (How to:)
-
-PHPでは、文字列をダブルクオートで囲むことで、変数を文字列に挿入することができる。例えば、"Hello $name!"のように、変数$nameを文字列に挿入することができる。また、変数を中括弧{}で囲んでも同じ結果になる。以下にコードと出力例を示す。
+## やり方 (How to:)
+以下に文字列補間の基本的な使用方法の例を示します:
 
 ```PHP
 $name = "John";
-echo "Hello $name!";
-// 出力: Hello John!
-
-$name = "Jane";
-echo "Hello {$name}!";
-// 出力: Hello Jane!
+echo "Hello, $name";
 ```
+このコードは "Hello, John"と出力します。 
 
-## もっと詳しく (Deep Dive:)
+深いダイブ (Deep Dive)
+文字列の補間は、Perlなどの他の多くのスクリプト言語からPHPに借用された概念です。これには代替案もありますが、主に単純リテラル文字列または複合（ビルディング）文字列があります。
+単純なリテラル文字列は次のようになります:
 
-インターポレーションは、PHPの初期バージョンで使われた機能であり、プログラマーにとって重要なツールである。変数を文字列に挿入する他の方法として、文字列結合を使用する方法がある。しかし、長い文字列や多数の変数がある場合、インターポレーションの方がコードがより読みやすく、効率的になる。また、変数を中括弧{}で囲むことで、複雑な式を文字列に挿入することもできる。
+```PHP
+$name = "John";
+echo "Hello, " . $name;
+```
+このコードも同じく "Hello, John"と出力します。
 
-## 詳しくは (See Also:)
+補間は内部的に文字列の連結を行うため、結果として得られる文字列が特に長い場合や大量の変数を含む場合、パフォーマンスに影響を及ぼす可能性があることに注意が必要です。
 
-- [PHP公式ドキュメント - インターポレーション](https://www.php.net/manual/ja/language.types.string.php#language.types.string.parsing) 
-- [PHPの歴史](https://www.php.net/history.php) 
-- [文字列結合とインターポレーションの違い](https://www.w3schools.com/php/php_string.asp)
+## 参照先 (See Also)
+ * PHP: 文字列 - Manual: [PHP: Strings - Manual](https://www.php.net/manual/en/language.types.string.php#language.types.string.parsing)
+ * PHPの文字列補間について: [Understanding PHP String Interpolation](https://www.digitalocean.com/community/tutorials/understanding-php-string-interpolation)

@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie wyjścia debugowania"
-html_title:           "Swift: Drukowanie wyjścia debugowania"
-simple_title:         "Drukowanie wyjścia debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,46 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
 
-Drukowanie informacji debugowania to proces wyświetlania informacji na ekranie, który pomaga programistom śledzić działanie swojego kodu i znaleźć błędy. Jest to ważne narzędzie w procesie tworzenia oprogramowania oraz pomaga w szybkim rozwiązywaniu problemów.
+Drukowanie wiadomości diagnostycznych (debug output) polega na wypisywaniu informacji w czasie działania programu, co pozwala programistom monitorować i rozumieć procesy. Służy do szybkiego i efektywnego wykrywania błędów, a także do testowania kodu.
 
-## Jak to zrobić:
+## Jak to Zrobić:
 
-### Przy użyciu funkcji print():
+Poniżej przedstawiam przykładowe kody i wyniki, które pomożą Ci lepiej zrozumieć:
+
 ```Swift
-let name = "Paweł"
-print("Witaj, \(name)"!)
+let name = "Marcin"
+print("Hello, \(name)")
+```
+Wyjście:
 
-// Output: Witaj, Paweł!
+```
+Hello, Marcin
 ```
 
-### Przy wykorzystaniu breakpointów w Xcode:
-```Swift
-let numbers = [1, 2, 3, 4, 5]
-print(numbers)
+Aby wydrukować wiadomość diagnostyczną, użyjemy instrukcji `debugPrint()`, która dostarcza bardziej szczegółowe informacje:
 
-// Output: [1, 2, 3, 4, 5]
+```Swift
+let list = ["jabłko", "banan", "truskawka"]
+debugPrint(list)
 ```
 
-### Przy użyciu dodatkowych opcji w funkcji print():
-```Swift
-let age = 25
-print("Mój wiek to:", age, separator: "-")
+Wyjście:
 
-// Output: Mój wiek to: 25
+```
+["jabłko", "banan", "truskawka"]
 ```
 
-## Wchodzimy głębiej:
+## Głębsze Zgłębianie
 
-Drukowanie informacji debugowania jest często wybierane przez programistów ze względu na swoją prostotę i efektywność. Wcześniej, przed pojawieniem się zaawansowanych narzędzi, takich jak debugger, print() był jedynym sposobem na monitorowanie działania programu.
+- **Kontekst historyczny:** Drukowanie wiadomości diagnostycznych istnieje prawie od początku samej informatyki. Stało się to podstawą do debugowania kodu i jest powszechnie stosowane we wszystkich językach programowania.
 
-Alternatywą dla funkcji print() są narzędzia debugowania dostępne w Xcode, takie jak breakpointy i debugger. Mogą one być bardziej skomplikowane w użyciu, ale mogą również dostarczyć bardziej szczegółowych informacji debugowania.
+- **Alternatywy:** Chociaż `print()` i `debugPrint()` są często używane w Swift, są inne narzędzia jak LLDB debug console oraz Unified Logging System, które oferują bardziej rozbudowane interakcje i analitykę.
 
-Implementacja funkcji print() jest trwała i dostępna w wielu językach programowania. W Swift można wykorzystać jej dodatkowe opcje, takie jak separator i terminator, aby dostosować wyjście do własnych potrzeb.
+- **Szczegóły implementacji:** `print()` wypisuje opis typów, podczas gdy `debugPrint()` wypisuje opisy debugowania tych typów. Pierwszy jest dobry w prostych sytuacjach, ale drugi dostarcza więcej szczegółów, które mogą być bardzo pomocne podczas debugowania.
 
-## Zobacz również:
+## Zobacz też
 
-- Dokumentacja Apple dla funkcji print(): https://developer.apple.com/documentation/swift/1541053-print
-- Artykuł o debugowaniu w języku Swift: https://www.hackingwithswift.com/articles/175/how-to-debug-in-swift
-- Wideo o użyciu breakpointów w Xcode: https://www.youtube.com/watch?v=UzH5aMgsHB0
+- [Dokumentacja Swift dla print()](https://developer.apple.com/documentation/swift/1541053-print)
+- [Dokumentacja Swift dla debugPrint()](https://developer.apple.com/documentation/swift/1541283-debugprint)
+- [Poradnik do debugowania w Swift](https://www.raywenderlich.com/11393054-debugging-with-xcode-12-getting-started)
+- [Unified Logging](https://developer.apple.com/documentation/os/logging)

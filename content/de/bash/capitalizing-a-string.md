@@ -1,7 +1,7 @@
 ---
-title:                "String großschreiben"
-html_title:           "Bash: String großschreiben"
-simple_title:         "String großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "Bash: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,27 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist das und warum?
+## Was & Warum?
 
-Capitalizing ist ein Konzept in der Programmierung, das es ermöglicht, bestimmte Zeichen in einem String in Großbuchstaben zu konvertieren. Programmierer nutzen dies, um Texte einheitlicher aussehen zu lassen oder um bestimmte Funktionen zu implementieren.
+Großschreibung von Strings bezieht sich auf die Umwandlung aller Zeichen in einem Textstring in Großbuchstaben. Programmierer machen das oft für Konsistenz in ihrer Datenausgabe oder um Text leichter lesbar zu machen.
 
-## Wie geht das?
+## Wie es geht
 
-Um einen String in Bash zu capitalizen, verwenden wir das Kommando ```echo```, gefolgt von dem String, den wir capitalizen möchten, gefolgt von dem Pipe-Operator ```|``` und dann dem Kommando ```tr```, gefolgt von den Optionen ```[:lower:]``` und ```[:upper:]```, gefolgt von Schrägstrichen ```/``` und abschließend dem Befehl ```sed```. Beispiel:
+Im Scripting mit Bash können sie die eingebaute Funktion `tr` verwenden, um einen String zu kapitalisieren. Hier ist ein einfaches Beispiel:
 
 ```Bash
-echo "hallo welt" | tr '[:lower:]' '[:upper:]' | sed 's/\([A-Z]\)/\L\1/g'
+string="hallo welt"
+echo "$string" | tr '[:lower:]' '[:upper:]'
 ```
-Dieses Beispiel würde den String "hallo welt" in "HALLO WELT" umwandeln und ausgeben.
 
-## Tiefer tauchen
+Die Ausgabe dieses Befehls ist `HALLO WELT`.
 
-Die Idee des Capitalizing kommt aus der Schreibmaschinentechnologie, bei der es keine Möglichkeit gab, zwischen Groß- und Kleinbuchstaben zu wechseln. Alternativen zum Capitalizing können die Verwendung von regulären Ausdrücken oder von speziellen Tools wie ```awk``` oder ```sed``` sein.
+## Vertiefung
 
-Es gibt auch verschiedene Implementierungen von Capitalizing, wie zum Beispiel die Funktion ```ucfirst```, die in der Programmiersprache PHP verfügbar ist und nur den ersten Buchstaben einer Zeichenkette in Großbuchstaben konvertiert.
+Historisch gesehen war die Funktion `tr` schon immer ein Teil der UNIX- und Linux-Shell-Skripts, noch bevor es modernere Shells wie Bash gab. 
+
+Es gibt andere Möglichkeiten, Strings in Bash zu kapitalisieren. Zum Beispiel:
+
+```Bash
+string="hallo welt"
+echo "${string^^}"
+```
+
+Diese Methode ist speziell für Bash und funktioniert nicht in anderen Shells.
+
+Die Kapitalisierung von Strings beeinflusst nicht die ursprüngliche Variable, es sei denn, Sie weisen das Ergebnis der Transformation wieder der Variable zu.
 
 ## Siehe auch
 
-- [Offizielle Bash Dokumentation](https://www.gnu.org/software/bash/manual/)
-- [Ein Beitrag über das Capitalizing in Bash](https://www.lifewire.com/capitalize-words-string-bash-4618163)
-- [Beispiele für die Verwendung von tr und sed](https://www.tecmint.com/13-tr-command-examples-in-linux/)
+Bitte checken Sie auch diese nützlichen Links für weitere Informationen:
+
+- GNU `tr` Handbuch: [https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- Bash Beginner's Guide Kapitalisierung: [http://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html)
+- Advanced Bash-Scripting Guide `tr` command: [https://tldp.org/LDP/abs/html/string-manipulation.html](https://tldp.org/LDP/abs/html/string-manipulation.html)

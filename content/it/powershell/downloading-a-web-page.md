@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "PowerShell: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,24 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Scaricare una pagina web significa ottenere il contenuto di una pagina internet sul tuo computer. I programmatori lo fanno per poter manipolare e analizzare i dati contenuti nella pagina, o per automatizzare processi come il crawling di siti web.
+# Scaricare Una Pagina Web Usando PowerShell
 
-## Come:
-Il modo più semplice per scaricare una pagina web in PowerShell è utilizzare il cmdlet `Invoke-WebRequest`. Basta specificare l'URL della pagina come parametro e salvare il risultato in una variabile.
+## Cos'è E Perché?
+Scaricare una pagina web significa prelevare il codice HTML di una pagina di internet per usarlo altrove. I programmatori spesso lo fanno per analizzare o manipolare i dati in essa contenuti.
+
+## Come si fa:
+Usando PowerShell, possiamo scaricare una pagina web con poche righe di codice. Prendiamo come esempio il sito "example.com".
+
+```PowerShell
+# Inizializza la richiesta web
+$url = "http://example.com"
+$webclient = New-Object System.Net.WebClient
+
+# Scarica il contenuto HTML
+$html = $webclient.DownloadString($url)
+
+# Visualizza il codice
+$html
 ```
-$paginaWeb = Invoke-WebRequest -Uri 'https://www.miapagina.com'
-```
-Per accedere al contenuto della pagina, è possibile utilizzare la proprietà `Content` della variabile:
-```
-$paginaWeb.Content
-```
-In questo modo otterrai il codice HTML della pagina, che puoi poi manipolare e analizzare secondo le tue necessità.
+
+L'output sarà il codice HTML di "example.com".
 
 ## Approfondimenti:
-La possibilità di scaricare una pagina web attraverso il codice è stata resa possibile grazie al protocollo HTTP, sviluppato negli anni '90. Se invece vuoi utilizzare questa funzionalità in un linguaggio diverso da PowerShell, puoi farlo utilizzando librerie come `curl` o `wget`.
-Nel codice sopra mostrato, la pagina viene scaricata utilizzando il metodo `GET` di HTTP. Se invece hai bisogno di passare dei parametri nella richiesta, puoi utilizzare il metodo `POST` e specificare i parametri nella proprietà `Body`.
+Historicalmente, PowerShell nasce come shell di comando e scripting per piattaforme Windows e la sua prima versione è stata rilasciata nel 2006. Ha da allora evoluto per includere le funzionalità HTTP come l'esempio presentato.
 
-## Vedi anche:
-- [Documentazione ufficiale di Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7)
-- [Cosa è il protocollo HTTP](https://developer.mozilla.org/it/docs/Web/HTTP/Overview)
+Esistono alternative a PowerShell per scaricare pagine web, come curl o wget nel mondo Linux. Anche altri linguaggi di programmazione come Python o JavaScript hanno librerie dedicate per la gestione delle richieste HTTP.
+
+Per quanto riguarda i dettagli di implementazione, `New-Object System.Net.WebClient` crea un nuovo oggetto WebClient che fornisce metodi comuni per inviare dati a e ricevere da un qualsiasi URL di risorsa. Il metodo `DownloadString` quindi scarica il contenuto del sito come stringa.
+
+## Vedi Anche:
+Per più informazioni su PowerShell:
+- Documentazione Ufficiale PowerShell: https://docs.microsoft.com/it-it/powershell/
+- Gestire le richieste HTTP in PowerShell: https://4sysops.com/archives/using-powershell-as-a-rest-client/
+- Come scaricare file con PowerShell: https://blog.jourdant.me/post/3-ways-to-download-files-with-powershell

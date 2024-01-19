@@ -1,7 +1,7 @@
 ---
-title:                "새로운 프로젝트 시작하기"
-html_title:           "Rust: 새로운 프로젝트 시작하기"
-simple_title:         "새로운 프로젝트 시작하기"
+title:                "새 프로젝트 시작하기"
+html_title:           "Arduino: 새 프로젝트 시작하기"
+simple_title:         "새 프로젝트 시작하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Getting Started"
@@ -10,29 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-새 프로젝트 시작은 새로운 코드를 작성하고 실행시키는 것을 뜻합니다. 프로그래머들은 새 프로젝트를 시작하여 새로운 아이디어를 구현하고 기존 코드를 개선하여 더 나은 결과물을 만들 수 있기 때문에 시작합니다.
+---
 
-## 시작 방법:
+## 무엇 & 왜?
+
+새 프로젝트를 시작하는 것은 컴퓨터 프로그래밍에서 새로운 문제나 필요에 대응하는 소프트웨어를 개발하기 위한 절차입니다. 이는 솔루션을 변경하거나 향상시키기 위한 첫 단계입니다.
+
+## 어떻게:
+
+먼저, 새로운 Rust 프로젝트를 생성해 보겠습니다. 터미널에서, 다음 코드를 입력합니다:
+
+```Rust
+$ cargo new hello_world
+$ cd hello_world
+```
+
+이 명령어는 `hello_world`라는 새로운 Rust 프로젝트를 생성합니다. 이제 해당 프로젝트의 메인 파일을 살펴보겠습니다.
+
 ```Rust
 fn main() {
-    // 새 프로젝트 시작
     println!("Hello, world!");
 }
 ```
-출력:
-```
+
+이 코드를 실행하면, 출력 결과는 다음과 같습니다.
+
+```Rust
+$ cargo run
+  Compiling hello_world v0.1.0 (/path/to/hello_world)
+   Running `target/debug/hello_world`
 Hello, world!
 ```
 
-## 깊은 고민:
-- 역사적 맥락: 1995년 C++ 언어의 창시자인 Bjarne Stroustrup에 의해 개발되었습니다. 그 후 여러 회사에서 해당 언어를 사용하였고, 2010년 Mozilla 재단에서 발표한 Rust 깃허브 레포지토리가 인기를 끌며 더 많은 개발자들이 사용하게 되었습니다.
+## 깊이 파보기
 
-- 대안: 새 프로젝트를 시작하기 위해 다른 언어들도 많이 사용됩니다. 예를 들어 C++, Java, Python 등이 있으며, 어떤 언어를 선택할지는 개발자의 취향과 프로젝트의 목적에 따라 다릅니다.
+Rust는 애초에 안전하고 동시성 프로그래밍을 간소화하기 위해 설계되었습니다. 새 프로젝트를 시작하면서 이러한 장점을 이용하여 효율적인 프로그램을 개발할 수 있습니다.
 
-- 구현 세부사항: Rust 언어를 사용하여 새 프로젝트를 시작할 때 개발자는 기존 코드에서 배운 다양한 개념과 기술을 적용할 수 있습니다. 예를 들어, Rust는 공유 메모리를 사용하는 대신 소유권 시스템을 통해 안정성을 강화합니다.
+Rust의 대체 옵션으로는 C/C++, Python 등 다양한 언어가 있습니다. 그러나 Rust는 메모리 안전성과 같은 강력한 특징을 가지고 있습니다.
 
-## 관련 자료:
-- 공식 Rust 홈페이지: https://www.rust-lang.org/ko
-- Rust 중문 프로그래밍 가이드: https://learnku.com/docs/rust/
-- Rust 프로그래밍 언어: https://doc.rust-lang.org/stable/book/
+새 프로젝트를 시작할 때, `cargo new` 명령을 수행하면 Cargo는 기본 바이너리 프로젝트 또는 라이브러리 프로젝트를 생성합니다. 이는 우리가 앞에서 보았듯이, 기본적인 "Hello, World!" 프로그램도 포함합니다.
+
+## 참고자료
+
+앞으로 Rust 학습을 계속하는 데에 도움이 될 몇 가지 리소스를 소개합니다:
+
+1. [Rust 공식 문서](https://doc.rust-lang.org/book/)
+2. [Rust 한국어 번역 문서](https://rinthel.github.io/rust-lang-book-ko/)
+3. [Rust에 익숙해지기](https://cheats.rs/)
+4. [Cargo 공식 가이드](https://doc.rust-lang.org/cargo/guide/)
+
+이 리소스들을 통해 Rust에서 새 프로젝트를 만드는 데에 필요한 더 많은 디테일과 기능을 알아볼 수 있습니다.

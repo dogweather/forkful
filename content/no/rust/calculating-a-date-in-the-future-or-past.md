@@ -10,33 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Å beregne en dato i fremtiden eller fortiden er en vanlig oppgave for programmerere. Dette kan være nyttig for å lage kalendere, sjekke slutt- og startdatoer for prosjekter, eller for å planlegge fremtidige hendelser. Programmerere gjør dette ved hjelp av matematiske operasjoner og beregninger.
+## Hva & Hvorfor?
 
-## Hvordan:
-Du kan enkelt beregne en dato i fremtiden eller fortiden ved hjelp av Rusts innebygde tidsmodul. Følgende eksempel viser hvordan du kan beregne en dato som er 1 år og 6 måneder fra nå:
+Å beregne en dato i fremtiden eller fortiden betyr å utføre beregninger på en dato for å oppdage en annen dato. Dette er populært blant programmerere for å håndtere oppgaver som fremdriftssporing, påminnelser og planlegging av oppgaver.
+
+## Hvordan du:
+
+Vi skal bruke crate `chrono` som krever at du legger til følgende avhengighet til din Cargo.toml.
 
 ```Rust
-use std::time::{SystemTime, UNIX_EPOCH, Duration};
-
-let now = SystemTime::now();
-let tomorrow = now + Duration::from_secs(60*60*24); //1 day
-let one_year_six_months = tomorrow + Duration::from_secs(60*60*24*365+(60*60*24*30)*6); // 1 year and 6 months
-let result = one_year_six_months - UNIX_EPOCH;
-println!("{:?}", result); //prints the date in seconds since Unix Epoch
+[dependencies]
+chrono = "0.4.19"
 ```
 
-Output:
-`Ok(49208448000)` // antall sekunder fra 1. januar, 1970.
+Her er en enkel kode snutt som viser deg hvordan du kan få en dato 30 dager fra i dag.
 
-## Dypere dykk:
-For å forstå hvordan man beregner datoer i fremtiden eller fortiden, må vi også forstå konseptet med tidssone og tidsskala. Tidsskala er et system for å måle tiden, som for eksempel sekunder, minutter, timer osv. Mens tidssone er en geografisk region med en felles norm for å måle tid.
+```Rust
+use chrono::{DateTime, Duration, Utc};
 
-I tillegg til Rust, finnes det også andre programmeringsspråk og biblioteker som kan brukes for å beregne datoer, som for eksempel Python og momentjs. Disse språkene bruker også lignende algoritmer og matematiske operasjoner for å beregne datoer.
+fn main() {
+    let now: DateTime<Utc> = Utc::now();
+    let future: DateTime<Utc> = now + Duration::days(30);
+    println!("{}", future);
+}
+```
+Når du kjører denne koden vil du se noe lignende i output:
 
-Når man beregner en dato i fremtiden eller fortiden, må man også ta hensyn til skuddår, som har en dag ekstra i februar hvert fjerde år. Dette kan påvirke resultatet, og det er derfor viktig å være oppmerksom på dette når man koder.
+```Rust
+2023-09-04 14:56:09.051918 UTC
+```
 
-## Se også:
-- [Rust tidsmodul dokumentasjon](https://doc.rust-lang.org/std/time/index.html)
-- [Python tidsmodul dokumentasjon](https://docs.python.org/3/library/datetime.html)
-- [Momentjs dokumentasjon](https://momentjs.com/docs/)
+Og å beregne en dato i fortiden kunne ikke vært enklere. Her er hvordan:
+
+```Rust
+use chrono::{DateTime, Duration, Utc};
+
+fn main() {
+    let now: DateTime<Utc> = Utc::now();
+    let past: DateTime<Utc> = now - Duration::days(30);
+    println!("{}", past);
+}
+```
+Output fra kodebiten, vil gi deg noe lignende:
+
+```Rust
+2023-07-06 14:56:09.051918 UTC
+```
+
+## Dypdykk
+
+Historisk sett har håndtering av datoer og tid alltid vært en stor utfordring i programmering. Problemene varierte fra håndtering av tidssoner til skuddår. Biblioteket `chrono` i Rust hjelper deg med å løse disse kompliserte problemene.
+
+Alternativene til `chrono` inkluderer `time` og `date` crate, men mangler ofte `chrono` sin brukervennlighet og funksjonsdybde.
+
+Viktig å merke seg er at `chrono` gjør det enkelt å manipulere datoer ved hjelp av `Duration` klassen, som håndterer tillegg og subtraksjon av dager, ukedager, sekunder osv., mens stiller hensyn til viktige detaljer som skuddsekunder og tidsråsonering.
+
+## Se Også
+
+For mer informasjon, sjekk ut følgende ressurser:
+
+- `chrono` dokumentasjon: https://docs.rs/chrono/0.4.19/chrono/
+- Rust dato og tidshåndtering: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html
+- Alternativer til `chrono`: https://lib.rs/crates/time

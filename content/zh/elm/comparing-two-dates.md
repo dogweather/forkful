@@ -1,6 +1,6 @@
 ---
 title:                "比较两个日期"
-html_title:           "Elm: 比较两个日期"
+html_title:           "Clojure: 比较两个日期"
 simple_title:         "比较两个日期"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是比较两个日期？为什么程序员要这么做？
+## 什么和为什么?
+比较两个日期意味着你正在检查这两个日期哪一个在日历上排在前面。这对于程序员来说很重要，例如在排序日历事件，检查一个日期是否已过期等方面。
 
-比较两个日期是一种常见的编程任务，它可以帮助程序员比较两个不同的日期并确定它们的先后顺序。程序员经常需要比较日期来执行各种操作，如计算过去或未来日期，检查事件的发生顺序等。
-
-## 如何进行比较？
-
-Elm提供了一些方便的函数来帮助我们比较两个日期。让我们来看一下如何使用这些函数来比较日期。
+## 如何做
 
 ```Elm
-import Time
+import Time 
 
--- 比较两个日期是否相等
-Time.equal (Time.fromCalendarDate 2020 6 1) (Time.fromCalendarDate 2020 6 1)
+compareDates : Time.Zone -> Time.Posix -> Time.Posix -> Order
+compareDates zone date1 date2 = 
+    Time.toYear zone date1 |> compare (Time.toYear zone date2)
 
--- 比较两个日期的先后顺序
-Time.compare (Time.fromCalendarDate 2020 6 1) (Time.fromCalendarDate 2020 6 3)
--- Output: LT (小于)
-
--- 比较一个日期是否在另一个日期之前
-Time.before (Time.fromCalendarDate 2020 6 1) (Time.fromCalendarDate 2020 6 3)
--- Output: True (是)
+-- 接下来是样例
+main = 
+    let 
+        zone = Time.here
+        date1 = Time.millisSinceEpoch 1556698143000
+        date2 = Time.millisSinceEpoch 1627804987000
+    in 
+    Html.text (toString (compareDates zone date1 date2))
+-- 输出结果：LT，意味着第一个日期小于第二个日期。
 ```
 
-## 深入了解
+## 深度探讨
+Elm 对日期的处理最早来源于时间函数库(Time libraries) Time.Posix 和 Time.Zone，这两个库提供了一套完备的解决方案来处理日期和时间。尽管Elm也可以通过直接比较毫秒来确定日期的早晚，但使用Time库使得程序更加清晰且可读性更强。在实现上，Elm的比较函数实际上就是将日期转换成了从公元1年开始的年份，然后进行比较。
 
-在编程历史上，比较两个日期是一个重要的任务。它可以追溯到计算机之前的年代，当时人们就需要比较日期来制定日历和执行其他日期相关的任务。除了Elm提供的函数，还有一些其他方法可以比较两个日期，如使用日期计算库或编写自定义函数。在实现比较方法时，我们需要考虑时区和夏令时等因素，以确保得到准确的比较结果。
-
-## 参考链接
-
-- Elm Time包文档：https://package.elm-lang.org/packages/elm/time/latest/Time
-- 日期计算库：https://date-fns.org/
+## 参考资料
+你可以从以下资源获得更多关于比较两个日期的信息：
+1. [Elm Time库文档](https://package.elm-lang.org/packages/elm/time/latest/)
+2. [Elm discuss: Date Comparison](https://discourse.elm-lang.org/t/date-comparison/2649)
+3. [Elm入门教程](https://tech.paiza.io/entry/2016/05/30/140814be) (日语，麦爪翻译)

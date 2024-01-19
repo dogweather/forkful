@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Calcolare una data nel futuro o nel passato è un'operazione comune per i programmatori, poiché spesso è necessario lavorare con date in modo dinamico. Ad esempio, potrebbe essere richiesto di calcolare una data di scadenza per una prenotazione, o di sapere quando è il prossimo compleanno di un utente. In questi casi, è essenziale sapere come manipolare e calcolare le date in modo efficace.
+# Calcolo delle Date Futuri e Passate in Haskell
 
-## How to:
-Per calcolare una data in Haskell, è possibile utilizzare la funzione `addDays` della libreria Data.Time. Questa funzione prende come argomenti una data e il numero di giorni che si desidera aggiungere o sottrarre e restituisce una nuova data calcolata. Ecco un esempio di codice:
+## Cosa & Perché?
+Calcolare una data futura o passata significa aggiungere o sottrarre un certo numero di giorni ad una data specifica. Questo è di solito utilizzato dai programmatori per fare previsioni, per tracciare l'andamento dei dati nel tempo, o per gestire eventi programmati.
+
+## Come Fai:
+Haskell offre il pacchetto `Data.Time`, che semplifica il calcolo delle date. 
+
+Possiamo calcolare una data futura aggiungendo giorni a una data specifica, come segue:
 
 ```Haskell
 import Data.Time
 
--- Calcolo di una data nel futuro
-calcolaDataFutura :: Day -> Int -> Day
-calcolaDataFutura dataAttuale giorniAggiunti = addDays giorniAggiunti dataAttuale
-
--- Calcolo di una data nel passato
-calcolaDataPassata :: Day -> Int -> Day
-calcolaDataPassata dataAttuale giorniSottratti = addDays (-giorniSottratti) dataAttuale
-
--- Esempio di utilizzo delle funzioni sopra definite
-main :: IO ()
 main = do
-  let dataOggi = fromGregorian 2020 10 20
-  let dataFutura = calcolaDataFutura dataOggi 30
-  let dataPassata = calcolaDataPassata dataOggi 15
-  print dataFutura -- Output: 2020-11-19
-  print dataPassata -- Output: 2020-10-05
+    let oggi = fromGregorian 2022 1 1
+    print $ addDays 30 oggi  -- Stampa "2022-01-31"
 ```
 
-## Deep Dive:
-In passato, prima dell'introduzione della libreria Data.Time di Haskell, i programmatori dovevano gestire manualmente la manipolazione delle date utilizzando operazioni matematiche su timestamp. Questo rendeva il codice soggetto a errori e poco flessibile. La libreria Data.Time invece offre un'implementazione robusta e semplice da utilizzare per la gestione delle date.
+Per una data passata, sottraiamo giorni:
 
-È importante notare che la libreria Data.Time gestisce le date nel formato `YYYY-MM-DD`, con il mese rappresentato da un numero da 1 a 12, e il giorno da 1 a 31.
+```Haskell
+import Data.Time
 
-Un'alternativa alla libreria Data.Time è il pacchetto `time` di Haskell, che offre funzioni e tipi di dati simili per la gestione delle date.
+main = do
+    let oggi = fromGregorian 2022 1 1
+    print $ addDays (-30) oggi  -- Stampa "2021-12-02"
+```
 
-## See Also:
-- [Documentazione della libreria Data.Time di Haskell](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Pacchetto time di Haskell](https://hackage.haskell.org/package/time)
+## Approfondimento
+Storicamente, il calcolo delle date è stato un problema noto nella programmazione. Gli scienziati della computer della metà del ventesimo secolo dovevano risolvere molteplici problemi, come le date di inizio e fine dell'anno bisestile e le differenze tra vari calendari.
+
+Alternativamente, è anche possibile utilizzare pacchetti Haskell come time-lens o date-cache per calcoli più avanzati. Il pacchetto `Data.Time` è generalmente facile da usare per il calcolo di date più semplici. 
+
+L'implementazione di `addDays` in Haskell sfrutta l'arithmetica con i numeri interi. La funzione `addDays` aggiunge il numero specificato di giorni alla data fornita, sfruttando il fatto che i giorni sono rappresentati come numeri interi nel sistema Gregoriano.
+
+## Riferimenti Utili
+1. Documentazione `Data.Time`: http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
+2. Haskell Wiki Data Durations: https://wiki.haskell.org/Data_duration
+3. Libreria time-lens: http://hackage.haskell.org/package/time-lens

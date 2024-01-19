@@ -10,31 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et pourquoi? 
+## Qu'est-ce que c'est & Pourquoi?
 
-Calculer une date dans le futur ou dans le passé est couramment utilisé par les programmeurs pour effectuer des tâches telles que la planification d'événements ou la gestion de tâches. Cela implique de manipuler et de calculer des dates en utilisant des fonctions et des formules spécifiques pour trouver la date souhaitée.
+Calculer une date dans le futur ou le passé est une tâche consistant à déterminer une date spécifique en se basant sur une autre date. Les programmeurs font cela pour gérer les événements déclenchés à des moments spécifiques, comme les rappels, les abonnements et les tâches planifiées.
 
-## Comment faire: 
+## Comment Faire:
 
-Voici un exemple de code en Elm pour calculer une date dans le futur à partir de la date actuelle: 
+Voici comment vous pouvez le faire en Elm. Vous utiliserez le package `time`:
 
 ```Elm
-import Date exposing (..)
+import Time
 
-dateActuelle =
-    fromTime 1615538900 -- 12 mars 2021 à 14h35 
-
-dateFutur =
-    add (month 5) dateActuelle  -- 12 août 2021 à 14h35 
+calculerDateFutur : Time.Posix -> Time.Zone -> Int -> Time.Posix
+calculerDateFutur dateActuelle zone jours =
+    let
+        durée = Time.inDays jours
+    in
+    Time.add durée dateActuelle
 ```
 
-La sortie de ce code sera la date du 12 août 2021 à 14h35. 
+Cette fonction ajoute simplement le nombre de jours spécifié à la date actuelle pour obtenir une date future.
 
-## Investigation en profondeur: 
+Et pour calculer une date dans le passé, vous pouvez simplement passer un nombre de jours négatif.
 
-En plus d'être utilisé dans la programmation, le calcul de dates est également un concept mathématique important qui remonte à l'époque de l'Égypte antique. Il existe également différentes approches pour calculer les dates, telles que l'utilisation de fonctions ou la manipulation de la représentation interne des dates dans un langage de programmation. Cependant, les fonctions de date intégrées dans les langages de programmation modernes permettent de faciliter grandement cette tâche.
+```Elm
+calculerDatePassé : Time.Posix -> Time.Zone -> Int -> Time.Posix
+calculerDatePassé dateActuelle zone jours =
+    calculerDateFutur dateActuelle zone -jours
+```
 
-## Voir aussi: 
+## Deep Dive:
 
-- Documentation officielle d'Elm sur la manipulation de dates: https://package.elm-lang.org/packages/elm/time/latest/ 
-- Un article sur l'histoire du calcul de dates: https://www.nationalgeographic.org/media/history-timekeeping/
+L'idée de calculer une date spécifique dans le futur ou le passé est assez ancienne en programmation. Cependant, le faire de manière précise et fiable peut être délicat, en raison de facteurs tels que les horaires d'été, les secondes intercalaires et les différences de fuseau horaire.
+
+Une alternative consiste à utiliser des bibliothèques ou des services externes qui traitent de ces détails pour vous. C'est aussi une option valable, surtout si vous avez besoin de gérer des choses comme les événements récurrents ou des calendriers complets.
+
+Dans Elm, vous devez travailler avec `Time.Posix` et `Time.Zone` pour effectuer ces calculs. Notez que `Time.Zone` est spécifique au lieu dans lequel vous allez effectuer les calculs. Dans la plupart des cas, vous pouvez simplement utiliser `Time.utc` pour cela.
+
+## Voir aussi:
+
+Pour plus d'informations, consultez les liens suivants:
+
+- Comment utiliser le package `time` en Elm (https://package.elm-lang.org/packages/elm/time/latest/)
+- Un bon article sur l'importance de la gestion correcte du temps en programmation (https://www.zachleat.com/elm/time-to-elm)
+- Une discussion détaillée sur les défis liés à la manipulation du temps en programmation (https://en.wikipedia.org/wiki/System_time)

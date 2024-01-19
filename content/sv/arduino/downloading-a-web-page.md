@@ -1,6 +1,6 @@
 ---
 title:                "Ladda ner en webbsida"
-html_title:           "Arduino: Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -12,57 +12,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att ladda ner en webbsida är när du hämtar alla data och information från en online-sida och sedan visar den på din enhet. Det är en vanlig uppgift för programmerare eftersom det låter oss få åtkomst till och använda information från hela internet i våra program. 
+Att ladda ner en webbsida innebär att hårdvara (till exempel en Arduino) begär och lagrar sidans data för senare användning. Programmörer gör detta för att analysera data, övervaka förändringar, eller återanvända innehållet på något sätt.
 
-## Hur man:
+## Hur Man Gör:
 
-För att ladda ner en webbsida i Arduino behöver du först använda dig av biblioteket "Ethernet". Sedan behöver du skapa en "client" som är ansluten till servern där webbsidan finns. Till exempel:
+Arduino-biblioteket som "Ethernet.h" hjälper oss att kommunicera med internet. Här är ett exempel:
 
-```
+```Arduino
 #include <Ethernet.h>
+#include <SPI.h>
 
+byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 EthernetClient client;
 
-IPAddress server(192,168,1,1); //ange IP-adress till servern här
-const int port = 80; //ange porten servern använder
-
 void setup() {
-  //ansluta till servern
-  if (client.connect(server, port)) {
-    Serial.println("Anslutning nog");
-    
-    //skickar en begäran om att ladda ner webbsidan
-    client.println("GET /index.html HTTP/1.1");
-    client.println("Host: www.example.com");
-    client.println("Connection: close");
-    client.println();
-  } else {
-    //om anslutningen misslyckas, visa felmeddelande
-    Serial.println("Anslutning misslyckades");
+  if (Ethernet.begin(mac) == 0) {
+    while (true);
   }
+  
+  if (!client.connect("www.example.com", 80)) {
+    while (true);
+  }
+  
+  client.println("GET / HTTP/1.1");
+  client.println("Host: www.example.com");
+  client.println("Connection: close");
+  client.println();
 }
 
 void loop() {
-  //läser och visar data som mottagits från servern
   if (client.available()) {
-    char c = client.read(); //läser en och en bokstav
-    Serial.print(c); //visar i serimonitorn
+    char c = client.read();
+    Serial.print(c);
+  }
+  
+  if (!client.connected()) {
+    client.stop();
+    while (true);
   }
 }
 ```
 
-Om allt har gått bra så kommer webbsidan att visas i serimonitorn och du har nu lyckats ladda ner en webbsida med Arduino!
+Denna kodanslutningar till www.example.com, skickar en HTTP GET-begäran, och skriver ut den mottagna data. Du kommer att se webbsidans HTML-kod i seriemonitorn.
 
-## Djupdykning:
+## Djupgående:
 
-Att ladda ner en webbsida i Arduino är en vanlig användning av Ethernet-biblioteket. Innan detta bibliotek fanns, var det betydligt svårare att få åtkomst till internet på en Arduino. Idag finns det dock också andra alternativ som gör det möjligt att ladda ner en webbsida, som till exempel Wi-Fi-shield.
+Historiskt sett har webbsidescraping (webbsidehämtning) använts sedan webbens början. Programmeringsspråk som Perl och Python gjorde det möjligt tidigt. Arduino ger oss tillförlitliga bibliotek för detta.
 
-För att kunna ladda ner en webbsida behöver din Arduino också kunna använda HTTP-protokollet. Detta är standardprotokollet som används för att hämta webbsidor från en server. Det finns också andra protokoll som till exempel HTTPS, som gör webbtrafiken mer säker.
+Alternativ till "Ethernet.h" biblioteket inkluderar "WiFi101.h" för WiFi-anslutning och "GSM.h" för mobildata.
 
-En annan sak att tänka på är att vissa servrar kan kräva autentisering för att du ska få tillgång till deras innehåll. Detta kan vara särskilt användbart om du behöver hämta information från en priviligerad webbsida.
+Tänk på att ladda ner stora mängder data kan påverka din Arduinos prestanda. Använd koncept som "streaming" för att bearbeta data i mindre bitar.
 
-## Se även:
+## Se Även:
 
-- Ethernet-biblioteket på Arduino:s hemsida: https://www.arduino.cc/en/Reference/Ethernet
-- Wi-Fi-shield till Arduino: https://www.arduino.cc/en/Main.ArduinoWiFiShield
-- Om HTTP-protokollet: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+- [Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet): För mer information om "Ethernet.h"
+
+- [Internet of Things (IoT) med Arduino](https://www.coursera.org/learn/arduino): En omfattande kurs att lära dig mer om hur du kopplar samman Arduino med internet.
+
+Kom ihåg att alltid respektera webbplatsernas användarvillkor och inte överbelasta deras servrar med för många förfrågningar. God programmering!

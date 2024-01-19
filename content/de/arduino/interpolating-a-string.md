@@ -1,7 +1,7 @@
 ---
-title:                "Ein String interpolieren"
-html_title:           "Arduino: Ein String interpolieren"
-simple_title:         "Ein String interpolieren"
+title:                "Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
+simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,24 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Interpolieren einer Zeichenfolge ist das Einsetzen von variablen Werten in einen String. Programmierer verwenden dies, um dynamische Inhalte in einem Text anzuzeigen, wie z.B. die Temperatur eines Sensors oder die Uhrzeit.
 
-## Wie geht's?
-Um eine Zeichenfolge zu interpolieren, muss zuerst eine Vorlage erstellt werden, in der die zu ersetzenden Variablen mit dem Platzhalter ```%s``` gekennzeichnet werden. Dann wird die Methode ```String::format()``` verwendet, um den String mit den entsprechenden Werten zu füllen.
+String-Interpolation ermöglicht das Einbetten von Ausdrücken oder Variablenwerten direkt in Zeichenketten. Programmierer setzen sie ein, weil es das Erstellen komplexer Zeichenketten vereinfacht und für bessere Lesbarkeit und Wartbarkeit sorgt.
 
-Beispiel:
+## Wie geht das:
+
+Nun, Arduino unterstützt nicht direkt die String-Interpolation, aber wir können etwas Ähnliches erreichen. Sehen wir uns ein simples Beispiel an:
+
+```Arduino
+String name = "Hans";
+int age = 32;
+
+Serial.begin(9600);
+Serial.println("Name: " + name + ", Alter: " + age);
+
 ```
-int sensorValue = 25;
-String message = "Die aktuelle Temperatur beträgt %s Grad Celsius.";
-String interpolatedString = message.format(sensorValue);
 
-// interpolatedString enthält nun: "Die aktuelle Temperatur beträgt 25 Grad Celsius."
+Ausgabe wird sein:
+
+```Arduino
+Name: Hans, Alter: 32
 ```
 
-## Tiefer Einblick
-Das Konzept des String-Interpolierens stammt aus der Programmiersprache Ruby und ist mittlerweile in vielen Sprachen, einschließlich Arduino, verfügbar. Eine alternative Möglichkeit, Variablen in einen String einzufügen, ist die Verwendung der Methode ```String::concat()```, jedoch ist dies weniger platzsparend und effizient.
 
-Bei der Implementierung des String-Interpolierens ist zu beachten, dass die zu ersetzenden Variablen den richtigen Datentyp haben müssen und dass der Platzhalter ```%s``` für Strings verwendet werden muss.
+## Vertiefung:
 
-## Siehe auch
-Weitere Informationen und Beispiele zum String-Interpolieren finden Sie in der offiziellen Arduino-Dokumentation unter: https://www.arduino.cc/reference/en/language/variables/data-types/stringfunctions/format/
+Historisch gesehen gab es in Sprachen, die String-Interpolation unterstützten (wie Perl oder Ruby), immer eine Methode, diese Funktion zu nutzen. Bei Arduino kann man bisher nur durch string concatenation ein ähnlicher Effekt erreichen.
+
+Alternativ könnten Sie für komplizierte Formate die sprintf-Funktion verwenden, die aber in einem eingeschränkten Format zur Verfügung steht.
+
+Zu Einzelheiten einer Implementierung - Die String "Addition" in Arduino ruft die concat() Funktion der String-Klasse auf. 
+
+## Siehe auch:
+
+- [Arduino String Reference (Englisch)](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Arduino sprintf-Funktion (Englisch)](http://www.cplusplus.com/reference/cstdio/sprintf/)
+- [Arduino-Datenblätter und Handbücher (Deutsch)](https://www.arduino.cc/en/Main/Documentation)

@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "C: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "C"
 category:             "C"
@@ -10,47 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?
-Stringien yhdistäminen on prosessi, jossa useita merkkijonoja liitetään yhdeksi merkkijonoksi. Tätä tehdään yleensä, kun halutaan luoda monimutkaisempia tekstejä, kuten lauseita tai tiedostonimiä. Ohjelmoijat käyttävät tätä toimintoa tehostamaan koodinsa toimintaa.
+## Mikä & Miksi?
 
-Miten:
-Alla on esimerkkejä siitä, miten stringien liittämistä voidaan käyttää C-kielellä. Huomaa, että käytämme standardia ```printf()``` -funktiota tulostamaan liitettyjä merkkijonoja terminaaliin.
+Tietojen yhdistäminen, tai englanniksi string concatenation, tarkoittaa merkkijonojen liittämistä yhteen. Se on hyödyllinen ohjelmistokehityksen tekniikka esimerkiksi muotoilemaan viestejä tai luomaan dynaamisia ohjelmakoodin osia.
+
+## Kuinka:
+
+Tässä on esimerkki siitä, kuinka yhdistää merkkijonoja C-ohjelmoinnissa käyttäen `strcat()`-funktiota.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-  char string1[] = "Hello";
-  char string2[] = "World";
-  char result[20];
+   char merkkijono1[50] = "Tervetuloa ";
+   char merkkijono2[] = "Suomeen!";
+   strcat(merkkijono1, merkkijono2);
 
-  // Yksinkertainen tapa:
-  strcat(result, string1);
-  strcat(result, string2);
-  
-  printf("Tulostus 1: %s\n", result);
-  
-  // Tehokkaampi tapa, jossa ei käytetä alustavallokaatiota:
-  sprintf(result, "%s%s", string1, string2);
-  
-  printf("Tulostus 2: %s\n", result);
-  return 0;
+   printf("%s\n", merkkijono1);
+   return 0;
 }
 ```
 
-Tulostus 1: HelloWorld
+Se tulostaa:
+```
+Tervetuloa Suomeen!
+```
 
-Tulostus 2: HelloWorld
+## Syvällinen Sukellus
 
-Syväluotaus:
-Stringien liittäminen on ollut yleinen ohjelmointikäytäntö jo pitkään. Ennen C-kieltä on käytetty esimerkiksi PERL-ohjelmointikielessä, joka on kehitetty 1980-luvun lopulla. C-kielessä yksittäisten merkkien lisäksi voidaan myös liittää kokonaisia merkkijonoja, mikä tekee siitä tehokkaan vaihtoehdon muihin koodikieliin verrattuna.
+Historiallinen tausta: `strcat()`-funktio on ollut olemassa vuosikymmenien ajan, ja se on osa C-kirjaston standardia.
 
-On myös olemassa muita vaihtoehtoja stringien liittämiseen, kuten käyttämällä ```strncat()```-funktiota, jonka avulla voidaan rajoittaa liitettävien merkkien määrää. Tämä voi olla hyödyllistä, jos halutaan estää merkkijonojen ylittämät pituusrajoitukset.
+Vaihtoehdot: `strcat()` on hyödyllinen, mutta sen kanssa on oltava varovainen, koska se ei tarkista ylivuotoja. Saatat haluta käyttää `strncat()`, jonka avulla voit määrittää kopioitavien merkkien enimmäismäärän, jotta vältetään ylivuotot.
 
-Stringien liittämistä voidaan myös toteuttaa manuaalisesti käyttämällä ```for``` -silmukkaa ja kopiointifunktiota, kuten ```strcpy()```. Tämä voi kuitenkin olla hankalampaa ja aikaa vievämpää kuin C:n valmiiden funktioiden käyttö.
+Yksityiskohtainen toteutus: `strcat()` löytää ensin `merkkijono1`:n pään lisäämällä sen pituuden alkuperäiseen osoitteeseen. Sitten se kopioi `merkkijono2`:n merkit `merkkijono1`:n päähän merkki kerrallaan, kunnes se saavuttaa lopun.
 
-Katso myös:
-- [Official C documentation](https://devdocs.io/c/)
-- [Learn C in Y Minutes](https://learnxinyminutes.com/docs/c/)
-- [String Concatenation in C by GeeksforGeeks](https://www.geeksforgeeks.org/string-concatenation-in-c/)
+## Muita Lähteitä
+
+- C Standard Library: strcat (https://www.cplusplus.com/reference/cstring/strcat/)
+- Secure Coding in C and C++: String Problems (https://www.cert.org/secure-coding/research/secure-coding-in-c-and-c-string-problems.cfm)
+- GNU Libc Manual: Concatenating Strings (https://www.gnu.org/software/libc/manual/html_node/Concatenating-Strings.html)

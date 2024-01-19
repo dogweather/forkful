@@ -1,7 +1,7 @@
 ---
-title:                "Analizando una fecha de una cadena"
-html_title:           "C++: Analizando una fecha de una cadena"
-simple_title:         "Analizando una fecha de una cadena"
+title:                "Analizando una fecha a partir de una cadena de texto"
+html_title:           "Bash: Analizando una fecha a partir de una cadena de texto"
+simple_title:         "Analizando una fecha a partir de una cadena de texto"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,57 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing una fecha de una cadena en C++
+# ¿Qué y por qué?
 
-## ¿Qué y por qué?
+*Parsear* una fecha de un *string* se trata de convertir una representación textual de una fecha a una representación de fecha que un programa puede entender y manipular. Los programadores hacen esto para procesar datos de entrada, trabajar con APIs, o para descomponer y reorganizar información de fechas.
 
-Parsing una fecha de una cadena se refiere a la tarea de extraer información de una cadena de texto que representa una fecha y convertirla en un formato de fecha reconocido por la computadora. Los programadores a menudo tienen que realizar esta tarea para procesar datos o validar la entrada de usuario en programas que involucran fechas.
+# Cómo se hace:
 
-## Cómo hacerlo:
-
-La forma más común de lograr esto en C++ es mediante el uso de la librería estándar de C++ ```std::stringstream```. A continuación se muestra un ejemplo de cómo se puede usar para analizar una fecha:
+En C++11 y versiones posteriores, la biblioteca de manipulación de fechas y horas, `<chrono>`, puede usarse para parsear fechas a partir de strings. Veamos un ejemplo:
 
 ```C++
 #include <iostream>
-#include <string>
 #include <sstream>
+#include <iomanip>
+#include <chrono>
 
 int main() {
-  // Definir la cadena de texto que contiene la fecha
-  std::string fecha = "10/31/2021";
+    // string que representa la fecha
+    std::string fecha_string = "2022-01-20";
 
-  // Crear un objeto stringstream para analizar la fecha
-  std::stringstream ss(fecha);
+    // Creamos un stringstream con la fecha
+    std::istringstream ss(fecha_string);
 
-  int dia, mes, anio;
+    // Buffer para almacenar la fecha parseada
+    std::chrono::system_clock::time_point fecha;
 
-  // Extraer las componentes de la fecha de la cadena
-  ss >> mes;
-  ss.ignore(); // Ignorar el '/' entre el mes y el día
-  ss >> dia;
-  ss.ignore(); // Ignorar el '/' entre el día y el año
-  ss >> anio;
+    // Creamos el objeto para el formateo de la fecha
+    std::chrono::time_parse("{%Y-%m-%dT%H:%M:%S}", fecha, ss);
 
-  // Imprimir la fecha en un formato reconocido por la computadora
-  std::cout << "La fecha es: " << anio << "/" << mes << "/" << dia << std::endl;
+    // Imprimimos la fecha
+    std::time_t tt = std::chrono::system_clock::to_time_t(fecha);
+    std::cout << std::put_time(std::localtime(&tt), "%Y-%m-%d %H:%M:%S") << '\n';
 
-  return 0;
+    return 0;
 }
 ```
-
-La salida de este programa sería: 
+Salida esperada:
 ```
-La fecha es: 2021/10/31
+2022-01-20 00:00:00
 ```
 
-## Detalles técnicos:
+# Detalles
 
-Además del método anterior, existen otras formas en las que los programadores pueden implementar el parsing de una fecha. Algunas alternativas incluyen el uso de expresiones regulares o librerías externas dedicadas a manejar fechas. Sin embargo, la librería estándar de C++ suele ser suficiente para cumplir con la mayoría de las necesidades.
+El parsing de fechas en C++ ha cambiado con el tiempo. Antes de C++11, tenías que usar `strptime` o `sscanf`, funciones de C que pueden ser propensas a errores. La implementación actual de `<chrono>` y `date::parse` es robusta y fiable.
 
-## Referencias:
+Hay varias alternativas para parsear fechas, algunas de las cuales son bibliotecas de terceros como Boost.Date_Time y HowardHinnant's date library. Escoge la que mejor se adapte a tus necesidades.
 
-- [Documentación de std::stringstream en cppreference.com](https://en.cppreference.com/w/cpp/io/basic_stringstream)
-- [Expresiones regulares - referencia de la librería estándar de C++](https://en.cppreference.com/w/cpp/regex)
-- [Librería Chrono para manejo de fechas en C++](https://en.cppreference.com/w/cpp/chrono)
+Los detalles de implementación del parsing de fechas de un string pueden ser bastante complejos, ya que hay que tener en cuenta zonas horarias, formatos de fecha locales y todo tipo de variaciones.
 
-**¡Esperamos que esta guía sobre cómo hacer parsing de una fecha en C++ te haya sido útil!**
+## Ver También
+
+- Documentación de `<chrono>`: http://www.cplusplus.com/reference/chrono/
+- La biblioteca de fechas de Boost: https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html
+- Las fechas se vuelven modernas en C++: https://www.modernescpp.com/index.php/the-dates-of-modern-c

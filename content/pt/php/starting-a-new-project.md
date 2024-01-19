@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "PHP: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Getting Started"
@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer: 
-Começar um novo projeto é simplesmente iniciar um novo projeto de código ou aplicativo. Programadores fazem isso para criar soluções para problemas específicos e para continuar a aprendizagem e aprimoramento de suas habilidades em programação.
+## O Que & Por Que?
 
-## Como fazer:
-Para iniciar um novo projeto em PHP, basta seguir estes passos: 
+Iniciar um novo projeto é como começar a desenhar num papel em branco, onde o programador define a estrutura, a lógica, e as funcionalidades do seu programa do zero. Fazemos isso para programar soluções cujos pacotes ou sistemas já existentes não atendem a necessidade ou exigência especifica.
 
-```
-<?php 
+## Como Fazer:
 
-//Criar um novo arquivo PHP para o projeto
-touch new_project.php 
+Um novo projeto em PHP geralmente começa criando os arquivos básicos. Veja o exemplo simples:
 
-//Incluir o código PHP básico
+```PHP
 <?php
-
-//Adicionar um comentário
-//Este é o meu novo projeto em PHP
-
-//Escrever seu código aqui!
-
+echo "Olá, mundo!";
 ?>
 ```
 
-## Mergulho profundo:
-A linguagem de programação PHP foi criada em 1994 por Rasmus Lerdorf para ser usada em páginas web dinâmicas. Embora tenham surgido muitas alternativas ao PHP, ele ainda é amplamente utilizado por sua simplicidade e flexibilidade. Para iniciar um projeto em PHP, é importante ter um bom entendimento de como a linguagem funciona e quais recursos estão disponíveis para utilizações específicas. Também é útil ter um bom entendimento das principais estruturas de dados e algoritmos para criar soluções eficientes.
+Salve este código como `index.php` e execute-o num servidor PHP. Você vai ver "Olá, mundo!" na página.
 
-## Veja também:
-Para mais informações sobre como iniciar um novo projeto em PHP, confira os seguintes links: 
+## Mergulho Profundo
 
-- [Site oficial do PHP](https://www.php.net/)
-- [Documentação oficial do PHP](https://www.php.net/manual/pt_BR/intro-whatis.php)
-- [Curso de PHP do Codecademy](https://www.codecademy.com/learn/learn-php)
-- [Curso de Fundamentos do PHP da Udemy](https://www.udemy.com/course/php-fundamentos/?persist_locale=&pmtag=&utm_source=adwords&utm_campaign=Long-tail_br_only&utm_medium=udemyads&utm_term=_._ag_58974899833_._ad_591465942827_._kw_%2Bphp%20%2Bcurso%20%2Bfundamentos_._de_c_._dm__._pl__._ti_kwd-390968633880_._li_1031165_._pd__._&matchtype=b&gclid=CjwKCAjw42XpBRAQEiwAuA9E3__4Gc5GTvlu8879wmp7dSzqn9OsElNnbelgPvPlYxMeQF5zDN9NmhoCaBgQAvD_BwE)
+Iniciar um novo projeto não é a única forma de criar programas. Pode-se optar por usar os frameworks de PHP como Laravel ou Symfony que oferecem estrutura definida e várias funcionalidades predefinidas. No entanto, começar do zero dá mais controle e flexibilidade ao programador.
+
+A versão atual do PHP, a 7.4, surgiu a partir de 1995 por Rasmus Lerdorf, mas foi muito aprimorada desde então. E na era moderna, a maioria dos projetos PHP começa com o Composer, um gerenciador de dependências para PHP. 
+
+## Veja Também
+
+1. A documentação oficial do PHP - [https://www.php.net/manual/pt_BR/](https://www.php.net/manual/pt_BR/)
+2. Um tutorial básico do PHP - [https://www.w3schools.com/php/](https://www.w3schools.com/php/)
+3. Mais sobre o Composer - [https://getcomposer.org/doc/00-intro.md](https://getcomposer.org/doc/00-intro.md)
+4. Laravel, um framework popular PHP - [https://laravel.com/](https://laravel.com/)
+5. Symfony, outra opção de framework PHP - [https://symfony.com/](https://symfony.com/)

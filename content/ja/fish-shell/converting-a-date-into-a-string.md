@@ -1,6 +1,6 @@
 ---
 title:                "日付を文字列に変換する"
-html_title:           "Fish Shell: 日付を文字列に変換する"
+html_title:           "C++: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+## 何となぜ?
 
-日付を文字列に変換することは、プログラマーが日付をコンピュータで取り扱うための方法です。日付を文字列に変換することで、表示や処理が容易になります。
+日付を文字列に変換することは何か？これはプログラムが日付Dataを文字列形式に変えるという手続きです。プログラマはなぜこれを行うのでしょうか？それは日付データを人間が読める形、または特定のフォーマットに従うためです。
 
-## How to:
+## どうやって:
 
-```Fish Shell``` のコードブロック内には、日付を文字列に変換するためのコーディング例と出力結果があります。
+次のFish Shellコマンドは現在の日付を"YYYY-MM-DD"フォーマットの文字列に変換します。
 
+```Fish Shell
+date "+%Y-%m-%d"
 ```
-set -l today (date +%m/%d/%Y)
-
-echo $today
-
-Output: 05/24/2021
+これを実行すると、次のような出力が得られます:
+```Fish Shell
+2023-09-15
 ```
 
-```Fish Shell``` では、```date``` コマンドを使用して日付情報を取得し、```+%m/%d/%Y``` の形式で日付を文字列に変換します。変数 ```today``` に代入された日付は、```echo``` コマンドを使用して表示されます。
+## ディープダイブ:
 
-## Deep Dive
+### 歴史的な背景:
+言語ごとに日付を文字列に変換する方法は異なりますが、元々のUnix時間（1970年1月1日からの秒数）が日常生活の日付時間表現に変換される方法は同じです。
 
-日付を文字列に変換する方法は、コンピュータの利用が一般化する前から存在し、ほとんどのプログラミング言語で標準的な機能として提供されています。代表的な形式としては、年・月・日の順に並べるYYYYMMDDや、月・日・年の順に並べるMMDDYYYYがあります。また、日付を文字列に限らず、数値やISOフォーマットにも変換することができます。
+### 代替案:
+Pythonなどの他のプログラミング言語では、次のように日付を文字列に変換することができます。
 
-日付を文字列に変換する方法として、他にもグリニッジ標準時や協定世界時などの国際的な規格が存在します。これらの規格は、異なるタイムゾーンや夏時間の取り扱いなど、日付を正確に表すためのものです。プログラマーは、それぞれの規格に応じて適切な形式で日付を文字列に変換する必要があります。
+```Python
+import datetime
+print(datetime.date.today().strftime("%Y-%m-%d"))
+```
 
-日付を文字列に変換する方法は様々ありますが、```Fish Shell```ではデフォルトで```date``` コマンドを使用することで簡単に実装することができます。また、PythonやJavaなどのプログラミング言語でも同様の変換を行うことができ、さらに多様なオプションを提供しています。
+### 実装の詳細:
+Fish Shellでは、`date` コマンドを使って日付を文字列に変換します。"+%Y-%m-%d"は出力形式を制御します。
 
-## See Also
+## 参考文献:
 
-- [Fish Shell Documentations](https://fishshell.com/docs/current/index.html)
-- [ISO 8601 Standard for Date and Time Representations](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [Python Date Formatting](https://docs.python.org/3/library/datetime.html)
+以下は関連するリソースへのリンクです:
+1. [Fish Shell 公式文書](https://fishshell.com/docs/current/commands.html#date)
+2. [Fish Shell スクリプトチュートリアル](https://fishshell.com/docs/current/tutorial.html)
+3. [UNIX の date コマンド](http://man7.org/linux/man-pages/man1/date.1.html)
+4. [Python 公式ドキュメンテーションDateオブジェクト](https://docs.python.org/ja/3/library/datetime.html)

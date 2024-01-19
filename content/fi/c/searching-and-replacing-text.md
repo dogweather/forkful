@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin etsiminen ja vaihtaminen"
-html_title:           "C: Tekstin etsiminen ja vaihtaminen"
-simple_title:         "Tekstin etsiminen ja vaihtaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,45 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Hakeminen ja tekstikorvaaminen ovat yleisiä ohjelmointitehtäviä, joissa muokataan tekstiä ohjelmakoodissa. Tämä tehdään yleensä virheiden korjaamiseksi tai halutun toiminnallisuuden toteuttamiseksi.
+Tekstin etsiminen ja korvaaminen on prosessi, jossa voit paikallistaa määritetyn merkkijonon tai mallin ja korvata sen toisella merkkijonolla. Ohjelmoijat tekevät sen tehdäkseen koodistaan helpommin ylläpidettävän ja enhän tietokoneen suorituskykyä.
 
-## Kuinka:
+## Miten tehdä:
 
-Etsiessä ja korvatessa tekstiä C-koodissa, voit käyttää apuna esimerkiksi sisäänrakennettua funktiota `strstr`, joka etsii annetusta merkkijonosta toisen merkkijonon esiintymän ja palauttaa osoittimen kyseiseen kohtaan. Tämän avulla voit sitten korvata halutun tekstin uudella tekstillä käyttämällä esimerkiksi `strcpy`-funktiota.
+Alla on esimerkki merkkijonon etsimisestä ja korvaamisesta C-ohjelmoinnissa.
 
 ```C
 #include <stdio.h>
-#include <string.h>
 
-int main()
-{
-  char sana[20];
-  char korvaava[20];
-  char *osoitin;
-  
-  strcpy(sana, "Tämä on testi");
-  strcpy(korvaava, "esimerkki");
-  
-  osoitin = strstr(sana, "testi");
-  if (osoitin != NULL)
-  {
-    strcpy(osoitin, korvaava);
-  }
-  
-  printf("%s", sana); // Tulostaa "Tämä on esimerkki"
-  
-  return 0;
+void replaceChar(char* s, char oldChar, char newChar) {
+   for (int i = 0; s[i] != '\0'; ++i) {
+      if (s[i] == oldChar) {
+         s[i] = newChar;
+      }
+   }
+}
+
+int main() {
+   char str[] = "Hei maailma";
+   printf("Ennen: %s\n", str);
+
+   replaceChar(str, 'a', 'e');
+   printf("Jälkeen: %s\n", str);
+
+   return 0;
 }
 ```
 
-## Syvempää tietoa:
+Tulostus:
 
-Hakeminen ja tekstinkorvaaminen ovat olleet osa ohjelmointia jo pitkään, ja on olemassa monia muitakin tapoja suorittaa näitä tehtäviä. Esimerkiksi `sed`-työkalu Unix-ympäristöissä on suosittu tekstinkäsittelyyn tarkoitettu ohjelma, joka tarjoaa monipuolisia toimintoja tekstien etsimiseen ja korvaamiseen.
+```C
+Ennen: Hei maailma
+Jälkeen: Hei meeilme
+```
 
-Etsimisprosessissa voidaan myös hyödyntää erilaisia algoritmeja, kuten Boyer-Moore-algoritmia, jotka pyrkivät tehostamaan hakutoimintoa erityisesti suurissa tekstimassoissa.
+## Sukellus syvälle
 
-## Katso myös:
+Tekstinhaku- ja korvaustoiminnot ovat olleet tietojenkäsittelyn peruselementtejä yli puoli vuosisataa ja niitä käytetään monissa yhteyksissä, kuten tietokoneen ohjeistoissa, tietojenkäsittelytehtävissä ja verkkohauissa. Vaihtoehtoisia menetelmiä tämän toiminnallisuuden toteuttamiseksi ovat muun muassa säännöllisten lausekkeiden käyttö tai tehokkaammat datastruktuurit, kuten trie tai aho-corasick automaatti. Tekstin etsinnän ja korvaamisen toteutus riippuu suuresti ohjelmoijan tarpeista, valituista työvälineistä ja käytettävissä olevista resursseista.
 
-Voit lukea lisää hakemisesta ja korvaamisesta C-koodissa täältä: [https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
+## Katso myös
+
+- "Mastering Algorithms with C" by Kyle Loudon 
+- ["Working with Strings in C"](https://developer.ibm.com/technologies/systems/tutorials/au-cstring/) by IBM Developer
+- [The GNU C Library](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html) for more on string manipulation.

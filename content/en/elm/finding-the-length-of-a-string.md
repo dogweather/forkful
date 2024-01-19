@@ -1,6 +1,6 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "Elm recipe: Finding the length of a string"
+html_title:           "Arduino recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,29 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Finding the length of a string is a common task in programming, especially when dealing with user input or manipulating text data. It simply means calculating the number of characters in a string. This is important because it allows programmers to perform operations like slicing and indexing on strings.
+Finding the length of a string involves counting the number of characters in a string. Programmers do this to control text display, limit input, and manage data inside of string variables.
 
 ## How to:
 
-To find the length of a string in Elm, we can use the `String.length` function. This function takes in a string as its argument and returns the number of characters in the string. Here's an example of using the function:
+Here's how you find the length of a string in Elm:
 
 ```Elm
-myString = "Hello World"
-stringLength = String.length myString
+import String
+
+main =
+  String.length "Hello, World!"
 ```
 
-The variable `stringLength` will now hold the value `11`, which is the length of the string "Hello World".
+After you run this program, it will return `13`, which is the length of the string "Hello, World!".
 
-## Deep Dive:
+## Deep Dive
 
-The concept of finding the length of a string may seem trivial, but it has a rich history in computer science. The most commonly used algorithm for string length calculation is the `strlen` function in the C programming language, which traverses the entire string and counts the number of characters until it reaches a null terminator. In Elm, this is achieved through the use of Unicode codepoints to handle multi-byte characters.
+The `String.length` operation in Elm, despite its simplicity, has a meaningful history and offers alternatives.
 
-There are also other ways to find the length of a string, such as using regular expressions or calculating the length based on the number of bytes. However, these methods may not always be accurate or efficient.
+1. **Historical context**: Elm is unique because it's a frontend language that carries immutable data and pure functions, with likely comparison being Haskell. The concept of string length is common in any language but how it is implemented in Elm reveals the functional programming beauty. 
+
+2. **Alternatives**: In Elm, you won’t find many alternatives to `String.length` due to the principle of simplicity the language follows. However, writing custom function is theoretically possible, though likely unneeded due to the simple and efficient solution already available.
+
+3. **Implementation**: Elm’s `String.length` function is an O(1) operation, meaning it’s incredibly efficient. When working with larger, more complicated programs, `String.length` won't hold you back in terms of performance.
 
 ## See Also:
 
-To learn more about strings in Elm, you can check out the official Elm Guide on strings: https://guide.elm-lang.org/strings/.
+For further reading and examples, refer to these sources:
 
-You may also be interested in exploring other string manipulation functions in Elm, such as `String.slice` and `String.index`, which allow you to extract specific parts of a string.
-
-That's it for finding the length of a string in Elm. Happy coding!
+- [Elm's Official String Guide](https://package.elm-lang.org/packages/elm/core/latest/String#length): The definitive source on strings in Elm, including `String.length`.
+- [Elm Exercises](https://elmprogramming.com/strings.html): This page provides additional practical examples involving strings.
+- [Elm's Style Guide](https://elm-lang.org/docs/style-guide): If you want to write clean, idiomatic Elm code, this guide is the gold standard.
+- [Elm's Syntax Guide](https://elm-lang.org/docs/syntax): A comprehensive overview of Elm's syntax and core language constructs, including string manipulations.

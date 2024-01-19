@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "Java: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Gleam: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,26 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-En regelbunden uttryck, även känt som reguljära uttryck eller regex, är ett kraftfullt verktyg inom programmering som hjälper till att matcha och manipulera textsträngar. Det används för att söka efter specifika mönster i en text eller för att ersätta delar av en text med annat innehåll. Många programmerare använder regelbundna uttryck för att effektivt bearbeta och manipulera data i sina program.
+Reguljära uttryck, eller regex, är starka verktyg för att matcha, hitta och manipulera strängar i Java. Programmers använder dem för att effektivisera och förenkla textbearbetning och dataextraktion.
 
-## Hur man:
-Med hjälp av Java's inbyggda Regex API kan man enkelt implementera regelbundna uttryck i sina Java-program. Här är ett exempel på hur man kan använda en regelbunden uttryck för att hitta alla ord som börjar med bokstaven "a" i en textsträng:
+## Hur man gör:
+Att arbeta med regex i Java är relativt enkelt. Här är några exempel:
 
 ```Java
-String text = "Jag älskar att äta äpple och apelsin!";
-Pattern pattern = Pattern.compile("a\\w+");
-Matcher matcher = pattern.matcher(text);
-while (matcher.find()) {
-    System.out.println(matcher.group());
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // Skapa ett mönster att matcha emot
+        Pattern pattern = Pattern.compile("hej");
+        // Skapa en matchare med mönstret
+        Matcher matcher = pattern.matcher("hej där");
+
+        // Kontrollera om mönstret matchar
+        boolean matchFound = matcher.find();
+        System.out.println(matchFound); // Skriver ut 'true' eftersom "hej" finns i "hej där"
+    }
 }
 ```
-Output:
-```Älskar, äta, äpple, apelsin```
 
-## Djupdykning:
-Regelbundna uttryck har funnits sedan 1950-talet och användes ursprungligen inom teori för formella språk och datorvetenskap. Idag används de i många programmeringsspråk för att effektivt hantera strängar. Alternativ till regelbundna uttryck inkluderar användning av inbyggda strängfunktioner eller externa bibliotek. När man använder regelbundna uttryck är det viktigt att ha rätt syntax och att vara medveten om eventuella prestandaproblem. Det finns många online-resurser för att lära sig mer om regelbundna uttryck och hur man använder dem effektivt.
+## Djupdykning
+Reguljära uttryck härstammar från teoretisk datavetenskap, men har blivit väsentliga verktyg för praktisk kodning. Alternativ till regex i Java inkluderar String-klassens metoder som `contains()`, `startsWith()`, osv. Men dessa metoder tillåter inte komplexa matchningskrav som regex gör. Regex i Java implementeras via java.util.regex-biblioteket som innehåller `Pattern`- och `Matcher`-klasserna.
 
-## Se också:
-- Java's Regex API: https://docs.oracle.com/javase/8/docs/api/java/util/regex/RegexPattern.html
-- En online regex-testare: https://regex101.com/
-- Regex Cheat Sheet för Java: https://www.rexegg.com/regex-java.html
+## Se också
+Följande resurser erbjuder mer detaljerade insikter om regex och dess användning i Java:
+1. [Java Docs: Class Pattern](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/regex/Pattern.html)
+2. [Java Docs: Class Matcher](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/regex/Matcher.html)
+3. [RegExr: Learn, Build, & Test RegEx](https://regexr.com/)

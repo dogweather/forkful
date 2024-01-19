@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenfolge interpolieren"
-html_title:           "Java: Eine Zeichenfolge interpolieren"
-simple_title:         "Eine Zeichenfolge interpolieren"
+title:                "Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
+simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und warum?
+# Java-String-Interpolation: Ein schneller Leitfaden
 
-Beim Programmieren bedeutet das Interpolieren einer Zeichenfolge, Teile der Zeichenfolge dynamisch durch Werte oder Variablen zu ersetzen. Dies ist nützlich, um eine Zeichenfolge an bestimmten Punkten anzupassen oder Daten in die Ausgabe einzufügen.
+## Was & Warum?
 
-## Wie geht's?
+String-Interpolation ist der Prozess, Variablen oder Ausdrücke in einen String einzufügen. Es ist nützlich, um dynamische Strings auf einfache und leserliche Weise zu erstellen.
 
-In Java kann das Interpolieren einer Zeichenfolge auf verschiedene Arten erreicht werden. Eine Möglichkeit ist die Verwendung der "String.format ()" -Methode. Zum Beispiel:
+## So Geht's
 
-```
-String name = "Anna";
-String message = String.format("Willkommen %s!", name);
-System.out.println(message);
-```
-Die Ausgabe wäre: "Willkommen Anna!"
+In Java gibt es keine eingebaute String-Interpolation, aber wir können die `String.format` Methode oder `Printf` Methode verwenden. 
 
-Alternativ können Sie auch die "+" -Operator-Methode verwenden:
-
-```
-String name = "Anna";
-String message = "Willkommen " + name + "!";
-System.out.println(message);
+```Java
+String name = "World";
+String greeting = String.format("Hello, %s!", name);
+System.out.println(greeting); // Output: Hello, World!
 ```
 
-In beiden Fällen wird die Variable "name" in die Ausgabe eingesetzt und die Zeichenfolge angepasst.
+```Java
+String name = "World";
+System.out.printf("Hello, %s!\n", name); // Output: Hello, World!
+```
 
-## Tiefere Einblicke
+## Vertiefung
 
-Das Interpolieren von Zeichenfolgen wurde erstmals in der Programmiersprache Perl eingeführt und ist seitdem in vielen anderen Sprachen wie Java, Python und Ruby verfügbar. Eine Alternative zum Interpolieren von Zeichenfolgen ist die Verwendung von Konkatenation, bei der Zeichenfolgen und Variablen mit dem "+" -Operator verbunden werden.
+Obwohl String-Interpolation in vielen Programmiersprachen eingebaut ist, ist sie in Java nicht direkt verfügbar. Die Methode `String.format` existiert jedoch seit Java 1.5 als Alternative.
 
-Technisch gesehen verwendet Java die "String.format ()" -Methode intern die "StringBuffer" -Klasse, um die Zeichenfolge zu erstellen und zu manipulieren.
+Die `String.format` und `printf` Methoden basieren auf der gleichen grundlegenden Funktionalität wie in der Sprache C.
 
-## Siehe auch
+Für komplexere Szenarien könnten Sie auch externe Bibliotheken wie Apache Commons Lang's `StrSubstitutor` oder Google's Guava verwenden.
 
-- [Java String.format () Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-)
-- [Artikel über die Verwendung der "+ =" -Operator-Methode für die Zeichenfolgenkonkatenation in Java](https://www.baeldung.com/java-concatenation)
+## Siehe Auch
+
+1. [Oracle's Java Dokumentation für String](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html)
+2. [Apache Commons Lang](https://commons.apache.org/proper/commons-lang/)
+3. [Google's Guava Github Repository](https://github.com/google/guava)

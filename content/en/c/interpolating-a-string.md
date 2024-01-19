@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "C recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "C"
 category:             "C"
@@ -11,35 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Interpolating a string in C is the process of inserting variable values or expressions into a string at runtime. This can be useful for creating dynamic or customizable output. Programmers often use string interpolation to simplify the process of creating strings with variables, making their code more efficient and readable.
+
+String interpolation is the process of substituting values of variables into placeholders in a string. Programmers do this to construct dynamic strings efficiently.
 
 ## How to:
-In C, we can use the `printf()` function to interpolate strings by using the `%` modifier and specifying the corresponding variable or expression after the string. For example:
+
+In C, you can use sprintf function or printf function to achieve string interpolation. Here's a simple example using sprintf:
 
 ```C
-int age = 25;
-printf("I am %d years old.", age);
+#include <stdio.h> 
+
+int main() 
+{ 
+    char buffer[50]; 
+    int a = 10, b = 20; 
+
+    sprintf(buffer, "Sum of %d and %d is %d", a, b, a+b); 
+  
+    printf("%s", buffer); 
+  
+    return 0; 
+} 
 ```
+This would output: `Sum of 10 and 20 is 30`.
 
-This would output: `I am 25 years old.`
-
-We can also interpolate multiple variables or expressions within the same string by repeating the `%` modifier and corresponding values. For example:
+You can use the printf function in a similar way:
 
 ```C
-int height = 175;
-char* unit = "cm";
-printf("I am %d %s tall.", height, unit);
+#include <stdio.h> 
+
+int main() 
+{ 
+    int a = 10, b = 20; 
+    printf("Sum of %d and %d is %d", a, b, a+b); 
+  
+    return 0; 
+}
 ```
+Again, this would output: `Sum of 10 and 20 is 30`.
 
-This would output: `I am 175 cm tall.`
+## Deep Dive
 
-## Deep Dive:
-String interpolation has been a common feature in many programming languages, including C, since the early days of computing. It simplifies the process of creating strings with variables, making it easier for programmers to manipulate strings without having to concatenate different parts.
+Historically, C doesn't support string interpolation like modern languages such as Python, JS, or Swift. You have to use functions like sprintf or printf to mimic that behavior which is rather cumbersome.
 
-Alternatives to string interpolation in C include using the `sprintf()` function, which allows for the formatting of strings with variables or expressions, but requires the use of temporary buffers.
+As an alternative, you might consider using C++ with its powerful string manipulation methods, or a C extension like Objective-C that supports string interpolation with NSString class.
 
-In terms of implementation, string interpolation in C works by using a combination of the `printf()` function and the `scanf()` function. While `printf()` allows for outputting strings with variables, `scanf()` allows for reading input and storing it in variables. These two functions work together to achieve string interpolation.
+Technically, when you do string interpolation in C using sprintf or printf, it's formatting the string and printing it or storing it to a character array. Under the hood, these functions use variable argument lists (varargs) to accept any number of arguments after the format.
 
-## See Also:
-- [String Interpolation in C++](https://www.programiz.com/cpp-programming/string-interpolation)
-- [String Formatting in C](https://www.geeksforgeeks.org/format-specifiers-in-c/)
+## See Also
+
+For a deeper understanding, you may go through the following references:
+1. [What is string Interpolation? - Stackoverflow](https://stackoverflow.com/questions/24538302/what-is-string-interpolation)
+2. [C Programming/stdio.h/printf - Wikibooks](https://en.wikibooks.org/wiki/C_Programming/stdio.h/printf)
+3. [Variable arguments in C - Cprogramming.com](https://www.cprogramming.com/tutorial/c/lesson17.html)

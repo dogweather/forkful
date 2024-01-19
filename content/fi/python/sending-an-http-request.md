@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämällä http-kysely"
-html_title:           "Python: Lähettämällä http-kysely"
-simple_title:         "Lähettämällä http-kysely"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,21 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miten & Miksi?
-Lähes jokainen verkkosivusto ja sovellus tarvitsee tietoa palvelimiltaan jotta se voi toimia oikein. Tämä tieto haetaan lähettämällä HTTP-pyyntöjä, jotka ovat viestejä palvelimille. Ohjelmoijat käyttävät HTTP-pyyntöjä kommunikoidakseen palvelimien kanssa ja saadakseen haluamansa tiedot.
+## Mikä se on & Miksi?
+HTTP-pyynnön lähettäminen tarkoittaa tiedonpyynnön tarjoamista palvelimelle, jotta tämä toimittaa tietoja selaimeen. Ohjelmoijat tekevät tämän kommunikoidakseen verkkopalvelinten kanssa ja hakea tai lähetä tietoa.
 
-## Miten:
-Pythonilla on helppo lähettää HTTP-pyyntöjä käyttäen valmiita kirjastoja, kuten requests. Voit lähettää GET-pyynnön esimerkiksi seuraavalla koodilla:
+## Näin teet:
+Pythonin requests-kirjasto tekee HTTP-pyyntöjen lähettämisestä helppoa. Tarkastele alla olevaa koodia:
+
 ```Python
 import requests
-response = requests.get('https://example.com')
-print(response.status_code)
-```
-Tämä koodi lähettää GET-pyynnön sivustolle "https://example.com" ja tulostaa vastauksen statuskoodin, joka kertoo pyynnön onnistumisesta.
 
-## Syvemmälle:
-HTTP-pyyntöjen historia juontaa juurensa takaisin vuoteen 1991, kun Tim Berners-Lee kehitti HTTP-protokollan. Tänä päivänä on olemassa muitakin vaihtoehtoja HTTP:lle, kuten HTTPS, joka käyttää salausta tietoturvan parantamiseksi. Lisäksi Pythonilla on muitakin kirjastoja, kuten urllib, joilla voi lähettää HTTP-pyyntöjä.
+# GET-pyyntö
+response = requests.get("https://jsonplaceholder.typicode.com/posts")
+
+# Tulosta vastaus
+print(response.text)
+```
+Kun suoritat tämän koodin, saat JSON-muodossa olevan vastauksen.
+
+## Syvempi sukellus
+HTTP-pyynnön lähettäminen juontaa juurensa HTML-kielen ja internetin alkumetreiltä. Se on tärkeä osa "asiakas-palvelin"-mallin ymmärtämistä. 
+
+Vaikka Pythonin `requests`-kirjasto on suosittu, on myös muita tapoja lähettää HTTP-pyyntöjä. Esimerkiksi `http.client`-moduuli tarjoaa alhaisemman tason käyttöliittymän, joka saattaa olla hyödyllinen erityistapauksissa.
+
+On hyvä ymmärtää, että HTTP-pyyntö voi sisältää useita osia: menetelmän (GET, POST, jne.), URL:n, otsakkeita ja joissakin tapauksissa tietojenkäsittelyn (kuten JSON).
 
 ## Katso myös:
-Voit lukea lisää HTTP-pyyntöjen lähettämisestä Pythonilla täältä: https://docs.python-requests.org/en/master/user/quickstart/
-Löydät myös tietoa urllib-kirjastosta täältä: https://docs.python.org/3/library/urllib.html
+Seuraavista lähteistä saat lisätietoa:
+- Python requests -kirjaston dokumentaatio: https://requests.readthedocs.io/
+- HTTP:n yleinen johdatus: https://developer.mozilla.org/fi/docs/Web/HTTP/Overview
+- Pythonin http.client-moduulin dokumentaatio: https://docs.python.org/3/library/http.client.html

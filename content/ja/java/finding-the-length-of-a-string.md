@@ -1,6 +1,6 @@
 ---
 title:                "文字列の長さを見つける"
-html_title:           "Java: 文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Java"
 category:             "Java"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が & なぜ？
+## 何となぜ？
+文字列の長さを見つけるとは、文字列が何文字かを数えることです。それは、文字列の終わりを判定したり、バッファの大きさを設定したりする際にプログラマーが行う作業です。
 
-文字列の長さを見つけることは、プログラマーにとって非常に重要です。文字列の長さを知ることで、後続の処理を決めることができます。また、文字列の長さは、プログラムのユーザーにとっても重要な情報です。
-
-## 方法：
-
+## どうやって：
+こんなに簡単にできます：
 ```Java
-// 文字列の長さを表示する方法
-public static void main(String[] args) {
-    String str = "Hello, World!"; // 表示したい文字列を設定
-    int len = str.length(); // length() メソッドを使用して長さを取得
-    System.out.println("The length of the string is: " + len); // 結果を出力
+public class Main {
+    public static void main(String[] args) {
+        String str = "Programming in Java";
+        System.out.println("The length of the string is: " + str.length());
+    }
 }
-
-// 出力結果：
-// The length of the string is: 13
 ```
+このコードを実行すると、以下のような結果が表示されます。
+```
+The length of the string is: 19
+```
+文字列"Programming in Java"は19文字ですと表示されます。
 
-## 詳細情報：
+## 深掘り：
+文字列の長さを見つけるためのメソッドは、Javaが最初にリリースされた1995年から存在します。文字列クラス的にはこれが最も基本的な操作です。
+言語によっては、文字列の長さを格納するメモリ領域を持つものもありますが、Javaでは毎回計算する方式がとられています。`strlen`というC言語の関数に相当します。
 
-(1) 歴史的背景: 文字列の長さを見つける方法は、プログラミング言語の発展とともに変化してきました。最初はプログラマー自身が手動で文字列の長さを数えていましたが、今では多くの言語で組み込みのメソッドが提供されています。
+また、Javaでは`.length()`メソッドの他にも`.isEmpty()`メソッドを使って文字列が空であるかどうかを確認することもできます。
 
-(2) 代替手段: Java以外の言語でも文字列の長さを見つける方法はありますが、それぞれ異なる文法や方法が使われます。また、正規表現を使用することもできますが、それよりも簡単な方法がJavaでは提供されているため、一般的に使われません。
-
-(3) 実装の詳細: Javaでは、Stringクラスに含まれるlength()メソッドを使用して文字列の長さを取得することができます。これは文字列の最初の文字から末尾までの文字数を数えるため、空白文字や特殊文字も含まれます。また、Javaでは文字列の長さを求めるためのループやカウンターを使用する必要はありません。
-
-## 関連リンク：
-
-- [Stringクラスの公式ドキュメント (英語)](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [Javaでの文字列操作についてのチュートリアル (日本語)](https://www.javadrive.jp/start/string/index1.html)
+## 参考文献：
+1. [Oracle Java Documentation on String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+2. [Wikipedia Article on Java's String class](https://en.wikipedia.org/wiki/Java_performance)

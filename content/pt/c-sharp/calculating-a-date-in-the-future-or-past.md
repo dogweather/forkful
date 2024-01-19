@@ -1,7 +1,7 @@
 ---
-title:                "Calculando uma data no futuro ou passado"
-html_title:           "C#: Calculando uma data no futuro ou passado"
-simple_title:         "Calculando uma data no futuro ou passado"
+title:                "Calculando uma data no futuro ou no passado"
+html_title:           "C#: Calculando uma data no futuro ou no passado"
+simple_title:         "Calculando uma data no futuro ou no passado"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-
-Calcular uma data no futuro ou no passado é uma tarefa comum na programação. Isso envolve a manipulação de datas e cálculos para determinar uma nova data baseada em uma data existente. Os programadores geralmente precisam fazer isso para automatizar tarefas, como agendar eventos, gerar relatórios com dados de datas específicas e muitos outros casos.
+## O quê & Por quê?
+Calcular uma data futura ou passada refere-se ao cálculo do dia, mês e ano após ou antes de um período de tempo especificado a partir da data atual. Programadores fazem isso para projetos que requeiram automatização de funções dependentes de datas, como renovação de contratos, envio de lembretes, entre outros.
 
 ## Como fazer:
-
+Para calcular uma data futura ou passada, você pode usar o método `AddDays()`. Por exemplo:
 ```C#
-// Calcular uma data no futuro
-DateTime dataAtual = DateTime.Today;
-DateTime dataFutura = dataAtual.AddDays(30);
+ using System;
 
-Console.WriteLine("A data atual é {0}", dataAtual);
-Console.WriteLine("A data no futuro é {0}", dataFutura);
-
-// Calcular uma data no passado
-DateTime dataAtual = DateTime.Today;
-DateTime dataPassada = dataAtual.AddYears(-5);
-
-Console.WriteLine("A data atual é {0}", dataAtual);
-Console.WriteLine("A data no passado é {0}", dataPassada);
+public class Program
+{
+    public static void Main()
+    {
+        DateTime dataAtual = DateTime.Now;
+        Console.WriteLine("Data Atual: " + dataAtual);
+        
+        DateTime dataFutura = dataAtual.AddDays(7);
+        Console.WriteLine("Data Futura: " + dataFutura);
+        
+        DateTime dataPassada = dataAtual.AddDays(-7);
+        Console.WriteLine("Data Passada: " + dataPassada);
+    }
+}
 ```
-
-Saída:
+No código acima, `AddDays(7)` adiciona 7 dias à data atual, e `AddDays(-7)` remove 7 dias da data atual. A saída do código será:
+```C#
+Data Atual: 25/09/2021 18:00:00
+Data Futura: 02/10/2021 18:00:00
+Data Passada: 18/09/2021 18:00:00
 ```
-A data atual é 15/05/2021
-A data no futuro é 14/06/2021
+## Mergulho Profundo
+Historicamente, os programadores precisavam calcular datas futuras e passadas manualmente, considerando anos bissextos, quantidade de dias em cada mês, etc. Mas, linguagens modernas como C# oferecem funções prontas para este propósito.
 
-A data atual é 15/05/2021
-A data no passado é 15/05/2016
-```
+Existem outras alternativas para calcular datas futuras e passadas, como os métodos `AddHours()`, `AddMonths()`, etc.
 
-## Profundando:
+Em relação aos detalhes de implementação, o método `AddDays()` trata do ano bissexto automaticamente. Ele também adiciona as horas, minutos, segundos e milésimos de segundo da data e hora atuais à nova data/hora.
 
-A necessidade de calcular datas no futuro ou no passado surgiu com o desenvolvimento dos primeiros calendários, onde era necessário determinar datas específicas para eventos e atividades. Com o avanço da tecnologia, surgiram diversas formas de fazer esses cálculos, como a adição ou subtração de dias, meses ou anos em uma data. Além disso, existem também bibliotecas e frameworks que facilitam esse processo, como o Noda Time e o Moment JS.
-
-## Veja também:
-
-- [Documentação oficial do C# sobre a classe DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [Noda Time - Biblioteca para manipulação de datas em .NET](https://nodatime.org/)
-- [Moment JS - Biblioteca para manipulação de datas em JavaScript](https://momentjs.com/)
+## Veja também
+Para detalhes adicionais e exemplos, você pode consultar as referências abaixo:
+- [Documentação do Microsoft .Net](https://docs.microsoft.com/pt-br/dotnet/api/system.datetime.adddays?view=net-5.0)
+- [Tutorial de DateTime no C#](https://www.tutorialsteacher.com/csharp/csharp-datetime)
+- [Artigo Stackoverflow sobre datetime manipulation](https://stackoverflow.com/questions/3786616/how-to-deal-with-datetime-manipulation-in-c-sharp)

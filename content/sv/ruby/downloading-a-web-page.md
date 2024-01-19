@@ -1,7 +1,7 @@
 ---
-title:                "Nedladdning av en webbsida"
-html_title:           "Ruby: Nedladdning av en webbsida"
-simple_title:         "Nedladdning av en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
+simple_title:         "Ladda ner en webbsida"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,35 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## Vad och varför?
+Att hämta en webbsida innebär att man hämtar data från en webbsida till ens egen dator. Detta är viktigt för programmerare eftersom det tillåter dem att manipulera, analysera eller modifiera den data som är tillgänglig på sidan.
 
-Att ladda ner en webbsida innebär att hämta all kod och innehåll från en specifik webbadress och spara det på vår dator. Det kan vara användbart för programmerare som behöver arbeta med innehållet på en sida eller analysera dess struktur.
-
-## Så här:
-
-För att ladda ner en webbsida i Ruby använder vi biblioteket "Net::HTTP". Här är ett exempel på hur man hämtar innehållet från en specifik URL:
+## Hur man gör:
+För att hämta en webbsida i Ruby, kan du använda 'Net::HTTP'-biblioteket vilket ingår i Ruby's standardbibliotek. Här är ett enkelt exempel:
 
 ```Ruby
 require 'net/http'
-
-url = URI('https://www.example.com')
-response = Net::HTTP.get(url)
-puts response
+  
+url = URI('http://example.com')
+response = Net::HTTP.get_response(url)
+puts response.body
 ```
 
-Detta kodblock kommer att skriva ut allt innehåll från webbadressen i konsolen.
+När du kör den här koden, kommer du att se webbsidans HTML-struktur i din terminal.
 
-## Djupdykning:
+## Djupdykning
+Förmågan att hämta en webbsida i ett programmeringsspråk går tillbaka till de tidiga dagarna av Internet, när webbläsare var praktiskt taget icke-existerande och all interaction med webben skedde via kommandoraden.
 
-Att ladda ner en webbsida är en grundläggande funktion inom webbutveckling. Det är en viktig del av webbautomatisering och dataextrahering. Istället för att manuellt gå till en webbadress och kopiera och klistra in innehållet, kan vi använda kod för att snabbt hämta allt innehåll vi behöver.
+Modern Ruby erbjuder flera alternativ för att hämta en webbsida. Förutom 'Net::HTTP', finns det andra bibliotek som 'Open-URI' och 'Faraday' som erbjuder mer avancerade funktioner.
 
-Ett alternativ till att ladda ner en webbsida i Ruby är att använda "open-uri" biblioteket, vilket har en enklare syntax. Men om vi behöver mer kontroll över hämtningsprocessen och vill hantera fel och redirects, är "Net::HTTP" det bästa valet.
+När det kommer till implementationen går Net::HTTP först igenom DNS-uppslaget, initierar en TCP-anslutning till servern och skickar sedan en HTTP-begäran. Svaret returneras som ett 'Net::HTTPResponse'-objekt som du kan använda för att manipulera data vid behov.
 
-När vi använder "Net::HTTP" får vi mer detaljerad information om hämtningsprocessen, inklusive eventuella felkoder och headers för webbförfrågningar och svar.
+## Se också
+För mer information om att hämta en webbsida i Ruby, se följande resurser:
 
-## Se även:
-
-Här är länkar till dokumentationen för "Net::HTTP" och "open-uri" biblioteken för mer information och exempel på användning:
-
-- [Net::HTTP](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
-- [OpenURI](https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html)
+1. [Net::HTTP Dokumentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+2. [Open-URI Dokumentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html)
+3. [Faraday införande](https://lostisland.github.io/faraday/)
+4. [Web Scraping med Ruby](https://coderwall.com/p/ek0pqg/web-scraping-in-ruby)

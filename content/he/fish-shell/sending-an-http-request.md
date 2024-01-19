@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "Fish Shell: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,26 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+שליחת בקשת HTTP היא התנהלות מרכזית בעבודת המפתחים של היום, מאפשרת תקשורת ביננו לבין השרת. מתכנתים בוצעים שליחת בקשת HTTP כדי לקבל מידע, לעדכן, למחוק או ליצור משאבים בשרת.
 
-שליחת בקשת HTTP היא פעולה שנעשית בתוך קוד תוכנה ומאפשרת לפנות לשרת מרחוק כדי לקבל או לשלוח מידע. תכניותנים משתמשים בפעולה זו כדי לעבד נתונים, לקבל מידע מאינטרנט או לשלוח נתונים לשירותים חיצוניים.
+## איך עושים?
+כאן יש דוגמה לאיך משלחים בקשת HTTP מתוך סקריפט Fish Shell:
 
-## כיצד לבצע:
+```fish
 
-דוגמאות קוד ופלט יופיעו בתוך בלוקי קוד `` `Fish Shell ... ```. נוכל להשתמש בפקודת ```curl``` כדי לבצע שליחת בקשת HTTP. לדוגמה, ניתן לבצע פעולת GET על כתובת אתר כדי לקבל מידע מהם:
+set url 'http://mockbin.org/bin/9b9a2279-1e6f-4df3-875c-d9b0bc1a5378/view'
+set headers 'Content-Type' 'application/json'
+set body '{"key":"value"}'
 
+curl $url -X POST -H $headers -d $body
 ```
-curl https://example.com
-```
-פלט לפעולה זו יהיה הקוד המלא של דף האינטרנט שנשלח מהכתובת ותכולתו תוצג בטרמינל.
+זה יציג לך את התוצאה שהוחזרה מהשרת.
 
-## ייעוץ מעמיק:
+## בהקשר הרחב
+Fish Shell הוא שפת תסריטים מחשב מודרנית שמשלבת את היכולת לשלוח בקשות HTTP בצורה פשוטה ויעילה. חלופה לשליחת בקשות HTTP לפי Fish Shell היא באמצעות שפות תכנות אחרות כמו Python או Javascript. ברמת המימוש, בשימוש הפקודה 'curl' שהיא כלי שפועל בשורת הפקודה של מערכות ההפעלה וביצוע בקשת HTTP.
 
-פעולת שליחת בקשת HTTP היא חלק מהיסטוריה של התקשורת בין תוכניות ושרתים מרוחקים. נוכל להשתמש בכלים נוספים לבצע שליחת בקשות, כגון שימוש בשפת Python או בתוכנת Postman. כדי לוודא שהבקשה נשלחה בהצלחה, נוכל לבדוק את קוד התגובה שנתקבל מהשרת.
+## ראו גם
+עיין במקורות הבאים למידע מורחב לגבי שליחת בקשות HTTP באמצעות Fish Shell:
 
-## ראו גם:
-
-למידע נוסף על שליחת בקשות HTTP וכלים נוספים, ניתן להציץ במקורות המקושרים להלן:
-
-- [רשימת ממשקי API מומלצים לשליחת בקשת HTTP](https://github.com/public-apis/public-apis#api-science)
-- [הסבר מעמיק על כיצד פעולת שליחת בקשת HTTP עובדת](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-- [למדו עוד על השירות Postman ושימוש בו כדי לבצע בקשות HTTP](https://www.youtube.com/watch?v=H4-bD5vkrfY)
+- דף הבית של Fish Shell: https://fishshell.com
+- עזרה בנושא 'curl': https://curl.haxx.se/
+- מדריך לשפת תכנות Fish Shell: https://fishshell.com/docs/current/index.html

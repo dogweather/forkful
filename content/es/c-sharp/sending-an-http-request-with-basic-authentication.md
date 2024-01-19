@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "C#: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "C#"
 category:             "C#"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qué y por qué?
+## ¿Qué y por qué?
+Enviar una solicitud HTTP con autenticación básica es un proceso de envío de credenciales (username y password) en el encabezado de una solicitud HTTP. Los programadores lo hacen para obtener acceso a recursos protegidos o realizar funciones específicas en un servidor.
 
-Enviar una solicitud HTTP con autenticación básica es un proceso que permite a los programadores realizar solicitudes a servidores web que requieren autenticación a través de un nombre de usuario y una contraseña. Los programadores lo hacen para acceder a recursos protegidos en el servidor y realizar operaciones seguras.
-
-Cómo hacerlo:
-
-En C#, podemos enviar una solicitud HTTP con autenticación básica utilizando la clase HttpClient de la librería System.Net.Http. Primero, debemos inicializar un objeto de esta clase y configurarlo para que acepte autenticación básica. Luego, podemos construir nuestra solicitud y enviarla al servidor. A continuación se muestra un ejemplo de código que utiliza una URL y credenciales de autenticación básica ficticias para demostrar cómo se realiza este proceso:
+## ¿Cómo hacerlo?
+Aquí está el código de ejemplo en C#, que utiliza la librería `HttpClient` para enviar la solicitud HTTP con autenticación básica.
 
 ```C#
-// Inicializar HttpClient
-HttpClient cliente = new HttpClient();
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
-// Configurar autenticación básica
-cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes("nombre de usuario:contraseña")));
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        var httpClient = new HttpClient();
+        var byteArray = Encoding.ASCII.GetBytes("username:password");
+        httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 
-// Construir solicitud y enviarla
-HttpResponseMessage respuesta = await cliente.GetAsync("https://ejemplo.com/recurso");
-string contenido = await respuesta.Content.ReadAsStringAsync();
-Console.WriteLine(contenido);
+        var result = await httpClient.GetAsync("http://yourwebsite.com/resource");
+        Console.WriteLine(result.StatusCode);
+    }
+}
 ```
 
-El resultado de este código sería la respuesta del servidor en formato de cadena.
+Cuando ejecutes este código, esperarías ver el estado HTTP del servicio web en la consola.
 
-Profundizando:
+## Inmersión profunda
+La autenticación básica HTTP es una técnica antigua, su implementación es simple pero no es segura para transmitir información sensible ya que las credenciales se transmiten en texto plano (aunque codificado en base64). Hoy en día, se prefiere `Bearer token authentication`.
 
-La autenticación básica fue una forma común de autenticación en los primeros días de la web. Sin embargo, debido a que las contraseñas se envían en texto plano, se considera una forma insegura de autenticación. Como alternativa, se recomienda utilizar autenticación más segura, como HTTPS o OAuth.
+Un método alternativo para esto en C# es utilizar la biblioteca `HttpClientHandler`. 
 
-Véase también:
+Asegúrate de usar HTTPS en lugar de HTTP para garantizar que el contenido de las solicitudes se transmite de manera segura.
 
-Más información sobre la clase HttpClient y la autenticación básica en C#: https://docs.microsoft.com/es-es/dotnet/api/system.net.http.httpclient?view=net-5.0
-Una explicación de la diferencia entre autenticación básica, HTTPS y OAuth: https://www.imperva.com/learn/application-security/difference-between-http-https-oauth/
+## Ver también
+- Documentación de Microsoft sobre HttpClient: https://docs.microsoft.com/es-es/dotnet/api/system.net.http.httpclient
+- Guía de autenticación básica HTTP: https://developer.mozilla.org/es/docs/Web/HTTP/Authentication
+- Autenticación Oauth y Bearer tokens: https://auth0.com/learn/token-based-authentication-made-easy

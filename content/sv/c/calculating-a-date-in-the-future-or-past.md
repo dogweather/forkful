@@ -10,79 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad & Varför?
+Beräkning av ett framtida eller förflutet datum är processen för att hitta ett specifikt datum tekniskt sett framåt eller bakåt i tid från ett givet datum. Programmerare gör det ofta för att hantera och manipulera tidsbaserade data.
 
-Beräkna ett datum i framtiden eller det förflutna handlar om att förutsäga vilket datum som skulle vara efter eller före ett visst tidsintervall från det aktuella datumet. Programmerare använder det för att utföra olika uppgifter som involverar datum, som till exempel att schemalägga uppgifter eller beräkna olika tidsintervall.
-
-# Så här gör du:
-
-### Beräkna ett datum i framtiden:
+## Så här gör du:
+Nedan följer ett exempel på C-kod som visar hur man beräknar ett datum i framtiden.
 
 ```C
-#include <stdio.h> 
-#include <time.h> 
-  
-int main () 
-{ 
-   struct tm * datum; 
-   time_t aktuellt_datum; 
-  
-   //Hämta det aktuella datumet
-   time(&aktuellt_datum); 
-  
-   //Lägg till 10 dagar till aktuellt datum
-   aktuellt_datum += (10 * 86400); 
-  
-   //Konvertera tillbaka till tm-struktur 
-   datum = localtime(&aktuellt_datum); 
-  
-   //Skriv ut det nya datumet
-   printf("10 dagar från nu är det: %d-%d-%d\n", datum->tm_mday, datum->tm_mon+1, datum->tm_year+1900);
-  
-   return 0; 
-} 
+#include <stdio.h>
+#include <time.h>
+
+int main ()
+{
+   time_t nu; 
+   struct tm *datum;
+   char buffer [80];
+
+   time (&nu);
+
+   datum = localtime (&nu);
+
+   datum->tm_mday += 7;   // lägger till 7 dagar till dagens datum.
+
+   strftime (buffer, 80, "%d-%m-%Y", datum);
+
+   puts (buffer);
+
+   return 0;
+}
 ```
+Provutgång: Om dagens datum är "09-05-2022", kommer utmatningen att vara "16-05-2022".
 
-Output:
+## Deep Dive:
+Historiesk kontext: Tidsberäkningar i programmering, speciellt i C, har alltid varit en utmaning på grund av komplikationerna vid hantering av sekunder, minuter, timmar, dagar, veckor och så vidare. Det finns också problem som skottår och tidszonshanteringen att tänka på.
 
-10 dagar från nu är det: [datum]
+Alternativ: Det finns andra sätt att hantera datum, t.ex. användning av tredjepartsbibliotek som "date.h" eller "Boost Date_Time" som erbjuder mer mångsidiga funktioner för datum- och tidsberäkning.
 
-### Beräkna ett datum i förflutnan:
+Implementeringsdetaljer: C's time.h bibliotek erbjuder begränsad funktionalitet, men det är tillräckligt för grundläggande datummanipulering. Funktionen `localtime` använder `time_t` objektet för att fylla en `struct tm` med data uppdelade i tidselement (dag, månad, år, och så vidare). Notera dock att detta kan generera fel ifall antalet dagar överskrider månadens dagantal.
 
-```C
-#include <stdio.h> 
-#include <time.h> 
-  
-int main () 
-{ 
-   struct tm * datum; 
-   time_t aktuellt_datum; 
-  
-   //Hämta det aktuella datumet
-   time(&aktuellt_datum); 
-  
-   //Ta bort 10 dagar från aktuellt datum
-   aktuellt_datum -= (10 * 86400); 
-  
-   //Konvertera tillbaka till tm-struktur 
-   datum = localtime(&aktuellt_datum); 
-  
-   //Skriv ut det nya datumet
-   printf("10 dagar sedan var det: %d-%d-%d\n", datum->tm_mday, datum->tm_mon+1, datum->tm_year+1900);
-  
-   return 0; 
-} 
-```
-
-Output:
-
-10 dagar sedan var det: [datum]
-
-# Deep Dive:
-
-Att kunna beräkna datum i framtiden eller förflutnan är en viktig del av programmering eftersom många uppgifter involverar datum och tidsintervall. Att använda C för att beräkna datum ger en tillförlitlig och enkel lösning. Det finns också andra bibliotek som kan användas för att hantera datum, som till exempel "ctime" och "chrono" i C++, men de är mer komplexa att använda.
-
-# Se också:
-
-- Länk till "ctime" biblioteket: [insert link]
-- Länk till "chrono" biblioteket: [insert link]
+## Se også:
+1. [Arbeta med datum i C](https://stackoverflow.com/questions/1442116/how-to-get-the-date-of-7-days-ago-in-c)
+2. [C Date Time-funktioner](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+3. [Boost Date_Time Library](https://www.boost.org/doc/libs/1_73_0/doc/html/date_time.html)

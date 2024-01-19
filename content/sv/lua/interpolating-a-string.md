@@ -1,7 +1,7 @@
 ---
-title:                "Att interpolera en sträng"
-html_title:           "Lua: Att interpolera en sträng"
-simple_title:         "Att interpolera en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Stränginterpolation i Lua
+
 ## Vad & Varför?
+Stränginterpolation är en teknik för att infoga variabler direkt i en sträng. Med detta kan programmerare skapa dynamiska meddelanden utan att ständigt behöva konkatenera sträng och variabler.
 
-Interpolering av strängar är när man sätter samman flera delar av en sträng för att skapa en ny sträng. Programerare använder sig av detta för att göra textbehandling mer effektivt och för att skapa dynamiska textsträngar som kan ändras beroende på olika variabler.
-
-## Hur man gör:
-
-Det finns flera sätt att interpolera strängar i Lua, men det enklaste sättet är att använda operatorn "%". Här är ett exempel:
+## Hur man:
+I Lua, samsas stränginterpolation vanligtvis med string.format funktionen. Här är ett enkelt exempel:
 
 ```Lua
-local name = "Sofia"
-local age = 25
-
-local greeting = "Hej, mitt namn är %s och jag är %d år gammal."
-print(greeting:format(name, age))
+name = 'Kalle'
+age = 23
+print(string.format("Hej, jag heter %s och jag är %d år gammal.", name, age))
 ```
-Output: "Hej, mitt namn är Sofia och jag är 25 år gammal."
 
-I exemplet ovan används operatorn "%s" för att byta ut variabeln "name" och "%d" för att byta ut variabeln "age". Det är viktigt att strängens positionering av variablerna matchar med ordningen de skrivs in i funktionen "format()".
+Output:
 
-## Djupdykning:
+```Lua
+Hej, jag heter Kalle och jag är 23 år gammal.
+```
 
-Interpolerade strängar har funnits i programmeringsspråk sedan 1960-talet. Ett vanligt alternativ till att använda operatorn "%" är att använda funktionen "gsub()" som låter dig byta ut specifika delar av en sträng. Men interpolering med operatorn "%" anses vara en mer läsbar och effektiv metod.
+## Djupgående 
+Historiskt sett lanserades stränginterpolation i Lua 5.1 och användningen har ökat sedan dess. Det finns alternativ till `string.format`, till exempel `..`-operatören för strängkonkatenering, men de är oftast mer verbose och svårare att läsa.
 
-Implementeringen av operatorn "%" för att interpolera strängar är baserad på språket C. Detta gör det enkelt att använda för programmerare som är bekanta med C-språket.
+Lua implementerar stränginterpolation genom att använda interna C-biblioteksfunktioner, vilket gör det snabbt och effektivt.
 
-## Se också:
-
-[Lua operators](https://www.lua.org/pil/3.3.html)
-
-[Lua string library](https://www.lua.org/manual/5.3/manual.html#6.4.1)
+## Se även
+För mer information, referera till följande länkar:
+- Stränginterpolation i Lua Dokumentation: [Lua 5.1 String Interpolation](https://www.lua.org/manual/5.1/manual.html#5.4)
+- Lua String Bibliotek Dokumentation: [Lua 5.1 String Library](https://www.lua.org/manual/5.1/manual.html#5.4) 
+- Djup dykning i Lua strängar: [Hacking With Lua Strings](http://lua-users.org/wiki/StringsTutorial)
+- Lua källkod på GitHub: [Lua Source Code](https://github.com/lua/lua)

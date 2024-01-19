@@ -12,48 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-When programming in Elm, it's common to encounter situations where we need to compare two dates. This simply means determining if one date is earlier, later, or equal to another one. Programmers do this to sort and organize chronologically ordered data, perform date-based calculations, or validate date inputs from users.
+Comparing two dates means determining their relative chronological order, and it allows programmers to execute specific actions based on the time flow, like ordering events, checking for expired subscriptions, and calculating time spans.
 
 ## How to:
 
-To compare two dates in Elm, we can use the `Date.compare` function. It takes two dates as arguments and returns an `Ordering` value, which can be either `LT` (less than), `GT` (greater than), or `EQ` (equal).
+Let's see how to compare two dates in Elm programming. The Elm `Date` module provides essential functions to compare dates. Suppose we have two dates:
 
-```
-import Date exposing (Date, compare)
-
-date1 : Date
-date1 = Date.fromString "2021-05-10"
-
-date2 : Date
-date2 = Date.fromString "2021-05-15"
-
-result : Ordering
-result = Date.compare date1 date2  -- result is GT since date2 is later than date1
+```Elm
+date1 = Date.fromCalendarDate 2021 1 1
+date2 = Date.fromCalendarDate 2022 1 1
 ```
 
-We can also use the `Date.daySinceEpoch` function to get the number of days since January 1st, 1970, and then compare this value instead of directly comparing two dates.
+To compare them, we use Elm’s built-in `compare` function:
 
-```
-import Date exposing (Date, daySinceEpoch)
-
-date1 : Date
-date1 = Date.fromString "2021-05-10"
-
-date2 : Date
-date2 = Date.fromString "2021-05-15"
-
-result : Ordering
-result = compare (daySinceEpoch date1) (daySinceEpoch date2)  -- result is GT
+```Elm
+comparisonResult = compare date1 date2
 ```
 
-## Deep Dive:
+This function returns `LT` if the first date is before the second, `GT` if it is after, and `EQ` if they are the same.
 
-Compared to other programming languages, Elm has a limited number of date functions available. This is due to the language's focus on immutability and pure functions. Other alternatives to compare dates include using the `Date.toTime` function to convert dates to `Time` values and then comparing them with the `Time.compare` function.
+## Deep Dive
 
-The `Date.compare` function in Elm uses the Unix timestamp system to represent dates as a number of milliseconds since January 1st, 1970. This means that dates before this date will be represented by negative numbers, and dates after it will be represented by positive numbers.
+Elm's native functions for date comparison are quite simple and effective, but Elm wasn't always this practical. Many older programming languages don't have a native function to compare dates, and Elm has been designed to avoid such pitfalls.
 
-## See Also:
+The built-in `compare` function uses Unix timestamp internally for comparison. As an alternative, you could manually convert the dates to Unix timestamps and compare those, but using the built-in function is more convenient and less error-prone.
 
-- Elm Date Documentation: https://package.elm-lang.org/packages/elm/core/latest/Date
-- Elm Time Documentation: https://package.elm-lang.org/packages/elm/time/latest/Time
-- QuickChart's Date Comparison Tool: https://quickchart.io/date-comparison/
+## See Also
+
+- Core Elm `Date` module documentation: [https://package.elm-lang.org/packages/elm/time/latest/Date](https://package.elm-lang.org/packages/elm/time/latest/Date)
+  
+- Detailed guide on Elm date/time manipulation: [https://elmprogramming.com/dates-and-times.html](https://elmprogramming.com/dates-and-times.html)

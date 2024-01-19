@@ -12,57 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Searching and replacing text is a common task in programming where specific words or phrases in a given text are replaced with new ones. This is often done to make code more organized, fix spelling errors, or update text according to changing requirements. It is a useful tool for programmers to efficiently maintain and improve their code.
+Searching and replacing text is changing specific string values within a larger body of text. Programmers do it to either edit specific string values or to manipulate data by altering certain parts of it.
 
 ## How to:
 
-To search and replace text in Arduino, we can use the ```replace()``` function. Its syntax is ```replace(stringToModify, target, replacement)```, where ```stringToModify``` is the text that needs to be changed, ```target``` is the word or phrase to be replaced, and ```replacement``` is the new word or phrase to be inserted.
+In Arduino, a common way to do this is using the `replace()` function from the String class. Here's a quick example:
 
-Here's an example of how to use it:
-
+```Arduino
+String text = "Hello, Arduino!";
+text.replace("Arduino", "World");
+Serial.println(text);  // Output: "Hello, World!"
 ```
-#include <string.h>
-
-void setup() {
-    Serial.begin(9600);
-
-    // Original text
-    String text = "Hello, world!";
-
-    Serial.println("Before replace:");
-    Serial.println(text);
-
-    // Replaced text
-    replace(text, "Hello", "Hi");
-
-    Serial.println("After replace:");
-    Serial.println(text);
-}
-
-void loop() {
-
-}
-```
-
-### Output:
-
-```
-Before replace:
-Hello, world!
-After replace:
-Hi, world!
-```
-
-As you can see, the ```replace()``` function changes the original string to the new one. This can be extended to more complex text manipulation by using loops and conditional statements.
+In this example, the word "Arduino" in the string "text" will be replaced with "World." The modified string is then printed to the serial monitor.
 
 ## Deep Dive
 
-The ```replace()``` function was first introduced in the Arduino programming language in version 1.0. It is based on the standard ```String``` library, which provides various string manipulation functions. However, some programmers argue that using the ```String``` library can cause memory issues and recommend using C-style strings instead.
+Searching and replacing text isn't new. It's been an integral part of programming and text editing since the days of early text editors. The Arduino `replace()` function is one aspect of this.
 
-Alternatives to the ```replace()``` function include using regular expressions, which are powerful tools for pattern matching and replacing in strings. Arduino also has a built-in function called ```strreplace()``` which can replace characters or substrings in a string.
+An alternative to using `replace()` is to manually find the index of the substring you want to change using `indexOf()`, and then manually replacing it using `substring()`. However, this is more complex and not recommended for simple replacements.
 
-## See Also
+One thing to note about how `replace()` works is that it replaces the _first_ occurrence of the specified substring in the string. If you want to replace _all_ occurrences, you'd typically use a loop.
 
-- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-- [Regular Expressions in Arduino](https://www.arduino.cc/reference/en/language/structures/strings/regular-expressions/)
-- [C-style Strings vs Arduino String Library](https://arduino.stackexchange.com/questions/61183/difference-between-c-style-strings-and-arduino-strings)
+## See Also:
+
+For further reading on text manipulation techniques in Arduino, see the official Arduino String reference at: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+As well as this great article on string manipulation techniques from Bald Engineer: https://www.baldengineer.com/arduino-string-manipulation-using-minimal-ram.html

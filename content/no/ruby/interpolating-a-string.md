@@ -1,6 +1,6 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Ruby: Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
 simple_title:         "Interpolering av en streng"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,22 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å interpolere en streng i Ruby betyr å erstatte deler av en streng med variabler eller uttrykk. Dette gjør det enklere for utviklere å sette sammen setninger eller tekststrenger som inneholder variabel data. Det er en praktisk teknikk for å lage personlige meldinger eller dynamiske tilbakemeldinger i et program.
+## Hva & Hvorfor?
+Interpolering av en streng er det å sette inn variabler eller uttrykk inn i en streng i koden. Vi gjør dette for å lage dynamiske strenger som kan endres basert på forskjellige variabler eller tilstander i koden.
 
-# Slik gjør du det:
+## Hvordan
+Her er et enkelt eksempel på hvordan du kan interpolere en streng i Ruby:
+
 ```Ruby
-# Her er et enkelt eksempel på interpolering av en streng
-navn = "Heidi"
-puts "Hei #{navn}, velkommen til Ruby-programmering!"
-
-# Output:
-Hei Heidi, velkommen til Ruby-programmering!
+navn = "Ola"
+hilsen = "Hei, #{navn}!"
+puts hilsen
 ```
 
-# Dypdykk:
-Historisk sett har interpolering vært en del av Ruby siden starten, og det er også tilgjengelig i mange andre programmeringsspråk som Python og JavaScript. Alternativene til interpolering inkluderer å bruke string concatenation med «+» tegn, men dette kan bli upraktisk for større og mer komplekse strenger. I Ruby er det også mulig å konvertere andre datatyper til strenger mens du interpolerer, ved hjelp av metoden .to_s. 
+Dette vil skrive ut:
 
-# Se også:
-- [Ruby String interpolation](https://www.rubyguides.com/2016/04/ruby-string-interpolation/)
-- [String Interpolation in Ruby](https://dev.to/bimsan/string-interpolation-in-ruby-2hm)
+```
+Hei, Ola!
+```
+
+Merk at vi bruker `#{...}` inne i strengen for å interpolere variabelen `navn` i strengen.
+
+## Dypdykk
+String-interpolering ble introdusert i Ruby i versjon 1.9. Før dette måtte programmerere bruke pluss-operatøren eller `concat`-metoden for å sette sammen strenger, som kunne være rotete og ineffektivt.
+
+Alternativer til strenginterpolering inkluderer bruk av `sprintf` metode eller `%` operatør, men disse er generelt sett mer kompliserte å bruke og lese.
+
+En detalj om implementering av strenginterpolering i Ruby: Ruby tolker strengen og erstatter interpolasjoner med verdien av uttrykket i interpolasjonen ved kjøring, ikke ved tolking.
+
+## Se Også
+1. [The Ruby Programming Language](https://www.ruby-lang.org/en/documentation/) - Offisiell dokumentasjon for Ruby 
+2. [Ruby Inside](https://www.rubyinside.com/) - Populært online Ruby-magasin
+3. [String Interpolation in Ruby](https://www.rubyguides.com/2018/11/ruby-string-formatting/) - En mer dyptgående guide til string-interpolering i Ruby.

@@ -11,26 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Checking if a directory exists simply means verifying whether a particular folder or directory exists on a computer's file system. Programmers often need to perform this check to ensure that the necessary folders are present before executing a code that relies on them. This prevents any errors or failures that may occur due to missing directories.
+Checking if a directory exists involves investigating a specific path to verify if the directory is present there. Programmers do this to prevent errors when trying to access or work with directories that may or may not be there.
 
 ## How to:
-```arduino
-if (SD.exists(directory)) { // Replace "directory" with the actual directory name to be checked
-  Serial.println("Directory exists!")
-} else {
-  Serial.println("Directory does not exist.")
+
+In Arduino, checking if a directory exists on an SD card can be done using the `SD` library. Here's an example:
+
+```Arduino
+#include <SD.h>
+
+void setup(){
+  Serial.begin(9600);
+  if(!SD.begin(4)){
+    Serial.println("Initialization failed!");
+    return;
+  }
+  if(SD.exists("/exampleDirectory")){
+    Serial.println("Directory exists.");
+  } else {
+    Serial.println("Directory doesn't exist.");
+  }
 }
+
+void loop(){}
+
 ```
-The above Arduino code uses the SD library to check if a directory with the specified name exists. First, the `exists()` function is called, passing the directory name as its parameter. If the directory exists, the code inside the `if` statement is executed, printing out a message to the serial monitor. If not, the code inside the `else` statement is executed, indicating that the directory does not exist.
+If the directory "exampleDirectory" exists on the SD card, the Serial monitor would display "Directory exists." If it doesn't, the message "Directory doesn't exist." is shown.
 
-## Deep Dive:
-There are various reasons why a programmer may want to check if a directory exists. In some cases, the directory may be crucial for the proper functioning of the code, and its absence may result in unexpected errors or failures. Additionally, checking if a directory exists can also help in creating new directories if they are missing, ensuring that the code can run smoothly without any interruptions.
+## Deep Dive
+Checking for directories harkens back to the old days of MS-DOS. It was, and still is, an effective way to prevent file manipulation errors.
 
-An alternative to using the SD library for checking directory existence would be to use the `File()` constructor and `isDirectory()` function. However, this method can be more complex and may involve handling additional error cases.
+As an alternative, programmers could simply attempt to open a directory and wait for an error to indicate failure. However, checking a directory’s existence first avoids unnecessary exceptions.
 
-The implementation of the directory existence check may vary depending on the file system used on the device. For instance, on a Linux system, the `stat()` function can be used, while on a Windows system, the `GetFileAttributes()` function can be used.
+When `SD.exists("/exampleDirectory")` is called in Arduino, it executes a function in the SD library that sends a command to the SD card and waits for a response indicating if the directory exists. 
 
 ## See Also:
-- [SD Library Reference - exists()](https://www.arduino.cc/en/Reference/SDexists)
-- [File() constructor and isDirectory() function](https://forum.arduino.cc/index.php?topic=668386.0)
-- [Detailed explanation of directory existence check implementation](https://unix.stackexchange.com/questions/82526/check-if-directory-exists-and-create-it-if-necessary-on-sh-exit)
+
+1. [Arduino SD Library Documentation](https://www.arduino.cc/en/Reference/SD) - Official documentation for the SD library.
+2. [Arduino File Manipulation](https://www.arduino.cc/en/Tutorial/FileManipulation) - Learn more about managing files and directories.
+3. [Arduino SD Card Tutorial](https://www.makerguides.com/arduino-sd-card-tutorial/) - Comprehensive guide for handling SD card data with Arduino.

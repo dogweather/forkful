@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Python: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,30 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
+## Hva & Hvorfor?
 
-Printing av feilsøkningsutdata er en vanlig praksis blant programmerere for å hjelpe med å identifisere og løse problemer i koden sin. Det innebærer å skrive ut variabler, meldinger og annen relevant informasjon under kjøringen av programmet ditt.
+Skrive ut debug-informasjon handler om å kjøre ekstra kode i programmet ditt for å vise informasjon som hjelper deg med feilsøking. Programmerere gjør dette for lettere å forstå hva som fungerer, eller ikke fungerer, i programmet.
 
-## Slik gjør du:
+## Slik gjør du
+
+Her er et enkelt eksempel på hvordan du skriver ut debug-informasjon i Python:
+
+```python
+def funksjon(x):
+    print(f"Fungerer med {x}")
+    resultat = x + 2
+    print(f"Resultat: {resultat}")
+    return resultat
+
+funksjon(2)
+```
+Dette programmet vil produsere følgende utskrift:
 
 ```
-Python print("Hei, verden!") 
+Fungerer med 2
+Resultat: 4
 ```
 
-Dette enkle eksempelet viser hvordan du bruker `print` -funksjonen til å skrive ut en melding i Python. Du kan også skrive ut variabler og til og med matematiske uttrykk ved å legge dem til i parentes etter `print` -funksjonen.
+## Dypdykk
 
+Historisk sett har skriving av debug-informasjon vært essensielt i programmeringsverdenen. Dette har gjort det mulig for utviklere å forstå detaljer og iterere over løsningene sine.
+
+Som et alternativ til `print`-funksjonen, kan du bruke logging-biblioteket i Python. Dette biblioteket gir mer fleksibilitet og kontroll ved å ha forskjellige loggnivåer (INFO, DEBUG, ERROR, osv.), og lar deg skrive loggene til en fil i stedet for konsollen.
+
+```python
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logging.debug('Dette vil bli printet')
+logging.info('Så vel som dette')
+logging.warning('Og dette')
 ```
-Python tall = 5 print("Tallet er:", tall) #Output: Tallet er: 5 print("Summen av 2+3 er:", tall+2) #Output: Summen av 2+3 er: 7 
-```
 
-## Dypdykk:
+I Python, kan du også bruke innebygde debugger verktøy som Pdb for interaktiv feilsøking, noe som kan tilby mer detaljert innsikt enn vanlig utskrift av debug-informasjon.
 
-Printing av feilsøkningsutdata har vært en viktig metode for å finne feil i koden siden de tidlige dagene av programmering. Alternativet til å bruke `print` -funksjonen er å bruke en debugger, som er et spesialisert verktøy for å spore og fikse feil. Selv om det kan være mer effektivt i visse tilfeller, kan det være vanskeligere for nybegynnere å bruke.
+## Se Også
 
-Under panseret bruker `print` -funksjonen `sys.stdout` -objektet for å skrive ut data til standard utdatastrømmen. Dette er vanligvis skjermen, men det kan også omadresseres til en fil. Du kan også bruke `sys.stderr` for å skrive ut feilmeldinger.
+For mer detaljert informasjon og mer avanserte eksempler, ta en titt på disse ressursene:
 
-## Se også:
-
-- [Python `print` -dokumentasjon](https://docs.python.org/3/library/functions.html#print)
-- [Debugging for nybegynnere](https://wiki.python.org/moin/DebuggingWithPython)
-- [Hvordan bruke en debugger i Python](https://realpython.com/python-debugging-pdb/)
+1. [Python Documentation: Logging Module](https://docs.python.org/3/library/logging.html)
+2. [Python Documentation: Pdb — The Python Debugger](https://docs.python.org/3/library/pdb.html)
+3. [Real Python: A Guide to Python’s Print() Function](https://realpython.com/python-print/)

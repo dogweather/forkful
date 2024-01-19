@@ -1,7 +1,7 @@
 ---
-title:                "Analisando html"
-html_title:           "Javascript: Analisando html"
-simple_title:         "Analisando html"
+title:                "Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & por quê?
-Parcing HTML é o processo de analisar um documento HTML e extrair informações específicas de código. Programadores fazem isso para obter dados valiosos de páginas da web e usá-los para suas próprias tarefas de programação.
+## O Que & Porquê?
 
-## Como fazer:
-Para parcer HTML em Javascript, você pode usar a API nativa do navegador `DOMParser()`. Aqui está um exemplo de como usá-la:
+Analisar HTML (parsing HTML) é o processo de analisar o código HTML para extrair informações estruturais, como atributos, tags e metadados. Este processo é útil para automatizar a extração de dados, testar a consistência da estrutura da página e manipular o DOM para ações dinâmicas no lado do cliente.
+
+## Como Fazer:
+
+O JavaScript fornece muitos métodos para analisar HTML. O seguinte exemplo mostra como analisar uma string de código HTML utilizando o DOMParser:
 
 ```Javascript
-// Criando uma nova instância do DOMParser
-let parser = new DOMParser();
-
-// Criando uma string contendo código HTML
-let htmlString = "<div>Exemplo de HTML</div>";
-
-// Usando o método `parseFromString()` para analisar o código HTML
-let parsedHTML = parser.parseFromString(htmlString, "text/html");
-
-// Acessando o conteúdo dentro da tag <div> analisada
-console.log(parsedHTML.querySelector("div").textContent); // Saída: Exemplo de HTML
+var str = '<div id="meuId">Olá Mundo!</div>';
+var analisador = new DOMParser();
+var doc = analisador.parseFromString(str, 'text/html');
+console.log(doc.body.firstChild.id);  // imprime: meuId
+console.log(doc.body.firstChild.textContent);  // imprime: Olá Mundo!
 ```
 
-## Profundando:
-A parceria HTML é uma técnica amplamente usada hoje em dia, mas nem sempre foi assim. No passado, os programadores tinham que escrever seu próprio código para analisar o HTML manualmente, o que era demorado e propenso a erros. Além disso, existem bibliotecas de terceiros disponíveis para parceria HTML, como o popular Cheerio.
+Se quiser usar jQuery, pode ser ainda mais simples:
 
-Para uma implementação mais avançada, você pode usar a API `querySelector()` do DOM para selecionar elementos específicos do HTML usando seletores CSS. Isso pode ser útil para extrair dados de páginas da web, como informações de produtos ou de redes sociais.
+```Javascript
+var str = '<div id="meuId">Olá Mundo!</div>';
+var el = $(str);
+console.log(el.attr('id'));  // imprime: meuId
+console.log(el.text());  // imprime: Olá Mundo!
+```
 
-## Veja também:
-- [Documentação DOMParser() MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/DOMParser)
-- [Cheerio Library](https://cheerio.js.org/)
+## Mergulho Profundo
+
+No início, a análise de HTML era um processo desajeitado, sempre se baseava em expressões regulares. Graças a melhorias no padrão DOM e à introdução da API DOMParser, os programadores têm agora uma forma elegante e mais segura de analisar o HTML. 
+
+Não obstante, existem alternativas caso você esteja trabalhando com ambientes sem DOM. Cheerio é um exemplo, que imita a sintaxe jQuery e fornece uma análise eficiente e flexível de HTML no Node.js.
+
+A implementação da análise de HTML depende do seu objetivo final. Em termos de desempenho, uma análise estritamente necessária será mais eficiente. Mas, por vezes, necessita de uma análise completa para manipular o DOM dinamicamente.
+
+## Veja Também
+
+1. [MDN Documentação DOMParser](https://developer.mozilla.org/pt-BR/docs/Web/API/DOMParser): documentação oficial para a API DOMParser.
+2. [jQuery API](https://api.jquery.com/): documentação oficial para a sintaxe jQuery.
+3. [Cheerio.js](https://cheerio.js.org/): excelente biblioteca para análise de HTML no ambiente Node.js.

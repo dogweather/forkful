@@ -10,71 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## ¿Qué y Por qué?
 
-Crear un archivo temporal en Arduino se refiere a crear un archivo que solo existirá temporalmente en la memoria del dispositivo. Los programadores suelen hacer esto cuando necesitan almacenar temporalmente datos o información que luego serán eliminados cuando ya no sean necesarios.
+Crear un archivo temporal es el proceso de hacer un archivo que almacena datos de forma transitoria. Los programadores crean estos archivos para manejar el almacenamiento intermedio y facilitar la manipulación de datos.
 
-## Cómo:
+## Cómo hacerlo:
 
-### Ejemplo 1:
+A continuación, se muestra un código simple para escribir en un archivo temporal usando una tarjeta SD con Arduino. Asegúrese de conectar correctamente su lector de tarjetas SD a su Arduino.
 
 ```Arduino
-#include <SD.h> // incluir la biblioteca SD
-File file; // inicializar un objeto File
+#include <SD.h>
+
+File myFile;
 
 void setup() {
-  pinMode(10, OUTPUT); // configurar el pin 10 como salida
-  SD.begin(4); // iniciar la comunicación con la tarjeta SD
-  file = SD.open("temp.txt", FILE_WRITE); // crear un archivo temporal llamado "temp.txt" para escritura
-  if (file) {
-    file.println("Este es un ejemplo de archivo temporal en Arduino."); // escribir una línea de texto en el archivo
-    file.close(); // cerrar el archivo
-    digitalWrite(10, HIGH); // encender un LED para indicar que el archivo se creó exitosamente
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("Inicialización fallida!");
+    return;
+  }
+  myFile = SD.open("temp.txt", FILE_WRITE);
+
+  if (myFile) {
+    myFile.println("Este es un archivo temporal");
+    myFile.close();
+  } else {
+    Serial.println("Error abriendo temp.txt");
   }
 }
 
 void loop() {
-  // hacer otras cosas en el loop
+
 }
 ```
 
-El código anterior crea un archivo temporal en la tarjeta SD conectada al Arduino y escribe una línea de texto en él. Luego, cierra el archivo y enciende un LED para indicar que el archivo se creó exitosamente.
+Cuando ejecutes este código, crearás un archivo llamado 'temp.txt' en la tarjeta SD. Este archivo contendrá la línea "Este es un archivo temporal".
 
-### Ejemplo 2:
+## Detalles profundos:
 
-```Arduino
-#include <SPI.h> // incluir la biblioteca SPI
-#include <SD.h> // incluir la biblioteca SD
-File file; // inicializar un objeto File
+Históricamente, los archivos temporales han existido desde los primeros días de la computación para resolver problemas de almacenamiento. A pesar de que Arduino no tiene un sistema operativo con funcionalidades completas de manejo de archivos, este problema se puede solucionar usando una tarjeta SD y la biblioteca SD proporcionada por Arduino.
 
-void setup() {
-  pinMode(4, OUTPUT); // configurar el pin 4 como salida
-  SPI.begin(); // iniciar la comunicación con la tarjeta SD a través de SPI
-  SD.begin(10); // iniciar la comunicación con la tarjeta SD
-  file = SD.open("temp.txt", FILE_WRITE); // crear un archivo temporal llamado "temp.txt" para escritura
-  if (file) {
-    file.println("Este es otro ejemplo de archivo temporal en Arduino."); // escribir una línea de texto en el archivo
-    file.close(); // cerrar el archivo
-    digitalWrite(4, HIGH); // encender un LED para indicar que el archivo se creó exitosamente
-  }
-}
+Una alternativa a los archivos temporales puede ser el uso de la memoria RAM a través de las variables globales. Sin embargo, esto puede ser limitado en sistemas como Arduino debido a la escasa cantidad de RAM disponible. 
 
-void loop() {
-  // hacer otras cosas en el loop
-}
-```
+La implementación detallada del manejo de archivos en Arduino se maneja en gran parte a través de la biblioteca SD. Esta biblioteca proporciona una serie de funciones para abrir, leer, escribir y cerrar archivos. Antes de usarla, el puerto del lector de tarjetas SD debe inicializarse con `SD.begin()`.
 
-Este código es similar al anterior, pero utiliza una conexión SPI para comunicarse con la tarjeta SD en lugar de una conexión directa.
+## Recursos adicionales:
 
-## Inmersión Profunda:
+Para información más detallada sobre la programación de archivos en Arduino, consulte los siguientes enlaces:
 
-Crear archivos temporales en Arduino es útil cuando se necesitan almacenar temporalmente datos o información para su posterior eliminación. En lugar de ocupar espacio en la memoria del dispositivo con datos innecesarios, se pueden utilizar archivos temporales para una mejor gestión de la memoria. Además, los archivos temporales también pueden ser utilizados como una forma de almacenar datos en caso de corte de energía repentino en el dispositivo.
-
-Una alternativa al crear archivos temporales en Arduino es utilizar la función EEPROM para almacenar datos en la memoria interna del dispositivo. Sin embargo, esto puede ser más complicado ya que requiere la manipulación de direcciones de memoria.
-
-La función open() utilizada en los ejemplos anteriores puede aceptar diferentes parámetros para especificar el modo de apertura del archivo (por ejemplo, solo lectura, solo escritura, o lectura y escritura) y la ubicación del archivo (por ejemplo, en la tarjeta SD o en la memoria interna). También es importante tener en cuenta que los archivos temporales deben ser eliminados manualmente después de su uso para evitar ocupar espacio innecesario en la memoria.
-
-## Ver También:
-
-- [Documentación de la biblioteca SD](https://www.arduino.cc/en/Reference/SD)
-- [Ejemplo de archivos temporales en Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/Files/WriteBuf)
+- Documentación de la biblioteca [SD](https://www.arduino.cc/en/reference/SD)
+- Guía del usuario de Arduino en los [archivos](https://www.arduino.cc/en/Tutorial/Files)

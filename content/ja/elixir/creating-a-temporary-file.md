@@ -1,7 +1,7 @@
 ---
-title:                "「一時ファイルの作成」"
-html_title:           "Elixir: 「一時ファイルの作成」"
-simple_title:         "「一時ファイルの作成」"
+title:                "一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
+simple_title:         "一時ファイルの作成"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,25 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## やり方と意義？
-一時ファイルを作成することは、プログラマーにとって何かを一時的に保存することができる便利な方法です。例えば、データベースへの一時的なバックアップや、一時的な処理に使用するファイルを作成することができます。プログラマーが一時ファイルを作成する理由は、作業中のデータをプログラムが使用できる形式で保存することができるためです。
+## 何となぜ？
+一時ファイルの作成とは、一時的にデータを保存するための短期的な記憶方法です。これは、大量のデータを扱う、または永続性が必要でないときにプログラマーが行います。
 
-## やり方：
-```
-Elixir File.tempfile!
+## 実施方法：
+Elixirで一時ファイルを作成する例を示します。 `File` モジュールを使用して、以下のように行います。
 
-# 一時ファイルを作成し、変数に保存する
-{:ok, file} = File.tempfile!
-# 一時ファイルにデータを書き込む
-IO.write(file, "This is a temporary file")
-# 一時ファイルを閉じる
+```Elixir
+{:ok, file} = File.open("temp.txt", [:write])
+File.write!(file, "一時ファイルへのデータ書き込み")
+File.read!("temp.txt")
 File.close(file)
 ```
+出力:
+```
+"一時ファイルへのデータ書き込み"
+```
 
-## 詳細な情報：
-一時ファイルの発展的なコンテキストとしては、古いオペレーティングシステムでの "swap space" と呼ばれるメモリの利用方法があります。これは、主記憶装置 (RAM) を使用するよりも低速なディスクドライブを使用して、一時的なデータの保存に使用するものでした。また、一時ファイルの代替手段としては、プログラム内でメモリを直接操作する方法や、一時データベースの使用が考えられます。一時ファイルの実装の詳細としては、一時ファイルとそのファイル名を管理するための一意の識別子を使用する方法が挙げられます。
+その後、不要になった時点でファイルを削除します。
 
-## 関連リンク：
-- https://hexdocs.pm/elixir/File.html#tempfile!/0
-- https://en.wikipedia.org/wiki/Swap_space
-- https://www.techopedia.com/definition/4632/swap-space
+```Elixir
+File.rm!("temp.txt")
+```
+
+## ディープダイブ:
+一時ファイルはUNIX系のオペレーティング・システムで初めて普及し、プログラマがファイルシステムに一時的なデータを書き込むための手段として利用されました。
+
+一時ファイルを作成する古典的な方法以外にも、状況に応じて複数の代替手段が存在します。例えば、ETS(エルラングタームストレージ)を使用すると、ディスク上に書き込むことなくメモリ上でデータを一時的に保存できます。
+
+Elixirでは、`:write` の代わりに `:ram` を指定すれば、データはRAMに保存されます。ただし、この方法を使用すると、アプリケーションがシャットダウンするときにデータが失われます。
+
+## 関連情報:
+- [Elixir公式ドキュメンテーション:Fileモジュール](https://hexdocs.pm/elixir/File.html)
+- [ETSについての詳細](http://erlang.org/doc/man/ets.html)

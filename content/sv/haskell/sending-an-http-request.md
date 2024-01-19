@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran"
-html_title:           "Haskell: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Skicka en http-förfrågan"
+html_title:           "Javascript: Skicka en http-förfrågan"
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -12,27 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att skicka en HTTP-förfrågan i Haskell är när du ber ditt program att skicka en begäran till en annan server för att hämta information. Detta är vanligt bland programmerare eftersom det låter dem bygga applikationer som kan hämta och bearbeta data från olika källor.
+Att skicka en HTTP-begäran är processen att begära data från en server via World Wide Web. Programmerare gör det eftersom det är en grundläggande del av alla applikationer som interagerar med webb-innehåll.
 
-## Så här:
+## Hur ska man:
 
-För att skicka en HTTP-förfrågan i Haskell, behöver du först importera biblioteket "Network.HTTP.Simple". Sedan kan du använda funktionerna "parseRequest" och "httpLBS" för att skapa och utföra din förfrågan. Här är ett exempel på hur du kan hämta innehållet på en webbsida:
+Här är hur du kan skicka HTTP-GET-förfrågan i Haskell med 'http-conduit'-biblioteket.
 
 ```Haskell
-import Network.HTTP.Simple
+import Network.HTTP.Conduit
+import Control.Monad.IO.Class
 
-response <- httpLBS "http://www.example.com"
-putStrLn $ "Body of response: " ++ show (getResponseBody response)
+main = do
+  manager <- newManager tlsManagerSettings
+  request <- parseRequest "http://httpbin.org/get"
+  response <- httpLbs request manager
+
+  liftIO $ print (responseBody response)
 ```
+När du kör programmet, bör du se en HTTP-svar från servern, vilket ser ut ungefär så här:
 
-Detta kommer att skriva ut innehållet på webbsidan i din terminal.
+```Haskell
+"{
+  \"args\": {}, 
+  \"headers\": {
+    \"Host\": \"httpbin.org\", 
+    ... 
+}"
+```
+## Fördjupa Dig:
 
-## Djupdykning:
+Historiskt sett har Haskell inte varit det huvudsakliga språket för att hantera HTTP-begäranden. Tack vare bibliotek som 'http-conduit', är det nu smidigt och enkelt att göra HTTP-anrop direkt från Haskell.
 
-HTTP (Hypertext Transfer Protocol) är ett protokoll som möjliggör kommunikation mellan olika datorer på internet. Det har funnits sedan 1991 och är fortfarande en viktig del av hur information överförs över webben. Alternativ till Haskell för att skicka HTTP-förfrågningar inkluderar Python, Ruby och Java. Implementationen av HTTP-förfrågningar i Haskell är gjort med hjälp av monader, vilket underlättar hanteringen av asynkron kommunikation.
+Alternativen till 'http-conduit' inkluderar 'http-client' och 'Wreq'. 'http-client' är mer lättviktig medan 'Wreq' erbjuder en mer abstrakt högnivå API.
+
+Vad gäller själva implementeringen, utför 'http-conduit' nätverksoprationer genom att använda en "Manager". Denna manager sköter alla anslutningar och ser till att förfrågningar utförs på rätt sätt.
 
 ## Se även:
 
-- [Haskell Dokumentation om Network.HTTP.Simple](https://hackage.haskell.org/package/http-client)
-- [Mer information om HTTP-protokollet](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
-- [Alternativ för att skicka HTTP-förfrågningar i andra språk](https://www.rubyguides.com/ruby-http-request/)
+Börja med de officiella dokumenten för HTTP-begäranden i Haskell:
+
+- HTTP-begäranden i Haskell, officiell dokumentation: http://hackage.haskell.org/package/http-conduit
+
+För att lära sig mer om alternativ till 'http-conduit':
+
+- 'http-client': http://hackage.haskell.org/package/http-client
+- 'Wreq': http://www.serpentine.com/wreq/tutorial.html

@@ -1,6 +1,6 @@
 ---
 title:                "יצירת קובץ זמני"
-html_title:           "Swift: יצירת קובץ זמני"
+html_title:           "C#: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,28 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## מה זה ולמה? 
+יצירת קובץ זמני היא בסיסית פעולה של שמירה של נתונים בצורה זמנית. מתכנתים משתמשים בזה כאשר הם צריכים לשמור נתונים בזמנית, לא משנה מה הסיבה: החזר אחורה, שמירה של גרסאות, שמירה של מידע ביניים ועוד. 
 
-יצירת קובץ זמני היא תהליך בו מתכנתים יוצרים קובץ שמשמש לפעולות זמניות ומתנגשות במערכת האחסון. הקובץ משמש למטרות כמו חינוך בפתרון בעיות בעת איתור בעיות בתוכנה או כאמצעי לצבור נתונים בזמן הרצת התוכנית.
+## איך לגרום לזה לקרות:
+הנה קוד Swift שמציג איך ליצור קובץ זמני:
 
-## איך לעשות:
+```Swift
+import Foundation
 
-```Swift 
-let tempFile = try? FileManager.default.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("tempfile.txt")
-try? "This is a temporary file!".write(to: tempFile!, atomically: true, encoding: .utf8)
+let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+let tempFileURL = tempDirectoryURL.appendingPathComponent(UUID().uuidString)
+
+do {
+    try "Hello, Swift!".write(to: tempFileURL, atomically: true, encoding: .utf8)
+    print("Saved to \(tempFileURL)")
+} 
+catch {
+    print("Error saving to temporary file: \(error)")
+}
 ```
 
-### תוצאה:
+פלט דוגמה שתראה כמו זה:
 
-בתיקיית הפרויקט, קובץ בשם "tempfile.txt" יוצר בתוך התיקייה המיועדת לקבצי זמניים (itemReplacementDirectory) תחת מחלקת המשתמש (userDomainMask) במערכת ההפעלה. הקובץ ישמור על התוכן שנכתב באמצעות פקודת הכתיבה (write) ולאחר מכן יימחק מהמערכת כשתוכנית ה-Swift תמצא.
+```Swift
+Saved to file:///private/var/folders/xx/xxxxxx/T/48B5A8A2-xxxx-4DA9-xxxx-90EBE25566C9
+```
 
-## חקירה עמוקה:
+## Deep Dive
+בעבר, השימוש בקבצים זמניים היה חיוני מאוד בגלל הזכרון המוגבל של המחשבים. היום, עם ההתפתחות של החומרה, חלק מהצורך שאיבד החשיבות שלו. אף על פי כן, הם עדיין משמשים ביצירה של גרסאות, חזרה אחורה, ובמקרים שבהם יש טעות שאין אפשרות לתקן.
 
-יצירת קובץ זמני היא תהליך שנתמך על ידי מערכות הפעלה כמו macOS ו-Windows כדי לאפשר למתכנתים לבצע פעולות מתנגשות במערכת האחסון בזמן הריצה. יתר על כן, ישנן אלטרנטיבות ליצירת קבצים זמניים באמצעות פקודות ספציפיות בשפת Swift עצמה.
+חלופה לקבצים זמניים היא שימוש ב-memory cache או במודלים של נתונים בזיכרון. הבחירה בין השיטות תלויה בהקשר ובדרישות של האפליקציה.
 
-כאשר מיזוגת, תהליך היצירה של קבצים זמניים כולל יצירת מבנה מדומה של קובץ, כתיבת התוכן לקובץ זה ולאחר מכן מחיקתו מהמערכת. דבר זה יכול לגרום לזיכרון חשוב עבור תוכניות גדולות ומורכבות בהמשך הריצה שלהן.
+## ראה גם
+הידעתם? ברזרברים בחרו את המינים טמפורריות: [למאמר](https://en.wikipedia.org/wiki/Temporary_file)
 
-## ראה גם:
+דוקומנטציה של אפל מאוד מפורטת על `URL`: [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/url)
 
-- [ניתוח יישומי זמות ליצירת קובץ מחדש](https://www.usenix.org/legacy/event/usenix2000/invited_talks/mckusick/tsld014.htm)
-- [מאמנו של לורן עולם התכנות: "יישומי זמות נכונים בכמה דקות"](https://www.youtube.com/watch?v=fTlJkzflBTE)
+דוקומנטציה של אפל: [NSTemporaryDirectory](https://developer.apple.com/documentation/foundation/1413044-nstemporarydirectory)
+
+רצון לייעיל את הקוד: [Cache Policies](https://developer.apple.com/documentation/foundation/nsurlrequest/cachepolicy)

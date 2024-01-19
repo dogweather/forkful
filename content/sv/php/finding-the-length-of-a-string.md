@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden av en sträng"
-html_title:           "PHP: Att hitta längden av en sträng"
-simple_title:         "Att hitta längden av en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,24 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-När man programmerar i PHP finns det ofta behov av att hitta längden på en sträng. Detta är helt enkelt antalet tecken som finns i en viss sträng. Detta kan vara användbart för att till exempel kontrollera om en inmatad sträng är tillräckligt lång eller för att trimma bort onödiga mellanslag i en sträng.
+## Vad & Varför? 
+
+Att hitta längden på en sträng i programmering innebär att bestämma antalet tecken som din sträng innehåller. Programmerare gör detta för att manipulera data effektivt, självkolla input eller säkerställa att strängen uppfyller specifika krav.
 
 ## Hur man gör:
-För att hitta längden på en sträng i PHP använder man funktionen ```strlen()```. Denna funktion tar emot en sträng som argument och returnerar längden på strängen som en heltalsvärde. Se nedan för ett enkelt exempel:
+
+Använd `strlen()` funktionen i PHP för att hämta längden på en sträng.
 
 ```PHP
-$string = "Hej! Detta är en sträng.";
-$lenght = strlen($string);
-echo $length; // Skriver ut 24 vilket är antalet tecken i strängen.
+<?php
+$min_strang = "Hej Sverige!";
+echo strlen($min_strang);
+?>
 ```
+Utmatningen av koden ovan kommer att vara `13`, det totala antalet tecken inklusive mellanslag.
 
 ## Djupdykning:
-För att förstå varför det är nödvändigt att hitta längden på en sträng behöver man förstå lite om hur PHP behandlar strängar. I äldre versioner av PHP var alla strängar en del av ett annat datatyp som hette array. Detta gjorde att man kunde använda array-funktioner på strängar, som till exempel funktionen ```count()```. Men i moderna versioner är strängar en egen datatyp och därför behövs en specifik funktion för att räkna antalet tecken i en sträng.
 
-Det finns också alternativa sätt att hitta längden på en sträng i PHP. Man kan till exempel använda funktionen ```mb_strlen()``` som hanterar flerspråkiga strängar på ett bättre sätt. Det finns också möjlighet att använda en for-loop för att räkna antalet tecken i en sträng, men detta är inte lika effektivt som att använda den inbyggda funktionen ```strlen()```.
+1. Historisk kontext: `strlen()` är en inbyggd funktion som introducerades i PHP 4 och finns kvar i senaste versionen av PHP.
+
+2. Alternativ: Förutom `strlen()`, kan du också använda `mb_strlen()` som är mer relevant för multibyte strängar (t.ex. UTF-8).
+
+```PHP
+<?php
+$min_strang = "Hej Sverige!";
+echo mb_strlen($min_strang, 'UTF-8');
+?>
+```
+
+3. Implementeringsdetaljer: `strlen()` räknar varje byte som ett tecken för ASCII strängar. För multibyte strängar rekommenderas att använda `mb_strlen()`.
 
 ## Se även:
-- [PHP Manual - strlen()](https://www.php.net/manual/en/function.strlen.php)
-- [PHP Manual - mb_strlen()](https://www.php.net/manual/en/function.mb-strlen.php)
-- [PHP Array Functions](https://www.w3schools.com/php/php_ref_array.asp)
+
+1. [PHP Manual: strlen()](https://www.php.net/manual/en/function.strlen.php)
+
+2. [PHP Manual: mb_strlen()](https://www.php.net/manual/en/function.mb-strlen.php)
+
+3. [StackOverflow: How to get the string length in bytes in PHP?](https://stackoverflow.com/questions/2965361/how-to-get-string-length-in-bytes-in-php)
+   
+4. [Geek Hideout: PHP: Determining string length](http://www.geekhideout.com/urlcode.shtml)

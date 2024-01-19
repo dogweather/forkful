@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Go: Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Go"
 category:             "Go"
@@ -10,41 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Tekstitiedoston lukeminen tarkoittaa, että ohjelma lukee tiedostossa olevan tekstin ja käsittelee sitä haluamallasi tavalla. Ohjelmoijat tekevät tätä esimerkiksi tietojen lukemiseksi tiedostoista tai käyttäjän syötteen käsittelyyn.
+## Mikä & Miksi?
 
-## Kuinka tehdä se:
-Käyttämällä Go-ohjelmointikieltä, voit käyttää ```os.Open()``` -funktiota avataksesi tiedoston ja sitten ```bufio.Scanner``` -pakettia lukemaan tiedoston yksi rivi kerrallaan. Seuraavassa koodiesimerkissä avataan tiedosto nimeltä "tekstitiedosto.txt", luetaan yksi rivi ja tulostetaan se konsoliin.
+Tekstitiedoston lukeminen tarkoittaa tietojen hankkimista tekstipohjaisesta tiedostosta. Ohjelmoijat tekevät tämän, koska se on kätevä tapa säilyttää ja hakea tietoa.
+
+## Miten:
+
+Tässä on yksinkertainen koodiesimerkki, joka näyttää miten tekstitiedosto luetaan Go-ohjelmointikielellä:
 
 ```Go
-tiedosto, err := os.Open("tekstitiedosto.txt")
-if err != nil {
-    fmt.Println("Virhe:", err)
-    return
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"os"
+)
+
+func main() {
+	file, err := os.Open("test.txt")
+
+	if err != nil {
+		log.Fatalf("virhe avattaessa tiedostoa: %v", err)
+	}
+
+	scanner := bufio.NewScanner(file)
+	
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
+	
+	file.Close()
 }
-defer tiedosto.Close()
-
-skanneri := bufio.NewScanner(tiedosto)
-for skanneri.Scan() {
-    fmt.Println(skanneri.Text())
-}
 ```
 
-Tuloste:
+Tulostus voisi näyttää tältä, jos test.txt sisältää rivit "Hei" ja "maailma":
 
+```Go
+Hei
+maailma
 ```
-Tämä on ensimmäinen rivi.
-Tämä on toinen rivi.
-Tervetuloa Go-ohjelmointiin!
-```
 
-## Syväsukellus:
-Tiedostojen lukeminen on yksi tärkeimmistä toiminnoista ohjelmoinnissa, ja sitä tarvitaan usein tietojen käsittelyssä. Tekstivirtojen lukeminen on ollut osa ohjelmointia jo pitkään, ja Go tarjoaa tehokkaan tavan tehdä se helposti ja yksinkertaisesti.
+## Sukellus:
 
-On myös muita tapoja lukea tekstitiedostoja Go-kielellä, kuten ```ioutil.ReadFile()``` -funktiolla, mutta ```bufio.Scanner``` tarjoaa enemmän joustavuutta ja paremman suorituskyvyn tiettyjen olosuhteiden alaisena.
+Go:n lukufunktiot ovat osa laajempaa UNIX-filosofiaa: tee yksi asia ja tee se hyvin. Historiallisesti UNIX-järjestelmissä tiedostoja on käytetty tiedonvälitysmekanismina. Go on ottanut tämän mallin ja tuonut sen moderniin ohjelmointimaailmaan.
 
-Jos haluat syvällisempää tietoa lukemisesta tiedostoihin, voit tutustua Go:n dokumentaatioon ja katsella muita esimerkkejä.
+Kun luet tiedostoa, on olemassa muitakin vaihtoehtoja, kuten `ioutil.ReadFile` tai `ioutil.ReadAll`. Kuitenkin, `bufio.Scanner` on yleensä parempi vaihtoehto, koska se käsittelee muistin tehokkaammin etenkin suurien tiedostojen kanssa.
+
+Itse tekstitiedoston lukemisessa ei ole mitään erikoista. Toki, sinun täytyy olla tietoinen esimerkiksi käytetystä merkistökoodauksesta (esim. UTF-8), mutta Go hoitaa useimmat näistä yksityiskohdista sinulle taustalla. Jos tarvitset enemmän kontrollia, niin Go tarjoaa `Reader` ja `Writer` -rajapinnat, joiden avulla voit tehdä tarkempia toimintoja tiedostojen kanssa.
 
 ## Katso myös:
-- [bufio.Scanner dokumentaatio](https://golang.org/pkg/bufio/#Scanner)
-- [Go:n virallinen dokumentaatio](https://golang.org/doc/)
+
+Hyviä resursseja Go-ohjelmointikielen tekstitiedostojen käsittelystä:
+
+1. Go:n virallinen dokumentaatio: [https://golang.org/pkg/bufio/](https://golang.org/pkg/bufio/)
+2. Go-by-example -sivuston opetusohjelma: [https://gobyexample.com/reading-files](https://gobyexample.com/reading-files)
+3. Hyvä katsaus Go:n tiedostonkäsittelyfunktioista: [https://www.devdungeon.com/content/working-files-go](https://www.devdungeon.com/content/working-files-go)

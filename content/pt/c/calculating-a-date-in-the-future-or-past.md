@@ -1,7 +1,7 @@
 ---
-title:                "Cálculo de uma data no futuro ou passado"
-html_title:           "C: Cálculo de uma data no futuro ou passado"
-simple_title:         "Cálculo de uma data no futuro ou passado"
+title:                "Calculando uma data no futuro ou passado"
+html_title:           "C: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,80 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-A tarefa de calcular uma data no futuro ou passado é uma função importante para programadores, pois permite a previsão de eventos e automatização de tarefas. Em linguagens de programação, essa função é realizada por diversas funções e bibliotecas, como a ```time.h```.
+## O Que & Porquê?
+
+Calculando uma data no futuro ou passado envolve manipular datas para obter um momento específico anterior ou subsequente à data atual. Programadores fazem isso para programar eventos, como lembretes, ou para calcular a diferença entre duas datas.
 
 ## Como fazer:
-A função ```time.h``` permite o acesso a informações importantes de data e hora do sistema, como o dia, mês, ano, entre outros. Utilizando as funções ```localtime()``` e ```mktime()```, podemos manipular essas informações para calcular uma data no futuro ou passado.
 
-Exemplo de código para calcular uma data no futuro:
+Podemos usar a função `mktime` e a estrutura `tm` para calcular uma data futura. 
 
-```
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-   // Definindo a data atual
-   time_t now = time(NULL);
-   // Convertendo para uma estrutura de tempo local
-   struct tm * local = localtime(&now);
+int main() {
+    struct tm str_tm = {0};
+    time_t tempo_atual, futuro_tempo;
 
-   // Adicionando 10 dias à data atual
-   local->tm_mday += 10;
+    // Se pegar tempo atual
+    tempo_atual = time(NULL);
 
-   // Convertendo a data modificada para um timestamp
-   time_t future = mktime(local);
+    // Copiar para a estrutura str_tm
+    str_tm = *localtime(&tempo_atual);
 
-   // Imprimindo a nova data
-   printf("Data daqui a 10 dias: %s", ctime(&future));
+    // Adicionar dias
+    str_tm.tm_mday += 10;
 
-   return 0;
+    // Converter de volta para time_t
+    futuro_tempo = mktime(&str_tm);
+
+    printf("Data atual: %s", ctime(&tempo_atual));
+    printf("Data futura: %s", ctime(&futuro_tempo));
+
+    return 0;
 }
 ```
-Output:
-```
-Data daqui a 10 dias: Mon Jul 12 19:51:40 2021
-```
 
-Exemplo de código para calcular uma data no passado:
+Saída do código:
 
 ```
-#include <stdio.h>
-#include <time.h>
-
-int main()
-{
-   // Definindo a data atual
-   time_t now = time(NULL);
-   // Convertendo para uma estrutura de tempo local
-   struct tm * local = localtime(&now);
-
-   // Subtraindo 5 meses da data atual
-   local->tm_mon -= 5;
-
-   // Convertendo a data modificada para um timestamp
-   time_t past = mktime(local);
-
-   // Imprimindo a nova data
-   printf("Data de 5 meses atrás: %s", ctime(&past));
-
-   return 0;
-}
-```
-Output:
-```
-Data de 5 meses atrás: Wed Feb 17 19:56:16 2021
+Data atual: Fri Jan 21 07:39:16 2022
+Data futura: Mon Jan 31 07:39:16 2022
 ```
 
 ## Deep Dive:
-A tarefa de calcular datas no futuro ou passado é uma função presente em diversas linguagens de programação e sistemas operacionais desde a década de 1960. Antes da criação de bibliotecas e funções específicas, os programadores precisavam realizar cálculos complexos envolvendo o número de dias em cada mês e anos bissextos. Hoje, com o avanço da tecnologia, essa tarefa se tornou mais simples e acessível com a utilização de funções específicas.
 
-Além das funções ```localtime()``` e ```mktime()```, existem outras alternativas para realizar o cálculo de datas no futuro ou passado, como a biblioteca ```date.h```, que possui funções mais precisas e flexíveis.
+Calculando uma data no futuro ou no passado é uma tarefa comum na programação desde o início dos tempos (não, não é uma piada de tempo!). As linguagens de programação modernas, como C, têm bibliotecas abrangentes que facilitam a manipulação de datas.
 
-É importante lembrar que, ao utilizar essas funções, é necessário ter cuidado com a forma como as informações de data são manipuladas, para evitar erros e problemas de compatibilidade entre sistemas.
+Uma alternativa ao método acima envolveria a criação de sua própria função para adicionar ou subtrair dias a uma data, levando em conta a variação no número de dias em cada mês e ano bissexto.
 
-## See Also:
-- [Documentação oficial da função time.h](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Tutorial sobre manipulação de datas em C](https://www.geeksforgeeks.org/date-manipulation-in-c/)
-- [Exemplos de uso da biblioteca date.h](https://github.com/hroptatyr/date)
+Quanto à implementação da função `mktime`, ela pega uma estrutura `tm`, converte-a de volta para `time_t`, normaliza a estrutura `tm` e corrige qualquer valor fora do intervalo. Isso faz da `mktime` uma função útil para manipular datas.
+
+## Veja Também:
+
+- [`time.h` Reference](http://www.cplusplus.com/reference/ctime/)
+- [Man page of `mktime`](https://man7.org/linux/man-pages/man3/mktime.3.html)
+- [Date and Time in C - GeeksforGeeks](https://www.geeksforgeeks.org/date-time-c/)
+- [Funções de tempo e data na linguagem de programação C - Embarcados](https://www.embarcados.com.br/funcoes-de-tempo-e-data-na-linguagem-de-programacao-c/)

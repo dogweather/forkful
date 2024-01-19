@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http z podstawową autoryzacją"
-html_title:           "TypeScript: Wysyłanie żądania http z podstawową autoryzacją"
-simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
+title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem za pomocą TypeScript
+
 ## Co i dlaczego?
-Wysyłanie żądania HTTP z podstawową autoryzacją to sposób na przekazanie danych uwierzytelniających w celu uzyskania dostępu do zasobów internetowych. Programiści używają go, aby zapewnić bezpieczeństwo i ochronę swoich aplikacji i serwisów.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to sposób na przesyłanie danych między klientem a serwerem, używając identyfikacji użytkownika i hasła zakodowanych w formacie Base64. Programiści to robią, aby zabezpieczyć dostęp do zasobów przed nieautoryzowanym dostępem.
 
 ## Jak to zrobić:
+W TypeScript możemy skorzystać z biblioteki "axios" do wysyłania żądań HTTP. Poniżej przykład:
+
 ```TypeScript
 import axios from 'axios';
 
-const username = 'example';
-const password = 'password';
+async function sendRequest() {
+    const response = await axios({
+        method: 'get',
+        url: 'http://example.com',
+        auth: {
+            username: 'user',
+            password: 'pass'
+        }
+    });
 
-axios.get('https://example.com', {
-  auth: {
-    username,
-    password
-  }
-})
-  .then(response => {
     console.log(response.data);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+}
+
+sendRequest();
 ```
 
-## Głębszy zanurzenie:
-Wysyłanie żądania HTTP z podstawową autoryzacją ma swoje korzenie w protokole HTTP z lat 90. Alternatywą dla tego rodzaju uwierzytelnienia jest autoryzacja z użyciem tokenów lub kluczy API. Implementacja polega na przesłaniu danych uwierzytelniających wraz z żądaniem HTTP poprzez nagłówek Authorization.
+## Pogłębione spojrzenie
+Podstawowe uwierzytelnianie HTTP, które jest stosunkowo starym systemem uwierzytelniania, uchodzi za proste w implementacji, ale nie jest to metoda bezpieczna lub optymalna, szczególnie gdy dane są przesyłane przez nieszyfrowane połączenia. Z tego powodu wiele aplikacji webowych zdecydowało się na użycie innych metod uwierzytelniania, takich jak OAuth lub JSON Web Tokens (JWT).
 
-## Zobacz także:
-- [Dokumentacja Axios](https://axios-http.com/docs/intro)
-- [Porównanie różnych metod uwierzytelnienia w żądaniach HTTP](https://www.toptal.com/web/cookie-free-authentication-with-json-web-tokens-an-example-in-laravel-and-angularjs)
+Ostateczne wdrożenie tej techniki w TypeScript zależy od biblioteki, z której korzystasz do obsługi żądań HTTP. W przypadku "axios", wykorzystujemy obiekt "auth" do przekazania identyfikacji i hasła.
+
+## Zobacz też:
+* [Dokumentacja Axios - Podstawowe Uwierzytelnianie](https://axios-http.com/docs/auth)
+* [Podstawy Uwierzytelniania HTTP - MDN](https://developer.mozilla.org/pl/docs/Web/HTTP/Authentication)
+* [Wprowadzenie do JSON Web Tokens](https://jwt.io/introduction/)

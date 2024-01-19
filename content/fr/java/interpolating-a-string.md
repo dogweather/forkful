@@ -1,7 +1,7 @@
 ---
-title:                "Interpoler une chaîne de caractères"
-html_title:           "Java: Interpoler une chaîne de caractères"
-simple_title:         "Interpoler une chaîne de caractères"
+title:                "Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi les programmeurs le font?
+## Qu'est-ce et pourquoi?
 
-L'interpolation de chaîne en Java est un processus qui consiste à insérer dynamiquement des valeurs dans une chaîne de caractères prédéfinie. Les programmeurs utilisent cette technique pour rendre leurs chaînes de caractères plus dynamiques et adaptables aux différentes situations.
+L'interpolation de chaînes en Java permet d'insérer des variables directement dans une chaîne de caractères. C'est utile pour rendre le code plus lisible et pour générer des messages de log dynamiques.
 
-## Comment faire?
+## Comment faire:
 
-L'utilisation de l'opérateur ```+``` est l'une des façons les plus courantes d'interpoler des chaînes en Java. Voici un exemple de code :
+Voici un exemple simple utilisant `String.format()` :
+```Java
+String name = "John";
+String greeting = String.format("Bonjour, %s!", name);
+System.out.println(greeting);  // Affiche: Bonjour, John!
+```
+Notez l'utilisation de `%s` comme marqueur de place pour la variable `name`.
 
-    ```
-    String name = "Alice";
-    int age = 25;
-    System.out.println("My name is " + name + " and I am " + age + " years old.");
-    ```
+On peut aussi utiliser `MessageFormat.format()` pour obtenir le même résultat :
 
-L'exécution de ce code produira la sortie suivante :
+```Java
+import java.text.MessageFormat;
 
-    ```
-    My name is Alice and I am 25 years old.
-    ```
+String name = "John";
+String greeting = MessageFormat.format("Bonjour, {0}!", name);
+System.out.println(greeting);  // Affiche: Bonjour, John!
+```
 
-Vous pouvez également utiliser la méthode ```format()``` de la classe ```String``` pour interpoler des chaînes en utilisant des spécificateurs de format. Voici un exemple :
+Ici, {0} est un index basé sur zéro qui pointe vers le premier argument dans la liste de paramètres.
 
-    ```
-    String name = "Bob";
-    double balance = 1000.50;
-    System.out.format("Hello %s, your current balance is $%.2f", name, balance);
-    ```
+## Plongée profonde
 
-La sortie de ce code sera :
+Historiquement, l'interpolation de chaînes a été introduite en C avec `printf()`. Elle a été adoptée par de nombreux autres langages, chacun avec sa propre implémentation.
 
-    ```
-    Hello Bob, your current balance is $1000.50
-    ```
+En ce qui concerne les alternatives en Java, nous avons également la concaténation de chaînes avec `+`, mais elle peut être moins performante et moins lisible pour les chaînes longues ou complexes.
 
-## Plongeons plus loin
-
-L'interpolation de chaîne a été introduite en Java dans la version 5 comme une alternative à la concaténation de chaînes à l'aide de l'opérateur ```+```. Les développeurs doivent choisir entre ces deux méthodes en fonction de la complexité de leur code et de leur préférence personnelle.
-
-En plus de l'utilisation de l'opérateur ```+``` et de la méthode ```format()```, il est également possible d'interpoler des chaînes en utilisant la classe ```StringBuilder``` ou en utilisant des manipulations de chaînes à l'aide de la méthode ```replace()```.
+Sous le capot, `String.format()` et `MessageFormat.format()` utilisent les classes `java.util.Formatter` et `java.text.MessageFormat` respectivement. Ces dernières utilisent un buffer pour construire la chaîne de caractères, ce qui est plus efficace que la concaténation simple.
 
 ## Voir aussi
 
-- [Guide Java de la concaténation de chaîne](https://docs.oracle.com/javase/tutorial/java/data/converting.html)
-- [Tutoriel Java de l'interpolation de chaîne](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+- API Java Docs pour [String.format()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)) et [MessageFormat.format()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/text/MessageFormat.html#format(java.lang.Object))
+- Tutoriel sur l'interpolation de chaînes en Java sur [Let's Code](https://lets-code-java.com/interpolation-strings-java)
+- Comparaison de performance entre `String.format()` et la concaténation de chaînes sur [Stack Overflow](https://stackoverflow.com/questions/513600/should-i-use-java-string-format-if-performance-is-important)

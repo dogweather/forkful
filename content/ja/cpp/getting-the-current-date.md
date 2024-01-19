@@ -1,6 +1,6 @@
 ---
 title:                "現在の日付の取得"
-html_title:           "C++: 現在の日付の取得"
+html_title:           "Bash: 現在の日付の取得"
 simple_title:         "現在の日付の取得"
 programming_language: "C++"
 category:             "C++"
@@ -10,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃ 今回は、C++の最新版を使って、日本の読者のために、非公式なトーンで、長くなり過ぎずに、要点を伝えるスタイルでプログラミングの記事を書きます。本記事は、４つのセクションに分かれており、それぞれ日本語に翻訳した見出しを持っています。不必要な単語や文は避け、簡潔に書いています。
+## 何となぜ？
 
-"## 何か？"
-現在の日付を取得するとは、システムにおいて現在の日付を表示することを意味します。プログラマーが現在の日付を取得する理由の一つは、自分のプログラムを実行した時の日付を把握することができるようにするためです。
+プログラマが現在の日付を取得するのは、特定のイベントが起きた日をトラッキングするため、または日付に依存する機能をプログラムに実装するためです。これは、ログを出力するときやトランザクションのタイムスタンプを追跡する際に特に便利です。
 
-"## 方法："
+## 使い方:
+
+C++の`<chrono>`や`<ctime>`ライブラリを使って現在の日付を取得する基本的な例を見てみましょう。
+
 ```C++
 #include <iostream>
+#include <chrono>
 #include <ctime>
 
-using namespace std;
-
 int main() {
-  // 現在の日付を取得
-  time_t now = time(0);
-  
-  // 現在の日付を文字列に変換
-  char* date = ctime(&now);
-  
-  // 現在の日付の出力
-  cout << "現在の日付：" << date << endl;
-  
-  return 0;
+    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+    std::time_t now_c = std::chrono::system_clock::to_time_t(now - std::chrono::hours(24));
+    std::cout << "Yesterday was " << std::ctime(&now_c);
+    return 0;
 }
 ```
-
+実行結果は以下の通りです:
 ```
-現在の日付：Mon Aug 10 16:47:35 2020
+Yesterday was Sun Jul  4 16:48:52 2022
 ```
+このコードは、現在の日付と時間を取得し、それを24時間前にバックデートすることで「昨日」を取得します。
 
-"## 詳細を調べる："
-現在の日付を取得するには、様々な方法があります。その中でも最も一般的な方法は、C++の```ctime```ライブラリを使う方法です。このライブラリを使うことで、プログラム内で現在の日付を取得し、文字列として表示することができます。また、プログラマーが自分で日付を表示するフォーマットを設定することもできます。他にも、プラットフォームや目的に応じて、さまざまなライブラリやツールを使うこともできます。
+## 深堀り
+
+以前は`ctime`ライブラリの`time()`と`localtime()`関数を用いて現在の日付と時間を取得していましたが、C++11から`chrono`ライブラリが導入され、より簡単かつ安全に時間計算が可能になりました。他の方法として、オペレーティングシステム固有のAPIを使用する方法もありますが、これはプラットフォーム間での移植性に問題があります。
 
 ## 関連情報
-- [C++ reference: time](https://en.cppreference.com/w/cpp/chrono/c/time)
+
+関連する情報については以下のリンクをご参照ください:
+
+1. `<chrono>`ライブラリの詳細: https://en.cppreference.com/w/cpp/chrono
+2. `<ctime>`ライブラリの詳細: https://en.cppreference.com/w/cpp/chrono/c
+3. C++の日付と時間についての更なる情報: https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm

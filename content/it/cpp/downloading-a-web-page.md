@@ -1,7 +1,7 @@
 ---
-title:                "Scaricando una pagina web"
-html_title:           "C++: Scaricando una pagina web"
-simple_title:         "Scaricando una pagina web"
+title:                "Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
+simple_title:         "Scaricare una pagina web"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,51 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e Perché?
-Scaricare una pagina web significa ottenere il codice sorgente di una pagina web da internet e salvarlo sul nostro computer. I programmatori spesso fanno ciò per analizzare o manipolare il codice per creare applicazioni o per risolvere problemi tecnici.
+## Cos'è & Perché? 
+Scaricare una pagina web significa acquisire i dati di quella pagina nel tuo sistema locale. I programmatori lo fanno per analizzare, testare e manipolare i contenuti web per vari scopi, come lo scraping dei dati o il testing automatizzato.
 
 ## Come fare:
+Scarichiamo una pagina web in C++ con la libreria `CPR`. Ecco come:
+
 ```C++
-#include <iostream>
-#include <curl/curl.h>
+#include <cpr/cpr.h>
 
 int main() {
-  curl_global_init(CURL_GLOBAL_ALL);
-  // inizializza la libreria libcurl
-  
-  CURL *curl = curl_easy_init();
-  // creare la struct CURL 
-  
-  curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
-  // impostare l'URL da cui scaricare il codice sorgente
-  
-  curl_easy_perform(curl);
-  // eseguire la richiesta
-  
-  curl_easy_cleanup(curl);
-  // pulire la struct CURL
-  
-  curl_global_cleanup();
-  // pulire la libreria libcurl
-  
-  return 0;
+    cpr::Response r = cpr::Get(cpr::Url{"http://example.com/"});
+    // Il corpo della pagina web scaricata è accessibile con r.text
+    std::cout << r.text << std::endl;
 }
 ```
 
-Sample output:
+Ecco un esempio di output:
 
-```
+```C++
 <!doctype html>
 <html>
 <head>
-  <title>Example Domain</title>
-  <meta charset="utf-8" />
+    <title>Example Domain</title>
 ...
+</html>
 ```
 
-## Approfondimento:
-Scaricare una pagina web può essere utile per recuperare informazioni specifiche o per creare applicazioni che interagiscono con il web. Prima dell'uso di librerie come libcurl, i programmatori dovevano scrivere il loro codice per aprire una connessione con un server web, inviare manualmente una richiesta HTTP e analizzare la risposta. Esistono anche alternative per scaricare pagine web, come l'utilizzo di browser automatizzati o web scraping.
+## Approfondimento
+Scaricare pagine web è una pratica che risale agli albori del web, quando i programmatori scrivevano script per navigare i primi siti web. Oggi ci sono molte alternative all'uso del C++, come Python o Node.js, che offrono librerie dedicate per il web scraping e il testing. 
 
-## Vedi anche:
-- [libcurl documentation](https://curl.se/libcurl/)
-- [Web scraping with Python](https://realpython.com/beautiful-soup-web-scraper-python/)
+Tuttavia, l'utilizzo di C++ presenta alcuni vantaggi. È una lingua potente e versatile, adatta per lavorare con applicazioni a basso livello o ad alte prestazioni. Inoltre, con librerie come `CPR`, l'implementazione del download di una pagina web può essere altrettanto semplice e diretta.
+
+## Vedi Anche
+1. [CPR - Curl for People, a spiritual port of Python Requests](https://github.com/whoshuu/cpr)
+2. [Web Scraping with Python](https://realpython.com/python-web-scraping-practical-introduction/)
+3. [Web Scraping with Node.js](https://www.freecodecamp.org/news/the-ultimate-guide-to-web-scraping-with-node-js-daa2027d5313/)

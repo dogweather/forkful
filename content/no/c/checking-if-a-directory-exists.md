@@ -1,7 +1,7 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-html_title:           "C: Sjekke om en mappe eksisterer"
-simple_title:         "Sjekke om en mappe eksisterer"
+title:                "Sjekker om en katalog eksisterer"
+html_title:           "C: Sjekker om en katalog eksisterer"
+simple_title:         "Sjekker om en katalog eksisterer"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,52 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-Sjekke om en mappe eksisterer er en viktig del av programmering. Det lar deg kontrollere om en spesifisert mappe faktisk finnes på datamaskinen din. Dette kan være nyttig når du søker etter filer eller ønsker å utføre handlinger bare hvis mappen eksisterer.
+## Hva & Hvorfor?
+Å sjekke om en mappe eksisterer gjør programmering mer dynamisk og feilresistent. Dette muliggjør kodens ustørthet ved å forhindre feil som skjer når man prøver å få tilgang til en ikke-eksisterende mappe.
 
-## Hvordan:
-For å sjekke om en mappe eksisterer, kan du bruke følgende kode i ditt C-program:
+## Slik gjør du:
+I den følgende eksemplet bruker vi `stat()` -funksjonen som sjekker filens tilstand og deretter sjekker om filen er en katalog.
 
 ```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <dirent.h> // biblioteket for mappebehandling
+#include <sys/stat.h>
 
-int main()
-{
-    // Sett opp variabler
-    DIR *mappe;
-    char *navn = "min_mappe";
-    
-    // Åpne mappen med navnet "min_mappe" i gjeldende katalog
-    mappe = opendir(navn);
-    
-    // Sjekk om mappen eksisterer
-    if(mappe) {
-        printf("%s eksisterer!\n", navn);
-        closedir(mappe); // lukk mappen for å unngå problemer
-    } else {
-        printf("%s eksisterer ikke.\n", navn);
-    }
-    
-    return 0;
+int directory_exists(const char *path) {
+   struct stat st;
+
+   if(stat(path, &st) != 0)
+       return 0;
+   return S_ISDIR(st.st_mode);
 }
 ```
 
-Dette eksempelet bruker funksjoner fra dirent.h biblioteket, som er spesialisert for mappebehandling i C-programmer.
+Korrekt implementasjon vil returnere `1` om mappen eksisterer og `0` hvis den ikke gjør det.
 
-Kjører du dette programmet, vil du få følgende utskrift:
-```
-min_mappe eksisterer ikke.
-```
+## Dypdykk
+`stat()` -funksjonen har vært rundt i mange år, og ble først introdusert i UNIX Systems. Det gir detaljert informasjon om filer og er bredt akseptert som den mest pålitelige måten å sjekke om en mappe eksisterer i C.
 
-## Dypdykk:
-I tidligere versjoner av C, måtte man bruke system-kommandoer som "stat" eller "access" for å sjekke om en mappe eksisterer. Dette kunne føre til sikkerhetsrisikoer, spesielt når en bruker brukeren innmatingsverdier.
+Alternativt kan du også bruke `opendir()` -funksjonen for å sjekke om en mappe eksisterer, men det er litt langsommere enn `stat()` da det fysisk prøver å åpne mappen.
 
-I nyere versjoner av C, som den som brukes i dette eksempelet, finnes det innebygde funksjoner for å lett sjekke om en mappe eksisterer.
+Implementeringsdetaljer varierer etter systemet. For eksempel, i UNIX-lignende systemer returnerer `stat()` -funksjonen `-1` hvis den angitte banen ikke eksisterer. Derfor, for å sjekke om en katalog eksisterer, ser vi om funksjonen returnerer noe annet enn `-1`. I tillegg ser vi om det er en katalog ved å bruke `S_ISDIR` macro på `st_mode` medlem av `struct stat`.
 
-Det finnes også andre alternativer for mappebehandling i C, som for eksempel "opendir" og "readdir" funksjonene som brukes i dette eksempelet. Disse gir enkle måter å navigere og arbeide med mapper i C-programmer.
-
-## Se også:
-- [The Dirent.h Header File in C](https://www.tutorialspoint.com/c_standard_library/dirent_h.htm)
-- [C Programming Tutorial: Directory handling](https://www.techwalla.com/articles/c-programming-tutorial-directory-handling)
+## Se også
+- For mer informasjon om `stat()`, se [man pages](https://man7.org/linux/man-pages/man2/stat.2.html)
+- For mer informasjon om `opendir()`, se [man pages](https://www.man7.org/linux/man-pages/man3/opendir.3.html) 
+- Hvis du vil dykke dypere ned i filsystem API-er, sjekk ut [APUE](http://www.apuebook.com/) (Advanced Programming in the Unix Environment)

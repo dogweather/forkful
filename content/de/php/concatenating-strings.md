@@ -1,7 +1,7 @@
 ---
-title:                "Zusammenfügen von Zeichenfolgen"
-html_title:           "PHP: Zusammenfügen von Zeichenfolgen"
-simple_title:         "Zusammenfügen von Zeichenfolgen"
+title:                "Strings verketten"
+html_title:           "Bash: Strings verketten"
+simple_title:         "Strings verketten"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,21 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-String-Konkatenation ist ein Begriff, der in der Programmierung verwendet wird, um zwei oder mehr Strings zusammenzufügen. Dies erlaubt es Programmierern, dynamische Daten zu erstellen, indem sie vorhandene Strings kombinieren. Zum Beispiel könnte ein Entwickler den Text "Hallo" mit einer Variablen, die den Namen des Benutzers enthält, verketten, um eine personalisierte Begrüßung zu erstellen. Diese Technik ist besonders nützlich in der Webentwicklung, um dynamische Inhalte auf Webseiten zu erzeugen.
+## Was & Warum?
 
-# Wie geht's:
-```PHP 
-echo "Hallo" . $name;
+Die Verkettung von Zeichenketten (String Concatenation) spielt eine Schlüsselrolle in PHP, weil man damit mehrere Zeichenketten zu einer einzigen zusammenfügt. Es ist der Hauptweg, Text in dynamischen Inhalten zu verwalten.
+
+## So geht's:
+
+Du kannst den Punkt (.) Operator zum Verketten von Strings in PHP benutzen. Schau Dir das folgende Beispiel an:
+
+```PHP
+<?php
+$teil1 = "Hallo";
+$teil2 = ", Welt!";
+$satz = $teil1 . $teil2; // Verkettung
+echo $satz;
+?>
 ```
-Ausgabe: Hallo Benutzer
 
-In diesem Beispiel wird der "." Operator verwendet, um den String "Hallo" mit der Variablen $name zu verketten. Beachte, dass zwischen dem Punkt und der Variable kein Leerzeichen vorhanden sein darf, da dies zu einem Syntaxfehler führen würde.
+Die Ausgabe wird sein:
 
-# Tiefentauchen:
-Die Idee der String-Konkatenation ist nicht neu und wird in vielen Programmiersprachen verwendet, einschließlich PHP. In älteren Programmiersprachen wie C wurde die Funktion strcat () verwendet, um Strings zusammenzufügen. Allerdings kann diese Methode unsicher sein, da sie nicht prüft, ob genügend Speicherplatz für den neuen String vorhanden ist. In PHP gibt es auch alternative Wege, um Strings zu verketten, wie z.B. die Funktion sprintf (), die es erlaubt, variablen Wert in einen String einzufügen.
+```
+Hallo, Welt!
+```
 
-# Siehe Auch:
-- [PHP-Handbuch - String-Konkatenation](https://www.php.net/manual/de/language.operators.string.php)
-- [PHP-Handbuch - sprintf() Funktion](https://www.php.net/manual/de/function.sprintf.php)
-- [C++-Referenz - strcat() Funktion](https://www.cplusplus.com/reference/cstring/strcat/)
+## Vertiefung
+
+1. Historischer Kontext: Die Verkettung von Strings wurde in PHP eingeführt, um komplexere Datenstrukturen zu ermöglichen und die Anzeige dynamischer Inhalte zu erleichtern.
+
+2. Alternativen: Eine Alternative zur Verkettung von Strings ist die Verwendung von doppelt-angezogenen Zeichenketten, wo die Variablen innerhalb der Zeichenkette deklariert werden, z.B. `$satz = "$teil1$teil2";`. Mit dem operator `.=`, kann man den Inhalt einer Variablen direkt erweitern: `$satz .= $weiterer_Text;`.
+
+3. Implementierungsdetails: Intern verwendet PHP einen Mechanismus namens "Copy on Write", der optimiert, wie Speicherplatz bei der Verkettung von Strings verwendet wird.
+
+## Siehe auch:
+
+1. Die PHP-Dokumentation für Zeichenketten: [PHP: Strings - Manual](https://www.php.net/manual/de/language.types.string.php)
+2. Ein informativer Artikel zur Verkettung von Zeichenketten in PHP: ['.' (Punkt) -  PHP Konkatenation (Zusammenführung) von Zeichenketten](https://www.php-einfach.de/php-tutorial/strings-verketten/)

@@ -1,7 +1,7 @@
 ---
-title:                "デバッグ出力のプリント"
-html_title:           "Ruby: デバッグ出力のプリント"
-simple_title:         "デバッグ出力のプリント"
+title:                "デバッグ出力の印刷"
+html_title:           "Fish Shell: デバッグ出力の印刷"
+simple_title:         "デバッグ出力の印刷"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,32 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに？なぜ？
-デバッグ出力とは何か、なぜプログラマーがそれを行うのかを説明します。デバッグ出力は、プログラムの実行中にその状態を把握するための重要な手段です。プログラムの実行中にデバッグ出力を追加することで、必要な箇所を特定して問題を解決することができます。
+## 何となぜ？
 
-## 方法：
-下記はデバッグ出力を行うためのコード例及び出力例です。 ```Ruby ... ``` コードブロック内に記載されています。
+デバッグ出力の印刷は、コードがどのように動作しているか理解するための手段です。プログラマはそれを使用して、中断したり、誤った出力を生成したり、予期しない動作をするコードを追跡します。
 
-```
-# コード例
-def multiply(x, y)
-  puts "xの値は#{x}です。" # 変数の値を出力
-  puts "yの値は#{y}です。"
-  return x * y
-end
+## 使い方:
 
-puts multiply(2, 3)
+Rubyでのデバッグ出力は`puts`や`print`、`p`を使うことが一般的です。それぞれ少し異なる動作をします。
 
-# 出力例
-xの値は2です。
-yの値は3です。
-6
+```Ruby
+# これは3つの結果をコンソールに印刷します
+puts "Hello"
+print "World"
+p "!"
+
+# 出力:
+# Hello
+# World!
 ```
 
-## ディープダイブ：
-デバッグ出力は、プログラム開発の歴史の中で重要な役割を果たしています。以前は、コンソールにメッセージを出力することが主な方法でしたが、現在ではログファイルやデバッガーなどさまざまな手段があります。また、バグを取り除くためにデバッグ出力を使用する方法の代わりに、ユニットテストやテストドリブン開発の手法があります。Rubyでは、```puts```や```p```、```print```などのメソッドを使用してデバッグ出力を行うことができます。
+しかし、大規模なプログラムやエラーの追跡には、Rubyの組み込みライブラリ`debug`が有効です。
 
-## 関連リンク：
-- [Rubyのデバッグ出力についてのドキュメント](https://docs.ruby-lang.org/ja/latest/doc/debug_documentation.html)
-- [デバッグ出力の歴史](https://blog.nelhage.com/2008/05/a-brief-history-of-debugging/)
-- [テストドリブン開発についての記事](https://www.tdi.co.jp/miso/testdriventutorial.html)
+```Ruby
+require 'debug'
+
+x = 2
+y = 3
+puts "Adding these two values..."
+Debugger.start
+x + y
+```
+
+## 深層情報.
+
+### (1) 历史的背景
+デバッグ出力は古くからプログラムの問題を解決する一般的な方法で、Rubyでも同様です。
+
+### (2) 代わりの方法
+Rubyにはputsやprint、p等のデバッグ用の組み込み関数以外にも、特に大規模なプロジェクトや複雑なバグ対策には`debug`や`awesome_print`等のライブラリが活用されます。
+
+### (3) 実装の詳細
+`puts`、`print`、`p`はそれぞれ標準出力に異なる形式で値を出力します。`puts`は改行を出力しますが、`print`は改行しません。`p`は`inspect`メソッド経由でオブジェクトをより詳細に出力します。
+
+## 関連情報:
+
+1. Rubyのオフィシャルな[ドキュメンテーション](https://www.ruby-lang.org/ja/documentation/)
+2. デバッグの[基本](https://guides.rubyonrails.org/debugging_rails_applications.html)について
+3. [Ruby Debugging Magic Cheat Sheet](https://www.rubyguides.com/2015/06/ruby-debugging/)

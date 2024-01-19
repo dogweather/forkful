@@ -10,51 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cosa & Perché?
-La verifica dell'esistenza di una directory è un'operazione comune nei programmatori che utilizzano il linguaggio C++. Ciò è necessario per garantire che un percorso di file specificato sia valido prima di eseguire operazioni come scrittura o lettura da esso.
+## Cosa e perché?
+Verificare se una directory esiste è l'atto di controllare se una specifica cartella (o directory) esiste sulla macchina in uso. I programmatori lo fanno principalmente per evitare errori durante l'esecuzione del programma, ad esempio quando cercano di leggere o scrivere file in una directory che non esiste.
 
-# Come: 
-Di seguito sono riportati due esempi di codice in C++ per verificare se una directory esiste utilizzando la libreria standard di C++11.
+## Come fare:
+Ecco un esempio di come verificare se una directory esiste in C++:
 
-```
+```C++
+#include <filesystem>
 #include <iostream>
-#include <experimental/filesystem>
-
-namespace fs = std::experimental::filesystem;
-
-int main() {
-    // Metodo 1: utilizzando la funzione exists()
-    if (fs::exists("directory/")) {
-        std::cout << "La directory esiste!" << std::endl;
+  
+int main()
+{
+    if(std::filesystem::exists("myDirectory")){
+        std::cout << "Directory esiste.\n";
     } else {
-        std::cout << "La directory non esiste." << std::endl;
+        std::cout << "Directory non esiste.\n";
     }
-
-    // Metodo 2: utilizzando la funzione is_directory()
-    if (fs::is_directory("directory/")) {
-        std::cout << "La directory esiste!" << std::endl;
-    } else {
-        std::cout << "La directory non esiste." << std::endl;
-    }
-
-    return 0;
 }
 ```
 
-**Output:**
+L'output del programma sarà una delle due opzioni a seconda dell'esistenza della directory 'myDirectory':
+
 ```
-La directory esiste!
-La directory esiste!
+Directory esiste.
 ```
 
-# Profondità: 
-In passato, la libreria Boost.Filesystem era l'unico modo per verificare l'esistenza di una directory in C++. Tuttavia, con l'introduzione della libreria standard C++11, la funzionalità di gestione dei file è stata aggiunta e semplificata.
+oppure
 
-Un'alternativa alla libreria standard C++11 è la libreria Open Asset Import (Assimp), che offre funzionalità avanzate di gestione dei file, inclusa la verifica dell'esistenza di una directory.
+```
+Directory non esiste.
+```
 
-Per implementare il controllo dell'esistenza di una directory, la libreria standard C++11 utilizza una combinazione di funzioni di sistema e chiamate al sistema operativo per ottenere informazioni sul percorso specificato.
+## Approfondimento
+Il controllo dell'esistenza di una directory è una funzionalità che esiste da quasi sempre nel mondo del software. Precedentemente, in C++, si utilizzavano funzioni come `opendir()` e `stat()` per ottenere queste informazioni. 
 
-# Vedi anche:
-- [Documentazione sulla libreria standard C++11](https://en.cppreference.com/w/cpp/filesystem)
-- [Documentazione sulla libreria Open Asset Import (Assimp)](http://www.assimp.org/)
-- [Documentazione sulla libreria Boost.Filesystem](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
+Un metodo alternativo per controllare l'esistenza di una directory in C++ è l'uso di Boost Filesystem Library. 
+
+La funzione `std::filesystem::exists()` è implementata in modo tale che ritorna `true` se il file o la directory specificata esiste; altrimenti ritorna `false`. Utilizza le funzioni di basso livello del sistema operativo per ottenere queste informazioni.
+
+## Guarda anche
+1. Documentazione su [std::filesystem](https://en.cppreference.com/w/cpp/filesystem) 
+2. Documentazione su [Boost Filesystem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm) 
+3. Guida su come fare la [gestione di file e directory in C++](https://www.learncpp.com/cpp-tutorial/186-basic-file-io/)

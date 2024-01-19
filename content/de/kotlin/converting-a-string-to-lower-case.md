@@ -1,7 +1,7 @@
 ---
-title:                "String in Kleinbuchstaben umwandeln"
-html_title:           "Kotlin: String in Kleinbuchstaben umwandeln"
-simple_title:         "String in Kleinbuchstaben umwandeln"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#### Was & Warum?
-Konvertierung von Zeichenketten zu Kleinbuchstaben (lower case) ist ein Prozess, bei dem alle Großbuchstaben in einer Zeichenkette in ihre Kleinbuchstabenform umgewandelt werden. Programmierer nutzen dies, um eine einheitliche und leichter lesbare Form von Text zu erhalten.
+## Was & Warum?
 
-#### Anleitung:
-```Kotlin 
-// Beispiel 1: Verwendung von lower case-Funktion
-val string = "Hallo, WELT!"
-println(string.lowercase())
-// Ausgabe: hallo, welt!
+In der Programmierung führt die Umwandlung eines Strings in Kleinbuchstaben oft zu einer Verringerung von Fehlern. Warum? Weil diese Umwandlung dem Prozess der Normalisierung dient und dabei hilft, Inkonsistenzen in der Groß- und Kleinschreibung zu beseitigen, die sonst zu Verwechslungen führen könnten.
 
-// Beispiel 2: Verwendung von toLowerCase-Funktion
-val string = "Programmieren ist toll"
-println(string.toLowerCase())
-// Ausgabe: programmieren ist toll
+## Wie:
+
+In Kotlin ist die String-Konvertierung in Kleinbuchstaben eine schnelle und einfache Aufgabe. Hier ist ein Beispiel:
+
+```Kotlin
+val gruss: String = "Hallo WELT"
+val grussInKleinbuchstaben: String = gruss.lowercase()
+
+println(gruss) // Ausgabe: Hallo WELT
+println(grussInKleinbuchstaben) // Ausgabe: hallo welt
 ```
+## Tiefer Einblick
 
-#### Tiefere Einblicke:
-1. Historischer Hintergrund: In der frühen Zeit der Computerprogrammierung wurden nur Großbuchstaben verwendet, wodurch die Zeichenketten schwer lesbar waren. Mit der Einführung von Kleinbuchstaben und der Möglichkeit, sie in Großbuchstaben umzuwandeln, wurden Texte leichter zu lesen.
-2. Alternativen: Neben der Verwendung der ```lowercase()```- oder ```toLowerCase()```-Funktion gibt es auch die Option, jeden Buchstaben einzeln in Kleinbuchstaben umzuwandeln. Dies kann jedoch zeitaufwändig sein und ist daher nicht immer die beste Wahl.
-3. Implementierungsdetails: Die Funktionen ```lowercase()``` und ```toLowerCase()``` nutzen den ASCII-Code der Zeichen, um sie in ihre Kleinbuchstabenform umzuwandeln. Dies bedeutet, dass nicht-ASCII-Zeichen (wie z.B. Umlaute) nicht korrekt konvertiert werden können.
+Die Methode `lowercase()` in Kotlin ist eine bequeme Funktion, die in Kotlin 1.5.0 eingeführt wurde. Vor der Einführung dieser Methode, in älteren Versionen von Kotlin, wurde `toLowerCase()` verwendet. Die `lowercase()` Methode ist vorzuziehen, da sie den Unicode-Standard für die Konvertierung von Großbuchstaben in Kleinbuchstaben verwendet.
 
-#### Siehe auch:
-- [Dokumentation von Kotlin zu ```lowercase()```](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/lowercase.html)
-- [Offizielle Kotlin-Dokumentation](https://kotlinlang.org/docs/home.html)
-- [Alternative Lösung: Konvertierung von Kleinbuchstaben in Großbuchstaben](https://stackoverflow.com/questions/41107/how-do-i-convert-a-string-to-lower-case-in-android)
+Eine mögliche Alternative zur Verwendung von `lowercase()`, insbesondere wenn Sie mit anderen Programmiersprachen arbeiten, ist die Verwendung von `toLowerCase()`. Allerdings ist die Verwendung von `lowercase()` ab Kotlin 1.5.0 vorzuziehen, da diese Methode internationalisierungssichere Konvertierungen bietet.
+
+Bei der Implementierung von `lowercase()` unter der Haube verwendet Kotlin intern den `java.lang.String.toLowerCase` Aufruf des JVM, um sicherzustellen, dass die Konvertierung ordnungsgemäß durchgeführt wird.
+
+## Siehe auch
+
+Für detailliertere Informationen über die String-Konvertierung in Kotlin, hier sind ein paar Links zu relevanten Dokumenten und Tutorials:
+
+- [Kotlin String Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/lowercase.html)
+- [String in Kotlin: Grundlegende Operationen](https://www.programiz.com/kotlin-programming/string)
+- [Kotlin Praxistutorial: Arbeiten mit Zeichenketten](https://www.tutorialkart.com/kotlin/kotlin-string-class-and-methods/)

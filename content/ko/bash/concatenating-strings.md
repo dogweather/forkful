@@ -1,7 +1,7 @@
 ---
-title:                "문자열 연결"
-html_title:           "Bash: 문자열 연결"
-simple_title:         "문자열 연결"
+title:                "문자열 연결하기"
+html_title:           "Arduino: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,26 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 뭐가/왜 인가요?
+## 무엇 그리고 왜?
 
-문자열을 연결하는 것이 무엇인지, 그리고 프로그래머들이 이것을 왜 하는지에 대해 소개합니다.
+문자열 연결(string concatenation)은 두 개 이상의 문자열을 하나로 결합하는 과정입니다. 프로그래머는 변수, 출력, 및 통신메시지를 생성할 때 자주 활용합니다.
 
-## 그럼 어떻게 할까요?
+## 어떻게 하나:
 
+다음 예제들은 문자열 연결에 널리 사용되는 Bash 명령입니다:
+
+### 방법1: += 를 사용하여 문자열 연결
 ```Bash
-var1="Hello"   # 첫 번째 변수를 만듭니다.
-var2="World"   # 두 번째 변수를 만듭니다.
-concat="${var1} ${var2}"   # 변수를 연결합니다.
-echo ${concat}   # 출력: Hello World
+string1="안녕,"
+string1+=" 여러분."
+echo $string1
+```
+출력:
+```Bash
+안녕, 여러분.
 ```
 
-## 깊게 들어가보면
+### 방법2: {}를 이용해 문자열 연결 
+```Bash
+string1="안녕"
+string2=" 여러분."
+echo ${string1}${string2}
+```
+출력:
+```Bash
+안녕 여러분.
+```
 
-1. 역사적 배경: 초기의 쉘 프로그래밍에서 문자열 연결은 어려웠습니다. `cat`을 사용하거나 여러 줄의 문자열을 `echo`로 반복적으로 출력하는 등 다양한 방식을 사용했습니다.
-2. 대안: 쉘에서 명령의 출력 결과를 변수에 할당할 수 있는 `$(...)`이나 `backticks`을 사용하면, 문자열 연결 뿐만 아니라 다양한 조작을 할 수 있습니다. 또한, AWK, SED 같은 다른 도구를 이용할 수도 있습니다.
-3. 구현 세부사항: 변수나 리터럴 값을 `""` 으로 감싸는 것으로 문자열을 연결할 수 있습니다. 여러 변수를 연결할 경우 적절한 공백이 필요하며, 변수가 아닌 리터럴 값을 연결할 때는 이 과정이 필요 없습니다.
+## 깊게 알아보기
 
-## 관련 자료
+### 역사적 배경
 
-- [Concatenation of two strings in Shell Scripting](https://www.geeksforgeeks.org/concatenation-of-two-strings-in-shell-scripting/)
-- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_01.html)
+문자열 연결의 개념은 프로그래밍의 초기 시절부터 있었고 Bash는 Unix Shell의 한 종류로, 아주 간단하면서도 강력한 문자열 조작 기능을 제공합니다.
+
+### 대안들
+
+Bash 외에도 여러 언어에서 문자열 합치기를 지원합니다. Python, Java, 자바스크립트 등에서도 유사한 연산이 가능합니다.
+
+### 실행 세부정보
+
+Bash에서 문자열 연결의 실행역시 매우 효과적이다.문자열 연결 연산의 대부분은 시간 복잡도가 O(1)입니다. 즉, 연결할 문자열의 길이에 관계없이 거의 일정한 시간이 소요됩니다.
+
+## 참고자료
+
+- Bash 문자열 연결에 대한 더 깊이있는 이해를 위한 링크: [문자열 연결 - Bash](https://linuxize.com/post/bash-concatenate-strings/)
+  
+- 다른 언어에서의 문자열 연결 방법를 알아보는 링크 :
+    - [Python - 문자열 연결](https://www.w3schools.com/python/gloss_python_string_concatenation.asp)
+    - [Java - 문자열 연결](https://www.w3schools.com/java/java_strings.asp)
+    - [JavaScript - 문자열 연결](https://www.w3schools.com/js/js_string_methods.asp)

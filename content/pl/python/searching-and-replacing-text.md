@@ -1,6 +1,6 @@
 ---
 title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Python: Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
 simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Python"
 category:             "Python"
@@ -10,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co to jest i dlaczego programiści tego potrzebują?
+## Co i dlaczego?
 
-W przeciągu swojej kariery jako programista, często będziesz musiał modyfikować duże ilości tekstu w swoim kodzie. Nie chcesz ręcznie zmieniać każdego wystąpienia danego słowa lub frazy, ponieważ jest to czasochłonne i podatne na błędy. Dlatego programiści korzystają z techniki wyszukiwania i zamiany tekstu, która automatycznie zastępuje określone słowa lub frazy w całym kodzie.
+Wyszukiwanie i zamienianie tekstu to powszechnie używane techniki programistyczne. Pozwalają na automatyczne modyfikowanie pewnych ciągów znaków w dowolnym tekście, co znacznie usprawnia proces edycji, analizy danych, czy ekstrakcji informacji.
 
-# Jak to zrobić?
+## Jak to zrobić:
 
-Możesz użyć metody ```replace()``` w Pythonie, aby zamienić wystąpienia wybranego tekstu na inny. Oto przykładowy kod w języku Python:
+Python oferuje wiele praktycznych metod do manipulowania tekstem, takie jak `replace()`. Wypróbujmy to:
 
-```
-text = "To jest przykładowy tekst do zmiany."
-replaced_text = text.replace("przykładowy", "nowy")
-print(replaced_text)
-
-# Output: To jest nowy tekst do zmiany.
+```Python
+tekst = "Witam na Pythonie."
+nowy_tekst = tekst.replace("Pythonie", "programowaniu w Pythonie")
+print(nowy_tekst)
 ```
 
-Możesz również wykorzystać wyrażenia regularne, aby precyzyjniej wybrać fragment tekstu do zamiany. Przykładowy kod wykorzystujący moduł ```re``` w Pythonie wyglądałby tak:
+Wyjście:
 
-```
-import re
-
-text = "To jest przykładowy tekst do zmiany, ale tylko niektóre wyrazy."
-replaced_text = re.sub(r"przykładowy|wyrazy", "nowy", text)
-print(replaced_text)
-
-# Output: To jest nowy tekst do zmiany, ale tylko niektóre nowe.
+```Python
+"Witam na programowaniu w Pythonie."
 ```
 
-# Pogłębiony przegląd
+`replace()` automatycznie zastępuje wszystkie wystąpienia słowa "Pythonie" słowem "programowaniu w Pythonie".
 
-Wyszukiwanie i zamiana tekstu jest techniką, która jest stosowana od bardzo dawna w programowaniu. Pierwsze komputery używały "kart perforowanych" do wykonywania tych operacji, a obecnie wykorzystujemy specjalne narzędzia w naszych edytorach kodu.
+## Głębsze spojrzenie:
 
-Alternatywą dla wyszukiwania i zamiany może być też "refaktoryzacja kodu", czyli zmiana struktury lub układu kodu w celu poprawy jego czytelności lub wydajności. Jednak w przypadku prostych zmian tekstowych, wyszukiwanie i zamiana jest najczęściej używaną metodą.
+Wyszukiwanie i zamienianie tekstu to techniki służące do manipulowania tekstem, które mają swoje korzenie jeszcze w czasach, kiedy powstawało programowanie.
 
-W klasycznej wersji Pythona, metoda ```replace()``` jest bezpieczna, ale nie jest w stanie zastąpić ciągów znaków uwzględniając ich wielkość liter. W takiej sytuacji lepiej jest wykorzystać metodę ```replace()``` z modułem ```re```, która pozwala na dopasowanie i zamianę ciągów znaków niezależnie od ich wielkości.
+Alternatywą dla metody `replace()` jest wykorzystanie wyrażeń regularnych z modułu `re`. Dzięki nim możemy wykonać bardziej skomplikowane operacje na tekście, jednak są one trudniejsze do opanowania.
 
-# Zobacz też
+Szczegółem implementacyjnym metody `replace()` jest to, że tworzy ona nowy łańcuch znaków zamiast modyfikować istniejący, co wynika z niezmienności łańcuchów znaków w Pythonie.
 
-Jeśli chcesz dowiedzieć się więcej o używaniu wyrażeń regularnych w Pythonie, możesz zapoznać się z dokumentacją do modułu ```re```. Inne przydatne narzędzia do wyszukiwania i zmiany tekstu w kodzie to, na przykład, Narzędzie Wyszukiwania i Zamiany w edytorze kodu PyCharm.
+## Zobacz też:
+
+Dla pełniejszego zrozumienia tematu, możesz odwiedzić następujące źródła:
+1. Dokumentacja Pythona na temat manipulacji tekstami: https://docs.python.org/3/library/stdtypes.html#string-methods
+2. Tutorial na temat wyrażeń regularnych: https://docs.python.org/3/howto/regex.html
+3. Artykuł NTNU na temat wyszukiwania i zamiany tekstu: http://www.ntnu.no/python/text/text.html

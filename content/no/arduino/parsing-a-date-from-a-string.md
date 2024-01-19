@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av dato fra en streng"
-html_title:           "Arduino: Analysering av dato fra en streng"
-simple_title:         "Analysering av dato fra en streng"
+title:                "Tolke en dato fra en streng"
+html_title:           "Bash: Tolke en dato fra en streng"
+simple_title:         "Tolke en dato fra en streng"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -11,27 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Parsing av datoer fra en tekststreng er en vanlig programmeringsoppgave som innebærer å konvertere et tekstformatert dato til en datotype som er leselig for en datamaskin. Dette er nyttig når man trenger å behandle eller lagre datoer i et program.
 
-## Slik gjør du det:
-Et eksempel på hvordan du kan parse en dato fra en tekststreng i Arduino er ved hjelp av funksjonen ```toCharArray()```, som konverterer en string til en karakter-array. Du kan deretter bruke funksjonen ```atoi()``` til å konvertere hvert tegn til et tall og bygge opp en ```Date```-variabel. Her er et enkelt eksempel:
+Å tolke en dato fra en streng betyr å omdanne den lesbare tekstformen til en datoverdi for datohåndtering. Programmerere gjør dette for å utføre tidsspesifikke operasjoner, som å beregne tiden mellom datoer eller håndtere datoformat på tvers av forskjellige tidssoner.
 
+## Hvordan Gjøre:
+
+Her er en grunnleggende Arduino-kode for datoparsing fra en streng.
+
+```Arduino
+#include <TimeLib.h> //Dette biblioteket åpner for tid og dato funksjoner.
+  
+String datoStreng = "26/11/2020"; //Definerer dato som en streng.
+  
+void setup() {
+  
+  Serial.begin(9600); //Start seriell kommunikasjon med en baudrate på 9600.
+  
+  int dag = datoStreng.substring(0,2).toInt(); //Hent dag.
+  int mnd = datoStreng.substring(3,5).toInt(); //Hent måned.
+  int år = datoStreng.substring(6,10).toInt(); //Hent år.
+  
+  setTime(0, 0, 0, dag, mnd, år); //Sett tiden ved hjelp av den tolkede datoen. 
+  Serial.println(day());  //Skriv ut dagen.
+  Serial.println(month()); //Skriv ut måneden.
+  Serial.println(year()); //Skriv ut året.
+}
+  
+void loop() {
+  
+  //La denne plassen være fri.
+}
 ```
-String datoStreng = "20/03/2021";
-char array[12];
-datoStreng.toCharArray(array, 12);
-int dag = atoi(array);      // Dag = 20
-int måned = atoi(array + 3);  // Måned = 03
-int år = atoi(array + 6);    // År = 2021
-Date dato(dag, måned, år);  // Opprett en dato-variabel med verdier
+## Dyp Dykk:
 
-```
+Å tolke datoer fra strenger har blitt brukt siden tidlige programmeringsspråk som COBOL og Fortran. Det krever ikke bare å omdanne representasjonen, men også å håndtere skuddår og forskjellige kalenderformater.
 
-## Dypdykk:
-Parsing av datoer har vært en utfordring for programmerere siden tidlig på 1970-tallet, da de første dataprogrammene ble utviklet. Det finnes flere forskjellige metoder for å parse datoer fra en tekststreng, for eksempel ved hjelp av regulære uttrykk eller ved å splitte tekststrengen basert på et fast mønster. Det er viktig å huske på at datoformater kan variere fra land til land, og derfor bør man alltid grundig teste parsing-koden sin.
+En alternativ måte er å bruke funksjonen `strptime()` som er tilgjengelig i noen C/C++ bibliotek. Men det er ikke alltid tilgjengelig på Arduino plattformen. Dessuten, for svært begrensete systemer som Arduino, kan manuell parsing være mer ressurseffektiv.
 
-## Se også:
-- [Official Arduino Reference - String toCharArray()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tochararray/)
-- [Official Arduino Reference - String atoi()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/atoi/)
-- [Tutorialspoint - C++ String toCharArray()](https://www.tutorialspoint.com/cplusplus/cpp_string_tochararray.htm)
-- [GeeksforGeeks - How to convert string to array in C++](https://www.geeksforgeeks.org/how-to-convert-string-to-array-in-cpp/)
+Implementeringsdetaljer kan variere basert på strengformatet. Typiske datoformater inkluderer "MM/DD/ÅÅÅÅ", "DD-MM-ÅÅÅÅ" eller "ÅÅÅÅ/MM/DD". Din kode må kunne håndtere det formatet du forventer.
+
+## Se Også:
+
+1. [Time Arduino Library](https://www.arduino.cc/reference/en/libraries/time/) - Bibliotek for tid- og datohåndtering.
+2. [Arduino String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) - For mer informasjon om strengobjekter i Arduino. 
+3. [Arduino Reference](https://www.arduino.cc/reference/en/) - Den offisielle referansemanualen, med detaljer om innebygde funksjoner.

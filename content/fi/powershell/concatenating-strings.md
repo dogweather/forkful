@@ -1,7 +1,7 @@
 ---
-title:                "Joustopalatut merkkijonot"
-html_title:           "PowerShell: Joustopalatut merkkijonot"
-simple_title:         "Joustopalatut merkkijonot"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,50 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+# Mielenkiintoista PowerShellin (nykyinen versio) ohjelmointia: Merkkijonojen yhdistäminen
 
-Miksi ohjelmoijat yhdistävät merkkijonoja? Merkkijonojen yhdistäminen tarkoittaa useiden merkkijonojen yhdistämistä yhdeksi kokonaisuudeksi. Tämä on hyödyllistä, kun haluat luoda uuden merkkijonon, joka sisältää tietoa useista eri lähteistä.
+## Mitä & Miksi?
+
+Merkkijonojen yhdistäminen ('concatenation') on prosessi, jossa kaksi tai useampia merkkijonoja liitetään yhteen yhdeksi merkkijonoksi. Ohjelmoijat käyttävät sitä luodakseen dynaamisia merkkijonoja tai korjaamaan merkkijonojen liittyviä ongelmia.
 
 ## Miten:
 
-```PowerShell
-# Esimerkki 1: Yksinkertainen yhdistäminen
-$eka = "Tervetuloa "
-$toka = "PowerShell-ohjelmointiin!"
-$kokonaisuus = $eka + $toka
-$kokonaisuus
-```
-```
-Tervetuloa PowerShell-ohjelmointiin!
-```
+Tässä on nopea esimerkkiskripti, joka näyttää, kuinka yhdistät merkkijonot PowerShellissa:
 
 ```PowerShell
-# Esimerkki 2: Yhdistäminen muuttujien kanssa
-$nimi = "Maria"
-$ika = 25
-$tervehdys = "Hei, olen " + $nimi + " ja minulla on " + $ika + " vuotta ikää."
-$tervehdys
+$string1 = "Hei"
+$string2 = " maailma!"
+
+$joinedString = $string1 + $string2
+Write-Host $joinedString
 ```
+
+Sample output:
+```PowerShell
+Hei maailma!
 ```
-Hei, olen Maria ja minulla on 25 vuotta ikää.
-```
+
+Tässä toinen esimerkki, joka käyttää -f -muotomäärittäjää:
 
 ```PowerShell
-# Esimerkki 3: Yhdistäminen komentoriviltä saadun syötteen kanssa
-$luku = Read-Host "Syötä luku:"
-$viesti = "Mikään ei ole pysyvästi yhtä kuin " + $luku + "."
-$viesti
-```
-```
-Syötä luku: 42
-Mikään ei ole pysyvästi yhtä kuin 42.
+$template = "Hei {0}!"
+$user = "maailma"
+$greeting = $template -f $user
+
+Write-Host $greeting
 ```
 
-## Syvemmälle:
+Sample output:
+```PowerShell
+Hei maailma!
+```
 
-Merkkijonojen yhdistäminen on ollut käytössä jo kauan ennen PowerShell-kielen syntymistä. Monissa muissa kielissä käytetään erilaisia operaattoreita, kuten + tai &, merkkijonojen yhdistämiseen. Joissakin tilanteissa voi olla hyödyllistä käyttää niitä PowerShell-kielen sijaan.
+## Syvällisempää: 
+
+Historiallisesti tuetaan merkkijonojen yhdistämistä jo useissa vanhemmissakin ohjelmointikielissä. PowerShell on ottanut parhaita käytäntöjä näistä ja tarjoaa useita erityisiä keinoja.
+
+Vaihtoehtoisesti voit käyttää -join-komentoa:
+
+```PowerShell
+$string1 = "Hei"
+$string2 = " maailma!"
+$joinedString = $string1, $string2 -join ''
+
+Write-Host $joinedString
+```
+
+Yhdistämällä merkkijonot joissakin tapauksissa voi aiheuttaa suorituskyvyn pudotuksen. Suuren määrän merkkijonojen liittämisessä kannattaa käyttää StringBuilder-luokkaa, joka on suunniteltu tätä erityistä tarkoitusta varten.
 
 ## Katso myös:
 
-- [Merkkijonojen yhdistäminen PowerShellissä - Microsoftin dokumentaatio](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7#-concatenation-operator)
-- [Merkkijonojen yhdistäminen Pythonissa - Esimerkkejä ja vertailua muihin kieliin](https://realpython.com/python-string-concatenation/)
+Merkkijonojen y concatentation .NET:ssä: https://docs.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings
+
+PowerShellin -f -muotomäärittäjä: https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-substitutions?view=powershell-7.1
+
+StringBuilder-luokka: https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder.append?view=net-5.0

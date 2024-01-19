@@ -1,7 +1,7 @@
 ---
-title:                "שרשור מחרוזות"
-html_title:           "Javascript: שרשור מחרוזות"
-simple_title:         "שרשור מחרוזות"
+title:                "חיבור מחרוזות"
+html_title:           "C++: חיבור מחרוזות"
+simple_title:         "חיבור מחרוזות"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,23 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-לחיבור מחרוזות הוא פעולה נפוצה בקוד JavaScript שמשמשת לחיבור שתי מחרוזות יחד כדי ליצור מחרוזת אחת גדולה. תהליך זה שהוא גם ידוע בשם "concatenation" נעשה מבודד כדי להקל על העבודה עם מחרוזות בתוך הקוד וליצירת קוד יעיל יותר.
+# מה זה ולמה? 
+איחוד מחרוזות הוא התהליך של שילוב שניים או יותר מחרוזות למחרוזת אחת. התכנתים משתמשים בזה כדי לשנות, ליצור או לחבר מחרודות.
 
-## איך לעשות:
-לביצוע חיבור מחרוזות בקוד JavaScript תכתבו את המחרוזות הרצויות עם סימן פלוס (+) ביניהן. לדוגמה: 
-```JavaScript 
-let string1 = "שלום"; 
-let string2 = "עולם"; 
-let combinedString = string1 + string2; 
-console.log(combinedString); // הפלט יהיה "שלוםעולם" 
+# איך:
+
+## דרך أ:
+איחוד דרך אופרטר '+':
+```Javascript
+var str1 = "שלום";
+var str2 = " עולם";
+var result = str1 + str2;
+console.log(result); //"שלום עולם"
+```
+## דרך ب:
+איחוד דרך `concat()`:
+```Javascript
+var str1 = "שלום";
+var str2 =  " עולם";
+var result = str1.concat(str2);
+console.log(result); //"שלום עולם"
 ```
 
-## חקירה מעמיקה:
-התהליך של חיבור מחרוזות נמצא כבר תחת שימוש ממזמן, והוא משמש כבסיס ליצירת פעולות יותר מתקדמות כגון פתיחת קריאת קבצים או יצירת פורמטים אחרים. ישנן מספר דרכים נוספות לחבור מחרוזות בקוד כגון שימוש בפונקציות כמו "Join" או שימוש במשתנה "template literals" שנקרא גם "template strings" שנועד להשמיע את קריאת הקוד. 
+## דרך ג:
+איחוד באמצעות תבניות מחרוזות:
+```Javascript
+var str1 = "שלום";
+var str2 =  " עולם";
+var result = `${str1}${str2}`;
+console.log(result); //"שלום עולם"
+```
 
-## ראה גם:
-למידע נוסף על חיבור מחרוזות בקוד JavaScript ניתן לפנות למקורות המקוונים הבאים:
-- "מדריך למתחילים בJavaScript": https://developer.mozilla.org/he/docs/Learn/JavaScript/First_steps/Strings
-- "מחרוזות בפייתון": https://www.w3schools.com/jsref/jsref_concat_string.asp 
-- "הדרך הכי פשוטה לחבור מחרוזות בשפת פייתון": https://www.tutorialsteacher.com/python/string-concatenation-in-python
+# צלילה מעמיקה:
+איחוד מחרוזות קיים כבר מאז הקוד הראשון של המחשב. בימים שלפנינו, קיימים רבות אלטרנטיביות לאיחוד מחרוזות. האופציה הראשונה היא באמצעות האופרטור של '+', מתודת `concat()` או באמצעות תבניות מחרוזות. 
+
+עם זאת, ישנה הבחנה ביניהם. כאשר אתה משתמש באופרטור של '+', מה שאתה בעצם עושה הוא ליצור מחרוזת חדשה, ומערך של סיפורים מקוננים. בניגוד לתוכניות מחרוזות, אשר מתמרכזות ישירות מסביב לבעיית המחרוזת המקוננת.
+
+# קשור גם:
+1. [문자열 합치기](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+2. [Template strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+3. [Addition operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition)

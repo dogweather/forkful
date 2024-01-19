@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "C#: שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "C#"
 category:             "C#"
@@ -10,71 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה זה ולמה?
-
-שלוש כותרות מקצועיות שנראות קשוחות, אבל בפועל שלוש משפטים פשוטים שמסבירים מהי השליחה של בקשת HTTP עם אימות בסיסי ולמה מתכנתים עושים את זה.
-
 ## מה ולמה?
 
-השליחה של בקשת HTTP עם אימות בסיסי היא תהליך בו מתכנתים שולחים בקשה לשרת עם מידע אישי להתחברות, כדי לאמת את המשתמש ולאפשר גישה למידע מוגן. המתכנתים עושים את זה כדי להבטיח שרק משתמשים מורשים יוכלו לקבל גישה למידע רגיש.
+שליחת בקשת HTTP עם אימות בסיסי היא שיטה שבה מבצעים בקשה למשאב ומעבירים שם משתמש וסיסמה בצורה של מחרוזת מוצפנת. המתכנתים משתמשים בזה כדי להבטיח שרק משתמשים מאומתים יכולים לגשת למשאבים מסויימים.
 
 ## איך לעשות:
 
-מתחת לכותרת זו נמצאים דוגמאות קוד ופלט דוגמא, המציגים איך לשלוח בקשת HTTP עם אימות בסיסי בקוד C#.
+ראשית, פונקציה שמייצר שם משתמש וסיסמא מקודדים בסיסיים:
 
 ```C#
-// ייבוא המודולים הנחוצים:
-using System;
-using System.Net;
-using System.IO;
-
-// פונקציית עזר לפעולות HTTP:
-public static string SendHttpRequest(string url, string username, string password)
+private static string CreateBasicAuthenticationHeaderValue(string username, string password)
 {
-    // יצירת אובייקט WebRequest:
-    WebRequest request = WebRequest.Create(url);
-
-    // הגדרת אימון בסיסי:
-    string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(username + ":" + password));
-
-    // הוספת הכותרת "Authorization" עם האימון הבסיסי לבקשה:
-    request.Headers.Add("Authorization", "Basic " + credentials);
-
-    // שליחת הבקשה:
-    WebResponse response = request.GetResponse();
-
-    // קריאה של התוכן המרוכז בתגובה:
-    Stream dataStream = response.GetResponseStream();
-    StreamReader reader = new StreamReader(dataStream);
-    string responseFromServer = reader.ReadToEnd();
-
-    // סגירת הירידות:
-    reader.Close();
-    response.Close();
-
-    // החזרת התגובה:
-    return responseFromServer;
+    var byteArray = Encoding.ASCII.GetBytes($"{username}:{password}");
+    return Convert.ToBase64String(byteArray);
 }
-
-// קריאה לפונקצייה עם כתובת ה-URL, שם משתמש וסיסמה:
-string response = SendHttpRequest("https://www.example.com/api", "username", "password");
-
-// הדפסת התגובה:
-Console.WriteLine(response);
 ```
 
-## חקירה מעמיקה:
+בנוסף, פונקציה לשליחת בקשת ה-HTTP עם האימות:
 
-בחלק זה נמצאים מידע נוסף על תהליך שליחת בקשת HTTP עם אימות בסיסי, כולל היסטוריה, אלטרנטיבות ופרטים טכניים נוספים.
+```C#
+private static async Task SendHttpRequestWithBasicAuthentication(string url, string username, string password)
+{
+    using (var client = new HttpClient())
+    {
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", CreateBasicAuthenticationHeaderValue(username, password));
+        var result = await client.GetStringAsync(url);
+        Console.WriteLine(result);
+    }
+}
+```
 
-### היסטוריה:
+## צלילה עמוקה:
 
-תהליך אימות בסיסי של בקשת HTTP נוצר כחלק מתקן האינטרנט RFC 2617 ונמצא בשימוש נרחב ביישומים רבים. מטרתו העיקרית היא לאפשר גישה מאובטחת לרכיבים אינטראקטיביים באינטרנט.
+השיטה של HTTP בסיסי הוצגה לראשונה בהתקנה 1.0 של HTTP ונכתבה תוך כדי הנחה שהקשרי SSL / TLS לא מגנים תמיד על נתונים. ישנן חלופות אפשריות כמו OAuth או JWT שמעניקות אבטחה וריבוי תכליתים רחב יותר. תחת ההוצאה, הבקשה מוצפנת ב-'Basic' אחרי המרה של שם המשתמש והסיסמה ל-Base64.
 
-### אלטרנטיבות:
+## ראה גם:
 
-אלטרנטיבות לאימות בסיסי כוללות שימוש באימות מלאכותי (API key) או באימות OAuth. כל אלטרנטיבה מתאימה למטרות שונות ויישום המומלץ יכול להיות שונה תלוי ברכיב האינטראקטיבי עצמו.
-
-### פרטים טכניים:
-
-כדי לשלוח בקשת HTTP עם אימות בסיסי, משתמשים יכולים להשתמש בheader ה- "Authorization" ולכלול בו את האימון הבסיסי. בנוסף, הישג לתוכן מוגן יכול להיות גם דרך בקשת POST, עם
+[מאמרים נוספים](https://stackoverflow.com/questions/4015324/http-request-with-post)
+[תיעוד המיקרוסופט](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)

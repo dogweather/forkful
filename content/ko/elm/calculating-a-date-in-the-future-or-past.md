@@ -1,7 +1,7 @@
 ---
-title:                "미래나 과거의 날짜 계산하기"
-html_title:           "Elm: 미래나 과거의 날짜 계산하기"
-simple_title:         "미래나 과거의 날짜 계산하기"
+title:                "미래 또는 과거의 날짜 계산하기"
+html_title:           "Elm: 미래 또는 과거의 날짜 계산하기"
+simple_title:         "미래 또는 과거의 날짜 계산하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,28 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가요? 그리고 왜 필요할까요?
+## 무엇 & 왜?
 
-날짜를 미래나 과거로 계산하는 것은 프로그래밍에서 중요한 작업입니다. 이를 통해 특정 날짜의 이벤트를 계획하거나 미래에 발생할 이벤트를 예측할 수 있습니다. 프로그래머들은 이를 수행하는 이유는 앞으로 발생할 사건들에 대한 정확한 계획과 예측을 가능하게 하기 위해서입니다.
+미래 또는 과거의 날짜를 계산하는 것은 특정 날짜에 일정 기간을 더하거나 뺀 날짜를 찾는 과정입니다. 이것은 프로그램에서 이벤트의 시간을 추적하거나 예약 기능을 구현하는데 상당히 많이 사용됩니다.
 
-## 하는 방법:
+## 어떻게?
 
 ```Elm
 import Time
+import Time.Extra
 
-Time.add Time.day 3 Time.Jan 10  // 2020년 1월 13일을 계산합니다.
-Time.sub Time.hour 6 Time.Jan 10  // 2020년 1월 9일 18시를 계산합니다.
+calculateFutureDate : Time.Posix -> Time.Zone -> Int -> Time.Posix
+calculateFutureDate startDate zone daysToAdd =
+    let
+        duration =
+            Time.Extra.daysToMillis daysToAdd
+    in
+        Time.millisSinceEpoch startDate + duration 
+
+main = 
+    let 
+        zone = Time.here
+        startDate = Time.millisSinceEpoch 1631147523
+        daysToAdd = 30
+    in 
+        calculateFutureDate startDate zone daysToAdd
 ```
+이 코드는 Elm의 `Time`과 'Time.Extra' 모듈을 이용하여 현재의 시간에 30일을 더하는 일을 합니다.
 
-## 깊이 파헤치기:
+## 깊이 들어가 보기
 
-(1) 과거부터 현재까지 계산의 역사적 배경은 고대 로마 시대까지 거슬러 올라갑니다. 그 당시에는 검은 식탁과 달력의 계산을 통해 날짜를 파악했습니다.
+미래 또는 과거의 날짜 계산은 프로그래밍에서 점점 중요해진 개념입니다. 이것이 이렇게 중요해진 이유는 웹 애플리케이션에서 기능상의 이유로이며, 사용자에게 예정된 이벤트나 마감일을 알려줄 수 있습니다.
 
-(2) 날짜를 계산하는 또 다른 방법으로는 moment.js라는 자바스크립트 라이브러리를 사용하는 것입니다. elm-community/elm-time이 제공하는 Time 모듈은 기본적인 날짜 계산 기능을 제공하지만 moment.js 보다는 적은 기능을 제공합니다.
+이러한 작업을 수행하는 데는 몇 가지 대안이 있습니다. 일부 언어는 별도의 날짜 계산 라이브러리를 제공합니다. Elm에서는 `Time` 모듈과 'Time.Extra'이 제공합니다.
 
-(3) Elm에서는 Time 모듈 내에서 날짜를 계산하는 함수를 제공합니다. 이 함수들은 내부적으로는 밀리초를 처리하기 때문에 시작 날짜와 offset 값을 계산하여 결과값을 반환해주는 방식으로 작동합니다.
+이 구현에서는 밀리초로 변환하여 날짜에 일수를 더했습니다. 이 방법은 시간대를 고려하지 않으므로 시간대가 중요한 애플리케이션에서는 다른 방법을 사용해야 할 수 있습니다.
 
-## 더 알아보기:
+## 참고하기
 
-- [Moment.js](https://momentjs.com/): 자바스크립트 라이브러리
-- [elm-community/elm-time](https://package.elm-lang.org/packages/elm-community/elm-time/latest/): Elm에서 제공하는 Time 모듈
+Time.Extra: [https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/](https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/) 
+
+Asking and Answering Questions about Time: [https://elmprogramming.com/time.html](https://elmprogramming.com/time.html)

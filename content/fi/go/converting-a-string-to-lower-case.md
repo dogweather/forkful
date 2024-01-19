@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Go: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Go"
 category:             "Go"
@@ -11,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
+Muuntaa merkkijono pieniksi kirjaimiksi tarkoittaa muuttamista, jossa kaikki merkkijonon isoja kirjaimia korvataan pienillä kirjaimilla. Ohjelmoijat tekevät tämän usein, kun he haluavat tehdä merkkijonon vertailun herkistämättömäksi.
 
-Miksi ja miten ohjelmoijat muuttavat merkkijonon pieniksi kirjaimiksi? Jokainen merkkijono sisältää sekä isoja että pieniä kirjaimia, ja joskus haluamme muuttaa ne tiettyyn muotoon. Esimerkiksi saman merkkijonon vertaaminen olisi helpompaa, jos kaikki kirjaimet ovat samassa koossa. Siksi ohjelmoijat käyttävät usein toimintoa, joka muuntaa merkkijonon kaikki kirjaimet pieniksi.
-
-## Miten: 
+## Miten:
+Go-kielen `strings.ToLower()` -funktiota voidaan käyttää merkkijonon muuttamiseen pieniksi kirjaimiksi. Esimerkiksi:
 
 ```Go
-package main 
-import "strings" 
-import "fmt" 
-func main() { 
-  fmt.Println(strings.ToLower("TEKSTI MERKKIJONO")) 
-} 
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var myStr string = "Hei Suomi"
+	lowerCaseStr := strings.ToLower(myStr)
+	fmt.Println(lowerCaseStr)
+}
 ```
 
-Tuloste: teksti merkkijono 
+Yllä oleva ohjelma tulostaa: `hei suomi`
 
-Toimiakseen funktion täytyy kutsua "Strings" pakkaus Go-kielellä ja käyttää "ToLower" funktiota. Tämä muuttaa merkkijonon kaikki kirjaimet pieniksi. Lopuksi tulostamme uuden muokatun merkkijonon.
+## Syvällisemmin:
+Historiallinen konteksti: Merkkijonojen muuttaminen pieniksi kirjaimiksi on ollut oleellista tietokoneen ohjelmoinnissa alusta asti yksinkertaistaa tiedon käsittelyä.
 
-## Syvällinen sukellus:
+Vaihtoehtoja: Go: ssa on myös `strings.EqualFold()`, joka vertaa kahta merkkijonoa herkistämättömästi, ilman että tarvitsee muuntaa merkkijonoja pieniksi kirjaimiksi.
 
-Go-kielen "strings" -pakkauksen lisäksi on myös muita vaihtoehtoja, kuten "unicode" ja "regexp" -paketit, joita voidaan käyttää merkkijonon muuntamiseen pieniksi kirjaimiksi. Jotkut kielet, kuten Python, tarjoavat myös sisäänrakennetun toiminnon tähän tarkoitukseen.
-
-Merkkijonon muuntaminen pieniksi kirjaimiksi ei myöskään ole uusi konsepti. Se on ollut olemassa ohjelmoinnissa pitkään, ja sen alkuperäiset käyttötarkoitukset liittyvät tekstin analysointiin ja käsittelyyn.
+Toteutus yksityiskohdat: `strings.ToLower()` -funktiota toteutettaessa Go käyttää Unicode-määritelmää, joka määrittää, kuinka isot kirjaimet muutetaan pieniksi kirjaimiksi.
 
 ## Katso myös:
-
-Lisätietoja "strings" pakkauksesta ja sen tarjoamista funktioista löydät alla olevasta linkistä: 
-https://golang.org/pkg/strings/
-
-Toinen hyödyllinen lähde merkkijonon muuntamisesta pieniksi kirjaimiksi on Go-opetusohjelma nimeltä "A Tour of Go": 
-https://tour.golang.org/basics/11
+Lisätietoja ja aiheeseen liittyviä resursseja:
+- Go:n virallinen dokumentaatio: [strings.ToLower()](https://pkg.go.dev/strings#ToLower)
+- Tutkimus string vertailu Go: [alustavan vertailun taktiikat](https://medium.com/@alexanderravikovich/string-comparison-algorithms-go-1b6463365895)
+- Stackoverflow keskustelu: [muita tapoja muuttaa merkkijono alhaiseksi](https://stackoverflow.com/questions/47341278/how-to-change-a-string-to-lowercase-in-golang)

@@ -1,7 +1,7 @@
 ---
-title:                "Analisando uma data de uma string"
-html_title:           "C: Analisando uma data de uma string"
-simple_title:         "Analisando uma data de uma string"
+title:                "Analisando uma data a partir de uma string"
+html_title:           "PowerShell: Analisando uma data a partir de uma string"
+simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,52 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Que?
+---
 
-Fazer a análise de uma data em uma string é o processo de extrair informações de uma string que represente uma data e convertê-la em um formato que possa ser manipulado pelo computador. Os programadores realizam esse processo para poderem trabalhar com as datas de forma mais eficiente em seus programas.
+## O Que & Porquê?
 
-## Como Fazer:
+Analisar uma data a partir de uma string é extrair valores específicos como dia, mês e ano de uma cadeia de caracteres. Programadores fazem isso para manipular, formatar ou comparar datas de maneira personalizada.
 
-```
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+## Como Fazer
+
+Vamos usar a função `strptime` que faz parte da biblioteca de tempo padrão em C. Neste exemplo, vamos transformar uma string em uma estrutura de data e tempo:
+
+```C
 #include <time.h>
+#include <stdio.h>
 
 int main() {
+    struct tm temp;
+    const char *date_string = "27/09/2020";
+    strptime(date_string, "%d/%m/%Y", &temp);
 
-    // Exemplo de string de data no formato DD/MM/YYYY
-    char data_str[11] = "31/12/2020";
-
-    // Criando uma estrutura tm que irá armazenar as informações da data
-    struct tm data;
-
-    // Usando a função strptime() para converter a string em informações de data e armazená-las na estrutura
-    strptime(data_str, "%d/%m/%Y", &data);
-
-    // Imprimindo as informações da estrutura com a função printf() 
-    printf("Dia: %d\n", data.tm_mday); // Imprime 31 
-    printf("Mês: %d\n", data.tm_mon + 1); // Imprime 12 (Janeiro é representado pelo número 0)
-    printf("Ano: %d\n", data.tm_year + 1900); // Imprime 2020 (Para obter o ano correto, é necessário somar 1900)
-
+    printf("Ano: %d \n", temp.tm_year + 1900);
+    printf("Mês: %d \n", temp.tm_mon + 1);
+    printf("Dia: %d \n", temp.tm_mday);
     return 0;
 }
 ```
 
-Saída:
+A saída será:
 
 ```
-Dia: 31
-Mês: 12
-Ano: 2020
+Ano: 2020 
+Mês: 9 
+Dia: 27 
 ```
 
-## Deep Dive:
+## Aprofundando
 
-Analisar uma data a partir de uma string é um processo comum e importante em programação. Antes da introdução de bibliotecas e funções específicas para lidar com datas e tempo, os programadores precisavam criar algoritmos complexos para realizar essa tarefa. No entanto, com o avanço da tecnologia, foram criadas várias bibliotecas e funções que facilitaram esse processo. Além da função `strptime()`, a linguagem C também oferece outras funções como `strftime()` e `mktime()` para trabalhar com datas.
+### Contexto Histórico 
+A função `strptime` está em uso desde os primeiros sistemas Unix e foi posteriormente incluída na biblioteca C padronizada. 
 
-## Veja Também:
+### Alternativas
+Outras opções incluem escrever sua própria função de análise ou usar bibliotecas de terceiros como o `GNU Library` ou `Boost DateTime`.
 
-- [Documentação da função `strptime()`](https://www.cplusplus.com/reference/ctime/strptime/)
-- [Tutorial sobre manipulação de datas em C](https://www.cyberciti.biz/faq/howto-convert-linux-unix-time-in-seconds-to-string/)
-- [Outros formatos de data suportados pela função `strptime()`](https://www.freebsd.org/cgi/man.cgi?f=strptime&manpath=SuSE+Linux/i386+11.2)
+### Detalhes de implementação
+O analisador de datas da string convertida em uma estrutura `tm` pela função `strptime` pode variar dependendo do ambiente. Certifique-se de fornecer o formato de data correto.
+
+## Ver Também
+
+* Documentação da função `strptime`: [cplusplus.com](http://www.cplusplus.com/reference/ctime/strptime/)
+* Tutorial completo sobre a biblioteca de tempo em C: [tutorialspoint.com](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+* Outras funções de manipulação de tempo e data: [geekhideout.com](http://www.geekhideout.com/urlcode.shtml)
+
+---

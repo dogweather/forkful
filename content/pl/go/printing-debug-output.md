@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie wyjścia debugowania"
-html_title:           "Go: Drukowanie wyjścia debugowania"
-simple_title:         "Drukowanie wyjścia debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Czym i dlaczego?
 
-Wypisywanie informacji debuggowania jest w skrócie procesem wyświetlania informacji na temat działania programu. Jest to zwykle stosowane przez programistów w celu zrozumienia i naprawienia błędów w kodzie.
+Drukuje się debug output, aby sprawdzić, co działa wewnątrz programu, i jest to niezbędne dla programistów dla lepszego zrozumienia i rozwiązywania problemów z ich kodem.
 
-## Jak:
+## Jak to zrobić:
 
-Aby wyświetlić informacje debuggowania w języku Go, należy użyć funkcji `Println()` z pakietu `fmt`. Przykładowy kod wygląda następująco:
-```
+Goroutine to istotna część drukowania debug output. Poniżej znajduje się prosty kod źródłowy, który pokazuje, jak to zrobić.
+
+```Go
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "runtime/debug"
+)
 
 func main() {
-  x := 10
-  fmt.Println("Wartość zmiennej x to:", x)
+    debug.SetTraceback("system")
+    panic("A problem occurred")
+
+    fmt.Println("End of main function")
 }
 ```
-Powyższy kod wyświetli w konsoli nstępującą informację: `Wartość zmiennej x to: 10`. 
 
-## Głębsze wgląd:
+Podczas uruchamiania powyższego programu otrzymasz pełny zapis stosu dla danego panic, co jest bardzo użyteczne w debuggingu.
 
-Wypisywanie informacji debuggowania jest często stosowane w procesie rozwiązywania problemów w kodzie. Dawniej programiści często wykorzystywali do tego celu funkcję `printf()` dostępną w języku C. Jednak w języku Go z powodu zastosowania interfejsów i metod musieli opracować własny sposób na wyświetlanie informacji debuggowania. Alternatywnym sposobem na debugowanie jest korzystanie z narzędzi takich jak debugger. Implementacja wyświetlania informacji debuggowania w języku Go wykorzystuje mechanizm interfejsów, dzięki czemu można dostosować sposób wyświetlania informacji do potrzeb programisty.
+## Dogłębne omówienie
 
-## Zobacz też:
+1) Historyczne konteksty: Drukowanie debug output pozwoliło programistom zrozumieć, jak ich kod działa od wewnątrz od czasów języka Assembly. To podstawowe narzędzie debuggingu, które przetrwało nawet w nowoczesnym, zaawansowanym języku programowania jak Go.
 
-- [Dokumentacja pakietu fmt](https://pkg.go.dev/fmt)
-- [Poradnik na temat debugowania w języku Go](https://golang.org/doc/diagnostics)
-- [Konferencja na temat debugowania w Go](https://www.youtube.com/watch?v=HrxLbl7a1h0)
+2) Alternatives: W Go debug można drukować na wiele sposobów. Pakiet "log" dostarcza funkcje do drukowania do standardowego błędu. Narzędzia, takie jak Delve, zapewniają zaawansowane możliwości debugowania.
+
+3) Szczegóły implementacji: Wydruk debugowania w Go oznacza użycie predefiniowanych funkcji, takich jak `fmt.Print*` or `log.Print*`. Można również korzystać z pakietu `runtime/debug` dla bardziej zaawansowanych szczegółów, jak w powyższym przykładzie.
+
+## Zobacz także
+
+1) Oficjalne Dokumenty Go - https://golang.org/doc/
+
+2) Blog Golang - https://blog.golang.org/
+
+3) Pakiet `runtime/debug` - https://golang.org/pkg/runtime/debug/
+
+Nie zawahaj się zgłębić tych zasobów, aby zrozumieć więcej na temat debugowania w Go.

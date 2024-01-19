@@ -1,7 +1,7 @@
 ---
-title:                "Télécharger une page Web"
-html_title:           "Swift: Télécharger une page Web"
-simple_title:         "Télécharger une page Web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,24 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Le téléchargement d'une page web consiste simplement à récupérer le contenu d'une page web depuis Internet et à l'afficher sur votre appareil. Les programmeurs le font pour diverses raisons telles que l'analyse de données, la création d'applications mobiles ou pour automatiser des tâches en ligne.
+## Quoi & Pourquoi?
+
+Télécharger une page web signifie récupérer ses données pour les utiliser dans votre application. Ce procédé est habituellement utilisé par les programmeurs pour obtenir des informations depuis des sources externes en ligne.
 
 ## Comment faire:
-````Swift
-let url = URL(string: "https://www.example.com")! //Définir l'URL de la page à télécharger
-let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-    if let data = data { //Si les données sont récupérées avec succès
-        if let htmlString = String(data: data, encoding: .utf8) { //Convertir les données en chaîne de caractères
-            print(htmlString) //Afficher le contenu de la page web
+
+La bibliothèque Foundation de Swift fournit une classe URLSession pour gérer le téléchargement. Voici un exemple de téléchargement simple de page web.
+
+```Swift
+import Foundation
+
+if let url = URL(string: "https://www.exemple.fr") {
+    let urlSession = URLSession.shared
+    let task = urlSession.dataTask(with: url) { (data, response, error) in
+        if let er = error {
+            print("Erreur: \(er)")
+        }
+        else if let incomingData = data { 
+            let dataString = String(data: incomingData, encoding: .utf8)
+            print("Page Web: \(dataString ?? "Pas de données")")
         }
     }
+    task.resume()
 }
-task.resume() //Lancer la tâche de téléchargement
-````
+```
 
-## Plongeon en profondeur:
-Le téléchargement de pages web est devenu une fonctionnalité courante pour les programmeurs à mesure qu'Internet a pris de l'ampleur. Au fil des ans, différentes méthodes de téléchargement ont été développées, certaines plus efficaces que d'autres. En plus de l'utilisation d'une URL, certaines bibliothèques tierces telles que Alamofire offrent une syntaxe plus simplifiée pour le téléchargement de pages web en Swift.
+Dans cet exemple, si l'URL est valide, on crée une URLSession pour gérer la requête HTTP. La méthode dataTask(with:) initialise une tâche à effectuer une requête HTTP GET. Si aucun problème n'est rencontré, les données de la page web sont affichées.
 
-## À voir également:
-Pour en savoir plus sur le téléchargement de pages web en Swift, consultez la documentation officielle d'Apple sur le téléchargement de données brutes via `URLSessionDataTask`. Vous pouvez également découvrir les avantages et les inconvénients des différentes bibliothèques de téléchargement de pages web disponibles pour Swift en lisant des articles de blog ou en consultant des communautés de développeurs en ligne.
+## Plongeons plus loin:
+
+La méthode que nous venons de voir utilise la fonction de retour d'appel async pour traiter la réponse HTTP. Si nous remontons dans le temps, dimanche 7 novembre 2021, Apple a publié Swift 5.5 qui introduit les mots-clés async et await, simplifiant davantage le code asynchrone.
+
+Cependant, il existe d'autres alternatives comme Alamofire pour le téléchargement web, qui est une bibliothèque HTTP de haut niveau. C'est une bonne alternative lorsqu'il y a besoin de fonctionnalités avancées, comme la prise en charge des multi-parties, des en-têtes HTTP personnalisés, des paramètres de requêtes et des téléchargements/cachage d'images.
+
+En implémentant le téléchargement d'une page web, il est essentiel de maintenir une gestion adéquate des erreurs et une sécurité robuste. Par exemple, toujours vérifier les erreurs possibles retournées par dataTask(with:).
+
+## Voir également:
+
+Pour en apprendre davantage sur URLSession, consultez la [documentation officielle de Apple](https://developer.apple.com/documentation/foundation/urlsession). 
+
+Pour un guide de débutant sur Swift, visitez [https://developer.apple.com/swift/](https://developer.apple.com/swift/).
+
+Alamofire a des resources utiles ici: [GitHub - Alamofire](https://github.com/Alamofire/Alamofire).
+
+Il est toujours bénéfique de savoir plus sur le déroulement sous le capot des requêtes HTTP, [MDN Web Docs offre une excellente explication.](https://developer.mozilla.org/en-US/docs/Web/HTTP)

@@ -1,6 +1,6 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "Lua: Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Por Quê?
 
-Baixar uma página da web geralmente se refere ao processo de obter o conteúdo de uma página da web e salvá-lo em seu computador. Isso é feito por programadores por várias razões, como extrair dados específicos de uma página da web, automação de tarefas, testes de software e muito mais.
+Baixar uma página web é o processo de copiar e armazenar dados da Internet em um local de armazenamento local. Programadores fazem isso para análise de dados, coleta de informações ou automação de tarefas.
 
-## Como fazer:
+## Como Fazer:
 
-### Exemplo 1: Baixando o conteúdo de uma página da web
+Para baixar uma página web em Lua, usaremos o módulo `socket.http`. Se você não o tem, instale com: `luarocks install luasocket`.
 
+```Lua
+local http = require('socket.http')
+local url = "http://example.com"
+
+-- Fazendo a requisição HTTP
+local response, status_code = http.request(url)
+
+-- Imprimindo o resultado
+if status_code == 200 then
+  print(response)
+else
+  print("Falha! Código de status HTTP: " .. status_code)
+end
 ```
-local http = require("socket.http")
-local page = http.request("http://minha_pagina.com")
-print(page)
-```
+Isso imprimirá o código HTML da página escolhida na tela.
 
-```
-<html>
-<head>
-<title>Minha Página</title>
-</head>
-<body>
-<h1>Bem-vindo à minha página!</h1>
-<p>Aqui você encontrará informações úteis.</p>
-</body>
-</html>
-```
+## Mergulho Profundo
 
-### Exemplo 2: Salvando o conteúdo de uma página da web em um arquivo
+O protocolo HTTP tem sido a base da comunicação de dados na web desde a sua criação em 1991. Lua implementa esse protocolo no módulo `luasocket`, que é uma excelente opção para a tarefa devido a sua simplicidade e eficácia.
 
-```
-local http = require("socket.http")
-local page = http.request("http://minha_pagina.com")
-local file = io.open("minha_pagina.html", "w")
-file:write(page)
-file:close()
-```
+Uma alternativa seria usar o módulo `luasec` se precisar de alguma interação segura com páginas HTTPS.
 
-## Mergulho profundo:
+Um ponto a considerar na implementação é que esta solução síncrona pode bloquear a execução principal do programa ao baixar página web. Por isso, pode ser vantajoso baixar a página em uma thread separada se sua aplicação for sensível a longos períodos de tempo de bloqueio.
 
-Baixar páginas da web tem sido um recurso importante para programadores desde o início da internet. Existem várias ferramentas e linguagens de programação que podem ser usadas para baixar conteúdo da web, como Python, Java, PHP e, claro, Lua. Dependendo do objetivo, diferentes técnicas e algoritmos podem ser usados para otimizar o processo de download. As APIs REST (representational state transfer) também são amplamente utilizadas para baixar dados de uma página da web.
+## Veja Também:
 
-## Veja também:
-
-- [documentação oficial LuaSocket](https://github.com/diegonehab/luasocket)
-- [artigo tutorial sobre baixar páginas da web com Lua](https://www.lua.org/wshop12/Lucas%20Baier%20Bernardescu.pdf)
-- [exemplo de uso das APIs REST em Lua](https://www.lua.org/pil/22.1.html)
+1. Documentação do módulo `luasocket`: http://w3.impa.br/~diego/software/luasocket
+2. Documentação do módulo `luasec`: https://github.com/brunoos/luasec/wiki
+3. Discussão sobre threads em Lua: https://www.lua.org/pil/9.html

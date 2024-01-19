@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "TypeScript: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,46 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest tworzenie tymczasowego pliku i dlaczego programiści to robią?
+## Co i dlaczego?
+Tworzenie tymczasowego pliku polega na utworzeniu pliku, który służy do przechowywania danych na krótki czas. Programiści robią to zwykle, gdy potrzebują przechować dane, które są tylko tymczasowo potrzebne lub które chcą chronić przed utratą w przypadku awarii.
 
-Tworzenie tymczasowego pliku jest procesem tworzenia pliku, który jest używany przez program tylko tymczasowo, a następnie jest usuwany. Programiści często tworzą tymczasowe pliki, gdy potrzebują przechowywać tymczasowe dane lub gdy wymagana jest tymczasowa lokalizacja dla pliku.
+## Jak to zrobić:
+Tworzenie tymczasowych plików w TypeScript jest proste. Możemy skorzystać z pakietu "tmp", który dostarcza wygodne funkcje do tego zadania. Instalujemy go za pomocą npm przy użyciu komendy `npm install tmp` i można go użyć jak poniżej.
 
-## Jak to zrobić?
+```TypeScript
+import { fileSync } from 'tmp';
 
-```typescript
-// Importuje moduł fs z biblioteki standardowej
-import * as fs from 'fs';
-
-// Utwórz tymczasowy plik z użyciem metody mkstemp
-fs.mkstemp('temporary-file-', (err, tempFile) => {
-  if (err) throw err;
-  // Początkowy kawałek kodu, który używa tymczasowego pliku
-  console.log(`Utworzono tymczasowy plik: ${tempFile}`);
-  // Usuwa tymczasowy plik
-  fs.unlink(tempFile, (err) => {
-    if (err) throw err;
-    console.log(`Usunięto tymczasowy plik: ${tempFile}`);
-  });
-})
+let tmpobj = fileSync();
+console.log('File: ', tmpobj.name);
+console.log('Filedescriptor: ', tmpobj.fd);;
 ```
 
-W powyższym przykładzie wykorzystujemy moduł "fs" z biblioteki standardowej TypeScript, aby utworzyć tymczasowy plik o nazwie "temporary-file-XXXXXX" i wyświetlić jego nazwę po utworzeniu. Następnie, w kolejnym kroku, usuwamy tymczasowy plik z użyciem metody "unlink". 
+Przy wykonaniu tego kodu, stworzony zostanie unikalny tymczasowy plik i jego nazwa zostanie wyświetlona na konsoli.
 
-## Głębszy wgląd
+## Pogłębione informacje
+Stworzenie tymczasowego pliku nie jest nowym konceptem. Zostało to wprowadzone w starszych systemach operacyjnych, takich jak Unix, gdzie takie pliki były przechowywane w `/tmp` lub `/var/tmp`. 
 
-### Kontekst historyczny
+Jedną z alternatyw w TypeScript jest używanie modułu `fs` w Node.js, który również oferuje funkcje do tworzenia i manipulacji plikami. Choć jest to bardziej niskopoziomowe podejście, daje to większą kontrolę nad tworzeniem plików.
 
-Tworzenie tymczasowych plików jest powszechnie stosowane w systemach operacyjnych od lat 60. Początkowo używano ich jako jednego z mechanizmów do zarządzania pamięcią w systemie. Obecnie, programiści używają tymczasowych plików do wielu różnych celów, takich jak przechowywanie danych, synchronizacja procesów czy wykonywanie operacji na plikach w bezpieczny sposób.
+Pakiet "tmp" używa `fs` pod spodem, ale zapewnia większą wygodę i bezpieczeństwo, takie jak automatyczne usuwanie pliku po zakończeniu programu.
 
-### Alternatywy
-
-Alternatywą dla tworzenia tymczasowych plików może być użycie zmiennych (np. zmiennych środowiskowych) lub wykorzystanie specjalnych rozwiązań dostarczanych przez frameworki lub biblioteki. Jednak tworzenie tymczasowych plików jest prostsze i pozostaje powszechnie stosowane w programowaniu.
-
-### Szczegóły implementacyjne
-
-Podczas tworzenia tymczasowego pliku, system operacyjny generuje unikalną nazwę dla pliku, zwykle w formacie "nazwa_tymczasowa_XXXXXX". Już po utworzeniu tymczasowego pliku, innym procesom nie jest udzielony dostęp do tego pliku, co zapewnia bezpieczne wykorzystanie go przez program.
-
-## Zobacz także
-
-- [Dokumentacja Node.js - moduł fs](https://nodejs.org/api/fs.html#fs_fs_mkstemp_prefix_options_callback)
-- [Tworzenie tymczasowych plików w Pythonie](https://blog.dbrgn.ch/2013/3/26/temporary-files-in-python/)
+## Zobacz również
+1. [Pakiet tmp na npm](https://www.npmjs.com/package/tmp)
+2. [Moduł fs w Node.js](https://nodejs.org/api/fs.html)
+3. [Praca z systemem plików w Node.js](https://nodejs.dev/learn/the-nodejs-fs-module)
+4. [Jak tworzyć i pracować z tymczasowymi plikami w Pythonie](https://www.tutorialsteacher.com/python/python-tempfile)

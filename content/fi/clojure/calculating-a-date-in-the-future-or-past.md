@@ -1,7 +1,7 @@
 ---
-title:                "Tulevan tai menneen päivämäärän laskeminen"
-html_title:           "Clojure: Tulevan tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "Clojure: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Clojure ja päivämäärän laskeminen tulevaisuudessa tai menneisyydessä
+
 ## Mitä & Miksi?
-Laskeminen pvm tulevaisuudessa tai menneisyydessä tarkoittaa päivien, viikkojen tai vuosien lisäämistä tai poistamista nykyisestä päivämäärästä. Ohjelmoijat tekevät tätä esimerkiksi luodakseen toistorakenteita, tiedonkeruusovelluksia tai aikatauluttamisjärjestelmiä.
+Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä tarkoittaa tietyn ajanjakson laskemista nykyisestä hetkestä eteenpäin tai taaksepäin. Ohjelmoijat tekevät tämmöistä usein esimerkiksi aikarajojen, eräpäivien ja vanhenemisajankohtien laskemiseksi.
 
-## Kuinka:
+## Miten se tehdään:
+```Clojure
+;; Tuodaan java.util.Date ja java.util.concurrent.TimeUnit kirjastot
+(import [java.util Date]
+        [java.util.concurrent TimeUnit])
+
+(defn muunna-paivaiksi [paivat]
+  ;; Muunnetaan päivät millisekunneiksi
+  (TimeUnit/DAYS.toMillis paivat))
+
+(defn laske-paivamaara [suunta]
+  ;; Luo uusi Date olio nykyisestä ajasta
+  (let [nykyhetki (Date.)
+        aikavali (muunna-paivaiksi suunta)]
+    (Date. (+ (.getTime nykyhetki) aikavali))))
 ```
-Clojure (-> (java.util.Date.) (.toString))
-=> "Mon Jun 29 16:15:09 EDT 2020" 
-
-;; Lisätään yksi päivä
-Clojure (-> (java.util.Date.) (.getTime) (+ (* 86400000 1)) (java.util.Date.))
-=> "Tue Jun 30 16:15:09 EDT 2020" 
-
-;; Vähennetään 3 päivää
-Clojure (-> (java.util.Date.) (.getTime) (- (* 86400000 3)) (java.util.Date.))
-=> "Sat Jun 27 16:15:09 EDT 2020" 
+Esimerkki output:
+```Clojure
+user> (laske-paivamaara 7)
+#inst "2023-04-29T16:06:38.334-00:00"
 ```
+Tämä Clojure funktio luo uuden päivämäärän, joka tulee olemaan 7 päivää nykyhetken jälkeen.
 
-## Syventymiskurssi:
-Ohjelmistoteollisuudessa pvm laskeminen on tärkeä osa erilaisten sovellusten, kuten aikataulutusjärjestelmien, toteuttamista. Clojurella pvm laskenta on helppoa, sillä kieli tarjoaa valmiita funktioita pvm tietojen manipulointiin.
-Vaihtoehtoisia tapoja suorittaa pvm laskentaa ovat esimerkiksi Java-kirjaston käyttäminen tai oma funktiojen kirjoittaminen Clojurella.
-Tarkempi implementaation kuvaus löytyy Clojure-kirjastojen dokumentaatiosta.
+## Syvennys
+Historiallisesti päivämäärän laskeminen tulevaisuudessa tai menneisyydessä voi olla monimutkaista, koska eri kalenterijärjestelmät määrittävät "päivän" eri tavoin. Clojure, kuten useimmat modernit ohjelmointikielet, hyödyntää Java's Date and Time API:ta, joka antaa joustavuuden ja tarkan kontrollin ajan laskemiseen.
 
-## Katso myös:
-- [Clojure Date And Time Tutorial] (https://clojure.org/guides/core_time)
-- [Java Calendar API] (https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Clojure Date Implementation Details] (https://clojuredocs.org/clojure.core/date)
+Clojurella on myös erinomaisia kirjastoja, kuten clj-time, jotka tarjoavat hyödyllisiä abstrakteja ajan ja päivämäärän käsittelyyn.
+
+Parasta Clojuressa on sen joustavuus ja yksinkertaisuus. Voit luoda oman funktion päivämäärän laskemiseen tai käyttää valmiita kirjastoja.
+
+## Katso myös
+1. Clojure for the Brave and True: [Ajan ja päivämäärän käsittely](https://www.braveclojure.com/core-functions-in-depth/)
+2. Java's Date and Time API: [How to use Java's Date and Time API with Clojure](https://www.baeldung.com/clojure-date-time)
+3. Clj-time GitHub: [clj-time:n dokumentaatio](https://github.com/clj-time/clj-time)

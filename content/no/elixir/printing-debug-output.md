@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilrettingsutdata"
-html_title:           "Elixir: Utskrift av feilrettingsutdata"
-simple_title:         "Utskrift av feilrettingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Hvis du er en programmerer, har du sannsynligvis hørt uttrykket "skrive ut debug-utgang". Dette betyr ganske enkelt å skrive ut informasjon om hva som skjer i koden din mens den kjører. Dette kan være nyttig for å finne feil og forstå hvordan koden oppfører seg.
+## Hva & Hvorfor?
 
-## Slik gjør du det:
-Du kan enkelt skrive ut debug-utgang i Elixir ved å bruke funksjonen `IO.inspect`. Denne funksjonen tar et argument og skriver ut informasjonen til terminalen. For eksempel:
+Utskrift av debug-informasjon er en måte å inspisere data på kjøretid i programmeringskoden. Løse feil og forstå betydningen av komplekse datastrukturer blir mer håndterbart med det.
 
-```Elixir
-IO.inspect("Hei Verden!")
-```
+## Hvordan gjøre det:
 
-Dette vil skrive ut strengen "Hei Verden!" til terminalen. Du kan også skrive ut variabelverdier ved å inkludere dem som argumenter til `IO.inspect`. For eksempel:
+Vi bruker `IO.inspect` funksjonen i Elixir for å skrive ut debug-informasjon på standard output:
 
 ```Elixir
-navn = "Johan"
-alder = 30
-IO.inspect("Navn: #{navn}, Alder: #{alder}")
+defmodule Debug do
+  def print_data do
+    data = [1, 2, 3]
+    
+    IO.inspect(data)
+  end
+end
+
+Debug.print_data()
 ```
 
-Dette vil skrive ut følgende:
-
+Output ville være:
+```Elixir
+[1, 2, 3]
 ```
-Navn: Johan, Alder: 30
+
+## Dypdykk
+
+**Historisk sammenheng**: I eldre tid, innen sofistikert debugging-verktøy kom på plass, var utskrift av debug-informasjon den eneste måten å forstå hva som skjedde inni et kjørende program.
+
+**Alternativer**: `IO.inspect` er ikke det eneste alternativet i Elixir. `IO.puts` og `IO.write` kan også benyttes til debugging formål, men de gir mindre detaljer.
+
+**Implementeringsdetaljer**: `IO.inspect` kan også ta opsjoner som argumenter for å kontrollere detaljnivået av output. For eksempel,
+
+```Elixir
+IO.inspect(data, limit: :infinity)
 ```
 
-## Dypdykk:
-Historisk sett, har programmerere brukt utskrift av debug-utgang som en enkel måte å feilsøke kode på. Men med fremveksten av moderne debuggingsverktøy, er ikke dette lenger den eneste måten å finne feil på. Noen alternativer til å skrive ut debug-utgang inkluderer å bruke breakpoints i en debugger, eller å bruke loggfiler.
+vil skrive ut alle elementene i en stor liste eller tuple, i stedet for å bare skrive ut forhåndsinnstilte antall første elementer.
 
-`IO.inspect`-funksjonen er implementert på et lavt nivå i Elixir, og den kan ha en innvirkning på ytelsen til koden din. Derfor bør du være forsiktig med å bruke den for mye i produksjonskode.
+## Se også 
 
-## Se også:
-- Offisiell Elixir dokumentasjon: https://hexdocs.pm/elixir/IO.html#inspect/2
-- Elixir Forum diskusjon om `IO.inspect`: https://elixirforum.com/t/io-inspect-empty-line-after-value/13027
+- Elixir offisiell dokumentasjon på IO-modulen: https://hexdocs.pm/elixir/IO.html
+- Elixir skole tutorial på IO og skrive ut: https://elixirschool.com/en/lessons/basics/io/

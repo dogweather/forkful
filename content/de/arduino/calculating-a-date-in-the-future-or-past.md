@@ -1,7 +1,7 @@
 ---
-title:                "Eine Datum in der Zukunft oder Vergangenheit berechnen"
-html_title:           "Arduino: Eine Datum in der Zukunft oder Vergangenheit berechnen"
-simple_title:         "Eine Datum in der Zukunft oder Vergangenheit berechnen"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Arduino: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,76 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
+## Was & Warum?
 
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist eine wichtige Funktion in der Programmierung, um genaue Abläufe zu planen und Ereignisse vorherzusagen. Programmierer nutzen diese Funktion, um zukünftige Ereignisse zu planen oder vergangene Ereignisse zu analysieren und besser zu verstehen.
+Die Berechnung eines zukünftigen oder vergangenen Datums ist ein Prozess, der eine spezifische Zeitspanne zu einem gegebenen Datum hinzufügt oder subtrahiert. Programmierer tun dies oft, um Aufgaben zu planen oder Zeitintervalle zu überwachen.
 
-Wie geht's?
+## Wie geht's:
 
-Hier sind Beispiele für die Berechnung eines Datums in der Zukunft und Vergangenheit mit dem aktuellen Arduino.
+Betrachten wir als erstes ein einfaches Beispiel, um eine Stunde zu der aktuellen Zeit hinzuzufügen.
 
 ```Arduino
-// Berechnung eines Datums in der Zukunft
 #include <TimeLib.h>
 
 void setup() {
   Serial.begin(9600);
-  
-  // Aktuelles Datum und Zeit einstellen
-  setTime(12, 30, 30, 23, 8, 2021);
-  
-  // Datumsberechnung
-  int future_day = day() + 7; // 7 Tage in der Zukunft
-  int future_month = 8; // September
-  int future_year = year(); // aktuelles Jahr
-  
-  // Ausgabe
-  Serial.print("Das Datum in 7 Tagen ist: ");
-  Serial.print(future_month);
-  Serial.print("/");
-  Serial.print(future_day);
-  Serial.print("/");
-  Serial.println(future_year);
+  setTime(14, 00, 0, 1, 1, 2020); // Setzt die Zeit auf 14:00 Uhr, 1. Januar 2020
 }
 
-void loop() {}
+void loop() {
+  time_t t = now();
+  t += 3600; // Fügt eine Stunde hinzu
+  
+  Serial.print(hour(t));
+  Serial.print(":");
+  Serial.print(minute(t));
+  Serial.print(":");
+  Serial.println(second(t));
+  
+  delay(1000);
+}
 ```
+
+Die Ausgabe wäre:
 
 ```Arduino
-// Berechnung eines Datums in der Vergangenheit
-#include <TimeLib.h>
-
-void setup() {
-  Serial.begin(9600);
-  
-  // Aktuelles Datum und Zeit einstellen
-  setTime(12, 30, 30, 23, 8, 2021);
-  
-  // Datumsberechnung
-  int past_day = day() - 10; // 10 Tage in der Vergangenheit
-  int past_month = 7; // Juli
-  int past_year = year(); // aktuelles Jahr
-  
-  // Ausgabe
-  Serial.print("Das Datum vor 10 Tagen war: ");
-  Serial.print(past_month);
-  Serial.print("/");
-  Serial.print(past_day);
-  Serial.print("/");
-  Serial.println(past_year);
-}
-
-void loop() {}
+15:0:0
 ```
 
-Vertiefung
+## Vertiefung:
 
-Die Berechnung von Datumsangaben ist ein wichtiger Bestandteil der Programmierung und wird schon seit langem genutzt. Alternativ können auch Datum- und Zeitbibliotheken verwendet werden, welche jedoch möglicherweise spezielle Funktionen bieten und eine andere Syntax verwenden.
+Historisch gesehen war die Berechnung von Datumsangaben eine schmerzhafte Angelegenheit, da mit vielen Variablen wie Schaltjahren, Zeitumstellungen usw. gearbeitet werden musste. Heute machen Bibliotheken wie TimeLib den Prozess viel einfacher.
 
-Weitere Informationen und Funktionen zur Arbeit mit Datum und Zeit finden Sie in der offiziellen TimeLib-Dokumentation. [Link zur Dokumentation](https://github.com/PaulStoffregen/Time)
+Alternativ könnte man die RTC (Real Time Clock) Hardware mit integrierter Datums- und Zeitfunktion verwenden. Diese Methode benötigt jedoch zusätzliche Hardware.
 
-Siehe auch
+Die Berechnung eines zukünftigen oder vergangenen Datums in Arduino beinhaltet die Umwandlung der Datums- und Zeitwerte in Sekunden seit der Unix-Ära (1. Januar 1970) und Hinzufügen oder Subtrahieren des gewünschten Intervalls.
 
-- [Vergleich von Datum- und Zeitbibliotheken](https://arduino-projekte.info/zeit-datum-arduino-einfach-verst%c3%a4ndlich/)
-- [Berechnung von Zeitintervallen in der Programmierung](https://www.instructables.com/How-to-Calculate-Time-Intervals-in-Arduino/)
-- [Praktische Anwendung von Datum und Zeit in der Realität](https://www.geekstips.com/arduino-date-time-timestamp-arhus-real-time-clock/)
+## Siehe auch:
+
+- [Time Library](https://www.pjrc.com/teensy/td_libs_Time.html)
+- [DateTime Library](https://github.com/adafruit/Adafruit_RTClib)
+- [NTP Client Library](https://github.com/arduino-libraries/NTPClient)

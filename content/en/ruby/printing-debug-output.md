@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Ruby recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,40 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# How to Print Debug Output in Ruby
+
 ## What & Why?
 
-Printing debug output is the process of displaying the value of a variable or the result of an expression in a program's code for troubleshooting purposes. Programmers use it to understand and fix errors or bugs in their code.
+Printing debug output is a diagnostic method where certain values or messages are written (printed) to the console or log. Programmers use it to trace the operational flow of their code and locate errors.
 
 ## How to:
 
-To print debug output in Ruby, we can use the `puts` method. For example, let's say we have the following code:
+Ruby provides an impressive array of tools to facilitate debug print outputs, with `puts`, `p`, and `print` being some of the most commonly used. Let's see them in action:
 
+```Ruby
+# Using puts
+puts "Hello! This is from puts"
+#=> "Hello! This is from puts"
+
+# Using p: identical to puts, but also return the value that gets printed
+output = p "Hello! This is from p"
+#=> "Hello! This is from p"
+
+# Using print
+print "Hello! This is from print"
+#=> "Hello! This is from print"
 ```
-name = "John"
-puts "Hello " + name
+
+The method `puts` (put string) will print an output and add a new line at the end, while `print` does not add a newline. However, `p` is a more feature-rich version of `puts` which returns the output value along with printing it.
+
+For more advanced debugging, turn to Ruby's built-in `debugger`:
+
+```Ruby
+# Using debugger
+require 'debug'
+a = true
+b = false
+debugger
+c = true
 ```
 
-The output of this code would be `Hello John`, because the `puts` method will print out whatever follows it, in this case, the result of concatenating the string "Hello " with the value of the `name` variable.
+You can use the `debugger` method to create a breakpoint in code, which will then provide you with a special console, similar to IRB, where you can inspect the values of variables, step through the code or even modify variables.
 
-We can also use the `p` method to print debug output. Let's continue with our previous example:
+## Deep Dive
 
-```
-name = "John"
-p "Hello " + name
-```
+Historically, printing debug output has been an integral part of programming. It's so intrinsic that a 'Hello, World!' program is typically used to illustrate the basic syntax of a programming language for a beginner.
 
-The output of this code would be `"Hello John"`, as the `p` method will display the exact value of the expression it is given, including any quotes.
+Alternatives to print debugging do exist like using a full debugger. Ruby comes with the ByeBug debugger which can step through code, set conditions and breakpoints, to name a few.
 
-## Deep Dive:
+It's important to remember when using print debug to clean up afterwards. Debugging statements left in production code can clutter logs and expose sensitive data.
 
-Printing debug output is a common practice in programming, dating back to the early days of computing. Before the existence of advanced debugging tools, developers would use print statements to get a better understanding of what was happening in their code.
+## See Also
 
-Besides using the `puts` and `p` methods, we can also use Ruby's `print` method, which behaves similarly to `puts` but does not add a new line character at the end. This can be useful when we want to display multiple values on the same line.
-
-Another alternative to printing debug output is using a debugger tool, such as Pry or Byebug, which allows for more advanced debugging techniques like setting breakpoints and inspecting variables within the code.
-
-## See Also:
-
-- [Ruby Method: puts vs. print vs. p](https://www.rubyguides.com/2018/10/puts-vs-print-vs-p-in-ruby/)
-- [Debugging in Ruby using Pry](https://www.rubyguides.com/2016/07/debugging-pry-ruby/)
-- [Byebug Debugging Cheatsheet](https://gist.github.com/jmoses/1276030)
+1. [Ruby documentation on IO](https://ruby-doc.org/core-2.7.0/IO.html#method-c-puts)
+2. [Byebug debugger for Ruby](https://rubygems.org/gems/byebug)
+3. [Ruby documentation on Debugger](https://ruby-doc.org/stdlib-3.0.3/libdoc/debug/rdoc/DEBUGGER__.html)
+4. [Thoughtbot post on Ruby Print Debugging](https://thoughtbot.com/blog/print-debugging-ruby)

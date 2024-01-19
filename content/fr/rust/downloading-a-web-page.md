@@ -1,7 +1,7 @@
 ---
-title:                "Telechargement d'une page web"
-html_title:           "Rust: Telechargement d'une page web"
-simple_title:         "Telechargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,30 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que le Téléchargement d'une Page Web et Pourquoi les Programmeurs le Font?
+## Quoi & Pourquoi?
 
-Télécharger une page web signifie récupérer le contenu d'un site internet sur votre ordinateur. Les programmeurs le font pour accéder aux informations ou données de la page afin de les utiliser dans leur propre programme.
+Télécharger une page Web signifie récupérer son contenu à travers le réseau. Les programmateurs le font pour analyser les données, collecter des informations ou sauvegarder du contenu pour un usage ultérieur.
 
-## Comment faire:
+## Comment faire :
+
+Voici un exemple simple de la façon dont vous pouvez télécharger une page Web en utilisant la bibliothèque `reqwest` en Rust.
 
 ```Rust
 use reqwest;
+use std::io::Read;
 
-let response = reqwest::get("https://www.example.com")?
-    .text()?;
-
-println!("{}", response);
+#[tokio::main]
+async fn main() -> Result<(), reqwest::Error> {
+    let mut response = reqwest::get("http://example.com").await?;
+    let mut body = String::new();
+    response.read_to_string(&mut body);
+    println!("{}", body);
+    Ok(())
+}
 ```
-Ce code utilise la bibliothèque externe "reqwest" pour effectuer une requête GET et récupérer le contenu de la page dans une variable nommée "response". Ensuite, le contenu est imprimé à l'aide de la fonction ```println!```.
 
-## Plongée en Profondeur:
+Dans cet exemple, nous demandons simplement à la bibliothèque `reqwest` de télécharger le contenu de "http://example.com", puis nous lisons la réponse dans une chaîne et l'affichons.
 
-Dans le passé, les programmeurs utilisaient principalement la bibliothèque "hyper" pour télécharger des pages web en Rust. Cependant, "reqwest" est maintenant la bibliothèque recommandée car elle offre une interface plus simple et plus intuitive.
+## Approfondissement
 
-Il existe également d'autres alternatives telles que "curl" et "wget" en dehors de l'écosystème Rust pour télécharger des pages web.
+Lorsque nous parlons de télécharger une page Web, nous parlons en réalité de la requête HTTP GET. C'est une norme qui a été établie au début du web par le protocole HTTP, et qui est utilisée pour récupérer des informations à partir d'un serveur.
 
-L'implémentation de "reqwest" utilise le protocole HTTP pour établir une connexion avec le site internet et récupérer le contenu de la page. Il est important de bien comprendre les concepts de base du protocole HTTP pour utiliser efficacement cette bibliothèque.
+Il existe d'autres moyens d'obtenir le contenu d'une page Web. Un exemple populaire serait le `Web Scraping`, qui ne se contente pas de télécharger la page, mais tente également d'interpréter le HTML et de collecter spécifiquement les données qui intéressent le programmeur.
 
-## Voir Aussi:
+Au niveau de l'implémentation, notre exemple est assez simpliste. En réalité, le téléchargement d'une page Web peut impliquer une gestion plus complexe des erreurs, le respect du taux limite du serveur, l'exécution de JavaScript sur la page, ou encore le contournement des mesures de protection contre les robots.
 
-Pour plus d'informations sur le téléchargement de pages web en Rust, vous pouvez consulter la documentation officielle de "reqwest" sur [GitHub](https://github.com/seanmonstar/reqwest) ainsi que des exemples de code sur [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/web/scraping.html).
+## Voir aussi 
+
+Pour plus d'informations, consultez les liens suivants :
+
+1. Documentation `reqwest` : https://docs.rs/reqwest/
+2. Wikipédia sur la Requête HTTP GET : https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Requête_GET
+3. Tutoriel Rust (en anglais) : https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html

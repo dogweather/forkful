@@ -1,6 +1,6 @@
 ---
 title:                "http अनुरोध भेजना"
-html_title:           "Java: http अनुरोध भेजना"
+html_title:           "Elixir: http अनुरोध भेजना"
 simple_title:         "http अनुरोध भेजना"
 programming_language: "Java"
 category:             "Java"
@@ -10,24 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?
-HTTP अनुरोध भेजना एक प्रोग्रामर की डेवलपमेंट में एक आवश्यक क्रिया है। यह एक सरल प्रक्रिया है जो सभी अनुरोधों को डाउनलोड करने और सर्वर द्वारा प्रतिसाद लेने की अनुमति देती है। अधिकांश ब्राउज़र राउटिंग, फॉर्म भरने, डाउनलोडिंग फ़ाइल्स जैसे कार्यों के लिए HTTP अनुरोधों का उपयोग करते हैं।
+## What & Why? क्या और क्यों?
 
-## कैसे करें:
-ब्राउज़र डाउनलोडिंग या अन्य कार्यों को करने के लिए HTTP अनुरोधों का उपयोग करता है। आपको अपने अनुरोध को बाहरी सेवा या सर्वर को भेजने के लिए सार्वजनिक आईपी या डोमेन नाम के साथ URL के साथ पहुंच करने के लिए HttpURLConnection ऑब्जेक्ट को बनाना पड़ेगा। उदाहरण के लिए:
+HTTP संचारण अनुरोध, या सरलरूप से, HTTP request एक वेबसाइट को ब्राउज़र से जानकारी मांगने के लिए उपयोग होता है। यह वेब विकास में मुख्य तंत्र है। कार्यक्रमकर्ताओं को इसे उपयोग करने की आवश्यकता तब होती है जब उन्हें दूरस्थ सर्वर से डेटा पुल करने की जरूरत होती है।
+
+## कैसे:
+
+जावा मे HTTP request भेजने के लिए हम java.net.http package का उपयोग करेंगे। आइए एक सरल कोड के माध्यम से समझाते हैं:
 
 ```Java
-URL url = new URL("http://www.example.com");
-HttpURLConnection con = (HttpURLConnection) url.openConnection();
-con.setRequestMethod("GET");
-System.out.println(con.getResponseCode());
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+public class SendHTTP {
+    public static void main(String[] args) throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+              .uri(URI.create("http://example.com/"))
+              .build();
+
+        HttpResponse<String> response =
+              client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.body());
+    }
+}
 ```
 
-उपरोक्त कोड सर्वर से जवाब को लाने के लिए ब्राउज़र निर्देशित करेगा। अगर सफलतापूर्वक वह एक आपको यूआरएल के मुख्य भाग में सर्वर से संबंध रखने के लिए आपकी वेबकासुरथा से संबंधित उत्तर को पेश करेगा।
+इसमें, मैंने http://example.com/ URL पर GET अनुरोध भेजा है, और फिर उसका प्रतिसाद प्रिंट किया है। 
 
-## Deep Dive:
-HTTP या हाइपर टेक्स्ट ट्रांस्फर प्रोटोकॉल एक एप्पलिकेशन लेयर प्रोटोकॉल है जो इंटरनेट पर संचार को संभव बनाता है। यह सीमित रूप से निर्वाचित डेटा पर आयात और निर्यात करने का प्रमुख माध्यम है। HTTP का प्रयोग आमतौर पर वेब सेवा कॉल, रीडिंग डॉक्यूमेंट और डाटा को अन्य स्रोतों से डाउनलोड करने के लिए किया जाता है। अन्य विकल्पों में AJAX, WebSockets, और उदहारणात्मक अनुरोधों का उपयोग किया जाता है। HttpURLConnection एपीआई और Apache HttpComponents प्रकार के लाइब्रेरी HTTP अनुरोध भेजने के लिए उपयोगी हैं।
+## गहरी दुविधा
 
-## See Also:
-- [Oracle डॉक्यूमेंटेशन: HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
-- [Apache HttpComponents](https://hc.apache.org/)
+### ऐतिहासिक संदर्भ
+HTTP अनुरोध भेजने का तरीका काफी समय से एक महत्वपूर्ण हिस्सा रहा है वेब विकास का। HTTP 1.0 और HTTP 1.1 में इसकी कार्यवाही काफी धीमी होती थी, लेकिन HTTP2 में यह प्रक्रिया समृद्ध हो गई।
+
+### विकल्प
+`java.net.http` package के अलावा, विकल्पी के रूप आप Apache HttpClient और OkHttp जैसी ओपन सोर्स पुस्तकालयों का उपयोग कर सकते हैं।
+
+### क्रियानुशासन विवरण
+उपरोक्त कोड क्लिप में, हमने HttpClient object का निर्माण किया, जिसके बाद हमने HttpRequest object तैयार की। इसके बाद, हमने अनुरोध को `.send()` method के माध्यम से भेजा, और फिर उसका प्रतिसाद प्रिंट किया।
+
+## देखें भी:
+- [Oracleने Official Java Documentation](https://docs.oracle.com/en/java/javase/13/network/java-net-http-httpclient.html)
+- [Apache HttpClient पुस्तकालय](https://hc.apache.org/httpcomponents-client-4.5.x/quickstart.html)
+- [OkHttp पुस्तकालय](https://square.github.io/okhttp/)

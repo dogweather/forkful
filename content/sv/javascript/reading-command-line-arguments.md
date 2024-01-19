@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av kommandoradsargument"
-html_title:           "Javascript: Läsning av kommandoradsargument"
-simple_title:         "Läsning av kommandoradsargument"
+title:                "Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Att läsa kommandoradsargument är en vanlig uppgift för JavaScript-programmerare. Det gör det möjligt för programmet att ta emot input från användaren när det körs, vilket kan vara användbart för att anpassa programmets beteende och hantera olika scenarier.
+## Vad och Varför?
+"Inläsning av kommandoradsargument" innebär att interagera med argument som ges till din Node.js-applikation när den körs från kommandoraden. Detta är viktigt för att tillåta dynamiska värden i din kod, vilket gör din applikation mer flexibel och återanvändbar.
 
-Hur man gör:
-För att läsa kommandoradsargument kan vi använda Node.js process.argv-objektet. Detta objekt innehåller en array av argument som skickas till programmet från kommandoraden. Här är en enkel kodexempel som skriver ut alla de givna argumenten i konsolen:
+## Hur man gör:
+För att läsa kommandoradsargument i Node.js, använder vi `process.argv`, vilket är en global variabel som innehåller en array av argument.
 
 ```Javascript
-process.argv.forEach((arg, index) => {
-  console.log(`Argument #${index}: ${arg}`);
+// Här är ett exempel
+process.argv.forEach((val, index) => {
+    console.log(`${index}: ${val}`);
 });
-
 ```
 
-När du kör detta program med kommandoradsargument som "node script.js hello world", kommer du att se följande output:
+När du kör detta script med argument från kommandoraden kommer terminalen att visa argumentens index och värde.
 
+```Javascript
+$ node test.js en två tre
+0: /usr/local/bin/node
+1: /Users/Användare/test.js
+2: en
+3: två
+4: tre
 ```
-Argument #0: node
-Argument #1: script.js
-Argument #2: hello
-Argument #3: world
-```
 
-För att endast få tag på vissa argument kan vi använda indexering på arrayen, till exempel `process.argv[2]` för att få det första argumentet efter filnamnet.
+## Djupdykning
+Historiskt sett används interaktioner med kommandoraden fortfarande i utsträckning inom vissa områden, som för server-script, automatiseringsverktyg och utvecklingsarbetsflöden. 
 
-Djupdykning:
-Att läsa kommandoradsargument har funnits sedan de tidiga dagarna av UNIX-system och är en vanlig funktion i många programmeringsspråk. Alternativet till att använda `process.argv` är att använda ett externa bibliotek som `commander` som gör det enklare att hantera olika argument och switchar.
+Alternativt för att undvika process.argv komplexitet, finns tredjepartspaket som `yargs` eller `commander` för att göra arbetet smidigare och kodläsningen klarare.
 
-Se även:
-- [Node.js - Process](https://nodejs.org/api/process.html#process_process_argv)
-- [Commander](https://www.npmjs.com/package/commander)
+När det gäller implementationen lagras `process.argv` som en array med datasträngar, där de två första elementen är standardsökvägar till Node.js och den körda filen. Resten av argumenten finns tillgängliga därefter.
+
+## Se även
+- Node.js Dokumentation (https://nodejs.org/api/process.html#process_process_argv)
+- NPM yargs (https://www.npmjs.com/package/yargs)
+- NPM commander (https://www.npmjs.com/package/commander)

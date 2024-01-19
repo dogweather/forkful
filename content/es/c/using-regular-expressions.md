@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "C: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Usando expresiones regulares"
+html_title:           "Go: Usando expresiones regulares"
+simple_title:         "Usando expresiones regulares"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,63 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué Y Por Qué?
+---
+## ¿Qué & Por Qué?
+Las expresiones regulares son una potente herramienta, usada en la programación para coincidir, encontrar o reemplazar patrones en los textos. Los programadores las utilizan para ahorrar tiempo y para manejar complejos patrones de búsqueda y reemplazo.
 
-Las expresiones regulares son patrones de búsqueda utilizados por programadores en lenguajes como C para buscar, validar y manipular texto. Los programadores las utilizan principalmente para facilitar tareas de búsqueda y filtrado de datos.
+## Cómo hacerlo:
+En C, utilizamos la biblioteca regex.h para trabajar con expresiones regulares. Les comparto un ejemplo de cómo detectar si un texto coincide con un patrón:
 
-Cómo Hacerlo:
-
-```
+```C
 #include <regex.h>
+#include <stdio.h>
 
 int main() {
-    char text[] = "¡Hola! ¡Bienvenido a mi artículo de programación!";
-    // Definir patrón de búsqueda
-    char pattern[] = "Bienvenido";
-    // Crear una estructura para guardar los resultados
-    regex_t regex;
-    // Compilar el patrón de búsqueda
-    int status = regcomp(&regex, pattern, 0);
-    if (status == 0) {
-        // Realizar la búsqueda en el texto
-        status = regexec(&regex, text, 0, NULL, 0);
-        if (status == 0) {
-            // Patrón encontrado
-            printf("¡Bienvenido encontrado!");
-        }
-        else if (status == REG_NOMATCH) {
-            // Patrón no encontrado
-            printf("¡Bienvenido no encontrado!");
-        }
-        else {
-            // Error en la búsqueda
-            printf("Error en la búsqueda");
-        }
+    regex_t regex;    
+    // Compila la expresión regular
+    if (regcomp(&regex, "hola", 0)) {
+        printf("No se pudo compilar\n");
+        return 1;
     }
-    else {
-        // Error en la compilación del patrón
-        printf("Error en la compilación del patrón");
-    }
-    // Liberar memoria de la estructura
+
+    // Revisa si el texto cumple con el patrón
+    int res = regexec(&regex, "hola mundo", 0, NULL, 0);
+    
+    if (!res) printf("Coincide\n");
+    else if (res == REG_NOMATCH) printf("No coincide\n");
+    else printf("Error\n");
+
     regfree(&regex);
     return 0;
 }
 ```
 
-Resultado:
+El output sería:
 
 ```
-¡Bienvenido encontrado!
+Coincide
 ```
 
-Profundizando Más:
+## Deep Dive
+Las expresiones regulares datan de la década de los 50, desarrolladas por el matemático Stephen Cole Kleene. No son exclusivas de C y en realidad se pueden encontrar en la mayoría de los lenguajes de programación.
 
-Las expresiones regulares se remontan a los años 50 y se popularizaron en los 70 gracias a herramientas como el editor de texto vi y el comando grep en Unix. Aunque también existen otras formas de manipular texto, como el uso de funciones estándar de cadenas de texto en C, las expresiones regulares ofrecen una forma más poderosa y versátil de buscar y manipular patrones en el texto.
+Hay otras herramientas que también son capaces de manejar búsqueda y reemplazo de patrones, como 'strstr' en C pero no son tan poderosas como las expresiones regulares. 
 
-Enlaces Relacionados:
+La implementación de las expresiones regulares en C se maneja a través de la biblioteca regex.h, que nos permite utilizar funciones para compilar y aplicar las expresiones regulares.
 
-- Documentación oficial de expresiones regulares en C:
-https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
-
-- Tutorial sobre expresiones regulares en C:
-https://www.tutorialspoint.com/c_standard_library/regex_h.htm
+## Ver también
+- Documentación oficial de regex.h en C: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
+- Herramienta en línea para probar expresiones regulares: https://regex101.com
+- Curso intensivo de Regex para principiantes: https://www.codecademy.com/learn/learn-regex

@@ -1,7 +1,7 @@
 ---
-title:                "Parsowanie daty z ciągu znaków"
-html_title:           "Kotlin: Parsowanie daty z ciągu znaków"
-simple_title:         "Parsowanie daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -12,40 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Parsing daty z ciągu znaków polega na otrzymaniu daty w wybranej formie, np. obiektu Date lub LocalDate, po przetworzeniu ciągu znaków. Programiści robią to, ponieważ często otrzymują dane w postaci tekstu, a niegotowe użycie tej danych jest potrzebne.
+Analiza składniowa daty odnosi się do przetwarzania ciągu znaków, aby przekształcić go w obiekt daty. Programiści robią to, aby ułatwić manipulację i formatowanie dat.
 
 ## Jak to zrobić:
 
-### Przykład 1:
-Parsing daty z ciągu znaków w postaci tekstu - "12/12/2020" i uzyskanie obiektu LocalDate:
 ```Kotlin
-val sdf = SimpleDateFormat("dd/MM/yyyy")
-val date = sdf.parse("12/12/2020")
-println(date)
-```
-Output: ```Sat Dec 12 00:00:00 CET 2020```
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
-### Przykład 2:
-Parsing daty z ciągu znaków w postaci tekstu - "12/12/2020" i uzyskanie obiektu Date:
+fun main() {
+    val stringDate = "2022-01-01"
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    val date = LocalDate.parse(stringDate, formatter)
+
+    println(date)
+}
+```
+Kiedy uruchomisz ten kod, jako wyjście otrzymasz:
+
 ```Kotlin
-val sdf = SimpleDateFormat("dd/MM/yyyy")
-val date = sdf.parse("12/12/2020")
-println(date)
+2022-01-01
 ```
-Output: ```Sat Dec 12 00:00:00 CET 2020```
 
-## Głębsze wgląd:
+## Zagłębianie się:
 
-### Kontekst historyczny:
-Pierwsze metody parsowania daty w językach programowania pojawiły się w latach 70. XX wieku, kiedy to potrzebne było przetwarzanie i analiza dużych ilości danych.
+Analiza składniowa daty z ciągu znaków jest praktyką powszechnie stosowaną od czasów, gdy pierwsze języki programowania zaczęły obsługiwać daty. Jest wiele alternatyw do analizy składniowej daty, takich jak bezpośrednie użycie wartości liczbowych do tworzenia dat.
 
-### Alternatywy:
-W Kotlinie, obecnie najlepszą opcją jest korzystanie z klasy Date oraz klasy LocalDate z pakietu java.time, wprowadzonej w wersji 1.8 Javy. Wcześniej często używane były klasy Date i Calendar.
+W Kotlinie, do parsowania daty ze stringa, używany jest obiekt `DateTimeFormatter`. Co istotne, `DateTimeFormatter` jest niemutowalny, co oznacza, że może być bezpiecznie używany w wielowątkowości bez dodatkowej synchronizacji.
 
-### Szczegóły implementacji:
-Klasa SimpleDateFormat jest wykorzystywana do parsowania daty w postaci tekstu dzięki możliwości ustawienia wzorca daty. Następnie, metoda parse przetwarza ciąg znaków i zwraca obiekt Date lub LocalDate, w zależności od wybranego wzorca.
+## Zobacz również:
 
-## Zobacz także:
-- [Dokumentacja Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
-- [Dokumentacja Java LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Kotlin Date vs LocalDate](https://javarevisited.blogspot.com/2017/12/java-date-vs-java-time-kotlin-and-date.html)
+1. Kotlin dokumentacja do DateTimeFormatter: [link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date-time-formatter/index.html)
+2. Tutorial o manipulacji datami w Kotlinie: [link](https://www.baeldung.com/kotlin/dates)
+3. Podcast na temat zarządzania datami w Kotlinie: [link](https://talkingkotlin.com/dates/)

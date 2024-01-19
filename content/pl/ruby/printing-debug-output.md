@@ -1,7 +1,7 @@
 ---
-title:                "Wydrukowanie wyjścia debugowania"
-html_title:           "Ruby: Wydrukowanie wyjścia debugowania"
-simple_title:         "Wydrukowanie wyjścia debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,22 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Wypisywanie informacji debugowania jest procesem polegającym na wyświetlaniu różnego rodzaju danych w trakcie działania programu w celu ułatwienia jego analizy. Programiści używają tego narzędzia, aby zidentyfikować problemy w swoim kodzie i znaleźć sposoby ich rozwiązania.
+## Co i dlaczego?
+
+Drukowanie danych do debugowania to technika programistyczna polegająca na wyświetlaniu wartości zmiennych w celu sprawdzenia ich stanu podczas wykonania kodu. Programiści robią to, aby łatwiej zrozumieć jak działa program i zidentyfikować i naprawić błędy.
 
 ## Jak to zrobić:
-```Ruby 
-a = 5
-b = 10
-c = a + b
-puts c
+
+W Ruby używamy zwyczajowo metody `puts` do wydrukowania danych do debugowania. Poniżej znajduje się przykładowy kod:
+
+```Ruby
+def divide(num1, num2)
+  puts "Dividing #{num1} by #{num2}"
+  result = num1 / num2
+  puts "Result is #{result}"
+rescue ZeroDivisionError
+  puts "Cannot divide by zero!"
+end
 ```
-Wywołanie metody "puts" spowoduje wyświetlenie wartości zmiennej "c" na ekranie, co pozwala nam upewnić się, czy nasz kod działa poprawnie.
 
-## Głębsze zagłębienie:
-Wypisywanie informacji debugowania jest powszechnie używaną praktyką w programowaniu, która pozwala programistom na szybsze i bardziej efektywne rozwiązywanie problemów. Alternatywnym sposobem na debugowanie jest użycie komunikatów błędów, jednak ta metoda może być mniej precyzyjna.
+Gdy uruchomimy powyższy kod z parametrami `divide(10, 2)`, zobaczymy na ekranie:
 
-W Ruby istnieje wiele metod wypisywania informacji debugowania, takich jak "puts", "p" i "pp". Każda z nich posiada swoje unikalne cechy i może być używana w zależności od potrzeb programisty.
+```
+Dividing 10 by 2
+Result is 5
+```
 
-## Zobacz również:
-Jeśli chcesz dowiedzieć się więcej o wypisywaniu informacji debugowania w Ruby, polecamy zapoznać się z dokumentacją języka oraz artykułami na ten temat. Możesz także poszukać poradników i tutoriali w internecie, które pomogą Ci lepiej zrozumieć tę praktykę.
+## Głębsze spojrzenie:
+
+Historia debugowania rozpoczęła się od manualnego śledzenia wartości zmiennych na papierze. Na szczęście, dzisiaj mamy do dyspozycji narzędzia takie jak "puts". Naturalnie istnieją alternatywy dla `puts`, takie jak `p`, `print`, `printf` oraz `pp`.
+
+Szczegóły implementacji `puts` mogą różnić się w zależności od użytego interpreta – na przykład standardowy ruby (MRI) asocjuje `puts` z wyjściem `STDOUT`, jednak niektóre implementacje mogą dokonać innej asocjacji.
+
+## Zobacz także:
+
+1. [Debugging Techniques in Ruby (Techniki debugowania w Ruby)](https://www.toptal.com/ruby/ruby-debugging-techniques)
+2. [In-depth look at Ruby's 'puts' (Głębsze spojrzenie na 'puts' w Ruby)](https://ruby-doc.org/core/Kernel.html#method-i-puts)

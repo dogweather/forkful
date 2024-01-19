@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till små bokstäver"
-html_title:           "Kotlin: Omvandla en sträng till små bokstäver"
-simple_title:         "Omvandla en sträng till små bokstäver"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,47 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-När vi pratar om att konvertera en sträng till gemener i Kotlin, menar vi att göra alla bokstäver i strängen små. Detta är en vanlig operation inom programmering och används främst för att förbättra sök- eller jämförelsefunktioner.
+Att konvertera en sträng till gemener innebär att ändra alla tecken i en textsträng till små bokstäver. Detta görs ofta när programmerare behöver jämföra strängar på ett sätt som inte är känsligt för användning av stora och små bokstäver.
 
-## Hur gör man:
-```
-// Enkelt exempel på konvertering av en sträng till gemener
-val str = "HEJ!"
-val lowercaseStr = str.toLowerCase()
-println(lowercaseStr)
+## Hur man gör:
+Här är ett exempel på hur du konverterar en sträng till gemener i Kotlin:
 
-// Output: hej!
-```
+```Kotlin
+fun main() {
+    val original = "Hej Världen!"
+    val toLowercase = original.toLowerCase()
 
-```
-// Användardefinierad funktion för konvertering av sträng till gemener
-fun toLowerCase(str: String): String {
-    val sb = StringBuilder()
-    
-    for (c in str) {
-        if (c in 'A'..'Z') { // Kontrollerar om tecknet är en stor bokstav
-            sb.append(c.toLowerCase()) // Konverterar till gemener
-        } else {
-            sb.append(c)
-        }
-    }
-    
-    return sb.toString()
+    println(toLowercase)
 }
+```
 
-// Användning av den användardefinierade funktionen
-val str = "HELLO WORLD!"
-val lowercaseStr = toLowerCase(str)
-println(lowercaseStr)
+När du kör den här koden, kommer utskriften att vara:
 
-// Output: hello world!
+```Kotlin
+"hej världen!"
 ```
 
 ## Djupdykning:
-Historiskt sett, har konvertering av strängar till gemener använts för att underlätta sortering och jämförelse av textdata. Det finns även andra alternativ för att åstadkomma samma resultat, som t.ex. att använda inbyggda jämförelsefunktioner som inte är fallkänsliga.
+Historiskt sett har konvertering till gemener varit ett grundläggande verktyg inom textbehandling, särskilt i relation till sökning och jämförelse. Med detta kan programmerare jämföra strängar oberoende av hur de skrivs.
 
-När det kommer till implementationen av att konvertera en sträng till gemener, finns det flera olika metoder och algoritmer som kan användas. Valet av metod kan bero på faktorer som prestanda och minnesanvändning.
+Att använda `toLowerCase()`-funktionen är den mest direkta metoden för att konvertera en sträng till gemener i Kotlin, men det finns alternativ som kan användas i mer specifika sammanhang. Till exempel, om du arbetar i en situation där teckenuppsättningen inte är fastställd, kan du använda `String.format()`:
+
+```Kotlin
+val original = "Hej Världen!"
+val toLowercase = String.format("%s", original).toLowerCase()
+
+println(toLowercase)
+```
+
+`toLowerCase()`-funktionen använder plattformens standard-locale för att konvertera tecknen. För att specificera en annan locale, kan argument såsom `Locale.US` passeras in:
+
+```Kotlin
+val toLowercaseWithLocale = original.toLowerCase(Locale.US)
+
+println(toLowercaseWithLocale)
+```
 
 ## Se även:
-- [Kotlin: Strings and Characters](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Java String: toLowerCase()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+Du kan även kolla in dessa referenser för mer information:
+1. Kotlin's officiella dokumentation om `toLowerCase()` funktion: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+2. Artiklar om textbehandling i Kotlin: [https://www.baeldung.com/kotlin-collections-and-string-api-tutorial](https://www.baeldung.com/kotlin-collections-and-string-api-tutorial)

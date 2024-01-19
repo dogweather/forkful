@@ -1,6 +1,6 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C++: Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "C++"
 category:             "C++"
@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+## Co to i dlaczego?
 
-Usuwanie znaków pasujących do wzorca jest procesem polegającym na usuwaniu z tekstu wszystkich znaków, które spełniają określone kryteria. Programiści wykonują tę czynność, aby oczyszczać dane i przetwarzać tekst w odpowiedni sposób.
+Usuwanie znaków pasujących do wzorca jest procesem eliminowania określonych znaków z ciągu znaków w programowaniu. Programiści robią to, aby oczyścić i standardyzować dane wejściowe, usprawniając w ten sposób proces analizy danych.
 
-# Jak to zrobić:
+## Jak to zrobić:
 
+Podany poniżej kod demonstruje, jak usunąć wszystkie wystąpienia litery 'a' z danego ciągu znaków:
 ```C++
 #include <iostream>
-#include <string>
 #include <algorithm>
+#include <string>
 
-int main()
-{
-    std::string text = "Cześć 123, to jest przykładowy tekst!";
-    text.erase(std::remove_if(text.begin(), text.end(), [](char c) { return std::isdigit(c); }), text.end());
-
-    std::cout << text; // Output: Cześć , to jest przykładowy tekst!
+int main() {
+    std::string str = "Kasia ma kota";
+    str.erase(std::remove(str.begin(), str.end(), 'a'), str.end());
+    std::cout << str << std::endl;
+    return 0;
 }
 ```
+Po uruchomieniu programu, wydrukuje on "Ksi m kot".
 
-# Głębokie zanurzenie:
+## W głąb tematu:
 
-1. Kontekst historyczny: Usuwanie znaków pasujących do wzorca jest jednym ze sposobów na przetwarzanie danych w programowaniu. Pierwotnie wykorzystywane do oczyszczania danych wejściowych i w wyrażeniach regularnych.
+Usuwanie znaków pasujących do wzorca jest często stosowanym narzędziem, szczególnie w przetwarzaniu tekstu. W szczególności, było szeroko używane w przeszłości, gdy rozbudowane systemy baz danych nie były jeszcze powszechne.
 
-2. Alternatywy: Istnieją inne metody usuwania znaków w języku C++, na przykład funkcja `erase()` dla klasy `string` lub wykorzystanie wyrażeń regularnych z biblioteką `regex`.
+Istnieją różne metody usuwania znaków, w zależności od wymagań konkretnego projektu. Na przykład, można użyć funkcji `regex_replace` z biblioteki `std::regex`, aby usunąć wszystkie znaki pasujące do danego wzorca regularnego.
 
-3. Szczegóły implementacji: Funkcja `remove_if` przeszukuje tekst i wywołuje wyrażenie lambda dla każdego znaku. Jeśli wyrażenie zwróci `true`, znak zostanie usunięty. Następnie za pomocą funkcji `erase` usuwana jest puste miejsce otrzymane po usuniętych znakach.
+Założeniem funkcji `std::remove` jest przesunięcie znaków, które nie pasują do podanego argumentu, na początek ciągu, a następnie zwrócenie iteratora do pierwszego "usuniętego" elementu. Zastosowanie `erase` pozwala na bezpieczne usunięcie "usuniętych" znaków.
 
-# Zobacz także:
+## Zobacz też:
 
-- [Podstawy przetwarzania tekstu w C++](https://www.geeksforgeeks.org/cpp-program-to-erase-all-occurrences-of-a-character-in-a-string/)
-- [Dokumentacja funkcji `remove_if`](https://www.cplusplus.com/reference/algorithm/remove_if/)
+1. Dokumentacja C++ na std::remove: http://www.cplusplus.com/reference/algorithm/remove/
+2. Dokumentacja C++ na std::erase: https://en.cppreference.com/w/cpp/string/basic_string/erase
+3. Dokumentacja C++ na std::regex_replace: http://www.cplusplus.com/reference/regex/regex_replace/

@@ -1,7 +1,7 @@
 ---
-title:                "Att tolka ett datum från en sträng."
-html_title:           "C#: Att tolka ett datum från en sträng."
-simple_title:         "Att tolka ett datum från en sträng."
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-När man pratar om "att parsra ett datum från en sträng" syftar man på att konvertera en sträng som innehåller ett datum (t.ex. "1/1/2020") till en datum-variabel som kan användas i ens program. Programmerare gör detta för att kunna hantera och manipulera datum i sitt kodande.
+## Vad och Varför?
+Att parsa ett datum från en sträng innebär att omvandla en textrepresention av ett datum till datumobjekt som programmeraren kan använda. Programutvecklare gör detta för att hantera data från olika källor där formatet inte alltid är konsekvent.
 
-## Så här gör du:
-Det finns flera sätt att parsra datum från en sträng i C#. Ett exempel är att använda DateTime.TryParse-metoden, där du anger strängen och den variabel som datumet ska sparas i:
-
+## Hur man gör:
+Här är en bit kod som visar hur du parsa ett datum från en sträng i C#:
 ```C#
-string dateStr = "1/1/2020";
-DateTime date;
-var success = DateTime.TryParse(dateStr, out date);
-Console.WriteLine(date); // Output: 1/1/2020 12:00:00 AM
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string dateString = "2020-08-20";
+        DateTime parsedDate = DateTime.Parse(dateString);
+        Console.WriteLine(parsedDate);
+    }
+}
 ```
-
-Du kan också använda DateTime.ParseExact-metoden om du vill specificera ett visst datumformat:
-
-```C#
-string dateStr = "Jan 1, 2020";
-DateTime date = DateTime.ParseExact(dateStr, "MMM d, yyyy", null);
-Console.WriteLine(date); // Output: 1/1/2020 12:00:00 AM
+Om du kör koden kommer du att se följande output:
 ```
+2020-08-20 00:00:00
+```
+## Djupgående
+(1) Historiskt sett, har konvertering av strängar till datum alltid varit ett behov i programmering, särskilt när man hanterar användarinmatningar eller data från olika källor. C# erbjuder flera metoder för att möta detta behov.
 
-En annan möjlighet är att använda DateTime.Parse-metoden, som automatiskt försöker tolka det angivna datumet i olika format.
+(2) Alternativt, kan man använda `DateTime.TryParse` metoden, som returnerar en boolesk värde som indikerar om konverteringen lyckades eller inte.
 
-## Djupdykning:
-Parsing av datum från strängar är en vanlig uppgift inom programmering, och C# erbjuder flera inbyggda metoder för att göra detta. Det finns också externa bibliotek som erbjuder ytterligare funktioner för att hantera datum och tid. När man använder DateTime.TryParse-metoden är det viktigt att notera att den returnerar en bool-variabel för att ange om parsningen var lyckad eller inte.
+(3) Metoden `DateTime.Parse` hanterar strängen som ett argument och försöker konvertera den till ett DateTime-objekt. Om strängen inte kan tolkas som ett datum, kommer programmet att generera ett `FormatException` fel.
 
-## Se även:
-- [DateTime.TryParse-metoden (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=netframework-4.8)
-- [DateTime.ParseExact-metoden (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact?view=netframework-4.8)
-- [DateTime.Parse-metoden (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=netframework-4.8)
+## Se också
+- Microsoft Docs: DateTime.Parse Method ([Engelska](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=net-5.0))
+- Microsoft Docs: DateTime.TryParse Method ([Engelska](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=net-5.0))
+- Stack Overflow: How to convert a string to datetime in C#? ([Engelska](https://stackoverflow.com/questions/919244/how-to-convert-a-string-to-datetime-in-c-sharp))

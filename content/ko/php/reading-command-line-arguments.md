@@ -1,6 +1,6 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "PHP: 명령줄 인수 읽기"
+html_title:           "Arduino: 명령줄 인수 읽기"
 simple_title:         "명령줄 인수 읽기"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,36 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-커맨드 라인 인수 읽기는 프로그래머들이 컴퓨터 프로그램에게 사용자로부터 필요한 정보를 전달하는 방법입니다. 이를 통해 사용자는 프로그램 실행 시에 추가적인 설정이나 데이터를 전달할 수 있고, 프로그램도 이를 받아들여 작업을 수행할 수 있게 됩니다.
+## 무엇이며 왜 사용하는가?
 
-## 하는 방법:
+커맨드 라인 인자 읽기는 사용자가 프로그램을 실행할 때 제공하는 값을 읽는 것입니다. 이를 통해 프로그래머들은 유동적이고 맞춤형 부분의 프로그램을 개발하게 됩니다.
+
+## 어떻게 사용하나:
+
+PHP에서 CLI 인자는 전역 배열 `$_SERVER['argv']`에 저장됩니다. 이 배열의 첫 번째 요소는 스크립트 이름이고, 나머지 요소는 순서대로 커맨드 라인 인자입니다.
+클릭하세요.
+
 ```PHP
-<?php
-// 인수를 배열로 받아옵니다.
-$arguments = $argv;
 
-// 인수가 존재하는지 확인합니다.
-if (count($arguments) > 1) {
-  // 첫 번째 인수는 파일명이므로 제외한 후, 두 번째 인수부터 출력합니다.
-  for ($i = 1; $i < count($arguments); $i++) {
-    echo $arguments[$i] . "\n";
-  }
-} else {
-  // 인수가 없는 경우에는 대신 기본 메시지를 출력합니다.
-  echo "아무런 인수가 전달되지 않았습니다.";
-}
+<?php
+    // index.php 파일이라고 가정하자.
+    var_dump($_SERVER['argv']);
 ?>
+
 ```
 
-위의 예시 코드를 실행시키면, 커맨드 라인에서 전달한 인수들이 출력됩니다. 만약 아무런 인수도 전달하지 않는다면, 기본 메시지가 출력됩니다.
+터미널에서 스크립트를 이렇게 실행하면
 
-## 깊이 파고들기:
-커맨드 라인 인수 읽기는 오래된 방식의 통신 방법입니다. 하지만 아직도 일부 프로그래밍 환경에서는 매우 유용하게 사용되고 있습니다. 다른 대안으로는 환경 변수를 이용하는 방법이 있지만, 이는 인수보다는 제한적인 정보를 제공할 수 있기 때문에 특정 상황에서는 사용하기 적절하지 않을 수 있습니다.
+```
+$ php index.php hello world
+```
 
-커맨드 라인 인수 읽기는 PHP 자체에서 지원하며, ```$argv```라는 전역 변수를 통해 인수들을 가져올 수 있습니다. 이 외에도, ```$argc``` 변수를 이용해 전달된 인수의 수를 확인할 수 있습니다. 이를 통해 프로그램에서 적절한 예외 처리를 할 수 있게 됩니다.
+아래와 같은 결과가 표시됩니다:
 
-## 관련 자료:
-- [PHP 공식 문서 - 커맨드 라인 인수 읽기](https://www.php.net/manual/en/features.commandline.php)
-- [How to Use Command Line Arguments in PHP](https://www.w3schools.com/php/php_command_line.asp)
-- [PHP CLI: How to parse options without external lib?](https://stackoverflow.com/questions/13603011/php-cli-how-to-parse-options-without-external-lib)
+```
+array(3) {
+  [0]=>
+  string(9) "index.php"
+  [1]=>
+  string(5) "hello"
+  [2]=>
+  string(5) "world"
+}
+```
+
+## 디프다이브:
+
+커맨드 라인 인자의 사용법은 스크립트 언어의 다양한 시대를 거쳐 변해왔습니다. 현대의 PHP에서는 `$_SERVER['argv']` 배열을 통해 커맨드 라인 인자에 접근합니다.
+
+대안으로, PHP는 `getopt()`라는 함수도 제공합니다. 이 함수는 옵션 이름과 함께 인자를 제공하는 더 복잡한 사용 사례를 지원합니다. 
+
+한편, 커맨드 라인 인자를 직접 사용하는 방식 대신 표준 입력(STDIN) 또는 파일 입력을 통해 사용자로부터 데이터를 읽는 방법도 있습니다.
+
+## 참고 자료:
+
+- [PHP Manual](https://www.php.net/manual/en/reserved.variables.argv.php) - $_SERVER['argv'] 서툴 및 사용 방법에 대한 자세한 정보
+- [PHP: getopt - Manual](https://www.php.net/manual/en/function.getopt.php) - PHP의 getopt 함수에 대한 자세한 정보
+- [PHP Manual](https://www.php.net/manual/en/features.commandline.io-streams.php) - PHP에서 STDIN과 STDOUT에 대한 자세한 정보

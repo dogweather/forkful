@@ -1,7 +1,7 @@
 ---
-title:                "Att läsa kommandoradsargument"
-html_title:           "Elixir: Att läsa kommandoradsargument"
-simple_title:         "Att läsa kommandoradsargument"
+title:                "Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+# Elixir och Kommandoradsargument: En enkel guide
 
-Läsning av kommandoradsargument är en viktig del av programmering eftersom det tillåter program att ta emot användarinput från kommandoraden istället för att behöva hårdkoda indata. Det gör det möjligt för användaren att interagera med programmet och ange önskad funktionalitet, vilket bidrar till ett mer dynamiskt och flexibelt program.
+## Vad och varför?
 
-## Hur du gör:
+Kommandoradsargument är data som du ger till ditt program när du kör det. Programmerare använder detta för att anpassa programmets beteende utan att behöva ändra koden.
 
-### Elixir
+## Så här gör du:
 
-För att läsa kommandoradsargument i Elixir, används funktionen `System.argv/0`. Den tar inga argument och returnerar en lista med alla kommandoradsargument som skickats till programmet vid körning.
+Elixir använder `System.argv/0` för att läsa argumenten. Det returnerar en lista med strängar. Varje argument är ett element.
 
-```Elixir
-# Exempel: Läs och skriv ut alla kommandoradsargument
-arguments = System.argv()
-IO.puts(arguments)
-```
+``` Elixir
+IO.inspect System.argv()
+``` 
 
-Om du till exempel kör programmet med `elixir program.ex arg1 arg2`, kommer outputen att vara `[arg1, arg2]`.
+Om du kör programmet med `elixir myfile.exs arg1 arg2`, kommer det att skriva ut `["arg1", "arg2"]`.
 
-## Djupdykning:
+## Djupdykning
 
-### Historisk kontext
+`System.argv/0` är en del av Elixir sedan dess tidiga versioner, liksom i många andra språk. 
 
-Kommandoradsargument är en vanlig funktion i många olika programmeringsspråk och operativsystem. Konceptet finns sedan början av datorernas historia och användes för att skicka instruktioner och data till datorns operativsystem.
+Alternativa sätt att ta emot data inkluderar filinmatning, trådade meddelanden eller nätverkskommunikation. Men användning av kommandoradsargument är ofta det mest praktiska för snabba uppgifter och engångsskript.
 
-### Alternativ
+Detaljer: `System.argv/0` är ett samtal till Erlangs `:init.get_plain_arguments/0` - Elixir bygger ju på Erlang VM. 
 
-Det finns många olika sätt att läsa kommandoradsargument i Elixir, exempelvis genom att använda bibliotek som `OptionParser` eller `exopts`. Du kan också använda en singel- eller flerradsparser, beroende på dina behov.
+## Se även
 
-### Implementeringsdetaljer
+För mer om `System.argv/0`, besök [Elixir officiella dokumentation](https://hexdocs.pm/elixir/System.html#argv/0). 
 
-Elixir använder sig av Erlang's `ode/lib/option` för att hantera kommandoradsargument. Detta gör att Elixir automatiskt hanterar argument som skickas till programmet av Erlang VM.
+Mer om hur Elixir hanterar kommandoradsargument kan du läsa på [Elixir skoll's tutorial](http://elixirschool.com/en/lessons/basics/command-line/). 
 
-## Se även:
-
-- [Officiell dokumentation för Elixir's `System.argv/0` funktion](https://hexdocs.pm/elixir/System.html#argv/0)
-- [An introduction to command line arguments in Elixir](https://blog.appsignal.com/2017/07/24/code-explore-command-line-arguments-in-elixir.html) av Alexsander Akers
+Lycka till med din kodning!

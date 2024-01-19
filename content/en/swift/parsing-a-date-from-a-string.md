@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Swift recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Swift"
 category:             "Swift"
@@ -12,46 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing a date from a string in Swift is the process of converting a date represented as a string into a date object that can be used in the code. Programmers use this technique to handle date and time data coming from various sources, such as user input or external APIs.
+Parsing a date from a string refers to the process of converting a text representation of a date into a formal date object that your Swift program understands and handles. It enables programmers to manipulate, format, and carry out calculations based on that date information. 
 
 ## How to:
 
+Straight to it, Swift provides a built-in class called `DateFormatter` to serve this purpose. Let's look into a basic implementation, where we convert a date string to a `Date` object. 
+
 ```Swift
-// Example 1: Parsing a date from a string using DateFormatter
+import Foundation
 
-let dateString = "2021-04-20" // string representation of a date
-
+let dateStr = "2025-11-30"
 let formatter = DateFormatter()
-formatter.dateFormat = "yyyy-MM-dd" // specify the format of the input string
-
-if let date = formatter.date(from: dateString) { // try to convert the string to a date object
-    print(date) // output: 2021-04-20 00:00:00 +0000
-} else {
-    print("Unable to parse date") // handle error if conversion fails
-}
-
-// Example 2: Parsing a date with time using ISO8601DateFormatter
-
-let dateTimeString = "2021-04-20T10:30:00+0000" // string representation of a date with time
-
-let isoFormatter = ISO8601DateFormatter()
-isoFormatter.formatOptions = [.withInternetDateTime] // specify the format of the input string
-isoFormatter.timeZone = TimeZone(abbreviation: "UTC") // set the time zone of the input string
-
-if let dateTime = isoFormatter.date(from: dateTimeString) { // try to convert the string to a date object
-    print(dateTime) // output: 2021-04-20 10:30:00 +0000
-} else {
-    print("Unable to parse date and time") // handle error if conversion fails
+formatter.dateFormat = "yyyy-MM-dd"
+if let date = formatter.date(from: dateStr) {
+    print(date)
 }
 ```
 
-## Deep Dive:
+When executed, the code will produce the following output: 
 
-Parsing dates from strings has a long history in programming, with various techniques and formats used throughout the years. Before Swift, NSDateFormatter was used to parse dates in Objective-C. In Swift, DateFormatter and ISO8601DateFormatter are commonly used, providing powerful options for handling various date formats. Alternatives to parsing dates include using libraries that provide built-in date handling capabilities, such as Foundation's Calendar and DateComponents classes. Implementing a custom date parser is another option, but it should only be considered for specialized cases as it can be error-prone.
+```Swift
+2025-11-30 00:00:00 +0000
+```
 
-## See Also:
+## Deep Dive
 
-- [NSDateFormatter Documentation](https://developer.apple.com/documentation/foundation/nsdateformatter)
-- [ISO8601DateFormatter Documentation](https://developer.apple.com/documentation/foundation/iso8601dateformatter)
-- [Foundation Calendar Documentation](https://developer.apple.com/documentation/foundation/calendar)
-- [Foundation DateComponents Documentation](https://developer.apple.com/documentation/foundation/datecomponents)
+To abstraction, `DateFormatter` has been a part of Foundation Framework since the early Objective-C days, pre-dating Swift. There are alternatives to it, including libraries like `SwiftDate` and `Timepiece`, but `DateFormatter` is robust enough for many use cases and comes bundled with Swift.
+
+The `DateFormatter` object uses the user's current locale to interpret the contents of the string. If you expect dates to arrive in a specific format regardless of the user's locale, don't forget to explicity set `Locale` of the `DateFormatter`. 
+
+```Swift
+formatter.locale = Locale(identifier: "en_US_POSIX")
+```
+
+A small note about performance, `DateFormatter` is an expensive object to initialize. If you're parsing multiple dates in one go, instantiate it once and reuse it!
+
+## See Also
+
+To learn more about this topic, check out the following sources:
+
+1. [DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter) - Apple's official documentation.
+2. [Parsing date and time from a string with Swift](https://www.hackingwithswift.com/example-code/language/how-to-parse-dates-and-times-from-a-string-with-dateformatter) - An article by Hacking with Swift.
+3. [how to convert a string to nsdate in swift 4](https://stackoverflow.com/questions/46344963/how-to-convert-a-string-to-nsdate-in-swift-4) - A relevant StackOverflow thread.

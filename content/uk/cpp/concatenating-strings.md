@@ -1,7 +1,7 @@
 ---
-title:                "З'єднання рядків"
-html_title:           "C++: З'єднання рядків"
-simple_title:         "З'єднання рядків"
+title:                "Конкатенація рядків"
+html_title:           "PHP: Конкатенація рядків"
+simple_title:         "Конкатенація рядків"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,37 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Що і чому?
-Конкатенація рядків - це процес об'єднання декількох рядків в один. Програмісти часто використовують цей функціонал для створення складних повідомлень або шаблонів.
 
-## Як:
-Щоб зрозуміти, як працює конкатенація рядків, подивіться на наступний приклад, де два рядки об'єднуються за допомогою оператора "+".
+Стрічки можна об'єднувати, вставляючи одну стрічку в кінець іншого. Ми робимо це, щоб створити нову стрічку, яка містить обидві оригінальні стрічки.
+
+## Як це зробити:
+
+Об'єднання стрічок у C++ можна реалізувати за допомогою оператора '+'. Подивимось на приклад:
 
 ```C++
-#include <iostream>
+#include<iostream>
+#include<string>
 
-using namespace std;
-
-int main() {
-
-    string first = "Привіт";
-    string second = "Світ!";
-    string concatenated = first + second;
-
-    cout << concatenated << endl;
-
+int main(){
+    std::string str1 = "Привіт, ";
+    std::string str2 = "Світе!";
+    std::string str3 = str1 + str2; 
+    
+    std::cout << str3;
     return 0;
 }
 ```
+Вихід:
+```C++
+Привіт, Світе!
+```
+Зауважте, що ви можете використовувати оператор '+', щоб прямо додати дві стрічки, як це показано у коді.
 
-Вивід: ПривітСвіт!
+## Занурення в контекст
 
-Цей код використовує змінні типу string та оператор "+" для об'єднання рядків. Можна також використовувати функцію strcat () з бібліотеки string.h для з'єднання рядків.
+Подібно до багатьох мов програмування, C++ дозволяє об'єднувати стрічки разом. Проте, варто відзначити, що об'єднання великої кількості стрічок може бути недостатньо ефективним, оскільки кожен виклик оператора '+' створює новий об'єкт стрічки.
 
-## Глибші деталі:
-Конкатенація рядків була однією з основних операцій рядків, яку багато мов програмування зараховують до свого набору функцій. Крім оператора "+", часто використовуються також функції concat () та join (). Вони є альтернативами функції strcat (), але різняться у використанні та синтаксисі.
+Альтернативою може бути використання `std::ostringstream` або `std::stringstream` для об'єднання стрічок, особливо коли є багато об'єктів для об'єднання.
 
-## Дивись також:
-Детальнішу інформацію про конкатенацію рядків та інші корисні функції можна знайти на наступних ресурсах:
-- [https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B5%D0%BD%D0%B0%D1%86%D1%96%D1%8F_(%D1%80%D0%B5%D0%B7%D1%8C%D0%BA%D0%B)\_(%D0%B1%D0%B5%D0%B7\_%D0%B7%D1%81%D1%83%D0%B2%D1%83]](https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BD%D0%BA%D0%B0%D1%82%D0%B5%D0%BD%D0%B0%D1%86%D1%96%D1%8F_(%D1%80%D0%B5%D0%B7%D1%8C%D0%BA%D0)\_(%D0%B1%D0%B5%D0%B7\_%D0%B7%D1%81%D1%83%D0%B2%D1%83))
-- [https://www.geeksforgeeks.org/concatenation-of-two-strings-in-cpp/](https://www.geeksforgeeks.org/concatenation-of-two-strings-in-cpp/)
-- [http://www.cplusplus.com/reference/cstring/strcat/](http://www.cplusplus.com/reference/cstring/strcat/)
+Ось приклад:
+```C++
+#include<iostream>
+#include<sstream>
+
+int main(){
+    std::ostringstream os;
+    os << "Привіт, " << "Світе!";
+    std::string str3 = os.str();
+    
+    std::cout << str3 << std::endl;
+    return 0;
+}
+```
+Цей метод може бути більш ефективним, ніж просто використання '+', залежно від ситуації.
+
+## Дивіться також
+
+Поглиблене розуміння теми об'єднання стрічок в C++ ви можете знайти за посиланнями:
+- ["Basic String Operations"](http://www.cplusplus.com/reference/string/string/) від cplusplus.com
+- ["How to concatenate strings in C++"](https://www.fluentcpp.com/2018/12/06/strcat-vs-strlcat/) від fluentcpp.com
+- ["Concatenating Strings in C++"](https://www.learncpp.com/cpp-tutorial/concatenating-strings/) від learncpp.com.

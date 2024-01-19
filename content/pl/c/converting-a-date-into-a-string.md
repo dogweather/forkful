@@ -1,6 +1,6 @@
 ---
 title:                "Konwersja daty na ciąg znaków"
-html_title:           "C: Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
 simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "C"
 category:             "C"
@@ -12,48 +12,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Konwertowanie daty na łańcuch znaków to proces, w którym datę lub czas wyraża się w postaci tekstu zamiast w jej oryginalnej postaci numerycznej. Programiści często wykonują tę czynność, ponieważ ułatwia to wyświetlanie daty w czytelnej i łatwej do zrozumienia formie dla użytkowników aplikacji.
+Zamiana daty na ciąg znaków w C to proces konwertowania danych typu "Data" do formatu String. Programiści robią to, aby łatwiej obsługiwać i prezentować dane związane z datą.
 
 ## Jak to zrobić:
 
+Śledź poniższy kod, który demonstruje, jak przekształcić datę w ciąg znaków w C.
+
 ```C
-// Przykładowy program konwertujący datę na łańcuch znaków
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-  // Deklaracja i inicjalizacja zmiennej typu time_t
-  time_t seconds = time(NULL);
-  
-  // Użycie funkcji localtime() do pobrania daty i czasu
-  // w postaci struktury tm
-  struct tm *now = localtime(&seconds);
-  
-  // Użycie funkcji strftime() do konwersji struktury tm
-  // na łańcuch znaków
-  char buffer[80];
-  strftime(buffer, 80, "Dzisiaj jest %d.%m.%Y, a godzina to %H:%M:%S", now);
-  
-  // Wyświetlenie łańcucha znaków
-  printf("%s", buffer);
-  
-  return 0;
+    time_t rawtime;
+    struct tm * timeinfo;
+
+    time (&rawtime);
+    timeinfo = localtime (&rawtime);
+
+    printf ("Obecna data i czas to: %s", asctime(timeinfo));
+
+    return 0;
 }
 ```
 
-Przykładowe wyjście:
+Wyjście z tego kodu może prezentować się następująco:
 
+```C
+Obecna data i czas to: Sun Sep 26 21:24:06 2021
 ```
-Dzisiaj jest 22.07.2021, a godzina to 16:30:00
+
+## Głębsze zrozumienie:
+
+(1) Kontekst historyczny: W pierwotnej wersji C, nie było bezpośredniej funkcji do konwersji daty na string. Programiści musieli samodzielnie tworzyć takie funkcje.
+
+(2) Alternatywy: Możemy korzystać również z funkcji `strftime()`, która pozwala na konwersję daty do ciągu znaków z niestandardowym formatowaniem.
+
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    time_t rawtime;
+    struct tm* timeinfo;
+    char buffer[80];
+
+    time(&rawtime);
+    timeinfo = localtime(&rawtime);
+
+    strftime(buffer,sizeof(buffer),"%d-%m-%Y %H:%M:%S",timeinfo);
+    printf("Obecna data i czas to: %s", buffer);
+
+    return 0;
+}
 ```
 
-## Głębszy zanurzenie:
+(3) Detyale implementacji: `time()` zwraca aktualny czas, `localtime()` konwertuje sekundy na strukturę `tm`, a `asctime()` / `strftime()` przekształca strukturę `tm` do odpowiedniego formatu string.
 
-Konwersja daty na łańcuch znaków jest powszechnie stosowanym procesem w programowaniu. Początkowo, programiści musieli ręcznie formatować datę w łańcuch znaków, używając odpowiednich sekwencji formatujących. Jednak od czasu wydania standardu języka C w 1999 roku, dostępna jest funkcja strftime(), która znacznie ułatwiła ten proces.
+## Zobacz też:
 
-Alternatywne metody konwersji daty na łańcuch znaków obejmują użycie funkcji sprintf() lub biblioteki zewnętrznej. Jednak funkcja strftime() jest często preferowanym wyborem ze względu na swoją prostotę i dostępność w standardzie języka C.
+- Opis bazy ANSI C: 
+  [http://www.open-std.org/jtc1/sc22/wg14/](http://www.open-std.org/jtc1/sc22/wg14/)
+  
+- Więcej na temat funkcji czasu w C: 
+  [https://www.tutorialspoint.com/c_standard_library/time_h.htm](https://www.tutorialspoint.com/c_standard_library/time_h.htm) 
 
-## Zobacz także:
+- Więcej informacji na temat asctime:
+  [https://www.cplusplus.com/reference/ctime/asctime/](https://www.cplusplus.com/reference/ctime/asctime/) 
 
-- [Dokumentacja funkcji strftime() w języku C](https://www.cplusplus.com/reference/ctime/strftime/)
-- [Porównanie różnych metod konwersji daty na łańcuch znaków w języku C](https://www.geeksforgeeks.org/converting-strings-numbers-cc-stdlib-vs-stringstream/)
+- Więcej na temat strftime: 
+  [https://www.cplusplus.com/reference/ctime/strftime/](https://www.cplusplus.com/reference/ctime/strftime/)

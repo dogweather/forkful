@@ -1,7 +1,7 @@
 ---
-title:                "新しいプロジェクトの開始"
-html_title:           "Fish Shell: 新しいプロジェクトの開始"
-simple_title:         "新しいプロジェクトの開始"
+title:                "新しいプロジェクトを始める"
+html_title:           "C: 新しいプロジェクトを始める"
+simple_title:         "新しいプロジェクトを始める"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,26 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ?
+## 何となぜ？
 
-プログラマーは新しいプロジェクトを始めるのは重要です。新しいプロジェクトを始めることは、新しい問題に取り組み、スキルを向上させる機会です。または、既存のプロジェクトを改善するための新しいアイデアを実装することもできます。
+新規プロジェクトを開始するとはプログラミングの新しい挑戦で、ゼロから何かを形作ることです。この過程を通じて、プログラマーは新しい技能を学び、創造力を発揮し、問題解決能力を高めるために行います。
 
-## How to:
+## ハウツー：
 
-プロジェクトを始めるには、``` fishシェル start-project ```を使用します。このコマンドは、新しいプロジェクトのためのディレクトリを作成し、必要なファイルを作成してくれます。また、既存のプロジェクトをクローンすることもできます。例えば、
-
+次の手順を使って、新しいプロジェクトをFish Shellで開始します：
+```fish 
+mkdir newproject
+cd newproject
+touch main.fish
+code main.fish
 ```
-Fish Shell start-project my-project
-```
+上記のコードは新たにディレクトリ "newproject" を作成し、その中に新しく "main.fish" ファイルを作ります。その後、そのファイルをエディタで開きます。
 
-このコマンドは、 ``` my-project ```という名前のディレクトリを作成し、その中に必要なファイルを自動的に作成します。
+## ディープダイブ：
 
-## Deep Dive:
+過去にはプロジェクトのために手書きのプログラムを作成することが主流でしたが、今日ではFish Shellのようなシェルコマンドはそれを容易にします。代わりに、BashやZshのような伝統的な複雑なシェルを使うこともできます。
 
-fishシェルのstart-projectコマンドは、より最新のbashシェルのコマンドである``` mkdir ```や``` touch ```を使用するよりも簡単です。このコマンドは、プロジェクトを始めるために必要なファイルとディレクトリを自動的に作成し、新しいプロジェクトを素早く始めることができます。また、他のシェルのコマンドや外部プログラムを使用してプロジェクトを始めることもできますが、このコマンドを使用すれば、よりシンプルかつ効率的にプロジェクトを始めることができます。
+Fish Shellでプロジェクトを始めるときの実装を理解するために、"mkdir" がディレクトリを作成し、"touch"が新しい空ファイルを作成し、"code" がエディタを開くことを理解することが重要です。これらの基本的なコマンドを組み合わせることにより、新しいプロジェクトが簡単に始まります。
 
-## See Also:
+## 関連情報：
 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/)
-- [Bash Shell Documentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [Start Project オプションの説明](https://fishshell.com/docs/current/cmds/start-project.html)
+Fish Shellの公式ドキュメンテーション（英語）：https://fishshell.com/docs/current/tutorial.html
+BashとZshについての詳細情報（英語）：https://www.howtogeek.com/362372/what-is-zsh-and-why-should-you-use-it-instead-of-bash/

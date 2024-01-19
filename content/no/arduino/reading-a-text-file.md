@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av en tekstfil"
-html_title:           "Arduino: Lesing av en tekstfil"
-simple_title:         "Lesing av en tekstfil"
+title:                "Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,24 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva og hvorfor?
-Det å lese en tekstfil betyr å åpne en fil og lese informasjonen som er lagret i den. Dette er en viktig del av programmering fordi det lar deg hente og behandle data fra filer, noe som kan være nyttig for å håndtere store mengder informasjon eller for å samhandle med eksterne enheter.
+## Hva og Hvorfor?
 
-Hvordan:
-Du kan lese en tekstfil ved å bruke "File" funksjonen i Arduino biblioteket. Først må du åpne filen ved å oppgi filnavnet og "r"-modus for å lese. Deretter kan du lese informasjonen i fila ved å bruke "readString" eller "readLine" funksjonene. Her er et eksempel på hvordan dette kan gjøres:
+Å lese en tekstfil er prosessen å innhente og tolke informasjon lagret i en tekstfil fra programmeringsmiljøet. Det er viktig som det tillater programmerere å lagre og gjenbruke data på tvers av forskjellige prosjekter eller økter. 
 
-```
-Arduino fil = fil.open("data.txt", FILE_READ); // Åpner filen "data.txt"
-hvis (fil) {                                   // Sjekker om åpningen var vellykket
-  streng s = fil.readString();                // Leser hele filen som en streng
-  fil.close();                                // Lukker filen for å spare minne
-  seriell.print(s);                          // Sender informasjonen til seriell overvåking
+## Hvordan:
+
+Her er en enkel kode for å lese en tekstfil i Arduino:
+
+```Arduino
+#include <SD.h>
+
+void setup()
+{
+  Serial.begin(9600);
+  if (!SD.begin(10)) {
+    Serial.println("initialization failed!");
+    return;
+  }
+  File dataFile = SD.open("datalog.txt");
+  if (dataFile) {
+    while (dataFile.available()) {
+      Serial.write(dataFile.read());
+    }
+    dataFile.close();
+  }
+}
+
+void loop()
+{
+  // put your main code here, to run repeatedly:
+
 }
 ```
 
-Dykk ned:
-Å lese tekstfiler har vært en viktig del av programmering siden de første datamaskinene ble laget. Det finnes også andre måter å lese filer på, for eksempel ved å bruke tekstbehandlingsprogrammer eller databaseteknologi. I Arduino, kan du også bruke SD-kortet for å lese eksterne filer. Det er viktig å lære om hvordan du leser tekstfiler for å kunne behandle store mengder informasjon og for å kommunisere med andre enheter, noe som er spesielt nyttig for Internet of Things (IoT) prosjekter.
+Når du kjører denne koden, vil du se dataene fra "datalog.txt" i Serial Monitor.
 
-Se også:
-- Arduino Offisiell Dokumentasjon: https://www.arduino.cc/reference/en/language/functions/files-io/file/
-- "Reading and Writing Files on an SD Card with an Arduino": https://learn.sparkfun.com/tutorials/reading-and-writing-files-to-an-sd-card-with-an-arduino/all
+## Dyp Dykk 
+
+Historisk sett har lesing av tekstfiler vært en integrert del av programmering. Det startet med de tidligste lagringsenheter, som magnetbånd, og utviklet seg til å inkludere moderne hjelpemidler som SD-kort.
+
+Det finnes også alternative måter å lese tekstfiler på. For eksempel kan du bruke EEPROM (Electrically Erasable Programmable Read-Only Memory) hvis du har mindre data å lagre og overføre mellom økter. Arduino har innebygget støtte for både SD-kort og EEPROM.
+
+Når det gjelder å lese en tekstfil med Arduino, åpner SD.open() en fil på SD-kortet. Hvis filen er åpnet riktig, brukes Serial.write() for å skrive dataene i filen til Serieporten.
+
+## Se Også:
+
+For mer informasjon om dette emnet, sjekk ut disse kildene:
+
+1. Arduino sin offisielle dokumentasjon på SD Library: https://www.arduino.cc/en/Reference/SD
+2. EEPROM Library for Arduino: https://www.arduino.cc/en/Reference/EEPROM
+3. Noen prinsipper om å lese og skrive til SD-kort med Arduino: https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial

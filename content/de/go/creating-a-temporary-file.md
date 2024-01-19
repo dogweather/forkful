@@ -1,7 +1,7 @@
 ---
-title:                "Erstellen einer temporären Datei"
-html_title:           "Go: Erstellen einer temporären Datei"
-simple_title:         "Erstellen einer temporären Datei"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Java: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,25 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Erstellen einer temporären Datei ist eine Technik, die Programmierer verwenden, um vorübergehend Daten speichern oder verarbeiten zu können, ohne sie dauerhaft auf dem Speichermedium zu hinterlassen. Dies kann nützlich sein, um Speicherplatz zu sparen oder sensible Daten vor unbefugtem Zugriff zu schützen.
 
-## So geht's:
-Ähnlich wie in anderen Programmiersprachen können in Go temporäre Dateien mit Hilfe der Funktion ```ioutil.TempFile()``` erstellt werden. Diese Funktion benötigt zwei Argumente, den Namen und das Präfix für die temporäre Datei. Hier ist ein Beispielcode:
+Temporäre Dateien werden verwendet, um Daten kurzfristig zu speichern. Sie sind nützlich, wenn du mit großen Datenmengen arbeitest, die nicht dauerhaft im Arbeitsspeicher gehalten werden können.
+
+## Wie es geht:
+
+Erstelle eine temporäre Datei in Go mit der Funktion `ioutil.TempFile`. In diesem Beispiel erzeugen wir eine temporäre Datei, schreiben Daten hinein und lesen sie wieder aus:
+
+```Go 
+package main
+
+import (
+	"io/ioutil"
+	"fmt"
+)
+
+func main() {
+	tempFile, err := ioutil.TempFile("", "sample")
+
+	if err != nil {
+		panic(err)
+	}
+	
+	defer tempFile.Close()
+
+	byteSlice := []byte("Hallo Welt!")
+	if _, err := tempFile.Write(byteSlice); err != nil {
+		panic(err)
+	}
+
+	tempFile.Seek(0, 0)
+	
+	data, err := ioutil.ReadAll(tempFile)
+	
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(string(data))
+}
+ ```
+
+Der Ausgabetext wird sein:
 
 ```Go
-tempFile, err := ioutil.TempFile("", "example") // erstellt eine temporäre Datei ohne angegebenen Speicherort
-if err != nil {
-  // Fehlerbehandlung
-}
-// Weitere Aktionen mit der temporären Datei, z.B. schreiben oder lesen
+Hallo Welt!
 ```
 
-Nach dem Erstellen kann auf die temporäre Datei wie auf jede andere Datei zugegriffen werden. Sie kann auch nach der Verwendung mit ```os.Remove()``` wieder gelöscht werden.
+## Tiefgang:
 
-## Tiefere Einblicke:
-Das Erstellen von temporären Dateien ist besonders in Anwendungen wie Tests oder Prototypen hilfreich, wo vorübergehend Daten gespeichert und verarbeitet werden müssen. Alternativ können auch temporäre Speicherbereiche wie Puffer oder variablen Speicherplatz genutzt werden.
+Die Funktion `ioutil.TempFile` existiert bereits seit der Go Version 1.0. Sie war ursprünglich ein Teil des `io` Pakets, wurde aber später in das `io/ioutil` Paket verschoben.
 
-Bei der Erstellung von temporären Dateien ist es wichtig, sicherzustellen, dass sie nach der Verwendung wieder gelöscht werden, um Speicherplatz und Dateisystemressourcen freizugeben. Die genaue Implementierung von ```ioutil.TempFile()``` kann je nach Betriebssystem variieren, sollte aber in der Regel als sicher angesehen werden.
+Die Funktion erstellt automatisch eine Datei in dem vom Betriebssystem festgelegten temporären Verzeichnis, es sei denn, du gibst ein bestimmtes Verzeichnis an. Der Dateiname beginnt immer mit dem vorgegebenen Präfix.
 
-## Siehe auch:
-Weitere nützliche Informationen zu ```ioutil.TempFile()``` und anderen Funktionen in Go finden Sie in der [offiziellen Dokumentation](https://golang.org/pkg/io/ioutil/). Für eine tiefere Auseinandersetzung mit dem Dateisystem in Go schauen Sie sich die [os](https://golang.org/pkg/os/) und [filepath](https://golang.org/pkg/path/filepath/) Pakete an.
+Eine Alternative zur Erstellung temporärer Dateien ist die Nutzung von Speicherdatenstrukturen wie Slices oder Maps, aber diese halten Daten dauerhaft im Speicher, was nicht immer wünschenswert ist.
+
+## Siehe Auch:
+
+Für weitere Informationen zum Erstellen temporärer Dateien und zur Arbeit mit Dateien im Allgemeinen, schau dir diese Links an:
+
+1. [Go by Example: Temporäre Dateien und Verzeichnisse](https://gobyexample.com/temporary-files-and-directories)
+2. [Paket ioutil](https://golang.org/pkg/io/ioutil/#TempFile)
+3. [Go Dokumentation: Arbeiten mit Dateien](https://golang.org/doc/articles/files_and_folders.html)

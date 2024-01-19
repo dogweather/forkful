@@ -1,6 +1,6 @@
 ---
 title:                "Ladda ner en webbsida"
-html_title:           "Go: Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Go"
 category:             "Go"
@@ -10,59 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta all text, bilder och annat innehåll från en webbadress (URL) och visa det på din dator. Detta är en viktig funktion för programmerare eftersom det gör det möjligt att manipulera och bearbeta data från en webbsida, för att till exempel skapa webbspindlar eller strukturera information för analys.
+## Vad och varför?
 
-## Såhär gör du:
-Det finns flera olika sätt att ladda ner en webbsida i Go, men här är ett enkelt exempel med hjälp av "net/http" paketet:
+Att ladda ner en webbsida innebär att hämta HTML-koden bakom en webbsida till din dator. Programmerare gör detta för att kunna bearbeta webbsidans innehåll, exempelvis för att skrapa data eller testa webbsidor.
 
-```
+## Så här gör du:
+
+I Go kan du hämta och läsa in en webbsida med hjälp av paketen `net/http` och `io/ioutil`.
+
+```Go
 package main
 
-import ( 
+import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
 )
 
-func main() { 
-	resp, err := http.Get("https://www.example.com") 
-	if err != nil { 
-		fmt.Println("Kunde inte ladda ner webbsidan") 
-		return
-	} 
+func main() {
+	resp, err := http.Get("http://example.com/")
+	if err != nil {
+		panic(err)
+	}
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body) 
-	if err != nil { 
-		fmt.Println("Fel när data bearbetades") 
-		return
-	} 
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
 	fmt.Println(string(body))
 }
-
 ```
+När du kör koden ovan kommer du att se HTML-innehållet i webbsidan http://example.com/ skrivas ut i konsolen.
 
-Sample output:
-```
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Exempel webbsida</title>
-</head>
-<body>
-	<h1>Välkommen till vår webbsida</h1>
-	<p>Här kan du hitta massor av användbar information.</p>
-</body>
-</html>
-```
+## Fördjupning
 
-## Djupdykning:
-Att ladda ner webbsidor är en viktig del av modern webbutveckling och har funnits sedan början av internet. Det finns olika metoder för att ladda ner sidor, inklusive "web scraping" där data extraheras från en sida automatiskt och server-side rendering där en webbsida renderas av en server innan den skickas till användaren.
+Hämtning av webbsidor har ägt rum ända sedan webbens begynnelse och metoder för att göra detta har utvecklats och förfinats över tid. Alternativ till Go's inbyggda paket `net/http` och `io/ioutil` inkluderar tredjepartspaket som `colly` och `goquery` som kan underlätta och förbättra prestandan.
 
-I Go finns det flera olika paket för att ladda ner webbsidor, inklusive "net/http", "html/template", och "goquery". Det är viktigt att välja rätt metod för specifika ändamål och att vara medveten om etiska och juridiska aspekter av att hämta data från webbsidor.
+Vid implementation är det viktigt att vara medveten om resurshantering. I Go-koden ovan kommer `defer resp.Body.Close()` att se till att nätverksresurserna släpps när funktionen `main` är klar, även om ett fel skulle inträffa. Detta är avgörande för att inte läcka resurser.
 
-## Se även:
-- Officiell Go dokumentation för "net/http" paketet: https://golang.org/pkg/net/http/
-- Alternativ för att hämta data från webbsidor i Go: https://github.com/gocolly/colly, https://github.com/tidwall/gjson
-- En artikel om etik och juridik kring web scraping: https://www.scrapinghub.com/ethical-web-scraping/
+## Se mer:
+
+Du kan läsa mer om Go och nedladdningar på dessa länkar:
+
+- Go's officiella dokumentation: https://golang.org/pkg/
+- Paketet 'colly': https://github.com/gocolly/colly
+- Paketet 'goquery': https://github.com/PuerkitoBio/goquery

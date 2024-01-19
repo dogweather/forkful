@@ -1,7 +1,7 @@
 ---
-title:                "Ein String interpolieren"
-html_title:           "Swift: Ein String interpolieren"
-simple_title:         "Ein String interpolieren"
+title:                "Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
+simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,49 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Das String-Interpolieren ist eine Technik, die in der Programmierung verwendet wird, um dynamisch Werte in einen String einzusetzen. Programmierer nutzen dies, um komplexe Strings zu erstellen, die sich je nach Situation ändern können.
+# Stringinterpolation in Swift
 
-## How to:
-Um ein String-Interpolieren in Swift zu implementieren, benötigt man ein Zeichen # vor dem Namen der Variable innerhalb des Strings. Der Wert der Variable wird dann automatisch in den String eingefügt. 
+## Was & Warum?
 
-```Swift 
-let name = "Mark"
-let greeting = "Hallo, mein Name ist \(name)."
+Stringinterpolation ist ein Weg, um Variablen, Konstanten, Literale und Ausdrücke in einen String einzufügen, der dann vollständig ausgewertet und zu einem neuen String konvertiert wird. Sie ermöglicht es, dynamische Strings auf eine einfache und lesbare Weise zu erstellen.
 
-print(greeting) // Ausgabe: Hallo, mein Name ist Mark.
-```
+## Anleitung
 
-Ein weiteres Beispiel, um eine Variable innerhalb eines Strings zu interpolieren:
+Sehen Sie, wie einfach es ist, die Stringinterpolation in Swift zu nutzen. 
 
 ```Swift
-let age = 25
-let message = "Ich bin \(age) Jahre alt."
-
-print(message) // Ausgabe: Ich bin 25 Jahre alt.
+var name = "Florian"
+print("Hallo, \(name)!")
 ```
 
-Man kann auch mehrere Variablen innerhalb eines Strings interpolieren:
+Das wird folgendes angezeigt:
 
 ```Swift
-let name = "Lisa"
-let age = 30
-let occupation = "Programmiererin"
-
-let intro = "Hallo, ich bin \(name), \(age) Jahre alt und arbeite als \(occupation)."
-
-print(intro) // Ausgabe: Hallo, ich bin Lisa, 30 Jahre alt und arbeite als Programmiererin.
+Hallo, Florian!
 ```
 
-## Deep Dive:
-Das String-Interpolieren ist eine Funktion, die in Swift standardmäßig verfügbar ist und vereinfacht die Erstellung von Strings, die dynamisch Werte enthalten sollen. Vor Swift wurde dies oft durch die Verwendung von Funktionen oder Methoden erreicht, was zeitaufwendiger und komplizierter war.
+Willst du eine Zahl verwenden? Kein Problem.
 
-Eine Alternative zum String-Interpolieren ist die Verwendung von Stringformatierung, die ähnlich funktioniert, aber etwas komplexer ist. Hier wird ein Platzhalter im String verwendet und später durch den entsprechenden Wert ersetzt.
+```Swift
+var hours = 24
+print("Ein Tag hat \(hours) Stunden.")
+```
 
-Das String-Interpolieren in Swift ist optimiert für Leistung und verwendet spezielle Methoden, um die Werte in den String einzufügen. Dabei wird auch die notwendige Speicherverwaltung berücksichtigt, um sicherzustellen, dass der Prozess effizient abläuft.
+Die Ausgabe wird folgendes sein:
 
-## See Also:
-Um mehr über String-Interpolieren und seine Verwendung in Swift zu erfahren, empfehlen wir folgende Quellen:
+```Swift
+Ein Tag hat 24 Stunden.
+```
 
-- Offizielle Dokumentation von Apple zu Strings in Swift: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
-- Ein Tutorial zum String-Interpolieren in Swift von Ray Wenderlich: https://www.raywenderlich.com/172740/swift-4-string-interpolation-tutorial-getting-started
+## Tiefer eintauchen
+
+Stringinterpolation ist nicht nur in Swift, sondern auch in anderen Programmiersprachen wie Perl und Ruby seit einiger Zeit üblich und wird für ihre Einfachheit und Lesbarkeit geschätzt. Alternativen zu Stringinterpolation können die Konkatenation von Strings oder die Formatierung von Strings sein, aber beide Methoden erzeugen in der Regel mehr Code und sind weniger lesbar.
+
+Die Implementierungsdetails der Stringinterpolation in Swift sind eigentlich ziemlich interessant. Swift verwendet eine `String Interpolation Type` Klasse, um Interpolation durchzuführen und Sie können diese Klasse erweitern und anpassen, um benutzerdefinierte Interpolationsverhalten in Ihren eigenen Typen bereitzustellen.
+
+## Siehe auch
+
+Für weitere Informationen über Stringinterpolation in Swift, schauen Sie bitte in die offizielle Swift-Dokumentation. Hier ein paar nützliche Links zu verwandten Themen:
+
+- [Apple's Swift Programming Language Guide - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Custom String Interpolation in Swift](https://www.swiftbysundell.com/basics/string-interpolation/)
+- [Advanced String Interpolation in Swift](https://www.swiftbysundell.com/articles/constructing-strings-in-swift/)

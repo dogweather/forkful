@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "C++ recipe: Comparing two dates"
+html_title:           "Arduino recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "C++"
 category:             "C++"
@@ -12,43 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Comparing two dates is a common task in programming where we want to determine whether one date is earlier, later, or the same as another date. Programmers use this comparison to perform logical operations, make decisions, and sort data based on dates.
+Comparing two dates in programming refers to determining the order of two distinct dates or calculating the difference between them. Programmers do this for various reasons, such as sorting events by date, calculating the age of users, and determining the duration of events.
 
 ## How to:
 
-To compare two dates in C++, we first need to import the ```<chrono>``` library. Then, we can use the ```std::chrono::time_point``` data type to store dates. Here's an example code snippet:
+Here's a simple comparison in C++ using the `std::chrono::system_clock::time_point` type.
 
-```
-// Import necessary library
+```C++
 #include <chrono>
+#include <iostream>
 
-// Define two time points
-std::chrono::time_point date1 = std::chrono::system_clock::now();
-std::chrono::time_point date2 = std::chrono::system_clock::now();
-
-// Compare the two dates
-if (date1 < date2) {
-  std::cout << "Date1 is earlier than Date2" << std::endl;
-}
-else if (date1 > date2) {
-  std::cout << "Date1 is later than Date2" << std::endl;
-}
-else {
-  std::cout << "Date1 is the same as Date2" << std::endl;
+int main() {
+    // get current time
+    auto now = std::chrono::system_clock::now();
+    
+    // create another time point 1 hour later
+    auto later = now + std::chrono::hours(1);
+    
+    // comparison
+    if (later > now) {
+        std::cout << "later is greater than now\n";
+    } else {
+        std::cout << "later is not greater than now\n";
+    }
+    
+    return 0;
 }
 ```
 
-The output of this code will depend on when you run it, as it uses the current time for the dates. However, it will follow the logic of comparing two dates and print out the appropriate statement.
+The output here would be `later is greater than now` since we specifically created `later` to be 1 hour ahead of `now`.
 
 ## Deep Dive:
 
-Historically, before the standardized implementation in C++, dates were compared by converting them into a numerical format. This method was error-prone and could result in incorrect comparisons. With the introduction of the ```<chrono>``` library in C++, programmers now have a reliable and efficient way to compare dates.
+### Historical Context
+Back in the days of C, date/time comparisons involved a lot of manual work, with programmers having to individually compare the year, month, day, etc., of date structures. In comparison, modern C++ libraries, like Chrono, simplify these operations significantly.
 
-Another alternative to comparing dates is to use a third-party library such as Boost.Date_Time. This library offers additional functionalities for working with dates and times in C++.
+### Alternatives
+There are several ways you could compare dates in C++. You could use boost's date_time library if you need more functions or deal with unusual calendar systems. However, if you need just the basics, using std::chrono is often good enough and requires no additional dependencies.
 
-When comparing dates, it's essential to understand that the comparison is done based on the clock time and not the calendar date. This means that even if two dates fall on the same day, the one with the later time will be considered later.
+### Implementation Details
+When comparing two dates using std::chrono, keep in mind that it essentially compares the time since UNIX epoch (1 January 1970). This makes it easy to calculate differences between dates. However, it does not take into account issues like time zonal differences, daylight savings, or leap seconds. For handling these complexities, libraries such as boost date_time or Howard Hinnant's date library are worth considering.
 
 ## See Also:
 
-- [C++ <chrono> library reference](https://en.cppreference.com/w/cpp/header/chrono)
-- [Boost.Date_Time library](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+- [C++ std::chrono library documentation](https://en.cppreference.com/w/cpp/chrono)
+- [Boost date_time library documentation](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+- [Howard Hinnant's date library on GitHub](https://github.com/HowardHinnant/date)

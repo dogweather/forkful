@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Rust recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,36 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Concatenating strings in Rust refers to the process of combining multiple strings into one single string. Programmers do this for various reasons, such as creating longer strings to be displayed or stored, or to manipulate the data within the strings.
+String concatenation is the process of joining two or more strings end-to-end. Programmers use it to build sentences, messages, or any kind of text data that requires string assembly.
 
 ## How to:
 
-Concatenating strings in Rust is a simple process that can be done using the `+` operator or the `format!` macro. Here are two examples showing how to concatenate strings:
+Rust provides multiple ways to concatenate strings. 
 
-```
-// Using the `+` operator:
-let string1 = "Hello";
-let string2 = "World";
-let concatenated_string = string1 + " " + string2;
-println!("{}", concatenated_string); // output: Hello World
-```
+The first way is by using the `+` operator:
 
-```
-// Using the `format!` macro:
-let string1 = "Programming";
-let string2 = "is";
-let string3 = "fun!";
-let concatenated_string = format!("{} {} {}", string1, string2, string3);
-println!("{}", concatenated_string); // output: Programming is fun!
+```Rust
+let hello = "Hello".to_string();
+let world = " World!".to_string();
+let hello_world = hello + &world;
+println!("{}", hello_world); // prints: Hello World!
 ```
 
-## Deep Dive:
+The other way is to use the `format!` macro:
 
-Concatenating strings has been a common practice in programming languages for manipulating textual data. In Rust, there are two main alternatives to concatenating strings - `push_str` and `push` methods. These methods modify the first string directly instead of creating a new string, making them more efficient for longer strings.
+```Rust
+let hello = "Hello";
+let world = " World!";
+let hello_world = format!("{}{}", hello, world);
+println!("{}", hello_world); // prints: Hello World!
+```
 
-In terms of implementation, the `+` operator and `format!` macro both use the `Add` trait, allowing them to perform string concatenation. Additionally, `format!` also uses the `ToString` trait to convert non-string data types into strings before concatenation.
+## Deep Dive
 
-## See Also:
+1. **Historical Context**: In early programming languages, string concatenation was usually achieved through library functions. Modern languages, like Rust, have operators and standard library methods for it.
+2. **Alternatives**: Besides `+` and `format!`, Rust also provides `push_str` and `push` methods to append strings.
+3. **Implementation Details**: When you use `+`, Rust compiler performs a `to_string` conversion behind the scenes. It's important to note that `+` consumes the original variable, while `format!` keeps the originals intact.
 
-Check out the official documentation for more information on string concatenation in Rust: https://doc.rust-lang.org/book/ch08-02-strings.html#concatenation.
+```Rust
+let hello = "Hello".to_string();
+let mut world = " World!".to_string();
+world.push_str(&hello);
+println!("{}", world); // prints: World!Hello
+```
+
+## See Also
+
+- Official Rust documentation about [Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- Blog post: [Rust Strings Explained](https://fasterthanli.me/articles/a-half-hour-to-learn-rust)
+- Rustlings course on [Strings](https://github.com/rust-lang/rustlings)

@@ -11,41 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Calculating a date in the future or past is the process of determining a specific date that is a given number of days, weeks, months, or years before or after a given starting date. Programmers often use this function to schedule tasks or events, track time-sensitive data, or create dynamic reports.
+
+Calculating a date in the future or past means adjusting a given date by a certain time period. Programmers perform this operation to schedule actions, handle temporal data, or build features like reminders and counters.
 
 ## How to:
-To calculate a date in the future or past in Bash, you can use the `date` command with the option `-d` to specify the number of days, weeks, months, or years in the future or past. The code block below shows an example of calculating a date 3 weeks in the future from today's date: 
 
-```Bash 
-date -d "+3 weeks"
-```
-Output: 
-```
-Sun Mar 1 08:23:25 UTC 2020
-```
+Bash has `date` command to do this magic. Here, we will use `date -d` option that reads input and prints corresponding date/time.
 
-Similarly, you can also specify a starting date by using the option `-d` followed by the starting date in quotes. The code block below shows an example of calculating a date 2 months and 5 days in the past from a specific starting date:
+* Current date
 
 ```Bash
-date -d "2020-04-15 -2 months -5 days"
+date '+%Y-%m-%d'
 ```
 Output:
+```Bash
+2022-02-28
 ```
-Tue Feb 10 08:23:25 UTC 2020
+
+* Add 1 day
+
+```Bash
+date -d "+1 day" '+%Y-%m-%d'
+```
+Output:
+```Bash
+2022-03-01
 ```
 
-## Deep Dive:
-1. Historical Context:
-Calculating dates in the future or past has been a common programming task for a long time. In the earlier days, developers had to write their own algorithms to perform this calculation. However, with the advancement of programming languages and tools, it has become easier to achieve this function.
+* Subtract 2 weeks
 
-2. Alternatives:
-Apart from using the `date` command in Bash, there are other alternatives such as using the `add` function in SQL or using libraries such as `datetime` in Python and `moment` in JavaScript.
+```Bash
+date -d "-2 week" '+%Y-%m-%d'
+```
+Output:
+```Bash
+2022-02-14
+```
 
-3. Implementation Details:
-The `date` command in Bash accepts a variety of formats for specifying dates, including absolute calendar dates, relative dates, and combinations of both. It also supports various flags and options to format the output according to your preference.
+## Deep Dive
 
-## See Also:
-- [Bash Date Command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [SQL DateTime Functions](https://www.w3schools.com/sql/sql_datatype.asp)
-- [Python datetime library](https://docs.python.org/3/library/datetime.html)
-- [Moment.js library](https://momentjs.com/)
+Historical Context: Calculating dates has been a universal need across software and cultures since the early days of computing. `date` command is a part of GNU Core Utilities since 1994, enabling date-time operations.
+
+Alternatives: There are other ways to calculate dates in Shell scripts, like using Perl, Python, or PHP CLI. But sticking to built-in tools like `date` keeps your scripts light and portable.
+
+Implementation Details: `date -d` option works by feeding the string into GNU `date`'s date parser, which identifies and applies time units like 'weeks', 'days', etc. This handy feature allows for flexible date manipulations but isn't required by POSIX standards, so always test when porting.
+
+## See Also
+
+* man date: https://www.man7.org/linux/man-pages/man1/date.1.html
+* Date Arithmetic: https://www.gnu.org/software/coreutils/date
+* Alternatives to date command: https://www.cyberciti.biz/faq/howto-get-current-date-time-in-shell-script/

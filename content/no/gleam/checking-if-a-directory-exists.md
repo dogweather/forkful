@@ -1,7 +1,7 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-html_title:           "Gleam: Sjekke om en mappe eksisterer"
-simple_title:         "Sjekke om en mappe eksisterer"
+title:                "Sjekker om en mappe eksisterer"
+html_title:           "Gleam: Sjekker om en mappe eksisterer"
+simple_title:         "Sjekker om en mappe eksisterer"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,34 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Sjekker du om en mappe eksisterer er en viktig del av programmering. Dette gjøres for å sikre at koden fungerer som den skal, og for å unngå feil og problemer med dataen som brukes.
+## Hva & Hvorfor?
 
-# Slik gjør du det:
-I Gleam kan du enkelt sjekke om en mappe eksisterer ved å bruke ```std.fs.exists```. Dette vil returnere en boolsk verdi som viser om mappen eksisterer eller ikke. Du kan også bruke ```std.fs.is_dir``` for å spesifikt sjekke om en mappe eksisterer.
+Å sjekke om en mappe eksisterer er en prosedyre der programmerere inspirer programvaren til å bestemme om en bestemt mappe finnes i systemet. Dette er viktig for å hindre feil som kan oppstå når programmet prøver å komme til mapper som ikke finnes.
 
-Eksempel:
-```
-// Sjekker om mappen "dokumenter" eksisterer
-let eksisterer = std.fs.exists("dokumenter")
-// Vil returnere true eller false, avhengig av om mappen eksisterer eller ikke
-```
+## Hvordan: 
 
-Eksempel på hvordan du kan bruke en betinget uttalelse for å håndtere situasjonen der mappen ikke eksisterer:
-```
-if std.fs.exists("bilder") {
-    // Gjør noe med dataen i mappen
-} else {
-    // Håndter tilfellet der mappen ikke eksisterer
+I Gleam kan vi bruke `Dir.exists` funksjonen for å sjekke om en mappe eksisterer. La oss se på et eksempel:
+
+```Gleam
+import gleam/fs/dir
+
+fn main(args: List(String)) -> Nil {
+  case dir.exists("eksisterer_mappe") {
+    Ok(True) -> 
+      io.println("Mappen eksisterer.")
+
+    Ok(False) -> 
+      io.println("Mappen eksisterer ikke.")
+      
+    Error(err) -> 
+      io.println("Det er en feil: ", err)
+  }
 }
 ```
 
-# Ta et dypdykk:
-Å sjekke om en mappe eksisterer er en vanlig praksis i programmering, spesielt når du jobber med filbehandling. Dette har vært en del av programmering lenge før Gleam ble utviklet, og er fortsatt like viktig som før.
+Når vi kjører programmet, kan utdataene være som følgende avhengig av om mappen eksisterer:
 
-Alternativer til å bruke ```std.fs.exists``` inkluderer å bruke andre språk som støtter filbehandling, som for eksempel Rust eller Go. I tillegg finnes det også tredjepartsbiblioteker som tilbyr lignende funksjonalitet.
+```
+Mappen eksisterer.
 
-Implementeringen av ```std.fs.exists``` er basert på operativsystemets funksjonalitet for å sjekke om en fil eller mappe eksisterer. Det er derfor viktig å være klar over eventuelle begrensninger og ulikheter mellom forskjellige operativsystemer når du bruker denne funksjonen.
+eller 
 
-# Se også:
-- [Gleam sin offisielle dokumentasjon om std.fs.exists](https://gleam.run/documentation/stdlib/fs.html#exists)
+Mappen eksisterer ikke.
+```
+
+## Dyp Dykk
+
+Historisk sett har metoder for å sjekke om mapper eksisterer vært brukt i de fleste programmeringsspråk, skjønt med forskjellige implementasjoner. I Gleam, tilbyr `gleam/fs/dir`-modulen en høy-nivå grensesnitt for filsystemoperasjoner, inkludert sjekking av om en mappe eksisterer.
+
+Alternativt, programmerere kan håndtere dette direkte med lav-nivå systemfunksjoner, men det ville øke kompleksiteten av koden. Økt kompleksitet kan føre til mer administrative belastning og mer feil.
+
+Implementasjonsdetaljer: `Dir.exists` funksjonen brukes med et argument som representerer mappenavnet (en streng). Den returnerer et `Result` element hvor `Ok(True)` betyr at mappen eksisterer, `Ok(False)` betyr at mappen ikke eksisterer, og `Error` indikerer en utførelsesfeil.
+
+## Se Også
+
+For mer om Gleam's Filesystem operasjoner, se [Gleam's Filesystem doc](https://hexdocs.pm/gleam_stdlib/gleam/fs/dir.html).
+
+For mer kontekst og sammenligning med andre programmeringsspråk, se ["Checking if a directory exists in Shell script"](https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script) på StackOverflow.

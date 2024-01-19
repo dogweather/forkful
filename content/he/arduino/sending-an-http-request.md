@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "Arduino: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,78 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-שליחת בקשת HTTP היא פעולה שמאפשרת למכשירים לשלוח ולקבל מידע מעם אחד למחשב אחר באמצעות האינטרנט. תכניתנים עושים זאת בכדי לשלוט על המכשירים או לצבור מידע חיוני עבור יישומים שונים.
+שליחת בקשה HTTP היא שיטה בה מחשב שולח בקשה לשרת ובחזרה מקבל מידע. מתכנתים משתמשים בזה כדי לגשת ולשלוט במידע מרחוק, כמו מציאת מזג האוויר או שליטה בחכמה הביתית.
 
 ## איך לעשות:
-כדי לשלוח בקשת HTTP מתוך קוד Arduino, ישנם שלושה שלבים עיקריים:
-1. להתחבר לרשת WiFi שלך ע"י שימוש בקוד קובץ שמתאים למכשיר.
-2. ליצור חיבור TCP עם השרת שבו אתה רוצה לשלוח את הבקשה.
-3. ליצור ולשלוח את הבקשת HTTP באמצעות החיבור הזה.
+ראשית, אנחנו צריכים להגדיר את הספריה הנדרשת:
+```Arduino
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+```
 
-כאן אתה יכול לראות דוגמאות של קוד Arduino לשליחת בקשת GET ו-POST:
-```arduino
-// דוגמא לקוד GET
-#include <WiFi.h>
+הגדר את פרטי ה-WiFi שלך:
+```Arduino
+const char* ssid = "שם הרשת שלך";
+const char* password = "סיסמה";
+```
 
-char ssid[] = "WiFi-SSID"; // הזן את שם הרשת שלך
-char password[] = "WiFi-Password"; // הזן את ססמת הרשת שלך
-char server[] = "example.com"; // הזן את כתובת הדומיין של השרת שבו אתה רוצה לשלוח את הבקשה
-int port = 80; // הזן את יציאת הפורט של השרת
-WiFiClient client; // יצירת משתנה חיבור
+התחבר ל-WiFi:
+```Arduino
+WiFi.begin(ssid, password);
 
-void setup() {
-  Serial.begin(9600);
-  WiFi.begin(ssid, password); // חיבור לרשת WiFi
-  Serial.print("Connecting");
-  while (WiFi.status() != WL_CONNECTED) { // המתנה לחיבור לרשת
-    delay(500);
-    Serial.print(".");
-  };
-  Serial.println();
-  Serial.print("Connected to network: ");
-  Serial.println(WiFi.localIP()); // קבלת כתובת IP
-  Serial.println("Sending GET request...");
-  if (client.connect(server, port)) { // חיבור לשרת
-    client.println("GET / HTTP/1.1"); // שליחת הבקשה
-    client.println("Host: example.com"); // הגדרת שם המארח של הבקשה
-    client.println("Connection: close"); // סגירת החיבור
-    client.println(); // הדפסת שורת שורה ריקה למצב רצף (CRLF)
-  }
+while (WiFi.status() != WL_CONNECTED) {
+  delay(1000);
+  Serial.println("מתחבר ל-WiFi..");
 }
 
-void loop() {
-  if (client.available()) { // בדיקת האם יש נתונים מהשרת לקרוא
-    char c = client.read(); // קריאת תו קלט
-    Serial.print(c); // הדפסת תו למסך
+Serial.println("מחובר ל-WiFi");
+```
+
+שלח בקשת HTTP:
+```Arduino
+if (WiFi.status() == WL_CONNECTED) {
+  HTTPClient http;
+
+  http.begin("http://example.com"); //Specify destination
+  int httpCode = http.GET(); //השג את הקוד של התגובה
+
+  if (httpCode > 0) { //בדוק שהקוד תקני
+    String payload = http.getString(); //השתמש בפקודה הזאת כדי לקבל תגובה
+    Serial.println(payload);
   }
-  if (!client.connected()) { // בדיקת האם החיבור סגור
-    client.stop(); // סגירת החיבור
-    while(1); // יציאה לולאה לכבוד ווי
-  }
+
+  http.end(); //סגור את החיבור
 }
+```
 
-// דוגמא לקוד POST
-#include <WiFi.h>
+## צלילה עמוקה
+הבקשות HTTP מרכזיות בשימוש המחשב, בלי קשר לשפה או למערכת ההפעלה. טכנולוגיה זו משמשת באינטרנט הגלובלי מאז שנות ה-90.
 
-char ssid[] = "WiFi-SSID"; // הזן את שם הרשת שלך
-char password[] = "WiFi-Password"; // הזן את ססמת הרשת שלך
-char server[] = "example.com"; // הזן את כתובת הדומיין של השרת שבו אתה רוצה לשלוח את הבקשה
-int port = 80; // הזן את יציאת הפורט של השרת
-WiFiClient client; // יצירת משתנה חיבור
-String post_request = "value1=10&value2=20"; // הגדרת אנלגיש לנתוני POST
+אלטרנטיבות? תכנית MQTT היא אלטרנטיבה נפוצה לשליחת בקשות HTTP, שמתאימה במיוחד למכשירים עם ממשקים מוגבלים.
 
-void setup() {
-  Serial.begin(9600);
-  WiFi.begin(ssid, password); // חיבור לרשת WiFi
-  Serial.print("Connecting");
-  while (WiFi.status() != WL_CONNECTED) { // המתנה לחיבור לרשת
-    delay(500);
-    Serial.print(".");
-  };
-  Serial.println();
-  Serial.print("Connected to network: ");
-  Serial.println(WiFi.localIP()); // קבלת כתובת IP
-  Serial.println("Sending POST request...");
-  if (client.connect(server, port)) { // חיבור לשרת
-    client.println("POST / HTTP/1.1"); // שליחת הבקשה
-    client.println("Host: example.com"); // הגדרת שם המארח של הב
+נשאר לנו לשקול שבקשה HTTP רגילה מחייבת חיבור ישיר לאינטרנט. במחשבים רגילים זה לא בעיה, אבל במיקרוקונטרולרים הדבר מהווה בעיה שצריך לטפל בה.
+
+## גם אתה יכול לראות
+הנה כמה משאבים שיכולים לעזור לך להעמיק את הידע שלך:
+- [HTTP - Wikipedia](https://he.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+- [Arduino - HTTPClient Library](https://www.arduino.cc/en/Tutorial/LibraryExamples/HttpClient)
+- [Arduino - MQTT](https://www.arduino.cc/reference/en/libraries/mqtt/)

@@ -1,7 +1,7 @@
 ---
-title:                "문자열 보간"
-html_title:           "Java: 문자열 보간"
-simple_title:         "문자열 보간"
+title:                "문자열 보간하기"
+html_title:           "Java: 문자열 보간하기"
+simple_title:         "문자열 보간하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## 무엇이며 왜 사용하는가?
 
-문자열 보간은 문자열 내에 다른 변수나 표현식을 삽입하는 것을 말합니다. 이를 통해 우리는 더 동적인 문자열을 만들 수 있습니다. 예를 들어, 사용자의 이름이 포함된 문자열을 출력하고 싶을 때, 우리는 문자열 보간을 사용하여 변수에 저장된 사용자의 이름을 문자열에 삽입합니다.
+문자열 보간(Interpolating a string)은 문자열 내의 변수를 그 값으로 바꾸는 것입니다. 이렇게 하면 코드를 읽고 이해하는데 더 쉽고 유출되는 정보를 쉽게 다룰 수 있습니다.
 
-프로그래머들은 문자열 보간을 사용하는 이유는 자동으로 변수나 표현식을 문자열에 삽입할 수 있기 때문입니다. 이를 통해 코드를 더 깔끔하고 읽기 쉽게 만들어줍니다.
+## 사용 방법:
 
-## 방법:
+자바 15 버전부터는 `formatted()` 메소드를 사용해 문자열 보간을 할 수 있습니다. 아래는 예시입니다:
+	
+```Java 
+int age = 20;
+String name = "홍길동";
+System.out.println("이름: %s, 나이: %d".formatted(name, age)); 
+``` 
+	
+출력:
+	
+```Java 
+이름: 홍길동, 나이: 20
+``` 
 
-```java
-String name = "John";
-System.out.println("Hi, my name is ${name}!"); // 출력: Hi, my name is John!
-```
+보시다시피, `%s`와 `%d`는 `formatted()` 메소드를 통해 `name`과 `age`로 치환됩니다.
 
-위의 예시에서, 우리는 문자열 보간을 사용하여 변수를 쉽게 삽입할 수 있습니다. 이를 통해 우리는 더 동적인 문자열을 만들 수 있으며, 코드를 더 읽기 쉽게 만들어줍니다.
+## 깊게 알아보기:
 
-## 깊이 들어가기:
+1. **역사적 맥락**: 자바는 오래 전부터 문자열 보간을 위한 다양한 방법을 제공했습니다. 이전에는 `String.format()` 메소드를 사용했습니다. 그러나 자바 15 버전에서는 `formatted()` 메소드를 추가하여 작성 능력을 강화했습니다.
 
-### 역사적 배경:
+2. **대체 방법**: 위에서 언급한 것처럼 이전에는 `String.format()`을 사용했습니다. 또한, `MessageFormat` 또는 `StringBuilder`를 사용하는 등 다른 라이브러리와 클래스를 사용하는 방법도 있습니다.
 
-## 보다 많은 정보
+3. **구현 세부 정보**: `formatted()`와 같은 메소드는 내부적으로 `Formatter` 클래스를 사용해 문자열 보간을 수행합니다. 이는 중괄호 `{}` 안에 있는 인덱스를 참조하여 변환된 값을 대체합니다.
 
-우리는 문자열 보간을 사용하여 변수나 표현식을 쉽게 문자열에 삽입할 수 있습니다. 하지만, 다른 방법들도 있습니다. 다른 방법으로는 문자열 연결, 서식 지정 문자열과 String.format() 메서드를 사용하는 것이 있습니다.
+## 참고:
 
-또한, 문자열 보간은 자바 15 버전부터 지원하며, 이전 버전에서는 사용할 수 없습니다. 따라서 이전 버전의 자바를 사용하고 있다면, 다른 방법을 사용해야 합니다.
+- [Oracle Documentation - formatted()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#formatted(java.lang.Object...))
+- [Oracle Documentation - String.format()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...))
 
-## 관련 자료:
-
-- https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#formatted-strings
-- https://www.baeldung.com/java-string-interpolation
+이정도면 문자열 보간에 대해 충분히 알게 되셨을 것입니다. 이상입니다!

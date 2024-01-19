@@ -1,6 +1,6 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "PHP: Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,48 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
-Å starte et nytt prosjekt i programmering betyr å begynne på et nytt program eller en applikasjon fra bunnen av. Dette gjøres ofte for å løse et spesifikt problem eller for å lage noe nytt og innovativt.
+## Hva & Hvorfor?
 
-Hvordan:
-For å starte et nytt prosjekt i PHP, er det første du må gjøre å sette opp en mappestruktur for prosjektet ditt. Dette kan gjøres ved å følge anerkjente standarder som PSR-4 eller ved å sette opp en mappestruktur som passer ditt spesifikke behov.
+Å starte et nytt prosjekt betyr å begynne å kode en helt ny applikasjon eller program. Programmerere gjør dette for å løse et bestemt problem, skape en ny funksjon, eller implementere en idé til noe som kan brukes i virkeligheten.
 
-```PHP
-<?php
-// Eksempel på mappestruktur for et PHP-prosjekt
-app/       // Inneholder applikasjonskoden
-config/    // Inneholder konfigurasjonsfiler
-public/    // Inneholder offentlige filer som kan nås via nettleseren
-tests/     // Inneholder tester for koden
-vendor/    // Inneholder eksterne biblioteker og avhengigheter
-```
+## Hvordan:
 
-Etter å ha satt opp mappen, kan du begynne å kode applikasjonen din. For å starte et nytt PHP-prosjekt, må du lage en fil med en .php utvidelse og begynne å skrive koden din.
+La oss starte et helt nytt PHP-prosjekt. Først oppretter vi en ny mappe, kalt "mitt_nye_prosjekt". Inne i denne mappen oppretter vi en ny PHP-fil, "index.php".
+
+Her er et veldig enkelt eksempel på hva koden i "index.php" kan se ut:
 
 ```PHP
+<!DOCTYPE html>
+<html>
+<body>
+
 <?php
-// Hent ut et array med navn
-$names = ["Kari", "Per", "Maria"];
+echo "Hei, verden!";
+?>
 
-// Gå gjennom hvert navn og skriv det ut på en ny linje
-foreach ($names as $name) {
-  echo $name . PHP_EOL;
-}
-
-// Eksempeloutput:
-// Kari
-// Per
-// Maria
+</body>
+</html>
 ```
 
-Deep Dive:
-Å starte et nytt prosjekt i PHP er en vanlig praksis blant utviklere. Dette skyldes hovedsakelig PHPs fleksibilitet og funksjonalitet som gjør det enkelt å utvikle små og store prosjekter. Det finnes også alternative programmeringsspråk som kan brukes for å starte et nytt prosjekt, som for eksempel Python eller JavaScript.
+Når vi kjører denne koden fra serveren, vil output se slik ut:
 
-Når du har begynt å skrive koden din, vil du kanskje også ønske å implementere et rammeverk som kan hjelpe deg med å strukturere og organisere koden din på en mer effektiv måte. Det finnes mange populære PHP-rammeverk som Laravel, CodeIgniter og Symfony som kan hjelpe deg med dette.
+```PHP
+Hei, verden!
+```
 
-Se også:
-- The Official PHP Documentation: https://www.php.net/manual/en/
-- PSR-4 Standards: https://www.php-fig.org/psr/psr-4/
-- Laravel Framework: https://laravel.com/
-- CodeIgniter Framework: https://codeigniter.com/
-- Symfony Framework: https://symfony.com/
+Så enkelt er det å starte et helt nytt PHP-prosjekt!
+
+## Dykket Dypt:
+
+Historisk sett, sprang PHP opprinnelig ut av Perl og er nå kjent for sin rolle som ryggraden i mange store systemer som Facebook og WordPress. PHP er en server-side skriptingsspråk, noe som betyr at det utgjør en sentral del av server-klient forholdet.
+
+Det er mange alternativer til å starte et nytt PHP-prosjekt, inkludert Node.js, Python, og Ruby on Rails, som hver har sine styrker og svakheter. 
+
+Maskinvare- og serverkrav, databasevalg, og omfanget av prosjektet vil alle påvirke hvordan du starter og implementerer PHP-prosjektet ditt. For eksempel, hvis prosjektet ditt krever en tung last av databehandling, kan du trenger en server med høy prosessorkraft eller vurdere å bruke en database som er optimal for store datamengder, som MySQL eller PostgreSQL. 
+
+## Se Også:
+
+For mer informasjon om å starte et PHP-prosjekt, sjekk ut følgende ressurser:
+
+- [PHP's Offisielle Dokumentasjon](https://www.php.net/docs.php)
+- [W3Schools PHP Tutorial](https://www.w3schools.com/php/)
+- [Stack Overflow PHP Tags](https://stackoverflow.com/questions/tagged/php)

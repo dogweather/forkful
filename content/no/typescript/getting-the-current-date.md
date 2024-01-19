@@ -1,7 +1,7 @@
 ---
-title:                "Få dagens dato"
-html_title:           "TypeScript: Få dagens dato"
-simple_title:         "Få dagens dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,30 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å få tak i nåværende dato er en metode som lar programmerere få tak i informasjon om nåværende tid og dato. Dette er nyttig for å kunne spore og organisere data og for å legge til tidsbaserte funksjoner i applikasjoner.
+Å hente dagsdato er en metode for å få reda på nøyaktig det tidspunktet koden kjøres på. Dette kan være nyttig i mange sammenhenger, som å tidstemple en hendelse, bestemme tidsrom, og for lage dato-avhengige funksjoner.
 
 ## Hvordan:
-Det å få tak i nåværende dato i TypeScript er raskt og enkelt med hjelp av den innebygde Date-klassen. Her er et eksempel på hvordan man får tak i nåværende dato og tid:
+Her er en enkel kode for å hente dagens dato i TypeScript.
 
 ```TypeScript
-let nåværendeDato = new Date();
-console.log(nåværendeDato);
+let iDag = new Date();
+console.log(iDag);
 ```
+Når du kjører denne koden vil du se noe likt dette:
 
-Dette vil gi følgende utskrift: 
 ```TypeScript
-Fri Nov 15 2019 13:39:25 GMT+0100 (Sentraleuropeisk standardtid)
+2022-05-20T10:20:42.618Z
+```
+Den returnerer dato og tid på ISO format (ÅÅÅÅ-MM-DDTHH:MM:SS.sssZ)
+
+## Dypt Dykk
+Henting av dagsdato har vært en funksjon i programmeringsspråk siden deres barndom. I tidlige programmeringsspråk var koden ofte mer kompleks, men moderne språk som TypeScript har innebygde funksjoner for dette.
+
+Alternativt, kan vi også formatere dato-objektet til en mer lesbar form. For eksempel,
+
+```TypeScript
+let iDag = new Date();
+let dato = iDag.getDate();
+let maaned = iDag.getMonth() + 1; // Månedene starter på 0 i JavaScript/TypeScript
+let aar = iDag.getFullYear();
+
+console.log(aar + "-" + maaned + "-" + dato);
+```
+Ovenstående eksempel vil gi følgende resultat, som er enklere å lese for mennesker.
+
+```TypeScript
+2022-5-20
 ```
 
-Dersom man ønsker å formatere utdaten på en spesifikk måte, kan man også bruke metoder på Date-klassen som `getDate()`, `getMonth()`, `getFullYear()` og `getHours()`, for å hente ut spesifikke deler av datoen og tiden.
+Husk at for å sikre maksimal kompatibilitet og presisjon, bruker TypeScript millisekunder som grunnleggende enhet for tid, selv om det gir mer informasjon enn hva som er nødvendig for de fleste anvendelser.
 
-## Dypdykk:
-Datoer og tider har alltid vært viktige for programmerere, spesielt når det gjelder loggføring og dataorganisering. Før moderne programmeringsspråk, måtte programmerere skrive komplekse algoritmer for å få tak i nåværende dato og tid. Med TypeScript og Date-klassen, er dette nå enklere og mer effektivt.
-
-Alternativet til å bruke Date-klassen i TypeScript vil være å bruke et tredjeparts bibliotek som Moment.js, som tilbyr flere funksjoner og formateringsmuligheter.
-
-Når man bruker Date-klassen, er det viktig å være oppmerksom på at datoen og tiden som returneres, er basert på brukerens lokale tidssone. Dette kan føre til problemer når man jobber med internasjonale prosjekter.
-
-## Se også:
-- [Date-klassen i TypeScript](https://www.typescriptlang.org/docs/handbook/utilities.html)
-- [Moment.js](https://momentjs.com/)
+## Se også
+* [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+* [TypeScript Deep Dive: Date](https://basarat.gitbook.io/typescript/future-javascript/date)
+* [TypeScript Tutorial: Date](https://www.tutorialsteacher.com/typescript/typescript-date)

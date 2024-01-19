@@ -1,7 +1,7 @@
 ---
-title:                "Lecture des arguments de la ligne de commande"
-html_title:           "Go: Lecture des arguments de la ligne de commande"
-simple_title:         "Lecture des arguments de la ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,41 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que lire les arguments de la ligne de commande et pourquoi est-ce important pour les programmeurs ?
+## Qu'est-ce et pourquoi?
+Les arguments de ligne de commande sont des valeurs qui sont passées à un programme lors de son exécution. Les programmeurs les utilisent pour contrôler le comportement des applications sans avoir à changer le code.
 
-Lire les arguments de la ligne de commande consiste à récupérer les informations saisies par l'utilisateur au moment d'exécuter un programme en ligne de commande. Les programmeurs font cela pour pouvoir interagir avec l'utilisateur et lui permettre de spécifier des options ou des paramètres personnalisés pour l'exécution du programme.
-
-# Comment faire :
-
+## Comment faire:
+Lisons les commandes en Go. Voici un exemple simple:
 ```Go
-// Déclaration d'un slice pour stocker les arguments de la ligne de commande
-args := os.Args[1:]
+package main
 
-// Parcours et affichage des arguments
-for i, arg := range args {
-	fmt.Printf("Argument %d : %s\n", i+1, arg)
+import (
+  "fmt"
+  "os"
+)
+
+func main() {
+  for idx, val := range os.Args {
+    fmt.Printf("Argument %d: %s\n", idx, val)
+  }
 }
-
-// Exemple d'exécution : go run main.go arg1 arg2
-// Résultat : Argument 1 : arg1
-//            Argument 2 : arg2
 ```
+Lorsqu’on exécute ce programme avec des arguments, cela donne:
+```Shell
+$ go run main.go arg1 arg2 arg3
+Argument 0: /tmp/go-build405710029/b001/exe/main
+Argument 1: arg1
+Argument 2: arg2
+Argument 3: arg3
+```
+On peut voir que `os.Args` contient tous les arguments, y compris le nom du programme lui-même.
 
-# Approfondissement :
+## Pénétration Profonde
+Historiquement, la lecture des arguments de ligne de commande est un aspect clé des applications UNIX - où tout est axé sur la ligne de commande. Les alternatives à `os.Args` pourraient être l'utilisation de `flag` ou `os.Args` de Go qui fournissent plus de contrôle et de flexibilité. En termes d'implémentation, `os.Args` est un slice de chaînes, où chaque élément est un argument commandé. Le premier (index 0) est le nom du programme lui-même.
 
-## Contexte historique :
-
-La lecture des arguments de la ligne de commande est un concept qui existe depuis les débuts de la programmation informatique. Avec l'émergence des interfaces graphiques, elle a un peu perdu de son importance mais reste un outil essentiel pour les programmes fonctionnant en ligne de commande.
-
-## Alternatives :
-
-Une alternative à la lecture des arguments de la ligne de commande peut être l'utilisation de fichiers de configuration stockant les options et paramètres du programme. Cependant, cela nécessite un traitement supplémentaire pour lire et interpréter ces fichiers, tandis que les arguments de la ligne de commande sont directement accessibles dans le code.
-
-## Détails d'implémentation :
-
-En Go, les arguments de la ligne de commande sont stockés dans un slice du type []string, accessible via la variable os.Args. Le premier élément de ce slice est toujours le nom du programme lui-même. L'utilisation de la fonction range dans une boucle for permet de parcourir tous les arguments de manière efficace.
-
-# Voir aussi :
-
-- Documentation officielle sur la lecture des arguments de la ligne de commande en Go : https://golang.org/pkg/os/#pkg-variables
-- Un guide approfondi sur l'utilisation des arguments de la ligne de commande en Go : https://gobyexample.com/command-line-arguments
+## Voir aussi
+Pour plus d'informations, consulter la documentation officielle Go sur les arguments de ligne de commande: [os package](https://golang.org/pkg/os/), [flag package](https://golang.org/pkg/flag/). Voir aussi un tutoriel intéressant sur [Go by Example](https://gobyexample.com/command-line-arguments).

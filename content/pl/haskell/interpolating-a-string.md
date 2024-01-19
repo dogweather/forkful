@@ -1,7 +1,7 @@
 ---
-title:                "Interpolacja ciągów znakowych"
-html_title:           "Haskell: Interpolacja ciągów znakowych"
-simple_title:         "Interpolacja ciągów znakowych"
+title:                "Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
+simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest interpolacja ciągu znaków?
+## Co i dlaczego?
 
-Interpolacja ciągu znaków to proces wstawiania wartości zmiennych do tekstu. Jest to przydatne narzędzie dla programistów, ponieważ pozwala na tworzenie dynamicznych napisów, które mogą być dostosowywane w zależności od aktualnych danych.
+Interpolacja stringów to proces podstawiania zmiennych bezpośrednio do stringów. Programiści korzystają z tego, aby dynamicznie manipulować tekstem i zwiększyć czytelność kodu.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Możemy użyć operatora ```++``` lub funkcji ```concat``` aby połączyć ze sobą stałe i zmienne ciągi znaków. W poniższym przykładzie używamy operatora ```++```:
+W Haskellu, do interpolacji stringów możemy użyć pakietu `Text.Printf`:
 
 ```Haskell
+import Text.Printf
+
 main = do
-  let imie = "Kasia"
-  let wiek = 25
-  putStrLn ("Cześć, jestem " ++ imie ++ " i mam " ++ (show wiek) ++ " lat.")
+    let name = "Jan"
+    let age = 25
+    printf "Cześć %s, masz %d lat.\n" name age
+```
+Wynikowy output to:
+
+```
+Cześć Jan, masz 25 lat.
 ```
 
-Output:
-Cześć, jestem Kasia i mam 25 lat.
+## Deep Dive
 
-## Wgląd w temat
+Interpolacja stringów jest podstawowym rozwiązaniem w wielu językach programowania, nie tylko w Haskellu. Powstała z chęci ułatwienia tworzenia skomplikowanych stringów.
 
-Interpolacja ciągu znaków jest szeroko stosowanym narzędziem w wielu językach programowania, w tym w Haskellu. Alternatywą dla interpolacji jest użycie funkcji formatujących, jednakże interpolacja jest często preferowana ze względu na prostotę i czytelność kodu.
+Alternatywnie, w Haskellu możemy użyć operatora `(++)` do łączenia stringów, ale to nie jest tak czytelne jak interpolacja.
 
-W implementacji, wartości zmiennych są najpierw konwertowane na ciągi znaków, a następnie wstawiane do odpowiedniego miejsca w tekście. W większości przypadków, interpolacja jest wykonywana podczas kompilacji, co przyspiesza działanie programu.
+Co do realizacji, `Text.Printf` wykorzystuje technikę o nazwie "typy formatu", która pozwala na zrozumienie, jakie argumenty są oczekiwane i jaki typ jest zwracany na podstawie formatu stringu.
 
-## Zobacz także
+## Zobacz również:
 
-Jeśli chcesz dowiedzieć się więcej o interpolacji ciągu znaków w Haskellu, możesz zajrzeć na stronę dokumentacji języka lub przejrzeć inne przykładowe kody, aby lepiej zrozumieć zastosowanie tej techniki.
+- [Printf w Haskellu](https://hackage.haskell.org/package/base-4.15.0.0/docs/Text-Printf.html)
+- [Interpolacja stringów w Haskellu](https://ro-che.info/articles/2017-03-26-haskell-string-interpolation)

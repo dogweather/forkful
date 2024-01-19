@@ -1,6 +1,6 @@
 ---
 title:                "Generazione di numeri casuali"
-html_title:           "TypeScript: Generazione di numeri casuali"
+html_title:           "Arduino: Generazione di numeri casuali"
 simple_title:         "Generazione di numeri casuali"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
-Generare numeri casuali è un processo utilizzato dai programmatori per ottenere valori casuali durante l'esecuzione di un programma. Questi numeri possono essere utilizzati per una varietà di scopi, come ad esempio simulazioni, giochi e generazione di password.
+## Cos'è & Perché?
 
-## Come fare:
-Per generare numeri casuali in TypeScript possiamo utilizzare la funzione `Math.random()` che restituisce un numero compreso tra 0 e 1 (escluso). Possiamo moltiplicare questo valore per il range di numeri desiderato e aggiungere un offset per ottenere numeri interi o decimali. Ecco un esempio che genera un numero intero casuale compreso tra 1 e 10:
-```TypeScript
-const randomInt = Math.floor(Math.random() * 10) + 1;
-console.log(randomInt); // output: 5
-```
+La generazione di numeri casuali è un'espressione che si riferisce all'atto di produrre numeri in un modo che non può essere previsto logicamente. I numeri casuali sono essenziali nella programmazione perché aiutano a creare variabilità, testare la robustezza del codice e simulare eventi naturali.
 
-Possiamo anche creare una funzione che accetta due parametri `min` e `max` e restituisce un numero casuale compreso tra di essi:
+## Come si fa:
+
+Ecco un esempio semplice su come generare un numero casuale tra i valori minimo e massimo in TypeScript:
+
 ```TypeScript
-function getRandomNum(min: number, max: number): number {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function getRandom(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min)) + min;
 }
-const randomNum = getRandomNum(5, 10);
-console.log(randomNum); // output: 8
+
+console.log(getRandom(1, 100));  // Esempio di output: 38
 ```
+In questo codice, `Math.random()` genera un numero a virgola mobile tra 0 (incluso) e 1 (escluso). Successivamente, moltiplichiamo il numero a virgola mobile per la differenza tra il massimo e il minimo e poi aggiungiamo il minimo, ottenendo così un numero intero casuale nel range desiderato.
 
-## Approfondimento:
-La generazione di numeri casuali è stata storicamente un problema complesso per i programmatori, poiché i computer seguono algoritmi deterministici e non possono generare veri numeri casuali. Pertanto, i metodi per generare numeri pseudo-casuali sono stati sviluppati e sono ancora ampiamente utilizzati al giorno d'oggi. Tuttavia, con l'avvento della tecnologia blockchain e della crittografia, sono state sviluppate nuove metodologie per generare numeri casuali affidabili, come ad esempio l'utilizzo di hash dei blocchi per ottenere numeri imprevedibili.
+## Approfondimenti
 
-Esistono anche altre alternative alla funzione `Math.random()`, come ad esempio l'utilizzo di librerie di terze parti come `random-js` o di API esterne che forniscono numeri casuali basati su fattori esterni, come la temperatura o il movimento del mouse.
+Storicamente, la generazione di numeri casuali era un problema complesso che ha richiesto diverse tecniche ingegnose per superarlo. Negli anni '40 e '50, queste tecniche includevano l'uso di apparecchiature meccaniche, come la ruota da roulette, per produrre sequenze di numeri apparentemente casuali.
 
-Nella programmazione, è importante utilizzare un generatore di numeri casuali che sia robusto e sicuro per evitare di compromettere la sicurezza dei dati sensibili.
+In termini di alternative, ci sono parecchie librerie di terze parti che offrono avanzate funzionalità di generazione di numeri casuali, come crypto-js e random-js. Queste possono essere utili se avete bisogno di un livello di casualità più elevato o di distribuzioni di probabilità più complesse.
 
-## Vedi anche:
-- Documentazione della funzione `Math.random()` in TypeScript: https://www.typescriptlang.org/docs/handbook/global-objects.html#math
-- Libreria di terze parti `random-js`: https://github.com/ckknight/random-js
-- Generazione di numeri casuali sicuri in ambienti blockchain: https://medium.com/blockchain101/true-randomness-in-blockchains-5fa31c65367f
+Considerando i dettagli di implementazione, `Math.random()` in JavaScript (e, di conseguenza, in TypeScript) è deterministico e non fornisce veri numeri casuali. Per conseguenza, non dovrebbe essere utilizzato per scopi critici in termini di sicurezza, come la generazione di password o chiavi di crittografia.
+
+## Approfondisci
+
+[Random number generation in JavaScript - Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+
+[Crypto-js library](https://github.com/brix/crypto-js)
+
+[Random-js library](https://www.npmjs.com/package/random-js)

@@ -1,6 +1,6 @@
 ---
 title:                "Sökning och ersättning av text"
-html_title:           "Elm: Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
 simple_title:         "Sökning och ersättning av text"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,27 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-
-Sökning och ersättning av text är en vanlig uppgift inom programmering. Det innebär att hitta en specifik del av texten och sedan ersätta den med en annan. Det kan göras för att fixa buggar, ändra texten i en applikation eller för att skapa en ny version av koden.
+## Vad & varför?
+Att söka och ersätta text innebär att leta efter specifika strängar i en text och byta ut dem mot något annat. Programmerare gör detta för att snabbt uppdatera data, korrigera fel eller transformera information.
 
 ## Så här gör du:
+I Elm kan du använda funktionerna `String.contains`, `String.replace` och `String.split` för att söka och ersätta text. Här är ett enkelt exempel:
 
 ```Elm
--- söker efter alla förekomster av "hej" och ersätter dem med "tja"
-text = "Hej världen! Hej Elm!"
-newText = String.replace "hej" "tja" text
--- newText blir nu "Tja världen! Tja Elm!"
+import String
+
+main =
+  let
+    text = "Hej, världen!"
+    newText = String.replace "världen" "Sverige" text
+  in
+    newText
 ```
+Kör detta kod och du kommer se att "Hej, Sverige!" skrivs ut.
 
-## Djupdykning:
+## Djupdykning
+1. Historisk bakgrund: Funktioner för att söka och ersätta text har varit kärnfunktioner i programmeringsspråk sedan tidigt 70-tal. De har sitt ursprung i behovet av att manipulera stora textmängder, som databaser eller textdokument.
+2. Alternativ: Du kan även använda bibliotek som `regex-elm` för att göra mer komplexa sökningar och ersättningar baserat på reguljära uttryck.
+3. Implementationsdetaljer: I Elm, `String.replace` tar tre argument: söksträngen, ersättningssträngen och den ursprungliga texten. Den använder interna funktioner för att först hitta alla förekomster av söksträngen, och byter sedan ut dem mot ersättningssträngen.
 
-Sökning och ersättning av text har funnits sedan programmeringens tidiga dagar och är en viktig del av utvecklingsprocessen. Det finns olika metoder för att utföra detta, som Regular Expressions eller olika inbyggda funktioner i programmeringsspråk. Elm har inbyggda funktioner för att söka och ersätta text med hjälp av String-modulen.
+## Se också
+Om du vill lära dig mer om hur man hanterar strängar och text i Elm, kan följande källor vara till hjälp:
 
-## Se även:
-
-Om du vill lära dig mer om sökning och ersättning av text i Elm, rekommenderar vi att du tittar på följande länkar:
-
-- [Officiell Elm dokumentation för sökning och ersättning](https://package.elm-lang.org/packages/elm-lang/core/1.0.0/String#replace)
-- [En guide om att använda Regular Expressions i Elm](https://medium.com/front-end-weekly/how-to-use-regular-expressions-regex-in-elm-65917318881)
-- [En jämförelse av olika sök- och ersättningsmetoder i olika programmeringsspråk](https://dev.to/awwsmm/finding-and-replacing-all-occurrences-in-multiple-files-using-vim-grep-sed-perl-and-hole-maybe-other-tools-too-4j4a)
+- Elm's officiella dokumentation om `String` modulen: [Elm String docs](https://package.elm-lang.org/packages/elm/core/latest/String)
+- GitHub repo för `regex-elm` biblioteket: [elm/regex](https://github.com/elm/regex)
+- En bra introduktionsbok för Elm: [Elm in Action](https://www.manning.com/books/elm-in-action)

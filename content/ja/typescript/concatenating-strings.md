@@ -1,6 +1,6 @@
 ---
 title:                "文字列の連結"
-html_title:           "TypeScript: 文字列の連結"
+html_title:           "Bash: 文字列の連結"
 simple_title:         "文字列の連結"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,36 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「## 何か？」
-文字列を結合するとは、単純に文字列同士をつなげることを意味します。プログラマーは、プログラム内で動的なテキストを作成するために、このような文字列を結合する必要があります。
+## 何となぜ？
 
-「## 方法：」
-TypeScriptで文字列を結合する方法はいくつかあります。最も基本的な方法は、"+"記号を使用することです。例えば、"Hello"という文字列と"World"という文字列を結合したい場合は、次のように書きます。
+文字列の連結は、複数の文字列を一つに結合するというプログラミング上の操作です。それにより、変動的な情報を表示したり、結果を自由に制御したりします。
+
+## どうやるの？
+
+以下がTypeScriptでの文字列の連結の例です：
+
+```TypeScript
+let firstString = "これは ";
+let secondString = "お茶です";
+let concatString = firstString + secondString;
+
+console.log(concatString);
 ```
-TypeScript
-let greeting: string = "Hello";
-let name: string = "World";
-console.log(greeting + " " + name);
+
+このコードを実行すると、次の出力が得られます：
+
 ```
-出力結果は「Hello World」となります。
-
-別の方法として、テンプレート文字列を使用することもできます。テンプレート文字列を使用すると、文字列内に変数を直接埋め込むことができます。上記の例をテンプレート文字列で書くと、次のようになります。
+これは お茶です
 ```
-TypeScript
-let greeting: string = "Hello";
-let name: string = "World";
-console.log(`${greeting} ${name}`);
+
+さらに、 ES6以降では、テンプレートリテラル（バックティック ` を使用した文字列）を使ってより簡単に文字列を連結することができます：
+
+```TypeScript
+let flavor = "緑";
+let concatString = `これは ${flavor} お茶です`;
+
+console.log(concatString);
 ```
-出力結果は同じく「Hello World」となります。
 
-「## 詳細を掘り下げる」
-文字列の結合はプログラミングの歴史の中で重要な役割を果たしてきました。早い時期から、文字列を結合するためのさまざまな方法が考案され、改良されてきました。例えば、JavaのStringクラスでは、文字列結合のための「+」演算子が導入されました。
+このコードの出力は次のとおりです：
 
-また、文字列の結合には他にもいくつかの代替手段があります。例えば、文字列を結合するときには文字列結合関数を使用することもできます。これは、ある文字列と別の文字列を受け取り、両方を結合した新しい文字列を返す関数です。
+```
+これは 緑 お茶です
+```
 
-文字列の結合は、とても基本的でありながら、プログラミングで重要な役割を果たす概念です。そのため、慣れておくことが大切です。
+## ディープダイブ
 
-「## 関連情報を参照」
-- [JavaScriptの文字列結合方法（W3Schools）](https://www.w3schools.com/js/js_string_concat.asp)
-- [JavaのStringクラスのドキュメント（Oracle）](https://docs.oracle.com/javase/9/docs/api/java/lang/String.html)
-- [C#での文字列結合方法（Microsoft）](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/addition-operator)
+文字列の連結は古くから存在し、その実装や扱いはプログラミング言語によります。TypeScriptでは `+` 演算子を用いて簡易的に連結ができますが、その他にも文字列メソッドやテンプレートリテラルといった手法があります。
+
+文字列の連結は処理速度やメモリ消費に影響を与える可能性があります。大量の文字列を連結する場合は、パフォーマンスを意識して連結方法を選ぶべきです。
+
+また、知っておくべきは、`+` 演算子は数値と文字列の型が混在する場合、暗黙的に型変換を行うという特性がある点です。この挙動は想定外の結果を生む可能性があるため、常に注意が必要です。
+
+## 参考文献
+
+以下は、TypeScriptの文字列連結の詳細について参照できるリンクです：
+
+- [MDN：テンプレートリテラル](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals)
+- [TypeScript Deep Dive：文字列](https://typescript-jp.gitbook.io/deep-dive/future-javascript/strings)

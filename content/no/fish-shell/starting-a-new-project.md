@@ -1,7 +1,7 @@
 ---
-title:                "Begynne på et nytt prosjekt"
-html_title:           "Fish Shell: Begynne på et nytt prosjekt"
-simple_title:         "Begynne på et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,26 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## Hva & Hvorfor?
+Å starte et nytt prosjekt handler om å opprette en ny kodebase for framtidig utvikling. Dette gjøres for å løse et bestemt problem, utføre en oppgave, eller skape et produkt fra bunnen av.
 
-Når vi starter et nytt prosjekt, begynner vi med en blank skifer - en tom mappe for å holde alt koden vår. Vi gjør dette fordi det gir oss en organisert måte å holde styr på og strukturere koden vår på. Det gjør også at det blir lettere for andre å forstå og bidra til prosjektet vårt.
+## Hvordan:
+Opprette en ny mappe for prosjektet ditt. Skriv følgende i din Fish Shell:
 
-# Hvordan:
-
-```Fish Shell``` er en flott måte å opprette en ny mappe for et prosjekt. Du kan enkelt gjøre dette ved å bruke kommandoen ```mkdir``` og angi navnet på mappen du vil opprette. For eksempel:
-
-```
-mkdir minapp
+```Fish Shell
+mkdir mitt_prosjekt
 ```
 
-Dette vil opprette en ny mappe kalt "minapp" i gjeldende arbeidsmappe. Du kan også bruke ```cd``` kommandoen for å navigere inn i den nye mappen og begynne å skrive koden din.
+Gå inn i mappen du nettopp opprettet:
 
-# Dypdykk:
+```Fish Shell
+cd mitt_prosjekt
+```
 
-Gjennom årene har det blitt utviklet forskjellige måter å starte et nytt prosjekt på, inkludert kommandolinjeverktøy og integrerte utviklingsmiljøer (IDEer). Selv om det er noen fordeler ved å bruke IDEer, er Fish Shell en enklere og lettere måte å organisere og starte et nytt prosjekt på. Det er også en mer fleksibel og tilpasningsdyktig løsning for å håndtere ulike typer prosjekter.
+Opprett en ny Python-fil:
 
-# Se også:
+```Fish Shell
+touch prosjekt.py
+```
 
-- [Offisiell Fish Shell dokumentasjon] (https://fishshell.com/docs/current/index.html)
-- [Sammenligning av Fish Shell og andre programmeringsspråk] (https://fishshell.com/docs/current/comparison.html)
-- [Oppretting av en ny mappe med Fish Shell] (https://fishshell.com/docs/current/cmds/mkdir.html)
+Nå burde du ha en mappe som heter 'mitt_prosjekt' med en Python-fil kalt 'prosjekt.py' i den:
+
+```Fish Shell
+ls
+> prosjekt.py
+```
+
+## Dypdykk
+Å starte et nytt prosjekt er mer enn bare opprette noen filer. Det handler om en systematisk tilnærming til å løse problemer og skape løsninger. Prosessen bygger på tidligere erfaringer og leksjoner.
+
+Alternativt til Fish Shell, kan du bruke BASH eller ZSH for Unix-baserte systemer, eller PowerShell på Windows. Disse har sine egne særegne funksjoner og syntaks.
+
+Fish Shell er kjent for sin brukervennlighet og sin utenom det vanlige støtte for autokomplettering. Men det er også mindre kompatibelt med POSIX i forhold til BASH og ZSH.
+
+## Se Også
+Du kan hente mer informasjon fra følgende kilder:
+1. [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+2. [Hvordan starte et nytt programmeringsprosjekt: En trinnvis guide](https://guides.github.com/introduction/git-handbook/)
+3. [Tips for å starte et nytt programvareprosjekt](https://opensource.com/article/18/6/tips-starting-new-programming-project)

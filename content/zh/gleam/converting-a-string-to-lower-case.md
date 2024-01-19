@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "Gleam: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 这是什么？为什么要做这个？
+## 什么 & 为什么？
+将字符串转换为小写是通过编程来将所有大写字符修改为小写字符的过程。程序员这样做主要是为了实现数据的规范化和一致性，避免因大小写差异引起的数据混乱。
 
-将字符串转换为小写形式是一种经常被程序员用到的方法。它可以将字符串中的所有大写字母转换为小写字母，从而使得字符串的格式统一并且易于处理。这在比较字符串或者进行搜索操作时特别有用。
-
-# 如何做？
-
-使用Gleam编程语言可以轻松地实现将字符串转换为小写形式。下面是一个简单的示例代码：
-
+## 如何执行：
+这是Gleam语言转换字符串为小写的一种方式：
 ```Gleam
-str = "HeLLo WoRLd"
-str_lower = str.to_lower()
+import gleam/string
 
-// Output: "hello world"
+fn to_lower() {
+  let my_string = "HELLO, WORLD!"
+  string.to_lower(my_string)
+}
+
+// 输出： "hello, world!"
 ```
+上述代码中，我们首先导入了gleam/string模块，然后定义了一个to_lower函数，用于将my_string这个变量的值转换为小写。最后，通过调用string.to_lower(my_string)，将"HELLO, WORLD!"转换为"hello, world!"。
 
-## 深入探讨
+## 深入研究
+历史背景：在计算的早期，处理大小写字母通常涉及单独处理每个字符，这是一种非常繁琐的过程。随着编程语言的发展，现在已经有了内置函数可以直接实现这个功能。
 
-字符串的大小写转换一直是程序员们经常面对的问题。在过去，一些编程语言需要使用循环来逐个字符检查并转换大小写，这就导致了一些性能上的损失。而现在，Gleam提供了to_lower函数，可以帮助程序员们更加高效地完成这一任务。
+替代方案：在Gleam中，除了string.to_lower方法之外，我们还可以使用pattern matching和条件函数来实现字符串的小写转换。
 
-另外，还有一些其他的方法可以完成字符串的大小写转换，如使用正则表达式或者直接使用内置函数。但是，在Gleam中使用to_lower函数是比较实用和高效的选择。
+实施细节：Gleam的string.to_lower函数是通过与每个字母的ASCII值进行比较，然后将每个大写字母的ASCII值增加32（因为在ASCII表中，每个小写字母比其相应的大写字母的ASCII值大32）来实现的。
 
-## 参考链接
-
-- [Gleam官方文档](https://gleam.run/)
-- [Gleam版本控制仓库](https://github.com/gleam-lang/gleam)
+## 参考文献
+1. Gleam的string模块官方文档：https://hexdocs.pm/gleam_stdlib/gleam/string.html 
+2. ASCII表：https://www.asciitable.com/  
+3. 关于字符串大小写转换的详细教程：https://www.programming-idioms.org/idiom/12/convert-a-string-to-lower-case/605/gleam

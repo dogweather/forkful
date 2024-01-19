@@ -1,7 +1,7 @@
 ---
-title:                "Lauseiden yhdistäminen"
-html_title:           "Elm: Lauseiden yhdistäminen"
-simple_title:         "Lauseiden yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,35 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+---
 
-Stringien yhdistäminen tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi. Tämä on hyödyllistä esimerkiksi silloin, kun halutaan esittää tekstiä dynaamisesti tai yhdistää useita muuttujia yhdeksi viestiksi.
+## Mikä & Miksi?
+Yksinkertaisesti sanottuna merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon liittämistä yhteen, jolloin muodostuu uusi, pidempi merkkijono. Se on olennainen toiminto kaikille ohjelmoijille, jotta he voivat muodostaa dynaamisia lauseita tai viestejä.
 
-## Kuinka:
+## Näin se tehdään:
 
-Esimerkki stringien yhdistämisestä Elm-koodilla:
+Elm-ohjelmointikielen merkkijonojen yhdistämisessä ```(++)``` operaattoria käytetään merkkijonojen yhdistämiseen. Tässä on koodiesimerkki:
 
+```Elm
+module Main exposing (..)
+
+import Html exposing (text)
+
+main =
+    text ( "Hei" ++ " maailma" )
 ```
-Elm
-myString = "Tervetuloa "
-myName = "Valtteri"
-mergedString = myString ++ myName
-```
-Tulostettu tulos:
-```
-"Tervetuloa Valtteri"
+
+Tämän ohjelman suorittaminen tuottaa seuraavan tulosteen:
+
+```Elm
+"Hei maailma"
 ```
 
-## Syväsukellus:
+## Syvällinen sukellus
 
-Stringien yhdistämisen historia on alkujaan peräisin 60-luvulta, kun ensimmäiset ohjelmointikielet alkoivat käyttää merkkijonoja. Nykyäänkin useimmat kielet tarjoavat samanlaisen toiminnon, mutta joissakin kielissä se tapahtuu käyttämällä erilaisia operaattoreita, kuten `+` tai `&`. Elm-kielessä käytetään `++` merkkiä stringien yhdistämiseen.
+Kuten useimmissa ohjelmointikielissä, myös Elm:ssä pitkä merkkijono voidaan muodostaa liittämällä yhteen useita pienempiä merkkijonoja. Tätä ominaisuutta on käytetty ohjelmoinnissa vuosikymmenien ajan, aina ensimmäisistä korkeamman tason ohjelmointikielistä alkaen.
 
-Mahdollisia vaihtoehtoja concatenating stringsille ovat esimerkiksi käyttää `String.join` funktiota tai rakentaa uusi merkkijono käyttämällä `List.map` -funktiota.
+Useimmissa ohjelmointikielissä on muitakin tapoja liittää merkkijonoja yhteen. Esimerkiksi JavaScriptissa on olemassa sekä perinteinen ```+``` operaattori että ```String.concat()``` funktio. Elm:ssä paras tapa merkkijonojen liittämiseen on ```(++)``` operaattori, joka on yksinkertainen ja tehokas.
 
-Stringien yhdistäminen on tehokasta Elm-kielessä, sillä merkkijonojen muuttamista ei tarvitse tehdä sisäisesti. Koodin suorituksen aikana käytetään uutta merkkijonoa, jolla on yhdistetty arvo, sen sijaan että luotaisiin uutena merkkijonona useita versioita.
+Kun suoritat merkkijonojen yhdistämisen Elm:ssä, se tapahtuu tehokkaasti ja turvallisesti. Elm-kielen run-time ympäristö hoitaa kaiken tarvittavan muistinhallinnan, jolloin ohjelmoijan ei tarvitse huolehtia siitä.
 
-## Katso myös:
+## Katso myös
 
-[Elm Guide - Strings](https://guide.elm-lang.org/types/strings.html)
+Lisätietoja merkkijonojen yhdistämisestä Elm-ohjelmointikielessä löydät seuraavista lähteistä:
 
-[Elm String Library](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Elm-kielen virallinen dokumentaatio: [https://elm-lang.org/docs](https://elm-lang.org/docs)
+- Elm-kielen syntaksioppaan osio merkkijonoista: [https://elmprogramming.com/strings.html](https://elmprogramming.com/strings.html)
+
+---
+
+Muista, että merkkijonojen yhdistämisen sujuva hallinta on tärkeä taito, joka auttaa sinua kirjoittamaan tehokkaampia ja joustavampia ohjelmia.

@@ -1,7 +1,7 @@
 ---
-title:                "Obtener la fecha actual"
-html_title:           "Elm: Obtener la fecha actual"
-simple_title:         "Obtener la fecha actual"
+title:                "Obteniendo la fecha actual"
+html_title:           "C#: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,33 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Obtener la fecha actual es una funcionalidad muy útil en la programación. Permite a los desarrolladores obtener la fecha y hora actual en su código y utilizarla para diversas tareas, como registrar eventos o realizar cálculos basados en el tiempo. Es una herramienta esencial para mantener la precisión y consistencia en las aplicaciones.
+## ¿Qué y Por Qué?
+Obtener la fecha actual en la programación permite a los codificadores rastrear y registrar eventos en tiempo real. Esto es crucial en aplicaciones donde los registros precisos de fechas y horas son fundamentales, como en las operaciones de comercio electrónico o el seguimiento de proyectos.
 
 ## Cómo hacerlo:
-Elm proporciona un módulo incorporado llamado `Time`, que incluye una función llamada `now`, que devuelve la fecha y hora actual como un registro de tiempo. Aquí hay un ejemplo de cómo utilizarlo:
+Para obtener la fecha actual en Elm, usamos el módulo `Task` y `Time`. Vamos a crear un simple programa con Elm:
 
+```Elm
+import Browser
+import Html exposing (Html, text)
+import Task
+import Time
+
+-- Modelo
+type alias Model =
+    Maybe Time.Posix
+
+main =
+    Browser.element
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = always Sub.none
+        }
+
+-- Inicialización
+init : () -> ( Model, Cmd Msg )
+init _ =
+    ( Nothing, Task.perform NewTime Time.now )
+
+-- Actualización
+type Msg
+    = NewTime Time.Posix
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        NewTime newTime ->
+            ( Just newTime, Cmd.none )
+
+-- Vista
+view : Model -> Html Msg
+view model =
+    case model of
+        Nothing ->
+            text "Cargando..."
+
+        Just posix ->
+            text (Time.toString posix)
+
+-- Corre el programa
+-- Verás la hora actual impresa en la pantalla
 ```
-Elm.Time.now
--- Output: { time = 1631581280000, posix = 1631581280000, zone = "UTC" }
-```
 
-La función `now` devuelve un registro con tres valores: `time`, que es la fecha y hora en milisegundos desde el 1 de enero de 1970, `posix`, que es la misma fecha y hora en formato POSIX y `zone`, que es la zona horaria en la que se ejecuta el código.
+## Análisis más Profundo
+En versiones anteriores de Elm, obtener el tiempo actual involucraba el uso de `Signal`, pero se decidió mover la funcionalidad de tiempo a `Task` y `Sub` en la versión 0.17 para simplificar la arquitectura general del idioma.
 
-Si solo quieres obtener la fecha actual sin la hora, puedes utilizar la función `Date.now` en lugar de `Time.now`. Aquí hay un ejemplo:
+Las alternativas a la función `Time.now` incluyen el uso de otras bibliotecas de manejo de tiempo (si se necesita una funcionalidad más compleja) o realizar solicitudes HTTP a servicios de tiempo en línea.
 
-```
-Elm.Date.now
--- Output: { day = 14, month = 9, year = 2021 }
-```
+El detalle de la implementación es que, debajo del capó, Elm recurre a la función del objeto `Date` integrado en JavaScript para obtener la fecha y hora actuales. Luego, Elm toma esta información y la convierte en un valor `Posix`, que es esencialmente un recuento de milisegundos desde la época.
 
-## Profundizando:
-La necesidad de obtener la fecha actual en la programación es casi tan antigua como la propia programación. Antes de que los lenguajes de programación modernos tuvieran esta funcionalidad incorporada, los desarrolladores tenían que utilizar funciones más complicadas para obtener la fecha y hora actual.
-
-Hay varios métodos alternativos para obtener la fecha y hora actual en Elm, como utilizar bibliotecas externas o utilizar servidores para obtener la fecha de manera remota. Sin embargo, el módulo `Time` es la forma más sencilla y confiable de hacerlo en Elm.
-
-A nivel de implementación, `Time.now` utiliza la  función `getTimezoneOffset` de JavaScript para obtener la hora y la zona horaria actuales del sistema. Luego, calcula el registro de tiempo en milisegundos y lo convierte a un registro de tiempo de Elm.
-
-## Ver también:
-- Documentación oficial de Elm sobre el módulo `Time`: https://package.elm-lang.org/packages/elm/time/latest/
-- Ejemplos de uso del módulo `Time`: https://elmprogramming.com/elm-time.html
+## Consultar También
+1. Documentación oficial de Elm sobre `Time`: [elm/time](https://package.elm-lang.org/packages/elm/time/latest/)
+2. Una explicación más detallada de la función `Time.now`: [kraklin/learning-elm](https://learning-elm.github.io/07-time.html)
+3. Para más preguntas sobre Elm en Español: [discord de Elm en español](https://discord.com/invite/elm-es)

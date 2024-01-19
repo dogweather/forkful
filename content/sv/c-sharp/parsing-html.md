@@ -1,7 +1,7 @@
 ---
-title:                "Att tolka html"
-html_title:           "C#: Att tolka html"
-simple_title:         "Att tolka html"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Parsing av HTML är en vanlig uppgift för programmerare som innebär att tolka och extrahera data från HTML-dokument. Detta är viktigt eftersom det ger möjlighet att hämta specifik information från en webbsida för att använda den i en applikation eller för att utföra automatiska tester.
+## Vad & Varför?
+Att tolka HTML (Parsing HTML) innebär att bearbeta HTML-dokument till en struktur som koden kan förstå och interagera med. Vi utför detta när vi vill läsa, manipulera, och extrahera information från webbsidor.
 
-## Hur gör man:
-För att utföra parsing av HTML i C# finns det flera tredjepartsbibliotek tillgängliga, till exempel HtmlAgilityPack eller AngleSharp. Dessa bibliotek tillhandahåller enkla metoder för att ladda ett HTML-dokument från en URL eller en fil och sedan navigera genom dokumentet för att hitta och extrahera önskad data.
-
-Ett exempel på hur man kan använda HtmlAgilityPack för att hämta alla länkar från en webbsida:
+## Så här gör du:
+Ett enkelt sätt att analysera HTML i C# är att använda HtmlAgilityPack-biblioteket. Här är ett exempel:
 
 ```C#
-HtmlWeb web = new HtmlWeb();
-HtmlDocument dokument = web.Load("https://www.example.com");
-HtmlNodeCollection länkar = dokument.DocumentNode.SelectNodes("//a");
-foreach (HtmlNode länk in länkar)
+using HtmlAgilityPack;
+    
+static void Main(string[] args)
 {
-    Console.WriteLine(länk.Attributes["href"].Value);
+    var webGet = new HtmlWeb();
+    var document = webGet.Load("https://www.yourwebsite.com");
+    
+    // Hitta alla 'h1' taggar på webbsidan
+    var nodes = document.DocumentNode.SelectNodes("//h1");
+    
+    foreach (var node in nodes)
+    {
+        Console.WriteLine(node.InnerHtml);
+    }
+    
+    Console.ReadLine();
 }
 ```
 
-Detta kodexempel använder HtmlWeb-klassen för att hämta HTML-dokumentet från Url:en och sedan använder SelectNodes-metoden för att hitta alla länkelement på sidan. Genom att loopa igenom denna samling av element kan vi sedan skriva ut länkarnas adresser till konsolen.
+I det här exemplet laddar vi HTML från en webbsida, letar efter alla 'h1'-element och skriver ut deras innehåll.
 
-## Djupdykning:
-Parsing av HTML har funnits sedan de tidiga dagarna av webbutveckling och det finns flera olika metoder och verktyg för att hantera det. En alternativ metod är att använda reguljära uttryck för att matcha och extrahera data från HTML, men detta kan bli komplicerat och svårt att underhålla. Tredjepartsbibliotek som HtmlAgilityPack erbjuder en mer strukturerad och pålitlig lösning.
+## Djupdykning
+Historiskt sett har programvaror för HTML-parsing funnits sedan början på World Wide Web, men C# -språket och .NET Core har effektiviserat och förenklat processen.
 
-Genom att förstå HTML-strukturen och kunna använda HTML-klasser och ID:er kan du styra vilken data som ska extraheras och hur den ska behandlas. Denna kunskap kan vara användbar både för webbutveckling och datainsamling.
+Alternativa bibliotek inkluderar AngleSharp, vilket har stöd för många webbstandarder inklusive HTML5 och CSS3.
 
-## Se även:
-- [HtmlAgilityPack](https://html-agility-pack.net/)
-- [AngleSharp](https://anglesharp.github.io/)
-- [Regular Expressions for HTML Parsing?](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)
+En viktig aspekt av att analysera HTML är att förstå hur DOM (Document Object Model) fungerar. Detta är strukturen som HTML tolkas till och det som programmet sedan interagerar med.
+
+## Se även
+1. HtmlAgilityPack Tutorial: [link](https://html-agility-pack.net/)
+2. Mer om DOM: [link](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+3. AngleSharp: [link](https://anglesharp.github.io/)

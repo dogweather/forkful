@@ -1,6 +1,6 @@
 ---
 title:                "基本認証を使用してhttpリクエストを送信する"
-html_title:           "Go: 基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
 simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "Go"
 category:             "Go"
@@ -10,52 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何を & どうして？
-HTTPリクエストを基本認証で送信するとは何かを説明する2〜3文と、プログラマーがそのことをする理由について説明します。
+---
+title: Goを用いたHTTPリクエストの基本認証
+---
+## 何となぜ？
+HTTPリクエストの基本認証は、ユーザ名とパスワードを用いて特定のリソースを保護する方法です。プログラマがこれを行う主な理由は、秘密情報を保護し、許可されたユーザだけがリソースにアクセスできるようにするためです。
 
-基本認証を使用してHTTPリクエストを送信するとは、サーバーにアクセスする際にユーザー名とパスワードを使用して認証することを意味します。プログラマーは、ポストやデータベースの内容を保護するために基本認証を使用することがあります。
+## やり方
+基本認証を使用してHTTPリクエストを送信する方法については、以下のGoコードスニペットを参照してください。
 
-## 方法：
 ```Go
 package main
 
 import (
-  "fmt"
-  "net/http"
-  "log"
+	"net/http"
+	"fmt"
 )
 
 func main() {
-  req, err := http.NewRequest("GET", "https://example.com/api", nil)
-  if err != nil {
-    log.Fatalln(err)
-  }
-  req.SetBasicAuth("username", "password")
-  resp, err := http.DefaultClient.Do(req)
-  if err != nil {
-    log.Fatalln(err)
-  }
-  defer resp.Body.Close()
-  fmt.Println(resp.Status)
+	req, err := http.NewRequest("GET", "https://your-url.com", nil)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	req.SetBasicAuth("username", "password")
+
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	defer resp.Body.Close()
+
+	fmt.Println("Response status:", resp.Status)
 }
 ```
-
-上記のコードは、基本認証を使用してサーバーにGETリクエストを送信する方法を示しています。まず、```http.NewRequest```関数を使用してリクエストオブジェクトを作成し、```SetBasicAuth```関数を使用して認証情報を設定します。次に、```http.DefaultClient.Do```関数を使用してリクエストを送信し、レスポンスを受け取ります。最後に、デフォルトのHTTPクライアントを閉じます。
-
+このコードを走らせると、以下のようにレスポンスステータスが表示されます。
 ```Go
-200 OK
+Response status: 200 OK
 ```
+## ディープダイブ
+基本認証はHTTP/1.0から存在しており、ユーザ名とパスワードをBase64エンコード形式で送信します。しかしセキュリティ面から見ると、Base64エンコードは非常に弱く、容易にデコード可能なため、HTTPSによる暗号化を追加することが推奨されます。
 
-上記のようなレスポンスが返されれば、基本認証を使用してHTTPリクエストを正常に送信できたことを意味します。
+また、OAuth2やJWTなどのより安全な認証方法が利用可能です。これらの認証方式は、大規模なWebアプリケーションやマイクロサービスのアーキテクチャに適しています。
 
-## 深堀り：
-基本認証は、1990年代初頭に開発されました。当時は、安全でないHTTPプロトコルが主流であり、機密データを保護するために必要な手段でした。しかし、現在ではセキュリティの観点からあまり推奨されておらず、代わりにトークン認証やOAuthといったより安全な認証方法が使用されることが多くなってきています。
+```SetBasicAuth```はGoの```http```パッケージに含まれており、リクエストヘッダに認証情報を自動的に追加します。これは、手作業でヘッダを設定するよりも簡単な方法で、リクエストのボディに影響を与えません。
 
-基本認証以外の認証方法を使用する場合は、HTTPリクエストヘッダーに認証情報を含める必要があります。そのため、基本認証はシンプルで直感的な方法として依然として人気があります。
+## 関連情報
+以下のリンクは、HTTP基本認証とその代替についての追加情報を提供します。
 
-基本認証は、HTTPリクエストのカスタマイズやトークンの生成といったさまざまな機能を備えた多数のライブラリでサポートされています。しかし、基本的な認証プロトコルであるため、安全性が強化されることはありません。そのため、セキュリティが重要なアプリケーションでは、より強固な認証方法を使用することが推奨されます。
-
-## 関連リンク：
-- [Go標準パッケージドキュメント-```net/http```](https://golang.org/pkg/net/http/)
-- [基本認証とは？](https://www.nttpc.co.jp/technology/solution/column/vol5/)
-- [トークン認証とは？](https://auth0.com/learn/token-authentication/)
+- [Go公式ドキュメンテーション: httpパッケージ](https://golang.org/pkg/net/http/)
+- [MDN Web Docs: HTTP認証](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
+- [JWT認証についての詳細なガイド](https://jwt.io/introduction/)
+- [OAuth2についての理解](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)

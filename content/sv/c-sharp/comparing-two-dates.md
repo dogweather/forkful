@@ -1,7 +1,7 @@
 ---
-title:                "Jämföra två datum"
-html_title:           "C#: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att jämföra två datum är när man tittar på två specifika datum och jämför dem för att se vilket som är tidigare eller senare. Programmerare gör detta för att kunna hantera datum på ett effektivt sätt och få korrekt data från sina program.
+## Vad & Varför? 
+Att jämföra två datum innebär att du bedömer vilket datum som är tidigare, senare eller om båda datumen är identiska. Programmers gör detta för att sortera händelser, beräkna tidsperioder eller att hantera tidsstyrda operationer.
 
-## Så här:
-Det enklaste sättet att jämföra två datum är att använda kommandot ".Compare()" i C#.
+## Hur man gör:
+Här kommer ett par exempel om hur du jämför två datum med C#.
 
 ```C#
-DateTime datum1 = new DateTime(2020, 01, 01);
-DateTime datum2 = new DateTime(2021, 01, 01);
+DateTime startDate = new DateTime(2021, 3, 1);
+DateTime endDate = new DateTime(2022, 3, 1);
 
-int resultat = datum1.Compare(datum2);
-Console.WriteLine(resultat);
+int result = DateTime.Compare(startDate, endDate);
+
+if (result < 0)
+   Console.WriteLine("startDate är mindre än endDate.");
+else if (result == 0)
+   Console.WriteLine("Båda datumen är identiska.");
+else
+   Console.WriteLine("startDate är större än endDate.");
 ```
 
-Output:
-
+Sample Output:
+```C#
+startDate är mindre än endDate.
 ```
--1
-```
-I det här exemplet jämförs datum1 med datum2. Eftersom datum1 är tidigare än datum2, blir resultatet -1.
 
 ## Djupdykning:
-Jämförelse av datum är en viktig del av programmering eftersom det möjliggör för oss att hantera tid och datum på ett korrekt sätt. Det finns flera alternativ för att jämföra datum, såsom "=="-operatorn eller använda metoden ".Equals()". Det är viktigt att vara noga med hur man jämför datum eftersom olika format och parametrar kan påverka resultatet.
+Historiskt sett, datumjämförelser har spelat en vital roll i tidbaserad programmering och datahantering. I tidiga programmeringsspråk, var datumjämförelser inte så raka på sak. Men med moderna språk som C#, datumhantering och jämförelse har blivit mycket mer lättare och intuitiv. 
+
+När det gäller alternativ, du kan också använda metoder som 'Equals()', 'CompareTo()' etc. för att jämföra datum i C#. 
+
+Angående implementation, 'DateTime.Compare()' tittar på Ticks egenskapen för båda DateTime objekten för att avgöra vilket är tidigare eller senare. En 'Tick' representerar hundradelar av en sekund.
 
 ## Se även:
-- [C# DateTime.Compare() Metod (Microsoft Documentation)](https://docs.microsoft.com/sv-se/dotnet/api/system.datetime.compare)
-- [C# Comparison of Dates (C# Corner Article)](https://www.c-sharpcorner.com/article/comparison-of-dates-in-c-sharp/)
+- DateTime.Compare Method på Microsoft Docs: [https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=net-5.0](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=net-5.0)
+- C# DateTime tutorial på C# Station: [http://csharp-station.com/Tutorial/CSharp/Lesson17](http://csharp-station.com/Tutorial/CSharp/Lesson17)
+- C# DateTime i detalj på TutorialsTeacher: [https://www.tutorialsteacher.com/csharp/csharp-datetime](https://www.tutorialsteacher.com/csharp/csharp-datetime)

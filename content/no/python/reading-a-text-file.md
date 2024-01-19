@@ -1,7 +1,7 @@
 ---
-title:                "Leser en tekstfil"
-html_title:           "Python: Leser en tekstfil"
-simple_title:         "Leser en tekstfil"
+title:                "Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,40 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Lesing av en tekstfil er en måte for programmerere å få tilgang til informasjon som er lagret i en fil. Programmere bruker dette for å lese og behandle data uten å måtte skrive inn all informasjon manuelt.
+## Hva & Hvorfor?
+
+Å lese en tekstfil betyr å trekke ut og tolke innholdet i filen med programmering. Programmører gjør dette for å manipulere data, for eksempel for å analysere, transformere, presentere eller lagre det på en annen måte.
 
 ## Hvordan:
-Du kan lese en tekstfil ved hjelp av ```Python```'s innebygde ```open()``` funksjon. Denne funksjonen tar inn to argumenter, filnavnet og modusen du ønsker å åpne filen i. For å lese en tekstfil, bruk modusen ```r```. Her er et eksempel på å lese en tekstfil og skrive ut innholdet:
+
+Så, la oss hoppe rett inn. Vi bruker Python innebygde funksjon `open('filename', 'mode')` for å åpne en fil:
 
 ```Python
-f = open("tekstfil.txt", "r")
-print(f.read())
+# Åpne en tekstfil
+file = open('my_file.txt', 'r')
 ```
 
-Dette vil skrive ut hele innholdet i tekstfilen "tekstfil.txt".
-
-Du kan også lese en tekstfil linje for linje ved hjelp av en ```for``` løkke. Her er et eksempel som leser en tekstfil og skriver ut hver linje som et element i en liste:
+For å lese hele filen, bruk `read()`:
 
 ```Python
-f = open("tekstfil.txt", "r")
-lines = []
-for line in f:
-  lines.append(line)
-print(lines)
+# Les hele filen
+print(file.read())
 ```
 
-Output:
+Eller, du kan lese én og én linje med `readline()`, eller alle linjene med `readlines()`:
 
 ```Python
-["Dette er linje 1\n", "Dette er linje 2\n", "Dette er linje 3\n"]
+# Les én linje
+print(file.readline())
+
+# Les alle linjer
+print(file.readlines())
 ```
+Husk alltid å lukke filen når du er ferdig:
 
-## Dypdykk:
-Lesing av tekstfiler har vært en grunnleggende funksjon i programmering siden begynnelsen. Det er ofte brukt for å lagre og behandle data, som for eksempel tekstfiler med informasjon om brukere eller produkter. Alternativet til å lese en tekstfil er å bruke en database, men dette kan være mer komplekst og kreve mer arbeid.
+```Python
+# Lukk filen
+file.close()
+```
+Med `with` setningen kan du åpne filen, og Python lukker den automatisk for deg:
 
-Når du leser en tekstfil, er det viktig å huske på å lukke filen etterpå ved hjelp av ```close()``` funksjonen. Dette sikrer at all brukerdata blir lagret før filen lukkes. Det finnes også flere moduser for å åpne en tekstfil, som for eksempel ```w``` for å skrive til en fil, ```a``` for å legge til informasjon i en eksisterende fil, og ```x``` for å opprette en ny fil for skriving.
+```Python
+# Åpne og les filen, så lukker Python den for deg
+with open('my_file.txt', 'r') as file:
+    print(file.read())
+```
+## Dyp Dykk:
 
-## Se også:
-- [Python Dokumentasjon for åpning av filer](https://docs.python.org/3/library/functions.html#open)
-- [W3Schools tutorial for å lese tekstfiler i Python](https://www.w3schools.com/python/python_file_handling.asp)
+Historisk sett har hver datamaskin sitt eget system for å håndtere filåpning og avlesning. Python skjuler disse forskjellene og gir deg en enkel metode for å lese tekstfiler.
+
+Alternativt kan du bruke `numpy.genfromtxt`, `pandas.read_csv` eller andre biblioteker, spesielt for større datasett eller mer komplekse filformater.
+
+Implementeringsdetaljene bak `open()` og `read()` kan være ganske komplekse, da de må ta hensyn til forskjellige operativsystemer, tegnsett og feilhåndtering.
+
+## Se Også:
+
+* Python Offisielle Dokumentasjon: [Input and Output](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+* GeeksforGeeks Artikkel: [File Handling in Python](https://www.geeksforgeeks.org/file-handling-python/)
+* Datacamp Tutorial: [Reading and Writing Files in Python](https://www.datacamp.com/community/tutorials/reading-writing-files-python)

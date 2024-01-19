@@ -1,6 +1,6 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "PHP: Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
 simple_title:         "Interpolering av en streng"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+# Setter Sammen Strenger med PHP: En Introduksjon til Interpolering
 
-Interpolasjon av strenger er en vanlig praksis blant PHP-programmerere for å bygge dynamiske meldinger eller strenger ved å kombinere variabler eller uttrykk inn i en eksisterende streng. Dette gjør det enklere å bygge tekst som trenger å endre seg basert på forskjellige situasjoner eller betingelser.
+## Hva & Hvorfor?
+Interpolering av strenger i PHP er prosessen med å sette inn variabler direkte inn i en tekststreng. Programmerere bruker det fordi det er en kortfattet og lesbar måte å kombinere variabler og tekst på.
 
 ## Hvordan:
+Her er eksemplode på koding og utdata:
 
 ```PHP
-$navn = "Sara";
-$alder = 25;
-echo "Hei $navn! Din alder er $alder år gammel."
+$fornavn = "Ola";
+$etternavn = "Nordmann";
+echo "Hei, jeg heter $fornavn $etternavn.";
 ```
 
-Utskrift: "Hei Sara! Din alder er 25 år gammel."
+Output:
+
+```
+Hei, jeg heter Ola Nordmann.
+```
+
+Med hendig interpolering, kan du enkelt skrive ut en hel setning med variabler innebygget.
+
+## Dypdykk
+Historisk sett, hadde tidligere versjoner av PHP ikke støtte for interpolering. Dette ble lagt til som en del av makroprosesseringsfunksjonene for å gjøre det enklere å skrive kode.
+
+Alternativt kan programmerere bruke concatenation for å oppnå lignende resultater. For eksempel:
 
 ```PHP
-$produkt = "iPhone";
-$pris = 9999;
-echo "Vil du kjøpe et $produkt for $pris kroner?"
+echo 'Hei, jeg heter ' . $fornavn . ' ' . $etternavn . '.';
 ```
 
-Utskrift: "Vil du kjøpe et iPhone for 9999 kroner?"
+Det er viktig å merke seg at interpolering bare fungerer med doble anførselstegn. Enkelte anførselstegn tolker ikke variabler, og vil i stedet bare vise strengen som den er.
 
-## Dykk ned:
-
-Interpolasjon av strenger ble introdusert i PHP 5 og er en mer effektiv måte å bygge tekster på i forhold til concatenation (sammenblanding av strenger). Alternativer til interpolasjon inkluderer string formatting funksjoner som sprintf () og printf (). I tilfelle hvor interpolasjon ikke kan brukes, som for å tilbakevise sikre SQL-spørringer, kan string concatenation fortsatt brukes med passende forholdsregler som å bruke escape-sekvenser.
-
-## Se også:
-
-- [PHP Manual on String Interpolation](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double)
-- [PHP String Formatting Functions](https://www.php.net/manual/en/ref.strings.php)
-- [PHP Security Best Practices](https://www.php.net/manual/en/security.php)
+## Se Også
+For mer informasjon og relaterte ressurser, kan du besøke følgende lenker:
+- PHP Manual String Syntax: [Her](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double)
+- String Interpolation in PHP: [Her](https://www.baeldung.com/php-string-interpolation)
+- PHP The Right Way: [Her](https://phptherightway.com/)

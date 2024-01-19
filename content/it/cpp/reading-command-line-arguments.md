@@ -1,6 +1,6 @@
 ---
 title:                "Lettura degli argomenti della riga di comando"
-html_title:           "C++: Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
 simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "C++"
 category:             "C++"
@@ -10,42 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Il lettore di argomenti della riga di comando è una funzionalità importante nella programmazione C++, che consente ai programmatori di passare informazioni da riga di comando al loro programma. Ciò è utile per creare un programma più flessibile e personalizzabile. 
+## Cos'è & Perché?
+Leggere gli argomenti da linea di comando in C++ permette all'utente di inserire parametri direttamente al momento dell'esecuzione del programma. Quest'operazione è utile per configurare l'ambiente di esecuzione, passare valori senza cambiare il codice o pilotare l'output.
 
 ## Come fare:
-Ecco un esempio di codice C++ per leggere gli argomenti della riga di comando e stamparli: 
-
+Vediamo un esempio di come leggere gli argomenti da linea di comando:
 ```C++
-#include <iostream>
-using namespace std;
-
-int main(int argc, char *argv[])
-{
-    // loop attraverso tutti gli argomenti della riga di comando
-    for (int i = 0; i < argc; i++) {
-        // stampa l'indice dell'argomento e il suo valore
-        cout << "Argomento #" << i << ": " << argv[i] << endl;
+#include<iostream>
+int main(int argc, char *argv[]) {
+    for(int i = 0; i < argc; i++) {
+        std::cout << "Argomento " << i << ": " << argv[i] << "\n";
     }
-} 
+    return 0;
+}
 ```
-
-Esempio di output:
+Nel caso in cui eseguiamo `./programma arg1 arg2`, l'output sarà:
 ```
-Argomento #0: ./esempio
-Argomento #1: arg1
-Argomento #2: arg2
+Argomento 0: ./programma
+Argomento 1: arg1
+Argomento 2: arg2
 ```
+## Approfondimenti:
+La lettura di argomenti da linea di comando risale all'era dei sistemi operativi Unix, dove applicazioni come `grep` e `ls` basavano il loro comportamento su quest'input. C++ permette questo accesso diretto all'input da linea di comando attraverso i parametri `argc` e `argv` della funzione `main`. Un'alternativa è l'utilizzo di librerie esterne come `boost.program_options` che offre maggiore flessibilità e opzioni di parsing avanzate. Nondimeno, l'approccio nativo ha il vantaggio di non richiedere alcuna dipendenza aggiuntiva ed è sufficiente per molti scenari comuni.
 
-## Approfondimento:
-### Contesto storico:
-La lettura degli argomenti della riga di comando è stata introdotta per la prima volta nel linguaggio C nel 1972. È diventata una parte integrante della programmazione moderna e continua ad essere utilizzata nel C++ e in altri linguaggi di programmazione.
-
-### Alternative:
-Alcune alternative alla lettura degli argomenti della riga di comando includono l'utilizzo di variabili globali o la lettura da file. Tuttavia, la lettura degli argomenti della riga di comando è spesso preferita poiché è più semplice e diretta.
-
-### Dettagli di implementazione:
-Quando il programma viene lanciato, il sistema operativo imposta una variabile, chiamata "argc", che contiene il numero di argomenti nella riga di comando. Viene anche creato un array di stringhe, chiamato "argv", che contiene gli argomenti stessi. Il programma può quindi utilizzare queste informazioni per leggere e utilizzare gli argomenti.
-
-## Vedi anche:
-Per ulteriori informazioni sulla lettura degli argomenti della riga di comando in C++, consulta la documentazione ufficiale di C++ o altre risorse online.
+## Vedi Anche:
+1. ["Command line arguments in C/C++"](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+2. [Documentazione di Boost.Program_options](https://www.boost.org/doc/libs/1_75_0/doc/html/program_options.html)
+3. ["How do I handle command line arguments in C++?"](https://stackoverflow.com/questions/3024197/how-do-i-handle-command-line-arguments-in-c) su StackOverflow.

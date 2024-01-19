@@ -1,7 +1,7 @@
 ---
-title:                "发送一个http请求"
-html_title:           "Rust: 发送一个http请求"
-simple_title:         "发送一个http请求"
+title:                "发送http请求"
+html_title:           "C#: 发送http请求"
+simple_title:         "发送http请求"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,25 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是HTTP请求 & 为什么程序员这么做？
+## 什么 & 为什么？
 
-HTTP请求是在网络上发送数据的方式，它允许你从互联网上获取信息或者发送信息到远程服务器。程序员经常发送HTTP请求来获取特定的数据，例如网页内容或者API响应。
+HTTP请求是网络编程中的一种通信方式，通常用于获取网络服务器的数据。程序员之所以使用HTTP请求，主要是为了实现客户端与服务器的数据交换。
 
-# 如何发送HTTP请求：
+## 如何做：
+
+我们将使用`reqwest`库来示例如何在Rust发送HTTP请求。首先，添加`reqwest`和`tokio`以支持异步操作：
 
 ```Rust
-use reqwest;
-
-let client = reqwest::Client::new();
-let response = client.get("https://example.com").send().await?;
+[dependencies]
+reqwest = "0.11"
+tokio = { version = "1", features = ["full"] }
 ```
-这是一个发送GET请求到"example.com"的简单示例。同样，你也可以使用其他HTTP动词（例如POST、PUT、DELETE）来发送不同类型的请求。
 
-# 深入了解HTTP请求：
+然后编写一个简单的函数来发送GET请求：
 
-HTTP请求是计算机网络中最常用的通信协议之一。它已被广泛使用了几十年，并且仍然是互联网上发送数据的主要方式。除了Rust中使用的reqwest库之外，还有其他一些方法可以发送HTTP请求，例如使用curl命令行工具。
+```Rust
+use reqwest::Error;
 
-# 查看更多：
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    let res = reqwest::get("http://www.example.com").await?;
+    println!("{}", res.text().await?);
+    Ok(())
+}
+```
 
-- [Rust官方文档：reqwest库](https://docs.rs/reqwest/)
-- [Curl官方文档](https://curl.se/docs/httpscripting.html)
+运行你的程序，你将看到来自"http://www.example.com"的响应内容。
+
+## 深入探索
+
+发送HTTP请求的需求在早期网络应用发展中就已经出现。在那时，LINEMODE和TELNET等底层协议被广泛使用，复杂且不易使用。后来随着Web的诞生，HTTP协议成为了标准，为网络编程带来了重大革新。
+
+在Rust中，你也可以选择其他方案，例如`hyper`和`surf`等库。它们都有其优缺点，你可以根据具体用途选择最合适的。
+
+上面的示例很简单，适合入门，但在实际应用中，我们可能需要设置请求头、使用POST方法发送数据等，这就需要深入了解`reqwest`库的API。
+
+## 另请参阅
+
+1. [reqwest库官方文档](https://docs.rs/reqwest/0.11.7/reqwest/)
+2. [HTTP协议详解](https://developer.mozilla.org/zh-CN/docs/Web/HTTP)
+3. [Rust异步编程简介](https://rust-lang.github.io/async-book/)
+4. [其他HTTP客户端库：hyper](https://hyper.rs/)
+5. [其他HTTP客户端库：surf](https://docs.rs/surf/2.3.1/surf/)

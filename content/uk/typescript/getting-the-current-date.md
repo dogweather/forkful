@@ -1,6 +1,6 @@
 ---
 title:                "Отримання поточної дати"
-html_title:           "TypeScript: Отримання поточної дати"
+html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і чому?
-
-Отримання поточної дати є процесом отримання поточної інформації про дату та час на комп'ютері. Програмісти часто здійснюють цю дію для того, щоб коректно працювати з датами та часом у своїх програмах.
+## Що та навіщо? 
+Отримання поточної дати - це процес зчитування даних про хронологічний момент. Програмісти роблять це для відслідковування подій у часі, логування, генерації показників та ін..
 
 ## Як це зробити:
-
-Існує кілька способів отримати поточну дату в TypeScript. Один з найпростіших способів - використовувати вбудований об'єкт `Date`. Для цього потрібно створити новий екземпляр `Date` та викликати методи `getDate()`, `getMonth()` та `getFullYear()`.
+Ось простий приклад того, як отримати поточну дату в TypeScript:
 
 ```TypeScript
 let currentDate = new Date();
-console.log(currentDate.getDate(), currentDate.getMonth() + 1, currentDate.getFullYear());
+console.log(currentDate);
 ```
 
-В цьому прикладі ми використали метод `getDate()` для отримання числа поточного місяця, `getMonth()` для отримання порядкового номера місяця та `getFullYear()` для отримання року.
+Коли ви запустите цей код, система виведе поточну дату та час.
 
-## Глибше копання:
+```TypeScript
+// Output can be like this
+2022-03-06T12:35:15.612Z
+```
 
-Перша версія JavaScript була випущена 1995 року і не мала вбудованого об'єкту `Date`. Тому розробники вирішили додати цей об'єкт до мови у наступних версіях.
+## Поглиблений розбір:
+Раніше, щоб отримати дату ічас, програмісти використовували засоби операційної системи. Однак, з появою JavaScript та TypeScript, стало можливим отримувати поточну дату прямо в коді.
 
-Існує деяка кількість альтернативних бібліотек та пакетів, які можна використовувати для отримання поточної дати в TypeScript, таких як `moment.js` та `date-fns`.
+Є інші способи отримання поточної дати - використання бібліотек, таких як Moment.js, які надають більший контроль над форматом дати та часу.
 
-Детально ознайомитися з роботою вбудованого об'єкта `Date` в TypeScript можна на [офіційній документації](https://www.typescriptlang.org/docs/handbook/standard-library.html#date). 
+Використання `new Date()` у типах Double і Integer дає миттєву конвертацію в мілісекунди з 1 січня 1970 року.
 
 ## Дивіться також:
-
-- [Методи об'єкту `Date` в TypeScript](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
-- [Moment.js](https://momentjs.com/)
-- [date-fns](https://date-fns.org/)
+1. [MDN Web Docs - Date](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. [Moment.js](https://momentjs.com/)
+3. [TypeScript - Handling Date](https://www.tutorialsteacher.com/typescript/typescript-date)

@@ -1,7 +1,7 @@
 ---
-title:                "Zapisywanie ciągu wielkimi literami"
-html_title:           "Go: Zapisywanie ciągu wielkimi literami"
-simple_title:         "Zapisywanie ciągu wielkimi literami"
+title:                "Zamiana liter w ciągu na wielkie"
+html_title:           "Go: Zamiana liter w ciągu na wielkie"
+simple_title:         "Zamiana liter w ciągu na wielkie"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym i dlaczego?
-
-Kapitalizacja tekstu to proces zmiany pierwszej litery każdego słowa w zdaniu na wielką literę. Programiści wykonują tę czynność, aby poprawić czytelność tekstu i przestrzegać standardów zapisu kodu.
+## Co i dlaczego?
+Zmiana pierwszej litery ciągu na wielką to tzw. kapitalizacja. Programiści robią to, aby zachować poprawną gramatykę w interfejsach użytkownika lub do porównywania ciągów bez uwzględnienia wielkości liter.
 
 ## Jak to zrobić:
+W Go, możemy użyć wbudowanej funkcji `strings.Title()` do kapitalizacji ciągu. Oto jak:
 
 ```Go
-func capitalize(s string) string {
-    words := strings.Fields(s)
-    for i, word := range words {
-        words[i] = strings.ToUpper(word[:1]) + word[1:]
-    }
-    return strings.Join(words, " ")
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "witaj, świecie!"
+	result := strings.Title(str)
+	fmt.Println(result)
 }
-
-// Przykładowe wywołanie funkcji capitalize:
-fmt.Println(capitalize("to jest przykładowy tekst."))
-
-/* Output:
-To Jest Przykładowy Tekst.
-*/
 ```
 
-## Głębsza analiza:
+Wyjście:
+```Go
+Witaj, Świecie!
+```
 
-Kapitalizacja tekstu jest powszechnie stosowana w językach programowania, które wymagają standardowego zapisu kodu. Alternatywą dla kapitalizacji jest wykorzystanie metody camelCase, gdzie pierwsza litera słowa jest małą, a kolejne są wielkimi literami. W języku Go, kapitalizacja jest realizowana przy użyciu funkcji strings.ToUpper(), która zmienia dowolny tekst na napis składający się z samych wielkich liter.
+## Głębsze zanurzenie
+Kapitalizacja ciągów ma swoje korzenie w dawnych językach programowania i jest powszechnie stosowana w różnych językach, nie tylko w Go. 
 
-## Zobacz również:
+Alternatywą do `strings.Title()` w Go jest napisanie własnej funkcji. Na przykład, możemy zastosować `unicode.ToTitle()`, który konwertuje jednoznakowe runy.
 
-[Go Documentation on strings](https://golang.org/pkg/strings/)
+Detale implementacji `strings.Title()` polegają na kolejnym iterowaniu po ciągu i zamianie każdej litery, która znajduje się po nie-literze, na literę wielką. 
+
+## Zobacz też
+[Go Docs: Pakiet „strings”](https://pkg.go.dev/strings)  
+[Dokumentacja Go: unicode.ToTitle](https://golang.org/pkg/unicode/#ToTitle)

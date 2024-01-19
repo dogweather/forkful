@@ -1,7 +1,7 @@
 ---
-title:                "Extrahera substrängar"
-html_title:           "C#: Extrahera substrängar"
-simple_title:         "Extrahera substrängar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -12,28 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att extrahera delsträngar är när man plockar ut en del av en större sträng. Detta är användbart för att hantera och manipulera data, som att separera en användares namn eller e-postadress från en större text. Programmers använder ofta detta för att bearbeta och organisera data på ett effektivt sätt.
+Utvinning av understrängar innebär att ta en specifik sekvens av tecken från en sträng. Programmerare gör detta för att bearbeta eller analysera data mer effektivt. 
 
-## Såhär gör du:
+## Så här:
+
+Vi kan använda metoden `Substring` i C# för att extrahera en understräng. Så här gör du:
 
 ```C#
-// Skapa en sträng
-string text = "Hej alla, jag heter Maria";
+string str = "Hej Världen!";
+string subStr = str.Substring(0, 3);
 
-// Extrahera delsträngen "Maria" från texten
-string delsträng = text.Substring(20, 5);
-// 20 är startpositionen och 5 är längden på delsträngen
-
-// Skriv ut delsträngen
-Console.WriteLine(delsträng);
-// Output: Maria
+Console.WriteLine(subStr);
 ```
 
-## Djupdykning:
+Kodbussen ovan skriver ut `Hej`, vilket är den första understrängen i `Hej Världen!`.
 
-Historiskt sett har substring extraction varit en konceptuell del av programmering sedan tidiga språk som C. Det finns också alternativ till att använda substrings, såsom metoder som `Split()` för att dela upp en sträng baserat på ett angivet tecken eller mönster. Implementationen av substring extraction i C# är mycket effektiv och inbyggd i språket för att göra det enkelt för programmerare att använda.
+```C#
+string str = "Hej Världen!";
+string subStr = str.Substring(4);
 
-## Se även:
+Console.WriteLine(subStr);
+```
 
-- [Documentation for Substring Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring) 
-- [C# String Manipulation Guide](https://www.tutorialspoint.com/csharp/csharp_string_manipulation.htm)
+Kodbussen ovan skriver ut `Världen!`, vilket är understrängen som börjar från den 5:e positionen.
+
+## Djupdykning
+
+Historiskt sett har utvinning av understrängar varit en nödvändig operation i programmering. Det låter oss manipulera och begära data på mer komplexa sätt. 
+
+Alternativt till `Substring` kan du även använda `Split` funktionen om du behöver extrahera flera delar av en sträng på en gång.
+
+När det gäller att implementera substring extrahering i C# så sker det med en tidkomplexitet av O(n), där n är antalet extraherade tecken.
+
+## Se även 
+
+För mer detaljerad information, kolla följande länkar:
+
+- Microsoft's C#-guide om `Substring`: [Link](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
+- En djupare dykning i string manipulation i C#: [Link](https://www.c-sharpcorner.com/UploadFile/mahesh/manipulate-strings-in-C-Sharp/)

@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Lua recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,57 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Downloading a web page means retrieving its code and content from the internet, which can then be used for various purposes such as scraping data or automating tasks. Programmers do this to extract information from websites, automate tasks, or collect data to use in their applications.
+Downloading a web page means fetching it from the server it's hosted on to your local machine. We do this to work with a site's data offline, automate tasks, mine data--you name it.
 
 ## How to:
 
-To download a web page in Lua, we will be using the built-in HTTP library. To get started, we need to require the library and specify the URL of the web page we want to download.
+Lua mostly lacks built-in tools for downloading web pages, so we use `LuaSocket` and `LuaSec`, libraries geared towards network programming. Install them with LuaRocks package manager:
+
+```
+>luarocks install luasocket
+>luarocks install luasec
+```
+
+Here's some easy-to-follow Lua code which employs the http module from these libraries:
 
 ```Lua
-local http = require("socket.http")
-local url = "https://www.example.com"
+local https = require('ssl.https') --https module
+local body, code = https.request("https://wikipedia.org")
 
+if code == 200 then
+    print(body)
+else
+    print("HTTP request failed with code: " .. code)
+end
 ```
 
-Next, we can use the `request` function to send an HTTP request to the specified URL and return the response as a string.
+This script sends a simple GET request to `https://wikipedia.org` and prints the page's HTML if successful. If it fails, you'll see an error code instead.
 
-```Lua
-local response = http.request(url)
+## Deep Dive
 
-```
+Lua doesn't come with an HTTP API historically since it's designed to be small and extensible, prioritizing simplicity over a wide range of features.
 
-Finally, we can print the response to see the code and content of the web page.
+For downloading web pages, alternatives exist like the `wget` utility, `curl` library, but these require external dependencies or aren't as simple to use.
 
-```Lua
-print(response)
-```
+Implementation details to know:
 
-Sample output:
+- The `https.request()` function attempts to connect to the provided URL, sends an HTTP GET request, and gets the response.
+- The function returns the whole content in a string (body) and a status code (code).
+- It's essential to check the status code. `200` signifies success, any other indicates an error.
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-...
-<body>
-<h1>Example Domain</h1>
-<p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
-...
-</body>
-</html>
-```
+## See Also
 
-## Deep Dive:
+- LuaSocket documentation: http://w3.impa.br/~diego/software/luasocket/http.html
+- LuaSec documentation: https://github.com/brunoos/luasec/wiki
+- HTTP status codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+- More about Lua: https://www.lua.org/about.html
 
-Historically, downloading web pages was done using the `wget` utility or the `curl` library. However, with Lua's built-in `http` library, developers don't need to install any additional dependencies.
-
-There are also alternative libraries available, such as `LuaSocket` and `LuaCURL`, which provide more advanced features for web requests.
-
-When using the `request` function, the first argument is the URL, but we can also pass in additional arguments to customize the request, such as headers, cookies, and request methods. Additionally, the response object can be further parsed and processed to extract specific information.
-
-## See Also:
-
-- [Lua HTTP Library Documentation](https://www.lua.org/pil/22.3.html)
-- [LuaSocket Library](https://luarocks.org/modules/luasocket/luasocket)
-- [LuaCURL Library](https://luarocks.org/modules/curl/curl)
+This article gives you a starting point for downloading web pages in Lua. Explore these resources and dive deeper! There's always more to learn.

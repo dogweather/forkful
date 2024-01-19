@@ -1,7 +1,7 @@
 ---
-title:                "Impresión de salida de depuración"
-html_title:           "PHP: Impresión de salida de depuración"
-simple_title:         "Impresión de salida de depuración"
+title:                "Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -11,34 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Qué y por qué?
+La impresión de salida de depuración en PHP es una táctica utilizada para realizar seguimientos y descubrir errores en el código. Esta es una herramienta valiosa ya que permite a los programadores entender mejor su programa al ver su comportamiento en tiempo real.
 
-Imprimir la salida de depuración es una herramienta útil para los programadores de PHP. Consiste en mostrar información sobre el código en tiempo de ejecución, lo que facilita la identificación de errores y el seguimiento del flujo del programa.
+## Cómo hacerlo:
 
-## Cómo:
-
-El siguiente ejemplo muestra cómo utilizar la función "var_dump" para imprimir la información de depuración en PHP:
+La función básica en PHP para la depuración de salida es `var_dump()`. Esta función muestra información estructurada sobre una variable o expresión.
 
 ```PHP
-<?php
-$variable = "Hola mundo";
-var_dump($variable);
+<?php 
+$test = "Hola Mundo";
+# mostrarás tipo y valor de la variable test
+var_dump($test);
+
+# salida
+string(10) "Hola Mundo"
 ?>
 ```
-La salida será: string(10) "Hola mundo"
 
-También se puede utilizar la función "print_r" para imprimir la información de una manera más legible:
-```PHP
-<?php
-$array = array("Manzana", "Banana", "Cereza");
-print_r($array);
-?>
-```
-La salida será: Array ( [0] => Manzana [1] => Banana [2] => Cereza )
+Para casos más avanzados, puedes usar una biblioteca como Xdebug, que proporciona depuración paso a paso y traza de llamadas.
 
-## Profundizando:
+## Un vistazo más profundo:
 
-La salida de depuración se ha convertido en una práctica común entre los programadores, ya que permite ahorrar tiempo en la identificación y resolución de errores. Además de las funciones "var_dump" y "print_r", existen otras formas de imprimir la salida de depuración, como utilizar la función "echo" o "printf". Sin embargo, es importante tener en cuenta que la impresión de salida de depuración no debería ser utilizada en una versión final del código, ya que puede ralentizar el rendimiento del programa y exponer datos sensibles.
+`var_dump()` ha sido parte de PHP desde la versión 4.0.0. Aunque otros métodos, como `print_r()` y `var_export()`, pueden hacer un trabajo similar, `var_dump()` es único porque también muestra el tipo y tamaño de la variable.
+
+Las bibliotecas de terceros como Xdebug ofrecen una funcionalidad de depuración más robusta y detallada. Con Xdebug, puedes hacer seguimientos de pila, mostrar scripts de tiempo de ejecución y también proporciona una interfaz DBGp para herramientas de depuración remotas.
 
 ## Ver también:
 
-Para más información sobre la impresión de salida de depuración, se puede consultar la documentación oficial de PHP en el siguiente enlace: https://www.php.net/manual/es/function.var-dump.php. También se pueden encontrar tutoriales y ejemplos en línea que pueden ser útiles para profundizar en esta técnica de depuración.
+1. [Documentación oficial PHP var_dump()](https://www.php.net/manual/es/function.var-dump.php) - para una exploración detallada de cómo var_dump trabaja.
+2. [Xdebug](https://xdebug.org/) - página oficial, con guías de instalación y configuración.
+3. [Introducción a la depuración de PHP](http://php.net/manual/es/debugger.php) - para un resumen más amplio sobre depuración en PHP.

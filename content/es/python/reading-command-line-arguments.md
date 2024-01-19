@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comando"
-html_title:           "Python: Leyendo argumentos de línea de comando"
-simple_title:         "Leyendo argumentos de línea de comando"
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,33 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué es y por qué leer argumentos de línea de comando en Python?
+## ¿Qué y Por Qué?
 
-La lectura de argumentos de línea de comando en Python se refiere a la capacidad del programa para recibir información o parámetros a través de la línea de comandos al momento de ser ejecutado. Los programadores suelen hacer uso de esta funcionalidad para dar más flexibilidad a sus programas y permitir al usuario personalizar su experiencia de uso.
+Los argumentos de la línea de comandos en Python son parámetros específicos que se pasan durante la ejecución de un programa. Los programadores utilizamos esto para permitir que nuestro software actúe de manera variable y dinámica en base a la entrada del usuario.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo:
 
-Para leer argumentos de línea de comando en Python, podemos utilizar el módulo `sys` el cual nos brinda una lista con todos los argumentos pasados al momento de ejecutar el programa. Aquí un ejemplo sencillo:
+Aquí tienes un ejemplo de cómo leer argumentos desde la línea de comandos usando el módulo `sys` de Python:
 
 ```Python
 import sys
 
-archivo = sys.argv[1] # el primer argumento se encuentra en la posición 1 de la lista
-print("El archivo ingresado es:", archivo)
+def main(args):
+    print('Número de argumentos:', len(args), 'argumentos.')
+    print('Lista de argumentos:', args)
+
+if __name__ == "__main__":
+    main(sys.argv)
 ```
 
-Si ejecutamos este programa con el comando `python programa.py archivo.txt`, el output sería:
+Cuando ejecutes este código desde la línea de comandos de esta manera: `python test.py arg1 arg2`, obtendrás este resultado:
 
 ```Python
-El archivo ingresado es: archivo.txt
+Número de argumentos: 3 argumentos.
+Lista de argumentos: ['test.py', 'arg1', 'arg2']
 ```
 
-## Inmersión profunda
+La lista args incluye todos los argumentos de la línea de comandos, siendo el primero (índice 0) el nombre del script ejecutado.
 
-La lectura de argumentos de línea de comando es una funcionalidad básica que ha estado presente en lenguajes de programación desde hace mucho tiempo. En Python, esta funcionalidad está disponible gracias al módulo `sys`. Sin embargo, existen también otros módulos que facilitan esta tarea, como por ejemplo `argparse` que nos permite definir opciones y argumentos más complejos a través de código.
+## Buceo Profundo:
 
-Además, es importante mencionar que la lectura de argumentos de línea de comando tiene una gran importancia en la automatización de tareas y la creación de scripts, ya que nos permite ejecutar comandos de forma más dinámica.
+Históricamente, `sys.argv` ha sido utilizado como el estándar para la lectura de los argumentos de línea de comandos en Python desde sus primeras versiones. Pero existen alternativas como el módulo `argparse` que proporciona opciones más versátiles y complejas, como la posibilidad de añadir descripciones a los argumentos o utilizar diferentes tipos de datos.
 
-## Ver también
+Cuando Python recibe argumentos de la línea de comandos, los recoge en la estructura `argv`, que es una lista de tipo `string`. El primer item es siempre el nombre del script ejecutado, seguido de cualquier argumento que se haya pasado en el orden en que se han proporcionado.
 
-Si quieres saber más sobre cómo utilizar argumentos de línea de comando en Python, puedes consultar la documentación oficial del módulo `sys` y del módulo `argparse`. También puedes leer sobre cómo automatizar tareas con Python en nuestro artículo sobre programación de scripts.
+## Mira También:
+
+1. Módulo sys de Python: [https://docs.python.org/3/library/sys.html](https://docs.python.org/3/library/sys.html)
+2. Módulo argparse de Python: [https://docs.python.org/3/library/argparse.html](https://docs.python.org/3/library/argparse.html)
+3. Guía detallada para usar argparse: [https://realpython.com/command-line-interfaces-python-argparse/](https://realpython.com/command-line-interfaces-python-argparse/)
+4. Argumentos de línea de comandos en Python: [https://www.tutorialspoint.com/python/python_command_line_arguments.htm](https://www.tutorialspoint.com/python/python_command_line_arguments.htm)

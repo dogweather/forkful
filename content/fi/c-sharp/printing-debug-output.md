@@ -1,7 +1,7 @@
 ---
-title:                "Virheenjäljitystulostuksen tulostaminen"
-html_title:           "C#: Virheenjäljitystulostuksen tulostaminen"
-simple_title:         "Virheenjäljitystulostuksen tulostaminen"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,23 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Painetun debug-tulosteen avulla kehittäjät voivat seurata koodin toimintaa ja etsiä mahdollisia virheitä. Se on tärkeä työkalu ohjelman toimivuuden varmistamiseksi ja tehokkaan vianetsinnän tekemiseksi.
+### Mitä & Miksi?
 
-## Kuinka:
+Printtauksen debug tuloste on menetelmä, jota ohjelmoijat käyttävät nähdäkseen, mitä ohjelmassa tapahtuu. Se on erityisen hyödyllinen vianmäärityksessä ja testauksessa.
+
+### Näin se toimii:
+
+C#-koodin kirjoittamiseksi, meidän täytyy importata `System.Diagnostics` kirjasto. Käytämme `Debug.WriteLine` metodia tulostamaan viestin, kun ohjelma ajetaan debug-tilassa.
+
 ```C#
-Console.WriteLine("Tämä on debug-tulosteen esimerkki");
+using System.Diagnostics;
 
-// Output: Tämä on debug-tulosteen esimerkki
+class Program
+{
+    static void Main()
+    {
+        Debug.WriteLine("Tämä on debug-viesti");
+    }
+}
 ```
 
-Voit myös tallentaa debug-tulosteen tiedostoon käyttämällä ```Debug.Write``` tai ```Debug.WriteLine``` komentoja. Tämä helpottaa virheiden jäljittämistä pidemmissä ohjelmissa.
+Kun yllä oleva ohjelma suoritetaan, "Tämä on debug-viesti" tulostetaan debug-ikkunaan. 
 
-## Syväsukellus:
-Debug-tulosteiden käyttö on yleinen käytäntö ohjelmoinnissa jo vuosien ajan. Se auttaa kehittäjiä nopeasti löytämään ja korjaamaan ongelmia koodissaan. Toiset ohjelmointikielet, kuten Python ja Java, käyttävät myös vastaavia debug-tulostetoimintoja.
+### Sukellus syvemmälle:
 
-Joskus debug-tulosteiden käyttö voi hidastaa ohjelman suorituskykyä, joten se kannattaa poistaa lopullisesta tuotantoversiosta.
+Historiallisesti ajatellen, printtauksen debug tulostus on ollut tärkeä työkalu ohjelmoijille. Sen avulla he voivat ymmärtää monimutkaisia ohjelmia tai löytää odottamattomia virheitä.
 
-## Katso myös:
-- [Microsoftin virallinen dokumentaatio debug-tulosteista C# -ohjelmoinnissa](https://docs.microsoft.com/fi-fi/dotnet/api/system.diagnostics.debug?view=netcore-3.1)
-- [Vinkkejä debug-tulosteiden käytöstä Visual Studion kanssa](https://docs.microsoft.com/fi-fi/visualstudio/debugger/how-to-use-the-debugger-and-troubleshoot?view=vs-2019)
+Printtauksen debug-tulosteiden ohella on olemassa monia muita vianmääritystyökaluja, kuten interaktiiviset debuggerit tai lokitiedostot.
+
+C#-käytössä Debug-luokka käyttää TraceListener-objekteja, jotka määrittävät, minne debug-viestit ohjataan. Oletusarvoisesti Visual Studio ohjaa viestit Output-ikkunaan, kun ohjelma suoritetaan debug-tilassa.
+
+### Katso myös:
+
+1. [Microsoftin dokumentaatio Debug-luokasta](https://docs.microsoft.com/fi-fi/dotnet/api/system.diagnostics.debug)
+2. [Microsoftin ohjeet vianmääritykseen C#-ohjelmissa](https://docs.microsoft.com/fi-fi/visualstudio/debugger/)
+3. [Stack Overflow C# debug output -kysymykset](https://stackoverflow.com/questions/tagged/debugoutput?tab=Votes)

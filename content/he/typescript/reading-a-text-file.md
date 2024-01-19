@@ -1,6 +1,6 @@
 ---
 title:                "קריאת קובץ טקסט"
-html_title:           "TypeScript: קריאת קובץ טקסט"
+html_title:           "Go: קריאת קובץ טקסט"
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+# לקרוא קובץ טקסט ב־TypeScript: מדריך מהיר
 
-קריאת קובץ טקסט היא פעולה שמבקשת מהמחשב לקרוא ולהציג תוכן מסוים שנמצא בקובץ. זהו פעולה חשובה בתכנות כי היא מאפשרת לנו לקבל מידע מסוגים שונים ולהשתמש בו בתוכניות שלנו.
+## מה & למה?
+קריאת קובץ טקסט היא תהליך שבו תוכנית מקלטת נתונים מקובץ ואז מפענחת ומשתמשת בנתונים אלו. תכנתים עושים את זה כדי לאכוף את הנתונים או לשמוע דינמיקה בזמן שהתוכנית רצה.
 
-## איך לעשות זאת:
-
-מטרת הדוגמאות הבאות היא להראות לך כיצד לקרוא קובץ טקסט ב TypeScript ולהציג את התוכן שלו:
+## איך לעשות:
+הנה כיצד אתה יכול לקרוא קובץ טקסט ב־TypeScript, באמצעות מודול Node.js, `fs`.
 
 ```TypeScript
-const fs = require('fs');
+import * as fs from 'fs';
 
-// קריאת קובץ טקסט 
-const content: string = fs.readFileSync('file.txt', 'utf8');
-
-// הצגת התוכן שנמצא בקובץ
-console.log(content);
-
+fs.readFile('/path/your-file.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error(err);
+    return;
+  }
+  console.log(data);
+});
 ```
 
-תהליך זה נפוץ בעיגולים של תכנות כי הוא מאפשר לנו לגשת למידע ולהשתמש בו בהמשך בתוכניות שלנו.
+בדוגמה זו, המחרוזת '/path/your-file.txt' היא הנתיב של הקובץ שאתה רוצה לקרוא.
 
-## ים עמוק
+## צלילה עמוקה
+(1) בהקשר ההיסטורי, Node.js ומודול ה-`fs` שלו הם לא תלות חלק מTypeScript. TypeScript היא מעין שדרוג של JavaScript המסייע לתכנתים לכתוב קוד מסודר יותר.
+(2) ישנם שיטות אלטרנטיביות רבות לקריאת קבצים ב־JavaScript וגם ב־TypeScript, כולל באמצעות AJAX.
+(3) לגבי פרטי היישום, `readFile` הוא אסינכרוני, מה שאומר שהתוכנית שלך תמשיך לרוץ בזמן שהיא מחכה לחזרה המידע מהקובץ. אם תרצה לקרוא את הקובץ באופן סינכרוני, יתכן שתרצה לשקול להשתמש במתודה `readFileSync`.
 
-מעניין לדעת שהתהליך של קריאת קובץ טקסט הוא פעולה ישנה שמשמשת את המחשבים כבר כמה עשורים. עם זאת, ייתכן שתרגיש שהדרך שהראינו לך לעשות זאת היא מסורבלת ואינה נחיה כמו שצריך. במקרה כזה, תוכל לבחור להשתמש בספריית גרסת Node.js שנקראת `fs-extra`, המספקת פונקציות נוחות יותר לקריאת וכתיבת קבצים טקסט.
-
-כמו כן, אם התוכניות שלך כוללות עבודה עם קבצים מסוגים נוספים (למשל קבצי Excel או PDF), תוכל להשתמש בספריות נוספות כמו `xlsx` או `pdfkit` שיאפשרו לך לקרוא ולהציג את התוכן שלהם.
-
-## ראה גם
-
-* [ספריית fs-extra של Node.js](https://github.com/jprichardson/node-fs-extra)
-* [ספריית xlsx](https://github.com/SheetJS/js-xlsx)
-* [ספריית pdfkit](https://github.com/foliojs/pdfkit)
+## ראה גם:
+- [תיעוד Node.js fs](https://nodejs.org/api/fs.html)
+- [קריאת קבצים בJavaScript עם AJAX](https://www.w3schools.com/js/js_ajax_intro.asp)
+- [מדריך לאיך להשתמש בTypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)

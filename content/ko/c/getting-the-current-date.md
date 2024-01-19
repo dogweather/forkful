@@ -1,7 +1,7 @@
 ---
-title:                "현재 날짜 얻기"
-html_title:           "C: 현재 날짜 얻기"
-simple_title:         "현재 날짜 얻기"
+title:                "현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 현재 날짜 얻기:
+## 무엇이고 왜?
 
-## 무엇이고 왜 하는가?
-현재 날짜를 얻는 것은 코드에서 현재 시간에 기준하여 작업을 처리하는 일반적인 방법입니다. 프로그래머들은 코드에서 날짜를 사용하여 로그를 기록하거나 시간 기반 작업을 계획하는 등 다양한 목적으로 날짜를 이용합니다.
+'현재 날짜 얻기'는 컴퓨터 시스테ム의 흐른 시간을 판별하기 위한 일반적인 작업입니다. 이것은 로깅, 타임스탬프, 레포트 생성 등 다양한 애플리케이션에서 중요한 역할을 합니다.
 
-## 방법:
+## 어떻게:
+
 ```C
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 
-int main(){
-    // 현재 날짜 구조체 생성
-    struct tm *date;
-    // 시간 정보 가져오기
-    time_t now;
-    time(&now);
-    // 현재 날짜 구조체에 시간 정보 대입
-    date = localtime(&now);
-    // 날짜 정보 출력
-    printf("%d년 %d월 %d일\n", date->tm_year + 1900, date->tm_mon + 1, date->tm_mday);
-
+int main() {
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    printf("현재 날짜와 시간: %d-%02d-%02d %02d:%02d:%02d\n",
+           tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+           tm.tm_hour, tm.tm_min, tm.tm_sec);
     return 0;
 }
 ```
 
-## 깊게 들어가보기:
-(1) 현재 날짜를 얻는 코드는 운영체제가 제공하는 시간 함수를 사용하여 구현됩니다. 따라서 해당 운영체제의 문서를 참조하면 추가적인 정보를 얻을 수 있습니다.
-(2) C언어에서는 localtime 함수를 사용하여 현재 시간을 구하는 것이 가장 일반적입니다. 하지만 이 외에도 다른 배열 형태로 정보를 저장할 수 있는 localtime_r 함수를 제공합니다.
-(3) 날짜 정보를 다룰 때는 어떤 형식으로 출력할지 고민해야 할 필요가 있습니다. 이는 strftime 함수를 사용하여 원하는 형식으로 날짜를 출력할 수 있습니다.
+이 코드를 실행하면, 출력은 다음과 같습니다:
 
-## 참고하기:
-- localtime 함수 문서: https://www.cplusplus.com/reference/ctime/localtime/
-- strftime 함수 문서: https://www.cplusplus.com/reference/ctime/strftime/
+```C
+현재 날짜와 시간: 2021-08-27 14:30:00
+```
+
+## 딥 다이브
+
+1. 역사적 맥락: 초기의 컴퓨터 시스템에서는 '시간'을 추적하지 않았지만, 컴퓨팅이 발전함에 따라 시간 정보는 점점 중요해졌습니다.
+2. 대체 방법: C 언어 외에도 Python, Java 등 다른 언어들도 현재 시간을 얻어오는 함수를 제공합니다. 
+3. 구현 세부사항: `time_t`과 `struct tm`은 시간을 다루는 C 언어의 주요 구조입니다. `time(NULL)`은 현재 시간을 초 단위로 반환하고, `localtime(&t)`은 초 단위의 시간을 년, 월, 일 등의 구조로 분리합니다.
+
+## 참고 링크
+
+- "time.h" 라이브러리에 대한 자세한 사항: [https://www.cplusplus.com/reference/ctime/](https://www.cplusplus.com/reference/ctime/)
+- 시간 관련 프로그래밍에 대한 자세한 내용: [https://en.wikipedia.org/wiki/Time_(Unix)](https://en.wikipedia.org/wiki/Time_(Unix))

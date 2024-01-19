@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "Ruby: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Päivämäärän parsiminen merkkijonosta on prosessi, jossa muunnetaan tekstiin kirjoitettu päivämäärä tietokoneen ymmärtämäksi muodoksi. Tämä on hyödyllistä, kun haluamme käsitellä päivämäärää ohjelmassamme tai verrata sitä muihin päivämääriin. Se on myös yleinen tehtävä ohjelmoinnissa.
+## Mikä & Miksi?
 
-## Kuinka tehdä se:
-```Ruby
+Päivämäärän jäsentäminen merkkijonosta on prosessi, jossa muutetaan merkkijono päivämääräolion muotoon. Ohjelmoijat tekevät tätä, koska sen avulla he voivat työskennellä päivämäärätietojen kanssa objektisuuntaisen paradigman sisällä.
+
+## Kuinka:
+
+Rubyssa päivämäärien jäsentäminen tehdään `Date`-luokan metodeilla. Katsotaan esimerkkiä:
+
+```ruby
 require 'date'
 
-# Parsi päivämäärä merkkijonosta
-date = Date.parse("12.4.2021")
-puts date # 2021-04-12
+string_date = "2022-04-30"
+parsed_date = Date.parse(string_date)
 
-# Muokkaa parsittua päivämäärää
-date += 1 # lisää yhden päivän
-puts date # 2021-04-13
-
-# Vertaa päivämääriä
-date < Date.today # palauttaa true
+puts parsed_date
 ```
 
-## Syväsukellus:
-Päivämäärän parsimisen käsite on ollut osa ohjelmointia jo pitkään, mutta siitä on tullut helpompaa kielen mukana. Aikaisemmin ohjelmoijien täytyi käyttää monimutkaisempia algoritmeja päivämäärien käsittelyyn, mutta nykyään monet ohjelmointikielet, kuten Ruby, tarjoavat sisäänrakennetun Date-luokan, joka tekee tämän prosessin helpommaksi. Vaihtoehtoina päivämäärän parsimiselle ovat esimerkiksi käsin kirjoittaminen tai erilaisten kirjastojen käyttäminen. Rubyssa päivämäärän parsiminen toimii DateTime-luokan avulla, joka perustuu uudempiin standardeihin kuin Date-luokka.
+Tämän koodin ajaessa konsoli tulostaa: `2022-04-30`.
 
-## Katso myös:
-- [Ruby Date-luokan dokumentaatio](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
-- [Blogipostaus "Päivämäärien parsiminen" Rubyssä](https://www.pluralsight.com/guides/ruby-date-parsing)
+## Syväsukellus:
+
+Historiallisesti päivämäärän jäsentämistarve on syntynyt monimutkaisemman ohjelmoinnin tarpeesta. Aikaisemmin oli yleistä liittää päivämäärätiedot ohjelmakoodiin suoraan, mutta nykyään päivämäärien käsittelyyn on olemassa erilaisia tehokkaita metodeja.
+
+Vaihtoehtoisia tapoja tulkita merkkijono päivämääräksi Rubyssa ovat `Date.strptime` ja `DateTime.parse`. Nämä funktiot voivat olla tehokkaampia, kun tiedät tarkasti merkkijonon muodon, jota käsittelet.
+
+Jäsentämisen toteutus Rubyssa perustuu yleisesti ottaen luokkien ja niiden olio-orientoitujen metodien käyttöön. Ruby käyttää tiukkaa olio-orientoitua suunnittelua, joten jokaisen merkkijonon päivämääräksi jäsentävän funktion on palautettava uusi `Date`-olio.
+
+## Katso Myös:
+
+1. Ruby Date Library Documentation: https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html
+2. Tutorial on Parsing Dates: https://www.rubyguides.com/2017/12/ruby-string-format/
+3. Deeper Dive into Date Parsing: https://www.justinweiss.com/articles/3-steps-to-better-api-design-using-ruby/

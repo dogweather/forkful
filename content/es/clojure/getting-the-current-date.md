@@ -1,6 +1,6 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "Clojure: Obteniendo la fecha actual"
+html_title:           "C#: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,21 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Obtener la fecha actual es el acto de obtener la fecha y hora actuales en el sistema en el que estamos trabajando. Los programadores lo hacen para registrar y almacenar la fecha y hora en que ocurre un evento en el sistema, lo que puede ser útil para la auditoría y el seguimiento de cambios.
+---
 
-## Cómo hacerlo:
+## ¿Qué y Por Qué?
+
+Obtener la fecha actual en programación es un proceso de recuperar el dato del tiempo presente en el sistema operativo. Los programadores a menudo lo requieren para registrar eventos, marcar operaciones con una estampa de tiempo en logs o manipular fechas para calcular la duración.
+
+---
+
+## Cómo Hacerlo:
+
+En Clojure, la función de biblioteca `clojure.java-time` es tu amiga. La llamamos así:
+
+```Clojure
+(require '[java.time :as jt])
+(jt/local-date)
 ```
-(import [java.util Date])
 
-(def fecha (Date.))
+Devolverá la fecha en este formato : `yyyy-mm-dd`. Aquí estás un ejemplo de salida:
 
-En la primera línea importamos la clase Date de Java para poder acceder a sus métodos. En la segunda línea, utilizamos la función "def" para asignar el valor actual de la fecha y hora a la variable "fecha".
+```Clojure
+2022-05-18
 ```
 
-## Profundizando:
-Obtener la fecha actual puede ser útil en muchas situaciones de programación, desde la gestión de horarios hasta la sincronización de eventos en el sistema. Antes de la popularidad de Java, se utilizaban otros métodos para obtener la fecha actual, como el uso de la función de sistema "time" en UNIX. Sin embargo, con el tiempo, Java se ha convertido en una opción más conveniente y común para los programadores.
+---
 
-## Ver también:
-- Documentación de la clase Date de Java: https://docs.oracle.com/javase/6/docs/api/java/util/Date.html
-- Alternativa para obtener la fecha actual en Clojure: https://clojuredocs.org/clojure.java-time/local-date-now
+## Inmersión Profunda:
+
+Historicamente, Clojure maneja fechas a través de las bibliotecas existentes de Java. En las primeras versiones se usaba `java.util.Date`, pero su diseño presentaba varias fallas y confusión, lo que llevó a la introducción del paquete `java.time` en Java 8 que solucionó muchos problemas.
+
+Alternativamente, existen otras bibliotecas que puedes usar, como `clj-time` que es un wrapper alrededor de la librería Joda-Time de Java. Pero, se recomienda utilizar `java.time` ya que está basado en estándares ISO y es nativo en Java 8 y versiones superiores.
+
+Detalles de Implementación: Cuando solicitas la fecha/hora actual en Clojure (o en Java), estás obteniendo el tiempo del sistema operativo del host. Esto significa que la fecha/hora que obtienes depende del reloj del sistema de tu ordenador.
+
+---
+
+## Ver También:
+
+1. Documentación de `java.time`: https://clojure.github.io/clojure/clojure.java-time-api.html
+2. El uso de `clj-time`: https://github.com/clj-time/clj-time
+3. Librería `Joda-Time` para Java: https://www.joda.org/joda-time/

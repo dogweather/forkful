@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczynając nowy projekt."
-html_title:           "Lua: Rozpoczynając nowy projekt."
-simple_title:         "Rozpoczynając nowy projekt."
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Getting Started"
@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+# Zacząć Nowy Projekt w Lua: Rzut Oka i Jak To Zrobić
 
-Zaczynając nowy projekt w programowaniu, tworzymy nowe miejsce (pewna przestrzeń) na kodowanie naszego programu i zależności. Programiści robią to, gdy potrzebują zacząć od nowa, albo gdy kod nie można już rozwijać.
+## Co i Dlaczego?
 
-# Jak zacząć:
+Podjęcie nowego projektu oznacza rozpoczęcie pisania kodu od podstaw w celu stworzenia określonego programu lub aplikacji. Programiści robią to, aby rozwiązać specyficzne problemy, uzupełnić brakujące funkcje, albo po prostu dla nauki i zabawy.
 
-Przykład kodu:
+## Jak To Zrobić
 
-```
-local imie = "Anna"
-print("Witaj, " .. imie .. "!")
-```
+Jasne i proste. Zacznijmy od utworzenia najprostszego programu "Hello World" w Lua.
 
-Przykładowe wyjście:
-
-```
-Witaj, Anna!
+```Lua
+print("Witaj, świecie!")
 ```
 
-# Głębsze zanurzenie:
+Gdy uruchomisz powyższy program, na ekranie zobaczyć powinieneś: `Witaj, świecie!`.
 
-1) Kontekst historyczny: Zacząć nowy projekt jest ważny, ponieważ zapewnia początkowy punkt dla naszego kodu. Pomaga to również lepiej zorganizować projekt i wyeliminować ewentualne problemy z poprzednimi kodami.
-2) Alternatywy: Zamiast tworzyć nowy projekt, można również rozważyć użycie gotowych szablonów i frameworków, które pomogą przyśpieszyć proces tworzenia aplikacji.
-3) Szczegóły implementacji: Aby zacząć nowy projekt w Lua, musimy ogarnąć podstawowe zasady języka, a także zapoznać się z jego dostępnymi funkcjami i bibliotekami.
+## Głębsze Zrozumienie 
 
-# Zobacz również:
+Lua, stworzona w 1993 roku, to potężny, efektywny i łatwy w użyciu język skryptowy. W jego przypadku, nowe projekty tworzy się, pisząc kod w plikach tekstowych z rozszerzeniem `.lua`.
 
-Dla większych możliwości i ułatwionego tworzenia projektów, można skorzystać z narzędzi takich jak:
-- LuaRocks – narzędzie do zarządzania bibliotekami Lua
-- Cocos2d-x – framework do tworzenia gier mobilnych w Lua
-- ZeroBrane Studio – środowisko programistyczne dla Lua
+Są różne alternatywy dla języka Lua, takie jak Python czy JavaScript, lecz Lua oferuje doskonałe wsparcie dla mechanizmów sterowania procedurami i wyjątkową prostotę składni.
+
+Co do zakładania nowych projektów, szczegół implementacji zależy od tego, co chcesz osiągnąć. Tworzenie prostego programu, jak wyżej, wymaga jedynie uruchomienia jednego pliku. Skomplikowane projekty mogą wymagać organizacji kodu w różne pliki i katalogi, zależności od zewnętrznych bibliotek i tak dalej.
+
+## Zobacz Również 
+
+- Oficjalna strona Lua: [https://www.lua.org/](https://www.lua.org/)
+- Dokumentacja Lua 5.4: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+- Książka "Programming in Lua": [https://www.lua.org/pil/](https://www.lua.org/pil/)

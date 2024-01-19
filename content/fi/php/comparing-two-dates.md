@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "PHP: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mikä ja miksi?
+## Mitä & Miksi?
 
-Vertaillessaan kahta päivämäärää ohjelmoijat tarkastelevat kahden päivämäärän eroa toisiinsa nähden. Tämä on usein tarpeellista esimerkiksi sovelluksissa, jotka käsittelevät aikaa ja tapahtumia.
+Päivämäärien vertailu tarkoittaa kahden päivämäärän suhteellisen järjestyksen selvittämistä. Ohjelmoijat tekevät tämän usein aikaperusteisten toimintojen, kuten tapahtumien järjestämisen tai aikarajojen noudattamisen, hallitsemiseksi.
 
-Miten:
+## Näin se tehdään:
+
+Päivämäärien vertailu PHP:ssa on helppoa. Käytetään DateTime-objekteja, jotka luodaan new DateTime -kutsulla, ja vertailu tapahtuu operaattorilla `>` tai `<`. 
 
 ```PHP
 <?php
-$date1 = "2021-01-01";
-$date2 = "2021-12-31";
+$pvm1 = new DateTime('2021-05-10');
+$pvm2 = new DateTime('2021-03-20');
 
-// Vertaillaan päivämääriä ja tulostetaan tulos
-if ($date1 < $date2) {
-  echo "Päivämäärä 1 on ennen Päivämäärää 2";
-} else if ($date1 == $date2) {
-  echo "Päivämäärä 1 on sama kuin Päivämäärä 2";
+if ($pvm1 > $pvm2) {
+    echo 'Päivämäärä 1 on myöhempi kuin Päivämäärä 2.';
 } else {
-  echo "Päivämäärä 1 on jälkeen Päivämäärän 2";
+    echo 'Päivämäärä 2 on myöhempi kuin Päivämäärä 1.';
 }
 ?>
 ```
 
+Tämä koodi tulostaa: "Päivämäärä 1 on myöhempi kuin Päivämäärä 2."
+
+## Syvemmälle:
+
+PHP:n DateTime-luokka introdukoitiin versiossa 5.2, joka julkaistiin vuonna 2006, tätä ennen päivämäärät vertailtiin muuntamalla ne aikaleimoiksi (timestamp) funktiolla `strtotime()`. PHP 7.1:n myötä voimme myös käyttää `spaceship`-operaattoria `<=>` päivämäärien vertailuun.
+
 ```PHP
-Tulostaa:
-Päivämäärä 1 on ennen Päivämäärää 2
+<?php
+$pvm1 = new DateTime('2021-05-10');
+$pvm2 = new DateTime('2021-03-20');
+
+echo $pvm1<=>$pvm2;
+?>
 ```
 
-Syvällisempää tietoa:
+Koodi palauttaa 1 jos Päivämäärä 1 on myöhempi, -1 jos Päivämäärä 2 on myöhempi ja 0 jos ne ovat samat.
 
-(1) Vertailua päivämäärien välillä on tarvittu jo pitkään, sillä ohjelmistoissa on usein tarvetta käsitellä aikaa ja tapahtumia. (2) Lisäksi on olemassa muitakin tapoja vertailla päivämääriä, kuten käyttämällä aikaleimoja tai muuntamalla päivämäärät numeerisiksi arvoiksi. (3) Tarkempien päivämäärävertailujen toteuttaminen voi edellyttää erilaisten kirjastojen käyttöä tai omien funktioiden luomista.
+## Katso myös:
 
-Katso myös:
-
-- [PHP:n virallinen dokumentaatio päivämäärien vertailusta](https://www.php.net/manual/en/language.operators.comparison.php)
-- [Ohjeita päivämäärien käsittelyyn PHP:ssä](https://www.w3schools.com/php/php_date.asp)
+- DateTime-luokka PHP-dokumentaatiossa: https://www.php.net/manual/en/class.datetime.php
+- PHP:n Vertailuoperaattorit: https://www.php.net/manual/en/language.operators.comparison.php
+- PHP:n Spaceship-operaattori: https://www.php.net/manual/en/migration71.new-features.php
+- Aikaleimojen muunnos PHP:ssa: https://www.php.net/manual/en/function.strtotime.php

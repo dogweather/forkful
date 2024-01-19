@@ -1,7 +1,7 @@
 ---
-title:                "Jämförande av två datum"
-html_title:           "Elixir: Jämförande av två datum"
-simple_title:         "Jämförande av två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,25 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Jämföra två datum är en vanlig uppgift för många programmerare, särskilt inom datum- och tidsbehandling. Det kan användas för att kontrollera giltigheten av användarens inmatning, hantera schemaläggning eller sortera data i en databas. Det är en viktig del av många applikationer för att säkerställa korrekt och effektiv användning av tid.
+## Vad & Varför?
+Jämförelse av två datum är en teknik som används för att bestämma skillnaden mellan tidsintervaller. Det är viktigt för programmerare att utföra dessa jämförelser för viktiga funktioner som händelseplanering, tidsspårning och mer.
 
-## Så här gör du:
-```elixir
-date1 = ~D[2021-07-01] 
-date2 = ~D[2021-08-01]
+## Hur gör man:
+I Elixir kan du jämföra två datum med hjälp av `Date.compare/2` funktion.
+
+```Elixir
+date1 = ~D[2022-02-10]
+date2 = ~D[2022-02-20]
+
+str = Date.compare(date1, date2)
+
+IO.puts("Date Comparison: #{str}")
 ```
-```elixir 
-date1 <= date2 
-#true
+
+**Sample output:**
+
 ```
-Det är enkelt att jämföra två datum i Elixir genom att helt enkelt använda jämförelseoperatorer som <, >, <= eller >= på de två datumobjekten. Elixir har inbyggda funktioner för att skapa och hantera datum- och tidsobjekt, vilket gör det enkelt att utföra denna uppgift.
+Date Comparison: :lt
+```
 
-## Djupdykning:
-Att jämföra två datum är en vanlig uppgift över många programmeringsspråk, men Elixir har vissa unika egenskaper som underlättar denna uppgift. Elixir använder sig av Erlangs inbyggda modul för datum- och tidsbehandling, som bygger på den berömda kalendersystemet Gregorianska kalendern. Detta gör det enkelt för Elixir-utvecklare att hantera datum och tider med precision och korrekthet.
+Ovanstående kod jämför `date1` och `date2`. När `date1` är tidigare än `date2` returneras `:lt`, vilket betyder att `date1` är mindre än `date2`     
 
-Förutom att använda jämförelseoperatorer finns det också alternativa sätt att jämföra två datum i Elixir, såsom genom användning av funktionen `Date.compare/2` som returnerar en negativ, noll eller positiv siffra som motsvarar relationen mellan de två datumen. Det finns också andra tidsrelaterade funktioner som kan användas i kombination för att utföra komplexa jämförelser.
+## Djupdykning
+Historiskt sett har datumjämförelse varit en del av programmering sedan dess början. I Elixir introducerades `Date.compare/2` funktionen i version 1.3 som en del av den stadigt växande standardbiblioteket.
 
-## Se även:
-- Elixir date och tid-dokumentation: https://hexdocs.pm/elixir/DateTime.html
-- Elixir offentliga moduler för datum- och tidshantering: http://www.erlang.org/doc/man/calendar.html
+En alternativ metod för att jämföra datum är att omvandla dem till sekunder sedan Epoken (1970-01-01 00:00:00 UTC) och sedan jämföra dessa värden, men `Date.compare/2` är både enklare och mer läsbar.
+
+Inget förlorat i fråga om prestanda heller. Elixir's `Date.compare/2` är skriven i Erlang som gör datumjämförelser snabba och minneseffektiva.
+
+## Se även
+För mer information om datumjämförelser i Elixir, checka:
+- [Elixir School](https://elixirschool.com/en/lessons/basics/date_time) för mer om datum och tid i Elixir.
+- [Elixir Date docs](https://hexdocs.pm/elixir/Date.html#compare/2) för detaljerad dokumentation om `Date.compare/2`.

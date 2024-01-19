@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Elixir recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,37 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Joining the Dots: An Elixir Approach to String Concatenation 
+
 ## What & Why?
 
-Concatenating strings is the process of joining two or more strings end-to-end to form a new string. We do it to dynamically create sentences, content, or data.
+String concatenation is the act of connecting two or more strings. It's a key tool in a coder's kit, used to build complex strings from smaller parts, for output formatting, logging, building queries, and more.
 
-## How to:
+## How To:
 
-In Elixir, we concatenate strings with the `<>` operator. Check this out:
-
-```elixir
-name = "Charlie"
-greeting = "Hello, " <> name <> "!"
-IO.puts greeting
-```
-
-The output you'll see is:
+In Elixir, you use the `<>` operator for string concatenation. Seems super easy huh, let's dive into some examples:
 
 ```elixir
-"Hello, Charlie!"
+str1 = "Hello"
+str2 = " World"
+IO.puts str1 <> str2
 ```
 
-Easy, right? Strings are just glued together in the order you stake them.
+When you run this, it'll output: 
 
-## Deep Dive
+```elixir
+"Hello World"
+```
 
-In the past, Elixir employed concatenation method similar to other languages like JavaScript (`+` operator) or Python (`join` function). However, it now uses the `<>` operator, unique, and more explicit.
+Note: Unlike some other languages, Elixir won't implicitly convert non-string values. So if you try to concatenate a string with a non-string, you'll get a Type Error.
 
-Are there alternatives? Well, you could use `String.concat/2` or `String.concat/1` from the built-in String module. But the `<>` operator is faster owing to being a compiler directive.
+## Deep Dive 
 
-Why is this important? Concatenation might seem trivial, but it’s frequently used in creating dynamic content, merging pieces of text from different sources, etc. Since Elixir is an immutable language, every concatenation operation creates a new string. Knowing these details helps you manage memory better and write more efficient code.
+Back in the day, Erlang didn't treat strings as a basic type - they were just lists of integers representing characters' ASCII codes! Elixir, built on the Erlang VM, introduced the string type with nifty built-in functions like the `<>` operator. 
+
+Instead of `<>`, you could use `String.concat/2` or `String.append/2` for concatenation. 
+
+```elixir
+IO.puts String.concat("Hello", " World")
+```
+
+This will also output: 
+
+```elixir
+"Hello World"
+```
+
+Under the hood, when you use `<>` or String functions, Elixir uses the Erlang function `iolist_to_binary/1` to concatenate strings. This function treats strings as potentially large IO data chunks, so it's very efficient, especially for large strings or numerous concatenations.
 
 ## See Also
 
-- Official Elixir docs on the String module: [elixir-lang.org/getting-started/basic-types.html#strings](https://elixir-lang.org/getting-started/basic-types.html#strings)
-- Discussion on Elixir Forum: [string concatenation vs <> operator](https://elixirforum.com/t/string-concatenation-vs-operator/884)
+For more details on strings and their manipulation in Elixir, check out these gems:
+
+- [Elixir official docs on Strings](https://hexdocs.pm/elixir/String.html)
+- [Elixir School's guide to Basic Strings](https://elixirschool.com/en/lessons/basics/strings)
+- [Erlang's Efficiency Guide on IO Lists](http://erlang.org/doc/efficiency_guide/ioLists.html)

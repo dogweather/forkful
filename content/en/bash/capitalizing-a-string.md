@@ -12,47 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Capitalizing a string in Bash means converting all letters in a string to uppercase. Programmers may do this to normalize input data or for stylistic purposes in their code.
+Capitalizing a string in programming refers to converting the first letter of each word in a string to uppercase. Programmers usually do this to format text for readability, especially for titles, headings, or when presenting data to end-users.
 
 ## How to:
 
-To capitalize a string in Bash, we can use the built-in ```tr``` command along with the ```[:lower:]``` and ```[:upper:]``` character classes.
+The Bash commands to capitalize a string depend on string manipulation capabilities of the shell. In the latest version of Bash, you use string substitution. Here's how:
 
 ```Bash
-# Syntax:
-# echo [string] | tr [from_chars] [to_chars]
-
-echo "hello world" | tr [:lower:] [:upper:]
-
-# Output:
-HELLO WORLD
+string="hello, world"
+echo "${string^}"
 ```
 
-Another way to capitalize a string is by using the parameter expansion feature in Bash. We can use the ```^``` character to capitalize the first letter and ```^^``` to capitalize all letters.
+This would output:
 
 ```Bash
-# Syntax:
-# ${parameter^} or ${parameter^^}
-
-lowercase="hello world"
-echo "${lowercase^}"
-echo "${lowercase^^}"
-
-# Output:
-Hello world
-HELLO WORLD
+Hello, world
 ```
 
-## Deep Dive:
+To capitalize every word in a string:
 
-The ```tr``` command has been available in Unix and Unix-like systems since the 1970s and is commonly used for text manipulation. It stands for "translate" and can be used to convert one set of characters to another.
+```Bash
+echo "${string^^}"
+```
 
-Alternative ways to capitalize a string in Bash include using command substitution or using external programs like ```awk``` or ```sed```. However, the ```tr``` method is the most concise and efficient.
+Which would output:
 
-The Bash parameter expansion feature was added in version 4.0 and offers more flexibility in manipulating strings. Apart from capitalizing, we can also convert to lowercase or perform other modifications.
+```Bash
+HELLO, WORLD
+```
 
-## See Also:
+## Deep Dive
 
-- [Bash Documentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [tr command in Unix Wiki](https://en.wikipedia.org/wiki/Tr_(Unix))
-- [Bash Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
+Historically, string manipulation wasn't Bash's strong suit. Early versions didn't support it. However, with Bash 4.0, things changed. Features like string substitution were introduced, making it easier to manipulate strings.
+
+However, Bash isn't the only way. Other programming languages like Python, Java, JavaScript etc., have built-in methods to capitalize strings. They can often be more efficient, especially for complicated manipulations.
+
+As for implementation, when Bash capitalizes a string, it changes the ASCII value of the lowercase characters to their uppercase equivalents. Specifically, it subtracts 32 from the ASCII value of each lowercase letter, which gives the uppercase equivalent - this happens behind the scenes when you use the "^" or "^^" substitution operators.
+
+## See Also
+
+Here are a few resources for more in-depth information:
+
+1. [String Manipulation in Bash](https://www.baeldung.com/linux/bash-string-manipulations)
+2. [Bash String Operations](https://www.linuxjournal.com/content/bash-string-manipulations)
+
+For capitalizing strings in other programming languages:
+
+1. [Python: How to Capitalize a String?](https://www.geeksforgeeks.org/python-string-capitalize/)
+2. [JavaScript: Capitalizing Strings](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+3. [Java: String Manipulation](https://docs.oracle.com/javase/tutorial/java/data/strings.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Virheenkorjaustulostuksen tulostaminen"
-html_title:           "C: Virheenkorjaustulostuksen tulostaminen"
-simple_title:         "Virheenkorjaustulostuksen tulostaminen"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja miksi?
+# Tulostamalla debug-tietoja: Opas C-kieliselle ohjelmoijalle
 
-Debug-tulostaminen on tapa havainnollistaa ohjelman suoritusta tulosteiden avulla. Tämä auttaa ohjelmoijaa ymmärtämään, mitä ohjelma tekee kuhunkin kohtaan, ja mahdollisia virheitä, jotka voivat esiintyä. Se myös auttaa korjaamaan nämä virheet ja parantamaan koodin suorituskykyä.
+## Mitä ja Miksi?
+Debug-tuloste on ohjelman suorituksen aikana luotavaa tietoa, joka auttaa ymmärtämään ohjelman toiminnan paremmin. Ohjelmoijat tulostavat debug-tietoja havaitakseen ja korjatakseen ohjelman virheitä tehokkaammin.
 
-Miten:
-
-Debug-tulostamista varten, voimme käyttää ```C printf()```-funktiota, joka tulostaa halutun arvon tai tekstin konsoliin. Voimme myös käyttää ```C fprintf()```-funktiota, mikä antaa mahdollisuuden valita, minne tulostamme (esimerkiksi tiedostoon). 
-
-Seuraavassa esimerkissä käytämme ```C printf()```-funktiota tulostamaan merkkijonon ja kokonaisluvun :
+## Kuinka se tehdään:
+C:n printf-funktio on yksi yksinkertaisimmista tavoista tulostaa debug-tietoja. Alla on yksinkertainen esimerkki:
 
 ```C
 #include <stdio.h>
 
-int main()
-{
-    char *string = "Tämä on debug-tulostus";
-    int number = 5;
-
-    printf("%s\n", string);
-    printf("Luku: %d\n", number);
-
+int main() {
+    int i = 5;
+    printf("Debug: i:n arvo on %d\n", i);
     return 0;
 }
-
-```
-Tämän esimerkin output:
-
-```
-Tämä on debug-tulostus
-Luku: 5
 ```
 
-Syvempi sukellus:
+Ohjelman tuloste olisi:
 
-Debug-tulostamisella on pitkä historia ohjelmoinnissa. Ennen modernien kehitystyökalujen käyttöä, ohjelmoijien piti käyttää tulosteita tutkiessaan ohjelman suoritusta ja korjatessaan virheitä. Tänä päivänä on olemassa myös muita vaihtoehtoja debug-tulostamiselle, kuten käyttöliittymien ja debuggerien käyttö. 
+```
+Debug: i:n arvo on 5
+```
 
-Voit myös tutkia tarkemmin, miten ```C printf()```-funktio toimii, ja miten voit muotoilla tulostettavan tekstin, lisäämällä esimerkiksi muuttujien arvoja. 
+Tämä kertoo meille, että tässä kohdassa suoritusta, `i`-muuttujan arvo on 5.
 
-## Linkit:
+## Syvä sukellus
+Historiallisessa kontekstissa debug-tulosteen käyttö on ollut yleinen tapa ratkaista ohjelmien virheitä koko ohjelmoinnin historian ajan. Vaihtoehtoisesti voit käyttää debuggereitä, kuten GDB, ohjelmasi virheenkorjaukseen.
 
-- [C printf() Dokumentaatio](https://en.cppreference.com/w/c/io/fprintf)
-- [C debugging-opas](https://www.tutorialspoint.com/cprogramming/c_debugging.htm)
+C:n standardikirjasto tarjoaa monia funktioita debug-tulosteiden luomiseen. Kuten mainittu, yksi tavallisimmista on `printf`. Se on kuitenkin hidas ja voi aiheuttaa ongelmia monisäikeisissä ohjelmissa. 
+
+## Katso myös
+- C:n standardikirjaston dokumentaatio tulostusfunktioista (https://en.cppreference.com/w/c/io)
+- GDB:n dokumentaatio (https://sourceware.org/gdb/current/onlinedocs/gdb/)
+- Stack Overflow -keskustelu debug-tulosteen eduista ja haitoista (https://stackoverflow.com/questions/10999427/print-debug-statements-in-c)
+  
+Muista aina, että debug-tulosteen kriittinen käyttö auttaa sinua kehittämään puhtaampaa, tehokkaampaa ja virheetöntä koodia.

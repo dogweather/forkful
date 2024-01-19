@@ -1,6 +1,6 @@
 ---
 title:                "Concaténation de chaînes"
-html_title:           "Swift: Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
 simple_title:         "Concaténation de chaînes"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,38 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+---
+title: Concaténation des Chaînes de Caractères en Swift
 
-Lorsque vous programmez en Swift, vous pourriez avoir besoin de combiner plusieurs chaînes de caractères en une seule. C'est ce qu'on appelle la concatenation de chaînes. Les programmeurs utilisent cette technique pour créer des phrases dynamiques ou pour formater des données avant de les afficher.
+---
+
+## Qu'est-ce que c'est et pourquoi?
+
+La concaténation des chaînes est le processus d'assemblage de deux ou plusieurs chaînes pour former une seule. Les programmeurs le font pour manipuler des données textuelles et pour créer des messages dynamiques.
 
 ## Comment faire:
 
-Voici un exemple de code en Swift pour concaténer deux chaînes de caractères:
+Voici quelques exemples sur comment concaténer des chaînes en Swift:
 
 ```Swift
-let firstName = "Marie"
-let lastName = "Dupont"
+// Déclaration de deux chaînes
+var salutation = "Bonsoir, "
+var nom = "Stéphanie"
 
-let fullName = firstName + " " + lastName
+// Concaténation en utilisant l'opérateur +
+var message1 = salutation + nom
+print(message1)  // Affiche: "Bonsoir, Stéphanie"
 
-print(fullName) // "Marie Dupont"
+// Concaténation en utilisant la méthode append
+salutation.append(nom)
+print(salutation)  // Affiche: "Bonsoir, Stéphanie"
 ```
 
-Vous pouvez également utiliser des interpolations de chaînes pour concaténer des variables au sein d'une chaîne:
+## Approfondir
 
-```Swift
-let age = 32
-let message = "J'ai \(age) ans!"
+1. **Contexte Historique**: Swift, sorti pour la première fois en 2014, a amélioré la manière de travailler avec les chaînes de caractères, facilitant ainsi la concaténation.
+   
+2. **Alternatives**: Au lieu de l'opérateur `+` ou de la méthode `append`, vous pouvez utiliser l'interpolation de chaînes pour concaténer des chaînes. Voici un exemple: 
+    ```Swift
+    var nom = "Stéphanie"
+    var message2 = "Bonsoir, \(nom)"
+    print(message2)  // Affiche: "Bonsoir, Stéphanie"
+    ```  
+   
+3. **Détails de l'Implémentation**: La concaténation de chaînes en Swift crée une nouvelle chaîne. Les chaînes originales restent inchangées.[]
 
-print(message) // "J'ai 32 ans!"
-```
+## À Voir Aussi
 
-## Plongée en profondeur:
+1. [The Swift Programming Language (Swift 5.4): Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+2. [Apple's developer documentation: String](https://developer.apple.com/documentation/swift/string)
+3. [Working with Strings in Swift - A Comprehensive guide by Prograils](https://prograils.com/posts/working-with-strings-in-swift-comprehensive-guide)
 
-La concaténation de chaînes existe depuis les débuts de la programmation et est utilisée dans de nombreux langages de programmation. Cependant, Swift offre des fonctionnalités telles que les interpolations de chaînes qui la rendent plus efficace et pratique.
-
-En alternative à la concaténation, certains programmeurs préfèrent utiliser des formateurs de chaînes, tels que `String(format: )`, pour formater leurs données. Cela peut être utile dans certaines situations, mais la concaténation reste un moyen simple et efficace de combiner des chaînes de caractères.
-
-## Voir aussi:
-
-Pour en savoir plus sur la concaténation de chaînes en Swift, vous pouvez consulter la documentation officielle d'Apple sur les interpolations de chaînes [(Interpolations de chaînes en Swift)](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID277). Vous pouvez également trouver des exemples de code sur [cette page GitHub](https://gist.github.com/varunpawnesh/a2812d98b61f231088f132b72aa6fe22).
+<p></p>

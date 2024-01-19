@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "Bash: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Generere tilfeldige tall"
+html_title:           "Arduino: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,29 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Generering av tilfeldige tall er en vanlig oppgave for programmerere. Dette betyr rett og slett å lage et tall uten noen spesiell sammenheng eller mønster. Dette kan være nyttig for å skape variasjon i data, teste kodesnutter eller for spill og simuleringer.
+## Hva & Hvorfor?
 
-## Slik gjør du:
-For å generere et tilfeldig tall i Bash, kan du bruke kommandoen ```$RANDOM```. Dette vil gi deg et tall mellom 0 og 32767. For eksempel:
+Å generere tilfeldige tall er prosessen med å produsere en sekvens av tall som ikke kan forutsies på noen bedre måte enn ved ren tilfeldighet. Programmerere gjør dette for å sørge for unikalitet eller pseudotilfeldighet i ulike anvendelser, for eksempel i spill, simuleringer og kryptering.
 
-```Bash
-echo $RANDOM 
-# Output: 24988
-```
-Hvis du ønsker et annet tall mellom en spesifikk rekkevidde, for eksempel mellom 1 og 100, kan du bruke følgende kode:
+## Hvordan:
+
+Bash tilbyr en intern variabel `$RANDOM` for å generere tilfeldige tall. Her er noen enkle bruksområder:
 
 ```Bash
-echo $((RANDOM % 100 + 1))
-# Output: 56 (for eksempel)
+# Enkelt tilfeldig tall mellom 0 og 32767
+echo $RANDOM
 ```
 
-## Dypdykk:
-Generering av tilfeldige tall har vært et viktig konsept innenfor matematikk og informatikk i lang tid. En av de første metodene for å generere tilfeldige tall ble utviklet av den kjente matematikeren John von Neumann på 1940-tallet. I dag finnes det mange algoritmer og teknikker for å generere tilfeldige tall, og noen programmeringsspråk har dedikerte funksjoner for dette.
+Utskrift kan variere da tallet er tilfeldig, men det vil være et tall mellom 0 og 32767.
 
-Alternativer til å bruke ```$RANDOM``` i Bash inkluderer å bruke andre programmeringsspråk som har god støtte for tilfeldige tall, som for eksempel Python eller Java. Du kan også bruke eksterne verktøy som ```shuf``` for å sortere tilfeldige tall eller ```openssl``` for å generere kryptografisk sikre tilfeldige tall.
+For å begrense det tilfeldige tallet til et spesifikt område, bruk modulusoperatøren `%`.
 
-Generering av tilfeldige tall i Bash baserer seg på en algoritme som bruker tid og prosessnumre for å skape variasjon. Dette betyr at tallene ikke er helt tilfeldige, men bare tilfeldige nok for de fleste bruksområder. For mer sensitive applikasjoner bør du bruke kryptografiske metoder for å sikre tilfeldighet.
+```Bash
+# Tilfeldig tall mellom 0 og 99
+echo $((RANDOM%100))
+```
 
-## Se også:
-[How to generate random numbers in Bash](https://opensource.com/article/19/2/random-numbers-bash)
+## Dyp Dykk: 
+
+Generering av tilfeldige tall har en lang historie i databehandling, og mange metoder har blitt utviklet. `$RANDOM` i Bash, er faktisk et pseudotilfeldig tall, det vil si det er generert av en deterministisk prosess, men ser tilfeldig ut. 
+
+Det er også alternative metoder til `$RANDOM` for å generere tilfeldige tall i Bash, for eksempel ved hjelp av spesielle steder i systemet som `/dev/urandom` eller `/dev/random`. De benytter miljøstøy samlet fra enhetsdrivere og andre kilder for å produsere tilfeldige tall.
+
+```Bash
+# Generer et tilfeldig tall ved hjelp av /dev/urandom
+od -A n -t d -N 2 /dev/urandom | awk '{print $1}'
+```
+
+Det er viktig å merke seg at forskjellige metoder kan ha forskjellige egenskaper, både i forhold til ytelse og kvaliteten på tilfeldigheten. 
+
+## Se Også:
+
+For mer informasjon om generering av tilfeldige tall i Bash og alternativer til `$RANDOM`, sjekk ut følgende ressurser:
+
+- Bash Handbook: [https://github.com/denysdovhan/bash-handbook](https://github.com/denysdovhan/bash-handbook)
+- Artikkel på LinuxConfig.org om bruk av `/dev/random` og `/dev/urandom`: [https://linuxconfig.org//random-vs-urandom](https://linuxconfig.org//random-vs-urandom)

@@ -10,35 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Qu'est-ce que c'est & Pourquoi ?
 
-Envoyer une requête HTTP est une action essentielle pour les programmeurs. Cela leur permet d'établir une communication avec un serveur web pour récupérer des données ou effectuer des actions. Les requêtes HTTP sont utilisées pour créer des applications web dynamiques et interagir avec des API.
+Une requête HTTP est une action que les développeurs utilisent pour demander et récupérer des données d'un serveur web. Ces requêtes sont cruciales pour connecter vos applications/web à d'autres systèmes et obtenir ou envoyer des données.
 
-## Comment faire:
+## Comment faire :
 
-```
-Fish Shell est un outil puissant pour envoyer des requêtes HTTP. Voici comment vous pouvez l'utiliser:
+Maintenant, voyons comment faire une requête HTTP avec Fish Shell. Vous aurez besoin de l'outil `curl` pour cela.
 
-# Pour envoyer une requête GET simple:
-curl http://www.example.com
+```fish
+# Pour obtenir une ressource
+curl -X GET "http://monsite.com/api/resource"
 
-# Pour inclure des en-têtes avec la requête:
-curl -H "Content-Type: application/json" http://www.example.com
-
-# Pour envoyer une requête POST avec des données:
-curl -X POST -d '{"username":"John", "password":"12345"}' http://www.example.com/login
-
-# Pour afficher le code de statut de la réponse:
-curl -s -o /dev/null -w "%{http_code}" http://www.example.com
-
+# Pour envoyer (POST) des données 
+curl -X POST -d "param1=valeur1&param2=valeur2" "http://monsite.com/api/resource"
 ```
 
-## Plongée en profondeur:
+Dans l'exemple ci-dessus, `-X` spécifie la méthode HTTP à utiliser et `-d` spécifie les données à envoyer. Voici à quoi pourrait ressembler la sortie :
 
-Les requêtes HTTP ont été inventées en 1989 par Tim Berners-Lee, le fondateur du World Wide Web. Le protocole a évolué au fil du temps et est maintenant utilisé largement pour les échanges de données sur le web. Bien que curl soit l'outil standard pour envoyer des requêtes HTTP en ligne de commande, il existe également d'autres alternatives telles que wget ou httpie. Les programmeurs peuvent également implémenter leurs propres fonctions pour envoyer des requêtes HTTP en utilisant des bibliothèques telles que Requests ou cURL.
+```fish
+# Exemple de sortie pour un GET
+<!DOCTYPE html>...
+```
 
-## À voir également:
+## Plongeons plus profondément
 
-- [Documentation Fish Shell](https://fishshell.com/docs/current/cmds/curl.html)
-- [Tutorial Curl](https://curl.haxx.se/docs/httpscripting.html)
-- [Autres utilitaires pour envoyer des requêtes HTTP](https://www.quora.com/How-can-I-make-HTTP-requests-without-using-curl)
+Les requêtes HTTP sont au cœur d'Internet depuis les années 90. Avant `curl`, des outils comme `telnet` étaient utilisés pour faire des requêtes HTTP, mais ils étaient plus compliqués à utiliser.
+
+Il existe des alternatives à `curl`, comme `wget` ou des bibliothèques dans divers langages de programmation pour envoyer des requêtes HTTP. Cependant, `curl` reste un outil populaire et largement supporté.
+
+En termes de détails d'implémentation, Fish Shell ne fait que passer la commande à `curl`. Ce dernier fait tout le travail en coulisses pour envoyer la requête et récupérer la réponse.
+
+## Voir aussi:
+
+- [Documentation officielle de curl](https://curl.haxx.se/docs/manpage.html)
+- [Guide de HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Guide)
+- [Documentation de Fish Shell](https://fishshell.com/docs/current/index.html)

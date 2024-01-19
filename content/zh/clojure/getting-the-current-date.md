@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Clojure: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么以及为什么
+## 什么与为什么?
 
-获取当前日期是指在程序中获取当前的日期信息。程序员通常会使用当前日期来记录程序运行时间、显示用户注册日期或者产生随机数。这是一个简单但重要的功能，让我们来看看如何在Clojure中进行实现。
+获取当前日期是在程序中从系统中获取当前日期和时间的过程。程序员由此可以记录事件发生的时间，进行时间比较，或在指定时间后执行操作。
 
-# 如何：
+## 如何操作:
 
 ```Clojure
-(import java.util.Date)
+; 导入Java的date类
+(import 'java.util.Date)
 
-(defn get-current-date []
-  "获取当前日期"
-  (Date.))     ;; 使用Date构造函数来创建当前日期对象
-
-(def current-date (get-current-date)) 
-  ;; 调用函数来获取当前日期并将结果赋值给变量current-date 
-
-(println current-date)  
-  ;; 输出结果：#inst"2021-10-27T09:26:15.762-00:00"
+(println (Date.))
 ```
 
-# 深入了解
+示例输出:
 
-在早期的编程语言中，获取当前日期是一个相当复杂的过程，需要使用许多不同的函数和库来实现。但是，Clojure提供了一个简单的方法来获取当前日期，仅需一行代码即可。另外，除了使用Date构造函数，我们还可以使用Clojure的内置函数```(clojure.java-time/local-date)```来获取当前日期。此外，值得一提的是，Clojure中的日期对象也可以进行比较，这在一些特定的程序需求中非常有用。
+```Clojure
+; 输出以服务器的当前日期和时间
+Tue Mar 24 15:43:09 CST 2021
+```
+## 深入了解
 
-# 查看更多
+**历史背景:** 从计算机的早期开始，日期和时间就在计算中起着重要的作用。这在事件日志记录、调度程序操作和监控活动趋势等功能中具有重大意义。
 
-- [官方文档中的日期时间处理](https://clojure.org/guides/date_time)
-- [如何获取当前日期及其它日期操作的用法](https://wisdomjobs.com/e-university/clojure-tutorial-235/date-time-classes.html)
+**替代方案:** 除了上述例子中提到的 `java.util.Date` 类, Clojure 同样支持 `java.time` 类库，这是 Java 8 引入的一套更为现代和全面的时间日期库。此外，对于更复杂的日期时间操作，你还可以使用像 `clj-time` 这样的库。
+
+**实施细节:** 在 Clojure 中，你可以使用 Java 类的方式来获取日期和时间，然后使用各种内置函数进行操作。你也可以使用类库来扩展对日期和时间的操作。
+
+## 另请参阅
+
+- `java.util.Date` 类的详细用法请参考： [Java Date Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- `java.time` 类的详细用法请参考： [Java Time Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- `clj-time` 类库的使用说明请参考： [clj-time GitHub](https://github.com/clj-time/clj-time)

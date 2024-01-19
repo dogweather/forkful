@@ -1,7 +1,7 @@
 ---
-title:                "Concaténation de chaînes de caractères"
-html_title:           "C: Concaténation de chaînes de caractères"
-simple_title:         "Concaténation de chaînes de caractères"
+title:                "Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
+simple_title:         "Concaténation de chaînes"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi?
 
-La concaténation de chaînes est une technique couramment utilisée par les programmeurs pour combiner plusieurs chaînes de caractères en une seule. Cela peut être utile dans de nombreuses situations, comme la création d'un message d'erreur ou la manipulation de données.
+La concaténation de chaînes en C est l'union de deux ou plus de chaînes en une seule. Les programmeurs la font pour manipuler des données de texte, organiser du code et répondre à des besoins spécifiques du programme.
 
 ## Comment faire:
 
-Il existe plusieurs façons de concaténer des chaînes en C. Voici un exemple de code utilisant la fonction `strcat` qui prend deux chaînes en entrée et les concatène ensemble:
+Voici comment concaténer des chaînes en C:
 
 ```C
-char str1[10] = "Hello ";
-char str2[] = "World!";
-strcat(str1, str2);
-printf("%s", str1);
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s1[100] = "Programmer en ", s2[] = "C'est fun!";
+  
+    strcat(s1, s2); // Concaténer s1 et s2
+
+    printf("%s\n", s1); // Afficher le résultat
+
+    return 0;
+}
 ```
 
-Le résultat de ce code serait "Hello World!". Vous pouvez également concaténer des chaînes en utilisant l'opérateur `+` pour les pointeurs de chaîne, comme dans cet exemple:
+La sortie du programme sera:
+"Programmer en C'est fun!"
+
+## Plongeons un peu plus loin:
+
+1. Contexte historique: La fonction strcat() a toujours été au cœur de l'API des chaînes en C depuis K&R C (avant ANSI/ISO C).  
+
+2. Alternatives: On pourrait utiliser strncat() pour une concaténation sûre qui evite le dépassement de mémoire tampon.
 
 ```C
-char str1[10] = "Hello ";
-char str2[] = "World!";
-printf("%s", str1 + str2);
+strncat(s1, s2, sizeof(s1)-strlen(s1)-1);
 ```
 
-## Plongée en profondeur:
+3. Détails de mise en œuvre: strcat() parcourt la première chaîne jusqu'à '\0 ', puis commence à y copier la seconde chaîne. Cela nécessite un espace suffisant à la fin de la première chaîne.
 
-La concaténation de chaînes existe depuis longtemps dans la programmation. Dans les premiers langages comme Fortran et COBOL, cela se faisait en utilisant des fonctions spécifiques telles que `CONCAT` et `MERGE`. Les langages modernes apportent souvent des fonctionnalités plus avancées telles que les chaînes de caractères immuables et les opérateurs de surcharge pour la concaténation.
+## Pour aller plus loin:
 
-Dans certains cas, il peut être avantageux d'utiliser des alternatives à la concaténation de chaînes, comme l'utilisation de tableaux de caractères ou de listes chaînées pour stocker des données. Cela peut être plus efficace en termes de performances et de gestion de la mémoire.
-
-En termes d'implémentation, la fonction `strcat` utilisée dans l'exemple précédent nécessite que la chaîne de destination ait suffisamment d'espace pour accueillir la chaîne concaténée. Dans les cas où cela n'est pas garanti, il est préférable d'utiliser `strncat` qui prend également un troisième argument pour spécifier la longueur maximale de la chaîne résultante.
-
-## Voir aussi:
-
-- [Documentation C: Concaténation de chaînes de caractères](https://www.gnu.org/software/libc/manual/html_node/Concatenating-Strings.html)
-- [Différences entre les chaînes de caractères et les tableaux de caractères en C](https://hackr.io/blog/learn-c-programming-strings)
+- Documentation C: [http://tigcc.ticalc.org/doc/stdlib.html#string_h](http://tigcc.ticalc.org/doc/stdlib.html#string_h)
+- Discussion du dépassement de mémoire tampon: [https://fr.wikipedia.org/wiki/Dépassement_de_tampon](https://fr.wikipedia.org/wiki/Dépassement_de_tampon)
+- K&R C par Brian W. Kernighan et Dennis M. Ritchie: [https://www.amazon.fr/Programmation-langage-Brian-W-Kernighan/dp/2100073513](https://www.amazon.fr/Programmation-langage-Brian-W-Kernighan/dp/2100073513)

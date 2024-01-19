@@ -11,33 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Interpolating a string is the process of inserting variables or data into a specified string. This allows for a more dynamic and efficient way of assigning values to strings. Programmers use string interpolation to avoid concatenation, which can be cumbersome and less readable.
+String interpolation is the process of placing variable values into a string. We do this to easily concatenate string values without messing about with typical (often messy) syntax.
 
 ## How to:
+Let's see a quick example in Arduino C. Note - we're assuming you've got the latest Arduino software (1.8.13 at the time of writing). 
 
 ```Arduino
-// Basic example of string interpolation in Arduino
+String name = "Joe";
+int age = 25;
+String sentence = "Hello, my name is " + name + " and I am " + age + " years old.";
 
-int num = 10;
-String name = "John";
-
-Serial.println("Hello, my name is " + name + " and I am " + num + " years old.");
-// Output: Hello, my name is John and I am 10 years old.
+Serial.begin(9600);
+Serial.println(sentence); // "Hello, my name is Joe and I am 25 years old."
 ```
-
-In the above example, the values for `name` and `num` are inserted into the specified string using the `+` operator. This allows for a much cleaner and readable code compared to concatenation.
+Here, we've concatenated several strings and an integer.
 
 ## Deep Dive:
+Historically, string formatting was quite a task, often leading to unfathomable "printf" syntax in languages like C. Languages like Python made this easier with their %.format() placeholders. Arduino, which uses a subset of C/C++, chose a simple and intuitive approach. 
 
-String interpolation is not a new concept and has been used in programming languages such as Python and Ruby for a long time. In Arduino, it was first introduced in version 1.0.5 to simplify string manipulation. Prior to this, concatenation was used to achieve string interpolation which resulted in longer and more complicated code.
+As for alternatives, you could use the sprint() function or resort to manual concatenation. But remember, Arduino's string objects make things so much easier. 
 
-An alternative to string interpolation in Arduino is using the `String()` function, which allows for variables to be converted to strings. However, this method can be less efficient and more error-prone compared to string interpolation.
+Behind the scenes, when you use '+' to concatenate a string object with an integer or a float, the number is first converted to a string and then concatenated. Likewise, when two string objects are concatenated, new memory is allocated and the resultant string is placed in that new memory location. 
 
-In terms of implementation, string interpolation in Arduino is achieved using the `+` operator. Internally, this operator uses the `String()` function to convert the variables to strings and then combines them. This makes string interpolation a more efficient method compared to concatenation.
+## See Also: 
+For an in-depth view, read more about Arduino's String Class: https://www.arduino.cc/reference/control/en/language/variables/data-types/stringobject/
 
-## See Also:
-
-- [Arduino String Interpolation Documentation](https://www.arduino.cc/reference/en/language/variables/data-types/string/interpolation/)
-- [Arduino String Function Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-- [Blog post on String Interpolation in Arduino](https://blog.arduino.cc/2016/10/12/a-look-at-string-interpolation-in-arduino/)
+Curious about how string interpolation is done in other languages? Checkout: https://medium.com/@zachcaceres/string-interpolation-in-python-and-javascript-3c70fb4ffa88

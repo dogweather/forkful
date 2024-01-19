@@ -1,7 +1,7 @@
 ---
-title:                "乱数を生成する"
-html_title:           "TypeScript: 乱数を生成する"
-simple_title:         "乱数を生成する"
+title:                "ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が必要で、なぜ？
+# ランダムな数値の生成 - TypeScriptでレッツトライ！
 
-乱数を生成するとは何か、プログラマーがそれをする理由は何かを2-3文で説明します。
+## 何？なぜ？
 
-プログラマーは、ゲーム、暗号化、テスト、データのランダムなサンプリングなど、さまざまな用途のためにランダムな数値が必要になることがあります。乱数生成は、それらの用途を実現するために重要です。
+ランダムの数を生成するとは、予想不能な数を計算機が出力することです。プログラマがこれを行う理由は、サンプルデータの生成、セキュリティーシステム、ゲームの要素など、多岐にわたります。
 
-## 使い方：
+## やり方：
+
+以下はTypeScriptでどのようにランダムな数を生成するか示す例です：
 
 ```TypeScript
-// 0から1までのランダムな小数を生成する例
-const randomNumber = Math.random();
-console.log(randomNumber); // 例：0.546342
+function getRandomNumber(min:number, max:number):number {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 
-// 範囲を指定してランダムな整数を生成する例
-const randomInt = Math.floor(Math.random() * 10) + 1; // 1から10の範囲でランダムな整数を生成
-console.log(randomInt); // 例：8
+console.log(getRandomNumber(1, 100));
 ```
+上記のプログラムを実行すると、1から100までのランダムな数が出力されます。
 
-## 深堀り：
+## ディープダイブ：
 
-乱数生成は古くからコンピュータ科学の分野で重要な役割を果たしてきました。過去には様々なアルゴリズムが開発され、現在でも新しいアルゴリズムが研究されています。また、乱数生成の代替手段として、擬似乱数生成器がよく使われます。擬似乱数生成器は、乱数ではなく規則性のある数列を生成するものであり、完全にランダムではありませんが、多くの場合十分なものとして使用されています。
+ランダム数値の生成は古い問題で、乱数生成器の歴史は古代ローマのサイコロから始まりました。コンピュータが乱数を生成するためには複雑なアルゴリズムを使う必要があります。
 
-乱数生成は、プログラミング言語の標準ライブラリや、外部ライブラリを使用して実装することができます。言語やライブラリによって、異なるアルゴリズムや細かい設定が提供されている場合がありますので、使用する際にはドキュメンテーションを確認することが重要です。
+代替手段として、ハードウェアベースのランダム数ジェネレーターや、擬似乱数ジェネレーターなどがあります。「Math.random()」関数自体はC言語の「rand()」関数から派生したもので、現実的には予測不可能な結果を提供します。
 
-## 関連情報
+ただし、「Math.random()」が生成する数値は完全にランダムではなく、擬似ランダムな数値を生成します。完全にランダムな数値を得るには、ハードウェアレベルのランダムな発生源（例えば、放射性崩壊など）を利用する方法もありますが、これは一般的なアプリケーションではほとんど使用されません。
 
-- [Math.random() - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [擬似乱数生成器- Wikipedia](https://ja.wikipedia.org/wiki/%E6%93%AC%E4%BC%BC%E4%B9%B1%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8)
+## 参考資料：
+
+以下のリンクから、ランダム数の生成やその他の関連するトピックについて詳しく学べます：
+
+- [TypeScript公式ドキュメンテーション](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+- [Math.random()関数を使った乱数生成](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [JavaScriptにおける乱数生成の詳細](https://v8.dev/blog/math-random)
+- [乱数生成器の歴史](https://www.random.org/history/)

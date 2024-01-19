@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinjeargumenter"
-html_title:           "Javascript: Lesing av kommandolinjeargumenter"
-simple_title:         "Lesing av kommandolinjeargumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,38 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Lesing av kommandolinjeargumenter er en vanlig oppgave for programmere. Det innebærer å lese og behandle verdier som er angitt som parametere når et program blir kjørt fra en terminal eller kommandolinjegrensesnitt. Dette er nyttig for å gi ekstra fleksibilitet til et program, for eksempel ved å tillate brukere å angi ulike verdier for å tilpasse programmet til deres behov.
+## Hva og Hvorfor?
+Å lese kommandolinjeargumenter er prosessen med å ta inn ytterligere inndata fra brukeren når et program blir utført. Vi programmerere gjør dette for å gjøre programmene våre mer fleksible og tilpasningsdyktige til brukerens behov.
 
-## Hvordan:
-For å lese kommandolinjeargumenter i Javascript, kan du bruke ```process.argv```-objektet. Dette objektet inneholder en liste over argumenter gitt til programmet, der det første argumentet er banen til node-executable og det andre argumentet er banen til Javascript-filen som blir kjørt. Deretter følger eventuelle andre argumenter som blir angitt. For å få tilgang til disse argumentene, kan du bruke indeksering på samme måte som med et vanlig array. 
-
-Se et eksempel under for å lese og skrive ut kommandolinjeargumenter:
+##Slik gjør du det:
+Å bruke Node.js sin global `process.argv` er en vanlig metode til å lese kommandolinjeargumenter. Eksempel på kode og utskrift er vist under:
 
 ```Javascript
-// Les og skriv ut første argument
-console.log("Første argument: " + process.argv[2]);
+// myScript.js
+console.log(process.argv)
 
-// Les og skriv ut andre argument
-console.log("Andre argument: " + process.argv[3]);
 ```
 
-Kjøre programmet med følgende kommando vil gi følgende output:
+For å kjøre dette, skriv inn `node myScript.js arg1 arg2` i kommandolinjen. 
+
+Utskriften vil bli:
 
 ```Javascript
-$ node arguments.js argument1 argument2
-Første argument: argument1
-Andre argument: argument2
+[
+  '/path/to/node',
+  '/path/to/myScript.js',
+  'arg1',
+  'arg2'
+]
 ```
+## Dyp Dykk
+For det første, det å lese kommandolinjeargumenter har en lang historie som strekker seg tilbake til de tidligste dagene av programmering. Før grafiske brukergrensesnitt, var kommandolinjeargumenter hovedmåten programmer mottok inndata på.
 
-## Dypdykk:
-Lesing av kommandolinjeargumenter er en gammel og velkjent oppgave i programmering. I tidligere dager var det vanlig å måtte skrive mye boilerplate-kode for å lese argumenter og gjøre noe nyttig med dem. I nyere versjoner av Javascript og andre programmeringsspråk, har dette blitt forenklet ved hjelp av dedikerte funksjoner og objekter som ```process.argv```.
+Alternativt kan man også bruke tredjeparts integrerte biblioteker som 'yargs' eller 'commander' for å forenkle og strukturere kommandolinje parsing.
 
-Det finnes ulike alternativer for å lese og behandle kommandolinjeargumenter, som for eksempel pakken yargs. Dette kan være nyttig for mer komplekse applikasjoner som krever mer avansert håndtering av argumenter.
+Når det kommer til implementeringsdetaljer, er `process.argv` en array i globalt omfang. Den inneholder kommandolinje argumenter som ble gitt til Node.js prosessen. `process.argv[0]` er alltid plasseringen til Node.js, og `process.argv[1]` er alltid plasseringen til den kjørte filen. Derfor starter våre egne argumenter på `process.argv[2]`.
 
-Det kan også være verdt å merke seg at kommandolinjeargumenter kan også leses og prosesseres ved hjelp av et brukergrensesnitt, som for eksempel en grafisk brukergrensesnitt eller webgrensesnitt. Dette kan være mer tilgjengelig for mindre erfarne brukere som ikke er vant til å bruke kommandolinjen.
+## Se også
+For mer informasjon, se følgende ressurser:
 
-## Se også:
-- [Node.js dokumentasjon om process.argv](https://nodejs.org/api/process.html#process_process_argv)
-- [yargs pakken](https://www.npmjs.com/package/yargs)
-- [Alternativer for brukergrensesnitt for å lese og behandle kommandolinjeargumenter](https://www.npmjs.com/search?q=command+line+interface)
+- [Node.js dokumentasjon](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+
+- [yargs - Node.js argument parsert](https://github.com/yargs/yargs)
+
+- [commander - Node.js kommandolinje grensesnitt](https://github.com/tj/commander.js)

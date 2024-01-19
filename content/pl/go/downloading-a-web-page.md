@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "Go: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Go"
 category:             "Go"
@@ -12,39 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Pobieranie strony internetowej to proces ściągania kodu źródłowego strony, który jest interpretowany i wyświetlany przez przeglądarkę internetową. Programiści mogą to robić w celu analizowania struktury strony lub wykorzystania jej treści w swoim kodzie.
+Pobieranie strony internetowej polega na zapisaniu jej zawartości lokalnie na dysku twardym. Programiści robią to, aby analizować strukturę strony, pobierać dane (web scraping) lub tworzyć kopie zapasowe stron.
 
-## Jak:
-
-Pobieranie strony internetowej w Go jest bardzo proste dzięki zastosowaniu pakietu "net/http". Wystarczy wykorzystać funkcję "Get" i przekazać jej adres URL strony, którą chcemy pobrać.
+## Jak to zrobić:
 
 ```Go
-resp, err := http.Get("https://www.example.com")
-if err != nil {
-  // obsłuż błąd
-}
-defer resp.Body.Close()
+package main
 
-body, err := ioutil.ReadAll(resp.Body)
-if err != nil {
-  // obsłuż błąd
-}
+import (
+	"io"
+	"net/http"
+	"os"
+)
 
-fmt.Println(string(body))
+func main() {
+	resp, err := http.Get("http://example.com")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	file, err := os.Create("example.html")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	_, err = io.Copy(file, resp.Body)
+	if err != nil {
+		panic(err)
+	}
+}
 ```
 
-Przykładowe wyjście: ```<!doctype html> <html> <head> <title>Example Domain</title> [...]
+Uruchamiając powyższy kod, pobierzemy zawartość strony `http://example.com` i zapiszemy ją do pliku `example.html` na naszym dysku twardym.
 
-## Głębszy zanurzenie:
+## Na głębsze wody
 
-Pobieranie stron internetowych jest procesem, który jest wykorzystywany od lat przez programistów. Dawniej używano do tego celu protokołu FTP lub specjalnych programów do pobierania stron, jednak teraz wiele języków programowania (w tym Go) oferuje wbudowane funkcje do tego celu.
+Początki pobierania stron internetowych sięgają czasów, gdy internet był jeszcze w powijakach - to właśnie wtedy zaczęto tworzyć pierwsze web scrapery. Alternatywą dla powyższego rozwiązania jest użycie pakietu `goquery`, który umożliwia nie tylko pobranie strony, ale także wygodne przeszukiwanie jej zawartości. Szczegółowość implementacji pobierania stron internetowych może się znacznie różnić - od prostych skryptów do złożonych systemów z możliwością omijania zabezpieczeń i obsługą różnych formatów stron.
 
-Alternatywnym sposobem na pobieranie stron internetowych w Go jest użycie pakietu "net/url" oraz funkcji "Parse" do przetwarzania adresu URL strony na obiekt URL.
+## Zobacz też
 
-Implementacyjnie, pobieranie strony internetowej w Go wykorzystuje protokół HTTP oraz standardowe funkcje GET i POST. Więcej informacji na temat implementacji można znaleźć w dokumentacji języka Go.
+[`http.Get`](https://golang.org/pkg/net/http/#Client.Get) - Dokumentacja funkcji `http.Get` z pakietu `http`.
 
-## Zobacz też:
+[`io.Copy`](https://golang.org/pkg/io/#Copy) - Dokumentacja funkcji `io.Copy` z pakietu `io`.
 
-- Dokumentacja pakietu "net/http": https://golang.org/pkg/net/http/
-- Dokumentacja pakietu "net/url": https://golang.org/pkg/net/url/
-- Przykładowe kody pobierania stron internetowych w Go: https://github.com/topics/go-web-scraping
+[`os.Create`](https://golang.org/pkg/os/#Create) - Dokumentacja funkcji `os.Create` z pakietu `os`.
+
+[`goquery`](https://github.com/PuerkitoBio/goquery) - Pakiet `goquery` umożliwiający wygodne przeszukiwanie zawartości stron.

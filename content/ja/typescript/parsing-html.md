@@ -1,7 +1,7 @@
 ---
-title:                "HTMLを解析する"
-html_title:           "TypeScript: HTMLを解析する"
-simple_title:         "HTMLを解析する"
+title:                "HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,46 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をしているのか？
-HTMLパースとは、HTMLコードを解析してウェブページを構築することです。プログラマーたちは、HTMLをパースすることで、リッチなウェブ体験を提供することができます。
+## 何となぜ？ 
+HTMLパースとは、HTML文書を解析し、意味を抽出するプロセスです。開発者がこれを行う主な理由は、ウェブページから特定の情報を取得し、そのデータをさまざまな目的（スクレイピング、ウェブテスト、サイトの改善など）に使用可能にするためです。
 
-## 方法：
-TypeScriptを使用してHTMLをパースする方法を示します。以下のコードブロックを参考にしてください。
+## やり方：
+以下に簡単なTypeScriptによるHTML解析の例を示します。
 
 ```TypeScript
-// HTMLパースのための基本的な関数
-function parseHTML(html: string): HTMLElement {
-  let div = document.createElement('div');
-  div.innerHTML = html;
-  return div.firstChild;
-}
+import jsdom from 'jsdom';
 
-// HTMLコードのエスケープ
-function escapeHTML(html: string): string {
-  return html.replace(/[<>&"]/g, function(tag) {
-    return {
-      '<': '&lt;',
-      '>': '&gt;',
-      '&': '&amp;',
-      '"': '&quot;'
-    }[tag] || tag;
-  });
-}
+const { JSDOM } = jsdom;
 
-// 実際のHTMLパースの例
-let html = '<h1>Welcome to my website!</h1>';
-let element = parseHTML(html);
-console.log(element.innerHTML);
+const dom = new JSDOM('<!DOCTYPE html><html><body>Hello world</body></html>');
+
+console.log(dom.window.document.querySelector("body").textContent); // "Hello world"
 ```
 
-出力：
-```TypeScript
-Welcome to my website!
-```
+この短いプログラムはHTML文書をパースし、bodyタグの中身を表示します。
 
-## 詳細を掘り下げる
-HTMLパースは、1993年に発明されたHTMLの初期バージョンから存在しています。現在では、JavaScriptのライブラリやフレームワークを使用してもHTMLをパースすることができます。ただし、TypeScriptを使用することで型付けやエラーハンドリングを行うことができ、より安全にHTMLをパースすることができます。
+## 深く掘り下げる
+HTMLのパースはウェブ開発の中心的な部分で、その歴史はウェブ自体とほぼ同じです。古いテクニックは正規表現を使用してHTMLを解析することでしたが、これは完全に機能するための多くのエッジケースと落とし穴があったため、現在はあまり使われていません。
+現代のアプローチでは、DOMベースのパーサー（上記の例で使用したJSDOMなど）やHTMLパーサライブラリ（Beautiful SoupやPuppeteerなど）が一般的です。
 
-## 関連情報
-- [TypeScript公式ドキュメント](https://www.typescriptlang.org/docs/)
-- [TypeScriptでHTMLをパースする方法](https://dev.to/cordis/how-to-parse-html-in-typescript-24e)
+## 参考資料:
+- [JSDOM](https://github.com/jsdom/jsdom)：Node.jsのJavaScriptのためのDOMの実装
+- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)：HTMLとXMLファイルを解析するためのPythonライブラリ
+- [Puppeteer](https://github.com/GoogleChrome/puppeteer)：無頭ChromeまたはChromiumブラウザの高水準API

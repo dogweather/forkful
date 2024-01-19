@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
-html_title:           "PowerShell: Überprüfung, ob ein Verzeichnis existiert"
-simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
+title:                "Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "C++: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -11,20 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Bestandteil der Programmierung mit PowerShell. Es ermöglicht uns, zu prüfen, ob ein bestimmtes Verzeichnis auf unserer Festplatte vorhanden ist und gegebenenfalls darauf basierend unsere Skripte anzupassen.
 
-## Wie funktioniert es?
-Um zu überprüfen, ob ein Verzeichnis existiert, müssen wir lediglich das Cmdlet `Test-Path` verwenden. Ein Beispiel dafür sieht folgendermaßen aus:
+Das Überprüfen, ob ein Verzeichnis existiert, ist ein Prozess, bei dem festgestellt wird, ob ein spezifisches Datei- oder Verzeichnispfad vorhanden ist oder nicht. Programmierer tun dies, um Fehler zu vermeiden, die auftreten können, wenn ein nicht existierendes Verzeichnis verwendet wird.
+
+## So Geht's:
+
+Verwende das Cmdlet 'Test-Path' in PowerShell, um zu überprüfen, ob ein Verzeichnis vorhanden ist. Übergeben Sie den Pfad des zu überprüfenden Verzeichnisses als Parameter. Hier ist ein einfaches Beispiel:
 
 ```PowerShell
-Test-Path C:\Users\Username\Documents
+$Pfad = 'C:\BeispielPfad'
+if (Test-Path $Pfad)
+{
+    Write-Host "Verzeichnis existiert."
+}
+else
+{
+    Write-Host "Verzeichnis existiert nicht."
+}
 ```
+Wenn das Verzeichnis existiert, gibt das Skript "Verzeichnis existiert." aus. Ansonsten "Verzeichnis existiert nicht."
 
-Wenn das Verzeichnis existiert, gibt PowerShell `True` zurück. Ansonsten wird `False` zurückgegeben.
+## Vertiefter Einblick
 
-## Tiefgehende Einblicke
-Das Überprüfen von Verzeichnissen existiert nicht erst seit PowerShell. Schon frühere Skriptsprachen, wie zum Beispiel Bash, boten ähnliche Funktionen an. Alternativ zu `Test-Path` gibt es auch das Cmdlet `Get-ChildItem`, welches ebenfalls verwendet werden kann, um Verzeichnisse zu prüfen.
+Historisch hat PowerShell immer das Cmdlet 'Test-Path' zur Überprüfung eines Verzeichnisses verwendet. Es ist effizient und verlässlich.
 
-## Siehe auch
-- [Microsoft Dokumentation zu Test-Path](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.management/test-path?view=powershell-7)
-- [Get-ChildItem Cmdlet Dokumentation](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7)
+In PowerShell können Sie aber auch try-catch Blöcke verwenden, indem Sie versuchen, auf das Verzeichnis zuzugreifen und Fehler abzufangen. Dieser Ansatz ist jedoch weniger effizient als die Verwendung von 'Test-Path'.
+
+Darüber hinaus implementiert Test-Path eine Überprüfung anhand von Wildcards. Also, wenn Sie etwas wie 'Test-Path C:\Beispiel*' verwenden, gibt er true zurück, wenn irgendetwas mit 'Beispiel' beginnt und existiert.
+  
+## Siehe Auch
+
+Test-Path Cmdlet: https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1
+
+PowerShell Verzeichnisse und Dateien: http://www.itnator.net/programmieren/windows-powershell-verzeichnisse-und-dateien-verwalten/ 
+
+PowerShell Fehlerbehandlung: https://www.it-administrator.de/themen/sicherheit/fachartikel/282906.html
+
+Unterschiedliche Wege, Verzeichnisse zu überprüfen: https://stackoverflow.com/questions/29221072/different-ways-to-check-whether-a-directory-exists-using-powershell

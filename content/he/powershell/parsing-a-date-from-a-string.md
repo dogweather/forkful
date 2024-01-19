@@ -1,7 +1,7 @@
 ---
-title:                "פירוק תאריך מתוך מחרוזת"
-html_title:           "PowerShell: פירוק תאריך מתוך מחרוזת"
-simple_title:         "פירוק תאריך מתוך מחרוזת"
+title:                "פענוח תאריך ממחרוזת"
+html_title:           "Bash: פענוח תאריך ממחרוזת"
+simple_title:         "פענוח תאריך ממחרוזת"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,25 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה? 
-פריקת תאריך מתוך מחרוזת היא תהליך שבו אנו ממירים תאריך שמוצג כמחרוזת לתאריך בפורמט מובנה. תהליך זה נחוץ כאשר אנו עובדים עם תאריכים בתוך קוד כדי להתאים אותם למבנה קבוע ולבצע מניפולציות נוספות.
+## מה ולמה?
 
-## איך ל: 
-תוכלו להשתמש בקוד PowerShell הבא כדי להציג תאריך מתוך מחרוזת בפורמט מובנה:
+עיבוד תאריך ממחרוזת הוא פעולה שבה משתמשים בקוד להמיר מחרוזת כלשהי אשר מתארת תאריך, למשתנה מסוג תאריך. השימוש בפעולה זו מוצדק כאשר נתוני תאריך מגיעים בפורמטים שונים ואנו רוצים להימנע מבעיות תאימות.
+
+## איך:
+
+להלן דוגמאות לקודים ב-PowerShell:
 
 ```PowerShell
-$date = Get-Date "11/12/2021"
-$date.ToShortDateString()
+# פורמט YYYY/MM/DD
+$DateString = '2022/01/01'
+$DateObject = [DateTime]::ParseExact($DateString, 'yyyy/MM/dd', $null)
+$DateObject
 ```
 
-תוצאה: 12/11/2021
+דוגמה לפלט:
+```
+Saturday, January 01, 2022 12:00:00 AM
+```
 
-בדוגמה זו, אנו משתמשים בפקודת `Get-Date` כדי ליצור את התאריך הנוכחי ולאחר מכן משתמשים בפקודה `ToShortDateString` כדי להציג את התאריך בפורמט המובנה.
+```PowerShell
+# פורמט DD-MM-YYYY 
+$DateString = '01-01-2022'
+$DateObject = [DateTime]::ParseExact($DateString,'dd-MM-yyyy',$null)
+$DateObject
+```
 
-## ביצוע עמוק: 
-פריקת תאריך מתוך מחרוזת היא תהליך שימושי ונפוץ בעולם התכנות. בעבר, פריקת תאריך בפורמט מובנה היתה קשה יותר ודרשה שימוש בכלים נפרדים כגון Regular Expressions. אולם בזכות פקודות כמו `Get-Date` ו- `ParseExact` הפעולה נהיה יותר פשוטה ויעילה. כמו כן, פריקת תאריך בפורמט מובנה מאפשרת לנו להתאים תאריכים מסוימים לפורמט קבוע ולבצע מניפולציות נוספות כגון חישוב הפרש זמן בין תאריכים.
+דוגמה לפלט:
+```
+Saturday, January 01, 2022 12:00:00 AM
+```
 
-## ראה גם: 
-כאשר אתם מבינים כיצד לפרוק תאריך מתוך מחרוזת בפורמט מובנה, תוכלו להשתמש בפקודות נוספות כדי לנהל את התאריכים בקוד שלכם. למשל, הפקודה `New-TimeSpan` תאפשר לכם לחשב את ההפרש בין תאריכים, והפקודה `Get-Date` ניתנת להתאמה אישית כדי לייצר תאריכים מותאמים עבור משימות מסוימות.
+## עומק תוכן:
 
-אתר זה מציע עוד פרטים על פריקת תאריך מתוך מחרוזת ב-PowerShell: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1
+פעמים רבות, מידע מגיע בתצורות שונות ולא מתאים. במהלך השנים, התקנים נהיו יותר אחידים, אך לפעמים משתמשים עדיין ישלחו את התאריך במחרוזת שבהלם להמיר.
+
+חלופות ל-PowerShell כוללות שפות אחרות כמו Python, Java, או C#, שכולם מציעים המרת מחרוזת לתאריך, אך בשיטות ותחבירים שונים.
+
+ההמרה ב-PowerShell מתבצעת באמצעות שיטת ה-ParseExact של האובייקט DateTime. אנו מספקים את המחרוזת, הפורמט של המחרוזת, והמשתנה שמכיל את המידע.
+
+## ראו גם:
+
+- התיעוד הרשמי של Microsoft ל-[DateTime.ParseExact](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact)
+- כמה דוגמאות של [מה ניתן למר עם ParseExact](https://www.dotnetperls.com/datetime-parseexact) על dotnetperls.com.

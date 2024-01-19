@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizzazione di una stringa"
-html_title:           "Lua: Capitalizzazione di una stringa"
-simple_title:         "Capitalizzazione di una stringa"
+title:                "Capitalizzare una stringa"
+html_title:           "Lua: Capitalizzare una stringa"
+simple_title:         "Capitalizzare una stringa"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,35 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Che cosa & Perché?
+## Che Cos'è e Perché?
 
-Il "capitalizing" di una stringa , è un tipo di stringa che ha la prima lettera di ogni parola in maiuscolo. I programmatori spesso utilizzano questa formattazione per rendere più leggibili e organizzate le stringhe di testo, in particolare nelle interfacce utente e nei documenti di testo.
+Capitalizzare una stringa significa trasformare la prima lettera di una stringa o di ogni parola in maiuscolo. I programmatori lo fanno per questioni di leggibilità e formattazione.
 
-# Come fare:
+## Come Fare:
+
+Ecco un esempio semplice su come capitalizzare una stringa in Lua:
 
 ```Lua
--- Esempio di capitalizing di una stringa
-
-stringa = "questa è una stringa di prova"
-print(string.upper(stringa))
--- Output: "QUESTA È UNA STRINGA DI PROVA"
-
--- Esempio di capitalizing di una stringa con l'uso della funzione capitalize()
-stringa = "prova con capitalize()"
-print(string.capitalize(stringa))
--- Output: "Prova con capitalize()"
+stringa = 'ciao mondo'
+stringa = stringa:gsub("(%l)(%w*)", function(a,b) return a:upper()..b end)
+print(stringa)
 ```
 
-# Approfondimento:
+Questo script ti stampa:
 
-Il concetto di capitalizing deriva dal termine "capitalize" che significa mettere in maiuscolo la prima lettera di una parola. Questo tipo di formattazione è spesso utilizzata nelle lingue occidentali e deriva dalle convenzioni tipografiche nelle quali le lettere maiuscole sono utilizzate all'inizio delle frasi e nei nomi propri.
+```Lua
+'Ciao Mondo'
+```
 
-Un'alternativa all'utilizzo della funzione capitalize() è quella di utilizzare la funzione upper(), che mette in maiuscolo l'intera stringa. Inoltre, è possibile creare una funzione personalizzata per il capitalizing che permetta di specificare quali lettere mettere in maiuscolo e quali lasciare in minuscolo.
+Ecco un altro esempio su come capitalizzare solo la prima lettera di una stringa:
 
-Per quanto riguarda l'implementazione, la funzione capitalize() utilizza gli standard ASCII per determinare se una lettera è maiuscola o minuscola. Inoltre, questa funzione è case-sensitive, quindi è importante fare attenzione al tipo di lettere presenti nella stringa.
+```Lua
+stringa = 'ciao mondo'
+stringa = stringa:sub(1,1):upper() .. stringa:sub(2)
+print(stringa)
+```
 
-# Vedi anche:
+Il risultato sarà:
 
-- [Funzione string.capitalize()](https://www.lua.org/pil/20.2.html)
-- [Funzione string.upper()](https://www.lua.org/pil/20.2.html)
-- [Codice sorgente di Lua per approfondimenti](https://www.lua.org/source/5.3/)
+```Lua
+'Ciao mondo'
+```
+
+## Approfondimento
+
+Una delle bellezze di Lua è che non esiste un "metodo ufficiale" per capitalizzare una stringa, forse perché questa operazione non è così comune nei programmi reali. Invece, tutto ciò che devi fare è manipolare le stringhe usando le funzioni di base di Lua.
+
+Alternative? Ce ne sono molte. Con la funzione gsub, puoi fare pattern matching e operare su ogni parola separatamente come nel primo esempio. Il secondo esempio mostra come capitalizzare solo la prima lettera di una stringa. Esistono anche librerie di terze parti con funzioni di utilità stringa, se ne hai bisogno di più.
+
+Che cosa succede sotto il cofano? Principalmente, queste operazioni si basano sulla tabella ASCII. Quando dici `a:upper()`, Lua cerca il corrispondente carattere maiuscolo nella tabella ASCII e lo sostituisce.
+
+## Vedi Anche
+
+Per ulteriori informazioni sulle stringhe e sulle funzioni delle stringhe in Lua, dai un'occhiata qui:
+
+1. Programmazione in Lua: Stringhe (https://www.lua.org/pil/20.html)
+2. Le funzioni della libreria stringa Lua (https://www.tutorialspoint.com/lua/lua_strings.htm)
+3. Documentazione ufficiale Lua (https://www.lua.org/manual/5.4/manual.html#6.4)

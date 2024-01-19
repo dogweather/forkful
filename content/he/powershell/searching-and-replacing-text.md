@@ -1,6 +1,6 @@
 ---
 title:                "חיפוש והחלפת טקסט"
-html_title:           "PowerShell: חיפוש והחלפת טקסט"
+html_title:           "Elm: חיפוש והחלפת טקסט"
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -12,31 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## מה ולמה?
 
-חיפוש והחלפת טקסט היא תהליך שבו מחפשים למחרוזת טקסט ספציפית ומחליפים אותה בתוכן אחר. פעולה זו חשובה למתכנתים מכיוון שהיא מאפשרת להתאים טקסטים לצרכים מסוימים או לתקן באגים בקוד.
+חיפוש והחלפת טקסט הוא לקחת מחרוזת טקסט מסוים ולהחליף אותה במחרוזת אחרת. זה מאד שימושי למתכנתים, שכן הם לעיתים קרובות צריכים לשנות את הקוד על ידי שינויים קטנים ברחבי הקוד.
 
-## איך לעשות?
+## כיצד לעשות:
 
-תחת תחום זה יש לתת דוגמאות קוד ותוצאות בפורמט ```PowerShell...``` 
-קופסאות.
-
-למשל, כדי לחפש ולהחליף סטרינג בקובץ מסוים יש להשתמש בפקודות הבאות:
+ב-PowerShell, אנו משתמשים בפקודה `-replace`, כאשר המשתנה הראשון הוא הטקסט שאנחנו רוצים למצוא, והמשתנה השני הוא מה שאנו רוצים להחליף בו. 
+תראו את הדוגמה להלן:
 
 ```PowerShell
-Get-Content -Path "path/to/file.txt" | ForEach-Object {$_ -replace "מחרוזת לחיפוש", "מחרוזת להחלפה"} | Set-Content -Path "path/to/file.txt"
+$data = 'שלום, אני גר בתל אביב.'
+$newdata = $data -replace 'תל אביב', 'הרצליה'
+$newdata
 ```
 
-פקודות אלו מאפשרות לנו לקרוא את קובץ הטקסט, לעבור על כל שורה בו ולבצע החלפה של מחרוזות מסוימות. כמו כן, אנו משתמשים בפקודת "Set-Content" כדי לשמור את השינויים בקובץ.
+תוצאת הקוד הזה תהיה:
+```
+שלום, אני גר בהרצליה.
+```
 
-## חפש עמוק
+## צלילה עמוקה
 
-בתחום זה ניתן ליצור מספר שיטות לחיפוש והחלפה טקסטואליים בסביבת PowerShell. ניתן להשתמש גם בתוכנות חיצוניות לשם יעילות וקריאות יותר.
+הוספת האפשרות לחליף טקסט בשורת פקודה הייתה שדרוג חשוב בעולם הפקודות. כלול עם שחרור PowerShell 2.0, זה החליף את החשיבות הבלתי נמנעת של פיתוח אסטרטגיה מורכבת של סקריפטים כדי להציג באופן מלאכותי את האפשרות הזו.
 
-ניתן למצוא את הפקודות החיוניות בכתב העת "PowerShell Magazine" או באתר הרשמי של PowerShell.
+ישנם חלופות לפקודה `-replace`, כמו `String.Replace()` ו `Regex.Replace()`, אך `-replace` נותן לך יותר גמישות עם שימוש קל יותר.
+
+סידור התווים הספיציפי בפרמטרים חיוני לשימוש נכון בפקודה `-replace`. אם תחליף ביניהם, לא תקבל את התוצאה שאתה מחפש.
 
 ## ראה גם
 
-למידע נוסף ניתן לבקר באתר הרשמי של Microsoft ולהתנסות בפעולת החיפוש והחלפה בסביבת PowerShell.
-
-* [Microsoft חיפוש והחלפת טקסט עם שימוש ב-PowerShell] (https://docs.microsoft.com/en-us/powershell/scripting/samples/searching-and-replacing-text-with-windows-powershell)
-* [כתבי העת "PowerShell Magazine"] (https://powershellmagazine.com/)
-* [האתר הרשמי של PowerShell] (https://docs.microsoft.com/en-us/powershell/)
+1. [Strings](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
+2. [Replace Operator](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#replace-operator)
+3. [Regex.Replace Method](https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)

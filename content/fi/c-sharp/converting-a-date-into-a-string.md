@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
-html_title:           "C#: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -12,31 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mikä & Miksi?
 
-Päivämäärän muuntaminen merkkijonoksi tarkoittaa päivämäärän esittämistä lukijaystävällisessä muodossa, kuten "12. maaliskuuta 2021", sen sijaan että se olisi esimerkiksi numeroina. Ohjelmoijat tekevät tämän helpottaakseen päivämäärien käyttöä ja ymmärtämistä ohjelmoinnissa.
+Päivämäärän muuttaminen merkkijonoksi on prosessi, jossa DateTime-objekti tai vastaava muunnetaan inhimillisesti luettavaksi tekstiksi. Tätä tehdään, jotta päivämäärätiedot voidaan esittää käyttäjille ymmärrettävässä muodossa tai tallentaa muotoon, joka on yhteensopiva ei-aikasarjatietojen kanssa.
 
-## Miten:
-
-Koodi esimerkkiä seuraa tulostus ```C# ... ``` koodipalikoilla.
+## Näin se tehdään:
 
 ```C#
-DateTime date = new DateTime(2021, 3, 12);
-// Convert date into a string
-string dateString = date.ToString();
-Console.WriteLine(dateString);
-// Output: "12.3.2021"
-// Change date format
-dateString = date.ToString("dd/MM/yy");
-Console.WriteLine(dateString);
-// Output: "12/03/21"
+DateTime tänään = DateTime.Now;
+string päivämääräMerkkijonona = tänään.ToString("dd.MM.yyyy");
+Console.WriteLine(päivämääräMerkkijonona);
 ```
 
-## Syväluotaus:
+Tämä koodi tulostaa päivämäärän formaatissa "päivä.kuukausi.vuosi", esimerkiksi "12.04.2022".
 
-Päivämäärän muuntaminen merkkijonoksi on ollut tarpeen jo pitkään, sillä ihmiset ymmärtävät helpommin päivämäärät sanana kuin numeroina. On myös olemassa muita tapoja muuntaa päivämäärä merkkijonoksi, kuten DateTime.Parse -metodi, joka muuntaa merkkijonon takaisin päivämääräksi.
+## Syvempi sukellus:
 
-Ohjelmoijilla on myös mahdollisuus muokata päivämäärän muotoa, jotta se sopii paremmin ohjelman tarpeisiin. Tämä voidaan tehdä käyttämällä "dd"(päivä) ", "MM"(kuukausi) ja "yy"(vuosi) -koodeja haluttuun järjestykseen.
+Historiallisesti, DateTime luokka .NET Frameworkissä on tarjonnut `ToString`-menetelmän päivämäärän muuttamiseksi merkkijonoksi. Kuitenkin, eri kielialueiden välillä on eroja päivämäärämuodoissa, joten tiedon esittäminen voi vaihdella.
+
+Vaihtoehtona, voit käyttää `DateTimeOffset`-luokkaa, joka sisältää aikavyöhyketiedon. Tämä on hyödyllistä, kun työskentelet kansainvälisten aikavyöhykkeiden kanssa.
+
+On myös tärkeää huomata, että `ToString`-menetelmän muotoilutunnus on kirjainkoodi, joka määrittää päivämäärän esitysmuodon - kuten "dd" päiville, "MM" kuukausille ja "yyyy" vuosille.
 
 ## Katso myös:
 
-- [Microsoftin DateTime-luokan dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [Kuinka muuntaa päivämäärä merkkijonoksi Visual Studio Code -ohjelmassa](https://code.visualstudio.com/docs/languages/csharp#_passing-strings-with-formatting-characters)
+Microsoftin virallinen ohje päivämäärän muotoilemiseen merkkijonoksi: [Formatting Dates](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
+
+.NET Frameworkin DateTime-luokka: [DateTime Class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+  
+Fluent DateTime in C#: [Fluent DateTime](https://github.com/FluentDateTime/FluentDateTime)

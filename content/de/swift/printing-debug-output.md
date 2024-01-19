@@ -1,7 +1,7 @@
 ---
-title:                "Fehlerausgabe drucken"
-html_title:           "Swift: Fehlerausgabe drucken"
-simple_title:         "Fehlerausgabe drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
 
-Debugging Output ausgeben ist einfach ein Weg für Programmierer, um ihre Programme zu überwachen und zu überprüfen. Es ist besonders nützlich, wenn man versucht, Probleme im Code zu finden und zu beheben. Durch das Drucken von Debug Ausgaben können Programmierer den Wert von Variablen und den Ablauf ihres Codes verfolgen, um Fehler besser zu verstehen.
+Die Druckausgabe von Debug-Informationen ist ein Vorgang, bei dem die Interna eines Programms auf einfache Weise angezeigt werden. Programmierer nutzen dies oft, um Fehler im Code aufzuspüren und Datenflüsse besser zu verstehen.
 
-# Wie geht's?
+## Wie macht man das?
 
-Das Drucken von Debug Ausgaben ist in Swift sehr einfach. Verwenden Sie einfach die Funktion `print()`, um eine Nachricht oder den Wert einer Variable auszugeben. Hier ist ein Beispiel:
-
-```Swift
-let name = "Max"
-print("Hallo, ich bin \(name)")
-```
-Ausgabe: Hallo, ich bin Max
-
-Sie können auch mehrere Werte in einer Debug Ausgabe zusammenfügen, indem Sie sie mit einem Komma trennen:
+In Swift gibt es die eingebaute Funktion `print()`, um Debug-Ausgaben zu erzeugen. Hier sind einige Beispiele:
 
 ```Swift
-let num = 5
-print("Die Zahl ist", num)
+let name = "Lukas"
+print(name)
+// Ausgabe: Lukas
+
+let number = 24
+print("Meine Zahl ist \(number).")
+// Ausgabe: Meine Zahl ist 24.
+
+print("Wenn man hier ankommt, ist etwas schief gelaufen.")
+// Ausgabe: Wenn man hier ankommt, ist etwas schief gelaufen.
 ```
-Ausgabe: Die Zahl ist 5
 
-# Tiefere Einblicke
+## Vertiefung
 
-Das Drucken von Debug Ausgaben wird schon seit den Anfängen der Programmierung verwendet, um Fehler zu finden und zu beheben. In Swift gibt es jedoch auch alternative Methoden, wie z.B. das Hinzufügen von Breakpoints oder das Loggen von Fehlern in einer Konsole.
+Während der Entwicklung von Swift wurde der Bedarf an starken Debugging-Werkzeugen wie `print()` früh erkannt. Historisch gesehen waren Ausgaben zur Fehlerbehebung bereits in den Anfängen der Programmiersprachen präsent.
 
-Um eine Debug Ausgabe noch nützlicher zu machen, gibt es auch die Möglichkeit, benutzerdefinierte Funktionen zu erstellen, die spezielle Informationen ausgeben. Diese Funktionen können z.B. den Zustand des Programms zu einem bestimmten Zeitpunkt anzeigen oder spezifische Fehlermeldungen ausgeben.
+Eine Alternative zu `print()` ist die Funktion `debugPrint()`. Sie liefert detailliertere Ausgaben, einschließlich der Namen von Enum-Case-Konstanten und Variablen:
 
-# Siehe auch
+```Swift
+var age = 24
+debugPrint("Alter ist \(age).")
+// Ausgabe: "Alter ist 24.\n"
+```
 
-Für weitere Informationen und Beispiele können Sie die offizielle Dokumentation von Apple über das Drucken von Debug Ausgaben in Swift lesen: [Debugging in Swift](https://developer.apple.com/documentation/swift/debugging).
+Interessanterweise implementiert Swift das Drucken von Debug-Ausgaben durch Umleitung der Standardausgabe ("stdout"). Dies ermöglicht es, Ausgaben auch an andere Orte als die Konsole zu senden, wie zum Beispiel Dateien.
+
+## Siehe auch
+
+Hier sind einige Ressourcen, wenn du dich weiter mit dem Thema beschäftigen willst:
+
+- "Swift by Sundell": [What's the difference between print, dump and debugPrint in Swift](https://www.swiftbysundell.com/articles/debugging-in-swift/)
+- "Hacking with Swift": [Printing debug text with print()](https://www.hackingwithswift.com/read/0/3/printing-debug-text-with-print)
+- Apple's Dokumentation: [Debugging with Swift](https://developer.apple.com/documentation/swift/cocoa_design_patterns/debugging-and-reflection)

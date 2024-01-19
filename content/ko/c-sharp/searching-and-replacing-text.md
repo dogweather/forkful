@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 검색 및 교체"
-html_title:           "C#: 텍스트 검색 및 교체"
+html_title:           "Elixir: 텍스트 검색 및 교체"
 simple_title:         "텍스트 검색 및 교체"
 programming_language: "C#"
 category:             "C#"
@@ -10,27 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
-검색 및 교체는 텍스트를 찾고 다른 텍스트로 대체하는 것을 의미합니다. 이는 프로그래머가 코드에서 특정한 부분을 더 효율적이고 빠르게 수정할 수 있도록 도와줍니다.
+## 무엇과 왜?
 
-## 하는 방법:
+문자열 검색 및 교체는 프로그램 내에서 특정 문자열을 찾고 새 문자열로 교체하는 작업을 말합니다. 개발자들은 이를 사용하여 데이터를 다루거나 사용자에게 필요한 정보를 제공합니다.
+
+## 어떻게 하는가:
+
+사용 가능한 C# 내장 메소드를 사용해 문자열 검색과 교체를 수행하는 방법을 살펴봅시다.
+
 ```C#
-// 예시 1: 문자열에서 특정 문자 찾아 바꾸기
-string text = "안녕하세요! 반가워요.";
-text = text.Replace("안녕하세요", "안녕하세요?"); // "안녕하세요? 반가워요." 출력
+string originalText = "Hello, World!";
+string searchText = "World";
+string replaceText = "Korea";
 
-// 예시 2: 정규식을 이용한 패턴 매칭 후 대체
-string text = "내 이메일 주소는 abc@xyz.com입니다.";
-string pattern = "[a-z0-9]+@[a-z]+\.[a-z]+";
-string replacement = "xyz@gmail.com";
-Regex regex = new Regex(pattern);
-text = regex.Replace(text, replacement); // "내 이메일 주소는 xyz@gmail.com입니다." 출력
+// String.Replace 메소드를 사용하여 텍스트 교체
+string resultText = originalText.Replace(searchText, replaceText);
+
+Console.WriteLine(resultText);
 ```
 
-## 깊게 들어가보기:
-검색 및 교체는 오래된 기술이며 다양한 언어에서 지원됩니다. 프로그래머는 정규식을 사용하여 더 복잡한 패턴 매칭을 할 수 있습니다. 또한 많은 개발환경에서 검색 및 교체 기능을 제공하며, 명령줄 도구나 GitHub과 같은 협업 도구를 이용하여 코드 전체에서 텍스트를 검색하고 바꿀 수 있습니다.
+위 코드를 실행하면 `"Hello, Korea!"`가 출력됩니다.
 
-## 관련 자료:
-- [C# 문자열 검색/교체](https://docs.microsoft.com/ko-kr/dotnet/csharp/how-to/search-strings)
-- [정규식에 대하여](https://medium.com/programmers-studio/%EA%B0%95%EC%9D%98-%EC%BD%94%EB%94%A9%EC%9D%84-%EB%A7%8C%EB%82%AC%EB%8B%A4%EB%A6%AC%EA%B8%B0-%EC%A0%95%EA%B7%9C%EC%8B%9D-regex-ecbab2a5b5d4)
-- [GitHub 코드 검색 및 교체](https://docs.github.com/en/free-pro-team@latest/github/searching-for-information-on-github/searching-code)
+## 깊게 파보기:
+
+방금 제시한 방법은 문자열을 처리하는 가장 일반적인 방법 중 하나입니다. C#은 `.NET Framework` 출시 이래로 이 기능을 제공하고 있었습니다.
+
+C#이 이 도구를 전혀 제공하지 않는다면 개발자들은 문자열을 배열로 변환하여 일치하는 문자/문자열을 찾아서 교체해야 합니다. 하지만 이러한 접근 방식은 시간 소모적이고 비효율적입니다.
+
+대안으로 정규식(Regex)을 사용하여 고급 문자열 검색 및 교체 작업도 가능합니다. 이러한 접근법은 복잡한 교체 패턴이 필요한 경우 매우 유용합니다.
+
+사용한 메소드 string.Replace에는 두개의 매개변수가 필요합니다: 찾을 텍스트와 교체할 텍스트입니다. 이 메소드는 원본 문자열에서 매개변수로 전달된 "찾을 텍스트"를 검색하고 이를 "교체할 텍스트"로 변경한 새 문자열을 반환합니다.
+
+## 참고자료:
+
+다음 링크를 참고하면 더 많은 정보를 얻을 수 있습니다.
+
+- 문자열 교체 메소드에 대한 Microsoft 공식 문서: https://docs.microsoft.com/en-us/dotnet/api/system.string.replace
+- C#의 정규 표현식에 대한 자세한 가이드: https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions
+- 문자열 검색 및 교체에 대한 StackOverflow 토론: https://stackoverflow.com/questions/6275980/string-replace-vs-stringbuilder-replace

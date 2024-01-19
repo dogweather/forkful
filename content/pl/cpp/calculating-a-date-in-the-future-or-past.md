@@ -10,59 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
 
-Obliczanie daty w przeszłości lub przyszłości jest częstym zadaniem programistów, która polega na wyznaczaniu daty, która jest określoną ilość dni w przyszłości lub przeszłości od danej daty. Programiści często wykonują to zadanie w swoich projektach, ponieważ pozwala to na śledzenie i prognozowanie przyszłych wydarzeń.
+Obliczanie daty w przyszłości lub przeszłości polega na dodawaniu lub odejmowaniu pewnej liczby dni do określonej daty. Programiści robią to, aby śledzić terminy, generować harmonogramy, zarządzać danymi historycznymi i wiele więcej.
 
-## Jak?
+## Jak to zrobić:
+
+Rozważmy prosty przykład, w którym dodajemy siedem dni do dzisiejszej daty za pomocą standardowej biblioteki C++. 
 
 ```C++
 #include <iostream>
-#include <ctime>
+#include <chrono>
 
-using namespace std;
+int main() {
+    std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
+    std::chrono::system_clock::time_point week_later = today + std::chrono::hours(24*7);
 
-int main()
-{
-    // obecna data
-    time_t t = time(NULL);
-    tm* now = localtime(&t);
-
-    // obliczenie daty w przeszłości - 30 dni temu
-    now->tm_mday -= 30;
-    mktime(now);
-
-    // wyświetlenie daty
-    cout << now->tm_mday << "." << now->tm_mon + 1 << "." << now->tm_year + 1900 << endl;
-
-    // obliczenie daty w przyszłości - 30 dni od obecnej daty
-    now->tm_mday += 30;
-    mktime(now);
-
-    // wyświetlenie daty
-    cout << now->tm_mday << "." << now->tm_mon + 1 << "." << now->tm_year + 1900 << endl;
-
-    return 0;
+    std::time_t tt = std::chrono::system_clock::to_time_t( week_later );
+    std::tm * ptm = std::localtime(&tt);
+    std::cout<<"Date one week later: "<<std::put_time(ptm,"%c")<<std::endl;
 }
 ```
+Wyjście wynikowe będzie datą jednego tygodnia od dzisiaj.
 
-Output:
-```
-29.10.2020
-29.12.2020
-```
+## Głębsze spojrzenie:
 
-## Głębsza analiza
+Historia obliczeń dat przypomina historię prognozowania pogody - rozpoczęła się dużo wcześniej, niż możemy myśleć, i stała się coraz bardziej zaawansowana z technologicznym czasem. Przed maszynami, ludzie liczyli daty przyszłe i przeszłe za pomocą kalendarzy, księżycowych cykli i obserwacji sezonowych. 
 
-1. Kontekst historyczny: Obliczanie daty w przeszłości lub przyszłości było niegdyś zadaniem wymagającym dużego nakładu pracy i obliczeń. Jednak dzięki rozwojowi technologicznemu i narzędziom, takim jak biblioteka <ctime>, programiści mogą wykonać to zadanie szybko i łatwo.
+Z alternatyw obliczania dat w przyszłości lub przeszłości w C++, poza std::chrono, istnieje wiele innych bibliotek trzecich, takich jak date, Boost.Date_Time, ICU (International Components for Unicode) i wiele innych. Każda z nich ma swoje zalety i wady, dlatego ważne jest, aby wybrać tę najbardziej odpowiednią do Twojego konkretnego zastosowania. 
 
-2. Alternatywy: Istnieje wiele alternatywnych sposobów na obliczanie daty w przeszłości lub przyszłości, takich jak użycie biblioteki Boost.Date_Time lub funkcji języka SQL. Wybór metody zależy od potrzeb i preferencji programisty.
+W przypadku korzystania z biblioteki `std::chrono`, wszystko opiera się na punktach czasowych (`time_point`), które są określone jako liczba "kroków" od określonego punktu czasu zwanej "erą". 
 
-3. Szczegóły implementacyjne: W przykładowym kodzie użyto funkcji mktime() do przeliczenia daty na ilość sekund oraz struktury tm do przechowywania informacji o dacie. Należy również zwrócić uwagę na fakt, że miesiące są numerowane od 0, a nie od 1, dlatego przy wyświetlaniu daty należy dodać 1 do wartości tm_mon.
+## Zobacz również:
 
-## Zobacz też
-
-- <time.h> - biblioteka C zawierająca funkcje do manipulacji czasem
-- <ctime> - biblioteka C++ zawierająca funkcje do manipulacji czasem
-- Boost.Date_Time - biblioteka C++ do obliczania i manipulacji datami
-- Funkcje daty i czasu w języku SQL - alternatywny sposób na obliczanie daty w bazach danych
+1. [Chrono w C++](https://en.cppreference.com/w/cpp/chrono)
+2. [Biblioteka date dla C++](https://github.com/HowardHinnant/date)
+3. [Biblioteka Boost.DateTime](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+4. [ICU - International Components for Unicode](https://unicode-org.github.io/icu/userguide/datetime/calendar/)

@@ -1,6 +1,6 @@
 ---
 title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "Elm: Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
 simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,25 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mitä & Miksi?
 
-Päivämäärän muuntaminen merkkijonosta on tapa, jolla ohjelmoijat voivat muuttaa tekstiä mahdolliseksi päivämääräksi. Tämä on hyödyllistä esimerkiksi, kun käyttäjä antaa päivämäärän syötteeksi tekstiformaatissa. Tällöin ohjelmoija voi muuntaa sen sopivaan muotoon käsitelläkseen sitä sovelluksessa.
+Päivämääräjonojen jäsentäminen tarkoittaa sitä, että otetaan merkkijono, joka edustaa tietyn päivämäärän, ja muunnetaan se päivämääräolioksi. Tämä on hyödyllistä, koska se tekee päivämäärädatasta helposti käsiteltävää ja vertailtavaa.
 
-# Miten?
+## Näin se tehdään:
 
-```Elm
-Date.fromIsoString "2020-06-29"
+```elm
+import Time
+
+parsiDate : String -> Maybe Time.Posix
+parsiDate input =
+    Time.fromIsoString ("2020-12-01" ++ "T12:00:00Z")
 ```
-Tämä esimerkki käyttää Elm:n Date-moduulia muuntamaan merkkijonon ISO 8601 -päivämääräksi. 
-```
-Ok (Date.fromIsoString "2020-06-29")  --> Ok (Date.fromTime 1593417600000)
-```
-Elm palauttaa päivämäärän tietyn aikaleiman muodossa, joka voidaan helposti muuttaa näytöllä näytettävään muotoon.
 
-# Syvempi sukellus
+Yllä oleva koodiesimerkki ottaa sisään stringin muodossa olevan päivämäärän ja yrittää muuntaa sen järjestelmänymmärtämään muotoon. Ellei muunnos onnistu, palautetaan `Nothing`.
 
-Päivämäärän muuntaminen merkkijonosta ei ole uusi käsite. Jo 1970-luvulla monet ohjelmointikielet, kuten BASIC ja COBOL, sisälsivät toimintoja päivämäärän käsittelyyn. Nykyään on myös muita tapoja käsitellä päivämääriä, kuten käyttämällä ulkoisia kirjastoja.
+## Syvempi sukellus
 
-# Katso myös
+Historiallisesti päivämäärän jäsentämistä merkkijonosta on tarvittu ohjelmoinnissa melko yleisesti, koska tiedonvaihto tietojärjestelmien välillä hoidetaan usein merkkijonojen avulla. Elm tarjoaa oletusarvoisesti ISO 8601 -muodon tukemisen kautta tarvittavat työkalut.
 
-Lisätietoa Elm:n Date-moduulista löytyy [viralliselta verkkosivustolta](https://package.elm-lang.org/packages/elm/time/latest/). Ohjelmoijan kannattaa myös tutustua muihin tapoihin käsitellä päivämääriä, kuten Moment.js-kirjastoon.
+Elmiä käytettäessä on myös mahdollista hyödyntää kolmannen osapuolen kirjastoja, jotka tarjoavat laajemman tuen eri päivämäärämuodoille. Esimerkiksi `rtfeldman/elm-iso8601-date-strings` on hyvä vaihtoehto harkita.
+
+Jäsennys tapahtuu aikavyöhykkeestä riippumatta, mikä tarkoittaa, että sisäisesti päivämäärätiedot tallennetaan sekunteina UNIX-ajan alusta lähtien. Tämän takia on tärkeää olla tietoinen mahdollisista aikavyöhykkeen aiheuttamista eroista, jos päivämääriä käsitellään kansainvälisesti.
+
+## Katso myös 
+
+- [Elm Time dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/)
+- [rtfeldman/elm-iso8601-date-strings](https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest/)
+- [Opettavainen artikkeli päivämäärien käsittelystä Elm:ssä](https://korban.net/posts/elm/2019-12-08-handling-dates-times-elm/)

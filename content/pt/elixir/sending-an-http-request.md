@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "Elixir: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,30 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O Que & Por Quê?
 
-Enviar uma solicitação HTTP é o processo de um programa solicitando informações de um servidor da web. Os programadores fazem isso para obter dados ou executar uma ação em um determinado servidor. 
+Enviar uma solicitação HTTP é como o seu programa comunica com outros sistemas para buscar ou enviar dados. Programadores usam isso para integrar seu software com serviços web, APIs, ou para interagir com outros programas remotamente.
 
-## Como:
+## Como Fazer:
 
-````Elixir
+Aqui está um exemplo de como enviar uma requisição GET usando a biblioteca HTTPoison no Elixir.
 
-# Usando a biblioteca HTTPoison para enviar uma solicitação GET
-response = HTTPoison.get("https://www.exemplo.com")
-# O resultado deve ser um objeto de resposta com informações sobre os dados solicitados
+```elixir
+HTTPoison.start
 
-# Usando a biblioteca HTTP para enviar uma solicitação POST com um corpo de solicitação
-response = HTTP.post("https://www.exemplo.com", body: %{username: "user123", password: "12345"})
-# O resultado deve ser um objeto de resposta com informações sobre o sucesso ou falha da solicitação
+{:ok, response} = HTTPoison.get("http://example.com")
+IO.puts response.body
+```
+Quando executa este código, ele pegará os dados do `http://example.com`, e imprimirá o corpo da resposta no console.
 
-````
+E aqui está um exemplo de um POST request, onde estamos enviando dados JSON para o servidor:
 
-## Mergulho Profundo:
+```elixir
+headers = ["Content-Type": "application/json"]
+body = Poison.encode!(%{"chave": "valor"})
 
-Enviar uma solicitação HTTP é uma prática comum na programação e é essencial para o funcionamento de muitas aplicações da web. Existem diferentes bibliotecas e métodos disponíveis para enviar solicitações HTTP em Elixir, sendo algumas das mais populares o HTTPoison e o HTTP. Além disso, é importante ter cuidado com a segurança ao enviar solicitações HTTP, pois elas podem ser interceptadas por terceiros.
+{:ok, response} = HTTPoison.post("http://example.com", body, headers)
+IO.puts response.body
+```
 
-## Veja também:
+## Aprofundamento:
 
-- [Documentação HTTPoison](https://hexdocs.pm/httpoison/api-reference.html)
-- [Documentação HTTP](https://hexdocs.pm/http/api-reference.html)
-- [Tutorial sobre enviar solicitações HTTP em Elixir](https://dev.to/brpaz/sending-http-requests-with-elixir-5d9f)
+No contexto histórico, o protocolo HTTP foi criado para permitir a comunicação entre servidores web e clientes. Mais tarde, ele começou a ser amplamente utilizado para permitir a comunicação entre programas.
+
+Existem muitas alternativas para enviar solicitações HTTP em Elixir, incluindo o HTTPoison mencionado, Tesla e o built-in Erlang httpc. Cada um destes tem suas próprias vantagens e desvantagens dependendo das necessidades específicas do seu projeto.
+
+A mágica por trás de enviar uma solicitação HTTP está na implementação do protocolo TCP/IP que está embutida no sistema operacional. Elixir, em seguida, usa a biblioteca Erlang :httpc para fazer chamadas HTTP na maior parte do tempo.
+
+## Ver Também:
+
+- HTTPoison no Hex: https://hex.pm/packages/httpoison
+- Tesla no Hex: https://hex.pm/packages/tesla
+- Documentação oficial da biblioteca Erlang :httpc: http://erlang.org/doc/man/httpc.html

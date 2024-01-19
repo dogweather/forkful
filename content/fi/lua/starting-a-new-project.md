@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "Lua: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Getting Started"
@@ -10,36 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Mitä & Miksi?
-Uuden projektin aloittaminen tarkoittaa uuden ohjelman tai sovelluksen luomista tyhjästä. Ohjelmoijat tekevät sitä esimerkiksi uuden idean toteuttamiseksi tai vanhan ohjelman parantamiseksi.
+## Mikä ja Miksi?
 
-##Kuinka:
-Esimerkki Lua-koodista, joka luo uuden projektin ja tulostaa "Hello World!"-tekstin:
+Uuden projektin aloittaminen merkitsee tyhjästä aloittamista uudella ohjelmointialustalla, minkä avulla voidaan toteuttaa uusia ideoita tai ratkaista teknisiä ongelmia. Ohjelmoijat tekevät näin jatkuvasti uuden tiedon, taitojen parantamiseksi ja parempien ratkaisujen löytämiseksi.
 
-```Lua
--- Luo uusi projektikansio ja tiedosto
-os.execute("mkdir uusi_projekti")
-os.execute("touch uusi_projekti/ohjelma.lua")
+## Miten:
 
--- Avaa tiedosto ja kirjoita koodi
-file = io.open("uusi_projekti/ohjelma.lua", "w")
-file:write("print('Hello World!')")
-file:close()
+Tässä esimerkki kuinka aloitat uuden projectin Lua ohjelmointikielellä:
 
--- Suorita projekti
-dofile("uusi_projekti/ohjelma.lua")
+```Lua 
+-- Uuden taulukon luominen Lua-ohjelmointikielessä
+kaupunki = {}
+
+-- Arvojen lisääminen taulukkoon
+kaupunki.nimi = "Helsinki" 
+kaupunki.maa = "Suomi" 
+
+print("Kaupunki: " .. kaupunki.nimi)
+print("Maa: " .. kaupunki.maa)
 ```
 
-Tulostus:
+Kun suoritat tämän koodin, näet seuraavanlaisen tuloksen:
 
-```
-Hello World!
+```Lua 
+Kaupunki: Helsinki
+Maa: Suomi
 ```
 
-##Syvällisemmin:
-Uuden projektin aloittamisella voi olla historiallisia syitä, kuten uuden teknologian käyttöönotto tai vanhan ohjelman kehittämisen tarve. Lua on monipuolinen ohjelmointikieli, jota käytetään usein esimerkiksi pelimoottoreissa ja web-sovelluksissa. Muita vaihtoehtoja uuden projektin aloittamiseen voivat olla esimerkiksi Python tai JavaScript. Implementaation yksityiskohdat voivat vaihdella riippuen käytetystä alustasta ja ohjelmointiympäristöstä.
+## Syvällisempi sukellus:
+
+Vaikka Lua on suosittu ohjelmointikieli, se ei ole ainoa valinta uuden projektin aloittamiseksi. Historiallisesti C++ ja Python ovat olleet myös suosittuja ohjelmointikieliä, mutta turvotus, suorituskyky ja helppokäyttöisyys tekevät Luasta hyvän valinnan.
+
+Kuitenkin, vaihtoehtoja on moniam, kuten JavaScript, Python, C++, jne.. Näiden valinnan pitäisi perustua tarpeeseen, kuten suorituskykyyn, tietoturvaan tai muihin tekijöihin.
+
+Luassa, tiedot tallennetaan taulukkoon, ja taulukoita voidaan käyttää tietueina, hakulausekkeina, kokoelmina jne. Tämä joustavuus on yksi Luassa uusien projektien aloittamisen hyödyistä.
 
 ## Katso myös:
-- Lua:n virallinen sivusto: https://www.lua.org/
-- Lua-opetusohjelma: http://lua-users.org/wiki/TutorialDirectory
-- Vertailu muihin ohjelmointikieliin: https://en.wikipedia.org/wiki/Comparison_of_programming_languages
+
+Jos haluat oppia lisää Lua-ohjelmoinnista, tässä on joitakin lähteitä, joihin voi tutustua:
+
+- [Lua 5.3 Reference Manual](http://www.lua.org/manual/5.3/)
+- [Lua Tutorial (Tutorialspoint)](https://www.tutorialspoint.com/lua/index.htm)
+- [Lua Course (SoloLearn)](https://www.sololearn.com/Course/Lua/)

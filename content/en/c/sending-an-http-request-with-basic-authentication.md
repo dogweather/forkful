@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "C recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "C"
 category:             "C"
@@ -11,39 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Sending an HTTP request with basic authentication involves appending a username and password to the HTTP request header to access protected resources on a server. Programmers use this method to ensure secure communication between the client and server and restrict access to sensitive information.
+Sending an HTTP request with basic authentication is a method to access protected resources on web servers using a username and password, encoded in base64. Programmers use this for verifying the identity of users before serving sensitive data, thus improving security.
 
 ## How to:
+We can leverage the `libcurl` library to facilitate this in C. After installing `libcurl`, here's a simplified code to send an HTTP request with Basic Authentication:
 
-To send an HTTP request with basic authentication in C, use the libcurl library. First, initialize the library with the `curl_global_init()` function. Then, set the username and password using `curl_easy_setopt()` and specify the authentication method with `CURLAUTH_BASIC`. Finally, make the request using `curl_easy_perform()`. Here's an example:
+```C
+#include <stdio.h>
+#include <curl/curl.h>
 
+int main(void) {
+  CURL *curl;
+  CURLcode res;
+
+  curl_global_init(CURL_GLOBAL_DEFAULT);
+  curl = curl_easy_init();
+
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_USERNAME, "your_username");
+    curl_easy_setopt(curl, CURLOPT_PASSWORD, "your_password");
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+
+    res = curl_easy_perform(curl);
+
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+
+    curl_easy_cleanup(curl);
+  }
+  
+  curl_global_cleanup();
+
+  return 0;
+}
 ```
-// Initialize libcurl
-curl_global_init(CURL_GLOBAL_ALL);
+Replace `"your_username"` and `"your_password"` with your credentials.
 
-// Set up request
-CURL *curl = curl_easy_init();
-curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
-curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-
-// Make request
-curl_easy_perform(curl);
-```
-
-The output will be the response from the server, which may contain the requested information or an error message.
+`curl_easy_perform(curl)` sends the request. If successful, the protected resource will be printed in the terminal. Otherwise, an error message gets printed, indicating why the request failed.
 
 ## Deep Dive
+Historically, Basic Authentication existed since the earliest days of the web and is part of the HTTP/1.0 spec under RFC 1945. But it's not very secure on its own as the username and password are encoded in base64, which can be easily decoded. Hence, it's commonly used over HTTPS.
 
-Basic authentication is one of the oldest forms of web authentication, developed in the early days of the World Wide Web. It sends credentials in plaintext, which means they can be intercepted and read by anyone. Due to this security vulnerability, it is now considered a less secure method of authentication compared to other methods like OAuth.
+Alternatives to Basic Authentication include Digest Authentication, OAuth, JWT, etc., each with its pros and cons. The choice depends on the specific requirements and constraints.
 
-An alternative to basic authentication is using OAuth, which allows for more secure communication between the client and server. However, basic authentication is still widely used, especially for simple and internal applications.
-
-The implementation of basic authentication involves the client encoding the username and password in a specific format and adding it to the request header. The server then decodes the credentials and verifies them before granting access to the requested resource.
+Technically, Basic Authentication in HTTP headers follows the format: `Authorization: Basic <base64_encoded_credentials>`. The `libcurl` library encodes the username and password in base64 and adds this header automatically when we set the `CURLOPT_USERNAME` and `CURLOPT_PASSWORD` options.
 
 ## See Also
-
-- [libcurl](https://curl.haxx.se/libcurl/)
-- [OAuth](https://oauth.net/)
-- [HTTP Basic Authentication](https://tools.ietf.org/html/rfc7617)
+[CURL libcurl - HTTP Basic Authentication](https://curl.se/libcurl/c/http-basic.html)  
+[Wikipedia - Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)  
+[MDN Web Docs - HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

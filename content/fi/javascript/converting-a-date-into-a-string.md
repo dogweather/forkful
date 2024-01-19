@@ -1,6 +1,6 @@
 ---
 title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Javascript: Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
 simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,20 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Konvertoidaanko vanha päivämäärä uuteen merkkijonoon? Miksi ohjelmoijat tekevät näin?
+## Mitä & Miksi?
+Muunnetaan päivämäärä merkkijonoksi JavaScriptillä. Miksi? Koska meidän täytyy esittää päivämäärät ymmärrettävässä muodossa ihmisille tai tallentaa ne järjestelmille, jotka voivat käsitellä vain merkkijonoja.
 
-Konvertointi päivämäärästä merkkijonoon on prosessi, jossa päivämäärä muunnetaan siihen liittyväksi tekstiksi. Tämä on tärkeä toiminto, jota ohjelmoijat tekevät esimerkiksi käyttöliittymien suunnittelussa ja datan tallentamisessa tietokantoihin.
+## Miten:
 
-### Kuinka tehdä:
+Tässä on koodiesimerkki, joka muuntaa päivämäärän merkkijonoksi JavaScriptillä:
+
 ```Javascript
-const date = new Date(); // Luodaan uusi päivämääräobjekti
-const dateString = date.toString(); // Muunnetaan päivämäärä muotoon merkkijono
-console.log(dateString); // Tulostaa esimerkiksi: "Wed Aug 18 2021 13:45:27 GMT+0300 (Eastern European Summer Time)"
+var today = new Date();
+var stringDate = today.toString();
+console.log(stringDate);
 ```
 
-### Syvä sukellus:
-Päivämäärän muuntaminen merkkijonoksi ei ole uusi idea, vaan sitä on tehty jo pitkään. On olemassa erilaisia tapoja tehdä tämä, kuten käyttämällä vanhempia Javscriptin funktioita, kuten `.toDateString()` tai `.toGMTString()`. Uudempi tapa on kuitenkin käyttää `toString()` metodia, johon voidaan antaa parametrina haluttu muoto merkkijonolle.
+Tuotanto näyttäisi tältä:
 
-### Katso myös:
-- [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools: Javascript Date toString()](https://www.w3schools.com/jsref/jsref_tostring_date.asp)
+```Javascript
+"Wed Sep 22 2021 11:07:34 GMT+0300 (Eastern European Summer Time)"
+```
+
+## Syvällisemmin:
+
+### Historiallinen Konteksti:
+JavaScriptin alkuaikoina päivämäärän esittäminen tietyssä muodossa oli haastavaa. 'Date' oli yksi JavaScriptin alkuperäisistä globaaleista olioista. 
+
+### Vaihtoehdot:
+JavaScriptillä on erilaisia tapoja käsitellä päivämääriä ja muuntaa ne merkkijonoiksi. Voit muuttaa päivämäärän merkkijonoksi käyttäen `toDateString()`, `toISOString()` tai `toLocaleString()` metodeja.
+
+```Javascript
+var currentDay = new Date();
+console.log(currentDay.toDateString()); // "Wed Sep 22 2021"
+console.log(currentDay.toISOString()); // "2021-09-22T08:07:34.336Z"
+console.log(currentDay.toLocaleString()); // "22.9.2021 klo 11.07.34"
+```
+
+### Toteutus:
+Kun muunnat päivämäärän merkkijonoksi JavaScriptillä, päivämäärä kapseloidaan merkkijonoksi alkuperäisen päivämääräolion ulkopuolella, säilyttäen alkuperäisen päivämääräolion muuttamattomana.
+
+## Katso Myös:
+1. [MDN Web Docs: Date](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. [W3Schools: JavaScript Date Reference](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+3. [JavaScript.Info: Date and Time](https://javascript.info/date)
+4. [JavaScript Kit: Date and Time in Javascript](http://www.javascriptkit.com/javatutors/datetime.shtml)

@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Gleam recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,48 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing a date from a string means converting, or "parsing," human-readable text into a machine-readable date. This is essential for times when an app needs to process time-based data entered by a user in their preferred date format.
+Parsing a date from a string is the process of converting textual data into a date object that a computer can understand and manipulate. This conversion is crucial for programmers dealing with user input or data from APIs where dates usually come in a string format.
 
 ## How to:
 
-To get started, Gleam doesn't offer a built-in way for date parsing. We'll need to use external libraries such as `erlang.date`.
-
-Here's how to do it:
+Working with date strings in Gleam requires the `gleam/calendar` library. Here's how you parse a date:
 
 ```Gleam
-import erlang
+import gleam/calendar.{parse_date}
 
-fn parse_date(date_str: String) {
-  erlang.list_to_tuple(date_str
-    |> string.split("/") 
-    |> list.map(
-        fn(i) { 
-          case int.from_string(i) {
-            Ok(n) -> n
-            Error(_) -> 0
-          }
-        })
-      )
+fn main() {
+  let date_string = "2011-12-03"
+  let parsed_date = parse_date(date_string)
+  case parsed_date {
+    Ok(date) -> 
+      // use the date
+      date.month
+    Error(_) -> 
+      // handle parsing error
+      "Invalid date"
+  }
 }
 ```
-
-Example usage and output:
-
-```Gleam
-parse_date("12/31/2021")
-// Output: #(2021, 12, 31)
-```
+After parsing, you can interact with the date using the returned date object. If the string is not a valid date, an error is returned.
 
 ## Deep Dive
 
-Historically, date parsing was a complex process due to the variety of date format conventions across cultures and computing systems. It's now made simpler, thanks to robust libraries and standardized date formats like ISO 8601.
+The concept of parsing dates from strings originates from the necessity to work with human-readable dates in software development. Originally, dates were represented as strings as that was the format most familiar and readable to humans. With the rise of high-level programming languages, concrete date data types became prevalent and the need to convert between string and date representations became a common task. 
 
-When choosing methods to parse dates, consider available libraries, project requirements, and the date format you'll mainly deal with. For instance, `erlang.date` is a good choice for Unix timestamp parsing, but may not fit other use cases.
-
-An important detail in the implementation of date parsing is error handling. Since it involves user inputs, invalid dates, month, and year values are possible. Our code above defaults these to zero if conversion fails, but deeper validation should be implemented in a production application.
+In Gleam, parsing a string date is performed using the `parse_date` function within the `gleam/calendar` library. It supports the ISO 8601 date format (YYYY-MM-DD). If needed, you could write your parsers using lower-level string processing functions or use external libraries for more complex formats.
 
 ## See Also
 
-* [Gleam's official documentation](https://gleam.run/docs/introduction/)
-* [Erlang's date-related functions](http://erlang.org/doc/man/calendar.html)
-* [DateTime Libraries in Gleam programming Language](https://stackoverflow.com/questions/tagged/gleam)
+To delve more into Gleam's date parsing capabilities, check the official documentation at https://gleam.run/stdlib/calendar/
+
+Additionally, for broader insights into Gleam's overall characteristics, visit Gleam's GitHub page at: https://github.com/gleam-lang/gleam.

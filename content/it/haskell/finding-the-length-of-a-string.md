@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cosa e Perché?
+# Trovare la lunghezza di una stringa in Haskell - Un rapido Tutorial
 
-Trovare la lunghezza di una stringa è una delle operazioni più comuni che i programmatori eseguono quando lavorano con stringhe. La lunghezza di una stringa si riferisce semplicemente al numero di caratteri presenti all'interno della stringa stessa. Questa operazione viene eseguita per diverse ragioni, come ad esempio per l'elaborazione dei dati, il controllo della validità di una stringa o per la formattazione.
+## Che cos'è e perché?
 
-# Come Fare:
+Trovare la lunghezza di una stringa significa conteggiare quante volte si verificano caratteri in una stringa. I programmatori fanno questo per vari motivi, ad esempio per validare l'input dell'utente o per manipolare stringhe in modi specifici.
 
-Per trovare la lunghezza di una stringa in Haskell, possiamo utilizzare la funzione "length". Vediamo un esempio:
+## Come fare:
 
-```Haskell
-length "Ciao Mondo"   -- output: 11
-```
-
-In questo esempio, la funzione "length" prende come argomento la stringa "Ciao Mondo" e restituisce il risultato 11, poiché questa è la lunghezza della stringa.
-
-Possiamo anche utilizzare la funzione "length" su una lista di stringhe, ad esempio:
+In Haskell, la lunghezza di una stringa si trova usando la funzione `length` così:
 
 ```Haskell
-length ["Ciao", "Mondo"]   -- output: 2
+lunghezza :: String -> Int
+lunghezza stringa = length stringa
 ```
 
-In questo caso, la funzione restituirà la lunghezza della lista, che in questo caso è 2.
+Ecco un esempio di utilizzo:
 
-# Approfondimenti:
+```Haskell
+main :: IO ()
+main = putStrLn(show(lunghezza "Hello, World!"))
 
-La funzione "length" è stata introdotta per la prima volta nel linguaggio di programmazione LISP nel 1959 ed è stata successivamente adottata da molti altri linguaggi, tra cui Haskell. Tuttavia, alcuni linguaggi come Python forniscono un metodo integrato per ottenere la lunghezza di una stringa, come ad esempio "len". Inoltre, è possibile calcolare la lunghezza di una stringa anche utilizzando un ciclo o una ricorsione, ma questa è una soluzione meno efficiente rispetto all'utilizzo della funzione "length".
+-- Output: 13
+```
 
-# Vedere Anche:
+## Approfondimento
 
-Per ulteriori informazioni sulla funzione "length" e su come gestire le stringhe in Haskell, si può consultare la documentazione ufficiale del linguaggio o i numerosi tutorial e guide disponibili online. È anche possibile esplorare altre funzioni utili per l'elaborazione delle stringhe in Haskell, come ad esempio "concat", "take" e "drop".
+Historicamente, la funzione `length` in Haskell è stata sempre molto efficiente, grazie all'implementazione "lazy" di Haskell. Essa conta solo i caratteri iniziali di una stringa finché non raggiunge la fine, invece di caricare l'intera stringa in memoria.
+
+Un'alternativa a 'length' sarebbe usare una funzione ricorsiva personalizzata per contare la lunghezza di una stringa. Ma in generale, `length` è più efficiente e conveniente.
+
+Qui sotto c'è un dettaglio di implementazione: `length` è definita in termini della funzione di piegamento `foldr`. Una funzione di piegamento è una funzione che "piega" una struttura dati in un valore, seguendo le regole specificate. Nel caso di `length`, la funzione di piegamento conta il numero di elementi in una lista (o in questo caso, una stringa).
+
+## Vedi anche
+
+1. [Haskell Documentation](https://www.haskell.org/documentation/)
+2. [Learn You a Haskell for a Great Good](http://learnyouahaskell.com/)
+3. [Real World Haskell](http://book.realworldhaskell.org/)

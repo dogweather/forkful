@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "PowerShell recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,46 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# A Simple Guide to Reading Text Files in PowerShell
+
 ## What & Why?
 
-Reading a text file means accessing and retrieving data from a file that contains plain text. Programmers often do this to extract specific information or manipulate the data for a desired output.
+Reading a text file in PowerShell essentially involves fetching and interpreting data from a .txt file. Programmers do it to extract, analyze, or transform information stored in these files efficiently.
 
 ## How to:
 
-Reading a text file in PowerShell is a simple process that can be done in just a few lines of code. Here are some examples:
+Two basic cmdlets in PowerShell to read text files are `Get-Content` and `StreamReader`. Let's use them in some examples.
 
-```
-# Reading a text file and displaying the contents
-$text = Get-Content C:\Users\Username\Documents\sample.txt
-$text
-
-# Reading a text file and storing the contents in a variable
-$contents = Get-Content C:\Users\Username\Documents\sample.txt
-
-# Reading a specific number of lines from a text file
-$lines = Get-Content C:\Users\Username\Documents\sample.txt -TotalCount 10
+```PowerShell
+# Using "Get-Content"
+Get-Content -Path 'C:\Path\to\yourFile.txt'
 ```
 
-#### Sample Output:
+This code reads and displays the content of 'yourFile.txt'. Straightforward, isn't it?
 
-```
-This is a sample text file.
+Now, let's fetch specific lines:
 
-It contains multiple lines of plain text.
-
-Reading this file in PowerShell is a breeze.
+```PowerShell
+Get-Content -Path 'C:\Path\to\yourFile.txt' | Select-Object -First 5
 ```
 
-## Deep Dive:
+Replace "5" to fetch the number of lines you want.
 
-Reading text files is a fundamental task in programming, dating back to the earliest days of computing. Before graphical user interfaces (GUIs) were developed, text files were the primary means of storing and exchanging data. Today, alternative methods such as reading and parsing XML or JSON files may be more common, but reading text files remains a crucial skill for any programmer.
+Now, let's use `StreamReader`:
 
-In PowerShell, the `Get-Content` cmdlet is used to read a text file. It can also be used to read and manipulate the contents of other types of files, such as CSV, XML, and JSON.
+```PowerShell
+$streamReader = New-Object System.IO.StreamReader('C:\Path\to\yourFile.txt')
+$line = $streamReader.ReadLine()
+$streamReader.Close()
+```
 
-One important note is that the `Get-Content` cmdlet is case-sensitive. This means that if the file name or path is not entered correctly, the cmdlet will not be able to find the file and an error will be returned.
+This code reads the first line of 'yourFile.txt'. Result? It’s more resource-friendly for large files.
 
-## See Also:
+## Deep Dive
 
-For more information on reading text files in PowerShell, check out the official Microsoft documentation: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7
+Historically, PowerShell (since version 1.0) has provided an in-built way to interact with files. As PowerShell is built on .NET, it inherited the `StreamReader` class, however, `Get-Content` (alias `gc`, `type`, `cat`) is often the favored approach as it's more 'PowerShelly'. Remember, `StreamReader` needs extra steps (like explicit closing) but is lighter for big files.
 
-To learn more about the `Get-Content` cmdlet and its usage, you can also view the help documentation by running `Get-Help Get-Content` in your PowerShell console.
+There are also other alternatives like `Import-Csv` for CSV files, and `convertFrom-Json` when dealing with JSON.
+
+Furthermore, `Get-Content` does have a `-ReadCount` parameter which can help when dealing with large files as it sends data down the pipeline in chunks rather than line by line. 
+
+## See Also
+- Microsoft's official guide on `Get-Content`: [Here](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
+- Official info on `StreamReader`: [Here](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0)
+- An entertainingly-written guide on handling large files: [Here](https://www.powershellgallery.com/packages/PSReadLine/2.0.3)
+- A detailed Stack Overflow discussion on the topic: [Here](https://stackoverflow.com/questions/46506586/how-to-read-large-text-files-in-powershell)

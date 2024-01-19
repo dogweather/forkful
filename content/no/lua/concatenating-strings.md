@@ -1,7 +1,7 @@
 ---
-title:                "Sammenkobling av strenger"
-html_title:           "Lua: Sammenkobling av strenger"
-simple_title:         "Sammenkobling av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,32 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sammenkobling av strenger refererer til å kombinere to eller flere strenger til én. Dette er en vanlig praksis blant programmerere for å lage lengre tekststrenger eller til å bygge opp mer dynamiske meldinger.
 
-## Hvordan gjør man det:
-I Lua kan man enkelt sammenkoble strenger ved å bruke “..” operatøren. Dette er også kjent som konkatenere. La oss se på et eksempel:
+Å flette sammen strenge, eller 'string concatenation' som det heter på engelsk, er når vi slår sammen to eller flere tekststrenger til én. Dette er meget anvendelig for å formatere uttrykk, legge sammen tekstfragmenter, og generere dynamisk innhold.
 
-```Lua
-local fornavn = "Per"
-local etternavn = "Hansen"
-local fulltNavn = fornavn .. " " .. etternavn
-print(fulltNavn)
-```
+## Hvordan Gjør Man Det:
 
-Dette vil gi følgende output: `Per Hansen`.
-Vi kan også kombinere tall og strenger:
+Lua bruker operatoren '..' for å flette sammen to strenger. Her kommer noen eksempler på hvordan det gjøres:
 
 ```Lua
-local tall = 42
-local tekst = "Svaret på alt er:"
-local komplettMelding = tekst .. " " .. tall
-print(komplettMelding)
+-- Eksempel 1
+tekst1 = "Hallo, "
+tekst2 = "verden!"
+sammen = tekst1 .. tekst2
+print(sammen)  -- skriver ut: Hallo, verden!
+
+-- Eksempel 2
+navn = "Ola"
+hilsen = "Hei, " .. navn
+print(hilsen)  -- skriver ut: Hei, Ola
 ```
-Dette vil gi output: `Svaret på alt er: 42`.
 
-## Dypdykk:
-Konkatenere strenger er ikke en unik funksjon i Lua, dette er noe som er tilgjengelig i de fleste programmeringsspråk. I tillegg til å bruke “..” operatøren, kan man også bruke `string.format()` funksjonen for å sammenkoble strenger. Dette kan være mer nyttig hvis man trenger å formatere strenger slik som setninger eller tall med desimaler. Man kan også bruke `table.concat()` funksjonen for å sammenkoble elementer i en tabell.  
+Du kan også flette sammen tall med tekststrenger, Lua vil automatisk omforme tallet til tekst.
 
-## Se også:
-* Dokumentasjon for Lua sammenkobling av strenger: https://www.lua.org/manual/5.3/manual.html#3.4.6
-* Andre måter å håndtere tekststrenger i Lua: https://www.lua.org/pil/20.3.html
+```Lua
+-- Eksempel 3
+alder = 25
+tekst = "Du er " .. alder .. " år gammel."
+print(tekst)  -- skriver ut: Du er 25 år gammel.
+```
+
+## Detaljer
+
+Historisk sett, bærer fletting av tekststrenger i Lua preg av sitt utgangspunkt som et skriptspråk for konfigurasjon og lett automatisering. Det er konstruert for å være kompakt, og dette reflekteres i den enkle og konsise syntaksen for å flette strenger.
+
+Esoteriske alternativer for å flette sammen strenge finnes, som bruk av funksjonen string.format eller string.gsub. Disse kan gi mer kontroll over formatteringen, men er mer detaljerte.
+
+Å forstå detaljene i implementasjonen kan hjelpe programmereren til å bedre utnytte funksjonen. Når to strenge flettes sammen i Lua, lager det en ny streng som holder det kombinerte innholdet. Dette kan ha implikasjoner for minnebruk og ytelse dersom du jobber med veldig store strenger. 
+
+## Se Også
+
+1. Lua 5.4 Reference Manual on Strings: [https://www.lua.org/manual/5.4/manual.html#6.4](https://www.lua.org/manual/5.4/manual.html#6.4)
+2. Programming in Lua, String Manipulation [https://www.lua.org/pil/20.html](https://www.lua.org/pil/20.html)
+3. Lua-Users String Recipes: [http://lua-users.org/wiki/StringRecipes](http://lua-users.org/wiki/StringRecipes)
+
+Husk at kunnskap er makt. God kode!

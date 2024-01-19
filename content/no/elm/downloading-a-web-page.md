@@ -1,7 +1,7 @@
 ---
-title:                "Nedlasting av en nettside"
-html_title:           "Elm: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,52 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# La oss lære Elm!
+
 ## Hva & Hvorfor?
 
-Nedlasting av en nettside betyr rett og slett å hente informasjonen som er lagret på den siden og vise den på din egen enhet. Programmere gjør dette for å hente og behandle data, for eksempel å vise informasjon på en nettside eller lagre den for senere bruk.
+Å laste ned en webside er å hente data fra en bestemt URL, slik at den kan brukes eller vises i applikasjonen din. Programmerere gjør dette for å innhente nyttig informasjon fra eksterne kilder.
 
 ## Hvordan:
 
+La oss dykke ned i hvordan du gjør dette i Elm. Her er det grunnleggende kodeskjelettet:
+
 ```Elm
-import Html exposing (text)
 import Http
+import Json.Decode as Decode
 
--- URLen til nettsiden vi skal laste ned
-url = "https://www.eksempel.com"
+-- Definisjon av et HTTP-forespørsel som vil laste ned en webside
+loadWebPage : String -> Http.Request String
+loadWebPage url =
+    Http.request
+        { method = "GET"
+        , headers = []
+        , url = url
+        , body = Http.emptyBody
+        , expect = Http.expectStringResponse (\_ result -> result)
+        , timeout = Nothing
+        , tracker = Nothing
+        }
 
--- Vi bruker funksjonen send for å sende en GET forespørsel til urlen
-request = Http.send (Http.get url)
-
--- Når responsen kommer tilbake, kan vi bruke en decoder for å hente ut ønsket data
-response = Html.text "Response body:" ++ (Http.expectString Response)
-
--- Vi kan også håndtere eventuelle feilmeldinger dersom noe går galt under nedlastingen
-onError = Html.text "Something went wrong..."
-
--- Så slår vi disse tre funksjonene sammen ved hjelp av en Http task
-task = Http.Task.andThen onGotUrl response onError request
-
--- Og kjører tasken med en renderer funksjon som vil vise resultatet
-main = Html.beginnerProgram { view = task, model = (), update = always () }
+-- Bruker forespørselen for å laste opp websiden
+main =
+    Http.send handleDownloadResult (loadWebPage "https://www.example.com")
 ```
 
-Output:
-```
-Response body: <HTML> ... </HTML>
-```
+Output vil være innholdet på websiden du ba om, eller en feilmelding.
 
-## Dypdykk:
+## Dyp Dykk
 
-Nedlasting av nettsider har vært en viktig del av webutvikling i lang tid, men det er stadig enklere og mer effektivt å gjøre med moderne programmeringsspråk som Elm. Her bruker vi en kombinasjon av Html og Http pakker for å gjøre denne oppgaven.
+Elm sitt HTTP-bibliotek ble introdusert i versjon 0.18 og har blitt stabilt og pålitelig verktøy for å laste ned websider. Alternativene innebærer bruk av JavaScript via Elm's porter, noe som ikke alltid er ideelt.
 
-Alternativer til Elm inkluderer JavaScript og andre språk som også kan gjøre dette. Imidlertid er Elm kjent for sin strenge typesikkerhet og klare syntax, som gjør det til et populært valg for mange utviklere.
+Når det gjelder nedlasting av websider i Elm, det er effektivt fordi Elm håndterer asynkronitet for deg. Du trenger ikke å bekymre deg for callbacks, promises eller async / await som i JavaScript. Elm bruker en arkitektur basert på meldinger, der du sender en forespørsel og får et svar i den togformede Elm-arkitekturen.
 
-Det er også verdt å merke seg at denne nedlastingsmetoden kun fungerer for å hente informasjon fra sider som ikke krever pålogging eller autentisering.
+## Se Også
 
-## Se også:
-
-Offisiell Dokumentasjon:
-https://package.elm-lang.org/packages/elm-lang/http/latest/
-
-Elm pakker for å jobbe med HTML:
-https://package.elm-lang.org/packages/elm-lang/html/latest/
+For mer informasjon, sjekk ut disse ressursene: 
+- Elm's offisielle dokumenter: [Elm HTTP](https://package.elm-lang.org/packages/elm/http/latest/)
+- En dyp dykket i Elm HTTP: [Making HTTP requests in Elm](https://thoughtbot.com/blog/making-http-requests-in-elm)
+- Elm's guide til å håndtere effekter: [Effects](https://guide.elm-lang.org/effects/)

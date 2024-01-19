@@ -1,7 +1,7 @@
 ---
-title:                "Envío de una solicitud http con autenticación básica"
-html_title:           "Lua: Envío de una solicitud http con autenticación básica"
-simple_title:         "Envío de una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
+simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,46 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+##¿Qué & Por qué?
 
-Enviar una solicitud HTTP con autenticación básica es una forma de comunicarse con un servidor web a través de un protocolo seguro. Los programadores lo hacen para acceder y manipular información de forma segura.
+En programación, enviar una solicitud HTTP con autenticación básica implica una comunicación entre el cliente y el servidor utilizando el protocolo HTTP. Los programadores lo hacen para restringir el acceso no autorizado y permitir solo a los usuarios con credenciales válidas interactuar con el servidor.
 
 ## ¿Cómo hacerlo?
 
-Aquí hay un ejemplo de cómo enviar una solicitud HTTP con autenticación básica utilizando Lua:
+Para enviar una solicitud HTTP con autenticación básica en Lua, puedes usar el paquete de socket Lua y su extensión http. Aquí hay un ejemplo del código:
 
 ```Lua
--- Importar la librería http para usarla en nuestras solicitudes
-local http = require("socket.http")
+local http = require('socket.http')
+local ltn12 = require('ltn12')
 
--- Crear una tabla con las credenciales necesarias
-local credentials = {
-  username = "usuario",
-  password = "contraseña"
+local url = 'http://example.com'
+local user = 'username'
+local password = 'password'
+
+local auth = 'Basic ' .. (user .. ':' .. password):gmatch('(.-)$'):)
+
+http.request{
+  url = url,
+  headers = { authorization = auth },
+  sink = ltn12.sink.file(io.stdout),
 }
-
--- Convertir la tabla en una cadena de texto codificada en base64
-local encoded_credentials = mime.b64(credentials.username .. ":" .. credentials.password)
-
--- Construir la URL de la solicitud con la autenticación básica incluida
-local url = "https://example.com/api/data"
-local headers = { Authorization = "Basic " .. encoded_credentials }
-
--- Realizar la solicitud utilizando la librería http
-local response, status = http.request(url, headers)
-
--- Imprimir la respuesta recibida del servidor
-print(response)
 ```
 
-Este código enviará una solicitud HTTP GET a "https://example.com/api/data" con las credenciales incluidas en la cabecera de autenticación básica. La respuesta del servidor se almacenará en la variable "response" y se imprimirá en la consola.
+Este código accederá a 'http://example.com' con el nombre de usuario y la contraseña proporcionados.
 
 ## Profundizando
 
-La autenticación básica es una forma de autenticación HTTP que se ha utilizado desde los primeros días de la web. Aunque es una forma sencilla de autenticación, no es la más segura y puede ser vulnerada por ataques de fuerza bruta. Una alternativa más segura es la autenticación HTTP digest, que utiliza un algoritmo de hash en lugar de enviar las credenciales en texto plano.
+Enviar una solicitud HTTP con autenticación básica es un método antiguo y bien establecido para garantizar la seguridad. Sin embargo, debido a que las credenciales no están encriptadas, es vulnerable a los ataques de 'man-in-the-middle'. Para mejorar la seguridad, se introdujo la autenticación Digest.
 
-Para implementar la autenticación básica en Lua, se puede utilizar la librería socket.http, que permite realizar solicitudes HTTP de forma sencilla. También se pueden utilizar otras librerías externas como lua-openssl para manejar la codificación en base64.
+Alternativamente, puedes considerar el uso de bibliotecas como LuaSec para implementar la autenticación HTTPS, que proporciona una capa de seguridad adicional.
 
-## Vea también
+La implementación detallada de las solicitudes HTTP con autenticación básica en Lua puede variar dependiendo de la biblioteca que elijas para realizar las solicitudes HTTP. La mayoría de las bibliotecas proporcionan funciones similares a las descritas anteriormente.
 
-Para obtener más información sobre cómo enviar solicitudes HTTP con Lua, puede consultar la documentación oficial de la librería socket.http. También puede explorar otras opciones de autenticación y seguridad disponibles en Lua, como la librería luaossl para cifrado y el framework OpenResty para aplicaciones web seguras.
+## Ver también
+
+Para obtener más información sobre la programación en Lua y la autenticación básica, puedes consultar estas fuentes:
+
+- [HTTP Authentication](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8)
+- [Programming in Lua](https://www.lua.org/pil/)
+- [LuaSocket library](https://w3.impa.br/~diego/software/luasocket/)

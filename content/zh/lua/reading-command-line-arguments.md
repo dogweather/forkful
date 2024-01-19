@@ -1,6 +1,6 @@
 ---
 title:                "读取命令行参数"
-html_title:           "Lua: 读取命令行参数"
+html_title:           "C: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是命令行参数？
-命令行参数是指在程序运行时，通过命令行输入的一些参数，用来指定程序的不同执行方式或操作。程序员通常会读取命令行参数来判断用户想要做什么，从而做出相应的响应。
+## 什么和为什么？
 
-# 如何实现命令行参数的读取？
-Lua中通过使用`arg`全局变量来读取命令行参数。下面是一个示例代码和输出：
+命令行参数读取是一种在启动程序时获取用户指定信息的方式。程序员这样做是因为这样可以在执行程序的时候，让用户提供自定义的输入，以改变程序行为。
+
+## 如何做到：
+
+在Lua中，我们可以使用全局变量arg，这是一个包含命令行参数的表。以下是一个简单的例子：
 
 ```Lua
--- 示例代码
-print(arg[1]) -- 打印第一个参数
-print(arg[2]) -- 打印第二个参数
+for i = 0, #arg do
+    print(arg[i])
+end
 ```
 
-输入命令行参数`lua example.lua hello world`后，输出为：
+假设我们将该程序命名为`args.lua`，并将其通过命令行进行调用：“lua args.lua one two”。输出将会是：
 
+```Lua
+lua
+args.lua
+one
+two
 ```
-hello
-world
-```
 
-# 深入了解
-关于命令行参数的读取，有一些历史背景值得了解。在早期的计算机系统中，命令行参数被认为是一种非常高级的功能。现在，使用命令行参数已经成为非常常见的做法，并一直被保留至今。
+## 深入了解：
 
-另外，Lua中也有其他的方法来读取命令行参数，例如可以使用`table`库来操作`arg`变量，或者使用`argcheck`库来验证参数的有效性。
+命令行参数的使用可以追溯到早期的Unix系统，这是一种灵活的方法，允许用户在程序运行时提供特定选项或输入。
 
-最后值得一提的是，读取命令行参数时需要注意的是参数的顺序。在上面的示例中，`hello`和`world`分别对应`arg[1]`和`arg[2]`。如果输入顺序不同，结果也会不同。
+当然还有其他方式来获取用户输入，例如stdin，界面交互等，但命令行参数的使用在诸多情况下更为直接便利。
 
-# 了解更多
-如果想要深入了解Lua中的命令行参数，请参考以下资源：
+Lua通过存储在arg表中的命令行参数来实现，在Lua启动时，Lua会自动将所有命令行参数填充到arg表中，可以通过arg的索引来访问这些参数。值得注意的是，arg[-1]是解释器，而arg[0]是脚本名。
 
-- [Lua用户手册](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [Lua Wiki](https://www.lua.org/wiki/CommandLineArguments)
-- [Lua table库文档](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [Lua argcheck库文档](https://keplerproject.github.io/luarocks/modules/wikiluahb/packages/argcheck.html#usage)
+## 参见：
 
-感谢阅读，希望这篇文章能够帮助你更好地了解和应用Lua中的命令行参数。
+以下链接包含与命令行参数相关的更多深入细节和示例：
+
+[Beispielcode auf Github](https://github.com/lua/lua/blob/master/testes/args.lua)
+
+[Lua-用户手册](https://www.lua.org/manual/5.4/manual.html#pdf-arg)
+
+在开始您的编程旅程时，理解并掌握这些概念是非常有价值的。祝您编程愉快！

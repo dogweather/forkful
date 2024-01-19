@@ -1,7 +1,7 @@
 ---
-title:                "명령 줄 인수 읽기"
-html_title:           "Ruby: 명령 줄 인수 읽기"
-simple_title:         "명령 줄 인수 읽기"
+title:                "명령줄 인수 읽기"
+html_title:           "Arduino: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -11,29 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
-
-Cmdline 인자를 읽는 것은 프로그래머들이 명령줄에서 사용자 입력을 가져오는 것입니다. 이는 사용자의 텍스트 기반 입력을 받는 것으로, 프로그램에 유용한 유연성과 사용자 정의를 제공합니다.
+명령 줄 인수를 읽는 것은 프로그래머가 실행 시에 추가 데이터를 프로그램에 제공할 수 있게 하는 방법입니다. 이러한 기능은 데이터의 맥락에 맞춰 동적으로 동작하는 프로그램을 만드는 데 중요합니다.
 
 ## 어떻게:
-
-우선, `$ ruby myscript.rb arg1 arg2`와 같은 명령을 사용하여 Ruby 스크립트 파일을 실행합니다. 그런 다음 아래를 따라하면 쉽게 사용할 수 있습니다.
-
-```Ruby
-# myscript.rb
-puts ARGV[0] # 출력: arg1
-puts ARGV[1] # 출력: arg2
+```ruby
+# 아래 예제는 명령 줄 인수를 사용하는 간단한 코드입니다.
+ARGV.each do |argument|
+  puts "Received argument: #{argument}"
+end
+```
+위 코드를 사용해 아래와 같이 실행하면:
+```shell
+ruby script.rb first_arg second_arg
+```
+다음과 같은 출력을 볼 수 있습니다:
+```shell
+Received argument: first_arg
+Received argument: second_arg
 ```
 
-## 깊게 들어가기:
+## 깊이 분석
+명령 줄 인수를 읽는 기능은 UNIX 시스템에서 오래 전부터 사용되었습니다. 이는 유연한 소프트웨어 개발을 가능케 했습니다. 루비에서도 이를 유지하고 있습니다.
 
-Cmdline 인자를 읽는 것은 기본적으로 프로그램의 명령줄 인자를 수집하는 것입니다. 보통 이것은 `ARGV`라는 Ruby 전역 변수를 통해 이뤄집니다. `ARGV`의 각 항목은 사용자가 제공한 명령줄 인자로 채워집니다. 따라서 `$ ruby myscript.rb arg1 arg2`를 실행하면 `ARGV`에는 `["arg1", "arg2"]`가 할당됩니다.
+대안으로, 대화형 프롬프트나 구성 파일을 사용하여 동일한 용도로 사용할 수 있습니다. 하지만 명령 줄 인수는 실행할 때마다 코드를 변경하지 않고도 프로그램의 동작을 쉽게 바꿀 수 있는 능력을 제공합니다.
 
-이전에`$ ruby myscript.rb`와 같이 실행했다면 `[]`가 할당됩니다. 즉, 사용자 입력이 없다는 것을 의미합니다.
+ARGV는 배열로 표현되며, 각 요소는 스페이스로 구분된 문자열로 채워집니다. 이 첫 번째로 숫자를 사용하여 인덱싱될 수 있습니다.
 
-이전에도 언급한 것처럼, cmdline 인자를 읽는 것은 프로그램에 유용한 유연성과 사용자 정의를 제공하는데에 매우 중요합니다. 프로그램을 실행할 때 다양한 인자를 제공함으로써 다른 데이터를 처리할 수 있게됩니다.
-
-## 더 알아보기:
-
-- 더 많은 방법으로 시스템 인풋을 처리하기 위해 [Ruby Docs](https://ruby-doc.org/core-2.7.1/ARGF.html)를 확인하세요.
-- 명령줄 인자를 처리하는데 사용되는 다른 언어나 도구들을 알고 싶다면 [Command Line Parameters](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)를 참조하세요.
-- Joval L'Ecluse의 [Ruby (절차적) 프로그래밍할 때 CmdLine에서 사용자 인풋을 가져오기](https://joval.dev/ruby_standard_input)를 읽어보세요.
+## 참고 자료
+* [루비 공식 문서](https://ruby-doc.org/core-2.7.0/ARGV.html)
+* [Command Line Arguments in Ruby - Stack Overflow](https://stackoverflow.com/questions/4840688/command-line-arguments-in-ruby)

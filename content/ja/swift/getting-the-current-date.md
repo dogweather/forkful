@@ -1,6 +1,6 @@
 ---
 title:                "現在の日付を取得する"
-html_title:           "Swift: 現在の日付を取得する"
+html_title:           "PowerShell: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,28 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 今、何の話？
-現在の日付を取得するとは、プログラマーが現在の日付を調べることです。プログラマーは、日付を取得することで、日付を処理する際の基準となる重要な情報を得ることができます。
+## 何と何のために？
+現在の日付を取得するとは、現在の日時をコンピュータのシステムクロックから取得することです。プログラマーがこれを行うのは、何がいつ起こったかを記録する、時間に基づいた処理を行う、ユーザーへの日付と時間の表示など、様々なタスクを処理するためです。
 
-## 方法：
+## どうするの？
+Swiftで現在の日付と時間を取得するには以下のコード例を参考にしてください。
+
 ```Swift
-// 日付を取得する
-let currentDate = Date() 
-// フォーマットを指定して日付を文字列に変換する
-let formatter = DateFormatter()
-formatter.dateFormat = "yyyy/MM/dd"
-let dateString = formatter.string(from: currentDate)
-print(dateString) //出力：2021/02/15
+import Foundation
+
+let now = Date()
+
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+let stringDate = dateFormatter.string(from: now)
+
+print(stringDate)
 ```
+このコードは現在の日付と時間を`yyyy-MM-dd HH:mm:ss`というフォーマットで表示します。
 
-## さらに深く掘り下げる：
-日付を取得するには、Dateというデータ型を使用します。Date型は、1970年1月1日からの秒数を表す整数型で、現在のタイムゾーンでの現在の日付と時刻を表します。
+## 詳細解説
+- 歴史的な背景：計算機が登場する以前、時間は人力で追跡されていました。しかし、計算機の登場により、時間は機械的にきちんと追跡することができるようになりました。
+- その他の手段：現在の日付と時間を取得する他の方法としては、NSCalendarやNSDateComponentsなどを使用する方法もありますが、Dateはそのような複雑さを排除し、簡潔に現在の日付と時間を取得するための方法を提供しています。
+- 実装の詳細：Dateは1970年以降の時間を秒単位で表示します。これにより、日付と時間の情報を数値として操作することが可能になっています。
 
-また、DateFormatterを使用することで、日付を指定したフォーマットに変換することができます。例えば、"yyyy/MM/dd"というフォーマットを指定することで、現在の日付を"2021/02/15"のような形式で取得することができます。
+## 参照リンク
+以下のリンクは関連する情報源へのリンクです。
 
-他にも、CalendarやNSDateなどのオブジェクトを使用することで、より詳細な日付情報を取得することができます。
-
-## 関連リンク：
-- [AppleのDateドキュメント](https://developer.apple.com/documentation/foundation/date)
-- [AppleのDateFormatterドキュメント](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swiftでは日付をどのように処理するか](https://techlife.cookpad.com/entry/2019/11/13/090000)
+- [Apple Developer Documentation](https://developer.apple.com/documentation)
+- [Swift Date official documentation](https://developer.apple.com/documentation/foundation/date)
+- [DateFormatter official documentation](https://developer.apple.com/documentation/foundation/dateformatter)
+- [NSDateComponents official documentation](https://developer.apple.com/documentation/foundation/nsdatecomponents)

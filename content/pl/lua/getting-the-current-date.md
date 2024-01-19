@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Lua: Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,26 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Czym jest i po co? 
-Pobranie aktualnej daty w programowaniu oznacza uzyskanie informacji o bieżącym momencie czasowym, w formacie daty i godziny. Jest to przydatne dla programistów, ponieważ pozwala im na śledzenie zmian w czasie lub automatyczne umieszczanie aktualnych dat w plikach lub bazach danych. 
+## Co i Dlaczego?
 
-## Jak to zrobić: 
-Aby pobrać aktualną datę w Lua, należy użyć funkcji os.date(). Przykładowy kod wygląda następująco: 
+W programowaniu nieraz musimy pozyskać aktualną datę. Czy to do logowania danych, wprowadzania odnośników czasowych czy śledzenia wydarzeń w czasie - znajomość sposobów na dostęp do bieżącej daty jest niezbędna.
+
+## Jak to zrobić:
+
+W Lua zdobycie bieżącej daty jest proste. Używamy do tego funkcji `os.date`.
+
 ```Lua
-print(os.date()) 
-``` 
-Output: "Tue May 11 10:26:47 2021" 
+print(os.date())
+```
 
-Można także ustawić własny format wyjściowy, wykorzystując specjalne symbole, np.: 
+Wynik powyższego kodu wyglądałby mniej więcej tak:
+
 ```Lua
-print(os.date("%d/%m/%Y")) 
-``` 
-Output: "11/05/2021" 
+Tue Sep 21 14:36:07 2021
+```
 
-## Głębsza analiza: 
-Pobranie aktualnej daty jest niezbędną częścią programowania od lat 70. XX wieku, kiedy to powstały pierwsze języki programowania. Alternatywnym sposobem uzyskania czasu jest użycie biblioteki time, która oferuje bardziej zaawansowane funkcje. Implementacja zależy od systemu operacyjnego, na którym uruchamiamy kod, więc warto dokładnie przeanalizować działanie funkcji os.date() na różnych platformach. 
+Możemy też dostosować format wyjściowy, na przykład tak:
 
-## Zobacz także: 
-Więcej informacji na temat pobierania daty w Lua można znaleźć w oficjalnej dokumentacji języka: https://www.lua.org/manual/5.4/manual.html#6.9
-Więcej o bibliotece time: https://www.lua.org/manual/5.4/manual.html#6.8
-Alternatywnym sposobem pobierania daty jest użycie biblioteki datetime: https://github.com/luarocks/lua-datetime
+```Lua
+print(os.date("%A, %B %d, %Y"))
+```
+
+Rezultatem powyższego kodu będzie data w formacie "dzień tygodnia, miesiąc dzień, rok":
+
+```Lua
+Tuesday, September 21, 2021
+```
+
+## Deep Dive
+
+`os.date` jest częścią biblioteki OS w Lua. Pierwotnie w Lua istniała tylko funkcja `os.time`, służąca do uzyskiwania liczby sekund od pewnego punktu odniesienia (zwanego czasem epoki), zwykle od 1 stycznia 1970 roku. Funkcja `os.date` została dodana później, aby ułatwić programistom manipulowanie i wyświetlanie dat.
+
+W przypadku większego stopnia personalizacji, możemy użyć alternatywnych bibliotek, takich jak `LuaDate` lub `chrono`. Właściwy wybór zależy od szczegółowych wymagań projektu.
+
+## Zobacz też:
+
+- Dokumentacja Lua: [os.date](https://www.lua.org/pil/22.1.html)
+- GitHub: [LuaDate](https://github.com/Tieske/date)
+- GitHub: [chrono](https://github.com/bsm/chrono.lua)

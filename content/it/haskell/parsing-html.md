@@ -1,7 +1,7 @@
 ---
-title:                "Analizzare l'html."
-html_title:           "Haskell: Analizzare l'html."
-simple_title:         "Analizzare l'html."
+title:                "Analisi sintattica dell'HTML"
+html_title:           "C++: Analisi sintattica dell'HTML"
+simple_title:         "Analisi sintattica dell'HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,26 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Il parsing HTML è il processo di analisi e interpretazione del codice HTML di una pagina web. I programmatori lo fanno per estrarre informazioni specifiche dalla pagina, come testo, link, immagini e altro ancora.
+# Analisi HTML (Parsing) con Haskell
+
+Ciao a tutti! Oggi esploreremo insieme come analizzare l'HTML usando Haskell, il paradiso dei linguaggi di programmazione funzionali. 
+
+## Cos'è e perché?
+
+L'analisi HTML consiste nel tradurre il codice HTML, un linguaggio di marcatura, in una struttura dati che il nostro programma può manipolare. Lo facciamo per ottenere o manipolare dati da pagine web.
 
 ## Come fare:
+
+Iniziamo con l'installare la libreria `tagsoup` su Haskell:
+
+```Haskell
+cabal install tagsoup
+```
+
+Ora possiamo scrivere un semplice programma di analisi. Ecco un esempio:
+
 ```Haskell
 import Text.HTML.TagSoup
 
--- Esempio di code per la pagina di Google
-tags = parseTags "<html><body><h1>Hello, World!</h1></body></html>"
+htmlParser :: String -> [Tag String]
+htmlParser = parseTags
 
--- Estrae il testo all'interno del tag <h1>
-headings = filter isTagText tags
-output = unwords $ map fromTagText headings
--- Output: "Hello, World!"
+main = do
+  let tags = htmlParser "<title>Benvenuto alla programmazione Haskell!</title>"
+  print tags
 ```
 
-## Approfondimento:
-Il parsing HTML è stato introdotto per la prima volta nei primi anni '90 come uno dei principali linguaggi di marcatura utilizzati per la creazione delle prime pagine web. Oggi ci sono molti strumenti diversi disponibili per il parsing HTML, come Text.HTML.TagSoup e HaXml.
+Questo parser stampa una lista di tag HTML. Ecco l'output:
+```Haskell
+[TagOpen "title" [],TagText "Benvenuto alla programmazione Haskell!",TagClose "title"]
+```
 
-## Vedi anche:
-- [Haskell Wiki: Parsing HTML](https://wiki.haskell.org/Parsing_HTML)
-- [Haskell TagSoup Library](https://hackage.haskell.org/package/tagsoup)
-- [HaXml Library for XML & HTML documents](https://hackage.haskell.org/package/HaXml)
+## Approfondimento
+
+Una volta, l'HTML era analizzato principalmente con espressioni regolari, ma questo metodo ha i suoi limiti. Haskell, nato nel lontano 1990, ha reso l'analisi molto più semplice e sicura con l'uso di parser componibili.
+
+Un'alternativa a `tagsoup` è `html-conduit`, che funziona bene con lo streaming di dati.
+
+Dettagli di implementazione: `tagsoup` non fa un'analisi rigorosa. Ignora gli errori di sintassi HTML e cerca di produrre un output utile nonostante il markup malformato. Questo è utile per lavorare con l'HTML del mondo reale.
+
+## Per saperne di più
+
+- Documentation: [TagSoup](https://hackage.haskell.org/package/tagsoup)
+- Alternative: [html-conduit](https://hackage.haskell.org/package/html-conduit)
+- Testo accademico: [Combinator Parsing: A Short Tutorial](http://www.cs.nott.ac.uk/~pszgmh/monparsing.pdf)

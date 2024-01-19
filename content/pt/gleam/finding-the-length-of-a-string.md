@@ -1,6 +1,6 @@
 ---
 title:                "Encontrando o comprimento de uma string"
-html_title:           "Gleam: Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
 simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,52 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Descubrindo o comprimento de uma string em Gleam
 
-Encontrar o comprimento de uma string é o ato de determinar quantos caracteres estão presentes em uma determinada string. Isso é útil para os programadores porque muitas vezes precisamos saber o tamanho de uma string para fins de validação, manipulação ou exibição.
+## O que e por que?
+Determinar o comprimento de uma string significa saber quantos caracteres existem em uma determinada sequência de texto. Os programadores fazem isso para manipular dados de string, seja para validação de entrada de usuário, manipulação de texto e muitas outras funções.
 
 ## Como fazer:
+Aqui está um exemplo de como obter o comprimento de uma string em Gleam.
 
-Para encontrar o comprimento de uma string em Gleam, usamos a função `size` seguida do nome da string entre parênteses. Veja o exemplo abaixo:
+```gleam
+import gleam/string
 
-```
-Gleam
-
-let string = "Olá, mundo!"
-let length = size(string)
-
-```
-
-Assim, a variável `length` será igual a 12, pois a string possui 12 caracteres (incluindo o espaço em branco). Você também pode encontrar o comprimento de uma string diretamente, sem precisar armazenar em uma variável, como no exemplo abaixo:
-
-```
-Gleam
-
-assert size("Oi!") == 3
-
-```
-
-Este exemplo usa a função `assert` para verificar se o comprimento da string "Oi!" é igual a 3. Se sim, o código continua executando normalmente. Caso contrário, um erro é retornado.
-
-## Profundidade:
-
-Encontrar o comprimento de uma string é uma tarefa bastante comum em programação. Na verdade, é uma das funções básicas disponíveis em muitas linguagens de programação. Além disso, existem outras formas de encontrar o comprimento de uma string, como usar um loop para contar cada caracter ou usar a função `len` em outras linguagens.
-
-Em termos de implementação, a função `size` em Gleam é definida da seguinte forma:
-
-```
-Gleam
-
-fn size(string: String) -> Int {
-  Bytes.size(string.bytes)
+fn main() {
+    let exemplo = "Olá, mundo!"
+    let comprimento = string.len(exemplo)
+    print(comprimento)
 }
+```
+Saída:
 
+```gleam
+12
 ```
 
-Isso significa que a função `size` vai primeiro converter a string em uma sequência de bytes e então determinar o tamanho dessa sequência. Isso pode ser útil se a string não for composta apenas de caracteres ASCII.
+Neste exemplo, a função `len` do módulo `string` foi usada para encontrar o comprimento da string "Olá, mundo!". A saída foi `12`, indicando que a string contém 12 caracteres.
 
-## Veja também:
+## Deep Dive
 
-- [A documentação oficial do Gleam sobre strings](https://gleam.run/book/callables.html#strings)
-- [Um artigo sobre a função `len` em Python](https://www.freecodecamp.org/news/python-len-function-tutorial/)
-- [Uma discussão sobre a diferença entre `size` e `len` em programação em geral](https://stackoverflow.com/questions/2822688/difference-between-len-and-size-in-python)
+1. Contexto histórico
+Em linguagens de programação mais antigas como o C, a determinação do comprimento de uma string era mais complicada e propensa a erros. You had to loop through the string until you found the NULL terminating character. Gleam facilita isso com a função `len`.
+
+2. Alternativas
+Se a performance for um problema e você estiver lidando com strings ASCII, poderia contar os bytes em vez dos caracteres. No entanto, isto não funcionará corretamente com caracteres Unicode que exigem mais de um byte para serem representados.
+
+3. Detalhes de implementação
+Gleam trata strings como UTF-8. Portanto, a função `len` conta o número de "code points" que podem não corresponder ao número total de bytes se a string incluir caracteres não ASCII.
+
+## Veja também
+
+Documentação do módulo de string Gleam:  https://hexdocs.pm/gleam_stdlib/gleam/string/
+
+Guia do usuário Gleam: https://gleam.run/book/tour/strings.html
+
+UTF-8 e Unicode: https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/

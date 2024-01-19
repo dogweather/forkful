@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av dato fra en streng."
-html_title:           "Elm: Analysering av dato fra en streng."
-simple_title:         "Analysering av dato fra en streng."
+title:                "Tolke en dato fra en streng"
+html_title:           "Bash: Tolke en dato fra en streng"
+simple_title:         "Tolke en dato fra en streng"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor? 
+## Hva & Hvorfor?
+Å parse en dato fra en streng betyr å omdanne en skriftlig tekst til en dataobjekt. Dette gjør det lettere for programmerere å jobbe med dataene, for eksempel ved å manipulere, sammenligne, sortere og lagre datoer i databaser.
 
-Parsing av datoer fra en streng er en viktig oppgave for programmerere. Det betyr å konvertere en tekstbasert dato til et datofelt i programmet ditt. Dette er nyttig for å sortere og filtrere datoinformasjon, og for å gjøre beregninger som er avhengig av datoer.
-
-Hvordan: 
+## Hvordan gjøre det:
+Her er en enkel kode i Elm for å parse en dato fra en streng.
 
 ```Elm
+import Date 
+import Time
 
-import Date exposing (Date, fromString)
-import Maybe exposing (Just, Nothing)
+datumString : String
+datumString = "2022-02-28"
 
-dateString = "10/31/2021"
+main = 
+    let
+        maybeDate = Date.fromString datumString
+    in
+    case maybeDate of 
+        Nothing -> Debug.log "Feil ved parsing av dato"
+        Just date -> Debug.log ( "Dato er: " ++ (Date.toIsoString date))
 
-parsedDate = fromString dateString
---Output: Just (Date 2021 10 31)
+```
+Kjører du denne koden, vil utskriften bli:
 
-invalidDateString = "Hello"
-invalidDate = fromString invalidDateString
---Output: Nothing
+```
+Dato er: 2022-02-28
 ```
 
-Deep Dive: 
+## Dyp Dykk
+Over tid har forskjellige programmeringsspråk utviklet egne måter å parse datoer på. I eldre programmeringsspråk som C og Python, er det vanlig å bruke funksjoner som `strptime`. I moderne språk som Elm, bruker vi metoden `fromString`.
 
-Parsing av datoer fra strenger har vært en viktig del av programmering helt siden computerens tidlige dager. Det er også flere måter å gjøre dette på, inkludert å bruke innebygde funksjoner i språket ditt eller å bruke tredjepartsbiblioteker. I Elm, kan du også bruke Date-modulen til å beregne tidsintervaller, konvertere datoer mellom ulike format og mye mer. Implementeringen av denne funksjonen gjøres ved å bruke en kombinasjon av regulære uttrykk og kontrollstrukturer.
+Det finnes også alternativer til å bruke innebygde funksjoner for parsing av datoer, som bibliotekene Moment.js (i JavaScript) eller joda-time (i Java).
 
-Se også: 
+Når det gjelder implementeringsdetaljer, vil `Date.fromString` prøve å konvertere en streng til en dato ved vat tolke strengen som ISO 8601. Hvis parsing mislykkes, returnerer funksjonen `Nothing`. Hvis det er vellykket, returneres en `Just` som inneholder den parsede datoen.
 
-- Elm Date-modulen dokumentasjon: https://package.elm-lang.org/packages/elm/time/latest/Date#Date
-- Date parsing i JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse
+## Se også:
+Elm dokumentasjon for Date.fromString: https://package.elm-lang.org/packages/elm/time/latest/Time-Posix#fromIsoString
+
+Google Developers' artikkel om hvordan å parse datoer: https://developers.google.com/web/updates/2011/10/Simpler-datetime-parsing-with-getTime

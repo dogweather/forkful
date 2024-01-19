@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns"
-html_title:           "Elm: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en katalog finns"
+html_title:           "Bash: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,39 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Att kontrollera om en mapp existerar är en vanlig operation för programmerare. Det innebär helt enkelt att man undersöker om en viss mapp finns på en viss plats i datorsystemet. Detta är särskilt användbart när man vill undvika att skriva över en befintlig mapp eller för att kunna navigera till rätt mapp innan man utför en viss operation.
+## Vad & Varför?
 
-## Så här gör du:
-```Elm
-directoryExists : FilePath -> Task x Bool
-```
+Checker om en katalog existerar är operationen för att kontrollera integriteten till en katalogs plats i ett datasystems filstruktur. Programmerare gör det här för att hindra felutlösande försök till att läsa eller skriv över en inte existerande katalog.
 
-För att kontrollera om en mapp finns i Elm så kan man använda funktionen `directoryExists`. Denna funktion tar en `FilePath` som parameter och returnerar sedan en `Task` som antingen innehåller `True` om mappen existerar eller `False` om den inte gör det. Här är ett exempel på hur man kan använda denna funktion för att kontrollera om en mapp med namnet "bilder" finns på skrivbordet:
+## Hur man gör:
+
+Elm har inte en inbyggd kodblock för att verifiera om en katalog existerar eftersom Elm-kod körs i webbläsaren och inte har permission att läsa filsystemet direkt. Men vi kan använda JavaScript's inbyggda ```fs``` paket genom att utrusta oss med några flags. Notera att FS modulen är en del av Node.js, inte webbläsarbaserad JavaScript.
 
 ```Elm
-import Task exposing (..)
-import File.Path exposing (..)
-
-task : Task x Bool
-task =
-    directoryExists (fromString "/Users/username/Desktop/bilder")
-
-main : Program x
-main =
-    task
-        |> andThen (\exists -> if exists then text "Mappen finns!" else text "Mappen finns inte.")
-        |> Task.perform identity
+port checkDirectory : String -> Cmd msg
+port directoryExists : (Bool -> msg) -> Sub msg
 ```
+Observera: I Elm, ports är den godkända vägen för tvåvägs interaktion mellan Elm och JavaScript.
 
-I det här fallet använder vi `andThen` för att hantera `Task` och skriva ut ett meddelande beroende på resultatet.
+## Fördjupning:
 
-## Djupdykning
-Att kontrollera om en mapp existerar är en del av filhanteringsfunktionerna i Elm. Det finns också andra sätt att hantera filer och mappar, som t.ex. att lista dem eller skapa nya. Det är också möjligt att använda JavaScript-funktioner för att utföra mer avancerade filhanteringsoperationer.
+Historiskt sett, frågan om hur att verifiera om en katalog existerar har förändrats med språkets utveckling och dess förmåga att interagera med operativsystemet. I den tidiga C och Java, var detta ett vanligt problem. 
 
-Det är viktigt att notera att `directoryExists`-funktionen använder sig av `Task` för att hantera asynkrona operationer. Detta gör att man kan skriva säkrare kod och hantera eventuella fel på ett bättre sätt.
+Alternativ till Elm för att hantera sådana filsystemrelaterade operationer inkluderar användning av server-side språk som Python eller Ruby, eller att använda JavaScript direkt. 
 
-## Se även
-- Filhanteringsfunktioner i Elm: https://package.elm-lang.org/packages/elm/file/latest/
-- Elm dokumentation: https://guide.elm-lang.org/
-- JavaScript-funktionalitet i Elm: https://guide.elm-lang.org/interop/javascript.html
+Implementeringsdetaljer gäller begränsningarna i att använda webbläsarbaserade språk för direkt interaktion med filsystem. Elm kör i webbläsaren och är därmed begränsad i sin förmåga att direkt interagera med filsystemets operationer, så som att kontrollera om en katalog existerar.
+
+## Se även:
+
+1. Elm Officiella Dokument [Elm Language Docs](http://elm-lang.se/)
+2. More on Ports in Elm [Ports in Elm](http://elm-lang.se/tutorial/external-commands-and-subscriptions)
+3. Node.js's fs package documentation [Node.js's fs](https://nodejs.org/api/fs.html)
+4. Learning more about JavaScript [Mozilla JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+5. More about filesystem operations in JavaScript [Node.js File System](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)

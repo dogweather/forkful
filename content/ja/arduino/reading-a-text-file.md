@@ -1,6 +1,6 @@
 ---
 title:                "テキストファイルの読み込み"
-html_title:           "Arduino: テキストファイルの読み込み"
+html_title:           "Bash: テキストファイルの読み込み"
 simple_title:         "テキストファイルの読み込み"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,22 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
-テキストファイルを読み込むことは、コンピューターがデータを読み取る方法の一つです。プログラマーは、プログラムで使用するデータをテキストファイルに保存し、それを読み込んで処理することで、手間を省くことができます。
+## 何となぜ? (What & Why?)
+テキストファイルを読むとは、プログラムがテキストファイルの内容を収集することを指します。これは、データの保存や取得、単純なデーキュメント化のためにプログラマーによって行われる作業です。
 
-## 方法：
-```
-Arduinoの記事
-file = SD.open("test.txt", FILE_READ);
-if (file) {
-  Serial.println(file.read());
-  file.close();
+## 方法: (How to:)
+Arduinoを使用してテキストファイルからデータを読み込む方法を示します:
+
+```Arduino
+#include <SD.h>
+
+File myFile;
+
+void setup() {
+  Serial.begin(9600);
+  SD.begin(4);
+  
+  myFile = SD.open("test.txt");
+  if (myFile) {
+    while (myFile.available()) {
+      Serial.write(myFile.read());
+    }
+    myFile.close();
+  } else {
+    Serial.println("File not found.");
+  }
+}
+
+void loop() {
+
 }
 ```
 
-## もっと深く掘り下げる：
-テキストファイルの読み込みは、古くからある基本的なプログラミング手法です。他にも、バイナリファイルを使用する方法もありますが、テキストファイルは人が理解しやすく、プログラムの変更も簡単にできます。Arduinoでは、SDライブラリを使用することで、SDカードに保存されたテキストファイルを読み込むことができます。
+このコードは、ArduinoでSDカード上の "test.txt" ファイルを開き端末に内容を表示します。もしファイルが存在しない場合、「File not found.」と表示します。
 
-## 関連情報：
-- [SDライブラリリファレンス - Arduino](https://www.arduino.cc/en/Reference/SD)
-- [C言語ファイル入出力操作まとめ - Qiita](https://qiita.com/tajima_taso/items/9ebfd6d7574f8321dfb7)
+## ディープダイブ (Deep Dive)
+テキストファイルの読み込みは、プログラミングの初期から存在し、それを様々な方法で実装してきました。Arduinoでは上記のようにSDライブラリを使うことで実装が可能です。この方法は手軽でシンプルなため、多くのArduinoユーザーにとって第一の選択肢です。
+
+代替手段として、ArduinoでFTPサーバーにアクセスしファイルを読み込むことも可能です。これはEthernetシールドを使用して実装されますが、より高度な知識を必要とします。
+
+## 参考に (See Also):
+1. Arduinoによるテキストファイルの読み書きの詳細: https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite 
+2. Ethernetシールドを使用したFTPサーバーへのアクセス方法: https://www.arduino.cc/en/Tutorial/LibraryExamples/FtpClient 
+3. SDライブラリについての詳細情報: https://www.arduino.cc/en/Reference/SD

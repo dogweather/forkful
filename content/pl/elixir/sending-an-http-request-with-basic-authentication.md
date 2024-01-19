@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
-html_title:           "Elixir: Wysyłanie żądania http z uwierzytelnieniem podstawowym"
-simple_title:         "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
+title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
 
-Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem polega na przesłaniu informacji uwierzytelniających wraz z żądaniem HTTP, aby potwierdzić tożsamość użytkownika. Programiści często stosują to, aby zabezpieczyć swoją aplikację przed nieautoryzowanym dostępem lub aby uzyskać dostęp do zasobów na zewnętrznym serwerze.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to kwestia przesyłania identyfikatora użytkownika i hasła jako część żądania HTTP. Programiści robią to, by uzyskać dostęp do zabezpieczonych zasobów.
 
 ## Jak to zrobić:
 
-```Elixir
-HTTPBasic.get("https://example.com", username: "John", password: "secret") 
+W Elixir, możemy użyć takich bibliotek jak HTTPoison do wysyłania żądań HTTP. Dla podstawowego uwierzytelnienia, przygotowujemy 'header' z identyfikatora użytkownika i hasła, zakodowane w base64.
+
+```elixir
+defmodule MyHTTPClient do
+  def get(url, username, password) do
+    headers = [{"Authorization", "Basic #{:base64.encode_to_string("#{username}:#{password}")}"}]
+    HTTPoison.get(url, headers)
+  end
+end
+
+{:ok, response} = MyHTTPClient.get("http://example.com", "user", "pass")
+IO.inspect(response.status_code)
 ```
 
-Przykładowy wynik:
-```Elixir
-{:ok, %HTTPoison.Response{status_code: 200, body: "Witaj John!"}}
-```
+## Głębsze spojrzenie:
 
-## Głębsze wgniebienie:
+Historia podstawowego uwierzytelnienia sięga czasów, kiedy protokół HTTP był jeszcze w początkowej fazie rozwoju. Dziś jest to jedna z najprostszych form uwierzytelnienia, ale nie jest zalecana do używania bez szyfrowania TLS/SSL ze względu na potencjalne naruszenie bezpieczeństwa.
 
-Podstawowe uwierzytelnianie zostało wprowadzone już w 1999 roku jako część specyfikacji protokołu HTTP. Alternatywą dla niego jest uwierzytelnianie za pomocą tokenów, które jest coraz częściej stosowane, głównie ze względu na bezpieczeństwo. W Elixir istnieją różne biblioteki, które pozwalają na wygodne wysyłanie żądań HTTP z uwierzytelnieniem, takie jak HTTPotion czy HTTPoison.
+Alternatywą dla podstawowego uwierzytelnienia jest uwierzytelnienie za pomocą tokenu, takie jak JWT (JSON Web Token), który jest bardziej bezpieczny i oferuje więcej funkcji.
 
-## Zobacz także:
+Szczegóły implementacji w Elixir sprowadzają się do tworzenia 'headera' uwierzytelnienia, kodując dane uwierzytelniające do base64, a następnie dodając je do żądania HTTP.
 
-- Dokumentacja Elixir dla biblioteki HTTPoison: https://hexdocs.pm/httpoison/
-- Artykuł na temat alternatyw dla podstawowego uwierzytelniania: https://dzone.com/articles/authentication-token-vs-basic-auth-in-plain-engli
-- Oficjalna specyfikacja HTTP 1.0 z opisem uwierzytelniania podstawowego: https://tools.ietf.org/html/rfc1945#section-11
+## Zobacz też:
+
+1. [HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html): Dokumentacja biblioteki HTTPoison.
+2. [Base64](https://hexdocs.pm/elixir/Base.html): Moduł Base64 w Elixir.
+3. [Uwierzytelnianie JWT](https://jwt.io/): Informacje o JWT, alternatywie dla podstawowego uwierzytelnienia.

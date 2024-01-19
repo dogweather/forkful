@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Fish Shell: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## Hva & Hvorfor?
 
-Datoer er en viktig del av programmering, da de brukes til å håndtere tidsrelaterte funksjoner som planlegging, informasjonsbehandling og begivenheter. Å sammenligne to datoer er en vanlig oppgave som hjelper utviklere med å få verdifull informasjon, slik som hvor mye tid som har gått mellom to hendelser, eller om en hendelse allerede har skjedd eller ikke. Det er derfor en nødvendig ferdighet for enhver programmerer å vite hvordan man kan sammenligne to datoer med Fish Shell.
+Sammenligne to datoer innebærer rett og slett å sjekke hvilken dato som kommer før, om de er samme dato, eller etter. Dette er nyttig i programmering for å håndtere hendelser og logikk som oppstår ut fra sekvensen av tid og dato.
 
-# Hvordan:
+## Hvordan Gjøre Dette:
 
-For å sammenligne to datoer med Fish Shell, kan du bruke kommandoen `date -f "%Y%m%d"`, hvor `date` er kommandoen som returnerer dagens dato, og `"%Y%m%d"` er et format som indikerer at datoene skal være i året-måned-dag format. 
+Her er et eksempel på hvordan du sammenligner to datoer i Fish Shell.
 
 ```Fish Shell
-# Oppretter to variabler med datoer
-set dato1 "20201201"
-set dato2 "20201215"
+set dato1 (date -u -d '2022-06-01' +%s)
+set dato2 (date -u -d '2022-08-01' +%s)
 
-# Sammenligner datoene ved å bruke kommandoen `date`
-if date -f "%Y%m%d" $dato1 -lt date -f "%Y%m%d" $dato2
-    # Skriver ut melding dersom dato1 er mindre enn dato2
-    echo "Dato1 ($dato1) er før Dato2 ($dato2)"
+if test $dato1 -lt $dato2
+    echo "Dato1 er før Dato2."
+else if test $dato1 -eq $dato2
+    echo "Dato1 er lik Dato2."
+else
+    echo "Dato1 er etter Dato2."
 end
-
-# Resultat:
-Dato1 (20201201) er før Dato2 (20201215)
-
 ```
+I dette eksemplet blir dato1 og dato2 konvertert til antall sekunder siden "Unix Epoch" (1970-01-01 00:00:00 UTC) ved å bruke `date`-kommandoen med `-u`-parameteren for å bruke UTC-tid og `-d`-parameteren for å angi datoen.
 
-# Dypdykk:
+## Dypdykk:
 
-Sammenligning av datoer har vært en viktig del av programmering siden de tidligste dager. Tidligere, før datamaskiner ble utbredt, ble datoer sammenlignet manuelt ved å skrive dem ned og telle dager og måneder på en kalender. Nå, takket være programmeringsspråk og verktøy som Fish Shell, kan denne prosessen automatiseres og gjøres mye mer nøyaktig og effektivt.
+Sammenligning av datoer som vi ser det i dag, var ikke alltid så enkelt. Tidligere versjoner av shell-scripting språk leverte ikke innebygde kommandoer for dato-håndtering. Dette ledet til mange kreative (og ofte komplekse) løsninger. Heldigvis gir moderne shell språk som Fish et bredt spekter av innebygde kommandoer, inkludert `date` og `test`, som i kombinasjon gjør det mulig å sammenligne datoer enkelt.
 
-Som et alternativ til å bruke `date` kommandoen, kan du også bruke `strftime` funksjonen, som konverterer dato formatet enkelt og gir mer fleksibilitet i forhold til å inkludere timer, minutter og sekunder i sammenligningen.
+Når det gjelder alternativer, kan du også bruke `date -r` for å konvertere sekunder siden Unix Epoch til en lesbar dato, eller bruke `date +%s` for å få dagens dato i sekunder siden Unix Epoch.
 
-Det er også viktig å merke seg at sammenligning av datoer kan være mer kompleks når det kommer til håndtering av ulike tids soner og skuddårsdager. Det er derfor viktig å sørge for å ha riktig informasjon og verktøy for å håndtere disse tilfellene.
+Implementeringsdetaljer inkluderer hvordan `date`-kommandoen tolker datoer, and på serverens tidsinnstilling, som kan påvirke hvordan datoer tolkes. I tillegg er det viktig å huske på at Fish benytter seg av 64-bits heltall for å representere datoer, så det er ingen fare for Year 2038 problemet.
 
-# Se også:
+## Se Også:
 
-For mer informasjon og eksempler på bruk av `date` og `strftime` kommandoer, kan du sjekke ut Fish Shell dokumentasjonen og brukerstøttesamfunnet som diskuterer ulike tilnærminger til å sammenligne datoer.
+Mer om sammenligning av datoer og tid i Fish Shell kan du lese på Fish’s offisielle dokumentasjonsside: https://fishshell.com/docs/current/
+
+For historisk sammenheng og en dypere forståelse av Unix Epoch, kan du sjekke ut denne kilden: https://www.unixtutorial.org/unix-timestamp

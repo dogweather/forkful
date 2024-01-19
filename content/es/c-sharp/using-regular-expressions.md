@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "C#: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Usando expresiones regulares"
+html_title:           "Go: Usando expresiones regulares"
+simple_title:         "Usando expresiones regulares"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,28 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Las expresiones regulares son un conjunto de patrones utilizados para buscar y manipular cadenas de texto en un programa. Los programadores usan expresiones regulares para simplificar la búsqueda y manipulación de datos en texto, ahorrando tiempo y esfuerzo en el proceso.
+## ¿Qué y Por qué?
 
-## ¡Cómo hacerlo!
-Aquí hay un ejemplo simple de cómo usar expresiones regulares en C# para encontrar y reemplazar texto en una cadena:
+Las expresiones regulares, o regex, son una forma de encontrar patrones en las cadenas de texto. Los programadores las usan para operaciones como buscar, reemplazar y validar cadenas.
 
+## Cómo se hace:
+
+Utilicemos un ejemplo sencillo para ver cómo se implementan las expresiones regulares en C#. Imagine que necesita verificar si un texto contiene un número de teléfono.
+
+```C#
+using System.Text.RegularExpressions;
+
+string pattern = @"(\d{3})-\d{3}-\d{4}";
+string input = "Llámame al 555-123-4567 por favor.";
+
+if(Regex.IsMatch(input, pattern))
+{
+  Console.WriteLine("Un número de teléfono es detectado.");
+} 
+else 
+{
+  Console.WriteLine("No se detecta ningún número telefónico.");
+}
 ```
-string texto = "¡Hola! Mi nombre es Juan.";
 
-// Usando expresiones regulares para encontrar y reemplazar la palabra "nombre"
-string resultado = Regex.Replace(texto, "nombre", "apodo");
+La salida será: "Un número de teléfono es detectado."
 
-// La salida será: ¡Hola! Mi apodo es Juan.
-Console.WriteLine(resultado);
-```
-Como se puede ver, el método `Replace` de la clase `Regex` nos permite especificar un patrón a buscar y el texto con el que queremos reemplazarlo.
+## Análisis a Profundidad:
 
-## Profundizando
-Las expresiones regulares tienen sus raíces en la teoría de autómatas, que se utilizaba para describir lógicamente los sistemas de lenguaje. Hoy en día, también existen alternativas a las expresiones regulares como el procesamiento de lenguaje natural y las herramientas de inteligencia artificial que pueden resultar más precisas en ciertos casos.
+Las expresiones regulares tienen una amplia historia y se han implementado en varios lenguajes de programación, incluyendo C#. Ofrecen una forma poderosa y flexible de manejar texto, pero también pueden ser bastante complejas y difíciles de leer si se mal utilizan.
 
-En términos de implementación, C# proporciona la clase `Regex` que contiene múltiples métodos y propiedades para trabajar con expresiones regulares. Se pueden encontrar más detalles en la documentación oficial de Microsoft.
+Existen alternativas a las regex para manejar cadenas de texto, dependiendo del caso de uso. Existe la opción de usar métodos incorporados en el lenguaje, como los de la clase `string` en C# para manipulación de cadenas. 
 
-## Ver también
-- [Documentación de Microsoft sobre expresiones regulares en C#](https://docs.microsoft.com/es-es/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Ejemplos prácticos de uso de expresiones regulares en C#](https://www.c-sharpcorner.com/UploadFile/75a48f/regular-expression-in-C-Sharp/)
+Implemetar regex en C# es bastante sencillo gracias a la clase `Regex`. Esta clase incluye varios métodos útiles como `IsMatch`, `Match`, `Matches`, `Replace` y otros que facilitan su manejo.
+
+## Ver También:
+
+Para aprender más acerca de las expresiones regulares, recomiendo los siguientes enlaces (todos en inglés):
+
+1. [La documentación oficial de Microsoft](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
+2. [Un tutorial en W3Schools](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+3. [Un creador y tester de expresiones regulares](https://regexr.com/)
+4. [La guía de StackOverflow sobre expresiones regulares](https://stackoverflow.com/questions/22937618/reference-what-does-this-regex-mean)

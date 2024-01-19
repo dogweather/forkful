@@ -1,7 +1,7 @@
 ---
-title:                "הורדת עמוד אינטרנט"
-html_title:           "C: הורדת עמוד אינטרנט"
-simple_title:         "הורדת עמוד אינטרנט"
+title:                "הורדת דף אינטרנט"
+html_title:           "C++: הורדת דף אינטרנט"
+simple_title:         "הורדת דף אינטרנט"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,45 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-הורדת דף אינטרנט היא תהליך שבו משתמשים משתמשים כדי להוריד תוכן מאתר האינטרנט למחשב שלהם. מתכנתים משתמשים בתהליך זה בכדי לגשת למידע ולתוכן מרחוק בצורה פשוטה ומהירה.
+## מה ולמה?
+הורדת דף אינטרנט משמעה קבלת גישה לתוכן ה- HTML של דף אינטרנט דרך הקוד. מתכנתים מבצעים את זה כדי לנתח נתונים, לבדוק את חווית המשתמש, לבדוק ביצועים ולראות איך עמודים אחרים מתנהגים.
 
-# איך לעשות זאת:
-למטה תמצאו דוגמאות קוד ותוצאות להורדת דף אינטרנט בקוד C.
+## איך
+התוכנית הבאה בשפת C הורדת דף אינטרנט.
 
 ```C
 #include <stdio.h>
+#include <curl/curl.h>
 
-int main()
-{
-    char url[] = "https://www.example.com"; // כתובת האתר שברצונכם להוריד
-    char cmd[50]; // גודל המחרוזת יכול להיות כלשהו, תלוי בגודל האתר שתרצו להוריד 
-    
-    sprintf(cmd, "wget %s", url); // אתחול והנחת הכתובת של האתר במשתנה cmd באמצעות פונקציית sprintf
-    
-    system(cmd); // הפעלת פקודת ההורדה במחברת
+size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
+    size_t written = fwrite(ptr, size, nmemb, stream);
+    return written;
+}
 
+int main(void) {
+    CURL *curl;
+    FILE *fp;
+    CURLcode res;
+
+    curl = curl_easy_init();
+
+    if (curl) {
+        fp = fopen("/tmp/test.txt","wb");
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+        res = curl_easy_perform(curl);
+
+        /* always cleanup */
+        curl_easy_cleanup(curl);
+        fclose(fp);
+    }
     return 0;
 }
 ```
 
-תוצאה:
+התוצאה שתראו היא דף האינטרנט שהורד מhttp://example.com שמור בקובץ /tmp/test.txt.
 
-```
---2020-11-20 12:00:00--  https://www.example.com/
-Resolving www.example.com (www.example.com)... 93.184.216.34
-Connecting to www.example.com (www.example.com)|93.184.216.34|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-...
-```
+## הצלילה לעומק
+הורדת דפי אינטרנט הייתה חלק מחיפוש גוגל ובוטים הראשונים שהועלו לרשת. בתיקון מודרני, השימוש בספריות כמו CURL ב-C הופך את זה ליותר פשוט בהרבה. החלופות ל-CURL כוללות Wget ו- Requests ב-Python. לאפשרות זו יש יתרונות נוספים כמו תמיכה במודלים אסינכרוניים וממשק פשוט יותר לשימוש.
 
-# כיול לעומק:
-בעמוד זה למדנו כיצד להוריד דף אינטרנט בקוד C. כיום, ניתן למצוא מגוון של כלים וטכנולוגיות להורדת דפי אינטרנט בכתובות שונות כמו HTML, CSS ו-JavaScript.
-
-תוכלו להשתמש ב-URL קיימים ובתכני HTML כדי ללמוד עוד על התהליך או לבדוק כמה כלים אחרים שיכולים לעשות את עבודת ההורדה על דף אינטרנט.
-
-לפני ביצוע הורדת הדף, כדאי לוודא שיש לכם גישה לאתר ולוודא שהאתר אינו מכיל כל מיני חסימות או תנאים כדי למנוע גישה לא מורשית לתוכן.
-
-## ראו גם:
-- [כיצד להוריד דף אינטרנט בשפת פייתון](https://realpython.com/python-web-scraping-practical-introduction/)
-- [מאמר על טכנולוגיות אינטרנט שונות](https://www.webdesignerdepot.com/2019/02/a-guide-to-different-web-technologies-and-when-to-use-them/)
+## ראה גם
+1. התיעוד של [LIBCURL](https://curl.se/libcurl/c/) הוא מקור מצוין למידע נוסף על הספרייה.
+2. המדריך של [GNU Wget](https://www.gnu.org/software/wget/) מספק מבט מעמיק על קונצפטים ושימושים להורדת פרטים.
+3. מספר מדריכים רבים של [Python Requests](https://realpython.com/python-requests/) מספקים להם גם גישה לשפה ולספרייה.

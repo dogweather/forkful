@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Bash: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
 simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Bash"
 category:             "Bash"
@@ -12,34 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-Muuttaminen merkkijonon pienaakkosiksi tarkoittaa sen muuttamista merkeistä, joista osa on isoja kirjaimia ja osa on pieniä, pelkiksi pieniksi kirjaimiksi. Tätä tehdään yleensä siksi, että koodin vertailu ja käsittely olisi helpompaa, ja se auttaa myös välttämään mahdollisia virheitä johtuen kirjainkoon eroista.
+Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa sisällön käsittelyä siten, että kaikki merkkijonon suuret kirjaimet muuttuvat pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän muodostaakseen yhtenäisyyttä ja välttääkseen tietojen väärinkäsitykset, koska Bash on kirjainkoosta riippuvainen.
 
-## Miten:
+## Näin tehdään:
 
-```Bash
-# Aloitetaan merkkijonolla isoilla kirjaimilla
-STRING="TEKSTI ON ISOILLA KIRJAIMILLA"
-# Käytetään 'tr' komentoa muuntamaan merkkijono pienaakkosiksi
-echo $STRING | tr '[:upper:]' '[:lower:]'
-```
-
-Tulostus:
-teksti on isoilla kirjaimilla
-
-Tai voit tallentaa muunnetun merkkijonon uuteen muuttujaan:
+Bash-ohjelmassa voit tuoda esille pienet kirjaimet käyttämällä tr-komentoa seuraavasti:
 
 ```Bash
-LOWER_STRING=$(echo $STRING | tr '[:upper:]' '[:lower:]')
-# Tulostetaan uusi muuttuja
-echo $LOWER_STRING
+echo 'Hei, Suomi!' | tr '[:upper:]' '[:lower:]'
 ```
 
-Tulostus:
-teksti on isoilla kirjaimilla
+Edellä oleva käskee Bashin tulostamaan 'Hei, Suomi!' jossa kaikki suuret kirjaimet muutetaan pieniksi kirjaimiksi. Tämä tuottaa seuraavan tuloksen:
 
-## Syvällinen sukellus:
-Koodin vertailu ja käsittely helpottuu, kun kaikki merkkijonot ovat samassa muodossa. Käyttämällä 'tr' komentoa syntyy uusi merkkijono, jossa kaikki kirjaimet ovat pieniä. On myös mahdollista käyttää muita komentoja muuntamiseen, esimerkiksi 'sed' tai 'awk', mutta 'tr' on yksinkertaisin ja tehokkain tapa tehdä tämä Bashissa.
+```Bash
+hei, suomi!
+```
+
+## Syvä Sukellus:
+
+Historiallisesta näkökulmasta, tr-komento on peräisin Unix-järjestelmän varhaisista päivistä ja on ollut osa POSIX-standardia vuodesta 1993 alkaen.
+
+Tärkeä vaihtoehto sisällytetty Bash-ohjelmaan on `${variable,,}` syntaksi, jossa 'variable' on muuttuja, jonka arvo haluat muuttaa:
+
+```Bash
+variable='Hei, Suomi!'
+echo "${variable,,}"
+```
+
+Tämä tulostaa saman tuloksen kuin tr-komento:
+
+```Bash
+hei, suomi!
+```
+
+Muistutus: bash-ohjelman `${variable,,}` syntaksi tuli käyttöön version 4.0 julkaisussa, joten se ei välttämättä ole saatavilla vanhemmissa järjestelmissä.
 
 ## Katso myös:
-https://www.shellscript.sh/case.html - Opas Bashin erilaisiin muodonmuutoksiin
-https://www.tutorialspoint.com/unix_commands/tr.htm - Lisää tietoa 'tr' komennosta ja sen eri käyttötavoista
+
+1. Bash-kielen käsikirja: https://www.gnu.org/software/bash/manual/bash.html
+2. Yksityiskohtainen opas TR-komentoon: https://www.geekhideout.com/dir/2011/09/19/unix-tr-command-examples/
+3. Alkuperäinen POSIX-standardi: https://pubs.opengroup.org/onlinepubs/9699919799/

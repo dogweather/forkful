@@ -1,6 +1,6 @@
 ---
 title:                "Convertir une chaîne en minuscules"
-html_title:           "Ruby: Convertir une chaîne en minuscules"
+html_title:           "PHP: Convertir une chaîne en minuscules"
 simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,26 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Qu'est-ce que c'est et pourquoi?
+## Quoi & Pourquoi?
+Convertir une chaîne en minuscules signifie modifier tous les caractères majuscules d'une chaîne pour devenir minuscules. Les programmeurs le font pour uniformiser les données, par exemple, pour faciliter les comparaisons sans tenir compte des différences de casse.
 
-La conversion d'une chaîne de caractères en minuscules est un processus qui consiste à transformer tous les caractères en minuscules. Les programmeurs font cela pour faciliter la comparaison de chaînes de caractères et pour uniformiser le format des données dans leur code.
-
-### Comment faire:
-
-Voici un exemple de code pour convertir une chaîne de caractères en minuscules en utilisant la méthode `downcase` en Ruby:
+## Comment faire:
+En Ruby, vous pouvez utiliser la méthode `downcase` pour convertir une chaîne en minuscules. Voici un exemple:
 
 ```Ruby
-my_string = "BONJOUR"
-puts my_string.downcase
+ma_chaine = "BONJOUR LE MONDE"
+puts ma_chaine.downcase
 ```
 
-Cela produira une sortie `bonjour` en minuscules.
+Et voilà le résultat que vous obtenez:
 
-### Plongée en profondeur:
+```
+bonjour le monde
+```
 
-La conversion de chaînes de caractères en minuscules est une pratique courante dans la programmation. Cela vient de l'histoire de l'écriture des ordinateurs où seules les majuscules étaient initialement disponibles. Il existe également d'autres méthodes pour convertir une chaîne de caractères en minuscules en utilisant des bibliothèques externes telles que `unicode_utils`. Cependant, la méthode `downcase` est la plus simple et la plus couramment utilisée en Ruby car elle ne nécessite pas l'installation de bibliothèques supplémentaires.
+## Plongeon Profond
+Historiquement, `downcase` est une méthode standard dans les anciennes versions de Ruby. Les alternatives incluent la méthode `swapcase` qui inverse la casse des caractères dans une chaîne. Les détails de mise en œuvre de la méthode `downcase` sont plutôt simples: elle parcourt chaque caractère de la chaîne and, si c'est une lettre majuscule, la convertit en minuscule.
 
-### Voir aussi:
+## Voir Aussi 
+Pour en savoir plus sur la méthode `downcase` et autres méthodes de chaîne en Ruby, consultez les ressources suivantes:
 
-- [Documentation officielle de Ruby pour la méthode downcase](https://ruby-doc.org/core-3.0.1/String.html#method-i-downcase)
-- [La bibliothèque ruby-unicode](https://github.com/lang/ruby-unicode) pour des méthodes plus avancées de manipulation de chaînes de caractères.
+- Documentation Ruby pour la classe String: [https://ruby-doc.org/core-2.7.1/String.html](https://ruby-doc.org/core-2.7.1/String.html)
+- Billet de blog 'Ruby Explained: String case Methods': [http://rubylearning.com/blog/2011/07/28/ruby-explained-string-case-methods/](http://rubylearning.com/blog/2011/07/28/ruby-explained-string-case-methods/)

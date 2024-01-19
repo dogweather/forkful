@@ -1,6 +1,6 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Lua: Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## Mikä & Miksi?
 
-Tekstin etsiminen ja korvaaminen on prosessi, jossa ohjelmoijat etsivät tiettyjä tekstin osia ohjelmakoodista ja korvaavat ne toisilla tekstin osilla. Tämän avulla voidaan nopeasti muuttaa suuria määriä koodia ilman, että jokainen muutos pitäisi tehdä manuaalisesti. Tämä säästää aikaa ja vaivaa, kun ohjelmoijat tarvitsevat tehdä laajoja muutoksia ohjelmiinsa tai korjata olemassa olevia ongelmia.
+Hakeminen ja korvaaminen on tekstissä olevien merkkijonojen löytäminen ja vaihtaminen. Ohjelmoijat tekevät tämän, koska se helpottaa koodin muokkaamista ja virheiden korjaamista.
 
-## Miten:
+## Näin teet:
 
-Tekstin etsiminen ja korvaaminen voidaan tehdä monella eri tavalla käyttäen ohjelmointikieliä kuten Lua. Tässä on esimerkki, miten tekstiä voidaan korvata Lua-koodissa:
+Lua-ohjelmoinnissa hakeminen ja korvaaminen on helppoa käyttäen `gsub`-funktiota. Tässä on esimerkki:
+
+```Lua
+korvattavaTeksti = "Hello, World!"
+korvattava = "Hello"
+korvaaja = "Hei"
+
+korjattuTeksti = korvattavaTeksti:gsub(korvattava, korvaaja)
+print(korjattuTeksti)
+```
+
+Esimerkkikoodin tuloste:
 
 ```
-local teksti = "Tervetuloa!"
-
-teksti = string.gsub(teksti, "Tervetuloa", "Tervehdys")
-print(teksti)
+Hei, World!
 ```
 
-Tämä koodi etsii Muuttuja `teksti` muuttujasta sanan "Tervetuloa" ja korvaa sen sanalla "Tervehdys". Lopputuloksena tulostetaan "Tervehdys!". 
+## Syvällisemmin:
 
-## Syvemmälle:
+(1) Historiallinen tausta: Alkuperäinen `gsub`-funktio oli osa Lua-kielen alkuperäistä luomista 1990-luvulla. Se oli yksi ensimmäisistä kieleen lisätyistä ominaisuuksista, jotka tekevät tekstikäsittelystä helpompaa.
 
-Tekstin etsiminen ja korvaaminen on tärkeä ohjelmointikäytäntö, jota useimmat ohjelmoijat käyttävät päivittäin. Sitä voidaan käyttää esimerkiksi suurten koodipohjien refaktorointiin tai virheiden korjaamiseen. Ennen kuin tekstiä etsiminen ja korvaamista voitiin tehdä automaattisesti tietokoneilla, se piti tehdä manuaalisesti, mikä oli aikaa vievä ja altis virheille. Onneksi nykyään ohjelmointikielissä on valmiita funktioita tätä varten, kuten Lua-funktiota `string.gsub`.
+(2) Vaihtoehdot: Lua tarjoaa myös `sub`-funktion, joka voi korvata tekstiä vain kerran, kun taas `gsub` voi korvata merkkijonoja useita kertoja.
+
+(3) Toteutustiedot: `gsub`-funktio toimii käymällä läpi merkkijonon alusta loppuun ja korvaa löydetyt sana tai sanat määriteltyjen sääntöjen mukaan. Se palauttaa uuden merkkijonon, jossa korvaukset on tehty, jättäen alkuperäisen merkkijonon muuttumattomaksi.
 
 ## Katso myös:
 
-Jos haluat oppia lisää tekstien etsimisestä ja korvaamisesta Lua-koodissa, voit tsekata nämä lähteet:
+Lisätietoja Lua-kielen tekstikäsittelystä saat seuraavista lähteistä:
 
-- [Lua-käsikirja](https://www.lua.org/manual/5.3/), joka sisältää tietoa kaikista Lua-kielessä olevista funktioista.
-- [Lua-kirjasto](https://github.com/daurnimator/lua-stdlib), josta löytyy paljon hyödyllisiä toimintoja, kuten tekstien etsiminen ja korvaaminen.
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/lua), jossa voit löytää vastauksia muihin Lua-ohjelmoijien kysymyksiin, myös koskien tekstien etsimistä ja korvaamista.
+- Lua 5.3 manualin `string`-library-osio: https://www.lua.org/manual/5.3/manual.html#6.4
+- Programming in Lua, Roberto Ierusalimschy: http://www.lua.org/pil/20.html
+- Lua Users Wiki - String Library Tutorial: http://lua-users.org/wiki/StringLibraryTutorial

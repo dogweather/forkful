@@ -1,6 +1,6 @@
 ---
 title:                "Extrayendo subcadenas"
-html_title:           "Rust: Extrayendo subcadenas"
+html_title:           "C: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,30 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Extraer subcadenas se refiere a obtener una parte específica de una cadena de texto. Los programadores a menudo hacen esto para realizar operaciones en una sección específica de una cadena, como buscar una palabra clave o formatear una fecha.
+# Extrayendo Subcadenas en Rust
 
-## Cómo hacerlo:
-La biblioteca estándar de Rust proporciona varias formas de extraer subcadenas, incluyendo el método `substring()` de la clase `String` y la función `slice()` de la clase `str`. A continuación se muestra un ejemplo de ambas opciones y su salida correspondiente en la consola:
+## ¿Qué y Por qué?
+Las subcadenas son fragmentos de una cadena de caracteres. Los programadores extraen subcadenas para manipular y analizar datos de manera más eficaz.
+
+## Cómo se hace:
+Extraer subcadenas en Rust es sencillo. Aquí tienes algunos ejemplos.
 
 ```Rust
-// Ejemplo usando substring()
-let cadena = "Hola Mundo";
-let subcadena = cadena.substring(5, 10); // obtiene "Mundo"
-println!("{}", subcadena); // imprime "Mundo"
-
-// Ejemplo usando slice()
-let cadena = "Hola Mundo";
-let subcadena = &cadena[5..10]; // obtiene "Mundo"
-println!("{}", subcadena); // imprime "Mundo"
+ fn main() {
+    let cadena = "Hola, Mundo";
+    let subcadena = &cadena[0..4];
+    println!("{}", subcadena); // Imprime "Hola"
+}
 ```
 
-## Profundizando:
-La extracción de subcadenas ha existido desde los primeros lenguajes de programación, pero ha evolucionado mucho a lo largo de los años. Antes, los programadores tenían que realizar cálculos manuales para determinar los índices de inicio y fin de una subcadena dentro de una cadena. Sin embargo, con el avance de las bibliotecas y funciones de manejo de cadenas, ahora es mucho más fácil y eficiente extraer subcadenas.
+En este código, hemos tomado la subcadena "Hola" en la cadena "Hola, Mundo". Los números entre corchetes indican el rango de la subcadena.
 
-En términos de alternativas, los programadores también pueden utilizar expresiones regulares para extraer subcadenas en Rust. Sin embargo, esto puede ser más complejo y requiere un mayor conocimiento de las expresiones regulares.
+También puedes usar los métodos `chars()` y `nth()` para extraer caracteres de una cadena.
 
-Internamente, Rust utiliza punteros inteligentes para almacenar y manipular cadenas de forma eficiente. Además, los métodos `substring()` y `slice()` utilizan el tipo de dato `Index` de Rust, que permite el acceso a partes específicas de una cadena utilizando la sintaxis de índice. Esto hace que la extracción de subcadenas en Rust sea muy eficiente y fácil de implementar.
+```Rust
+fn main() {
+    let cadena = "Hola, Mundo";
+    let caracter = cadena.chars().nth(0).unwrap();
+    println!("{}", caracter); // Imprime "H"
+}
+```
 
-## Ver también:
-Para aprender más sobre la extracción de subcadenas en Rust, puedes consultar la documentación oficial de Rust en https://doc.rust-lang.org/std/string/struct.String.html#method.substring y https://doc.rust-lang.org/std/primitive.str.html#method.slice. También puedes explorar la biblioteca regex de Rust para ver cómo utilizar expresiones regulares para extraer subcadenas.
+Aquí, hemos extraído el primer carácter, "H", de la cadena "Hola, Mundo".
+
+## Inmersión profunda
+
+La especificación de String en Rust no permite acceder directamente a los caracteres por su índice para garantizar la seguridad de la memoria. Rust es un lenguaje de programación que se preocupa profundamente por la seguridad y el rendimiento.
+
+Además de la extracción de subcadenas, puedes dividir una cadena en áreas más pequeñas utilizando `split_whitespace()`, `split()`, `splitn()`.
+
+```Rust
+fn main() {
+    let cadena = "Hola, Mundo";
+    let palabras: Vec<&str> = cadena.split_whitespace().collect();
+    println!("{:?}", palabras); // Imprime "["Hola,", "Mundo"]"
+}
+```
+
+Este código divide la cadena "Hola, Mundo" en palabras.
+
+En un entorno real, podrías encontrar otras bibliotecas útiles que te permiten manipular cadenas de manera más fácil y eficiente.
+
+## Ver además
+
+1. Documentación oficial de Rust: [https://doc.rust-lang.org/book/](https://doc.rust-lang.org/book/)
+2. Un buen tutorial sobre las cadenas en Rust: [https://tourofrust.com/chapter_4_fr.html](https://tourofrust.com/chapter_4_fr.html)
+3. Más detalles sobre el manejo de cadenas y caracteres: [https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

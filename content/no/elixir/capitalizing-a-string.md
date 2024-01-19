@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstav på en streng"
-html_title:           "Elixir: Stor bokstav på en streng"
-simple_title:         "Stor bokstav på en streng"
+title:                "Sette en streng i store bokstaver"
+html_title:           "Elixir: Sette en streng i store bokstaver"
+simple_title:         "Sette en streng i store bokstaver"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
+## Hva & Hvorfor?
 
-Å sette bokstaver i store bokstaver, også kjent som "kapitalisering", er en vanlig oppgave i programmering. Dette innebærer å gjøre alle bokstaver i en string eller tekstblokk store. Mange programmerere gjør dette for å gjøre koden lettere å lese og forstå, spesielt når variabelnavn eller funksjonsnavn er lange og komplekse.
+Å forstørre en streng betyr å gjøre den første bokstaven i hver ord i strengen til en stor bokstav. Programmerere gjør dette for å forbedre lesbarheten og presentasjonen av tekstdata.
 
-## Hvordan:
+## Hvordan: 
 
-```Elixir
-string = "dette er en test string"
-String.upcase(string)
+Vi bruker `String.capitalize/2` funksjonen i Elixir:
+
+```elixir
+IO.puts String.capitalize("elixir programmering")
 ```
 
 Output:
-
-```Elixir
-"DETTE ER EN TEST STRING"
+  
+```elixir 
+"Elixir Programmering"
 ```
 
-I dette eksemplet viser vi hvordan du kan bruke funksjonen `upcase` fra `String` modulen i Elixir for å kapitalisere en string. Vi først definerer en variabel `string` med en vanlig tekststreng, og deretter bruker vi `String.upcase` funksjonen for å gjøre alle bokstavene i stringen til store bokstaver. Output viser dette resultatet.
+## Dypdykk: 
 
-## Dykk dypere:
+Historisk sett handler strengkapitalisering om typografiske konvensjoner, hvor stor forbokstav brukes for egennavn, setningsstarting, titler osv.
 
-Historisk sett har kapitalisering vært viktig for å skille mellom små og store bokstaver i kodingspråk som er case-sensitive. Dette betyr at programmeringsspråk som skiller mellom små og store bokstaver, vil behandle "A" og "a" som to forskjellige bokstaver. Alternativt kan noen programmerere også bruke understrykningstegn "_" for å indikere separate ord i variabelnavn istedenfor å bruke store bokstaver.
+Alternativer til `String.capitalize/2` i Elixir kan være direkte manipulering av strenger, men dette kan være mer komplisert og feilutsatt. `String.capitalize/2` tilbyr en pålitelig og enkel løsning.
 
-I tillegg til `String.upcase` funksjonen i Elixir, finnes det også andre måter å kapitalisere en string på. Du kan for eksempel bruke `String.capitalize` for å kun gjøre første bokstav i stringen til en stor bokstav, eller `String.capitalize_words` for å gjøre første bokstav i hvert ord i en string til en stor bokstav.
+Ved en nærmere titt, `String.capitalize/2` funksjonen bruker Unicode datatabeller og regler for å transformere strenger. Derfor fungerer det på tvers av forskjellige språk og skrifter, noe som sikrer pålitelighet og omfattende støtte.
 
-## Se også:
+## Se også: 
 
-- Elixir `String` modul dokumentasjon: https://hexdocs.pm/elixir/String.html
-- Elixir `String.capitalize` funksjonsdokumentasjon: https://hexdocs.pm/elixir/String.html#capitalize/1
-- Elixir `String.capitalize_words` funksjonsdokumentasjon: https://hexdocs.pm/elixir/String.html#capitalize_words/1
+For detaljert informasjon og ytterligere lesning, se følgende ressurser:
+
+- Elixir offisiell dokumentasjon på `String.capitalize/2` [her](https://hexdocs.pm/elixir/String.html#capitalize/2)
+
+- Diskusjon om bruk av `String.capitalize/2` versus direkte strengmanipulering [her](https://elixirforum.com/t/string-capitalize/1340)
+
+- For en bredere forståelse av hvordan Elixir håndterer strenger og Unicode, se [dette](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html).

@@ -1,6 +1,6 @@
 ---
 title:                "ウェブページのダウンロード"
-html_title:           "Ruby: ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,29 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 何となぜ？
-Webページをダウンロードするとは何か？プログラマーがそれをする理由は何か？
-Webページのダウンロードとは、インターネット上のサイトからそのコンテンツをローカルコンピューターに取得することです。プログラマーたちは、Webページをダウンロードしてそのコンテンツを使用し、処理することによって、ユーザーに有用な情報を提供することができます。
 
-## 方法：
+Webページをダウンロードするとは、WebサーバからHTMLファイル（画像やJavaScriptなども含む）を取得することを意味します。これは、データ分析、Webスクレイピング、自動化テストなどの目的でプログラマーが行います。
+
+## やり方:
+
 ```Ruby
 require 'open-uri'
+require 'nokogiri'
+
 url = 'https://example.com'
-page = URI.open(url).read
-puts page
+html = open(url)
+
+doc = Nokogiri::HTML.parse(html.read)
+doc.search('title').each do |title| 
+  puts title.inner_text
+end
 ```
-上記のコードでは、"open-uri"ライブラリを使用してURLを指定し、openメソッドを使用してWebページをダウンロードし、readメソッドを使用してコンテンツを取得し、putsメソッドを使用してコンテンツを表示します。
 
-## 詳細を深く掘り下げる：
-### 歴史的背景：
-Webページのダウンロードは、インターネットが普及する前の1989年に、ティム・バーナーズ・リーによって最初に提案されました。その後、1990年に最初のWebブラウザであるワールドワイドウェブが誕生し、現在ではインターネットの中核となる重要な技術となっています。
+上記のコードを実行すると、タイトルタグ内のテキストが出力されます。
 
-### 代替手段：
-Webページをダウンロードする方法としては、今では多くのライブラリやツールが存在しますが、上記の例のようにopen-uriを使用する方法が一般的です。また、Webスクレイピングと呼ばれる技術を使用することで、Webページから特定の情報を抽出することも可能です。
+##深堀り：
 
-### 実装の詳細：
-上記のコードでは、open-uriライブラリを使用していますが、実際にはOpenSSLライブラリを使用しているため、SSL接続にも対応しています。また、URIクラスのopenメソッドは、リダイレクトやエラーハンドリングなどの機能も持っており、便利にWebページをダウンロードすることができます。
+1) **歴史的な文脈**：Webページのダウンロードは、インターネットが人々の生活に浸透するようになった初期から行われてきました。初期のインターネットユーザーはダイヤルアップ接続を使ってWebページをダウンロードし、後にブラウザでオフラインで閲覧するために保存しました。
 
-## 関連リンク：
-- [open-uriドキュメント (公式)](https://docs.ruby-lang.org/ja/3.0.0/library/open=2duri.html)
-- [Webスクレイピングについて (Wikipedia)](https://ja.wikipedia.org/wiki/%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B9%E3%82%AF%E3%83%AC%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0)
-- [OpenSSLドキュメント (公式)](https://docs.ruby-lang.org/ja/3.0.0/library/openssl.html)
+2) **代替手段**：Ruby以外にもPython、JavaScript（Node.js）、Javaなどのプログラミング言語でもWebページのダウンロードが可能です。使用言語は目的や好みによります。
+
+3) **実装詳細**：Rubyでは、'open-uri'と'nokogiri'のライブラリを使用してWebページをダウンロードしていました。'open-uri'は指定したURLからデータを取得し、'nokogiri'はそのデータを解析・操作するためのものです。
+
+##参照：
+
+- Rubyの公式ドキュメンテーションで、この方についてより詳しく学ぶことができます：
+  - 'open-uri': https://ruby-doc.org/stdlib-3.1.1/libdoc/open-uri/rdoc/OpenURI.html
+  - 'nokogiri': https://nokogiri.org/
+- Webスクレイピングについての基本：https://realpython.com/python-web-scraping-practical-introduction/
+- RubyでのWebスクレイピングについての詳細な記事：https://www.rubyguides.com/2018/02/ruby-web-scraper/

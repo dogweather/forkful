@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "C++: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,33 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-"Merkkijonon pituuden löytäminen" tarkoittaa sitä, että ohjelmoija selvittää kuinka monta merkkiä merkkijono sisältää. Tämä on tärkeää, sillä ohjelmien on usein käsiteltävä merkkijonoja ja niiden pituutta tarvitsee tietää esimerkiksi silloin, kun halutaan varmistaa, että annettu merkkijono mahtuu tiettyyn muuttujaan.
 
-## Miten:
-Tehtävän suorittamiseksi käytetään C++:n `size()` -funktiota, joka palauttaa merkkijonon pituuden. Esimerkiksi:
+Stringin pituuden selvittäminen tarkoittaa merkkijonoa muodostavien merkkien määrän laskemista. Ohjelmoijat tarvitsevat tätä tietoa muun muassa sellaisten algoritmien toteuttamiseen, jotka käsittelevät tai muokkaavat tekstejä.
+
+## Kuinka:
+
+Voit laskea stringin pituuden C++:lla seuraavalla tavalla:
 
 ```C++
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 int main() {
-    string s = "Tämä on esimerkki merkkijonosta.";
-    cout << s.size() << endl;
+    std::string teksti = "Ohjelmointi on kivaa!";
+    std::cout << "Tekstin pituus on: " << teksti.length() << '\n';
+    return 0;
 }
 ```
+Ohjelman tulostus näkyy seuraavasti:
 
-Tulostus:
+``` 
+Tekstin pituus on: 20
+```
 
-`30`
+## Syvä sukellus:
 
-## Syvemmälle:
-Tämä merkkijonon pituuden laskemisen tapa on yleisesti käytössä modernissa ohjelmoinnissa. Kuitenkin ennen C++:aa merkkijonon pituuden selvittämiseen käytettiin `strlen()` -funktiota, joka löytyy edelleen C-kielestä ja joistain muista kielistä.
+Historiallisesti C++:n varhaisissa versioissa stringeillä ei ollut `.length()` funktiota. Sen sijaan ohjelmoijien piti käydä läpi koko stringi merkki kerrallaan kunnes ilmestyi nollamerkki, joka osoitti stringin lopun.
 
-On myös mahdollista laskea merkkijonon pituus manuaalisesti käymällä läpi jokainen merkki ja lisäämällä muuttujaan yksi jokaisesta löydetystä merkistä. Tämä kuitenkin vie enemmän aikaa ja on alttiimpi virheille, joten `size()` -funktio on yleisesti suositeltava tapa hoitaa tehtävä.
+Vaihtoehtoisesti voit laskea stringin pituuden `size()`-funktiolla, joka toimii samalla tavalla kuin `length()`:
+
+```C++
+std::string teksti = "Ohjelmointi on kivaa!";
+std::cout << "Tekstin pituus on: " << teksti.size() << '\n';
+```
+
+C++:n `.length()` ja `.size()` metodien toteutus riippuu käytettävästä standardikirjastosta ja alustasta. Suurin osa käytännössä toteuttaa ne O(1) operaationa, mikä tarkoittaa, että pituuden selvittäminen vie aina saman ajan riippumatta stringin pituudesta.
 
 ## Katso myös:
-- [C++ string size()](http://www.cplusplus.com/reference/string/string/size/)
-- [C++ string length](https://www.tutorialspoint.com/cpp_standard_library/cpp_string_length.htm)
-- [C string strlen()](https://www.programiz.com/cpp-programming/library-function/cstring/strlen)
+
+- [C++ string](http://www.cplusplus.com/reference/string/string/)
+- [String length function](https://www.programiz.com/cpp-programming/library-function/cstring/strlen)
+- [Difference between length() and size()](https://stackoverflow.com/questions/905479/difference-between-string-length-and-string-size-in-c)

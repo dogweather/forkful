@@ -1,6 +1,6 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "PowerShell: वर्तमान तारीख प्राप्त करना"
+html_title:           "C#: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,27 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-हम सभी को हर दिन तारीख और समय को जानने की जरूरत होती है। यह हमारे दैनिक जीवन का हिस्सा है। क्या आप जानते हैं कि पावरशेल के माध्यम से आप अपने कंप्यूटर को वर्तमान तारीख और समय प्राप्त कर सकते हैं? यह एक उपयोगी फीचर है जो प्रोग्रामर्स द्वारा उपयोग की जाती है।
+
+पावरशेल में 'वर्तमान दिनांक' पाने का अर्थ है किसी विशेष समय पर वर्तमान दिनांक और समय का उपयोग करना। प्रोग्रामर इसे डेटा-ड्रिवन कार्य, लोग्ज़ को स्टाम्प करने, और समय-संवेदी कार्यवाही को समर्थन देने के लिए करते हैं।
 
 ## कैसे:
-पावरशेल में वर्तमान तारीख और समय प्राप्त करने के लिए, हम तीन चरणों का उपयोग कर सकते हैं।
+
+वर्तमान दिनांक प्राप्त करने के लिए आप एक 'Get-Date' cmdlet का उपयोग कर सकते हैं:
 
 ```PowerShell
-# वर्तमान तारीख प्राप्त करें
-Get-Date
-
-# तारीख को अलग अलग फॉर्मेट में प्राप्त करें
-Get-Date -Format "dd/MM/yyyy"
+$CurrentDate = Get-Date
+Write-Host $CurrentDate
 ```
 
-आउटपुट के रूप में आपको वर्तमान तारीख और समय के बारे में जानकारी मिलेगी जो स्क्रीन पर प्रदर्शित होगी।
+उत्तर:
 
-## गहराई में जाएँ:
-1. इतिहासिक परिदृश्य: कंप्यूटर प्रोग्रामिंग के दौरान, वर्तमान तारीख और समय को प्राप्त करने के लिए, प्रोग्रामर्स को अक्सर समय और खर्चित समय को दो मुख्य रूप से व्यवसायिक लॉजिक और अन्य धाराओं को प्रोग्रामिंग करने के लिए जोड़ने की आवश्यकता होती थी।
-2. वैकल्पिक विकल्प: कुछ अन्य कंडोमीनियम भाषाओं में वर्तमान तारीख और समय प्राप्त करना काफी परेशानीजनक हो सकता है। लेकिन पावरशेल का उपयोग करके, हम आसानी से इसे प्राप्त कर सकते हैं और अपने दस्तावेजों में उपयोग कर सकते हैं।
-3. अंतर्निहित विवरण: पावरशेल में Get-Date कमांड का प्रयोग करके, आप अपनी स्थानीय समय क्षेत्र के साथ साथ UTC समय को भी प्राप्त कर सकते हैं। इसके अलावा, आप विभिन्न फॉर्मेट में तारीख और समय को प्राप्त कर सकते हैं जैसे कि 12-02-2021 या फिर 12 फरवरी, 2021।
+```PowerShell
+Saturday, 22 January 2022 10:51:26
+```
 
-## इसलिए देखें:
-- [Microsoft Docs पर Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7)
-- [PowerShell फॉर्मेट डेट कमांड की सूची](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7#inputs)
-- [पावरशेल में दिनांक और समय फॉर्मेट करना](https://www.journaldev.com/5230/powershell-date-format-get-date)
+इसे स्वरूपित भी किया जा सकता है:
+
+```PowerShell
+$CurrentDate = Get-Date -Format "yyyy-MM-dd"
+Write-Host $CurrentDate
+```
+
+उत्तर:
+
+```PowerShell
+2022-01-22
+```
+
+## गहराईसे ज्ञान:
+
+**ऐतिहासिक संदर्भ**: PowerShell, Microsoft द्वारा सिस्टम प्रबंधन के लिए विकसित किया गया एक शक्तिशाली शेल-स्क्रिप्टिंग भाषा है, जिसमें 'Get-Date' cmdlet 1.0 से ही शामिल है। 
+
+**विकल्प**: अन्य भाषाओं के मुकाबले, PowerShell के 'Get-Date' cmdlet का उपयोग करना आसान है। लेकिन आप .NET के 'DateTime' ऑब्जेक्ट का भी उपयोग कर सकते हैं।
+
+```PowerShell
+$CurrentDate = [DateTime]::Now
+Write-Host $CurrentDate
+```
+
+**कार्यान्वयन विवरण**: 'Get-Date' cmdlet एक .NET 'DateTime' ऑब्जेक्ट वापस करता है। इसका अर्थ है कि आप इससे 'DateTime' विधियों और गुणों का उपयोग कर सकते हैं।
+
+## और भी लिंक:
+
+- [Get-Date ऑफिसियल डॉक्युमेंटेशन](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+- [डेट और समय के फॉर्मेट](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

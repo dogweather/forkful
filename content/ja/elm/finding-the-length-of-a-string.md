@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何でしょう？何故ですか？
-
-プログラムの中で、文字列の長さを調べるというのは、機能であり、プログラマーが文字列の操作や処理を行う上で重要なスキルです。
+## 何となぜ？
+文字列の長さを見つけるとは、文字列の中にある文字の数を特定することです。プログラマーがこれを行う理由は多岐にわたりますが、主に文字列の操作や分析に役立つからです。
 
 ## 方法：
+Elmでは、`String.length`関数を用いて文字列の長さを得ることができます。たとえば：
 
-Elmのプログラムで文字列の長さを調べる方法は、文字列をリストとして扱い、そのリストの長さを調べることで可能です。
-
-```
-getStringLength: String -> Int
-getStringLength str =
-  List.length (String.toList str)
+```Elm
+import Html exposing (text)
 
 main =
-  Elm.io.print (getStringLength "Hello") --> 5
+    text (String.length "こんにちは")
 ```
 
-## 詳しく調べる
+出力結果は5になります。
 
-文字列の長さを調べる機能は、プログラミング言語の中でも非常に一般的であり、多くの言語で同様の方法で実装されています。また、リストを用いる方法以外にも、文字列の長さを調べるためのアルゴリズムは様々あります。文字列の長さを調べることで、文字列の中で特定の文字や単語の出現位置を探すなど、より複雑なプログラムの実装にも役立ちます。
+## 深層探訪
+文字列の镄さを取得するというアイデアは、プログラミングの早い段階から存在していました。この基本操作は、文字列の比較、検索など、さまざまな文字列操作の基礎です。
 
-## 関連リンク
+Elmの`String.length`は、Unicodeのコードポイントを数えるため、サロゲートペアを考慮に入れて正確な長さを返します。
 
-- [Elm Documentation: Strings](https://elm-lang.org/docs/strings)
-- [Rosetta Code: String Length](https://rosettacode.org/wiki/String_length)
+この関数の代替として、自分で関数を作成して文字列をループすることもできますが、`String.length`が最も直接的で効率的です。
+
+## 関連情報
+以下のリンクでさらに情報を得ることができます：
+
+- [Elmの公式ドキュメンテーション](https://package.elm-lang.org/packages/elm/core/latest/String#length)
+- [Elmにおける文字列操作の詳細](https://elmprogramming.com/strings.html)
+
+以上がElmで文字列の長さを探す方法についての記事です。この情報が役立つことを願っています。

@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "C++: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "C++"
 category:             "C++"
@@ -10,62 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por Que?
+## O Que & Por Quê?
 
-Enviar uma solicitação HTTP é o ato de enviar uma mensagem para um servidor web para solicitar um recurso específico. Os programadores fazem isso para interagir com aplicativos e obter dados ou executar ações em um servidor.
+Enviar um pedido HTTP é um modo de um programa se comunicar com outros sistemas ou servidores na internet. Programadores fazem isso para trocar informações com APIs web, obter conteúdo de páginas da web e para diferentes formas de interação entre sistemas.
 
-## Como Fazer:
+## Como fazer:
+
+Podemos usar a biblioteca cURL em C++ para enviar solicitações HTTP. Aqui está um exemplo de código que envia um GET request.
 
 ```C++
+#include <curl/curl.h>
 #include <iostream>
-#include <curl/curl.h> // biblioteca para fazer solicitações HTTP
 
-// função para callback utilizado pela biblioteca curl
-static int writer(char *data, size_t size, size_t nmemb, std::string *buffer)
-{
-    int result = 0;
-    if (buffer != NULL) {
-        buffer->append(data, size * nmemb);
-        result = size * nmemb;
+int main() {
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        CURLcode res;
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK)
+            std::cerr << curl_easy_strerror(res) << std::endl;
+        curl_easy_cleanup(curl);
     }
-    return result;
+    return 0;
 }
-
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
-  std::string buffer; // variável para armazenar os dados recebidos
-
-  curl = curl_easy_init();
-  if (curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.google.com/"); // endereço da solicitação
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writer); // define a função de callback
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &buffer); // passa o buffer para armazenar os dados
-    res = curl_easy_perform(curl);
-
-    // verifica se a solicitação foi bem-sucedida
-    if (res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl); // libera a memória alocada
-  }
-
-  std::cout << buffer << std::endl; // imprime os dados recebidos
-  return 0;
-}
-
 ```
 
-O código acima utiliza a biblioteca cURL, uma opção popular para manipular solicitações HTTP em C++. Primeiro, é criada uma função de callback para ser chamada pela biblioteca curl. Em seguida, é iniciada uma sessão curl e definidos a URL da solicitação, a função de callback e o buffer para armazenar os dados recebidos. Por fim, é realizada a solicitação e os dados são impressos.
+Neste código, primeiro inicializamos uma sessão cURL e especificamos a URL para a qual queremos enviar o request. Em seguida, chamamos `curl_easy_perform` para enviar o request, verificamos se ocorreu algum erro e, finalmente, limpamos para liberar recursos.
 
-## Detalhes:
+## Mergulho profundo 
 
-Existem várias bibliotecas e ferramentas disponíveis para enviar solicitações HTTP em C++. Além do cURL, outras opções populares incluem o Poco C++ Libraries e o cpp-httplib.
+Historicamente, enviar solicitações HTTP em C++ era bastante problemático, pois a linguagem não fornece recursos para isso por padrão. A biblioteca cURL, desenvolvida em 1997, simplificou muito esse processo.
 
-## Veja Também:
+Como alternativa ao cURL, temos a biblioteca Boost.Asio que fornece capacidades de rede assíncrona e pode ser usada para enviar solicitações HTTP. Além disso, o C++20 (a versão mais recente) está planejando incluir suporte para as operações de rede no STL (Standard Template Library), que pode tornar o cURL e bibliotecas similares obsoletas.
 
-- [Tutorial cURL](https://curl.haxx.se/libcurl/c/simple.html)
-- [Página oficial do Poco C++ Libraries](https://pocoproject.org/)
-- [Repositório do cpp-httplib no GitHub](https://github.com/yhirose/cpp-httplib)
+Um pedido HTTP envolve a construção de um texto no formato específico, enviado para um servidor da web usando o protocolo TCP/IP. A resposta, fornecida pelo servidor, também é um texto que deve ser analisado para extrair as informações desejadas.
+
+## Veja também
+
+1. Documentação cURL: https://curl.haxx.se/libcurl/c/
+2. Tutorial Boost.Asio: https://think-async.com/Asio/asio-1.18.1/doc/asio/tutorial.html
+3. Proposta de rede para C++20: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1100r0.pdf
+4. Tutorial de pedidos HTTP: https://www.w3schools.com/tags/ref_httpmethods.asp

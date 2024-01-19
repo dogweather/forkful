@@ -1,7 +1,7 @@
 ---
-title:                "Перевірка наявності каталогу"
-html_title:           "Swift: Перевірка наявності каталогу"
-simple_title:         "Перевірка наявності каталогу"
+title:                "Перевірка наявності директорії"
+html_title:           "Go: Перевірка наявності директорії"
+simple_title:         "Перевірка наявності директорії"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,28 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
-Перевірка існування каталогу - це процес перевірки, чи існує вказаний каталог в системі файлів. Програмісти часто використовують цю перевірку для того, щоб переконатися, що необхідний каталог існує, перед тим як продовжувати виконання коду.
+## Що та навіщо?
 
-Як?
-Використовувати перевірку існування каталогу досить просто. Просто створіть об'єкт типу `FileManager`, використовуючи ключове слово `let`, і використовуйте його метод `fileExists(atPath:)`, передаючи йому шлях до каталогу, який ви хочете перевірити. Цей метод поверне значення `true` або `false`, в залежності від того, чи існує цей каталог.
+Перевірка наявності каталогу - це процес визначення, чи існує певний каталог у файловій системі. Програмісти це роблять, щоб запобігти помилкам при спробі читання або запису в неіснуючий каталог.
+
+## Як це зробити:
+
+В Swift можна використовувати клас FileManager для цієї задачі. Ось приклад коду:
 
 ```Swift
-let fileManager = FileManager()
-let directory = "/Users/User/Documents" // приклад шляху до каталогу
-if fileManager.fileExists(atPath: directory) {
-    print("Каталог існує")
-} else {
-    print("Каталог не існує")
+let fileManager = FileManager.default
+
+if let documentsDirectory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+    let path = documentsDirectory.appendingPathComponent("MyDirectory")
+    
+    var isDir : ObjCBool = false
+    if fileManager.fileExists(atPath: path.path, isDirectory:&isDir) {
+        if isDir.boolValue {
+            // Directory exists
+            print("Каталог існує")
+        } else {
+            print("Це не каталог")
+        }
+    } else {
+        print("Каталогу не існує")
+    }
 }
 ```
 
-Глибока занурення
-Перевірка існування каталогу не є новою функцією, і її можна знайти в багатьох мовах програмування. У Swift цю перевірку можна здійснити за допомогою методу `fileExists(atPath:)` або використовуючи `if let` конструкцію для перевірки наявності каталогу перед його використанням. Якщо ви хочете перевірити існування файлу, а не каталогу, ви можете скористатися методами `fileExists(atPath:)` або `fileExists(atPath:isDirectory:)`, передаючи `isDirectory` аргумент зі значенням `false`.
+## Поглиблений занурення:
 
-Подивіться також
-Якщо ви хочете дізнатися більше про використання `FileManager` і роботу з файловою системою, подивіться на цей офіційний документацію від Apple: https://developer.apple.com/documentation/foundation/filemanager
+1. **Історичний контекст.** З часів Unix існують різні методи перевірки існування каталогу, більшість з яких включають використання системного виклику stat або його варіантів.
+2. **Альтернативи.** Є переваги над легковаговими методами, такими як використання команди 'ls' через запуск процесу Shell, але вони непортабельні і потенційно дозволяють вразливості оболонки.
+3. **Деталі реалізації.** `fileExists(atPath:isDirectory:)` використовує системний виклик stat за лаштунками. Якщо ви зрозумієте деталі цього, то буде легше зрозуміти, як це працює.
 
-Також ви можете користуватися `NSFileManager` для роботи із файловою системою в Objective-C коді. Більше інформації ви знайдете тут: https://developer.apple.com/documentation/foundation/nsfilemanager
+## Дивіться також:
 
-Щоб дізнатися більше про роботу з файловою системою в Swift, можна вивчати це завдання на платформі Codecademy: https://www.codecademy.com/learn/paths/learn-swift
+Пов'язані джерела включають:
+
+- Офіційну документацію Apple по FileManager:
+  [Документація FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+
+- Stackoverflow про обробку помилок під час роботи з файлами та каталогами: 
+  [Обробка помилок функції FileManager](https://stackoverflow.com/questions/24355866/how-to-catch-exception-thrown-by-nsfilemanager-defaultmanager-contents-of-dire)

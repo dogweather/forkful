@@ -1,7 +1,7 @@
 ---
-title:                "从字符串中解析日期"
-html_title:           "C++: 从字符串中解析日期"
-simple_title:         "从字符串中解析日期"
+title:                "从字符串解析日期"
+html_title:           "C: 从字符串解析日期"
+simple_title:         "从字符串解析日期"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,52 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 这是什么？为什么要做这个？
+## 什么与为什么？
 
-将日期从字符串中提取出来是指从字符串中提取出表示日期的部分。程序员经常这样做是为了将日期数据转换为计算机可以处理的形式，例如创建日历应用程序或进行日期比较等。
+从字符串解析日期就是从字符串形式的日期信息中获取年、月、日数据。程序员需要执行它以便于进行日期相关的计算和操作。
 
-## 如何做？
+## 如是：
 
-下面是一个用C++编写的例子，演示如何将日期从字符串中提取出来。假设我们有一个字符串“2020年10月31日”，我们想从中提取出年份、月份和日期，可以按照以下步骤进行操作：
+在C++中，你可以利用`std::get_time`与`std::istringstream`来实现这个过程。
+
+代码示例：
 
 ```C++
-// 包含所需的标准库
-#include <iostream>
-#include <string>
-#include <sstream>
+#include<iostream>
+#include<sstream>
+#include<iomanip>
+#include<ctime>
 
-using namespace std;
+int main(){
+    std::string dateStr = "2021-09-13";
+    std::tm date = {};
+    std::stringstream ss(dateStr);
 
-int main() {
-    // 定义一个字符串
-    string dateStr = "2020年10月31日";
-
-    // 创建一个字符串流对象
-    istringstream ss(dateStr);
-
-    // 定义变量存储提取出来的日期
-    int year, month, day;
-
-    // 使用流对象从字符串中提取数值，并存储到变量中
-    ss >> year >> month >> day;
-
-    // 打印提取出来的日期
-    cout << year << "年" << month << "月" << day << "日" << endl;
+    ss >> std::get_time(&date, "%Y-%m-%d");
+    if(ss.fail()){
+        std::cout << "Parsing failed\n";
+    }else{
+        std::cout << "Year: " << date.tm_year + 1900 << '\n'; //Note: tm_year is years from 1900.
+        std::cout << "Month: " << date.tm_mon + 1 << '\n'; //Note: tm_mon is months from January (0-11).
+        std::cout << "Day: " << date.tm_mday << '\n';
+    }
 
     return 0;
 }
 ```
 
-运行这段代码，输出将会是：2020年10月31日。
+输出：
 
-## 更多细节
+```C++
+Year: 2021
+Month: 09
+Day: 13
+```
 
-提取日期这一概念并不是什么新鲜事，它可以追溯到早期的计算机编程，甚至更早。在过去，人们使用像FORTRAN这样的语言来处理日期，而今天，我们可以使用更现代的语言来更方便地提取日期，如C++。此外，还有其他方法可以提取日期，如使用正则表达式或特定的日期库。
+## 深入探讨
 
-## 参考链接
+自从C++11开始，提供了基于时间的类型和函数，以便于日期和时间的操作。
 
-如果您想了解更多有关如何从字符串中提取日期的知识，可以参考以下链接：
+在日期解析的领域，有很多库和方法也可以胜任这项任务，例如Boost库、QDate等。然而，`std::get_time`的好处在于它是标准库的一部分，避免了额外的依赖。
 
-- [关于C++处理日期的基础知识](https://www.ibm.com/support/pages/how-c-process-data-and-time-strings-and-structures)
-- [使用C++的日期类来处理日期数据](https://developer.ibm.com/articles/learn-cpp-date-time-classes/)
-- [了解正则表达式的使用方式](https://www.regular-expressions.info/)
+在`std::get_time`中，我们使用了格式化字符串（如`"%Y-%m-%d"`），这样可以灵活定义日期和时间的格式。
+
+## 查看更多
+
+- [C++官方文档—<ctime>](http://www.cplusplus.com/reference/ctime/)
+- [C++时间与日期处理全攻略](https://zhuanlan.zhihu.com/p/144656369)
+- [GCC标准库文档—std::get_time](https://gcc.gnu.org/onlinedocs/libstdc++/libstdc++-html-USERS-4.3/a02089.html)

@@ -1,7 +1,7 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-html_title:           "Rust: HTTP-pyynnön lähettäminen perusautentikoinnilla"
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+# HTTP-pyyntöjen lähettäminen perusautentikoinnilla Rust-ohjelmointikielessä
+---
 
-Lähettäessäsi HTTP-pyynnön perusautentikoinnilla, lähetät pyyntösi salasanan ja käyttäjätunnuksen kanssa. Tämä autentikointimenetelmä auttaa suojaamaan tietojasi ja varmistamaan, että vain oikeat käyttäjät pääsevät verkkosivustoon tai sovellukseen.
+## Mikä & Miksi?
 
-## Kuinka:
+HTTP-pyyntöjen lähettäminen perusautentikoinnin avulla tarkoittaa palvelimelle lähetettäviä pyyntöjä, jotka sisältävät autentikointitietoja. Ohjelmoijat tekevät tämän yleensä, kun heidän on päästävä käsiksi suojattuihin resursseihin.
 
-Käytä alla olevia esimerkkejä lähettääksesi HTTP-pyynnön perusautentikoinnilla Rustilla. Ensimmäisessä esimerkissä näet, kuinka lisätä otsakkeeseen tarvittavat käyttäjätunnus ja salasana. Toisessa esimerkissä näet, kuinka käyttää ```Reqwest``` kirjaston ```basic_auth``` -metodia lähettääksesi pyynnön.
+## Kuinka näin:
+
+Käytämme `reqwest`-kirjastoa, jolla voimme lähettää HTTP-pyyntöjä Rust-ohjelmassa. 
 
 ```Rust
-use reqwest::blocking::Client;
+use reqwest::{Client, Error};
 
-fn main() {
+async fn send_request() -> Result<(), Error> {
     let client = Client::new();
-
-    let response = client
-        .get("https://www.example.com")
-        .header("Authorization", "Basic dXNlcm5hbWU6cGFzc3dvcmQ=")
-        .send()
-        .unwrap();
+    let resp = client 
+        .get("https://website.com/authenticated-endpoint")
+        .basic_auth("your-username", Some("your-password"))
+        .send().await?;
+    
+    println!("{:?}", resp.text());
+    Ok(())
 }
 ```
+Koodi luo uuden asiakkaan, lähettää GET-pyynnön autentikointitietojen avulla ja tulostaa vastauksen.
 
-```Rust
-use reqwest;
+## Syvällisempi sukellus
 
-fn main() -> Result<(), reqwest::Error> {
-    let response = reqwest::blocking::get("https://www.example.com")?
-        .basic_auth("username", Some("password"))
-        .send()?;
+Perusautentikointi on yksi yksinkertaisimmista tavoista suorittaa autentikointi HTTP-pyynnöissä, ja se on ollut käytössä jo varhaisista verkkopäivistä lähtien. Yksinkertaisuudestaan huolimatta se on edelleen suosittu, koska sitä on helppo toteuttaa ja se on riittävän turvallinen useimmissa tapauksissa.
 
-    // tee jotain vastauksella tässä
-}
-```
+Vaihtoehtoisia menetelmiä ovat kehittyneemmät autentikointijärjestelmät, kuten OAuth tai JWT, joita voi käyttää monimutkaisemmissa ja turvallisemmissa järjestelmissä.
 
-## Syväsukellus:
+Rust-ohjelman HTTP-pyynnön lähettämisen toteutus perusautentikoinnin kanssa tarkoittaa käytännössä `reqwest`-kirjaston `basic_auth`-metodin kutsumista, joka lisää asianmukaisen tiedon HTTP-pyynnön otsakkeisiin.
 
-Perusautentikointia käytettiin alun perin HTTP: n käyttäjätunnistuksessa, jossa käyttäjän piti syöttää salasana ja käyttäjätunnus jokaiseen pyyntöön. Kuitenkin nykyään monet käyttävät kehittyneempiä autentikointimenetelmiä, kuten OAuthia. Tämän lisäksi on myös muita tapoja lähettää HTTP-pyyntöjä, kuten Digest-autentikointi ja TLS.
+## Katso myös
 
-## Katso myös:
-
-Voit lukea lisää perusautentikoinnista ja muista autentikointimenetelmistä Reqwestin virallisesta dokumentaatiosta osoitteessa: https://docs.rs/reqwest/0.10.5/reqwest/struct.RequestBuilder.html#autentikaatio-metodit 
-
-Lisää tietoa HTTP-autentikoinnin historiasta löydät täältä: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication 
-
-Ja jos haluat tutustua muihin tapoihin lähettää HTTP-pyynnöt Rustilla, tutustu tähän oppaaseen: https://wiki.rust-lang.org/lto-HTTP
+- Rust-ohjelmointikieli: https://www.rust-lang.org/
+- reqwest-kirjasto: https://docs.rs/reqwest
+- HTTP-perusautentikointi: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

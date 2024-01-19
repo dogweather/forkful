@@ -1,7 +1,7 @@
 ---
-title:                "Wyciąganie podciągów"
-html_title:           "Lua: Wyciąganie podciągów"
-simple_title:         "Wyciąganie podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Wyciąganie podciągów to proces wyodrębniania fragmentów tekstu z ciągu znaków. Programiści często wykonują tę czynność, aby uzyskać pożądaną informację lub zmienić układ tekstu.
+## Co i Dlaczego?
 
-## How to:
+Ekstrakcja podciągów to proces wyodrębniania małej części z większego łańcucha znaków. Programiści robią to, żeby manipulować danymi i używać ich w inne, wygodniejsze sposoby.
 
-```lua 
--- Przykładowy ciąg znaków
-local tekst = "Witaj w świecie programowania"
+## Jak to zrobić?
 
--- Wyciąganie podciągu od znaku 7 do końca
-local podciag = string.sub(tekst, 7)
+Łańcuchów w Lua można używać z funkcją `string.sub`. Oto jak to działa:
 
--- Wyciąganie podciągu od znaku 7 do 13
-local podciag2 = string.sub(tekst, 7, 13)
-
-print(podciag) -- "świecie programowania"
-print(podciag2) -- "świecie"
+```Lua
+tekst = "Cześć, jestem programistą Lua"
+podciag = string.sub(tekst, 8, 12)
+print(podciag)
 ```
 
-## Deep Dive:
-Wyciąganie podciągów jest powszechnie stosowane w programowaniu, ponieważ daje możliwość manipulacji tekstem na wiele różnych sposobów. Wcześniej istniało wiele różnych funkcji do tego celu, takich jak ```substr``` czy ```substring```, ale w nowych wersjach języka Lua została wprowadzona funkcja ```string.sub```, która jest zalecanym sposobem na wyciąganie podciągów.
+Wyjście:
 
-Inną alternatywą jest wykorzystanie wyrażeń regularnych, ale zazwyczaj jest to mniej wydajne i trudniejsze do zrozumienia. W języku Lua istnieje również funkcja ```string.match```, która może być użyta do wyodrębnienia podciągów na podstawie wzorców.
+```
+jestem
+```
 
-Funkcja ```string.sub``` przyjmuje jako argumenty ciąg znaków, pozycję początkową oraz ewentualnie pozycję końcową. Jeśli nie podamy pozycji końcowej, zostaną wybrane wszystkie znaki od podanej pozycji do końca tekstu.
+Funkcja `string.sub` bierze trzy argumenty - łańcuch do przetworzenia, indeks początku podciągu (licząc od 1), i indeks końca podciągu.
 
-## See Also:
-- [Dokumentacja języka Lua](https://www.lua.org/manual/5.4/manual.html#6.4)
-- [Przykłady wyciągania podciągów w języku Lua](https://www.lua.org/pil/20.2.html)
+## Deep Dive
+
+- Kontekst historyczny: Funkcja `string.sub` jest częścią standardowej biblioteki Lua praktycznie od początku.
+- Alternatywy: Lua nie oferuje bezpośrednich alternatyw do `string.sub`, ale możesz skorzystać z biblioteki `string.gsub` do wykonania podobnych operacji.
+- Szczegóły implementacji: Funkcja `string.sub` jest zaimplementowana w C i jest to klucz do jej wydajności.
+
+## Zobacz także
+
+- Oficjalna dokumentacja Lua na temat łańcuchów znaków: http://www.lua.org/manual/5.4/manual.html#6.4
+- Przewodnik po Lua dla początkujących: https://www.lua.org/pil/20.html
+- Więcej przykładów użycia `string.sub`: https://www.tutorialspoint.com/lua/lua_strings.htm

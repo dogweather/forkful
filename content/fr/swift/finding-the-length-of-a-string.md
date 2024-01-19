@@ -1,7 +1,7 @@
 ---
-title:                "Trouver la longueur d'une chaîne de caractères"
-html_title:           "Swift: Trouver la longueur d'une chaîne de caractères"
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
+title:                "Trouver la longueur d'une chaîne"
+html_title:           "Go: Trouver la longueur d'une chaîne"
+simple_title:         "Trouver la longueur d'une chaîne"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,43 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Salut les programmeurs Swift !
-
-Bienvenue à tous dans cet article où nous allons parler de la façon de trouver la longueur d'une chaîne de caractères en utilisant Swift. Si vous êtes nouveau dans le monde de la programmation, ne vous inquiétez pas, nous allons tout expliquer de manière simple et directe. Donc, allons droit au but !
-
 ## Quoi & Pourquoi ?
 
-Trouver la longueur d'une chaîne de caractères, c'est simplement déterminer combien de caractères composent cette chaîne. Les programmeurs le font souvent pour traiter les données entrantes ou pour vérifier si une chaîne atteint une certaine longueur. Cela peut sembler simple, mais c'est une étape importante dans la gestion des données.
+Trouver la longueur d'une chaîne consiste à déterminer le nombre de caractères contenus dans cette chaîne. Les programmeurs le font souvent pour manipuler ou valider les données en fonction de leur longueur.
 
-## Comment faire :
+## Comment Faire :
 
-Voici un exemple de code pour trouver la longueur d'une chaîne de caractères en utilisant Swift :
-
-```Swift
-let phrase = "Bonjour le monde !"
-print(phrase.count) // Output : 18
-```
-
-Le code ci-dessus déclare une variable contenant une chaîne de caractères et utilise la propriété ```count``` pour trouver sa longueur. Vous pouvez également utiliser la méthode ```count``` sur une chaîne de caractères pour obtenir le même résultat :
+Voici comment vous pouvez trouver la longueur d'une chaîne en Swift :
 
 ```Swift
-let phrase = "Bonjour le monde !"
-print(phrase.count()) // Output : 18
+let chaine = "Bonjour le monde"
+print("La longueur de la chaîne est \(chaine.count)")
 ```
 
-## Plongée en profondeur :
+Dans le code ci-dessus, `.count` est une propriété de l'objet String qui nous donne le nombre de caractères. L'échantillon produira cette sortie :
 
-Maintenant, si vous voulez vraiment plonger en profondeur sur la façon de trouver la longueur d'une chaîne de caractères en utilisant Swift, voici quelques informations supplémentaires :
+```
+La longueur de la chaîne est 16
+```
+## Plongée Profonde 
 
-1. Contexte historique : La méthode ```count``` a été introduite dans la version 4 de Swift en remplacement de la méthode obsolète ```character.count```.
+Historiquement, Swift n'a pas toujours eu `.count` pour calculer la longueur d'une chaîne. Les versions antérieures de Swift utilisaient la méthode `countElements()`. Voici comment l'ancien code aurait pu ressembler :
 
-2. Alternatives : Vous pouvez également utiliser la méthode ```length``` pour trouver la longueur d'une chaîne de caractères en utilisant Swift.
+```Swift
+let chaine = "Bonjour le monde"
+print("La longueur de la chaîne est \(countElements(chaine))")
+```
 
-3. Détails de mise en œuvre : La méthode ```count``` parcourt chaque caractère de la chaîne et retourne le nombre total de caractères, tandis que la méthode ```length``` utilise les informations de codage de la chaîne pour déterminer sa longueur.
+Il est aussi possible de transformer la chaîne en tableau de caractères et d'en calculer la longueur avec `.count`. C'est une alternative valide, bien que la performance soit généralement inférieure à `.count`. 
 
-## À voir également :
+Dans les coulisses, quand un programmeur appelle `.count` sur une chaîne, Swift utilise une optimisation intelligente pour faire le calcul de façon efficace, peu importe la longueur de la chaîne, même avec des chaînes Unicode complexes.
 
-Pour plus d'informations sur la manipulation des chaînes de caractères en Swift, consultez les liens suivants :
+## Voir Aussi:
 
-- [La documentation officielle de Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Le blog de Swift by Sundell](https://www.swiftbysundell.com/articles/strings-in-swift/)
+- Documentation officielle de Swift sur les chaînes : [Strings and Characters in Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Guide sur les chaînes en Swift par NSHipster : [NSHipster String](https://nshipster.com/string/)
+- Swift par Sundell sur les propriétés et méthodes de String : [Swift by Sundell: Strings](https://www.swiftbysundell.com/posts/strings-in-swift)

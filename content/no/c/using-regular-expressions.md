@@ -1,6 +1,6 @@
 ---
 title:                "Å bruke regulære uttrykk"
-html_title:           "C: Å bruke regulære uttrykk"
+html_title:           "Arduino: Å bruke regulære uttrykk"
 simple_title:         "Å bruke regulære uttrykk"
 programming_language: "C"
 category:             "C"
@@ -10,50 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Bruk av regulære uttrykk er en vanlig praksis blant programmerere for å søke og manipulere data i tekststrenger. Dette kan være spesielt nyttig når man ønsker å finne eller erstatte spesifikke mønstre i en tekst. Regulære uttrykk hjelper også med å gjøre kode mer effektiv og lesbar.
+## Hva & hvorfor?
+
+Regulære uttrykk brukes til å søke etter spesifikke mønstre i en streng. Det brukes av programmerere for data validering, søk & erstatt og streng redigering.
 
 ## Hvordan:
-Her er et eksempel på hvordan man kan bruke regulære uttrykk i C for å finne og endre et tall i en tekststreng:
 
-```
+La oss lage et enkelt C-program som bruker regex. Det inkluderer `'regex.h'` headerfilen og bruker `'regcomp()` og `'regexec()'` funksjoner for å matche regulære uttrykk.
+
+```C
+#include <regex.h> 
 #include <stdio.h>
-#include <string.h>
-#include <regex.h>
 
-int main(void) {
-    char str[] = "Dette er en tekst med tallet 12345";
-    char pattern[] = "([0-9]+)";
+int main() {
     regex_t regex;
-    regmatch_t match[2];
-    
-    if (regcomp(&regex, pattern, REG_EXTENDED) != 0) {
-        printf("Kan ikke kompilere uttrykket!\n");
-        return 1;
+    int ret;
+    ret = regcomp(&regex, "[a-z]", 0);
+    if (ret) {
+        printf("Kunne ikke kompilere regex\n");
+        return(1);
     }
-    
-    if (regexec(&regex, str, 2, match, 0) == 0) {
-        int start = match[1].rm_so;
-        int end = match[1].rm_eo;
-        char num[6];
-        strncpy(num, &str[start], end-start);
-        num[end-start] = '\0';
-        printf("Fant tallet %s\n", num);
+    ret = regexec(&regex, "abc", 0, NULL, 0);
+    if (!ret) {
+        printf("Match funnet\n");
+    } else if (ret == REG_NOMATCH) {
+        printf("Ingen match\n");
+    } else {
+        printf("Regex match feilet\n");
     }
-    
     regfree(&regex);
     return 0;
 }
 ```
 
-Dette vil skrive ut "Fant tallet 12345". Her brukes `regex.h` biblioteket for å kompilere og bruke et regulært uttrykk på teksten.
+I denne koden kompilerer 'regcomp()' regulært uttrykk i sin interne form, og 'regexec()' sjekker om tekststrengen matcher det kompilerte regulære uttrykket.
 
 ## Dypdykk:
-Regulære uttrykk ble introdusert av Ken Thompson i 1968 som en del av programmet QED. Det har etter det blitt en standardfunksjon i mange programmeringsspråk. I tillegg til å bruke `regex.h` i C, finnes det også alternative biblioteker som PCRE (Perl Compatible Regular Expressions) og Boost.Regex som gir mer avanserte funksjoner for å arbeide med regulære uttrykk.
 
-Når man bruker regulære uttrykk er det viktig å vite at de er språkuavhengige, noe som betyr at koden vi viste i eksempelet over kan brukes i andre programmeringsspråk også. Det eksisterer også mange online verktøy for å teste og leke med regulære uttrykk. 
+Bruk av regulære uttrykk har røtter i teoretisk informatikk og formalisering av syntaksanalyse. 
+
+Alternativer til bruk av regulære uttrykk inkluderer spørringsbaserte språk som SQL og XPath, og kodespesifikke søkeverktøy.
+
+Det er også lite kjente implementeringsdetaljer. For eksempel kan kompilering av et regulært uttrykk resultere i ulike interne former, avhengig av C-bibliotekets implementasjon.
 
 ## Se også:
-- [PCRE Offisiell Side](https://www.pcre.org/)
-- [Boost.Regex Dokumentasjon](https://www.boost.org/doc/libs/1_75_0/libs/regex/doc/html/index.html)
-- [Regular Expressions Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+
+For mer dyptgående detaljer om regulære uttrykk i C, sjekk ut følgende ressurser:
+- POSIX regulære uttrykk: http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html 
+- Regulære Uttrykk Tutorial: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html 
+- Regulære Uttrykk med eksempler: https://www.geekhideout.com/regex.html

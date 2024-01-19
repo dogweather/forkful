@@ -1,6 +1,6 @@
 ---
 title:                "Encontrando o comprimento de uma string"
-html_title:           "Lua: Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
 simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
-Encontrar o comprimento de uma string é uma tarefa comum para programadores em Lua. Essa ação envolve determinar a quantidade de caracteres em uma determinada string e é útil para diversas tarefas, como validar inputs de usuário, formatar saídas de texto e realizar operações com strings.
+# Descobrindo o comprimento de uma string em Lua
+
+## O quê e por quê?
+
+Descobrir o comprimento de uma string é um método comum utilizado para determinar o número de caracteres contidos em dita string. Programadores o fazem para manipular textos, cortar partes, validação de dados e centenas de outras tarefas.
 
 ## Como fazer:
-Para encontrar o comprimento de uma string em Lua, podemos utilizar a função `string.len()`. Veja o exemplo abaixo:
+
+No Lua, podemos usar a função `#` para calcular o comprimento de uma string. Veja o exemplo:
+
 ```Lua
-nome = "João"
-print(string.len(nome)) -- Output: 4
+texto = "Lua é uma linguagem de programação fantástica."
+print(#texto)
 ```
 
-Você também pode utilizar essa função em uma string contida em uma variável, veja:
+A saída será:
+
 ```Lua
-texto = "Olá, tudo bem?"
-print(string.len(texto)) -- Output: 15
+45
 ```
 
-## Profundando:
-Ao contrário de outras linguagens de programação, como C ou Java, Lua não possui uma função interna para encontrar o comprimento de uma string. Porém, a função `string.len()` possui uma implementação eficiente e pode ser utilizada em qualquer tipo de string, incluindo caracteres especiais e unicode.
+Nesse caso, o número resultante representa o comprimento da string, incluindo espaços e pontuações.
 
-Uma alternativa para encontrar o comprimento de uma string em Lua é utilizar um loop para percorrer cada caractere da string e incrementar uma variável contador. Porém, essa abordagem é menos eficiente e mais trabalhosa.
+## Mergulhando fundo
 
-## Veja Também:
-- Documentação oficial do Lua sobre a função string.len(): https://www.lua.org/manual/5.3/manual.html#6.4.1
-- Função string.len() em ação no Lua Online Compiler: https://www.lua.org/demo.html#6.4.1
-- Exemplos práticos de uso da função string.len(): https://www.tutorialspoint.com/lua/lua_strings.htm
+PhD Roberto Ierusalimschy, um dos criadores do Lua, fez o projeto para ser simples e eficiente. A função `#` foi introduzida na versão 5.1.
+
+Existem algumas alternativas para calcular o comprimento de uma string, especialmente em versões mais antigas do Lua. Um exemplo comum seria usar um loop para contar os caracteres. No entanto, a função `#` é muito mais rápida e eficiente.
+
+O Lua guarda strings como uma sequência de caracteres na memória, com uma nota do comprimento. Quando chamamos `#texto`, o Lua simplesmente retorna esse valor previamente notado, fazendo desse uma operação muito rápida.
+
+## Veja também
+
+- Para mais detalhes sobre strings em Lua, confira o manual oficial: https://www.lua.org/manual/5.4/manual.html#6.1
+- Veja um ótima tutorial sobre cadeias de caracteres (Strings) no Lua na Learn X in Y minutes (Aprenda X em Y minutos): https://learnxinyminutes.com/docs/pt-br/lua-pt.html

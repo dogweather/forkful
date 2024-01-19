@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana wielkości liter w ciągu znaków"
-html_title:           "C: Zmiana wielkości liter w ciągu znaków"
-simple_title:         "Zmiana wielkości liter w ciągu znaków"
+title:                "Zamiana tekstu na wielkie litery"
+html_title:           "C: Zamiana tekstu na wielkie litery"
+simple_title:         "Zamiana tekstu na wielkie litery"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -12,44 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Zacznijmy od podstaw - co to właściwie znaczy "kapitalizowanie" ciągu znaków? W prostych słowach, oznacza to zamienienie wszystkich liter w wyrazie na wielkie litery. Dlaczego programiści robią to? Przede wszystkim po to, aby ujednolicić dane wejściowe i uprościć porównywanie i przetwarzanie danych.
+Zmienianie wszystkich liter w napisie na duże, zwane też kapitalizacją, to proste zadanie w programowaniu. Programiści używają tej techniki, by na przykład ułatwić użytkownikom czytanie wyjścia programu.
 
 ## Jak to zrobić:
 
-```C
-#include <stdio.h>
-#include <string.h>
+Podajemy tu kod z użyciem standardowej biblioteki `ctype.h` w wersji C99:
 
-void capitalize_string(char* str)
-{
-    int i;
-    for (i = 0; i < strlen(str); i++)
-    {
-        if (str[i] >= 'a' && str[i] <= 'z')
-        {
-            str[i] -= 32; // ASCII: 'a' = 97, 'A' = 65, dlatego '- 32'
-        }
+```C
+#include <ctype.h>
+#include <stdio.h>
+
+void naDuze(char *napis) {
+    while(*napis) {
+        *napis = toupper((unsigned char) *napis);
+        napis++;
     }
 }
 
-int main()
-{
-    char word[] = "programowanie";
-    capitalize_string(word);
-    printf("%s\n", word);
-
+int main() {
+    char napis[] = "dzień dobry, panie programisto!";
+    naDuze(napis);
+    printf("%s\n", napis); 
+    // Wyjście: "DZIEŃ DOBRY, PANIE PROGRAMISTO!"
     return 0;
 }
 ```
-Wyjście: "PROGRAMOWANIE"
 
-## Głębsza analiza:
+## Głębsze spojrzenie
 
-Jeśli zawsze używaliśmy tylko języka polskiego, to nie zdajemy sobie sprawy, że w innych językach istnieją typy liter, takie jak wielkie i małe litery. W przypadku języka C, różnica ta jest szczególnie ważna - wszystkie literki składają się z kombinacji zer i jedynek w postaci kodu ASCII. Dlatego, aby "kapitalizować" ciąg znaków, musimy zmniejszyć wartość odpowiadającą małej literze o 32, aby otrzymać kod odpowiadający jej odpowiednikowi w postaci wielkiej litery.
+Kapitalizacja napisów pojawiła się w bardzo wczesnych językach programowania. Bazuje ona na różnicy wartości ASCII pomiędzy dużymi a małymi literami.
 
-Alternatywnym sposobem na kapitalizowanie ciągu znaków jest użycie funkcji ```toupper()``` lub biblioteki <ctype.h>. Jednakże, aby uzyskać lepszą kontrolę nad procesem, warto napisać własną funkcję, jak w przykładzie powyżej.
+Istnieją też alternatywne sposoby kapitalizacji napisów, np. używanie funkcji `toupper` bezpośrednio z biblioteki `ctype.h`.
 
-## Zobacz też:
+Główne szczegóły implementacyjne polegają na przechodzeniu przez każdy znak w napisie i użyciu funkcji `toupper` na każdym znaku łanucha. Ważne jest jednak, że `toupper` działa tylko na małe litery. Dlatego też konieczne jest rzutowanie na `(unsigned char)`, aby uniknąć niezdefiniowanych zachowań.
 
-- [Funkcja toupper() w języku C] (https://www.programiz.com/c-programming/library-function/ctype.h/toupper)
-- [Kod ASCII w języku C] (https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_71/rtref/asciicodes.htm)
+## Zobacz też
+
+1. Dokumentacja <ctype.h>: https://pl.wikibooks.org/wiki/C/Biblioteki_standardowe/ctype.h
+2. Kod ASCII: https://pl.wikipedia.org/wiki/ASCII
+3. Inne techniki na kapitalizację napisów: https://stackoverflow.com/questions/15508570/c-program-to-capitalize-first-letter-of-each-word-in-string

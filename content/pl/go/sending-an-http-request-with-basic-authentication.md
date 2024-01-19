@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http z podstawową autoryzacją"
-html_title:           "Go: Wysyłanie żądania http z podstawową autoryzacją"
-simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
+title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,48 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co to jest i dlaczego to robimy?
+## Co i Dlaczego?
 
-Wysłanie żądania HTTP z podstawową autoryzacją to proces, w którym wysyłamy żądanie do serwera, ale do uzyskania dostępu wymagana jest autoryzacja za pomocą podstawowych danych. Programiści robią to po to, aby zabezpieczyć i ograniczyć dostęp do zasobów chronionych na serwerze.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem oznacza dodanie nagłówka `Authorization: Basic {base64encode('username:password')}` do żądań HTTP, aby zweryfikować tożsamość użytkownika. Programiści robią to, aby uzyskać dostęp do chronionych zasobów.
 
-Jak to zrobić:
+## Jak to zrobić:
+
+W Go wystarczy kilka linii kodu:
 
 ```Go
-url := "https://example.com/api/endpoint"
-    
-req, err := http.NewRequest("GET", url, nil)
-    
-username := "admin"
-password := "pass123"
-    
-req.SetBasicAuth(username, password)
+package main
 
-res, err := http.DefaultClient.Do(req)
-    
-defer res.Body.Close()
-    
-if res.StatusCode == 200 {
-    fmt.Println("Udane żądanie HTTP z podstawową autoryzacją!")
-} else {
-    fmt.Println("Autoryzacja nie powiodła się.")
+import (
+	"net/http"
+	"encoding/base64"
+)
+
+func main() {
+	client := &http.Client{}
+	req, _ := http.NewRequest("GET", "http://example.com", nil)
+	basicAuth := "Basic " + base64.StdEncoding.EncodeToString([]byte("username:password"))
+	req.Header.Add("Authorization", basicAuth)
+	resp, _ := client.Do(req)
+	// obsłuż odpowiedź ...
 }
 ```
 
-## Deep Dive
+## Głębsze Zanurzenie:
 
-Kontekst historyczny:
+(1) Historia: Podstawowe uwierzytelnianie to najstarszy sposób uwierzytelniania dla HTTP. Został zdefiniowany w oryginalnej specyfikacji HTTP/1.0 w 1996 roku.
 
-Autoryzacja została zaprojektowana dla protokołu HTTP przez IETF (Internet Engineering Task Force) w 1996 roku. Jest to jedna z najprostszych i najpowszechniejszych metod autoryzacji w sieciach komputerowych.
+(2) Alternatywy: Pozniejsze metody uwierzytelniania takie jak OAuth, Token JWT oraz API Key mają lepsze funkcje bezpieczeństwa, ale są bardziej skomplikowane do implementacji.
 
-Alternatywy:
-
-Istnieje kilka innych metod autoryzacji, takich jak autoryzacja HMAC, autoryzacja tokenów dla dostępu, autoryzacja oparta na sesjach i inne. Każda z nich ma swoje własne zalety i wady.
-
-Szczegóły implementacji:
-
-Wysyłanie żądania HTTP z podstawową autoryzacją wymaga ustawienia nagłówka "Authorization" z odpowiednim kodowaniem danych autoryzacyjnych. W przykładzie kodu powyżej, użyliśmy funkcji ```SetBasicAuth``` , która wygenerowała i ustawiła ten nagłówek automatycznie. Należy jednak pamiętać, że w rzeczywistości, należy dokonać wielu innych działań, takich jak sprawdzenie poprawności danych autoryzacyjnych, obsługa błędów, itp.
+(3) Szczegóły implementacji: W `http.NewRequest`, jesteśmy zobligowani do kodowania `username:password` w Base64. Następnie, dodajemy to do nagłówka `Authorization`. Prośba jest wysyłana za pośrednictwem `client.Do(req)`.
 
 ## Zobacz też:
 
-- Oficjalna dokumentacja Go dla pakietu "net/http": https://golang.org/pkg/net/http/
-- Dokumentacja IETF dotycząca autoryzacji HTTP: https://tools.ietf.org/html/rfc7615
+(1) Specyfikacja uwierzytelniania HTTP Basic: https://tools.ietf.org/html/rfc7617
+
+(2) Dokumentacja dla pakietu `http` w Golang: https://golang.org/pkg/net/http/
+
+(3) Więcej informacji o innych metodach uwierzytelniania: https://developer.okta.com/books/api-security/authn/api-authentication-options/

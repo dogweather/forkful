@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数値の生成"
-html_title:           "Kotlin: ランダムな数値の生成"
-simple_title:         "ランダムな数値の生成"
+title:                "ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
@@ -10,23 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ジェネレートするのは何？
-ジェネレートとは、ランダムに数値を生成することです。プログラマーがこの機能を利用する理由には、データをランダムに処理したい場合や、ランダムなアイテムを生成したい場合などがあります。
+## 何となく？何のために？
+ランダムな数値生成は、予測不可能な数値を作り出すプロセスです。これにより、プログラム内での偶然性を再現したり、テストデータを作成したりすることができます。
 
-## やり方：
+## 作り方
+Kotlinでは、`Random`クラスを使うことで簡単にランダムな数値を生成することができます。以下に例を示します。
+
 ```Kotlin
-// ランダムな数値を生成する
-val random = Random.nextInt()
-// 指定した範囲内のランダムな数値を生成する
-val randomInRange = Random.nextInt(0, 100)
+import kotlin.random.Random
 
-println(random) // 出力：-1357832954
-println(randomInRange) // 出力：35
+fun main() {
+    val randomNumber = Random.nextInt()
+    println("Generated random number is $randomNumber")
+}
 ```
 
-## 深層:
-ジェネレートの歴史的な背景には、様々なアルゴリズムがあります。Kotlinでは、```Random```クラスを使用してランダムな数値を生成することができますが、他の言語では異なる方法で処理される場合もあります。また、ランダムな数値を生成する代替手段として、ハードウェアによるランダム性を利用する方法もあります。
+上のコードを実行すると、以下のような出力を得ることができます。
 
-## 関連リンク:
-- [KotlinのRandomクラスのドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-- [ランダム性を利用する方法(英語記事)](https://www.geeksforgeeks.org/generating-random-numbers-in-java/)
+```
+Generated random number is 938248262
+```
+
+注意点としては、`Random.nextInt()`は任意の整数を返しますが、特定の範囲内でランダムな数値が欲しい場合は`Random.nextInt(from, until)`を使うことができます。
+
+```Kotlin
+import kotlin.random.Random
+
+fun main() {
+    val randomNumber = Random.nextInt(1, 10)
+    println("Generated random number is $randomNumber")
+}
+```
+
+## ディープダイブ
+ランダム数生成は古くからコンピュータサイエンスに存在していました。しかし、完全にランダムな数列を生成するのは難しく、多くの技術では疑似ランダム数を使用します。これは一見ランダムに見えますが、実際には特定のアルゴリズムに基づいて生成されています。
+
+Javaなど他のプログラミング言語では、特定の範囲内でランダムな数値を生成する方法がさまざまにありますが、Kotlinの`Random`クラスはそのユースケースをカバーしています。
+
+なお、Kotlinのランダム数生成の内部では、ThreadLocalRandomやSplittableRandomなど、Javaのランダム生成APIを利用しています。
+
+## 関連記事
+- [Kotlin公式ドキュメンテーション - Randomクラス](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
+- [Javaでのランダム数生成](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [ランダムと疑似ランダムの違い](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

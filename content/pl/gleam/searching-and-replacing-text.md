@@ -1,6 +1,6 @@
 ---
 title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Gleam: Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
 simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,45 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-Zamiana tekstu to częsty element programowania, który polega na znajdowaniu i zmienianiu określonego tekstu w kodzie. Jest to przydatna umiejętność dla programistów, ponieważ pozwala im szybko i efektywnie edytować swoje projekty.
+Poszukiwanie i zastępowanie tekstu to jedna z podstawowych operacji w programowaniu; pozwala na manipulowanie danymi tekstowymi. Programiści robią to, aby modyfikować, poprawiać lub personalizować dane na podstawie określonych warunków.
 
 ## Jak to zrobić:
 
-### Przykład 1:
-Zamień wszystkie wystąpienia słowa "hello" na "hi" w tekście:
-``` Gleam
-replace("hello" -> "hi") "hello world"  // output: "hi world"
+Świetny sposób na przeszukiwanie i zamianę tekstu w Gleam to użycie funkcji `replace`. Zobaczmy, jak to działa:
+
+```Gleam
+import gleam/string
+
+let tekst = "Programowanie to dobra zabawa"
+let nowy_tekst = string.replace("zabawa", "przyjemność", tekst)
 ```
 
-### Przykład 2:
-Zastosuj zamianę tekstu na wielu liniach tekstu za pomocą funkcji `map`:
-``` Gleam
-let message = "Hello, how are you?"
+Output: 
 
-let upper = fn(x) { String.to_uppercase(x) }
-let excl = fn(x) { String.append(x, "!") }
-
-let new_message = message
-    |> String.split(by: ", ")
-    |> map(upper)
-    |> map(excl)
-    |> String.join(separator: " ")
-
-// output: "HELLO, HOW ARE YOU?!"
+```Gleam
+"Programowanie to dobra przyjemność"
 ```
 
-## Pogląd w Głąb:
+Zaczynamy od zaimportowania modułu `gleam/string`, a następnie używamy funkcji `replace`, aby zamienić słowo "zabawa" na "przyjemność".  
 
-W przeszłości, programiści musieli ręcznie zmieniać wszystkie wystąpienia tekstu, co może być czasochłonne i podatne na błędy. Dzięki wykorzystaniu współczesnych narzędzi programistycznych, takich jak Gleam, możliwe jest łatwe wykonywanie tych operacji.
+## Zagłębianie się
 
-Jedną z alternatyw dla Gleam jest popularny język programowania, takich jak Java lub Python, które również oferują możliwość wyszukiwania i zamiany tekstu za pomocą wbudowanych funkcji.
+Historia funkcji wyszukiwania i zastępowania sięga początków informatyki. Wykorzystywana jest nie tylko w programowaniu, ale także w przetwarzaniu tekstu i innych zadaniach związanych z danymi.
 
-Implementacja funkcji zamiany w Gleam jest wydajna i odporna na błędy, dzięki czemu programiści mogą być pewni, że ich aplikacje będą działać zgodnie z oczekiwaniami.
+Jest wiele innych technik wyszukiwania i zastępowania tekstu, które różnią się w zależności od języka programowania. W Pythonie na przykład można użyć metody `.replace()`, a w Java funkcji `replace()`.
 
-## Zobacz również:
+Co do implementacji, Gleam korzysta z implementacji Elixira, który z kolei korzysta z modułu Erlang :binary, zapewniając efektywne i niezawodne operacje na ciągach.
 
-- Dokumentacja Gleam na temat zamiany tekstu: https://gleam.run/builtin.html#replace
-- Tutorial wideo na temat wykorzystania funkcji zamiany w Gleam: https://www.youtube.com/watch?v=123456789
-- Podstawy programowania w Gleam: https://gleam.run/docs/getting_started.html
+## A także  
+
+Jeśli chcesz dalej zgłębiać temat przeszukiwania i zastępowania tekstu, zapraszamy do odwiedzenia następujących zasobów:  
+
+[Algorytm KMP (Knuth–Morris–Pratt Algorithm)](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm) 
+[Algorytm Boyera-Moore’a (Boyer–Moore string-search algorithm)](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm)
+[Dokumentacja modułu String w Gleam](https://hexdocs.pm/gleam_stdlib/gleam/string/)

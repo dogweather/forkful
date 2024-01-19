@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "C# recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "C#"
 category:             "C#"
@@ -12,41 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Interpolating a string in C# is a useful feature that allows you to insert values into a string at runtime. It is especially helpful when building complex strings that include dynamic or changing values. Programmers use this feature for a variety of reasons, such as creating dynamic SQL queries, displaying user input, or forming complex error messages.
+String interpolation is a convenient way to format and insert expressions into strings in C#. It increases readability and makes it easier to manage complex string layouts.
 
 ## How to:
 
-Interpolating a string in C# is simple. It involves adding the `$` symbol before the string and wrapping the dynamic values in curly braces. Here's an example:
+Here's how to interpolate a string in C#:
 
 ```C#
 string name = "John";
-string message = $"Hello, {name}!"; //output: Hello, John!
+int age = 23;
+string result = $"Hello, my name is {name} and I am {age} years old.";
+Console.WriteLine(result);
+```
+And the output will be:
+```
+Hello, my name is John and I am 23 years old.
 ```
 
-You can also perform operations on the dynamic values within the curly braces. For example:
+It's as simple as prefixing a string with a $ and including your variables or expressions in curly braces `{}` within that string.
+
+## Deep Dive
+
+Historically, string formatting in C# has been done via `String.Format` method or using concatenation. The introduction of string interpolation in C# 6 was a game-changer.
 
 ```C#
-int num1 = 5;
-int num2 = 10;
-string result = $"The sum of {num1} and {num2} is {num1 + num2}."; //output: The sum of 5 and 10 is 15.
+// The old way
+string result = string.Format("Hello, my name is {0} and I am {1} years old.", name, age);
 ```
 
-## Deep Dive:
+Although `String.Format` and concatenation are still valid methods, string interpolation offers more readability and less complexity, especially with complex strings and expressions.
 
-Interpolating a string was introduced in C# 6.0. It was a more concise and readable alternative to the existing `String.Format` method. Before this feature, programmers had to use placeholders and then pass the dynamic values as arguments. For example:
+Do note that underneath, every interpolated string is transformed into a `String.Format` by the compiler. Therefore, the performance difference is negligible.
 
-```C#
-string name = "John";
-string message = String.Format("Hello, {0}!", name); //output: Hello, John!
-```
+## See Also
 
-Another alternative to string interpolation is using string concatenation, which involves using the `+` operator to combine strings and values. However, this can be time-consuming and error-prone, especially when working with long and complex strings.
-
-Internally, the C# compiler converts interpolated strings into `String.Format` calls, so both methods have similar performance. However, string interpolation is much more readable and often preferred by programmers.
-
-## See Also:
-
-- [C# Interactive: String Interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/intro-to-csharp/introduction-to-interactive?WT.mc_id=docs-github-ninad)
-- [String Interpolation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated?WT.mc_id=docs-github-ninad)
-- [How to: Use String Interpolation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated?WT.mc_id=docs-github-ninad&view=netframework-4.7.2#use-string-interpolation-in-a-custom-method)
-- [Performance Comparison: Interpolated String vs. Composite Format](https://dev.to/alriksson/string-interpolation-performance-4pa8)
+* [String Interpolation in C#](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/string-interpolation)
+* [Concept: String Formatting and Interpolation](https://education.10pines.com/concept_string_formatting_and_interpolation)
+* [Mastering C# 6.0 features](https://www.infoworld.com/article/2989972/what-is-string-interpolation-in-c-6.html)

@@ -1,7 +1,7 @@
 ---
-title:                "HTML-Auswertung"
-html_title:           "C++: HTML-Auswertung"
-simple_title:         "HTML-Auswertung"
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Parsen von HTML ist der Prozess des Analysierens von HTML-Code, um die Struktur und Syntax der darin enthaltenen Informationen zu verstehen. Programmierer tun dies, um Webseiten aufzubereiten, Daten zu extrahieren oder um automatisierte Aufgaben wie Web Scraping durchzuführen.
+## Was & Warum?
 
-# Wie geht's:
-Das Parsen von HTML kann in C++ mit Hilfe vieler Bibliotheken durchgeführt werden, wie z.B. RapidXML oder LibXML. Ein kurzes Beispiel, um ein HTML-Dokument zu parsen und die Title-Tags zu extrahieren:
+HTML-Parsing ist im Grunde das Extrahieren nützlicher Daten aus einem HTML-Dokument. Programmierer machen das, um Informationen aus einer bestimmten Webseite zu sammeln oder die Struktur der Webseite zu analysieren.
+
+## So geht's:
+
+Wir können die Bibliothek Beautiful Soup in Kombination mit C++ verwenden, um HTML zu parsen. Hier ein einfaches Beispiel:
 
 ```C++
 #include <iostream>
-#include <libxml/HTMLparser.h>
+#include <soup/parser.hpp>
 
-int main() {
-    // HTML-Dokument lesen und analysieren
-    const char* htmlString = "<html><head><title>Beispiel Webseite</title></head><body><h1>Willkommen</h1></body></html>";
-    htmlDocPtr doc = htmlReadDoc((xmlChar*)htmlString, NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+int main()
+{
+    std::string html = "<html><body><h1>Willkommen zum HTML Parsing!</h1></body></html>";
+    Soup::Parser parser;
+    Soup::Tag h1 = parser.parse(html);
 
-    // Title-Tags extrahieren
-    xmlNode* titleNode = xmlDocGetRootElement(doc)->children->children->next->children;
-    xmlChar* title = xmlNodeListGetString(doc, titleNode, 1);
-    
-    // Output
-    std::cout << "Titel: " << title << std::endl;
-    
-    // Speicher freigeben
-    xmlFreeDoc(doc);
-    xmlCleanupParser();
+    std::cout << h1.name() << ": " << h1.text() << std::endl;
     return 0;
 }
 ```
-Output: Titel: Beispiel Webseite
+Probieren Sie es aus! Der Ausgabestring sollte `h1: Willkommen zum HTML Parsing!` sein.
 
-# Tief eintauchen:
-Das Parsen von HTML hat eine lange Geschichte, da HTML selbst immer weiterentwickelt wurde. Heutzutage gibt es viele Alternativen zum Parsen von HTML, wie z.B. BeautifulSoup für Python oder Jsoup für Java. In C++ kann auch auf reguläre Ausdrücke zurückgegriffen werden, um HTML zu parsen, aber dies ist oft komplexer und kann zu Fehlern führen.
+## Tiefere Einblicke
 
-Bei der Implementierung des Parsens von HTML in C++ ist zu beachten, dass HTML sehr unvorhersehbar ist und möglicherweise nicht immer den Standards entspricht. Zusätzlich können Sonderzeichen und verschachtelte Tags die Analyse erschweren.
+Der Prozess des HTML-Parsing ist nicht neu. Er hat seine Wurzeln in den Anfängen des Webs, als Webcrawler entwickelt wurden, um Webseiten zu erfassen. Heute gibt es viele Alternativen wie das Parsing mit Python und seine Bibliotheken wie lxml und html.parser.
 
-# Siehe auch:
-- https://www.w3.org/html/
-- https://github.com/dutitliput/chtml-parser
+In C++ würde man in den meisten Fällen Bibliotheken wie Gumbo oder BeautifulSoup verwenden. Dabei wird zunächst das HTML-Dokument in einen DOM (Document Object Model) umgewandelt, welcher anschließend analysiert wird. Wichtig dabei ist es, fehlerfrei geschriebenes HTML zu haben, da sonst der Prozess fehlschlagen kann.
+
+## Siehe auch
+
+1. "HTML Parsing mit Python": %[http://www.xyz.de/html-parse-python]
+2. "Gumbo, eine C++-Bibliothek zum Parsen von HTML": %[http://www.xyz.de/gumbo]
+3. "Fehlervermeidung beim Schreiben von HTML": %[http://www.xyz.de/fehlervermeidung]

@@ -1,6 +1,6 @@
 ---
 title:                "Leyendo un archivo de texto"
-html_title:           "C: Leyendo un archivo de texto"
+html_title:           "Arduino: Leyendo un archivo de texto"
 simple_title:         "Leyendo un archivo de texto"
 programming_language: "C"
 category:             "C"
@@ -10,29 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Cuando un programador trabaja en un proyecto, a menudo necesita leer datos de un archivo de texto. Esto significa tomar la información almacenada en un archivo y utilizarla en el código del programa para realizar ciertas acciones. Los programadores hacen esto para poder utilizar datos almacenados externamente en sus programas y para evitar tener que ingresar manualmente grandes cantidades de datos.
+## ¿Qué y Por Qué?
 
-## Cómo hacerlo:
-Lo primero que debemos hacer es abrir el archivo de texto utilizando la función "fopen()". Luego, podemos utilizar la función "fgets()" para leer los datos del archivo línea por línea. Finalmente, cuando hayamos terminado de leer el archivo, debemos cerrarlo utilizando la función "fclose()". Aquí hay un ejemplo de cómo hacerlo en código:
+Leer un archivo de texto en programación se refiere a la extracción de datos almacenados en un archivo de texto de formato simple. Los programadores lo hacen para manipular datos guardados o almacenados previamente, generalmente para análisis o procesamiento.
+
+## Cómo hacer:
+
+A continuación, se muestra un código de ejemplo que lee un archivo de texto en C:
 
 ```C
-FILE *archivo;
-char linea[100];
+#include <stdio.h>
 
-archivo = fopen("datos.txt", "r");
-while(fgets(linea, 100, archivo) != NULL) {
-  printf("%s", linea);
+int main() {
+    FILE *archivo;
+    char caracter;
+
+    archivo = fopen("archivo.txt","r");
+
+    if(archivo == NULL) {
+        printf("\nEl archivo no se puede abrir. \n");
+    } else {
+        printf("\nEl contenido del archivo es: \n");
+
+        while((caracter = fgetc(archivo)) != EOF) {
+	    printf("%c",caracter);
+	}
+    }
+
+    fclose(archivo);
+
+    return 0;
 }
-fclose(archivo);
 ```
-El resultado de este código será imprimir cada línea del archivo "datos.txt". ¡Así de simple es leer un archivo de texto en un programa en C!
+Salida de muestra del código anterior:
 
-## Profundizando:
-Históricamente, los programadores podían leer archivos utilizando la función "scanf()", pero esta no es una forma segura ya que puede causar problemas de seguridad. Otra alternativa es utilizar la función "fread()", pero esta es más compleja y no se recomienda para archivos de texto. La forma que hemos descrito arriba, utilizando "fopen()" y "fgets()", es la más segura y fácil de implementar para leer archivos de texto.
+```C
+El contenido del archivo es:
+Hola Mundo
+```
 
-## Vea también:
-Si quieres profundizar más sobre cómo trabajar con archivos en C, aquí hay algunos recursos adicionales que pueden ser útiles:
-- [Documentación oficial de C sobre manejo de archivos](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [Tutorial en vídeo sobre cómo leer y escribir archivos en C](https://www.youtube.com/watch?v=CBDBkLr8bVU)
-- [Ejemplos de código para leer y escribir archivos en C](https://www.programiz.com/c-programming/examples/read-file)
+## Inmersión Profunda:
+
+Históricamente, la capacidad de leer un archivo de texto es antigua en la programación, pero sigue siendo esencial. Tiene usos en muchas áreas, desde programación de sistemas básicos hasta data science y machine learning.
+
+Hay alternativas a la lectura de archivos de texto en C. Por ejemplo, se puede usar fread() en lugar de fgetc(). Sin embargo, fgetc() es más simple y mejor para los principiantes.
+
+Detalles de implementación: La función fopen() se utiliza para abrir una corriente de archivo. fgetc() se utiliza para obtener el siguiente carácter de la corriente y EOF (End of File)[Fin de Archivo] es un indicador para terminar la lectura cuando se alcanza el final del archivo.
+
+## Ver También:
+
+- Más sobre fgetc(): https://devdocs.io/c/io/fgetc
+- Alternativas para leer archivos: https://www.geeksforgeeks.org/c-programming-file-io-character-wise/  
+- Documentación general de C: https://www.gnu.org/software/gnu-c-manual/

@@ -1,7 +1,7 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica."
-html_title:           "TypeScript: Enviando uma solicitação http com autenticação básica."
-simple_title:         "Enviando uma solicitação http com autenticação básica."
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
+simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,56 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O que & Por quê?
 
-Enviar uma solicitação HTTP usando autenticação básica é uma forma de garantir que suas informações on-line sejam protegidas. Os programadores geralmente fazem isso para acessar e manipular dados protegidos por meio de APIs, como o acesso a dados bancários ou informações de usuários em um aplicativo.
+Enviar uma solicitação HTTP com autenticação básica é o processo de fazer um pedido a um recurso da web que requer um nome de usuário e senha. Os programadores fazem isso para garantir que apenas usuários autorizados tenham acesso a recursos específicos.
 
-## Como fazer:
+## Como Fazer:
 
-Utilizando o TypeScript, você pode enviar uma solicitação HTTP com autenticação básica usando a biblioteca nativa `http`. Aqui está um exemplo simples de código:
+Aqui está um exemplo de como você pode fazer isso com TypeScript usando o módulo `axios`. 
 
 ```TypeScript
-import { request } from "http";
+import axios from 'axios';
 
-const username = "user123";
-const password = "pass456";
-const auth = "Basic " + Buffer.from(username + ":" + password).toString("base64");
-
-const options = {
-  hostname: "api.example.com",
-  port: 3000,
-  path: "/endpoint",
-  method: "GET",
-  headers: {
-    "Authorization": auth
-  }
-};
-
-const req = request(options, response => {
-  response.on("data", data => {
-    console.log(data.toString());
-  });
+axios({
+    method: 'get',
+    url: 'https://sua-api.com',
+    auth: {
+        username: 'seu-nome-de-usuário',
+        password: 'sua-senha'
+    }
+}).then(response => {
+    console.log(response.data);
+}).catch(error => {
+    console.error(error);
 });
-
-req.on("error", error => {
-  console.error(error);
-});
-
-req.end();
 ```
+Quando você executa esse código, uma solicitação GET será enviada para 'https://sua-api.com' com as credenciais de autenticação especificadas. A resposta será registrada no console.
 
-Este código faz uma solicitação GET para a rota `/endpoint` em `api.example.com` com autenticação básica, passando o nome de usuário e senha como credenciais.
+## Aprofundando um Pouco Mais
 
-## Deep Dive:
+(1) Contexto Histórico: A autenticação básica é um método de autenticação de usuário na web amplamente usado e definido no HTTP/1.1. Ela foi criada em 1999, mas ainda é comumente usada devido à sua simplicidade.
 
-A autenticação básica é um método de autenticação antigo amplamente utilizado, mas foi substituída por métodos mais seguros, como o OAuth. No entanto, ainda é usada em APIs legadas e em alguns casos de uso específicos.
+(2) Alternativas: Embora a autenticação básica seja simples e amplamente suportada, ela não é a opção mais segura porque as credenciais são codificadas em Base64, mas não são criptografadas ou hashadas de alguma forma. Por isso, pode ser mais seguro usar a autenticação de token ou OAuth.
 
-Uma alternativa à autenticação básica é o uso de tokens de segurança, em que um token criptografado é usado em vez de nome de usuário e senha. Isso é mais seguro, pois o token pode ser revogado a qualquer momento, se necessário, enquanto as credenciais de autenticação básicas permanecem as mesmas.
+(3) Detalhes de Implementação: Quando você envia uma solicitação com autenticação básica, a informação de autenticação é colocada no cabeçalho da solicitação HTTP. O cabeçalho `Authorization` terá o valor `Basic {Base64_encode(username + ":" + password)}`.
 
-Implementar a autenticação básica envolve base64 encoding das credenciais de autenticação, que é uma forma básica de codificar dados em formato ASCII. É importante lembrar que este método não criptografa suas credenciais, por isso pode ser interceptado por invasores.
+## Veja Também:
 
-## Veja também:
-
-- [Documentação da biblioteca HTTP nativa do Node.js](https://nodejs.org/api/http.html)
-- [Detalhes sobre autenticação básica](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication)
-- [Alternativas à autenticação básica](https://www.digitalocean.com/community/tutorials/should-you-still-use-basic-authentication)
+- [MDN web docs: HTTP authentication](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication)
+- [NPM: axios](https://www.npmjs.com/package/axios) 
+- [OAuth 2.0](https://oauth.net/2/)

@@ -1,7 +1,7 @@
 ---
-title:                "Beräkna ett datum i framtiden eller det förflutna"
-html_title:           "Arduino: Beräkna ett datum i framtiden eller det förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller det förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "Arduino: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -12,29 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att beräkna ett datum i framtiden eller det förflutna är en vanlig uppgift för programmerare. Det innebär att man tar ett givet datum och adderar eller subtraherar ett specificerat antal dagar, veckor, månader eller år för att få ett nytt datum.
+Beräkning av ett datum i framtiden eller förflutna är processen att hitta en specifik tidpunkt utifrån en annan genom att lägga till eller subtrahera dagar, veckor, månader eller år. Programmers gör detta för att följa händelselogger, beräkna dödsdatum eller för att navigera sekvenser av händelser i applikationer.
 
-Det kan användas för att skapa tidsintervall, schemaläggning eller för att hantera tidsbaserade händelser. Programmerare använder det för att göra sina program mer dynamiska och anpassningsbara efter olika användningsfall.
+## Hur man gör:
 
-## Så här fungerar det:
-För att beräkna ett datum i framtiden eller det förflutna kan du använda funktionen ```add/subtract()``` tillsammans med variabeln ```millis()```. Här är ett exempel på hur man kan göra det för att få datumet 30 dagar efter det nuvarande datumet:
+Med Arduino kan du använder inbyggd `delay()` funktion för att skapa en arterföljd av händelser. Här är ett grundläggande kodexempel och dess utmatning:
 
+```Arduino
+void setup() {
+  // börja serial kommunikation
+  Serial.begin(9600);
+}
+
+void loop() {
+  // skriv ut det aktuella datumet
+  Serial.print("Nuvarande datum: ");
+  Serial.println(millis()/86400000);
+  // vänta i en vecka
+  delay(604800000);
+  // skriv ut det framtida datumet
+  Serial.print("Datum om en vecka: ");
+  Serial.println(millis()/86400000);
+}
 ```
-Arduino add/subtract(millis(), DAY, 30);
-```
 
-Output:
-```Thu Mar 24 2022 22:47:05 GMT+0100 (Central European Standard Time)```
+Utomatningen för denna kod kommer att skriva ut nuvarande datum, vänta i en vecka och sedan skriva ut framtida datum.
 
-På samma sätt kan du ange antalet veckor, månader eller år istället för dagar för att få ett datum i framtiden eller det förflutna.
+## Djup dykning:
 
-## Djupdykning:
-Att kunna beräkna datum i framtiden eller det förflutna är en viktig del av programmering, speciellt inom områden som IoT och embedded systems. Det är också en del av mer avancerade funktioner i språk som C++.
+Historiskt sett beräknades framtida och förflutet datum manuellt vilket var komplext och felbenäget. Med modern programmering kan detta bli mycket exakt och automatiserad. Alternativen till Arduino för datumberäkning inkluderer andra programmeringsspråk som Python, Java och C++ som har mer sofistikerade bibliotek för datum- och tidshantering. Detaljerna i datumberäkning med Arduino innefattar att använda millis() funktionen som returnerar antalet millisekunder sedan Arduino-styrenheten började, och sedan konvertera dessa millisekunder till dagar.
 
-Alternativ till att använda ```add/subtract()``` funktionen inkluderar att skapa egna funktioner eller metodik för att hantera datumberäkningar. Detta kräver dock mer kod och kan vara mer komplicerat.
+## Se också:
 
-För att få tillgång till alla funktioner som behövs för att beräkna datum i framtiden eller det förflutna, behöver du inkludera biblioteket DateTime.h.
-
-## Se även:
-- [Millisecond Timer Library](https://github.com/PaulStoffregen/MillisTimer)
-- [Date and Time Functions Reference](https://www.arduino.cc/reference/en/libraries/datetime/)
+- Arduino Referens Dokumentation: [millis()](https://www.arduino.cc/reference/en/language/functions/time/millis/)
+- Förklaring av tids- och datumhantering i programmering: [Time and Date Handling in Programming](https://www.hanselman.com/blog/DateTimeProgrammingPitfalls.aspx)
+- Python, Java och C++ datum- och tidshanteringsbibliotek:
+   - Python: [Python datetime module](https://docs.python.org/3/library/datetime.html)
+   - Java: [Java Time Package Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+   - C++: [C++ Chrono Library](https://en.cppreference.com/w/cpp/chrono)

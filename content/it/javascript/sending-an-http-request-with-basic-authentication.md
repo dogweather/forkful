@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Javascript: Inviare una richiesta http con autenticazione di base"
+html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,26 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-L'invio di una richiesta HTTP con autenticazione di base è un processo crucial per gli sviluppatori web che desiderano accedere a risorse protette da password. Ciò consente loro di autenticarsi con un server e ottenere accesso ai contenuti desiderati.
+## Che Cos'è e Perché?
 
-## Come si fa:
+L'invio di una richiesta HTTP con autenticazione di base è un processo in cui un client invia una richiesta a un server chiedendo l'accesso a risorse proteggiate. I programmatori lo fanno per proteggere le risorse da accessi non autorizzati e per mantenere l'integrità dei dati.
+
+## Come si Fa:
+Per inviare una richiesta HTTP con autenticazione di base in Javascript, puoi utilizzare la libreria `axios`. 
+
+Ecco un esempio:
+
 ```Javascript
-const username = 'esempio';
-const password = 'ciao123';
-const url = 'http://www.esempio.com';
-const headers = new Headers();
-headers.set('Authorization', 'Basic ' + btoa(username + ':' + password));
+const axios = require('axios');
+const username = 'username';
+const password = 'password';
 
-fetch(url, { headers: headers })
-  .then(response => response.text())
-  .then(data => console.log(data));
+axios({
+  method: 'get',
+  url: 'https://mywebsite.com/',
+  auth: {
+    username: username,
+    password: password
+  }
+})
+.then(response => {
+  console.log(response);
+})
+.catch(error => {
+  console.log(error);
+});
 ```
-In questo semplice esempio, utilizziamo la funzione `fetch()` per inviare una richiesta GET all'URL specificato con autenticazione di base. Per farlo, dobbiamo costruire un oggetto `Headers` e impostare l'header di autorizzazione utilizzando il metodo `set()`. Successivamente, passiamo questo oggetto come opzione nella nostra chiamata `fetch()`. La risposta del server viene quindi elaborata nel secondo `then()` e il risultato viene stampato nella console.
+Quando esegui questo script, vedrai l'output della risposta del server o l'errore nel tuo terminale.
 
-## Approfondimento:
-L'autenticazione di base è una tecnica di autenticazione molto semplice utilizzata nel protocollo HTTP. È stato introdotto nella specifica HTTP/1.0 e consiste nell'invio di un nome utente e una password, separati da due punti, codificati in Base64 e inseriti nell'header di autorizzazione della richiesta. Sebbene sia molto comune, è considerata non sicura poiché il nome utente e la password sono trasmessi in chiaro e possono essere facilmente intercettati. Un'alternativa più sicura è l'autenticazione basata su token, che utilizza un token generato dal server per verificare l'identità dell'utente.
+## Andiamo Più a Fondo
+L'autenticazione HTTP di base esiste da molto tempo e fa parte delle specifiche HTTP originali. Offre un modo veloce e semplice per proteggere le risorse, ma non è molto sicura, dato che le credenziali vengono inviate come stringa di testo non criptata.
 
-## Vedi anche:
-- [Autenticazione HTTP di base - MDN Web Docs](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication)
-- [HTTP/1.0 - Specifica RFC](https://tools.ietf.org/html/rfc1945)
+Come alternativa, potresti considerare l'uso di token JWT (JSON Web Token) o l'OAuth, che offre un maggiore livello di sicurezza.
+
+Per quanto riguarda i dettagli dell'implementazione, `axios` codifica semplicemente le tue credenziali in base64 e le include nell'header della richiesta. Il server decodifica l'header, verifica le credenziali e risponde con le risorse richieste o con uno status di errore.
+
+## Vedi Anche
+Per saperne di più su questo argomento, dai un'occhiata ai seguenti link:
+
+1. Documentazione di axios - https://axios-http.com/docs/intro
+2. Autenticazione HTTP di base su MDN - https://developer.mozilla.org/it/docs/Web/HTTP/Authentication
+3. Alternativa all'autenticazione di base, Auth0 - https://auth0.com/

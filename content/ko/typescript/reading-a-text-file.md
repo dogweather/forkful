@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 파일 읽기"
-html_title:           "TypeScript: 텍스트 파일 읽기"
+html_title:           "Bash: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-텍스트 파일을 읽는 것은 파일 내용을 읽고 처리하기 위한 프로그래머의 기술입니다. 이것은 데이터를 저장하고 공유하는 일반적인 방법 중 하나입니다.
+## 무엇과 왜?
 
-## 방법:
-TypeScript 코드 블록 내에서 코딩 예시와 샘플 출력을 사용하여 텍스트 파일을 읽는 방법을 살펴보겠습니다.
+텍스트 파일 읽기는 그 이름에서 알 수 있듯이, 프로그램이 텍스트 파일의 내용을 읽어들이는 것을 말합니다. 이것은 프로그래머들이 텍스트 형식의 데이터를 처리하거나, 사용자가 제공하는 설정 파일을 읽어들일 필요가 있을 때 주로 사용됩니다.
+
+## 어떻게:
+
+텍스트 파일 읽기를 TypeScript에서 하기 위해, Node.js의 file system 모듈을 사용하면 됩니다.
 
 ```TypeScript
-// 파일을 읽기 위한 모듈 불러오기
-import * as fs from 'fs';
+import fs from "fs";
 
-// 파일의 내용을 읽고 출력하기
-fs.readFile('textfile.txt', 'utf8', (err, data) => {
-    if (err) throw err;
+fs.readFile('textfile.txt', 'utf8', function(err, data){
+    if(err) throw err;
     console.log(data);
 });
 ```
 
-## 깊게 들어가기:
-텍스트 파일을 읽는 것은 컴퓨터와 함께 오랜 시간을 보냈던 프로그래밍의 기본적인 기술 중 하나입니다. 이전에는 바이너리 파일을 읽는 방법보다 더 까다로웠지만 현재는 다양한 모듈을 사용하여 간단하게 처리할 수 있습니다.
+이 코드는 'textfile.txt'라는 이름의 파일을 읽습니다.. 출력은 파일의 내용입니다.
 
-## 관련 자료:
-- [Node.js에서 파일 읽기](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
-- [파일 시스템 모듈 이해하기](https://www.geeksforgeeks.org/node-js-fs-module/)
+## Deep Dive
 
-## 참고:
-- 이번 글에서는 Node.js를 사용하여 텍스트 파일을 읽는 방법을 다루었습니다. 다른 언어에서도 비슷한 방식으로 파일을 읽을 수 있으므로 관심이 있다면 찾아보시기를 권장합니다.
+텍스트 파일을 읽어오는 것은 프로그래밍의 초창기부터 있었던 기능 중 하나입니다. 예전에는 저수준 언어로 직접 파일 시스템을 다루는 코드를 작성했지만, 이제는 대부분의 언어에서 표준 라이브러리 혹은 내장 함수 를 통해 쉽게 파일을 읽어올 수 있게 되었습니다.
+
+앞에서 언급한 fs 모듈 외에도, readline 모듈로 텍스트 파일의 라인을 개별적으로 읽어오는 것도 가능합니다. 또한, 스트림을 사용해서 큰 파일을 효과적으로 처리할 수도 있습니다.
+
+구현 세부사항에 대해 말하자면, Node.js에서 제공하는 이 모듈들은 내부적으로 C++로 작성된 libuv 라이브러리를 사용해서 비동기 IO를 지원합니다. 이로 인해 파일 읽기가 블로킹이 아닌 논블로킹으로 처리됩니다.
+
+## 참고 자료
+
+* [Node.js fs Documentation](https://nodejs.org/api/fs.html)
+* [Node.js readline Documentation](https://nodejs.org/api/readline.html)
+* [Node.js Streams](https://nodejs.org/api/stream.html)
+* [libuv Documentation](http://docs.libuv.org/)

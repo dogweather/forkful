@@ -1,6 +1,6 @@
 ---
 title:                "Encontrando o comprimento de uma string"
-html_title:           "Clojure: Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
 simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Que?
+## O Que & Por Quê?
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação. O comprimento de uma string se refere à quantidade de caracteres que compõem essa string. Programadores frequentemente precisam encontrar o comprimento de uma string para realizar outras operações, como validação de entrada de usuário ou manipulação de dados.
+Encontrar o comprimento de uma string é descobrir o número de caracteres que ela contém. Programadores o fazem para manipulação de dados, validação de entradas e formatação de saídas.
 
 ## Como Fazer:
 
-Para encontrar o comprimento de uma string em Clojure, podemos usar a função `count`. Essa função recebe uma string como argumento e retorna o número de caracteres nessa string.
+Para encontrar o comprimento de uma string no Clojure, usamos a função `count`. 
 
 ```Clojure
 (count "Olá, mundo!")
-;; output: 12
 ```
 
-Outra forma de encontrar o comprimento de uma string é usando a função `length`, que recebe uma sequence (como uma string) e retorna o número de elementos dessa sequence.
+A saída será:
 
 ```Clojure
-(length "Olá, mundo!")
-;; output: 12
+12
 ```
 
-## Aprofundando:
+A string "Olá, mundo!" contém 12 caracteres, incluindo os espaços e a pontuação.
 
-Encontrar o comprimento de uma string tem sido uma tarefa importante na programação desde os seus primeiros dias. Antes do surgimento das linguagens de programação modernas, o comprimento de uma string era frequentemente obtido utilizando-se loops e contagem de caracteres. Com o advento de linguagens mais robustas, como Clojure, essa tarefa se tornou mais simples e eficiente.
+## Mergulho Profundo
 
-Existem várias outras formas de encontrar o comprimento de uma string em Clojure, como usando a função `seq`, que retorna uma sequence a partir de uma string e, em seguida, aplicando a função `count` para obter o tamanho dessa sequence. Outra opção é usar a função `str`, que converte qualquer tipo de dado em uma string, e, em seguida, aplicar a função `count`.
+A função `count` no Clojure é talvez a maneira mais simples e direta de encontrar o comprimento de uma string. No entanto, ele vem da herança do Lisp, onde a função 'count' era originalmente usada para contar o comprimento de uma lista. 
 
-## Veja Também:
+Como alternativa, você poderia converter a string em uma sequência de caracteres e depois usar `reduce` para contar. Mas isso é mais complicado e menos eficiente.
 
-Para mais informações sobre as funções utilizadas neste artigo, consulte a documentação oficial de Clojure:
+Clojure implementa a função `count` em termos de `java.lang.CharSequence.length`, o que significa que funciona em tempo constante.
 
-- Função `count`: https://clojuredocs.org/clojure.core/count
-- Função `length`: https://clojuredocs.org/clojure.core/length
-- Função `seq`: https://clojuredocs.org/clojure.core/seq
-- Função `str`: https://clojuredocs.org/clojure.core/str
+## Veja Também
+
+1. Documentação do Clojure para [count](https://clojuredocs.org/clojure.core/count)
+2. Diferença entre String Length e Character Count in [StackOverflow](https://stackoverflow.com/questions/2932892/difference-between-string-length-and-character-count)
+3. String Manipulation em Clojure [blog post](https://www.baeldung.com/clojure-string-manipulation)

@@ -1,7 +1,7 @@
 ---
-title:                "Versalisera en sträng"
-html_title:           "Ruby: Versalisera en sträng"
-simple_title:         "Versalisera en sträng"
+title:                "Gör om en sträng till versaler"
+html_title:           "Ruby: Gör om en sträng till versaler"
+simple_title:         "Gör om en sträng till versaler"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,30 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-När man "kaptaliserar" en sträng i programmeringsspråket Ruby innebär det att man gör om alla små bokstäver till stora bokstäver. Detta kan göras av olika anledningar, till exempel för att göra texten mer lättläst eller för att matcha specifika krav eller format.
+Att omvandla en sträng till stora bokstäver innebär att ändra alla bokstäver i en sträng till deras majuskelformer. Programmerare gör det för att underlätta jämförelser mellan strängar och förbättra läsbarheten.
 
-## Hur gör man?
-För att kaptaliserar en sträng i Ruby kan man använda metoden "capitalize" på en sträng-variabel. Här är ett exempel på kod:
+## Hur man gör:
+Ruby gör det enkelt genom att erbjuda den inbyggda metoden `upcase`. Så här använder du den:
 
-```Ruby
-name = "emma"
-puts name.capitalize
+```ruby
+# Skapar en sträng
+s = "hej världen!"
+
+# Omvandlar strängen till stora bokstäver
+puts s.upcase
 ```
 
-Detta kommer att returnera strängen "Emma" som output. Man kan också använda metoden "upcase" om man vill konvertera hela strängen till versaler, oavsett om det var små eller stora bokstäver från början.
+Det här kommer att skriva ut:
 
-```Ruby
-name = "emmA"
-puts name.upcase
 ```
-
-Detta kommer att returnera "EMMA" som output. 
+HEJ VÄRLDEN!
+```
 
 ## Djupdykning
-Historiskt sett har konventionen varit att namngivning av variabler och metoder i Ruby följer ett "lower snake case" format, vilket innebär att man använder små bokstäver och separerar ord med understreck istället för mellanslag. Dock finns det ingen absolut regel för detta och det är upp till varje programmerare att avgöra vilken konvention som passar bäst för deras projekt.
+Metoden `upcase` har varit en del av Ruby sedan de tidigaste versionerna av språket. Det är en del av standardbiblioteket för strängar, vilket innebär att du kan använda den direkt på alla strängobjekt du skapar.
 
-Alternativen för kapitalisering i Ruby inkluderar också metoden "capitalize!" som gör en permanent ändring på strängen istället för att bara returnera en ny kaptaliserad version. Det finns också möjligheten att använda regexp (regular expressions) för att göra mer avancerade sökningar och ersättningar av delar av en sträng.
+Om du vill omvandla en sträng till stora bokstäver samtidigt som du bevarar några av dess ursprungliga bokstäver, t.ex. första bokstaven i varje ord, kan du använda `capitalize` eller` titleize` (det senare kräver aktiveringsdräkten).
 
-## Se även
-- [Officiell dokumentation för Ruby String-klassen](https://ruby-doc.org/core-2.7.2/String.html)
-- [En lättförståelig guide till regexp i Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+Intern implementation av `upcase` i Ruby tar hänsyn till tecken uppslukning, vilket gör den mer tillförlitlig än att bara byta ASCII-värden.
+
+## Se Även
+Se [Ruby officiella dokumentationen](https://ruby-doc.org/core-2.5.1/String.html) för mer information om `upcase` och andra strängmetoder. Om du är intresserad av att förstå mer om strängars intern representation i Ruby, ta en titt på [denna artikel](https://www.honeybadger.io/blog/ruby-s-unicode-support/).

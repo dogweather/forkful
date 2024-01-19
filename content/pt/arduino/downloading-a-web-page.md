@@ -1,6 +1,6 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "Arduino: Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,57 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que e por que fazer download de uma página web
-Fazer download de uma página web basicamente significa baixar seu conteúdo e salvá-lo em seu computador. Isso é comumente feito por programadores com o objetivo de armazenar conteúdos para uso posterior em seus projetos.
+## O Que & Porquê?
+
+Baixar uma página da web é o processo de recuperar e armazenar o conteúdo de um site no seu dispositivo. Programadores fazem isso para analisar ou manipular esses dados nas aplicações.
 
 ## Como fazer:
-```Arduino
-#include <WiFi.h> // inclui a biblioteca WiFi
 
-const char* ssid = "SUA REDE WIFI"; // altere para o nome da sua rede
-const char* password = "SENHA DA REDE"; // altere para a senha da sua rede
+Vamos usar a biblioteca ESP8266WiFi para baixar uma página da web com este código.
+
+```Arduino
+#include <ESP8266WiFi.h>
+
+const char* ssid     = "seu_SSID";
+const char* password = "sua_senha";
+
+const char* host = "www.exemplo-website.com";
 
 void setup() {
-  Serial.begin(115200); // inicia a comunicação serial
-  WiFi.begin(ssid, password); // conecta na rede WiFi
-  while (WiFi.status() != WL_CONNECTED) { // espera pela conexão
-    delay(1000);
-    Serial.println("Conectando na rede WiFi...");
+  Serial.begin(115200);
+  delay(100);
+
+  // Conexão Wi-Fi
+  Serial.println();
+  Serial.println();
+  Serial.print("Conectando a ");
+  Serial.println(ssid);
+  
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
   }
+
+  Serial.println("");
+  Serial.println("WiFi conectado");
+  Serial.println("Endereço IP: ");
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {
-  WiFiClient client; // cria um cliente WiFi
-  const char* host = "www.pagina-web.com"; // altere para o endereço da página web desejada
-  if (!client.connect(host, 80)) { // tenta se conectar ao servidor da página
-    Serial.println("Falha ao se conectar ao servidor.");
+  WiFiClient client;
+  const int httpPort = 80;
+  if (!client.connect(host, httpPort)) {
+    Serial.println("Falha na conexão");
     return;
   }
 
-  client.print(String("GET /pagina.html HTTP/1.1\r\n") + // faz uma requisição GET pela página
-               "Host: " + host + "\r\n" +
-               "Connection: close\r\n\r\n"); // cabeçalhos de requisição
+  // Pedido HTTP
+  client.print(String("GET /") + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" + 
+               "Connection: close\r\n\r\n");
+  delay(500);
 
-  while (client.connected()) { // leitura dos dados recebidos
-    if (client.available()) {
-      String line = client.readStringUntil('\r');
-      Serial.print(line);
-    }
-  }
-
-  client.stop(); // desconecta do servidor da página
-
-  delay(60000); // espera 1 minuto antes de repetir o processo
+  // Leitura da resposta
+  while(client.available()){
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
+  }  
 }
 ```
+Após rodar o código, irá conectar à rede e baixar o conteúdo do site.
 
-## Mais informações:
-Para fazer download de uma página web, é necessário ter uma conexão à internet e saber o endereço da página desejada. Existem também outras formas de fazer download de páginas web, como através de comandos no terminal ou com softwares externos. É importante lembrar que qualquer conteúdo baixado deve ser utilizado conforme as leis de direitos autorais.
+## Mergulho Profundo
 
-## Dica:
-Para verificar se a conexão com a rede WiFi foi estabelecida, você pode usar a função ```WiFi.status()``` que retorna o estado da conexão.
+Assembler e C foram as primeiras linguagens a permitir o download de páginas web, seguidos por Python e outros através de bibliotecas HTTP. Hoje, fazemos isso em nossa programação diária para tarefas de web scraping, para realizar análises de dados e até mesmo para funções simples de CRUD.
 
-## Veja também:
-- [Guia para iniciantes em Arduino](https://www.arduino.cc/en/Guide/ArduinoUno)
-- [Documentação da biblioteca WiFi](https://arduino.github.io/arduino-esp32/versions/1.0.1-rc2/classWiFi.html)
-- [Tutorial de download de páginas web com ESP32](https://randomnerdtutorials.com/esp32-web-server-spiffs-spi-flash-file-system/)
+Existem alternativas ao método acima, como usar a biblioteca HttpClient do Arduino para lidar com comunicações HTTP. Ou até, python com a biblioteca BeautifulSoup para web scraping.
+
+Os detalhes de implementação incluem a necessidade de uma boa gestão de memória ao trabalhar com o ESP8266 devido à sua limitação de memória. Ele também é importante notar o tratamento de possíveis exceções de conexão e ler adequadamente a resposta do servidor.
+
+## Veja também
+
+- [Biblioteca HttpClient](https://www.arduino.cc/en/Tutorial/LibraryExamples/HttpClient)
+- [ESP8266WiFi](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+- [Python e BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)

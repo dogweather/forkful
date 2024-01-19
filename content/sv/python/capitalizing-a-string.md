@@ -1,7 +1,7 @@
 ---
-title:                "Att omvandla en sträng till versaler"
-html_title:           "Python: Att omvandla en sträng till versaler"
-simple_title:         "Att omvandla en sträng till versaler"
+title:                "Gör om en sträng till versaler"
+html_title:           "Python: Gör om en sträng till versaler"
+simple_title:         "Gör om en sträng till versaler"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,25 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-När man "capitalizar" en sträng i Python gör man den första bokstaven av varje ord större än de andra. Detta görs för att göra texten mer lättläslig och för att följa konventionen i de flesta språk där den första bokstaven i en mening är större.
- 
-## Hur gör man:
-```python
-# Exempel 1: Enkel
-str = "hej världen!"
-print(str.capitalize())
-Output: "Hej världen!"
+## Vad och varför? 
+Att omvandla en sträng (string) till versaler (helt stora bokstäver) kan i programmering kallas att "capitalizing". Vi gör det för att forma och standardisera data, så att exempelvis användarnamn eller mailadresser tillåter både koppling och variation, men normalt inte skiljer mellan stora och små bokstäver.
 
-# Exempel 2: Med flera ord
-str = "välkommen till python-världen"
-print(str.capitalize())
-Output: "Välkommen till python-världen"
+## Hur man gör: 
+Här är exempel på hur du gör för att konvertera sträng till versaler i Python:
+
+```Python 
+text = 'jag älskar python programmering'
+capitalized_text = text.upper()
+print(capitalized_text)
+```
+Output:
+``` 
+JAG ÄLSKAR PYTHON PROGRAMMERING
 ```
 
-## Djupdykning:
-Historiskt sett har man använt metoden capitalize() för att göra den första bokstaven i en mening stor för att lägga till ett behagligt visuellt element. Alternativ till att använda metoden är att manuellt ändra bokstaven eller använda en regex regex för att ändra texten. Implementationen av capitalize() är enkel och kan lätt implementeras i egna funktioner eller program.
+## Djupdykning 
+I gamla programmeringsspråk var stora och små bokstäver mycket viktiga. Exempelvis i språket C måste du skriva all kod med små bokstäver. I moderna språk, inklusive Python, finns funktioner som autokonverterar strängar. 
 
-## Se även:
-- [Python dokumentation för capitalize()](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
-- [Regex tutorial](https://www.regular-expressions.info/)
+Alternativ till metoden .upper() är metoden .capitalize(), som bara gör den första bokstaven i strängen stor:
+
+```Python
+text = 'jag älskar python programmering'
+capitalized_text = text.capitalize()
+print(capitalized_text)
+```
+Output: 
+```
+Jag älskar python programmering
+```
+
+Om du vill ha vart ord med stor bokstav, kan du använda .title():
+
+```Python
+text = 'jag älskar python programmering'
+capitalized_text = text.title()
+print(capitalized_text)
+```
+Output: 
+```
+Jag Älskar Python Programmering
+```
+
+I praktiken beror det vilken metod du ska använda på vad du vill uppnå.
+
+## Se också 
+För ytterligare information, se följande länkar:
+1. Python Dokumentation: Strängmetoder - [Länk](https://docs.python.org/3/library/stdtypes.html#string-methods)
+2. W3Schools Python Strängmetoder - [Länk](https://www.w3schools.com/python/python_ref_string.asp)

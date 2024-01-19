@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "Ruby: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,24 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Komentoriviparametrien lukeminen on prosessi, jossa ruby-ohjelma lukee käyttäjän syöttämät komennot terminaalin komentoriviltä. Tämä on hyödyllistä, sillä se antaa ohjelmoijille mahdollisuuden antaa dynaamisia komentoja ohjelmalleen ja muokata sen toimintaa haluamallaan tavalla.
+## Mikä & Miksi?
 
-## Miten:
-Esimerkiksi, jos haluat ohjelmassasi tulostaa käyttäjän antaman nimen, voit käyttää Ruby-metodia ARGV, joka lukee komentoriviltä annetut parametrit ja tallentaa ne taulukkoon. Tämän jälkeen voit käyttää taulukkoa ja sen sisältämiä parametrejä haluamallasi tavalla.
+Komennon line argumenttien lukeminen tarkoittaa sitä, kun ohjelmasi vastaanottaa tietoja käynnistymishetkellä. Tätä tehdään syötteiden automatisoimiseksi tai ohjelmatilan määrittämiseksi.
+
+## Näin se tehdään:
+
+Command line argumentit tuodaan sisään `ARGV`-taulukon kautta Rubyssa. Tässä on esimerkki:
 
 ```Ruby
-# Esimerkki koodista
-puts "Hei, " + ARGV[0] + "!" 
+# printing_args.rb
+ARGV.each do|a|
+  puts "Argumentti: #{a}"
+end
 ```
-Syötetyllä nimellä korvataan ARGV[0] ja ohjelma tulostaa esimerkiksi "Hei, Timo!". Tämän lisäksi voit myös käyttää välilyöntiä sekä muita string-metodeja parametrien välissä ja muokata tulostetta haluamallasi tavalla.
 
-## Syväsukellus:
-Komentoriviparametrien lukemista on käytetty jo vuosien ajan ohjelmoinnissa. Se on yksinkertainen, mutta tehokas tapa kommunikoida käyttäjän kanssa ja hallita ohjelman suoritusta. Kuitenkin tätä nykyä on myös muita tapoja lukea syötteitä, kuten esimerkiksi käyttäjän antamaa tietoa ohjelman suorituksen aikana.
+Jos ajat tämän ohjelman komentoriviltä annaen argumentteja...
 
-## Muuta:
-Lisätietoja komentoriviparametrien lukemisesta voit löytää Ruby-ohjelmoinnin oppaista ja dokumentaatiosta.
+```bash
+$ ruby printing_args.rb yksi kaksi kolme
+```
+
+...saat tulokseksi:
+
+```bash
+Argumentti: yksi
+Argumentti: kaksi
+Argumentti: kolme
+```
+
+## Syvempi tutkimus:
+
+- Historiallinen tausta: Command line argumenttien lukeminen on hyvin vanha käytäntö, joka ulottuu 1970-luvulle, kun käyttöjärjestelmät kehittyivät monikäyttöisiksi. 
+- Vaihtoehdot: Voit käyttää myös getopt- tai optparse-kirjastoja argumenttien lukemiseksi ja jäsentämiseksi Rubyssa, joka tarjoaa lisää joustavuutta ja vaihtoehtoja.
+- Toteutuksen yksityiskohdat: ARGV on erityislaatuinen taulukko, johon Ruby tallentaa command line argumentit. Tämä poikkeaa muiden ohjelmointikielten käyttämistä menetelmistä, jotka vaativat yleensä erillisen funktion argumenttien käytön.
 
 ## Katso myös:
-- [Ruby-dokumentaatio](https://www.ruby-lang.org/en/documentation/)
-- [Komentoriviparametrien lukeminen Perl-ohjelmoinnissa](https://perlmaven.com/command-line-arguments-in-perl)
+
+1. [ARGV Ruby-dokumentaatio](http://ruby-doc.org/core-2.1.4/ARGF.html)
+2. [Option-parserin syntaksi](https://docs.ruby-lang.org/en/latest/libraries/OptParse.html)
+3. [Getoptin dokumentaatio](https://docs.ruby-lang.org/en/latest/libraries/Getopt.html)

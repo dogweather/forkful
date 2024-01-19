@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden"
-html_title:           "Haskell: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,40 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+# Ein Haskell Handbuch: Finden Sie die Länge eines Strings
 
-Das Finden der Länge eines Strings ist eine häufige Aufgabe, die Programmierer in vielen Programmiersprachen lösen müssen. Die Länge eines Strings bezieht sich auf die Anzahl der Zeichen in einem Text oder einer Zeichenkette. Dies ist wichtig, um bestimmte Manipulationen an einem String durchzuführen oder um zu überprüfen, ob er eine bestimmte Länge hat.
+## Was und Warum?
 
-## Wie geht das?
+Die Länge eines Strings zu finden bedeutet, die Anzahl der Zeichen (einschließlich Leerzeichen) in einer Zeichenkette zu zählen. Programmierer tun dies oft, um Speicher zu verwalten oder beim Iterieren durch Strings zu helfen.
 
-Die Länge eines Strings kann in Haskell auf verschiedene Arten gefunden werden. Eine Möglichkeit besteht darin, die Funktion ```length``` zu verwenden, die in der standardmäßigen Modulbibliothek ```Data.List``` verfügbar ist. Dies ermöglicht es uns, schnell die Länge eines Strings zu finden, indem wir einfach ```length``` gefolgt von dem betreffenden String schreiben.
+## Wie wird's gemacht?
 
-Beispielcode:
+In Haskell ist die Länge eines Strings einfach mit der eingebauten Funktion `length` zu bestimmen. Hier ein einfaches Beispiel:
 
-```Haskell
+```haskell
+main = do
+    let meinString = "Hallo, Welt!"
+    putStrLn ("Die Länge des Strings ist: " ++ show (length meinString))
+```
+
+Wenn Sie dieses Programm ausführen, liefert es folgende Ausgabe:
+```
+Die Länge des Strings ist: 13
+```
+
+## Tiefer eintauchen
+
+Historisch gesehen, hat Haskell seine eingebaute Funktion `length` seit seiner allerersten Version. Es gibt jedoch Alternativen zum Finden der Länge eines Strings. Zum Beispiel, statt `length` kann die Funktion `foldl'` verwendet werden:
+
+```haskell
 import Data.List
 
-length "Hallo Welt" -- gibt 11 aus, da der String 11 Zeichen hat.
+main = do
+    let len = foldl' (\n _ -> n + 1) 0 "Hallo, Welt!"
+    print len
 ```
 
-Eine andere Möglichkeit besteht darin, die Rekursion zu nutzen, indem wir jedes Zeichen in der Zeichenkette zählen und dann die Anzahl zurückgeben. Dies ermöglicht es uns, die Länge eines Strings unabhängig von einer vorgefertigten Funktion zu finden.
+Das liefert das gleiche Ergebnis, kann aber in Behandlung großer Datensätze effizienter sein, weil `foldl'` nicht die gesamte Liste im Speicher halten muss.
 
-Beispielcode:
-
-```Haskell
-length' :: String -> Int -- Funktion, die eine Zeichenkette als Argument erwartet und eine Ganzzahl zurückgibt.
-length' "" = 0 -- Basisfall, leere Zeichenkette hat Länge 0.
-length' (x:xs) = 1 + length' xs -- Zählt jedes Zeichen und gibt die Länge zurück, indem die Funktion für den Rest der Zeichenkette aufgerufen wird.
-
-length' "Hallo Welt" -- gibt 11 aus, wie auch die vorherige Methode.
-```
-## Tiefergehende Infos
-
-Das Ermitteln der Länge eines Strings ist eine grundlegende Funktion in vielen Programmiersprachen und hat ihren Ursprung in der Theorie der formalen Sprachen und Automaten. Es gibt auch alternative Möglichkeiten, um die Länge eines Strings in Haskell zu finden, wie zum Beispiel die Verwendung der Bibliothek ```Data.Text```. Diese bietet schnellere Operationen auf Texten mit einer größeren Anzahl an Zeichen an. 
-
-In Bezug auf die Implementierungsdetails nutzt die Funktion ```length``` in ```Data.List``` einfache Iteration, um die Länge zu finden, während die rekursive Funktion ```length'``` Zeichen zählt und dann die Anzahl zurückgibt. Es ist wichtig zu beachten, dass die rekursive Funktion möglicherweise schneller ist als die iterative Variante, da sie keine interne Schleife durchläuft.
+Bedenken Sie aber, dass `length` und `foldl'` nicht mit Endloslisten funktionieren werden.
 
 ## Siehe auch
 
-- Offizielle Dokumentation für ```Data.List```: https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html
-- Offizielle Dokumentation für ```Data.Text```: https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html
+- Offizielle Dokumentation für `length`: <https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:length>
+
+- Einführung in Haskell: <https://www.haskell.org/documentation/>
+
+- Haskell Wiki-Artikel über Faltungen: <https://wiki.haskell.org/Fold>

@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-html_title:           "Haskell: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Reguläre Ausdrücke verwenden"
+html_title:           "Bash: Reguläre Ausdrücke verwenden"
+simple_title:         "Reguläre Ausdrücke verwenden"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,32 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke sind ein leistungsstarkes Werkzeug, das Programmierern hilft, Texte auf eine präzise und flexible Weise zu durchsuchen und zu manipulieren. Sie bestehen aus speziellen Zeichenfolgen, die eine Mustererkennung ermöglichen. Programmierer verwenden reguläre Ausdrücke in verschiedenen Sprachen, einschließlich Haskell, um komplexe Aufgaben wie das Validieren von Benutzereingaben oder das Extrahieren von Daten aus Texten zu lösen.
 
-## Wie geht's?
-Reguläre Ausdrücke werden in Haskell mithilfe des Pakets "regex" verwendet. Zunächst muss das Paket importiert werden:
+Reguläre Ausdrücke (Regular Expressions oder Regex) werden verwendet, um Muster in Strings zu finden und zu manipulieren. Sie sind ungemein nützlich für Textverarbeitungsaufgaben und Datenvalidierung.
+
+## Wie man:
+
+Verwenden Sie in Haskell das Modul `Text.Regex.Posix` für Regex-Operationen. Hier ist ein einfaches Beispiel:
+
 ```Haskell
-import Text.Regex
+import Text.Regex.Posix
+
+main = putStrLn $ show ("1234" =~ "[0-9]+" :: Bool)
 ```
-Dann können wir eine reguläre Ausdrucksstruktur definieren, indem wir den Typ "Regex" verwenden:
-```Haskell
-myRegex :: Regex
-```
-Um einen regulären Ausdruck in Aktion zu sehen, können wir ihn in der Funktion "matchRegex" verwenden:
-```Haskell
-> matchRegex (mkRegex "([0-9]+)") "abc123def"
-Just ["123"] 
-```
-In diesem Beispiel wird der reguläre Ausdruck "([0-9]+)" verwendet, um nach Zahlen in einem String zu suchen und sie als Ergebnis zurückzugeben.
 
-## Tiefer tauchen
-Reguläre Ausdrücke wurden bereits in den 1950er Jahren von dem Mathematiker Stephen Kleene entwickelt und sind seitdem ein wichtiger Bestandteil der Computerwissenschaften. Neben Haskell gibt es auch in anderen Programmiersprachen, wie z.B. Perl und Java, eine Unterstützung für reguläre Ausdrücke.
+Ausführen dieses Codes gibt "`True`" zurück, da der String "`1234`" das Muster "`[0-9]+`" (ein oder mehr Ziffern) entspricht.
 
-Für Programmierer, die mit der Syntax von regulären Ausdrücken nicht vertraut sind, kann es schwierig sein, komplexe Ausdrücke zu schreiben. Eine alternative Möglichkeit, Text zu durchsuchen und zu manipulieren, ist die Verwendung von Bibliotheken wie "stringsearch", die eine höhere Abstraktionsebene bieten.
+## Vertiefung:
 
-In Haskell wird das Regex-Paket durch die Funktionen "mkRegex", "matchRegex" und "splitRegex" implementiert, die über das Array Library Framework (ALF) bereitgestellt werden.
+Reguläre Ausdrücke haben eine lange Geschichte, die bis in die 1950er Jahre zurückreicht und sind integraler Bestandteil vieler Programmiersprachen. In Haskell gibt es auch Alternativen wie Parsec und Megaparsec, die eine funktionalere Art der Textverarbeitung ermöglichen. Beim Arbeiten mit Regex in Haskell ist es wichtig zu wissen, dass diese Operationen die Unterstützung durch Posix Regex Bibliothek in Betriebssystemebene verwenden.
 
-## Siehe auch
-- [Offizielle Dokumentation des Regex-Pakets in Haskell](https://hackage.haskell.org/package/regex)
-- [Ein Tutorial zur Verwendung von regulären Ausdrücken in Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/regular-expressions)
-- [Ein Vergleich von regulären Ausdrücken und der Bibliothek "stringsearch" in Haskell](https://fredpbytes.com/2016/05/28/regular-expressions-vs-stringsearch-in-haskell/)
+## Siehe auch:
+
+- Die [Haskell Regex Wiki](http://www.haskell.org/haskellwiki/Regex) für weitere Details und Beispiele.
+- Eine vollständige Referenz von Regex-Syntax in [RegexOne](https://regexone.com/).
+- Die offizielle Dokumentation für die [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix) Bibliothek.

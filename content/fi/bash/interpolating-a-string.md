@@ -10,20 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Interpolointi on tekniikka, jolla voimme lisätä muuttujan arvoja merkkijonoon Bash-skriptissä. Tämä on hyödyllistä esimerkiksi silloin, kun haluamme tulostaa dynaamisesti vaihtelevia tekstejä tai muuttujien arvoja. 
+## Mikä ja miksi?
 
-## Miten:
-Käytämme merkintää ${} lisätäksemme muuttujan arvon merkkijonoon. Katso seuraava esimerkki:
+Merkkijonon interpolointi tarkoittaa muuttujan sijoittamista suoraan merkkijonoon. Koodarit tekevät tämän työn tehokkuuden ja luettavuuden parantamiseksi.
+
+## Kuinka:
+
+Seuraavassa on esimerkki siitä, kuinka Bashissa merkkijonon interpolointi tehdään:
+
 ```Bash
-name="Mikko"
-echo "Tervehdys, ${name}! Tänään on $(date +"%A")."
+nimi="Linus"
+echo "Hei, olen $nimi"
 ```
-Tämä tulostaa: "Tervehdys, Mikko! Tänään on maanantai."
 
-## Syvällisempää:
-Interpolointi on ollut käytössä jo vuosikymmenten ajan. Ennen sitä käytettiin vain muista kielistä lainattuja funktioita, kuten sed tai awk, interpolointiin Bash-skripteissä. Joissakin muissa ohjelmointikielissä kutsutaan tätä myös muuttujien sisällyttämiseksi merkkijonoon.
+Tämä tulostaa:
 
-## Katso myös:
-https://ss64.com/bash/syntax-expand.html - Lisää tietoa interpoloinnista Bashissa.
-https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion - Interpolointiin liittyvät Bash-dokumentaatiot.
+```Bash
+Hei, olen Linus
+```
+
+Voit myös käyttää kierteitä arpakuutioiden heittämisessä:
+
+```Bash
+arpa=$((RANDOM % 6 + 1))
+echo "Arpakuutiosi numero on $arpa"
+```
+
+Tämä voi tuottaa esimerkiksi:
+
+```Bash
+Arpakuutiosi numero on 4
+```
+
+## Deep Dive
+
+Merkkijonon interpolointi on ollut osa Unix shell skriptausta sen varhaisista päivistä lähtien ja on levinnyt muihin kieliiin. Sen vastineena, voit käyttää `printf`-toimintoa, joka on peräisin C-kielestä. Kuten Pythonissa, Bashissa myös merkkijonon interpoloinnin voi tehdä useammalla tavoin, kuten "Halo ${nimi}, mitä kuuluu?".
+
+## See Also
+
+Merkkijonon käsittelystä saadaksesi lisätietoa, tutustu seuraaviin linkkeihin:
+
+1. Bash-ohjelmointiopas: Merkkijonojen interpolointi: 
+https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
+
+2. Stack Overflow: Kuinka interpoloida merkkijonoja Bashissa:
+https://stackoverflow.com/questions/4181703/how-can-i-concatenate-string-variables-in-bash

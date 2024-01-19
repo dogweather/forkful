@@ -1,7 +1,7 @@
 ---
-title:                "문자열 보간"
-html_title:           "Bash: 문자열 보간"
-simple_title:         "문자열 보간"
+title:                "문자열 보간하기"
+html_title:           "Java: 문자열 보간하기"
+simple_title:         "문자열 보간하기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,27 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 & 어떻게?
-문자열 인터폴레이션은 단순히 변수를 문자열에 포함시키는 것을 뜻합니다. 프로그래머들은 이를 사용하여 코드의 가독성을 높이고, 변수를 효율적으로 활용할 수 있도록 합니다.
+## 무엇이며 왜 사용하는가?
 
-## 어떻게:
+문자열 보간은 변수의 값을 문자열 내부에 삽입하는 방법입니다. 이 방법은 코드의 가독성을 향상시킵니다.
+
+## 사용 방법:
+
+Bash에서는 양 따옴표 내에 변수를 넣어 문자열 보간을 합니다. 
+예를 보면:
+
 ```Bash
-#!/bin/bash
-# 사용자 이름을 변수에 저장합니다.
-name="John"
-# Hello [사용자 이름]! 를 출력합니다.
-echo "Hello $name!"
+name="World"
+echo "Hello, $name"
 ```
+출력은 다음과 같습니다:
+
 ```
-Output:
-Hello John!
+Hello, World
 ```
 
-## 깊이있는 탐색:
-문자열 인터폴레이션은 변수를 문자열에 포함시키는 기능으로서, 프로그래밍에서 유용하게 사용됩니다. 이 기능은 세 가지 주요한 좋은 점을 가지고 있습니다. 첫째, 코드의 가독성을 높여줍니다. 두 번째, 코드를 더 효율적으로 작성할 수 있게 해줍니다. 세 번째, 문자열 인터폴레이션은 변수의 값을 문자열에 쉽게 포함시키기 때문에 더 편리합니다.
+## 깊게 들어가기
 
-## 관련 정보:
-문자열 인터폴레이션을 사용하는 방법에 대해 더 자세한 내용은 다음 링크를 참조하세요:
+Bash는 나열되는 많은 셀 스크립트 언어 중 하나로, 문자열 보간 기능은 원래 Bourne shell에서 나온 것입니다. 또한 Python이나 JavaScript 같은 다른 프로그래밍 언어에서도 문자열 보간을 사용할 수 있습니다. Bash에서는 두 종류의 문자열, 즉 단일 따옴표 ' ' 와 이중 따옴표 " " 가 있습니다. 단일 따옴표는 문자열 안에 존재하는 모든 문자들을 그대로 두는 반면에, 이중 따옴표는 문자열 안의 특정 문자를 특수 문자로 취급합니다.
 
-- https://ryanstutorials.net/bash-scripting-tutorial/bash-variables.php
-- https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+## 참고 자료
+
+1. [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_03.html)
+2. [Bash Scripting Tutorial](https://www.shellscript.sh/variables1.html)
+3. [String Interpolation in Bash](https://linuxize.com/post/bash-variable-in-string/)

@@ -1,7 +1,7 @@
 ---
-title:                "Sende en http-forespørsel"
-html_title:           "C: Sende en http-forespørsel"
-simple_title:         "Sende en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,45 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+# Sender en HTTP-forespørsel med C
 
-Å sende en HTTP-forespørsel er en vanlig praksis blant programmerere for å kommunisere med servere og få tilgang til data og ressurser. Dette gjøres ved å sende en forespørsel til en spesifikk URL-adresse og motta en respons fra serveren. Dette er nyttig for å hente informasjon fra andre nettsteder, integrere tjenester og utføre ulike handlinger som krever serverkommunikasjon.
+## Hva & Hvorfor?
+Å sende en HTTP-forespørsel er når en klient ber en server om data eller instrukser. Programmere gjør dette for å hente eller sende informasjon over Internett.
 
-Slik gjør du:
+## Hvordan:
+Her kommer noen raske eksempler på hvordan man kan sende en HTTP GET forespørsel ved å bruke C og libcurl biblioteket.
 
+Installer først libcurl hvis du ikke allerede har det.
+
+Linux:
+```C
+sudo apt-get install libcurl4-openssl-dev
+```
+
+macOS:
+```C
+brew install curl
+```
+
+Her er koden:
 ```C
 #include <stdio.h>
-#include <stdlib.h>
-#include <curl/curl.h> // bibliotek for å sende HTTP-forespørsler
-
-int main(void)
-{
+#include <curl/curl.h>
+ 
+int main(void) {
   CURL *curl;
   CURLcode res;
-
-  curl = curl_easy_init(); // initialiserer curl-objektet
-  
+ 
+  curl_global_init(CURL_GLOBAL_DEFAULT);
+ 
+  curl = curl_easy_init();
   if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://en.wikipedia.org/wiki/Main_Page"); // angir URL-adressen å sende forespørselen til
-    res = curl_easy_perform(curl); // utfører forespørselen og lagrer responsen i "res"-variabelen
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+ 
+    res = curl_easy_perform(curl);
 
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl); // rydder opp etter utført forespørsel
+    if(res != CURLE_OK) 
+      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+ 
+    curl_easy_cleanup(curl);
   }
+ 
+  curl_global_cleanup();
+ 
   return 0;
 }
 ```
 
-Dypdykk:
+## Dypdykk
+Bruken av HTTP-forespørsler strekker seg tilbake til tidlig utvikling av internett selv. Tidligere ble lignende interaksjoner oppnådd gjennom telnet økter eller lignende protokoller.
 
-Å sende HTTP-forespørsler har vært en viktig del av nettverkskommunikasjon siden starten av World Wide Web. Alternativene til å bruke biblioteker som curl for å sende forespørsler er åpne kilder som gjør det mulig å sende forespørsler direkte gjennom HTTP-protokollen, eller å bruke innebygde funksjoner fra språk som Python eller JavaScript.
+Som alternativer til HTTP-forespørsler, kan utviklere bruke WebSockets for en konstant åpen forbindelse mellom klient og server, eller nyere teknologi som HTTP/2 eller HTTP/3, som gir forbedret ytelse.
 
-curl-biblioteket tilbyr også mange forskjellige konfigurasjonsmuligheter for å tilpasse forespørselene, som å legge til HTTP-hodere, håndtere HTTPS-sertifikater og begrense tidsutførelse.
+Det er mange detaljer bak implementering av en HTTP-forespørsel. Det er forskjellige metoder som GET, POST, DELETE etc., samt bruk av forskjellige header felt for å styre hvordan innholdet blir behandlet av serveren og klienten.
 
-Se også:
+## Se Også
 
-- curl bibliotekets hjemmeside: https://curl.se/libcurl/
-- HTTP-protokollen: https://tools.ietf.org/html/rfc2616
+- [libcurl Dokumentasjon](https://curl.haxx.se/libcurl/c/)
+- [HTTP/2 Explained](https://http2.github.io/)
+- [HTTP/3 Explained](https://http3-explained.haxx.se/)
+- [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)

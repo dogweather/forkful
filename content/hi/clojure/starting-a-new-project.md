@@ -1,7 +1,7 @@
 ---
-title:                "एक नया परियोजना शुरू करना"
-html_title:           "Clojure: एक नया परियोजना शुरू करना"
-simple_title:         "एक नया परियोजना शुरू करना"
+title:                "नया प्रोजेक्ट शुरू करना"
+html_title:           "C: नया प्रोजेक्ट शुरू करना"
+simple_title:         "नया प्रोजेक्ट शुरू करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kya aur Kyun?
+## क्या और क्यों? (What & Why?)
+नयी प्रोजेक्ट शुरू करना मतलब एक नई सॉफ्टवेयर की बुनियाद रखना । प्रोग्रामर्स इसे करते हैं ताकि वे कीचड़ से बच सकें और अपने प्रोजेक्ट को धीमे करने से रोक सकें।
 
-Ek naya project shuru karna kisi bhi programmer ke liye bahut important aur zaruri hota hai. Koi bhi programmer apne naye project ko shuru karta hai taki woh bhi apna creative aur learning process jaari rakhe. Isse unka skill level bhi improve hota hai aur unke liye naye challenging tasks bhi milte hain.
+## कैसे करें: (How to:)
 
-## Kaise Karein:
+यहाँ Clojure बंद में कैसे शुरुआत करें -
+```Clojure 
+; सबसे पहले लेटिंगंन को स्थापित करें 
+; Clojure प्रोजेक्ट को बनाने और चलाने के लिए 
+$ brew install leiningen
 
-Ek naya project shuru karne ke liye Clojure ka use karke hum in steps ko follow kar sakte hain:
-
+; एक नया प्रोजेक्ट बनाएं 
+$ lein new my_first_project
 ```
-Clojure (ns project-name)
+इसके बाद 
+```Clojure 
+$ cd my_first_project
+$ lein run 
 ```
+## गहरी जानकारी (Deep Dive)
 
-Isse hum naya namespace 'project-name' create kar sakte hain.
+Clojure, जीन्स्टील्स ने 1953 में स्थापित की थी, लिस्प प्रोग्रामिंग भाषा पर आधारित है और Java Virtual Machine (JVM) के लिए डिजाइन की गई है। Clojure का उपयोग वास्तविक समय के डेटा-ढंग संरेखण (data-oriented programming) और मल्टिथ्रेडिंग (multithreading) हेतु किया जाता है। 
 
-```
-Clojure (defn project-name [] "Welcome to my new project!")
-```
+वैकल्पिक रूप से, आप `Maven` या `Gradle` जैसे उपकरणों का उपयोग कर सकते हैं लेकिन Clojure के लिए Leiningen एक बहुत ही मजबूत और शानदार साधन है। 
 
-Ab hum ek function 'project-name' create karenge jo ek welcome message print karega.
+## अतिरिक्त जानकारी के लिए (See Also) 
 
-```
-Clojure (project-name)
-```
+Leiningen में प्रोजेक्ट बनाने का विस्तृत वर्णन: [यहाँ](https://leiningen.org/#:~:text=Leiningen%20is%20the%20easiest%20way,builds%20and%20dependency%20management%20out.)
 
-Finally, hum apna function invoke kar sakte hain aur welcome message output dekh sakte hain.
+Clojure प्रोग्रामिंग के लिए गाइड: [यहाँ](https://clojure.org/guides/getting_started)
 
-## Gehri Baatein:
-
-Naye project shuru karne ke alawa, kuch programmers multiple languages ka use karke apne project ko create karte hain. Lekin Clojure ki flexibility ke karan, woh ek hi language mein apna project bana sakte hain aur isse unko multiple codebase manage karne ki zarurat nahi padti.
-
-## Aur Bhi Dekhein:
-
-Yadi aapko aur details jaanne ki zarurat hai toh aap Clojure ki official documentation aur tutorials check kar sakte hain. Iske alawa, aap kisi experienced Clojure programmer se bhi guidance le sakte hain. Happy coding!
+Clojure में माल्टीथ्रेडिंग कैसे काम करता है: [यहाँ](https://clojuredocs.org/clojure.core/future)

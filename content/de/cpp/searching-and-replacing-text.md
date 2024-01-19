@@ -1,6 +1,6 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-html_title:           "C++: Suchen und Ersetzen von Text"
+html_title:           "Bash: Suchen und Ersetzen von Text"
 simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "C++"
 category:             "C++"
@@ -10,72 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist es und warum?
+# Suchen und Ersetzen von Text in C++
 
-Suchen und Ersetzen von Text ist ein häufiger Teil der Programmierung, bei dem bestimmte Zeichenketten in einem Code durch andere ersetzt werden. Programmierer tun dies, um schnell und effizient Änderungen oder Korrekturen im Code durchzuführen.
+## Was & Warum?
 
-## Anleitung:
+Das Suchen und Ersetzen von Text ist ein gängige Operation, bei der in einer Zeichenkette nach bestimmten Text(en) gesucht und durch einen anderen ersetzt wird. Programmierer machen das, um Daten zu manipulieren, Textmuster zu ändern oder Fehler zu beheben.
 
-### Beispiel 1:
+## So funktioniert's:
 
-```C++
-#include <iostream>
-
-using namespace std;
-
-int main() {
-  // erstellen eines Strings mit dem Wort "Hallo"
-  string text = "Hallo";
-  
-  // Suchen und Ersetzen von "Hallo" mit "Guten Tag"
-  text.replace(0,5,"Guten Tag");
-  
-  // Ausgabe des resultierenden Strings
-  cout << text << endl;
-  
-  return 0;
-}
-```
-
-#### Ausgabe:
-```
-Guten Tag
-```
-
-### Beispiel 2:
+Das Folgende ist ein einfacher C++ Code, der die Standardbibliothek verwendet, um nach einem bestimmten Text zu suchen und ihn zu ersetzen.
 
 ```C++
 #include <iostream>
-
-using namespace std;
+#include <string>
 
 int main() {
-  // erstellen einer Zeichenkette mit dem Wort "Welt"
-  string text = "Hallo Welt";
-  
-  // Suchen und Ersetzen von "Welt" mit "Mars"
-  text.replace(6,4,"Mars");
-  
-  // Ausgabe des resultierenden Strings
-  cout << text << endl;
-  
-  return 0;
+    std::string text = "Hallo, Welt!";
+    std::string suchen = "Welt";
+    std::string ersetzen = "C++";
+
+    size_t pos = text.find(suchen);
+    if(pos != std::string::npos)
+        text.replace(pos, suchen.length(), ersetzen);
+
+    std::cout << text << std::endl;
 }
 ```
 
-#### Ausgabe:
+Die Ausgabe wird sein:
+
+```C++
+Hallo, C++!
 ```
-Hallo Mars
-```
 
-## Tief tauchen:
+## Vertiefende Informationen:
 
-Suchen und Ersetzen von Text ist keine neue Idee, da es schon in frühen Textverarbeitungsprogrammen verwendet wurde. Auch in der modernen Programmierung wird es häufig verwendet, um Codeeffizienz und -wartbarkeit zu verbessern.
-
-Alternativen zu dieser Methode sind z.B. reguläre Ausdrücke, welche jedoch eine komplexere Syntax aufweisen. In der Implementierung werden Such- und Ersetzungsalgorithmen verwendet, um effizient durch den Code zu navigieren und die gewünschten Änderungen vorzunehmen.
+Historisch gesehen wurde das Konzept des Suchens und Ersetzens erstmals in den 1970er Jahren von Texteditoren wie vi und Emacs populär gemacht. In C++ können wir alternativ auch `regex_replace` für reguläre Ausdrücke verwenden. Die `find` und `replace` Methoden verwenden intern den KMP (Knuth-Morris-Pratt)-Algorithmus, der linear läuft.
 
 ## Siehe auch:
 
-- [Einführung in C++ Programmierung](https://de.wikibooks.org/wiki/C%2B%2B-Programmierung:_Einf%C3%BChrung)
-- [Effektives Suchen und Ersetzen von Text in C++](https://www.codeproject.com/Articles/20091/Effective-C-Text-Search-and-Replace)
-- [Reguläre Ausdrücke in C++](https://www.codeproject.com/Articles/5283763/Basic-Regular-Expressions-in-Cplusplus)
+- C++ Dokumentation zur `std::string`: http://www.cplusplus.com/reference/string/string/
+- Einführung in reguläre Ausdrücke in C++: https://en.cppreference.com/w/cpp/regex
+- Informationen zum KMP-Algorithmus: https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm

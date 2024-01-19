@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "C: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "C"
 category:             "C"
@@ -10,45 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest porównywanie dwóch dat i dlaczego programiści to robią?
-Porównywanie dwóch dat jest procesem, w którym program porównuje dwie daty i określa, która jest wcześniejsza lub późniejsza. Programiści często wykonują to w celu porównania wydarzeń lub określenia, które wydarzenie nastąpiło pierwsze.
+## Co i dlaczego?
+
+Porównywanie dwóch dat to sposób sprawdzenia, która data jest wcześniejsza, późniejsza lub czy są takie same. Programiści robią to, aby umożliwić aplikacjom przetwarzanie danych w odpowiedni sposób w zależności od wyniku tej porównania.
 
 ## Jak to zrobić:
+
+Metoda porównania dwóch dat w języku C polega na użyciu struktury `tm` oraz funkcji `mktime()`, `difftime()` i `localtime()`. Oto przykładowy kod:
+
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-  //Definiowanie dwóch dat do porównania
-  struct tm date1 = { .tm_year = 2020, .tm_mon = 0, .tm_mday = 1 };
-  struct tm date2 = { .tm_year = 2021, .tm_mon = 0, .tm_mday = 1 };
-  
-  //Porównanie dat przy użyciu funkcji difftime
-  double difference = difftime(mktime(&date2), mktime(&date1));
-  
-  //Wyświetlenie wyników
-  if (difference > 0)
-  {
-    printf("Data 2 jest późniejsza niż data 1\n");
-  }
-  else if (difference < 0)
-  {
-    printf("Data 1 jest późniejsza niż data 2\n");
-  }
-  else
-  {
-    printf("Obie daty są takie same\n");
-  }
-  
-  return 0;
-}
+int main() {
+    // inicjalizujemy dwie struktury tm
+    struct tm a = {0,0,0,2,1,112};   // 2 Luty, 2012
+    struct tm b = {0,0,0,1,2,113};   // 1 Marzec, 2013
+
+    // konwersja czasu do typu time_t
+    time_t x = mktime(&a);
+    time_t y = mktime(&b);
+
+    // porównujemy dwie daty
+    if (difftime(y, x) < 0)
+        printf("Data a jest późniejsza od daty b\n");
+    else
+        printf("Data b jest późniejsza od daty a\n");
+
+    return 0;
+} 
 ```
+## Dogłębna analiza
 
-## Głębsza analiza:
-Porównywanie dwóch dat jest powszechną czynnością w programowaniu, ponieważ często musimy określić, które wydarzenie nastąpiło wcześniej lub później. W starszych wersjach języka C, funkcja difftime nie istniała i programiści musieli używać funkcji mktime oraz wykonywać obliczenia na strukturach tm. W alternatywnym języku C++, istnieje wygodniejsza funkcja std::chrono::duration, która umożliwia proste porównywanie dwóch dat. Implementacja porównywania dwóch dat może się różnić w zależności od systemu operacyjnego, dlatego warto uważać na potencjalne problemy związane z datami w swoim kodzie.
+Porównanie dat w C nie jest tak proste jak w niektórych innych językach, które mają wbudowane daty i funkcje porównawcze. To jednak nie oznacza, że jest to trudne, wymaga tylko zrozumienia kilku funkcji i struktur języka C.
 
-## Zobacz także:
-- [Funkcja difftime w dokumentacji języka C](https://www.cplusplus.com/reference/ctime/difftime/)
-- [Porównywanie dat w języku C++](https://www.geeksforgeeks.org/c-comparison-dates-time/#:~:text=To%20compare%20two%20dates%2C%20we,both%20the%20dates%20struct%20type.&text=It%20returns%20difference%20between%20both,other%20by%20returning%20a%20negative.)
-- [Implementacja dat w języku C](https://en.wikipedia.org/wiki/C_date_and_time_functions#Time_difference_calculation)
+Alternatywą do powyższego kodu mogłoby być sparsowanie dwóch ciągów dat do struktury `tm` przy użyciu `strptime()`, a następnie porównanie ich jak powyżej.
+
+Szczegółowo, funkcja `mktime()` konwertuje strukturę `tm` na `time_t`, `difftime()` porównuje dwa momenty w formacie `time_t`, a `localtime()` konwertuje `time_t` z powrotem na `tm`, jeśli potrzebujesz daty i czasu w czytelnej formie.
+
+## Zobacz także
+
+Spójrz na te linki dla więcej informacji:
+- Dokumentacja dla [mktime()](https://www.cplusplus.com/reference/ctime/mktime/)
+- Dokumentacja dla [difftime()](https://www.cplusplus.com/reference/ctime/difftime/)
+- Więcej informacji o strukturze [tm](https://www.cplusplus.com/reference/ctime/tm/).

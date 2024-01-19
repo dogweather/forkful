@@ -1,6 +1,6 @@
 ---
 title:                "Convertire una data in una stringa"
-html_title:           "Clojure: Convertire una data in una stringa"
+html_title:           "Javascript: Convertire una data in una stringa"
 simple_title:         "Convertire una data in una stringa"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Convertire una data in una stringa è il processo di trasformare una data, rappresentata come uno specifico formato di dati, in una rappresentazione più leggibile e comprensibile per gli umani. I programmatori spesso eseguono questa conversione per ottenere un output più user-friendly o per adattare i dati a un formato specifico richiesto da un'interfaccia utente.
+## Cos'è e perché?
+Convertire una data in una stringa consiste nell'interpretare un oggetto data come un insieme di caratteri. Questo viene fatto dai programmatori per facilitare la visualizzazione, la memorizzazione o il trasferimento di dati tra diverse tecnologie.
 
 ## Come fare:
-```Clojure
-(require '[clojure.java-time :as t])
+In Clojure, possiamo sfruttare la funzione built-in `clj-time.format/unparse` del modulo clj-time. Ecco un esempio di come fare:
 
-;; ottenere la data corrente
-(t/local-date)
+```clojure
+(ns my-app.core
+  (:require [clj-time.format :as f]))
 
-;; convertire in stringa con formato "dd/mm/yyyy"
-(t/format (t/local-date) "dd/MM/yyyy")
-;; output => "28/07/2021"
+(defn date-to-string [date]
+  (f/unparse
+   (f/formatter "yyyy-MM-dd")
+   date))
 
-;; convertire in stringa con formato personalizzato: "MM/yy"
-(t/format (t/local-date) "MM/yy")
-;; output => "07/21"
+;; Uso:
+(pprint (date-to-string (t/date-time 2022 03 16)))
 ```
 
-## Approfondimento:
-La conversione delle date è un'attività comune in programmazione, poiché le date vengono spesso utilizzate per tenere traccia delle informazioni temporali. In passato, la maggior parte dei linguaggi di programmazione ha utilizzato librerie esterne per manipolare le date, ma con l'introduzione di Clojure, questa funzionalità è integrata nel linguaggio stesso attraverso la libreria `java-time`.
+Questo producirà:
 
-In alternativa, i programmatori possono utilizzare librerie di terze parti come `clj-time`, che offre funzionalità aggiuntive per la manipolazione delle date in Clojure.
+```clojure
+"2022-03-16"
+```
 
-Per quanto riguarda l'implementazione, la libreria `java-time` si basa sulle classi date/ ora di Java, come `LocalDate`, `LocalDateTime`, ecc. per fornire funzionalità di manipolazione delle date. Queste classi forniscono anche metodi per formattare le date in stringhe utilizzando un'ampia gamma di formati predefiniti o personalizzati.
+## Approfondimento
+La necessità di convertire una data in una stringa risale a quando le tecnologie informatiche hanno iniziato a manipolare dati di questo tipo. In Clojure, `clj-time` è prevalentemente usato per operazioni di data e ora, ispirato alla popolare libreria Joda-Time di Java.
 
-## Vedi anche:
-- Documentazione ufficiale di Clojure `java-time` (https://clojure.github.io/java.time-api/)
-- Libreria `clj-time` (https://github.com/clj-time/clj-time)
+Ci sono anche alternative. Potremmo usare la funzione `java.util.Date.toString()`, ma produce una stringa in un formato meno versatile rispetto a `clj-time`.
+
+In termini di implementazione, `clj-time.format/unparse` converte una data o un'ora in una stringa utilizzando un oggetto `org.joda.time.format.DateTimeFormatter`.
+
+## Leggi Ancora
+Per comprendere meglio il lavoro con le date in Clojure, potresti trovare utili queste risorse:
+
+- [Documentazione ufficiale di clj-time](https://clj-time.github.io/clj-time/)
+- [Esempi di clj-time](https://github.com/clj-time/clj-time/blob/master/docs/intro.md)
+- [Manuale di Clojure per date e ora](https://clojurebridge.github.io/community-docs/docs/clojure/date-time/)

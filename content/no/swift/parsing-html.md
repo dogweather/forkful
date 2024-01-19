@@ -1,7 +1,7 @@
 ---
-title:                "Analysere HTML"
-html_title:           "Swift: Analysere HTML"
-simple_title:         "Analysere HTML"
+title:                "Analysering av html"
+html_title:           "C#: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -11,19 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Parsing av HTML er prosessen med å konvertere HTML-kode til en strukturert form som kan leses og tolkes av en datamaskin. Programmører bruker dette for å få tilgang til og manipulere data presentert på nettsider.
 
-## Slik gjør du det:
-For å utføre parsing av HTML i Swift, kan du bruke et tredjeparts bibliotek som SwiftSoup. Dette biblioteket lar deg hente data fra nettsider ved hjelp av URL og deretter navigere gjennom DOM-treet for å finne og hente ut ulike elementer. Her er et enkelt eksempel på hvordan dette kan gjøres:
+Å parse HTML betyr å lese og analysere en HTML-kode. Programmerere gjør det for å hente ut og forstå informasjonen på en web-side eller i et dokument.
+
+## Hvordan:
+
+Her viser jeg hvordan du kan bruke `SwiftSoup`, et kraftig Swift-bibliotek, for å parse HTML.
+
+Først, legg til SwiftSoup til ditt projekt ved å bruke Swift Package Manager. Legg til dette i din `Package.swift`:
+
+```Swift
+.package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.0.0")
 ```
-SwiftSoup.parse(htmlString)?.select("h1").first()?.text()
+
+Nå, kan vi begynne å parse HTML. Vi begynner med en enkel HTML streng.
+
+```Swift
+import SwiftSoup
+
+let html = "<html><head><title>Mitt nettsted</title></head><body>Hei verden!</body></html>"
+
+do {
+    let doc: Document = try SwiftSoup.parse(html)
+    let title: Element = try doc.select("title").first()!
+    print(try title.text())
+} catch Exception.Error(let type, let message) {
+    print(message)
+} catch {
+    print("unknown error")
+}
 ```
-Dette koden vil lese HTML-koden fra en streng og deretter hente ut innholdet av det første "h1"-elementet som tekst.
 
-## Dypdykk:
-Parsing av HTML har vært et viktig konsept siden utviklingen av World Wide Web. HTML ble opprinnelig utviklet som et tolkbart språk for å presentere dokumenter på en enhetlig måte, men har utviklet seg til å også bli brukt som en datalagerstruktur for å representere informasjon på nettsider. Alternativene for å utføre parsing av HTML i Swift inkluderer også bibliotek som Kanna og AEXML. Implementeringen av parsing av HTML i Swift handler om å bruke riktige biblioteker og å forstå hvordan man skal navigere gjennom DOM-treet.
+Dette programmet vil skrive ut "Mitt nettsted", tittelen på vår HTML-streng.
 
-## Se også:
-- [SwiftSoup](https://github.com/scinfu/SwiftSoup)
-- [Kanna](https://github.com/tid-kijyun/Kanna)
-- [AEXML](https://github.com/tadija/AEXML)
+## Dypdykk
+
+HTML parsing har en lang historie dating tilbake til begynnelsen av web-utvikling. Parser-biblioteker som `BeautifulSoup` i Python og `Jsoup` i Java har lenge vært populære. `SwiftSoup` er basert på `Jsoup`, og gir samme funksjoner i Swift.
+
+Alternativer til `SwiftSoup` inkuderer `Kanna` og `Swift-HTML-Parser`, men `SwiftSoup` tilbyr en mer robust funksjonalitet og bedre feilhåndtering.
+
+Når det kommer til implementasjonsdetaljer, bygger `SwiftSoup` opp en DOM (Document Object Model) fra HTML-teksten. DOM er en datastruktur som lar programmereren manipulere elementer på en side som om de var objekter i et program. 
+
+## Se Også
+
+For mer informasjon og eksempler på parsing med SwiftSoup, sjekk ut [SwiftSoup GitHub- prosjektet](https://github.com/scinfu/SwiftSoup). For dokumentasjon på DOM, se [Mozilla's dokumentasjon](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model).

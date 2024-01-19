@@ -1,6 +1,6 @@
 ---
 title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Python: एक वेब पेज डाउनलोड करना"
+html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
 simple_title:         "एक वेब पेज डाउनलोड करना"
 programming_language: "Python"
 category:             "Python"
@@ -12,23 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-जब हम एक वेब पेज को डाउनलोड करते हैं, तो हम उस पेज में दिए गए विभिन्न तत्वों को अपने कंप्यूटर पर बचाते हैं। यह उदाहरण के तौर पर एक वेब स्क्रेपिंग प्रोजेक्ट में एक महत्वपूर्ण कदम है।
+वेब पेज को डाउनलोड करना मतलब होता है कि आप उस पेज की सामग्री को अपने कंप्यूटर पर ले आते हैं। प्रोग्रामर्स इसे ज्यादातर वेब साइटों का डाटा खोजने और उसे संग्रहित करने के लिए करते हैं।
 
 ## कैसे करें:
 
+चलिए देखते हैं कि Python में वेब पेज को कैसे डाउनलोड किया जा सकता है:
+
 ```Python
-import urllib.request # urllib लाइब्रेरी को इम्पोर्ट करें
-url = "https://www.example.com" # डाउनलोड करने का लक्ष्य वेबसाइट का URL है
-file_name = "example.html" # फाइल का नाम जिसमें वेब पेज का सामग्री सेव होगी
-urllib.request.urlretrieve(url, file_name) # वेब पेज को डाउनलोड करें और फाइल में सेव करें
+import requests
+
+def download_page(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        return response.text
+    return None
+
+print(download_page("https://www.example.com"))
 ```
-इस कोड को रन करने के बाद, आपके कंप्यूटर पर एक example.html फाइल बनेगी जिसमें वेबसाइट का सामग्री होगी।
 
-## गहराई में जाएं:
+उपरोक्त कोड का आउटपुट वेब पेज की एचटीएमएल सामग्री होगी।
 
-वेब पेज को डाउनलोड करने की तकनीक का प्रयोग पहले से ही बहुत लंबे समय से किया जाता था। शुरुआत में, यह साधन केवल टेक्स्ट पेज और गोपनीयता को उलझाने की स्थिति में उपयोगी था। हालांकि, आजकल इसका प्रयोग बहुत सारे उद्देश्यों के लिए किया जा रहा है, जैसे कि वेबसाइटों का डेटा संग्रह करना, वास्तविक समय सूचना मिलाना, और अधिक। भीतरी तरीकों से, डाउनलोडिंग एक वेब पेज को अन्य प्रयोगों के लिए स्क्रीप करने के रूप में भी जाना जाता है।
+## गहराई में:
 
-## इसके अलावा देखें:
+वेब पेजेज को डाउनलोड करने के बारे में थोड़ी और जानकारी:
 
-- [Requests लाइब्रेरी](https://github.com/psf/requests): यह एक पॉप्यूलर और उच्च स्तरीय लाइब्रेरी है जो वेब पेज को डाउनलोड करने के अलावा उसे पार्स और एक्सेस करने के लिए भी खास है।
-- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/): यह भी एक उच्च स्तरीय और आसानी से सुलझा सकें तरीका है जो वेबसाइटों से डेटा को एक्सेस करने और पार्स करने के लिए उपयोगी है।
+1. ऐतिहासिक प्रासंगिकता: प्रारंभ में, वेब ब्राउज़र्स ने यह कार्य किया, लेकिन फिर प्रोग्रामर्स ने स्क्रिप्टिंग भाषाओं का इस्तेमाल करके यह कार्य बहुत आसान बना दिया।
+2. विकल्प: Python के अलावा भी अन्य भाषाओं में वेब पेज डाउनलोड के लिए libraries मौजूद हैं। जैसे Ruby के लिए `open-uri`, Java के लिए `Jsoup` आदि।
+3. कार्यान्वयन विवरण: `requests` library HTTP requests के लिए सरल और प्रभावी है और उत्तर में आने वाले HTML को एनकोड करने के लिए इस्तेमाल किया जाता है।
+
+## देखें भी:
+
+- Python की requests library का डॉक्युमेंटेशन: [https://requests.readthedocs.io](https://requests.readthedocs.io)
+- अधिक विवरण के लिए Beautiful Soup ट्यूटोरियल: [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- Web scraping tutorial: [https://realpython.com/python-web-scraping-practical-introduction/](https://realpython.com/python-web-scraping-practical-introduction/)

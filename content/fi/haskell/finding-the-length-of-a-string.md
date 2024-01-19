@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "Haskell: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,25 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & miksi?
-Merkkijonon pituuden selvittäminen on tärkeä ohjelmointikäytäntö, jolla mitataan merkkijonon sisältämien merkkien määrää. Tämä on hyödyllistä esimerkiksi kun tarkastellaan syötteitä tai tulostetaan tekstiä tietyn muodon mukaisesti. Ohjelmoijat käyttävät tätä käytäntöä helpottaakseen työtänsä ja varmistaakseen oikean tulostuksen.
+# Haskell-ohjelmointi: Merkkijonon pituuden määrittäminen
 
-## Kuinka tehdä:
+## Mikä & Miksi?
+Merkkijonon pituuden määrittämisellä tarkoitetaan yksinkertaisesti sen mittaamista, kuinka monta merkkiä merkkijonossa on. Tämä on oleellista esimerkiksi silloin, kun haluamme suodattaa tai jakaa tietoa merkkijonon pituuden perusteella.
+
+## Kuinka:
+Käsittelimme merkkijonon pituuden määrittämistä `length` funktion avulla, nähdään esimerkki:
+
 ```Haskell
-length "Hello World!"
-```
-Tuloste: `12`
+let str = "Hei Suomi"
+print (length str)
+```  
+Tulostuu: 9
+
+## Syvempi tarkastelu
+Haskell-ohjelmointikielen `length` funktio on peräisin ensimmäisestä julkaisusta vuonna 1990. Se palauttaa merkkijonon pituuden kokonaislukuna.
+
+Vaihtoehtoinen tapa olisi käyttää `foldl`-funktiota merkkijonon pituuden laskemiseen:
 
 ```Haskell
-length "Moi!"
-```
-Tuloste: `4`
+let str = "Hei Suomi"
+let len = foldl (\n _ -> n + 1) 0 str 
+print len
+```  
+Tulostuu: 9
 
-## Syväsukellus:
-(1) Merkkijonon pituuden selvittäminen on ollut tärkeä osa ohjelmointia jo pitkään. Joissakin ohjelmointikielissä tähän tarkoitukseen on omat valmiit funktiot, kuten Pythonin `len()` tai JavaScriptin `str.length`.
-(2) On myös mahdollista laskea merkkijonon pituus manuaalisesti käymällä läpi jokainen merkki ja lisäämällä laskuriin yksi jokaisen kohdalla. Tämä kuitenkin vaatii enemmän koodin määrää ja on alttiimpi virheille.
-(3) Haskellissa merkkijonon pituuden selvittämiseen käytetään `length` funktiota, joka palauttaa kokonaisluvun merkkijonon pituudesta. Tämän takana on tarkkaan optimoitu algoritmi, joten se on tehokkaampi vaihtoehto verrattuna manuaaliseen laskentaan.
+Tämä tapa on monimutkaisempi eikä sitä yleensä suositella, kun yksinkertainen `length`-funktio on käytettävissä.
 
-## Katso myös:
-- [Haskellin dokumentaatio merkkijonojen pituuden selvittämisestä](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:length)
-- [Haskellin virallinen sivusto](https://www.haskell.org/)
+## Katso myös
+Lue lisää Haskellin merkkijonoista ja funktioista:
+
+1. "Learn You a Haskell for Great Good" - [Merkit ja merkkijonot](http://learnyouahaskell.com/starting-out#strings)
+2. Hoogle - [length](https://hoogle.haskell.org/?hoogle=length) 
+3. Haskell Wiki - [Haskell merkkijonot](https://wiki.haskell.org/Strings)

@@ -1,7 +1,7 @@
 ---
-title:                "Großschreibung eines Strings"
-html_title:           "Elixir: Großschreibung eines Strings"
-simple_title:         "Großschreibung eines Strings"
+title:                "Einen String großschreiben"
+html_title:           "Elixir: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,25 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Was & Warum?"
+## Was & Warum?
 
-Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben jedes Wortes in einem Satz in Großbuchstaben zu schreiben, während alle anderen Buchstaben klein bleiben. Programmierer tun dies, um die Lesbarkeit und Ästhetik von Texten in ihrer Codebasis zu verbessern.
+Ein String zu kapitalisieren bedeutet, den ersten Buchstaben des Strings in ein Großbuchstaben zu verwandeln. Programmierer machen das, um die Lesbarkeit und Klarheit des Ausdrucks zu verbessern.
 
-"## Wie geht's:"
+## So geht's:
 
-```elixir
-string = "hallo, elixir!"
-capitalized_string = String.capitalize(string)
-IO.puts capitalized_string
-```
-```elixir
-# Output: Hallo, elixir!
+```Elixir
+String.capitalize("elixir")
 ```
 
-"## Tiefenanalyse:"
+Die Ausgabe des obigen Befehls wird "Elixir" sein.
 
-Das Kapitalisieren von Strings wurde bereits in frühen Programmiersprachen wie BASIC verwendet, um menschenlesbaren Code zu schaffen. In einigen Sprachen gibt es auch spezielle Funktionen wie "titlecase", um den ersten Buchstaben jedes Wortes in einem String zu kapitalisieren. In Elixir gibt es die String.capitalize/1 Funktion, die das erste Zeichen in einem String in Großbuchstaben umwandelt.
+```Elixir
+IO.puts String.capitalize("elixir")
+```
 
-"## Siehe auch:"
+Die Ausgabe des obigen Befehls am Elixir-Eingabeaufforderung wird "Elixir" sein.
 
-Weitere Informationen zur String.capitalize/1 Funktion finden Sie in der offiziellen Elixir-Dokumentation: https://hexdocs.pm/elixir/String.html#capitalize/1
+## Tiefgreifend:
+
+Kapitalisierung, so wie wir sie kennen, hat in den Tagen von Telex-Druckern begonnen, die nur Großbuchstaben drucken konnten. Im Elixir findet die String-Kapitalisierung durch die `String.capitalize/1` Funktion statt, die intern den `:unicode` Modul nutzt. Eine Alternative wäre die Verwendung von `String.upcase/1` auf den ersten Buchstaben des Strings und das Anhängen des restlichen, unveränderten Strings.
+
+## Siehe auch:
+
+- [Elixir String API Documentation](https://hexdocs.pm/elixir/String.html#capitalize/1)
+- [Chat Elixir for beginners](https://elixir-lang.org/getting-started/introduction.html) 
+- [Elixir on Github](https://github.com/elixir-lang/elixir)

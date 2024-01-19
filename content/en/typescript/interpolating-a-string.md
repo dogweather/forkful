@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "TypeScript recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,35 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Grooving with TypeScript: Interpolating a String 
+
 ## What & Why?
-Interpolating a string is the process of inserting values into a string template at specific placeholders. This allows for dynamic string creation and makes the code cleaner and more readable. It also helps in avoiding lengthy string concatenation operations.
+
+Interpolating a string is the process of embedding expressions within string literals, so they get evaluated as part of the string. Why do we need it? Well, it simplifies the concatenation of strings and variables—saving time and enhancing readability.
 
 ## How to:
+
+In TypeScript, interpolation is done with backticks (`) and '${}'. Here's how:
+
 ```TypeScript
-// Example 1:
-const name = "John";
-const age = 25;
-
-console.log(`Hello, my name is ${name} and I am ${age} years old.`);
-// Output: Hello, my name is John and I am 25 years old.
-
-// Example 2:
-function greet(name: string) {
-  return `Welcome ${name}!`;
-}
-
-console.log(greet("Jane"));
-// Output: Welcome Jane!
+let name: string = "Anna";
+let greeting: string = `Hello, ${name}!`; 
+console.log(greeting); // Prints "Hello, Anna!"
 ```
 
-## Deep Dive:
-Interpolating strings originated in the 1960s with the development of the first string formatting tools. However, it became more popular in the late 2000s with the introduction of template literals in JavaScript. Prior to that, string interpolation was achieved through string concatenation or using the `format()` method in formatting libraries.
+Multiple variables? No problem. 
 
-An alternative to string interpolation is using string concatenation which involves joining multiple strings together using the `+` operator. However, this can become tedious and messy when dealing with longer strings or multiple variables.
+```TypeScript
+let first: string = "Anna";
+let last: string = "Johnson"
+let fullName: string = `Full Name: ${first} ${last}`; 
+console.log(fullName); // Prints "Full Name: Anna Johnson"
+```
+## Deep Dive 
 
-In TypeScript, string interpolation is achieved by using backticks (\`...\`) instead of single or double quotes. Inside the backticks, the placeholder values are denoted by a dollar sign followed by curly braces (${...}). TypeScript also supports multi-line string interpolation, making it easier to create multi-line strings without needing to manually include the necessary escape characters.
+String interpolation can be traced back to the early days of computer science, featuring in Perl, Ruby, and, notably, ES6 JavaScript—the prominent influencer of TypeScript. Its simplicity and readability over traditional concatenation techniques using "+", made it a favorite for developers.
 
-## See Also:
-- [Template literals - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [String Formatting in TypeScript - How and Why | Better Programming](https://betterprogramming.pub/string-formatting-in-typescript-how-and-why-3104696b376a)
-- [TypeScript - String Interpolation | Tutorialspoint](https://www.tutorialspoint.com/typescript/typescript_string_interpolation.htm)
+Alternatives in TypeScript? You could use the concatenation operator '+'. It's verbose and less intuitive:
+
+```TypeScript
+let name: string = "Anna";
+let greeting: string = "Hello, " + name + "!"; 
+console.log(greeting); // Prints "Hello, Anna!"
+```
+
+Under the hood, string interpolation converts your expressions into a string and combines them with your literals. It performs similar to concatenation, with no significant performance difference.
+
+## See Also 
+
+1. [TypeScript Official Docs - String Interpolation](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
+2. [MDN Web Docs - Template literals (embedded expressions)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

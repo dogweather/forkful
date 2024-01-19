@@ -1,6 +1,6 @@
 ---
 title:                "Concaténation de chaînes"
-html_title:           "Bash: Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
 simple_title:         "Concaténation de chaînes"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-La concaténation de chaînes ("string concatenation" en anglais) est une opération couramment utilisée en programmation. Elle consiste à fusionner plusieurs chaînes de caractères en une seule. Les programmeurs font cela pour rendre le code plus lisible et pour créer de nouvelles chaînes à partir d'éléments existants.
+## Qu'est-ce que c'est & Pourquoi?
+
+La concaténation de chaînes consiste à joindre deux chaînes ou plus pour former une seule chaîne. Les programmeurs l'utilisent pour combiner des informations et générer des sorties dynamiques.
 
 ## Comment faire:
-Pour concaténer des chaînes en Bash, vous pouvez utiliser l'opérateur `+` ou simplement les placer côte à côte. Voici un exemple:
 
-Bash
+Il est assez simple de concaténer des chaînes en Bash. Voici quelques exemples :
+
 ```Bash
-nom="Marie"
-prenom="Jean"
-echo "Bonjour, je m'appelle $prenom $nom."
-```
-Output
-```
-Bonjour, je m'appelle Jean Marie.
+# Déclaration de variables
+string1="Bonjour,"
+string2=" comment ça va?"
+
+# Concaténation
+greetings=$string1$string2
+echo $greetings
 ```
 
-Vous pouvez également utiliser la commande `printf` pour concaténer des chaînes avec un contrôle plus précis sur le formatage. Voici un exemple:
-
-Bash
+Sortie :
 ```Bash
-nom="Dupont"
-prenom="Paul"
-printf "Mon nom est %s et mon prénom est %s." $nom $prenom
-```
-Output
-```
-Mon nom est Dupont et mon prénom est Paul.
+Bonjour, comment ça va?
 ```
 
-## Plongée en profondeur:
-La concaténation de chaînes a été historiquement utilisée en informatique dès les premiers langages de programmation. Elle est également présente dans de nombreux autres langages, tels que Python ou JavaScript. En Bash, vous pouvez également utiliser la commande `echo -n` pour concaténer des chaînes sans saut de ligne à la fin. Enfin, il est important de noter que les chaînes de caractères peuvent être manipulées à l'aide de plusieurs autres opérations telles que la substitution, la recherche et le remplacement, etc.
+## Plongée plus profonde:
+
+Bash, sorti en 1989, permet la concaténation de chaînes depuis ses débuts, faisant partie de sa syntaxe de base. Toutefois, il existe d'autres alternatives dans d'autres langages de programmation, par exemple `+` dans Python ou `.concat()` en JavaScript. La concaténation de chaînes en Bash est simple : lors de l'affectation, Bash ne rajoute pas d'espace entre les variables. C'est donc à vous de gérer ces espaces manuellement.
 
 ## Voir aussi:
-- [Bash String Manipulation](https://www.shell-tips.com/bash/string-manipulation/)
-- [The Art of Bash String Manipulation](https://www.baeldung.com/linux/bash-string-manipulation)
-- [Bourne Shell String Manipulation](https://likegeeks.com/linux-shell-scripting-course/string-manipulation/)
+
+Pour en savoir plus sur la concaténation de chaînes en Bash, consultez ces ressources : 
+
+- [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash String Manipulation Guide](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
+- [Bash Guide for Beginners](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html)

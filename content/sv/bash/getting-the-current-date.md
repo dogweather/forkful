@@ -1,6 +1,6 @@
 ---
 title:                "Hämta aktuellt datum"
-html_title:           "Bash: Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
 simple_title:         "Hämta aktuellt datum"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,34 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
+# Bash-programmering: Så här får du nuvarande datum
 
-Att få den aktuella datumet är en viktig del av programmering eftersom det innebär att du kan få ditt program att fungera på ett tidsbestämt sätt. Detta kan vara användbart för att schemalägga uppgifter, logga händelser eller helt enkelt visa aktuell datum till användaren.
+## Vad & Varför?
+Att hämta det nuvarande datumet innebär att hämta systemets verkliga tidspunkt. Programmeurs gör detta för att logga händelser, tidstämpla filändringar, eller för att schemalägga uppgifter.
 
-## Hur:
-
-För att få den aktuella datumet i Bash, används kommandot `date`. Det kan också användas för att visa tider och tidszoner.
-
-```Bash
-date +%d/%m/%y
-```
-Detta kommer att visa datumet i formatet "dd/mm/åå". %d, %m och %y står för dag, månad och år.
+## Så här gör du:
+Här är några exempel på hur du får datum och tid i Bash. Prova det.
 
 ```Bash
-date +%A
+# Få det nuvarande datumet
+datum=$(date)
+echo "Det nuvarande datumet är: $datum"
+
+# Få nuvarande datum och tid
+datetime=$(date '+%Y/%m/%d_%H:%M:%S')
+echo "Det nuvarande datumet och tiden är: $datetime"
 ```
-Detta kommer att visa veckodagen som idag är, t.ex. torsdag.
 
-## Deep Dive:
+När du exekverar koden ovan kommer din terminal att visa nuvarande datum och tid.
 
-`date` kommandot är en del av GNU Core Utilities paket som tillhandahålls av det GNU-projektet. Det första publicerade versionen av paketet inkluderade datokommandot och släpptes redan år 1983.
+## På Djupet
+Historiskt har systemtiden varit avgörande för att få maskiner att fungera tillsammans. Den POSIX-definierade `date` kommandot har varit standard för Unix-liknande operativsystem sedan 80-talet.
 
-Om du inte vill använda `date` kommandot kan du också använda en inbyggd variabel i Bash som heter `$EPOCHSECONDS`. Detta ger antalet sekunder sedan 1 januari 1970 (Unix-epoken) och kan därefter formateras på önskat sätt.
+Det finns alternativ till `date`, såsom `strftime` i C/C++. Det är mjukvara som bestämmer vilket alternativ som är mest lämpligt.
 
-Installation av GNU Core Utilities är inte nödvändigt eftersom de ofta redan finns förinstallerade på Unix-liknande system. För Windows-användare finns CoreUtils installerat som en del av "Bash on Ubuntu on Windows" funktionen.
+`date`-kommandot i sig är ganska rakt på sak. Det ringer till systemklockan och formaterar output till en sträng. Du kan skräddarsy formatet genom att använda olika format, som i det andra exemplet ovan.
 
-## Se även:
+## Se Även 
+Mer information om `date` och relaterade ämnen:
 
-- [GNU Core Utilities](https://www.gnu.org/software/coreutils/coreutils.html)
-- [EPOCHSECONDS variabeln](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-- [Bash on Ubuntu on Windows](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+1. [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
+2. [Date (Unix)- Wikipedia](https://en.wikipedia.org/wiki/Date_(Unix))
+3. [Datetime i Bash - Stack Overflow](https://stackoverflow.com/questions/1401482/yyyy-mm-dd-format-date-in-shell-script)
+
+Lycka till med dina Bash-programmeringsäventyr!

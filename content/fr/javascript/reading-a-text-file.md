@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Javascript: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,37 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Lire un fichier texte en Javascript est un processus qui implique d'ouvrir et de parcourir un fichier afin d'en extraire des données. Cette tâche est souvent effectuée par les programmeurs pour traiter des données spécifiques, telles que des informations de configuration ou des données d'utilisateur.
+## Ça alors! Quoi & Pourquoi? 
 
-## Comment faire:
-Voici un exemple de code pour lire un fichier texte en utilisant le module intégré "fs" (système de fichiers) en Javascript.
+Lire un fichier texte, c'est extraire des données enregistrées dans un fichier en tant que texte. Pourquoi les programmeurs font-ils ça? C'est simple. Ils veulent manipuler, analyser, ou afficher ces données dans leurs applications.
+
+## Comment faire :
+
+Nous allons utiliser le module de base `fs` (fichier système) de Node.js. Voici un exemple simple pour ouvrir et lire un fichier texte en JavaScript.
 
 ```Javascript
-const fs = require('fs'); // Importer le module
+// Charger le module fs
+var fs = require('fs');
 
-// Ouvrir le fichier en utilisant la fonction de lecture synchrone
-// Ceci retourne un buffer (tampon) de données
-const data = fs.readFileSync('nomDuFichier.txt');
+// Lecture du fichier
+fs.readFile('MonFichier.txt', 'utf8', function(err, data){
+  if (err) throw err;
+  console.log(data);
+});
+```
+Imaginez que `MonFichier.txt` contient le texte "Bonjour à tous!". L'exécution de ce programme donnera l'affichage suivant.
 
-// Convertir le buffer en chaîne de caractères en utilisant la méthode toString()
-const text = data.toString();
-
-// Afficher le contenu du fichier
-console.log(text);
+```Javascript
+Bonjour à tous!
 ```
 
-Le résultat affichera le contenu du fichier dans la console.
+## Plongeons dans le sujet
 
-## Plongée en profondeur:
-Lire des fichiers texte en Javascript n'est pas une tâche nouvelle. Avant les versions plus récentes de Javascript, cela nécessitait l'utilisation de modules externes tels que "fs-extra" ou "fsync". Cependant, depuis l'introduction de la norme ECMAScript 6 en 2015, la méthode `readFileSync()` est disponible en utilisant le module intégré "fs".
+Historiquement, la lecture de fichiers texte est une technique courante utilisée depuis les premiers jours de la programmation pour stocker et récupérer des données.
 
-Il est également possible de lire des fichiers de manière asynchrone en utilisant la méthode `readFile()`, qui utilise des rappels (callbacks) pour traiter les données. De plus, il est recommandé d'utiliser des flux (streams) lors de la lecture de fichiers volumineux pour une meilleure performance.
+En termes d'alternatives, vous pourriez utiliser d'autres modules comme `fs-extra` qui ajoutent quelques fonctionnalités utiles à `fs`. Ou si vous travaillez avec JSON, vous pouvez utiliser `require` pour lire directement des fichiers JSON.
 
-## Veuillez noter:
-Il est important de noter que l'accès et la lecture de fichiers sur un serveur distant (comme un navigateur web) peut être limité pour des raisons de sécurité. Ainsi, la lecture de fichiers en Javascript est principalement utilisée dans des environnements côté serveur tels que Node.js.
 
-## Voir aussi:
-Pour plus d'informations sur la lecture de fichiers en Javascript, vous pouvez consulter les ressources suivantes:
-- Documentation sur le module "fs" de Node.js: https://nodejs.org/api/fs.html
-- Tutoriel pour lire des fichiers en Javascript: https://www.w3schools.com/nodejs/nodejs_filesystem.asp
+```Javascript
+var data = require('./MonFichier.json');
+console.log(data);
+```
+
+Dans notre exemple sur `fs`, vous remarquerez qu'on a utilisé une fonction de rappel (callback) pour gérer les données après la lecture du fichier texte. C'est important car Node.js opère de manière asynchrone. Pour une approche plus moderne, vous pouvez utiliser les Promesses ou async/await pour améliorer davantage la lisibilité et la manipulation des erreurs.
+
+## À voir aussi 
+
+- Documentation officielle de Node.js sur [fs](https://nodejs.org/api/fs.html)
+- Un tutoriel sur les [Promesses](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses)
+- NPM module: [`fs-extra`](https://www.npmjs.com/package/fs-extra)

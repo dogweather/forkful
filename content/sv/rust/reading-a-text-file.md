@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av en textfil"
-html_title:           "Rust: Läsning av en textfil"
-simple_title:         "Läsning av en textfil"
+title:                "Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att läsa en textfil innebär att läsa och extrahera data från en fil som innehåller text, såsom en vanlig textdokument. Programutvecklare gör detta för att hämta och bearbeta information som är sparad i filer och använda den i sina program.
+## Vad och varför?
 
-## Så här gör man:
+Att läsa en textfil innebär att utvinna data från en fil lagrad på din dator eller server. Programmerare gör det för att begära, bearbeta eller ändra lagrad information.
+
+## Hur gör man:
+
+Här är exempel på hur du läser en textfil i Rust:
+
 ```Rust
 use std::fs::File;
 use std::io::prelude::*;
 
-fn main() {
-    // Öppna textfilen för läsning
-    let mut file = match File::open("textfil.txt") {
-        Ok(file) => file,
-        Err(error) => panic!("Kan inte öppna filen: {}", error),
-    };
-
-    // Skapa en tom sträng för att lagra innehållet från filen
-    let mut innehall = String::new();
-
-    // Läs innehållet från filen till strängen
-    match file.read_to_string(&mut innehall) {
-        Ok(_) => println!("{}", innehall),
-        Err(error) => println!("Kan inte läsa filen: {}", error),
-    }
+fn main() -> std::io::Result<()> {
+    let mut file = File::open("hello.txt")?;
+    let mut contents = String::new();
+    file.read_to_string(&mut contents)?;
+    println!("{}", contents);
+    Ok(())
 }
 ```
+Kör koden ovan och om din textfil ("hello.txt") innehåller "Hej, Världen!", kommer utmatningen att vara:
 
-Exempel på output från koden ovan:
-
-```
-Detta är ett exempel på en textfil som innehåller information. 
-Här kan vi skriva flera rader med data som vi senare kan använda i vårt program.
+```Rust
+Hej, Världen!
 ```
 
-## Djupdykning:
-Att läsa textfiler har varit en viktig del av programmering sedan de första datorerna. Det finns flera alternativ till Rust för att läsa filer, såsom C++ och Java. Implementeringen av att läsa filer i Rust använder sig av standardbiblioteket "std::fs" och funktionen "File::open" för att öppna en fil och "read_to_string" för att läsa innehållet till en sträng.
+## Djupdykning
+
+Historiskt sett har olika språk hanterat filinläsning på olika sätt, men i Rust är det hållbart och enkelt tack vare "std::fs" och "std:io::prelude".
+
+Det finns alternativa sätt att läsa textfiler i Rust. Ett exempel är funktionen read_to_string(), vilket ger en snabbare metoden för att läsa hela filer till en sträng på en gång.
+
+När det gäller implementationen öppnar File::open("hello.txt") filen och returnerar en "File" instans. Funktionen read_to_string() läser filen till det medskickade muterbara strängobjektet.
 
 ## Se även:
-* [Rust dokumentation för att läsa filer](https://doc.rust-lang.org/std/fs/struct.File.html)
-* [Livslog - En introduktion till filhantering i Rust](https://www.livslog.net/rust-file-io.html)
+
+Om du vill lära dig mer om att hantera filer i Rust, kolla in dessa länkar:
+
+1. Rusts officiella dokumentation om std::fs::File: https://doc.rust-lang.org/std/fs/struct.File.html
+2. En utmärkt handledning på Rust Cookbook: https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html
+3. En diskussion på Stack Overflow om att läsa textfiler i Rust: https://stackoverflow.com/questions/31192956/whats-the-de-facto-way-of-reading-and-writing-files-in-rust-1-x

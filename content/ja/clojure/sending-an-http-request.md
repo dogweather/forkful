@@ -1,6 +1,6 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Clojure: HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,49 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-
-HTTPリクエストを送るとは、ウェブサーバーに対してデータを要求することです。プログラマーがHTTPリクエストを送る理由は、ネットワーク通信を行うことによって、アプリケーションやウェブサイトで必要なデータを取得するためです。
+## 何となぜ？
+HTTPリクエストの送信は、コンピュータからWebサーバーに特定の情報を要求するための手段です。プログラマーはこれを用いてウェブサイトからデータを取得したり、APIと情報を交換したりします。
 
 ## 方法：
-
-### GETリクエストを送る
-
-```Clojure
-(http/get "https://example.com")
-```
-
-### POSTリクエストを送る
+ClojureでのHTTPリクエストの送信は、`clj-http` ライブラリを用いて容易に行うことができます。まずはこのライブラリをあなたのプロジェクトに追加しましょう。
 
 ```Clojure
-(http/post "https://example.com" {:body "some data"})
+:dependencies [[clj-http "3.12.3"]]
 ```
 
-### サーバーからのレスポンスを取得する
+次に、GETリクエストの例を見てみましょう。
 
 ```Clojure
-(def response (http/get "https://example.com"))
+(require '[clj-http.client :as client])
 
-(str "Response status: " (:status response))
-;=> "Response status: 200"
+(defn fetch-data []
+  (let [response (client/get "https://api.example.com/data")]
+    (:body response)))
 ```
 
-## 深堀り：
+この関数は、指定されたURLからデータを取得します。応答の本文部分は `:body` キーでアクセスできます。
 
-### 送信方法の歴史的背景
+## ディープダイブ：
+HTTPリクエストは、1991年に登場したHTTPプロトコルの基本的な機能です。これ以前は、情報の交換はFTPやTelnetなどの他のプロトコルを介して行われていました。
 
-HTTPリクエストは、ウェブの発展に伴って広く使用されるようになりました。最初のバージョンであるHTTP/1.0は1996年に発表され、その後改定されました。現在のバージョンはHTTP/2.0です。
+送信方法はいくつかあります。POST、GET、PUT、DELETEなどのHTTPメソッドがあり、それぞれ異なる用途で使用されます。たとえば、GETはサーバーからデータを取得するために使用し、POSTは新たにデータを作成したり、既存のデータを更新したりするために使用します。
 
-### 代替手段
+Clojureの `clj-http` ライブラリは、JavaのApache HttpComponentsをラップします。これによりプログラマーは複雑なJava APIを直接扱う必要なく、HTTPリクエストを簡単に送信できます。
 
-HTTPリクエストには、他にも多くの言語やツールで実装されたライブラリがあります。Clojure以外にも、PythonやRubyなどのプログラミング言語で使用することができます。
+## 参照情報：
+HTTPプロトコルについての詳細は、以下のリンクを参照してください：
 
-### 実装の詳細
-
-Clojureでは、HTTPリクエストを送信するために「clj-http」ライブラリを使用することができます。このライブラリは、HTTPクライアントとして動作するClojureの関数を提供します。
-
-## 関連リンク：
-
-- [ClojureでHTTPリクエストを送信する方法](https://clojure.org/guides/http_clients)
-- [HTTP/1.0の仕様書](https://www.rfc-editor.org/rfc/rfc1945)
-- [HTTP/2.0の仕様書](https://www.rfc-editor.org/rfc/rfc7540)
+1. [Mozilla HTTP Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+2. [Clojure clj-http documentation](https://github.com/dakrone/clj-http)
+3. [Apache HttpComponents](https://hc.apache.org/)

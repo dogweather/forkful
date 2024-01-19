@@ -1,6 +1,6 @@
 ---
 title:                "Konwersja daty na ciąg znaków"
-html_title:           "Haskell: Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
 simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,37 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Jak zamienić datę na ciąg znaków w języku Haskell?
+## Co i Dlaczego?
+Przekształcanie daty na ciąg, zwane też serializacją dat, polega na zapisie obiektu daty jako łatwo czytelnego tekstu. Programiści robią to, aby przechować i przekazać datę w sposób, który będzie zrozumiały dla człowieka lub różnych usług i aplikacji.
 
-## Co to jest i dlaczego to robimy?
-Zamiana daty na ciąg znaków jest częstym zadaniem programistów. Polega ona na konwersji wartości reprezentującej datę (np. 10 marca 2021) na ciąg znaków (np. "10.03.2021"). Jest to przydatne, ponieważ wiele systemów wymaga formatu daty w postaci ciągu znaków.
+## Jak to zrobić:
 
-## Jak to zrobić?
-W języku Haskell istnieje kilka sposobów na konwersję daty na ciąg znaków. Przykładowy kod może wyglądać następująco:
-
+Haskell oferuje funkcję `formatTime` z pakietu `Data.Time.Format` do konwersji daty na ciąg. Zobaczmy, jak to działa:
 ```Haskell
-import Data.Time.Format (formatTime, defaultTimeLocale)
-import Data.Time.Calendar (Day, fromGregorian)
-
-dateToString :: Day -> String
-dateToString date = formatTime defaultTimeLocale "%d.%m.%Y" date
+import Data.Time
+import Data.Time.Format
 
 main = do
-  let date = fromGregorian 2021 03 10
-  putStrLn (dateToString date)
+    czas <- getCurrentTime
+    putStrLn $ formatTime defaultTimeLocale "%d-%m-%Y" czas
 ```
+Gdy uruchomisz powyższy program, wydrukuje dzisiejszą datę w formacie "DD-MM-YYYY". Na przykład, 01-01-2022.
 
-W powyższym kodzie wykorzystujemy bibliotekę `Data.Time.Format`, która umożliwia formatowanie daty w podany przez nas sposób. Funkcja `formatTime` przyjmuje dwa argumenty: obiekt reprezentujący format, w którym chcemy otrzymać datę i samą datę. W naszym przykładzie wykorzystujemy domyślny format dla lokalizacji czasu (czyli w tym przypadku polski format daty), ale możemy również podać własny format. Następnie wykorzystujemy funkcję `fromGregorian` z biblioteki `Data.Time.Calendar`, która konwertuje rok, miesiąc i dzień na wartość typu `Day` reprezentującą datę. W naszym przykładzie ustawiamy datę na 10 marca 2021 i wyświetlamy ją na ekranie, wywołując funkcję `dateToString`.
+## Na głębszy poziom
 
-Po uruchomieniu programu, powinniśmy zobaczyć na ekranie: "10.03.2021", czyli naszą datę w postaci ciągu znaków.
+1. **Kontekst historyczny**: Funkcja `formatTime` negatywnie wpływa na wydajność, gdy jest używana dużo razy, ponieważ wymaga za każdym razem interpretacji ciągu formatującego. Problem ten został rozwiązany poprzez wprowadzenie funkcji `formatTimeM` w GHC 7.10, która ma lepszą wydajność.
 
-## Rzut okiem w głąb
-Konwersja daty na ciąg znaków jest popularnym zadaniem w wielu językach programowania, nie tylko w Haskellu. W innych językach możemy użyć innych bibliotek lub funkcji do osiągnięcia tego samego efektu. W Haskellu możemy również wykorzystać inne funkcje związane z obsługą dat, np. `parseTime` czy `getTime`.
+2. **Alternatywy**: Istnieje wiele bibliotek Haskell, które oferują dodatkowe funkcje formatowania daty, takie jak `time-format` i `date-cache`. 
 
-Przyjrzyjmy się teraz trochę bliżej użytej przez nas funkcji `formatTime`. Jej pierwszym argumentem jest obiekt typu `TimeLocale`, który definiuje określone formaty dla różnych lokalizacji czasowych. Dzięki temu nasz program będzie zgodny z ustawieniami systemowymi użytkownika, co jest bardzo przydatne w przypadku programów wielojęzycznych.
-
-W naszym przykładzie ustawiliśmy domyślny format dla lokalizacji polskiej, ale możemy również zdefiniować własny. Więcej informacji na temat dostępnych formatów możemy znaleźć w dokumentacji biblioteki.
+3. **Szczegóły implementacyjne**: `formatTime` korzysta z `defaultTimeLocale`, który jest odzwierciedleniem lokalnego ustawienia daty i czasu na twoim komputerze. Możesz dostosować format daty, dostarczając własny ciąg formatujący.
 
 ## Zobacz także
- - [Dokumentacja biblioteki Data.Time.Format](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
- - [Inne metody konwersji daty na ciąg znaków w języku Haskell](https://stackoverflow.com/questions/16301512/convert-date-to-string-in-haskell)
+
+1. Dokumentacja pakietu `Data.Time.Format`: http://hackage.haskell.org/package/time-1.10/docs/Data-Time-Format.html
+2. Dokumentacja pakietu `defaultTimeLocale`: http://hackage.haskell.org/package/time-1.10/docs/Data-Time-Format-Locale.html
+3. Wątek na StackOverflow na temat formatowania czasu w Haskellu: https://stackoverflow.com/questions/19280527/how-to-nicely-format-time
+4. Blog na temat formatowania dat w Haskellu: https://rosettacode.org/wiki/Date_format#Haskell

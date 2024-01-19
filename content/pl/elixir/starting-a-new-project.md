@@ -1,6 +1,6 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Elixir: Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,16 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Zaczęcie nowego projektu to proces tworzenia i planowania nowej aplikacji lub programu. Programiści często starują nowe projekty, aby rozwijać swoje umiejętności, realizować koncepcje i rozwiązywać problemy.
+## Czym i Dlaczego? 
+Zakładanie nowego projektu to tworzenie nowej pracy od zera. Programiści robią to, aby swobodnie pracować nad nowym pomysłem, innym podejściem lub rozwiązaniem problemu.
 
 ## Jak to zrobić:
-Aby rozpocząć nowy projekt w języku Elixir, możemy użyć polecenia `mix new nazwa_projektu` w naszym terminalu. Zostanie utworzona nowa struktura projektu z przykładowym kodem w plikach `lib` i `test`. Możemy również uruchomić `mix phx.new`, aby utworzyć projekt w oparciu o framework Phoenix, który dostarcza nam gotowe narzędzia do tworzenia aplikacji webowych.
+Zacznijmy od instalacji Elixir. Można to zrobić, korzystając z poniższego polecenia dla systemów Unix/Linux:
+```sh
+wget https://repo.hex.pm/builds/elixir/v1.12.3.zip
+unzip v1.12.3.zip
+```
 
-## Głębsze wgląd:
-Elixir jest funkcyjnym językiem programowania, który ma swoje korzenie w języku Erlang i wirtualnej maszynie BEAM. Jest to język stworzony z myślą o skalowalności i niezawodności systemów rozproszonych. Alternatywami dla Elixira są języki takie jak Ruby on Rails, Python czy Java, ale Elixir oferuje wyższą wydajność i możliwość lepszego skalowania.
+Tworzenie nowego projektu Elixir odbywa się poprzez narzędzie `mix`. Oto przykład:
+```elixir
+mix new moj_projekt
+```
+Wynik będzie wyglądał mniej więcej tak:
+```sh
+* creating README.md
+* creating .formatter.exs
+* creating .gitignore
+* creating mix.exs
+* creating config
+* creating config/config.exs
+* creating lib
+* creating lib/moj_projekt.ex
+* creating test
+* creating test/test_helper.exs
+* creating test/moj_projekt_test.exs
 
-## Zobacz też:
-Oficjalna strona Elixira: https://elixir-lang.org/
-Tutorial Elixira: https://elixir-lang.org/getting-started/introduction.html
-Framework Phoenix: https://phoenixframework.org/
+Pomyślnie utworzono projekt.
+``` 
+## Głębokie Wnurzenie:
+Elixir jest językiem programowania zaprojektowanym i rozwijanym przez José Valima, współzałożyciela platformy Phoenix. Dziedziczy wiele cech z Erlang, ale z bardziej przyjazną dla użytkowników składnią.
+
+Alternatywy dla Elixir to Haskell, Scala, lub nawet Go, chociaż żaden z nich nie oferuje takiego samego poziomu skalowalności, niezawodności i na pewnym poziomie uproszczenia jak Elixir.
+
+Głównym narzędziem do tworzenia nowego projektu w Elixir jest `mix`, który automatycznie generuje podstawową strukturę projektu. Pozwala to programistom skupić się na tworzeniu funkcji, zamiast budowaniu struktury od podstaw.
+
+## Zobacz Też:
+- Oficjalna dokumentacja Elixir: https://elixirschool.com/pl/
+- Czytanie kodu Elixir: https://github.com/TheFirstAvenger/elixir-1
+- Porównanie różnych języków programowania (w tym Elixir) do Erlang: https://www.erlang.org/elixir-for-erlang-programmers

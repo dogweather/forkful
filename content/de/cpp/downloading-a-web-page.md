@@ -1,7 +1,7 @@
 ---
-title:                "Webseite herunterladen"
-html_title:           "C++: Webseite herunterladen"
-simple_title:         "Webseite herunterladen"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,40 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Was und Warum?
-Beim Herunterladen einer Webseite geht es darum, die Daten einer Webseite zu erhalten und auf unserem Rechner zu speichern. Dies ist eine praktische Funktion für Programmierer, da sie somit den Inhalt einer Webseite nutzen können, um beispielsweise automatisierte Aufgaben auszuführen oder Daten zu extrahieren.
+## Was & Warum?
 
-#Wie geht das?
-Um eine Webseite herunterzuladen, müssen wir zuerst eine Verbindung zu der gewünschten Webseite herstellen. Dies kann mit der C++ Standardbibliothek und der Funktion `std::get` erfolgen. Wir geben den vollständigen Link der Webseite als Parameter an und die Funktion gibt uns die Daten zurück. Hier ist ein Beispiel:
+Das Herunterladen einer Webseite ist der Prozess, bei dem der Inhalt einer bestimmten URL (z.B. HTML, Bilder, CSS) lokal gespeichert wird. Programmierer machen das oft, um Daten zu analysieren, zu manipulieren oder ohne Internetverbindung darauf zugreifen zu können.
+
+## Anleitung:
+
+Der einfachste Weg, eine Webseite in C++ herunterzuladen, geht über die Bibliothek `libcurl`. Hier ist ein einfaches Beispiel:
 
 ```C++
-#include <iostream>
-#include <cstdlib>
+#include <curl/curl.h>
+#include <fstream>
 
-using namespace std;
+static size_t WriteCallback(void* contents, size_t size, size_t nmemb, void* userp) {
+    ((std::string*)userp)->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
 
-int main(){
-    // Verbindung herstellen
-    string url = "https://example.com";
-    string data = std::get(url);
+int main() {
+    CURL* curl;
+    CURLcode res;
+    std::string readBuffer;
 
-    // Daten ausgeben
-    cout << data << endl;
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    curl_global_cleanup();
+
+    std::ofstream out("output.html");
+    out << readBuffer;
+    out.close();
 
     return 0;
 }
 ```
 
-Die Ausgabe dieses Codes wird die gesamte HTML-Seite der Webseite "example.com" enthalten.
+Dieser Code lädt eine Webseite herunter und speichert sie in einer Datei namens "output.html".
 
-#Tiefer eintauchen
-Das Herunterladen von Webseiten ist eine weit verbreitete Funktion, die seit den Anfängen des Internets verwendet wird. In früheren Zeiten wurden dafür spezielle Bibliotheken und komplexe Algorithmen verwendet. Jedoch hat sich mit der Entwicklung von Programmiersprachen wie C++ und deren Bibliotheken die Durchführung dieser Aufgabe vereinfacht.
+## Vertiefung:
 
-Es gibt auch Alternativen zu dem von uns verwendeten Ansatz, einschließlich des Direktzugriffs auf Socket-Verbindungen oder die Verwendung von Bibliotheken wie `libcurl`. Die Wahl der Methode hängt von den Anforderungen des Projekts und den Kenntnissen des Programmierers ab.
+Früher war es umständlicher, eine Webseite mit C++ herunterzuladen. Die meisten C++-Programmierer benutzten Wininet (unter Windows) oder Sockets (unter Unix). Heutzutage bieten Bibliotheken wie libcurl oder Boost.Asio leistungsfähigere und einfachere Alternativen.
 
-Die Implementierung des Herunterladens einer Webseite kann auch komplizierter sein, je nachdem, welche Teile der Webseite benötigt werden. Die Verwendung von regulären Ausdrücken oder das Bearbeiten von HTML-Daten können wichtige Schritte sein, um die gewünschten Daten zu extrahieren.
+Das Herunterladen einer Webseite involviert in der Regel den Aufbau einer TCP-Verbindung zu einem Server an der spezifizierten URL, das Senden einer HTTP-Anforderung und das Empfangen der Serverantwort als HTML- oder Binärdaten.
 
-#Siehe auch
-- [C++ Standardbibliothek](https://de.cppreference.com/w/cpp/header)
-- [Webseiten herunterladen in C++](https://www.geeksforgeeks.org/downloading-a-webpage-using-curl/)
-- [Regex in C++](https://de.cppreference.com/w/cpp/regex)
+## Siehe Auch:
+
+Um mehr über das Web-Scraping und das Herunterladen von Webseiten mit C++ zu lernen, besuchen Sie bitte diese Ressourcen:
+
+1. [Libcurl-Dokumentation](https://curl.se/libcurl/c/)
+2. [Boost.Asio-Dokumentation](https://www.boost.org/doc/libs/1_73_0/doc/html/boost_asio.html)
+3. [HTTP Made Really Easy - A Practical Guide to Writing Clients and Servers](http://www.jmarshall.com/easy/http/)
+4. [C++ Netzwerkprogrammierung mit Boost.Asio](https://dieboostcppbibliotheken.de/boost.asio)

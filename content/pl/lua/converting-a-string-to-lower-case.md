@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie ciągu znaków na małe litery"
-html_title:           "Lua: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,39 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-
-Konwersja tekstu na małe litery jest procesem zmiany wszystkich liter w danym tekście na ich mniejsze odpowiedniki. Programiści często wykonują tę operację, aby ujednolicić dane wejściowe lub ułatwić wyszukiwanie i porównywanie tekstu.
+Konwersja łańcucha znaków na małe litery to operacja programistyczna, która przekształca wszystkie duże litery łańcucha w małe litery. Programiści robią to, aby ułatwić porównywanie łańcuchów, ignorując wielkość liter.
 
 ## Jak to zrobić:
-
-Dostępne są dwa sposoby na przekonwertowanie tekstu na małe litery w języku Lua. Pierwszym sposobem jest użycie funkcji `string.lower()` która zwraca przekonwertowany łańcuch. Przykładowy kod wygląda następująco:
-
-```Lua
-local tekst = "PRZYKŁADOWY TEKST"
-print(string.lower(tekst))
-```
-
-Wynik wydruku będzie następujący:
+Prosty przykład pokazujący, jak w Lua przekształcić łańcuch na małe litery:
 
 ```Lua
-przykładowy tekst
+lowercaseString = string.lower("TWOJEJ TEKST DO KONWERSJI")
+print(lowercaseString)
 ```
-
-Drugim sposobem jest wykorzystanie metody `lower()` na zmiennej typu string. Przykładowy kod wygląda następująco:
+Wyjście z powyższego kodu:
 
 ```Lua
-local tekst = "PRZYKŁADOWY TEKST"
-print(tekst:lower())
+"twojej tekst do konwersji"
 ```
+## Głębsza Analiza
+Różne języki programowania mają różne sposoby konwersji łańcuchów na małe litery. Historia funkcji `string.lower` w Lua sięga wczesnych dni tego języka. W praktyce `string.lower` korzysta z mapowania ASCII. Alternatywą może być napisanie własnej funkcji, która przemierza łańcuch i konwertuje każdy znak indywidualnie. Jednak, dla większości przypadków, `string.lower` jest najprostszym i najbardziej efektywnym rozwiązaniem. 
 
-Wynik wydruku będzie taki sam jak w przypadku pierwszego sposobu.
-
-## Głęboka Analiza:
-
-Konwersja tekstu na małe litery jest często stosowana w celu porównywania tekstu bez uwzględnienia wielkości liter. Jest to szczególnie przydatne w wyszukiwaniu i sortowaniu danych. W języku Lua dostępna jest również funkcja `string.upper()` która przekonwertuje tekst na wielkie litery. Alternatywnym sposobem na zmianę wielkości liter jest użycie modułu `string` w celu wywołania odpowiedniej metody przy użyciu `string.lower` lub `string.upper`.
-
-## Zobacz także:
-
-[Oficjalna dokumentacja Lua](https://www.lua.org/manual/5.3/manual.html#6.4.2)
-
-[Porównywanie i sortowanie danych w Lua](https://www.lua.org/pil/19.3.html)
+## Zobacz tez
+1. Dokumentacja Lua: [String Manipulation](https://www.lua.org/pil/20.html)
+2. Stack Overflow: [Lowercase a String in Lua](https://stackoverflow.com/questions/20284515/lowercase-a-string-in-lua)
+3. GitHub: [Lua Examples](https://github.com/LuaDist/examples)

@@ -1,6 +1,6 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Go: Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Go"
 category:             "Go"
@@ -12,31 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å lese kommandolinjeargumenter er en måte for programmerere å ta inn informasjon fra brukeren via terminalen. Dette gjør det mulig å gi programmet ulike instruksjoner og variabler før det kjører. Det er et viktig verktøy for å gjøre programmer mer dynamiske og interaktive.
+Å lese kommandolinjeargumenter innebærer å fange opp og manipulere de innspillene som er gitt i terminalen mens du kjører et program. Programmerere gjør dette for å gi et fleksibelt grensesnitt til applikasjonen.
 
-## Hvordan:
+## Hvordan: 
+
+Skriver vi et enkelt eksempel?
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    args := os.Args[1:]
-    fmt.Println("Du har gitt", len(args), "kommandolinjeargumenter: ", args)
+	arg := os.Args
+	fmt.Println(arg)
 }
 ```
-Eksempel output: ```Du har gitt 3 kommandolinjeargumenter: [argument1 argument2 argument3]```
 
-## Dykk dypere
+Kjører vi dette programmet som `go run main.go hei verden`, vil utskriften være: 
 
-Kommandolinjeargumenter har vært en del av programmering siden tidlige datamaskiner, da de ble brukt for å gi programmet instruksjoner på en enkel måte. Alternativene for å lese argumenter i Go inkluderer ```flag``` og ```pflag``` pakker, som gir mer funksjonalitet og fleksibilitet. For å implementere lesing av argumenter i Go, brukes standardbiblioteket "os". 
+```Go
+[main.go hei verden]
+```
 
-## Se også
+## Dypdykk
 
-- Offisiell Go dokumentasjon for ```os``` pakken: https://golang.org/pkg/os/
-- Go flagg pakken: https://golang.org/pkg/flag/
-- Go pflag pakken: https://github.com/spf13/pflag
+Historisk sett har kommandolinje-argumenter vært et sentralt aspekt av å jobbe med programmeringsspråk. De gir en metode for å sende innspill til et program under kjøretid, noe som åpner for mer dynamisk og interaktiv kode.
+
+Alternativt kan innspill til et Go-program håndteres ved hjelp av flagger. Flaggbiblioteket i Go er ekstremt kraftig og gir større kontroll over det inngående datagrensesnittet.
+
+Et viktig poeng å merke seg om `os.Args` er at første element alltid vil være programnavnet. Det er en implementeringsdetalj som er arvet fra C og Unix, og noe å huske når du behandler argumenter.
+
+## Se Også
+
+For mer detaljer om flaggbiblioteket og avansert argumentbehandling, se [Go doukumentasjonen](https://golang.org/pkg/flag/) og denne [bloggposten om flagger](https://blog.golang.org/flag).

@@ -1,7 +1,7 @@
 ---
-title:                "Att börja ett nytt projekt"
-html_title:           "Python: Att börja ett nytt projekt"
-simple_title:         "Att börja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -11,44 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+När vi pratar om att starta ett nytt projekt i programmeringsvärlden menar vi processen för att skapa grundstrukturen för en ny app eller tjänst. Programmerare gör detta för att tydligt strukturera deras kod, vilket underlättar utvecklingsprocessen och gör det lättare att hantera och underhålla koden.
 
-Att starta ett nytt projekt inom programmering innebär att påbörja ett nytt kodningsarbete för att skapa något nytt eller förbättra något befintligt. Programmerare gör det för att utveckla sina färdigheter och för att skapa lösningar på olika problem.
-
-## Hur du gör:
-
+## Hur man:
+För att starta ett nytt Python-projekt behöver du en mapp att arbeta i. Använd `mkdir` för att skapa en ny mapp och `cd` för att gå in i den.
 ```Python
-# Skapa ett nytt projekt med en lista av färger
-colors = ["röd", "blå", "grön"]
-
-# Skriv ut listan för att bekräfta att den har skapats
-print(colors)
-
-# Lägg till en ny färg till listan
-colors.append("gul")
-
-# Skriv ut den uppdaterade listan
-print(colors)
-
-# Ta bort en färg från listan
-colors.remove("blå")
-
-# Skriv ut den uppdaterade listan
-print(colors)
+mkdir new_project
+cd new_project
 ```
 
-Output:
-```
-["röd", "blå", "grön"]
-["röd", "blå", "grön", "gul"]
-["röd", "grön", "gul"]
+Skapa en ny Python-fil med `touch`.
+```Python
+touch main.py
 ```
 
-## Djupdykning:
+Öppna `main.py` och skapa en enkel "Hello World"-applikation.
+```Python
+print("Hello World")
+```
 
-Att starta ett nytt projekt i programmering har varit en tradition sedan branschen började. Det ger programmerare chansen att utveckla sin kodningskompetens och implementera nya idéer. Det finns olika sätt att starta ett nytt projekt, beroende på vilken programmeringsmiljö man använder. Alternativ som kan övervägas inkluderar att använda en IDE (Integrated Development Environment) eller att skapa ett nytt projekt från grunden i en textredigerare.
+Kör din app.
+```Python
+python main.py
+```
 
-## Se också:
+Du borde se "Hello World" skrivas ut på skärmen.
 
-- [Python.org](https://www.python.org/) - Officiell hemsida för Python programming language.
-- [Real Python](https://realpython.com/) - En resurs för Python-utbildning och artiklar.
-- [Python Projects](https://github.com/tuvtran/project-based-learning/tree/master/python) - En lista med Python-projekt för att öva på kodning.
+## Djupdykning
+Att starta ett nytt projekt kan vara en komplex uppgift. Historiskt sett har det inneburit att noggrant planera ut kodstruktur, knåpa ihop ramverk och säkerställa att hela teamet är på samma sida. I vissa projekt kan detta innebära att använda specifika templates eller böjelser, såsom Django-skriptet `startproject` i Python-sammanhang.
+
+Det finns dock alternativ till denna process, såsom att använda "Boilerplate code" eller färdiga projektmallar som kommer med en grundläggande kodstruktur. Dessa kan ge ditt projekt en snabbstart, men kanske inte tillåter samma grad av anpassning. Se till att du väljer rätt metod för projektet!
+
+## Se även
+1. Python's officiella dokumentation: https://docs.python.org/3/tutorial/modules.html
+2. Django's `startproject`-dokumentation: https://docs.djangoproject.com/en/3.2/ref/django-admin/#startproject
+3. En lista med Python Boilerplates: https://github.com/mattmakai/fullstackpython.com/blob/master/source/content/posts/160604-top-12-projects.markdown

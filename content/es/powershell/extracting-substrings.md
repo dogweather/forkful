@@ -1,6 +1,6 @@
 ---
 title:                "Extrayendo subcadenas"
-html_title:           "PowerShell: Extrayendo subcadenas"
+html_title:           "C: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,26 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## ¿Qué y Por Qué?
 
-La extracción de subcadenas se refiere a la acción de obtener una porción específica de una cadena de texto más grande. Los programadores a menudo lo hacen para manipular y trabajar con una parte específica de una cadena en lugar de toda ella.
+Extraer subcadenas es el acto de seleccionar y recuperar partes específicas de una cadena de texto. Los programadores lo hacen para manipular y analizar datos más efectivamente.
 
-## Cómo:
+## Cómo se hace:
 
-Puedes extraer subcadenas en PowerShell utilizando el comando `Select-String` y el operador `Substring`. Aquí hay un ejemplo:
+En PowerShell, el método `.substring` te permite extraer subcadenas. Aquí te dejo un ejemplo rápido:
 
+```PowerShell
+$s = "Esta es una prueba"
+$subcadena = $s.Substring(0, 4)
+echo $subcadena
 ```
-$myString = "Hola amigos!"
-$substring = $myString.Substring(5, 7)
-# Output: amigos!
-```
 
-## Profundizando:
+En este caso, `$subcadena` devolvería `Esta`, ya que estamos comenzando en el índice 0 y especificando que queremos los próximos 4 caracteres.
 
-La extracción de subcadenas ha sido una técnica popular y común en la programación desde los primeros días. Alternativas a la extracción de subcadenas incluyen el uso de expresiones regulares y funciones específicas del lenguaje de programación.
+## En Profundidad:
 
-Al utilizar el operador `Substring`, es importante recordar que el primer índice comienza en 0 y no en 1, y que también puedes proporcionar un valor negativo para obtener una subcadena a partir del final de la cadena original.
+Históricamente, la extracción de subcadenas ha sido una técnica utilizada en programación desde los primeros días de la informática. En el contexto de PowerShell, la extracción de subcadenas fue implementada desde su primera versión y ha sido parte de su funcionalidad estándar desde entonces.
 
-## Consulta también:
+En cuanto a alternativas, puedes usar `-split` y `-replace` en PowerShell para lograr efectos similares en ciertos casos. Sin embargo, `.substring` es más preciso y sencillo para extraer una sección exacta de una cadena.
 
-Puedes encontrar más información sobre la extracción de subcadenas en la [documentación oficial de Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=netcore-3.1) o en [este tutorial en español](https://www.jesusninoc.com/03/01/extract-string-from-a-text-file-in-powershell/).
+La implementación del método `.substring` en PowerShell se basa en el .NET Framework, lo que significa que también puede ser utilizado de la misma manera en C# y otros lenguajes .NET.
+
+## Ver También:
+
+Para más información, consulta las fuentes oficiales de Microsoft:
+
+1. [Documentación de Microsoft .NET - Substring](https://docs.microsoft.com/es-es/dotnet/api/system.string.substring?view=net-5.0)
+2. [Documentación de PowerShell - Acerca de las Cadenas](https://docs.microsoft.com/es-es/powershell/scripting/learn/deep-dives/everything-about-string-substitutions?view=powershell-7.1)
+3. [Documentación de PowerShell - Split y Replace](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.1)

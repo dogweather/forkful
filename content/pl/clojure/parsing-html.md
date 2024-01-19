@@ -1,7 +1,7 @@
 ---
-title:                "Analiza składni HTML"
-html_title:           "Clojure: Analiza składni HTML"
-simple_title:         "Analiza składni HTML"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć czytelniku!
-
-Jeśli jesteś programistą, prawdopodobnie spotkałeś się z pojęciem "parsing HTML". Jest to proces, w którym program analizuje kod HTML (język do tworzenia stron internetowych) i przekształca go na strukturę danych, która może być dalej wykorzystana w celu manipulacji lub wyświetlania treści.
-
-Dlaczego programiści przeprowadzają ten proces? Przede wszystkim, aby pobrać i wyświetlić informacje z witryn internetowych - na przykład do tworzenia skryptów do automatycznego pobierania treści lub do generowania tzw. web scrapingu (czyli zbierania danych z internetu w celach biznesowych lub badawczych).
+## Co i dlaczego?
+Parsowanie HTML to proces analizowania struktury kodu HTML. Programiści robią to zarówno do ekstrakcji danych, jak i do modyfikacji zawartości stron internetowych.
 
 ## Jak to zrobić?
-
-W Clojure istnieje wiele bibliotek umożliwiających parsowanie HTML. Jedną z najpopularniejszych jest bibilioteka Enlive, która w łatwy sposób pozwala na analizę i modyfikację struktury HTML. Najpierw musisz jednak zaimportować bibliotekę i użyć funkcji `parse` aby ustawić strukturę HTML jako dane wejściowe.
-
-```Clojure
-(require '[net.cgrand.enlive-html :as html])
-(def html-structure (html/parse "<html><body><h1>Hello world!</h1></body></html>"))
-```
-
-Teraz, jeśli chcemy wyświetlić zawartość elementu `h1` (czyli "Hello world!") możemy wykorzystać funkcję `html/text`:
+Użyjemy biblioteki o nazwie `Enlive`. Aby ją zainstalować, dodaj do `project.clj`: ```Clojure [net.cgrand/enlive "1.1.6"] ```. To zrozumieć, jak ją używać, przejrzymy kod:
 
 ```Clojure
-(html/text (first (html/select html-structure [:h1])))
+(ns example.core
+ (:require [net.cgrand.enlive-html :as html]))
+
+(defn fetch-html [url]
+  (html/html-resource (java.net.URL. url)))
+
+(defn get-headings [html]
+  (map :content (html/select html [:h1 :h2 :h3])))
+
+(defn print-headings [url]
+  (-> url
+      fetch-html
+      get-headings
+      println))
 ```
+Przykładowe wyjście:
+```Clojure
+("Jak to zrobic?" "Glebokie zanurzenie" "Zobacz także")
+```
+## Głębsze zanurzenie
+Parsowanie HTML pojawiło się z narodzinami internetu, z potrzebą analizowania i modyfikowania stron internetowych. Rozważane są różne metody parsowania, w tym DOM, SAX, Pull i Stream. `Enlive` działa na zasadzie wybrania wcześniej zdefiniowanych elementów ze struktury DOM.
 
-To powinno zwrócić: "Hello world!".
-
-## Najważniejsze informacje
-
-Pierwsze biblioteki do parsowania HTML pojawiły się w latach 90. XX wieku i były powszechnie wykorzystywane w tworzeniu aplikacji internetowych. Jednym z popularnych narzędzi tego typu jest biblioteka jsoup dla języka Java.
-
-Alternatywą dla Enlive w środowisku Clojure jest także biblioteka clojure.data.xml. Jednak nie jest ona specjalnie przeznaczona do parsowania HTML, więc może być nieco bardziej skomplikowana w użyciu.
-
-Pamiętaj także, że parsowanie HTML, tak jak wiele innych działań związanych z internetem, może być niebezpieczne z powodu potencjalnych ataków XSS (Cross-Site Scripting). Dlatego zawsze należy dokładnie sprawdzać i weryfikować dane wejściowe.
+Rozważaj także inne biblioteki, takie jak `Jsoup` lub `HTMLUnit`, niektóre mogą lepiej pasować do twoich potrzeb. Przykładowo, `Jsoup` jest dobrą opcją, jeśli chcesz filtrować i manipulować danymi HTML. `HTMLUnit`, z drugiej strony, jest dobrym wyborem, jeśli potrzebujesz obsługi interakcji użytkownika, takiej jak kliknięcia i przewijanie.
 
 ## Zobacz także
-
-Dla dalszej nauki o parsowaniu HTML w Clojure, polecamy zapoznanie się z dokumentacją Enlive: https://github.com/cgrand/enlive.
-
-Dzięki za uwagę i do zobaczenia w kolejnych artykułach!
+Pomocne źródła:
+- `Enlive`: [link](https://github.com/cgrand/enlive)
+- `Jsoup`: [link](https://jsoup.org/)
+- `HTMLUnit`: [link](http://htmlunit.sourceforge.net/)
+- Przewodnik po DOM, SAX, Pull i Stream: [link](https://www.baeldung.com/java-xml-parsers)

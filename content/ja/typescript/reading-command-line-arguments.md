@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミングの記事タイトル: コマンドライン引数の読み込み"
-html_title:           "TypeScript: コンピュータプログラミングの記事タイトル: コマンドライン引数の読み込み"
-simple_title:         "コンピュータプログラミングの記事タイトル: コマンドライン引数の読み込み"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Bash: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,30 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-何が& なぜ？
+## なんで手に入れる？ どうして読む？
 
-コマンドライン引数を読み取ることは、コマンドラインからの入力をプログラム内で処理することです。プログラマーは、ユーザーからの入力をプログラムに反映するために、コマンドライン引数を読み取る必要があります。
+コマンドライン引数は、コードの実行時にプログラムに渡される情報です。プログラマは、この方法で外部からパラメーターを取得することで、一般的にコードの柔軟性と再利用性を向上させます。
 
-方法：
+## こうやって読む:
 
-コマンドライン引数を読み取るには、TypeScriptでprocess.argv を使用します。これにより、プログラム内でコマンドライン引数を配列として受け取ることができます。
+TypeScriptでコマンドライン引数を読むためには、組み込みの`process`オブジェクトを使います。以下に示すように`argv`プロパティを利用するだけです。
 
 ```TypeScript
-const args: string[] = process.argv;
-
-console.log(args); // コマンドライン引数の配列を出力
+let myArgs = process.argv.slice(2);
+console.log(myArgs);
 ```
+この例では、`myArgs`はコマンドライン引数の配列になります。ただし、最初の２つの引数はノードの実行経路とスクリプトファイルの経路のためには使わず、`slice(2)`で取り除きます。
 
-例えば、`node index.ts hello world`というコマンドラインを実行した場合、それぞれ`args[0]`には`node`、`args[1]`には`index.ts`、`args[2]`には`hello`、`args[3]`には`world`が格納されます。
+## 深掘り
 
-Deep Dive:
+コマンドライン引数は、コンピュータが主流になる前から使われてきました。UNIXやLinuxのようなシステムでは、これらの引数はしばしばユーティリティの設定や振る舞いを制御するために使われてきました。
 
-コマンドライン引数の読み取りは、プログラミングの中でも古くから存在する重要な機能です。コマンドライン引数を使用することで、プログラムに対して動的な情報を与えることができます。代替手段として、プログラム内でユーザーからの入力を受け取るためのメソッドや関数を使用することもできますが、コマンドライン引数を使用することで、より柔軟な入力が可能になります。
+他に引数を処理する方法としては、ライブラリを使うこともあります。例えばノードパッケージ `yargs`や`commander`は、コマンドライン引数の解析と処理を助ける多くの強力な機能を提供します。
 
-コマンドライン引数を読み取る実装には、他の言語でも使用されている方法が多数存在します。TypeScriptで使用されているprocess.argvも、Node.jsで使用されている方法と同じです。また、一部のライブラリやフレームワークでは、プログラム内でコマンドライン引数を読み取るための機能を提供しています。
+先述の例では、`process.argv`は全ての引数を文字列として返します。数値や真偽値を想定している場合、適切にキャストする必要があります。
 
-See Also:
+## これも読んでみよう:
 
-- [Node.jsのprocess.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [オープンソースのコマンドライン引数パーサーyargs](http://yargs.js.org/)
-- [コマンドライン引数の解析原理](https://www2.cs.arizona.edu/~rts/student_projects/distributedsystems/commandLineArgs.html)
+1. Node.jsのドキュメンテーション (`process.argv`について): https://nodejs.org/docs/latest/api/process.html#process_process_argv 
+2. yargsパッケージ: https://www.npmjs.com/package/yargs
+3. commanderパッケージ: https://www.npmjs.com/package/commander

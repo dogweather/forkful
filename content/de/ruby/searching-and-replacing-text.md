@@ -1,6 +1,6 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-html_title:           "Ruby: Suchen und Ersetzen von Text"
+html_title:           "C#: Suchen und Ersetzen von Text"
 simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,22 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Die Suche und Ersetzung von Text ist ein häufig verwendetes Konzept in der Programmierung. Es bezieht sich auf das Finden von bestimmten Zeichenketten in einem Text und das Ersetzen durch andere Zeichenketten. Dies wird oft verwendet, um Fehler zu korrigieren oder Text auf bestimmte Weise zu formatieren.
+Suchen und Ersetzen ist die Manipulation von Text, um bestimmte Muster zu finden und durch anderen Text zu ersetzen. Programmierer tun das, um bestimmte Zeichen, Wörter oder Sätze in einem Textschnipsel oder einer Datei zu ändern.
 
-## So geht's:
-Um Text in Ruby zu suchen und zu ersetzen, verwenden wir die Methode `gsub`. Hier ist ein Beispiel:
+## Anleitung:
+Du kannst in Ruby den `gsub`-Methode verwenden, um Text zu suchen und zu ersetzen. Die Syntax ist `str.gsub(pattern, replacement)`. Hier ist ein einfacher Code-Beispiel:
 
-```Ruby
+```ruby
 text = "Hallo Welt"
-text.gsub("Hallo", "Guten Tag") #=> "Guten Tag Welt"
+neuer_text = text.gsub("Welt", "Ruby")
+puts neuer_text
 ```
 
-In diesem Beispiel wird die Zeichenkette "Hallo" durch "Guten Tag" ersetzt, was zu "Guten Tag Welt" führt. Beachten Sie, dass die ursprüngliche Zeichenkette "Hallo Welt" unverändert bleibt.
+Die Ausgabe wäre: 
+
+```
+Hallo Ruby
+```
+
+Die `gsub`-Methode kann auch mit regulären Ausdrücken verwendet werden. Hier ist ein Beispiel:
+
+```ruby
+text = "10 grüne Flaschen"
+neuer_text = text.gsub(/\d/, "keine")
+puts neuer_text
+```
+
+Die Ausgabe wäre:
+
+```
+keine grüne Flaschen
+```
 
 ## Deep Dive:
-Die Idee der Suche und Ersetzung von Text ist nicht neu und wird seit Jahrzehnten in der Programmierung verwendet. Es gibt auch Alternativen zur `gsub`-Methode, wie zum Beispiel die Verwendung von regulären Ausdrücken oder das Einlesen und Schreiben von Dateien. Die Implementierung von `gsub` erfolgt auf einer niedrigen Ebene und verwendet effiziente Algorithmen, um Text zu suchen und zu ersetzen.
+Die `gsub`-Methode in Ruby war schon immer ein wichtiger Bestandteil der Textmanipulation. Es gibt jedoch Alternativen wie die `sub`-Methode, die nur das erste Vorkommen ersetzt. Zur Implementierung in Ruby verwendet `gsub` intern die `rb_str_sub_bang`-Funktion, um die Änderungen durchzuführen.
 
-## Weitere Informationen:
-- [Ruby Dokumentation über gsub](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
-- [Einführung in reguläre Ausdrücke in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Ruby Dateiverarbeitung](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+## Siehe auch:
+- Ruby-Dokumentation für `gsub`: https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub
+- Artikel über reguläre Ausdrücke in Ruby: https://www.rubyguides.com/2015/06/ruby-regex/
+- Ruby-Dokumentation für `sub`: https://ruby-doc.org/core-2.7.0/String.html#method-i-sub

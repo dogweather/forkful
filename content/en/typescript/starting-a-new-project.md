@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "TypeScript recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -12,30 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Starting a new project in programming refers to the process of creating a new software or application from scratch. Programmers do this in order to develop new and innovative solutions to real-world problems, improve upon existing software, or simply for the challenge and fun of creating something new.
+Starting a new project is about setting up a fresh coding environment for a new software/product development. Programmers do it to create a focused, compartmentalized workspace which is isolated from their other projects.
 
 ## How to:
 
+Starting a new TypeScript project is straightforward. First, ensure that Node.js and npm (Node package manager) are installed in your system. If not, download them from their respective official sites.
+
+Once done, kickstart your TypeScript project by running the below commands:
+
 ```TypeScript
-// Example 1: Creating a basic console application
+// Create a new directory for your project
+mkdir my-typescript-project
+cd my-typescript-project
 
-console.log("Hello, world!"); // Outputs "Hello, world!" in the console
+// Initialize a new npm project
+npm init -y 
 
-// Example 2: Setting up a new React project using create-react-app
-// Note: Node.js and npm must be installed beforehand
+// Install TypeScript as a dev dependency
+npm install typescript --save-dev 
 
-npx create-react-app my-app // Creates a new React project named "my-app"
-cd my-app // Changes directory to the project folder
-npm start // Runs the project in development mode
-
+//Create a typescript configuration file
+npx tsc --init 
 ```
+
+This will create a tsconfig.json file, which specifies root files and compiler options required to compile the project.
 
 ## Deep Dive:
 
-Starting a new project has become much easier with the development of modern programming frameworks and tools. In the past, programmers had to write all the code from scratch, but now there are many options available that can speed up the process, such as using templates, boilerplates, or code generators. Other alternatives include forking an existing project or collaborating with others on open-source projects. Implementation details vary depending on the programming language and tools being used, but the basic steps usually involve creating a project structure, setting up dependencies, and writing code.
+Historically, JavaScript was used for both client-side and server-side development. However, as applications grew complex, developers sought a tool that could assist them in managing larger codebases. TypeScript was introduced by Microsoft in 2012 as an answer to this need. 
+
+Though other alternatives such as Babel can be used to transpile ES6+ code into plain old JavaScript, TypeScript remains a popular choice due to its static typing and OOP features, which increase code predictability and maintainability.
+
+When we initialize a TypeScript project, `tsc --init` command creates a tsconfig.json with a host of compiler flags. These flags control various aspects of TypeScript, such as enforcing strict type checking (`"strict": true`) or the ECMAScript target level (`"target": "es5"`). Modify these flags according to your project requirements.
 
 ## See Also:
 
-- [Why Starting a New Project Can Be Daunting (But Is Totally Worth It!)](https://dev.to/t/team-productivity/why-starting-a-new-project-can-be-daunting-but-is-totally-worth-it-2la0)
-- [The Top 10 Alternatives to Starting a New Project from Scratch](https://codecondo.com/top-10-alternatives-to-starting-a-new-project-from-scratch/)
-- [The Comprehensive Guide to Starting a New React Project](https://www.robinwieruch.de/react-folder-structure)
+- An in-depth guide to TypeScript: https://www.typescriptlang.org/docs/ 
+- Node.js official download page: https://nodejs.org/en/download/ 
+- npm official site: https://www.npmjs.com/
+- More on TypeScript compiler flags: https://www.typescriptlang.org/tsconfig
+- Babel - a JavaScript compiler worth considering : https://babeljs.io/

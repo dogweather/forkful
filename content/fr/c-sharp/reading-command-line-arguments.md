@@ -1,6 +1,6 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "C#: Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "C#"
 category:             "C#"
@@ -10,45 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est? 
+## Quoi & Pourquoi?
 
-Lecture des arguments de ligne de commande est essentiellement le processus de récupération des valeurs saisies par l'utilisateur lorsqu'il exécute un programme à partir de la ligne de commande. Les programmeurs font cela pour pouvoir personnaliser l'exécution de leur programme en fonction des entrées de l'utilisateur.
+Lire les arguments de la ligne de commande en C# implique de comprendre et de traiter les données insérées lors de l'exécution d'un programme via le terminal. Les développeurs utilisent cette méthode pour personnaliser le comportement d’un programme en fournissant des paramètres spécifiques au moment de sa lancement.
 
-## Comment faire :
+## Comment faire:
 
-Voici un exemple simple de lecture des arguments de ligne de commande en C# :
+Pour lire les arguments de la ligne de commande dans un programme C#, vous pouvez accéder à l'array `args[]` dans la méthode `Main()`. Voici comment vous pouvez le faire:
 
 ```C#
-using System;
-
-public class Program
+class Program
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        // On utilise la classe Environment pour accéder aux arguments de ligne de commande
-        string[] arguments = Environment.GetCommandLineArgs();
-
-        Console.WriteLine("Argument 1 : {0}", arguments[0]); // affiche le nom du programme
-        Console.WriteLine("Argument 2 : {0}", arguments[1]); // affiche le premier argument saisi par l'utilisateur
+        for (int i = 0; i < args.Length; i++)
+        {
+            System.Console.WriteLine("Arg[{0}] = [{1}]", i, args[i]);
+        }
     }
 }
 ```
-Exemple d'entrée utilisateur : ```monProgramme.exe argument1 argument2```
+Lorsque vous exécutez le programme avec `dotnet run -- arg1 arg2 arg3`, vous obtiendrez ce qui suit:
 
-Résultat :
 ```
-Argument 1 : monProgramme.exe
-Argument 2 : argument1
+Arg[0] = [arg1]
+Arg[1] = [arg2]
+Arg[2] = [arg3]
 ```
 
-## Plongée en profondeur :
+## Plongée profonde:
 
-La lecture des arguments de ligne de commande peut sembler un concept simple, mais il est très utile dans de nombreux scénarios de programmation. Il peut être utilisé pour personnaliser l'exécution d'un programme en fonction des préférences de l'utilisateur, pour effectuer des opérations spécifiques en fonction des arguments saisis ou encore pour faciliter le processus de débogage.
+Historiquement, la lecture des arguments de la ligne de commande est une pratique courante en programmation depuis l'ère des systèmes d'exploitation en ligne de commande. 
 
-Dans le passé, certains programmeurs utilisaient la méthode Console.Read() pour récupérer les entrées de l'utilisateur, mais cette méthode n'était pas très pratique et pouvait être source d'erreurs. La lecture des arguments de ligne de commande est donc devenue la méthode préférée pour récupérer les entrées de l'utilisateur.
+Une alternative serait d'utiliser une librairie tierce, comme CommandLineParser, qui offre plus de fonctionnalités et facilite le traitement d'options complexes. 
 
-## Voir aussi :
+Concernant les détails d'implémentation, à noter que l'array `args` est une copie de la ligne de commande utilisée pour lancer le programme, divisée en segments basés sur les espaces blancs, ce qui peut conduire à des problèmes si vos arguments contiennent eux-mêmes des espaces.
 
-Vous pouvez en apprendre davantage sur la lecture des arguments de ligne de commande en consultant la documentation officielle de Microsoft sur ce sujet : https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments
+## Voir aussi:
 
-Vous pouvez également trouver des exemples pratiques et des tutoriels sur des sites tels que tutorialspoint.com ou c-sharpcorner.com. N'hésitez pas à expérimenter et à découvrir toutes les possibilités offertes par la lecture des arguments de ligne de commande en C#.
+1. La documentation Microsoft sur les arguments de la ligne de commande : https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/main-and-command-args/
+2. Un guide sur l'utilisation de la librairie CommandLineParser : https://jalexhaywood.medium.com/a-brief-introduction-to-the-commandlineparser-library-ddc5e1b2e857
+3. Un article sur le traitement des options de ligne de commande complexes : https://martinfowler.com/articles/command-line-options.html

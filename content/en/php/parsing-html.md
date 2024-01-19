@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "PHP recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,53 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Parsing HTML in PHP: A Simple How-to Guide
+
 ## What & Why?
 
-Parsing HTML is the process of extracting data from HTML code and converting it into a structured format that can be easily manipulated and used by a computer. Programmers do this to automate tasks and data extraction, making their work more efficient and accurate.
+Parsing HTML is the process of converting HTML data into a structured format that's easier to interact with. It's critical for developers as it allows extracting, manipulating, and utilizing data from HTML documents.
 
 ## How to:
 
-To parse HTML using PHP, we can use the built-in functions ```file_get_contents()``` and ```DOMDocument```. 
+Let's breeze through a simplified snippet of code using PHP's built-in HTML parser, the DOMDocument class. 
 
-First, we use ```file_get_contents()``` to retrieve the HTML code from a URL or a local file. Then, we use ```DOMDocument``` to parse the HTML and extract the desired data.
-
-``` php
-// Retrieve HTML code
-$html = file_get_contents('http://www.example.com');
-
-// Create a new DOMDocument object
-$dom = new DOMDocument();
-
-// Load the HTML code into the DOMDocument object
-$dom->loadHTML($html);
-
-// Get all <a> tags from the HTML code
-$links = $dom->getElementsByTagName('a');
-
-// Loop through each <a> tag and print the href attribute value
-foreach ($links as $link) {
-    echo $link->getAttribute('href');
-}
+```PHP
+<?php   
+$dom = new DOMDocument; 
+libxml_use_internal_errors(true);
+$dom->loadHTML('<p>Hello, World!</p>'); 
+$paragraphs = $dom->getElementsByTagName('p');
+foreach($paragraphs as $para) {
+    echo $para->nodeValue, PHP_EOL; 
+}  
+?>
 ```
 
-Sample output:
-``` 
-http://www.example.com
-http://www.google.com
-http://www.facebook.com
+This code will result in the output:
+
+```
+Hello, World!
 ```
 
-## Deep Dive:
+Pretty neat, right? This PHP script creates a new instance of the DOMDocument class, loads the HTML into it, and then iterates over each paragraph (element with 'p' tag), echoing its content.
 
-Parsing HTML has been a common practice among programmers since the early days of the internet. In the past, this was done using regular expressions, which can be error-prone and difficult to maintain. With the introduction of the DOMDocument class in PHP 5, parsing HTML has become much easier and more reliable.
+## Deep Dive 
 
-An alternative to using ```file_get_contents()``` and ```DOMDocument``` is to use a third-party library such as Simple HTML DOM or phpQuery. These libraries offer more advanced features and are often used for web scraping or building web crawlers.
+PHP has in-built functions for HTML parsing since its early days, reflecting how integral HTML document manipulations are. However, parsing can also be done using other techniques, like regular expressions or third-party libraries such as SimpleHTML or phpQuery. Balance is key, though; opt for in-built functions when they suffice since they are typically faster, consume less memory, and are more efficient at handling edge cases.
 
-It's also important to note that HTML is a flexible and dynamic language, making parsing it a challenging task. Different HTML structures and attributes can make it difficult to write a one-size-fits-all solution. Therefore, it's important to carefully test and adjust the parsing code for different scenarios.
+## See Also
 
-## See Also:
+- More on DOMDocument: https://www.php.net/manual/en/class.domdocument.php
+- Learn about SimpleHTML: https://simplehtmldom.sourceforge.io/
+- Dive into phpQuery: https://code.google.com/archive/p/phpquery/
 
-- [PHP official documentation for file_get_contents() function](https://www.php.net/manual/en/function.file-get-contents.php)
-- [PHP official documentation for DOMDocument class](https://www.php.net/manual/en/class.domdocument.php)
-- [Simple HTML DOM](https://simplehtmldom.sourceforge.io/)
-- [phpQuery](https://code.google.com/archive/p/phpquery/)
+This guide just scratched the surface of HTML parsing. Feel free to check out these resources to keep exploring!

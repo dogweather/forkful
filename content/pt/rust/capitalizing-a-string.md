@@ -10,21 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
-Capitalizar uma string é transformar todas as letras em maiúsculas. Os programadores geralmente fazem isso para padronizar strings e torná-las mais legíveis.
+# Rust: Como Capitalizar uma String
+
+## O Que & Porquê?
+
+Capitalizar uma string significa transformar a primeira letra de cada palavra em maiúscula. Programadores fazem isso para melhorar a estética e legibilidade de textos em suas aplicações.
 
 ## Como fazer:
+
+Em Rust, você pode capitalizar uma string utilizando uma combinação de métodos do tipo `str`. Segue um exemplo:
+
 ```Rust
-let string = "exemplo";
-let capitalized_string = string.to_uppercase();
-println!("{}", capitalized_string);
+fn capitalizar(s: &str) -> String {
+    let mut resultado = String::new();
+    let mut uppercase_next = true;
+    for c in s.chars() {
+        let ch = if uppercase_next {
+            c.to_uppercase().collect::<String>()
+        } else {
+            c.to_lowercase().collect::<String>()
+        };
+        resultado.push_str(&ch);
+        uppercase_next = c.is_whitespace();
+    }
+    resultado
+}
+
+fn main() {
+    let minha_string = "olá, mundo!";
+
+    println!("{}", capitalizar(minha_string)); 
+    // saída: "Olá, Mundo!"
+}
 ```
 
-Saída: "EXEMPLO"
+## Mergulho Profundo
 
-## Profundidade:
-Embora capitalizar strings possa parecer uma tarefa simples, há algumas coisas a serem consideradas ao implementá-la. Antes do desenvolvimento de linguagens de programação modernas, capitalizar strings era geralmente feito por meio de conversão manual de caracteres. Felizmente, com o Rust, podemos usar o método `to_uppercase()` para capitalizar facilmente nossas strings.
+Historicamente, capitalização surgiu para facilitar a leitura, principalmente em idiomas latinos, sendo a técnica utilizada também em programação por esse motivo.
 
-## Veja também:
-- [Documentação oficial do Rust sobre `to_uppercase()`](https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase)
-- [Guia prático de formatação de strings em Rust](https://blog.logrocket.com/practical-guide-formatting-strings-rust/)
+Em Rust, além do método manual apresentado, há alternativas como o uso de bibliotecas externas que oferecem funções para esse fim, como a `titlecase`. No entanto, a abordagem acima é a mais conveniente por não demandar dependências extras.
+
+A implementação acima funciona da seguinte maneira: para cada caractere da string, verifica se deve ser convertido para maiúsculo (nesse caso, quando o caractere anterior era um espaço) ou minúsculo. 
+
+## Veja Também
+
+1. Documentação oficial `str.chars`: https://doc.rust-lang.org/std/primitive.str.html#method.chars
+2. Documentação oficial `str.is_whitespace`: https://doc.rust-lang.org/std/primitive.str.html#method.is_whitespace
+3. Documentação oficial `char.to_uppercase`: https://doc.rust-lang.org/std/primitive.char.html#method.to_uppercase
+4. Documentação oficial `char.to_lowercase`: https://doc.rust-lang.org/std/primitive.char.html#method.to_lowercase
+5. Documentação oficial `str.push_str`: https://doc.rust-lang.org/std/string/struct.String.html#method.push_str
+6. Biblioteca `titlecase`: https://crates.io/crates/titlecase

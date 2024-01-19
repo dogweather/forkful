@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Java: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -10,32 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Que?
+# Iniciação de um Novo Projeto em Java
 
-Comecar um novo projeto e o processo de iniciar um novo trabalho ou projeto no campo da programacao. Programadores frequentemente iniciam novos projetos para resolver problemas ou criar solucoes para desafios especificos.
+## O Que e Por quê?
+Iniciar um novo projeto em Java é criar um modelo a partir do zero para um novo aplicativo. Os programadores fazem isso para resolver problemas únicos que necessitam de soluções personalizadas.
 
 ## Como Fazer:
 
-```
-// Exemplo de codigo para iniciar um novo projeto em Java
-public class MeuProjeto {
-  public static void main(String[] args) {
-    System.out.println("Ola, mundo! Este e o meu novo projeto em Java!");
-  }
+Aqui está um exemplo de como criar seu primeiro programa Java, o famoso "Hello World".
+
+```Java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Olá, Mundo!");
+    }
 }
 ```
 
+Depois de compilar e executar o programa, você verá a saída:
+
 ```
-// Saida do codigo acima:
-Ola, mundo! Este e o meu novo projeto em Java!
+Olá, Mundo!
 ```
 
 ## Mergulho Profundo:
 
-Ao longo dos anos, novas tecnologias e linguagens de programacao surgiram, oferecendo alternativas ao Java para iniciar projetos. Porem, Java continua sendo uma das linguagens mais populares e amplamente utilizadas no mundo da programacao. Ao iniciar um novo projeto em Java, e importante considerar o uso de frameworks, bibliotecas e padroes de projeto para tornar o processo mais eficiente e eficaz.
+Ao iniciar um novo projeto, há algumas coisas que você deve considerar:
 
-## Veja Tambem:
+1. Contexto Histórico: Java foi criado em 1995 e desde então se tornou uma das linguagens de programação mais populares do mundo. É usado para várias finalidades, incluindo desenvolvimento web, desenvolvimento móvel, desenvolvimento de jogos e muito mais.
 
-- [Artigo sobre como iniciar um projeto em Java](https://www.javaworld.com/article/3013602/how-to-kickstart-your-java-project.html)
-- [Tutorial sobre os passos basicos para comecar um projeto em Java](https://www.geeksforgeeks.org/how-to-start-a-new-project-in-java/)
-- [Exemplo de codigo de um projeto simples em Java](https://github.com/javadevelopersguide/java-project-example)
+2. Alternativas: Embora Java seja excelente, existem várias outras linguagens de programação que também podem ser adequadas para o seu projeto, dependendo de suas necessidades. C#, Python, JavaScript e Ruby são apenas alguns exemplos.
+
+3. Detalhes de Implementação: Ao iniciar um novo projeto, comece planejando o design do seu software. Pense no que você precisa para o seu projeto e comece a escrever um pseudo-código que ajude na implementação.
+
+## Ver também:
+
+Se você está apenas começando a programar em Java, aqui estão alguns links úteis para você começar:
+
+- [Java para iniciantes](https://www.learnjavaonline.org/)
+- [Tutorial da Oracle para Java](https://docs.oracle.com/en/java/)
+- [Curso de introdução ao Java no Coursera](https://www.coursera.org/courses?query=java%20programming&)

@@ -10,29 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Controllare se una directory esiste è un'operazione comune nella programmazione PHP. Questo ci permette di verificare se una determinata directory è presente sul nostro server e di gestirne i contenuti in modo adeguato. È importante eseguire questo controllo per evitare errori e creare un'esperienza utente più fluida.
+## Che Cos'è e Perché?
 
-## Come fare:
-Ecco un esempio di codice PHP che controlla se la directory "immagini" esiste nella cartella corrente:
+Verificare se una directory esiste può sembrare banale, ma è fondamentale per molti programmi PHP. Questo controllo prevenire errori derivanti da operazioni su una directory inesistente e facilita la gestione delle risorse del file system.
+
+## Ecco Come:
+Il modo più semplice per controllare se una directory esiste in PHP è utilizzare la funzione `is_dir()`. Ecco un esempio di utilizzo:
+
 ```PHP
 <?php
-if (file_exists('immagini')) {
-    echo "La directory immagini esiste!";
-} else {
-    echo "La directory immagini non esiste.";
-}
+  $direttorio = '/percorsodeltuofile';
+
+  if (is_dir($direttorio)) {
+    echo 'La directory esiste!';
+  } else {
+    echo 'La directory non esiste!';
+  }
+?>
 ```
 
-Ecco l'output del codice sopra riportato:
-```
-La directory immagini esiste!
-```
+Quando si esegue questo script, verrà stampato 'La directory esiste!' se la directory esiste o 'La directory non esiste!' se non esiste. Ricorda, PHP è case-sensitive, quindi i nomi delle directory dovranno essere esatti!
 
-## Approfondimento:
-Il controllo della presenza di una directory è diventato più facile con l'introduzione di PHP 5. Se utilizzi una versione precedente, potresti usare la funzione `is_dir()` per raggiungere lo stesso risultato. Inoltre, puoi utilizzare la funzione `mkdir()` per creare una nuova directory se quella richiesta non esiste.
+## Approfondimenti:
+Il principio dell'esistenza della directory è in atto da quando i file system sono stati introdotti nei computer. In PHP, la funzione `is_dir()` è disponibile dalla versione 4.0.0, rendendola una delle funzioni più storiche del linguaggio.
+
+Come alternativa, è possibile utilizzare le funzioni `file_exists()` o `opendir()`. La prima verifica l'esistenza di un file o una directory, mentre la seconda tenta di aprire una directory e restituisce FALSE se non riesce.
+
+Per quanto riguarda l'implementazione, `is_dir()` chiama semplicemente la funzione di sistema `stat` sul sistema operativo. Questa funzione restituisce una struttura di dati che contiene tutte le informazioni sul file, inclusa la sua tipologia.
 
 ## Vedi anche:
-- [Funzione `file_exists()` su PHP.net](https://www.php.net/manual/it/function.file-exists.php)
-- [Funzione `is_dir()` su PHP.net](https://www.php.net/manual/it/function.is-dir.php)
-- [Funzione `mkdir()` su PHP.net](https://www.php.net/manual/it/function.mkdir.php)
+1. [Manuale PHP: is_dir](https://www.php.net/manual/it/function.is-dir)
+2. [Manuale PHP: file_exists](https://www.php.net/manual/it/function.file-exists)
+3. [Manuale PHP: opendir](https://www.php.net/manual/it/function.opendir)

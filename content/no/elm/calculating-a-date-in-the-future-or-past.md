@@ -1,7 +1,7 @@
 ---
-title:                "Beregning av datoer i fremtiden eller fortiden"
-html_title:           "Elm: Beregning av datoer i fremtiden eller fortiden"
-simple_title:         "Beregning av datoer i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "Elm: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,25 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å beregne en dato i fremtiden eller fortiden handler om å bestemme en spesifikk dato basert på en startdato og et antall dager i tillegg eller substraksjon. Dette verktøyet er nyttig for programmerere for å håndtere tid og datoer i applikasjoner, for eksempel å planlegge fremtidige hendelser eller beregne aldre.
 
-## Slik gjør du:
-For å beregne en dato i fremtiden eller fortiden i Elm, kan du bruke funksjonen `addDays` fra `Time`-modulen. Denne funksjonen tar inn et heltall (dager) og en dato, og returnerer en ny dato som er det angitte antallet dager unna den opprinnelige datoen. Her er et eksempel som viser hvordan du kan legge til 30 dager til en dato:
+Å beregne en dato i fremtiden eller fortiden innebærer å legge til eller trekke fra et bestemt antall dager, måneder eller år fra en gitt dato. Programmerere gjør dette for å håndtere datorelaterte funksjoner i applikasjoner, som planleggende hendelser, påminnelser, oppgaver og mer.
+
+## Hvordan gjøre det:
+
+Her er et grunnleggende eksempel på Elm for å beregne en fremtidig dato, i dette tilfellet 5 dager framover:
 
 ```Elm
-import Time exposing (..)
-import Time.Extra exposing (..)
+import Time
 
-addDays 30 (fromDate 2022 Jan 1)
+main =
+  let 
+    today = Time.millisToPosix 1636090328000
+    fiveDaysInMilliseconds = 5 * 24 * 60 * 60 * 1000
+  in 
+    Debug.toString (Time.posixToMillis (Time.adjust (Time.millisToDuration fiveDaysInMilliseconds) today))
 ```
 
-Resultatet vil være 2022 Jan 31. På samme måte kan du trekke fra dager ved å bruke et negativt heltall i `addDays`-funksjonen.
+Output vil være en tidsstempel som representerer datoen 5 dager senere.
 
-## Dykk dypere:
-Historisk sett ble datoberegning gjort manuelt ved hjelp av kalendere og matematiske formler. I dag tilbyr de fleste programmeringsspråk, inkludert Elm, innebygde funksjoner for å beregne datoer for å gjøre det enklere for programmerere.
+## Dyp Dykk:
 
-En alternativ måte å beregne datoer på i Elm er å bruke `addTime`-funksjonen som tar inn en `Time`-verdi i stedet for en dato. Implementeringsmessig fungerer `addDays`-funksjonen ved å konvertere datoen til millisekunder og legge til eller trekke fra antall millisekunder til den endelige dato. Det er også verdt å merke seg at datoberegning kan være mer kompleks når du tar hensyn til faktorer som skuddår og ulike månedslengder.
+**Historisk Kontekst:** Dato-beregning er en eldre praksis i programmering, til og med fra før datamaskintiden. Det hjelper oss med å løse mange praktiske problemer i programvareutvikling.
 
-## Se også:
-- Elm `Time`-modulen dokumentasjon: https://package.elm-lang.org/packages/elm/time/latest/
-- Elm `Time.Extra`-modulen dokumentasjon: https://package.elm-lang.org/packages/elm/time/1.0.0/Time-Extra
+**Alternativer:** Du kan finne flere pakker for å håndtere datoer i Elm, som `elm-date-extra` og `ryannhg/date-format`. De gir mer omfattende håndtering av datoformat, tidssoner, osv.
+
+**Implementasjonsdetaljer:** Standardbiblioteket `Time` i Elm bruker Posix (Unix-tid) for å representere tid, som er antall millisekunder siden 'den første januar 1970 UTC'. For enkelhet har vi brukt en konstant tidsstempel for 'i dag'. I en ekte applikasjon vil du sannsynligvis få den faktiske tiden ved å bruke 'Time.now`.
+
+## Se Også:
+
+- [Offisiell Elm Dokumentasjon for Tid (Time)](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Dato- og tidhåndtering i Elm](https://elmprogramming.com/dates-and-times.html)
+- [Tid og Datoer i Elm: en Grundig Guide](https://korban.net/posts/elm/2019-12-13-date-and-time-in-elm-a-thorough-guide/)

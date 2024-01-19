@@ -1,6 +1,6 @@
 ---
 title:                "下载网页"
-html_title:           "Clojure: 下载网页"
+html_title:           "Arduino: 下载网页"
 simple_title:         "下载网页"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#### 什么 & 为什么？
+## 什么 & 为什么?
 
-下载网页指的是从互联网上获取网页内容的过程。程序员通常会这样做，是因为他们需要获取特定网页的信息，比如抓取数据或者分析网页结构。
+下载网页是从服务器获取网页内容的过程。程序员进行这个操作是为了抓取、分析网页数据，或者创建网页的备份。
 
-#### 怎么做？
+## 如何做:
 
-```Clojure
-(require '[clj-http.client :as client])
-
-(client/get "https://example.com")
-```
-
-执行以上代码后，你将会得到一个包含网页内容的响应对象。你可以通过 `.body` 命令来获取网页内容。
+下载网页可以使用clojure的http-kit客户端。这是一个简单、强大的HTTP库。如下是下载Google主页的代码示例:
 
 ```Clojure
-(def response (client/get "https://example.com"))
-(.body response)
+(require '[org.httpkit.client :as http])
+
+(defn download-webpage 
+  [url]
+  (let [response @(http/get url {:as :text})]
+    (:body response)))
+
+;; 使用方法
+(save-webpage "http://google.com")
 ```
 
-#### 深入了解
+基本上，`http/get`函数向给定URL发出GET请求。`@`操作会阻止该函数，直到请求返回结果，然后我们只取返回体中的内容。
 
-下载网页的概念也可以追溯到互联网发展的早期，但在现代，它已经成为众多互联网应用的必备功能。除了Clojure中的clj-http库，还有其他很多库也可以用来下载网页，比如HttpKit和clj-http-lite。从技术上讲，下载网页的过程包括建立HTTP连接、发送HTTP请求、接收响应并处理响应数据的过程。如果你对网络编程感兴趣，不妨深入了解一下这个过程的细节。
+## 深度探究：
 
-#### 查看更多
+首先，下载网页的需求源自网页抓取，这是早期网络索引的基础。早在90年代，搜索引擎就通过这种方式收集网页。
+其次，Clojure的其他库如clj-http和http.async.client也能进行网页下载，选择哪种取决于你的具体需求。
+最后，为了解决网络延迟问题，http-kit使用了基于回调的异步设计，该设计能提高程序的性能。
 
-- [clj-http库文档](https://github.com/dakrone/clj-http)
-- 互联网上的其他HTTP客户端库
-- HTTP协议文档
+## 参考资料： 
+
+1. http-kit文档: http://http-kit.org/400.html
+2. clj-http文档: https://github.com/dakrone/clj-http
+3. http.async.client文档: https://github.com/neotyk/http.async.client
+4. Web抓取相关资料: https://en.wikipedia.org/wiki/Web_scraping

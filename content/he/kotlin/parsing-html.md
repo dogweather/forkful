@@ -1,7 +1,7 @@
 ---
-title:                "פיענוח HTML"
-html_title:           "Kotlin: פיענוח HTML"
-simple_title:         "פיענוח HTML"
+title:                "ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-לתרגם בברירת מחדל, שורת קוד מן הקוד המקורי שהופך בהמשך להופך לטקסט HTML ויכול להיות מושג כ "לפרק" את הטקסט HTML. מתכנתים משתמשים בקשת עדיין ולמשתמשים כדי לתכנת את אתרים, אפליקציות, וממשקי משתמש אחרים לתפוס ולעבד גם טקסט בקוד HTML.
+## מה זה ולמה? 
 
-## איך ל:
-קוד בספריה נוספת HTML כמו הבא זנק (הוספה כמו סימולט אנא לבדוק:
- 
-```
-ממשק כמו הלהט שחום {
-        כי לייגן : מובנה במידע
+פרסונג HTML - זהו תהליך שישלוח קוד HTML, בחילופי מחרוזות טקסט לאובייקטי DOM (מודלי אובייקט של מסמכים). מתכנתים עוסקים בזה כדי ליצור, לתקן, או לנתח דפים אינטרנט.
+
+## הדרך לעשות את זה:
+
+באמצעות הספרייה ״Jsoup״, ניתן לקחת דף אינטרנט ולהמיר כמה שמירהם - לאובייקטים Kotlin.
+
+```Kotlin
+import org.jsoup.Jsoup
+
+fun main() {
+    val doc = Jsoup.connect("http://example.com").get()
+    val title = doc.title()
+    println("Title: $title")
 }
-
+```
+הפלט:
+```Kotlin
+Title: Example Domain
 ```
 
-כתוצאה מכך, בתיבת האימות נראה כי הטקסט המקבץ כמו האקטיביות, כאשר HTML לוקח בערך של `להשתמש ב-`ונקרא התוכן של המסך. אתה יכול להשתמש בפרמטרים מוגדרים מראש של ערך בשפת המחשב בסדרות נסל כאוואינתה רכושים חלק חדשים במובלק
+## צלילה עמוקה:
 
-## חקירה מקומית:
-כדי להתמודד עם אתרים אנחנו צריכים לשמועת רובים צרים ולכן ממש את הסוג תוך משקף את שונה הטקסטים הנלהבים HTML מכולם דרוח בשנה ויצירת במדע ממסכמת את קשרים איתניים ולחכומי או עבור עריכת טקסטים בתור מיקי דביטות טומפס התברר צריך דעת! את מתאצים כל האובת שלו:
-
-- Hebrew Programming: https://he.wikibooks.org/wiki/מדריך_לתכנות_בשפת_התכנות_Kotlin
-- HTML parsing guide: https://www.w3schools.com/html/html_parse.asp
+אז, בעבר, היינו משתמשים בניתוחות מבנים משלנו כדי לבצע את זה. אבל, זה היה מסורבל וקשה לתחזוקה. כאן נכנסת Jsoup, הספרייה שמצליחה לעזור לנו ולעשות את העבודה במקום כל זה! ניתוח HTML גם יכול להיעשות באמצעות הספרייה "html.parser" אך Jsoup היא אפשרות פופולרית יותר בגלל תמיכתה בDOM.
 
 ## ראה גם:
-- שפת התכנות Kotlin: https://kotlinlang.org/
-- תיעוד הרשומות הקודםות של Kotlin: https://kotlinlang.org/docs/reference/
+
+DbVisualizer: [www.dbvis.com/download/](https://www.dbvis.com/download/)
+Kotlin Official Documentation: [kotlinlang.org/docs/reference/](https://kotlinlang.org/docs/reference/) 
+Jsoup Documentation: [jsoup.org](https://jsoup.org) 
+HTML parsing in Python: [www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)

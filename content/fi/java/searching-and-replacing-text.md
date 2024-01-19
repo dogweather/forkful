@@ -1,6 +1,6 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Java: Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Java"
 category:             "Java"
@@ -11,35 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Tekstin etsiminen ja korvaaminen on yksi tavallisimmista ohjelmointitehtävistä. Sen avulla voimme muokata tekstiä haluamallamme tavalla, kuten korjata kirjoitusvirheitä tai muuttaa tietyn sanan kaikki esiintymät. Ohjelmoijat käyttävät tätä työkalua usein tehdäkseen massamuutoksia koodiin tai muokatakseen suuria määriä tekstitiedostoja.
 
-## Miten:
-```Java
-String teksti = "Tämä on esimerkkiteksti";
-String uusiTeksti = teksti.replace("esimerkki", "uusi");
-System.out.println(uusiTeksti);
-```
-Tulostus:
-```
-Tämä on uusi teksti
-```
-Tässä esimerkissä käytimme String-luokan replace-metodia korvataksesi sanan "esimerkki" sanalla "uusi". Tämä toimii myös, jos etsittävä ja korvattava sana ovat osa pidempää sanaa.
+Tekstin hakeminen ja korvaaminen on prosessi, jolla etsitään joukko merkkejä (eli merkkijono) tekstistä ja korvataan ne toisella merkkijonolla. Ohjelmoijat tekevät tämän datan siivoamiseen, tiedostojen muokkaamiseen, tiedon uudelleenjärjestämiseen ja paljon muuta.
+
+## Kuinka:
+
+Katsotaanpa, kuinka tämä toimii Java:ssa.
 
 ```Java
-String teksti = "Tämä lause sisältää useita esimerkkisanoja, joten ne kaikki korvataan";
-String korvattuTeksti = teksti.replaceAll("esimerkkisana", "korvattu sana");
-System.out.println(korvattuTeksti);
+public class Main {
+  public static void main(String[] args) {
+    String str = "Hei Maailma!";
+    String updatedStr = str.replace("Hei", "Terve");
+    System.out.println(updatedStr);
+  }
+}
 ```
-Tulostus:
+
+Tässä yksinkertaisessa esimerkissä "Hei" korvataan sanalla "Terve". Outputtina saamme:
+
 ```
-Tämä lause sisältää useita korvatut sanat, joten ne kaikki korvataan
+Terve Maailma!
 ```
-Tässä esimerkissä käytimme String-luokan replaceAll-metodia, joka korvaa kaikki sanojen esiintymät tekstissä.
 
 ## Syvällinen sukellus:
-Tekstin etsiminen ja korvaaminen on ollut käytössä jo varhaisimmista ohjelmointikielistä lähtien, ja sen merkitys vain kasvaa teknologian kehittyessä. Tässä Java-esimerkkien lisäksi löytyy monia muita tapoja toteuttaa tämä toiminto, kuten Bash-skripteillä tai tekstieditorien sisäisillä hakutyökaluilla. Kannattaa tutustua eri vaihtoehtoihin ja valita itselleen sopivin.
+
+1. Historiallinen yhteys: Vanhat ohjelmointikielet, kuten C ja Fortran, joissa ei ollut sisäänrakennettuja funktioita tekstin hakemiseen ja korvaamiseen, vaativat ohjelmoijia kirjoittamaan paljon koodia tähän toimintoon.
+2. Vaihtoehdot: Joissain kielissä, kuten Perl:ssä ja Python:ssa, on kyky suorittaa Regular Expressions (säännölliset lausekkeet), joka on tehokas tapa etsiä ja korvata tekstiä.
+3. Toteutustiedot: Java:ssa `replace()`-metodi on osa `String`-luokkaa, ja se palauttaa uuden merkkijonon. Joissakin tapauksissa, kun suoritetaan useita korvaavia toimenpiteitä, esimerkiksi `StringBuilder` tai `StringBuffer` voi olla tehokkaampi.
 
 ## Katso myös:
-- [Java String-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Bash-skriptien käyttö tekstien muokkaamisessa](https://linuxhint.com/sed-awk-bash/)
-- [TextWrangler-tekstieditorin hakutoiminto](https://www.barebones.com/products/textwrangler/)
+
+1. Oracle Java Documentation about `replace()`: [Oracle Java Docs](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-)
+2. Tutorial on Regular Expressions in Java: [Java Regex Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+3. Information on StringBuilder: [StringBuilder in Java](https://www.javatpoint.com/StringBuffer-class)

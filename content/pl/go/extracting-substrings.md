@@ -1,7 +1,7 @@
 ---
-title:                "Wycinanie podciągów"
-html_title:           "Go: Wycinanie podciągów"
-simple_title:         "Wycinanie podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,34 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+## Co i dlaczego?
+Wyodrębnianie substringów polega na wyciąganiu fragmentów z większego ciągu znaków. Programiści robią to dla manipulacji danymi i przekształcania informacji zawartych w ciągach znaków w użyteczne dane.
 
-Wyciąganie podciągów (tak zwanych substringów) to proces wyodrębniania fragmentów tekstu z większego ciągu znaków. Programiści często wykonują tę czynność, aby przetworzyć lub analizować dane zgodnie z określonymi warunkami lub wymaganiami.
-
-# Jak to zrobić?
-
-Aby wyodrębnić podcięcie w Go, użyjemy funkcji ```strings[x:y]```, gdzie x jest indeksem początkowym, a y jest indeksem końcowym naszego podciągu. Przykładowy kod mógłby wyglądać następująco:
+## Jak to zrobić:
 
 ```Go
 package main
-
 import "fmt"
-import "strings"
 
 func main() {
-    text := "To jest tekst przykładowy"
-    substring := text[8:13] // wyciągniemy podciąg "tekst"
-    fmt.Println(substring) // wypisze "tekst"
+	str := "Witaj, Świecie Go"
+	subStr := str[7:13]
+	fmt.Println(subStr) 
 }
 ```
+Powinno zwrócić: "Świecie"
 
-# Głębsze zanurzenie
+Jasne, co? Dodatkowo możemy używać funkcji `strings` w Go do wyodrębniania substringów.
 
-Historia wyodrębniania podciągów sięga powstania pierwszych języków programowania, takich jak COBOL i FORTRAN. Współcześnie, istnieje kilka alternatywnych metod wyciągania podciągów, takich jak funkcja ```Substring``` w języku C#.
+```Go
+package main
+import (
+	"fmt"
+	"strings"
+)
 
-W Go, funkcja ```strings[x:y]``` jest zaimplementowana za pomocą typu wbudowanego ```string```, który nie może być zmieniany. Dzięki temu, podciągi są traktowane jak niezmienniki i zapewniają bezpieczne operacje na tekście.
+func main() {
+	str := "Witaj, Świecie Go"
+	subStr := strings.Split(str, ",")[1]
+	fmt.Println(subStr)
+}
+```
+Zwraca: " Świecie Go"
 
-# Zobacz także
+## Deep Dive
+Wyodrębnianie substringów jest fundamentalnym aspektem manipulacji tekstem, używanym od początków programowania. Go korzysta z indeksowania łańcuchów bajtów za pomocą indeksów i wykorzystuje wydajne operacje przycinania. Alternatywą jest użycie paczki `strings`, która obejmuje wiele funkcji, w tym `Split`, `Contains` itp., co zapewnia większą kontrolę nad procesem.
 
-- [Dokumentacja języka Go](https://golang.org/doc/)
-- [Porównanie funkcji wyciągającej podciągi w językach programowania](https://www.w3resource.com/CSharp/csharp-string-methods/substring.php)
+Podczas wyodrębniania substringów warto pamiętać, że Go interpretuje stringi jako ciąg bajtów, dlatego podczas pracy z multibajtowymi znakami (takimi jak UTF-8) mogą wystąpić problemy.
+
+## Zobacz też:
+- Dokumentacja Go na temat pakietu Strings: https://golang.org/pkg/strings/
+- Artykuł na Medium o manipulacji stringami w języku Go: https://medium.com/go-walkthrough/go-walkthrough-strings-package-4985b3bb22bb
+- Kurs Codecademy dotyczący przetwarzania tekstu w Go: https://www.codecademy.com/learn/learn-go/modules/learn-go-string-and-console-output

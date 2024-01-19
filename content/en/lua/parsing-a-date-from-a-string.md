@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Lua recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,40 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing a date from a string is the process of extracting information from a string that represents a date, such as "Monday, June 1st 2020". Programmers do this in order to convert the string into a date object that can be manipulated and used in their code.
+
+Parsing a date from a string in programming involves reading a text input in the format of a date (such as '12/01/2021') and transforming it into a data representation that the program can use. This is an essential task for handling user input, processing data from APIs or databases, and for various other use cases.
 
 ## How to:
-To parse a date from a string in Lua, we can use the built-in os.date() function. This function takes two arguments: a format string and a time value. The format string specifies the desired date format and the time value is the string that we want to parse.
 
-Example:
+Lua does not have a built-in date parsing method. But, thanks to its string manipulation functions, we are able to parse dates from strings.
+
+Let's say we have a date in this format 'dd/mm/yyyy'. Here's a simple example in Lua:
+
+```Lua
+function stringToDate(dateStr)
+    local day, month, year = dateStr:match("(%d+)/(%d+)/(%d+)")
+    return { day = tonumber(day), month = tonumber(month), year = tonumber(year) }
+end
+
+local date = stringToDate("12/01/2021")
+print(date.day, date.month, date.year) -- outputs: 12 01 2021
 ```
--- Parse a short date string
-local date = os.date("%m/%d/%y", "06/01/20")
-print(date) --> 06/01/20
+On running this script, the Lua interpreter will print `12 01 2021`, representing day, month, and year, respectively.
 
--- Parse a full date string
-local date = os.date("%A, %B %d %Y", "Monday, June 1st 2020")
-print(date) --> Monday, June 1st 2020
-```
+## Deep Dive 
 
-## Deep Dive:
-Historically, parsing dates from strings has been done manually by programmers, as there were no built-in functions for this task. However, modern languages like Lua have included built-in functions to make this process easier.
+Lua, a lightweight scripting language, doesn't provide an extensive date-time API like Python or JavaScript. It only offers a simple `os.date` function that formats current time or a given timestamp. Hence, to parse a date from a string, programmers need to resort to string manipulation.
 
-An alternative method for parsing dates in Lua is to use the string.gmatch() function. This function allows you to match patterns in a string and extract the matched values.
+An alternative approach is to use Lua-based libraries, such as lua-date, which provide higher-level date and time manipulation functions. Lua-date can handle different date formats and timezones, providing a more flexible solution.
 
-Example:
-```
--- Extract the day and month from a string
-local text = "Monday, June 1st 2020"
-local day, month = string.gmatch(text, "%a+"), string.gmatch(text, "%a+")
-print(day, month) --> Monday, June
+The implementation detail of our script uses a basic regular expression to extract day, month, and year from the string, which are then converted to a number using `tonumber` due to Lua treating matched strings as text by default.
 
--- You can then manipulate the extracted values to create a date object according to your needs.
-```
+## See Also
 
-When parsing dates from strings, it's important to consider the various date formats that may be used. You may need to use different format strings depending on the format of the string you are parsing.
-
-## See Also:
-- [Lua documentation for os.date() function](https://www.lua.org/manual/5.3/manual.html#pdf-os.date)
-- [Lua documentation for string.gmatch() function](https://www.lua.org/manual/5.3/manual.html#6.4.1)
-- [W3Schools tutorial on parsing dates in Lua](https://www.w3schools.com/lua/func_os_date.asp)
+For more details and advanced uses, you can check out the following resources:
+* [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/)
+* [Lua-date library on GitHub](https://github.com/Tieske/date)
+* [Lua String Manipulation Tutorial](https://www.tutorialspoint.com/lua/lua_strings.htm)

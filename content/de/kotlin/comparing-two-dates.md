@@ -1,6 +1,6 @@
 ---
 title:                "Vergleich von zwei Daten"
-html_title:           "Kotlin: Vergleich von zwei Daten"
+html_title:           "C#: Vergleich von zwei Daten"
 simple_title:         "Vergleich von zwei Daten"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,35 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Beim Programmieren ist es oft wichtig, zwei verschiedene Daten zu vergleichen. Das bedeutet, dass wir überprüfen wollen, ob zum Beispiel ein Datum in der Zukunft oder Vergangenheit liegt oder ob zwei Termine auf den gleichen Tag fallen. Programmierer nutzen diese Vergleiche, um Daten zu sortieren oder um Bedingungen zu setzen.
+Das Vergleichen zweier Daten ist ein einfacher Weg festzustellen, welches Datum früher oder später ist. Entwickler nutzen diese Methode, um Zeitabläufe in Anwendungen zu organisieren oder zu steuern.
 
-## So geht's:
-
-Für die Vergleich von zwei Daten stehen in Kotlin verschiedene Methoden zur Verfügung. Die gebräuchlichste Methode ist die Verwendung des "filter"-Methoden in Kombination mit "compareTo". Diese beiden Methoden können in einer Codezeile verwendet werden, um die Bedingungen für die Vergleiche zu setzen.
+## Anleitung: 
 
 ```Kotlin
-val date1 = LocalDate.of(2021, 10, 31) // Das Datum kann beliebig eingestellt werden
-val date2 = LocalDate.now() // Hier wird das heutige Datum verwendet
-val comparison = date2.compareTo(date1)
-if (comparison == 0) { // Wenn die beiden Daten gleich sind
-    println("Die Daten sind gleich.")
-} else if (comparison > 0) { // Wenn date2 später ist als date1
-    println("date2 ist später als date1.")
-} else { // Wenn date2 früher ist als date1
-    println("date2 ist früher als date1.")
+import java.time.LocalDate
+
+fun main() {
+    val date1 = LocalDate.of(2020, 1, 1)
+    val date2 = LocalDate.of(2021, 1, 1)
+
+    when {
+        date1.isBefore(date2) -> println("date1 ist vor date2")
+        date1.isAfter(date2) -> println("date1 ist nach date2")
+        else -> println("date1 und date2 sind gleich")
+    }
 }
 ```
 
-Die Ausgabe wird je nach den gewählten Daten unterschiedlich sein. Wenn das heutige Datum in unserem Beispiel den 31. Oktober 2021 ist, wird die Ausgabe "Die Daten sind gleich." sein. Wenn das heutige Datum jedoch beispielsweise der 1. November 2021 ist, wird die Ausgabe "date2 ist später als date1." sein.
+Das obige Code-Beispiel wird "date1 ist vor date2" ausgeben, da das Datum von `date1` der 1. Januar 2020 und das von `date2` der 1. Januar 2021 ist.
 
-## Tiefenschärfe:
+## Tiefergehende Informationen: 
 
-In der Vergangenheit gab es verschiedene Möglichkeiten, Daten in Programmen zu vergleichen. Eine davon war die Verwendung von "Date" Objekten, die jedoch oft aufgrund der Zeitzone oder anderer Faktoren zu inkonsistenten Ergebnissen führten. Mit der Einführung von Java 8 wurde die "LocalDate" Klasse eingeführt, die derzeit die bevorzugte Methode in Kotlin ist, um Daten zu vergleichen.
+Historisch wurde das Vergleichen von Daten in Kotlin nur über komplexe Umwege und eigene Algorithmen ermöglicht. Mit der aufkommenden `java.time`-Bibliothek im JDK 8, wurden diese Herausforderungen jedoch leichter. Alternativen zum direkten Vergleichen zweier Daten können das Extrahieren und Vergleichen einzelner Datumskomponenten (Tag, Monat, Jahr) sein. Allerdings führen solche Vorgehensweisen oft zu längeren und fehleranfälligeren Code.
 
-Alternativ kann auch die "isAfter" oder "isBefore" Methoden verwendet werden, um festzustellen, ob ein Datum später oder früher als ein anderes ist. Diese Methoden funktionieren ähnlich wie "compareTo", liefern jedoch ein boolean als Ergebnis.
+## Weiterführende Themen:
 
-## Siehe auch:
-
-- [Offizielle Kotlin Dokumentation zu Dates](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
-- [Vergleich von Daten mit Java 8](https://docs.oracle.com/javase/tutorial/datetime/iso/whythreedten.html)
-- [Vergleich von Daten mit anderen Programmiersprachen](https://www.geeksforgeeks.org/date-class-in-java/)
+- Kotlin Dokumentation zu LocalDate: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/
+- Java Time API: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+- Informative Beispieldemonstration über LocalDate in Kotlin: https://www.baeldung.com/kotlin-dates

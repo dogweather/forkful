@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstaver i en streng"
-html_title:           "Java: Stor bokstaver i en streng"
-simple_title:         "Stor bokstaver i en streng"
+title:                "Gjøre en streng stor"
+html_title:           "Java: Gjøre en streng stor"
+simple_title:         "Gjøre en streng stor"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-I Java, er å capitalisere en streng å endre den første bokstaven til en stor bokstav og resten av bokstavene til små bokstaver. Dette gjøres ofte for å gjøre strenger mer leselig eller for å følge god programmeringspraksis.
+# Hvordan kapitalisere en streng i Java
 
-## Hvordan:
-Det er flere måter å capitalisere en streng på i Java. En vanlig metode er å bruke metoden "toUpperCase" og "toLowerCase" på karakterene i strengen, som vist i eksempelet nedenfor:
+## Hva & Hvorfor?
+Kapitalisering av en streng betyr at første bokstav i strengen blir gjort stor. Programmetører gjør dette for å forbedre lesbarheten og korrektur i en gitt tekst.
 
-```Java
-String str = "hallo verden";
-System.out.println(str.toUpperCase()); // output: HALLO VERDEN
-System.out.println(str.toLowerCase()); // output: hallo verden
-```
-
-En annen måte å gjøre dette på er å bruke metoden "substring" for å få tak i den første bokstaven og metoden "replaceFirst" for å endre den til stor bokstav, som vist nedenfor:
+## Hvordan til:
+Med Java, bruker vi `substring()` og `toUpperCase()` metoder for å kapitalisere en streng. Her er et eksempel:
 
 ```Java
-String str = "hallo verden";
-String firstLetter = str.substring(0,1); // hentes ut første bokstav
-String newStr = str.replaceFirst(firstLetter, firstLetter.toUpperCase());
-System.out.println(newStr); // output: Hallo verden
+public static String capitalize(String str) {
+    if(str == null || str.isEmpty()) {
+        return str;
+    }
+    return str.substring(0, 1).toUpperCase() + str.substring(1);
+}
+
+public static void main(String[] args) {
+    System.out.println(capitalize("hello world!"));  // Output: Hello world!
+}
 ```
 
-## Dypdykk:
-Capitalizing av strenger har vært en del av programmering siden tidligere språk som COBOL og FORTRAN. I dag er det fortsatt en viktig del av god programmeringspraksis for å gjøre koden mer leselig og for å følge konvensjonene i et språk. I tillegg til Java, finnes det også innebygde funksjoner for å capitalisere strenger i mange andre programmeringsspråk.
+## Deep Dive
+Historisk sett, denne praksisen med kapitalisering har vært i bruk siden de tidlige dagene av programmering for å forbedre lesbarheten.
 
-## Se også:
-- [String API Dokumentasjon](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
-- [Capitalizing en String i Java - GeeksforGeeks](https://www.geeksforgeeks.org/capitalizing-first-letter-of-each-word-in-java/)
+Alternativt, hvis du bruker Apache Commons lang bibliotek, kan du benytte `WordUtils.capitalize()` funksjonen for å gjøre dette. Men for standard Java, vi holder oss til `substring()` og `toUpperCase()`.
+
+Når det gjelder implementasjonsdetaljer, `toUpperCase()` metoden konverterer alle tegnene i strengen til store bokstaver, mens `substring()` metoden henter en del av strengen. Kombinasjonen av disse to gir oss kapitalisering.
+
+## Se Også:
+- [Java String substring() Method](https://www.javatpoint.com/java-string-substring)
+- [Java String toUpperCase() Method](https://www.javatpoint.com/java-string-touppercase)
+- [Apache Commons Lang – WordUtils.capitalize()](https://www.baeldung.com/java-capitalizing-lowercase)

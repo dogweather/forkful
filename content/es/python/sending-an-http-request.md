@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Python: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Python"
 category:             "Python"
@@ -11,39 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y Por qué?
-Enviar una solicitud HTTP es una forma en la que los programadores pueden comunicarse con servidores web para obtener o enviar información. Esto es especialmente útil cuando se están creando aplicaciones que interactúan con otros servicios en línea, como redes sociales o API. 
 
-## ¿Cómo hacerlo?
+(What & Why?)
 
-Para enviar una solicitud HTTP en Python, podemos usar el módulo `requests`. Primero, debemos importarlo en nuestro código:
+Enviar una solicitud HTTP significa pedir datos a un servidor web. Los programadores lo hacen para interactuar con servicios web, obteniendo información o enviando datos para su procesamiento.
 
-```python
+## Como hacerlo:
+
+(How to:)
+
+Para enviar solicitudes HTTP en Python, podemos utilizar el paquete `requests`. Echemos un vistazo a un ejemplo simple de cómo hacerlo.
+
+```Python
 import requests
+
+respuesta = requests.get('http://example.com')
+print(respuesta.text)
 ```
+Si ejecutas este código, obtendrás el contenido HTML de `example.com` impreso en tu pantalla.
 
-Luego, podemos crear una solicitud GET a una URL específica usando la función `get()` y guardar la respuesta en una variable:
+## Profundización:
 
-```python
-response = requests.get('http://www.ejemplo.com/')
-```
+(Deep Dive)
 
-Podemos obtener el código de estado de la respuesta usando el atributo `status_code`:
+El protocolo HTTP es un pilar de la web tal como la conocemos y se remonta a 1991. Python introdujo la biblioteca `requests` como una forma simple de trabajar con HTTP, y ha permanecido como la forma predominante de hacerlo en Python desde entonces.
 
-```python
-print(response.status_code)
-```
+Existen alternativas a la biblioteca `requests`, algunas de las cuales son `http.client` (incluido en la biblioteca estándar de Python) y `httplib2`.
 
-También podemos ver el contenido de la respuesta usando el atributo `text`:
+Cuando se envía una solicitud HTTP con `requests`, primero se establece una conexión con el servidor. Luego, se envía una solicitud que incluye una línea de solicitud (método, URL, versión de HTTP), encabezados de solicitud, y un cuerpo de solicitud (datos a enviar, si los hay). El servidor responde con su propio mensaje, que también incluye una línea de estado, encabezados de respuesta y un cuerpo de respuesta (los datos que está enviando de vuelta).
 
-```python
-print(response.text)
-```
+## Ver También:
 
-## Profundizando
-Las solicitudes HTTP han sido una parte fundamental de la web desde su inicio en los años 90. Sin ellas, no podríamos interactuar con diferentes sitios web y servicios. Además, además del módulo `requests`, también podemos usar la biblioteca estándar `urllib` de Python para enviar solicitudes. 
+(See Also:)
 
-Si deseamos especificar más detalles en nuestra solicitud, como encabezados personalizados o parámetros, podemos hacerlo usando los argumentos opcionales en la función `get()`. También podemos enviar solicitudes POST en lugar de GET cambiando el método en la función de solicitud. 
+Aprende más sobre solicitudes HTTP y sobre la biblioteca `requests`:
 
-## Ver también
-- [Documentación de la biblioteca de Python "requests"](https://docs.python-requests.org/en/master/)
-- [Documentación de la biblioteca estándar de Python "urllib"](https://docs.python.org/3/library/urllib.html)
+1. Documentación oficial de `requests`: https://docs.python-requests.org/en/latest/
+2. Introducción a HTTP en Mozilla Developer Network: https://developer.mozilla.org/es/docs/Web/HTTP/Overview
+3. Tutorial de `http.client`: https://docs.python.org/3/library/http.client.html
+4. Documentación de `httplib2`: https://httplib2.readthedocs.io/en/latest/

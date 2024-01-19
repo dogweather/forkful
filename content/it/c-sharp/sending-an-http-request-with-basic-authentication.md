@@ -1,7 +1,7 @@
 ---
-title:                "Inviare una richiesta http con autenticazione di base."
-html_title:           "C#: Inviare una richiesta http con autenticazione di base."
-simple_title:         "Inviare una richiesta http con autenticazione di base."
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Arduino: Inviare una richiesta http con autenticazione di base"
+simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,38 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cos’è e Perché?
 
-L'invio di una richiesta HTTP con autenticazione di base è un'azione comune nella programmazione web. Consiste nell'inserimento di un codice o una password di base nell'intestazione HTTP della richiesta per accedere a risorse protette da credenziali.
-
-I programmatori utilizzano l'autenticazione di base per garantire la sicurezza dei dati e delle risorse sensibili, limitando l'accesso solo agli utenti autorizzati.
+L’invio di una richiesta HTTP con l'autenticazione di base è un metodo per fornire credenziali username e password in una richiesta web. Lo facciamo per accedere a risorse protette.
 
 ## Come fare:
 
+Ecco un esempio su come inviare una richiesta HTTP con l'autenticazione di base in C#:
+
 ```C#
-// Creazione di una nuova istanza della richiesta HTTP
-var request = (HttpWebRequest)WebRequest.Create("url");
+using System;
+using System.Net.Http;
+using System.Text;
 
-// Inserimento delle credenziali nell'intestazione della richiesta
-request.Headers["Authorization"] = "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("username:password"));
+class Program
+{
+    static void Main()
+    {
+        string username = "your-username";
+        string password = "your-password";
 
-// Invio della richiesta
-var response = (HttpWebResponse)request.GetResponse();
+        HttpClient client = new HttpClient();
 
-// Ottenimento e lettura della risposta
-var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+        var byteArray = Encoding.ASCII.GetBytes($"{username}:{password}");
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 
-// Output della risposta
-Console.WriteLine(responseString);
+        HttpResponseMessage response = client.GetAsync("https://sito-seguro.com").Result;
+        
+        Console.WriteLine(response.StatusCode);
+    }
+}
+```
+
+Output di esempio:
+
+``` 
+HTTPStatusCode.OK
 ```
 
 ## Approfondimento:
 
-1. Contesto storico: L'autenticazione di base è uno dei primi metodi di autenticazione utilizzati in HTTP, introdotto nel protocollo nel 1999.
-2. Alternative: Esistono diversi metodi di autenticazione più sicuri rispetto a quello di base, come ad esempio l'autenticazione OAuth o l'autenticazione a due fattori.
-3. Dettagli implementativi: Le credenziali inserite nell'intestazione della richiesta vengono codificate in base64 per garantirne la sicurezza durante la trasmissione.
+L'autenticazione HTTP Basic è un sistema di autenticazione standardizzato molto antico in uso fin dal 1996, introdotto con la specifica HTTP 1.0. Nonostante ci siano alternative più sicure come l’OAuth e la JWT, la semplicità dell’HTTP Basic la rende ancora comunemente utilizzata.
 
-## Vedi anche:
+Ricorda, le credenziali sono inviate come stringhe codificate in base64 non cifrate, quindi è vitale utilizzare HTTPS per garantire la sicurezza di tali informazioni durante il trasferimento.
 
-- [Autenticazione di base in HTTP](https://tools.ietf.org/html/rfc7617)
-- [Autenticazione in C#](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest.headers?view=netcore-3.1)
+## Vedi Anche:
+
+- [Autenticazione HTTP su MDN](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication)
+- [HttpClient Class in .NET](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+- [AuthenticationHeaderValue Class in .NET](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.headers.authenticationheadervalue)

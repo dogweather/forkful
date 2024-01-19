@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie łączonej ciągów znaków"
-html_title:           "Arduino: Tworzenie łączonej ciągów znaków"
-simple_title:         "Tworzenie łączonej ciągów znaków"
+title:                "Łączenie ciągów znaków"
+html_title:           "Arduino: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co to jest konkatynacja ciągów znaków i dlaczego jest to ważne dla programistów?
+## Co to i dlaczego?
 
-Konkatynacja ciągów znaków w prostych słowach oznacza łączenie ze sobą dwóch lub więcej ciągów znaków w celu utworzenia jednego dłuższego ciągu. Jest to często wykorzystywana technika w programowaniu, ponieważ pozwala na tworzenie bardziej dynamicznych i interaktywnych aplikacji.
+Konkatenacja stringów polega na łączeniu dwóch lub więcej ciągów tekstów w jedną całość. Programiści robią to, aby skrócić kod i zwiększyć czytelność.
 
-Jak to zrobić:
+## Jak to zrobić:
 
-Załóżmy, że chcemy połączyć ze sobą dwa ciągi znaków "Hello" i "World". W tym celu możemy wykorzystać funkcję `concat()` i podać jako parametry oba ciągi znaków, a następnie przypisać wynik do nowej zmiennej, na przykład `message`. Przykładowy kod wyglądałby następująco:
-
+W Arduino możemy dokonać konkatenacji za pomocą operatora '+'. Poniżej znajduje się przykład:
+```Arduino
+String firstString = "Arduino";
+String secondString = " Programming";
+String finalString = firstString + secondString;
+Serial.println(finalString);
 ```
-char str1[] = "Hello";
-char str2[] = "World";
-char message[12];
-
-concat(message, str1, str2);
+Po wywołaniu powyższego kodu, otrzymujemy następującą wiadomość:
+```Arduino
+"Arduino Programming"
 ```
+## Dogłębna analiza:
 
-Wynikiem tego kodu będzie dłuższy ciąg znaków "HelloWorld", który będzie przechowywany w zmiennej `message`.
+Konkatenacja ciągów jest fundamentalnym elementem programowania, istniejącym od dawna. Alternatywą dla używania operatora '+' jest użycie funkcji `concat()` dla bardziej skomplikowanych operacji.
 
-Możemy również wykorzystać konkatynację do łączenia ze sobą ciągów znaków i zmiennych liczbowych. Przykładowo, jeśli chcemy wyświetlić komunikat "Temperatura wynosi: 25 stopni", możemy zastosować następujący kod:
+Pamiętaj jednak, że konkatenacja w Arduino jest złożonym procesem. Arduino nie obsługuje dynamicznej alokacji pamięci, więc dodawanie tekstów komplikuje zarządzanie pamięcią.
 
-```
-int temperatura = 25;
-char str[] = "Temperatura wynosi: ";
-char message[25];
+## Zobacz też:
 
-concat(message, str, temperatura);
-```
-
-W tym przypadku, zmienna `message` zawierać będzie pełną informację o temperaturze, która może być następnie wyświetlana na ekranie lub przekazana do innych części kodu.
-
-Głębsze informacje:
-
-Konkatynacja ciągów znaków jest często wykorzystywana w językach programowania, szczególnie w tych, które są przeznaczone do tworzenia aplikacji webowych lub interaktywnych aplikacji użytkowych. Alternatywnym podejściem do łączenia ciągów znaków jest użycie specjalnych znaków, takich jak "+" lub "&", jednakże funkcja `concat()` jest bardziej elastyczna i pozwala na bardziej złożone operacje.
-
-Jeśli chodzi o implementację, funkcja `concat()` jest zazwyczaj dostępna w większości języków programowania i przypomina jego wykorzystanie w języku C. W przypadku Arduino, funkcja ta jest dostępna w bibliotece `string.h` i może być wykorzystywana wraz z innymi funkcjami do zarządzania ciągami znaków.
-
-Zobacz także:
-
-Jeśli chcesz dowiedzieć się więcej o konkatynacji ciągów znaków, polecamy zapoznać się z materiałami dostępnymi w dokumentacji Arduino na temat biblioteki `string.h`. Możesz również spróbować samemu przetestować różne metody konkatynacji i prześledzić wyniki.
+1. [Arduino String concat()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
+2. [Arduino String Addition Operator](https://www.arduino.cc/reference/en/language/variables/data-types/string/operators/addition/) 
+3. [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)

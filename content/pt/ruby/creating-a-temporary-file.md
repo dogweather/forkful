@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Ruby: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,46 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+# Criando um arquivo temporário em Ruby
 
-Criar um arquivo temporário é uma maneira de armazenar informações temporárias durante a execução de um programa. Ele pode ser usado para armazenar dados intermediários de um processo ou como um local para salvar informações temporárias que serão excluídas após o uso. Programadores geralmente criam arquivos temporários para facilitar o gerenciamento de dados durante a execução do código.
+## O Que & Por Quê?
+Criar um arquivo temporário é uma prática comum em programação. Ela proporciona um espaço transitório de armazenamento de dados, geralmente necessário para operações de processamento de arquivos massivos ou transferências de dados.
 
-## Como fazer:
+## Como Fazer:
+Vamos analisar como criar um arquivo temporário em Ruby. O módulo 'Tempfile' do Ruby facilita isso para nós. Aqui está um exemplo de uso:
 
 ```Ruby
 require 'tempfile'
 
-# Criando um arquivo temporário vazio com uma extensão específica
-tempfile = Tempfile.new(['tempo', '.txt'])
+temp = Tempfile.new('meu_arquivo_temp.txt')
+temp << 'Algum texto aqui'
+temp.close
 
-# Escrevendo no arquivo temporário
-tempfile.write("Este é um arquivo temporário.")
-
-# Lendo o conteúdo do arquivo temporário
-tempfile.rewind
-puts tempfile.read
-
-# Fechando e excluindo o arquivo temporário
-tempfile.close
-tempfile.unlink
+open(temp.path) do |f|
+  puts f.read
+end
 ```
+O output será: 'Algum texto aqui'
 
-Saída:
+## Imersão Profunda
+
+### Contexto Histórico
+Historicamente, os arquivos temporários eram criados manualmente, o que acarretava diversos problemas, como a sobrecarga de limpeza e a gestão de nomes de arquivos únicos. A introdução da classe `Tempfile` em Ruby simplificou esses aspectos.
+
+### Alternativas
+Existe uma alternativa ao módulo `Tempfile`. O módulo `IO` possui um método `IO.pipe` que cria um par de pipe sem nome e a memória é automaticamente limpa após o uso.
+
+```Ruby
+require 'io'
+
+r, w = IO.pipe
+w << "Olá, mundo!"
+w.close
+puts r.read
 ```
-Este é um arquivo temporário.
-```
-## Mergulho Profundo:
+Resultado: 'Olá, mundo!'
 
-### Contexto histórico:
-A criação de arquivos temporários é um conceito antigo, que remonta aos primeiros dias da programação de computadores. No passado, dia era comum que os programas precisassem salvar dados temporariamente e os arquivos eram frequentemente usados para essa finalidade. Com a evolução da tecnologia, métodos mais avançados de armazenamento de dados temporários foram desenvolvidos, mas a criação de arquivos temporários ainda é amplamente utilizada pelos programadores.
+### Detalhes de Implementação
+'A classe Tempfile implementa um objeto de arquivo temporário com um nome único no sistema de arquivos. Os arquivos temporários são automaticamente removidos quando o objeto é coletado pelo Garbage Collector.
 
-### Alternativas:
-Além de criar arquivos temporários, existem outras opções para armazenar dados temporários, como variáveis ou arrays na memória RAM. No entanto, o uso de arquivos temporários pode ser mais eficiente em casos em que é necessário lidar com grandes quantidades de dados.
-
-### Detalhes de implementação:
-Em Ruby, a classe `Tempfile` fornece métodos para criar, ler e gerenciar arquivos temporários. O método `new` pode ser usado para criar um arquivo temporário vazio com uma extensão específica. Para escrever e ler dados, os métodos `write` e `read` são utilizados respectivamente. Após o uso, o arquivo temporário deve ser fechado e excluído com os métodos `close` e `unlink`.
-
-## Veja também:
-
-- [Tempfile Class Reference](https://ruby-doc.org/stdlib-2.7.1/libdoc/tempfile/rdoc/Tempfile.html)
-- [Managing Temporary Files in Ruby](https://www.rubyguides.com/2020/04/ruby-tempfile/)
+## Veja Também
+- Documentação oficial do Ruby sobre Tempfile: https://docs.ruby-lang.org/en/3.0.0/Tempfile.html 
+- Documentação oficial do Ruby sobre o IO.pipe: https://docs.ruby-lang.org/en/3.0.0/IO.html
+- StackOverflow com discussões úteis sobre arquivos temporários: https://stackoverflow.com/questions/tagged/tempfile

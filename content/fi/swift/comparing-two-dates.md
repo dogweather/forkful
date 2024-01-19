@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "Swift: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,34 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi? 
+# Vertailla kahta päiväystä Swift-ohjelmoinnissa
 
-Päivämäärien vertailu tarkoittaa kahden päivämäärän välisen eron selvittämistä ja vertailemista. Tämä on usein tarpeellista ohjelmoinnissa, kun halutaan esimerkiksi laskea päivien määrä tietyn tapahtuman välillä tai tarkistaa, onko jokin päivämäärä tulevaisuudessa vai menneisyydessä.
+## Mitä & Miksi?
+
+Vertailla kahta päiväystä tarkoittaa kahden erilaisen ajankohdan suhteen tutkimista. Tässä tapauksessa se on välttämätöntä, koska ohjelmoijat tarvitsevat usein määrittämään aikaeron kahden päivämäärän välillä, tai päättämään, kumpi kahdesta päivästä tapahtui ensin.
 
 ## Miten:
 
-Seuraavassa esimerkissä näytämme, miten kahden päivämäärän välisen eron voi laskea Swiftillä:
+Vertaillaan kahta päiväystä Swift 5:lla.
 
-```Swift
-let date1 = Date(timeIntervalSince1970: 1577836800) // 1.1.2020
-let date2 = Date(timeIntervalSince1970: 1609372800) // 1.1.2021
+```swift
+import Foundation
 
-let difference = Calendar.current.dateComponents([.day], from: date1, to: date2).day
-print(difference) // 366
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy/MM/dd"
+
+let date1 = formatter.date(from: "2019/02/14")!
+let date2 = formatter.date(from: "2018/12/25")!
+
+if date1.compare(date2) == .orderedAscending {
+    print("Date1 is earlier than date2")
+} else if date1.compare(date2) == .orderedDescending {
+    print("Date1 is later than date2")
+} else {
+    print("The two dates are the same")
+}
 ```
 
-Ensimmäisessä rivissä luomme kaksi päivämäärää, date1 ja date2, joita me sitten vertailemme. Toisessa rivissä käytämme Calendar-luokkaa laskemaan päivien määrä date1:n ja date2:n välillä. Lopuksi, print-funktio tulostaa eron, joka tässä tapauksessa on 366 päivää.
+Tämä tuottaa seuraavan tulosteen:
 
-## Syvemmälle:
+```
+Date1 is later than date2
+```
 
-Päivämäärien vertailu on tärkeä osa ohjelmointia, ja se on ollut osana koodaamista jo pitkään. Aiemmin sen toteuttaminen vaati paljon enemmän koodia ja laskutoimituksia, mutta nykyään Swift tarjoaa helppokäyttöisiä työkaluja tämän tehtävän suorittamiseen.
+## Syvempi sukellus:
 
-Jos haluat vertailla päivämääriä tarkempia aikatietoja, kuten tunteja, minuutteja ja sekunteja, voit käyttää myös muita DateComponents-muuttujia, kuten .hour, .minute ja .second.
+Päivämäärien vertaaminen on historiallisesti ollut haasteellista, koska kalenterisysteemit ovat vaihdelleet niin paljon. Swift 5 edustaa kuitenkin merkittävää edistystä päivämäärien vertailussa, etenkin sen `Date.compare(_:)` -metodin ansiosta.
+
+Sinun on kuitenkin aina muistettava, että päivämäärän vertaaminen on monimutkaista ja voi liittyä aikavyöhykkeeseen, aikaan ja kalenterin eroihin. On myös olemassa vaihtoehtoisia tapoja, kuten `TimeInterval` tai `Calendar` -objektien käyttö.
 
 ## Katso myös:
 
-Jos haluat saada lisätietoa päivämäärien vertailusta ja laskemisesta Swiftillä, voit tutustua seuraaviin lähteisiin:
-
-- Swiftin virallinen dokumentaatio päivämäärien vertailusta: https://developer.apple.com/documentation/foundation/datecomparisonresult
-- Swiftin virallinen dokumentaatio DateComponents-muuttujista: https://developer.apple.com/documentation/foundation/datecomponents
-- Stack Overflow:n sivusto, jolla käydään läpi päivämäärien vertailua Swiftissä: https://stackoverflow.com/questions/24723431/swift-days-between-giving-two-nsdates
+* [Virallinen Apple Foundation Framework (Sis. Date-metodit)](https://developer.apple.com/documentation/foundation)
+* [Swift 5 päivämäärä- ja aikatoiminnot](https://www.hackingwithswift.com/articles/141/8-powerful-swift-features-that-arent-in-the-books)
+* [Vertaile päivämääriä Swiftissä](https://www.hackingwithswift.com/example-code/system/how-to-compare-dates)

@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "C: Inviare una richiesta http con autenticazione di base"
+html_title:           "Arduino: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "C"
 category:             "C"
@@ -10,35 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Di cosa si tratta e perché?
-Il comando per inviare una richiesta HTTP con autenticazione di base è un modo per fornire un livello di sicurezza aggiuntivo quando si interagisce con un server web. Questo significa che i programmatori possono proteggere le informazioni sensibili che vengono scambiate tra il client e il server. 
+## Cosa & Perché?
+Inviare una richiesta HTTP con autenticazione di base significa semplicemente creare una richiesta HTTP che include le credenziali (nome utente e password) in formato codificato. I programmatori fanno questo per accedere a determinate risorse protette su un server web.
 
 ## Come fare:
-Per inviare una richiesta HTTP con autenticazione di base in C, è necessario utilizzare la funzione `curl_easy_setopt()` e passare i parametri `CURLOPT_URL` e `CURLOPT_USERPWD` come nell'esempio seguente:
+Ecco un esempio breve ma completo. Questo codice invia una richiesta GET ad un URL protetto con autenticazione di base.
 
-```
-CURL *curl = curl_easy_init();
-if(curl) {
-  curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-  curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
-  CURLcode res = curl_easy_perform(curl);
-  if(res != CURLE_OK)
-    fprintf(stderr, "curl_easy_perform() failed: %s\n",
-            curl_easy_strerror(res));
-  curl_easy_cleanup(curl);
+```C
+#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+    CURL *ch;
+    CURLcode res;
+
+    ch = curl_easy_init();
+
+    if(ch) {
+        struct curl_slist *headers=NULL;
+
+        curl_easy_setopt(ch, CURLOPT_URL, "http://localhost:8080");
+        curl_easy_setopt(ch, CURLOPT_USERNAME, "username");
+        curl_easy_setopt(ch, CURLOPT_PASSWORD, "password");
+        curl_easy_setopt(ch, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(ch, CURLOPT_HTTPHEADER, headers);
+
+        res = curl_easy_perform(ch);
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+
+        curl_easy_cleanup(ch);
+    }
+
+    return 0;
 }
 ```
 
-L'output di questa richiesta sarà un oggetto `CURLcode` contenente informazioni sull'esito della richiesta.
+Se tutto va come previsto, non vedrai alcun output. In caso contrario, vedrai un messaggio di errore.
 
-## Approfondimento:
-L'autenticazione di base è uno dei primi metodi di autenticazione utilizzati su internet. Consiste nell'inviare le credenziali (nome utente e password) in chiaro, quindi non è sicuro come altri metodi di autenticazione come OAuth o OpenID Connect. Tuttavia, può essere utile per applicazioni interne o in situazioni in cui la sicurezza non è una priorità assoluta.
+## Approfondimento
+L’autenticazione di base HTTP è uno degli schemi di autenticazione più antichi. Venne introdotto con la specifica HTTP 1.0 nel 1996. Sebbene sia semplice da implementare, non è il più sicuro poiché invia le credenziali in chiaro (base64 encoded - facilmente decodificabile). Alternative includono OAuth2, Digest Authentication e l'uso di token JWT.
 
-Come alternativa all'utilizzo di `curl_easy_setopt()`, è possibile utilizzare una libreria di terze parti o una funzione personalizzata per gestire l'autenticazione di base.
+L'implementazione dell'invio di una richiesta HTTP con autenticazione di base in C avviene principalmente tramite la libreria cURL. È abbastanza potente e versatile, consentendo di inviare richieste GET, POST e altro ancora.
 
-Per implementare l'autenticazione di base, il server web deve avere un meccanismo per verificare le credenziali fornite dal client. Ciò può essere fatto tramite una lista di utenti e password memorizzati nel server o attraverso l'utilizzo di un servizio di autenticazione centralizzato.
+## Ancora Di Più
+Se vuoi leggere di più sull'argomento, ecco alcuni link utili:
 
-## Vedi anche:
-- [Documentazione ufficiale di CURL](https://curl.haxx.se/libcurl/c/Using-cURL-in-C-code.html)
-- [Tutorial su autenticazione di base con CURL in C](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
-- [Libreria CURL wrapper per C++](https://github.com/jpbarrette/curlpp)
+1. [curl - Tutorial punto per punto](https://curl.haxx.se/docs/httpscripting.html)
+2. [GitHub - Documentazione API, Autenticazione](https://docs.github.com/en/rest/guides/getting-started-with-the-rest-api)
+3. [RFC 2617 - Autenticazione HTTP](https://tools.ietf.org/html/rfc2617)
+4. [HTTP: The Protocol Every Web Developer Must Know](https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)

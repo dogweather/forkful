@@ -1,7 +1,7 @@
 ---
-title:                "用基本身份验证发送http请求"
-html_title:           "C#: 用基本身份验证发送http请求"
-simple_title:         "用基本身份验证发送http请求"
+title:                "使用基本认证发送http请求"
+html_title:           "Bash: 使用基本认证发送http请求"
+simple_title:         "使用基本认证发送http请求"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,34 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是HTTP请求和基本认证？为什么程序员要这么做？
-发送HTTP请求是指向服务器发送请求以获取特定网页或数据的过程。程序员使用基本认证来确保只有经过授权的用户可以访问特定的网页或数据。
+## 何为何？ - 什么是使用基本认证发送HTTP请求，程序员为什么要做？
 
-如何进行: 
-下面是一个用C＃发送HTTP请求并使用基本认证的示例。 
+使用基本认证发送HTTP请求是一个过程，其中，我们使用用户名和密码创建请求头，以进行身份验证。程序员通常会做这件事情，以便从需要身份验证的服务器上获取资源。
+
+## 如何做 - 使用C#发送带有基本认证的HTTP请求
+
+以下是一个简单的示例，显示如何使用HttpClient发送带有基础认证（用户名和密码）的HTTP GET请求：
+
+```C#
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+public class BasicAuthExample{
+    static async Task Main()
+    {
+        var client = new HttpClient();
+
+        var byteArray = Encoding.ASCII.GetBytes("username:password");
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+
+        var response = await client.GetAsync("http://example.com/resource");
+        var data = await response.Content.ReadAsStringAsync();
+
+        Console.WriteLine(data);
+    }
+}
 ```
-// 建立一个HttpWebRequest对象，指定目标URL
-HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://example.com/data");
 
-// 设置认证信息
-request.Credentials = new NetworkCredential("用户名", "密码");
+这个示例会向"http://example.com/resource"发送一个HTTP GET请求，并在控制台上打印返回的数据。
 
-// 发送GET请求并接收响应
-HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+## 深入剖析 - HTTP Basic认证的历史，替代方案，以及实现细节
 
-// 获取响应的状态码
-int statusCode = (int)response.StatusCode;
+HTTP Basic认证是一个老牌的身份验证方案，其源于HTTP/1.0的时代，它现在依然被广泛支持，但有其安全性问题。
 
-// 打印响应状态码
-Console.WriteLine("状态码: {0}", statusCode);
-```
+作为替代方案，我们有Digest认证、Bearer认证（常用于OAuth）、或者使用一个基于token的身份验证方法。
 
-探究：
-基本认证是HTTP认证中最早的一种形式。它通过在HTTP请求头中包含用户名和密码来进行身份验证。它已被更安全的认证方式所取代，如OAuth和OpenID。但是，基本认证仍然被广泛使用，因为它简单、易于实现。在使用基本认证时，开发人员应注意安全性，不应将密码存储在明文中，而应使用加密存储。
+在实现上，Basic认证是将用户名和密码以":"组合，并Encode成base64字符串，然后将这字符串作为Authorization头的一部分发送。这是一个非常直接的方式，但注意，如果不使用HTTPS，它容易被窃取。
 
-查看更多：
-了解更多关于HTTP请求和基本认证的信息，请参阅以下资源:
-- [HTTP请求](https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html)
-- [基本认证](https://www.w3.org/Protocols/rfc2617/rfc2617.html)
-- [OAuth](https://oauth.net/)
-- [OpenID](https://openid.net/)
+## 参考资料 - 了解更多关于HTTP认证的资料
+
+1. [理解HTTP Basic认证](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Authorization)
+2. [C#中HttpClient类的使用](https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient)
+3. [更多关于HTTPs的信息](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview)

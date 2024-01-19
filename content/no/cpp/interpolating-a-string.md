@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av streng"
-html_title:           "C++: Interpolering av streng"
-simple_title:         "Interpolering av streng"
+title:                "Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
+simple_title:         "Interpolering av en streng"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,34 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
-Interpolering av strenger er en prosess der en variabel eller uttrykk blir satt inn i en streng på et bestemt sted. Dette er en vanlig teknikk brukt av programmører for å lage dynamiske og tilpassede tekststrenger i sine programmer.
+## Hva & Hvorfor?
+Interpolering av en streng betyr å flette variable inn i en streng. Programmerere gjør dette for å generere skreddersydd output, ofte for visning til brukere eller for logging.
 
-# Hvordan:
+## Hvordan:
+Her er en grunnleggende måte å interpolere en streng på i C ++:
+
 ```C++
 #include <iostream>
 #include <string>
 
 int main() {
-  std::string navn = "Ola";
-  std::string alder = "25";
-  std::string uttrykk = "Hei, mitt navn er " + navn + " og jeg er " + alder + " år gammel.";
-
-  std::cout << uttrykk << std::endl;
-  
-  return 0;
+    std::string navn = "Ola";
+    int alder = 25;
+    
+    std::cout << "Hei, jeg er " << navn << ", og jeg er " << alder << " år gammel.\n";
+    return 0;
 }
+```
+Output:
 
-/* Utskrift:
-Hei, mitt navn er Ola og jeg er 25 år gammel.
-*/
+```
+Hei, jeg er Ola, og jeg er 25 år gammel.
 ```
 
-# Dypdykk:
-Interpolering av strenger har vært en del av programmering siden tidlig på 1960-tallet. Det finnes også andre måter å lage dynamiske strenger på, som for eksempel formatering med `sprintf`-funksjonen.
+## Dypdykk 
+Historisk sett ble streng interpolering først introdusert i programmeringsspråk som Perl og Ruby. C ++ implementerer det på en mer manuell måte gjennom strømoperatoren `<<`. 
 
-Implementasjonen av interpolering av strenger kan variere mellom ulike programmeringsspråk, men prinsippet er alltid det samme - å erstatte variabler eller uttrykk med deres faktiske verdier i en streng.
+Alternativt kan vi også bruke `printf` eller `sprintf` for format-spesifikk interpolering, selv om det kan være mer feilsøkt. 
 
-# Se også:
-- [C++ string documentation](https://www.cplusplus.com/reference/string/)
-- [Hvordan bruke std::format i C++20](https://www.modernescpp.com/index.php/std-format-in-c-20)
+En annen teknikk er å bruke `std::format` fra C++20 som tillater strengformatering på en enklere og sikrere måte.
+
+## Se også
+1. [C++ String Interpolation using std::format (cppreference.com)](https://en.cppreference.com/w/cpp/utility/format)
+2. [String Interpolation (Wikipedia)](https://en.wikipedia.org/wiki/String_interpolation)
+3. [Properly formatted printf for Sstrings (stackoverflow.com)](https://stackoverflow.com/questions/2029103/properly-formatted-printf-for-strings)

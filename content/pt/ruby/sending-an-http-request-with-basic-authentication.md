@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Ruby: Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
-Enviar uma solicitação HTTP com autenticação básica é um processo comum em programação que permite aos desenvolvedores proteger suas APIs e outras aplicações web. Com a autenticação básica, é necessário fornecer um nome de usuário e senha para obter acesso aos recursos protegidos.
+## O Que & Por Quê? 
+Enviar uma solicitação HTTP com autenticação básica é um processo de enviar uma solicitação a um servidor da web com um nome de usuário e senha incorporados. Os programadores fazem isso para acessar APIs protegidas por senha e recuperar dados de forma segura.
 
-## Como fazer:
+## Como Fazer:
+Para enviar uma solicitação HTTP com autenticação básica em Ruby, você pode usar a biblioteca `net/http`. Aqui está um exemplo simples:
+
 ```Ruby
 require 'net/http'
+require 'uri'
 
-# Definir a URL para a qual queremos enviar a solicitação
-url = URI("https://www.exemplo.com/api/usuarios")
+uri = URI.parse("http://exemplo.com")
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Get.new(uri.request_uri)
+request.basic_auth("username", "password")
+response = http.request(request)
 
-# Criar um objeto de solicitação HTTP
-request = Net::HTTP::Get.new(url)
-
-# Adicionar informações de autenticação à solicitação
-request.basic_auth('usuario', 'senha')
-
-# Enviar a solicitação e receber a resposta
-response = Net::HTTP.start(url.hostname, url.port, use_ssl: url.scheme == 'https') do |http|
-  http.request(request)
-end
-
-# Imprimir o código de status da resposta
-puts response.code
-
-# Imprimir o corpo da resposta
 puts response.body
 ```
 
-## Deep Dive:
-A autenticação básica é um método de autenticação criado em 1999 pelo World Wide Web Consortium (W3C). É amplamente utilizado por ser simples e fácil de implementar, mas também tem limitações de segurança, como o fato de que todas as informações são enviadas em texto puro. Existem outras formas mais seguras de autenticação, como a autenticação digest, que criptografa as informações de autenticação.
+Isso irá imprimir o corpo da resposta recebida.
 
-## Veja também:
-- [Documentação do Ruby para Net::HTTP](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Tutorial sobre autenticação básica em Ruby](https://www.rubyguides.com/2018/08/ruby-http-basic-authentication/)
+## Mergulhando Mais Fundo
+No contexto histórico, a autenticação básica foi introduzida nos primeiros dias da web. É simples e fácil de implementar, mas não é muito segura, pois nome de usuário e senha são enviados como texto simples.
+
+Existem alternativas à autenticação básica, como a bearer token authentication e a OAuth, que são formas mais seguras de autenticação.
+
+Ao enviar uma solicitação HTTP com autenticação básica, internamente, a biblioteca `net/http` codifica o nome de usuário e a senha em Base64 e adiciona esse token de autenticação ao cabeçalho da solicitação.
+
+## Veja Também
+Para informações mais aprofundadas, você pode consultar as seguintes fontes:
+
+- [Documentação Oficial Ruby Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [RFC7617: Autenticação básica HTTP](https://tools.ietf.org/html/rfc7617)
+- [Autenticação Token Bearer](https://oauth.net/2/bearer-tokens/)
+- [Guia de Autenticação OAuth](https://oauth.net/code/ruby/)

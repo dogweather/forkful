@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "Bash recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Bash 101: Reading Command Line Arguments
+
 ## What & Why?
 
-Reading command line arguments is a way for Bash programmers to pass input to their script or program from the command line. This allows for more flexibility and customization, as the user can specify different values or options when executing the script.
+Imagine a Bash script bowling alley, you're the bowler, and the command line arguments are the bowling balls. Each uniquely shaped and weighted ball allows you to execute shots with different curves, speeds and spins. Basically, command line arguments give you the flexibility to vary the behavior of your scripts. 
 
 ## How to:
 
-To read command line arguments in a Bash script, you can use the $1, $2, and so on variables to represent the arguments passed in. For example, if your script is named "myScript.sh" and you want to pass in two arguments, you would use the following command:
+Reading command line arguments in Bash is as simple as referencing `$1`, `$2`, etc. Here’s an example:
 
-```
-$ bash myScript.sh 123 "Hello"
-```
-
-Inside your script, you can access the arguments as follows:
-
-```
+```Bash
 #!/bin/bash
-echo "The first argument is: $1"
-echo "The second argument is: $2"
+
+echo "First Argument: $1"
+echo "Second Argument: $2"
 ```
 
-The output of this script would be:
+If you run the script above as `./script.sh hello world`, it will output:
 
+```Bash
+First Argument: hello
+Second Argument: world
 ```
-The first argument is: 123
-The second argument is: Hello
-```
+The magical variable `$0` is your script’s name, while `$#` will tell you how many arguments were passed. `"$@"` or `"$*"` hold all of the arguments.
 
 ## Deep Dive
 
-Before reading command line arguments became a common practice, Bash programmers had to rely on hardcoded values within their scripts. This made it difficult to make their scripts more dynamic and customizable for different use cases.
+Historically, the use of command line arguments stems from early Unix systems where efficient computing resources were crucial and UIs were heinous or non-existent.
 
-There are a few alternative methods to reading command line arguments, such as using environmental variables or making use of the "shift" command. However, these methods may not always be as straightforward as simply using the $1, $2 variables.
+Alternatives to command line arguments include reading input during script execution or hardcoding values into the script. The downside? They lack the dynamism and convenience of arguments.
 
-When implementing the ability to read command line arguments, it is important to note that the arguments are separated by spaces, so it is best to be mindful of any arguments that may contain spaces themselves. This can be accounted for by using quotation marks around the arguments when executing the script.
+Implementation-wise, bash stores command line arguments as a special array. `$1` is shorthand for saying "give me the first element of this array". Bash also supports more complex array-related operations if arguments aren't your only play.
 
 ## See Also
 
-- [Bash Guide for Beginners - Command Line Arguments](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
-- [Bash Accessories - Command Line Arguments](http://tldp.org/LDP/abs/html/bashver4.html#COMMANDLINEARGS)
+For more thorough coverage on this topic, check out:
+
+- [Bash Guide for Beginners](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html)
+- [GNU Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Array Tutorial](https://www.linuxjournal.com/content/bash-arrays)

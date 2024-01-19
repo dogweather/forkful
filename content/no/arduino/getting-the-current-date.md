@@ -1,7 +1,7 @@
 ---
-title:                "Få gjeldende dato"
-html_title:           "Arduino: Få gjeldende dato"
-simple_title:         "Få gjeldende dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,49 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
-Å få tak i den nåværende datoen er en vanlig oppgave for programmører. Dette er nyttig for å utføre handlinger basert på dags- eller tidspunktet, for eksempel å automatisk slå på lysene i huset hver kveld. 
+## Hva & Hvorfor?
 
-# Hvordan:
-Bruk ```Arduino.now()``` funksjonen for å få den nåværende datoen og tiden. Her er et eksempel på å skrive datoen til seriell monitor:
+Å hente den nåværende datoen er å få datoen på dette nøyaktige tidspunktet fra systemet. Programmerere gjør det for å merke data, loggføre hendelser, eller kanskje sette en tidsfrist.
+
+## Hvordan:
+
+Arduino har ingen innebygd funksjon for å hente nåværende dato, men vi kan bruke en RTC-modul (Real Time Clock). Her er et eksempel på hvordan du kan bruke DS3231 RTC-modulen med Arduino.
 
 ```Arduino
-#include <RTClib.h>  // inkluderer biblioteket for sanntidsklokke
-RTC_DS1307 rtc; // Oppretter et RTC-objekt
+#include <DS3231.h>
 
-void setup ()
+DS3231  rtc(SDA, SCL);
+
+void setup()
 {
-  Serial.begin(9600); // Starter seriell kommunikasjon
-  rtc.begin(); // Starter sanntidsklokken
+  rtc.begin();
 }
 
-void loop ()
+void loop()
 {
-  DateTime now = rtc.now(); // Får den nåværende datoen og tiden
-  Serial.print("Nåværende dato: ");
-  Serial.print(now.day(), DEC); // Skriver ut dagen som en desimal
-  Serial.print('/');
-  Serial.print(now.month(), DEC); // Skriver ut måneden som en desimal
-  Serial.print('/');
-  Serial.print(now.year(), DEC); // Skriver ut året som en desimal
-  Serial.print("  Nåværende tid: ");
-  Serial.print(now.hour(), DEC); // Skriver ut timen som en desimal
-  Serial.print(':');
-  Serial.print(now.minute(), DEC); // Skriver ut minuttet som en desimal
-  Serial.print(':');
-  Serial.println(now.second(), DEC); // Skriver ut sekundet som en desimal
-  delay(1000); // Venter et sekund før den gjentar loopen
+  Serial.print(rtc.getDateStr());
+  delay(1000);
 }
 ```
+Så når du laster ned og kjører dette programmet, vil utskriften på serielporten se slik ut:
 
-Output: ``` 
-Nåværende dato: 24/11/2020  Nåværende tid: 21:48:00
+```Arduino
+2023-05-04 
+2023-05-04
+...
 ```
 
-# Dypdykk:
-Før i tiden var det vanlig å bruke en separat komponent kalt en sanntidsklokke for å kunne få tak i den nåværende datoen og tiden. Med Arduino og RTClib-biblioteket kan du nå enkelt bruke en integrert sanntidsklokke som finnes på mange Arduino-brett. En alternativ måte å få den nåværende datoen på er å koble til internett og bruke en internett-tidsklokke som NTP (Network Time Protocol).
+## Deep Dive
 
-# Se også:
-[Offisiell Arduino nåværende tid og dato dokumentasjon](https://www.arduino.cc/en/Tutorial/BuiltInExamples/timedate)<br>
-[RTClib biblioteket dokumentasjon](https://github.com/adafruit/RTClib)<br>
-[En grundig guide om å koble til internett og få tak i den nåværende datoen og tiden](https://www.best-microcontroller-projects.com/arduino-time-library.html)
+Historisk sett, siden Arduinos ikke har en innebygd klokke, har de alltid vært avhengige av eksterne moduler for å få sanntidsdata. Det finnes flere alternative moduler, som DS1307, som også kan gi deg nåværende tid og dato. Disse modulene lagrer tidspunktet selv når Arduino er slått av og holdes nøyaktige ved hjelp av et lite klokkebatteri. 
+
+Å hente den nåværende datoen med en RTC-modul er ganske rett fram, men krever riktig kobling og oppsett av modulen. For DS3231 er SDA og SCL (I2C) tilkoblet for kommunikasjon med Arduino. I eksemplet ovenfor er rtc.getDateStr() koden som henter og returnerer en streng med datoen.
+
+## Se Også
+
+For å lære mer om dette, kan du lese disse:
+* [DS3231 RTC modul (Arduino Offisiell Side)](https://store.arduino.cc/usa/arduino-rtc-ds1307)
+* [RTC moduler og Arduino (Artikkel)](http://www.hobbytronics.co.uk/arduino-tutorial9-real-time-clock)

@@ -1,7 +1,7 @@
 ---
-title:                "Nykyisen päivämäärän hakeminen"
-html_title:           "Arduino: Nykyisen päivämäärän hakeminen"
-simple_title:         "Nykyisen päivämäärän hakeminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,50 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä & Miksi?
+## Mitä & Miksi?
 
-Päivämäärän saaminen tarkoittaa päivämäärän, kuukauden ja vuoden lukemista ja tallentamista järjestelmään. Ohjelmoijat tekevät tämän, jotta he voivat käyttää näitä tietoja esimerkiksi päivämäärän näyttämiseen näytöllä tai tallentamaan tietoja tietokantaan.
+Nykyisen päivämäärän hankkiminen tarkoittaa päivämäärän ja ajan lukemista reaaliajassa. Ohjelmoijat tekevät tämän kerätäkseen ajantasaisia tietoja tai suorittaakseen ajastettuja tehtäviä.
 
-# Miten:
+## Miten toimia:
 
-Esimerkit ja tulosteet:
+Käytämme Arduino Uno R3 -laitetta ja siihen liitettyä DS3231 RTC -moduulia. Tässä on esimerkkikoodi, jolla saadaan nykyinen päivämäärä:
 
-```
-Arduino ohjelmointi tänään void setup() {
-    Serial.begin(9600); // Asetetaan sarjaportti nopeudelle 9600
-    delay(1000); // Pieni viive, jotta sarjaportti ehtii käynnistyä
+```Arduino
+#include <DS3231.h>
+
+DS3231  rtc(SDA, SCL);
+
+void setup()
+{
+  rtc.begin();
 }
- 
-void loop() {
-    // Luodaan muuttujat, joihin tallennetaan päivämäärä, kuukausi ja vuosi
-    int day, month, year;
-    day = day(); // Haetaan päivämäärä
-    month = month(); // Haetaan kuukausi
-    year = year(); // Haetaan vuosi
- 
-    // Tulostetaan päivämäärä sarjaporttiin
-    Serial.print("Tänään on ");
-    Serial.print(day);
-    Serial.print(".");
-    Serial.print(month);
-    Serial.print(".");
-    Serial.println(year);
- 
-    delay(1000); // Odottaa sekunnin ennen seuraavaa lukemista
+
+void loop()
+{
+  Serial.print("Päivämäärä: ");
+  Serial.print(rtc.getDateStr());
+  Serial.print("\n");
+  delay(1000);
 }
 ```
 
-Tuloste:
-```
-Tänään on 3.4.2020
-```
- 
-# Syväsukellus:
+Koodi tulostaa nykyisen päivämäärän joka sekunti.
 
-Jotkut vaihtoehdot päivämäärän saamiseen voivat sisältää käyttäjän syöttöjä tai tietojen tarkempaa tallentamista. Tämä esimerkki olettaa, että Arduino laite on liitetty internetiin ja se voi hakea ajantiedot verkosta.
+## Tarkempi tarkastelu:
 
-Päivämäärän haku perustuu yleensä järjestelmän sisäiseen kellopiiriin (RTC), joka säilyttää ajan- ja päivämäärätietoja laitteen sähkökatkon aikana. Arduino-oppaassa on lisätietoja siitä, miten voit käyttää RTC:tä päivämäärän saamiseksi.
+DS3231 on RTC (Real Time Clock) -moduuli, joka perustuu I2C-protokollaan. Se ei ainoastaan pysty tallentamaan sekunteja, minuutteja, tunteja, päivää, kuukautta ja vuotta, vaan siinä on myös lämpötila-anturi.
 
-# Katso myös:
+Arduino Uno R3:ssa ei ole sisäänrakennettua RTC:ää, siksi tarvitsemme ulkoisen RTC-moduulin. Historiallisesti tietokoneissa on pitkään käytetty CMOS RTC:tä.
 
-Lisätietoja RTC:stä: https://www.arduino.cc/en/tutorials/time/keeping-time
+Vaihtoehtona on käyttää GPS-moduulia. Se toimii hyvänä ajanlähteenä, mutta vaatii selkeän näköyhteyden satelliitteihin. Verkkopalvelut, kuten NTP (Network Time Protocol), voivat tarjota tarkan ajan Internetin kautta, vaikkakin verkkoyhteys vaaditaan.
+
+DS3231-kirjaston `getDateStr()`-funktio antaa oikeanmuotoisen päivämäärän (muodossa "DD.MM.YYYY").
+
+## Katso myös:
+
+1. DS3231 RTC -moduulin yksityiskohtainen käyttö [Gregorio Liten's Blogissa](https://gregorioliten.com/how-to-use-ds3231-rtc-module-in-arduino/).
+2. Miten käyttää NTP:tä ajan saamiseksi Arduinossa [Random Nerd Tutorials](https://randomnerdtutorials.com/esp8266-nodemcu-date-time-ntp-client-server-arduino/).
+3. Yleistä tietoa I2C-protokollasta [SparkFun](https://www.sparkfun.com/docs/I2C).

@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "Javascript recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,41 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Parsing HTML with Javascript
+
 ## What & Why?
 
-Parsing HTML is the process of analyzing HTML code to understand its structure and extract relevant information from it. Programmers use parsing HTML to extract data, manipulate it, and display it in a more user-friendly format. This process is essential for creating modern web applications and websites.
+Parsing HTML is the act of breaking down an HTML document into its constituent elements for further processing or analysis. Programmers do this to interact with, understand, or manipulate the structure and content of web pages.
 
 ## How to:
 
-To parse HTML in Javascript, we can use the built-in DOM (Document Object Model) methods. For example, to get a list of all the elements with a specific class, we can use the `getElementsByClassName()` method. Let's say we have the following HTML code:
+JavaScript provides built-in functions to parse HTML.
 
 ```Javascript
-<ul>
-  <li class="fruit">Apple</li>
-  <li class="fruit">Orange</li>
-  <li class="vegetable">Carrot</li>
-</ul>
+let parser = new DOMParser();
+let doc = parser.parseFromString('<p><em>Hello</em>, web world!</p>', 'text/html');
+console.log(doc.body.textContent); // "Hello, web world!"
 ```
+The output of the above program will be:
 
-To get a list of all the fruits, we can use the following code:
+```Hello, web world!```
 
-```Javascript
-const fruits = document.getElementsByClassName("fruit");
-```
+This will help you parse an HTML string and output plain text.
 
-This will return an array-like object containing all the elements with the class "fruit". We can then loop through this object and access each element to manipulate it or extract data from it.
+## Deep Dive
 
-## Deep Dive:
+HTML parsing isn't new— browsers have done this since the dawn of the web. Initially, JavaScript didn't offer any built-in HTML parsing capabilities, but the DOMParser API was eventually introduced to fill this gap.
 
-Parsing HTML has been an essential part of web development since the early days of the internet. In the beginning, it was a tedious task, as there were no specialized tools or libraries available. Programmers had to write custom code for each different HTML structure, making it time-consuming and error-prone. However, with the advancements in web development, we now have built-in methods and libraries that make HTML parsing much more manageable.
+There are other methods for parsing HTML in JavaScript, like the 'createContextualFragment'. It's a method that can load HTML into the range object, which then can be appended to the document.
 
-As an alternative to using the built-in DOM methods, programmers can also use libraries such as jQuery, Cheerio, and Puppeteer. These libraries provide additional features and make the HTML parsing process even more efficient. Additionally, there are specific libraries focused on parsing HTML for specific purposes, such as extracting data for web scraping or generating PDFs from HTML code.
+One critical aspect of parsing HTML is handling malformed HTML. The DOMParser API handles this gracefully, making the code error-resistant.
 
-When it comes to the implementation details, parsing HTML involves breaking down the code into its individual components, such as tags, attributes, and content, and then processing them to extract the desired information. This process can be challenging due to the complexity of HTML code, especially with dynamic and nested elements. Thus, it requires a strong understanding of HTML and its structure.
+Implementation-wise, HTML parsing involves tokenization (breaking down the HTML into tokens, aka the constituent parts), then constructing a document model with these tokens. This process is quite complex but is abstracted away in built-in JavaScript methods.
 
-## See Also:
+## See Also
 
-- [MDN web docs on parsing HTML with DOM methods](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
-- [jQuery Official Website](https://jquery.com/)
-- [Cheerio Official Website](https://cheerio.js.org/)
-- [Puppeteer Official Website](https://pptr.dev/)
+_MDN documentation_ - [DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+
+_Javascript.info tutorial_ - [Modifying document](https://javascript.info/modifying-document)
+
+_MDN documentation_ - [Document.createRange](https://developer.mozilla.org/en-US/docs/Web/API/Document/createRange) and then [Range.createContextualFragment](https://developer.mozilla.org/en-US/docs/Web/API/Range/createContextualFragment)
+
+_HTML parsing specification_ - [HTML Living Standard](https://html.spec.whatwg.org/multipage/parsing.html#parsing)
+
+Remember, parsing HTML in JavaScript is a powerful tool in your programming arsenal, but with great power comes great responsibility! Always use these methods responsibly and ethically. Happy coding!

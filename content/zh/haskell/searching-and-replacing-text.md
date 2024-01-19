@@ -1,6 +1,6 @@
 ---
 title:                "搜索和替换文本"
-html_title:           "Haskell: 搜索和替换文本"
+html_title:           "Kotlin: 搜索和替换文本"
 simple_title:         "搜索和替换文本"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是搜索和替换文本？为什么程序员要这样做？
+## 什么 & 为什么? (What & Why?)
+搜索与替换文本是指在指定数据中找到特定字符或字符串，并用另一个字符或字符串进行替换。程序员设计这功能是为了方便数据处理和成功完成特定任务。
 
-搜索和替换文本是一种在文本中查找特定内容并替换为新内容的操作。这对程序员来说非常重要，因为它可以帮助他们自动化重复性的任务，提高工作效率。
-## 如何操作：
-```
-### 搜索文本
-Haskell中有一个函数`isInfixOf`，可以帮助我们判断一个字符串是否包含在另一个字符串中。例如，我们有一个字符串"Hello, world!"，我们想搜索其中是否包含"world"。我们可以使用以下代码来实现：
+## 如何操作: (How to:)
+下面是一个Haskell中如何搜索替换文本的简单例子：
+
 ```Haskell
-isInfixOf "world" "Hello, world!" -- 返回True
-isInfixOf "apple" "Hello, world!" -- 返回False
+import Data.String.Utils
+
+-- 创建一个简易替换函数
+let textReplace :: String -> String -> String -> String
+textReplace search replace txt = replace search replace txt
+
+let text = "Hello, World!"
+
+-- 使用我们的函数替换文本中的'World'为'Haskell'
+let result = textReplace "World" "Haskell" text
 ```
-### 替换文本
-Haskell中的`replace`函数可以帮助我们将一个字符串中的某个部分替换为新的内容。例如，我们有一个字符串"Hello, world!"，现在想把其中的"world"替换为"Globe"。我们可以使用以下代码来实现：
-```Haskell
-replace "world" "Globe" "Hello, world!" -- 返回"Hello, Globe!"
-```
+执行后的输出结果为："Hello, Haskell!"
 
-## 深入了解：
-### 历史背景
-搜索和替换文本的概念最早出现在计算机科学中，是作为文本编辑器的功能之一。随着编程语言的发展，程序员可以利用各种内置函数和库来完成这一任务。Haskell作为一种函数式编程语言，它提供了强大的相关函数来帮助程序员处理文本。
+## 深入探索 (Deep Dive):
+搜索替换文本在程序设计的早期便已存在，用于实现基本的文本处理任务。实际上，替换机制包含在正则表达式中，是UNIX实用程序（如sed和awk）的一部分。
 
-### 替代方案
-除了Haskell之外，其他编程语言也都提供了类似的搜索和替换文本的功能。例如，C语言中的`strstr`函数用于搜索字符串中是否包含子字符串。
+Haskell为我们提供了替代方案，例如使用Data.Text包中的'replace'函数。其工作原理类似于String.Utils包中的'replace'函数，但是它对大量的数据更有效率。
 
-### 实现细节
-Haskell中的`isInfixOf`和`replace`函数都是由Haskell标准库提供的，它们都是基于字符串的实现。为了实现搜索功能，这两个函数都会遍历整个字符串并逐个比较字符。而为了实现替换功能，则需要先找到要替换的部分，然后将它替换为新内容。
+字符串搜索和替换在Haskell中实现的细节是基于列表操作。Haskell的字符串只是字符列表，因此你可以利用Haskell丰富的列表操作函数来搜索和替换字符串。
 
-## 相关资料:
-- [Haskell标准库文档: `isInfixOf`函数](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#v:isInfixOf)
-- [Haskell标准库文档: `replace`函数](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#v:replace)
-- [C语言标准库文档: `strstr`函数](https://www.cplusplus.com/reference/cstring/strstr/)
+## 参见 (See Also):
+- Haskell官方文档: https://www.haskell.org/tutorial/
+- Data.String.Utils 文档: https://hackage.haskell.org/package/MissingH-1.4.3.0/docs/Data-String-Utils.html
+- Data.Text 文档: https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html
+
+请浏览以上链接，获取更多深入的学习资料和相关信息。

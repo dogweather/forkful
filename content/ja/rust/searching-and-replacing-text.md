@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Rust: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,22 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-テキストの検索と置換とは、プログラマーがコード内の特定のテキストを探し出し、修正することを意味します。プログラマーはこの作業を行うことで、コードの変更や修正を効率的に行うことができます。
+**## 何となぜ？**
 
-## How to:
+テキストの検索と置換は、指定されたパターンに一致する文字列を特定し、新しい文字列に置き換えるプロセスです。プログラマーはこれを行うことで、大量のデータを効率的に編集し、頻繁に更新する必要がある情報を簡単に管理できます。
+
+**## 使い方:**
+
+```Rust
+fn main() {
+    let s = "Hello, world!";
+    let modified_s = s.replace("world", "Rust");
+    println!("{}", modified_s);
+}
 ```
-Rustでテキストの検索と置換を行うには、正規表現を使用します。以下のコードのように、検索するテキストと置換するテキストを指定し、マッチしたすべての箇所を変更することができます。
 
-let search_text = "hello";
-let replace_text = "こんにちは";
-let new_text = regex::replace_all("hello world", search_text, replace_text);
-println!("{}", new_text); // 結果：こんにちは world
+出力:
+
+```Rust
+Hello, Rust!
 ```
 
-## Deep Dive:
-テキストの検索と置換は、古くからプログラミング言語における必要な機能の一つです。しかし、Rustではその実装が独自のものとなっています。また、別の方法として、文字列を直接変更する代わりに新しい文字列を作成する手法もあります。
+上記のRustコードでは、"world"という文字列を"Rust"に置き換えています。
 
-## See Also:
-- [Rustの正規表現](https://doc.rust-lang.org/std/re/)
-- [RustRegexライブラリ](https://github.com/rust-lang/regex)
+**## 詳細情報:**
+
+*履歴的な文脈*: テキストの検索と置換はコンピューティングの初期から存在します。簡単なシェルスクリプトから複雑なデータベースクエリまで幅広い用途があります。
+
+*代替案*: Rustでは、正規表現を使用して複雑な文字列操作を行うオプションもあります。`regex`クレートはそのためのパワフルなツールを提供します。
+
+*実装の詳細*: Rustの`.replace()`メソッドは、`String`オブジェクトで使用可能です。対象のすべてのインスタンスを新しい文字列に置き換えます。
+
+**## 参照:**
+
+- [Rustの公式ドキュメンテーション](https://doc.rust-lang.org/std/index.html)
+- [Rustの文字列について](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [`regex`クレートのドキュメンテーション](https://docs.rs/regex/1.3.7/regex/)

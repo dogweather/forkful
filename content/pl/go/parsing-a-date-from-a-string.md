@@ -1,7 +1,7 @@
 ---
-title:                "Przetwarzanie daty z ciągu"
-html_title:           "Go: Przetwarzanie daty z ciągu"
-simple_title:         "Przetwarzanie daty z ciągu"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -11,39 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
+Przetwarzanie daty z napisu to technika, która pozwala nam zmienić datę zapisaną jako ciąg znaków na format daty, który można potem używać w operacjach programistycznych. Programiści to robią, by móc używać dat w bardziej złożonych operacjach, takich jak porównywanie, sortowanie czy różne obliczenia.
 
-Parsowanie daty z ciągu znaków jest procesem wyodrębniania informacji o dacie z ciągu znaków. Programiści często wykonują tę operację, ponieważ chcą przetwarzać dane z datami i potrzebują punktu odniesienia dla tych informacji.
-
-## Jak to zrobić?
-
-Przykładowy kod w języku Go i jego wynik:
-
-```
+## Jak to Zrobić:
+Go oferuje wbudowaną funkcję `time.Parse`, która umożliwia parsowanie dat z łańcucha znaków. 
+```Go
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	layout := "January 2, 2006"
-	str := "February 5, 2019"
-	t, _ := time.Parse(layout, str)
-	fmt.Println(t)
+    dataString := "2022-05-26"
+    data, _ := time.Parse("2006-01-02", dataString)
+    fmt.Println(data)
 }
 ```
-
-Wynik:
+Powinieneś zobaczyć coś takiego po uruchomieniu powyższego kodu:
 ```
-2019-02-05 00:00:00 +0000 UTC
+2022-05-26 00:00:00 +0000 UTC
 ```
+## Dogłębne Zrozumienie
+Pierwotnie, nie istniał żaden standard dla reprezentacji dat jako ciągów znaków, co prowadziło do wielu problemów (np. 12/01/22 to po polsku 12 stycznia, a po angielsku 1 grudnia). W 1988 roku ISO opracowało standard ISO 8601, który umożliwia jednoznaczną reprezentację daty zapisanej jako ciąg znaków.
 
-## Głębsze Podejście
+Alternatywą dla funkcji `time.Parse` jest stosowanie formatu z unix, który jest znacznie mniej czytelny dla ludzi, ale szybszy dla maszyn. Na przykład: `1514764800` reprezentuje "2018-01-01T00:00:00Z".
 
-Parsowanie dat z ciągów znaków nie jest nowym problemem, ponieważ już w latach 70. XX wieku programiści musieli radzić sobie z różnymi reprezentacjami dat w różnych systemach. W Go, parsowanie dat z ciągów znaków jest realizowane za pomocą standardowej funkcji ```time.Parse()```. Alternatywnym rozwiązaniem może być używanie biblioteki ```strftime```, dostępnej w większości języków programowania.
+Szczegół implementacji: `time.Parse` zasługuje na wzmiankę, że format, którego używasz jako wzorca parsowania, to nie wzorzec jakiegokolwiek formatu zapisu daty, ale to musi być `"Mon Jan 2 15:04:05 MST 2006"` napisane naszymi wybranymi danymi. 
 
-## Zobacz także
-
-- [Dokumentacja Go dotycząca funkcji time.Parse()](https://golang.org/pkg/time/#Parse)
-- [Dokumentacja Python dotycząca biblioteki strftime](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
+## Zobacz Również
+1. Dokumentacja Golang na temat pakietu czasu [tutaj](https://golang.org/pkg/time/).
+2. Przykłady kodu [tutaj](https://golangcode.com/convert-string-to-datetime/). 
+3. Historia standardu ISO 8601 [tutaj](https://en.wikipedia.org/wiki/ISO_8601).

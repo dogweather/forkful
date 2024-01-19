@@ -1,7 +1,7 @@
 ---
-title:                "לִפְעֹל אֶת תַּאֲרִיך מִמְחַרְמֶשֶׁת"
-html_title:           "C#: לִפְעֹל אֶת תַּאֲרִיך מִמְחַרְמֶשֶׁת"
-simple_title:         "לִפְעֹל אֶת תַּאֲרִיך מִמְחַרְמֶשֶׁת"
+title:                "פענוח תאריך ממחרוזת"
+html_title:           "Bash: פענוח תאריך ממחרוזת"
+simple_title:         "פענוח תאריך ממחרוזת"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,23 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## מה ולמה?"
-משימת קידוד: מטרתה להמיר תאריך ממחרוזת לתאריך בפורמט שיש לו משמעות בתוכנה. מתכנתים עושים זאת כדי לאפשר לתוכנה לתפעל על תאריכים כתובים בשפה אנושית, כך שתוכניות יכול להחיל בהתאמה את תהליכי הלוגיקה על אותם תאריכים.
+## ?מה ולמה
+הזחה של התאריך ממחרוזת היא התהליך שבדרך כלל מבצעת כדי להמיר מחרוזת שמייצגת את התאריך לתוך משתנה מסוג תאריך. התכנתים עושים את זה בדרך כלל כדי לאפשר פעולות על התאריכים כמו השוואה, או חישוב הפרשי זמן.
 
-## איך לבצע קידוד?
-לדוגמה, אם אנו רוצים להמיר את התאריך "23 נובמבר 2020" לתאריך נומרי, נוכל להשתמש בפונקציה DateTime.Parse מספר למידע כפי שמדגם הקוד הזה בשפת C#:
+## ?איך לעשות
+בעזרת המחלקה `DateTime` ב-C#, ניתן לנתח מחרוזות לתאריכים במספר דרכים. נסתכל על זה כאן:
+
 ```C#
-string dateString = "23 נובמבר 2020";
-DateTime date = DateTime.Parse(dateString);
-Console.WriteLine(date);
-// Output: 11/23/2020 12:00:00 AM
+string dateString = "12/31/2020";
+DateTime parsedDate = DateTime.Parse(dateString);
+Console.WriteLine(parsedDate);
 ```
-בתוכנה גימורית, תהליך הקידוד יכלול תנאים לטיפול בשוני פורמטי תאריך, כדי לוודא שכל תאריך נכנס לתבנית נכונה ויכול להיות מטופל על ידי התוכנה.
 
-## העיון לעומק
-תהליך הקידוד של תאריך ממחרוזת נוצר עם תחילת השימוש במחשבים כדי לאפשר למכשיר לזהות תאריכים וכאלה. אפשרויות אחרות לקידוד תאריך כוללות שימוש בספריות חיצוי כמו NodaTime או פונקציות נמצאות בשפות תכנות אחרות כגון JavaScript או Python.
+כאשר תריצו את זה, תראו את התאריך "31/12/2020" כפלט.
 
-הפונקציה DateTime.Parse משתמשת בספריית מערכת להמיר את התאריך לתבנית DateTime. זה יכול להוות בעיה בתוכנות מסוימות כאשר התאריך יכול להיות בפורמט שונה לחלוטין מתוכנה לתוכנה. חשוב לשים לב לטיפול בתאריכים בפורמטים שונים בנפרד ולוודא כי הקידוד תואם את הפורמט שיש בתוכנה המטרה.
+באפשרותנו גם לנתח מותאם אישית של מחרוזות תאריך:
 
-## למידע נוסף
-למידע נוסף על קידוד תאריך ממחרוזת בשפת C#, ראו דוגמאות והסברים בכתבות כמו האחת שמציגה את יכולות הפונקציה DateTime.Parse (https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings) או באתר כמו StackOverflow (https://stackoverflow.com/questions/6887790/convert-string-to-datetime).
+```C#
+string customDateString = "31-12-2020 12:10:15";
+string format = "MM-dd-yyyy HH:mm:ss";
+DateTime customParsedDate = DateTime.ParseExact(customDateString, format, CultureInfo.InvariantCulture);
+Console.WriteLine(customParsedDate);
+```
+
+כאן, תראו את התאריך והשעה "31/12/2020 12:10:15" כפלט.
+
+## צלילה עמוקה
+הזחת תאריכים ממחרוזות הייתה תמיד חלק חשוב של בניית תוכנה, בטח כשמדובר בממשק משתמש שבו המשתמשים הם אלו שמוזינים את התאריך כמחרוזת. זה גם משמש בעת קריאה לשירותי רשת שמחזירים תאריכים כפורמט מחרוזת.
+
+הבדיקה של אם מחרוזת ניתנת להזחה לתאריך היא אלטרנטיבה ל-Parse ו-ParseExact. אתה יכול להשתמש ב- `DateTime.TryParse` או `DateTime.TryParseExact` שיחזירו `false` אם המחרוזת אינה תאריך תקני.
+
+מיומנות זו, של הפיכת מחרוזת לתאריך, קיימת בכל השפות התכנות וניתן לממש אותו בצורות רבות שונות, תלוי בצורת השימוש המדויקת שהיא נדרשת.
+
+## ראה גם
+[תיעוד Microsoft על DateTime.Parse](https://docs.microsoft.com/he-il/dotnet/api/system.datetime.parse?view=netframework-4.8)  
+[תיעוד Microsoft על DateTime.ParseExact](https://docs.microsoft.com/he-il/dotnet/api/system.datetime.parseexact?view=netframework-4.8)  
+[מדריך סטאק אוברפלו על ניתוח מחרוזות לתאריכים](https://stackoverflow.com/questions/919244/converting-a-string-to-datetime)

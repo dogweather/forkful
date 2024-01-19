@@ -1,6 +1,6 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "Haskell: 현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,39 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 현재 날짜란 무엇인가?
+## 무엇 & 왜?
 
-Haskell에는 현재 날짜를 얻는 기능이 내장되어 있습니다. 여러분이 알고 있는 대부분의 프로그래밍 언어에서와 마찬가지로, "현재 날짜"란 오늘의 날짜와 시간을 의미합니다. 프로그래머들은 주로 현재 날짜를 얻어서 다양한 시간 관련 작업을 수행하기 위해 사용합니다.
+날짜를 받아오는 것은 현재 시각을 알아내는 과정입니다. 프로그래머들은 이를 사용해 시간에서 다양한 기능을 구현합니다. 
 
-## 어떻게 하나요?
+## 구현 방법:
 
-아래의 코드는 Haskell에서 현재 날짜를 얻는 간단한 예제입니다. 이 코드를 실행하면 현재 시간과 날짜가 출력됩니다.
+Haskell에서 현재 날짜를 받아오기 위해, 우리는 다음의 라이브러리를 사용합니다: `Data.Time`
 
-```haskell
-import Data.Time.Clock (getCurrentTime)
-import Data.Time.LocalTime (getCurrentTimeZone, utcToLocalTime)
-import Data.Time.Format (formatTime, defaultTimeLocale)
+```Haskell
+import Data.Time
 
-main = do
-    time <- getCurrentTime
-    timezone <- getCurrentTimeZone
-    let localTime = utcToLocalTime timezone time
-    let formattedTime = formatTime defaultTimeLocale "%Y-%m-%d %H:%M:%S" localTime
-    putStrLn formattedTime
+main = getCurrentTime >>= print
 ```
 
-출력 예시:
+위의 코드를 실행하면 출력값으로 현재 시각이 나옵니다.
 
+```Haskell
+2021-10-14 17:42:00.6138317 UTC
 ```
-2021-07-17 22:30:00
+
+## 깊게 알아보기
+
+날짜와 시간에 대한 작업은 많은 컴퓨팅 업무에서 중요한 부분을 차지하고 있으며, Haskell은 `Data.Time` 라이브러리를 통해 이를 제공합니다. 이 라이브러리는 2004년에 추가되었으며, 문서화가 잘 되어 있습니다.
+
+Haskell에서 날짜를 얻는 다른 방법으로는, 시스템의 로컬 타임을 바로 얻는 `getZonedTime` 함수가 있습니다.
+
+```Haskell
+import Data.Time
+
+main = getZonedTime >>= print
 ```
 
-## 더 깊게 알아보기
-
-현재 날짜를 얻는 기능은 Haskell에서 이미 구현되어 있기 때문에 외부 라이브러리를 사용할 필요가 없습니다. 그러나 이 기능의 구현방식은 시스템에 따라 다를 수 있으므로, 외부 라이브러리를 사용하는 경우 시스템 간의 일관성을 유지하기 위해 외부 라이브러리를 사용하는 것이 좋습니다.
+`getCurrentTime` 함수는 UTC 타임을, `getZonedTime`은 사용자의 시간대에 따라 타임을 반환합니다.
 
 ## 관련 자료
 
-- [Haskell 공식 문서 - Data.Time.Clock 모듈](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
-- [Haskell 공식 문서 - Data.Time.Format 모듈](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
-- [Haskell 공식 문서 - Data.Time.LocalTime 모듈](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-LocalTime.html)
+아래의 문서들에서 Haskell의 `Data.Time` 라이브러리에 대해 더 많은 정보를 얻을 수 있습니다.
+
+- [Data.Time Documentation](https://hackage.haskell.org/package/time-1.10.0.1/docs/Data-Time.html)
+
+- [Haskell Date and Time Guide](https://two-wrongs.com/haskell-time-library-tutorial)

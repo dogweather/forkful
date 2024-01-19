@@ -1,6 +1,6 @@
 ---
 title:                "Å sende en http-forespørsel"
-html_title:           "Haskell: Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
 simple_title:         "Å sende en http-forespørsel"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,35 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Hva & Hvorfor?
+## Hva & Hvorfor?
+Å sende en HTTP forespørsel er prosessen med å sende en melding fra en klient til en server over internett. Dette gjør programmerere for å hente eller sende data, som er essensielt i moderne webutvikling.
 
-Når vi lager programmer, kan vi noen ganger trenge å kommunisere med andre tjenester eller nettsteder. Dette kan vi gjøre ved å sende en HTTP forespørsel. Det er en måte å be om informasjon fra en annen tjeneste på, og det er noe som programmerere gjør for å få tilgang til data og integrere med andre systemer.
-
-### Hvordan å:
-
-For å sende en HTTP forespørsel i Haskell, kan vi bruke biblioteket "http-client". Først må vi importere biblioteket og definere en funksjon som vil utføre vår forespørsel. Her er et eksempel på en funksjon som sender en GET forespørsel til en nettside og skriver ut svaret til konsollen:
+## Hvordan til:
+Vi skal bruke biblioteket `http-conduit` for å sende HTTP-forespørsler. Først må vi installere det:
 
 ```Haskell
-import Network.HTTP.Client
-
-performRequest :: IO ()
-performRequest = do
-  manager <- newManager defaultManagerSettings
-  request <- parseRequest "https://www.example.com"
-  response <- httpLbs request manager
-  print (responseBody response)
+cabal install http-conduit
 ```
-Dette er en veldig enkel måte å sende en HTTP forespørsel på, og det finnes flere måter å gjøre det på avhengig av hva slags informasjon du ønsker å sende og få tilbake. 
 
-### Dypdykk:
+Nå kan vi lage en enkel GET-forespørsel:
 
-HTTP er et protokoll som ble utviklet på 1990-tallet for å la klienter og servere kommunisere på et nettverk. Det finnes også andre protokoller som kan brukes for å kommunisere over nettverk, som for eksempel FTP og SMTP. I dag er HTTP den vanligste protokollen som brukes på verdensveven.
+```Haskell
+import Network.HTTP.Conduit
+import Control.Monad.IO.Class (liftIO)
 
-Et alternativ til å bruke biblioteket "http-client" er å bruke "wreq", som også er et populært Haskell bibliotek for å sende HTTP forespørsler. Dette biblioteket har en mer intuitiv og minimalistisk syntaks, men begge bibliotekene fungerer godt for å sende og behandle HTTP forespørsler.
+main = do
+  manager <- newManager tlsManagerSettings
+  request <- parseRequest "http://httpbin.org/get"
+  response <- httpLbs request manager
 
-Når du sender en HTTP forespørsel i Haskell, vil funksjonen "performRequest" som vi definerte i "## How to:" seksjonen, utføre flere sekvensielle operasjoner bak kulissene. Dette inkluderer å åpne en TCP forbindelse, sende forespørsel og motta respons. Det er viktig å være oppmerksom på disse operasjonene når du sender en forespørsel fordi de kan påvirke ytelsen til applikasjonen din.
+  liftIO $ print (responseStatus response)
+  liftIO $ print (responseBody response)
+```
 
-### Se også:
+Når du kjører koden, vil du se noe liknende:
 
-Haskell "http-client" dokumentasjon: https://hackage.haskell.org/package/http-client
-Haskell "wreq" dokumentasjon: https://hackage.haskell.org/package/wreq
+```Haskell
+Status {statusCode = 200, statusMessage = "OK"}
+"{\"args\":{}, ... }"
+```
+
+Betydningen er at vi har fått en vellykket respons (200 = OK) fra serveren.
+
+## Dypdykk
+Sending av HTTP-forespørsler kommer fra behovet for kommunikasjon mellom klient-server-maskiner, en arkitektur som stammer helt tilbake til tidlig utvikling av nettverk i 1970-årene.
+
+Alternativene til `http-conduit` inkluderer `http-client`, som også gir lavnivå tilgang til HTTP-operasjoner, og mer spesialiserte biblioteker som `wreq` og `req`, som gir mer abstraksjon og brukervennlighet på bekostning av kontroll.
+
+Når du sender en HTTP-forespørsel i Haskell, blir konseptene funksjonell programmering tydelige: hver handling du tar returnerer en ny "ting", i motsetning til å endre en eksisterende ting i stedet. Denne immutabiliteten gir forutsigbarhet og lettere feilfraing.
+
+## Se også
+[HaskellWiki HTTP](https://wiki.haskell.org/HTTP) - For mer komplekse eksempler og brukstilfeller av HTTP i Haskell.<br>
+[http-conduit på Hackage](https://hackage.haskell.org/package/http-conduit) - For dokumentasjon og mer informasjon om biblioteket vi brukte i dette eksemplet.

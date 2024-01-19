@@ -1,7 +1,7 @@
 ---
-title:                "Interpoler une chaîne de caractères"
-html_title:           "Fish Shell: Interpoler une chaîne de caractères"
-simple_title:         "Interpoler une chaîne de caractères"
+title:                "Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-L'interpolation de chaîne est une technique utilisée en programmation pour insérer des valeurs dans une chaîne de caractères. Cela permet d'avoir des chaînes de caractères dynamiques et personnalisées en fonction des valeurs que vous souhaitez afficher. Les programmeurs utilisent cette technique car elle rend leur code plus lisible et plus efficace.
+## Qu'est-ce et Pourquoi?
 
-## Comment faire :
-Voici comment utiliser l'interpolation de chaîne dans Fish Shell :
+L'interpolation de chaînes est une méthode pour insérer des valeurs variables directement dans une chaîne. Les programmeurs l'utilisent pour formater les chaînes de façon plus lisible et efficace.
 
-```Fish Shell
-set name "John"
-echo "Bonjour $name, comment vas-tu ?"
+## Comment faire:
+
+Voici comment vous pouvez l'utiliser dans Fish Shell.
+
+```fish
+define votre_nom as "Jean"
+echo "Bonjour, $votre_nom. Comment ça va?"
 ```
 
-Cette commande affichera : "Bonjour John, comment vas-tu ?"
+Lorsque vous exécutez ce code, vous verrez:
 
-Vous pouvez également utiliser l'interpolation de chaîne pour afficher des valeurs de variables à l'intérieur de chaînes de caractères, comme ceci :
-
-```Fish Shell
-set price 10
-echo "Le prix du produit est de $price euros."
+```fish
+Bonjour, Jean. Comment ça va?
 ```
+Le "$" précède la variable que nous voulons insérer dans notre chaîne.
 
-Cette commande affichera : "Le prix du produit est de 10 euros."
+## Plongée en profondeur:
 
-## Plongée profonde :
-L'interpolation de chaîne est souvent utilisée comme une alternative à la concaténation de chaînes de caractères (en utilisant le symbole "+" ou "."). Cela rend le code plus lisible et plus facile à maintenir, en particulier lorsque vous devez insérer plusieurs valeurs dans une même chaîne.
+Historiquement, l'interpolation de chaînes est populaire dans de nombreux langages de programmation. Fish Shell l'a adopté pour une syntaxe plus intuitive et une facilité de lecture.
 
-Il existe également d'autres alternatives à l'interpolation de chaîne, telles que l'utilisation de modèles de chaînes ou de fonctions de formatage de chaîne. Cependant, l'interpolation de chaîne est généralement préférée en raison de sa simplicité et de sa lisibilité.
+Comme alternative, Fish propose également une méthode dite de "concaténation de chaînes". Moins directe, elle nécessite l'utilisation de séparateurs spéciaux.
 
-En termes d'implémentation, Fish Shell utilise le symbole "$" suivi du nom de la variable à interpoler. Cette variable sera ensuite remplacée par sa valeur lors de l'affichage de la chaîne.
+Les détails de mise en œuvre sont relativement simples dans Fish Shell. Le signe '$' indique le début de la variable à interpoler dans la chaîne de caractères.
 
-## Voir aussi :
-- [Documentation officielle de Fish Shell sur l'interpolation de chaîne](https://fishshell.com/docs/current/cmds/set.html)
-- [Article Wikipédia sur l'interpolation de chaîne](https://fr.wikipedia.org/wiki/Interpolation_de_cha%C3%AEne)
+## Voir aussi:
+
+Pour plus d'informations sur l'interpolation de chaînes dans Fish Shell, vous pouvez consulter les ressources suivantes:
+
+1. ["Fish Shell Documentation"](https://fishshell.com/docs/current/index.html): Comprend une variété de guides et de tutoriels pour aider les utilisateurs à comprendre Fish Shell.
+2. ["Learn X in Y Minutes: Fish"](https://learnxinyminutes.com/docs/fr-fr/fish-fr/): Un guide rapide et simple pour apprendre à utiliser Fish Shell.
+3. ["A Tutorial on Using String in Fish Shell"](https://www.digitalocean.com/community/tutorials/how-to-use-strings-in-fish-shell-on-a-vps): Cette ressource explique en détail comment utiliser les chaînes dans Fish Shell.

@@ -10,49 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-计算未来或过去的日期是一种常见的编程任务，它可以让我们根据当前日期快速计算出未来或过去的日期。程序员经常需要这样做，尤其是在编写日历、日程安排或者时间管理软件时。
+## 什么 & 为什么?
 
-## 如何：
-```
+计算未来或过去的日期是通过特定算法在当前日期的基础上增加或减少特定的日、月或年的时间。程序员会做这个主要是为了进行时间敏感的计算，比如任务调度、事件跟踪或者会话管理等。
+
+## 如何操作:
+
+以下是如何用C语言获取一个日期X天后的日期的简单示例:
+
+```C 
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    struct tm futureDate;
-    struct tm pastDate;
-    time_t t = time(NULL);
-    localtime_s(&futureDate, &t);
-    localtime_s(&pastDate, &t);
-
-    printf("今天的日期: %02d/%02d/%d\n", futureDate.tm_mon + 1, futureDate.tm_mday, futureDate.tm_year + 1900);
-
-    // 计算未来的日期
-    futureDate.tm_mday += 7;
-    mktime(&futureDate);
-    printf("一周后的日期: %02d/%02d/%d\n", futureDate.tm_mon + 1, futureDate.tm_mday, futureDate.tm_year + 1900);
-
-    // 计算过去的日期
-    pastDate.tm_mday -= 7;
-    mktime(&pastDate);
-    printf("一周前的日期: %02d/%02d/%d\n", pastDate.tm_mon + 1, pastDate.tm_mday, pastDate.tm_year + 1900);
-
+int main() {
+    struct tm date = {0};
+    time_t future;
+    
+    date.tm_year = 2021 - 1900;
+    date.tm_mon = 8;  
+    date.tm_mday = 1;
+    
+    future = mktime(&date) + (10 * 24 * 60 * 60);  //增加十天
+    
+    printf("未来的日期是:%s", asctime(localtime(&future)));
+    
     return 0;
 }
 ```
+运行以上代码后，输出结果将会是:
+
 ```
-今天的日期: 09/19/2020
-一周后的日期: 09/26/2020
-一周前的日期: 09/12/2020
+未来的日期是:Wed Sep 11 00:00:00 2021
 ```
+## 深入探索
 
-## 深入了解：
-计算日期在现代计算中已经变得非常简单，但在过去的计算机时代，却需要更复杂的方法。在早期的操作系统中，日期是用一种称为“儒略日”的系统来存储的，它表示自 1582 年 10 月 15 日至今的天数。
+计算未来或过去的日期这一概念自计算机诞生以来就存在，主要用于操作系统中任务调度、数据库中的时间戳记录等多种用途。在C语言中，我们使用time.h头文件中的函数来对时间进行操作。同时，也可以使用其它语言的相应函数或库来进行日期计算，例如Python的datetime库、Java的Calendar类等。
 
-在 C 中，日期计算也可以使用库函数中的 `time.h` 头文件来实现。除了我们展示的方法外，也可以使用 `strftime()` 函数来格式化日期。
+根据你的需要，你可以选择用日、月或者年为单位来进行计算。除了使用C标准库中的mktime以外，你还可以使用其它方式来进行日期计算，例如使用`strftime()`函数来格式化时间，使用`strptime()`函数来解析时间字符串等。
 
-## 参考资料：
-- [C 中处理日期的标准库函数](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [如何在 C 中计算日期差](https://stackoverflow.com/questions/20427730/how-to-calculate-the-difference-between-two-dates-in-c-c)
-- [儒略日历](https://zh.wikipedia.org/wiki/%E5%84%92%E7%95%A5%E6%97%A5)
+## 另请参阅
+
+* C语言time.h库的[官方文档](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html)
+* Python的datetime库的[官方文档](https://docs.python.org/3/library/datetime.html)
+* Java的Calendar类的[官方文档](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html)

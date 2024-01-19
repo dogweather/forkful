@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires"
-html_title:           "Elixir: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elixir: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -11,28 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
-Générer des nombres aléatoires est une fonctionnalité importante en programmation pour créer des jeux, des simulations, ou tout autre cas où des nombres aléatoires sont nécessaires. Les développeurs peuvent utiliser cette fonctionnalité pour créer des situations imprévisibles ou pour tester le comportement de leur code.
+Générer des nombres aléatoires est une façon de produire des chiffres sans ordre ou sans modèle prévisible. Les programmeurs le font pour des raisons variées : simulations, jeux, tests, et plus encore.
 
-## Comment:
-Voici un exemple de code en ```Elixir``` pour générer un nombre aléatoire entre 1 et 10:
-
+## Comment faire:
+Voici comment générer un nombre aléatoire simple en Elixir.
+```Elixir 
+IO.inspect(:rand.uniform(10)) 
 ```
-rand(1..10)
+
+Quand on exécute ce programme, on obtient une sortie comme ceci : 
+```Elixir 
+7
 ```
 
-Le résultat pourrait être, par exemple, ```7```.
-Il est également possible de générer un nombre aléatoire d'un certain type de données, par exemple un booléen:
+Pour des nombres à virgule, essayez ceci:
+```Elixir 
+IO.inspect(:rand.uniform()) 
 ```
-rand(true..false)
+
+Output :
+```Elixir 
+0.5641242522238273
 ```
-Le résultat pourrait être, par exemple, ```true``` ou ```false```.
 
-## Plongée en Profondeur:
-L'utilisation de nombres aléatoires en informatique remonte à la Seconde Guerre mondiale, lorsque les ordinateurs étaient utilisés pour générer des codes cryptographiques. De nos jours, il y a de nombreuses bibliothèques de génération de nombres aléatoires disponibles pour de nombreux langages de programmation, et certaines personnes préfèrent utiliser des méthodes basées sur des algorithmes plutôt que sur des sources de données réelles pour une plus grande fiabilité.
+## Plongée profonde
+Historiquement, générer des nombres aléatoirement était difficile et pas toujours parfait. Aujourd'hui, Elixir utilise l'algorithme de Mersenne Twister pour générer du faux aléatoire, qui est presque aussi bon que le vrai aléatoire.
 
-## À Voir:
-Pour en savoir plus sur la génération de nombres aléatoires en Elixir, vous pouvez consulter la documentation officielle sur la fonction ```rand```: 
-https://hexdocs.pm/elixir/Kernel.html#rand/0
+Il y a d'autres façons de générer des nombres aléatoires en Elixir. Par exemple, la librairie 'exs1024' offre une alternatif aux fonctions intégrées :rand.
 
-Vous pouvez également consulter d'autres méthodes de génération de nombres aléatoires en utilisant le module ```:random```: 
-https://hexdocs.pm/elixir/Random.html
+Il faut savoir que :rand.uniform() en Elixir retourne un nombre aléatoire de l'intervalle [0.0, 1.0). Notez que 1.0 est exclu.
+
+## Voir aussi
+- [ElixirDocs - :rand](https://hexdocs.pm/elixir/Kernel.html#inspect/2)
+- [Librairie 'exs1024'](https://github.com/jj1bdx/exs1024/)
+- [Algorithme de Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)

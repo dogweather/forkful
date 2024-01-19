@@ -1,6 +1,6 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "TypeScript: המרת מחרוזת לאותיות קטנות"
+html_title:           "Go: המרת מחרוזת לאותיות קטנות"
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה & למה?
-המרת מחרוזת לאותיות קטנות היא פעולה שמשתמשים בה בתכנות בכדי לשנות את האותיות של מחרוזת לאותיות קטנות. פעולה זו קלה לביצוע וככל שמחשבים מתקדמים, היא נעשית בצורה יותר אוטומטית ומהירה. תוכניות תמיד תעשה צריכה במקרים שונים, כגון השוואת מחרוזות ללא התחשבות באותיות גדולות או קטנות.
+## מה ולמה?
+
+המרת מחרוזת לאותיות קטנות היא פעולה שבה כל האותיות הגדולות במחרוזת ממירות לאותיות קטנות. מתכנתים בוחרים לעשות זאת כדי להבטיח עקביות בהשוואות מחרוזות, או לניתוח נתונים.
 
 ## איך לעשות:
+
+הנה דוגמא לקוד TypeScript שממיר מחרודת לאותיות קטנות:
 ```TypeScript
-let str = "HELLO FROM TYPESCRIPT!";
-console.log(str.toLowerCase());
-// output: hello from typescript!
+let str = "Hello, TypeScript!";
+let lowerCaseStr = str.toLowerCase();
+console.log(lowerCaseStr); // יוצא "hello, typescript!"
 ```
 
-```TypeScript
-let str = "HeLlO fRoM tYpEsCrIpT!";
-console.log(str.toLowerCase());
-// output: hello from typescript!
-```
+בקוד הזה, אנחנו מפעילים את המתודה `.toLowerCase()` על המחרוזת `str` ושומרים את התוצאה במשתנה `lowerCaseStr`.
 
-## מעמקים:
-בעבר, פעולת המרה לאותיות קטנות הייתה יותר מורכבת ודרשה שימוש בפונקציות ומשתנים נוספים. כיום, היא מהווה חלק בלתי נפרד מהתכנים ומהווה מתודולוגיה בסיסית שכל המפתחים יכולים להשתמש בה בקלות. ישנן פעולות אחרות של המרה לאותיות קטנות כגון פעולת המרה לאותיות גדולות או מעבר לטקסט הפוך בין אותיות גדולות לקטנות.
+## צלילה מעמיקה:
 
-## ראו גם:
-למידע נוסף ודוגמאות בקוד לפעולת המרה לאותיות קטנות, אנו מציעים לעיין בפנקס הטכנולוגי של TypeScript המכיל מידע מקיף על תכונות ומתודות נוספות. ניתן למצוא קישורים לפנקס בדף הרשמי של TypeScript או בספריות המתאימות.
+המרת מחרוזת לאותיות קטנות היא טכניקה ותיקה בתכנות, שמוכרחת בשל גמישות ההקלדה. בחלק מהשפות יש דרכים אחרות לבצע זאת, אבל ב-TypeScript `.toLowerCase()` היא הפופולרית ביותר.
+
+אם אתם רוצים לממש את זה בעצמכם, תצטרכו לדעת את קודיות ASCII של האותיות ולהשתמש במתודה של TypeScript `.charCodeAt`.
+
+## ראה גם:
+
+לפרטים נוספים, בקרו באתרי האינטרנט הבאים:
+
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [JavaScript Info](https://javascript.info/)

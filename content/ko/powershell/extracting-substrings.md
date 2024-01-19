@@ -1,6 +1,6 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "PowerShell: 부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
 simple_title:         "부분 문자열 추출"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이며 왜 사용하나요?
+문자열에서 일부 문자를 추출하는 것을 'substring 추출'이라 합니다. 프로그래머들은 원하는 정보만을 찾아내거나 특정 패턴을 분석하기 위해 이를 사용합니다.
 
-서브스트링 추출이란 무엇인가요? 이것은 문자열에서 일부분만을 추출하는 것을 의미합니다. 보통, 이 기능은 텍스트에서 원하는 정보만을 추출하기 위해 프로그래머들이 사용합니다.
-
-## 해야 할 작업:
-
-PowerShell에서 서브스트링 추출하는 방법은 다음과 같습니다.
+## 어떻게 사용하나요:
+다음은 PowerShell에서 substring을 추출하는 방법입니다:
 
 ```PowerShell
-# 변수에 문자열 할당하기
-$string = "안녕하세요, 저는 PowerShell을 공부하고 있습니다."
-
-# 서브스트링 추출하기
-$string.Substring(0, 5)  # 결과: 안녕하세요
-$string.Substring(7, 2)  # 결과: 저는
-
-# 변수 선언 없이 바로 추출하기
-"PowerShell은 입문자들에게 유용합니다.".Substring(0, 10)  # 결과: PowerShell은
+$string = "PowerShell Scripting"
+$substring = $string.substring(0, 9)
+write-host $substring
 ```
 
-## 자세히 알아보기:
+실행 결과:
 
-하지만 왜 서브스트링을 추출해야 할까요? 그 이유는 프로그래밍에서 가끔은 텍스트에서 특정 정보만을 필요로 할 때가 있기 때문입니다. 예를 들어, 사용자의 이름만 따로 추출해야 할 때가 있습니다. PowerShell 이외의 언어에서도 서브스트링 추출을 할 수 있지만, PowerShell을 사용하면 보다 간편하고 유용하게 추출할 수 있습니다.
+```PowerShell
+PowerShell
+```
 
-서브스트링 추출은 보통 시작 지점과 끝 지점을 정해주는 것이 필요합니다. 그래서 시작 지점과 끝 지점이 따로 지정된 서브스트링 추출 함수가 있고, 시작 지점부터 특정 문자열의 위치를 찾아서 추출하는 함수도 있습니다.
+여기서 substring 함수의 첫 번째 인자는 시작 위치를 나타내며, 두 번째 인자는 추출하려는 문자열의 길이를 나타냅니다.
 
-## 관련 정보:
+## 딥다이브:
+Substring 추출은 문자열의 일부분을 접근하고 처리하는 기본적인 프로그래밍 개념입니다. 문자열 처리는 빅데이터 분석, 자연어 처리 등의 분야에서 중요하게 사용됩니다. PowerShell에서는 .NET Framework의 String.Substring 메서드를 통해 이를 지원합니다. 
 
-- [PowerShell 공식 문서](https://docs.microsoft.com/en-us/powershell/)
-- [PowerShell 강의 영상](https://www.youtube.com/playlist?list=PL6lLwIYKxjOftnT4_XPyT3gdzk1q_hH4u)
-- [PowerShell 웹사이트](https://www.powershell.com/)
+대안으로는 Split, Replace와 같은 다른 문자열 함수를 사용하거나 정규표현식을 이용하여 더 복잡한 패턴의 문자열을 추출할 수도 있습니다. 특히, 정규표현식은 유효성 검사, 검색 및 치환 등에서 널리 사용됩니다.
+
+## 참고 자료:
+1. [PowerShell Substring 메서드 문서](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
+2. [PowerShell에서 정규표현식 사용하기](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-regex?view=powershell-7.1)
+3. [자연어 처리를 위한 문자열 처리](https://realpython.com/natural-language-processing-spacy-python/)

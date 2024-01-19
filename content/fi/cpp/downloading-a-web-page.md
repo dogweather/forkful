@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C++: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "C++"
 category:             "C++"
@@ -10,61 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Web-sivun lataaminen tarkoittaa, että ohjelma noutaa tai hakee tietoa Internetistä ja tallentaa sen käyttöä varten. Ohjelmoijat tarvitsevat tätä toimintoa esimerkiksi verkkosivujen sisällön hakemiseen ja käsittelyyn.
+Ladattavat verkkosivut tarkoittavat digitalisten tietojen saamista verkkosivulta paikalliselle laitteelle. Ohjelmoijat tekevät tämän usein tietojen keräämiseksi tai offline-työskentelyä varten.
 
-## Miten:
+## Kuinka:
+
+Alla on esimerkki C++ koodista, joka lataa verkkosivun käyttäen `cURL` kirjastoa:
 
 ```C++
-#include <iostream>
 #include <curl/curl.h>
+#include <string>
 
-int main() {
-    CURL *curl;
+// Tämä funktio käytetään vastauksen käsittelyyn
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* userp) {
+    userp->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
+
+std::string downloadWebpage(std::string url) {
+    CURL* curl;
     CURLcode res;
+    std::string readBuffer;
+
     curl = curl_easy_init();
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
+        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
     }
-    return 0;
+    return readBuffer;
 }
 ```
 
-Ulostulo:
-
+Esimerkin tulostus:
+```C++
+int main() {
+    std::string content = downloadWebpage("https://www.example.com/");
+    std::cout << content;
+    return 0;
+}
 ```
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Example Domain</title>
-        <meta charset="utf-8" />
-        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
-    
-    <body>
-        <div>
-            <h1>Example Domain</h1>
-            <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
-            <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-        </div>
-    </body>
-</html>
-```
+Tämä antaa verkkosivun HTML-koodin.
 
-## Syväsukellus:
+## Syvällinen sukellus:
 
-Web-sivujen lataamiseen on kehitetty erilaisia tekniikoita ja kirjastoja, joista yksi suosituimmista on libcurl-kirjasto. Se tarjoaa yksinkertaisen ja monipuolisen käyttöliittymän ladata web-sivuja eri protokollien, kuten HTTP, HTTPS ja FTP, kautta.
+Historiallisessa kontekstissa verkkosivujen lataaminen on ollut olennainen tapa tiedon saamiseksi verkon läpi jo vuodesta 1991 lähtien, jolloin WWW lanseerattiin. 
 
-Vaihtoehtoisesti web-sivun lataamiseen voidaan käyttää myös muunlaisia menetelmiä, kuten REST API -palveluita tai HTML-parsereita, mutta ne voivat olla monimutkaisempia käyttää ja edellyttää enemmän koodausta.
+Vaihtoehtona voit käyttää muita kirjastoja, kuten 'Boost.Asio', joka tukee matalamman tason verkkotoimintoja. 
 
-Lisäksi web-sivun lataamisen toteuttaminen voi olla haastavaa, sillä siihen voi liittyä erilaisia ongelmia, kuten virheellisiä yhteyksiä tai hitaita palvelimia. Koodia pitää kirjoittaa huolellisesti ja testata useita eri tietolähteitä, jotta latausprosessi on luotettava ja toimii oikein erilaisissa tilanteissa.
+Riippuen sovelluksesi tarpeista, saatat haluta tarkistaa myös verkkosivun palauttamien HTTP-otsikoiden tietoja. Tämä voi tarkoittaa esimerkiksi toimintojen lisäämistä `cURL` koodiisi `curl_easy_getinfo` funktion avulla.
 
 ## Katso myös:
 
-- [CURL-kirjaston kotisivut](https://curl.haxx.se/libcurl/)
-- [C++ koodiesimerkki web-sivun lataamiseen](https://github.com/curl/curl/blob/master/docs/examples/simple.c)
-- [HTML Parser -kirjasto C++:lle](https://github.com/AtrCheema/HTML-Parser-Cpp)
+Lisätietoa saa alla olevien linkkien kautta:
+
+1. cURL:n virallisella sivustolla: [https://curl.haxx.se/libcurl/c/](https://curl.haxx.se/libcurl/c/)
+2. 'Boost.Asio' kirjasto: [https://www.boost.org/doc/libs/1_76_0/doc/html/boost_asio.html](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_asio.html)

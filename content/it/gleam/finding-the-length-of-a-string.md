@@ -1,7 +1,7 @@
 ---
-title:                "Trova la lunghezza di una stringa"
-html_title:           "Gleam: Trova la lunghezza di una stringa"
-simple_title:         "Trova la lunghezza di una stringa"
+title:                "Trovare la lunghezza di una stringa"
+html_title:           "Haskell: Trovare la lunghezza di una stringa"
+simple_title:         "Trovare la lunghezza di una stringa"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa è & Perché?
+## Cos'è & Perché?
 
-Calcolare la lunghezza di una stringa significa determinare quanti caratteri sono contenuti all'interno di essa. È un'operazione utile per i programmatori in quanto spesso è necessario conoscere le dimensioni di una stringa per poterla elaborare correttamente.
+La ricerca della lunghezza di una stringa è un'azione comune nella programmazione, nota come "ottenere la lunghezza di una stringa". Questa operazione è fondamentale per vari scenari, come la manipolazione di testo, il conteggio dei caratteri e la validazione dell'input utente.
 
-## Come fare:
+## Come Fare
 
-```Gleam
-let stringa = "Ciao, mondo!"
-let lunghezza = std.string.length(stringa)
+Ecco un breve esempio su come ottenere la lunghezza di una stringa in Gleam:
+
+```gleam
+import gleam/string
+
+let lunghezza = string.length("Ciao, Mondo!")
 ```
-Output:
-```Gleam
-12
-```
+Quando esegui questi codice, otterrai la lunghezza del testo "Ciao, Mondo!", che è 12.
 
-## Approfondimento:
+## Approfondimento
 
-**Contesto storico:** Il concetto di trovare la lunghezza di una stringa risale ai primi anni della programmazione, quando i computer erano in grado di gestire solo una limitata quantità di caratteri. Oggi, grazie alla potenza di elaborazione dei moderni computer, questi limiti sono stati superati. Tuttavia, trovare la lunghezza di una stringa rimane ancora un'operazione comune e importante nella programmazione.
+La funzione `string.length` in Gleam, come molte altre funzioni di conteggio delle stringhe nel mondo della programmazione, risale all'era del linguaggio C. In quei tempi, le stringhe erano gestite come array di caratteri, pertanto trovare la lunghezza di una stringa significava semplicemente iterare gli elementi dell'array fino a raggiungere un carattere nullo.
 
-**Alternative:** In alcune programmazioni, l'operazione di trovare la lunghezza di una stringa può essere sostituita da altre funzioni, come ad esempio counting o indexing. Tuttavia, calcolare esplicitamente la lunghezza rimane una pratica comune e raccomandata per mantenere il codice leggibile e facile da comprendere.
+Tra le alternative, alcune funzioni di conteggio delle stringhe tengono conto dei caratteri multibyte, il che è importante se il tuo programma sta gestendo stringhe Unicode. Tuttavia, `string.length` in Gleam fornisce la lunghezza in termini di codepoints Unicode, quindi non devi preoccuparti di questo problema.
 
-**Dettagli di implementazione:** In Gleam, la funzione `std.string.length` è parte della libreria standard e utilizza un'ottimizzazione per determinare la lunghezza della stringa in modo efficiente. Ciò è possibile grazie alla rappresentazione efficiente delle stringhe in Gleam.
+Quando si parla di implementazione, è importante notare che la funzione `string.length` in Gleam è altamente ottimizzata. Sotto il cofano, non esegue un ciclo attraverso ogni carattere, ma piuttosto utilizza le proprietà interne del linguaggio Erlang sottostante per calcolare la lunghezza di una stringa in tempo costante, il che rende questa funzione molto efficiente.
 
-## Vedi anche:
+## Vedi Anche
 
-- Documentazione ufficiale di Gleam su `std.string.length`: https://gleam.run/modules/std.string.html#length
-- Articolo su stringhe e loro manipolazione: https://stackoverflow.com/a/1045225/15417679
-- Tutorial su come usare stringhe in Gleam: https://medium.com/@gleamlang/string-manipulation-in-gleam-952d61d2d4d2
+Per ulteriori informazioni sulla gestione delle stringhe in Gleam, vedere le seguenti risorse:
+
+1. [Gleam String Module Documentation](https://hexdocs.pm/gleam_stdlib/gleam/string.html)
+2. [Unicode in Gleam](https://gleam.run/book/tour/unicode.html)
+3. [Gleam Programming Language: A First Look](https://dev.to/jfacorro/gleam-programming-language-a-first-look-3ef2)

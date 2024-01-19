@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "C++ recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "C++"
 category:             "C++"
@@ -12,44 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Debug output refers to the process of printing information to the console or output window during the execution of a program, for the purpose of troubleshooting and identifying errors. Programmers use this technique to gain insight into the inner workings of their code and to track down the source of bugs.
+Printing debug output refers to the act of displaying variable states, flow processes, and functional results to understand program behavior. Programmers use it to identify, trace, and fix bugs or errors in their code by better comprehending its runtime flow.
 
 ## How to:
 
-To print debug output in C++, you can use the `cout` function from the `iostream` library. It takes in a string (or any other data type) as a parameter and prints it to the console. For example:
+C++ has several methods for printing debug output, most commonly using `cout` statement from the Standard I/O library, or using `cerr` for error messages. Here's an example:
 
 ```C++
 #include <iostream>
 
-using namespace std;
-
 int main() {
-    int num1 = 10;
-    int num2 = 20;
-
-    cout << "The value of num1 is: " << num1 << endl;
-    cout << "The value of num2 is: " << num2 << endl;
-
-    // Output:
-    // The value of num1 is: 10
-    // The value of num2 is: 20
-
+    int x = 10;
+    std::cout << "Debug: X is " << x << std::endl; // prints: Debug: X is 10
+    std::cerr << "An error occurred." << std::endl; // error message
     return 0;
 }
 ```
 
-This code snippet will print the values of `num1` and `num2` to the console, allowing the programmer to check if they are correct.
+You can also use the Debug and Trace facilities of the `cassert` library:
+
+```C++
+#include <cassert>
+
+int main() {
+    int x = 5, y = 0;
+    y = x - 5;
+    assert(y != 0 && "Y is zero!"); // halts if y is zero
+    return 0;
+}
+```
 
 ## Deep Dive:
 
-Debug output has been a common technique used by programmers for decades. In the early days of programming, it was the only way to track down errors and bugs. However, as computer systems became more advanced, specialized debugging tools were developed, making the process more efficient and less time-consuming.
+Historically, programmers have always needed a means to peek under the hood. Debug output dates back to assembly language, using print statements to trace variable values. 
 
-One alternative to using `cout` for debug output is to use a debugger tool. Debuggers allow programmers to step through their code line by line and inspect variables and code behavior in real-time. Another option is to use logging libraries, which provide more advanced features such as logging levels and formatting.
+Alternative methods include logging into files, graphical debuggers, and specialized debug libraries. One such library is `Boost.Log`, designed for logging in multithreaded, heavy-load applications.
 
-When printing debug output, it is important to keep in mind that it can have a performance impact on the program. Therefore, it is recommended to use it sparingly and to remove it once the debugging process is complete.
+The actual implementation of `cout` and `cerr` is intricate. In short, they are stream objects tied to the console's stdout/stderr. Any data sent to these streams is displayed in the console, making them apt for debug output.
 
 ## See Also:
 
-- [The History of Debugging: A Love Story](https://www.youtube.com/watch?v=YJnF0XIJkr0)
-- [An Overview of Debugging Tools for C++](https://raygun.com/blog/debugging-tools-for-cpp/)
-- [Introduction to Logging in C++](https://www.codeproject.com/Articles/203887/Introduction-to-Logging-in-Cplusplus)
+- `std::cout` and `std::cerr` reference: [http://www.cplusplus.com/reference/iostream/](http://www.cplusplus.com/reference/iostream/)
+- `Boost.Log` library: [https://boost.org/libs/log/](https://boost.org/libs/log/)
+- For information on C++ graphical debuggers: [https://www.gnu.org/software/gdb/](https://www.gnu.org/software/gdb/)

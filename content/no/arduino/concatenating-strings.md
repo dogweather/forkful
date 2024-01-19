@@ -1,7 +1,7 @@
 ---
-title:                "Sammenføyning av strenger"
-html_title:           "Arduino: Sammenføyning av strenger"
-simple_title:         "Sammenføyning av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,47 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Sammenføyning av strenger er når to eller flere strenger blir satt sammen for å lage en lengre streng. Dette er nyttig for programmerere når de trenger å kombinere tekst og variabler for å generere dynamisk innhold.
+## Hva & Hvorfor?
 
-# Hvordan:
-```
-Arduino
+Sammensetting av strenger, altså at vi driver med det vi kaller 'konkatenering', er en teknikk der vi fester eller kobler sammen to eller flere strenger til én. Dette er nødvendig for å strukturere og formatere output på en meningsfull måte i mange programmeringsscenarier.
 
-Det er enkelt å utføre konkatenasjon av strenger på Arduino ved hjelp av operatoren "+=". Her er et eksempel på hvordan du kan kombinere tekst og en variabel for å lage en beskjed:
+## Hvordan gjøre det:
 
-```
-String navn = "Ada";
-String beskjed = "Hei " + navn;
-Serial.println(beskjed);
-// Output: Hei Ada
+Her er en grunnleggende Arduino-kode for å sammenfeste to strenger:
+
+```Arduino
+String streng1 = "Hei, ";
+String streng2 = "verden!";
+String samletStreng = streng1 + streng2;  // "Hei, verden!"
 ```
 
-Du kan også kombinere flere variabler sammen for å danne en lengre streng. Her er et eksempel:
+Her er et annet eksempel:
 
-```
-int alder = 25;
-String yrke = "ingeniør";
-String beskjed = "Jeg er " + alder + " år gammel og jobber som " + yrke;
-Serial.println(beskjed);
-// Output: Jeg er 25 år gammel og jobber som ingeniør
+```Arduino
+String streng1 = "Temp: ";
+float temperatur = 21.5;
+String melding = streng1 + String(temperatur);  // "Temp: 21.5"
 ```
 
-Husk at du kan bruke konkatenasjon både med strenger og tall. Her er et eksempel på hvordan du kan kombinere en streng og et tall for å printe ut en beskjed:
+## Dypdykk
 
-```
-int antall = 10;
-String beskjed = "Du har " + String(antall) + " nye meldinger";
-Serial.println(beskjed);
-// Output: Du har 10 nye meldinger
-```
+Selv om sammenføring av strenger virker enkelt, er det litt mer til dette enn det ser ut til. I den tidlige historien av programmeringsspråk, skjedde konkatenering ved å arbeide direkte med minnet. 
 
-# Dypdykk:
-Konkatenasjon av strenger har vært en viktig del av programmering siden de tidlige dagene av programmeringsspråk. I Arduino kan du også bruke funksjonen `String.concat()` for å kombinere strenger. Det finnes også alternative metoder som innebærer å bruke arrays eller `sprintf()` funksjonen.
+Alternativer til operatøren '+' for sammensetting er funksjonene 'concat()', 'sprintf()' etc. Men '+' operatøren gir en enklere og mer intuitiv måte å slå sammen strenger på. 
 
-Det er viktig å huske på at når du bruker `String`-variabler og konkatenasjon, kan det føre til allokering av minne og øke bruken av dynamisk minnehåndtering, noe som kan føre til redusert ytelse. Derfor bør du prøve å bruke `char`-array til konkatenasjon hvis det er mulig.
+Arduino implementerer konkatenering ved bruk av '+' operatøren i String-klassen, noe som gjør det enkelt og likefremt å bruke, selv om det under overflaten ligger litt kompleksitet.
 
-# Se også:
-- [Arduino String konkatenering](https://www.arduino.cc/en/Tutorial/StringAdditionOperator)
-- [C++ Strings](https://www.w3schools.in/cplusplus/strings/)
-- [Alternative måter å kombinere strenger på i Arduino](https://forum.arduino.cc/index.php?topic=237596.0)
+## Se også:
+
+Besøk disse linkene for mer informasjon og relaterte emner:
+
+1. For mer om strenger i Arduino: [Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/).
+2. For å mestre '+' operatør for strenger: [Arduino String Addition Operator](https://www.arduino.cc/reference/en/language/variables/data-types/string/operators/addition/).
+3. Mer om forskjellige funksjoner som concat og sprintf: [Arduino String Concat Function](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/).

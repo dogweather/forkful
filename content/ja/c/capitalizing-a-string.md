@@ -10,51 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-下記の「What & Why?」から「See Also」までの記事
+# C言語：文字列を大文字にする方法 
 
-## What & Why?
-文字列を大文字にするとは、プログラマーが文字列の各文字を大文字に変換することです。プログラマーがこれをする理由は、簡単に言うと、文字列を比較したり、特定の条件に合致するかどうかをチェックするためです。
+## 何と何のため？
+文字列の大文字化とは、文字列中の小文字を全て大文字に変換する作業を指します。より読みやすく、検索・比較を容易にするため、プログラマーはこれを行います。
 
-## How to:
+## ハウツー：
+以下にC言語で文字列を大文字にする実装例とその出力を示します。
+
 ```C
-// 文字列を大文字に変換する関数
-void to_uppercase(char *str){
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
-    // 文字列の長さを取得
-    int length = strlen(str);
-
-    // 各文字をチェックし、小文字の場合は大文字に変換
-    for(int i = 0; i < length; i++){
-        if(str[i] >= 'a' && str[i] <= 'z'){
-            str[i] -= 32;
-        }
+void capitalize(char *s) {
+    for(int i = 0; s[i] != '\0'; i++){
+        s[i] = toupper(s[i]);
     }
-    
-    // 変換後の文字列を出力
-    printf("変換後の文字列: %s", str);
 }
 
-int main(){
-
-    // 大文字に変換する文字列
-    char str[] = "programming";
-
-    // 変換前の文字列を出力
-    printf("変換前の文字列: %s\n", str);
-
-    // 大文字に変換する関数を呼び出し
-    to_uppercase(str);
-    
+int main() {
+    char str[] = "Hello, World!";
+    capitalize(str);
+    printf("%s", str); 
     return 0;
 }
 ```
-出力：
-変換前の文字列: programming
-変換後の文字列: PROGRAMMING
 
-## Deep Dive:
-文字列を大文字に変換する機能は、プログラミング言語によって実装方法が異なります。C言語では、文字列を配列として扱い、各文字をASCIIコードを用いて変換することで実現します。この機能は、プログラムが文字列比較や特定の文字列での操作を行う際に大きな役割を果たします。また、C言語以外の言語においても、同様の機能を備えている場合があります。
+このコードを実行すると、出力は次のようになります。
 
-## See Also:
-- [ASCIIコード表](https://ascii.jp/elem/000/000/032/32/)
-- [文字列比較の仕組みについて](https://www.it-collage.jp/programming/programming_basic08.html)
+```C
+HELLO, WORLD!
+```
+
+## ディープダイブ：
+1. 歴史的な文脈 : C言語では、ctype.hライブラリに`toupper`関数が用意されており、これを使って文字列を大文字に変換します。この関数は1970年代から存在しています。
+2. 代替手段 : 大文字化を求めるより複雑な操作が必要な場合、正規表現ライブラリを使用することもあります。しかし、単純な大文字化には`toupper`関数が最も効果的です。
+3. 実装の詳細 : `toupper`関数は引数として与えられた文字がアルファベットの小文字であれば該当する大文字に変換し、そうでなければそのままの文字を返します。そのため、この関数を文字列の各文字に適用することで、文字列全体を大文字に変換することができます。
+
+## 参考情報：
+以下にこの記事と関連するいくつかのソースを紹介します：
+
+1. [C Library - <ctype.h>](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
+2. [C Programming/Strings](https://en.wikibooks.org/wiki/C_Programming/Strings)
+3. [C++ Reference: toupper](https://en.cppreference.com/w/c/string/byte/toupper)

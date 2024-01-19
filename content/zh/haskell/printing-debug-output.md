@@ -1,6 +1,6 @@
 ---
 title:                "打印调试输出"
-html_title:           "Haskell: 打印调试输出"
+html_title:           "Clojure: 打印调试输出"
 simple_title:         "打印调试输出"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,60 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-您可能在開發中遇到一些困難，導致您的程式碼無法如您所預期一般工作。這時，您可能會用一個叫做debug的技術來幫助您解決問題。debug輸出是一種在程式碼中插入的代碼，用於顯示一些信息，如變量的值或代碼的執行順序。它可以幫助您更容易地理解程式碼的運行，並找出錯誤所在。
+## 什么和为什么?
 
-＃＃ 如何使用：
+打印调试输出是一种编程方法，通过它，程序员可以在程序运行时检测程序状态。这样做可以帮助我们找出代码中的错误并修复它们。
 
-Haskell提供了一些方法來幫助您輸出debug信息：
+## 如何做
 
-＃＃＃ 使用print函數：
-
-```Haskell
-main = do
-  let x = 10
-  print x
-```
-這將在終端輸出10。
-
-＃＃＃ 使用trace函數：
+在 Haskell 中，我们可以使用 `Debug.Trace` 模块中的 `trace` 函数来打印调试输出。例如：
 
 ```Haskell
 import Debug.Trace
 
-main = do
-  let x = 10
-  trace "value of x" x
+main = print $ let x = 5 in trace ("x: " ++ show x) (x*2)
 ```
-這將同時顯示x的值和"values of x"。
 
-＃＃＃ 使用Debug.Trace.traceShow函數：
+运行上述代码，输出如下：
 
-```Haskell
-import Debug.Trace
-
-main = do
-  let x = 10
-  let y = 20
-  traceShow (x + y)
 ```
-這將顯示x和y的值的總和。
+x: 5
+10
+```
 
-＃＃ 深入探討：
+在这里，`trace` 函数打印出了 "x: 5" 这个调试信息，并返回了 `x*2` 计算结果。
 
-＃＃＃ 歷史背景：
+## 深度挖掘
 
-debug輸出是一種用於程式碼調試的技術，它在早期電腦語言中很常見。它是由pioneering computer scientist Grace Hopper開發，以幫助程式設計師定位和解決錯誤。
+1. 历史背景：Haskell 引入了 `trace` 函数主要是因为它是一个函数式编程语言，传统的命令式调试方法在这里不适用。因此，Haskell 开发者需要一种可以在函数式环境中使用的调试工具。
 
-＃＃＃ 其他選擇：
+2. 可选方案：至于打印调试信息，除了 `trace` 函数，Haskell 还提供了 `traceShow` 函数。这个函数可以直接展示调试信息，而不需要自己调用 `show` 函数。使用 `traceShow` 可以使代码更简洁。
 
-除了print和trace函數外，還有其他一些工具可用於程式碼調試，如Haskell的debugger。它可以讓您設定斷點，讓您可以在特定地點檢查程式碼的值。
+3. 实现细节：`trace` 函数实际上并非真正的打印，它是通过与系统的标准错误交互，以实现调试输出。在实际使用时，我们需要注意 `trace` 只在其第二个参数被求值的时候才会打印调试信息。
 
-＃＃＃ 實現細節：
+## 另请参阅
 
-在Haskell中，print和trace函數均使用了IO monad來處理輸出操作。這意味著它們將在一個特殊的context中運行，並在任何IO操作後退出。
-
-＃＃ 請參閱：
-
-1. [Haskell官方文件](https://www.haskell.org/documentation/)
-2. [紐特拉蒙瑞爾大學的Haskell簡介](http://www.cs.mcgill.ca/~luc/haskell.html)
-3. [Hoogle函數搜索引擎](https://hoogle.haskell.org/)
+1. [Haskell 调试技巧](https://wiki.haskell.org/Debugging)
+2. [Debug.Trace 模块的官方文档](http://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html)

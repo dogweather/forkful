@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "Go: Analizando html"
-simple_title:         "Analizando html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,66 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & ¿Por qué?
-El HTML es el lenguaje utilizado para crear y presentar contenido en la web. Al parsear HTML, los programadores pueden analizar y extraer información específica de una página web para utilizarla en su propio código. Esto es especialmente útil para la automatización de tareas y para obtener datos de fuentes externas.
+---
 
-## ¿Cómo hacerlo?
-Utilizando el lenguaje de programación Go, podemos implementar un parser de HTML bastante sencillo. Primero, importamos la biblioteca de Go llamada "html" y luego utilizamos la función "Parse" para analizar el contenido HTML y devolver una estructura de datos que podamos manipular. Aquí hay un ejemplo de código que extrae todos los hipervínculos de una página web y los imprime en la consola:
+## ¿Qué y Por qué?
+
+Parsear HTML es el acto de convertir código HTML en una representación manipulable en memoria. Los programadores lo hacen para extraer información, manipular el contenido, hacer scraping web e implementar la automatización.
+
+## ¿Cómo?
+
+La biblioteca de Go 'net/html' facilita mucho el parseo de HTML. Aquí te presento un ejemplo simple de cómo funciona:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "log"
-
-    "golang.org/x/net/html"
+	"fmt"
+	"golang.org/x/net/html"
+	"strings"
 )
 
 func main() {
-    // Recuperar la página web
-    resp, err := http.Get("http://www.example.com")
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer resp.Body.Close()
+	const htmlDoc = "<html><body>Hola Mundo!</body></html>"
+	doc, _ := html.Parse(strings.NewReader(htmlDoc))
 
-    // Analizar contenido HTML
-    doc, err := html.Parse(resp.Body)
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    // Función para recorrer árbol HTML y encontrar hipervínculos
-    var findLinks func(*html.Node)
-    findLinks = func(n *html.Node) {
-        if n.Type == html.ElementNode && n.Data == "a" {
-            for _, a := range n.Attr {
-                if a.Key == "href" {
-                    fmt.Println(a.Val)
-                }
-            }
-        }
-        for c := n.FirstChild; c != nil; c = c.NextSibling {
-            findLinks(c)
-        }
-    }
-    findLinks(doc)
+	var f func(node *html.Node)
+	f = func(node *html.Node) {
+		if node.Type == html.TextNode {
+			fmt.Println(node.Data)
+		}
+		for child := node.FirstChild; child != nil; child = child.NextSibling {
+			f(child)
+		}
+	}
+	f(doc)
 }
 ```
 
-Este código utiliza una función recursiva para recorrer cada nodo en el árbol HTML y buscar elementos "a" (hipervínculos) y sus atributos "href" (la dirección URL). Luego, utiliza la función de impresión de Go para mostrar cada hipervínculo encontrado en la consola.
+Al ejecutar este código, la salida será:
 
-## Profundizando
-El parsing de HTML ha sido un tema importante en la creación de aplicaciones web desde los inicios de la web en 1990. Antes de Go, los programadores utilizaban principalmente lenguajes como Python y Java para realizar tareas de scraping o extracción de datos de la web. Sin embargo, con la llegada de Go, se ha vuelto más fácil y rápido implementar esta funcionalidad.
+```Go
+Hola Mundo!
+```
 
-Hay varias bibliotecas de Go disponibles para el parsing de HTML, cada una con sus propias características y fortalezas. Algunas alternativas populares son "goquery" y "selectors". También es posible utilizar otras herramientas como "Regular Expressions" o "Xpath" para el parsing de HTML, pero estas opciones pueden resultar más complicadas.
+## Inmersión Profunda
 
-El paquete "html" de Go también ofrece varias funciones adicionales para manipular y trabajar con el árbol HTML, como "Attr", "Tag", "Parent" y más. Estas pueden ser útiles para tareas más específicas o avanzadas de parsing.
+Historicamente, parsear HTML ha sido un proceso desafiante debido a la naturaleza flexible y tolerante a errores de HTML. Antes de 'net/html', utilizábamos bibliotecas como 'Beautiful Soup' en Python, que se consideraban relativamente lentas.
 
-## Ver también
-Para obtener más información sobre el parsing de HTML con Go, se pueden consultar las siguientes fuentes:
+Para Go, 'net/html' es una excelente alternativa. Proporciona una interfaz de alto nivel para parsear HTML, y es extremadamente eficiente, gracias a los beneficios inherentes de Go en materia de rendimiento y concurrencia.
 
-- Documentación oficial de Go sobre el paquete "html": https://golang.org/pkg/html/
-- Ejemplos de código en el sitio de Go por la comunidad: https://gobyexample.com/html-parsing
-- Tutorial en video sobre parsing de HTML en Go: https://www.youtube.com/watch?v=Cy2HgH0OwXU
+Detalles de implementación: 'net/html' utiliza una máquina de estado para parsear el documento. Convierte el HTML en tokens, construye nodos a partir de estos tokens, y finalmente ensambla un DOM (Modelo de Objeto de Documento) completo.
+
+## Ver También
+
+1. [Documentación oficial de la biblioteca 'net/html'](https://pkg.go.dev/golang.org/x/net/html) - Para leer más sobre 'net/html'.
+2. [Guía de parseo de HTML de Mozilla](https://developer.mozilla.org/es/docs/Web/HTML/Parser) - Para entender el proceso general de parseo del HTML.
+3. ['Beautiful Soup'](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - Para comparar con una alternativa en Python.

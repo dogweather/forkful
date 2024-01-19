@@ -1,6 +1,6 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Javascript: Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
 simple_title:         "Interpolando uma string"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Interpolação de String em JavaScript: O Que, Porquê e Como
 
-Interpolação de string é um recurso na linguagem de programação Javascript que nos permite combinar texto e variáveis em uma única string. Isso nos permite criar strings dinâmicas, com valores que podem variar dependendo do contexto. Programadores geralmente usam interpolação de string para tornar seu código mais legível e para criar mensagens personalizadas para os usuários.
+## O Que e Porquê?
+
+Interpolação de string em JavaScript envolve inserir expressões ou variáveis ​​dentro de strings para tornar o código mais flexível e dinâmico. Isso proporciona uma concatenação de string mais limpa e eficiente, tornando o código mais legível.
 
 ## Como fazer:
 
-Para interpolar uma string em Javascript, usamos a sintaxe `${variavel}` dentro de uma string delimitada por crases. Por exemplo:
+Há uma maneira simples de fazer isso em JavaScript moderno, usando as chamadas 'template strings'. Aqui está um exemplo:
 
+```Javascript
+let nome = "Maria";
+let saudacao = `Olá, ${nome}!`;
+console.log(saudacao); // irá imprimir 'Olá, Maria!'
 ```
-const nome = "Maria";
-console.log(`Olá ${nome}, bem-vindo ao nosso site!`);
-```
 
-Isso imprimirá no console: `Olá Maria, bem-vindo ao nosso site!` onde o valor da variável `nome` é inserido na string. Podemos interpolar múltiplas variáveis em uma única string e também podemos realizar operações matemáticas dentro das chaves `${}`.
+As variáveis podem ser inseridas diretamente nas strings, útil especialmente ao gerar dinamicamente respostas de texto.
 
-## Mergulho profundo:
+## Mergulho Profundo
 
-A interpolação de string é um recurso que foi introduzido na versão ES6 do Javascript. Anteriormente, os programadores usavam a concatenação de strings (usando o operador `+`) para combinar texto e variáveis. No entanto, a interpolação de string é mais legível e permite o uso de expressões dentro das chaves `${}`. É importante notar que nem todos os navegadores suportam a interpolação de string, portanto, é recomendável usar um transpilador como o Babel para garantir a compatibilidade com todos os navegadores.
+Historicamente, a concatenação de string em JavaScript era feita com o operador '+', que podia ser confuso e propenso a erros. A interpolação de string foi introduzida no ES6 para resolver esses problemas. 
 
-## Veja também:
+Existem alternativas em bibliotecas externas, como lodash e outras, mas a maneira mais moderna e direta é usando o recurso embutido do JavaScript.
 
-- [Documentação sobre interpolação de string em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/template_strings)
-- [Tutorial sobre interpolação de string no site Codecademy](https://www.codecademy.com/learn/introduction-to-javascript/modules/interpolation-js)
-- [Exemplo de uso de interpolação de string em um projeto real](https://github.com/damiancipolat/Jwt-NodeExpress-Mongodb/blob/master/src/database/mongo_repository.js)
+A interpolação de string no JavaScript usa a função 'toString' no pano de fundo para garantir que todas as variáveis sejam convertidas corretamente em uma string.
+
+## Veja também
+
+- [MDN - Template Strings](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/template_strings)
+- [JavaScript.info - String Interpolation](https://javascript.info/string#string-interpolation)
+
+Ao longo do artigo você perceberá o quão útil, poderoso e limpo é o uso de interpolação de strings em JavaScript.

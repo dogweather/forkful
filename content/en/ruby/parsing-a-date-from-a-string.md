@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Ruby recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,30 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing a date from a string is the process of extracting and converting a date from a string of text into a format that a computer can understand and manipulate. Programmers do this to make it easier to work with dates in their code, such as comparing dates or displaying them in a specific format.
+Parsing a date from a string means transforming a textually represented date into a manipulable data type. Programmers do this to utilize date/time functions, compare dates, or store dates in databases.
 
 ## How to:
-To parse a date from a string in Ruby, we can use the ```DateTime.parse()``` method. This method takes in a string as an argument and returns a DateTime object, which can then be manipulated as needed. Here's an example:
+Ruby makes parsing dates from strings easy peasy. Here's a simple example of this using built-in `Date.parse` function.
 
 ```Ruby
 require 'date'
+date_string = "2023-10-05"
+date = Date.parse(date_string)
+puts date
+```
+Output:
 
-date_string = "2021-05-15" # 15th of May, 2021
-date = DateTime.parse(date_string)
-puts date # 2021-05-15T00:00:00+00:00
-puts date.year # 2021
-puts date.month # 5
-puts date.day # 15
+```Ruby
+2023-10-05
 ```
 
-In the code above, we first require the ```date``` library, which provides us with the necessary methods for date manipulation. Then, we create a string with a specific date and pass it into the ```DateTime.parse()``` method. We can then access different components of the date, such as year, month, and day, using the appropriate methods.
+Well, it's as simple as that. You provide a date string to `Date.parse` and it hands you a date object!
 
-## Deep Dive:
-Parsing dates from strings has been a common task for programmers since the early days of computing. With the rise of the internet and internationalization, the need for standardized date parsing became more crucial. This led to the creation of ISO 8601, a global standard for date representation, which the ```DateTime.parse()``` method in Ruby adheres to.
+## Deep Dive
+Digging a bit deeper, parsing is crucial because computers understand dates not as a string of characters but numerical representations. Notably, Euler’s algorithm powers Ruby's `Date.parse` that here leverages Europe's day-first date format.
 
-An alternative to parsing dates from strings is to use the ```DateTime.strptime()``` method, which allows for more flexibility in specifying the format of the date string. However, this method requires more code and is not as beginner-friendly as the ```DateTime.parse()``` method.
+The function tries to guess the correct format, which might occasionally invoke its downside: the risk of misunderstanding when the date parts are ambiguous (e.g., "01-02-03"). 
 
-## See Also:
-- [DateTime.parse documentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html#method-c-parse)
-- [ISO 8601 standard](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [DateTime.strptime documentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html#method-c-strptime)
+There are alternatives to the built-in method. For more control, use `strptime` method:
+
+```Ruby
+date = Date.strptime(date_string, "%Y-%m-%d")
+```
+
+But beware, `strptime` requires you to specify the format, thus lacks the `Date.parse` flexibility. Choose your poison depending on the trade-off you're willing to make between control and convenience.
+
+## See Also
+Delve deeper into the matter with informative resources:
+- [Ruby Date.parse documentation](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html#method-c-parse)
+- [Ruby Date.strptime documentation](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html#method-c-strptime)
+- [Why, when & how to use parse and strptime](https://www.rubyguides.com/2015/12/ruby-time/)

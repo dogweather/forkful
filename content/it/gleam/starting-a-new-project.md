@@ -1,6 +1,6 @@
 ---
 title:                "Iniziare un nuovo progetto"
-html_title:           "Gleam: Iniziare un nuovo progetto"
+html_title:           "Arduino: Iniziare un nuovo progetto"
 simple_title:         "Iniziare un nuovo progetto"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e Perché?
- Iniziare un nuovo progetto significa creare un'ambiente virtuale dove è possibile scrivere codice e sviluppare una nuova applicazione o libreria. I programmatori lo fanno per organizzare il loro lavoro e mantenere le cose ordinate.
+## Cos'è & Perché?
+
+Avviare un nuovo progetto di programmazione significa creare da zero un nuovo software. I programmatori lo fanno per risolvere problemi specifici, innovare o semplicemente per apprendere nuove tecniche.
 
 ## Come fare:
 
-Per iniziare un nuovo progetto in Gleam, è necessario creare una cartella vuota e all'interno creare un file `gleam.toml`. Questo file contiene le informazioni di base sul progetto, come ad esempio il nome, la versione, gli autori e le dipendenze. Un esempio di file toml è il seguente:
+Creare un nuovo progetto in Gleam è semplice. Ecco un esempio di come fare:
 
 ```Gleam
-[package]
-name = "my_project"
-version = "1.0.0"
-authors = ["John Doe", "Jane Smith"]
-
-[dependencies]
-gleam = {version = "0.12.0"}
+$ gleam new ciao_mondo
+$ cd ciao_mondo
 ```
 
-Una volta creato il file `gleam.toml`, è possibile aggiungere altri file al vostro progetto, come ad esempio il file principale `main.gleam` che conterrà il codice in Gleam. Per compilare il progetto, è necessario eseguire il comando ```gleam build```, che creerà un file `.beam` contenente il tuo codice pronto per essere eseguito.
+Dopo aver eseguito questi comandi, avrete un nuovo progetto Gleam chiamato "ciao_mondo". Per eseguire il progetto, utilizzate il seguente comando:
 
-## Deep Dive:
+```Gleam
+$ rebar3 shell
+1> ciao_mondo:inizia().
+Ciao, Mondo!
+```
 
-In passato, i programmatori dovevano utilizzare ambienti di sviluppo molto complessi per iniziare un nuovo progetto. Con Gleam, invece, è possibile utilizzare un semplice file toml per specificare le dipendenze e iniziare a codificare immediatamente.
+## Approfondimento
 
-In alternativa, esistono altri linguaggi di programmazione che consentono di iniziare progetti in modo simile, come ad esempio Rust o Elixir. Tuttavia, Gleam offre un sistema di tipi fortemente statico, rendendo più facile scrivere e mantenere il codice nel lungo periodo.
+Quando avviate il nuovo progetto, Gleam crea una serie di file e cartelle per voi. Questo design di base del progetto è stato sviluppato nel corso degli anni per seguire le migliori pratiche. Ci sono alternative come `Mix` per Elixir e `rebar3` per Erlang, ma `gleam new` è un ottimo inizio per un nuovo progetto Gleam.
 
-## Vedi anche:
+Gleam è un linguaggio di programmazione staticamente tipizzato progettato per il BEAM, la macchina virtuale Erlang. Nonostante sia relativamente giovane, sta guadagnando popolarità grazie alla sua sintassi chiara e al forte sistema di tipi.
 
-- Documentazione ufficiale di Gleam: https://gleam.run/
-- Repository GitHub di Gleam: https://github.com/gleam-lang/gleam
+## Vedi Anche:
+
+Per ulteriori informazioni su Gleam, potete consultare le seguenti risorse:
+
+1. [La documentazione ufficiale di Gleam](https://gleam.run/docs/)
+2. [Una guida introduttiva a Gleam](https://gleam.run/getting-started/)
+3. [Il repository GitHub di Gleam](https://github.com/gleam-lang/gleam)
+
+Ricorda, la miglior maniera per imparare è fare pratica, quindi iniziate il vostro nuovo progetto Gleam oggi stesso!

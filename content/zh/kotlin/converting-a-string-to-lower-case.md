@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "Kotlin: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,30 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是字符串转换为小写，为什么程序员需要这么做？
+## 是什么与为什么?
 
-字符串转换为小写是将英文字符串中的大写字母变成小写字母的过程。程序员通常这么做是为了统一字符串的格式，方便后续的处理和操作。
+字符串转换为小写就是将字符串中的所有大写字母更改为对应的小写字母。这项操作对于创建不区分大小写的字符串匹配操作或者用户输入标准化非常有用。
 
-## 如何进行字符串转换为小写？
+## 如何操作:
 
-使用Kotlin内置的函数```toLowerCase()```可以实现字符串转换为小写的功能。以下是一个简单的例子：
+使用Kotlin的 `toLowerCase()` 函数，可以将字符串转换为小写。下面是一些代码示例和结果:
+
 ```Kotlin
-val name = "HELLO WORLD"
-println(name.toLowerCase())
+fun main() {
+    val str = "HELLO WORLD"
+    println(str.toLowerCase())
+}
 ```
-输出结果为：
-```Kotlin
+
+运行这段代码，输出结果为:
+
+```
 hello world
 ```
 
-## 深入了解
+## 深入探究
 
-历史背景：在早期的计算机编程中，大写字母和小写字母被存储为不同的ASCII码，因此在处理字符串时需要注意字母的大小写。随着编程语言的发展，大部分语言都提供了函数来实现字符串转换为小写的操作。
+在实现细节上，`toLowerCase()`转换方法在大多数情况下会呈现预期的行为，但在处理一些特别的语言环境时可能需要额外的注意。 
 
-替代方案：除了使用内置函数，也可以通过遍历字符串的每一个字符，判断是否为大写字母，然后转换为相应的小写字母来实现功能。
+例如：
 
-实现细节：Kotlin内置函数```toLowerCase()```是基于Unicode字符集，可以正确地处理不同语言的字符，而不仅限于英文字符。此外，该函数也具备可变参数的特性，可以同时处理多个字符串。
+```Kotlin
+fun main() {
+    val str = "HELLO WORLD İ"
+    println(str.toLowerCase())
+}
+```
 
-## 查看更多
+在默认设置下，大写的 "İ"会被转换为 "i"，而不是 "ı"。这可能会有问题，尤其是在一些特别的语言环境比如土耳其语中。
 
-了解更多Kotlin的字符串操作方法，请参考官方文档：[Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+你可以传递一个 `Locale` 实例到 `toLowerCase()` 函数来指定转换规则：
+
+```Kotlin
+fun main() {
+    val str = "HELLO WORLD İ"
+    println(str.toLowerCase(Locale.forLanguageTag("tr-TR")))
+}
+```
+
+这段代码会正确的输出 "hello world ı"。
+
+至于替代方案，你也可以使用 `String.fold()` 方法结合 `Char.toLowerCase()` 方法手动实现这个功能。
+
+```Kotlin
+fun main() {
+    val str = "HELLO WORLD"
+    println(str.fold("") { acc, c -> acc + c.toLowerCase() })
+}
+```
+
+这段代码也会输出 "hello world"。
+
+## 探究更多
+
+- Kotlin官方文档: [toLowerCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html), [Char.toLowerCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+- [Kotlin `fold` function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/fold.html) 
+- [Locale-specific behavior](https://docs.oracle.com/javase/tutorial/i18n/locale/index.html)

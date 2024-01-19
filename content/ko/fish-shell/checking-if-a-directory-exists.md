@@ -1,7 +1,7 @@
 ---
-title:                "디렉토리가 존재하는지 확인하는 방법"
-html_title:           "Fish Shell: 디렉토리가 존재하는지 확인하는 방법"
-simple_title:         "디렉토리가 존재하는지 확인하는 방법"
+title:                "디렉토리가 존재하는지 확인하기"
+html_title:           "Bash: 디렉토리가 존재하는지 확인하기"
+simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -12,40 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-디렉토리가 존재하는지 확인하는 것은 프로그래머들이 코드를 작성할 때 자주 하는 작업입니다. 디렉토리가 존재하는지 여부를 확인함으로써, 프로그램의 플로우를 제어하고, 오류를 방지하고, 보안을 강화할 수 있기 때문입니다.
+디렉토리가 존재하는지 확인하는 것은, 파일 시스템에서 특정 디렉토리의 존재 유무를 판단하는 것을 의미합니다. 프로그래머들이 이를 수행하는 이유는, 파일 작업을 실행하기 전에 에러를 방지하거나, 특정 폴더가 존재하는지에 따라 다른 동작을 수행하기 위함입니다. 
 
-## 방법:
+## 어떻게:
 
-```
-Fish Shell에서 디렉토리가 존재하는지 확인하는 방법:
+다음과 같이 샘플 코드를 통해 디렉토리 존재 확인을 수행할 수 있습니다. 
 
-if test -d "/my/directory"
-    echo "디렉토리가 존재합니다."
+```Fish Shell
+if test -d /path/to/directory
+   echo "Directory exists"
 else
-    echo "디렉토리가 존재하지 않습니다."
+   echo "Directory does not exist"
 end
 ```
 
-```
-Fish Shell에서 디렉토리가 존재하는지 확인하는 방법:
+이 코드는 `/path/to/directory` 가 존재하는지 먼저 점검하고, 존재할 경우 "Directory exists"를 출력하며, 그렇지 않으면 "Directory does not exist"를 출력합니다. 
 
-if contains "/my/directory" (command ls)
-    echo "디렉토리가 존재합니다."
-else
-    echo "디렉토리가 존재하지 않습니다."
-end
-```
+## Deep Dive
 
-## 딥 다이브:
+디렉토리 존재 판단 방법은 컴퓨팅의 역사와 같이 오래되었습니다. 과거에는 디렉토리를 확인하기 위해 사용자가 직접 파일시스템을 탐색해야 했지만, UNIX 시스템에서 제공하는 `test -d` 라는 빌트인 명령을 이용하여 현대의 쉘 스크립트에서는 이 과정을 쉽게 처리할 수 있게 되었습니다.
 
-디렉토리가 존재하는지 확인하는 작업은 인터넷이 발전하기 이전인 1970년대부터 컴퓨터 사용자들이 자주 하는 작업 중 하나였습니다. 이 작업을 수행하기 위해 사용되는 명령어는 운영체제마다 다양하지만, 대부분의 경우에 먼저 디렉토리에 접근 권한이 있는지 확인한 후, 접근 권한이 있다면 디렉토리가 존재하는 것으로 판단합니다. Fish Shell에서는 `test` 명령어를 사용하여 디렉토리가 존재하는지 여부를 확인할 수 있으며, `contains` 명령어를 사용하여 현재 디렉토리에 원하는 디렉토리가 포함되어 있는지 여부를 확인할 수 있습니다.
+다른 방법으로는, `if [ -d "$DIR" ]`와 같이 사용하는 방법이 있습니다. `-d` 옵션은 디렉토리가 존재하는지 확인하는 명령으로, `$DIR`이 디렉토리일 경우 참을 반환합니다. 
 
-Fish Shell 이외에도 다른 쉘 프로그래밍 언어에서도 디렉토리가 존재하는지 확인하는 방법들이 제공됩니다. 예를 들어, bash에서는 `-d` 옵션을 사용하여 디렉토리가 존재하는지 여부를 확인할 수 있습니다. 또한, 디렉토리를 비롯한 다양한 파일 유형의 존재 여부를 확인하는 명령어인 `stat`도 많이 사용됩니다.
+## 참고 자료
 
-디렉토리가 존재하는지 확인하는 작업은 보안 상의 이유로 자주 사용되기도 합니다. 예를 들어, 파일을 올바른 디렉토리 경로에 저장하는지 확인하기 위해 디렉토리가 존재하는지 여부를 검사할 수 있습니다.
+추가 정보를 위해, 다음 링크를 참조하십시오. 
 
-## 관련 정보:
-
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
-- [Linux Shell Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [쉘 스크립트를 이용한 모범 사례](https://github.com/progit/progit2/blob/master/book/02-git-basics/03-branching-merging-and-remote-repositories.textile)
+1. Fish Shell 공식 문서: https://fishshell.com/docs/current/
+2. UNIX test 명령 정보: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/test.html
+3. 디렉토리 존재 확인에 대한 스택오버플로우 토론: https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script

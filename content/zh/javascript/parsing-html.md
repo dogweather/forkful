@@ -1,6 +1,6 @@
 ---
 title:                "解析HTML"
-html_title:           "Javascript: 解析HTML"
+html_title:           "Clojure: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTML解析是什么 & 为什么要做？
-HTML解析是将HTML代码转换为可读性更强的文本的过程。这允许我们在网页上进行修改和处理，为开发者提供了更多的控制权。解析HTML也可以帮助网页加载更快，提高用户体验。
+## 何为解析HTML？为何程序员需要解析？
 
-# 如何做：
+解析HTML就是利用代码来读取和理解HTML文件的过程，从而使HTML元素和属性变得可操作。程序员需要解析HTML来实现网页数据抓取、内容提取或实现Web自动化等功能。
+
+## 如何实现：
+
+以下是一个用JavaScript解析HTML的基本示例：
+
 ```javascript
-// 在JavaScript中，我们可以使用内置的DOM解析器来解析HTML
-const parser = new DOMParser();
-// 假设我们有一个HTML字符串：
-const htmlString = '<h1>Hello World!</h1>';
-// 使用解析器来解析这段HTML代码并返回一个文档对象
-const doc = parser.parseFromString(htmlString, 'text/html');
-// 现在我们可以通过文档对象来获取HTML元素
-console.log(doc.body.children[0].innerText); // 输出：Hello World!
+const { JSDOM } = require("jsdom");
+
+const html = `<p>你好，世界！</p>`;
+
+//利用 JSDOM 解析 HTML
+const dom = new JSDOM(html);
+
+console.log(dom.window.document.querySelector("p").textContent); // 输出 "你好，世界！"
 ```
 
-# 深入了解：
-## 历史背景：
-早期在开发网页时，开发者需要手动解析HTML代码，这是一项费时费力的工作。随着技术的发展，现在我们可以使用现成的工具和库来解析HTML，让开发变得更加高效。
+在上述代码中，我们使用了JSDOM库解析HTML，并提取了其中的文本内容。
 
-## 替代方案：
-除了使用JavaScript内置的DOM解析器，还可以使用第三方库比如Cheerio来解析HTML。Cheerio提供了类似jQuery的语法来选择和操作HTML元素。
+## 深入了解
 
-## 实现细节：
-在解析HTML时，我们需要注意编码和文档类型的设置，以确保正确解析。此外，解析器还会根据HTML标准处理标签和属性，如自动补全缺失的闭合标签等。
+1. 历史背景：HTML解析可以追溯到1990年代World Wide Web的诞生，当时的网页主要是静态HTML，解析HTML可以实现动态网页。
 
-# 参考资料：
-- [MDN - DOM Parser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [Cheerio Github](https://github.com/cheeriojs/cheerio)
-- [浅谈HTML解析实现原理](https://www.cnblogs.com/wangfupeng1988/p/4325298.html)
+2. 替代方案：除了JSDOM，还有许多 library 如 Beautiful Soup 和 Cheerio 可以实现HTML的解析。选择哪种取决于你的具体需求和使用环境。
+
+3. 实现细节：解析HTML其实就是构建DOM——Document Object Model-一种以对象形式表达HTML和XML文档结构的API。解析器会按照HTML标记（例如`<p>`和`</p>`）生成DOM树。
+
+## 另请参考
+
+- JSDOM官方文档(https://github.com/jsdom/jsdom)
+- Mozilla开发者们关于 DOM 的更多信息(https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model/Introduction)
+- HTML、DOM和JavaScript教程(https://www.w3schools.com/js/default.asp)

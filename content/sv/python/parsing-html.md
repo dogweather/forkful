@@ -1,7 +1,7 @@
 ---
-title:                "Åtskilja html"
-html_title:           "Python: Åtskilja html"
-simple_title:         "Åtskilja html"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,78 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad & Varför?
 
-HTML-parsning är en vanlig uppgift för Python-programmerare. Det innebär att man tar en HTML-fil och extraherar specifika data och attribut från koden. Detta är användbart för att automatisera uppgifter såsom att söka efter specifika länkar eller extrahera information från webbsidor.
+Att parse HTML innebär att man går igenom HTML-kod för att extrahera specifik information. Programmerare gör detta för att samla data från webbsidor - allt från att skrapa webbplatser till att interagera med webbtjänster.
 
-# Hur man gör:
+## Så här gör du:
 
-### Exempel 1 - Extrahera länkar från en webbsida:
+Python har flera bibliotek för att parse HTML, men vi kommer att använda 'BeautifulSoup' för att visa hur man gör det. Låt oss anta att vi vill hämta alla länkar från en webbsida:
 
 ```Python
 from bs4 import BeautifulSoup
 import requests
 
-# Hämta HTML-koden från en webbsida
-page = requests.get("https://www.example.com")
+response = requests.get('https://www.example.com')
 
-# Skapa en BeautifulSoup-objekt för att parsa HTML-koden
-soup = BeautifulSoup(page.content, 'html.parser')
+soup = BeautifulSoup(response.text, 'html.parser')
 
-# Hitta alla länkar på sidan och skriv ut dem
-links = soup.find_all('a')
-for link in links:
+for link in soup.find_all('a'):
     print(link.get('href'))
 ```
 
-Output:
-```
-https://www.example.com/link1
-https://www.example.com/link2
-https://www.example.com/link3
-```
+Exekveringen av koden ovan kommer att ge oss alla URL: er som finns på hemsidan 'https://www.example.com'.
 
-### Exempel 2 - Extrahera titlar från ett Google-sökresultat:
+## Djupdykning
 
-```Python
-from bs4 import BeautifulSoup
-import requests
+HTML parsing har sina rötter i de tidiga dagarna av webbutveckling, när data mellan webbplatser delades genom HTML snarare än API:er. Det finns också alternativ till 'BeautifulSoup', som 'lxml' och 'html.parser'.
 
-# Hämta HTML-koden från ett Google-sökresultat
-page = requests.get("https://www.google.com/search?q=python")
+Implementationen varierar beroende på typen av parsare. Simpla parsare (t.ex. 'html.parser') använder reguljära uttryck för att identifiera HTML taggar, medan mer sofistikerade alternativ (t.ex. 'lxml') kan använda metoder som DOM traversal.
 
-# Skapa en BeautifulSoup-objekt för att parsa HTML-koden
-soup = BeautifulSoup(page.content, 'html.parser')
+## Se även
 
-# Hitta alla titlar på sidan och skriv ut dem
-titles = soup.find_all('h3')
-for title in titles:
-    print(title.text)
-```
+1. Officiell dokumentation för BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
-Output:
-```
-Python - Din guide till programmeringsspråket
-Vad är Python? - Python.org
-Python (programspråk) – Wikipedia
-```
+2. Python 'requests' bibliotek: https://docs.python-requests.org/en/latest/
 
-# Djupdykning:
-
-## Historisk kontext:
-
-Python har länge varit ett populärt programmeringsspråk för automatisering av webbuppgifter. Bibliotek som Beautiful Soup och requests har förenklat webbskrapning och HTML-parsning sedan början av 2000-talet.
-
-## Alternativ:
-
-Det finns flera andra bibliotek för HTML-parsning i Python såsom lxml och Scrapy. Det är viktigt att välja det som passar bäst för ens specifika projekt och dess behov.
-
-## Implementeringsdetaljer:
-
-Vid användning av BeautifulSoup är det viktigt att välja en korrekt parser, beroende på vilken version av Python man använder och vilken typ av HTML-kod man har att hantera. Det är också viktigt att hålla koll på eventuella ändringar i HTML-strukturen på de webbsidor man parsar för att undvika felaktig dataextraktion.
-
-# Se även:
-
-- [Beautiful Soup Dokumentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [requests Dokumentation](https://requests.readthedocs.io/en/master/)
-- [Scrapy Dokumentation](https://docs.scrapy.org/en/latest/)
+3. Tutorial om webbskrapning med Python: https://realpython.com/beautiful-soup-web-scraper-python/

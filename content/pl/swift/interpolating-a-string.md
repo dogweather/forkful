@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "Swift: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,20 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Interpolowanie stringów to proces łączenia stałych ciągów znaków z zmiennymi do tworzenia nowego stringa. Programiści używają go, aby dynamicznie wstawiać wartości zmiennych do swoich stringów.
+Interpolacja stringów to inaczej sposób formatowania, który umożliwia wstawianie zmiennych lub wyrażeń bezpośrednio do stringów. Programiści używają jej, ponieważ zwiększa to czytelność i efektywność kodu.
 
 ## Jak to zrobić:
 ```Swift
-let name = "Anna"
-let age = 25
-let message = "Cześć, nazywam się \(name) i mam \(age) lat!"
-print(message)
+let imie = "Jan"
+let powitanie = "Cześć, \(imie)!"
+print(powitanie)
 ```
-**Wynik:**
-> Cześć, nazywam się Anna i mam 25 lat!
+Wyjście: `Cześć, Jan!`
 
-## Wnikliwsze spojrzenie:
-Interpolowanie stringów jest powszechną praktyką od lat, ale dopiero Swift wprowadził prostą składnię z użyciem symbolu "\". Alternatywnym sposobem jest łączenie stałych stringów i zmiennych za pomocą operatora "+". Implementacja interpolacji w Swift jest wydajniejsza, ponieważ unika narzutów związanych z alokacją pamięci dla stałych stringów i konwersją zmiennych na stringi.
+Możemy również dodać wyrażenia:
+```Swift
+let godzina = 10
+let powitanie = "Jest \(godzina), czas wstać, \(imie)!"
+print(powitanie)
+```
+Wyjście: `Jest 10, czas wstać, Jan!`
+## Głębiej
+(1) W kontekście historycznym, interpolacja jest stara jak sama informatyka. Prawie każdy nowoczesny język programowania oferuje tę funkcjonalność. 
 
-## Zobacz także:
-Dla szczegółowych informacji o interpolacji stringów w języku Swift, polecam przeczytać artykuł na stronie [Swift.org](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID293).
+(2) Alternatywą dla interpolacji stringów jest łączenie stringów przy użyciu operatorów lub funkcji, ale to nie jest tak wygodne lub czytelne. 
+
+(3) Interpolacja stringów w Swift wykonuje się w czasie wykonywania kodu, co oznacza, że interpolacja dynamiczna jest możliwa i nie musisz znać wszystkich wartości z góry.
+
+## Zobacz także
+1. [Dokumentacja Swift na temat String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+2. [Tutorial na temat interpolacji stringów w Swift](https://www.hackingwithswift.com/articles/178/super-powered-string-interpolation-in-swift-5-0)
+3. [Źródło Swift na GitHub](https://github.com/apple/swift)
+4. [Dyskusje o Swift na StackOverflow](https://stackoverflow.com/questions/tagged/swift)

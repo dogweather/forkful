@@ -1,7 +1,7 @@
 ---
-title:                "Extrahieren von Teilzeichenketten"
-html_title:           "Fish Shell: Extrahieren von Teilzeichenketten"
-simple_title:         "Extrahieren von Teilzeichenketten"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## Was und Warum?
 
-Extrahieren von Substrings ist ein Prozess, bei dem Teile eines Strings basierend auf bestimmten Kriterien extrahiert werden. Programmierer nutzen dies, um bestimmte Informationen aus längeren Texten zu erhalten, ohne den gesamten String zu durchsuchen.
+Das Extrahieren von Teilzeichenketten (substrings) ist ein Prozess, bei dem ein bestimmter Abschnitt einer Zeichenkette (string) ausgewählt und getrennt wird. Dies ist in der Programmierung üblich, um Daten zu analysieren, zu manipulieren oder zum Filtern von Eingabedaten.
 
-## Wie?
+## Anleitung:
 
-In Fish Shell kann das extrahieren von Substrings mit dem `string` Kommando und dem Flag `-s` durchgeführt werden. Zum Beispiel:
+Im Folgenden finden Sie Beispiele in Fish Shell und deren Ausgaben:
 
+```Fish Shell
+set string 'Fischschale'
+echo $string[1..5]
 ```
-Fish Shell string -s 2 'Hello World'
+ 
+Ausgabe:
 
-Ausgabe: llo World
+```Fish Shell
+Fisch
+```
+In diesem Beispiel wird ein Teilstring aus den ersten fünf Buchstaben des strings erstellt.
+
+```Fish Shell
+set string 'Fischschale'
+echo $string[-5..-1]
 ```
 
-Das Flag `-s` definiert den Startindex, von dem aus die Substring-Extraktion beginnt.
+Ausgabe:
 
-Um die Länge des extrahierten Substrings festzulegen, kann das Flag `-l` verwendet werden. Zum Beispiel:
-
+```Fish Shell
+Schale
 ```
-Fish Shell string -l 3 'Hello World'
+Hier wird ein Teilstring aus den letzten fünf Buchstaben des strings erstellt.
 
-Ausgabe: Hel
-```
 
-Das Flag `-l` gibt an, wie viele Zeichen vom Startindex aus extrahiert werden sollen.
+## Vertiefung:
 
-## Tiefere Einblicke
+Teilzeichenketten ziehen ihre Wurzeln aus den frühesten Tagen der Programmierung ziehen, als Speicherplatz teuer und begrenzt war. Durch die Verwendung von Teilzeichenketten konnte effizienter Code geschrieben werden. Heute werden sie aus den gleichen Gründen und mehr genutzt.
 
-Die Verwendung von Substring-Extraktion ist in vielen Programmiersprachen üblich, um bestimmte Teile von Strings zu erhalten. Alternativ können reguläre Ausdrücke verwendet werden, um ähnliche Ergebnisse zu erzielen. 
+Alternativen zur Teilzeichenkettenextraktion in Fish Shell könnten durch Regular Expressions (Regex) oder das `string`-Befehl in Fish Shell sein. Aber die klare und unkomplizierte Methode des Slicing in Fish Shell macht es zu einer attraktiven Option für viele.
 
-Bei der Implementierung von Substring-Extraktion müssen Programmierer darauf achten, dass sie den richtigen Index und die Länge für den zu extrahierenden Teil angeben, um versehentliche Fehler zu vermeiden.
+Fish Shell implementiert slicing mit einer 1-basierten Indexierung, das heißt der erste Buchstabe hat den Index 1 und so weiter. Im Gegensatz zu vielen anderen Sprachen erlaubt Fish negative Indizes, die von hinten zählen.
 
-## Siehe auch
+## Siehe auch:
 
-Weitere Informationen und Beispiele zur Verwendung von Substring-Extraktion in Fish Shell finden Sie in der offiziellen Dokumentation unter https://fishshell.com/docs/current/cmds/string.html.
+Weitere Informationen zur Zeichenkettenmanipulation in Fish Shell finden Sie in der offiziellen Fish-Dokumentation: https://fishshell.com/docs/current/index.html. Insbesondere der Abschnitt über die `string`-Befehle bietet einen reichen Überblick über diesen Bereich.

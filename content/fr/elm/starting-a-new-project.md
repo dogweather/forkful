@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "Elm: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
-Créer un nouveau projet peut sembler intimidant pour les programmeurs, mais c'est en fait une étape cruciale dans le développement de logiciels. Cela implique de définir les objectifs du projet, d'organiser le code et de le structurer de manière à ce qu'il puisse être facilement maintenu et développé à l'avenir.
+## C'est quoi & Pourquoi? 
 
-# How to:
-Pour commencer un nouveau projet en Elm, il suffit de suivre ces étapes simples : 
+Démarrer un nouveau projet en Elm, c'est initier une architecture d'application propre, structurée et de haute fiabilité. Les programmeurs le font pour créer des applications web frontales rapides, expérimentales et maintenables.
+
+## Comment faire? 
+
+Voici un exemple de comment commencer votre nouveau projet en utilisant `elm init`.
+
+```Elm
+# Créez un nouveau répertoire pour votre projet
+$ mkdir MonProjetElm
+$ cd MonProjetElm
+
+# Lancez Elm Init pour initialiser le Projet
+$ elm init
+
+# Résultat
+Elm projects always start with an elm.json file. I can create them!
+
+Alright, it is all set up. I created an elm.json file with some reasonable defaults.
+
 ```
-Elm init
-```
-Cela va créer une nouvelle structure de fichiers et de dossiers pour votre projet, y compris un fichier `Main.elm` où vous pourrez écrire votre code. Vous pouvez également définir le nom du projet et les dépendances en utilisant des options supplémentaires.
 
-Pour exécuter votre code, utilisez la commande suivante :
-```
-Elm reactor
-```
-Cela lancera un serveur local pour votre projet et vous pourrez voir votre code s'exécuter dans un navigateur en temps réel.
+Après avoir lancé `elm init`, une structure de dossiers sera créée avec un fichier `elm.json`. 
 
-# Deep Dive:
-La création d'un nouveau projet en Elm est assez similaire à celle d'autres langages fonctionnels, tels que Haskell ou Ocaml. Cependant, Elm se concentre sur le développement web et encourage l'utilisation de son architecture de modèle de vue, qui aide à garder le code bien organisé et facile à maintenir.
+## Plongée profonde 
 
-Il existe également d'autres alternatives pour créer des projets en Elm, comme l'outil de scaffolding `elm-webpack-starter` qui facilite la mise en place de projets plus complexes avec des fonctionnalités telles que la prise en charge des modules CSS et JavaScript.
+Elm est un langage de programmation fonctionnel qui a été conçu pour la facilité d'emploi, la performance et la robustesse. Il a été introduit en 2012 par Evan Czaplicki et a reçu un accueil largement positif pour sa simplicité et sa productivité.
 
-En ce qui concerne les détails de mise en œuvre, la commande `Elm init` utilise en fait un package appelé `elm-json`, qui permet de faciliter l'installation des dépendances et le suivi des versions.
+Pour démarrer un nouveau projet, on pourrait également utiliser `create-elm-app`, une alternative créée par la communauté qui initie un projet avec une structure plus riche, incluant le support pour le développement avec hot-reloading et le build de l'application en production.
 
-# See Also:
-- Documentation officielle d'Elm : https://guide.elm-lang.org/
-- Tutoriel vidéo pour créer un projet en Elm : https://www.youtube.com/watch?v=1oWbF7xtK9Y
-- Exemple de projet en Elm : https://github.com/evancz/elm-todomvc
+Quand vous commencez un nouveau projet en Elm, le piliers sont le fichier `elm.json` qui contient la configuration de votre projet, et le répertoire `src` qui contient vos fichiers Elm. 
+
+## Voir aussi 
+
+- Documentation Elm : [lien](https://elm-lang.org/docs)
+- Create Elm App : [lien](https://github.com/halfzebra/create-elm-app)
+- Guide de démarrage rapide d'Elm : [lien](https://guide.elm-lang.org/install/elm.html)

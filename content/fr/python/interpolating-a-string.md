@@ -1,6 +1,6 @@
 ---
 title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Python: Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
 simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Python"
 category:             "Python"
@@ -10,49 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi faire ?
+## Qu'est-ce que c'est & Pourquoi ?
 
-L'interpolation de chaîne est une méthode utilisée par les programmeurs pour combiner des chaînes de caractères avec d'autres variables ou expressions de code. Cela permet d'obtenir des chaînes de caractères dynamiques et personnalisées. Les programmeurs utilisent l'interpolation de chaîne pour automatiser la création de contenu ou pour faciliter la lecture et la manipulation de données.
+L'interpolation de chaînes en Python est une façon d'insérer des variables dans une chaîne. Elle est utilisée pour générer des chaînes dynamiques et faciliter la lecture du code.
 
-# Comment faire ?
+## Comment faire:
 
-Voici un exemple simple de l'utilisation de l'interpolation de chaîne en Python :
+Python fournit plusieurs façons d'interpoler les chaînes. On peut par exemple utiliser le formatage de chaînes avec l'opérateur `%` ou bien avec la méthode `.format()`. Python 3.6 a introduit les f-strings, une manière plus simple et plus efficace.
 
-```Python
-name = "Sara"
-age = 25
-message = f"Bonjour, je m'appelle {name} et j'ai {age} ans."
-print(message)
-```
-
-Output:
-
-Bonjour, je m'appelle Sara et j'ai 25 ans.
-
-Dans cet exemple, nous utilisons la lettre f avant la chaîne de caractères pour indiquer à Python qu'il s'agit d'une chaîne interpolée. Nous utilisons ensuite les accolades pour spécifier où nous voulons insérer nos variables ou expressions.
-
-Vous pouvez également utiliser l'interpolation de chaîne pour effectuer des opérations mathématiques ou des conditions dans votre chaîne de caractères :
+Voici quelques exemples:
 
 ```Python
-number_1 = 10
-number_2 = 5
-result = f"La somme de {number_1} et {number_2} est {number_1 + number_2}, et leur différence est {number_1 - number_2}"
-print(result)
+# Avec l'opérateur %
+name = "Pierre"
+print("Bonjour %s" % name)
+# Sortie: Bonjour Pierre
+
+# Avec la méthode .format()
+print("Bonjour {}".format(name))
+# Sortie: Bonjour Pierre
+
+# Avec les f-strings
+print(f"Bonjour {name}")
+# Sortie: Bonjour Pierre
 ```
 
-Output:
-La somme de 10 et 5 est 15, et leur différence est 5
+## Plongée plus profonde:
 
-# Plongez plus profondément
+Historiquement, l'opérateur `%` était la seule façon de faire de l'interpolation de chaînes en Python. Cependant, cette méthode peut être source de confusion et d'erreurs. Python 3 a introduit la méthode `.format()`, qui est plus lisible et flexible. 
 
-L'interpolation de chaîne est utilisée depuis longtemps dans les langages de programmation, mais Python l'a rendue encore plus facile à utiliser avec l'utilisation de la lettre f avant la chaîne de caractères.
+Avec Python 3.6, les f-strings sont arrivées, offrant une syntaxe plus simple et une meilleure performance. Elles permettent également l'évaluation d'expressions à l'intérieur des accolades. 
 
-Il existe également d'autres façons d'insérer des variables ou des expressions dans une chaîne de caractères, comme la méthode .format(). Cependant, l'interpolation de chaîne est préférée par de nombreux programmeurs pour sa simplicité et sa lisibilité.
+```Python
+age = 20
+# Avec les f-strings, on peut faire ceci:
+print(f"Vous avez {age}. Dans 10 ans, vous aurez {age+10}")
+# Sortie: Vous avez 20. Dans 10 ans, vous aurez 30
+```
 
-Python utilise la méthode .format() en arrière-plan pour gérer l'interpolation de chaîne. Cela signifie qu'il est possible d'effectuer des opérations plus complexes ou d'utiliser des expressions plus avancées dans une chaîne de caractères interpolée.
+Il existe des alternatives à l'interpolation de chaînes en Python, comme la concaténation de chaînes avec l'opérateur `+` ou la méthode `join()`. Néanmoins, ces méthodes sont souvent moins efficaces et moins lisibles.
 
-# Voir aussi
+## Voir aussi:
 
-Vous pouvez en apprendre davantage sur l'interpolation de chaîne et les autres méthodes d'exécution de code dans des chaînes de caractères en consultant la documentation officielle de Python : https://docs.python.org/fr/3/library/string.html
-
-Vous pouvez également découvrir les différentes façons d'interpoler des chaînes de caractères en Python dans cet article de blog : https://realpython.com/python-string-formatting/
+- Documentation officielle de Python sur le formatage des chaînes: https://docs.python.org/fr/3.9/tutorial/inputoutput.html#fancier-output-formatting
+- Tutoriels Python sur les f-strings: https://realpython.com/python-f-strings/
+- Tutoriels Python sur la méthode .format(): https://pyformat.info/

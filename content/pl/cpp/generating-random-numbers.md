@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie losowych liczb"
-html_title:           "C++: Tworzenie losowych liczb"
-simple_title:         "Tworzenie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,35 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć programiści!
-
-Dzisiaj zajmiemy się tematem generowania liczb losowych w języku C++. 
 ## Co i dlaczego?
 
-Generowanie liczb losowych jest ważnym aspektem wielu aplikacji i gier. Polega to na losowym wybieraniu liczb z określonego zakresu. Programiści wykorzystują to, aby urozmaicić swoje programy, symulować przypadkowe zdarzenia lub tworzyć unikalne klucze dostępu. 
+Generowanie losowych liczb jest procesem tworzenia serii liczb, które nie mają żadnej logicznej sekwencji czy wzorca. Programiści stosują to w różnych celach - od symulacji złożonych scenariuszy, przez tworzenie gier, aż do zabezpieczania danych.
 
 ## Jak to zrobić:
 
-Możemy użyć funkcji `rand()` w C++, która generuje liczby całkowite w zakresie od 0 do `RAND_MAX` - domyślnie 32767. Możemy określić również własny zakres, używając prostej operacji arytmetycznej i zapisując wynik do zmiennej. 
+Generowanie losowych liczb w C++ jest proste dzięki bibliotece <random>. Oto przykładowe użycie:
 
 ```C++
-int losowaLiczba = rand() % 100; // wygeneruje liczbę od 0 do 99 
-int zakres = 100; 
-int liczba = rand() % zakres + 1; // wygeneruje liczbę od 1 do 100 
+#include <random>
+#include <iostream>
+
+int main() {
+    std::random_device rd;  
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distr(1, 6);
+
+    for(int n=0; n<10; ++n)
+        std::cout << distr(gen) << ' ';
+    return 0;
+}
 ```
 
-Podczas uruchamiania programu wygenerowane liczby będą różne - dzięki temu mamy zapewnioną losowość. 
+W tym kodzie generujemy 10 liczb z zakresu 1-6 (jak losowanie kostki do gry).
 
-## Pełniejsza analiza:
+## W głąb tematu:
 
-Losowa liczba komputerowa jest wygenerowana za pomocą algorytmu pseudolosowego, który powtarza się w stałym rytmie. Przez lata powstało wiele algorytmów generowania liczb losowych, jednak nie jest możliwe uzyskanie idealnie losowych liczb za pomocą komputera. Alternatywą dla funkcji `rand()` jest użycie funkcji bibliotecznej `random`, która oferuje bardziej zaawansowane sposoby na generowanie liczb losowych. 
+Generowanie losowych liczb ma długą historię w informatyce. W starszych wersjach C++, używano funkcji rand() do generowania losowych liczb, ale ta funkcja ma pewne ograniczenia.
+
+Alternatywą dla metody prezentowanej w sekcji "Jak to zrobić" jest użycie narzędzi dostępnych w Boost.Random, które oferują bardziej rozbudowane możliwości.
+
+Przy generowaniu liczby losowej, musimy zawsze brać pod uwagę dwa elementy: generator (np. std::mt19937) oraz dystrybucję (np. std::uniform_int_distribution<>). Generator tworzy ciąg losowych wartości bezpośrednio, a dystrybucja transformuje te wartości tak, aby pasowały do naszych potrzeb.
 
 ## Zobacz też:
 
-Jeśli chcesz zgłębić temat generowania liczb losowych w C++, polecamy przeczytać poniższe źródła:
-
-- [Dokumentacja funkcji rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [Tutorial o funkcji random w C++](https://www.geeksforgeeks.org/generating-random-number-range-c/)
-- [Inne algorytmy generowania liczb losowych](https://en.wikipedia.org/wiki/List_of_random_number_generators)
-
-Dziękuję za uwagę i rozpocznijcie losowanie!
+- Dokumentacja C++ na temat <random>: https://en.cppreference.com/w/cpp/numeric/random
+- Porównanie różnych generatorów liczb losowych: https://www.pcg-random.org/other-rngs.html
+- Biblioteka Boost.Random: https://www.boost.org/doc/libs/1_75_0/doc/html/boost_random.html

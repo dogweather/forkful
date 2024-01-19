@@ -1,7 +1,7 @@
 ---
-title:                "문자열 보간"
-html_title:           "PHP: 문자열 보간"
-simple_title:         "문자열 보간"
+title:                "문자열 보간하기"
+html_title:           "Clojure: 문자열 보간하기"
+simple_title:         "문자열 보간하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,39 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇이며 왜 그렇게 하는가?
 
-스트링을 interpolate 한다는 것은 무엇일까요? 쉽게 말하면, 우리가 보통 문자열을 나타내는 작은 따옴표(')나 큰 따옴표(") 대신에 변수나 함수를 포함할 수 있도록 만드는 것입니다. 이렇게 하면 변수나 함수를 문자열 내에 직접 삽입할 수 있어서 변수나 함수를 가지고 작업하는 데 더 편리하게 됩니다. 이것이 왜 프로그래머들이 interpolate를 사용하는지 이유입니다.
+문자열 보간은 변수들로 문자열 안에 문법을 직접 "삽입"하는 것을 의미합니다. 이를 사용하는 주요 이유는 코드를 간결하게 유지하고, 문자열 복합을 훨씬 더 쉽게 만들기 위해서입니다.
 
-# 하는 방법:
+## 어떻게 하는가?
 
-Php 언어로 interpolate를 하는 방법은 매우 간단합니다. 우선, 이 글이 적히고 있는 이 부분도 Php로 인터프리트되고 있으니 따옴표 안에 변수나 함수를 넣고 싶다면 `<?php` 와 `?>` 태그 중간에 `interpolate` 함수를 사용하시면 됩니다. 그리고 작은 따옴표 대신 큰 따옴표를 사용하면 됩니다. 아래 예시를 보시죠.
-
-```PHP
-<?php
-    $name = "John";
-    echo "내 이름은 {$name}입니다."; 
-    //=> "내 이름은 John입니다."
-?>
-```
-
-이렇게 코드를 실행하면 `{}` 안에 있는 변수나 함수의 값을 참조해서 문자열을 출력하기 때문에 문자열과 변수나 함수를 함께 사용할 수 있게 됩니다.
-
-당연한 얘기지만, 작은 따옴표를 사용하면 변수나 함수를 인식하지 못하고 그냥 문자열로 출력되니 조심하세요. 
+아래는 PHP에서 문자열 보간을 하는 방법에 대한 간단한 예입니다.
 
 ```PHP
-<?php
-    $name = "John";
-    echo '내 이름은 {$name}입니다.'; 
-    //=> "내 이름은 {$name}입니다."
-?>
+$name = "John";
+echo "Hello, $name!";
 ```
 
-# 깊게 파보기:
+이 코드를 실행하면, 결과는 다음과 같습니다:
 
-추가적인 정보를 알고싶다면, 확장된 따옴표(interpolated string)는 C언어에서 부터 시작되었습니다. Javascript의 template strings의 문법과도 유사한데, 만약 자세한 정보를 알고싶다면 해당 언어들의 문서를 참조하시면 도움될 것입니다. 또한, Php에서도 `sprintf()` 함수를 사용하는 것이 가능합니다. 하지만 이 함수는 변수나 함수가 아닌, 문자열에 값이 들어갈 위치를 지정하는 것에 널리 사용되지만 보통 문자열을 결합하고 변환하는 데에는 인터폴레이트나 템플릿 문자열을 사용하는 것이 보다 간단하고 효율적입니다.
+```
+Hello, John!
+```
 
-# 더 알아보기:
+'$', 이 변수 식별자를 사용하면, 문자열 내에서 변수를 참조할 수 있습니다.
 
-- [PHP Official Documentation](https://www.php.net/manual/kr/language.types.string.php)
-- [Template Literals - JavaScript](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals)
+## 깊이 알아보기
+
+문자열 보간은 긴 역사를 가진 프로그래밍 기법으로, 많은 언어에서 활용되고 있습니다. PHP에서도 적극 활용되며, 기존에 사용되던 문자열 결합 방식보다 훨씬 간결하고 직관적이라는 장점이 있습니다. 
+
+하지만 문자열 보간 방식에도 다른 대안이 있습니다. 
+
+```PHP
+$name = "John";
+echo "Hello, " . $name . "!";
+```
+
+위 코드는 문자열 결합을 이용해 동일한 결과를 만들어냅니다. 
+
+그러나 문자열 보간이 더욱 명확하고 간결하게 코드를 작성할 수 있게 해주므로 권장됩니다.
+
+## 참고 자료
+
+더 자세한 정보와 추가적인 종류에 대해서는 아래 링크에서 확인하실 수 있습니다.
+
+1. [PHP String Interpolation](https://www.w3schools.com/php/php_string.asp)
+2. [PHP String Concatenation](https://www.php.net/manual/en/language.operators.string.php)
+
+다음에도 좋은 정보로 찾아뵙겠습니다.

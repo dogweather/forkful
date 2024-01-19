@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum aus einem String analysieren"
-html_title:           "Javascript: Ein Datum aus einem String analysieren"
-simple_title:         "Ein Datum aus einem String analysieren"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Datums-Formatierung in Javascript
+
 ## Was & Warum?
-Das Parsen eines Datums aus einem String ist ein häufig verwendeter Prozess in der Programmierung. Es bezieht sich auf die Konvertierung eines Datums, das in einem lesbaren Format wie z.B. "05.12.2020" in einen Datentyp umgewandelt wird, den das Programm verarbeiten kann.
 
-Programmierer verwenden das Parsen von Datumsangaben aus Strings, um die Eingabe von Benutzern in ihr Programm zu interpretieren. So können Benutzer beispielsweise ein Datum in einem Eingabefeld im Format "TT.MM.JJJJ" eingeben, und das Programm wird das richtige Datum verstehen und darauf basierend weiterarbeiten.
+Die Analyse (Parsing) eines Datums aus einem String in Javascript ermöglicht es uns, Text in ein Datum umzuwandeln. Das brauchen wir, um flexible Datenmanipulationen und -operationen zu ermöglichen.
 
-## Wie?
-Um ein Datum aus einem String zu parsen, gibt es verschiedene Möglichkeiten in Javascript. Eine Möglichkeit ist die Verwendung der integrierten Date-Methode `Date.parse()`. Hier ein Beispiel, wie man dies in Code umsetzen würde:
+## So geht's:
+
+In Javascript verwenden wir das `Date` Objekt und seine Methode `.parse()`, um ein Datum aus einem String zu erstellen.
+
 ```Javascript
-let dateStr = "05.12.2020";
-let parsedDate = Date.parse(dateStr);
-console.log(parsedDate);
+let datumString = "2023-07-25T10:15:00Z";
+let datum = new Date(datumString);
+console.log(datum);
 ```
 
-Ausgabe: 1607136000000 (entspricht dem Datum in Millisekunden seit dem 01.01.1970)
-
-Eine andere Möglichkeit ist die Verwendung der `Date()`-Konstruktorfunktion. Hier ein Beispiel:
+Wenn Sie das ausführen, wird das erhaltene Ergebnis etwa so aussehen:
 ```Javascript
-let dateStr = "05.12.2020";
-let dateArray = dateStr.split("."); // Datumstring nach "." aufteilen
-let parsedDate = new Date(dateArray[2], dateArray[1] - 1, dateArray[0]); // Datum mit Array-Werten erstellen
-console.log(parsedDate);
+Tue Jul 25 2023 12:15:00 GMT+0200 (Mitteleuropäische Sommerzeit)
 ```
 
-Ausgabe: Sa Dec 05 2020 00:00: 00 GMT+0100 (Mitteleuropäische Normalzeit)
+## Tiefergrund
 
-## Tiefer eintauchen
-Das Parsen von Datumsangaben aus Strings ist eine häufige Aufgabe in der Programmierung und wurde bereits in frühen Programmiersprachen wie COBOL verwendet. Es gibt auch andere Möglichkeiten, Datumswerte in Javascript zu verarbeiten, z.B. mit Hilfe von Bibliotheken wie Moment.js oder mit dem `toLocaleDateString()`-Methode.
+Ursprünglich konnte Javascript nur englische Datumsangaben analysieren. Mit ECMAScript 5 wurde jedoch ein ISO 8601 Format eingeführt, das jetzt standardmäßig verwendet wird.
 
-Die `Date.parse()`-Methode kann auch eine ISO-Datumsangabe (z.B. "2020-12-05") verarbeiten und gibt das Datum als Millisekunden seit dem 01.01.1970 zurück.
+Es gibt auch Bibliotheken wie Moment.js, die mehr Formate und Funktionen anbieten, aber sie fügen Ihrer Anwendung zusätzliche Größe hinzu.
+
+Die Javascript Datumsanalyse erfolgt in der lokalen Zeitzone des Computers - es sei denn, es wird, wie im obigen Beispiel, das 'Z'-Zeitzone-Format verwendet.
 
 ## Siehe auch
-- [Date.parse() Dokumentation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
-- [Moment.js Bibliothek](https://momentjs.com/)
-- [`toLocaleDateString()` Dokumentation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+
+- [MDN Dokumentation für Date.parse()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
+- [ISO 8601 Datum und Zeit Format](https://www.cl.cam.ac.uk/~mgk25/iso-time.html)
+- [Moment.js](http://momentjs.com/)

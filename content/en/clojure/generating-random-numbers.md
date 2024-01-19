@@ -1,6 +1,6 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Clojure recipe: Generating random numbers"
+html_title:           "Arduino recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -12,37 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Generating random numbers is a way for programmers to create a sequence of numbers that are chosen entirely at random. This may be useful in a variety of situations, such as in gaming applications, cryptography, or simulations.
+Programming isn't just fixed variables and predictable outcomes. There're times where randomness plays a key role. Whether it's for game development, data analysis, or encryption, generating random numbers keeps things versatile, fun, and secure.
 
 ## How to:
+Let's head in. Random number generation in Clojure is no hard task. 
 
-Clojure provides a built-in function for generating random numbers called `rand`. It takes a single argument `n` which specifies the upper bound (exclusive) of the range of numbers to be generated.
+To generate a simple random integer, you can do:
 
+```clojure
+(let [rand-int (rand-int 100)] 
+  (println "Random integer:" rand-int))
 ```
-Clojure (rand n) ;returns a random number between 0 (inclusive) and n (exclusive)
+This will output a random integer between 0 and 99. You can, of course, replace 100 with any number to change the range.
+
+Similarly for a random floating-point number:
+
+```clojure
+(let [rand-num (rand)] 
+  (println "Random number:" rand-num))
 ```
+This will generate a floating-point number between 0 (inclusive) and 1 (exclusive).
 
-To generate a random number between 1 and 10, we would use `(rand 10)`.
+## Deep Dive
+Now, let's dive deeper. 
 
+1. **Historical Context**: Randomness has played a pivotal role in programming since its inception. In the early days, pseudo-random number generators like the middle-square method were used. But, with improved technology, we now have in-built functions to generate random numbers like we just saw in Clojure.
+
+2. **Alternatives**: Clojure accepts seeds which can be useful when you want to reproduce the same sequence of "random" numbers. This is particularly handy in testing.
+
+```clojure
+(java.util.Random. 0) ;; Seed 0
 ```
-Clojure (rand 10) ;possible output: 7.489625
-```
+3. **Implementation Details**: When you call `(rand)`, Clojure sources environment noise like the current timestamp to produce randomness. For `(rand-int n)`, it scales the `(rand)` output to the desired range.
 
-In addition to `rand`, Clojure also has a `rand-int` function which specifically generates whole numbers.
+## See Also
+Make sure you explore further!
 
-```
-Clojure (rand-int n) ;returns a random integer between 0 (inclusive) and n (exclusive)
-```
+- Official Clojure Documentation: [Random Numbers](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand)
+  
+- Strength of randomness: [Clojure Forum Discussion](https://clojureverse.org/t/how-random-is-clojures-rand-function/4568)
 
-## Deep Dive:
-
-Historically, generating random numbers was a difficult task that often relied on physical processes, such as tossing a coin or rolling dice. With the advent of computers, pseudo-random number generators (PRNGs) were developed, which use mathematical algorithms to produce seemingly random numbers.
-
-One alternative to using built-in functions like `rand` is to use the `Random` class from the Java standard library. However, this requires more verbose code and may not be as efficient as the built-in functions in Clojure.
-
-Clojure's `rand` function is based on the Mersenne Twister PRNG algorithm, which is considered to have a good balance between randomness and speed. It is seeded with the current time, making subsequent calls to `rand` produce different results.
-
-## See Also:
-
-- [Clojure docs on random numbers](https://clojuredocs.org/clojure.core/rand)
-- [Explanation of PRNGs and Mersenne Twister](https://www.stat.auckland.ac.nz/~ihaka/downloads/lexical.pdf)
+- Testing with seed: [StackOverflow Thread](https://stackoverflow.com/questions/25609153/how-to-return-random-but-deterministic-results-in-clojure)

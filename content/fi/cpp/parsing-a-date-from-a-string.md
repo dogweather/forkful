@@ -1,6 +1,6 @@
 ---
 title:                "Päivämäärän jäsentäminen merkkijonosta"
-html_title:           "C++: Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
 simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "C++"
 category:             "C++"
@@ -10,36 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Päivämäärän parsiminen merkkijonosta on keino muuttaa merkkijono päiväysmetodiksi, jotta sitä voi käyttää laskutoimituksissa tai tarkastuksissa. Ohjelmoijat käyttävät tätä työkalua helpottaakseen päivämäärien käsittelyä ohjelmoinnissa.
+## Mitä & Miksi?
 
-## Miten tehdään:
-### Esimerkki 1:
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa erityispäivän erottamista tekstistä. Ohjelmoijat tekevät tätä yksilöidäkseen ja käsitelläkseen päivämääräkohtaisia ​​tietoja.
+
+## Näin teet:
+
+Käytetään C++ standardikirjaston `<chrono>`-luokkaa, jossa on `from_stream`-metodi:
+
 ```C++
-#include <iostream>
+#include <chrono>
+#include <sstream>
 #include <string>
-#include <ctime>
 
 int main() {
-  // Alustetaan merkkijono, josta halutaan parsia päiväys
-  std::string merkkijono = "18.09.2021";
-  // Alustetaan rakenteet päivämäärälle, johon parsitaan päiväys
-  std::tm aika = {};
-  // Parsitaan merkkijonosta päivämäärä
-  std::istringstream ss(merkkijono);
-  ss >> std::get_time(&aika, "%d.%m.%Y");
+    std::string s = "2015-09-15";
+    std::istringstream ss(s);
 
-  std::cout << std::put_time(&aika, "Päivämäärä: %x") << std::endl;
+    std::chrono::year_month_day ymd;
+    ss >> std::chrono::parse("%F", ymd);
 
-  return 0;
+    if(ss.fail()) {
+        std::cout << "Parsing failed\n";
+    } else {
+        std::cout << "Year: " << (int)ymd.year() << ", Month: " 
+                  << (unsigned)ymd.month() << ", Day: " 
+                  << (unsigned)ymd.day() << "\n";   
+    }
+    return 0;
 }
 ```
-### Tuloste:
-```Päivämäärä: 09/18/2021```
 
-## Syväkurkkaus:
-Parsing (parsiminen) on termi, jota käytetään tietojenkäsittelyssä tarkoittamaan merkkijonon analysointia ja sen muuttamista tietorakenteiksi. Päivämäärän parsiminen merkkijonosta on tärkeää, koska päivämäärät ovat yleisiä tietoja, joita tarvitaan usein ohjelmoinnissa. Toinen tapa parsia päivämäärämerkkijono on käyttää pvm_atok (time_P) -funktiota, joka toimii vastakkaisessa suunnassa kuin get_time().
+Output:
+
+```code
+Year: 2015, Month: 9, Day: 15
+```
+
+## Syvä sukellus:
+
+Historiallisesti päivämäärän jäsentäminen on aina ollut haastavaa johtuen eri päivämääräformaatteista. C++20 esitteli `<chrono>`-luokan, jolle annettiin kyky jäsentää päivämääriä, mikä helpottaa tätä prosessia.
+
+Vaihtoehtoisesti voit käyttää Boost.Date_Time -kirjastoa jos vanhan standardin kanssa työskentelet. `from_string(str)` -funktiolla voi jäsentää merkkijonon päivämääräksi:
+
+```C++
+#include <boost/date_time/gregorian/gregorian.hpp>
+
+boost::gregorian::date d = boost::gregorian::from_string("2015-09-15");
+```
+
+Jäsentämistä voidaan hallinnoida myös manuaalisesti, mutta se vaatii enemmän koodia eikä ole suositeltavaa.
 
 ## Katso myös:
-- https://en.cppreference.com/w/cpp/io/manip/get_time
-- https://en.cppreference.com/w/cpp/chrono/c/strftime
+
+- `<chrono>`-kirjasto dokumentaatio: https://en.cppreference.com/w/cpp/chrono
+- Boost.Date_Time documentation: https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html
+- `<date>`-kirjasto dokumentaatio: https://github.com/HowardHinnant/date

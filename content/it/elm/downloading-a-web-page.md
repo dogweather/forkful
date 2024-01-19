@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "Elm: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,39 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Ciao lettori italiani! Oggi parleremo di Elm, un linguaggio di programmazione moderno e altamente funzionale. In questa guida, impareremo come scaricare una pagina web utilizzando Elm e perché i programmatori lo fanno. Senza perdere altro tempo, iniziamo!
+## Cosa & Perché?
 
-## Cos'è e perché?
+Scaricare una pagina web significa ottenere una copia locale del contenuto di un sito web. I programmatori lo fanno per analizzare il contenuto dei siti web, eseguire test di funzionalità, e per raccogliere dati.
 
-Scaricare una pagina web significa ottenere il contenuto di una pagina web da un server remoto e visualizzarlo sul nostro dispositivo. Questo è importante per i programmatori perché consente loro di creare applicazioni web interattive, come ad esempio un sito di e-commerce o un social network.
+## Come fare
 
-## Come fare:
+Purtroppo Elm, come molti altri linguaggi puramente funzionali, non supporta nativamente il download delle pagine web. Tuttavia, quando Elm è usato in combinazione con JavaScript, è possibile effettuare tali richieste. Considera l'esempio seguente:
 
-Per scaricare una pagina web in Elm, possiamo utilizzare la funzione integrata `Http.get`. Vediamo un esempio:
+```Elm
+port module Main exposing (..)
 
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+
+port taskRunner : (Int -> Cmd msg) -> Sub msg
+
+main =
+  Html.beginnerProgram { model = 0, view = view, update = update }
+  
+view model =
+  div []
+    [ button [ onClick Increment ] [ text "Increase" ]
+    , div [] [ text (toString model) ]
+    ]
+
+type Msg = Increment
+
+update msg model =
+  case msg of
+    Increment ->
+      { model = model + 1
+      , cmd = taskRunner model
+      }
+
+port increment : Int -> Cmd msg 
 ```
-Elm.Http.get "https://www.example.com/" 
-    .send <| Http.expectString loaded
+
+Questo pezzo di codice Elm invoca una funzione JavaScript esterna ogni volta che l'utente fa clic sul pulsante. Ora, il download della pagina web lo eseguirai con JavaScript.
+
+```JavaScript
+var app = Elm.Main.fullscreen();
+app.ports.taskRunner.subscribe(function(url) {
+  fetch(url)
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+});
 ```
 
-In questo esempio, stiamo scaricando la pagina web di "www.example.com". Successivamente, utilizziamo `send` per inviare la richiesta e `expectString` per indicare che ci aspettiamo una stringa come risultato. Infine, passiamo la funzione `loaded` come parametro, che verrà eseguita quando la pagina sarà stata scaricata.
+## Analisi Approfondita
 
-Se vogliamo mostrare il contenuto della pagina web dopo che è stata scaricata, possiamo utilizzare la funzione `Debug.log` per stampare il risultato:
+Elm è stato creato da Evan Czaplicki nel 2012 come front-end per le applicazioni web. Poiché Elm è un linguaggio puramente funzionale, non consente operazioni di I/O come il download di pagine web, e quindi tali attività devono essere gestite da JavaScript.
 
-```
-loaded result =
-    Debug.log "Contenuto della pagina:" result
-```
+Esistono alternative ad Elm, tra cui JavaScript puro, TypeScript, e ClojureScript che hanno funzionalità di I/O incorporate.
 
-L'output dovrebbe essere una stringa con il contenuto della pagina web. Fantastico, abbiamo scaricato con successo una pagina web utilizzando Elm!
+L'implemetazione specifica del download delle pagine web in Elm dipende da come viene utilizzato il linguaggio in combinazione con JavaScript, come visto nella sezione di "Come fare".
 
-## Approfondimenti:
+## Vedi Anche 
 
-Se sei interessato a saperne di più su come Elm gestisce le richieste HTTP, puoi leggere la documentazione ufficiale [qui] (https://package.elm-lang.org/packages/elm/http/latest/Http#request). Inoltre, ci sono anche alternative per scaricare una pagina web in Elm, come ad esempio il modulo `Browser` che viene utilizzato per creare applicazioni web in Elm.
+Per continuare a imparare Elm, fai riferimento alle seguenti risorse:
 
-## Vedi anche:
+- [Guida ufficiale di Elm](https://guide.elm-lang.org)
+- [Elm Tutorial](https://www.elm-tutorial.org)
+- [Elm Cheat Sheet](https://github.com/izdi/elm-cheat-sheet)
+  
+Per approfondire gli argomenti relativi al download delle pagine web, considera le seguenti risorse:
 
-- [Documentazione ufficiale Elm] (https://elm-lang.org/docs)
-- [Decifrare le basi di Elm] (https://www.futurelearn.com/courses/learn-elm-basics) (corso online gratuito in inglese)
-
-E questo conclude la nostra guida su come scaricare una pagina web in Elm. Speriamo che ti sia stato utile e ti sia dato un'idea di come Elm sia un linguaggio di programmazione potente e facile da imparare. Continua a praticare e non vediamo l'ora di vedere cosa riuscirai a creare con Elm! Ciao!
+- [Fetch API](https://developer.mozilla.org/it/docs/Web/API/Fetch_API)
+- [JavaScript Promises: an Introduction](https://developers.google.com/web/fundamentals/primers/promises)

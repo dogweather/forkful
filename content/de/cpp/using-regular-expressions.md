@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-html_title:           "C++: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Reguläre Ausdrücke verwenden"
+html_title:           "Bash: Reguläre Ausdrücke verwenden"
+simple_title:         "Reguläre Ausdrücke verwenden"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,64 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was sind reguläre Ausdrücke und warum nutzen Programmierer sie?
+# Reguläre Ausdrücke in C++: Ein Leitfaden 
 
-Reguläre Ausdrücke sind eine Art von Mustererkennung in der Informatik. Sie erlauben es, in Texten bestimmte Muster zu suchen und zu identifizieren. Programmierer nutzen reguläre Ausdrücke, um Daten zu validieren, Texte zu filtern oder zu formatieren und vieles mehr.
+## Was & Warum?
 
-## Wie funktionieren sie?
+Reguläre Ausdrücke (oder Regex) sind Muster, die Entwickler verwenden, um Textzeichenketten zu analysieren und zu manipulieren. Sie sind ein mächtiges Werkzeug, das zum Durchsuchen, Ersetzen und Überprüfen von Text genutzt wird.
 
-Die Syntax für reguläre Ausdrücke variiert je nach Programmiersprache, aber das grundlegende Konzept bleibt gleich. Hier ein Beispiel für die Verwendung von regulären Ausdrücken in C++:
+## Wie es geht:
+
+Ein einfaches C++ Beispiel, das `regex` und `sregex_iterator` verwendet, um alle Wörter in einem String zu finden.
 
 ```C++
 #include <iostream>
 #include <regex>
-using namespace std;
+#include <string>
 
-int main() {
-  // Ein Text, in dem wir nach einem Muster suchen wollen
-  string text = "1, 2, 3, 4, 5";
+int main()
+{
+    std::string s = "Reguläre Ausdrücke sind wirklich cool!";
+    std::regex Wort_regex("(\\S+)");
 
-  // Definiere das Muster mit Hilfe von regulären Ausdrücken
-  // In diesem Beispiel suchen wir nach einer Ziffer von 0-9, die von einem Komma gefolgt wird
-  regex pattern("[0-9]+,");
+    auto Worte_beginnen = std::sregex_iterator(s.begin(), s.end(), Wort_regex);
+    auto Worte_enden = std::sregex_iterator();
 
-  // Erstelle ein Objekt, um das Muster mit dem Text zu vergleichen
-  smatch matches;
+    std::cout << "Es wurden " << std::distance(Worte_beginnen, Worte_enden)
+              << " Wörter gefunden.\n";
 
-  // Überprüfe, ob das Muster in dem Text gefunden wird
-  while (regex_search(text, matches, pattern)) {
-    // Ausgabe der Übereinstimmung
-    cout << "Gefunden: " << matches[0] << endl;
-    // Entferne die bereits gefundene Übereinstimmung aus dem Text
-    text = matches.suffix().str();
-  }
+    for (std::sregex_iterator i = Worte_beginnen; i != Worte_enden; ++i)
+    {
+        std::smatch match = *i;
+        std::string match_str = match.str();
+        std::cout << match_str << '\n';
+    }
 
-  return 0;
+    return 0;
 }
 ```
 
-Die Ausgabe des obigen Beispiels lautet:
+## Vertiefende Informationen
 
-```
-Gefunden: 1,
-Gefunden: 2,
-Gefunden: 3,
-Gefunden: 4,
-Gefunden: 5,
-```
+Reguläre Ausdrücke werden seit den 1950er Jahren verwendet und waren eine Schlüsseltechnologie in frühen Texteditoren und in der Unix-Programmierung. Sie sind zwar mächtig, aber auch verwirrend und schwierig zu beherrschen. Alternativen könnten domänenspezifische Sprachen oder String-Manipulationsbibliotheken sein. Die Implementierung von Regex in C++ erfolgt über die Regex-Bibliothek, die im `<regex>` Header definiert ist.
 
-## Vertiefung
+## Siehe auch
 
-Reguläre Ausdrücke wurden bereits in den 1950er Jahren von dem Mathematiker Stephen Kleene eingeführt. Sie wurden hauptsächlich in der Theorie der formalen Sprachen verwendet, um formale Grammatiken zu beschreiben. Heutzutage werden sie jedoch in vielen Programmiersprachen verwendet und haben sich als essentielle Werkzeuge für das effiziente Verarbeiten von Texten und Daten etabliert.
-
-Es gibt auch andere Möglichkeiten, um Textmuster zu identifizieren, wie zum Beispiel die Verwendung von String-Funktionen oder die Verwendung von Bibliotheken wie Boost.Regex. Diese sind jedoch nicht so leistungsstark und flexibel wie reguläre Ausdrücke.
-
-Die Implementierung von regulären Ausdrücken kann auch sehr komplex sein und erfordert ein grundlegendes Verständnis von regulären Sprachen und endlichen Automaten.
-
-## Weitere Informationen
-
-Hier sind einige empfohlene Ressourcen, um mehr über reguläre Ausdrücke zu erfahren:
-
-- [Reguläre Ausdrücke auf cppreference.com](https://en.cppreference.com/w/cpp/regex)
-- [Reguläre Ausdrücke Tutorial auf regular-expressions.info](https://www.regular-expressions.info/tutorial.html)
-- [Reguläre Ausdrücke in Wikipedia](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck)
+- [C++ Referenz: Reguläre Ausdrücke](http://en.cppreference.com/w/cpp/regex)
+- [RegExr: Lerne, erstelle und teste reguläre Ausdrücke](http://regexr.com/)
+- [RegexOne: Interaktive Lektionen](https://regexone.com/)

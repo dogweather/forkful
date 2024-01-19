@@ -1,6 +1,6 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Arduino: Завантаження веб-сторінки"
+html_title:           "Gleam: Завантаження веб-сторінки"
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,72 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Завантаження веб-сторінки - це процес отримання інформації з Інтернету на ваш пристрій. Програмісти часто використовують цей процес, щоб отримати доступ до корисної інформації для своїх проектів або програм.
+## Що це & Навіщо? 
+
+Завантаження веб-сторінки - це процес отримання її даних через мережу. Програмісти роблять це, щоб отримати необхідну інформацію або взаємодіяти з веб-сервісами.
 
 ## Як це зробити:
-Нижче наведені приклади коду та результату для завантаження веб-сторінки за допомогою Arduino.
+
+Arduino дозволяє виконувати GET-запити для отримання веб-сторінок. Давайте згенеруємо код:
 
 ```Arduino
-#include <WiFi.h>
+#include <Ethernet.h>
 
-void setup() {
-  // підключення до Wi-Fi мережі
-  WiFi.begin("назва_мережі", "пароль_мережі");
-  // очікування підключення
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("Підключення до Wi-Fi...");
-  }
-  
-  Serial.println("Підключено до Wi-Fi!");
+// Задайте MAC-адресу та IP-адресу для вашого контролера
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+IPAddress ip(192,168,1, 177);
+EthernetClient client;
+
+void setup() 
+{
+  Ethernet.begin(mac, ip);
+  Serial.begin(9600);
 }
 
-void loop() {
-  // створення об'єкту Wi-Fi клієнту
-  WiFiClient client;
-  // підключення до сервера
-  if (client.connect("www.example.com", 80)) {
-    Serial.println("Підключено до сервера!");
-    // відправка команди GET для отримання веб-сторінки
-    client.println("GET / HTTP/1.0");
-    // очікування відповіді від сервера
-    while (client.available()) {
-      // виведення вмісту веб-сторінки в консоль монітора серійного порту
-      Serial.write(client.read());
-    }
-    // розрив з'єднання з сервером
+void loop() 
+{
+  if (client.connected()) 
+  {
+    client.println("GET / HTTP/1.1");
+    client.println("Host: www.example.com");
+    client.println("Connection: close");
+    client.println();
+  } 
+  else 
+  {
     client.stop();
-    Serial.println("З'єднання з сервером закрито!");
-  } else {
-    Serial.println("Помилка з'єднання!");
   }
-  
-  delay(5000); // очікування 5 секунд
+
+  delay(5000);
 }
 ```
 
-Результат виводу в консоль монітора серійного порту:
-```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-...
+## Поглиблений розбір:
 
-<h1>Example Domain</h1>
-<p>This domain is for use in illustrative examples in documents. You may use this
-domain in literature without prior coordination or asking for permission.</p>
-...
-</body>
-</html>
-```
+Завантаження веб-сторінок - це універсальний інструмент, який може використовувати програміст. Історично, перше завантаження веб-сторінки відбулось у 1991 році. Можна використовувати POST або PUT методи, замість GET для відправки даних. Що стосується деталей реалізації, на Arduino ви опираєтесь на Ethernet або WiFi бібліотеки.
 
-## Погляд у глибину:
-Історичний контекст: завантаження веб-сторінок є одним із основних функцій Інтернету і постійно вдосконалюється з появою нових технологій і стандартів. Інші альтернативи для програмістів - використання спеціалізованих бібліотек або розробка власних рішень.
+## Дивіться також:
 
-Деталі реалізації: для завантаження веб-сторінок за допомогою Arduino, ми використовуємо бібліотеку WiFi.h, яка дозволяє підключатися до Wi-Fi мережі та використовувати стандартні протоколи Інтернету, такі як HTTP для отримання веб-сторінок.
-
-## Також перегляньте:
-- Документацію бібліотеки WiFi.h для докладнішої інформації про її використання (https://www.arduino.cc/en/Reference/WiFi)
-- Інші способи завантаження веб-сторінок на Arduino (https://randomnerdtutorials.com/esp8266-web-server-arduino-ide/)
+- [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
+- [HTTP протокол](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
+- [Arduino WiFi Library](http://arduino.cc/en/Reference/WiFi)

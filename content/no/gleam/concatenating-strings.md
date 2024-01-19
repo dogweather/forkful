@@ -1,7 +1,7 @@
 ---
-title:                "Sammenslåing av tekststrenger"
-html_title:           "Gleam: Sammenslåing av tekststrenger"
-simple_title:         "Sammenslåing av tekststrenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -12,36 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å konkatenering av strenger er en vanlig metode som brukes av programmører for å kombinere to eller flere strenger sammen til en enkelt streng.
-
-Programmører gjør dette for å lage dynamiske uttrykk eller setninger, for eksempel å generere en personlig melding eller for å formatere tekst på en bestemt måte.
+Sammenslåing av strenger er prosessen med å sette sammen to eller flere strenger til én. Dette er nyttig for programmerere fordi det lar dem manipulere og formatere tekstdata på mer komplekse måter.
 
 ## Hvordan:
 
+Her er noen grundige eksempler på hvordan du kobler sammen strenger i Gleam:
+
 ```Gleam
-let navn = "Maria"
-let alder = "27"
-
-let beskjed = "Hei, mitt navn er " ++ navn ++ " og jeg er " ++ alder ++ " år gammel."
-
-gleam_io.print(beskjed)
-
-// Output:
-// Hei, mitt navn er Maria og jeg er 27 år gammel.
+let greeting = "Hei, "
+let name = "Ola"
+let message = greeting ++ name
+message
 ```
 
-I dette eksempelet ser vi hvordan vi kan konkatenerer to variabler, `navn` og `alder`, til en streng ved hjelp av `++`-operatøren.
+Når du kjører dette programmet, vil output være:
 
-## Dykk dypere
+```
+Hei, Ola
+```
+## Dyp Dykk:
 
-Konkatantering av strenger har vært en grunnleggende metode i programmering i lang tid. Før i tiden var det vanlig å bruke en `concat`-funksjon for å kombinere strenger, men med introduksjonen av `++`-operatøren er dette nå den foretrukne metoden.
+- Historisk kontekst: Sammensetning av strenger har vært en grunnleggende funksjon i programmering siden opprettelsen. Det hjelper til med å lage dynamiske meldinger og formattere tekst på en mer lesbar måte.
 
-Alternativt, i stedet for å konkatenerer strenger, kan du bruke placeholders eller variabler i en strengmal for å sette inn dynamiske verdier.
+- Alternativer: Andre metoder for å manipulere strenger inkluderer funksjoner som trimming av ledende eller etterfølgende mellomrom (`trim`), konvertering til store bokstaver (`to_upper`) og mer.
 
-I Gleam brukes en binærtrær-implementasjon av den `++`-operatøren som sikrer rask og effektiv konkatenering av strenger.
+- Implementasjonsdetaljer: I Gleam, er operatorer brukt til å sammenføye strenger. Den mest vanlige operatoren er `++`.
 
-## Se også
+## Se Også:
 
-For mer informasjon om strenger og andre datatyper i Gleam, sjekk ut offisiell dokumentasjon her: https://gleam.run/documentation/
+For mer ressurser om programmering i Gleam, sjekk ut disse linkene:
 
-For en grundigere forklaring på implementasjonen av binærtrær og `++`-operatøren, kan denne artikkelen være nyttig: https://en.wikipedia.org/wiki/Balanced_binary_tree
+- Gleam's offisielle dokumentasjon: [https://docs.gleam.run/](https://docs.gleam.run/)
+- Boken "Programming Gleam": [https://pragprog.com/titles/lotlearn/programming-gleam/](https://pragprog.com/titles/lotlearn/programming-gleam/)
+- Gleam GitHub Repo: [https://github.com/gleam-lang/gleam/](https://github.com/gleam-lang/gleam/)

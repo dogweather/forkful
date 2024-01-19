@@ -1,7 +1,7 @@
 ---
-title:                "Umwandlung eines Strings in Kleinbuchstaben"
-html_title:           "Clojure: Umwandlung eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,44 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Die Umwandlung einer Zeichenkette in Kleinbuchstaben ist eine häufige Aufgabe bei der Programmierung. Sie wird verwendet, um sicherzustellen, dass alle Buchstaben in einer Zeichenkette einheitlich sind und um Vergleiche zwischen Zeichenketten durchzuführen. Programmierer machen dies oft, um die Genauigkeit von Suchvorgängen zu verbessern und um unerwünschte Fehler zu vermeiden.
+## Was & Warum?
 
-# Wie geht's?
-Es gibt mehrere Methoden, um eine Zeichenkette in Kleinbuchstaben umzuwandeln. In Clojure gibt es zwei Möglichkeiten, dies zu tun:
+In der Programmierung bedeutet das Umwandeln eines Strings in Kleinbuchstaben (lower case), dass alle alphabetischen Zeichen in einem String in ihre entsprechende Kleinbuchstabenform umgewandelt werden. Dies ist oft nützlich, um Nutzereingaben zu standardisieren oder um Zeichenkettenvergleiche ohne Berücksichtigung der Groß- und Kleinschreibung durchzuführen.
 
-1. Die `lower-case` Funktion: Diese Funktion nimmt eine Zeichenkette als Argument und gibt eine neue Zeichenkette zurück, in der alle Buchstaben in Kleinbuchstaben umgewandelt wurden.
+## So geht's:
 
-Clojure Code Beispiel:
+Hier ist ein einfacher Codeausschnitt, der zeigt, wie man einen String in Kleinbuchstaben umwandelt, mit der Funktion `clojure.string/lower-case`:
 
-```
-(lower-case "HALLO WELT")
-```
+```Clojure
+(require '[clojure.string :as str])
 
-Output:
+(defn string-to-lower-case [s]
+  (str/lower-case s))
 
-```
-"hallo welt"
+(println (string-to-lower-case "CLOJURE IST COOL"))
 ```
 
-2. Die `to-lower-case` Funktion: Diese Funktion hat dasselbe Verhalten wie `lower-case`, kann aber auch mit anderen Datentypen wie Vektoren und Maps arbeiten.
+Wenn du das obige Clojure-Programm ausführst, wirst du den folgenden Output sehen:
 
-Clojure Code Beispiel:
-
-```
-(to-lower-case "Hallo Welt")
+```Clojure
+clojure ist cool
 ```
 
-Output:
+## Tiefere Einblicke:
 
-```
-"hallo welt"
-```
+Diese Operation zum Umwandeln von Zeichenketten in Kleinbuchstaben ist ein fundamentaler Bestandteil der meisten Programmiersprachen und wurde dementsprechend in fast jeder modernen Sprache eingebaut. Historisch gesehen wurde diese Funktion hinzugefügt, um Textvergleiche und -suchen ohne Berücksichtigung der Groß- und Kleinschreibung zu vereinfachen.
 
-# Tief eintauchen
-Die Umwandlung von Zeichenketten in Kleinbuchstaben kann auf verschiedene Weise in Clojure erreicht werden. Eine alternative Methode wäre die Verwendung von regulären Ausdrücken, um alle Großbuchstaben in einer Zeichenkette zu identifizieren und in Kleinbuchstaben umzuwandeln. Dies könnte jedoch komplexer und weniger effizient sein als die Verwendung der integrierten `lower-case` und `to-lower-case` Funktionen.
+Alternativ könntest du durch jeden Buchstaben im String iterieren und die eingebaute Funktion `Character/toLowerCase` verwenden, um jeden Buchstaben einzeln zu konvertieren. Aber die Verwendung von `clojure.string/lower-case` ist einfacher und übersichtlicher.
 
-# Siehe auch
-- [Clojure Dokumentation für lower-case Funktion] (https://clojuredocs.org/clojure.core/lower-case)
-- [Clojure Dokumentation für to-lower-case Funktion] (https://clojuredocs.org/clojure.core/to-lower-case)
-- [Clojure reguläre Ausdrücke] (https://clojure.org/reference/regular_expressions)
+Diese Funktion konvertiert Zeichen nach den Regeln für die Standard-Locale. Das bedeutet, dass für einige Sprachen möglicherweise nicht erwartete Ergebnisse auftreten können - zum Beispiel bei Sprachen, die spezielle Zeichen für Großbuchstaben verwenden, die keinen entsprechenden Kleinbuchstaben haben.
+
+## Siehe auch:
+
+- [Offizielle Clojure-Dokumentation zur string/lower-case Funktion](https://clojuredocs.org/clojure.string/lower-case)
+- [Eingebaute Java-Methode Character/toLowerCase](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html#toLowerCase(char))

@@ -1,7 +1,7 @@
 ---
-title:                "Analyse av dato fra en streng"
-html_title:           "Gleam: Analyse av dato fra en streng"
-simple_title:         "Analyse av dato fra en streng"
+title:                "Tolke en dato fra en streng"
+html_title:           "Bash: Tolke en dato fra en streng"
+simple_title:         "Tolke en dato fra en streng"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva og hvorfor?
-Parsing av datoer fra en streng betyr å konvertere en tekstbasert dato til et datobjekt som datamaskinen kan forstå og manipulere. Programmere gjør dette for å enkelt kunne behandle og organisere datoer i sine programmer.
+# Gleam Programmering: Konvertere en Streng til en Dato.
 
-Hvordan:
+## Hva & Hvorfor?
+Konvertering av en streng til en dato innebærer å tolke teksten for å produsere en dato. Programmerere gjør dette for å håndtere og manipulere datorelatert data mer effektivt i deres applikasjoner.
 
-Gleam har en innebygd modul kalt Time som gjør det enkelt å parse datoer fra en streng. Dette gjøres ved å bruke funksjonen ```Time.format``` og spesifisere formatet på datoen i strengen. Se et eksempel under:
+## Hvordan gjøre:
+Her er eksempler på hvordan du bruker Gleam til å konvertere en streng til en dato.
 
-```
-let str_date = "10/03/2021"
-let date = Time.format("%d/%m/%Y", str_date)
-```
+```Gleam
+import gleam/date.{from_string, Format}
 
-Dette vil konvertere strengen "10/03/2021" til et datobjekt som kan brukes i programmet. Output vil være som følger:
-
-```
-date = { day: 10, month: 03, year: 2021 }
+fn main() {
+  let date_string = "2022-12-31"
+  let date = date.from_string(date_string, Format.iso8601_date())
 ```
 
-Dypdykk:
-Parsing av datoer har vært en utfordring for programmerere i lang tid, da datoer kan være representert på forskjellige måter i forskjellige deler av verden. Tidligere måtte programmerere håndtere dette manuelt, men med utviklingen av språk som Gleam, er det blitt mye enklere og mer nøyaktig. Alternativer til Gleam inkluderer språk som Ruby og Python, som også har innebygde funksjoner for å parse datoer fra strenger.
+Dette vil nå gi oss en `Ok(date.Date(2022, 12, 31))` hvis strengen ble formatert riktig.
 
-Når det kommer til implementasjon, bruker Gleam Time-modulen et system av formater som gjør det mulig å konvertere datoer fra forskjellige strengformater. Dette gjør parsingen mer fleksibel og nøyaktig.
+## Dyp Dykk
+Historisk sett var det flere måter å håndtere streng-til-dato konverteringer i programmering. Men, dagens metoder, som den vi brukte over, tar hensyn til internasjonale standarder, som ISO-8601. 
 
-Se også:
-Hvis du ønsker å lære mer om bruk av datoer i Gleam, kan du se dokumentasjonen for Time-modulen her: https://gleam.run/modules/time.html. Du kan også dra nytte av å se på andre språk som også tilbyr lignende funksjonalitet for parsing av datoer, for eksempel Ruby og Python.
+Alternativer til dette inkluderer også bruk av biblioteker bygget for mer spesifikke use-caser, som Joda-Time i Java, eller `chrono` i Rust. Til syvende og sist avhenger valget av programmeringsspråk og applikasjonens krav.
+
+Når det gjelder implementeringsdetaljer, innebærer parsing av en datostreng i Gleam bruk av `from_string` funksjonen, som tar en streng og et format som innganger og gir en Date-verdi tilbake.
+
+## Se også
+Her er noen lenker til relaterte ressurser:
+
+- Gleam Date concept: https://hexdocs.pm/gleam_stdlib/gleam/date.html
+- ISO-8601 wikipedia page: https://no.wikipedia.org/wiki/ISO_8601
+- Joda-Time library in Java: https://www.joda.org/joda-time/
+- Chrono library in Rust: https://docs.rs/chrono/0.4.19/chrono/

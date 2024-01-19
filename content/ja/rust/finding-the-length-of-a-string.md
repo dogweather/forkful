@@ -1,7 +1,7 @@
 ---
-title:                "文字列の長さを求める"
-html_title:           "Rust: 文字列の長さを求める"
-simple_title:         "文字列の長さを求める"
+title:                "文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
+simple_title:         "文字列の長さを見つける"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？何のため？
-文字列の長さを調べることは、プログラマーがよく行う処理です。これは、文字列に含まれる文字の数を確認するためです。
+## 何となぜ？
 
-## 方法：
-以下のコードブロックに、Rustで文字列の長さを求める方法の例と出力を示します。
+文字列の長さを数えるとは、文字列がいくつの「文字」から構成されているかを算出することです。これは、プログラマが文字列の容量を計算したり、特定の操作の効率を高めたりするために行います。
+
+## 使い方:
+
+以下に文字列の長さを取得するRustのコード例を示します：
 
 ```Rust
-let string = String::from("Hello, world!");
-let length = string.len();
-
-println!("The length of the string is {}", length);
+fn main() {
+    let s = "こんにちは、世界!";
+    println!("Length: {}", s.chars().count());
+}
 ```
 
-出力：
-```
-The length of the string is 13
+このコードを実行すると、出力結果は次のとおりです：
+
+```Rust
+Length: 8
 ```
 
-## 深く掘り下げる：
-文字列の長さを求めるという処理は、プログラミングにおいて重要な役割を果たしてきました。これは、文字列を扱う上で必要不可欠な機能であり、古くから使用されてきました。他にも、文字列の長さを求める方法として、ループを利用する方法や組み込みの関数を使用する方法などがあります。Rustでは、文字列の中に含まれるバイト数を計算し、その数を返すことで文字列の長さを求めます。
+## 詳細:
 
-## 参考：
-- [Rust公式ドキュメント](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
-- [文字列の長さを求める方法についての記事 (英語)](https://www.thoughtco.com/string-length-function-958340)
+文字列の長さを計算することはプログラミングの歴史の初期から存在しています。しかし、異なる言語とエンコードは異なる方法でこの問題を取り扱います。たとえば、C言語では、ヌルターミネータを検出するまで文字の配列をスキャンして長さを見つけます。
+
+Rustでは、`str::len()`関数でバイト長を返す代わりに、`chars().count()`を使用してUnicode文字数を数えます。これは、文字列が任意のUTF-8エンコーディングを含む可能性があるためです。
+
+## 参考資料：
+
+文字列長とその計算についてさらに学びたい方は、以下のリンクをご参照ください：
+
+- Rust By Example の [Strings](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
+- The Rust Programming Language の [Ch. 8.2 – Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)

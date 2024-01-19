@@ -1,7 +1,7 @@
 ---
-title:                "Sammenføyning av strenger"
-html_title:           "Haskell: Sammenføyning av strenger"
-simple_title:         "Sammenføyning av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & hvorfor?
-Når vi snakker om å konkatentere strenger i Haskell, så betyr det rett og slett å kombinere to eller flere strukturelt like strenger til en. Dette kan være nyttig for å lage mer komplekse uttrykk eller manipulere tekster på en mer effektiv måte.
+## Hva & Hvorfor?
 
-Hvordan:
-Dette kan gjøres ved å bruke operatoren "++", som tar to strenger og kombinerer dem til en. For eksempel:
+Konkatenering av strenger er prosessen med å kombinere to eller flere strenger sammen til en. Programmerere gjør dette å bygge nye setninger, meldinger, eller verdier fra eksisterende informasjon.
 
-```Haskell
-"Hello " ++ "world"  --> "Hello world"
-```
+## Hvordan:
 
-Det er viktig å merke seg at begge strengene må være av samme type for å kunne kombineres på denne måten. Ellers vil man få en typefeil.
-
-Det er også mulig å konkatentere en liste av strenger ved å bruke funksjonen "concat". Dette gjøres ved å gi funksjonen en liste av strenger som argument, for eksempel:
+I Haskell, er det flere måter å konkatnere strengs på. La oss se på noen eksempler:
 
 ```Haskell
-concat ["Hello ", "world"]  --> "Hello world"
+-- Bruk av (++)
+greetings = "Hei, " ++ "Hvordan går det?"
+-- Output: "Hei, Hvordan går det?"
+
+-- Bruk av unwords
+fruits = unwords ["Epler", "Bananer", "Appelsiner"]
+-- Output: "Epler Bananer Appelsiner"
+  
+-- Bruk av concat
+numList = concat [show x | x <- [1..5]]
+-- Output: "12345"
 ```
 
-Dypdykk:
-Konkatenering av strenger er en vanlig operasjon i mange programmeringsspråk. I Haskell, som i andre funksjonelle språk, har vi også muligheten til å bruke rekursjon for å implementere denne funksjonaliteten. Dette kan være nyttig hvis man ønsker å lage en mer kompleks funksjon som konkatenerer en ubestemt mengde strenger.
+## Dypdykk
 
-Det finnes også andre måter å få til dette på i Haskell, for eksempel ved hjelp av funksjoner som "foldr" eller ved å bruke monader. Men for de fleste tilfeller vil bruk av operatoren "++" eller funksjonen "concat" være tilstrekkelig.
+Historisk sett, datamaskiner behandlet tekst som sekvenser av tegn. Konkatenering var og er fortsatt en grunnleggende operasjon for tekstbehandling. I Haskell, kan "++" eller "concat" operatoren brukes. "++" er mer naturlig for mennesker å lese, men "concat" kan være mer effektiv for store lister.
 
-Se også:
-- Offisiell dokumentasjon for Haskell: https://www.haskell.org/
-- Utdypende artikkel om konkatenering av strenger i Haskell: https://wiki.haskell.org/Concatenation
+Et alternativ til å bruke Haskell for strengkonkatenering er å bruke en annen programmeringsspråk som støtter denne operasjonen, som Python eller JavaScript.
+
+Implementeringen av konkatenering kan variere avhengig av språkgrensesnittet. Men i Haskell, "++" og "concat" operatører er standardmetoder for å oppnå dette.
+
+## Se Også 
+
+Relaterte kilder for å lærer mer om Haskell og strimg konkatenering:
+
+- Haskell Wiki om Strings: https://wiki.haskell.org/Strings
+- Lær deg Haskell (Norsk): https://www.haskell.no/laer-deg-haskell
+- Real World Haskell: http://book.realworldhaskell.org/

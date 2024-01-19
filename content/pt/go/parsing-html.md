@@ -1,6 +1,6 @@
 ---
 title:                "Analisando HTML"
-html_title:           "Go: Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
 simple_title:         "Analisando HTML"
 programming_language: "Go"
 category:             "Go"
@@ -10,60 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazemos?
+## O Que & Por Quê?
 
-Parsing HTML é o processo de analisar e interpretar o código HTML de uma página da web. Isso pode ser útil para programadores que desejam extrair informações específicas de um site ou automatizar tarefas de web scraping. 
+Analisar HTML (parsing HTML) é a prática de decifrar e entender o código HTML. Os programadores fazem isso para interagir, manipular ou extrair dados da web e para entender melhor a estrutura das páginas da web.
 
-## Como fazer:
+## Como Fazer
 
-```Go
+Go oferece vários pacotes úteis para a análise de HTML. Vamos utilizar o pacote goquery, que permite uma sintaxe similar ao jQuery para manipulação e iteração na árvore DOM. 
+
+Para instalar o pacote goquery, use o comando:
+
+```Go 
+go get github.com/PuerkitoBio/goquery
+```
+
+Vamos criar um exemplo simples para extrair todos os links de uma página HTML:
+
+```Go 
 package main
 
 import (
-    "fmt"
-    "net/http"
-
-    "golang.org/x/net/html"
+	"fmt"
+	"github.com/PuerkitoBio/goquery"
+	"log"
+	"net/http"
 )
 
 func main() {
-    // Create a new HTTP client
-    client := &http.Client{}
+	// Obtém a resposta HTTP
+	res, err := http.Get("http://golang.org")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer res.Body.Close()
 
-    // Make a GET request to the desired webpage
-    resp, err := client.Do(http.NewRequest("GET", "https://www.example.com", nil))
+	// Cria um documento goquery a partir da resposta HTTP
+	doc, err := goquery.NewDocumentFromReader(res.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    // Check for errors
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-
-    // Parse the HTML document
-    doc, err := html.Parse(resp.Body)
-
-    // Check for errors
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-
-    // Print the title of the webpage
-    fmt.Println(doc.FirstChild.LastChild.FirstChild.FirstChild.Data)
+	// Encontra e imprime todos os links
+	doc.Find("a").Each(func(index int, item *goquery.Selection) {
+		linkTag := item
+		link, _ := linkTag.Attr("href")
+		fmt.Println(link)
+	})
 }
 ```
 
-Output:
-```
-Example Domain
-```
+O código acima extrai todos os links da página inicial do Golang.
 
-## Aprofundando:
 
-Parsing HTML é uma tarefa comum e importante na criação de aplicativos web. Existem outras linguagens de programação e ferramentas disponíveis para analisar e manipular HTML, como Python, JavaScript e bibliotecas como BeautifulSoup. No entanto, o Go oferece uma solução nativa e poderosa para essa tarefa, por meio do pacote "x/net/html". Com ele, é possível navegar pela árvore de elementos HTML e extrair dados precisos de uma página da web. 
+## Mergulho Profundo
 
-## Veja também:
+A análise HTML tem suas raízes na linguagem de marcação HTML e a necessidade de interagir com ela. É uma técnica comum usada em web scraping para extrair dados diretamente de páginas da web. Existem alternativas ao goquery, como o pacote nativo 'net/html' do Go, mas o goquery fornece uma API mais fácil de usar, baseada na popular biblioteca jQuery.
 
-- [Documentação oficial do pacote "x/net/html"](https://pkg.go.dev/golang.org/x/net/html)
-- [Exemplo de web scraper em Go](https://github.com/gocolly/colly)
-- [Tutorial de parsing de HTML com Go](https://medium.com/@matteorenzi/parsing-html-in-golang-a-tutorial-e027cccc5221)
+Quando se trata de análise HTML, o código não gera apenas uma lista de tags e texto. Em vez disso, ele cria uma estrutura de árvore denominada Document Object Model (DOM), o que permite uma fácil navegação e manipulação. Mas lembre-se, lidar com páginas HTML mal formatadas pode ser complicado, pois a análise HTML depende de uma estrutura de tags de abertura e fechamento corretas.
+
+## Veja Também
+
+1. Documentação oficial do pacote goquery: https://github.com/PuerkitoBio/goquery
+2. Tutorial Go Web Scraping: https://edmundmartin.com/writing-a-web-crawler-in-golang/
+3. Documentação HTML/net do Go: https://pkg.go.dev/net/html

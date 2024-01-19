@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何＆なんでや？
-文字列を補完するとは、変数や計算値を含めた文字列を作ることです。プログラマーは、この方法を使うことで、動的に変化するテキストを生成することができ、効率的なコードを書くことができます。
+## 何となぜ？ (What & Why?)
+文字列の補間とは、文字列内に変数を組み込むことです。補間によって、コードの可読性が向上し、デバッグが容易になります。
 
-## 使い方：
+## やり方 (How to)
+Arduinoでは直接的な文字列補間の方法はありませんが、`String(variable)`関数の組み合わせで達成できます。下記に例を示します。
+
 ```Arduino
-String name = "太郎";
-int age = 25;
-String message = "こんにちは、私の名前は" + name + "です。" + age + "歳です。";
+int num = 5;
+String text = "The number is: ";
+String message = text + String(num);
 Serial.println(message);
 ```
 
-出力は「こんにちは、私の名前は太郎です。25歳です。」となります。
+このコードは以下のような出力になります。
 
-## さらに深く：
-文字列の補完は、動的に変化するテキストを生成するのに便利な方法です。これは基本的に、プログラマーが文字列を静的に書くのではなく、変数や計算値を含めたものを作ることができるということです。これにより、同じコードを使って様々なパターンの文字列を生成することができます。代替手段として、文字列を連結する方法もありますが、補完を使うことでより簡単に可読性の高いコードを書くことができます。
+```
+The number is: 5
+```
 
-Arduinoでは、```String```オブジェクトの```+```演算子を用いて、文字列の補完を行います。基本的には、```+```演算子は数値の足し算を行うものですが、だんだん多機能化してきた言語では、文字列の結合もできるようになりました。
+## ディープダイブ (Deep Dive)
+文字列補間はプログラミングの古くから存在し、その可読性と便利性から広く使われています。Arduino言語では、PythonやJavaScriptなどと比べて直感的な文字列補間機能が欠けていますが、上記のような方法で補うことができます。
 
-## 他にも見てみる：
-補完に関する詳細な情報は、こちらの情報源をご覧ください。
-- [Wikipedia - 文字列の補間](https://ja.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E8%A3%9C%E9%96%93)
-- [Arduino 公式サイト - Stringsオブジェクト](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [YouTube - 文字列の補完](https://www.youtube.com/watch?v=V5CIYK_VVAg)
+他の代替策としては、`sprintf()`関数を使う方法もあります。しかし、この関数はメモリーを多く消費し、Arduinoのようなリソースが限られている環境では推奨されません。
+
+## 関連資料 (See Also)
+- [Arduino Reference: String()](https://www.arduino.cc/reference/jp/language/variables/data-types/string/functions/string/)
+- [Arduino Reference: printf()](https://www.arduino.cc/reference/jp/language/functions/communication/serial/printf/)
+- [The Evils of Arduino Strings](https://hackingmajenkoblog.wordpress.com/2016/02/04/the-evils-of-arduino-strings/)

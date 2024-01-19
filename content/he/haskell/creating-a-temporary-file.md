@@ -1,6 +1,6 @@
 ---
 title:                "יצירת קובץ זמני"
-html_title:           "Haskell: יצירת קובץ זמני"
+html_title:           "C#: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -12,34 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## מה ולמה?
 
-יצירת קובץ זמני היא תהליך שמאפשר למתכנתים ליצור קובץ שנמחק באופן אוטומטי לאחר שימוש בו. זהו כלי שימושי לבדיקת פונקציונליות תוכניות או למטרות תיקון באגים.
+הקמת קובץ זמני היא פעולה שבה מייצרים קובץ שמשמש פתרון זמני לאחסון מידע. תכנתים משתמשים בקבצים זמניים לצורך אחסון מידע באופן יעיל ובטוח, ובהנחה שאי לכך חשיבות לשמור אותו לאורך זמן.
 
-## איך לעשות?
+## איך ליצור: 
+
+אפשר ליצור קובץ זמני באזרחות באמצעות מנות ה-JavaScript שלנו. הנה דוגמה:
 
 ```Haskell
-import System.IO.Temp (withTempFile)
+import System.IO.Temp (withSystemTempDirectory)
+import System.IO (writeFile)
 
 main :: IO ()
-main = withTempFile "temp" $ \tempFile handle -> do
-  hPutStrLn handle "This is a temporary file."
-  hFlush handle
-  putStrLn "Temporary file created at:" <> tempFile
+main = do
+    withSystemTempDirectory "tempdir" $ \dir -> do
+        let filePath = dir ++ "/tempfile"
+        writeFile filePath "Hello, World!"
+        putStrLn $ "File was written to " ++ filePath
 ```
+זה ייצר קובץ זמני בתיקייה זמנית ויכתוב "Hello, World!" בתוך הקובץ. המיקום של הקובץ הזמני  מודפס למסוף.
 
-Output:
-```
-Temporary file created at: /tmp/temp41982
-```
+## צלילה עמוקה:
 
-## טביעת שורש
+### היסטוריה
+הטכניקה של הקמת קובץ זמני נמשכת לימים הראשונים של התכנות. ההקמה הראשונה הייתה בראשית שפת העשרים, והיא נמשכת עד היום.
 
-יצירת קובץ זמני נמצאת בשימוש ממזמן בעולם התכנות והיא מתוחכמת על ידי מתכנתים לפתרון בעיות נוספות כמו בעיות תיקונים ואיתור באגים. אפשרויות אחרות ליצירת קובץ זמני כוללות את השימוש בתיקיות במערכת הקבצים או השימוש בתוכניות שליטה כמו shell או Perl.
+### חלופות
+אפשר להשתמש גם במסד נתונים זמני או במספר מערכת זיכרון. אם נדרש מקום אחסון קטן ומהיר, ניתן לשקול שימוש במערכת זיכרון במקום בקובץ זמני.
 
-## היישום בעומק
+### פרטי יישום
+בהשחלה של סיפרייה `System.IO.Temp`, אנחנו יכולים לשלוט במיקום של הקובץ הזמני ובשם שלו. זה מספק גמישות באחסון זמני של מידע.
 
-יצירת קובץ זמני מתבצעת בצורה של ```withTempFile```, שהיא חלק מספריית ההערכים "System.IO.Temp" הכלולה במארח Ardour. תכונה נוספת של המודול היא האפשרות להתיחס לפרוט במסגרת המסלול, מה שאומחד למתכנתים צריבים.
-
-## ראו גם
-
-שימוש בקבצים זמניים: https://wiki.haskell.org/Making a temporary file with System.IO.Temp
-מתודולוגיית של חקירה: http://www.arhivtatarstan.com/article/18850
+## ראה גם:
+* תיעוד של [`System.IO.Temp`](http://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html) ניתן למצוא ב-Hackage.
+* מדריך ל[`System.Directory`](https://hackage.haskell.org/package/directory) יכול להיות שימושי במבנה ספריות.

@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 검색 및 교체"
-html_title:           "Elm: 텍스트 검색 및 교체"
+html_title:           "Elixir: 텍스트 검색 및 교체"
 simple_title:         "텍스트 검색 및 교체"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,23 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇과 왜?
+검색 및 교체는 문자열에서 특정 텍스트 조각을 찾아 다른 것으로 교체하는 프로세스입니다. 프로그래머가 이를 사용하는 이유는 다양하고, 가장 일반적인 것은 코드 속의 실수를 고치거나 가독성을 높이기 위해서입니다.
 
-검색 및 텍스트 바꾸기는 프로그래머가 코드 내에서 특정 문자열을 찾고 대체하는 것을 말합니다. 이는 코드를 보다 효율적으로 작성하고 유지 관리할 수 있도록 도와줍니다.
+## 어떻게 하나요:
+아래는 Elm 프로그래밍 언어를 사용한 검색 및 교체의 예입니다. 
+```Elm 
+import String
 
-## 사용법:
+fixErrors str =
+    String.replace "eror" "error" str
 
-```Elm
-String.replace "hello" "hi" "hello world" -- 결과: "hi world"
-String.contains "orange" "I like oranges" -- 결과: True
-String.startsWith "ab" "abcde" -- 결과: True
+main =
+    Text.fromString (fixErrors "Hello, eror world!")
 ```
+위 코드는 "eror"라는 단어를 "error"로 고치는 예시입니다. 따라서 출력 결과는 "Hello, error world!"가 됩니다.
 
-## 깊이 파헤치기:
+## 깊게 알아보기
+검색 및 교체는 긴 역사를 가진 기능으로, 초기 텍스트 편집기에서 시작해 현재 다양한 플랫폼과 언어에서 활발하게 사용되고 있습니다. Elm 이외에도 Python, Java 등 대부분의 언어에서 이 기능을 지원합니다.
+대안으로 정규 표현식이 있습니다. 정규 표현식은 텍스트를 탐색하고 교체하는 방식을 더욱 유연하게 해줍니다. Elm의 구현에서는 `replace` 함수를 활용합니다. 이 함수는 첫 번째 인수로 찾을 문자열, 두 번째 인수로 대체할 문자열, 마지막으로 대상 문자열을 받아서 새로운 문자열을 반환합니다.
 
-검색 및 텍스트 바꾸기는 코드 작성에 있어서 매우 중요한 부분입니다. 예전에는 이 기능을 수동적으로 수행해야 했지만, 이제는 많은 프로그래밍 언어에서 내장 함수로 제공하고 있습니다. Elm의 기능은 간단하지만 효율적인 방법으로 문자열을 처리할 수 있도록 도와줍니다.
-
-## 관련 링크:
-
-- Elm Documentaion: https://guide.elm-lang.org
-- String Library: https://package.elm-lang.org/packages/elm/core/latest/String
+## 참고 자료
+* [Elm 공식 문서](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
+* [정규 표현식에 관한 튜토리얼](https://regexone.com/)
+* [Python에서의 문자열 검색 및 교체](https://docs.python.org/3/library/stdtypes.html#str.replace)

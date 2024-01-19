@@ -1,7 +1,7 @@
 ---
-title:                "Prowadzenie sprawdzania istnienia katalogu"
-html_title:           "Javascript: Prowadzenie sprawdzania istnienia katalogu"
-simple_title:         "Prowadzenie sprawdzania istnienia katalogu"
+title:                "Sprawdzanie, czy katalog istnieje"
+html_title:           "Javascript: Sprawdzanie, czy katalog istnieje"
+simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Sprawdzanie, czy katalog istnieje, jest ważnym elementem programowania w języku Javascript. Pozwala to programistom na upewnienie się, że określona ścieżka jest poprawna i dostępna, co może pomóc uniknąć błędów i problemy z wykonywaniem innych operacji na plikach.
+# Sprawdzanie czy katalog istnieje w JavaScript
 
-## Jak:
-Aby sprawdzić, czy katalog istnieje w Javascript, można skorzystać z funkcji ```fs.existsSync()```, która sprawdza, czy dany katalog lub plik istnieje. Należy jednak pamiętać, że ta funkcja jest dostępna tylko w środowisku Node.js. Poniższy przykład kodu pokazuje, jak użyć tej funkcji w praktyce:
+## Co i dlaczego?
+
+Sprawdzanie, czy katalog istnieje, polega na potwierdzeniu, że na dysku twardym istnieje określony folder. Programiści robią to, aby uniknąć błędów, kiedy pliki są zapisywane lub odczytywane z miejsc, które faktycznie nie istnieją.
+
+## Jak to zrobić?
+
+Oto przykładowy kod, jak to zrobić w Node.js:
 
 ```Javascript
 const fs = require('fs');
-const path = './myDirectory';
+const folderPath = './path/to/your/directory';
 
-if (fs.existsSync(path)){
-  console.log('Katalog istnieje');
+if (fs.existsSync(folderPath)) {
+    console.log('Katalog istnieje!');
 } else {
-  console.log('Katalog nie istnieje');
+    console.log('Katalog nie istnieje!');
 }
 ```
 
-W przypadku, gdy funkcja ```fs.existsSync()``` zwraca wartość ```true```, oznacza to, że podana ścieżka istnieje. W przeciwnym razie, funkcja zwraca ```false```. W ten sposób, można wybrać odpowiednie działania w przypadku, gdy sprawdzany katalog istnieje lub nie.
+Po uruchomieniu tego kodu, otrzymamy wiadomość mówiącą nam, czy katalog istnieje, czy nie.
 
-## Deep Dive
-Funkcja ```fs.existsSync()``` została wprowadzona w wersji 0.8 języka Node.js w celu sprawdzenia, czy plik lub katalog istnieje. Alternatywnie, można również skorzystać z funkcji ```fs.stat()```, która pozwala na pobranie informacji o danym pliku lub katalogu, w tym czy istnieje.
+## Więcej szczegółów
 
-Oprócz tego, pojęcie sprawdzania istnienia katalogu jest związane z obsługą błędów. W przypadku, gdy katalog nie istnieje, może pojawić się wyjątek, dlatego ważne jest odpowiednie obsłużenie takiej sytuacji w kodzie.
+W kontekście historycznym, sprawdzanie czy katalog istnieje w JavaScript nie zawsze było możliwe. Dopiero od wprowadzenia Node.js i modułu `fs`, zdolność do interakcji z systemem plików stała się możliwa.
 
-## Zobacz także:
-- Dokumentacja funkcji [fs.existsSync()](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-- Porównanie funkcji ```fs.existsSync()``` i ```fs.stat()``` [w tym artykule na Medium](https://medium.com/@bryanjenningz/how-to-check-if-a-file-or-directory-exists-in-node-js-1235aefc7fa0)
-- Inne metody obsługi plików i katalogów w Javascript, takie jak [listowanie plików](https://www.npmjs.com/package/lljkjj_a) czy [tworzenie katalogów](https://nodejs.org/api/fs.html#fs_fs_mkdir_path_options_callback)
+Co do implementacji, metoda `fs.existsSync()`  wymaga jednego argumentu: ścieżki do katalogu, który chcesz sprawdzić.
+
+Jest też alternatywa do `fs.existsSync()`, to `fs.stat()` lub `fs.access()`. Ale `fs.existsSync()` jest bardziej bezpośredni, bo zwraca tylko `true` albo `false`.
+
+## Zobacz też
+
+1. [Dokumentacja Node.js fs](https://nodejs.org/api/fs.html)
+2. [Porównanie fs.existsSync() z fs.access()](https://nodejs.dev/learn/check-if-a-file-exists-in-nodejs)
+
+W pracy z katalogami takimi jak te, pamiętaj, aby zawsze być precyzyjnym w ścieżkach, którymi się poruszasz. Kod, który działa poprawnie na jednym komputerze, może zwrócić błędy na innym, jeżeli katalogi są inaczej strukturyzowane.

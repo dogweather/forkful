@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa."
-html_title:           "Elixir: Tarkistetaan, onko hakemisto olemassa."
-simple_title:         "Tarkistetaan, onko hakemisto olemassa."
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Elixir: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
+Tarkistamalla onko tietty hakemisto olemassa, voi varmistaa tiedoston sijainnin. Tämä on tärkeää ohjelmiston toiminnan kannalta, koska se estää virheitä, jotka johtuvat tiedostojen puuttumisesta tai niiden sijaintien virheellisyydestä.
 
-Tarkistaminen, onko hakemisto olemassa, on yksinkertainen, mutta tärkeä osa ohjelmoinnin prosessia. Tällä toimenpiteellä varmistetaan, että ohjelma voi käsitellä olemassa olevia tiedostoja ja hakemistoja asianmukaisesti. Tämä auttaa myös estämään mahdollisia virheitä ja häiriöitä.
+## Näin se tehdään:
+Elixirin File-moduuli tarjoaa `exists?` -funktion tarkistamaan, onko tietty hakemisto olemassa. Esimerkki sen käytöstä:
 
-## Miten:
-
-```Elixir
-IO.puts(File.dir?("hakemisto"))
-```
-Tämä koodinpätkä kertoo meille, onko "hakemisto" olemassa vai ei ja tulostaa joko true tai false, riippuen vastauksesta.
-
-```Elixir
-hakemisto = "hakemisto"
-if File.dir?(hakemisto) do 
-  IO.puts("Hakemisto #{hakemisto} on olemassa.") 
-else 
-  IO.puts("Hakemistoa #{hakemisto} ei löydy.") 
+```elixir
+if File.dir?("path/to/directory") do
+  IO.puts "Hakemisto on olemassa."
+else
+  IO.puts "Hakemisto ei ole olemassa."
 end
 ```
 
-Tässä esimerkissä olemme tallentaneet hakemiston nimen muuttujaan ja käyttäneet sitä ehtolauseessa tulostamaan vastaavan viestin.
+Tuloste riippuu siitä, onko hakemisto olemassa vai ei:
 
-## Syväsukellus:
+```
+Hakemisto on olemassa.
+```
+Tai
+```
+Hakemisto ei ole olemassa.
+```
 
-Historiallisessa kontekstissa, hakemistojen tarkistamisen tarve on noussut esiin erityisesti kehitysvaiheessa, kun ohjelmoijat kohtaavat usein erilaisia tiedosto- ja hakemistorakenteita. Tämän toiminnon lisäksi on myös muita tapoja käsitellä tiedostoja ja hakemistoja, kuten "File.exists?" toiminto. Hakemistojen tarkistamisessa käytetään usein myös ehtolauseita ja lohkolauseita, kuten edellä olevassa koodinpätkässä, jotta ohjelma voi suorittaa tarvittavat toimenpiteet halutun tuloksen saavuttamiseksi.
+## Syvemmälle
+Ennen File-moduulin saapumista Elixirissä, yleinen tapa tarkistaa, onko hakemisto olemassa, oli käyttää Erlangin :file.file_info -funktiota. Tämä menetelmä on yhä voimassa, mutta Elixirin `File.dir?` on ilmaisullisempi ja helpompi ymmärtää aloittelijoille.
 
-## Katso myös:
+Vaihtoehtoisesti voidaan käyttää `File.ls/1` -funktiota tarkistamiseen, mutta tämä on törmää virheeseen, jos hakemistoa ei ole olemassa, joten sen käyttö ei ole suositeltavaa tässä tilanteessa.
 
-- Elixirin virallinen dokumentaatio tiedostojen ja hakemistojen käsittelyyn: https://elixir-lang.org/getting-started/io-and-the-file-system.html
-- "Directory exists?" Stack Overflow-sivustolta: https://stackoverflow.com/questions/19349580/how-to-check-if-a-directory-exists-in-elixir
+Tarkistus toimii kysymällä käyttöjärjestelmältä, onko annetun polun kohde olemassa ja onko se hakemisto. Tämä prosessi on erittäin nopea ja virheetön, sillä se perustuu alhaiseen tasoon kirjastoihin, jotka on suunniteltu tätä tarkoitusta varten. 
+
+## Katso myös
+[List of functions in File module in Elixir](https://hexdocs.pm/elixir/File.html#content): Täydellinen luettelo kaikista File-moduulin funktioista Elixirissä, mukaan lukien `dir?`.
+
+[Erlang :file module documentation](http://erlang.org/doc/man/file.html#file_info-1): dokumentaatio :file-moduulista Erlangissa, jota käytettiin aikaisemmin.

@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden på en sträng"
-html_title:           "Ruby: Att hitta längden på en sträng"
-simple_title:         "Att hitta längden på en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,22 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hitta längden på en sträng är ett vanligt programmeringsproblem där man behöver räkna ut antalet tecken i en given sträng. Detta är viktigt eftersom det tillåter oss att hantera och manipulera textdata på ett korrekt sätt.
+
+Att hitta längden på en sträng betyder att räkna antalet tecken i den. Programmerare gör detta för att manipulera data, validera input, eller lösa problem (t.ex., att avgöra om ett användarnamn är för långt).
 
 ## Hur man gör:
-För att hitta längden på en sträng i Ruby, kan man använda metoden `length` som finns tillgänglig på alla strängar. Exempelvis:
+
+Använd `String#length` eller `String#size` metod i Ruby för att hitta längden på ett sträng. Här är exempel på kod och utdata:
 
 ```Ruby
-str = "Hej, världen!"
-puts str.length
+str = "Hej Sverige"
+puts str.length  # Ger 11
+puts str.size    # Ger också 11
 ```
 
-Detta kommer att skriva ut 13, vilket är antalet tecken i strängen.
+Båda metoderna ger exakt samma resultat, vilket är antalet tecken i strängen.
 
-## Djupdykning:
-Att räkna ut längden på en sträng är en viktig del av textbehandling i programmering. Det ger oss möjlighet att hantera textdata på ett effektivt sätt och kan användas för att lösa många andra uppgifter, som att hitta specifika tecken eller att jämföra strängar. Det finns också alternativa metoder som `size` och `count`, men `length` är standardmetoden som används i Ruby.
+## Fördjupning
 
-När man räknar längden på en sträng i Ruby, är det viktigt att förstå att detta beräknas genom att räkna antalet tecken, inte antalet ord. Därför kan en sträng som innehåller flera ord fortfarande ha samma längd som en sträng med bara ett ord, så länge båda har samma antal tecken.
+Historiskt sett har både `length` och `size` metoder funnits i Ruby sedan version 1.2. De är precis likadana eftersom `size` är ett alias för `length` - det ger utvecklare fler alternativ att använda beroende på vad som låter mest naturligt för dem.
+
+En alternativ metod för att hitta längden på en sträng är att använda `String#bytesize`, men det ger antalet bytes och inte antalet tecken. Detta är viktigt när man hanterar icke-ASCII eller flerbytes tecken. Till exempel:
+
+```Ruby
+str = "hej"
+puts str.length      # Ger 3
+puts str.bytesize    # Ger 3
+
+str = "hej 😀"        # Innehåller en emoji tecken
+puts str.length      # Ger 4
+puts str.bytesize    # Ger 8
+```
+
+Så, i allmänhet, använd `length` eller `size` för stränglängd, och `bytesize` för bytesize.
 
 ## Se även:
-För mer information om hantering av strängar i Ruby, kan du titta på dokumentationen på [Ruby's officiella hemsida](http://ruby-doc.org/core-3.0.0/String.html) eller [Ruby on Rails Guides](https://guides.rubyonrails.org/action_view_overview.html#regular-strings). Du kan också undersöka andra metoder för att räkna ut längden på en sträng som finns i andra programmeringsspråk för att jämföra och förstå skillnaderna.
+
+- Ruby Docs [`String#length`](https://ruby-doc.org/core-2.7.0/String.html#method-i-length), [`String#size`](https://ruby-doc.org/core-2.7.0/String.html#method-i-size) och [`String#bytesize`](https://ruby-doc.org/core-2.7.0/String.html#method-i-bytesize) för mer information och exempel.
+- [Learn Ruby](https://learnrubythehardway.org/book/ex6.html) för mer baslärande om strängar.

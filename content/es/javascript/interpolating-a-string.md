@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando una cadena"
-html_title:           "Javascript: Interpolando una cadena"
-simple_title:         "Interpolando una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,31 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+# Interpolación de Cadenas en JavaScript
 
-Interpolar una string en Javascript significa insertar variables o expresiones dentro de una cadena de texto para crear una nueva cadena personalizada. Los programadores lo utilizan para hacer que el código sea más dinámico y poder utilizar el mismo formato para diferentes valores.
+## ¿Qué y Por Qué?
+La interpolación de cadenas permite insertar variables dentro de una cadena de texto. Hacemos esto para simplificar la creación de cadenas complejas y mejorar la legibilidad del código.
 
-## Cómo:
-
-Para interpolar una string, podemos utilizar la sintaxis de "template literals" o plantillas literales en Javascript. Esto se hace colocando las variables o expresiones entre ${}. Por ejemplo:
+## Cómo hacerlo:
+Aquí hay un ejemplo básico de cómo usar interpolación de cadenas en JavaScript:
 
 ```Javascript
 let nombre = "Juan";
-console.log(`¡Hola ${nombre}! ¿Cómo estás?`);
+console.log(`Hola, ${nombre}!`); // Salida: Hola, Juan!
 ```
 
-La salida de este código sería: ¡Hola Juan! ¿Cómo estás?
+Aquí, `${nombre}` se reemplaza por el valor de la variable `nombre`.
 
-## Profundizando:
+## Inmersión Profunda
+1. **Contexto histórico**: Antes de ES6 (versión 2015 de JavaScript), los programadores a menudo usaban la concatenación de cadenas. Pero la interpolación de cadenas, introducida en ES6, facilitó mucho este proceso.
 
-La interpolación de strings se introdujo en ECMAScript 2015 (también conocido como ES6) como parte de las mejoras en la sintaxis de Javascript. Antes, los programadores tenían que concatenar cadenas y variables utilizando el operador +, lo cual puede resultar confuso y propenso a errores.
+2. **Alternativas**: La concatenación de cadenas (`"Hola, " + nombre + "!"`) es una alternativa, aunque menos legible.
 
-Otra alternativa a la interpolación de strings en Javascript es utilizar la función `sprintf` de la librería `sprintf-js`. Sin embargo, esto implica añadir una dependencia externa a nuestro código.
+3. **Detalles de implementación**: Cuando usas interpolación de cadenas, lo que realmente sucede es que JavaScript transforma todo el contenido dentro de los backticks en una cadena, reemplazando cualquier pieza de sintaxis `${...}` con su valor contenido respectivo.
 
-En cuanto a la implementación, el motor de Javascript convierte automáticamente las plantillas literales en una cadena de texto y los valores interpolados son tratados como expresiones regulares. Esto significa que podemos utilizar operadores, funciones y cualquier otra expresión válida dentro de la interpolación.
+## Ver Más
+Para obtener más información y práctica de interpolación de cadenas en JavaScript, consulta los siguientes recursos:
+1. [Interpolación de cadenas en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Template_literals)
+2. [Ejercicios de Interpolación de cadenas](https://www.javascript.com/try/5bb3a7ebe109ee00103b7b5a)
 
-## Ver también:
-
-- [String interpolation in Javascript](https://www.w3schools.com/js/js_string_interpolation.asp)
-- [Template literals in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [sprintf-js library](https://www.npmjs.com/package/sprintf-js)
+Recuerda, practicar constantemente es la clave para entender bien cualquier concepto nuevo. ¡Sigue programando!

@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av en dato fra en streng"
-html_title:           "C#: Analysering av en dato fra en streng"
-simple_title:         "Analysering av en dato fra en streng"
+title:                "Tolke en dato fra en streng"
+html_title:           "Bash: Tolke en dato fra en streng"
+simple_title:         "Tolke en dato fra en streng"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & hvorfor?
-Å parsere en dato fra en streng er ganske enkelt å konvertere en tekststreng som representerer en dato til et egnet dataprogram-format. Dette er nyttig for programmerere fordi det lar dem lese og behandle datoer på en mer strukturert og nøyaktig måte.
+## Hva & Hvorfor?
 
-# Hvordan:
-Det er ganske enkelt å parse en dato fra en streng i C#. Det finnes flere innebygde funksjoner og metoder som gjør dette enkelt og raskt. Her er et eksempel på hvordan du kan gjøre det:
+Å parse en dato fra en streng betyr å omdanne strengen til en datatypenhet. Dette gjøres for å manipulere, analysere, beregne eller sende data på en mer systematisk måte.
 
+## Hvordan:
+
+Å parse en dato involverer bruken av DateTime.TryParse eller DateTime.Parse funksjon i C#.
+Her er et eksempel:
 ```C#
-string dato = "2021-01-15"; // Tekststreng som representerer en dato
-DateTime parsedDate = DateTime.Parse(dato); // Parse strengen til en DateTime-variabel
-Console.WriteLine(parsedDate); // Skriv ut den parsede datoen
-// Output: 1/15/2021 12:00:00 AM
+string strengDato = "24.12.2021";
+DateTime parsedDato;
+
+bool succefullParse = DateTime.TryParse(strengDato, out parsedDato);
+
+if (succefullParse)
+    Console.WriteLine($"Parsed dato: {parsedDato.ToShortDateString()}");
+else
+    Console.WriteLine("Ugyldig dato streng!");
 ```
+Utdata for ovennevnte kode vil være:
+```
+Parsed dato: 24.12.2021
+```
+## Dyp Dykk:
+1. Historisk Kontekst: Parsing funksjon eksisterer siden tidlige versjoner av C#, og det har blitt raffinert gjennom hver utgave, gjør operasjonen enklere og mer presis.
+2. Alternativer: Du kan også bruke DateTime.ParseExact hvis du kjenner det eksakte formatet på datostrengen.
+3. Implementasjondetaljer: Parsing kaster unntak ved ugyldige verdier. Så husk å behandle disse situasjonene ved å bruke TryParse metoden som unngår unntak ved å returnere en boolsk verdi som indikerer suksess eller feil.
 
-Som du kan se, kan C# enkelt håndtere konverteringen for oss. Det eksisterer også flere alternativer, for eksempel `DateTime.TryParse` som vil returnere en boolsk verdi avhengig av om parsingen var vellykket eller ikke.
-
-# Dypdykk:
-Parsing av datoer fra strenger er viktig innen programmering for å sikre at data behandles på en strukturert og nøyaktig måte. Det er spesielt nyttig i situasjoner der data kommer fra ulike kilder og kan være i forskjellige formater. Gjennom årene har det dukket opp flere alternative metoder for å gjøre dette, for eksempel regulære uttrykk og til og med egendefinerte parsere. Men takket være de innebygde funksjonene i C#, er det nå enklere enn noensinne å parse datoer fra strenger.
-
-# Se også:
-Hvis du ønsker å lære mer om parsing av datoer fra strenger i C#, kan du sjekke ut disse nyttige ressursene:
-
-- [Microsoft Docs: DateTime.Parse Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=net-5.0)
-- [Microsoft Learn: Working with Dates and Times in C#](https://docs.microsoft.com/en-us/learn/paths/csharp-manipulate-date-time/)
-- [C# Corner: Parsing Dates In C#](https://www.c-sharpcorner.com/blogs/parsing-dates-in-c-sharp)
+## Se Også:
+1. [Microsoft Dokumentasjon på DateTime.Parse](https://docs.microsoft.com/nb-no/dotnet/api/system.datetime.parse?view=netframework-4.7.2)
+2. [Microsoft Dokumentasjon på DateTime.TryParse](https://docs.microsoft.com/nb-no/dotnet/api/system.datetime.tryparse?view=netframework-4.7.2)
+3. [Microsoft Dokumentasjon på DateTime.ParseExact](https://docs.microsoft.com/nb-no/dotnet/api/system.datetime.parseexact?view=net-5.0)

@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Gleam: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,35 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et pourquoi?
+## Quoi & Pourquoi?
 
-Lire un fichier texte est une tâche courante dans la programmation. Cela implique de parcourir un fichier pour en extraire les informations qu'il contient. Les programmeurs le font pour traiter des données, analyser des fichiers ou pour d'autres besoins spécifiques.
+Lire un fichier texte en programmation consiste à styphiser les lignes de code dans le fichier, une par une. Les programmeurs le font pour obtenir ou analyser des données, ou pour mettre en œuvre des tâches automatisées.
 
-## Comment faire: 
+## Comment faire:
 
-Voici un exemple de code en ```Gleam``` montrant comment lire un fichier texte ligne par ligne et afficher chaque ligne:
+Avec Gleam, nous pouvons utiliser la bibliothèque `gleam/otp` pour lire des fichiers texte. Voici un exemple simple:
 
+```Gleam
+import gleam/otp.{File, Line}
+import gleam/otp.file.{open, Mode}
+
+let read_text_file = fn(path: String) {
+  case open(path, Mode.Read) {
+    Ok(file) ->
+      loop(file, [])
+    Error(err) ->
+      Error(err)
+  }
+}
+
+let rec loop = fn(file: File, lines: List(Line)) {
+ case gleam/otp.file.read(file) {
+    Ok(line) ->
+      loop(file, [line | lines])
+    Error(end_of_file) ->
+      Ok(list:reverse(lines))
+    Error(other_error) ->
+      Error(other_error)
+ }
+}
 ```
-import ellesmera/file
 
-let file = ellesmera/file.open("fichier.txt")
-file |>  ellesmera/file.read_line
-|> enum.iter(print)
-```
+Cela retournera une liste de toutes les lignes dans le fichier texte.
 
-Output:
-```
-Bonjour!
-Comment ça va?
-Je suis un fichier texte.
-```
+## Plongeon Profond:
 
-## Plongée en profondeur:
- 
-Lire des fichiers texte est un processus de longue date et a évolué au fil du temps. Il existe plusieurs alternatives telles que le CSV (Comma-Separated Values) ou le JSON (JavaScript Object Notation) pour stocker et échanger des données. Dans Gleam, la prise en charge native du format de données standard [They](https://github.com/gleam-lang/gleam) rend la lecture de fichiers texte plus pratique. Les fichiers texte sont généralement lus en utilisant des routines d'entrée/sortie telles que ```open``` et ```read``` qui sont mises en œuvre avec des manipulations de fichiers bas niveau.
+Historiquement, la lecture de fichiers texte est l'une des premières tâches que les ordinateurs étaient capables de faire. Elle a toujours été au cœur de la programmation. En Gleam, la `gleam/otp` est une bibliothèque open-source qui implémente un ensemble de comportements OTP (Open Telecom Platform).
 
-## Voir aussi:
+Il existe d'autres façons de lire des fichiers texte en Gleam, vous pouvez aussi utiliser la bibliothèque `gleam/io`.
 
-Si vous souhaitez en savoir plus sur la lecture de fichiers texte et les alternatives, voici quelques liens utiles:
-- [Documentation Gleam sur la bibliothèque standarde pour les fichiers](https://gleam.run/modules/ellesmera/file.html#open)
-- [Wikipedia page sur les formats de fichier de données](https://en.wikipedia.org/wiki/Data_format)
+En ce qui concerne la mise en œuvre, Gleam est une langue typée statiquement, donc aucune donnée de runtime n'est requise pour le typage. La lecture de fichiers est effectuée ligne par ligne, ce qui est efficace pour les grands fichiers car toute la donnée du fichier n'a pas besoin d'être chargée en mémoire à la fois.
+
+## Voir Aussi:
+
+- Pour plus d'informations sur la bibliothèque `gleam/otp`, consultez la documentation officielle: https://hexdocs.pm/gleam_otp/readme.html
+- Pour en savoir plus sur la bibliothèque `gleam/io`, voici le lien: https://hexdocs.pm/gleam_io/readme.html
+- Pour en savoir plus sur le fonctionnement de Gleam, voici un bon ressource: https://gleam.run/learning/textbook.html

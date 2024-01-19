@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-html_title:           "Fish Shell: Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & hvorfor?
-Konvertering av en streng til små bokstaver er en vanlig praksis blant programmerere for å gjøre tekstbehandling og sammenligning av tekst mer pålitelig. Dette gjøres ved å endre alle bokstavene til små bokstaver, noe som gjør det enklere å sammenligne to tekster uten å bekymre seg for forskjeller i store og små bokstaver.
+## Hva & Hvorfor?
+Å konvertere en streng til små bokstaver innebærer å endre alle store bokstaver i teksten til deres tilsvarende små bokstaver. Programmerere gjør dette for å oppnå konsistent datainnsamling og -behandling, spesielt i tekstbehandling og søk algoritmer.
 
-Slik gjør du:
-Fish Shell tilbyr en enkel kommando for å konvertere en streng til små bokstaver: `lowercase`. Her er et eksempel på hvordan du kan bruke denne kommandoen:
-
-```
-Fish Shell ~> lowercase "HeLlO wOrLD"
-hello world
-```
-
-Resultatet av å kjøre denne kommandoen vil være en streng med alle bokstaver konvertert til små bokstaver. Dette kan også gjøres med variabler eller output fra andre kommandoer, for eksempel:
+## Hvordan:
+Du kan enkelt konvertere en streng til små bokstaver i Fish shell ved hjelp av følgende kode.
 
 ```
-Fish Shell ~> set greeting "Hei, Velkommen!"
-Fish Shell ~> lowercase $greeting
-hei, velkommen!
+set streng 'Hei Verden'
+echo $streng | tr '[:upper:]' '[:lower:]'
 ```
 
-Dypdykk:
-Å konvertere en streng til små bokstaver er en vanlig praksis som har eksistert i lang tid blant programmerere. Dette sikrer at sammenligninger av tekst er nøyaktige og pålitelige uavhengig av hvilken plattform eller programmeringsspråk som brukes.
+Når du kjører denne koden, vil du se følgende resultat:
+```
+hei verden
+```
 
-Som en alternativ metode kan noen programmeringsspråk også tilby en innebygd funksjon for å konvertere en streng til små bokstaver, som for eksempel `toLowerCase()` i JavaScript.
+## Dypdykk:
+Historisk sett har konvertering av tekst til små bokstaver vært en viktig funksjon i mange programmeringsspråk for å forenkle strengsammenligning og indeksering. I Fish shell bruker vi 'tr' kommandoen for å oppnå dette. Men du kan også bruke 'awk' eller 'perl' for samme formål hvis du vil.
 
-I Fish Shell blir konvertering av en streng til små bokstaver gjort ved hjelp av POSIX-funksjonen `tolower`, som gjør bruken av denne kommandoen rask og effektiv.
+```
+# Med awk
+echo $streng | awk '{print tolower($0)}'
 
-Se også:
-Hvis du ønsker å lære mer om andre nyttige kommandoer og funksjoner i Fish Shell, kan du sjekke ut dokumentasjonen på deres offisielle nettside: https://fishshell.com/docs/current/
+# Med perl
+echo $streng | perl -ne 'print lc'
+```
 
-Du kan også utforske mulighetene og tilpasningsalternativene i Fish Shell ved å se på eksempler og diskusjoner på deres GitHub-samfunn: https://github.com/fish-shell/fish-shell
+Hver av disse mulighetene har egne fordeler. For eksempel lar 'tr' deg enkelt bytte mellom store og små bokstaver. Imens 'awk' og 'perl' gir mer kontroll over dataanalyse og -manipulering.
+
+## Se Også: 
+For mer informasjon om hvordan du bruker disse kommandoene, kan du ta en titt på de følgende kildene:
+
+- 'tr' kommandobruk: [GNU Coreutils - tr](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html#tr-invocation)
+- 'awk' kommandobruk: [GNU Awk User’s Guide](https://www.gnu.org/software/gawk/manual/gawk.html)
+- 'perl' kommando bruk: [Perl Command-Line Options](https://perldoc.perl.org/perlrun)

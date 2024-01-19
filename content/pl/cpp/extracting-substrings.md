@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrakcja podłańcuchów"
-html_title:           "C++: Ekstrakcja podłańcuchów"
-simple_title:         "Ekstrakcja podłańcuchów"
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co i dlaczego?
-Estrakcja podciągów to proces wydobywania fragmentów tekstu z większej całości. Programiści często korzystają z tej funkcji, aby wyodrębnić ważne informacje lub dokonać konkretnych operacji na tekście.
+## Co i dlaczego?
 
-Jak to zrobić:
+Bardzo często w programowaniu musimy wyodrębnić cząstkowe ciągi z większych ciągów znaków. Na przykład, możemy potrzebować wyodrębnić część numeru telefonu lub imię z pełnego imienia i nazwiska. To jest dokładnie to, co robi funkcja `substring` — pozwala nam na wyodrębnienie pewnej części ciągu znaków.
+
+## Jak to zrobić:
+
+Torując drogę do użycia funkcji `substr` w C++, zwróćmy uwagę na poniższy kod:
+
 ```C++
 #include <iostream>
 #include <string>
 
-int main() {
-    std::string text = "Przykładowy tekst do ekstrakcji";
-    
-    // Wyświetlenie całego tekstu
-    std::cout << "Cały tekst: " << text << std::endl;
-    
-    // Ekstrakcja pojedynczego znaku
-    char letter = text[6];
-    std::cout << "Szósta litera to: " << letter << std::endl;
-    
-    // Ekstrakcja podciągu od pozycji 6 do 14
-    std::string substring = text.substr(6, 8);
-    std::cout << "Podciąg od 6 do 14: " << substring << std::endl;
-    
+int main()
+{
+    std::string fullname = "Jan Kowalski";
+    std::string firstname = fullname.substr(0,3);
+  
+    std::cout << firstname << std::endl;
+
     return 0;
 }
 ```
 
-Wyczerpujące informacje:
-Estrakcja podciągów jest znana od dawna - pierwotnie była stosowana w języku FORTRAN w latach 60. Alternatywnym podejściem jest wykorzystanie wyrażeń regularnych. W implementacji podciągów w C++ wykorzystywana jest funkcja ```substr()```, który jako argumenty przyjmuje indeks początkowy i długość podciągu.
+Po uruchomieniu powyższego kodu, wyjście będzie wyglądało tak:
 
-Zobacz też:
-- https://en.cppreference.com/w/cpp/string/basic_string/substr
-- https://www.geeksforgeeks.org/string-data-structure/
-- https://www.geeksforgeeks.org/c-stringclasssubstr/
+```
+Jan
+```
+
+W tym przypadku, `substr(0,3)` ekstrahuje 3 znaki, zaczynając od indeksu 0 (pierwszego znaku) z ciągu znaków `fullname`.
+
+## Bardziej szczegółowo:
+
+Funkcja `substr` jest częścią biblioteki `string` w C++ od początku jej istnienia, co pokazuje, jak ważne jest wyodrębnić podciągi.
+
+A i o to, jak działa `substr`, polega na dwóch argumentach, które otrzymuje: początkowym indeksie oraz liczbie znaków, które chcemy wyodrębnić. C++ indeksuje ciągi znaków zaczynając od 0, więc `substr` również zaczyna od 0.
+
+Co do alternatyw, można również użyć `std::find` i `std::find_if` w celu zlokalizowania początku i końca podciągu, a następnie użycie konstruktora `string`, który przyjmuje dwa iteratory.
+
+## Zobacz także:
+
+- [Biblioteka string na cppreference](https://en.cppreference.com/w/cpp/string/basic_string)
+- [Dokumentacja substr na cppreference](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+- [Biblioteka algorithm na cppreference](https://en.cppreference.com/w/cpp/algorithm)

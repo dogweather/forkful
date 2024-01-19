@@ -1,7 +1,7 @@
 ---
-title:                "Das Parsen eines Datums aus einer Zeichenkette"
-html_title:           "C: Das Parsen eines Datums aus einer Zeichenkette"
-simple_title:         "Das Parsen eines Datums aus einer Zeichenkette"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -12,47 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Wenn du als Programmierer mit Datumswerten arbeitest, kann es sein, dass du sie aus einer Zeichenkette (String) extrahieren musst. Dieser Vorgang wird als "Datum aus einer Zeichenkette parsen" bezeichnet. Programmierer machen das, um aus einer unstrukturierten Eingabe ein verwendbares Datum zu erhalten.
+Ein Datum aus einem String zu lesen, ist die Umwandlung des Datumswerts von einem textbasierten Format in ein Datumsformat, dass vom Computer verstanden wird. Programmierer benötigen dies, um Inhalte wie Log-Dateien, Kalenderereignisse oder Ereignisse im Freitext zu analysieren und für Analysen zu verwenden.
 
-## Wie geht's?
+## So geht's:
 
-Das Parsen eines Datums aus einer Zeichenkette ist in C relativ einfach. Du musst lediglich die Funktion `strptime()` aus der Standardbibliothek `time.h` verwenden. Hier ist ein Beispiel:
-
-```c
+```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    char str[] = "13 March 2021";
     struct tm tm;
+    char buf[255];
 
-    strptime(str, "%d %B %Y", &tm);
+    const char* str_date = "2022-10-01 22:35";
+    strptime(str_date, "%Y-%m-%d %H:%M", &tm);
+    strftime(buf, sizeof(buf), "%d %B %Y, %H:%M", &tm);
 
-    printf("Der %d. Tag im Monat ist ein %s\n", tm.tm_mday, weekday[tm.tm_wday]);
+    printf("Parsed date: %s\n", buf);
 
     return 0;
 }
 ```
 
-In diesem Beispiel verwenden wir die `strptime()` Funktion, um das Datum aus der Zeichenkette `str` in die Struktur `tm` zu parsen. Dann greifen wir auf die `tm`-Variablen wie `tm_mday` für den Tag des Monats und `tm_wday` für den Wochentag zu.
-
-Die Ausgabe des obigen Beispiels wäre:
-
+Wenn Sie das Programm ausführen, liefert es die Ausgabe:
 ```
-Der 13. Tag im Monat ist ein Samstag
+Parsed date: 01 October 2022, 22:35
 ```
 
-## Tiefere Einblicke
+## Deep Dive
 
-Geschichtlicher Kontext: Das Parsen von Datumswerten aus Zeichenketten ist seit den Anfängen der Programmierung ein wichtiges Thema. Früher haben Programmierer oft eigene Funktionen geschrieben, um diese Aufgabe zu erledigen. Mit den modernen Funktionen wie `strptime()` ist es jedoch einfacher geworden.
+Die Umsetzung von Datumsstrings in programmverständliche Daten ist keine aktuelle Entwicklung. Seit den frühen Tagen des programmierenden Computings wird diese Funktion benötigt, um menschenlesbare Daten in etwas umzuwandeln, mit dem ein System interagieren kann. 
 
-Alternativen: Wenn du keine Datumsangaben in deiner Zeichenkette hast oder dein Datumsformat nicht von `strptime()` unterstützt wird, kannst du auch auf andere Funktionen wie `sscanf()` oder `strtok()` zurückgreifen.
+In C gibt es Bibliotheken wie `time.h`, die Funktionen wie `strptime` und `strftime` bereitstellen, um diese Aufgabe zu erledigen. Es gibt jedoch auch alternative Möglichkeiten, die von früheren C-Versionen oder anderen Plattformen bereitgestellt werden. Diese können ins Spiel kommen, wenn die Umgebung oder der Codekontext die Verwendung von Bibliotheken wie `time.h` nicht erlaubt.
 
-Implementierungsdetails: Die `strptime()` Funktion erwartet eine Zeichenkette mit dem zu parsenden Datum und ein Format, das spezifiziert, wie das Datum strukturiert ist. Es gibt verschiedene Platzhalter, z.B. `%d` für den Tag des Monats und `%B` für den Monatsnamen. Schau dir die [Dokumentation](https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html#Formatting-Calendar-Time) für eine vollständige Liste an.
+Die Umsetzung selbst erfolgt, indem der String analysiert wird und nach Mustern gesucht wird, die als Datum erkannt werden können. Im obigen Beispiel sucht `strptime` nach den Mustern, die durch die Formatzeichenfolge vorgegeben sind, und füllt die `struct tm` entsprechend.
 
-## Siehe auch
+## Siehe Auch
 
-- [Dokumentation für `strptime()`](https://www.gnu.org/software/libc/manual/html_node/Formatted-Time-Strings.html)
-- [Weitere Möglichkeiten zur Formatierung von Datums- und Zeitwerten in C](https://www.tutorialspoint.com/c_standard_library/c_function_strptime.htm)
-- [Die `strtok()` Funktion](https://www.geeksforgeeks.org/strtok-strtok_r-functions-c-examples/)
-- [Die `sscanf()` Funktion](https://www.cplusplus.com/reference/cstdio/sscanf/)
+- strftime - https://www.cplusplus.com/reference/ctime/strftime/
+- strptime - https://man7.org/linux/man-pages/man3/strptime.3.html
+- C library to make it easy to read and write CSV data - https://github.com/robertpostill/dsv

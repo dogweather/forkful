@@ -1,7 +1,7 @@
 ---
-title:                "Å laste ned en nettside"
-html_title:           "PowerShell: Å laste ned en nettside"
-simple_title:         "Å laste ned en nettside"
+title:                "Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,29 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+---
 
-Å laste ned en nettside handler om å hente informasjon fra en nettside og lagre den på enheten din. Programmerere gjør dette for å kunne analysere og manipulere data fra nettsiden, eller for å kunne automatisere bestemte oppgaver som å skanne nettsider for spesifikk informasjon.
+## Hva & Hvorfor? 
 
-## Slik gjør du det:
+Å laste ned en webside betyr å hente data fra en webserver og lagre den lokalt på maskinen din. Programmerere gjør dette for å manipulere data, analysere innhold, eller for offline tilgang.
 
-Å laste ned en nettside i PowerShell er enkelt og kan gjøres ved å følge disse trinnene:
+---
 
-1. Åpne PowerShell-konsollen.
-2. Bruk kommandoen `Invoke-WebRequest` etterfulgt av nettsidens URL for å laste ned nettsiden. For eksempel: ```PowerShell Invoke-WebRequest https://www.example.com ```.
-3. For å lagre nettsiden som en fil, kan du legge til `-OutFile` parameteren og gi filen et navn. Dette kan se slik ut: ```PowerShell Invoke-WebRequest https://www.example.com -OutFile example.html```.
-4. Hvis du ønsker å utforske informasjonen som ble hentet fra nettsiden, kan du bruke kommandoen `Get-Content` etterfulgt av filnavnet. Dette vil gi deg innholdet i nettsiden i PowerShell-konsollen.
+## Hvordan: 
 
-## Dykk dypere:
+La oss se på et grunnleggende eksempel på hvordan du laster ned en webside ved hjelp av PowerShell:
 
-Historisk sett, har programmerere brukt kommandolinjeverktøy som `curl` eller `wget` for å laste ned nettsider, men i dag er PowerShell et kraftigere og mer fleksibelt alternativ. I tillegg gir `Invoke-WebRequest` -kommandoen mulighet for å hente informasjon fra nettsider ved hjelp av API-kall.
+```PowerShell
+$url = "http://eksempel.com"
+$response = Invoke-WebRequest -Uri $url
+$response.Content | Out-File -FilePath .\webside.html -Encoding utf8
+```
 
-Et annet alternativ for å laste ned nettsider er å bruke et web scraping-verktøy som BeautifulSoup eller Scrapy. Disse verktøyene lar deg mer kontrollert hente informasjon fra nettsiden og kan være nyttige hvis du trenger å skrape informasjon fra flere nettsider.
+Dette vil laste ned websiden og lagre den som `webside.html` i din nåværende katalog. Innholdet i filen vil være HTML-koden på websiden.
 
-Når du laster ned en nettside ved hjelp av PowerShell, blir informasjonen hentet som et `HTML`-dokument. Dette betyr at du kan bruke PowerShell til å manipulere og trekke ut spesifikk informasjon fra dokumentet.
+---
 
-## Se også:
+## Dypdykk: 
 
-- [PowerShell dokumentasjon for Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7)
-- [BeautifulSoup dokumentasjon](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Scrapy dokumentasjon](https://docs.scrapy.org/en/latest/)
+Historisk sett har det alltid vært mulig å laste ned websider, men hver programmeringsspråk gjør det på sin egen måte. Med PowerShell 3.0 og nyere, kan du bruke `Invoke-WebRequest` cmdlet for å laste ned websider. Men det er alternativer, som cURL, som kan være mer velkjent for de som kommer fra Unix/Linux bakgrunn.
+
+Når det gjelder implementeringsdetaljer, oppretter `Invoke-WebRequest` cmdlet en GET-forespørsel til webserveren, og lagrer svaret i et HttpResponse objekt. Du kan da enkelt hente innholdet ved å bruke `$response.Content`.
+
+---
+
+## Se Også:
+
+
+- [Microsoft Docs: Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7)
+- [Stack Overflow: How to download a website with PowerShell](https://stackoverflow.com/questions/3629817/is-it-possible-to-download-using-the-windows-command-line)
+- [PowerShell: Scripting guide to PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)

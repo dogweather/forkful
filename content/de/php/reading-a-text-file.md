@@ -1,7 +1,7 @@
 ---
-title:                "Das Lesen einer Textdatei"
-html_title:           "PHP: Das Lesen einer Textdatei"
-simple_title:         "Das Lesen einer Textdatei"
+title:                "Eine Textdatei lesen"
+html_title:           "Bash: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Lesen von Textdateien ist eine häufige Aufgabe für PHP-Programmierer. Es ermöglicht ihnen, Daten aus einer Datei zu lesen und in ihrer Anwendung zu verwenden.
+## Was & Warum?
 
-# Wie geht's?
-Du kannst eine Textdatei in PHP ganz einfach lesen, indem du die Datei mit der Funktion "fopen()" öffnest und dann Zeile für Zeile mit der Funktion "fgets()" liest. Hier ist ein Beispiel:
+Das Lesen einer Textdatei ist der Prozess, bei dem ein Programm den Inhalt einer Textdatei abruft und interpretiert. Programmierer tun dies, um Daten aus einer Datei zu extrahieren und sie in ihre Anwendung zu integrieren.
+
+## So geht's:
+
 ```PHP
 <?php
-$handle = fopen("textdatei.txt", "r"); // Öffne die Datei im "Lesen"-Modus
-if ($handle) { // Überprüfe, ob die Datei erfolgreich geöffnet wurde
-  while (($line = fgets($handle)) !== false) { // Lese eine Zeile aus der Datei
-    echo $line; // Gib die Zeile aus
-  }
-  fclose($handle); // Schließe die Datei
-} else {
-  echo "Datei konnte nicht geöffnet werden."; // Gib eine Fehlermeldung aus, falls die Datei nicht geöffnet werden konnte
+$dateiname = 'textdatei.txt';
+
+if (!file_exists($dateiname)) {
+    die("Datei nicht gefunden");
 }
+
+$inhalt = file_get_contents($dateiname);
+
+echo $inhalt;
 ?>
 ```
-Dieses Beispiel öffnet eine Datei namens "textdatei.txt" und liest jede Zeile daraus, die dann mit "echo" ausgegeben wird. Am Ende wird die Datei wieder geschlossen.
 
-# Tiefer Einblick
-Das Lesen von Textdateien in PHP ist nichts Neues - es wird seit den Anfängen der Sprache unterstützt. Es ist jedoch die einfachste Methode, um Daten aus einer Datei zu lesen und wird daher häufig verwendet.
+Dieser Code sucht nach einer Datei namens 'textdatei.txt' und liest ihren Inhalt. Wenn die Datei nicht existiert, wird das Skript mit einer Fehlermeldung beendet.
 
-Eine Alternative zum Lesen von Textdateien in PHP ist die Verwendung von Datenbanken, um Daten zu speichern und abzurufen. Dies ist jedoch mit zusätzlichem Aufwand verbunden, während das Lesen von Textdateien sehr direkt und einfach ist.
+## Tiefere Einblicke 
 
-Technisch gesehen wird beim Lesen einer Textdatei in PHP jeder Zeilenwechsel als ein Zeichen behandelt. Dies bedeutet, dass die resultierenden Strings in Ihrer Anwendung möglicherweise zusätzliche Zeilenumbrüche enthalten, die Sie möglicherweise entfernen müssen.
+Historisch gesehen war das Lesen von Textdateien eine der ersten Möglichkeiten, Daten persistent in Computersystemen zu speichern. In PHP bietet die Funktion `file_get_contents()` eine einfache Möglichkeit, eine Textdatei zu lesen.
 
-# Siehe auch
-Weitere Informationen zu "fopen()" und "fgets()": https://www.php.net/manual/de/function.fopen.php und https://www.php.net/manual/de/function.fgets.php
+Es gibt jedoch Alternativen. Man kann auch `fopen()` und `fread()` verwenden, wenn mehr Kontrolle über den Lesevorgang benötigt wird. Ein wichtiger Implementierungsdetail ist das Fehlerhandling. Im obigen Beispiel verwenden wir `die()`, um das Skript zu beenden, wenn die Datei nicht vorhanden ist.
+
+## Siehe Auch
+
+Weitere Informationen finden Sie in der offiziellen PHP-Dokumentation: [Dateisystem Funktionen](https://www.php.net/manual/de/book.filesystem.php).

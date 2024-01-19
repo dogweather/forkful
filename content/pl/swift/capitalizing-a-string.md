@@ -1,7 +1,7 @@
 ---
-title:                "Zwielokrotnienie ciągu znaków"
-html_title:           "Swift: Zwielokrotnienie ciągu znaków"
-simple_title:         "Zwielokrotnienie ciągu znaków"
+title:                "Zamiana liter w napisie na wielkie"
+html_title:           "Swift: Zamiana liter w napisie na wielkie"
+simple_title:         "Zamiana liter w napisie na wielkie"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,19 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Kapitalizacja łańcucha znaków oznacza zmianę pierwszej litery tego łańcucha na jej wersję wielką. Programiści robią to, ponieważ chcą mieć spójność i estetykę w swoim kodzie oraz poprawność gramatyczną w swoich wyświetlanych tekście.
+## Co i Dlaczego?
+Zamienianie na wielkie litery, inaczej capitalizing, polega na konwersji wszystkich małych liter ciągu (string) na wielkie. Programista robi to, by podkreślić istotne fragmenty tekstu lub uczynić go bardziej czytelnym.
 
 ## Jak to zrobić:
+Swift oferuje bardzo prostą metodę na capitalizację stringów:
+
 ```Swift
-let exampleString = "hello world"
-print(exampleString.capitalized) // wypisze "Hello World"
+let nazwa = "programowanie"
+let nazwaCapitalized = nazwa.capitalized
+print(nazwaCapitalized)  // Wypisze: Programowanie
 ```
+W powyższym kodzie, `capitalized` to wbudowana właściwość w Swift, która zamienia pierwszą literę każdego słowa w ciągu na wielką.
 
-## Głębszy zanurzenie:
-Kapitalizacja łańcucha znaków nie jest nowym konceptem i jest często używana w tekstowych językach programowania. Alternatywą może być ręczne zmienianie pierwszej litery na wielką lub wykorzystanie funkcji, która zrobi to za nas. W implementacji, programiści mogą używać różnych metod, ale najważniejsze jest osiągnięcie oczekiwanego efektu.
+## Głębsze spojrzenie:
+Początkowo, w wielu innych językach programowania, konwersja na wielkie litery wynikała głównie z konieczności wyróżnienia tytułów czy nagłówków. W Swift, zastosowanie `capitalized` ułatwia nam to zadanie. Jeżeli jednak chcemy zamienić **WSZYSTKIE** litery na duże, użyjemy `uppercased()`:
 
-## Zobacz także:
-Sprawdź oficjalną dokumentację języka Swift dla więcej informacji o kapitalizacji łańcuchów znaków: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID295.
+```Swift 
+let nazwaDuzeLitery = nazwa.uppercased()
+print(nazwaDuzeLitery)  // Wypisze: PROGRAMOWANIE
+```
+Dodatkowo, warto zauważyć, że funkcja `capitalized` działa zgodnie z ustawieniami lokalnymi, np. obsługuje niemieckie umlaute i tureckie litery 'i'.
+Jednak na każdą funkcję musimy patrzeć krytycznie. Niestety `capitalized` ma ograniczenie. Zawsze zamienia pierwszą literę każdego słowa na wielką, a niekoniecznie zawsze tego chcemy.
 
-Możesz również przeczytać artykuł o najlepszych praktykach w pisaniu kodu w języku Swift, w którym omówiono temat kapitalizacji: https://medium.com/livefront/9-najlepszych-praktyk-w-pisaniu-kodu-w-swift-df06e2c33abf.
+## Zobacz także: 
+Zapoznaj się z oficjalną dokumentacją Apple na temat `String` ([link](https://developer.apple.com/documentation/swift/string)) i tekstem na StackOverflow na temat `capitalized` ([link](https://stackoverflow.com/questions/26306326/swift-string-to-uppercase)).

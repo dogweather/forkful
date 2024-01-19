@@ -1,7 +1,7 @@
 ---
-title:                "미래나 과거의 날짜 계산하기"
-html_title:           "Python: 미래나 과거의 날짜 계산하기"
-simple_title:         "미래나 과거의 날짜 계산하기"
+title:                "미래 또는 과거의 날짜 계산하기"
+html_title:           "Python: 미래 또는 과거의 날짜 계산하기"
+simple_title:         "미래 또는 과거의 날짜 계산하기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 계산하는가?
+## 무엇이며 왜?
 
-지금으로부터 미래나 과거에 있는 특정 날짜를 계산하는 것은 프로그래머들이 일반적으로 하는 작업 중 하나입니다. 우리는 종종 특정 날짜를 알고 싶거나, 날짜 계산을 사용하여 특정 작업을 자동화하고 싶어할 때 이를 수행합니다.
+날짜를 미래 혹은 과거로 계산하는 것은, 특정 기간 후나 전의 날짜를 결정하는 행위입니다. 개발자들이 이를 수행하는 이유는 여러 가지: 이벤트 예약, 데이터 분석, 심지어 빌링 시스템에서도 이 작업을 수행합니다.
 
-## 하는 방법:
+## 어떻게 해야 할까요?
 
-```python
-# 오늘 날짜로부터 7일 후의 날짜 계산
-from datetime import date, timedelta
+Python의 datetime 모듈을 사용해 간단하게 해결할 수 있습니다.
 
-today = date.today()
-future_date = today + timedelta(days=7)
+```Python
+import datetime
 
-print(future_date)
-# 출력: 오늘로부터 7일 후의 날짜 (YYYY-MM-DD 형식)
+# 오늘 날짜
+now = datetime.date.today()
+print(now)
 
-# 과거 날짜 계산도 가능합니다.
-past_date = today - timedelta(days=30)
-print(past_date)
-# 출력: 오늘로부터 30일 전의 날짜 (YYYY-MM-DD 형식)
+# 일주일 후
+one_week_later = now + datetime.timedelta(weeks=1)
+print(one_week_later)
+
+# 하루 전
+one_day_earlier = now - datetime.timedelta(days=1)
+print(one_day_earlier)
 ```
 
-이것은 우리가 미래나 과거에 있는 특정 날짜를 계산하는 가장 간단한 방법입니다. 더 복잡한 계산을 위해서는 `timedelta` 객체의 다른 속성(주, 시간, 초 등)을 사용할 수 있습니다.
+## 딥 다이브
 
-## 깊이 파헤치기:
+Python에서 날짜 계산의 역사는 어느 정도 길다. 가장 첫 번째 버전부터 현재 버전까지 이 기능이 있었습니다. 그러나 시간이 지나면서 Python 개발자들은 이 방법을 좀 더 간편하게 만들기 위해 다양한 라이브러리와 모듈을 개발하였습니다.
 
-이 날짜 계산 기술은 지금까지 꼭 날짜를 사용하는 모든 컴퓨터 시스템에서 사용되어왔습니다. 그러나 더 최근에 우리는 이 작업을 더 효율적으로 처리하기 위해 라이브러리들을 개발했습니다. 예를 들어, `dateutil.relativedelta`와 같은 라이브러리는 `timedelta`와 유사한 방식으로 날짜를 계산하지만 더 많은 유연성을 제공합니다. 또한, `calendar` 모듈을 사용하여 특정 날짜의 요일을 확인하거나, 윤년 여부를 알 수도 있습니다.
+데이트타임 모듈 외에도 날짜 계산을 위한 다른 대안도 있습니다. 예를 들어, dateutil 라이브러리는 더 복잡한 날짜 계산을 할 수 있게 합니다.
 
-## 관련 링크:
+날짜 계산은 'timedelta' 객체를 사용하여 수행됩니다. 이 'timedelta' 객체는 두 날짜나 시간 사이의 차이를 초 단위로 표현합니다.
 
-- Python 공식 문서: [`datetime` 모듈](https://docs.python.org/3/library/datetime.html)
-- `dateutil` 라이브러리 문서: [Python `dateutil` 문서](https://dateutil.readthedocs.io/en/stable/)
-- `calendar` 모듈 문서: [Python `calendar` 모듈 문서](https://docs.python.org/3/library/calendar.html)
+## 참조하기
+
+- Python 공식 문서: https://docs.python.org/ko/3/library/datetime.html
+- dateutil 라이브러리: https://dateutil.readthedocs.io/en/stable/
+- Python의 datetime 모듈 이해하기: https://dojang.io/mod/page/view.php?id=2463

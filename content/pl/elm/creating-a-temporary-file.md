@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "Elm: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,24 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Tworzenie tymczasowych plików w programowaniu polega na tworzeniu plików, które są tymczasowe i służą do przechowywania danych lub informacji, które są potrzebne tylko na czas działania programu. Programiści często tworzą tymczasowe pliki, aby zapewnić bezpieczne i wydajne przechowywanie danych.
+## Co i Dlaczego?
+
+Tworzenie tymczasowego pliku to prowizoryczne utworzenie okresowego magazynu danych. Programiści robią to, aby przechowywać dane, które są potrzebne tylko przez krótki czas i nie są wymagane na stałe.
 
 ## Jak to zrobić:
-Elm, ostatnia wersja języka programowania, zapewnia łatwy sposób na tworzenie tymczasowych plików. Wystarczy użyć funkcji `File.temp` i przekazać jej nazwę pliku oraz zawartość pliku jako argumenty. Poniżej znajduje się przykładowy kod:
 
-```Elm
-File.temp "tempfile" "This is a temporary file"
+Niestety, język Elm nie obsługuje bezpośrednio tworzenia plików tymczasowych, gdyż jest przeznaczony głównie do tworzenia aplikacji webowych na klienta i nie posiada natywnego API do manipulacji plikami na dysku. W takim wypadku, musimy zastosować rozwiązanie zewnętrzne. Na przykład, korzystając z serwera Node.js po stronie serwera:
+
+```javascript
+var tmp = require('tmp');
+
+tmp.file(function _tempFileCreated(err, path, fd, cleanupCallback) {
+  if (err) throw err;
+
+  console.log("Ścieżka pliku: ", path);
+  console.log("Deskryptor pliku: ", fd);
+
+  cleanupCallback();
+});
 ```
 
-Po uruchomieniu kodu, zostanie utworzony tymczasowy plik o nazwie "tempfile", a w jego wnętrzu znajdować się będzie treść "This is a temporary file".
+## Wgłębiając się
 
-## Dogłębnie:
-Tworzenie tymczasowych plików ma wiele zastosowań w programowaniu. Np. może być wykorzystane do przechowywania lokalnych danych użytkownika, tymczasowych ustawień lub do tymczasowego przechowywania plików pobranych z sieci. Alternatywnym sposobem na przechowywanie danych są bazy danych, jednakże tworzenie tymczasowych plików jest prostsze i szybsze.
+Tworzenie plików tymczasowych ma swoje korzenie w początkowych latach Unix’a, gdzie tempo pracy dysków twardeych w porównaniu do szybkości RAM była znacznie wolniejsza.
 
-W Elm, istnieje również możliwość tworzenia tymczasowych katalogów za pomocą funkcji `Directory.temp`. Istnieją także inne metody tworzenia tymczasowych plików, takie jak użycie biblioteki System.IO, jednakże funkcje wbudowane w Elm są zazwyczaj wystarczające.
+Alternatywnie, inne rozwiązania obejmują korzystanie z Firebase lub innych baz danych NoSQL dla przechowywania tymczasowych danych. Innym rozwiązaniem jest utworzenie własnej usługi do obsługi plików tymczasowych.
 
-## Zobacz też:
-Dokumentacja Elm: https://guide.elm-lang.org/
-Funkcja `File.temp` w Elm: https://package.elm-lang.org/packages/elm/file/latest/File#temp
-Funkcja `Directory.temp` w Elm: https://package.elm-lang.org/packages/elm/file/latest/Directory#temp
+Szczegóły implementacji tworzenia plików tymczasowych zależą od wybranych narzędzi i technologii. 
+
+## Zobacz także:
+* Strona npm dla biblioteki 'tmp': [npmjs.com/package/tmp](https://www.npmjs.com/package/tmp)
+* Baza danych Firebase od Google: [firebase.google.com](https://firebase.google.com/)
+* Inne bazy danych NoSQL: [nosql-database.org](https://nosql-database.org/)

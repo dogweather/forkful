@@ -1,6 +1,6 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "Go: Extraction de sous-chaînes"
+html_title:           "Arduino: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Go"
 category:             "Go"
@@ -10,52 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que l'extraction de sous-chaînes et pourquoi les programmeurs le font-ils?
+## Qu'est-ce et Pourquoi?
 
-L'extraction de sous-chaînes est le fait de sélectionner une partie d'une chaîne de caractères plus grande. Les programmeurs le font souvent pour traiter et manipuler des données sous forme de chaînes de caractères plus petites.
+Extraire des sous-chaînes signifie prendre une chaîne de caractères et en retirer une partie. Nous faisons cela pour manipuler et transformer des informations spécifiques à partir de chaînes de caractères plus longues.
 
-Comment faire:
+## Comment faire:
 
-Utilisez la méthode `Substring()` pour extraire une partie spécifique d'une chaîne de caractères. Voici un exemple en Go:
+La standard « strings » bibliothèque dans Go facilite l'extraction des sous-chaînes. Utilisez l'opérateur de découpage pour faire cela. Voici un petit example:
 
-```
-chaine := "Bonjour tout le monde !"
-sousChaine := chaine.Substring(8, 4)
-```
+```Go
+package main
+import "fmt"
 
-Dans cet exemple, nous extrayons les caractères de la chaîne d'index 8 (inclus) à l'index 11 (non inclus) pour obtenir la sous-chaîne "tout".
-
-En voici un autre exemple en utilisant une boucle pour extraire plusieurs sous-chaînes:
-
-```
-chaine := "Le futur appartient à ceux qui se lèvent tôt."
-for i := 0; i < len(chaine); i += 5 {
-	sousChaine := chaine.Substring(i, 3)
-	fmt.Println(sousChaine)
+func main() {
+    str := "Bonjour, programmeurs!"
+    fmt.Println(str[9:22])  // sortie: "programmeurs"
 }
 ```
 
-La sortie de ce code sera:
+Dans cet exemple, nous avons une chaîne "Bonjour, programmeurs!" et nous en extrayons la sous-chaîne "programmeurs!". L'indexation commence à 0, donc `str[9:22]` nous donne la sous-chaîne à partir du 9ème au 22ème caractère.
 
-```
-Le f
- fut
-r ap
-par
-rtie
-t à 
-ceux
- qui
-lèv
-tôt
-.
-```
+## Plongée en profondeur:
 
-Plongée en profondeur:
+Historiquement, les chaînes de caractères en Go sont immuables, c'est-à-dire qu'une fois qu'elles sont créées, elles ne peuvent pas être modifiées. C'est pour cette raison que nous extrayons des sous-chaînes - pour manipuler les données sans changer la chaîne originale.
 
-L'extraction de sous-chaînes est couramment utilisée pour le traitement de chaînes de caractères, mais elle peut également être utile pour des tâches telles que la validation de données ou la manipulation de chemins de fichiers. Il existe également d'autres méthodes pour extraire des sous-chaînes comme `Split()` et `Trim()`, qui peuvent être utilisées en complément de `Substring()`. La méthode `Substring()` utilise des indices de chaîne 0-based, ce qui signifie que le premier caractère a un index de 0, contrairement à certains autres langages de programmation.
+Il existe plusieurs alternatives à l'extraction de sous-chaînes en utilisant l'opérateur de découpage. L'une d'entre elles est l'utilisation de la fonction `strings.Split` qui divise une chaîne en plusieurs sous-chaînes en fonction d'un séparateur donné.
 
-Voir aussi:
+En Go, l'extraction de sous-chaînes est une opération en temps constant, ce qui signifie que la complexité de l'extraction de sous-chaînes est O(1). Cela est possible en raison de l'implémentation interne des chaînes en Go, où une sous-chaîne partage la mémoire avec la chaîne originale.
 
-- [Documentation officielle sur les chaînes de caractères en Go](https://golang.org/pkg/strings/)
-- [GitHub: exemple d'utilisation de Substring() en Go](https://github.com/danielmiessler/SecLists/blob/master/Passwords/10k_most_common.txt)
+## Voir aussi:
+
+1. Documentation officielle de Go sur les chaînes de caractères: https://golang.org/pkg/strings
+2. Plus d'informations sur l'utilisation des sous-chaînes en Go: https://gobyexample.com/string-functions
+3. Utiliser l'opérateur de découpage avec les chaînes en Go: https://yourbasic.org/golang/slice-string/

@@ -10,45 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Leggere un file di testo è semplicemente il processo di aprire e leggere un file di testo presente sul computer. I programmatori lo fanno principalmente per accedere a dati strutturati in un formato comune e utilizzarli nel proprio codice.
+# La Lettura di un File di Testo in Linguaggio C
 
-## Come fare:
-Una volta aperto il file, è possibile utilizzare la funzione `fscanf` per leggere i dati uno alla volta e salvare i valori in variabili o array. Ecco un esempio:
+## Che Cosa & Perché?
+
+Leggere un file di testo in linguaggio C significa accedere e interpretare i dati presenti in un file come stringhe di testo. Questo è fondamentale per poter manipolare, analizzare e utilizzare tali dati all'interno dei nostri programmi.
+
+## Come Fare:
+
+Ecco un esempio di come leggere un file di testo in C.
 
 ```C
-FILE *file = fopen("dati.txt", "r"); // "r" indica che il file è aperto in modalità lettura
-if (file == NULL) {
-    printf("Impossibile aprire il file.");
-    return -1;
+#include <stdio.h>
+
+int main() {
+    FILE *file = fopen("file_di_testo.txt", "r");
+    char stringa[256];
+
+    if (file == NULL) {
+        printf("Non posso aprire il file.\n");
+        return 1;
+    }
+    
+    while (fgets(stringa, sizeof(stringa), file)) {
+        printf("%s", stringa);
+    }
+
+    fclose(file);
+    return 0;
 }
-
-int numero;
-char carattere;
-
-// Leggi un numero intero e un carattere dalla prima riga del file
-fscanf(file, "%d %c", &numero, &carattere);
-
-// Ora è possibile utilizzare le variabili "numero" e "carattere" nel proprio codice
-
-fclose(file); // Chiude il file per evitare perdite di dati
 ```
 
-Il contenuto del file "dati.txt" potrebbe essere ad esempio:
+Se il file "file_di_testo.txt" contiene "Ciao, Mondo!", l'output del programma sarà:
 
 ```
-10 A
-```
-e il risultato dell'esempio sarebbe:
-
-```
-numero = 10
-carattere = 'A'
+Ciao, Mondo!
 ```
 
-## Approfondimento:
-Leggere un file di testo era una delle prime funzioni disponibili nelle prime versioni del linguaggio C, risalenti agli anni '70. Oggigiorno, esistono anche altre modalità di lettura dei dati, come ad esempio l'utilizzo di API per accedere a database o l'utilizzo di protocolli di comunicazione come HTTP.
+## Approfondimento
 
-## Vedi anche:
-- La documentazione ufficiale di C per la funzione `fscanf`: https://www.cplusplus.com/reference/cstdio/fscanf/
-- Un esempio di lettura di un file di testo in C++: https://www.geeksforgeeks.org/read-write-file-c/
+1. Contesto storico: Il C, sviluppato nei primi anni '70, ha sempre supportato la lettura di file di testo come operazione di base. 
+
+2. Alternative: Ci sono molte altre funzioni in C per leggere un file di testo, come fscanf() o getc(). Ogni funzione ha i suoi pro e contro, a seconda delle esigenze specifiche del programma.
+
+3. Dettagli di implementazione: Nel codice di esempio, usiamo 'fopen' per aprire il file, 'fgets' per leggere ogni riga e 'printf' per stamparla. Infine, 'fclose' viene utilizzata per chiudere il file dopo che siamo finiti di leggerlo. Ricorda, è sempre una buona abitudine chiudere i file dopo l'uso.
+
+## Vedi Anche
+
+- Documentazione di GNU C Library: https://www.gnu.org/software/libc/manual/html_node/I_002fO-Primitives.html 
+- Tutorial su File I/O in C: https://www.learn-c.org/en/File_IO
+- Documentazione di C Standard Library: http://www.cplusplus.com/reference/clibrary/ 
+
+Ricordati, diventa un maestro nella lettura di file di testo! È uno strumento fondamentale per un programmatore C.

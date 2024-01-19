@@ -1,7 +1,7 @@
 ---
-title:                "Analyser une date à partir d'une chaîne de caractères"
-html_title:           "Bash: Analyser une date à partir d'une chaîne de caractères"
-simple_title:         "Analyser une date à partir d'une chaîne de caractères"
+title:                "Analyser une date à partir d'une chaîne"
+html_title:           "Clojure: Analyser une date à partir d'une chaîne"
+simple_title:         "Analyser une date à partir d'une chaîne"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,30 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Le "parseur de date de chaîne" est un outil qui permet aux programmeurs de prendre une date sous forme de texte (chaîne de caractères) et de la convertir en un format compréhensible pour l'ordinateur. Les programmeurs ont souvent besoin de faire cela lorsqu'ils travaillent avec des données de différentes sources qui ne sont pas toutes au même format de date.
+# Parsing d'une Date à partir d'une Chaîne en Bash
 
-## Comment:
-Voici un exemple simple pour montrer comment utiliser un parseur de date de chaîne en Bash:
+## Pourquoi et Quoi ?
+
+Le "parsing" d'une date à partir d'une chaîne, c'est convertir une représentation textuelle d'une date en une structure de données gérable par le code. Les programmeurs le font pour manipuler et utiliser efficacement les informations temporelles dans leurs programmes.
+
+## Comment faire :
+
+Voici un exemple simple de comment vous pouvez réaliser ceci dans Bash :
+```Bash
+#!/bin/bash
+dateString="2022-02-20"
+dateParsed=$(date -d "$dateString" "+%Y%m%d")
+echo $dateParsed
+```
+Lorsque vous exécutez ce script, vous obtiendrez le format de date converti :
+```Bash
+20220220
+```
+
+## Plongée Profonde
+
+Historiquement, le parsing de dates a été une tâche ardue pour les programmeurs en raison de la diversité des formats de dates. Cependant, dans Bash modernes (GNU `date`), il existe une fonction intégrée pour parser une date à partir d'une chaîne.
+
+Les alternatives à `date` comprennent les commandes `awk`, `sed` et `perl` que vous pouvez utiliser dans une chaîne de pipes pour parser des dates. Par exemple, vous pouvez utiliser `awk` pour split une date et la stocker dans des variables individuelles :
 
 ```Bash
-# Déclarer une date sous forme de chaîne de caractères
-my_date="2021-04-15"
-
-# Convertir la date en format UNIX (nombre de secondes écoulées depuis le 1er janvier 1970)
-my_timestamp=$(date -d "$my_date" +%s)
-
-# Afficher le résultat
-echo "La date $my_date correspond à $my_timestamp secondes depuis 1970."
-```
-**Output:**
-```
-La date 2021-04-15 correspond à 1618444800 secondes depuis 1970.
+#!/bin/bash
+dateString="2022-02-20"
+IFS="-"; read -a dateArray <<< "$dateString"
+year=${dateArray[0]}
+month=${dateArray[1]}
+day=${dateArray[2]}
+echo $year $month $day
 ```
 
-## Plongée en profondeur:
-Le besoin de convertir des dates en formats compatibles avec l'ordinateur a toujours existé, mais il a été exacerbé avec la popularité croissante des données en ligne en temps réel. Avant la création de parseurs de date de chaîne, les programmeurs devaient écrire leur propre code pour chaque format de date spécifique, ce qui rendait leur travail plus compliqué et sujet aux erreurs. De nos jours, il existe plusieurs alternatives au Bash, telles que Python ou JavaScript, pour gérer la conversion de dates.
+En interne, `date -d` invoque la fonction `getdate`, qui supporte de nombreux formats de dates. Cependant, c'est une fonction locale et non recommandée pour une portabilité maximale.
 
-## À voir aussi:
-- [Documentation officielle de GNU Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Guide pour la manipulation de dates en Bash](https://www.lifewire.com/date-command-examples-4087371)
+## Voir Aussi
+
+Les liens suivants fournissent des informations supplémentaires sur le parsing de date dans Bash :
+- Guide Bash avancée : [Date et Heure](https://tldp.org/LDP/abs/html/timedate.html)
+- GNU Core Utilities : [Date de GNU](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- Stack Overflow : [Convertir une date en Timestamp Unix](https://stackoverflow.com/questions/3249827/convert-from-date-to-timestamp-bash)

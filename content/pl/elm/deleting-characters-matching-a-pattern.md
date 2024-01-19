@@ -1,7 +1,7 @@
 ---
-title:                "Usuwanie znaków pasujących do wzoru"
-html_title:           "Elm: Usuwanie znaków pasujących do wzoru"
-simple_title:         "Usuwanie znaków pasujących do wzoru"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,29 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-Usuwanie znaków pasujących do wzorca jest jedną z popularnych operacji w programowaniu Elm. Programiści często używają tego narzędzia do czyszczenia tekstu lub danych wejściowych, usuwając niepotrzebne znaki lub formatowanie.
+Usuwanie znaków zgodnie z wzorcem to proces, w którym z danych tekstowych usuwane są wszystkie znaki, pasujące do określonego wzoru. Programiści korzystają z tego podczas czyszczenia, normalizacji czy analizy danych, umożliwiając precyzyjną manipulację na danych tekstowych.
 
 ## Jak to zrobić:
 
+Przykład kodu Elm, który usuwa wszystkie wystąpienia określonego znaku z ciągu:
+
 ```Elm
-text = "Hej, to jest przykładowy tekst!"
-cleanedText = String.filter (\char -> char /= '!' && char /= '?') text
+import String
 
-Texte en Francais = "Ceci est un exemple de texte en français !"
-texteNettoye = String.filter (\char -> char /= '!' && char /= '?') texteEnFrancais
+usunZnaki : Char -> String -> String
+usunZnaki znak tekscik =
+    String.split (String.fromChar znak) tekscik
+        |> String.join ""
 
-output = "Hej, to jest przykładowy tekst"
-output2 = "Ceci est un exemple de texte en français"
+main =
+    usunZnaki 'a' "banana"
 ```
 
-## Głębszy Zanurzenie:
+Wynik:
+```
+"bnn"
+```
 
-Usuwanie znaków pasujących do wzorca jest możliwe dzięki funkcji `String.filter`. Historia tego narzędzia sięga lat 60., kiedy to używane było w języku BASIC. Alternatywami dla `String.filter` są funkcje `String.replace`, `String.trim`, `List.filter` i `List.map`. Implementacja `String.filter` opiera się na funkcji `List.filter` oraz znanej jako *list comprehension* - pozwala ona na stworzenie nowej listy na podstawie istniejącej, wybierając tylko te elementy, które spełniają określone kryteria. 
+## Głębsze spojrzenie:
 
-## Zobacz Później:
+Usuwanie znaków zgodnie z wzorcem jest techniką używaną w przetwarzaniu języka naturalnego od czasów wczesnych komputerów i jest nadal podstawą wielu współczesnych operacji na tekstach. Alternatywą dla tej techniki może być użycie regularnych wyrażeń, które są dla niektórych języków jak Python lub JavaScript bardziej naturalnym sposobem manipulowania danymi tekstowymi. W Elm możemy także zastosować funkcję `String.filter`, która jest jednak mniej efektywna, gdyż przechodzi przez każdy znak ciągu niezależnie od tego, czy pasuje do wzorca.
 
-- [Dokumentacja Elm](https://elm-lang.org/docs)
-- [Funkcje Standardowe String Elm](https://package.elm-lang.org/packages/elm-lang/core/latest/String#filter)
-- [Porównanie funkcji String w Lamie i Elm](https://dev.to/kodumu/lambdas-string-manipulation-comparing-elm-vs-e91)
+## Zobacz również:
+
+Jeśli chcesz dowiedzieć się więcej na temat operacji na ciągach w Elm, zapraszam do odwiedzenia oficjalnej dokumentacji:
+[String](https://package.elm-lang.org/packages/elm/core/latest/String)  
+
+Więcej informacji na temat pracy z tekstem w języku programowania Elm można znaleźć tutaj:
+[Working with strings in Elm](https://elmprogramming.com/strings.html)

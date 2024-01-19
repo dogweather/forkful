@@ -1,7 +1,7 @@
 ---
-title:                "Umwandeln eines Strings in Kleinbuchstaben"
-html_title:           "PowerShell: Umwandeln eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,34 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum? 
-Das Konvertieren einer Zeichenfolge in Kleinbuchstaben ist ein gängiger Programmierprozess, bei dem alle Buchstaben in einer Zeichenfolge in ihre entsprechenden Kleinbuchstaben umgewandelt werden. Programmierer verwenden dies in der Regel, um sicherzustellen, dass Zeichenfolgen korrekt sortiert oder verglichen werden können.
+## Was & Warum?
 
-## How to:
-Hier sind einige einfache Beispiele, wie Sie eine Zeichenfolge in PowerShell in Kleinbuchstaben konvertieren können:
+Das Umwandeln eines Strings in Kleinbuchstaben ist eine geläufige Programmieraufgabe, bei der alle Zeichen eines gegebenen Strings in Kleinbuchstaben konvertiert werden. Programmierer tun dies oft, um Textvergleiche zu ermöglichen, die unabhängig von Groß- und Kleinschreibung sind.
 
-```powershell
-$string = "Hallo WELT!"
-$string.ToLower()
-# Ausgabe: hallo welt!
+## Wie zu:
+
+In PowerShell ist die Konvertierung eines Strings in Kleinbuchstaben ganz einfach. Verwenden Sie die Methode `.ToLower()`. Hier ist ein Beispiel:
+
+```PowerShell
+$text = "Hallo Welt"
+$lowerCaseText = $text.ToLower()
+Write-Host $lowerCaseText
 ```
 
-Sie können auch eine Zeichenfolge aus einer Variablen lesen und direkt in Kleinbuchstaben konvertieren:
+Das wird diesen Ausgabe geben:
 
-```powershell
-$string = Read-Host "Geben Sie eine Zeichenfolge ein"
-$string.ToLower()
-# Eingabe: Hallo WELT
-# Ausgabe: hallo welt
+```PowerShell
+hallo welt
 ```
 
-## Deep Dive:
-Historischer Kontext: Das Konzept der Konvertierung von Zeichen in Kleinbuchstaben reicht bis in die Anfänge der Programmierung zurück, als ASCII-Zeichen die Standardmethode zur Darstellung von Text waren. Mit der Einführung von Unicode im Jahr 1991 wurde die Konvertierung in Kleinbuchstaben komplexer und betraf nun mehrere Sprachen und Zeichensätze.
+Die Variable `$lowerCaseText` enthält jetzt den Text 'hallo welt', den Kleinbuchstabenäquivalent des ursprünglichen Texts.
 
-Alternativen: In PowerShell gibt es mehrere alternative Methoden, um eine Zeichenfolge in Kleinbuchstaben zu konvertieren. Sie können beispielsweise den Befehl `ToLower()` verwenden, der in diesem Artikel behandelt wurde, oder den Befehl `lc` verwenden.
+## Vertiefung:
 
-Implementierungsdetails: PowerShell verwendet die Methode `ToLower()` aus der .NET-Klasse `String` zur Konvertierung von Zeichenfolgen in Kleinbuchstaben. Es ist wichtig zu beachten, dass diese Methode nicht nur englische Zeichenfolgen konvertiert, sondern auch Zeichenfolgen in anderen Sprachen.
+Die Methode `.ToLower()` ist seit der .NET 1.1-Version verfügbar. Sie ist den meisten PowerShell-Programmierern geläufig.
 
-# Siehe auch:
-- [MSDN-Artikel zu ToLower-Methode] (https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=netframework-4.8)
-- [PowerShell-Dokumentation zu String-Klasse] (https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_string?view=powershell-6)
+Obwohl `.ToLower()` die häufigste Methode ist, um Strings in Kleinbuchstaben zu konvertieren, es gibt Alternativen. Zum Beispiel könnten Sie die `-replace` Operator mit einem regelmäßigen Ausdruck verwenden, um alle Großbuchstaben durch ihre Kleinbuchstabenequivalente auszutauschen.
+
+Der genaue Algorithmus zur Umwandlung von Groß- in Kleinbuchstaben hängt von der Einstellung Ihrer Sprachkultur ab. Im Deutschen führt `.ToLower()` beispielsweise die spezielle Umwandlung von "ß" durch.
+
+## Mehr Lesen:
+
+ 1. Microsoft's Dokumentation zur [ToLower() Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.tolower?view=net-5.0)
+ 2. [PowerShell Documentations](https://docs.microsoft.com/de-de/powershell/) für weitere Informationen über PowerShell-Programmierung.

@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando una cadena"
-html_title:           "Bash: Interpolando una cadena"
-simple_title:         "Interpolando una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,24 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Interpolar una cadena en Bash es cuando insertas variables o comandos en una cadena para mejorar su contenido dinámicamente. Los programadores lo hacen para ahorrar tiempo y agregar flexibilidad a sus scripts.
+La interpolación de cadenas en Bash es el acto de sustituir un marcador de posición por su valor en una cadena. Los programadores lo hacen para construir cadenas de forma más eficaz y flexible.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo:
 
-Para interpolar una cadena, simplemente necesitas usar la sintaxis ```$variable``` para insertar una variable en una cadena. También puedes usar la sintaxis ```$(comando)``` para insertar la salida de un comando en una cadena.
+Aquí una muestra de cómo se hace la interpolación de cadenas en Bash.
 
-Por ejemplo, si tienes una variable ```nombre="Juan"``` y quieres imprimir un mensaje que diga "Hola Juan, ¿cómo estás?", puedes usar la sintaxis ```echo "Hola $nombre, ¿cómo estás?"```, y el resultado será "Hola Juan, ¿cómo estás?".
+```Bash
+nombre="Mundo"
+echo "Hola, ${nombre}!"
+```
 
-## Detalles
+La salida esperada será:
 
-Interpolar una cadena en Bash puede ahorrarte tiempo y mejorar la legibilidad de tu código. También es una forma conveniente de insertar variables o comandos en tus scripts. Una alternativa a la interpolación de cadenas en Bash es el uso de la función ```printf```, que te permite formatear tu salida de manera más precisa.
+```Bash
+Hola, Mundo!
+```
 
-La interpolación de cadenas en Bash se basa en la expansión de parámetros, que es cuando el shell reemplaza un parámetro con su valor antes de ejecutar un comando o un script. También es importante tener en cuenta que la sintaxis de la interpolación de cadenas puede variar ligeramente en diferentes versiones de Bash.
+## Inmersión Profunda:
 
-## Ver también
+El mecanismo de interpolación de cadenas en Bash se originó en los lenguajes de programación de alto nivel, y luego se adoptó en los scripts de shell para permitir una manipulación más avanzada y flexible de las cadenas de texto.
 
-- [Guía de Bash de Linux](https://www.tutorialspoint.com/unix_commands/bash.htm)
-- [Documentación de la función printf de Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-printf-Builtins.html)
-- [Página de manual sobre la expansión de parámetros en Bash](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+Una alternativa a la interpolación de cadenas sería la concatenación, pero esto puede ser más complicado y menos legible cuando se trata de cadenas más largas o de múltiples variables.
+
+La implementación de la interpolación de cadenas en Bash es bastante directa: cualquier cosa entre ${} es interpretada como una variable y se sustituye su valor en la cadena. Algunos caracteres especiales como '\n' para nueva línea o '\t' para tabulación también pueden ser interpolados en una cadena.
+
+## Ver También:
+
+1. [Guía de Bash](https://www.gnu.org/software/bash/manual/bash.html)
+2. [Interpolación de cadenas en Bash](https://www.linuxtopia.org/online_books/advanced_bash_scripting_guide/string-manipulation.html)
+3. [Tutorial de Bash para principiantes](https://www.shellscript.sh/)
+4. ["Bash for Beginners Guide"](https://tldp.org/LDP/Bash-Beginners-Guide/html/chap_03.html)
+
+Este artículo no concluye aquí. ¡No dejes de aprender, seguir explorando y practicando!

@@ -1,6 +1,6 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "Lua: Gerando números aleatórios"
+html_title:           "C: Gerando números aleatórios"
 simple_title:         "Gerando números aleatórios"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+# Gerando Números Aleatórios em Lua
 
-Gerar números aleatórios é uma forma de produzir números que são imprevisíveis e não seguem um padrão específico. Isso é útil para criar variedade em programas e jogos, ou para testar algoritmos. Programadores usam a geração de números aleatórios para adicionar um elemento de aleatoriedade e imprevisibilidade em seus projetos.
+## O Quê & Porquê?
 
-## Como fazer:
+Gerar números aleatórios em programação é o ato de produzir sequências numéricas que não podem ser previstas logicamente. Isso é útil para uma gama de aplicações, desde jogos de azar até simulações científicas.
 
+## Como Fazer:
+
+Aqui estão algumas maneiras de como gerar números aleatórios no Lua. O exemplo a seguir mostra como você pode gerar um número aleatório entre 1 e 100.
+
+```Lua
+math.randomseed( os.time() )
+local randomNumber = math.random(1,100)
+print(randomNumber)
 ```
--- Exemplo 1: Gerar um número inteiro entre 1 e 10
-math.randomseed(os.time()) -- Define a semente de acordo com o tempo atual para evitar a repetição de resultados
-print(math.random(1,10)) -- Imprime um número entre 1 e 10 (pode variar a cada execução)
 
--- Exemplo 2: Gerar um número decimal entre 0 e 1
-math.randomseed(os.time())
-print(math.random()) -- Imprime um número decimal entre 0 e 1 (pode variar a cada execução)
+Ao executar este script, você verá um número aleatório impresso no terminal. 
 
-```
+## Mergulho Profundo
 
-## Aprofundando:
+A função `math.random` do Lua tem uma longa história, seu comportamento original era dependente do sistema operacional, mas isso foi corrigido no Lua 5.3. Antes disso, a mesma sequência inicial de números era gerada cada vez que o programa era iniciado. Isso foi resolvido implementando a função `math.randomseed` que inicializa o gerador de números aleatórios.
 
-Existem diferentes algoritmos para a geração de números aleatórios, mas vale ressaltar que "aleatório" nesse contexto significa pseudorandom, ou seja, criado a partir de cálculos matemáticos que aparentam ser aleatórios. Alguns programadores utilizam bibliotecas externas para gerar números aleatórios, mas o Lua já possui a função math.random() que utiliza o algoritmo de congruente linear para gerar valores. Além disso, é possível definir uma semente, como no exemplo acima, para garantir que os resultados variem a cada execução.
+Existem alternativas ao `math.random`. bibliotecas de terceiros, como a `randomlua`, oferecem implementações alternativas de geradores de números aleatórios. Essas bibliotecas podem ser úteis se você precisar de um comportamento mais complexo ou específico do que o Lua oferece por padrão.
 
-## Veja também:
+Ao gerar números aleatórios, é importante levar em conta a distribuição. A função `math.random` do Lua irá gerar números com uma distribuição uniforme. Isso significa que cada número tem a mesma probabilidade de ser escolhido.
 
-- [Documentação oficial do Lua sobre a geração de números aleatórios](https://www.lua.org/pil/20.2.html)
-- [Artigo sobre geração de números aleatórios em linguagens de programação](https://www.ime.usp.br/~song/mac0499/031/gerando.html)
-- [Vídeo explicando a diferença entre números aleatórios e pseudorandom](https://www.youtube.com/watch?v=u_hA3ApgBw8)
+## Veja Também
+
+Para mais detalhes sobre números aleatórios em Lua, você pode consultar a documentação oficial do Lua: [https://www.lua.org/manual/5.3/manual.html#6.9](https://www.lua.org/manual/5.3/manual.html#6.9)
+
+Uma fonte alternativa é a documentação do `randomlua`: [https://github.com/soni-exe/randomlua](https://github.com/soni-exe/randomlua) 
+
+Lembre-se, entender o comportamento dos números aleatórios e como gerá-los adequadamente é uma parte fundamental de ser um bom programador.

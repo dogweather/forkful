@@ -1,6 +1,6 @@
 ---
 title:                "生成随机数"
-html_title:           "PowerShell: 生成随机数"
+html_title:           "Go: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-我们都知道在编程中，随机数是一个非常有用且经常使用的功能。通过使用PowerShell中的随机数功能，程序员可以轻松地生成随机的数字，从而有助于解决各种问题。
+## 什么 & 为什么? 
+生成随机数的本质是创建一个不可预见的序列。它在编程中广泛用于数据科学,游戏,安全等领域。
 
-## 什么是随机数? 
-随机数是在一定范围内随机生成的数字。它们通常被程序员使用来模拟现实世界中的随机事件或生成随机样本。随机数也可以用来加密数据和创建安全密码。
-
-## 如何使用PowerShell生成随机数?
-要在PowerShell中生成随机数，只需使用随机数函数`Get-Random`。例如，要生成一个范围在1到10的随机数，可以使用以下代码:
+## 如何:
+在 PowerShell 中，我们使用 Get-Random Cmdlet 来生成随机数。让我们来了解一下其基本应用。
 
 ```PowerShell
-Get-Random -Minimum 1 -Maximum 10
+#生成一个介于 0 到 100 之间的随机数
+Get-Random -Maximum 100   
 ```
-运行上述命令后，您将得到一个随机的数字，它可以是1到10中的任何一个。
-
-你还可以在PowerShell中生成随机字符串。使用`Get-Random`函数以及`-Count`参数和`-InputObject`参数，您可以从给定的字符列表中随机选择指定数量的字符。
+执行上述代码，PowerShell 会生成一个随机数。
 
 ```PowerShell
-Get-Random -Count 5 -InputObject a,b,c,d,e,f,g,h,i,j
+#生成一个介于 50 到 100 之间的随机数
+Get-Random -Minimum 50 -Maximum 100
 ```
-运行上面的命令，您将得到一个由5个随机字符组成的字符串，例如"b,d,f,i,j"。
 
-## 更深层次的讨论
-生成随机数的历史可以追溯到早期的计算机科学和统计学领域。在过去，程序员通常使用概率分布函数来模拟随机事件，生成随机数。但是随着计算机技术的发展，现在可以使用伪随机数生成器来产生大量的随机数，这些随机数在统计学上表现良好，并且更具可预测性。
+## 深入研究
+随机数生成的概念可以追溯到古老的数学。然而，在计算机程序中，真正的随机性难以实现，因为计算机是由人类设计的确定性系统。生成的随机数通常被称为 "伪随机数"。
 
-除了PowerShell中的`Get-Random`函数外，程序员还可以在其他编程语言中使用类似的功能来生成随机数。例如，Python中的`random`模块提供了类似的功能。
+在 PowerShell 中，Get-Random cmdlet 基于.NET的 System.Random 类生成伪随机数。尽管这不是一个加密安全的随机数生成器，但对于多数日常任务来说足够好。
 
-在实现随机数生成时，程序员需要注意使用高质量的随机数生成器，以及正确使用种子值。种子值可以影响随机数的产生，因此在某些情况下可能需要手动设置种子值来保证生成的随机数的可预测性和一致性。
+对于需要更强安全性的随机数，PowerShell 可使用 RNGCryptoServiceProvider 类，这是一个基于密码的伪随机数生成器。例如:
 
-## 相关资源
-- [Microsoft PowerShell文档](https://docs.microsoft.com/zh-cn/powershell/)
-- [PowerShell中的随机数生成函数](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.utility/get-random)
-- [维基百科: 随机数](https://zh.wikipedia.org/wiki/%E9%9A%8F%E6%9C%BA%E6%95%B0)
+```PowerShell
+# 先创建一个 byte 数组
+$bytes = New-Object Byte[] 4
+# 创建 RNGCryptoServiceProvider 对象
+$rng = New-Object Security.Cryptography.RNGCryptoServiceProvider
+# 把随机数生成到 byte 数组中
+$rng.GetBytes($bytes)
+# 转换 bytes 到 Int32
+$random = [System.BitConverter]::ToInt32($bytes, 0)
+```
+
+## 另请参阅
+以下是关于 Powershell 和随机数生成的一些有用资源：
+- PowerShells Get-Random Cmdlet: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1
+- RNGCryptoServiceProvider Class: https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0
+- PowerShell 官方文档: https://docs.microsoft.com/en-us/powershell/

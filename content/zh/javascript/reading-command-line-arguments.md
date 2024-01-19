@@ -1,6 +1,6 @@
 ---
 title:                "读取命令行参数"
-html_title:           "Javascript: 读取命令行参数"
+html_title:           "C: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,35 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是命令行参数？为什么程序员会使用它？
+## 什么 & 为什么？
 
-命令行参数是通过命令行（终端或命令提示符）向程序传递信息的一种方式。程序员会使用命令行参数来向程序提供输入，从而控制和定制程序的行为。它也可以让程序在每次运行时都接收不同的输入，方便程序员测试和调试代码。
+命令行参数是在命令行运行程序时传送给程序的输入。程序员用它来控制程序，影响运行结果。
 
-## 如何实现：
+## 怎么做：
 
+在Javascript中，我们可以用`process.argv`数组来读取命令行参数。例如：
+
+```Javascript
+// myscript.js
+console.log(process.argv);
 ```
-// 命令行参数被保存在process.argv数组中，第一个元素是Node.js的路径，第二个元素是当前执行的脚本文件的路径
-// 接下来的元素是命令行传递的参数
-for (let i = 2; i < process.argv.length; i++) {
-  console.log(process.argv[i]) // 输出每个参数
-}
+运行命令行`node myscript.js Hello World`，将得到以下输出：
+
+```Javascript
+['/usr/local/bin/node',
+ '/path/to/myscript.js',
+ 'Hello',
+ 'World']
 ```
 
-```
-// 假设运行脚本时传递了两个参数：node script.js hello world
-// output: hello
-// output: world
-```
+第一个元素是node路径，第二个元素是当前脚本路径。后来的元素是传入的参数。
 
-## 深入了解：
+## 深入：
 
-1. 历史背景：在早期的计算机系统中，用户只能通过命令行来与计算机交互，因此命令行参数是必不可少的。随着图形化用户界面的发展，命令行的重要性有所下降，但命令行参数仍被广泛使用。
+读取命令行参数在Unix和Linux Shell脚本中非常常见。现在我们可以在Node.js中使用此功能，这使得JavaScript的用途更加广泛。
 
-2. 其他方法：除了命令行参数，程序员还可以使用环境变量、配置文件等来传递输入。不同的方法具有不同的优缺点，程序员可以根据自己的需求选择最合适的方式。
+当前，也有一些库（例如 minimist ）提供更高级更方便的方式处理命令行参数。
 
-3. 实现细节：更复杂的程序可能会使用第三方库来解析命令行参数，这可以让程序员更轻松地处理各种场景。同时，要注意处理用户输入时的异常情况，比如参数数量不符合预期。
+在内部，`process.argv`读取来自Node.js内置的`process`模块的数据，这个模块提供了有关当前Node.js程序实例的信息。
 
-## 相关资源：
+## 参考：
 
-- [Node.js官方文档 - 读取命令行参数](https://nodejs.org/api/process.html#process_process_argv)
-- [CMDLine – JavaScript命令行解析模块](https://www.npmjs.com/package/cmdline)
+[Node.js process.argv文档](https://nodejs.org/docs/latest/api/process.html#process_process_argv) 
+
+[minimist库](https://github.com/substack/minimist)
+
+[关于Unix/Linux Shell脚本传参的介绍](https://www.tutorialspoint.com/unix/unix-using-variables.htm)

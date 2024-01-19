@@ -10,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-The section headings are not necessary for an informal article 
-Hello English readers!
+# Calculating Dates in TypeScript: An Intuitive Approach
 
-Calculating dates in the future or past is a common task in programming. This involves determining a specific date that is a certain number of days, months, or years from a given starting date. Programmers often do this to schedule tasks, implement deadline reminders, or calculate loan payment schedules.
+## What & Why?
+Calculating a date in the future or past is when you determine a specific date from a set point in time. Programmers frequently do it to deal with scheduling, data analytics, tracking user activities, event planning, and similar time-bound functionalities.
 
-To calculate a date in the future or past using TypeScript, there are a few options depending on your specific use case. One option is to use the built-in Date object and its methods, such as setDate(), setMonth(), and setFullYear(). Another option is to use a library like Moment.js which offers more advanced date and time manipulation capabilities.
+## How to:
+In TypeScript, we can calculate future or past dates using in-built Date object manipulations. Here's how:
 
-If you want to stick with native TypeScript methods, here is an example of how to calculate a date 30 days from today in the future:
+```TypeScript
+let currentDate = new Date();
+// Print the current date
+console.log("Current Date:", currentDate);
+
+//Calculate a date 5 days into the future
+let futureDate = new Date();
+futureDate.setDate(currentDate.getDate() + 5);
+console.log("Future Date:", futureDate);
+
+//Calculate a date 3 days in the past
+let pastDate = new Date();
+pastDate.setDate(currentDate.getDate() - 3);
+console.log("Past Date:", pastDate);
 ```
-const today = new Date();
-today.setDate(today.getDate() + 30);
-console.log(today);
-```
-Output: Current date + 30 days
+The above snippet will calculate and print the current, future, and past dates.
 
-For calculating a date in the past, you can use the same method but subtract the desired number of days instead:
-```
-const today = new Date();
-today.setDate(today.getDate() - 30);
-console.log(today);
-```
-Output: Current date - 30 days
+## Deep Dive
+Since the advent of Java in the '90s, handling dates has been a common task in programming. JavaScript (from which TypeScript is derived) has the Date object, originated from Java, offering powerful and versatile date/time functionalities.
 
-For a more in-depth look at date calculations, it's helpful to understand the historical context. Dates have been essential to human civilization for centuries, and the Gregorian calendar, commonly used today, was introduced in 1582 by Pope Gregory XIII. Since then, various calendar systems and algorithms have been developed to accurately calculate dates, taking into account factors like leap years and leap seconds.
+There exist library alternatives like `moment.js` and `date-fns` providing extensive functionalities in manipulating dates and time. However, `moment.js` is considered a heavy library and is not recommended for projects sensitive to bundle size.
 
-While manually calculating dates in code may work for simpler tasks, using a library or framework can save time and provide more customizable options. Some alternatives to Moment.js include Luxon and Day.js, each with their own unique features.
+The `setDate()` method works by getting the current date with `getDate()` and adding or subtracting days appropriately. It considers edge cases: should the calculated date fall outside the current month, it seamlessly adjusts the month and year. 
 
-In terms of implementation details, working with dates in programming can be tricky due to their complex nature. It's important to validate user input and handle edge cases, such as negative numbers or non-existent dates. Additionally, time zones, daylight savings, and other factors can affect the accuracy of date calculations, so be sure to consider these when implementing date functionality in your code.
-
-For a more detailed explanation and further resources on working with dates in TypeScript, check out the links below:
-- [The Date Object in TypeScript](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
-- [Moment.js documentation](https://momentjs.com/docs/)
-- [Luxon documentation](https://moment.github.io/luxon/index.html)
-- [Day.js documentation](https://day.js.org/docs/en/parse/parse)
-- [W3Schools date and time tutorials](https://www.w3schools.com/js/js_dates.asp)
-
-Happy coding!
+## See Also
+For more complex calculations or formats, considering libraries like [Moment.js](https://momentjs.com/) or [date-fns](https://date-fns.org/) might be beneficial. The JavaScript [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) also covers additional, native Date methods and properties.

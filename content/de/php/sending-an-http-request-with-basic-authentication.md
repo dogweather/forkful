@@ -1,7 +1,7 @@
 ---
-title:                "Versenden einer http-Anfrage mit grundlegender Authentifizierung"
-html_title:           "PHP: Versenden einer http-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Versenden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
+## Was & Warum?
+HTTP-Anfragen mit Basic-Authentifizierung lassen den Client dem Server seine Identität durch Benutzername und Passwort in der Anfrage bestätigen. Programmierer nutzen dies für sichere Datenübertragung zwischen Server und Client.
 
-HTTP-Anfragen mit grundlegender Authentifizierung sind ein Weg, um sich bei einem Webdienst zu identifizieren und Zugriff zu erhalten. Programmierer nutzen dies, um Daten von einer externen Quelle abzurufen oder zu übertragen, beispielsweise in einer API-Anfrage oder beim Herunterladen von Dateien.
+## Wie geht's:
+Hier ist ein einfacher PHP-Code, der eine HTTP-Anfrage mit Basic-Authentifizierung sendet:
 
-Wie geht's?
-
-```PHP 
-// Beispiel für eine HTTP-Anfrage mit grundlegender Authentifizierung 
-$ch = curl_init(); 
-curl_setopt($ch, CURLOPT_URL, "https://www.example.com/api/send_data"); 
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC); // HTTP-Authentifizierung verwenden 
-curl_setopt($ch, CURLOPT_USERPWD, "username:password"); // Benutzername und Passwort eingeben 
-$result = curl_exec($ch); // Anfrage ausführen 
-curl_close($ch); // Verbindung schließen 
-echo $result; // Ergebnis anzeigen 
+```PHP
+<?php
+$options = [
+    'http' => [
+        'header' => "Authorization: Basic " . base64_encode("username:password")
+    ]
+];
+$context = stream_context_create($options);
+$resultat = file_get_contents('http://example.com', false, $context);
+?>
 ```
 
-> Ausgabe: Daten wurden erfolgreich übertragen.
+Die Antwort vom Server, `$resultat`, enthält dann die vom Server zurückgesandten Daten.
 
-Tiefer eintauchen
+## Tiefgehende Informationen:
+Historisch gesehen wurde HTTP Basic Auth als Teil des ursprünglichen HTTP-Standards eingeführt, um einen simplen Authentifizierungsmechanismus zu bieten. Es bietet zwar keine Verschlüsselung, kann aber bei korrekter Verwendung mit SSL/TLS effektiv sein.
 
-- Die grundlegende Authentifizierung wurde in den 1990er Jahren eingeführt und ist die einfachste Form der HTTP-Authentifizierung.
-- Es gibt auch alternative Methoden wie Digest- und OAuth-Authentifizierung, die zusätzliche Sicherheitsmechanismen bieten.
-- Die Implementierung einer HTTP-Anfrage mit grundlegender Authentifizierung erfordert das Einrichten von HTTP-Headern und das Übermitteln von Benutzername und Passwort.
+Alternativen zur HTTP Basic Auth umfassen Digest-Authentifizierung, OAuth und JWT (JSON Web Tokens). Alle bieten unterschiedliche Sicherheitsstufen und Flexibilität.
 
-Siehe auch
+Ein wichtiger Aspekt der HTTP Basic Auth in PHP ist die Verarbeitung über die `stream_context_create` Funktion. Dies erstellt einen "Kontext" - eine Sammlung von Optionen -  der dann von `file_get_contents` verwendet wird, um die Daten abzurufen.
 
-- [PHP cURL-Dokumentation](https://www.php.net/manual/de/book.curl.php) für weitere Informationen und Beispiele.
-- [HTTP-Authentifizierung im Detail erklärt](https://developer.mozilla.org/de/docs/Web/HTTP/Authentication) auf MDN Web Docs.
+## Siehe auch:
+- PHP-Dokumentation zu stream_context_create: https://www.php.net/manual/de/function.stream-context-create.php
+- Mehr über HTTP Basic Auth: https://tools.ietf.org/html/rfc7617
+- PHP-Dokumentation zu file_get_contents: https://www.php.net/manual/de/function.file-get-contents.php
+
+Als nächstes empfehle ich, mehr über die alternativen Authentifizierungsmethoden zu lernen und sie gegebenenfalls in Ihrer zukünftigen Arbeit zu implementieren.

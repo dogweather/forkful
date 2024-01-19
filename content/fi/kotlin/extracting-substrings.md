@@ -1,7 +1,7 @@
 ---
-title:                "Alimerkkijonojen poimiminen"
-html_title:           "Kotlin: Alimerkkijonojen poimiminen"
-simple_title:         "Alimerkkijonojen poimiminen"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,36 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Substringien erottaminen tarkoittaa tietyn merkkijonon osan erottamista suuremmasta merkkijonosta. Ohjelmoijat tekevät tätä usein, kun he tarvitsevat tietyn osan merkkijonosta esimerkiksi käsittelyä tai analysointia varten.
+## Mikä & Miksi?
 
-## Kuinka:
+Alimerkkijonon poiminta on toiminto, jolla voidaan hakea osa merkkijonosta. Ohjelmoijat käyttävät tätä ominaisuutta erityisesti datan manipulointiin ja jäsentämiseen.
+
+## Kuinka näin:
+
+Alla esimerkkejä Kotlin-koodista ja sen tulosteista. Käytämme `substring` -funktiota.
+
+```Kotlin
+fun main() {
+    val text = "Tervetuloa Kotlin-ohjelmointiin!"
+    println(text.substring(0, 10)) // Tulostaa: "Tervetuloa"
+}
 ```
-// Luodaan esimerkkimerkkijono
-val sana = "Kotlin on hauska ohjelmointikieli"
+Tämä pala koodia tulostaa merkkijonon "Tervetuloa Kotlin-ohjelmointiin!" ensimmäiset 10 merkkiä, eli "Tervetuloa".
 
-// Erotetaan ensimmäiset viisi merkkiä
-val alku = sana.substring(0,5)
-println(alku)
-
-// Tulostaa: Kotlin
+```Kotlin
+fun main() {
+    val text = "Tervetuloa Kotlin-ohjelmointiin!"
+    println(text.substringAfter(" ")) // Tulostaa: "Kotlin-ohjelmointiin!"
+}
 ```
+Tämä koodinpätkä etsii ensimmäisen välilyönnin jälkeisen merkkijonon "Tervetuloa Kotlin-ohjelmointiin!" ja tulostaa sen, eli "Kotlin-ohjelmointiin!".
 
-```
-// Luodaan esimerkkimerkkijono
-val kaupunki = "Helsinki, Suomi"
+## Syvempi Sukellus:
 
-// Erotetaan viimeinen osa kaupungista
-val maa = kaupunki.substring(9)
-println(maa)
+#### Historiallinen Konteksti:
+Alimerkkijonon poiminta on perusominaisuus useimmissa ohjelmointikielissä. Myös Kotlinin varhaisissa versioissa tämä ominaisuus on ollut jo käytössä.
 
-// Tulostaa: Suomi
-```
+#### Vaihtoehdot:
+Voit käyttää myös `substringBefore` ja `substringAfterLast` funktioita, jotka ovat samankaltaisia mutta eroavat käyttötavoissaan.
 
-## Syväluotaus:
-Substringien erottaminen on tapahtunut ohjelmoinnissa jo vuosikymmenien ajan. Aikaisemmin tämä tehtiin manuaalisesti, mutta nykyään eri ohjelmointikielillä on valmiita funktioita tähän tarkoitukseen. Joissakin kielissä, kuten C:ssä, substringien erottamiseen käytetään merkkijonofunktioita, kun taas toisissa kielissä, kuten Pythonissa, käytetään indeksointia merkkijonon sisällä.
+#### Toteutusyksityiskohdat:
+Kotlin käyttää Javan `String` -luokkaa ja sen `substring` -metodia alimerkkijonotoiminnoissa. Javan virtuaalikoneen ansiosta tämä on erittäin tehokasta.
 
-## Katso myös:
-- [Substringien erottaminen Kotlin-documentaatiosta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html)
-- [Merkkijonofunktiot C:ssä](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Indeksointi Pythonissa](https://www.w3schools.com/python/python_strings.asp)
+## Katso Myös:
+
+- Kotlinin virallinen dokumentaatio alimerkkijonoista: [Kotlin substring Doc](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+- Stack Overflow's discussion on substring functions: [Stack Overflow Discussions](https://stackoverflow.com/questions/36574183/how-to-substring-in-kotlin)
+- Online Kotlin compiler for testing code: [Kotlin Playground](https://play.kotlinlang.org/)

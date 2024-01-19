@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання запиту http з базовою аутентифікацією"
-html_title:           "Kotlin: Надсилання запиту http з базовою аутентифікацією"
-simple_title:         "Надсилання запиту http з базовою аутентифікацією"
+title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
+html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
+simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і навіщо?
+## Що і чому?
 
-Надсилання HTTP-запиту з базовою аутентифікацією - це процес, при якому програміст надсилає запит до сервера, який обробляється і відповідає згідно з правами доступу користувача. Це важливо, коли потрібно отримати обмежений доступ до інформації або здійснити певну дію на сервері.
+Відправка HTTP-запиту з базовою аутентифікацією - це процес, коли ваше додаток встановлює віддалене з'єднання з сервером шляхом надсилання логіна і паролю. Це корисно, коли додаток потребує доступу до захищених ресурсів.
 
-Як це зробити?
+## Як це зробити:
+
+Використовуємо бібліотеку Ktor для цього. Ось приклад коду:
 
 ```Kotlin
-val credentials = "username:password".toByteArray()
-val encodedCredentials = Base64.encode(credentials)
-val url = "https://example.com/api"
-val request = Request.Builder()
-    .url(url)
-    .header("Authorization", "Basic $encodedCredentials")
-    .build()
-val client = OkHttpClient()
-val response = client.newCall(request).execute()
-println(response.body()?.string())
+val client = HttpClient() {
+    install(Auth) {
+        basic {
+            sendWithoutRequest = true
+            username = "your_username"
+            password = "your_password"
+        }
+    }
+}
+
+val response: HttpResponse = client.get("https://example.com")
+println(response.status.value)
 ```
+Зверніть увагу, що деталі для аутентифікації слід змінити на власні. Виходом буде код статусу відповіді, наприклад, `200`.
 
-Глибоке занурення
+## Глибоке занурення:
 
-Базова аутентифікація була вперше введена в HTTP протокол у 1995 році та представлена в RFC 1945. Це базовий метод аутентифікації, який працює на основі кодування ім'я користувача та пароля в форматі Base64. Є інші методи аутентифікації, такі як OAuth, які забезпечують більш безпечну і автоматичну аутентифікацію.
+Базова аутентифікація була введена у стандарт HTTP/1.0 ще у 90-ті роки. Вона проста, але також має свої недоліки, особливо крізняк безпеки.
 
-Також, варто зазначити, що використання базової аутентифікації не є надійним засобом захисту, оскільки ім'я користувача та пароль передаються у відкритому вигляді, тому рекомендується використовувати HTTPS для забезпечення безпеки передачі даних.
+Альтернативи включають OAuth та JWT. Вони більш складні, але надають більше функцій безпеки.
 
-Дивіться також
+Відправка HTTP-запиту з базовою аутентифікацієєю в Kotlin включає в себе створення HttpClient та інсталяцію Auth модуля. Логін і пароль кодуються у форматі Base64, потім відправляються через заголовок `Authorization`.
 
-- https://tools.ietf.org/html/rfc1945 - RFC 1945 про базову аутентифікацію
-- https://oauth.net/2/ - офіційна сторінка OAuth
+## Дивіться також:
+
+- [Довідник Ktor](https://ktor.io/)
+- [Вступ до HTTP Basic Access Authentication на MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Детальний огляд OAuth і JWT](https://www.oauth.com)

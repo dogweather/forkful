@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana wielkości litery w ciągu znaków"
-html_title:           "PowerShell: Zmiana wielkości litery w ciągu znaków"
-simple_title:         "Zmiana wielkości litery w ciągu znaków"
+title:                "Zamiana liter w ciągu na wielkie"
+html_title:           "PowerShell: Zamiana liter w ciągu na wielkie"
+simple_title:         "Zamiana liter w ciągu na wielkie"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,27 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Za pomocą metody string.ToUpper () w PowerShellu można zmienić wszystkie litery ciągu na wielkie litery. Programiści często stosują ten proces do formatowania danych lub porównywania ich z innymi ciągami.
+## Co i dlaczego?
+
+Zamiana stringów na wielkie litery oznacza, że zamieniamy wszystkie małe litery znaków w ciągu na duże litery. Programiści często robią to, żeby zachować spójność danych wejściowych lub ułatwić porównywanie stringów.
 
 ## Jak to zrobić:
+
+W PowerShell, możesz to zrobić używając metody `.ToUpper()` na stringu. 
+
 ```PowerShell
-# Przykładowy ciąg:
-$string = "cześć! to jest przykładowy string."
+$string = "cześć, jak się masz?"
+$capitalizedString = $string.ToUpper()
 
-# Użycie metody string.ToUpper () na ciągu:
-$string.ToUpper()
-
-# Wynik:
-CZEŚĆ! TO JEST PRZYKŁADOWY STRING.
+Write-Output $capitalizedString
 ```
 
-## Głębsza przeprawa:
-1. Metoda string.ToUpper () jest dostępna w wielu językach programowania i jest powszechnie stosowana do manipulacji ciągami.
-2. Alternatywą dla tej metody w PowerShellu jest użycie operatora -ceq, który porównuje dwa ciągi bez uwzględniania wielkości liter.
-3. Implementacja metody string.ToUpper () polega na wywołaniu funkcji ToUpper () z klasy string, która jest częścią przestrzeni nazw System. Jest to także jakaś polemika na temat wykorzystania CLR w PowerShellu.
+Wynik:
 
-## Zobacz także:
-- [Dokumentacja Microsoftu na temat metody string.ToUpper ()](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.toupper)
-- [Porównywanie ciągów w PowerShellu](https://devblogs.microsoft.com/scripting/comparing-strings-in-powershell/)
-- [Wykorzystanie CLR w PowerShellu](https://docs.microsoft.com/pl-pl/dotnet/framework/interop/using-powershell-to-interop-with-com)
+```PowerShell
+CZEŚĆ, JAK SIĘ MASZ?
+```
+
+## Głębsze spojrzenie
+
+Historycznie, konwersja stringów na wielkie litery była używana, aby ułatwić porównywanie stringów, ponieważ `ABC` jest traktowane tak samo jak `abc` gdy przejdzie przez funkcję `.ToUpper()`. 
+
+W PowerShell, inna metoda do porównywania stringów bez sensu na wielkość liter to używanie `-ieq` operatora. Przykład:
+
+```PowerShell
+$string1 = "cześć"
+$string2 = "CZEŚĆ"
+
+if ($string1 -ieq $string2) {
+    Write-Output "Stringi są takie same"
+} else {
+    Write-Output "Stringi są różne"
+}
+```
+
+Wynik:
+
+```PowerShell
+Stringi są takie same
+```
+
+Chociaż `.ToUpper()` jest proste i łatwe do zrozumienia, operator `-ieq` jest bardziej wydajny pod względem zasobów, jeśli tylko chcemy porównać stringi.
+
+## Zobacz też
+
+[A Guide to Strings in PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-data-basics-part-1/)
+[String Methods in PowerShell](https://www.urtech.ca/2017/08/solved-powershell-string-manipulation/)
+[String Comparison in PowerShell](https://ss64.com/ps/syntax-compare.html)

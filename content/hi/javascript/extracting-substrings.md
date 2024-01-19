@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग्स को निकालना"
-html_title:           "Javascript: स्ट्रिंग्स को निकालना"
-simple_title:         "स्ट्रिंग्स को निकालना"
+title:                "सबस्ट्रिंग्स निकालना"
+html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,27 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-जब हम किसी बड़े स्ट्रिंग से छोटे सबस्ट्रिंग को अलग करना चाहते हैं, तो हम substring extraction करते हैं। इससे हमें बड़ी स्ट्रिंग का उपयोग केवल उस भाग के लिए करना पड़ता है जिसकी हमें जरूरत होती है। इसलिए programmers ऐसा करते हैं।
+Substring निकालना मतलब है किसी मूल स्ट्रिंग से छोटा भाग (सबस्ट्रिंग) लेना। प्रोग्रामर्स इसे डेटा में पत्तरन्स खोजने, डेटा विश्लेषण और टेक्स्ट मैनिपुलेशन के लिए उपयोग करते हैं।
 
-## कैसे करें:
-चलो जानते हैं कि हम substring extraction किस तरह से कर सकते हैं।
+## कैसे:
+Javascript में सबस्ट्रिंग निकालने के लिए मुख्य रूप से तीन फ़ंक्शन्स होते हैं: `substring()`, `substr()` और `slice()`।
 
 ```Javascript
-// स्ट्रिंग के दूसरे वर्ग को अलग करना
-let str = "मेरा नाम राहुल है";
-let sub = str.substring(8,13); // Output: राहुल
-
-// स्ट्रिंग के आखिर में से छोटे सबस्ट्रिंग को अलग करना
-let str = "मेरा नाम राहुल है";
-let sub = str.substring(13); // Output: है
+var str = "नमस्ते दुनिया!";
+// substring() method
+console.log(str.substring(0, 5));  // नमस्ते
+// substr() method
+console.log(str.substr(0, 5));  // नमस्ते
+// slice() method
+console.log(str.slice(0, 5));  // नमस्ते
 ```
+सभी उपरोक्त फ़ंक्शन्स हमें "नमस्ते" नाम का सबस्ट्रिंग देंगे।
 
-## विस्तृत जानकारी:
-1. सबस्ट्रिंग एक्सट्रैक्शन का इतिहास: substring extraction प्रोग्रामिंग की दुनिया में बहुत पुराने समय से है। पहले, यह एक आइडिया था जहां बड़े टेक्स्ट स्ट्रिंग में से कुछ चीज़ें पता लगाने के लिए उपयोग किया जाता था। लेकिन आजकल, substring extraction को प्रोग्रामिंग में डेटा को मैनिप्युलेट करने के लिए उपयोग किया जाता है। 
-2. विकल्प: substring extraction का एक और विकल्प हो सकता है string slicing। इसमें अभी भी एक स्ट्रिंग से क्षैतिज सबस्ट्रिंग को अलग करने के लिए हम substr() फ़ंक्शन का उपयोग कर सकते हैं। 
-3. प्रोग्रामिंग विवरण: substring extraction एक और कामियाँ है string manipulation की विशेष विधि। हम substr() या substring() फ़ंक्शन के साथ शुरूआत और अंत वर्ग की सहायता से उनसे उपयोगकर्ता की जरूरत के अनुसार उपयोग कर सकते हैं।
+## गहरी डाइव
+इन three फ़ंक्शन्स का इस्तेमाल हम किसी स्ट्रिंग में विशेष जानकारी खोजने के लिए करते हैं। इनका इस्तेमाल JavaScript 1.0 से शुरू हुआ था। `substring()` और `substr()` में थोड़ा अंतर होता है -`substring()` द्वितीय पैरामीटर (`end`) का उपयोग अंत स्थान को सूचित करने के लिए करता है, जबकि `substr()` द्वितीय पैरामीटर (`length`) का उपयोग सबस्ट्रिंग की लंबाई को सूचित करता है। `slice()` function का व्यवहार `substring()` के साथ समान होता है, लेकिन वह नकारात्मक indices का भी समर्थन करता है।
 
-## और देखो:
-substring extraction से जुड़े और जानकारी प्राप्त करने के लिए नीचे दिए गए स्रोतों को देखें:
-- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [GeeksforGeeks](https://www.geeksforgeeks.org/javascript-substring-method/)
+## यह भी देखें
+1. [MDN का JavaScript सबस्ट्रिंग गाइड](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+2. [W3Schools का सबस्ट्रिंग ट्यूटोरियल](https://www.w3schools.com/js/js_string_methods.asp)

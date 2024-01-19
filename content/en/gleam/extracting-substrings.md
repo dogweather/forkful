@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Gleam recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Gleaming Brighter with Substrings in Gleam
-
 ## What & Why?
 
-Substring extraction? It's grabbing a portion of a string, like cherry-picking just the characters you need. Programmers do it for tasks like parsing input or manipulating text data.
+Extracting substrings means getting specific subsections of a full string of text. Programmers often use it to reduce large datasets into manageable pieces and to analyze or manipulate only the relevant bits of data.
 
 ## How to:
 
-In Gleam, you can slice a string with `slice`. Here's how:
+In Gleam, we have the `substring` function for extracting string subsets. It needs the start index, end index, and the parent string. Here's how you'd do it:
 
 ```Gleam
-let s = "Hello, Gleam!"
-let subs = s.slice(7, 12)
-// Output: "Gleam"
-```
+import gleam/string
 
-So easy. Just use the start and end indices to frame your desired piece.
+let sentence = "Hello, World!"
+let hello = string.slice(sentence, 0, 5)
+let world = string.slice(sentence, 7, 12)
+```
+The output would be:
+
+```Gleam
+hello = "Hello"
+world = "World"
+```
+Remember, Gleam uses zero-based indexing.
 
 ## Deep Dive
 
-Interesting tidbits: Gleam's `slice` function wasn't always around! It's introduced in Gleam v0.14.0, inspired by Rust's slicing feature. Before its debut, Gleamers had to do more cumbersome character iterating to extract substrings! Such advancements are excellent at making coding life easier for programmers.
+Substrings traces back to early computer science. It remains relevant today due its necessity in manipulating textual data. Indeed, various programming languages provide their substring functions. Gleam, though young, also offers it.
 
-Alternative? There are functions like `split`, but in certain scenarios, `slice` performance is superior. Substrings of great lengths are one such instance.
+Alternatives to Gleam's `substring` method include using a regex function to match and pull out desired sections of a string. However, `string.slice` is simpler and more efficient for many common cases.
 
-If you're wondering how `slice` functions internally, it uses `binary.part` from Erlang's binary module. It's quick, safe, and efficient.
+Behind the scenes, when you request a substring, the language creates a new string from the designated start and stop indexes. It doesn't modify the original string, as Gleam strings are immutable.
 
 ## See Also
 
-For more about string manipulation in Gleam, buckle up and go here:
-- [Gleam Docs: Strings and Characters](https://gleam.run/book/tour/strings-characters.html)
-- [Slice function in Gleam: Github](https://github.com/gleam-lang/gleam/pull/1237)
-
-Continue gleaming! Happy coding y'all.
+For more about Gleam's string module, refer to the [Gleam string docs](https://hexdocs.pm/gleam_stdlib/gleam/string/). For examples of substring use cases and ways to work around in other languages, you can swing by [Rosettacode's substring page](http://rosettacode.org/wiki/Substring/Top_and_tail).

@@ -1,7 +1,7 @@
 ---
-title:                "Comparaison de deux dates"
-html_title:           "Arduino: Comparaison de deux dates"
-simple_title:         "Comparaison de deux dates"
+title:                "Comparer deux dates"
+html_title:           "Clojure: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,43 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Comparer deux dates est une tâche courante pour les programmeurs qui leur permet de vérifier si une date est antérieure, égale ou postérieure à une autre date. Cela peut être utile pour des fonctions telles que la planification des tâches, la gestion des événements ou pour créer des conditions dans un programme.
+## Qu'est-ce que c'est & Pourquoi?
 
-## Comment Faire:
-Voici un exemple de code pour comparer deux dates dans Arduino:
+Comparer deux dates est l'action de déterminer quelle date est antérieure, postérieure ou identique à l'autre. C'est crucial pour les programmeurs lorsqu'ils manipulent des données temporelles pour des événements, des rappels ou des planifications.
 
-```
-#include <Time.h>
+## Comment faire:
 
-// Définir les dates à comparer
-TimeDate date1 = {2020, 8, 15, 15, 30, 0}; 
-TimeDate date2 = {2020, 8, 15, 12, 0, 0};
+Voici un exemple simple de comparaison de deux dates avec Arduino.
 
-// Comparer les dates
-if(date1<date2) {
-  Serial.println("Date 1 est antérieure à Date 2");
-} else if(date1 == date2) {
-  Serial.println("Date 1 est égale à Date 2");
+```Arduino
+
+#include <TimeLib.h>
+
+Date d1 = {10, 2, 2020};
+Date d2 = {9, 2, 2020};
+
+if (d1.year > d2.year) {
+  Serial.println("date1 is later than date2");
+} else if (d1.year < d2.year) {
+  Serial.println("date1 is earlier than date2");
 } else {
-  Serial.println("Date 1 est postérieure à Date 2");
+  //if the year is the same
+  if (d1.month > d2.month) {
+   Serial.println("date1 is later than date2");
+  } else if (d1.month < d2.month) {
+    Serial.println("date1 is earlier than date2");
+  } else {
+    //if the month is the same
+    if (d1.day > d2.day) {
+      Serial.println("date1 is later than date2");
+    } else if (d1.day < d2.day) {
+      Serial.println("date1 is earlier than date2");
+    } else {
+      Serial.println("Both dates are identical");
+    }
+  }
 }
 
 ```
+Les sorties d'échantillon dépendraient des valeurs de date définies.
 
-La sortie du moniteur série pour cet exemple serait:
+## Deep Dive:
 
-```
-Date 1 est postérieure à Date 2
-```
+Historiquement, la comparaison de deux dates n'est pas intrinsèquement supportée par la bibliothèque standard Arduino. Des bibliothèques tierces telles que TimeLib ont été développées à cette fin.
 
-## Plongez Plus Loin:
-La comparaison de dates dans Arduino est rendue possible grâce à la bibliothèque Time.h qui fournit des fonctions pour manipuler et comparer les dates et heures. Avant cette bibliothèque, les programmeurs devaient utiliser des algorithmes plus complexes pour exécuter cette tâche.
+Il existe plusieurs approches alternatives à notre exemple. Vous pouvez, par exemple, convertir les dates en secondes depuis l'époque UNIX, ce qui leur donne une représentation numérique que vous pouvez alors facilement comparer.
 
-Une alternative à l'utilisation de la bibliothèque Time.h est d'utiliser la fonction `millis()` qui renvoie le nombre de millisecondes depuis le dernier redémarrage de la carte Arduino. Cela peut être utile si vous devez comparer des intervalles de temps courts plutôt que des dates précises.
+Notez que les détails d'implémentation de la comparaison de deux dates peuvent varier en fonction de la précision nécessaire. Par exemple, si vous voulez juste savoir quelle date est plus récente, vous pouvez ignorer les composants d'heures, de minutes et de secondes (le cas échéant) dans votre comparaison.
 
-En termes d'implémentation, la bibliothèque Time.h utilise la fonction `time_t` qui représente le nombre de secondes écoulées depuis le 1er janvier 1970, également connu sous le nom de "UNIX Epoch time". Cette valeur est ensuite convertie en format lisible par l'homme pour être affichée.
+## Voir Aussi: 
 
-## Voir Aussi:
-- La documentation officielle de la bibliothèque Time.h pour plus d'informations sur les fonctions et formats de date disponibles: https://www.arduino.cc/reference/en/libraries/time/
-- Cette vidéo qui explique en détail comment comparer des dates dans Arduino en utilisant la bibliothèque Time.h: https://www.youtube.com/watch?v=AQBMYJMumVs
+Pour plus d'informations, consultez le [manuel de référence Arduino](https://www.arduino.cc/reference/fr/) et pour la bibliothèque TimeLib, visitez leur [documentation](https://www.pjrc.com/teensy/td_libs_Time.html) respective. Vous pouvez également consulter des exemples en ligne sur des sites comme [arduino.cc](https://arduino.cc).

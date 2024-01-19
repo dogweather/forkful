@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen generointi"
-html_title:           "Bash: Satunnaislukujen generointi"
-simple_title:         "Satunnaislukujen generointi"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,34 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Satunnaislukujen generointi on tärkeä osa ohjelmointia, sillä se antaa mahdollisuuden luoda tietokoneohjelmia, jotka toimivat ennustamattomalla tavalla. Satunnaisuutta tarvitaan esimerkiksi peleissä, salasanoiden luomisessa ja tietojen salaamisessa.
+## Mikä & Miksi?
 
-## Miten:
-Alla on esimerkkejä siitä, miten satunnaislukuja voidaan generoida Bashilla:
+Satunnaisten numeroiden generoiminen tarkoittaa ennalta arvaamattomien numeroiden luomista. Ohjelmoijat tarvitsevat näitä toimintoja esimerkiksi simulointeja, testejä, ja satunnaisuutta vaativia toimintoja varten.
 
-```Bash
-# Generoi satunnainen kokonaisluku väliltä 1-10
-echo $(( $RANDOM % 10 + 1 ))
+## Kuinka:
 
-# Generoi satunnainen desimaaliluku väliltä 0-1
-echo "scale=2; $RANDOM/32767" | bc
-```
-
-Esimerkkituloste:
+Generoidaan ensimmäinen satunnainen numero Bashissa:
 
 ```Bash
-6
-0.25
+echo $RANDOM
 ```
 
-## Syvennys:
-Satunnaislukujen generointi on ollut osa tietokoneiden kehitystä jo vuosikymmenien ajan. Ennen digitaalisten tietokoneiden aikakautta, satunnaislukuja pyrittiin luomaan mekaanisilla laitteilla kuten noppilla ja ruleteilla. Nykypäivänä satunnaisuutta pystytään luomaan tarkemmin ja nopeammin tietokoneilla.
+Esimerkiksi, tämä voi palauttaa:
 
-On olemassa myös muita tapoja generoida satunnaislukuja kuin Bashin sisäisen $RANDOM-muuttujan avulla. Esimerkiksi Pythonin random-moduuli tarjoaa laajempia toimintoja satunnaisuuden hallintaan.
+```Bash
+26822
+```
 
-Bashin satunnaislukufunktio perustuu algoritmiin, joka käyttää ajasta ja käyttäjän ID:stä lasketun siemenluvun perusteella pseudo-satunnaislukugeneraattoria. Tämä tarkoittaa, että samaan aikaan suoritetun ohjelman ajoista tulee samat tulokset. 
+Voit myös rajoittaa numeron tiettyyn välille, esimerkiksi välille 1-100:
+
+```Bash
+echo $((RANDOM % 100))
+```
+
+Ja tuotos saattaa olla:
+
+```Bash
+57
+```
+
+## Syvennytään:
+
+Historiallisessa kontekstissa `$RANDOM` periytyy alkuperäisestä Bourne Shellistä, ja se on ollut Bashissa käytössä alusta saakka. 
+
+Vaihtoehtoisesti, voit käyttää `/dev/urandom` tai `/dev/random` laitteita entistä ennalta-arvaamattomampien numeroiden generointiin.
+
+`$RANDOM` generoi 15-bitin satunnaisen numeron, joten sen enimmäisarvo on 32767. Tätä voi muuttaa käyttämällä modulo-operaattoria `%`.
 
 ## Katso myös:
-- [Bash-komentoriviohjeet](https://www.gnu.org/software/bash/manual/html_node/index.html)
-- [Random-moduulin dokumentaatio Pythonissa](https://docs.python.org/3/library/random.html)
+
+1. Bash manuaali: [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
+2. Stack Overflow: [How to generate a random number in Bash?](https://stackoverflow.com/questions/8988902/how-to-generate-a-random-number-in-bash) 
+3. Ubuntu Manpages: [random, urandom - kernel random number source devices](http://manpages.ubuntu.com/manpages/cosmic/man4/random.4.html)

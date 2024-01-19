@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran med grundläggande autentisering"
-html_title:           "C++: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -11,34 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-När programmerare skickar en HTTP-begäran med grundläggande autentisering använder de sig av en användarnamns- och lösenordskombination för att autentisera sig själva och få åtkomst till en resurs på en server. Det kan vara användbart för att skydda känslig information eller för att bara tillåta auktoriserade användare att komma åt en viss resurs på en server.
 
-## Så här gör du:
+Att sända en HTTP-begäran med grundläggande autentisering är något av en standardmetod för att skydda dina API-förfrågningar. Programmerare gör detta för att tillhandahålla en säker, autentiserad kommunikation mellan klient och server.
+
+## Hur ska man:
+
+I det här avsnittet kommer vi att använda den tredjepart-klassen cURLpp. Se till att du har lagt till literaller för ditt användarnamn och lösenord.
+
 ```C++
-//Skapa en grundläggande autentiseringssträng
-std::string basicAuth = "användarnamn:lösenord";
+#include <curlpp/cURLpp.hpp>
+#include <curlpp/Options.hpp>
 
-//Kod för att skicka en HTTP GET-begäran med grundläggande autentisering
-//Först skapa en HTTP-klient och ställa in URL:en för begäran
-http::Client client;
-client.set_url("https://www.example.com");
+int main() {
+  curlpp::Cleanup myCleanup;
 
-//Ange grundläggande autentisering i begäran
-client.set_basic_auth(basicAuth);
+  try {
+    curlpp::Easy request;
+    request.setOpt<curlpp::options::Url>("http://example.com");
+    request.setOpt<curlpp::options::HttpAuth>(CURLAUTH_BASIC);
+    request.setOpt<curlpp::options::UserPwd>("username:password");
 
-//Utför sedan begäran och hämta svaret
-http::Response response = client.get();
+    request.perform();
+  }
+  catch ( curlpp::RuntimeError &e ) {
+    std::cout << e.what() << std::endl;
+  }
+  catch ( curlpp::LogicError &e ) {
+    std::cout << e.what() << std::endl;
+  }
 
-//Skriv ut svaret som en sträng
-std::cout << response.body();
-
-// Om begäran lyckas bör svaret innehålla det efterfrågade innehållet
-
+  return 0;
+}
 ```
 
-## Djupdykning:
-HTTP-begäran med grundläggande autentisering är en äldre autentiseringsmetod som används mindre och mindre idag till förmån för mer säkra metoder som OAuth. Det är dock fortfarande en enkel och tillförlitlig lösning för grundläggande autentisering av webbtjänster. Istället för att skicka inloggningsuppgifterna i klartext skickas en kodad version, vilket gör det svårare för obehöriga att få tillgång till lösenordet.
+## Djupt Dyk
 
-## Se även:
-- [HTTP-begäran med grundläggande autentisering - Dokumentation för HTTP-biblioteket i C++](https://www.httplib.net/message/documentation.html#Client-HTTP-basic-authentication)
-- [HTTP-begäran med grundläggande autentisering - Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
+HTTP-begäran med grundläggande autentisering har varit grunden för webbsäkerhet sedan dess början. Det finns alternativ till grundläggande autentisering, till exempel OAuth och Token-baserad autentisering, men dessa kan vara mer komplexa att implementera och kan komma med extra säkerhetsrisker.
+
+När det gäller implementeringsdetaljer för grundläggande autentisering i C++, är det viktigt att förstå att de autentiseringsuppgifter du anger (ditt användarnamn och lösenord) skickas i klartextformat. Detta innebär att de kan läsas av någon som lyssnar på nätverket, vilket gör det extra viktigt att använda säkra anslutningar som HTTPS.
+
+## Se Även:
+
+För mer information om HTTP-begäran med grundläggande autentisering, se följande länkar:
+
+- cURLpp dokumentation: http://www.curlpp.org/
+- HTTP Autentisering på MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Säkerhetspraxis för Autentisering: https://www.owasp.org/index.php/Authentication_Cheat_Sheet

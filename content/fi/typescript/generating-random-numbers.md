@@ -1,7 +1,7 @@
 ---
-title:                "Satunnainen lukujen generointi."
-html_title:           "TypeScript: Satunnainen lukujen generointi."
-simple_title:         "Satunnainen lukujen generointi."
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -10,24 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Mikä & Miksi?
+## Mikä & Miksi?
 
-Satunnaisten numeroiden generoiminen tarkoittaa satunnaisen numeron tuottamista koodilla. Koodareille tämä on tärkeää esimerkiksi pelien kehittämisessä, jolloin tarvitaan arvontoja esimerkiksi pelin tapahtumien määrittelemiseen.
+Satunnaislukujen luominen on prosessi, jossa tuotetaan ennalta arvaamattomia numeroita. Ohjelmoijat tekevät tämän usein luodakseen satunnaisen käyttäjäkokemuksen tai simuloimaan tapahtumaa, jolla on satunnainen lopputulos.
 
-#Kuinka:
+## Miten:
 
-Käyttämällä TypeScriptin sisäänrakennettua Math.random() -funktiota, joka palauttaa luvun väliltä 0-1, voimme luoda satunnaisia numeroita omassa koodissamme. Esimerkiksi seuraavassa koodinpätkässä luodaan satunnainen luku väliltä 1-10:
+Tässä on esimerkki siitä, kuinka tuotat satunnaislukuja TypeScriptillä:
 
 ```TypeScript
-let randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber); //tulostaa esimerkiksi luvun 5
+function getRandomInt(max: number) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+
+console.log(getRandomInt(10));
 ```
+Tämä tuottaa satunnaisen kokonaisluvun väliltä 0 ja 9. `Math.random()` palauttaa satunnaisluvun väliltä 0 (mukaan lukien) ja 1 (ei mukaan lukien), ja `Math.floor()` pyöristää alaspäin lähimpään kokonaislukuun.
 
-#Syvemmälle:
+## Syvälliset tiedot
 
-Satunnaisia numeroita on käytetty ohjelmoinnissa jo pitkään ja ne ovat tärkeä osa monia sovelluksia ja pelejä. Aikaisemmin satunnaisuuden luomista varten on käytetty esimerkiksi viidennöissuunnattuja muuttujia, mutta nykyaikaiset ohjelmointikielet kuten TypeScript tarjoavat valmiin ratkaisun satunnaisien numeroiden generoimiseen. Lisäksi on olemassa myös muita algoritmeja ja kirjastoja, kuten Random.js, jotka tarjoavat erilaisia vaihtoehtoja satunnaisien numeroiden generointiin.
+Satunnaislukujen luonnissa on paljon historiallista kontekstia, joka ulottuu aina vanhoista roomalaisista (arpojat) digitaaliseen tietokoneaikaan. Nykyään on useita vaihtoehtoisia menetelmiä, kuten käyttöönottoon perustuva, algoritminen tai jopa kvanttisatunnainen.
+TypeScriptin satunnaislukujen luominen pohjautuu JavaScriptin Math.random():iin , joka toteuttaa pseudo-satunnaislukugeneraattorin. Se on tarpeeksi hyvä useimpiin tarkoituksiin, mutta se ei ole riittävän vahva useimpiin kryptografiaan liittyviin tarkoituksiin, joissa on parempi turvautua platformispesifiseen satunnaislukugeneraattoriin, kuten window.crypto.getRandomValues() -selaimessa.
 
-#Katso myös:
+## Katso myös: 
 
-- [TypeScriptin virallinen dokumentaatio Math-objektista](https://www.typescriptlang.org/docs/handbook/numbers.html#math)
-- [Random.js-kirjaston GitHub-sivu](https://github.com/ckknight/random-js)
+Jos haluat laajentaa tietojasi satunnaislukujen luomisesta ja sen käytön eri  yhteyksissä, katso seuraavat linkit:
+
+1. ["JavaScript: The Good Parts" by Douglas Crockford](http://bdcampbell.net/javascript/book/javascript_the_good_parts.pdf)
+2. [MDN Math.random() documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+3. [Mozilla Quantum Random Number Generator](https://developer.mozilla.org/en-US/docs/Web/API/Window/crypto)

@@ -1,7 +1,7 @@
 ---
-title:                "Розбір дати з рядка"
-html_title:           "Swift: Розбір дати з рядка"
-simple_title:         "Розбір дати з рядка"
+title:                "Аналіз дати з рядка"
+html_title:           "C++: Аналіз дати з рядка"
+simple_title:         "Аналіз дати з рядка"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,25 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
+## Що та навіщо?
 
-Розбір дати з рядка - це процес перетворення рядка з датою на об'єкт дати, який можна обробляти у програмі. Програмісти роблять це, щоб привести дату з формату, який необхідно використовувати в програмі.
+Парсинг дати з рядка це процес конвертації текстового представлення дати в спеціальний об'єкт дати. Це корисно тоді, коли працюємо з датами у форматах, котрі не відразу можна використати в програмі, наприклад, при зчитуванні дати з текстового файлу або від користувача.
 
-## Як:
+## Як це робиться
+
+Приклади коду та результати їх виконання в Swift:
 
 ```Swift
-// приклад рядка з датою
-let dateStr = "2021-05-25"
-// створення об'єкта дати з рядка
-guard let date = DateFormatter().date(from: dateStr) else { return }
-// друк дати в різних форматах
-print(DateFormatter().string(from: date)) // "May 25, 2021"
-print(DateFormatter().string(from: date, with: "dd/MM/yyyy")) // "25/05/2021"
+import Foundation
+
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd-MM-yyyy"
+let dateFromString = dateFormatter.date(from: "15-03-2021")
+
+print("Дата в об'єкт: \(String(describing: dateFromString))")
 ```
 
-## Глибше:
-Розбір дати з рядка - це процес, який став особливо важливим з появою різних форматів дат у світі інтернету та ПЗ. Цю задачу можна вирішити іншими способами, наприклад, розбивши рядок на окремі складові та перетворивши їх в числові значення. Однак, використання вбудованої у Swift класу DateFormatter дозволяє це зробити швидше та надійніше.
+У консолі ви побачите щось на зразок: 
 
-## Дивись Також:
-- [Документація Swift для класу DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Стаття про роботу з датами в Swift](https://www.hackingwithswift.com/articles/148/how-to-work-with-dates-and-times-in-swift)
+```Swift
+Дата в об'єкт: Optional(2021-03-14 22:00:00 +0000)
+```
+
+## Більше деталей
+
+1. Історія: Перші способи парсингу дати були простіші, але мали обмеження у форматах. До приходу Swift ця задача покладалась на `NSDateFormatter` в Objective-C.
+
+2. Альтернативи: Є інші бібліотеки, такі як `DateTools` або `SwiftDate`, які надають розширені можливості для роботи з датами.
+
+3. Деталі реалізації: При парсингу дати важливо врахувати часовий пояс та локаль, бо це впливає на точне представлення дати. 
+
+## Дивіться також
+
+1. [Робота з Датами та Часом в Swift](https://www.hackingwithswift.com/articles/141/how-to-work-with-dates-and-times-in-swift)
+   
+2. [Парсинг дати на StackOverflow](https://stackoverflow.com/questions/35700281/date-format-in-swift)
+
+3. [Докладно про DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)

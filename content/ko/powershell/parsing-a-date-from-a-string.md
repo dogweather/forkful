@@ -1,7 +1,7 @@
 ---
-title:                "문자열에서 날짜 파싱하기"
-html_title:           "PowerShell: 문자열에서 날짜 파싱하기"
-simple_title:         "문자열에서 날짜 파싱하기"
+title:                "문자열에서 날짜 분석하기"
+html_title:           "Gleam: 문자열에서 날짜 분석하기"
+simple_title:         "문자열에서 날짜 분석하기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이며 왜 필요한가?
 
-일반적으로 프로그래밍에서는 날짜나 시간 정보를 컴퓨터가 이해할 수 있는 데이터 형식으로 변환하는 작업이 필요합니다. 이를 "문자열에서 날짜 파싱"이라고 합니다. 프로그래머들은 이 작업을 하는 이유는, 데이터를 처리하거나 특정 기능을 구현하기 위해서는 정확한 날짜 또는 시간 정보가 필요하기 때문입니다.
+문자열에서 날짜를 파싱하는 것은 일련의 문자로 표현된 날짜를 구체적인 날짜 데이터로 변환하는 과정입니다. 이를 수행하는 이유는 문자열로 표현된 날짜 데이터를 다루기 쉽고 간편하게 사용하도록 하기 위함입니다.
 
-## 방법:
+## 어떻게 하는가?
+
+다음은 PowerShell에서 문자열에서 날짜를 파싱하는 두가지 방법을 제시한 코드 예시입니다.
 
 ```PowerShell
-# 문자열에서 날짜 파싱하기
-$dateString = "2020-05-20"
+# Method 1
+$dateString = "2020-10-25"
+[DateTime]$date = $dateString
+Write-Output $date
+
+# Output: Sunday, October 25, 2020 12:00:00 AM
+
+# Method 2
+$dateString = "2020/10/25"
 $date = [DateTime]::Parse($dateString)
-# $date 변수에 2020년 5월 20일의 날짜 정보가 저장됩니다.
-# ToString() 메서드를 사용하여 날짜 형식을 원하는 대로 변경할 수 있습니다.
-$date.ToString("dd/MM/yyyy")
+Write-Output $date
+
+# Output: Sunday, October 25, 2020 12:00:00 AM
 ```
+이 스크립트를 수행하면 "2020-10-25"와 "2020/10/25" 두 문자열이 모두 2020년 10월 25일과 같은 날짜로 변환됩니다.
 
-**결과:**
-20/05/2020
+## 깊이 분석
 
-## 깊이 파고들기:
+날짜를 문자열로부터 파싱하는 작업은 많은 프로그래밍 언어에서 꽤 많이 진행해 왔습니다. 이는 주로 문자열로 저장되어 있는 날짜 데이터를 컴퓨터가 이해하고 처리할 수 있는 형태로 변환하는 데 필요한 작업입니다. 
 
-(1) "문자열에서 날짜 파싱"은 컴퓨터가 발달하기 이전부터 사용되어왔습니다. 예를 들어, 고대 로마 시대에는 날짜를 표현하기 위해 다른 문자나 기호를 사용했습니다.
-(2) PowerShell에서는 [DateTime] 클래스를 통해 날짜와 시간 정보를 다룰 수 있습니다. 또는, 일반적인 문자열 함수를 사용해서도 날짜를 파싱할 수 있습니다.
-(3) 날짜 형식이 다양하기 때문에, 일반적으로 파싱 알고리즘은 복잡한 작업입니다. 따라서 이를 위해 표준 라이브러리에서 제공하는 기능을 사용하는 것이 좋습니다.
+대안으로는 날짜와 시간을 직접 숫자로 표현하는 방법이 있습니다만, 이는 다양한 날짜 형식을 처리하는 데 다소 어려움이 있을 수 있습니다. 따라서 다양한 형식의 날짜 문자열을 제대로 파싱하고 처리하기 위해 date parsing이 필요합니다.
 
-## 더 알아보기:
+PowerShell에서 날짜 파싱은 .NET의 DateTime 클래스를 이용하여 진행합니다. 파싱 함수인 [DateTime]::Parse()는 여러 형식의 날짜 문자열을 다룰 수 있어 매우 유용합니다. 
 
-- [PowerShell 디렉토리](https://docs.microsoft.com/ko-kr/powershell/)
-- [Microsoft 도구](https://www.microsoft.com/ko-kr/)
+## 참고자료 
+
+- [PowerShell: Working with Dates and Time](https://www.sqlshack.com/powershell-working-with-dates-and-time/)
+- [CMDLET: Parsing Dates](https://docs.microsoft.com/PowerShell/module/microsoft.powershell.utility/parseexact?view=powershell-7.1)
+- [Working with PowerShell Date Command](https://www.technipages.com/powershell-how-to-add-days-weeks-months-seconds-to-current-date-or-given-date)

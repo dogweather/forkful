@@ -1,6 +1,6 @@
 ---
 title:                "下载网页"
-html_title:           "PHP: 下载网页"
+html_title:           "Arduino: 下载网页"
 simple_title:         "下载网页"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,26 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# PHP中下载网页的方法
+## 是什么 & 为什么？
 
-## 什么是下载网页？为什么程序员这么做？
-下载网页是指从互联网上获取一个网页的内容，并以文本的形式保存到本地的过程。程序员经常会这么做，因为他们需要从互联网上获取特定的数据，以供后续的处理和分析。
+下载网页是指将网页的源代码从服务器获取并储存在本地的过程。程序员通常执行此操作以获取和处理网页上的数据—例如，进行网络爬虫或者数据抓取。
 
-## 如何实现下载网页？
-你可以使用PHP的file_get_contents函数来下载网页。下面是一个例子：
+## 怎么做？
+
+在PHP中下载网页内容的一种简单方法是使用`file_get_contents()`函数。如下的代码将下载网页并输出其内容：
 
 ```PHP
-$url = "https://example.com"; // 要下载的网页链接
-$html = file_get_contents($url);
-
-echo $html; // 输出网页内容
+<?php
+$web_page = file_get_contents('http://example.com');
+echo $web_page;
+?>
 ```
 
-执行这段代码后，你就可以在终端或网页上看到网页的内容了。但要注意，有些网站可能会有反爬虫机制，导致你无法通过这种简单的方法来下载网页。
+在运行此代码后，会看到 example.com 的源代码。这就是所谓的“下载网页”。
 
-## 深入了解
-下载网页在互联网的发展过程中起着重要作用。早期的网页是以HTML语言编写的，因此程序员可以直接通过HTTP请求来获取网页的HTML源代码。随着互联网的发展，出现了更多的技术，例如Ajax和JavaScript，使得下载网页变得更加复杂。此外，也有一些其他的方法可以下载网页，例如使用cURL库。但在大多数情况下，file_get_contents函数已经足以满足你的需求。
+## 深入探索
 
-## 参考资料
-- [PHP file_get_contents函数文档](https://www.php.net/manual/zh/function.file-get-contents.php)
-- [如何使用PHP下载网页](https://www.thoughtco.com/web-pages-to-php-using-filegetcontents-2693866)
+`file_get_contents()`函数是从PHP 4.3.0版本开始引入的，至今仍然被广泛使用。但是，这个函数有其局限性，例如缺乏HTTP协议高级特性的支持，和安全性问题。因此，许多开发者会选择使用其他方法进行网络操作，如CURL和stream_context。
+
+CURL（Client URL）是一个由Daniel Stenberg创建的开源库，能够通过各种协议连接和通信，包括 HTTP。 在PHP中，可以通过提供的CURL接口来使用这个库，如下所示：
+
+```PHP
+<?php
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'http://example.com');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$web_page = curl_exec($ch);
+curl_close($ch);
+echo $web_page;
+?>
+```
+
+另一种解决方案是使用流环境（stream_context）。这也是一个从PHP 4.3.0版本引入的特性，可以设置和处理各种数据流的上下文，包括HTTP请求。
+
+```PHP
+<?php
+$context = stream_context_create(['http' => ['method'=>'GET']]);
+$web_page = file_get_contents('http://example.com', false, $context);
+echo $web_page;
+?>
+```
+
+## 另请参见
+
+* PHP官方在线手册的 `file_get_contents` 页面: https://www.php.net/manual/en/function.file-get-contents.php
+* CURL的 PHP 手册页面：https://www.php.net/manual/en/book.curl.php
+* `stream_context_create` 的 PHP 手册页面：https://www.php.net/manual/en/function.stream-context-create.php

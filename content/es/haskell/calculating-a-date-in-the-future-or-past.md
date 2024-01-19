@@ -1,7 +1,7 @@
 ---
-title:                "Calculando una fecha en el futuro o en el pasado."
-html_title:           "Haskell: Calculando una fecha en el futuro o en el pasado."
-simple_title:         "Calculando una fecha en el futuro o en el pasado."
+title:                "Calculando una fecha en el futuro o pasado"
+html_title:           "Haskell: Calculando una fecha en el futuro o pasado"
+simple_title:         "Calculando una fecha en el futuro o pasado"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué & Por qué?
+# Calculando una Fecha en el Futuro o Pasado con Haskell 
 
-Calcular una fecha en el futuro o en el pasado es un proceso común en la programación, ya que permite a los programadores trabajar con fechas y horarios de manera más eficiente. Esto se logra mediante el uso de funciones que manipulan y calculan fechas de acuerdo a ciertas reglas y algoritmos.
+## ¿Qué y Por qué?
 
-Los programadores realizan estos cálculos para una variedad de propósitos, como programar eventos futuros, mostrar fechas en formatos específicos, o realizar cálculos de tiempo transcurrido.
+Calcular una fecha en el futuro o pasado es determinar una fecha específica a partir de una fecha inicial y un intervalo de tiempo. Los programadores lo hacen para hacer seguimiento de eventos, programar recordatorios o calcular la duración de un evento.
 
-# Cómo hacerlo:
+## ¿Cómo hacerlo?
 
-Calculando una fecha en el futuro o en el pasado es fácil en Haskell. Primero, debemos importar el módulo `Data.Time`, que proporciona funciones para manejar fechas y horarios. Luego, podemos usar la función `addDays` para agregar o restar días a una fecha dada, y la función `addUTCTime` para agregar o restar segundos a una marca de tiempo dada. Aquí hay un ejemplo de cómo usar estas funciones:
+En Haskell, podemos usar la biblioteca `Data.Time` para realizar cálculos de fechas. Aquí está la función `addDays` que nos permite sumar un número de días a una fecha:
 
 ```Haskell
 import Data.Time
 
--- Calculando una fecha en el futuro
-let fechaFutura = addDays 10 (fromGregorian 2020 1 1)
+calculaFechaFuturo :: Day -> Integer -> Day
+calculaFechaFuturo fechaInicial diasSumar =
+    addDays diasSumar fechaInicial
+```
+Usa la función con una fecha y un número de días que quieras agregar. Por ejemplo:
 
--- Calculando una fecha en el pasado
-let fechaPasada = addDays (-10) (fromGregorian 2020 1 1)
+```Haskell
+import Data.Time
 
--- Calculando una marca de tiempo en el futuro
-let marcaDeTiempoFutura = addUTCTime 60 (getCurrentTime)
-
--- Calculando una marca de tiempo en el pasado
-let marcaDeTiempoPasada = addUTCTime (-60) (getCurrentTime)
+main = do
+    let fecha = fromGregorian 2022 10 07
+    putStrLn $ show $ calculaFechaFuturo fecha 5
 ```
 
-# Inmersión Profunda:
+Salida: `2022-10-12`
 
-En la programación, el cálculo de fechas se ha vuelto cada vez más importante debido a la creciente necesidad de trabajar con datos temporales y sincronizar aplicaciones con diferentes zonas horarias. Sin embargo, antes del advenimiento de los lenguajes de programación modernos, los cálculos de fecha eran más complicados y propensos a errores.
+Esto nos dice que si sumamos cinco días a la fecha 2022-10-07 obtenemos 2022-10-12.
 
-Además de las funciones mencionadas anteriormente, existen otras formas de calcular fechas en Haskell, como la librería `time-lens`, que proporciona un conjunto de tipos de datos y funciones para trabajar con fechas y horarios. Alternativamente, también se pueden usar librerías externas como `date` o `time`, dependiendo de las necesidades del proyecto.
+## Más a Fondo
 
-En términos de implementación, Haskell cuenta con un sistema de tipos seguro y sólido que ayuda a prevenir errores de cálculo de fechas, lo que lo convierte en una elección popular para proyectos que requieren un manejo preciso de la fecha y el tiempo.
+La computación de fechas se ha utilizado en la programación desde los primeros días de las computadoras. Las bibliotecas modernas como `Data.Time` de Haskell han hecho que trabajar con fechas sea mucho más fácil.
 
-# Ver también:
+Además de agregar días, también podemos agregar meses y años usando las funciones `addGregorianMonthsRollOver` y `addGregorianYearsRollOver` respectivamente. También existe `addUTCTime` para agregar un intervalo de tiempo a una fecha y hora en formato UTC.
 
-- [Documentación de `Data.Time`](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Librería `time-lens`](https://hackage.haskell.org/package/time-lens)
-- [Librería `date`](https://hackage.haskell.org/package/date)
-- [Librería `time`](https://hackage.haskell.org/package/time)
+Al calcular fechas futuras o pasadas, hay que tener en cuenta los años bisiestos. La biblioteca `Data.Time` de Haskell considera esto por defecto, lo que elimina la necesidad de comprobaciones adicionales.
+
+## Ver también 
+
+1. ['Data.Time' en Hackage](http://hackage.haskell.org/package/time-1.10/docs/Data-Time.html) - Documentación oficial de la biblioteca `Data.Time`.
+2. [Calculating Dates in the Future - Stack Overflow](https://stackoverflow.com/questions/46319252/calculating-dates-in-the-future) - Discusión en Stack Overflow sobre cómo calcular fechas en el futuro.
+3. [Programming in Haskell by Graham Hutton](http://www.cs.nott.ac.uk/~pszgmh/pih.html) - Un libro de texto excelente para principiantes en Haskell que incluye una discusión sobre el uso de la biblioteca `Data.Time`.

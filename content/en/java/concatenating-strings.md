@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Java recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Java"
 category:             "Java"
@@ -10,44 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# String Concatenation in Java: A Simple Guide 
+
 ## What & Why?
 
-Concatenating strings in Java is the process of combining multiple strings into one, usually by using the "+" operator or the "concat()" method. Programmers use this technique to manipulate and modify strings, for example when creating dynamic text or generating log messages.
+String concatenation in Java is about sticking two or more strings together to form one. Programmers use this to combine data, like creating a dynamic message or assembling a file path.
 
-## How to:
+## How To:
 
-To concatenate strings in Java, you can use the "+" operator or the "concat()" method. Let's take a look at some examples:
-
+Concatenation is straightforward in Java. See the simple case below:
 ```Java
-String str1 = "Hello";
-String str2 = "world!";
-String result = str1 + " " + str2;
-System.out.println(result);
+String part1 = "Hello, ";
+String part2 = "world!";
+String message = part1 + part2;
+System.out.println(message);  // Outputs: Hello, world!
 ```
-Output: Hello world!
+With this, we've combined `part1` and `part2` into `message` using `+`.
 
-In this example, we first declare two string variables, "str1" and "str2", and assign them the values "Hello" and "world!" respectively. Then, we use the "+" operator to concatenate the two strings with a space in between. Finally, we use the "println()" method to print out the concatenated string "Hello world!".
-
-Alternatively, you can also use the "concat()" method to achieve the same result:
-
+Another common way is to use the `concat()` method from the `String` class. Here's an example:
 ```Java
-String str1 = "Hello";
-String str2 = "world!";
-String result = str1.concat(" ").concat(str2);
-System.out.println(result);
+String part1 = "Hello, ";
+String part2 = "world!";
+String message = part1.concat(part2);
+System.out.println(message);  // Outputs: Hello, world!
 ```
+That's it. Easy, right?
 
-The output will be the same as the previous example. The "concat()" method takes in a string as an argument and appends it to the end of the original string.
+## Deep Dive
 
-## Deep Dive:
+Historically, string concatenation used to be a costly operation because `String` objects in Java are immutable — each operation creates a new `String` object. But with the introduction of `StringBuilder` and `StringBuffer`, the cost is significantly reduced.
 
-Concatenating strings is a fundamental concept in programming and has been around since the early days of Java. Before the introduction of the "+" operator, programmers relied on the "concat()" method to combine strings. However, with the "+" operator, the code is more readable and straightforward.
+Still, if performance is a concern (like in a big loop), it's better to use `StringBuilder` or `StringBuffer`:
+```Java
+StringBuilder sb = new StringBuilder();
+sb.append("Hello, ");
+sb.append("world!");
+String message = sb.toString();
+System.out.println(message);  // Outputs: Hello, world!
+```
+This code doesn't create a new `String` instance in each operation but fills up the `StringBuilder` until it's converted back to a `String`.
 
-There are alternative ways of concatenating strings in Java, such as using the "StringBuilder" class, which is more efficient for larger strings. The "StringBuffer" class is also an option, but it is slower than the "StringBuilder" class.
+Another point: while `+` and `concat()` can serve most of your needs, these approaches can fall short while dealing with `null`. `+` automatically converts `null` to "null", but `concat()` throws `NullPointerException`. Be cautious according to your use case.
 
-In terms of implementation, the "+" operator is translated into a "StringBuilder" object at compile time, making it efficient and fast. On the other hand, the "concat()" method creates a new "String" object every time it is called, which can affect performance in larger programs.
+## See Also
 
-## See Also:
-
-- Java String Concatenation: https://docs.oracle.com/javase/tutorial/java/data/buffers.html
-- StringBuilder vs StringBuffer in Java: https://www.geeksforgeeks.org/stringbuilder-vs-stringbuffer-in-java/
+1. Official Oracle docs about [`String`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html) class.
+2. More on [`StringBuilder`](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html) and [`StringBuffer`](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuffer.html).
+3. StackOverflow discussion on [String performance](https://stackoverflow.com/questions/1532461/stringbuilder-vs-string-concatenation-in-tostring-in-java) and [handling null](https://stackoverflow.com/questions/793476/error-trapping-in-java-string-concatenation).

@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 파일 읽기"
-html_title:           "C#: 텍스트 파일 읽기"
+html_title:           "Bash: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "C#"
 category:             "C#"
@@ -10,53 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇인가요 & 왜 하나요?
 
-텍스트 파일을 읽는 것은 컴퓨터 프로그래머들이 사용하는 기술 중 하나입니다. 이는 텍스트 파일의 내용을 읽어와서 컴퓨터에서 이해할 수 있는 형태로 변환하는 과정입니다. 프로그래머들은 이를 통해 파일에 저장된 정보를 처리하고 활용할 수 있게 됩니다.
+텍스트 파일 읽기는 파일의 내용을 문자열로 변환하는 프로세스입니다. 프로그래머가 이를 통해 데이터를 로드하고 분석할 수 있어 사용합니다.
 
-## 방법:
+## 방법은?
 
-### 파일 전체 읽기:
-
-```C#
-string filePath = "textfile.txt";
-string rawText = System.IO.File.ReadAllText(filePath);
-Console.WriteLine(rawText);
-```
-**출력:**
-```Hello, world!```
-
-### 텍스트 한 줄씩 읽기:
+아래는 C#에서 텍스트 파일을 읽는 간단한 코드입니다.
 
 ```C#
-string filePath = "textfile.txt";
-string[] lines = System.IO.File.ReadAllLines(filePath);
-foreach (string line in lines)
-{
-    Console.WriteLine(line);
+using System;
+using System.IO;
+
+class Program {
+    static void Main() {
+        string text = File.ReadAllText(@"C:\Example\test.txt");
+        Console.WriteLine(text);
+    }
 }
 ```
-**출력:**
-```
-Hello,
-world!
-```
+이 코드는 'C:\Example\test.txt'의 모든 텍스트를 읽어서 콘솔에 출력합니다.
 
-## 더 깊게 들어가보기:
+## 딥 다이브
 
-### 역사적 배경:
+텍스트 파일 읽기는 오래전부터 프로그래밍에 기본적인 기능 중 하나였습니다. 처음 컴퓨터 시스템이 나왔을 때부터 이는 데이터를 저장하고 전송하는 기본적인 방법이었습니다.
 
-텍스트 파일을 읽는 기술은 컴퓨터의 초기부터 사용되어 온 기술 중 하나입니다. 당시에는 파일의 내용을 메모리에 로드한 뒤 이를 처리하는 방식을 사용했으며, 현재는 텍스트 파일 자체를 읽는 방식이 더 선호되고 있습니다.
+대안으로 MemoryStream, StreamReader 등 다양한 클래스를 사용할 수 있습니다. 이들 각각은 특정 상황에서 유용하며, 적절한 방법을 선택하는 것이 중요합니다.
 
-### 대안:
+`File.ReadAllText`는 내부적으로 `StreamReader`를 이용해서 파일을 읽습니다. 이 메소드는 텍스트 파일의 내용을 문자열로 불러오고, 잘못된 경로나 권한 문제 등이 있을 때는 예외를 발생시킵니다.
 
-텍스트 파일을 읽는 다른 방법으로는 ```StreamReader``` 클래스를 사용하는 것이 있습니다. 이 클래스는 메모리 사용량이 적고 텍스트 파일의 크기가 큰 경우에 유용합니다. 또한 파일의 크기가 너무 크거나 시간이 제한적인 경우에는 텍스트 파일이 아닌 데이터베이스 등 다른 형식을 사용하는 것이 일반적입니다.
+## 참고 자료
 
-### 구현 세부사항:
-
-```C#```에서는 ```System.IO``` 네임스페이스를 사용하여 텍스트 파일을 읽는 기능을 제공하고 있습니다. 이를 사용하기 위해서는 해당 네임스페이스를 호출하고, 파일 경로를 지정하여 파일을 열어야 합니다. 읽은 내용은 내부적으로 스트링 형태로 저장되며, 이를 바탕으로 원하는 방식으로 처리할 수 있습니다.
-
-## 참고 자료:
-
-- [StreamReader 클래스, Microsoft Docs](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.streamreader?view=net-5.0)
-- [System.IO 네임스페이스, Microsoft Docs](https://docs.microsoft.com/ko-kr/dotnet/api/system.io?view=net-5.0)
+- [Microsoft: File.ReadAllText Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext)
+- [Microsoft: Reading Text From Files](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-read-text-from-a-file)
+- [Microsoft: StreamReader Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)

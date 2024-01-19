@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "PowerShell: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,59 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Enviando una solicitud HTTP con autenticación básica usando PowerShell
 ## ¿Qué y por qué?
-
-En términos simples, enviar una solicitud HTTP con autenticación básica significa enviar datos a un servidor web utilizando un código de acceso (username y password) para verificar tu identidad. Esto es útil para acceder a recursos restringidos o proteger datos sensibles en tus aplicaciones. Los programadores utilizan este método para autenticar y autorizar a los usuarios en sus aplicaciones web.
+Enviar una solicitud HTTP con autenticación básica es solicitar acceso a un recurso protegido en un servidor web utilizando un nombre de usuario y una contraseña codificados en Base64. Los programadores hacen esto para interactuar con APIs web que requieren autenticación.
 
 ## Cómo hacerlo:
-
-##### Código de ejemplo: 
+PowerShell proporciona el cmdlet `Invoke-RestMethod` para enviar solicitudes HTTP. Aquí hay un ejemplo de cómo utilizar la autenticación básica con este cmdlet:
 
 ```PowerShell
-# Define el código de acceso
-$username = "usuario"
-$password = "12345"
+$user = 'usuario'
+$pass = 'contraseña'
+$pair = "$($user):$($pass)"
+$encoded = [System.Text.Encoding]::ASCII.GetBytes($pair) | Base64Encode
+$basicAuthValue = "Basic $encoded"
+$headers = @{
+    Authorization = $basicAuthValue
+}
 
-# Crea un objeto de autenticación
-$authStr = "{0}:{1}" -f $username, $password
-$encodedAuthStr = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($authStr))
-
-# Crea una cabecera de autorización para la solicitud HTTP
-$authHeader = "Basic {0}" -f $encodedAuthStr
-
-# Envía la solicitud utilizando Invoke-WebRequest
-Invoke-WebRequest -Uri "https://www.miweb.com/api/endpoint" -Headers @{ Authorization = $authHeader } -UseBasicParsing
+$response = Invoke-RestMethod -Uri 'http://api.example.com/data' -Method Get -Headers $headers
+$response | Format-List
 ```
 
-##### Salida de ejemplo:
+En este código, `$user` y `$pass` representan su nombre de usuario y contraseña que se convierten a un solo par String, se codifica en Base64, se antepone con "Basic " y se agrega a los encabezados de la solicitud HTTP. Finalmente, hay una llamada a `Invoke-RestMethod` para enviar la solicitud.
 
-```
-StatusCode        : 200
-StatusDescription : OK
-Content           : {"message": "Solicitud exitosa"}
-RawContent        : HTTP/1.1 200 OK
-                    Server: nginx
-                    Date: Sat, 24 Jul 2021 00:00:00 GMT
-                    Content-Type: application/json
-                    Transfer-Encoding: chunked
-                    Connection: keep-alive
-                    Keep-Alive: ti...
-Forms             : {}
-Headers           : {[Server, nginx], [Date, Sat, 24 Jul 2021 00:00:00 GMT], [Content-Type, application/json], [Transfer-Encoding, chunked]...}
-Images            : {}
-InputFields       : {}
-Links             : {}
-ParsedHtml        : 
-RawContentLength  : 
-```
+## Inmersión profunda
+En los primeros días de la web, la autenticación básica se utilizaba ampliamente debido a su simplicidad. Sin embargo, es inseguro enviar contraseñas en texto plano, por lo que este método solo se debe utilizar junto con HTTPS. En el caso de APIs muy sensibles, se prefieren métodos más seguros como la autenticación basada en token.
 
-## Profundizando:
+Alternativamente, en lugar de `Invoke-RestMethod`, puedes usar el cmdlet `Invoke-WebRequest` que también es compatible con la autenticación básica y ofrece más detalles sobre la respuesta HTTP.
 
-- Contexto histórico: la autenticación básica es una de las formas más antiguas de autenticación en la web, pero todavía se utiliza ampliamente en aplicaciones y servicios.
-- Alternativas: existen otros métodos de autenticación más seguros y complejos, como OAuth, que pueden ser preferidos en ciertos casos.
-- Detalles de implementación: el código de acceso debe estar en formato "usuario:password" y luego ser codificado en base64 antes de incluirlo en la cabecera de autorización. También es importante tener en cuenta que los detalles de autenticación deben ser enviados a través de una conexión segura (HTTPS).
+Algunos servicios web pueden requerir otros encabezados además de la autenticación básica. Asegúrate de revisar la documentación de la API para obtener detalles.
 
-## Ver también:
-
-- Documentación de Microsoft: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest 
-- Artículo sobre autenticación básica: https://www.digitalocean.com/community/tutorials/how-to-use-basic-authentication-in-a-web-application-api
+## Ver también
+1. [Invoke-RestMethod documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
+2. [Invoke-WebRequest documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+3. [Base64 encoding in PowerShell](https://devblogs.microsoft.com/powershell/encoding-and-decoding-base64/)

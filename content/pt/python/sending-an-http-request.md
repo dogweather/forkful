@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "Python: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Python"
 category:             "Python"
@@ -10,35 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+Título: Programação Python: Como Enviar um Pedido HTTP
+
 ## O que e por que?
 
-Enviar uma solicitação HTTP é um processo comum na programação web, em que um programa de computador faz uma solicitação a um servidor para obter informações ou executar uma ação. Programadores geralmente fazem isso para obter dados de fontes externas ou interagir com outras aplicações utilizando APIs.
+Um pedido HTTP (Hypertext Transfer Protocol request) é uma forma padrão de se comunicar pela internet. Programadores em Python enviam pedidos HTTP para interagir com a web - seja para consultar uma API, enviar dados, ou até mesmo para rastrear páginas da web.
 
 ## Como fazer:
 
-Para enviar uma solicitação HTTP em Python, o pacote "requests" pode ser utilizado com apenas algumas linhas de código. Veja um exemplo abaixo:
+Com Python, você pode usar a biblioteca `requests` para fazer um pedido HTTP. Veja como fazer um pedido GET simples:
+```Python
+import requests
+
+resposta = requests.get('https://www.google.com')
+print(resposta.status_code)
+```
+Aqui, você está pedindo a página inicial do Google e imprimindo o status do código HTTP da resposta.
+
+## Mergulho Profundo
+
+O protocolo HTTP foi desenvolvido por Tim Berners-Lee, o inventor da web, em 1989. Com o Python, além da biblioteca `requests`, também podemos usar `httplib2`, `treq` e `aiohttp` para enviar solicitações HTTP.
+
+A biblioteca `requests` é a escolha principal de muitos desenvolvedores devido à sua simplicidade. No entanto, `httplib2` também é uma ótima alternativa, pois permite que você reutilize o mesmo objeto de conexão para várias solicitações (o que pode ser útil se você estiver fazendo muitas solicitações para o mesmo servidor). O `aiohttp` é excelente para pedidos assíncronos.
+
+Aqui estão alguns detalhes de implementação para enviar um pedido HTTP considerando o método POST:
 
 ```Python
 import requests
 
-# Fazendo uma solicitação GET
-response = requests.get("https://exemplo.com")
-print(response.status_code) # Imprime o código de status da resposta
-print(response.text) # Imprime o conteúdo da resposta
+dados = {'chave': 'valor'}
+resposta = requests.post('https://www.exemplo.com', data=dados)
+print(resposta.status_code)
+print(resposta.text)
 ```
 
-Saída:
+Neste exemplo, `data=dados` envia os dados no formato 'form-encoded'. Se quiser enviar como um JSON, basta substituir `data=dados` por `json=dados`.
+
+```Python
+import requests
+
+dados = {'chave': 'valor'}
+resposta = requests.post('https://www.exemplo.com', json=dados)
+print(resposta.status_code)
+print(resposta.text)
 ```
-200
-<html><body>Exemplo de conteúdo</body></html>
-```
 
-## Aprofundando:
+## Veja Também
 
-Enviar uma solicitação HTTP é algo que é feito desde o início da internet. Originalmente, os protocolos utilizados eram o HTTP e o FTP, mas com o crescimento dos serviços web, o HTTP se tornou mais popular. Existem outras formas de fazer solicitações HTTP em Python, como utilizando a biblioteca "urllib", mas o pacote "requests" oferece uma interface mais simples e amigável. Além disso, é possível customizar a solicitação com parâmetros opcionais, como headers e cookies.
-
-## Veja também:
-
-- [Documentação do pacote "requests"](https://requests.readthedocs.io/en/latest/)
-- [Exemplos de uso do pacote "requests"](https://realpython.com/python-requests/)
-- [Comparação entre os pacotes "requests" e "urllib"](https://www.geeksforgeeks.org/python-difference-between-windowsurllib-request-and-requests-httprequest/)
+* Documentação oficial de [`requests`](https://docs.python-requests.org/pt_BR/latest/)
+* Documentação oficial do [`httplib2`](https://httplib2.readthedocs.io/en/latest/)
+* Documentação oficial do [`aiohttp`](https://docs.aiohttp.org/en/stable/)
+* [Guia HTTP para iniciantes da Mozilla](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview), excelente recurso para entender os fundamentos do HTTP.

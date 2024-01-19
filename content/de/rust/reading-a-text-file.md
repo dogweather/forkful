@@ -1,6 +1,6 @@
 ---
 title:                "Eine Textdatei lesen"
-html_title:           "Rust: Eine Textdatei lesen"
+html_title:           "Bash: Eine Textdatei lesen"
 simple_title:         "Eine Textdatei lesen"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,35 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
+# In Rust eine Textdatei lesen: Ein Leitfaden
+---
 ## Was & Warum?
+Eine Textdatei zu lesen bedeutet, den Inhalt einer Datei in deinem Programm zu holen und zu manipulieren. Es ist hilfreich, um von Benutzern bereitgestellte Daten zu verarbeiten oder um Informationen zwischen verschiedenen Arbeitssitzungen zu speichern.
 
-Das Lesen von Textdateien ist eine verbreitete Aufgabe für Programmierer, bei der sie den Inhalt einer Datei in ihrem Code verarbeiten und darauf zugreifen müssen. Dies kann zum Beispiel nützlich sein, um Daten in einem CSV-Format zu lesen oder um eine Konfigurationsdatei einzulesen.
-
-## Wie geht's?
-
-Rust bietet eine einfache Möglichkeit, Textdateien zu lesen, indem man die Standardbibliothek `std::fs::read_to_string` verwendet. Hier ist ein Beispiel:
-
+## So geht's:
 ```Rust
-use std::fs;
+use std::fs::File;
+use std::io::{self, prelude::*, BufReader};
 
-fn main() {
-    let file_contents = fs::read_to_string("beispiel.txt").expect("Datei konnte nicht gelesen werden");
-    println!("{}", file_contents);
+fn main() -> io::Result<()> {
+    let file = File::open("path/to/your/file")?;
+    let reader = BufReader::new(file);
+
+    for line in reader.lines() {
+        println!("{}", line?);
+    }
+
+    Ok(())
 }
 ```
+Wenn du dieses Code-Snippet ausführst, wirst du die Ausgabe jeder Zeile deiner Datei sehen.
 
-Der Inhalt der Datei "beispiel.txt" wird in der Variable `file_contents` gespeichert und dann mit `println!` auf der Konsole ausgegeben. Wenn die Datei nicht gefunden werden konnte oder ein anderer Fehler auftrat, wird eine entsprechende Fehlermeldung ausgegeben.
+## Tief tauchen
+Historisch gesehen setzen sich Datei-Lesevorgänge aus niedrigleveligen Betriebssystemaufrufen wie `open`, `read` und `close` zusammen. Rust abstrahiert diese Aufrufe jedoch in den `File`- und `BufReader`-Typen, um die Arbeit zu erleichtern und Fehler zu reduzieren. 
 
-## Tiefgründiger Einblick
+Es gibt auch Alternativen zum Lesen von Dateien. Du könntest `mmap` verwenden, um die Datei in den Speicher zu mappen, oder ein Archivierungsformat wie `tar` oder `zip` nutzen, um mehrere Dateien zusammenzufassen.
 
-- **Historischer Kontext:** Das Lesen von Textdateien hat eine lange Geschichte in der Programmierung, da das Lesen von Benutzereingaben und die Verarbeitung von Dateien von Anfang an wichtige Aufgaben waren.
-
-- **Alternativen:** Neben der Verwendung der `std::fs::read_to_string` Funktion gibt es noch andere Möglichkeiten, Textdateien in Rust zu lesen, wie z.B. die `File`-Struktur aus der `std::fs` Bibliothek oder die `BufReader`-Struktur aus der `std::io` Bibliothek.
-
-- **Implementierungsdetails:** Die `read_to_string` Funktion verwendet eine Kombination aus dem `fs::File` Typ und dem `std::string::String` Typ, um den Dateiinhalt als String zurückzugeben. Sie kann auch mit der `fs::read` Funktion verwendet werden, um den Dateiinhalt in einem `Vec<u8>` zurückzugeben, falls dies für die Verarbeitung der Daten besser geeignet ist.
+Die Implementierung in Rust macht Gebrauch von Traits, wie `Read` und `BufRead`, um eine flexible und effiziente Methode zum Einlesen von Dateien zu ermöglichen.
 
 ## Siehe auch
+Für weitere Informationen, hier einige zusätzliche Ressourcen:
 
-- [Dokumentation der `std::fs` Bibliothek in Rust](https://doc.rust-lang.org/std/fs/)
-- [Beitrag über das Einlesen von CSV-Dateien in Rust](https://codereviewvideos.com/course/beginning-rust-programming/lesson/23-07-reading-csv-file-data)
-- [Diskussion über die verschiedenen Optionen zum Lesen von Textdateien in Rust auf Stack Overflow](https://stackoverflow.com/questions/36308126/how-to-open-a-file-in-rust)
+- Rust Dokumentation über Dateiverarbeitung: https://doc.rust-lang.org/book/ch12-02-reading-a-file.html
+- Der `Read` Trait in der Rust-Dokumentation: https://doc.rust-lang.org/std/io/trait.Read.html
+- Der `BufRead` Trait in der Rust-Dokumentation: https://doc.rust-lang.org/std/io/trait.BufRead.html

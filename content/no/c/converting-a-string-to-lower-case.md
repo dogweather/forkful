@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-html_title:           "C: Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "C"
 category:             "C"
@@ -10,41 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Konvertering av en streng til små bokstaver er en vanlig oppgave for programmerere. Dette er nyttig for å sikre konsistens i data og for å sammenligne og behandle tekst på en enklere måte.
+# Konverter Strengtilfelle i C: Hvordan og Hvorfor?
 
-# Hvordan gjør man det:
-Kodingseksempler for å konvertere en streng til små bokstaver i C:
-```
+## Hva & Hvorfor?
+Å konvertere en streng til små bokstaver betyr å endre alle store bokstaver i en streng til deres tilsvarende små bokstaver. Dette er nyttig for å forenkle tekstsammenligning og søk, ettersom det fjerner forskjellen mellom store og små bokstaver.
+
+## Slik gjør du:
+Bruk funksjonen `tolower()` fra biblioteket 'ctype.h'. Her er et eksempel på hvordan du bruker den:
+
+```C
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
-int main(){
-    char str[] = "Hvordan konvertere dette til små bokstaver?";
-	
-    // Ved å bruke en løkke og to innebygde funksjoner, kan vi enkelt konvertere strengen til små bokstaver
-    for(int i = 0; i < strlen(str); i++){
-        str[i] = tolower(str[i]);
+void konverterTilLiten(char* s) {
+    for(int i = 0; s[i]; i++){
+        s[i] = tolower(s[i]);
     }
+}
 
-    printf("%s", str);
-
+int main() {
+    char streng[] = "HELLO, WORLD!";
+    konverterTilLiten(streng);
+    printf("%s\n", streng);  // output: hello, world!
     return 0;
 }
 ```
 
-#### Output:
-```
-hvordan konvertere dette til små bokstaver?
-```
+## Dypdykk
+Funksjonen `tolower()` har eksistert siden tidlig C for å lette manipulasjonen av tekst. Den konverterer en enkelt karakter til en liten bokstav hvis den er stor bokstav. En alternativ metode ville være å bruke ASCII-verdiene for å konvertere, men det kan bli rotete og lite intuitivt. Implementasjonen av `tolower()` varierer mellom biblioteker, men det er vanligvis implementert med en enkel sjekk, og deretter en konvertering ved å legge til en fast differanse mellom store og små bokstaver i ASCII-tabellen.
 
-# Dypdykk:
-* **Historisk kontekst:** Konvertering av strenger til små bokstaver har blitt brukt i programmering siden de tidlige dagene på 1950-tallet, da ASCII-karaktersettet ble introdusert.
-* **Alternativer:** Andre metoder for å konvertere strenger til små bokstaver inkluderer å bruke bibliotekfunksjoner som `strlwr()` og `tolower()`, samt å bruke maskininstruksjoner for å konvertere tegnene.
-* **Implementasjonsdetaljer:** I C, brukes funksjonen `tolower()` fra `ctype.h`-biblioteket til å konvertere en streng til små bokstaver. Denne funksjonen tar hensyn til språkspesifikke regler, som i det greske alfabetet hvor noen bokstaver har en annen versjon for små bokstaver.
-
-# Se også:
-* [Konvertering av strenger til store bokstaver i C](https://www.programiz.com/c-programming/library-function/string.h/toupper)
-* [ASCII-karaktersettet](https://www.asciitable.com/) 
-* [C Programming: A Modern Approach](https://www.amazon.com/Programming-Modern-Approach-2nd-Pearson/dp/0393979504)
+## Se også
+- C Standard Library: https://en.cppreference.com/w/c
+- 'tolower()' funksjon: https://www.cplusplus.com/reference/cctype/tolower/
+- ASCII-tabel: http://www.asciitable.com/

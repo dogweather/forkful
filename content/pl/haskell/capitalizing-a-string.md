@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana wielkości ciągu znaków"
-html_title:           "Haskell: Zmiana wielkości ciągu znaków"
-simple_title:         "Zmiana wielkości ciągu znaków"
+title:                "Zamiana małych liter na duże w łańcuchach znaków"
+html_title:           "Haskell: Zamiana małych liter na duże w łańcuchach znaków"
+simple_title:         "Zamiana małych liter na duże w łańcuchach znaków"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,33 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Kapitalizacja stringów to proces zamiany pierwszej litery w wyrazie na wielką. Programiści często stosują ten zabieg, aby poprawić czytelność i spójność kodu. 
+Zmiana pierwszego znaku ciągu na wielką literę to operacja związana z formatowaniem stringów. Programiści często robią to, by poprawić czytelność wyników, na przykład w tytułach lub na początku zdań.
 
-## Jak to zrobić?
-W języku Haskell istnieje wiele sposobów na kapitalizację stringów. Poniżej przedstawione są przykłady z wykorzystaniem funkcji `toUpper` oraz `capitalize`:
+## Instrukcja krok po kroku:
+Możemy to zrobić w Haskellu za pomocą wbudowanej funkcji `toUpper` z modułu `Data.Char` oraz `map` i list comprehension. Przykładowy kod:
 
 ```Haskell
 import Data.Char (toUpper)
 
-capitalizedString :: String -> String
-capitalizedString [] = []
-capitalizedString (x:xs) = toUpper x : xs
-
 capitalize :: String -> String
-capitalize [] = []
-capitalize (x:xs) = toUpper x : capitalize xs
-
-main = do 
-    putStrLn $ capitalizedString "hello world"
-    -- Output: "Hello world"
-    
-    putStrLn $ capitalize "hello world"
-    -- Output: "Hello world"
+capitalize "" = ""
+capitalize (head:tail) = toUpper head : tail
 ```
+Wyprowadzenie:
+```Haskell
+capitalize "witam w świecie haskella"
+-- Wyprowadza: "Witam w świecie haskella"
+```
+## Głębsza wiedza
 
-## Głębsze wody
-W niektórych językach programowania, na przykład w Java, istnieją wbudowane metody do kapitalizacji stringów. W Haskellu musimy wykorzystać funkcje z modułu `Data.Char`, ale dzięki temu mamy większą kontrolę nad tym, w jaki sposób chcemy kapitalizować wyrazy. Istnieją również biblioteki z narzędziami do formatowania tekstu, co może ułatwić proces kapitalizacji.
+1. Historia: Nie ma precyzyjnej historii dla operacji "kapitalizacji stringów". Jest to jedna z pierwszych i najprostszych funkcji wprowadzanych do języków programowania.
+2. Alternatywy: Możesz użyć wyzwalanej funcji `map`, ale to ma wpływ na każdą literę - nie tylko na pierwszą.
+3. Szczegóły implementacyjne: Ważne jest, aby potraktować pusty string jako specjalny przypadek, aby uniknąć błędów.
 
-## Zobacz też
-- [Dokumentacja funkcji `toUpper`](https://hackage.haskell.org/package/base/docs/Data-Char.html#v:toUpper)
-- [Moduł `Data.Char`](https://hackage.haskell.org/package/base/docs/Data-Char.html)
+## Zobacz też: 
+
+1. [Hoogle](https://www.haskell.org/hoogle/): Wyszukiwarka do bibliotek Haskell.
+2. [Oficjalna dokumentacja](http://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html): Szczegóły modułu `Data.Char`.
+3. [Haskell Wiki](https://wiki.haskell.org/): Ogólne zasoby na temat Haskell.

@@ -1,7 +1,7 @@
 ---
-title:                "Å få gjeldende dato"
-html_title:           "C++: Å få gjeldende dato"
-simple_title:         "Å få gjeldende dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Hva og Hvorfor?
+## Hva & Hvorfor?
 
-Å få den nåværende datoen er en vanlig oppgave for programmerere i mange forskjellige applikasjoner. Dette gjøres for å gi brukerne nøyaktig og relevant informasjon, for eksempel i datobaserte kalkulatorer, kalendere, eller for å holde oversikt over hendelser og tidsfrister. 
+I C++ programmering er det å hente dagens dato noe som betyr å få tidsstempel som representerer det aktuelle øyeblikket. Dette er ofte nødvendig for loggføring, tidsstempling av transaksjoner, eller å håndtere tidsavhengige funksjoner.
 
-### Hvordan:
+## Hvordan:
+
+Her er en enkel måte å få dagens dato på i C++:
 
 ```C++
-#include <iostream>
 #include <ctime>
+#include <iostream>
 
 int main() {
-  // Hent tidspunktet for nåværende dato
-  std::time_t now = std::time(0);
-  
-  // Konverter tidspunktet til streng og skriv ut 
-  std::cout << "Nåværende dato og klokkeslett: " << std::ctime(&now);
-  
-  return 0;
+    std::time_t t = std::time(0);
+    std::tm* now = std::localtime(&t);
+    std::cout << (now->tm_year + 1900) << '-' 
+              << (now->tm_mon + 1) << '-'
+              << now->tm_mday
+              << "\n";
+    return 0;
 }
 ```
+Utskriften blir datoen i 'ÅÅÅÅ-MM-DD' format, som for eksempel '2022-03-06'.
 
-Output:
-```
-Nåværende dato og klokkeslett: Thu Jan 23 14:31:00 2020
-```
+## Dypdykk
 
-### Dykk dypere:
+Historisk sett har programmerere fått tak i systemets lokale tid for å få den nåværende datoen. I eldre C++, brukte vi 'time.h' biblioteket. Det fungerer fortsatt i dag, men den moderne C++ versjonen anbefaler 'ctime'.
 
-Denne funksjonen ble først introdusert i C-språket, men er nå også en del av C++. Det finnes også alternative måter å få den nåværende datoen på, for eksempel å hente den fra operativsystemet eller fra en tredjeparts bibliotek. Implementasjonen av denne funksjonen kan variere mellom forskjellige operativsystemer og kompilatorer.
+Som alternativer er det biblioteker som Chrono (fra C++11 og videre) eller tredjeparts biblioteker som Date eller Boost. Disse gir mer robuste funksjoner for dato og tid håndtering.
 
-### Se også:
+I vårt eksempel bruker vi std::time for å hente antall sekunder siden epoch (Midnatt UTC, 1. januar 1970). Så bruker vi std::localtime til å konvertere det til en tm struct, som holder individuelle komponenter av tid (time, min, sec) og dato (day, month, year).
 
-For mer informasjon om å få den nåværende datoen i C++, se disse lenkene:
+## Se Også
 
-- [cppreference.com - std::time](https://en.cppreference.com/w/cpp/chrono/c/time)
-- [stackoverflow.com - Current Date and Time in C++](https://stackoverflow.com/questions/1442116/how-to-get-the-current-date-and-time-in-c)
+- Offisiell C++ dokumentasjon [ctime](http://www.cplusplus.com/reference/ctime/)
+- Krono biblioteket [Chrono](https://en.cppreference.com/w/cpp/chrono)
+- Boost bibliotekets tidsfunksjoner [Boost](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)
+- Tredje-part biblioteket [Date](https://github.com/HowardHinnant/date)

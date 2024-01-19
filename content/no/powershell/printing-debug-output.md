@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkningsutdata"
-html_title:           "PowerShell: Utskrift av feilsøkningsutdata"
-simple_title:         "Utskrift av feilsøkningsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -10,27 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Debug utskrift er en metode som lar utviklere vise informasjon om et program mens det kjører, for å finne feil og forstå hvordan koden utføres. Dette er en viktig del av programmering for å sikre feilfri kode og effektiv debugging-prosess.
+---
 
-## Hvordan:
-For å skrive ut debug informasjon i PowerShell, kan du bruke `Write-Host` kommandoen. Dette vil skrive ut informasjonen rett til terminalen. Du kan også bruke `Write-Debug` for å spesifisere at utskriften kun skal vises når debugging er aktivert.
+## Hva & Hvorfor?
+
+Å skrive ut feilsøkingsutdata refererer til å vise mellomliggende informasjon fremfor kun det endelige resultatet. Programmere gjør dette for bedre å forstå hva som skjer i koden deres, og å fikse eventuelle feil.
+
+## Hvordan: 
+
+Du kan enkelt skrive ut feilsøkingsinfo i PowerShell ved å bruke `Write-Debug`, slik:
 
 ```PowerShell
-Write-Host "Denne teksten vil bli skrevet ut som debug informasjon."
-Write-Debug "Dette ble utskrevet under debugging."
+function Test-Debug {
+    param()
+    Write-Debug "Inside the function"
+}
 ```
+
+Kjør funksjonen med DebugPreference satt til 'Continue':
+
+```PowerShell
+$DebugPreference = 'Continue'
+Test-Debug
+```
+
 Output:
+
+```PowerShell
+DEBUG: Inside the function
 ```
-Denne teksten vil bli skrevet ut som debug informasjon.
-```
-For å aktivere debugging modus, bruk `Set-PSDebug -Trace 1` kommandoen. Dette vil vise all debug informasjon som er lagt til i koden.
 
 ## Dypdykk:
-Debugging er en viktig del av programmering og har eksistert siden de tidlige dagene med datamaskiner. Tidligere ble det gjort ved å skrive ut informasjonen på papir eller skrive den til en fil. Alternativer til å bruke `Write-Debug` inkluderer å bruke `Write-Verbose` for mer generell informasjon eller `Write-Warning` for advarsler om potensielle feil.
 
-Implementasjonen av debugging i PowerShell er basert på .NET debugging og tilbyr mange av de samme funksjonene og mulighetene som .NET-debuggeren.
+1. Historisk har innledende debugmetoder variert fra simpel kodesjekking til fysiske lysdioder. PowerShell forenkler debugging ved å implementere innebygde kommandoer.
 
-## Se også:
-- [Microsoft Docs: PowerShell Debugging](https://docs.microsoft.com/en-us/powershell/scripting/developer/windows-powershell/how-to-debug-powershell-scripts?view=powershell-7)
-- [Stack Overflow: Debugging in PowerShell](https://stackoverflow.com/questions/48432600/how-to-debug-powershell-code/48432846)
+2. Alternativt til `Write-Debug`, kan PowerShell også bruke `Write-Verbose` for mer detaljert feilsøkingsinfo.
+
+```PowerShell
+function Test-Verbose {
+    param()
+    Write-Verbose "Inside the function" -Verbose
+}
+
+Test-Verbose
+```
+
+Output:
+
+```PowerShell
+VERBOSE: Inside the function
+```
+
+3. PowerShell bruker et system med preferanser for å kontrollere hvordan feilsøking opptre. Disse innstillingene kan angis individuelt og overstyres ved behov.
+
+## Se Også:
+
+1. Offisiell PowerShell dokumentasjon: [About PREFERENCE Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7)
+2. Velgjørende Bloggartikkel: [Debugging with PowerShell](https://devblogs.microsoft.com/scripting/debugging-with-powershell/)

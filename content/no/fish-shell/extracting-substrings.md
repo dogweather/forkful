@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrahering av substringer"
-html_title:           "Fish Shell: Ekstrahering av substringer"
-simple_title:         "Ekstrahering av substringer"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,35 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
+## Hva & Hvorfor?
 
-Ekstrahering av substringer er en måte å isolere deler av en tekst på basert på bestemte karakterer eller posisjoner. Dette kan være nyttig for programmerere for å manipulere og behandle data på en mer effektiv måte.
+I programmering er tråduttrekk, å hente en del av en større streng basert på oppgitte indekser. Programmerere gjør dette for å manipulere og bruke spesifikke opplysninger i en datastruktur.
 
-## Hvordan?
+## Hvordan:
 
-```Fish Shell``` tilbyr flere metoder for å ekstrahere substringer fra en gitt tekst. En vanlig metode er å bruke "cut" kommandoen, som kan brukes til å velge et gitt antall tegn fra starten eller slutten av en tekstlinje.
+Her er noen eksempler på hvordan du trekker ut substrings i Fish Shell:
 
-```
-$ echo "Hei alle sammen" | cut -c 4-8
-alle 
-```
-
-I dette tilfellet vil "cut" kommandoen returnere tegnene fra posisjon 4 til 8 i den gitt tekstlinjen.
-
-Et annet alternativ er å bruke "sed" kommandoen, som kan brukes til å bytte ut eller erstatte deler av en tekstlinje basert på et gitt mønster.
-
-```
-$ echo "Goodbye, World!" | sed 's/Goodbye/Hello/'
-Hello, World!
+```Fish Shell
+set streng 'Hei verden'
+echo $streng[1 3] # output: 'Hei'
 ```
 
-## Dykk dypere
+```Fish Shell
+set navn 'Ola Nordmann'
+echo $navn[1 3] # output: 'Ola'
+```
 
-Eksistrering av substringer har vært en del av programmering siden de tidlige dagene av UNIX-operativsystemet. I tillegg til "cut" og "sed" finnes det flere verktøy som kan oppnå samme resultat, som for eksempel "grep" og "awk".
+```Fish Shell
+set sitat 'Fisk er gøy'
+echo $sitat[2 7] # output: 'er gøy'
+```
 
-Implementeringen av disse verktøyene kan variere basert på hvilket operativsystem de brukes på, men essensen av å ekstrahere substringer forblir den samme.
+## Dypdykk:
 
-## Se også
+Historisk kontekst: Fish Shell, første gang utgitt i 2005, har alltid hatt evnen til å trekke ut substrings. Det skyldes at funksjonaliteten er et fundamentalt konsept i de fleste programmeringsspråk.
 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Kort introduksjon til regulære uttrykk](https://www.regular-expressions.info/intro.html)
+Alternativer: Andre skall, som Bash og Zsh, har også muligheter for å trekke ut substrings. Syntaksen kan variere litt mellom skallene.
+
+Implementeringsdetaljer: I Fish Shell utføres substringuttrekk ved å bruke en 'set' kommando for å definere strengen, og deretter bruke indeksverdier innenfor firkantparentesene til å spesifisere den delen du vil trekke ut.
+
+## Se Også:
+
+For mer informasjon om substrings og Fish Shell, sjekk ut disse kildene:
+
+1. Fish Shell dokumentasjon: [Fish Shell Docs](https://fishshell.com/docs/current/index.html)
+2. En detaljert guide om string manipulering i Fish Shell: [String Manipulation in Fish](https://devhints.io/fish-shell)
+3. En introduksjon til programmering i Fish Shell: [Intro to Fish](https://fishshell.com/docs/current/tutorial.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "C++: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Gleam: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -12,40 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Reguljära uttryck är ett kraftfullt verktyg för att söka och bearbeta textsträngar i dina C++ program. Det låter dig definiera mönster som matchar en viss uppsättning tecken eller ord, vilket kan användas för att hitta, extrahera eller ersätta text i en sträng. Programmerare använder reguljära uttryck för att effektivt hantera textsträngar och utföra olika operationer på dem.
+Reguljära uttryck, eller regex, används för att matcha specifika mönster i strängar. Denna teknik är mycket användbar för att söka, ersätta, och validera data.
 
-## Hur man gör:
-
-Så här kan du använda reguljära uttryck i dina C++ program:
+## Hur man:
 
 ```C++
-#include <iostream>
+// inkludera regex-biblioteket
 #include <regex>
 
-int main() {
-  std::string text = "Detta är en text som innehåller ordet programmering.";
-  std::regex pattern("programmering");
+int main()
+{
+    // Skapa ett regex-objekt
+    std::regex re("a..a");
 
-  if (std::regex_search(text, pattern)) {
-    std::cout << "Hittade ordet \"programmering\" i texten!" << std::endl;
-  }
+    // En teststräng
+    std::string str = "abra";
 
-  return 0;
+    // Använd 'std::regex_match' för att jämföra strängen med regex-objektet
+    if (std::regex_match(str, re)) {
+        std::cout << "Matchar!\n";
+    } else {
+        std::cout << "Matchar inte!\n";
+    }
+
+    return 0;
 }
 ```
 
-Detta program kommer att söka efter mönsteret "programmering" i texten och skriva ut "Hittade ordet \"programmering\" i texten!" om det finns en matchning.
+Programmet skriver ut "Matchar!" eftersom "abra" matchar mönstret "a..a".
 
 ## Djupdykning:
 
-Reguljära uttryck har funnits sedan 1950-talet och är ett viktigt verktyg för textbehandling i många programmeringsspråk. I C++ kan du använda standardbibliotekets <regex> för att arbeta med reguljära uttryck.
+Regex skapades i slutet av 60-talet och har sedan dess blivit ett standardverktyg i programmerarens verktygslåda. Alternativ till regex finns. I C++, till exempel, kan man använda str.find() metoden för att göra enklare sökningar i strängar. Men regex ger betydligt mer flexibilitet och kraft.
 
-En alternativ metod för att hantera textsträngar är att använda strängfunktioner som finner, ersätter eller manipulerar delar av en sträng baserat på en given position eller index.
+När det gäller genomförande använder C++ regex-biblioteket ECMAScript-syntak, om inte annat anges. Det ger en bra bas att bygga komplexa mönster. 
 
-## Se även:
+## Se Även:
 
-Här är några användbara länkar för att lära dig mer om reguljära uttryck i C++:
-
-- C++ Referens om reguljära uttryck: http://www.cplusplus.com/reference/regex/
-- RegExr - en online verktyg för att testa och utforska reguljära uttryck: https://regexr.com/
-- Utförlig guide till reguljära uttryck i C++: https://www.geeksforgeeks.org/regular-expressions-in-c-c/
+- För ytterligare studier om reguljära uttryck, besök: [C++ Reguljära Uttryck](http://www.cplusplus.com/reference/regex/)
+- För en mer interaktiv upplevelse använd [RegExr](https://regexr.com/), en online reguljär uttryckstestare.

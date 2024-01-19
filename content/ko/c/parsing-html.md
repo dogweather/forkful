@@ -1,7 +1,7 @@
 ---
-title:                "HTML 분석"
-html_title:           "C: HTML 분석"
-simple_title:         "HTML 분석"
+title:                "HTML 파싱"
+html_title:           "Arduino: HTML 파싱"
+simple_title:         "HTML 파싱"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,49 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇이고 왜?
+## 무엇 & 왜?
 
-HTML 파싱이 무엇인지 설명하자면, HTML로 작성된 웹 페이지에서 정보를 추출하는 과정으로 이해할 수 있습니다. 이를 통해 웹 페이지의 구조를 이해하고, 내용을 다른 형식으로 변환하거나 특정 데이터를 검색할 수 있습니다. 프로그래머들은 HTML 파싱을 할 때, 웹 스크래핑, 데이터 마이닝, 웹 크롤링 등 다양한 목적을 가지고 있습니다.
+HTML 파싱이란 HTML 문서를 분석하고 해당 정보를 추출하는 과정입니다. 프로그래머들은 이를 통해 웹페이지에서 필요한 데이터를 얻거나, 웹사이트의 구조를 이해하는 데 사용합니다.
 
-# 방법:
-
-아래 코드 블럭에서는 C 프로그래밍 언어를 사용하여 HTML 파싱을 수행하는 간단한 예제와 결과를 보여줍니다.
+## 어떻게:
 
 ```C
-#include <stdio.h> // 표준 입력/출력 라이브러리
-#include <stdlib.h> // 메모리 관리 함수
+#include <stdio.h>
+#include <tagc.h>
 
 int main() {
-  // HTML 전체 웹 페이지를 메모리에 읽어옴
-  char* webpage = "<html><head><title>HTML 파싱 예제</title></head><body><h1>HTML 파싱이란?</h1><p>HTML 파일에서 정보를 추출하는 것을 말합니다.</p></body></html>";
-  
-  // HTML 태그(<>)를 기준으로 문자열을 나누어 저장
-  char* title = strtok(webpage, "<title>"); // "<title>" 뒤에 오는 문자열을 title 변수에 저장
-  char* content = strtok(NULL, "<p>"); // "<p>" 뒤에 오는 문자열을 content 변수에 저장
-  
-  // 결과 출력
-  printf("제목: %s\n내용: %s", title, content);
-  
-  // 메모리 해제
-  free(webpage);
-  
-  return 0;
+    TAG *root, *tmp;
+
+    /* HTML load */
+    root = html_load("sample.html");
+    if(!root) {
+        printf("Cannot open file\n");
+        return -1;
+    }
+
+    /* Search tag from HTML */
+    tmp = html_search(root, "div");
+    if(!tmp)
+        printf("Tag not found\n");
+    else
+        printf("Tag %s found\n", tmp->name);
+
+    /* Free Memory */
+    html_free(root);
+
+    return 0;
 }
 ```
 
-**결과:**
+이 예제 코드는 `tagc`라이브러리를 사용하여 "div" 태그를 검색합니다. 성공하면 결과 출력하고, 실패하면 오류 메시지를 출력합니다.
 
-```
-제목: HTML 파싱 예제
-내용: HTML 파일에서 정보를 추출하는 것을 말합니다.
-```
+## 깊이 들어가보기:
 
-# 깊이 파보기:
+HTML 파싱은 웹의 초기 개발 초기부터 시작되었습니다. 크롤러, 스크래퍼 등 다양한 웹 프로그래밍 어플리케이션에 사용되어 왔습니다. C언어 외에도 파이썬, 자바 등 많은 언어가 HTML 파싱을 지원합니다.
 
-HTML 파싱은 웹의 성장과 함께 진화해온 기술입니다. 초기에는 정적인 웹 페이지에 대한 파싱이 주로 이루어졌지만, 현재는 동적 웹 페이지에 대한 파싱까지 다양한 방법과 라이브러리가 존재합니다. 다른 언어를 사용하여 HTML 파싱을 할 수도 있지만, C 언어는 가볍고 빠른 성능을 제공하여 많은 프로그래머들에게 인기가 있습니다. 또한, HTML 파싱에는 다양한 라이브러리가 존재하며 무료로 이용할 수 있기 때문에, 이를 활용하는 것도 좋은 방법입니다. HTML 파싱을 하기 전에 웹 페이지를 자세히 살펴보고, 어떤 데이터를 추출하고자 하는지 명확히 이해하는 것이 중요합니다.
+HTML 파싱의 대체 방법으로는 CSS 선택자 사용, XPath 사용 등이 있지만 각가의 장단점이 있으며, 요구 사항에 따라 적합한 방법을 선택해야 합니다.
 
-# 더 알아보기:
+C언어에서 HTML 파싱의 구현에 관해서는, 효율적인 메모리 관리와 에러 처리가 중요합니다. 슬랙오버플로우나 메모리누수는 프로그램 전체에 치명적인 영향을 끼치기 때문입니다.
 
-- [HTML 파싱에 대한 더 많은 예제](https://github.com/topics/html-parsing)
-- [C 언어로 HTML 파싱하기](https://www.geeksforgeeks.org/parse-html-from-url-in-c/)
-- [웹 파싱과 관련된 라이브러리 비교](https://www.slant.co/topics/2177/~best-html-parsing-libraries)
+## 참고 자료:
+
+1. 간편한 HTML 파서 소개: [Gumbo][1]
+2. HTML 파싱에 대한 자세한 문서 [Mozilla MDN][2]
+
+[1]: https://github.com/google/gumbo-parser
+[2]: https://developer.mozilla.org/ko/docs/Web/HTML/Parser

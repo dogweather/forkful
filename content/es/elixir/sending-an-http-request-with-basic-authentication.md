@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Elixir: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,24 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué & Por qué?
-Enviar una solicitud HTTP con autenticación básica es una forma de autenticar un usuario en un servidor web mediante la inclusión de credenciales en la solicitud. Los programadores lo hacen para garantizar la seguridad y privacidad de los usuarios al acceder a ciertas páginas web o recursos en línea.
+Enviar una solicitud HTTP con autenticación básica implica proporcionar un nombre de usuario y contraseña para acceder a recursos de API restringidos. Los programadores lo hacen para interactuar con APIs seguras que requieren autenticación.
 
-## Cómo:
-Enviar una solicitud HTTP con autenticación básica en Elixir es sencillo. Primero, debes importar el módulo de `HTTPoison` en tu proyecto:
-```
-Elixir import HTTPoison
-```
-Luego, puedes usar la función `request/5` para enviar la solicitud con las credenciales adecuadas:
-```
-Elixir HTTPoison.request("GET", "https://ejemplo.com", [], [], [basic_auth: {"usuario", "contraseña"}])
-```
-El resultado será una estructura `%HTTPoison.Response{}` que contiene el código de estado, el cuerpo de la respuesta y otras propiedades útiles.
+## ¿Cómo hacerlo?
+En Elixir, puedes usar la biblioteca HTTPoison para enviar una solicitud HTTP con autenticación básica. Aquí hay un ejemplo:
 
-## Profundizando:
-La autenticación básica en HTTP fue introducida en 1999 como un medio de autenticación simple en la web. Sin embargo, debido a su naturaleza no cifrada, se considera insegura en comparación con otros métodos de autenticación más modernos como OAuth.
+```Elixir
+alias HTTPoison.{BasicAuth, Get}
 
-Hay otras formas de autenticación HTTP en Elixir, como la autenticación digest y la autenticación de token. También puedes utilizar un módulo como `Plug.BasicAuth` para implementar la autenticación básica en tu servidor web.
+auth = BasicAuth.encode_credentials("username", "password")
 
-## Ver también:
-- [Documentación de HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Tutorial de autenticación básica en Elixir](https://elixirschool.com/es/lessons/advanced/http-basic-auth/)
+response = 
+  Get.stream!("https://myapi.com/endpoint", [], [basic_auth: auth])
+  |> Enum.to_list
+
+IO.inspect(response)
+```
+
+Esto enviará una solicitud GET a la url especificada con las credenciales proporcionadas. La respuesta se transmite para evitar cargas excesivas en la memoria.
+
+## Deep Dive (Inmersión profunda)
+El protocolo de autenticación básica HTTP tiene sus raíces en los primeros días de las aplicaciones web. Aunque es sencillo, no es seguro para las credenciales de texto plano sin una conexión HTTPS.
+
+En el código de Elixir presentado, la función `BasicAuth.encode_credentials/2` toma un nombre de usuario y contraseña y los codifica en el formato requerido para la cabecera Authorization HTTP.
+
+También puedes hacerlo con el módulo `:httpc` de Erlang si prefieres trabajar con los bloques de construcción de más bajo nivel:
+
+```Elixir
+:httpc.request(:get, {'https://myapi.com/endpoint', [{'Authorization', 'Basic ' <> :base64.encode_to_string('username' <> ":" <> 'password')}]}, [], [])
+```
+
+Si la API se basa en tokens en lugar de en credenciales de usuario, puedes usar la misma técnica pero reemplazando las credenciales de BasicAuth con el token.
+
+## See Also (Ver también)
+Para más detalles, consulta los siguientes recursos:
+- [Documentación HTTPoison](https://hexdocs.pm/httpoison/readme.html)
+- [Módulo BasicAuth](https://hexdocs.pm/httpoison/HTTPoison.BasicAuth.html)
+- [Documentación sobre las solicitudes HTTP en Erlang](http://erlang.org/doc/man/httpc.html)

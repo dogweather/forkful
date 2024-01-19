@@ -1,6 +1,6 @@
 ---
 title:                "Comparando duas datas"
-html_title:           "Clojure: Comparando duas datas"
+html_title:           "C#: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,20 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Comparar duas datas é uma tarefa comum na programação, utilizada para verificar a relação temporal entre dois eventos ou para analisar mudanças ao longo do tempo. Programadores frequentemente fazem uso dessa funcionalidade para ajudar no desenvolvimento de aplicações relacionadas com datas e tempo.
+# Comparações de Datas em Clojure
 
-## Como fazer:
-Em Clojure, você pode comparar duas datas utilizando a função `compare`, que retorna `-1` se a primeira data for anterior, `0` se as datas forem iguais e `1` se a primeira data for posterior à segunda. Veja o exemplo abaixo:
-```Clojure
-(def data1 (java.util.Date. 118, 2, 2))
-(def data2 (java.util.Date. 118, 2, 3))
-(compare data1 data2)   ; Retorna -1
+## O Que é & Porquê?
+
+Temos o ato de comparar duas datas, usado frequentemente para determinar a diferença entre elas, ordenar datas e verificar a igualdade. Programadores o utilizam para algoritmos de agendamento, logging, e mais.
+
+## Como Fazer:
+
+As comparações de datas em Clojure podem ser feitas usando a função `compare`. Aqui está um exemplo de como você pode comparar duas datas:
+
+```clojure
+(require '[clj-time.core :as t]
+         '[clj-time.coerce :as c])
+
+(let [date1 (t/date-time 2020 7 3)
+      date2 (t/date-time 2020 7 4)]
+  (compare date1 date2))
 ```
 
-## Profundidade:
-Comparar datas tem sido importante na história da computação para garantir a precisão em cálculos de tempo e para evitar problemas relacionados com o bug do milênio. Existem outras abordagens para a comparação de datas, como a utilização de bibliotecas externas ou a criação de funções personalizadas, mas a função `compare` é nativa em Clojure e é uma opção simples e eficiente.
+A saída disso seria `-1`, significando que a primeira data é anterior à segunda. Se as datas fossem iguais, a saída seria `0`. Se a primeira data fosse posterior à segunda, a saída seria `1`.
 
-## Veja também:
-Documentação oficial de Clojure para a função `compare`: https://clojuredocs.org/clojure.core/compare
-Artigo do blog "Effective Programs" sobre comparação de datas em Clojure: https://effective-programming.blogspot.com/2012/07/comparing-dates-in-clojure.html
+## Aprofundamento:
+
+**Contexto Histórico**
+
+A função `compare` foi introduzida no Clojure para fornecer uma comparação consistente entre diferentes tipos de dados, incluindo datas.
+
+**Alternativas**
+
+Você pode também usar a função `before?` ou `after?` do clj-time para comparar duas datas:
+
+```clojure
+(require '[clj-time.core :as t])
+
+(let [date1 (t/date-time 2020 7 3)
+      date2 (t/date-time 2020 7 4)]
+  (t/before? date1 date2)) ;; Retorna true se a primeira data estiver antes da segunda
+```
+
+Isso retornará `true` se `date1` for antes de `date2`, e `false` caso contrário.
+
+**Detalhes de Implementação**
+
+A função `compare` compara os componentes individuais das datas na seguinte ordem: ano, mês, dia, hora, minuto, segundo e milissegundo.
+
+## Veja Também:
+
+1. [clj-time Documentation](https://clojure.github.io/clj-time/)
+2. [Clojure Date Time Tutorial](https://www.baeldung.com/clojure-date-time)
+3. [Clojure Cookbook: Dates and Times](https://clojure-cookbook.com/clojure_cookbook/Dates_and_Times.html)

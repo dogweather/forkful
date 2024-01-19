@@ -1,7 +1,7 @@
 ---
-title:                "Unterscheidung von Teilzeichenketten"
-html_title:           "TypeScript: Unterscheidung von Teilzeichenketten"
-simple_title:         "Unterscheidung von Teilzeichenketten"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -12,31 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Beim Extrahieren von Teilstrings handelt es sich um die Aufgabe, einen bestimmten Teil eines längeren Textstücks oder einer Zeichenkette zu isolieren. Programmierer nutzen diese Technik, um Daten zu filtern oder spezifische Informationen aus einem größeren Datensatz herauszulösen.
+Die Extraktion von Teilstrings ist ein Prozess, bei dem spezifische Teile einer Zeichenkette ausgewählt und isoliert werden. Programmierer machen dies, um bestimmte Daten aus einem größeren Text zu isolieren und zu bearbeiten.
 
-## Wie?
+## Anleitung:
+
+Um Teilzeichenfolgen in TypeScript zu extrahieren, verwenden wir die Methoden substr() und substring(). Gehen wir durch jeweils ein Beispiel für beide:
 
 ```TypeScript
-const name = "Max Mustermann";
+let text: string = "Ich liebe TypeScript";
+let subText1: string = text.substr(7, 9);  // "liebe Type"
+console.log(subText1);  // Ausgabe: "liebe Type"
 
-console.log(name.substring(0, 3));
-// Ausgabe: Max
-
-console.log(name.substr(4));
-// Ausgabe: Mustermann
+let subText2: string = text.substring(7, 16); // "liebe Type"
+console.log(subText2);  // Ausgabe: "liebe Type"
 ```
 
-Die Methoden `substring()` und `substr()` sind in TypeScript verfügbar und ermöglichen das Extrahieren von Teilstrings. Die Parameter geben dabei die Startposition und die Länge des zu extrahierenden Teilstrings an. Die Methode `substring()` startet dabei an der angegebenen Position und endet vor der angegebenen Länge, während `substr()` die angegebene Länge inkludiert.
+Mit der Methode substr() geben wir die Anfangsposition und die Länge des Teilstrings an. Mit substring() geben wir Anfangs- und Endposition an.
 
-## Tiefere Einblicke
+## Vertiefung
 
-Das Extrahieren von Substrings ist eine gängige Technik in der Programmierung und wurde bereits in frühen Programmiersprachen wie BASIC und FORTRAN eingesetzt. In TypeScript gibt es auch die Methode `slice()`, die ähnlich funktioniert, jedoch negative Startpositionen erlaubt, um vom Ende des Strings aus zu extrahieren.
+Die Extraktion von Teilstrings ist eine wichtige Aufgabe in der Programmierung. Historisch gesehen ermöglichte sie die Verarbeitung großer Datenmengen, bevor höhere Abstraktionen wie Objekte und Klassen verfügbar waren.
 
-Als Alternative zu den genannten Methoden gibt es auch reguläre Ausdrücke (Regular Expressions), die komplexere Muster erkennen und so das Extrahieren von Substrings noch flexibler gestalten können.
+Alternativen zu substr() und substring() sind die Methoden slice() und split(). slice() ist ähnlich wie substring() und split() teilt eine Zeichenkette anhand eines angegebenen Trennzeichens in einem Array auf.
+
+Die Implementierung der Extraktion von Teilstrings in TypeScript basiert auf der von JavaScript, da TypeScript eine Obermenge von JavaScript ist. JavaScript behandelt Zeichenketten als Zeichenarrays, was die Extraktion von Teilzeichenketten ermöglicht.
 
 ## Siehe auch
 
-- [MDN Web Docs zu substring](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN Web Docs zu substr](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-- [MDN Web Docs zu slice](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [MDN Web Docs zu regulären Ausdrücken](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+Für weitere Details über das Arbeiten mit Zeichenketten in TypeScript, schauen Sie sich bitte die folgenden Quellen an:
+
+[TypeScript: Dokumentation](https://www.typescriptlang.org/docs/)
+[TypeScript: Zeichenketten und Zeichenkettenfunktionen](https://www.digitalocean.com/community/tutorials/typescript-strings-and-string-functions)

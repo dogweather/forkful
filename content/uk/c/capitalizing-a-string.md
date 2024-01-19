@@ -1,7 +1,7 @@
 ---
-title:                "Заголовок статті про комп'ютерне програмування: Прописування рядка."
-html_title:           "C: Заголовок статті про комп'ютерне програмування: Прописування рядка."
-simple_title:         "Заголовок статті про комп'ютерне програмування: Прописування рядка."
+title:                "Великі літери в рядках"
+html_title:           "C: Великі літери в рядках"
+simple_title:         "Великі літери в рядках"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,57 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що & Чому?
 
-В програмуванні існує концепція, відома як "капіталізація рядка". Це означає, що перша літера кожного слова в рядку буде перетворена на велику. Програмісти зазвичай роблять це для того, щоб полегшити читання коду та покращити його стиль.
+Великі літери в рядку означають перетворення всіх символів рядка на великі літери. Програмісти це роблять, щоб полегшити порівняння і сортування рядків або підкреслити певну інформацію в тексті.
 
-## Як це зробити?
+## Як це зробити:
 
-Нижче показані приклади коду на C, які демонструють, як зробити капіталізацію рядка. Для кращого розуміння, також включений вихідний текст до цих прикладів.
+Ось деякі прості приклади того, як виконати це в C:
 
-```C 
-// Приклад 1:
-#include <stdio.h>
-#include <string.h>
-
-int main(){
-  char str[] = "hello world";
-  int i;
-
-  for(i = 0; i < strlen(str); i++){
-    str[i] = toupper(str[i]);
-  }
-
-  printf("%s", str);
-  return 0;
-}
-
-Вихідний текст: HELLO WORLD
-
-// Приклад 2:
-#include <stdio.h>
+```C
 #include <ctype.h>
+#include <stdio.h>
 
-int main(){
-  char str[] = "welcome to the galaxy";
-  int i = 0;
-
-  while(str[i] != '\0'){
-    putchar(toupper(str[i]));
-    i++;
-  }
-  return 0;
+void capitalize(char* str) {
+    for (int i = 0; str[i]!='\0'; i++){
+        str[i] = toupper(str[i]);
+    }
 }
 
-Вихідний текст: WELCOME TO THE GALAXY
+int main() {
+    char str[] = "programming in c";
+    capitalize(str);
+    printf("%s\n", str);
+
+    return 0;
+}
 ```
 
-## Поглиблене вивчення
+Output:
 
-Капіталізація рядків використовується з давніх часів, коли комп'ютери не мали можливості відображати різні розміри літер. Також існують інші способи змінити регістр рядка, такі як зміна регістра вручну за допомогою циклу або використання готових функцій відповідних бібліотек. Для капіталізації рядка використовуються функції toupper() та putchar().
+```C
+PROGRAMMING IN C
+```
 
-## Дивіться також
+## Поглиблений огляд:
 
-- Функція toupper(): https://www.educative.io/edpresso/what-is-the-toupper-function-in-c
-- Інші методи капіталізації: https://www.hackerearth.com/practice/notes/capitalize-a-string-in-cc/
-- Більше про рядки: https://www.programiz.com/c-programming/c-strings
+Historically, C has not had built-in string manipulation functions like some high-level languages. You could, of course, write your own functions to convert strings to uppercase or lowercase, but this would be time-consuming and prone to errors. Therefore, functions like `toupper()` were born, found in `<ctype.h>`, to facilitate the transformation of string case.
+
+Alternatively, you can manually convert each character to uppercase by taking advantage of the ASCII representation of characters. This isn't recommended, though, because it's more error-prone and less portable.
+
+## Дивіться також:
+
+For more on the `toupper()` function: https://en.cppreference.com/w/c/string/byte/toupper
+
+For alternatives to `toupper()`: stackoverflow.com/questions/26696718/do-i-really-need-toupper-to-make-a-string-uppercase-in-c
+For a full guide on string manipulation in C: www.tutorialspoint.com/c_standard_library/c_function_toupper.htm

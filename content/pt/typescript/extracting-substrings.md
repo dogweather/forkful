@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subcadeias"
-html_title:           "TypeScript: Extraindo subcadeias"
-simple_title:         "Extraindo subcadeias"
+title:                "Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Quê?
-A extração de substrings é o ato de separar uma parte específica de uma string maior. Programadores tipicamente utilizam essa técnica para manipular e processar dados de forma mais eficiente.
+# Trabalhando com substrings em TypeScript: um guia descomplicado
+
+---
+
+## O Que & Por Quê?
+
+Extrair substrings envolve a recuperação de uma porção de uma string existente. Programadores fazem isso regularmente sempre que necessitam de um segmento específico de uma string, ao invés do texto completo.
 
 ## Como Fazer:
-Extrair uma substring em TypeScript é simples e pode ser feito de várias maneiras. Uma opção é utilizar o método `substring()` que recebe como parâmetro o índice inicial e final da substring desejada. Veja o exemplo abaixo:
 
-```Typescript
-let stringExemplo = "Hello World";
-let substring = stringExemplo.substring(0, 5);
-console.log(substring); // irá imprimir "Hello"
+TypeScript permite a extração de substrings de várias maneiras. Aqui estão as mais comuns - utilizando os métodos `substring()`,  `slice()` e `substr()`.
+
+```TypeScript
+let texto: string = "Ola, mundo TypeScript!";
+
+// Utilizando substring()
+let substringRes = texto.substring(5, 11);
+console.log(substringRes);  // Saída: mundo
+
+// Utilizando slice()
+let sliceRes = texto.slice(5, 11);
+console.log(sliceRes);  // Saída: mundo
+
+// Utilizando substr()
+let substrRes = texto.substr(5, 5);
+console.log(substrRes);  // Saída: mundo
 ```
 
-Outra forma é utilizando o método `slice()`, que é semelhante ao `substring()` mas aceita valores negativos para contar a partir do final da string. Veja o exemplo abaixo:
+Em todos os três exemplos acima, estamos extraindo a substring "mundo" da string original.
 
-```Typescript
-let stringExemplo = "Hello World";
-let substring = stringExemplo.slice(-5);
-console.log(substring); // irá imprimir "World"
-```
+## Análise Detalhada:
 
-## Profundando:
-A extração de substrings pode ser rastreada até as primeiras linguagens de programação, como o C, e é amplamente utilizada em linguagens modernas como o JavaScript e TypeScript. Alternativas para a extração de substrings incluem o uso de expressões regulares e o uso de métodos como `split()` e `substr()`. A implementação da extração de substrings envolve a manipulação de índices e a criação de novas strings a partir da string original.
+Extrair substrings é uma prática comum em programação e tem sido uma parte importante das linguagens de programação desde suas concepções. TypeScript, sendo um superconjunto de JavaScript, incorpora o mesmo conjunto de métodos para lidar com substrings.
+
+Em relação às alternativas, além dos métodos já mencionados, pode-se usar expressões regulares ou até bibliotecas externas, caso a lógica necessária seja muito complexa.
+
+Os detalhes da implementação podem variar dependendo do método escolhido. De um modo geral, `substring()` e `slice()` são muito parecidos, porém a principal diferença entre eles está em como lidam com argumentos negativos. `substring()` simplesmente os transforma em 0, enquanto `slice()` os trata como referência contada a partir do fim da string. Já o `substr()`, embora seja similar, sua segunda variável indica o número de caracteres para extrair, não a posição de fim.
 
 ## Veja Também:
-- [Documentação oficial do método substring() do TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#substring)
-- [Utilizando expressões regulares em TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Alternativas para a extração de substrings em TypeScript](https://www.geeksforgeeks.org/alternatives-for-string-substring-method-in-typescript/)
+
+- [Documentação de strings do TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [JavaScript String Methods: substr() vs substring() vs slice()](https://www.digitalocean.com/community/tutorials/js-string-methods-substr-substring-slice)
+- [Explicação de métodos de string do JavaScript com exemplos](https://www.freecodecamp.org/news/21-javascript-string-methods-a-quick-reference-cheat-sheet-just-for-you/)

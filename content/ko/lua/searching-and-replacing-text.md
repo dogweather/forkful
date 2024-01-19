@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 검색 및 대체"
-html_title:           "Lua: 텍스트 검색 및 대체"
-simple_title:         "텍스트 검색 및 대체"
+title:                "텍스트 검색 및 교체"
+html_title:           "Elixir: 텍스트 검색 및 교체"
+simple_title:         "텍스트 검색 및 교체"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lua에서 텍스트 검색과 대체하기
+## 무엇이며 왜 필요한가?
 
-## 무엇 & 왜?
+텍스트 검색 및 교체는 문자열 내에서 특정 텍스트를 찾고 해당 텍스트를 다른 텍스트로 바꾸는 작업이다. 이는 데이터 분석, 웹 스크래핑, 파일 수정 등 다양한 프로그래밍 상황에서 필수적인 작업이다.
 
-텍스트 검색 및 대체는 프로그래머들이 자주 하는 작업입니다. 이 작업은 특정 문자열을 찾아 바꾸는 것을 의미합니다. 예를 들어, 코드에서 많은 곳에서 사용되는 변수 이름을 한번에 모두 변경하려면 검색 및 대체 기능을 사용할 수 있습니다. 이를 통해 작업 속도와 정확성이 향상될 수 있습니다.
+## 어떻게 할 것인가?
 
-## 하는 법:
+Lua에서 문자열을 검색하고 교체하는 것은 `gsub` 함수를 사용하여 가능하다. 아래는 코드 예시와 그 출력 결과이다.
 
-검색 및 대체는 루아에서 매우 간단한 작업입니다. 다음 코드 예제를 참고해보세요.
-
+```Lua
+local str1 = "안녕하세요, Lua를 배우고 있는 중입니다."
+local str2 = string.gsub(str1, "Lua", "파이썬")
+print(str2) -- 출력: "안녕하세요, 파이썬를 배우고 있는 중입니다."
 ```
--- 문자열에서 "Apple"을 찾아 "Banana"로 바꾸는 예제
-local str = "I love Apple, do you love it too?"
-print(str:gsub("Apple", "Banana"))
-```
-출력: I love Banana, do you love it too?
 
-```
--- 변수 이름을 한번에 변경하는 예제
-local old_name = "xValue"
-local new_name = old_name:gsub("x", "y")
-print(new_name)
-```
-출력: yValue
+## 깊이 들어가보기
 
+`gsub` 함수는 Lua 4.0에서 도입되었으며, 이 함수는 비교적 간단한 문제에 대한 간단한 해결책을 제공한다. 다양한 작업에 적용할 수 있도록 폭넓은 매개 변수를 받을 수 있다.
 
-## 깊이 파고들기:
+대안으로는 패턴 일치 및 교체에 더욱 강력한 도구를 제공하는 Lua의 패턴 매칭 라이브러리나 외부 라이브러리를 사용하는 방법이 있다.
 
-검색 및 대체 기능은 대부분의 프로그래밍 언어에서 기본적으로 제공되는 기능입니다. 루아에서는 문자열 간의 대체만 가능하며, 정규식을 사용할 수 없습니다. 그러나 정규식을 사용하지 않더라도 지원하는 능력으로 대부분의 경우 충분합니다.
+`gsub` 의 기본 구현은 `luaS_gmatch` 함수 안에서 이루어진다. 이 함수는 일치하는 모든 패턴을 순회하며, 각각에 대해 치환 함수를 실행한다.
 
-비슷한 기능으로는 문자열 분할/조인, 문자열 길이/절사 등이 있습니다.
+## 관련 자료
 
-루아에서는 대부분의 문자열 관련 기능이 문자열 객체의 메서드로 지원됩니다. 이를 활용하면 문자열 처리 작업이 쉽고 간편해집니다.
+더 깊이 공부하고 싶다면 아래의 링크를 확인해보세요.
 
-## 관련 자료:
-
-루아 공식 문서의 문자열 관련 부분: https://www.lua.org/manual/5.4/manual.html#6.4.1
-
-루아에서 문자열 처리 기능을 활용해볼 수 있는 유용한 예제들: https://gist.github.com/baor/9079000
+1. Lua 공식 문서의 `gsub` 설명: https://www.lua.org/manual/5.4/manual.html#pdf-string.gsub
+2. Lua 패턴 매칭 튜토리얼: http://lua-users.org/wiki/PatternsTutorial
+3. Lua에서 정규 표현식 사용 방법: https://pleiades.io/help/idea/lua-regular-expressions.html

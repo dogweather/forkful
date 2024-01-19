@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis existiert"
-html_title:           "PHP: Überprüfen, ob ein Verzeichnis existiert"
-simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+html_title:           "Go: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -11,33 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Teil der PHP-Programmierung. Es ermöglicht uns zu überprüfen, ob ein bestimmter Ordner vorhanden ist, bevor wir versuchen, auf ihn zuzugreifen. Dies hilft uns, Fehler zu vermeiden und unseren Code robust und fehlerfrei zu halten.
 
-## Wie geht man vor?
-Es gibt verschiedene Methoden, um zu überprüfen, ob ein Verzeichnis existiert. Eine Möglichkeit ist die Verwendung der `is_dir()`-Funktion, die einen booleschen Wert zurückgibt, der angibt, ob das angegebene Verzeichnis existiert oder nicht. Hier ist ein Beispiel, wie man dies in PHP verwenden könnte:
+Die Überprüfung, ob ein Verzeichnis existiert, ist ein sehr nützliche Methode, die verwendet wird, um zu sehen, ob ein bestimmter Ordnerpfad in Ihrem System vorhanden ist. Programmierer nutzen es, um Fehler zu vermeiden, die sich ergeben können, wenn versucht wird, auf ein Verzeichnis zuzugreifen, das nicht existiert.
+
+## So geht's:
+
+In PHP können wir die Funktion `is_dir()` verwenden, um zu überprüfen, ob ein Verzeichnis existiert oder nicht. Hier ist ein einfaches Beispiel:
 
 ```PHP
 <?php
 
-$verzeichnis = "/home/benutzer/meinordner/";
+$dirPath = 'mein/verzeichnis/pfad';
 
-if (is_dir($verzeichnis)) {
-    echo "Das Verzeichnis existiert.";
+if(is_dir($dirPath)){
+    echo "Das Verzeichnis existiert";
 } else {
-    echo "Das Verzeichnis existiert nicht.";
+    echo "Das Verzeichnis existiert nicht";
 }
 
 ?>
 ```
 
-Die Ausgabe dieses Codes hängt davon ab, ob das angegebene Verzeichnis tatsächlich existiert oder nicht. Wenn das Verzeichnis existiert, wird "Das Verzeichnis existiert." ausgegeben, andernfalls wird "Das Verzeichnis existiert nicht." ausgegeben.
+Im obigen Beispiel wird `is_dir()` mit einem Verzeichnispfad als Parameter aufgerufen. Es gibt "Das Verzeichnis existiert" zurück, wenn es das Verzeichnis finde, und "Das Verzeichnis existiert nicht" ansonsten.
 
-## Tiefere Einblicke
-Die `is_dir()`-Funktion wurde erstmals in PHP 4.1 eingeführt und ist seitdem Teil der Kernsprache. Alternativ kann auch die `file_exists()`-Funktion verwendet werden, um zu überprüfen, ob ein Verzeichnis existiert oder nicht. Die Verwendung von `is_dir()` ist jedoch in diesem Fall vorzuziehen, da sie speziell für die Überprüfung auf Verzeichnisse entwickelt wurde.
+## Tiefere Einblicke:
 
-In einigen Fällen kann es auch hilfreich sein, den absoluten Pfad zum Verzeichnis anzugeben, um sicherzustellen, dass das richtige Verzeichnis überprüft wird. Dies kann mit Hilfe der `realpath()`-Funktion erreicht werden, die den absoluten Pfad für eine gegebene Pfadangabe zurückgibt.
+Die Funktion `is_dir()` wurde bereits in PHP 4.0.0 eingeführt und ist seitdem eine verlässliche Methode zur Überprüfung der Existenz eines Verzeichnisses. Alternativ können wir auch die `file_exists()` Funktion verwenden, die auch bei Dateien funktioniert, nicht nur bei Ordnern.
 
-## Siehe auch
-- [PHP-Dokumentation: is_dir()](https://www.php.net/manual/de/function.is-dir.php)
-- [PHP-Dokumentation: file_exists()](https://www.php.net/manual/de/function.file-exists.php)
-- [PHP-Dokumentation: realpath()](https://www.php.net/manual/de/function.realpath.php)
+Es ist wichtig zu wissen, dass `is_dir()` nur einen booleschen Wert zurückgibt. Daher kann diese Funktion nicht verwendet werden, um weitere Informationen über das Verzeichnis zu erhalten. Wenn man mehr Details braucht, sollte man auf Funktionen wie `fileperms()` oder `filemtime()` zurückgreifen.
+
+Außerdem, Funktionen wie `is_dir()` oder `file_exists()` ignorieren möglicherweise Standard Linux/Unix Aliase wie '~'. Daher sollte man absolute Pfadnamen verwenden.
+
+## Siehe auch:
+
+Für mehr Einblicke in das Dateisystem von PHP, besuchen Sie bitte:
+
+1. Die offizielle PHP-Dokumentation zur Verzeichnisbehandlung: https://www.php.net/manual/de/book.dir.php
+2. Die PHP-Dokumentation über `is_dir()`: https://www.php.net/manual/de/function.is-dir.php
+3. Stack Overflow Diskussionen über die `is_dir()` Funktion: https://stackoverflow.com/questions/3137094/how-to-check-if-a-directory-exists-in-php

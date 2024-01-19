@@ -1,7 +1,7 @@
 ---
-title:                "Söka och ersätta text"
-html_title:           "PowerShell: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,36 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+# Vad & Varför?
+Sökning och ersättning av text är en process där en del text hittas och uppdateras med en annan text. Programmerare använder denna process för att ändra eller uppdatera data baserat på vissa kriterier.
 
-Sökning och ersättning av text är en vanlig uppgift för många programmerare. Det handlar helt enkelt om att hitta en viss sträng av text och ersätta den med en annan. Detta kan vara användbart när man behöver ändra flera förekomster av en viss variabel eller för att göra stora skrivmässiga ändringar i en fil.
-
-## Så här gör du:
-
-För att söka och ersätta text i PowerShell använder vi huvudsakligen två kommandon: ```Select-String``` och ```Replace-String```. För att söka efter en viss sträng använder vi ```Select-String``` och skriver in den önskade strängen tillsammans med vägen till filen som ska sökas igenom. Till exempel:
+# Hur du gör:
+Så här söker och ersätter du text i PowerShell:
 
 ```PowerShell
-Select-String -Path C:\Users\Name\Documents\file.txt -Pattern "hello"
+$text = "Hej, jag heter John Doe"
+$newText = $text -replace 'John Doe', 'Jane Doe'
+Write-Output $newText
 ```
-
-Denna kod söker efter alla förekomster av ordet "hello" i filen "file.txt". För att ersätta strängen med en annan använder vi ```Replace-String``` och anger den nya strängen tillsammans med den sökta strängen och filvägen. Till exempel:
+Ovanstående kod ändrar `John Doe` till `Jane Doe`. Output blir:
 
 ```PowerShell
-Replace-String -Path C:\Users\Name\Documents\file.txt -Pattern "hello" -Replacement "hej"
+"Hej, jag heter Jane Doe"
 ```
 
-Denna kod byter ut alla förekomster av "hello" med "hej" i filen "file.txt". Det finns även möjlighet att ange flera filer att söka igenom eller använda reguljära uttryck för att fånga mer komplexa sökningar.
+För att söka och ersätta text med hjälp av ett reguljärt uttryck, använd `-replace` operator på följande sätt:
 
-## Djupdykning:
+```PowerShell
+$text = "Jag tycker om 7äpplen och 3päron"
+$newText = $text -replace '\d', 'tio'
+Write-Output $newText
+```
 
-Sökning och ersättning av text är en vanlig uppgift inom programmering och har funnits sedan de tidiga dagarna av datavetenskapen. Innan kommandon som ```Select-String``` och ```Replace-String``` fanns tillgängliga i PowerShell, kunde denna uppgift kräva mer komplexa algoritmer och programmeringstekniker. Idag är det tack vare PowerShell mycket enklare och snabbare att genomföra.
+Output blir: 
 
-Det finns också alternativ till PowerShell för att söka och ersätta text, som till exempel program som Notepad++ eller Sublime Text. Dessa verktyg kan vara mer användbara för större filer eller mer komplexa uppgifter.
+```PowerShell
+"Jag tycker om tiotiotoäpplen och tiotiotopäron"
+```
 
-Det är också viktigt att notera att sökning och ersättning av text kan påverka befintlig kod och leda till oväntade resultat. Det är därför viktigt att alltid dubbelkolla och testa koden innan den implementeras i ett större projekt.
+# Djupdykning
+Searching och replacing text är inte unikt för PowerShell - det har varit en stapelvara i programmering sedan de tidigaste dagarna. Funktionen är inbyggd i många programmeringsspråk och verktyg, inklusive Perl, Python, Java, och till och med textredigeringsverktyg som Vim och Emacs.
 
-## Se även:
+Ett alternativ till `-replace` operatören i PowerShell är `String.Replace()` funktionen. Du kan använda det så här:
 
-- [PowerShell dokumentation](https://docs.microsoft.com/en-us/powershell/)
-- [Notepad++](https://notepad-plus-plus.org/)
-- [Sublime Text](https://www.sublimetext.com/)
+```PowerShell
+$text = "Hej, jag heter John Doe"
+$newText = $text.Replace('John Doe', 'Jane Doe')
+Write-Output $newText
+```
+Observera att `String.Replace()` funktionen i PowerShell är skiftskänslig, vilket innebär att det kommer att matcha exakta bokstäver med deras storlek (stora eller små bokstäver).
+
+ `-replace` operator är mer kraftfull eftersom den stöder regular expressions, vilket gör att du kan matcha och ersätta mer komplexa textmönster.
+
+# Se Även
+- Officiell Microsoft-dokumentation om `-replace` operator: [här](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1#replacement-operator)
+
+- Lär dig mer om regular expressions i PowerShell: [här](https://www.regular-expressions.info/powershell.html)
+
+- MSDN artikel om String.Replace() funktion: [här](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)

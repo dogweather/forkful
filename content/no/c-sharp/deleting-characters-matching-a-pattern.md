@@ -1,6 +1,6 @@
 ---
 title:                "Slette tegn som samsvarer med et mønster"
-html_title:           "C#: Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
 simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "C#"
 category:             "C#"
@@ -11,29 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sletting av tegn som matcher et mønster er en vanlig oppgave for programvareutviklere. Dette er når vi søker gjennom en streng med tekst og fjerner alle forekomster av et bestemt tegnmønster. Dette kan være nyttig for å formatere tekst eller behandle data på en spesifikk måte.
+
+Fjerning av tegn som matcher et mønster er en grunnleggende strengoperasjon i programmering. Vi gjør det for å manipulere tekster og strenger effektivt, for eksempel for å fjerne uønskede spesialtegn.
 
 ## Hvordan:
-Du kan enkelt utføre sletting av tegn som matcher et mønster ved å bruke metoder fra C#-biblioteket Regex. Nedenfor er et eksempel på hvordan du kan slette alle tall fra en streng:
 
 ```C#
-string tekst = "Jeg har 123 epler";
-string nyTekst = Regex.Replace(tekst, "[0-9]", "");
-Console.WriteLine(nyTekst);
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string testTekst = "Hei, [på] deg! Jeg programmerer i C#.";
+        Console.WriteLine("Før: " + testTekst);
+        string mønster = @"[\[\]]";
+        Regex rgx = new Regex(mønster);
+        testTekst = rgx.Replace(testTekst, "");
+        Console.WriteLine("Etter: " + testTekst);
+    }
+}
 ```
 
-Dette vil resultere i følgende utdata:
+Når du kjører dette programmet, får du følgende utdata:
 
 ```C#
-Jeg har epler
+Før: Hei, [på] deg! Jeg programmerer i C#.
+Etter: Hei, på deg! Jeg programmerer i C#.
 ```
 
-## Dykk dypere:
-Sletting av tegn som matcher et mønster har blitt brukt siden de tidlige dagene av dataprogrammering, da personer måtte gjøre dette manuelt. I dag er dette en standardfunksjon i de fleste programmeringsspråk, og det finnes også alternativer som LINQ-metoder for å utføre samme oppgave.
+## Dypdykk
 
-Når du implementerer sletting av tegn i ditt eget program, må du være forsiktig med hvilke tegn du sletter, da dette kan påvirke teksten eller dataene på uønskede måter.
+Fjerning av tegn som matcher et mønster har vært en del av programmeringsspråk siden de tidlige dagene. C# gjør denne operasjonen enkel og intuitiv ved hjelp av Regexp-klassen.
 
-## Se også:
-- [Microsoft C# Regex klasse](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netstandard-2.0)
-- [LINQ-metoder for å utføre sletting av tegn](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.where?view=netstandard-2.1)
-- [En oversikt over regulære uttrykk](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions-overview)
+En annen måte å fjerne tegn som matcher et mønster på, er ved hjelp av LINQ-spørringer, men Regexp-metoden er ofte raskere og mer effektiv.
+
+Fjerning av tegn som matcher et mønster er en strengoperasjon som ofte brukes, spesielt når du arbeider med brukerinngang, logger og noen ganger databaser hvor du kanskje ønsker å fjerne uønskede tegn.
+
+## Se Også
+
+1. [Regex.Replace Method (System.Text.RegularExpressions)](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)
+2. [C# Regular Expressions](https://www.tutorialsteacher.com/csharp/csharp-regex) 
+3. [C# String Manipulation: How to Use Strings in C#](https://stackify.com/csharp-string-manipulation/)

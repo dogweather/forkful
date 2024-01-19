@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "Gleam: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,22 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+# Mitä & Miksi?
 
-Vertaamalla kahta päivämäärää ohjelmoijat voivat tarkistaa, ovatko kaksi tapahtumaa tapahtuneet samana päivänä tai kumpi niistä tapahtui ensin. Tämä on hyödyllistä esimerkiksi aikajärjestyksessä tapahtuvien tapahtumien seuraamisessa tai päivämäärän valinnassa järjestelmässä. 
+Päivämäärien vertaaminen on prosessi, jossa kaksi eri päivämäärää sidotaan vertailuoperaattorin kautta. Ohjelmoijat tekevät tämän esimerkiksi päivämäärien aikajärjestyksen määrittämiseksi tai aikaerotasojen laskemiseksi.
 
-## Miten:
-
-Vertailun suorittamiseksi voit käyttää `Date`-moduulia ja sen `equal()` tai `compare()` -funktioita, jotka ottavat vastaan kaksi päivämäärää parametreina. Esimerkiksi:
+# Miten Tehdään:
 
 ```
-Gleam.Date.equal(#date(2021, 12, 25), #date(2022, 1, 1))
-// Palauttaa "false"
-Gleam.Date.compare(#date(2020, 6, 15), #date(2020, 6, 10))
-// Palauttaa "Gt" (greater than)
-```
-## Syventävä tarkastelu:
-Päivämäärien vertailu on ollut haaste ohjelmointikielistä riippumatta. Usein virheelliset päivämäärämuodot tai aikavyöhykkeet voivat aiheuttaa ongelmia. On myös olemassa muita tapoja vertailla päivämääriä, kuten Unix-ajan käyttäminen. Gleam tarjoaa kuitenkin helppokäyttöiset muokkaimet ja avustajat päivämäärien kanssa työskentelyyn.
+// Tuodaan tarvittavat Gleam-kirjastot
+import gleam/calendar.{calendar, datetime}
+import gleam/int.{int}
+import gleam/bool.{bool}
+import gleam/order.{order}
 
-## Katso myös:
-Lisätietoa päivämäärien vertailusta Gleamissa löytyy virallisesta dokumentaatiosta: https://gleam.run/documentation/library/date.html
+// Luodaan kaksi päivämäärää
+let day1 = calendar.local_date(2020, 12, 27)
+let day2 = calendar.local_date(2022, 8, 3)
+
+// Vertaillaan päivämääriä
+let are_equal = datetime.equal(day1, day2) // False
+let is_before = datetime.before(day1, day2) // True
+let is_after = datetime.after(day1, day2) // False
+```
+# Syvä Sukellus:
+
+Päivämäärien vertailu ei ole mikään uusi konsepti, se on ollut tärkeä osa ohjelmointia sen varhaisista vaiheista lähtien. Useimmat ohjelmointikielet, mukaan lukien Gleam, tarjoavat sisäänrakennettuja työkaluja päivämäärien vertailuun.
+
+On erilaisia tapoja vertailla päivämääriä. Tässä artikkelissa keskitymme järjestysvertailuihin (ennen, jälkeen, tai yhtä suuri). Kuitenkin, voit myös vertailla päivämäärien välisiä aikaeroja, jos vertailtavat päivämäärät ovat esimerkiksi aikaleimoja.
+
+Vertailuoperaattorit Gleamissa antavat joko totuusarvoja (`true` tai `false`) tai hätäkoodeja antaen ilmoituksen ohjelmistolle, jos jotain menee pieleen päivämääriä luodessa. Kuitenkin, Gleamin `gleam/calendar`-kirjasto voit luottaa, että se luo päivämäärät oikein.
+
+# Katso Myös:
+
+Jos haluat syventää tietojasi Gleamin päivämäärien vertailusta, katso seuraavat lähteet:
+
+1. Gleam Documentation: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
+2. Gleam GitHub: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam) 
+3. Gleam Date & Time Library: [https://gleam.run/stdlib/datetime.html](https://gleam.run/stdlib/datetime.html)

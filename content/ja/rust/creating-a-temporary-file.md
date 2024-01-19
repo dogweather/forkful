@@ -1,6 +1,6 @@
 ---
 title:                "一時ファイルの作成"
-html_title:           "Rust: 一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
 simple_title:         "一時ファイルの作成"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,34 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 何となぜ？
-一時ファイルの作成とは、プログラマーがプログラムの中で一時的に使用するためにファイルを作成することです。プログラマーたちは一時ファイルを作成することで、データを一時的に保存し、後で必要になった時に取り出すことができます。
+一時ファイルはプログラムが短時間だけ使用する、通常は隠されたファイルです。これらは主に大量のデータの一時的な保存場所として、または同時に多数のユーザーによるファイル書き込みを回避するために使われます。
 
-## 作り方：
+## 使い方:
+Rustで一時的なファイルを作成するには `tempfile` クレートが必要です。以下に基本的な使用方法を示します。
 ```Rust
-use std::fs::File;
-use std::io::prelude::*;
+use std::io::Write;
+use tempfile::tempfile;
 
-fn main() {
-    let mut temp_file = File::create("temp.txt").expect("Unable to create file");
-    write!(temp_file, "This is a temporary file.").expect("Unable to write to file");
-}
+let mut tmpfile = tempfile().unwrap();
+
+write!(tmpfile, "Hello world!").unwrap();
 ```
-```Rust
-use std::fs::File;
-use std::io::prelude::*;
+このコードは一時的なファイルを作成し、"Hello world!"と一つのメッセージを書き込みます。
 
-fn main() {
-    let temp_file = File::open("temp.txt").expect("Unable to open file");
-    let mut contents = String::new();
-    temp_file.read_to_string(&mut contents).expect("Unable to read file");
-    println!("{}", contents); // Output: "This is a temporary file."
-}
-```
+## ディープダイブ:
+昔ながらのプログラミング言語、例えば、CやPerlでは `tmpfile` 関数を使って一時ファイルを作成します。Rustはこの機能を `tempfile` クレートで提供し、より簡単かつ安全に一時ファイルを扱うことができます。
 
-## 詳細説明:
-一時ファイルの作成は、コンピューターの歴史が古く、メモリが限られていた時代に開発された手法です。しかし、現代のプログラムでも一時ファイルを使用することにより、実行速度やメモリの使用を最適化することができます。また、一時ファイルを使う代わりに、メモリ上でデータを処理する方法もありますが、一時ファイルの方が可読性や保守性が高いとされています。
+他の選択肢としては、自分で一時ファイルを管理することも可能ですが、安全性や便利性のためには `tempfile` の使用をお勧めします。
 
-## 関連情報:
-- [Rustのファイル操作](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [一時ファイルの使用例](https://www.cs.rutgers.edu/~pxk/416/notes/c-tutorials/demofile.html)
-- [プログラミングでの一時ファイルの効率的な使い方](http://www.codesynthesis.com/~boris/blog/2010/04/21/temporary-file-management/)
+`tempfile` クレートはOSの一時ディレクトリ（Windowsなら `C:\Users\YourName\AppData\Local\Temp` など）に一時ファイルを作成します。ファイル名はランダムに生成され、在中プロセスの終了と共に自動的に削除されます。
+
+## 参考資料:
+Rustの一時ファイル作成に関連する詳細な情報をお求めの方は、以下のリンクをご参照ください。
+
+- [tempfile - Github](https://github.com/Stebalien/tempfile)
+- [Rust Documentation](https://doc.rust-lang.org/std/fs/struct.File.html)
+- [Rustのファイル操作まとめ](http://rust-lang.github.com/book/ch12-02-reading-a-file.html)

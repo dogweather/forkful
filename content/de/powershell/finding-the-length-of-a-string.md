@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden."
-html_title:           "PowerShell: Die Länge eines Strings finden."
-simple_title:         "Die Länge eines Strings finden."
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -12,30 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Ermitteln der Länge eines Strings ist eine wichtige Aufgabe für Programmierer. Es bedeutet einfach, die Anzahl der Zeichen in einem Text zu finden. Dies ist hilfreich für viele verschiedene Zwecke, wie zum Beispiel die Validierung von Benutzereingaben oder das Formatieren von Ausgaben.
+Die Länge eines Strings zu finden (also die Anzahl der Zeichen), ist ein häufiger Aspekt der Programmierung. Sie steuert, von der Benutzereingabenverifizierung bis hin zur Datenmanipulation, viele Szenarien in praktisch allen Anwendungsbereichen.
 
-## Wie geht's:
+## So geht's:
 
-```powershell
-# Beispiel 1:
-$meinString = "Hallo, Welt!"
-$meinString.Length
-# Ausgabe: 12
+In PowerShell bestimmen wir die Länge eines Strings mit dem `.Length` Property:
 
-# Beispiel 2:
-$benutzereingabe = Read-Host "Bitte geben Sie Ihren Namen ein:"
-$benutzereingabe.Length
-# Eingabe: Max Mustermann
-# Ausgabe: 13
+```PowerShell
+$stringVariable = "Hallo Welt"
+$stringVariable.Length
 ```
 
-## Tiefes Eintauchen:
+Die Ausgabe wird `11` sein, weil "Hallo Welt" 11 Zeichen hat (inklusive Leerzeichen).
 
-Die Länge eines Strings zu finden ist keine neue Aufgabe. Es wurde schon seit den Anfängen des Programmierens verwendet. Früher mussten Programmierer möglicherweise eigene Funktionen erstellen, um die Länge eines Strings zu bestimmen. Heutzutage ist es jedoch in den meisten Sprachen eine integrierte Funktion. In PowerShell ist es die Eigenschaft "Length", die auf ein String-Objekt angewendet werden kann.
+## Deep Dive
 
-Es gibt auch alternative Methoden, um die Länge eines Strings zu ermitteln. Ein Beispiel ist die Verwendung von regulären Ausdrücken. Diese Methode erfordert jedoch etwas mehr Code und ist nicht so direkt wie die Verwendung der "Length"-Eigenschaft.
+Historisch gesehen hat das Auffinden von String-Längen seine Wurzeln in den frühen Tagen der Computerprogrammierung und ist in praktisch allen Programmiersprachen vorhanden. PowerShell nutzt ähnlich wie C# und Java das `.Length` Property, was an die gemeinsame Herkunft aus der C-Familie erinnert.
 
-## Siehe auch:
+Als Alternative zu `.Length` könnte man eine Funktion schreiben, die jeden Buchstaben im String durchläuft. Aber `.Length` ist effizienter und betont den objektorientierten Ansatz von PowerShell.
 
-- [Microsoft Dokumentation zur "Length"-Eigenschaft](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1#the-length-property)
-- [Tutorial zu regulären Ausdrücken in PowerShell](https://www.click-net.ch/leinweber/extremadura/powershell_fundgrube/powershell_numericals/powershell_regulare_ausdrucke_tut.htm)
+Das `.Length` Property wird tatsächlich von der System.String-Klasse in .NET zur Verfügung gestellt, auf die PowerShell zugreift. Daher ist dessen Verwendung extrem performant.
+
+## Siehe auch
+
+1. [Microsoft Docs: String.Length Property](https://docs.microsoft.com/de-de/dotnet/api/system.string.length?view=net-5.0)
+2. [About Strings in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
+3. [PowerShell String Manipulation](https://adamtheautomator.com/powershell-string-manipulation/)

@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग से दिनांक का विश्लेषण"
-html_title:           "C#: स्ट्रिंग से दिनांक का विश्लेषण"
-simple_title:         "स्ट्रिंग से दिनांक का विश्लेषण"
+title:                "एक स्ट्रिंग से तारीख पार्स करना"
+html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
+simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -12,30 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-प्रोग्रामर्स कभी-कभी तिथि को एक स्ट्रिंग से पार्स करने की जरूरत होती है। तिथि को स्ट्रिंग से पार्स करना एक तारीख को कंप्यूटर को समझने के लिए उपयोगी होता है।
+एक string से तारीख का पार्स करना मतलब होता है तारीख का डाटा जो टेक्स्ट (string) फॉर्मेट में है, उसे डेट फॉर्मेट में कन्वर्ट करना। यह तब करते हैं जब हमें टेक्स्ट फॉर्म की तारीख को किसी कम्प्यूटेशनल कार्य के लिए या किसी और तारीख, समय फंक्शन्स के साथ तुलना करने की जरूरत होती है।
 
-## कैसे करें:
+## कैसे :
 
-C# काड के भीतर, हम इस उदाहरण के माध्यम से सीखेंगे कि कैसे एक स्ट्रिंग से तिथि को पार्स कर सकते हैं।
+हम `DateTime.Parse` फंक्शन का उपयोग करके kisi string को डेट ऑब्जेक्ट में पार्स कर सकते हैं।
 
-```
-string date = "12/01/2021";
-DateTime convertedDate = DateTime.Parse(date);
-Console.WriteLine(convertedDate);
-```
-
-आउटपुट:
-```
-12/01/2021 12:00:00 AM
+```C#
+string date = "15/08/2023";
+DateTime parsedDate = DateTime.Parse(date);
+Console.WriteLine(parsedDate);
 ```
 
-## गहराई तक जाइए:
+उपरोक्त code का आउटपुट होगा:
 
-तिथि को स्ट्रिंग से पार्स करने की प्रक्रिया पिछले कुछ सालों में काफी आसान हो गई है। पहले, प्रोग्रामर्स को अपने कोड में तिथि फॉर्मेट को मैन्युअली सेट करना होता था। लेकिन अब, वे सिर्फ एक फ़ंक्शन का उपयोग करके स्ट्रिंग से तिथि को पार्स कर सकते हैं। अन्य विकल्पों में, कुछ प्रोग्रामिंग भाषाओं में यह काम करना कठिन हो सकता है जिससे समय और संसाधन बचाया जा सकता है। संसाधनों के साथ उपयोगर्ताओं को समय के दौरान परेशानियों से बचाने के लिए तिथि को स्ट्रिंग से पार्स करने एक उपयोगी तकनीक है।
+```C#
+08/15/2023 00:00:00
+```
+
+## गहराई में:
+
+1. **ऐतिहासिक संदर्भ**: C# में `DateTime.Parse` फ़ंक्शन का पहली बार .NET Framework 1.0 में उपयोग हुआ। यह string को DateTime टाइप में पार्स करता है।
+
+2. **विकल्प**: `DateTime.TryParse`, `DateTime.ParseExact`, और `DateTime.TryParseExact` इत्यादि प्रमुख विकल्प हैं। ये फ़ंक्शन्स भी string से date parse करने के लिए उपयोगी हैं, फ़र्क सिर्फ यह होता है कि ये कुछ विशेष प्रकरणों में उपयोग होते हैं।
+
+3. **क्रियान्वयन विवरण**: `DateTime.Parse` method एक टेक्स्ट स्ट्रिंग को पर्स करने के लिए सिस्टेम की कल्चर सेटिंग्स का उपयोग करती है। अगर तारीख की फॉर्मेट सिस्टम के कल्चर के अनुसार नहीं है, तो एक्सेप्शन generate होगी।
 
 ## देखें भी:
 
-अधिक जानकारी के लिए निम्नलिखित स्रोतों को देखें:
-- [How to: Convert String to DateTime](https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-convert-a-string-to-a-datetime)
-- [DateTime.Parse Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parse?redirectedfrom=MSDN&view=net-5.0#overloads)
-- [Parsing Date and Time Strings in .NET](https://www.codeproject.com/Articles/14743/Parsing-Date-and-Time-Strings-in-NET)
+- [DateTime.Parse Method (MS Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parse?view=net-6.0)
+- [.NET Date and Time Formats (MS Docs)](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
+- [DateTime.TryParse Method (MS Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tryparse?view=net-6.0)

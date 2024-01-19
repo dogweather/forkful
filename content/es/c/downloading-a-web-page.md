@@ -1,6 +1,6 @@
 ---
 title:                "Descargando una página web"
-html_title:           "C: Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "C"
 category:             "C"
@@ -12,71 +12,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Qué y por qué?
 
-Descargar una página web es un proceso en el que el código de una página (HTML, CSS, Javascript, etc.) se recibe y se guarda en el ordenador para poder ser visualizado por el usuario. Los programadores lo hacen para poder analizar el código, realizar cambios o utilizarlo en sus propios programas.
+Descargar una página web es un proceso donde un programa recupera el contenido de una URL específica y lo almacena localmente. Los programadores realizan esto para analizar la estructura de la página web, revisar su contenido, realizar pruebas de rendimiento, entre otras tareas.
 
-## Cómo:
+## Cómo hacerlo:
 
-Para descargar una página web en C, se puede utilizar la librería `curl`. Aquí hay un ejemplo básico de cómo descargar una página y guardarla en un archivo:
+Las siguientes líneas de código muestran cómo puedes descargar una página web utilizando la librería libcurl de C.
 
-```
+```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-// Función para guardar el contenido de la página en un archivo.
-// Se llama cada vez que se recibe un dato.
-static size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream)
+int main(void)
 {
-  size_t written = fwrite(ptr, size, nmemb, (FILE *)stream);
-  return written;
-}
+  CURL *curl;
+  CURLcode res;
 
-int main()
-{
-  // Inicializar el objeto curl.
-  CURL *curl = curl_easy_init();
+  curl_global_init(CURL_GLOBAL_DEFAULT);
 
+  curl = curl_easy_init();
   if(curl) {
-    // Establecer la URL a descargar.
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.ejemplo.com");
 
-    // Establecer la función para guardar los datos.
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+    res = curl_easy_perform(curl);
 
-    // Indicar el archivo en el que se guardarán los datos.
-    FILE *file = fopen("pagina.html", "w+");
-    if(file) {
-      curl_easy_setopt(curl, CURLOPT_WRITEDATA, file);
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() error: %s\n",
+              curl_easy_strerror(res));
 
-      // Realizar la descarga.
-      CURLcode result = curl_easy_perform(curl);
-
-      // Comprobar si hubo algún error.
-      if(result != CURLE_OK)
-      {
-        printf("Error al descargar la página: %s\n",
-               curl_easy_strerror(result));
-      }
-
-      // Cerrar el archivo.
-      fclose(file);
-    }
-
-    // Limpiar el objeto curl.
     curl_easy_cleanup(curl);
   }
+
+  curl_global_cleanup();
 
   return 0;
 }
 ```
+Si todo va bien, este programa descargará la página https://www.ejemplo.com y la enviará a la salida estándar.
 
-Si se ejecuta este programa, se descargará la página `https://www.example.com` y se guardará en un archivo llamado `pagina.html`.
+## Profundizando
 
-## Profundizando:
+Primero, necesitamos agregar un poco de contexto histórico sobre la necesidad de descargar páginas web. Desde la invención de la web, los programadores han necesitado trabajar con datos online. Hemos venido utilizando diferentes técnicas - desde el básico cliente de telnet hasta el elegante libcurl de hoy.
 
-La librería `curl` se encuentra ampliamente disponible en diferentes sistemas operativos y es una buena opción para descargar páginas web en C. Sin embargo, también existen otras alternativas como `libmicrohttpd` o `libcurlpp` que ofrecen una interfaz más fácil de utilizar con C++. Además, es importante tener en cuenta que descargar páginas web puede ser un proceso algo complejo debido a cuestiones como autenticación o manejo de cookies.
+Hay varias maneras de descargar una página web en C, `libcurl` siendo solo una de ellas. `wget` es un programa de línea de comandos que puedes usar para descargar una página web o `WinInet` si estás programando en Windows.
 
-## Ver también:
+En realidad, cuando descargamos una página web, estamos haciendo una petición GET a un servidor web. Este responde con el HTML de la página, que nuestros programas pueden interactuar. Saber estos detalles te ayudará a entender y solucionar problemas que puedes enfrentar durante el proceso.
 
-- Documentación oficial de `libcurl`: https://curl.haxx.se/libcurl/
-- Tutorial de descarga de páginas web con C: https://www.mkssoftware.com/docs/man3/curl_easy_setopt.3.asp
-- Otras alternativas para descargar páginas web en C: https://www.slant.co/topics/3387/~libraries-for-downloading-any-online-content-with-c
+## Ver también
+
+Aquí están algunos enlaces útiles para que puedas explorar más a fondo:
+
+- [Get a file using the HTTP protocol - libcurl](https://curl.se/libcurl/c/http3.html)
+- [Windows HTTP Services (WinHTTP)](https://docs.microsoft.com/en-us/windows/win32/winhttp/about-winhttp)
+- [GNU Wget Manual](https://www.gnu.org/software/wget/manual/wget.html)

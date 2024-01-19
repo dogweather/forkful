@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligne to datoer"
-html_title:           "C++: Sammenligne to datoer"
-simple_title:         "Sammenligne to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,71 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
 ## Hva & Hvorfor?
-Sammenligning av to datoer er en vanlig programmeringsoppgave for å sjekke om en dato kommer før eller etter en annen dato. Dette er nyttig for å sortere eller filtrere data eller for å utføre spesielle handlinger basert på datoer.
+Sammenligne to datoer handler om å bestemme hvilken dato som kommer før eller etter. Dette er nyttig for å sortere hendelser, beregne tidsintervaller, og ved å bestemme utløpsdatoer.
 
-## Hvordan:
-En enkel måte å sammenligne datoer i C ++ er å bruke ```std::chrono``` biblioteket. Følgende eksempel viser hvordan du kan sammenligne to datoer og sjekke om den ene kommer før eller etter den andre:
-```
+---
+## Hvordan gjør man det:
+Her er et enkelt eksempel på hvordan sammenligne to datoer i C++ ved hjelp av ```std::chrono``` biblioteket og ```std::time_point```:
+
+```C++
 #include <iostream>
 #include <chrono>
 
-using namespace std::chrono;
-
-int main()
-{
-    // Opprett to datoer
-    auto birthday = year_month_day{2010_y / 8 / 10};
-    auto today = year_month_day{2020_y / 4 / 15};
-
-    // Sjekk om bursdagen kommer før eller etter i dag
-    if (birthday < today) {
-        std::cout << "Bursdagen din har allerede vært i år." << std::endl;
+void sammenligneDatoer(std::chrono::system_clock::time_point dato1, std::chrono::system_clock::time_point dato2) {
+    if (dato1 == dato2) {
+        std::cout << "Datoene er like." << std::endl;
+    } else if (dato1 < dato2) {
+        std::cout << "Dato 1 er tidligere enn Dato 2." << std::endl;
     } else {
-        std::cout << "Du vil ha bursdag senere i år." << std::endl;
+        std::cout << "Dato 2 er tidligere enn Dato 1." << std::endl;
     }
+}
+
+int main() {
+    auto dato1 = std::chrono::system_clock::now();
+    auto dato2 = std::chrono::system_clock::now() + std::chrono::hours(24);
+
+    sammenligneDatoer(dato1, dato2);
 
     return 0;
 }
 ```
+__
+Kjører denne programmet vil resultere i:
+"Dato 1 er tidligere enn Dato 2."
 
-Output: 
-```
-Bursdagen din har allerede vært i år.
-```
-
+---
 ## Dypdykk:
-Før C ++ 11, var det vanlig å bruke ```ctime``` biblioteket for å håndtere datoer og tider. Dette biblioteket ble imidlertid ansett for å være tungvint og upålitelig. Med introduksjonen av ```std::chrono``` biblioteket, ble det mye enklere å håndtere datoer og tider på en nøyaktig måte.
+Historisk sett, ble dato sammenligning ofte gjort manuelt ved bruk av lammende, feilutsatte algoritmer. C++ standardbiblioteket inklusjoner som ```std::chrono``` modulerer kompleksiteten, eliminerer feilmarginen, og gjør dato-sammenligning langt mer intuitivt og mindre utsatt for feil.
 
-En annen måte å sammenligne datoer på er å bruke ```time_t``` og ```difftime``` funksjonen:
-```
-#include <iostream>
-#include <ctime>
+Alternativt, kan du bruke biblioteker som Boost for mer komplekse datatidsoperasjoner. Men for enkel dato sammenligning, anbefales ```std::chrono```.
 
-using namespace std;
+En dypere detalj om ```std::time_point```: Det er en klasse mal i C++ som representer et tidspunkt. En ```std::time_point``` instans har en nulltidsperiode, som er systemklokkes startpunkt (vanligvis er dette Unix Epoch: 01.01.1970).
 
-int main()
-{
-    // Opprett to datoer
-    time_t birthday = mktime(&tm{ 0, 0, 0, 8, 9, 2010 });
-    time_t today = mktime(&tm{ 0, 0, 0, 4, 15, 2020 });
-
-    // Sammenlign datoer
-    if (difftime(birthday, today) < 0) {
-        std::cout << "Bursdagen din har allerede vært i år." << std::endl;
-    } else {
-        std::cout << "Du vil ha bursdag senere i år." << std::endl;
-    }
-
-    return 0;
-}
-```
-
-Output: 
-```
-Bursdagen din har allerede vært i år.
-```
-
-## Se også:
-- [C ++ reference for dato og tid](https://en.cppreference.com/w/cpp/chrono)
-- [Introduksjon til dato og tid i C ++](https://www.moderncplusplus.com/2018/09/18/introduction-to-date-and-time-in-cpp/)
+---
+## Se Også:
+1. [cppreference :: std::chrono](https://en.cppreference.com/w/cpp/chrono)
+2. [cppreference :: std::time_point](https://en.cppreference.com/w/cpp/chrono/time_point)
+3. [Boost Library](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)

@@ -1,6 +1,6 @@
 ---
 title:                "새 프로젝트 시작하기"
-html_title:           "C: 새 프로젝트 시작하기"
+html_title:           "Arduino: 새 프로젝트 시작하기"
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "C"
 category:             "C"
@@ -10,29 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인고? 그래서 왜?
+## 왜 & 왜? 
+새 프로젝트를 시작한다는 것은 새로운 아이디어나 문제를 해결하기 위한 소프트웨어를 처음부터 개발하는 것을 말합니다. 프로그래머들은 학습, 기술 향상, 비즈니스 문제 해결, 혹은 단순한 창조력 표현을 위해 이를 수행합니다.
 
-새 프로젝트를 시작하는 것은 단순히 새로운 코드를 작성하는 것입니다. 프로그래머들은 이를 통해 새로운 무언가를 만들고 동작 시키기 위해 코드를 구현하기 때문에 새로운 프로젝트를 시작합니다.
-
-## 방법:
+## 어떻게:
+새로운 C 프로젝트를 시작하는 가장 기본적인 방법을 보겠습니다.
 
 ```C
 #include <stdio.h>
 
-int main(){
-  printf("Hello world!");
-  return 0;
+int main() {
+    printf("Hello, World!\n");
+    return 0;
 }
 ```
+이 코드를 실행하면 다음과 같은 출력을 확인할 수 있습니다:
+```C
+Hello, World!
+```
 
-예제 코드를 보면 알 수 있듯이 새 프로젝트를 시작하려면 ```main()``` 함수를 정의하고 해당 함수 내에 코드를 작성해야 합니다. 이 예제에서는 "Hello world!"라는 메시지를 출력하는 간단한 프로그램을 작성하였습니다. ```return 0;```은 함수의 종료를 나타내는 코드로, 이는 새로운 프로젝트를 실행하고 종료하기 위해 필요합니다.
+## 딥다이브
+1. 이스토리컬 콘텍스트: C언어는 1972년에 벨 연구소에서 개발되었습니다. 이후로 많은 애플리케이션 및 시스템 프로그래밍 언어의 기반으로 사용되었습니다.
+2. 대체제: C언어를 대신할 수 있는 다양한 프로그래밍 언어가 있습니다. Java, Python, C++, Rust 등이 있으며, 각 언어는 특정 문제를 해결하는 데 있어 유용성을 가지고 있습니다.
+3. 구현 세부사항: C언어 프로젝트는 보통 컴파일러를 통해 실행 가능한 바이너리를 생성합니다. 이 프로세스는 소스 코드, 컴파일, 링크 등 여러 단계로 구성됩니다.
 
-## 깊이 파고들기:
-
-새 프로젝트를 시작하는 아이디어는 1970년대부터 시작되었으며, 프로그래밍 언어의 발전과 함께 변화하였습니다. 현재 가장 널리 사용되는 언어 중 하나인 C 언어는 다양한 플랫폼에서 동작하는 언어로, 새 프로젝트를 시작하기에 최적화된 언어입니다. 또한 다른 언어와 연동되어 사용되기도 합니다.
-
-## 추가로 읽어볼만한 것들:
-
-- C 언어 자습서: https://www.tutorialspoint.com/cprogramming/
-- C 언어 공식 문서: https://devdocs.io/c/
-- C 프로젝트 예제: https://github.com/tuvtran/project-based-learning#c
+## 참고 자료
+1. C 프로그래밍 언어에 대한 깊은 이해를 위해, Dennis Ritchie의 ["C 프로그래밍 언어"](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628)를 추천합니다.
+2. 이집트의 프로그래머인 Joel Spolsky가 쓴 ["스택 오버플로우: 가이드"] (https://www.amazon.com/Joel-Software-Occasionally-Developers-Designers/dp/1430209879)도 유익한 참고자료가 될 수 있습니다.

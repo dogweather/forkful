@@ -1,6 +1,6 @@
 ---
 title:                "Creating a temporary file"
-html_title:           "Swift recipe: Creating a temporary file"
+html_title:           "C# recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,40 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Creating a temporary file is a way for programmers to store data that is only needed temporarily. It allows them to perform tasks such as saving user input or storing intermediate results without having to create permanent files, which can clutter up a project and be prone to errors.
 
-## How to:
-Creating a temporary file in Swift is a simple process. First, we need to import the ```Foundation``` framework, which contains the necessary functions. Then, we can use the ```NSTemporaryDirectory()``` function to get the path for the temporary directory on the user's device. After that, we can use this path in conjunction with the ```URL(fileURLWithPath: String)``` initializer to create a temporary file URL. Finally, we can use the ```write(to:atomically:encoding:)``` method to write data to the temporary file and the ```delete(atPath:)``` method to delete it when it is no longer needed.
+Creating a temporary file in Swift allows you to store binary or text data for short-term processing. Programmers do this when they need transient, disposable data storage to manage memory usage or to share data between different parts of an application without cluttering the persistent storage.
 
-Here's an example of a function that creates a temporary file and saves a string to it:
+## How To:
+
+Here's how you can create a temporary file in Swift. Throw this snippet in your own function or playground to make a temporary file:
 
 ```Swift
-func createTempFile() {
-    // Import Foundation framework
-    import Foundation
-    
-    // Get temporary directory path
-    let temporaryDirectory = NSTemporaryDirectory()
-    
-    // Create temporary file URL
-    let tempFileURL = URL(fileURLWithPath: temporaryDirectory).appendingPathComponent("tempFile.txt")
-    
-    // Write string to file
-    try? "This is a temporary file.".write(to: tempFileURL, atomically: true, encoding: .utf8)
-    
-    // Delete file
-    try? FileManager.default.deleteItem(at: tempFileURL)
+import Foundation
+
+let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(NSUUID().uuidString)
+
+do {
+    try "Hello World!".write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+} catch {
+    print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
 }
+print("File Path: \(fileURL.path)")
 ```
 
-## Deep Dive:
-The concept of temporary files has been around since the early days of computing. In the past, they were used to store data when main memory (RAM) was limited. However, with the increasing availability of memory and storage space, the use of temporary files has shifted towards being a programming convenience.
+This will create and write "Hello World!" to a temporary file. The console will print the file path:
 
-There are alternatives to creating temporary files, such as using in-memory data structures or storing data in databases. However, temporary files can still be useful in certain situations, such as when dealing with large amounts of data or when the data is needed across different platforms.
+```Swift
+File Path: /var/folders/.../temp_uuid
+```
 
-When creating a temporary file, it is important to consider security measures to protect the sensitive information it may contain. This can include setting appropriate permissions and securely deleting the file after use.
+## Deep Dive
 
-## See Also:
-- [Apple Developer Documentation: Foundation](https://developer.apple.com/documentation/foundation)
-- [Stack Overflow: How do I create a temporary file using Swift?](https://stackoverflow.com/questions/43780166/how-do-i-create-a-temporary-file-using-swift)
-- [SwiftLee: Random Numbers And Temp Files In Swift](https://www.avanderlee.com/swift/temp-files-swift/)
+Historically, websites used session cookies to store temporary data. Today, we have the power of Swift's Foundation framework to manage temporary files locally. This non-persistent storage improves application performance by reducing read/write operations on the main storage disk.
+
+However, you aren't tied to just files! You can use Swift's `UserDefaults` for simpler, infrequent temporary data storage needs. It's easier but less secure and less suitable for larger data.
+
+The `NSTemporaryDirectory()` function returns a string path to the system's temporary directory. The `NSUUID().uuidString` generates a unique identifier for the file name. The `write(to:atomically:encoding:)` method then writes directly to the file at the path.
+
+## See Also
+
+For more information on managing files and directories with Swift, check out Apple's documentation: [Apple Developer Documentation: FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+
+To understand `URL` in detail, head over to: [Apple Developer Documentation: URL](https://developer.apple.com/documentation/foundation/url)
+
+Learn about the ephemeral nature of temporary files: [Creating Temporary Files in Swift](https://stackoverflow.com/questions/30743408/check-for-file-and-delete-it-swift-programming)

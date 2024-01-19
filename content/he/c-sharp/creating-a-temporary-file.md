@@ -10,46 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-איך ליצור קובץ זמני בשפת C#
+## מה זה ולמה?
 
-## מה & למה?
+יצירת קובץ זמני היא שיטה שבה מתכנת מייצר קובץ לשימוש שיטתי ובזמן הקצר. זה שימושי כאשר רוצים לאחסן נתונים לאורך זמן כזה שלא אורך זמן הישיבה. 
 
-ישנם מצבים בתכנות כאשר יש צורך ליצור קובץ זמני שנמחק בסופו של דבר. קובץ זמני הוא קובץ שנוצר ומתווסף למערכת הקבצים של המחשב באופן זמני ונמחק כאשר התוכנית מפסיקה לרוץ. בדרך כלל, תוכנית תשתמש בקובץ זמני כדי לשמור נתוני מתמש לזמן מוגבל או כדי לבצע פעולות זמניות בזמן ריצתה.
-
-## איך לעשות זאת:
-
-כדי ליצור קובץ זמני בשפת C#, ניתן להשתמש בפונקציה `GetTempFileName()` מהמחלקה `Path`. למשל:
+## הדרכה
 
 ```C#
-string tempFileName = Path.GetTempFileName();
-Console.WriteLine(tempFileName);
-```
+using System.IO;
 
-שורת הקוד הזו תדפיס את הנתיב של הקובץ הזמני שנוצר למסך. הנתיב יהיה משתנה על פי מערכת ההפעלה ועל פי הקישוריות של השרת.
-
-מעבר להשתמש בפונקציה `GetTempFileName()`, ניתן להשתמש גם במחלקה `TempFile`, שתסייע ליצור ולנהל קבצים זמניים. לדוגמה:
-
-```C#
-using (TempFile tempFile = new TempFile())
+public string CreateTempFileWithText()
 {
-    string fileName = tempFile.Path;
-    Console.WriteLine(fileName);
+    string tempPath = Path.GetTempPath();
+    string tempFile = Path.GetTempFileName();
+
+    File.WriteAllText(tempFile, "זהו קובץ זמני.");
+    
+    return tempFile;
 }
 ```
 
-שורה זו תדפיס את הנתיב של הקובץ הזמני שנוצר. הנתיב ישתנה לפי מערכת ההפעלה וגם לפי הקישוריות של השרת. כאשר הבלוק `using` מפסיק לרוץ, הקובץ הזמני ימחק אוטומטית.
+בהנחה שהפונקציה נקראת, היא תייצר קובץ במיקום הזמני של המערכת ותכתוב את מחרוזת "זהו קובץ זמני." בתוך הקובץ.
 
-## חפירה מעמוק:
+## שירותי מידע 
 
-ישנם מספר דרכים ליצור קובץ זמני בשפת C# המתבססת על מחלקות אחרות כמו `FileStream` ו-`File`. אם יש צורך בקובץ זמני ריק, ניתן להשתמש במחלקה `FileStream` כדי ליצור קובץ ולאחר מכן למחוק אותו. עם זאת, הפתרון הזה אינו מתאים לכל המקרים ובמצבים מסוימים עדיף להשתמש בפונקציה `GetTempFileName()`.
+נוסדה במקור במערכת ההפעלה דוס כדי לאפשר לתוכנות לדרוס נתונים לא חוזרים ולא נשנים (כמו לוגים). חלופות כוללות את שימוש בממשקי משתמש גרפיים לבחינה של נתונים לאורך זמן הישיבה, אך יצירת קבצים זמניים משמשת את המטרה יעילות. בעוד אירוניה, מרבית המערכות ההפעלה היום מנהלות קבצים זמניים באופן אוטומטי כך שהמתכנת לא צריך להיות מודע להם.
 
-בנוסף, כאשר יש צורך ליצור קובץ זמני מתוך קבצים אחרים, ניתן להשתמש בפונקציות כמו `Copy()` ו- `Replace()` כדי להעתיק תוכן מקובץ קיים לקובץ זמני.
+## ראה גם
 
-## ראה גם:
-
-למידע נוסף על יצירת קבצים זמניים בשפת C#, ניתן לעיין במסמכים המובנים הבאים:
-
-- [פונקציית GetTempFileName() במאמר הרשמי של Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0)
-- [מחלקה TempFile במאמר הרשמי של Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.io.tempfile?view=net-5.0)
-- [יצירת קבצים זמניים עם ה-FileTempStream Class ב-Code Project](https://www.codeproject.com/Articles/5042/TemporaryFileStream-Class)
-- [פתרונות אחרים ליצירת קבצים זמניים ב-C# ב-Stack Overflow](https://stackoverflow.com/questions/2146292/creating-temporary-files-in-c-sharp/2146438)
+Path.GetTempFileName(): https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename
+Path.GetTempPath(): https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettemppath

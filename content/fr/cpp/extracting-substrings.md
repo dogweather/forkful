@@ -1,6 +1,6 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "C++: Extraction de sous-chaînes"
+html_title:           "Arduino: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "C++"
 category:             "C++"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faisons-nous?
+## Quoi & Pourquoi?
+Extraire des sous-chaînes c'est récupérer une certaine partie d’une chaîne de caractères. Les programmeurs le font pour traiter des données à petite échelle, comme analyser une adresse e-mail ou un fichier de journal.
 
-L'extraction de sous-chaînes est une technique de programmation permettant de récupérer une partie spécifique d'une chaîne de caractères. Cela peut être utile lors de la manipulation de données volumineuses ou lors de la recherche de motifs spécifiques dans une chaîne de texte. Les programmeurs utilisent cette méthode pour simplifier leur code et le rendre plus efficace.
+## Comment faire:
+Utilisons la fonction `substr()` de la bibliothèque standard de C++. Voir l'exemple en dessous:
 
-## Comment le faire:
+```C++
+#include <iostream> 
+#include <string> 
 
-Voici un exemple simple de code en C ++ pour extraire une sous-chaîne à partir d'une chaîne de caractères:
+int main() 
+{ 
+    std::string s = "Programmation C++"; 
 
-```
-#include <iostream>
-#include <string>
+    std::string s1 = s.substr(0, 13); 
+    std::cout << s1 << '\n'; 
+    // Résultat : Programmation 
 
-using namespace std;
-
-int main() {
-    string chaine = "Bonjour les amis!";
-    string sous_chaine = chaine.substr(7, 5); // extrait les caractères à partir de l'index 7 pour une longueur de 5 caractères
-    cout << sous_chaine << endl; // affiche "les a"
-    return 0;
-}
+    std::string s2 = s.substr(14, 17); 
+    std::cout << s2 << '\n';
+    // Résultat : C++
+} 
 ```
 
 ## Plongée en profondeur:
-
-L'extraction de sous-chaînes est une fonctionnalité couramment utilisée parmi les langages de programmation modernes. Elle a été introduite pour la première fois en 1972 dans le langage Snobol4. Il existe également d'autres méthodes pour extraire des sous-chaînes, telles que l'utilisation de pointeurs ou de boucles. Cependant, la méthode `substr()` en C ++ est considérée comme plus simple et plus efficace. Elle est largement utilisée dans des tâches de traitement de texte, telles que la recherche et le remplacement de mots.
+La méthode `substr()` a été introduite dans le standard C++98. Il existe des alternatives pour extraire des sous-chaînes. La bibliothèque Boost propose également des méthodes pour extraire des sous-chaînes. Quant à l'implémentation, `substr()` utilise l'algorithme de copie pour construire la nouvelle chaîne.
 
 ## Voir aussi:
+Pour plus d'informations, visitez ces ressources liées:
 
-Pour plus d'informations sur l'extraction de sous-chaînes en C ++, vous pouvez consulter les sources suivantes:
-
-- [Documentation officielle de C++ pour la fonction `substr()`](https://www.cplusplus.com/reference/string/string/substr/)
-- [Tutoriel pour l'extraction de sous-chaînes en C++](https://www.geeksforgeeks.org/substring-in-cpp/)
-- [Exemples pratiques d'utilisation de la fonction `substr()` en C++](https://www.techiedelight.com/extract-substring-string-cpp/)
+1. [Documentation officielle de substr()](http://www.cplusplus.com/reference/string/string/substr/)
+2. [Bibliothèque Boost C++](https://www.boost.org/doc/libs/)
+3. [C++ Standard Library](http://www.cplusplus.com/reference/string/string/)

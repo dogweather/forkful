@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczęcie nowego projektu"
-html_title:           "Elm: Rozpoczęcie nowego projektu"
-simple_title:         "Rozpoczęcie nowego projektu"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,33 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Po co?
+## Co i dlaczego?
 
-Tworzenie nowego projektu to nic innego jak rozpoczęcie pracy nad nowym programem. Programiści robią to w celu stworzenia czegoś nowego, rozwiązania danego problemu, lub po prostu z ciekawości i chęci nauki. 
+Rozpoczęcie nowego projektu to proces tworzenia od podstaw skomplikowanej aplikacji lub strony internetowej w języku Elm. Programiści robią to, aby zrozumieć i wykorzystać w pełni możliwości tego języka, a także stworzyć rozwiązania spełniające konkretne wymagania klientów.
 
 ## Jak to zrobić:
 
-Elm ma wbudowane narzędzia, które ułatwiają rozpoczęcie nowego projektu. Wystarczy użyć komendy `elm init`, a Elm automatycznie stworzy podstawową strukturę projektu w wybranej przez nas lokalizacji. Następnie, dodajemy nasz kod do pliku `Main.elm` i wywołujemy go w funkcji `main`, którą Elm automatycznie uruchamia przy starcie projektu.
+Do rozpoczęcia nowego projektu w Elm używamy narzędzia `elm-init`. Oto przykład kodu i wyniku:
 
 ```Elm
-module Main exposing (main)
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        , view = view
-        }
+cd ~/MojeProjekty
+elm init
 ```
 
-To wszystko! Teraz można zacząć pisać swój program.
+Twoje wyjście będzie wyglądać mniej więcej tak:
 
-## Głębszy zanurzenie:
+```
+Here is my plan:
 
-Elm jest stworzonym przez Evana Czaplickiego językiem programowania funkcyjnego, który skupia się na prostocie, wydajności i skalowalności. Alternatywami dla Elm są takie języki jak JavaScript, Python czy Ruby, jednak Elm jest w stanie połączyć cechy tych języków, oferując jednocześnie silny system typów i narzędzia do tworzenia aplikacji internetowych. Implementacja nowego projektu w Elm jest prosta i intuicyjna, więc możesz zacząć pisać swój kod od razu.
+    Initialize a new Git repo in ~/MojeProjekty?
+    │
+    └─> Yes
+        │
+        └─> Ok. I created an "elm.json" file for you.
+```
 
-## Zobacz także:
+## Pogłębione spojrzenie:
 
-Jeśli chcesz dowiedzieć się więcej o języku Elm, możesz przeczytać oficjalną dokumentację na stronie [elm-lang.org](https://elm-lang.org/). Możesz też wypróbować swoje umiejętności na platformie [ellie-app.com](https://ellie-app.com/), gdzie możesz pisać i testować swój kod Elm online. Jeśli potrzebujesz wsparcia lub chcesz porozmawiać z innymi programistami, dołącz do społeczności Elm na [elmlang.slack.com](https://elmlang.slack.com/).
+Rozpoczęcie projektu w Elm to nie tylko pisanie kodu, ale także zrozumienie, jak język funkcjonuje. Elm wywodzi się z języków funkcyjnych, takich jak Haskell, i jest przeznaczony do tworzenia bezpiecznych, wydajnych aplikacji internetowych. 
+
+Jednym z alternatywnych podejść jest użycie frameworków JavaScript, takich jak React czy Angular. Elm jest jednak znacznie bardziej bezpieczny, łatwiej przewiduje błędy na etapie kompilacji i zapewnia lepszą wydajność.
+
+Szczegółem implementacyjnym, który warto rozważyć, jest to, że Elm kompiluje cały swój kod do JavaScriptu, co umożliwia łatwe wdrożenie go na dowolnej stronie internetowej. Elm ma również własne narzędzia, takie jak `elm reactor` i `elm make`, które pomagają w procesie tworzenia kodu.
+
+## Zobacz też:
+
+- Oficjalna dokumentacja Elm: https://elm-lang.org/docs
+- Przewodnik po Elm: https://guide.elm-lang.org/
+- Repozytorium Elm na GitHub: https://github.com/elm/elm-lang.org
+- Kurs Elm na freeCodeCamp: https://www.freecodecamp.org/news/an-intro-to-elm-programming-language/

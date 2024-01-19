@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till små bokstäver"
-html_title:           "C: Omvandla en sträng till små bokstäver"
-simple_title:         "Omvandla en sträng till små bokstäver"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,31 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att konvertera en sträng till gemener (lower case) är när man ändrar alla stora bokstäver till små bokstäver. Detta kan vara användbart när man vill jämföra strängar utan att skilja mellan stora och små bokstäver, eller om man vill se till att all text skrivs ut enhetligt. Programmers använder vanligtvis denna funktion för att förenkla och standardisera sin kod.
 
-## Så här:
-Här är ett exempel på hur man konverterar en sträng till gemener med hjälp av den inbyggda funktionen `tolower()`:
+Att konvertera en sträng till gemener innebär att ändra alla dess versala tecken till gemener. Programmerare gör detta för att ska kunna jämföra strängar oavsett om de är skrivna med stora eller små bokstäver.
+
+## Så här gör du:
+
+Här är en enkel funktion för att konvertera en sträng till gemener i C.
 
 ```C
-#include <stdio.h>
-#include <ctype.h>
+#include <ctype.h> 
+#include <stdio.h> 
 
-int main() {
-    char str[] = "Hej Världen!";
-    
-    for (int i = 0; str[i] != '\0'; i++) {
-        printf("%c", tolower(str[i]));
-    }
-    
-    return 0; 
-}
+void tillGemener(char *str) 
+{ 
+   for(int i = 0; str[i]; i++){ 
+      str[i] = tolower(str[i]); 
+   } 
+} 
+
+int main() 
+{ 
+   char str[] = "HeJ SaMMaRlUnDa"; 
+   tillGemener(str); 
+   printf("%s\n", str); 
+   return 0; 
+} 
 ```
-Output:
-`hej världen!`
 
-## Djupdykning:
-Konvertering av strängar till gemener har funnits i programmering sedan de första programmeringsspråken som C utvecklades. Tidigare var det vanligt att man använde sig av funktionen `strlwr()` för att konvertera en sträng till gemener. Men med introduktionen av unicode, är standardbibliotekets funktion `tolower()` nu den föredragna metoden för att konvertera strängar till gemener. Det finns även andra sätt att konvertera strängar till gemener, som att iterera över varje tecken och jämföra det med dess gemena version, men det är en mer tidskrävande metod och därför inte lika vanligt förekommande.
+Output:
+
+```C
+hej sammarlunda
+```
+
+## Fördjupning:
+
+Att konvertera en sträng till gemener är inget nytt i programmering. Det har varit en nyttig funktion som funnits sedan de tidiga dagarna av programmeringsspråk. 
+
+En alternativ metod till`tolower()`i C är att manipulera ASCII-värdet av bokstäverna. Ascii-värdet för varje versal bokstav är 32 enheter mindre än dess gemena motsvarighet. 
+
+Detaljerna i implementationen varierar beroende på vilket programmeringsspråk du använder. I C, `tolower()`funciton är en del av `ctype.h` bibliotek. Det lopp genom varje tecken i strängen och omvandla det om det är en versal bokstav.
 
 ## Se även:
-- [Microsoft: strlwr()](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/strlwr-wcslwr-mbstolwr-mbslwr?view=vs-2019)
-- [GeeksforGeeks: Conversion of string to lower case in C/C++](https://www.geeksforgeeks.org/conversion-whole-string-uppercase-lowercase-using-stl-c/)
+
+För mer information, kolla in de här nödvändiga läsningarna:
+
+1. [C Library - <ctype.h>](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
+2. [C - Strings](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+3. [C Programming/Strings](https://en.wikibooks.org/wiki/C_Programming/Strings)

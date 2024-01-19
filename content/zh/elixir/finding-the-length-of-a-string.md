@@ -1,6 +1,6 @@
 ---
 title:                "查找字符串的长度"
-html_title:           "Elixir: 查找字符串的长度"
+html_title:           "Javascript: 查找字符串的长度"
 simple_title:         "查找字符串的长度"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是字符串长度？
-字符串长度是指一个字符串中包含的字符的个数。在编程中，字符串长度通常用来计算一个字符串的大小，并且经常作为程序的重要参数使用。
+## 什么和为什么？
 
-为什么程序员要计算字符串长度？
-在编程中，我们经常需要处理文本和字符串数据。为了正确地处理和操作这些数据，我们需要知道它们的长度。比如，当我们需要限制用户输入的字符串长度时，就需要计算字符串长度来确保它不会超出指定的范围。
+找到字符串的长度是计算和返回字符串中字符的数量。程序员这样做是因为他们需要在数据操作和条件判断等场景中知道字符串的准确长度。
 
-如何计算字符串长度？
-在Elixir中，我们可以使用内建函数 `String.length` 来计算字符串的长度，它会返回字符串中字符的个数。下面是一个简单的例子：
+## 如何操作：
 
+这是一个使用Elixir语言计算字符串的长度的例子：
 ```elixir
-sentence = "Hello, world!"
-String.length(sentence)
+string = "你好，世界！"
+IO.puts(String.length(string))
 ```
-
-这段代码将返回 `13`，因为这个字符串由13个字符组成。
-
-深入了解
-在历史上，计算字符串长度是一个非常耗时的操作，因为它需要遍历整个字符串来计算它的长度。但是在现代编程语言中，这个操作已经被高效地实现，所以我们可以在实际应用中使用它。
-
-除了使用 `String.length` 函数，我们也可以使用模式匹配来计算字符串的长度。比如，下面的代码会将字符串中的每个字符绑定到一个变量，并返回它们的长度：
-
+运行这个例子，返回的结果会是：
 ```elixir
-sentence = "Hello, world!"
-length = len(sentence)
-
-def len(""), do: 0
-def len(string), do: len(tl(string)) + 1
+6
 ```
+这是因为中文中的每一个字符被当作一个单位进行计算的。
 
-在这个例子中，我们利用了模式匹配的能力来递归地计算字符串的长度。这种方法在一些特定的场景下可能比使用 `String.length` 函数更快。
+## 深度探索
 
-此外，如果我们需要计算一个字符串的字节数（而不是字符数），我们可以使用 `String.length` 函数的另一个变体 `String.length_codepoints`。
+在字符串长度的实现上，Elixir的策略跟其他一些语言就不一样了，因为Elixir中的字符串其实是UTF-8编码的二进制序列，所以可以直接计算出字符串的长度。
 
-相关链接
-- [Elixir文档：String.length](https://hexdocs.pm/elixir/String.html#length/1)
-- [Elixir源码：string.ex](https://github.com/elixir-lang/elixir/blob/v1.10.0/lib/elixir/lib/string.ex)
+另外，Elixir也有其他的方式来得到字符串长度，如使用`byte_size`函数，但这个函数返回的是字符串的字节长度，而不是字符数量。例如：
+```elixir
+string = "你好，世界！"
+IO.puts(byte_size(string))
+```
+运行这个例子，返回的结果会是：
+```elixir
+18
+```
+这是因为每个中文字符使用UTF-8编码需要占用3个字节。
+
+## 另请参阅
+
+- Erlang Org: 关于Elixir的更多信息: [http://www.erlang.org/doc/man/erl.html](http://www.erlang.org/doc/man/erl.html)
+- Elixir Official Website: 关于字符串的更多操作: [https://elixir-lang.org/](https://elixir-lang.org/)

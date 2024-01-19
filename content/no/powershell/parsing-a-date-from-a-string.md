@@ -1,7 +1,7 @@
 ---
-title:                "Gjennomgå en dato fra en streng"
-html_title:           "PowerShell: Gjennomgå en dato fra en streng"
-simple_title:         "Gjennomgå en dato fra en streng"
+title:                "Tolke en dato fra en streng"
+html_title:           "Bash: Tolke en dato fra en streng"
+simple_title:         "Tolke en dato fra en streng"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,26 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor? 
-Parsing av datoer fra tekststrenger innebærer å konvertere en dato i tekstformat til et datobjekt som kan brukes i programmering. Dette kan være nyttig når du jobber med datoer i målrettede oppgaver som å sammenligne eller sortere.
+# Parsing av dato fra streng i PowerShell
 
-## Hvordan: 
-Her er et eksempel på hvordan du kan parse en dato fra en tekststreng i PowerShell:
-```PowerShell 
-Get-Date -Date '13/06/2021' -Format dd.MM.yyyy 
+## Hva & Hvorfor?
+Å parse en dato fra en streng betyr å tolke teksten til et datoobjekt. Dette gjør det mulig for en programmerer å manipulere dater, for eksempel sortere dem eller reformatere dem for bruk i et annet format.
+
+## Hvordan
+Det er flere metoder for å parse en dato fra en streng i PowerShell, men en vanlig metode er å bruke "ParseExact"-funksjonen i "DateTime"-klassen. Her er et eksempel:
+
+```PowerShell
+$strDato = "2023-02-23"
+$datoObjekt = [DateTime]::ParseExact($strDato, "yyyy-MM-dd", $null)
+Write-Output $datoObjekt
 ```
-Dette vil gi følgende resultat: 
+
+Dette vil gi ut følgende resultat:
+
+```PowerShell
+tirsdag 23. februar 2023 00:00:00
 ```
-13.06.2021 
+
+## Dypdykk
+Historisk sett har parsing av datoer fra strenger utgjort særlige utfordringer på grunn av mangfoldet av datoformater som er i bruk rundt om i verden.
+
+Alternativt til "ParseExact", kan du også bruke metoden "TryParse" i "DateTime"-klassen, som vil returnere en boolsk verdi avhengig av om konverteringen har lykkes eller ikke. Dette er ofte en tryggere metode å bruke, da det minsker sannsynligheten for uventede feil.
+
+```PowerShell
+$strDato = "23/02/2023"
+$isSuksess = [DateTime]::TryParse($strDato, [ref]$datoObjekt)
+Write-Output $isSuksess
+Write-Output $datoObjekt
 ```
-Som du kan se blir tekstdatoen '13/06/2021' konvertert til et datobjekt i ønsket format.
 
-## Dykk dypere: 
-Parsing av datoer fra strenger har vært en viktig del av programming siden tidlig av DATATRONIC datamaskiner på 1950- og 1960-tallet. Alternativene til parsing kan være manuell konvertering av datoer eller bruk av innebygde funksjoner i programmeringsspråket.
+Hvis strengen kan bli gjort om til en dato, vil dette gi 'True' og den parsed datoobjektet som output.
 
-Når du parser datoer i PowerShell, kan du bruke 'Get-Date' kommandoen med flere parametere for å tilpasse formatet og håndtere eventuelle feil som kan oppstå. Det kan være lurt å konsultere dokumentasjonen for mer informasjon og flere eksempler.
+## Se også
+For mer informasjon, se følgende lenker:
 
-## Se også: 
-For mer informasjon og eksempler om parsing av datoer fra tekststrenger i PowerShell, sjekk ut følgende ressurser: 
-- Datoogklokkeslett: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1  
-- Parsing datoer fra strenger i PowerShell: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/compare-object?view=powershell-7.1
+- Microsofts dokumentasjon på `ParseExact`: [https://docs.microsoft.com/dotnet/api/system.datetime.parseexact](https://docs.microsoft.com/dotnet/api/system.datetime.parseexact)
+- Microsofts dokumentasjon på `TryParse`: [https://docs.microsoft.com/dotnet/api/system.datetime.tryparse](https://docs.microsoft.com/dotnet/api/system.datetime.tryparse)
+- PowerShell Basics: Parsing Dates: [https://devblogs.microsoft.com/scripting/powertip-convert-string-to-datetime-with-powershell/](https://devblogs.microsoft.com/scripting/powertip-convert-string-to-datetime-with-powershell/)

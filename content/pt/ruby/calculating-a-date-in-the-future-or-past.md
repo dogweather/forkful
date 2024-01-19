@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Por Que?
 
-Calcular uma data no futuro ou passado é um processo comum em programação, no qual se determina uma data específica que está a determinada quantidade de tempo antes ou depois de outra data. Os programadores fazem isso para criar funcionalidades de agendamento ou para lidar com datas de uma forma mais dinâmica.
+Calcular uma data no futuro ou no passado é quando alteramos uma data atual para obter uma nova data, avançando ou retrocedendo certo número de dias, meses ou anos. Programadores fazem isso para resolver problemas que incluem marcar eventos, agendar tarefas e calcular prazos.
 
 ## Como fazer:
 
-```Ruby
-# Calcular a data atual
-puts Date.today
+O Ruby é equipado com uma classe `Date` prónica para manipulação de datas. 
 
-# Calcular a data daqui a 3 dias
-puts Date.today + 3
-
-# Calcular a data de 1 semana atrás
-puts Date.today - 7
-```
-
-Saída:
+Aqui está como você pode calcular uma data futura ou passada:
 
 ```Ruby
-# Data atual
-2021-06-29
+require 'date'
 
-# Data daqui a 3 dias
-2021-07-02
+# Calculando uma data futura
+date = Date.new(2021, 9, 1)
+future_date = date + 30
+puts future_date
+#=> 2021-10-01
 
-# Data de 1 semana atrás
-2021-06-22
+# Calculando uma data passada
+date = Date.new(2021, 9, 1)
+past_date = date - 30
+puts past_date
+#=> 2021-08-02
 ```
 
-## Mergulho profundo:
+## Mergulhando Fundo:
 
-Calculadora de datas é uma funcionalidade que tem sido usada há muito tempo em programação, desde os primórdios da computação. Hoje em dia, existem várias bibliotecas e métodos em diferentes linguagens de programação, incluindo Ruby, que facilitam e simplificam o processo de calcular datas no futuro ou passado. Além disso, algumas alternativas incluem utilizar timestamps ou realizar cálculos com intervalos de tempo específicos.
+As funções de data têm uma longa história na programação, remontando aos primeiros dias da linguagem COBOL na década de 1960. Em Ruby, a manipulação de datas foi facilitada com a classe `Date`, que é imutável - uma vez que uma instância é criada, ela não pode ser alterada, a implementação é thread-safe.
 
-## Veja também:
+Existem bibliotecas alternativas como `ActiveSupport::TimeWithZone` para lidar com zonas horárias, que não estão disponíveis na classe `Date`.
 
-Links relacionados:
+Quando adicionar ou subtrair dias, meses ou anos, é importante lembrar que o Ruby conta meses com 30 dias, o que pode resultar em comportamento inesperado em meses com mais ou menos de 30 dias.
 
-- [Documentação oficial do Ruby sobre DateTime] (https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)
-- [Tutorial sobre cálculos de datas em Ruby] (https://www.rubyguides.com/2019/08/ruby-date-time/)
-- [Outra biblioteca útil para cálculos de datas em Ruby] (https://github.com/alphagov/pension_date_helper)
+## Veja Também:
+
+- [Ruby API Dock - Date](https://apidock.com/ruby/Date)
+- [Ruby Guides - Ruby DateTime](https://www.rubyguides.com/2015/12/ruby-time-date-datetime/)
+- [Ruby Documentation - Calculations for Date](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)

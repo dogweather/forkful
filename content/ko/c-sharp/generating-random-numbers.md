@@ -1,7 +1,7 @@
 ---
-title:                "난수 생성"
-html_title:           "C#: 난수 생성"
-simple_title:         "난수 생성"
+title:                "랜덤 숫자 생성하기"
+html_title:           "Rust: 랜덤 숫자 생성하기"
+simple_title:         "랜덤 숫자 생성하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇이고 왜하세요?
 
-난수 생성은 무작위로 생성된 숫자들의 시퀀스입니다. 프로그래머들은 보안, 게임, 데이터 분석 등 다양한 분야에서 난수를 사용합니다.
+랜덤 숫자 생성은 예측 불가능한 숫자를 프로그램에서 만드는 것입니다. 프로그래머들은 게임, 시뮬레이션, 테스트 데이터 등에서 유용한 무작위성을 제공하기 위해 이를 사용합니다.
 
-# 방법:
+## 어떻게:
 
-```c#
-// 1부터 10까지 난수 생성
-Random random = new Random();
-int randomNumber = random.Next(1, 11);
-Console.WriteLine(randomNumber);
-// 출력: 7
+```C#
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Random random = new Random();
+        int randomNumber = random.Next(1, 101);
+        Console.WriteLine("생성된 랜덤 숫자는 {0}입니다", randomNumber);
+    }
+}
 ```
+이 코드를 실행하면 1과 100 사이의 랜덤 숫자 하나를 출력합니다.
 
-```c#
-// 주어진 배열에서 난수 생성
-int[] numbers = { 1, 2, 3, 4, 5 };
-Random random = new Random();
-int randomIndex = random.Next(0, numbers.Length);
-Console.WriteLine($"Random number from array: {numbers[randomIndex]}");
-// 출력: Random number from array: 3
-```
+## 깊은 탐구: 
 
-# 심층 분석:
+랜덤 숫자 생성은 1950년대부터 컴퓨터 과학에 적극적으로 사용되었습니다. 
 
-난수 생성에 대한 역사적 배경은 굉장히 흥미롭습니다. 초기에는 컴퓨터들이 무작위로 숫자들을 생성하기 위해 주사위를 사용했지만, 현재는 알고리즘을 사용하여 난수를 생성합니다. 다른 프로그래밍 언어에서도 난수를 생성하는 기능을 제공하지만, C#에서는 System.Random 클래스를 사용하여 더 쉽게 난수를 생성할 수 있습니다. 또한, 사용자가 지정한 시작값과 끝값 사이에서 난수를 생성할 수 있습니다.
+C#에서 `Random` 클래스 이외에도 보다 암호학적으로 안전한 `RNGCryptoServiceProvider` 클래스를 사용하여 랜덤 숫자를 생성할 수 있습니다. 
 
-# 관련 자료:
+`Random` 클래스에서 랜덤 숫자는 정해진 시드 값에 기반하여 생성되므로 완전히 랜덤하게 생성되는 것은 아닙니다. 그렇기 때문에 보안에 민감한 목적으로는 `RNGCryptoServiceProvider` 클래스를 사용하는 것이 더 적절합니다. 
 
-- https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.1: 난수 생성을 위한 Microsoft 공식 문서
-- https://www.tutorialspoint.com/csharp/csharp_random_numbers.htm: C#에서 난수 생성하는 방법에 대한 튜토리얼
-- https://stackoverflow.com/questions/2706500/why-do-we-need-a-random-class-object-in-c: C#에서 랜덤 클래스 객체를 사용해야 하는 이유에 대한 스택 오버플로우 질문 및 답변
+## 참고 자료:
+
+[System.Random (공식 Microsoft 문서)](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
+
+[System.Security.Cryptography.RNGCryptoServiceProvider (공식 Microsoft 문서)](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)

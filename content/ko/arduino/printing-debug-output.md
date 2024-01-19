@@ -1,7 +1,7 @@
 ---
-title:                "디버깅 출력하기"
-html_title:           "Arduino: 디버깅 출력하기"
-simple_title:         "디버깅 출력하기"
+title:                "디버그 출력을 인쇄하기"
+html_title:           "Clojure: 디버그 출력을 인쇄하기"
+simple_title:         "디버그 출력을 인쇄하기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 뭐고 왜? 
-디버그 출력(printing debug output)이란 무엇일까요? 이는 프로그래머들이 디버깅을 하는 동안 프로그램이 어떻게 동작하고 있는지를 확인하기 위해 사용되는 작업입니다. 디버그 출력은 에러를 추적하고 문제를 해결하는 데 매우 유용합니다. 
+## 무엇 그리고 왜?
 
-# 어떻게: 
-디버그 출력은 아두이노(Arduino)를 사용하여 매우 간단하게 수행할 수 있습니다. 아래 코드 블록을 참조하십시오. 
+디버그 출력은 실시간으로 코드의 동작을 통제하고 이해하는 방법입니다. 프로그래머들은 오류를 찾고 해결하며, 기능을 확인하기 위해 이를 사용합니다.
+
+## 어떻게 할까요:
+
+디버그 출력은 쉽게 가능합니다. 기본 Serial.println() 함수를 사용하여 세부 정보를 콘솔에 출력하면 됩니다.
 
 ```Arduino
+void setup() {
+    Serial.begin(9600); // 시작 시 시리얼 통신을 설정, 9600은 통신 속도
+}
 
-// 디버그 출력을 위한 시리얼 모니터를 설정합니다.
-Serial.begin(9600);
-
-// 디버그 출력을 하기 위해 "Hello World!" 메시지를 보냅니다.
-Serial.println("Hello World!");
-
+void loop() {
+    int sensorValue = analogRead(A0); // 센서에서 값을 읽음
+    Serial.println(sensorValue); // 시리얼 모니터에 값 출력
+    delay(200); // 200ms를 대기
+}
 ```
 
-위의 코드는 아두이노 보드에 연결된 시리얼 모니터를 사용하여 "Hello World!" 메시지를 출력하는 예제입니다. 메시지는 연결된 컴퓨터의 시리얼 포트로 전송되어 콘솔에 표시됩니다. 
+이 코드를 실행하면, 시리얼 모니터에 센서값을 출력하게 될 것입니다.
 
-# 더 깊게: 
-디버그 출력은 프로그래밍의 초창기부터 사용되어 왔습니다. 예전에는 프로그래머들이 디버그 시 메모리에 있는 변수 값을 확인하기 위해 물리적인 디바이스에 연결된 LED 등을 사용했습니다. 하지만 현재는 시리얼 모니터와 같은 디버그 도구를 사용하여 더욱 편리하게 디버깅을 할 수 있습니다. 또한 특정 조건에서만 디버그 출력을 활성화하거나 디버그 메시지의 레벨을 조절하는 등 다양한 방법으로 디버그 출력을 사용할 수 있습니다.
 
-# 더 많은 정보: 
-더 많은 정보를 원하시면 아래 링크를 참조하십시오. 
+## 깊이 들어가기:
 
-- https://learn.sparkfun.com/tutorials/serial-communication 현재 코드는 아두이노 IDE와 호환되도록 작성되었습니다.
+디버그 출력은 프로그래밍의 오랜 역사를 가지고 있으며, 처음에는 프로그램의 오류를 식별하고 수정하는 것이 주로 사용되었습니다. 
+
+검출도구나 시각적 디버거 같은 대안들이 있지만, 디버그 출력은 여전히 강력한 도구로 남아있습니다.
+
+동작은 단순합니다. Serial.begin()은 시리얼 포트를 연 후 시리얼 통신을 시작합니다. 그 다음 Serial.println() 함수를 이용하여 메시지를 출력합니다.
+
+
+## 참고자료:
+
+Arduino의 디버깅에 대한 추가 정보는 아래 링크를 참조하세요. https://www.arduino.cc/en/Serial
+
+디버그 전략에 대한 더욱 자세한 내용은 다음을 참조하세요. https://learn.adafruit.com/adafruit-arduino-lesson-6-digital-inputs/further-reading

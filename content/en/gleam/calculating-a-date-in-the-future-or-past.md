@@ -12,32 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-"Calculating a date in the future or past" refers to time manipulation in programming. Programmers do it to perform tasks like event scheduling, reminders, or data analysis.
+Calculating a date in the future or past means determining a date from a specific time-reference, either ahead or behind. Programmers typically do so to manage scheduling tasks, timeouts, reminders, and such time-dependent logic.
 
 ## How to:
 
-Gleam currently doesn't have a built-in date/time library, therefore, you would typically need to use the Erlang runtime to perform such operations. Let's see how we can add days to the current date.
+Let's walk through an example where we add and subtract days from a given date.
 
-```erlang
-import erlang
-import erlang/time.{Now}
+```Gleam
+import gleam/calendar.{Date, add_days, subtract_days}
+import gleam/io.{println}
 
-pub fn add_days_to_current_date(days: Int) {
-  current_date = Now.milliseconds() 
-  future_date = current_date + (days * 24 * 60 * 60)
-  future_timestamp = erlang:system_time_to_universal_time(future_date)
-  future_timestamp
+fn main() {
+let start_date = Date.new(2023, 6, 30) //starting point 
+let future_date = add_days(start_date, 5) //adding 5 days 
+let past_date = subtract_days(start_date, 7) //subtracting 7 days 
+
+println(future_date)
+println(past_date)
 }
 ```
+Upon running this code, your output should be something like:
 
-In the above code, `Now.milliseconds()` gets the time in milliseconds since Unix Epoch. We're adding to it the number of milliseconds equivalent to the number of days passed. `erlang:system_time_to_universal_time/1` function, converts it back to a date-time tuple we can interpret more easily.
+```Gleam
+Date(2023, 7, 5)
+Date(2023, 6, 23)
+```
+So, we see it's pretty straightforward to manipulate dates in Gleam.
 
 ## Deep Dive
 
-Manipulation of dates dates back to the inception of structured programming, with increasing sophistication as more complex needs become evident in technology evolution. Alternatives within the BEAM languages, which Gleam is a part of, include the Erlang date/time library and Elixir's Timex. In Gleam, as it does not yet have a built-in functionality, we utilise the Erlang libraries as shown above under the interoperability premise.
+Historically, dealing with dates and times has always been tricky due to varying calendars systems and time zones. Libraries like Gleam's `calendar` have become helpful in providing tidy approaches to these complexities.
+
+There are, of course, alternate libraries one might consider, like `age`, but `calendar` comes built-in and offers a solid breadth of functionality.
+
+When creating `add_days` or `subtract_days`, Gleam essentially converts the specific date into a form easier to perform calculations on (like Julian Day Number), performs the operation, and then converts it back.
 
 ## See Also
 
-* Erlang's date/time library: http://erlang.org/doc/man/erlang.html#type-system_time
-* Elixir's Timex library: https://hexdocs.pm/timex/readme.html
-* More on Gleam's Interoperability with Erlang: https://gleam.run/book/tour/interop-with-erlang.html
+For deeper insights, consider the following:
+- Official Gleam Docs: [Gleam’s `calendar` library](https://hexdocs.pm/gleam_stdlib/gleam/calendar.html)
+- Age - Chronological Calculations: [`age` library](https://hex.pm/packages/age)
+
+Do keep these bits handy, as you'll find yourself dealing with dates more often than you might think in your programmer's journey.

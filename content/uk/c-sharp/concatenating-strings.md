@@ -1,7 +1,7 @@
 ---
-title:                "З'єднання рядків"
-html_title:           "C#: З'єднання рядків"
-simple_title:         "З'єднання рядків"
+title:                "Конкатенація рядків"
+html_title:           "PHP: Конкатенація рядків"
+simple_title:         "Конкатенація рядків"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -12,38 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Що і чому?
 
-Конкатенацію рядків у програмуванні можна описати як об'єднання двох або більше рядків у один. Це часто використовується для створення більш складних рядків з існуючих частин. Програмісти зазвичай використовують конкатенацію рядків, щоб створити динамічні повідомлення, форматувати вивід або з'єднати дані з різних джерел.
+Конкатенація рядків - це спосіб об'єднання двох або більше рядків. Програмісти роблять це, щоб створити повніші рядки чи динамічно змінювати вміст рядка.
 
-## Як робити:
+## Як зробити:
+
+Нижче наведений приклад коду, який демонструє роботу з конкатенацією рядків у C#.
 
 ```C#
-// Приклад коду для конкатенації двох рядків у C#:
-string firstName = "Вася";
-string lastName = "Пупкін";
+string firstName = "Олександр";
+string lastName = "Іванов";
 string fullName = firstName + " " + lastName;
 
-// Результат:
-// fullName = "Вася Пупкін"
+Console.WriteLine(fullName);
 ```
 
-```C#
-// Приклад коду для конкатенації декількох рядків у C#:
-string language = "C#";
-string version = "9";
-string welcomeMessage = "Ласкаво просимо до " + language + " " + version + "!";
+В результаті ви отримаєте виведення:
 
-// Результат:
-// welcomeMessage = "Ласкаво просимо до C# 9!"
+```
+Олександр Іванов
 ```
 
-## Глибше процес:
+## Пірнемо глибше:
 
-У процесі розробки мови програмування, конкатенація рядків відіграє важливу роль у формуванні більш складних повідомлень та даних. Альтернативними методами конкатенації є використання бібліотечних функцій або використання форматованих рядків. У C#, рядки можуть бути конкатеновані за допомогою оператора `+` або за допомогою методу `Concat()` з класу `String`.
+Історично багато мов програмування включають функцію конкатенації рядків. З часом розробники почали використовувати більш ефективні способи об'єднання рядків, такі як StringBuilder в C#, який забезпечує кращу продуктивність при об'єднанні великої кількості рядків.
 
-## Також перегляньте:
+## Дивіться також:
 
-- [Оператор конкатенації](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/concatenation-operator)
-- [Клас System.String](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0)
-- [Форматовані рядки у C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated#simple-interpolation)
-- [StringBuilder клас](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-5.0)
-- [Конкатенація рядків у JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+1. [Документація Microsoft з конкатенації рядків](https://docs.microsoft.com/uk-ua/dotnet/csharp/programming-guide/strings/how-to-concatenate-multiple-strings)
+2. [StringBuilder в C#](https://docs.microsoft.com/uk-ua/dotnet/api/system.text.stringbuilder?view=net-5.0)
+3. [Метод Join() в C#](https://docs.microsoft.com/uk-ua/dotnet/api/system.string.join?view=net-5.0)

@@ -1,7 +1,7 @@
 ---
-title:                "날짜를 문자열로 변환하는 방법"
-html_title:           "C: 날짜를 문자열로 변환하는 방법"
-simple_title:         "날짜를 문자열로 변환하는 방법"
+title:                "날짜를 문자열로 변환하기"
+html_title:           "Arduino: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇이며 왜?
+## 무슨 일이고 왜 하는가?
+날짜를 문자열로 변환하는 것은 특정 날짜를 사람이 읽을 수 있는 텍스트 형태로 변환하는 프로그래밍 처리입니다. 프로그래머들은 이 작업을 통해 사용자에게 친숙한 형태로 날짜 정보를 표현하거나, 일반적인 문자열 연산을 적용하기 위해 합니다.
 
-날짜를 문자열로 변환하는 것은 프로그래머가 날짜 데이터를 다룰 때 유용합니다. 날짜를 문자열로 변환하면 구분 가능하고 포맷팅된 텍스트 값으로 표현할 수 있습니다. 이는 날짜 데이터를 사용자에게 이해하기 쉽게 표현하기 위함이고 더 나은 사용자 경험을 제공하기 위한 것입니다.
-
-# 어떻게?
+## 이렇게 해보세요:
+다음은 C 언어를 사용한 날짜를 문자열로 변환하는 간단한 코드 예시입니다.
 
 ```C
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-  time_t t = time(NULL); // 현재 시간 정보를 얻어옴
-  struct tm *tm = localtime(&t); // 시간 정보를 구조체로 변환
-  
-  // strftime 함수를 사용하여 날짜를 포맷팅된 문자열로 변환
-  char date_string[20];
-  strftime(date_string, sizeof(date_string), "%Y-%m-%d", tm);
-  printf("오늘의 날짜는: %s\n", date_string);
-  
-  return 0;
+    char buffer[26];
+    time_t timer;
+    struct tm* tm_info;
+
+    time(&timer);
+    tm_info = localtime(&timer);
+
+    strftime(buffer, 26, "%Y-%m-%d %H:%M:%S", tm_info);
+    puts(buffer);
+
+    return 0;
 }
 ```
+이 코드를 실행하면 현재 시간이 'YYYY-MM-DD HH:MM:SS' 형식의 문자열로 출력됩니다.
 
-출력:
-```
-오늘의 날짜는: 2021-07-05
-```
+## 자세히 알아보기
+역사적 관점에서 볼 때, 날짜를 문자열로 변환하는 것은 프로그래밍의 초기부터 필요로 하는 기능 중 하나였습니다. 이 기능을 통해 날짜 정보를 파일 이름에 포함시키거나, 로그 메시지를 작성하는 등의 작업이 가능해졌습니다.
 
-# 깊게 들어가보기
+C 언어에서는 기본적으로 `strftime` 함수를 사용해 날짜를 문자열로 변환할 수 있습니다. 그러나 `strftime`함수 외에도 사용자의 특정 요구사항을 충족시키기 위한 다양한 라이브러리가 존재합니다.
 
-(1) 날짜를 문자열로 변환하는 기능은 C 언어의 표준 라이브러리에 포함되어 있습니다. 따라서 별도의 라이브러리나 외부 도구를 사용하지 않고도 쉽게 구현할 수 있습니다.
-(2) C 외에도 다른 프로그래밍 언어에서도 날짜를 문자열로 변환하는 기능을 제공합니다. 예를 들어, 파이썬에서는 datetime 모듈을 사용하여 날짜를 문자열로 변환할 수 있습니다.
-(3) C 언어에서는 time_t와 struct tm 구조체를 사용하여 날짜를 다룹니다. 시간 정보는 초, 분, 시간, 일, 월, 연도 등의 필드로 구성되어 있으며, C 언어에서 제공하는 함수를 사용하여 이를 다룰 수 있습니다.
+`strftime` 함수의 내부적인 구현을 살펴보면, 입력으로 받은 날짜를 지정한 형식의 문자열로 변환하는 작업이 일어납니다. 이 함수는 출력 문자열의 형식을 지정하는 것이 가능하므로 활용도가 높습니다.
 
-# 관련 자료 보기
-https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm
+## 관련 자료
+- C 언어 표준 라이브러리에 관한 자세한 내용: [C Standard Library](https://en.wikipedia.org/wiki/C_standard_library)
+- `strftime` 함수에 대한 더 깊은 이해를 위한 링크: [Example of strftime](http://www.cplusplus.com/reference/ctime/strftime/)
+- 날짜와 시간에 관한 프로그래밍 팁: [C Programming Time-related tips](https://www.techonthenet.com/c_language/standard_library_functions/time_h/index.php)

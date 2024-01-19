@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-כתיבת תאריך או התחשבנות תאריך בעתיד או בעבר היא תכונה שימושית של שפות תכנות כמו קוטלין. זה מאפשר למתכנתים ליצור תאריכים מדויקים בהתאם לצורך. ניתן לכתוב קוד כדי לקבוע את המספר הימים הרצוי של התאריך שבהם נרצה לקלוט, כך שתאריכים יכולים להיות מחשבים במקום להיכתב באופן ידני. מתכנתים משתמשים בכך בכדי ליצור תאריכים בתכניות שלהם כגון אפליקציות מעקב זמן או תזכורות חשובות.
+## ״מה ולמה?“
+חישוב תאריך בעתיד או בעבר הוא בסיסית, הפעלת פעולות אריתמטיות על תאריכים. פרוגרמרים עושים את זה לדעת את הזמן שחלף מאז אירוע מסויים או לתכנות לאירועים שיחרופו בעתיד.
 
-## מה ולמה?
-כתיבת תאריך בעתיד או בעבר היא תכונה חשובה תוך שימוש בשפת תכנות כמו קוטלין. זה מאפשר למתכנתים ליצור תאריכים מדויקים לפי הצורך שלהם במקום לכתוב את זה באופן ידני.
+## ״איך לעשות:“
+הנה דוגמה פשוטה של איך לחשב תאריך בעתיד:
+```Kotlin
+import java.time.LocalDate
+import java.time.Period
 
-## איך לעשות את זה:
-הנה כמה דוגמאות לכתיבת תאריך בעתיד או בעבר בקוד קוטלין:
-
-```kotlin
-// יצירת תאריך עתידי 
-val currentDate = LocalDate.now() 
-val futureDate = LocalDate.of(2022, 1, 1) 
-val daysUntil2022 = ChronoUnit.DAYS.between(currentDate, futureDate) 
-println("עוד $daysUntil2022 ימים עד שנת 2022") 
-// Output: עוד 502 ימים עד שנת 2022 
-
-// יצירת תאריך בעבר 
-val pastDate = LocalDate.of(1985, 12, 31) 
-val daysSince1985 = ChronoUnit.DAYS.between(pastDate, currentDate) 
-println("כבר עברו $daysSince1985 ימים מאז שנת 1985") 
-// Output: כבר עברו 12936 ימים מאז שנת 1985
+fun main() {
+    val now = LocalDate.now()
+    val nextWeek = now.plus(Period.ofWeeks(1))
+    println("Today is: $now")
+    println("One week from today is: $nextWeek")
+}
 ```
+הפלט של קטע הקוד יהיה משהו כמו:
 
-## חפירה עמוקה:
-תאריך בעתיד או בעבר לא היה מעניין כמו שהוא עכשיו. לפני שימוש בתכונה כזו בשפות תכנות כמו קוטלין, מתכנתים נאלצים היו להשתמש בביטויים מתימטיים כדי לקבוע תאריכים בעתיד או בעבר. כיום, יצירת תאריכים דינמיים בקוד קוטלין הופך את התכנות לקל יותר ופחות מעסיק. בנוסף, ישנן אפשרויות נוספות לכתיבת תאריכים כגון שימוש במתודות נוספות כמו `plusDays()` ו- `minusDays()`.
+"Today is: 2022-05-01"
+"One week from today is: 2022-05-08"
 
-## ראה גם:
-למידע נוסף על שימוש בתאריכים בקוד קוטלין, ניתן לקרוא את המדריך המפורט של קוטלין על תאריכים למתכנתים [כאן](https://kotlinlang.org/docs/datetime.html). ניתן גם למצוא מידע נוסף על תאריכים בקוד קוטלין ב-[תיעוד הרשמי](https://kotlinlang.org/docs/home.html).
+## ״עומק להבנה:“
+(1) במהלך ההיסטוריה, פרוגרמרים חישבו תאריכים בעבר ובעתיד באמצעות כלים קלאסיים של אריתמטיקה. היום, ספריות שפות תכנות מספקות כלים קלים לשימוש.
+(2) חלופות ל-Kotlin כוללות Java, Python, JavaScript, שהן שפות אחרות שיש להם פונקציונליות נרחבת לטיפול בתאריכים וזמנים.
+(3) המחלקה LocalDate בספריית Kotlin נותנת דרך פשוטה להתמודד עם תאריכים ללא שיקול השעה ביום.
+
+## ״ראה גם:“
+\n
+1 [Java's Date and Time Classes](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+2 [Python's Datetime Module](https://docs.python.org/3/library/datetime.html)
+3 [JavaScript Date Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

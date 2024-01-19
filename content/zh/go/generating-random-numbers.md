@@ -10,26 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是随机数生成 & 为什么需要它？
+## 什么和为什么？
+生成随机数是一种编程技巧，在这过程中，产生的数字是不确定的。程序员生成随机数来模拟天然随机性，为数据处理或游戏设计提供随机元素。
 
-随机数生成是指通过代码来产生一系列看似没有规律的数字。程序员经常需要随机数来模拟真实的世界，例如测试游戏，或者创建密码。通过随机数生成，程序可以产生多样化的结果，从而使程序更加具有灵活性和真实性。
-
-# 如何实现随机数生成？
-
-Go语言提供了内置的rand包，可以轻松生成随机数。下面的示例展示了如何使用该包生成一个1到10之间的随机数：
-
+## 怎么做： 
 ```Go
-rand.Seed(time.Now().UnixNano())
-fmt.Println(rand.Intn(10) + 1)
+package main 
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+	rand.Seed(time.Now().UnixNano())
+	randomNumber := rand.Intn(100) //生成0~99的随机数
+	fmt.Println(randomNumber)
+}
 ```
+上述代码会输出一个0到99以内的随机数，每次运行输出结果都不同。
 
-该代码首先设置随机数种子，以确保每次运行结果都不同。然后，使用Intn()函数来生成1到10之间的随机数。每次运行该代码，都会得到不同的结果。
+## 更深入的探讨
+在计算机科学早期，生成真正的随机数是一种挑战，因为计算机内部只能遵循指令执行操作。然而，现代编程语言如Go已经为随机数生成提供了便利。
 
-# 深入探究
+有不同的方式生成随机数，如使用当前时间的时间戳种子或者外部随机源。在上述代码中，我们使用了Unix时间戳（time.Now().UnixNano()）作为种子。这就意味着，除非两次代码执行间隔小于纳秒级别，否则每次生成的随机数都将不同。
 
-创建随机数的需求可以追溯到早期计算机时代。在那个时候，计算机计算能力有限，随机数可以帮助程序尽可能地模拟真实世界。除了内置的rand包外，还有一些流行的第三方库可以生成更复杂的随机数，如crypto/rand。但是，由于随机数是的本质上是不可预测的，因此需要谨慎使用，避免出现安全漏洞。
-
-# 参考资料
-
-- 官方Go语言文档：https://golang.org/pkg/math/rand/
-- 第三方随机数库crypto/rand文档：https://pkg.go.dev/crypto/rand
+## 更多参考：
+对于想了解更多关于Go的随机数生成，您可以参阅以下链接：
+1. Go官方文档： [math/rand](https://golang.org/pkg/math/rand/)
+2. Go入门指南：[随机数](https://tour.golang.org/basics/1)
+3. StackOverflow：[How to generate a random number in Go?](https://stackoverflow.com/questions/12321133/how-to-generate-a-random-num-int-in-go)

@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana ciągu znaków na małe litery"
-html_title:           "Fish Shell: Zamiana ciągu znaków na małe litery"
-simple_title:         "Zamiana ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego? 
 
-Konwersja ciągu znaków na małe litery jest powszechnym zadaniem w programowaniu, polegającym na zmianie wszystkich znaków alfanumerycznych w ciągu na ich odpowiadające małe litery. Programiści często wykonują tę operację w celu ujednolicenia danych lub porównywania tekstów niezależnie od wielkości liter.
+Konwersja ciągu na małe litery to proces zamiany wszystkich liter wielkich na małe w danym ciągu. Programiści robią to, aby porównywać ciągi tekstu niezależnie od wielkości liter.
 
 ## Jak to zrobić:
 
-Fish Shell oferuje wbudowaną funkcję `string tolower`, która pozwala na łatwe i szybkie konwertowanie ciągu znaków na małe litery. Przykładowe zastosowanie tej funkcji wyglądałoby w ten sposób:
+Poniżej znajduje się przykładowy kod Fish Shell, który konwertuje napis na małe litery:
 
 ```Fish Shell
-set nazwaUzytkownika "JaKiś CiąG ZnAków"
-set nazwaGotowa (string tolower $nazwaUzytkownika)
-echo $nazwaGotowa
+function małe_litery -a string
+    echo (string lower $string)
+end
+
+set wielkie "WIELKIE LITERY"
+małe_litery $wielkie
 ```
 
-To polecenie wyświetli "jakis ciag znakow" w konsoli. Możesz również użyć tej funkcji bez ustawiania zmiennej, jeśli chcesz tylko wyświetlić przekonwertowany ciąg, na przykład:
+Po wykonaniu powyższego skryptu, wynikiem powinny być wszystkie małe litery, jak pokazano poniżej:
 
 ```Fish Shell
-echo (string tolower "JAkIŚ cIąG zNaKów")
+> wielkie litery
 ```
-
-Wynikiem będzie "jakis ciag znakow".
 
 ## Deep Dive:
 
-Konwersja ciągu znaków na małe litery jest bardzo pomocna, ponieważ ułatwia porównywanie tekstów bez względu na wielkość liter. Jest również powszechnym rozwiązaniem problemów związanych z niedopasowaniem znaków, szczególnie przy wykorzystaniu języków, które nie mają jednoznacznych reguł dotyczących wielkości liter.
+W kontekście historycznym, różne języki programowania implementują tę funkcję na różne sposoby. Na przykład, w Pythonie używamy metody `.lower()`, a w JavaScript - metody `.toLowerCase()`. 
 
-Alternatywnym sposobem na konwersję ciągu znaków na małe litery jest użycie pętli i operacji na pojedynczych znakach w danym języku programowania. Jednak wbudowana funkcja `string tolower` w Fish Shell zapewnia szybką i wygodną metodę wykonania tego zadania.
+Alternatywnie, niektóre języki, takie jak C, wymagają ręcznego przepisania ciągu i konwersji każdej litery osobno. Wybór metody zależy od języka, który używasz, i od specyfiki zadania.
 
-W implementacji, funkcja `string tolower` wykorzystuje funkcję na poziomie systemu operacyjnego odpowiedzialną za konwersję znaków, co pozwala na uniwersalne działanie na różnych systemach.
+W Fish Shell, 'string lower' jest wbudowaną funkcją, która nie tylko konwertuje ciąg na małe litery, ale także obsługuje różne zestawy znaków, takie jak UTF-8.
 
-## Zobacz też:
+## Zobacz również:
 
-- [Dokumentacja Fish Shell o funkcji `string tolower`](https://fishshell.com/docs/current/cmds/string-tolower.html)
-- [Inne przydatne funkcje wbudowane w Fish Shell](https://fishshell.com/docs/current/cmds/index.html)
+1. Oficjalna dokumentacja Fish Shell - String: https://fishshell.com/docs/current/cmds/string.html
+2. Stack Overflow dla Fish Shell: https://stackoverflow.com/questions/tagged/fish

@@ -10,35 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Чому?
-Витягнення підрядка - це процес отримання певної ділянки тексту з більшої строки або рядка. Програмісти роблять це, щоб отримати потрібну інформацію з великого обсягу тексту, яка необхідна для подальшої обробки або використання.
+##  Що & Чому?
 
-## Як:
+Підстроки - це набори символів з основного рядка. Ми використовуємо їх, коли хочемо обробляти частину рядка замість всього рядка для економії ресурсів.
+
+## Як це робимо:
+
+Ось процес витягування підстрок: 
+
 ```C++
-#include <iostream>
-#include <string>
-
+#include<iostream>
+#include<string>
 using namespace std;
 
 int main() {
-    string sentence = "Це речення містить потрібний підрядок.";
-    string substring = sentence.substr(22, 8);
-
-    cout << "Отриманий підрядок:" << endl;
-    cout << substring << endl;
-
-    return 0;
+  string str = "Ми любимо програмування";
+  string substr = str.substr(3,7);
+  cout << substr;
+    
+  return 0;
 }
 ```
-**Вивід:**
-```
-Отриманий підрядок:
-потрібний
-```
+Виведення: 
 
-## Поглиблення
-Історичний контекст витягнення підрядка пов’язаний з обробкою текстових даних у мові програмування FORTRAN у 1950-60 роках. Існує також інший спосіб отримання підрядка - через ітератори у C++. Також можна використовувати регулярні вирази для витягнення підрядка з використанням бібліотеки `<regex>`.
+```C++
+любимо
+```
+Функція substr(start, length) створює підстроку починаючи з позиції "start" і довжиною в "length" символів.
 
-## Дивіться також:
-- [Документація для функції substr() у C++](https://www.cplusplus.com/reference/string/string/substr/)
-- [Огляд регулярних виразів у C++](https://www.regular-expressions.info/cpp.html)
+## Більш глибоке занурення
+
+1. Розшифровка SubStr історично вийшла з "substring", що означає "підстрока", і широко використовувалась з початку днів програмування.
+
+2. В альтернативних мовах програмування, подібних до JavaScript, ми можемо використовувати метод slice() для витягування підстрок. З іншого боку, в Python є висічки рядків.
+
+3. Робота substr() в C++ полягає у створенні нового об'єкта string, який включає вказані символи з основного рядка. Ця робота здійснюється шляхом копіювання символів до нового об'єкту.
+
+## Дивіться також
+
+1. Стрічкова висічка в Python: [Python Slice](https://docs.python.org/3/whatsnew/2.3.html#slice)
+2. Використання slice() в Javascript: [JavaScript Slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+3. Більше про C++ substr(): [cppreference substr](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+4. Історія String в комп'ютерних науках: [Wikipedia](https://en.wikipedia.org/wiki/String_(computer_science))

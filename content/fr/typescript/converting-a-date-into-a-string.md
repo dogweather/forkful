@@ -1,6 +1,6 @@
 ---
 title:                "Convertir une date en chaîne de caractères"
-html_title:           "TypeScript: Convertir une date en chaîne de caractères"
+html_title:           "Gleam: Convertir une date en chaîne de caractères"
 simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,37 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faisons-nous?
+## Qu'est-ce & Pourquoi ?
 
-Convertir une date en chaîne de caractères est essentiellement le fait de prendre une date ou une heure et de la formater de manière lisible pour les humains. Les programmeurs le font pour afficher ou stocker des dates dans un format compréhensible pour tout le monde.
+Convertir une date en chaîne de caractères permet de la représenter sous un format lisible par un humain. Les programmeurs le font principalement pour afficher des dates dans des interfaces utilisateur ou pour des opérations de journalisation.
 
-## Comment:
+## Comment faire :
+
+Voici un exemple en TypeScript qui montre comment convertir une date en chaîne de caractères.
 
 ```TypeScript
-// Convertir une date en chaîne de caractères au format DD/MM/YYYY
-let date = new Date("2021-06-01");
-let dateString = date.toLocaleDateString("fr-FR");
-console.log(dateString); // Affiche "01/06/2021"
+let dateActuelle = new Date();
+let dateTexte = dateActuelle.toString();
 
-// Convertir une heure en chaîne de caractères au format 24 heures
-let time = new Date("2021-06-01 15:30:00");
-let timeString = time.getHours() + ":" + time.getMinutes();
-console.log(timeString); // Affiche "15:30"
-
-// Convertir une date et une heure en chaîne de caractères personnalisée
-let dateTime = new Date("2021-06-01 15:30:00");
-let options = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
-let dateTimeString = dateTime.toLocaleDateString("fr-FR", options);
-console.log(dateTimeString); // Affiche "mardi 01 juin 2021"
-
+console.log(dateTexte);
 ```
 
-## Plongée en profondeur:
+Cela produira un résultat similaire à :
 
-Avant l'avènement des ordinateurs, les dates étaient souvent écrites sous forme de nombres, ce qui les rendait difficiles à lire et à comprendre pour les humains. En convertissant une date en chaîne de caractères, les programmeurs sont en mesure de présenter la date de manière plus lisible, tout en choisissant un format qui convient à leur public. D'autres alternatives sont d'utiliser des librairies JavaScript telles que Moment.js pour faciliter la manipulation des dates, ou d'utiliser une base de données qui prend en charge les champs de type date.
+```bash
+Tue Sep 24 2021 10:20:42 GMT+0300 (heure de l’Europe de l’Est)
+```
 
-## Voir aussi:
+## Plus de détails
 
-- Documentation officielle de TypeScript sur les dates: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#improved-regex-types
-- Moment.js - Librairie JavaScript pour manipuler, valider et formater les dates: https://momentjs.com/
-- Stack Overflow - Discussions et solutions concernant la conversion de dates en chaînes de caractères en TypeScript: https://stackoverflow.com/questions/55180305/how-to-convert-typedate-to-string-in-angular-7
+Historiquement, en JavaScript et donc aussi en TypeScript, la méthode `toString()` retourne une chaîne de caractères représentant la date en format anglo-saxon, avec le jour de la semaine, le mois, le jour du mois, l'année, et l'heure.
+
+Des alternatives existent, comme la méthode `toDateString()` qui ne renvoie que la date (sans l'heure), ou `toLocaleString()`, qui adapte le format à la localisation de l'utilisateur.
+
+A noter que ces méthodes font partie de l'objet Date de JavaScript, et donc héritées par TypeScript qui est un sur-ensemble de JavaScript. Elles dépendent de l'implémentation de l'environnement d'exécution.
+
+Example:
+
+```TypeScript
+let dateActuelle = new Date();
+console.log(dateActuelle.toDateString());
+console.log(dateActuelle.toLocaleString());
+```
+
+Le résultat serait :
+
+```bash
+Tue Sep 24 2021
+24/09/2021, 10:20:42
+```
+
+## Pour aller plus loin
+
+Voici quelques liens pour approfondir le sujet.
+
+- La documentation Mozilla sur l'objet `Date` en JavaScript : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date
+- Une explication plus détaillée des fonctions de conversion de date en chaîne de caractères : https://www.w3schools.com/jsref/jsref_obj_date.asp
+- La documentation officielle de TypeScript : https://www.typescriptlang.org/docs/

@@ -1,7 +1,7 @@
 ---
-title:                "現在の日付を取得する"
-html_title:           "Kotlin: 現在の日付を取得する"
-simple_title:         "現在の日付を取得する"
+title:                "現在の日付の取得"
+html_title:           "Bash: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,35 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 今回は、現在の日付を取得する方法について説明します。
-
-## はじめに
-「現在の日付を取得する」とは、プログラマーが今日の日付をコンピューター上で表示することを指します。プログラマーは、日付を処理するためにこの情報を使用します。
+## 何となぜ？
+現在の日付を取得するとは、システムの日付や時間に対するプログラムからの照会を意味します。これは、ログのタイムスタンプを作成したり、特定の時間に特定のアクションをトリガーしたりするためにプログラマーが行います。
 
 ## 方法：
-Kotlinで現在の日付を取得するには、```LocalDate.now()```というメソッドを使用します。以下の例のように、現在の日付を変数に格納することができます。
+Kotlinで現在の日付を取得する簡単な方法は、以下のコードを使用することです：
 
-```kotlin
-val today = LocalDate.now()
-println(today)
+```Kotlin
+import java.time.LocalDate
+
+fun main() {
+   val currentDate = LocalDate.now()
+   println("現在の日付は：$currentDate")
+}
 ```
 
-出力結果は、以下のようになります。
-```
-2021-06-18
+このコードを実行すると、次のような出力が表示されます：
+
+```Kotlin
+現在の日付は：2022-03-10
 ```
 
-## 詳細:
-### 歴史的背景：
-コンピューターが普及する以前、日付は手書きや印刷されたカレンダーに書かれていました。しかし、コンピューターの出現により、日付は電子的に処理されるようになりました。そのため、プログラマーは日付を処理する方法を開発する必要がありました。
+## 深掘り：
+### 歴史的な文脈：
+`LocalDate`パッケージは、Java 8で導入され、Kotlinにも反映されました。これは、Javaが古い`java.util.Date`クラスから移行する一環として作成されました。
 
 ### 代替方法：
-JavaやJavaScriptなどの他の言語でも、現在の日付を取得するためのメソッドが用意されています。しかし、Kotlinは、より簡潔でわかりやすいコードを書くことができるため、多くのプログラマーにとって好まれる言語です。
+あるいは、古い`Date`クラスを使用して現在の日付を取得することもできます。
+
+```Kotlin
+import java.util.Date
+
+fun main() {
+   val currentDate = Date()
+   println("現在の日付は：$currentDate")
+}
+```
+
+だけど、`java.util.Date`は古いですから、新たなJava8の日付APIを使うメリットが多いです。
 
 ### 実装の詳細：
-Kotlinでは、Javaのjava.timeライブラリを使用して日付を処理します。```now()```メソッドは、システムのタイムゾーンを使用して現在の日付を取得します。また、```LocalDate```クラスには、日付を操作するためのより多くのメソッドが用意されています。
+`LocalDate.now()`はシステムクロックに基づいて現在の日付を提供します。デフォルトでは、システムデフォルトのタイムゾーンを使用します。
 
-## 関連情報：
-Kotlinの公式ドキュメントでは、```LocalDate```クラスや他の日付関連のクラスの詳細な情報を確認することができます。また、Javaのjava.timeパッケージのドキュメントも参考にすることができます。
-
-この記事では、Kotlinを使用して現在の日付を取得する方法について説明しました。ぜひ、実際にコードを書いて試してみてください。
+## 参照：
+- [Kotlinの公式ドキュメンテーション](https://kotlinlang.org/docs/reference/)
+- [Java 8の日付/時間API](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Kotlinでの日付と時間の操作](https://qiita.com/k5n/items/affb12ac9c8b91d419e6)

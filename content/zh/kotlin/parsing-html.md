@@ -1,7 +1,7 @@
 ---
-title:                "解析html"
-html_title:           "Kotlin: 解析html"
-simple_title:         "解析html"
+title:                "解析HTML"
+html_title:           "Clojure: 解析HTML"
+simple_title:         "解析HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,48 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是解析HTML？为什么程序员要这么做？
+## 什么与为什么？
 
-解析HTML指的是通过编码，将HTML文档转换为可读取和操作的结构化数据。程序员通常需要解析HTML是因为他们需要从网页中提取相关信息来进行数据处理或网站爬虫。
+HTML解析是指分析HTML代码，并将其转换为用于进一步处理和操作的数据结构。程序员通常解析HTML以获取网页上的特定信息或操作页面元素。
 
-## 如何进行解析HTML？
+## 如何操作：
+
+使用Kotlin和Jsoup库，我们可以轻松地解析HTML。以下是一个简单的示例，它从URL解析HTML并打印出所有的链接：
 
 ```Kotlin
-// 导入Jsoup库
-import org.jsoup.Jsoup
+import org.jsoup.Jsoup    
 
-// 定义要解析的HTML文档
-val html = "<html><head><title>Kotlin解析HTML示例</title></head><body><h1>Hello, World!</h1></body></html>"
-
-// 使用Jsoup解析HTML
-val doc = Jsoup.parse(html)
-
-// 获取HTML文档的标题
-val title = doc.title()
-
-// 获取HTML文档的body
-val body = doc.body()
-
-// 获取body中的h1标签内容
-val h1 = body.getElementsByTag("h1").text()
-
-// 输出解析结果
-println("HTML标题：$title")
-println("HTML h1内容：$h1")
+fun main(args: Array<String>) {    
+    val document = Jsoup.connect("https://www.example.com").get()    
+    val links = document.select("a[href]")    
+    
+    println("Links: ")    
+    for (link in links) {    
+        println(" * a: ${link.attr("abs:href")}")    
+    }    
+}    
 ```
 
-输出结果：
-```
-HTML标题：Kotlin解析HTML示例
-HTML h1内容：Hello, World!
-```
+在运行此代码片段后，您将看到example.com上所有链接的列表。
 
-## 深入了解
-- 历史背景：HTML解析技术的发展始于Web的兴起，最初使用的是正则表达式，但随着网页结构的复杂化，正则表达式无法满足需求，后来出现了类似Jsoup的HTML解析库。
-- 替代方案：除了Jsoup外，还有其他HTML解析库如HtmlUnit、Jsoup-androd等。
-- 实现细节：Jsoup使用了DOM树来表示HTML文档，可以通过选择器来获取指定元素，支持CSS选择器和jQuery风格的选择器。
+## 深入研究：
 
-## 相关资源
-- [Kotlin官方网站](https://kotlinlang.org/)
-- [Jsoup文档](https://jsoup.org/)
-- [Kotlin解析HTML示例代码](https://github.com/jhy/jsoup/tree/master/src/test/kotlin/org/jsoup/examples/kotlin)
+在计算机编程的早期，HTML解析曾是一项繁琐的工作，需要手动解析字符串以提取所需信息。随着Jsoup库的到来，现在，我们可以交由库来处理底层的解析细节。
+
+有许多解析HTML的替代方案，例如Python的BeautifulSoup，JavaScript的Cheerio等。样式不同，但目标相同 - 以简洁的方式处理HTML。
+
+实现HTML解析需要深入理解HTML的结构和语法。每个标签、属性和值都需要按照事先定义的模式进行解析和归类。
+
+## 参见:
+
+以下是一些相关链接，它们提供了更多关于HTML解析和其在Kotlin中的实现的详细信息：
+
+1. [Jsoup官方文档](https://jsoup.org/)
+2. [解析HTML Wiki](https://en.wikipedia.org/wiki/HTML_parsing)
+3. [Kotlin官方网站](https://kotlinlang.org/)

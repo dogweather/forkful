@@ -12,30 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Capitalizing a string in programming refers to changing the first character of a string to an uppercase, if it's not already. Programmers do this often for formatting purposes, such as for user interface text or data presentation.
+Capitalizing a string means making the first character of the string a capital letter. Programmers use this for better readability and data preprocessing, and when the output string must start with a capital letter.
 
 ## How to:
 
-Capitalizing a string in Elixir is an untroubled task. It can be done by using the `capitalcase()` function from the String module. This function takes a string and does exactly what we just mentioned - it changes the first character to an uppercase.
+In Elixir, we use the `String.capitalize/2` function to capitalize a string. Here's a straightforward example:
 
-```Elixir
-IO.puts String.capitalize("elixir")
-# Output: > Elixir
+```elixir
+IO.puts(String.capitalize("elixir"))
 ```
-So, `String.capitalize("elixir")` returns "Elixir".
+
+The output will be:
+
+```elixir
+Elixir
+```
+
+Piece of cake, right? It not only capitalizes the first character but also turns the rest of the string to lowercase. Handy!
 
 ## Deep Dive
 
-Historically, the capitalize function has roots in the infancy of text editing software. Having texts consistently formatted, which includes capitalizing at appropriate places, was deemed important for readability.
+Now, let's go a bit deeper. Historically, this functionality isn't unique to Elixir; it exists in most of the other programming languages like Python, JavaScript, etc.
 
-While there's a built-in function in Elixir for this, alternative methods exist too. For instance, you might write your own capitalize function, or possibly use the `upcase()` function in conjunction with slicing the string and then concatenating. But that's needless work in Elixir because `String.capitalize()` takes care of that elegantly, by using Unicode character properties to accurately capitalise all sorts of characters.
+An alternative would be to do the capitalizing manually with `String.slice` but that's reinventing the wheel. Always use built-in functions whenever possible - they're optimized for performance.
 
-Elixir, being a highly concurrent language, does a great job here. Each string in Elixir is stored as a binary, and the capitalization operation is performed on the binary representation of the string. This underpins Elixir's excellent string handling capabilities.
+As for implementation details, Elixir's `String.capitalize/2` function follows Unicode Standard Annex rules (#29) for sentence boundaries, treating CR, LF, and other paragraph separators as sentence boundaries. Word boundaries aren't treated as sentence boundaries though.
 
 ## See Also
 
-Follow these links for additional details and functions related to Elixir Strings:
+Ready to learn more about strings in Elixir? Explore these links:
 
-1. Elixir String module documentation: [String | Elixir](https://hexdocs.pm/elixir/String.html)
-2. More about Unicode Character Properties in Elixir: [Unicode Syntax | Elixir](https://elixir-lang.org/getting-started/unicode-and-strings.html#unicode-syntax-in-elixir)
-3. Detailed guide on Elixir’s string handling : [Working with strings in Elixir | Erlang Solutions Blog](https://www.erlang-solutions.com/blog/strings-and-character-data-in-elixir.html)
+- Elixir's guide to [Strings and Binaries](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html).
+- Documentation for [String.capitalize/2](https://hexdocs.pm/elixir/String.html#capitalize/2)
+- Unicode Standard Annex [#29](https://www.unicode.org/reports/tr29/) with sentence boundaries rules.
+- More about [Elixir on Wikipedia](https://en.wikipedia.org/wiki/Elixir_(programming_language)).

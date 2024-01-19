@@ -1,7 +1,7 @@
 ---
-title:                "Unterstrings extrahieren"
-html_title:           "Clojure: Unterstrings extrahieren"
-simple_title:         "Unterstrings extrahieren"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,16 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
-Das Extrahieren von Teilzeichenketten ist eine gebräuchliche Aufgabe in der Programmierung, bei der ein Teil einer Zeichenkette ausgewählt und als eigenständige Zeichenkette gespeichert wird. Dies kann nützlich sein, um bestimmte Teilinformationen einer größeren Zeichenkette zu nutzen oder zu verarbeiten. Programmierer verwenden diese Technik, um Daten zu filtern oder zu manipulieren.
+## Was & Warum?
 
-Wie geht's?
-Die Programmiersprache Clojure bietet verschiedene Funktionen für das Extrahieren von Teilzeichenketten. Mit der Funktion ```subs``` können wir einen bestimmten Bereich einer Zeichenkette auswählen und als eigenständige Zeichenkette speichern. Zum Beispiel ```(subs "Hallo Welt" 0 5)``` würde die ersten 5 Zeichen ("Hallo") als neue Zeichenkette zurückgeben. Wir können auch negative Indizes verwenden, um die Extraktion von der rechten Seite der Zeichenkette zu starten, zum Beispiel ```(subs "Hallo Welt" -4)``` würde die letzten 4 Zeichen ("Welt") zurückgeben. Weitere Funktionen wie ```substring``` oder ```split-at``` bieten zusätzliche Möglichkeiten zum Extrahieren von Teilzeichenketten.
+Das Extrahieren von Teilstrings (substrings) bezieht sich auf die Aufnahme kleinerer Zeichenketten aus einer größeren Zeichenkette. Programmierer tun dies, um relevante Informationen in umfangreichen Daten oder Text zu finden und zu verwenden.
 
-Tiefgehende Einblicke
-Das Extrahieren von Teilzeichenketten ist eine grundlegende Operation der Zeichenkettenmanipulation und wird in vielen Programmiersprachen unterstützt. In Clojure werden Teilzeichenketten als eigenständige Zeichenketten behandelt und nicht als Verweise auf die ursprüngliche Zeichenkette. Andere Programmiersprachen wie Java oder Javascript bieten ähnliche Funktionen, aber mit unterschiedlicher Syntax.
+## Wie mache ich das?
 
-Siehe auch
-- Clojure-Dokumentation zu Teilzeichenketten: https://clojuredocs.org/clojure.core/subs
-- Vergleich von Zeichenkettenextraktionsfunktionen in verschiedenen Programmiersprachen: https://www.programiz.com/java-programming/library/substring
-- Übersicht über die grundlegenden Zeichenkettenoperationen in Clojure: https://clojure.org/reference/strings
+Clojure bietet eine Vielzahl von Funktionen zur substraktion von Strings. Eine einfache besteht darin, die "subs"-Funktion zu verwenden. Hier ist ein Beispiel:
+
+```Clojure
+(def str "Hallo, Welt!") 
+(subs str 0 5)
+```
+
+Die Ausgabe wird "Hallo" sein. Die Funktion "subs" erhält den Anfangs- und Endindex des Substrings, den Sie abschneiden möchten.
+
+## Vertiefung
+
+Geschichtlich betrachtet ist das Extrahieren von Teilstrings eine grundlegende Operation in vielen Programmiersprachen und hat seinen Ursprung in den frühesten Tagen der Informatik. In Clojure, das auf der Java Virtual Machine (JVM) basiert, profitiert es von den vorhandenen String-Manipulationsmethoden in Java. 
+
+Auf der anderen Seite haben Sie alternative Methoden, um Substrings in Clojure zu extrahieren. Sie können reguläre Ausdrucke (Regex) oder Funktionen wie "split-at" und "join" verwenden, um ähnliche Ergebnisse zu erzielen.
+
+Was die Implementierung betrifft, verwendet Clojure bei der Verwendung der "subs"-Funktion den Java-Substring. Dies hat den Vorteil, dass keine neuen Zeichen erstellt werden, sondern nur Zeiger auf die bestehende Zeichenkette manipuliert werden, was die Operation sehr effizient macht.
+
+## Siehe auch
+
+Um Ihr Wissen und Ihre Fähigkeiten im Umgang mit Strings in Clojure weiter zu vertiefen, sehen Sie sich bitte die folgenden Ressourcen an:
+
+1. [Clojure Documentation: String](https://clojure.org/guides/learn/strings)
+2. [Clojure: String Functions](https://clojuredocs.org/clojure.string)
+3. [Regular Expressions in Clojure](https://www.regular-expressions.info/clojure.html)

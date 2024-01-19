@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran med grundläggande autentisering"
-html_title:           "Rust: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,33 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skicka en HTTP-förfrågan med grundläggande autentisering är ett sätt för utvecklare att säkert kommunicera med en webbtjänst. Autentisering används för att verifiera en användares identitet och skydda känslig information från obehöriga. Det är en vanlig praxis för att integrera externa tjänster i applikationer.
 
-## Så här gör du:
-Här är ett enkelt exempel på hur du kan skicka en HTTP-förfrågan med grundläggande autentisering i Rust:
+Att skicka en HTTP-begäran med grundläggande autentisering innebär att lägga till offentlig och hemlig identifieringsinformation i din webbansökan för att säkerställa att bara auktoriserade användare får åtkomst. Programmerare gör detta för att skydda känslig data och funktioner från obehörig åtkomst.
+
+## Hur Man Gör:
+
+Använd `reqwest`-klienten för att skicka en HTTP-begäran med grundläggande autentisering i Rust. Först, installera paketet `reqwest` med funktionen `blocking` aktiverad i din `Cargo.toml` fil.
+
+```Rust
+[dependencies]
+reqwest = { version = "0.11", features = ["blocking"] }
+base64 = "0.13"
 ```
-use reqwest;
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let client = reqwest::blocking::Client::new();
-    let mut res = client
-        .get("https://example.com")
-        .basic_auth("username", Some("password"))
+Här är ett exempel på hur du skickar en GET-begäran till en skyddad resurs.
+
+```Rust
+use reqwest::blocking::Client;
+use base64::encode;
+
+fn send_request() -> Result<(), reqwest::Error> {
+    let client = Client::new();
+    let user = "user";
+    let pass = "password";
+    let auth = format!("{}:{}", user, pass);
+    let basic_auth = format!("Basic {}", encode(&auth));
+
+    let resp = client
+        .get("http://example.com")
+        .header(reqwest::header::AUTHORIZATION, basic_auth)
         .send()?;
 
-    println!("Statuskod: {}", res.status());
-    
+    println!("{:?}", resp.status());
+
     Ok(())
 }
 ```
 
-Exempelutmatningen visar statuskoden för förfrågan, som i detta fall är förväntat svar 200 OK.
+När du kör detta skript kommer HTTP-statuskoden att skrivas ut på konsolen.
 
 ## Djupdykning:
-För att förstå hur man skickar en HTTP-förfrågan med grundläggande autentisering är det viktigt att förstå historien bakom det. År 1995 skapades grundläggande autentisering som en del av HTTP-standarderna för att ge en enkel metod för autentisering. Det finns dock alternativ till grundläggande autentisering, som OAuth och JWT, som erbjuder en mer robust och säker autentisering.
 
-I Rust används biblioteket Reqwest för att skicka HTTP-förfrågningar. Genom att använda metoden `.basic_auth()` och tillhandahålla användarnamn och lösenord i parametrarna kan en förfrågan med grundläggande autentisering skickas.
+Grundläggande autentisering är en äldre metod för autentisering som ursprungligen definierades i HTTP/1.0-specifikationen. Det är känd för sin enkelhet, men har många säkerhetsbrister såsom klar-text lösenord. 
 
-## Se även:
-- Rust Reqwest bibliotekets dokumentation: https://docs.rs/reqwest
-- Mer information om grundläggande autentisering: https://developer.mozilla.org/sv/docs/Web/HTTP/Authentication#indroduction
+Alternativ för grundläggande autentisering inkluderar mermodern OAuth2.0 eller JWT(Jason Web Tokens) autentisering, som erbjuder robust säkerhet genom att hålla lösenorden krypterade.
+
+Vid implementering, se till att lösenord och andra känsliga uppgifter skyddas med korrekt kryptering och lagring, eftersom de kommer att avslöjas om HTTP-trafiken avlyssnas. 
+
+Om vi djupdyker i koden lite mer, använder vi `reqwest::header::AUTHORIZATION` för att ange HTTP-huvudet för autentisering och `base64::encode` för att koda våra autentiseringsuppgifter.
+
+## Se Också:
+
+Rust reqwest dokumentation: https://docs.rs/reqwest/0.11.6/reqwest/
+Om grundläggande autentisering: https://sv.wikipedia.org/wiki/Basic_access_authentication
+Alternativ för grundläggande autentisering: https://auth0.com/blog/cookies-vs-tokens-definitive-guide

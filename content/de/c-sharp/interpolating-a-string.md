@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenkette interpolieren."
-html_title:           "C#: Eine Zeichenkette interpolieren."
-simple_title:         "Eine Zeichenkette interpolieren."
+title:                "Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
+simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,43 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was und warum?
+## Was & Warum?
 
-Eine Zeichenfolgeninterpolation ermöglicht es uns, dynamische Werte in eine Zeichenfolge einzufügen. Wir können Variablen, Ausdrücke oder sogar Methodenaufrufe direkt in unsere Zeichenfolge einbetten. Dadurch wird der Prozess der Zeichenfolgenformatierung in C# vereinfacht und wir können die Lesbarkeit unseres Codes verbessern.
+String-Interpolation ist eine Methode, um Werte in Zeichenketten einzufügen. Programmierer verwenden sie, um den Code lesbarer und wartungsfreundlicher zu gestalten. 
 
-## Wie geht's?
+## Wie geht denn das? 
 
-Um eine Zeichenfolge zu interpolieren, müssen wir diese mit dem `$`-Zeichen kennzeichnen und die dynamischen Werte in geschweifte Klammern `{} `einschließen, wie im folgenden Beispiel:
-
-```C#
-int age = 25;
-string message = $"Ich bin {age} Jahre alt.";
-Console.WriteLine(message);
-
-```
-Dieser Code wird die Ausgabe `"Ich bin 25 Jahre alt."`erzeugen.
-
-Wir können auch Ausdrücke verwenden, um zusammengesetzte Werte zu interpolieren, wie z.B.:
+Mit String-Interpolation kann in C# auf eine saubere und effiziente Weise Werte in Strings integriert werden. Hier ist ein einfacher Weg, es zu tun:
 
 ```C#
-int radius = 5;
-double area = Math.PI * radius * radius;
-string message = $"Der Flächeninhalt eines Kreises mit dem Radius {radius} beträgt {area:F2} Quadratmeter.";
-Console.WriteLine(message);
-
+string name = "Hans";
+string greeting = $"Hallo, {name}!";
+Console.WriteLine(greeting);
 ```
-Die Ausgabe wird in diesem Fall `"Der Flächeninhalt eines Kreises mit dem Radius 5 beträgt 78,54 Quadratmeter."` sein.
 
-## Tief tauchen
+In diesem Fall gibt der Code "Hallo, Hans!" aus.
 
-Die Zeichenfolgeninterpolation wurde in C# 6 eingeführt und war eine Verbesserung gegenüber der früheren Zeichenfolgenformatierung mit dem `String.Format()`-Methode. Es gibt auch andere Möglichkeiten, dynamische Werte in Zeichenfolgen einzufügen, wie z.B. die Konkatenation von Zeichenfolgen mit dem `+`-Operator oder die Verwendung von `String.Format()`.
+## Tiefgehende Details
 
-Die Interpolation ist jedoch die bevorzugte Methode, da sie kürzer und lesbarer ist. Sie bietet auch zusätzliche Funktionen wie die Formatierung von numerischen Werten und die Verwendung von benannten Argumenten.
+1. Historischer Kontext: String-Interpolation wurde in C# 6.0 eingeführt, um die String-Formatierung zu vereinfachen.
 
-Die Interpolation wird auch als syntaktischer Zucker bezeichnet, da sie letztendlich in die `String.Format()`-Methode übersetzt wird. Sie ist jedoch einfacher zu verwenden und zu lesen.
+2. Alternativen: Vor C# 6.0 nutzten Entwickler manuell indizierte Platzhalter und `String.Format`. Hier ist ein Beispiel:
+
+    ```C#
+    string oldWay = String.Format("Hallo, {0}!", name);
+    ```
+
+3. Implementation: Intern übersetzt der Compiler interpolierte Strings in eine `String.Format`-Methode, sodass die Leistung mit dem älteren Stil vergleichbar ist. Tatsächlich ist das Hauptziel die Verbesserung der Lesbarkeit und Wartbarkeit.
 
 ## Siehe auch
 
-- [Offizielle Dokumentation zur Zeichenfolgeninterpolation in C#](https://docs.microsoft.com/de-de/dotnet/csharp/tutorials/string-interpolation)
-- [Einführung in die Zeichenfolgeninterpolation in C#](https://www.tutorialsteacher.com/csharp/csharp-string-interpolation)
-- [Unterschied zwischen Zeichenfolgeninterpolation und Zeichenfolgenformatierung mit String.Format()](https://stackoverflow.com/questions/15505462/what-is-the-difference-between-string-format-and-string-interpolation-in-c)
+Für zusätzliche Informationen, schauen Sie in die offizielle Dokumentation:
+- [String Interpolation in C#](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/tokens/interpolated)
+- [Was ist neu in C# 6.0](https://docs.microsoft.com/de-de/archive/blogs/csharpfaq/new-features-in-c-6)

@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen luominen"
-html_title:           "Java: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Satunnaislukujen generointi tarkoittaa satunnaisten numeroiden luomista ohjelmassa. Ohjelmoijat tekevät tätä esimerkiksi testauksen, pelien tai salausalgoritmien toteuttamiseksi.
+Satunnaislukujen tuottaminen Java-ohjelmassa tarkoittaa ennakoimattomien numeroiden luomista. Näitä lukuja käytetään mm. pelaamiseen, kryptografiaan ja tilastolliseen mallintamiseen.  
 
-## Kuinka tehdä:
+## Näin teet:
 
-Java tarjoaa valmiin luokan nimeltä Random, joka sisältää metodeja satunnaislukujen generoimiseksi. Esimerkiksi:
+Tässä on yksinkertainen esimerkki satunnaisluvun generoimisesta Javassa:
+```Java
+import java.util.Random; //luokan tuonti
 
-```Java 
-Random random = new Random();
+public class Main {
+    public static void main(String[] args) {
+        Random rand = new Random(); //luodaan Random-olio
 
-// Generoi kokonaisluku väliltä 0-9
-int randomInt = random.nextInt(10);
-System.out.println(randomInt);
+        int rand_int1 = rand.nextInt(1000); //tuotetaan satunnaisluku välillä 0-999
+        System.out.println("Satunnaisluku on : "+rand_int1);  //tulostetaan luku
+    }
+}
 ```
 
-Tämä koodi tulostaisi esimerkiksi luvun 5.
+Esimerkkiohjelman suorituksen tulostus voisi olla esimerkiksi:
+```
+Satunnaisluku on : 657
+```
 
-## Syväsukellus:
+## Syväsyöksy:
 
-Satunnaislukujen generoinnilla on pitkä historia matematiikassa ja tietojenkäsittelyssä. Aikaisemmin satunnaislukuja saatiin esimerkiksi arpakuutioita heittämällä, mutta nykyään tietokoneohjelmat tarjoavat tarkempia ja nopeampia tapoja generoida satunnaisia lukuja.
-
-Java tarjoaa myös muita vaihtoehtoja satunnaislukujen generointiin, kuten ThreadLocalRandom-luokan, joka on suunniteltu monisäikeisissä ympäristöissä toimiville sovelluksille.
-
-Satunnaislukujen generoiminen perustuu matemaattisiin algoritmeihin, jotka tuottavat luvut, jotka näyttävät satunnaisilta mutta ovat todellisuudessa ennustettavissa. Tämä on tärkeää ottaa huomioon esimerkiksi salausalgoritmeja suunnitellessa.
+Satunnaislukujen generointi on ollut osa ohjelmointia jo pitkään, sillä tietokoneiden alkuaikoina ei ole ollut helppoa tuottaa todellisia satunnaislukuja. Javan java.util.Random-luokka toimii pseudosatunnaislukugeneraattorina ja se on ollut käytössä Javan alkuvuosista asti. Sen lisäksi Java tarjoaa java.util.concurrent.ThreadLocalRandom-luokan ja java.security.SecureRandom-luokan, jotka tarjoavat myös erilaisia tapoja generoida satunnaislukuja.
 
 ## Katso myös:
 
-- [Oracle: Random-luokan dokumentaatio (englanniksi)](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Oracle: ThreadLocalRandom-luokan dokumentaatio (englanniksi)](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html)
+- Oracle Java API:n määritelmä java.util.Random-luokasta: [Linkki](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- Java Tutorial satunnaislukujen generoinnista: [Linkki](https://docs.oracle.com/javase/tutorial/essential/concurrency/newrandom.html)
+- Stack Overflow keskustelu: Eroja java.util.Random ja java.util.concurrent.ThreadLocalRandom välillä: [Linkki](https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java)

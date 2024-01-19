@@ -1,7 +1,7 @@
 ---
-title:                "Muunna päivämäärä merkkijonoksi."
-html_title:           "Swift: Muunna päivämäärä merkkijonoksi."
-simple_title:         "Muunna päivämäärä merkkijonoksi."
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,24 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
-Kääntäessämme päivämäärän merkkijonoksi, muutamme sen visuaaliseen muotoon, joka voi olla helpompi ymmärtää ja käsitellä ohjelmoinnissa. Tämä on erityisen hyödyllistä esimerkiksi luodessa käyttöliittymän, jossa halutaan näyttää päivämäärä tekstimuodossa. Ohjelmoijina haluamme myös olla joustavia ja tarjota vaihtoehtoisia tapoja esittää päivämäärä eri tilanteissa.
+# Päivämäärän muuttaminen merkkijonoksi Swiftissä
 
-## Kuinka teet sen:
+## Mikä & Miksi?
+Päivämäärän muuttaminen merkkijonoksi Swiftissä on prosessi, jolla päivämäärä esitetään helposti luetavana tekstinä. Ohjelmoijat tekevät tämän toiminnon, jotta voivat esittää päivämäärän sopivassa muodossa käyttäjän tai järjestelmän tarpeiden mukaisesti.
+
+## Näin teet:
 ```Swift
-let date = Date()
-let formatter = DateFormatter()
-formatter.dateFormat = "dd.MM.yyyy"
-let dateString = formatter.string(from: date)
-print(dateString)
+import Foundation
+
+let nyt = Date()
+let muotoilija = DateFormatter()
+muotoilija.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
+let merkkijonoPvm = muotoilija.string(from: nyt)
+print(merkkijonoPvm)
 ```
-#### Tulostus: 16.05.2021
+Tämän esimerkin tulostus olisi jotakin tämänkaltaista:`2022-04-08 12:45:10`
 
-Tässä ensin luodaan muuttuja date ja siihen tallennetaan nykyinen päivämäärä. Sitten luodaan DateFormatter-olio, jolla voimme muokata päivämäärän muotoa. Käytämme tässä esimerkissä "dd.MM.yyyy" merkintää, joka tarkoittaa päivän, kuukauden ja vuoden esittämistä numeroina pisteiden välissä. Tämän jälkeen käytämme DateFormatterin string(from: date) metodia, joka muuttaa päivämäärän merkkijonoksi valitsemallamme muotoilulla. Lopuksi tulostelemme muuttujan dateString arvon.
+## Syvempi tarkastelu
+Historiallisesti ottaen päivämäärän esittäminen merkkijonona on ollut osa ohjelmointia jo sen alkuaikoina. Tämä johtuu siitä, että tekstiesitys on ihmisen luontevampi tapa tulkita päivämääriä. Swiftissä `DateFormatter` -luokka tarjoaa monipuoliset työkalut päivämäärän esittämiseen merkkijonona.
 
-## Syvemmälle:
-Historiallisesti käyttäjät ovat tottuneet näkemään päivämäärät tiettyjen sääntöjen mukaisesti, esimerkiksi kuukauden kirjainlyhenne ja numero täyden vuoden sijaan. DateFormatter antaa meille mahdollisuuden luoda omia mukautettuja päivämäärän muotoja. Tämän lisäksi tiettyjen ohjelmointikielten sisään rakennettuja funktioita voidaan käyttää päivämäärää käsittelyyn, kuten esimerkiksi ```DateComponents()```.
+Swiftin lisäksi ohjelmoijilla on myös muita vaihtoehtoja päivämäärän käsittelyyn. Esimerkiksi JavaScriptissä voidaan käyttää `Date` -objektin `toLocaleDateString` -metodia.
 
-## Katso myös:
-- DateFormatterin dokumentaatio: https://developer.apple.com/documentation/foundation/dateformatter
-- Apple:n ohjeet päivämäärän muotoilusta: https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html
+`DateFormatterin` käyttö mahdollistaa monipuolisen päivämäärämuotoilun. "yyyy-MM-dd HH:mm:ss" on yleisin käytetty muoto, mutta muotoilija voi määritellä tarpeen mukaan uusia päivämäärämuotoja.
+
+## Katso myös
+1. Swiftin virallinen dokumentaatio: [Date](https://developer.apple.com/documentation/foundation/date)
+2. Date muuntaminen stringiksi: [Stackoverflow](https://stackoverflow.com/questions/35700281/date-format-in-swift)
+3. Swiftin `Date` ja `DateFormatter`: [Ray Wenderlich](https://www.raywenderlich.com/1850-date-and-time-programming-guide-for-swift)

@@ -1,7 +1,7 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Go: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Konkatenacja ciągów znaków"
+html_title:           "Bash: Konkatenacja ciągów znaków"
+simple_title:         "Konkatenacja ciągów znaków"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,32 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Łączenie stringów to prosta operacja, która pozwala programistom łączyć zbiory znaków w jedną linię tekstu. Jest to bardzo przydatne przy tworzeniu dynamicznych wiadomości, np. w przypadku tworzenia wiadomości e-mail lub generowania raportów. Programiści korzystają z tej funkcji, aby oszczędzić czas i zapewnić elastyczność w tworzeniu tekstu.
+## Co i Dlaczego?
+Konkatenacja stringów to proces łączenia dwóch lub więcej tekstów w jeden. Programiści korzystają z tego do manipulowania i formatowania danych tekstowych.
 
-## Jak to zrobić:
-Go oferuje prosty sposób, aby połączyć stringi dzięki funkcji `strings.Join()`. Można ją wywołać na obiekcie typu `strings` i przekazać jej slice z stringami, które chcemy połączyć, oraz separator, który ma zostać wstawiony pomiędzy każdym z nich. Przykładowe wywołanie tej metody mogłoby wyglądać tak:
-
-```
+## Jak to Zrobić:
+W Go, do konkatenacji stringów używamy operatora "+". Patrz na przykład poniżej:
+```Go
 package main
+import "fmt"
 
+func main() {
+ str1 := "Cześć, "
+ str2 := "świecie!"
+ result := str1 + str2
+ fmt.Println(result)
+}
+```
+Gdy uruchomisz ten kod, zobaczysz następujące wyjście:
+```Go
+Cześć, świcie!
+```
+## Głębsza Wiedza
+Historia konkatenacji wchodzi głęboko w korzenie programowania. Można to spotkać w prawie każdym języku programowania. W Go, spoza operatora "+", istnieje również funkcja `strings.Join()` i metoda `bytes.Buffer`.
+
+Funkcja `strings.Join()` jest alternatywą, którą można wykorzystać gdy mamy więcej niż dwa stringi do połączenia. Przykład:
+```Go
+package main
 import (
-	"fmt"
-	"strings"
+ "fmt"
+ "strings"
 )
 
 func main() {
-	mySlice := []string{"witaj", "w", "świecie"}
-	fmt.Println(strings.Join(mySlice, " "))
+ str := []string{"Cześć, ", "świecie!"}
+ result := strings.Join(str, "")
+ fmt.Println(result)
 }
 ```
+Metoda `bytes.Buffer` jest znacznie wydajniejsza przy dużej ilości danych:
+```Go
+package main
+import (
+ "bytes"
+ "fmt"
+)
 
-W tym przypadku wyjściem będzie łańcuch `witaj w świecie`.
+func main() {
+ var buffer bytes.Buffer
 
-## Głębsze zanurzenie:
-Funkcja `Join` ma swoje korzenie w bibliotece C, a jej implementacja jest oparta na algorytmie QuickSort, co sprawia, że jest bardzo wydajna. Alternatywną metodą jest użycie operatora `+`, jednak jest to mniej efektywne, ponieważ tworzy kopię stringa za każdym razem, gdy operator jest używany. Kolejną użyteczną funkcją do łączenia stringów w Go jest metoda `Sprintf`, która umożliwia formatowanie tekstu z wykorzystaniem specyfikatorów formatu.
+ for i := 1; i <= 10; i++ {
+  buffer.WriteString("string ")
+ }
 
-## Zobacz również:
-https://golang.org/pkg/strings/#Join - dokumentacja funkcji `strings.Join()`
-https://golang.org/doc/effective_go.html - oficjalny poradnik języka Go
-https://gobyexample.com/string-formatting - przykłady formatowania stringów w Go
+ fmt.Println(buffer.String())
+}
+```
+## Zobacz Również
+1. Dokumentacja Go dla pakietu string: https://golang.org/pkg/strings/
+2. Dokumentacja Go dla pakietu bytes: https://golang.org/pkg/bytes/
+3. Blog o konkatenacji stringów w Go: https://go.dev/blog/strings

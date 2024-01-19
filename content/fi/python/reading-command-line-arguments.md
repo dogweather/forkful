@@ -1,7 +1,7 @@
 ---
-title:                "Kommenttiriviparametrien lukeminen"
-html_title:           "Python: Kommenttiriviparametrien lukeminen"
-simple_title:         "Kommenttiriviparametrien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Elm: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,46 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
-Komentoriviparametrien lukeminen tarkoittaa ohjelman antamien argumenttien vastaanottamista käyttäjältä komentokehotteessa. Tätä tehdään yleensä siksi, että ohjelman suorituksessa voidaan käyttää erilaisia parametreja, kuten tiedostonimiä tai vaihtoehtoisia toimintoja.
+# Mikä & Miksi?
 
-# Kuinka:
-Tässä esimerkeissä osoitetaan, kuinka Pythonin ```argv``` -moduulia käytetään komentoriviparametrien lukemiseen. 
+Komentoriviparametrit ovat ohjelmistoille annettuja syötteitä, jotka antavat lisäohjeita ohjelman suoritukseen. Ohjelmoijat käyttävät niitä ohjaamaan ohjelmien toimintaa ilman koodin muokkaamista.
 
-```python
+# Näin teet:
+
+Pythonissa `sys`-moduulin `argv`-lista sisältää komentorivilta annetut argumentit. Argumentit luetaan ohjelman käynnistyessä.
+
+```Python
 import sys
 
-# Hae argumentit ja tallenna ne listaan
-args = sys.argv
+print("Komentoriviparametrit:")
 
-# Tulosta kaikki argumentit
-print("Saadut argumentit:", args)
-
-# Tulosta ensimmäinen argumentti
-print("Ensimmäinen argumentti:", args[0])
-
-# Tulosta toinen argumentti
-print("Toinen argumentti:", args[1])
+for i in sys.argv:
+    print(i)
 ```
 
-Kun koodi suoritetaan komentokehotteessa seuraavasti:
+Jos ajat yllä olevan koodin komentoriviltä antamalla lisäargumentteja (esim. `python koodi.py Hei Maailma`), tuloste näkyy seuraavasti:
 
-```
-python arguments.py arg1 arg2
-```
-
-Saadaan seuraava tulos:
-
-```
-Saadut argumentit: ['arguments.py', 'arg1', 'arg2']
-Ensimmäinen argumentti: arguments.py
-Toinen argumentti: arg1
+```Shell
+Komentoriviparametrit:
+koodi.py
+Hei
+Maailma
 ```
 
-# Syväsukellus:
-Komentoriviparametrien lukemisen historia juontaa juurensa vanhoista käyttöjärjestelmistä, joissa ohjelmia suoritettiin komentokehotteessa paljon nykyistä enemmän. Nykyään tätä tekniikkaa käytetään edelleen, koska se mahdollistaa ohjelman toiminnan varaamalla tilaa komentokehotteen ulkopuolella. Vaihtoehtoinen tapa lukea komentoriviparametreja Pythonissa on käyttää ```argparse``` -moduulia, joka tarjoaa enemmän mahdollisuuksia argumenttien hallintaan. Argumenttien lukeminen on myös tärkeä taito monissa muissa ohjelmointikielissä, joten sen opetteleminen hyödyttää laajemmin.
+# Syvempi syvennys:
 
-# Katso myös:
-- [Pythonin sys.argv-dokumentaatio](https://docs.python.org/3/library/sys.html#sys.argv)
-- [Pythonin argparse-dokumentaatio](https://docs.python.org/3/library/argparse.html)
-- [Komentoriviparametrien lukeminen muilla ohjelmointikielillä](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)
+1. Historiallinen yhteys: Komentoriviparametrinluku on peräisin Unix-käyttöjärjestelmän ajoilta ja on edelleen hyödyllinen ohjelmoijille.
+
+2. Vaihtoehdot: Voit käyttää myös `argparse`-moduulia monimutkaisempien argumenttivaatimusten mukaan.
+
+3. Toteutuksen yksityiskohdat: Huomaa, että `sys.argv` sisältää ensin skriptin nimen (tässä tapauksessa "koodi.py") ja sitten komentorivilta saadut argumentit.
+
+# Lisätietolähteitä:
+
+1. Pythonin virallinen dokumentaatio: [sys.argv](https://docs.python.org/3/library/sys.html)
+2. Pythonin virallinen dokumentaatio: [argparse](https://docs.python.org/3/library/argparse.html) 
+3. Blogikirjoitus: [Command Line arguments in Python](https://realpython.com/pyscripter-command-line-arguments/)

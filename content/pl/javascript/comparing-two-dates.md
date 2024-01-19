@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "Javascript: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,35 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Porównywanie dwóch dat jest procesem, który polega na sprawdzeniu, która z dwóch podanych dat jest wcześniejsza lub późniejsza. Jest to bardzo ważna funkcja w programowaniu, ponieważ pozwala nam na efektywne zarządzanie różnymi zdarzeniami w naszym programie, takimi jak wygaśnięcie abonamentów, ważność kodów rabatowych lub daty urodzin użytkowników.
+## Co i Dlaczego?
+
+Porównywanie dwóch dat jest, jak sama nazwa wskazuje, mechanizmem znalezienia różnicy między tymi dwoma punktami w czasie. Programiści robią to głównie, aby kontrolować sekwencję zdarzeń, wyliczać różne statystyki i monitorować postęp.
 
 ## Jak to zrobić:
-```javascript
-const date1 = new Date(2021, 1, 1);
-const date2 = new Date(2021, 3, 1);
 
-if (date1 < date2) {
-  console.log("Date 1 comes before Date 2");
-} else if (date1 > date2) {
-  console.log("Date 2 comes before Date 1");
+Porównywanie dwóch dat w JavaScript jest proste. Oto przykładowy kod:
+
+```Javascript 
+let data1 = new Date('2022-01-01');
+let data2 = new Date('2022-02-01');
+
+if(data1 < data2) {
+  console.log("data1 jest wcześniejsza");
+} else if(data1 > data2) {
+  console.log("data1 jest późniejsza");
 } else {
-  console.log("Date 1 and Date 2 are equal");
+  console.log("daty są takie same");
 }
 ```
-### Wynik:
-`Date 1 comes before Date 2`
+Jeśli uruchomisz ten kod, zobaczysz, że wydrukuje "data1 jest wcześniejsza", ponieważ 1 stycznia 2022 jest wcześniejszy od 1 lutego 2022.
 
-## Głębszy wgląd:
-1. Kontekst historyczny:
-Porównywanie dwóch dat jest procesem, który był wykorzystywany już w czasach komputeryzacji. Wcześniej, kiedy używano tylko liczb, porównywanie dat było trudniejsze. Dzięki łatwiejszej pracy z datami w programowaniu, ten proces stał się znacznie prostszy.
+## Deep Dive:
 
-2. Alternatywy:
-W Javascript istnieją różne funkcje, które można wykorzystać do porównywania dat, takie jak `getTime()`, `valueOf()`, `getDate()`. Każda z nich ma swoje wady i korzystanie z nich może być zależne od specyfiki danego zadania.
+Porównanie dat w JavaScript jest standardem od początku istnienia języka, ale jest wiele różnych metod, które można zastosować do praktycznej realizacji tego zadania. Oprócz powyższego przykładu, inne metody obejmują konwersję dat na liczbę milisekund od konkretnej daty w przeszłości (znanej jako Unix Epoch), a następnie porównanie tych liczb.
 
-3. Szczegóły implementacji:
-Podczas porównywania dat, Javascript wykorzystuje wartość liczbową time stamp, która reprezentuje ilość milisekund, które minęły od 1 stycznia 1970 roku do danej daty. Dzięki temu, porównywanie dwóch dat jest możliwe przez porównanie wartości time stamp.
+Jest wiele bibliotek, takich jak moment.js, które oferują bardziej rozbudowane metody porównywania dat, które mogą być lepszym rozwiązaniem dla bardziej skomplikowanych problemów.
 
-## Zobacz również:
-- [JavaScript Date Methods](https://www.w3schools.com/js/js_date_methods.asp)
-- [Comparing Dates in JavaScript](https://dmitripavlutin.com/how-to-compare-dates-in-javascript/)
+Szczegół implementacyjny: wewnętrznie, JavaScript przechowuje daty jako liczby reprezentujące milisekundy od północy 1 stycznia 1970 r. UTC. To jest przyczyną, dlaczego bezpośrednie porównanie jest możliwe.
+
+## Zobacz także:
+
+Jeśli chcesz dowiedzieć się więcej na temat pracy z datami w JavaScript, oto kilka przydatnych linków:
+
+- Dokumentacja Mozilla: [Date (JavaScript)](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Poradnik moment.js: [Manipulacja i formatowanie dat](https://momentjs.com/)
+- Artykuł o porównywaniu dat: [Porównywanie dat w JavaScript](https://dmitripavlutin.com/compare-dates-javascript/)
+- Artykuł Stack Overflow: [Jak porównać dwie daty bez uwzględniania czasu](https://stackoverflow.com/questions/2698725/comparing-date-part-only-without-comparing-time-in-javascript)

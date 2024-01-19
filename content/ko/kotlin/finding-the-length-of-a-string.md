@@ -1,7 +1,7 @@
 ---
-title:                "문자열 길이 찾기"
-html_title:           "Kotlin: 문자열 길이 찾기"
-simple_title:         "문자열 길이 찾기"
+title:                "문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
+simple_title:         "문자열의 길이 찾기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이며 왜 필요할까?
+문자열의 길이를 찾는 것은 특정 문자열이 얼마나 많은 문자를 포함하는지 결정하는 것을 의미합니다. 이는 로직을 검증하거나 데이터를 관리하는데 있어 매우 중요한 부분입니다. 
 
-문자열의 길이를 찾는 것이 무엇인지와 왜 개발자들이 그것을 하는지에 대해 간략하게 설명하겠습니다.
+## 방법 살펴보기:
 
-첫째로, 문자열의 길이란 단순히 문자열에서 사용된 문자의 개수를 의미합니다. 예를 들어, "Hello"라는 문자열은 5개의 문자를 포함하고 있으므로 길이는 5가 됩니다.
+여기에서는 코틀린을 사용하여 문자열의 길이를 찾는 소스코드 예시를 제공합니다:
 
-둘째로, 개발자들은 주어진 문자열의 길이를 알고 싶을 수 있습니다. 이는 문자열의 길이가 다른 연산 및 출력과 관련이 있는 경우가 있기 때문입니다.
-
-## 어떻게:
-
-아래에 고정된 길이로 된 문자열을 찾는 예시와, 사용자가 입력한 문자열의 길이를 찾는 예시를 제공하겠습니다.
-
-```
-Kotlin val exampleString = "This is a fixed length string"
-println("The length of this string is: ${exampleString.length}")
+```Kotlin
+fun main() {
+    val str = "Hello, World!"
+    println("Length: ${str.length}")
+}
 ```
 
-Output: The length of this string is: 30
+이 코드를 실행하면 다음과 같은 출력을 볼 수 있습니다:
 
 ```
-Kotlin print("Enter a string: ")
-val userInput = readLine()
-println("The length of this string is: ${userInput.length}")
+Length: 13
 ```
 
-Output:
+## 깊이있게 살펴보기:
 
-Enter a string: Hello, World!
-The length of this string is: 13
+문자열의 길이를 찾는 것은 프로그래밍의 기본이며, 인공지능이 떠오르기 전부터 프로그래머들이 사용하던 기술입니다. 코틀린에서는 `.length` 속성을 사용하여 이를 수행합니다. 
 
-## 깊게 파헤치기:
+대안으로, `.count()` 함수를 사용하여 문자열의 길이를 계산할 수도 있습니다.
 
-1) 문자열의 길이를 찾는 것은 일반적으로 문자열을 처리하는 언어나 프로그래밍 환경에서 중요한 역할을 합니다. 예를 들어, 입력받은 정보의 길이를 알아야만 정확하게 처리할 수 있기 때문입니다.
+```Kotlin
+fun main() {
+    val str = "Hello, World!"
+    println("Length: ${str.count()}")
+}
+```
 
-2) 문자열의 길이를 찾는 데에는 다양한 방법이 있습니다. 예를 들어, index를 사용하여 문자열의 각 문자를 반복적으로 검색하면서 길이를 찾는 방법도 있고, 또는 내장된 함수를 사용하는 방법도 있습니다. 이러한 다양한 방법을 알고 있다면 더욱 효율적으로 문자열의 길이를 찾을 수 있습니다.
+이렇게 하면 `str.length`와 같은 결과를 얻을 수 있습니다.
 
-3) Kotlin에서는 문자열을 다루기 위한 내장 함수인 "length"를 제공하며, 이를 사용하여 간단하고 빠르게 문자열의 길이를 찾을 수 있습니다. 또한, 문자열의 길이를 다루는 것과 관련된 다른 함수들도 제공하고 있습니다.
+## 참고자료:
 
-## 관련 자료:
+아래에서 문자열 처리와 관련된 다른 코틀린 도구를 확인해보세요:
 
-- Kotlin 공식 문서: https://kotlinlang.org/docs/reference/basic-types.html#strings
-- GeeksforGeeks의 "Kotlin | String length() Method" 문서: https://www.geeksforgeeks.org/kotlin-string-length-method/
+1. [코틀린 공식 문자열 API 문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string)
+2. [코틀린 문자열 핸들링 튜토리얼](https://www.programiz.com/kotlin-programming/string)
+3. [문자열 처리 관련 코틀린 스프링 기사](https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0)

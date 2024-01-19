@@ -1,7 +1,7 @@
 ---
-title:                "Jämförande av två datum"
-html_title:           "Swift: Jämförande av två datum"
-simple_title:         "Jämförande av två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -11,36 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-När vi pratar om att jämföra två datum i Swift, så syftar vi på att kontrollera om två datum är lika eller om ena datumet är tidigare eller senare än det andra. Detta är en vanlig uppgift för programmerare när de arbetar med datum och tid i sina program.
 
-## Hur gör man?
-För att jämföra två datum i Swift, kan vi använda inbyggda metoder och operatörer. Vi kan till exempel använda "==", "<" och ">" för att kontrollera om två datum är lika eller om ena datumet är tidigare eller senare än det andra. Kolla in kodexempel nedan:
+Att jämföra två datum innebär att bestämma vilket av de två datumen som kommer först eller om de är samma datum. Detta är nödvändigt för att organisera händelser, sortera data och utföra beräkningar baserat på tid.
+
+## Hur gör man:
+
+Vi kommer att använda Swifts innebyggda funktioner för datumjämförelse: "compare(_:)" och "timeIntervalSince(_:)".
 
 ```Swift
-let date1 = Date()
-let date2 = Date(timeIntervalSinceNow: 3600) // skapar ett datum en timme framåt i tiden
-if date1 == date2 {
-    print("Datumen är lika.")
-} else if date1 < date2 {
-    print("Date1 är tidigare än date2.")
-} else {
-    print("Date1 är senare än date2.")
+import Foundation
+
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+let date1 = dateFormatter.date(from: "2022/03/31 14:00")
+let date2 = dateFormatter.date(from: "2022/04/01 10:00")
+
+// Använda compare(_:)
+switch date1?.compare(date2!) {
+case .orderedAscending:
+    print("Datum 1 kommer före datum 2")
+case .orderedSame:
+    print("Datum 1 och datum 2 är samma")
+case .orderedDescending:
+    print("Datum 1 kommer efter datum 2")
+case .none:
+    print("Kunde inte jämföra datumen")
+}
+
+// Använda timeIntervalSince(_:)
+if let timeInterval = date1?.timeIntervalSince(date2!) {
+    if timeInterval < 0 {
+        print("Datum 1 kommer före datum 2")
+    } else if timeInterval == 0 {
+        print("Datum 1 och datum 2 är samma")
+    } else {
+        print("Datum 1 kommer efter datum 2")
+    }
 }
 ```
 
-Output:
-```
-Date1 är tidigare än date2.
-```
-
 ## Djupdykning
-När det kommer till att jämföra datum, är det viktigt att veta att det inte alltid är så enkelt som att bara använda operatörer. Det finns många faktorer som kan påverka resultatet, som till exempel tidszoner och olika kalendrar. Det är därför viktigt att använda rätt metoder för att få en korrekt jämförelse.
 
-Som ett alternativ till att använda operatörer, kan man också använda metoden "compare(_:)". Denna metod jämför två datum och returnerar en "ComparisonResult" som kan vara .orderedAscending (om det första datumet är tidigare), .orderedDescending (om det andra datumet är tidigare) eller .orderedSame (om de är lika). Detta kan vara användbart om man vill använda resultatet för att göra olika uppgifter i programmet.
+Swifts datumhantering är baserad på Cocoa och NSDates historiska implementation. Alternativt kan du använda tredjepartsbibliotek som SwiftDate för mer anpassningsbara jämförelser och datumhantering. 
 
-Implementeringsdetaljer som är viktiga att känna till är att Swift använder Gregorian Calendar som standard för att hantera datum och tid, men man kan också använda andra kalendrar genom att använda "Calendar"-klassen.
+När Swift jämför två datum betraktas de som punkter längs en tidslinje snarare än kalenderdatum. Därför, när du jämför två datum i Swift, jämför den faktiskt tidpunkterna för de två datumen ner till bråkdelar av en sekund.
 
-## Se även
-- [Apple Developer Documentation - Date](https://developer.apple.com/documentation/foundation/date)
-- [Apple Developer Documentation - Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- [Official Swift Forum - Date comparison](https://forums.swift.org/t/date-comparison/25249)
+## Se också
+
+- [Apple dokumentation Date](https://developer.apple.com/documentation/foundation/date)
+- [SwiftDate på GitHub](https://github.com/malcommac/SwiftDate)
+- [NSDate i Objective-C](https://developer.apple.com/documentation/foundation/nsdate)

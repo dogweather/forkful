@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "PowerShell recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,30 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing a date from a string in PowerShell refers to extracting the date information from a string of text and converting it into a valid date format that can be used in calculations or displayed in a specific format. Programmers do this in order to manipulate and use date information in their scripts and applications.
+
+Parsing a date from a string involves extracting date information from text and transforming it into a date/time format that your system can understand. Programmers do this as it permits easier manipulation and comparison of the extracted dates.
 
 ## How to:
-To parse a date from a string in PowerShell, you can use the `Get-Date` cmdlet along with the `-Date` parameter. This allows you to specify the date string that you want to parse and the format in which it is written. See the example below:
+
+PowerShell comes with a straightforward cmdlet `[datetime]::ParseExact()` for parsing dates from strings. Let's dive in:
 
 ```PowerShell
-Get-Date -Date "12/25/2021"
+# Define the date string and the expected format
+$dateString = '05-21-2021'
+$format = 'MM-dd-yyyy'
+# Parse the date
+$date = [datetime]::ParseExact($dateString,$format,$null)
+# Print the date
+Write-Host $date
 ```
 
-The output of this code block would be: `Saturday, December 25, 2021 12:00:00 AM`.
-Alternatively, you can use the `[DateTime]::ParseExact` method to manually specify the format of the date string and convert it into a `DateTime` object. See the example below:
-
-```PowerShell
-[DateTime]::ParseExact("2021-12-25","yyyy-MM-dd",$null)
+Output:
 ```
+2021-05-21 00:00:00
+```
+>Note: The date could perform an error if the string doesn't match the expected format!
 
-The output of this code block would be: `Saturday, December 25, 2021 12:00:00 AM`.
+## Deep Dive
 
-## Deep Dive:
-Parsing dates from strings has become increasingly important for programmers as more and more data is stored in databases and spreadsheets. Date information often needs to be extracted and manipulated in order to make informed decisions or perform calculations. In PowerShell, there are various methods for parsing dates, such as using built-in cmdlets like `Get-Date` or using .NET methods like `ParseExact`.
+1. **Historical Context:** Date parsing has been in PowerShell since its early versions (beginning in 2006). The method has been improved over time for better speed and versatility. 
 
-An alternative method for parsing dates in PowerShell is using regular expressions. This allows for more flexibility in handling different date formats and can be useful for data validation purposes. However, regular expressions can be more complex and may require a deeper understanding of pattern matching in order to use effectively.
+2. **Alternatives:** There are numerous other ways to parse a date from a string in PowerShell, such as using `Get-Date` cmdlet.
+
+   ```PowerShell
+   $dateString = "2021-05-21"
+   $date = Get-Date -Date $dateString
+   Write-Host $date
+   ```
+
+   Output:
+   ```
+   2021-05-21 00:00:00
+   ```
+
+3. **Implementation Details:** Parsing varies by the parsed format's string locale/culture. In our example, we used $null for the culture parameter, which defaults to the current culture info.
 
 ## See Also:
-- `Get-Date` cmdlet documentation: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date
-- `[DateTime]::ParseExact` method documentation: https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact
-- Regular expressions in PowerShell: https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-regexes
+
+1. [ParseExact Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact?view=net-5.0)
+2. [PowerShell Get-Date Cmdlet](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+3. [CultureInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-5.0) for culture specific parsing.

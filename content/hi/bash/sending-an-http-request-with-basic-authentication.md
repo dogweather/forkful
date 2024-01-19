@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
-html_title:           "Bash: बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या होता है और क्यों?
-बेसिक ऑथेंटिकेशन के साथ एचटीटीपी अनुरोध भेजने का मतलब है कि हम किसी सर्वर से डेटा को डाउनलोड करने के लिए अपने यूज़रनेम और पासवर्ड को सत्यापित करने के लिए अपना उपयोगकर्ता नाम और पासवर्ड के साथ एक अनुरोध भेजते हैं। इसे प्रोग्रामर्स अपने स्क्रिप्ट या ऐप्स में उपयोग करते हैं ताकि वे एक सुरक्षित और प्राइवेट तरीके से डेटा को डाउनलोड और सुपरिम्पोज़ कर सकें।
+## क्या और क्यों?
+HTTP अनुरोध के साथ मूल ग्राहक पहुँच भेजना क्या है? इससे प्रोग्रामर्स अपने सर्वर को अपनी पहचान सत्यापित करने में सहायता करते हैं। यदि आपके पास मान्य प्रमाणीकरण जानकारी नहीं है, तो सर्वर अनुरोध अस्वीकार कर सकता है। 
 
-## कैसे:
-*Bash ...* कोड ब्लॉक्स के भीतर प्रोग्रामिंग उदाहरण और नमूना आउटपुट
+## कैसे करें:
+Bash कोड प्रयोग करके आप सरलता से HTTP अनुरोध के साथ मूल प्रमाणीकरण भेज सकते हैं। 
 
-उदाहरण 1:
 ```Bash
-curl -u username:password http://example.com/api/data
-```
+#!/bin/bash
 
-आउटपुट:
-```
-{"data": "This is the requested data"}
-```
+USERNAME="username"
+PASSWORD="password"
 
-उदाहरण 2:
+URL="http://your-webpage.com"
+AUTH="Authorization: Basic $(echo -n "$USERNAME:$PASSWORD" | base64)"
+
+curl -H "$AUTH" "$URL"
+```
+उपरोक्त ब्लॉक का उपयोग करें और आवश्यकतानुसार यूजरनेम, पासवर्ड और URL बदलें। Output:
+
 ```Bash
-wget --user=username --password=password http://example.com/api/data
+{
+  "authenticated": true,
+  "user": "username"
+}
 ```
+## गहराई में: 
+HTTP Basic Authentication का उपयोग पहली बार RFC 2617 (जून 1999) में पेश किया गया था। ऑल्टरनेटिव्स में OAuth, Digest Access Authentication, और SCRAM-SHA-1 शामिल हैं। इसपर अमल करते समय, प्रमाणीकरण की जानकारी को Base64 encoding का उपयोग करके कोडित किया जाता है। हालांकि, ध्यान दें कि Base64 encoding आसानी से decode की जा सकती है, इसलिए HTTPS तकनीक का उपयोग करना सलाह देते हैं।
 
-आउटपुट:
-```
-{"data": "This is the requested data"}
-```
+## देखें भी: 
+यदि आपको इस विषय पर और अधिक जानकारी चाहिए, तो निम्नलिखित लिंक्स देखें। 
 
-## गहराई खोज:
-*इतिहास प्रस्तावना, वैकल्पिक चरण और एचटीटीपी अनुरोध भेजने के लिए कार्यान्वयन विवरण*
-
-* इतिहास प्रस्तावना: बेसिक ऑथेंटिकेशन हुआ पहले जब इंटरनेट का जन्म हुआ था और उस समय डाटा की सुरक्षा ज्यादा मुश्किल थी। इसके आविष्कार का श्रेय लिनस टोर्वाल्ड्स को दिया जाता है।
-* वैकल्पिक चरण: आप एचटीटीपी के साथ बेसिक ऑथेंटिकेशन को उपयोग नहीं कर सकते हैं, आप अन्य जासूसी कोडिंग और अनुमतियों को भी उपयोग कर सकते हैं।
-* एचटीटीपी अनुरोध कार्यान्वयन विवरण: कार्यान्वयन में, प्रोग्रामर अपने स्क्रिप्ट या ऐप में *curl* या *wget* कमांड का उपयोग करते हैं। उन्हें उपयोगकर्ता का नाम और पासवर्ड की आवश्यकता होती है ताकि वे अनुरोध को सफलतापूर्वक पूरा कर सकें।
-
-## आगे की जाँच करें:
-संबद्ध स्रोतों के लिंक
-
-* [थंडरबर्ड API एचटीटीपी और बेसिक ऑथेंटिकेशन के साथ कम बात कैसे करें](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Thunderbird/API_Documentation/Thunderbird_API_With_Basic_Authenticated_HTTP)
-* [यूज़रनेम और पासवर्ड के साथ प्रसिद्ध एचटीटीपी स्क्रिप्ट](https://superuser.com/questions/149329/username-and-password-for-basic-authentication-in-wget-script)
-* [एचटीटीपी अनुरोध भेजने के लिए बेसिक ऑथेंटिकेशन का क्रॉस-भाषाई समर्थन](https://security.stackexchange.com/questions/
+- [HTTP authentication - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [HTTP Basic Auth - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

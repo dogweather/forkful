@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "TypeScript: Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,46 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Pobieranie aktualnej daty jest ważnym aspektem dla wielu programistów. Jest to proces, który pozwala programowi uzyskać bieżące informacje o dacie i czasie. Jest to szczególnie przydatne przy tworzeniu aplikacji, które muszą śledzić aktualne wydarzenia lub operować na danych z różnych dni.
+
+Zdobycie aktualnej daty oznacza pobranie date od komputera bieżącego użytkownika w danym momencie. Programiści robią to, aby śledzić czas wydarzeń, tworzyć znaczniki daty lub do synchronizacji danych.
 
 ## Jak to zrobić:
-### Przykłady kodu w języku TypeScript
-Poniżej znajdziesz kilka przykładów kodu w języku TypeScript, które pozwolą Ci pobierać aktualną datę w różnych formatach.
 
-#### Pobranie daty w formacie DD/MM/YYYY (03/11/2021)
+Oto prosta metoda, aby uzyskać aktualną datę w TypeScript:
+
 ```TypeScript
-const currentDate = new Date();
-const day = currentDate.getDate();
-const month = currentDate.getMonth() + 1;
-const year = currentDate.getFullYear();
-console.log(`${day}/${month}/${year}`);
-```
-#### Pobranie daty w formacie DD-MM-YYYY (03-11-2021)
-```TypeScript
-const currentDate = new Date();
-const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
-console.log(currentDate.toLocaleDateString('en-US', options));
-```
-#### Pobranie godziny w formacie HH:MM:SS (15:30:45)
-```TypeScript
-const currentDate = new Date();
-const hour = currentDate.getHours();
-const minutes = currentDate.getMinutes();
-const seconds = currentDate.getSeconds();
-console.log(`${hour}:${minutes}:${seconds}`);
+let aktualnaData = new Date();
+console.log(aktualnaData);
 ```
 
-## Deep Dive:
-### Kontekst historyczny:
-Pobieranie aktualnej daty jest istotne, ponieważ pozwala programom na prawidłowe wykonywanie operacji, które wymagają informacji o bieżącym czasie. Wcześniej konieczne było ręczne obliczanie daty, co nie tylko zajmowało więcej czasu, ale również było bardziej podatne na błędy.
+Powinieneś zobaczyć wynik podobny do poniższego, który pokazuje aktualną datę i czas:
 
-### Alternatywy:
-Podczas pobierania aktualnej daty w TypeScript można również użyć bibliotek, takich jak Moment.js lub Day.js, które udostępniają wiele funkcji i formatów daty.
+```TypeScript
+2022-03-04T11:37:29.105Z
+```
 
-### Szczegóły implementacji:
-Do pobrania aktualnej daty w TypeScript używa się obiektu `Date`. Jest to globalny obiekt w języku JavaScript, który przechowuje informacje o bieżącym czasie. Można również wykorzystać metodę `toLocaleDateString()` do określenia pożądanego formatu daty.
+Możemy również łatwo uzyskać składniki daty, takie jak rok, miesiąc i dzień:
 
-## Zobacz także:
-- [Dokumentacja TypeScript: Obiekt Date](https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html#date)
-- [Moment.js: Biblioteka do obsługi dat w JavaScript](https://momentjs.com/)
-- [Day.js: Prosta biblioteka do manipulowania datami w JavaScript](https://day.js.org/en/)
+```TypeScript
+let rok = aktualnaData.getFullYear();
+let miesiac = aktualnaData.getMonth()+1;
+let dzien = aktualnaData.getDate();
+console.log(`Rok: ${rok}, Miesiąc: ${miesiac}, Dzień: ${dzien}`);
+```
+
+Wynik może wyglądać tak:
+
+```TypeScript
+Rok: 2022, Miesiąc: 3, Dzień: 4
+```
+
+## W głąb tematu
+
+Zakładanie dat jest tak starym konceptem jak samo programowanie. JavaScript, na którym jest oparty TypeScript, zapewnia rodzimą klasę `Date`, którą używamy do manipulacji datą i czasem. TypeScript zachowuje te same metody do obsługi dat, ale dodaje mocne typowanie i inne funkcje.
+
+Alternatywą dla wbudowanego obiektu Date może być biblioteka `moment.js`, która oferuje wiele potężnych funkcji do manipulowania i formatowania dat. 
+
+Oto jak możemy uzyskać aktualną datę za pomocą `moment.js`:
+
+```TypeScript
+import * as moment from 'moment';
+let aktualnaData = moment();
+console.log(aktualnaData.format());
+```
+
+Co do szczegółów implementacji, ważne jest pamiętanie, że metoda `getMonth()` zwraca wartość od 0 (styczeń) do 11 (grudzień). Dlatego dodajemy 1 do wyniku, aby uzyskać typowe wartości miesięcy.
+
+## Zobacz też
+
+1. [Dokumentacja TypeScript](https://www.typescriptlang.org/docs/)
+2. [Dokumentacja JavaScript Date](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
+3. [Dokumentacja Moment.js](https://momentjs.com/docs/)

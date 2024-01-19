@@ -12,47 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a date into a string is the process of representing a date in a human-readable and easily understandable format, such as "March 25th, 2020" or "03/25/2020". Programmers often do this to display the date in a more user-friendly manner or to save it as a string for further processing.
+Converting a date into a string in Arduino programs involves transforming a specific instance in time into a human-readable format. Programmers do it to display, log, or process date/time data in a way that people can easily understand.
 
 ## How to:
 
-To convert a date into a string in Arduino, you can use the ```itoa()``` function. This function takes in three parameters: the integer value of the date, a character array to store the converted string, and the base of the number system to convert into. Here is an example code using ```itoa()``` to convert the current date into a string:
+Here's a simple approach on how to convert date and time into a string with Arduino. You can use "sprintf" function, which is similar to "printf" but it prints the output as a string.
 
-```
-#include <Time.h>
-
-int day, month, year;
-char date[11];
+```Arduino
+#include <TimeLib.h>
 
 void setup() {
   Serial.begin(9600);
-  setTime(9, 30, 0, 25, 3, 2020); // set time to 9:30am, March 25th, 2020
+  
+  setTime(10,30,0,1,1,2022); // set time to 10:30:00am Jan 1 2022
 }
 
 void loop() {
-  day = day();
-  month = month();
-  year = year();
-  itoa(day, date, 10); // convert day to string with a base of 10
-  strcat(date, "/");
-  itoa(month, date+3, 10); // convert month to string and add it to date array starting from index 3
-  strcat(date, "/");
-  itoa(year, date+6, 10); // convert year to string and add it to date array starting from index 6
-  Serial.println(date); // print the converted date in the format "dd/mm/yyyy"
-  delay(1000);
+  time_t t = now();
+  char buffer[20];
+  sprintf(buffer, "%02d:%02d:%02d %02d/%02d/%4d", hour(t), minute(t), second(t), day(t), month(t), year(t));
+  Serial.println(buffer);
+  
+  delay(1000); // update every second
 }
 ```
+When you run this code, it outputs the current time as a string in the format: `10:30:00 01/01/2022`.
 
-The output of this code would be ```25/03/2020``` on the serial monitor.
+## Deep Dive
 
-## Deep Dive:
+The "sprintf" function has been around since the early days of C, providing a way to print formatted data. Though very useful, it's worth noting things can get messy if you're not careful with buffer sizes — resulting in overflow errors.
 
-Historically, converting a date into a string was a more complex process, involving manual calculations and formatting. However, with the development of programming languages and libraries, this process has become much simpler and more efficient. Some alternative methods to convert a date into a string in Arduino include using the ```sprintf()``` function or creating your own function for the conversion. These methods may provide more customization options, but they also require more coding and may not be as optimized as the built-in ```itoa()``` function.
+An alternative to using "sprintf" is to use separate char arrays for each segment of the date and then concatenate them.
 
-When implementing the ```itoa()``` function, it is essential to consider the base of the number system to convert into. In our example, we used a base of 10, but you can also use other bases such as 2, 8, or 16 depending on your project's needs. The ```itoa()``` function takes the modulus of the date value with the given base to convert it into a string.
+```Arduino
+char yearString[5];
+char dateBuffer[11]; // holds "DD/MM/YYYY\0"
 
-## See Also:
+itoa(year(t), yearString, 10);
+strcpy(dateBuffer, dayStr(t));
+strcat(dateBuffer, "/");
+strcat(dateBuffer, monthStr(t));
+strcat(dateBuffer, "/");
+strcat(dateBuffer, yearString);
 
-- [Arduino Reference - itoa()](https://www.arduino.cc/reference/en/language/variables/conversion/itoa/)
-- [dateToStr library](https://create.arduino.cc/projecthub/royy/convert-date-to-string-julian-gregorian-867a37)
-- [sprintf() function](https://www.arduino.cc/reference/en/language/functions/communication/serial/sprintf/)
+Serial.println(dateBuffer);
+```
+
+A deeper implementation detail to note is that the Time library used above provides functions like `hour()`, `minute()`, etc., which extract the respective values from a `time_t` value - the number of seconds since the UNIX epoch (1970-01-01 00:00:00). 
+
+## See Also
+
+1. Arduino official reference on `sprintf`: [sprintf - Arduino Reference](https://www.arduino.cc/reference/en/language/functions/characters/strings/sprintf/).
+
+2. A useful introduction to Time library is available at: [Arduino - Time Library](https://playground.arduino.cc/Code/time/).
+
+3. More info on `time_t`: [time_t - C++ Reference](http://www.cplusplus.com/reference/ctime/time_t/).

@@ -1,7 +1,7 @@
 ---
-title:                "Få den aktuella datumet."
-html_title:           "Python: Få den aktuella datumet."
-simple_title:         "Få den aktuella datumet."
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -11,39 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att få den nuvarande datumet är en viktig del av programmering eftersom det möjliggör att spåra när en viss kod utfördes eller när data genererades. Det är också användbart för att hantera tidsrelaterade funktioner och funktioner för planerade uppgifter.
 
-## Så här gör du:
-Det finns flera olika sätt att få den nuvarande datumet i Python. Ett sätt är att använda modulen "datetime" och dess funktion "now ()" för att returnera ett datumobjekt som representerar den nuvarande datum och tid. Detta kan göras enligt följande kod:
+Att få det aktuella datumet innebär att programmålande bestämma dagens datum med hjälp av datorns systemklocka. Detta används vid loggning, tidsstämpling, och att skapa datumbaserade funktioner.
 
-```Python
-import datetime
+## Hur man gör:
 
-current_date = datetime.datetime.now()
-print(current_date)
-```
-
-Output:
-`2021-05-10 10:17:09.158581`
-
-Ett annat sätt är att använda modulen "date" och funktionen "today ()" för att bara returnera datumet utan tid. Det kan åstadkommas så här:
+För att få det nuvarande datumet i Python kan du använda `datetime` modulen som följer:
 
 ```Python
-import datetime
+from datetime import date
 
-current_date = datetime.date.today()
-print(current_date)
+dagens_datum = date.today()
+
+print(dagens_datum)
 ```
+Sample output:
 
-Output:
-`2021-05-10`
+```Python
+2022-04-01
+```
+Denna kod hämtar dagens datum (år, månad, dag) från din dator och visar det.
 
 ## Djupdykning:
-Datum och tider är viktiga delar av programmering och har en lång historia av utveckling och standardisering. I Python används standardbiblioteket "datetime" för att hantera datum och tider. Alternativ till detta är externa bibliotek som "arrow" och "pendulum" som erbjuder mer avancerade funktioner för datumhantering.
 
-Det är också viktigt att förstå att den nuvarande datumet kan påverkas av olika faktorer som tidszoner och systemets inställningar. Därför är det bäst att använda en pålitlig tidsmodul som "datetime" för att få den korrekta nuvarande datumet.
+Att få det aktuella datumet är inget nytt. Det har använts sedan tiderna för tidiga datorer för att hålla reda på tid och datum. I Python, är det 'datetime' biblioteket det vanligaste sättet att hantera datum och tid, men det finns också andra metoder såsom 'time' modulen.
 
-## Se även:
-- [Datetime-modulen i Pythons officiella dokumentation](https://docs.python.org/3/library/datetime.html)
-- [Arrow-biblioteket för avancerad datumhantering i Python](https://arrow.readthedocs.io/en/latest/)
-- [Pendulum-biblioteket för mer intuitivt datum- och tidshantering](https://pendulum.eustace.io/)
+```Python
+import time
+
+tidsstämpel = time.time()
+
+print(tidsstämpel)
+```
+Sample output:
+
+```Python
+1648888285.025971
+```
+Detta ger en tidsstämpel, i sekunder sedan epoken, vilket är den första januari 1970.
+
+Värdena som returneras av dessa funktioner baseras på systemklockan och beror därför på din dators inställningar och tidzon.
+
+## Se också:
+
+För mer information om att hantera datum och tid i Python, se följande länkar:
+
+- [Officiella Python Dokumentation för 'datetime'](https://docs.python.org/3/library/datetime.html)
+- [Python 'time' Modulen](https://docs.python.org/3/library/time.html)
+- [Python 'date' Funktionen](https://www.w3schools.com/python/ref_func_date.asp)

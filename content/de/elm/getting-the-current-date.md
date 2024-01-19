@@ -1,7 +1,7 @@
 ---
-title:                "Das aktuelle Datum erhalten"
-html_title:           "Elm: Das aktuelle Datum erhalten"
-simple_title:         "Das aktuelle Datum erhalten"
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Gleam: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,35 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums ist eine häufige Aufgabe in der Programmierung. Es ermöglicht Programmierern, das aktuelle Datum in ihre Anwendung einzubinden und es für verschiedene Zwecke zu verwenden, wie z.B. für die Datumsangabe in Benutzeroberflächen, für die Berechnung von Zeiträumen oder für das Speichern von Dateien mit einem Datumsstempel.
 
-## Wie geht's:
-### Elm 0.19
-```
-Elm.Date.today
-```
-*Ausgabe:*
-```
-Ok (Date 2021 3 14)
+Als Programmierer holen wir oft das aktuelle Datum und die Uhrzeit ab. Dies hilft uns, wichtige Zeitschritte zu markieren, Ereignisse zu protokollieren, oder auch um abhängige Funktionen wie Countdowns zu erstellen.
+
+## Wie zu:
+
+Um das aktuelle Datum in Elm zu bekommen, verwenden wir die `Time.now` Funktion innerhalb einer `Task`, gefolgt von `Task.perform` um die Task auszuführen:
+
+```Elm 
+import Time exposing (Posix, second, toTime)
+
+type alias Model =
+    { time : Maybe Posix
+    }
+
+init : ( Model, Cmd Msg )
+init =
+    ( { time = Nothing }
+    , Task.perform TimeUpdate Time.now
+    )
+
+type Msg
+    = TimeUpdate Posix
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        TimeUpdate newTime ->
+            ( { model | time = Just newTime }
+            , Cmd.none
+            )
 ```
 
-### Elm 0.18
-```
-import Time exposing (now)
-import Time.Date as Date
+Wenn das Programm läuft, wird `Time.now` aufgerufen und speichert das aktuelle Datum in Millisekunden seit der Unix-Ära (1. Januar 1970). 
 
-Date.fromTime <| now Time.utc
+## Tiefere Erklärung:
 
-```
-*Ausgabe:*
-```
-{ year = 2021, month = 3, day = 14 }
-```
+Das Konzept der Zeit in Computerprogrammen ist seit den Anfängen der Computersoftware weit verbreitet. Doof nur, dass Elm rein funktionell ist und sich damit bedeckt hält, Zustände und Seiteneffekte zu verwalten, wie die aktuelle Zeit und Datum. Dafür verwendet Elm die `Task` um asynchrone arbeiten, wie die Anforderung der aktuellen Zeit, zu managen.
 
-## Tiefen-Eintauchen:
-Das Abrufen des aktuellen Datums ist eine Aufgabe, die in verschiedenen Programmiersprachen auf unterschiedliche Weise gelöst werden kann. In Elm 0.19 gibt es eine neue `Date`-Bibliothek, die das Manipulieren und Berechnen von Datumsangaben erleichtert. In älteren Versionen von Elm kann das aktuelle Datum mit einem Modul aus dem Time-Paket abgerufen werden. Alternativ können einige externe Bibliotheken verwendet werden, die erweiterte Funktionen für das Arbeiten mit Datumsangaben bieten.
+Es gibt Alternativen zur `Time.now` Funktion, z.B. `Time.utc`, welche die Zeit in UTC zurückgibt, oder `Time.posixToMillis`, welcher das Datum vom Typ `Posix` zu Millisekunden konvertiert.
 
-## Siehe auch:
-- [Elm-Datei-Bibliothek](https://package.elm-lang.org/packages/elm/date/latest/)
-- [Elm-Zeitpaket](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Elm-Timelord-Bibliothek](https://package.elm-lang.org/packages/tesk9/elm-timelord/latest/)
+## Weiterführende Links:
+
+1. Elm Time Dokumentation: http://package.elm-lang.org/packages/elm/time/latest/
+2. Elm Task Beispiele: https://elmprogramming.com/tasks.html
+3. Funktionsweise des Unix Zeitstempels: https://de.wikipedia.org/wiki/Unixzeit

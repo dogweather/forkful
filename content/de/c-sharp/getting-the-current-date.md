@@ -1,6 +1,6 @@
 ---
 title:                "Das aktuelle Datum abrufen"
-html_title:           "C#: Das aktuelle Datum abrufen"
+html_title:           "Gleam: Das aktuelle Datum abrufen"
 simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "C#"
 category:             "C#"
@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Die aktuelle Version von C# bietet Programmierern eine einfache Möglichkeit, das aktuelle Datum in ihrer Anwendung abzurufen. Das aktuelle Datum ist einfach das Datum, das in diesem Moment gilt, unabhängig von der Zeitzone oder dem geografischen Standort des Benutzers. Programmierer nutzen diese Funktion, um aktuelle Informationen in ihre Anwendung einzubinden oder um bestimmte Aufgaben basierend auf dem aktuellen Datum auszuführen.
+# Arbeiten mit aktuellem Datum in C#
 
-## Wie geht das?
-Um das aktuelle Datum in C# abzurufen, können wir die `DateTime`-Klasse verwenden, die Teil des .NET Frameworks ist. Hier ist ein Beispielcode, der das aktuelle Datum und die aktuelle Uhrzeit in der Konsole ausgibt:
+## Was & Warum?
+Das aktuelle Datum zu ermitteln ist eine häufig verwendete Funktion in der Programmierung, um die momentane Zeit abzugreifen. Die Anwendungen sind vielfältig, vom Timing von Operationen bis hin zur Erstellung von Zeitstempeln für Log-Einträge.
+
+## Wie geht das:
+Die C#-Klasse "DateTime" enthält Funktionen zum Ermitteln des aktuellen Datums und der aktuellen Zeit. Hier sind einige Beispielverwendungen:
 
 ```C#
-DateTime now = DateTime.Now;
-Console.WriteLine("Das aktuelle Datum ist: " + now.ToString("dd/MM/yyyy"));
-Console.WriteLine("Die aktuelle Uhrzeit ist: " + now.ToString("HH:mm:ss"));
+// Aktuelles Datum
+DateTime currentDate = DateTime.Now;
+Console.WriteLine(currentDate); 
+
+// Aktuelles Datum im Jahr-Monat-Tag Format
+string formattedDate = DateTime.Now.ToString("yyyy-MM-dd");
+Console.WriteLine(formattedDate); 
 ```
+Wenn das Programm ausgeführt wird, würde es das aktuelle Datum und die aktuelle Uhrzeit, sowie das formatierte Datum ausgeben.
 
-Die Ausgabe dieses Codes wäre etwas wie: "Das aktuelle Datum ist: 19/09/2021" und "Die aktuelle Uhrzeit ist: 14:30:00".
+## Deep Dive
+Die DateTime-Klasse ist seit dem .NET Framework 1.1 Bestandteil von C#. Sie enthält eine Reihe von Methoden und Eigenschaften, um mit Daten und Zeiten zu arbeiten. Als Alternative können Sie auch die "DateTimeOffset"-Klasse verwenden, die zusätzlich zu Datum und Uhrzeit auch die Zeitzonendifferenz speichert.
 
-## Tiefes Tauchen
-Das Konzept des aktuellen Datums ist nicht neu und hat eine lange Geschichte in der Programmierung. Frühere Sprachen wie Visual Basic haben ihre eigenen Methoden zur Abfrage des aktuellen Datums gehabt, aber mit C# können wir dies jetzt einheitlich mit der `DateTime`-Klasse tun.
+Effizienz ist ebenfalls ein wichtiger Aspekt bei der Arbeit mit Daten und Zeiten. Bei der Verarbeitung von großen Datenmengen können Konvertierungen von DateTime zu String und umgekehrt zu Leistungseinbußen führen. Deshalb sollten Sie solche Operationen minimieren.
 
-Natürlich gibt es auch alternative Möglichkeiten, um das aktuelle Datum in einer Anwendung zu nutzen. Zum Beispiel können wir die LocalTime-Funktion verwenden, um das aktuelle Datum für eine bestimmte Zeitzone abzurufen. Wir können auch die `DateTime`-Struktur verwenden, um komplexe Berechnungen mit Datum und Uhrzeit durchzuführen.
-
-## Siehe auch
-Weitere Informationen zum Abrufen des aktuellen Datums in C# finden Sie in der offiziellen Dokumentation von Microsoft: https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0
-
-Für weitere praktische Anleitungen und Tipps zur Verwendung von C# besuchen Sie gerne unsere Webseite: https://www.c-sharpcorner.com/
+## Siehe auch:
+- Microsoft Dokumentation zu DateTime: https://docs.microsoft.com/de-de/dotnet/api/system.datetime
+- Microsoft Artikel über die Verwendung von Datum und Uhrzeit: https://docs.microsoft.com/de-de/dotnet/standard/datetime
+- Grundlagen der C#-Programmierung auf Deutsch: https://www.codeproject.com/Articles/2833/Csharp-Programmierung

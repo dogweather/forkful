@@ -10,119 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Webseiten sind essentiell für jegliche Art von Informationsaustausch im Internet. Programmierer nutzen häufig die Möglichkeit, Webseiten herunterzuladen, um die darin enthaltene Information für ihre Projekte zu nutzen.
+## Was & Warum?
 
-# Wie geht's?
-Für das Herunterladen einer Webseite auf einem Arduino gibt es zwei Hauptmethoden: HTTP-Anfragen und das Verwenden von Bibliotheken. Hier sind Beispiele für jede Methode:
+Das Herunterladen einer Webseite ist der Prozess, bei dem Daten von einer Webseite auf deinen Lokalspeicher übertragen werden. Programmierer tun dies, um die Daten für Analyse, Überwachung oder Offline-Zugriff zu nutzen.
 
-## HTTP-Anfragen:
-```arduino
-// Bevor wir starten, stellen Sie sicher, dass Sie das Ethernet-Shield an Ihren Arduino angeschlossen haben.
+## So geht's:
 
-// Bibliotheken einbinden
-#include <SPI.h>
+```Arduino
 #include <Ethernet.h>
-
-// Ethernet-Objekt erstellen
-EthernetClient client; 
-
-void setup() {
-  // Starten Sie die serielle Kommunikation um die Ausgabe zu sehen
-  Serial.begin(9600);
-  
-  // Stellt Verbindung zum Server her
-  Serial.println("Verbinde zu Server...");
-  if (client.connect("www.example.com", 80)) {
-    // HTTP-Anfrage senden
-    client.println("GET /index.html HTTP/1.1");
-    client.println("Host: www.example.com");
-    client.println("Connection: close");
-    client.println();
-  } else {
-    // Fehlerbehandlung, falls keine Verbindung hergestellt werden kann
-    Serial.println("Verbindung fehlgeschlagen");
-    while(1);
-  }
-}
-
-void loop() {
-  // Auf Antwort vom Server warten
-  if (client.available()) {
-    // Ausgabe der empfangenen Daten
-    char c = client.read();
-    Serial.print(c);
-  }
-
-  // Wenn keine Daten mehr empfangen werden, Verbindung schließen
-  if (!client.connected() && !client.available()) {
-    Serial.println();
-    Serial.println("Verbindung getrennt");
-    client.stop();
-    while(1);
-  }
-}
-```
-
-## Bibliotheken:
-```arduino
-// Bevor wir starten, stellen Sie sicher, dass Sie das Ethernet-Shield an Ihren Arduino angeschlossen haben.
-
-// Bibliotheken einbinden
 #include <SPI.h>
-#include <Ethernet.h>
-#include <EthernetClient.h>
 
-// Ethernet-Objekt erstellen und variablen deklarieren
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+char server[] = "www.beispiel.de";
 EthernetClient client;
-char server[] = "www.example.com";
-char path[] = "/index.html";
 
-void setup() {
-  // Starten Sie die serielle Kommunikation um die Ausgabe zu sehen
+void setup()
+{
+  Ethernet.begin(mac);
   Serial.begin(9600);
-  
-  // Stellt Verbindung zum Server her
-  Serial.println("Verbinde zu Server...");
+
   if (client.connect(server, 80)) {
-    // HTTP-Anfrage senden
-    Serial.println("HTTP-Anfrage senden...");
-    client.print("GET ");
-    client.print(path);
-    client.println(" HTTP/1.1");
-    client.print("Host: ");
-    client.println(server);
+    client.println("GET / HTTP/1.1");
+    client.println("Host: www.beispiel.de");
     client.println("Connection: close");
     client.println();
-  } else {
-    // Fehlerbehandlung, falls keine Verbindung hergestellt werden kann
-    Serial.println("Verbindung fehlgeschlagen");
-    while(1);
   }
 }
 
 void loop() {
-  // Auf Antwort vom Server warten
   if (client.available()) {
-    // Ausgabe der empfangenen Daten
     char c = client.read();
     Serial.print(c);
   }
-
-  // Wenn keine Daten mehr empfangen werden, Verbindung schließen
-  if (!client.connected() && !client.available()) {
+  
+  if (!client.connected()) {
     Serial.println();
-    Serial.println("Verbindung getrennt");
+    Serial.println("disconnecting.");
     client.stop();
-    while(1);
+    for(;;)
+      ;
   }
 }
 ```
 
-# Tiefere Einblicke
-Das Herunterladen von Webseiten auf dem Arduino wird oft in Projekten genutzt, die eine externe Quelle von Informationen benötigen. Die Verwendung von Bibliotheken erleichtert die Implementierung, aber es ist auch möglich, HTTP-Anfragen direkt zu senden. Wenn Sie mehr über das Senden von HTTP-Anfragen mit dem Arduino erfahren möchten, empfehle ich Ihnen die offizielle Ethernet Library Dokumentation von Arduino zu lesen.
+Wenn du dieses Skript ausführst, siehst du den HTML-Code der Webseite auf deinem Serial-Monitor.
 
-# Siehe auch
-- [Offizielle Ethernet Library Dokumentation](https://www.arduino.cc/en/reference/ethernet)
-- [HTTP Anfrage Beispiel von Sparkfun](https://www.sparkfun.com/tutorials/329)
-- [Web-Client Beispiel von Arduino](https://www.arduino.cc/en/Tutorial/WebClient)
+## Deep Dive:
+
+Historisch gesehen hat die Herstellung von Web-Daten auf automatisierte Weise das Aufkommen von Internet-Bots vorangetrieben. Alternativen zum Arduino für diese Aufgabe sind der Raspberry Pi oder der ESP8266, die beide in der Lage sind, Webseiten herunterzuladen und mehr Verarbeitungsleistung bieten.
+
+Die Implementierung dieser Funktion in Arduino setzt auf die Ethernet-Bibliothek, die die Unterstützung für den Ethernet-Controller des Arduino bereitstellt. Allerdings muss betont werden, dass standardmäßig nur eine begrenzte Anzahl von gleichzeitigen Verbindungen unterstützt wird.
+
+## Siehe auch:
+
+- [Arduino Ethernet Bibliothek](https://www.arduino.cc/en/Reference/Ethernet)
+- [Raspberry Pi Web Scraping](https://projects.raspberrypi.org/en/projects/secret-agent-chat)
+- [ESP8266 Web Client](https://randomnerdtutorials.com/esp8266-web-client/)

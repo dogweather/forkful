@@ -1,7 +1,7 @@
 ---
-title:                "Søking og erstatting av tekst"
-html_title:           "C++: Søking og erstatting av tekst"
-simple_title:         "Søking og erstatting av tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## Hva & Hvorfor? 
 
-Søk og erstatt tekst er en vanlig teknikk brukt av programmerere for å bytte ut forekommende deler av en tekst med en annen del. Dette kan være nyttig for å endre variabler, fikse feil eller gjøre større endringer i koden. Det er en rask og effektiv måte å gjøre flere endringer i en tekst på en gang.
+I programmering refererer søk og erstatt til operasjonen hvor vi finner en bestemt tekststreng (søk) og erstatter den med en annen (erstatt). Denne teknikken er svært nyttig for å manipulere data, rette feil og optimalisere kode.
 
-## Slik gjør du det:
+## Slik gjør du:
 
-For å søke og erstatte tekst i C++, kan du bruke funksjoner som `find()` og `replace()`. Her er et eksempel på en funksjon som bytter ut alle forekomster av ordet "hallo" i en tekst med ordet "hei":
+Her er et eksempel på hvordan du kan søke etter og erstatte tekst i C++:
 
 ```C++
-#include <iostream>
 #include <string>
 
-using namespace std;
-
 int main() {
-    string tekst = "Hallo verden! Hallo alle sammen!";
-    tekst.replace(tekst.find("hallo"), 5, "hei");
+    std::string tekst = "Hei, mitt navn er Ole";
+    std::size_t pos = tekst.find("Ole");
 
-    cout << tekst << endl;
+    if(pos != std::string::npos)
+    {
+        tekst.replace(pos, 3, "Kari");
+    }
+
+    std::cout << tekst << std::endl;
+
     return 0;
 }
 ```
 
-**Output:**
-```Hei verden! Hei alle sammen!```
+Når du kjører koden over, vil output være:
 
-## Dypdykk:
+```
+Hei, mitt navn er Kari
+```
 
-Søking og erstatting av tekst har vært en del av programmering siden de tidlige dager av datamaskiner. Tidligere måtte man bruke kompliserte kommandoer for å gjøre dette, men i dag har de fleste programmeringsspråk innebygde funksjoner som forenkler prosessen.
+## Dypdykk
 
-Det finnes også andre måter å søke og erstatte tekst på, som for eksempel regulære uttrykk og tekstbehandlingsprogrammer. Det er viktig å være nøye med søkeord og erstatningsord for å unngå utilsiktede endringer i koden.
+*Søk og erstatte* ble først populært som en funksjon i tekstbehandlingsprogrammer, før det ble tatt i bruk i programmering. I C++, bruker vi ofte `std::string::find` metoden for å søke, og `std::string::replace` metoden for å erstatte tekst.
 
-## Se også:
+Alternativt kan man også bruke funksjoner som `std::regex_replace` for mer komplekse søk og erstatningsoperasjoner. Implementeringsdetaljene ligger i C++ Standard Library, spesielt i `<string>` og `<regex>` header-filene.
 
-For mer informasjon om søking og erstatting av tekst, sjekk ut disse kildene:
+## Se også
 
-- [C++ string class documentation](https://docs.microsoft.com/en-us/cpp/standard-library/basic-string-class?view=vs-2019)
-- [Regular expressions in C++](https://www.geeksforgeeks.org/regular-expressions-c/)
-- [Text editors for easy searching and replacing](https://www.makeuseof.com/tag/text-editors-search-replace/)
+For mer informasjon, se:
+- [std::string::find dokumentasjon](http://www.cplusplus.com/reference/string/string/find/)
+- [std::string::replace dokumentasjon](http://www.cplusplus.com/reference/string/string/replace/)
+- [std::regex_replace dokumentasjon](http://www.cplusplus.com/reference/regex/regex_replace/)

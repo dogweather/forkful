@@ -1,6 +1,6 @@
 ---
 title:                "Concaténation de chaînes"
-html_title:           "Javascript: Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
 simple_title:         "Concaténation de chaînes"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,46 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que & Pourquoi?
+## Qu'est-ce que & Pourquoi ?
+La concaténation des chaînes de caractères désigne le processus d'union de deux chaînes ou plus en une seule. Les programmeurs l'utilise généralement pour combiner des informations textuelles.
 
-La concaténation de chaînes en Javascript signifie combiner plusieurs chaines de caractères en une seule. Les programmeurs font cela pour créer des phrases ou des phrases plus longues à partir de petits morceaux de texte.
-
-## Comment faire:
-
-### Exemple 1:
+## Comment le faire :
+Vous avez plusieurs façons de concaténer des chaînes en JavaScript. 
 
 ```Javascript
-let phrase = "Bonjour";
-let nom = "Jean";
-let greeting = phrase + " " + nom;
-console.log(greeting);
+// Méthode 1 : Opérateur +
+let chaine1 = 'Bonjour';
+let chaine2 = ', le monde!';
+let resultat = chaine1 + chaine2;
+console.log(resultat); // 'Bonjour, le monde!'
+
+// Méthode 2 : Méthode concat()
+let chaine3 = 'Comment';
+let chaine4 = ' ça va?';
+let resultat2 = chaine3.concat(chaine4);
+console.log(resultat2); // 'Comment ça va?'
+
+// Méthode 3 : Template literals
+let chaine5 = 'JavaScript';
+let chaine6 = ' est génial !';
+let resultat3 = `${chaine5}${chaine6}`;
+console.log(resultat3); // 'JavaScript est génial !'
 ```
 
-### Résultat 1:
-```
-Bonjour Jean
-```
+## Plongée plus profonde :
+**Contexte historique**
+Historiquement, en JavaScript, l'opérateur `+` est devenu la solution de concaténation par défaut.
 
-### Exemple 2:
+**Alternatives**
+Depuis l'avènement d'ES6 en 2015, les littéraux de gabarit offrent une approche plus moderne : ils gèrent bien l'espacement et facilitent l'incorporation de variables.
 
-```Javascript
-let nombre = 52;
-let message = "J'ai " + nombre + " ans.";
-console.log(message);
-```
+**Détails d'implémentation**
+Regardez la mémoire et les performances. Si vous travaillez avec de grandes chaînes, `.concat()` peut accélérer votre code. Cependant, pour des opérations courantes, l'opérateur `+` ou les littéraux de modèle fonctionnent très bien.
 
-### Résultat 2:
-```
-J'ai 52 ans.
-```
-
-## Plongée Profonde:
-
-La concaténation de chaînes a été introduite dans les premières versions de Javascript en 1995. À l'époque, elle était couramment utilisée pour créer des pop-ups et des alertes dans les navigateurs. Aujourd'hui, il existe d'autres méthodes pour combiner des chaînes de caractères, telles que l'utilisation de modèles littéraux ou la méthode .concat(). Cependant, la concaténation reste une méthode simple et efficace pour composer des chaînes de caractères en Javascript.
-
-## Voir Aussi:
-
-Pour en savoir plus sur la concaténation de chaînes en Javascript, consultez ces sources: 
-
-- [Documentation MDN sur la concaténation de chaînes en Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/String_Operators)
-- [Article sur différents moyens de combiner des chaînes de caractères en Javascript](https://www.techiedelight.com/concatenate-strings-javascript/)
+## Voir aussi :
+- [MDN Web Docs: Chaînes de caractères](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String)
+- [MDN Web Docs: Littéraux de gabarit](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_gabarits)
+- [ExploringJS: JavaScript for impatient programmers](http://exploringjs.com/impatient-js/)

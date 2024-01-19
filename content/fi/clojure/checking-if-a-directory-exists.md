@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan onko hakemistoa olemassa"
-html_title:           "Clojure: Tarkistetaan onko hakemistoa olemassa"
-simple_title:         "Tarkistetaan onko hakemistoa olemassa"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Clojure: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,45 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mikä & Miksi?
 
-Tarkistaakseni, onko hakemisto olemassa, käytän Clojuren (nykyinen versio) `clojure.java.io/file?` -funktiota. Tämä tarkistaa, onko annetulla polulla oleva tiedosto hakemisto.
+Tyypillisesti, tarkistamme, onko hakemisto olemassa, estääksemme virheitä, joita saattaa ilmetä, jos yritämme käyttää olematonta hakemistoa. Se auttaa meitä varmistamaan, että ohjelma toimii odotetulla tavalla ja ylläpitämään ohjelman luotettavuutta.
 
-Ohjelmoijat tarkistavat hakemiston olemassaolon usein, jotta he voivat varmistaa, että he ovat oikeassa paikassa ja että tarvittavat tiedostot ovat saatavilla. Tämä auttaa välttämään virheitä ja mahdollistaa sujuvan suorituksen.
+## Kuinka:
 
-## Kuinka tehdä?
-
-Voit tarkistaa hakemiston olemassaolon käyttämällä `clojure.java.io/file?` -funktiota. Tässä on esimerkki:
+Klojurella hakemiston olemassaolotarkistus on suoraviivaista. Tässä on esimerkkikoodi.
 
 ```Clojure
-(ns example.core (:require [clojure.java.io :as io]))
+(require '[clojure.java.io :as io])
 
-(def polku "C:/kansio")
-
-(if (io/file? polku) (println "Hakemisto olemassa.") (println "Hakemistoa ei löydy."))
+(defn directory-exists? [dir]
+  (.exists (io/file dir)))
 ```
 
-Esimerkin output riippuu siitä, onko annetulla polulla hakemisto vai ei:
+Ja sen käyttö:
 
-```
-Hakemisto olemassa.
-```
-
-tai
-
-```
-Hakemistoa ei löydy.
+```Clojure
+(directory-exists? "/path/to/directory") 
+;=> Tämä palauttaa true, jos hakemisto on olemassa, muuten false
 ```
 
-## Syväsukellus
+## Syvempi Sukellus:
 
-Tarkistus, onko hakemisto olemassa, on yleinen tehtävä ohjelmoinnissa. Ennen `clojure.java.io/file?` -funktion saatavuutta Clojuren käyttäjien piti käyttää Java-luokkaa `java.io.File` tämän toiminnon suorittamiseen.
+Historiallisesti, ohjelmoijien on täytynyt tarkistaa manuaalisesti tiedostojärjestelmän eheyttä. Clojure, ja sen taustalla toimiva Java-platformi, tarjoavat kuitenkin nämä toiminnallisuudet valmiina.
 
-On myös muita tapoja tarkistaa hakemiston olemassaolo, kuten käyttämällä tiedostojärjestelmän komentoja kuten `ls` tai `dir` ja tarkistamalla, onko hakemisto lista tiedostoista.
+Clojuren `java.io`-kirjasto mahdollistaa järjestelmätason operaatioiden suorittamisen, kuten hakemiston olemassaolon tarkistuksen, korkean tason funktioilla, mikä tekee toiminnasta järjestelmäriippumatonta.
 
-`clojure.java.io/file?` -funktio käyttää Clojuren `java.io.File` luokkaa tarkistamalla, onko tiedosto tai hakemisto olemassa ja palauttaa vastaavan totuusarvon `true` tai `false`.
+Kuten aina, on olemassa useita muita tapoja toteuttaa sama toiminto. Eräs Clojuren arkkitehtuurin kauneimmista puolista on, että se antaa ohjelmoijien valita parhaiten sopivan tien. Mikäli haluat tarkistaa tiedoston (eikä hakemiston) olemassaolon, voit käyttää esimerkiksi Clojure `java.nio.file`-kirjaston `Files/exists` -metodia.
 
-## Katso myös
+## Katso Myös:
 
-- [Clojuren virallinen dokumentaatio `clojure.java.io/file?` -funktiosta](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file_qmark)
-- [Java-luokka `java.io.File`](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+Lisätietoja voit saada seuraavista viitteistä:
+
+1. [Clojure's 'java.io' library documentation](https://clojuredocs.org/clojure.java.io)
+2. [Java 7 java.nio.file documentation](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html)
+3. [StackOverflow: How to check if a file exists? (in Clojure)](https://stackoverflow.com/questions/2028158/how-to-check-if-a-file-exists-in-clojure)
+4. [Blog: Clojure file and directory operations](https://kimh.github.io/clojure-by-example/posts-output/2014-11-22-file-and-directory-operations.html)

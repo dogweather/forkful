@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando una cadena"
-html_title:           "TypeScript: Interpolando una cadena"
-simple_title:         "Interpolando una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,30 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-La interpolación de una cadena de texto es cuando los programadores insertan variables o expresiones en una cadena de texto para crear una nueva cadena personalizada. Esto permite a los programadores generar cadenas de texto dinámicas y reutilizables en su código.
+## ¿Qué y Por qué?
+
+La interpolación de strings en TypeScript es la inserción de variables u expresiones dentro de un string. Esto puede facilitar la codificación ya que permite insertar variables directamente en un string en lugar de concatenarlas.
 
 ## Cómo hacerlo:
+
+La interpolación de cadenas en TypeScript se hace utilizando el carácter backtick (` `) y poniendo la variable o expresión dentro de ${}. Aquí se muestra un ejemplo:
+
 ```TypeScript
-// Ejemplo de interpolación de cadena simple
 let nombre = "Juan";
-let edad = 30;
-let mensaje = `Hola, mi nombre es ${nombre} y tengo ${edad} años.`
-
-console.log(mensaje); // Salida: Hola, mi nombre es Juan y tengo 30 años.
-
-// Ejemplo de interpolación de cadena con expresiones
-let x = 5;
-let y = 10;
-let resultado = `La suma de ${x} y ${y} es: ${x + y}`;
-
-console.log(resultado); // Salida: La suma de 5 y 10 es: 15
+let saludo = `Hola, ${nombre}`;
+console.log(saludo);  // Output: Hola, Juan
 ```
 
-## Profundizando:
-La interpolación de cadenas de texto se ha vuelto muy popular en los últimos años, con la introducción de ECMAScript2015 (ES6). Antes de ES6, los programadores tenían que concatenar manualmente cadenas de texto y variables, lo que resultaba en un código verboso y propenso a errores. Otra alternativa a la interpolación de cuerdas es el uso de la función `String.format()` en lenguajes como Java o C#, pero esto también puede ser engorroso y no es tan flexible como la interpolación de cadenas de texto.
+Si combinas con una expresión, la expresión será evaluada y el resultado ser insertada en la string:
 
-La implementación de la interpolación de cadenas en TypeScript es similar a la de ES6, ya que TypeScript es un superset de JavaScript. Permite a los programadores crear cadenas de texto con variables o expresiones utilizando el símbolo de dolar y llaves (`${}`).
+```TypeScript
+let a = 10;
+let b = 5;
+let suma = `La suma de ${a} y ${b} es ${a+b}`;
+console.log(suma);  // Output: La suma de 10 y 5 es 15
+```
 
-## Ver también:
-- [Documentación oficial de TypeScript sobre interpolación de cadenas de texto](https://www.typescriptlang.org/docs/handbook/strings.html#string-interpolation)
+## Inmersión Profunda
+
+La interpolación de cadenas, también conocida como las "plantillas de cadena" en TypeScript, fue introducida en ES6 y luego adoptada por TypeScript. Antes de ES6, debías concatenar las variables con el string, lo que podía ser un proceso largo y confuso especialmente para strings largas y con muchas variables.
+
+Existen alternativas a la interpolación de cadenas, como la concatenación de strings, pero estas alternativas pueden requerir más código y pueden resultar en código más difícil de leer.
+
+En cuanto a los detalles de implementación, las plantillas de cadenas en TypeScript se implementan como instancias del objeto global String. Eso significa que tienes acceso a todos los métodos que un objeto string normal tendría, incluyendo .length, .indexOf(), etc.
+
+## Ver También
+
+Para obtener más información sobre la interpolación de cadenas en TypeScript y otras características de TypeScript, puedes revisar los siguientes recursos:
+
+- "Interpolación de Cadenas y Plantillas"
+(https://typescript.ninja/typescript/es6-template-strings)
+- Documentación Oficial de TypeScript (https://www.typescriptlang.org/docs/)
+- Guía de TypeScript en MDN 
+(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Text_formatting_with _template_literals)

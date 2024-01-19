@@ -1,6 +1,6 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Kotlin: Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,30 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Descargar una página web en Kotlin!
+## ¿Qué y por qué?
 
-## ¿Qué y Porqué?
+Descargar una página web es el proceso de extraer toda la información contenida en ella usando código. Los programadores lo hacen para manipular los datos, realizar web scraping o pruebas entre otros fines.
 
-Descargar una página web significa obtener todo el contenido de una página web específica y guardarlo en tu dispositivo. Los programadores hacen esto para realizar tareas como visualizar información en un formato legible o extraer datos importantes de una página web.
+## ¿Cómo hacerlo?
 
-## Cómo hacerlo:
+Para descargar una página web en Kotlin, usaremos la biblioteca Jsoup. Primero, agrégala a tu proyecto con Gradle:
 
 ```Kotlin
-val url = "https://www.ejemplo.com"
-val inputStream = URL(url).openStream()
-val text = BufferedReader(InputStreamReader(inputStream)).readText()
-println(text)
+dependencies {
+  implementation 'org.jsoup:jsoup:1.13.1'
+}
 ```
 
-Salida:
-Esta es una página web de ejemplo.
+Ahora veamos cómo descargar una página web:
 
-## Profundizando:
+```Kotlin
+import org.jsoup.Jsoup
 
-Descargar páginas web es una técnica común en el mundo de la programación, especialmente para proyectos relacionados con la web. Hay varias formas de hacerlo, como utilizando bibliotecas externas o haciendo una solicitud HTTP directamente. En Kotlin, podemos usar la clase ```URL``` para crear un objeto URL y pasar esto a la función ```openStream()``` para obtener un ```InputStream``` que luego podemos leer con una clase como ```BufferedReader```.
+fun main() {
+    val doc = Jsoup.connect("http://example.com").get()
+    val title = doc.title()
+    println("Título: $title")
+}
+```
 
-## Ver también:
+Lo que obtienes es el título de la página que se encuentra en el tag `<title>`. Es un ejemplo básico, pero Jsoup puede hacer mucho más.
 
-- [Documentación de Kotlin para la clase URL](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-r-l/index.html)
-- [Artículo sobre cómo descargar páginas web en Kotlin](https://simplecoding.org/download-web-page-in-kotlin/)
-- [Código de ejemplo en GitHub sobre cómo descargar páginas web en Kotlin](https://github.com/username/example-code/blob/master/download-web-page.kt)
+## Inmersión profunda
+
+Originalmente, la descarga de páginas web se realizaba con rutinas de bajo nivel que manejaban directamente las conexiones HTTP. Ahora con bibliotecas como Jsoup, es mucho más fácil.
+
+Además de Jsoup, hay otras opciones como khttp y java.net, aunque Jsoup es la más completa en términos de manejo de HTML y CSS.
+
+El método `connect()`, devuelve un objeto `Connection`, que luego se convierte en un `Document` al llamar a `get()`. Jsoup se encarga de todas las intrincaciones del manejo de conexiones HTTP y el parseo del HTML.
+
+## Ver también
+
+Para más información, revisa la [documentación oficial de Jsoup](https://jsoup.org/). Para conocer más opciones, puedes revisar [khttp](http://khttp.readthedocs.io/en/latest/) y la [API de java.net](https://docs.oracle.com/javase/8/docs/api/java/net/package-summary.html).

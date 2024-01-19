@@ -1,7 +1,7 @@
 ---
-title:                "ディレクトリが存在するかどうかをチェックする"
-html_title:           "Kotlin: ディレクトリが存在するかどうかをチェックする"
-simple_title:         "ディレクトリが存在するかどうかをチェックする"
+title:                "ディレクトリが存在するかどうかを確認する"
+html_title:           "C#: ディレクトリが存在するかどうかを確認する"
+simple_title:         "ディレクトリが存在するかどうかを確認する"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,32 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
+---
 
-ディレクトリの存在をチェックすることは、プログラマーが特定のディレクトリが存在するかどうかを確認することです。プログラマーは、コンピューター上で必要なファイルやフォルダーが存在するかどうかを確認するために、これを行う必要があります。
+## 何となぜ?（What & Why?）
 
-## 方法：
+ディレクトリ存在確認とは、特定のディレクトリが存在するかどうかを確かめるプログラミング処理のことです。これを行う理由は、プログラムがファイルにアクセスする前に、ディレクトリが存在するか否かを確認し、エラーを防ぐためです。
+
+---
+
+## 手順（How to）
+
+以下のコードを使用してKotlinでディレクトリの存在を確認できます。
 
 ```Kotlin
-val file = File("testDirectory")
-if (file.exists()) {
-    println("testDirectory already exists.")
-} else {
-    println("testDirectory does not exist.")
+import java.nio.file.Files
+import java.nio.file.Paths
+
+fun main() {
+    val directory = Paths.get("ディレクトリパス")
+
+    if (Files.exists(directory)) {
+        println("ディレクトリが存在します")
+    } else {
+        println("ディレクトリが存在しません")
+    }
 }
 ```
 
-出力：
+これが出力結果です。
 
+```Kotlin
+ディレクトリが存在します
+// または
+ディレクトリが存在しません
 ```
-testDirectory does not exist.
-```
 
-## 深堀り：
+---
 
-ディレクトリの存在をチェックすることは、コンピューターのファイルシステムを理解する上でとても重要です。適切なファイルやフォルダーが存在しない場合、プログラムはエラーを引き起こす可能性があります。このチェックを行う代替手段としては、例外をキャッチしたり、ファイルのパスを変更したりすることがあります。また、この操作はプログラムのパフォーマンスにも影響することがあり、複数のディレクトリをチェックする必要がある場合は、より最適なアルゴリズムを使用することが重要です。
+## 詳細（Deep Dive） 
 
-## 参考：
+ディレクトリ存在確認は古くからある重要な操作です。これにより、プログラムが途中でエラーに陥ることなく、スムーズに実行を続けることができます。
 
-- [Kotlin 公式ドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/exists.html)
-- [Java World: Checking File Existence](https://www.javaworld.com/article/2077707/checking-file-existence.html)
+代替手段としては、KotlinでdeprecatedとなったJavaのFileクラスを使う方法があります。しかしこの方法は冗長であり、新しいNIOを使う方法が推奨されています。
+
+ディレクトリ存在確認の実装については、基本的にはファイルシステムに対して指定のパスのディレクトリが存在するか確認するクエリを実行します。
+
+---
+
+## 参照（See Also）
+
+以下のリンクで関連情報を見つけることができます。
+
+- [Kotlin公式ドキュメンテーション](https://kotlinlang.org/docs/reference/)
+- [Java NIO.2公式チュートリアル（英語）](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)
+- [Java Fileクラスについて（英語）](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)

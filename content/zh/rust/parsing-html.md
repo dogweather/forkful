@@ -1,7 +1,7 @@
 ---
-title:                "解析 HTML"
-html_title:           "Rust: 解析 HTML"
-simple_title:         "解析 HTML"
+title:                "解析HTML"
+html_title:           "Clojure: 解析HTML"
+simple_title:         "解析HTML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,39 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-如果你正在学习Rust编程语言，那么你可能对HTML解析很感兴趣。那么什么是HTML解析？它为什么对程序员如此重要呢？
+# 什么和为什么?
+解析HTML是识别和理解HTML文件内容的过程。程序员做这件事是因为它能帮助他们从HTML文档中提取数据，理解并利用其结构。
 
-## 什么是HTML解析及其重要性？
-HTML解析是将HTML文档转化为可以被计算机处理的数据结构的过程。这在Web开发过程中非常关键，因为HTML是Web页面的主要元素。程序员需要对HTML进行解析来获取页面中的相关信息，并在后续处理中使用它们。
+# 如何解析：
 
-## 如何进行HTML解析
-下面是在Rust中进行HTML解析的简单示例代码：
- ```Rust
+Rust中解析HTML的一个很好的库叫做scraper。首先，添加如下依赖到你的 Cargo.toml 파일：
+
+```rust
+[dependencies]
+scraper = "0.3.0"
+```
+
+然后，用下列代码来解析HTML： 
+
+```rust
+extern crate scraper;
+
 use scraper::{Html, Selector};
-use reqwest::get;
 
 fn main() {
-    let url = "https://www.example.com";
-    let mut page = get(url).unwrap();
-    let body = page.text().unwrap();
-    let document = Html::parse_document(&body);
+    let html = r#"<p class="foo">Hello, world!</p>"#;
+    let parsed_html = Html::parse_document(html);
 
-    let title_selector = Selector::parse("title").unwrap();
-    let title = document.select(&title_selector).next().unwrap();
-    println!("The title of example.com is: {}", title.text().collect::<String>());
+    let foo = Selector::parse(".foo").unwrap();
+    for element in parsed_html.select(&foo) {
+        let text = element.text().collect::<Vec<_>>();
+        println!("{}", text.concat());
+    }
 }
 ```
-输出结果：
-```Rust
-The title of example.com is: Example Domain
-```
 
-## 深入了解
-HTML解析在Web开发领域有着重大的历史意义。在过去，HTML解析是使用正则表达式来完成的，但这种方法往往十分复杂且容易出错。现在，有许多HTML解析库可以帮助程序员更轻松地处理HTML文档，如上述示例代码中使用的scraper库。
+运行这段代码，会在控制台上输出"Hello, world!"
 
-除了正则表达式外，程序员还可以使用DOM解析器，如JSDOM和jsoup，来处理HTML文档。而在Rust中使用scraper库，则可以利用其高性能和强大的CSS选择器来轻松地提取所需信息。
+# 深入了解：
 
-## 参考资料
-- [scraper库文档](https://docs.rs/scraper/0.12.0/scraper/)
-- [JSDOM](https://github.com/jsdom/jsdom)
-- [jsoup](https://jsoup.org/)
+HTML解析源于网页的历史。早在1990年，最初的网络浏览器就开始解析HTML。
+
+有许多方法可以解析HTML，而不仅仅是用Rust和scraper库。其他编程语言也有许多库和工具可以用来解析HTML，如Python的BeautifulSoup，JavaScript的JSDOM等。
+
+使用scraper库解析HTML并不复杂。该库首先将HTML文档转换成DOM（文档对象模型），然后通过选择器来查找并提取你想要的信息。
+
+# 另请参阅：
+
+1. [在 Rust 中解析 HTML](https://kadekillary.work/post/webscraping-rust/)
+2. [Rust Scraper库文档](https://docs.rs/scraper/0.12.0/scraper/)
+3. [更多关于HTML解析](https://developer.mozilla.org/en-US/docs/Web/HTML/Parser)

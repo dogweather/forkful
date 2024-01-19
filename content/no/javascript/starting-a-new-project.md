@@ -1,7 +1,7 @@
 ---
-title:                "Å begynne på et nytt prosjekt"
-html_title:           "Javascript: Å begynne på et nytt prosjekt"
-simple_title:         "Å begynne på et nytt prosjekt"
+title:                "Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Getting Started"
@@ -10,18 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Starte et nytt Javascript-prosjekt: en enkel guide
+
 ## Hva & Hvorfor?
-Når vi snakker om å starte et nytt prosjekt i Javascript, betyr det å skrive og organisere kode for å lage et nytt program eller applikasjon. Programmerere starter nye prosjekter for å oppnå forskjellige mål, som å utvide funksjonaliteten til et eksisterende prosjekt, eller å lære nye ferdigheter.
-## Slik gjør du det:
-For å starte et nytt prosjekt i Javascript, trenger du bare å følge noen enkle steg:
-1. Lag en ny mappe på datamaskinen din for prosjektet ditt.
-2. Lag en HTML-fil i denne mappen og gi den et passende navn.
-3. Åpne HTML-filen i en tekstredigerer som Visual Studio Code.
-4. Skriv koden din i dette dokumentet mellom ``` <script> ``` og ``` </script> ``` tagger.
-5. Åpne HTML-filen i nettleseren din for å se resultatet av koden din.
-## Dykk dypere:
-En interessant historisk kontekst er at Javascript ble utviklet av Brendan Eich i 1995 mens han arbeidet for Netscape Communications Corporation. Det finnes også alternativer for å starte et Javascript-prosjekt, som å bruke et Javascript-rammeverk som React eller Vue, som gir en mer strukturert og effektiv tilnærming til webutvikling. For å implementere et prosjekt i Javascript, er det viktig å ha grunnleggende forståelse av programmeringskonsepter som variabler, funksjoner og løkker.
-## Se også:
-- [A brief history of JavaScript](https://www.w3.org/community/history/js/)
-- [React: A JavaScript library for building user interfaces](https://reactjs.org/)
-- [Vue.js: The Progressive JavaScript Framework](https://vuejs.org/)
+Et nytt prosjekt er en ny start, et tomt lerret hvor du kan bygge noe fantastisk fra bunnen av. Programmerere starter nye prosjekter for å lære noe nytt, skape et nytt produkt, eller bare for å ha det gøy.
+
+## Hvordan:
+Opprett først en ny mappe for prosjektet ditt, så gå inn i den mappen. Bruk terminalen din til å utføre disse kommandoene:
+
+```Javascript
+mkdir myNewProject
+cd myNewProject
+```
+Vi tar i bruk "npm init" for å opprette en ny 'package.json' fil:
+```Javascript
+npm init -y
+```
+Dette vil opprette en 'package.json' fil som holder styr på prosjektets metadata og avhengigheter. Outputen vil se slik ut:
+
+```Javascript
+{
+  "name": "myNewProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+Du er nå klar til å legge til kodefilene dine og starte prosjektet!
+
+## Dyp Dykk
+Historisk sett har hver ny Versjon JavaScript brakt forbedringer som gjør prosjektstart enklere og mer effektiv. For eksempel, før pakkebehandlere som NPM dukket opp, var det vanskeligere å håndtere avhengigheter.
+
+Alternativene til å starte et nytt prosjekt fra bunnen av inkluderer 'cloning' et eksisterende github prosjekt. Dette kan være mer effektivt hvis du vil bygge noe basert på eksisterende kodebibliotek eller rammer.
+
+Når det gjelder implementeringsdetaljer, avhenger det av hva du vil gjøre. Du kan for eksempel velge å holde alle koden din i en enkelt fil, opprette separate filer for hver funksjon, eller bruke et modulsystem.
+
+## Se Også
+- [npm documentation](https://docs.npmjs.com/about-npm/)
+- [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+- [Github guides](https://guides.github.com/)
+- [W3Schools Javascript Tutorial](https://www.w3schools.com/js/)

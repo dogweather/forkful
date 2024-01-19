@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Website"
-html_title:           "Python: Herunterladen einer Website"
-simple_title:         "Herunterladen einer Website"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Herunterladen einer Webseite ist der Prozess, bei dem man den HTML-Code und die Inhalte einer Webseite auf seinen Computer lädt. Programmierer nutzen dieses Verfahren, um den Code einer Webseite zu analysieren, Inhalte zu extrahieren oder eine lokale Kopie der Webseite zu speichern.
+## Was & Warum?
+Durch das Herunterladen einer Webseite können wir ihren Inhalt erfassen und analysieren. Programmierer machen das oft, um Daten zu sammeln, die sie dann in ihren Anwendungen verwenden können.
 
-# Wie geht das?
-Der folgende Python-Code zeigt, wie man mit dem Modul "requests" eine Webseite herunterladen und den HTML-Code ausgeben kann.
+## So geht's:
+Mit `requests` Modul in Python ist es einfach:
 
 ```Python
 import requests
 
-url = "https://www.python.org/"
-response = requests.get(url)
-print(response.text)
+def herunterladen(url):
+    response = requests.get(url)
+    return response.content
+
+print(herunterladen("https://www.wikipedia.org/"))
 ```
 
-Der obige Code verwendet die Funktion "get" aus dem "requests" Modul, um eine HTTP-Anfrage an die angegebene URL zu senden. Der HTML-Code wird dann in der Variable "response" gespeichert und mit der Funktion "text" ausgegeben. So einfach ist es!
+Dieser Beispielcode holt die Inhalte der Wikipedia-Startseite.
 
 ## Deep Dive
-Das Herunterladen von Webseiten hat in den letzten Jahren enorm an Bedeutung gewonnen, da immer mehr Inhalte im Internet verfügbar sind. In der Vergangenheit war es üblich, eine Webseite "manuell" über den Browser herunterzuladen, was jedoch zeitaufwändig und umständlich sein kann. Durch die Verwendung von Programmierwerkzeugen wie Python können Webseiten viel effizienter analysiert und verarbeitet werden.
+Historisch gesehen nutzte man `urllib`, um Webseiten in Python herunterzuladen. Aber `requests` hat sich durchgesetzt wegen seiner Einfachheit und Effizienz.
 
-Es gibt auch andere Alternativen für das Herunterladen von Webseiten, wie beispielsweise das "urllib" Modul in Python, das ähnliche Funktionen bietet. Ein weiterer Ansatz ist die Verwendung von sogenannten "Web Scraping" Tools, die speziell für das Extrahieren von Daten aus Webseiten entwickelt wurden.
+Eine Alternative dazu wäre `http.client` oder `httplib2`. Aber beide sind umständlicher im Vergleich zu `requests`.
 
-Die Implementierung des Herunterladens einer Webseite in Python ist relativ einfach und erfordert nur wenige Zeilen Code. Das "requests" Modul bietet auch eine Vielzahl von Funktionen und Optionen für komplexere Anfragen und die Verarbeitung von Daten.
+Die `requests.get(url)` Funktion unter der Haube schickt eine GET Anfrage an die gegebene URL und gibt eine Antwort zurück, wo wir mit `response.content` den Inhalt extrahieren können.
 
-## Siehe auch
-Hier sind einige zusätzliche Ressourcen zum Thema "web page downloading":
-- [Offizielle Python Dokumentation zu "requests"](https://docs.python-requests.org/en/latest/)
-- [Ein Tutorial zum Herunterladen von Webseiten mit Python](https://realpython.com/python-requests/)
-- [Weitere Informationen zu "Web Scraping" Tools](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
+## Weiterführende Informationen
+- Die offizielle Dokumentation von `requests`: [https://requests.readthedocs.io](https://requests.readthedocs.io)
+- Eine gute Einleitung zu `requests`: [https://realpython.com/python-requests/](https://realpython.com/python-requests/)
+- `http.client` Dokumentation: [https://docs.python.org/3/library/http.client.html](https://docs.python.org/3/library/http.client.html)
+- `httplib2` auf GitHub: [https://github.com/httplib2/httplib2](https://github.com/httplib2/httplib2)

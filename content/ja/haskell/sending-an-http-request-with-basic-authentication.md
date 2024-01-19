@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を使用してhttpリクエストを送信する方法"
-html_title:           "Haskell: 基本認証を使用してhttpリクエストを送信する方法"
-simple_title:         "基本認証を使用してhttpリクエストを送信する方法"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,42 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何かとは？
-Haskellのプログラマーにとって、HTTPリクエストを基本認証で送信するというのはなにか？というと、基本認証はHTTPリクエストを行う際に、ユーザーの認証を行うためのものです。プログラマーはセキュリティを保つために基本認証を使用します。
+## 何となぜ？
 
-# 方法：
+HTTPリクエストに基本認証を使用するとは、サーバーに対して認証の情報と共にリクエストを送信することを指します。これは、認証が必要なWebリソースにアクセスするために行われます。
+
+## 利用法
+
+以下は、HTTPリクエストに基本認証を利用する基本的なHaskellコード例です：
+
 ```Haskell
-import Network.HTTP.Client
-import Network.HTTP.Client.TLS
-import Network.HTTP.Types
-import Network.HTTP.Client.Auth
+{-# LANGUAGE OverloadedStrings #-}
+import Network.HTTP.Simple
+import Network.HTTP.Client () -- For Request instance
 
--- リクエスト作成
-request <- parseRequest "https://example.com"
--- リクエストに基本認証を追加
-let request' = applyBasicAuth "username" "password" request
--- リクエストを送信
-response <- httpLbs request' manager
--- レスポンスのステータスコードを確認
-let status = responseStatus response
--- レスポンスのボディを取得
-let body = responseBody response
--- レスポンスの表示
-print "ステータスコード：" ++ show status
-print "ボディ: " ++ show body
+main :: IO ()
+main = do
+    initRequest <- parseRequest "http://example.com/"
+    let request = applyBasicAuth "my_user" "my_password" initRequest
+    response <- httpLBS request
+    print response
 ```
 
-実行結果：
+これを実行すると、次のような出力が得られます：
+
+```Haskell
+Status code: 200
+Headers: [("Server","nginx"), ("Content-Type","text/html; charset=UTF-8")]
+Body: <the response body>
 ```
-ステータスコード：200
-ボディ: "Hello World!"
-```
 
+## 深層情報
 
-# 詳しく調べる
-基本認証は1999年に導入されました。これは、HTTPプロトコルのセキュリティを強化するためのものでした。基本認証以外の認証方法としては、ダイジェスト認証やOAuthがあります。基本認証は、パスワード保護されたリソースにアクセスする必要がある場合に使用されます。HTTPリクエストを送信する際に、プログラマーはユーザーの認証情報を提供することにより、基本認証を行います。
+基本認証を含むHTTPリクエストを送信すると、認証情報が平文でエンコードされ、ヘッダー`Authorization: Basic <credentials>`に含まれます。"Basic"は、基本認証を使用していることを示します。
 
-# 関連情報を参照
-- [HTTP Basics](https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html)
-- [HttpClient - Haskell package](https://hackage.haskell.org/package/http-client)
-- [HTTP Authentication: Basic and Digest Access Authentication](https://no.wikipedia.org/wiki/HTTP-بعثة:基本及びダイジェストアクセス認証)
+この方法は非常に歴史的なもので、送信される情報が暗号化されていないため安全ではないとされていますが、HTTPS経由で通信を行う場合（つまり、リクエストそのものが暗号化されている場合）は、依然として有効です。
+
+代替手段としてトークンベースの認証やOAuthがありますが、実装の複雑さと進行中のメンテナンスが必要になるため、基本認証は簡単で速やかに認証を行う際の適切な選択肢です。
+
+## 関連情報
+
+1. [Haskellの基本認証](https://hackage.haskell.org/package/http-client-0.7.3/docs/Network-HTTP-Client.html)
+2. [HaskellによるHTTP](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/http)
+3. [基本認証のセキュリティ上の警告](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Security)

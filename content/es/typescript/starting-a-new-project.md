@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "TypeScript: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Getting Started"
@@ -10,38 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y por qué?
+# Comenzando un Nuevo Proyecto en TypeScript 
 
-Comenzar un nuevo proyecto en la programación es el proceso inicial de crear un nuevo software. Los programadores lo hacen para poner en práctica nuevas ideas, mejorar un proyecto existente o simplemente para explorar y aprender nuevas herramientas y tecnologías.
+## ¿Qué & Por Qué?
+Iniciar un nuevo proyecto significa comenzar a trabajar desde cero, en un código completamente nuevo. Los programadores lo hacen para crear soluciones a medida, y para tener todo controlado en términos de estructuras y dependencias.
 
-## Cómo hacerlo:
+## ¿Cómo?
+Vamos a crear un nuevo proyecto simple en TypeScript.
+
+Primero, necesitarás instalar TypeScript globalmente en tu máquina:
 
 ```TypeScript
-const nombreProyecto: string = "Mi Proyecto";
-const descripcion: string = "Esta es una nueva aplicación para administrar tareas";
-const tecnologías: string[] = ["TypeScript", "Angular", "Firebase"];
-console.log(`Bienvenido a ${nombreProyecto}!`);
-console.log(`Descripción: ${descripcion}`);
-console.log(`Tecnologías utilizadas: ${tecnologías.join(", ")}`);
+npm install -g typescript
 ```
 
-Salida:
+Luego, crea un nuevo directorio y accede a él:
+
+```TypeScript
+mkdir nuevoProyecto
+cd nuevoProyecto
 ```
-Bienvenido a Mi Proyecto!
-Descripción: Esta es una nueva aplicación para administrar tareas
-Tecnologías utilizadas: TypeScript, Angular, Firebase
+
+A continuación, inicializa un nuevo proyecto de Node.js:
+
+```TypeScript
+npm init -y
 ```
 
-## Profundizando:
+Después, agrega TypeScript como dependencia de desarrollo:
 
-El empezar un nuevo proyecto es un paso vital en el desarrollo de software. Antes de comenzar a escribir código, es importante planificar, definir objetivos e identificar las tecnologías y herramientas adecuadas para el proyecto. En TypeScript, también es importante configurar un archivo de configuración (tsconfig.json) para establecer la estructura de la aplicación.
+```TypeScript
+npm i -D typescript
+```
 
-En cuanto a las alternativas, los programadores pueden elegir entre diferentes lenguajes de programación como JavaScript o Java. Sin embargo, TypeScript ofrece ventajas como el tipado estático y la interoperabilidad con JavaScript. Otra alternativa es utilizar un framework como Angular o React para facilitar el desarrollo web.
+Finalmente, puedes hacer `tsc --init` para inicializar un proyecto TypeScript y generar un archivo `tsconfig.json`.
 
-En términos de implementación, es importante seguir las buenas prácticas de programación y utilizar herramientas de control de versiones como Git para un mejor manejo del código.
+## Profundización
+Iniciar un nuevo proyecto en TypeScript tiene sus raíces en los fundamentos de la programación, esencialmente se trata de comenzar con una pizarra en blanco y verla transformarse en algo funcional y útil.
 
-## Ver también:
+Una alternativa sería trabajar en un proyecto existente, pero eso podría tener el inconveniente de tratar con el código base de otra persona. Aunque puede ser útil para la continuidad del trabajo, a veces puede ser un dolor de cabeza entender y manejar las estructuras y abstracciones implementadas por otros.
 
-- [Documentación oficial de TypeScript](https://www.typescriptlang.org/docs)
-- [Tutorial de inicio rápido de TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [Tutorial de Angular para principiantes](https://angular.io/tutorial)
+Además, cuando hablamos de detalles de implementación, TypeScript introduce la idea de tener archivos fuertemente tipados. Esto significa que cada vez que creas un archivo .ts, tienes que especificar los tipos de tus variables, argumentos y retornos.
+
+## Ver También
+Si estás interesado en aprender más sobre TypeScript, te recomiendo los siguientes recursos:
+
+1. [Documentación Oficial de TypeScript](https://www.typescriptlang.org/docs/) - Este es el recurso definitivo para aprender TypeScript directamente de la fuente.
+2. [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/) - Un libro que cubre TypeScript de manera exhaustiva.
+3. [Cursos de Udemy sobre TypeScript](https://www.udemy.com/topic/typescript/) - Un excelente recurso para el aprendizaje interactivo.
+4. [Curso de TypeScript en Codecademy](https://www.codecademy.com/learn/learn-typescript) - Otro gran recurso para aprender TypeScript de manera efectiva.

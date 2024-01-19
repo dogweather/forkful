@@ -1,6 +1,6 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-html_title:           "Python: Suchen und Ersetzen von Text"
+html_title:           "C#: Suchen und Ersetzen von Text"
 simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Python"
 category:             "Python"
@@ -10,42 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Bei der Suche und dem Ersatz von Text geht es darum, in einem Text nach bestimmten Begriffen zu suchen und diese dann durch andere Begriffe zu ersetzen. Programmierer nutzen dies häufig, um ihre Codebase zu aktualisieren oder um schnellere und effizientere Methoden zu implementieren.
+## Was & Warum?
 
-# So geht's:
-Um Text in Python zu suchen und zu ersetzen, gibt es verschiedene Methoden. Eine Möglichkeit ist die Verwendung der ```replace()``` -Funktion. Mit dieser Funktion können Sie einen String in einem anderen String suchen und durch einen neuen String ersetzen. Zum Beispiel:
+Suchen und Ersetzen von Text ist eine Operation, bei der bestimmte Zeichenketten (Worte oder Ausdrücke) in einem Text gefunden und durch andere ersetzt werden. Programmierer tun dies, um Textinhalte dynamisch zu aktualisieren, Fehler zu korrigieren oder Daten sauber zu formatieren.
 
-```
-initial_string = "Ich mag Python!"
-new_string = initial_string.replace("mag", "liebe")
-print(new_string)
-```
-Ausgabe:
-```
-Ich liebe Python!
+## So geht's:
+
+In Python verwenden wir die Methode `replace()` um Text zu suchen und zu ersetzen.
+
+```Python
+text = "Hallo, Welt!"
+neuer_text = text.replace("Welt", "Python")
+print(neuer_text)
 ```
 
-Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken mit der ```re``` -Bibliothek. Mit regulären Ausdrücken können Sie spezifische Muster in einem Text finden und ersetzen. Zum Beispiel:
+Dies wird ausgeben:
 
 ```
-import re
-initial_string = "Hallo Welt!"
-new_string = re.sub("H[a-z]+", "Guten", initial_string)
-print(new_string)
-```
-Ausgabe:
-```
-Guten Welt!
+Hallo, Python!
 ```
 
-# Tiefere Einblicke:
-Die Verwendung von regulären Ausdrücken hat ihre Wurzeln in der Mathematik und wurde später von Ken Thompson für die Programmiersprache Unix entwickelt. Heutzutage gibt es auch verschiedene textsuchende und -ersetzende Programme wie Sed und AWK, die auf Unix basieren. Alternativ können auch externe Textbearbeitungsprogramme wie Notepad++ oder Sublime Text verwendet werden.
+Du kannst auch angeben, wie oft der Text ersetzt werden soll.
 
-# Siehe auch:
-- [Offizielle Dokumentation für die replace() -Funktion in Python](https://docs.python.org/3/library/stdtypes.html#str.replace)
-- [Offizielle Dokumentation für die re -Bibliothek in Python](https://docs.python.org/3/library/re.html)
-- [Sed Dokumentation](http://www.gnu.org/software/sed/manual/sed.html)
-- [AWK Dokumentation](https://www.gnu.org/software/gawk/manual/gawk.html)
-- [Notepad++](https://notepad-plus-plus.org/)
-- [Sublime Text](https://www.sublimetext.com/)
+```Python
+text = "Ich mag Äpfel, Äpfel sind gesund."
+neuer_text = text.replace("Äpfel", "Orangen", 1)
+print(neuer_text)
+```
+
+Dies wird ausgeben:
+
+```
+Ich mag Orangen, Äpfel sind gesund.
+```
+
+## Tiefere Einblicke:
+
+Die `replace()` Methode ist in Python seit seiner ersten Version verfügbar, sie ist also historisch gesehen ein sehr wichtiger Bestandteil von Pythons String-Verarbeitung.
+
+Alternativen zur `replace()` Methode umfassen reguläre Ausdrücke (RegEx), die in Python durch das `re` Modul unterstützt werden. Mit ihnen kannst du komplexe Austauschaufgaben umsetzen.
+
+Die `replace()` Methode arbeitet intern durch einen Durchlauf des Strings, vergleicht jedes Zeichen mit dem zu findenden String und ersetzt es, wenn es übereinstimmt. Es ist wichtig zu wissen, dass `replace()` ein neues String gibt und den ursprünglichen unverändert lässt.
+
+## Siehe auch:
+
+- [Python Official Docs - String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Python RegEx Tutorial](https://www.w3schools.com/python/python_regex.asp)
+- [Stack Overflow Discussion on replace()](https://stackoverflow.com/questions/3559559/why-does-python-use-replace-and-replace)

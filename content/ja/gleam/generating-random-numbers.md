@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数を生成する"
-html_title:           "Gleam: ランダムな数を生成する"
-simple_title:         "ランダムな数を生成する"
+title:                "ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ランダムな数字を生成するのは何か？
+## 何となぜ？
+ランダム数の生成とは、偶然性に基づき不確かな数値を生み出す行為です。プログラマーがこれを行う理由は、テストデータの作成、一意のIDの生成、またはシミュレーションにおける予測不能性の導入など、多岐にわたります。
 
-ランダムな数字を生成するとは、プログラマーがコンピューターにランダムな数字を生成させることを指します。これは、ゲームや暗号化など、さまざまなアプリケーションで使用される重要な機能です。
-
-なぜプログラマーがランダムな数字を生成するのかというと、これはプログラムの予測可能性を減らし、セキュリティを向上させるための手段だからです。また、ランダムな数字を生成することで、バランスのとれたランダムな選択をすることができます。
-
-## 方法：
-
-Gleamでは、ランダムな数字を生成するために```random.int(min, max)```関数を使用します。これは、最小値と最大値の範囲内でランダムな整数を生成するものです。
-
-例えば、次のコードを実行すると、1から10の間のランダムな整数が生成されます。
+## どうやって：
+以下にGleamでのランダム数の生成例を示します。
 
 ```Gleam
-let random_num = random.int(1, 10)
+import gleam/otp/process.{spawn}
+import gleam/atom.{Atom}
+import gleam/otp/erlang
+
+fn start() {
+  let pid = spawn(fn() {
+    process()
+  })
+}
+
+fn process() {
+  let num = erlang.random.uniform(1, 100)
+  io.println(num)
+}
 ```
 
-出力例：
+このコードは、新規プロセスを生成してそのプロセス内で1から100までの間のランダムな数値をコンソールに出力します。
 
-```Gleam
-7
-```
+## ディープダイブ
+ランダム数の生成は、コンピュータサイエンスの初期から存在し、その必要性は今日もなお変わりません。Gleamや他のErlang VMベースの言語では、`erlang.random.uniform`関数などのBIFs(組み込み関数)を通じて実装されます。また、`gleam/otp/erlang`ライブラリをインポートすることで利用可能となります。
 
-## 詳細：
+代替手段としては、あらかじめ決められた長さのランダム値を生成する、より製作者が管理しやすい関数を自己定義することもできます。ただし、そのような場合でも、内部ではクリプトグラフィックに安全なRNG(ランダム数生成器)からの出力を使用するのが一般的です。
 
-ランダムな数字を生成するためには、偏りのない乱数生成アルゴリズムが使用されます。これは、複数の要因を混ぜ合わせることで実現されます。
+## 参考リンク
+ランダム数の生成をさらに深く理解するためには以下のリンクが役立ちます。
 
-Gleam以外のアルゴリズムとしては、線形合同法やメルセンヌ・ツイスター法などがあります。これらは、簡単に実装できる反面、偏りが生じる可能性があります。
-
-ランダムな数字を生成するのには、パソコンが使用する物理的なプロセスも利用されます。これは、ハードウェアに搭載されているノイズジェネレーターを使用する方法や、マウスの移動やキーの操作などのユーザーの入力を使用する方法などがあります。
-
-## 関連リンク：
-
-- Gleam公式ドキュメント： https://gleam.run/
-- ランダムな数字生成の歴史： https://en.wikipedia.org/wiki/Random_number_generation
-- 線形合同法：https://en.wikipedia.org/wiki/Linear_congruential_generator
-- メルセンヌ・ツイスター法：https://en.wikipedia.org/wiki/Mersenne_Twister
+1. Erlangのランダム数生成： https://erlang.org/doc/man/rand.html
+2. Gleam言語の公式サイト： https://gleam.run/
+3. Gleamのソースコード： https://github.com/gleam-lang/gleam

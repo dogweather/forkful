@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando una cadena"
-html_title:           "Swift: Interpolando una cadena"
-simple_title:         "Interpolando una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Interpolar una cadena es básicamente insertar valores variables en una cadena de texto. Los programadores lo hacen para crear cadenas dinámicas y más fáciles de leer en su código.
+## ¿Qué es y por qué?
 
-## Cómo:
-Este es un ejemplo de cómo interpolar una cadena en Swift:
+La interpolación de cadenas en Swift te permite insertar datos directamente dentro de una cadena. Es útil para agregar variables o expresiones a tus cadenas de texto sin usar una concatenación engorrosa.
+
+## Cómo hacerlo:
+
+La interpolación de cadenas en Swift es asombrosamente sencilla.
 
 ```Swift
-let nombre = "Juan"
-let edad = 25
-
-let mensaje = "¡Hola, mi nombre es \(nombre) y tengo \(edad) años!"
-print(mensaje)
-
-// Output: ¡Hola, mi nombre es Juan y tengo 25 años!
+let nombre = "Miguel"
+let saludo = "¡Hola, \(nombre)!"
+print(saludo)
 ```
 
-## Exploración en profundidad:
-La interpolación de cadenas se introdujo en Swift en su versión 2.0 como una forma de reemplazar la antigua función `sprintf` utilizada en otros lenguajes de programación. Otras alternativas para crear cadenas dinámicas incluyen el uso de `String(format:)` y `String(describing:)`. 
+El código anterior imprimirá: "¡Hola, Miguel!". Como ves, encapsulamos la variable `nombre` en paréntesis y añadimos una barra invertida `\` justo antes.
 
-La interpolación de cadenas se implementa en Swift utilizando el operador de interpolación `\()` y puede contener cualquier expresión válida. Esto significa que puede interpolar no solo valores de variables, sino también resultados de funciones y operaciones aritméticas.
+## Profundizando:
+
+Si te interesa, aquí hay un poco de historia, opciones alternativas y detalles de la implementación de la interpolación de cadenas en Swift.
+
+1. **Contexto histórico**: La interpolación de cadenas data de los lenguajes de programación clásicos como Perl y ha sido adoptada en muchos lenguajes modernos, incluyendo Swift.
+
+2. **Alternativas**: Podrías usar la concatenación de cadenas, pero ese método tiende a ser más torpe y difícil de leer.
+
+3. **Detalles de implementación**: Cuando trabajas con interpolación de cadenas, Swift hace un trabajo interno preparando y formateando tu cadena para que puedas incorporar valores directamente. Esto puede tener implicaciones en términos de rendimiento en situaciones con muchas cadenas a interpolar, aunque en la mayoría de los casos, la diferencia será mínima.
 
 ## Ver también:
-- Documentación oficial de Swift sobre la interpolación de cadenas: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID303
-- Tutorial en español sobre interpolación de cadenas en Swift: https://latam.ek.ua/tutoriales/2009-10-04/interpolar-cadenas-con-swift/
+
+Mira estos recursos adicionales para aprender más sobre la interpolación de cadenas en Swift:
+
+1. [Documentación oficial de Swift sobre la interpolación de cadenas](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)
+2. [Tutorial detallado sobre la interpolación de cadenas en Swift](https://www.hackingwithswift.com/quick-start/understanding-swift/how-to-add-interpolated-variables-into-a-string)
+
+Nunca está de más aprender más detalles sobre las herramientas que usas día a día, ¡feliz programación!

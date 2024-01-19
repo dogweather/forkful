@@ -1,7 +1,7 @@
 ---
-title:                "Virheenkorjaustulosteen tulostus"
-html_title:           "Fish Shell: Virheenkorjaustulosteen tulostus"
-simple_title:         "Virheenkorjaustulosteen tulostus"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -11,29 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Debug-tulostuksen tulostaminen on ohjelmoijille tärkeä työkalu virheiden korjaamiseen ja ohjelman toiminnan havainnointiin. Se auttaa löytämään ongelmallisia kohtia koodista ja varmistamaan, että ohjelma toimii halutulla tavalla.
+Tulostaminen debug-tulostus on prosessi, jonka avulla ohjelmoijat voivat seurata ja ymmärtää koodin käyttäytymistä sen suorituksen aikana. Sitä käytetään sen varmistamiseen, että koodi toimii odotetusti ja löytämään mahdolliset virheet tai puutteet.
 
-## Miten:
-Koodin esimerkit ja tulostus näytetään ```Fish Shell ... ``` -koodilohkossa.
+## Näin se tehdään:
+Fish Shell tarjoaa `echo` komennon, jonka avulla voit tulostaa debug-tiedot. 
 
-Esimerkiksi, jos haluat tulostaa luvun 10, käytä seuraavaa koodia:
-
+```fish
+for i in (seq 5)
+    echo "Processing loop iteration $i"
+end
 ```
-echo 10
+Tämä tuottaa seuraavanlähteen:
+
+```fish
+Processing loop iteration 1
+Processing loop iteration 2
+Processing loop iteration 3
+Processing loop iteration 4
+Processing loop iteration 5
 ```
+## Syvä sukellus
+Debug-tulostuksen käyttö on ollut kehitystyökalujen peruskäytäntö alusta asti. Fish Shell on toteutettu läpinäkyvyyden puitteissa, ja se tarjoaa joukon erilaisia keinoja debuglogituksen suorittamiseksi, mukaan lukien `stdlib`, `debug`, ja `status` static functionit. Vaikka `echo` on yleisin tapa, voit myös käyttää `printf` tuottaaksesi formatoidumman ulostulon.
 
-Ja ohjelman tulostus näyttää seuraavalta:
-
-```
-10
-```
-
-## Syväsukellus:
-Debug-tulostuksen käyttö on vakiintunut käytäntö ohjelmoinnissa jo vuosikymmenten ajan ja sitä käytetään lähes kaikissa ohjelmointikielissä. Vaikka on olemassa vaihtoehtoisia työkaluja, debug-tulostus on usein nopein ja kätevin tapa havaita ja korjata virheitä ohjelmassa.
-
-Fish Shellin avulla voit myös käyttää erilaisia ​​komentoja, kuten ```print``` tai ```printf```, joiden avulla voit muotoilla ja tulostaa tulosteen haluamallasi tavalla.
-
-## Katso myös:
-- [Fish Shellin viralliset verkkosivut](https://fishshell.com/)
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Ohjeita debug-tulostuksen käyttöön](https://medium.com/@jorge_rouae/como-usar-el-output-debugging-en-tu-c%C3%B3digo-5ece0883d6f8)
+## Katso myös
+Lisätietoja Fish Shell -ohjelmoinnista ja debug -tulostuksesta voit löytää seuraavasta lähteistä:
+1. [Fish Shell viralliset dokumentit](https://fishshell.com/docs/current/index.html)
+2. [Fish Shell GitHub](https://github.com/fish-shell/fish-shell)
+3. [Stack Overflow: How to debug in Fish Shell](https://stackoverflow.com/questions/32764976/how-do-i-debug-fish-shell-scripts)
+4. [Debugging Fish Shell Scripts](https://opensource.com/article/19/8/debugging-fish-shell)

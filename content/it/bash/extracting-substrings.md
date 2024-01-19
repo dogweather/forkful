@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di sottostringhe"
-html_title:           "Bash: Estrazione di sottostringhe"
-simple_title:         "Estrazione di sottostringhe"
+title:                "Estrazione di sottosequenze"
+html_title:           "Arduino: Estrazione di sottosequenze"
+simple_title:         "Estrazione di sottosequenze"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Estrarre delle sottostringhe è un'operazione comune nella programmazione Bash, che consiste nel prelevare una parte di una stringa più grande. I programmatori spesso fanno uso di questa tecnica per ottenere informazioni specifiche da una stringa più ampia o per manipolare i dati in un formato particolare.
+## Cos'è e Perché?
 
-## Come:
-Estrarre delle sottostringhe in Bash è possibile grazie al comando `substring`. Di seguito sono riportati alcuni esempi di codice e relativi output per mostrare come utilizzare questo comando:
+L'estrazione delle sottostringhe è un'operazione che consente di ottenere una porzione (o "substring") di una stringa più grande. Questo è molto utile per i programmatori per manipolare i dati in base alle esigenze specifiche, come la ricerca e l'analisi del testo.
 
+## Come fare:
+
+Ecco un esempio di come estrarre una substring in Bash:
+```Bash
+stringa="Buongiorno mondo!"
+echo ${stringa:10:5} 
 ```
-# Estrarre i primi 5 caratteri di una stringa
-STRINGA="Ciao Mondo!"
-substr="${STRINGA:0:5}"
-echo $substr
-
-# Output: Ciao
-
-# Estrarre l'estensione di un file
-FILE="documenti/report.pdf"
-substr="${FILE##*.}"
-echo $substr
-
-# Output: pdf
+E l'output sarebbe:
+```Bash
+mondo
 ```
+In questo esempio, stiamo estraendo la sottostringa a partire dall'11° carattere (gli indici in shell scripting partono da 0) per 5 caratteri.
 
-## Approfondimento:
-L'operazione di estrarre delle sottostringhe non è un concetto nuovo, infatti risale all'epoca dei primi linguaggi di programmazione. Tuttavia, ci sono alternative al comando `substring` in Bash, come ad esempio l'utilizzo delle espressioni regolari. 
+## Approfondimento
 
-L'implementazione del comando `substring` in Bash è semplice e diretta, ma può causare confusione se non si è a conoscenza della sintassi corretta. È importante ricordare che la posizione dei caratteri all'interno di una stringa inizia da 0.
+Nel contesto storico, Bash (nato nel 1989) ha aggiunto questa funzionalità molto dopo altri linguaggi di programmazione. Tuttavia, Bash è popolare per i suoi potenti strumenti di manipolazione delle stringhe, insieme ad altri vantaggi come la portabilità.
 
-## Guarda Anche:
-Per ulteriori informazioni sull'estrazione di sottostringhe in Bash, si consiglia di leggere la documentazione ufficiale [qui](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion). Inoltre, è possibile trovare utili esempi di codice su siti come Stack Overflow o GitHub.
+Parlando di alternative, ci sono molti altri linguaggi di programmazione che offrono modi diversi per estrarre sottostringhe - come Python, JavaScript e Java - ognuno con le proprie peculiarità.
+
+Per quanto riguarda i dettagli di implementazione, l'operatore di estrazione delle sottostringhe in Bash è molto semplice. La sintassi è `${string:position:length}`, dove `string` è la stringa originale, `position` è la posizione iniziale da cui si desidera estrarre la sottostringa e `length` è il numero di caratteri da estrarre.
+
+## Approfondimenti
+
+Consultare i seguenti link per un approfondimento sull'argomento:
+
+- Manipolazione delle stringhe in Bash: https://www.thegeekdiary.com/bash-how-to-do-string-manipulation/
+- Bash substring: https://www.baeldung.com/linux/bash-substring
+- Esempi di estrazione delle sottostringhe in altri linguaggi di programmazione: https://www.w3schools.com/python/ref_string_substring.asp
+- Bash Scripting Guide: https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html

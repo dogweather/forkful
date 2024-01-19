@@ -1,6 +1,6 @@
 ---
 title:                "搜索和替换文本"
-html_title:           "PHP: 搜索和替换文本"
+html_title:           "Kotlin: 搜索和替换文本"
 simple_title:         "搜索和替换文本"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是搜索和替换文本？为什么程序员要做这个？
+# 內文內容
 
-搜索和替换文本是指在文本中查找指定的内容，并将其替换为另一种内容。这项任务在编程中非常常见，因为它可以帮助程序员快速地修改大段的代码或文本，从而节省时间和精力。
+## 什麼 & 為什麼?
 
-# 如何完成搜索和替换文本？
+文字搜尋和替換是一種在指定文本中查找特定字符串並將其替換成所需字符串的操作。程式設計師會做這事，因為它可以幫助改變資訊，迅速修復程式碼錯誤和更新內容。
 
-在PHP中，有两个主要的函数可以用来完成搜索和替换文本的任务：`str_replace()`和`preg_replace()`。
+## 如何做:
 
+以下是PHP的基本示例：
 ```PHP
-// 使用str_replace()函数来替换文本
-$text = "Hello World!";
-$new_text = str_replace("World", "PHP", $text);
-echo $new_text; // 输出：Hello PHP!
-
-// 使用preg_replace()函数来替换文本
-$pattern = "/worl/i"; // i标志表示不区分大小写
-$text = "Hello World!";
-$new_text = preg_replace($pattern, "PHP", $text);
-echo $new_text; // 输出：Hello PHP!
+<?php
+$text = "我愛我的貓。";
+$text = str_replace("貓", "狗", $text);
+echo $text; // 輸出: "我愛我的狗。"
+?>
 ```
+在這個例子中，我們用 `str_replace()` 函數將“貓”替換為“狗”。
 
-另外，可以使用正则表达式作为搜索的模式，从而更灵活地匹配和替换内容。
+## 深入了解
 
-# 深入了解搜索和替换文本
+搜尋和替換操作的相關技術已經使用了很長時間，不僅在現今的程式設計中，也在早期的文字編輯中。PHP使用 `str_replace()` 函數實現此操作，它提供了有效且直接的解決方案。
 
-搜索和替换文本的概念最早出现在编辑器和文本处理器中，让用户可以批量修改文档中的文本。如今，这项技术也被广泛应用于编程领域。
+另外，PHP也提供了其他的替代辦法，如 `preg_replace()`，這是個更複雜但更具靈活性的函數。它使用正規表達式（regex）進行尋找和替換，然而對於一些較簡單的應用如文字搜尋和替換，我們還是選擇 `str_replace()` 可以更直接有效。
 
-除了`str_replace()`和`preg_replace()`函数，PHP也提供了其他一些相关的函数，如`str_ireplace()`（不区分大小写的搜索和替换）和`mb_eregi_replace()`（支持多字节字符的搜索和替换）。
+## 參照文獻 
 
-## 相关资料
-
-- [PHP官方文档 - str_replace()](https://www.php.net/manual/en/function.str-replace.php)
-- [PHP官方文档 - preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
-- [PHP官方文档 - str_ireplace()](https://www.php.net/manual/en/function.str-ireplace.php)
-- [PHP官方文档 - mb_eregi_replace()](https://www.php.net/manual/en/function.mb-eregi-replace.php)
+1. PHP手冊上的`str_replace()` 使用指南: [參閱此處](https://www.php.net/manual/en/function.str-replace.php)
+2. 對於如何使用 `preg_replace()` 進行搜尋和替換的深入討論: [參閱此處](https://www.php.net/manual/en/function.preg-replace.php)
+3. 正規表達式(regex)的使用與理解: [參閱此處](https://www.php.net/manual/zh/book.pcre.php)

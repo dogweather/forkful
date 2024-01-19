@@ -1,6 +1,6 @@
 ---
 title:                "Utiliser les expressions régulières"
-html_title:           "C++: Utiliser les expressions régulières"
+html_title:           "C: Utiliser les expressions régulières"
 simple_title:         "Utiliser les expressions régulières"
 programming_language: "C++"
 category:             "C++"
@@ -10,46 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi les programmeurs l'utilisent-ils?
+# Régulier Expressions en C++ : Un Guide Simplifié 
 
-Les expressions régulières sont une méthode puissante pour rechercher des motifs dans du texte. Les programmeurs les utilisent souvent pour valider des données d'entrée, extraire des informations spécifiques et effectuer des opérations de recherche et de remplacement.
+## Qu'est-ce que c'est  & Pourquoi ?
 
-# Comment faire:
+Les expressions régulières sont un outil puissant pour la manipulation de chaînes. Les programmeurs les utilisent pour rechercher, remplacer, et valider les chaînes de caractères.
 
-Voici un exemple de code en C++ utilisant des expressions régulières pour rechercher un motif dans une chaîne de caractères :
+## Comment faire :
+
+Observez l'exemple suivant. Nous allons vérifier si une chaîne de caractères contient une certaine séquence de lettres.
 
 ```C++
-#include <iostream>
 #include <regex>
-
-using namespace std;
+#include <string>
+#include <iostream>
 
 int main() {
-  string s = "Bonjour le monde !";
-  // Recherche du motif "monde" dans la chaîne de caractères
-  regex reg("monde");
-  // Vérification si le motif existe dans la chaîne
-  if (regex_search(s, reg)) {
-    cout << "Le motif a été trouvé !" << endl;
-  }
-  return 0;
+    std::string s = "C++11 et ses expressions régulières";
+
+    // Je cherche le mot "C++11" p. ex.
+    std::regex e ("C\\+\\+11");
+
+    // Testons si ça matche
+    if (std::regex_search(s,e))
+        std::cout << "La sequence 'C++11' a été trouvée!" << std::endl;
+
+    return 0;
 }
 ```
+Ce qui produit :
 
-La sortie du code ci-dessus sera :
-
+```shell
+La sequence 'C++11' a été trouvée!
 ```
-Le motif a été trouvé !
-```
 
-# Approfondissement :
+## Plus de Détails :
 
-Les expressions régulières ont été inventées dans les années 1950 par le mathématicien Stephen Kleene. À l'origine, elles étaient utilisées pour définir des langages formels. Depuis, elles sont devenues un outil essentiel pour les programmeurs, avec des alternatives telles que les fonctions de manipulation de chaînes de caractères.
+1. **Contexte historique** : Le support des expressions régulières a été ajouté à C++ dans la version C++11, après des décennies d'existence dans d'autres langages comme PERL et Java.
+2. **Alternatives** : Vous pouvez également utiliser des bibliothèques tierces telles que Boost.Regex qui offre une prise en charge étendue des expressions régulières.
+3. **Détails d'implémentation** : L'execution des expressions régulières en C++ dépend de la STL (Standard Template Library) où la classe regex est définie dans l'en-tête `<regex>`.
 
-Pour implémenter des expressions régulières en C++, vous aurez besoin de la bibliothèque standard <regex>. Cette bibliothèque comprend des classes et des fonctions qui vous permettent de créer et de manipuler des expressions régulières.
+## Voir Aussi :
 
-# Voir aussi :
+Consultez les ressources supplémentaires ci-dessous :
 
-- [Tutoriel sur les expressions régulières en C++](https://www.cplusplus.com/reference/regex/)
-- [Documentation complète de la bibliothèque <regex>](https://cplusplus.com/reference/regex/)
-- [Histoire des expressions régulières](https://en.wikipedia.org/wiki/Regular_expression)
+1. [C++ Reference: regex](http://en.cppreference.com/w/cpp/regex) - Documentation officielle sur les expressions régulières en C++.
+2. [Boost Libraries](http://www.boost.org/doc/libs/1_64_0/libs/regex/doc/html/index.html) - Documentation Boost.Regex.
+3. [Using Regular expressions in C++](http://www.cplusplus.com/reference/regex/) - Un tutoriel détaillé sur les expressions régulières en C++.
+
+Le succès en programmation nécessite de la pratique. Alors, pratiquez-vous avec les expressions régulières en C++!

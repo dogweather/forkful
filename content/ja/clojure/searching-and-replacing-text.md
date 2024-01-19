@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Clojure: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,27 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なにだ? どうして?
+## 何となぜ？
+テキストの検索と置換は、特定の文字列を見つけて新しい文字列に置き換えるプログラミング作業の一部です。コードの修正、データクリーニングなど、多くのタスクを効率化するためにプログラマーによく使用されます。
 
-テキストを検索・置換するとは、プログラマーがコード内の特定のテキストを見つけて、それを別のテキストに置き換えることです。プログラマーは、コード内の特定のテキストを効率的に変更するために、検索と置換を行います。
+## 方法：
 
-## 使い方:
+Clojureを使用してテキストを検索および置換する基本的な方法は、 `clojure.string/replace` 関数を使用することです。以下に基本的な例を示します：
 
 ```Clojure
-; 例1: インデックスの置換
-(clojure.string/replace "Hello, World!" "," " ")
-> "Hello World!"
+(require '[clojure.string :as str])
 
-; 例2: 正規表現を使用した複雑な置換
-(clojure.string/replace "Hello, World!" #"[^\w\s]" "_")
-> "Hello__World_"
+(defn search-and-replace
+  [s old new]
+  (str/replace s old new))
+
+(defn -main []
+  (println (search-and-replace "今日は晴れです" "晴れ" "雨")))
 ```
 
-## 詳しい情報
+このコードを実行すると次のような出力が得られます：
 
-検索と置換は、コードの編集やデータの処理において一般的なテクニックです。歴史的には、テキストエディターで使用される正規表現が広く使われてきました。また、Clojureには、検索・置換のための多様な関数やライブラリがあります。
+```Clojure
+今日は雨です
+```
 
-## 関連情報
+## 深潜り：
 
-- [正規表現についての Clojure ドキュメント](https://clojure.org/guides/learn/functions#_regular_expressions)
-- [Clojure における文字列操作についてのガイド](https://clojure.org/guides/learn/functions#_string_manipulation)
+テキストの検索と置換は、最初のコンピュータシステムが開発されたときから存在しています。これらの操作は、特に大量のデータを処理する必要がある場合に便利です。
+
+Clojureには `clojure.string/replace` の他にも、 `clojure.string/replace-first` など、テキスト検索と置換用の他の関数がいくつかあります。また、正規表現を使用することで、より複雑な検索と置換パターンを作成することも可能です。
+
+検索と置換の処理は、内部的には一般的にハッシュマップと配列を使用して最適化されています。一般的に、これらのアルゴリズムは時間とスペースの観点から効率的です。
+
+## また見てみましょう：
+
+Clojureに関するより詳しい情報は、以下のリンクを参照してください：
+
+1. Clojure公式ドキュメンテーション：[https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
+
+2. Clojureによるテキスト処理：[https://clojure.co/guides/content](https://clojure.co/guides/content)
+
+3. Regular Expressions in Clojure：[https://www.regular-expressions.info/clojure.html](https://www.regular-expressions.info/clojure.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Elixir recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -12,41 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Printing debug output is a means of examining your Elixir program as it runs, displaying values and states of elements to the console for inspection. It’s crucial during development or debugging as it helps to understand the actual sequence of code execution or to check some values/classes/structures during the runtime.
+Printing debug output is the process of displaying intermediate outputs or values to troubleshoot a piece of code. Programmers do this to find the source of errors, validate their logic, and understand the execution flow. 
 
-## How To:
+## How to:
 
-Elixir provides several methods for debug output, the most common ones are `IO.puts/2` and `IO.inspect/2`. Here is an example:
-
-```Elixir
-x = 5
-IO.puts("The value of x is #{x}")
-```
-```Output
-The value of x is 5
-```
-`IO.puts/2` prints the argument given to the standard output.
+Here's a simple way of printing debug output using Elixir's IO module:
 
 ```Elixir
-list = [1, 2, 3, 4, 5]
-IO.inspect(list)
+IO.puts("Hello, World!")
 ```
-```Output
-[1, 2, 3, 4, 5]
+
+This code will display "Hello, World!" on your terminal. 
+
+If you want to debug a specific value during code execution, use IO.inspect:
+
+```Elixir
+value_to_debug = "Testing"
+
+IO.inspect(value_to_debug)
 ```
-`IO.inspect/2` can be even more valuable as it can handle more complex data types, printing a detailed, readable output of your data's structure.
+
+As you run the code, it will print "Testing", giving you the value of the dedicated variable. 
 
 ## Deep Dive
 
-Originally with roots in Erlang, Elixir brings along the `io` module from its parent language. While it may not seem as fancy as integrated development environment (IDE) debuggers, in-place printing has value in its simplicity and directness. 
+### Historical Context
+The practice of printing debug output dates back to the very early stages of programming. Its simplicity and immediate feedback make it a handy tool even in highly advanced languages like Elixir. 
 
-There are alternatives to directly printing to the console, for instance, using Elixir's powerful tracing and debugging tools like `:debugger` module or libraries like `:observer`. These tools allow for stepping through code and inspecting program state at different points of execution, offering a deeper but more complex approach.
+### Alternatives
+While printing debug output is straightforward, it may not serve in complex scenarios. For such cases, Elixir provides the use of debugging tools like `IEx.pry` for interactive debugging, and `:debugger` module for visual debugging. 
 
-Using `IO.inspect/2` directly modifies the codebase which might not be the best practice. One preferred approach is to use a logging library, like `Logger`, that won't interfere with production code and offers various options for output format and destination.
+```Elixir
+defmodule Test do
+  def run(value) do
+    require IEx; IEx.pry #prying into the function
+    value * 2
+  end
+end
+```
+
+### Implementation Details
+Under the hood, when you use `IO.puts`, it communicates with the Erlang runtime system's IO server that handles all IO tasks. Remember, Elixir is built on top of Erlang, so you might come across this relationship now and then.
+
+For `IO.inspect`, it is a bit smarter. It returns the value it's inspecting, so it doesn't interfere with your pipeline operations. It converts the data into a readable format, communicates with IO server, and finally prints the debug information on your terminal.
 
 ## See Also
 
-- [IO.puts/2 official documentation](https://hexdocs.pm/elixir/IO.html#puts/2)
-- [IO.inspect/2 official documentation](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [`:debugger` official documentation](https://erlang.org/doc/man/debugger.html)
-- [`:observer` official documentation](https://erlang.org/doc/man/observer.html)
+Read more on Elixir's documentation: 
+- IO module: [https://hexdocs.pm/elixir/IO.html](https://hexdocs.pm/elixir/IO.html)
+- Debugging in Elixir: [https://hexdocs.pm/iex/IEx.Helpers.html#pry/0](https://hexdocs.pm/iex/IEx.Helpers.html#pry/0)
+- Erlang Runtime System: [https://erlang.org/doc/man/erl.html](https://erlang.org/doc/man/erl.html)

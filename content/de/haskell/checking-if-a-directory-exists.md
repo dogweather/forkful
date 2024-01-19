@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis existiert"
-html_title:           "Haskell: Überprüfen, ob ein Verzeichnis existiert"
-simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+html_title:           "Haskell: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Beim Programmieren geht es darum, Probleme zu lösen und Aufgaben zu automatisieren. Oft müssen wir wissen, ob ein bestimmtes Verzeichnis auf unserem Computer existiert, bevor wir damit arbeiten können. Das Überprüfen der Existenz eines Verzeichnisses ist daher eine wichtige Aufgabe für Programmierer.
+# Verzeichnis Existenzprüfung in Haskell
 
-# Wie geht man vor?
-Zum Glück ist das Überprüfen der Existenz eines Verzeichnisses in Haskell eine einfache Aufgabe. Mit der `doesDirectoryExist` Funktion aus dem `System.Directory` Modul können wir überprüfen, ob ein Verzeichnis mit dem angegebenen Pfad existiert. Hier ist ein Beispiel:
+## Was & Warum?
+
+Die Überprüfung, ob ein Verzeichnis existiert, ist eine Operation, um das Vorhandensein eines bestimmten Pfads im Dateisystem festzustellen. Es ermöglicht Programmierern, Fehlern bei Dateioperationen vorzubeugen.
+
+## So wird's gemacht:
+
+In Haskell könnten wir die `doesDirectoryExist` Funktion aus dem `System.Directory` Modul verwenden, um dies zu erreichen. Hier ist ein Codeausschnitt:
 
 ```Haskell
-import System.Directory (doesDirectoryExist)
+import System.Directory
 
-main :: IO ()
-main = do
-  let path = "/Users/Benutzer/Documents/"
-  dirExists <- doesDirectoryExist path
-  if dirExists
-    then putStrLn "Das Verzeichnis existiert!"
+checkDirectory :: IO ()
+checkDirectory = do
+    result <- doesDirectoryExist "pfad/zum/verzeichnis"
+    if result
+    then putStrLn "Das Verzeichnis existiert."
     else putStrLn "Das Verzeichnis existiert nicht."
 ```
 
-Der `doesDirectoryExist` Funktion gibt einen `bool` zurück, der angibt, ob das Verzeichnis existiert oder nicht. Wir können diesen Wert verwenden, um entsprechend zu handeln.
+Was passiert hier? Der `doesDirectoryExist`-Aufruf gibt ein `IO Bool` zurück. Dieses Resultat wird überprüft und darauf entsprechend reagiert.
 
-# Tiefer Einblick
-In der Vergangenheit mussten Programmierer manuell überprüfen, ob ein Verzeichnis existiert, indem sie die Berechtigungen des Dateisystems überprüften. Mit der Einführung von Haskell wurde diese Aufgabe jedoch durch die Einführung von System.Directory Module wesentlich vereinfacht.
+## Tiefere Tauchgänge
 
-Es gibt auch alternative Möglichkeiten, um die Existenz eines Verzeichnisses zu überprüfen, wie z.B. die Verwendung des `findPred` aus dem `System.Directory.Tree` Modul oder die Verwendung des `getFileStatus` aus dem `System.Posix.Files` Modul.
+Haskell implementiert die Verzeichnisprüfung grundsätzlich über das zugrunde liegende Betriebssystem. Im Hintergrund wird auf POSIX-Systemen ein `stat`-Systemaufruf ausgeführt und die Rückgabe interpretiert.
 
-Die `doesDirectoryExist` Funktion verwendet intern die `doesPathExist` Funktion, die wiederum die `stat` Systemaufruf benutzt, um Informationen über das Dateisystemelement zu erhalten.
+Andere Methoden sind ein direkter Systemaufruf in C oder der Einsatz von externen Shell-Befehlen, die jedoch in der Regel weniger idiombasiert und potenziell fehleranfälliger sind.
 
-# Sieh auch
-- [Haskell Dokumentation](https://www.haskell.org/documentation/)
-- [System.Directory Modul Dokumentation](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [System.Directory.Tree Modul Dokumentation](https://hackage.haskell.org/package/directory-tree/docs/System-Directory-Tree.html)
-- [System.Posix.Files Modul Dokumentation](https://hackage.haskell.org/package/unix/docs/System-Posix-Files.html)
+Historisch gesehen war das Arbeiten mit Dateien und Verzeichnissen in Haskell immer ein wenig umständlich, da diese Operationen Nebeneffekte haben und daher in den IO-Monaden behandelt werden müssen. Mit der Einführung des `System.Directory`-Moduls wurde jedoch versucht, dem entgegenzuwirken und eine bequemere API bereitzustellen.
+
+## Siehe auch
+
+Weitere Informationen und Anleitungen zum Umgang mit Dateien und Verzeichnissen in Haskell finden Sie in den folgenden Links:
+
+- [System.Directory in Haskell](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
+- [Working with files & directories in Haskell](https://wiki.haskell.org/Introduction_to_IO_and_System.IO)

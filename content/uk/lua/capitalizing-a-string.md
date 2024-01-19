@@ -1,7 +1,7 @@
 ---
-title:                "Капіталізація рядка"
-html_title:           "Lua: Капіталізація рядка"
-simple_title:         "Капіталізація рядка"
+title:                "Приведення рядка до великих букв"
+html_title:           "Lua: Приведення рядка до великих букв"
+simple_title:         "Приведення рядка до великих букв"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,28 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## See Also:
-Lua, also known as the programming language of the future, is a lightweight, efficient, and powerful language used by developers worldwide. In this article, we will be discussing how to capitalize a string in Lua and why it is an essential tool for programmers.
-
-## Що & Чому? 
-Капіталізація рядка це процес перетворення першої літери рядка з малої на велику. Програмісти роблять це, щоб покращити зрозумілість або форматування тексту, що є важливим для ефективності програмного коду.
+## Що і чому?
+Іноді, у програмуванні, нам потрібно зробити усі літери у рядку великими - це називається "capitalizing". Програмісти роблять це, щоб забезпечити уніформність даних та полегшити порівняння рядків.
 
 ## Як це зробити:
+Lua має вбудовану функцію `string.upper`, яка перетворює всі літери рядка в верхній регістр. Ось приклад:
+
 ```Lua
--- Використовуйте функцію string.upper
-local str = "привіт"
-print(string.upper(str)) -- Виведе "ПРИВІТ"
-```
-```Lua
--- Використовуйте функцію string.upper и string.sub
-local str = "привіт"
-print(string.upper(string.sub(str, 1, 1))..string.sub(str, 2)) -- Виведе "Привіт"
+s = "hello, world"
+print(s:upper())
 ```
 
-## Deep Dive:
-Капіталізація рядків виникла з необхідністю покращити читабельність тексту в старих комп'ютерних терміналах, які не мали можливості відображати різні регістри літер. Можна використовувати інші функції, такі як string.lower для перетворення рядка в малі літери або string.gsub для заміни символів у рядку. Також, існують різні бібліотеки та модулі для продвинутої обробки рядків у Lua.
+При виконанні цього коду ви побачите наступне:
 
-## See Also:
-https://www.lua.org - офіційний сайт Lua.
-https://www.lua.org/manual/5.4/ - документація з функцій та модулів мови Lua.
-https://lua-users.org/wiki/StringLibraryTutorial - корисний посібник по роботі з рядками у Lua.
+```Lua
+"HELLO, WORLD"
+```
+
+## Поглиблений аналіз
+В історії програмування, потреба в capitalizing з'явилася дуже рано, коли програмісти зрозуміли, що рядки повинні потребувати щось більше, ніж просто формування. Іноді вам потрібно змінити регістр літер у рядку, щоб зробити його більш привітним або легше читати. Окрім string.upper, існують і інші способи реалізації цього: можна використовувати цикли, регулярні вирази або навіть написати свою маленьку функцію capitalization.
+
+## Дивіться також:
+1. Офіційна документація Lua про роботу з рядками: https://www.lua.org/pil/20.html
+2. Уроки про програмування на Lua: https://www.tutorialspoint.com/lua/index.htm
+3. Вікі-сторінка про Capitalization (англійською мовою): https://en.wikipedia.org/wiki/Capitalization

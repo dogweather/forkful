@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstavering av en streng"
-html_title:           "C++: Stor bokstavering av en streng"
-simple_title:         "Stor bokstavering av en streng"
+title:                "Gjøre en streng stor"
+html_title:           "C++: Gjøre en streng stor"
+simple_title:         "Gjøre en streng stor"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,40 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Kapitalisering av en streng er en prosess der den første bokstaven i hvert ord i en setning blir gjort stor. Dette gjør teksten lettere å lese og følge for både mennesker og datamaskiner.
+Å sette en streng til store bokstaver betyr å endre alle små bokstaver i en streng til store bokstaver. Dette gjøres ofte for å kjøre case-insensitive sammenligninger, parseIntput eller forbedre lesebarhet.
 
-Programmerere bruker kapitalisering for å gjøre koden mer leselig, spesielt når det kommer til variabelnavn og kommentarer. Det bidrar til å tydeliggjøre koden og gjøre den enklere å forstå.
+## Hvordan:
+Her er en enkel metode for å endre en streng til store bokstaver ved hjelp av C++ Standard Template Library (STL):
 
-## Slik gjør du:
-Kapitalisering i C++ kan gjøres ved å bruke transform-funksjonen og toupper-funksjonen fra STL-biblioteket. Se eksempelkoden nedenfor for å se hvordan det gjøres:
-
-```
-// Eksempel på kapitalisering av en streng i C++
+```C++
 #include <iostream>
-#include <string>
 #include <algorithm>
-
-using namespace std;
+#include <string>
 
 int main() {
-    string sentence = "dette er en test";
-    transform(sentence.begin(), sentence.end(), sentence.begin(), ::toupper);
-    cout << sentence << endl;
+    std::string str = "Hei, verden!";
+    std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+    std::cout << str;
     return 0;
 }
 ```
+Når dette programmet kjøres, vil utdata være:
 
-Dette vil produsere følgende utgang:
+```C++
+HEI, VERDEN!
+```
+## Dybdeplunge
+Historisk sett er bruken av å sette til store bokstaver i programmeringssammenheng stammer fra tiden av trykte teletypemaskiner. I moderne praksis brukes det som nevnt for å ignorere case når du sammenligner strenger.
 
-`DETTE ER EN TEST`
+Det er flere andre måter å gjøre dette på i C++, for eksempel bruk av egen funksjon gjennom å løkke gjennom hver karakter i strengen og bruke `toupper` funksjonen.
 
-## Dypdykk:
-Historisk sett ble kapitalisering brukt i programmene til tidlige datamaskiner, som bare taklet store bokstaver. I dag brukes det primært for å gjøre koden mer lesbar og strukturert.
+I C++, når du bruker `std::transform` funksjonen, utføres operasjonen på plass, noe som betyr at den opprinnelige strengen blir endret. Hvis du vil beholde den opprinnelige strengen intakt, du vil trenge å kopiere strengen til en ny variabel før du setter den til store bokstaver.
 
-Alternativene til å bruke STL-funksjoner for å kapitalisere en streng inkluderer å lage en egen funksjon eller å bruke en tredjepartsbibliotek.
-
-Implementeringsdetaljer for kapitalisering kan variere avhengig av programmeringsspråket, men konseptet og bruken av STL-biblioteket forblir det samme.
-
-## Se også:
-- [STL-biblioteket i C++](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)
-- [Implementasjon av kapitalisering i Java](https://www.techiedelight.com/capitalize-first-letter-of-each-word-string-java/)
+## Se Også
+- [C++ Standard Template Library (STL) Documentation](http://www.cplusplus.com/reference/stl/)
+- [`std::transform` på cppreference](https://en.cppreference.com/w/cpp/algorithm/transform)
+- [`toupper` på cppreference](https://en.cppreference.com/w/cpp/string/byte/toupper)

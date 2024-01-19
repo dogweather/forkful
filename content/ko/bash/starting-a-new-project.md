@@ -1,6 +1,6 @@
 ---
 title:                "새 프로젝트 시작하기"
-html_title:           "Bash: 새 프로젝트 시작하기"
+html_title:           "Arduino: 새 프로젝트 시작하기"
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가요?
-새로운 프로젝트 시작이란 무엇일까요? 프로그래머들은 왜 이렇게 하는 걸까요?
+## 무엇 & 왜?
 
-새로운 프로젝트를 시작한다는 것은 새로운 소프트웨어, 웹 애플리케이션, 게임, 혹은 어떤 컴퓨터 프로그램을 개발하기 위한 일련의 과정을 말합니다. 프로그래머들은 기존에 없던 새로운 아이디어를 구현하고, 문제를 해결하고, 보다 나은 소프트웨어를 만들기 위해 새로운 프로젝트를 시작합니다.
+신규 프로젝트를 시작하는 것은 개발자가 새로운 아이디어나 기능을 구현하기 위해 새롭게 개발 환경을 설정하는 것을 말합니다. 개발자들은 이를 통해 해당 프로젝트에 딱맞는 도구와 환경을 구축하고, 더 효율적으로 목표를 달성하기 위해 이를 수행합니다.
 
-## 하기 전에:
-기본적인 Bash 명령어와 문법을 알아야 새로운 프로젝트를 시작할 수 있습니다. 우선 새로운 디렉토리를 만들거나 기존의 디렉토리에 들어가봅시다. 그리고 이 디렉토리 안에 새로운 파일이나 폴더를 만들 수 있습니다. 예를 들어 새로운 프로젝트를 담을 "my_project"라는 디렉토리를 만들고 그 안에 "index.html"이라는 파일을 만들어봅시다.
+## 어떻게 하는가:
 
-```Bash
-mkdir my_project
-cd my_project
-touch index.html
-```
-
-다음으로는 이 파일을 수정해보겠습니다. 아래와 같은 코드를 코드 에디터에 입력하고 저장해봅시다.
+쉘 스크립트를 작성시 `#!/bin/bash` 표기는 반드시 제일 처음에 위치해야 합니다. 이는 스크립트의 실행 환경을 bash로 설정하기 위함입니다.
 
 ```Bash
-echo "Hello World!" > index.html
+#!/bin/bash
+echo "Hello, New Project!"
 ```
 
-여기서 echo는 화면에 내용을 출력하는 명령어입니다. 그런 다음 ">"를 사용해 "Hello World!"를 index.html 파일로 리다이렉트해줍니다. 이제 우리는 index.html 파일에 "Hello World!"라는 내용이 담겨있는 것을 볼 수 있습니다.
+하면 터미널 화면에 'Hello, New Project!'라고 출력되게 됩니다.
 
-## 자세히 살펴보기:
-프로젝트를 시작하는 가장 일반적인 방법은 새로운 디렉토리를 만들고 그 안에 필요한 파일과 폴더를 만드는 것입니다. 디렉토리는 파일을 구조적으로 정리할 수 있는 폴더라고 생각하시면 됩니다. "mkdir" 명령어는 디렉토리를 만드는 명령어입니다. 그리고 "cd" 명령어를 사용해 만든 디렉토리 안으로 이동할 수 있습니다.
+## 깊이 파보기:
 
-자신만의 프로젝트를 시작할 때 여러 가지 도구를 사용할 수 있습니다. Bash 외에도 다양한 쉘 스크립팅 언어나 프로그래밍 언어를 사용할 수 있습니다. 새로운 프로젝트를 시작할 때는 어떤 언어를 사용할지 고민해보고 언어에 맞는 도구를 선택하는 것이 중요합니다.
+1. 역사적 맥락: bash는 1989년 인기있던 sh 쉘의 자유 소프트웨어 버전으로 등장해, 오늘날 가장 널리 사용되는 UNIX shell 중 하나입니다.
 
-새로운 프로젝트를 시작하는 과정에서는 어떤 프로그램을 사용할지, 어떤 언어를 사용할지, 어떤 파일을 만들어야 할지, 등등 여러 가지 선택해야 할 부분이 있습니다. 이 과정에서 어느 것을 선택할 지는 개발자 선호도나 프로젝트의 목적에 따라 다르기 때문에 하나의 정답은 없습니다.
+2. 대안: bash와 동등한 기능성을 가진 다른 쉘로는 Zsh, Fish 등이 있습니다. 각자 특징을 가지고 있으니 상황에 따라 선택하시면 됩니다.
 
-## 더 알아보기:
-새로운 프로젝트를 시작하는 여러 가지 방법과 다양한 문제를 해결하는 방법을 적용해보며 자신만의 효율적인 방법을 찾아보세요. Bash 외에도 여러 가지 도구를 사용해 프로젝트를 시작할 수 있으니 꼭 한 번 쯤 다른 도구들도 알아보시는 것을 추천합니다.
+3. 구현 정보: bash 스크립트에서는 변수를 활용해 반환 값을 전달하거나, 스크립트의 실행 지연을 위해 sleep 함수를 사용할 수 있습니다.
 
-## 관련 자료:
-- Bash 쉘 스크립트 강의 (https://www.youtube.com/playlist?list=PLTd5ehIj0goMCnjYTpCQXFGCrpoPrxaPQ)
-- 새로운 프로젝트 시작하는 방법 (https://www.wikihow.com/Start-a-New-Project)
+```Bash
+#!/bin/bash
+VAR="Hello, New Project!"
+echo $VAR
+sleep 2
+```
+
+이 스크립트는 "Hello, New Project!"를 출력하고, 2초 후에 종료됩니다.
+
+## 참고 자료:
+
+- Bash Scripting Guide(Korean): http://wiki.kldp.org/KoreanDoc/html/Bash-Beginners-Guide-KLDP/
+- Bash 쉘 스크립트 문법: http://zetawiki.com/wiki/Bash_-n,_-z,_-eq,_-ne,_-lt,_-le,_-gt,_-ge
+- Bash vs Zsh vs Fish comparison: https://linuxhint.com/bash_vs_zsh_vs_fish/

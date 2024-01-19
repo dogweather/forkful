@@ -1,7 +1,7 @@
 ---
-title:                "Sattumanvaraisten lukujen luominen"
-html_title:           "Clojure: Sattumanvaraisten lukujen luominen"
-simple_title:         "Sattumanvaraisten lukujen luominen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -10,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mikä & Miksi?
+## Mikä & Miksi?
 
-Satunnaislukujen generoiminen on prosessi, jossa tietokone tuottaa sattumanvaraisia numeroita. Tämä on tärkeä työkalu monille ohjelmoijille, sillä se auttaa heitä muun muassa simuloimaan sattumanvaraisia tapahtumia ja testaamaan algoritmejaan.
+Satunnaislukujen luominen on prosessi, jossa tuotetaan luku satunnaisella periaatteella, eikä ennalta määrättyjen sääntöjen mukaan. Ohjelmoijat tarvitsevat tätä toimintoa usein monissa erilaisissa tilanteissa, kuten pelien luomisessa, tilastollisissa analyyseissa tai turvallisuussyistä.
 
-Kuinka tehdä?
+## Näin teet:
 
-###### Clojure Satunnaislukujen generoiminen
+Clojure tarjoaa useita tapoja luoda satunnaislukuja. Yksinkertaisin on käyttää `rand` -funktiota, kuten nähdään alla:
 
-```Clojure
-;; Tuottaa yhden satunnaisen numeron väliltä 1-10
-(rand-int 10)
+```clojure
+(rand) 
+```
+Tämä palauttaa satunnaisen liukuluvun väliltä 0.0 ja 1.0. Näin ollen, saatat saada jotakin tällaista:
 
-;; Tuottaa yhden satunnaisen liukuluvun väliltä 0-1
-(rand)
-
-;; Tuottaa yhden satunnaisen merkin ASCII-taulukosta
-(rand-nth "abcdefg")
-
-;; Tuottaa satunnaisen elementin koko listasta
-(rand-nth [1 2 3 4 5])
-
-;; Tuottaa satunnaisen numeron jokaiselle listan elementille
-(map (fn [x] (* x (rand-int 10))) [1 2 3 4])
-
+```clojure
+0.3940655398820112
 ```
 
-Esimerkkituloste:
+Jos haluat satunnaisen kokonaisluvun, voit yhdistää tämän `int` -funktioon:
 
-```
-6
-0.729503470161935
-c
-3
-(5 8 6 12)
+```clojure
+(int (rand 10)) 
 ```
 
-Syväsukellus
+Esimerkiksi tämä palauttaa satunnaisen kokonaisluvun väliltä 0 ja 9.
 
-Satunnaislukujen generointi on ollut tärkeä osa tietokoneiden toiminnassa jo varhaisista vuosista lähtien. Algoritmit ovat kehittyneet vuosien saatossa, ja nykyään voidaan tuottaa todella lähellä oikeita sattumanvaraisia lukuja.
+## Syvenny:
 
-On kuitenkin hyvä huomata, että satunnaisuus tietokoneissa perustuu aina matemaattisiin algoritmeihin, ja siksi generoidut numerot eivät ole täysin sattumanvaraisia. On myös olemassa muita tapoja generoida satunnaisia lukuja, kuten esimerkiksi käyttämällä fyysisiä tapahtumia, kuten hiiren liikkeitä.
+Historiallisessa yhteydessä, satunnaislukugeneraattorit ovat olleet tombstone-ohjelmoinnin pilarit, ja niitä on käytetty useissa erilaisissa sovelluksissa, peleistä simulointeihin. Nämä generaattorit perustuvat yleensä johonkin matemaattiseen algoritmiin, ja niiden laatu riippuu algoritmin valinnasta.
 
-Katso myös
+Clojuren `rand`-funktio hyödyntää alla olevan Javan Random-luokkaa, joka on pseudo-satunnaislukugeneraattori. Niitä kutsutaan pseudoiksi, koska ne tuottavat sarjan lukuja, joka näyttää satunnaiselta mutta toistuu lopulta. 
 
-Clojure:n virallinen dokumentaatio satunnaislukujen generoinnista: https://clojuredocs.org/clojure.core/rand
+Clojuressa on lisäksi olemassa many other libraries, kuten [test.check](https://github.com/clojure/test.check) ja [java.util.concurrent.ThreadLocalRandom](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html), jotka tarjoavat erilaisia työkaluja ja tekniikoita satunnaislukujen luomiseen.
 
-Tietoa satunnaislukujen generoinnista ja sen käytöstä simuloinnissa: https://en.wikipedia.org/wiki/Random_number_generation
+## Lisätietoja:
+
+- [Clojure Docs: Random](https://clojuredocs.org/clojure.core/rand)
+- [Test Check Repo](https://github.com/clojure/test.check)
+- [Oracle Java 8 ThreadLocalRandom](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html)

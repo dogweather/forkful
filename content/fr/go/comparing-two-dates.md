@@ -1,7 +1,7 @@
 ---
-title:                "Comparaison de deux dates"
-html_title:           "Go: Comparaison de deux dates"
-simple_title:         "Comparaison de deux dates"
+title:                "Comparer deux dates"
+html_title:           "Clojure: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,28 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Comparer deux dates en programmation signifie comparer les valeurs de dates pour déterminer si elles sont égales, avant ou après l'autre, ou si elles sont dans un intervalle spécifique. Les programmeurs le font souvent pour trier et organiser des données chronologiquement ou pour suivre les changements dans le temps.
+## Quoi et Pourquoi?
+
+Comparer deux dates, c'est déterminer si une date est antérieure, postérieure ou égale à une autre. En tant que programmeurs, nous faisons cela pour contrôler le flux de notre logique, par exemple pour vérifier si une date d'expiration est passée.
 
 ## Comment faire:
-Voici un exemple de code pour comparer deux dates en utilisant la syntaxe de Go:
-```Go
-date1 := time.Date(2020, 1, 1, 0, 0, 0, 0, time.UTC)
-date2 := time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC)
 
-if date1.Before(date2) {
-  fmt.Println("Date 1 est avant Date 2")
-} else if date1.After(date2) {
-  fmt.Println("Date 1 est après Date 2")
-} else if date1.Equal(date2) {
-  fmt.Println("Date 1 et Date 2 sont égales")
+Dans Go, la méthode `After`, `Before` et `Equal` de l'objet `Time` permettent de comparer les dates. Par exemple:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	t := time.Now()
+	t2 := t.Add(time.Minute * 2)
+
+	fmt.Println(t2.After(t))   // true
+	fmt.Println(t2.Equal(t))   // false
+	fmt.Println(t2.Before(t))  // false
 }
 ```
-Résultat: Date 1 est avant Date 2
+Dans cet exemple, on crée d'abord une date `t` qui est l'instant présent, puis une date `t2` qui est 2 minutes plus tard. Lorsqu'on compare `t2` à `t`, on voit bien que `t2` est après `t`, donc `t2.After(t)` retourne `true`. 
 
-## Plongée en profondeur:
-L'idée de comparer des dates vient de la nécessité de stocker et d'organiser des données dans un ordre chronologique. Les programmeurs peuvent également utiliser des alternatives telles que le format numérique de temps, qui utilise des nombres pour représenter une date et une heure spécifiques. En termes d'implémentation, Go utilise la méthode "Before", "After" et "Equal" pour comparer des dates en utilisant le type de données "time".
+## Deep Dive:
 
-## À voir aussi:
-- [Documentation officielle de Go sur la comparaison de dates](https://pkg.go.dev/time?tab=doc#example-Time-Before)
-- [Article de blog sur la comparaison de dates en Go](https://www.calhoun.io/comparing-times-dates-in-go/)
+Historiquement, la gestion des dates a toujours été complexe en programmation. Go 1.0 ne proposait pas d'opérations de comparaison de dates aussi simples. Ce n'est qu'avec les versions ultérieures que des méthodes comme `After`, `Before` et `Equal` ont été ajoutées.
+
+Il existe des alternatives à ces méthodes, notamment tester manuellement la différence entre deux dates, mais cela est généralement plus compliqué et plus sujet aux erreurs.
+
+Il est important de noter que `time.Equal` n'est pas toujours équivalent à `!time.After` et `!time.Before` car `time.Equal` retourne `true` si les deux temps représentent le même instant, tandis que `!time.After` et `!time.Before` peuvent retourner `true` si les deux temps sont dans le même intervalle de temps.
+
+## Voir aussi:
+
+Pour en savoir plus sur le package `time` dans Go, consultez la documentation officielle:
+- [Go time package](https://golang.org/pkg/time/)
+- [Go by Example: Time](https://gobyexample.com/time)

@@ -1,7 +1,7 @@
 ---
-title:                "Localizando e substituindo texto."
-html_title:           "C#: Localizando e substituindo texto."
-simple_title:         "Localizando e substituindo texto."
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,22 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
-A busca e substituição de texto é um processo comum na programação, que consiste em procurar por uma determinada sequência de caracteres em um texto e substituí-la por outra. Os programadores fazem isso para automatizar o processo de alteração de múltiplas ocorrências de um determinado termo, economizando tempo e esforço.
+## O Que & Por Quê?
+
+A busca e substituição de texto são comuns em muitas tarefas de programação. Por exemplo, podemos querer atualizar um nome de variável ou modificar um valor na codificação. Fazemos isso para tornar o código mais preciso, atualizado ou eficiente.
 
 ## Como fazer:
-Há várias maneiras de realizar busca e substituição em C#, mas uma das mais comuns é utilizando a função "Replace". Veja um exemplo de como substituir todas as ocorrências de um termo por outro em uma string:
+
+Vamos ver como fazemos isso em C#, utilizando o método 'Replace'.
+
 ```C#
-string texto = "Preciso substituir todas as ocorrências desta palavra.";
-string novoTexto = texto.Replace("ocorrências", "ocasiões");
-Console.WriteLine(novoTexto);
+string textoInicial = "Olá, mundo!";
+string textoAlterado = textoInicial.Replace("mundo", "Brasil");
+Console.WriteLine(textoAlterado);  // Saída: "Olá, Brasil!"
 ```
-**Saída:**
-> Preciso substituir todas as ocasiões desta palavra.
+Isso substitui todas as ocorrências de "mundo" por "Brasil" no texto inicial.
 
 ## Mergulho profundo:
-A busca e substituição de texto existe desde os primórdios da programação, sendo uma das tarefas mais básicas e úteis para os desenvolvedores. Além da função "Replace", existem outras formas de realizar esse processo em C#, como utilizando expressões regulares e bibliotecas específicas para esse fim, como o pacote "System.Text.RegularExpressions". É importante lembrar que, dependendo do tamanho do texto e da complexidade da substituição, pode ser necessário otimizar o código para melhorar a performance.
 
-## Veja também:
-- [Documentação oficial da função "Replace" em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.string.replace)
-- [Tutorial sobre busca e substituição em C#](https://www.tutorialspoint.com/program-to-understand-replace-function-in-c-sharp)
+Primeiro, um pouco da história. Em programação, a necessidade de busca e substituição apareceu quase tão logo as primeiras linguagens foram criadas. Linguagens como sed (stream editor) em Unix são projetados principalmente para essa tarefa!
+
+C# faz isto através da classe `String` e do seu método `Replace()`. Os métodos são altamente otimizados para operações em larga escala.
+
+Alternativas? Podemos usar expressões regulares se precisarmos de mais poder - substituir baseado em padrões de texto, não somente valores exatos. Veja:
+
+```C#
+string texto = "O meu número é: 123-456-7890";
+string substituicao = Regex.Replace(texto, @"\d", "*");
+Console.WriteLine(substituicao);  // Saída: "O meu número é: ***-***-****"
+```
+Aqui, substituímos todos os dígitos por asteriscos!
+
+Na implementação real, o método 'Replace' primeiro busca pelo texto à ser substituído. Quando ele o encontra, aloca uma nova string de tamanho apropriado e começa a copiar os caracteres da string original para a nova. Quando atinge o texto a ser substituído, ele grava o novo texto e em seguida continua copiando.
+
+## Ver também:
+
+- [String.Replace Método ](https://docs.microsoft.com/pt-br/dotnet/api/system.string.replace?view=netcore-3.1)
+- [Expressões regulares em C#](https://docs.microsoft.com/pt-br/dotnet/standard/base-types/regular-expressions)
+- [Metodo Regex.Replace ](https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex.replace?view=netcore-3.1)

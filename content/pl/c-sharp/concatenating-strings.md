@@ -1,7 +1,7 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "C#: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Konkatenacja ciągów znaków"
+html_title:           "Bash: Konkatenacja ciągów znaków"
+simple_title:         "Konkatenacja ciągów znaków"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,22 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Konkatenacja ciągów znaków w programowaniu oznacza łączenie wielu ciągów znaków w jeden dłuższy ciąg. Programiści często wykorzystują to narzędzie w celu tworzenia czytelniejszych i bardziej złożonych napisów, np. w formularzach czy komunikatach dla użytkownika.
+## Co i Dlaczego?
+Łączenie łańcuchów (string concatenation) to proces łączenia dwóch lub więcej łańcuchów string w jeden. Programiści robią to, aby manipulować danymi tekstowymi i stworzyć dynamiczne ciągi znaków.
 
-## Jak to zrobić?
-W języku C# konkatenacja ciągów znaków jest bardzo prosta dzięki operatorowi „+”. Wystarczy umieścić pomiędzy dwoma ciągami znaków ten operator, a program połączy je w jeden ciąg. Przykładowe użycie wygląda tak:
+## Jak to zrobić:
+Kodując w języku C# masz kilka możliwości do łączenia stringów. Przykładowe kody:
+
+1. Korzystając z operatora + :
 ```C#
-string imie = "Anna";
-string nazwisko = "Kowalska";
-string pelneNazwisko = imie + " " + nazwisko;
+string przyslowie = "Kto" + " rano" + " wstaje," +" temu" +" Pan Bóg" + " daje.";
+Console.WriteLine(przyslowie);
 ```
-W efekcie zmienna "pelneNazwisko" będzie przechowywała wartość "Anna Kowalska". 
+**Output:**  *Kto rano wstaje, temu Pan Bóg daje.*
 
-## Głębszy zanurzanie się
-Konkatenacja ciągów znaków jest wykorzystywana już od czasów pierwszych języków programowania. W niektórych językach, np. C, wymagała ona użycia specjalnych funkcji lub bibliotek. Jednak w języku C# jest to znacznie ułatwione dzięki wykorzystaniu operatora „+”. Alternatywnym sposobem łączenia ciągów znaków jest wykorzystanie klasy StringBuilder, która jest bardziej efektywna w przypadku łączenia większej liczby ciągów. 
+2. Korzystając z funkcji String.Concat():
+```C#
+string przyslowie = String.Concat("Kto", " rano", " wstaje,", " temu", " Pan Bóg", " daje.");
+Console.WriteLine(przyslowie);
+```
+**Output:** *Kto rano wstaje, temu Pan Bóg daje.*
 
-## Zobacz także
-- Dokumentacja dotycząca konkatenacji ciągów znaków w języku C#: https://docs.microsoft.com/pl-pl/dotnet/csharp/how-to/concatenate-multiple-strings
-- Porównanie wydajności konkatenacji ciągów znaków z użyciem operatora „+” i klasy StringBuilder: https://stackoverflow.com/questions/24718392/performance-difference-between-stringbuilder-and-string-concatenation
-- Alternatywne sposoby łączenia ciągów znaków w języku C#: https://www.dotnetperls.com/concat
+3. Z użyciem StringBuilder:
+```C# 
+StringBuilder sb = new StringBuilder();
+sb.Append("Kto");
+sb.Append(" rano");
+sb.Append(" wstaje,");
+sb.Append(" temu");
+sb.Append(" Pan Bóg");
+sb.Append(" daje.");
+Console.WriteLine(sb.ToString());
+```
+**Output:** *Kto rano wstaje, temu Pan Bóg daje.*
+
+## Dogłębne Studium od String Concatenation:
+
+1. Kontekst historyczny: W pierwszych wersjach C# operator + był jedynym sposobem na łączenie stringów. Lecz, był nieefektywny pod względem wydajności dla dużych łańcuchów. Dlatego wprowadzono nowe metody: String.Concat() i StringBuilder.
+
+2. Alternatywy: Oprocz wspomnianych metod, jest wiele innych, jak String.Join() czy String.Format(). Wybór zależy od konkretnej sytuacji i wymagań wydajności.
+
+3. Szczegóły implementacji: Operator + i String.Concat() działają szybko, ale mogą spowodować spadek wydajności dla większych ilości stringów. StringBuilder jest bardziej wydajny dla dużej liczby lub dużych stringów, ponieważ nie tworzy nowego stringu za każdym razem, tylko dodaje do istniejącego.
+
+## Zobacz Również:
+* Microsoft Docs o łączeniu stringów: [link](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/strings/how-to-concatenate-multiple-strings)
+* Wydajność String.Concat vs StringBuilder: [link](https://stackoverflow.com/questions/21078/string-concatenation-vs-string-builder-performance) 
+* Dogłębne studium nad wydajnością operacji na stringach w C#: [link](https://jonskeet.uk/csharp/stringbenchmark.html)

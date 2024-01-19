@@ -1,6 +1,6 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Elixir: Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
 simple_title:         "Interpolering av en streng"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
+## Hva & Hvorfor?
+Interpolering av en streng i Elixir er prosessen der vi ekspanderer en gitt strengverdi ved å inkludere variable data. Dette er en vanlig praksis i programmering for å gjøre koden mer lesbar og effektiv ved å eliminere eksplisitt concatenation.
 
-Å interpolere en streng i programmering betyr å erstatte en del av en tekststreng med en verdi. Dette gjøres vanligvis ved å bruke såkalte "placeholders" som forteller programmet hvor verdien skal settes inn. Interpolering brukes ofte for å gjøre teksten mer dynamisk eller for å sette sammen komplekse tekster.
-
-## Slik gjør du det:
-
-For å interpolere en streng i Elixir, kan du bruke funksjonen `String.interpolate/2` eller den mer vanlige syntaksen `#{...}`. Her er et eksempel på begge deler:
-
+## Hvordan:
+Her er et enkelt eksempel på Elixir-kode som demonstrerer strenginterpolering:
 ```Elixir
 navn = "Ola"
-alder = 30
-
-# String.interpolate/2 syntaks:
-tekst = String.interpolate("Hei, mitt navn er %{navn} og jeg er %{alder} år gammel.", [navn: navn, alder: alder])
-# => Hei, mitt navn er Ola og jeg er 30 år gammel.
-
-# #{...} syntaks:
-tekst = "Hei, mitt navn er #{navn} og jeg er #{alder} år gammel."
-# => Hei, mitt navn er Ola og jeg er 30 år gammel.
+IO.puts "Hei, #{navn}!"
+```
+Dette programmet vil skrive ut:
+```
+Hei, Ola!
 ```
 
-## Dykk dypere:
+## Dypere Dykk
+Elixir er et dynamisk, funksjonelt språk designet for å bygge skalerbare og vedlikeholdbare applikasjoner. Strenginterpolering har vært en del av språket siden det ble utgitt i 2011 av José Valim.
 
-Interpolering ble først introdusert i programmeringsspråket Perl og har siden blitt et vanlig konsept i mange moderne språk. I Elixir er det også mulig å bruke `~S` og `~N` sigils for å interpolere strenger. Det finnes også alternative løsninger for interpolering, som for eksempel å kombinere strenger med `<>` operatøren.
+Alternativer til strenginterpolering kan omfatte bruk av "Kernel.concat/2" eller "IO.iodata_to_binary/1" funksjoner som er innebygd i Elixir.
 
-For å implementere interpolering i Elixir, brukes en kombinasjon av funksjoner som `String.replace/3` og regulære uttrykk. Dette gjør det mulig å sette inn verdier på bestemte steder i en streng uten å måtte gjøre manuelle endringer.
+Implementeringsdetaljene for strenginterpolering i Elixir er faktisk ganske enkle. Når du bruker "#{}" inne i en streng, erstattes den med hvilken som helst verdi som er inne i krøllparentesene - så lenge det er en gyldig Elixir-uttrykk.
 
-## Se også:
+## Se Også
+For mer informasjon om Elixir og strenginterpolering, sjekk ut følgende ressurser:
 
-- Offisiell Elixir dokumentasjon for `String.interpolate/2` funksjonen: https://hexdocs.pm/elixir/String.html#interpolate/2
-- En bloggpost som går dypere inn i Elixir strenginterpolering: https://beneathdata.com/blog/elixir-string-interpolation/
+1. Elixir's Offisiell Dokumentasjon: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
+2. Elixir School: [https://elixirschool.com/no](https://elixirschool.com/no)
+
+Husk, uansett om du bare lærer Elixir eller er en erfaren pro, å forstå praksis som strenginterpolering er avgjørende for å skrive effektiv kode.

@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Python recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Python"
 category:             "Python"
@@ -12,33 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Downloading a webpage means making a request to a web server for a specific page just like you would from a browser, but with code. Programmers do it to automate data extraction, run tests, track site changes, or store a local copy of the page.
+Downloading a webpage essentially means fetching its HTML content, which is extremely useful for tasks such as data scraping and testing. Programmers perform this task for web automation, data mining, and testing.
 
 ## How to:
 
-```python
+Python, with its wide variety of libraries, makes downloading a webpage quite simple. We will be using the `requests` library for this task.
+
+Here's how you do it:
+
+```Python
 import requests
-
-url = "http://example.com"
-response = requests.get(url)
-
-print("Page Download Complete!")
-
-# Save the content
-with open("output.html", "w", encoding='utf-8') as f:
-    f.write(response.text)
+  
+# Making a GET request
+r = requests.get('https://www.google.com')
+  
+# check status code for response received
+# success code - 200 
+print(r)
+  
+# print content of request
+print(r.json())
 ```
 
-This`requests.get(url)` fetches the page at your given URL. Post-fetch, save the content to "output.html". When you run this, you'll see "Page Download Complete!" on the console.
+This code sends a GET request to Google's home page and prints the returned HTML content.
+
+For our example, the output might be something like:
+
+```Python
+<Response [200]>
+<!doctype html><html itemscope="" ...
+```
 
 ## Deep Dive
 
-Fetching webpages programmatically was not commonplace until Websites became data-rich. It was when websites grew complex and started using databases, API requests, and server-side rendering that programmers began to download pages for further processing. 
+Historically, web scraping or downloading a webpage was a laborious task involving raw HTTP requests and HTML parsing. Libraries like `requests` and `BeautifulSoup` simplified the process in Python.
 
-For the above code, Python has alternatives. You can use http.client or urllib.request libraries for the same. Important detail: `requests.get(url)` follows redirects by default unlike its alternatives.
+You're not restricted to `requests`. Alternatives libraries like `urllib` and `httplib` are also widely used. Each has its unique features, so choose based on your specific requirement.
+
+When you're downloading a web page, what actually happens is that you make a GET request to the server hosting that page. The server responds with the HTML content of the page. It is this HTML content that we refer to as "downloading a webpage".
 
 ## See Also
 
-For more extensive web scraping beyond simple downloads, check out libraries like Beautiful Soup ([Beautiful Soup Doc](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)), Scrapy ([Scrapy Tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)) and Selenium ([Selenium Doc](https://selenium-python.readthedocs.io/)). 
+Check the following Python libraries for more details:
+* [Requests](https://docs.python-requests.org/en/master/)
+* [Urllib](https://docs.python.org/3/library/urllib.html)
+* [Httplib](https://docs.python.org/3/library/http.client.html)
 
-For advanced HTTP client features, check out the full `requests` library documentation ([requests Doc](https://docs.python-requests.org/en/latest/)).
+Scrapy is another popular library used for web crawling and scraping. Visit the link for more information:
+* [Scrapy](https://scrapy.org/)
+
+This [Python Web Scraping Tutorial](https://www.datacamp.com/community/tutorials/web-scraping-using-python) provides further insights on the topic.

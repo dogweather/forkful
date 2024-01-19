@@ -1,7 +1,7 @@
 ---
-title:                "Utvinning av substringer"
-html_title:           "C: Utvinning av substringer"
-simple_title:         "Utvinning av substringer"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -12,31 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Extracting substrings, eller å trekke ut delstrenger, er en metode som lar programmerere hente ut en del av en større tekststreng. Dette kan være nyttig når man ønsker å manipulere eller analysere en bestemt del av teksten, for eksempel for å filtrere ut data eller lage en ny tekst med kun relevante deler. Dette er et vanlig verktøy for å jobbe med tekst og gjør det enklere å utføre ulike oppgaver i en programmeringskontekst.
+Utdrag av substrings er å hente en bestemt del av en streng. Dette er nyttig når programmerere trenger å jobbe med eller manipulere spesifikke deler av tekst, ikke hele tekststrengen.
 
-## Slik gjør du det:
+## Hvordan gjør man det?
 
-Det finnes flere måter å ekstrahere delstrenger på i C, avhengig av hvilke funksjoner og biblioteker som er tilgjengelige. Her er et eksempel på hvordan man kan bruke `strncpy()`-funksjonen for å ekstrahere en del av en tekststreng og lagre den i en ny strengvariabel:
+Her er et grunnleggende eksempel på hvordan vi kan trekke ut en substring fra en tekststreng i C.
 
 ```C
-char text[] = "Hei, dette er en tekststreng!";
-char substring[10];
-strncpy(substring, text + 5, 9);
-printf("%s", substring);
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[] = "Hei, Verden!";
+    char substr[10];
+
+    memcpy(substr, &str[4], 6);
+    substr[6] = '\0';
+    
+    printf("Utdraget substring er: '%s'\n", substr);
+    return 0;
+}
 ```
 
-Denne koden vil skrive ut "dette er ", altså delen av teksten som er fra og med det sjette tegnet og ut ni tegn framover. Merk at `strncpy()` fungerer ved å kopiere de første `n` tegnene fra en kildestreng til en målstreng, og kan derfor brukes til å ekstrahere delstrenger.
+Kjører vi denne koden, vil utdata være:
+```C
+Utdraget substring er: 'Verden'
+```
 
-## Dypdykk:
+## Deep Dive
 
-Ekstrahering av delstrenger er en viktig del av tekstbehandling i programmeringsverdenen, og har vært brukt i lang tid. Tidligere, da datamaskiner var mindre og ressurser var begrensede, var det vanlig å bruke indekserte variabler for å lagre deler av teksten. Dette er fortsatt en mulighet, men funksjoner som `strncpy()` gjør det enklere å håndtere komplekse tekstoppgaver.
+Historisk sett har behovet for å arbeide med deler av tekst blitt mer krevende med tiden. Tidligere språk hadde ikke innebygde funksjoner for å håndtere dette, men moderne språk som C gir oss funksjonene vi trenger.
 
-Det finnes også andre måter å ekstrahere delstrenger på i C, for eksempel ved å bruke `strtok()`-funksjonen fra `string.h` biblioteket. Denne funksjonen lar deg splitte en tekststreng ved hjelp av et bestemt tegn, og hente ut delene som separate strenger.
+Det finnes flere alternativer til `memcpy` for å hente ut substrings, som `strncpy`. Hver funksjon har sin egen unike implementering og bruksscenarier, så det er best å velge den som passer best for ditt spesifikke problem.
 
-Det er viktig å være oppmerksom på at ekstrahering av delstrenger kan være litt utfordrende hvis man ikke er forsiktig med indeksering og håndtering av minne. Det er derfor viktig å alltid sjekke dokumentasjonen for de ulike funksjonene man bruker, og å teste koden grundig for å unngå feil.
+De viktigste detaljene i implementeringen er selve utdraget og avslutningen av den nye strengen med '\0'. Dette er viktig fordi uten '\0' på slutten kan vi ende opp med ekstra tegn i vår substring, som kan føre til all slags morsomme bugs.
 
-## Se også:
+## Se Også
 
-* [Official C documentation for strncpy()](https://www.cplusplus.com/reference/cstring/strncpy/)
-* [C string functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-* [C tutorial on string manipulation](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+For mer informasjon og alternative måter å håndtere substring utdrag, se følgende linker:
+
+- [String Manipulation i C: memcpy vs strncpy](https://www.differencebetween.com/difference-between-strcpy-and-vs-memcpy/)
+- [C Standard Library - string.h](https://en.cppreference.com/w/c/string)

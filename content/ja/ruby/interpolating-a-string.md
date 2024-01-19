@@ -1,6 +1,6 @@
 ---
 title:                "文字列の補間"
-html_title:           "Ruby: 文字列の補間"
+html_title:           "Arduino: 文字列の補間"
 simple_title:         "文字列の補間"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,41 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+## 何となぜ?
 
-文字列の補間とは、データを差し込んでより動的なメッセージを作成することです。プログラマーはこれを行うことで、同じメッセージを簡単に異なる入力値に対応させることができます。
+文字列補間（Interpolating a string）は、文字列の中に変数や式を埋め込むことであり、その結果、コードの可読性と効率性が高まります。
 
-## How to:
+## やり方：
+
+Rubyでは`#`記号と`{}`を使って文字列補間を行います。これは具体的な例で示すと理解しやすいでしょう。
 
 ```Ruby
-# 変数を使用した文字列の補間
-name = "John"
-age = 25
-puts "私の名前は#{name}です。年齢は#{age}歳です。"
+name = 'Yamada'
+greeting = "Hello, #{name}!"
 
-# 配列を使用した文字列の補間
-fruits = ["apple", "banana", "orange"]
-puts "私のお気に入りのフルーツは#{fruits[0]}です。"
-
-# ハッシュを使用した文字列の補間
-person = { name: "Emily", age: 30 }
-puts "#{person[:name]}の年齢は#{person[:age]}歳です。"
+puts greeting 
 ```
 
-出力結果:
+上記のコードでは、nameという変数をgreetingという文字列の中に埋め込んでいます。このコードを実行すると、以下のような出力結果が表示されます。
 
-私の名前はJohnです。年齢は25歳です。
-私のお気に入りのフルーツはappleです。
-Emilyの年齢は30歳です。
+```
+Hello, Yamada!
+```
 
-## Deep Dive:
+## 深層探索
 
-文字列の補間は、Rubyにおいて比較的新しい機能です。この機能は1992年に生まれたPerl言語から影響を受けており、動的な文字列の作成に便利です。代わりに、Rubyでは文字列演算子を使用することで文字列を結合することができますが、この場合複数の文字列を結合するために`+`を使用する必要があります。
+1. **歴史的背景**: Rubyが誕生した当初から文字列補間の機能は備わっており、他の言語と比較してもRubyの文字列補間は簡単で直感的です。 
 
-文字列の補間は、変数や配列、ハッシュを含む任意の式を使うことができます。また、複数の式を含む場合は`${...}`を使うことで式を明示的に指定することもできます。
+2. **代替方法**: 文字列の連結を使って同じ結果を得ることも可能です。ただし、それはコードの見通しを悪くし、複雑な式の場合にはより多くのコードを必要とします。
 
-## See Also:
+```Ruby
+name = 'Yamada'
+greeting = 'Hello, ' + name + '!'
 
-- [Ruby ドキュメンテーション](https://docs.ruby-lang.org/en/master/doc/syntax/literals_rdoc.html#label-String+Interpolation)
-- [Ruby on Rails チュートリアル](https://www.railstutorial.org/book/toy_app#code-interpolation_with_rb) 
-- [RubyGuides: String Interpolation](https://www.rubyguides.com/2016/06/ruby-string-interpolation/)
+puts greeting
+```
+
+3. **実装の詳細**: 文字列補間の際には、`#{}`内の式が先に評価され、その結果が文字列に置き換えられます。式が文字列以外の場合には、自動的に`.to_s`メソッドが適用されます。
+
+```Ruby
+x = 10
+y = 20
+sum = "Sum is #{x + y}"
+
+puts sum
+```
+
+このコードを実行すると次のように表示されます：
+
+```
+Sum is 30
+```
+
+## 関連情報
+
+- [Ruby Documentation: String Interpolation](https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings)
+- [Learn Ruby: String Interpolation](https://www.learnruby.com/strings/string-interpolation)
+- [Ruby Guides: Ruby String Interpolation](https://www.rubyguides.com/2018/10/ruby-string-interpolation/)

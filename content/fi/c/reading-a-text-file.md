@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston lukeminen"
-html_title:           "C: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+# Luettaessa Tekstitiedostoja C-ohjelmoinnissa
 
-Tekstitiedoston lukeminen on prosessi, jossa ohjelma lukee tekstitiedostosta sisältöä ja tallentaa sen muistiin käsiteltäväksi. Ohjelmoijat käyttävät tätä toimintoa usein saadakseen tietoa tekstitiedostoista, kuten käyttäjän syötteistä tai tallennetuista tietokannoista.
+## Mikä & Miksi?
+Tekstitiedoston lukeminen on prosessi, jossa ohjelma lukee merkkejä tiedostosta ja käsittelee niitä. Tämä on hyödyllistä, kun moitteettomasti varastoituja tietoja halutaan hyödyntää ohjelman toiminnassa.
 
-## Näin teet:
+## Kuinka Toimia:
+Alla on esimerkki siitä, kuinka lukea tekstitiedostoa C-ohjelmointikielellä.
+
 ```C
 #include <stdio.h>
 
 int main(){
-  FILE *tiedosto;
-  char merkki;
-  tiedosto = fopen("tekstitiedosto.txt", "r");
-  if(tiedosto == NULL){
-      perror("Virhe tiedoston lukemisessa");
-      return -1;
-  }
-  while((merkki = fgetc(tiedosto)) != EOF)
-     printf("%c", merkki);
-  fclose(tiedosto);
-  return 0;
+    FILE *file;
+    char c;
+
+    file = fopen("tiedosto.txt", "r");
+    if(file == NULL){
+        printf("Tiedostoa ei voida avata!\n");
+        return 1;
+    }
+
+    while((c = fgetc(file)) != EOF){
+        printf("%c", c);
+    }
+
+    fclose(file);
+    return 0;
 }
 ```
-**Lähtö:**
-```
-Tämä on tekstitiedosto.
-```
 
-## Syvemmälle:
-Tekstitiedoston lukeminen on ollut osa C-ohjelmointikieltä alusta asti ja se on yksi tärkeimmistä tavoista käsitellä tekstitiedostoja. Tiedostoa voidaan lukea myös lineaarisesti käyttäen esimerkiksi `fgets()`-funktiota. Lisäksi on olemassa lukuisia kirjastoja ja ohjelmia, jotka tarjoavat erilaisia tapoja lukea tekstitiedostoja.
+Tämä ohjelma avaa "tiedosto.txt", lukee sen sisällön merkki kerrallaan ja tulostaa sen. Jos tiedostoa ei voida avata, se tulostaa virheviestin ja lopettaa.
 
-## Katso myös:
-- [fopen() - C:n virallinen dokumentaatio](https://www.cplusplus.com/reference/cstdio/fopen/)
-- [Tekstitiedostojen käsittely C-kielellä - Artikkeli Suomi.dev-sivustolla](https://suomi.dev/tekstitiedostojen-kasittely-c-kielella/)
+## Syvempi Sukellus
+Historiallisesti C on tarjonnut tiedostonkäsittelytoiminnot, mukaan lukien luku, kirjoitus, luominen ja poistaminen. `FILE *` pointteri ja `fopen`, `fgetc`, ja `fclose` funktiot ovat osa tämän ominaisuuden tarjoamista välineitä.
+
+Vaihtoehtoisesti, voit käyttää `fscanf` tai `fgets` funktioita lukemaan kokonaisen rivin kerrallaan tai formatoidun syötteen. Valinta riippuu tiedostosi sisällöstä ja siitä, kuinka haluat käsitellä sen.
+
+Tiedoston käsittelemiseen liittyy resurssienhallinta, mm. tiedoston avaaminen ja sulkeminen. Jos et sulje tiedostoa, saatat aiheuttaa resurssivuotoja, jotka kuluttavat muistia tarpeettomasti.
+
+## Katso Myös
+Lisätietoja ja lähteitä:
+- [C Library - <stdio.h>](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm)
+- [File I/O in C programming with examples](https://beginnersbook.com/2014/01/c-file-io/)
+- [C Programming Files I/O](https://www.learn-c.org/en/Files_IO)

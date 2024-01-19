@@ -1,7 +1,7 @@
 ---
-title:                "Maiúsculas em uma string"
-html_title:           "Haskell: Maiúsculas em uma string"
-simple_title:         "Maiúsculas em uma string"
+title:                "Capitalizando uma string"
+html_title:           "Haskell: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,54 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Capitalizando Strings em Haskell
 
-Capitalizar uma string em Haskell significa converter as letras da string em maiúsculas. Os programadores muitas vezes fazem isso para padronizar o estilo de dados e facilitar o processamento e comparação de strings.
+## O Que & Por Quê?
+Capitalizar uma string significa transformar a primeira letra de cada palavra em maiúscula. Programadores usam essa operação frequentemente para formatar textos adequadamente, especialmente para UIs (Interfaces de Usuário) e apresentações de dados.
 
-## Como fazer:
+## Como Fazer:
+Em Haskell, uma função básica para capitalizar uma string pode ser escrita usando a biblioteca de "Data.Char".
 
+```Haskell
+import Data.Char (toUpper)
+
+capitalizarString :: String -> String
+capitalizarString "" = ""
+capitalizarString (x:xs) = toUpper x : xs
 ```
--- Utilizando a função toUpper da biblioteca Data.Char
+Ao testarmos com a string "olá, mundo!", teremos:
 
-import Data.Char
-
-capitalizar :: String -> String
-capitalizar str = map toUpper str
-
--- Exemplo de uso:
-
-capitalizar "hello world" -- Saída: "HELLO WORLD"
+```Haskell
+main = putStrLn (capitalizarString "olá, mundo!") -- Impressão: "Olá, mundo!"
 ```
+## Aprofundando
+Haskell, sendo uma linguagem funcional, oferece uma abordagem distinta e elegante para capitalizar strings. A função `toUpper` da biblioteca de `Data.Char` converte um caractere em letra maiúscula.
 
-```
--- Utilizando a função toUpper e um foldl para percorrer a string
+Alternativas para a mesma operação poderiam incluir o uso da função `map` para aplicar `toUpper` em cada palavra de uma lista de palavras, que por sua vez é produzida pela função pré-definida `words`. No entanto, essa abordagem capitalizaria todas as letras, não apenas a primeira de cada palavra.
 
-import Data.Char
+Quanto à implementação, numa visão mais aprofundada, o código `(x:xs)` usa pattern matching para distinguir o primeiro caractere (`x`) e o restante da string (`xs`). Assim, apenas o primeiro caractere é transformado em maiúsculo.
 
-capitalizar :: String -> String
-capitalizar = foldl (\acc x -> acc ++ [toUpper x]) ""
-
--- Exemplo de uso:
-
-capitalizar "hello world" -- Saída: "HELLO WORLD"
-```
-
-```
--- Utilizando um list comprehension para percorrer e capitalizar cada letra
-
-capitalizar :: String -> String
-capitalizar str = [toUpper x | x <- str]
-
--- Exemplo de uso:
-
-capitalizar "hello world" -- Saída: "HELLO WORLD"
-```
-
-## Profundidade:
-
-Capitalizar strings é uma prática comum em programação e está presente em muitas linguagens de programação, não apenas em Haskell. Em Haskell, as strings são consideradas listas de caracteres, o que permite que sejam manipuladas com funções de lista, como o foldl utilizado no segundo exemplo acima. Alternativamente, poderíamos utilizar a função toTitle da biblioteca Data.Text para capitalizar apenas a primeira letra de cada palavra na string. A implementação da função toUpper utiliza a tabela ASCII para converter a letra para sua versão maiúscula correspondente.
-
-## Veja também:
-
-- [Hoogle](https://www.haskell.org/hoogle/) - uma ferramenta de busca para Haskell que permite pesquisar funções por tipo ou nome.
-- [Página oficial de documentação do Haskell](https://www.haskell.org/documentation/) - para mais informações sobre a linguagem e suas bibliotecas padrões.
+## Veja Também: 
+1. Biblioteca [Haskell `Data.Char`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+2. Documentação [Haskell `pattern matching`](https://learn.haskell.org/en/docs/pattern-matching/)
+3. Tutorial [Haskell `map` function](https://www.tutorialspoint.com/haskell/haskell_map_function.htm)

@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Python: Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
 simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Python"
 category:             "Python"
@@ -10,31 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & pourquoi ?
-Envoyer une requête HTTP avec une authentification de base signifie simplement inclure un nom d'utilisateur et un mot de passe dans la requête HTTP. Les programmeurs font cela pour s'assurer que seuls les utilisateurs autorisés peuvent accéder aux ressources en ligne.
+## Qu'est-ce que c'est et Pourquoi ?
+Envoyer une requête HTTP avec une authentification de base, c'est utiliser un nom d'utilisateur et un mot de passe pour accéder à une ressource. Les programmeurs le font pour protéger l'accès aux données sensibles.
 
-## Comment faire:
-Voici un exemple de code Python pour envoyer une requête HTTP avec une authentification de base:
+## Comment faire :
+Pour envoyer une requête HTTP avec une authentification de base en Python, nous pouvons utiliser la bibliothèque `requests`. Voici un exemple simple :
+
+```Python
+import requests
+from requests.auth import HTTPBasicAuth
+
+response = requests.get('https://your-url.com', auth=HTTPBasicAuth('username', 'password'))
+print(response.status_code)
 ```
-import requests # 1
-url = 'https://monsite.com' # 2
-username = 'monnomdutilisateur' # 3
-password = 'monmotdepasse' # 4
-response = requests.get(url, auth=(username, password)) # 5
-print(response.status_code) # 6
-```
-1. Tout d'abord, nous importons la bibliothèque "requests" qui nous permettra d'effectuer des requêtes HTTP. 
-2. Ensuite, nous définissons l'URL de notre site.
-3. Nous attribuons le nom d'utilisateur à une variable "username".
-4. Nous attribuons le mot de passe à une variable "password".
-5. En utilisant la méthode "get" de la bibliothèque "requests", nous appelons l'URL en incluant les informations d'authentification dans le paramètre "auth".
-6. Enfin, nous imprimons le code de statut de la réponse pour vérifier si la requête a réussi.
+Après avoir exécuté ce code, vous verrez le code de statut HTTP imprimé. Par exemple, "200" signifie que votre demande a réussi.
 
-## Focus en profondeur:
-1. L'authentification de base a été introduite pour la première fois dans le protocole HTTP en 1999 dans la spécification RFC 2617. Elle est considérée comme une méthode d'authentification de base et peu sécurisée.
-2. Bien que l'authentification de base soit simple à mettre en œuvre, elle n'est pas recommandée pour les sites Web sensibles car le nom d'utilisateur et le mot de passe sont envoyés en clair à chaque requête.
-3. L'authentification de base peut être implémentée en utilisant d'autres langages de programmation, tels que PHP, Java ou Ruby. Le principe reste le même : inclure les informations d'authentification dans la requête HTTP.
+## Plongée en profondeur 
+L'envoi de requêtes HTTP avec une authentification de base est une pratique courante depuis les premiers jours du web. Cependant, il est important de noter que sans une connexion sécurisée HTTPS, ces références peuvent être facilement interceptées.
 
-## Voir aussi:
-- [Spécification RFC 2617](https://tools.ietf.org/html/rfc2617)
-- [Documentation "Requests" en français](https://docs.python-requests.org/fr/latest/user/authentication.html#basic-authentication)
+Une alternative à l'authentification de base est l'authentification de l'ours (Bearer Authentication), où un jeton d'accès est envoyé à la place du nom d'utilisateur et du mot de passe. Cette méthode est souvent préférée dans les applications modernes.
+
+Un détail à noter concernant l'implémentation de l'authentification de base avec `requests` est que, par défaut, une requête sera envoyée sans authentification pour voir si elle est nécessaire. Si un code de statut `401 Unauthorized` est reçu, `requests` envoie à nouveau la requête, cette fois-ci avec authentification.
+
+## Voir aussi 
+- [Documentation officielle de Requests](https://docs.python-requests.org/en/latest/)
+- [Authentification HTTP sur MDN](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)
+- [Authentification de l'ours sur OAuth](https://oauth.net/2/bearer-tokens/)

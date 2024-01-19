@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "C#: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "C#"
 category:             "C#"
@@ -10,27 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
-Scaricare una pagina web significa ottenere il suo contenuto attraverso il web. I programmatori spesso lo fanno per accedere a dati o informazioni contenute in una pagina. Per esempio, è possibile scaricare i dati di un sito di notizie per analizzarli estrarre informazioni per un progetto.
+## Che cosa e perché? 
+
+Scaricare una pagina web significa prelevare e salvare il codice HTML di una determinata pagina internet nel tuo dispositivo. I programmatori fanno questo per analizzare il contenuto del codice, oppure per accedere più rapidamente ai dati dalla pagina nel futuro.
 
 ## Come fare:
-Per scaricare una pagina web in C#, puoi utilizzare la classe ```WebClient``` dalla libreria standard di .NET. Basta avere l'URL della pagina come input e usare il metodo ```DownloadString```, che restituirà il contenuto della pagina come una stringa. Ad esempio:
+
+Utilizzeremo il metodo `HttpClient.GetAsync()` per scaricare la pagina web. Ecco un esempio di come potrebbe apparire:
 
 ```C#
-using System.Net;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
-string url = "https://www.example.com";
-using(WebClient client = new WebClient()){
-  string pageContent = client.DownloadString(url);
-  Console.WriteLine(pageContent);
+class Program
+{
+    private static readonly HttpClient client = new HttpClient();
+
+    static async Task Main()
+    {
+        string url = "http://example.com";
+        string content = await client.GetStringAsync(url);
+        Console.WriteLine(content);
+    }
 }
 ```
-Il risultato sarà il contenuto della pagina stampato nella console.
 
-## Approfondimento:
-Scaricare una pagina web è una pratica molto comune nello sviluppo software moderno. Prima dell'avvento delle applicazioni web, i programmatori dovevano scaricare i contenuti delle pagine per mostrarli nel browser. Oggi, è più spesso utilizzato per ottenere dati per l'analisi o l'integrazione in altri progetti. Ci sono anche diverse alternative per questo processo, come l'utilizzo di librerie di scraping o API specifiche.
+Questo codice stampa il contenuto HTML della pagina "http://example.com" sulla console.
 
-## Vedi anche:
-- Documentazione ufficiale di ```WebClient```: https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient
-- Una guida dettagliata sul processo di download di una pagina web in C#: https://www.c-sharpcorner.com/blogs/simple-tips-to-download-htmlweb-page-using-c-sharp-code-snippet
-- Un tutorial su come scrivere uno scraper in C#: https://www.pluralsight.com/guides/building-a-simple-web-scraper-in-csharp-using-htmlagilitypack
+## Approfondimento
+
+Intorno al 2000, i programmatori usavano il metodo `WebClient.DownloadString`. Tuttavia, a partire dal .Net 4.5, si consiglia di usare `HttpClient.GetAsync` perché supporta l'asincronicità.
+
+Un’alternativa potrebbe essere l’utilizzo della libreria `WebClient` invece di `HttpClient`, ma quest'ultimo è più flessibile e potente.
+
+Per quanto riguarda i dettagli implementativi, `HttpClient.GetAsync` invia una richiesta GET all'URL specificato e restituisce una risposta HTTP, mentre `HttpClient.GetStringAsync(url)` restituisce il corpo della risposta come stringa.
+
+## Vedi anche
+
+- Documentazione ufficiale Microsoft sulla HttpClient Class: [link qui](https://docs.microsoft.com/it-it/dotnet/api/system.net.http.httpclient?view=net-5.0)
+
+- Articolo su come scaricare file da internet in C#: [link qui](https://www.c-sharpcorner.com/article/how-to-download-a-file-from-internet-url-in-c/)
+
+- Codice di esempio per HttpClient su GitHub per raccogliere informazioni web: [link qui](https://github.com/dotnet/samples/tree/main/snippets/csharp/VS_Snippets_Misc/hc_gettingstarted/cs)

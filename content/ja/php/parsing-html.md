@@ -1,7 +1,7 @@
 ---
-title:                "HTMLパース"
-html_title:           "PHP: HTMLパース"
-simple_title:         "HTMLパース"
+title:                "HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？ 
+## 何？そしてなぜ？
+HTMLのパースはウェブページの内容を理解し操作する手段です。プログラマはこれを行うことで、HTMLの各要素に動的にアクセスし、データの取得、編集、または変換を行います。
 
-HTMLパースとは、Webページから情報を抽出することを指します。これは、開発者がWebサイトからデータを収集したり、特定の情報を検索したりするのに役立ちます。
+## どうやって：
+PHPにはDOM（Document Object Model）とSimpleXMLという便利な組み込みツールがあります。これらを使うとHTMLをパースすることができます。例を見てみましょう:
 
-## 方法： 
-
-PHPを使用してHTMLをパースする方法はいくつかありますが、ここでは代表的な方法をご紹介します。まずは、簡単な例を見てみましょう。
-
+```PHP 
+<?php
+$dom = new DOMDocument();
+@$dom->loadHTML('<p>Hello parse!</p>'); // Suppress warnings with @
+$paragraphs = $dom->getElementsByTagName('p');
+echo $paragraphs->item(0)->nodeValue; // Displays: Hello parse!
+?>
 ```
-$html = file_get_contents('https://example.com'); // Webページを取得
-$doc = new DOMDocument(); // DOMDocumentオブジェクトを作成
-libxml_use_internal_errors(true); // HTMLの警告を無効化
-$doc->loadHTML($html); // HTMLをDOMDocumentにロード
-$links = $doc->getElementsByTagName('a'); // aタグを抽出
-foreach ($links as $link) {
-    echo $link->getAttribute('href'); // 各リンクのURLを表示
-}
-```
-このコードでは、file_get_contents()関数を使用してWebページのHTMLを取得し、DOMDocumentオブジェクトを作成し、その中から特定のタグを抽出しています。そして、foreachループを使用してタグの情報を表示しています。
+このコードは段落 (`<p>`) タグを抽出し、そのテキストを表示します。
 
-## ディープダイブ： 
+## 深掘り：
+HTMLパーサーの歴史は長く、その発展はウェブテクノロジーの進化と共に歩んできました。それぞれが異なる方法を採用していますが、最終的な目標はすべて同じです：HTML文書を適切に解析してその構造を明らかにすること。
 
-HTMLパースは、Webページの情報を簡単に収集できるばかりではありません。実際には、プログラマーがWebクローラーを開発するための重要なスキルです。また、パースしたデータをデータベースに保存したり、さまざまな方法で処理したりすることもできます。
+PHPでは、DOMやSimpleXML以外にも「phpQuery」「QueryPath」など、他のライブラリやツールも利用できます。これらはさらに詳細な操作が可能で、多機能なHTMLパーサーとして利用可能です。
 
-代替方法としては、PHPの外部ライブラリを使用することもできます。HTMLパースに特化したものや、より高度な機能を備えたものなど、さまざまなライブラリがあります。
+実装の詳細については、たとえばHTML5に準拠したパーサーでは、HTML5の仕様を厳密に順守して、例外を見つけたり既知のバグを回避するための多くの特別な処理が含まれます。
 
-実装の詳細については、PHPの公式ドキュメントやオンラインリソースで学ぶことができます。また、自分で試してみることも重要です。実際にコードを書いて、動作を確認することで、理解が深まります。
-
-## 関連リンク： 
-
-- PHP公式ドキュメント：https://www.php.net/
-- PHP Simple HTML DOM Parser：https://simplehtmldom.sourceforge.io/
-- PHP Scraping Library：https://github.com/FriendsOfPHP/Goutte
+## 参考リンク：
+- PHP: DOMドキュメント - Manual
+  [https://www.php.net/manual/en/class.domdocument.php](https://www.php.net/manual/en/class.domdocument.php)
+- PHP: SimpleXML - Manual
+  [https://www.php.net/manual/en/book.simplexml.php](https://www.php.net/manual/en/book.simplexml.php)
+- phpQuery: A PHP Port of jQuery's Syntax
+  [https://code.google.com/archive/p/phpquery/](https://code.google.com/archive/p/phpquery/)
+- QueryPath: HTML/XML Manipulation, Traversal, and Extraction
+  [https://querypath.org/](https://querypath.org/)

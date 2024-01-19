@@ -1,6 +1,6 @@
 ---
 title:                "Extrayendo subcadenas"
-html_title:           "Elixir: Extrayendo subcadenas"
+html_title:           "C: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,25 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y Por qué
-Extraer subcadenas es una técnica muy útil en programación que consiste en obtener una parte específica de una cadena más grande. Los programadores lo hacen para manipular y trabajar con datos más específicos, permitiendo un mejor control y manejo de la información.
+## Qué y Por qué?
 
-## Cómo:
+Extracción de subcadenas es el proceso de tomar una parte pequeña de una cadena más grande. Los programadores lo hacen para manipular y analizar datos de mejor manera.
+
+## Cómo hacerlo:
+
+Aquí hay algunos ejemplos de cómo extraer subcadenas en Elixir:
+
 ```Elixir
-cadena = "Este es un ejemplo de cadena"
-extraido = String.slice(cadena, 5..8)
-Enum.each(extraido, fn x ->
-    IO.puts(x)
-end)
+cadena = "Hola, Elixir."
+IO.puts String.slice(cadena, 0, 4)  # Output: "Hola"
 
-# Output: e s u
+cadena2 = "Practicamos Elixir todos los días."
+IO.puts String.slice(cadena2, 14, -1) # Output: "Elixir todos los días."
 ```
 
 ## Profundizando
-Extraer subcadenas se ha utilizado desde los primeros días de la programación, cuando se trabajaba principalmente con lenguajes como C y Fortran. En lugar de extraer subcadenas, los programadores a menudo optaban por manipular directamente la memoria del sistema para obtener los datos deseados. Sin embargo, gracias a la evolución de los lenguajes de programación y la inclusión de bibliotecas estándar, ahora es mucho más fácil y seguro extraer subcadenas en Elixir.
 
-Además de la función `String.slice` mostrada en el ejemplo anterior, también existen otras alternativas para extraer subcadenas, como el método `String.split` que permite dividir una cadena en varias partes según un delimitador específico.
+A lo largo de la historia de la programación, la extracción de subcadenas ha sido una herramienta esencial en el bolsillo del programador. En el mundo de Elixir, no tienes que reinventar la rueda gracias a múltiples formas de poder realizar este proceso.
 
-## Ver también
-- [Documentación oficial de Elixir sobre la función String.slice](https://hexdocs.pm/elixir/String.html#slice/2)
-- [Método String.split en Elixir](https://hexdocs.pm/elixir/String.html#split/2)
+Mencionamos la función `String.slice/3` que es bastante popular. Sin embargo, también puedes usar la función `binary_part/3` en Elixir para obtener el mismo resultado.
+
+```Elixir
+cadena = "Hola, Elixir."
+IO.puts :binary.part(cadena, {0, 4})  # Output: "Hola"
+
+cadena2 = "Practicamos Elixir todos los días."
+IO.puts :binary.part(cadena2, {14, String.length(cadena2) - 14}) # Output: "Elixir todos los días."
+```
+Es importante tener en cuenta que la función `binary_part/3` toma un rango en forma de tupla como su segundo argumento, y la longitud de la subcadena como su tercer argumento.
+
+## Ver También
+
+- [Documentación de Elixir: String](https://hexdocs.pm/elixir/String.html)
+- [Documentación de Elixir: Binary](https://hexdocs.pm/elixir/Binary.html)

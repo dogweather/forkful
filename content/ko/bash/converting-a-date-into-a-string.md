@@ -1,6 +1,6 @@
 ---
 title:                "날짜를 문자열로 변환하기"
-html_title:           "Bash: 날짜를 문자열로 변환하기"
+html_title:           "Arduino: 날짜를 문자열로 변환하기"
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,28 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-날짜를 문자열로 변환하는 것은 프로그래머들이 날짜 데이터를 다루는데 더 편리하게 하기 위함입니다. 간단한 형식의 문자열로 변환된 날짜를 사용하면, 예를 들어서 파일 이름을 지정하거나 데이터베이스에서 검색할 때 유용하게 사용할 수 있습니다.
+## 무엇이며 왜하는가?
+날짜를 문자열로 바꾸는 것은 특정 날짜를 문자의 형태로 나타내는 과정입니다. 이를 통해 프로그래머는 날짜 정보를 다른 문자열과 함께 쉽게 처리하고 출력할 수 있습니다.
 
-## 방법:
+## 어떻게 하는가:
+다음은 Bash에서 날짜를 문자열로 변환하는 방법에 대한 예입니다:
+
 ```Bash
-# 현재 날짜를 문자열로 변환
-date=$(date +'%Y-%m-%d')
-echo $date
-
-# 특정 날짜를 지정한 형식으로 변환
-date=$(date -d '20210101' +'%d/%m/%Y')
-echo $date
+date_today=`date '+%Y-%m-%d'`
+echo $date_today
 ```
 
-출력:
-```
-2021-08-16
-01/01/2021
-```
+이 코드에서 'date'는 현재 날짜와 시간을 출력하는 Bash 명령입니다. '+%Y-%m-%d'는 출력 형식을 나타냅니다. 이 경우 연(Year)-월(Month)-일(Day) 형식의 문자열로 날짜를 출력합니다.
 
-## 깊이 파고들기:
-날짜를 문자열로 변환하는 개념은 실제로 1970년대 UNIX 시스템에서 처음으로 도입되었습니다. 이렇게 하는 것은 날짜를 표현하는 다양한 방법 중에서 가장 효율적인 방식입니다. 또 다른 대안으로는 ISO 8601 형식을 사용하는 것인데, 이것은 숫자로 표현된 날짜를 의미합니다. 날짜를 문자열로 변환하는 방법은 ```date``` 명령어를 사용해서 구현할 수 있습니다. 보다 복잡한 형식의 날짜를 변환하기 위해서는 더 많은 옵션을 사용할 수 있습니다.
+## 깊이 있게 알아보기
+`date` 명령어는 Unix 계열 운영 체제에서 제공하는 기본 명령어 중 하나로, 1970년대 초반에 처음 소개되었습니다. 대안으로는 C 라이브러리의 `strftime()` 함수나 Python의 `datetime` 모듈 등이 있습니다. Bash에서 `date` 명령어를 이용해 날짜를 문자열로 변환하는 방법은 내부적으로 시스템의 시간 라이브러리를 호출하여 시간 정보를 가져온 후, 사용자가 지정한 형식으로 해당 시간 정보를 변환하는 방식으로 이루어집니다.
 
-## 참고 자료:
-- [GNU Coreutils - date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation)
+## 참고 자료
+다음은 날짜를 문자열로 변환하는 방법에 대한 추가정보를 제공하는 웹사이트들입니다:
+1. [`date`](https://man7.org/linux/man-pages/man1/date.1.html) 명령어에 대한 메뉴얼 페이지
+2. C 라이브러리의 [`strftime()`](http://www.cplusplus.com/reference/ctime/strftime/) 함수에 대한 참고서
+3. Python의 [`datetime`](https://docs.python.org/3/library/datetime.html) 모듈에 대한 공식 문서

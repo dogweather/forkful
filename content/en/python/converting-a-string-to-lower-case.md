@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Python recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Python"
 category:             "Python"
@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Converting Strings to Lower Case in Python: Straight to the Point
-
 ## What & Why?
 
-Moving all the letters of a string to lower case in Python is mostly about sanitization and standardization. This ensures the same letter in different cases is not seen as different during data processing.
+Converting a string to lower case in Python simply means transforming all the uppercase letters in a string to lowercase. Programmers do this to ensure uniform data, avoid duplication, and enable case-insensitive comparisons.
 
-## How to:
+## How To:
 
-Below is an example of converting a string to lower case in Python:
-
-```Python
-text = "Converting to LOWER case in PYTHON!"
-lower_text = text.lower()
-print(lower_text)
-```
-
-When you run the code, you should get the following output:
+Here's the Python code:
 
 ```Python
-'converting to lower case in python!'
+text = "Hello, World!"
+lowercase_text = text.lower()
+print(lowercase_text)
 ```
-Simple as that!
 
-## Deep Dive
+This will output:
 
-The `lower()` function in Python had been around even in Python 1, hinting at its significance in the language's intent on text processing. It's a method under Python's built-in string class, with no additional libraries required.
+```Python
+'hello, world!'
+```
 
-Python provides several other ways of text-casing, for instance, `capitalize()` (where only the first letter of the string is capitalized), `title()` (where the first letter of each word is capitalized), or `upper()` (which converts all the letters to uppercase). 
+## Deep Dive:
 
-Diving into the implementation details, when you call `lower()` on a string, Python iteratively changes each upper case Unicode character to its lower case equivalent based on the Unicode case mappings. This function is locale-invariant, meaning it would produce the same result regardless of your system's current language settings.
+In Python, the `.lower()` method has been around since Python 1.5. It's a built-in method that directly works on string data types. 
 
-## See Also
+-An alternative to using the `.lower()` method is using the Python's `str.casefold()` method, which is a more aggressive method than `str.lower()`. It's used for caseless matching, meaning it not only converts uppercase characters to lowercase, but even does a good job with non-ASCII characters.
 
-1. Python documentation on string methods: https://docs.python.org/3/library/stdtypes.html#str.lower
+-As for implementation, Python's `str.lower()` method follows Unicode Standard Annex #30 for Unicode character conversions. It makes sure to respect the cultural differences in lowercase character representations.
 
-2. Unicode Case Mappings: https://www.unicode.org/Public/UNIDATA/UnicodeData.txt
+## See Also:
 
-3. More on Python's String class: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+- Python Official Documentation: https://docs.python.org/3/library/stdtypes.html#str.lower 
+- Unicode Standard Annex #30: https://unicode.org/reports/tr30/
+- Python’s casefold(): https://docs.python.org/3/library/stdtypes.html#str.casefold

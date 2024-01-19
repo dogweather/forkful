@@ -1,7 +1,7 @@
 ---
-title:                "Innlesing av kommandolinjealternativer"
-html_title:           "PowerShell: Innlesing av kommandolinjealternativer"
-simple_title:         "Innlesing av kommandolinjealternativer"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,25 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# PowerShell: Lesing av kommandolinjeargumenter 
+
 ## Hva & Hvorfor?
-Hvis du har brukt en datamaskin før, har du sannsynligvis sett noen som skriver kommandoer i et vindu som kalles et "terminalvindu". De mest avanserte brukerene kan bruke disse kommandoene til å starte programmer med spesielle instruksjoner. En del av disse spesielle instruksjonene kalles "kommmandolinjeargumenter". Programmerere bruker kommandolinjeargumenter for å spesifisere bestemte oppgaver som skal utføres når programmet kjører.
+Kommandolinjeargumenter tillater interaksjon mellom brukeren og koden, hvor brukeren kan kontrollere kjøringen eller funksjonen av programmet. Utviklere bruker dette for å øke fleksibiliteten og tilpasningsdyktigheten i sine skript.
 
-## Hvordan:
-For å lese kommandolinjeargumenter i PowerShell, følg disse trinnene:
+## Hvordan?
+Her er et grunnleggende eksempel på hvordan man leser command-linjeargumenter i PowerShell. 
 
-  ```PowerShell
-  $arguments = $args # Lagrer argumentene som et objekt
-  $arguments[0] # Viser første argument i listen
-  ```
+```PowerShell
+Param(
+  [Parameter(Mandatory=$true)]
+  $Argument1,
+  
+  [Parameter(Mandatory=$false)]
+  [Alias("V")]
+  $Verbose=$false
+)
 
-Output: Viser det første argumentet som du skrev når du kalte på programmet.
+# Resten av koden kommer her...
+Write-Host "Argument funnet: $Argument1. Detaljert modus er $Verbose"
+```
+Noen eksempler på kjøring: 
+```PowerShell 
+> .\myScript.ps1 -Argument1 "Hei"
+Argument funnet: Hei. Detaljert modus er False
 
-## En dypere dykk:
-Kommandolinjeargumenter har vært en del av programmering helt siden de første datamaskinene ble laget. Det å bruke kommandolinjeargumenter for å spesifisere bestemte oppgaver som skal utføres, er en måte å gjøre programmering mer effektiv på. Alternativet til å bruke kommandolinjeargumenter er å inkludere alle parametere direkte i koden, som kan bli rotete og vanskelig å vedlikeholde over tid. Når det kommer til implementering, bruker PowerShell en spesialkommando kalt $args for å lese kommmandolinjeargumenter og lagre dem som et objekt som kan brukes i koden.
+> .\myScript.ps1 -Argument1 "Hei" -Verbose $true
+Argument funnet: Hei. Detaljert modus er True
+```
+## Dyp Dykk
+PowerShell sin handling av kommandolinjeargumenter har likheter til UNIX-baserte shell-script. Det finnes også alternativer til  `Param` nøkkelordet, som `$args` array variabelen, men de gir ikke like mye kontroll over hvilke argumenter som godtas. Gjennom deklarasjonen av spesifikke parametere kan vi håndtere input på en kontrollert og definert måte.
 
-## Se også:
-Hvis du ønsker å lære mer om kommandolinjeargumenter i PowerShell, kan du lese følgende kilder:
-
-- [Microsoft dokumentasjon om kommandolinjeargumenter i PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_command_line_args?view=powershell-7.1)
-- [PowerShell kurs og opplæringsvideoer på Pluralsight](https://www.pluralsight.com/courses/powershell-scripting-getting-started)
-- [StackOverflow spørsmål om kommandolinjeargumenter i PowerShell](https://stackoverflow.com/questions/34684103/how-to-pass-multiple-arguments-to-a-powershell-script-file)
+## Se Også 
+1. [Microsofts offisielle dokumentasjon om argumenter i PowerShell](https://docs.microsoft.com/no-no/powershell/module/microsoft.powershell.core/about/about_command_line_arguments?view=powershell-7.1)
+2. [Detaljert Stack Overflow tråd om PowerShell argumenthåndtering](https://stackoverflow.com/questions/2157554/how-to-handle-command-line-arguments-in-powershell)
+3. [Bloggpost om bruk av Param og andre alternativer](https://devblogs.microsoft.com/scripting/passing-parameters-to-a-script-in-an-executable-file/)

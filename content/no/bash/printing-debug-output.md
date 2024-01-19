@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Bash: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,29 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
+# Debugging i Bash: En Hands-On Guide
 
-Printing debug output, eller utskrift av feilsøkingsinformasjon, er en essensiell del av programmering. Det refererer til å skrive ut informasjon om hva som skjer i programmet under kjøringen, som kan hjelpe utvikleren med å identifisere og fikse eventuelle feil. Dette gjøres vanligvis ved å bruke spesielle kommandoer for å sende ut spesifikke beskjeder til konsollen eller en fil.
+## Hva & Hvorfor?
 
-## Slik gjør du det:
+`printf` eller `echo` i Bash lar deg skrive ut debug-informasjon - dette er semantisk data som hjelper deg å forstå hva som skjer underveis i koden din. Og hvorfor vi bruker dette? Enkelt: å finne feil raskere og lettere! 
 
-For å skrive ut enkel tekst, kan du bruke kommandoen `echo` etterfulgt av teksten du ønsker å skrive ut mellom doble anførselstegn. For eksempel: 
+## Hvordan gjør man det:
 
-```Bash
-echo "Dette er en debug-melding"
-```
-
-Du kan også bruke `printf` kommandoen for å formatere utskriften mer nøyaktig. For eksempel:
+La oss si at vi har en skript som gjør flere ting, men vi er ikke sikre på hva som skjedde etter at vi kjørte det. Se følgende kode:
 
 ```Bash
-printf "Feilen skjedde på linje %d" "$LINENO"
+#!/bin/bash
+navn="Ola Nordmann"
+echo "Hei, mitt navn er $navn"
+```
+Når du kjører denne skripten, vil det skrive ut: `Hei, mitt navn er Ola Nordmann`
+
+Vi kan legge til en debug-melding rett før `echo` kommandoen slik:
+
+```Bash
+#!/bin/bash
+navn="Ola Nordmann"
+echo "Debug: navn har nå verdien $navn"
+echo "Hei, mitt navn er $navn"
 ```
 
-## Dypdykk:
+Nå får vi litt mer info når vi kjører skriptet: `Debug: navn har nå verdien Ola Nordmann`
 
-Printing debug output har vært en de facto standard i programmering siden de tidligste dagene av Unix og Linux-operativsystemer. Det er en rask og enkel måte å feilsøke på og kan hjelpe til med å finne årsaken til komplekse feil. Alternativer til å skrive ut feilsøkingsinformasjon inkluderer å bruke en debugger, som kan være mer effektivt, men også mer komplekst. Implementeringen av printing debug output varierer avhengig av programmeringsspråk, men de fleste språk har spesifikke kommandoer for å skrive ut informasjon til konsollen eller en fil.
+## Deep Dive
 
-## Se også:
+Historisk sett har `echo` vært standarden for å printe tekster til terminalen i Unix/Linux miljøer. Men siden `printf` funksjonen ble introdusert, har den sakte men sikkert tatt over. `printf` gir det mer kontroll og er mer portabel mellom ulike operativsystemer.
 
-- [Unix Toolbox: Debugging](http://cb.vu/unixtoolbox.xhtml#debugging)
-- [The Art of Debugging](https://www.the-art-of-debugging.com/why-do-we-need-debugging/)
+Det er også noe alternativ til `printf` og `echo` for debugging, som `set -x` som gir deg muligheten til å spore utgivelsen av hver kommando i skriptet ditt. Slik kan du se akkurat hvor ting begynner å gå galt.
+
+Fra implementasjonsdetaljene, skal `printf` og `echo` skrive til standard output (`stdout`). Du kan imidlertid omdirigere denne utgangen til filer, pipes, osv. Du kan også sende inn tekst som skal skrives ut som parametere til enten `printf` eller `echo`.
+
+## Se Også
+
+For mer informasjon om debugging og logger i Bash, sjekk følgende lenker:
+* [GNU Bash manual - debugging](https://www.gnu.org/software/bash/manual/html_node/Debugging.html)
+* [Advanced Bash-Scripting Guide - debugging](http://tldp.org/LDP/abs/html/debugging.html)
+* [Bash man side](http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html) - en detaljert manual for Bash, inkludert 'echo' og 'printf'

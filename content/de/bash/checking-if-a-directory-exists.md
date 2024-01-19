@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfung ob ein Verzeichnis existiert"
-html_title:           "Bash: Überprüfung ob ein Verzeichnis existiert"
-simple_title:         "Überprüfung ob ein Verzeichnis existiert"
+title:                "Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "Bash: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,26 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein nützliches Werkzeug für Bash-Programmierer, um sicherzustellen, dass ein bestimmtes Verzeichnis vorhanden ist, bevor sie es verwenden oder darauf zugreifen. Das hilft, Fehler in der Ausführung des Programms zu vermeiden und macht das Skript robuster.
+# Bash Programmierung: Überprüfen ob ein Verzeichnis existiert
 
-## Wie geht's:
-Das Überprüfen eines Verzeichnisses in Bash ist sehr einfach. Verwenden Sie einfach den Befehl `test -d [Verzeichnisname]` oder `[[ -d [Verzeichnisname] ]]`, um zu prüfen, ob das Verzeichnis vorhanden ist. Hier ist ein Beispiel:
+Willkommen. Heute werfen wir einen Blick auf das Szenario, in dem wir prüfen müssen, ob ein Verzeichnis in Bash existiert oder nicht. 
+
+## Was & Warum?
+
+Prüfen, ob ein Verzeichnis existiert, bedeutet herauszufinden, ob ein bestimmtes Verzeichnis in Ihrem Dateisystem vorhanden ist oder nicht. Programmierer tun dies, um Laufzeitfehler zu verhindern, die auftreten, wenn versucht wird, auf ein nicht existierendes Verzeichnis zuzugreifen.
+
+## So geht's:
+
+Im Bash-Skript verwenden wir die `-d` Option von Test, um zu überprüfen, ob ein Verzeichnis existiert oder nicht. Hier ist ein Code-Beispiel:
 
 ```Bash
-test -d /home/user/Documents
-echo $?
+if [ -d "$directory" ]; then
+    echo "Das Verzeichnis existiert"
+else
+    echo "Das Verzeichnis existiert nicht"
+fi
 ```
-Die Ausgabe wird `0` sein, wenn das Verzeichnis vorhanden ist, andernfalls wird sie `1` sein.
+
+Ausgabe wäre:
+
+```Bash
+Das Verzeichnis existiert
+oder
+Das Verzeichnis existiert nicht
+```
+
+Je nachdem, ob das angegebene Verzeichnis vorhanden ist oder nicht.
 
 ## Tiefer eintauchen:
-Die Idee, ob ein Verzeichnis vorhanden ist oder nicht, ist seit den Anfängen der Bash-Programmierung wichtig. Früher war es üblich, Verzeichnisnamen hartcodiert in Skripten zu verwenden, was zu fehlerhaften Ausführungen führte, wenn das Verzeichnis nicht vorhanden war. Mit dem Konzept der Verzeichnisüberprüfung können wir sicherstellen, dass das Verzeichnis vor der Verwendung existiert, und gegebenenfalls eine Fehlermeldung ausgeben.
 
-Eine Alternative zur Verwendung des `test`-Befehls ist die Verwendung der `if`-Anweisung, um den Befehl `ls` mit der Option `-d` auszuführen und die Ausgabe zu überprüfen.
-
-Um ein Verzeichnis in Bash anzulegen, verwenden Sie einfach den Befehl `mkdir [Verzeichnisname]`.
+`-d` ist ein Unix-Bash-Symbol, das verwendet wird, um zu überprüfen, ob ein Dateisystem-Objekt ein Verzeichnis ist oder nicht. In der Anfangszeit von Unix war es die einzige Möglichkeit, dies zu tun. Alternativ könnten Sie in neueren Bash-Versionen `[[ -d "$directory" ]]` statt `[ -d "$directory" ]` verwenden. Dies stellt eine erweiterte Teststruktur dar, die eine detailliertere Fehlerprotokollierung ermöglicht. Intern verwendet Bash die `stat` Systemaufruf unter der Haube, um zu ermitteln, ob das Verzeichnis existiert oder nicht.
 
 ## Siehe auch:
-- [bash test manual](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- [bash if statement](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Constructs.html#index-if)
-- [bash mkdir command](https://www.gnu.org/software/bash/manual/html_node/Creating-Directories.html)
+
+- [Offizielle GNU Bash-Dokumentation](http://www.gnu.org/s/bash/)
+
+- [Bash Beginners Guide](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
+
+*Diese Links führen Sie zu weiteren Ressourcen, wenn Sie mehr über Bash-Programmierung erfahren möchten. 
+
+Bis zum nächsten Artikel!

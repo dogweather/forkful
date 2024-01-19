@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan, onko hakemistoa olemassa"
-html_title:           "Go: Tarkistetaan, onko hakemistoa olemassa"
-simple_title:         "Tarkistetaan, onko hakemistoa olemassa"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Go: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,32 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja miksi?
-Tarkistaminen, onko hakemisto olemassa, on tapa tarkistaa, onko tietyllä polulla oleva hakemisto olemassa vai ei. Tämä on tärkeää monissa ohjelmoinnin tilanteissa, kuten varmistaessa, että tarvittavat tiedostot löytyvät ennen niiden käsittelyä.
+# Tarkistetaanko Hakemisto Olemassa?
 
-Miten:
-Voit tarkistaa, onko hakemisto olemassa Go-kielen osana tarjottavilla toiminnoilla. Esimerkiksi ```os.Stat()``` -toiminto palauttaa virheen, jos tiedostoa ei löydy annetusta polusta. Alla oleva koodiesimerkki näyttää, miten tarkistaa, onko "hakemisto" niminen hakemisto olemassa ja tulostaa sen olemassaolon mukaisen viestin.
+## Mikä & Miksi?
+Hakemiston olemassaolon tarkistaminen on menettely, jossa ohjelmisto varmistaa, onko tietyllä polulla hakemisto. Tämä on tärkeää, koska virheelliset polut voivat aiheuttaa ohjelman epäonnistumisen.
+
+## Kuinka tehdä:
+Go:n os-paketti tarjoaa funktiot hakemistojen ja tiedostojen hallintaan. Tässä on esimerkki siitä, miten tarkistaa, onko hakemisto olemassa.
 
 ```Go
+package main
+import (
+    "fmt"
+    "os"
+)
+
 func main() {
-    if _, err := os.Stat("hakemisto"); os.IsNotExist(err) {
-        fmt.Println("Hakemistoa ei löydy")
+    dirPath := "/path/to/dir"
+    _, err := os.Stat(dirPath)
+
+    if os.IsNotExist(err) {
+        fmt.Printf("Hakemisto %v ei ole olemassa.\n", dirPath)
     } else {
-        fmt.Println("Hakemisto löytyy")
+        fmt.Printf("Hakemisto %v on olemassa.\n", dirPath)
     }
 }
 ```
 
-Esimerkkilähtö:
+Jos hakemistoa ei ole, tuloste on "Hakemisto /path/to/dir ei ole olemassa.". Muussa tapauksessa ohjelma tulostaa "Hakemisto /path/to/dir on olemassa.".
 
-```
-Hakemistoa ei löydy
-```
+## Deep Dive:
+Historiallisesti tiedostojärjestelmien kanssa työskentely merkitsi matalan tason tiedostojärjestelmäkutsuja. Mutta Go tarjoaa abstraktin 'os' -paketin, joka tekee monimutkaisista toiminnoista yksinkertaisia.
 
-Syvä päätyminen:
-Hakemistojen olemassaolon tarkistaminen on ollut osa monia ohjelmointikieliä jo pitkään. Yleinen tapa tarkistaa olemassaolo on kokeilla pääsyä hakemistoon ja käsitellä havaitut virheet sen perusteella. Lisäksi voit käyttää myös muita toimintoja, kuten ```os.Open()```, joka palauttaa virheen, jos hakemistoa ei löydy. Lopuksi, jotkut käyttävät myös ```os.Lstat()``` -toimintoa, joka toimii samoin kuin ```os.Stat()```, mutta palauttaa myös tiedoston tai hakemiston tiedot.
+Vaihtoehtoisesti voit käyttää ioutil-paketin ReadDir-metodia, mutta os.Stat on yleensä parempi valinta, koska se ei lue koko hakemiston sisältöä, mikä tekee siitä tehokkaamman suurille hakemistoille.
 
-Katso myös:
-- Go-kirjasto pääsy tiedostoihin ja hakemistoihin: https://golang.org/pkg/os/
-- Go-kurssi, joka käsittelee tiedostojen ja hakemistojen käsittelyä: https://tour.golang.org/programs/12
-- "Tarkista hakemiston olemassaolo Go-kielellä" -artikkeli: https://www.digitalocean.com/community/tutorials/how-to-check-if-a-directory-exists-in-go-fi
+Hakemiston olemassaolon tarkistuskoodi käyttää Go:n error-tyyppiä. Virhe palautetaan, jos ei voida selvittää, onko hakemistoa olemassa, yleensä koska hakemistonlukija ei kykene käyttämään tiedostojärjestelmän rajapintaa.
+
+## Katso Myös:
+Lisätietoa saat alla olevista linkeistä:
+
+- Golang os paketti: https://pkg.go.dev/os
+- Virheenkäsittely Go:ssa: https://blog.golang.org/error-handling-and-go
+- Tiedostojärjestelmien kanssa työskentely Go:ssa: https://flaviocopes.com/golang-list-directory-files/

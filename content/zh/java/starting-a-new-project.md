@@ -1,7 +1,7 @@
 ---
-title:                "新项目的开始"
-html_title:           "Java: 新项目的开始"
-simple_title:         "新项目的开始"
+title:                "开始新项目"
+html_title:           "Lua: 开始新项目"
+simple_title:         "开始新项目"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -10,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
-开始一个新的项目是指开发人员创建一个新的软件项目的过程。通常，这包括确定项目的范围、架构设计、编写代码和测试等步骤。程序员往往开始新的项目，以满足客户或用户的需求，或者为了改进现有的软件系统。
+## 什么 & 为什么？
 
-# How to:
-### 1. 创建一个新的Java项目
-要创建一个新的Java项目，首先需要打开Java集成开发环境（IDE）。常见的IDE包括Eclipse、NetBeans和IntelliJ IDEA。在IDE中，选择“新建”或“创建”选项，然后选择“Java项目”。接下来，给项目命名并选择项目的保存位置。
+新项目启动是开始新的编程工作的过程。程序员开始新项目，以便解决问题，创建新的应用程序，或是开发新的软件产品。
 
-### 2. 编写Java代码
-首先，需要创建一个Java类来实现项目的功能。在IDE中，选择“新建”或“创建”选项，然后选择“Java类”。接下来，给类命名并选择保存位置。现在，可以在类中编写代码来实现项目的功能。
+## 如何操作：
 
-### 3. 编译和运行代码
-编写完Java代码后，需要编译代码以便将其转换为可执行的机器代码。在IDE中，可以使用“构建”或“编译”选项来编译代码。接下来，使用“运行”选项来执行代码并查看输出结果。
+下面是Java创建新项目的简单例子。首先安装最新版本的Java和IDE(编程环境)，然后在IDE中新建项目。
 
 ```Java
+// 在IDE另存为 HelloWorld.java
+
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        System.out.println("Hello World");
     }
 }
 ```
 
-输出: Hello, World!
+运行上述程序，输出应该是:
 
-### 4. 添加依赖关系
-如果项目需要使用其他第三方库或框架，就需要在项目中添加它们的依赖关系。通常，可以使用Maven或Gradle来管理项目的依赖关系。在项目的配置文件中，添加需要的依赖项并保存，然后重新编译项目即可。
+```
+Hello World
+```
+## 深入探讨
 
-## Deep Dive:
-### 1. 历史背景
-Java是一种跨平台的编程语言，最早由Sun Microsystems在1995年发布。它的设计目的是为了解决嵌入式系统开发的问题。随着互联网的发展，Java逐渐成为Web应用开发的主流语言。
+* 历史背景：Java于1995年由Sun微系统公司发布，并在2009年成为Oracle公司的一部分。从一开始，Java就被设计为一种“编写一次，到处运行”的通用编程语言。
 
-### 2. 替代方案
-除了Java，还有其他编程语言可以用来开发软件项目，如C++、Python和JavaScript等。每种语言都有其特点和适用范围。选择何种语言来开始一个新的项目，取决于项目的需求和开发者的偏好。
+* 可选方案：除了Java，还有很多其他编程语言（如Python, C#, JavaScript等）也常常用于新项目的启动。
 
-### 3. 实施细节
-在开始一个新的Java项目时，一些细节需要特别注意。例如，选择合适的IDE和依赖管理工具，遵循最佳的编码实践，以及使用版本控制来管理代码等。这些细节可以帮助开发人员更高效地开发和维护项目。
+* 实施细节: 在Java中，新项目一般会包含一个main方法，它通常是程序开始执行的位置。你也可以使用IDE的项目模版和代码片段来帮助完成新项目的创建。
 
-## See Also:
-- [Eclipse官方网站](https://www.eclipse.org/)
-- [NetBeans官方网站](https://netbeans.org/)
-- [IntelliJ IDEA官方网站](https://www.jetbrains.com/idea/)
-- [Maven官方网站](https://maven.apache.org/)
-- [Gradle官方网站](https://gradle.org/)
+## 另请参阅
+
+以下是一些相关的学习资源：
+* [Oracle官方Java教程](https://docs.oracle.com/en/java/javase/15/)
+* [开源Java编程书籍](https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books.md#java)
+* Java编程网上课程：[Codecademy](https://www.codecademy.com/learn/learn-java)、[Udemy](https://www.udemy.com/topic/java/)

@@ -1,7 +1,7 @@
 ---
-title:                "패턴과 일치하는 문자 삭제하기"
-html_title:           "Haskell: 패턴과 일치하는 문자 삭제하기"
-simple_title:         "패턴과 일치하는 문자 삭제하기"
+title:                "패턴에 일치하는 문자 삭제"
+html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,46 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이고 왜합니까? (What & Why?)
 
-패턴에 맞는 문자를 삭제하는 것은 프로그래머들이 코드를 정리하고 가독성을 높이기 위해 하는 작업입니다.
+패턴과 일치하는 문자 삭제는, 이름에서 알 수 있듯이, 특정 패턴과 일치하는 문자를 문자열에서 제거하는 작업입니다. 이 작업은 보통 불필요한 문자나 문자열을 제거하여 데이터를 정리하고 가공하는 데 사용됩니다.
 
-## 코딩 방법:
+## 어떻게 합니까? (How to?)
+
+여기 Haskell에서 패턴과 일치하는 문자를 삭제하는 간단한 예시를 보여드리겠습니다.
 
 ```Haskell
-deleteEvery :: String -> String -> String
-deleteEvery _ [] = []
-deleteEvery pattern (x:xs)
-    | pattern `isPrefixOf` (x:xs) = deleteEvery pattern (drop (length pattern) (x:xs))
-    | otherwise = x : deleteEvery pattern xs
+import Data.Char (isSpace)
+import Data.List (dropWhileEnd)
 
-deletePattern :: String -> String -> String
-deletePattern pattern string = intercalate "" (words (deleteEvery pattern string))
+trim :: String -> String
+trim = dropWhileEnd isSpace . dropWhile isSpace
 
-main :: IO ()
-main = do
-    let example = "Hello, World!"
-    putStrLn $ deletePattern "lo" example
+main = putStrLn (trim "   Hello, World!   ")
+
+-- Output: "Hello, World!"
 ```
 
-출력:
-```
-He, World!
-```
+위의 코드는 문자열의 앞과 뒤에서 공백 문자를 삭제합니다.
 
-## 깊게 들어가보기:
+## 깊이 있는 정보 (Deep Dive)
 
-1. 역사적 맥락:
-패턴에 맞는 문자를 삭제하는 방법은 다양한 프로그래밍 언어에서 흔하게 사용되는 기능입니다. 그 중에서도 Haskell은 간결한 문법과 강력한 패턴 매칭 기능으로 유명합니다.
+패턴과 일치하는 문자를 삭제하는 이 개념은 결코 새로운 것이 아닙니다. 이는 컴퓨터 프로그래밍 초기부터 프로그래머들이 데이터를 보다 쉽게 처리하고 분석할 수 있도록 도와주었습니다.
 
-2. 대안:
-Haskell에는 문자열을 처리하는 다양한 함수들이 존재합니다. 이 중에서도 `deleteEvery` 함수는 재귀적으로 패턴 매칭을 수행하여 구현된 것이며, `deletePattern` 함수는 이를 이용하여 문자열을 삭제하는 편리한 함수입니다.
+Haskell 외에도, 대부분의 프로그래밍 언어는 특정 패턴에 일치하는 문자를 삭제하는 방법을 제공합니다. Python에서는 `re.sub()`를, JavaScript에서는 `replace()`를 사용하여 유사한 작업을 수행할 수 있습니다.
 
-3. 구현 세부사항:
-`deleteEvery` 함수는 먼저 문자열을 입력받아 첫 번째 인자로 받은 패턴과 매칭되는 부분이 있는지 확인합니다. 만약 매칭되는 부분이 있다면, 해당 부분 이후의 문자열을 재귀적으로 매개변수로 넘겨줍니다. 매칭되는 부분이 없다면, 첫 번째 인자로 받은 패턴을 다음 줄부터 다시 검사하고 그렇지 않은 경우 해당 문자를 결과 문자열에 추가합니다. 마지막으로 `deletePattern` 함수는 `deleteEvery` 함수를 이용하여 패턴에 맞는 문자를 모두 삭제한 후, 다시 문자열을 합쳐서 반환하는 함수입니다.
+이런 기능은 문자열 처리 작업의 일부로 구현된 것이며 현재 Haskell의 기본 라이브러리인 `Data.List`와 `Data.Char`에서도 지원되고 있습니다.
 
-## 참고 자료:
+## 참고 자료 (See Also)
 
-- [Haskell 공식 문서](https://www.haskell.org/)
-- [Haskell 패턴 매칭](https://wiki.haskell.org/Pattern_matching)
-- [Haskell 문자열 처리 함수](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-String.html)
+패턴과 일치하는 문자 삭제에 대해 더 배우고 싶다면, 다음의 링크들을 참조해주시기 바랍니다.
+
+1. Haskell의 공식 문서: http://haskell.org/
+2. "Learn You a Haskell for Great Good": http://learnyouahaskell.com/
+3. Stack Overflow의 "How to delete a character from a string using Haskell?": https://stackoverflow.com/questions/19184856/how-to-delete-a-character-from-a-string-using-haskell

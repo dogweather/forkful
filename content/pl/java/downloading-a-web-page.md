@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "Java: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Java"
 category:             "Java"
@@ -10,45 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
+## Co i dlaczego?
 
-Pobieranie stron internetowych to proces, w którym program pobiera zawartość strony internetowej z serwera internetowego i zapisuje ją w formie pliku na lokalnym urządzeniu komputerowym. Programiści często wykonują ten proces w celu przetwarzania danych lub wykorzystania ich do dalszych działań.
+Pobieranie strony internetowej to proces zapisywania jej zawartości lokalnie na naszym komputerze. Programiści robią to, aby analizować zawartość strony, przetwarzać dane, monitorować zmiany i tworzyć aplikacje web scraping.
 
 ## Jak to zrobić:
 
-```java
-import java.net.URL;
-import java.io.BufferedInputStream;
-import java.io.FileOutputStream;
+Użyjemy klasy `java.net.URL` i `java.nio.file`. Oto jak to zrobisz:
 
-public class PobierzStrone {
+```Java
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class WebDownloader {
     public static void main(String[] args) throws Exception {
-        // utwórz obiekt URL do strony internetowej
-        URL url = new URL("https://www.example.com");
-        // otwórz połączenie z serwerem i pobierz dane
-        BufferedInputStream bis = new BufferedInputStream(url.openStream());
-        // zapisz pobrane dane do pliku
-        FileOutputStream fis = new FileOutputStream("strona.html");
-        byte[] buffer = new byte[1024];
-        int count;
-        while ((count = bis.read(buffer)) != -1) {
-            fis.write(buffer, 0, count);
+        URL website = new URL("http://www.example.com");
+        try (InputStream in = website.openStream()) {
+            Files.copy(in, Paths.get("downloaded.html"));
         }
-        // zamknij strumienie danych
-        fis.close();
-        bis.close();
-        // poinformuj o poprawnym pobraniu strony
-        System.out.println("Strona została pobrana pomyślnie!");
     }
 }
 ```
 
-## Głębszy zanurzenie:
+Gdy uruchomisz ten program, pobierze on stronę www.example.com i zapisze ją jako "downloaded.html" w katalogu projektu.
 
-Pobieranie stron internetowych było wykorzystywane od dawna w celu tworzenia katalogów stron, wyszukiwarek internetowych i innych narzędzi do przetwarzania danych z internetu. Alternatywnie, można również użyć biblioteki JSoup lub HttpClient do pobrania stron internetowych z wykorzystaniem metod HTTP. Implementacja pobierania stron internetowych może wymagać również uwierzytelniania lub ustawienia nagłówków żądania w przypadku stron wymagających uwierzytelnienia lub konkretnych ustawień.
+## Głębsze spojrzenie:
 
-## Zobacz także:
+1. Historyczny kontekst: Początkowo różne biblioteki, takie jak Apache HttpClient, były używane do pobierania stron internetowych w Javie. Ale od Java 7, możemy wykorzystać wbudowane API, takie jak `java.net.URL`.
 
-- [Biblioteka JSoup](https://jsoup.org/)
-- [Apache HttpClient](http://hc.apache.org/httpcomponents-client-ga/)
-- [Pobieranie stron internetowych w Javie przy użyciu biblioteki JSoup](https://www.baeldung.com/java-httprequest)
+2. Alternatywy: Inne biblioteki, takie jak Jsoup lub HtmlUnit, oferują bardziej zaawansowane narzędzia do przetwarzania pobranych stron.
+
+3. Szczegóły implementacyjne: Powyższy kod otwiera połączenie do URL, tworzy strumień wejściowy, zapisuje zawartość strony do pliku za pośrednictwem `Files.copy()`. Pamiętaj, aby zawsze zamykać strumienie wejściowe, co tutaj gwarantuje konstrukcja try-with-resources.
+
+## Zobacz również:
+
+1. Dokumentacja Java `java.net.URL`: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/net/URL.html
+
+2. Przewodnik po składnikach `java.nio`: https://docs.oracle.com/javase/tutorial/essential/io/fileio.html
+
+3. Biblioteka Jsoup: https://jsoup.org/

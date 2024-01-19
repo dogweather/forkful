@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
-html_title:           "Arduino: コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
-simple_title:         "コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Bash: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,46 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
+# Arduinoプログラミング: コマンドライン引数の読み取り
 
-コマンドライン引数を読み取るとは何かと、プログラマーがそれを行う理由は何かを説明します。
+## 何と何のため？
+コマンドライン引数はプログラムが起動時に受け取るパラメータの一つです。これにより、プログラマーはプログラムの挙動を柔軟に制御できます。
 
-コマンドライン引数を読み取るとは、プログラムが起動時にユーザーから与えられたコマンドやデータのことを指します。プログラマーはコマンドライン引数を読み取ることで、ユーザーの入力に応じた処理を行うことができます。
+## 実践方法
+以下はArduinoでコマンドライン引数を読み取るソースコードの例です。
 
-## どのように：
-
-下の```Arduino ... ```コードブロック内に、コーディングの例とサンプルの出力を示します。
-
-```
-Arduinoコードをここに入力してください
-```
-
-コマンドライン引数を読み取るには、```Arduino Code```を使用します。例えば、```Arduino Code```を使用して、ユーザーからの入力を文字列として受け取ることができます。
-
-```
-Arduinoコードをここに入力してください
-
-int main(int argc, char *argv[]) {
-
-    String user_input = String(argv[1]);
-
-    Serial.println(user_input);
-
-    return 0;
+```Arduino
+int argCount;
+char **args;
+void setup() {
+  Serial.begin(9600);
+  args = CommandLineArgs.get(&argCount);
 }
 
+void loop() {
+  for (int i = 0; i < argCount; i++) {
+    Serial.println(args[i]);
+  }
+}
 ```
 
-入力した文字列がシリアルモニターに表示されることを確認しましょう。
+このプログラムを実行すると、シリアルモニターにコマンドライン引数が表示されます。
 
-## 詳細な情報：
+## ディープダイブ
+コマンドライン引数はUNIXのシェルスクリプトに由来し、プログラムの初期セットアップを制御するために使われます。Arduinoではエミュレータやシミュレータで引数の授受が可能です。一方、ハードウェアで直接コマンドライン引数を読み込む機能はありません。
 
-コマンドライン引数を読み取る方法については、Arduinoのドキュメンテーションを参照することができます。また、別の方法として、ライブラリを使用することもできます。それぞれの方法には、利点や欠点がありますので、自分のプログラムに合った最適な方法を選択しましょう。
+代替手段としてArduinoでは、インタラクティブなパラメータ設定のためにシリアル入力を使用することが一般的です。また、SDカードからの設定ファイルの読み込みも可能です。
 
-コマンドライン引数の歴史や、他の言語での実装方法も調べてみると、より深く理解することができます。
+コマンドライン引数の受け取りはArduinoの`main`関数で発生します。それらは配列に格納され、プログラム全体で使用できます。
 
-## 関連リンク：
+## 参照情報
+以下リンクで関連する情報をさらに詳しく学べます。
 
-- [Arduino Command Line Arguments ガイド](https://www.arduino.cc/en/Main/CommandLineArguments)
-- [Arduino Stringクラス](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [C言語でのコマンドライン引数の読み取り方](https://www.ibm.com/support/knowledgecenter/ja/ssw_ibm_i_73/rtref/cgets.htm)
+- [Arduino.cc: CommandLineArgs Library](https://www.arduino.cc/reference/en/libraries/commandlineargs/)
+- [Arduino.cc: Serial Input Basics](https://forum.arduino.cc/index.php?topic=396450)
+- [Arduino Stack Exchange: How to read command line arguments](https://arduino.stackexchange.com/questions/333/how-to-read-command-line-arguments-in-arduino)

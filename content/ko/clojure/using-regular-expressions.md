@@ -1,7 +1,7 @@
 ---
-title:                "정규식 사용하기"
-html_title:           "Clojure: 정규식 사용하기"
-simple_title:         "정규식 사용하기"
+title:                "정규 표현식 사용하기"
+html_title:           "Bash: 정규 표현식 사용하기"
+simple_title:         "정규 표현식 사용하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,31 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?
-정규 표현식을 사용하는 것은 매우 유용합니다. 프로그래머들은 대용량의 텍스트를 간편하고 효율적으로 처리할 수 있어서 정규 표현식을 사용합니다.
+## 무엇 & 왜?
 
-## 방법:
-아래에는 반복되는 작업을 수행하기 위해 정규 표현식을 사용하는 코드 예제와 샘플 출력이 있습니다.
+정규 표현식은 문자열에서 특정 패턴을 찾거나 대체하는 방법입니다. 프로그래머들이 이를 사용하는 이유는 복잡한 검색 및 대체 작업을 간단하게 수행할 수 있기 때문입니다.
 
-```Clojure 
-; "re-matches" 는 정규 표현식을 사용하여 문자열에서 패턴을 찾아냅니다.
-(re-matches #"ab*" "ababab") ; 결과: "ababab"
+## 어떻게:
 
-; "re-seq" 는 정규 표현식을 사용하여 문자열에서 패턴을 찾아 리스트 형태로 반환합니다.
-(re-seq #"a+" "aaabbbb") ; 결과: ("aaa")
+Clojure에서 정규 표현식을 사용하는 데는 re-find, re-seq 등의 함수들이 있습니다.
 
-; "re-find" 는 정규 표현식을 사용하여 첫 번째로 일치하는 패턴을 찾아 리턴합니다.
-(re-find #"c+d*" "cccddd") ; 결과: "ccc"
-
-; "re-matches?" 는 문자열이 정규 표현식의 패턴과 일치하는지 여부를 판별합니다.
-(re-matches? #"a*b" "aaaab") ; 결과: true
-(re-matches? #"b+" "abab") ; 결과: false
+```Clojure
+(def str "Hello Clojure Programming!") 
+(re-find #"\w+" str) ; -> "Hello"
+(re-seq #"\w+" str) ; -> ("Hello" "Clojure" "Programming")
 ```
+여기서 `#"\w+"`는 하나 이상의 연속된 문자나 숫자를 찾는 정규 표현식입니다.
 
-## 심층 분석:
-정규 표현식은 1950년대에 고안된 형식 언어로써, 텍스트를 처리하고 검색하는데 사용됩니다. 다른 언어에서도 정규 표현식을 사용할 수 있지만, Clojure는 정규 표현식을 이용하여 매우 간결하고 효율적인 코드를 작성할 수 있도록 도와줍니다. 또한 Purely Functional Programming Language라는 특징 상, 정규 표현식을 사용해도 부작용이 발생하지 않습니다.
+## 깊은 탐구:
+
+정규 표현식은 20세기 50년대 이래로 문자열 탐색과 패턴 매칭의 표준 도구로 사용되었습니다. Perl이나 Python같은 언어는 정규 표현식을 통합해서 사용합니다. Clojure도 이를 염두에 두고 디자인되었지만, 정규 표현식 대신에 전통적인 함수형 프로그래밍 접근 방식을 사용하여 문자열을 처리할 수 있는 방법들을 제공합니다.
+
+정규 표현식의 대안으로는 Clojure의 `split`, `join`, `replace`같은 함수들이 있습니다. 이 함수들은 텍스트 처리를 위한 유연성을 제공하며, 때때로 정규 표현식보다 이해하기 쉽고 코드를 읽는 데 더 친숙할 수 있습니다.
 
 ## 더 보기:
-- [Clojure 정규 표현식 공식 문서](https://clojuredocs.org/clojure.core/re-matches)
-- [정규 표현식 간단 설명서](https://regexone.com/)
-- [정규 표현식 연습 사이트](https://regex10.com/)
+
+- Clojure에서 정규 표현식을 더 잘 사용하는 방법은 [Clojure의 공식 문자열 API 문서](https://clojure.github.io/clojure/clojure.string-api.html)를 참고하세요.
+- 정규 표현식에 대한 더 깊은 이해를 위해, [정규 표현식 입문서](https://www.regular-expressions.info/tutorial.html)가 유용할 수 있습니다.

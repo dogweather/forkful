@@ -10,34 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 대문자화를 하는가?
-대문자화란 문자열의 첫 번째 글자를 대문자로 변환하는 것을 말합니다. 프로그래머들은 이를 보통 변수 이름이나 함수 이름 등의 명명 규칙을 준수하기 위해 사용합니다.
+## 문자열 대문자화란 무엇인가 & 왜 필요한가?
 
-# 대문자화하는 방법:
-자바스크립트에서는 toUpperCase() 메소드를 사용하여 문자열의 첫 번째 글자를 대문자로 변환할 수 있습니다.
+문자열 대문자화란 코드상의 모든 소문자를 대문자로 바꾸는 작업입니다. 자바스크립트에서 우리는 이 작업을 많이 하는데, 이유는 가독성과 통일성을 높이기 위해서입니다.
 
-```Javascript
-let name = "john";
-console.log(name.toUpperCase());
-
-// Output: JOHN
-```
-
-만약 문자열 중간에 있는 첫 번째 글자만 대문자로 변환하고 싶다면, 인덱싱(indexing)을 사용하여 해당 위치의 문자를 대문자로 변경할 수 있습니다.
+## 어떻게 사용하는가:
 
 ```Javascript
-let sentence = "hello world";
-let upperCaseSentence = sentence.charAt(0).toUpperCase() + sentence.slice(1);
-console.log(upperCaseSentence);
-
-// Output: Hello world
+let msg = "안녕하세요, 자바스크립트!";
+let msgUpper = msg.toUpperCase();
+console.log(msgUpper);
+```
+출력 결과:
+```Javascript
+"안녕하세요, 자바스크립트!"
 ```
 
-# 깊게 들어가보면:
-대문자화는 일반적으로 변수나 함수의 명명 규칙을 따르기 위해 사용되지만, 예외적인 상황에서는 매우 유용하게 사용될 수 있습니다. 예를 들어, 사용자의 이름을 나타내는 변수의 경우에는 첫 번째 글자를 대문자로 변환하여 좀 더 보기 쉽게 표시할 수 있습니다. 또한, 다른 언어나 플랫폼에서도 대문자화를 사용할 수 있는 경우가 있습니다.
+## 심층분석
 
-프로그래밍 언어마다 대문자화를 수행하는 방법은 다를 수 있지만, 기본적으로 대문자화 메소드를 제공하기 때문에 쉽게 구현할 수 있습니다.
+### 역사적 배경
+ES5에서 소개된 `toUpperCase()` 메서드는 문자열을 다루는데 필요한 기본 도구 중 하나입니다.
 
-# 참고 자료:
-- [JavaScript toUpperCase() 메소드 - MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [How to Capitalize the First Letter of a String in JavaScript - W3schools](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+### 대안
+다른 방법으로는 CSS의 `text-transform` 속성을 사용해 웹 페이지에서 텍스트를 대문자로 바꿀 수도 있습니다. 하지만 이는 코드 측면에서 문자열을 대문자로 바꾸는 것이 아니라, 디스플레이 단에서 보이는 문자를 대문자로 바꾸는 것입니다.
+
+### 세부 구현
+`toUpperCase()`는 내부적으로 유니코드 테이블을 참조하여 작동합니다. 소문자와 대문자 간에는 일정한 차이가 있어, 이차이를 더하거나 빼서 변환을 진행합니다.
+
+## 추천 자료
+
+- [MDN Web Docs, String.prototype.toUpperCase()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [W3Schools, JavaScript String toUpperCase() Method](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+- [The Unicode Consortium](https://home.unicode.org)

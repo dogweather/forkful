@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "Java: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,47 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego? 
+## Co i dlaczego?
 
-Generowanie liczb losowych jest mechanizmem używanym przez programistów do tworzenia wygenerowanych wartości wykorzystywanych w różnych aplikacjach. Programiści używają tego mechanizmu w celu symulowania dowolnych danych, testowania kodu oraz w każdej sytuacji, w której potrzebne są losowe wartości.
+Generowanie liczb losowych oznacza tworzenie liczby, która nie jest przewidywalna lepiej niż przez losowy przypadek. Programiści robią to, aby wprowadzić element nieprzewidywalności w swoje aplikacje, symulować losowość rzeczywistości, czy też przeprowadzać testy losowe.
 
-## Jak To Zrobić:
+## Jak to zrobić:
+
+Użyjemy klasy java.util.Random, aby wygenerować liczbę losową.
 
 ```Java
-// Wygenerowanie pojedynczej liczby losowej
 import java.util.Random;
 
-Random random = new Random();
-int randomNumber = random.nextInt();
+public class Main {
+  public static void main(String[] args) {
+    Random rand = new Random();
 
-// Wygenerowanie wartości z konkretnego zakresu - od 1 do 100
-int randomNumberRange = random.nextInt(100) + 1;
+    int rand_int1 = rand.nextInt(1000); 
+    System.out.println("Wygenerowano Liczbę Losową: "+ rand_int1);
+  }
+}
+```
+Po uruchomieniu powyższego kodu, otrzymasz wyjście takie jak poniżej:
 
-// Generowanie wartości z określonego zakresu i kroku - pomiędzy 10 a 200 co 5
-int randomRangeStep = random.nextInt(40) * 5 + 10;
-
-System.out.println(randomNumber);
-System.out.println(randomNumberRange);
-System.out.println(randomRangeStep);
+```Java
+Wygenerowano Liczbę Losową: 745
 ```
 
-Przykładowe wyjście:
-```
-725938916
-54
-155
-```
+Każdorazowe uruchomienie może zwrócić inny wynik.
 
-## Głębsza Analiza:
+## Pogłębione podejście:
 
-1. Kontekst historyczny: Generowanie liczb losowych jest wykorzystywane od dawna w matematyce i analizie statystycznej. W programowaniu, mechanizm ten został wprowadzony w celu tworzenia symulacji różnych zdarzeń losowych, na przykład rzutu monetą czy wylosowania karty z talii.
+**Historia:**
+Losowość jest fundamentalnym elementem komputerowego myślenia od lat 40-tych XX wieku, pierwsze komputery miały już wbudowane generatory liczb losowych. W Javie, klasa Random jest dostępna od wersji Java 1.0.
 
-2. Alternatywy: W języku Java, oprócz klasy `Random` można również wykorzystać klasę `Math` do generowania liczb losowych. Jednakże, klasa `Random` oferuje większą kontrolę nad generowanymi wartościami, na przykład możliwość podania zakresu lub kroku.
+**Alternatywy:**
+Generator liczb losowych Java.util.Random nie jest jedynym sposobem na generowanie liczb losowych w Javie. Możemy również skorzystać z java.security.SecureRandom, który zapewnia większe bezpieczeństwo przez użycie mocniejszych algorytmów.
 
-3. Szczegóły implementacji: W języku Java, generowanie liczb losowych jest realizowane za pomocą algorytmu L'Ecuyer, który jest oparty na krzyżowym składaniu liczb pseudolosowych.
+**Szczegóły Implementacji:**
+Klasa java.util.Random generuje liczby losowe na podstawie określonego ziarna. Jeżeli nie ustawimy ziarna, używana jest wartość domyślna, która jest bieżącym czasem systemu.
 
-## Zobacz Również:
+## Zobacz też:
 
-1. Dokumentacja klasy `Random` w języku Java: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
-2. Tutorial na temat generowania liczb losowych w języku Java: https://www.baeldung.com/java-random
-3. Omówienie alternatywnych sposobów generowania liczb losowych w języku Java: https://dev.to/neillhogg/how-to-generate-random-numbers-in-java-2lj3
+1. Przewodnik Oracle po klasie Random: [Kliknij tutaj](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+2. Przewodnik Oracle po klasie SecureRandom: [Kliknij tutaj](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html) 
+3. Przewodnik Oracle po generowaniu losowych liczb całkowitych: [Kliknij tutaj](https://docs.oracle.com/javase/tutorial/essential/environment/numbers.html)

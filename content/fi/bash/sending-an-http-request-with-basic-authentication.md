@@ -1,7 +1,7 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-html_title:           "Bash: HTTP-pyynnön lähettäminen perusautentikoinnilla"
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,25 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-MITÄ & MIKSI?
+## Mitä & Miksi?
 
-HTTP-pyynnöt ja perusautentikointi -varmenteen lähettäminen on yksinkertainen tapa lähettää salattua tietoa palvelimelle. Ohjelmoijat käyttävät tätä tekniikkaa esimerkiksi käyttäjätunnusten ja salasanojen lähettämiseen palvelimelle tai suojatun sivuston käyttämiseen.
+HTTP-pyynnön lähettäminen perusautentikoinnilla on tekniikka, jolla lähetetään dataa tai pyydetään tietoja verkossa. Ohjelmoijat tekevät sen, kun heidän on mentävä pääsynhallintalistojen tai salasanojen läpi palvelimella.
 
-MITEN?
+## Kuinka:
 
-Voit lähettää HTTP-pyynnön perusautentikoinnilla käyttämällä `curl` komentoa Bashissa. Seuraavassa esimerkissä lähetämme pyynnön GitHubin API:lle käyttäen käyttäjätunnusta ja salasanaa:
+```Bash
+# Esimerkki perusautentikoinnilla varustetun HTTP-pyynnön lähettämisestä Bashilla.
+# Käytämme CURL-komentoa.
+
+USERNAME='käyttäjätunnus'
+PASSWORD='salasana'
+URL='https://esimerkki.com'
+
+# Lähetämme GET-pyynnön salasanalla.
+curl -u ${USERNAME}:${PASSWORD} ${URL}
 ```
-curl -u käyttäjätunnus:salasana https://api.github.com/user
+
+Kirjoitustulos näyttää tältä:
+
+```Bash
+{
+  "vastauksen arvo": "esimerkki"
+}
 ```
-Tämän komennon pitäisi tulostaa käyttäjän tiedot, jos tunnistautuminen onnistui.
 
-SYVÄDYYKKAUS
+## Sukellus syvemmälle:
 
-HTTP-pyynnöt ja perusautentikointi ovat olleet käytössä jo 90-luvulta lähtien. Basic-varmenteen lähettämisen sijaan voit käyttää myös Digest-varmennetta, joka tarjoaa paremman tietoturvan mutta on myös monimutkaisempi implementoida. Voit myös lähettää varmenteen käyttämällä Base64-koodausta, mutta tämä ei ole yhtä turvallinen kuin HTTPS-yhteys.
+Perusautentikointi on vanhin ja yksinkertaisin HTTP-autentikointimekanismi, joka on luotu 1990-luvun alkupuolella. Tästä huolimatta se on edelleen hyödyllinen, kun tarvitaan yksinkertaista tunnistautumismenettelyä.
 
-LISÄLUESTA
+Alternatiiveiksi voi tutkia OAuth, token-pohjainen autentikointi tai jopa SSL-sertifikaatin autentikointi. Valinta riippuu kuitenkin järjestelmän yksittäisistä tarpeista ja monimutkaisuudesta.
 
-Lisätietoja HTTP-pyynnöistä ja perusautentikoinnista löydät seuraavista lähteistä:
-- [HTTP-pyynnöt - W3Schools](https://www.w3schools.com/tags/ref_httpmethods.asp)
-- [Perusautentikointi - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [cURL Dokuwiki - Basic Authentication](https://curl.haxx.se/docs/httpscripting.html#BasicAuthentication)
+Perusautentikointi toimii lähettämällä HTTP-otsakkeina base64-koodattu käyttäjänimi ja salasana. Tämä tarkoittaa, ettei tietoa ole suojattu, joten HTTPS-protokollan käyttö on suositeltavaa tällaisten pyyntöjen suojaamiseksi.
+
+## Katso myös:
+
+1. [HTTP-autentikointi: Perus- ja Digest -autentikointi](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
+2. [Curl-komennon virallinen dokumentaatio](https://curl.se/docs/manpage.html)
+3. [Turvallisuus ja HTTP-pyynnöt](https://owasp.org/www-community/Secure_HTTP)

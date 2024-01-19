@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "Swift: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,29 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O quê e por quê?
 
-Ler argumentos da linha de comando é uma tarefa comum na programação Swift. Isso significa que um programa pode receber informações diretamente do usuário ao ser executado, em vez de ter que ser pré-definido. Programadores fazem isso para tornar seus programas mais interativos e flexíveis.
+A leitura de argumentos da linha de comando consiste em acessar os dados inseridos em um determinado comando no console. Programadores utilizam isso para controlar como o programa irá se comportar baseado nesses argumentos.
 
 ## Como fazer:
 
-Para ler argumentos da linha de comando em Swift, usamos a propriedade "arguments" do objeto "CommandLine". Aqui está um exemplo simples que imprime os argumentos fornecidos pelo usuário:
+Aqui está um exemplo de como ler argumentos da linha de comando:
 
 ```Swift
+import Foundation
+
+//Acessa os argumentos da linha de comando
 let arguments = CommandLine.arguments
-print(arguments)
+
+print("Há \(arguments.count) argumentos")
+
+for (index, argument) in arguments.enumerated() {
+    print("Argumento \(index): \(argument)")
+}
 ```
 
-Se executarmos este programa com o comando `swift program.swift argumento1 argumento2`, ele irá imprimir `[program.swift, argumento1, argumento2]`.
+Se você executar esse programa com o seguinte comando: `swift programa.swift primeiro_argumento segundo_argumento`, terá essa saída:
 
-## Profundando:
+```
+Há 3 argumentos
+Argumento 0: ./programa.swift
+Argumento 1: primeiro_argumento
+Argumento 2: segundo_argumento
+```
 
-Ler argumentos da linha de comando não é algo novo na programação. Na verdade, é uma técnica bastante utilizada em muitas linguagens de programação. Uma alternativa para isso em Swift seria usar a função "readLine" para receber entradas do usuário durante a execução do programa. No entanto, isso limitaria a flexibilidade e interatividade do programa.
+## Detalhando:
 
-Internamente, o Swift usa a biblioteca "libc" para ler os argumentos fornecidos pela linha de comando. Portanto, você também pode acessar essa biblioteca diretamente para uma implementação mais precisa.
+Historicamente, argumentos de linha de comando têm sido uma maneira efetiva de dar instruções a um programa. Eles são normalmente usados para iniciar um programa com configurações específicas.
+
+Alternativamente, muitas linguagens de programação oferecem bibliotecas que simplificam a leitura desses argumentos. Pode-se optar por essas alternativas dependendo da complexidade do input requerido.
+
+Falando sobre implementação em Swift, a classe `CommandLine` fornece acesso aos argumentos de linha de comando. O primeiro argumento `CommandLine.arguments[0]` é sempre o nome do programa.
 
 ## Veja também:
 
-- [A documentação oficial do Swift sobre a propriedade "arguments"](https://developer.apple.com/documentation/swift/commandline/1640901-arguments)
-- [Uma explicação mais detalhada sobre como ler argumentos da linha de comando em Swift](https://swiftrocks.com/reading-command-line-arguments-swift.html)
-- [A documentação oficial da biblioteca "libc"](https://developer.apple.com/documentation/swift/swift_standard_library/libc)
+Para mais detalhes, consulte:
+- [Documentação da Apple sobre a classe CommandLine](https://developer.apple.com/documentation/swift/commandline)
+- [Tutorial de Argumentos de Linha de Comando em Swift](https://www.raywenderlich.com/411-command-line-programs-on-macos-tutorial)
+- [Post no StackOverflow sobre Argumentos de Linha de Comando em Swift](https://stackoverflow.com/questions/24029633/how-do-you-use-command-line-arguments-in-swift)

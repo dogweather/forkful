@@ -1,7 +1,7 @@
 ---
-title:                "Radering av tecken som matchar ett mönster"
-html_title:           "Arduino: Radering av tecken som matchar ett mönster"
-simple_title:         "Radering av tecken som matchar ett mönster"
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,30 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att radera tecken som matchar ett mönster är en vanlig programmeringsteknik för att kunna manipulera textsträngar på ett effektivt sätt. Det används ofta för att ta bort oönskade tecken eller för att söka efter specifika mönster i en text.
+## Vad och Varför?
+Att ta bort tecken som matchar ett mönster handlar om att leta efter och eliminera specifik kod och andra tecken från ditt Arduino-program. Programmerare gör det för att förbättra kodens effektivitet, minska minnesanvändningen och göra programmet mer läsbart.
 
 ## Hur man gör:
-Här är ett enkelt exempel på hur du kan radera alla siffror från en textsträng:
+Här är exempel på hur du kan radera tecken som matchar ett mönster i Arduino:
+
 ```Arduino
-String text = "Hej123 vad456";
-for (int i = 0; i < text.length(); i++) {
-  if (isdigit(text.charAt(i))) {    // kollar om tecknet är en siffra
-    text.remove(i,1);               // tar bort tecknet på positionen
-    i--;                            // korrigerar loopen efter borttagningen
-  }
-}
-Serial.println(text);               // skriver ut "Hej vad"
+String str = "HejVärlden123";
+str.remove(str.indexOf('1'),3);
+Serial.println(str);    // Skriver ut "HejVärlden"
 ```
-I detta exempel använder vi en for-loop för att gå igenom varje tecken i textsträngen och kontrollera om det är en siffra med hjälp av funktionen `isdigit()`. Om det är en siffra, använder vi funktionen `remove()` för att ta bort tecknet från textsträngen och korrigerar sedan loopen så att den fortsätter på rätt position.
+Detta kodexempel tar bort alla tecken som börjar med '1' och de två tecknen som följer '1'.
 
-## Djupdykning:
-Att radera tecken som matchar ett mönster kan spåras tillbaka till programmeringsspråket C, där man använde funktionen `strpbrk()` för att hitta positionen för det första tecknet som matchade ett visst mönster. I andra moderna programmeringsspråk finns det inbyggda funktioner för att radera tecken från textsträngar, såsom `trim()` i Java.
+## Djup Dykning
+Detta är en teknik som går tillbaka till de tidiga dagarna av programmering. Ett alternativ till att ta bort tecken i en sträng är att ersätta dem. `str.replace('Hej', 'Hej Hej');` skulle ändra strängen till "Hej HejVärlden123". Du kan behöva manipulera strängar på detta sätt för att formatera data korrekt för olika I/O-enheter.
 
-Alternativ till att radera tecken är att ersätta dem med andra tecken, eller att använda funktioner för att söka efter specifika mönster och sedan manipulera textsträngen baserat på det. Det är också möjligt att använda reguljära uttryck (regular expressions) för mer avancerade mönstermatchning.
+Värdet som passas till remove-funktionen är indexet för det datum som ska tas bort. Var noga med att kontrollera att indexet inte är -1 (som det skulle vara om datumen inte finns) eftersom detta skulle kunna radera hela strängen i vissa implementationer.
 
-Implementeringen av att radera tecken som matchar ett mönster kan variera beroende på programmeringsspråk och plattform, men konceptet är detsamma. Det kräver en loop för att gå igenom varje tecken i textsträngen och en mekanism för att ta bort eller ersätta tecknen baserat på ett visst mönster.
+## Se även
+För mer information om string-manipulation i Arduino, kontrollera följande källor:
 
-## Se även:
-- [Dokumentation för Arduino String Class](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Information om reguljära uttryck i programmering](https://www.regular-expressions.info/)
+1. [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+2. [Manipulating Characters and Digging Deeper into ASCII in Arduino](https://create.arduino.cc/projecthub/electropeak/manipulating-characters-and-digging-deeper-into-ascii-in-arduino-fd6a45)
+3. [Arduino String Tutorial: How to Split a String into Substrings](https://lastminuteengineers.com/arduino-string-tutorial/)
+4. [Arduino Cookbook, Text Strings](https://www.oreilly.com/library/view/arduino-cookbook/9781449313876/ch04s07.html)

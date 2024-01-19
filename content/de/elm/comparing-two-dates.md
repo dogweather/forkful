@@ -1,7 +1,7 @@
 ---
-title:                "Vergleichen von zwei Datum"
-html_title:           "Elm: Vergleichen von zwei Datum"
-simple_title:         "Vergleichen von zwei Datum"
+title:                "Vergleich von zwei Daten"
+html_title:           "C#: Vergleich von zwei Daten"
+simple_title:         "Vergleich von zwei Daten"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Vergleichen von zwei bestimmten Datums ist ein häufiger Vorgang in der Programmierung. Es ermöglicht Programmierern, zu prüfen, ob zwei Datumsangaben gleich sind oder welches früher oder später liegt.
+# Elm-Programmierung: Vergleich von zwei Daten
 
-# Wie?
-Im Folgenden finden Sie zwei Beispiele, wie Sie in Elm zwei Datumsangaben miteinander vergleichen können:
+## Was & Warum?
+Der Datumsvergleich prüft, ob ein Datum vor, nach oder gleich einem anderen ist. Programmierer nutzen ihn, um in Apps zeitbezogene Logik zu implementieren, z. B. To-Do-Listen, Kalender usw.
 
-- Mit dem ```Date.compare``` Befehl können Sie zwei Datumsangaben vergleichen und erhalten entweder ```LT``` (lower than), ```EQ``` (equal) oder ```GT``` (greater than) als Ergebnis.
+## Wie geht das?
+Hier ist ein einfacher Code in Elm für den Vergleich zweier Daten:
 
-```
-Elm.Date.compare (Elm.Date.fromTime 1594624800) (Elm.Date.fromTime 1594871431)
--- GT
-```
+```Elm
+import Time exposing (..)
 
-- Ein weiterer Weg ist die Verwendung der Funktion ```compareDates```, die in der Elm-Standardbibliothek definiert ist. Diese Funktion gibt eine numerische Antwort zurück, wobei ```1``` für ```LT```, ```2``` für ```EQ``` und ```3``` für ```GT``` steht.
+datum1 = toTime (millisToPosix 1618236900000)
+datum2 = toTime (millisToPosix 1564617600000)
 
-```
-import Date exposing (..)
+vergleich = compare datum1 datum2
 
-compareDates
-    (fromTime 1594624800)
-    (fromTime 1594871431)
--- 3
+	case vergleich of
+		LT -> "Datum1 ist früher als Datum2"
+		EQ -> "Datum1 ist gleich Datum2"
+		GT -> "Datum1 ist später als Datum2"
 ```
 
-# Tiefere Einblicke
-Das Vergleichen von Daten ist ein wichtiger Teil der historischen Entwicklung der Programmiersprachen. Frühere Versionen von Sprachen wie C oder Java verfügten zunächst nicht über integrierte Funktionen oder Bibliotheken für Datumsvorgänge. Stattdessen mussten Entwickler ihre eigenen Methoden schreiben oder auf externe Bibliotheken zurückgreifen.
+Dieser Code wandelt Millisekunden in Datumsobjekte um und verwendet dann die Methode `compare` von Elm zur Überprüfung.
 
-Alternativen zur Vergleichung von Datein in Elm sind beispielsweise die Verwendung von Vergleichsoperatoren wie ```<``` und ```>```, die jedoch nur bei numerischen Datumsangaben anwendbar sind.
+## Tiefere Informationen
+Historischer Kontext: Elm hat seine Aktualisierungen von Zeit- und Datumsvergleichsfunktionen in neueren Versionen stetig verbessert. Frühere Versionen benötigten zusätzliche Pakete, um die heutigen nativen `Time`-Funktionen zu simulieren.
 
-Die Details der Implementierung von Datumsvorgängen in Elm sind in der offiziellen Dokumentation zu finden, einschließlich der Unterteilung von Datumswerten in Jahr, Monat, Tag usw.
+Alternativen: Es gibt Bibliotheken wie `elm-date-extra` und `justinmimbs/date`, die erweiterte Funktionen für Datumsoperationen bieten. Aber in den meisten Fällen genügt die grundlegende `Time`-Bibliothek.
 
-# Siehe auch
-Weitere Informationen und Beispiele zu Datumsvorgängen in Elm in der offiziellen Dokumentation unter https://elm-lang.org/.
+Implementierungsdetails: Die `compare`-Funktion vergleicht das Unix-Timestamp (die Anzahl der Millisekunden seit dem 1. Januar 1970) der beiden Daten und gibt eine der drei Werte `LT`, `EQ` oder `GT` zurück, die für "Kleiner als", "Gleich" und "Größer als" stehen.
+
+## Weitere Lektüre
+- Elm Time Bibliothek (https://package.elm-lang.org/packages/elm/time/latest/)
+- Elm Vergleichsfunktion (https://package.elm-lang.org/packages/elm/core/latest/Basics#compare)
+- Elm Date Extra Bibliothek (https://package.elm-lang.org/packages/elm-community/elm-date-extra/latest/)
+- Justin Mimbs' Datum Bibliothek (https://package.elm-lang.org/packages/justinmimbs/date/latest/)

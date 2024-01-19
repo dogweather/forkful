@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenfolge interpolieren"
-html_title:           "Haskell: Eine Zeichenfolge interpolieren"
-simple_title:         "Eine Zeichenfolge interpolieren"
+title:                "Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
+simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was ist das & Warum?
-Interpolation ist eine Technik, die es Programmierern ermöglicht, Variablen und Ausdrücke in einer Zeichenkette einzufügen. Dies kann hilfreich sein, um dynamische oder flexible Texte zu erstellen, beispielsweise in einer Benutzeroberfläche oder einer Website.
+## Was & Warum?
 
-# Wie geht's?
+Interpolation von Zeichenketten bezieht sich auf den Prozess der Einbettung von Ausdrücken in Zeichenketten, so dass sie zur Laufzeit ausgewertet werden. Programmierer verwenden es wegen seiner Benutzerfreundlichkeit und Effizienz bei der Erstellung dynamischer Strings.
+ 
+## Anleitung:
+
+In Haskell verwenden wir die Paket `Text.Printf` für Zeichenketteninterpolation. Hier sind einige Beispiele eingebettet.
+
 ```Haskell
--- Beispiel einer Zeichenkette ohne Interpolation
-let name = "Max"
-let age = 25
-let info = "Mein Name ist " ++ name ++ " und ich bin " ++ show age ++ " Jahre alt."
+import Text.Printf
 
--- Ergebnis: "Mein Name ist Max und ich bin 25 Jahre alt."
+main = do
+  let name = "John"
+  let age = 29
 
--- Mit Interpolation sieht der Code so aus:
-let name = "Max"
-let age = 25
-let info = "Mein Name ist #{name} und ich bin #{age} Jahre alt."
-
--- Ergebnis: "Mein Name ist Max und ich bin 25 Jahre alt."
+  let interpolatedString = printf "Hallo %s, du bist %d Jahre alt!\n" name age
+  
+  putStrLn interpolatedString
 ```
-Wie Sie sehen, können Variablen und Ausdrücke in der Zeichenkette mit `#{...}` eingefügt werden, anstatt diese mit `++` zu verketten.
 
-# Tiefer tauchen
-- Historischer Kontext: Interpolation wurde erstmals in der Programmiersprache Lisp eingeführt und hat sich seitdem zu einem gängigen Konzept in vielen Programmiersprachen entwickelt.
-- Alternativen: In einigen Sprachen, wie z.B. Python, gibt es die Funktion `format()`, die ähnliche Ergebnisse erzielt. Auch in Haskell gibt es einige Bibliotheken, die speziell für die Interpolation von Zeichenketten ausgelegt sind.
-- Implementierungsdetails: In Haskell wird die `show` Funktion verwendet, um Variablen in Zeichenketten umzuwandeln, während in anderen Sprachen die `to_s` oder `str()` Funktionen verwendet werden.
+Wenn Sie das obige Programm ausführen, sehen Sie etwas wie:
 
-# Sieh' auch
-- [Haskell-Dokumentation zur Verkettung von Zeichenketten](https://haskell.org/ghc/docs/latest/html/libraries/base-4.14.1.0/GHC-Base.html#v:-43-)
-- [Python-Dokumentation zur String-Formatierung](https://docs.python.org/3.7/library/stdtypes.html#str.format)
-- [Lisp-Referenz zur Interpolation von Zeichenketten](https://lisp.org/HyperSpec/Body/fun_format.html)
+```Haskell
+Hallo John, du bist 29 Jahre alt!
+```
+## Vertiefung:
+
+Historisch gesehen, ist Zeichenketteninterpolation ein Konzept, das in der Shell-Programmierung populär wurde und in vielen Hochsprachen übernommen wurde. In Haskell ist die `Text.Printf` Bibliothek für dieses Konzept verantwortlich. Es besteht auch die Alternative, einfache Konkatenation zu verwenden, aber Interpolation ist oft sauberer und lesbarer.
+
+Die Implementierung von `Text.Printf` in Haskell stützt sich auf Typklassen und variadische Funktionen. Sie erzeugt während der Kompilierung spezialisierten Code für jeden interpolierten String.
+
+## Weiterführende Informationen:
+
+Für komplexere Anwendungsfälle und weitere Informationen über Zeichenketteninterpolation in Haskell, kannst du folgende Ressourcen konsultieren:
+
+- Haskell Text.Printf Dokumentation: http://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html
+- Kaufen Sie das Buch "Real World Haskell" hier: http://book.realworldhaskell.org/
+- Weitere Informationen zur Zeichenkettenmanipulation in Haskell: https://wiki.haskell.org/Introduction

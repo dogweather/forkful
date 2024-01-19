@@ -1,6 +1,6 @@
 ---
 title:                "יצירת קובץ זמני"
-html_title:           "Java: יצירת קובץ זמני"
+html_title:           "C#: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Java"
 category:             "Java"
@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-יצירת קובץ זמני היא תהליך שמשמש ליצירת קובץ שימושי מקומי שיימחק בסופו של דבר. תהליך זה נעשה כדי לקבל גישה מיידית לקובץ זמני וכדי לאחסן נתונים באופן מתאים זמנית, תוך שימוש בשפת תכנות הג'אווה.
+## מה זה ולמה? 
 
-## איך לעשות:
-כאשר משתמשים בשפת תכנות הג'אווה, ניתן ליצור קובץ זמני באמצעות היצירה של אובייקט "File" ומתן לו שם או סימן ייחודי באמצעות הפונקציה "createTempFile". לדוגמה:
+יצירת קובץ זמני הוא תהליך בו מנוצלת מקום בדיסק כל עוד האפליקציה פעילה. מתכנתים עשויים לבחור ליצור קובץ זמני למגוון סיבות, אם זה לאחסון נתונים מחיצוני מאפליקציה שאינם נחוצים לאחר מכן, או להשתמש בותיק גיבוי שנמחק באופן אוטומטי.
 
-```Java
-// יצירת קובץ זמני בכתיבת "temp"
-File tempFile = File.createTempFile("temp", ".txt");
-```
+## איך לבצע:
 
-ניתן להשתמש גם בפונקציה "createTempFile" כדי ליצור קובץ זמני במיקום מסוים, כך שהקובץ ייווצר כחלק מהדרגת התת-קיבץ. לדוגמה:
+כדי ליצור קובץ זמני ב- Java, אנו משתמשים בפעולה `createTempFile()` של מחלקת `java.nio.file.Files`:
 
 ```Java
-// יצירת קובץ זמני בתת-קיבץ של קובץ "temp"
-File tempFile = File.createTempFile("temp", ".txt", new File("C:/myDir/tempFiles"));
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class TempFileCreation {
+    public static void main(String[] args) {
+        try {
+            Path tempFile = Files.createTempFile("myTempFile", ".txt");
+            System.out.println("Temporary file path: " + tempFile.toString());
+
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+}
+```
+הפלט של חלק הקוד הזה יהיה:
+
+```text
+Temporary file path: /tmp/myTempFile1234567890.txt
 ```
 
-על מנת למחוק את הקובץ זמני, נוכל להשתמש בפונקציה "delete" של אובייקט הקובץ. לדוגמה:
+## צלילה עמוקה
 
-```Java
-// מחיקת הקובץ זמני
-tempFile.delete();
-```
+יצירת קובצים זמניים הייתה חלק מ- Java מאז הגרסה 1.2, כדי לתמוך ביצירת קבצים באופן דינמי שאינם דורשים אחסון לאורך טווח. נוסף אליו, שיטות אחרות של יצירת קובצים זמניים כוללות השתמש במחלקת `java.io.File` (מתוך הגרסה הראשונה של Java), או באמצעות מנהלים למידע חיצוניים מהמערכת שלך, כמו Apache Commons IO.
 
-## התעמולה לעומק:
-יצירת קובץ זמני היא תהליך נפוץ וחשוב בתכנות. תהליך זה עוזר למתכנתים ליצור ולאחסן נתונים באופן מתאים זמנית עד שהם יוכלו להיות שלחו וליצור את הקובץ הסופי. בנוסף, יצירת קובץ זמני עוזרת למתכנתים לבדוק פעולות ולשלוח נתונים לתוך קובץ לפני הכתיבה אליו.
+במהלך יצירת קובץ זמני, Java מפעילה מספר פעולות: היא מחפשת מיקום במערכת הקבצים שבו יש מקום זמין, פותחת מקום בדיסק, ויוצרת הפניה לקובץ באופן שמאפשר לאפליקציה לגשת לו. ברגע שהאפליקציה מבצעת יציאה מלאה, המערכת אוטומטית מוחקת את כל הקבצים הזמניים שנוצרו.
 
-אתרים למידע נוסף:
+## ראה גם
 
-- תיעוד רשמי של המחלקה File: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
-- הסבר על פונקציות נוספות של יצירת קבצים זמניים: https://www.geeksforgeeks.org/file-class-in-java/#createTempFile() 
-
-## ראה גם:
-https://www.baeldung.com/java-temporary-files - מאמר מפורט יותר על יצירת קבצים זמניים בשפת הג'אווה.
+- Java API Documentation: [Path](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html)
+- Java API Documentation: [Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- Apache Commons IO: [File Utilities](https://commons.apache.org/proper/commons-io/javadocs/api-release/org/apache/commons/io/FileUtils.html)

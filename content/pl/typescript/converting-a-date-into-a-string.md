@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków"
-html_title:           "TypeScript: Konwertowanie daty na ciąg znaków"
-simple_title:         "Konwertowanie daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,27 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Konwersja daty na ciąg znaków oznacza przekształcenie danych zawierających informacje o dacie, np. 01/01/2020, w zapis tekstowy, np. stycznia pierwszego tysiąc dziewięćset dwudziestego roku. Programiści wykonują to przekształcenie, ponieważ jest to często potrzebne przy wyświetlaniu dat lub przetwarzaniu ich w różnych aplikacjach.
+# Zamieniamy Datę na Ciąg w TypeScript: Krótkie Wprowadzenie
+
+## Dlaczego i po co?
+Zamiana daty na ciąg znaków to proces, podczas którego obiekt daty jest konwertowany na ciąg znaków. Programiści robią to, aby łatwiej przechowywać, wyświetlać i manipulować datami w sposób dla ludzi zrozumiały.
 
 ## Jak to zrobić:
-W TypeScript konwersję daty na ciąg znaków można przeprowadzić za pomocą wbudowanej funkcji ```toString()```. Przykład użycia:
+Podstawowym narzędziem jest metoda `toISOString()`. Sprawdź poniższy kod.
+```TypeScript
+let data: Date = new Date();
+let ciag: string = data.toISOString();
+console.log(ciag);
 ```
-let date = new Date("2020/01/01");
-console.log(date.toString());
-// Output: Wed Jan 01 2020 00:00:00 GMT+0100 (czas środkowoeuropejski standardowy)
-```
-Można również użyć opcjonalnego parametru ```toLocaleDateString()``` do dostosowania formatu zwracanego ciągu znaków. Przykład:
-```
-let date = new Date("2020/01/01");
-console.log(date.toLocaleDateString("pl-PL"));
-// Output: 01.01.2020
+Po uruchomieniu kodu zobaczysz coś podobnego do tego: `2022-03-14T17:00:00.000Z`. To znaczy, że nasza data została poprawnie skonwertowana na ciąg znaków.
+
+Jeśli chcesz to zrobić ręcznie, możesz użyć metod `getDay()`, `getMonth()`, `getFullYear()`, itp.
+
+```TypeScript
+let data: Date = new Date();
+let ciag: string = `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`;
+console.log(ciag);
 ```
 
-## Głębsza analiza:
-Konwersja daty na ciąg znaków jest ważna ze względu na różne sposoby wyświetlania dat w różnych kulturach i językach. Można również skorzystać z bibliotek takich jak Moment.js, aby łatwiej manipulować datami lub zastosować własną logikę przekształcania daty w ciąg znaków.
+Wyjście będzie miało postać: `14/3/2022`.
 
-## Zobacz również:
-- [Dokumentacja TypeScript do funkcji ```toString()```](https://www.typescriptlang.org/docs/handbook/date-and-time.html#tostring)
-- [Biblioteka Moment.js](https://momentjs.com/)
-- [Poradnik na temat konwersji daty w TypeScript](https://www.geeksforgeeks.org/how-to-convert-date-to-string-in-typescript/)
+## Pogłębione informacje
+Metoda `toISOString()` jest częścią standardu ECMAScript od jego 5. edycji, opublikowanej w 2009 roku. Jest to sposób na konwersję daty do ciągu znaków zgodnie z formatem ISO 8601.
+
+Alternatywą jest użycie bibliotek zewnętrznych, takich jak Moment.js, które oferują bardziej rozbudowane i konfigurowalne opcje konwersji dat.
+
+W praktyce, metoda `toISOString()` polega na wywołaniu natywnych funkcji JavaScript do pobrania wartości dni, miesięcy i lat, a następnie sklejeniu ich razem w odpowiednim formacie.
+
+## Zobacz też
+1. [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+2. [ECMAScript Specifications](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+3. [Moment.js library](https://momentjs.com/)
+4. [ISO 8601 Date Formats](https://www.iso.org/iso-8601-date-and-time-format.html)

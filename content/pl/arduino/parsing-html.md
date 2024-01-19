@@ -1,7 +1,7 @@
 ---
-title:                "Analiza składni HTML"
-html_title:           "Arduino: Analiza składni HTML"
-simple_title:         "Analiza składni HTML"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,43 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co&dlaczego?
-Parsing HTML to proces, który pozwala programistom na analizowanie i przetwarzanie kodu źródłowego stron internetowych. Wykorzystuje się go w celu pobierania i wyświetlania zawartości witryn, wyodrębniania określonych informacji lub weryfikacji poprawności formatowania. Jest to niezbędne narzędzie dla twórców aplikacji internetowych i automatycznych robotów przeglądających sieci.
+## Co & Dlaczego?
+
+Analiza składniowa HTML polega na czytaniu i analizowaniu kodu HTML w celu zrozumienia jego struktury i zawartości. Programiści robią to, aby wykorzystać, wydobyć lub manipulować danymi zawartymi w stronach internetowych.
 
 ## Jak to zrobić:
+
+Teraz zrozumiesz podstawy analizy składni HTML. Poniżej podaję przykładowy kod z użyciem Arduino wraz z wyjściem.
+
 ```Arduino
-#include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
+#include <Ethernet.h>
+#include <HTMLParser.h>
+
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+IPAddress ip(192,168,1,1);
+EthernetClient client;
+HTMLParser htmlParser;
 
 void setup() {
-  Serial.begin(115200); // inicjacja portu szeregowego
-  WiFi.begin("WIFI nazwa sieci", "WIFI hasło"); // połączenie z siecią 
-  while (WiFi.status() != WL_CONNECTED) { //pętla oczekująca 
-    delay(500);
-    Serial.println("Connecting to WiFi..");
-  }
+    Serial.begin(9600); 
+    Ethernet.begin(mac, ip); 
 }
 
 void loop() {
-  if (WiFi.status() == WL_CONNECTED) {
-    HTTPClient http; //deklaracja obiektu HTTPClient
-    http.begin("http://blabla.com/"); //adres żądanej strony
-    int httpCode = http.GET(); //wysłanie żądania GET
-    if (httpCode > 0) {
-      String payload = http.getString(); //przypisanie odpowiedzi do stringa
-      Serial.println(payload); //wyświetlenie odpowiedzi w serial monitorze
+    if (client.connect("www.example.com", 80)) {
+     client.println("GET / HTTP/1.1");
+     client.println("Host: www.example.com");
+     client.println("Connection: close");
+     client.println();
+     htmlParser.begin();
+     while(client.connected() && !client.available()); 
+     while (client.available()){
+        htmlParser.processInput((char)client.read());
+     }
+    client.stop();
     }
-    http.end(); //zakończenie sesji HTTP
-    
-  }
-  delay(5000); // opóźnienie między kolejnymi żądaniami
 }
 ```
 
-## W zagłębienie:
-Parsing HTML istniał już w latach 90-tych, a jego popularność zwiększyła się wraz z rozwojem aplikacji internetowych. W alternatywnych podejściach do przetwarzania kodu HTML wykorzystuje się również inne narzędzia, takie jak XPath czy BeautifulSoup. W przypadku implementacji w Arduino, należy jednak uważać na zużycie pamięci i czas wykonania, ponieważ analiza kodu źródłowego może wymagać dużej ilości zasobów.
+Tutaj skrypt łączy się z www.example.com i przeprowadza analize składni HTML strony głównej.
 
-## Zobacz też:
-- Dokumentacja Arduino: https://www.arduino.cc/reference/en/libraries/webservicesclient/
-- Instrukcje tworzenia aplikacji internetowych: https://developer.mozilla.org/pl/docs/Web/API/Document_Object_Model
-- Poradnik dla początkujących w programowaniu Arduino: https://www.arduino.cc/en/Guide/HomePage
+## Głębsze zanurzenie
+
+Analiza składniowa HTML ma swoje korzenie w początkach tworzenia sieci, kiedy strony internetowe były tworzone i przeglądane w postaci czystego kodu HTML. Uzyskanie dostępu do treści strony wymagało "rozumienia" kodu HTML, stąd konieczność analizy składniowej. Istnieją alternatywy dla analizy składniowej HTML, takie jak wykorzystanie API, które zwraca dane w bardziej przyswajalnym formacie, takim jak JSON. Jednakże, nie wszystkie strony oferują API i czasami analiza składniowa HTML jest jedynym sposobem na dostęp do danych.
+
+## Zobacz też
+
+- Dokumentacja Arduino: https://www.arduino.cc/reference/en/
+- Instrukcje dla innych procesorów HTML: https://htmlparser.sourceforge.io/
+- Przykładowe projekty Arduino: https://create.arduino.cc/projecthub
+
+Produktywnego kodowania! Pomocne mogą być te dodatkowe źródła.

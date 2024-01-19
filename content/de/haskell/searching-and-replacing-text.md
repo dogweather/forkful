@@ -1,7 +1,7 @@
 ---
-title:                "Textsuche und -ersetzung"
-html_title:           "Haskell: Textsuche und -ersetzung"
-simple_title:         "Textsuche und -ersetzung"
+title:                "Suchen und Ersetzen von Text"
+html_title:           "C#: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,39 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
+# Suchen und Ersetzen von Text in Haskell
 
-Suchen und Ersetzen von Text ist eine häufige Aufgabe beim Programmieren, bei der spezifische Textsequenzen in einem größeren Text gesucht und durch andere ersetzt werden. Programmierer nutzen diese Funktion häufig, um schnell und effizient wiederkehrende Textelemente zu ändern oder zu aktualisieren.
+## Was & Warum?
 
-So geht's:
+Textsuche und -ersetzung sind Vorgänge, bei denen spezifische Zeichenfolgen in einem Text gefunden (gesucht) und durch andere Zeichenfolgen ersetzt werden. Programmierer tun dies, um automatische Textmodifikationen durchzuführen, Daten zu bereinigen oder zu analysieren.
 
-Eine einfache Möglichkeit, Text in Haskell zu suchen und zu ersetzen, ist die Verwendung der ```substitute``` Funktion aus dem Paket ```Data.String.Utils```. Diese Funktion akzeptiert drei Argumente: den Text, in dem die Ersetzungen durchgeführt werden sollen, den zu suchenden Text und den Ersatztext. Hier ist ein Beispiel:
+## So geht's
 
-```Haskell
-import Data.String.Utils
-let text = "Hallo, ich bin ein Text."
-let newText = substitute text "Hallo" "Guten Tag"
-```
-
-Das Ergebnis ist der Text ```"Guten Tag, ich bin ein Text."```, da alle Vorkommen des Textes "Hallo" durch "Guten Tag" ersetzt wurden.
-
-Eine andere Möglichkeit ist die Verwendung der Funktion ```replace``` aus dem Paket ```Text.Regex``` in Kombination mit regulären Ausdrücken. Diese Methode ist etwas komplexer, bietet jedoch mehr Flexibilität für komplexere Such- und Ersetzungsmuster. Hier ist ein Beispiel:
+Einfacher Textaustausch lässt sich mit der eingebauten `Data.List.Utils`-Bibliothek realisieren.
 
 ```Haskell
-import Text.Regex
-let text = "Die Sonne scheint im Sommer."
-let pattern = mkRegex "Sommer"
-let newText = subRegex pattern text "Herbst"
+import Data.List.Utils
+main = do
+ let str = "Hallo, Haskell!"
+ putStrLn $ replace "Haskell" "Welt" str
 ```
 
-Das Ergebnis ist der Text ```"Die Sonne scheint im Herbst."```, da der Text "Sommer" durch "Herbst" ersetzt wurde.
+Ausgabe:
 
-Tiefgehende Einblicke:
+```Haskell
+Hallo, Welt!
+```
 
-Das Suchen und Ersetzen von Text hat eine lange Geschichte in der Informatik, wobei bereits frühe Texteditoren in den 1970er Jahren solche Funktionen boten. Heutzutage ist es eine grundlegende Funktion in den meisten Programmiersprachen und wird von Programmierern auf der ganzen Welt genutzt. Neben den oben genannten Methoden gibt es noch viele weitere Möglichkeiten, Text in Haskell zu durchsuchen und zu ersetzen, wie beispielsweise die Verwendung von regulären Ausdrücken mit dem Paket ```Text.Regex.Posix``` oder die Implementierung eigener Algorithmen.
+Für komplexe Fälle, etwa bei regulären Ausdrücken und mehrfachen Austausch, empfehlen wir die Verwendung der `Text.Regex`-Bibliothek.
 
-Siehe auch:
+```Haskell
+import Text.Regex (subRegex, mkRegex)
+main = do
+ let regex = mkRegex "a[0-9]+"
+ putStrLn $ subRegex regex "a123 b456 a789" "x"
+```
 
-- https://hackage.haskell.org/package/base/docs/Data-String-Utils.html
-- https://hackage.haskell.org/package/regex-compat/docs/Text-Regex.html
-- https://www.haskell.org/haskellwiki/Regex_Tutorial
+Ausgabe:
+
+```Haskell
+x b456 x
+```
+
+## Tief tauchen
+
+Die Technik des Suchens und Ersetzens ist ein Standbein des Text-Editierens und -Verarbeitens, seit dessen Anfängen in den 1940er Jahren. 
+
+Mit Alternativen wie `Data.Text` lässt sich ebenso Text suchen und ersetzen, und es ist oft sinnvoll, die passende Bibliothek für Ihre spezifischen Bedürfnisse auszuwählen.
+
+Die Implementierung von Such- und Ersetzvorgängen in Haskell beruht auf rein funktionaler Programmierung. Im Gegensatz zu imperativen Sprachen werden Daten hier nicht verändert, sondern es werden neue Daten erzeugt.
+
+## Siehe auch
+
+- [Haskell Tutorial](https://www.haskell.org/tutorial/)
+- [Data.List.Utils Dokumentation](http://hackage.haskell.org/package/MissingH-1.4.0.1/docs/Data-List-Utils.html)
+- [Text.Regex Dokumentation](http://hackage.haskell.org/package/regex-compat-0.95.2.0/docs/Text-Regex.html)

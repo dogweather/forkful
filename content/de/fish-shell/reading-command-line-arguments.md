@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Eingabeparametern"
-html_title:           "Fish Shell: Lesen von Eingabeparametern"
-simple_title:         "Lesen von Eingabeparametern"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -11,32 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Kommandozeilenargumente werden beim Ausführen eines Programms übergeben und können das Verhalten des Programms steuern. Programmierer nutzen diese Funktion, um ihre Programme flexibler und wiederverwendbarer zu machen.
 
-Das Lesen von Befehlszeilenargumenten ist ein grundlegender Teil der Programmierung in Fish Shell. Es ermöglicht Programmierern, Eingaben von Benutzern effizient zu verarbeiten und ihre Programme interaktiver zu gestalten.
+## So geht's
+Fish Shell macht es sehr einfach, Kommandozeilenargumente zu lesen. Hier ist ein einfaches Beispiel:
 
-## Wie das geht:
-Fish Shell bietet eine einfache Syntax zum Lesen von Argumenten aus der Befehlszeile. Hier ist ein Beispiel:
-
-```Fish Shell
-set name $argv[1]
-echo "Hallo, $name!"
-```
-Dieser Code liest das erste Argument von der Befehlszeile und weist es der Variable "name" zu. Dann wird der Wert dieser Variable in einer Ausgabe verwendet.
-
-Wenn wir also Folgendes in der Befehlszeile eingeben:
-
-```
-fish read-arguments.fish Max
-```
-erhalten wir die Ausgabe:
-```
-Hallo, Max!
+```fish
+function greet
+  echo "Hallo, $argv[1]"
+end
 ```
 
-## Tiefere Einblicke:
-Das Lesen von Befehlszeilenargumenten ist keine Erfindung von Fish Shell. Es ist ein Konzept, das in vielen anderen Programmiersprachen und Shell-Umgebungen verwendet wird. Einige alternative Methoden zum Lesen von Argumenten sind die Verwendung von Umgebungsvariablen oder die Verwendung des Programmierungsmusters "Option-Argument". Die Implementierung von Argumentenlesung in Fish Shell basiert auf der Verwendung des globalen argv-Arrays.
+Ausführung und Ausgabe:
 
-## Siehe auch:
-- [Die offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
-- [Ein Tutorial zum Lesen von Argumenten in Fish Shell](https://medium.com/@clauswitt/how-to-get-command-line-arguments-in-fish-shell-730d69c6b7a3)
-- [Weitere Informationen zu Alternativen zum Lesen von Argumenten](https://stackoverflow.com/questions/14496251/what-is-the-difference-between-command-line-arguments-and-environment-variables)
+```fish
+> greet Welt
+Hallo, Welt
+```
+
+In diesem Beispiel enthält `argv[1]` das erste Argument, das an die Funktion übergeben wird.
+
+## Vertiefung
+Kommandozeilenargumente gibt es schon lange in der Programmierung. Ursprünglich wurden sie in Shell-Skripts verwendet, aber jetzt sind sie in den meisten modernen Programmiersprachen vorhanden.
+
+Es gibt auch andere Wege, Argumente in Fish Shell zu verarbeiten, z.B. mit der `for-in`-Schleife:
+
+```fish
+function greet_all
+  for name in $argv
+    echo "Hallo, $name"
+  end
+end
+```
+
+Aber egal, welche Methode Sie verwenden, die Essenz bleibt gleich: Sie können das Verhalten Ihres Programms steuern, indem Sie Argumente von der Kommandozeile lesen.
+
+## Weiterführende Informationen
+Für weitere Informationen über die Fish Shell und ihre Funktionalität, besuchen Sie die offizielle Dokumentation ([Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)) und das Fish Shell GitHub Repository ([Fish Shell auf GitHub](https://github.com/fish-shell/fish-shell)). Hier finden Sie mehr Beispiele und detailliertere Erklärungen.

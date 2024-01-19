@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till små bokstäver"
-html_title:           "TypeScript: Omvandla en sträng till små bokstäver"
-simple_title:         "Omvandla en sträng till små bokstäver"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,29 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att konvertera en sträng till gemener (lower case) innebär att alla bokstäver i strängen omvandlas till små bokstäver. Programerare gör detta för att underlätta för användaren att söka och jämföra strängar på ett enhetligt sätt.
+## Vad & Varför?
 
-# Hur gör man:
+Att konvertera en sträng till gemen (lower case) innebär att ändra alla stora bokstäver i en sträng till små. Programmerare gör detta vanligtvis för att standardisera datainsamling och underlätta jämförelser eller sökningar, då JavaScript är skiftlägeskänslig.
+
+## Hur till:
+
+I TypeScript, kan du använda metoden `toLowerCase()` för att konvertera alla tecken i en sträng till gemener. 
+
 ```TypeScript
-
-// Exempel 1:
-const str = "Hej Världen!";
-console.log(str.toLowerCase());
-// Output: "hej världen!"
-
-// Exempel 2:
-const name = "Sara";
-const lowerName = name.toLowerCase();
-console.log(`Hej ${lowerName}!`);
-// Output: "Hej sara!"
+let minStrang: string = "HeJ SvErIgE!";
+console.log(minStrang.toLowerCase()); // utskrift: "hej sverige!"
 ```
 
-# Djupdykning:
-Att konvertera strängar till gemener har funnits sedan datorernas tidiga dagar. Det användes vanligtvis för att spara plats och undvika förvirring vid jämförelser. En alternativ metod är att använda metoden `toUpperCase()` för att konvertera alla bokstäver till versaler istället.
+I kodbiten ovan skapas en sträng `minStrang`. Vi använder sedan metoden `toLowerCase()` för att konvertera strängen till små bokstäver och skriva ut den.
 
-När det kommer till implementation använder de flesta språk en inbyggd funktion eller metod för att utföra denna konvertering. I TypeScript, används metoden `toLowerCase()` på en sträng för att returnera en ny sträng med gemener.
+## Fördjupning
 
-# Se även:
-- [TypeScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
-- [TypeScript String Manipulation](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#string-manipulation-under-the-hood)
+Funktionen att konvertera strängar till gemener har funnits i programmeringsspråk sedan länge, särskilt eftersom de är skiftlägeskänsliga. TypeScript, som är ett superset av JavaScript, har ärvt denna funktion.
+
+Ett alternativ till `toLowerCase()` är `toLocaleLowerCase()`. Skillnaden ligger i att `toLocaleLowerCase()` tar hänsyn till språkspecifika regler för konvertering av strängar till små bokstäver. I de flesta fall kommer dock resultaten vara desamma.
+
+```TypeScript
+let minStrang: string = "HeJ ÅÄÖ!";
+console.log(minStrang.toLocaleLowerCase('sv-SE')); // utskrift: "hej åäö!"
+```
+
+Observera att `toLowerCase()` - och också `toLocaleLowerCase()` - inte ändrar den ursprungliga strängen. De returnerar en ny sträng.
+
+## Se även:
+
+1. [MDN Web Docs: toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+2. [MDN Web Docs: toLocaleLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
+3. [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/basic-types.html#string) 
+4. [StackOverflow: Difference between toLowerCase() and toLocaleLowerCase()](https://stackoverflow.com/questions/26882631/javascript-difference-between-tolowercase-and-tolocalelowercase)

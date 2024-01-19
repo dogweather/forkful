@@ -1,7 +1,7 @@
 ---
-title:                "サブストリングの抽出"
-html_title:           "Haskell: サブストリングの抽出"
-simple_title:         "サブストリングの抽出"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,34 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？
-文字列から部分文字列を取り出すことは、プログラマーがよく行う作業の一つです。例えば、日付を含む文字列から日付部分のみを抽出したり、メールアドレスのドメイン部分を取り出したりすることができます。文字列操作の一つとして、有用なテクニックと言えるでしょう。
+## 何となぜ ?
 
-## 方法：
-### Haskellの場合
+部分文字列の抽出は、大きな文字列から任意のサブセット（部分文字列）を取得することです。これは、データ解析やテキスト処理において特定の情報を見つけ出すのに役立ちます。
+
+## 使い方 :
+
+以下のコードを見てみましょう。
+
 ```Haskell
--- Date
-take 10 "2021-07-25"
--- 出力: "2021-07-25"
--- Domain
-drop 11 "example@example.com"
--- 出力: "example.com"
+import Data.List.Split
+
+substring :: Int -> Int -> String -> String
+substring start end = unwords . take (end-start+1) . drop start . words
 ```
-Haskellでは、```take```と```drop```という関数を使うことで、文字列の任意の部分を抽出することができます。```take```関数は、指定した数の文字を文字列の最初から取り出します。```drop```関数は、指定した数の文字を文字列の最初から削除した後の文字列を返します。
 
-### 他言語の場合
-他の言語でも同じような機能を持つ関数やメソッドがある場合があります。例えば、JavaScriptでは、```substring```メソッドを使うことで部分文字列を抽出することができます。また、Pythonでは、文字列をスライスすることで同じような操作が可能です。
+上記コードを実行すると、例えば、
 
-## 深堀り
-### 歴史的背景
-文字列から部分文字列を抽出する方法は、コンピュータサイエンスの分野でも古くから研究されてきました。古典的なアルゴリズムであるKnuth-Morris-Prattアルゴリズムは、文字列から特定の文字列を検索する際に使用されますが、その中にも文字列の部分を抽出する機能が含まれています。
+```Haskell
+main :: IO ()
+main = print(substring 2 4 "Hello world from Haskell")
+```
 
-### 代替手段
-文字列操作を行う他の方法として、正規表現があります。正規表現は、より複雑なパターンマッチングを可能にするため、より高度な機能を持っています。しかし、単純な部分文字列の抽出であれば、正規表現を使うよりも上記の方法の方がシンプルでより効率的です。
+この実行結果は `"world from Haskell"` です。
 
-### 実装の詳細
-Haskellの```take```と```drop```の実装は、文字列と数値を受け取り、指定された数の文字を取り出す/削除する処理を行うものです。文字列の部分を抽出する場合、実際に文字列のコピーを作成して抽出された部分を返すわけではありません。代わりに、オリジナルの文字列を参照する範囲を変更して、必要な部分を取得します。これにより、余分なメモリ使用量が削減され、より効率的な操作が可能になります。
+## 深堀り :
 
-## 関連リンク
-- [Haskellドキュメント - 文字列操作の基本](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/ghc-prim-0.7.0.0/GHC-Prim.html#t:ByteArray)
-- [正規表現チュートリアル](https://regexone.com/)
+- 歴史的文脈 :
+部分文字列の抽出は古くからあるテキスト処理の一部であり、数多くのプログラミング言語でサポートされています。
+
+- 代替手段 :
+Haskellの`Data.List.Split`ライブラリは非常に多機能であり、強力なテキスト処理機能を提供しています。しかし、特別な理由がなければ、上記の関数のような自作の関数でも十分なことが多いです。
+
+- 実装詳細 :
+`substring`関数は、単純なリスト操作（`drop`と`take`）を利用しています。まず`drop`で必要な開始位置まで要素をスキップし、その後`take`で必要な数の要素を取得します。
+
+## 他にも :
+
+Haskellについてさらに学びたい方は、以下のリンクをご参照ください：
+
+- Haskellの公式チュートリアル : [https://www.haskell.org/tutorial/](https://www.haskell.org/tutorial/)
+- 抽出部分文字列の例 : [https://stackoverflow.com/questions/18892281/substring-in-haskell](https://stackoverflow.com/questions/18892281/substring-in-haskell)

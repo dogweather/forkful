@@ -1,7 +1,7 @@
 ---
-title:                "Entfernen von Zeichen, die einem Muster entsprechen"
-html_title:           "C++: Entfernen von Zeichen, die einem Muster entsprechen"
-simple_title:         "Entfernen von Zeichen, die einem Muster entsprechen"
+title:                "Zeichen löschen, die einem Muster entsprechen"
+html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,37 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# C++ Zeichenketten durch ein Muster ersetzen
+
 ## Was & Warum?
-Das Löschen von Zeichen, die zu einem bestimmten Muster passen, ist eine häufig verwendete Programmieraufgabe, bei der Zeichenfolgen manipuliert werden, um bestimmte Muster zu entfernen. Programmierer tun dies, um Texte zu bereinigen oder um Informationen zu extrahieren.
 
-## Wie geht's?
-Es gibt verschiedene Möglichkeiten, Zeichenfolgen in C++ zu manipulieren, um Zeichen zu löschen, die einem bestimmten Muster entsprechen. Einfacher ausgedrückt, lassen sich Zeichenfolgen mit der `erase()` Funktion bearbeiten. Hier ist ein Beispiel:
-```C++
-std::string text = "Hallo Welt";
-text.erase(0, 6);
-std::cout << text;
-```
-Das oben gezeigte Beispiel löscht die ersten sechs Zeichen in der Zeichenfolge `text` und gibt "Welt" aus. Der erste Parameter gibt den Index an, an dem das Löschen beginnen soll, und der zweite Parameter gibt die Anzahl der zu löschenden Zeichen an.
+Im Wesentlichen geht es beim Löschen von Zeichen, die einem Muster entsprechen, darum, unerwünschte Elemente aus einer Zeichenkette zu entfernen. Dies ist besonders nützlich, um den Code sauber und fehlerfrei zu halten.
 
-Es gibt auch die Möglichkeit, eine Schleife zu verwenden, um durch die Zeichenfolge zu iterieren und jedes Zeichen zu überprüfen, ob es dem gesuchten Muster entspricht. Wenn dies der Fall ist, kann das Zeichen gelöscht werden. Hier ist ein Beispiel:
+## Anleitung:
+
+Die C++ `<algorithm>` und `<string>` Bibliotheken zusammen machen diese Aufgabe relativ leicht. Im folgenden Beispiel ersetzen wir alle cvowels mit dem '-' Zeichen.
+
 ```C++
-std::string text = "Hallo Welt";
-for (unsigned int i = 0; i < text.length(); i++) {
-  if (text[i] == 'e') {
-    text.erase(i, 1);
-  }
+#include <algorithm>
+#include <string>
+#include <iostream>
+
+int main() {
+    std::string str = "Awesome C++ programming!";
+    const std::string vowels = "aeiou";
+
+    std::replace_if(str.begin(), str.end(), 
+                    [&vowels](const char& c) {
+                        return vowels.find(tolower(c)) != std::string::npos; 
+                    }, 
+                    '-');
+                      
+    std::cout << str << std::endl;
+  
+    return 0;
 }
-std::cout << text;
 ```
-Dieses Beispiel löscht alle "e"s in der Zeichenfolge `text` und gibt "Hallo Wlt" aus.
+Dieser Code gibt folgendes aus: 
 
-## Tief tauchen
-Das Löschen von Zeichen in einer Zeichenfolge ist eine gängige Aufgabe in der Programmierung und es gibt viele Möglichkeiten, dies zu tun. Beispielsweise können Reguläre Ausdrücke verwendet werden, um komplexe Muster zu erkennen und zu löschen. Auch gibt es Funktionen wie `replace()` und `substr()`, die zur Manipulation von Zeichenfolgen verwendet werden können.
+```
+'-w-s-m- C++ pr-gr-mm-ng!'
+```
 
-Bei der Implementierung ist es wichtig, darauf zu achten, dass die Anzahl der Zeichen in der Zeichenfolge nach dem Löschen möglicherweise nicht mehr mit dem ursprünglichen Wert übereinstimmt. Daher sollte die Länge der Zeichenfolge nach dem Löschen überprüft werden.
+## Vertiefung:
 
-## Siehe auch
-* [C++ Referenz - `erase()`](https://en.cppreference.com/w/cpp/string/basic_string/erase)
-* [C++ Referenz - `replace()`](https://en.cppreference.com/w/cpp/string/basic_string/replace)
-* [C++ Referenz - `substr()`](https://en.cppreference.com/w/cpp/string/basic_string/substr)
-* [Reguläre Ausdrücke in C++](https://www.regular-expressions.info/cpp.html)
+Historisch gesehen musste dies manuell mit Schleifen und bedingten Anweisungen erreicht werden, was zeitaufwändig und fehleranfällig war. Mit den `<algorithm>` und `<string>` Bibliotheken wird dieser Prozess jetzt erheblich vereinfacht.
+
+Es gibt Alternativen zur Methode `.replace_if()`, z.B. die Nutzung von regulären Ausdrücken, die jedoch oft komplexer in ihrem Gebrauch sind. 
+
+Was die Implementierungsdetails betrifft, so läuft `.replace_if()` durch die Zeichenkette und prüft jeden Charakter gegen das Muster. Wenn eine Übereinstimmung gefunden wird, ersetzt es das Zeichen. Seine Komplexität ist linear und abhängig von der Länge der Zeichenkette.
+
+## Siehe Auch:
+
+- [C++ Reference - replace_if](http://www.cplusplus.com/reference/algorithm/replace_if/)
+- [StackOverflow - How to replace all letters in a string?](https://stackoverflow.com/questions/415432/how-to-replace-all-occurrences-of-characters-in-a-c-string)
+- [C++ Reference - Reguläre Ausdrücke (RegEx)](http://www.cplusplus.com/reference/regex/)

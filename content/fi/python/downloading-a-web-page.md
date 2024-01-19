@@ -1,7 +1,7 @@
 ---
-title:                "Verkkosivun lataus"
-html_title:           "Python: Verkkosivun lataus"
-simple_title:         "Verkkosivun lataus"
+title:                "Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
+simple_title:         "Verkkosivun lataaminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Lataaminen verkkosivulta tarkoittaa sen sisällön kopioimista internetistä omalle tietokoneellesi. Ohjelmoijat tekevät tätä, jotta he voivat käyttää kyseistä sivustoa ja sen tietoja muiden ohjelmien kanssa.
+## Mikä & Miksi?
 
-## Miten:
+Verkkosivun lataaminen on prosessi, jossa tiedot tuotetaan koneellesi verkkosivulta. Ohjelmoijat tekevät tämän tietojen kaapimiseksi tai offline-käyttöä varten.
+
+## Kuinka:
+
+Pythonissa voit käyttää `requests`-kirjastoa verkkosivun lataamiseen. Tässä on esimerkki:
+
 ```Python
 import requests
 
-# Lataa verkkosivu sivustolta
-response = requests.get("https://www.esimerkkisivusto.com")
+url = "http://www.python.org"
+response = requests.get(url)
 
-# Tulosta verkkosivun sisältö
 print(response.text)
 ```
 
-Tulostaa:
+Kun suoritat yllä olevan koodin, saat outputin, joka näyttää Python.org-verkkosivun HTML-koodin.
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-<title>Esimerkkisivusto</title>
-</head>
-<body>
-<h1>Tervetuloa Esimerkkisivustolle!</h1>
-<p>Täältä löydät kaikenlaista hyödyllistä tietoa.</p>
-</body>
-</html>
+## Syvempi sukellus:
+
+Historiallisesti verkkosivun lataaminen on ollut välttämätöntä, jotta voimme käyttää tai tutkia sivun tietoja. Pythonin `requests`-kirjasto on suosituin työkalu tähän, mutta on muitakin vaihtoehtoja, kuten `urllib` ja `httplib`.
+
+Tässä on esimerkki verkkosivun lataamisesta käyttämällä `urllib`-kirjastoa:
+
+```Python
+from urllib.request import urlopen
+
+url = "http://www.python.org"
+response = urlopen(url)
+
+print(response.read().decode())
 ```
 
-## Syvällinen sukellus:
-Lataaminen verkkosivulta oli aikoinaan yleistä näppäimistöllä ja hiirellä, mutta nykyään se tapahtuu useimmiten automaattisesti ohjelmallisesti. Pythonissa voit käyttää pakettia nimeltä "requests" ladataksesi verkkosivun. Jos etsit vaihtoehtoja, voit myös käyttää muita paketteja, kuten "urllib" tai "urllib2". Voit myös ladata verkkosivun käyttäen komentokehotetta tai työkalua nimeltä "curl". 
-
 ## Katso myös:
-- [Requests-dokumentaatio](http://docs.python-requests.org/en/master/)
-- [Urllib-dokumentaatio](https://docs.python.org/3/library/urllib.html)
-- [Curl-dokumentaatio](https://curl.haxx.se/docs/)
+
+- Python requests dokumentaatio: http://docs.python-requests.org/en/latest/
+- urllib — URL handling modules: https://docs.python.org/3/library/urllib.html
+- http.client - HTTP protocol client: https://docs.python.org/3/library/http.client.html

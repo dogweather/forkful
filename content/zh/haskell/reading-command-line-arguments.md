@@ -1,6 +1,6 @@
 ---
 title:                "读取命令行参数"
-html_title:           "Haskell: 读取命令行参数"
+html_title:           "C: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是读取命令行参数以及为什么程序员要这样做？
+## 什么 & 为什么?
+命令行参数用于传递信息给程序。程序员使用它来从用户那里获取程序应如何工作的信息，大大增加了程序的灵活性。
 
-读取命令行参数是指程序能够提取用户在命令行中输入的信息，并在程序中使用这些参数。程序员经常需要这样做，因为这样可以使程序更加灵活和可配置，用户可以通过命令行来修改程序的行为。
+## 怎么做:
+在Haskell中，你可以使用System.Environment库来操作命令行参数：
 
-## 如何实现：
-
-Haskell提供了一个标准库函数```getArgs```，可以用来读取命令行参数。下面是一个示例代码，它会打印出用户输入的所有参数：
-
-``` Haskell
+```Haskell
 import System.Environment
 
+main :: IO ()
 main = do
   args <- getArgs
   print args
 ```
+在命令行运行这个程序，如下所示：
 
-假设在命令行中输入以下命令： ```runhaskell demo.hs hello world```
+```shell
+$ ghc main.hs
+$ ./main arg1 arg2 arg3
+["arg1","arg2","arg3"]
+```
+这个程序会接收任何您传递的命令行参数（"arg1", "arg2", "arg3"），然后打印它们。
 
-程序的输出结果将会是： ```["hello", "world"]```
+## 深度解析：
+(1) 历史背景: Haskell语言是在1987年设计的，这种利用命令行参数的方法是从早期的编程语言如C和FORTRAN中借鉴过来的。
+(2) 替代方式: `getProgName` 函数可以获得正在运行的程序的名字，而不是它的参数。
+(3) 实现细节: 在Haskell中，命令行参数通过列表的形式展示，列表中每个元素都是一个字符串。
 
-## 深入了解：
-
-读取命令行参数的概念起源于早期的计算机操作系统，它允许用户通过命令行来控制程序的行为。除了Haskell提供的```getArgs```函数，其他语言也提供了相似的功能，例如Python中的```sys.argv```和Java中的```String[] args```。
-
-除了使用命令行参数，程序员还可以通过其他方式来实现程序的配置，比如读取配置文件或者使用环境变量。然而，命令行参数通常是最直接和简单的方法，因此被广泛使用。
-
-## 相关阅读：
-
-- [Haskell标准库文档](https://hackage.haskell.org/package/base/docs/System-Environment.html)
-- [Python文档：Command line and environment](https://docs.python.org/3/using/cmdline.html)
-- [Java文档：Main method and command-line arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+## 另请参见：
+* 更深入的操作命令行参数的例子和讨论：[http://book.realworldhaskell.org/read/io.html](http://book.realworldhaskell.org/read/io.html)
+* Haskell的`System.Environment`库详细文档：[https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)

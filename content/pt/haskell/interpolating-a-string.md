@@ -1,6 +1,6 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Haskell: Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
 simple_title:         "Interpolando uma string"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & por que?
+# Interpolação de Strings em Haskell: O Que É e Como Utilizar
 
-Interpolação de string é o processo de combinar strings com variáveis ou expressões em uma única string. Isso permite que os programadores incluam valores dinâmicos em suas strings, tornando-as mais flexíveis e dinâmicas. É comumente usado em linguagens de programação funcional, como Haskell, para criar mensagens personalizadas ou construir strings complexas em tempo de execução.
+## O Que & Por Quê?
 
-## Como fazer:
+Interpolação de string é o ato de substituir placeholders por valores em uma string. Programadores fazem isso para construir strings de maneira mais legível e eficaz.
 
-Usando Haskell, podemos criar strings interpoladas usando a sintaxe ```[variável|expressão]```, onde a variável é substituída pelo seu valor e a expressão é avaliada e incorporada à string. Veja abaixo um exemplo de como criar e imprimir uma string interpolada em Haskell:
+## Como Fazer:
+
+Haskell não suporta interpolação de string out-of-the-box. Mas, com a biblioteca "Text.Printf", isso é possível. Veja abaixo:
 
 ```Haskell
-idade = 21
-nome = "Maria"
-print [nome|Olá, meu nome é | e eu tenho |idade| anos.]
+import Text.Printf
+
+nome = "João"
+idade = 25
+
+main = printf "Olá %s, você tem %d anos.\n" nome idade
+```
+A saída será: `Olá João, você tem 25 anos.`
+
+## Mergulho Profundo
+
+Haskell, sendo uma das mais antigas linguagens de programação funcional, foi desenvolvida em uma época em que interpolação de strings não era muito comum. Por isso, ela não suporta nativamente esse recurso. A biblioteca "Text.Printf", contudo, oferece esse recurso.
+
+É válido mencionar a biblioteca "interpolate" que oferece uma abordagem mais moderna e intuitiva:
+
+```Haskell
+import Data.String.Interpolate
+
+nome = "João"
+idade = 25
+
+main = putStrLn [i|Olá #{nome}, você tem #{idade} anos.|]
 ```
 
-Saída:
-```
-Olá, meu nome é Maria e eu tenho 21 anos.
-```
+Note que a biblioteca "interpolate" utiliza o operador `#{}`, mais parecido com outras linguagens modernas como Ruby e JavaScript.
 
-## Mergulho Profundo:
+## Veja Também:
 
-A interpolação de string é comumente usada em linguagens de programação funcional como uma alternativa ao uso de concatenação de strings ou formatação de strings. Isso permite que o código seja mais legível e fácil de manter. Além disso, a sintaxe de interpolação de string em Haskell é baseada na ideia de "quasiquoting", uma técnica que permite a manipulação de código fonte em tempo de compilação.
-
-Uma alternativa à interpolação de string em Haskell é o uso de um monad, como o monad de string, que permite que as strings sejam compostas usando operadores especiais, tornando a sintaxe mais semelhante à linguagem natural.
-
-A implementação da interpolação de string em Haskell é baseada no uso de template haskell, uma funcionalidade que permite a manipulação de código fonte em tempo de compilação. Isso permite que os valores das variáveis e expressões sejam avaliados antes da compilação, garantindo um desempenho mais rápido em tempo de execução.
-
-## Ver Também:
-
-Para mais informações sobre interpolação de string em Haskell, você pode consultar a documentação oficial da linguagem ou também pode explorar alguns dos tópicos relacionados, como quasiquotation e template haskell.
+1. Documentação oficial do Haskell "Text.Printf": http://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html
+2. Biblioteca "Interpolate" no Hackage: https://hackage.haskell.org/package/interpolate
+3. Post no Stack Overflow sobre a interpolação de strings em Haskell: https://stackoverflow.com/questions/17422209/is-there-a-string-interpolation-function-in-haskell

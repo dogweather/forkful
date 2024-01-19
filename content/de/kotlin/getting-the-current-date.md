@@ -1,7 +1,7 @@
 ---
-title:                "Das aktuelle Datum erhalten"
-html_title:           "Kotlin: Das aktuelle Datum erhalten"
-simple_title:         "Das aktuelle Datum erhalten"
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Gleam: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,29 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Die aktuelle Datumsermittlung in der Programmierung bezieht sich auf das Abrufen des aktuellen Datums auf dem Computer oder Gerät, an dem das Programm ausgeführt wird. Programmierer tun dies, um das aktuelle Datum für verschiedene Zwecke zu verwenden, wie z.B. zur Anzeige in einer Benutzeroberfläche oder zur Berechnung von bestimmten Datumswerten.
+## Was und Warum?
 
-## Wie geht's?
-Die aktuelle Datumsermittlung kann in Kotlin auf verschiedene Weise erfolgen. Wenn Sie das aktuelle Datum als eine Zeichenfolge erhalten möchten, können Sie die folgende Funktion verwenden:
+Mit Kotlin das aktuelle Datum abzurufen bedeutet, in der Zeit zu 'leben'. Es ist wichtig für Anwendungen, die Zeitstempel benötigen, für Ereignisprotokollierung oder Datums- und Zeitvalidierung.
 
+## So geht's:
+
+Mit der Standardbibliothek von Kotlin ist das Abrufen des aktuellen Datums einfach. Hier ist ein einfacher Weg:
+
+```kotlin
+import java.time.LocalDate
+
+fun main() {
+    val currentDate = LocalDate.now()
+    println("Aktuelles Datum: $currentDate")
+}
 ```
-val currentDate = LocalDate.now()
+Wenn Sie das ausführen, wird so etwas wie folgt ausgegeben:
+
+```bash
+Aktuelles Datum: 2022-01-01
+```
+Sie können auch eine Instanz von `java.util.Date` verwenden:
+
+```kotlin
+import java.util.Date
+
+fun main() {
+    val date = Date()
+    println("Aktuelles Datum und Uhrzeit: $date")
+}
+```
+Das gibt das aktuelle Datum und die Uhrzeit im Standardformat aus.
+
+## Tiefere Einsicht
+
+Historisch gesehen hat JDK mehrere Methoden für das Arbeiten mit Datum und Uhrzeit zur Verfügung gestellt, einschließlich `java.util.Date` und `java.util.Calendar`. In den letzten Jahren hat jedoch das moderne `java.time` Paket weite Anerkennung gefunden aufgrund seiner Verbesserungen bezüglich Sicherheit, Leistung und intuitive API-Design.
+
+Als eine alternative Methode können Sie `java.util.Calendar` verwenden, um das aktuelle Datum zu bekommen:
+
+```kotlin
+import java.util.Calendar
+
+fun main() {
+    val calendar = Calendar.getInstance()
+    println("Aktuelles Datum: ${calendar.time}")
+}
 ```
 
-Der Wert von `currentDate` wird dann dem heutigen Datum entsprechen.
-
-Wenn Sie jedoch die genaue Uhrzeit zusammen mit dem Datum erhalten möchten, können Sie die folgende Funktion verwenden:
-
-```
-val currentDateAndTime = LocalDateTime.now()
-```
-
-Der Wert von `currentDateAndTime` enthält sowohl das Datum als auch die Uhrzeit zum Zeitpunkt der Ausführung.
-
-## Tiefere Einblicke
-Die Möglichkeit, das aktuelle Datum in einem Programm zu ermitteln, ist von entscheidender Bedeutung, da es eine wichtige Rolle bei der Darstellung und Verarbeitung von Datumswerten spielt. Eine Alternative zur Verwendung der integrierten Funktionen in Kotlin besteht darin, ein benutzerdefiniertes Datum und eine Uhrzeit-Klasse zu erstellen, um das aktuelle Datum zu verfolgen. In Bezug auf die Implementierung nutzt Kotlin die Funktionen der Java-Klasse `java.time`, um das aktuelle Datum zu erhalten.
+In Bezug auf die Implementierung zu beachten ist, dass `java.time.LocalDate.now` und `java.util.Date` die Systemzeitzone verwenden, um das aktuelle Datum abzurufen, während `java.util.Calendar.getInstance` die Standardzeitzone verwendet.
 
 ## Siehe auch
-- [Java Tutorial zu java.time](https://docs.oracle.com/javase/tutorial/datetime/iso/index.html)
-- [Kotlin-Dokumentation zu Date and Time](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/index.html)
+
+Für mehr Details und weiterführende Informationen, sehen Sie bitte die offizielle Dokumentation:
+
+- [Working with dates and times in Kotlin](https://kotlinlang.org/docs/dates-periods.html)
+- [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)

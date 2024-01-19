@@ -1,6 +1,6 @@
 ---
 title:                "Opprette en midlertidig fil"
-html_title:           "Rust: Opprette en midlertidig fil"
+html_title:           "Arduino: Opprette en midlertidig fil"
 simple_title:         "Opprette en midlertidig fil"
 programming_language: "Rust"
 category:             "Rust"
@@ -12,42 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å opprette en midlertidig fil er en vanlig praksis blant programmører for å lagre midlertidige data eller utføre midlertidige operasjoner under kjøring av et program. Dette kan være nyttig for å unngå å overskrive eller miste viktig informasjon på en permanent fil.
+Å lage en midlertidig fil er en prosess for å lese, skrive og lagre data midlertidig mens et program kjører. Programmerere gjør dette for å håndtere store datamengder som kan overbelaste minnet, eller for å bevare data mellom prosessanrop.
 
-## Hvordan:
+## Hvordan det gjøres:
+
+Her er hvordan du gjør det i Rust (siste versjon):
 
 ```Rust
-use std::fs::File;
-use std::io::prelude::*;
-
-// Oppretter en ny midlertidig fil
-let mut temp_file = File::create("midlertidig.txt").expect("Kunne ikke opprette midlertidig fil.");
-
-// Skriver data til filen
-temp_file.write_all(b"Dette er midlertidig data.").expect("Kunne ikke skrive til fil.");
-
-// Leser data fra filen
-let mut temp_data = String::new();
-temp_file.read_to_string(&mut temp_data).expect("Kunne ikke lese data fra fil.");
-
-// Sletter filen etter bruk
-std::fs::remove_file("midlertidig.txt").expect("Kunne ikke slette midlertidig fil.");
-
-println!("{}", temp_data);
+use std::fs::tempfile;
+let mut temp = tempfile().unwrap();
+write!(temp, "Her er en midlertidig fil").unwrap();
 ```
 
-Output:
-```
-Dette er midlertidig data.
-```
+Etter at du har kjørt dette, vil en midlertidig fil bli opprettet. Teksten "Her er en midlertidig fil" vil bli skrevet i denne filen.
 
-## Dypdykk:
+## Dyp Dykk
 
-Opprettelsen av midlertidige filer har en lang historie og har blitt brukt i mange ulike programmeringsspråk gjennom årene. Et alternativ til å opprette en midlertidig fil er å bruke en buffert (buffer) i minnet, men dette kan føre til at det tar opp mer plass og dermed reduserer effektiviteten.
+Lage midlertidige filer er en teknikk som har blitt brukt i programmering siden tidlige dager av datamaskiner for å håndtere minnebegrensninger. I Rust, kan du også opprette midlertidige mapper ved hjelp av `TempDir` funksjon, som også sletter mappen når 'TempDir' går ut av anvendelse. 
 
-Implementeringen av opprettelse av midlertidige filer i Rust er enkel og intuitiv, da språket tilbyr innebygde funksjoner for å opprette, skrive til, lese fra og slette filer.
+Noen alternativer til midlertidige filer kan være bruk av databaser eller minnebaserte datastrukturer, men valget avhenger av spesifikke krav. 
 
-## Se også:
+Rust sin implementasjon for å opprette midlertidige filer sikrer automatisk fjerning av filen når `tempfile` håndtaket går ut av anvendelse. Dette gjør det raskt og enkelt å opprette midlertidige filer uten å bekymre seg for rydding.
 
-- Offisiell Rust dokumentasjon for å opprette filer: https://doc.rust-lang.org/std/fs/struct.File.html
-- En detaljert guide til å opprette og håndtere filer i Rust: https://osblog.stephenmarz.com/chapter1.html
+## Se Også:
+
+1. ["The Rust Standard Library: tempfile"](https://doc.rust-lang.org/std/fs/struct.tempfile.html): Dette er dokumentasjonen for tempfile i Rust, med mer detaljert informasjon og eksempler.
+
+2. ["Programming Rust: Fast, Safe Systems Development''](https://www.amazon.com/Programming-Rust-Fast-Safe-Development/dp/1491927283): For en mer inngående forståelse av Rust programmering, sjekk ut denne boken.
+
+3. ["Rust questions on StackOverflow"](https://stackoverflow.com/questions/tagged/rust): For å få hjelp med spesifikke spørsmål eller problemer, er StackOverflow et ypperlig sted å stille spørsmål til Rust community.

@@ -1,7 +1,7 @@
 ---
-title:                "Envoyer une requête HTTP avec une authentification basique"
-html_title:           "Elm: Envoyer une requête HTTP avec une authentification basique"
-simple_title:         "Envoyer une requête HTTP avec une authentification basique"
+title:                "Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
+simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,64 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi et pourquoi?
-Envoyer une requête HTTP avec une authentification de base est un moyen pour les programmeurs d'accéder à des ressources protégées sur le Web. Cela leur permet d'autoriser l'accès à des utilisateurs spécifiques en vérifiant leurs identifiants.
+## Qu'est-ce & Pourquoi?
 
-# Comment faire:
-Voici un exemple de code en Elm pour envoyer une requête HTTP avec une authentification de base. Le code suivant utilise une bibliothèque HTTP appelée `elm/http` pour effectuer la requête:
+L'envoi d'une requête HTTP avec authentification de base implique d'envoyer des informations d'identification dans le corps de la requete. Les programmeurs font cela pour sécuriser certaines parties de l'application web en ne permettant l'accès qu'aux utilisateurs autorisés.
+
+## Comment faire:
+
+Elm donne une manière propre et structurée pour gérer les requêtes HTTP. Regardons un exemple de base.
 
 ```Elm
 import Http
-import Json.Encode exposing (bool, float, int, list, object, string, value)
+import Json.Decode as Decode
 
-type alias User =
-  { username : String
-  , password : String
-  }
+type Msg = GotUser (Result Http.Error String)
 
-type Msg
-  = Response (Result Http.Error String)
+userDecoder : Decode.Decoder String
+userDecoder = Decode.field "username" Decode.string
 
-authenticate : User -> Cmd Msg
-authenticate user =
-  let
-    body =
-      value
-        [ ("username", string user.username)
-        , ("password", string user.password)
-        ]
-  in
-    Http.send Response
-      { method = "GET"
-      , url = "https://example.com"
-      , body = body
-      , expect = Http.expectString -- Utiliser `expectJson` pour un format JSON
-      , headers =
-          [ Http.header "Authorization"
-              ("Basic " ++ Http.base64Encode (user.username ++ ":" ++ user.password))
-          ]
-      }
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-  case msg of
-    Response (Ok response) ->
-      ( { model | isAuthenticated = True }, Cmd.none )
-    Response (Err error) ->
-      ( model, Cmd.none )
-
-view : Model -> Html Msg
-view model =
-  button [ onClick (authenticate { username = "john", password = "doe" }) ] [ text "Connexion" ]
+getUser : Cmd Msg
+getUser =
+    Http.get
+        { url = "http://my-api/users/1"
+        , expect = Http.expectJson GotUser userDecoder
+        }
 ```
+Avez-vous remarqué `Http.expectJson GotUser userDecoder`? C'est là que nous définissons comment la réponse devrait être décodée. Si la requête est réussie, elle renvoie un `Result` contenant soit une `String` (si tout s'est bien passé), soit une `Http.Error`.
 
-Lorsque vous cliquez sur le bouton "Connexion", la fonction `authenticate` est appelée avec les identifiants de l'utilisateur. Le code génère une requête HTTP avec une méthode GET et un corps de requête qui inclut les identifiants encodés en base64. La réponse est gérée dans la fonction `update` et le modèle est mis à jour en fonction du résultat de la requête.
+Maintenant, pour ajouter une authentification de base à cette requête, nous devons ajouter un en-tête d'autorisation. Voilà comment on fait :
 
-# Faire une plongée plus profonde:
-L'authentification de base est l'une des méthodes d'authentification les plus anciennes pour les applications Web. Elle est utilisée pour valider l'identité de l'utilisateur en transmettant ses identifiants en clair à chaque requête. Cependant, cette méthode est considérée comme peu sécurisée car les identifiants peuvent être facilement interceptés.
+```Elm
+import Http
+import Http.Header as Header
+import Json.Decode as Decode
 
-Il existe d'autres méthodes d'authentification plus sécurisées telles que l'authentification par jeton qui utilise des clés de sécurité uniques pour chaque utilisateur. Cependant, l'authentification de base est encore utilisée pour des raisons de compatibilité avec les anciennes applications Web.
+type Msg = GotUser (Result Http.Error String)
 
-# Voir aussi:
-- Documentation officielle Elm HTTP: https://package.elm-lang.org/packages/elm/http/latest/
-- Tutoriel sur l'authentification de base avec Elm: https://abdulapopoola.com/2017/08/23/on-elm-the-state-of-basic-authentication/
+userDecoder : Decode.Decoder String
+userDecoder = Decode.field "username" Decode.string
+
+getUser : Cmd Msg
+getUser =
+    Http.request
+        { method = "GET"
+        , headers = [ Header.authorization "Basic QWxhZGRpbjpPcGVuU2VzYW1l" ]
+        , url = "http://my-api/users/1"
+        , body = Http.emptyBody
+        , expect = Http.expectJson GotUser userDecoder
+        , timeout = Nothing
+        , tracker = Nothing
+        }
+```
+Notez le `"Basic QWxhZGRpbjpPcGVuU2VzYW1l"` - c'est une chaîne codée en base64 qui représente les informations d'identification.
+
+## Prolongement
+
+Historiquement, l'authentification de base a été une de premières méthodes implémentées pour sécuriser les transferts HTTP. Aujourd'hui, elle reste une méthode populaire grâce à sa simplicité malgré l'existence d'autres alternatives plus sécurisées comme l'authentification par jeton ou OAuth.
+
+En Elm, le standard pour envoyer des requêtes HTTP est le module `Http`, mais plusieurs libraries comme `elm-http-builder` sont également disponibles pour simplifier ces processus.
+
+## Voir aussi
+
+Documentation de Elm HTTP : [lien](https://package.elm-lang.org/packages/elm/http/latest/)
+
+Code HTTP de base dans Elm: [lien](https://elmprogramming.com/elm-http.html)
+
+L'authentification de base HTTP: [lien](https://www.ietf.org/rfc/rfc2617.txt)
+
+Elm-http-builder : [lien](https://package.elm-lang.org/packages/lukewestby/elm-http-builder/latest/)

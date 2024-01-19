@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "C++: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Printing debug output er en vanlig praksis blant programmere for å spore og fikse feil under utvikling av et program. Dette innebærer å skrive ut informasjon om variabler, progresjon av koden og eventuelle feilmeldinger.
+# Utskrift av Debug Output i C++ 
+*I denne artikkelen lærer du hvordan du kan skrive ut debug-informasjon i C++ programmene dine.*
 
-Det å printe debug output hjelper programmere med å finne og løse feil raskere, og sikrer at programmet fungerer som forventet.
+## Hva & Hvorfor?
+Utskrift av debug-output er et essensielt verktøy for programmerere brukes til diagnostisere og debugge kode. Det hjelper oss til å forstå hva som skjer i programmet ved kjøring ved å skrive ut ulike variabler og tilstander.
 
-# Hvordan å:
-For å printe debug output i C++, kan du bruke funksjonen `cout` fra standardbiblioteket `iostream`. Her er et eksempel på hvordan du kan printe verdien av variabelen `x`:
+## Hvordan?
+Her er et grunnleggende eksempel på hvordan du kan skrive ut debug-informasjon med C++:
 
 ```C++
-int x = 5;
-cout << "Verdien av x er: " << x << endl;
+#include<iostream>
+#define NDEBUG
+#include<assert.h>
+
+int main() {
+    int a = 5;
+    std::cout << "Seksjon: 1, Variabel a = " << a << '\n';
+    assert(a > 5 && "Error: a skal være mer enn 5");
+    return 0;
+}
 ```
 
-Dette vil gi følgende output:
+Her er kjøreprosessen:
+
+```bash
+$ g++ -D NDEBUG -o main main.cpp
+$ ./main
+Seksjon: 1, Variabel a = 5
+Assertion failed: (a > 5 && "Error: a skal være mer enn 5"), function main, file main.cpp, line 7.
 ```
-Verdien av x er: 5
-```
+## Dypdykk
+Historisk sett, før kraftige IDEer som Visual Studio og JetBrains CLion, var utskrift av debug-output en hovedmetode for å debugge koden. Med introduksjonen av integrerte debuggere, har behovet minket, men det forblir en pålitelig og enkel metode for å se hva som skjer under kjøring.
 
-Du kan også bruke syntaksen `printf` fra C, men dette er ikke anbefalt i moderne C++.
+Alternativene til utskrift av debug-output inkluderer bruk av en debugger som gjør det mulig å utføre trinnvise operasjoner, inspisere variabler og sette brytepunkt. 
 
-# Dypdykk:
-Det å printe debug output har vært en vanlig praksis siden begynnelsen av programmering. Før i tiden, måtte programmere bruke devices som printere eller monitorer for å se debug output. Nå kan vi enkelt få tilgang til denne informasjonen gjennom konsoll output.
+Når det gjelder implementeringsdetaljer, bruker C++ `iostream` biblioteket for å skrive ut på konsollen, og bruk av `assert.h` biblioteket for å håndtere feil påstander under kjøring.
 
-Noen alternativer til å printe debug output inkluderer bruk av debugging verktøy som GDB og Valgrind, eller å bruke en logging framework som log4cpp. Disse alternativene kan være mer omfattende og krever mer kunnskap for å bruke effektivt.
+## Se Også
+Til videre lesning og forståelse, sjekk ut følgende ressurser:
 
-Når det kommer til implementasjon, er det viktig å ikke ha for mye debug output i produksjonskoden. Dette kan skade ytelsen til programmet og gjøre debugging vanskeligere.
-
-# Se også:
-- [C++ iostream](https://en.cppreference.com/w/cpp/header/iostream)
-- [GDB - GNU Debugger](https://www.gnu.org/software/gdb/)
-- [Valgrind](http://valgrind.org/)
-- [log4cpp](https://github.com/richelbilderbeek/log4cpp)
+- "The C++ Programming Language" av Bjarne Stroustrup: [link](https://www.stroustrup.com/book.html)
+- C++ Standard Library: [link](http://www.cplusplus.com/reference/clibrary/)
+- Debugging med GDB: [link](https://sourceware.org/gdb/current/onlinedocs/gdb/)
+- Komplett guide for C++ Debugging: [link](https://www.jetbrains.com/help/clion/debugging-code.html)

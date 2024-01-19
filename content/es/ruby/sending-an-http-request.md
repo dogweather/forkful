@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Ruby: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,25 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
-Hacer una solicitud HTTP significa enviar una solicitud desde una aplicación o programa a un servidor. Los programadores envían solicitudes HTTP para obtener información de un servidor, como datos de un sitio web o servicio web. Esta es una forma común de obtener y enviar datos en aplicaciones y sitios web.
+## ¿Qué y Por Qué?
 
-# Cómo hacerlo:
-Con Ruby, puedes enviar solicitudes HTTP utilizando la biblioteca 'Net::HTTP'. Primero, necesitas requerir la biblioteca en tu código con ``` require 'net/http' ```. Luego, puedes utilizar el método ```.get()``` para enviar una solicitud GET a una URL y obtener los datos devueltos por el servidor, como este ejemplo:
+Enviar una solicitud HTTP es decirle a un servidor que queremos realizar una operación en un recurso específico que aloja. Lo hacemos para interactuar con servicios web y extraer, enviar o actualizar datos.
 
-```
+## Cómo hacerlo: 
+
+```Ruby
 require 'net/http'
-response = Net::HTTP.get(URI("https://jsonplaceholder.typicode.com/posts/1"))
-puts response
+require 'uri'
+
+uri = URI.parse("http://ejemploapi.com/recursos")
+respuesta = Net::HTTP.get_response(uri)
+
+puts respuesta.body
 ```
 
-La salida en la consola mostrará los datos en formato JSON del "post" número 1 del sitio "JSONPlaceholder". Puedes utilizar otros métodos, como ```.post()```, para enviar solicitudes con diferentes verbos HTTP.
+Esto enviará una solicitud GET a la dirección URL de la API y luego imprimirá la respuesta.
 
-# Profundizando:
-En el pasado, los programadores utilizaban bibliotecas como 'Net::HTTP' para enviar solicitudes HTTP. Sin embargo, con la popularidad de las aplicaciones web y servicios web, surgieron nuevas bibliotecas y frameworks que facilitan el manejo de solicitudes HTTP, como 'HTTParty' y 'RestClient'. Estas bibliotecas ofrecen funciones adicionales y una sintaxis más fácil de usar. 
+## Inmersión Profunda: 
 
-Para implementar una solicitud HTTP, se utiliza el Protocolo de Transferencia de Hipertexto (HTTP), que es la base de la comunicación en la World Wide Web. Este protocolo define cómo los clientes (como tu aplicación) y los servidores (como el sitio web o servicio web) deben intercambiar datos. 
+Enviar solicitudes HTTP comenzó con el nacimiento de la web para recuperar y enviar datos a través de la red. En Ruby, la biblioteca Net::HTTP es la manera clásica de hacerlo.
 
-# Ver también:
-Puedes encontrar más información y ejemplos sobre cómo enviar solicitudes HTTP en Ruby en la documentación oficial de 'Net::HTTP': https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html 
-También puedes explorar las bibliotecas mencionadas anteriormente, 'HTTParty' y 'RestClient', y comparar sus diferencias y ventajas.
+Existen alternativas como 'rest-client' y 'HTTParty' que proporcionan interfaces más amigables.
+
+En cuanto a los detalles de implementación, Net::HTTP en Ruby abre una conexión TCP/IP al servidor y luego envía una solicitud HTTP que obedece al protocolo HTTP. La respuesta es analizada y tallada en un objeto de respuesta Ruby.
+
+## Ver También: 
+
+1. Biblioteca Net::HTTP [Documentación Oficial](https://ruby-doc.org/stdlib-3.1.0/libdoc/net/http/rdoc/Net/HTTP.html)
+2. Biblioteca 'rest-client' [Documentación Oficial](https://www.rubydoc.info/gems/rest-client/2.1.0)
+3. Biblioteca 'HTTParty' [Documentación Oficial](https://www.rubydoc.info/github/jnunemaker/httparty)
+4. [Protocolo HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Protocolo_HTTP_B%C3%A1sico) en la documentación de MDN.

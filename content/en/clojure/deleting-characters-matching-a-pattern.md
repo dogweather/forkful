@@ -1,6 +1,6 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Clojure recipe: Deleting characters matching a pattern"
+html_title:           "Lua recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# A Quick Guide to Deleting Characters Matching a Pattern in Clojure 
+
 ## What & Why?
+Deleting characters matching a pattern is an operation to remove specific characters from a string based on a provided pattern. Programmers do this to clean data, extract information, or just to implement business rules.
 
-Deleting characters matching a pattern is a common task in programming that involves removing specific characters from a given string or sequence. This can be useful for tasks such as cleaning up input or formatting data for output. Programmers often do this to ensure consistent and error-free data processing.
-
-## How to:
+## How To:
+In Clojure, you can use the `clojure.string/replace` function with a regular expression to delete characters. Here's an example:
 
 ```Clojure
-;; Delete all occurrences of a character
-(defn delete-char
-  [ch coll]
-  (filter #(not= ch %) coll))
+(require '[clojure.string :as str])
 
-(delete-char \a "abcabc")   ;=> "bcbc"
-(delete-char \1 [1 2 3 1 2]) ;=> [2 3 2]
+(defn delete-chars [s pattern]
+  (str/replace s pattern ""))
 
-;; Delete all occurrences of a regex pattern
-(defn delete-pattern
-  [pattern coll]
-  (filter #(not (re-find pattern %)) coll))
-
-(delete-pattern #"ab" ["abc" "def" "ghi"]) ;=> ["def" "ghi"]
-(delete-pattern #"[aeiou]" "hello world")  ;=> "hll wrld"
+(delete-chars "Hello, world!" #"[,!]") ;; => "Hello world"
 ```
+In this example, the characters `,` and `!` are deleted from the string `"Hello, world!"`, resulting in `"Hello world"`.
 
-## Deep Dive:
+## Deep Dive
+Deleting characters matching a pattern has been widely used since the earlier days of data processing. It is not exclusive to Clojure but is a feature in many other languages such as Python or Java, each language providing its unique implementation.
 
-There are several approaches to deleting characters matching a pattern in Clojure. The first method shown above uses the filter function to remove elements from a collection based on a given predicate. This is a simple and efficient way to delete characters, but it does not support regex patterns.
+In Clojure, `clojure.string/replace` is not the only way to delete characters. You can also use `filter` and `clojure.string/join` to achieve the same result:
 
-For more complex pattern matching, the second method uses the re-find function from the clojure.string namespace. This allows for more advanced string manipulations, including regular expressions. However, it may be less performant than the first method, so it is important to choose the appropriate method based on the specific requirements of the task.
+```Clojure
+(defn delete-chars-2 [s pattern]
+  (let [not-matching-pattern? #(not (re-matches pattern (str %)))]
+    (->> s
+         (filter not-matching-pattern?)
+         (apply str))))
 
-## See Also:
+(delete-chars-2 "Hello, world!" #"[,!]") ;; => "Hello world"
+```
+In terms of performance, `clojure.string/replace` generally runs faster, especially for longer strings and more complex patterns. But `filter` and `clojure.string/join` might be a preferred way if you aim for a more functional style of programming.
 
-- [Clojure Docs - filter](https://clojuredocs.org/clojure.core/filter)
-- [Clojure Docs - re-find](https://clojuredocs.org/clojure.string/re-find)
-- [Learn Clojure - Built-In Functions](https://www.learnclojure.com/essentials/30-built-in-functions/)
+Remember to choose the right tool for the job considering factors like readability, performance, and the nature of your specific problem.
+
+## See Also
+- [clojure.string API](https://clojure.github.io/clojure/clojure.string-api.html)
+- [Clojure - Regular Expressions](https://www.tutorialspoint.com/clojure/clojure_regular_expressions.htm)
+- [Splitting and Joining Strings in Clojure](https://kiramclean.com/blog/splitting-and-joining-strings-in-clojure/)

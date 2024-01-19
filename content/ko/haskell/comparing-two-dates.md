@@ -1,6 +1,6 @@
 ---
 title:                "두 날짜 비교하기"
-html_title:           "Haskell: 두 날짜 비교하기"
+html_title:           "C#: 두 날짜 비교하기"
 simple_title:         "두 날짜 비교하기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜 하는가?
+## 무엇이며 왜 사용하는가?
 
-두 날짜를 비교하느 것은 두 가지 날짜를 비교하여 어느 하나가 더 늦거나 빠른지를 알아내는 것입니다. 프로그래머들은 두 날짜를 비교하는 이유는 일반적으로 날짜 기반의 알고리즘 또는 데이터를 처리할 때 필요하기 때문입니다.
+두 날짜를 비교한다는 것은 날짜 간의 전후 관계를 파악하거나 사이에 경과한 날짜 수를 계산하는 것입니다. 이를 통해 응용프로그램에서 예약, 스케쥴링, 경과 시간 추적 등에 사용됩니다.
 
-## 방법:
+##이렇게 해보세요:
 
-첫 번째 날짜가 더 늦은지 아닌지 확인하는 코드 예시:
+Haskell에서 `Data.Time.Calendar` 모듈을 이용하여 두 날짜를 비교할 수 있습니다. 두 날짜를 비교해보는 코드를 보겠습니다.
+
 ```Haskell
-firstDate `isEarlierThan` secondDate = firstDate < secondDate
+import Data.Time.Calendar
+
+date1 = fromGregorian 2022 8 11
+date2 = fromGregorian 2022 10 14
+
+main :: IO ()
+main = do 
+  print $ diffDays date2 date1
 ```
 
-두 날짜가 같은지 아닌지 확인하는 코드 예시:
-```Haskell
-firstDate `isSameAs` secondDate = firstDate == secondDate
-```
+예를 들어 위 프로그램은 2022년 8월 11일과 2022년 10월 14일 사이의 날짜 차이를 계산하고 출력합니다.
 
-## 깊이 파헤치기:
+## 디테일하게 살펴보기
 
-1. 역사적 배경: 날짜 비교 기능은 컴퓨터가 발명된 이래로 널리 사용되어온 기능 중 하나입니다. 초기 컴퓨터들은 숫자로 된 날짜를 문자로 변경한 다음 비교하였습니다. 하지만 현재의 컴퓨터들은 내부적으로 날짜를 표현하고 비교하는 기능을 갖추고 있습니다.
-2. 대안: 날짜를 비교하지 않고도 요일이나 연도 등 날짜에 대한 정보가 필요한 경우, 라이브러리를 사용할 수 있습니다. 이를 통해 더 쉽게 날짜와 관련된 기능을 구현할 수 있습니다.
-3. 구현 세부사항: Haskell의 기본 데이터 타입인 Data.Time은 날짜를 비교하는 데 필요한 함수들을 내장하고 있습니다. 따라서 별도의 라이브러리를 사용하지 않고도 날짜를 비교할 수 있습니다.
+두 날짜를 비교하는 것은 프로그래밍의 초창기부터 있었고, 이는 예약 시스템, 타임라인 추적 등 많은 분야에서 필수적인 작업입니다. Haskell에서는 `Data.Time.Calendar` 모듈을 사용해 이것을 수행합니다. 다양한 연산등을 제공하며, 표준 라이브러리로 제공되므로 별도의 설치가 필요하지 않습니다.
 
-## 또한 보기:
+Haskell 대신 다른 언어를 사용해야 하는 경우, 대부분의 현대 프로그래밍 언어는 날짜를 비교하는 기능을 제공합니다. 예를 들어 Java에는 `LocalDate` 클래스가 있고, Python에서는 `datetime` 라이브러리를 사용할 수 있습니다.
 
-- [Data.Time 라이브러리 문서](https://hackage.haskell.org/package/time/docs/Data-Time.html): Data.Time 라이브러리의 자세한 문서를 확인할 수 있습니다.
+Haskell의 `diffDays` 함수는 두 날짜를 비교하여 그 차이를 일 단위로 반환합니다. 이 함수는 간단하게 `Day -> Day -> Integer` 타입으로 구현되어 있습니다.
+
+## 참고하면 좋은 링크들
+
+* [Haskell Data.Time 패키지](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+* [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
+* [Haskell Data.Time.Calendar 디테일 정보(GitHub)](https://github.com/haskell/time)

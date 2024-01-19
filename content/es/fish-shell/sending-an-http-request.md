@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Fish Shell: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué es y por qué enviar una solicitud HTTP?
+## ¿Qué & Por qué?
 
-Enviar una solicitud HTTP es una manera de comunicarse con un servidor y solicitar información, ya sea para obtener datos o realizar una acción. Los programadores lo hacen para integrar sus aplicaciones con otras fuentes de datos o servicios, como una API de una red social o una plataforma de pago en línea.
+Enviar una solicitud HTTP implica realizar una petición a un servidor web o API utilizando el protocolo HTTP. Los programadores lo hacen para comunicarse con servicios de la web, obtener o enviar datos.
 
-Cómo hacerlo:
+## Cómo hacerlo:
 
-Fish Shell tiene un comando incorporado llamado "curl" que permite enviar una solicitud HTTP fácilmente. Aquí hay un ejemplo de cómo usarlo para obtener los resultados de una API de búsqueda de libros:
+Enviando una petición GET con curl en Fish Shell es tan fácil como esto:
 
+```Fish Shell
+function http_get
+    curl $argv[1]
+end
 ```
-curl https://www.googleapis.com/books/v1/volumes?q=fish+shell
+Ejecútelo con el URL de su elección, así:
+
+```Fish Shell
+http_get 'https://jsonplaceholder.typicode.com/posts'
 ```
 
-La respuesta sería un archivo JSON con información sobre libros relacionados con "fish shell".
+Esto va a imprimir la respuesta del servidor en su terminal.
 
-Información adicional:
+## Inmersión Profunda:
 
-Enviar solicitudes HTTP ha sido una técnica ampliamente utilizada desde el inicio de internet. Sin embargo, existen alternativas como "wget" o "httpie" que ofrecen más funcionalidad o una sintaxis distinta para enviar solicitudes. Además, es posible personalizar las solicitudes HTTP agregando encabezados o autenticándose con credenciales.
+Históricamente, las solicitudes HTTP han sido la manera en que los clientes hablan con los servidores desde que Tim Berners-Lee inventó la web. Hay alternativas a HTTP, como gRPC de Google, pero HTTP y HTTPS son todavía los reyes.
 
-¡No dudes en jugar con este comando y explorar las diferentes opciones que ofrece!
+Fish Shell no tiene bibliotecas HTTP integradas como otros lenguajes. En vez de eso, nos apoyamos en la utilidad de línea de comandos curl, incluida en casi todos los sistemas Unix.
 
-Enlaces de interés:
+## Ver También:
 
-- Documentación de "curl": https://curl.se/docs/
-- Alternativas a "curl": https://alternativeto.net/software/curl/
-- Tutorial sobre cómo enviar solicitudes HTTP con Fish Shell: https://fishshell.com/blog/2009/sending_http_requests.html
+Para una lectura más profunda sobre solicitudes HTTP, recomiendo [La documentación oficial HTTP en MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Overview).
+
+Para aprender más acerca de cómo funciona curl, echa un vistazo a [La documentación de curl](https://curl.haxx.se/docs/manpage.html).
+
+Y por supuesto, puedes consultar [La documentación de Fish Shell](https://fishshell.com/docs/current/index.html) para obtener más detalles sobre cómo funciona y los comandos que puedes usar.

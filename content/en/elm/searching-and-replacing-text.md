@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Elm recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,28 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Searching and replacing text is the process of searching for a specific word or phrase within a text and replacing it with another word or phrase. Programmers do this in order to quickly make changes to their code without having to manually go through each line. It saves time and ensures accuracy in making changes.
+# What & Why?
 
-## How to:
-Here's an example of how to search and replace text in Elm:
+Searching and replacing text refers to locating specific strings within a larger text and substitifying them with a different string. Programmers perform this operation frequently to manipulate data, correct errors, or even refactor code.
 
-``` Elm
-replaceText : String -> String -> String -> String
-replaceText old new text =
-    String.replace old new text
+# How to:
+
+Here's how you can use the `String.replace` function in Elm to search and replace text.
+
+```Elm
+import String
+
+main =
+    let
+        originalText = "I love apples"
+        searchText = "apples"
+        replaceText = "bananas"
+        result = String.replace searchText replaceText originalText
+    in
+    Html.text result
+
+-- Output will be "I love bananas"
 ```
 
-This code will take in three arguments: the old text you want to replace, the new text you want to replace it with, and the text you want to search through. It uses the built-in function `String.replace` to replace the old text with the new text in the given text. Here's an example of how to call this function:
+In the code above, `originalText` is the string we are searching in. `searchText` is what we are looking for and `replaceText` is what we want to replace the `searchText` with. 
 
-``` Elm
-replaceText "Hello" "Hi" "Hello, world!" -- returns "Hi, world!"
-```
+# Deep Dive
 
-## Deep Dive:
-Searching and replacing text has been a common feature in programming languages for a long time. It allows for quick and efficient editing of code, especially when making widespread changes. In Elm, the `String.replace` function is used to replace text. However, there are other ways to achieve the same result, such as using regular expressions or using the `replace` function in the `Dict` module.
+Searching and replacing text dates back to the early days of text editors. In Elm, `String.replace` is a simple and clean implementation of this functionality. It covers most use-cases. 
 
-## See Also:
-- Official Elm documentation on `String.replace`: https://package.elm-lang.org/packages/elm-lang/core/latest/String#replace
-- Elm package for regular expressions: https://package.elm-lang.org/packages/elm/regex/latest/
-- `Dict` module documentation: https://package.elm-lang.org/packages/elm-lang/core/latest/Dict
+You might ask: Why not use regular expressions? The answer: Elm intentionally keeps it simple and does not (as of the current version) support regex to maintain simplicity and avoid intricate bugs.
+
+If you need to perform a complex search and replace, you may need to write a custom function or use third-party libraries that do offer such functionality.
+
+# See Also
+
+- The Elm `String` library's official documentation: https://package.elm-lang.org/packages/elm/core/latest/String
+- For complex string operations, consider third-party libraries such as `elm/parser` (https://github.com/elm/parser).
+- Interested in a wider discussion about the decision to exclude regex in Elm? Check out the discourse here: https://discourse.elm-lang.org/t/elm-and-regular-expressions/2036

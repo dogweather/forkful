@@ -1,7 +1,7 @@
 ---
-title:                "Å starte et nytt prosjekt."
-html_title:           "Swift: Å starte et nytt prosjekt."
-simple_title:         "Å starte et nytt prosjekt."
+title:                "Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -11,29 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å starte et nytt prosjekt i programmering handler om å skape et nytt program eller applikasjon fra bunnen av. Programmere gjør dette for å løse et bestemt problem, forbedre en eksisterende løsning eller bare for å tilfredsstille sin egen nysgjerrighet og kreative ånd.
 
-## Hvordan:
-For å starte et nytt Swift-prosjekt, må du først åpne Xcode-appen og velge "Create a new Xcode project". Deretter velger du "Single View App" og klikker "Next". Gi prosjektet ditt et navn og velg hvor du vil lagre det. Xcode vil da generere grunnleggende filer og struktur for ditt nye prosjekt. Du kan nå begynne å skrive koden din i filen "ViewController.swift" for å skape den ønskede funksjonaliteten. Etter å ha skrevet koden, kan du trykke på "Run" -knappen for å se resultatet av ditt nye prosjekt.
+Å starte et nytt prosjekt handler om å sette opp et rammeverk for programmeringsarbeidet ditt i henhold til din plan. Programmerere gjør dette for å ha en strømlinjeformet kodegenerering og effektiv feilsøking.
+
+## Hvordan å:
+
+Å lage et nytt Swift-prosjekt er relativt enkelt. Åpne Terminal og bruk `swift package init`-kommandoen for å opprette et nytt prosjekt.
 
 ```Swift
-// Et eksempel på å printe en tekst til konsollen
-print("Hei norske lesere!")
-
-// Eksempel på en variabel og en konstant
-var alder = 25
-let navn = "Maren"
+$ mkdir MittNyeProsjekt
+$ cd MittNyeProsjekt
+$ swift package init --type executable
 ```
 
-Output:
-```
-Hei norske lesere!
+For å kjøre dette prosjektet, er det bare å bruke `swift run`-kommandoen.
+
+```Swift
+$ swift run
 ```
 
-## Dykk dypere:
-Å lage et nytt prosjekt kan være en spennende og kreativ prosess, men det bør også gjøres med en viss forståelse for historien og alternativene. Swift-programmeringsspråket ble introdusert av Apple i 2014 som en moderne erstatning for Objective-C. Det er nå et av de mest populære programmeringsspråkene som brukes til å utvikle iOS- og macOS-applikasjoner. Alternativer til å starte et prosjekt i Xcode inkluderer å bruke tredjepartsprogrammer eller skrive koden direkte i en tekstredigerer og kompilere gjennom terminalen.
+Utfallet av ovennevnte kodeblokker vil være et kjørbar Swift-prosjekt med den angitte navn og strukturen.
 
-## Se også:
-- [Swift documentation](https://docs.swift.org/swift-book/)
-- [Xcode tutorial for beginners](https://www.raywenderlich.com/3710347-xcode-tutorial-for-beginners)
-- [Swift Playgrounds for learning and experimenting with Swift](https://www.apple.com/swift/playgrounds/)
+## Dypdykk:
+
+Å starte et nytt prosjekt har lenge vært en integrert del av generell programmeringspraksis, tilpasset behovene til forskjellige språk og rammer opp gjennom årene.
+
+Som et alternativ til Swift Package Manager (SPM), kan du også bruke IDE-er som Xcode for å starte et nytt prosjekt. Xcode tilbyr et GUI-alternativ og flere praktiske funksjoner, men SPM gir mer kontroll og fleksibilitet i prosjektstyringen.
+
+Når det gjelder implementeringsdetaljer, oppretter `swift package init --type executable` en grunnleggende prosjektmappstruktur for deg, inkludert et testrammeverk og en kildekodemappe med en grunnleggende "Hello, World!" script.
+
+## Se Også:
+
+- Swift Package Manager Dokumentasjon - https://swift.org/package-manager/
+- Swift Xcode-prosjektoppretting - https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/Creating_a_New_Xcode_Project.html
+- Apple Swift Programmeringsspråkghåndbok - https://docs.swift.org/swift-book/

@@ -1,7 +1,7 @@
 ---
-title:                "הורדת עמוד אינטרנט"
-html_title:           "Elixir: הורדת עמוד אינטרנט"
-simple_title:         "הורדת עמוד אינטרנט"
+title:                "הורדת דף אינטרנט"
+html_title:           "C++: הורדת דף אינטרנט"
+simple_title:         "הורדת דף אינטרנט"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,35 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-להוריד עמוד אינטרנט היא פעולה שמתבצעת בעזרת תיכנות ומאפשרת לנו להציג תוכן מקוון במחשב שלנו. תכניתנים מבצעים זאת בכדי לאפשר למשתמשים לגשת לתוכן של אתרי אינטרנט ולייצר יישומים מתקדמים באמצעות תוכן מתוך אתרים.
 
-## איך לעשות?
+הורדת דף אינטרנט היא התהליך שבו המחשב מאחזר נתונים מהשרת ומאחסנו במקום מקומי. התכנתים מתעסקים בזה כדי לנתח נתונים, לבצע בדיקות מכנות, או לשמור עותק מקומי של הדף.
+
+## איך?
+
+שניתן להשתמש בHTTPoison בשפת התכנות Elixir כדי להוריד דף אינטרנט:
+
 ```Elixir
- defmodule DownloadPage do 
-  def main(url) do 
-    url
-    |> HTTPoison.get()
-    |> scrape_page()
+defmodule Downloader do
+  def download(url) do
+    case HTTPoison.get(url) do
+      {:ok, response} ->
+        IO.puts("download successful")
+        {:ok, response.body}
+      {:error, reason} -> 
+        IO.puts("download failed")
+        {:error, reason}
+    end
   end
 end
-
-def scrape_page({:ok, %HTTPoison.Response{status_code: 200, body: body}}) do
-  {:ok, body}
-end
 ```
-קוד זה משתמש בפונקציות מובנות ב-Elixir כדי להוריד את הדף מהאתר שנמצא בכתובת ה-URL שנתנו לתוכנית. תוצאת הפלט היא התוכן של הדף המורד. 
 
-## נכנסים עומק
-הבאסיס היסטורי להורדת עמודים מהאינטרנט היא בעיקר קשור לפיתוח תקשורת ורשתות ב-תכנות. תכניתנים משתמשים בפעולה זו כדי לאפשר גישה לתוכן גלובלי מתוך אתרי אינטרנט ולייצר יישומים מתקדמים כגון בקשות HTTP והנתונים המתקבלים. ישנם כמה פתרונות אחרים להורדת דפי אינטרנט כגון אוססכיפט, פייטון ופרל אך ה-Elixir הוא הפתרון המועדף והממוקד ביותר על ידי מגוון גדול של תכניתנים. 
+בדוגמה הזו, `HTTPoison.get(url)` יחזיר אחת משני האפשרויות- התגובה של השרת או שגיאה.
 
-## ראו גם
-למידע נוסף על שפת התכנות Elixir ומדריכים נוספים לפיתוח יישומים אינטרנטיים, ראו:
+## עומק הנושא
 
-- המדריך הרשמי של Elixir
-https://elixir-lang.org/getting-started/introduction.html
+יכול להיות ששמעת ששפת Elixir משתמשת ב-HTTPoison במקום בספרייה אחרת. זו קבלה תכליתית שהפעילה את הקהל המתכנת החדש ל־Elixir. ספריות אחרות, כמו HTTPotion או HTTPipe, קיימות אך לא פופולאריות כך שקשה יותר למצוא תמיכה או קוד דוגמה עבורן.
 
-- הספר "Programming Elixir" של Dave Thomas 
-https://pragprog.com/titles/elixir16/programming-elixir-1-6/
+## לעיון נוסף
 
-- הספר "Elixir in Action" של Sasa Juric 
-https://www.manning.com/books/elixir-in-action-second-edition
+רוצה ללמוד יותר על HTTPoison? נסה את [הדוקומנטציה הרשמית](https://hexdocs.pm/httpoison/readme.html).
+נערך כבר לשפת Elixir? התחל [כאן](https://elixir-lang.org/getting-started/introduction.html). להם גם פורום תמיכה מצוין [Elixir Forum](https://elixirforum.com).

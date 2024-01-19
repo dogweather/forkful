@@ -1,7 +1,7 @@
 ---
-title:                "Vérification de l'existence d'un répertoire"
-html_title:           "Python: Vérification de l'existence d'un répertoire"
-simple_title:         "Vérification de l'existence d'un répertoire"
+title:                "Vérifier si un répertoire existe"
+html_title:           "Haskell: Vérifier si un répertoire existe"
+simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le vérifier?
+## Qu'est-ce & Pourquoi?
+Vérifier qu'un répertoire existe est une étape où un programmeur demande au système de confirmer qu'un dossier spécifié est présent sur le système de fichiers. En le faisant, les programmeurs évitent d'essayer d'accéder à un dossier qui n'existe pas, ce qui permet d'éviter des erreurs gênantes.
 
-"Vérifier si un répertoire existe" fait référence à une vérification programmée pour voir s'il existe un répertoire avec un certain nom dans un système de fichiers. Les programmeurs font cela pour s'assurer qu'ils n'utilisent pas un répertoire qui n'existe pas ou pour exécuter une certaine logique en fonction de l'existence ou non d'un répertoire.
+## Comment faire :
+L'un des moyens les plus simples de faire cela avec Python utilise les bibliothèques `os` et `os.path`. Voici un exemple :
 
-# Comment:
-
-```python
+```Python
 import os
-dir_name = "/chemin/vers/le/répertoire"
-if os.path.exists(dir_name):
-    print("Le répertoire existe!")
-else:
-    print("Le répertoire n'existe pas!")
 
+def est_existant(chemin):
+    return os.path.isdir(chemin)
+
+# Utilisez cette fonction pour vérifier l'existence d'un répertoire
+print(est_existant("/chemin/vers/le/dossier"))
 ```
+Si le répertoire existe, cela renverra `True`. Si ce n'est pas le cas, ça retournera `False`.
 
-Sortie:
-```bash
-Le répertoire existe! 
+## Plongée profonde
+Historiquement, vérifier qu'un répertoire existe n'était pas toujours facile. Avant la version actuelle de Python, nous avions besoin de gérer les exceptions, ce qui pouvait rendre le code plus difficile à lire et à déboguer.
+
+Il existe aussi des alternatives comme l'utilisation de la bibliothèque `pathlib` disponible à partir de Python 3.4, comme ceci :
+
+```Python
+from pathlib import Path
+
+def est_existant(chemin):
+    return Path(chemin).is_dir()
 ```
+Cette bibliothèque possède une compatibilité inter-plateformes et offre une interface orientée objet.
 
-# Plongée en profondeur:
+Au niveau de l'implémentation, vérifier si un répertoire existe revient fondamentalement à demander au système d'exploitation. Les détails précis dépendent de la manière dont le système d'exploitation et le système de fichiers gèrent les informations sur le répertoire.
 
-## Contexte historique:
-La vérification de l'existence d'un répertoire est devenue plus importante avec l'avènement des systèmes de fichiers en réseau et des systèmes d'exploitation multi-utilisateurs. Elle permet de s'assurer que chaque utilisateur a accès à un répertoire dédié pour stocker ses fichiers.
+## Voir aussi
 
-## Alternatives:
-Au lieu de vérifier si un répertoire existe, certains programmeurs peuvent choisir de le créer à la volée s'il n'existe pas. Cela peut parfois être plus pratique, surtout lorsqu'il s'agit de créer un nouveau répertoire pour stocker des fichiers ou des données.
-
-## Détails d'implémentation:
-Pour vérifier si un répertoire existe, le module os de Python fournit la méthode `os.path.exists ()` qui renvoie `True` si le répertoire existe et `False` s'il n'existe pas.
-
-# Voir aussi:
-- Documentation officielle de la méthode os.path.exists (): https://docs.python.org/fr/3/library/os.path.html#os.path.exists
-- Tutoriel sur la gestion des fichiers et des répertoires en Python: https://www.digitalocean.com/community/tutorials/how-to-handle-file-uploads-in-python-3
+Pour en savoir plus, voici quelques ressources utiles :
+1. [Python os.path documentation](https://docs.python.org/3/library/os.path.html)
+2. [Python pathlib documentation](https://docs.python.org/3/library/pathlib.html)
+3. [StackOverflow - Check if a directory exists and create it if necessary](https://stackoverflow.com/questions/273192/check-if-a-directory-exists-and-create-it-if-necessary)

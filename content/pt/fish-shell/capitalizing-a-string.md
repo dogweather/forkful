@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que é e por que fazer: 
+# Capitalizando Strings no Fish Shell
 
-Capitalize é o ato de tornar a primeira letra de uma palavra maiúscula. Programadores frequentemente capitalizam strings para garantir que elas estejam formatadas de acordo com padrões específicos ou para facilitar sua leitura e identificação. 
+## O Que e Por Que?
 
-# Como fazer: 
+Capitalizar uma string significa transformar a primeira letra de uma palavra em maiúscula. Os programadores fazem isso principalmente para melhorar a legibilidade e aparência dos textos dentro dos programas.
 
-Para capitalizar uma string usando o Fish Shell, utilize o comando "string toupper". Veja um exemplo abaixo:
+## Como Fazer:
 
-```
-Fish Shell: string toupper "exemplo" 
-Output: Exemplo
-```
+Em Fish Shell, você pode capitalizar uma string usando a função `string upper`. Aqui está um exemplo rápido:
 
-Se você quiser capitalizar apenas a primeira letra de uma string, pode utilizar o comando "string capitalize". Veja um exemplo abaixo:
-
-```
-Fish Shell: string capitalize "exemplo" 
-Output: Exemplo
+```Fish Shell
+set nome "marketing"
+echo (string upper $nome)
 ```
 
-# Mais Detalhes: 
+A saída deste exemplo seria:
 
-A prática de capitalizar strings tem origem histórica nas convenções de escrita, onde nomes próprios, títulos e inícios de frases são sempre escritos com letras maiúsculas. Embora existam outras formas de alcançar o mesmo resultado, como o uso de funções de formatação em outras linguagens de programação, capitalizar strings é uma opção rápida e efetiva ao usar o Fish Shell. 
+```Fish Shell
+MARKETING
+```
 
-# Ver também: 
+## Mergulho Profundo:
 
-- https://fishshell.com/docs/current/commands.html#string-iget-i
-- https://www.w3schools.com/python/ref_string_capitalize.asp
+Historicamente, a capitalização de strings foi introduzida em linguagens cedo como uma maneira de destaque na saída, particularmente em interfaces de usuário.
+
+No Fish Shell, em comparação com outros shells UNIX, a capitalização de strings é muito fácil, graças ao conjunto de comandos `string`. Alternativamente, se a sua versão do Fish Shell não suportar a função `string upper`, você pode usar o comando `awk` como este:
+
+```Fish Shell
+echo "marketing" | awk '{ print toupper($1) }'
+```
+
+A implementação da função `string upper` no Fish Shell é simples e direta: ele simplesamente analisa cada caractere da string e o converte para maiúscula.
+
+## Veja Também:
+
+- Documentação oficial da função `string`: [https://fishshell.com/docs/3.1/commands.html#string](https://fishshell.com/docs/3.1/commands.html#string)
+- Discussão sobre a função `string upper` no StackOverflow: [https://stackoverflow.com/questions/2264428/convert-strings-to-uppercase-in-fish-shell](https://stackoverflow.com/questions/2264428/convert-strings-to-uppercase-in-fish-shell)

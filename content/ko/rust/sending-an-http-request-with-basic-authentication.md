@@ -1,6 +1,6 @@
 ---
 title:                "기본 인증을 사용하여 http 요청 보내기"
-html_title:           "Rust: 기본 인증을 사용하여 http 요청 보내기"
+html_title:           "Bash: 기본 인증을 사용하여 http 요청 보내기"
 simple_title:         "기본 인증을 사용하여 http 요청 보내기"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐고 왜하는거지? 
-HTTP 요청에 기본 인증을 사용하여 요청을 보내는 것은 인터넷에서 데이터를 안전하고 신뢰할 수 있게 만드는 기술입니다. 이 기술을 사용하는 이유는 우리가 자주 사용하는 웹 응용 프로그램에서 보안과 관련된 문제를 해결하기 위해서입니다.
+## 무엇 & 왜?
 
-## 하는 법: 
+HTTP 요청에 기본 인증을 함께 보내는 것은 사용자 이름과 비밀번호를 사용해 서버와 안전하게 통신하는 방법입니다. 프로그래머들이 이를 실행하는 이유는 서버에서 보내는 데이터를 안전하게 유지하여 민감한 정보를 보호하기 위해서입니다.
+
+## 어떻게 작동하는가:
+
+다음은 Rust에서 기본 인증을 사용하여 HTTP 요청을 보내는 표본 코드입니다:
+
 ```Rust
-use reqwest;
-use std::env;
-use reqwest::header::{Authorization, BASIC};
+use reqwest::header::{HeaderMap, HeaderValue, AUTHORIZATION, USER_AGENT};
+use base64::encode;
 
-let client = reqwest::Client::new();
-let username = "example";
-let password = "password";
-let url = "https://www.example.com/api";
+let url = "http://httpbin.org/basic-auth/user/passwd";
+let user = "user";
+let passwd = "passwd";
 
-// 기본 인증 해더를 만들고 HTTP 클라이언트를 설정합니다.
-let mut req = reqwest::Request::new(reqwest::Method::GET, reqwest::Url::parse(url).unwrap());
-req.headers_mut().set(Authorization(BASIC.auth(&username, &Some(password)).unwrap()));
+let auth = format!("{}:{}", user, passwd);
+let auth = format!("Basic {}", encode(auth));
 
-// 오류가 없고 전달 된 자격 증명이 올바른지 확인합니다.
-let resp = match client.execute(req) {
-    Ok(resp) => resp,
-    Err(e) => panic!("failed to execute request: {}", e),
-}
+let mut headers = HeaderMap::new();
+headers.insert(USER_AGENT, HeaderValue::from_static("Rust"));
+headers.insert(AUTHORIZATION, HeaderValue::from_str(&auth).unwrap());
 
-// API 서버에서 반환 된 응답의 상태 코드를 확인합니다.
-// 상태 코드 200은 성공적인 요청을 나타내며, 다른 상태 코드는 오류를 의미합니다.
-if resp.status().is_success() {
-    println!("{:?}", resp.text().unwrap());
-} else {
-    println!("Error: {}", resp.status());
-}
+let resp = reqwest::Client::new()
+    .get(url)
+    .headers(headers)
+    .send()
+    .await?;
+
+assert!(resp.status().is_success());
 ```
 
-## 더 깊게 생각해보기: 
-(1) 인터넷의 초기에는 인증 방식이 없었기 때문에, 개인 정보의 안전성이 보장되지 않았습니다. (2) 기본 인증 외에 인증 방법으로는 OAuth, JWT 등이 있으며, 각각의 장단점이 있습니다. (3) HTTP 요청의 일부로 기본 인증을 포함하는 방법은 간단하고 직관적입니다. 기본 인증은 사용자 이름과 비밀번호를 Base64 형식으로 인코딩하여 전달합니다.
+## 깊이 들어가보기:
 
-## 더 알아보기: 
-- Rust에서 HTTP 요청을 보내는 방법: https://crates.io/crates/reqwest
-- HTTP 인증의 다른 방식: https://blog.restcase.com/4-most-used-rest-api-authentication-methods/
-- HTTP 기본 인증의 구현 및 보안 취약점: https://help.accuwebhosting.com/article/how-to-enable-http-basic-authentication-in-iis-windows-server-2012
+Rust에서 HTTP 요청에 기본 인증을 보내기 위해 예전에는 hyper나 curl과 같은 라이브러리를 사용하곤 했습니다. 이러한 라이브러리들도 여전히 유효하지만, 최근에는 reqwest 라이브러리가 더욱 인기를 얻고 있습니다. 이는 비동기 요청에 대한 지원과 함께 다양한 편의 기능을 제공하기 때문입니다. 
+
+대안적으로, 대신 직접 헤더를 설정하여 인증을 위한 구현을 할 수 있습니다. 그러나 이는 보안사항에서 신중히 다뤄야 하며, 라이브러리를 사용함으로써 완화할 수 있는 실수를 범할 가능성이 더 높습니다.
+
+## 참고 자료:
+
+- [reqwest 라이브러리](https://docs.rs/reqwest)
+- [Rust로 HTTP 요청 보내기](https://dev.to/sean_lawless/build-a-concurrent-http-server-in-rust-2o4k)
+- [Rust Basic Authentication](https://stackoverflow.com/questions/43023205/how-do-you-set-the-authorization-header-in-rust-reqwest)

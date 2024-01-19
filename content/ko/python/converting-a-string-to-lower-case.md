@@ -1,6 +1,6 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "Python: 문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Python"
 category:             "Python"
@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇이며 왜?
+## 무엇과 왜?
+문자열을 소문자로 변환하는 것은 모든 문자의 대문자를 해당하는 소문자로 바꾸는 작업입니다. 프로그래머는 사용자의 입력을 표준화하고, 사용자가 대소문자를 신경 쓸 필요가 없게 만들기 위해 이를 수행합니다.
 
-문자열을 소문자로 변환하는 것은 아주 간단한 작업입니다. 프로그래머들은 이를 수행하는 이유는 글자들을 통일된 형식으로 표현하기 위해서입니다. 대소문자를 구분하지 않는 경우, 대소문자가 다른 문자열을 비교하는 것은 매우 복잡하고 오류가 발생할 수 있기 때문입니다.
-
-## 어떻게?
-
-Python에서 문자열을 소문자로 변환하는 방법은 상당히 간단합니다. 문자열을 사용한 다음 `lower()` 메소드를 호출하면 됩니다. 아래에는 예제 코드와 출력 결과가 나와 있습니다.
-
+## 어떻게 하나요?
+다음은 Python에서 문자열을 소문자로 변환하는 방법을 보여주는 코드 예제입니다.
 ```Python
-text = "Hello World"
-print(text.lower())
-# 출력 결과: hello world
+# 문자열 정의
+message = "Hello PYTHON World!"
+
+# 소문자 변환
+lowercase_message = message.lower()
+
+# 결과 출력
+print(lowercase_message)  # 출력: hello python world!
 ```
 
 ## 깊이 들어가보기
+문자열을 소문자로 변환하는 것은 오래전부터 자주 쓰이는 기술입니다. Python에서는 내장 함수 `lower()`를 제공하여 이 기능을 쉽게 사용할 수 있도록 지원하고 있습니다. 
 
-소문자 변환은 예전부터 프로그래밍 언어에서 사용되어 왔습니다. 예를 들어, C언어에서는 `tolower()` 함수를 사용하고, Java에서는 `toLowerCase()` 메소드를 사용합니다. 또한, 정규 표현식을 사용하여 문자열을 소문자로 변환할 수도 있습니다.
+대안으로는 문자열의 각 문자를 순회하면서 아스키 코드를 사용해 소문자로 변환하는 등의 저수준 방법이 있지만, 대부분의 경우에는 `lower()` 함수가 훨씬 간편하고 효율적입니다.
 
-## 관련 자료
+소문자 변환 기능의 구현은 언어에 따라 다르지만, Python에서는 유니코드를 지원하여 여러 언어의 문자에 대해서도 소문자 변환을 할 수 있습니다.
 
-- [Python 메소드: 문자열과 리스트](https://docs.python.org/3/tutorial/introduction.html#strings-and-lists)
-- [Python 공식 문서: 문자열 메소드](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [정규 표현식을 사용한 문자열 변환](https://www.techbeamers.com/python-regex/)
+## 참고 자료
+다음으로 문자열을 소문자로 변환하는 방법에 관한 기타 참고자료들을 링크로 제공합니다:
+1. [Python Documentation - String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+2. [W3Schools Python String lower() Method](https://www.w3schools.com/python/ref_string_lower.asp)
+3. [Stackoverflow - How to convert a string to lower case in Python](https://stackoverflow.com/questions/6797984/how-to-convert-string-to-lower-case-in-python)

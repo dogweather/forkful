@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-html_title:           "Swift: स्ट्रिंग को कैपिटलाइज़ करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
+title:                "एक स्ट्रिंग को कैपिटलाइज करना"
+html_title:           "Swift: एक स्ट्रिंग को कैपिटलाइज करना"
+simple_title:         "एक स्ट्रिंग को कैपिटलाइज करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,25 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-कपिटलाइजंग एक स्ट्रिंग को पहले अक्षर से शुरू करके उसके बाकी चरों को बदलना है। कई बार प्रोग्रामर्स इसे स्ट्रिंग को स्वतंत्र और स्पष्ट रूप में दिखने के लिए करते हैं।
+## क्या और क्यों? 
+`String` उच्चाक्षर करना एक प्रोसिजर है जो किसी शबद के पहले अक्षर को बड़ा करता है। प्रोग्रामर्स इसे उपयोगकर्ता इनपुट को फॉर्मैट करने और विशिष्ट तरीके से डिस्प्ले करने के लिए इस्तेमाल करते हैं। 
 
-## कैसे करे:
-इसके लिए हम आमतौर पर capitalise() या uppercased() को स्ट्रिंग पर कॉल कर सकते हैं। नीचे दिए गए कोड ब्लॉक में यह दिखाया गया है:
+## मार्गदर्शन:
+Swift में, आप `capitalized` गुण उपयोग करके string को कैपिटलाइज़ कर सकते हैं। यहाँ एक उदाहरण है:
 
+```Swift
+let greeting = "नमस्ते, दुनिया!"
+let capitalizedGreeting = greeting.capitalized
+print(capitalizedGreeting)
+// Outputs "नमस्ते, दुनिया!"
 ```
-let str = "hello world"
-print(str.capitalized) // आउटपुट: Hello World
-print(str.uppercased) // आउटपुट: HELLO WORLD
-```
+जैसा कि आप देख सकते हैं, पहला अक्षर प्रत्येक शब्द का उच्चाक्षर हो गया है। 
 
-## गहराई में जाएं:
-कपिटलाइजंग का इतिहास बहुत पुराना है, और एक समय पर यह फॉर्मल आउटपुट की उस स्टाइल में दिखाने के लिए किया जाता था। अन्य विकल्प शामिल हैं:
+## गहराई में:
+यद्यपि Swift अच्छा स्थान है शुरुआत करने के लिए, ध्यान दें कि केवल एक या दो स्विफ्ट संयोगों के द्वारा यह कार्य नहीं किया जा सकता है। पहले, Swift का 'String' क्लास बहु-बाइट UTF8 चरित्रों को सही ढंग से संभाल सकता है, जो कि ऑटोमेटिक उच्चाक्षरण के लिए महत्वपूर्ण है।दूसरा, `capitalized` गुण "उच्चाक्षर अक्षर अनुसार" काम करता है, जो कि मुख्य रूप से पश्चिमी भाषा लिपियों के साथ काम करता है, लेकिन दूसरी भाषाओं में भ्रमित हो सकता है। 
 
-- capitalize() और uppercased() के अलावा, हम lowercased() भी का उपयोग अनुभव कर सकते हैं। यह स्ट्रिंग को स्वतंत्र अक्षर के साथ दिखाता है।
-- गणना ध्यान देने योग्य है कि अक्षर कैसे करके स्ट्रिंग को नीवन किया जाता है। प्रत्येक अल्फान्यूमेरिक मूल्य की क्षमता प्रभावी रूप से कैपिटलाइज हो जाता है।
-
-## देखें भी:
-- [Swift की मूल स्ट्रिंग डॉक्यूमेंटेशन](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Hacking with Swift की "Working with strings" ट्यूटोरियल](https://www.hackingwithswift.com/sixty/2/3/working-with-strings)
-- [Swift की स्ट्रिंग रीफरेंस गाइड](https://developer.apple.com/documentation/swift/string)
+## और भी देखें:
+यदि आपने किसी विशिष्ट भाषा में उच्चाक्षरण करने की जरूरत है, तो [Apple's Internationalization and Localization Guide](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/Introduction/Introduction.html) एक महत्वपूर्ण संसाधन है। इसके अलावा, [Swift String documentation](https://developer.apple.com/documentation/swift/string) भी विस्तार में वर्णमाला और कैसे नाम दिए जाते हैं, पर गहराई में जाता है।

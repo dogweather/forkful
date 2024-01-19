@@ -1,7 +1,7 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
-html_title:           "Elixir: Znalezienie długości ciągu znaków"
-simple_title:         "Znalezienie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,25 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Znalezienie długości ciągu znaków jest kluczowym aspektem programowania. Pozwala nam to na mierzenie wielkości danych oraz wykonywanie różnych operacji, na przykład porównywanie lub wycinanie części tekstu. 
+## Co i Dlaczego?
+Znalezienie długości łańcucha oznacza określenie, ile znaków zawiera dany tekst. Programiści robią to, aby kontrolować, sprawdzać lub dostosowywać dane tekstowe w swoim kodzie.
 
 ## Jak to zrobić:
-W Elixirze, możemy użyć funkcji `String.length/1`, która przyjmuje jeden argument - ciąg znaków - i zwraca jego długość. Przykładowo, jeśli chcemy znaleźć długość słowa "Programowanie", wpisujemy:
-```Elixir
-String.length("Programowanie")
+W Elixir, sprawa jest prosta. Użyj funkcji `String.length/1`.
+
+```elixir
+tekst = "Witaj, świecie!"
+IO.puts String.length(tekst)
 ```
-I otrzymujemy wynik: `13`. 
 
-Możemy również wykorzystać funkcję `Enum.count/1`, która zlicza ilość elementów w danym ciągu znaków. W tym przypadku argument musi być listą, więc musimy sparsować nasz ciąg do listy, za pomocą funkcji `String.split/2`. Przykładowo:
-```Elixir
-String.split("Lorem ipsum dolor sit amet", "") |> Enum.count()
+Wyjście będzie:
+```elixir
+15
 ```
-I otrzymujemy wynik: `26`.
 
-## Głębszy wykład:
-Długość ciągu znaków jest integralną częścią wielu języków programowania, w tym Elixira. Wcześniejsze wersje języka wykorzystywały funkcję `length/1`, jednak w wersji 1.7 została ona zastąpiona przez `String.length/1`, aby podkreślić, że jest specyficzna dla ciągów znaków. Alternatywnym sposobem zliczania długości jest użycie funkcji `byte_size/1`, która zwraca ilość bajtów w danym ciągu. 
+To oznacza, że łańcuch "Witaj, świecie!" ma 15 znaków.
 
-## Zobacz również:
-- Dokumentacja Elixira dla funkcji `String.length/1`: [https://hexdocs.pm/elixir/String.html#length/1](https://hexdocs.pm/elixir/String.html#length/1)
-- Inne przydatne funkcje dla pracy z ciągami znaków w Elixirze: [https://blog.openfrost.pl/operacje-na-ciagach-znakow-w-elixir/](https://blog.openfrost.pl/operacje-na-ciagach-znakow-w-elixir/)
+## Deep Dive
+Elixir jako język potomny Erlanga wprowadził prosty sposób na obsługę stringów, oparty na Unicode skupiając się na wydajności i poprawnej obsłudze znaków.
+
+Znajdowanie długości łańcucha w Elixir jest szybsze i bardziej efektywne, ponieważ korzysta z listy łączonej, a nie z tablicy bajtów.
+
+Alternatywnie można użyć funkcji `byte_size/1`, ale pamiętaj, że ta funkcja zwraca liczbę bajtów, a nie znaków. To może prowadzić do nieprawidłowych wyników dla stringów zawierających znaki Unicode.
+
+```elixir
+tekst = "ź"
+IO.puts byte_size(tekst)
+IO.puts String.length(tekst)
+```
+
+Wyjście będzie:
+```elixir
+2
+1
+```
+Tu widać, że `byte_size/1` zwraca 2 (dlatego, że "ź" potrzebuje dwóch bajtów), a `String.length/1` poprawnie zwraca 1.
+
+## Zobacz też:
+1. [Dokumentacja Elixir: String.length/1](https://hexdocs.pm/elixir/String.html#length/1)
+2. [Elixir School: Strings](https://elixirschool.com/pl/lessons/basics/strings/)
+3. [Elixir Forum: discussion about string length](https://elixirforum.com/t/get-a-string-length/1504).

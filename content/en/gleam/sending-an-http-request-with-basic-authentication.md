@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Gleam recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,50 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Mastering HTTP Requests with Basic Authentication in Gleam
 
-Sending an HTTP request with basic authentication entails embedding a username and password in an HTTP header to password-protect server resources. Programmers do it to enhance web security and preserve data privacy.
+## What & Why?
+Sending an HTTP request with basic authentication in Gleam is the process of transmitting data over the web while securing it with user credentials. Programmers do it to facilitate secure communication in web services.
 
 ## How to:
 
-Here is how to send an HTTP request with basic authentication in Gleam:
+Here's the drill.
 
 ```Gleam
-import gleam/http
-import gleam/http/request
-import gleam/http/response
+import gleam/http.{client, headers, request, credentials}
 
-pub fn send_request() {
-  let authentication = request.Authentication.basic("username", "password")
-  let my_request = request.get("http://localhost:3000/secure-page")
-    |> request.with_authentication(authentication)
+let creds = credentials.basic("username", "password")
 
-  case http.send(my_request) {
-    Ok(response) ->
-      response
-      |> response.body
-      |> io.println
+let header_creds =
+  credentials
+  |> headers.bearer_authorization
+  |> list.to_tuple
 
-    Error(error) ->
-      error
-      |> http.Error.to_string
-      |> io.println
-  }
-}
+let req =
+  request.new(Url.parse("https://myapp.com").unwrap())
+  |> request.with_headers(header_creds)
+
+let _ = client.send(req)
 ```
 
-## Deep Dive:
+This chunk of code sends an HTTP request with basic authentication by appending a header (`header_creds`) containing encoded credentials to the request (`req`). The `client.send(req)` is used to fire off the request.
 
-Historically, HTTP Basic Authentication was proposed in 1999 under RFC 2617 as the simplest technique for enforcing access controls to web resources. While it remains popular due to its simplicity, be aware that it's not the most secure method as credentials are transported in plaintext, so always use HTTPS.
+## Deep Dive
 
-An alternative to basic authentication is token-based authentication, which typically offers more robust security features. OAuth, for example, is a powerful and flexible protocol that is widely adopted.
+This convention originated from the early days of web development to shield simple transactions over HTTP. Today alternatives include Digest Authentication, OAuth2, and JWTs, but Basic Authentication remains a straightforward, easy to implement method, provided a secure (HTTPS) connection is used.
 
-In terms of implementation under the hood, the Gleam HTTP library uses Erlang's `httpc` client. When preparing a request, the `request.with_authentication` function merges the Authentication header into the request's existing headers. The library then base64-encodes the combined username and password before sending as part of the HTTP header.
+The `credentials.basic()` function in Gleam applies Base64 encoding to the provided credentials and mind you, this isn't encryption - just encoding, hence the need for a secure connection to ensure password security.
 
-## See Also:
+The encoded credentials are set into headers using the `headers.bearer_authorization` function and thereafter pushed into the request via `request.with_headers()`.
 
-To learn more details about HTTP Basic authentication, read the official basics in the [RFC 2617 doc](https://tools.ietf.org/html/rfc2617#section-2).
+## See Also
 
-More about Gleam’s HTTP handling can be found in the [Gleam HTTP library docs](https://hexdocs.pm/gleam_http/gleam/http/index.html).
-
-For an alternative, secure authentication method, read about [OAuth](https://oauth.net/2/).
+- Gleam's HTTP library and examples on GitHub: https://github.com/gleam-lang/http
+- Mozilla's document on HTTP authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- Internet Engineering Task Force (IETF) Basic Authentication's standard: https://tools.ietf.org/html/rfc7617

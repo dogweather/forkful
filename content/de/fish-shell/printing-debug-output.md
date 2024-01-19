@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "Fish Shell: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -11,27 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Debug-Ausgaben drucken ist eine häufige Praxis unter Programmierern, um Fehler zu finden und den Ablauf eines Programms besser zu verstehen. Durch das Drucken von Debug-Ausgaben können Programmer Fehler lokalisieren und nachvollziehen, wie Daten durch ihr Programm fließen.
 
-## Wie geht's?
-Die Fish Shell bietet verschiedene eingebaute Funktionen, um Debug-Ausgaben zu drucken. Eine davon ist die `echo` Funktion, welche eine Zeichenkette auf dem Terminal ausgibt. Beispiel:
+Drucken von Debug-Ausgaben ist der Prozess der Anzeige von Daten während der Programmausführung. Programmierer nutzen es, um die Arbeit des Codes besser zu verstehen, Fehler aufzuspüren und die Softwarequalität zu verbessern.
 
+## So geht's:
+
+Im Fish Shell können wir mit der `echo` Funktion die Debug-Ausgabe drucken. So lassen sich schnell Informationen zur Laufzeit anzeigen:
+
+```Fish Shell
+function debug_output
+    set -l debugging 'Debugging aktiviert'
+    echo $debugging
+end
+
+debug_output
 ```
-Fish Shell  echo "Hallo Welt!"
-```
 
-Dies würde "Hallo Welt!" auf dem Terminal anzeigen. Eine weitere nützliche Funktion ist `printf`, welche ähnlich wie `echo` funktioniert, aber zusätzliche Formatierungsoptionen bietet. Beispiel:
+Dieses Programm druckt den Text "Debugging aktiviert".
 
-```
-Fish Shell  printf "Das ist eine %s Datei" test.txt
-```
+## Vertiefung:
 
-Dies würde "Das ist eine test.txt Datei" auf dem Terminal ausgeben.
+In der historischen Entwicklung liegen die Wurzeln des Debugging in der maschinennahen Programmierung, wo man die genauen Speicherinhalte während der Programmausführung direkt beobachten konnte. Im modernen Kontext stehen verschiedene Alternativen zur Verfügung, vom Einfügen von `echo` Statements bis hin zur Nutzung von dedizierten Debugging-Tools wie gdb.
 
-## Tiefgehender Einblick
-Debug-Ausgaben werden oft verwendet, um Probleme mit dem Programmcode zu finden und zu beheben. Sie können auch dazu dienen, den Programmablauf und die Werte von Variablen zu überwachen. Historisch gesehen waren vor allem printf-Debugging und Debugger, wie GDB, verbreitet. Andere Tools wie Logging-Frameworks können ebenfalls zur Fehlersuche verwendet werden.
+Die Implementierung in Fish Shell ist recht einfach. Bei der Ausführung der `echo` Funktion sendet Fish die angegebene Zeichenkette an die Standardausgabe.
 
-## Siehe auch
-- [Fish Shell-Dokumentation](https://fishshell.com/docs/current/cmds/echo.html)
-- [Einführung in das Debugging](https://www.itprotoday.com/compute-engines/what-debugging-and-how-can-you-use-it)
-- [Der GDB-Debugger](https://www.gnu.org/software/gdb/)
+## Siehe Auch:
+
+Weitere Ressourcen zum Thema Debugging in Fish Shell sind verfügbar auf: 
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+- [Fish Shell Tutorial von GitHub](https://github.com/jorgebucaran/fish-cookbook)
+- [Entwickler-Forum zu Fish Shell](https://fishshell.com/community.html)

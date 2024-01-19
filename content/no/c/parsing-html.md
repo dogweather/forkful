@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av HTML"
-html_title:           "C: Analysering av HTML"
-simple_title:         "Analysering av HTML"
+title:                "Analysering av html"
+html_title:           "C#: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -11,37 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Parsing HTML betyr å analysere og tolke HTML-kode for å kunne vise den riktig på en nettside. Dette er en viktig oppgave fordi HTML-kode kan være kompleks og krever spesialiserte verktøy for å håndtere det. Programmerere gjør det for å sikre at nettsiden viser korrekt informasjon til brukeren.
+
+Å parse HTML handler om å bryte ned HTML-kode i mindre deler for å forstå dens struktur og innhold. Programmerere utfører denne handlingen for å ekstrahere spesifikk informasjon, manipulere data, og bygge dynamiske nettsider i realtid.
 
 ## Hvordan:
-Her er et eksempel på hvordan du kan utføre parsing av HTML i C:
 
-```
+Her er et eksempel på hvordan å lage en enkel HTML-parser i C:
+
+```C
 #include <stdio.h>
-#include <stdlib.h>
+#include "gumbo.h"
+
+void print_tree( GumboNode* node ) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
+    GumboVector* children = &node->v.element.children;
+    for (unsigned int i = 0; i < children->length; ++i) {
+        print_tree(children->data[i]);
+    }
+}
 
 int main() {
-    char *html = "<html><head><title>Tittel</title></head><body><h1>Hei</h1></body></html>";
-
-    // kode for å parse HTML her
-
-    printf("Tilpasset HTML: %s", html);
+    GumboOutput* output = gumbo_parse("<h1>Hello, World!</h1>");
+    print_tree(output->root);
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
     return 0;
 }
 ```
 
-Eksempelkode vil vise følgende utdata:
+Da du kjører denne koden, vil utdata se slik ut:
 
 ```
-Tilpasset HTML: Tittel Hei
+Hello, World!
 ```
 
-## Dykk dypere:
-HTML parsing har eksistert siden de tidlige dagene av internett og er fortsatt en viktig del av webutvikling i dag. Alternativene til å programmere din egen parser inkluderer bruk av eksisterende HTML-parsere som har blitt utviklet av forskjellige grupper og programmeringsspråk.
+Du vil ikke se HTML-taggene, men teksten blir ekstrahert.
 
-Når du lager din egen parser, er det viktig å huske på viktigheten av å håndtere forskjellige former for HTML-kode og unngå bugs og sikkerhetssårbarheter. Implementeringen av en HTML-parser kan være kompleks og tidkrevende, så det er viktig å være tålmodig og følge et strukturert og godt dokumentert design.
+## Dypdykk
 
-## Se også:
-- [W3Schools HTML Tutorial](https://www.w3schools.com/html/)
-- [HTML-parsere på GitHub](https://github.com/topics/html-parser) 
-- [Dokumentasjon om HTML-parsing](https://developer.mozilla.org/en-US/docs/Web/HTML/Parser)
+Gumbo er en åpen kildekode C HTML-parser bygget av Google. Historisk sett har det vært få gode alternativer for HTML-parsing i C, men de nyere alternativene har blitt mer fremtredende, som MyHTML og HTMLParserC.
+
+Parsing av HTML kan variere i kompleksitet, avhengig av hvor robust parseren er. Det krever forståelse av Document Object Model (DOM), som er en kryssplattform og språkuavhengig grensesnitt som lar programmer manipulere HTML.
+
+## Se Også
+
+1. Gumbo HTML-parser: https://github.com/google/gumbo-parser
+2. MyHTML GitHub: https://github.com/lexborisov/myhtml
+3. HTMLParserC GitHub: https://github.com/AMDmi3/htmlparser
+4. Document Object Model (DOM): https://developer.mozilla.org/no/docs/Web/API/Document_Object_Model/Introduction

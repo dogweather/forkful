@@ -1,7 +1,7 @@
 ---
-title:                "Виділення підрядків"
-html_title:           "Java: Виділення підрядків"
-simple_title:         "Виділення підрядків"
+title:                "Видобування підрядків"
+html_title:           "C++: Видобування підрядків"
+simple_title:         "Видобування підрядків"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,22 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і Чому?
-Екстрагування субстрінгів є процесом, коли програмісти витягують певну частину тексту зі строки або списку. Використання цього може допомогти у полегшенні обробки даних або у присвоєнні значень змінним. Ця операція є корисною, оскільки дає можливість працювати зі складними даними та зробити програму більш ефективною.
+## Шо & Навіщо?
 
-Як це зробити:
+Видобування підрядків (substrings) - це процес вибору певної частини стрічки за індексами. Програмісти це роблять, коли потрібно обробити частину даних в рамках більшої стрічки.
+
+## Як це зробити:
+
+Метод `substring()` в Java використовується для видобування підрядків. Спробуйте подивитися на цей приклад:
+
 ```Java
-String text = "Україна - чудова країна";
-// Екстрагування субстрінгу з позиції 7 до 15
-String substring = text.substring(7, 15);
-System.out.println(substring);
+public class Main {
+  public static void main(String[] args) {
+    String str = "Життя - це подорож, а не мета.";
+    String subStr = str.substring(8, 16);
+    System.out.println(subStr);
+  }
+}
 ```
-Вихідний результат: "чудова країна"
 
-Глибокий погляд:
-Екстрагування субстрінгів було впроваджено в Java з появою версії 1.2. Раніше, для досягнення цієї операції, доводилося використовувати методи використання циклів та регулярних виразів. Іншим альтернативним способом екстрагування субстрінгів є використання класу StringBuilder з методом substring. Це дає змогу економити оперативну пам'ять та полегшує роботу зі строки.
+Виведуться слова "це подорож". Оголошено стрічку `str`, потім вибрано підрядок з 8 по 16 індекси. Цей підрядок виведено на екран.
 
-Дивіться також:
-[Документація Java по методу substring] (https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int,%20int))
-[Відео з детальною інструкцією по екстрагуванню субстрінгів в Java] (https://www.youtube.com/watch?v=Ojn392cQiFY)
-[Стаття про використання класу StringBuilder для екстрагування субстрінгів] (https://www.baeldung.com/java-substring-stringbuilder)
+## Поглиблений матеріал
+
+Метод `substring()` був введений у Java 1.0, що робить його одним з найстаріших методів мови для роботи зі стрічками. Альтернативою може бути використання методу `split()`, який розбиває стрічку на масив підрядків за вказаним символом.
+
+Часто на практиці програмісти використовують `substring()` разом з `indexOf()`, щоб визначити, звідки починати видобування підрядка.
+
+## Дивіться також
+
+1. [Java String substring() Method - W3Schools](https://www.w3schools.com/java/ref_string_substring.asp)
+2. [Extract a substring in Java - Stack Overflow](https://stackoverflow.com/questions/16027229/extracting-a-substring-in-java)
+3. [Java String substring() method with examples - TutorialsPoint](https://www.tutorialspoint.com/java/java_string_substring.htm)

@@ -1,7 +1,7 @@
 ---
-title:                "מינתח תחריט סדרתי"
-html_title:           "Elixir: מינתח תחריט סדרתי"
-simple_title:         "מינתח תחריט סדרתי"
+title:                "אינטרפולציה של מחרוזת"
+html_title:           "Arduino: אינטרפולציה של מחרוזת"
+simple_title:         "אינטרפולציה של מחרוזת"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## מה זה ולמה?  
+String interpolation היא תהליך שבו אנחנו משלבים משתנים או ביטויים בוליאניים בתוך מחרוזת. באמצעות הטכניקה הזאת, מאפשרים לנו ליצור מחרוזות גמישות ורב-תכליתיות ללא הצורך להתמקד בסדר המילים או קיצוניות טקסט.
 
-תיבה בתוך שורת קוד שמאפשרת למתכנתים להכניס משתנים ישירות בתוך טקסט מתואם. מתכנתים משתמשים בו כדי לקלט משתנים דינמיים בתוך מחרוזות ולהפוך את הקוד לקצר ויעיל יותר. 
-
-## איך לעשות?
-
- ```Elixir
- name = "יעל"
-age = 25
-"I am #{name} and I am #{age} years old."
-```
-
-לתוצאה תהיה: "אני יעל ואני 25 שנים."
+## איך להשתמש:
+ב-Elixir, נשתמש בתווים `{}` כדי לערבב משתנה או ביטוי בתוך מחרואת.
 
 ```Elixir
-message = "המשתמש #{user_id} התנתק מהמערכת בתאריך #{time}"
+name = "Moshe"
+IO.puts "שלום, #{name}"
+# Outputs: שלום, Moshe
 ```
 
-לתוצאה תהיה: "המשתמש 123 התנתק מהמערכת בתאריך 2020-11-24."
+בדוגמה הזו, אנחנו משתמשים ב-interpolation כדי להוסיף את השם של Moshe למחרוזת שלנו.
 
-## מעמקים
+## צלילה עמוקה: 
+חדשות טובות - אף פעם לא אפשרי להכניס תווים מיותרים ב-interpolation של Elixir. הדקדוק שלו מופשט, כך שהוא זקוק לסוגריים מסולסלים במקרה של interpolation. פונקציות, ביטויים מתמטיים או שימוש בתנאי- אפשריים כולם! 
 
-השיטה של להכניס משתנים בתוך מחרוזות הייתה ידועה כבר מהזמנים הראשונים של שפת התכנות Perl, כאשר נקראת "interpolation". בשפת אליקסיר, יש שתי שיטות שונות לחישוב מחרוזות. אחת הן זו שמשתמשת במילולונים והשנייה, שתואמת לקוד אחרת, משתמשת בסוגריים מסולסלים.
+אבל במקרה שלא צריך להשתמש ב-interpolation, מחרוזות מאוחדות יכולות להיות אלטרנטיבה נהדרת.
+```Elixir
+name = "Moshe"
+simple_greeting = "שלום, " <> name
+IO.puts simple_greeting
+# Outputs: שלום, Moshe
+```
+המחרוזת המאוחדת לא הכרחית למשלים של מילה, אבל היא טיפה יותר מהירה מאשר interpolation.
 
-## ראו גם
-
-למידע נוסף על כיצד להשתמש בשיטת interpolation באליקסיר ניתן לבדוק את המדריכים באתר הרשמי של שפת התכנות לקסיר.
+## ראה גם:
+1. Elixir’s official guide on string interpolation: [Elixir Interpolation](https://elixir-lang.org/getting-started/io-and-the-file-system.html#iodots)
+2. Elixir School’s lesson on strings: [Elixir Strings](https://elixirschool.com/en/lessons/basics/strings/)

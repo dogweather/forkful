@@ -1,6 +1,6 @@
 ---
 title:                "Отримання поточної дати"
-html_title:           "C#: Отримання поточної дати"
+html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "C#"
 category:             "C#"
@@ -10,21 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Зачому?
-Отримання поточної дати - це процес, за допомогою якого програмісти можуть отримати поточну дату і час. Це корисна функція, яка допомагає в роботі з датами та часом в програмах.
+## Що й Навіщо?
+Отримання поточної дати в C# - це процес визначення дати і часу на момент виконання програми. Програмісти використовують це для відслідковування і зберігання інформації базового часу в програмах і системах.
 
-## Як зробити:
-Для отримання поточної дати використовуйте статичний метод `DateTime.Now` з класу `DateTime`. Наприклад:
-
+## Як це зробити:
+Отримати поточну дату в C# можна дуже легко завдяки класу `DateTime`. Нижче наведений код:
 ```C#
-DateTime currentDate = DateTime.Now;
-Console.WriteLine(currentDate);
+using System;
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        DateTime currentDate = DateTime.Now;
+        Console.WriteLine(currentDate);
+    }
+}
+```
+При виконанні цього коду ви отримаєте поточну дату і час, наприклад:
+```
+2023-02-28 14:00:00
 ```
 
-При виконанні цього коду ви отримаєте поточну дату та час у форматі `MM/dd/yyyy hh:mm:ss`.
+## Поглиблений аналіз
+Метод `DateTime.Now` є частиною .Net Framework з його перших версій і є основним способом отримання поточної дати і часу в C#. 
 
-## Глибокий занурення:
-Отримання поточної дати в програмуванні використовується для різних цілей, таких як ведення журналів, роботи з датовими об'єктами та встановлення часових меж для виконання певних функцій. Наприклад, у веб-розробці поточна дата може використовуватися для відображення часу останнього оновлення вмісту на сторінці. Крім того, нарівні з `DateTime.Now` є ще кілька методів для отримання поточної дати: `DateTime.Today` та `DateTime.UtcNow`.
+Є інші альтернативи, наприклад, ви можете використовувати `DateTimeOffset.Now`, який надає інформацію про зміщення відносно UTC, що є корисним при роботі з різними часовими поясами. 
 
-## Дивіться також:
-Для додаткової інформації щодо роботи з датами та часом в `C#`, дивіться документацію Microsoft про клас `DateTime`: [https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+Метод `DateTime.Now` працює, отримуючи поточну дату і час системи, результат обчислюється на основі системного часу плюс властивість `DateTimeKind`, яка встановлена як `Local`.
+
+## Дивитись також
+- [DateTime в .NET](https://docs.microsoft.com/uk-ua/dotnet/api/system.datetime?view=net-6.0)
+- [DateTime vs DateTimeOffset](https://docs.microsoft.com/uk-ua/dotnet/standard/datetime/choosing-between-datetime)
+- [Дата і час в C#](https://www.c-sharpcorner.com/blogs/date-and-time-in-c-sharp)

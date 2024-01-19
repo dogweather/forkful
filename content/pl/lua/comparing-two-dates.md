@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "Lua: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i Dlaczego?
-Porównywanie dwóch dat to proces porównywania dwóch dat do siebie w celu ustalenia, która jest wcześniejsza lub późniejsza. Programiści często porównują daty w swoim kodzie, aby upewnić się, że dane są przetwarzane w odpowiedniej kolejności lub aby ustalić, kiedy zdarzenia miały miejsce.
+## Co i dlaczego?
 
-# Jak to zrobić:
-Używanie standardowych funkcji daty w Lua, takich jak os.difftime () i os.date (), pozwala na porównywanie dwóch dat w prosty sposób. Poniżej przedstawiono przykładowy kod, który porównuje dwie daty i wyświetla odpowiedni komunikat z wynikiem porównania.
+Porównywanie dwóch dat to proces sprawdzania, która data jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to np. do sortowania wydarzeń w chronologicznym porządku, sprawdzania terminów ważności czy logowania działań systemowych.
+
+## W jaki sposób:
+
+W Lua istnieje wiele sposobów porównywania dat, tutaj pokażę ci jeden z najprostszych, wykorzystując wbudowane funkcje `os.time` i `os.date`. Poniższy kod pokazuje porównanie dzisiejszej daty z konkretną datą (2023 rok, styczeń, 1 dzień):
 
 ```Lua
--- Ustawienie dat
-local date1 = os.time({year = 2021, month = 4, day = 5})
-local date2 = os.time({year = 2021, month = 4, day = 10})
+-- Aktualna data
+local currentDate = os.time()
+
+-- Konkretna data
+local someDate = os.time{ year=2023, month=1, day=1 }
 
 -- Porównanie dat
-if date1 < date2 then
-  print("Pierwsza data jest wcześniejsza niż druga data.")
-elseif date1 > date2 then
-  print("Druga data jest wcześniejsza niż pierwsza data.")
+if currentDate > someDate then
+     print("Aktualna data jest późniejsza.")
+elseif currentDate < someDate then
+     print("Aktualna data jest wcześniejsza.")
 else
-  print("Obie daty są identyczne.")
+     print("Daty są identyczne.")
 end
 ```
 
-Powyższy kod wyświetli następujący wynik:
+## Głębokie zanurzenie:
 
-```
-Pierwsza data jest wcześniejsza niż druga data.
-```
+Historia porównywania dat w Lua jest już dość stara. Lua, z wykorzystaniem biblioteki `os`, dostarcza funkcje do manipulacji datą i czasem, które są proste, a jednocześnie potężne.
 
-# Wchodzenie w szczegóły:
-W przeszłości porównywanie dat było bardziej skomplikowane, ponieważ wymagało użycia bibliotek zewnętrznych, takich jak luarocks. Jednak od wersji Lua 5.1 istnieją wbudowane funkcje daty, które ułatwiają ten proces. Alternatywnym sposobem porównywania dat jest użycie liczb w formacie DATETIME, które można łatwo porównywać, ale jest to mniej intuicyjne dla programistów.
+Innym sposobem porównywania dat w Lua jest wykorzystanie zewnętrznej biblioteki, takiej jak `Penlight` czy `Date.lua`. Te biblioteki oferują bardziej zaawansowane funkcje do manipulacji i porównywania dat.
 
-# Zobacz także:
-1. Dokumentacja Lua: https://www.lua.org/docs.html
-2. Porównywanie dat w Pythonie - artykuł porównujący różne sposoby porównywania dat w różnych językach programowania: https://realpython.com/python-datetime/
-3. Biblioteka luarocks do porównywania dat: https://luarocks.org/modules/luarocks/date
+Podsumowując, Lua porównuje dwie daty poprzez konwersję ich na format liczby sekund od pewnej ery (tzw. timestamp), co pozwala na proste i wydajne porównanie.
+
+## Zobacz także:
+
+- Dokumentacja Lua: [https://www.lua.org/manual/5.1/](https://www.lua.org/manual/5.1/)
+- Biblioteka Penlight: [https://stevedonovan.github.io/Penlight/api/](https://stevedonovan.github.io/Penlight/api/)
+- Biblioteka Date.lua: [https://github.com/Tieske/date](https://github.com/Tieske/date)

@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Go: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Go"
 category:             "Go"
@@ -10,44 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mikä & Miksi?
-Merkkijonojen yhdistäminen on tapa yhdistää kaksi merkkijonoa yhdeksi. Ohjelmoijat tekevät tätä esimerkiksi, kun he haluavat luoda pidempiä lauseita tai tulostaa tietoja yhtenä kappaleena.
+# Miten merkkijonoja yhdistetään Golang-ohjelmoinnissa
 
-Kuinka tehdä se:
-Esimerkki 1:
+## Mikä & Miksi?
+Merkkijonon yhdistäminen on prosessi, jossa liitämme yhteen kaksi tai useampia merkkijonoja. Ohjelmoijat tekevät tämän tehtävän helpottamiseksi ja tehokkuuden lisäämiseksi.
+
+## Näin se tehdään:
+
 ```Go
 package main
-
 import "fmt"
-
 func main() {
-    s1 := "Tervetuloa"
-    s2 := "kotiin!"
-    result := s1 + " " + s2
-    fmt.Println(result)
-}
+  var str1 = "Hei,"
+  var str2 = " maailma!"
+  fmt.Println(str1 + str2)
+} 
 ```
-Tulostus:
-Tervetuloa kotiin!
 
-Esimerkki 2:
+Tämä tulostaa:
+
+```
+Hei, maailma!
+```
+## Syventävä tieto:
+**Historiallinen konteksti**: Alkuperäissä ohjelmointikielissä, kuten C:ssä, merkkijonojen yhdistäminen oli vaivalloista. Nykypäivän kielissä, kuten Go:ssa, se on paljon helpompaa.
+
+**Vaihtoehdot**: Go tarjoaa myös `strings.Join()` ja `fmt.Sprintf()`, jotka ovat hyödyllisiä pitkien merkkijonojen yhdistämisessä.
+
 ```Go
 package main
-
-import "fmt"
-
+import (
+  "strings"
+  "fmt"
+)
 func main() {
-    name := "Maija"
-    age := 35
-    info := "Nimeni on " + name + " ja olen " + string(age) + "-vuotias."
-    fmt.Println(info)
+  str := []string{"Hei,", " maailma!"}
+  fmt.Println(strings.Join(str, ""))
 }
 ```
-Tulostus:
-Nimeni on Maija ja olen 35-vuotias.
 
-Syvällisempi perehtyminen:
-Merkkijonojen yhdistämistä on käytetty ohjelmoinnissa jo pitkään. Aiemmin sitä tehtiin usein käyttämällä loogisia operaattoreita, kuten + tai &, mutta nykyään monissa ohjelmointikielissä, kuten Go:ssa, on olemassa valmiita funktioita tai metodeja merkkijonojen yhdistämiseen. Eräs vaihtoehto merkkijonojen yhdistämiseen on käyttää taulukoita ja yhdistää ne yhdeksi merkkijonoksi.
+Tämä tulostaa:
 
-Linkkejä:
-Lisätietoja Go:n merkkijonojen yhdistämisestä löytyy osoitteesta https://golang.org/pkg/strings/#Join ja https://golang.org/pkg/bytes/#Buffer.
+```
+Hei, maailma!
+```
+
+**Toteutuksen yksityiskohdat**: Go käyttää `+` kertoo kompilaattorille ketjuttaa merkkijonot optimoidusti, joten se on nopein tapa.
+
+## Katso myös:
+1. Go:n dokumentaatio merkkijonotoiminnoista: [https://golang.org/pkg/strings/](https://golang.org/pkg/strings/)
+2. efficent string concatenation in Go: [https://hermanschaaf.com/efficient-string-concatenation-in-go/](https://hermanschaaf.com/efficient-string-concatenation-in-go/)

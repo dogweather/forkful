@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को इंटरपोलेट करना"
-html_title:           "PHP: स्ट्रिंग को इंटरपोलेट करना"
-simple_title:         "स्ट्रिंग को इंटरपोलेट करना"
+title:                "स्ट्रिंग का अंतर्कलन"
+html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
+simple_title:         "स्ट्रिंग का अंतर्कलन"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?:
-Interpolating a string is a way to insert variables or expressions into a string. It allows programmers to dynamically manipulate strings and greatly improves the readability of code. We use this in PHP to make our code more efficient and to avoid writing too many concatenated strings.
+## क्या और क्यों?
 
-## How to:
-To interpolate a string in PHP, we use the `$` sign before the variable or expression we want to insert. For example, if we have a variable `$name` with the value "John", we can use it in a string like this:
+स्ट्रिंग इंटरपोलेशन, एक स्ट्रिंग में चर या व्यक्तिगत वारियों को एम्बेड करने की प्रक्रिया है। इससे कोड को बेहतर पढ़ने और लिखने में सुविधा होती है, साथ ही गणितीय और तार्किक ऑपरेशन को और अधिक स्पष्ट बनाती है।
+
+## कैसे:
+
+इंटरपोलेट करें:
+
 ```PHP
-echo "Hello $name, how are you?";
+$greeting = "नमस्ते";
+$name = "तारा";
+echo "{$greeting}, {$name}!"; 
 ```
-The output will be:
+आउटपुट:
+
 ```
-Hello John, how are you?
-```
-We can also use expressions within the string, like this:
-```PHP
-echo "The result is: " . ($x + $y);
-```
-Assuming `$x = 5` and `$y = 3`, the output will be:
-```
-The result is: 8
+नमस्ते, तारा!
 ```
 
-## Deep Dive:
-Interpolating a string in PHP is not a new concept, it has been around since the early days of the language. In fact, it used to be the only way to manipulate strings before the introduction of the `sprintf()` function. However, now there are other alternatives such as using concatenation with the `.` operator or using the `sprintf()` function.
+## गहरा डाइव:
 
-When using interpolation, it is important to remember to use double quotes `"` instead of single quotes `'` as interpolation only works with double quotes. Also, keep in mind that interpolating large strings can be resource intensive and may affect the performance of your code.
+स्ट्रिंग इंटरपोलेशन के इस्तेमाल की शुरुआती घड़ियों से ही हुई थी, जब कम्प्यूटर प्रोग्रामिंग नई-नई शुरू हुई थी। इसे अलग-अलग प्रोग्रामिंग भाषाओं में अलग-अलग तरह से किया जाता है। PHP में हम कई प्रकार से वैकल्पिक रूप से इंटरपोलेट कर सकते हैं जैसे ‘echo’ या ‘print’ स्टैटमेंट का उपयोग करके। विशेष रूप से PHP में, इंटरपोलेशन डबल कोट्स ("") के भीतर होता है, जबकि सिंगल कोट्स ('') इंटरपोलेशन को प्रतिबंधित करते हैं।
 
-## See Also:
-To learn more about string interpolation in PHP, check out the official documentation: https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double
+## देखिए भी:
+
+इंटरपोलेशन के बारे में और विस्तार में जानने के लिए ये स्रोत एक स्थान हो सकता है:
+
+1. [PHP मैनुअल: स्ट्रिंग्स](https://www.php.net/manual/en/language.types.string.php)
+2. [स्टैक ओवरफ्लो](https://stackoverflow.com/questions/2631749/php-variable-interpolation-vs-concatenation) पर PHP स्ट्रिंग इंटरपोलेशन बनाम संयोजन पर एक चर्चा.
+3. [PHP के लिए गूगल कोड यूनिवर्सिटी](https://developers.google.com/edu/php/) पर स्ट्रिंग इंटरपोलेशन का उदाहरण और सरलचीन स्ट्रिंग इंटरपोलेशन।

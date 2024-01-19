@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "TypeScript: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,28 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum? 
-Das Lesen von Befehlszeilenargumenten ist eine Technik, die es Programmierern ermöglicht, Eingaben durch die Befehlszeile zu erhalten. Dies ist besonders nützlich, um Benutzereingaben zu verarbeiten oder den Programmablauf zu steuern.
+## Was & Warum?
 
-## So geht's: 
-Um Befehlszeilenargumente in TypeScript zu lesen, können wir die process.argv-Variable verwenden. Hier ist ein Beispiel, das die Befehlszeilenargumente ausgibt:
+Beim Lesen von Kommandozeilenargumenten kann ein Programm Eingaben direkt von der Konsole oder dem Terminal empfangen. Dies wird von Programmierern oft genutzt um Programme flexibler und interaktiver zu gestalten.
+
+## So geht's:
+
+Das Lesen von Befehlszeilenargumenten ist unkompliziert. Let's do it!
 
 ```TypeScript
-const args = process.argv; 
-console.log("Dieses Programm wurde mit den folgenden Befehlszeilenargumenten aufgerufen: ", args);
+let myArgs = process.argv.slice(2);
+console.log('meine Argumente: ', myArgs);
 ```
 
-Beim Ausführen des obigen Codes mit dem Befehl `ts-node index.ts arg1 arg2` wird folgende Ausgabe erzeugt:
+Wenn Sie den obigen Code mit einigen Argumenten ausführen, gibt er diese Argumente aus. 
 
+Führen Sie beispielsweise den folgenden Befehl aus:
+
+```bash
+node myScript.ts argument1 argument2
 ```
-Dieses Programm wurde mit den folgenden Befehlszeilenargumenten aufgerufen: ["/usr/bin/node", "index.ts", "arg1", "arg2"]
+
+Dann ist die Ausgabe:
+
+```bash
+meine Argumente:  [ 'argument1', 'argument2' ]
 ```
-## Tiefgehende Einblicke:
-Das Lesen von Befehlszeilenargumenten ist eine häufig verwendete Praxis in der Programmierung. Es ermöglicht den Benutzern, Eingaben zur Laufzeit an ein Programm zu übergeben. Eine Alternative zum Lesen von Befehlszeilenargumenten ist das Lesen von Benutzereingaben über eine Benutzeroberfläche.
 
-Die Implementierung von Befehlszeilenargumenten in TypeScript erfolgt über die process.argv-Variable, die ein Array von Befehlszeilenargumenten enthält. Diese Technik wird sowohl in plattformübergreifenden als auch in serverseitigen Anwendungen verwendet.
+## Deep Dive
 
-## Siehe auch:
-- [Offizielle Dokumentation zu process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [Eine Einführung in die Befehlszeilenargumente in TypeScript](https://www.twilio.com/blog/2017/10/reading-command-line-arguments-in-typescript.html)
-- [Ein Tutorial zur Verwendung von Befehlszeilenargumenten in Node.js-Anwendungen](https://www.digitalocean.com/community/tutorials/how-to-use-node-js-cli-arguments)
+Das Konzept der Kommandozeilenargumente ist nichts Neues und hat seinen Ursprung in den frühen Tagen der textbasierten Benutzeroberflächen. Es bleibt eine beliebte Praxis aufgrund seiner Direktheit und Einfachheit.
+
+Alternativen zum Lesen von Kommandozeilenargumenten sind: Dateieingabe/ausgabe (IO), Benutzereingabe während der Laufzeit und Netzwerkanfragen, je nach Anwendungsfall.
+
+Im Detail verwendet Node.js (und damit TypeScript) das `process.argv` Array für Zugriff auf die Befehlszeilenargumente. Das erste Element ist der Pfad zur Node.js ausführbaren Datei, das zweite Element ist der Pfad zur ausführbaren .ts Datei und der Rest des Arrays beinhaltet die eigentlichen Argumente.
+
+## Siehe Auch
+
+- [Node.js Dokumentation zu 'process.argv'](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [TypeScript Handbuch](https://www.typescriptlang.org/docs/)
+- [Wertvoller Artikel über Kommandozeilenargumente](https://stackabuse.com/command-line-arguments-in-node-js/)

@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Vérifier si un répertoire existe est une fonctionnalité importante pour les développeurs PHP. Cette vérification permet de s'assurer qu'un fichier souhaité soit présent avant d'y accéder ou avant de le créer. Cela permet également d'éviter les erreurs et les interruptions de processus lors de l'exécution d'un script.
+## Qu'est-ce & Pourquoi ?
 
-## Comment faire:
-Utiliser la fonction `file_exists()` pour vérifier si un répertoire existe. Voici un exemple de code :
+Vérifier si un répertoire existe est une étape de programmation qui consiste à confirmer si un certain chemin de fichier mène à un répertoire existant. Les programmeurs le font pour prévenir les erreurs avant qu'elles ne surviennent.
+
+## Comment faire :
+
+Utilisez la fonction `is_dir` pour vérifier si un répertoire existe. Voyons un exemple simpliste :
 
 ```PHP
-if (file_exists("/chemin/vers/le/répertoire")){
-    echo "Le répertoire existe.";
-} else{
-    echo "Le répertoire n'existe pas.";
+<?php
+$dir = '/chemin/vers/repertoire';
+
+if (is_dir($dir)) {
+    echo "Le répertoire existe";
+} else {
+    echo "Le répertoire n'existe pas";
 }
+?>
 ```
+Si le répertoire existe, cela afficherait "Le répertoire existe". Sinon, "Le répertoire n'existe pas" est renvoyé. 
 
-La sortie de ce code dépendra du répertoire donné en paramètre. Si le répertoire existe, le message "Le répertoire existe." sera affiché, sinon le message "Le répertoire n'existe pas." sera affiché.
+## Approfondissement
 
-## Zoom sur:
-#### Contexte historique:
-La vérification de l'existence d'un répertoire est une fonctionnalité couramment utilisée dans les langages de programmation, y compris en PHP. Elle a été ajoutée dès la première version de PHP et a subi plusieurs améliorations au fil des versions suivantes.
+D'un point de vue historique, la fonction `is_dir` est une partie intégrale de PHP depuis PHP 4. Avant cela, les programmeurs devaient utiliser des approches plus complexes pour vérifier si un répertoire existait.
 
-#### Alternatives:
-Une alternative à la fonction `file_exists()` est la fonction `is_dir()` qui permet également de vérifier si un répertoire existe. La différence est que `is_dir()` renverra `true` uniquement si le chemin donné est un répertoire.
+Une alternative à `is_dir` pourrait être l'utilisation de `file_exists`. Cette fonction vérifie si un fichier ou un répertoire existe à partir d'un chemin donné. Cependant, il est à noter que `file_exists` renverra `true` même si le chemin indique un fichier et non un répertoire. Une utilisation prudente est donc essentielle. 
 
-#### Détails de l'implémentation:
-La fonction `file_exists()` utilise le cache I-nœud de Linux pour vérifier si un fichier ou un répertoire existe. Si le fichier ou le répertoire est présent dans le cache, la fonction renverra `true` immédiatement. Sinon, elle vérifiera physiquement si le fichier ou le répertoire existe. Ceci permet d'optimiser les performances lors de la vérification de l'existence de plusieurs fichiers ou répertoires.
+Quand `is_dir` est appelée, PHP effectue une recherche dans le système de fichiers pour voir si le répertoire spécifié existe. Si oui, elle retourne `true`; sinon, elle retourne `false`.
 
-## Voir aussi:
-- Documentation officielle de la fonction `file_exists()`: https://www.php.net/manual/en/function.file-exists.php
-- Documentation officielle de la fonction `is_dir()`: https://www.php.net/manual/en/function.is-dir.php
-- Article sur la gestion des erreurs en PHP: [Gestion des erreurs en PHP: Une introduction pour les débutants](https://www.kernelverse.com/posts/errors-php-beginners/)
+## Voir également
+
+1. [Fonction is_dir - Documentation de PHP](https://www.php.net/manual/fr/function.is-dir.php)
+2. [Fonction file_exists - Documentation de PHP](https://www.php.net/manual/fr/function.file-exists.php)
+3. [Guide avancé sur les systèmes de fichiers avec PHP](https://www.php.net/manual/fr/book.filesystem.php)

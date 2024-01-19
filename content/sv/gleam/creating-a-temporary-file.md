@@ -1,6 +1,6 @@
 ---
 title:                "Att skapa en tillfällig fil"
-html_title:           "Gleam: Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
 simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,28 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Skapande av en tillfällig fil är en vanlig uppgift för programmerare som behöver manipulera data eller spara temporära resultat. En temporär fil är en fil som skapas tillfälligt och sedan raderas efter att den har använts.
+## Vad & Varför?
+Att skapa en temporär fil är ett sätt att lagra data tillfälligt under programmets körning. Programmerare gör detta när de behöver bearbeta stora mängder data, hålla dem i minnet skulle vara opålitligt eller kostsamt.
 
-# Hur?
-För att skapa en temporär fil i Gleam använder du funktionen `File.temp` och anger en prefix och en suffix för filnamnet. I exemplet nedan skapas en temporär fil med prefixet "temp" och suffixet "txt":
+## Hur gör man:
+Gleam har inte inbyggd stöd för att skapa temporära filer, men vi kan använda Erlang's `:file.mktemp` funktion, som Gleam kan kalla:
 
-```Gleam
-let temp_file = File.temp("temp", "txt")
+```gleam
+import erlang
+
+fn erlang_temp_file(prefix: String, suffix: String) -> Result(String, Nil) {
+  erlang.apply(:file, :mktemp, [prefix, suffix])
+  |> Result.from_erlang
+}
+
+fn main(args: List(String)) {
+  case erlang_temp_file("prefix_", ".suffix") {
+    Ok((path, _fd)) ->
+      erlang.display(path)
+
+    Error(Nil) ->
+      erlang.display("Unable to create a temp file.")
+  }
+}
 ```
-När koden körs kommer en temporär fil att skapas med ett unikt nummer för att undvika dubbletter. Du kan sedan använda filen för att läsa eller skriva data och när du är klar kan du radera den genom att använda funktionen `File.remove`:
 
-```Gleam
-File.remove(temp_file)
+När du kör detta program, kommer du att se en utdata som liknar:
+
+```
+/tmp/prefix_xxxxxx.suffix
 ```
 
-# Djupdykning
-Att använda tillfälliga filer är ett vanligt sätt att hantera data som inte behövs för framtida bruk eller som inte är nödvändigt att permanent spara. Det är även ett sätt att skydda känslig data från att lagras permanent.
+## Djupdykning
+Att skapa temporära filer är en gammal koncept och har använts i datavetenskap i decennier för att hantera minnesproblem. Det finns alternativ, som att använda databaser eller distribuerade cache-system som Redis. Temporära filer är emellertid enkla att implementera och kräver ingen ytterligare setup. Intern implementation av metoden `:file.mktemp` genererar en unik filnamn som inte redan finns i systemet.
 
-Ett alternativ till att skapa en temporär fil är att skapa en temporär strängvariabel och spara data i den istället. Detta är dock inte alltid det bästa alternativet eftersom det kan innebära en större minnesbelastning.
-
-I Gleam implementeras skapandet av en tillfällig fil genom att använda systemanropet `mkstemp` som finns i de flesta operativsystem.
-
-# Se även
-- [Gleam-dokumentationen för File-modulen](https://gleam.run/libraries/file.html)
-- [Wikipedia-artikeln om tillfälliga filer](https://en.wikipedia.org/wiki/Temporary_file)
+## Se även
+Kolla in Erlang's officiella dokumentation om att skapa temporära filer:
+- [`:file.mktemp`](http://erlang.org/doc/man/file.html#mktemp-2)
+Råd om när och hur man ska använda temporära filer:
+- [What are temporary files and how to use them](https://www.gnu.org/software/autogen/mktemp.html)
+- [When should I use a temporary file](https://dba.stackexchange.com/questions/11114/when-should-i-use-a-temporary-table-vs-a-permanent-table)
+Om du är intresserad av hur filsystem fungerar, har [Understanding the Linux Kernel](https://www.oreilly.com/library/view/understanding-the-linux/0596005652/) ett bra kapitel om det.

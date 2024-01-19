@@ -1,7 +1,7 @@
 ---
-title:                "Transformando uma data em uma string"
-html_title:           "Gleam: Transformando uma data em uma string"
-simple_title:         "Transformando uma data em uma string"
+title:                "Convertendo uma data em uma string"
+html_title:           "C++: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,37 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+# Convertendo uma data em uma string no Gleam: um guia prático
 
- Converter uma data em uma string é o processo de transformar uma data, que é uma forma de representar um momento específico no tempo, em uma cadeia de caracteres, que é uma coleção de letras e símbolos. Os programadores fazem isso para facilitar a manipulação e exibição de datas em seus programas.
+## O Que & Por Quê?
 
-## Como fazer:
+A conversão de uma data para uma string transforma um objeto de data em um formato textual que pode ser facilmente exibido, compartilhado ou armazenado. Programadores fazem isso porque é mais fácil trabalhar com datas em formatos de string.
 
-```Gleam
-import Gleam.Date
-import Gleam.String
+## Como Fazer:
 
-let date = Date.new(2021, 10, 15)
-let string = String.from_date(date)
-```
-Saída: "2021-10-15"
+Primeiro, a biblioteca "gleam/time" deve ser importada. Vamos converter a data atual em uma string:
 
 ```Gleam
-import Gleam.Date
-import Gleam.String
+import gleam/time.{now, format}
 
-let date = Date.new(2021, 10, 15)
-let string = String.from_date_with_format(date, "%d/%m/%Y")
+fn converter_data_string() {
+  let data_atual = now()
+  let formato_string = "YYYY-MM-DD"
+  
+  format(data_atual, formato_string)
+  |> io.println
+}
 ```
-Saída: "15/10/2021"
+
+Ao executar este código, você verá a data atual exibida no formato "YYYY-MM-DD".
 
 ## Mergulho Profundo:
 
-Existem várias maneiras de converter uma data em uma string, dependendo das necessidades do programador. Antes da linguagem de programação Gleam, métodos comuns incluíam o uso de bibliotecas externas ou escrever funções personalizadas. No entanto, com a biblioteca padrão `Gleam.Date` e a função `from_date_with_format`, essa tarefa foi simplificada.
+A conversão de datas para strings é uma prática comum que remonta aos primórdios da programação. É uma maneira elegante de lidar com datas que precisam ser apresentadas de maneira clara e concisa aos usuários ou armazenadas para referência futura.
 
-Além disso, é importante observar que ao converter uma data em uma string, é necessário especificar o formato desejado. No exemplo acima, usamos "%d/%m/%Y" como formato, que significa dia/mês/ano. Isso permite que o programador escolha como a data será exibida, de acordo com suas preferências ou necessidades do programa.
+Existem diversas formas de formatação de datas, como "DD/MM/YYYY", "MM-DD-YYYY", "YYYY/MM/DD", dependendo do uso pretendido ou normas regionais. Em Gleam, você pode especificar o formato que deseja quando faz a formatação.
 
-## Veja também:
+Vale lembrar que a biblioteca "gleam/time" utiliza Posix timestamp para calcular a data atual. Isso significa que se baseia em segundos a partir da meia-noite UTC do dia 1 de janeiro de 1970, um método de cálculo universalmente reconhecido.
 
-- Documentação da biblioteca `Gleam.Date`: https://gleam.run/std/datetime.html
-- Tutorial sobre como trabalhar com datas em programas Gleam: https://gleam.run/book/times.html
+## Veja Também:
+
+Além do método acima, você também pode querer explorar a biblioteca "gleam/calendar" para possíveis alternativas. Também vale a pena conferir a documentação oficial do Gleam para mais detalhes e técnicas relacionadas: 
+
+1. [Biblioteca Gleam/time](https://hexdocs.pm/gleam_stdlib/gleam/time.html)
+2. [Biblioteca Gleam/calendar](https://hexdocs.pm/gleam_stdlib/gleam/calendar.html)
+3. [Documentação Oficial do Gleam](https://gleam.run/docs/introduction/)

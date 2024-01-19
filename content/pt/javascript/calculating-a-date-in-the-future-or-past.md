@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+# Manipulação de Datas em JavaScript: Como calcular uma data no futuro ou passado
 
-Calcular uma data no futuro ou no passado é uma técnica comumente usada por programadores para lidar com datas em seus projetos. Isso permite que eles criem aplicações dinâmicas que possam trabalhar com diferentes cenários de tempo, como planejar eventos futuros ou rastrear o histórico de eventos passados.
+## Para Que Serve e Por Quê?
 
-## Como fazer:
+Calcular uma data no futuro ou passado consiste em adicionar ou subtrair dias, meses ou anos de uma data específica. Essa operação é comumente utilizada para definir prazos, calcular idades, ou em qualquer situação onde a temporalidade é relevante para o funcionamento de um sistema.
+
+## Como Fazer:
+
+Em JavaScript, podemos manipular datas usando o objeto Date. Veja como adicionar dias a uma data:
 
 ```Javascript
-// Calculando uma data no futuro em JavaScript
-let hoje = new Date(); // Cria um objeto Data contendo a data e hora atuais
-let dataFutura = new Date(); // Cria um objeto Data vazio
-dataFutura.setDate(hoje.getDate() + 7); // Seta a data para 7 dias a partir da data atual
-console.log(dataFutura); // Imprime a data futura no console
-
-// Calculando uma data no passado em JavaScript
-let hoje = new Date(); // Cria um objeto Data contendo a data e hora atuais
-let dataPassada = new Date(); // Cria um objeto Data vazio
-dataPassada.setDate(hoje.getDate() - 7); // Seta a data para 7 dias antes da data atual
-console.log(dataPassada); // Imprime a data passada no console
+var dataAtual = new Date();
+// Adicionando 5 dias
+var dataFutura = new Date(dataAtual.setDate(dataAtual.getDate() + 5));
+console.log(dataFutura);
 ```
 
-Saída:
+Para subtrair dias, basta usar um número negativo:
+
+```Javascript
+var dataAtual = new Date();
+// Subtraindo 5 dias
+var dataPassada = new Date(dataAtual.setDate(dataAtual.getDate() - 5));
+console.log(dataPassada);
 ```
-Data futura: Fri Mar 19 2021 22:34:50 GMT-0300 (Horário Padrão de Brasília)
-Data passada: Fri Mar 5 2021 22:34:50 GMT-0300 (Horário Padrão de Brasília)
-```
 
-## Mergulho Profundo:
+## Canoa Funda:
 
-Calcular datas no futuro ou no passado é algo que tem sido feito desde o início da programação. No passado, isso era feito com algoritmos mais complexos, mas o JavaScript possui métodos convenientes como `setDate()` e `getDate()` para facilitar esse processo. Existem também bibliotecas e frameworks que oferecem funcionalidades mais avançadas para trabalhar com datas, como o Moment.js. É importante que os programadores entendam como as datas são armazenadas e manipuladas em seus projetos para garantir a precisão e consistência dos dados.
+Quando o JavaScript foi criado, em 1995, já havia a necessidade de manipulação de datas. Desde então, o objeto Date tem sido parte integrante da linguagem. 
 
-## Veja também:
+Existem bibliotecas externas, como Moment.js e Day.js, que oferecem mais funcionalidades e facilidades quando comparadas ao objeto Date nativo do JavaScript. Contudo, essas bibliotecas podem ser desnecessárias se todas as operações que você precisa fazer estão cobertas pelo objeto Date.
 
-- [Documentação oficial do JavaScript para Date()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/docs/)
-- [Understanding Date and Time in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript)
+A implementação do objeto Date em JavaScript considera o fuso horário local. Isso quer dizer que os resultados das operações podem variar de acordo com o fuso horário do ambiente em que o código está sendo executado.
+
+## Veja Também:
+
+Para mais informações, consulte estas fontes:
+
+- Documentação oficial do [Objeto Date no JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Bibliotecas para manipulação de data: [Moment.js](https://momentjs.com/) e [Day.js](https://day.js.org/)
+- Artigo no Stack Overflow sobre [como calcular datas no JavaScript](https://stackoverflow.com/questions/563406/add-days-to-javascript-date)

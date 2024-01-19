@@ -1,6 +1,6 @@
 ---
 title:                "创建临时文件"
-html_title:           "Elixir: 创建临时文件"
+html_title:           "Kotlin: 创建临时文件"
 simple_title:         "创建临时文件"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是临时文件？为什么程序员要创建它？
+## 什么和为什么？
 
-临时文件是一种由程序员创建的临时存储文件。它们通常用于存储程序运行过程中的临时数据，如缓存数据或操作中间结果。程序员会创建临时文件来提高程序的性能，增强数据处理能力，或者在后续操作中使用。
+创建临时文件是在保存不确定持久性必要但需要短时间内保存数据的情况下，快捷、动态地在内存或磁盘上生成文件的编程操作。程序员之所以要做这个，是因为临时文件提供了一个简便的方式，来在程序执行期间的不同阶段之间传递和整个程序访问的数据。
 
-## 如何创建临时文件？
+## 如何操作：
 
-```Elixir
-{:ok, file} = File.open_temp("example.txt")
+Elixir并没有内建的临时文件创建函数，但通过调用Erlang的 `:file.mkstemp` 函数，我们可以轻易达成。交互式操作可见如下： 
+
+```elixir
+iex> {:ok, {path, file}} = :file.mkstemp("/tmp/tempfile_")  
+{:ok,
+  {"/tmp/tempfile__rug4as6h7rvb.ljcq6sy2fr2fv805",
+   {:file_descriptor, :prim_file, {:fd, :fd_user, 18}}}}
 ```
 
-创建临时文件的方法有很多种，但在Elixir中，我们可以使用`File.open_temp/1`函数来创建一个临时文件，并返回一个包含临时文件信息的元组。在这个例子中，我们会得到一个名为`example.txt`的临时文件。
-
-当我们使用`File.open_temp/1`函数时，系统会自动生成一个临时文件名，文件名通常以`erl`开头，后面会跟着一串数字和文件扩展名。
-
-```Elixir
-{:ok, file} = File.open_temp("prefix.csv", prefix: "data_")
-```
-
-用上述代码，我们可以指定具有自定义前缀的临时文件名，这样可以更容易辨认和管理临时文件。
+操作成功后，我们得到一对元祖，其中包含文件路径和一个已经开启的读写模式的文件描述符。
 
 ## 深入了解
 
-创建临时文件是一种常见的编程技术，它可以追溯到早期的计算机编程时期。在一些编程语言中，开发者可能会手动创建临时文件并跟踪它们的文件名，但在Elixir中，我们可以直接使用`File.open_temp/1`函数来创建临时文件，这极大地简化了这一过程。
+### 历史上下文
+临时文件起源于Unix操作系统，现已广泛用于各种编程语言和操作系统之中。对于Elixir这样的基于Erlang虚拟机(beam)运行的语言来说，直接继承了Erlang强大的文件处理能力。
 
-除了使用Elixir自带的函数，开发者也可以使用操作系统提供的API来创建临时文件。但这样做的话，就需要处理各种平台之间的差异和兼容性问题。
+### 可选方案
+Elixir内部没有提供临时文件的创建，你可以选择调用 `:file.mkstemp` 或者使用类似 `Exfile` 的第三方库。
 
-## 查看相关资料
+### 实现细节
+Erlang的 `:file.mkstemp` 函数首先接受一个包含 `"XXXXXX"`的路径参数并产生一个唯一的文件名，然后在给定的目录中以读写模式创建并打开文件。这个过程是原子的，保证了文件的唯一性和安全性。
 
-- [Elixir官方文档](https://elixir-lang.org/docs.html)
+## 参见
+
+- [Elixir Docs](https://hexdocs.pm/elixir/File.html): 更多关于Elixir工作中文件操作的信息。
+- [Erlang Docs](http://erlang.org/doc/man/file.html#mkstemp-1): Erlang原生的 `:file.mkstemp` 函数的文档。
+- [Exfile](https://github.com/talentdeficit/exfile): 一个用于处理文件和文件系统任务的强大的Elixir库。

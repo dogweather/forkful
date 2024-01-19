@@ -1,7 +1,7 @@
 ---
-title:                "Analiza daty z ciągu znaków"
-html_title:           "PHP: Analiza daty z ciągu znaków"
-simple_title:         "Analiza daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -12,26 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Parsowanie daty z ciągu znaków to proces wyodrębniania daty z istniejącej postaci, na przykład daty w formacie tekstowym lub liczbowym. Programiści często dokonują tego, gdy chcą wyciągnąć i przekształcić potrzebne im informacje z licznych źródeł, takich jak pliki lub bazy danych.
+Analiza daty ze stringa polega na konwersji danych tekstowych na format daty. Programiści wykonują to zadanie, aby można było manipulować i porównywać daty w przyjazny dla komputera sposób.
 
 ## Jak to zrobić:
 
+Oto prosty przykład użycia wbudowanej funkcji PHP - `strtotime`.
+
 ```PHP
 <?php
-$dateString = "25-10-2020";
-$date = date_create_from_format("d-m-Y", $dateString);
-echo date_format($date, "d/m/Y");
+$data = "21-01-2022";
+echo date("Y-m-d", strtotime($data));
 ?>
-
-// Output: 25/10/2020
 ```
+Wynik wyglądałby następująco:
+```
+2022-01-21
+```
+Ten kod konwertuje datę z formatu 'd-m-Y' na 'Y-m-d'.
 
-## Głębokie zanurzenie:
+## Głębsze spojrzenie:
 
-Pierwsze narzędzia do parsowania dat zostały stworzone pod koniec lat 60. XX wieku, a od tego czasu metody i biblioteki się ewoluowały. Alternatywą dla wbudowanych w PHP funkcji jest użycie gotowych bibliotek, takich jak Carbon, która ułatwia pracę z datami i czasem w bardziej czytelny sposób. PHP posiada też możliwość wykorzystania funkcji z biblioteki standardowej C, takiej jak `strtotime()`, aby parsować daty w różnych językach. Implementacja parserów dat jest często związana z obsługą stref czasowych i róźnymi formatami dat.
+Analiza daty ze stringa nie zawsze była łatwym zadaniem, ale dzięki nowoczessnym językom programowania jak PHP stało się to znacznie prostsze. 
 
-## Zobacz też:
+Co do alternatyw, PHP posiada wiele funkcji do pracy z datami, np. `DateTime::createFromFormat`.
 
-- Dokumentacja PHP dotycząca parsowania dat: https://www.php.net/manual/en/function.date-parse.php
-- Biblioteka Carbon: https://carbon.nesbot.com/
-- Porównanie różnych metod parsowania dat: https://www.php.net/manual/en/datetime.formats.comparison.php
+Szczegóły implementacji są znacznie bardziej złożone i obejmują wiele aspektów, takich jak obsługa stref czasowych, formatów dat etc.
+
+## Zobacz także:
+
+1. Dokumentacja PHP na temat `strtotime`: https://www.php.net/manual/pl/function.strtotime.
+2. Dokumentacja PHP na temat `DateTime::createFromFormat`: https://www.php.net/manual/pl/datetime.createfromformat.php
+3. Informacje na temat różnych formatów dat: https://www.php.net/manual/pl/datetime.format.php

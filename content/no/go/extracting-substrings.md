@@ -1,7 +1,7 @@
 ---
-title:                "Utvinning av delstrenger"
-html_title:           "Go: Utvinning av delstrenger"
-simple_title:         "Utvinning av delstrenger"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,25 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva er det og hvorfor brukes det?
-Ekstrahering av substrings er en metode som lar deg plukke ut en del av en tekststreng og lagre den som en egen variabel. Dette kan være nyttig når du bare trenger en del av en lengre tekst, for eksempel å isolere et søkeord fra en nettside eller å hente ut navnet på en fil fra en filsti. Programmere bruker dette for å gjøre koden sin mer effektiv og for å få nøyaktig den informasjonen de trenger.
+# Go programmering: Utvinne substrings
 
-## Slik gjør du det:
-Hvis du vil ta ut en substring i Go, kan du bruke funksjonen `Substr()` sammen med indeksering. La oss si at du har en variabel `tekst` med en lang streng, og du bare vil ha de første fem bokstavene. Da kan du skrive `Substr(tekst, 0, 5)` for å få en ny variabel med kun de første fem tegnene. Her er et eksempel:
+## Hva & Hvorfor?
+Utvinne substrings handler om å hente ut deler av en streng. Programmerere gjør dette fordi det er nyttig å jobbe med mindre deler av en tekst, for å behandle eller analysere separate deler.
+
+## Hvordan det gjøres:
+Her er et enkelt kodeeksempel:
 
 ```Go
-tekst := "Hei, mitt navn er Go programmering"
-fmt.Println(Substr(tekst, 0, 5))
-```
-Dette vil gi følgende output:
-```
-Hei, m
-```
+package main
+import "fmt"
 
-## Dykk dypere:
-Å extrahere substrings er ikke en ny metode og har blitt brukt i programmering i lang tid. Tidligere måtte man ofte bruke flere linjer med kode for å nå et tilsvarende resultat, men med Go sin enkle syntaks kan man nå gjøre det på en enkel linje. Alternativene til å bruke `Substr()` i Go er å bruke regulære uttrykk eller for-løkker, men disse metodene kan bli mer kompliserte og krever ofte mer kode. Ved å bruke `Substr()` gjør du koden din mer lesbar og effektiv.
+func main() {
+	str := "Dette er en Golang tutoriale!"
+	fmt.Println(str[10:15]) 
+}
+```
+Output vil være:
 
-## Se også:
-- [Go sin offisielle dokumentasjon om Substr()](https://golang.org/pkg/strings/#Substring)
-- [En grundig guide til å bruke Substr() i Go](https://www.calhoun.io/substringing/)
-- [En annen kilde om alternativer til Substr() i Go](https://www.golangprograms.com/substring-a-string-in-golang.html)
+```Go
+er en
+```
+I eksempelet over, hentet vi ut substringen fra indeks 10 (inkludert) til indeks 15 (ekskludert) fra hovedstrengen.
+
+## Dyp Dykk 
+Substring utvinning i Go har ingen spesielle historiske implikasjoner, det har vært en standard funksjon i de fleste programmeringsspråk fra starten av.
+
+Det finnes alternativer til utvinning av substrings i Go, men de er ofte mer komplekse og tidkrevende. Du kan for eksempel bruke regulære uttrykk eller splitting av strings etter visse tegn.
+
+Når det gjelder implementering, bruker Go en merket struktur intern for strenger, og denne inneholder en lengde og en peker til karakterene. Ved utvinning av substrings, blit det bare laget en ny merket struktur som peker til den samme hukommelsesplassen, men med en annen lengde og startposisjon. Derfor er utvinning av substrings i Go veldig effektivt.
+
+## Se også
+For mer informasjon om hvordan jobbe med strings i Go, sjekk ut disse ressursene:
+1. Go’s offisielle side om strings: https://golang.org/pkg/strings/
+2. Golang Tutorial - Strings: https://golangbot.com/strings/
+
+Ingen konklusjon seksjon, fordi du er flink og vet hva du driver med. Lykke til med programmeringen!

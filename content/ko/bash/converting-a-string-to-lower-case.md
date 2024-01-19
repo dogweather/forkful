@@ -1,7 +1,7 @@
 ---
-title:                "문자열 소문자로 변환하기"
-html_title:           "Bash: 문자열 소문자로 변환하기"
-simple_title:         "문자열 소문자로 변환하기"
+title:                "문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,40 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇이고 왜?
+--- 
 
-문자열을 소문자로 변환하는 것은 프로그래머들이 자주 하는 작업입니다. 이는 대소문자를 구분하지 않는 프로그래밍 언어에서 일관성을 유지하거나 문제를 해결하기 위해 사용될 수 있습니다. 예를 들어, 사용자의 입력을 받을 때 대소문자를 구분하지 않기 위해 모든 문자열을 소문자로 변환하여 검사할 수 있습니다. 또는 검색 엔진에서 특정 키워드를 찾을 때 대소문자를 구분하지 않도록 검색어를 소문자로 변환할 수 있습니다.
+## 무엇 & 왜?
 
-## 방법:
+문자열을 소문자로 변환하는 것은 모든 문자를 소문자로 변경하는 프로세스입니다. 이는 데이터를 균일하게 만들어, 분석하거나 비교하는 데 도움이 되기 때문에 프로그래머들이 자주 사용합니다.
 
-Bash에서는 문자열을 소문자로 변환하는 여러 가지 방법이 있습니다. 가장 간단한 방법은 `tr` 명령어를 사용하는 것입니다. `tr`은 입력 스트림에서 지정한 문자를 다른 문자로 변환하는 명령어입니다. 다음은 `tr`을 사용하여 문자열을 소문자로 변환하는 예시입니다.
+## 어떻게 하나:
+
+Bash에서 문자열을 소문자로 변환하는 방법에는 여러 가지가 있습니다. 여기 몇 가지 예를 보여드리겠습니다.
 
 ```Bash
-echo "HELLO WORLD" | tr '[:upper:]' '[:lower:]'
+# tr command를 사용해 변환
+string="HELLO WORLD"
+echo "${string}" | tr '[:upper:]' '[:lower:]'
 
 # 출력: hello world
 ```
 
-또 다른 방법은 `tr` 대신 `sed` 명령어를 사용하는 것입니다. `sed`은 스트림 편집기로, 특정 정규 표현식을 사용하여 스트림에서 원하는 텍스트를 찾고 대체할 수 있습니다. 다음은 `sed`을 사용하여 문자열을 소문자로 변환하는 예시입니다.
-
 ```Bash
-echo "HELLO WORLD" | sed 's/.*/\L&/'
+# Bash 내장 명령인,,를 사용해 변환
+string="HELLO WORLD"
+echo "${string,,}"
 
 # 출력: hello world
 ```
 
-## 깊게 파고들기:
+## 깊게 알아보기:
 
-이러한 방법 외에도 문자열을 소문자로 변환하는 다른 방법들이 존재합니다. 예를 들어, `awk`과 `perl`은 각각 문자열을 소문자로 바꾸는 내장 함수를 제공합니다. 다만 `awk`은 대소문자를 구분하지 않는 고려하지 않으므로 실제로 소문자로 변환하는 것은 아닙니다.
+문자열을 소문자로 변환하는 방법은 많은 프로그래밍 언어가 제공하며, 이는 아주 오래전부터 프로그래머들에게 중요한 도구였습니다. 'tr' 명령은 Unix's 표준 유틸리티 중 하나로, 아주 오래전부터 사용되었습니다. 반면에, Bash의 경우 '4.0' 버전부터 'string,,' 명령을 소개했습니다.
 
-또한, 운영 체제마다 사용 가능한 명령어가 다르기 때문에 `tr`과 `sed`을 사용하는 것이 가장 일반적인 방법입니다. 그러나 일부 다양한 언어와 프로그래밍 환경에서도 이와 유사한 함수를 제공할 수 있습니다.
+대안으로는 'awk' 또는 'sed' 등 다른 Unix 유틸리티를 사용할 수 있습니다. 'awk'와 'sed'는 각각 문자열 처리와 스트림 편집을 위해 설계되었습니다.
 
-마지막으로, 문자열을 소문자로 변환하는 것은 그 자체로는 큰 역할을 하지 않지만 프로그래밍에서 일관성을 유지하는 것에 도움을 줄 수 있습니다. 이는 코드 유지 및 디버깅 과정에서 도움이 될 수 있습니다.
+```Bash
+# awk 사용
+string="HELLO WORLD"
+echo "${string}" | awk '{print tolower($0)}'
 
-## 관련 자료:
+# 출력: hello world
+```
 
-- [Bash tr command](https://www.tutorialspoint.com/unix_commands/tr.htm)
-- [Bash sed command](https://www.tutorialspoint.com/unix_commands/sed.htm)
-- [Bash awk command](https://www.tutorialspoint.com/unix_commands/awk.htm)
-- [Perl lc function](https://perldoc.perl.org/perlop.html#lc)
-- [Awk tolower function](https://www.gnu.org/software/gawk/manual/html_node/String-Functions.html)
+```Bash
+# sed 사용
+string="HELLO WORLD"
+echo "${string}" | sed 's/.*/\L&/'
+
+# 출력: hello world
+```
+
+## 참고자료:
+
+- Bash 소문자 변환에 대한 GNU 문서: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
+- 'tr' 명령에 대한 GNU 문서: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html#tr-invocation
+- 'awk' 사용법: https://www.gnu.org/software/gawk/manual/gawk.html
+- 'sed' 사용법: https://www.gnu.org/software/sed/manual/sed.html

@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "C#: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,46 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Czym jest tworzenie tymczasowych plików i dlaczego programiści to robią?
+## Co to i dlaczego?
+Tworzenie tymczasowych plików polega na generowaniu plików o krótkotrwałym okresie istnienia, do przechowywania tymczasowych danych. Programiści robią to, aby zdobyć miejsce na dysku do krótkotrwałego przechowywania danych, zazwyczaj jak wynik operacji, które nie mogą być przechowane w pamięci.
 
-Tworzenie tymczasowych plików to proces tworzenia pliku, który jest używany tylko tymczasowo i jest usuwany, gdy nie jest już potrzebny. Programiści często tworzą tymczasowe pliki do tymczasowego przechowywania danych lub do wykonywania operacji, które wymagają fizycznego pliku na dysku.
-
-Jak to zrobić:
-
+## Jak to zrobić:
 ```C#
-// Tworzenie tymczasowego pliku za pomocą klasy Path
-string tempFile = Path.GetTempFileName();
+using System.IO;
 
-// Utworzenie nowego tamczasowego pliku o określonej nazwie
-string tempFile = Path.GetTempPath() + "moj_tymczasowy_plik.txt";
+namespace TemporaryFileExample
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+    string tempFile = Path.GetTempFileName();
 
-// Utworzenie tymczasowego pliku przez utworzenie instancji klasy FileStream
-FileStream tempFile = new FileStream(Path.GetTempFileName(), FileMode.Create);
+    using (StreamWriter sw = new StreamWriter(tempFile))
+    {
+      sw.WriteLine("Tak wygląda tymczasowy plik!");
+    }
+
+    using (StreamReader sr = new StreamReader(tempFile))
+    {
+      Console.WriteLine(sr.ReadToEnd());
+    }
+
+    File.Delete(tempFile);  // usuń plik po użyciu
+    }
+  }
+}
+```
+Po uruchomieniu powyższego kodu, otrzymamy wynik:
+```
+Tak wygląda tymczasowy plik!
 ```
 
-Podgląd tworzenia i usuwania tymczasowego pliku:
+## Pogłębiona analiza
+Tworzenie tymczasowych plików to koncepcja, która posiada swoją korzeń w czasach, gdy pamięci RAM było mało i operacje wymagały dodatkowego miejsca do przechowywania danych. Teraz, mimo że mamy więcej pamięci RAM, nadal przydaje się to do zapewnienia niezawodności i zabezpieczenia. 
 
-```C#
-// Tworzenie tymczasowego pliku
-string tempFile = Path.GetTempFileName();
+Jeśli chodzi o alternatywy, można wykorzystać bazy danych lub pamięć podręczną, ale wymaga to odpowiednich zasobów i konieczności zarządzania nimi. 
 
-// Wyswietlenie nazwy utworzonego pliku
-Console.WriteLine(tempFile);
+O szczegółach implementacji: `Path.GetTempFileName()` tworzy plik o unikalnym nazwie w folderze tymczasowym systemu, zabezpieczając nas przed konfliktami nazw.
 
-// Usunięcie tymczasowego pliku
-File.Delete(tempFile);
-
-// Wyswietlenie komunikatu o braku pliku
-Console.WriteLine(File.Exists(tempFile)); // Output: False 
-```
-
-Głębsza analiza:
-
-1. Kontekst historyczny: Tworzenie tymczasowych plików jest powszechnie używane w programowaniu od dawna, a jeszcze przed pojawieniem się języka C#.
-2. Alternatywy: Istnieją różne sposoby tworzenia tymczasowych plików w języku C#, jednak wykorzystanie klasy Path jest najpopularniejsze i polecane przez ekspertów.
-3. Szczegóły implementacji: Klasa Path zawiera wiele przydatnych metod do zarządzania plikami i ścieżkami, w tym również tworzenie tymczasowych plików.
-
-Zobacz również:
-
-- Dokumentacja klasy Path w języku C#: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.path?view=netcore-3.1
-- Porównanie różnych sposobów tworzenia tymczasowych plików w C#: https://stackoverflow.com/questions/1181421/generating-a-unique-temporary-file-name-in-c-sharp
+## Zobacz także
+- Dokumentacja `GetTempFileName()`: https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename
+- Więcej o plikach tymczasowych: https://en.wikipedia.org/wiki/Temporary_folder
+- Poradnik o zarządzaniu plikami w C#: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-create-a-file-or-folder

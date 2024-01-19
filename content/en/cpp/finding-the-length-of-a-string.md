@@ -1,6 +1,6 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "C++ recipe: Finding the length of a string"
+html_title:           "Arduino recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "C++"
 category:             "C++"
@@ -10,60 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Finding the length of a string in programming means determining the number of characters present in a given string. This is a common task for programmers as it allows them to manipulate and work with strings in their code. It can also help with validation and error handling, making it an essential skill for any programmer.
+# What & Why?
+Finding the length of a string means determining how many characters it has. It’s a common task because many calculations, validations, and operations hinge upon this info. 
 
-## How to:
-To find the length of a string in C++, we can use the `size()` or `length()` function from the `<string>` library. Here is an example:
+# How to:
 
-```C++
-#include <iostream>
-#include <string>
-
-int main() {
-    std::string str = "Hello World!";
-    std::cout << "Length of string: " << str.size() << std::endl;
-    return 0;
-}
-```
-
-Output:
-```
-Length of string: 12
-```
-
-Alternatively, we can also use a loop to count each character in the string until we reach the end. Here is an example of a for loop:
+Here is the most common way to find a string’s length using the `std::string` type’s `size()` or `length()` methods:
 
 ```C++
 #include <iostream>
 #include <string>
 
 int main() {
-    std::string str = "Hello World!";
-    int count = 0;
+    std::string s = "Hello, World!";
 
-    for(int i=0; i<str.length(); i++) {
-        count++;
-    }
+    std::cout << "length: " << s.size() << "\n";
+    std::cout << "length: " << s.length() << "\n";
 
-    std::cout << "Length of string: " << count << std::endl;
     return 0;
 }
 ```
 
-Output:
+You'll see:
+
 ```
-Length of string: 12
+length: 13
+length: 13
 ```
 
-## Deep Dive:
-The function `size()` is preferred over `length()` as it provides a more intuitive name for the task at hand. However, they both essentially do the same thing.
+# Deep Dive
 
-Before the introduction of the `<string>` library in C++, the `strlen()` function from the `<cstring>` library was used to find the length of a string. This function only works with null-terminated strings, which means strings that end with a null character (\0). With the `<string>` library, we can work with strings of any length without the need for a null character at the end.
+Historically, C-style strings (null-terminated character arrays) were used before the `std::string` type introduction in C++. They calculated lengths by manually iterating over the array until hitting a null character:
 
-There are also other programming languages that have built-in functions for finding the length of a string, such as `len()` in Python and `length()` in JavaScript.
+```C++
+char s[] = "Hello, World!";
+int i = 0;
+while (s[i] != '\0') ++i;
+```
 
-## See Also:
-- [Explanation of string length in C++](https://www.learncpp.com/cpp-tutorial/6-6a-an-introduction-to-stdstring/)
-- [Alternative methods for finding string length](https://www.geeksforgeeks.org/how-to-find-length-of-a-string-in-c/)
-- [Official documentation for the string library in C++](https://en.cppreference.com/w/cpp/string/basic_string)
+It's less safe and less simple than `std::string`'s methods due to risk of not finding the null character, which leads to undefined behavior.
+
+In C++, `std::string`'s `length()` and `size()` methods are interchangeable. They're O(1) operations because `std::string` stores the string's size as an internal variable.
+
+Strangely enough, both these methods were kept in the standard for compatibility with other STL containers’ API, not because they do different things.
+
+Precisely, the existence of two methods doing the same thing might seem confusing, but it's merely a way to fit in different contexts: `size()` in container-generic programming, and `length()`, that feels semantically more correct when working with text.
+
+# See Also
+
+1. [C++ Reference | std::basic_string::length](https://en.cppreference.com/w/cpp/string/basic_string/length)
+2. [C++ Reference | std::basic_string::size](https://en.cppreference.com/w/cpp/string/basic_string/size)
+3. [Learn the difference between size() and length()](https://stackoverflow.com/questions/905222/why-does-stdstring-have-size-and-length-members-function-that-are-the-sam)
+4. [More about C-Style Strings](https://www.learncpp.com/cpp-tutorial/c-style-strings/)

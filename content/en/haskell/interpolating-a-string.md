@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Haskell recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,37 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Interpolating a string in Haskell is the act of inserting a value into a string at a specific location. It allows programmers to create dynamic strings, rather than static ones, making their code more flexible and versatile. This is especially useful when dealing with user input, database queries, or any other situation where the content of a string may change.
+
+String interpolation is about substitifying variables in a predefined text (string). Why bother? It simplifies creation of dynamic strings and makes your code easier to write, read, and maintain.
 
 ## How to:
-To interpolate a string in Haskell, we first need to use the "intercalate" function from the "Data.List" module, which joins a list of strings with a separator. Then, we can use the "$" operator to apply a function to a value. Let's see an example of interpolating the name "John" into a greeting:
+
+Haskell doesn't include built-in string interpolation, but we've got a handy library called `Text.Printf` for similar jobs. Here's a simple example:
 
 ```Haskell
-import Data.List
+import Text.Printf (printf)
 
-greet name = "Hello " ++ name ++ "!"
-
-"Hello John!"
+main = printf "Hello, %s! You are number %d. \n" ("Haskell"::String) (1::Int)
 ```
-
-In the code above, we use "Hello" as the first part of our string, then use the "++" operator to join it with the value of the "name" variable, and finally add an exclamation mark at the end. To make it more interesting, let's say we want to also include the current year in our greeting:
-
-```Haskell
-import Data.List
-
-greet name = "Hello " ++ name ++ "! We are currently in the year: " ++ show(year)
-
-"Hello John! We are currently in the year: 2021"
+Running this code will output: 
 ```
+Hello, Haskell! You are number 1.
+```
+Variables "Haskell" and 1 are inserted in place of `%s` and `%d` respectively. 
 
-By using the "show" function, we can convert the "year" value to a string and insert it into our greeting. This allows our code to be more dynamic and adaptable in different situations.
+## Deep Dive
 
-## Deep Dive:
-The concept of string interpolation has been around for a long time and is not exclusive to Haskell. Other programming languages, such as Java, Python, and Ruby, also have their own methods of interpolating strings. These methods vary in syntax and functionality, but the ultimate goal is the same: to insert a value into a string.
+Historically, Haskell aimed at being a pure functional language, avoiding built-in side effects like string interpolation found in many scripting languages. Rather than interpolation, it leverages advanced type system and pure functions, using libraries like `Text.Printf` and quasi-quoting libraries like `neat-interpolation`.
 
-In Haskell, the "intercalate" function is just one way to interpolate a string. There are other functions and methods, such as using the "printf" function from the "Text.Printf" module, which allows for more advanced formatting of strings. Additionally, for more complex scenarios, there are libraries available, such as "Text.InterpolatedString.Perl6", which offers a Perl6-like interpolation syntax.
+Alternatives to `Text.Printf` include the `formatting` library for more complex cases, and `neat-interpolation` for multiline string interpolation. However, remember that each additional library increases dependency and may affect code portability.
 
-## See Also:
-- [Haskell Documentation for Data.List](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)
-- [Haskell Documentation for Text.Printf](https://hackage.haskell.org/package/base-4.15.0.0/docs/Text-Printf.html)
-- [InterpolatedString-Perl6 Library on Hackage](https://hackage.haskell.org/package/InterpolatedString-Perl6)
+Implementation details in `Text.Printf` are interesting. It leverages Haskell's type system and polymorphism to provide flexible formatting. It's not true string interpolation, rather a type-safe version of `printf` found in C/C++.
+
+## See Also
+
+1. [printf in Haskell?](https://stackoverflow.com/questions/42798277/printf-in-haskell)
+2. [Compilation of neat-interpolation](https://hackage.haskell.org/package/neat-interpolation)
+3. [Text.Printf library doc](http://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html)
+4. [formatting library](https://hackage.haskell.org/package/formatting)

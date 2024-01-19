@@ -1,6 +1,6 @@
 ---
 title:                "发送http请求"
-html_title:           "PowerShell: 发送http请求"
+html_title:           "C#: 发送http请求"
 simple_title:         "发送http请求"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是HTTP请求，为什么程序员要使用它？
+## 什么 & 为什么?
 
-发送HTTP请求是将数据从一个位置发送到另一个位置的方法。程序员经常使用它来与服务器进行通信，获取数据或触发特定的事件。
+HTTP请求是一种让应用程序（例如，浏览器）与服务器通信的方式。程序员使用HTTP请求来从网络资源获取数据、提交数据、和触发服务器的某些动作。
 
-## 如何使用PowerShell发送HTTP请求？
+## 如何实现:
+
+要在 PowerShell 中发送 HTTP 请求，可以使用 `Invoke-WebRequest` 或 `Invoke-RestMethod` cmdlet。它们都支持 GET、POST、PUT、DELETE 等 HTTP 方法。这是一个基本例子：
 
 ```PowerShell
-# 创建一个WebRequest对象
-$request = [System.Net.WebRequest]::Create("https://www.example.com")
-# 设置请求方法和内容
-$request.Method = "GET"
-$request.ContentType = "application/json"
-# 发送请求并获取响应
-$response = $request.GetResponse()
-# 打印响应数据
-$response.ContentLength
+$response = Invoke-WebRequest -Uri 'https://api.github.com/users/octocat'
+$response.StatusCode
+```
+`$response.StatusCode` 将显示 HTTP 状态代码，例如，200 表示请求成功。
+
+例如：
+
+```PowerShell
+200
 ```
 
-输出应为响应数据的长度。
+## 深入探讨
 
-## 深入了解
+PowerShell 中的 HTTP 请求在早期版本中并不存在。在 PowerShell 3.0 版本中，Microsoft introduces introduce `Invoke-WebRequest` and `Invoke-RestMethod` cmdlets. 发送 HTTP 请求在许多场景下都非常有用，例如云端服务、RESTful API、和网页抓取等。
 
-1. HTTP请求在现代互联网中起着重要作用，它是Web开发的基础。
-2. 除了PowerShell，程序员也可以使用其他语言来发送HTTP请求，比如Python和Java。
-3. 发送HTTP请求实际上涉及到建立socket连接、发送请求和接收响应等步骤，但这些都可以由底层库来处理。
+在 PowerShell 外，也有其他方式发送 HTTP 请求，例如使用 cURL 或 wget。这些工具和 PowerShell 的 cmdlets 功能类似，但其他工具的优势在于它们支持更多的协议和选项。
 
-## 参考资料
+至于 PowerShell 的 HTTP 请求实现，主要是基于 .NET Framework 的 `System.Net.HttpWebRequest` 类。这个类支持各种 HTTP 版本，并且支持同步和异步操作。
 
-- [PowerShell官方文档](https://docs.microsoft.com/en-us/powershell/scripting/learn/ps101/03-powershell-basics?view=powershell-7)
-- [HTTP请求详解](https://www.tutorialspoint.com/http/http_requests.htm)
+## 另请参阅
+
+[PowerShell 官方文档](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1): 这是 PowerShell 的官方文档，详细解说了 PowerShell 的使用方法，包括如何发送 HTTP 请求。
+
+[RestSharp 库](https://restsharp.dev/getting-started/installation.html): 是一个功能强大的、易于使用的 .NET HTTP 客户端库。它可以用于替代 PowerShell 的 HTTP 请求功能。
+
+[.NET HttpWebRequest 类](https://docs.microsoft.com/zh-cn/dotnet/api/system.net.httpwebrequest?view=net-5.0): 你可以参照这个文档了解如何使用 .NET Framework 的 `HttpWebRequest` 类发送 HTTP 请求。

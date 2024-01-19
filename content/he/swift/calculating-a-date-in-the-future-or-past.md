@@ -11,27 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+חישוב תאריך בעתיד או בעבר הוא פעולה של גיבוב התאריך הנוכחי עם דינמיקה מסוימת (ימים, שבועות, שנים). תכנתים מבצעים זאת כדי לנהל לוגיקה בזמן (למשל, מתי לשלוח תזכורת או לחסם משתמש).
 
-חישוב תאריך בעתיד או בעבר הוא פעולה שמאפשרת למפתחים להחשב בתאריך מסוים על פי פתרון מסוים. הפעולה נחשבת לחשובה ומאתגרת ולכן מצריכה שימוש בכלים מתאימים כמו Swift.
-
-## כיצד לעשות זאת:
-
-כאשר מדובר על חישוב תאריך בעתיד או בעבר, ישנן שני דברים חשובים לקחת בחשבון: התאריך הנוכחי והפתרון המבוקש. על מנת לבצע חישוב תאריך בפונקציות של Swift, ניתן להשתמש בפקודות כגון `Date()`, `Calendar.current`, ו- `DateComponenets()`. הנה כמה דוגמאות של טכניקות חישוב תאריך פשוטות:
+## איך לעשות:
+ניתן להשתמש ב- `DateComponents` ו- `Calendar` ב- Swift כדי לחשב תאריכים בעתיד או בעבר. קוד מדגם:
 
 ```Swift
-// חישוב תאריך בעתיד
-let futureDate = Calendar.current.date(byAdding: .month, value: 2, to: Date())
-
-// חישוב תאריך בעבר
-let pastDate = Calendar.current.date(byAdding: .year, value: -5, to: Date())
+let now = Date()
+let daysToAdd = 7
+let futureDate = Calendar.current.date(byAdding: .day, value: daysToAdd, to: now) 
 ```
 
-## חפירה עמוקה:
+ובשביל לגבות את תאריך מהעבר:
 
-בעבודת התכנות, חישוב תאריך בעתיד או בעבר הוא מטלה נפוצה וחשובה למפתחים. זו הסיבה שצוות התכנות של Swift פיתח את הפונקציות המתאימות כדי לעזור למפתחים לבצע חישובים מדויקים ונקיים. אם אתם מחפשים אלטרנטיבות לפונקציות של Swift, ניתן להשתמש בכלים כמו Datetime בשפות אחרות כמו Python או פונקציות JavaScript.
+```Swift
+let daysToSubtract = 7
+let pastDate = Calendar.current.date(byAdding: .day, value: -daysToSubtract, to: now) 
+```
 
-## ראו גם:
+הפלט מהדוגמאות האלה יהיה תאריך חדש בעתיד או בעבר, התלוי במשתנה ימים להוספה או להפחתה.
 
-- [מסמך רשמי של Swift על פונקציות חישוב תאריך](https://developer.apple.com/documentation/foundation/calendar)
-- [עמוד עזרה של Apple על פונקציות חישוב תאריך](https://developer.apple.com/documentation/foundation/calendar/2994795-date)
-- [אתר זה המסביר את השימוש בפונקציות חישוב תאריך באמצעות Swift](https://theswiftdev.com/how-to-calculate-dates-in-swift/)
+## צלילה עמוקה:
+1. הקשר ההיסטורי: בהם לשונות התכנות המוקדמות, חישוב תאריכים היה משימה מורכבת ודראית. Swift, עם את הסביבה המובנית לניהול זמן, עשתה את זה הרבה יותר פשוט.
+2. חלופות: חלוף אחד ל `Calendar.current.date(byAdding:value:to:)` הוא להשתמש ב- `DateComponents` למעשה את החידושים. אפשר להשתמש ב- `DateComponents` לשינוי ימים, חודשים, שנים ועוד.
+3. פרטי המימוש: `Calendar.current.date(byAdding:value:to:)` מוסיף את הערך המצוין ליחידה המצוינת, לתאריך המצוין, ומחזיר את התאריך החדש.
+
+## ראה גם:
+1. ["מדריך למתכנת Swift"](https://docs.swift.org/swift-book/) – המדריך הרשמי של Apple לשפת Swift.
+2. ["השוואת תאריכים ב-Swift"](https://nshipster.com/date/) – מאמר שמסביר את ההבדלים בין `Date`, `DateComponents` ו- `TimeInterval`.

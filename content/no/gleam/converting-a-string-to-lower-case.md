@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-html_title:           "Gleam: Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,28 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å konvertere en streng til små bokstaver er en vanlig operasjon i programmering. Dette gjør at alle bokstavene i en streng blir omgjort til små bokstaver. Dette er nyttig når man ønsker å sammenligne eller søke i tekster uten å være avhengig av forskjeller i bokstavstørrelse.
+# Gleam programmering: Hvordan konvertere en streng til små bokstaver
 
-# Hvordan:
-I Gleam kan du enkelt konvertere en streng til små bokstaver ved å bruke funksjonen `String.to_lower_case()`. For eksempel:
+## Hva & Hvorfor?
+I programming, handler konvertering av en streng til små bokstaver om å endre alle tegnene i en streng til deres lowercase-versjoner. Dette gjør det enklere for programmerere å sammenligne strenger effektivt, uavhengig av inputformatet.
 
-```
-Gleam
-// Definere en streng
-let tekst = "Hei på deg!"
-// Konvertere til små bokstaver
-let ny_tekst = String.to_lower_case(tekst)
-// Skrive ut resultatet
-IO.println(ny_tekst)
-```
-Dette vil gi følgende utskrift:
-```
-hei på deg!
-```
-## Dykk dypere
-Konvertering av strenger til små bokstaver har vært en del av programmering siden de tidlige datamaskinene. Dette var nødvendig for å kunne håndtere begrensede lagringskapasiteter og ulike tegnsett. Alternativet til å bruke funksjonen `to_lower_case()` i Gleam er å lage en egen algoritme for konvertering. Dette kan være nyttig hvis man ønsker å tilpasse konverteringen til et spesifikt formål.
+## Hvordan:
+For å konvertere en streng til små bokstaver i Gleam trenger du følgende kode:
 
-## Se også
-- [Gleam dokumentasjon for `String.to_lowercase()`](https://gleam.run/module/string#to_lowercase)
-- [Wikipedia artikel: String casing conventions](https://en.wikipedia.org/wiki/Letter_case#Case_conventions_in_computing)
+```gleam
+import gleam/string
+
+fn main() {
+    let text = "Hei VERDEN!"
+    let lowercase_text = string.lowercase(text)
+
+    // Dette vil printe 'hei verden!'
+    io.println(lowercase_text)
+}
+```
+
+## Dypdykk
+Historisk sett har konvertering til små bokstaver vært avgjørende for å løse mange utfordringer innen tekstbehandling. Det har hjulpet utviklere med å skrive mer robuste koder ved å normalisere streng-input, slik at to strenger kan sammenlignes uten hensyn til kapitalisering.
+
+Alternative metoder for å oppnå dette i andre programmeringsspråk inkluderer `.toLowerCase()` i JavaScript og `.lower()` i Python.
+
+Hvordan dette faktisk fungerer i Gleam er, funksjonen `string.lowercase` gjennomgår hver bokstav i strengen, og erstatter den med dens små bokstavversjon.
+
+## Se ogsa
+1. [Gleam Dokumentasjon](https://gleam.run/docs/)
+2. [Gleam String Moduler](https://hexdocs.pm/gleam_stdlib/gleam/string.html)
+3. [Wikipedia: ASCII](https://no.wikipedia.org/wiki/ASCII)

@@ -1,7 +1,7 @@
 ---
-title:                "Analiza html."
-html_title:           "PHP: Analiza html."
-simple_title:         "Analiza html."
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i po co? 
+## Co i dlaczego?
 
-Parsowanie HTML jest procesem odczytywania i analizowania kodu HTML, który jest używany do tworzenia stron internetowych. Programiści często wykorzystują ten proces do wyciągania konkretnej informacji lub danych z witryny internetowej, co może być przydatne w wielu przypadkach, np. do tworzenia wyszukiwarek lub automatycznych narzędzi do skracania linków.
+Analiza składniowa HTML to proces ekstrakcji danych z dokumentów HTML. Programiści wykonują to, aby zdobyć istotne informacje z dokumentu lub manipulować strukturą strony na podstawie konkretnych wymagań.
 
 ## Jak to zrobić:
 
+Użyjemy biblioteki `DOMDocument` dostępnej w PHP. Tu jest podstawowy przykład:
+
 ```PHP
-// Przykład użycia funkcji do parsowania HTML
-$html = file_get_contents("strona.html"); //Odczytanie strony internetowej
-$doc = new DOMDocument(); //Utworzenie nowego obiektu DOMDocument
-$doc->loadHTML($html); //Załadowanie odczytanego kodu HTML
-$xpath = new DOMXPath($doc); //Utworzenie obiektu XPath do przeszukiwania dokumentu
-$title = $xpath->query("//title"); //Znalezienie elementu <title> w dokumencie
-echo $title[0]->nodeValue; //Wyświetlenie wartości elementu <title> - tytułu strony
+<?php
+$dom = new DOMDocument();
+@$dom->loadHTML('<div class="test">Witaj Świecie!</div>');
+
+$divs = $dom->getElementsByTagName('div');
+foreach($divs as $div) {
+    if($div->getAttribute('class') === 'test') {
+        echo $div->nodeValue;
+    }
+}
+?>
 ```
 
-  *Wyjście:* ```Przykładowa strona internetowa```
+Po uruchomieniu powyższego kodu, otrzymamy następujący wynik:
 
-## Specyfiki:
+```PHP
+Witaj Świecie!
+```
+## Głębokie zanurzenie:
 
-Parsowanie HTML jest niezbędnym elementem wielu projektów internetowych. W przeszłości, programiści często korzystali z regexów do analizowania kodu HTML, jednak metoda ta nie jest skuteczna i może prowadzić do błędów. Alternatywą jest wykorzystanie frameworka, takiego jak Simple HTML DOM, który znacznie ułatwia proces parsowania HTML. W implementacji, należy pamiętać o wykorzystaniu metody bezpiecznej wobec ataków XSS, jaką jest funkcja filter_var() w PHP.
+1) Kontekst historyczny: Przetwarzanie HTML stało się popularne z pojawieniem się dynamicznych stron internetowych, gdzie interakcje użytkowników wymagały manipulacji strukturą HTML.
 
-## Zobacz też:
-- [Simple HTML DOM](https://simplehtmldom.sourceforge.io/)
-- [XPath w PHP](https://www.php.net/manual/en/class.domxpath.php)
-- [Bezpieczeństwo podczas parsowania HTML](https://www.owasp.org/index.php/Preventing_HTML_Injection_in_Php)
+2) Alternatywy: Inne popularne parsery HTML dla PHP to: `phpQuery`, `Simple HTML DOM Parser`. Każda metoda ma swoje zalety i wady, wybór zależy od specyfikacji projektu.
+
+3) Szczegóły implementacji: `DOMDocument` to biblioteka PHP do parsowania HTML. Co istotne, ignoruje ona błędy podczas wczytywania HTML (dzięki użyciu '@'), co jest bardzo wygodne przy pracy z niedoskonałymi dokumentami HTML.
+
+## Zobacz także:
+
+- Dokumentacja `DOMDocument`: https://www.php.net/manual/en/class.domdocument.php
+- Biblioteka `phpQuery`: https://code.google.com/archive/p/phpquery/
+- Biblioteka `Simple HTML DOM Parser`: http://simplehtmldom.sourceforge.net/

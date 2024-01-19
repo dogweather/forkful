@@ -1,7 +1,7 @@
 ---
-title:                "Wycinanie podciągów"
-html_title:           "Arduino: Wycinanie podciągów"
-simple_title:         "Wycinanie podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,24 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Wyodrębnianie podciągów to proces, w którym programista wybiera i wydobywa określony fragment tekstu lub danych z większego ciągu znaków lub danych. Jest to często wykorzystywane w programowaniu do analizowania i przetwarzania danych tekstowych lub ciągów znaków w celu uzyskania potrzebnych informacji. 
+## Co i Dlaczego?
+Ekstrakcja podciągów polega na wyodrębnianiu mniejszych ciągów znaków z większych. Programiści robią to, żeby uzyskać ważne elementy informacji z większej ilości danych.
 
 ## Jak to zrobić:
-Aby wyodrębnić podciąg w Arduino, użyj funkcji substring () i podaj odpowiednie parametry. Funkcja ta zwróci wybrane znaki z określonego łańcucha. Przykładowy kod może wyglądać następująco:
+W Arduino możemy korzystać z funkcji `substring()` do wyodrębniania podciągów. Poniżej jest przykład użycia.
 
 ```Arduino
-String nazwa = "Arduino"; // zadany ciąg znaków
-int poczatek = 2;  // indeks początkowy podciągu (licząc od 0)
-int dlugosc = 4; // długość podciągu
-String podciag = nazwa.substring(poczatek, poczatek+dlugosc); // użycie funkcji substring
+String tekst = "Witaj, Świecie!";
+String podciag = tekst.substring(7, 14); // Wyodrębnia podciąg od indeksu 7 do 14
+Serial.println(podciag); // Wypisze "Świecie!"
 ```
 
-W powyższym przykładzie wybrany zostanie podciąg "duin". 
+## Deep dive:
+Funkcja `substring()` została wprowadzona w Arduino w celu lepszej manipulacji ciągami znaków. Co więcej, to jest rodzaj operacji, który jest bardzo powszechny w innych językach programowania. 
 
-## Zagłębie:
-Funkcja substring () jest często używana w różnych językach programowania, w tym w Arduino. Alternatywnym sposobem wyodrębniania podciągów może być użycie pętli i funkcji do porównywania i analizowania znaków w ciągach tekstowych. Implementacja funkcji substring () w Arduino wykorzystuje wskaźnik do wybrania odpowiednich znaków z ciągu. 
+Alternatywą dla tej funkcji mogą być operacje na tablicach char - ale są one bardziej skomplikowane i mniej czytelne.
 
-## Zobacz też:
-- [Dokumentacja Arduino o funkcji substring ()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Wykorzystanie funkcji substring () w programowaniu](https://www.programiz.com/java-programming/library/string/substring)
+Co do szczegółów implementacji, to `substring()` zwraca nowy obiekt String, które jest podciągiem oryginalnego Stringa. Należy pamiętać, że indeksy są liczony od zera, więc pierwszy znak w ciągu ma indeks 0.
+
+## Zobacz także:
+- Dokumentacja Arduino na temat funkcji `substring()`: [https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring)
+- Przykłady operacji na ciągach w Arduino: [https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringManipulation](https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringManipulation)

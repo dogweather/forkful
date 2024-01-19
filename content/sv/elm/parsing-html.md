@@ -1,7 +1,7 @@
 ---
-title:                "Analysera HTML"
-html_title:           "Elm: Analysera HTML"
-simple_title:         "Analysera HTML"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,43 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-HTML är ett vanligt format för att strukturera och presentera innehåll på webben. När webbprogrammerare behöver arbeta med HTML-koden, är det ofta nödvändigt att "parsa" (tolka) den för att kunna förstå och manipulera den. Parsing HTML är alltså en metod för att extrahera och organisera information från en HTML-sida.
+## Vad & Varför?
+
+Att parsa HTML handlar om att omvandla HTML-kod till en datastruktur som ett program kan förstå och bearbeta. Programmers gör detta för att de kan interagera med webbinnehåll på ett mer nyanserat sätt, till exempel extrahera specifik data, manipulera sidinnehåll eller implementera webbskrapning.
 
 ## Hur man gör:
-Att parsa HTML i Elm är relativt enkelt, tack vare det inbyggda paketet elm/parser. Nedan finns ett exempel på hur man tolkar en HTML-sida och extraherar all text från alla p-taggar:
+
+Här är ett Elm-program som parar en HTML-sträng genom att använda `Html.Parser`-biblioteket. 
 
 ```Elm
-import Html.Attributes exposing (attribute)
-import Html.Parser exposing (root, map, maybe, oneOf, text, tag, many)
+import Html.Parser exposing (..)
+import Html.Parser.Util exposing (tag)
 
-type alias HtmlPage =
-  { title : String
-  , body : String
-  }
+parseHtml : String -> Result Parser.Error (List Parser.Step)
+parseHtml =
+    parse <| oneOf [ tag "h1", tag "p" ]
 
-htmlParser : Parser m HtmlPage
-htmlParser =
-  map2 (\title body -> { title = title, body = body })
-    (text (tag "title"))
-    (many (text (tag "p")))
+example : String
+example =
+    """
+    <h1>Hello world!</h1>
+    <p>Welcome to Elm.</p>
+    """ 
 
-getPage : String -> Maybe HtmlPage
-getPage html =
-  case htmlParser |> root (Maybe.map .words) html of
-    Ok page ->
-      Just page
-    Err _ ->
-      Nothing
+main = 
+    case parseHtml example of
+        Ok result ->
+            -- process the result
+        Err _ ->
+            -- handle the error
 ```
 
-## Djupdykning:
-Parsing är en viktig del av webbutveckling, eftersom det gör det möjligt att hämta information från en hemsida och använda den på andra sätt. Det finns dock alternative metoder för detta, som till exempel web scraping, vilket innebär att man hämtar data från webbsidor genom att simulera en webbläsare. Detta är dock oftast mer komplicerat och kräver mer hantering av JavaScript-kod.
+Kör du det programmet kommer du få en lista av `Parser.Step` som representar h1- och p-taggar i HTML-strängen.
 
-Elm/javascript-parsers används ofta för att tillhandahålla en mer strukturerad representation av HTML-koden, och är därför användbart vid till exempel web scraping och automatiserade testning.
+## Fördjupning:
+
+Historiskt sett har HTML-parsing utförts på serversidan med hjälp av språk som PHP och Java. Som en kompileringsspråk möjliggör Elm parsing av HTML på klientsidan, vilket kan vara mer effektivt beroende på användningsfallet.
+
+Alternativen till att parsa HTML med Elm inkluderar att använda JavaScript-bibliotek som JSDOM eller Cheerio.
+
+När vi pratar om implementeringsdetaljer använder Elm-bibliotek som `Html.Parser` en teknik som kallas för "recursive descent parsing". Det här tillvägagångssättet bygger parse trädet rekursivt nerifrån och upp genom att matcha HTML-strängen med en serie av försök till parsers definierade i programmet.
 
 ## Se även:
-- [Elm/parser dokumentation](https://package.elm-lang.org/packages/elm/parser/latest/)
-- [HTML to Elm konverterare](https://mbylstra.github.io/html-to-elm/)
-- [Web scraping med Python](https://realpython.com/beautiful-soup-web-scraper-python/)
-- [Åtkomst av HTML-dokument i olika webbläsare](https://www.w3.org/2007/10/htmldocument.html)
+
+- [Elm's Html.Parser modul](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser): Det huvudsakliga biblioteket för att parsa HTML i Elm.
+- [Elm's Guide to Parsing](https://guide.elm-lang.org/parsing.html): En grundlig genomgång av parsing i Elm, inklusive HTML-parsing.
+- [Parser Combinators in Elm](https://medium.com/@_rchaves_/parser-combinators-in-elm-22654ffd02f2): En djupare dykning i parser combinators, som är grunden för Elm's parsing bibliotek.

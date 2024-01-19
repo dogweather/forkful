@@ -1,7 +1,7 @@
 ---
-title:                "Oppretting av en midlertidig fil"
-html_title:           "Bash: Oppretting av en midlertidig fil"
-simple_title:         "Oppretting av en midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "Bash: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,22 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Opprette en midlertidig fil betyr å lage en midlertidig fil som kun skal brukes for en begrenset periode. Dette er en vanlig praksis blant programmører for å lagre data midlertidig mens et program utfører en oppgave.
+## Hva & Hvorfor?
 
-## Slik gjør du:
-For å opprette en midlertidig fil i Bash, kan du bruke kommandoen ```mktemp``` etterfulgt av filnavnet du ønsker å bruke. For eksempel: 
+Å lage en midlertidig fil innebærer å opprette en fil som skal brukes en kort periode, for så å slettes. Programmerere gjør dette for å lagre data midlertidig uten å tynge hovedlagringen.
 
+## Hvordan gjør man det:
+
+Her er et enkelt eksempel på hvordan du lager og bruker en midlertidig fil i Bash:
+
+```Bash
+#!/bin/bash
+
+# Opprett en midlertidig fil
+tmpfile=$(mktemp)
+
+# Skriv noe til filen
+echo "Hei, verden!" > $tmpfile
+
+# Vis innholdet i filen
+cat $tmpfile
+
+# Slett filen
+rm $tmpfile
 ```
-Bash mktemp temp.txt
-```
 
-Dette vil opprette en midlertidig fil med navnet "temp.txt" i din nåværende mappe. Du kan også bruke flags som ```-d``` for å opprette en midlertidig mappe og ```-p``` for å spesifisere en annen mappe hvor den midlertidige filen skal opprettes.
+Når dette skriptet kjøres, vil det opprette en midlertidig fil, skrive "Hei, verden!" til den, vise innholdet, og slette filen. 
 
-## Dykk ned:
-Opprettelse av midlertidige filer har vært en vanlig praksis i mange år, spesielt før datastøtte og ressurser var like tilgjengelige som i dag. Alternativene til midlertidige filer inkluderer å lagre data i minnet, noe som kan være risikabelt da data kan gå tapt hvis programmet får en feil, eller å bruke permanente filer, noe som kan føre til overbelastning av systemet med unødvendige filer.
+## Dypdykk
 
-For å implementere oppretting av midlertidige filer må Bash først sjekke om det finnes en eksisterende fil med samme navn, og hvis den gjør det, vil den generere et nytt navn for den midlertidige filen før den opprettes. Bash vil også sørge for at den midlertidige filen blir slettet når programmet avsluttes.
+Lager vi midlertidige filer er en teknikk som går tilbake til de eldste dagene av programmering. Det brukes ofte i scenarioer hvor data må bufferes, eller hvor man jobber med store datasett.
 
-## Se også:
-For mer informasjon om å opprette midlertidige filer i Bash, kan du se på dokumentasjonen for ```mktemp``` kommandoen. Du kan også lese mer om hvordan å bruke midlertidige filer på Linux-tips nettsiden eller i Bash-manualen.
+Alternativene til midlertidige filer inkluderer bruk av databaser eller in-memory caching systemer som Redis. Men i mange tilfeller er midlertidige filer en enklere løsning.
+
+Implementering av midlertidige filer i Bash er greit nok, men det er viktig å huske på å alltid slette filene når de ikke lenger er nødvendige. Hvis ikke, kan de ødelegge lagringsplassen over tid.
+
+## Se også
+
+For mer informasjon om midlertidige filer i Bash, se følgende kilder:
+
+- Bash man-siden på midlertidige filer: `man mktemp` 
+- [GNU Coreutils: mktemp](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html) 
+- [Create and use temporary files in Bash](https://tldp.org/LDP/abs/html/tempfiles.html)

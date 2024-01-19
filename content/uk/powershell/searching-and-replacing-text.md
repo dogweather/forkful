@@ -1,6 +1,6 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "PowerShell: Пошук та заміна тексту"
+html_title:           "C++: Пошук та заміна тексту"
 simple_title:         "Пошук та заміна тексту"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що і чому?
+## Що і чому?
+Пошук та заміна тексту - це процес виявлення та заміни окремих кусків даних у програмі. Програмісти роблять це, щоб управляти і оптимізувати інформацію, що використовується в коді.
 
-Заміна тексту - це процес заміни одного фрагмента тексту на інший. Програмісти використовують це, щоб легко і швидко змінювати декілька входжень одного фрагмента тексту на інший у своєму коді.
-
-# Як це зробити?
-
+## Як це робиться:
+Ось як ви можете шукати та замінювати текст у PowerShell:
 ```PowerShell
-# Приклад 1: Заміна одного слова на інше
-$text = "привіт, світ!"
-$text -creplace "світ", "Україну"
+# Створимо приклад тексту
+$example = "Привіт, світ"
 
-# Результат: привіт, Україну!
+# Використаємо метод Replace() для пошуку та заміни
+$replaced = $example.Replace("світ", "Україна")
 
-# Приклад 2: Заміна тексту в декількох файлах
-Get-ChildItem -Path "C:\код" -Filter "*.txt" | ForEach-Object { Get-Content $_.FullName | Foreach-Object { $_ -creplace "слово", "інше слово" } | Set-Content -Path $_.FullName }
+# Виводимо результат
+Write-Output $replaced
+```
+Виведено:
+```PowerShell
+Привіт, Україна
 ```
 
-# Що глибше?
+## Поглиблений аналіз
+Історично, процес пошуку та заміни тексту існував у програмуванні практично від початку його існування. В PowerShell пошук та заміна виконуються за допомогою вбудованого методу Replace().
 
-Заміна тексту використовувалася в програмуванні ще з часів давніх комп'ютерів. В деяких мовах програмування існують спеціальні функції для цього (наприклад, в Perl), але в PowerShell використовується регулярний вираз `-creplace` для зручності. Інші альтернативи включають програми для пошуку та заміни в текстових редакторах або використання команд в терміналі.
+Як альтернатива, ви можете скористатися регулярними виразами (RegExp), якщо маєте справу з більш складними випадками. 
 
-# Дивіться також
+Метод Replace() працює, замінюючи одну підстроку іншою. Якщо оригінальний текст не містить шуканого виразу, то текст залишиться без змін.
 
-- [Документація Microsoft про `-creplace`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7)
-- [Стаття на Wikipedia про заміну тексту](https://uk.wikipedia.org/wiki/Заміна_тексту)
+## Дивіться також
+Посилання на додаткові ресурси:
+
+- [MSDN: String.Replace Method in PowerShell](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
+- [TechNet: Using Regular Expressions in PowerShell](https://social.technet.microsoft.com/wiki/contents/articles/4585.powershell-working-with-regular-expressions-regex.aspx)

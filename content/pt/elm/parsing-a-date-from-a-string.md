@@ -1,7 +1,7 @@
 ---
-title:                "Análise de uma data a partir de uma string."
-html_title:           "Elm: Análise de uma data a partir de uma string."
-simple_title:         "Análise de uma data a partir de uma string."
+title:                "Analisando uma data a partir de uma string"
+html_title:           "PowerShell: Analisando uma data a partir de uma string"
+simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,25 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é isso e por quê?
-A conversão de uma data de string é um procedimento comum em programação em que uma data escrita como texto (por exemplo, "01/01/2022") é transformada em um formato de data mais adequado para cálculos e manipulações (por exemplo, 01 de janeiro de 2022). Isso é útil para realizar operações em data e hora, como comparação de datas, cálculos de diferença de tempo e exibição de informações no formato desejado.
+## O que & Porquê?
+
+Parsear uma data de uma string envolve a conversão de uma data em formato de texto para um objeto de data. Programadores fazem isso para poderem manipular e utilizar datas de maneira mais eficiente em seus códigos.
 
 ## Como fazer:
+
+Vamos usar a biblioteca `elm/time` que facilita trabalhar com datas. Aqui está como você parsearia uma data de uma string em Elm:
+
+```Elm
+import Time exposing (..)
+import Time.Zone as Zone
+
+stringParaData : String -> Maybe Time.Posix
+stringParaData dataString =
+    Time.fromIsoString dataString
+
+-- Exemplo de uso
+isoString = "1991-05-21T00:00:00Z"
+
+case stringParaData isoString of
+    Just data ->
+        -- Faz algo com a data
+    Nothing ->
+        -- Handle do caso onde a string não é uma data válida
 ```
-Elm.DateTime.fromIso "2022-01-01" 
---> Ok (DateTime.fromDate 2022 1 1)
 
-Elm.DateTime.fromString "01/01/2022 12:00 PM" 
---> Ok (DateTime.fromTime 12) 
+## Mergulho Profundo
 
-Elm.DateTime.toTime "2022-01-01" 
---> Ok (Time.span 2022 0 1 0 0 0 0)
-```
+No contexto histórico, as datas e horas em Elm são representadas como um valor `Posix`, que é um número representando os milissegundos desde a época Unix (00:00:00 UTC em 1 de janeiro de 1970). Essa abordagem é um padrão comum em muitas linguagens de programação.
 
-## Detalhes Complexos:
-A conversão de datas é uma tarefa importante na programação, pois permite manipular e comparar datas de forma mais eficaz. Existem diversas bibliotecas e ferramentas disponíveis em Elm para facilitar o processo de conversão, como o pacote DateTime. No entanto, é importante ter cuidado com possíveis erros de formatação e conversão correta entre tipos de dados.
+Como alternativas, dependendo do seu projeto, você pode querer usar bibliotecas externas como `elm-date-extra`, que oferecem funções adicionais de parseamento.
 
-## Veja também:
-- Documentação do pacote Elm DateTime: https://package.elm-lang.org/packages/elm/time/latest/
-- Como trabalhar com datas em Elm: https://elmprogramming.com/dates-in-elm.html
-- Conversão de datas em Elm: https://gist.github.com/mbs723/5d15c7ed3277e0260c8b0983e7562bf1
+Em relação aos detalhes de implementação, é importante notar que a função `fromIsoString` só aceita strings na norma ISO 8601.
+
+Além disso, em Elm, funções que podem falhar geralmente retornam um `Maybe` porque Elm não possui exceções em tempo de execução. Portanto, nosso exemplo retorna `Maybe Time.Posix`.
+
+## Veja também 
+
+Para mais informações sobre `elm/time`, veja a [documentação oficial](https://package.elm-lang.org/packages/elm/time/latest/)
+
+Para a norma ISO 8601, veja a descrição no [Wikipedia](https://pt.wikipedia.org/wiki/ISO_8601).
+
+Para saber mais sobre manipulação de datas com Elm, você pode conferir esse [artigo detalhado](https://elmprogramming.com/datetime.html).

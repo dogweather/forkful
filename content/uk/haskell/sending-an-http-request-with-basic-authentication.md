@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http-запиту з основною автентифікацією"
-html_title:           "Haskell: Надсилання http-запиту з основною автентифікацією"
-simple_title:         "Надсилання http-запиту з основною автентифікацією"
+title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
+html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
+simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,54 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що & Чому?
+```
+## Що й чому?
 
-Відправлення HTTP-запиту із базовою аутентифікацією - це коли програміст надсилає запит до веб-сервера, використовуючи базову аутентифікацію для перевірки своїх даних доступу. Це часто робиться для роботи з захищеними ресурсами або для виконання авторизованих дій на веб-сайтах.
+Відправлення HTTP-запиту з базовою автентифікацією це, по суті, спосіб забезпечення безпечного обміну даними між сервером і клієнтом. Програмісти використовують це для захисту чутливої інформації та перевірки користувацьких прав доступу.
 
-# Як писати код?
+## Як це робити:
 
-Відправлення HTTP-запиту із базовою аутентифікацією може бути легко реалізовано у Haskell за допомогою бібліотеки Network.HTTP.Conduit. Перш за все, потрібно імпортувати потрібні модулі.
+Робимо це за допомогою пакета `http-conduit`. Є кілька кроків:
 
 ```Haskell
-import Network.HTTP.Conduit
-import Network.HTTP.Types.Header (hAuthorization)
-import qualified Data.ByteString.Char8 as BS
+import Network.HTTP.Simple
+import Network.HTTP.Client (applyBasicAuth)
+import Data.ByteString.Char8 (pack)
+
+main :: IO ()
+main = do
+    request <- parseRequest "http://httpbin.org/basic-auth/user/passwd"
+    let request' = applyBasicAuth (pack "user") (pack "passwd") request
+    response <- httpLBS request'
+    print $ getResponseStatus response
 ```
 
-Далі можна створити базову аутентифікаційну стрічку, де першим параметром є ім'я користувача, а другим - пароль.
+Це задає імена користувача та пароль, як "user" та "passwd" відповідно, та відправляє запит до сервера.
 
-```Haskell
-let authString = BS.pack "username:password"
+## Поглиблений розгляд:
+
+Відправлення HTTP-запиту із базовою автентифікацією є старим та перевіреним стратегічним варіантом автентифікації. Проте на сьогоднішній день більш безпечними та широко використовуваними є такі альтернативи як OAuth та JWT.
+
+Використання `applyBasicAuth` з пакету `http-client` просто укладає облікові дані в заголовок запиту "Authorization" в форматі, визначеному Internet Engineering Task Force для базової автентифікації HTTP.
+
+## Дивіться також:
+
+- HTTP Conduit: https://hackage.haskell.org/package/http-conduit
+- Протокол автентифікації: https://tools.ietf.org/html/rfc2617
 ```
-
-Тепер можна створити запит і додати до нього заголовок з базовою аутентифікацією.
-
-```Haskell
-initRequest <- parseRequest "http://www.example.com"
-let request = initRequest
-              { requestHeaders =
-                  [(hAuthorization, "Basic " <> (BS.pack $ base64Encode authString))]
-              }
-```
-
-Нарешті, можна виконати запит і отримати відповідь від сервера.
-
-```Haskell
-response <- httpLbs request manager
-putStrLn $ show $ responseBody response
-```
-
-Вищенаведений код відправляє GET-запит до веб-сайту із базовою аутентифікацією і виводить отриману відповідь в консоль.
-
-# Поглиблене вивчення
-
-- Історичний контекст: базова аутентифікація була першою формою аутентифікації для HTTP-запитів і зберігає свою актуальність до сьогоднішнього дня.
-
-- Альтернативні підходи: окрім базової аутентифікації, існують інші методи аутентифікації, наприклад, OAuth.
-
-- Деталі реалізації: бібліотека Network.HTTP.Conduit дозволяє використовувати не тільки базову аутентифікацію, але і інші методи, такі як Digest або NTLM.
-
-# Дивись також
-
-- [Network.HTTP.Conduit документація](https://hackage.haskell.org/package/http-conduit/docs/Network-HTTP-Conduit.html)
-- [HTTP-аутентифікація на Вікіпедії](https://uk.wikipedia.org/wiki/HTTP-%D0%B0%D1%83%D1%82%D0%B5%D0%BD%D1%82%D0%B8%D1%84%D1%96%D0%BA%D0%B0%D1%86%D1%96%D1%8F)

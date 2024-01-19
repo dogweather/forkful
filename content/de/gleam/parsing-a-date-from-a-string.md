@@ -1,7 +1,7 @@
 ---
-title:                "Einen Datumswert aus einer Zeichenfolge analysieren"
-html_title:           "Gleam: Einen Datumswert aus einer Zeichenfolge analysieren"
-simple_title:         "Einen Datumswert aus einer Zeichenfolge analysieren"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,30 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Parsen eines Datums aus einem String ist ein gängiges Problem in der Programmierung, bei dem ein Datum, das als Text in einer bestimmten Form angegeben ist, in ein Datumobjekt umgewandelt wird, das in der Programmiersprache verwendet werden kann. Dies ist wichtig, da viele APIs oder Datenbanken Datumsangaben in Form von Strings anfordern, um Informationen auszutauschen oder zu speichern.
 
-## Wie geht's?
-Ein Beispiel für das Parsen eines Datums aus einem String in Gleam könnte wie folgt aussehen:
-```Gleam
-let string = "3. August 2020"
-let pattern = "%d.%B %Y"
-let date = Date.Parse(string, pattern)
+Das Parsen eines Datums aus einem String dient dazu, Text in ein tatsächliches Datum zu konvertieren. Das wird oft in Kommunikation mit APIs oder Datenbanken benötigt, da diese oft Zeichenketten verwenden.
+
+## Wie geht das?
+
+Das Parsen eines Datums ist in Gleam eine ziemlich einfache Aufgabe. Es verwendet das Modul `gleam/calendar`, welches Funktionen zur Date-Konversion bietet. Ein Beispiel ist unten aufgeführt.
+
+```gleam
+import gleam/calendar.{date, from_iso_year_week_day}
+
+let datum = "2022-01-01"
+let parsed_datum = date.from_iso_string(datum)
+
+assert Ok(#date(2022, 1, 1)) = parsed_datum
 ```
-Dies erzeugt ein Datumobjekt mit dem Wert 3. August 2020. Die Funktion `Parse` nimmt zwei Argumente an: den String mit dem Datum und das Muster, in dem das Datum angegeben ist. Das Muster wird anhand von Platzhaltern wie `%d` für den Tag, `%B` für den Monat und `%Y` für das Jahr definiert.
 
-Ein weiteres Beispiel mit einer anderen Datumsangabe könnte so aussehen:
-```Gleam
-let string = "25/12/2020"
-let pattern = "%d/%m/%Y"
-let date = Date.Parse(string, pattern)
-```
-Dieses Mal erzeugt die Funktion ein Datumobjekt mit dem Wert 25. Dezember 2020.
+Die Funktion `date.from_iso_string` wandelt einen String in ein Datum um. Bei erfolgreichem Parsen gibt die Funktion ein `Ok` zurück, ansonsten ein `Error`. 
 
-## Tiefentauchen
-Das Parsen von Datumsangaben stammt aus der Programmiersprache C und wird heute von vielen Sprachen, einschließlich Gleam, unterstützt. Alternativ gibt es auch Bibliotheken wie `dateutils` oder `moment.js` für erweiterte Funktionalitäten.
+## Tief einsteigen
 
-Die Implementierung des Parsings in Gleam basiert auf der Standardbibliothek `erlang` und verwendet Funktionen wie `datetime:parse` und `erlang:list_to_integer`.
+Historisch wurde das Parsen von Datum eben seit jeher für die Kommunikation mit APIs und Datenbanken verwendet. Es gibt einige Alternativen wie Bibliotheken in anderen Programmiersprachen oder die Verwendung von integrierten Built-in-Möglichkeiten in Datenbanken. Die genaue Implementierung in Gleam hängt stark von der genauen gleam Version und dem Modul ab, das Sie verwenden.
 
-## Sieh dir auch an
-- [Einführung in Datums- und Uhrzeitmanipulation in Gleam](https://gleam.run/news/2021-01-14-dates)
-- [Dokumentation zur Date-Modul in Gleam](https://gleam.run/modules/stdlib/Date.html)
+Gleam verwendet das ISO 8601-Datum- und Zeitformatstandard. Datum-Strings, die dieses Format nicht einhalten, können nicht korrekt geparst werden.
+
+Eine wichtige Sache zu beachten ist, dass parsen immer fehlerbehaftet ist. Das heißt, es kann immer Fehler geben, die Sie prüfen und behandeln müssen!
+
+## Siehe auch
+
+Schauen Sie sich weitere Ressourcen an, um mehr über das Parsen von Datum zu lernen:
+1. [Gleam’s offizielle Dokumentation](https://gleam.run/docs/)
+2. [ISO 8601 Standard](https://www.iso.org/iso-8601-date-and-time-format.html)
+3. [Dokumentation der `gleam/calendar` Bibliothek](https://hexdocs.pm/gleam_stdlib/gleam/calendar.html)

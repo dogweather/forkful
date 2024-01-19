@@ -1,7 +1,7 @@
 ---
-title:                "पार्सिंग एचटीएमएल।"
-html_title:           "Clojure: पार्सिंग एचटीएमएल।"
-simple_title:         "पार्सिंग एचटीएमएल।"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,29 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्या और क्यों?
+## क्या और क्यों?
+HTML पार्सिंग, वेब पेज के विश्लेषण की प्रक्रिया है जिसमें टैग्स, एट्रिब्यूट्स और डेटा को निकाला जाता है। प्रोग्रामर्स इसे वेब स्क्रेपिंग, सोशल मीडिया साइट्स की मॉनिटरिंग, और स्वचालित टेस्टिंग आदि के लिए करते हैं।
 
-पार्सिंग HTML क्या है? 
-यह उपकरण कंप्यूटर भाषा में लिखा गया HTML को पढ़ने और समझने के लिए उपयोग किया जाता है। 
-पार्सिंग HTML को अपने कोड में इस्तेमाल करके, प्रोग्रामर अपने एप्लिकेशन के साथ अंतरफलन फॉर्मैट से संबंधित समस्याओं को हल कर सकते हैं।
+## कैसे पार्सिंग करें:
+Clojure में Enlive लाइब्ररी का उपयोग करके HTML पर्सिंग कर सकते हैं। इसके लिए पहले के लाइब्ररी को कॉन्फ़िगर करें:
 
-# कैसे करें?
-
-```
-Clojure (html/parser "<html>...</html>")
+```Clojure
+(require '[net.cgrand.enlive-html :as html])
 ```
 
-उपरोक्त उदाहरण में, हमने ```html``` फंक्शन को पुकारकर HTML के एक टैग के साथ एक स्ट्रिंग पास किया है। 
-इससे प्रोग्रामर को HTML के मध्य से परिदृश्य परिवर्तन करने के लिए सुविधा मिलती है। 
+अब, आप HTML फ़ाइल को लोड कर सकते हैं:
 
-## 
-गहराई खोज:
+```Clojure
+(defn load-html [filename]
+  (html/html-resource (java.io.File. filename)))
+```
 
-1. संदर्भ के साथ इतिहासिक परिस्थिति: HTML पार्सिंग का मूल्य क्या है? 
-2. वैकल्पिक विकल्प: Clojure के अलावा अन्य क्या समर्थन करता है? 
-3. अंग्रेज़ी अनुवाद: पार्सिंग HTML से बाहर क्या अहम है?
+और इसे पार्स कर सकते हैं:
 
-# देखें कि:
+```Clojure
+(defn parse-html [html-file]
+  (-> (load-html html-file)
+      (html/select [:body])
+      first
+      :content
+      str))
+```
 
-https://github.com/netblob/html-xml-utils-clj
-https://clojars.org/html-parser
+उदाहरण कार्यान्वयन पर चलाने पर, आपको HTML के कंटेंट का आउटपुट मिलेगा।
+
+## गहरी पड़ताल:
+HTML पार्सिंग की आवश्यकता सामान्यतः तब होती है जब आपको वेब पेज से डेटा निकालना हो। Clojure में Enlive नामक लाइब्ररी का उपयोग करके इसे आसानी से किया जा सकता है। हालांकि, इतना ही नहीं, ऐसे भी कई प्रघ्यापन हैं जिनमें आप JSoup, Hiccup जैसी अन्य लाइब्ररीज का उपयोग कर सकते हैं।
+
+## अधिक देखें:
+HTML पार्सिंग के बारे में और अधिक जानकारी के लिए, यह लिंक्स देखें:
+1. [Clojure प्रलेखन](https://clojure.org/guides/content)
+2. [Enlive डॉक्स](https://github.com/cgrand/enlive)
+3. [HTML पार्सिंग का प्रलेखन](https://developer.mozilla.org/en-US/docs/Web/HTML)

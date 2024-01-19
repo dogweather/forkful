@@ -1,7 +1,7 @@
 ---
-title:                "Den aktuellen Datum erhalten"
-html_title:           "Haskell: Den aktuellen Datum erhalten"
-simple_title:         "Den aktuellen Datum erhalten"
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Gleam: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,31 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums ist eine grundlegende Funktion in der Programmierung, die es ermöglicht, das heutige Datum in einem bestimmten Format zu erhalten. Programmierer verwenden diese Funktion oft, um Zeitstempel für Dateien zu erstellen, Berichte zu generieren oder die Dauer zwischen zwei bestimmten Daten zu berechnen.
+Es geht darum, das aktuelle Datum zu finden. Programmierer tun dies, weil es hilfreich ist, wenn sie zeitabhängige Aktionen durchführen oder Ereignisse protokollieren müssen.
 
-## Wie geht's?
-Das Abrufen des aktuellen Datums in Haskell ist einfach und erfordert nur eine kurze Codezeile:
-```Haskell
-import Data.Time (getCurrentTime, formatTime, defaultTimeLocale)
+## So geht's:
+Mit Haskell können Sie das aktuelle Datum mit der Unterstützung von `Data.Time` Bibliothek finden.
 
-getCurrentDate :: IO String
-getCurrentDate = getCurrentTime >>= \time -> return (formatTime defaultTimeLocale "%d.%m.%Y" time)
-```
-Der obige Code importiert die Data.Time-Bibliothek und definiert eine Funktion namens `getCurrentDate`. Diese Funktion ruft die aktuelle Zeit mit `getCurrentTime` ab und formatiert sie dann mit `formatTime` im gewünschten Format. Schließlich gibt die Funktion das formatierte Datum als String mit dem gewünschten Format (in diesem Fall DD.MM.JJJJ) zurück.
+```haskell
+import Data.Time
 
-Das Ergebnis des obigen Codes kann folgendermaßen aussehen, abhängig vom aktuellen Datum:
-```
-23.07.2020
+main = do
+  aktuellesDatum <- getCurrentTime
+  print aktuellesDatum
 ```
 
-## Tiefere Einblicke
-Die Funktion `getCurrentTime` bietet eine höhere Genauigkeit als eine einfache Datumsabfrage, da sie auch die Zeit mit Millisekunden zurückgibt. Das `formatTime`-Funktion verwendet das `defaultTimeLocale`, um das Datum im gewünschten Format anzuzeigen. Es gibt jedoch auch andere Möglichkeiten, das Datum zu formatieren, z.B. die Verwendung des `localTimeFormat` oder die Konvertierung des Datums in einen `UTCTime` Wert.
+Wenn Sie dieses Programm ausführen, erhalten Sie eine Ausgabe ähnlich wie diese:
 
-Eine Alternative zum Abrufen des aktuellen Datums ist die Verwendung der `Data.Time.Clock` Bibliothek, die mehr Funktionen für die Manipulation von Zeitwerten bietet.
+```haskell
+2022-03-25 12:50:05.892951 UTC
+```
 
-## Siehe auch
-Weitere Informationen zu den oben erwähnten Funktionen und Bibliotheken finden Sie in der offiziellen Dokumentation für die Data.Time und Data.Time.Clock Module.
+Die Ausgabe repräsentiert das aktuelle Datum und die aktuelle Uhrzeit in UTC.
 
-[Dokumentation für Data.Time](https://hackage.haskell.org/package/time-1.9/docs/Data-Time.html)
+## Vertiefung:
 
-[Dokumentation für Data.Time.Clock](https://hackage.haskell.org/package/time-1.9/docs/Data-Time-Clock.html)
+(1) Historischer Kontext: Die Funktion `getCurrentTime` ist ein Teil der Zeitbibliothek, die in Haskell seit seiner Version 6.6 vorhanden ist.
+
+(2) Alternativen: Es gibt andere Methoden, das Datum zu bekommen, wie etwa der Einsatz der `System.Locale` und `System.Time` Bibliotheken.
+
+(3) Implementierungsdetails: `getCurrentTime` gibt ein `IO UTCTime` zurück. Haskell verwendet den Typ `UTCTime`, um den unabhängigen Zeitpunkt auszudrücken. Die Angabe erfolgt dabei in Koordinierter Weltzeit (UTC).
+
+## Siehe auch:
+
+Besuchen Sie die offizielle Haskell-Dokumentation für weitere Details:
+
+- [Data.Time Docs](https://hackage.haskell.org/package/time-1.12/docs/Data-Time.html)
+- [System.Locale Docs](https://hackage.haskell.org/package/old-locale-1.0.0.7/docs/System-Locale.html)
+- [System.Time Docs](https://hackage.haskell.org/package/old-time-1.1.0.3/docs/System-Time.html)

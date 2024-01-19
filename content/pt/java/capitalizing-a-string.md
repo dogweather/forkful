@@ -1,7 +1,7 @@
 ---
-title:                "Colocando em Maiúsculo uma String"
-html_title:           "Java: Colocando em Maiúsculo uma String"
-simple_title:         "Colocando em Maiúsculo uma String"
+title:                "Capitalizando uma string"
+html_title:           "Java: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,40 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Capitalizando Strings em Java
 
-Capitalizar uma string em Java é o processo de converter a primeira letra de cada palavra em maiúscula. Programadores fazem isso para melhorar a legibilidade e organização do código. 
+## O Que & Por Que?
+Capitalizar uma string é transformar a primeira letra de cada palavra em maiúscula. Programadores fazem isso para melhorar a legibilidade do texto, ou para seguir convenções de nomenclatura.
 
-## Como fazer:
+## Como Fazer:
+
+Vamos ver como fazer isso na prática. Utilize o método `titleCase` que definiremos abaixo:
 
 ```Java
-public static String capitalize(String str) {
-    if (str == null || str.isEmpty()) {
-        return str;
-    } else {
-        String[] words = str.split("\\s+");
-        StringBuilder sb = new StringBuilder();
-        for (String word : words) {
-            sb.append(Character.toUpperCase(word.charAt(0)))
-              .append(word.substring(1).toLowerCase())
-              .append(" ");
-        }
-        return sb.toString().trim();
+public static String titleCase(String texto) {
+    String[] palavras = texto.split(" ");
+    StringBuilder textoCapitalizado = new StringBuilder();
+    
+    for (String palavra : palavras) {
+        textoCapitalizado.append(Character.toUpperCase(palavra.charAt(0)))
+                         .append(palavra.substring(1))
+                         .append(" ");
     }
+    
+    return textoCapitalizado.toString().trim();
 }
 
 public static void main(String[] args) {
-    System.out.println(capitalize("este é um exemplo de string capitalizada"));
+    String frase = "olá, mundo!";
+    System.out.println(titleCase(frase));  // Saida: "Olá, Mundo!"
 }
 ```
 
-Output: Este é um exemplo de string capitalizada.
+## Mergulhando Fundo
 
-## Aprofundamento:
+O conceito de capitalizar strings existe desde a invenção das primeiras linguagens de programação. Não existe um padrão universal para como lidar com isso, e diferentes linguagens têm diferentes soluções.
 
-Capitalizar strings é uma prática comum em muitas linguagens de programação, com o objetivo de tornar o texto mais legível e organizado. Em português, é conhecida como "título" ou "sentença capitalizada", e é frequentemente usada em títulos, cabeçalhos e outros textos que precisam ser destacados. Existem também outras formas de capitalização, como todas as letras maiúsculas (UPPER CASE) ou todas as letras minúsculas (lower case).
+Em Java, também podemos utilizar a biblioteca Apache Commons `WordUtils` que fornece a função `capitalize` para capitalizar uma string. No entanto, isso adicionará uma dependência externa ao seu projeto.
 
-## Veja também:
+A implementação que mostramos acima funciona dividindo a string original em palavras, then capitalizing the first letter of each word and appending all the words together.
 
-- [String Class in Java](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [Capitalize Method in Java](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html#toUpperCase(int))
+## Veja Também
+
+- [Java String Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Apache Commons Lang API: WordUtils](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/WordUtils.html)
+- StackOverflow: [How to Capitalize First Letter of Each Word in a String](https://stackoverflow.com/questions/1149855/how-to-upper-case-every-first-letter-of-word-in-a-string)

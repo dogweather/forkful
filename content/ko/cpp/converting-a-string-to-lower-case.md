@@ -1,7 +1,7 @@
 ---
-title:                "대소문자로 변환하기"
-html_title:           "C++: 대소문자로 변환하기"
-simple_title:         "대소문자로 변환하기"
+title:                "문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,58 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이고 왜 사용하는가? 
+문자열을 소문자로 변환하는 것은 대문자가 있는 문자열에서 모든 대문자를 대응하는 소문자로 바꾸는 것을 의미합니다. 프로그래머들이 이를 사용하는 주된 이유는 대소문자 구분 없이 데이터를 일관성 있게 처리하고, 사용자 입력을 정규화하기 위해서입니다.
 
-각각의 문자열을 소문자로 변환하는 것을 말합니다. 프로그래머들은 주로 입력값을 소문자로 통일하여 일관성 있게 처리하기 위해 이 작업을 수행합니다.
-
-## 방법:
-
-### 예시 1: 문자열 변환 함수 사용
+## 어떻게 사용하나? 
+C++에서는 표준 `<algorithm>` 라이브러리의 `transform()` 함수를 이용해 문자열을 소문자로 변환할 수 있습니다.
 
 ```C++
-#include <iostream>
+#include <algorithm>
+#include <cctype>
 #include <string>
 
-using namespace std;
-
-// 입력값을 소문자로 변환하는 함수
-string toLower(string input) {
-    for (int i = 0; i < input.length(); i++) {
-        // 각 문자를 소문자로 변환
-        input[i] = tolower(input[i]);
-    }
-    return input;
-}
-
 int main() {
-    string input = "HeLlO WoRlD";
-    string result = toLower(input);
-    
-    // 결과 출력
-    cout << result << endl;
-    
+    std::string str = "Hello, World!";
+    std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+    std::cout << str;
     return 0;
 }
-
 ```
 
-**출력:** "hello world"
+이는 "hello, world!"라는 결과를 출력하게 됩니다.
 
-## 깊은 들어가기:
+## 깊은 이해 
+C++에서 문자열을 소문자로 변환하는 방법은 오래 전부터 사용되었습니다. 이는 `<algorithm>` 표준 라이브러리와 `tolower()` 함수의 조합으로 구현되었습니다. 
 
-### 역사적 배경:
+다른 가능한 방법으로는 C++17부터 표준 라이브러리에 추가된 `std::tolower`를 사용하는 것이 있습니다. 이는 직접적으로 문자열에 적용할 수 없으므로, 문자열의 각 문자에 대해 호출해야 하는 한계가 있습니다. 
 
-옛날에는 대소문자를 구분하는 시스템과 프로그래밍 언어가 많았기 때문에 문자열을 소문자로 변환하는 과정은 더욱 중요했습니다. 하지만 현재 대부분의 프로그래밍 언어는 대소문자를 구분하지 않기 때문에 문자열을 소문자로 변환하는 과정은 선택적이 될 수 있습니다.
+`transform()` 함수가 작동하는 방식은 문자열의 시작과 끝을 정의하고, 해당 범위의 각 요소에 대해 `tolower` 함수를 적용함으로써 동작합니다. 이는 원본 문자열을 변경하며, 대문자가 없는 문자열에 `transform()`을 사용하더라도 아무런 영향을 미치지 않습니다.
 
-### 대체 방법:
-
-문자열을 소문자로 변환하는 방법은 다양합니다. 위 예시에서는 각 문자를 직접 소문자로 변환하는 방법을 사용했지만, 더 효율적이고 간단한 방법도 존재합니다. 예를 들어, C++의 표준 라이브러리 함수 중 하나인 `transform`을 사용하면 간단하게 문자열을 소문자로 변환할 수 있습니다.
-
-### 구현 세부 정보:
-
-문자열을 소문자로 변환하는 구현 방법은 다양합니다. 예를 들어, ASCII 코드를 사용하거나 `tolower`과 같은 라이브러리 함수를 사용할 수 있습니다. 또한, 유니코드를 지원하는 언어에서는 다양한 문자 세트를 고려하여 문자열을 변환해야 할 수도 있습니다. 이를 염두에 두고 구현을 선택해야 합니다.
-
-## 관련 사이트:
-
-- [C++ `tolower` 함수 문서](https://www.cplusplus.com/reference/cctype/tolower/)
-- [C++ `transform` 함수 문서](https://www.cplusplus.com/reference/algorithm/transform/)
+## 참고자료 
+1. [cplusplus.com: transform()](http://www.cplusplus.com/reference/algorithm/transform/)
+2. [cplusplus.com: tolower()](http://www.cplusplus.com/reference/cctype/tolower/)
+3. [StackOverflow: How to convert a string to lower case in C++?](https://stackoverflow.com/questions/313970/how-to-convert-a-string-to-lower-case-in-c)

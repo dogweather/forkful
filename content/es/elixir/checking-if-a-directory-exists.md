@@ -1,7 +1,7 @@
 ---
-title:                "Verificando si existe un directorio."
-html_title:           "Elixir: Verificando si existe un directorio."
-simple_title:         "Verificando si existe un directorio."
+title:                "Verificando si existe un directorio"
+html_title:           "Elixir: Verificando si existe un directorio"
+simple_title:         "Verificando si existe un directorio"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,23 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
-Comprobar si un directorio existe es una acción común en la programación. Permite a los programadores verificar si un directorio determinado está presente en una ubicación específica en el sistema de archivos. Esto es importante para asegurar que un programa pueda acceder y utilizar los archivos adecuados.
+
+En la programación, a veces necesitamos verificar si un directorio existe antes de proceder con una acción, como la escritura de un archivo. Esto se hace para evitar errores de tiempo de ejecución y problemas relacionados con la operación inexistente o la mala manipulación de directorios.
 
 ## ¿Cómo hacerlo?
-En Elixir, se puede verificar si un directorio existe utilizando la función ```File.dir?/2``` y pasando como parámetro la ruta al directorio. Aquí hay un ejemplo de cómo verificar si el directorio "documents" existe en la carpeta actual:
-```
-Elixir
-iex> File.dir?("documents")
-true
-```
-Si el directorio no existe, la función devolverá ```false```.
 
-## Profundizando
-Antes de Elixir 1.7, se utilizaba la función ```File.exists?/1``` para verificar la existencia de un directorio. Sin embargo, esta función ha sido eliminada en versiones más recientes en favor de ```File.dir?/2```.
+En Elixir, podemos usar la función `File.dir?/1` para verificar la existencia de un directorio. Aquí te dejo un ejemplo:
 
-En caso de que se quiera comprobar si un archivo específico existe en lugar de un directorio, se puede utilizar la función ```File.exist?/1``` en su lugar.
+```Elixir
+defmodule Ejemplo do
+  def verificar_directorio(ruta) do
+    if File.dir?(ruta) do
+      IO.puts "El directorio existe"
+    else
+      IO.puts "El directorio no existe"
+    end
+  end
+end
+
+Ejemplo.verificar_directorio("/home/usuario/directorio")
+```
+
+Este programa imprimirá "El directorio existe" si el directorio dado existe, y "El directorio no existe" si no es así.
+
+## Inmersión profunda
+
+Elixir es un lenguaje de programación funcional moderno donde el módulo `File` proporciona funciones para trabajar con archivos y directorios. `File.dir?/1` es una de esas funciones. Esta función simplemente verifica si el directorio en la ruta dada existe y devuelve `true` si es así, y `false` en caso contrario.
+
+En el pasado, con los lenguajes que no ofrecían tales funciones incorporadas, los programadores tenían que implementar su propia lógica para verificar la existencia de un directorio, a menudo invocando comandos del sistema operativo.
+
+Como alternativa, también puedes usar la función `File.ls/1` que te proporciona una lista de archivos en el directorio que especificaste. Puedes usar esto para verificar la existencia de un directorio, pero si solo necesitas verificar la existencia, `File.dir?/1` es una opción más eficiente y clara.
 
 ## Ver también
-- Documentación oficial de Elixir sobre la función ```File.dir?/2``` (https://hexdocs.pm/elixir/File.html#dir?/2)
-- Artículo sobre cómo trabajar con archivos y directorios en Elixir (https://elixir-lang.org/getting-started/file-operations.html)
-- Otra forma de verificar la existencia de un directorio en Elixir utilizando la biblioteca standard ```Path.join/2``` (https://elixirforum.com/t/directory-exists-test-around-path-join/13363)
+
+Para una comprensión más profunda del módulo `File` y otras funciones relacionadas, te recomiendo que consultes la documentación oficial en: https://hexdocs.pm/elixir/File.html
+
+Además, si necesitas cavar más profundo en el lenguaje Elixir en general, el libro "Learn Functional Programming with Elixir" de Ulisses Almeida es excelente: https://pragprog.com/titles/cdc-elixir/learn-functional-programming-with-elixir/

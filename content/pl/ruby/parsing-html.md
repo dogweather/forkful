@@ -1,7 +1,7 @@
 ---
-title:                "Analiza html"
-html_title:           "Ruby: Analiza html"
-simple_title:         "Analiza html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
+Analiza syntaktyczna HTML (parsing) to proces przetwarzania kodu HTML na strukturalne części składowe. Programiści robią to, aby przechwytywać i manipulować danymi zawartymi w kodzie HTML.
 
-Parsing HTML to czynność polegająca na analizowaniu kodu HTML i wyodrębnianiu z niego potrzebnych informacji. Programiści często używają tej techniki do automatycznego przetwarzania dużej ilości danych, takich jak adresy email czy treści artykułów, zamiast przepisywać je ręcznie.
+## Jak to zrobić:
+Ruby daje nam kilka sposobów na analizę kodu HTML. Przyjrzyjmy się sposobowi, w jaki to robimy za pomocą gema Nokogiri.
 
-## Jak:
+Zainstaluj gem Nokogiri, jeśli jeszcze go nie masz, wpisując `gem install nokogiri` w terminalu.
 
-Przykładowy kod w Ruby do wyparsowania adresów email ze strony internetowej:
+Teraz zobaczmy prosty przykład kodu:
 
 ```Ruby
 require 'nokogiri'
 require 'open-uri'
 
-doc = Nokogiri::HTML(URI.open('strona_internetowa'))
-emails = doc.css('a[href*="mailto:"]').map { |a| a["href"].gsub("mailto:", "") }
-puts emails
+# Otworzy stronę internetową i przeprowadzi parsowanie
+doc = Nokogiri::HTML(open('https://www.example.com'))
+
+# Wydrukuj nagłówek strony
+puts doc.at_css('title').text
 ```
 
-Output:
-```
-["example1@gmail.com", "example2@yahoo.com", "example3@hotmail.com"]
-```
+W tym przykładzie podajemy URL do metody `open`, a następnie przekazujemy to do Nokogiri do parsowania. Metoda `at_css` pozwala nam wyszukiwać elementy na stronie za pomocą selektorów CSS.
 
-## Głębsze zagadnienia:
+## Na głęboką wodę
+Parsowanie HTML ma swoje korzenie w początkach HTML, kiedy programiści musieli ręcznie przetwarzać strony internetowe. Dzisiaj mamy wiele narzędzi, które ułatwiają to zadanie.
 
-Parsing HTML jest powszechnie używane od początku internetowej ery. Jedną z popularnych bibliotek do tego celu jest Nokogiri, lecz istnieje także wiele innych opcji, takie jak BeautifulSoup czy regular expressions. W celu uzyskania dokładniejszego wyniku, konieczne jest również zrozumienie CSS selectors, dzięki którym można precyzyjnie wybierać interesujące elementy z kodu HTML.
+Jeśli Nokogiri nie spełnia Twoich wymagań, możesz spróbować alternatyw, takich jak Oga lub mechanize. 
 
-## Zobacz także:
+Co do szczegółów implementacji, Nokogiri służy jako interfejs do bibliotek takich jak libxml2 lub xerces, które wykonują właściwą analizę.
 
-- Dokumentacja Nokogiri: https://nokogiri.org/
-- 10 sposobów na parsing HTML w Ruby: https://www.rubyguides.com/10-ways-to-parse-html-in-ruby/
+## Zobacz także
+- Oficjalna strona Nokogiri: https://nokogiri.org/
+- Dokumentacja Nokogiri: https://nokogiri.org/rdoc/index.html
+- Wiki dla libxml2: http://xmlsoft.org/
+- Strona domowa mechanize: https://mechanize.rubyforge.org/

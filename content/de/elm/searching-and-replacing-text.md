@@ -1,6 +1,6 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-html_title:           "Elm: Suchen und Ersetzen von Text"
+html_title:           "Bash: Suchen und Ersetzen von Text"
 simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,32 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Suchen und Ersetzen von Text ist eine häufige Aufgabe für Programmierer. Es bezieht sich auf das Auffinden bestimmter Zeichenfolgen in einem Text und das Ersetzen dieser durch eine andere Zeichenfolge. Dies kann nützlich sein, um Fehler zu korrigieren, Text zu formatieren oder große Mengen an Daten schnell zu bearbeiten.
+Suchen und Ersetzen von Text ist eine gängige Funktion in der Programmierung. Sie ermöglicht es, spezifische Zeichenketten in einem Text zu identifizieren und durch andere zu ersetzen. Programmierer verwenden sie oft, um große Datenmengen zu bereinigen oder zu transformieren.
 
-## Wie geht's?
+## So geht's:
 
-Der Prozess des Suchens und Ersetzens von Text in Elm ist relativ einfach und intuitiv. Hier ist ein Beispiel, wie man alle Vorkommen des Wortes "Hallo" im Text durch das Wort "Guten Tag" ersetzt:
+Unter Verwendung der `replace`-Funktion aus dem `String`-Modul in Elm können wir in Zeichenketten suchen und ersetzen. Hier ist ein einfaches Beispiel:
 
-```
-Elm String.replace "Hallo" "Guten Tag" "Hallo Welt!" -- Output: "Guten Tag Welt!"
-```
+```Elm
+import String
 
-Man kann auch reguläre Ausdrücke verwenden, um komplexere Suchanfragen zu erstellen. Zum Beispiel, um Zahlen im Text aufzuspüren und durch einen Platzhalter zu ersetzen, kann man Folgendes verwenden:
-
-```
-Elm Regex.replace (Regex.regex "\\d+") (always "###") "Die Antwort ist 42." -- Output: "Die Antwort ist ###."
+alterText = "Hallo Welt"
+neuerText = String.replace "Welt" "Elm" alterText
 ```
 
-## Tiefer tauchen
+Wenn Sie dieses Programm ausführen, würde es "Hallo Elm" ausgeben, da es "Welt" durch "Elm" ersetzt.
 
-Das Konzept des Suchens und Ersetzens von Text hat eine lange Geschichte und wurde in verschiedenen Programmiersprachen und Tools implementiert. Einige alternative Möglichkeiten, dies in Elm zu tun, sind die Verwendung von Regex-Bibliotheken wie [elm-regex](https://package.elm-lang.org/packages/elm-community/regex/latest/) oder das Pattern Matching mit benutzerdefinierten Funktionen.
+## Tiefere Einblicke:
 
-Elm bietet auch eine Suche und Ersetzen Funktion für Listen, die es ermöglicht, ein bestimmtes Element in einer Liste zu finden und durch ein anderes zu ersetzen. Diese Funktion heißt `List.map` und kann ebenfalls für das Suchen und Ersetzen von Text verwendet werden.
+Das Suchen und Ersetzen von Text hat eine lange Geschichte in der Informatik. Es gibt viele alternative Ansätze, etwa mit regulären Ausdrücken oder den Einsatz von CRDTs (Conflict-free Replicated Data Types) in verteilter Programmierung. In Elm verwendet die `replace`-Funktion einen effizienten String-Matching-Algorithmus, jedoch ohne Unterstützung für reguläre Ausdrücke.
 
-Eine wichtige Implementierungsdetails zu beachten ist, dass die `replace` Funktion in Elm eine vollständige Textsuche und kein startIndex-Parameter benötigt, was bedeutet, dass alle Vorkommen des Suchmusters im Text ersetzt werden.
+## Siehe auch:
 
-## Siehe auch
+Zum Vertiefen der Inhalte eignen sich folgende Ressourcen:
 
-- [Offizielle Elm Dokumentation](https://guide.elm-lang.org/)
-- [Reguläre Ausdrücke in Elm](https://dev.to/noahfrey/regular-expressions-in-elm-56dh)
-- [Alternative Suche und Ersetzen Methoden in Elm](https://www.reddit.com/r/elm/comments/2awz04/alternatives_to_replace/)
+1. Elm Dokumentation für das [`String`](https://package.elm-lang.org/packages/elm/core/latest/String) Modul.
+2. Implementation des `replace`-Algorithmus in [Elm Core](https://github.com/elm/core/blob/1.0.2/src/Native/String.js#L143).
+3. Ein Tutorial über [reguläre Ausdrücke](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions) auf MDN Web Docs.
+4. Ein Artikel über die Nutzung von [CRDTs](https://josephg.com/blog/crdts-are-the-future/) in der Programmierung.

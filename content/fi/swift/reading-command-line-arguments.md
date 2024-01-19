@@ -1,7 +1,7 @@
 ---
-title:                "Luku komentoriviparametreista"
-html_title:           "Swift: Luku komentoriviparametreista"
-simple_title:         "Luku komentoriviparametreista"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,31 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Miten Luet Komentorivin Argumentteja Swiftissä?
+
 ## Mikä & Miksi?
-Komentorivin argumenttien lukeminen on yksinkertaisesti prosessi, jossa ohjelma lukee ja käsittelee käyttäjän syöttämiä arvoja komentorivillä. Ohjelmoijat käyttävät tätä prosessia esimerkiksi ohjelman eri toiminnallisuuksien valitsemiseen tai datan syöttämiseen ohjelmaan.
+Lukeminen komentorivin argumentit tarkoittaa sisääntulevien tietojen käsittelyä, kun ohjelmisto suoritetaan komentorivin kautta. Ohjelmoijat tekevät tämän mahdollistaakseen käyttäjän määrittelemään ohjelman toiminnallisuuden suoritushetkellä.
 
-## Miten:
+## Näin se toimii:
+Tässä on Swift-koodin esimerkki ja siitä saatu näyte tuloste.
+
 ```Swift
-let argumentit = CommandLine.arguments
+// Command LineArguments.swift
+import Foundation
 
-// Tulostaa kaikki komentoriviltä annetut argumentit
-for argumentti in argumentit {
-    print(argumentti)
+let arguments = CommandLine.arguments
+print("You've entered \(arguments.count) arguments:")
+for arg in arguments {
+    print(arg)
 }
-
 ```
 
-Esimerkkitulostus: 
-```
-OhjelmanNimi argumentti1 argumentti2
+Suorita skripti komentorivillä:
 
-argumentti1
-argumentti2
+```
+$ swift CommandLineArguments.swift arg1 arg2 arg3
 ```
 
-## Syvällinen sukellus:
-Komentorivin argumenttien lukeminen on ollut osa ohjelmointia jo pitkään ja se on yksinkertainen tapa lukea käyttäjän syöttämiä arvoja ohjelmaan. Mikäli haluaa tutustua muihin tapoihin lukea syötteitä käyttäjältä, kannattaa tutustua esimerkiksi lukija-olioon (Scanner) tai käyttäjän syötteen lukemiseen standardi inputilta. Komentorivin argumenttien lukemisen toteutus perustuu CMDLine luokkaan ja sen metodeihin.
+Tuloste:
 
-## Katso myös:
-- [Swiftin dokumentaatio komentorivin argumenttien lukemisesta](https://developer.apple.com/documentation/swift/commandline)
-- [Lukija-olion (Scanner) käyttö Swiftissä](https://www.hackingwithswift.com/example-code/language/how-to-read-from-the-command-line-using-scanner)
+```
+You've entered 4 arguments:
+CommandLineArguments.swift
+arg1
+arg2
+arg3
+```
+
+## Tarkempaa Tietoa
+Komentorivin argumentit on ollut osa ohjelmointikieliä jo pitkään. Ne antavat mahdollisuuden määritellä ohjelman toiminta dynaamisesti suorituksen yhteydessä. Swiftissä `CommandLine.arguments` on taulukko, joka sisältää kaikki komentorivin argumentit. 
+
+Vaihtoehtoisesti voit käyttää `getopt`-funktiota (peräisin C-kielestä) tarkempaan komentorivin argumenttien käsittelyyn. Se antaa enemmän joustavuutta ja kontrollia, mutta vaatii enemmän koodia.
+
+Käytön yksinkertaisuuden ja äärimmäisen suorituskyvyn vuoksi valtaosa Swift-ohjelmoijista suosii `CommandLine.arguments`-lähestymistapaa.
+
+## Lisäluettavaa
+1. Apple Developer Documentation: [Command Line Arguments](https://developer.apple.com/documentation/swift/commandline)
+2. Medium: [Handling command line arguments in Swift](https://medium.com/@mimicatcodes/handling-command-line-arguments-in-swift-3dd502c821d8)
+3. Stack Overflow: [How to read command line arguments in Swift?](https://stackoverflow.com/questions/24035515/how-to-read-command-line-arguments-in-swift)

@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "TypeScript recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,46 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Searching and Replacing Text in TypeScript
+
 ## What & Why?
-Searching and replacing text is a common task in programming where specific words or phrases are replaced with new values. This can be done for various reasons, such as correcting spelling errors, updating code to meet new requirements, or simply making code more efficient.
+
+Searching and replacing text are basic operations to manipulate strings. Developers pull this trick to find fragments in data or tweak it, typically in scenarios like altering configuration files or handling user inputs.
 
 ## How to:
-To search and replace text in TypeScript, the built-in `replace()` method can be used. This method takes in two parameters: the text to be replaced and the new text to replace it with. Here's an example of how it can be used:
 
-```
-// Define a string with the text to be replaced
-let str: string = "Hello world! This is a sample string for demonstration purposes.";
+In TypeScript, use the `replace()` method for this. Feed it two values: the string to find (can use a RegExp too), and the string to swap in. Check this out:
 
-// Use the replace() method to replace "sample" with "example"
-let newStr: string = str.replace("sample", "example");
-
-// Output the new string
-console.log(newStr); // Output: Hello world! This is a example string for demonstration purposes.
+```TypeScript
+let text = "Hello, World!";
+let newText = text.replace("World", "TypeScript");
+console.log(newText); // "Hello, TypeScript!"
 ```
 
-As seen in the above code, the `replace()` method replaces the first occurrence of the specified text. To replace all occurrences, use a regular expression with the `g` (global) flag.
+When you run this, "World" in the `text` string gets replaced with "TypeScript", and the `console.log()` call shows the updated string.
 
-```
-// Define a string with multiple occurrences of the word "replace"
-let str: string = "Replace all replace occurrences in this string!";
+To replace all occurrences (not just the first), use a RegExp with a `g` (global) flag, like this:
 
-// Use a regular expression to replace all occurrences of "replace" with "upgrade"
-let newStr: string = str.replace(/replace/g, "upgrade");
-
-// Output the new string
-console.log(newStr); // Output: Upgrade all upgrade occurrences in this string!
+```TypeScript
+let text = "Good morning, good afternoon, good evening";
+let newText = text.replace(/good/gi, "great");
+console.log(newText); // "Great morning, great afternoon, great evening"
 ```
 
-## Deep Dive:
-The `replace()` method was first introduced in JavaScript and has been implemented in TypeScript as well. It is a string method and can be used on any string variable. Other alternatives for searching and replacing text in TypeScript include the `search()` and `indexOf()` methods.
+Here, `gi` after `/good/` makes the search case-insensitive and replaces all occurrences.
 
-The `search()` method returns the index of the first occurrence of a specified text in a string. It takes in a regular expression as its parameter. The `indexOf()` method, on the other hand, returns the index of the first occurrence of a specified string in a string. It takes in a string as its parameter.
+## Deep Dive
 
-All three methods (`replace()`, `search()`, and `indexOf()`) can be used for searching and replacing text, but the `replace()` method is the only one that actually replaces the text.
+Searching and replacing text is old as hills, originating from early command-line tools like `sed` and `awk`. TypeScript's `replace()` method, under the hood, relies on JavaScript's own `replace()`, introduced with the first JavaScript specs in 1997.
 
-When implementing the `replace()` method with regular expressions, the `replace()` method uses the first capturing group (parentheses in the regex) as the replacement text. If there is no capturing group, the entire match is used as the replacement.
+An alternative is chaining `split()` and `join()` methods. This method can be more readable to some:
 
-## See Also:
-- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [TypeScript Docs - String Methods](https://www.typescriptlang.org/docs/handbook/strings.html#built-in-string-methods)
+```typescript
+let text = "Hello, World! World!";
+let newText = text.split('World').join('TypeScript');
+console.log(newText); // "Hello, TypeScript! TypeScript!"
+```
+
+The `split()` method breaks the string into an array with "World" as the separator. The `join()` method then glues the array back into a string, using "TypeScript" as the new "glue".
+
+However, note that `split()` and `join()` can be slower than `replace()`, especially for larger strings, as they involve additional steps of creating and merging arrays.
+
+## See Also
+
+Here are more sources if you want to dig deeper:
+
+1. MDN's ["String.prototype.replace()"](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+2. A Stack Overflow thread on [Efficiency of string replace vs split-then-join](https://stackoverflow.com/questions/7176441/efficiency-of-string-replace-vs-split-then-join)
+3. [TypeScript Docs](https://www.typescriptlang.org/docs/handbook/basic-types.html#string) - to understand more about string manipulation in TypeScript.

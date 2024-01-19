@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzenie czy istnieje katalog"
-html_title:           "Elm: Sprawdzenie czy istnieje katalog"
-simple_title:         "Sprawdzenie czy istnieje katalog"
+title:                "Sprawdzanie, czy katalog istnieje"
+html_title:           "Elm: Sprawdzanie, czy katalog istnieje"
+simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,37 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Po co?
+## Co i dlaczego?
 
-Sprawdzanie czy dany katalog istnieje jest ważną częścią programowania w Elm. Dzięki temu, programiści mogą zabezpieczyć swoje aplikacje przed błędami i zapewnić lepszą kontrolę nad swoim kodem.
+Sprawdzanie, czy katalog istnieje, to proces, który odpowiada na pytanie, czy określony katalog istnieje w systemie plików. Programiści robią to, aby uniknąć błędów związanych z próbami odczytu lub zapisu do nieistniejącego katalogu.
+
 
 ## Jak to zrobić:
 
-Sprawdzenie czy katalog istnieje w Elm jest proste i może być wykonane za pomocą jednej z dostępnych funkcji. Oto przykładowy sposób:
+Szanowni Państwo, niestety Elm (w obecnej wersji) nie ma bezpośredniej możliwości sprawdzenia, czy katalog istnieje, ponieważ Elm jest językiem programowania skoncentrowanym na przeglądarce i nie ma dostępu do systemu plików.
 
-```Elm
-import File
-import Maybe
+## Głębsze spojrzenie:
 
-directoryExists : String -> Bool
-directoryExists path =
-    Maybe.withDefault False (File.exists path)
-```
+Jako język programowania skierowany na bezpieczeństwo, Elm jest zaprojektowany tak, aby unikać przypadkowych efektów ubocznych. Dostęp do systemu plików to coś, co Elm celowo nie eksponuje jako część swojego API. Elm dzięki swoim ograniczeniom pozwala na tworzenie aplikacji webowych, które są bezpieczne przed wieloma typami ataków, takimi jak ataki Cross-Site Scripting (XSS).
 
-Powyższy kod importuje moduł File, który zawiera funkcję `exists` służącą do sprawdzania istnienia plików i katalogów. Następnie definiuje funkcję `directoryExists`, która przyjmuje ścieżkę do katalogu jako argument i zwraca wartość True lub False w zależności od wyniku funkcji `exists`. 
+Jednakże, w przypadku, gdy chcesz mieć interakcję ze swoim lokalnym systemem plików używając Elmu, musisz stworzyć tzw. "porty", które umożliwiają komunikację Elmu z obszarami JavaScript, dostarczającymi takie możliwości. 
 
-Przykład użycia:
+Alternatywą dla tego, można użyć Node.js interfejsu API do systemu plików, który umożliwia sprawdzanie, czy katalog istnieje, ale wymaga wyjścia poza czysty Elm.
 
-```Elm
-directoryExists "/Users/username/Documents" --> True
-directoryExists "/Users/username/Music" --> False
-```
-
-## Wnikliwe spojrzenie:
-
-Sprawdzanie istnienia katalogów w Elm jest możliwe dzięki systemowi plików operacyjnego. Wiele języków programowania oferuje podobne funkcje, ale Elm wyróżnia się prostotą i czytelnością swojego kodu. Alternatywą dla funkcji `exists` może być wykorzystanie funkcji `listDirectory`, która zwraca listę plików i katalogów w danym katalogu.
-
-## Zobacz także:
-
-- Dokumentacja Elm: https://elm-lang.org/docs
-- Moduł File w bibliotece standardowej Elm: https://package.elm-lang.org/packages/elm/file/latest/
+## Zobacz też:
+- [Elm Ports:](https://guide.elm-lang.org/interop/ports.html) Oficjalny przewodnik po portach w Elm.
+- [JavaScript Interoperability:](https://guide.elm-lang.org/interop/) Przewodnik po interakcji JavaScript z Elm.
+- [Node.js File System API:](https://nodejs.org/docs/latest-v8.x/api/fs.html) Dokumentacja API systemu plików w Node.js.

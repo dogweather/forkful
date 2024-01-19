@@ -1,6 +1,6 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "PHP: Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-"Getting the current date" tarkoittaa päivämäärän hankkimista täsmällisellä tavalla nykyhetken mukaan. Tämä on tärkeää, koska usein ohjelmista tarvitaan tietoa siitä, milloin jokin tiedosto on luotu tai milloin jokin toiminto on suoritettu.
+PHP:ssa nykyisen päivämäärän hankkiminen tarkoittaa todellisen ajan ja päivän selvittämistä järjestelmästä. Tämä on tarpeellista, koska ohjelmistosovellukset saattavat tarvita aikaleimoja, aikaväliä tai monimutkaisempia ajan manipulointitapoja.
 
-## Miten:
+## Näin teet:
+
+PHP:n sisäänrakennettu `date()` funktio on suoraviivainen tapa nykyisen päivämäärän hankkimiseen. Tässä on esimerkki sen käytöstä:
 
 ```PHP
-<?php 
-$currentDate = date('d.m.Y');
-echo "Tänään on " . $currentDate;
-// Output: Tänään on 14.08.2021
+<?php
+
+// Tulosta nykyinen päivämäärä muodossa 'pp.kk.vvvv'
+echo date('d.m.Y');
+
+?>
 ```
+Kun ajat tämän koodin, se tulostaa nykyisen päivämäärän muodossa 'pp.kk.vvvv', juuri niin kuin esimerkiksi '12.09.2021'.
 
-## Syvä sukellus:
+## Syvällisemmin:
 
-Päivämäärän hankkiminen on ollut merkittävä osa ohjelmointia jo pitkään, ja se on tärkeä osa monia sovelluksia. Esimerkiksi verkkosivuilla näkyy usein luomis- tai muokkauspäivämäärä uutisartikkeleiden yhteydessä. 
-
-Alternatiivisesti päivämäärän hankkimiseen voisi käyttää myös esimerkiksi JavaScriptin Date-objektia, mutta PHP:n date-funktio on nopeampi ja helpompi tapa saada päivämäärä muodossa, joka halutaan.
-
-Päivämäärän hankkiminen tehdään PHP:ssa date-funktiolla, johon annetaan ensimmäisenä parametrina haluttu päivämäärän muoto ja toisena parametrina nykyhetki. Tämän jälkeen päivämäärä voidaan tulostaa echo-komennolla.
+PHP:n `date()` funktio on ollut olemassa kielestä alkaen. Vaikka se on yksinkertainen ja suoraviivainen, samalla se ei ole kovin joustava. Alternatiiveja tämän joustavuuden lisäämiseen ovat esimerkiksi DateTime- ja Carbon-luokat. `date()` käyttää palvelimen aikavyöhykettä oletuksena, ellei muuta ole määritetty. Jotkut saattavat pitää tätä rajoitteena, kun taas toiset näkevät sen hyödyllisenä.
 
 ## Katso myös:
 
-- [PHP:n virallinen dokumentaatio date-funktiosta](https://www.php.net/manual/en/function.date.php)
-- [JavaScriptin Date-objektin käyttö päivämäärän hankkimiseen](https://www.w3schools.com/jsreF/jsref_getDate.asp)
+- PHP:n virallinen dokumentaatio `date()` funktiolle: https://www.php.net/manual/en/function.date.php
+
+- Hyvä tutorial PHP:n DateTime luokasta: https://www.php.net/manual/en/class.datetime.php
+
+- Dokumentaatio PHP:n Carbon-luokalle: https://carbon.nesbot.com/docs/

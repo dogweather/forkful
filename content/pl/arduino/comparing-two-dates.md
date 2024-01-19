@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "Arduino: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,26 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Porównywanie dwóch dat jest ważnym aspektem programowania, ponieważ pozwala nam określić relacje pomiędzy tymi datami. W przypadku Arduino, porównywanie dwóch dat może być przydatne w wielu projektach, takich jak np. automatyczne sterowanie oświetleniem w zależności od pory dnia.
+## Co to i dlaczego?
 
+Porównywanie dwóch dat to proces ustalania, która data jest wcześniejsza, a która późniejsza. Programiści wykonują to, aby zarządzać i manipulować sekwencją zdarzeń w czasie.
+  
 ## Jak to zrobić:
-Arduino oferuje wiele metod do porównywania dwóch dat. Jedną z najprostszych jest użycie funkcji numerycznych dla roku, miesiąca i dnia. Przykładowy kod i jego wynik można zobaczyć poniżej:
-```
-#include <DateTime.h>
 
-DateTime date1 (2020, 10, 27); // data wejściowa
-DateTime date2 (2019, 10, 27); // data porównywana
+Poniżej przedstawiam prosty kod umożliwiający porównanie dwóch dat w Arduino:
 
-if (date1.year() > date2.year()) // porównanie roku
-{
-  Serial.println("Rok daty pierwszej jest większy od roku daty drugiej.");
+```Arduino
+#include <TimeLib.h>
+
+time_t data1;
+time_t data2;
+
+void setup() {
+  Serial.begin(9600);
+  setTime(20, 00, 00, 4, 01, 2021); //ustawienie czasu: godzina, minuta, sekunda, dzień, miesiąc, rok
+  data1 = now();
+  setTime(21, 30, 00, 4, 01, 2021);
+  data2 = now();
+}
+
+void loop() {
+  if(data1>data2) {
+    Serial.println("Data1 jest późniejsza");
+  } 
+  else {
+    Serial.println("Data2 jest późniejsza");
+  }
 }
 ```
 
-## Głębsze zanurzenie:
-Porównywanie dat nie jest nowym problemem w świecie programowania. Wcześniej wykorzystywano do tego celu różnego rodzaju biblioteki i funkcje. Jednak dzięki rozwojowi technologii, Arduino oferuje teraz proste i wydajne metody do porównywania dat. Alternatywne podejście może polegać na użyciu funkcji wbudowanych w język programowania, takich jak "strcmp" dla C++.
+Po uruchomieniu tego kodu w Arduino, wyjście powinno pokazać: "Data2 jest późniejsza".
 
-## Zobacz również:
-- Biblioteka DateTime do Arduino: https://github.com/PaulStoffregen/DateTime
-- Inne sposoby na porównywanie dat w Arduino: https://forum.arduino.cc/index.php?topic=399061.0
+## Więcej szczegółów
+
+Porównywanie dat jest jednym z podstawowych zadań w programowaniu. Jest to szczególnie ważne w aplikacjach, które polegają na przetwarzaniu i zarządzaniu danymi czasowymi, takie jak rezerwacja bilety lotu, planowanie projektu czy zarządzanie zasobami.
+
+Historia: Moduł TimeLib, używany w powyższym przykładzie, jest często używany do zarządzania datą i czasem w Arduino od wczesnych wersji Arduino.
+
+Alternatywy: Istnieją inne biblioteki, takie jak DS3231, RTClib, które również umożliwiają porównywanie dat, ale mogą wymagać dodatkowego sprzętu.
+
+Szczegóły implementacji: W Arduino, daty są przypisywane do zmiennych typu time_t. Zmienna ta przechowuje liczbę sekund, które upłynęły od 1 stycznia 1970 roku (znane jako epoki Unix). Artytmetyka dla tego typu danych jest prosta i efektywna, co pozwala na łatwe porównywanie dat.
+
+## Zobacz też
+
+- Arduino Time Library: https://www.arduino.cc/reference/en/libraries/time/
+- Porównywanie dat z biblioteką DS3231: https://github.com/JChristensen/DS3232RTC
+- Szczegółowy przewodnik po obsłudze czasu i daty w Arduino: https://www.makerguides.com/rtc-arduino-guide/

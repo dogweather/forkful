@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden etsiminen"
-html_title:           "Kotlin: Merkkijonon pituuden etsiminen"
-simple_title:         "Merkkijonon pituuden etsiminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,40 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mikä ja miksi?
-Miksi stringin pituuden löytämistä tarvitaan ja mitä se tarkalleen ottaen on? Lausekkeessa "("Hello World").length" stringin "Hello World" pituus on 11 merkkiä, ja tätä tietoa voidaan käyttää erilaisten operaatioiden suorittamiseen ohjelmoinnissa.
+
+Merkinjonon (tai "stringin") pituus on siinä olevien merkkien määrä. Ohjelmoijat tarvitsevat tätä tietoa usein esimerkiksi validoidessaan käyttäjän syötteitä tai käsitellessään tekstidataa.
 
 ## Kuinka:
-```Kotlin 
-// Esimerkki 1:
-val string = "Tervetuloa maailma!"
-println(string.length)
-```
-```Output:
-20
+
+Kotlinin 'String' -luokassa on 'length' -ominaisuus, joka palauttaa jonojen pituudet.
+
+```Kotlin
+val merkkijono = "Hei Maailma"
+println("Merkkijonon pituus: ${merkkijono.length}")
 ```
 
-```Kotlin 
-// Esimerkki 2:
-val string = "Tässä on 123"
-println(string.length)
-```
-```Output:
-13
+Edellä oleva esimerkki ilmoittaa "Merkkijonon pituus: 11", koska merkkijonossa "Hei Maailma" on 11 merkkiä.
+
+## Syvä sukellus:
+
+Historiallisesti merkkijonojen pituuksien laskeminen on ollut osa ohjelmointia alusta alkaen. Se on yleinen toiminto useimmissa ohjelmointikielissä, mukaan lukien Kotlinin edeltäjät, kuten Java.
+
+Vaihtoehtona yksittäisten merkkijonojen pituuden laskemiselle voit käyttää 'map' ja 'length' -funktioita laskemaan useiden merkkijonojen pituudet samanaikaisesti. 
+
+```Kotlin
+val merkkijonot = listOf("sinä", "minä", "me")
+val pituudet = merkkijonot.map { it.length }
+println(pituudet) // Tulostaa: [4, 4, 2]
 ```
 
-```Kotlin 
-// Esimerkki 3:
-val string = ""
-println(string.length)
-```
-```Output:
-0
-```
+Tämä lähestymistapa hyödyntää Kotlinin funktionaalista ohjelmointipuolta ja tehostaa useiden merkkijonojen käsittelyä.
 
-## Syvemmälle:
-Stringien pituuden löytämistä on käytetty ohjelmoinnissa jo pitkään ja se on osa perusoperaatioita useimmissa ohjelmointikielissä. Tämä tieto on hyödyllistä esimerkiksi tekstipohjaisten pelien kehittämisessä tai käyttäjän syötteiden validoinnissa. Stringien pituuden löytämisen lisäksi ohjelmoijien on myös tärkeää ymmärtää erilaisia tapoja käsitellä ja muokata stringeja.
+Kotlinin 'length' -ominaisuus pilkkoo merkkijonon UTF-16-koodiyksiköihin ja laskee nämä yksiköt, mikä tarkoittaa, että se ei aina kuvasta todellista merkkien määrää, jos merkkijonossa on nelibittisiä Unicode-merkkejä.
 
 ## Katso myös:
-- [Kotlin String API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Java String Length](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--)
-- [C++ String Length](https://www.tutorialspoint.com/cpp_standard_library/cpp_string_length.htm)
+
+Lisätietoja ja liittyviä aiheita:
+
+- Kotlinin virallinen dokumentaatio: [String -koko](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
+- Merkkijonofunktiot Kotlinilla: [Kotlin String Functions](https://www.programiz.com/kotlin-programming/string)
+- UTF-16 selitetty: [UTF-16 - Wikipedia](https://fi.wikipedia.org/wiki/UTF-16)

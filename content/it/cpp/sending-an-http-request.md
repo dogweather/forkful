@@ -12,103 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Cosa & Perché?
 
-In poche parole, inviare una richiesta HTTP significa comunicare con un server remoto per ottenere informazioni o eseguire un'azione. I programmatori spesso utilizzano le richieste HTTP per integrare i loro programmi con servizi esterni o per ottenere dati da fonti online.
+Invio di una richiesta HTTP significa comunicare con un server per richiedere o ricevere informazioni. I programmatori lo fanno per interagire con API web, scaricare file, e eseguire altre operazioni di rete.
 
-## Come fare:
+## Come si fa:
 
-Di seguito sono presentati due esempi di codice che mostrano come inviare una richiesta HTTP utilizzando il linguaggio di programmazione C++. I codici sono scritti nel formato dei blocchi di codice ```C++ ... ``` per facilitare la lettura e la comprensione.
-
-### Esempio 1: Richiesta GET
+C++ moderno non ha una libreria standard HTTP, quindi useremo la libreria cURL. Prima, installa cURL (disponibile [qui](https://curl.se/download.html)).
 
 ```C++
-#include <iostream>
-#include <curl/curl.h> //libreria per effettuare richieste HTTP
-
-int main(){
-  CURL *curl; //puntatore a oggetto curl
-  CURLcode res; //variabile per gestire codici di stato
-
-  //inizializzazione di curl
-  curl = curl_easy_init();
-  if(curl) {
-    //impostazione dell'URL della richiesta
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/api/data");
-
-    //esecuzione della richiesta GET
-    res = curl_easy_perform(curl);
-
-    //controllo del codice di stato
-    if(res != CURLE_OK)
-      std::cout << "Errore durante la richiesta HTTP: " << curl_easy_strerror(res) << std::endl;
-    else
-      std::cout << "Richiesta GET effettuata con successo!" << std::endl;
-    
-    //rilascio delle risorse
-    curl_easy_cleanup(curl);
-  }
-
-  return 0;
-}
-```
-Output:
-
-```
-Richiesta GET effettuata con successo!
-```
-
-### Esempio 2: Richiesta POST con dati
-
-```C++
-#include <iostream>
 #include <curl/curl.h>
 
-int main(){
-  CURL *curl;
-  CURLcode res;
-
-  //impostazione dei dati da inviare
-  std::string postFields = "user=test&password=1234";
-
-  //inizializzazione di curl
-  curl = curl_easy_init();
-  if(curl) {
-    //impostazione dell'URL della richiesta
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/api/login");
-
-    //impostazione del metodo di richiesta
-    curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "POST");
-
-    //impostazione dei dati da inviare
-    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, postFields.c_str());
-
-    //esecuzione della richiesta
-    res = curl_easy_perform(curl);
-
-    //controllo del codice di stato
-    if(res != CURLE_OK)
-      std::cout << "Errore durante la richiesta HTTP: " << curl_easy_strerror(res) << std::endl;
-    else
-      std::cout << "Richiesta POST effettuata con successo!" << std::endl;
-
-    //rilascio delle risorse
-    curl_easy_cleanup(curl);
-  }
-
-  return 0;
+int main() 
+{
+    CURL *curl = curl_easy_init();
+    if(curl) {
+        CURLcode res;
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
-Output:
+La codice sopra invia una richiesta GET al sito "http://example.com". 
 
-```
-Richiesta POST effettuata con successo!
-```
+## Approfondimento
 
-## Approfondimenti:
+La funzionalità HTTP non è sempre stata parte di C++. Nel passato, i programmatori utilizzavano libreria come `libcurl` o `Boost.Asio` per inviare richieste HTTP.
 
-Le richieste HTTP sono state introdotte nel 1991 da Tim Berners-Lee, il fondatore del World Wide Web, per facilitare la comunicazione tra client e server. Esistono anche altri metodi di richiesta oltre a GET e POST, come ad esempio PUT e DELETE, che permettono di aggiornare o cancellare informazioni da un server. Inoltre, esistono anche diverse librerie e framework che facilitano l'invio di richieste HTTP, come ad esempio cURL, usato negli esempi sopra riportati.
+Alcune alternative moderne includono le librerie `cpp-httplib` e `Boost.Beast`. `cpp-httplib` offre un'interfaccia semplice ed intuitiva, mentre `Boost.Beast` è noto per la sua potenza e flessibilità.
 
-## Vedi anche:
+Il codice che abbiamo visto sfrutta le funzioni libcurl. `curl_easy_init` inizializza una sessione cURL; `curl_easy_setopt` imposta le opzioni per la sessione (n.r. l'URL per la richiesta); `curl_easy_perform` esegue la richiesta; infine, `curl_easy_cleanup` chiude la sessione.
 
-- [Documentazione di cURL](https://curl.haxx.se/docs/)
-- [Tutorial su richieste HTTP in C++](https://isocpp.org/wiki/faq/ctors#static-init-order-on-first-use)
-- [Esempi di richieste HTTP con Boost.Beast](https://www.boost.org/doc/libs/1_68_0/libs/beast/doc/html/beast/quick_start.html#beast.quick_start.request)
+## Approfondisci
+
+Per saperne di più su c++ networking e invio di richieste HTTP, consulta queste risorse:
+
+- Documentazione libcurl: [qui](https://curl.se/libcurl/c/)
+- C++ httplib - [github](https://github.com/yhirose/cpp-httplib)
+- Boost.Beast - [boost](https://www.boost.org/doc/libs/1_70_0/libs/beast/doc/html/index.html)

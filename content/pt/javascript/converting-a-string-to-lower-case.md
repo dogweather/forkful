@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Javascript: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,29 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por Que?
+# Convertendo uma string para letras minúsculas em Javascript
 
-Conversão de string para caixa baixa é um procedimento comum realizado por programadores em JavaScript para transformar todas as letras maiúsculas em minúsculas. Isso pode ser útil em cenários como validação de entrada de dados do usuário, comparação de strings e formatação de texto.
+## O que & Por quê?
+Transformar uma string para minúsculas significa converter todas as letras maiúsculas da string em minúsculas. Programadores fazem isso frequentemente para melhorar a consistência dos dados, facilitar a comparação de strings e melhorar a pesquisa de textos.
 
-## Como Fazer:
-
+## Como fazer:
+Uso do método `toLowerCase()` do Javascript para converter uma string em letras minúsculas. Veja este exemplo:
 ```Javascript
-let myString = "HELLO WORLD";
-console.log(myString.toLowerCase()); // Output: "hello world"
+let minhaString = "Olá, Mundo!";
+let stringMinuscula = minhaString.toLowerCase();
+console.log(stringMinuscula); // saída: "olá, mundo!"
 ```
 
-Em JavaScript, podemos usar o método `toLowerCase()` para converter uma string para caixa baixa. Ele pode ser chamado em qualquer variável de string e retorna uma nova string com todos os caracteres em caixa baixa.
+## Mergulho profundo
+O Javascript é uma linguagem case-sensitive, o que significa que diferencia maiúsculas de minúsculas. O método `toLowerCase()` foi introduzido no ECMAScript 1, a primeira edição de Javascript, em 1997.
 
-Podemos aplicar esse método em conjunção com outros métodos, como `trim()` para remover quaisquer espaços em branco e `replace()` para substituir caracteres específicos antes da conversão para caixa baixa.
+Existem alternativas ao `toLowerCase()`, como o `toLocaleLowerCase()`, que considera as regras de localidade para converter as letras (útil para tratar caracteres especiais que podem variar em diferentes idiomas).
 
-## Deep Dive:
+Detalhando mais a implementação do `toLowerCase()`, este método não afeta a string original porque as strings em Javascript são imutáveis. Ele retorna uma nova string com todos os caracteres convertidos para minúsculas.
 
-A conversão de string para caixa baixa tem sido uma parte fundamental da programação desde os primeiros dias da linguagem. Antes do JavaScript, o processamento de texto era feito principalmente em linguagens de baixo nível, o que tornava o processo mais complexo e demorado.
-
-Uma alternativa ao método `toLowerCase()` é o uso de expressões regulares para encontrar e substituir caracteres específicos em strings. No entanto, isso pode ser mais trabalhoso e menos eficiente em comparação com o método nativo do JavaScript.
-
-Ao converter uma string para caixa baixa, é importante estar ciente da diferença entre caracteres maiúsculos e minúsculos em diferentes idiomas. Por exemplo, em alguns idiomas, a letra "i" pode ser escrita de diferentes maneiras em maiúsculas e minúsculas, o que pode afetar a validade de uma comparação de strings.
-
-## Veja Também:
-
-- [Método toLowerCase() em MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+## Veja também
+- [Referência do método toLowerCase() na MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Referência do método toLocaleLowerCase() na MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)

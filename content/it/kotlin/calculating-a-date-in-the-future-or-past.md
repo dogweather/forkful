@@ -10,38 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cosa e Perché?
+# Calcolo delle date nel futuro e passato con Kotlin
 
-La funzione di calcolo della data nel futuro o nel passato è un'operazione comune nella programmazione. Permette ai programmatori di ottenere una data specifica in base ad un determinato numero di giorni, settimane o mesi in avanti o indietro. Questa funzione è utile in situazioni come pianificazione di eventi futuri o gestione delle scadenze dei progetti.
+## Cos'è e Perché?
+Calcolare una data nel futuro o nel passato significa determinare una data specifica rispetto a un punto di riferimento temporale. I programmatori lo fanno per gestire eventi, programmare promemoria o per qualsiasi funzionalità che necessita una manipolazione delle date.
 
-# Come fare:
+## Come Fare:
 
-Per calcolare una data nel futuro o nel passato in Kotlin, è possibile utilizzare la funzione `add` della classe `Calendar`. Di seguito è presente un esempio di codice che calcola la data di oggi e la data tra tre mesi:
+Ecco alcuni esempi su come calcolare una data nel futuro o nel passato in Kotlin:
 
+Calcolo di una data in futuro:
 ```Kotlin
-val today = Calendar.getInstance()
-val futureDate = today.clone() as Calendar
-futureDate.add(Calendar.MONTH, 3)
+import java.time.LocalDate
 
-println("Oggi è il ${today.get(Calendar.DAY_OF_MONTH)}/${today.get(Calendar.MONTH)}/${today.get(Calendar.YEAR)}")
-println("La data tra tre mesi sarà il ${futureDate.get(Calendar.DAY_OF_MONTH)}/${futureDate.get(Calendar.MONTH)}/${futureDate.get(Calendar.YEAR)}")
+fun main() {
+    val oggi = LocalDate.now()
+    val futuro = oggi.plusDays(10)
+    println("La data in futuro di 10 giorni da oggi è: $futuro")
+}
 ```
-Output:
+OUTPUT:
+// La data in futuro di 10 giorni da oggi è: 2023-07-12
+
+Calcolo di una data nel passato:
+```Kotlin
+import java.time.LocalDate
+
+fun main() {
+    val oggi = LocalDate.now()
+    val passato = oggi.minusYears(2)
+    println("La data due anni fa da oggi era: $passato")
+}
 ```
-Oggi è il 21/9/2021
-La data tra tre mesi sarà il 21/12/2021
-```
+OUTPUT:
+// La data due anni fa da oggi era: 2021-07-02
 
-# Approfondimento:
+## Approfondimento
 
-**Contesto storico:** In passato, il calcolo di una data nel futuro o nel passato era molto più complesso e richiedeva l'utilizzo di algoritmi complessi. Con l'avvento della programmazione e dei linguaggi di programmazione ad alto livello come Kotlin, è diventato molto più semplice e rapido eseguire questa operazione.
+**1. Contesto storico:** Java ha introdotto un quadro temporale moderno con la versione 8, sulla quale Kotlin si appoggia. Questo quadro temporale risolve molti problemi presenti nelle API temporali precedenti.
 
-**Alternative:** Oltre all'utilizzo della funzione `add` della classe `calendar`, è possibile utilizzare la libreria esterna `Joda-Time` oppure la nuova API `java.time` introdotta in Java 8 per il calcolo di date nel futuro o nel passato.
+**2. Alternative:** Ci sono alternative come Joda-Time se le API di Java 8 non risolvono i tuoi problemi. Anche se per la maggior parte dei casi di uso, le API temporali di Java 8 dovrebbero essere sufficienti.
 
-**Dettagli di implementazione:** La funzione `add` accetta due parametri: il primo è il campo di data (giorno, mese o anno) da modificare e il secondo è il valore da aggiungere. Ad esempio, `add(Calendar.MONTH, 3)` aggiunge tre mesi alla data corrente. Inoltre, è possibile utilizzare valori negativi per ottenere date nel passato.
+**3. Dettagli implementativi:** Le funzioni `plusDays()` e `minusYears()` fanno parte dell'API `java.time.LocalDate` che Kotlin utilizza per la manipolazione delle date. Modificano il valore attuale senza mutare l'oggetto originale, mantenendo l'aspetto immutabile di `LocalDate`.
 
-# Vedi anche:
+## Vedi Anche:
 
-- Documentazione ufficiale di Kotlin sulle funzioni di manipolazione della data: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-calendar/add.html
-- Documentazione di Java sulle funzioni di manipolazione della data: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html#add-int-int-
-- Tutorial su come utilizzare la funzione `add` in Kotlin: https://www.baeldung.com/kotlin/date-time-api
+Hai bisogno di più informazioni? Qui ci sono alcuni link utili per approfondire l'argomento:
+
+- Documentazione ufficiale di Kotlin: [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
+- Documentazione ufficiale di Java 8 Date/Time API: [Java SE 8 Date and Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- Libreria Joda-Time: [Joda-Time - Java date and time API](https://www.joda.org/joda-time/)

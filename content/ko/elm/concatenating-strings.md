@@ -1,7 +1,7 @@
 ---
-title:                "문자열 연결"
-html_title:           "Elm: 문자열 연결"
-simple_title:         "문자열 연결"
+title:                "문자열 연결하기"
+html_title:           "Arduino: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자열 연결(concatenation)이란 무엇인지 알고 싶으신가요? 그럼 이 글을 읽어보세요! 문자열 연결은 두 문자열을 합쳐서 새로운 하나의 문자열로 만드는 것을 말합니다. 프로그래머들은 주로 문자열 연결을 사용하여 더 복잡한 문자열을 만들거나 변수에 저장된 값을 문자열로 변환할 때 사용합니다.
+## 무엇이고 왜 사용하는가?
+문자열을 연결한다는 것은 여러 문자열을 합쳐 하나의 문자열로 만드는 것입니다. 이는 프로그래머들이 데이터를 시각적으로 구성하거나 메시지를 구축할 때 필요한 작업입니다.
 
-## 어떻게:
-문자열 연결을 한 줄로 간단하게 할 수 있어요! 
+## 어떻게 사용하는가:
+아래의 예시를 통해 문자열 연결을 확인해봅시다.
+
 ```Elm
-let name = "Alice"
-let greeting = "Hello"
+module Main exposing (..)
+import Html exposing (text)
 
-let message = greeting ++ " " ++ name  //output: "Hello Alice"
+main =
+    let
+        name1 = "코딩"
+        name2 = "세션"
+    in
+    Html.beginnerProgram { model = name1 ++ " " ++ name2, view = text, update = \_ _ -> "" }
 ```
 
-또는 여러 줄에 나눠서 할 수도 있어요.
-```Elm
-let sentence = "This is a" ++ 
-               "long sentence" ++ 
-               "that needs to be" ++
-               "concatenated." //output: "This is a long sentence that needs to be concatenated."
-```
+프로그램을 실행하면, output 영역에서 "코딩 세션"이라는 결과를 확인할 수 있습니다.
 
-## 깊이 파고들기:
-(1) 역사적 맥락: 문자열 연결은 컴퓨터 과학에서 오래된 개념이에요. 처음에는 이를 위해 사용하는 별도의 함수가 없었기 때문에 프로그래머들은 더 복잡한 방법으로 문자열을 합치기도 했어요. 하지만 지금은 다양한 언어에서 문자열 연결을 지원하기 때문에 한 줄로 간단하게 할 수 있답니다.
+## 깊게 알아보기
+문자열 연결은 컴퓨터 프로그래밍의 근간 중 하나이며, 이는 거의 모든 프로그래밍 언어에서 구현되어 있습니다. Elm에서는 '++' 연산자를 통해 이를 구현하고 있습니다. 문자열 연결 대신에 문자열 포맷팅이나 문자열 보간법을 사용하는 것도 가능합니다. 
 
-(2) 대안: 더 많은 문자열 처리 옵션을 제공하는 언어도 있지만 대부분의 프로그래머들은 문자열 연결을 택하고 있어요.
+구현 세부적으로, Elm의 문자열 연결은 속도와 효율성을 높이기 위해 목록의 연결(concatenation of lists) 방식으로 내부적으로 구현되어 있습니다.
 
-(3) 구현 세부사항: Elm에서는 문자열 연결 연산자 ```++```를 제공하며, 뒤에 오는 문자열을 앞에 오는 문자열 뒤에 붙여줍니다. 
-
-## 관련 자료:
-- Elm 공식 문서: https://guide.elm-lang.org/appendix/syntax.html
-- 문자열 연결 예제: https://elmprogramming.com/string-manipulation.html#concatenation
+## 참조하기
+추가로 학습하실 분들은 아래 링크를 참조하세요.
+- Elm 공식 문서: [https://elm-lang.org/docs](https://elm-lang.org/docs) 
+- Elm 문자열 연결에 대한 자세한 설명: [https://package.elm-lang.org/packages/elm/core/latest/String#concat](https://package.elm-lang.org/packages/elm/core/latest/String#concat)

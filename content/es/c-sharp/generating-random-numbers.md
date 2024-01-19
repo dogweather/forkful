@@ -1,6 +1,6 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "C#: Generando números aleatorios"
+html_title:           "Arduino: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "C#"
 category:             "C#"
@@ -10,47 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola lectores! En este artículo de programación, vamos a hablar sobre la generación de números aleatorios en C#, de manera informal y directa. No perderemos tiempo con palabras o frases innecesarias, ¡así que comenzaremos de inmediato!
+# Generando números aleatorios en C#
+
+**Contenido**
+- ¿Qué y por qué?
+- ¿Cómo se hace?
+- Más allá
+- Consulta también
 
 ## ¿Qué y por qué?
 
-Generar números aleatorios es una herramienta muy útil en la programación, ya que nos permite obtener valores diferentes cada vez que se ejecuta un programa. Esto es especialmente útil en juegos y simulaciones, donde necesitamos resultados impredecibles para aumentar la diversión o la exactitud.
+Generar números aleatorios es la acción de producir números que no siguen ningún patrón predecible. Los programadores generan números aleatorios para diversos fines como pruebas automatizadas, juegos y simulaciones.
 
-## ¡Cómo hacerlo!
+## ¿Cómo se hace?
 
-En C#, generamos números aleatorios utilizando la clase ```Random```. Primero, debemos crear una instancia de esta clase y luego podemos utilizar sus métodos para obtener los números aleatorios deseados.
+Echale un vistazo a estos ejemplos de código para entender mejor cómo generar números aleatorios en C#.
 
-```c#
-//Creamos una instancia de la clase Random
-Random random = new Random();
+```C#
+// Importa la clase Random
+using System;
 
-//Obtenemos un número aleatorio entre 1 y 100
-int numero = random.Next(1, 101);
+class Program
+{
+    static void Main()
+    {
+        // Crear una instancia de la clase Random
+        Random random = new Random();
 
-//También podemos obtener un número aleatorio de tipo double
-double numeroDecimal = random.NextDouble();
+        // Generar un número aleatorio entre 0 y 10
+        int aleatorio = random.Next(0, 11);
+        Console.WriteLine("Número aleatorio: " + aleatorio);
+    }
+}
+```
+Este código producirá una salida como la que sigue. El número variará cada vez que ejecute el programa.
 
 ```
-
-Y aquí tenemos un ejemplo de salida de estos códigos:
-
-```
-34
-0.5623
+Número aleatorio: 7
 ```
 
-## ¡Profundizando!
+## Más allá
 
-La generación de números aleatorios ha existido desde hace mucho tiempo en la informática, y ha evolucionado mucho desde entonces. En el pasado, se utilizaban tablas de números pre-generados para obtener resultados aleatorios. En la actualidad, existen varias bibliotecas y algoritmos altamente sofisticados para generar números aleatorios.
+**Contexto histórico:** La generación de números aleatorios se remonta a los primeros ordenadores. Sin embargo, con la evolución del software y hardware, la generación de números aleatorios ahora se puede lograr con programas como C#.
 
-En C#, además de la clase ```Random```, también podemos utilizar la clase ```RNGCryptoServiceProvider``` para generar números aleatorios criptográficamente seguros.
+**Alternativas:** Además de la clase `Random`, otras alternativas para generar números aleatorios en C# incluyen `RNGCryptoServiceProvider` para fines de seguridad y `System.Security.Cryptography.RandomNumberGenerator` para generar un array de bytes aleatorios.
 
-## ¡Vea también!
+**Detalles de implementación:** La clase `Random` en C# usa una semilla basada en el reloj del sistema para generar un número aleatorio. Dado que la semilla es el tiempo actual, dos instancias de `Random` creadas al mismo tiempo pueden generar la misma serie de números.
 
-Si quieres seguir aprendiendo sobre la generación de números aleatorios en C#, aquí te dejo algunos recursos adicionales:
+## Consulta también
 
-- [Documentación oficial de Microsoft sobre la clase Random](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8)
-- [Artículo sobre la generación de números aleatorios en C# de GeeksforGeeks](https://www.geeksforgeeks.org/ways-to-generate-random-numbers-in-c-sharp/)
-- [Video tutorial sobre la generación de números aleatorios en C# de C# Corner](https://www.c-sharpcorner.com/article/random-number-generator-in-c-sharp/)
-
-¡Eso es todo por ahora! Espero que este artículo te haya sido útil y puedas implementar la generación de números aleatorios en tus proyectos de C# de manera sencilla. ¡Hasta la próxima!
+1. Clase Random en C# [(Microsoft Docs)](https://docs.microsoft.com/es-es/dotnet/api/system.random?view=net-5.0)
+2. Generando Números Aleatorios con C# [(CsharpStation)](https://www.csharp-station.com/howto/random)
+3. RNGCryptoServiceProvider [(Microsoft Docs)](https://docs.microsoft.com/es-es/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
+4. System.Security.Cryptography.RandomNumberGenerator [(Microsoft Docs)](https://docs.microsoft.com/es-es/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-5.0)

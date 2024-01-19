@@ -10,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que & Porquê?
 
-Verificar se um diretório existe é uma tarefa comum para programadores em Clojure. Isso significa checar se um determinado diretório ou pasta está presente em uma localização específica no sistema de arquivos. É importante fazer essa verificação para garantir que o diretório necessário esteja disponível antes de executar certas operações, como criar um novo arquivo ou copiar um arquivo para ele.
+Verificar se um diretório existe é um procedimento em que checamos se um diretório específico já foi criado ou não. Os programadores fazem isso para evitar erros, como tentar acessar um diretório que não existe.
 
-## Como fazer:
+## Como Fazer:
+
+A função `file-seq` retorna uma sequência preguiçosa das arquivos no diretório e em todos os subdiretórios. Para saber se um diretório existe, basta verificar se o código abaixo retorna uma sequência não nula. O código a seguir faz isso.
 
 ```Clojure
-(require '[clojure.java.io :as io])
-
-(if (io/file-exists? "caminho/para/diretorio")
-  (println "O diretório existe!")
-  (println "O diretório não existe!")
-)
+(defn directory-exists? [dir]
+  (when-let [dirs (file-seq (clojure.java.io/file dir))]
+    (not-empty (filter #(not (.isDirectory %)) dirs))))
 ```
 
-Saída:
+E aqui está como você pode testá-lo:
 
+```Clojure
+(directory-exists? "/caminho/para/o/diretório")
 ```
-O diretório existe!
-```
 
-Primeiro, importamos a biblioteca "clojure.java.io" para poder usar suas funções relacionadas a entrada e saída. Em seguida, usamos a função "file-exists?" para verificar se o caminho especificado leva a um diretório existente. Se o diretório existir, a saída será "O diretório existe!", caso contrário, a saída será "O diretório não existe!".
+## Mergulho Profundo
 
-## Mergulho profundo:
+Historicamente, Clojure, assim como outras linguagens que funcionam na JVM, dependia do Java para interagir com o sistema de arquivos. A checagem da existência de um diretório, é, portanto, realizada de forma semelhante à sua contraparte em Java, usando a classe File do pacote java.io.
 
-### Contexto histórico:
+Como alternativa, você também pode usar um pacote do terceiro, como `me.raynes/fs`, que fornece funções mais Clojurianas para trabalhar com arquivos e diretórios.
 
-A capacidade de verificar se um diretório existe foi introduzida na linguagem Clojure no ano de 2010, com a versão 1.2.
+Detalhes importantes da implementação: tenha em mente que essa abordagem não é atômica, e o estado do sistema de arquivos pode mudar entre o momento em que você verifica a existência do diretório e o momento em que você realmente acessa o diretório. Para algumas aplicações, isso pode ser preocupante e precisará ser tratado adequadamente.
 
-### Alternativas:
+## Veja Também
 
-Uma alternativa para verificar se um diretório existe é usar a função "exists?" da biblioteca "clojure.contrib.io", que também possui uma função "file?" que pode ser usada para verificar se o caminho especificado leva a um diretório ou arquivo.
+A documentação oficial de Clojure fornece uma descrição detalhada da biblioteca 'file-seq' em https://clojuredocs.org/clojure.java.io/file-dir.
 
-### Detalhes de implementação:
-
-No nível do sistema operacional, a verificação de existência de diretório usa a função "stat", que retorna informações sobre um arquivo ou diretório, incluindo se ele existe ou não.
-
-## Veja também:
-
-- [Documentação da função "io/file-exists?"](https://clojuredocs.org/clojure.java.io/file-exists_q)
-- [Mais informações sobre a biblioteca "clojure.java.io"](https://clojuredocs.org/clojure.java.io)
+Para mais informações sobre a biblioteca 'me.raynes/fs', consulte https://github.com/Raynes/fs.

@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Kotlin: Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
 simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
-Le fait d'envoyer une requête HTTP avec une authentification basique consiste à ajouter des informations d'identification à la requête afin d'accéder à certaines ressources protégées sur le web. Les programmeurs utilisent cette méthode pour sécuriser leurs applications et s'assurer que seules les personnes autorisées peuvent y accéder.
+## Quoi & Pourquoi?
+
+Envoyer une requête HTTP avec une authentification de base, c'est comme présenter une carte d'identité à un serveur web pour accéder à des ressources. Les programmeurs le font pour protéger les données sensibles et contrôler l'accès.
 
 ## Comment faire:
-Voici un exemple de code en Kotlin qui illustre comment envoyer une requête HTTP avec une authentification basique et afficher la réponse obtenue :
+
+Pour ce faire avec Kotlin, on peut utiliser la bibliothèque `khttp`. Voici un exemple:
 
 ```Kotlin
-val username = "john" // Remplacer par votre nom d'utilisateur
-val password = "12345" // Remplacer par votre mot de passe
-val url = URL("https://www.example.com/api/users") // Remplacer par votre URL
+import khttp.get
 
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "GET"
-connection.setRequestProperty("Authorization", "Basic " + Base64.getEncoder().encodeToString("$username:$password".toByteArray()))
-val response = connection.inputStream.bufferedReader().readText()
-println(response) // Affiche la réponse obtenue
+fun main() {
+    val username = "monNom"
+    val password = "monMotDePasse"
+
+    val response = get(
+        url = "https://mon-serveur.com",
+        auth = khttp.structures.BasicAuthorization(username, password)
+    )
+    
+    println(response.statusCode)
+    println(response.text)
+}
 ```
 
-## Plongée en profondeur:
-L'authentification basique est l'une des méthodes les plus anciennes pour sécuriser les connexions sur le web. Elle est définie dans le protocole HTTP et utilise une combinaison de nom d'utilisateur et de mot de passe pour vérifier l'identité de l'utilisateur. Bien que cette méthode soit facile à mettre en place, elle présente des vulnérabilités et est généralement remplacée par des méthodes d'authentification plus sécurisées comme OAuth.
+Dans cet exemple, `monNom` et `monMotDePasse` sont vos identifiants. Remplacez `https://mon-serveur.com` avec l'URL de votre serveur. Exécutez ce programme et il imprimera le code de statut de la réponse HTTP et le corps du texte de la réponse.
 
-Les alternatives à l'authentification basique incluent l'utilisation de méthodes d'authentification par token, où un token est généré et utilisé pour valider l'identité de l'utilisateur, ou l'utilisation d'un serveur d'authentification centralisé tel que Keycloak.
+## Plongée en Profondeur
 
-Dans l'exemple de code ci-dessus, nous utilisons l'encodage Base64 pour sécuriser les informations d'identification envoyées dans la requête, mais cela ne garantit pas la sécurité totale de celles-ci. Il est important de prendre en compte les risques de sécurité lors de l'utilisation de l'authentification basique et de mettre en place des mesures de protection supplémentaires si nécessaire.
+L'authentification HTTP de base a été officiellement définie en 1999 dans la spécification HTTP 1.1. Malgré sa facilité d'utilisation, la sécurité est un souci majeur, car les identifiants sont tranmis en clair. En règle général, utilisez-le sur HTTPS pour une sécurité accrue. 
 
-## Voir aussi:
-- Documentation officielle de Kotlin : https://kotlinlang.org/
-- Guide de référence sur l'envoi de requêtes HTTP avec Kotlin : https://www.baeldung.com/kotlin-http-request
+En dehors de `khttp`, il existe aussi d'autres bibliothèques pour gérer les requêtes HTTP avec Kotlin, comme `Fuel`, `OkHttp` et `ktor`.
+
+Pour aller plus loin, vous pouvez utiliser des méthodes d'authentification plus avancées comme OAuth, qui offre une meilleure sécurité par token.
+
+## Voir Aussi
+
+1. Kotlin HTTP Request - [khttp](https://github.com/asofterspace/khttp)
+2. Alternatives to khttp - [Fuel](https://github.com/kittinunf/Fuel), [OkHttp](https://square.github.io/okhttp/), [ktor](https://ktor.io/)
+3. Basic and Digest Access Authentication - [RFC2617](https://tools.ietf.org/html/rfc2617)

@@ -1,7 +1,7 @@
 ---
-title:                "Відправлення запиту http з базовою автентифікацією"
-html_title:           "C#: Відправлення запиту http з базовою автентифікацією"
-simple_title:         "Відправлення запиту http з базовою автентифікацією"
+title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
+html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
+simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,26 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
-Надсилання HTTP-запиту з базовою автентифікацією - це процес надсилання запиту до веб-сервера з використанням особистих ідентифікаторів для підтвердження користувача. Програмісти виконують це для забезпечення безпеки даних та захисту конфіденційності.
+## Що і чому?
 
-Як це зробити:
+Отправлення HTTP-запиту з базовою аутентифікацією - це спосіб передачі облікових даних користувача на сервер. Пристосовуємо це для того, щоб забезпечити безпечний доступ до ресурсів, здебільшого веб-сервісів.
+
+## Як це зробити:
+
+Спробуйте наступний код:
+
 ```C#
-using System.Net.Http;
+using System;
+using System.Net;
+using System.Text;
 
-public static void SendRequest()
+var username = "yourUsername";
+var password = "yourPassword";
+var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://yoururl.com");
+httpWebRequest.Headers["Authorization"] = "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes(username + ":" + password));
+httpWebRequest.Method = "GET";
+
+var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
 {
-    Uri uri = new Uri("https://www.example.com/endpoint");
-    HttpClient httpClient = new HttpClient();
-    var byteArray = Encoding.ASCII.GetBytes("username:password");
-    httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
-    HttpResponseMessage response = httpClient.GetAsync(uri).GetAwaiter().GetResult();
-    Console.WriteLine(response.StatusCode);
+    var result = streamReader.ReadToEnd();
 }
 ```
 
-Глибокий погляд:
-Надсилання HTTP-запиту з базовою автентифікацією було спроектоване для забезпечення безпеки передачі даних між клієнтом і сервером. Альтернативою цьому є використання токенів або ідентифікаційних ключів. Щоб реалізувати надсилання запиту з базовою автентифікацією, потрібно скласти кодування особистих ідентифікаторів та додати його до заголовків HTTP-запиту.
+Цей код створює HTTP-запит, додає заголовок для базової аутентифікації і відправляє запит.
 
-Див. також:
-- Документація Microsoft про використання базової автентифікації: https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netcore-3.1
+## Поглиблений розбір: 
+
+1. **Історичний контекст**: Базова аутентифікація HTTP була стандартом з часів специфікації HTTP/1.0, хоча незахищена і рекомендована тільки для захищених підключень.
+2. **Альтернативи**: Сучасніші методи обіймуть Токени OAuth, Cookie, або JWT (JSON Web Tokens).
+3. **Деталі реалізації**: Наш метод реалізації передачі облікових даних в заголовку, "Basic ", після чого слідує користувач та пароль, кодовані в base64.
+
+## Дивіться також:
+
+1. [Докладніше про HTTP-аутентифікацію](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
+2. [Токени OAuth](https://oauth.net/)
+3. [JWT (JSON Web Tokens)](https://jwt.io/)

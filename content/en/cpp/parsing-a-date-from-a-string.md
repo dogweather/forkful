@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "C++ recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "C++"
 category:             "C++"
@@ -12,48 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing a date from a string is the process of extracting date-related information (such as day, month, and year) from a given string. This task is commonly performed by programmers when dealing with user inputs or data from external sources, so that the information can be converted into a more manageable format for further processing.
+Parsing a date from a string is the act of taking text input and converting it into a date data type. Programmers often do this to accurately manage and manipulate date-related information from different text sources like data files or user input.
 
 ## How to:
 
-To parse a date from a string in C++, you can use the `strptime` function from the `ctime` library. This function takes in two parameters - the string containing the date, and a formatting string that specifies the date format.
-
-Example code:
+C++ offers a powerful `<chrono>` library which includes utilities for dealing with dates. To parse a string to date, we may use `from_stream` method from the `date::parse` class, available since C++20.
 
 ```C++
-#include <ctime>
-#include <iostream>
+#include <chrono>
+#include <sstream>
 
-int main() {
-  char date_str[] = "2021-07-01"; // string containing the date
-  struct std::tm tm; // define a tm structure to store the parsed date
-  std::string format = "%Y-%m-%d"; // the formatting string specifying the date format
-  strptime(date_str, format.c_str(), &tm); // parse the date using strptime
-  std::cout << "The day is: " << tm.tm_mday << std::endl;
-  std::cout << "The month is: " << tm.tm_mon+1 << std::endl;
-  std::cout << "The year is: " << tm.tm_year+1900 << std::endl;
-  return 0;
+int main()
+{
+    std::istringstream stream{"2022-04-01"};
+    std::chrono::year_month_day date;
+    stream >> std::chrono::parse("%Y-%m-%d", date);
+    std::cout << date << '\n'; // Output: 2022-04-01
 }
 ```
 
-Sample output:
+Make sure that the date format in the string matches the format specified in the parse function.
 
+## Deep Dive
+
+**Historical context:** Parsing dates from strings has evolved over time. In C++98 and C++03, we had to manage this task manually or via third-party libraries like Boost. With the introduction of the `<chrono>` library in C++11 and subsequent enhancements in later versions, dealing with time and date has become far easier.
+
+**Alternatives:** Prior to C++20, or if your compiler doesn't support `<chrono>` utilities, you could use `strftime` and `strptime` functions from `<ctime>`, or opt for the Boost.Date_Time library.
+
+```C++
+// Using strptime from <ctime>
+#include <ctime>
+#include <iostream>
+
+int main()
+{
+    struct tm tm = {0};
+    std::string str = "2022-04-01";
+    
+    strptime(str.c_str(), "%Y-%m-%d", &tm);
+    time_t time = mktime(&tm);
+    
+    std::cout << ctime(&time);  // Output: Fri Apr  1 00:00:00 2022
+}
 ```
-The day is: 1
-The month is: 7
-The year is: 2021
-```
 
-## Deep Dive:
-
-Parsing dates from strings has been a common task for programmers since the early days of computing. With the increase in data processing and the use of date-related information, the need for a standardized approach to date parsing led to the creation of various date/time libraries in different programming languages.
-
-Alternative methods for date parsing in C++ include using the `get_time` function from the `iomanip` library or using regular expressions. However, the `strptime` function provides a more simple and efficient method for parsing dates from strings in C++.
-
-It is worth noting that the `strptime` function is a POSIX standard, meaning it is implementation-defined and may vary across different Unix-like systems. Therefore, it is recommended to check the documentation of the specific system you are using for any variations.
+**Implementation details:** `std::chrono::parse` reads the date and stores it in the `std::chrono::year_month_day` object. Understanding the way in which C++ handles time and date might seem complicated at first, but ultimately serves to provide strong type safety and precision.
 
 ## See Also:
 
-- [C++ documentation on strptime](https://www.cplusplus.com/reference/ctime/strptime/)
-- [Using time and date in C++ programs](https://www.geeksforgeeks.org/using-time-date-functions-c/)
-- [An overview of date/time libraries in different programming languages](https://www.freecodecamp.org/news/everything-you-need-to-know-about-date-and-time-notation-in-programming/)
+- [C++ `<chrono>`](https://en.cppreference.com/w/cpp/header/chrono)
+- [Boost.Date_Time](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)

@@ -1,7 +1,7 @@
 ---
-title:                "寻找字符串的长度"
-html_title:           "C++: 寻找字符串的长度"
-simple_title:         "寻找字符串的长度"
+title:                "查找字符串的长度"
+html_title:           "Javascript: 查找字符串的长度"
+simple_title:         "查找字符串的长度"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,46 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么以及为什么？
+## 什么 & 为什么？
 
-在编程中，一个常见的任务是要找出字符串的长度（即包含多少个字符）。程序员经常需要这样做，因为字符串是一种重要的数据类型，它们被用来存储和操作文本信息。
+字符串长度的查找是计算字符串中字符的数目，程序员这样做的原因是控制循环、比较字符串或者处理子字符串。
 
-如何：
+## 如何做：
 
-以下是一个用C++编写的示例代码，演示如何找出字符串的长度。要运行此代码，请将它复制粘贴到一个C++编译器中，并输入您想要测试的字符串。
+下面是如何在C++中使用`length()`和`size()`函数来找到字符串长度的代码示例及样本输出。
 
-```C++
+```c++
 #include <iostream>
 #include <string>
- 
-using namespace std;
 
 int main() {
-    string str; // declare a string variable
-    cout << "Enter a string: ";
-    cin >> str; // get input from user
-    int length = str.length(); // calculate string length
-    cout << "Length of the string is: " << length; // print output
+    std::string s = "Hello, World!";
+    std::cout << "String: " << s << std::endl;
+    std::cout << "Length using length(): " << s.length() << std::endl;
+    std::cout << "Length using size(): " << s.size() << std::endl;
     return 0;
 }
 ```
 
-以下是一个示例输出：
-
+样本输出：
 ```
-Enter a string: hello
-Length of the string is: 5 
+String: Hello, World!
+Length using length(): 13
+Length using size(): 13
 ```
 
-深入探讨：
+## 深度剖析
 
-历史背景：在早期的计算机系统中，字符串长度通常是固定的，并且预先定义为程序的一部分。但是，随着可变长度字符串的出现，例如C语言中的字符数组，需要通过计算来找出字符串的长度。
+在C++历史的早期版本，例如C++98，还无法使用 `.size()` 或 `.length()`. 程序员需要通过循环遍历字符串来手动计算长度。但在现代的C++，计算字符串长度变得非常简单。
 
-其他方法：除了使用length函数，还可以使用循环遍历字符串的每个字符，并计算出总数来找出字符串的长度。但是，这种方法比直接调用函数更耗时，因此不被推荐。
+至于`.length()`和`.size()`之间的选择，实际上没有太大差异，两者都返回字符串中的字符数量，只是来自不同的历史背景。
 
-实现细节：C++中通常使用string类来表示字符串，该类具有length函数，可以返回字符串的长度。该函数内部使用了一个叫做size_type的特殊数据类型，用来表示字符串的大小。
+有些开发者可能喜欢用 `strlen()` 来计算字符串长度，这在语义上更清晰一些。但要注意 `strlen()` 只适用于C风格的字符串而不适用于C++风格的字符串。
 
-参考链接：
+## 还可查看
 
-- String Length in C/C++: <https://www.geeksforgeeks.org/length-string-c/>
-- C++ String Length: <https://www.programiz.com/cpp-programming/string-length>
+以下链接提供了查找字符串长度以及相关知识的更多信息：
+
+1. C++ Reference - std::string::length: http://www.cplusplus.com/reference/string/string/length/
+2. C++ Reference - std::string::size: http://www.cplusplus.com/reference/string/string/size/
+3. C++ Reference - std::strlen: http://www.cplusplus.com/reference/cstring/strlen/

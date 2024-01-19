@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla en sträng till gemener"
-html_title:           "PHP: Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
 simple_title:         "Omvandla en sträng till gemener"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,33 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+---
 
-Att konvertera en sträng till små bokstäver är en vanlig programmeringsteknik som används för att standardisera input och jämföra strängar på ett mer flexibelt sätt. Genom att konvertera alla tecken till små bokstäver kan man enkelt utesluta eventuella skillnader i bokstavsstorlek mellan strängar och fokusera på innehållet istället.
+## Vad och Varför?
 
-## Hur gör man?
+Att konvertera en sträng till små bokstäver innebär att ändra alla stora bokstäver i en text till deras motsvarande små bokstäver. Att göra det är ofta nödvändigt när programmakare behöver jämföra två strängar, och vill undvika falska olikheter som kan uppstå endast på grund av stora/små bokstäver.
+
+---
+
+## Hur man gör: 
+
+Funktionen `strtolower()` i PHP används för att konvertera en sträng till små bokstäver. 
 
 ```PHP
-$string = "ExempelSTRÄNG";
-echo strtolower($string);
+<?php
+$text = "HeJ sWeRiGe";
+$lowercase_text = strtolower($text);
+echo $lowercase_text; 
+?>
 ```
 
-Detta kommer att ge följande output:
+Ovanstående kod kommer att producera följande output:
 
 ```PHP
-exempelsträng
+hej sverige
 ```
 
-Som du kan se har nu alla bokstäver konverterats till små bokstäver vilket gör det enklare att jämföra denna sträng med en annan som också har konverterats på samma sätt.
+---
 
-## Grundlig genomgång
+## Fördjupning: 
 
-Att konvertera en sträng till små bokstäver är ett vanligt tillvägagångssätt för att undvika eventuella skillnader i bokstavsstorlek när man jämför strängar. Det grundläggande systemet för teckenkodning, ASCII, använde sig endast av stora bokstäver. Det var först med utvecklingen av Unicode som både små och stora bokstäver inkluderades, och därmed uppstod behovet av att kunna konvertera mellan de två. 
+Funktionen `strtolower()` har funnits sedan PHP 4, så den har en lång historia och är väl pålitlig. Däremot, finns det en variation av denna funktion (`mb_strtolower()`) som stödjer fler teckentyper och använder aktuell locale för att bestämma hur konverteringen ska ske.
 
-Alternativen för konvertering till små bokstäver i PHP inkluderar även funktionerna `ucfirst` och `ucwords`. Dessa kommer att konvertera den första bokstaven i en sträng till stor bokstav respektive alla första bokstaver i varje ord till stor bokstav. Det är viktigt att notera att `strtolower` endast konverterar alla tecken i strängen och inte påverkar vare sig den första bokstaven eller andra bokstäver i ordet. 
+Om du behöver konvertera stora/versala bokstäver till små bokstäver inkluderande icke-latin bokstäver, bör `mb_strtolower()` användas istället:
 
-Implementeringen av `strtolower` i PHP är mycket effektiv och använder sig av inbyggda funktioner för att konvertera varje tecken. Detta gör att processen går snabbt och utan större påverkan på prestandan.
+```PHP
+<?php
+mb_internal_encoding('UTF-8');
+$text = "Ä Ö Ü";
+$lowercase_text = mb_strtolower($text);
+echo $lowercase_text;
+?>
+```
+Koden ovan kommer att producera:
 
-## Se även
+```PHP
+ä ö ü
+```
 
-Officiell dokumentation för [strtolower()](https://www.php.net/manual/en/function.strtolower.php) i PHP.
+---
+
+## Se även:
+
+1. [Official PHP strtolower Documentation](http://php.net/manual/en/function.strtolower.php)
+2. [Official PHP mb_strtolower Documentation](https://www.php.net/manual/en/function.mb-strtolower.php)
+3. [Basic handling and manipulation of strings in PHP](https://www.w3schools.com/php/php_ref_string.asp)

@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "Go recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Go"
 category:             "Go"
@@ -12,54 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request is a way for a computer program to communicate with a web server. Programmers do this to retrieve data or perform actions on a server. It is an essential component of web development and allows for the creation of dynamic and interactive websites.
+HTTP requests are a fundamental part of web applications, used to fetch data from another source, like a database or another server. They allow programmers to send or receive data, manipulate remote resources, and more.
 
 ## How to:
 
+Below is a sample code that creates a simple GET request in Go:
+
 ```Go
-// Import the "net/http" package
-import "net/http"
+package main
 
-// Create a new HTTP request with the specified method and URL
-req, err := http.NewRequest("GET", "https://example.com/api/users", nil)
+import (
+	"net/http"
+	"io/ioutil"
+	"fmt"
+)
 
-// Add any necessary headers
-req.Header.Add("Content-Type", "application/json")
+func main() {
+	resp, err := http.Get("http://webcode.me")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
 
-// Send the request using the "Client" from the "http" package
-res, err := http.DefaultClient.Do(req)
-if err != nil {
-    // Handle error
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(string(body))
 }
-
-// Print the response status code and body
-fmt.Println(res.Status)
-body, err := ioutil.ReadAll(res.Body)
-if err != nil {
-    // Handle error
-}
-fmt.Println(string(body))
-
-// Close the response body
-res.Body.Close()
 ```
-
-Output:
-```
-200 OK
-[{"id": 1, "name": "John", "email": "john@example.com"},{"id": 2, "name": "Jane", "email": "jane@example.com"}]
-```
+When you run this program, it sends a GET request to the specified URL and prints the response. 
 
 ## Deep Dive
 
-In the early days of the internet, communication between clients (such as web browsers) and servers relied on the Simple Mail Transfer Protocol (SMTP). However, as the internet evolved, the need for a more robust and versatile protocol became apparent. This led to the development of the Hypertext Transfer Protocol (HTTP) in 1991.
+Go's `http` package has been around since Go 1 release in March 2012, proving to be a robust and efficient tool for programmers. It provides HTTP client and server implementations for building and sending HTTP requests.
 
-While there are alternatives to sending HTTP requests, such as using other protocols or libraries, HTTP remains the standard for web communication. In the Go programming language, sending HTTP requests is made simple with the built-in "net/http" package, which provides functions for creating and sending requests and handling responses.
+Though it's widely used, Go's `http` package isn't your only option for sending HTTP requests in Go. Alternatives include the `httpclient` and `go-resty` packages, but they come with their own pros and cons. 
 
-When sending an HTTP request, the program first creates a "Request" object, specifying the method (e.g. GET, POST) and the URL of the server. Headers can be added to the request for additional information. The "Client" from the "net/http" package is then used to send the request and receive a response. The response can be accessed for information such as the status code and body.
+While `http.Get` is convenient for simple GET requests, for more complex needs, you might use `http.NewRequest` and `http.Client.Do`.
+
+Here's an example:
+
+```Go
+req, err := http.NewRequest("GET", "http://webcode.me", nil)
+if err != nil {
+	// handle err
+}
+client := &http.Client{}
+resp, err := client.Do(req)
+if err != nil {
+	// handle err
+}
+```
+
+That allows more control over the request and dealing with the response.
 
 ## See Also
 
-- [Go Documentation for "net/http" package](https://golang.org/pkg/net/http/)
-- [HTTP Basics](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics)
-- [HTTP vs HTTPS](https://www.cloudflare.com/en-gb/learning/ssl/https-vs-http/)
+For further reading, 
+
+- Official Golang Net/Http Documentation: https://pkg.go.dev/net/http
+- Effective Go: https://golang.org/doc/effective_go
+- Go’s http package by example: https://go.dev/blog/http2

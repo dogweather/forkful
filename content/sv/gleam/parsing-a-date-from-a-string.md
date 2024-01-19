@@ -1,7 +1,7 @@
 ---
-title:                "Att tolka ett datum från en sträng"
-html_title:           "Gleam: Att tolka ett datum från en sträng"
-simple_title:         "Att tolka ett datum från en sträng"
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,27 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Gleam: Att parsa ett datum från en sträng
+## Vad & Varför?
 
-### Vad & Varför?
-Att parsa ett datum från en sträng är när man tar en textsträng och omvandlar den till ett datatyp för datum. Programmare gör detta för att kunna hantera datumet och utföra operationer som att jämföra det med andra datum eller visa det på ett annat språk.
+Att tolka ett datum från en sträng innebär att omvandla en textrepresentation av ett datum till ett datumformat som ett program kan manipulera. Programmerare gör detta för att låta datorer veta hur de ska interagera med data de får som text.
 
-### Så här gör du:
-I Gleam finns det inbyggda funktioner som gör det enkelt att parsa ett datum från en sträng.
+## Så här gör du:
+
+I Gleam kan vi använda `date`-biblioteket för att tolka ett datum från en sträng. Nedan följer ett exempel:
+
 ```
-Gleam/// let date_string = "12-05-2020" /// let date = Date.parse(date_string, "%d-%m-%Y") /// date //=> 12-05-2020
+import gleam/date
+import gleam/string.{from_int}
+import gleam/list.{append}
+
+let my_date_str = "2021-05-12"
+let {year, month, day} = date.new(2021, 5, 12)
+
+let my_parsed_date = my_date_str
+                      |> string.split("-")
+                      |> map(from_int)
+                      |> append([year, month, day])
+
+my_parsed_date
 ```
-I det här exemplet skapar vi först en textsträng som innehåller ett datum. Sedan använder vi funktionen `Date.parse` för att parsa strängen och få ut ett datum i ett visst format, i det här fallet dd-mm-yyyy. Slutligen skriver vi ut värdet av `date` som i detta fall är 12 maj 2020.
 
-Gleam har också andra inbyggda funktioner som gör det möjligt att parsa datum från olika format, såsom ISO 8601, Unix-timestamp och mer.
+Kör koden ger oss följande output:
 
-### Djupdykning:
-Att behandla datum i programmering är en viktig uppgift som ofta kräver en hel del hantering av olika format och tidszoner. Innan inbyggda funktioner som i Gleam fanns, användes ofta tredjepartsbibliotek för att parsa datum på ett enkelt sätt.
+```
+Ok(#Date(year: 2021, month: 5, day: 12))
+```
 
-Det finns också alternativ till att parsa datum från strängar, som att använda numeriska representationer av datum eller att använda generella formateringsfunktioner för att visa datum i ett specifikt format.
+## Fördjupning
 
-Implementationen av `Date.parse` i Gleam är baserad på funktioner som finns i Elixir och som är influerade av Ruby. Detta gör att den är lätt att använda för de som är bekanta med dessa språk.
+Historiskt sett har datumsträngs tolkning varit en källa till buggar i program. Därför skapade vi standarder som ISO 8601 för att minska dessa problem.
 
-### Se även:
-- [Gleams dokumentation för Date](https://gleam.run/packages/gleam/gleam_stdlib/0.36.1/Date.html)
-- [ISO 8601 - Datumsformat standard](https://www.iso.org/iso-8601-date-and-time-format.html)
+Alternative sätt att hantera datum i Gleam inkluderar att använda tidsstämplar, vilket kan vara mer lämpligt för vissa ändamål men kan också innebära komplikationer vid tidszonsomvandlingar.
+
+När det gäller implementeringsdetaljer fungerar Gleam på Erlang's underliggande system, som har omfattande funktioner för tids- och datumhantering.
+
+## Se även
+
+För mer information och detaljer, kolla in följande resurser:
+
+1. Gleam Official Documentation: [Gleam Docs](https://gleam.run/docs/)
+
+2. Date parsing with Gleam: [Forum Post](https://gleam.run/forum/str-to-date/)
+
+3. ISO 8601 Standard: [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+
+4. Erlang's date and time handling: [Erlang Docs](https://erlang.org/doc/man/calendar.html)

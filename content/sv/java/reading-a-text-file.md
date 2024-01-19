@@ -1,6 +1,6 @@
 ---
 title:                "Läsa en textfil"
-html_title:           "Java: Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
 simple_title:         "Läsa en textfil"
 programming_language: "Java"
 category:             "Java"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Att Läsa En Textfil I Java: Vad, Varför, Hur?
+
 ## Vad & Varför?
-Att läsa in en textfil betyder att man laddar in information från en textfil i sitt program. Detta är användbart för att kunna manipulera och använda den informationen i sitt program på olika sätt.
+Att läsa en textfil innebär att hämta information som lagras i en fil. Som programmerare gör vi detta för att inhämta, analysera och manipulera de data som filen innehåller.
 
-Programmerare utför detta för att kunna läsa in stora mängder data på ett effektivt sätt och kunna använda det i sina program.
-
-## Så här gör du:
-Det första steget är att hitta den textfil som man vill läsa in i sitt program. Sedan behöver man öppna och läsa in filen genom att använda klassen "FileReader" och "BufferedReader". Här är ett exempel på hur man skulle kunna läsa in en textfil som innehåller en lista på namn:
+## Hur gör man:
+Här kommer vi att använda `java.nio.file` -paketet för att läsa in en textfil.
 
 ```Java
-File file = new File("namnlista.txt"); // skapar en File objekt
-FileReader reader = new FileReader(file); // öppnar filen för läsning
-BufferedReader in = new BufferedReader(reader); // skapar en BufferedReader objekt
+import java.nio.file.*;
+import java.nio.charset.Charset;
+import java.io.IOException;
 
-String name; // skapar en variabel för att lagra namn från filen
-
-while ((name = in.readLine()) != null) { // loopar genom filen och läser in varje rad
-    System.out.println(name); // skriver ut namnet
+public class TextFileReader {
+    
+    public static void main(String[] args) {
+        Path filePath = Paths.get("sample.txt");
+        try {
+            String content = Files.readString(filePath, Charset.defaultCharset());
+            System.out.println(content);
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
-
-in.close(); // stänger filen efter att den har lästs in
 ```
 
-I detta exempel öppnar och läser vi in filen "namnlista.txt" och skriver ut varje namn på en egen rad i konsolen. 
+I detta exempel kommer `Files.readString` att läsa innehållet i `sample.txt` och returera det som en sträng, som sedan skrivs ut till konsolen.
 
-## Djupdykning:
-Att läsa in textfiler är en grundläggande del av programmering och har funnits sedan de tidiga dagarna av datavetenskapen. Det finns olika sätt att läsa in textfiler, men FileReader- och BufferedReader-metoderna är vanligt förekommande i Java.
+## Djupdykning
+Att läsa textfiler är en grundläggande del av programmering och har varit det ända sedan de första dagarna av datorprogrammering. Olika metoder och verktyg har utvecklats över tid för att göra det enklare och mer effektivt. `java.nio.file` -paketet är i dag en av de mest moderna och effektiva metoderna att läsa textfiler i Java.
 
-Några alternativa sätt att läsa in textfiler är genom att använda klasserna "Scanner" eller "InputStream", men det är viktigt att välja en lämplig metod beroende på filens storlek och innehåll.
+Det finns alternativ till `java.nio.file`, såsom `java.io.BufferedReader` och `java.util.Scanner`, men `java.nio.file` är ofta det snabbaste valet när det gäller större filer.
 
-Implementationen av inläsningen av en textfil kan se olika ut beroende på vad målet är för inläsningen. Om man vill läsa in en textfil för att lagra och använda informationen i sitt program, kan man behöva använda andra metoder för att hantera filen.
+När det gäller implementeringsdetaljer utnyttjar Java's `Files`-klass både inmatning och utmatningsströmmar under huven för att läsa in filen, buffra innehållet och sedan konvertera det till en sträng.
 
-## Se även:
-Här är några användbara källor för vidare läsning om att läsa in textfiler i Java:
-
-- [Oracle Java dokumentation om FileReader-klassen](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [Tutorialspoint Java tutorial om att läsa in textfiler](https://www.tutorialspoint.com/java/io/java_io_filereader.htm)
-- [Baeldung tutorial om att läsa in textfiler i Java](https://www.baeldung.com/java-read-lines-large-file)
+## Se även
+Här är några länkar till ytterligare upplysningar om ämnet:
+- Javas officiella dokument för `java.nio.file`-paketet: [länk här](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html)
+- En omfattande guide till att läsa och skriva filer i Java: [länk här](https://www.baeldung.com/java-read-file)
+- Stack Overflow-trådar om läsning av textfiler: [länk här](https://stackoverflow.com/questions/4716503/reading-a-plain-text-file-in-java)

@@ -1,6 +1,6 @@
 ---
 title:                "Using regular expressions"
-html_title:           "Elixir recipe: Using regular expressions"
+html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,54 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Unraveling Regular Expressions in Elixir
+
 ## What & Why?
 
-Regular expressions (regex) are sequences of characters used for pattern matching in strings. Programmers use regex to find, replace, and manage text efficiently.
+Regular expressions (regex) are sequences of characters that form a pattern to help in string matching or "searching". Programmers use regex to extract particular information from text, validate input, and transform parts of strings in a flexible and compact way.
 
-## How To:
+## How to:
 
-In Elixir, Regex module is used for regex operations. Below are some examples:
+In Elixir, we use the `Regex` module to work with regular expressions. 
 
-Matching:
+Here's how you match a pattern using `Regex.match?` function:
 
 ```elixir
-# Check if the string has "elixir" in it
-Regex.match?(~r/elixir/, "Programming in Elixir is fun!") 
-# Output: true
+iex> Regex.match?(~r{elixir}, "Hello, Elixir!")
+true
 ```
 
-Replacing:
+To replace a part of a string, use the `Regex.replace` function:
 
 ```elixir
-# Replace "elixir" with "Elixir!" 
-Regex.replace(~r/elixir/, "Programming in elixir is fun!", "Elixir!")
-# Output: "Programming in Elixir! is fun!"
-```
-
-Capturing:
-
-```elixir
-# Retrieve 'elixir' from the string
-Regex.run(~r/elixir/, "Programming in elixir is fun!") 
-# Output: ["elixir"]
+iex> Regex.replace(~r{elixir}, "Hello, Elixir!", "World")
+"Hello, World!"
 ```
 
 ## Deep Dive
 
-Regex appeared in the 1950s, in theoretical computer science. Yet, its practical realization came into light in Ken Thompson's implementation for the Unix editor QED.
+Regular expressions date back to the 1950s with early implementations in Unix tools. In Elixir, they follow the Perl Compatible Regular Expressions (PCRE) flavor, appreciated for its rich features and predictability.
 
-Elixir's Regex builds upon the PCRE library (Perl Compatible Regular Expressions). This offers many advanced regex features, but also brings its potential complexities that may overcomplicate simple tasks. 
+The `Regex` module provides Elixir-specific implementations, leveraging Erlang's :re module underneath. It uses the battle-tested PCRE library and supports Unicode.
 
-For simpler operations, `String` module’s inbuilt functions could be an ideal alternative. For example, detecting a substring can be conveniently handled like so:
-
-```elixir
-# Does the string contain "elixir"?
-String.contains?("Programming in Elixir is fun!", "elixir")
-# Output: true
-```
+You could resort to other methods such as string functions (`String.contains?`, `String.replace`, etc.), but regex provides more control and flexibility over complex pattern matching tasks.
 
 ## See Also
 
-- [Official Elixir Docs on Regex](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir School’s Regex Guide](https://elixirschool.com/en/lessons/advanced/regular-expressions/)
-- [Perl Compatible Regular Expressions (PCRE) Documentation](http://www.pcre.org/original/pcre.txt)
+You can further explore regular expressions in Elixir with these resources:
+- Elixir's official guide on `Regex`: https://elixir-lang.org/getting-started/regex.html
+- Erlang's documentation for the `:re` module: http://erlang.org/doc/man/re.html
+- 'Mastering Regular Expressions' by Jeffrey E.F. Friedl provides a great overview of regex, although not Elixir-specific.

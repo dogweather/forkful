@@ -1,6 +1,6 @@
 ---
 title:                "Sökning och ersättning av text"
-html_title:           "Fish Shell: Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
 simple_title:         "Sökning och ersättning av text"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,21 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Sökning och ersättning av text är en vanlig uppgift för programmerare. Det är en process där vi letar efter ett specifikt mönster i en text och ersätter det med ett annat. Detta är användbart för att snabbt ändra flera förekomster av samma text samt göra storskaliga redigeringar på en gång.
+# Söka och Ersätta Text i Fish Shell
 
-## Hur man: 
-```Fish Shell``` har inbyggda funktioner för att hantera sökning och ersättning av text. För att ersätta all förekomst av ett visst mönster med ett annat används kommandot ```string replace``` som i exemplet nedan: 
+## Vad & Varför?
+
+Sökning och ersättning av text innebär att identifiera specifika sekvenser av tecken och byta ut dessa mot ett annat värde. Detta är oumbärligt för programmerare, eftersom det gör att de snabbt kan ändra variabler och andra textelement på många ställen samtidigt.
+
+## Hur man gör:
+
+Här är ett enkelt exempel på hur du kan söka och ersätta text i Fish Shell. Tänk dig att vi letar efter texten "hej" och vill byta ut den mot "hallå" i en textsträng.
+```Fish Shell
+set txt "hej världen"
+set txt (string replace "hej" "hallå" $txt)
+echo $txt
 ```
-$ string replace "old_text" "new_text" file.txt 
+Output:
 ```
-Detta kommando söker igenom ```file.txt``` och ersätter alla förekomster av "old_text" med "new_text". I slutet av kommandot kan du lägga till flaggan ```-n``` för att visa vilka rader som skulle ändras utan att faktiskt ändra dem.
+hallå världen
+```
 
-## Fördjupning: 
-Historiskt sett har ```sed``` (Stream Editor) varit ett populärt verktyg för att söka och ersätta text i kommandoraden. ```Sed``` kan användas tillsammans med ```Fish Shell``` men är mer lämpat för andra shellobjekt som Bash. Andra alternativ inkluderar verktyg som ```awk``` och ```perl```. 
+## Djupdykning
 
-Detaljerade instruktioner och användningsområden för sökning och ersättning med ```Fish Shell``` finns i dokumentationen: [https://fishshell.com/docs/current/cmds/string.html#string-replace](https://fishshell.com/docs/current/cmds/string.html#string-replace). 
+Historiskt sett diskuterades sök- och ersätt-begreppet redan i de tidiga dagarna av programmering, och det återspeglas i att majoriteten av textredigerare och programmeringsspråk erbjuder denna funktionalitet. I Fish Shell utförs sökning och ersättning genom inbyggda strängfunktioner, men andra verktyg som 'sed' och 'awk' kan också användas.
 
-## Se även: 
-Officiell hemsida för ```Fish Shell```: [https://fishshell.com/](https://fishshell.com/) 
-Dokumentation för sökning och ersättning med ```Fish Shell```: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+Det är viktigt att notera att när du använder 'string replace' i Fish Shell, så sker sökningen och ersättningen på en global nivå som standard, vilket innebär att alla förekomster av söksträngen kommer att ersättas. Om du bara vill göra en enstaka ersättning, kan du använda '-r' eller '--regex' flaggan.
+
+## Se även
+
+För mer information om hur du arbetar med strängar i Fish Shell, se följande resurser:
+- [Fish Shell Documentation: string](https://fishshell.com/docs/current/cmds/string.html)
+- [Intro to Fish Shell for Beginners](https://www.geekhideout.com/fish.shtml)
+- [Fish Shell Tutorial: String Manipulation](https://www.learnbyexample.org/fish-shell-string-manipulation/)

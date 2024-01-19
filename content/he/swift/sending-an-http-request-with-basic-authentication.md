@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "Swift: שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,16 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-כשתתקשר לשרת באמצעות פרוטוקול ה- HTTP, ייתכן שתצטרך להעביר מידע סודי בין התקשרות. כדי לאבטח את המידע הזה, מתכנתים משתמשים באימות בסיסי של פרוטוקול ה- HTTP בשיטת ההרשאה הבסיסית. זה פשוט כמו "כניסה כמשתמש רשום" למערכת של השרת.
+שליחת בקשת HTTP עם אוטנטיקציה בסיסית היא דרך שבה אתה יכול לאמת את המשתמש בצד שרת. זה שימושי כאשר אתה כותב תוכנית שמתקשרת עם שרת שדורש אימות משתמש.
 
-## כיצד לבצע:
-### תקשורת HTTP עם אימות בסיסי
-תחילה, ניצור משתנה מסוג URL בשם `url` ונתחבר אותו לכתובת ה-URL של השרת שאליו אנו רוצים לשלוח את הבקשה. לאחר מכן ניצור את התוכן שאנחנו רוצים לשלוח ונכניס אותו לתוך מסך של ה- HTTP דרך אובייקט ה-tata באמצעות הפונקציה `httpBody`. לבסוף, נגדיר את משתנה ה-request נתיב `url` מציאת-וה-set אנו מעונינים לשלוח.
+## איך להשתמש:
+אם אנחנו רוצים לשלוח בקשת HTTP עם אוטנטיקציה בסיסית בשפה Swift, הדרך לעשות זאת היא באמצעות URLSession:
+```Swift
+import Foundation
 
-כעת כאשר כל ההגדרות נכונות, ניתן לבצע את שליחת הבקשה הסודית באמצעות הפונקציה `show` ולהשתמש בפרוטוקול ה- HTTP הבסיסי לאתר את הגירסה העדכנית ביותר.
+let username = "username"
+let password = "password"
 
-## נופל ארוך
-האימות הבסיסי של פרוטוקול ה-HTTP נוצר במטרה לאבטח את המידע שנשלח בין התקשרויות. אולם, כיום ישנם פתרונות אחרים יותר מתקדמים כגון OAuth ופרוטוקולי ה-Windows Integrated Authentication עבור אימות יותר מתקדם ומאובטח של משתמשים. בכל זאת, אימות בסיסי היה מרכזי בפיתוח של רשתות בין תוכניות ופיתוח יישומים בסיסיים עד לפני כמה שנים.
+let loginData = String(format: "%@:%@", username, password).data(using: String.Encoding.utf8)!
+let base64LoginData = loginData.base64EncodedString()
 
-## ראו גם
-למידע נוסף על פרוטוקול ה-HTTP וכיצד לשלוח בקשות עם אימות בסיסי, מומלץ לקרוא את ההוראות הרשמיות של אפליקציות האפליקציות הטעינות את הפרוטוקול הנוכחי. כמתכנתים רצוי ללמוד גם את החנון ב- Swift כדי להיות מוכנים לעבוד עם אפליקציות המופעים באמפנתח ועם כל הפונקציות הקיימות בסיסי.
+let url = URL(string: "https://example.com")!
+var request = URLRequest(url: url)
+request.httpMethod = "GET"
+request.setValue("Basic \(base64LoginData)", forHTTPHeaderField: "Authorization")
+
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    if let error = error {
+        print("\(error)")
+    } else if let data = data {
+        print("Data:\n\(data)")
+    }
+}
+task.resume()
+```
+## עומק
+אימות בסיסי בHTTP הוא לא טכניקה חדשה, והתחיל להתפתח בתחילת שימוש האינטרנט. עם זאת, זה מאוד גמיש ומשמש עדיין באפליקציות רבות. ישנן חלופות, כמו אימות טוקן, אך אלה דורשים הרבה יותר יודעת רקע. קוד Swift שלנו ממיר את שם המשתמש והסיסמה לקידוד בסיסי-64, עובר Lunix "נקה" חומרים לא חוקיים.
+
+## ראה גם
+- [RFC-2617](https://tools.ietf.org/html/rfc2617) - מפרט HTTP Authentication.
+- [מדריכי Apple](https://developer.apple.com/documentation/foundation/urlsession) - URLSession ואימות בסיסי.
+- [אימות ב- HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) - MDN דף המדריך.

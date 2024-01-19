@@ -1,7 +1,7 @@
 ---
-title:                "Erstellen einer temporären Datei"
-html_title:           "Kotlin: Erstellen einer temporären Datei"
-simple_title:         "Erstellen einer temporären Datei"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Java: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,22 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
-Das Erstellen einer temporären Datei ist ein nützlicher Prozess für Programmierer, besonders wenn sie temporäre Daten während der Ausführung ihres Programms speichern wollen. Es kann auch verwendet werden, um temporäre Dateien für Debugging-Zwecke zu erstellen.
+## Was & Warum?
 
-Wie geht's?
-Kotlin bietet die Funktion "createTempFile()" an, um eine temporäre Datei zu erstellen. Die Datei wird automatisch in einem temporären Ordner erstellt und hat einen zufällig generierten Namen. Hier ist ein Beispiel:
+Ein temporäre Datei ist ein begrenzter Speicher, der von einem Programm während seiner Ausführung verwendet wird. Programmierer nutzen diese, um Zwischenergebnisse zu speichern, die Arbeitslast zu reduzieren oder um Daten während eines Crashs nicht zu verlieren.
+
+## Wie macht man das
+
+Der untenstehende Code zeigt, wie man in Kotlin temporäre Dateien erstellt.
 
 ```Kotlin
-val tempFile = createTempFile()
-println(tempFile.name)
+import java.io.File
+
+fun main() {
+    val tempFile = File.createTempFile(prefix = "tempFile", suffix = ".txt")
+    tempFile.writeText("Das ist ein Test!")
+    println(tempFile.readText())
+    tempFile.deleteOnExit()
+}
 ```
-Beispiel Ausgabe: "tmp266662282100316787"
 
-Tiefergehende Informationen
-Das Konzept der temporären Dateien wurde bereits in den 60er Jahren eingeführt und war damals ein wichtiger Bestandteil von Betriebssystemen. Heutzutage werden sie hauptsächlich von Programmierern verwendet, um temporäre Daten zu speichern oder Debugging-Aufgaben durchzuführen. Alternativ können Entwickler auch die Funktion "File.createTempFile()" aus der Java Klasse "java.io" verwenden, um temporäre Dateien zu erstellen.
+Um das zu testen, fügen Sie einfach diesen Code in Ihr Programm ein und führen Sie es aus. Der Ausdruck "Das ist ein Test!" wird auf der Konsole angezeigt.
 
-Schau Dir Dies Auch An
-- Offizielle Dokumentation für erstellte temporäre Dateien in Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html
-- Einführung in das Erstellen von temporären Dateien in Kotlin: https://www.baeldung.com/kotlin-temporary-file
-- Informationen zu Kotlin's "File" Klasse: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-file/
+## Tiefere Einblicke
+
+Historisch gesehen waren temporäre Dateien schon immer ein kritischer und notwendiger Bestandteil jedes Betriebssystems. Ohne sie könnten viele Funktionen und Prozesse nicht effektiv ausgeführt werden.
+
+In Bezug auf Alternativen könnte man anstelle von temporären Dateien auf In-Memory-Datenbanken wie Redis oder SQLite zur Laufzeit Daten speicherung verwenden. Das hängt natürlich von Ihren genauen Anwendungsfällen und Anforderungen ab.
+
+Also, wie funktioniert das wirklich in Kotlin? Das `createTempFile` ist eigentlich eine JVM-Standardfunktion, die durch den Kotlin-Wrapper aufgerufen wird. Dabei wird ein zufälliger, eindeutiger Dateiname generiert, der mit dem angegebenen Präfix und Suffix ergänzt wird. Die Datei wird im Standard-Temp-Verzeichnis des Betriebssystems erstellt, wenn kein spezifisches Verzeichnis angegeben wird.
+
+## Siehe auch
+
+Für weitere Informationen über Kotlin und temporäre Dateien, verweisen wir auf die folgenden Links:
+
+- Offizielle Kotlin-Dokumentation: [http://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html](http://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
+- Benutzung von temporären Dateien in Java: [https://www.baeldung.com/java-io-temporary-files](https://www.baeldung.com/java-io-temporary-files)

@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en dato til en streng"
-html_title:           "Javascript: Konvertere en dato til en streng"
+html_title:           "Arduino: Konvertere en dato til en streng"
 simple_title:         "Konvertere en dato til en streng"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Å konvertere datoer til tekst er en viktig del av programmering, spesielt når man jobber med brukerinteraksjon og data lagring. Det er den eneste måten å vise datoer på en forståelig måte for brukeren og gjøre dem lesbare for datalagring og behandling. Det er derfor en essensiell ferdighet for alle Javascript-programmerere å kunne konvertere datoer til strenger.
+## Hva & Hvorfor?
 
-## Slik gjør du det:
+Å konvertere en dato til en streng innebærer å endre datatypen fra Date til String. Programmerere gjør dette for å forenkle datohåndtering og for å fremstille datoer på en lesbar og forståelig måte for brukere.
+
+## Hvordan:
+
+Her er et utvalg JavaScript-kodesekvenser som illustrerer prosessen:
+
 ```javascript
-// Eksempel på hvordan konvertere en dato til en streng
 let date = new Date();
-// Bruker built-in toLocaleString() metode
-let stringDate = date.toLocaleString();
+let stringDate = date.toString();
 console.log(stringDate);
-// Output: 07.01.2021, 14:38:50
-```
-```javascript
-// Eksempel på hvordan formatere en dato i et spesifikt språk
-let date = new Date();
-// Bruker built-in toLocaleString() metode med spesifisering av språk og format
-let stringDate = date.toLocaleString('no-NB', {dateStyle: 'full', timeStyle: 'short'});
-console.log(stringDate);
-// Output: torsdag 7. januar 2021 kl. 14:40
 ```
 
-## Dypdykk:
-Konvertering av datoer til tekst har vært en nødvendighet siden de tidligste programmeringsspråkene. I Javascript har vi flere innebygde metoder for å håndtere datoer, inkludert toLocaleString(), som gir deg muligheten til å formatere datoer basert på ulike språk og formater. Alternativt kan du bruke biblioteker som Moment.js for mer avansert og fleksibel håndtering av datoer.
+Dette vil utløse en utskrift som ligner dette:
 
-Når det gjelder implementeringen av konvertering av datoer til strenger, er det viktig å være klar over at disse metodene gir deg muligheten til å formatere datoer, men de endrer ikke selve datatypen. Dette betyr at datoen fortsatt kan behandles som en dato i koden, men vil vises på en mer forståelig måte for brukerne.
+```javascript
+'Fri Oct 15 2021 12:00:00 GMT+0200 (Central European Summer Time)'
+```
 
-## Se også:
-- [Moment.js dokumentasjon](https://momentjs.com/docs/)
-- [JS Date Objects](https://www.w3schools.com/js/js_dates.asp)
+## Dypdykk
+
+Historisk sett har konvertering av dato til streng vært en del av programmeringsspråkene lenge. JavaScript, introdusert i 1995, inkluderte funksjonen i dens Date objekt.
+
+Det finnes flere metoder for å konvertere en dato til en streng i JavaScript, inkludert toLocaleString(), toISOString() og toDateString(). Hver metode presenterer datoen på forskjellige formater og kan være mer passende avhengig av den spesifikke bruken.
+
+For eksempel, vil toLocaleString() konvertere datoen til en streng som er formatert på språket i den nåværende locale - meget nyttig for internasjonale applikasjoner.
+
+```javascript
+let date = new Date();
+let stringDate = date.toLocaleString('no-NO');
+console.log(stringDate);
+```
+
+Eksempelutskrift:
+
+```javascript
+'15.10.2021, 12:00:00' 
+```
+
+Dato til streng konvertering skjer i bakgrunnen ved bruk av JavaScripts innebygde method ToString(), som returnerer en streng som representerer det spesifiserte Date objektet.
+
+## Se Også
+
+For mer detaljer på datohåndtering i JavaScript, se følgende kilder:
+
+1. Mozilla Developer Network's guide til Date objektet: https://developer.mozilla.org/no/docs/Web/JavaScript/Reference/Global_Objects/Date
+2. JavaScript Date referanse på W3schools: https://www.w3schools.com/js/js_date_methods.asp

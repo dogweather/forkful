@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Kotlin recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,44 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Starting a New Kotlin Project Simplified
+
 ## What & Why?
 
-Starting a new project in programming is the process of creating a brand new software application from scratch. This means writing the code, designing the user interface, and implementing any necessary functionality. Programmers start new projects for a variety of reasons, such as creating a new product, improving existing software, or simply learning a new technology.
+Initiating a new project is setting up the groundwork of your coding process. Programmers do it to jump-start their development, streamline workflow, and manage components efficiently.
 
 ## How to:
 
-To start a new Kotlin project, follow these steps:
+Let's initiate a new Kotlin project. Boot up IntelliJ IDEA and follow the steps:
 
-1. Install the Kotlin programming language on your computer by downloading it from the official website or using a package manager.
-2. Open your preferred code editor or IDE.
-3. Create a new Kotlin project by selecting the appropriate option from the menu or by running a command in the terminal.
-4. Write your code within the `main` function, which serves as the entry point for your application.
-5. To run your code, either use the `Run` button in your IDE or compile and execute it using the terminal or command line.
+`File -> New -> Project -> Kotlin -> JVM | IDEA -> Next -> Finish `
 
-Example code:
+For a basic HelloWorld application, use the following coding snippet:
 
 ```Kotlin
 fun main() {
-  println("Hello, World!")
+    println("Hello World!")
 }
 ```
 
-Expected output:
+Run the application. You should see the following output:
 
+```Kotlin
+Hello World!
 ```
-Hello, World!
-```
 
-## Deep Dive:
+The `fun main()` function is the entry point of a Kotlin application. The `println()` function prints the provided string to the console.
 
-Starting a new project is a crucial step in the software development process. It allows programmers to build new solutions and bring their ideas to life. In the past, creating a new software application required a lot of effort and time, as everything had to be built from scratch. However, with the rise of modern programming languages like Kotlin, starting a new project has become much easier and more efficient.
+## Deep Dive
 
-Alternative ways of starting a new project include using templates or frameworks to jumpstart the development process, or using a different programming language altogether. However, Kotlin offers benefits such as concise and readable syntax, strong type checking, and interoperability with Java, making it a popular choice among programmers.
+Starting a new project isn't exclusive to Kotlin or even modern languages. It's been a standard practice ever since the first procedural languages came into existence.
 
-When starting a new Kotlin project, programmers also have the option to use either the official command-line compiler or an IDE like IntelliJ or Android Studio. These tools provide a comprehensive development environment and offer additional features such as code completion, debugging, and code refactoring.
+To keep things light, IDEs (Integrated Development Environments) like IntelliJ, Eclipse, or NetBeans provide options to create new projects. And if you love the terminal, CLI (Command Line Interface) tools like **gradle** or **maven** have got your back.
 
-## See Also:
+Certain specifics vary depending on the project type. For instance, while starting a new project in Kotlin, you'll notice a `src` folder with `Main.kt` file. It's a convention rather than a compulsory rule, and it stands for "Source", the primary directory for your Kotlin source files. `Main.kt` is the default main file where the execution of the Kotlin project begins.
 
-- [Official Kotlin website](https://kotlinlang.org/) for installation instructions and documentation.
-- [Kotlin on GitHub](https://github.com/JetBrains/kotlin) for the source code and community support.
-- [Kotlin Koans](https://play.kotlinlang.org/koans/overview) for interactive learning and practicing Kotlin concepts.
+## See Also
+
+Further Reading and Extendable Knowledge:
+
+1. [Kotlin Official Documentation](https://kotlinlang.org/docs/home.html)
+2. [Starting New Project - IntelliJ IDEA](https://www.jetbrains.com/help/idea/creating-and-running-your-first-kotlin-application.html)
+3. [Kotlin for Java Developers - Coursera Course](https://www.coursera.org/learn/kotlin-for-java-developers)
+4. [Kotlin Programming - Big Nerd Ranch Guide](https://www.bignerdranch.com/books/kotlin-programming-the-big-nerd-ranch-guide/)

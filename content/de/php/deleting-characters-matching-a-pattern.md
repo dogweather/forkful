@@ -1,7 +1,7 @@
 ---
-title:                "Löschen von Zeichen mit Übereinstimmungsmuster"
-html_title:           "PHP: Löschen von Zeichen mit Übereinstimmungsmuster"
-simple_title:         "Löschen von Zeichen mit Übereinstimmungsmuster"
+title:                "Zeichen löschen, die einem Muster entsprechen"
+html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -12,41 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Entfernen von Zeichen, die einem bestimmten Muster entsprechen, ist eine gängige Aufgabe in der Programmierung. Es ermöglicht Programmierern, unerwünschte Zeichen in einer Zeichenkette zu entfernen und diese zu bereinigen.
+Das Löschen von Zeichen, die mit einem Muster übereinstimmen, ist ein Kernaufgabe in der Textverarbeitung. Hierbei entfernt der Programmierer nützliche Daten aus großen Textmengen oder bereinigt Eingabe-Strings, die vom Nutzer kommen könnten.
 
-Diese Aufgabe ist besonders nützlich, um Eingaben von Benutzern zu validieren oder um Daten zu filtern, bevor sie in eine Datenbank gespeichert werden. Programmierer nutzen das Löschen von Zeichen, die einem Muster entsprechen, um sicherzustellen, dass die Daten in einem bestimmten Format vorliegen und ungewollte Zeichen entfernt wurden.
+## Wie zu:
 
-## Wie man es macht:
+Wir können die eingebaute PHP-Funktion `preg_replace()` verwenden, um Zeichenfolgen zu löschen, die einem bestimmten Muster entsprechen.
 
 ```PHP
-// Beispiel einer Zeichenkette mit ungewollten Zeichen
-$string = "08-01-2021!!";
-
-// Löscht alle nicht-numerischen Zeichen aus der Zeichenkette
-echo preg_replace("/[^0-9]/", "", $string);
-
-// Ausgabe: 08012021
+<?php
+$eingabe = "Das ist 1 Beispiel!";
+$sauber = preg_replace("/[^A-Za-zäöüÄÖÜß ]/", "", $eingabe);
+echo $sauber;
+// Ausgabe: "Das ist Beispiel!"
+?>
 ```
 
-In diesem Beispiel wird die Funktion `preg_replace()` verwendet, um alle Zeichen, die nicht dem numerischen Muster entsprechen, aus der Zeichenkette zu entfernen. Dies ermöglicht es uns, eine formatierte Datumseingabe zu erhalten, die sich leicht in einer Datenbank speichern lässt.
+In diesem Fall entfernt `preg_replace()` alle Zeichen, die keine Buchstaben (einschließlich Umlaute) oder Leerraum sind.
 
-Es ist auch möglich, ein bestimmtes Muster anzugeben, dem die Zeichen entsprechen müssen, um entfernt zu werden. Die Verwendung von regulären Ausdrücken gibt Programmierern die Flexibilität, das Löschen von Zeichen an ihre Bedürfnisse anzupassen.
+## Tiefen-Tauchgang
 
-## Tiefergehende Informationen:
+Ursprünglich entwickelten Computerwissenschaftler reguläre Ausdrücke (RegEx), um Muster in Texten zu erkennen und zu manipulieren. Die `preg_replace()`-Funktion in PHP ist nur eine von vielen Möglichkeiten, reguläre Ausdrücke zu verwenden.
 
-### Historischer Kontext:
+Alternativ könnten Sie auch `str_replace()` oder `strtr()` verwenden, aber diese Funktionen erlauben nur einfache ersetzen und nicht die Leistungsfähigkeit von Mustern wie `preg_replace()`.
 
-Das Entfernen von Zeichen, die einem Muster entsprechen, ist eine Technik, die in der Programmierung schon seit langem verwendet wird. Sie ist eng mit der Verwendung von regulären Ausdrücken verbunden, die bereits in den 1950er Jahren entwickelt wurden. Diese Werkzeuge haben es Programmierern ermöglicht, komplexere Such- und Ersetzungsaufgaben durchzuführen, einschließlich des Löschens von Zeichen.
+Die genaue Funktionsweise von `preg_replace()` hängt vom verwendeten Muster ab. Die Funktion verwendet das PCRE (Perl Compatible Regular Expressions)-Format und es gibt zahlreiche Optionen und Variationen, mit denen Sie verschiedene Arten von Mustern definieren können.
 
-### Alternativen:
+## Siehe auch
 
-Obwohl die Verwendung von regulären Ausdrücken die gängigste Methode zum Löschen von Zeichen ist, gibt es auch andere Möglichkeiten, diese Aufgabe zu erledigen. Zum Beispiel können Programmierer spezifische Funktionen in ihrer Programmiersprache nutzen, um Zeichen zu entfernen, anstatt reguläre Ausdrücke zu verwenden. Jede Methode hat ihre Vor- und Nachteile und es liegt an dem Programmierer, die beste Lösung für seine spezifische Situation zu wählen.
+Um mehr über die `preg_replace()`-Funktion zu erfahren, besuchen Sie die offizielle PHP-Dokumentation: [https://www.php.net/manual/de/function.preg-replace.php](https://www.php.net/manual/de/function.preg-replace.php)
 
-### Implementierungsdetails:
+Um mehr über die Geschichte und Theorie von regulären Ausdrücken zu erfahren, siehe [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression).
 
-Die Implementierung des Löschen von Zeichen, die einem Muster entsprechen, kann je nach Programmiersprache und verwendeter Funktion variieren. Es ist wichtig, genau zu verstehen, welche Zeichen entfernt werden und wie das Muster interpretiert wird, um unerwünschte Ergebnisse zu vermeiden. Eine sorgfältige Testung der Funktion vor dem Einsatz in einer Produktionsumgebung ist daher ratsam.
-
-## Siehe auch:
-
-- [PHP Dokumentation zur Funktion preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
-- [Einführung in reguläre Ausdrücke in der Programmierung](https://www.regular-expressions.info/tutorial.html)
+Um den Unterschied zwischen `preg_replace()`, `str_replace()` und `strtr()` zu sehen, besuchen Sie [https://www.php.net/manual/de/function.str-replace.php](https://www.php.net/manual/de/function.str-replace.php) und [https://www.php.net/manual/de/function.strtr.php](https://www.php.net/manual/de/function.strtr.php).

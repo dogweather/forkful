@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "TypeScript recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why Downloading Web Pages is Essential for Programmers
-As a programmer, you may find yourself needing to extract data from a website or automate certain tasks. In order to do this, you will likely need to download a web page. This simply means retrieving the HTML code of a specific web page and saving it to your local computer. It may seem like a small task, but it is a crucial part of many programming tasks.
+## What & Why?
+Downloading a webpage means fetching its entire HTML content. This is useful when you want to process data from the page, automate actions on the site, or even cache a pristine copy.
 
-## How to Download a Web Page in TypeScript
-
-Downloading a web page in TypeScript is a relatively simple task. First, you will need to install a Node.js package called "request-promise-native" using the following command in your terminal:
-
-```TypeScript
-npm install request-promise-native
-```
-
-Next, you can use the following code snippet to download a web page and save it to a file:
+## How to:
+For TypeScript, we can use modules like `axios` (a HTTP client) and `cheerio` (a back-end jQuery version). Here's the how-to:
 
 ```TypeScript
-const rp = require('request-promise-native');
-const fs = require('fs');
+import axios from "axios";
+import * as cheerio from "cheerio";
 
-rp('https://www.example.com')
-  .then((html) => {
-    fs.writeFile('example.html', html, (err) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log('Web page downloaded successfully!');
-      }
-    });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+const downloadWebPageContent = async (url: string) => {
+    const { data: htmlContent } = await axios.get(url);
+    return cheerio.load(htmlContent);
+};
+
+// Usage
+(async () => {
+    const $ = await downloadWebPageContent("https://example.com");
+    console.log(`Title of the page: ${$("head > title").text()}`);
+})();
 ```
 
-This code uses the "request-promise-native" package to make a HTTP request to the specified URL and returns the HTML code as a string. Then, the code uses the "fs" package to write the HTML code to a file named "example.html". If there are no errors, the console will log a success message.
+Running this fetches the HTML from Example.com and logs its title.
 
 ## Deep Dive
-Downloading web pages has been a common practice in web development for many years. In the early days of the web, web scraping was used to extract data from websites, often for research or analysis purposes. Nowadays, web scraping is still a useful tool for data extraction, but it is also used for more practical purposes such as automating tasks and performing market research.
+Historically, downloading a webpage meant using low-level network libraries (like sockets) to manually send HTTP requests and parse responses. It's much easier today with HTTP clients like `axios`.
 
-Although the code snippet above is written in TypeScript, there are many other programming languages and tools that can be used for downloading web pages. Some popular alternatives include Python, Java, and web scraping libraries like BeautifulSoup and Selenium.
+You may also see `node-fetch`, which mirrors the Fetch API in the browser but with additional Node.js functionality. Still, `axios` is often preferred due to more comprehensible error handling.
 
-The implementation details for downloading web pages may vary depending on the programming language and tools used, but the basic steps are the same. The code needs to make an HTTP request to the desired URL and then save the response as a file or use it for further processing.
+Remember - the method of download depends on how the webpage is rendered. While our example handles static pages, dynamic JS-rendered pages might require techniques like headless browsing (Puppeteer, anyone?).
 
 ## See Also
-- [Node.js request-promise-native](https://www.npmjs.com/package/request-promise-native)
-- [Web scraping with Python](https://realpython.com/python-web-scraping-practical-introduction/)
-- [Java HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
-- [BeautifulSoup web scraping library](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Selenium web automation tool](https://www.selenium.dev/)
+For a deeper understanding, check these:
+
+- Axios (https://github.com/axios/axios)
+- Cheerio (https://github.com/cheeriojs/cheerio)
+- Fetch API (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- Puppeteer (https://github.com/puppeteer/puppeteer)

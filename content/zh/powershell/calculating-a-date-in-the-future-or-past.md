@@ -1,7 +1,7 @@
 ---
-title:                "在计算机编程中，“计算未来或过去的日期”。"
-html_title:           "PowerShell: 在计算机编程中，“计算未来或过去的日期”。"
-simple_title:         "在计算机编程中，“计算未来或过去的日期”。"
+title:                "计算未来或过去的日期"
+html_title:           "PowerShell: 计算未来或过去的日期"
+simple_title:         "计算未来或过去的日期"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,59 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
+## 什么以及为什么？
+计算未来或过去的日期，这是在你确定一个日期之后或之前的特定周期的程序。这对于编程来说，非常重要，当你需要处理比如说追踪项目到期日期或日志文件的创建和修改日期等。
 
-计算未来或过去日期是指用编程语言计算某个时间的具体日期。程序员经常会使用这个功能来轻松处理日期相关的任务，例如计算未来事件的日期或者计算某个事件已经过去的天数。
-
-## 如何：
-
-### 计算未来日期：
-
-`PowerShell AddDays`命令可以让我们根据当前日期计算若干天后的日期。下面是一个简单的例子：
+## 如何操作：
+以下是 PowerShell代码以及示例的一部分，我们会使用到 'AddDays'这个函数来计算未来的日期。同样的，我们也会用到这个函数来计算过去的日期，只不过在参数中我们使用负数。
 
 ```PowerShell
-$date = Get-Date
-$date.AddDays(3)
+# 计算未来的日期
+$futureDate = (Get-Date).AddDays(10)
+Write-Output "未来十天后的日期是: $futureDate"
+
+# 计算过去的日期
+$pastDate = (Get-Date).AddDays(-10)
+Write-Output "过去十天前的日期是: $pastDate"
 ```
 
-输出：
-
+上述代码的输出为：
 ```PowerShell
-星期五, 六月 21, 2019 10:26:46 AM
+未来十天后的日期是: 11/20/2022 2:41:59 PM
+过去十天前的日期是: 11/10/2022 2:41:59 PM
 ```
 
-### 计算过去日期：
+## 深入探讨：
+计算未来或过去的日期是单位时间运算的一部分，可以追溯到初级编程。 在类似的环境中，我们可以使用'.AddHours', '.AddMinutes', 或 '.AddSeconds' 和其他相关函数。
 
-`PowerShell Subtract` 命令可以用来计算当前日期之前的日期。下面是一个例子：
+计算未来或过去的日期在各个编程语言中都有其等价的函数。比如说，在 Python 中，你可以使用 datetime 和 timedelta 函数；在 Java 中，你可以使用 Calendar 和 SimpleDateFormate 类。
 
+PowerShell 中 'AddDays' 函数的实现方式如下，其中参数表示添加到当前日期的天数：
 ```PowerShell
-$date = Get-Date
-$date.Subtract([TimeSpan]::FromDays(15))
+public DateTime AddDays(double value);
 ```
 
-输出：
-
-```PowerShell
-星期二, 六月 04, 2019 10:29:10 AM
-```
-
-## 深入了解：
-
-### 历史背景：
-
-在过去，人们使用手动计算来算出未来或过去的日期。但是随着计算机的出现，编程语言的发展，程序员可以通过简单的代码来实现这个功能。
-
-### 替代方法：
-
-除了使用PowerShell命令，程序员也可以使用其他编程语言来计算日期，例如Python的datetime库、C#的DateTime类等。
-
-### 实现细节：
-
-PowerShell的Get-Date命令可以获取当前日期，AddDays命令和Subtract命令可以用来进行日期的计算。需要注意的是，日期计算也受系统时区和语言设置的影响。
-
-## 参考链接：
-
-- [Get-Date Command (Microsoft Docs)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date)
-- [Math in PowerShell (Microsoft Docs)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators?view=powershell-6)
-- [Python datetime library (Python Docs)](https://docs.python.org/3/library/datetime.html)
-- [C# DateTime Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?redirectedfrom=MSDN&view=netframework-4.8)
+## 另请参阅：
+以下是一些相关参考链接:
+1. [Working with Dates and Times in PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-datetime?view=powershell-7.1)
+2. [PowerShell Basic Cheat Sheet](https://www.itprotoday.com/powershell/powershell-basic-cheat-sheet)
+3. [Date and Time Arithmetic with PowerShell](https://learn-powershell.net/2010/11/08/date-and-time-arithmetic-with-powershell/)

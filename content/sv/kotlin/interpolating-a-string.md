@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av en sträng"
-html_title:           "Kotlin: Interpolering av en sträng"
-simple_title:         "Interpolering av en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,43 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-När vi pratar om att interpolera en sträng i Kotlin, så menar vi att kombinera en fast text med variabler eller uttryck för att generera en dynamisk sträng. Detta kan vara användbart när vi till exempel vill skapa en text som innehåller specifika användardata eller beräkningar.
-
-Interpolering av strängar är ett vanligt sätt för programmerare att skapa dynamiska och anpassade strängar baserat på variabler och data, istället för att hårdkoda dem. Det gör koden mer flexibel och läsbar på ett intuitivt sätt.
+Stränginterpolation är en process där vi ersätter variabler inuti en sträng med deras faktiska värden. Det hjälper programmerare att skapa mer läsbar och underhållbar kod.
 
 ## Så här gör du:
-Enkel interpolation i Kotlin görs genom att lägga till en "$" tecken följt av en variabel eller ett uttryck inom en sträng. Det går också att använda "{}" för att ange ett uttryck inom en sträng.
+I Kotlin kan du utföra stränginterpolation genom att infoga variabler direkt i strängen med hjälp av "$" tecknet. Nedan är ett kodexempel samt dess utdata.
 
-Exempel: 
-
-```Kotlin
-val name = "Jenny"
-val profession = "programmerare"
-
-println("Hej, mitt namn är $name och jag är en $profession.")
+```Kotlin 
+fun main() {
+    val name = "Sven"
+    val age = 22
+    println("Hej $name, du är $age år gammal.")
+}
 ```
+När du kör den här koden blir utskriften
 
-Output: "Hej, mitt namn är Jenny och jag är en programmerare."
-
-Ibland behöver vi också formatera utdata, till exempel för att visa ett decimaltal med enbart två decimaler. Detta kan enkelt åstadkommas med hjälp av stränginterpolation.
-
-Exempel:
-
-```Kotlin
-val pi = 3.14159265359
-
-println("Pi är ca ${"%.2f".format(pi)}")
+``` 
+"Hej Sven, du är 22 år gammal."
 ```
+## Djupdykning
+Stränginterpolation har sitt ursprung i Unix-skal och Perl. Alternativen till stränginterpolation inkluderar att använda funktionen `format()` eller konkatenering.
 
-Output: "Pi är ca 3.14"
+I Kotlin ersätts interpolerade strängar direkt av kompilatorn med deras motsvarande `StringBuilder`-operationer. Detta leder till att prestandan för kod som använder stränginterpolation och kod som använder `StringBuilder` är i princip lika.
 
-## Djup Dykning:
-Interpolering av strängar är inte unikt för Kotlin, utan har funnits i andra programmeringsspråk som Ruby och Python sedan länge. I Java, som Kotlin är baserat på, har det länge varit möjligt att interpolera strängar med hjälp av tredje parts bibliotek.
-
-En alternativ metod för att skapa dynamiska strängar är att använda en StringBuilder. Detta är dock betydligt mer omständligt och mindre läsbart jämfört med interpolering.
-
-När det gäller implementation i Kotlin, så konverteras stränginterpolation av kompilatorn till StringBuilder-kod under huven. Detta innebär att det inte finns någon prestandaförlust när man använder det.
-
-## Se även:
-- [Kotlin Language Reference - String Interpolation](https://kotlinlang.org/docs/reference/basic-types.html#string-interpolation)
-- [Java String.format() exempel](https://www.baeldung.com/java-string-format) för att forma utdata med hjälp av tredje parts bibliotek i Java.
+## Se även
+Här är några praktiska länkar till ytterligare läsning om stränginterpolation:
+1. Kotlin dokumentation om stränginterpolation: [https://kotlinlang.org/docs/idioms.html#string-interpolation](https://kotlinlang.org/docs/idioms.html#string-interpolation)
+2. StackOverflow-tråd om stränginterpolation: [https://stackoverflow.com/questions/42780000/kotlin-string-interpolation](https://stackoverflow.com/questions/42780000/kotlin-string-interpolation)

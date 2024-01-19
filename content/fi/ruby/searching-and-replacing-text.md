@@ -1,6 +1,6 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Ruby: Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,27 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+### Mikä & Miksi?
+Tekstin hakeminen ja korvaaminen on toiminto, jossa ohjelma etsii tietämme merkkijonon ja korvaa sen toisella. Ohjelmoijat käyttävät tätä ominaisuutta esimerkiksi virheiden korjaamiseen tai tiedon päivittämiseen ohjelmakoodeissa.
 
-Hakeminen ja korvaaminen tarkoittavat tekstissä esiintyvien tiettyjen merkkijonojen etsimistä ja niiden korvaamista toisilla merkkijonoilla. Ohjelmoijat tekevät tätä voidakseen tehokkaasti muokata ja päivittää suuria määriä dataa, esimerkiksi kooditiedostoja.
-
-## Näin teet sen:
-
+## Miten se tehdään:
+Rubyssa voimme käyttää `gsub`-metodia tekstin hakemiseen ja korvaamiseen. 
 ```Ruby
-teksti = "Tervetuloa Ruby:n ihmeelliseen maailmaan!"
-
-# Etsi sana "maailma" ja korvaa se sanalla "kieli"
-puts teksti.gsub("maailma", "kieli")
-
-# => Tervetuloa Ruby:n ihmeelliseen kieliin!
+teksti = "Tervetuloa Helsingin satamaan."
+korvattu_teksti = teksti.gsub("satamaan", "korvaava_sana")
+puts korvattu_teksti
 ```
+Tulostettu tieto:
+```Ruby
+"Tervetuloa Helsingin korvaava_sana."
+```
+## Syvempi sukellus: 
+Tekstin hakeminen ja korvaaminen on ollut osa ohjelmointikieliä jo kauan, tarjoten yksinkertaisen tavan muuttaa tekstiä. Rubyssä, `gsub`-metodin lisäksi, on myös muita menetelmiä, kuten `tr` ja `tr!`. Jokaisella näistä metodeista on omat etunsa ja haittansa, ja ohjelmoijan on valittava sopivin menetelmä kuhunkin tilanteeseen. `gsub` on yleisin ja monipuolisin menetelmä, joka soveltuu useimpiin tilanteisiin.
 
-## Sukella syvemmälle:
-
-Hakeminen ja korvaaminen ovat olleen käytössä jo kauan ennen Ruby-ohjelmointikielen keksimistä. On olemassa myös muita tapoja suorittaa tämä toiminto, kuten käyttämällä säännöllisiä lausekkeita tai erikoistyökaluja, kuten sed ja awk. Rubyssa hakeminen ja korvaaminen tehdään ```gsub```-metodilla, joka toimii vastaavalla tavalla kuin sed.
-
-## Katso myös:
-
-- [Ruby String -dokumentaatio](https://ruby-doc.org/core-2.6.3/String.html)
-- [Artikkeli hakemisesta ja korvaamisesta Rubyssa](https://www.sitepoint.com/find-replace-words-in-ruby/)
-- [Perl Compatible Regular Expression](https://rubular.com/), työkalu säännöllisten lausekkeiden testaamiseen ja muokkaamiseen.
+## Katso myös: 
+Jos haluat syventää tietämystäsi Rubyn tekstin hakemisesta ja korvaamisesta, tässä on joitakin linkkejä, joista voi olla hyötyä:
+- [Rubyn virallinen dokumentaatio](https://ruby-doc.org/core-3.0.0/String.html#method-i-gsub)
+- [Stack Overflow](https://stackoverflow.com/questions/19445003/using-ruby-gsub-to-replace-a-string-from-an-array-of-strings)

@@ -1,7 +1,7 @@
 ---
-title:                "패턴과 일치하는 문자 삭제하기"
-html_title:           "Elm: 패턴과 일치하는 문자 삭제하기"
-simple_title:         "패턴과 일치하는 문자 삭제하기"
+title:                "패턴에 일치하는 문자 삭제"
+html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
-무엇은 패턴과 일치하는 문자를 삭제하는 것이며, 프로그래머들은 이 작업을 수행하는 이유는 코드의 유지보수와 가독성을 위해서입니다.
+## 무엇이며 왜 필요한가?
 
-## 방법:
-``` Elm
--- Example 1: 문자열에서 패턴과 일치하는 문자 삭제
-deleteCharsMatchingPattern : String -> String
-deleteCharsMatchingPattern string =
-    String.filter (\char -> not (String.contains "pattern" (String.fromChar char))) string
+문자열에서 특정 패턴에 일치하는 문자들을 제거하는 것은 마치 한 문서에서 특정 단어들을 빼내는 것과 같습니다. 시스템이 더 깔끔한 상태를 유지할 수 있으며, 사용자가 쉽게 데이터를 이해하고 조작할 수 있게 해 줌으로써 프로그래머들이 이것을 흔히 사용합니다.
 
--- 출력: "This is a sample string"
+## 어떻게 사용하는가:
+
+Elm에서는 String 모듈의 `replaceAll` 함수를 사용하여 특정 패턴에 일치하는 모든 문자들을 제거합니다.
+
+```Elm
+import String
+
+str : String
+str = "안녕하세요, Elm 프로그래밍을 배워봅시다"
+
+removePattern : String -> String -> String
+removePattern str pattern = 
+    String.replaceAll pattern "" str
+
+main =
+    removePattern str "안녕"
 ```
+위의 코드의 결과로 `"하세요, Elm 프로그래밍을 배워봅시다"`가 출력됩니다.
 
-``` Elm
--- Example 2: 리스트에서 패턴과 일치하는 항목 삭제
-deleteItemsMatchingPattern : List String -> List String
-deleteItemsMatchingPattern list =
-    List.filter (\item -> not (String.contains "pattern" item)) list
+## 깊이 들여다보기:
 
--- 출력: ["item1", "item2", "item3"]
-```
+문자열에서 특정 패턴을 제거하는 것은 Unix의 `sed` 장치에서 시작되었습니다. 이는 문자열 조작에 필요한 매우 강력한 도구로 간주되었습니다. 오늘날, 거의 모든 프로그래밍 언어에서는 이 기능의 변형을 구현하고 있습니다. Elm에서는 `replaceAll` 함수 제공하며, 이는 문자열 내 패턴을 특정 문자열로 교체하는 기능을 가지고 있습니다. 이 함수에 빈 문자열("")을 입력하면 원하는 패턴의 모든 인스턴스가 제거됩니다.
 
-## 깊게 알아보기:
-(1) 이 작업의 역사적 배경, (2) 대안, (3) 문자 매칭 패턴 삭제의 구현 세부 사항 등과 같은 추가 정보를 제공합니다.
+## 그 밖에 참고할 만한 자료:
 
-## 관련 자료:
-관련 자료를 제공하는 링크: [링크 1](https://example.com), [링크 2](https://example.com)
+[Elm 공식 문서: String 패키지](https://package.elm-lang.org/packages/elm/core/latest/String)
+
+[stackoverflow: 문자열에서 패턴 제거](https://stackoverflow.com/questions/25421366/how-to-remove-the-first-character-of-a-string)
+
+[Elm 기본 문자열 관련 함수들에 대한 설명](https://korhner.github.io/elm/cheat-sheets/elm-string/)

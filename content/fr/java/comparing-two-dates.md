@@ -1,7 +1,7 @@
 ---
-title:                "Comparaison de deux dates"
-html_title:           "Java: Comparaison de deux dates"
-simple_title:         "Comparaison de deux dates"
+title:                "Comparer deux dates"
+html_title:           "Clojure: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,35 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le comparer?
-
-Comparer deux dates en programmation consiste à vérifier si deux dates différentes sont avant, après ou égales l'une à l'autre. Les programmeurs le font souvent pour déterminer la chronologie entre deux événements ou pour calculer la durée entre deux dates.
+## Qu'est-ce que c'est & Pourquoi?
+Comparer deux dates permet de déterminer quelle date est antérieure, ultérieure ou si elles sont identiques. Les développeurs le font pour générer des rappels, trier des événements, calculer des délais, etc.
 
 ## Comment faire:
+En java, nous pouvons utiliser la méthode `compareTo()` de la classe `Date`. Voyez l'exemple suivant:
 
-Pour comparer deux dates en Java, vous pouvez utiliser la méthode ```compareTo()```. Cette méthode renvoie un entier négatif si la date appelante est antérieure à la date en paramètre, un entier positif si elle est postérieure, et zéro si les deux dates sont égales.
+```Java
+import java.util.Date;
+public class Main {
+  public static void main(String[] args) {
+    // Création de deux dates
+    Date date1 = new Date(2020, 01, 01);
+    Date date2 = new Date(2020, 01, 02);
 
-Exemple de code:
+    // Comparaison des deux dates
+    int result = date1.compareTo(date2);
+    
+    if (result > 0) {
+      System.out.println("date1 est postérieure à date2");
+    } else if (result < 0) {
+      System.out.println("date1 est antérieure à date2");
+    } else {
+      System.out.println("date1 est identique à date2");
+    }
+  }
+}
+```
+
+La sortie potentielle sera:
 
 ```
-LocalDate date1 = LocalDate.of(2020, 1, 1);
-LocalDate date2 = LocalDate.of(2021, 1, 1);
-
-int result = date1.compareTo(date2);
-
-System.out.println(result); // Output: -1
+date1 est antérieure à date2
 ```
-
-Dans cet exemple, la date1 est antérieure à la date2, donc la méthode ```compareTo()``` renvoie -1.
 
 ## Plongée en profondeur:
+Historiquement, la classe `Date` en Java a été dépréciée en faveur de `Calendar`, puis `GregorianCalendar` et actuellement `LocalDateTime`. 
 
-Historiquement, la comparaison de dates a été un défi pour les programmeurs car elle nécessitait souvent une manipulation complexe de valeurs numériques. Mais avec l'introduction du package ```java.time``` en Java 8, la comparaison de dates est devenue plus simple et plus précise.
+Il y a plusieurs façons de comparer deux dates. Outre `compareTo()`, nous pouvons utiliser `equals()` pour vérifier l'égalité, ou `before()` et `after()` pour vérifier si une date est antérieure ou postérieure.
 
-Alternativement, vous pouvez également utiliser la méthode ```isBefore()``` pour vérifier si une date est avant une autre, ou ```isAfter()``` pour vérifier si une date est après une autre. Ces méthodes renvoient un booléen (true ou false) au lieu d'un entier comme ```compareTo()```.
+Lors de la comparaison de deux dates à l'aide de `compareTo()`, cette fonction renvoie `0` si les dates sont égales, une valeur inférieure à `0` si la première date est antérieure à la deuxième et une valeur supérieure à `0` si la première date est postérieure à la deuxième.
 
-Il est important de noter que la comparaison de dates en Java se fait en comparant leur ordre chronologique et non leurs valeurs absolues. Par exemple, le 31 décembre 2020 est après le 1er janvier 2020, même si 31 est une valeur numérique inférieure à 1.
-
-## Voir aussi:
-
-Pour en savoir plus sur les méthodes de comparaison de dates en Java, vous pouvez consulter la documentation officielle de Java à ce sujet. Vous pouvez également trouver des exemples utiles et des astuces en ligne pour résoudre des problèmes courants liés à la comparaison de dates en programmation.
+## Voir Aussi:
+1. Documentation Oracle de `Date`: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
+2. Cours de programmation en Java: https://www.coursera.org/specializations/java-programming
+3. Tutoriels Java pour les débutant: https://www.w3schools.com/java/

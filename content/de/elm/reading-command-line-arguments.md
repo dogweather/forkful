@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Elm: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,38 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und warum machen wir es?
-Das Lesen von Befehlszeilenargumenten ist ein wichtiger Teil des Programmierens. Es ermöglicht uns, Informationen von der Kommandozeile zu erhalten und sie in unserem Code zu verwenden. Dadurch können wir interaktive Programme erstellen, die auf Benutzereingaben reagieren. 
+## Was & Warum?
 
-## Wie funktioniert es?
-In Elm können wir die Befehlszeilenargumente mit Hilfe der Funktion `Elm.Platform.worker` lesen. Diese Funktion erwartet eine Nachricht und gibt uns eine `Cmd` zurück. Wir können die Befehlszeilenargumente dann in unserer Nachricht verarbeiten und verwenden. Hier ist ein Beispielcode:
+Command Line Arguments (Kommandozeilenargumente) sind Informationen, die einem Programm beim Start übergeben werden. Sie sind besonders hilfreich, wenn wir den Ablauf eines Programms basierend auf diesen Eingaben steuern wollen.
 
+## Wie geht das:
+
+Elm erlaubt es uns nicht direkt, Kommandozeilenargumente zu lesen. Um diese Funktionalität zu erreichen, müssen wir eine JavaScript-Brücke verwenden, die als Port bezeichnet wird. Unten ist ein einfaches Beispiel dafür:
+
+```Elm
+port module Main exposing (..)
+
+port toJavascript : String -> Cmd msg
+port fromJavascript : (String -> msg) -> Sub msg
+
+type Msg = NewMessage String 
+
+main =
+    programWithFlags
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = \_ -> Html.none
+        }
+
+init : String -> ( (), Cmd Msg )
+init flags =
+    ( (), fromJavascript NewMessage )
+
+update : Msg -> model -> ( model, Cmd Msg )
+update msg model =
+    case msg of
+        NewMessage newMessage ->
+            ...
 ```
-Elm.Platform.worker
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    }
-```
 
-Dieser Code liest die Befehlszeilenargumente und ruft dann die Funktion `update` auf, um die Nachricht zu verarbeiten.
+## Vertiefung:
 
-Das folgende Beispiel zeigt, wie wir die Befehlszeilenargumente in unserer `init` Funktion verarbeiten können:
+Elm nutzt eine reine, funktionale Sprache und erlaubt keine Seiteneffekte - deshalb kann es nicht direkt auf die Kommandozeile zugreifen. Stattdessen verwenden wir Ports, um mit JavaScript zu kommunizieren. Historisch gesehen sind Kommandozeilenargumente seit den frühen Tagen der Programmierung vorhanden, sie bieten eine einfache Art, die Ausführung eines Programms zu steuern.
 
-```
-init : () -> ( Model, Cmd Msg )
-init _ =
-    ( Model, Elm.Cmd.none )
-```
+Ein alternativer Ansatz wäre, die benötigten Daten irgendwie in die Umgebung zu laden, bevor Elm startet. Denn was Elm gut kann, ist der Umgang mit User-Inputs in einer Web-Umgebung.
 
-In diesem Beispiel haben wir eine leere Nachricht an die Funktion übergeben (`_`), da wir die Befehlszeilenargumente nicht verwenden wollen. Die Funktion `init` gibt dann den gewünschten Zustand `Model` und eine leere `Cmd` zurück.
+Es ist wichtig zu verstehen, dass Ports nicht in `elm reactor` funktionieren. Sie erfordern eine HTML-Hülle, die das Elm-Programm hält. Das macht sie für Projekte geeignet, die bereits eine gemischte Codebasis haben oder wo eine reine Elm-Lösung nicht ausreicht.
 
-## Tiefergehende Einblicke
-Das Lesen von Befehlszeilenargumenten ist eine sehr nützliche Fähigkeit in der Programmierung. Es gibt jedoch auch alternative Methoden, wie z.B. die Verwendung von Umgebungsvariablen oder direkter Benutzereingaben. 
+## Siehe auch:
 
-Die Funktion `Elm.Platform.worker` wurde als Teil des Elm-Debugger-Architektur eingeführt, um die Debugging-Fähigkeiten von Elm zu verbessern. Sie wird auch von anderen Elm-Paketen verwendet, wie zum Beispiel dem Paket `elm-explorations/benchmark`.
+- Elm Ports Dokumentation: https://guide.elm-lang.org/interop/ports.html
+- Elm Command Line Arguments Diskussion auf Discourse: https://discourse.elm-lang.org/t/command-line-arguments/6387
+- Elm-Programm mit Flags: https://package.elm-lang.org/packages/elm/browser/latest/Browser-Application#programWithFlags 
 
-## Siehe auch
-- [Elm-Dokumentation zu Cmd](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker)
-- [Wie man Befehlszeilenargumente in C++ liest](https://stackoverflow.com/questions/3024197/how-do-i-read-command-line-arguments-in-c)
-- [Alternative Methoden zum Lesen von Befehlszeilenargumenten in Java](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#getProperties--)
+Es gibt keine "Fazit"-Sektion in diesem Artikel. Ihr solltet nun eine Vorstellung davon haben, wie man Kommandozeilenargumente in Elm handhabt.

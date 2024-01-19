@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "Bash: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Usando expresiones regulares"
+html_title:           "Go: Usando expresiones regulares"
+simple_title:         "Usando expresiones regulares"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,26 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+# Exprésate Regularmente: Todo sobre Bash y las Expresiones Regulares
 
-Una expresión regular (o "regex") en Bash es una cadena de caracteres que define un patrón de búsqueda. Los programadores las utilizan para buscar y manipular texto de manera eficiente y precisa.
+## ¿Qué & Por qué?
 
-## ¿Cómo hacerlo?
+Las expresiones regulares son patrones usados para encontrar y manipular texto. Nos simplifican la vida a los programadores permitiendo manejar datos con patrones precisos y complejos.
 
-Para utilizar expresiones regulares en Bash, debes usar el comando `grep` seguido del patrón a buscar y el archivo en el que deseas buscar. Por ejemplo, si quieres buscar todas las líneas que contienen la palabra "hola" en un archivo llamado "ejemplo.txt", puedes usar el siguiente comando:
+## Cómo hacerlo:
+
+Vamos a usar `grep`, la herramienta más usada con las expresiones regulares en Bash. Aquí unos ejemplos:
 
 ```Bash
-grep "hola" ejemplo.txt
+# Busca el patrón "Hola" en un archivo
+grep "Hola" archivo.txt
+
+# Busca líneas que empiezan por "Hola"
+grep "^Hola" archivo.txt
+
+# Busca líneas que terminan en "Adios"
+grep "Adios$" archivo.txt
 ```
 
-Esto imprimirá todas las líneas que contienen la palabra "hola" en el archivo. También puedes utilizar expresiones regulares para realizar búsquedas más avanzadas, como buscar palabras que comiencen con una letra en particular o que contengan un cierto número de caracteres.
+La salida será todas las líneas que cumplan con los patrones de búsqueda.
 
-## Profundizando
+## Excava más fondo
 
-Las expresiones regulares tienen su origen en la teoría de lenguajes formales y fueron desarrolladas por Stephen Kleene en la década de 1950. Aunque existen alternativas para manipular texto en Bash, como el comando `sed`, las expresiones regulares son la forma más común y eficiente de buscar y manipular texto. Para una implementación más detallada de expresiones regulares en Bash, puedes consultar la documentación oficial de GNU.
+Las expresiones regulares provienen de la teoría matemática de autómatas en los años 50. Su implementación en Bash es típicamente "POSIX básico" o "POSIX extendido". 
+
+Existen opciones alternativas como Perl y Python que ofrecen expresiones regulares más potentes y versátiles. O también puedes usar `awk` y `sed` en Bash.
+
+Recuerda que las expresiones regulares en Bash son de comparación lineal. Esto significa que leen el archivo línea por línea. Si tu archivo es grande, esto puede terminar consumiendo mucho tiempo y memoria.
 
 ## Ver también
 
-- [Documentación oficial de GNU sobre expresiones regulares en Bash](https://www.gnu.org/software/grep/manual/grep.html#Regular-Expressions)
-- [Tutorial de expresiones regulares en Bash en codecademy](https://www.codecademy.com/learn/learn-the-command-line/modules/learn-the-command-line-bash/cheatsheet)
-- [Explicación detallada de expresiones regulares en Bash en FreeCodeCamp](https://www.freecodecamp.org/news/bash-regular-expressions/)
+Aquí algunos recursos adicionales que te podrían ser útiles:
+
+- Más sobre `grep`: https://www.gnu.org/software/grep/manual/grep.html
+- Aprende más sobre expresiones regulares: https://www.regular-expressions.info/
+- Una útil herramienta para probar tus expresiones regulares: https://regexr.com/  
+
+Y eso es todo, mis amigos programadores. Espero que esta guía desde el mundo del bash os ayude en vuestra aventura con las expresiones regulares!

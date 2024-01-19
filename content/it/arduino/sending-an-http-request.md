@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "Arduino: Inviare una richiesta http"
+html_title:           "C++: Inviare una richiesta http"
 simple_title:         "Inviare una richiesta http"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,75 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## Cos'è e perché?
 
-In Arduino, il termine "HTTP request" si riferisce all'azione di inviare una richiesta ad un server web per ottenere informazioni o eseguire un'azione. I programmatori spesso utilizzano le HTTP request per comunicare con altri servizi o per ottenere informazioni da fonti esterne.
+Inviare una richiesta HTTP significa chiedere al server di trasmettere dati da un'ubicazione specifica. Questo consente ai programmatori di interagire con server Web, recuperare dati da vari servizi online e costruire applicazioni IoT (Internet delle cose) dinamiche.
 
 ## Come fare:
 
-Ecco un esempio di codice per inviare una HTTP request in Arduino:
+Ecco un esempio di come inviare una richiesta HTTP utilizzando il modulo ESP8266 con Arduino.
 
 ```Arduino
-#include <WiFiClient.h>
-int httpPort = 80; // specificare la porta del server web
-char server[] = "www.example.com"; // specificare l'indirizzo del server
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+
+const char* ssid = "your_SSID";
+const char* password =  "your_PASSWORD";
 
 void setup() {
-  Serial.begin(9600); // inizializza la comunicazione seriale
-  WiFi.begin("", ""); // connettersi alla rete WiFi
-  while (WiFi.status() != WL_CONNECTED) { // attendi la connessione WiFi
-    delay(500);
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting...");
   }
-  Serial.println("Connesso alla rete WiFi!");
 }
 
 void loop() {
-  WiFiClient client; // crea un nuovo client WiFi
-  Serial.print("Connettendosi al server: ");
-  Serial.println(server);
-
-  if (client.connect(server, httpPort)) { // connetti il client al server
-    Serial.println("Connessione riuscita!");
-    client.println("GET / HTTP/1.1"); // invia la richiesta al server
-    client.println(); // fine della richiesta
-  } else {
-    Serial.println("Connessione fallita.");
-  }
-
-  while (client.connected()) { // leggi la risposta del server
-    if (client.available()) {
-      char c = client.read();
-      Serial.print(c);
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    
+    http.begin("http://api.openweathermap.org/data/2.5/weather?q=Rome,it&appid=your_api_key");
+    int httpCode = http.GET();
+    
+    if (httpCode > 0) {
+        String payload = http.getString();
+        Serial.println(payload);
     }
+
+    http.end();
   }
 
-  Serial.println("Fine della risposta del server.");
-  client.stop(); // chiudi la connessione
-  delay(30000); // attendi 30 secondi prima di inviare un'altra richiesta
+  delay(30000);
 }
 ```
 
-Esempio di output:
+Ecco come appare l'output:
 ```
-Connesso alla rete WiFi!
-Connettendosi al server: www.example.com
-Connessione riuscita!
-HTTP/1.1 200 OK
-Server: Apache
-Content-Type: text/html; charset=UTF-8
-Date: Mon, 12 Apr 2021 00:00:00 GMT
-Connection: close
-Content-Length: 50
-
-<html><body><h1>Benvenuti su www.example.com!</h1></body></html>
-Fine della risposta del server.
+{
+  "coord": {
+    "lon": 12.4839,
+    "lat": 41.8919
+  },
+  "weather": [{
+    "id": 801,
+    "main": "Clouds",
+    "description": "few clouds",
+    "icon": "02d"
+  }],
+  ...
+}
 ```
 
 ## Approfondimenti:
 
-Le HTTP request sono un'importante componente della comunicazione web e sono state introdotte nel 1991 da Tim Berners-Lee, il creatore del World Wide Web. Oltre alla GET request mostrata sopra, ci sono altre tipi di richiesta come POST, PUT, DELETE che consentono di eseguire diverse azioni sui servizi web. Un'alternativa alla libreria Wi-FiClient di Arduino è l'utilizzo di cURL, un popolare strumento di linea di comando per effettuare HTTP request.
+Il concetto di richieste HTTP risale agli inizi del web, da quando il protocollo HTTP è stato definito nel 1991 come modo standard di comunicare su Internet. La creazione del IoT ha aperto un'enorme gamma di possibilità per l'uso di queste richieste.
+
+Alternative all'uso diretto delle richieste HTTP esistono. MQTT è ad esempio un protocollo molto popolare per le comunicazioni IoT. Tuttavia, HTTP ha il vantaggio di essere universalmente supportato.
+
+Nell'esempio di codice fornito, utilizziamo la libreria ESP8266HTTPClient. Questa libreria incapsula la complessità del basso livello delle richieste HTTP rendendo relativamente facile per noi fare richieste.
 
 ## Vedi anche:
 
-- Documentazione di Arduino per le HTTP request: https://www.arduino.cc/en/Reference/HTTPClient
-- Maggiori informazioni sulle HTTP request e i diversi tipi: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+1. Documentazione ufficiale di Arduino sulla libreria WiFi: https://www.arduino.cc/en/Reference/WiFi
+2. Documentazione ufficiale di ESP8266HTTPClient: https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html
+3. Introduzione ad HTTP: https://developer.mozilla.org/it/docs/Web/HTTP/Overview
+4. Introduzione all'IoT con Arduino: https://www.arduino.cc/en/digital/HomePage

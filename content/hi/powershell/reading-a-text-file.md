@@ -1,7 +1,7 @@
 ---
-title:                "एक टेक्स्ट फ़ाइल पढ़ना"
-html_title:           "PowerShell: एक टेक्स्ट फ़ाइल पढ़ना"
-simple_title:         "एक टेक्स्ट फ़ाइल पढ़ना"
+title:                "एक पाठ फ़ाइल पढ़ना"
+html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
+simple_title:         "एक पाठ फ़ाइल पढ़ना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -11,31 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-टेक्स्ट फ़ाइल को पढ़ना क्या है और क्यों प्रोग्रामर्स इसे करते हैं? एक टेक्स्ट फ़ाइल एक सामान्य टेक्स्ट डॉक्यूमेंट होती है जिसमें कई पंक्तियां हो सकती हैं जो किसी भी टेक्स्ट प्रोसेसिंग के लिए प्रयोग की जा सकती हैं। प्रोग्रामर्स इसे इसलिए करते हैं कि वे इसमें से डेटा को एक्सेस कर सकें और उसे अपनी प्रोग्राम के लिए उपयोग कर सकें।
+
+टेक्स्ट फ़ाइल पढ़ना यानी उसमें रेखांकित डेटा प्राप्त करना। प्रोग्रामर्स इसे डेटा संसाधन के रूप में उपयोग करते हैं या अन्य प्रोग्रामों के साथ इंटरेक्ट करने के लिए।
 
 ## कैसे करें:
-```PowerShell
-# टेक्स्ट फ़ाइल को पढ़ने के लिए निम्न आदेश का प्रयोग करें।
-Get-Content C:\textfile.txt
+
+### उदाहरण:
+
+```PowerShell 
+$content = Get-Content -Path C:\Example\example.txt
+Write-Output $content
 ```
 
-आप टेक्स्ट फ़ाइल के अनुसार अपनी जरूरत के अनुसार डेटा को अलग-अलग कर सकते हैं। निम्नलिखित आदेश विशेष रूप से प्रयोग कर सकते हैं:
+ऊपर के कोड की आउटपुट आपको example.txt फ़ाइल में मौजूद सभी लाइनें प्रदान करेगी।
 
-```PowerShell
-# स्ट्रिंग को औसत से अलग करने के लिए:
-Get-Content C:\textfile.txt | Measure-Object -Average | Select-Object Average
+## गहराई में अन्वेषण:
 
-# पाठ के आखरी पंक्ति को प्रिंट करने के लिए:
-Get-content C:\textfile.txt | Select-Object -Last 1
+### ऐतिहासिक प्रकट्य: 
 
-# निश्चित स्थान से शुरू तक सेलेक्ट करने के लिए:
-Get-Content C:\textfile.txt | Select-Object -Skip 2 -First 5
-```
+PowerShell में टेक्स्ट फ़ाइलों को पढ़ने की क्षमता Windows PowerShell 1.0 के साथ आई थी। इसका उपयोग डाटा संग्रहण और प्रबंधन में सुविधा के लिए किया जाता है।
 
-## गहराई में उतरें:
-(1) टेक्स्ट फ़ाइलों ने प्रोग्रामिंग के शुरुआती दिनों से एक प्रमुख भूमिका निभाई है। ये गैर-मेमोरी इंस्ट्रुमेंट्स होती हैं जो प्रोग्रामर्स को उनके विभिन्न सिस्टम्स पर समान डेटा एक्सेस का अनुमान करने में मदद करती हैं। (2) अन्य विकल्प जैसे CSV फ़ाइलें भी प्रोग्रामर्स द्वारा उपयोग किये जाते हैं, लेकिन वे संरचनाओं को बंद द्वारा समर्थित नहीं करते हैं जैसे विभिन्न पंक्तियों को उपयोग किए बिना संग्रह नहीं कर पाते हैं। (3) टेक्स्ट फ़ाइलों को पढ़ने का आसान और मज़ेदार तरीका इसके PowerShell में अधिकतम उपयोग दिखाता है।
+### विकल्प:
 
-## इससे जुड़िये:
-- [Microsoft Docs - Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7)
-- [Geeks for Geeks - Reading a Text File using PowerShell](https://www.geeksforgeeks.org/reading-a-text-file-using-powershell/)
-- [PowerShell Scripting Tutorial for Beginners](https://www.tutorialspoint.com/powershell/index.htm)
+.NET Framework का StreamReader क्लास भी एक प्रभावी तरीका है फ़ाइलों को पढ़ने का। आप [System.IO.StreamReader]::ReadLine() का उपयोग कर सकते हैं। लेकिन आमतौर पर, Get-Content cmdlet अधिक फ्लेक्सिबल होता है। 
+
+### कार्यान्विति:
+
+Get-Content cmdlet स्ट्रीमिंग तत्व का उपयोग करता है, जिससे यह बड़ी फ़ाइलों के साथ काम करने में समर्थ होता है। यह फ़ाइल को पूरी तरह लोड करने के बजाय चंक्स (टुकड़ों) में डेटा को लोड करता है। 
+
+## और देखें:
+
+1. [Get-Content cmdlet documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
+2. [StreamReader Class documentation](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0)

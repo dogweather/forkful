@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "Elixir: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e porquê?
-
-Ler argumentos de linha de comando é uma técnica importante para qualquer programador. Ela permite que o seu programa receba informações diretamente do usuário através da linha de comando, tornando-o mais interativo e flexível. É especialmente útil para programas de linha de comando que precisam ser executados rapidamente e com diferentes opções.
+## O Que & Porquê?
+A leitura de argumentos da linha de comando refere-se à aptidão de um programa em processar informações inseridas através do terminal do sistema operacional. É útil para personalizar a execução de um script, como ajustar configurações ou especificar a fonte de um arquivo de dados.
 
 ## Como fazer:
+Para ler argumentos da linha de comando em Elixir, você usa a função padrão `System.argv()`. Este é um exemplo que lista cada argumento:
 
-Utilizando Elixir, você pode ler argumentos de linha de comando facilmente através da função `System.argv/0`. Ela retorna uma lista contendo todos os argumentos passados na linha de comando. Veja um exemplo simples abaixo:
+```Elixir
+Enum.each(System.argv(), fn arg -> IO.puts(arg) end)
+```
+Se você executar `elixir script.exs arg1 arg2 arg3`, a saída será:
 
-```elixir
-# Lê argumentos de linha de comando
-args = System.argv()
-
-# Imprime a lista de argumentos
-IO.inspect(args)
+```shell
+arg1
+arg2
+arg3
 ```
 
-Ao executar o programa acima com os parâmetros `elixir meu_programa.ex argumento1 argumento2`, a saída será:
+## Mergulho Profundo
+A capacidade de ler argumentos da linha de comando é uma prática comum na programação devido à sua origem nos sistemas operacionais baseados em Unix. Esta funcionalidade oferece uma interface conveniente para manipular a execução de um programa.
 
-```
-["argumento1", "argumento2"]
-```
+Há alternativas dependendo do seu caso de uso. Se você precisa de uma análise mais complexa de argumentos, como suporte a bandeiras ("/f"), o Elixir tem a opção de utilizar bibliotecas externas como a `OptionParser`.
 
-## Detalhes aprofundados:
+Os argumentos de linha de comando em Elixir são implementados como uma lista de strings. Cada item na lista representa um argumento adicional após o nome do script. Esta lista é retornada ao chamar `System.argv()`.
 
-A leitura de argumentos de linha de comando não é uma técnica nova e é amplamente utilizada em diferentes linguagens de programação. Em Elixir, as funções `System.argv/0` e `System.argv/1` (que retorna o nome do programa) são as principais ferramentas para essa tarefa. No entanto, também é possível usar a biblioteca OptionParser para criar um parser de argumentos mais sofisticado.
-
-## Veja também:
-
-- Documentação oficial do `System.argv`: https://hexdocs.pm/elixir/System.html#argv/0
-- Documentação oficial do OptionParser: https://hexdocs.pm/elixir/OptionParser.html
+## Ver Também
+1. Documentação oficial da System.argv(): https://hexdocs.pm/elixir/System.html#argv/0
+2. Guia para OptionParser: https://hexdocs.pm/elixir/OptionParser.html
+3. Artigo sobre o uso de argumentos da linha de comando: https://thinkingelixir.com/understanding-command-line-arguments-in-elixir-1-3-scripts/

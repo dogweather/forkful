@@ -1,6 +1,6 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "Kotlin: קבלת התאריך הנוכחי"
+html_title:           "C#: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,45 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## מה ולמה?
 
-קבלת תאריך נוכחי הוא פשוט תהליך שבו מפעילים קוד שמחזיר תאריך ושעה נוכחיים. פרקטיקה זו חיונית לפיתוח תוכניות ואפליקציות הדורשות נתונים עדכניים ותיאום עם הזמן הנוכחי.
+לקבלת התאריך הנוכחי, זה להוציא מידע בנוגע לזמן הנוכחי בחלל, את ץום והתאריך שבו אנחנו נמצאים. נבנה כדי לעזור למתכנתים למדוד את הזמן, ליצור תיעוד זמני לעסקאות, או כל מטרה שמחייבת תאריך וזמן מדויק.
 
-## איך לעשות?
+## איך לעשות:
 
-כדי לקבל את התאריך והשעה הנוכחיים בקוד Kotlin, ישנם מספר אפשרויות מתאימות עבור כל מטרה:
-
-### - שימוש במשתנה ```currentDateTime```:
+בקוטלין, ישנן כמה שיטות לקבלת התאריך הנוכחי. נוכל להשתמש במחלקה LocalDate, LocalDateTime או ZonedDateTime.
 
 ```Kotlin
-val currentDateTime = LocalDateTime.now()
-println(currentDateTime)
+import java.time.LocalDateTime
+fun main() {
+    val current = LocalDateTime.now()
+    println("התאריך והשעה הנוכחיים: " + current)
+}
 ```
-### - שימוש בפונקציה ```now()```:
-
-```Kotlin
-val currentDate = LocalDate.now()
-val currentTime = LocalTime.now()
-println(currentDate)
-println(currentTime)
+פלט:
+```
+התאריך והשעה הנוכחיים: 2022-03-10T15:45:20.556042
 ```
 
-פלט המשתנים ```currentDate``` ו-```currentTime``` יהיו תאריך ושעה נוכחיים בהתאמה.
+## צלילה עמוקה
 
-## העומק שבתוך
+מאז שקוטלין הוקם ב-2011, כולם הפקדו את הזמן בצורות שונות. מחלקת Java.util.Date הייתה ראשונה שהציעה את היכולת הזו אך הועקפה ב-2014 עם הכנסת Java.time, והמחלקות LocalDateTime, LocalDate, ו -ZonedDateTime.
 
-### - היסטוריית המימוש:
+האלטרנטיבות כוללות ספריות חיצוניות או הטמעת שיטות אישיות שמניהלות הקבלה של התאריך והשעה.
 
-קבלת התאריך נוכחי בתכנות נוצרה בשנת 1970 עם תקן Unix, על ידי שימוש במערכת היחסים של הטבלה הזמנית שהיא מילי שנייה אחת מהתאריך והשעה 1970.
+המחלקות מסופקות על ידי מערכת ההפעלה, כך שהתוצאות שלהן יכולות להשתנות בהתאם לזמן המערכת ולאזור הזמן של המשתמש.
 
-### - אלטרנטיבות:
+## ראו גם
 
-ישנם גם תוכניות נוספות שקיימות בתחום שמאפשרות להשתמש בשירותי API כמו Google Time Zone API ומאפשרים לקבל תאריך נוכחי באיזורים שונים.
-
-### - פרטים טכניים ביצועיים:
-
-הפקודות המדויקות שמשולבות כדי לקבל תאריך נוכחי בתוך לסירת הזמן השמיים משפיעות על ביצועי הקוד הכוללים כמו נכס גישה, טעינה ושימוש משוחזרים.
-
-## ראה גם
-
-https://www.baeldung.com/kotlin/get-current-date-time 
-https://developer.android.com/reference/java/time/LocalDateTime 
-https://www.programiz.com/kotlin-programming/examples/current-datetime
+[מדריך מקיף לקוטלין](https://kotlinlang.org/docs/home.html)
+[מערכת Java Time](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/time/package-summary.html) 
+[המחלקה LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-local-date/)

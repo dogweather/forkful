@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "Fish Shell recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,32 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading a text file simply means accessing the contents of a file in a human-readable form. Programmers often do this to extract important information or manipulate the data in some way.
+Reading a text file is a fundamental task for programmers that involves extracting data from files. It's essential for everything from data analysis to automated tasks.
 
 ## How to:
 
-To read a text file in Fish Shell, use the built-in `read` command followed by the name of the file. For example:
+Fish works differently compared to more traditional scripting environments, but it's quite flexible once you get used to it. Let's learn to read a text file:
 
 ```Fish Shell
-read myfile.txt
+function read_file
+    set file_content (cat $argv)
+    echo $file_content
+end
+
+read_file 'path/to/your/file.txt'
 ```
 
-This will print out the contents of `myfile.txt` in the console. To save the output to a variable, use the `-z` flag:
+In this script, it creates a function called `read_file` that reads content from a text file using `cat` and then echoes its content.
+
+## Deep Dive
+
+Fish Shell dates back to 2005, introduced to offer more interactivity and user-friendly interfaces compared to its counterparts like bash or sh. Unlike these, Fish was not POSIX-compliant but offered more features like autosuggestions, tab completions, etc.
+
+While `cat` is perfect for smaller files, `read` could be a better alternative for reading large files line by line, especially with the '--line' flag. Here's how you could do it:
 
 ```Fish Shell
-set text (read -z myfile.txt)
+function read_large_file
+    while read --line line
+        echo $line
+    end < 'path/to/your/large_file.txt'
+end
+
+read_large_file
 ```
 
-Now you can use the variable `text` in your code for further manipulation.
+In this script, it reads a line from the text file in the while loop until the end of the file.
 
-## Deep Dive:
+## See Also
 
-Reading text files has been a common task for programmers since the early days of computing. It allows for easy manipulation of data without having to manually input it into the code. Other alternatives for reading files include using system calls or external programs, but the `read` command in Fish Shell provides a simple and efficient solution.
-
-When reading a text file, Fish Shell reads the contents of the file line by line and prints them out in the console. The `-z` flag tells Fish to store the contents of the file in a variable rather than printing it out. This is useful for storing data that needs to be processed or used later in the code.
-
-## See Also:
-
-- [Fish Shell documentation on `read` command](https://fishshell.com/docs/current/commands.html#read)
-- [GeeksforGeeks article on reading a text file in Fish Shell](https://www.geeksforgeeks.org/how-to-read-a-text-file-in-fish-shell/)
-- [Official Fish Shell website for more information and resources](https://fishshell.com/)
+- [Fish Shell Tutorial](https://fishshell.com/docs/3.1/tutorial.html)
+- [Fish Scripting 101](https://fishshell.com/docs/3.1/scripting.html)
+- [Handling large files with Fish](https://github.com/fish-shell/fish-shell/issues/600)

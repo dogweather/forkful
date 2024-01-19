@@ -1,6 +1,6 @@
 ---
 title:                "Creating a temporary file"
-html_title:           "Bash recipe: Creating a temporary file"
+html_title:           "C# recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Bash"
 category:             "Bash"
@@ -12,33 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Creating a temporary file in Bash is a way for programmers to quickly store and manipulate data without permanently saving it onto their system. This is useful for tasks such as storing error logs, processing large amounts of data, or creating temporary backups during a program's execution.
+Creating a temporary file in Bash means generating an ephemeral, standalone file, often used for storing data temporarily during a Bash session. Programmers do this to manipulate data without affecting original inputs - it's a neat way to handle intermediate results or run tests without any permanent changes.
 
 ## How to:
 
-To create a temporary file in Bash, you can use the `mktemp` command followed by the desired filename extension. For example, `mktemp example.txt` will create a temporary file named "example.txt" in the current working directory. You can then use this file in your Bash commands and scripts.
+Here's how to create and use a temp file:
 
 ```Bash
-mktemp example.txt
-echo "This is a temporary file" > example.txt
-cat example.txt
+# Creating a temporary file:
+temp_file=$(mktemp)
+
+# Let's write something to it:
+echo "Hello, World!" > "$temp_file"
+
+# Now, let's read from the file:
+cat "$temp_file"
 ```
-Output:
-```
-This is a temporary file
-```
 
-You can also use the `mktemp` command with the `-d` option to create a temporary directory instead of a file. This can be useful for organizing and storing multiple temporary files within the same directory.
+The output should be `Hello, World!`. The `mktemp` command assigns a unique temporary file to 'temp_file', and we then write and read from it.
 
-## Deep Dive
+## Deep Dive:
 
-Creating temporary files has been a common programming practice for a long time, and Bash is no exception. In the early days of computing, temporary files were often created and used as a way to process data and conserve system resources. With the introduction of more advanced programming languages and techniques, temporary files are still used for similar purposes.
+The utility `mktemp` makes temp files in Bash. This Unix standard dates back to the 90s and safely generates unique temp file names, eliminating risks associated with common ones. 
 
-An alternative to creating temporary files in Bash is to use pipes and redirection to store data in memory instead of writing it to a physical file. This can be more efficient for certain tasks, but temporary files provide a more permanent and tangible way to store and manipulate data.
+Alternative methods to create a temp file, notably `tempfile`, exists but isn't as popular or recommended because of lesser safety features. Another alternative is manual naming, but it can lead to file clashes and isn't safe.
 
-When creating a temporary file, Bash uses the `mktemp` utility under the hood. This utility allows for more advanced options, such as specifying a specific directory for the temporary file to be created in, and generating unique filenames using a template. The `mktemp` command also has security features built-in to ensure that temporary files are not easily accessible by other users on the system.
+When you create a temp file, it resides in the system's temp directory, usually '/tmp' on Linux systems. They are automatically cleaned during reboots or by system polices at preset intervals, usually every few days.
 
-## See Also
+## See Also:
 
-- [mktemp man page](https://linux.die.net/man/1/mktemp)
-- [Understanding the tmp directory in Linux](https://opensource.com/article/19/4/understanding-tmp-directory-linux)
+1. `mktemp` Manpage: [https://linux.die.net/man/1/mktemp](https://linux.die.net/man/1/mktemp)
+2. Advanced Bash-Scripting Guide - Temp files: [https://tldp.org/LDP/abs/html/tempfiles.html](https://tldp.org/LDP/abs/html/tempfiles.html)
+3. GNU mktemp: [https://www.gnu.org/software/autogen/mktemp.html](https://www.gnu.org/software/autogen/mktemp.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Erzeugung von Zufallszahlen"
-html_title:           "Swift: Erzeugung von Zufallszahlen"
-simple_title:         "Erzeugung von Zufallszahlen"
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -10,23 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Generieren zufälliger Zahlen bedeutet, dass Programmierer Zahlen in einem bestimmten Bereich erzeugen, ohne dabei ein vorhersehbares Muster zu folgen. Dies kann nützlich sein für Simulationen, Spiele oder andere Anwendungen, die auf Zufallswerten basieren.
+## Was und Warum?
+Zufallszahlen zu generieren bedeutet, eine Nummer in einem bestimmten Bereich zu erzeugen, die nicht vorhersehbar ist. Dies ist nützlich in vielen Bereichen der Programmierung, wie z.B. bei Spielen, zum Testen und bei Kryptographie.
 
-## So geht's:
-Um zufällige Zahlen in Swift zu generieren, verwenden wir die Funktion `arc4random_uniform()`. Diese Funktion erwartet als Argument eine positive Ganzzahl, die den oberen Bereich der generierten Zahlen angibt. Das Ergebnis ist eine zufällige Zahl im Bereich von 0 bis zur angegebenen Zahl, ausschließlich der angegebenen Zahl selbst. 
+## Wie man's macht:
+In Swift können wir die `random(in:)` Funktion verwenden, um Zufallszahlen zu generieren. Sie muss einfach durch den gewünschten Bereich aufgerufen werden, und sie gibt uns eine Zufallszahl zurück.
 ```Swift
-let number = arc4random_uniform(100)
-print(number) // Beispiel-Ausgabe: 47
+let randomInt = Int.random(in: 0..<10)
+let randomDouble = Double.random(in: 0..<10)
+let randomBool = Bool.random()
+
+print(randomInt)
+print(randomDouble)
+print(randomBool)
 ```
-Um Zahlen in einem anderen Bereich zu generieren, können wir einfach den Bereich anpassen.
+Die Ausgabe könnte wie folgt aussehen:
 ```Swift
-let number = arc4random_uniform(25) + 10 // Zahlen zwischen 10 und 34
-print(number) // Beispiel-Ausgabe: 23
+3
+7.465829345460347
+false
 ```
 
-## Deep Dive:
-Die Funktion `arc4random_uniform()` basiert auf dem C-Befehl `arc4random()` und wurde von Apple für die Verwendung in Swift angepasst. Sie wurde entwickelt, um die Verteilung von Zufallszahlen auszugleichen und eine bessere Verteilung als andere Methoden zu erzielen. Alternativen zur Generierung von Zufallszahlen in Swift sind die Funktionen `Int.random()` und `Double.random()`, die mehr Flexibilität bei der Angabe des Zahlenbereichs bieten, aber keine so ausgewogene Verteilung bieten wie `arc4random_uniform()`. Bei der Implementierung der Funktion `arc4random_uniform()` wird ein Pseudozufallszahlengenerator verwendet, der auf dem Linear Congruential Generator (LCG) basiert und bestimmte Parameter verwendet, um Zahlen zu generieren.
+## Vertiefung:
+Historisch gesehen wurde die Generierung von Zufallszahlen früher durch kompliziertere Algorithmen erreicht, aber seit Swift 4.2 stellt das Swift-Team uns eine einfache und intuitive Methode zur Verfügung. Alternativen könnten die Verwendung von Random Number Generators (RNGs) von Drittanbietern sein, aber in den meisten Fällen ist die eingebaute Funktion genug. Die Swift-Implementierung verwendet ein sicherer RNG, was wichtig für kritische Einsatzzwecke wie Kryptographie ist.
 
 ## Siehe auch:
-Weitere Informationen zur Verwendung von Zufallszahlen in Swift finden Sie in der offiziellen Dokumentation von Apple: https://developer.apple.com/documentation/swift/int/1967613-random. Eine gute Ressource für die Tiefe des Themas ist das Buch "Random Number Generation and Monte Carlo Methods" von James E. Gentle.
+- [Apple Docs zu random(in:) Funktion](https://developer.apple.com/documentation/swift/int/2995648-random) 
+- [Swift.org: Random Numbers in Swift](https://swift.org/blog/se-0202/)
+- [SO: How to generate random numbers in Swift](https://stackoverflow.com/questions/24007129/how-does-one-generate-a-random-number-in-apples-swift-language)

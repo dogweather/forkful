@@ -12,37 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Aspekt der Programmierung, der häufig bei der Verwaltung von Dateien und Ordnern verwendet wird. Programmierer verwenden diese Funktion, um zu prüfen, ob ein bestimmtes Verzeichnis vorhanden ist, bevor sie darauf zugreifen oder damit arbeiten. Dadurch wird sichergestellt, dass der Code zuverlässig und robust ist.
+Es ist wichtig zu überprüfen, ob ein Verzeichnis existiert, bevor Sie versuchen, mit ihm in Go zu interagieren. Diese Überprüfung verhindert lästige Fehler und Abstürze, die entstehen können, wenn wir versuchen, eine Datei zu lesen oder zu schreiben, die einfach nicht existiert.
 
-## Wie geht's?
+## Wie geht's:
 
-Um zu überprüfen, ob ein Verzeichnis mit Go existiert, müssen wir die Funktion "Exist" aus der Paketbibliothek "Os" importieren und die gewünschte Pfadangabe als Parameter übergeben. Hier ist ein Beispielcode:
+In Go verwenden wir den `os.Stat`-Funktion und `os.IsNotExist`-Funktion, um zu überprüfen, ob ein Verzeichnis existiert. Hier ist das Basisbeispiel:
 
-```
+```Go
 package main
-import "fmt"
-import "os"
+
+import (
+  "fmt"
+  "os"
+)
 
 func main() {
-    _, err := os.Stat("/pfad/zum/verzeichnis") 
-    if os.IsNotExist(err) {
-        fmt.Println("Verzeichnis existiert nicht") 
-    } else {
-        fmt.Println("Verzeichnis existiert") 
-    } 
+  
+  _, err := os.Stat("/path/to/directory")
+
+  // Überprüfen ob das Verzeichnis existiert.
+  if os.IsNotExist(err) {
+    fmt.Println("Das Verzeichnis existiert nicht.")
+  } else {
+    fmt.Println("Das Verzeichnis existiert.")
+  }
 }
 ```
 
-Die Ausgabe hängt davon ab, ob das Verzeichnis vorhanden ist oder nicht. Wenn das Verzeichnis nicht existiert, wird die erste Bedingung ausgeführt und die Meldung "Verzeichnis existiert nicht" ausgegeben.
+Wenn Sie das ausführen, bekommen Sie eine der beiden Meldungen, abhängig davon, ob Ihr Verzeichnis existiert oder nicht.
 
-## Tiefentauchen
+## Tieftauchen:
 
-Historisch gesehen gab es verschiedene Ansätze, um zu überprüfen, ob ein Verzeichnis existiert, mit verschiedenen Sprachen und Bibliotheken. Mit der Einführung von Go wurde diese Funktion in die Standardbibliothek aufgenommen, um die Verwaltung von Verzeichnissen zu vereinfachen.
+Historischer Kontext: Der `os`-Paket in Go wurde entwickelt, um Systemaufrufe auf einfache Weise zu ermöglichen. Die `os.Stat`-Funktion ist Teil dieses Pakets und bietet Informationen über Dateisystem-Vorgänge.
 
-Eine Alternative zur Verwendung der "Exist" Funktion besteht darin, das Verzeichnis zu öffnen und dann anhand von Fehlermeldungen festzustellen, ob es existiert oder nicht. Allerdings ist dies weniger effizient und kann zu unerwünschtem Verhalten führen.
+Alternativen: Es gibt auch andere Möglichkeiten, die Existenz eines Verzeichnisses zu überprüfen. Man kann auch die `ioutil.ReadDir`-Funktion verwenden, die allerdings weniger gebräuchlich ist als `os.Stat`.
 
-Die "Exist" Funktion überprüft nicht nur, ob ein Verzeichnis existiert, sondern auch, ob auf das Verzeichnis zugegriffen werden kann. So können wir sicherstellen, dass das Verzeichnis nicht nur vorhanden, sondern auch zugänglich ist.
+Implementierung: Der `os.Stat`-Funktion gibt ein `os.FileInfo`-Objekt und einen Fehler zurück. Das `os.FileInfo` enthält Metadaten zur Datei oder zum Verzeichnis. Wir ignorieren das `os.FileInfo`-Objekt und konzentrieren uns nur auf den Fehler. Wenn der Fehler auf `os.ErrExist` gesetzt ist, bedeutet das, dass das Verzeichnis nicht existiert.
 
-## Siehe auch
-
-Weitere Informationen zum Überprüfen der Existenz von Verzeichnissen in Go finden Sie in der offiziellen Dokumentation: https://pkg.go.dev/os#File.Exist. Hier finden Sie auch Beispiele für die Verwendung der Funktion in verschiedenen Szenarien.
+## Siehe auch:
+1. Go Standardbibliothek - os Paket: https://pkg.go.dev/os
+2. Go os.Stat(): https://pkg.go.dev/os#Stat
+3. Go os.IsNotExist(): https://pkg.go.dev/os#IsNotExist

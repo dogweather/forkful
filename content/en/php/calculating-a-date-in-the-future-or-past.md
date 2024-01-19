@@ -11,35 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Calculating a date in the future or past refers to determining a specific date, either in the future or the past, given a starting date and a number of days to add or subtract. Programmers often need to calculate dates for various tasks, such as scheduling events, creating countdowns, or managing recurring tasks.
+Manipulating dates, like calculating a future or past date, allows programmers to schedule events, deadlines, or simply add time-based functionality. Accurate date calculations are crucial in systems from event reminders to premium subscription management.
 
 ## How to:
-To calculate a date in the future or past in PHP, we can use the built-in `strtotime()` function. This function takes in two parameters - a string representation of a date and a number of days to add or subtract. Here's an example:
+In PHP, manipulating dates is intuitive and effective. Here's an example of calculating future dates:
 
 ```PHP
-$date = "2020-10-10"; //starting date
-$days_to_add = 7; //number of days to add
-$new_date = strtotime($date . " +" . $days_to_add . " days"); //calculates the new date
-echo date("Y-m-d", $new_date); //outputs 2020-10-17
+$today = new DateTime();
+$futureDate = $today->modify('+1 month');
+echo $futureDate->format('Y-m-d');
 ```
 
-We can also specify a negative number of days to subtract from the starting date. This function supports various time formats as well, such as "next week", "next month", "next year", and "1 week ago". Here's another example:
+In this code snippet, we're creating a DateTime object for the current date (`$today`), modifying it to a month in the future, and echoing the future date in `YYYY-MM-DD` format. Change '+1 month' to any period you need, like '+1 day', '+5 years', '-15 minutes', etc.
+
+## Deep Dive
+Historically in PHP, date calculations relied on UNIX timestamps, limiting the dates to a range from 1970-01-01 to 2038-01-19. With the introduction of the DateTime class in PHP 5.2.0, calculations became more flexible and could handle a wider range of dates (0001-01-01 to 9999-12-31).
+
+An alternative method is to use `strtotime`, a powerful function that parses most English textual datetime descriptions into a Unix timestamp.
 
 ```PHP
-$date = "2020-12-01"; //starting date
-$days_to_subtract = 14; //number of days to subtract
-$new_date = strtotime($date . " -" . $days_to_subtract . " days"); //calculates the new date
-echo date("m/d/Y", $new_date); //outputs 11/17/2020
+$futureDate = strtotime("+1 month", time());
+echo date('Y-m-d', $futureDate);
 ```
 
-## Deep Dive:
-The `strtotime()` function in PHP is based on the Unix timestamp, which represents the number of seconds that have elapsed since January 1, 1970. It is important to note that the maximum value for this timestamp is likely to be in the year 2038, as it is stored as a signed 32-bit integer. This can cause issues when calculating dates far in the future, so alternative solutions such as using the DateTime class or external libraries may be necessary for more accurate results.
+Remember that `strtotime` is susceptible to the "Year 2038" problem on 32-bit PHP installations.
 
-There are also other functions in PHP that can be used for date calculations, such as the `date_add()` and `date_sub()` functions, which allow for more specific date and time manipulations. Additionally, developers can also use the `DateTime` class, which offers more flexibility and built-in methods for date calculations.
+Behind the scenes, the DateTime class uses the system's own timezone settings for calculations. You can override this by setting the optional timezone parameter when creating a DateTime object.
 
-When implementing date calculations in a project, it is important to consider the desired output format and the potential limitations of the chosen method to ensure accurate and efficient results.
+```PHP
+$today = new DateTime(null, new DateTimeZone('Europe/London'));
+...
+```
 
-## See Also:
-- [PHP strtotime() function documentation](https://www.php.net/manual/en/function.strtotime.php)
-- [DateTime class documentation](https://www.php.net/manual/en/datetime.format.php)
-- [Alternative date calculation methods in PHP](https://www.geeksforgeeks.org/php-date-calculation-functions/)
+## See Also
+- PHP.net documentation on DateTime class: [https://www.php.net/manual/en/class.datetime.php](https://www.php.net/manual/en/class.datetime.php)
+- How to use date and time in PHP: [https://dzone.com/articles/how-to-use-date-and-time-in-php](https://dzone.com/articles/how-to-use-date-and-time-in-php)
+- Explaining the "Year 2038" problem: [https://en.wikipedia.org/wiki/Year_2038_problem](https://en.wikipedia.org/wiki/Year_2038_problem)
+- List of supported timezones in PHP: [https://www.php.net/manual/en/timezones.php](https://www.php.net/manual/en/timezones.php)

@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie istnienia katalogu."
-html_title:           "Arduino: Sprawdzanie istnienia katalogu."
-simple_title:         "Sprawdzanie istnienia katalogu."
+title:                "Sprawdzanie, czy katalog istnieje"
+html_title:           "Arduino: Sprawdzanie, czy katalog istnieje"
+simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,82 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Czego to dotyczy & dlaczego?
-Sprawdzanie, czy istnieje katalog w programowaniu oznacza weryfikację czy podana ścieżka jest ważna i czy można do niej uzyskać dostęp. Programiści wykonują tę czynność, aby upewnić się, że dane, na których operują są prawidłowe i nie ma ryzyka błędnej lub niekompletnej obsługi.
+## Co i dlaczego?
 
-Jak to zrobić:
-W Arduino istnieją kilka sposobów, aby sprawdzić istnienie katalogu. Można to zrobić poprzez zdalne połączenie z komputerem za pomocą protokołu SSH lub wykorzystując bibliotekę ESP8266HTTPClient. Poniżej przedstawione są dwa przykłady kodu dla każdego sposobu.
+Sprawdzanie, czy katalog istnieje, to sprawdzenie czy na naszym dysku istnieje określony katalog. Programiści dokonują tego sprawdzenia, aby uniknąć błędów podczas tworzenia plików lub katalogów.
 
-Arduino + SSH:
-```
-#include <WiFi.h>
-#include <WiFiClient.h>
-#include <SSSH.h>
+## Jak to zrobić:
 
-const char* ssid = "nazwa_sieci";
-const char* password = "haslo_sieci";
+Kiedy mówimy o Arduino, mówimy o mikrokontrolerze, który nie ma systemu plików na własnym pokładzie, więc nie ma typowego "katalogu", jaki znamy z systemów operacyjnych. Jeśli jednak korzystasz z dodatkowej pamięci (jak karty SD), możesz skorzystać z biblioteki SD. Zobacz przykładowy kod poniżej:
 
-void setup() {
-  Serial.begin(115200);
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("Connecting to WiFi..");
+```Arduino
+#include <SD.h>
+
+void setup()
+{
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("Nie udało się zainicjować karty SD");
+    return;
   }
-  Serial.println("Connected to wifi");
-  Serial.println("Opening ssh connection");
-  client.connect("ip_serwera", 22, "uzytkownik", "haslo");
-  if (client.connected())
-    Serial.println("SSH connection opened");
-  else
-    Serial.println("Connection failed");
+
+  File root = SD.open("/");
+
+  printDirectory(root, 0);
 }
 
-void loop() {
-  ArduinoSSH ssh;
-  if (ssh.exec(&client, "ls katalog") > 0)
-    Serial.println("Katalog istnieje");
-  else
-    Serial.println("Katalog nie istnieje");
-}
-```
+void loop()
+{
+  //put your main code here, to run repeatedly:
 
-Arduino + ESP8266HTTPClient:
-```
-#include <ESP8266WiFi.h>
-#include <ESP8266HTTPClient.h>
-
-const char* ssid = "nazwa_sieci";
-const char* password = "haslo_sieci";
-
-String url = "http://ip_serwera/katalog";
-
-void setup() {
-  Serial.begin(115200);
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("Connecting to WiFi..");
-  }
-  Serial.println("Connected to wifi");
 }
 
-void loop() {
-  HTTPClient http;
-  http.begin(url);
-  int code = http.GET();
-  if (code)
-    Serial.println("Katalog istnieje");
-  else
-    Serial.println("Katalog nie istnieje");
-  http.end();
+void printDirectory(File dir, int numTabs) {
+   while(true) {
+
+     File entry =  dir.openNextFile();
+     if (! entry) {
+       // no more files
+       break;
+     }
+     for (uint8_t i=0; i<numTabs; i++) {
+       Serial.print('\t');
+     }
+     Serial.print(entry.name());
+     if (entry.isDirectory()) {
+       Serial.println("/");
+       printDirectory(entry, numTabs+1);
+     } else {
+       // files have sizes, directories do not
+       Serial.print("\t\t");
+       Serial.println(entry.size(), DEC);
+     }
+     entry.close();
+   }
 }
 ```
+## W głąb tematu:
 
-Głębokie zanurzenie:
-Sprawdzanie istnienia katalogu jest niezbędnym elementem przy manipulacji plikami w systemie operacyjnym. Wcześniej programiści używali funkcji poprawnych z systemem operacyjnym, takich jak "stat" w Linuxie czy "getfileattibutes" w Windowsie. Jednak w przypadku systemów wbudowanych, takich jak Arduino, wymagało to użycia zewnętrznych bibliotek lub modułów, jak na przykład ESP8266HTTPClient. Obecnie, dzięki rozwojowi technologii, możliwe jest wykonywanie tej operacji bezpośrednio w Arduino, co ułatwia programowanie i zwiększa elastyczność.
+Historia tego tematu jest skomplikowana, bo jak wspomnieliśmy - Arduino nie ma na pokładzie typowego systemu plików. Sprawdzanie czy katalog istnieje обecnie jest dostępne dzięki rozwijanym bibliotekom.
 
-Zobacz też:
-- https://www.arduino.cc/en/Main/ArduinoSSH
-- https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266HTTPClient/examples/HTTPClient/BasicHTTPClient/BasicHTTPClient.ino
+Alternatywnie, oprócz biblioteki SD, istnieje wiele innych, takich jak FatFs czy Adafruit SPI Flash. Każda biblioteka ma swoje plusy i minusy oraz różne poziomy obsługi karty SD.
+
+Co do szczegółów implementacji, nasz powyższy kod otwiera katalog główny, a następnie drukuje zawartość katalogu, rekurencyjnie sprawdzając czy są to inne katalogi. Jeśli tak, drukuje ich zawartość. Jeżeli nie, drukujemy nazwę pliku i jego rozmiar.
+
+## Zobacz także:
+
+1. [Dokumentacja biblioteki SD](https://www.arduino.cc/en/Reference/SD)
+2. [Biblioteka FatFs](http://elm-chan.org/fsw/ff/00index_e.html)
+3. [Biblioteka Adafruit SPI Flash](https://github.com/adafruit/Adafruit_SPIFlash)

@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer HTTP-Anfrage mit Basic-Authentifizierung"
-html_title:           "C: Senden einer HTTP-Anfrage mit Basic-Authentifizierung"
-simple_title:         "Senden einer HTTP-Anfrage mit Basic-Authentifizierung"
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,55 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
 
-Das Senden einer HTTP-Anfrage mit grundlegender Authentifizierung bedeutet, dass ein Programmierer bei der Verbindung mit einem Webserver Benutzername und Passwort verwendet, um sich zu authentifizieren. Dies wird in der Regel verwendet, um speziell geschützte Ressourcen oder eine API aufzurufen. Programmierer verwenden dies, um sicherzustellen, dass nur berechtigte Benutzer auf bestimmte Informationen zugreifen können.
+Das Versenden einer HTTP-Anforderung mit Basisauthentifizierung ist der Prozess, ein `GET` oder `POST` Request an einen Server zu senden, der ein `username:password` Paar im `Authorization` Header erfordert. Dies wird oft benutzt, um sensible Daten aus einem sicheren Server zu lesen oder dorthin zu schreiben.
 
-# Wie Geht Das?
+## Wie geht das:
 
-Der folgende Code zeigt ein Beispiel, wie man eine HTTP-Anfrage mit grundlegender Authentifizierung in C senden kann:
+Wir verwenden die Bibliothek `libcurl` in C für dieses Beispiel. 
 
-```
-#include <stdio.h>
+```C 
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
-  
-  curl = curl_easy_init();
-  
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com/api");
-    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-    curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
-    
-    res = curl_easy_perform(curl);
-    
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-              
-    curl_easy_cleanup(curl);
-  }
-  return 0;
+int main(void) {
+    CURL *curl;
+    CURLcode res;
+
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+
+    curl = curl_easy_init();
+    if(curl) {
+        struct curl_slist *headers = NULL;
+        headers = curl_slist_append(headers, "Authorization: Basic bXl1c2VyOm15cGFzc3dvcmQ=");
+
+        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+        curl_easy_setopt(curl, CURLOPT_URL, "http://meinserver.de/seite");
+
+        res = curl_easy_perform(curl);
+
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() fehlgeschlagen: %s\n",
+                curl_easy_strerror(res));
+
+        curl_easy_cleanup(curl);
+        curl_slist_free_all(headers);
+    }
+
+    curl_global_cleanup();
+
+    return 0;
 }
 ```
+Diese Code sendet eine GET-Anforderung an `http://meinserver.de/seite` mit der Basisauthentifizierung `myuser:mypass`.
 
-Das obige Beispiel verwendet die cURL-Bibliothek, um eine HTTP-Anfrage mit grundlegender Authentifizierung zu senden. Die Funktion ```curl_easy_setopt()``` wird verwendet, um die entsprechenden Optionen zu setzen, einschließlich der URL, der Art der Authentifizierung und der Benutzerdaten. Dann wird die Funktion ```curl_easy_perform()``` verwendet, um die Anforderung tatsächlich auszuführen.
+## Tiefere Einblicke:
 
-Das Ergebnis sollte der erhaltene HTTP-Statuscode und der entsprechende Inhalt sein.
+Historisch gesehen, ist die Basisauthentifizierung der ursprüngliche und einfachste Standard für die HTTP-Authentifizierung. Es gibt jedoch alternative Methoden wie Digest Access Authentication oder Bearer Tokens. 
 
-# Tiefer Einblick
+Während die Basisauthentifizierung immer noch weit verbreitet ist, hat sie einige Nachteile. Beispielsweise werden die Anmeldeinformationen unverschlüsselt (obwohl basis64-kodiert) übertragen, was bei ungesicherten Verbindungen zu Sicherheitsproblemen führen kann. Deshalb wird dringend empfohlen, sie zusammen mit HTTPS zu verwenden.
 
-Die grundlegende Authentifizierung wurde eingeführt, um eine einfache Methode zur Authentifizierung von Anfragen zu bieten. Sie ist jedoch nicht sehr sicher, da Benutzername und Passwort in Klartext übertragen werden. Aus diesem Grund werden heute oft alternative Methoden wie OAuth oder Token-basierte Authentifizierung verwendet.
+In der `libcurl` Bibliothek könnten Sie anstelle der `curl_easy_setopt()` Funktion die `curl_easy_setopt()` mit dem CURLAUTH_DIGEST-Flag verwenden, um die Digest Access Authentication zu implementieren, oder das `CURLOPT_XOAUTH2_BEARER`-Flag setzen, um einen OAuth 2.0 Bearer Token für die Authentifizierung zu verwenden.
 
-Die cURL-Bibliothek ist eine beliebte Wahl zur Durchführung von HTTP-Anfragen und bietet eine Vielzahl von Optionen für verschiedene Arten von Authentifizierung.
+## Weiterführende Informationen:
 
-# Siehe Auch
-
-- [cURL-Bibliothek](https://curl.haxx.se/libcurl/)
-- [OAuth](https://oauth.net/)
-- [Token-basierte Authentifizierung](https://stormpath.com/blog/token-based-authentication-for-single-page-applications)
+- [libcurl Dokumentation](https://curl.se/libcurl/)
+- [RFC 2617 - HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+- [OAuth 2.0 Bearer Token Usage](https://tools.ietf.org/html/rfc6750)

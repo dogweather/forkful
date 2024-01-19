@@ -1,7 +1,7 @@
 ---
-title:                "Lage en midlertidig fil"
-html_title:           "Elixir: Lage en midlertidig fil"
-simple_title:         "Lage en midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "C#: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,27 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Oppretting av midlertidige filer er en vanlig praksis i programmering. Dette innebærer å opprette en midlertidig fil som kun eksisterer i en kort periode under kjøring av programmet. Dette gjøres vanligvis for å lagre midlertidig data eller for å utføre en midlertidig operasjon.
+## Hva & Hvorfor?
 
-## Slik gjør du det:
-I Elixir er det flere måter å opprette en midlertidig fil på. Den enkleste metoden er å bruke funksjonen `Tempfile.open/2`, som tar inn to argumenter: et prefix og et suffiks. Prefixet vil være de første tegnene i filnavnet, mens suffikset vil være de siste tegnene.
+Å lage en midlertidig fil er en prosess hvor vi oppretter en fil som bare skal være tilgjengelig for en kort periode. Programmerere gjør dette for å lagre data som trengs i løpet av en kjøretid, men som ikke behøver å være en del av sluttresultatet eller vedvarende data.
+
+## Hvordan:
+
+Bruke `File` modulen i Elixir for å lage midlertidige filer. Se eksempel under:
 
 ```Elixir
-faktorius = "KodeKongen"
-{:ok, fil} = Tempfile.open(faktorius, ".txt")
-IO.puts fil.path
-# Ut: "/tmp/KodeKongen20210223-19993-46jrqo.txt"
+{:ok, io_device} = File.open("tmp.txt", [:write])
+IO.binwrite(io_device, "Midlertidig data")
+File.close(io_device)
 ```
 
-Her kan du se at filen automatisk får et unikt navn basert på prefix og dato og klokkeslett når den blir opprettet. Du kan deretter skrive til filen eller lese fra den, og når du er ferdig kan du enkelt slette den ved å bruke `File.delete/1`.
+Dette lager en midlertidig fil som heter "tmp.txt" og skriver "Midlertidig data" i filen. 
 
-## Dykk dypere:
-Oppretting av midlertidige filer har vært en vanlig praksis i programmering i lang tid. Men i dagens verden hvor data lagres i skyen og kjøretider stadig blir kortere, kan det være bedre å bruke alternative metoder for å lagre midlertidig data. Noen alternativer kan være å bruke en in-memory database eller å utnytte cache-systemer.
+## Dypdykk
 
-I Elixir er også prosesser en kraftig og effektiv måte å jobbe med midlertidig data på. Prosesser er lette og kan raskt opprettes og slettes, noe som gjør dem ideelle for midlertidig data eller operasjoner som bare skal kjøres for en kort periode.
+Midlertidige filer har lenge vært en betrodd funksjon i mange programmeringsspråk. I unix-baserte systemer, der Elixir stammer fra, er `/tmp` mappen ofte brukt til lagring av slike filer.
+
+Alternativt, kan du bruke funksjonen `System.tmp_dir/0` i Elixir for å finne ut hvor operativsystemet foretrekker å plassere midlertidige filer.
+
+En viktig ting å merke seg er at disse filene skal slettes når de ikke lenger er nødvendig. Elixir tilbyr `File.rm/1` funksjon for å slette en fil:
+
+```Elixir
+:ok = File.rm("tmp.txt")
+```
 
 ## Se også:
-- [Elixir Docs - Tempfile module](https://hexdocs.pm/elixir/Tempfile.html)
-- [Elixir Docs - Processes](https://elixir-lang.org/getting-started/processes.html)
-- [Elixir School - File IO](https://elixirschool.com/en/lessons/basics/files/)
+
+For mer informasjon om filhåndtering i Elixir, se følgende ressurser:
+
+- Elixir offisiell dokumentasjon på File modulen: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
+- Diskusjon om midlertidige filer i Elixir i Elixir Forum: [https://elixirforum.com/t/how-to-best-work-with-temporary-files/1833](https://elixirforum.com/t/how-to-best-work-with-temporary-files/1833)
+- Erlang/OTP's fil modul dokumentasjon som Elixir's er bygd på: [http://erlang.org/doc/man/file.html](http://erlang.org/doc/man/file.html)

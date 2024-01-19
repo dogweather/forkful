@@ -1,6 +1,6 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "TypeScript: Interpolazione di una stringa"
+html_title:           "Clojure: Interpolazione di una stringa"
 simple_title:         "Interpolazione di una stringa"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,27 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
-Interpolare una stringa in TypeScript significa inserire valori dinamici all'interno di una stringa. Questo permette di creare stringhe più flessibili e dinamiche, riducendo la necessità di concatenare manualmente i valori. I programmatori utilizzano l'interpolazione di stringhe per scrivere codice più leggibile, semplice e conciso.
+## Cos'è & Perché?
+L'interpolazione delle stringhe è un processo che permette di inserire variabili o espressioni all'interno di una stringa. Lo facciamo per rendere il nostro codice più leggibile e conciso.
 
 ## Come fare:
-Ecco un esempio di come utilizzare l'interpolazione di stringhe in TypeScript:
+Ecco come possiamo fare l'interpolazione delle stringhe in TypeScript:
 
 ```TypeScript
-let nome = "Marco";
-let benvenuto = `Ciao ${nome}, benvenuto sul nostro sito!`;
-console.log(benvenuto);
+let nome = "Mario";
+let eta = 30;
+let salute = `Ciao ${nome}, hai ${eta} anni.`;
+console.log(salute); // Output: Ciao Mario, hai 30 anni.
 ```
-Output:
-`Ciao Marco, benvenuto sul nostro sito!`
 
-Nell'esempio sopra, abbiamo utilizzato le backticks (`` ` ``) per creare una stringa interpolata. All'interno della stringa, abbiamo inserito la variabile `nome` utilizzando la sintassi `${variabile}`. Quando il codice viene eseguito, la variabile viene sostituita con il suo valore all'interno della stringa.
+In questo esempio, abbiamo inserito le variabili `nome` ed `eta` all'interno della stringa `salute` utilizzando il simbolo del dollaro seguito da parentesi graffe `${var_name}`.
 
-## Approfondimento:
-L'interpolazione di stringhe è stata introdotta in TypeScript nella versione 2.4 ed è stata ispirata dalla funzionalità simile presente in ES6. Questo concetto è anche conosciuto come "template literals" e offre un'alternativa più elegante e leggibile rispetto alla concatenazione di stringhe.
+## Deep Dive
+L'interpolazione delle stringhe non è un concetto nuovo. Infatti, è stato popolare in molte altre lingue, come Python e Ruby, prima di diventare una funzionalità standard in ES6 (la versione di JavaScript su cui si basa TypeScript). 
 
-Per implementare l'interpolazione di stringhe, il compilatore TypeScript trasforma le stringhe interpolate in una chiamata alla funzione `String.raw`. Questa funzione accetta come argomenti le stringhe e le variabili interpolate, combinandole in una singola stringa.
+Come alternativa all'interpolazione delle stringhe, potevamo concatenare le stringhe utilizzando l'operatore `+`. Tuttavia, l'interpolazione delle stringhe è generalmente più leggibile e meno propensa agli errori.
 
-## Vedi anche:
-- [Documentazione ufficiale di TypeScript sull'interpolazione di stringhe](https://www.typescriptlang.org/docs/handbook/strings.html#template-strings)
-- [ES6 Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+Quando interpoliamo una stringa, TypeScript sostituisce l'espressione all'interno delle parentesi graffe con il suo valore corrente, poi converte tutto in una stringa. Se l'espressione all'interno delle parentesi graffe ritorna un oggetto, TypeScript chiama automaticamente il metodo `toString()` dell'oggetto.
+
+## Vedi Anche
+Per ulteriori informazioni sull'interpolazione delle stringhe in TypeScript, potete consultare le seguenti risorse:
+
+- [La documentazione ufficiale di TypeScript](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
+- [Una guida approfondita all'interpolazione delle stringhe in TypeScript](https://javascript.info/string-interpolation)
+- [Un tutorial su YouTube sull'interpolazione delle stringhe in TypeScript](https://www.youtube.com/watch?v=2Nt8gQD4g5A)

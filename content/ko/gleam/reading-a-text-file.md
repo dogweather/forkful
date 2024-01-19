@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 파일 읽기."
-html_title:           "Gleam: 텍스트 파일 읽기."
-simple_title:         "텍스트 파일 읽기."
+title:                "텍스트 파일 읽기"
+html_title:           "Bash: 텍스트 파일 읽기"
+simple_title:         "텍스트 파일 읽기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭔가 뭔가!: 
-텍스트 파일을 읽는 것이 무엇인지 알고 싶나요? 프로그래머들이 왜 이것을 하는지 알고 싶나요? 당신이 읽는 바로 이 제목이 기대에 부응하길 바랍니다! 
+## 무엇이며 왜 사용하는가?
 
-텍스트 파일을 읽는다는 것은 단순히 파일의 내용을 읽는 것을 의미합니다. 프로그래머들은 이것을 하기 위해 다양한 이유가 있습니다. 데이터베이스나 웹사이트와 같은 외부 소스로부터 정보를 가져오기 위해, 또는 복잡한 데이터 처리를 위해 파일을 읽는 경우도 있을 수 있습니다.
+텍스트 파일 읽기는 컴퓨터가 텍스트 파일의 내용을 인식하고 처리하는 것을 의미합니다. 이를 통해 프로그래머는 데이터를 불러오거나, 저장된 정보를 확인하는 등 다양한 작업을 수행할 수 있습니다.
 
-## 방법:
-텍스트 파일을 읽는 기초적인 방법을 다음과 같이 보여드리겠습니다:
+## 어떻게 사용하는가:
+
+Gleam 언어를 사용하여 텍스트 파일을 읽는 방법을 살펴보겠습니다:
 
 ```Gleam
-let file = File.read("hello.txt")
-match file {
-  Ok(text) -> text
-  Err(error) -> error
-}
+import gleam/otp.{Process, File, FileResult}
+from gleam/otp import Result.{Ok, Error}
+
+fn read() {
+  let Ok(file) = File.open("example.txt", read)
+  let file_result = File.read(file, Process.self())
+  
+  case file_result {
+    Ok -> io.println("Success!")
+    Error(e) -> io.println("Error: " ++ e)
+  }
+}  
 ```
 
-위의 코드는 'hello.txt' 라는 파일을 읽고 해당 파일이 존재하는 경우에는 파일의 내용을 출력하고, 존재하지 않는 경우에는 에러를 출력하는 간단한 예제입니다.
+## 깊이 있게 알아보기
 
-## 깊은 물결:
-텍스트 파일을 읽는 것은 오래된 개념입니다. 초기 컴퓨터들은 대개 다른 파일 형식보다는 텍스트 파일을 읽는 것이 더 쉬웠습니다. 하지만 지금은 다양한 방법으로 파일을 읽을 수 있습니다. 예를 들어, XML 파일은 'pull' 방식으로 읽을 수 있지만 JSON 파일은 'push' 방식으로 읽어야 합니다. 또 다른 대안으로, 데이터를 읽는 대신 메모리에 캐시하는 방법도 있습니다. 이러한 다양한 방식을 통해 더 빠르게 파일을 처리할 수 있게 되었습니다.
+텍스트 파일을 읽는 기능은 프로그래밍의 초기부터 있었으며, 오늘날에도 여전히 필수적인 기능 중 하나입니다. Gleam에서는 `gleam/otp.{File, Process}`와 같은 모듈을 통해 이러한 작업을 수행할 수 있습니다. 실행 결과에 따라 요청이 성공할 때 'Ok'를, 실패하면 'Error'를 반환합니다. 만약 다른 방식으로 텍스트 파일을 읽고 싶다면, 다른 패키지들을 찾아보시는 것도 좋습니다.
 
-## 바로 보기:
-검토하고 적용할 내용들은 아마도 이 글만으로 충분하지 않을 것입니다. 더 많은 정보가 필요하다면 아래의 링크를 참조하세요.
+## 자세히 보기
 
-- Gleam 공식 문서: https://gleam.run/documentation
-- GitHub 페이지: https://github.com/gleam-lang/gleam
+더 많은 정보를 얻고 싶다면 아래 링크들을 참조해주세요.
+- Gleam 공식 문서: https://gleam.run/docs
+- Gleam 파일 처리에 관한 세부 정보: https://hexdocs.pm/gleam_stdlib/gleam/file/index.html
+- Elixir에 대한 대체 문서(알렉서): http://elixir-lang.github.io/docs.html. 
+
+다른 프로그래밍 에서 텍스트 파일을 읽는 방법에 대해서는 아래 링크를 참조하세요.
+- 파이썬: https://docs.python.org/3/tutorial/inputoutput.html
+- 자바: https://docs.oracle.com/javase/tutorial/essential/io/index.html
+- 루비: https://ruby-doc.org/core-2.7.1/IO.html
+- JavaScript: https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide.

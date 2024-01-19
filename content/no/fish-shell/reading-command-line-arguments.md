@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinje-argumenter"
-html_title:           "Fish Shell: Lesing av kommandolinje-argumenter"
-simple_title:         "Lesing av kommandolinje-argumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## Hva & Hvorfor? 
+Å lese kommandolinje-argumenter innebærer å motta data direkte fra terminalen der programmet kjører. Programmerere gjør dette for å manipulere programmets oppførsel ved kjøring.
 
-Lesing av kommandolinje-argumenter er en vanlig oppgave for programvareutviklere. Det innebærer å hente informasjon som er gitt som argumenter når en kommando blir kjørt i terminalen. Dette gjør det mulig å lage programmer som kan ta imot spesifikke input fra brukeren og utføre bestemte oppgaver basert på dette.
+## Hvordan få det til:
+La oss se på hvordan vi kan lese kommandolinje-argumenter i Fish Shell.
 
-Å lese kommandolinje-argumenter er en viktig del av å lage effektive og fleksible programmer, da det gjør det mulig for brukeren å gi spesifikke instruksjoner til programmet uten å måtte endre selve programmet.
-
-## Slik gjør du det:
-
-```Fish Shell``` har innebygde kommandoer for å lese kommandolinje-argumenter. For å få tilgang til argumentene, kan du bruke ```$argv``` variabelen som returnerer alle argumentene som en liste.
-
-For å hente et spesifikt argument, kan du bruke ```$argv[index]``` hvor ```index``` er nummeret på argumentet du vil hente. For eksempel, hvis du vil hente det andre argumentet, kan du bruke ```$argv[2]```.
-
-Her er et eksempel på hvordan du kan bruke denne funksjonen i et enkelt program:
-
+```Fish Shell
+function greet
+    echo "Hei $argv[1]"
+end
 ```
-#!/usr/bin/env fish
+Kjør denne funksjonen gir oss følgende:
 
-echo "Dette programmet ble kjørt med følgende argumenter: $argv"
-echo "Det første argumentet er $argv[1] og det andre er $argv[2]"
+```Fish Shell
+> greet Verden
+Hei Verden
 ```
-
-Output:
-
-```
-$ ./program.sh hello world
-Dette programmet ble kjørt med følgende argumenter: hello world
-Det første argumentet er hello og det andre er world
-```
+Her benyttet $argv[1] for å representere første kommandolinje-argument.
 
 ## Dypdykk:
+Fish Shell standardiserte det til $argv, en liste av argumenter. Dette skiller seg fra tidligere shells som brukte $1, $2, osv. for å representere argumenter enkeltvis. Det finnes alternativer til å lese kommandolinje-argumenter, som å bruke getopts for å lese flagger og parametre. Men for lesing av generelle argumenter, er $argv brukervennlig og enkel å forstå.
 
-Kommandolinje-argumenter har vært en standardfunksjon for Unix-operativsystemer siden starten av 1970-tallet. Det finnes også alternative måter å lese argumenter på, som for eksempel å bruke en tredjeparts modul som ```argparse```. Det er også verdt å merke seg at antall argumenter og hvordan de håndteres kan variere avhengig av hvilket shell og operativsystem man bruker.
-
-I ```Fish Shell``` blir alle kommandolinje-argumenter lagret som en liste i ```$argv``` variabelen. Du kan også bruke ```$argc``` variabelen for å få antall argumenter som ble gitt. I tillegg kan du bruke innebygde funksjoner som ```string split``` og ```set``` for å behandle argumentene på forskjellige måter.
-
-## Se også:
-
-- [The Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [The history of Unix shells](https://www.historicalinganalysis.com/en/the-history-of-unix-shells/)
+## Se Også:
+For mer informasjon om $argv, se Fish Shell dokumentasjonen: [Fish $argv](https://fishshell.com/docs/current/cmds/set.html). For historisk sammenligning og mer detaljer om alternativer, se [Command-line argument (Wikipedia)](https://en.wikipedia.org/wiki/Command-line_argument).

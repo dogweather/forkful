@@ -1,7 +1,7 @@
 ---
-title:                "Päiväyksen muuttaminen merkkijonoksi"
-html_title:           "PHP: Päiväyksen muuttaminen merkkijonoksi"
-simple_title:         "Päiväyksen muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,21 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Päivämäärän muuttaminen merkkijonoksi tarkoittaa päivämäärän esittämistä sellaisessa muodossa, joka on helposti luettavissa ohjelmalle. Tätä tarvitaan esimerkiksi tietokantoja käytettäessä, jotta päivämäärä voidaan tallentaa oikeassa muodossa ja hakea tarvittaessa. Tästä syystä kehittäjät muuttavat päivämäärän merkkijonoksi.
+## Mikä & Miksi?
 
-## Miten se tehdään?
+Päivämäärän muuttaminen merkkijonoksi on prosessi, jossa päivämäärä-objekti muunnetaan merkkijonoksi. Ohjelmoijat tekevät tämän tietyissä tilanteissa, kuten kun halutut muodot tai formaatit ovat välttämättömiä tiedonsiirtoa tai tietojen esittämistä varten.
+
+## Miten se tehdään:
+
+PHP:ssä päivämäärän muuntamiseksi merkkijonoksi käytetään `date_format`-funktiota. Tämä funktio ottaa kaksi argumenttia: päivämäärä-objektin ja halutun muotoisen merkkijonoformaatin.
+
 ```PHP
-$date = date('d.m.Y'); //tämä muuttaa nykyisen päivämäärän merkkijonoksi muodossa "päivä.kuukausi.vuosi"
-echo $date; //tulostaa "15.08.2021"
+<?php
+$date = new DateTime('2020-01-01');
+echo date_format($date, 'Y-m-d');  // Tulostaa: 2020-01-01
+?>
 ```
 
-## Syväsukellus
-Päivämäärän muuttaminen merkkijonoksi on ollut tärkeä toiminto jo pitkään. Ennen PHP:n kehitystä, päivämäärät tallennettiin millisekunteina, mikä oli hankalaa ja epäkäytännöllistä. Nykyään on olemassa myös muita tapoja muuttaa päivämäärä merkkijonoksi, kuten käyttämällä "DateTime" luokkaa.
+## Syvä Sukellus:
 
-## Katso myös
-[PHP date() -dokumentaatio](https://www.php.net/manual/en/function.date.php)
+Päivämäärän esittämisen merkkijonona on pitkä historia. Sen alkuperä ulottuu ohjelmoinnin alkuhämäriin, jolloin tietojen tallennus- ja esitysformaatti oli rajallinen.
 
-[DateTime -dokumentaatio](https://www.php.net/manual/en/class.datetime.php)
+Vaihtoehtona päivämäärä voidaan muuntaa myös strtotime-funktion avulla, joka muuntaa minkä tahansa tekstisträngin päivämääräksi ja ajaksi. 
 
-[Muuttujien ja funktioiden nimien koodausstandardi (PSR-1)](https://www.php-fig.org/psr/psr-1/)
+```PHP
+<?php
+$date = strtotime("2020-01-01");
+echo date('Y-m-d', $date);  // Tulostaa: 2020-01-01
+?>
+```
+
+Suorituskyvyn näkökulmasta funktion `date_format` käyttö on parempi kuin `strtotime`, koska DateTime-objekti on jo olemassa ja se voidaan muuntaa suoraan merkkijonoksi.
+
+## Katso myös:
+
+1. PHP: DateTime - [Manual](https://www.php.net/manual/en/class.datetime.php)
+2. PHP: date_format - [Manual](https://www.php.net/manual/en/datetime.format.php)
+3. PHP: strtotime - [Manual](https://www.php.net/manual/en/function.strtotime.php)

@@ -1,7 +1,7 @@
 ---
-title:                "Tulostusvirheenkorjauksen tulostaminen"
-html_title:           "Python: Tulostusvirheenkorjauksen tulostaminen"
-simple_title:         "Tulostusvirheenkorjauksen tulostaminen"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+# Tervetuloa Python-ohjelmoijan matkalle!
 
-Tulostettavan debug-tietojen lähettäminen on yksinkertainen ja tehokas tapa tarkastella, mitä ohjelma tekee sen suorituksen aikana. Tämä auttaa ohjelmoijia korjaamaan mahdollisia virheitä ja löytämään tehokkaampia tapoja toteuttaa koodia.
+Python on yksi suosituimmista ohjelmointikielistä. Sen helppokäyttöisyys, selkeys ja monikäyttöisyys tekevät siitä ihanteellisen kielen aloittelijoille ja kokeneille ohjelmoijille.
+
+***
+## Mitä & Miksi?
+
+"Debug-tulosteen" (debug output) tulostaminen on tekniikka jolla näemme ohjelmakoodissamme toimivuuden reaaliajassa. Se on ohjelmoijan tehokas työkalu, sillä se auttaa löytämään ja korjaamaan virheitä helpommin ja nopeammin.
 
 ## Miten:
 
-Käytä print()-funktiota tulostamaan halutut tiedot. Voit lisätä muuttujia tulostettavan tekstin joukkoon käyttämällä kaarisulkeita { } ja varmistamaan, että tiedot näytetään oikeassa muodossa esimerkiksi käyttämällä str()-funktiota.
+Pythonissa debug-tulosteen tulostaminen on helppoa.
 
 ```Python
-# Tämä koodinpätkä tulostaa "Hello, world!" viestin
-print("Hello, world!")
-
-# Tämä tulostaa käyttäjän antaman nimen
-nimi = input("Anna nimesi: ")
-print("Tervetuloa, " + nimi + "!")
-```
-Tuloste:
-```
-Hello, world!
-Anna nimesi: John
-Tervetuloa, John!
+# Esimerkkikodeja
+def laske_summa(a, b):
+    summa = a + b
+    print(f"Lasketaan: {a} + {b} = {summa}")  # Debug-tulostus
+    return summa
 ```
 
-## Syvältä sukellus:
+Tämä ohjelma tulostaa: "Lasketaan: 5 + 3 = 8", kun sitä kutsutaan funktiolla `laske_summa(5, 3)`.
 
-Debug-tietojen tulostaminen on ollut suosittu tapa koodin tarkasteluun jo vuosien ajan. Se on myös nopea ja helppo tapa tarkistaa muuttujien arvoja ja ohjelman suoritusjärjestystä. Vaihtoehtoisina tapoina voit käyttää esimerkiksi debugger-työkaluja tai loggausta.
+## Syvennys
 
-Pythonissa on myös muita tapoja tulostaa tietoja, kuten print()-funktion avulla. Tämä on kätevää, sillä se ei muuta ohjelman suoritusnopeutta.
+Debug-tulosteen tulostaminen on historiansa aikana kehittynyt huomattavasti. Alunperin debug-tieto tulostettiin purkkikoodaajien aikana suoraan näytölle tai paperille. Nykyaikana monet ohjelmointikielet, kuten Python, tukevat sisäänrakennettuja debuggaustyökaluja.
+
+Vaihtoehtoina debug-tulostuksen tulostamiselle Pythonissa on esimerkiksi `logging`-kirjasto. Se tarjoaa tarkemman hallinnan tulostukselle, kuten tason asettaminen (esim. INFO, DEBUG, ERROR) ja tulosteen ohjaaminen tiedostoihin. Käyttämällä `logging`-kirjastoa voit säilyttää debug-tietosi, vaikka tuotantoversiossa tulostukset on poistettu.
+
+Pythonin `print`-funktion kautta voidaan tulostaa debug-tekstiä lähes mihin tahansa, mukaan lukien konsoli tai tiedosto. Sen tuominen on helppoa ja nopeatapaista.
 
 ## Katso myös:
 
-- [Pythonin virallinen dokumentaatio tulostamisesta](https://docs.python.org/3/library/functions.html#print)
-- [Debuggaus ja virheenkäsittely - GeeksforGeeks](https://www.geeksforgeeks.org/debugging-in-python/)
-- [Pythonin debuggerin käyttö](https://realpython.com/python-debugging-pdb/)
+1. [Pythonin virallinen dokumentaatio](https://docs.python.org/3/)
+2. [Logging in Python](https://realpython.com/python-logging/)
+3. [Making use of Python logging](https://www.pylenin.com/blogs/python-logging-guide/) 
+
+***
+
+Onnea matkaan Python-maailmassa! Muista, virheiden löytäminen on osa oppimisprosessia. Niiden korjaaminen tekee sinusta paremman ohjelmoijan.

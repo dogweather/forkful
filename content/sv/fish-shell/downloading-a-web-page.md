@@ -1,7 +1,7 @@
 ---
-title:                "Att ladda ner en webbsida"
-html_title:           "Fish Shell: Att ladda ner en webbsida"
-simple_title:         "Att ladda ner en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
+simple_title:         "Ladda ner en webbsida"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,23 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Att ladda ned en webbsida är en process där man hämtar allt innehåll från en särskild webbadress och sparar det lokalt på datorn. Programerare använder denna teknik för att manipulera eller läsa webbplatsdata för att skapa nya funktionella applikationer.
+## Vad & Varför?
+Att hämta en webbsida innebär att ladda ner webbsidans HTML till din enhet. Programmerare gör detta för att analysera, manipulera eller visa webbsidans data.
 
-Hur man:
-```Fish Shell ger en enkel och effektiv metod för att ladda ner webbsidor. Här är en kodexempel för att ladda ner den populära webbplatsen "Reddit" och spara den som en textfil på skrivbordet:
-```
+## Så här gör du:
+Med hjälp av curl i Fish Shell kan vi enkelt hämta en webbsida. Ditt skript kan se ut så här:
+
 ```Fish Shell
-curl -o ~/Desktop/reddit.html https://www.reddit.com/
+function hämta-webbsida
+  set url $argv[1]
+  curl $url -o "webbsida.html"
+end
 ```
 
-## Djupdykning:
-Historiskt sett har programmerare länge behövt ladda ner webbsidor för att kunna manipulera data och skapa webbapplikationer. Det finns olika verktyg och tekniker för detta ändamål, men Fish Shell erbjuder en enkel och lättförståelig metod.
+Kör kommandot så här:
 
-Andra alternative inkluderar verktyg som "wget" och "curl" som även finns tillgängliga för andra shells som Bash och Zsh. Men Fish Shell har fördelen med tydligare formaterad output och enklare syntax.
+```Fish Shell
+hämta-webbsida https://google.com
+```
 
-För att implementera nedladdning i Fish Shell behövs ingen ytterligare installation av tredjepartsprogram, därför är det enkelt att använda i olika utvecklingsmiljöer.
+Output resultatet kommer att bli en fil kallad "webbsida.html" i din aktuella katalog.
 
-## Se även:
-https://fishshell.com/docs/current/cmds/curl.html
-https://www.lifewire.com/download-webpages-shell-2203076
+## Djupdykning
+Historiskt sett har HTML-läsning använts för webbskrapning och analys av webbdata. Alternativa metoder för att hämta en webbsida inkluderar bibliotek som Scrapy i Python, eller användning av HTTP/S-anrop i JavaScript.
+
+Implementationen i Fish är ganska enkel, curl-kommando är ett kraftfullt verktyg som hanterar ett komplett HTTP GET-request och sparar output till "webbsida.html". "argv[1]" i koden står för den första argumentet (i detta fall URL), vilket gör funktionen flexibel för olika URL:er.
+
+## Se också
+- Fish Shell Dokumentation: https://fishshell.com/docs/current/index.html
+- Curl Manual: https://curl.se/docs/manpage.html
+- Scrapy Dokumentation: https://docs.scrapy.org/en/latest/
+- Fetch API i JavaScript: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API

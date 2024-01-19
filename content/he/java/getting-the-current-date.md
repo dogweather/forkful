@@ -1,7 +1,7 @@
 ---
-title:                "קבלת תאריך נוכחי"
-html_title:           "Java: קבלת תאריך נוכחי"
-simple_title:         "קבלת תאריך נוכחי"
+title:                "קבלת התאריך הנוכחי"
+html_title:           "C#: קבלת התאריך הנוכחי"
+simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -12,54 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## מה ולמה?
 
-קבלת התאריך הנוכחי היא פעולה חשובה בתכנות ב-Java. זה מאפשר למפתחים לצרף זמנים ותאריכים בתוך התוכנית שלהם, כמו לדוגמה לשמור תאריך של ריצת התוכנית או להפעיל משימות בזמנים מסוימים.
+לקבלת התאריך הנוכחי היא פעולה שבה משתמשים לוח זמנים חדירגעי מהמחשב שלך על מנת לקבוע את התאריך והשעה הנוכחיים. תכנתים עשויים לזקוק לכך כדי לתייג יצירת נתונים, לקבוע מועדים מסוימים או להגביר את הבטיחות על ידי שימוש בחותמות זמן.
 
-## איך לעשות זאת?
+## איך לעשות:
 
-תהליך רכישת התאריך הנוכחי ב-Java פשוט וקצר. כאן אנו משתמשים בפקודה "LocalDate.now()" כדי לקבל את התאריך הנוכחי כפי שמוצג למטה:
-
-```Java
-LocalDate today = LocalDate.now();
-System.out.println(today);
-```
-
-פלט:
-"2020-08-16"
-
-ניתן גם לקבל את התאריך הנוכחי בפורמט שונה באמצעות פקודות נוספות כמו למשל "DateTimeFormatter". הנה דוגמה להדפסת התאריך בפורמט שאנו בוחר:
+להלן קטעי הקוד שמדגימים איך להשיג את התאריך והשעה הנוכחיים ב-Java:
 
 ```Java
-LocalDate today = LocalDate.now();
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-String formattedDate = today.format(formatter);
-System.out.println(formattedDate);
+import java.time.LocalDateTime;
+
+public class Main {
+  public static void main(String[] args) {
+    LocalDateTime currentDate = LocalDateTime.now(); 
+    System.out.println("The current date and time is: " + currentDate);
+  }
+}
 ```
-
-פלט:
-"16/08/2020"
-
-## חקירה מעמיקה
-
-קבלת התאריך הנוכחי ב-Java מאוד חשובה כי היא תורמת לפיתוח תוכניות יעילים יותר ומאפשרת גם תיעוד מדויק של זמנים בתוך התוכנית. בנוסף לקבלת התאריך הנוכחי, ניתן גם לעשות שימוש בפקודות נוספות כגון "LocalDateTime" כדי לקבל תאריך עם זמן מדויק.
-
-כארציה: לקבל תאריך עם שעה נוכחית ולהציג אותו בפורמט של שעה כדי למנוע בלבול:
-
-```Java
-LocalDateTime now = LocalDateTime.now();
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
-String formattedTime = now.format(formatter);
-System.out.println(formattedTime);
+הפלט מהקוד יהיה משהו כמו:
 ```
+The current date and time is: 2022-04-10T13:48:03.711
+```
+## צוללים לעומק
 
-פלט:
-"11:25 AM"
+מאז הוורסיה 8 של Java, מספר פונקציות חדשות התווספו לעבודה עם תאריכים וזמנים, המקלות על מחלקות התאריך המסורתיות. חלופות לLocalDateTime כוללות LocalDate (שישים את התאריך בלבד ללא השעה) וLocalTime (שישים את השעה בלבד ללא התאריך).
+
+הרעיון מאחורי של קבלת התאריך הנוכחי הוא לשלוף את זמן המערכת ולהמירו לתאריך ספציפי. תהליך זה משתמש בשעון המערכת, שהוא ממשק שמאפשר למתכנת לגשת לשעון הנוכחי של המחשב.
 
 ## ראה גם
 
-למידע נוסף על פקודות ומתודות נוספות בספריית התאריך ב-Java, ניתן לבקר בקישור הבא:
-
-[https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-
-ולפרטים נוספים על קבלת התאריך הנוכחי בפיתוח Java, ניתן לקרוא את המאמר הזה:
-
-[https://www.baeldung.com/java-get-current-date-time](https://www.baeldung.com/java-get-current-date-time)
+1. [Java API documentation on LocalDateTime](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/time/LocalDateTime.html)
+2. [Java 8 Date - LocalDate, LocalTime, LocalDateTime](https://www.mkyong.com/java8/java-8-date-localdate-localdatetime-instant/) 
+3. [Accessing the System's Current Date/Time](https://docs.oracle.com/javase/tutorial/datetime/iso/system.html)

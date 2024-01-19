@@ -1,7 +1,7 @@
 ---
-title:                "阅读命令行参数"
-html_title:           "Fish Shell: 阅读命令行参数"
-simple_title:         "阅读命令行参数"
+title:                "读取命令行参数"
+html_title:           "C: 读取命令行参数"
+simple_title:         "读取命令行参数"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么？为什么？
+## 什么和为什么?
+命令行参数是指在运行程序命令后面附加的参数。程序员使用它们来修改程序的运行方式或传递数据。
 
-读取命令行参数是指程序在执行时，可以从命令行获取额外的信息。程序员这样做主要是为了让程序更加灵活和可定制。通过读取命令行参数，程序可以根据不同的输入，执行不同的任务，满足不同用户的需求。
-
-## 怎么做？
-
-```Fish Shell``` 提供了一个内置的函数 ```argparse```来帮助我们读取命令行参数。下面是一个简单的例子：
-
-**代码：**
-
+## 如何使用：
+在Fish Shell中，你可以通过```argv```变量访问命令行参数。下面是一个简单的示例：
 ```
-argparse name -h help-message
+Fish Shell
+#test_script.fish
+echo $argv[1]
 ```
-
-**输出：**
-
+运行这个脚本输出第一个传递的命令行参数：
 ```
-help-message
+./test_script.fish Hello
+Hello
 ```
+## 深入挖掘
+命令行参数的使用可以追溯到Unix的早期日子。其他Shell Script也提供了类似的实现，例如Bash的```$1```，```$2```对应第一个和第二个参数。
 
-通过上面的代码，我们可以看到，程序会输出我们定义的 `help-message`，这样就可以帮助用户了解到我们的程序需要哪些参数。
+Fish Shell提供了更丰富的数组表示法，你可以用```set -l```设定局部变量来优化你的代码。如下面的代码：
+```
+Fish Shell
+set -l first $argv[1]
+echo $first
+```
+上述代码设定了一个局部变量first，被用来存储和输出第一个命令行参数。
 
-## 深入了解
-
-### 历史背景
-
-在早期的操作系统中，程序是通过交互式的方式执行的，即用户通过输入指令来操作程序。随着技术的发展，出现了命令行界面，使得用户可以通过命令行来执行程序。而读取命令行参数就是为了更进一步提高程序的灵活性和可定制性。
-
-### 其他选择
-
-除了 ```Fish Shell``` 的 ```argparse``` 函数，我们也可以使用其他工具来读取命令行参数，比如 ```getopt```。这些工具都具有类似的功能，但是在使用上可能会稍有差异。
-
-### 实现细节
-
-在内部，```Fish Shell``` 的 ```argparse``` 函数通过解析命令行参数后，将其存储为一个关联数组，程序可以通过调用这个数组来读取不同的参数。
-
-## 参考资料
-
-- [Fish Shell文档](https://fishshell.com/docs/current/cmds/argparse.html)
-- [互动式系统的历史](https://en.wikipedia.org/wiki/Interactive_system)
-- [getopt文档](https://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html)
+## 查看更多
+1. Fish Shell官方文档： https://fishshell.com/docs/current/index.html
+2. 命令行参数教程：https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php

@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Swift recipe: Comparing two dates"
+html_title:           "Elm recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,40 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Comparing two dates is a common task in programming where we need to determine whether one date is before, after, or equal to another date. This is important for applications that deal with scheduling, time-sensitive events, or data analysis. By comparing dates, programmers can accurately organize and manipulate data based on time.
+
+Comparing two dates in programming is the process of determining which date is earlier, later, or whether they are identical. Programmers often do this to perform tasks such as sorting events by date, checking validity of input, or implementing a scheduler.
 
 ## How to:
-To compare two dates in Swift, we can use the ```compare()``` method of the ```Date``` class. This method takes in another ```Date``` object as a parameter and returns a ```ComparisonResult``` enum which tells us the relationship between the two dates.
+
+In Swift, there is an in-built system for date comparison through `Date` types and using operators like `==`, `!=`, `<`, `>`, `<=`, `>=`. Here's how you do it:
 
 ```Swift
-// Example 1: Comparing two dates
-let date1 = Date() // current date
-let date2 = Date(timeIntervalSinceNow: 3600) // date an hour from now
+let date1 = Date()
+let date2 = Date().addingTimeInterval(3600) // One hour in the future
 
-let result = date1.compare(date2)
-print(result) // Output: ComparisonResult.orderedAscending
+if date1 < date2 {
+    print("date1 comes before date2")
+} else if date1 > date2 {
+    print("date1 comes after date2")
+} else {
+    print("The dates are identical")
+}
 ```
 
-The ```ComparisonResult``` enum has three cases: ```orderedAscending```, ```orderedDescending```, and ```orderedSame```. In the example above, we can see that ```date1``` is before ```date2``` since the result is ```orderedAscending```.
-
-We can also use the ```<```, ```>```, and ```==``` operators to compare two dates directly.
+For comparing only the date, not including the time, you need to use a `Calendar`:
 
 ```Swift
-// Example 2: Using operators to compare dates
-let date3 = Date(timeIntervalSince1970: 0) // Unix epoch (January 1, 1970)
+let calendar = Calendar.current
+let date1 = calendar.startOfDay(for: Date()) // Today's date
+let date2 = calendar.startOfDay(for: Date().addingTimeInterval(86400)) // Tomorrow's date
 
-let isEarlier = date3 < date1
-let isEqual = date1 == date2
-
-print(isEarlier) // Output: true
-print(isEqual) // Output: false
+if date1 < date2 {
+    print("date1 comes before date2")
+} else if date1 > date2 {
+    print("date1 comes after date2")
+} else {
+    print("The dates are identical")
+}
 ```
 
 ## Deep Dive
-Comparing dates can be a complex task, especially when considering time zones and leap years. In the past, programmers have used libraries like ```NSCalendar``` and ```NSDateComponents``` to compare dates in Swift. However, with the introduction of ```Calendar``` and ```DateComponents``` in Swift 3, these older methods are no longer recommended.
 
-When comparing dates, it is important to consider the precision of the dates. Dates with a higher precision (down to milliseconds) will produce more accurate results than dates with lower precision. Additionally, when comparing dates with a ```TimeInterval``` of a larger magnitude, it is recommended to use the ```timeIntervalSince()``` method instead of ```compare()``` for better performance.
+Historically, date comparison was quite complex, requiring conversion to some common format and ensuring edge cases like leap years were handled correctly. Swift removes much of this complexity by providing intuitive mechanisms.
+
+Although the method shown above is the most straightforward, there are alternatives. For instance, you could use `compare(_:to:granularity:)` method of the `Calendar` object, which compares dates to a specified granularity.
+
+Implementation details come into play when considering time zones. In Swift, `Date` objects are point-in-time, independent of any particular calendar or time zone. Therefore, when comparing dates that were created in a specific calendar or time zone, developers must take care to convert them properly.
 
 ## See Also
-- [Apple Developer Documentation - Date](https://developer.apple.com/documentation/foundation/date)
-- [Swift Docs - Comparing Dates](https://docs.swift.org/swift-book/LanguageGuide/AdvancedOperators.html#ID43)
+
+For more info about Swift's Calendar, check out:
+[Apple's Official Documentation on Calendar](https://developer.apple.com/documentation/foundation/calendar)
+
+To dive deep into Swift's Date:
+[Apple's Official Documentation on Date](https://developer.apple.com/documentation/foundation/date)
+
+And if you want to explore more about Date and Time Programming Guide:
+[Apple's Documentation on Dates and Times](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html)

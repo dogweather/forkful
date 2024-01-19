@@ -1,7 +1,7 @@
 ---
-title:                "Analizowanie html"
-html_title:           "TypeScript: Analizowanie html"
-simple_title:         "Analizowanie html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
 
-Parsowanie HTML to proces analizowania kodu HTML i konwersji go na strukturalny model danych, który można łatwo przetwarzać za pomocą kodu programu. Programiści wykonują parsowanie HTML w celu manipulacji i wykorzystania danych zawartych w kodzie HTML, na przykład do tworzenia interaktywnych stron internetowych.
+Przetwarzanie HTML to proces, dzięki któremu tekst zawierający kod HTML może być analizowany i interpretowany przez komputer. Programiści go używają, aby manipulować, edytować, i interaktywować z danymi na stronie internetowej.
 
 ## Jak to zrobić:
 
 ```TypeScript
-const parser = new DOMParser(); //Tworzenie nowego parsera
-const html = `
-  <h1>Hello World!</h1>
-  <p>This is a sample HTML code.</p>`;
+import { parse } from 'fast-html-parser';
 
-const doc = parser.parseFromString(html, 'text/html'); //Parsowanie kodu HTML
+let htmlStr = '<div class="powitanie">Cześć, Programisto!</div>';
 
-console.log(doc.body.innerHTML); //Output: <h1>Hello World!</h1><p>This is a sample HTML code.</p>
+let root = parse(htmlStr);
+
+console.log(root.querySelector('.powitanie').rawText);
 ```
 
-## Głębsze zagłębienie:
+Po uruchomieniu powyższego kodu, otrzymasz na wyjściu następujący tekst:
 
-Parsowanie HTML jest ważnym procesem w tworzeniu stron internetowych. Po raz pierwszy zostało wprowadzone w Netscape Navigator w 1997 roku i jest obecnie szeroko stosowane w przeglądarkach internetowych i narzędziach do przetwarzania dokumentów HTML. Istnieją również alternatywne metody parsowania, takie jak metoda regex, ale parser DOM jest uważany za bardziej niezawodny i łatwiejszy w użyciu.
+```
+Cześć, Programisto!
+```
 
-## Zobacz też:
+## Deep Dive :
 
-- [Introduction to HTML parsing in JavaScript](https://javascript.info/parsing-html)
-- [DOMParser in TypeScript](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [HTML parsing with regex and DOM methods comparison](https://medium.com/swlh/html-parsing-with-regexp-vs-dom-60e263a1f78)
+(1) Historycznie, przetwarzanie HTML było dosyć trudne i niewygodne, ale nowoczesne biblioteki, takie jak `fast-html-parser` w TypeScript, uczyniły ten proces dużo łatwiejszym.
+
+(2) Istnieje wiele alternatyw dla `fast-html-parser`, takich jak `jsdom` czy `cheerio`, ale każda z nich ma swoje plusy i minusy. Na przykład, `jsdom` jest dosyć potężny, ale może okazać się zbyt skomplikowany do prostych zadań. Znalezienie odpowiedniego narzędzia zależy od konkretnego przypadku.
+
+(3) To, jak działa przetwarzanie HTML, to dosyć złożony temat. Ale mówiąc najprościej, biblioteka tak jak `fast-html-parser` przegląda cały tekst HTML od początku do końca, identyfikując tagi HTML i zasoby, które one zawierają, a następnie tworzy z nich strukturę danych, którą możemy łatwo przefiltrować i manipulować.
+
+## Zobacz także:
+
+- Dokumentacja `fast-html-parser`: [https://www.npmjs.com/package/fast-html-parser](https://www.npmjs.com/package/fast-html-parser)
+- Więcej o `jsdom`: [https://github.com/jsdom/jsdom](https://github.com/jsdom/jsdom)
+- Więcej o `cheerio`: [https://cheerio.js.org/](https://cheerio.js.org/)

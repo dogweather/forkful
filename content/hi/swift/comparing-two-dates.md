@@ -1,7 +1,7 @@
 ---
-title:                "दो तारीखों की तुलना करना"
-html_title:           "Swift: दो तारीखों की तुलना करना"
-simple_title:         "दो तारीखों की तुलना करना"
+title:                "दो तारीखों की तुलना"
+html_title:           "Elixir: दो तारीखों की तुलना"
+simple_title:         "दो तारीखों की तुलना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -11,22 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-कोडिंग में दो तारीखों की तुलना करने से मतलब है कि दो तारीखों के बीच की समय अंतर को पता करना। इसे प्रोग्रामर्स इसलिए करते हैं क्योंकि वे अपने कोड में तारीखों को जाँचने और समय के साथ समझने के लिए इस्तेमाल करते हैं।
 
-## कैसे करें:
-`Swift` कोड ब्लॉक के भीतर नमूना उत्पाद और कोडिंग उदाहरण:
+तारीखों की तुलना (Comparing dates) से हमारा तात्पर्य दो तारीखों को आपस में तुलना करने से है। कोडर इसे तब करते हैं जब उन्हें निश्चित करना होता है कि कौन सी तारीख पहली हुई और कौन सी बाद में आई, या क्या वे दोनों समान हैं।
 
-`let date1 = Date()     
-let date2 = Date()`
+## कैसे:
 
-इस उदाहरण में, हमने `Date` नामक दो तारीखों को बनाया है। यहाँ `let` बारे में ध्यान दें कि हमने उन्हें बदलाव रोकने के लिए `constant` एबल्। अब, हम `compare()` मेथड का इस्तेमाल करके दो तारीखों के बीच समय अंतर को पता कर सकते हैं:
+इसे Swift में करने का तरीका निम्नानुसार है:
 
-`let timeInterval = date2.compare(date1)`
+```Swift
+import Foundation
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd.MM.yyyy"
+let date1 = dateFormatter.date(from: "10.05.2021")
+let date2 = dateFormatter.date(from: "15.05.2021")
 
-## डीप डाइव:
-(1) इतिहासिक प्रसंग: पूर्व तारीखों की तुलना को कोडिंग में अत्यधिक उपयोगी बनाने के लिए, `Date` क्लास `Foundation` फ्रेमवर्क से भाग है। यह अन्य `Foundation` क्लासों के साथ तिथि और समय सम्बन्धित काम करता है। (2) वैकल्पिक तरीके: कुछ अन्य तरीके, जैसे कि `calendar` और `time zone` का उपयोग करके भी, हम तारीखों की तुलना कर सकते हैं। (3) अंतर्निहित तत्व: तारीखों को समय के साथ समझने के लिए, हम `Date` वर्ग में `TimeInterval` नामक तत्व का इस्तेमाल करते हैं। यह हमें समय अंतर को मिलीसेकंड में प्रकट करता है।
+if let firstDate = date1, let secondDate = date2 {
+    if firstDate < secondDate {
+        print("Date1 is before Date2")
+    } else if firstDate > secondDate {
+        print("Date1 is after Date2")
+    } else {
+        print("The two dates are the same")
+    }
+}
+```
 
-## देखें भी:
-संबंधित स्रोतों के लिंक:  
-1) [Apple's Official Documentation on `Date`](https://developer.apple.com/documentation/foundation/date)  
-2) [A Beginner Friendly Guide to Understanding Dates in Swift](https://www.raywenderlich.com/965-swift-date-calendar-and-datecomponents)
+आउटपुट ऐसा होगा:
+
+```Swift
+"Date1 is before Date2"
+```
+
+## गहराई में:
+
+1. ऐतिहासिक संदर्भ: हम सभी जानते हैं कि समय और तारीख की गणना करना एक पुराना विचार है। हालांकि, इसे कम्प्यूटर कोडिंग में लागू करने का तरीका नए ज़माने के साथ बदल गया है।
+    
+2. विकल्प: NSCalendar और NSDate का उपयोग करके भी इसे किया जा सकता है, लेकिन हमने यहाँ DateFormatter का इस्तेमाल किया है क्योंकि यह कुछ अधिक प्रतिसाद-प्रवेशी होता है।
+    
+3. कार्यान्वयन विवरण: हम DateFormatter का इस्तेमाल कर रहे हैं, जो Foundation फ्रेमवर्क का हिस्सा है और तिथि के कच्चे मानों को काम करने के लिए मनुष्य पठनीय रूप में परिवर्तित करने में सहायता करता है।
+
+## देखने के लिये:
+
+1. [Apple's Documentation on Dates and Times](https://developer.apple.com/documentation/foundation/dates_and_times)
+2. [NSDate Comparison in Swift](https://stackoverflow.com/questions/27182023/getting-the-difference-between-two-nsdates-in-months)
+3. [Apple's DateFormatter Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
+
+---------

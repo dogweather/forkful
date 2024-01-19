@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "Elm recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,45 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading command line arguments is the process of retrieving user input passed through the command line in a program. This allows programmers to create more dynamic and interactive applications, as user input can be used to modify the behavior of the program. It is a fundamental skill for any programmer, as it allows for more advanced and customizable applications.
+Command line arguments are inputs you send to your program when running it from a console or terminal. They're a program's lifeblood, used for things like file paths, settings, debugging, and more.
 
 ## How to:
-To read command line arguments in Elm, we first need to import the `Platform` module. Then, we can use the `flagDecoder` function to decode the command line arguments into a `Task` that returns a list of strings. Here's an example of how to use it:
+
+Let's get real, Elm isn't built for command-line apps. But, with Node.js and the Ports feature, we can do some tricks. Here's a way to read command-line arguments:
+
+1. We'll need to install `elm` and `elm-node` packages if you haven't yet. In your terminal, fire off these commands:
+
+```shell
+npm install elm
+npm install elm-node
+```
+
+2. Create an `Elm` file, name it `Main.elm`:
 
 ```Elm
-import Platform
+port module Main exposing (..)
 
-main : Program String
-main =
-    Platform.worker
-        { init = \_ -> ( [], Cmd.none )
-        , update = \_ model -> ( model, Cmd.none )
-        , subscriptions = flagDecoder (map config [1..3])
-        }
-
-config : List String -> Int -> String -> String
-config args index =
-    "Argument " ++ (toString index) ++ ": " ++ (List.head args) ++ "\n"
-
+port cmdArgs : (List String -> msg) -> Sub msg
 ```
 
-Running this program with the command line arguments `elm make Main.elm -- arg1 arg2 arg3` will produce the following output:
+3. Next, the `index.js` file:
 
+```JavaScript
+const { Elm } = require('./Main.elm');
+const app = Elm.Main.init();
+
+app.ports.cmdArgs.subscribe(function() {
+    process.stdout.write(process.argv);
+});
 ```
-Argument 1: arg1
-Argument 2: arg2
-Argument 3: arg3
+
+4. Now, let’s compile and run it:
+
+```shell
+npx elm make Main.elm --output=Main.js
+node index.js hello world
 ```
-Note: In the `Platform.worker` function, we are passing in a dummy `update` function and a `Cmd.none` command, as we do not need them for this example.
 
-## Deep Dive:
-Command line arguments have been a widely used feature in programming languages since the early days of computing. They provide a way for users to interact with a program through a simple text interface, making it more versatile and useful. Before command line arguments, programs would often require user input through complicated GUIs or through hardcoded values, which limited their functionality.
+You should see `['node', 'index.js', 'hello', 'world']` as output.
 
-In Elm, there are other ways to get user input, such as using ports or using `Program`s with `subscriptions`. However, command line arguments offer a more direct and simple way to retrieve user input.
+## Deep Dive
 
-To use command line arguments in Elm, we need to use the `Platform` module since it provides functions that allow us to interact with the platform that our application is running on, in this case, the command line. The `flagDecoder` function takes in a decoder and returns a `Task` that decodes the command line arguments into a list of strings, which can then be used in our program.
+Historically, Elm's aimed at front-end development. Command line apps is not its forte. Elm 0.19 removed native modules, making it trickier to access command line arguments natively.
 
-## See Also:
-- Elm Documentation: [Command Line Arguments](https://package.elm-lang.org/packages/elm/core/latest/Platform#flagDecoder)
-- Elm Guide: [Customizing Flags](https://guide.elm-lang.org/interop/flags.html)
-- Elm-Lang.org: [Elm homepage](https://elm-lang.org/)
+You have choices, though. You could use JavaScript interop (like we did), or you could use a different language more suited for command-line applications, such as Python or Ruby.
+
+Ports give us a way to communicate with JavaScript. In our example, we're sending the command-line arguments from `index.js` to `Main.elm` via the `cmdArgs` port.
+
+## See Also
+
+Elm's documentation on [Ports](https://guide.elm-lang.org/interop/ports.html)  
+Node.js guide on [command-line arguments](https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line)  
+Useful Elm packages for [Node.js](https://package.elm-lang.org/packages/eeue56/elm-serverless/latest/) and more on [GitHub](https://github.com/sporto/elm-node)

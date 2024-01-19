@@ -1,7 +1,7 @@
 ---
-title:                "Skicka en http-begäran"
-html_title:           "Python: Skicka en http-begäran"
-simple_title:         "Skicka en http-begäran"
+title:                "Att skicka en http-begäran"
+html_title:           "Go: Att skicka en http-begäran"
+simple_title:         "Att skicka en http-begäran"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -12,33 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att skicka en HTTP-förfrågan är en viktig del av programmering eftersom det låter dig kommunicera med en server och hämta data eller utföra en åtgärd. Det är den grundläggande metoden för att ansluta till och använda webbplatser och webbapplikationer.
+HTTP-anrop är uppmaningar skickade från en klient till en server för att hämta data. Programmers behöver detta för att interagera med webbtjänster, ladda ner filer och allt däremellan.
 
-## Så här gör du:
+## Hur man:
+
+Python har ett inbyggt bibliotek som heter `requests` för att skicka HTTP-anrop. Första gången, kommer du behöva installera det med kommandot `pip install requests`.
+
+Här är ett exempel på hur du gjör detta:
 
 ```python
 import requests
 
-# Skicka en förfrågan till Google och skriv ut statuskoden
-response = requests.get('https://www.google.com')
+response = requests.get('http://example.com')
+
 print(response.status_code)
-```
-
-```python
-import requests
-
-# Skicka en POST-förfrågan med en JSON-payload
-data = {'username': 'John', 'password': 'secret'}
-response = requests.post('https://example.com/login', json=data)
 print(response.content)
 ```
 
-## Djupdykning:
+När du kör detta kommer det att visa:
 
-Att skicka HTTP-förfrågningar har funnits sedan början av World Wide Web. Det finns också andra protokoll som kan användas för att skicka förfrågningar, som till exempel FTP och SMTP. Det finns också olika bibliotek som kan användas för att skicka HTTP-förfrågningar i Python, såsom urllib och httplib. Requests-biblioteket är dock ett populärt alternativ på grund av dess enkla syntax och användarvänlighet.
+```
+200
+b'<!doctype html>...'
+```
 
-## Se även:
+Det betyder att du har fått en HTTP 200 status kod, vilket betyder "OK", och innehållet på sidan som en `bytes`-typ.
 
-- [Requests documentation](https://requests.readthedocs.io/en/master/)
-- [Python standard library: urllib](https://docs.python.org/3/library/urllib.html)
-- [Python standard library: httplib](https://docs.python.org/3/library/http.client.html)
+## Djupdykning
+
+Historiskt sett var det betydligt mer komplicerat att skicka HTTP-anrop innan `requests`-modulen skapades. Python har ett äldre modul som heter `urllib`, men det är betydligt mer komplicerat att använda.
+
+Vad gäller alternativ till `requests`, så finns det bibliotek som `http.client` (inbyggt), `httplib2`, `treq` och många fler. De är dock generellt sett mer komplexa att använda än `requests`.
+
+När det kommer till detaljer av implementering, skickar `requests.get()`-funktionen en `GET`-begäran till den angivna URL:en. Den returnerar ett `Response`-objekt som innehåller serverns svar på vår begäran.
+
+## Se Även
+
+För ytterligare undersökning, se:
+
+- [Officiella dokument för requests](https://requests.readthedocs.io/)
+- [HTTP: The Protocol Every Web Developer Must Know](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [Python’s Requests Library](https://realpython.com/python-requests/) (tutorial)

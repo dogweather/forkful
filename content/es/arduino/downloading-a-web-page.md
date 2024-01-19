@@ -10,55 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Descargar una página web es el proceso de obtener datos de una página web y guardarlos en nuestra computadora o dispositivo. Los programadores lo hacen para acceder a la información que necesitan para sus proyectos o para automatizar tareas en sus dispositivos.
+## ¿Qué & Por Qué?
 
-## Cómo:
-El siguiente código en Arduino demuestra cómo descargar una página web:
+Descargar una página web es básicamente cómo guardamos una copia de todo el contenido de un sitio web en local. Los programadores lo hacen para analizar la página, scrappear información, testear funcionalidades, entre otros propósitos.
 
-```
-Arduino
-#include <WiFi.h>
-#include <HTTPClient.h>
+## Cómo hacer:
 
-// Establecer la red WiFi a la que te quieres conectar
-const char* ssid = "nombre_de_tu_red";
-const char* password = "contraseña_de_tu_red";
+Aquí te muestro un pedazo de código en Arduino para descargar una página web utilizando un módulo ESP8266:
+
+```Arduino
+#include <ESP8266WiFi.h>
+#define SSID "nombre_de_tu_red"
+#define PASSWORD "contraseña_de_tu_red"
+
+WiFiClient client;
 
 void setup() {
-    // Conectar a la red WiFi
-    WiFi.begin(ssid, password);
-    
-    while (WiFi.status() != WL_CONNECTED) {
-        delay(500);
-        Serial.println("Conectando a WiFi..");
-    }
-
-    // Crear un objeto de HTTP
-    HTTPClient http;
-    // Ingresar la URL de la página web que se desea descargar
-    http.begin("https://www.ejemplo.com");
-
-    // Realizar la petición GET y guardar la respuesta en una variable
-    int httpResponseCode = http.GET();
-    String response = http.getString();
-
-    // Imprimir la respuesta en la consola
-    Serial.println(httpResponseCode);
-    Serial.println(response);
-
-    // Cerrar la conexión
-    http.end();
+  Serial.begin(115200);
+  WiFi.begin(SSID, PASSWORD);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Conectando a la red WiFi...");
+  }
+  Serial.println("¡Conectado!");
 }
 
 void loop() {
-
+  if (client.connect("www.pagina-ejemplo.com", 80)) {
+    client.println("GET / HTTP/1.1");
+    client.println("Host: www.pagina-ejemplo.com");
+    client.println("Connection: close");
+    client.println();
+  }
+  while (client.available()) {
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
+  }
 }
 ```
+Este código se conectará a la red WiFi que definas y descargará la página inicial de "www.pagina-ejemplo.com". El contenido de la página web se imprimirá en el monitor serial.
 
-## Profundizando:
-Históricamente, descargar una página web era un proceso más lento y complicado, pero con el avance de la tecnología esto se ha vuelto más sencillo y rápido. Una alternativa para descargar una página web en Arduino es utilizar un módulo Ethernet o WiFi que permita una conexión directa a internet. Asimismo, también es importante tener en cuenta que no todas las páginas web permiten descargar su contenido o pueden tener restricciones de seguridad que impiden su descarga.
+## Inmersión Profunda:
 
-## Ver también:
-- Documentación de Arduino: https://www.arduino.cc/en/Reference/WiFi
-- Ejemplo de descarga de página web en ESP32: https://randomnerdtutorials.com/esp32-http-get-post-arduino/
+1. **Contexto histórico**: El primer intento de "crawler", un programa que descarga páginas para indexarlas, se cree que fue  el WebCrawler de 1994, que fue crucial en el desarrollo de Yahoo!. 
+2. **Alternativas**: En lugar de ESP8266, puedes usar otros módulos como ESP32, que incluyen más funcionalidades.
+3. **Detalles de implementación**: La descarga de una página web con Arduino se basa en realizar una petición GET a un servidor web. El servidor responde con el HTML de la página y lo lees con la función `client.readStringUntil('\r');`.
+
+## Fuentes Relacionadas:
+
+1. Documentación oficial de Arduino: https://www.arduino.cc/reference/en/
+2. Tutorial de connectar Arduino a internet: https://internetdelascosas.cl/2015/03/23/tutorial-esp8266-conexión-a-internet-con-arduino-uno/
+3. Información adicional sobre peticiones HTTP: https://desarrolloweb.com/articulos/2993.php
+4. Tutorial para web scrapping: https://www.acamica.com/clases/1479/tutoriales/webscraping-con-python-y-beautifulsoup

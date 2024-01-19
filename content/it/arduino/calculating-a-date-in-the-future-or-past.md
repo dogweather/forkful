@@ -10,37 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Che cosa & Perché?
 
-Calcolare una data nel futuro o nel passato è l'atto di determinare una data basandosi su un intervallo di tempo. I programmatori spesso eseguono questa operazione per gestire eventi o attività programmati, o per mostrare informazioni come date di scadenza o scadenze.
+Calcolare una data nel futuro o nel passato consiste nell'aggiungere o sottrarre un certo numero di giorni da una data specifica. I programmatori lo fanno per gestire operazioni legate al tempo, come i conteggi alla rovescia o la pianificazione di eventi.
 
-## Come:
+## Come fare:
 
+Di seguito è riportato un esempio di codice Arduino per calcolare una data futura. Assicuriamoci di avere la libreria `TimeLib` inclusa nel tuo sketch.
+
+```Arduino
+#include <TimeLib.h>
+
+void setup() {
+  Serial.begin(9600);
+  setTime(11, 30, 0, 1, 1, 2022); // Imposta l'ora corrente
+}
+
+void loop() {
+  time_t futureTime = now() + (7 * DAYS); // Aggiungi 7 giorni
+  
+  Serial.print(day(futureTime));
+  Serial.print("/");
+  Serial.print(month(futureTime));
+  Serial.print("/");
+  Serial.println(year(futureTime));
+
+  delay(5000); // Attendi 5 secondi prima della prossima stampa
+}
 ```
-ArduinoDateTime.begin();
-// Definisci una data di riferimento (gg, mm, aaaa) 
-int giorno = 12;
-int mese = 11;
-int anno = 2020;
+Questo sketch genererà l'output seguente:
 
-// Definisci l'intervallo di tempo in giorni
-int giorni_da_aggiungere = 30;
-
-// Calcola la data futura
-ArduinoDateTime.calcularDiasCalc(anno, mese, giorno, giorni_da_aggiungere);
-// Output: 12 dicembre 2020 + 30 giorni = 11 gennaio 2021
+```Arduino
+8/1/2022
 ```
 
 ## Approfondimento:
 
-Ci sono diversi modi per calcolare una data nel futuro o nel passato nei programmi, ma la maggior parte utilizza un metodo matematico chiamato "aggiunta di giorni". Questo metodo è stato sviluppato da John Conway nel 1962 e si basa sul calendario giuliano. 
+Nel passato, i programmatori dovevano gestire manualmente le operazioni di calcolo del tempo, compresi i dettagli complicati come gli anni bisestili. Adesso, le librerie come `TimeLib` di Arduino semplificano molto il processo.
 
-Un'alternativa a questo metodo è l'utilizzo di librerie esterne, come "Time.h" o "DateTime.h". Queste librerie semplificano il processo di calcolo di date e forniscono funzioni aggiuntive come la conversione tra fusi orari.
+Un'alternativa al calcolo di una data nel futuro o nel passato è l'utilizzo di un servizio di timestamp UNIX, che usa secondi invece di giorni. Può essere più preciso, ma potrebbe richiedere più lavoro per convertire i secondi in un formato di data leggibile.
 
-Per implementare il calcolo di una data nel futuro o nel passato in un programma Arduino, è necessario avere una buona comprensione della sintassi di base e delle funzioni matematiche. È anche importante considerare gli errori comuni, come la conversione di numeri interi in lettere o errori nel formato della data.
+Per calcolare una data nel futuro o nel past, `TimeLib` converte innanzitutto il momento attuale in secondi, quindi aggiunge o sottrae il numero appropriato di secondi.
 
-## Vedi anche:
+## È possibile consultare inoltre:
 
-- [Una guida dettagliata sul calcolo di date in Arduino](https://www.arduino.cc/en/Tutorial/CalculateTime)
-- [Libreria Time.h](https://github.com/PaulStoffregen/Time)
-- [Libreria DateTime.h](https://github.com/YorickBleijenberg/DateTime)
+- Documentazione di Arduino su `TimeLib`: https://playground.arduino.cc/Code/time
+- Conversione del tempo Unix in Arduino: https://arduinogetstarted.com/tutorials/arduino-time-unix
+- Tutorial su come utilizzare la libreria `TimeLib`: https://makerguides.com/time-arduino-tutorial/

@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "Arduino: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Quoi et Pourquoi ?
 
-Lorsqu'on démarre un nouveau projet, on commence par le début : la création d'un programme. En programmant, les développeurs peuvent créer des applications, des jeux, des sites web et bien plus encore !
-La programmation permet de créer des projets personnalisés et de donner vie à ses idées imaginatives.
+Démarrer un nouveau projet est l'acte de créer une base pour une nouvelle application à partir de zéro. Les programmeurs le font pour concrétiser leurs idées, résoudre un problème, ou simplement pour apprendre.
 
 ## Comment faire :
 
+Le code se trouve dans des blocs ```Arduino ... ```, comme celui-ci:
+```Arduino
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000);
+}
 ```
-Arduino monProjet;
-monProjet.information(“Nouveau projet en cours de réalisation !”);
-monProjet.begin();
-Serial.println(“Hello World !”);
-```
+C'est un exemple de clignotement d'une LED intégrée. Si l'exécution est réussie, la LED intégrée à votre carte Arduino clignotera toutes les secondes.
 
-Le code ci-dessus permet de créer un nouvel objet appelé "monProjet", qui contiendra toutes les informations nécessaires pour démarrer le nouveau projet. En utilisant la fonction "information", on peut ajouter une description pour le projet, puis le démarrer avec la fonction "begin". Enfin, la fonction "Serial.println" affichera le message "Hello World !" sur le moniteur série de l'Arduino.
+## Plongée profonde :
 
-## Plongée en profondeur :
+L'Arduino est né en 2005 dans une école de design italienne, dans le but de rendre la programmation abordable et accessible à tous. C'est une excellente façon de commencer avec la programmation en C++.
 
-L'histoire de l'Arduino remonte à 2005, lorsque Massimo Banzi et David Cuartielles ont créé une plateforme open-source pour la programmation et le développement de projets électroniques. Depuis lors, l'Arduino est devenu un outil populaire pour les passionnés de technologie, car il est facile à utiliser et abordable.
+Une alternative à Arduino serait Raspberry Pi : plus puissant, mais aussi plus complexe. L'Arduino est souvent le premier choix pour les débutants en raison de sa simplicité.
 
-Bien qu'il existe d'autres options de microcontrôleur, l'Arduino est souvent choisi pour sa facilité d'utilisation, sa communauté active et ses nombreuses ressources en ligne. Il est également compatible avec une large gamme de composants électroniques, ce qui en fait un choix polyvalent pour les projets.
+Lors de la création d'un nouveau projet Arduino, il est essentiel de comprendre les étapes de base : définir les entrées/sorties (via `pinMode()`), écrire la logique de votre programme (dans `loop()`) et initialiser les paramètres (dans `setup()`).
 
-Pour mettre en œuvre un nouveau projet avec Arduino, il est important de bien comprendre les différents composants utilisés, tels que la carte Arduino elle-même, les composants électroniques externes et les différents câblages nécessaires.
+## Voir aussi :
 
-## Voir aussi:
+Pour approfondir votre apprentissage de la programmation Arduino, voici quelques ressources utiles (en anglais) :
 
-Pour en savoir plus sur la programmation avec Arduino, consultez le site officiel d'Arduino (https://www.arduino.cc/) et sa communauté en ligne (https://forum.arduino.cc/). Vous pouvez également trouver des tutoriels et des projets pratiques sur des sites tels que Instructables (https://www.instructables.com/), YouTube et GitHub. N'oubliez pas de partager vos projets et de vous connecter avec d'autres amateurs d'Arduino !
+1. Le site officiel d'Arduino : [Arduino Official Website](https://www.arduino.cc/)
+2. Pour une référence rapide à la syntaxe : [Arduino Language Reference](https://www.arduino.cc/reference/en/)
+3. Pour des exemples de projets et tutoriels : [Arduino Project Hub](https://create.arduino.cc/projecthub).
+4. C++ pour Arduino - Un cours Udemy pour apprendre la programmation C++ pour Arduino : [C++ for Arduino](https://www.udemy.com/share/101qrk/).

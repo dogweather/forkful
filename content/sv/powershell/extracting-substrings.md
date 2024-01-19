@@ -1,7 +1,7 @@
 ---
-title:                "Utvinna delsträngar"
-html_title:           "PowerShell: Utvinna delsträngar"
-simple_title:         "Utvinna delsträngar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -11,20 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Substring-extrahering är processen att extrahera en del av en sträng baserat på ett visst mönster eller plats i strängen. Det är ett användbart verktyg för att manipulera data och hitta specifika bitar av information. Programerare använder detta för att automatiskt extrahera relevanta data från stora mängder information, vilket sparar tid och minskar risken för fel.
+Hämtning av delföljder innebär att man tar en del av en sträng och använder den för ett specifikt syfte. Programmörer gör det för att behandla specifika data från en större datamängd, för exempelvis att analysera, manipulera eller jämföra information.
 
-## Hur man gör:
-För att extrahera en substring i PowerShell, används kommandot `SubString()`. Detta kommando tar två parametrar: startposition och längd på den sträng som ska extraheras. 
+## Hur gör man:
+PowerShell erbjuder olika sätt att extrahera delsträngar. Här är några exempel:
+
+```PowerShell
+# Initial sträng
+$text = 'Hej, världen!'
+
+# Exempel 1: Extrahera de första 3 tecknen
+$substring = $text.Substring(0, 3)
+echo $substring # Output: 'Hej'
 ```
-PowerShell -extractcmd:
-$substring = "Detta är en textsträng"
-$substring.SubString(5,3)
+
+```PowerShell
+# Exempel 2: Extrahera delsträng efter en specifik position
+$substring = $text.Substring(4)
+echo $substring # Output: ', världen!'
 ```
-Utskriften av detta kommando skulle vara "är", eftersom det börjar vid position 5 och är 3 tecken långt. 
 
-## Djupdykning:
-Substring-extrahering är en vanlig process inom programmering och har funnits sedan de tidiga dagarna av datorer. Det är ett mer effektivt sätt att hitta specifika bitar av information än att manuellt söka igenom en lång sträng. Alternativ till string-extrahering inkluderar användning av reguljära uttryck och kommandon som `Select-String`. Implementationen av SubString() beror på programmeringsspråket men kräver vanligtvis samma typ av parametrar. 
+```PowerShell
+# Exempel 3: Använda -split operatören för att extrahera delsträng mellan två specifika tecken
+$substring = ($text -split '[,]')[1]
+echo $substring # Output: ' världen!'
+```
 
-## Se även:
-- [Microsofts guide för SubString()](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=bcl-2.0)
-- [PowerShell dokumentation för ExtractSubstring()](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/extract-substring?view=powershell-7)
+## Djup dykning
+Även om .Substring() metoden är en utmärkt väg att extrahera delsträngar, kommer dess ursprung från .NET, vilket gör det mindre användbart i andra programmeringsspråk. Som alternativ kan man använda reguljära uttryck för att få mer flexibilitet, men till priset av läsbarheten.
+
+Implementeringsdetaljer kan variera mellan olika språk. I PowerShell är indexeringen baserad på 0, vilket innebär att det första tecknet i strängen är på index 0.
+
+## Se också
+Vill du lära dig mer? Kolla in dessa länkar!
+- [Microsoft Docs: String.Substring Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- [StackOverflow: Extracting Substrings in PowerShell](https://stackoverflow.com/questions/2108727/substring-extraction-in-powershell)

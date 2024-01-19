@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsresultat"
-html_title:           "Arduino: Utskrift av felsökningsresultat"
-simple_title:         "Utskrift av felsökningsresultat"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att skriva ut debug output är när man ber Arduinoen att visa information om vad som händer i koden när den körs. Programmerare använder det för att felsöka och förstå hur koden fungerar.
+## Vad och Varför?
+Utskrift av felsökningsutdata, eller "debugging", handlar om att skriva värden till seriell utdata för att spåra problem. Programmers gör det för att begripa och fixa fel mer effektivt.
 
-## Så här gör du:
+## Hur till?
+Koden nedan visas hur du kan göra det i Arduino:
+
+```Arduino
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println("Hej världen!");
+  delay(2000);
+}
 ```
-Arduino.print("Hej värld!");
-```
-Koden ovan kommer att skriva ut "Hej värld!" på seriell monitor vid programkörning.
 
-```
-int a = 5;
-int b = 10;
-int summa = a + b;
-Arduino.print(summa);
-```
-Koden ovan kommer att skriva ut värdet av variabeln "summa" på seriell monitor.
+Efter du har laddat upp denna kod till din Arduino kommer "Hej världen!" att skrivas på seriell monitor varannan sekund.
 
-## Djupdykning:
-Att skriva ut debug output är ett vanligt verktyg för felsökning, men det finns gott om alternativ som t.ex. att använda en debugger eller att använda någon form av loggning. Det är viktigt att inte ha för mycket debug output i koden då det kan påverka prestandan negativt. För att använda debug output på Arduino måste man ha en seriell anslutning mellan Arduinoen och datorn.
+## Djup Dykning
+Har du någonsin undrat varför vi använder 9600 i `Serial.begin(9600)`? Det beror på att 9600 är standard baudhastigheten för seriell kommunikation och har varit så sedan de tidiga dagarna av datorer. 
 
-## Så här kan du använda dig av debug output:
-1. Använd kommandot "Serial.print()" för att skriva ut text och variabler på seriell monitor.
-2. Använd kommandot "Serial.println()" för att skriva ut en radbrytning efter varje utprintning.
-3. Använd kommandot "Serial.begin()" för att öppna en seriell anslutning mellan Arduinoen och datorn.
+Alternativ till `Serial.println()` inkluderar `Serial.print()` och `Serial.write()`. `Serial.print()` är bara som `Serial.println()` men utan radbrytning på slutet. `Serial.write()` skickar dock bytes till seriellt port, vilket gör det användbart för att skicka binär data.
 
-## Se även:
+När det gäller implementeringsdetaljer, `Serial.begin(9600)` öppnar seriellt port och bestämmer datahastigheten till 9600 bps. `Serial.println("Hej världen!")` skriver sedan tecknen i strängen till porten, följt av en radbrytning och radåtergång.
+
+## Se Även
+För vidare läsning, se följande länkar (alla på engelska):
 - [Arduino Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Using Debug Output in Arduino](https://www.arduino.cc/en/Guide/ArduinoDebugging)
+- [Arduino Debugging Techniques](https://learn.sparkfun.com/tutorials/serial-debugging-techniques)
+- [Baud Rate](https://learn.sparkfun.com/tutorials/serial-communication#baud-rate)

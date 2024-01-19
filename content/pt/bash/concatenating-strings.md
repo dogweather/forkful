@@ -1,7 +1,7 @@
 ---
-title:                "Criando sequências de caracteres"
-html_title:           "Bash: Criando sequências de caracteres"
-simple_title:         "Criando sequências de caracteres"
+title:                "Concatenando strings"
+html_title:           "Elixir: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,34 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+---
 
-Concatenar strings é o processo de combinar duas ou mais strings em uma única string. Programadores fazem isso para criar strings maiores e mais complexas que podem ser usadas em seus programas. Isso pode ser útil para criar mensagens de saída personalizadas, criar nomes de arquivos dinâmicos ou até mesmo formar URLs.
+## O quê e Por quê?
+
+Concatenar strings é o processo de juntar duas ou mais sequências de caracteres num único valor. Os programadores fazem isso para criar mensagens, comandos ou qualquer outra coisa que precisa de uma string específica.
+
+---
 
 ## Como fazer:
 
-Para concatenar strings em Bash, basta usar o operador de concatenação ```$``` entre as strings que deseja combinar. Aqui está um exemplo:
+Vamos ver um exemplo básico:
 
-```
-nome="Maria"
-sobrenome="Silva"
-nome_completo="$nome $sobrenome"
-echo "Meu nome completo é $nome_completo."
-```
+```Bash
+# Definindo duas strings
+string1="Olá, "
+string2="mundo!"
 
-Isso irá gerar a seguinte saída:
-
-```
-Meu nome completo é Maria Silva.
+# Concatenando as strings
+saudacao="$string1$string2"
+echo $saudacao
 ```
 
-## Mergulho profundo:
+O resultado será:
 
-Concatenar strings em Bash é uma funcionalidade básica e útil, mas também pode ser feito de outras maneiras. Por exemplo, você também pode usar o comando ```cat``` para combinar o conteúdo de arquivos em uma única string. Além disso, é possível usar o operador de concatenação ```+``` se estiver usando a linguagem de script do Bash.
+```Bash
+Olá, Mundo!
+```
 
-Para implementar a concatenação de strings em seu código Bash, é importante lembrar que é preciso usar o operador ```$``` e também inserir as strings entre aspas duplas para que sejam interpretadas corretamente.
+Easy peasy!
 
-## Veja também:
+---
 
-- [The Linux Command Line: Concatenating Strings in Bash](http://www.linuxjournal.com/content/concatenating-strings-bash)
-- [Stack Overflow: Concatenate string in Bash](https://stackoverflow.com/questions/4181703/how-to-concatenate-string-variables-in-bash)
+## Aprofundamento
+
+A habilidade de concatenar strings vem dos primórdios da programação. É essencial para tarefas como criar caminhos de arquivos, comandos complexos e mensagens personalizadas.
+
+Existem algumas alternativas para a concatenação de strings no Bash. Podemos, por exemplo, usar o comando `printf`:
+
+```Bash
+printf -v saudacao "%s%s" "$string1" "$string2"
+echo $saudacao
+```
+
+O resultado será o mesmo. A escolha de uma ou outra forma depende das necessidades do seu projeto e do estilo pessoal de programação.
+
+Sobre a implementação, o Bash simplesmente junta os valores sem adicionar espaços ou qualquer outro caractere entre eles. Isso permite um alto grau de controle sobre o resultado final.
+
+---
+
+## Ver também
+
+- Manual do Bash: [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
+- Guia avançado de Bash: [http://tldp.org/LDP/abs/html/](http://tldp.org/LDP/abs/html/)
+- Artigos relacionados em Português: [https://www.vivaolinux.com.br/artigo/Dominando-o-Shell-Bash?pagina=3](https://www.vivaolinux.com.br/artigo/Dominando-o-Shell-Bash?pagina=3)
+
+---
+
+Concluindo, a concatenação de strings é uma tarefa simples e comum no Bash. Entenda a teoria, pratique com exemplos e você a dominará rapidinho!

@@ -1,7 +1,7 @@
 ---
-title:                "미래나 과거의 날짜 계산하기"
-html_title:           "C++: 미래나 과거의 날짜 계산하기"
-simple_title:         "미래나 과거의 날짜 계산하기"
+title:                "미래 또는 과거의 날짜 계산하기"
+html_title:           "C++: 미래 또는 과거의 날짜 계산하기"
+simple_title:         "미래 또는 과거의 날짜 계산하기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,47 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무슨 말이고 왜 그렇죠?
+## 뭐하고 왜하나요?
+미래나 과거의 날짜를 계산하는 것은 일정 날짜로부터 특정 기간 후의 날짜를 찾아내는 프로그래밍 테크닉입니다. 프로그래머들이 이를 위해 사용하는 이유는, 예를 들자면, 예약 시스템에서 특정 시간 후의 예약을 처리하는 등의 상황에서 필요하기 때문입니다.
 
-계산 날짜는 미래 또는 과거의 날짜를 계산하는 것을 뜻합니다. 프로그래머들은 이 작업을 수행하는 이유는 다양합니다. 예를 들어, 특정한 날짜 이후의 이벤트를 계획하기 위해서이거나, 특정 날짜의 데이터를 분석하기 위해서일 수 있습니다.
-
-# 하는 법:
-
+## 어떻게 하나요:
 ```C++
-// 오늘 날짜를 기준으로 다음날의 날짜를 계산하는 예제입니다.
 #include <iostream>
 #include <ctime>
+#include <chrono>
 
-using namespace std;
+int main(){
+    // 현재 시스템 시간 구하기 
+    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
 
-int main() {
-  // 현재 시간을 얻어옵니다.
-  time_t now = time(0);
-  // tm 구조체를 사용하여 현재 시간을 로컬 시간대로 변환합니다.
-  tm* curr = localtime(&now);
-  // 다음날의 날짜를 계산합니다.
-  curr->tm_mday += 1;
-  // tm 구조체를 다시 시간값으로 변환합니다.
-  now = mktime(curr);
-  // 타임스탬프를 문자열로 변환하여 출력합니다.
-  cout << "다음날의 날짜는: " << ctime(&now);
-  
-  return 0;
+    // tm 형식으로 변환
+    std::time_t tt = std::chrono::system_clock::to_time_t(now);
+    std::tm* t= std::localtime(&tt);
+
+    // 날짜 지정하기: 5일 후
+    t->tm_mday+=5;
+
+    // mktime로 시간 변환
+    tt=std::mktime(t);
+    
+    // 출력 형식으로 변환하고 출력
+    std::cout<<"Future date: "<<std::asctime(t)<<std::endl;
+
+    return 0;
 }
 ```
-
-출력:
+Output:
+```C++
+Future date: Mon Nov 1 22:07:57 2021
 ```
-다음날의 날짜는: Sun Dec 13 20:16:13 2020
-```
+## 깊게 들어가보기:
+이를 계산하는 방법은 오래 전부터 사용되어 왔으며, 이 문제에 관련된 많은 라이브러리와 기능이 있습니다. C++ 프로그래밍 언어에서는 `<ctime>` 및 `<chrono>` 라이브러리를 통해 다양한 시간과 날짜를 계산할 수 있습니다. 이 방법외에도, `boost::date_time` 라이브러리 등 거의 모든 날짜와 시간 요구사항을 보다 세밀하게 다루는 라이브러리가 존재합니다. 선택한 방법은 여러분의 용도와 개발에 필요한 세부사항에 따라 달라집니다.
 
-# 깊이 아래 뜻:
+## 참고하기:
+참고 자료를 확인하면 더 많은 이해가 가능합니다:
 
-(1) 과거부터 날짜를 계산하는 것은 역사적으로 중요한 문제입니다. 예를 들어, 로마 제국 시대에는 매년 새로운 달력을 만들어야 했고, 이를 위해 계산하는 알고리즘이 필요했습니다.
-(2) 날짜를 계산하는 다른 방법으로는, C++의 내장 함수인 `mktime()`을 사용하는 것이 있습니다.
-(3) 날짜를 계산하는 알고리즘의 구현 방식은 매우 다양하며, 다양한 프로그래밍 언어에서 다른 방식으로 구현되어있습니다.
+[cplusplus.com - Chrono library](http://cplusplus.com/reference/chrono/): 기본적인 chrono 라이브러리 사용법을 배울 수 있습니다.
 
-# 연관된 소스:
+[cppreference.com - C library](https://en.cppreference.com/w/cpp/chrono/c): C++에서 C라이브러리를 사용하는 방법에 대한 자세한 정보를 얻을 수 있습니다.
 
-- [C++ mktime() function](https://www.programiz.com/cpp-programming/library-function/ctime/mktime)
-- [History of the Julian and Gregorian calendars](https://www.timeanddate.com/calendar/julian-gregorian-switch.html)
+[boost.org - Date Time library ](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html): 복잡한 시간과 날짜 계산이 필요하다면 Boost Date Time 라이브러리를 사용해 보는 것도 좋습니다.

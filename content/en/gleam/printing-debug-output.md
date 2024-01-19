@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Gleam recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,36 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Printing Debug Output in Gleam
+
 ## What & Why?
 
-Printing debug output, simply put, lets you see the values of variables and other data during the execution of your program. It's a programmer's best mate in busting bugs because it aids in figuring out where things may be going pear-shaped. 
+Debug output is a convenient way to inspect data within your Gleam program, serving like a window into your code's inner workings. Programmers use it to check data at a specific point in code, helping identify and debug issues.
 
 ## How To:
 
-Getting debug output in Gleam is a cinch. Here's a basic example:
+In Gleam, we use the built-in `debug` function to print debug output.
 
 ```Gleam
 import gleam/io
 
 fn main() {
-  let x = 1
-  io.debug(x) // Prints: 1
+  let mystery_number = 42
+  io.debug(mystery_number)
 }
 ```
-This will print the value of `x`, in this case `1`, to your terminal's standard error stream (`stderr`). 
+Executing the above will output:
+```Bash
+42
+```
 
 ## Deep Dive
 
-The practice of tapping into standard IO for debugging has a time-honoured history, starting with good ol' `print` statements in many early programming languages. 
+Debugging, a practice as old as programming itself, is the process of identifying and fixing errors in the code. Built-in debug functions, like `io.debug` in Gleam, are a leap from primitive methods of manual code tracing. 
 
-Gleam inherits this tradition, with a functional programming spin, via `io.debug/1` function. This function, like in other Beam languages (e.g., Erlang, Elixir), writes to `stderr` rather than `stdout`. This distinction is data vital as `stderr` doesn’t get redirected, thus allowing you to see your debug printouts even when your program's output is piped or redirected to a file. 
+An alternative to `io.debug` in Gleam is `io.display` which, unlike `debug`, evaluates the string version of an expression and also neatly formats the display of complex datatypes.
 
-You might be tempted to go all willy-nilly with debug output, but there’s a cleaner way: good logging practices. Instead of leaving debug output in production code, use logging libraries that can be configured to print debug information only when needed. 
+```Gleam
+import gleam/io
+
+fn main() {
+  let complex_data = tuple("Hello", 42, Nil)
+  io.display(complex_data)
+}
+```
+Gives you:
+```Bash
+#("Hello", 42, [])
+```
+The implementation of these functions in the Gleam core library revolves around evaluating code at runtime, converting values to strings, and printing the strings to stdout.
 
 ## See Also
 
-For more reads on debug output and logging in Gleam, take a gander at these gubbins:
-
-- Gleam's IO Documentation: <https://hexdocs.pm/gleam_stdlib/gleam/io.html> 
-- Logging in Beam Languages: <https://medium.com/beam-language/logging-in-beam-languages-2c191ee60ebf>
-- How to Debug Gleam Programs: <https://github.com/gleam-lang/gleam/discussions/394>
+- Gleam Core Library: [https://hexdocs.pm/gleam_stdlib/gleam/io/index.html](https://hexdocs.pm/gleam_stdlib/gleam/io/index.html)
+- Great overview of debugging: [https://en.wikipedia.org/wiki/Debugging](https://en.wikipedia.org/wiki/Debugging)
+- Alternative printing functions in Gleam: [https://gleam.run/book/tour/printing-to-the-console.html](https://gleam.run/book/tour/printing-to-the-console.html)
+- XML for Erlang (to use with Gleam): [https://github.com/willemdj/erlsom](https://github.com/willemdj/erlsom)

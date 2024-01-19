@@ -1,6 +1,6 @@
 ---
 title:                "문자열 연결하기"
-html_title:           "C++: 문자열 연결하기"
+html_title:           "Arduino: 문자열 연결하기"
 simple_title:         "문자열 연결하기"
 programming_language: "C++"
 category:             "C++"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇과 왜?
 
-문자열 연결(concatenating strings)이란 무엇일까요? 간단히 말해서, 문자열 연결은 여러 개의 문자열을 하나의 문자열로 합치는 것을 말합니다. 프로그래머들이 문자열 연결을 하는 이유는, 많은 데이터를 다룰 때 유용하기 때문입니다. 예를 들어, 여러 개의 성과 이름을 가진 사람들의 목록을 만들 때, 각각의 성과 이름을 합쳐서 하나의 문자열로 만들면 더 편리하게 관리할 수 있습니다.
 
-# 하는 법:
+문자열 결합이란 하나 이상의 문자열을 하나의 문자열로 결합하는 것입니다. 프로그래머들은 데이터를 더 효율적으로 처리하고 시각적으로 출력하기 위해 문자열을 결합합니다.
+
+## 어떻게 수행합니까?
+
+아래의 C++ 코드 예제는 문자열 결합을 보여줍니다.
 
 ```C++
-// 먼저, 두 개의 문자열을 변수에 저장합니다.
-string first = "Hello";
-string second = "World";
+#include <iostream>
+#include <string>
 
-// 두 문자열을 연결하여 새로운 문자열을 만들고, 변수에 저장합니다.
-string concatenated = first + second;
+int main() {
+    std::string str1 = "Hello";
+    std::string str2 = " World!";
+    std::string str3 = str1 + str2;
+    std::cout << str3;
 
-// 새로운 문자열의 출력을 확인합니다.
-cout << concatenated << endl;
+    return 0;
+}
 ```
-출력: HelloWorld
 
-# 깊게 들어가보기:
+이 프로그램을 실행하면 `Hello World!`가 출력됩니다.
 
-1. 역사적 배경: C 언어에서 문자열을 다루는 방식은 비효율적이었습니다. 따라서 C++에서는 문자열을 객체로 다루며, 이를 통해 문자열 연결 등의 작업을 더 효율적으로 할 수 있게 되었습니다.
-2. 대안: 문자열 연결은 C++에서 제공하는 강력한 기능 중 하나지만, 더 복잡한 작업을 위해서는 다른 대안을 고려해볼 수 있습니다. 예를 들어, ```std::stringstream```을 사용하면 더 유연하게 문자열을 처리할 수 있습니다.
-3. 구현 세부사항: C++에서는 문자열 연결을 위해 연산자 오버로딩을 사용합니다. 즉, ```+``` 연산자를 사용하여 두 개의 문자열을 연결하면, 내부적으로는 연산자 오버로딩된 함수가 호출되어 작업이 이뤄집니다.
+## 깊은 이해
 
-# 관련 자료:
+문자열 결합은 C++에서 자주 사용되는 기능으로, 모든 데이터 유형과 연계하여 사용할 수 있습니다. 이를 처음 도입한 1970년대 C언어에서 원래 사용자는 `strcat`함수를 사용하여 문자열을 결합하였으나, 이는 보안 문제로 문제로 인식되어 왔습니다.
 
-- [C++ 문자열 함수](https://en.cppreference.com/w/cpp/header/cstring)
-- [StringStream 클래스](https://www.geeksforgeeks.org/c-stringstream-class-applications/)
-- [연산자 오버로딩에 대한 더 자세한 정보](https://www.geeksforgeeks.org/operator-overloading-c/)
+C++에서는 더 개선된 `std::string` 클래스와 `+` 연산자를 사용해 안전하고 효율적으로 문자열을 결합할 수 있습니다. 핵심은 과도한 메모리 할당을 피하는 것입니다.
+
+이외에도, `std::stringstream` 또는 `std::string::append`등의 방법을 통해 문자열을 결합할 수 있습니다.
+
+## 참고 자료
+
+- [String library in C++](https://www.cplusplus.com/reference/string/)
+- [Stack Overflow: Concatenating strings in C++](https://stackoverflow.com/questions/18892281/most-logical-way-to-concatenate-strings)
+- [C++ Standards Committee Paper: std::string Concatenation and Operator ‘+’ vs. ‘+=’](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p0980r0.html)

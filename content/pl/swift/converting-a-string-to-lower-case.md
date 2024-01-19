@@ -1,6 +1,6 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Swift: Konwersja ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robimy?
+## Co & Dlaczego?
 
-Konwertowanie tekstu do małych liter (lower case) jest procesem zmieniania wszystkich liter w tekście na ich "niskie" odpowiedniki. Często wykonujemy to, aby ujednolicić nasze dane lub upewnić się, że porównanie tekstu będzie działać poprawnie.
+Konwersja łańcucha na małe litery oznacza przekształcenie wszystkich liter w łańcuchu na małe litery. Programiści robią to, aby ułatwić porównywanie i manipulację łańcuchami, ignorując różnice między literami dużymi i małymi.
 
 ## Jak to zrobić:
 
-``` Swift
-let text = "Hello World"
-let lowerCaseText = text.lowercased()
+W Swift, chcąc przekształcić łańcuch na małe litery, używamy metody `.lowercased()`. 
 
-print(lowerCaseText)
+```Swift
+let originalString = "Hello, World!"
+let lowercasedString = originalString.lowercased()
 
-// Output: hello world
+print(lowercasedString)  // Wyprintuje: "hello, world!"
 ```
 
-## Głębszy zanurzenie:
+Metoda ta zwraca kopię oryginalnego łańcucha, w której wszystkie litery są małe.
 
-1. Kontekst historyczny: Konwersja tekstu na małe litery jest praktykowana od dawna, aby ułatwić zarządzanie tekstem i poprawić jego czytelność.
+## Głębsze zrozumienie
 
-2. Alternatywy: Istnieje wiele innych sposobów na konwersję tekstu na małe litery, m.in. zmiana kodowania lub użycie bibliotek zewnętrznych.
+Konwersja do małych liter jest powszechną praktyką w szeregach języków programowania, mającą swoje korzenie w najwcześniejszych dniach komputerów, kiedy to różnice między literami dużymi i małymi były często ignorowane.
 
-3. Szczegóły implementacji: W języku Swift, konwersję tekstu na małe litery możemy wykonać za pomocą metody `lowercased ()` na typie `String`.
+Alternatywą dla `.lowercased()` jest metoda `.uppercased()`, która przekształca łańcuch na duże litery, ułatwiając porównywanie łańcuchów pod kątem różnic wielkości liter.
 
-## Zobacz także:
+Warto dodać, że `.lowercased()` w Swift jest metodą instancji `String`, co oznacza, że działa na konkretnej instancji typu `String`. Wykorzystuje unicodowe algorytmy, co czyni ją bardzo skuteczną w radzeniu sobie z szerokim zakresem znaków.
 
-- Dokumentacja Swift: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
-- Porównywanie i sortowanie równoznacznych ciągów znaków: https://developer.apple.com/documentation/swift/string/1786178-equal
-- Poradnik na temat zarządzania tekstem w języku Swift: https://www.appcoda.com/swift-string/
+## Zobacz też
+
+Bardziej szczegółowe informacje odnośnie manipulacji łańcuchami w Swift można znaleźć w oficjalnej dokumentacji Swift w sekcji o typach łańcuchów i znaków: [String and Character Types in Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html).
+
+Jeżeli jesteś zainteresowany usprawnieniem manipulacji łańcuchami w swoim kodzie, przyjrzyj się również bibliotece [Swift StringCheese](https://github.com/Weebly/StringCheese), która oferuje wiele dodatkowych funkcji do pracy z łańcuchami.

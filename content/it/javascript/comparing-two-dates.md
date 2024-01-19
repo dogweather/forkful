@@ -1,7 +1,7 @@
 ---
-title:                "Confrontare due date"
-html_title:           "Javascript: Confrontare due date"
-simple_title:         "Confrontare due date"
+title:                "Confronto tra due date"
+html_title:           "Elixir: Confronto tra due date"
+simple_title:         "Confronto tra due date"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,40 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## Cos'è & Perché?
 
-Il confronto tra due date è una pratica comune nella programmazione che consente di verificare se una data sia precedente, successiva o uguale a un'altra data. Gli sviluppatori possono utilizzare questa tecnica per gestire le informazioni temporali e per eseguire azioni in base alle date selezionate.
+Confrontare due date significa verificare se una data è anteriore, successiva o uguale a un'altra. Questo è utile per ordinare eventi, stabilire scadenze, o gestire intervalli di tempo.
 
 ## Come fare:
 
-Per confrontare due date in Javascript, è possibile utilizzare l'operatore di confronto ```>```, ```<```, ```>=```, ```<=``` o l'operatore di uguaglianza ```===```. Questi operatori confrontano i valori numerici delle date e restituiscono un valore booleano (vero o falso).
+Creiamo due oggetti `Date` e utilizziamo l'operatore di confronto `<`, `>`, `==` o `===`.
 
-```Javascript
-let data1 = new Date(2021, 4, 10);
-let data2 = new Date(2020, 2, 14);
+```JAVASCRIPT
+let data1 = new Date('2021-04-20T12:00:00');
+let data2 = new Date('2021-04-20T12:05:00');
 
-console.log(data1 > data2); // Output: true
-console.log(data1 === data2); // Output: false
+console.log(data1 > data2); // Risultato: false
+console.log(data1 == data2); // Risultato: false - attenzione: confronta l'oggetto, non il valore!
+console.log(data1 < data2); // Risultato: true
+console.log(data1.getTime() == data2.getTime()); // Risultato: false - corretto modo per confrontare i valori.
 ```
 
 ## Approfondimenti:
 
-La gestione delle date è sempre stata una sfida per i programmatori, poiché le date possono essere rappresentate in diversi formati e sono soggette a fusi orari e regole sul cambio dell'ora. 
+Historicamente, l'l'oggetto `Date` in JavaScript esiste sin dalla prima versione. All'inizio, però, era più limitato e meno preciso.
 
-Un'alternativa all'utilizzo degli operatori di confronto è utilizzare il metodo .getTime() che restituisce il numero di millisecondi trascorsi dal 1 gennaio 1970 ad una data specifica. È possibile quindi confrontare i due numeri ottenuti per determinare se una data sia precedente, successiva o uguale a un'altra.
+Esiste anche un approccio alternativo per il confronto di date: si può convertire le date in Unix timestamp usando il metodo `.getTime()`, poi confrontare i numeri.
 
-```Javascript
-let data1 = new Date(2021, 4, 10).getTime();
-let data2 = new Date(2020, 2, 14).getTime();
-
-console.log(data1 > data2); // Output: true
-console.log(data1 === data2); // Output: false
+```JAVASCRIPT
+let confronto = data1.getTime() - data2.getTime();
+if (confronto > 0) {
+  console.log("data1 è successiva a data2");
+} else if (confronto < 0) {
+  console.log("data1 è anteriore a data2");
+} else {
+  console.log("data1 e data2 sono uguali");
+}
 ```
 
-Inoltre, esistono innumerevoli librerie Javascript dedicate alla gestione delle date, come Moment.js e Day.js, che offrono metodi per eseguire il confronto tra date in modo più preciso e gestire i diversi formati di data.
+Il confronto tra date si basa sull'orario UTC (Coordinated Universal Time), che può causare comportamenti inaspettati se non si tiene conto dei fusi orari.
 
-## Vedi anche:
+## Vedi Anche:
 
-- Documentazione ufficiale di Javascript sul confronto tra date: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Date/Date.prototype
-- Documentazione di Moment.js: https://momentjs.com/
-- Documentazione di Day.js: https://day.js.org/
+- [Oggetto Date - MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Metodo getTime() - MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Date/getTime)
+- [Coordinated Universal Time - Wikipedia](https://it.wikipedia.org/wiki/Coordinated_Universal_Time)

@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen isoin kirjaimin"
-html_title:           "Lua: Merkkijonon muuttaminen isoin kirjaimin"
-simple_title:         "Merkkijonon muuttaminen isoin kirjaimin"
+title:                "Merkkijonon pääkirjaimet suuriksi"
+html_title:           "Lua: Merkkijonon pääkirjaimet suuriksi"
+simple_title:         "Merkkijonon pääkirjaimet suuriksi"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,32 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Stringien suurennuskeulo on prosessi, jossa kaikki kirjaimet muutetaan tekstijonossa isoiksi kirjaimiksi. Tämä voi olla hyödyllistä esimerkiksi virheiden yhtenäistämiseksi tai yhtenäisen ilmeen saamiseksi.
+## Mitä ja Miksi?
+Merkkijonon isojen alkukirjainten tekeminen tarkoittaa jokaisen sanan ensimmäisen kirjaimen muuttamista kirjoitusasuun, jossa se on suuri. Ohjelmoijat käyttävät tätä tehokkaasti parantaakseen käyttöliittymää ja tekstin luettavuutta.
 
-Ohjelmoijat tekevät tätä pääasiassa ylläpitämään koodin yhtenäisyyttä ja estämään virheitä, jotka johtuvat erilaisten kirjoitusasujen käytöstä. Se myös helpottaa virheiden löytämistä, koska kaksi samanlaista sanaa, kuten "avain" ja "AVAIN", näyttävät nyt samalta ja virheitä on helpompi huomata.
-
-## Miten:
+## Kuinka Tehdään:
+Tässä on esimerkki siitä, kuinka suuriksi muunnos voidaan tehdä Lua-ohjelmointikielellä:
 ```Lua
-s = "stringi, joka halutaan suurennetaan"
-print("Alkuperäinen string: " .. s)
-print("Suurennettu string: " .. string.upper(s))
+function string.cap(s)
+   return s:lower():gsub("^%l", string.upper)
+end
+print(string.cap("hello world"))
 ```
-
-Tulostus:
+Tämä esimerkkikoodi antaa tuloksen:
+```Lua
+Hello world
 ```
-Alkuperäinen stringi: stringi, joka halutaan suurennetaan
-Suurennettu stringi: STRINGI, JOKA HALUTAAN SUURENNETTAVANA
-```
+## Syvä Sukellus:
+Alkuperäisessä Lua versiossa ei ollut sisäänrakennettua toimintoa tämäntyyppiseen muunnokseen. Kuitenkin nykyaikaisissa versioissa se voidaan tehdä gsub-menetelmää ja muita merkkijonojen käsittelymetodeja käyttämällä, kuten esimerkiksi yllä olevassa koodinpätkässä.
 
-## Syvällisempi sukellus:
-Suurennuskeulo on yleinen prosessi ohjelmoinnissa, ja monet kielet tarjoavat sisäänrakennetun toiminnon tai kirjaston sen tekemiseen. Joissakin kielissä on myös funktionaalisuutta, jolla voidaan muuttaa vain jonkin osan stringistä suurennukseksi, esimerkiksi vain ensimmäinen kirjain sanassa.
+Vaihtoehtoja ovat sen tekeminen manuaalisesti loop-iteraatioilla ja tilapäisten muuttujien avulla. Jotkut kehittäjät saattavat käyttää myös kolmannen osapuolen kirjastoja tälle toimenpiteelle.
 
-Joissakin tapauksissa on parempi käyttää virkettä suuremmalla kirjaimella, mikä tarkoittaa pikkukirjaimella alkavaa lausetta. Tämä voi olla hyödyllistä iskujen tekemisessä, kun asianmukaista virkettä ei tiedetä etukäteen.
+Tällaisen toiminnon toteuttamisen monimutkaisuus riippuu siitä, kuinka kattavasti kehittäjä haluaa ottaa huomioon erilaiset edge-case-tilanteet, kuten erikoismerkit, numerot tai ääkköset.
 
-On myös tärkeää huomata, että joissakin kielissä suurennuskeulo ei ole tulosta missään, jos merkistö ei sisällä tekstiä. Tämä voi aiheuttaa ongelmia, jos haluat esimerkiksi käsitellä tyhjiä merkkijonoja.
-
-## Katso myös:
-- [Lua String Library](https://www.lua.org/pil/20.2.html)
-- [Official Lua Documentation](https://www.lua.org/manual/5.3/manual.html#pdf-string.upper)
-- [Stack Overflow discussion on capitalizing a string in Lua](https://stackoverflow.com/questions/26085185/how-to-capitalize-a-string-in-lua)
+## Katso Myös:
+- Lua string library: [String Manipulation](https://www.lua.org/pil/20.html)
+- Advanced string manipulation: [Lua-Users wiki strings tutorial](http://lua-users.org/wiki/StringsTutorial) 
+- Usage of upper function: [Lua string.upper](https://www.lua.org/manual/5.4/manual.html#6.4)

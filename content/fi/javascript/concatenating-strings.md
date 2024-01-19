@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Javascript: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,52 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Mikä on merkkijonojen yhdistäminen ja minkä takia ohjelmoijat tekevät sitä? Merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi isommaksi merkkijonoksi. Ohjelmoijat käyttävät tätä tekniikkaa esimerkiksi luodessaan tulostusta tai tallentamalla tietoa eri muodoissa.
+Merkkijonon yhdistäminen tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi merkkijonoksi. Ohjelmoijat tekevät tämän tietojen muodostamiseksi tai tietojen käsittelyn yksinkertaistamiseksi.
 
-## Miten tehdä:
+## Kuinka:
 
-Seuraavassa on esimerkkejä koodista ja syötteestä, jotka näyttävät, kuinka merkkijonoja yhdistetään käyttäen Javascriptia.
-
-```Javascript
-let ensimmäinenLause = "Tämä on";
-let toinenLause = "esimerkki";
-let kokonaislause = ensimmäinenLause + " " + toinenLause;
-console.log(kokonaislause);
-```
-
-Tuloste: `Tämä on esimerkki`
-
-Toisessa esimerkissä yhdistämme kaksi numeroa ja merkkijonoa:
+Tässä on kaksi tapaa yhdistää merkkijonoja Javascriptin uusimmissa versioissa:
 
 ```Javascript
-let numero = 10;
-let merkkijono = "on paljon";
-let kokonaislause = "Lisää " + numero + " vuotta ja " + merkkijono
-console.log(kokonaislause);
+let tervehdys = "Hei, ";
+let nimi = "Matti!";
+let viesti = tervehdys.concat(nimi);
+console.log(viesti); // Tulostaa: "Hei, Matti!"
 ```
 
-Tuloste: `Lisää 10 vuotta ja on paljon`
-
-## Syventävä sukellus:
-
-Merkkijonojen yhdistäminen on ollut käytössä lähes alusta asti Javascriptissa. Aikaisemmin tätä tehtiin käyttämällä konkatenointioperaattoria `+`, mutta nykyään on olemassa myös uusi `template literals` -tapoja tehdä sama asia.
-
-Toinen tapa yhdistää merkkijonoja on käyttämällä Javascriptin `join()`-funktiota, joka yhdistää useita merkkijonoja tiettyyn erottimeen. Esimerkiksi:
+Tai ES6:ssa template literaalien avulla:
 
 ```Javascript
-let lista = ["omena", "banaani", "appelsiini"];
-let uusiMerkkijono = lista.join(", ");
-console.log(uusiMerkkijono);
+let tervehdys = "Hei, ";
+let nimi = "Matti!";
+let viesti = `${tervehdys}${nimi}`;
+console.log(viesti); // Tulostaa: "Hei, Matti!"
 ```
 
-Tuloste: `omena, banaani, appelsiini`
+## Sukellus syvemmälle:
 
-## Katso myös:
+Historiallinen konteksti: Alkuperäinen `concat`-metodi on ollut mukana Javascriptissä alusta alkaen.
 
-Lisätietoja merkkijonojen yhdistämisestä ja Javascriptin join()-funktiosta löytyy seuraavista lähteistä:
+Vaihtoehdot: `+` -operaattoria, `concat`-metodia ja  ES6:n Template literaaleja voidaan käyttää merkkijonojen yhdistämiseen.
 
-- [MDN Web Docs: String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [MDN Web Docs: Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [MDN Web Docs: Array.prototype.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+Toteutusyksityiskohdat: Silloin kun käytetään useita `+` -operaattoreita, suorituskyky voi heikentyä, koska jokainen `+` luo uuden merkkijonon. Tämä voi johtaa lisääntyneeseen muistin kulutukseen ja hitaampaan suoritukseen. Toisaalta, template literaalit ja `concat`-metodi eivät luo uutta merkkijonoa jokaisella yhdistämisellä.
+
+## Katso Myös:
+
+1. [MDN: String.prototype.concat()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+2. [MDN: Template literaalit](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Template_literals)
+3. [JavaScript Concatenation Performance](https://jsperf.com/js-string-concatenation/3)

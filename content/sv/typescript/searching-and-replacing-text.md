@@ -1,7 +1,7 @@
 ---
-title:                "Sökning och ersättning av text"
-html_title:           "TypeScript: Sökning och ersättning av text"
-simple_title:         "Sökning och ersättning av text"
+title:                "Söka och ersätta text"
+html_title:           "Bash: Söka och ersätta text"
+simple_title:         "Söka och ersätta text"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,27 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att söka och ersätta text är en vanlig uppgift för programmerare. Det innebär att man upphittar en specifik bit av text och ersätter den med en annan. Detta kan vara användbart för att uppdatera felaktig information eller för att göra ändringar i koden för att förbättra dess funktionalitet.
+## Vad och varför?
 
-## Hur man:
-I TypeScript finns flera olika sätt att söka och ersätta text. Ett vanligt sätt är att använda metoden ```replace()```, där man anger den ursprungliga texten som ska ersättas och den nya texten. En annan metod är ```replaceAll()```, som ersätter alla förekomster av den ursprungliga texten med den nya texten.
+Sökning och ersättning av text innebär att man lokaliserar specifika strängar i text och byter ut dem mot någonting annat, vilket är en vanlig uppgift för programmerare. Den används för allt, från att uppdatera variabelnamn till att modifiera datavärden.
 
-Exempel:
+## Hur gör man:
+
+Här är några grundläggande exempel på att söka och byta strängar i TypeScript:
+
 ```TypeScript
-let text = "Hej världen!"
-let newText = text.replace("världen", "allihopa")
-console.log(newText) // Output: "Hej allihopa!"
+let text: string = 'Hej världen!';
+let sök: string = 'världen';
+let ersätt: string = 'Sverige';
+let nyText: string = text.replace(sök, ersätt);
+
+console.log(nyText);
+// Output: 'Hej Sverige!'
+```
+
+Notera att `replace`-metoden endast ersätter den första förekomsten av 'sök'-strängen. För att ersätta alla förekomster, använd en RegExp med flaggan 'g', på följande sätt:
+
+```TypeScript
+let text: string = 'Hej världen, världen!';
+let nyText: string = text.replace(/världen/g, 'Sverige');
+console.log(nyText);
+// Output: 'Hej Sverige, Sverige!'
 ```
 
 ## Fördjupning:
-Att söka och ersätta text har funnits i programmering sedan tidigt 1960-tal, då det först implementerades i språket SNOBOL. I TypeScript finns det flera olika metoder för att utföra denna uppgift, varav vissa har olika prestanda och funktionalitet. Alternativ till ```replace()``` och ```replaceAll()``` är bland annat ```search()```, ```replaceAllWith()``` och ```splitJoin()```.
 
-Det finns också andra språk och bibliotek som erbjuder inbyggda funktioner för att söka och ersätta text, som till exempel JavaScript och jQuery. För mer detaljerade implementationer i TypeScript rekommenderas att läsa dokumentationen för det aktuella språket eller biblioteket.
+Sökning och ersättning av text har varit en grundläggande funktion i programmering sedan starten. Det var nödvändigt för att uppdatera, korrigera och optimera kod. 
 
-## Se även:
-Dokumentation för ```replace()```: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+Alternativ till `replace`-metoden inkluderar uttrycklig looping och indexering, men dessa metoder kan ofta vara mer komplexa och tidskrävande att implementera.
 
-Dokumentation för ```replaceAll()```: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
+Viktig information om implementeringen av sökning och ersättning av text i TypeScript: `replace`-metoden är case-sensitive. Om du behöver en case-insensitive sökning, använd RegExp med 'i'-flaggan.
 
-Dokumentation för andra metoder för att söka och ersätta text i TypeScript: https://www.typescriptlang.org/docs/handbook/strings.html#searching-for-text-within-a-string
+```TypeScript
+let text: string = 'Hej VÄRLDEN!';
+let nyText: string = text.replace(/världen/i, 'Sverige');
+console.log(nyText);
+// Output: 'Hej Sverige!'
+```
+
+## Se också:
+
+- [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) - Innehåller mer detaljerad information om replace-funktionen, flaggor och dess användning.
+- [w3schools](https://www.w3schools.com/jsref/jsref_replace.asp) - Enkel och tydlig guide om replace-funktionen och dess användningsområden.
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/fundamentals.html) - Grundläggande funktionalitet och syntax i TypeScript.

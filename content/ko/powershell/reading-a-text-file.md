@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 파일 읽기"
-html_title:           "PowerShell: 텍스트 파일 읽기"
+html_title:           "Bash: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?: 
-텍스트 파일을 읽는 것은 파일 안에 저장된 데이터를 읽고 처리하는 것을 의미합니다. 프로그래머들은 이를 자주 사용하는데 이는 파일로 정보를 저장하는 것이 더 쉽고 효과적이기 때문입니다.
+## 무엇이고 왜그럴까?
+텍스트 파일 읽기는 파일의 내용을 코드로 해석하는 프로그래밍 작업입니다. 이를 통해 프로그래머들은 데이터를 처리하고 정보를 추출할 수 있습니다.
 
-## 하는 법: 
+## 어떻게:
+다음은 PowerShell로 텍스트 파일을 읽는 간단한 코드 예입니다:
+
 ```PowerShell
-# 파일 읽기
-Get-Content example.txt
-
-# 파일을 변수에 저장하기
-$contents = Get-Content example.txt
-Write-Host $contents
+$file = Get-Content -Path C:\Example\myfile.txt
 ```
+이 스크립트는 "myfile.txt"라는 텍스트 파일의 내용을 "$file" 변수에 저장합니다. 저장된 내용은 이후 사용을 위해 참조할 수 있습니다.
 
-파일을 읽는 것은 매우 간단합니다. `Get-Content` 명령을 사용하면 파일 내용을 출력할 수 있습니다. 이를 변수에 저장하면 해당 변수를 사용하여 파일 내용을 조작하거나 출력할 수 있습니다.
-
-### 출력 예시:
+```PowerShell
+$file | Foreach-Object { $_ }
 ```
-Hello, world! This is an example text file.
-```
+이 코드는 각 라인을 순회하며 출력합니다.
 
-## 깊이 파헤치기: 
-파일을 읽는 방식은 이전부터 사용되어온 전통적인 방법입니다. 하지만 오늘날에는 다양한 파일 형식이 등장하면서 다양한 데이터 처리 방법이 나타나기도 합니다. 파일을 읽는 대안으로는 JavaScript와 같은 웹 프로그래밍 언어에서 사용되는 FileReader API 등이 있습니다.
+## 깊이 들어가기:
+파워셸에서 텍스트 파일 읽기는 오래된 기능 중 하나입니다. 이는 윈도우에서 작업을 자동화하고 관리하는데 꽤 유용합니다. Get-Content 명령어는 파일의 내용을 대화식으로 읽을 수 있게 합니다.
 
-파일을 읽는 방식은 기본적으로 파일의 인코딩 방식에 따라 다릅니다. PowerShell의 `Get-Content` 명령에서는 기본적으로 "UTF-8" 인코딩을 사용하기 때문에 다른 인코딩 방식을 사용하는 파일은 인코딩을 직접 명시해야 합니다.
+하지만, 다른 대안들을 살펴볼 만하요. 예를 들어, [StreamReader object](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)를 사용해 큰 텍스트 파일을 점진적으로 읽는 것입니다. 이 방법은 메모리 사용량을 줄이는데 도움이 됩니다.
 
-## 관련 문서: 
-- [PowerShell Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
-- [FileReader API documentation](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
-- [파일 인코딩과 관련한 이슈](https://ss64.com/ps/add-content.html)
+텍스트 파일을 읽는 방법에 대한 세부 사항 중 하나는 파일 인코딩이다. 인코딩이 일치하지 않으면 읽기 시도가 실패하거나 파일의 내용이 올바르게 보여지지 않을 수 있습니다.
+
+## 참고 링크:
+- [PowerShell Documentation: Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content)
+- [StreamReader Object in .NET API](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
+- [File Encoding in PowerShell](https://devblogs.microsoft.com/powershell/powershell-default-encoding-update-utf-8)

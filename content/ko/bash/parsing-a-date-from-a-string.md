@@ -1,6 +1,6 @@
 ---
 title:                "문자열에서 날짜 분석하기"
-html_title:           "Bash: 문자열에서 날짜 분석하기"
+html_title:           "Gleam: 문자열에서 날짜 분석하기"
 simple_title:         "문자열에서 날짜 분석하기"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,37 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-일정을 문자열로부터 추출하는 일이 바로 문자열 해석(parsing)입니다. 프로그래머들은 이를 하게 됩니다. 왜냐하면 날짜로 추출할 수 있는 다양한 데이터에서 실제 날짜 정보를 불러오기 위해서입니다. 
+## 무엇이며 왜합니까?
+문자열에서 날짜를 파싱한다는 것은 복잡한 문자열에서 특정 날짜 정보를 추출하는 것을 의미합니다. 프로그래머들은 날짜정보가 새겨진 로그 파일처럼 날짜정보가 기록된 텍스트 데이터를 처리할 때 이를 사용합니다.
 
-## What & Why? 
+## 방법:
+아래의 Bash 코드를 보면 문자열에서 날짜를 파싱하는 방법을 확인할 수 있습니다. 긴 문자열에서 날짜를 추출하여 '$date'변수에 저장합니다.
 
-날짜 데이터는 프로그래밍에 있어서 매우 중요합니다. 예를 들어, 각각의 이벤트를 날짜별로 정리하거나 기간을 정하는 등의 다양한 작업에 필수적으로 사용되는 데이터입니다. 하지만 때로는 이 데이터가 문자열 형태로만 제공되는 경우가 있습니다. 이 때문에 적절한 형식으로 데이터를 추출하고 싶을 때 문자열 해석이 필요합니다. 
-
-## How to: 
-
-여러분의 Bash 셸에서 다음과 같이 입력하여 코드를 작성하세요. 
-
-```Bash 
-# 날짜 데이터 추출 예제 
-
-# 원본 문자열
-date_string="2020-01-01"
-
-# 추출하고 싶은 연도 정보만 오른쪽으로부터 총 해당하는 길이만큼 잘라냅니다.
-year=${date_string:0:4}
-echo ${year}  # 2020 출력 
-
-# 원하는 날짜 형식으로 바꾸고 싶을 때는 'date' 명령어를 사용합니다.
-formatted_date=$(date -d ${date_string} +"%m/%d/%Y")
-echo ${formatted_date}  # 01/01/2020 출력 
+```Bash
+string="2021년 10월 5일, 화요일, 임의의 문자열"
+date=`echo $string | grep -oP '\d{4}년 \d{1,2}월 \d{1,2}일'`
+echo $date
 ```
 
-## Deep Dive: 
+위 코드를 실행할 경우 아래와 같은 출력값이 나옵니다:
 
-날짜 문자열 추출의 역사적 배경으로는 컴퓨터 시스템에서 날짜 정보를 표현하는 방식이 점차 발전하며 현재에 이르게 됐습니다. 최근에는 핸드폰 등의 장치에서 사용하는 형태로, `YYYY-MM-DD`와 같은 숫자 형식으로 표현되는 것이 일반적이지만 이전에는 `MM/DD/YYYY`와 같이 다른 형식으로 표현되기도 했습니다. 현재에는 `date` 명령어를 사용하여 여러가지 형식으로 날짜를 바꿀 수 있기 때문에 문자열로부터 추출하는 방식도 더욱 다양해졌습니다. 
+```Bash
+2021년 10월 5일
+```
 
-날짜 데이터를 문자열 형태로 사용할 때는 수동으로 추출하는 것보다 `date` 명령어나 관련 라이브러리를 사용하는 것이 더 좋은 방법입니다. `date` 명령어를 이용한 `man` 페이지를 확인하는 것도 도움이 될 수 있습니다. 
+## 심층 힐끔:
+날짜 파싱은 사실 프로그래밍의 역사와 함께한 오래된 기술입니다. 이는 단지 문자열 에서 날짜 정보만을 추출하는 것이 아니라, 파싱 된 날짜 정보를 사용하여 복잡한 날짜 계산과 같은 다양한 작업에 활용하기 위함이었습니다. 하지만 유의할 점은 파싱을 사용하는 예제 코드에서 보이는 바와 같이 원하는 패턴에 따라 파싱을 수행해야 한다는 것입니다.
 
-## See Also: 
+Bash에서는 위에서 보여준 예제와 같이 'grep'와 'regex'를 활용하여 파싱을 수행하지만, 다른 언어에서는 더욱 강력한 라이브러리를 사용하여 파싱을 수행할 수 있습니다. Perl의 경우 'Time::Piece' 라이브러리, Python에서는 'dateutil.parser' 라이브러리 같은 도구를 사용하여 검색할 수 있습니다.
 
-- [GNU Coreutils Manual: Date input formats](https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html)
+## 참고 자료:
+* Bash script에서 날짜 파싱을 내가 원하던 형식으로 파싱하는 방법: [link](https://stackoverflow.com/questions/23317504/how-to-parse-and-break-down-a-date-string-in-bash)
+* Perl과 Python에서의 날짜 파싱:
+  * Perl: [link](https://perldoc.perl.org/Time/Piece.html)
+  * Python: [link](https://dateutil.readthedocs.io/en/stable/parser.html)

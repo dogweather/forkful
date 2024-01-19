@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "PowerShell: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Getting Started"
@@ -10,19 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué? 
-Iniciar un nuevo proyecto puede sonar aterrador, pero es simplemente el proceso de empezar a trabajar en una nueva idea o tarea. Los programadores inician nuevos proyectos para crear soluciones innovadoras y mejorar sus habilidades.
+## ¿Qué y por qué?
 
-## Cómo:
+Empezar un nuevo proyecto significa idear y desarrollar una nueva aplicación o software desde cero. Los programadores lo hacen para resolver problemas únicos, para aprender nuevas habilidades, o para crear algo innovador.
+
+## ¿Cómo hacerlo?
+
+Aquí te muestro cómo puedes iniciar un nuevo proyecto en PowerShell.
+
+```PowerShell
+# Crea una nueva carpeta para tu proyecto
+New-Item -ItemType "directory" -Path "C:\myProject
+
+# Cambia al directorio de tu proyecto
+cd C:\myProject 
+
+# Crea un nuevo archivo .ps1
+New-Item -ItemType "file" -Name "main.ps1"
 ```
-PowerShell -c "New-Project -Name 'MyProject'
+Después de ejecutar este código, deberías ver una salida como esta:
+
+```PowerShell
+Directory: C:\
+
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+d-----       24/10/2021  12:34 PM                myProject
 ```
-Esto creará un nuevo proyecto llamado "MyProject" en la carpeta actual. También puedes especificar una ruta usando el parámetro ```-Path```. Además, puedes usar la función ```Set-Location``` para navegar a la carpeta del nuevo proyecto.
 
-## Deep Dive:
-Empezar un nuevo proyecto es una parte fundamental del proceso de desarrollo de software. Antes de la llegada de PowerShell, el proceso era más engorroso ya que involucraba crear y configurar manualmente la estructura del proyecto. Sin embargo, con la ayuda de PowerShell, este proceso se ha simplificado enormemente.
-Otra alternativa es usar un IDE (Entorno de Desarrollo Integrado) como Visual Studio, que también proporciona herramientas para crear nuevos proyectos y automatizar ciertas tareas en el proceso.
-En términos de implementación, PowerShell usa comandos internos como ```New-Item``` y ```Copy-Item``` para crear y copiar archivos y carpetas necesarios para el nuevo proyecto.
+```PowerShell
+Directory: C:\myProject
 
-## Ver También:
-Para obtener más información sobre cómo comenzar un nuevo proyecto en PowerShell, puedes consultar la documentación oficial en el sitio web de Microsoft: https://docs.microsoft.com/es-es/powershell/scripting/learn/ps101/06-new-project
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+-a----       24/10/2021  12:35 PM              0 main.ps1
+```
+
+## Profundización
+
+Históricamente, empezar un nuevo proyecto solía requerir más planificación y tiempo porque los recursos de computación y código eran más costosos. Con la llegada de lenguajes de script como PowerShell y el rápido progreso en la tecnología de las computadoras, esto se ha vuelto más fácil y ágil.
+
+En PowerShell, puedes alternativamente usar la cmdlet `Out-File` para crear archivos. Si bien `New-Item` es más directa, `Out-File` puede ser útil si necesitas redirigir la salida de un comando a un archivo.
+
+```PowerShell
+Get-Process | Out-File -FilePath "C:\myProject\processes.txt"
+```
+
+El comando que se acaba de compartir generará un archivo processes.txt con una lista de todos los procesos en ejecución actuales.
+
+## Ver también
+
+- [Documentación oficial de PowerShell](https://docs.microsoft.com/en-us/powershell/)
+- [PowerShell: Crear, leer, actualizar, eliminar archivos](https://ps1.guru/powershell-files/)
+- [Tutorial de PowerShell para principiantes](https://www.tutorialspoint.com/powershell/index.htm)

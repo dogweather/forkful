@@ -1,7 +1,7 @@
 ---
-title:                "Versenden einer http-Anfrage"
-html_title:           "Clojure: Versenden einer http-Anfrage"
-simple_title:         "Versenden einer http-Anfrage"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und warum?
-Sich eine HTTP-Anfrage zu schicken, ist ein wichtiger Bestandteil der Programmierung. Es erlaubt uns, Daten aus dem Internet zu erhalten und mit externen APIs zu interagieren. Wir senden Anfragen, um Informationen zu erhalten, die wir dann in unsere Programme integrieren können.
+#HTTP-Anfragen in Clojure senden: Ein schneller Überblick
 
-## Wie geht es?
-Um eine HTTP-Anfrage in Clojure zu machen, können wir die "clj-http" Bibliothek verwenden. Mit dieser Bibliothek können wir eine Anfrage an eine URL senden und erhalten eine Antwort zurück. Hier ist ein Beispiel:
+## Was & Warum?
+
+HTTP-Anfragen sind Bestandteil der Kommunikation zwischen Client und Server im Web. Als Programmierer schicken Sie diese, um Daten zu erhalten, zu senden, zu löschen oder zu aktualisieren.
+
+## Anleitung
+
+In Clojure können wir die Bibliothek `clj-http` zur Sendung von HTTP-Anfragen verwenden:
 
 ```Clojure
-(ns example.core
-  (:require [clj-http.client :refer [get]]))
-
-(defn send-request []
-  (let [response (get "https://example.com")]
-    (:body response)))
+;; Fügen Sie in der Lein Projekt.clj-Datei die Abhängigkeit hinzu
+[clj-http "3.10.1"]
 ```
 
-Das Ergebnis dieser Funktion wäre der Inhalt der Webseite, die wir angefragt haben.
+Starten Sie nun den REPL und importieren Sie die Bibliothek:
 
-## Tiefer tauchen
-Historisch gesehen waren HTTP-Anfragen eine oft komplexe und zeitaufwändige Aufgabe für Programmierer. Aber mit der Entwicklung von Bibliotheken wie "clj-http" ist es jetzt viel einfacher geworden. Es gibt auch andere Bibliotheken, wie zum Beispiel "http-kit" und "core.async", die für diese Aufgabe verwendet werden können.
+```Clojure
+(require '[clj-http.client :as client])
+```
 
-Für die Implementierung einer HTTP-Anfrage in Clojure gibt es einige wichtige Dinge zu beachten. Zum Beispiel müssen wir sicherstellen, dass wir die richtigen Datenstrukturen verwenden, um die Anfrage und die Antwort zu verwalten. Auch sollten wir sicherstellen, dass wir mit Ausnahmen umgehen, falls etwas schief geht.
+Eine einfache GET-Anfrage sieht so aus:
 
-## Siehe auch
-- Offizielle "clj-http" Bibliothek: https://github.com/dakrone/clj-http
-- "http-kit" Bibliothek: https://github.com/http-kit/http-kit
-- "core.async" Bibliothek: https://github.com/clojure/core.async
+```Clojure
+(client/get "http://example.com")
+```
+
+Die Ausgabe sollte ungefähr so aussehen:
+
+```Clojure
+{:status 200, :headers {"Content-Type" "text/html"}, ...}
+```
+
+## Vertiefung
+
+Erste HTTP-Anfragen wurden Anfang der 90er-Jahre im Kontext der Webentwicklung eingeführt. Alternativ zu `clj-http` gibt es in Clojure andere Bibliotheken wie `http-kit` oder `aleph`. Die Implementierung von `clj-http` beruht auf der Java-Bibliothek Apache HttpClient, was sie sehr leistungsfähig und flexibel macht.
+
+## Weiterführende Informationen
+
+Weitere nützliche Informationen und Beispiele finden Sie in der [offiziellen clj-http-Dokumentation](https://github.com/dakrone/clj-http) und in diesem [Blog-Post](https://www.baeldung.com/clojure-http-requests) über HTTP-Anfragen in Clojure.

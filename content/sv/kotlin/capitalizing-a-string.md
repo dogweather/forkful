@@ -1,7 +1,7 @@
 ---
-title:                "Stavigering av en sträng"
-html_title:           "Kotlin: Stavigering av en sträng"
-simple_title:         "Stavigering av en sträng"
+title:                "Gör om en sträng till versaler"
+html_title:           "Kotlin: Gör om en sträng till versaler"
+simple_title:         "Gör om en sträng till versaler"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,23 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-Att "kapitalisera" en sträng i programmering betyder att göra om alla bokstäver till versaler, eller stora bokstäver. Detta kan göras av olika skäl, bland annat för att förbättra läsbarheten eller för att matcha en gemensam standard för strängar. 
+## Vad & Varför?
 
-## Hur göra:
-Detta kan göras enkelt i Kotlin med hjälp av den inbyggda funktionen "capitalize()". Detta funktion tar en sträng som argument och returnerar en ny sträng med alla bokstäver som versaler. Nedan följer ett exempel på hur man kan använda denna funktion:
+Att markera en sträng innebär att ändra strängens första tecken till versaler (stora bokstäver). Programmerare gör detta för att göra text mer lättläst eller för att följa specifika formateringsregler.
+
+## Hur gör man:
+
+I Kotlin, kan du enkelt konvertera en sträng till versaler genom att använda `capitalize()` funktionen. Här är ett exempel:
 
 ```Kotlin
 val str = "hej världen"
-val capitalizedStr = str.capitalize()
-
-println(capitalizedStr) // Skriver ut "Hej världen"
+val capitalStr = str.capitalize()
+println(capitalStr) //Skriva ut: "Hej världen"
 ```
+Den här koden tar strängen "hej världen", konverterar det första tecknet till versaler, och skriver ut det nya strängvärdet "Hej världen".
 
-## Djupdykning:
-Kapitalisering av strängar har funnits sedan tidiga programmeringsspråk och har använts för att göra det möjligt att skapa "enhetslig kod". Innan strängar skulle matas in för hand, vilket kunde leda till stavfel och varierande capitalisering. Idag finns det alternativ till att använda "capitalize()" i Kotlin, till exempel att använda reguljära uttryck eller skapa en egen funktion för capitalisering. När man förstår hur en sträng är uppbyggd är det också möjligt att implementera en egen funktion för kapitalisering.
+## Fördjupning
 
-## Se även:
-- Kotlin Dokumentation: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html
-- Reguljära uttryck för strängmanipulation: https://www.regular-expressions.info/index.html
-- Mer om strängar i Kotlin: https://kotlinlang.org/docs/reference/basic-types.html#strings
+Att konvertera en sträng till versaler är en vanlig operation i programmering och dess ursprung går tillbaka till de tidiga dagarna av datorkodning. Det finns olika sätt att utföra denna operation i olika programmeringsspråk, till exempel `toUpperCase()` i Java och typer-konvertering i C++. I Kotlin implementation är `capitalize()` funktionen ganska rakt på sak - den ändrar bara utfärdat tecknet till versaler.
+
+Observera att `capitalize()` i Kotlin returnerar en ny sträng där bara det första tecknet är versaler och alla andra tecken är oförändrade. Om strängen redan börjar med ett versaltecken, returnerar den samma sträng. 
+
+En annan intressant detalj är att denna metod är case-insensitive, vilket betyder att den inte påverkas av om tecknen redan är i versaler eller gemener.
+
+## Se även
+
+För mer information om string manipulation i Kotlin, se dessa länkar:
+- Officiell Kotlin dokumentation för `capitalize()` funktion: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html
+- StackOverflow tråd om strängkapitalisering: https://stackoverflow.com/questions/50549955/how-to-capitalize-the-first-letter-in-kotlin

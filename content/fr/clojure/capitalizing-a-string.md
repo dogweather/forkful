@@ -1,7 +1,7 @@
 ---
-title:                "Capitaliser une chaîne de caractères."
-html_title:           "Clojure: Capitaliser une chaîne de caractères."
-simple_title:         "Capitaliser une chaîne de caractères."
+title:                "Mettre une chaîne en majuscules"
+html_title:           "Clojure: Mettre une chaîne en majuscules"
+simple_title:         "Mettre une chaîne en majuscules"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,30 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que c'est & pourquoi ?
- 
- Capitaliser une chaîne de caractères signifie simplement mettre la première lettre de chaque mot en majuscule. Les programmeurs le font souvent pour améliorer la lisibilité des noms de variables ou de fonctions dans leur code.
+------
 
-Comment faire :
+## Quoi & Pourquoi ?
 
-```Clojure
-(let [str "mon code en clojure"]    
-  (.toUpperCase str)) 
+Capitaliser une chaîne de caractères, c'est transformer chaque première lettre d'un mot en majuscule. Les programmeurs le font généralement pour faciliter la lecture ou pour suivre les conventions stylistiques.
+
+------
+
+## Comment faire :
+
+Capitalisation de base :
+
+```Clojure 
+(clojure.string/capitalize "bonjour tout le monde")
 ```
-Résultat : "Mon Code En Clojure"
-
-```Clojure
-(map #(.toUpperCase %) ["un" "deux" "trois"]) 
+Sortie :
+```Clojure 
+"Bonjour tout le monde"
 ```
-Résultat : ("Un" "Deux" "Trois")
 
+Capitalisation de chaque mot :
 
-Deep Dive :
+```Clojure 
+(->> "bonjour tout le monde"
+     (clojure.string/split #" ")
+     (map clojure.string/capitalize)
+     (clojure.string/join " "))
+```
 
-La pratique de la capitalisation des chaînes de caractères remonte à l'époque des machines à écrire, où les majuscules étaient plus visibles que les minuscules. Dans le monde de la programmation, il existe également des alternatives telles que le camel case (PremiereLettreMinusculeDeChaqueMot) ou le snake case (premiere_lettre_minuscule_de_chaque_mot). La méthode de capitalisation que vous choisissez dépendra du style adopté par votre équipe de développement.
+Sortie :
+```Clojure 
+"Bonjour Tout Le Monde"
+```
 
-Voir aussi :
+------
 
-Voir la documentation officielle de Clojure pour plus d'informations sur la fonction .toUpperCase : https://clojuredocs.org/clojure.core/toUpperCase
+## Plongée en profondeur :
 
-Vous pouvez également consulter cet article pour en savoir plus sur les différentes conventions en matière de nommage : https://nils-blum-oeste.net/coding-style-and-naming-practices-for-clojure/
+La fonction `clojure.string/capitalize` convertit le premier caractère de la chaîne en majuscule et les caractères restants en minuscules. Historiquement, cela fait partie des opérations de base sur les chaînes de caractères dans de nombreux langages de programmation.
+
+Alternativement, on pourrait utiliser Java interopérabilité pour capitaliser une chaîne :
+
+```Clojure 
+(.toUpperCase "bonjour tout le monde")
+```
+
+Cependant, cette opération ne capitalise pas chaque mot de la chaîne, seulement la première lettre.
+
+Note : L'opération de capitalisation dans Clojure n'est pas locale (elle ne tient pas compte de la langue utilisée). Si vous avez besoin d'une capitalisation sensible à la langue, il est recommandé d'utiliser l'interopérabilité Java avec `java.text.Collator`.
+
+------
+
+## Voir aussi :
+
+1. [Documentation officielle de Clojure](https://clojure.org/reference/strings)
+2. [Guide de programmation de Clojure pour les opérations sur les chaînes de caractères](https://clojure.org/guides/learn/strings)
+3. [API Java pour la manipulation en majuscules/minuscules de la chaîne](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())

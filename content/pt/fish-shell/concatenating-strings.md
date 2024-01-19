@@ -1,6 +1,6 @@
 ---
 title:                "Concatenando strings"
-html_title:           "Fish Shell: Concatenando strings"
+html_title:           "Elixir: Concatenando strings"
 simple_title:         "Concatenando strings"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,28 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-
-Concatenação de strings é simplesmente unir duas ou mais strings em uma única string. Programadores geralmente fazem isso quando precisam combinar informações diferentes para formar uma única mensagem ou para criar nomes dinâmicos para variáveis e funções.
+## O quê & Por quê?
+Concatenar strings, basicamente, significa juntar duas ou mais sequências de caracteres para formar uma string única. Os programadores fazem isso para manipular e gerenciar dados de textos de forma eficiente.
 
 ## Como fazer:
-
-Usando o Fish Shell, a concatenação de strings é bastante fácil. Basta utilizar o sinal de adição (+) entre as strings que você deseja juntar. Veja o exemplo abaixo:
+Aqui estão exemplos de como concatenar strings no Fish Shell:
 
 ```
-Fish Shell> set operacao "adição"
-Fish Shell> echo "Operação escolhida:" + $operacao
-Operação escolhida: adição
+set string1 "Olá, "
+set string2 "mundo!"
+set resultado $string1$string2
+echo $resultado
 ```
 
-Note que a variável `$operacao` foi concatenada com a string fixa "Operação escolhida: " para formar a mensagem final.
+A saída será:
 
-## Mergulho profundo:
+```
+Olá, mundo!
+```
 
-A concatenação de strings é uma técnica muito utilizada em diversas linguagens de programação, pois permite a criação de mensagens personalizadas e dinâmicas. Alternativas incluem o uso de placeholders ou a utilização de funções específicas da linguagem para formatação de strings. O processo de concatenação geralmente envolve a alocação de um novo espaço de memória para armazenar a string resultante.
+## Mergulho Profundo:
+Historicamente, a concatenação de strings tem sido uma técnica importante na programação. Ela foi usada desde os primeiros dias do desenvolvimento de software, onde os programadores de baixo nível tinham que operar diretamente em strings para fazer coisas simples como imprimir mensagens na tela.
 
-## Veja também:
+Existem alternativas para concatenar strings no Fish Shell e outros shells de linha de comando, dependendo do que você está tentando realizar. Por exemplo, você pode usar a função de concatenação especializada `string join` para unir strings com um delimitador específico:
 
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/commands.html#set)
-- [Definição de Concatenação de Strings na Wikipedia](https://pt.wikipedia.org/wiki/Concatena%C3%A7%C3%A3o)
-- [Artigo sobre a importância da concatenação de strings em programação](https://www.educba.com/string-concatenation-in-programming/)
+```
+set frutas "maçã" "banana" "cereja"
+string join ", " $frutas
+```
+
+Em termos de implementação, a concatenação de strings no Fish Shell é um processo simples - as strings são simplesmente unidas na sequência em que aparecem. No entanto, é importante notar que ao lidar com strings muito longas ou um grande número de strings, a concatenação pode aumentar significativamente o uso de memória e a carga de computação.
+
+## Veja Também:
+Para mais informações, confira estes recursos úteis:
+
+1. Documentação oficial do Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+2. Manual do Fish Shell na seção "String": [https://fishshell.com/docs/current/commands.html#string](https://fishshell.com/docs/current/commands.html#string)
+3. Artigo sobre concatenação de strings: [https://en.wikipedia.org/wiki/Concatenation](https://en.wikipedia.org/wiki/Concatenation)
+4. Stack Overflow para perguntas relacionadas: [https://stackoverflow.com/questions/tagged/fish](https://stackoverflow.com/questions/tagged/fish)

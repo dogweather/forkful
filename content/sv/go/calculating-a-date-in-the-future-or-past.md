@@ -1,7 +1,7 @@
 ---
-title:                "Att beräkna ett datum i framtiden eller det förflutna"
-html_title:           "Go: Att beräkna ett datum i framtiden eller det förflutna"
-simple_title:         "Att beräkna ett datum i framtiden eller det förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "Go: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+---
+## Vad och varför?
+Att beräkna framtidens eller förflutnas datumen innebär att vi lägger till eller tar bort en specifik tid från ett befintligt datum. Programmerare gör det för att hantera schemaläggningar, tidsbegränsningar m.m.
 
-När vi pratar om att beräkna ett datum i framtiden eller i förflutna, så pratar vi om att ta en datum och sedan lägga till eller subtrahera ett visst antal dagar, veckor, månader eller år från det datumet. Detta är ett vanligt problem för programmerare, eftersom många program och applikationer behöver kunna hantera datum och tid på ett korrekt sätt.
-
-## Så här gör man:
+## Hur man gör:
+Med Go kan du lätt beräkna ett framtida eller förgånget datum. Använda `AddDate(years int, months int, days int)` funktionen.
 
 ```Go
-// Beräkna ett datum i förflutna (10 dagar tillbaka)
-nu := time.Now()
-förraVeckan := nu.AddDate(0, 0, -10)
+package main
 
-// Beräkna ett datum i framtiden (2 månader framåt)
-nu := time.Now()
-omTvåmånader := nu.AddDate(0, 2, 0)
+import (
+    "fmt"
+    "time"
+)
 
-// Skriv ut resultaten
-fmt.Println(förraVeckan.Format("2006-01-02"))
-fmt.Println(omTvåmånader.Format("2006-01-02"))
+func main() {
+    date := time.Now()
+    newDate := date.AddDate(1, 2, 3)
+
+    fmt.Println("Ursprungligt datum:", date.Format("2006-01-02"))
+    fmt.Println("Nytt datum:", newDate.Format("2006-01-02"))
+}
 ```
+I ovanstående kod lägger vi till 1 år, 2 månader och 3 dagar till det aktuella datumet.
 
-Output:
-```
-2020-08-09
-2020-12-07
-```
+## Djupdykning
+På de tidiga dagarna av datorprogrammering var tidsberäkning svårt och buggigt. Tidszoner, skottår och andra komplikationer gjorde detta till en utmaning. Med moderna språk som Go har dessa problem tagits om hand.
 
-## Djupdykning:
+Alternativ till `AddDate` inkluderar att direkt förändra datumet med den standard `+` operatorn, eller att använda tredje partens bibliotek för mer komplexa datum och tidsoperationer.
 
-Att hantera datum och tid har varit en utmaning för programmerare sedan länge. För att lösa detta problem har många olika metoder utvecklats, till exempel att räkna antalet sekunder från ett visst datum eller att använda en kalender med förbestämda datum. I Go används funktionen `AddDate` för att beräkna ett datum i framtiden eller förflutna, men det finns också andra alternativ såsom att använda paketet `time.Duration` för att lägga till eller subtrahera en specifik tidsintervall.
+I Go, `AddDate` fungerar internt genom att skapa ett nytt `Date` objekt baserat på det existerande, sedan lägga till eller dra bort de specificerade åren, månaderna och dagarna.
 
-## Se även:
-
-- [Go Time Package documentation](https://golang.org/pkg/time/)
-- [Go Time and Date Functions Cheat Sheet](https://yourbasic.org/golang/datetime-functions/)
-- [Handling date and time in programming](https://hackernoon.com/handling-date-and-time-in-programming-8c80c2307fcb)
+## Se även
+- [Go Dokumentation om datum och tid](https://golang.org/pkg/time/)
+- [Tutorial om datum och tid i Go](https://www.programming-books.io/essential/go/date-and-time-96df1138f8d24856b5c99062bfa8bd35)
+- [Go Time-paketet](https://gobyexample.com/time)
+---

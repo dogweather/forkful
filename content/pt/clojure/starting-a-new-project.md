@@ -1,6 +1,6 @@
 ---
 title:                "Iniciando um novo projeto"
-html_title:           "Clojure: Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
 simple_title:         "Iniciando um novo projeto"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,31 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que é e Porquê?
+Iniciar um novo projeto de programação é basicamente esboçar a primeira infraestrutura para um aplicativo ou programa. Os programadores fazem isso para estabelecer um ponto inicial, um esqueleto sobre o qual eles constroem o programa em si.
 
-Começar um novo projeto em programação significa iniciar um novo conjunto de código para atingir um objetivo específico. Os programadores geralmente iniciam novos projetos para criar novas soluções para problemas ou para melhorar a funcionalidade existente.
+## Como fazer: 
+Para começar um novo projeto em Clojure, você precisará do pacote de gerenciamento de projetos de Clojure, ou Leiningen.
 
-## Como fazer:
+Por exemplo:
 
 ```Clojure
-(def project "Novo Projeto")
-
-(println "Começando um novo projeto em Clojure")
-(println "Nome do projeto: " project)
+lein new meu-projeto
 ```
 
-**Saída:**
-```
-Começando um novo projeto em Clojure
-Nome do projeto: Novo Projeto
-```
+Depois de executar, você observará uma estrutura de diretórios recém-criada em 'meu-projeto'. É aqui que você começará a programar.
 
-## Mergulho Profundo:
+## Mergulho Profundo 
+Clojure, uma linguagem de programação dinâmica funcional, lançada em 2007, tem raízes em Lisp e roda na máquina virtual Java (JVM). Para começar um novo projeto, poderíamos também considerar alternativas à abordagem Leiningen, como utilizando o Boot ou o CLI/deps do Clojure.
 
-Para entender melhor como começar um novo projeto em Clojure, é importante ter um pouco de contexto histórico sobre a linguagem de programação. Clojure foi criada em 2007 por Rich Hickey e é baseada na linguagem Lisp. Existem outras opções para iniciar novos projetos em Clojure, incluindo o uso de templates e ferramentas de desenvolvimento integrado (IDE). O processo básico de começar um novo projeto em Clojure envolve a criação de um novo arquivo de código fonte e a utilização de funções e estruturas de dados para construir sua solução.
+No entanto, o Leiningen é amplamente preferido devido à sua facilidade de uso e à capacidade de manipular um projeto inteiro, desde a criação até a execução dos testes e a geração de distribuições autônomas. Ao criar um novo projeto, ele estabelece uma estrutura de diretório ideal que é eficiente e fácil de navegar, poupa tempo e permite que os programadores se concentrem na lógica e na funcionalidade do programa em si.
 
-## Veja também:
-
-- [Documentação Oficial de Clojure](https://clojure.org/guides/getting_started)
-- [Clojure for the Brave and True](https://www.braveclojure.com/getting-started/)
-- [Einstuerzende Neubauten: Extended Introduction to Clojure (Video)](https://youtu.be/FekKInnfa6o)
+## Veja Também
+- Documentação oficial da Clojure: [https://clojure.org/](https://clojure.org/)
+- Documentação oficial do Leiningen: [https://leiningen.org/](https://leiningen.org/)
+- Introdução ao Clojure: [https://www.braveclojure.com/](https://www.braveclojure.com/)

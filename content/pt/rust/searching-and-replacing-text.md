@@ -1,7 +1,7 @@
 ---
-title:                "Localizando e substituindo texto"
-html_title:           "Rust: Localizando e substituindo texto"
-simple_title:         "Localizando e substituindo texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,33 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Artigo de Programação Rust: Pesquisando e Substituindo o Texto
 
-Substituir texto é uma tarefa comum para programadores. Basicamente, isso significa encontrar uma sequência de caracteres específica em um texto e substituí-la por outra. Os programadores fazem isso para corrigir erros, adicionar funcionalidades ou simplificar seu código.
+## O Que é e Porquê?
+
+A pesquisa e substituição de texto são operações usadas para localizar sequências de caractere num dado texto e eventualmente substituir por outras sequências. É algo crucial para os programadores por diversas razões, tais como refatoração de código e manipulação de dados.
+
 
 ## Como fazer:
 
-Para substituir texto em Rust, podemos usar o método `replace()` da classe `String`.
+Aqui está um exemplo de como fazer pesquisa e substituição de texto com Rust:
 
 ```Rust
-let texto = "Olá, mundo!";
-let novo_texto = texto.replace("mundo", "tudo");
-
-println!("{}", novo_texto);
+let mut mensagem = String::from("Olá, Universo");
+mensagem = mensagem.replace("Universo", "Mundo");
+println!("{}", mensagem);
 ```
 
-Este código irá substituir a palavra "mundo" por "tudo" e imprimir "Olá, tudo!".
+Saída:
 
-## Mergulho profundo:
+```
+Olá, Mundo
+```
 
-A tarefa de substituir textos é muito antiga e já foi resolvida de várias maneiras. Uma abordagem comum é o algoritmo de busca e substituição Boyer-Moore, que foi desenvolvido em 1977.
+Neste exemplo, o `.replace` faz o trabalho de pesquisar por "Universo", substituindo-o por "Mundo" e então imprime a nova string.
 
-Alternativamente, os programadores também podem usar expressões regulares para substituir padrões de texto específicos em uma string.
+## Um Mergulho Profundo:
 
-No Rust, o método `replace()` é implementado como parte do tipo `String`, que é uma estrutura de dados altamente otimizada para manipulação de texto.
+A pesquisa e substituição de texto não são algo novo. Desde os primeiros editores de texto, tal operação existe. Na linguagem Rust, pode-se usar métodos como `.replace` e `.replacen`.
 
-## Veja também:
+A `.replace` é uma função de alto nível bastante direta. No entanto, você pode querer mais controle sobre a operação de pesquisa e substituição. Para isso, você pode usar as expressões regulares do Rust:
 
-- Documentação oficial do Rust para o método `replace()`: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
-- Site oficial do algoritmo Boyer-Moore: http://www-igm.univ-mlv.fr/~lecroq/string/node14.html
-- Site para testar expressões regulares: https://regexr.com/
+```Rust
+use regex::Regex;
+
+let re = Regex::new("Universo").unwrap();
+let resultado = re.replace_all("Olá, Universo", "Mundo");
+println!("{}", resultado);
+```
+
+Isto permite maior flexibilidade ao corresponder strings que sejam mais complexas do que a correspondência direta simples.
+
+## Veja Também:
+
+Aqui estão alguns links úteis se você desejar se aprofundar no assunto:
+
+1. [Documentação oficial da Rust](https://doc.rust-lang.org/book/) - Um excelente ponto de partida.
+2. [Biblioteca Regex em Rust](https://docs.rs/regex/1.5.4/regex/) - Documentação oficial para expressões regulares em Rust.
+3. [Livro de Receitas de Rust](https://rust-lang-nursery.github.io/rust-cookbook/) - Várias soluções para problemas comuns em Rust, incluindo pesquisas de texto e substituição.

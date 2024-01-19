@@ -1,6 +1,6 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "TypeScript: Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,26 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Mitä & Miksi?
+## Mitä & Miksi?
+Tekstin hakeminen ja korvaaminen tarkoittaa tekstijonon etsimistä luotussa ohjelmassa ja tämän jonon korvaamista toisella. Koodaajat tekevät näin, kun he haluavat muuttaa muuttujien, funktioiden tai muiden ohjelmointielementtien nimeä tai arvoa koko ohjelmassa.
 
-Tekstin etsiminen ja korvaaminen on prosessi, jossa ohjelmoija etsii tiettyjä merkkijonoja ja korvaa ne toisilla. Tämä voi olla hyödyllistä esimerkiksi, kun halutaan muuttaa tietynlaisia merkkijonoja toisenlaisiksi tai korvata vanhoja koodinpätkiä uusilla. Ohjelmoijat tekevät tätä parantaakseen koodin suorituskykyä ja tehokkuutta, sekä välttääkseen virheitä koodissa.
-
-##Miten:
+## Näin se tehdään:
+Löydä ja korvaa teksti TypeScriptissä `String.prototype.replace()` -metodilla. Metodi palauttaa uuden merkkijonon, jossa korvaus on suoritettu.
 
 ```TypeScript
-const teksti = "Tämä on esimerkki tekstistä";
-const uusiTeksti = teksti.replace("esimerkki", "toinen");
-
+let teksti = 'Tervetuloa TypeScriptiin!';
+let uusiTeksti = teksti.replace('TypeScriptiin', 'JavaScriptiin');
 console.log(uusiTeksti);
-//Tämä on toinen tekstistä
+```
+Output:
+```
+Tervetuloa JavaScriptiin!
 ```
 
-Tässä yksinkertaisessa esimerkissä käytetään replace-metodia, joka etsii merkkijonosta "teksti" sanaa "esimerkki" ja korvaa sen sanalla "toinen". Lopputulos tulostetaan konsoliin. Tämä on vain yksi tapa, jolla tekstiä voidaan etsiä ja korvata TypeScriptillä.
+## Syvempi sukellus
+Tekstin hakeminen ja korvaaminen ei ole uusi konsepti, se on ollut olemassa alusta asti, kun ohjelmointikielet kehitettiin. TypeScriptissä tämä toteutetaan `String.prototype.replace()` -metodilla, mutta vanhemmissa ohjelmointikielissä, kuten C ja Perl, prosessi on monimutkaisempi.
 
-##Syvällinen sukellus:
+Vaihtoehtoinen tapa tehdä samaa JavaScriptissä on käyttää regular expressions -lausekkeita. Ne tarjoavat paljon enemmän joustonvaraa ja tehokkuutta, mutta ovat myös monimutkaisempia.
 
-Historiallisesti tekstiä on etsitty ja korvattu manuaalisesti, mikä on ollut aikaa vievää ja altistanut mahdollisille virheille. Nykyään tähän käytetään yleisesti ohjelmointikieliä ja kirjastoja, kuten TypeScript ja sen sisäänrakennettuja metodeja, kuten replace. On myös muita tapoja, kuten säännölliset lausekkeet (regular expressions), jotka tarjoavat laajempia etsimisen ja korvaamisen mahdollisuuksia.
+```TypeScript
+let teksti = 'Tervetuloa TypeScriptiin!';
+let uusiTeksti = teksti.replace(/TypeScriptiin/i, 'JavaScriptiin');
+console.log(uusiTeksti);
+```
 
-##Katso myös:
-
-Tässä artikkelissa olemme käsitelleet vain yhtä tapaa käyttää TypeScriptia tekstiä etsiessä ja korvatessa. On tärkeää tutustua myös muihin vaihtoehtoihin ja löytää itselle sopivin tapa tehdä tämä prosessi. Lisätietoa ja esimerkkejä löytyy esimerkiksi TypeScriptin virallisesta dokumentaatiosta (https://www.typescriptlang.org/docs/handbook/basic-types.html#string-handbook-regex) sekä eri ohjelmointifoorumeilta.
+## Katso myös
+- [Mozilla Developer Network: String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Regular expressions in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [JavaScript replace method](https://www.w3schools.com/jsref/jsref_replace.asp)

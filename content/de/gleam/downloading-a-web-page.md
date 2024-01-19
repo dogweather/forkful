@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "Gleam: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -12,38 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Wenn wir eine Webseite besuchen, wird sie auf unseren Bildschirm geladen und wir können sie lesen und nutzen. Aber was passiert eigentlich im Hintergrund, wenn wir eine Webseite "runterladen"? In der Programmierwelt wird dieser Vorgang als "Webseiten-Download" bezeichnet und ist ein wichtiger Teil der Entwicklung von Web-Anwendungen.
+Das Herunterladen einer Webseite ist der Prozess, bei dem der HTML-Code einer Webseite abgerufen wird. Programmierer machen das, um Informationen zu sammeln, Seiten zu testen oder Inhalte zu durchsuchen.
 
-## Wie geht das?
+## So geht's:
 
-Das Herunterladen einer Webseite kann in Gleam mit Hilfe des `httpc`-Moduls einfach umgesetzt werden. Wir benutzen die Funktion `httpc.get`, um eine URL anzugeben und einen `on_success`-Callback, der aufgerufen wird, wenn die Seite erfolgreich heruntergeladen wurde.
+In Gleam können Sie eine Webseite mittels des `gleam/httpc`-Moduls herunterladen. Sehen Sie sich das folgende Beispiel an.
 
 ```Gleam
-httpc.get("https://www.example.com", on_success: \response -> {
-    // `response` ist der heruntergeladene Inhalt
-    switch response {
-        Ok(body) -> {
-            // Der Inhalt wird in der Reihenfolge angezeigt, in der er angegeben wurde
-            Console.print(body)
-            // => "<!DOCTYPE html>...
-            //    <title>Welcome to example.com</title>..."
-        }
-        Err(error) -> {
-            Console.print("Oops! Etwas ist schief gelaufen!")
-        }
-    }
-})
+import gleam/httpc
+import gleam/http.{Request}
+
+fn download() {
+  let request = Request(
+    method: httpc.Get, 
+    url: "https://www.example.com", 
+    headers: [], 
+    body: httpc.Empty
+  )
+  let _ = httpc.send(request)
+}
+```
+Die Ausgabe wäre der HTML-Text der Webseite.
+
+```Gleam
+{Ok, 
+  Response(
+    status: 200, 
+    headers: [], 
+    body: "..."
+  )
+}
 ```
 
-## Tiefere Einblicke
+## Tiefertauchen
 
-Das Herunterladen von Webseiten ist ein wichtiger Teil der Webentwicklung, da viele Web-Anwendungen auf die Daten von externen Quellen angewiesen sind. Beispielsweise können wir mit dem Inhalt einer heruntergeladenen Webseite Informationen für unsere Anwendung abrufen oder überprüfen, ob eine bestimmte Seite verfügbar ist.
+Früher verwendeten Programmierer Shell-Dienstprogramme wie `wget` und `curl`, um Webseiten herunterzuladen. Heute bieten viele Sprachen eingebaute HTTP-Clients wie `httpc` in Gleam an. Alternativen in Gleam sind zum Beispiel die Verwendung einer HTTP-Bibliothek wie Gun oder Hackney.
 
-Eine Alternative zum `httpc`-Modul ist das beliebte `curl`-Tool, das jedoch nicht so einfach zu bedienen ist und mehr Einarbeitungszeit erfordert. Mit Hilfe von `httpc` können wir jedoch schnell und effizient Webseiten herunterladen und in unsere Anwendungen integrieren.
-
-In der Tiefe der Implementierung verwendet das `httpc`-Modul das HTTP-Protokoll, um Anfragen an eine Webseite zu senden und deren Antwort zu empfangen. Dies erfordert Kenntnisse über Netzwerkprogrammierung und Protokolle, aber dank Gleam können wir dies einfach und sicher umsetzen.
+Die Implementierung in Gleam basiert auf der OTP-Bibliothek, die auf vielen Ebenen der Netzwerkprogrammierung in Erlang verwendet wird. `httpc` ist ein einfacher HTTP-Client, der eine Asynchronität und Schutz vor Fehlern bietet.
 
 ## Siehe auch
 
-- Das offizielle Gleam `httpc`-Modul: https://github.com/gleam-lang/httpc
-- Ein umfassendes Tutorial zu Webentwicklung mit Gleam: https://github.com/gleam-lang/gleam_web_tutorial
+- [Die Gleam HTTP Dokumentation](https://gleam.run/book/tour/http.html)
+- [Gun HTTP Client Bibliothek](https://github.com/ninenines/gun)
+- [hackney: Simple HTTP client](https://github.com/benoitc/hackney)

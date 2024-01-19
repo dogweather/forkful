@@ -1,7 +1,7 @@
 ---
-title:                "「ランダムな数字の生成」"
-html_title:           "C: 「ランダムな数字の生成」"
-simple_title:         "「ランダムな数字の生成」"
+title:                "ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,11 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が目的？ 
-ランダムな数字を生成することは、プログラマーがプログラムで使用するランダムなデータを作成することです。例えば、ゲームの乱数生成やセキュリティー目的の暗号鍵生成などに使われます。
+## 何となぜ？
 
-## 使い方：
-ランダムな数字を生成する方法はいくつかありますが、ここでは代表的な方法を紹介します。
+乱数生成とは、何らかの一貫性なく値を発生させるプロセスのことです。これは、ゲームの中で事象をランダムに発生させたり、暗号化に必要なキーを生成したりするためにプログラマーが行います。
+
+## 実施方法：
+
+以下は、Cプログラムの中で乱数を生成する基本的な方法です：
 
 ```C
 #include <stdio.h>
@@ -22,23 +24,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 #include <time.h>
 
 int main() {
-  //乱数の種を設定する
-  srand(time(NULL));
+   // シード値初期化
+   srand(time(0));
 
-  //1から10までのランダムな数字を生成する
-  int num = rand() % 10 + 1;
-
-  printf("ランダムな数字は%dです。\n", num);
-
-  return 0;
+   // 生成した乱数を出力
+   printf("%d\n", rand());
+   
+   return 0;
 }
 ```
 
-上記のコードでは、ランダムな数字を生成するために`rand()`関数を使用し、それを1〜10の範囲に調整するために`%`演算子を使っています。さらに、実行するたびに異なる結果を得るために、`srand()`関数を使用して乱数の種を設定しています。
+上記コードの出力は、ある一貫性のない数値です。つまり、それは乱数です。
 
-## 深く掘り下げる
-ランダムな数字を生成するには様々な方法がありますが、よく使われる方法には疑似乱数生成アルゴリズムがあります。これは、乱数の種を元に計算された数列を生成する方法です。また、ランダムな値が必要な場合に、乱数ではなくハードウェアの乱数ジェネレーターを使用することもできます。
+## 深堀り：
 
-## 関連情報を見る 
-- [乱数生成アルゴリズムの説明](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/)
-- [ハードウェアの乱数ジェネレーターの種類と使い方](https://www.techopedia.com/definition/28661/hardware-random-number-generator-hwrng)
+乱数生成の初めての主流な方針は、1960年代に発表されました。現在、C言語の`rand()`関数と`srand()`関数を使用するのが一般的です。他方、より高度な乱数生成のニーズには、`random()`や`drand48()`関数が使用されますが、これらは`rand()`よりも少し複雑です。
+
+生成される乱数は、シーケンスを開始する「シード」値に依存します。一般に、シード値として現在の時刻を使用することが多いです。これは`time(0)`が返す値になります。
+
+## 参照資料：
+
+- C言語乱数の生成について更に学びたい方は、以下のリンクをご参照ください： https://www.ibm.com/docs/ja/i/7.4?topic=ssw_ibm_i_74/rzarg/rand.htm
+- 別のアプローチとして`random()`関数について学びたい方は、こちらのリンクが有用です： https://www.gnu.org/software/libc/manual/html_node/Simple-Random.html

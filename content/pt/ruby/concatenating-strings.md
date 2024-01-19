@@ -1,6 +1,6 @@
 ---
 title:                "Concatenando strings"
-html_title:           "Ruby: Concatenando strings"
+html_title:           "Elixir: Concatenando strings"
 simple_title:         "Concatenando strings"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que & Por quê?
+# Concatenação de Strings em Ruby
 
-Concatenar strings é basicamente juntar duas ou mais strings, ou seja, cadeias de caracteres, em uma única string. 
+## O Que e Por Quê?
 
-Os programadores utilizam a concatenação de strings para criar novas strings a partir de informações diferentes, tornando-as mais dinâmicas e personalizadas. Além disso, o processo de concatenar strings é muito útil quando se trabalha com entradas do usuário, pois permite combinar essas entradas com outras informações e exibi-las de forma coerente.
+Concatenar strings é o ato de juntar duas ou mais strings para formar uma única. Programadores usam esta técnica quando desejam mesclar informações separadas em uma única string, tornando a exibição de dados mais organizada e eficiente.
 
-# Como fazer:
+## Como fazer:
 
-```Ruby
-# Utilizando o operador de adição (+)
-"Olá" + " " + "mundo" #=> "Olá mundo"
-
-# Utilizando o método concat
-"Olá".concat(" ").concat("mundo") #=> "Olá mundo"
-
-# Utilizando o método << (append)
-"Olá" << " mundo" #=> "Olá mundo"
-```
-
-# Mergulho Profundo:
-
-A concatenação de strings é uma operação muito antiga e amplamente utilizada na programação, tendo sido introduzida na linguagem de programação FORTRAN em 1954. Além dos métodos mencionados acima, existem outras formas de concatenar strings, como por exemplo o método `concat!`, que modifica a string original e adiciona a nova string ao seu final.
-
-Outra opção é utilizar a interpolação de strings, que permite inserir valores de variáveis diretamente em uma string sem a necessidade de concatenar manualmente. Por exemplo:
+Aqui estão algumas maneiras de concatenar strings em Ruby. 
 
 ```Ruby
-nome = "João"
-puts "Olá #{nome}, como vai?"
-#=> Olá João, como vai?
+# Método 1: Pinça
+nome = "Jose"
+saudacao = "Olá, " + nome
+puts saudacao
+# Resultado será: Olá, Jose
+
+# Método 2: Interpolação
+nome = "Jose"
+saudacao = "Olá, #{nome}"
+puts saudacao
+# Resultado será: Olá, Jose
+
+# Método 3: Concat()
+nome = "Jose"
+saudacao = "Olá, ".concat(nome)
+puts saudacao
+# Resultado será: Olá, Jose
 ```
 
-# Veja também:
+## Mergulho Profundo
 
-Para saber mais sobre concatenação de strings em Ruby, acesse a documentação oficial da linguagem: https://ruby-doc.org/core-3.0.2/String.html#method-i-2B-2B
+Historicamente, a interpolação de strings tem sido a abordagem preferida em Ruby devido à sua eficiência e facilidade de leitura. No entanto, todos os métodos têm seus méritos.
 
-Também é possível utilizar o método `concat` em objetos do tipo Array para combinar seus elementos em uma única string: https://ruby-doc.org/core-3.0.2/Array.html#method-i-empty-3F
+A escolha entre "+", "concat()" ou interpolação geralmente se resume à preferência do programador ou à situação específica. "+", por exemplo, cria uma nova string, o que pode ser menos eficiente se estiver concatenando um grande número de strings. 
+
+Em relação à implementação, "concat()" e "+" colocam a nova string no fim, enquanto a interpolação permite inseri-la em qualquer lugar.
+
+## Veja Também
+
+Para mais detalhes, veja:
+
+1. [Ruby Docs: String](https://ruby-doc.org/core-2.7.3/String.html) - A documentação oficial sobre Strings em Ruby.
+2. [Stack Overflow: Ruby String Concatenation](https://stackoverflow.com/questions/10076579/ruby-string-concatenation) - Discussão da comunidade sobre concatenação de strings.
+3. [Sitepoint: Ruby String Interpolation](https://www.sitepoint.com/ruby-string-interpolation-tutorial/) - Tutorial detalhado sobre interpolação de strings em Ruby.

@@ -1,7 +1,7 @@
 ---
-title:                "Webseite herunterladen"
-html_title:           "Elixir: Webseite herunterladen"
-simple_title:         "Webseite herunterladen"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,18 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Herunterladen einer Webseite beinhaltet das Abrufen von Ressourcen wie Text, Bilder und Videos aus dem Internet. Programmierer tun dies, um Daten zu extrahieren, analysieren oder anzeigen zu können.
+# Webseiten Herunterladen mit Elixir
 
-# Wie geht das?
-Das Herunterladen einer Webseite in Elixir ist sehr einfach. Verwenden Sie einfach den HTTP Client ```Elixir HTTPoison``` und rufen Sie die gewünschte URL auf. Zum Beispiel:
+## Was & Warum?
+
+Das Herunterladen einer Webseite bedeutet, ihre Inhalte lokal zu speichern. Programmierer tun dies häufig, um Daten zu analysieren oder Offline-Zugriff zu ermöglichen.
+
+## So geht's:
+
+Sie können die HTTPotion-Bibliothek in Elixir verwenden, um eine Website zu holen. Hier ein einfaches Beispiel:
+
 ```Elixir
-response = HTTPoison.get("https://www.example.com")
+defmodule DownloadWebPage do
+  def download(url) do
+    HTTPotion.start
+    {:ok, response} = HTTPotion.get(url)
+    response.body
+  end
+end
+
+IO.puts DownloadWebPage.download("https://www.example.com")
 ```
-Der Inhalt der Webseite kann dann mit ```response.body``` abgerufen werden und weitere Analyse oder Verarbeitung kann durchgeführt werden.
 
-# Tiefere Einblicke
-Das Herunterladen von Webseiten ist eine grundlegende Funktion in der Webentwicklung und wird von vielen anderen Sprachen und Frameworks unterstützt. Alternativen zu ```HTTPoison``` sind beispielsweise ```Elixir HTTPotion``` und ```Elixir Finch```. Die Implementierung von ```HTTPoison``` basiert auf der hochperformanten Erlang Library ```hackney``` und bietet eine einfache API für den Einsatz in Elixir Projekten.
+In diesem Code wird die `get`-Methode von HTTPotion aufgerufen, um den Inhalt der angegebenen URL zu erhalten. Das Ergebnis wird dann ausgegeben.
 
-# Siehe auch
-Für weitere Informationen und Beispiele zur Verwendung von ```HTTPoison```, besuchen Sie die offizielle Dokumentation unter https://hexdocs.pm/httpoison. Weitere Ressourcen zu Webentwicklung in Elixir sind das Elixir Forum unter https://elixirforum.com und der Elixir Podcast unter https://elixiroutlaws.com.
+## Deep Dive
+
+Das Herunterladen von Webseiten ist keine neue Praxis. Es reicht bis in die frühen Tage des Internets zurück, als Zugang selten und kostspielig war. Heute wird es bei Web Scrapping, Datamining und für Offline-Zugänge genutzt.
+
+Alternativen zum Herunterladen einer Webseite in Elixir sind andere Bibliotheken wie HTTPoison oder :httpc, die standardmäßig in Erlang/OTP enthalten ist, auf dem Elixir basiert.
+
+Beim Herunterladen von Webseiten ist es wichtig, den "robots.txt" der jeweiligen Webseite zu beachten, um Regeln und Einschränkungen einzuhalten. Zudem sollte man die Anfragen soweit wie möglich limitieren, um die Webseite nicht zu überlasten.
+
+## Siehe Auch
+
+Verwandte Ressourcen zum Thema:
+
+- Elixir's offizielle Dokumentation auf [Elixir School](https://elixirschool.com/de/)
+- [HTTPotion Dokumentation auf Hexdocs](https://hexdocs.pm/httpotion/HTTPotion.html)
+- Erlaubnisse und ethisches Surfen - [Robots.txt](https://developers.google.com/search/docs/advanced/robots/create-robots-txt?visit_id=637672168116277084-3858952796&rd=1)
+- Alternative Bibliotheken zur HTTP-Anforderung in Elixir - [HTTPoison auf Github](https://github.com/edgurgel/httpoison) und [:httpc in Erlang/OTP](http://erlang.org/doc/man/httpc.html)

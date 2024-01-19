@@ -1,7 +1,7 @@
 ---
-title:                "Uzyskiwanie bieżącej daty"
-html_title:           "Elixir: Uzyskiwanie bieżącej daty"
-simple_title:         "Uzyskiwanie bieżącej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,24 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O co chodzi & po co to robić?
+##Co i Dlaczego?
 
-Pobranie bieżącej daty to proces, w którym program jest w stanie uzyskać informację o aktualnym dniu, miesiącu i roku. Programiści często wykonują tę operację, ponieważ potrzebują aktualnych danych do przetwarzania lub wyświetlania ich użytkownikom.
+Praca z bieżącą datą to jedno z wielu zadań, które programiści muszą wykonywać, umożliwiaj też śledzenie czasu, logowanie zdarzeń, generowanie raportów itp.
 
-# Jak to zrobić:
+## Jak to zrobić:
 
-```Elixir
-Ernő lok_time = DateTime.utc_now()
-IO.puts("Aktualna data: #{lok_time.year}-#{lok_time.month}-#{lok_time.day}")
-```
-Wynik:
-```
-Aktualna data: 2021-11-14
+By pobrac aktualną datę w Elixire, używamy modułu `DateTime`. Poniżej znajduje się kod, który zwroci dzisiejszą datę.
+
+```elixir
+DateTime.utc_now() |> DateTime.to_string()
 ```
 
-# Dogłębna analiza:
-Pobieranie bieżącej daty ma swoje źródła w kalendarzu gregoriańskim, który został wprowadzony w 1582 roku przez papieża Grzegorza XIII. Alternatywnym sposobem pobierania daty jest używanie biblioteki `Calendar` lub funkcji `:calendar.universal_time` w Elixir. Implementacja polega na wykorzystaniu systemowej zegarka czasu w celu pobrania aktualnej daty.
+Po uruchomieniu tego kodu, otrzymasz efekt podobny do tego:
 
-# Zobacz również:
-- Dokumentacja Elixir dla funkcji `DateTime.utc_now/0`
-- [Katalog standardowych bibliotek Elixir](https://hexdocs.pm/elixir/15471969SEISIAIS/totaldefile.html) dla dodatkowej wiedzy na temat `Calendar` i `:calendar.universal_time`.
+```elixir
+"2023-08-23T12:33:27.125681Z"
+```
+
+## Głębsze spojrzenie:
+
+Mimo że jest wiele sposobów na odczytanie aktualnej daty w Elixir, `DateTime.utc_now()` jest najczęściej używanym. Ta funkcja zwraca bieżącą datę i czas w strefie czasowej UTC, co jest przydatne dla programistów, którzy pracują nad aplikacjami obsługującymi różne strefy czasowe.
+
+Ale warto pamiętać, że Elixir ma również inne moduły do obsługi dat i czasu - jak `NaiveDateTime` i `Date`. `NaiveDateTime` obchodzi się bez strefy czasowej, co czyni go mniej precyzyjnym, ale prostszym w użyciu. W międzyczasie, `Date` obsługuje tylko daty, bez odniesienia do czasu.
+
+## Zobacz również:
+
+- Dokumentacja Elixira na temat DateTime: https://hexdocs.pm/elixir/DateTime.html
+- Dokumentacja Elixira na temat Date: https://hexdocs.pm/elixir/Date.html
+- Dokumentacja Elixira na temat NaiveDateTime: https://hexdocs.pm/elixir/NaiveDateTime.html

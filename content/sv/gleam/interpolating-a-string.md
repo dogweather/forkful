@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av en sträng"
-html_title:           "Gleam: Interpolering av en sträng"
-simple_title:         "Interpolering av en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,31 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad är string-interpolering och varför använder programmerare det?
+## Vad & Varför?
+Stränginterpolering innebär att du slår in variabler i en sträng. Varför gör vi det? Enkelt svar: det förenklar sammanfogning av strängar och gör vår kod lättare att läsa.
 
-String-interpolering är en vanlig teknik som används av programmerare för att göra strängar mer dynamiska. Istället för att hårdkoda värden direkt i en sträng, möjliggör interpoleringen att infoga variabler och uttryck dynamiskt, vilket gör det enklare att bygga program som kan anpassa sig efter olika värden och scenarier.
+## Hur gör man:
+I Gleam interpolerar vi strängar med hjälp av funktionen `string.append`. Här är exempel:
 
-Hur man använder string-interpolering i Gleam:
+```gleam
+import gleam/string
 
-```Gleam
-let name = "Sarah"
-let age = 26
-
-let welcome_message = "Välkommen, {name}! Du är {age} år gammal."
+let namn = "Axel"
+let hälsning = string.append(["Hej ", namn, ", hur mår du?"])
 ```
 
-I exemplet ovan är `{name}` och `{age}` interpoleringsanvisningar som kommer att bytas ut med de variabler som definieras under dem. Så när `welcome_message` skrivs ut kommer det att se ut som "Välkommen, Sarah! Du är 26 år gammal."
+Koden ovan kommer att returnera: `Hej Axel, hur mår du?`.
 
-Djupdykning:
+## Djupdykning
+Stränginterpolering har länge varit en stapelvara i flera programmeringsspråk, inte bara Gleam. Alternativa metoder inkluderar att använda funktioner som `string.concat` eller `+ operator`.
 
-Historiskt sett har string-interpolering använts för att göra det lättare att bygga komplexa strängar i dynamiska och templating-språk. Det är en vanlig teknik som även finns tillgänglig i andra programmeringsspråk som Ruby och Python.
+När det gäller genomförandedetaljer i Gleam, översätter `string.append` listelementen till strängar och sammanfogar dem utan ytterligare karaktärer mellan. Detta är snabbare och mer minnesbesparande än att skapa enorma temporära strängar och sedan sammanfoga dem.
 
-Alternativ till string-interpolering inkluderar konkatenation och formatteringsfunktioner. Men interpolering kan ofta vara mer läsbart och hanterbart för större och mer komplexa strängar.
+## Se också
+För mer information om stränginterpolering och relaterade ämnen, se följande källor:
 
-Implementeringsdetaljer:
-
-Gleam har stöd för string-interpolering genom att använda anvisningar som omges av accolader, till exempel `{name}` i exemplet ovan. Programvaran hanterar automatiskt att ersätta dessa anvisningar med korrekta variabler och uttryck.
-
-Se även:
-
-För mer information om string-interpolering i Gleam och dess användning, se dokumentationen på Gleam's officiella hemsida: https://gleam.run/documentation/guide/#interpolation. Du kan också utforska Gleam's GitHub-repo för att se hur interpolering används i exempelprojekt: https://github.com/gleam-lang/gleam.
+1. Gleam's string documentation: https://hexdocs.pm/docs/gleam/book/String.html
+2. Deeper dive into string interpolation in programming: https://realpython.com/python-string-formatting/
+3. Further reading on Gleam programming: https://gleam.run/tour/

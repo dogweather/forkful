@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "C#: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "C#"
 category:             "C#"
@@ -10,24 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Merkkijonon interpolointi tarkoittaa muuttujien lisäämistä merkkijonoon sen sijaan, että muuttujien arvot yhdistettäisiin merkkijonon kanssa erikseen. Tämä helpottaa ja nopeuttaa koodin kirjoittamista ja ylläpitämistä.
+## Mikä ja miksi?
 
-## Miten tehdä:
-Esimerkiksi, jos haluat lisätä kaksi muuttujaa, "nimi" ja "ikä", merkkijonoon, voit käyttää interpolointia seuraavasti:
+Merkkijonon interpolaatio C#-ohjelmointikielessä tarkoittaa muuttujien, ilmaisujen ja menetelmäkutsujen sisällyttämistä suoraan merkkijonojen sisään. Tätä tehdään koodin selkeyttämiseksi ja lukemisen helpottamiseksi.
+
+## Miten:
+
+Voit suorittaa merkkijonon interpolaation C#-kielessä käyttämällä `$`-merkkiä ennen merkkijonoa. Tämän jälkeen voit sisällyttää muuttujia ja ilmaisuksia `{}`-sulkujen sisälle.
+
 ```C#
-string nimi = "Matti";
-int ikä = 25;
-string viesti = $"Hei, olen {nimi} ja olen {ikä} vuotta vanha.";
+int apples = 5;
+int oranges = 6;
+string result = $"Minulla on {apples} omenaa ja {oranges} appelsiinia.";
+Console.WriteLine(result);
 ```
-Tällöin muuttujien arvot tulevat automaattisesti mukaan merkkijonoon. Lopputuloksena saat viestin "Hei, olen Matti ja olen 25 vuotta vanha."
 
-## Syvemmällä:
-Merkkijonon interpolointi on ollut käytössä C#-kielellä vuodesta 2015 lähtien, jolloin se lisättiin C# 6.0 -versioon. Aiemmin muuttujien arvot yhdistettiin merkkijonoon erikseen esimerkiksi String.Format-metodilla.
+Tämä koodi tulostaa: "Minulla on 5 omenaa ja 6 appelsiinia."
 
-On myös mahdollista käyttää merkkijonon interpoloinnin sijaan String.Format-metodia tai yksinkertaisesti yhdistellä muuttujien arvoja "+"-operaattorilla, mutta interpolointi on usein selkeämpi ja käytännöllisempi vaihtoehto.
+## Syvällä:
+
+Merkkijonon interpolaatio otettiin käyttöön C# 6.0 -version myötä vuonna 2015. Tätä ennen merkkijonoihin yhdistettiin usein muuttujia `string.Format` -menetelmän tai konkatenoinnin avulla.
+
+```C#
+// Ennen interpolaatiota:
+string result = string.Format("Minulla on {0} omenaa ja {1} appelsiinia.", apples, oranges);
+
+// tai
+
+string result = "Minulla on " + apples + " omenaa ja " + oranges + " appelsiinia.";
+```
+
+Merkkijonon interpolaation avaintoteutus on `FormattableString`-luokka, joka kääntää interpolaatiomerkkijonot formatointimerkkijonoiksi ja argumenttilistoiksi.
 
 ## Katso myös:
-- [C# merkkijonon interpolointi (docs.microsoft.com)](https://docs.microsoft.com/fi-fi/dotnet/csharp/language-reference/tokens/interpolated)
-- [C# String.Format-metodi (docs.microsoft.com)](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.format)
-- [C# String.Concat-metodi (docs.microsoft.com)](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.concat)
+
+- Microsoftin dokumentaatio merkkijonon interpolaatiosta C#-kielessä: [https://docs.microsoft.com/fi-fi/dotnet/csharp/language-reference/tokens/interpolated](https://docs.microsoft.com/fi-fi/dotnet/csharp/language-reference/tokens/interpolated)
+
+- `FormattableString`-luokka: [https://docs.microsoft.com/fi-fi/dotnet/api/system.formattablestring](https://docs.microsoft.com/fi-fi/dotnet/api/system.formattablestring)

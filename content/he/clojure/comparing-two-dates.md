@@ -1,7 +1,7 @@
 ---
-title:                "להשוואת שתי תאריכים"
-html_title:           "Clojure: להשוואת שתי תאריכים"
-simple_title:         "להשוואת שתי תאריכים"
+title:                "השוואה בין שני תאריכים"
+html_title:           "Arduino: השוואה בין שני תאריכים"
+simple_title:         "השוואה בין שני תאריכים"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-להשוואת תאריכים היא פעולה שבה משווים בין שני תאריכים כדי לבדוק אם הם זהים, מיוחדים או אם אחד מהם מגיע לפני השני. החשיבה הפשוטה מאחורי זה היא שתאריכים הם נתונים מספריים מסודרים וניתן להשתמש בפונקציות חשבון כדי לבדוק את הקשר ביניהם. ניתן להשתמש בהשוואת תאריכים כדי לדוגמא לבדוק אם משהו עבר או עדיין בתוקף, וזו הסיבה שמתכנתים משתמשים בה כל כך הרבה.
+#מה ולמה?
 
-איך לבצע:
+השוואת שני תאריכים הוא תהליך בו משווים את ההפרש בין שני תאריכים. תכנתים עשויים לעשות זאת כדי לראות מה מספר הימים, החודשים או השנים בין שני תאריכים.
+
+#איך לעשות:
+
+נכתוב את הטעימות של הקוד שלנו בעזרת הספרייה של Clojure `clj-time`.
+
 ```Clojure
-;; ייבוא של הספרייה java.time שמאפשרת השוואת תאריכים
-(ns compare-dates.core
-    (:require [java.time]))
+(require '[clj-time.core :as t])
+(require '[clj-time.coerce :as c])
+(require '[clj-time.period :as p])
 
-;; ליצור שני תאריכים כדי להשוות
-(def date1 (LocalDate/now))
-(def date2 (LocalDate/of 2021 07 01))
+(defn days-between [d1 d2]
+  (p/in-millis (t/interval (c/to-date-time d1) (c/to-date-time d2))))
 
-;; להשוות בין שני התאריכים באמצעות פונקציות השוואה של java.time
-(= date1 date2) ;; תחזיר false כי התאריכים שונים
-(= date1 date1) ;; תחזיר true כי התאריכים זהים
-(< date1 date2) ;; תחזיר false כי date1 מגיע לפני date2
+(def d1 (t/date-time 2022 7 5))
+(def d2 (t/date-time 2022 7 9))
 
-;; להדפיס את הפלט של השוואת התאריכים תחת הביטוי לוגי
-(println (= "Date 1 is equal to Date 2: " (= date1 date2)))
-
-;; יציג: Date 1 is equal to Date 2: false
+(println (days-between d1 d2))  ; 86400000 
 ```
 
-עיון מעומק:
-השוואת תאריכים היא תהליך שנעשה מאז זמן העתיק. לפני אנו משתמשים בפונקציות מוכנות לשוואת תאריכים, פתרונות מאותם ימים היו כוללים שימוש באבן קשתית או בקישוריות של התקופות השונות. בימים אלה, לשמחתנו, יש לנו כלים מתקדמים ויעילים כדי להשוות תאריכים.
+בדוגמא זו, חישבנו כמה ימים יש בין שני תאריכים.
 
-אלטרנטיבות:
-קיימות כמה אפשרויות אחרות לביצוע השוואת תאריכים. ניתן להשתמש בחבילות נוספות כמו clj-time או date-clj. אפשר גם להשתמש בפונקציות דטרמיניסטיות של התאריך העברי או הגרגוריאני כדי לבצע את ההשוואה.
+#צלילה עמוקה:
 
-פירוט טכני:
-המימוש של השוואת תאריכים נעשה תוך שימוש במבנה הנתונים המעודכן של java.time. הפונקציות שמשמשות לשוואת תאריכים הן חכמות מאוד ומאפשרות למתכנתים לבצע שוואה בין כל סוגי התאריכים והקומפוננטות בדיוק. הן גם כוללות תמיכה במגוון רחב של תבניות תאריכים כגון ISO 8601.
+Clojure השתמשה בJava DateTime APIים בעבר, אך רק באופן מוגבל. הספרייה `clj-time` התפתחה כדי לפשט את העבודה עם תאריכים ושעות בClojure. יתר על כך, `clj-time` מספקת תכלית לניתוח מחרוזות תאריך עבור פורמטים שונים. 
 
-ראו גם:
-- [The Clojure Programming Language](https://clojure.org/)
-- [Java.time Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Clj-time Library](https://github.com/clj-time/clj-time)
-- [Date-clj Library](https://github.com/sklower/date-clj)
+אלטרנטיבות אחרות ל `clj-time` כוללות את `java.time`  שמגיעה כחלק מ-JDK 1.8 ומעלה, כמו גם `Joda-Time`, שזו ספרייה מבוססת-Java. 
+
+אתה צריך להיות מוודא כי התאריכים שאתה משווה מספקים לציפיות שלך. לדוגמה, אם אתה משווה תאריך בלי שעה לתאריך עם שעה, אז תקבל תוצאות לא צפויות.
+
+#ראו גם:
+
+1. [Clojure clj-time Documentation](https://github.com/clj-time/clj-time) - המקום הראשון ללכת אם אתה מחפש מידע מעמיק יותר על `clj-time`.
+
+2. [Java 8 Date Time API](https://www.baeldung.com/java-8-date-time-intro) - מדריך ל-Date Time API של Java 8.
+
+3. [Joda-Time Library](https://www.joda.org/joda-time/) - הדף הראשי של Joda-Time.

@@ -1,6 +1,6 @@
 ---
 title:                "Converting a date into a string"
-html_title:           "Lua recipe: Converting a date into a string"
+html_title:           "Arduino recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,27 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Converting A Date Into A String in Lua: What, Why, and How
+
 ## What & Why?
-Converting a date into a string in Lua is the process of changing a date object, which is formatted as a numerical value, into a textual representation. Programmers do this to display dates in a more user-friendly and readable format, such as "Month Day, Year," rather than just numbers.
+
+Converting a date into a string changes a data type in Lua from a date format to a read-friendly string. Programmers do this to format dates for display, log records, or to enable certain operations.
 
 ## How to:
-To convert a date into a string in Lua, you can use the `os.date()` function. This function takes in a date format string and a time value, and returns a string representing the date in the specified format. Here's an example code:
+Here's how you do it in Lua:
 
 ```Lua
-local date = os.date("%B %d, %Y", 1567209600)
-print(date)
+os.date("*t", os.time()) --{} representation
+
+os.date("%Y-%m-%d-%H-%M-%S", os.time()) --String representation
+
+os.date() --default representation
+```
+Running the above code will give you output like:
+
+```Lua
+os.date("*t", os.time()) --{ "year" = 2023, "month" = 3,  "day" = 22, "hour" = 7, "min" = 54, "sec" = 31, "wday" = 5, "yday" = 81, isdst = false }
+
+os.date("%Y-%m-%d-%H-%M-%S", os.time()) --"2023-03-23-07-54-31"
+
+os.date() -- "Thu Mar 23 07:54:31 2023"
 ```
 
-Output: September 01, 2019
+## Deep Dive
 
-In the above code, we used the `%B %d, %Y` format, which will result in a string with the month, day, and full year. The second parameter `1567209600` is the time value, which is the number of seconds since January 1st, 1970. The `os.date()` function also has other format options available, such as `%m/%d/%y` for a short date format.
+Historically, date to string conversion is rooted in managing unformatted date data effectively. Before this, dates were not that programmatically friendly. 
 
-## Deep Dive:
-Converting a date into a string is a common task in programming, as dates are often displayed to users in a more readable format. Before the `os.date()` function was introduced in Lua 5.1, programmers had to manually write functions to convert a date into a string. The `os.date()` function also has a built-in time zone adjustment feature, making it easier for programmers to handle different time zones.
+Alternatives in Lua for this task are using custom libraries like `date.lua` or `Chronos`. But `os.date` is already built-in, making it a convenient choice.
 
-An alternative to using `os.date()` is the `string.format()` function, which allows for more formatting options but requires more lines of code to achieve the same result. Additionally, there are third-party libraries available that offer advanced date and time manipulation in Lua.
+When converting dates using `os.date`, tables or strings can be outputted. `os.date("*t", os.time())` returns a table, whereas `os.date("%Y-%m-%d-%H-%M-%S", os.time())` gives a string. Remember `os.date()` defaults to a string in the format "Thu Mar 23 07:54:31 2023". 
 
-## See Also:
-- [Lua Reference Manual](https://www.lua.org/manual/5.4/manual.html#6.9)
-- [string.format() function](https://www.lua.org/manual/5.4/manual.html#pdf-string.format)
-- [Third-party Lua libraries for date and time manipulation](https://luarocks.org/search?q=date)
+## See Also 
+
+- Lua documentation on `os.date`: https://www.lua.org/pil/22.1.html
+- Stack Overflow discussion on date conversion in Lua: https://stackoverflow.com/questions/36057993/how-to-convert-timestamp-to-date-in-lua
+- Understanding `os.date` format specifiers: https://riptutorial.com/lua/example/4184/format-specifiers-in-os-date

@@ -1,6 +1,6 @@
 ---
 title:                "Sammanslagning av strängar"
-html_title:           "Fish Shell: Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
 simple_title:         "Sammanslagning av strängar"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,38 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att konkatenera strängar innebär att man lägger samman flera strängar för att skapa en ny, längre sträng. Programörer gör detta för att skapa dynamiska och anpassningsbara texter, till exempel för användarinteraktion eller för att manipulera data.
+Att konkatenera strängar innebär att man sätter ihop två eller flera strängar för att bilda en. Programmerare gör detta för att manipulera data, skapa dynamiska uttryck eller helt enkelt för att förenkla utskrift i konsol.
 
-## Så här:
+## Hur gör man:
 
-Fish Shell erbjuder flera enkla sätt att konkatenera strängar. Se nedan för exempelkod och utdata.
+I Fish Shell är det rätt så enkelt att konkatenera strängar. Du behöver bara placera dem bredvid varandra. Här är ett exempel:
 
-```
-set greeting "Hej" " " "världen!"
-echo $greeting
-# Output: Hej världen!
-```
-
-```
-set name "Lisa"
-echo Hej $name"!"
-# Output: Hej Lisa!
+```Fish Shell
+set str1 "Hej"
+set str2 "Världen"
+echo $str1 $str2
 ```
 
+Som kommer att ge följande utskrift:
 ```
-set count 5
-echo Vi har $count "fiskar i akvariet."
-# Output: Vi har 5 fiskar i akvariet.
+Hej Världen
 ```
 
-## Djupdykning:
+## På djupet
 
-Historiskt sett har konkatenering av strängar varit en vanlig operation i programmering, men framsteg inom språk som Ruby och Python har lett till alternativ som interpolering av strängar och formatering av strängar. I Fish Shell finns det också alternativ att använda andra inbyggda funktioner, såsom string join.
+Historiskt sett, har konkatenering av strängar varit en grundläggande operation i de flesta programmeringsspråk. Det är inget nytt eller specifikt för Fish Shell. När det gäller alternativ, kan du i Fish Shell också använda "string join" för att sätta ihop strängar med en viss separator:
 
-Det finns också vissa effektivitetsaspekter att tänka på när man konkatenerar strängar. Till exempel kan det vara bättre att använda en buffer eller en StringBuilder om man ska konkatenera en stor mängd strängar.
+```Fish Shell
+set str1 "Hej"
+set str2 "Världen"
+echo (string join " " $str1 $str2)
+```
 
-## Se även:
+Vid implementeringen av strängkonkatenering, översätter Fish Shell bara direkt till systemets egna strängoperationer. Faktum är att alla strängar i Fish tekniskt sett är listor under huven, så "concatenating strings" är egentligen just en sammanfogning av dessa listor.
 
-[Officiell Fish Shell dokumentation om konkatenering](https://fishshell.com/docs/current/scripting.html#strings)
+## Se även
 
-[En jämförelse av tre olika sätt att hantera strängar i Fish Shell](https://dev.to/echakrab/different-ways-to-handle-string-manipulation-in-fish-shell-3k98)
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/)
+- [Fish Shell String Command](https://fishshell.com/docs/current/cmds/string.html)
+- [Friendly Interactive Shell (Fish)](https://en.wikipedia.org/wiki/Friendly_interactive_shell)
+- [String Join Operation In Different Programming Languages](https://www.geeksforgeeks.org/join-function-python/)

@@ -12,50 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Capitalizing a string in C refers to the process of converting all letters in a string to uppercase. This can be useful in cases where case sensitivity is important, such as when comparing strings. Programmers often capitalize strings to ensure consistency and accuracy in their code.
+Capitalizing a string refers to converting its first letter to uppercase. Programmers often use it for formatting, such as when a sentence starts with that string or to follow title case conventions in UI display.
 
 ## How to:
 
-To capitalize a string in C, we can use the ```toupper()``` function from the standard library. Here's an example code snippet:
+Here are some code snippets to capitalize a string:
 
 ```C
-#include <stdio.h>
-#include <ctype.h>
+#include <stdio.h> 
+#include <ctype.h> 
 
-char* capitalize(char* str) {
-    char* ptr = str;
-    while(*ptr != '\0') {
-        *ptr = toupper(*ptr);
-        ptr++;
-    }
-    return str;
-}
+void capitalize(char* str) 
+{ 
+   // If the first char in the string is lower case  
+    if(islower(str[0])) 
+    { 
+        // change it to upper case 
+        str[0] = toupper(str[0]); 
+    } 
 
-int main() {
-    char str[] = "hello world!";
-    printf("Before capitalization: %s\n", str);
-    printf("After capitalization: %s\n", capitalize(str));
-    return 0;
-}
+    printf("Capitalized string: %s", str); 
+} 
+
+int main() 
+{ 
+   char str[] = "hello world!";
+   capitalize(str);
+   return 0; 
+} 
 ```
 
-The output of this code would be:
+This snippet will output:
 
-```
-Before capitalization: hello world!
-After capitalization: HELLO WORLD!
+```C
+Capitalized string: Hello world!
 ```
 
 ## Deep Dive:
 
-Capitalization has been used since the early days of computer programming, when programmers had to use hardware switches to enter instructions. In those days, lowercase letters were not included in the character set, so capitalization was the only way to differentiate between letters. Today, it is more commonly used to ensure consistency since most modern programming languages are case-sensitive.
-
-An alternative to using the ```toupper()``` function is to manually convert each letter to uppercase using ASCII codes. However, this method can be tedious and error-prone. Some C compilers also have built-in functions specifically for capitalization, such as ```strlwr()``` and ```strupr()```.
-
-Implementing capitalization in C involves iterating through each character in the string and checking if it is a lowercase letter. If it is, the ```toupper()``` function is applied to convert it to uppercase. This process is repeated until all letters have been converted.
+- Historical context: Since the inception of C programming, string manipulation, including capitalization, has been a common practice. Early use cases stem from the need to standardize input data, enhance readability, and follow linguistic and lexical rules. 
+- Alternatives: Apart from the function used above (`toupper`), we could use other standard library functions like `strlwr` and `strupr` for full lower and upper case conversion respectively. Note that these aren't part of the standard C library but are often provided by compilers.
+- Implementation details: `toupper` in the code snippet converts a single character to upper case if it is in lower case; it leaves the character unchanged if it's either in upper case already or it's not an alphabetic character. This function deals with single characters, not strings, the reason why it's applied to the first character of the string only.
 
 ## See Also:
 
-- [toupper() function in C](https://www.geeksforgeeks.org/toupper-in-cpp/)
-- [strlwr() and strupr() functions in C](https://www.tutorialspoint.com/c_standard_library/c_function_strlwr.htm)
-- [ASCII codes](https://www.asciitable.com/)
+- [More on String Manipulation in C](http://www.learn-c.org/en/Strings)
+- [C Standard Library ctype.h](https://www.cplusplus.com/reference/cctype/)
+- [C Function Implementation Details](https://en.wikipedia.org/wiki/C_standard_library)

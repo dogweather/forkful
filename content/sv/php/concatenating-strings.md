@@ -1,7 +1,7 @@
 ---
-title:                "Slå ihop strängar"
-html_title:           "PHP: Slå ihop strängar"
-simple_title:         "Slå ihop strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,27 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att sammanfoga eller "concatenate" strängar är en vanlig uppgift för programmerare, där man lägger ihop flera textsträngar till en enda. Detta kan vara användbart när man vill skapa dynamiska textutskrifter eller strängar för datahantering.
 
-## Så gör du:
-För att sammanfoga strängar i PHP använder man sig av operatorn ".", vilket står för "concatenation". Detta tillåter oss att kombinera flera strängar och skapa en ny. Till exempel:
+Konkatenering av strängar är processen att sätta ihop två eller flera strängar i PHP. Programmerare gör detta för att skapa dynamiska strängar eller skriva ut kombinerade värden.
 
-```PHP
-$first_name = "Anna";
-$last_name = "Svensson";
-$full_name = $first_name . " " . $last_name;
+## Hur gör man:
 
-echo $full_name; // kommer att skriva ut "Anna Svensson"
+PHP använder punkt (`.`) operatorn för att konkatenera strängar. Mycket rakt på sak, titta på det här:
+
+```PHP  
+<?php
+    // Det här är våra strängar
+    $str1 = "Hej";
+    $str2 = " Sverige";
+    // Konkatenerar dem
+    $tillsammans = $str1 . $str2;
+    // Skriver ut resultaten
+    echo $tillsammans;
+?>
 ```
 
-Här använder vi operatorn "." för att slå ihop strängarna från variablerna $first_name och $last_name, och lägger även till ett mellanslag mellan dem.
+Testa detta i din PHP-editor, det kommer att skriva ut: 
 
-## Djupdykning:
-Sammanfogande av strängar är en viktig del av nästan alla programmeringspråk, inte bara i PHP. Detta koncept kommer från matematiken, där "+" representerar addition och "." representerar sammanslagning. I tidigare versioner av PHP användes även funktionen "strcat()" för att sammanfoga strängar, men detta har ersatts av operatorn "." sedan version 4.0.0.
+```
+Hej Sverige
+```
 
-Det finns också alternativ till att använda operatorn ".", såsom funktionen "sprintf()", som är speciellt användbar när man behöver formatera text dynamiskt eller skapa komplexa strängar.
+## Djupare dykning
 
-När man sammanfogar strängar i PHP, så behandlas alla värden som strängar, även om de ursprungligen var nummer. Detta kan ibland leda till oväntade resultat, så det är viktig att vara medveten om detta när man använder operatorn ".".
+Historiskt sett har PHP alltid använt `.` operatören för strängkonkatenering, vilket skiljer sig från andra språk som t.ex. JavaScript som använder `+` operatören. Men kom ihåg att om du försöker konkatenera med `+` i PHP kommer det att tolkas som addition, inte konkatenering!
 
-## Se även:
-Läs mer om sammanfogande av strängar och andra string operationer i PHP på [PHP:s officiella dokumentation](https://www.php.net/manual/en/language.operators.string.php).
+Alternativt kan du använda `.=`, vilket sparar några tangenttryckningar och gör koden lite renare:
+
+```PHP 
+<?php
+    $str1 = "Hej";
+    // Läggs direkt till i $str1
+    $str1 .= " Sverige";
+    echo $str1;
+?>
+```
+
+Denna kod skriver också ut `Hej Sverige`.
+
+PHP hanterar internt denna konkatenering genom att skapa en ny sträng och kopiera innehållet från de ursprungliga strängarna till den nya strängen. Detta kan vara onödigt dyrt i termer av minne när strängarna är stora.
+
+## Se även
+
+1. [PHP String-operators på PHP.net](https://www.php.net/manual/en/language.operators.string.php)
+2. [PHP strängmanipulation på W3Schools](https://www.w3schools.com/php/php_ref_string.asp)
+3. [PHP strängövningar på PAH.com](https://practice-action-hero.com/php-string-exercises.html)

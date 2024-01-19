@@ -1,6 +1,6 @@
 ---
 title:                "テキストファイルの読み込み"
-html_title:           "Haskell: テキストファイルの読み込み"
+html_title:           "Bash: テキストファイルの読み込み"
 simple_title:         "テキストファイルの読み込み"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,27 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何で？：テキストファイルの読み込みとは何か、そしてプログラマーがそれを行う理由を２〜３文で説明します。
+## 何となぜ?
 
-プログラマーがテキストファイルを読み込むのは、コンピューター上で文字情報を処理するためです。例えば、プログラムのソースコードやデータファイルを読み込む際に使用されます。
+テキストファイルの読み込みは、プログラムがディスク上のファイルからデータを取り込むことです。これは情報を外部から取得、分析、操作するためにプログラマが行います。
 
-## 使い方：
+## 使い方:
 
 ```Haskell
+import System.IO
+
 main = do
-  f <- readFile "example.txt"
-  putStrLn f
+    fileContent <- readFile "sample.txt"
+    putStr fileContent
 ```
 
-上記のコードは、"example.txt"というファイルを読み込んでその内容を画面に出力するものです。ご覧のように、Haskellではテキストファイルを読み込むためにreadFile関数を使用します。また、プログラム内で読み込んだファイルの内容を変数に格納することもできます。例えば、```f <- readFile "example.txt"```でファイルの内容を変数fに格納しています。
+本コードを実行すると、"sample.txt" ファイルの内容が表示されます。
 
-## 詳細：
+## ディープダイブ:
 
-テキストファイルの読み込みは、古くから使用されていたプログラミングの基本操作の一つです。他にも、バイナリファイルの読み込みやデータベースからのデータの取得といった方法もありますが、テキストファイルの読み込みが最もシンプルで使いやすい方法の一つです。Haskell以外のプログラミング言語でも同様の機能がサポートされています。
+1. 歴史的な背景: HaskellのIOはモナドによって制御されています。これは副作用を隔離し、順序付けを維持するための重要な道具です。
+2. 代替案: Haskellには他のライブラリもあります。例えば、`strict` パッケージの `Data.ByteString` を使用することでよりパフォーマンスのよい読み込みが可能です。
+3. 実装の詳細: `readFile` 関数は、OSのバッファリングを使用し、それにより効果的なファイル読み込みを提供しています。
 
-## 関連情報：
+## 参照:
 
-読み込んだテキストファイルを書き込むこともできます。その場合は、```writeFile```関数を使用します。詳しくはHaskellの公式ドキュメントを参照してください。
-
-参考資料：
-- [Haskell 公式ドキュメント](https://www.haskell.org/documentation)
+1. 関連情報の詳細として、Haskellの公式IOチュートリアルをご覧ください: [Haskell IO](https://www.haskell.org/tutorial/io.html)
+2. パフォーマンスについての追加情報はこちらを参照してください: [Haskell Performance](https://wiki.haskell.org/Performance)

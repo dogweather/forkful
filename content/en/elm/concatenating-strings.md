@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Elm recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,32 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Concatenating strings is the process of combining multiple strings into one, creating a longer string. Programmers use it to manipulate and construct strings in a specific format for various purposes, such as creating output or formatting data. It is a fundamental concept in programming and is widely used in many programming languages.
+Concatenating strings means combining two or more strings together, end to end. Programmers do it to manipulate and construct complex data, such as messages, file contents, or even chunks of code.
 
 ## How to:
 
-In Elm, string concatenation is achieved by using the `++` operator. This operator takes two strings and combines them into one. Let's see an example:
+In Elm (0.19.1), we use the `(++)` operator to concatenate strings. Here's a simple example:
 
 ```Elm
-"Hello" ++ " " ++ "World" -- Output: Hello World
+name = "John"
+greeting = "Hello, " ++ name ++ "!"
 ```
 
-We can also concatenate variables that hold strings:
-
-```Elm
-let name = "Alice"
-let greeting = "Hello "
-greeting ++ name -- Output: Hello Alice
-```
+After running this, `greeting` would be `"Hello, John!"`.
 
 ## Deep Dive
 
-String concatenation has been around for a long time and is a basic operation in computer science. In the early days of computing, strings were often manipulated by directly modifying the underlying memory, which was a complex and error-prone process. With modern programming languages like Elm, string concatenation has become much more straightforward and intuitive.
+String concatenation, in essence, has been in programming since the beginning. It's fundamental to how we assemble data in a readable, usable form. In Elm, `(++)` does the job, but remember, Elm's not an inherently mutating language. So `(++)` doesn't alter original strings, but results in a new string.
 
-In some programming languages, there are other ways to concatenate strings, such as using the `+` operator or the `concat()` function. However, in Elm, the `++` operator is the only way to concatenate strings.
+An alternative is using `String.concat`, especially when joining a list of strings. Here's an example:
 
-One important detail to note is that string concatenation can be expensive, especially when done on a large scale. This is because every time strings are concatenated, a new string must be created. In cases where performance is critical, it is better to use alternative methods, such as using a string builder or formatting strings before concatenating them.
+```Elm
+String.concat ["Hello", ",", " ", "world", "!"]
+```
+
+The good news about `(++)` and `String.concat` is that they're both efficient. Under the hood, they utilize persistent data structures to avoid unnecessarily duplicating strings, resulting in a more performant operation.
 
 ## See Also
 
-To learn more about string concatenation in Elm, check out the official Elm documentation: https://package.elm-lang.org/packages/elm/core/latest/String#++
+- Elm Guide on Strings: https://guide.elm-lang.org/types/string.html
+- Elm Core Library’s String Interface: https://package.elm-lang.org/packages/elm/core/latest/String
+- A deeper discussion on String concatenation: https://elmprogramming.com/string-concatenation.html
+- The trade-offs between `(++)` and `String.concat`: https://stackoverflow.com/questions/27408567/elm-string-concatenation-versus

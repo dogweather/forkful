@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "Elixir: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -12,38 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Wczytywanie argumentów wiersza poleceń jest procesem, w którym programista pobiera dane podane przez użytkownika przy uruchamianiu programu. Jest to przydatne, ponieważ pozwala na dostarczenie programowi konkretnych informacji lub opcji, co pozwala na bardziej spersonalizowane użycie programu.
+Odczytywanie argumentów z linii poleceń to sposób na dostarczenie danych wejściowych do programów z poziomu konsoli. Dzięki temu, programiści mają możliwość manipulowania działaniem programu bez potrzeby modyfikowania jego kodu.
 
 ## Jak to zrobić:
 
-Aby wczytać argumenty wiersza poleceń w Elixir, należy użyć funkcji `System.argv`. Przykładowy kod wraz z oczekiwanym wyjściem wygląda następująco:
+Elixir pozwala na odczytywanie argumentów z linii poleceń za pomocą wbudowanej funkcji `System.argv/0`. 
 
-```Elixir
-# Przykładowy kod
-args = System.argv
+```elixir
+defmodule MyProgram do
+  def main do
+    IO.inspect(System.argv())
+  end
+end
 
-# Wyjście
-["program_name", "arg1", "arg2"]
+MyProgram.main
 ```
 
-## Coś więcej:
+Przykładowe użycie wygląda wtedy tak: `elixir my_program.exs arg1 arg2 arg3`. W efekcie dostaniemy `["arg1", "arg2", "arg3"]`.
 
-### Kontekst historyczny:
 
-W przeszłości, czytanie argumentów wiersza poleceń było jedynym sposobem na dostarczenie danych do programów. Jednak w dzisiejszych czasach istnieje wiele alternatywnych sposobów, takich jak wykorzystanie interfejsu użytkownika, aby umożliwić użytkownikom konfigurowanie opcji.
+## Deep Dive
 
-### Alternatywy:
+Historia funkcji `System.argv/0` jest dość prosta - została dodana do języka Elixir od samego początku jego istnienia jako sposób na interakcje z konsolą.
 
-Alternatywne metody dostarczania danych do programów mogą obejmować użycie plików konfiguracyjnych lub interfejsów użytkownika. Każda z tych metod ma swoje zalety i może być bardziej odpowiednia w zależności od danego zadania.
+Jednym z alternatywnych rozwiązań jest użycie biblioteki `OptionParser`, która jest bardziej rozbudowana i pozwala na stosowanie różnego rodzaju opcji.
 
-### Szczegóły implementacji:
-
-W Elixir, argumenty wiersza poleceń są dostępne poprzez wywołanie funkcji `System.argv`. Funkcja ta zwraca listę zawierającą nazwę programu i wszystkie podane argumenty. Można również użyć opcji wiersza poleceń do specyfikowania konkretnych argumentów lub ich kolejności.
+Wszystko to działa na bazie funkcji `:init.get_plain_arguments/0` z języka Erlang, na którym budowany jest Elixir. To jest przede wszystkim przykład jak Elixir daje programistom dostęp do niskopoziomowych funkcji Erlanga.
 
 ## Zobacz także:
 
-Niektóre przydatne źródła dotyczące wczytywania argumentów wiersza poleceń w Elixir:
-
-- Dokumentacja Elixir: https://hexdocs.pm/elixir/System.html#argv/0
-- Wprowadzenie do Elixir: https://elixir-lang.org/getting-started/modules.html#command-line-arguments
-- Wideo na YouTube: https://www.youtube.com/watch?v=3ZLcyR5l0aA
+- [Dokumentacja Elixir o `System.argv/0`](https://hexdocs.pm/elixir/System.html#argv/0)
+- [Dokumentacja Elixir o `OptionParser`](https://hexdocs.pm/elixir/OptionParser.html)
+- [Dokumentacja Erlanga na temat `:init.get_plain_arguments/0`](http://erlang.org/doc/man/init.html#get_plain_arguments-0)

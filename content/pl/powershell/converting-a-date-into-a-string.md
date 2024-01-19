@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków"
-html_title:           "PowerShell: Konwertowanie daty na ciąg znaków"
-simple_title:         "Konwertowanie daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -11,28 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Konwertowanie daty na ciąg znaków to proces zmiany daty w formacie tekstowym, np. 2021-10-01, na ciąg znaków, który może być wykorzystany w innych funkcjach lub operacjach programistycznych. Programiści wykonują to, gdy potrzebują manipulować lub porównywać daty.
+Konwersja daty na łańcuch znaków to proces przekształcenia obiektu daty(lub czasu) do formatu tekstowego, znalazł zastosowanie dlatego, że jest bardziej elastyczny dla użytkowników i łatwiejszy w dowolnym manipulowaniu.
 
 ## Jak to zrobić:
+Aby przekonwertować datę na łańcuch znaków w PowerShell, możemy użyć polecenia `Get-Date` z parametrem `-Format`. Oto przykładowy kod:
+
 ```PowerShell
-# Przykład 1: Konwertowanie daty na ciąg znaków w formacie rrrr-mm-dd
-Get-Date -Format 'yyyy-MM-dd'
-// Wynik: 2021-10-01
+# Utwórz aktualną datę i czas
+$teraz = Get-Date
+# Wyświetl oryginalną wartość
+$teraz
 
-# Przykład 2: Konwertowanie daty na niezmienioną ciąg znaków
-Get-Date -Format FileDateTime
-// Wynik: 20211001105856
-
-# Przykład 3: Konwertowanie daty na słowny opis
-$today = Get-Date
-$today.ToString('dddd, dd MMMM yyyy')
-// Wynik: piątek, 01 października 2021
+# Konwertuj do formatu "rok-miesiąc-dzień"
+$dataFormat = $teraz.ToString("yyyy-MM-dd")
+# Wyświetl sformatowaną wartość
+$dataFormat
 ```
+Wykonanie powyższego kodu włącznie z wyjściem powinno wyglądać tak:
 
-## Głębsze zagadnienia:
-Konwersja daty na ciąg znaków jest niezbędnym elementem programowania, ponieważ daty są jednym z najczęściej używanych typów danych. Istnieje wiele narzędzi lub funkcji, które mogą wykonać tę operację, takich jak `Convert-TimeToUtc` lub `ToString`. W dalszej przeszłości, konwersja dat może być również potrzebna do wykonywania zaawansowanych operacji, takich jak obliczanie różnicy między dwoma danymi, rozpoznawanie dat w różnych językach lub wyświetlanie dat w innych formatach.
+```PowerShell
+# Wartość oryginalna
+Czwartek, 29 lipca 2021 12:24:56
 
-## Zobacz także:
-- [Dokumentacja Microsoft PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/)
-- [Poradniki i przykłady PowerShell](https://github.com/PowerShell/PowerShell-examples)
-- [Forum społeczności PowerShell](https://community.idera.com/database-tools/powershell/)
+# Sformatowana wartość
+2021-07-29
+```
+## Dogłębne zrozumienie
+Początki konwersji daty na łańcuch znaków sięgają początków programowania, kiedy manipulowanie danymi było trudniejsze. Teraz, będąc standardowym elementem większości języków programowania, służy do ułatwienia użytkownikom odczytywania dat, sortowania elementów, generowania raportów itp.
+
+Mimo, że w PowerShell korzystamy z `Get-Date` z `-Format`, dostępne są także inne metody, jak `ToShortDateString()` czy `ToLongDateString()`, które poprawiają czytelność daty.
+
+Szczegół implementacji polega na tym, że konwersja wykorzystuje klasy `.NET`, które zapewniają szerokie możliwości manipulacji i konwersji dat. PowerShell, jako język oparty na platformie .NET, dziedziczy te możliwości.
+
+## Zobacz również
+Zobacz te zasoby, jeśli chcesz dowiedzieć się więcej o pracy z datami w PowerShell:
+1. [Praca z datami i czasem w PowerShell](https://docs.microsoft.com/pl-pl/powershell/scripting/learn/deep-dives/everything-about-datetime?view=powershell-7.1)
+2. [Formatowanie dat i czasu w .NET](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/standard-date-and-time-format-strings)
+3. [Get-Date w PowerShell](https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)

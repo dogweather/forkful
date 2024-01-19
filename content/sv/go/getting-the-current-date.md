@@ -1,7 +1,7 @@
 ---
-title:                "Att få den aktuella datumen"
-html_title:           "Go: Att få den aktuella datumen"
-simple_title:         "Att få den aktuella datumen"
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -11,28 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att få den nuvarande datumen i en program är en vanligt förekommande uppgift för många programmerare. Det kan hjälpa till att hålla reda på tidsstämplar på data, planera uppgifter eller helt enkelt bara visa rätt datum för användare.
+Att få det nuvarande datumet handlar om att ta information om intervallet från starten av en tidräkningsperiod till nu. Programmerare gör det för tidstämpelloggar, beräkna deadlines och hantera andra tidrelaterade funktioner.
 
-## Hur man gör:
-Att få den nuvarande datumen i Go är enkelt. Använd bara funktionen "Now()" från paketet "time" och spara den i en variabel. Sedan kan du använda variabeln för att utföra olika åtgärder som att konvertera det till ett visst format eller jämföra med andra datum.
-
+## Så här gör du:
+För att få det nuvarande datumet, använd biblioteket `time` i Go:
 ```Go
-import "fmt"
-import "time"
+package main
+
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-  today := time.Now()
-  fmt.Println(today)
+	currentTime := time.Now()
+
+	fmt.Println("Nuvarande Datum: ", currentTime.Format("2006-01-02"))
 }
 ```
-Output:
+Denna kod ger följande utdata:
 ```
-2022-02-17 23:28:47.6610894 +0100 CET
+Nuvarande Datum: 2022-03-01
 ```
+`time.Now()` returnerar nuvarande datum och tid.
 
-## Djupdykning:
-I Go, som i många andra programmeringsspråk, är tid en valuta som används för att mäta och jämföra händelser. Det finns också alternativa sätt att få den nuvarande datumen ia program, såsom att använda externa bibliotek eller att anropa systemkommandon. För implementationen av "Now()" funktionen, använder Go kernelns systemklocka och returnerar sedan värdena från den.
+## Djupdykning
+`time` paketet introducerades i Go 1.0, vilket släpptes år 2012. Det har sina rötter i Unix-tid, som räknar sekunder sedan starten av Unix-era (1 januari 1970).
 
-## Se även:
-- https://golang.org/pkg/time/
-- https://www.techonthenet.com/go/commands/time_now.php
+Alternativen till `time` paketet inkluderar externa bibliotek som `jinzhu/now` för mer komplexa datum- och tidsoperationer.
+
+Implementationen av `time.Now()` i Go returnerar en `Time` typ som innehåller information om nuvarande tidpunkt, bland annat sekunder och nanosekunder sedan Unix-era.
+
+## Se också
+1. Officiell Go dokumentation för `time` paketet: https://golang.org/pkg/time/
+2. `jinzhu/now` bibliotek: https://github.com/jinzhu/now
+3. Unix Tid Wikipedia: https://sv.wikipedia.org/wiki/Unixtid

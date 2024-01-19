@@ -1,6 +1,6 @@
 ---
 title:                "문자열 연결하기"
-html_title:           "TypeScript: 문자열 연결하기"
+html_title:           "Arduino: 문자열 연결하기"
 simple_title:         "문자열 연결하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,28 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
-문자열을 연결하는 것은 우리가 문자열을 일련의 부분으로 나누어 작업하는 것보다 컴퓨터 프로그램에서 더욱 유용한 방법입니다. 프로그래머는 여러 개의 문자열을 한 번에 하나의 문자열로 합쳐야 할 때가 종종 있기 때문에 이 작업을 자주합니다.
+## 무엇이며 왜합니까?
 
-## 하는 방법:
+문자열 연결은 두 개 이상의 문자열을 하나로 결합하는 작업을 의미합니다. 프로그래머는 일반적으로 코드의 가독성을 높이기 위해 또는 다양한 데이터 소스에서 정보를 병합하기 위해 문자열을 연결합니다.
+
+## 방법:
+
+TypeScript에서 문자열을 연결하는 방법은 여러 가지가 있습니다. `+` 연산자를 사용한 방법이나 `\` 템플릿 리터럴을 사용한 방법 등입니다.
+
 ```TypeScript
-let string1 = "안녕하세요";
-let string2 = "반가워요";
-
-let combinedString = string1 + string2;
-
-console.log(combinedString);
-```
-```
-**출력:** 안녕하세요반가워요
+let str1 = "안녕, ";
+let str2 = "세상";
+let result = str1 + str2;
+console.log(result); // "안녕, 세상"
 ```
 
-## 깊이 파헤치기:
-1. 역사적 맥락: 문자열을 연결하는 개념은 프로그래밍 언어에 따라 조금 다르지만, 기본적으로 문자열을 조작하는 기본적인 작업 중 하나입니다. 이러한 작업은 오래된 컴퓨터 프로그래밍에서부터 사용되어 왔습니다.
+템플릿 리터럴을 사용한 경우:
 
-2. 대안: 문자열을 연결하는 대신에 문자열 보간(interpolation)을 하는 방법도 있습니다. 이는 보다 편리한 방법으로 문자열을 조작하는데 사용될 수 있습니다.
+```TypeScript
+let str1 = "안녕, ";
+let str2 = "세상";
+let result = `${str1}${str2}`;
+console.log(result); // "안녕, 세상"
+```
 
-3. 구현 세부사항: 문자열 연결은 큰 문자열을 생성하는 작업에는 비용이 많이 드는 작업일 수 있으므로, 문자열 연결의 경우 문자열 보간을 대신 사용하는 것이 더 좋을 수 있습니다.
+## 깊게 이해하기:
 
-## 관련 정보:
-- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-interpolation)
+JavaScript의 초기 버전에서는 `+` 연산자만 사용하여 문자열을 연결할 수 있었습니다. 개발자들은 이 방법이 가독성을 저해한다는 문제점을 지적하였고 그 결과, ES6부터는 `\` 템플릿 리터럴이 도입되었습니다. 템플릿 리터럴을 사용하면 코드가 더욱 간결해지고 문자열 내에서 변수를 쉽게 사용할 수 있게 되었습니다.
+
+문자열 연결에 대한 대안으로는 `concat()` 함수가 있습니다. 하지만 이 방법은 `+` 연산자나 템플릿 리터럴에 비해 일반적으로 덜 사용됩니다. 그 이유는 `concat()` 함수를 사용하면 코드가 더 복잡하고 가독성이 낮아지기 때문입니다.
+
+```TypeScript
+let str1 = "안녕, ";
+let str2 = "세상";
+let result = str1.concat(str2);
+console.log(result); // "안녕, 세상"
+```
+
+## 참고할 만한 자료:
+
+- [MDN Web Docs: 문자열](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [TypeScript Handbook: 문자열](https://www.typescriptlang.org/docs/handbook/2/strings.html)
+- [JavaScript 문자열 연결: + 연산자 vs concat() 함수](https://medium.com/@coderasha/javascript-concat-vs-operator-performance-test-80a61d97df03)

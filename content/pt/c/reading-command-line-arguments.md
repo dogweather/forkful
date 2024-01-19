@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "C: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,41 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que e por que?
+## O que é e Por quê?
 
-Ler os argumentos da linha de comando significa que o programa pode receber informações do usuário através da linha de comando ao ser executado. Os programadores fazem isso para permitir que seus programas sejam mais dinâmicos e personalizáveis, permitindo que os usuários forneçam os dados necessários para a execução do programa.
+Parâmetros de linha de comando são argumentos fornecidos ao programa durante a sua inicialização. Eles são amplamente utilizados para permitir opções personalizadas e ações, tornando nossos programas mais flexíveis e poderosos.
 
-Como fazer:
+## Como Fazer:
 
-````C
+Os argumentos de linha de comando em C são acessados via argumentos para a função `main()`:
+
+```C
+int main(int argc, char *argv[]) { ... }
+```
+
+Onde `argc` é o número de argumentos e `argv` é um array com as cadeias de caracteres de cada argumento.
+
+Aqui está um exemplo simples de como lidar com argumentos de linha de comando:
+
+```C
 #include <stdio.h>
-int main(int argc, char *argv[]){
-   int i;
-   
-   printf("Foram fornecidos %d argumentos na linha de comando\n", argc-1);
-   
-   for (i = 1; i < argc; i++){
-       printf("Argumento %d: %s\n", i, argv[i]);
-   }
-   
-   return 0;
+
+int main(int argc, char *argv[]) {
+    int contador;
+    printf("\nNúmero de argumentos: %d", argc);
+    for (contador=0; contador<argc; contador++) {
+        printf("\nargv[%d]: %s", contador, argv[contador]);
+    }
+    return 0;
 }
-````
+```
 
-Exemplo de saída para o comando "./programa teste1 teste2 teste3":
+A saída do exemplo acima, se executado com o comando `./prog arg1 arg2 arg3`, será:
 
-````bash
-Foram fornecidos 3 argumentos na linha de comando
-Argumento 1: teste1
-Argumento 2: teste2
-Argumento 3: teste3
-````
+```
+Número de argumentos: 4
+argv[0]: ./prog
+argv[1]: arg1
+argv[2]: arg2
+argv[3]: arg3
+```
 
-Mergulho profundo:
+## Um Mergulho Profundo
 
-Ler os argumentos da linha de comando é uma técnica muito antiga, que remonta aos primeiros sistemas operacionais. Originalmente, era usado para permitir que o usuário fornecesse parâmetros para a execução do programa, devido às limitações dos sistemas dos anos 50 e 60. Atualmente, existem alternativas mais avançadas, como a leitura de variáveis de ambiente. A implementação dos argumentos da linha de comando em um programa pode ser feita de várias maneiras, sendo as mais comuns o uso da função "main" com parâmetros "int argc" e "char *argv[]".
+Historicamente, a leitura de argumentos de linha de comando tem feito parte de muitos programas Unix e C desde os primórdios da computação. Isso permite mais interatividade e flexibilidade no uso de programas.
 
-Veja também:
+Existem bibliotecas disponíveis, como a libgengetopt, que podem gerar código para lidar com argumentos de linha de comando de forma mais fácil e tais bibliotecas geralmente vêm com recursos adicionais, tais como a geração de ajuda e mensagens de erro.
 
-- [Documentação oficial do C](https://www.ibm.com/docs/pt/c-help-official-product-documentation-bundle/guide/topics/compatibility-pointers.html)
-- [Tutorial de linha de comando do C](https://www.learn-c.org/en/Command_Line_Arguments)
+A função `main()` em C é o ponto de entrada para qualquer aplicativo C. A declaração dos parâmetros `int argc, char *argv[]` permite ao programa aceitar argumentos de linha de comando do usuário. Quando o programa é iniciado, o sistema operacional passa esses argumentos para o programa.
+
+## Veja Também
+
+Segue abaixo alguns links úteis para aprofundar o estudo:
+
+- [Documentação do GNU: Parsing Program Arguments](https://www.gnu.org/software/libc/manual/html_node/Parsing-Program-Arguments.html)
+- [Página do StackOverflow sobre argumentos de linha de comando](https://stackoverflow.com/questions/3024197/what-does-int-argc-char-argv-mean)
+- [GeeksforGeeks: Command line arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)

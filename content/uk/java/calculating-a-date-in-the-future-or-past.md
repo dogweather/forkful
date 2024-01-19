@@ -1,7 +1,7 @@
 ---
-title:                "Розрахунок дати у майбутньому або минулому"
-html_title:           "Java: Розрахунок дати у майбутньому або минулому"
-simple_title:         "Розрахунок дати у майбутньому або минулому"
+title:                "Обчислення дати в майбутньому або минулому"
+html_title:           "Java: Обчислення дати в майбутньому або минулому"
+simple_title:         "Обчислення дати в майбутньому або минулому"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,34 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
-Обчислення дати в майбутньому або у минулому - це процес визначення дати, яка знаходиться в майбутньому або минулому від поточної дати. Програмісти часто використовують це для створення приказних функцій або для розрахунку термінів дії.
+## Що та навіщо?
 
-Як це зробити:
-```java
-// Обчислення дати в майбутньому
-LocalDate futureDate = LocalDate.now().plusDays(7);
+Обчислення дати в майбутньому або минулому - це спосіб програмування, щоб дізнатися конкретний день, що відбувається на проміжок часу до або після даної дати. Програмісти роблять це для створення різного funcionalu, наприклад, відстеження термінів сплати, нагадування про події тощо.
 
-// Обчислення дати в минулому
-LocalDate pastDate = LocalDate.now().minusDays(7);
+##  Як це робити:
 
-System.out.println(futureDate);
-System.out.println(pastDate);
+```Java
+import java.time.LocalDate;
+import java.time.Period;
 
-//Виведення результату:
-//2021-05-17
-//2021-05-03
+public class Main {
+    public static void main(String[] args) {
+        LocalDate today = LocalDate.now();
+        Period p = Period.ofDays(7); // вказуємо, скільки днів хочемо додати
+        LocalDate futureDate = today.plus(p);
+        
+        System.out.println("Today's Date: " + today);
+        System.out.println("Date after 7 days: " + futureDate);
+    }
+}
+```
+ 
+Вихідний код:
+
+```Java
+Today's Date: 2022-02-01
+Date after 7 days: 2022-02-08
 ```
 
-Поглиблене дослідження:
-Завдяки розширенню Java 8, програмісти можуть легко обчислювати дати в майбутньому та минулому за допомогою класів LocalDate та LocalTime. Історично, перед Java 8, розрахунок дат був більш складним та вимагав використання сторонніх бібліотек, таких як Joda-Time. Однак, з Java 8, ця функція стала доступною просто за допомогою вбудованих класів.
 
-Додатково:
-- Для нестандартних форматів дати, можна використовувати DateTimeFormatter клас.
-- Як альтернативу, можна використовувати клас Java Calendar для розрахунку дат, проте даний метод не є настільки зручним та простим як вбудовані класи.
-- Для розрахунку на основі географічної розсіїності, можна використовувати Date/Time API Java для задання часових зон.
+## Поглиблення
 
-Дивись також:
-- [Документація Java 8 про LocalDate та LocalTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Порівняння класів Date, Calendar та LocalDate/LocalTime](https://www.baeldung.com/java-date-vs-calendar-vs-localdate)
-- [Java Date and Time API за прикладами](https://www.mkyong.com/java8/java-8-date-time-api-examples/)
+### Історичний контекст
+Людству завжди потрібно було розраховувати дати в минулому та майбутньому, ще з часів коли були створені перші календарі. Для комп’ютерів це стало можливим з появою перших мов програмування. Проте, з часом виявилося, що собівартість таких обчислень може бути доволі високою через складність алгоритмів та неефективність реалізацій.
+
+### Альтернативи
+Java пропонує кілька альтернатив для роботи з датами. Ми можемо використовувати `Calendar`, `Date`, `Time`, `YearMonthDay` та інші класи. Ми також можемо користуватися сторонніми бібліотеками, такими як `Joda-Time`.
+
+### Реалізація
+В Java 8 введено новий API для роботи з датою і часом, який значно полегшує обчислення дати в майбутньому або в минулому. Ми використовуємо клас `LocalDate` і методи `now()` для отримання поточної дати та `plus()` для додавання періоду до поточної дати.
+
+## Дивись також
+
+1. [`LocalDate`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) - Документація Oracle для `LocalDate`.
+2. [`Period`](https://docs.oracle.com/javase/8/docs/api/java/time/Period.html) - Документація Oracle для `Period`.
+3. [Основи DateTime API](https://docs.oracle.com/javase/tutorial/datetime/iso/overview.html) - Вступ до нового API DateTime в Java 8.
+4. [Joda-Time](http://www.joda.org/joda-time/) - Бібліотека Joda-Time для роботи з датами та часом в Java.

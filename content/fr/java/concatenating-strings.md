@@ -1,6 +1,6 @@
 ---
 title:                "Concaténation de chaînes"
-html_title:           "Java: Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
 simple_title:         "Concaténation de chaînes"
 programming_language: "Java"
 category:             "Java"
@@ -10,35 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce & pourquoi ?
 
-En programmation, la concaténation de chaînes fait référence à la combinaison de plusieurs chaînes de caractères en une seule chaîne. Cela peut être utile pour créer des messages dynamiques ou des entrées utilisateurs personnalisées dans votre code. Les programmeurs utilisent la concaténation de chaînes pour rendre leurs programmes plus interactifs et conviviaux.
+La concaténation de chaînes en Java est l'opération d'ajout ou de liaison de deux chaînes pour former une seule. C'est pratique pour générer des messages dynamiques ou assembler des fragments de données.
 
-## Comment faire:
+## Comment faire :
 
-La concaténation de chaînes peut être réalisée en utilisant l'opérateur "+" ou en utilisant la méthode "concat()". Voici un exemple de code qui illustre les deux méthodes:
+Bon, voyons comment faire cela dans le code. 
 
 ```Java
-// concaténation avec l'opérateur "+"
-String message = "Bonjour";
-message += "le monde!";
-System.out.println(message); // affiche "Bonjour le monde!"
-
-// concaténation avec la méthode "concat()"
-String prenom = "Marie";
-String nom = "Dubois";
-String nomComplet = prenom.concat(nom);
-System.out.println(nomComplet); // affiche "MarieDubois"
+public class ConcatExample {
+    public static void main(String[] args) {
+        String firstName = "Jean";
+        String lastName = "Dupont";
+        
+        String fullName = firstName + " " + lastName;
+        System.out.println(fullName);  // Affiche "Jean Dupont"
+        
+        String sentence = "Mon nom est " + fullName + ".";
+        System.out.println(sentence);  // Affiche "Mon nom est Jean Dupont."
+    }
+}
 ```
 
-## Plongeons plus en détail:
+Vous pouvez aussi utiliser la méthode `concat()` :
 
-La concaténation de chaînes est utile lorsque vous avez besoin de créer des messages dynamiques ou de combiner plusieurs chaînes en une seule valeur. Il existe également d'autres moyens de concaténer des chaînes, tels que l'utilisation de "StringBuilder" ou de "StringBuffer", qui peuvent être plus efficaces pour manipuler de grandes quantités de données.
+```Java
+String firstName = "Jean";
+String lastName = "Dupont";
 
-Il est important de noter que la concaténation de chaînes peut entraîner une perte de performances si elle est utilisée de manière excessive ou si de grandes chaînes sont concaténées à plusieurs reprises. Cela peut être évité en utilisant les classes "StringBuilder" ou "StringBuffer" pour manipuler des chaînes volumineuses.
+String fullName = firstName.concat(" ").concat(lastName);
+System.out.println(fullName);  // Affiche "Jean Dupont"
+```
 
-## Voir aussi:
+## Exploration approfondie
 
-Pour en savoir plus sur la concaténation de chaînes en Java, vous pouvez consulter la documentation officielle de la plateforme Java en ligne: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html#concat(java.lang.String)
+Historiquement, la concaténation de chaînes en Java était problématique car elle pouvait générer beaucoup d'objets 'String' indésirables. Depuis Java 5, la classe `StringBuilder` est utilisée en interne pour optimiser cela.
 
-Vous pouvez également consulter des tutoriels en ligne pour apprendre les meilleures pratiques en matière de concaténation de chaînes en Java. N'hésitez pas à pratiquer et à expérimenter pour découvrir les différentes façons d'utiliser cet outil puissant!
+Dans certains cas, vous pouvez préférer utiliser `StringBuilder` ou `StringBuffer`. Ces classes offrent plus de contrôle, mais sont plus verbales :
+
+```Java
+StringBuilder sb = new StringBuilder();
+sb.append("Mon nom est ");
+sb.append(fullName);
+sb.append(".");
+System.out.println(sb.toString());  // Affiche "Mon nom est Jean Dupont."
+```
+
+## Voir aussi
+
+* Documentation Oracle sur [`String`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+* Documentation Oracle sur [`StringBuilder`](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+* Article StackOverflow sur [la concaténation de chaînes en Java](https://stackoverflow.com/questions/4645020/when-to-use-stringbuilder-in-java)

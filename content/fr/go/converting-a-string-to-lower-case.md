@@ -1,7 +1,7 @@
 ---
-title:                "Passage à la casse en minuscules d'une chaîne de caractères"
-html_title:           "Go: Passage à la casse en minuscules d'une chaîne de caractères"
-simple_title:         "Passage à la casse en minuscules d'une chaîne de caractères"
+title:                "Convertir une chaîne en minuscules"
+html_title:           "Arduino: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,21 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faisons-nous?
-Convertir une chaîne de caractères en minuscules signifie simplement modifier toutes les lettres en minuscules. Les programmeurs le font souvent pour faciliter la comparaison de chaînes de caractères ou pour s'assurer que toutes les données sont dans le même format.
+## Quoi & Pourquoi ?
+La conversion d'une chaîne en minuscules dans la programmation est le processus consistant à changer tous les caractères alphabétiques en lettres minuscules. Les programmeurs le font souvent pour normaliser ou homogénéiser les données afin d'optimiser la correspondance et la recherche des chaînes.
 
-## Comment le faire:
-Go rend la conversion de chaîne en minuscules très simple avec la fonction intégrée `strings.ToLower()`. Voici un exemple de code pour convertir une chaîne en minuscules:
+## Comment faire :
+En Go, nous utilisons simplement la méthode `ToLower` du package `strings`. Voici un exemple d'utilisation :
 
 ```Go
-maChaine := "HELLO"
-minuscules := strings.ToLower(maChaine)
-fmt.Println(minuscules) // output: hello
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    str := "Hello, World!"
+    lower := strings.ToLower(str)
+    fmt.Println(lower)
+}
 ```
 
-## Plongée en profondeur:
-La conversion de chaîne en minuscules est une opération courante et simple, mais elle peut être utile de savoir que cela a été une fonctionnalité ajoutée tardivement à Go. Auparavant, les programmeurs devaient utiliser des fonctions telles que `strings.ToLowerSpecial()` pour effectuer la même tâche. De plus, il existe des alternatives telles que l'utilisation de la méthode `Lower()` sur un objet de type `strings.Builder` ou l'utilisation de la bibliothèque `unicode` pour gérer les caractères spéciaux lors de la conversion.
+Affiche:
 
-## Voir aussi:
-Pour plus d'informations sur la manipulation de chaînes en Go, vous pouvez consulter la documentation officielle de Go sur les chaînes: https://golang.org/pkg/strings/
-Vous pouvez également découvrir d'autres fonctions pour manipuler les chaînes dans la bibliothèque `strings` et `unicode`.
+```Go
+hello, world!
+```
+
+## Précisions :
+En termes historiques, la conversion en minuscules est une pratique courante depuis les premiers jours de l'informatique. En Go, la fonction `ToLower` utilise une carte interne pour correspondre aux lettres majuscules et les convertir en minuscules. 
+
+Côté alternatives, on peut écrire une fonction personnalisée qui utilise la table ASCII pour convertir une chaîne en minuscules, cependant, cette approche ne gère pas les caractères non ASCII. Pour cette raison, et pour une question de simplicité, les programmeurs préfèrent utiliser la méthode `ToLower`.
+
+## Voir également :
+- Documentation officielle Go pour la méthode strings.ToLower: https://golang.org/pkg/strings/#ToLower
+- Tutoriel Go sur le package strings : https://www.golangprograms.com/go-language-package-functions-and-methods.html
+- Cours Go sur le traitement des chaînes : http://www.golang-book.com/books/intro/12

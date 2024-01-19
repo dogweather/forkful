@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon kirjoitusasu"
-html_title:           "Python: Merkkijonon kirjoitusasu"
-simple_title:         "Merkkijonon kirjoitusasu"
+title:                "Merkkijonon pääkirjaintaminen"
+html_title:           "Python: Merkkijonon pääkirjaintaminen"
+simple_title:         "Merkkijonon pääkirjaintaminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mikä & Miksi?
 
-Kapitalisoiminen on tapa muuntaa merkkijono alkamaan isolla kirjaimella ja muut kohdat säilyttävät pienet kirjaimet. Tätä käytetään usein tekstin muokkauksessa, esimerkiksi otsikoiden muotoilussa. Ohjelmoijat käyttävät tätä toimintoa helpottaakseen tekstin muokkausta ja käsittelemistä.
+Tekstijonon "capitalisoiminen" tarkoittaa sen muuttamista niin, että jokainen sanan ensimmäinen kirjain on suuri (esimerkiksi 'hello world' muuttuu 'Hello World'). Tätä tarvitaan tyypillisesti, kun halutaan esittää tekstiä ihmisille lukemisen helpottamiseksi tai tietyt formaatit vaativat sitä.
 
-## Kuinka tehdä se?
+## Miten teen sen:
 
-```Python
-teksti = "esimerkki teksti"
-print(teksti.capitalize())
-```
-
-Tulostus:
-```
-Esimerkki teksti
-```
-
-Voimme myös kapitalisoida vain tietyn kohdan merkkijonosta käyttämällä ```title()``` metodia.
+Pythonissa stringin capitalisointi on erittäin helppoa. Tässä on esimerkki miten se tapahtuu:
 
 ```Python
-teksti = "esimerkki teksti"
-print(teksti.title())
+s = 'hello world'
+capitalized_s = s.title()
+print(capitalized_s)
 ```
 
-Tulostus:
+Suorittamalla tämän koodin saatte tulostuksen "Hello World".
+
+## Syvempi sukellus:
+
+Historiallinen yhteys - Pythonin 'title()' -metodi, jota käytetään merkkijonon capitalisoimiseen, lisättiin Python 2.6 -versiossa sujuvoittamaan tekstinkäsittelyä.
+
+Vaihtoehdot - Vaikka 'title()' on suosittu tapa tehdä tämä, on myös muita vaihtoehtoja. Yksi yleisimmin käytetty on 'capitalize()', mutta se tekee suureksi vain merkkijonon ensimmäisen kirjaimen.
+
+```Python
+s = 'hello world'
+capitalized_s = s.capitalize()
+print(capitalized_s)
 ```
-Esimerkki Teksti
-```
 
-## Syväsukellus
+Tämän koodin tuotoksen on "Hello world".
 
-Kapitalisointiin liittyvät käytännöt juontavat juurensa fyysisistä kirjoituskoneista, joissa kirjaimien koon muuttaminen oli mahdotonta. Nykyään kapitalisointia käytetään paljon tekstinkäsittelyohjelmissa ja ohjelmoijat käyttävät sitä yksinkertaisemman ja yhtenäisen koodin kirjoittamiseen.
+Implementaation yksityiskohdat - Pythonin 'title()' -metodin toiminnan ymmärtämiseen tulee tietää, että se käy merkkijonon läpi ja muuttaa jokaisen sanan ensimmäisen kirjaimen suureksi, samalla muuttaen loput kirjaimet pieniksi.
 
-On olemassa myös muita tapoja kapitalisoida merkkijonoja, kuten "upper()" ja "lower()" metodit, jotka muuttavat kaikki kirjaimet isiksi tai pieniksi.
+## Katso myös:
 
-## Katso myös
+Pythonin virallinen dokumentaatio tarjoaa paljon tietoa tekstinkäsittelyfunktioista:
 
-- [Pythonin virallinen dokumentaatio kapitalisoinnista](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
-- [Erilaisia tapoja käsitellä merkkijonoja Pythonilla](https://www.tutorialspoint.com/python3/python_strings.htm)
+- 'title()' -metodin dokumentaatio: https://docs.python.org/3/library/stdtypes.html#str.title
+- 'capitalize()' -metodin dokumentaio: https://docs.python.org/3/library/stdtypes.html#str.capitalize
+- Lisää tekstinkäsittelytoimintoja: https://docs.python.org/3/library/stdtypes.html#string-methods

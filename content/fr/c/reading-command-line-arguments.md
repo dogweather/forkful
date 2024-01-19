@@ -1,6 +1,6 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "C: Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "C"
 category:             "C"
@@ -10,43 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que la lecture des arguments de la ligne de commande et pourquoi les programmeurs le font-ils?
+## Quoi et Pourquoi?
 
-Lorsque vous exécutez un programme à partir de la ligne de commande, vous pouvez lui fournir des arguments en plus de son nom. La lecture des arguments de la ligne de commande est essentielle pour permettre à votre programme de prendre en compte ces arguments et de les utiliser dans son fonctionnement. Les programmeurs le font pour rendre leurs programmes plus flexibles et leur permettre de prendre en charge différentes configurations.
+La lecture des arguments de la ligne de commande est la méthode qui permet aux programmes C de recevoir des informations pendant l'exécution. Les programmeurs l'utilisent pour rendre les opérations plus dynamiques et interactives.
 
-Comment faire :
+## Comment Faire:
+
+Voici comment vous pouvez le faire en C. Vous utiliserez les paramètres `argc` et `argv` de la fonction `main()`.
 
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
+    int count;
 
-    printf("Voici les arguments de la ligne de commande : \n");
+    printf("Nom du programme '%s'\n", argv[0]);
 
-    for(int i = 0; i < argc; i++) {
-        printf("%s\n", argv[i]);
+    if(argc > 1) {
+        printf("Il y a %d arguments supplémentaires:\n", argc - 1);
+
+        for(count = 1; count < argc; count++) {
+            printf("argv[%d] = %s\n", count, argv[count]);
+        }
+    } else {
+        printf("Aucun argument n'a été fourni.\n");
     }
 
     return 0;
 }
 ```
 
-Exemple de sortie :
+Si vous exécutez ce programme avec `./prog arg1 arg2`, l'affichage sera:
 
-```
-$ ./arguments azerty 123 true
-Voici les arguments de la ligne de commande :
-./arguments
-azerty
-123
-true
+```C
+Nom du programme './prog'
+Il y a 2 arguments supplémentaires:
+argv[1] = arg1
+argv[2] = arg2
 ```
 
-Zoom sur :
+## Plongée en profondeur:
 
-La lecture des arguments de la ligne de commande n'est pas une pratique nouvelle en programmation. Elle remonte à l'époque des premiers systèmes d'exploitation. Les alternatives à la lecture des arguments de la ligne de commande incluent l'utilisation de variables d'environnement ou encore de fichiers de configuration. En implémentant la lecture des arguments de la ligne de commande dans votre programme, vous pouvez permettre à l'utilisateur de le personnaliser sans avoir à modifier en profondeur les variables d'environnement ou à utiliser des fichiers de configuration. Cela peut également rendre votre programme plus accessible et plus facile à utiliser pour les débutants.
+Historiquement, le passage d'arguments via la ligne de commande existe depuis les premiers systèmes d'exploitation à interface utilisateur en ligne de commande. En C, des alternatives existent, notamment l'utilisation de fichiers de configuration ou d'entrées utilisateur pendant l'exécution. Toutefois, choisir l'une ou l'autre dépend des exigences spécifiques du programme.
 
-Voir aussi :
+En termes de détails d'implémentation, `argc` et `argv` sont automatiquement passés par le système d'exploitation à votre programme. `argc` est le compteur d'arguments et `argv` est un tableau de pointeurs de chaînes, avec chaque élément pointant vers un argument en ligne de commande.
 
-- [Argument (computing)](https://en.wikipedia.org/wiki/Command-line_interface#Arguments) sur Wikipedia
-- [Command Line Arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/) sur GeeksforGeeks
+## Voir aussi:
+
+Pour plus d'informations sur les arguments de ligne de commande, consultez les ressources suivantes:
+- GNU C Library documentation: [Program Arguments](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
+- C Programming Notes: [Command line arguments](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/cn1b_CommandLineArguments.html)

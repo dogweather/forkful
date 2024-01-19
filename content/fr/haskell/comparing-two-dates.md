@@ -1,7 +1,7 @@
 ---
-title:                "Comparaison de deux dates"
-html_title:           "Haskell: Comparaison de deux dates"
-simple_title:         "Comparaison de deux dates"
+title:                "Comparer deux dates"
+html_title:           "Clojure: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Comparer deux dates est une opération courante en programmation, qui consiste à vérifier si une date est antérieure, égale ou postérieure à une autre date. Les programmeurs font cela pour gérer des événements temporels ou pour trier des données par date.
+## Quoi et Pourquoi ?
 
-## Comment faire:
-Voici un exemple de comparaison de deux dates en Haskell:
+Comparer deux dates, c'est déterminer si une date est antérieure, postérieure ou identique à une autre. Les programmeurs font cela pour répondre à de nombreuses questions, notamment ordonner des événements ou calculer des durées.
+
+## Comment faire :
+
+En Haskell, nous utilisons le type `UTCTime` du module `Data.Time.Clock` pour manipuler les dates. Voici un exemple de comparaison de deux dates :
+
 ```Haskell
-compareDates :: Ord a => a -> a -> Ordering
-compareDates date1 date2 = compare date1 date2
+import Data.Time
+
+main :: IO ()
+main = do
+  let date1 = UTCTime (fromGregorian 2021 1 1) 0
+  let date2 = UTCTime (fromGregorian 2022 1 1) 0
+
+  print (date1 > date2)
+  print (date1 <= date2)
 ```
-Sur lequel we peut appeler en utilisant deux dates de type ```Day``` dans le module ```Data. Time```:
-```Haskell
-compareDates (fromGregorian 2021 1 1) (fromGregorian 2020 1 1)
-```
-Ce qui retourne la valeur ```GT``` pour "greater than" (supérieure à).
 
-## Deep Dive:
-Dans le passé, comparer deux dates pouvait être compliqué en raison de différents systèmes de calendrier et de représentations de temps. Aujourd'hui, la plupart des langages de programmation, dont Haskell, utilisent le modèle de temps Unix pour simplifier ces opérations.
+Dans ce code, `date1` est plus ancienne que `date2`, alors `(date1 > date2)` sera `False` et `(date1 <= date2)` sera `True`.
 
-Une alternative à l'utilisation de la fonction ```compare``` est d'utiliser des opérateurs de comparaison tels que ```<```, ```>```, ```==```, etc. Il est important de noter que ces opérateurs peuvent être surchargés pour différents types de données, donc en utilisant ```compare``` on garantit la comparaison de dates au lieu d'une comparaison surchargée.
+## Plongeons 
 
-Pour implémenter la comparaison de dates en utilisant ```compare```, Haskell se base sur la notation de jours de calendrier proleptique, où les dates avant la réforme grégorienne sont comptées à rebours à partir de leur origine en -4713. La fonction ```fromGregorian``` dans le module ```Data.Time.Calendar``` fonctionne selon ce modèle.
+Historiquement, en informatique, des dates ont souvent été comparées en les convertissant en secondes depuis une certaine période (ex: l'Universel Coordonné depuis 1970). Mais cette méthode n'était pas idéale en raison des complications comme les années bissextiles, les fuseaux horaires, etc.
 
-## See Also:
-Pour plus d'informations sur les opérations temporelles en Haskell, consultez la documentation du module ```Data.Time``` sur [Hackage](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html).
+En Haskell, le type `UTCTime` résout ces problèmes. Pour des comparaisons simples, l'opérateur de comparaison (`>`, `<`, `==`, etc.) suffit. Pour les calculs de durée plus complexes, Haskell propose les types `DiffTime` et `NominalDiffTime`.
 
-Pour des informations sur la notation de jours de calendrier proleptique, consultez [Wikipedia](https://fr.wikipedia.org/wiki/Calendrier_julien).
+Des alternatives comme le type `Day` pourraient être utilisées pour des besoins spécifiques, mais elles ne tiennent pas compte de l'heure exacte.
+
+## Voir Aussi :
+
+Pour plus d'informations et des exemples, consultez les liens suivants :
+
+- [Haskell Data.Time](https://hackage.haskell.org/package/time-1.5.0.1/docs/Data-Time.html) : Pour plus d'informations sur le package `time` et ses fonctions.
+
+- [Learn You a Haskell](http://learnyouahaskell.com/) : Pour une introduction générale à Haskell.
+
+- [Real World Haskell](http://book.realworldhaskell.org/) : Pour une vue plus appliquée de Haskell, y compris sur comment manipuler les dates et les heures.

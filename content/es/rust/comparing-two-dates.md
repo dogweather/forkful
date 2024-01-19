@@ -1,7 +1,7 @@
 ---
-title:                "Comparar dos fechas"
-html_title:           "Rust: Comparar dos fechas"
-simple_title:         "Comparar dos fechas"
+title:                "Comparando dos fechas"
+html_title:           "C#: Comparando dos fechas"
+simple_title:         "Comparando dos fechas"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,33 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Comparando Fechas con Rust!
+## ¿Qué & Por Qué?
 
-## ¿Qué y por qué?
-Comparar dos fechas es una operación común en la programación. A menudo, los programadores necesitan determinar si una fecha es anterior, posterior o igual a otra para tomar decisiones lógicas en su código. Es especialmente útil en aplicaciones que manejan registros o eventos basados en fechas.
+Comparar dos fechas implica determinar cuál es anterior o posterior, o si ambas son iguales. Los programadores hacen esto para tomar decisiones basadas en el tiempo, por ejemplo, programar eventos o validar períodos de suscripción.
 
-## ¡Cómo hacerlo!
-En Rust, podemos comparar fechas utilizando el operador ```<```, ```>```, ```<=```, o ```>=```. Esto comparará dos valores y devolverá un resultado booleano de ```true``` o ```false```. Veamos un ejemplo:
+## Cómo:
 
+Aquí te muestro cómo puedes hacerlo en Rust. Tenemos `SystemTime` en la biblioteca estándar, que representa un punto en el tiempo.
+
+```Rust
+use std::time::SystemTime;
+
+let ahora = SystemTime::now();
+let despues = SystemTime::now();
+
+println!("{:?}", ahora < despues);
 ```
-let fecha1 = "10 de Noviembre, 2021";
-let fecha2 = "15 de Noviembre, 2021";
 
-if fecha1 < fecha2 {
-    println!("{} es anterior a {}", fecha1, fecha2);
-}
-// Output: 10 de Noviembre, 2021 es anterior a 15 de Noviembre, 2021
+Resultado:
+
+```Rust
+false
 ```
-En este ejemplo, estamos comparando dos fechas representadas como cadenas de texto. Sin embargo, también podemos comparar fechas en formato de objeto de fecha (por ejemplo, utilizando la biblioteca "chrono").
 
-## Sumergiendonos
-Antes de la actualización de Rust 1.41, no existía una forma nativa de comparar fechas en Rust. Los programadores tenían que convertir las fechas a números para poder compararlas. Sin embargo, esta actualización agregó el trait ```Ord``` a los objetos de fecha, lo que permite la comparación directa de fechas. Otra forma de comparar fechas es utilizando la biblioteca "time", que proporciona varias funcionalidades útiles para trabajar con fechas y tiempos.
+Como puedes ver, la comparación directa nos dice si la fecha `despues` es posterior a `ahora`.
 
-## ¡Más información!
-Si deseas profundizar en el tema de comparar fechas en Rust, puedes consultar estos recursos adicionales:
+## Inmersión Profunda
 
-- Documentación oficial de Rust sobre comparación de valores: https://doc.rust-lang.org/std/cmp/index.html
-- Página de Crates.io con bibliotecas para trabajar con fechas en Rust: https://crates.io/keywords/dates
-- Ejemplo de código mostrando cómo comparar fechas utilizando la biblioteca "chrono": https://gist.github.com/LB--/33cd6078a71b7594ccf18c95ecdead78
+Históricamente, las fechas y horas se han comparado contando los segundos desde un punto específico en el tiempo (la "época"). Sin embargo, esto puede dar lugar a errores debido a anomalías como el tiempo de verano y los segundos intercalares.
 
-¡Espero que hayas encontrado útil este artículo sobre cómo comparar fechas en Rust! ¡Feliz codificación!
+Una alternativa es usar bibliotecas de terceros como `chrono`, que ofrecen una mayor precisión y características adicionales.
+
+Los detalles de implementación en Rust son bastante directos gracias a la sobrecarga del operador. Bajo el capó, `SystemTime::now()` devuelve el tiempo transcurrido desde la época, y la comparación se realiza verificando este valor.
+
+## Ver También
+
+Para una mayor profundidad sobre el manejo del tiempo y la comparación de fechas puedes consultar las siguientes fuentes:
+
+- [Biblioteca estándar de Rust - SystemTime](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
+- [Biblioteca Chrono](https://docs.rs/chrono/0.4.19/chrono/)
+- [Wikipedia - Epoch (informática)](https://es.wikipedia.org/wiki/%C3%89poca_(inform%C3%A1tica))

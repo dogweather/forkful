@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av en sträng"
-html_title:           "C: Interpolering av en sträng"
-simple_title:         "Interpolering av en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,21 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Interpolering av strängar är när en programmerare ersätter variabla värden i en sträng med faktiska värden. Det används främst för att skapa dynamiska strängar som kan anpassas efter olika situationer eller för att göra koden mer läsbar och effektiv.
+# Stränginterpolering i C
 
-## Så här:
+## Vad och Varför?
+Stränginterpolering är en teknik för att infoga variabler direkt i en sträng. Programmerare gör detta för att effektivt formatera och manipulera strängdata.
+
+## Hur man gör:
+I C, använd `printf` funktionen för stränginterpolering. Format specifier `%s` representerar string.
+
+```C
+#include<stdio.h>
+
+int main() {
+   char name[30] = "Kalle";
+   printf("Hej, %s! Hur mår du?\n", name);
+   return 0;
+}
 ```
-C
-printf("Hej %s, idag är det %d %s", namn, dag, datum);
+
+Utskriften blir:
+
 ```
-Sample Output:
-`Hej Anna, idag är det 1 augusti`
+Hej, Kalle! Hur mår du?
+```
 
-## Dyk Djupare:
-Interpolering av strängar är en vanlig teknik som används inom programmering, men den har funnits i olika former under en längre tid. Tidigare användes funktioner som `sprintf` och `snprintf` för att utföra interpolering, men det har sedan dess utvecklats till den mer lättlästa och användarvänliga `printf`-funktionen. Andra alternativ till interpolering av strängar är att använda ternära operatorer eller olika formateringssträngar för att skapa dynamiska strängar. Det finns också olika implementationer av interpolering, beroende på programmeringsspråk och användarens behov.
+## Djupdykning
+1. Historisk kontext: C språk har stöd för stränginterpolering sedan dess tidigaste versioner. 
+2. Alternativ: Du kan också använda `sprintf` för att interpolera en sträng och lagra den i en buffert.
+3. Implementeringsdetaljer: `%s` är en format specifier som säger till `printf` funktionen att en sträng kommer att infogas.
 
-## Se även:
-- [Printf-funktionen på C-programmering.com](https://www.c-programmering.com/skola/cintro.php?l=5)
-- [C Programming Tutorial om Printf-funktionen av W3Schools](https://www.w3schools.in/c-tutorial/printf-statement/)
-- [Diskussion om alternativ till interpolering av strängar på Stack Overflow](https://stackoverflow.com/questions/5081743/alternative-methods-to-string-interpolation-in-c-sharp)
+```C
+char name[30] = "Kalle";
+char greeting[50];
+
+sprintf(greeting, "Hej, %s! Hur mår du?", name);
+printf("%s\n", greeting);
+```
+
+## Se Även
+För en djupare förståelse av stränginterpolering och formatering, kolla på följande källor:
+
+1. [C Tutorial på formaterade utdata](https://www.learn-c.org/en/Formatted_output)
+2. [printf och scanf i C](https://www.geeksforgeeks.org/printf-scanf-c-language/)
+3. [String Interpolation i C](https://www.dummies.com/programming/c/string-interpolation-in-c/)

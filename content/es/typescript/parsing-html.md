@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "TypeScript: Analizando html"
-simple_title:         "Analizando html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,29 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué es y Por Qué?
 
-Analizar HTML es el proceso de leer y comprender el código HTML de una página web para poder trabajar con él en un programa de software. Los programadores a menudo realizan este proceso para extraer información específica de una página web o para manipularla de alguna manera.
+Analizar HTML implica examinar y procesar la estructura interna de los documentos HTML en un formato manipulable. Los programadores lo hacen para extraer información, manipular y presentar contenido web de manera más conveniente.
 
-## Cómo hacerlo:
+## Cómo:
+
+Aquí se muestra cómo analizar HTML en TypeScript. Usaremos la biblioteca `jsdom` para esto.
+
+Instale la biblioteca `jsdom` con npm:
 
 ```TypeScript
-const parser = new HTMLParser(); 
-const htmlString = "<h1>Hello World</h1>"; 
-const parsedResult = parser.parse(htmlString); 
-console.log(parsedResult); 
+npm install jsdom
 ```
 
-Este código muestra cómo crear un objeto HTMLParser y utilizarlo para analizar una cadena de código HTML. El resultado se imprimirá en la consola y mostrará el elemento "h1" con el contenido "Hello World".
+Aquí está el ejemplo de código:
 
-## Profundizando:
+```TypeScript
+import { JSDOM } from 'jsdom';
 
-El análisis de HTML se ha vuelto cada vez más importante con el auge de la tecnología web y la necesidad de extraer datos de páginas web. Además del uso de una biblioteca externa como HTMLParser, también es posible analizar HTML manualmente utilizando expresiones regulares o utilizando herramientas como cheerio.
+const html = `<body>
+                <h1>Hola, Mundo!</h1>
+                <p>Este es un párrafo.</p>
+              </body>`;
 
-Además, es importante tener en cuenta que el proceso de análisis de HTML puede variar según el lenguaje de programación utilizado y la biblioteca o herramienta utilizada. Es importante leer y comprender la documentación de la biblioteca o herramienta elegida para lograr los mejores resultados.
+const dom = new JSDOM(html);
 
-## Ver también:
+// Imprime "Hola, Mundo!"
+console.log(dom.window.document.querySelector('h1').textContent);
+```
 
-* Documentación oficial de TypeScript: https://www.typescriptlang.org/
-* Expressjs: https://expressjs.com/es/
-* Cheerio: https://cheerio.js.org/
+Este fragmento de código analiza el HTML e imprime el texto del elemento `<h1>`.
+
+## Inmersión Profunda:
+
+El análisis de HTML ha sido una parte esencial del desarrollo web desde sus primeros días. La biblioteca `jsdom` que utilizamos es una de muchas soluciones disponibles, y elegimos usarla por su simplicidad y compatibilidad con TypeScript.
+
+Alternativamente, algunas otras bibliotecas populares para analizar HTML incluyen `parse5` y `cheerio`. Muchas de estas herramientas tienen su propia sintaxis y características especiales, por lo que la elección depende de las necesidades de su proyecto.
+
+En términos de implementación, `jsdom` crea un modelo de objeto de documento (DOM) basado en el HTML proporcionado. Esto permite manipular y consultar el DOM como si estuviera trabajando en el navegador.
+
+## Ver También:
+
+- [Documentación oficial de JSDOM](https://github.com/jsdom/jsdom)
+- [Biblioteca Parse5 en npm](https://www.npmjs.com/package/parse5)
+- [Biblioteca Cheerio en npm](https://www.npmjs.com/package/cheerio)

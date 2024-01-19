@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Arduino: Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,69 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que é e porquê?
+## O Que & Por Quê?
 
-Enviar uma solicitação HTTP com autenticação básica é um processo em que o seu código Arduino envia informações para um servidor da web protegido por login e senha. Isso é comumente feito por programadores para acessar dados ou controlar dispositivos remotamente.
+Enviar uma requisição HTTP com autenticação básica significa fornecer nome de usuário e senha para acessar um recurso específico. Fazemos isso para restringir o acesso a recursos sensíveis a usuários autorizados.
 
-# Como fazer:
-
-Para enviar uma solicitação HTTP com autenticação básica no seu código Arduino, você precisará modificar uma função existente, ```client.print () ```, adicionando informações de autenticação no formato "usuário:senha" antes de enviar a solicitação. Veja abaixo um exemplo de código:
+## Como fazer:
 
 ```Arduino
-#include <Ethernet.h>
-#include <SPI.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; //Endereço MAC do seu Arduino
-char server[] = "www.example.com"; //Endereço do servidor
-int port = 80; //Porta do servidor
-
-EthernetClient client; //Cria um objeto do tipo EthernetClient
+const char* ssid = "your_SSID";
+const char* password = "your_PASSWORD";
 
 void setup() {
-  Ethernet.begin(mac); //Inicia a conexão Ethernet
-  Serial.begin(9600); //Inicia a comunicação serial
-  delay(1000); //Aguarda um segundo
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Connecting...");
+  }
 }
 
 void loop() {
-  if (client.connect(server, port)) { //Conecta ao servidor
-    //Envia a solicitação com autenticação básica
-    client.print("GET /path/to/file HTTP/1.1\r\n");
-    client.print("Host: www.example.com\r\n");
-    client.print("Authorization: Basic YWRtaW46cGFzc3dvcmQ=\r\n"); //Substitua pelo seu usuário e senha codificados em base 64
-    client.print("Connection: close\r\n\r\n");
-    
-    //Aguarda a resposta do servidor
-    delay(500);
-    //Imprime a resposta no monitor serial
-    while (client.available()) {
-      char c = client.read();
-      Serial.print(c);
-    }
+  String auth = "user_name:password";
+  String encodedAuth = base64::encode(auth);
+  HTTPClient http;
+
+  http.begin("http://example.com");
+  http.addHeader("Authorization", "Basic " + encodedAuth); 
+
+  int httpCode = http.GET();
+
+  if(httpCode > 0) {
+    String payload = http.getString();
+    Serial.println(payload);
   }
-  else {
-    //Se não conseguir se conectar, exibe uma mensagem de erro
-    Serial.println("Erro ao se conectar ao servidor.");
-  }
-  
-  //Espera alguns segundos antes de enviar a próxima solicitação
+  http.end();
   delay(5000);
 }
-
 ```
 
-A saída no monitor serial mostrará a resposta do servidor, que pode ser um código de sucesso (200) ou erro (401). Lembre-se de substituir o usuário e senha no exemplo acima pela sua própria combinação codificada em base 64.
+Modifique o SSID e a senha da sua rede Wi-Fi e o par "usuário:senha". O código se conectará à página solicitada e imprimirá a resposta. 
 
-# Mergulho profundo:
+## Mergulho Fundo
 
-Enviar uma solicitação HTTP com autenticação básica é uma técnica comum em programação web e é usada para garantir que apenas usuários autorizados tenham acesso aos dados ou dispositivos remotos. Antes da autenticação básica, a autenticação por cookie era usada, mas isso exigia um servidor que salvasse e gerenciasse os cookies, tornando o processo mais complicado.
+HTTP Basic Authentication é tão antigo quanto a internet. É um método simples de autenticação - não é criptografado, então geralmente é usado sobre HTTPS por segurança.
 
-Existem alternativas para a autenticação básica, como o uso de tokens de autenticação mais seguros, mas ela ainda é amplamente usada por sua simplicidade e compatibilidade com vários servidores.
+Existem alternativas, como 'Bearer Tokens', OAuth, e outras formas mais seguras de autenticação quando a informação é sensível.
 
-Ao enviar uma solicitação HTTP com autenticação básica, é importante lembrar de codificar o usuário e senha em base 64. Isso pode ser feito facilmente online com ferramentas gratuitas de codificação em base 64.
+Na biblioteca ESP8266 para Arduino, a autenticação é implementada adicionando um header HTTP. A string "usuário:senha" é codificada para o formato Base64.
 
-# Veja também:
+## Veja Também
 
-- [Documentação oficial da classe EthernetClient](https://www.arduino.cc/en/Reference/EthernetClient)
-- [Tutorial completo de como enviar uma solicitação HTTP com autenticação básica no Arduino](https://www.pubnub.com/blog/arduino-http-with-authentication-example/)
-- [Ferramenta online para codificar em base 64](https://www.base64decode.org/)
+Visite os seguintes links para mais detalhes e informações relacionadas:
+
+- Documentação da Biblioteca HTTPClient: `https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html`
+- Autenticação HTTP básica explicada: `https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication`
+- Autenticação base64 em Arduino: `http://www.cplusplus.com/reference/cstdlib/atob/`
+- Alternativas de Autenticação: `https://auth0.com/docs/authorization/overview`

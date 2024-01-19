@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comando"
-html_title:           "Rust: Leyendo argumentos de línea de comando"
-simple_title:         "Leyendo argumentos de línea de comando"
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,47 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué y Por qué?
+## ¿Qué y Por qué?
+Filtra argumentos de la línea de comandos es leer inputs directamente ingresados al ejecutar tu programa. Le da a los programadores una forma eficiente de personalizar la ejecución del código sin cambiarlo.
 
-Leer los argumentos de la línea de comandos es una técnica común en la programación para permitir a los usuarios ingresar datos o configurar un programa al ejecutarlo. Los programadores lo hacen para hacer que sus programas sean más interactivos y personalizables para los usuarios.
-
-## ¡Cómo hacerlo!
-
-Para leer argumentos de la línea de comandos en Rust, se puede utilizar la estructura `std::env::args()`. Aquí hay un ejemplo de cómo hacerlo:
+## ¿Cómo hacerlo?
+Rust hace que leer argumentos de la línea de comandos sea un proceso sencillo. Mira el siguiente código en el que iteramos sobre la colección `args` devuelta por `std::env::args`.
 
 ```Rust
-use std::env;
-
 fn main() {
-    // Obtener los argumentos de la línea de comandos
-    let args: Vec<String> = env::args().collect();
-    
-    // Iterar a través de los argumentos y mostrarlos en la consola
-    for arg in args.iter() {
-        println!("{}", arg);
+    for argumento in std::env::args() {
+        println!("{}", argumento);
     }
 }
 ```
+Si ejecutas este código con `cargo run uno dos tres`, verás esta salida:
 
-**Salida de muestra:**
-
+```Rust
+ruta/a/programa
+uno
+dos
+tres
 ```
-$ mi_programa hola mundo
-hola
-mundo
-```
 
-## Inmersión Profunda
+Aquí, `ruta/a/programa` es el argumento 0, que siempre es el camino al ejecutable. Los sucesivos argumentos son el resto de inputs.
 
-Leer argumentos de la línea de comandos ha sido una técnica utilizada por los programadores desde los primeros días de la programación. En Rust, también se puede utilizar el crate `structopt` para leer argumentos y configurar opciones de línea de comandos de manera más avanzada.
+## Profundización
+Desde una perspectiva histórica, leer argumentos desde la línea de comandos se realiza desde los primeros días de la programación, es una técnica útil que sobrevive hoy en día.
 
-Otra alternativa es utilizar bibliotecas externas como `clap` o `getopts`. Ambas ofrecen una variedad de funciones para facilitar la lectura y el manejo de argumentos de la línea de comandos.
+En lo que respecta a alternativas, Rust ofrece la biblioteca `getopts`. Esta proporciona funciones para analizar argumentos de línea de comando de una manera más detallada. Pero para la mayoría de los casos de uso, `std::env::args` funciona perfectamente.
 
-En cuanto a la implementación, la estructura `env::args()` en Rust devuelve un `std::env::Args` que contiene una referencia a los argumentos en forma de cadenas. Puede iterar a través de este objeto o utilizar funciones como `next()` o `nth()` para obtener argumentos específicos.
+El funcionamiento interno de `std::env::args` es bastante sencillo. Al iniciar el programa, el sistema operativo pasa todos los argumentos al programa como una lista. Luego, Rust simplemente accede a esta lista.
 
-## Ver También
-
-- [Documentación oficial de Rust sobre `std::env`](https://doc.rust-lang.org/std/env/index.html)
-- [Crate `structopt` para manejar argumentos de la línea de comandos de manera avanzada en Rust](https://crates.io/crates/structopt)
-- [Crate `clap` para manejar argumentos de la línea de comandos en Rust](https://crates.io/crates/clap)
-- [Crate `getopts` para manejar argumentos de la línea de comandos en Rust](https://crates.io/crates/getopts)
+## Ver además
+Para más información, consulta la documentación oficial de Rust sobre [std::env](https://doc.rust-lang.org/std/env/index.html) y la biblioteca [`getopts`](https://docs.rs/getopts/0.2.21/getopts/). Encontrarás información más detallada y actualizada allí. También puedes consultar el [book de Rust](https://doc.rust-lang.org/book/) para entender mejor cómo Rust maneja los argumentos de la línea de comando.

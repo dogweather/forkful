@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av kommandoradsargument"
-html_title:           "Haskell: Läsning av kommandoradsargument"
-simple_title:         "Läsning av kommandoradsargument"
+title:                "Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,57 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Läsning av kommandoradsargument är en vanlig uppgift för Haskell-programmerare. Det är det sätt på vilket ett program kan ta emot input från användaren när det körs från en terminal. Detta gör det möjligt för användaren att anpassa programmet på ett dynamiskt sätt och utöka funktionaliteten.
+## Vad & Varför?
+Att läsa in kommandoradsargument innebär att ett program tar data direkt vid körning. Detta är användbart för att ändra programmets beteende utan att ändra koden.
 
-# Hur?
-Det finns ett inbyggt Haskell-bibliotek som heter "System.Environment", som ger funktioner för att läsa och hantera kommandoradsargument. Här är ett exempel på hur man kan använda det:
+## Så här gör du:
+
+Här är ett exempel på hur du läser kommandoradsargument i Haskell:
 
 ```Haskell
 import System.Environment
 
+main :: IO ()
 main = do
-  -- hämta en lista med alla argument som matats in
-  args <- getArgs
-  
-  -- skriv ut det första argumentet
-  putStrLn ("Det första argumentet är: " ++ args !! 0)
-  
-  -- skriv ut alla argument som har matats in
-  putStrLn "Alla argument:"
-  mapM_ putStrLn args
-  
-  -- hämta det andra argumentet och omvandla det till en Integer
-  let num = read (args !! 1) :: Integer
-  
-  -- addera numret med sig självt och skriv ut resultatet
-  putStrLn ("Det andra argumentet dubbel är: " ++ show (num + num))
+    args <- getArgs
+    print args
 ```
+Om du sparar denna fil som `args.hs` och kör `runhaskell args.hs hello world`, får du:
 
-Om vi kör detta program med följande kommandoradsargument:
-
-```bash
-runhaskell myprogram.hs hello 5
+```Haskell
+["hello", "world"]
 ```
+## Fördjupning
 
-Kommer utskriften att bli:
+Kommandoradsargument introducerades för länge sedan i tidiga operativsystem och har sedan dess varit en viktig del av programmeringsmetodiken. Alternativ till kommandoradsargument inkluderar att läsa in en konfigurationsfil eller använda interaktiv inmatning.
 
-```bash
-Det första argumentet är: hello
-Alla argument:
-hello
-5
-Det andra argumentet dubbel är: 10
-```
+Vad gäller implementationen använder `getArgs`-funktionen i Haskell IO-monaden för att läsa in argumenten. IO-monaden används i Haskell för att hantera sidoeffekter, vilket inkluderar kommandoradsinteraktioner.
 
-# Deep Dive
-Kommandoradsargument läses in i form av en lista av strängar (strings) i Haskell. Detta är annorlunda jämfört med andra språk, såsom Java eller C++, där argumenten läses in som arrayer eller vectore. Detta gör processen lite annorlunda när det gäller att hantera eller manipulera argumenten.
+## Se också
 
-Ett alternativ till att använda "System.Environment" är att använda en tredjepartsbibliotek som "OptParse-Applicative", vilket ger mer avancerade funktioner för att läsa och hantera kommandoradsargument.
+Ytterligare resurser för att lära dig mer om detta koncept:
 
-Implementeringen av "System.Environment" är baserad på System.IO, vilket innebär att det är beroende av verktygshantering och inte direktaccess till terminalen. Det är viktigt att ha i åtanke när du arbetar med kommandoradsargument i Haskell.
-
-# Se även
-- https://wiki.haskell.org/Command_line_arguments
-- https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html
-- https://github.com/pcapriotti/optparse-applicative
+1. Real World Haskell, kapitel 8 (https://book.realworldhaskell.org/read/io.html)
+2. HaskellWiki, Command Line Arguments (https://wiki.haskell.org/Command_line_argument_parsing)
+3. Learn You a Haskell, Input and Output (http://learnyouahaskell.com/input-and-output)

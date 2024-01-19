@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando una cadena"
-html_title:           "Ruby: Interpolando una cadena"
-simple_title:         "Interpolando una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,19 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Interpolar una cadena de texto en Ruby significa insertar valores de variables dentro de una cadena existente. Los programadores lo hacen para ahorrar tiempo y hacer que su código sea más legible y fácil de entender.
+## ¿Qué & Por qué?
 
-## Cómo:
+La interpolación de cadenas en Ruby es un proceso por el cual se incrustan variables o expresiones dentro de una cadena. Los programadores lo hacen para insertar dinámicamente valores dentro de una cadena, lo que puede mejorar la legibilidad y eficiencia del código.
+
+## Cómo se hace:
+
+Aquí es cómo puedes hacer la interpolación de cadenas en Ruby:
+
 ```Ruby
-# Ejemplo de interpolación de cadena
 nombre = "Juan"
-puts "Hola #{nombre}, ¿cómo estás?" # salida: Hola Juan, ¿cómo estás?
+puts "Hola, #{nombre}!"
+```
+
+La salida sería:
+
+```Ruby
+"Hola, Juan!"
+```
+
+También puedes insertar expresiones:
+
+```Ruby
+edad = 15
+puts "En cinco años, tendrás #{edad + 5} años."
+```
+
+La salida sería:
+
+```Ruby
+"En cinco años, tendrás 20 años."
 ```
 
 ## Profundizando:
-La interpolación de cadenas en Ruby fue introducida en la versión 1.9 y ha sido un método ampliamente utilizado desde entonces. Alternativas a la interpolación incluyen el uso de la concatenación de cadenas o el formateo de cadenas mediante el método `sprintf`. La interpolación de cadenas se logra mediante el uso de la sintaxis `#{}` dentro de una cadena y se resuelve al ejecutar el código.
 
-## Ver también:
-- [Ruby Docs on interpolation](https://ruby-doc.org/core-3.0.0/doc/syntax/literals_rdoc.html#label-String+Interpolation)
-- [Ruby Guides on string interpolation](https://www.rubyguides.com/2016/08/ruby-string-interpolation/)
+Historicamente, la interpolación de cadenas en Ruby ha sido un componente clave desde sus primeras versiones. Proporciona una forma elegante y limpia para insertar variables y expresiones en cadenas.
+
+En cuanto a alternativas, también puedes usar la concatenación de cadenas. Pero, esto puede resultar en código más verboso y menos legible:
+
+```Ruby
+nombre = "Juan"
+puts "Hola, " + nombre + "!"
+```
+La salida sería la misma que antes. Sin embargo, la interpolación de cadenas es, generalmente, la opción preferida debido a su simplicidad y legibilidad.
+
+En términos de cómo funciona internamente, cuando se encuentra con #{}, Ruby evalúa lo que está entre las llaves como Ruby puro y luego convierte el resultado en una cadena.
+
+## También podrías ver:
+
+Para más información sobre la interpolación de cadenas en Ruby, consulta las siguientes fuentes:
+
+- [Interpolación de cadena en el libro de Ruby](http://rubylearning.com/satishtalim/ruby_string_interpolation.html)
+- [Documento oficial de Ruby](https://ruby-doc.org/core-2.7.0/String.html#method-i-25-3C)
+- [Tutorial de String Interpolation de Launch School](https://launchschool.com/books/ruby/read/strings#stringinterpolation)
+- [Artículo en RubyGuides sobre Interpolación de cadenas](https://www.rubyguides.com/2018/11/ruby-string-interpolation/)

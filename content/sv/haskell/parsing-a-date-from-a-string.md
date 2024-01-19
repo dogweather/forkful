@@ -1,7 +1,7 @@
 ---
-title:                "Att tolka ett datum från en sträng"
-html_title:           "Haskell: Att tolka ett datum från en sträng"
-simple_title:         "Att tolka ett datum från en sträng"
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -12,27 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att parsa ett datum från en sträng är en process där man tar en textsträng och omvandlar den till en användbar representationsform för datumet. Programmerare gör detta för att kunna hantera och manipulera datum på ett enklare och mer effektivt sätt i sina program.
+Att tolka ett datum från en sträng är en operation där en sträng, som representerar ett visst datum, omvandlas till en datastruktur som representerar samma datum. Programmerare gör detta för att enkelt och exakt kunna manipulera informationen i datat.
 
 ## Hur man gör:
 
+För att göra det i Haskell kan vi använda `parseTimeM` funktionen från `Data.Time` paketet. Här är ett exempel:
+
 ```Haskell
-parseDate :: String -> Maybe Day 
-parseDate date = case parseTimeM True defaultTimeLocale "%d/%m/%Y" date of
-                    Just d -> Just d
-                    Nothing -> Nothing
+import Data.Time
+
+parseDate :: String -> IO UTCTime
+parseDate input = parseTimeM True defaultTimeLocale "%Y-%m-%d" input
+
+main :: IO ()
+main = do
+  putStrLn "Skriv in ett datum (ÅÅÅÅ-MM-DD):"
+  input <- getLine
+  parsedDate <- parseDate input
+  print parsedDate
 ```
-```Haskell
-parseDate "12/03/2019" -- Just 02/01/2019
-parseDate "Not a valid date" -- Nothing
-```
 
-## Djupdykning
+För att få ut datumet skriver vi det i konsolen och får en form av `UTCTime`. 
 
-Att parsa datum från en sträng har funnits sedan de första programmeringsspråken utvecklades, för att möjliggöra hanteringen av tids- och datuminformation. Alternativ till parsing inkluderar att använda inbyggda typer för datum och tid eller att skriva egna funktioner för att omvandla strängar till datum. I Haskell använder man funktionen `parseTimeM` från modulen `Data.Time.Format` för att parsa datum från strängar.
+## Djupdykning:
 
-## Se även
+Historiskt sett har datumtolkning varit viktigt för att omvandla mänskligt läsbara datum till något datorer kan bearbeta.
+Det finns också alternativ till `Data.Time` paketet som `time` paketet eller ens att skapa din egen parser med `Parsec` eller `Megaparsec` bibliotek. 
+`parseTimeM` är ett högnivå API som utnyttjar `ParseTime` typklassen. Den exakta implementationen av `parseTimeM` ändras beroende på det underliggande typen som vi försöker tolka.
 
-- [Haskell hemsida](https://www.haskell.org/)
-- [Haskell programmeringsspråk](https://en.wikipedia.org/wiki/Haskell_(programming_language))
-- [Parsing](https://en.wikipedia.org/wiki/Parsing)
+## Se även:
+
+För mer information kan du kolla på dessa sidor:
+- Data.Time paketet dokumentation: http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html
+- Introduktion till Parsec: https://wiki.haskell.org/Parsing_a_simple_imperative_language
+- Megaparsec dokumentation: https://hackage.haskell.org/package/megaparsec-9.0.1
+- Tid och datum hantering i Haskell: http://chrisdone.com/posts/haskell-time

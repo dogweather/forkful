@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns"
-html_title:           "Rust: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en katalog finns"
+html_title:           "C: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -11,31 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en mapp existerar är en vanlig uppgift för många programmerare. Genom att använda detta kodstycke kan du verifiera om en specifik mapp finns på en viss filväg, vilket kan vara mycket användbart när du arbetar med filhantering eller systemrelaterade applikationer.
+Att kontrollera om en katalog finns handlar om att verifiera att en viss sökväg faktiskt leder till en fysisk mapp. Programmörer gör det för att försäkra sig om att filsystemets operationer, till exempel läsning och skrivning, kan utföras säkert.
 
-## Så här gör du:
+## Hur man gör:
+Här är ett exempel på hur man kan kontrollera om en katalog finns i Rust:
+
 ```Rust
 use std::path::Path;
+
 fn main() {
-    let path = Path::new("/path/to/directory");
-    if path.exists() {
-        println!("Mappen finns!");
+    let dir_path = Path::new("/direktori/som/ska/kontrolleras");
+
+    if dir_path.exists() {
+        println!("Katalogen finns!");
     } else {
-        println!("Mappen existerar inte.");
+        println!("Katalogen finns inte!");
     }
 }
-
-// Output:
-// Mappen finns!
 ```
 
-Här använder vi `Path` modulen som finns i Rusts standardbibliotek för att skapa en ny sökväg till mappen vi vill undersöka. Sedan använder vi funktionen `exists()` för att kontrollera om sökvägen verkligen leder till en existerande mapp. Slutligen skriver vi ut en passande meddelande beroende på resultatet.
+Kör detta och du kommer att se ett av följande meddelanden i konsolen:
+```
+Katalogen finns!
+```
+eller
+```
+Katalogen finns inte!
+```
+beroende på om sökvägen finns eller inte.
 
-## Djupdykning:
-Kontrollen av mappens existens är en grundläggande uppgift som ofta används i kombination med andra filhanteringsfunktioner. Det finns också alternativa metoder för att uppnå samma resultat, till exempel att använda externa bibliotek som erbjuder specifika funktioner för att kontrollera mappar.
+## Djupdykning
+Rust introducerade `std::path::Path` modulen i version 1.0.0 för att hantera filsystemets sökvägar. Det finns inget inneboende sätt att kontrollera om en mapp finns i tidigare versioner av Rust.
 
-Implementeringen av `Path` modulen baseras på tekniken "Path normalization", som konverterar strängen till en absolut sökväg och sedan jämför den med den faktiska sökvägen på systemet. Det finns också andra funktioner i modulen som kan vara användbara för att manipulera sökvägar och kontrollera filers existens.
+Det finns alternativa lösningar, till exempel att använda `std::fs::metadata(dir_path).is_ok()`, men de fungerar i grunden på samma sätt som `Path::exists()`.
 
-## Se också:
-- [Rust dokumentation för Path modulen](https://doc.rust-lang.org/std/path/struct.Path.html)
-- [Rusts standardbibliotek](https://doc.rust-lang.org/std/index.html)
+`Path::exists()` fungerar genom att utföra ett systemanrop för att hämta metadata om filen eller katalogen vid den angivna sökvägen. Om anropet misslyckas (t.ex.: på grund av att sökvägen inte finns), returnerar `exists()` `false`.
+
+## Se Även
+[API-dokument för std::path::Path i Rust](https://doc.rust-lang.org/std/path/struct.Path.html)
+
+[Officiell tutorial om hantering av filsystem i Rust](https://doc.rust-lang.org/book/ch12-02-reading-a-file.html) 
+
+[Diskussion om Path::exists() vs fs::metadata().is_ok()](https://users.rust-lang.org/t/path-exists-vs-fs-metadata-is-ok/28739)

@@ -1,6 +1,6 @@
 ---
 title:                "Imprimer la sortie de débogage"
-html_title:           "Java: Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
 simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Java"
 category:             "Java"
@@ -10,43 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi nous le faisons ?
+## Qu'est-ce que c'est & Pourquoi ?
 
-Imaginons ceci : vous êtes en train d'écrire un programme et soudain, ça ne fonctionne pas comme prévu. Vous essayez de comprendre où le problème se trouve, mais vous n'avez pas assez d'informations. C'est là que l'impression de sorties de débogage entre en jeu.
+L'impression de la sortie de débogage est une technique aidant les développeurs à comprendre ce qui se passe dans le code pendant son exécution. C'est une manière rapide et simple de suivre l'évolution des variables et du flux de contrôle.
 
-Imprimer des sorties de débogage, c'est simplement afficher des informations sur l'état du programme à certains points clés de l'exécution. Cela nous permet de mieux comprendre ce qui se passe à l'intérieur du programme et de détecter les erreurs plus facilement.
+## Comment faire :
 
-# Comment le faire :
+Voici un exemple simple de comment imprimer une sortie de débogage en Java. 
 
-En Java, il existe deux façons courantes d'imprimer des sorties de débogage : l'utilisation de la méthode `System.out.println()` ou l'utilisation d'un débogueur (debugger). Voici deux exemples :
-
-```java
-// Utilisation de System.out.println() :
-int a = 5;
-System.out.println("La valeur de a est : " + a);
-
-// Utilisation d'un débogueur :
-int b = 10;
-// Mettre un point d'arrêt sur la ligne suivante
-b = b + 1; // La valeur de b sera affichée ici
+```Java
+public class DebugExemple {
+   public static void main( String args[] ) {
+      int a = 5;
+      int b = 10;
+      System.out.println("La valeur de a est : " + a);
+      System.out.println("La valeur de b est : " + b);
+      int somme = a + b;
+      System.out.println("La somme de a et b est : " + somme);
+   }
+}
 ```
 
-L'exécution de ces deux exemples produira une sortie similaire :
+Lorsque vous exécutez ce programme, vous obtenez la sortie suivante :
 
 ```
 La valeur de a est : 5
+La valeur de b est : 10
+La somme de a et b est : 15
 ```
+Cela nous fournit énormément d'informations sur le fonctionnement interne de notre programme.
 
-# Plongez en profondeur :
+## Plongée en profondeur 
 
-Le débogage a évolué au fil des années avec l'avancement des technologies de développement. Auparavant, les programmeurs utilisaient principalement des impressions de débogage pour trouver des erreurs dans leur code, mais maintenant, la plupart des IDE (environnements de développement intégrés) ont des fonctionnalités de débogage plus avancées comme le suivi pas à pas et la surveillance des variables.
+Historiquement, l'impression de débogage a été l'une des premières techniques utilisées par les développeurs pour comprendre les erreurs de leurs programmes. Même aujourd'hui, c'est souvent le premier outil que les développeurs utilisent lorsqu'ils rencontrent un bug.
 
-Il existe également d'autres alternatives à l'impression de débogage, telles que la journalisation (logging) et le profiling. La journalisation consiste à écrire des informations sur l'état du programme dans des fichiers, tandis que le profiling est utilisé pour mesurer les performances du programme.
+Une alternative moderne à l'impression de débogage est l'utilisation d'un débogueur. Les débogueurs offrent plus de contrôle, car ils peuvent arrêter l'exécution d'un programme à tout moment, permettant aux développeurs d'examiner l'état du programme.
 
-En ce qui concerne la mise en œuvre de l'impression de débogage, il est important de noter que cela peut entraîner un ralentissement du programme et peut également révéler des informations sensibles telles que des mots de passe ou des numéros de carte de crédit. Il est donc recommandé de supprimer ou de désactiver les impressions de débogage dans les programmes en production.
+En Java, l'impression de débogage est généralement effectuée en utilisant la méthode `System.out.println()`. Cette méthode imprime la sortie à la console par défaut.
 
-# À voir aussi :
+## Voir aussi
 
-- [Tutoriel sur l'utilisation du débogueur avec IntelliJ IDEA](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html)
-- [Document sur la journalisation en Java](https://www.baeldung.com/java-logging-intro)
-- [Définition de profiling dans le contexte du développement logiciel](https://www.developpez.net/forums/d2018504/environnements-developpement/ide/netbeans/java/profiling-debugging-java/)
+Pour en savoir plus sur le débogage en Java, consultez ces liens utiles :
+
+1. Oracle Official Documentation : [Débogage des applications Java](https://docs.oracle.com/javase/7/docs/technotes/guides/debug/index.html)
+
+2. Tutorialspoint : [Débogage Java](https://www.tutorialspoint.com/java/java_debugging.htm)
+
+3. Baeldung : [Un guide pour le débogueur Java](https://www.baeldung.com/java-debugging)

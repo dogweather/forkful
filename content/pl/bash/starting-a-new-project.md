@@ -10,16 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Zaczynanie nowego projektu w programowaniu jest procesem tworzenia nowego projektu lub programu. Programiści często zaczynają nowe projekty, ponieważ mają nowe pomysły i chcą rozwijać swoje umiejętności programistyczne.
+## Co i dlaczego?
+
+Rozpoczęcie nowego projektu w programowaniu oznacza tworzenie pustej przestrzeni, gdzie można zacząć tworzyć kod od zera. Programiści robią to, aby zastosować swoją wiedzę i umiejętności do rozwiązywania problemów, tworzenia nowych produktów lub usprawnienia istniejących systemów.
 
 ## Jak to zrobić:
-W Bash można rozpocząć nowy projekt za pomocą komendy `mkdir projekt` aby utworzyć nowy katalog, a następnie przejść do niego za pomocą `cd projekt` komendy. Następnie można utworzyć nowy plik o nazwie `index.sh` używając `touch index.sh` komendy. W nowo utworzonym pliku można rozpocząć pisanie kodu za pomocą edytora tekstu, np. `nano index.sh`. Przykładowy kod można wykonać używając komendy `bash index.sh` a także zwrócić wynik polecenia `echo "Hello World"` używając `echo "Hello World"`.
 
-## Głębsze zagadnienia:
-Proces rozpoczynania nowego projektu można uznać za nowy start, które pozwala nam na porzucenie błędów lub brakujących funkcji w poprzednich projektach. Alternatywą dla pisania kodu w Bash może być użycie innych języków programowania, takich jak Python czy Java. W Bash można również użyć polecenia `curl` do pobrania szablonów projektów lub stworzyć skrypt instalacyjny, który będzie tworzyć nowy projekt automatycznie.
+Tworzenie nowego projektu w Bashu można zrealizować za pomocą kilku prostych kroków. Załóżmy, że chcesz stworzyć nowy projekt o nazwie "MójProjekt". 
 
-## Zobacz też:
-- [Dokumentacja Bash](https://www.gnu.org/software/bash/)
-- [Wprowadzenie do Bash](https://www.tutorialspoint.com/unix/shell_scripting.htm)
-- [Poradnik dla programistów Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+```Bash
+#Krok 1: Twórz nowy folder dla projektu
+mkdir MojProjekt
+
+#Krok 2: Przejdź do folderu projektu
+cd MojProjekt
+
+#Krok 3: Inicjalizuj repozytorium Git (opcjonalne)
+git init
+```
+Po wywołaniu tych poleceń, powinieneś mieć gotowy do pracy nowy projekt.
+
+## Głębsze zanurzenie:
+
+Rozpoczęcie nowego projektu ma wiele aspektów. Historia Bash, na przykład, jest głęboko osadzona w historii Unix i Linux, gdzie skrypty służą do automatyzacji zadań. Alternatywami dla Bash mogą być inne shelle, takie jak Zsh czy Fish, które oferują różne funkcje i udogodnienia, ale wszystkie mają podstawowe cechy Bash.
+
+Jeśli chodzi o szczegóły implementacji, rozpoczęcie nowego projektu w Bash'u polega na tworzeniu plików i folderów, które są dostosowane do potrzeb projektu. To może obejmować pisanie skryptów, które automatyzują zadania, takie jak instalacja zależności, budowanie i testowanie kodu.
+
+## Zobacz także:
+
+- [Bash programming introduction](https://www.gnu.org/software/bash/manual/bash.html)
+- [Shell alternatives](https://www.slant.co/topics/514/~best-unix-shells)
+- [Bash programming basics](https://www.tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+- [Git commands](https://git-scm.com/doc)

@@ -1,6 +1,6 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "Elm: Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Imprimir mensajes de depuración es una técnica utilizada por los programadores para obtener información sobre el funcionamiento de su código. Es una forma de verificar si el código está realizando correctamente las tareas deseadas y también puede ayudar a identificar errores y problemas en el mismo.
+## ¿Qué y Por Qué?
+
+Imprimir el output de depuración es una forma de rastrear y entender cómo se comporta el código a lo largo de su ejecución. Nos ayuda a detectar y corregir los errores del programa.
 
 ## Cómo hacerlo:
-Hay diferentes formas de imprimir mensajes de depuración en Elm, pero la más común es utilizando la función `Debug.log` que acepta dos argumentos: una etiqueta para el mensaje y el valor que se desea imprimir. Por ejemplo, si queremos imprimir el valor de una variable `num`, podemos escribir:
+
+Para imprimir datos de depuración en Elm, utilizamos la función `Debug.log`. Veamos un ejemplo:
 
 ```Elm
-Debug.log "Número:" num
+printValue : String -> Int -> Int
+printValue label value =
+  Debug.log label value
 ```
-El mensaje resultante se mostrará en la consola del navegador, mostrando la etiqueta y el valor correspondiente. Aquí puedes ver un ejemplo de código y su correspondiente mensaje de depuración:
+En este código, `label` es una etiqueta descriptiva para la salida y `value` es el valor que queremos imprimir. La ejecución mostrará algo como esto:
 
 ```Elm
-x = 5
-Debug.log "Valor de x:" x
-```
-Mensaje de depuración:
-```
-Valor de x: 5
+"myLabel" : 15
 ```
 
-## Profundizando:
-Imprimir mensajes de depuración no es una técnica nueva, ya que ha sido utilizada por mucho tiempo por los programadores. Sin embargo, es importante tener en cuenta que su uso debe ser limitado y solo se debe utilizar para propósitos de prueba o durante el proceso de depuración de un código.
+## Más Detalles:
 
-En Elm, también existe la función `Debug.todo` que se utiliza como marcador cuando se sabe que una parte del código aún no está completa. Esta función devuelve un mensaje de advertencia en la consola del navegador cuando se ejecuta, lo cual puede ser útil para recordar qué partes del código aún necesitan ser trabajadas.
+1. **Contexto Histórico**: El lenguaje de programación Elm, diseñado por Evan Czaplicki, ha tenido desde sus inicios un fuerte énfasis en la depuración y trazabilidad del código. La función `Debug.log` ha estado disponible desde las primeras versiones para facilitar esta tarea.
 
-Otra alternativa al uso de `Debug.log` es utilizar el depurador integrado de Elm, que permite rastrear y examinar el estado de las variables durante la ejecución del código. Sin embargo, el depurador solo está disponible para aplicaciones en modo de desarrollo.
+2. **Alternativas**: En Elm existen otras maneras de depurar además de `Debug.log`, como `Debug.toString` que convierte una estructura de datos en una cadena.
+
+3. **Detalles de Implementación**: La función `Debug.log` imprime la salida en la consola del navegador. Sin embargo, usar `Debug.log` en exceso puede ralentizar la aplicación, debido a que la transformación de datos y la escritura en consola son operaciones costosas.
 
 ## Ver También:
-Puedes obtener más información sobre el uso de mensajes de depuración en la documentación oficial de Elm: [Debugging in Elm](https://guide.elm-lang.org/debugging/). También puedes encontrar recursos en línea como tutoriales y videos que te ayudarán a comprender mejor cómo utilizar esta técnica en tus proyectos.
+
+- Documentación oficial de Elm sobre depuración: [Debug - Elm guide](https://guide.elm-lang.org/versions/0.19.1/effects/debugging.html)
+- Artículo en Elm Discourse sobre cómo usar `Debug.log`: [How to Use Debug.log - Elm Discourse](https://discourse.elm-lang.org/t/how-to-use-debug-log/538)
+- Buenas prácticas de depuración en Elm: [Elm Debugging Techniques](http://debug.elm-lang.org/)

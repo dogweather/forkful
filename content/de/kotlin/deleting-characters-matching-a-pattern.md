@@ -1,7 +1,7 @@
 ---
-title:                "Musterübereinstimmende Zeichen löschen"
-html_title:           "Kotlin: Musterübereinstimmende Zeichen löschen"
-simple_title:         "Musterübereinstimmende Zeichen löschen"
+title:                "Zeichen löschen, die einem Muster entsprechen"
+html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,43 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
+# Entfernen Sie Zeichen in Kotlin, die einem Muster entsprechen
+
 ## Was & Warum?
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine häufige Aufgabe bei der Softwareentwicklung. Programmierer tun dies, um unerwünschte oder unnötige Zeichen aus einem String zu entfernen und die Datenstruktur zu bereinigen.
 
-## Wie geht das?
-Es gibt verschiedene Möglichkeiten, Zeichen zu löschen, die einem bestimmten Muster entsprechen. Eine Möglichkeit ist die Verwendung von regulären Ausdrücken, die in Kotlin mit der Regex-Klasse umgesetzt werden können. Hier ist ein Beispiel:
+Das Entfernen von Zeichen, die einem Muster entsprechen, ist ein Prozess, bei dem spezifische Zeichen aus einem Textstring entfernt werden. Programmierer tun dies, um unerwünschte oder überflüssige Daten aus ihren Codezeilen zu entfernen und die Gesamteffizienz ihrer Programme zu erhöhen.
 
-```
-fun main() {
-    val str = "Hello World!"
-    val pattern = Regex("[^A-Za-z ]")
-    val result = str.replace(pattern, "")
-    println(result) // Output: Hello World
-}
-```
+## So geht's:
 
-In diesem Beispiel wird die Regex-Klasse verwendet, um alles außer Groß- und Kleinbuchstaben sowie Leerzeichen aus dem String zu entfernen. Der resultierende String wird dann ausgegeben, wobei alle unerwünschten Zeichen gelöscht wurden.
+Verwenden Sie die replace-Funktion in Kotlin, um alle Instanzen eines bestimmten Zeichens oder Musters in einem String zu entfernen. 
 
-Eine andere Möglichkeit ist die Verwendung der Kotlin-Standardbibliotheksfunktion `filter`, die eine Lambda-Funktion als Parameter akzeptiert. Hier ist ein Beispiel:
+ ```Kotlin
+val text = "Hallo, Welt!"
+val entfernterText = text.replace(",", "")
+println(entfernterText)
+ ```
 
-```
-fun main() {
-    val str = "Hello World!"
-    val result = str.filter { it.isLetter() || it.isWhitespace() }
-    println(result) // Output: Hello World
-}
-```
+Die Ausgabe dieses Codes wäre:
 
-In diesem Beispiel wird die `filter`-Funktion verwendet, um nur Zeichen zuzulassen, die Buchstaben oder Leerzeichen sind. Alle anderen Zeichen werden automatisch gelöscht.
+ `Hallo Welt!`
 
-## Tiefergehende Informationen
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine Aufgabe, die bereits seit den Anfängen der Programmierung existiert. Früher wurde dies oft durch das Iterieren über den String und das Überprüfen jedes einzelnen Zeichens durchgeführt. Mit der Einführung von regulären Ausdrücken wurde diese Aufgabe jedoch vereinfacht und effizienter gestaltet.
+## Tiefere Tauchgänge:
 
-Es gibt auch Alternativen zu regulären Ausdrücken, wie z.B. die Verwendung von String-Manipulationsmethoden wie `replace` oder `replaceAll`. Diese können jedoch unpraktisch und aufwändig sein, wenn es um komplexe Muster geht.
+Das Entfernen von Zeichen, die einem Muster entsprechen, stammt aus den Anfängen der Computerprogrammierung, als Entwickler Wege finden mussten, unerwünschte Daten aus ihren Codezeilen zu entfernen. Eine Alternative ist die Verwendung von regulären Ausdrücken, die es erlauben, auch komplexe Muster von Zeichen zu identifizieren und zu entfernen. 
 
-Die Implementierung von regulären Ausdrücken in Kotlin erfolgt über die `Regex`-Klasse, die viele nützliche Methoden wie `replace`, `matches` und `find` bietet. Es gibt auch eine Vielzahl von speziellen Zeichen und Metazeichen, die beim Erstellen von regulären Ausdrücken verwendet werden können, um bestimmte Muster anzugeben.
+Bei minimalistischer Implementierung ist zu beachten, dass die Funktionen `replace` und `replaceFirst` in Kotlin das ursprüngliche String-Objekt nicht ändern - sie geben eine neue Zeichenkette zurück, in der das Muster ersetzt wurde.
 
-## Weitere Informationen
-- Offizielle Kotlin-Dokumentation zu regulären Ausdrücken: https://kotlinlang.org/docs/regular-expressions.html
-- Tutorial zu regulären Ausdrücken in Kotlin: https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm
-- Weitere Informationen zu String-Manipulationsmethoden in Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/
+## Siehe auch:
+
+Sie können weitere Informationen zu diesem Thema unter den folgenden Quellen finden:
+
+- JetBrains offizielle Kotlin-Dokumentation : <https://kotlinlang.org/docs/stdlib.html>
+- Ein tiefer Einblick in String Manipulationen in Kotlin: <https://blog.kotlin-academy.com/kotlin-programmer-dictionary-string-vs-string-companion-object-689e5c56aed5>
+  
+---

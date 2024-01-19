@@ -1,6 +1,6 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "PHP: 文字列から日付を解析する"
+html_title:           "Bash: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,59 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をして、なぜプログラマーがそれをするのか？
+# PHPで日付文字列を解析する
 
-日付を文字列から解析することは、プログラムで日付を処理する際に非常に重要です。これにより、ユーザーが入力した日付の形式を統一し、正しい日付データを取得することができます。プログラマーが日付を解析する理由は、日付をデータベースに保存したり、計算したりする必要があるためです。
+## 何？＆なぜ？
+日付の解析とは、日付を含む文字列から日付データ（例：年、月、日）を抽出することです。文字列から日付を解析することで、データベースの検索や範囲指定、日付計算などの効率的なデータ操作が可能になるため、プログラマーはこれを行います。
 
 ## 方法：
-
-日付を解析するには、PHPの標準関数である`date_parse()`を使用します。この関数は、指定した日付文字列を様々な部分に分解し、連想配列として返します。
-
-例えば、"2021-01-01"という文字列を解析すると、以下のような結果が返ってきます。
-
 ```PHP
-$date = date_parse("2021-01-01");
-
-print_r($date);
-
-/*
-Array
-(
-    [year] => 2021
-    [month] => 1
-    [day] => 1
-    [hour] => 
-    [minute] => 
-    [second] => 
-    [fraction] => 
-    [warning_count] => 0
-    [warnings] => Array
-        (
-        )
-
-    [error_count] => 0
-    [errors] => Array
-        (
-        )
-
-    [is_localtime] => 
-)
-*/
+$orig_date = "2021-10-03";
+$date = date_create($orig_date);
+echo date_format($date, 'Y-m-d');
+```
+出力:
+```
+2021-10-03
+```
+または
+```PHP
+$orig_date = "2021-10-03";
+$date = new DateTime($orig_date);
+echo $date->format('Y-m-d');
+```
+出力:
+```
+2021-10-03
 ```
 
-上記のように、年、月、日などの値が個別に取得できます。
+## ディープダイブ
+1)  **歴史**: PHPの初期バージョンでは、`strtotime()`関数がよく使われました。しかし現在では、より柔軟性と信頼性のある`DateTime`クラスが使われます。
 
-## 解説
+2)  **代替**: 新しいPHPのバージョンには、日付解析に対応する追加の手段が用意されています。例えば `date_parse()`関数や、`date_parse_from_format()`関数があります。
 
-日付を文字列から解析する方法は古くから存在しており、プログラマーにとっては基本的な知識です。ただし、PHPの`date_parse()`以外にも、ライブラリや外部ツールを使用することでさらに詳細な情報を取得することが可能です。
+3)  **実装詳細**: DateStringを解析するとき、曖昧さを避けるために形式を明確にすることが重要です。PHPでは、ISO 8601日付形式（`YYYY-MM-DD`）が推奨されます。
 
-例えば、PHPのDateTimeクラスを使用すると、解析した日付からさらに時刻やタイムゾーンなどの情報を取得することができます。また、外部ツールとしてはCarbonやMoment.jsなどがあります。
-
-日付を文字列から解析する際に重要なのは、文字列のフォーマットを正しく理解することです。日付には様々なフォーマットがあり、それぞれの場合に応じた処理が必要になります。
-
-## 関連リンク
-
-- [PHPの公式ドキュメント](https://www.php.net/manual/ja/function.date-parse.php)
-- [DateTimeクラス](https://www.php.net/manual/ja/class.datetime.php)
-- [Carbon](https://carbon.nesbot.com/)
-- [Moment.js](https://momentjs.com/)
+## 関連情報
+* PHP 公式ドキュメント: [DateTime](https://www.php.net/manual/ja/class.datetime.php)
+* PHP 日付/時間 関数: [PHP Date/Time Functions](https://www.php.net/manual/ja/ref.datetime.php)

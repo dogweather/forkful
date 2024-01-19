@@ -10,23 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Überprüfen, ob ein Verzeichnis existiert, ist eine gängige Aufgabe für Programmierer. Dies ermöglicht ihnen zu prüfen, ob ein bestimmter Ordner auf einem System vorhanden ist, bevor sie versuchen, auf ihn zuzugreifen.
+## Was & Warum?
 
-# Wie geht's:
+In der Programmierung prüfen wir oft, ob ein Verzeichnis existiert. Das ist wichtig, um Fehler zu vermeiden, wenn wir versuchen, Dateien zu lesen oder zu schreiben, die nicht da sind. 
+
+## Wie funktioniert das:
+
+Clojure ist elegant und prägnant. Hier ist ein einfacher Weg, um zu überprüfen, ob ein Verzeichnis in Clojure existiert. 
+
 ```Clojure
-;; Um zu überprüfen, ob ein Verzeichnis existiert, können wir die Clojure-Funktion (clojure.java.io/file "Pfad/zum/Verzeichnis") verwenden. Diese Funktion gibt ein File-Objekt zurück, das als "wahr" ausgewertet wird, wenn das Verzeichnis existiert, und als "falsch" wenn nicht.
-(clojure.java.io/file "/Users/Benutzername/Downloads")
-;; => #object[java.io.File "Pfad/zum/Verzeichnis"]
+(ns directory-check.core
+  (:require [clojure.java.io :as io]))
 
-;; Wir können auch die Funktion "exists?" verwenden, um zu überprüfen, ob ein Verzeichnis existiert.
-(.exists (clojure.java.io/file "/Users/Benutzername/Downloads"))
-;; => true
+(defn directory-exists? [dir-path]
+  (let [dir (io/file dir-path)]
+    (and (.exists dir) (.isDirectory dir))))
+
+(println (directory-exists? "/home/user/documents"))
 ```
 
-# Tiefere Einblicke:
-Das Überprüfen der Existenz eines Verzeichnisses ist Teil der "Datei- und Verzeichnisoperationen" in Clojure. Vor der Einführung von Clojure 1.7 mussten Programmierer jedoch die Java-Klasse "java.io.File" verwenden, um Verzeichnisse zu überprüfen. Es ist auch wichtig zu beachten, dass die Funktion "exists?" auch auf Dateien angewendet werden kann.
+Durch den Aufruf der Funktion mit dem Pfad zu dem Verzeichnis, das wir überprüfen möchten, wird entweder `true` (wenn es existiert) oder `false` (wenn es nicht existiert) ausgegeben.
 
-# Siehe auch:
-- https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/reset-bang
-- https://clojure.org/reference/java_interop#_exist_7za1&page=Clojure
+## In die Tiefe:
+
+Die Überprüfung der Existenz eines Verzeichnisses ist grundlegend für viele Anwendungen, daher war diese Funktion bereits in früheren Programmiersprachen vorhanden. Clojure, das auf Java basiert, ermöglicht dies auf ruhige und einfache Weise über das clojure.java.io-Modul.
+
+Als Alternativen könnten Sie native Java-Aufrufe verwenden, aber Clojure's abstrakter Ansatz ist einfacher und idiomatischer. Es ist möglich, weitere Überprüfungen nach Bedarf hinzuzufügen (z.B. ob Sie Lese- oder Schreibzugriff haben).
+
+## Weiterführende Links:
+
+Clojure ist eine mächtige und ausdrucksstarke Sprache und hier sind einige Ressourcen, die Ihnen helfen könnten, tiefer in sie einzutauchen:
+
+- [Offizielle Clojure-Dokumentation](https://clojure.org)
+- [Clojure Über Clojure.java.io](https://clojuredocs.org/clojure.java.io)
+- [Online-Kurs: Clojure for the Brave and True](https://www.braveclojure.com)

@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を使用したhttpリクエストの送信"
-html_title:           "Elm: 基本認証を使用したhttpリクエストの送信"
-simple_title:         "基本認証を使用したhttpリクエストの送信"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何ができるの？
-HTTPリクエストを基本認証付きで送信することは、サーバーからデータを取得するための一般的な方法です。プログラマーがこの方法を選ぶのは、情報を保護するためのセキュリティ上の理由や、アクセス制限されたコンテンツにアクセスする必要があるからです。
+## 何となぜ？
 
-## 方法：
+HTTPリクエストに基本認証を送信するとは、Webサーバーに対してユーザー名とパスワードを含む特定の形式の情報をリクエスト中に送信することです。プログラマーがこれを行う主な理由は、特定のリソースにアクセスするための認証を提供することです。
+
+## 使い方：
+
 ```Elm
 import Http
-import Basics exposing (..)
-import Json.Decode as Json
+import Http.BasicAuth as BasicAuth
 
-authReq : Http.Request
-authReq =
+
+sendRequest : String -> String -> String -> Cmd msg
+sendRequest username password url =
     Http.request
-        { url = "https://example.com/api/endpoint"
-        , method = "GET"
-        , headers = [ ( "Authorization", "Basic QWxhZGRpbjpPcGVuU2VzYW1l" ) ]
+        { method = "GET"
+        , headers = [ BasicAuth.basic username password ]
+        , url = url
         , body = Http.emptyBody
-        , expect = Http.expectString Json.decoder
+        , expect = Http.expectWhatever
         , timeout = Nothing
-        , tracker = Nothing
+        , withCredentials = False
         }
+
+-- 使用例
+
+main =
+    sendRequest "user" "password" "https://myserver.com"
+
 ```
+このコードは`user`と`password`という基本認証の詳細を`https://myserver.com`にGETリクエストとして送信します。
 
-```Elm
-import Http
-import Basics exposing (..)
-import Json.Decode as Json
+## 詳細：
 
-authResponse : Http.Response String
-authResponse =
-    Http.fromString "Unauthorized: Invalid credentials"
-```
+基本認証はHTTPプロトコルの一部として1996年に導入され、以来Webサーバーとクライアント間でのシンプルな認証方法として広く使用されています。しかし、状況によってはBearer認証やDigest認証のような他の方法が適していることもあります。一方、Elmでは`Http.request`メソッドを用いて基本認証付きのHTTPリクエストを送信します。該当のメソッドを用いることでユーザー名とパスワードの詳細を含んだヘッダーを含めることが可能となります。
 
-## 深堀り：
-1. プログラマーがHTTPリクエストを基本認証付きで送信する方法は、以前はよりセキュアな方法がなかったためでした。しかし、現在はより安全かつ効率的な方法が存在します。
-2. 基本認証に代わる代替手段としては、OAuthがあります。OAuthは、サードパーティーAPIへのアクセスを許可するためのセキュリティプロトコルです。
-3. HTTPリクエストを送信する際の基本認証の詳細な実装方法は、プログラマーが使用するフレームワークや言語によって異なりますが、一般的にはヘッダーにユーザー名とパスワードをエンコードして送信することになります。
+## 参考になるもの：
 
-## 関連情報：
-- [Elm公式ドキュメンテーション](https://package.elm-lang.org/packages/elm/http/latest/Http)
-- [HTTP基本認証についての詳細記事](https://www.digitalocean.com/community/tutorials/http-basic-authentication-with-nginx-on-ubuntu-14-04)
-- [OAuthプロトコルの詳細](https://oauth.net/2/)
+- ElmのHTTPリクエスト: https://package.elm-lang.org/packages/elm/http/latest/
+- BasicAuthモジュール: https://package.elm-lang.org/packages/elm/http/latest/Http-BasicAuth
+- ElmでのHTTP認証: https://guide.elm-lang.org/effects/http.html

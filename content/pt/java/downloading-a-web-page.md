@@ -1,6 +1,6 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "Java: Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Java"
 category:             "Java"
@@ -10,66 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O que é & Por quê?
 
-Baixar uma página da web significa obter todos os arquivos e conteúdo associados a uma determinada página da internet. É uma tarefa comum na programação, pois muitas vezes precisamos acessar informações online para criar aplicativos ou melhorar o processamento de dados.
-
+Baixar uma página da web é o processo de obter todo o conteúdo HTML de um determinado URL. Programadores fazem isso para analisar e manipular esse conteúdo, seja para automatizar tarefas, raspagem de dados, testes ou qualquer outra utilidade.
+ 
 ## Como fazer:
 
+Vamos usar a biblioteca Jsoup para baixar uma página web em Java. Você precisa instalar a biblioteca Jsoup no seu projeto antes.
+
 ```Java
-import java.io.BufferedInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.net.URL;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
-public class DownloadWebPage {
-  public static void main(String[] args) throws IOException {
-    // Definir a URL da página da web a ser baixada
-    String url = "https://www.example.com";
- 
-    // Criar objeto URL e obter a conexão com a página
-    URL paginaWeb = new URL(url);
-    InputStream inputStream = paginaWeb.openStream();
-    
-    // Criar objeto BufferedInputStream para ler os dados da conexão
-    BufferedInputStream buffer = new BufferedInputStream(inputStream);
- 
-    // Usar FileOutputStream para criar o arquivo onde os dados serão salvos
-    String caminho = "pagina_web.html";
-    FileOutputStream fileOutputStream = new FileOutputStream(caminho);
-    
-    // Ler os dados da conexão e gravá-los no arquivo
-    byte[] dados = new byte[1024];
-    int bytesLidos;
-    while ((bytesLidos = buffer.read(dados)) != -1) {
-        fileOutputStream.write(dados, 0, bytesLidos);
+public class Main {
+    public static void main(String[] args) {
+        try {
+            Document doc = Jsoup.connect("http://example.com").get();
+            System.out.println(doc.html());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    
-    // Fechar as conexões e fluxos de dados
-    fileOutputStream.close();
-    buffer.close();
-    inputStream.close();
-
-    System.out.println("Página da web salva com sucesso em " + caminho);
-  }
 }
 ```
 
-Output:
-```
-Página da web salva com sucesso em pagina_web.html
-```
+Quando você roda isto, irá imprimir todo o conteúdo HTML da página `http://example.com`.
 
-## Aprofundando:
+## Mergulho Profundo
 
-1) Baixar uma página da web é uma técnica antiga que data dos primeiros anos da internet. Nos primórdios, as páginas eram apenas texto e imagens estáticas, por isso, o processo era bem simples. Com o desenvolvimento da internet e a inclusão de tecnologias mais avançadas, como JavaScript e CSS, baixar uma página da web se tornou uma tarefa mais complexa, pois é necessário entender como cada elemento se comporta para obter uma cópia fiel da página.
+Jsoup é um analisador de HTML baseado em Java, que foi lançado em 2010. Ele é fácil de usar e tem muitas funcionalidades que tornam a análise de HTML em Java muito mais fácil do que se você fizesse tudo manualmente.
 
-2) Além do Java, existem outras linguagens e ferramentas que podem ser usadas para baixar uma página da web, como Python, Ruby e o popular programa wget. Cada uma tem suas particularidades, mas o princípio básico é o mesmo.
+Existe outra biblioteca popular, chamada HtmlUnit, que também é usada para baixar páginas web. No entanto, Jsoup é geralmente considerado superior em termos de facilidade de uso e qualidade de análise.
 
-3) Para baixar uma página da web com mais precisão, é possível usar bibliotecas como o Apache HttpClient ou o JSoup, especificamente criadas para lidar com requisições HTTP e análise de documentos HTML, respectivamente. Essas ferramentas facilitam o processo e permitem um maior controle sobre quais dados serão baixados.
+Para baixar uma página web, Jsoup faz uma solicitação HTTP GET ao URL especificado. Ele analisa a resposta e constrói uma árvore de documento, que você pode então percorrer e manipular.
 
-## Veja também:
+## Veja Também
 
-- [Tutorial: Como baixar páginas da web com Java](https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html)
-- [Exemplos de código para download de páginas web em Java](https://www.tutorialspoint.com/javaexamples/internet_download.htm)
-- [JSoup - biblioteca Java para análise e manipulação de HTML](https://jsoup.org/)
+1. Jsoup official documentation: [here](https://jsoup.org/).
+2. Wikipedia on Web Scraping: [here](https://pt.wikipedia.org/wiki/Coleta_de_dados_web).
+3. Stack Overflow discussion on Jsoup vs HtmlUnit: [here](https://stackoverflow.com/questions/3152138/what-are-the-pros-and-cons-of-jsoup-and-htmlunit).

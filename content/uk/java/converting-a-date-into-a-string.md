@@ -1,6 +1,6 @@
 ---
 title:                "Перетворення дати в рядок"
-html_title:           "Java: Перетворення дати в рядок"
+html_title:           "Lua: Перетворення дати в рядок"
 simple_title:         "Перетворення дати в рядок"
 programming_language: "Java"
 category:             "Java"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що це і навіщо?
 
-Перетворення дати в рядок є одним з часто використовуваних завдань програмістів у Java. Це означає конвертацію дати у різні формати рядків для зручності використання та збереження в базі даних. Зазвичай, це зроблено з метою забезпечення локалізації та полегшення збереження та передачі даних.
+Перетворення дати в рядок - це перетворення об'єкта `java.util.Date` на рядок у форматі, що розуміє людина, використовуючи `java.text.SimpleDateFormat`. Навіщо? Щоб зобразити дату у більш зручному для нас фомраті, або зберегти у файл чи в базу даних.
 
-## Як це зробити?
+## Як це зробити:
 
-Найпростішим способом перетворити дату в рядок є використання методу `.toString()` у класі `Date`. Наприклад:
+Нижче наведений приклад коду та результат його виконання:
+
 ```Java
-Date date = new Date();
-System.out.println(date.toString());
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Main {
+public static void main(String[] args) {
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        String dateAsString = format.format(date);
+        System.out.println(dateAsString);
+    }
+}
 ```
-Вихідний рядок буде виглядати приблизно як `Mon Jun 28 09:36:34 UTC 2021`. Проте, цей рядок містить лише стандартну інформацію про дату і не дуже зручний для використання.
 
-Тому, можна використати клас `SimpleDateFormat` із зазначеним шаблоном для перетворення дати в рядок у більш зрозумілому форматі. Наприклад, якщо ми хочемо видрукувати дату у форматі `dd/MM/yyyy`, то можна використати наступний код:
-```Java
-Date date = new Date();
-SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-System.out.println(dateFormat.format(date));
-```
-Вихідний рядок буде виглядати приблизно як `28/06/2021`.
+Виконання цього коду виведе поточну дату та час, наприклад: `23-05-2022 10:20:30`.
 
-## Глибша погляд
+## Детальніше:
 
-Перетворення дати в рядок було зроблено з метою полегшення збереження та передачі даних, а також для забезпечення локалізації. Без цієї можливості було б дуже складно працювати з даними, оскільки кожна країна має власні стандарти форматування дат.
+У минулому, коли ми працювали з датами у `java.util.Date`, ми здебільшого використовували `java.text.DateFormat`, що має простіше інтерфейс. Але, через його малу гнучкість та можливість виникнення помилок потоків, був розроблений `java.text.SimpleDateFormat`. Його можна налаштувати так, як вам потрібно, але він дещо повільніший через більш складну реалізацію.
 
-Крім методу `.toString()` та класу `SimpleDateFormat`, існують інші способи для перетворення дати в рядок, такі як використання бібліотеки Joda-Time або власних функцій для форматування рядків.
+В якості альтернативи, ви можете використати `java.time.format.DateTimeFormatter` з `java.time.LocalDateTime`, який був доданий у Java 8. Він належить до нової бібліотеки часу та дати, що є більш потужною та надійною ніж старі `java.util.Date` та `java.text.SimpleDateFormat`.
 
-У реальних проектах, можна також зустріти використання баз даних, які автоматично перетворюють дати в рядки та назад, що є дуже зручним для збереження та обробки даних.
+## Також дивіться:
 
-## Дивіться також
+Для докладнішої інформації та прикладів, дивіться:
 
-Щоб отримати більше інформації про перетворення дати в рядок у Java, можна ознайомитися з документацією:
-- [Клас Date у Java](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Клас SimpleDateFormat у Java](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Бібліотека Joda-Time](https://www.joda.org/joda-time/)
-- [Збереження дат у базі даних у Java](https://www.baeldung.com/java-datetime-store-database)
+- [Oracle Java Documentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Java 8 DateTime API Guide](https://www.baeldung.com/java-8-date-time-intro)
+- [SimpleDateFormat Example](https://mkyong.com/java/java-date-and-calendar-examples/)

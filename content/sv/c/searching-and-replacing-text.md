@@ -1,6 +1,6 @@
 ---
 title:                "Sökning och ersättning av text"
-html_title:           "C: Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
 simple_title:         "Sökning och ersättning av text"
 programming_language: "C"
 category:             "C"
@@ -10,56 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+# Sök och ersätt text i programmering
 
-Söka och ersätta text är en vanlig uppgift för programmerare. Det handlar helt enkelt om att leta efter en viss bit text och sedan ersätta den med något annat.
+## Vad & Varför?
+Sök och ersätt text är en handling där en sträng identifieras (söks) och byts ut mot en annan. Programmerare gör detta för data manipulation, att korrigera fel, automatisera uppgifter, och så vidare.
 
-Varför gör vi det här? För det första kan det vara ett enkelt sätt att ändra flera förekomster av en viss text eller kod på en gång. Det kan också vara ett sätt att fixa fel eller uppdatera gammal kod.
+## Hur man gör:
+Här är ett grundläggande exempel på hur man kan söka och ersätta text i C-miljö.
 
-# Hur?
-
-Här är två enkla sätt att utföra söka och ersätta i C-programmering:
-
-```
-// Kodexempel 1:
-char text[] = "Hej, världen!";
-char sök[] = "världen";
-char ersätt[] = "universum";
-
-// Användning av funktionen strstr:
-char *ptr = strstr(text, sök); // hitta positionen av "världen" i text
-strcpy(ptr, ersätt); // ersätt "världen" med "universum"
-
-printf("%s", text); // Skriver ut "Hej, universum!"
-
-```
-```
-// Kodexempel 2:
-#include <stdio.h>
+```C
 #include <string.h>
+#include <stdio.h>
 
-int main(){
-  char text[] = "Hello, world!";
-  char sök[] = "Hello";
-  char ersätt[] = "Goodbye";
+void search_replace(char* str, char* oldW, char* newW) {
+    char buffer[200];
+    char *pos;
 
-  // Användning av funktionen strtok:
-  char *ptr = strtok(text, sök);
-  strcat(text, ersätt); // Lägger till "Goodbye" till slutet av strängen
+    while ((pos = strstr(str, oldW)) != NULL) {
+        strncpy(buffer, str, pos-str);
+        buffer[pos-str] = '\0';
+        strcat(buffer, newW);
+        strcat(buffer, pos + strlen(oldW));
+        strcpy(str, buffer);
+    }
 
-  printf("%s", text); // Skriver ut "Goodbye, world!"
-  return 0;
+    printf("%s\n", str);
+}
+
+int main() {
+    char str[] = "Hej världen!";
+    char oldW[] = "världen";
+    char newW[] = "Sverige";
+    search_replace(str, oldW, newW);
+
+    return 0;
 }
 ```
+Output av detta kodexempel skulle vara: "Hej Sverige!"
 
-# Djupdykning
+## Djupdykning
+Sök och ersätt har länge varit ett verktyg inom textbehandling, och implementeringen av det i C var ett steg framåt för att erbjuda direkt kontroll till utvecklare. Det finns alternativa sätt att söka och ersätta text - en metod skulle vara att använda 'sed'-verktyget i UNIX.
 
-Sök- och ersättningsfunktioner började som en del av Unix-operativsystemet på 1970-talet. Sedan dess har dussintals olika implementationer skapats för olika programmeringsspråk.
+Implementationen av denna funktion kan variera betydligt. I det ovanför angivna exemplet används inbyggda strängfunktioner som 'strstr', 'strncpy', 'strcat', och 'strcpy'. Dessa kan dock ändras beroende på den specifika sök- och ersättläsningsalgoritmen som efterfrågas.
 
-Det finns också andra sätt att söka och ersätta text i C, till exempel användning av reguljära uttryck (regex). Det är en mer avancerad metod som kräver regelbundna uttryck och specialfunktioner för att leta och ersätta text.
-
-# Se också
-
-- [strstr documentation](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
-- [strtok documentation](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)
-- [Regular Expressions in C](https://www.geeksforgeeks.org/different-ways-iterate-string-c/)
+## Se även
+För mer information om sök och ersätt, se följande källor:
+1. [Sök och ersätt på Stack Overflow](https://stackoverflow.com/questions/779875/how-do-i-replace-a-string-in-place-in-c)
+2. [C Tutorial: strängmanipulation](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+3. [GNU Sed](https://www.gnu.org/software/sed/manual/sed.html)

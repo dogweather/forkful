@@ -1,6 +1,6 @@
 ---
 title:                "Ta bort tecken som matchar ett mönster"
-html_title:           "Python: Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
 simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Python"
 category:             "Python"
@@ -10,34 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## Vad och Varför?
+Att radera tecken som matchar ett mönster innebär att från en sträng ta bort alla tecken som stämmer med ett visst kriterium (mönstret). Programmers gör detta för att rensa obetydliga eller oönskade tecken och för att forma data på ett lättläsligt och standardiserat sätt.
 
-Att ta bort tecken som matchar ett mönster, även känt som regex, är en viktig del av programmering. Det låter dig söka igenom strängar och ta bort oönskade tecken eller mönster. Det är särskilt användbart för dataanalyser och webbutveckling.
+## Hur man gör:
+Textbehandlingen i Python är relativt enkel. Nedan finns ett exempel på hur du tar bort alla icke-alfanumeriska tecken från en sträng med Python:
 
-## Så här gör du:
-
-```python
+```Python
 import re
-
-text = "Hej! Det här är en textsträng. 123"
-clean_text = re.sub(r"[^A-Za-z ]", "", text)
-print(clean_text)
+s = "Hej där! Hur mår du __idag__?"
+clean_s = re.sub(r'\W+', '', s)
+print(clean_s)
 ```
+När du kör det här får du 'HejdrHurmårduidag' som output.
 
-Output: "Hej Det hr en textstrng"
+## Fördjupning
+Mönstermatchning har varit en grundläggande princip i databehandling ända sedan tidiga kommandotolkar som UNIX sh och senare bash. Att rensa upp en sträng genom att ta bort oönskade tecken var något som Python ansåg vara kritiskt och införde tidigt i sin utveckling.
 
-Denna kod visar hur man använder Python's inbyggda funktion för regex (re) för att ta bort alla tecken som inte är bokstäver eller mellanslag från en textsträng.
+Ett alternativ till metoden ovan är att använda list comprehension, vilket kan vara snabbare om mönstret är enkelt.
 
-## Djupdykning:
+```Python
+s = "Hej där! Hur mår du __idag__?"
+clean_s = ''.join(e for e in s if e.isalnum())
+print(clean_s)
+```
+Denna kod ger samma output som tidigare exempel 'HejdrHurmårduidag'.
 
-Regex är en förkortning för "regular expression" och har funnits sedan 1950-talet. Det är ett kraftfullt verktyg för strängmanipulation och mönstermatching. Förutom att ta bort tecken som inte matchar ett visst mönster, kan du även använda regex för att hitta och ersätta, splitta strängar och utföra andra komplexa operationer.
+Python använder "re" biblioteket för att matcha mönster, vilket implementeras med hjälp av regular expressions, en mycket kraftfull textmanipulationsteknik.
 
-Det finns alternativ till regex, som till exempel string-metoder (t.ex. .replace() och .split()) men dessa kan bli begränsande när det kommer till mer avancerad manipulering av text.
+## Se också
+Python dokumentationen innehåller massor av bra information:
 
-Implementationen av regex i Python görs genom modulen "re". Det finns ett stort antal mönster och symboler som kan användas för att matcha olika tecken och mönster. Det finns även möjlighet att skapa egna mönster för mer specifika behov.
+[Reguljära uttryck i Python](https://docs.python.org/3/library/re.html)
 
-## Se också:
+[Så här tar du bort tecken från en sträng i Python](https://www.journaldev.com/23763/python-remove-character-from-string)
 
-- [Python re documentation] (https://docs.python.org/3/library/re.html)
-- [Regex Cheat Sheet] (https://www.debuggex.com/cheatsheet/regex/python)
-- [Learn Python the hard way] (https://learnpythonthehardway.org/book/ex11.html)
+[List comprehension i Python](https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions)

@@ -10,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Verificar Se um Diretório Existe em Gleam
+## O Que & Porquê?
+Verificar se um diretório existe é uma função comum em programação que retorna se um diretório específico já existe no sistema. Fazemos isso para evitar erros ao tentar criar um diretório que já existe ou acessar um que não existe.
 
-Se você é um programador, provavelmente já se deparou com a necessidade de verificar se um diretório existe em algum momento. Mas o que significa verificar se um diretório existe e por que os programadores fazem isso?
+## Como Fazer: 
+Aqui está um exemplo de como você pode fazer isso na linguagem de programação Gleam:
 
-## O que & Por quê?
+```Gleam
+import gleam/filesystem
 
-Verificar se um diretório existe é um processo simples de determinar se um diretório específico existe no sistema de arquivos. Os programadores geralmente fazem isso para garantir que suas operações de leitura e gravação de arquivos não falhem por causa da ausência do diretório necessário.
-
-## Como Fazer:
-
-Para verificar se um diretório existe em Gleam, podemos usar a função `fs.Dir.exists/1`, passando o caminho do diretório desejado como argumento. Se o diretório existir, a função retornará `Ok` e, caso contrário, retornará `Err`.
-
+let check = filesystem.dir_exists("caminho/para/o/diretório")
+case check {
+  True ->
+    io.println("O diretório existe!")
+  False ->
+    io.println("O diretório não existe!")
+}
 ```
-Gleam ...
-fs.Dir.exists("caminho/do/diretório")
-|> Gleam.Result.inspect
+Quando executado, a saída para um diretório existente será:
+``` 
+O diretório existe!
 ```
-
-A saída seria `Ok(true)` se o diretório existir ou `Ok(false)` se não existir.
+E se o diretório não existir, a saída será:
+``` 
+O diretório não existe!
+```
 
 ## Mergulho Profundo
+Historicamente, a verificação da existência de um diretório sempre fez parte das operações de sistema de arquivos. Isso é crucial principalmente no desenvolvimento de aplicativos que lidam com leitura e gravação de arquivos.
 
-Antes do advento da programação funcional, os programadores de linguagens imperativas costumavam usar comandos como `mkdir` ou `dir /ad` para verificar a existência de um diretório. No entanto, em Gleam, podemos aproveitar a função `fs.Dir.exists/1` para uma solução mais concisa e elegante.
+In Gleam, a biblioteca 'filesystem' incorpora funções como 'dir_exists' para manipular o sistema de arquivos. Esta função retorna um 'boolean', onde 'True' significa que o diretório existe e 'False', o contrário.
 
-Para verificar a existência de um diretório em outros idiomas, os programadores podem recorrer a funções semelhantes, como `os.path.exists()` em Python ou `File.Exists()` no C#.
+Uma alternativa para 'dir_exists' seria usar 'list_dir' que lista os diretórios e arquivos existentes, e então checar se o diretório desejado está nessa lista. No entanto, para grandes sistemas de arquivos, isso seria ineficiente. 
 
-## Veja Também
+## Veja Também 
+A documentação completa para a biblioteca 'filesystem' em Gleam pode ser encontrada em [Gleam filesystem documentation](https://gleam.run/documentation/libraries/gleam-filesystem). 
 
-- Documentação oficial da função `fs.Dir.exists/1` em Gleam: https://gleam.run/documentation/standard_library.html#fs.Dir.exists
-- Exemplos adicionais e discussões sobre verificação de existência de diretório em Gleam: https://github.com/gleam-lang/gleam/issues/1289
+Além disso, a documentação oficial da linguagem Gleam pode ser acessada em [Gleam documentation](https://gleam.run/documentation/). Ele é uma ótima fonte para entender mais sobre outras funcionalidades do Gleam!

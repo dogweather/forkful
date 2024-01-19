@@ -1,7 +1,7 @@
 ---
-title:                "HTML 구문 분석"
-html_title:           "C#: HTML 구문 분석"
-simple_title:         "HTML 구문 분석"
+title:                "HTML 파싱"
+html_title:           "Arduino: HTML 파싱"
+simple_title:         "HTML 파싱"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜? 
+# HTML Parsing 이란 무엇이고 왜 필요한가?
 
-HTML 파싱은 HTML 문서에서 원하는 정보를 추출하는 것을 말합니다. 프로그래머들은 이를 통해 웹 사이트나 앱에서 필요한 데이터를 쉽게 가져올 수 있습니다.
+## 무엇과 왜?
+HTML Parsing은 HTML 문서나 문자열의 구조를 파악하고 오브젝트나 데이터로 변환하는 과정을 말합니다. 프로그래머들이 이를 하는 이유는 웹페이지의 데이터를 추출하거나 조작하려는 경우가 대부분입니다.
 
-## 하나하나 따라해보세요: 
+## 어떻게 하는가?
+C#에서 HTML Parsing을 하려면 HtmlAgilityPack 라이브러리를 사용하면 됩니다. 아래는 간단한 예시입니다.
 
 ```C#
-using System.Net; // 네트워크 관련 기능을 사용하기 위해 라이브러리를 임포트합니다.
+using HtmlAgilityPack;
 
-string url = "https://www.example.com"; // 파싱할 웹 사이트의 URL을 정의합니다.
-string html; // 웹 사이트의 HTML 코드를 저장할 변수를 선언합니다.
+var html = @"<html>
+                 <head></head>
+                 <body>
+                     <h1>Welcome to HTML Parsing</h1>
+                 </body>
+             </html>";
 
-WebClient client = new WebClient(); // 웹 클라이언트 생성
-html = client.DownloadString(url); // 지정한 URL에서 HTML 코드를 다운로드하여 html 변수에 저장
+var htmlDoc = new HtmlDocument();
+htmlDoc.LoadHtml(html);
+
+var node = htmlDoc.DocumentNode.SelectSingleNode("//h1");
+
+Console.WriteLine(node.InnerHtml);
 ```
+이 코드를 실행하면, 콘솔에는 "Welcome to HTML Parsing"이 출력됩니다.
 
-위의 코드를 실행하면 웹 사이트의 HTML 코드를 가지고 올 수 있습니다. 이제 이 코드를 다른 메서드를 이용해 원하는 정보만 추출하면 됩니다.
+## 깊은 이해
+HTML Parsing은 웹 크롤링(데이터 스크래핑)의 주요 과정 중 하나로, 웹사이트의 정보를 수집하기 위해 개발된 기술입니다. 이 기술은 CSSOM, SAX, DOM 등 다양한 알고리즘을 기반으로 합니다.
 
-## 더 들어가보기: 
+HtmlAgilityPack 외에도 AngleSharp 같은 C# 라이브러리를 사용해 HTML을 파싱할 수 있습니다. 이 라이브러리를 사용하면 HTML 문서의 DOM을 쉽게 탐색하고 조작할 수 있습니다.
 
-HTML 파싱은 웹 개발에서 매우 중요한 역할을 합니다. 웹 페이지나 앱 내에서 정보를 표시하거나 검색 기능을 구현할 때 이를 이용할 수 있습니다.
+HTML Parsing 과정은 HTML 문서를 UTF-8 문자열로 로드하고, 이를 나무 구조의 노드로 변환하는 것으로 시작합니다. 이후 SelectSingleNode 또는 SelectNodes 메서드를 사용해 특정 요소를 검색하고 추출할 수 있습니다.
 
-또한 HTML 파싱에는 다른 방법들도 있습니다. 예를 들어, JavaScript를 이용해 웹 페이지를 파싱할 수도 있습니다. 또는 C# 이외의 다른 프로그래밍 언어를 이용해서도 HTML 파싱을 할 수 있습니다.
-
-HTML을 파싱하는 방법은 다양하지만 기본적으로는 웹 사이트의 HTML 코드를 다운로드 한 후, 이를 분석하여 원하는 정보를 추출하는 과정을 거칩니다. 이 과정을 자세히 공부하고 응용 가능한 실력을 키우는 것이 중요합니다.
-
-## 더 알아보기: 
-
-- [간단한 C# HTML 파싱 예제](https://www.c-sharpcorner.com/blogs/parsing-html-in-c-sharp1)
-- [JavaScript를 이용한 웹 페이지 파싱 방법](https://www.w3schools.com/js/js_htmldom.asp)
-- [코드 라이브러리를 이용해 HTML 파싱하기](https://codehosting.net/blog/BlogEngine/post/Simple-HTML-dom-parser-in-C)
+## 참고 자료
+- HTMLAgilityPack 사용법: https://html-agility-pack.net/
+- AngleSharp 라이브러리: https://anglesharp.github.io/
+- 크롤링에 대한 깊은 이해: https://chaosweb.tistory.com/73
+- 웹 스크래핑에 대한 기본 지식: https://realpython.com/beautiful-soup-web-scraper-python/

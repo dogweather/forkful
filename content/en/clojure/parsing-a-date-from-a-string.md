@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Clojure recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,34 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Parsing a Date from a String in Clojure
+
 ## What & Why?
 
-Parsing a date from a string is the process of converting a date that is represented as a string into a more structured data type that can be used in a program. This is commonly done when dealing with user input or when working with date-based data. This allows programmers to manipulate and compare dates more easily and accurately within their code.
+Parsing a date from a string is the process of converting a string representation of a date and/or time into a usable date object in your program. We do this when we need to manage, format, or perform operations with dates that have been input or received as strings.
 
 ## How to:
 
-To parse a date from a string in Clojure, we can use the ```clojure.core/date-time``` function. This function takes in a string representing a date and returns a data-time object.
+Parsing a date from a string in Clojure can be smoothly done using the `clj-time` library. Here's a simple example:
 
-```clojure
-(clojure.core/date-time "2020-06-12")
+```Clojure
+(require '[clj-time.format :as f])
+
+(defn parse-date [date-str]
+  (f/parse (f/formatter "yyyy-MM-dd") date-str))
+
+(parse-date "2022-07-01")
 ```
 
-The output of this code would be:
+If you run the code above you can parse the date in a "yyyy-MM-dd" format. The output will look like this:
 
-```clojure
-#object[java.time.LocalDateTime 0x34f42314 "2020-06-12T00:00:00"]
+```Clojure
+#object[org.joda.time.DateTime 0x643b6439 "2022-07-01T00:00:00.000Z"]
 ```
 
-This data-time object can then be used in various operations and comparisons within our program.
+This is a DateTime object, and you can perform various operations on it.
 
-## Deep Dive:
+## Deep Dive
 
-Parsing dates has been a long-standing challenge in programming, as date formats can vary greatly and can be difficult to convert into a standardized format. In Clojure, the ```clojure.core/date-time``` function uses the ISO-8601 format to convert a string into a data-time object. However, there are other alternative libraries such as ```clojure.java-time``` that offer more robust options for handling dates and times in Clojure, including support for different date formats and time zones.
+Historically, Clojure relied on Java Interoperability for date parsing. This process was often seen as cumbersome. `clj-time`, a library built on Joda-Time, offers an idiomatic way to deal with dates and times in Clojure.
 
-The implementation of the ```clojure.core/date-time``` function relies on the Java ```java.time.LocalDateTime``` class, which is part of the Java 8 Date and Time API. This provides a more modern and comprehensive approach to working with dates and times in Java and Clojure.
+As an alternative, you could directly use Java Interop for manipulating dates but it's often more involved. Here's a simple example:
 
-## See Also:
+```clojure
+(.parse (java.text.SimpleDateFormat. "yyyy-MM-dd") "2022-07-01")
+```
+But considering readability and simplicity, `clj-time` is recommended.
 
-- [Clojure Documentation for date-time function](https://clojuredocs.org/clojure.core/date-time)
-- [Clojure Java Time Library](https://github.com/dm3/clojure.java-time)
-- [Java 8 Date and Time API Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+Internally, `clj-time` leverages powerful DateTime structures from Joda-Time providing facilities for parsing and formatting dates, and various other time calculations.
+
+## See Also
+
+For more about parsing dates, consider these additional resources:
+
+1. Full documentation for the clj-time library can be found at: https://github.com/clj-time/clj-time.
+
+2. For a deeper understanding of Clojure date operations and more, you might want to dig into Clojure for the Brave and True (https://www.braveclojure.com/).
+
+3. Related date and time Java interoperability practices in Clojure: https://clojure.org/reference/java_interop.
+
+Remember, parsing a date from a string is a basic, but essential skill in your Clojure toolbelt. Get comfortable with date-parsing, and your future Clojure selves will thank you.

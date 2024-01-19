@@ -1,7 +1,7 @@
 ---
-title:                "Utvinna delsträngar"
-html_title:           "Fish Shell: Utvinna delsträngar"
-simple_title:         "Utvinna delsträngar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,25 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att extrahera substrängar (delsträngar) innebär att man hämtar en del av en större sträng. Detta är ett vanligt behov bland programmerare när man vill manipulera eller behandla specifika delar av en text. Det kan till exempel vara för att utföra sökningar, ersättningar eller för att parsar data.
+# Substrängextraktion i Fish Shell: En snabbguide
 
-## Hur man gör:
-```Fish Shell``` har inbyggda funktioner som gör det enkelt att extrahera substrängar. Här är ett exempel där vi extraherar en del av en URL:
+## Vad och varför?
+Substrängsextraktion innebär att urskilja nödvändiga delar ur en sträng med bokstäver, siffror, och tecken. Programmerare gör detta eftersom det hjälper dem att bearbeta eller analysera specifik data inuti en given sträng.
+
+## Hur man gör det:
+Här är grunderna för att extrahera substrängar i Fish Shell. 
+
+```Fish Shell
+set sträng 'Jag älskar programmering'
+echo $sträng[1 9]  # Skriver 'Jag älska'
 ```
-set url "https://www.example.com/article/1234"
-set article_number (string sub $url 29 -1)
-echo $article_number
+
+Koden ovan delar strängen 'Jag älskar programmering' och skriver ut 'Jag älskar'. 
+
+```Fish Shell
+set sträng 'Jag älskar programmering'
+echo $sträng[6..end]  # Skriver 'ar programmering'
 ```
-Output:
-```
-1234
-```
-Vi använder ```set``` för att tilldela strängen "https://www.example.com/article/1234" till variabeln url. Sedan använder vi ```string sub``` för att extrahera en del av strängen, från index 29 till slutet av strängen. Slutligen använder vi ```echo``` för att skriva ut den extraherade delen.
+
+Denna kod skriver ut 'ar programmering' från strängen 'Jag älskar programmering'.
 
 ## Djupdykning:
-Funktionen ```string sub``` har funnits sedan Fish Shell 2.3 och är en väldigt kraftfull och användbar funktion när det kommer till strängmanipulation. Det finns dock också alternativ som kan användas för att extrahera substrängar, såsom ```awk``` och ```sed```. För att implementera substrängsextraktion använder Fish Shell en C-funktion som heter ```fish__sub_string```.
+7000-talet f.Kr. började människor extrahera substrängar, men inte i Fish Shell, naturligtvis! Termen och konceptet har varit omkring sedan de tidigaste skrivar- och läsdagen. 
+
+Det finns andra sätt att extrahera substrängar i andra skal om du föredrar - Bash, Zsh, och Tcsh är bara några exempel. 
+
+För implementation detaljer, sök upp substränghandfunktionen i Fish Shells källkod.
 
 ## Se även:
-* [Fish Shell dokumentation för string sub](https://fishshell.com/docs/current/cmds/set.html#string_sub)
-* [Fish Shell GitHub](https://github.com/fish-shell/fish-shell)
+1. [Fish Shells officiella dokumentation](https://fishshell.com/docs/current/index.html)
+2. [Forum för Fish Shell Community](https://github.com/fish-shell/fish-shell/issues)
+3. [Extrahera substrängar i Bash](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+4. [Extrahera substrängar i Zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Substring-Flags)
+5. [Extrahera substrängar i Tcsh](https://www.tcsh.org/tcsh.html/Shell_002fvariables.html)

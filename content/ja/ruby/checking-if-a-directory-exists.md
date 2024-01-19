@@ -1,7 +1,7 @@
 ---
-title:                "「ディレクトリが存在するかどうかを確認する」"
-html_title:           "Ruby: 「ディレクトリが存在するかどうかを確認する」"
-simple_title:         "「ディレクトリが存在するかどうかを確認する」"
+title:                "ディレクトリが存在するかどうかの確認"
+html_title:           "Go: ディレクトリが存在するかどうかの確認"
+simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃ 何となぜ？
+## 何となぜ？
 
-ディレクトリが存在しているかどうかをチェックすることは、プログラマーが特定のアクションを実行する前に必要なステップです。例えば、ファイルを読み込む前に、そのファイルが実際に存在しているかどうかを確認する必要があります。これにより、不必要なエラーやバグを防ぐことができます。
+ディレクトリが存在するかどうかを確認するとは、指定したパスにディレクトリが存在するかどうかを調べるプログラムの方式です。これを行う理由は、対象ディレクトリにアクセスしようとしてエラーを引き起こす前に、予期せぬエラーを避けるためです。
 
-＃＃ 方法：
+## 方法:
+
+以下は「Dir.exist?」メソッドを使った例です。
 
 ```Ruby
-if File.directory?("path/to/directory")
-  puts "Directory exists!"
+# Check if a directory exists
+if Dir.exist?('/path/to/directory')
+  puts 'Directory exists!'
 else
-  puts "Directory does not exist."
+  puts 'Directory does not exist.'
 end
 ```
 
-出力：
+これが出力されます:
 
-```
-Directory exists!
-```
+    Directory does not exist.
 
-＃＃ 深く掘り下げる
+これは「/path/to/directory」というディレクトリが存在しないことを示しています。
 
-（1）歴史的な文脈：ディレクトリの存在をチェックするメソッドは、長い間コンピューターの世界で使用されてきました。初期のオペレーティングシステムでは、ディレクトリの存在をチェックすることはより手間のかかる作業でした。
+## ディープダイブ
 
-（2）代替方法：ディレクトリが存在するかどうかを調べるために使用する方法はいくつかあります。上記のコードの場合、`File.exist?()`メソッドを使用することもできます。
+ディレクトリ存在確認の概念は、GUIがない早期のコンピュータで開始され、ディレクトリが存在するかどうかを手動で確認しなければならなかったからです。代替手段として、「File.directory?」を使用することで、指定したパスがディレクトリかどうかを確認することも可能です。しかし、「Dir.exist?」メソッドの方が、ディレクトリの存在だけをチェックするため、推奨されています。
 
-（3）実装の詳細：Rubyでは、特別なメソッドを使用して、ディレクトリの存在をチェックすることができます。これは、ファイルシステムへのアクセスを簡単にするために提供されています。
+## 参考情報
 
-＃＃ 関連情報を参照
-
-[Fileクラス](https://ruby-doc.org/core-2.7.1/File.html) 、[Dirクラス](https://ruby-doc.org/core-2.7.1/Dir.html)、および[Pathnameクラス](https://ruby-doc.org/stdlib-2.7.1/libdoc/pathname/rdoc/Pathname.html) のドキュメンテーションを参照してください。
+Ruby公式ドキュメンテーション: [Dir.exist?](https://ruby-doc.org/core-2.6.3/Dir.html#method-c-exist-3F)、[File.directory?](https://ruby-doc.org/core-2.6.3/File.html#method-c-directory-3F)  
+プログラミングについて詳しく知りたい方は、[The Pragmatic Bookshelf](https://pragprog.com/)をご覧ください。

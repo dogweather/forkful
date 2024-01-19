@@ -1,7 +1,7 @@
 ---
-title:                "基本認証付きでのhttpリクエストの送信"
-html_title:           "PowerShell: 基本認証付きでのhttpリクエストの送信"
-simple_title:         "基本認証付きでのhttpリクエストの送信"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするためのものか？
+## 何となぜ？
 
-ベーシック認証でHTTPリクエストを送るとは、インターネット上でコンピューター間のデータのやりとりを実現する方法の一つです。プログラマーがこれを行う理由は、セキュリティ上の理由にあります。ベーシック認証を使用することで、リクエストを送信する際にユーザー名とパスワードを使用してユーザーを認証することができます。
+HTTPリクエストに基本認証を使用するとは、単にユーザーネームとパスワードを提供してサーバーと通信を行うまっすぐな方法です。プログラマーがこれを行う理由は、情報をセキュアに送受信するため、または特定のWebサービスに認証情報を提供するためといったものです。
 
-## 方法：
-
-```PowerShell
-# Invoke-WebRequestを使用してHTTPリクエストを送信する例
-# オプションでユーザー名とパスワードを指定し、Basic認証を追加することができます。
-# 「-UseBasicParsing」オプションを使用することによって、インターネットエクスプローラーのアドオンを使用するよりも高速でリクエストを送ることができます。
-
-Invoke-WebRequest -Uri "https://example.com/" -Method GET -Credential (Get-Credential) -UseBasicParsing
-```
+## どうするの？
 
 ```PowerShell
-# Invoke-RestMethodを使用してHTTPリクエストを送信する例
-# オプションでユーザー名とパスワードを指定し、Basic認証を追加することができます。
-# 「-UseBasicParsing」オプションを使用することによって、インターネットエクスプローラーのアドオンを使用するよりも高速でリクエストを送ることができます。
-
-Invoke-RestMethod -Uri "https://example.com/" -Method GET -Credential (Get-Credential) -UseBasicParsing
+$URL = 'http://example.com/'
+$Username = 'user'
+$Password = 'pass123'
+$Base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $Username,$Password)))
+$result = Invoke-RestMethod -Uri $URL -Headers @{Authorization=("Basic {0}" -f $Base64AuthInfo)}
+```
+```PowerShell
+echo $result
 ```
 
-## 深堀り
+結果を得るために`echo $result`を使うことができます。
 
-ベーシック認証は、1990年代に開発された初期のインターネットプロトコルの一つであり、今でも多くのウェブサービスで使用されています。しかし、プライバシーの観点やセキュリティ強化の要求により、ベーシック認証の代替方法が現在ではより多く使用されています。これらの代替方法には、「ダイジェスト認証」や「OAuth」と呼ばれるものがあります。実際にコードを書く際には、ベーシック認証の負荷と比較して、より安全な方法でHTTPリクエストを送ることをお勧めします。
+## ディープダイブ 
 
-## 関連リンク
+基本認証でHTTPリクエストを送信するためのこの形式は、古くから存在していて新しいテクノロジーに取って代わられてない安定した方法です。しかしながら、OAuthなど他のより現代的で安全な認証手段が開発され、多くのサービスはしだいにそちらに移行しています。
 
-- [記事タイトルの理由を理解する](https://www.example.com/why-send-http-request-basic-auth)
-- [インターネットプロトコルの歴史を学ぶ](https://www.example.com/internet-protocol-history)
-- [ベーシック認証を行うための他のプログラミング言語の例](https://www.example.com/other-programming-language-basic-auth-examples)
+PowerShellにおける基本認証のHTTPリクエストの実装は、ヘッダー情報の手動エンコードを通じて行われます。それは認証情報（ユーザーネームとパスワード）をBase64形式にエンコードし、 `Authorization`ヘッダーにその情報を埋め込むというプロセスです。
+
+## 参考情報
+
+- PowerShellのInvoke-RestMethodについての詳細は[こちら](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)から確認できます。
+- 基本認証について更に深く知るための[リンク](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)です。
+- より現代的な認証方法であるOAuthについての[詳細](https://oauth.net/)です。

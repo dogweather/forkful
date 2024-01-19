@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "C# recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "C#"
 category:             "C#"
@@ -12,39 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading command line arguments is a way for programmers to pass input values to their program without having to manually enter them during runtime. This is particularly useful for programs that need specific information to run, such as file paths or options for execution.
+Reading command line arguments in C# involves retrieving the values passed to a program at the start from the command line. Developers use this feature to allow user input to dictate the operation of programs, providing a flexible way to control application behavior without modifying the code.
 
 ## How to:
 
-To read command line arguments in C#, use the ```args``` parameter in the ```Main``` method, which is automatically generated when creating a console application. This parameter is of type ```string[]```, which means it is an array of strings that contains all the arguments passed to the program.
-
-Example code:
+Here's a simple C# code snippet that reads command line arguments:
 
 ```C#
-static void Main(string[] args)
-{
-    Console.WriteLine("First argument: " + args[0]);
-    Console.WriteLine("Second argument: " + args[1]);
+class Program {
+    static void Main(string[] args) {
+        for (int i = 0; i < args.Length; i++) {
+            Console.WriteLine("Arg{0} = {1}", i, args[i]);
+        }
+    }
 }
 ```
 
-Sample output:
+Assuming you run your program `program.exe` with two arguments "hello" and "world", the output would be:
 
-```
-> dotnet run argument1 argument2
-
-First argument: argument1
-Second argument: argument2
+```sh
+Arg0 = hello
+Arg1 = world
 ```
 
-Note that the program name itself is also considered an argument, so the first element in the ```args``` array will always be the program name.
+## Deep Dive
 
-## Deep Dive:
+Historically, command line arguments were the primary way to pass parameters to a program. They're still useful for scripts, batch operations, and tools.
 
-Command line arguments have been a part of computer programming since the earliest days. In the early days of computing, computers only had a command line interface and programs were executed by typing in command line arguments. As graphical user interfaces became the norm, command line arguments became less prominent but are still used in various scenarios, such as software installation or batch processing.
+As alternatives, consider using configuration files or environment variables, which can be more suitable for complex parameters or sensitive data.
 
-In addition to reading command line arguments in the ```Main``` method, you can also use the ```Environment.GetCommandLineArgs()``` method to retrieve all the arguments as an array of strings. This method includes the program name as the first element in the array, similar to the ```args``` parameter in the ```Main``` method.
+When reading command line arguments in C#, the arguments are stored in the `args` array passed to the `Main` method. It doesn't contain the program name, contrary to some languages like C or C++. The array is automatically populated by C# runtime, and arguments passed on command line are separated by spaces, unless they're enclosed in double quotes - these will be treated as a single argument.
 
-## See Also:
+## See Also
 
-To learn more about using command line arguments in C#, check out the official Microsoft documentation here: [Command-Line Arguments (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+1. More on command-line arguments in .NET: [https://docs.microsoft.com/en-us/dotnet/core/tutorials/cmdline](https://docs.microsoft.com/en-us/dotnet/core/tutorials/cmdline)
+2. Other ways to provide app configuration: [https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration)
+3. For understanding the C# Main method: [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/).

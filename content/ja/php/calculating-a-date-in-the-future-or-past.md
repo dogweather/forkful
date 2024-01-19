@@ -10,37 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに&なぜ？
-過去や未来の日付を計算するとは、特定の日から一定の期間を増減させた新しい日付を求めることです。プログラマーがこれを行う理由は、アプリケーションやウェブサイトで特定の日付に関連する処理を行う必要があるからです。
+## 何となぜ?
+日付の計算は特定の日付から将来または過去の日付を割り出すことです。プログラマーは予定納期の計算、イベントのスケジューリングなど、多岐にわたるタスクを実行するためにこれを行います。
 
-## 方法：
-```
+## 使い方:
+以下は基本的なコード例とその出力です。現在日から30日後の日付を計算します。
+
+```PHP
 <?php
-// 1日後の日付を取得
-echo date('Y-m-d', strtotime('+1 day'));
-// 出力：今日の日付の翌日
+$current_date = date('Y-m-d'); // 現在日
+$future_date = date('Y-m-d', strtotime("+30 days", strtotime($current_date)));
+echo $future_date;
+?>
+```
+出力:
+```PHP
+2022-04-20
+```
+同様に、過去の日付を計算するにはマイナス記号("-")を使用します。
 
-// 1週間後の日付を取得
-echo date('Y-m-d', strtotime('+1 week'));
-// 出力：今日の日付に1週間を足した日付
+```PHP
+<?php
+$current_date = date('Y-m-d'); // 現在日
+$past_date = date('Y-m-d', strtotime("-20 days", strtotime($current_date)));
+echo $past_date;
+?>
+```
+出力:
+```PHP
+2022-03-11
+```
+## ディープダイブ:
+歴史的な文脈: PHPの `strtotime` 関数は強力なUNIXタイムスタンプ変換ツールです。古くから存在していますが、現代のPHPでは日付計算にもっとも一般的に使われます。
 
-// 1ヶ月後の日付を取得
-echo date('Y-m-d', strtotime('+1 month'));
-// 出力：今日の日付に1ヶ月を足した日付
+代替案: `strtotime`に代わることが可能なのは `DateTime` オブジェクトとその `modify` メソッドです。 
 
-// 1年後の日付を取得
-echo date('Y-m-d', strtotime('+1 year'));
-// 出力：今日の日付に1年を足した日付
+```PHP
+<?php
+$date = new DateTime(); 
+$date->modify('+1 month'); 
+echo $date->format('Y-m-d');
 ?>
 ```
 
-## 詳細:
-- 過去や未来の日付を計算する方法は、PHPの内部関数である`date()`と`strtotime()`を使用することで実現できます。
-- date()関数は、指定したフォーマットに基づいて日付を表示します。
-- strtotime()関数は、日付文字列を解析し、Unixタイムスタンプ（1970年1月1日からの秒数）を返します。
-- 過去や未来の日付を計算する際、単位となる値（日数、週数、月数、年数など）を第二引数に指定する必要があります。
-- 上記の例では、計算によって新しい日付が得られるため、変数に代入せずに直接echo文で出力しています。
+実装の詳細: `strtotime` 関数は、与えられた文字列表現をUNIXタイムスタンプ（1970年1月1日からの秒数）に変換します。これはさまざまな日付操作を非常に簡単にします。
 
-## 関連リンク:
-- [PHPのdate()関数のドキュメント](https://www.php.net/manual/en/function.date.php)
-- [PHPのstrtotime()関数のドキュメント](https://www.php.net/manual/en/function.strtotime.php)
+## さらなる情報源:
+- PHP公式ドキュメントの `strtotime`: https://www.php.net/manual/ja/function.strtotime.php
+- PHP公式ドキュメントの `DateTime`: https://www.php.net/manual/ja/class.datetime.php
+- PHPで日付を操作するいくつかの方法: https://www.php.net/manual/ja/datetime.modify.php.

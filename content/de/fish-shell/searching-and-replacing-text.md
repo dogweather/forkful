@@ -1,7 +1,7 @@
 ---
-title:                "Textsuche und -austausch"
-html_title:           "Fish Shell: Textsuche und -austausch"
-simple_title:         "Textsuche und -austausch"
+title:                "Suchen und Ersetzen von Text"
+html_title:           "Bash: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
+Textsuche und -ersetzung ist der Prozess, bei dem spezifischer Text innerhalb einer Datei gefunden und durch anderen Text ersetzt wird. Programmierer nutzen das, um Daten zu bereinigen, Muster zu ändern und Fehler zu korrigieren.
 
-Suchen und Ersetzen von Text ist eine häufige Aufgabe, die Programmierer ausführen müssen. Es beinhaltet das Finden eines bestimmten Textabschnitts innerhalb eines größeren Textes und das Ersetzen durch einen anderen Text. Programmierer verwenden dies, um schnell Änderungen in ihrem Code vorzunehmen oder um Fehler zu beheben.
-
-# Wie geht's:
-
-Um Text in der Fish Shell zu suchen und zu ersetzen, können Sie das vi und sed Kommando verwenden. Im Folgenden finden Sie eine Beispielverwendung und die entsprechende Ausgabe:
+## So geht's:
+Genug Theorie, lasst uns mit der Praxis anfangen. Hier sind einige Beispiele, wie man in der Fish Shell Text sucht und ersetzt. 
 
 ```Fish Shell
-# Öffne eine Datei mit vi
-vi datei.txt
-
-# Suche und ersetze "Hallo" durch "Hi"
-:%s/Hallo/Hi/g
-
-# Speichere die Änderungen und beende vi
-:wq
-
-# Zeige den Inhalt der Datei an
-cat datei.txt
-
-# Output:
-Hi Welt
+# Ersetzen Sie das Wort "Fehler" durch "Problem" in einer Datei
+sed -i 's/Fehler/Problem/g' deine_datei.txt
 ```
 
-# Tiefergehende Details:
-Die Suche und Ersetzung von Text hat eine lange Geschichte in der Programmierung und war schon in den frühen Tagen der Textverarbeitung von Bedeutung. Alternativen zu vi und sed sind z.B. das beliebte Tool awk, welches sich durch eine leistungsstarke Syntax auszeichnet. Die Implementierung von Suchen und Ersetzen in der Fish Shell basiert auf regulären Ausdrücken, die ein mächtiges Werkzeug sind, um Textmustern zu ermitteln und zu manipulieren.
+Ihre Ausgabe sollte so aussehen:
 
-# Weitere Informationen:
-Weitere Informationen und Tutorials zur Verwendung von vi, sed und awk finden Sie auf den offiziellen Websites dieser Tools. Außerdem können Sie in der Fish Shell-Dokumentation mehr über die Verwendung von regulären Ausdrücken erfahren.
+```Fish Shell
+Korrektur des Problems im Code ... 
+```
+
+## Tiefgang
+Historisch gesehen ist die Textsuche und -ersetzung so alt wie die Programmierung selbst, verwendet zur Durchführung repetitiver Aufgaben. Es gibt viele Alternativen zu "sed", z.B. "awk", "grep" und "perl". In Bezug auf Fish muss der Befehl "sed" mit Vorsicht verwendet werden, da er auf jedem Betriebssystem unterschiedlich funktionieren kann.
+
+## Siehe Auch
+Für weitere Informationen, schauen Sie sich die folgenden Ressourcen an:
+
+- Offizielle Fish Shell Dokumentation (https://fishshell.com/docs/current/index.html)
+  
+- GNU Sed Dokumentation (https://www.gnu.org/software/sed/manual/sed.html)
+  
+- Stack Overflow: Suchen und Ersetzen in der Fish Shell (https://stackoverflow.com/questions/tagged/fish)

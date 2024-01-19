@@ -1,7 +1,7 @@
 ---
-title:                "两个日期的比较"
-html_title:           "Elixir: 两个日期的比较"
-simple_title:         "两个日期的比较"
+title:                "比较两个日期"
+html_title:           "Clojure: 比较两个日期"
+simple_title:         "比较两个日期"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,31 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么和为什么？
-比较两个日期是指比较两个日期或日期时间中哪个日期更早或更晚。程序员常常需要比较日期来排序数据或检查日期的有效性。
+## 是什么 & 为什么？
+比较两个日期就是判断它们在时间上的先后顺序。编程者通常会进行日期比较以便于进行时间序列分析，进行排序，根据日期进行搜索或过滤等。
 
-# 如何：
-```Elixir
-Date.compare(~D[2020-01-01], ~D[2021-01-01])
-# 输出：-1
+## 如何实现：
+在 Elixir 中，我们可以使用 `Date.compare/2` API 来比较两个日期。下面是一个简单的例子。
+```elixir
+  iex> first_date = Date.from_iso8601("2020-01-01")
+  {:ok, ~D[2020-01-01]}
+
+  iex> second_date = Date.from_iso8601("2020-01-10")
+  {:ok, ~D[2020-01-10]}
+
+  iex> Date.compare(first_date, second_date)
+  :lt  # 表示 first_date 小于 second_date
 ```
 
-```Elixir
-Date.compare(~D[2021-01-01], ~D[2021-01-01])
-# 输出：0
-```
+## 深入了解：
+比较两个日期是编程语言中常见的功能，从早期的函数式编程语言到近期的面向对象编程语言，该功能一直被广泛应用。在Elixir中，`Date.compare/2` API 是用于比较日期的主要工具。然而，你也可以使用内置运算符 `>`，`<`，`>=`，`<=`，`==`，`!=` 来比较日期，当然，这需要你先确认一些条件。
 
-```Elixir
-Date.compare(~D[2021-02-01], ~D[2021-01-01])
-# 输出：1
-```
+比如说，我们要确保被比较的值一定是日期。同样，我们也需要注意时区的影响。由于 Elixir 支持原生时区处理，所以如果你的程序中涉及到时区，你需要使用正确的时区。
 
-# 深入了解：
-日期比较在计算机编程中非常常见，它通常作为比较算法的一部分。在历史上，日期比较是一个复杂的问题，因为不同的文化和国家使用不同的日期格式。在Elixir中，使用Date.compare函数来比较两个日期，它会根据日期的起始日期来进行比较。如果想要比较更精确的日期和时间，可以使用DateTime.compare函数。
-
-# 查看更多：
-了解更多关于日期的比较，请参考以下链接：
-
-- [Elixir官方文档的日期比较介绍](https://hexdocs.pm/elixir/Date.html#compare/2)
-- [更复杂的日期比较函数：Calendar.compare/2](https://hexdocs.pm/calendar/Calendar.html#compare/2)
-- [其他可能的替代方法：使用Timex库](https://hexdocs.pm/timex/Timex.Elixir.Date.html#compare/2)
+## 另请参阅：
+如要深入了解 Elixir 中的日期函数，如 `Date.compare/2`，`DateTime.compare/2` 以及其它日期相关操作，你可以访问以下链接：
+- [官方文档](https://hexdocs.pm/elixir/Date.html#compare/2)
+- [Elixir School - Date & Time BASICs](https://elixirschool.com/en/lessons/basics/date_time/)
+- [Elixir Forum - Working with dates](https://elixirforum.com/t/working-with-dates-times-and-timezones-in-elixir-a-brief-guide/19196)

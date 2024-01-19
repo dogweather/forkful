@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "Haskell: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,36 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Luodessa ohjelmia, saattaa joskus olla tarpeen luoda väliaikaisia tiedostoja. Tämä voi tapahtua esimerkiksi silloin, kun ohjelmalle tarvitaan tallennustila väliaikaisille tiedoille tai kun halutaan kopioida tiedostoja ennen niiden muokkaamista. Väliaikaiset tiedostot ovat siis vain väliaikaisessa käytössä ja poistetaan yleensä lopuksi.
+## Mikä & Miksi?
 
-## Miten:
-Haskell-ohjelmassa väliaikaisen tiedoston luominen tapahtuu Functools-moduulin avulla käyttäen `withTempFile`-funktiota. Tämä avaa uuden väliaikaisen tiedoston ja palauttaa sen tiedostonimen sekä avaamisen yhteydessä luodun kahva-objektin. Tässä esimerkki koodista:
+Tilapäiset tiedostot ovat tiedostoja, jotka luodaan tallentamaan väliaikaista tietoa. Ohjelmoijat käyttävät niitä tallentamaan suuria määriä tietoa, jota ei tarvitse säilyttää pitkäaikaisesti.
 
-```Haskell
-import System.IO.Temp (withTempFile)
+## Näin teet:
 
-main = withTempFile "temporary.txt" $ \tempFilePath tempFileHandle -> do
-    putStrLn $ "Luotiin väliaikainen tiedosto: " ++ tempFilePath
-    hPutStrLn tempFileHandle "Tässä on väliaikaisen tiedoston sisältö."
-```
-
-Tämän koodin suorittamisen jälkeen prosessin juurikansioon luodaan tiedosto nimeltä `temporary.txt`, joka sisältää tekstirivin "Tässä on väliaikaisen tiedoston sisältö.".
-
-## Syvempi sukellus:
-Väliaikaisen tiedoston luomisesta on monta eri tapaa. Ennen `withTempFile`-funktion lisäämistä Functools-moduuliin, väliaikaisia tiedostoja luotiin yleensä system-kutsulla. Tässä on esimerkki koodista, joka käyttää system-kutsua luomaan väliaikaisen tiedoston:
+Voimme luoda väliaikaiset tiedostot Haskellissa `System.IO.Temp` -kirjastoa käyttäen.
 
 ```Haskell
-import System.Process
+import System.IO.Temp
 
-main = do
-    (tempFilePath, tempFileHandle) <- readProcess "mktemp" ["-q", "temporaryXXXXXX.txt"] ""
-    putStrLn $ "Luotiin väliaikainen tiedosto: " ++ tempFilePath
-    writeFile tempFilePath "Tässä on väliaikaisen tiedoston sisältö."
+esimerkki = withSystemTempFile "temp.txt" $ \tempPath tempHandle -> do
+  hPutStrLn tempHandle "Tämä on väliaikainen tiedosto Haskellissa"
+  hClose tempHandle
+  contents <- readFile tempPath
+  putStrLn contents
 ```
 
-On hyvä huomata, että `withTempFile`-funktio huolehtii automaattisesti väliaikaisen tiedoston poistamisesta, kun taas system-kutsua käytettäessä tämä tulee tehdä itse koodin avulla.
+Kun suoritat tämän koodin, se luo väliaikaisen tiedoston, kirjoittaa sen sisältöön, sitten lukee ja tulostaa sen sisällön. Tiedosto poistetaan automaattisesti `withSystemTempFile`-funktion suorittamisen jälkeen.
 
-## Katso myös:
-- [Haskellin Functools-moduulin dokumentaatio](https://hackage.haskell.org/package/functools/docs/System-IO-Temp.html)
-- [Haskellin system-kutsun dokumentaatio](https://hackage.haskell.org/package/process/docs/System-Process.html)
+## Syvä sukellus:
+
+Väliaikaisten tiedostojen luomisen historiassa yksi suurimmista haasteista oli turvallisuus. Haskell tarjoaa ratkaisun tähän käyttämällä ainutlaatuista tiedostonimeä joka kerta `withSystemTempFile`-funktion avulla.
+
+Jos ei halua käyttää `System.IO.Temp`-kirjastoa, voit luoda tiedoston manuaalisesti ja hallita sen elinkaarta itse. 
+
+```Haskell 
+import System.IO 
+
+esimerkki2 = do 
+  let tempPath = "temp2.txt"
+  writeFile tempPath "Toinen esimerkki väliaikaisesta tiedostosta"
+  contents <- readFile tempPath
+  putStrLn contents 
+  removeFile tempPath
+```
+
+Tämä on hyvä vaihtoehto, jos haluat hallita itse tiedoston elinkaarta, mutta vaatii muistaa poistaa tiedosto, kun sitä ei enää tarvita.
+
+## Katso Myös:
+
+- Haskellin virallisista dokumentaatioista löydät lisätietoa `System.IO.Temp` -kirjastosta:
+  - [System.IO.Temp](https://hackage.haskell.org/package/temporary-0.3.0.1/docs/System-IO-Temp.html)
+- Lisätietoja tiedostojen kanssakäymisestä Haskellissa:
+  - [Learn You a Haskell - Tiedostot ja virranhallinta](http://learnyouahaskell.com/input-and-output)

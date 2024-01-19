@@ -1,6 +1,6 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "PHP: Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
 simple_title:         "Interpolando uma string"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O que é e porquê?
 
-Interpolar uma string (também conhecida como interpolação de string) é uma técnica comum utilizada por programadores PHP para criar uma nova string combinando variáveis e textos. Isso permite que os programadores criem strings dinâmicas, alterando-as a partir de variáveis definidas no código.
+Interpolar uma string no PHP significa incluir variáveis diretamente dentro da string, dando-lhe um acesso fácil e rápido aos seus valores. Os programadores fazem isto para evitar concatenar strings, tornando o código mais limpo e eficiente.
 
 ## Como fazer:
 
-```
-<?php
-$nome = "Mariana";
-echo "Olá, $nome! Como vai?";
-```
+Aqui estão alguns exemplos de como interpolamos strings com o PHP.
 
-Resultado:
-```
-Olá, Mariana! Como vai?
+```PHP
+$nome = "João";
+echo "Olá, $nome! Seja bem-vindo.";
 ```
 
-Neste exemplo, a variável "nome" é interpolada na string, gerando uma saída personalizada.
+Saída:
 
-## Mergulho profundo:
+```
+Olá, João! Seja bem-vindo.
+```
 
-Essa técnica é comumente usada em linguagens de programação e remonta aos primórdios do PHP. Alternativas para interpolar uma string incluem o uso de concatenação de strings com o operador ".", o uso da função "sprintf()" ou a utilização de templates. É importante ter cuidado ao interpolar strings com conteúdo de fontes externas, pois isso pode resultar em vulnerabilidades de segurança.
+## Um olhar mais atento
 
-## Veja também:
+A interpolação de strings não é um conceito único do PHP. Foi introduzido nas linguagens Perl e Shell Script e o PHP adotou-o por ser uma forma eficiente de trabalhar com strings.
 
-- [Documentação oficial do PHP sobre interpolação de strings](https://www.php.net/manual/pt_BR/language.types.string.php#language.types.string.syntax.double)
-- [Exemplos práticos de interpolação de strings em PHP](https://www.php.net/manual/pt_BR/language.types.string.php#language.types.string.syntax.double)
-- [Tutorial sobre formatação de strings com a função sprintf()](https://www.php.net/manual/pt_BR/function.sprintf.php)
+Como alternativa à interpolação, pode-se usar a função `sprintf` ou `printf`. No entanto, a interpolação muitas vezes resulta num código mais claro e de leitura fácil.
+
+Note que na interpolação de strings, a string deve ser delimitada por aspas duplas (""). Aspas simples ('') não funcionarão. Isto é diferente de outras linguagens como o JavaScript, em que ambas as aspas simples e duplas funcionam.
+
+```PHP
+$nome = "João";
+echo 'Olá, $nome! Seja bem-vindo.'; // Isto não vai funcionar, imprime "Olá, $nome! Seja bem-vindo."
+```
+
+## Ver também
+
+1. [Interpolação de strings na documentação oficial do PHP](https://www.php.net/manual/pt_BR/language.types.string.php).
+2. [Perfis de string e aspas no site PHP: The Right Way](https://phptherightway.com/#strings_and_slangs).
+3. [Interpolation or concatenation? A PHP benchmark](https://stackoverflow.com/questions/4679953/single-quotes-vs-double-quotes-in-php-about-speed) for discovering the speed difference between interpolation and concatenation.

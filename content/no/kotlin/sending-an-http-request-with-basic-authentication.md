@@ -1,7 +1,7 @@
 ---
-title:                "Å sende en http forespørsel med grunnleggende autentisering"
-html_title:           "Kotlin: Å sende en http forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,51 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Sending av en HTTP-forespørsel med grunnleggende autentisering er en måte for en programmerer å få tilgang til et beskyttet nettsted eller nettverk. Dette er viktig for sikkerhet og personvern, da det betyr at bare de med riktig autentiseringsinformasjon kan få tilgang til sensitive data eller tjenester. 
+## Hva & Hvorfor?
+Å sende en HTTP-forespørsel med grunnleggende autentisering handler enkelt sagt om å overføre data over internett på en sikker måte. Programmører gjør dette for å begrense tilgangen til sensitiv informasjon.
 
-## Hvordan:
-Eksempel på Kotlin-kode for å sende en HTTP-forespørsel med grunnleggende autentisering og hvordan resultatet vil se ut:
+## Hvordan Gjør Man Det:
+La oss se på hvordan du kan håndtere dette i Kotlin.
+
+Du kan bruke biblioteket ktor for klientforespørselen. Hvis det ikke allerede er lagt til i prosjektet ditt, inkluder det med følgende:
 
 ```Kotlin
-// Importerer nødvendige biblioteker 
-import java.net.HttpURLConnection 
-import java.net.URL 
-
-// Definerer autentiseringsinformasjon 
-val username = "brukernavn"
-val password = "passord" 
-
-// Oppretter en URL-objekt for nettstedet du vil få tilgang til 
-val url = URL("https://nettsted.com") 
-
-// Oppretter en HTTP-tilkobling 
-val connection = url.openConnection() as HttpURLConnection 
-
-// Setter autentiseringsmetoden til grunnleggende 
-connection.setRequestProperty ("Authorization", "Basic " + 
-        Base64.getMimeEncoder().encodeToString((username + ":" + password).toByteArray())) 
-
-// Sender tilkoblingen 
-connection.connect() 
-
-// Skriver ut svaret fra nettstedet 
-println(connection.responseMessage) 
-
-// Lukker tilkoblingen 
-connection.disconnect() 
+implementation 'io.ktor:ktor-client-core:1.6.3'
+implementation 'io.ktor:ktor-client-cio:1.6.3'
+implementation 'io.ktor:ktor-client-auth:1.6.3'
 ```
 
-Eksempel på resultat:
-```
-OK
+Kodeeksempel for å utføre autentiserte HTTP-forespørsler:
+
+```Kotlin
+import io.ktor.client.*
+import io.ktor.client.features.auth.*
+import io.ktor.client.features.auth.providers.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
+
+val client = HttpClient {
+    install(Auth) {
+        basic {
+            sendWithoutRequest = true
+            username = "brukernavn"
+            password = "passord"
+        }
+    }
+}
+
+suspend fun main() {
+    val response: HttpResponse = client.get("https://eksempel.com")
+    println(response.readText())
+}
 ```
 
-## Dykk dypere:
-- Historisk kontekst: Grunnleggende autentisering har vært en vanlig måte å autentisere brukere på siden starten av internett og er fortsatt i bruk i dag.
-- Alternativer: Det finnes andre autentiseringsmetoder, som for eksempel OAuth eller HMAC, som tilbyr mer sikkerhet enn grunnleggende autentisering.
-- Implementasjonsdetaljer: I eksempelet bruker vi Base64-koding for å sikre at autentiseringsinformasjonen blir sendt på en sikker måte.
+## Dypdykk
+Historisk sett har grunnleggende autentisering lenge vært en standardmetode for å sikre webapplikasjoner, selv om det har visse begrensninger, slik som at det ikke inneholder innebygd metode for å logge ut.
 
-## Se også:
-- Dokumentasjon for HTTP-forespørsler med Kotlin: https://kotlinlang.org/docs/reference/using-gradle.html#http-client
-- Eksempler på autentisering i Kotlin: https://www.baeldung.com/kotlin-http-basic-authentication
+Det finnes flere alternativer til HTTP Basic Authentication, for eksempel Digest Access Authentication, OAuth eller JSON Web Tokens (JWT).
+
+Angående implementeringsdetaljer brukes Base64-koding av brukernavn og passord som en del av autentiseringsprosessen i grunnleggende autentisering. Bemerk at Base64-koding ikke er en kryptografisk sikker mekanisme, den bare transformerer dataen på en måte som er designet for å hindre at den blir lurt av dataprotokoller.
+
+## Se Også
+Her er noen kilder for mer informasjon:
+
+- Offisiell Kotlin dokumentasjon: https://kotlinlang.org/docs/home.html
+
+- Ktor dokumentasjon for klienter med autentisering: https://ktor.io/docs/basic-auth-from-client.html
+
+- HTTP Basic Authentication på MDN Web Docs: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication.

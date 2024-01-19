@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie wyników debugowania"
-html_title:           "Fish Shell: Drukowanie wyników debugowania"
-simple_title:         "Drukowanie wyników debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest debugowanie i dlaczego programiści to robią? 
-Debugowanie polega na wyświetlaniu informacji o działaniu programu w celu zidentyfikowania i naprawy ewentualnych błędów. Programiści używają tego narzędzia, aby ułatwić sobie proces tworzenia i naprawiania kodu oraz uniknąć potencjalnych problemów podczas działania programu.
+## Co i dlaczego?
 
-## Jak tego dokonać w Fish Shell?
-W Fish Shell możemy wyświetlać debug output używając polecenia "echo". Przykładowy kod i jego output przedstawiony jest poniżej:
+Drukowanie informacji do debugowania to metoda śledzenia zachowania kodu poprzez wyświetlanie wartości zmiennych, stanów funkcji itp. Na ogół stosuje się ją, aby szybko i skutecznie znajdować i naprawiać błędy w kodzie.
 
-```
-echo "To jest przykładowy debug output."
-```
+## Jak to zrobić:
 
-Output:
-```
-To jest przykładowy debug output.
+Jeżeli chcesz wydrukować komunikat debugowania w Fish Shell, możesz użyć funkcji `echo`. Prosty przykład wygląda tak:
+
+```Fish Shell
+set var "Hello World"
+echo $var
 ```
 
-Możemy również użyć specjalnego flaga "-d" w poleceniu "set" do wyświetlania debug outputu dla konkretnych zmiennych. Przykładowy kod i output:
+Wynik powinien wyglądać tak: 
 
-```
-set -d zmienna "To jest przykładowy debug output."
-echo $zmienna
-```
-
-Output:
-```
-To jest przykładowy debug output.
+```Fish Shell
+Hello World
 ```
 
-## Głębsze informacje
-Debugowanie jest ważnym elementem procesu programowania od samego początku istnienia informatyki. Alternatywnymi narzędziami do wyświetlania debug outputu w Fish Shell są również polecenia "printf" i "printf '%s\n'" oraz funkcje "debug" i "debug_msg". W Fish Shell istnieje również możliwość włączenia całego trybu debugowania używając flagi "-d" przy uruchamianiu shella lub dodając ją w pliku konfiguracyjnym Fish Shell (config.fish).
+## Głębsze zrozumienie:
 
-## Zobacz również
-- Dokumentacja Fish Shell:
-https://fishshell.com/docs/current/
-- Tutorial o debugowaniu w Fish Shell:
-https://fishshell.com/docs/current/commands.html#debugging
-- Przykładowy kod z wykorzystaniem debug outputu:
-https://github.com/fingercom/fish-shell-examples/blob/master/debug.fish
+Historia drukowania informacji do debugowania jest długa i różnorodna, ale zawsze była kluczowym elementem narzędzi developerskich. Alternatywą dla wykorzystania `echo` w Fish Shell jest na przykład użycie interpretera `printf`, który oferuje więcej opcji formatowania. Co do technicznych szczegółów, funkcja `echo` działa poprzez wysłanie tekstu na standardowe wyjście, zazwyczaj terminal.
+
+## Zobacz także:
+
+Jeżeli jesteś zainteresowany poznaniem więcej na temat debugowania w Fish Shell, oto kilka linków, które mogą Ci pomóc:
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Programming in Fish](http://fishshell.com/docs/3.1/tutorial.html#tut_scripts)
+- [Debugging in Fish](https://stackoverflow.com/questions/26753042/how-do-i-debug-fish-scripts)

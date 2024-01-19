@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
-html_title:           "Gleam: बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## क्या और क्यों?"
-एचटीटीपी अनुरोध भेजना उपयोगकर्ताओं के द्वारा अपनी सेवाओं को सुरक्षित रखने के लिए एक प्रसिद्ध तकनीक है। इसमें, उपयोगकर्ताओं को अपने अनुरोध को प्रमाणीकृत करने के लिए उनके पहचान को प्रदान करना होता है। इससे सुरक्षित डेटा के साथ विनिर्देशित बातचीत की अनुमति होती है।
+## क्या और क्यों?
+HTTP अनुरोध के साथ मूल प्रमाणीकरण एक तरीका है जिसका उपयोग सुरक्षित रूप से डेटा को सर्वर में भेजने के लिए किया जाता है। प्रोग्रामर इसे इसलिए करते हैं क्यूंकि यह एक व्यावहारिक और सुरक्षित तरीका है डेटा का संचार करने का।
 
-"## कैसे?"
-```Gleam
-let request = http.send("https://example.com", {auth: basic("username", "password")})
-```
-उपरोक्त कोड स्निपेट में, हम एक एचटीटीपी अनुरोध भेज रहे हैं जो "https://example.com" URL पर जाएगा और basic प्रमाणीकरण का उपयोग करेगा। यहां, हम "username" और "password" को अपने उपयोगकर्ता पहचान के रूप में उपयोग कर रहे हैं।
+## कैसे करें:
+Gleam में, आप `httpc` library का उपयोग करके Basic Auth के साथ HTTP अनुरोध भेज सकते हैं। यहाँ एक उदाहरण है:
 
 ```Gleam
-#आउटपुट
-{Ok(response)} ->
-  response.body
-  |> String.trim()
-  |> Expect.equal("Expected Data")
-{Error(_)} ->
-  Expect.fail("Request failed")
+import gleam/httpc.{get, Response}
+import gleam/string.concat
+import gleam/uri.{Uri, from_string}
+
+fn basic_auth_header(user: String, password: String) -> String {
+  "Basic " 
+  |> concat(base64.encode(concat(user, ":" |> concat(password))))
+}
+
+fn main(uri: Uri) -> Result(Response, Nil) {
+  let headers = httpc.default_headers()
+    |> list.append([#("Authorization", basic_auth_header("user", "password"))])
+  
+  get(from_string("https://example.com") |> result.unwrap, headers)
+}
 ```
-यहां, हमने अनुरोध का प्रतिक्रियाओं को ओले-से-डेटा में बदलने के लिए कोड को लिखा है। उत्तर का अमान्य होने पर, हम अपने उपयोगकर्ता को सूचित कर देंगे कि अनुरोध विफल हो गया है।
 
-"## गहराई में डूबना"
-(1) एचटीटीपी प्रमाणीकरण का इतिहास है कि यह प्रविष्टियों को सुरक्षित बनाने का सबसे आसान तरीका है। (2) अन्य विकल्पों में, अनुषंगिक उपयोगकर्ता पहचान को समर्थन करने वाले एचटीटीपी अनुरोधों को शामिल करना है। (3) webrequest पैकेज के रूप में कोड के लिए प्रयोग के लिए उपलब्ध है, जो सभी प्रमुख एचटीटीपी प्रमाणीकरण शैलियों को समर्थित करता है।
+जब आप इस कोड को चलाते हैं, तो आपका HTTP अनुरोध Basic Auth के साथ `https://example.com` पर भेजा जाएगा। 
 
-"## भी देखे"
-अधिक जानकारी के लिए, आप webrequest पैकेज और ग्लीम के अन्य तरीकों को जांच सकते हैं। आप एचटीटीपी प्रमाणीकरण के लिए विभिन्न रुचि कैसे भी है, आप इसे अपने उपयोगकर्ता लागत के रूप में उपयोग कर सकते हैं।
+## गहन अध्ययन:
+HTTP Basic Authentication का इतिहास माइक बर्नर ली की HTTP/1.0 विनिर्देशन में जब शामिल किया गया था, यह आरंभ किया। यह सरल एपीआई है जिसमें उपयोगकर्ता नाम और पासवर्ड का एक single string base64 encoded होता है।
+
+विकल्प तकनीकें OAuth और Digest Access Authentication हैं - दोनों अधिक सुरक्षित हैं लेकिन उन्हें लागू करना अधिक कठिन है।
+
+Basic Auth HTTP अनुरोध में Authentication header के रूप में एक प्रमाणीकरण string शामिल करके काम करता है। कोई भी सर्वर जो Basic Auth समर्थन करता है इस header को decode कर पासवर्ड की पुष्टि कर सकता है। 
+
+## देखें भी:
+1. RFC 2617, HTTP Authentication: [Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+2. Gleam प्रशासनिक [दस्तावेज़ीकरण](https://gleam.run/getting-started/)
+3. `httpc` [मॉड्यूल दस्तावेज़ीकरण](https://hexdocs.pm/gleam_httpc/gleam/httpc@v1.0.0.html)

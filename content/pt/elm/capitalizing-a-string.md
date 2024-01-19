@@ -1,7 +1,7 @@
 ---
-title:                "Maiúsculas em uma string"
-html_title:           "Elm: Maiúsculas em uma string"
-simple_title:         "Maiúsculas em uma string"
+title:                "Capitalizando uma string"
+html_title:           "Elm: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê? 
+## O Que & Por Quê?
 
-Capitalizar uma string é simplesmente transformar a primeira letra de cada palavra em maiúscula. Programadores geralmente fazem isso para melhorar a legibilidade de seus códigos, tornando-os mais fáceis de entender.
+Capitalização de strings se refere a transformar a primeira letra de uma string em maiúscula. Programadores utilizam estes métodos para formatar saídas ou ordenar alfabeticamente, dependendo do caso.
 
-## Como Fazer:
+## Como fazer:
 
-Em Elm, existem várias maneiras de capitalizar uma string. Uma delas é usando a função `String.capitalize` que transformará a primeira letra maiúscula e deixará todas as outras letras minúsculas. Outra opção é utilizar a biblioteca `elm-community/elm-string-extras` que oferece a função `String.Extra.capitalizeWords` que capitaliza todas as palavras em uma string.
-
-```Elm
-import String exposing (capitalize)
-import String.Extra exposing (capitalizeWords)
-
-capitalizado = capitalize "olá mundo"
--- Output: "Olá mundo"
-
-todasPalavrasCapitalizadas = capitalizeWords "bem-vindo ao elm"
--- Output: "Bem-Vindo Ao Elm"
-```
-
-## Mergulho Profundo:
-
-A prática de capitalizar strings vem dos primeiros dias da programação, quando as máquinas eram limitadas em termos de memória e recursos. Naquela época, era comum escrever códigos sem espaços e com todas as letras em maiúsculas. Atualmente, capitalizar strings é uma forma de deixar o código mais legível e também pode ser usada para uniformizar a formatação de dados.
-
-Existem outras maneiras de capitalizar uma string em Elm, como por exemplo escrevendo sua própria função para isso. Seria algo parecido com isso:
+No Elm, para capitalizar uma string, vamos usar a função `toUpper` do módulo `String` para transformar a primeira letra em maiúscula e a função `toLowerCase` para deixar o restante da string em minúsculas. Aqui está o exemplo:
 
 ```Elm
-import List exposing (head, map)
-import Char exposing (toUpper)
+import String
 
-capitalizeAll words =
-    String.join " " (map capitalizeWord words)
+capitalize : String -> String
+capitalize word =
+    case String.uncons word of
+        Nothing ->
+            ""
 
-capitalizeWord word =
-    String.fromList (
-        toUpper (head word) :: List.repeat (String.toLower (head word)) (String.length word - 1)
-    )
+        Just ( first, rest ) ->
+            String.toUpper (String.fromChar first) ++ String.toLower rest
 ```
 
-## Veja Também:
+Essa função 'capitalize' recebe uma string e devolve a mesma string, mas com a primeira letra em maiúscula. Se a string for vazia, ela devolve uma string vazia.
 
-- Documentação oficial do `String` em Elm (https://package.elm-lang.org/packages/elm/core/latest/String)
-- Biblioteca `elm-community/elm-string-extras` (https://package.elm-lang.org/packages/elm-community/elm-string-extras/latest)
-- Outra abordagem para capitalizar strings em Elm (https://discourse.elm-lang.org/t/capitalize-first-letter-learning-experience/1136)
+## Aprofundamento
+
+A capitalização de strings se originou da necessidade de manipular texto em software para criar uma saída formatada ou para ordenação alfabética. No caso do Elm, essa funcionalidade não é incorporada diretamente na linguagem, mas pode ser conseguida combinando outras funções de string.
+
+A alternativa à função 'capitalize' que construímos seria usar uma biblioteca externa que provavelmente teria uma implementação semelhante.
+
+Além disso, um detalhe de implementação a notar é que as funções `toUpper` e `toLower` não suportam todos os idiomas. Por exemplo, eles não funcionarão corretamente com caracteres não latinos.
+
+## Veja também
+
+Para mais informações sobre o módulo String e suas funções, você pode acessar a documentação oficial [aqui](https://package.elm-lang.org/packages/elm/core/latest/String).

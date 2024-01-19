@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "PowerShell recipe: Comparing two dates"
+html_title:           "Elm recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,41 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Comparing two dates is the process of determining if two given dates are the same, earlier, or later. This is a common task for programmers when working with time-sensitive data. By comparing dates, programmers can easily sort and classify data based on their chronological order.
+
+Comparing two dates is about determining whether one date is earlier, equal, or later than another. Programmers do this to make decisions, execute relevant logic, or track time-sensitive data in their applications. 
 
 ## How to:
-Comparing two dates in PowerShell is a straightforward process. First, we need to create two date objects using the ```Get-Date``` cmdlet. Then, we can use the comparison operators - ```-eq``` (equal to), ```-gt``` (greater than), and ```-lt``` (less than) to compare the two dates.
+
+Let's see how you can compare two dates in PowerShell. This code block compares two manually set dates:
 
 ```PowerShell
-$firstDate = Get-Date "10/15/2021"
-$secondDate = Get-Date "10/20/2021"
+$date1 = Get-Date -Year 2021 -Month 7 -Day 11
+$date2 = Get-Date -Year 2021 -Month 12 -Day 30
 
-$firstDate -eq $secondDate #output: False
-$firstDate -gt $secondDate #output: False
-$firstDate -lt $secondDate #output: True
+if ($date1 -gt $date2)
+{
+    Write-Output "$date1 is later than $date2"
+}
+elseif ($date1 -eq $date2)
+{
+    Write-Output "$date1 is the same as $date2"
+}
+else
+{
+    Write-Output "$date1 is earlier than $date2"
+}
 ```
+Sample output: `Sunday, July 11, 2021 12:00:00 AM is earlier than Thursday, December 30, 2021 12:00:00 AM.`
 
-In the above example, we create two dates - October 15th, 2021 and October 20th, 2021. By using the ```-eq```, ```-gt```, and ```-lt``` operators, we can compare the two dates and receive a Boolean output indicating the result of the comparison.
+## Deep Dive
 
-It is also possible to use the ```-eq``` operator with the ```Compare-Object``` cmdlet to compare multiple dates at once. 
+PowerShell uses .NET’s DateTime object to manipulate dates and times, which has been around since the first .NET framework release in 2002. Thence, `Get-Date` command serves to return a DateTime object.
 
-```PowerShell
-$dates = @("10/15/2021", "10/17/2021", "10/20/2021")
-$referenceDate = Get-Date "10/18/2021"
+There exists alternatives to `-gt` (greater than) and `-lt` (less than) operators, such as `.CompareTo()` method. However, such alternatives prove less friendly in PowerShell scripts, and the aforementioned operators tend to be more idiomatic.
 
-Compare-Object $dates $referenceDate -IncludeEqual #output: 10/17/2021
-```
+Remember, PowerShell relies on the system's timezone for date comparison unless otherwise specified. Always check your machine's timezone settings when working with date comparison involving user input or data fetched from different timezones.
 
-In this example, we create an array of dates and use the ```Compare-Object``` cmdlet to compare them to a reference date. By using the ```-IncludeEqual``` parameter, we can also include the dates that are equal to the reference date in the output.
+## See Also
 
-## Deep Dive:
-Historically, date comparisons were done by converting dates into numeric values and then comparing them. However, this method was not reliable as it did not account for different date formats and cultures. With PowerShell, we can now use the built-in ```Get-Date``` cmdlet to create date objects and use the comparison operators for accurate comparisons.
-
-Other alternative methods for comparing dates in PowerShell include using the ```New-TimeSpan``` cmdlet to calculate the difference between two dates and using the date formatting options to ensure consistency in comparisons.
-
-When comparing dates in PowerShell, it is essential to pay attention to the format of the dates. Different cultures and regions may use different date formats, so it is crucial to consider this when writing scripts that will be used globally.
-
-## See Also:
-- [PowerShell documentation on Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
-- [PowerShell documentation on Compare-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7.1)
-- [Alternative methods for comparing dates in PowerShell](https://adamtheautomator.com/powershell-compare-dates/)
+- [Microsoft's Official Documentation on Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date)
+- [Working with PowerShell Date Command (Get-Date)](https://www.computerperformance.co.uk/powershell/powershell-get-date/)
+- [Use PowerShell to Compare Two Dates](https://devblogs.microsoft.com/scripting/use-powershell-to-compare-two-dates/)

@@ -1,6 +1,6 @@
 ---
 title:                "文字列の補間"
-html_title:           "Fish Shell: 文字列の補間"
+html_title:           "Arduino: 文字列の補間"
 simple_title:         "文字列の補間"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,41 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？そしてなぜ？
+## ホワット＆ホワイ（なんで？）
+文字列の補間とは、あらかじめ指定した変数値を文字列内に組み込むことを示します。プログラマーたちはこれを使用して、コードの動的性と柔軟性を高め、リード可能性と再利用性を向上させるためです。
 
-文字列をインターポレートするとは何か、そしてなぜプログラマーがそれを行うのかについて説明します。
-
-文字列をインターポレートするとは、文字列中に変数やコマンドを埋め込むことです。これにより、可変の値を含むよりダイナミックなコードを作成することができます。
-
-プログラマーは通常、変数やコマンドの値を参照するために、文字列インターポレーションを使用します。これにより、より効率的で読みやすいコードを作成することができます。
-
-## 使い方：
-
-以下の例をご覧ください。
+## ハウツー（やり方）
+Fish Shellで文字列の補間を行うには、非常にシンプルな構文が必要です。変数をダブルクォーテーション内に配置します。例えば:
 
 ```Fish Shell
-set fruit apple
-set price 1000
-
-echo "I want to buy $fruit for $price yen."
+set name "Fish"
+echo "Hello, $name Shell!"
 ```
 
-Output:
+出力は次のようになります:
 
-```I want to buy apple for 1000 yen.```
+```Fish Shell
+Hello, Fish Shell!
+```
 
-上記の例では、`fruit`と`price`の値が変数として参照されています。また、文字列内で変数を直接参照することで、変数の値を出力することができます。
+## ディープダイブ（詳細情報）
+文字列補間は古い概念で、多くのプログラミング言語で採用されています。しかし、Fish Shell においては、他のシェルスクリプトよりも簡潔で直感的な構文を提供しています。代替手段としては、文字列の連結がありますが、補間の方がはるかに清潔で効率的です。
 
-## 詳細情報：
+補間の実装は非常にシンプル。変数はメモリ中で管理され、評価時にその値に置き換えられます。Fish Shellでは、変数名にダブルクォーテーションがあれば自動的に補間が行われます。
 
-インターポレートについてさらに深く掘り下げると、以下のような情報があります。
-
-- インターポレートは、コマンドラインシェルのファンクションだけでなく、プログラミング言語でも広く使用されています。
-- インターポレートされた文字列が組み立てられるまでのプロセスは、各シェルの仕様によって異なります。
-- インターポレートの代替手段として、コマンド置換やサブシェルを使用することもできます。
-
-## 関連情報：
-
-- [Fish Shellのドキュメント](https://fishshell.com/docs/current/cmds/set.html#set)
-- [Fish ShellのGitHubリポジトリ](https://github.com/fish-shell/fish-shell)
-- [インターポレーションの概要（英語）](https://en.wikipedia.org/wiki/String_interpolation)
+## シーアルソー（参考情報）
+Fish Shellの公式ドキュメンテーション [文字列の補間](https://fishshell.com/docs/current/index.html#expand) をご覧ください。さらに、関連するコンセプトとして [変数のスコープ](https://fishshell.com/docs/current/variables.html) も参照してみてください。

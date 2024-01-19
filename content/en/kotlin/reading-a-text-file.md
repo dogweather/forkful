@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "Kotlin recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,40 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Reading a text file is the process of accessing and extracting information from a file that contains text, such as a .txt or .csv file. Programmers often do this in order to gather data or manipulate the contents of the file for further use in their code.
+Reading a text file in programming means extracting content from a file stored on your machine. This is vital in creating data-driven applications where information is required from other sources.
 
 ## How to:
+The standard library in Kotlin makes reading a text file a very straightforward task. Here's a basic example showcasing it:
+
 ```Kotlin
-//To read a text file in Kotlin, you can use the readText() function from the standard library's File class.
-val file = File("text_file.txt")
-val text = file.readText()
-//This will store the contents of the file in the variable "text" as a string.
+import java.io.File
 
-//You can also use the readLines() function to read the file line by line and store each line in a list.
-val file = File("text_file.txt")
-val lines = file.readLines()
-//This will store each line of the file in the variable "lines" as a list of strings.
-
-//To read a specific line from the file, you can use the useLines() function and specify the line number you want to read.
-val file = File("text_file.txt")
-val line = file.useLines { it.elementAt(2) }
-//This will store the third line of the file in the variable "line" as a string.
-
-//To read a large file efficiently, you can use the forEachLine() function to read the file line by line without loading the entire file into memory.
-val file = File("text_file.txt")
-file.forEachLine {
-    //write your code to manipulate the line here
+fun main() {
+    val lines: List<String> = File("filename.txt").readLines()
+    lines.forEach { println(it) }
 }
-//This will iterate through each line of the file, allowing you to process the data without overwhelming your system's memory.
-
 ```
 
-## Deep Dive:
-Reading text files has been a fundamental part of programming since the early days of computing. Before the widespread use of databases and cloud storage, text files were the primary means of storing and sharing data. While there are now alternative methods for storing and accessing data, text files still have a place in modern programming, especially for small and simple projects.
+This code reads the contents of a file named `filename.txt` line by line and prints each line. Update `filename.txt` with your own file path.
 
-The File class used in Kotlin's standard library includes many useful functions for reading and writing files. In addition to the functions mentioned above, there are also functions for reading files as byte arrays, reading files from URLs, and more. With Kotlin's concise and intuitive syntax, reading text files is made even easier and more efficient.
+And your output should look something like this:
 
-## See Also:
-- [Kotlin File class documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Java File class documentation](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
-- [Stack Overflow: Reading a text file in Kotlin](https://stackoverflow.com/questions/52548610/read-text-file-into-string-array-using-kotlin/52548643)
+```
+first line of text
+second line of text
+third line of text
+```
+This is a basic example but remember, in real-world scenarios you might be dealing with large files or might handle errors due to file unavailability or perform other checks.
+
+## Deep Dive
+If you're observing, Kotlin leverages Java's I/O operations under the hood. This stems from Kotlin's history as a language designed to operate on the JVM and be fully interoperable with Java. 
+
+You can also use other methods to read a file such as `readText()`, which produces the whole content as a single string, or `bufferedReader().use { it.readText() }` for a more memory-friendly solution for larger files.
+
+Note that all these methods throw an exception if the targeted file does not exist or is inaccessible. It's always wise to wrap your IO operations in a try-catch block or handle the exceptions suitably. 
+
+## See Also
+1. [Kotlin Standard Library Documentation - Reading a File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-lines.html)
+2. [Kotlin Documentation - More on Exceptions](https://kotlinlang.org/docs/reference/exceptions.html)
+3. [GeeksforGeeks - Reading a text file in Kotlin](https://www.geeksforgeeks.org/kotlin-read-a-text-file/).

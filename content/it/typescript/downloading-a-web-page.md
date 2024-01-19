@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "TypeScript: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-
-Scaricare una pagina web significa ottenere il suo contenuto e visualizzarlo sul tuo dispositivo. I programmatori lo fanno per creare applicazioni web, che devono ottenere i dati da diverse fonti per funzionare correttamente.
+## Che cosa e Perche?
+Scaricare una pagina web significa prelevare i dati di essa dal server web e portarli sul proprio dispositivo. I programmatori fanno ciò per analizzare i dati, testare l'applicazione o eseguire il web scraping.
 
 ## Come fare:
-
-Provalo tu stesso:
-
-```TypeScript
-// Importa il modulo HTTP
-import * as http from "http";
-
-// Crea un'istanza dell'oggetto HTTP
-let request = http.request("https://www.esempio.com/", (response) => {
-  // Gestisci il contenuto della risposta
-  console.log(response.statusCode);
-});
-
-// Invia la richiesta
-request.end();
-```
-
-Ecco il risultato della tua richiesta:
+Per scaricare una pagina web con TypeScript, possiamo utilizzare librerie come Axios e jsdom. Ecco un esempio:
 
 ```TypeScript
-200
+import axios from 'axios';
+import {JSDOM} from 'jsdom';
+
+async function scaricarePagina(url: string) {
+  const risposta = await axios.get(url);
+  const dom = new JSDOM(risposta.data);
+  console.log(dom.window.document.querySelector('title').textContent);
+}
+
+scaricarePagina('https://example.com');
+```
+Risultato:
+
+```Command Output
+Example Domain
 ```
 
-## Approfondimento:
+## Approfondimenti
+(1) **Contesto storico**: Originariamente, le pagine web erano soltanto file HTML statici scaricati dai server web. Ora, con l'evoluzione degli script lato client, è necessario eseguire il codice JavaScript incluso nelle pagine web per ottenere i dati completi della pagina.
 
-Scaricare una pagina web è una funzionalità fondamentale per le applicazioni web moderne. Prima dello sviluppo di linguaggi di programmazione come TypeScript, i programmatori dovevano scrivere codice più complesso per ottenere una pagina web. Oggi, ci sono molte alternative per scaricare una pagina web, come ad esempio l'utilizzo di librerie di terze parti come Axios o Fetch. Per implementare il download di una pagina web, i programmatori devono conoscere il protocollo HTTP e il funzionamento delle richieste e delle risposte.
+(2) **Alternative**: Oltre ad Axios e JSDOM, ci sono altre librerie come PhantomJS o Puppeteer che consentono un'interazione più complessa con la pagina web, inclusa l'esecuzione del JavaScript. 
 
-## Vedi anche:
+(3) **Dettagli dell'implementazione**: Axios ottiene i dati della pagina web facendo una richiesta HTTP GET al server. Successivamente, questi dati vengono passati a JSDOM, che crea una rappresentazione DOM della pagina che possiamo manipolare con JavaScript.
 
-- https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
-- https://www.npmjs.com/package/axios
-- https://www.npmjs.com/package/node-fetch
+## Vedere Anche
+- [Axios](https://github.com/axios/axios) - Promising based HTTP client for Node.js and browser
+- [jsdom](https://github.com/jsdom/jsdom) - A JavaScript implementation of the WhatWG DOM and HTML standards
+- [Puppeteer](https://github.com/puppeteer/puppeteer) - Headless Chrome or Chromium browsers automation library
+- [PhantomJS](http://phantomjs.org/) - Scriptable Headless Browser (progetto non più mantenuto attivamente)

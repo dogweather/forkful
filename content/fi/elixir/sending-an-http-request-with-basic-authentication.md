@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikoinnin lähettäminen http-pyynnöllä"
-html_title:           "Elixir: Perusautentikoinnin lähettäminen http-pyynnöllä"
-simple_title:         "Perusautentikoinnin lähettäminen http-pyynnöllä"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+# Lähettämässä HTTP-pyyntö Basic Authenticationin kanssa: Elixir kielellä
 
-Lähettäminen HTTP-pyyntö perusautentikoituna tarkoittaa sitä, että pyyntö sisältää käyttäjän tunnistetiedot autentikointia varten. Tämä on yleinen tapa lähettää salasanallisia pyyntöjä turvallisesti verkkopalvelimelle ja se mahdollistaa käyttäjän tunnistamisen ja oikeiden käyttöoikeuksien antamisen.
+## Mikä & Miksi?
+HTTP-pyyntö Basic Authenticationilla on mekanismi, jossa voimme lähettää turvalliset verkkopyynnöt palvelimelle. Ohjelmoijat tekevät tämän varmistaakseen turvallisen tietojen siirron käyttäjiltä palvelimelle.
 
 ## Miten:
-
-```elixir
-# Lähetetään HTTP-pyyntö perusautentikoinnilla käyttäen HTTPoison-kirjastoa
-conn = HTTPoison.BasicAuth.get("https://example.com", "käyttäjänimi", "salasana")
-# Tulostetaan vastaus
-IO.puts(conn.body)
+```Elixir
+defmodule HttpExamples do
+  def get_with_basic_auth do
+    headers = [basic_auth: {"username", "password"}]
+    HTTPoison.get!("https://example.com", headers)
+  end
+end
 ```
+Tässä esimerkissä käytämme HTTPoison-kirjastoa lähettämään HTTP GET -pyynnön `http://example.com` -osoitteeseen, Basic Authenticationin kanssa. `username` ja `password` ovat käyttäjätunnus ja salasana vastaavasti.
 
-Esimerkkitulostus:
+## Syvempi sukellus
+HTTP Basic Authentication oli yksi ensimmäisistä vakiintuneista menetelmistä verkkopalvelimien autentikointiin ja on ollut olemassa HTTP:n syntymisestä lähtien. Se on yksinkertainen ja nopea tapa suojata luottamuksellista tietoa, mutta ei ole itsessään kovin turvallinen.
 
-```
-"Sinut on autentikoitu käyttäjätunnuksella käyttäjänimi" 
-```
+Vaihtoehtoja on monia. Digitaalisen allekirjoituksen, OAuthin, Bearer Tokenin ja monet muut autentikointimenetelmät tarjoavat enemmän turvallisuutta ja joustavuutta.
 
-## Sukellus syvyyksiin:
+Elixirin toteutuksessa on tärkeää huomioida, että `HTTPoison`-kirjastoa käytetään HTTP-pyyntöjen lähettämiseen. Tämä kirjasto mahdollistaa HTTP-pyyntöjen lähettämisen eri metodeilla, mukaan lukien `get`, `post`, `put`, `delete`, ja `patch`.
 
-Perusautentikointi on ollut käytössä jo pitkään ja se on yksi tapa turvata salasanallisilla tiedoilla olevien pyyntöjen lähettäminen. Toisinaan käytetään myös muita autentikointimenetelmiä, kuten HMAC (Hash-based Message Authentication Code) tai OAuth (Open Authorization).
-
-Perusautentikoinnin toteutus vaihtelee eri ohjelmointikielissä ja kirjastoissa. Joissakin tapauksissa autentikointitiedot voivat olla suoraan osana pyyntöä (esim. URLin osana), kun taas toisissa ne välitetään erillisen parametrin kautta. On myös mahdollista tallentaa autentikointitiedot muuttujaan ja käyttää niitä useissa pyynnöissä samassa sovelluksessa.
+Elixir-version 1.12:n uusin versio mahdollistaa HTTP-pyyntöjen lähettämisen suoraan ilman kolmannen osapuolen kirjastoja, mutta tällä hetkellä `HTTPoison` on yleisin tapa lähettää pyyntöjä, koska se on kokonaisvaltainen ja kilpavarusteltu ratkaisu.
 
 ## Katso myös:
-
-- [HTTPoison - Elixir HTTP-kirjasto](https://hexdocs.pm/httpoison/HTTPoison.BasicAuth.html)
-- [Perusautentikointi Wikipedia-sivulla](https://fi.wikipedia.org/wiki/Perusautentikointi)
+- [Official Elixir documentation](https://elixir-lang.org/getting-started/introduction.html)
+- [HTTPoison documentation](https://hexdocs.pm/httpoison/readme.html)
+- [Basic authentication on Wikipedia](https://fi.wikipedia.org/wiki/HTTP/1.1:n_perusautentikointi)

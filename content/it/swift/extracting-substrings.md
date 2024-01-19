@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di sottostringhe"
-html_title:           "Swift: Estrazione di sottostringhe"
-simple_title:         "Estrazione di sottostringhe"
+title:                "Estrazione di sottosequenze"
+html_title:           "Arduino: Estrazione di sottosequenze"
+simple_title:         "Estrazione di sottosequenze"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Che cos'è e perché è importante?
+## Cos'è & Perché?
 
-Estrarre le sottostringhe, o porzioni di testo più piccole, da una stringa più grande è un'operazione comune nella programmazione. I programmatori lo fanno per ottenere solo le informazioni necessarie da una stringa di testo più grande o per manipolare i dati in modo più efficiente.
+L'estrazione di sottostringhe è un processo per ottenere una stringa più piccola da una stringa più grande. I programmatori lo fanno per ispezionare, manipolare o analizzare dati specifici all'interno di una stringa più ampia.
 
-### Come fare:
+## Come fare:
 
-Estrarre una sottostringa in Swift è semplice usando il metodo `substring()` su una stringa. Di seguito è riportato un esempio di codice che mostra come ottenere il primo nome da una stringa contenente sia il nome che il cognome.
+Ecco un esempio basilare per estrarre una sottostringa in Swift.
 
 ```Swift
-let nomeCompleto = "Mario Rossi"
-let primoNome = nomeCompleto.substring(to: nomeCompleto.index(of: " ")!)
-print(primoNome)
+let s = "Benvenuti a Swift!"
+let fine = s.index(s.startIndex, offsetBy: 8)
+let sottostringa = s[..<fine]
+
+print(sottostringa)  // Stampa "Benvenut"
 ```
 
-Questo codice stamperà "Mario". In questo esempio, `nomeCompleto.index(of: " ")` restituisce l'indice della prima occorrenza dello spazio nella stringa, che viene utilizzato per estrarre la sottostringa fino a quel punto.
+Qui, abbiamo deciso di estrarre la sottostringa dai primi 8 caratteri della stringa principale.
 
-### Approfondimento:
+## Approfondimento
 
-L'estrazione delle sottostringhe è stata resa più semplice con l'introduzione di `substring()` in Swift. In passato, i programmatori dovevano usare metodi più complicati come `NSString.substringWithRange()` per ottenere le sottostringhe. Inoltre, esistono altre opzioni per estrarre le sottostringhe come `prefix()` e `suffix()`, che possono essere utili in situazioni diverse.
+Sottostringhe in Swift sono un'innovazione rispetto alle generazioni precedenti di linguaggi di programmazione, che richiedevano l'allocazione di nuovi spazi di memoria per ogni sottostringa. In Swift, una sottostringa condivide la stessa memoria della stringa originale, rendendo l'operazione più efficiente.
 
-È importante notare che quando un'altra variabile fa riferimento alla stessa stringa originale, qualsiasi modifica apportata alla sottostringa ottenuta da quella stringa si riflette anche nella stringa originale.
+Tuttavia, esistono altri modi per estrarre sottostringhe, come utilizzare metodi di estensione String. Ad esempio, si potrebbe creare un'estensione che utiliza `NSRange` per estrarre una sottostringa da una posizione specifica. 
 
-### Vedi anche:
+Dettagli implementativi specifici possono variare, ma la semplicità e l'efficienza della gestione delle stringhe in Swift rimane un vantaggio fondamentale.
 
-- [Documentazione ufficiale di Apple su `substring()`](https://developer.apple.com/documentation/swift/string/2961145-substring)
-- [Guida alla programmazione di Swift di Apple](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID105)
+## Vedi anche
+
+Per ulteriori informazioni su come lavorare con stringhe e sottostringhe in Swift, consultare i seguenti collegamenti:
+
+1. Documentazione Apple su [String and Character](https://developer.apple.com/documentation/swift/string_and_characters) (Inglese)
+2. Guida rapida a [Substring in Swift](https://learnappmaking.com/substring-swift-how-to/) (Inglese)
+3. Tutorial su [How to Split a String into an Array in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-split-a-string-into-an-array-swift-strings) (Inglese)

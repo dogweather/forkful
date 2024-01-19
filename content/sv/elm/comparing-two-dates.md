@@ -1,7 +1,7 @@
 ---
-title:                "Jämföring av två datum"
-html_title:           "Elm: Jämföring av två datum"
-simple_title:         "Jämföring av två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+# Jämföra Datum i Elm Programmering
 
-Att jämföra två datum är en vanlig uppgift för programmerare. Det handlar helt enkelt om att bestämma vilket av två datum som ligger före eller efter det andra. Detta kan vara användbart för att sortera data eller för att kontrollera om ett datum ligger inom en viss tidsram.
+## Vad & Varför?
+Jämföra två datum innebär kontrollera vilket datum som kommer först eller om de två datumen är desamma. Programmerare gör detta för att hantera tidslinjer, schemalägga uppgifter och utföra tidsspecifika beräkningar.
 
 ## Hur man gör:
-
-För att jämföra två datum i Elm, använder man `Date` modulen. Första steget är att konvertera de två datum till `Date` objekt med hjälp av funktionen `Date.fromString`. Sedan kan man använda `Date.compare` för att jämföra de två objekten. Funktionen returnerar en `Order` typ som antingen är `LT` (mindre än), `EQ` (lika med) eller `GT` (större än).
+Här är ett enkelt exempel för att jämföra två datum i Elm:
 
 ```Elm
-import Date exposing (..)
+module Main exposing (..)
+import Date exposing (Date, year, month, day, fromCalendarDate)
 
-date1 = Date.fromString "2021-01-01"
-date2 = Date.fromString "2021-02-01"
+dato1 = fromCalendarDate 2021 1 1
+dato2 = fromCalendarDate 2022 1 1
 
-result = Date.compare date1 date2 -- LT
+main =
+    if dato1 < dato2 then
+      "Dato1 är före Dato2"
+    else if dato1 == dato2 then
+      "Dato1 är samma som Dato2"
+    else
+      "Dato1 är efter Dato2"
 ```
 
-## Djupdykning:
+Om du kör den här koden kommer utdatan att vara "Dato1 är före Dato2", eftersom 1 januari 2021 kommer före 1 januari 2022.
 
-Att jämföra datum är ett vanligt problem inom programmering och det finns många sätt att lösa det på. En alternativ metod är att jämföra datum som `Int` värden, där varje dag räknas som ett numeriskt värde. Men detta kan bli komplicerat med tanke på skottår och månadslängd.
+## Djupdykning
+Historiskt sett har jämförelse av datum alltid varit a central del av programmering. Innan Elm och moderna programmeringsspråk utvecklades, var denna process mycket mer komplicerad och krävde omfattande användning av matematik och konverteringar.
 
-Elm's `Date` modul använder sig av den gregorianska kalendern och stöder datum upp till år 10 000. Implementeringen är skriven i ren Elm-kod och är därför beroende av andra Elm-moduler som `String` och `List`.
+Ett alternativ till direkta jämförelser är att konvertera båda datumen till Unix-tid (sekunder sedan den 1 januari 1970), och sedan jämföra dessa värden. Detta kan dock vara mindre läsbart och kan ge överraskande resultat om tidzoner inte hanteras korrekt.
 
-## Se även:
+Under huven, när du skriver `dato1 < dato2`, använder Elm operatorer definierade för `Date`-datatypen. Dessa operatorer utför försiktigt en jämförelse av åren, månaderna och sedan dagarna, vilket ger ett exakt resultat.
 
-- [Official Elm Date documentation](https://package.elm-lang.org/packages/elm/core/latest/Date)
-- [Wikipedia article on Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar)
-- [Elm's source code for Date module](https://github.com/elm/core/blob/master/src/Date.elm)
+## Se Även
+För ytterligare detaljer och användningssituationer, se dokumentation för Elm Date: https://package.elm-lang.org/packages/elm/time/latest/

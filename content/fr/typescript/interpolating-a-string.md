@@ -1,7 +1,7 @@
 ---
-title:                "Interpoler une chaîne de caractères"
-html_title:           "TypeScript: Interpoler une chaîne de caractères"
-simple_title:         "Interpoler une chaîne de caractères"
+title:                "Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ?
-L'interpolation de chaîne (ou string interpolation en anglais) est une fonctionnalité courante en programmation qui permet d'insérer des valeurs de variables ou d'expressions dans une chaîne de caractères. Elle simplifie la création de chaînes de caractères dynamiques en évitant d'avoir à concaténer plusieurs éléments. Les programmeurs utilisent souvent cette technique pour formater et afficher des messages personnalisés.
+## Qu'est-ce que c'est & Pourquoi ?
+
+L'interpolation de chaînes est le processus d'insertion de variables ou d'expressions dans une chaîne de caractères. C'est une pratique courante pour rendre le code plus propre, plus lisible et plus réutilisable.
 
 ## Comment faire :
-Voici un exemple de code en TypeScript utilisant l'interpolation de chaîne :
 
+En TypeScript, nous utilisons les backticks (`) pour créer une chaîne de caractères, et nous insérons les variables avec ${}. Regardez cet exemple :
 ```TypeScript
-let nom = "John";
-let age = 21;
-
-console.log(`Bonjour ${nom}, vous avez ${age} ans.`);
+let prenom = "Marie";
+let salutation = `Bonjour, ${prenom}!`;
+console.log(salutation);  // "Bonjour, Marie!"
 ```
+Dans cet exemple, la valeur de la variable `prenom` est insérée dans la chaîne `salutation`.
 
-Résultat :
+## Analyse en profondeur
 
-```TypeScript
-Bonjour John, vous avez 21 ans.
-```
+Historiquement, en JavaScript, vous deviez construire ou concaténer des chaînes avec l'opérateur +, ce qui rendait le code encombrant et difficile à lire. L'interopération de chaîne, introduit avec ES6, a résolu ce problème.
 
-Dans cet exemple, nous avons utilisé des expressions entourées par des symboles « ${ } » pour insérer les valeurs de nos variables dans la chaîne.
+Comme alternative à l'interpolation de chaînes, vous pouvez toujours utiliser la concaténation, mais cela peut conduire à un code plus verbosité et moins lisible.
 
-## Plongée en profondeur :
-L'interpolation de chaîne est une technique qui existe depuis de nombreuses années, mais elle est devenue plus populaire avec l'avènement de la programmation orientée objet. Auparavant, les programmeurs utilisaient souvent la concaténation de chaînes pour créer des messages dynamiques, mais cette méthode était fastidieuse et sujette aux erreurs.
+Au niveau de l'implémentation, l'interpolation de chaîne est mise en œuvre comme une façon de formater les chaînes à l'aide des modèles de littéraux de chaîne. La notation de la variable `${nom_variable}` est placée à l'endroit où la valeur de la variable doit apparaître dans la chaîne.
 
-Bien que l'interpolation de chaîne soit disponible dans de nombreux langages de programmation, chaque langage peut avoir sa propre syntaxe. Par exemple, en PHP, on utilise le signe « $ » devant le nom de la variable pour l'insérer dans une chaîne.
+## Voir aussi
 
-En termes d'alternatives, certains programmeurs préfèrent utiliser la méthode de formatage de chaîne, qui consiste à utiliser des placeholders et de fournir les valeurs séparément. Cependant, l'interpolation de chaîne est souvent considérée comme plus simple et intuitive.
+Pour plus d'informations sur l'interpolation de chaînes en TypeScript, référez-vous à ces sources supplémentaires :
 
-## À voir aussi :
-- [Documentation officielle de TypeScript sur l'interpolation de chaîne](https://www.typescriptlang.org/docs/handbook/basic-types.html#template-literals)
-- [Autre article expliquant l'interpolation de chaîne en TypeScript](https://ourcodeworld.com/articles/read/480/how-to-use-string-interpolation-expresions-with-variables-inside-a-string-using-template-literals-in-typescript)
+- La documentation officielle de TypeScript sur les littéraux de chaînes modélisés : [https://www.typescriptlang.org/docs/handbook/2/template-literals.html](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
+
+- Un tutoriel complet sur l'interpolation de chaînes avec des exemples : [https://www.tutorialsteacher.com/typescript/typescript-string](https://www.tutorialsteacher.com/typescript/typescript-string)
+
+- Un billet de blog sur l'utilisation efficace de l'interpolation de chaîne : [https://mariusschulz.com/blog/string-interpolation-in-typescript](https://mariusschulz.com/blog/string-interpolation-in-typescript)

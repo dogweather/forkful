@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Clojure recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -12,41 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Interpolating a string in Clojure allows programmers to combine multiple strings or values into a single string, making it easier to create dynamic or formatted text. It is commonly used in web development, data manipulation, and data formatting tasks. By using interpolation, programmers can save time and reduce the amount of code needed to create complex or variable strings.
+String interpolation lets you inject data directly into a string. Want quick, clean variable substitutions in your strings? This is how you do it.
 
 ## How to:
 
-To interpolate a string in Clojure, simply use the ```str``` function and insert the values or strings you want to combine within curly braces. Here's an example:
+Do string interpolation in Clojure like the example below. We're using the `str` function here to plug some variables (`name` and `age`) into our string.
 
 ```Clojure
-(str "Hello, {:name}! Today is {:day}."
-     {:name "John" :day "Monday"})
+(def name "Alice")
+(def age 32)
+
+; Print a statement
+(println (str "Hi, I'm " name ", age " age "."))
+```
+Running this, you'll see:
+
+```
+Hi, I'm Alice, age 32.
 ```
 
-This code will output the following string: "Hello, John! Today is Monday."
+Pretty straightforward, right? One function, and voilà, you have a neatly interpolated string.
 
-You can also use interpolation in combination with other functions, such as ```format```, to create more complex or formatted strings. Here's an example:
+## Deep Dive
+
+Clojure, drawing from its Lisp roots, uses string concatenation instead of native string interpolation found in other languages like Python or Ruby.
+
+**Historical context**: Back in Lisp's days, computation was more precious, so it was often more efficient to concatenate strings, opposed to interpolation.
+
+**Alternatives**: Apart from `str`, you can do similar jobs using `format`. Just plug `%s` wherever you want a string and `%d` for integers. Then list your variables after the string.
 
 ```Clojure
-(format "Hello, %s! Your lucky number is %d." 
-        "Mary" 
-        (+ 3 2))
+(def name "Alice")
+(def age 32)
+
+(println (format "Hi, I'm %s, age %d." name age))
 ```
+Gives you the same output, just via a slicker route.
 
-This code will output the string: "Hello, Mary! Your lucky number is 5."
+**Implementation details**: String concatenation with `str` works across different data types without conversion. `format`, while more typist-friendly for long strings, needs explicit type handling – hence the `%s` and `%d`.
 
-## Deep Dive:
+## See Also
 
-Interpolation originated in the Perl programming language and has since been adopted by many other languages, including Clojure. It is a useful tool for string manipulation, especially when dealing with large amounts of data or generating dynamic text.
-
-An alternative to interpolation in Clojure is using the ```(str ... ``` function, which concatenates strings without the need for curly braces. However, interpolation offers more flexibility and can save time by allowing for more concise code.
-
-Under the hood, Clojure uses the ```java.text.MessageFormat``` class to implement interpolation. This allows for more advanced features, such as variable substitution and formatting, to be easily integrated into Clojure code.
-
-## See Also:
-
-- Clojure string functions: https://clojuredocs.org/clojure.core/str
-
-- Java MessageFormat class: https://docs.oracle.com/javase/7/docs/api/java/text/MessageFormat.html
-
-- Perl interpolation: https://www.perl.com/pub/2003/03/07/vars.html/
+For deeper understanding, swing by the official Clojure docs ([str](https://clojuredocs.org/clojure.core/str) and [format](https://clojuredocs.org/clojure.core/format)). And to appreciate Clojure's Lisp lineage, check out Paul Graham's essay, ["Beating the Averages"](http://www.paulgraham.com/avg.html). Happy coding!

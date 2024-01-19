@@ -1,7 +1,7 @@
 ---
-title:                "프로그래밍에서 명령 줄 인수를 읽는 방법"
-html_title:           "Elixir: 프로그래밍에서 명령 줄 인수를 읽는 방법"
-simple_title:         "프로그래밍에서 명령 줄 인수를 읽는 방법"
+title:                "명령줄 인수 읽기"
+html_title:           "Arduino: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇과 왜?
+## 무엇과 왜?
 
-커맨드 라인 인수를 읽는 것은 프로그래머들이 사용자로부터 입력받은 정보를 읽고, 해당 정보를 기반으로 프로그램을 실행시키기 위해 필요한 작업입니다. 이를테면, 사용자가 프로그램을 실행할 때 어떤 파일을 선택하거나 어떤 옵션을 설정하거나, 입력값을 전달할 때 이를 인식하여 프로그램이 이를 수행할 수 있도록 해줍니다.
+커맨드 라인 인수 읽기는 프로그램이 사용자 입력을 명령 줄 -즉, 프로그램 시작 시마다 -로부터 받는 방법입니다. 프로그래머는 이것을 통해 프로그램의 동작을 사용자 정의할 수 있습니다.
 
+## 어떻게 사용하나요?
 
-# 어떻게:
-
-커맨드 라인 인수를 읽기 위해서는 `System.argv` 함수를 사용하면 됩니다. 예시 코드는 다음과 같습니다:
-
-```Elixir
-# 커맨드 라인 인수를 리스트로 읽어옵니다.
-arguments = System.argv
-
-# 인수들을 모두 출력합니다.
-IO.puts(arguments)
-```
-
-위 코드를 실행하면, 다음과 같은 결과를 볼 수 있습니다:
+Elixir는 커맨드 라인 인수에 접근하기 위해 System.argv을 사용합니다. 이를 사용하여 사용자가 제공하는 옵션에 따라 프로그램을 세부 조정할 수 있습니다. 
 
 ```Elixir
-["my_program.ex", "file1.txt", "-a"]
+defmodule Hello do
+  def greet do
+    [name | _] = System.argv()
+    IO.puts "Hello, #{name}!"
+  end
+end
+
+Hello.greet()
+```
+실행 시 이름을 인수로서 제공합니다:
+
+```
+$ elixir hello.exs World
+Hello, World!
 ```
 
-위 예시 코드를 통해, 프로그램 파일의 이름과 더불어 사용자로부터 입력받은 파일 이름과 옵션 등을 읽을 수 있습니다.
+## 깊게 알아보기
 
+커맨드 라인 인수는 early Unix shell 프로그래밍부터 오랜 역사를 가지고 있습니다. 이는 사용자에게 프로그램을 확장하고 세부 코드를 작성할 수 있게 하여 초기 대화형 프로그래밍 환경과 비교하여 더 많은 유연성을 제공했습니다.
 
-# 더 깊이 들어가보기:
+Elixir의 `System.argv/0` 함수 외에도 Erlang/Elixir 생태계에서는 `:init.get_plain_arguments/0`와 같은 함수를 사용하여 매개변수를 처리하는 방법도 있습니다. 후자 함수는 OTP 애플리케이션에 더욱 일반적입니다.
 
-커맨드 라인 인수 읽기는 프로그래밍에서 자주 사용되는 작업 중 하나입니다. 이는 이전에도 다른 프로그래밍 언어에서도 사용이 가능했으며, `System.argv`는 Elixir에서 이 작업을 쉽게 처리할 수 있도록 만들어진 함수 중 하나입니다.
+내부적으로, Elixir는 Erlang의 `:init` 모듈을 wrapper하여 이 기능을 제공합니다. `:init.get_plain_arguments/0` 함수 역시 이 모듈에 정의되어 있습니다.
 
-하지만 때로는, 커맨드 라인 인수를 직접 읽기보다는 입력된 인수들을 `Application.get_env`를 통해 읽어와서 사용하는 방법으로 대체하기도 합니다. 이는 코드를 조금 더 유연하게 만들어줄 수 있습니다.
+## 참고 자료
 
-커맨드 라인 인수를 읽어오는 방식은 운영체제에 따라 조금씩 다를 수 있으므로, 필요에 따라 이를 잘 활용하여 프로그램을 작성해야 합니다.
-
-
-# 관련 링크:
-
-- [Elixir 공식 문서 - System](https://hexdocs.pm/elixir/System.html#argv/0)
-- [커맨드 라인 인수 읽기 예제 - Elixir School](https://elixirschool.com/lessons/basics/command-line-args/)
+생태계 내 다른 Erlang/Elixir 라이브러리도 명령 줄 인수 처리를 지원합니다:
+1. [Elixir OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+2. [Erlang getopt](https://github.com/jcomellas/getopt)

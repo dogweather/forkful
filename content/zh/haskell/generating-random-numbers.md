@@ -1,6 +1,6 @@
 ---
 title:                "生成随机数"
-html_title:           "Haskell: 生成随机数"
+html_title:           "Go: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是随机数？为什么程序员要用它？
+## 什么 & 为什么？
+生成随机数就是创建没有明显规律、不容预测的数字。程序员利用随机数来进行测试，模拟真实世界情况，或为算法提供随机输入。
 
-随机数是在编程中使用的一种特殊类型的数字，它在每次运行程序时都会生成不同的值。程序员使用随机数来生成随机的数据或者模拟真实世界的不确定性。例如，在游戏开发中，随机数可以用来生成随机的游戏关卡布局或者敌人的位置。
-
-## 如何使用
-
-Haskell中有一个内置的模块`System.Random`，它包含了生成随机数的函数。下面是一个随机产生20到50之间整数的例子：
+## 如何实现：
+下面是在Haskell中生成随机数的示例代码和输出结果：
 
 ```Haskell
-import System.Random (randomRIO)
+import System.Random
 
-main :: IO ()
 main = do
-  num <- randomRIO (20, 50)
-  print num
+    g <- newStdGen
+    print . take 5 $ randomRs ('a', 'z') g
+```
+上面的代码将生成一个在'a'和'z'之间的5个随机字符的列表。例如：
+
+```Haskell
+"dkmzp"
 ```
 
-输出示例：
-```
-32
-```
+## 深度探索：
+在历史上，我们通常使用不完全随机的方法来生成随机数。然而，随着编程语言的发展，我们现在可以使用随机库如Haskell的System.Random来生成真正的随机数。
 
-要产生不同类型的随机数，可以根据需要调整`randomRIO`函数中的参数范围，例如`(20.0, 50.0)`可以生成20到50之间的浮点数。
+当然，也有其他的随机数生成方式，例如使用不同种子或算法，或者使用像DevRandom这样的设备来生成随机数。具体使用哪种方法主要取决于我们对随机性、性能和易用性的需求。Haskell中的Standard Generator（StdGen）是一种懒生成（lazy）的方法，它只在需要时才生成新的随机数。
 
-## 深入了解
+## 另见：
+关于生成随机数和Haskell的更多信息，您可以参照以下链接：
 
-在计算机科学中，随机数生成算法有着悠久的历史。最早的随机数算法是基于物理现象（如掷骰子、抽卡等）产生的，随后发展出利用数学公式生成的伪随机数算法。在Haskell中使用的随机数算法是基于Mersenne Twister算法，它具有很高的性能和均匀的分布特性。
-
-除了Haskell内置的`System.Random`模块，也可以使用第三方库`random`来生成随机数。此外，还可以借助外部硬件设备（如热噪声发生器）来产生真随机数。
-
-## 参考资料
-
-- [Haskell中的随机数生成](https://wiki.haskell.org/Random_number_generation)
-- [Mersenne Twister算法](https://en.wikipedia.org/wiki/Mersenne_Twister)
-- [random库文档](https://hackage.haskell.org/package/random)
+1. [Haskell Library - System.Random](http://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
+2. [Haskell Wiki - Random Numbers](https://wiki.haskell.org/Random_numbers)
+3. [Learn You a Haskell For Great Good - Input and Output](http://learnyouahaskell.com/input-and-output)

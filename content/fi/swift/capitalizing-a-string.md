@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon suurennus"
-html_title:           "Swift: Merkkijonon suurennus"
-simple_title:         "Merkkijonon suurennus"
+title:                "Merkkijonon pääkirjaintaminen"
+html_title:           "Swift: Merkkijonon pääkirjaintaminen"
+simple_title:         "Merkkijonon pääkirjaintaminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-BB
+## Mikä & Miksi?
+Merkkijonojen isoilla alkukirjaimilla kirjoittaminen tarkoittaa sitä, että muutat jokaisen sanan ensimmäisen kirjaimen isoksi. Se tekee tiedoista helpommin luettavia ja ymmärrettäviä.
 
-##Mitä ja miksi?
+## Näin toimit:
+Swiftissä merkkijonon kirjaimien muuttaminen isoksi on suoraviivaista `capitalized`-ominaisuuden avulla:
 
-Päättäjänä, merkkijonon eli tekstirivan ensimmäisen kirjaimen muuttaminen suureksi on tapa muuttaa kirjainkoko sisällössä. Tämä auttaa korostamaan tietyt osat tekstistä ja on hyödyllinen esimerkiksi käytettäessä nimiä tai otsikoita.
-
-##Kuinka se tehdään?
-
-Swiftiläisille tämä on helppoa. On olemassa valmiiksi määritelty metodi, joka tekee sen puolestasi. Se näyttää tältä:
-
-```Swift
-let teksti = "tervetuloa"
-print(teksti.capitalized)
+```swift
+let tervehdys = "hei maailma"
+let isoAlku = tervehdys.capitalized
+print(isoAlku)
 ```
 
-Tämä tulostaisi "Tervetuloa" konsoliin. Huomaa, että metodi ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden version, joka on muutettu haluttuun muotoon.
+Ohjelmasta tuleva tulostus näyttää seuraavalta: 
 
-##Syvemmälle
+```swift
+"Hei Maailma"
+```
 
-Capitalize-metodin lisäksi on olemassa myös muita tapoja muuttaa merkkijonon kirjainkokoa, kuten uppercased ja lowercased. Ne toimivat vastaavasti, mutta muuttavat koko merkkijonoa kokonaisuudessaan.
+## Syvempi Sukellus
+Historiallisesti merkkijonon kirjaimien muuttaminen isoksi on tapahtunut erilaisilla tavoilla eri ohjelmointikielissä. Swiftin `capitalized`-ominaisuus on helppo ja nopea tapa saavuttaa tämä. Vaihtoehtoisesti, voit luoda oman funktion, joka käy läpi merkkijonon kirjaimet ja muuttaa ne isoksi.
 
-Uppercase ja lowercase perustuvat historiallisesti kirjaintyhdistelmään ASCIISTA, joka määritteli jokaiselle kirjaimelle numeron. Esimerkiksi iso A on numerolla 65 ja pieni a on numerolla 97. Näiden numeroiden avulla tietokone pystyi "kipuamaan" merkkijonoa ylös ja alas.
+Stringin "capitalized" ominaisuus Swiftissä itse asiassa käyttää NSLinguisticTagger-luokkaa tekemään kirjainkokoisen lokalisoinnin. Tämä tarkoittaa, että se ottaa huomioon kieliopilliset säännöt eri kielissä, mikä on hyödyllistä monikielisissä sovelluksissa.
 
-##Katso myös
+## Katso myös
+Edistä vastaavien taitojesi harjoittelua tutustumalla seuraaviin lähteisiin:
 
-Voit lukea lisää merkkijonosta ja sen muokkaamisesta Swiftin dokumentaatiosta: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html. Tutustu myös muihin merkkijonoihin liittyviin metodeihin, kuten replacingOccurrences ja trimmingCharacters.
-
-Enjoy the journey of coding with Swift!
+1. Swiftin dokumentaatio: [String](https://developer.apple.com/documentation/swift/string)
+2. Kattava opas merkkijonojen käsittelyyn Swiftissä: [Hacking with Swift](https://www.hackingwithswift.com/read/0/6/strings) 
+3. NSLinguisticTagger-luokka: [NSLinguisticTagger](https://developer.apple.com/documentation/foundation/nslinguistictagger)

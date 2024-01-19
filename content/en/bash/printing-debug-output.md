@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Bash recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Debug Debug: Print Debug Output In Bash
 
-Debug output, or printing information during the process of writing code, is a way for programmers to track and identify any issues that may arise. By printing out relevant information, programmers can pinpoint where the code is failing and make necessary changes to fix it.
+## What & Why?
+Printing debug output means rendering textual information at runtime for possible errors. This helps verify your program works as expected. Ever forgotten a semi-colon and gone mad looking for it? Debug output saves you time and aspirin.
 
 ## How to:
-
-To print debug output in Bash, use the `echo` command followed by the information you want to print. For example:
+In Bash, use `echo` or `printf`. They’re simple, but powerful.
 
 ```Bash
-echo "Debug output: This is the value of x: $x"
+# Test script with echo
+echo "Start of script"
 ```
 
-This will print out the value of the variable `x`, allowing you to see what the current value is and if it matches your expectations.
+Output:
+```Bash
+Start of script
+```
 
-You can also use the `-e` flag with `echo` to enable interpretation of backslash escapes, allowing you to print special characters and format your output.
+Or, for more control, `printf`. Don't forget the new line `\n`.
 
-## Deep Dive:
+```Bash
+# Test script with printf
+printf "Start of script\n"
+```
 
-Debug output has been an integral part of programming since the early days of computing. In fact, the term "debugging" was coined by computer pioneer Grace Hopper in the 1940s when a moth got trapped in one of the first computers, causing it to malfunction.
+Output:
+```Bash
+Start of script
+```
 
-There are various alternatives to printing debug output, such as using a debugger tool or logging function. However, printing debug output directly within the code can often be quicker and more convenient.
+## Deep Dive
+The `echo` command was present in the earliest versions of Unix. `printf` showed up in Unix V7 and is recommended nowadays due to stricter standards-compliant behavior.
 
-When implementing debug output, it's important to consider the placement and frequency of the print statements. Too many print statements can clutter the output, while too few may not provide enough information.
+Alternatives? `print` in Korn shell but it's non-standard. Stick with `printf`.
 
-## See Also:
+Under the hood, printing debug output doesn't happen in a vacuum: it writes to the standard output (stdout) file descriptor. Neat, huh?
 
-- [The History of Debugging](https://www.historyofinformation.com/detail.php?id=3483)
-- [The Importance of Debugging in Programming](https://qarea.com/blog/importance-of-debugging-programming)
+## See Also
+- Check `man echo` and `man printf` for all the nitty-gritties.
+- For more on file descriptors, see: [Understanding Linux File Descriptors](https://www.linuxjournal.com/article/10681).

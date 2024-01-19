@@ -1,6 +1,6 @@
 ---
 title:                "将日期转换为字符串"
-html_title:           "Elixir: 将日期转换为字符串"
+html_title:           "Bash: 将日期转换为字符串"
 simple_title:         "将日期转换为字符串"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,25 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是日期转化字符串？为什么要这么做？
-日期转化字符串是将日期数据转换为字符串格式的操作。程序员通常会这么做是因为字符串可以更容易地存储和处理日期数据，同时也可以使日期数据在不同的系统中更容易传递和显示。
+## 什么 & 为什么?
 
-## 如何实现：
-```Elixir
-date = ~D[2020-01-01]
-date |> to_string |> IO.inspect
-```
-输出： "2020-01-01"
+日期转字符串是将日期数据类型转换为可读形式的过程。程序员之所以这么做，是为了更便捷地显示和操作日期信息。
+
+## 如何操作:
+
+在Elixir中，我们通常使用DateTime模块进行转换。代码示例如下：
 
 ```Elixir
-date = ~D[2020-01-01]
-date |> to_string(format: "{YYYY-MM-dd}") |> IO.inspect
+iex> dt = DateTime.utc_now()
+iex> to_string(dt)
+"2022-03-29 04:12:25.123Z"
 ```
-输出： "2020-01-01"
 
-## 深入探讨：
-日期转化字符串的历史可以追溯到计算机的早期发展，当时的计算机系统并没有直接处理日期数据的能力，因此程序员需要使用字符串来表示日期。现如今，大多数计算机系统都可以直接处理日期数据，但程序员仍然选择将日期转换为字符串来更方便地处理。除了使用```to_string```函数，还可以使用其他函数如```NaiveDateTime.to_iso8601```来实现日期转化字符串。
+上述代码首先生成一个当前的 UTC 时间的 DateTime 对象，然后通过`to_string`函数将其转换为字符串。
 
-## 参考链接：
-- [Elixir官方文档：Dates](https://hexdocs.pm/elixir/master/Dates.html)
-- [关于日期转化字符串的更多信息](https://www.tutorialspoint.com/elixir/elixir_dates.htm)
+## Deep Dive
+
+将日期转为字符串在历史上一直是一种常见需求。例如，早期用于打印到控制台或显示在用户界面中。在能够解析日期字符串的语言中（如Javascript），这也是数据序列化的方法。
+
+当然我们也有其他方式来转换：你可以使用 DateFormat模块或者直接使用基础函数，如：`to_char`，来自定义你的格式化输出。
+
+实际上，在Elixir中会存在多种日期类型，DateTime只是其中之一。你可以将NaiveDateTime，Time，Date等类型都转为字符串。只需要保证你的数据在转换前是有效的即可。
+
+## 参见
+
+1. Elixir DateTime官方文档: [https://hexdocs.pm/elixir/DateTime.html](https://hexdocs.pm/elixir/DateTime.html)
+2. Elixir DateFormat模块: [https://hexdocs.pm/elixir/DateFormat.html](https://hexdocs.pm/elixir/DateFormat.html)
+3. Elixir基础函数: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)

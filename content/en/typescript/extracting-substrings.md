@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "TypeScript recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,43 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Working with Substrings in TypeScript
+
 ## What & Why?
-Extracting substrings is the process of retrieving a part of a string based on a specified start and end position. Programmers often do this to manipulate or analyze data within strings, such as retrieving a username from an email address or extracting a specific date from a longer string.
+
+A substring is a smaller part of a larger string. Substrings are prevalent in code manipulation to parse and format text efficiently, strengthening data validation or splitting data into manageable chunks.
 
 ## How to:
-To extract a substring in TypeScript, you can use the built-in ```substring()``` method. The method takes in two arguments, the start index and the end index of the desired substring. For example:
 
+In TypeScript, we primarily use `substring()`, `slice()`, and `substr()` to extract substrings.
+
+Let's break down each with their usage:
+
+```TypeScript
+let str = "Hello, TypeScript!";
+
+console.log(str.substring(0,5)); // "Hello"
+console.log(str.slice(0,5)); // "Hello"
+console.log(str.substr(0,5)); // "Hello"
 ```
-let str: string = "Hello World";
+All three methods will produce the same output, "Hello". 
+- `substring()` and `slice()` methods take start and end index. 
+- `substr()` takes start index and length.
 
-console.log(str.substring(0, 5)); // Output: "Hello"
-console.log(str.substring(6)); // Output: "World"
-```
+### Note:
+- Negative index in `slice()` is counted from the end of the string.
 
-You can also use ```slice()``` method which works the same way as ```substring()```. The only difference is that ```slice()``` allows you to use negative index values, where -1 would refer to the last character, -2 would refer to the second to last character, and so on. Example:
+```TypeScript
 
-```
-let str: string = "Hello World";
-
-console.log(str.slice(0, 5)); // Output: "Hello"
-console.log(str.slice(6)); // Output: "World"
-```
-
-## Deep Dive:
-Extracting substrings has been a commonly used method for manipulating strings since the early days of programming. However, with the introduction of regular expressions, developers now have an alternative method for extracting substrings. Regular expressions provide more powerful and flexible ways to not only extract substrings but also perform pattern matching and replacement within strings.
-
-In TypeScript, you can use the ```match()``` method with a regular expression to extract substrings. Example:
-
-```
-let str: string = "The quick brown fox jumps over the lazy dog";
-
-let result = str.match(/quick/);
-console.log(result[0]); // Output: "quick"
+console.log(str.slice(-6)); // "Script!"
 ```
 
-It is worth noting that the ```match()``` method returns an array of matched strings, whereas ```substring()``` and ```slice()``` only return a single string.
+## Deep Dive
 
-## See Also:
-- [MDN web docs - substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN web docs - slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [MDN web docs - regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+While extracting substrings is a relatively simple topic, there are some interesting details and nuances.
+
+Historically, the `substring()` method came first. Then `substr()` was added to JavaScript, but because of confusion and naming clashes with `substring()`, it was decided to introduce `slice()`, which is more flexible and intuitive. Note: `substr()` is considered deprecated in modern JavaScript/TypeScript but still widely used.
+
+As mentioned, `slice()` distinguishes itself by accepting negative indexes, counting from the end of the string. `substring()` can't handle negative indexes and will throw an error.
+
+These methods don't manipulate the original string, meaning they're non-mutating methods, they return new strings and keep the original one intact.
+
+## See Also
+
+You may find these resources useful for further reading:
+
+1. Official TypeScript Handbook : [Strings](https://www.typescriptlang.org/docs/handbook/2/objects.html)
+2. Mozilla Documentation: [Substring vs Slice vs Substr](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring#differences_among_substring(),_substr(),_and_slice())
+3. W3Schools : [JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)

@@ -1,7 +1,7 @@
 ---
-title:                "Calculer une date dans le futur ou le passé."
-html_title:           "C#: Calculer une date dans le futur ou le passé."
-simple_title:         "Calculer une date dans le futur ou le passé."
+title:                "Calculer une date dans le futur ou le passé"
+html_title:           "C#: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,44 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ? 
+# Calculer une date dans le futur ou le passé en C#
 
-Calculer une date dans le futur ou le passé est une tâche courante pour les programmeurs. Cela consiste à manipuler et à traiter des données de date et d'heure afin de déterminer une date spécifique à partir d'une date de référence. Cette pratique est particulièrement utile pour automatiser des tâches telles que la planification et la programmation de rappels ou de notifications.
+## Qu'est-ce et pourquoi?
 
-## Comment faire :
+Calculer une date dans le futur ou le passé signifie définir une date précise en avant ou en arrière à partir de la date actuelle. Les programmeurs en ont besoin pour gérer efficacement le temps dans les applications, comme la programmation d'événements ou le suivi des délais.
 
-Pour calculer une date dans le futur ou le passé en utilisant le langage C#, il existe plusieurs possibilités. Par exemple, vous pouvez utiliser les fonctions natives de C# telles que `DateTime.Add()` pour ajouter une certaine quantité de temps à une date spécifiée. Voici un exemple de code :
+## Comment faire
 
-```C#
-DateTime date = new DateTime(2021, 1, 1);
- 
-DateTime futureDate = date.AddYears(5);
- 
-Console.WriteLine(futureDate); // Output: 01/01/2026
-```
-
-Vous pouvez également utiliser la classe `TimeSpan` pour spécifier une période de temps et l'ajouter à une date donnée :
+Voici comment calculer une date dans le futur et dans le passé avec C# :
 
 ```C#
-DateTime date = new DateTime(2021, 1, 1);
- 
-TimeSpan interval = new TimeSpan(5, 0, 0, 0); // 5 jours
- 
-DateTime futureDate = date + interval;
- 
-Console.WriteLine(futureDate); // Output: 01/06/2021
+// Obtention de la date d'aujourd'hui
+DateTime today = DateTime.Now;
+
+// Calcul d'une date dans le futur
+DateTime futureDate = today.AddDays(30);
+Console.WriteLine(futureDate);
+
+// Calcul d'une date dans le passé
+DateTime pastDate = today.AddDays(-30);
+Console.WriteLine(pastDate);
+```
+Exemple de sortie :
+
+```
+2022-03-15 13:14:22
+2022-01-15 13:14:22
 ```
 
-De plus, C# offre la possibilité d'utiliser le package `System.Time`, qui fournit des méthodes et des types pour manipuler et effectuer des calculs sur les dates et les heures.
+## Examen approfondi
 
-## Approfondissement :
+Le calcul des dates dans le futur ou le passé est une pratique courante depuis les débuts de l'informatique. Pour un contexte historique, l'horloge interne des ordinateurs a été conçue pour compter les secondes passées depuis une date spécifique, à savoir le 1er janvier 1970. Cette date est communément appelée l' "epoch Unix".
 
-Calculer une date dans le futur ou le passé était une tâche plus complexe avant l'introduction des langages de programmation modernes. Les programmeurs devaient souvent créer leurs propres fonctions et algorithmes pour effectuer cette tâche. De nos jours, il existe de nombreuses bibliothèques et packages qui peuvent simplifier cette tâche, tels que le package `System.Time`, qui offre des fonctions de manipulation de dates et d'heures plus avancées.
+En ce qui concerne les alternatives, vous pouvez utiliser également Noda Time - une bibliothèque pour le calcul du temps en C#. Elle offre plus de flexibilité et de précision que les méthodes standard de DateTime en C#.
 
-Il existe également d'autres alternatives pour calculer une date dans le futur ou le passé, telles que l'utilisation de bibliothèques de calendrier ou de services en ligne.
+Pour ce qui est des détails de mise en œuvre, C# rend le calcul d'une date dans le futur ou le passé plutôt simple grâce à ses méthodes intégrées. Par exemple, `AddDays` est une méthode de la classe `DateTime`, qui retourne une nouvelle instance de `DateTime` après l'ajout du nombre spécifié de jours à l'instance `DateTime`.
 
-## Voir aussi :
+## Pour en savoir plus
 
-- [Documentation officielle de Microsoft sur le package System.Time](https://docs.microsoft.com/en-us/dotnet/api/system.time?view=net-5.0)
-- [Exemple de manipulation de dates en C#](https://www.codeproject.com/Articles/5786960/How-to-Manipulate-Dates-in-Csharp) 
-- [Bibliothèque de calendrier open-source pour .NET](https://github.com/rotorgames/Rotorsoft.Tools.Time)
+- Documentation .NET sur DateTime: [https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime](https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime)
+- Bibliothèque Noda Time : [https://nodatime.org/](https://nodatime.org/)
+- "Epoch Unix" Wikipédia : [https://fr.wikipedia.org/wiki/Heure_Unix](https://fr.wikipedia.org/wiki/Heure_Unix)

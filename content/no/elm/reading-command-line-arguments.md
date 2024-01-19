@@ -1,7 +1,7 @@
 ---
-title:                "Å lese kommandolinje-argumenter"
-html_title:           "Elm: Å lese kommandolinje-argumenter"
-simple_title:         "Å lese kommandolinje-argumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Lesing av kommandolinjeargumenter er en måte for programmerere å få tilgang til informasjon som brukes til å kjøre et program. Dette kan være nyttig for å tilpasse programmet til ulike brukerbehov eller å lese inn data fra en annen kilde.
+## Hva & Hvorfor?
 
-# Hvordan:
-For å lese kommandolinjeargumenter i Elm, kan du bruke funksjonen "Args" fra "Platform.Cmd" biblioteket. Denne funksjonen tar inn en funksjon som argument, som deretter kan brukes til å behandle og hente informasjon fra argumentene.
+Kommandolinje argumenter er innspill som blir gitt til et program når det kjøres, som brukes til å tilpasse programmets oppførsel. Programmerere bruker det for å gjøre programmer fleksible og enkle å tilpasse forskjellige bruksområder.
+
+## Hvordan å:
+
+Elm (nåværende versjon) støtter dessverre ikke kommandolinje-argumenter direkte. Men du kan bruke JavaScript interopp for å lese argumentene i stedet.
 
 ```Elm
-import Platform.Cmd exposing (Args)
+port module Main exposing (..)
 
-main =
-    Args (\args ->
-        -- Her kan du bruke "args" til å behandle og hente ut informasjon fra argumentene
-        -- For eksempel, hente ut argumentet på indeks 0:
-        Debug.log "Argument 0" (args 0)
-    )
+port sendFlags : List String -> Cmd msg
 ```
 
-Eksempel utdata:
+Ovenstående kodeeksempel definerer en interfond til JavaScript-verdenen for å sende argumenter som en liste med strenger.
+
+Du ville deretter kalle "sendFlags" fra JavaScript, noe slik:
+
+```JavaScript
+const app = Elm.Main.init();
+
+app.ports.sendFlags.send(process.argv);
 ```
-Argument 0: "input.txt"
-```
 
-# Dypdykk:
-Lesing av kommandolinjeargumenter har vært en vanlig praksis i programmering i lang tid, spesielt i programmeringsspråk som brukes til systemadministrasjon eller skripting. I Elm, som er et funksjonelt programmeringsspråk, er dette også en nyttig teknikk for å oppnå fleksibilitet og reaktivitet i programmer.
+## Dypere Dykk
 
-Det finnes flere alternativer for å lese kommandolinjeargumenter i Elm, inkludert å bruke "Port" eller "Http" biblioteket. Noen programmerere foretrekker å bruke disse alternativene fordi de gir bedre kontroll og fleksibilitet.
+Historisk sett har ikke Elm-støtte for kommandolinje-argumenter vært et prioritert trekk. Dette skyldes hovedsakelig at Elm er ment for frontend-utvikling, hvor kommandolinje-argumenter er mindre relevante.
 
-For å implementere lesing av kommandolinjeargumenter, må man ha en grunnleggende forståelse av funksjonelle programmeringskonsepter som funksjoner og lister. Det er også viktig å være klar over forskjeller i implementeringen av kommandolinjeargumenter på forskjellige plattformer.
+Som et alternativ kan programmerere bruke Elm sin interop-funksjonalitet for å koble til JavaScript, som har full støtte for kommandolinje-argumenter.
 
-# Se Også:
-- Elm dokumentasjon for "Platform.Cmd" biblioteket: [https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd)
-- Eksempler på å lese kommandolinjeargumenter i Elm: [https://github.com/elm-community/string-extra](https://github.com/elm-community/string-extra)
+Selv om det er mulig å bruke kommandolinje-argumenter i Elm via JavaScript, er det viktig å merke seg at dette kan føre til en mer kompleks kodebase. Dette skyldes at man må administrere kommunikasjonen mellom Elm og JavaScript, og også ta hånd om eventuelle feil og unntak som kan oppstå i prosessen.
+
+## Se Også:
+
+- Elm dokumentasjon: samsyn med JavaScript: https://guide.elm-lang.org/interop/
+- Forstå Javascript og Node.js kommandolinje-argumenter: https://flaviocopes.com/node-command-line-args/
+- Alternativer for å klare argumenter i JavaScript: https://www.npmjs.com/package/commander

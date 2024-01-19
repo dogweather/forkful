@@ -1,7 +1,7 @@
 ---
-title:                "Sammenføying av strenger"
-html_title:           "Elixir: Sammenføying av strenger"
-simple_title:         "Sammenføying av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,34 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# "Bli med og kode" – Slik konkatenerer du strenger i Elixir
+
 ## Hva & Hvorfor?
-Concatenation, eller å sette sammen strenger, er en vanlig operasjon i programmering. Det betyr å kombinere to eller flere strenger til en enkelt streng. Programmører gjør dette for å bygge dynamiske strenger som kan brukes til å generere tekst på flyet, for eksempel å sette sammen en setning med variabel data.
+Konkatenere strenger handlar om å slå sammen to eller flere strenger til én. Dette er nyttig når man skal bygge og formatere dynamiske meldinger, filbaner og andre typer tekstsammensetninger i koden din.
 
 ## Hvordan gjøre det:
-Det er flere måter å sette sammen strenger i Elixir, men den vanligste er å bruke ```<>``` operatøren. La oss se på et eksempel:
-
+Bruk den innebygde funksjonen i Elixir, `<>`, for å konkatenere strenger.
+```Elixir
+navn = "Olav"
+hilsen = "Hei, " <> navn
+IO.puts(hilsen)
 ```
-first_name = "John"
-last_name = "Doe"
-
-full_name = first_name <> " " <> last_name
-
-IO.puts(full_name)
-
-# Output:
-# John Doe
+Dette vil skrive ut:
+```
+Hei, Olav
 ```
 
-I dette eksempelet har vi først definert to strenger, ```first_name``` og ```last_name```. Deretter brukte vi ```<>``` operatøren til å sette sammen de to strengene til en fullstendig navnestreng. Vi skrev deretter ut det endelige resultatet ved hjelp av ```IO.puts``` funksjonen.
+## Dyp-dykk
+Elixir er tydelig påvirket av Erlang og andre funksjonelle programmeringsspråk. I disse språkene er optimalisering av strengsammenslåing viktig for å unngå unødvendig minnebruk.
 
-## Dypdykk:
-Concatenation er ikke en ny konsept innen programmering. Det har blitt brukt i mange år i forskjellige språk som Java og C++. Men i Elixir, kan du også bruke funksjonen ```String.concat``` til å sette sammen strenger. Dette er spesielt nyttig hvis du har en liste av strenger som du vil sette sammen til en enkelt streng.
+En alternativ og litt mer komplisert metode er å bruke listefunksjoner for å slå sammen lister med tegn, som kan konverteres til en enkelt streng.
 
-Det er også viktig å nevne at Elixir er et funksjonelt programmeringsspråk, så de fleste av de vanlige måtene for å sette sammen strenger i andre språk, for eksempel med en ```+``` operatør, vil ikke fungere i Elixir. Derfor er det viktig å bruke ```<>``` operatøren eller ```String.concat``` funksjonen i stedet.
+```Elixir
+navn = ['O','l','a','v']
+hilsen = ['H','e','i',',', ' '|navn]
+IO.puts(to_string(hilsen))
+```
 
-## Se også:
-Hvis du vil lære mer om strenger og funksjonell programmering i Elixir, sjekk ut disse ressursene:
+Implementeringen av `<>` bruker denne metoden under lokk og lokk, som er en del av hvorfor Elixir gjør det så lett å arbeide med strenger.
 
-- [Elixir-docs: Strings](https://hexdocs.pm/elixir/String.html)
-- [Learn X in Y Minutes: Elixir](https://learnxinyminutes.com/docs/elixir/)
-- [The Elixir Programming Language Website](https://elixir-lang.org/)
+## Se også
+- Lær mer om listebehandling i Elixir [her](https://elixir-lang.org/getting-started/io-and-the-file-system.html)
+- Les mer om `<>` operatoren [her](https://hexdocs.pm/elixir/String.html) og om sin bruk [her](https://elixir-lang.org/crash-course.html#strings-and-binaries)
+- For en grundigere forståelse av Elixir sine strengoperasjoner, sjekk ut denne kilden [her](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)

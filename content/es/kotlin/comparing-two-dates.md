@@ -1,6 +1,6 @@
 ---
 title:                "Comparando dos fechas"
-html_title:           "Kotlin: Comparando dos fechas"
+html_title:           "C#: Comparando dos fechas"
 simple_title:         "Comparando dos fechas"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,43 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Comparación de Fechas en Kotlin: Una Guía Simplicada 
+
 ## ¿Qué y por qué?
 
-Comparar dos fechas es una tarea común en la programación. Es el proceso de comparar dos valores de fecha y determinar si uno es mayor, menor o igual al otro. Los programadores lo hacen para poder realizar operaciones lógicas basadas en fechas, como verificar la fecha de caducidad de un producto o calcular la edad de una persona.
+Comparar dos fechas nos ayuda a determinar cuál es anterior o posterior. Los programadores lo hacen para organizar eventos, establecer límites de tiempo o incluso medir el tiempo de ejecución de un código.
 
 ## Cómo hacerlo:
 
-Para comparar dos fechas en Kotlin, podemos usar el método `compareTo()` disponible en la clase `LocalDate`. Este método devuelve un valor negativo si la fecha es anterior, cero si son iguales, o un valor positivo si es posterior a la otra fecha.
+En Kotlin, puedes usar el operador `compareTo` para comparar dos fechas. Mira este ejemplo sencillo.
 
 ```Kotlin
-val date1 = LocalDate.of(2021, 5, 15)
-val date2 = LocalDate.now()
+import java.util.Date
 
-println(date1.compareTo(date2)) // Output: -1
+fun main() {
+    val fecha1 = Date()
+    Thread.sleep(2000)
+    val fecha2 = Date()
+
+    when {
+        fecha1 < fecha2 -> println("La fecha1 es anterior a la fecha2")
+        fecha1 > fecha2 -> println("La fecha1 es posterior a la fecha2")
+        else -> println("Las fechas son iguales.")
+    }
+}
 ```
+Este código devuelve: "La fecha1 es anterior a la fecha2" porque en este caso, esperamos 2 segundos antes de crear `fecha2`.
 
-También podemos usar los operadores de comparación (`<`, `>`, `==`) para comparar fechas en Kotlin.
+## Tras la Cámara
 
-```Kotlin
-val date1 = LocalDate.of(2021, 5, 15)
-val date2 = LocalDate.now()
+Históricamente, la comparación de fechas procede del deseo de entender el tiempo más allá de ahora. Las fechas permiten a los informáticos rastrear el tiempo entre eventos y ordenarlos secuencialmente.
 
-println(date1 < date2) // Output: true
-```
+El método `compareTo` en Kotlin es una implementación directa de la interfaz `Comparable`. Ofrece una forma fácil y eficiente de comparar dos fechas. No obstante, para situaciones más complejas, podemos usar las clases LocalDateTime, LocalDate y LocalTime junto con la librería de tiempo Joda.
 
-## Inmersión profunda:
+Con `compareTo`, tanto la fecha como la hora se consideran en la comparación. Si solo quieres considerar la fecha y no la hora, es mejor usar LocalDate.
 
-En el pasado, comparar fechas en programación era una tarea complicada debido a la diversidad de formatos de fecha y hora utilizados en diferentes países y culturas. Sin embargo, con el estándar ISO 8601 y la introducción de clases de fecha y hora en los lenguajes de programación modernos, como Kotlin, se ha facilitado mucho la comparación de fechas.
+## Ver también
 
-Además de `compareTo()`, también podemos usar el método `isBefore()` o `isAfter()` para comparar fechas en Kotlin. También existen clases como `LocalDateTime` y `ZonedDateTime` que nos permiten comparar fechas y horas juntas.
+Aquí hay algunos recursos útiles para profundizar en el manejo y la comparación de tiempo en Kotlin:
 
-Otras alternativas para comparar fechas incluyen el uso de librerías externas, como Joda-Time y java.time de Java.
-
-Para implementar la comparación de fechas de manera más precisa, también podemos considerar factores como la zona horaria y el horario de verano.
-
-## Véase también:
-
-- Tutorial de Kotlin sobre fechas y horas: https://kotlinlang.org/docs/datetime.html
-- Estándar ISO 8601: https://www.iso.org/iso-8601-date-and-time-format.html
-- Librería Joda-Time: https://www.joda.org/joda-time/
-- Clase java.time de Java: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+1. Comparación de fechas en Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/
+2. Librería de tiempo Joda: http://www.joda.org/joda-time/
+3. Uso de LocalDate, LocalDateTime y LocalTime: https://www.baeldung.com/kotlin/dates

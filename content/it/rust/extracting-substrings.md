@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di sottostringhe"
-html_title:           "Rust: Estrazione di sottostringhe"
-simple_title:         "Estrazione di sottostringhe"
+title:                "Estrazione di sottosequenze"
+html_title:           "Arduino: Estrazione di sottosequenze"
+simple_title:         "Estrazione di sottosequenze"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cos’è & Perché?
 
-Estrarre sottostringhe significa ottenere una parte specifica di una stringa più grande. I programmatori spesso lo fanno per accedere a informazioni specifiche all'interno di una stringa senza doverne copiare l'intero contenuto.
+L'estrazione di sottocordoni (substring) consiste nel prelevare un frammento di testo da una stringa più grande. I programmatori lo fanno per analizzare o manipolare specifici pezzi di dati da una fonte di input testuale.
 
 ## Come fare:
 
-Un esempio di base di come estrarre una sottostringa in Rust:
+Per estrarre un sottocorda in Rust, utilizza l'indicizzazione sulla stringa come mostrato:
 
+```Rust
+let s = "Ciao, Mondo!";
+let hello = &s[0..5];
+let world = &s[7..13];
+println!("{}, {}", hello, world); //Stampa: Ciao, Mondo
 ```
-let stringa = "Ciao, mondo!";
-let sottostringa = &stringa[5..10];
-println!("{}", sottostringa);
-```
-
-Questo codice restituirà "mondo" poiché stiamo estraendo i caratteri dall'indice 5 all'indice 10 (escluso). Il codice utilizza una sintassi speciale di Rust per indicare gli indici della stringa. Si può anche specificare un solo indice per estrarre dalla posizione indicata fino alla fine della stringa.
+In questo esempio, abbiamo estratto "Ciao" e "Mondo" dalla stringa originale "Ciao, Mondo!" utilizzando gli indici per specificare le posizioni dei caratteri desiderati.
 
 ## Approfondimento:
 
-Per molti anni, l'estrazione di sottostringhe è stata una pratica comune nei linguaggi di programmazione. Tuttavia, con l'avanzamento della tecnologia, ci sono state nuove tecniche introdotte per gestire le stringhe, come le mutable strings e le strisce UTF-8. In Rust, le stringhe sono codificate in UTF-8 per impostazione predefinita per essere più efficienti e sicure.
+L'estrazione di sottocordoni è un'operazione antica nella programmazione, iniziata con i linguaggi low-level come C. In Rust, a differenza di altri linguaggi, l'indicizzazione della stringa è basata su byte, non su caratteri. Questo può portare a errori se la stringa contiene caratteri multi-byte, come quelli in Unicode. Un'alternativa sarebbe l'uso del metodo `chars()` o `graphemes()` dalle librerie esterne.
 
-Ci sono modi alternativi per estrarre sottostringhe in Rust, come utilizzare librerie esterne o moduli di espressioni regolari, che possono aiutare a svolgere l'attività in modo più efficiente. Inoltre, ci sono diversi metodi forniti dalla libreria standard di Rust per manipolare stringhe, compresa l'estrazione di sottostringhe.
+Dettagli dell'implementazione:
+Un `str` in Rust è una sequenza immutabile di codici UTF-8. Quando estraiamo una sottocorda, ciò che stiamo facendo realmente è creare un ‘puntatore’ al punto iniziale dell'intestazione e al punto finale nella stringa originale. Ciò significa che l'operazione è molto efficiente in termini di tempo e spazio, poiché non coinvolge la copia di dati.
 
-Per quanto riguarda l'implementazione dell'estrazione di sottostringhe in Rust, viene utilizzata una tecnica chiamata "slicing". Questa tecnica consente di navigare attraverso gli elementi di una stringa senza crearne o copiarne una nuova. Ciò rende l'esecuzione dell'operazione più efficiente e meno costosa dal punto di vista della memoria.
+## Vedi Anche:
 
-## Vedi anche:
-
-- [Documentazione per slice in Rust](https://doc.rust-lang.org/std/primitive.slice.html)
-- [Tutorial sulle espressioni regolari in Rust](https://doc.rust-lang.org/std/primitive.slice.html)
+Consulta i seguenti link per ulteriori informazioni e dettagli sulla gestione delle stringhe in Rust:
+1. La documentazione ufficiale di Rust sulla [stringa](https://doc.rust-lang.org/book/ch08-02-strings.html) e [sottocorda](https://doc.rust-lang.org/std/string/struct.String.html#method.substring)
+2. Discussione su [StackOverFlow](https://stackoverflow.com/questions/24151146/how-do-i-extract-a-substring-in-rust) sulla gestione delle stringhe in Rust.
+3. Un tutorial su [Medium](https://medium.com/@carol.nichols/rusty-strings-2e9afd680914) sulla gestione delle stringhe in Rust.

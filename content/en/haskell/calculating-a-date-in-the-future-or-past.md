@@ -10,46 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Calculating a Date in the Future or Past: A Haskell Guide
-
 ## What & Why?
-Calculating a date in the future or past is the process of determining a specific date based on a starting date and a set number of days. This is a common task for programmers as it allows for creating dynamic and time-based applications such as scheduling, reminder systems, and event planning.
+Calculating a date in the future or past means determining what the date will be after or before a set period. Programmers use such computations for tasks like creating event reminders or scheduling automated tasks.
 
 ## How to:
-In Haskell, there are several ways to calculate a date in the future or past. One method is to use the ```addDays``` function from the ```Data.Time``` library. This function takes in a starting date and a number of days, and returns a new date after the specified number of days have been added.
-
-Here's an example of using the ```addDays``` function to calculate a date 10 days in the future starting from a given date:
 
 ```Haskell
-import Data.Time
+import Data.Time.Clock (UTCTime, addUTCTime, secondsToDiffTime)
+import Data.Time.Calendar (Day, addDays)
 
-main = do
-  let startDate = fromGregorian 2021 7 10 -- July 10, 2021
-      futureDate = addDays 10 startDate
-  print futureDate -- 2021-07-20
+-- Add days to a date
+addDaysTo :: Day -> Integer -> Day
+addDaysTo date days = addDays days date
+
+-- Usage Example:
+-- Suppose today's date (2022-03-13) and we want to find the date after 30 days
+let futureDate = addDaysTo (fromGregorian 2022 03 13) 30
+
+-- Add seconds to a UTC time
+addSecondsTo :: UTCTime -> Int -> UTCTime
+addSecondsTo time seconds = addUTCTime (secondsToDiffTime $ fromIntegral seconds) time
+
+-- Usage Example:
+-- Suppose now is (2022-03-13 12:00:00 UTC) and we want to find the time 3600 seconds later
+let futureTime = addSecondsTo  (UTCTime (fromGregorian 2022 03 13) (timeOfDayToTime $ TimeOfDay 12 00 00)) 3600
 ```
-Similarly, to find a date in the past, you can use a negative number of days in the ```addDays``` function.
 
-Another approach is to use the ```TimeSpan``` package, which provides a ```DateSpan``` data type for handling dates. Here's an example of using ```DateSpan``` to calculate a date 15 days in the past starting from a given date:
+## Deep Dive
 
-```Haskell
-import Data.Time
-import TimeSpan
+Ever since computers started handling dates, programmers have had to work out future or past dates. While you might want to calculate this "manually" by adding or subtracting days, months, or years, this way is error-prone considering the complexity of our Gregorian calendar with leap years and varying days per month. 
 
-main = do
-  let startDate = fromGregorian 2021 7 15 -- July 15, 2021
-      pastDate = DateSpan (-15) startDate
-  print $ getDate pastDate -- 2021-07-01
-```
+Haskell's `Data.Time` library conveniently does all this for us. `addDays` and `addUTCTime` from this library allow us to adjust dates and UTC times relatively. 
 
-## Deep Dive:
-Calculating dates in the future or past has been an essential task for programmers since the early days of computing. Some early programming languages, like COBOL, had built-in features for handling dates. However, these features often had limitations and were not very flexible.
+Alternatives include using libraries like `thyme` or `chronos`, but `Data.Time` is the most popular for its simplicity and ease of use. It uses UTCTime for time manipulations, which avoids time zone complications intrinsic with local times.
 
-In Haskell, there are many libraries and packages available for handling dates. Some popular options include ```Data.Time```, ```TimeSpan```, and ```time-lens```. Each of these has its unique features and methods for calculating dates.
+## See Also
 
-Besides using libraries, some programmers prefer to write custom functions for calculating dates. This approach gives them more control and allows for customization based on their specific needs.
-
-## See Also:
-- [Haskell's official documentation for Data.Time library](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html)
-- [The TimeSpan package on Hackage](https://hackage.haskell.org/package/TimeSpan)
-- [Haskell library for dealing with dates and times](https://hackage.haskell.org/package/time-lens)
+1. [Data.Time Library Documentation](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+2. [A comprehensive guide on date and time in Haskell](https://two-wrongs.com/haskell-time-library-tutorial)
+3. [StackOverflow Discussion on Date Manipulation in Haskell](https://stackoverflow.com/questions/38312482/haskell-transform-utctime-to-day-and-add-days)

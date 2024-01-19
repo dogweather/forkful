@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "PowerShell recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,42 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Printing debug output is a way for programmers to check the execution and behavior of their code during development and troubleshooting. It allows them to see the internal workings of their program and identify any errors or unexpected results.
+Printing debug output is the process of outputting internal program state information to a console or log while a program runs. Programmers use it to understand program behavior and track down strange or unanticipated issues.
 
 ## How to:
+To print debug information to the PowerShell console, accessorily known as "Standard Output," you will generally use the Write-Debug cmdlet. 
 
-To print debug output in PowerShell, use the ```Write-Debug``` cmdlet and enclose the code you want to debug within a ```Debug {...}``` block. For example:
+Here's an example:
 
+```PowerShell
+# turns on the debug preference
+$DebugPreference = 'continue' 
+
+# debug information
+Write-Debug "This is some debug information"
 ```
-Write-Debug "Starting debug output"
-
-Debug {
-    # Code to be debugged goes here
-    $x = 5
-    $y = 10
-    Write-Debug "x = $x"
-    Write-Debug "y = $y"
-    Write-Debug "x + y = $($x+$y)"
-}
-
-Write-Debug "Finished debug output"
+This script will output:
+```PowerShell
+DEBUG: This is some debug information
 ```
-
-Running this code with the ```-Debug``` flag will display the output within the Debug block, as well as any other debug messages you have specified with the ```Write-Debug``` cmdlet.
+Please remember that by default `$DebugPreference` is set to `'SilentlyContinue'` which means no debug messages will be output until you change the setting.
 
 ## Deep Dive
+PowerShell's Write-Debug cmdlet is part of a larger suite of tools for outputting information to various channels. These channels, or "streams," include the error, warning, verbose, and information logs in addition to the debug stream. 
 
-Before the advent of integrated development environments (IDEs), printing debug output was the primary method for programmers to test and troubleshoot their code. It allowed them to see the flow of their program and identify any errors or unexpected results.
+In the early days of programming, debugging was often accomplished via careful reading of code and trace routines. However, modern debugging in PowerShell and other languages offers much more sophisticated capabilities. 
 
-While IDEs now offer advanced features for debugging, printing debug output is still a useful tool for debugging small sections of code or for situations where an IDE is not available.
+You do have alternatives. For example, you might use Write-Host, but this directly writes to the host and not to the pipeline, thereby breaking the stream of information with other parts of the script. Similarly, Write-Output sends data down the pipeline and can potentially mess up the output of your command. Write-Debug, conversely, doesn't interfere with other channels and can be enabled or disabled easily.
 
-An alternative to using ```Write-Debug``` is to use the ```Write-Host``` cmdlet. However, this should be used sparingly as it can clutter the output and make it harder to identify important information.
-
-Under the hood, the ```Write-Debug``` cmdlet uses the ```Write-Verbose``` cmdlet, but only prints the output when the ```-Debug``` flag is specified. This allows for more granular control over what information is displayed during debugging.
+The implementation of Write-Debug in PowerShell is part of Microsoft's wider initiative to make the language friendly for developers and system administrators who manage tasks with complex outputs. 
 
 ## See Also
-
-For more information on debugging in PowerShell, check out the official Microsoft documentation on [debugging scripts](https://docs.microsoft.com/en-us/powershell/scripting/debugging/).
-
-You can also explore alternative methods for debugging in PowerShell such as using the [PowerShell debugger](https://docs.microsoft.com/en-us/powershell/scripting/debugging/using-the-debugger) or [remote debugging](https://docs.microsoft.com/en-us/powershell/azure/running-script-commands-remotely?view=azps-5.0.0).
+1. [Write-Debug Documentation](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Write-Debug)
+2. [PowerShell Debugging](https://docs.microsoft.com/en-us/powershell/scripting/learn/debugging-scripts?view=powershell-7.1)
+3. [Write-Host vs Write-Output vs Write-Debug](https://adamtheautomator.com/write-host-powershell/)
+4. [PowerShell Streams: Debug, Verbose, Warning, Error, Output, Information Streams](https://adamtheautomator.com/powershell-streams/)

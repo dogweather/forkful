@@ -1,7 +1,7 @@
 ---
-title:                "寻找字符串的长度"
-html_title:           "Rust: 寻找字符串的长度"
-simple_title:         "寻找字符串的长度"
+title:                "查找字符串的长度"
+html_title:           "Javascript: 查找字符串的长度"
+simple_title:         "查找字符串的长度"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是字符串长度
-字符串长度是指字符串中包含的字符的数量。程序员需要找到字符串的长度来执行不同的操作，例如检查字符串是否为空，截取特定的字符，或者在比较字符串时确定它们是否相等。
+## 什么和为什么？
 
-## 如何找到字符串长度
-在Rust中，我们可以使用 `len()` 方法来找到字符串的长度。这个方法会返回一个表示字符串长度的整数值。让我们来看一个例子：
+了解字符串的长度是指确定字符串中字符的数量。这对于程序员来说很重要，例如，当需要通过比较字符串的长度来进行某些操作时。
 
-```Rust
-let my_string = "Hello World";
-let length = my_string.len();
-
-println!("The length of my_string is {}", length);
-```
-
-输出结果应该是 `The length of my_string is 11`，因为这个字符串包含了11个字符（包括空格）。
-
-如果你使用的是可变的字符串类型 `String`，也可以使用 `len()` 方法来找到它的长度。例如：
+## 如何做：
 
 ```Rust
-let mut my_string = String::from("Hello");
-my_string.push_str(" World");
-
-println!("The length of my_string is {}", my_string.len());
+fn main() {
+    let hello = "你好"; 
+    println!("Length : {}", hello.len());
+}
 ```
+运行上述 Rust 代码的输出会给出字符串 "你好" 的长度。
+```Rust
+Length : 6
+```
+注意这里的长度是6，而不是2，因为 `len()` 方法计算的是字节的数量，而 "你好" 中的每个字符都以3字节存储。
 
-输出结果仍然是 `The length of my_string is 11`，因为这是两个字符串合并后的总长度。
+## 深入探究
 
-## 深入了解
-字符串的长度操作在编程中是非常常见的，因此在Rust中也有很多其他的方法来获取字符串的长度。其中一个是使用 `byte_len()` 方法，它返回字符串中的字节数。这在处理Unicode字符时可能会更有用。
+在早期的编程语言中，经常通过末尾的 null 字符来确定字符串的长度。但由于 Rust 关注安全性并避免脆弱性，因此采取了不同的方法，即 `len()` 方法，它返回字符串的字节长度。
 
-如果你想知道更多关于Rust中的字符串操作，请查看官方文档中关于 `String` 和 `&str` 类型的部分。此外，你也可以学习一些有用的字符串处理库，例如 `std::string::String` 和 `std::str`。
+虽然 `len()` 是最直接的方式来获取字符串的长度，但你也可以选择使用 `chars().count()` 或 `graphemes().count()，当你需要处理 Unicode 字符串时会发现这些方法十分有用。
 
-## 参考资料
-- [Rust官方文档 - String](https://doc.rust-lang.org/std/string/)
-- [Rust官方文档 - &str](https://doc.rust-lang.org/std/str/)
+至于 Rust 为何把字符串长度定义为字节长度，这是因为 Rust 的字符串默认使用 UTF-8 编码。在 UTF-8 中，一个字符的长度可能从 1 字节变到 4 字节，这便是为何 "你好" 由两个字符组成，但长度是6字节的原因。
+
+## 更多信息
+
+你可以在 Rust 官方手册中了解更多信息：
+- [The String Type](https://doc.rust-lang.org/stable/book/ch08-02-strings.html)
+- [len() method](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
+- [The Chars Type](https://doc.rust-lang.org/std/string/struct.Chars.html)
+- [The Graphemes Type](https://unicode-rs.github.io/unicode-segmentation/unicode_segmentation/struct.Graphemes.html)

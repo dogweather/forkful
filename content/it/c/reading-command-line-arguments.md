@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti dalla riga di comando"
-html_title:           "C: Lettura degli argomenti dalla riga di comando"
-simple_title:         "Lettura degli argomenti dalla riga di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,59 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Ciao lettori!
+## Che cosa e Perche?
 
-Se sei uno sviluppatore di C, devi essere familiare con il concetto di "command line arguments". Ma se sei nuovo alla programmazione, potresti chiederti: cos'è e perché i programmatori lo fanno?
+La lettura degli argomenti della riga di comando in C consiste nel fornire input al programma dalle opzioni specificate durante l'avvio. Lo si fa per rendere i programmi più versatili e interattivi personalizzando l'esecuzione senza dover modificare il codice.
 
-## Cos'è e perché i programmatori lo fanno?
+## Come fare: 
 
-In parole semplici, leggere i command line arguments significa accettare gli input forniti dall'utente nella linea di comando quando si esegue un programma. Questi input possono essere stringhe, numeri, o anche opzioni per personalizzare il comportamento del programma. I programmatori lo fanno per rendere i loro programmi più interattivi e personalizzabili per l'utente.
+Ecco l'essenziale. In C, gli argomenti della riga di comando vengono passati al programma attraverso i parametri `argc` e `argv` del metodo `main`.
 
-## Come?
-
-Per leggere i command line arguments in C, è necessario utilizzare la funzione ```main()``` e la variabile ```argc``` (che rappresenta il numero di argomenti) e ```argv``` (un array contenente gli argomenti). Ecco un esempio di codice e il relativo output:
-
-```
+```C
 #include <stdio.h>
 
-int main(int argc, char *argv[])
-{
-    printf("Il programma è stato invocato con %d argomenti.\n", argc);
-
-    for(int i = 0; i < argc; i++){
-        printf("Argomento %d: %s\n", i, argv[i]);
+int main(int argc, char *argv[]) {
+    int counter;
+    printf("Program Name Is: %s", argv[0]);
+    if(argc == 1)
+        printf("\nNo Extra Command Line Argument Passed Other Than Program Name");
+    if(argc >= 2)
+    {
+        printf("\nNumber Of Arguments Passed: %d",argc);
+        printf("\n----Following Are The Command Line Arguments Passed----");
+        for(counter = 1; counter < argc; counter++)
+            printf("\nargv[%d] = %s\n", counter, argv[counter]);
     }
-
     return 0;
 }
 ```
 
-Input:
-```
-./programma arg1 arg2 arg3
-```
+Se si esegue il programma come `./program arg1 arg2`, l'output sarà:
 
-Output:
 ```
-Il programma è stato invocato con 4 argomenti.
-Argomento 0: ./programma
-Argomento 1: arg1
-Argomento 2: arg2
-Argomento 3: arg3
+Program Name Is: ./program
+Number Of Arguments Passed: 3
+----Following Are The Command Line Arguments Passed----
+argv[1] = arg1
+argv[2] = arg2
 ```
 
-## Scavando più a fondo
+## Approfondimenti:
 
-Ora che sai come leggere i command line arguments, forse ti chiedi perché questa funzionalità è stata incorporata nella programmazione C. All'inizio, il concetto di command line arguments è stato introdotto nei sistemi operativi per fornire un modo per passare opzioni e parametri ai programmi. Oggi, è ancora ampiamente utilizzato in molti contesti, come per esempio nei programmi di utilità e nei compilatori.
+Ho colpito il punto principale, ma ci sono cose che dovresti sapere. Gli argomenti della riga di comando sono antichi come il linguaggio C stesso, usati dai primi sistemi operativi UNIX. 
 
-In alternativa, si può utilizzare la funzione ```getopt()``` della libreria C per leggere opzioni e argomenti da riga di comando in modo più avanzato.
+Le alternative moderne includono il parsing di file di configurazione o l'utilizzo di library come `getopt` per un parsing più complesso dei parametri. 
 
-## Vedi anche
+`argc` rappresenta il numero di argomenti passati e `argv` è un array di stringhe (puntatori a caratteri) che rappresentano i singoli argomenti forniti. `argv[0]` è il nome del programma stesso.
 
-Per ulteriori informazioni su come leggere i command line arguments in C, puoi consultare queste risorse:
+## Vedi anche:
 
-- [Documentazione ufficiale della funzione main()](https://en.cppreference.com/w/c/language/main_function)
-- [Documentazione ufficiale della funzione getopt()](https://en.cppreference.com/w/c/program/getopt)
-- [Guida passo passo su come leggere command line arguments in C](https://www.linuxjournal.com/article/3808) 
+Per un'analisi più dettagliata, vedi:
+- [Command line arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Tutorial GNU - Argp](https://www.gnu.org/software/libc/manual/html_node/Argp.html)
 
-E questo è tutto, spero che questo breve articolo ti sia stato utile. Buon codice!
+Per le alternative, vedi:
+- [C library function - getopt()](https://www.tutorialspoint.com/c_standard_library/c_function_getopt.htm)
+- [The Art of Command Line](https://github.com/jlevy/the-art-of-command-line)

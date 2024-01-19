@@ -11,41 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Calculating a date in the future or past is the process of determining what a specific date will be, either ahead of or behind the current date. Programmers often do this in order to schedule events, set reminders, or track dates for various tasks.
+Calculating a future or past date, involves manipulating DateTime objects to derive a date relative to a specific point in time. Programmers do this to schedule tasks, analyze trends, or estimate deadlines.
 
 ## How to:
-
-To calculate a date in the future or past, we can use the ```DateTime``` class in Ruby. Here's an example of how to find the date 3 weeks from now:
+Ruby's built-in 'date' library makes this task a breeze. Let's dive into some examples:
 
 ```Ruby
 require 'date'
-today = Date.today
-future_date = today + 21 # 21 days from today
-puts future_date.strftime("%A, %B %e") # outputs the date in the format: Day of week, Month Day 
-# Example output: Friday, October 23
+
+# Current Date
+current_date = Date.today
+puts current_date
 ```
 
-To calculate a date in the past, we can use negative values. Here's an example:
+Run this to get today's date as output. Now, to calculate a future or past date:
 
 ```Ruby
-past_date = today - 7 # 7 days before today
-puts past_date.strftime("%A, %B %e") # outputs the date in the format: Day of week, Month Day 
-# Example output: Friday, September 25
+# Future Date
+future_date = current_date + 30
+puts future_date
+
+# Past Date
+past_date = current_date - 15
+puts past_date
 ```
+
+The '+' and '-' operations add or subtract days from the given date. So, the output prints dates 30 days in future and 15 days in the past, respectively.
 
 ## Deep Dive
 
-Calculating dates has been a common practice in programming since the early days of computer programming. Before the creation of high-level languages like Ruby, programmers had to use complex algorithms to determine dates. However, with the ```DateTime``` class in Ruby, the process has become much simpler.
+Historically, date manipulation was a bit challenging due to differences in calendar systems across cultures and the complexities of leap years. But modern programming languages like Ruby abstract these complexities through built-in libraries like 'date'. 
 
-An alternative to using the ```DateTime``` class in Ruby would be to use the ```Time``` class. The main difference is that the ```DateTime``` class is more accurate in terms of accounting for leap years and different time zones.
+There's more than one way to manipulate dates in Ruby. You could use other classes like `Time` or ActiveSupport's `DateTime`. However, the `Date` class is often a simpler choice for purely date-focused tasks.
 
-To implement the calculation of a date in the future or past, the ```DateTime``` class uses the ```+``` and ```-``` methods to add or subtract days, months, or years from a given date. It also has other methods such as ```.next_day``` and ```.prev_day``` for more precise calculations.
+Here's a brief idea about implementation details - `Date.today + 30` works by creating a new `Date` object whose day is 30 days ahead of the current day. This is possible because the `Date` class in Ruby overloads the '+' and '-' operators.
 
 ## See Also
+For more about the 'date' library, check out Ruby Date class docs here 
+`https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html` 
 
-To learn more about the ```DateTime``` class in Ruby, check out the official documentation: https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html
-
-For an in-depth explanation of how the ```DateTime``` class works, you can read this article: https://open.appacademy.io/learn/full-stack-online/ruby/date-and-time---day-1
-
-To explore other ways of calculating dates in Ruby, you can take a look at the ```Time``` class: https://ruby-doc.org/core-2.7.1/Time.html
+For more advanced date and time manipulation check the ActiveSupport Time Extensions doc 
+`https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html`

@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem."
-html_title:           "Javascript: Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem."
-simple_title:         "Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem."
+title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,46 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co to jest i dlaczego?
+Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem polega na przekazaniu danych logowania w nagłówku HTTP, aby potwierdzić tożsamość do serwera. Programiści robią to, aby chronić swoje dane przed niepowołanym dostępem.
 
-Wysyłanie zapytania HTTP z podstawowym uwierzytelnianiem to proces, w którym programista wyśle żądanie do serwera internetowego, aby uzyskać dostęp do chronionego zasobu. Uwierzytelnienie zapewnia bezpieczne i poufne wykorzystywanie zasobu i jest niezbędne do zapewnienia bezpieczeństwa danych.
+## Jak to zrobić:
+Oto prosty przykład kodu używającego Node.js do wysyłania żądania GET z podstawowym uwierzytelnieniem:
 
-## Jak to zrobić?
+```Javascript
+const http = require('http');
 
-Przykładowy kod w JavaScript, wykorzystujący bibliotekę Axios, do wysyłania żądań HTTP z podstawowym uwierzytelnieniem:
-
-```
-const axios = require('axios');
-
-axios.get('/protected/resource', {
-  auth: {
-    username: 'username',
-    password: 'password'
+const options = {
+  hostname: 'www.example.com',
+  port: 80,
+  path: '/',
+  method: 'GET',
+  headers: {
+    'Authorization': 'Basic ' + new Buffer.from('username:password').toString('base64')
   }
-})
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.log(error);
+};
+
+http.request(options, (res) => {
+  res.on('data', (d) => {
+    process.stdout.write(d);
   });
+}).end()
 ```
 
-Przykładowy wynik zwrócony przez serwer:
+Wynik może wyglądać tak:
 
+```Javascript
+...
+<div>Witaj na stronie przykładowej</div>
+...
 ```
-{
-  data: "Dane zasobu"
-}
-```
 
-## Głębszy zanurzenie
+## Pogłębiona analiza
+Historia: Kiedy Internet powstawał, podstawowe uwierzytelnianie było jednym z pierwszych mechanizmów uwierzytelniania zaimplementowanych w protokole HTTP.
 
-Podstawowe uwierzytelnienie zostało wprowadzone w protokole HTTP w celu połączenia użytkownika z serwerem. Alternatywą dla tego typu uwierzytelnienia jest wykorzystanie tokenów, które są bezpieczniejszym sposobem uwierzytelniania i są często stosowane w API.
+Alternatywy: Chociaż podstawowe uwierzytelnianie jest proste w użyciu, nie jest szczególnie bezpieczne i zwykle jest zastępowane przez bezpieczniejsze metody, takie jak uwierzytelnianie oparte na tokenu.
 
-Implementacja zapytań HTTP z podstawowym uwierzytelnieniem może różnić się w zależności od wykorzystywanej biblioteki lub frameworka. Przykład powyżej wykorzystuje bibliotekę Axios, ale istnieją też inne sposoby wykonywania tego typu żądań.
+Szczegóły implementacji: Podstawowe uwierzytelnianie korzysta z nagłówka 'Authorization'. Wartość tego nagłówka jest schematem uwierzytelnienia ('Basic') poprowadzonym przez spację do ciągu base64 utworzonego z połączenia nazwy użytkownika i hasła.
 
-## Zobacz również
-
-- [Axios dokumentacja](https://axios-http.com/docs/intro)
-- [HTTP Basic Authentication: co to jest i jak działa](https://www.w3schools.com/tags/att_input_type_button.asp)
+## Zobacz też
+- MDN Web Docs - podstawowe uwierzytelnianie: https://developer.mozilla.org/
+- Node.js - moduł http: https://nodejs.org/api/http.html
+- Npm - moduł request: https://www.npmjs.com/package/request

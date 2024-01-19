@@ -1,7 +1,7 @@
 ---
-title:                "Eine http-Anfrage senden"
-html_title:           "Ruby: Eine http-Anfrage senden"
-simple_title:         "Eine http-Anfrage senden"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Senden einer HTTP-Anfrage ist eine grundlegende Methode, um mit Webservern zu kommunizieren und Informationen abzurufen oder zu senden. Programmierer verwenden diese Technik, um Webanwendungen zu erstellen, Daten von APIs zu erhalten oder einfach nur Websites aufzurufen.
+## Was & Warum?
 
-# Wie geht's?
+Das Senden einer HTTP-Anforderung bedeutet, Daten von einem Server anzufordern oder zu senden. Programmierer tun dies, um Daten mit Webanwendungen auszutauschen oder um RESTful-Webdienste zu nutzen.
+
+## So geht's: 
+
+Hier ist ein einfaches Beispiel dafür, wie man eine GET-Anforderung an eine Web-API sendet und die Antwort ausdruckt. 
+
 ```Ruby
-require 'net/http' # Wir müssen das net/http-Modul importieren
+require 'net/http'
+require 'uri'
 
-# Ein Beispiel für eine GET-Anfrage
-uri = URI('https://example.com/') # Wir geben die URL der gewünschten Seite an
-response = Net::HTTP.get(uri) # Wir verwenden die get-Methode, um eine Antwort von der Seite zu erhalten
-puts response # Wir geben die empfangene Antwort aus
+uri = URI.parse("https://api.example.com/users/123")
+response = Net::HTTP.get_response(uri)
 
-# Ein Beispiel für einen POST-Antrag mit Daten
-uri = URI('https://example.com/') # Wir geben wieder die URL an
-params = { username: "John", password: "secret" } # Wir erstellen ein Hash-Objekt mit den zu sendenden Daten
-response = Net::HTTP.post_form(uri, params) # Wir verwenden die post_form-Methode, um die Daten zu senden und eine Antwort zu erhalten
-puts response # Wir geben die empfangene Antwort aus
+puts response.body
 ```
 
-# Tiefere Einblicke
-Das HTTP-Protokoll wurde in den späten 80er Jahren entwickelt und hat seitdem viele Iterationen und Verbesserungen erfahren. Es ist das grundlegende Kommunikationsprotokoll im World Wide Web und wird von allen gängigen Webanwendungen verwendet. Es gibt auch andere Methoden, um mit Webservern zu kommunizieren, wie z.B. das SMTP-Protokoll für E-Mail-Kommunikation.
+Bei diesem Beispiel wird eine Anforderung an die URL `https://api.example.com/users/123` gesendet und die Antwort wird auf der Konsole ausgedruckt.
 
-# Sieh dir auch an
-- [Net::HTTP-Dokumentation](https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Tutorial: HTTP-Anfragen mit Ruby](https://www.rubyguides.com/2018/08/ruby-http-request/)
+## Tiefgreifende Analyse
+
+Historisch gesehen wurde die Fähigkeit, HTTP-Anforderungen zu senden und zu empfangen, zu den grundlegenden Funktionen des Internets und führte zur Entwicklung des World Wide Web. Das Protokoll hat sich seitdem weiterentwickelt und ist heute ein zentraler Bestandteil der meisten Webanwendungen.
+
+Es gibt verschiedene Bibliotheken und Werkzeuge, die Sie zum Senden von HTTP-Anforderungen in Ruby verwenden können. Neben dem 'net/http'-Modul, das in der Ruby-Standardbibliothek enthalten ist, sind beliebte Alternativen 'httparty' und 'rest-client'. 
+
+Die genauen technischen Details des Sendens einer HTTP-Anfrage hängen von vielen Faktoren ab, einschließlich der verwendeten Bibliothek, der Art der Anforderung (GET, POST, usw.), und der spezifischen Anforderungen der API, mit der Sie kommunizieren.
+
+## Siehe auch:
+
+- Ruby Dokumentation für `Net::HTTP`: [https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html)
+- httparty Gem: [https://rubygems.org/gems/httparty](https://rubygems.org/gems/httparty)
+- RestClient Gem: [https://rubygems.org/gems/rest-client](https://rubygems.org/gems/rest-client)

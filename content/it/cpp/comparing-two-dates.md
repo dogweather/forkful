@@ -1,7 +1,7 @@
 ---
-title:                "Confrontare due date"
-html_title:           "C++: Confrontare due date"
-simple_title:         "Confrontare due date"
+title:                "Confronto tra due date"
+html_title:           "Elixir: Confronto tra due date"
+simple_title:         "Confronto tra due date"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,47 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Cosa & Perché?
-Confrontare due date è semplicemente il processo di confrontare due dati temporali in modo da determinare quale sia precedente o successivo all'altro. I programmatori spesso lo fanno per ordinare eventi in ordine cronologico o per verificare se una data è antecedente o seguente a un'altra.
 
-## Come: 
-Ecco un semplice esempio di codice in C++ per confrontare due date e stampare un messaggio in base al risultato:
+Confrontare due date in C++ significa verificare se una data è maggiore, minore o uguale a un'altra. I programmatori lo fanno per gestire eventi a tempo, come la scadenza di una certa funzione.
+
+## Come fare:
+
+Ecco un esempio di come fare in C++.
 
 ```C++
 #include <iostream>
 #include <ctime>
 
-int main()
-{
-  // definisci le date da confrontare
-  std::tm date1 = {0, 0, 0, 12, 10, 121};
-  std::tm date2 = {0, 0, 0, 3, 9, 102};
-  
-  // converti le date in secondi dalla mezzanotte del 1 gennaio 1970
-  std::time_t time1 = std::mktime(&date1);
-  std::time_t time2 = std::mktime(&date2);
+using namespace std;
 
-  // confronta le date
-  if(time1 > time2)
-    std::cout << "La prima data è successiva alla seconda.";
-  else if(time1 < time2)
-    std::cout << "La prima data è precedente alla seconda.";
-  else
-    std::cout << "Le date sono uguali.";
+int main() {
+    time_t now = time(0);
+    tm* ltm = localtime(&now);
 
-  return 0;
+    int todayDay = ltm->tm_mday;
+    int todayMonth = 1 + ltm->tm_mon;
+    int todayYear = 1900 + ltm->tm_year;
+
+    int otherDay = 20;
+    int otherMonth = 7;
+    int otherYear = 2022;
+
+    if ((todayYear > otherYear) || (todayYear == otherYear && todayMonth > otherMonth) || (todayYear == otherYear && todayMonth == otherMonth && todayDay > otherDay)) {
+        cout << "La data odierna è successiva alla data inserita.";
+    }
+    else if (todayYear == otherYear && todayMonth == otherMonth && todayDay == otherDay) {
+        cout << "La data odierna è la stessa della data inserita.";
+    } else {
+        cout << "La data odierna è precedente alla data inserita.";
+    }
+
+    return 0;
 }
 ```
-Output: 
-```
-La prima data è successiva alla seconda.
-```
 
-## Approfondimento:
-- Storicamente, i programmatori dovevano scrivere il proprio algoritmo per confrontare le date, ma ora ci sono molte librerie e funzioni built-in che semplificano il processo.
-- Un modo alternativo di confrontare le date è utilizzare il formato "AAAAMMGG" (anno, mese, giorno) anziché il formato unix timestamp utilizzato nell'esempio sopra.
-- In alcune situazioni, è importante tenere in considerazione anche il fuso orario quando si confrontano date.
-- Per confrontare date più complesse (ad esempio, includendo anche l'ora e i minuti), potrebbe essere necessario utilizzare funzioni più avanzate e considerare la definizione di "precedente" e "successivo" in modo diverso.
+## Più in profondità
 
-## Vedi anche:
-- Documentazione ufficiale di C++: https://www.cplusplus.com/reference/ctime/
-- Tutorial su come confrontare efficientemente due date in C++: https://www.techiedelight.com/compare-two-dates-cpp/
+- **Contesto Storico**: Confrontare due date è un'operazione antica quanto la programmazione stessa. Siccome C++ non fornisce nativamente operazioni di confronto tra date, è necessario fare ciò manualmente.
+
+- **Alternative**: Un'altra libreria utilizzata spesso per gestire date in C++ è Boost.Date_Time.
+
+- **Dettagli Implementativi**: Il codice estrae l'anno, il mese e il giorno dalle due date e li confronta in sequenza. Se l'anno della data corrente è maggiore (o il mese/giorno nel caso l'anno sia uguale), allora la data corrente è successiva alla data inserita.
+
+## Vedi Anche
+
+- [La documentazione ufficiale del C++ sulle date](https://en.cppreference.com/w/cpp/chrono).
+- [Libreria Boost Date_Time](https://www.boost.org/doc/libs/1_73_0/doc/html/date_time.html) per una gestione più sofisticata delle date.

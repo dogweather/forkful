@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "C++: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "C++"
 category:             "C++"
@@ -10,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#- Japanese Version
+## 何と何のため？ (What & Why?)
+テキスト検索と置換は、指定された文字列を見つけ、必要に応じて他の文字列で置き描えるプロセスです。これは主に、プログラマがコードの修正やデバッグを効率的に行うために使用されます。
 
-## 何となぜ？
-プログラマーがテキストを検索して置換するのは、コードをより効率的に作成するためです。テキストの検索と置換により、同じコードパターンの使用や不要な手作業を避けることができ、時間と労力を節約することができます。
+## 実践方法 (How to:)
+C++では、`std::string`クラスの`find()`と`replace()`関数を使用してテキストの検索と置換を実行できます。具体的な実行例を見てみましょう。
 
-## 方法：
-`` `C++…```コードブロック内にコーディングの例と出力を示します。
-
-```
+```C++
 #include <iostream>
 #include <string>
-using namespace std;
- 
+
 int main() {
-    // テキストを含む文字列を作成する
-    string text = "今日はとても暑いです。私はアイスクリームが欲しいです。";
-    
-    // 検索したい単語を指定する
-    string search = "暑い";
-    
-    // 置換する単語を指定する
-    string replace = "寒い";
-    
-    // 検索して置換する
-    size_t pos = text.find(search);
-    text.replace(pos, search.length(), replace);
-    
-    // 結果をコンソールに出力する
-    cout << text << endl;
+    std::string str = "Hello, C++ World!";
+    std::size_t index = str.find("C++");
+
+    if(index != std::string::npos) {
+        str.replace(index, 3, "JAVA");
+    }
+
+    std::cout << str << std::endl;  // "Hello, JAVA World!"
     return 0;
 }
 ```
-出力：今日はとても寒いです。私はアイスクリームが欲しいです。
 
-## 深く掘り下げる：
-テキストの検索と置換は、プログラミングの世界では古くから行われてきました。これにより、プログラマーはより早く、効率的にコードを作成できるようになりました。代替手段として、正規表現を使用することもできます。また、テキストの検索と置換には、アルゴリズムが使用されます。これらのアルゴリズムには、検索と置換の速度を最適化するためのさまざまな方法があります。
+このコードでは、`find()`関数が"C++"という文字列の位置を見つけ、`replace()`関数がそれを"JAVA"に置換しています。
 
-## 関連リンク：
-- [C++のStringクラスのドキュメント](https://msdn.microsoft.com/ja-jp/library/50zxafb8.aspx)
-- [正規表現チュートリアル](https://www.tutorialspoint.com/cpp_standard_library/regular_expressions_in_stl.htm)
-- [Algorithms and Data Structures in C++](https://www.geeksforgeeks.org/c-plus-plus/)
+## ディープダイブ (Deep Dive)
+テキスト検索と置換は、プログラミング言語の早い段階から存在しており、現代の多くの高レベル言語では組み込み関数として提供されています。それらはストリング操作に不可欠なもので、一部のパフォーマンスクリティカルなアプリケーションでは、より高度な実装が必要となる場合があります。
+
+C++には、`std::regex`や`boost::algorithm::find_regex()`などのより複雑な検索や置換のオプションも提供しています。これらは正規表現を使用してパターンをマッチさせ、より高度な置換を可能にします。
+
+## 参考資料 (See Also)
+- [C++標準ライブラリ: string](https://ja.cppreference.com/w/cpp/string/basic_string)
+- [C++での正規表現処理](https://www.boost.org/doc/libs/1_75_0/libs/regex/doc/html/index.html)

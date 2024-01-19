@@ -1,6 +1,6 @@
 ---
 title:                "Generowanie liczb losowych"
-html_title:           "Javascript: Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
 simple_title:         "Generowanie liczb losowych"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,23 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Generowanie losowych liczb to proces, w którym komputer losowo tworzy liczby. Programiści często wykorzystują tę funkcję w swoim kodzie, ponieważ pozwala ona na różnorodność w generowaniu danych oraz na wykonywanie symulacji i testów w aplikacjach.
+## Co to jest i Dlaczego?
+
+Generowanie losowych liczb w programowaniu to proces tworzenia liczb, które nie są przewidywalne. Programiści to robią, kiedy chcą dodać nieprzewidywalność do swojego kodu, taką jak losowy wybór elementu z listy.
 
 ## Jak to zrobić:
-Poniżej znajdziesz przykładowy kod w języku JavaScript, który generuje losową liczbę całkowitą oraz prostą instrukcję, jak go użyć w swoim projekcie.
 
-```javascript
-// Generowanie losowej liczby całkowitej od 0 do 10
-let randomNumber = Math.floor(Math.random() * 10);
+Oto przykładowy kod pokazujący jak możesz generować losową liczbę w JavaScript:
 
-// Wyświetlanie wyniku w konsoli
-console.log(randomNumber);
+```Javascript
+function losowaLiczba() {
+  return Math.random();
+}
+console.log(losowaLiczba());
 ```
- Ten kod wykorzystuje wbudowaną metodę JavaScript Math.random(), która zwraca liczbę z zakresu od 0 do 1. Następnie używamy funkcji Math.floor(), aby zaokrąglić wynik w dół do najbliższej liczby całkowitej. Aby uzyskać losową liczbę z wybranego zakresu, należy pomnożyć wygenerowaną liczbę przez maksymalną wartość, jaką chcemy otrzymać, a następnie dodać minimalną wartość do tego wyniku. W powyższym przykładzie maksymalna wartość to 10, a minimalna to 0.
+ 
+I oto przykładowy rezultat:
+ ```Javascript
+0.7151308377552927
+```
 
-## Deep Dive:
-Początkowo generowanie losowych liczb było wyzwaniem dla programistów, ale dzięki postępowi w dziedzinie informatyki, jest to teraz możliwe dzięki wykorzystaniu specjalnych algorytmów i funkcji dostępnych w językach programowania. Alternatywą do wykorzystania funkcji Math.random() jest użycie zewnętrznych bibliotek, takich jak Lodash lub Random.js, które oferują dodatkowe opcje, np. generowanie liczb z określonego zakresu.
+## W Głąb Tematu:
 
-## Zobacz także:
-Jeśli chcesz dowiedzieć się więcej o generowaniu losowych liczb w języku JavaScript, warto zapoznać się z dokumentacją wraz z przykładami dostępnymi na stronie MDN: https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date oraz odwiedzić forum społeczności programistów, gdzie możesz znaleźć wiele ciekawych wątków na ten temat.
+Generowanie losowych liczb zaczęło się od potrzeby symulacji zjawisk naturalnych w komputerach. To było potrzebne np. dla naukowców modelujących zjawiska atmosferyczne.
+
+Alternatywą generowania liczb w JavaScript jest korzystanie z obiektu `crypto.getRandomValues` lub z zewnętrznych bibliotek jak Mersenne Twister.
+
+Detail implementacji funkcji `Math.random` jest trochę skomplikowany - nie jest to prawdziwie losowe, ale powinien być wystarczająco losowy dla większości zastosowań.
+
+## Zobacz również:
+
+1. [MDN Web Docs: Math.random()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Math/random)
+2. [Wikipedia: Generator liczb pseudolosowych](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych)
+3. [npm: Mersenne Twister package](https://www.npmjs.com/package/mersenne-twister)

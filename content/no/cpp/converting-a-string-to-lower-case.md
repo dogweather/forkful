@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-html_title:           "C++: Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "C++"
 category:             "C++"
@@ -11,32 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Konvertering av en streng til små bokstaver er en vanlig programmeringsoppgave som innebærer å endre alle store bokstaver til små bokstaver i en tekststreng. Dette gjøres vanligvis for å sikre enhetlighet i tekstbehandling og sammenligninger av datasystemer.
 
-##Slik gjør du:
-Hvis du skriver i C++, kan du bruke transform-funksjonen for å konvertere en streng til små bokstaver ved å bruke standardbiblioteket «algorithm». Du kan også lage en egen funksjon som tar inn en streng og returnerer en kopi der alle store bokstaver er konvertert til små.
+Å konvertere en streng til små bokstaver betyr å endre alle hovedbokstavene i strengen til små bokstaver. Programmerere gjør dette for enklere sammenligning og manipulering av tekstdata, spesielt i søkealgoritmer og datarensing.
+
+## Hvordan :
+
+Her er et enkelt eksempel på hvordan du konverterer en streng til små bokstaver i C++.
 
 ```C++
-#include <algorithm>
-#include <string>
+#include <iostream> 
+#include <algorithm> 
+#include <string> 
 using namespace std;
 
-// Konverterer en streng til små bokstaver
-string toLowerCase(string s) {
-  transform(s.begin(), s.end(), s.begin(), ::tolower);
-  return s;
+int main() 
+{
+    string str = "HELLO, WORLD!";
+    
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+    
+    cout << str; 
+
+    return 0; 
 }
 ```
 
-Et eksempel på output med denne funksjonen:
+Når dette programmet kjøres, vil det ha en utgang som:
+
 ```
-string s = "HEI PÅ DEG";
-cout << toLowerCase(s); // hei på deg
+hello, world!
 ```
 
-## Dypdykk:
-Konvertering av en streng til små bokstaver er en vanlig oppgave ved datahåndtering og tekstbehandling. Det har tradisjonelt blitt gjort ved å bruke funksjoner som lowercase() eller tolower(). Imidlertid er disse funksjonene ofte avhengige av lokale innstillinger og kan gi ulike resultater avhengig av operativsystem og språkinnstillinger. Derfor anbefales det å bruke transform-funksjonen for en mer pålitelig og portabel løsning.
+## Dypdykk
 
-## Se også:
-- [C++ standardbiblioteket «algorithm»](https://www.cplusplus.com/reference/algorithm/)
-- [Diskusjon om å konvertere en streng til små bokstaver](https://stackoverflow.com/questions/313970/how-to-convert-stdstring-to-lower-case)
+Historisk har måten å konvertere en streng til små bokstaver på variert mellom ulike programmeringsspråk og biblioteker. I tidligere versjoner av C++ brukes for eksempel for-løkker og ASCII-verdier for å gjøre denne type operasjon. Med moderne standardbibliotek er denne prosessen forenklet og mer effektiv.
+
+Alternativt finnes det mange andre måter å gjøre denne operasjonen på, som å bruke funksjonen `std::for_each` eller skrive din egen funksjon. Hvilken metode du velger, avhenger av situasjonen og programmeringsstilen din.
+
+Implementeringsdetaljer spesielt for strenger i lavere rekkefølge i C++ involverer bruk av standardbibliotekets `std::transform`. Denne funksjonen kan brukes til å gjennomføre transformasjoner på en hvilken som helst STL-beholder. I tilfelle av strenger, tar den i bruk en funksjon kalt `::tolower`, som konverterer hver enkelt karakter i strengen til mindre bokstaver. 
+
+## Se Også 
+
+For mer informasjon om C++ og strengmanipulasjon:
+
+- Standardbibliotekdokumentasjon om 'transform': https://en.cppreference.com/w/cpp/algorithm/transform
+- Utforske C++ streng klasse: https://www.cplusplus.com/reference/string/string/
+- Dybdykk inn i C++ algoritmer: https://www.learn-cpp.org/

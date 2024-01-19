@@ -1,7 +1,7 @@
 ---
-title:                "Téléchargement d'une page web."
-html_title:           "Java: Téléchargement d'une page web."
-simple_title:         "Téléchargement d'une page web."
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,53 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
+## Quoi & Pourquoi?
 
-Télécharger une page web, c'est simplement récupérer le contenu d'un site internet. Les programmeurs font cela pour accéder à des données ou pour automatiser des tâches telles que le scraping de données.
+Télécharger une page web signifie récupérer et stocker son contenu pour une utilisation ultérieure. Les programmeurs le font souvent pour analyser le contenu, récupérer des données ou tester le site web.
 
-## Comment faire:
+## Comment faire :
 
-Voici un exemple de code en Java pour télécharger une page web:
+Nous utiliserons `java.net.URL` et `java.nio.file` pour simplifier le téléchargement. Voici un exemple de base.
 
-```
-public static void main(String[] args) {
-    String url = "https://www.example.com/";
-    try {
-        URL website = new URL(url);
-        BufferedReader in = new BufferedReader(new InputStreamReader(website.openStream()));
-        String inputLine;
-        while ((inputLine = in.readLine()) != null)
-            System.out.println(inputLine);
-        in.close();
-    } catch (IOException e) {
-        e.printStackTrace();
+```Java
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+
+public class Downloader {
+    public static void main(String[] args) throws Exception {
+        URL website = new URL("http://example.com");
+        try (InputStream in = website.openStream()) {
+            Files.copy(in, Path.of("output.html"), StandardCopyOption.REPLACE_EXISTING);
+        }
     }
 }
 ```
 
-Et voici ce que vous obtiendrez comme résultat:
+Cette opération téléchargera la page d'exemple et la sauvegardera dans un fichier "output.html". 
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Exemple</title>
-</head>
-<body>
-    <h1>Bienvenue sur cet exemple</h1>
-    <p>Ceci est un site de démonstration.</p>
-</body>
-</html>
-```
+## Plongée en profondeur :
 
-## Plongée en profondeur:
+Java a une riche histoire de gestion des URL et du réseau. `java.net.URL` date de Java 1.0, mais pour une analyse plus poussée, vous pourriez vouloir examiner HttpClient, introduit dans Java 11. 
 
-Télécharger une page web est un processus essentiel pour les programmeurs qui travaillent avec des données dynamiques ou qui développent des bots ou des scrapers. Avant l'avènement du web, le téléchargement de fichiers était beaucoup plus complexe et impliquait souvent l'utilisation de protocoles de transfert de fichiers tels que FTP. Aujourd'hui, avec les outils disponibles en Java, télécharger une page web est simple et efficace.
+En termes d'alternatives, vous pourriez regarder Jsoup qui facilite encore plus le traitement des documents HTML, ou des bibliothèques comme OkHttp pour des options plus robustes.
 
-D'autres alternatives pour le téléchargement de pages web incluent l'utilisation d'outils tels que wget ou cURL en ligne de commande. Cependant, en utilisant Java, vous avez le contrôle total sur le processus et vous pouvez facilement intégrer le téléchargement dans vos projets.
+Notez que le code ci-dessus est simple, mais n'implémente pas de contrôle d'erreur, vous voudriez certainement ajouter une gestion des exceptions en cas de problème réseau. 
 
-Pour télécharger une page web dans Java, on utilise la classe URL pour définir l'URL du site à télécharger. Ensuite, on utilise les classes BufferedReader et InputStreamReader pour lire le contenu de la page et l'afficher en tant que chaîne de caractères.
+## Voir aussi :
 
-## À lire également:
-
-Consultez la documentation officielle de Java pour en savoir plus sur la classe URL et les outils disponibles pour le téléchargement de pages web en Java. Vous pouvez également consulter des tutoriels en ligne ou des forums pour voir comment d'autres programmeurs utilisent le téléchargement de pages web dans leurs projets.
+- Java Networking Tutorial : https://docs.oracle.com/javase/tutorial/networking/urls/index.html
+- HttpClient Documentation : https://openjdk.java.net/groups/net/httpclient/intro.html
+- Jsoup Documentation : https://jsoup.org/
+- OkHttp Documentation : https://square.github.io/okhttp/

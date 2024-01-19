@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando uma string."
-html_title:           "C++: Interpolando uma string."
-simple_title:         "Interpolando uma string."
+title:                "Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
+simple_title:         "Interpolando uma string"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,53 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que é & Por Que Usar?
+Interpolação de strings é o processo de substituir marcadores de posição em uma string por seus respectivos valores de dados. Essa prática é comum porque nos ajuda a evitar a concatenação de strings, que pode tornar o código menos legível em comparação à interpolação.
 
-Interpolar uma string em programação significa inserir valores de variáveis ou expressões em uma string. Programadores fazem isso para facilitar a criação e manipulação de strings dinâmicas, alterando as informações inseridas de acordo com as variáveis ou expressões utilizadas.
-
-## Como fazer:
+## Como Fazer:
+No C++ atual, podemos fazer a interpolação de strings usando a biblioteca `fmt`:
 
 ```C++
-#include <iostream>
-#include <string>
+#include <fmt/core.h>
 
-using namespace std;
-
-int main(){
-  string nome = "João";
-  int idade = 25;
-  
-  //Interpolação simples
-  cout << "Olá, meu nome é " << nome << " e tenho " << idade << " anos." << endl;
-  
-  //Interpolação com expressões
-  int ano_atual = 2021;
-  int ano_nascimento = ano_atual - idade;
-  cout << "Eu nasci em " << ano_nascimento << ", um ano antes do ano atual." << endl;
-  
-  //Interpolação com formatação
-  double salario = 2500.50;
-  cout << "Meu salário atual é de R$" << fixed << setprecision(2) << salario << "." << endl;
-  
-  return 0;
+int main() {
+    std::string nome = "Joao";
+    int idade = 30;
+    std::string frase = fmt::format("Meu nome é {} e eu tenho {} anos.", nome, idade);
+    fmt::print("{}", frase);
+    return 0;
 }
 ```
+A saída será: `Meu nome é Joao e eu tenho 30 anos.` 
 
-Exemplo de saída:
-```
-Olá, meu nome é João e tenho 25 anos.
-Eu nasci em 1996, um ano antes do ano atual.
-Meu salário atual é de R$2500.50.
-```
+## Mergulho Profundo
+A interpolação de strings não é uma ideia nova. Já era usada em diversas linguagens de programação antes de ser introduzida no C++. Alternativamente, você pode usar a concatenação de strings ou a biblioteca `sprintf`, mas ambas podem resultar em código mais complexo e menos legível.
 
-## Aprofundando:
+No que diz respeito aos detalhes de implementação, a Classe `fmt::format` faz a interpolação de strings internamente, substituindo os marcadores de posição pelas respectivas variáveis na ordem fornecida. A Classe `fmt::format` é capaz de realizar estas operações de forma eficiente e segura.
 
-- Contexto histórico: A interpolação de strings é uma técnica comum em linguagens de programação modernas, mas foi popularizada principalmente pela linguagem de programação Ruby.
-- Alternativas: Em algumas linguagens, como Python e Java, a interpolação de strings pode ser feita utilizando o operador "+" entre strings e variáveis.
-- Detalhes de implementação: Em C++, a interpolação de strings é feita utilizando o operador "<<" para inserir valores em uma string. É possível utilizar diferentes formatações para os valores inseridos, como no exemplo anterior com "fixed" e "setprecision".
-
-## Veja também:
-
-- Documentação oficial do C++: https://cplusplus.com/
-- Artigo sobre interpolação de strings em Ruby: https://www.infoworld.com/article/3482009/rubys-famous-puts-youre-boring-too-here-s-your-girlfriend.html
-- Comparação de diferentes maneiras de interpolar strings em diferentes linguagens: https://konstantinpavlov.net/blog/2018/04/27/string-interpolation-in-javascript-vs-c-plus-plus-vs-ruby-vs-python-vs-php/
+## Ver Também
+1. [Documentação oficial fmtlib](https://fmt.dev/latest/index.html)
+2. [Artigo detalhado sobre interpolação de strings no C++](https://www.fluentcpp.com/2018/12/06/strong-types-for-strong-interfaces/)
+3. [Stack Overflow: Interpolação de strings em C++](https://stackoverflow.com/questions/2342162/stdstring-formatting-like-sprintf)

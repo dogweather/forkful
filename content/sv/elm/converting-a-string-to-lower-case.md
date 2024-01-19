@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla en sträng till gemener"
-html_title:           "Elm: Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
 simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,18 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att omvandla en sträng till små bokstäver innebär att alla bokstäver i en sträng konverteras till deras motsvarande små bokstäver. Det är en vanlig funktion som används av programmerare för att standardisera strängar och göra det enklare att söka och jämföra strängar.
+# Omvandla en Sträng till Gemener med Elm
 
-## Hur:
+## Vad och Varför?
+At omvandla en värdet i sträng till gemener innebär att förändra alla tecken till deras gemena motsvarigheter. Detta tillåter en programmerare att jämföra strängar utan att oroa sig för om de ursprungligen skrevs med gemener eller versaler.
+
+## Hur man Gör:
+Elm erbjuder en mycket enkel funktion för att göra detta, nämligen `String.toLower`. Titta på följande exempel
 ```Elm
-import String
-String.toLower "ELM IS AWESOME!" -- Output: "elm is awesome!"
+module Main exposing (..)
+
+import Html exposing (text)
+
+main = text (String.toLower "Hej VÄRLDEN!")
 ```
+Om du kör detta skript, kommer utdata att var "hej världen!".
 
-## Djupdykning:
-Historiskt sett har konvertering av strängar till små bokstäver använts för att lösa problem med att söka och jämföra strängar som inte höll sig till en konsekvent skiftlägeskonvention. Det finns alternativa sätt att konvertera strängar till små bokstäver, såsom att använda inbyggda funktioner i språket eller använda regex-uttryck. I Elm används funktionen `String.toLower` för att konvertera strängar till små bokstäver. Detta sker genom att använda Unicode-normaliseringsalgoritmen, vilket gör att denna funktion fungerar lika bra för internationella tecken som för enkel byte-tecken.
+## Fördjupning
+`String.toLower` funktion är en del av den standard Elm kärnbiblioteket, som har varit där i många år. Den är baserad på samma koncept som finns i alla stora högnivå programmeringsspråk. Men, precis som med allt i Elm, fungerar det lite annorlunda. Elm är ett funktionellt programmeringsspråk, så du behöver inte oroa dig för några oväntade sidoeffekter när du använder `String.toLower`.
 
-## Se också:
-- Elm's officiella dokumentation för [String-modulen](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm-styleguide](https://github.com/NoRedInk/style-guide/blob/master/elm.md) för rekommendationer om att använda `String.toLower` för att hantera strängar i en konsekvent form
+Det finns andra sätt att omvandla en sträng till gemener, till exempel genom att använda `List.map` tillsammans med `Char.toLower` på en lista av tecken (det vill säga, en sträng). Men `String.toLower` är det mest lämpliga sättet att göra detta i Elm.
+
+## Se Även
+* Elm's String API dokumentation: https://package.elm-lang.org/packages/elm/core/latest/String.
+* Utforska mer om Elm's funktionell programmeringsparadigm: https://guide.elm-lang.org/core_language.html. 
+
+Använda Elm för att göra strängen operationer är ganska enkelt och intuitivt. Nu ska du vara redo att omvandla alla tecken i en sträng till gemener i Elm!

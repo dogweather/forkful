@@ -1,7 +1,7 @@
 ---
-title:                "Verkettung von Zeichenketten"
-html_title:           "Bash: Verkettung von Zeichenketten"
-simple_title:         "Verkettung von Zeichenketten"
+title:                "Strings verketten"
+html_title:           "Bash: Strings verketten"
+simple_title:         "Strings verketten"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# **Bash und das Zusammenfügen von Zeichenketten: Schnell und Einfach**
+
 ## Was & Warum?
+Das Zusammenfügen von Zeichenketten ("Concatenation") bedeutet, zwei oder mehr Strings zu einem einzelnen zusammenzumergen. Es wird in der Regel verwendet, um komplexe Nachrichten, Befehle, oder Anfragen zu generieren.
 
-Konkatenieren von Zeichenfolgen ist einfach ein fancy Way, um zwei oder mehr Strings zusammenzufügen. Programmierer tun dies oft, um längere Texte oder Variablen zusammenzubauen.
+## Wie es geht:
 
-## Wie geht's?
+Sie können ganz schnell Zeichenketten in Bash zusammenfügen. Mustercode und Ausgabe sind unten zu sehen.
 
-Hier sind ein paar Beispiele, wie man mit Bash in der aktuellen Version Strings konkatenieren kann:
-
-```
-# Beispiel mit einfachen Strings
+```Bash
+# Variablen deklarieren
 str1="Hallo"
 str2="Welt"
-echo "$str1 $str2" # Ausgabe: Hallo Welt
 
-# Beispiel mit Variablen
-vorname="John"
-nachname="Doe"
-echo "Mein Name ist $vorname $nachname" # Ausgabe: Mein Name ist John Doe
+# Zeichenketten zusammenfügen
+gruss="${str1}, ${str2}!"
 
-# Beispiel mit kombinierten Strings
-echo "Linux" + "Bash" # Ausgabe: Linux Bash
+# Ausgaben
+echo $gruss
 ```
 
-## Tieferes Eintauchen
+Ausgabe: `Hallo, Welt!`
 
-Das Konkatenieren von Zeichenfolgen ist keine neuartige Idee, es wird seit langem in verschiedenen Programmiersprachen verwendet. Einige Alternative Methoden, die strings in Bash zusammenzufügen wären: ```str1="$str1$str2"``` oder ```str1+=$str2```. Es gibt auch Implementierungsdetails zu beachten, wie z.B. die Verwendung von Escape-Sequenzen, um Sonderzeichen innerhalb der Strings zu behandeln.
+## Tiefgehende Infos
+Zeichenketten-Zusammenfügen hat eine lange Geschichte in der Programmierung und wird fast in jeder Sprache unterstützt, obwohl die Syntax variiert. In Bash, können Sie auch den `+=` Operator verwenden, um eine Zeichenkette an eine existierende Zeichenkette anzuhängen.
+
+```Bash
+str="Hallo"
+str+=" Welt!"
+echo $str
+```
+
+Ausgabe: `Hallo Welt!`
+
+Einige Alternativen zum Zusammenfügen von Zeichenketten in Bash sind die Verwendung von `printf` Funktion oder den `paste` Befehl.
 
 ## Siehe auch
-
-- [Bash-Dokumentation] (https://www.gnu.org/software/bash/manual/)
-- [GNU Projektseite für Bash] (https://www.gnu.org/software/bash/)
+Falls Sie sich weiter informieren möchten, finden Sie [hier](https://wiki.bash-hackers.org/syntax/pe) eine gründliche Erklärung zur Parametererweiterung in Bash, welche das Zusammenfügen von Zeichenketten umfasst. Auch das GNU Bash Manual [hier](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion) könnte nützlich sein.

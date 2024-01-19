@@ -1,7 +1,7 @@
 ---
-title:                "문자열 보간"
-html_title:           "Python: 문자열 보간"
-simple_title:         "문자열 보간"
+title:                "문자열 보간하기"
+html_title:           "Clojure: 문자열 보간하기"
+simple_title:         "문자열 보간하기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자열을 보간하는 것은 기호 또는 변수를 문자열 안에 삽입하는 것을 말합니다. 이를 통해 프로그래머는 동적인 문자열을 만들고 더 효율적인 코드를 작성할 수 있습니다.
+## 무엇이며 왜 사용하는가?
 
-## 방법:
-```python 
-# 'Hello, {name}! How are you doing today?'
-# 'Hello, John! How are you doing today?'
+문자열 보간은 변수 또는 표현식을 문자열 로직에 삽입하는 방법입니다. 프로그래머는 당면한 문제에 대한 동적 해결책을 제공하기 위해 이를 사용합니다.
 
-name = 'John'
-print(f'Hello, {name}! How are you doing today?')
+## 어떻게 사용하는가:
+
+문자열 포맷팅의 가장 간단한 방법 중 하나는 `f-string`과 `{}` 을 사용하는 것입니다. 아래의 코드 예시를 확인해보세요.
+
+```Python 
+name = 'World'
+print(f'Hello, {name}!')
 ```
 
-```python 
-# 'Your total for today is ${total}. Have a nice day!'
-# 'Your total for today is $25.50. Have a nice day!'
+위의 코드는 'Hello, World!' 를 출력합니다.
 
-total = 25.50
-print(f'Your total for today is ${total}. Have a nice day!')
+또한, 합성 연산자인 `%`를 이용한 구식의 문자열 보간 방법이 있습니다.
+
+```Python
+name = 'World'
+print('Hello, %s!' % name)
 ```
 
-## 깊이 파헤치기:
-1. 역사적 맥락: 문자열 보간은 C언어에서부터 사용되어왔으며 최근에는 다른 프로그래밍 언어에서도 지원하고 있습니다.
-2. 대안: 문자열 보간을 대체할 수 있는 다른 방법으로는 문자열 연결, % 연산자 등이 있지만 보간은 가독성과 편의성 면에서 더 나은 선택입니다.
-3. 구현 세부사항: 파이썬 3.6 버전부터는 f-string을 사용하여 보간 기능을 제공하고 있습니다.
+마찬가지로 'Hello, World!'를 출력합니다.
 
-## 참고자료:
-- [PEP 498: Formatted string literals](https://www.python.org/dev/peps/pep-0498/)
-- [Python `str.format()` documentation](https://docs.python.org/3/library/stdtypes.html#str.format)
-- [String Interpolation in Python](https://realpython.com/python-string-formatting/#1-old-style-string-formatting-operator)
+## 깊게 알아보기
+
+문자열 보간은 다양한 언어에서 사용하는 중요한 기능으로, 초기 프로그래밍 언어부터 시작하여 Python, JavaScript 등의 최신 언어로 적용되었습니다. Python에서는 초기에 `%` 연산자를 사용하여 문자열 보간을 수행했었지만 Python 3.6부터는 훨씬 간결하고 강력한 `f-string` 방식이 도입되었습니다.
+
+문자열 보간의 대안으로는 `format()` 메소드가 있습니다. 이 메소드는 `f-string`보다 덜 빠르지만, 더 복잡한 문자열 포맷팅을 요구하는 경우 유용할 수 있습니다.
+
+```Python
+name = 'World'
+print('Hello, {}!'.format(name))
+```
+
+## 참고하면 좋은 문서
+
+- Python 공식 문서: [f-string](https://docs.python.org/3/reference/lexical_analysis.html#f-strings), [format()](https://docs.python.org/3/library/stdtypes.html#str.format)
+- Python 문자열 보간에 대한 상세한 설명: [Real Python](https://realpython.com/python-string-formatting/)

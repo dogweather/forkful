@@ -10,38 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e porquê?
+## O Que é e Por Quê?
+Interpolação de strings é um processo no qual inserimos variáveis diretamente em strings. Os programadores fazem isso para tornar o código mais legível e fácil de entender.
 
-Interpolação de string é uma técnica usada por programadores em que strings podem ser inseridas ou combinadas dinamicamente em uma outra string. Isso é útil para criar mensagens personalizadas ou adicionar variáveis em textos pré-definidos. Programadores usam interpolando strings para tornar seus códigos mais dinâmicos e flexíveis.
-
-## Como fazer:
-
-Um exemplo simples de interpolação de string em Java é o seguinte:
+## Como Fazer:
+Vamos ver um exemplo ao usar a interpolação de strings no Java 15 com a formatação `String::formatted`.
 
 ```Java
-String nome = "Maria";
-System.out.format("Olá, %s! Seja bem-vinda.", nome);
+var nome = "João";
+var idade = 23;
+var exemplo = "Olá, meu nome é %s e tenho %d anos.".formatted(nome, idade);
+System.out.println(exemplo);
 ```
 
-Isso resultará na saída: `Olá, Maria! Seja bem-vinda.`
+Neste programa, a saída será: `Olá, meu nome é João e tenho 23 anos.`
 
-Outro exemplo útil é em casos onde variáveis precisam ser adicionadas em mensagens de erro. Por exemplo:
+## Mergulho Profundo
+Na interpolação de strings, inicialmente as linguagens de programação, como Perl e Ruby, levaram a vantagem. No entanto, apenas recentemente, o Java introduziu esse recurso na versão 15.
 
-```Java
-int quantidade = 5;
-String produto = "canetas";
-System.out.format("Você não pode comprar mais de %d %s.", quantidade, produto);
-```
+Existem alternativas, como String.format() ou MessageFormat.format() que são usadas para realizar a interpolação em versões anteriores do Java.
 
-A saída será: `Você não pode comprar mais de 5 canetas.`
+A implementação da interpolação de strings no Java é feita através da formatação de strings e não da interpolação literal de string como em outras linguagens.
 
-## Profundidade:
-
-A interpolação de string é uma técnica antiga que tem sido usada em várias linguagens de programação. Ela é uma alternativa à concatenação de strings, onde as strings são simplesmente combinadas usando o operador `+`. Enquanto a concatenação ainda é amplamente usada, a interpolação de string é considerada mais legível e organizada, especialmente para mensagens mais longas.
-
-Em Java, a interpolação de string é suportada pelo método `format()` da classe `System.out`. Ele é baseado no antigo recurso de formatação de string da classe `Formatter`, mas é mais simples e mais adequado para a interpolação de string.
-
-## Veja também:
-
-- [Documentação oficial da classe System.out](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out)
-- [Explicação detalhada sobre interpolação de string em Java](https://www.baeldung.com/java-string-interpolation)
+## Veja Também
+- Documentação oficial da Oracle: [String.format()](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html)
+- Artigo sobre interpolação de strings no Java: [Baeldung: A Guide to Java String Interpolation](https://www.baeldung.com/java-string-interpolation)

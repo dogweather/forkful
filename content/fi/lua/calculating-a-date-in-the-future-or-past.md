@@ -1,7 +1,7 @@
 ---
-title:                "Tulevan tai menneen päivämäärän laskeminen"
-html_title:           "Lua: Tulevan tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "Lua: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja miksi?
-Kun ohjelmoijat haluavat laskea päivämäärän tulevaisuudessa tai menneisyydessä, he käyttävät laskentaohjelmaa. Tämä voi olla hyödyllistä esimerkiksi aikaleimojen luomiseen tai tapahtumien ajoittamiseen.
+## Mikä & Miksi?
 
-Kuinka:
-```Lua
--- Laske 10 päivää nykyisestä päivästä
-local nykyinen_paiva = os.date("*t")
-local tuleva_paiva = os.time(nykyinen_paiva) + 10*24*60*60 -- lisää 10 päivää (24 tuntia * 60 minuuttia * 60 sekuntia)
-local lasketut_paivamaara = os.date("%x", tuleva_paiva) -- muunna tuleva päivä stringiksi
-print(lasketut_paivamaara) --> 07/16/20
+Tulevaisuudessa tai menneisyydessä olevan päivämäärän laskeminen on kykyä siirtää päivämäärä eteenpäin tai taaksepäin, määritellyn ajanjakson mukaan. Ohjelmoijat tekevät sen esim. projektinhallintaan ja ajanhallintaan liittyvissä sovelluksissa.
+
+## Kuinka:
+
+Seuraavassa esimerkissä näytämme, kuinka voit laskea kahden päivän päässä olevan päivämäärän nykyhetkestä käyttäen `os.date` ja `os.time` funktioita.
 ```
+Lua
+local nykyinen_paivamaara = os.time()
+local kaksi_paivaa_secs = 2 * 24 * 60 * 60 -- 2 päivää sekunneissa
 
-Syväsukellus:
-Historiallinen konteksti:
-Päivämäärän laskenta on ollut tärkeää jo antiikin ajoista lähtien esimerkiksi kalenterien luomisessa. Nykyään tämä toiminto on yksinkertaistunut ja saatavilla helposti ohjelmointikielillä, kuten Lua.
+local tulevaisuuden_paivamaara = os.date("*t", nykyinen_paivamaara + kaksi_paivaa_secs)
 
-Vaihtoehtoja:
-On olemassa muitakin tapoja laskea päivämäärä tulevaisuudessa tai menneisyydessä, kuten käyttämällä aikajanoja tai erityisiä kirjastoja.
+print(os.date("%x", os.time(tulevaisuuden_paivamaara))) 
+```
+Näyte ulostulo:
 
-Toteutuksen yksityiskohdat:
-Lua:ssa päivämäärän laskentaan käytetään os.date() ja os.time() -funktioita. Os.time() muuntaa päivän, kuukauden ja vuoden arvot sekunneiksi ja os.date() muuntaa sekunnit takaisin päivämääräksi. Tarkempien päivämäärien laskentaan voidaan myös käyttää date-luokkaa.
+`10/14/2022`
 
-Katso myös:
-- Lua documentation (https://www.lua.org/pil/22.1.html)
-- Date and Time Library (https://github.com/Tieske/date)
+## Syvempi Sisältö:
+
+(1) **Historiallinen Konteksti:** Tulevaisuuden tai menneisyyden päivämäärän laskeminen on ollut keskeinen osa ohjelmistoja jo vuosikymmenien ajan. Se voi tarjota tärkeitä tietoja ja ymmärrystä ajasta, joka on kulunut tai joka on edessä.
+
+(2) **Vaihtoehdot:** `os.date` ja `os.time` soveltuvat perus päivämäärän laskentaan. Kuitenkin, jos tarvitset enemmän ominaisuuksia, kuten viikonpäivän selvittämisen, harkitse 'luadate' kirjastoa.
+
+(3) **Toteutuksen Yksityiskohdat:** `os.time` palauttaa sekunteja, jotka ovat kuluneet tietystä kiinteästä pisteestä, yleensä 1. tammikuuta 1970. `os.date` muuttaa tämän sekuntien määrän ymmärrettävämpään muotoon.
+
+## Lisätietoja:
+
+- Lua-dokumentaatio päivämäärän ja ajan käsittelyyn: https://www.lua.org/pil/22.1.html 
+- 'luadate' kirjasto laajaspektrisempään päivämäärä- ja aikakäsittelyyn: https://luarocks.org/modules/Tieske/date 
+- Artikkeli päivämäärän manipulointi tekniikoista: https://www.computerhope.com/jargon/d/date-calculation.htm 
+
+Huomaa, että voi olla myös muita kirjastoja ja tapoja hallita aikaa ja päivämääriä Luassa. Käytä sitä, mikä parhaiten sopii ohjelmointitarpeisiisi.

@@ -1,7 +1,7 @@
 ---
-title:                "Maiuscolare una stringa"
-html_title:           "PHP: Maiuscolare una stringa"
-simple_title:         "Maiuscolare una stringa"
+title:                "Capitalizzare una stringa"
+html_title:           "PHP: Capitalizzare una stringa"
+simple_title:         "Capitalizzare una stringa"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,36 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## COS'È E PERCHÉ?
 
-Capitalizzare una stringa significa convertire la prima lettera di ogni parola in maiuscolo. I programmatori spesso lo fanno per rendere più leggibili le stringhe di testo, in particolare quando si tratta di titoli o frasi importanti.
+Capitalizzare una stringa significa trasformare la prima lettera di ogni parola in una maiuscola. Questo è utile per i programmatori quando vogliono migliorare la presentabilità e la leggibilità dei testi generati dal loro codice.
 
-## Come fare:
+## COME SI FA:
 
-Puoi capitalizzare una stringa utilizzando la funzione `ucwords()` di PHP. Vediamo un esempio:
+Ecco un semplice esempio di come capitalizzare una stringa in PHP:
 
-```PHP
-$stringa = "ciao a tutti gli amici";
-echo ucwords($stringa);
-
-// Output: Ciao A Tutti Gli Amici
+```php
+<?php
+$stringa = "ciao mondo";
+$stringaCapitalizzata = ucwords($stringa);
+echo $stringaCapitalizzata;
+?>
 ```
+Output del codice sarà:
 
-Puoi anche capitalizzare una stringa utilizzando il metodo `ucfirst()` che converte solo la prima lettera in maiuscolo. Esempio:
-
-```PHP
-$stringa = "saluti dalla bella Italia";
-echo ucfirst($stringa);
-
-// Output: Saluti dalla bella Italia
 ```
+Ciao Mondo
+```
+In questo esempio, la funzione `ucwords()` di PHP viene utilizzata per capitalizzare ogni parola di una stringa.
 
-## Approfondimento:
+## APPROFONDIMENTI
 
-La pratica di capitalizzare le stringhe ha origine dalla stampa tipografica, dove le prime lettere delle parole erano generalmente più grandi e audaci rispetto al resto del testo. In alternativa, in alcuni casi può essere più appropriato utilizzare la funzione `strtoupper()` per convertire l'intera stringa in maiuscolo.
+1) **Contesto storico**: La funzione `ucwords()` è disponibile in PHP sin dalla versione 4.0.0, rilasciata nel 2000.
 
-## Vedi anche:
+2) **Alternative**: Oltre all'uso di `ucwords()`, si può utilizzare la funzione `mb_convert_case()` se si lavora con multibyte string (stringhe che contengono caratteri non-latini o speciali).
 
-- Documentazione PHP per la funzione `ucwords()`: https://www.php.net/manual/en/function.ucwords.php
-- Documentazione PHP per la funzione `ucfirst()`: https://www.php.net/manual/en/function.ucfirst.php
-- Documentazione PHP per la funzione `strtoupper()`: https://www.php.net/manual/en/function.strtoupper.php
+Esempio:
+
+```php
+<?php
+$stringa = "ciao mondo";
+$stringaCapitalizzata = mb_convert_case($stringa, MB_CASE_TITLE, "UTF-8");
+echo $stringaCapitalizzata;
+?>
+```
+Output del codice sarà:
+
+```
+Ciao Mondo
+```
+3) **Dettagli Implementativi**: `ucwords()` converte solo il primo carattere di ogni parola in maiuscolo, mentre `mb_convert_case()` è più potente perché supporta i caratteri Unicode. Tuttavia, l'uso di quest'ultima funzione può comportare un leggero impatto sulle prestazioni rispetto alla prima.
+
+## APPROFONDIMENTI
+
+Manuali online di PHP per le funzioni [`ucwords()`](http://php.net/manual/en/function.ucwords.php) e [`mb_convert_case()`](http://php.net/manual/en/function.mb-convert-case.php). Consigliamo vivamente di consultare questi link per capire meglio come queste funzioni funzionano e per scoprire tutte le altre funzioni di manipolazione delle stringhe disponibili in PHP.

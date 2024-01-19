@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si un directorio existe"
-html_title:           "Bash: Comprobando si un directorio existe"
-simple_title:         "Comprobando si un directorio existe"
+title:                "Verificando si un directorio existe"
+html_title:           "Bash: Verificando si un directorio existe"
+simple_title:         "Verificando si un directorio existe"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué es y por qué?
 
-Chequear si un directorio existe es una tarea común en programación que consiste en verificar si un directorio (o carpeta) específico existe en una ubicación determinada. Los programadores lo hacen para asegurarse de que el código no fallará al intentar acceder a un directorio que no existe.
+La verificación de la existencia de un directorio es una tarea común en la programación Bash. Los programadores verifican si un directorio existe para evitar errores de sintaxis al intentar acceder o manipular directorios inexistentes.
 
-## Cómo hacerlo:
+## ¿Cómo se hace?
+
+Los códigos siguientes muestran cómo verificar la existencia de un directorio en Bash.
 
 ```Bash
-if [ -d /ruta/directorio ]; then
-  echo "El directorio existe"
+# verificar si un directorio existe
+if [ -d "/ruta/directorio" ]; then
+    echo "El directorio existe."
 else
-  echo "El directorio no existe"
+    echo "El directorio no existe."
 fi
 ```
-Salida si el directorio existe:
-```
-El directorio existe
-```
-Salida si el directorio no existe:
-```
-El directorio no existe
-```
 
-## Profundizando:
+En este ejemplo, si el "directorio" en "/ruta/directorio" existe, se imprime "El directorio existe." De lo contrario, se imprime "El directorio no existe."
 
-- Contexto histórico: La función para verificar si un directorio existe se introdujo en Bash en la versión 2.0 en 1996.
-- Alternativas: Además del método usado en el ejemplo anterior, también se puede utilizar el comando `test -d /ruta/directorio`. También hay herramientas como `stat` y `ls` que permiten verificar si un directorio existe.
-- Detalles de implementación: Al utilizar `[ -d /ruta/directorio ]`, se está usando una prueba de condición que devuelve verdadero si el directorio existe y falso si no existe. Si se desea usar una estructura `if` más detallada, también se puede hacer con la sintaxis `if [ -d /ruta/directorio ]; then`.
+## Profundización
 
-## Véase también:
+Historicamente, Bash incluye la capacidad de verificar la existencia de un directorio desde sus primeras versiones. Esta funcionalidad es vital en muchas tareas de scripting, como navegación de archivos, respaldo de datos, y manipulación de archivos y directorios. 
 
-- [El comando `test` en Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- [Otras herramientas para verificar si un directorio existe](https://www.linuxjournal.com/content/bash-tips-checking-file-or-directory-existence)
+Existen alternativas a la verificación de la existencia de un directorio en Bash. Por ejemplo, se puede usar un enfoque orientado a objetos en lenguajes de programación más modernos, como Python o Ruby, pero estas suelen ser sobre-dimensionadas para tareas simples.
+
+En cuanto a los detalles de implementación, el `-d` en el script es una opción de test que comprueba si el directorio existe. Bash interpreta diferentes opciones de prueba para verificar diversos tipos de ficheros, por lo que otra opción diferente a `-d` daría un resultado distinto.
+
+## Ver también
+
+Puedes continuar tu aprendizaje en Bash y cómo manejar directorios con los siguientes recursos:
+
+- Guía de Bash para principiantes: https://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html
+- Comandos de Bash para manipulación de directorios: https://www.lifewire.com/linux-commands-for-navigating-file-system-4027320
+- Bash scripting: https://www.shellscript.sh

@@ -1,7 +1,7 @@
 ---
-title:                "「HTTPリクエストの送信」"
-html_title:           "Haskell: 「HTTPリクエストの送信」"
-simple_title:         "「HTTPリクエストの送信」"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,32 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 送信するHTTPリクエストとは？
+## 何となぜ？
 
-HTTPリクエストを送信するとは何かの説明をすると、コンピュータやネットワークプログラマーがウェブサーバーと通信するための方法です。プログラマーたちはHTTPリクエストを送信することで、ウェブサーバーから情報を取得したり、ウェブサービスを使用したりすることができます。
+HTTPリクエストを送信するとは、ネットワークを介して特定のウェブページまたはサービスに情報を要求するプロセスのことです。プログラマはこれを行う理由は主に2つあります。1つはデータを取得するため、もう1つは特定の操作をウェブサービース上で依頼するためです。
 
-## 方法：
+## 使い方
+
+HTTPリクエストを送信するための基本的なHaskellコードは以下の通りです：
 
 ```Haskell
-import Network.HTTP
+import Network.HTTP.Simple
+
+main :: IO ()
 main = do
-    resp <- simpleHTTP (getRequest "http://www.example.com")
-    let body = fmap rspBody resp
-    print body
+    response <- httpLBS "http://httpbin.org/get"
+
+    putStrLn $ "The status code was: " ++
+               show (getResponseStatusCode response)
+    print (getResponseBody response)
 ```
 
-上記のコードは、HTTPライブラリを使用してウェブサイトのページを取得し、そのページのボディを表示するものです。コードを実行すると、ウェブサイト「www.example.com」のHTMLコンテンツが表示されます。
+このコードを実行すると以下の出力が得られます：
 
-## 深い掘り下げ：
+```Haskell
+The status code was: 200
+"OK"
+```
 
-HTTPリクエストは、現在のウェブ標準であるHTTPプロトコルに基づいています。以前は、HTTPよりも複雑なプロトコルであるFTPやTelnetがよく使われていましたが、今ではそれらはほとんど利用されていません。
+このコードは "http://httpbin.org/get" にHTTPリクエストを送信し、ステータスコードとレスポンスボディを表示します。
 
-HTTPリクエストを送信するために、Haskellには他のライブラリやパッケージもあります。例えばHTTPコンビネータライブラリやHTTPクライアントライブラリがありますが、今回紹介したライブラリはシンプルで使いやすく、多くの機能を提供してくれます。
+##深掘り
 
-## 関連：
+HTTPリクエストの送信は、1980年代からのWebコミュニケーションの基本的なプロセスであり、時代と共にバリエーションと改良が加わりました。 
 
-HaskellでHTTPリクエストを送信する方法は他にも多数あります。もし今回紹介したライブラリがあなたに合わない場合は、以下のリンクを参考にしてみてください。
+HaskellでHTTPリクエストを送信する代替手段としては、`http-client`や`wreq`などのライブラリがあります。
 
-- [Hackage - HTTPライブラリ一覧](https://hackage.haskell.org/packages/search?terms=HTTP)
+HaskellのHTTPリクエスト送信について深く掘り下げると、上記のコードの背後には`http-client`ライブラリが使用されています。これは、リクエストを構築し、サーバーに送信し、応答を解析するための底辺のインターフェースを提供します。
 
-- [r/haskell - Simple HTTPクライアントを使用してリクエストを送信する方法](https://www.reddit.com/r/haskell/comments/m8rm6/how_to_send_request_using_simple_http_client/)
+## 関連情報
+
+以下のリンクは、このトピックについての追加情報を提供します。
+
+- HaskellのHTTPリクエスト：http://haskell-lang.org/library/http-client
+
+- HTTPプロトコルについての詳細：https://developer.mozilla.org/ja/docs/Web/HTTP
+
+以上がHaskellでHTTPリクエストを行うことの基本になります。データを取得したり、サービスに対する特定の操作を呼び出したりするために、この情報が役立ちます。

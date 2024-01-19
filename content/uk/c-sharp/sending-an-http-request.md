@@ -1,6 +1,6 @@
 ---
 title:                "Надсилання http-запиту"
-html_title:           "C#: Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
 simple_title:         "Надсилання http-запиту"
 programming_language: "C#"
 category:             "C#"
@@ -10,59 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
+## Що і чому?
 
-Надсилання HTTP-запиту є важливою частиною розробки програм. Це дозволяє програмі взаємодіяти з сервером, отримувати та передавати дані. Без надсилання HTTP-запитів програми не змогли би працювати з інтернет-ресурсами, такими як веб-сторінки та додатки.
+Надсилання HTTP-запиту - це процес комунікації між комп'ютерами через протокол HTTP, коли один комп'ютер запитує дані від іншого. Ми, програмісти, робимо це, щоб отримати доступ до різноманітних веб-ресурсів, наприклад, веб-сторінок, API, файлів тощо.
 
-Як це зробити:
+## Як це робиться:
 
-Використовуючи мову програмування C#, надсилання HTTP-запиту стає дуже простим. Ось приклад коду, який надсилає GET-запит до веб-сайту "example.com" і виводить вміст сторінки у консоль:
+Подивимося на приклад коду, який виконує HTTP-запит за допомогою C# і HttpClient.
 
 ```C#
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 
-public class Program {
-    public static async Task Main() {
-        using (var client = new HttpClient()) {
-            var result = await client.GetAsync("http://example.com");
-            string content = await result.Content.ReadAsStringAsync();
-            Console.WriteLine(content);
+class Program
+{
+    static readonly HttpClient client = new HttpClient();
+
+    static async Task Main()
+    {
+        try
+        {  
+            HttpResponseMessage response = await client.GetAsync("http://example.com");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(responseBody);
+        }  
+        catch(HttpRequestException e)
+        {  
+            Console.WriteLine("Exception Caught!");	
+            Console.WriteLine($"Message: {e.Message} ");
         }
     }
 }
 ```
+При виконанні цього коду отримуємо HTML-текст веб-сторінки "http://example.com" або повідомлення про помилку, якщо запит не вдався.
 
-Результат виконання цього коду виведе вміст сторінки "example.com" у консоль:
+## Більш глибокий занурення
 
-```html
-<!doctype html>
-<html>
-<head>
-    <title>Example Domain</title>
-    ...
-</head>
+Надсилання HTTP-запитів було основним методом взаємодії в Інтернеті з часів його зародження. Спочатку воно використовувалося для отримання HTML-документів, але з часом було розширено для взаємодії із серверними API.
 
-<body>
-<div>
-    <h1>Example Domain</h1>
-    <p>This domain is for use in illustrative examples in documents. You may use this
-    domain in literature without prior coordination or asking for permission.</p>
-</div>
-</body>
-</html>
-```
+Щодо альтернатив, можна користуватися іншими HTTP-клієнтами, як-от RestSharp або Flurl, які мають свої переваги і недоліки.
 
-Глибоке погруження:
+Метод GetAsync() використовує асинхронну модель програмування Task-based, що була введена в .NET 4.5. Вона робить код більш ефективним і простим у використанні.
 
-Надсилання HTTP-запитів стало можливим завдяки протоколу HTTP (Hypertext Transfer Protocol), який був розроблений у 1990-х роках. Існують інші альтернативи взаємодії з серверами, наприклад, FTP-протокол для передачі файлів чи SMTP-протокол для електронної пошти. Однак, HTTP є стандартним для надсилання запитів на веб-сайти та інші інтернет-ресурси.
+## Див. також
 
-Як ви могли помітити, ми використовували клас HttpClient для надсилання нашого запиту. Цей клас є частиною простору імен System.Net.Http, який надає можливість взаємодіяти з веб-серверами за допомогою HTTP. Також існують інші бібліотеки, такі як RestSharp, які дозволяють більш гнучко взаємодіяти з веб-серверами та обробляти відповіді.
-
-Також, HTTP-запити мають різні методи, такі як GET, POST, PUT, DELETE, які використовуються для звернення до різного типу ресурсів та виконання дій над ними. Для детальнішої інформації про роботу з HTTP-запитами та їх використання, рекомендуємо ознайомитися з документацією Microsoft.
-
-Рекомендовані джерела:
-
-- [Документація Microsoft про надсилання HTTP-запитів](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient)
-- [RestSharp - бібліотека для взаємодії з веб-серверами за допомогою REST API](https://restsharp.dev/)
-- [Протокол HTTP на Вікіпедії](https://uk.wikipedia.org/wiki/HTTP)
+- Офіційна документація про HttpClient: <https://docs.microsoft.com/uk-ua/dotnet/api/system.net.http.httpclient>
+- Матеріал про асинхронне програмування в .NET: <https://docs.microsoft.com/uk-ua/dotnet/csharp/programming-guide/concepts/async/>
+- RestSharp: <https://restsharp.dev/>
+- Flurl: <https://flurl.dev/>

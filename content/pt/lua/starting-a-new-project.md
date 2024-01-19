@@ -1,7 +1,7 @@
 ---
-title:                "Iniciando um novo projeto."
-html_title:           "Lua: Iniciando um novo projeto."
-simple_title:         "Iniciando um novo projeto."
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Getting Started"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O Que & Por Que?
 
-Iniciar um novo projeto em Lua significa criar um novo conjunto de códigos com um propósito específico. Programadores iniciam novos projetos para resolver problemas ou criar funcionalidades que não existem em projetos existentes.
+Iniciar um novo projeto é a preparação ou a criação de uma nova base de código. Programadores fazem isso para começar uma nova ideia a partir de um estado limpo, favorecendo a organização do código e evitando confusões.
 
-## Como fazer:
+## Como Fazer:
+No Lua, vamos iniciar um novo projeto a partir de um simples "Hello, World".
 
-```
--- Exemplo de um novo projeto em Lua
-function saudacao(nome)
-  print("Olá "..nome..", bem-vindo ao meu novo projeto em Lua!")
-end
-
-saudacao("João")
+```Lua
+print('Hello, World!')
 ```
 
-Este código imprime a mensagem "Olá João, bem-vindo ao meu novo projeto em Lua!" na tela.
+Ao executar esse código, a saída será:
 
-## Mergulho Profundo:
+```
+Hello, World!
+```
 
-Lua é uma linguagem de programação leve e versátil, projetada para ser integrada em outros softwares. Começar um novo projeto em Lua pode ser feito tanto através do uso de um editor de texto simples quanto por meio de um ambiente de desenvolvimento mais avançado, como o Eclipse com o plugin Lua Development Tools. Outra alternativa é iniciar um projeto usando estruturas de programação já existentes, como o framework LÖVE para jogos.
+## Mergulho Profundo
 
-## Veja também:
+O Lua, criado em 1993 no Brasil, foi concebido com o propósito de extensibilidade. Com uma sintaxe fácil de entender e recursos poderosos, Lua tornou-se uma escolha popular para iniciar novos projetos. 
 
-- Site oficial do Lua: https://www.lua.org/
-- Plugin Lua Development Tools para Eclipse: https://github.com/KPAX2/LDT/
-- Framework LÖVE para jogos: https://love2d.org/
+Em relação às alternativas, há várias linguagens de programação, cada uma com suas próprias vantagens. Python é bastante usado para prototipagem rápida e JavaScript para desenvolvimento web. No entanto, Lua destaca-se com sua eficiência e leveza.
+
+Quando implementamos um novo projeto no Lua, é uma boa prática organizar o código em diferentes arquivos e funções para facilitar a manutenção e melhorar a legibilidade.
+
+## Veja Também
+
+Links relacionados:
+1. Documentação oficial do Lua: http://www.lua.org/docs.html
+2. Tutoriais do Lua: https://www.tutorialspoint.com/lua/index.htm
+3. Fórum de programação do Lua: https://www.lua.org/community.html
+
+Lembre-se: programar é uma jornada de aprendizagem constante. Boa sorte com seu novo projeto!

@@ -10,24 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Obliczanie daty w przyszłości lub w przeszłości jest procesem, w którym programista wykorzystuje język Bash do obliczenia daty na podstawie podanej daty początkowej i ilości dni. Jest to przydatne narzędzie w różnych sytuacjach, takich jak generowanie raportów, kontrola gotowości projektu lub planowanie zadań.
+# Obliczanie daty w przeszłości lub przyszłości w Bashu 
+
+## Co to i dlaczego?
+
+Obliczanie daty w przeszłości lub przyszłości polega na determinowaniu daty, która jest pewien okres czasu od teraz. Programiści robią to np. do monitoringu, przypomnień lub planowania.
 
 ## Jak to zrobić:
-Możesz użyć polecenia ```date``` w Bashu, aby obliczyć datę w przyszłości lub w przeszłości. Aby obliczyć datę w przyszłości, użyj ```date -d "YYYY-MM-DD + 5 days" ``` gdzie "5 days" to ilość dni, którą chcesz dodać do daty początkowej. Aby obliczyć datę w przeszłości, użyj ```date -d "YYYY-MM-DD - 5 days"``` gdzie "5 days" to ilość dni, którą chcesz odjąć od daty początkowej. Poniżej znajdują się przykładowe wyjścia dla tych poleceń:
 
+Zakodujmy to szybko. W Bashu, możemy obliczyć datę w przyszłości lub przeszłości używając funkcji `date`.
+
+```Bash 
+# Obliczanie daty za 5 dni
+date -d '+5 day'
+
+# Obliczanie daty sprzed 5 dni
+date -d '-5 day'
 ```
-Bash: date -d "2021-01-01 + 5 days"
-Output: Tue Jan 5 00:00:00 PST 2021
 
-Bash: date -d "2021-01-01 - 5 days"
-Output: Sun Dec 27 00:00:00 PST 2020
+Output:
+
+```Bash
+# Za 5 dni
+2022-03-05
+
+# Sprzed 5 dni
+2022-02-23
 ```
 
-## Głębszy zanurzenie:
-Obliczanie daty w przyszłości lub w przeszłości jest możliwe dzięki użyciu programu GNU `date`, który dostarcza wiele opcji, takich jak formatowanie daty czy obliczanie czasu pomiędzy dwoma datami. Alternatywnym narzędziem do obliczania daty w Bashu jest program `cal`, który służy do wyświetlania kalendarza.
+## Deep Dive:
+
+- **Kontekst historyczny:** Bash pozwala obliczać daty w przyszłości lub przeszłości od wersji 2.1 wydanej w 1999 r.
+- **Alternatywy:** Można także używać Pythona lub JavaScriptu do obliczania dat, ale skomplikuje to skrypt i wymagać będzie dodatkowych narzędzi.
+- **Szczegóły implementacji:** W Bashu, `date` jest wbudowaną komendą, która wykorzystuje bibliotekę C `time.h` do przeliczania sekund na strukturę czasu.
 
 ## Zobacz także:
-- [Dokumentacja programu `date` w Bashu] (https://ss64.com/bash/date.html)
-- [Podręcznik programisty Bash] (https://www.tldp.org/LDP/abs/html/)
-- [Dokumentacja programu `cal` w Bashu] (https://ss64.com/bash/cal.html)
+
+- Szczegółowy opis składni i używania `date` w Bashu: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- Porównanie różnych języków programowania do obliczania daty: [https://www.codeproject.com/Articles/2750/Date-and-Time-in-C-vs-NET](https://www.codeproject.com/Articles/2750/Date-and-Time-in-C-vs-NET)
+- Obliczanie daty w przeszłości/przyszłości w Pythonie: [https://docs.python.org/3/library/datetime.html#timedelta-objects](https://docs.python.org/3/library/datetime.html#timedelta-objects)
+- Obliczanie daty w przeszłości/przyszłości w JavaScript: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#calculate_elapsed_time](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#calculate_elapsed_time)

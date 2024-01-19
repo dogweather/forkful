@@ -1,6 +1,6 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Haskell: 부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
 simple_title:         "부분 문자열 추출"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자열에서 일부분을 추출하는 것을 컴퓨터 프로그래머들이 하는 이유는 무엇일까요? 그것은 우리가 문자열을 조작하고 원하는 정보를 얻기 위해서입니다. 예를 들어, 만약 내 이름이 "홍길동"이라면, "홍"과 "동"이라는 문자열을 추출해 다른 용도로 사용할 수 있습니다.
+## 무엇이고 왜?
 
-## 어떻게:
-Haskell에서 substring을 추출하는 방법은 매우 쉽습니다. ```take``` 함수를 사용하여 문자열의 원하는 부분을 추출할 수 있습니다. 예를 들어:
+부분 문자열 추출이란 원하는 문자열의 일부를 분리하여 사용하는 것입니다. 이것은 특정 데이터를 필요에 따라 조작하고 가공하는데 있어 중요한 도구가 될 수 있습니다.
 
+## 사용 방법:
+
+먼저, Haskell에서 부분 문자열 추출은 `Data.List` 모듈의 `take`, `drop`, `splitAt` 함수를 사용하여 수행됩니다.  
+```Haskell
+import Data.List
+
+main = do
+  let str = "한글문자열"
+  print (take 2 str)  -- "한글"
+  print (drop 2 str)  -- "문자열"
+  print (splitAt 2 str) -- ("한글","문자열")
 ```
--- "John Doe" 문자열에서 "John"만 추출
-take 4 "John Doe"
+위의 코드를 실행하면 각각 "한글", "문자열", ("한글","문자열") 이 출력됩니다.
 
--- 결과: "John"
-```
+## 깊이 들여다보기: 
 
-아래는 더 복잡한 예시입니다. 문자열 "Hello World"에서 "World"만 추출하는 방법을 보여줍니다.
+Haskell의 문자열 추출은 리스트 연산을 기반으로 합니다. 이는 Haskell의 문자열이 리스트 구조를 통해 구현되어 있기 때문입니다.
 
-```
--- 문자열을 공백 문자 기준으로 나누어, 두 번째 요소만 추출
-last (tail (words "Hello World"))
+대체 방법으로, 다양한 파싱 라이브러리가 있습니다. 대표적으로 Attoparsec 및 Megaparsec 등이 있으며, 복잡한 문자열 처리 문제를 해결할 수 있습니다.
 
--- 결과: "World"
-```
+Haskell의 문자열 특징은 각 문자가 유니코드 문자에 해당하므로 여러 바이트로 구성될 수 있습니다. 따라서 인덱스를 기준으로 문자열을 분리할 때 주의가 필요합니다.
 
-## 깊은 탐구:
-substring 추출의 역사적 배경은 그리 오래되지는 않았지만, 많은 언어들이 이 기능을 내장하고 있습니다. 따라서 다른 프로그래밍 언어에서도 쉽게 구현할 수 있지만, Haskell에서의 구현은 더욱 간결하고 효율적입니다.
+## 참고:
 
-추출한 부분을 다른 용도로 사용할 때, 문자열의 길이나 인덱스를 조작하는데 유의해야 합니다. 이러한 정보를 잘못 다룰 경우, 프로그램이 예상치 못한 결과를 보일 수 있습니다.
+더 많은 정보와 더 깊은 이해를 위하여 아래의 소스를 확인해보세요.
 
-## 참고 자료:
-- [Haskell 공식 문서](https://www.haskell.org/documentation/#books)
-- [Haskell 활용법](https://www.ohaskell.guide/)
-- [Haskell Cookbook](http://haskell.tailcalled.com/)
+- 문자열과 리스트: https://www.haskell.org/tutorial/lists.html
+- Attoparsec: https://hackage.haskell.org/package/attoparsec
+- Megaparsec: https://hackage.haskell.org/package/megaparsec

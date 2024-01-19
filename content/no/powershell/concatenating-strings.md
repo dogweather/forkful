@@ -1,6 +1,6 @@
 ---
 title:                "Sammenslåing av strenger"
-html_title:           "PowerShell: Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
 simple_title:         "Sammenslåing av strenger"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,23 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å legge sammen strenger er en vanlig oppgave i programmering, der man kombinerer flere tekststrenger for å danne en enkelt streng. Dette er nyttig for å lage dynamiske meldinger og tilpasse utdataen basert på variabler.
+
+I programmering betyr samkjøring av strenger å sette sammen to eller flere strenger til én. Dette er nødvendig når vi ønsker å kombinere tekst fra ulike kilder eller generere dynamisk tekst.
 
 ## Hvordan gjør man det:
-For å legge sammen strenger i PowerShell, bruker man operatoren `+` som viser string-concatenation-funksjonalitet. Se eksemplet nedenfor:
-```
-PowerShell $navn = "Anna"
-$xoxo = " hugs and kisses!"
-Write-Output "Hei " + $navn + "!" + $xoxo
-```
-Eksempelutskrift:
-```
-Hei Anna! xoxo hugs and kisses!
+
+Concatenering av strenger i PowerShell er enkelt. Bruk `+` operatøren for å koble to strenger. Her er et enkelt eksempel:
+
+```PowerShell
+$str1 = "Hallo"
+$str2 = "Verden"
+$fullStr = $str1 + " " + $str2
+Write-Output $fullStr
 ```
 
-## Dykk dypere:
-Strengkonkateneringsbegrepet har sin opprinnelse fra programmeringspråket Basic. I Powershell er det også mulig å bruke metoder som `Concat()` og `Join()` for å legge sammen strenger. I tillegg finnes det alternative metoder som `StringBuilder`-klassen og `Format()`-metoden. Ved å bruke disse alternative metodene kan man forbedre ytelsen ved å redusere antall allokeringsoperasjoner.
+Resultatet vil bli:
+```PowerShell
+Hallo Verden
+```
+
+Eller du kan bruke `-f` operatør med en format streng:
+
+```PowerShell
+$str1 = "Hallo"
+$str2 = "Verden"
+$fullStr = "{0} {1}" -f $str1, $str2
+Write-Output $fullStr
+```
+
+Resultatet vil bli:
+```PowerShell
+Hallo Verden
+```
+
+## Dypdykk:
+
+Historisk sett har mange programmeringsspråk hatt forskjellige metoder for å koble sammen strenger. I PowerShell bruker vi '+', men i tidligere versjoner av .NET, måtte vi bruke StringBuilder-klassen for effektiv strengsamkjøring. 
+
+Alternativt til "+", kan du bruke `-f` operatøren. Den lar deg formatere strenger på en mer dynamisk og fleksibel måte. 
+
+I implementeringen av PowerShell, vil '+' operatøren opprette en ny streng i minnet hver gang den blir brukt. Dette vil kanskje ikke være den mest effektive metoden for store datamengder. I slike tilfeller er det bedre å bruke StringBuilder-klassen.
 
 ## Se også:
-For mer informasjon om strengkonkatenasjon i PowerShell, sjekk ut følgende kilder: 
-- [Microsoft Docs om string concatenation](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/converting-a-number-to-a-string?view=powershell-7)
+
+For mer detaljert info om strengsamkjøring og tekstbehandling i PowerShell, sjekk ut disse ressursene:
+
+- [Om_Operators - Microsoft Docs](https://docs.microsoft.com/no-no/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1)
+- [How to concatenate strings efficiently in c#](https://stackoverflow.com/questions/29557/how-to-concatenate-strings-efficiently-in-c-sharp)
+- [Working with Strings - PowerShell | Microsoft Docs](https://docs.microsoft.com/no-no/powershell/scripting/samples/working-with-strings?view=powershell-7.1)

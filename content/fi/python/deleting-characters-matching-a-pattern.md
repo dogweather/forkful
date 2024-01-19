@@ -1,7 +1,7 @@
 ---
-title:                "Kaavion mukaisten merkkien poistaminen"
-html_title:           "Python: Kaavion mukaisten merkkien poistaminen"
-simple_title:         "Kaavion mukaisten merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Poistan tekstin osia, jotka täsmäävät tiettyyn kaavaan, esimerkiksi tiettyyn merkkijonoon. Tätä tehdään yleensä tietyn ohjelman vaatimusten tai käyttötarkoituksen vuoksi.
+# Kuvioita vastaavien merkkien poistaminen Pythonilla: Mikä, Miksi ja Miten?
 
-## Miten:
-Esimerkkikoodit ja tulosteet ```Python ... ``` koodilohkoissa.
+## Mikä & Miksi?
 
+Kuvionsopivien merkkien poistaminen on tapa poistaa kaikki merkit, jotka täyttävät tietyn mallin. Ohjelmoijat tekevät tämän yksinkertaistamaan tai jalostamaan dataa, tai ehkä panemaan sen formaattiin, jonka muu koodi voi käsitellä.
+
+## Näin tehdään:
+
+Pythonissa `str.replace()` funktio tai `re.sub()` funktio ovat hyviä työkaluja tähän tarkoitukseen. Tässä on joitain esimerkkejä:
 ```python
-# Esimerkki #1:
-teksti = "Tämä on esimerkki"
-uusi_teksti = re.sub("e", "", teksti)
-print(uusi_teksti)
-# Output: Tämä on simerkki
+# str.replace() -esimerkki
+s = 'Hei, minun nimeni on Python!'
+s = s.replace('!', '.')
+print(s)  # Tulostaa: 'Hei, minun nimeni on Python.'
 
-# Esimerkki #2:
-teksti = "12345"
-uusi_teksti = re.sub("[0-9]", "", teksti)
-print(uusi_teksti)
-# Output: 
-
-# Esimerkki #3:
-teksti = "Hei kaikki!"
-uusi_teksti = re.sub("[aeiou]", "", teksti)
-print(uusi_teksti)
-# Output: H kll!
+# re.sub() -esimerkki
+import re
+s = 'Hei, minun nimeni on Python!'
+s = re.sub('[!,]', '.', s)
+print(s)  # Tulostaa: 'Hei. minun nimeni on Python.'
 ```
-## Syvemmälle:
-Alun perin "poistaminen" merkkijonoista tehtiin manuaalisesti mekaanisilla kirjoituskoneilla. Nykyään käytetään säännöllisiä lausekkeita (regexp), jotka mahdollistavat tarkempaa ja tehokkaampaa merkkijonojen käsittelyä. Vaihtoehtoisia tapoja poistaa merkkejä ovat esimerkiksi tietueiden suodatus ja leikkauksen käyttö.
 
-## Katso myös:
-- [Pythonin re-kirjasto](https://docs.python.org/3/library/re.html)
-- [Wikipedian sivu säännöllisistä lausekkeista](https://fi.wikipedia.org/wiki/S%C3%A4%C3%A4nn%C3%B6llinen_lauseke)
+## Syvällisempi tieto:
+
+Kuvionsopivien merkkien poistaminen tunnetaan myös regex-sanalla ja se on ollut ohjelmoinnin kulmakivi vuodesta 1951, kun se otettiin käyttöön ensimmäistä kertaa.
+
+Vaihtoehtoisia metodeja ovat `str.translate()` ja `str.maketrans()`, mutta ne ovat hieman monimutkaisempia ja hitaampia, koska ne luovat aluksi taulukon.
+
+Kun koodi poistaa merkkejä, se käy läpi jokaisen merkin merkkijonossa ja tarkistaa, täyttääkö se annetun mallin. Jos se on täyttänyt, merkki poistetaan.
+
+## Lisää tietoa:
+
+Suosittelen lukemaan seuraavat artikkelit lisätietojen saamiseksi asiasta:
+
+1. [Pythonin virallinen dokumentaatio str.replace() -funktiosta](https://docs.python.org/3/library/stdtypes.html#str.replace)
+2. [Pythonin virallinen dokumentaatio re.sub() -funktiosta](https://docs.python.org/3/library/re.html#re.sub)
+3. [Pythonin virallinen dokumentaatio str.translate() ja str.maketrans() -funktioista](https://docs.python.org/3/library/stdtypes.html#str.translate)
+4. [Lisätietoja regex-patternista](https://en.wikipedia.org/wiki/Regular_expression)

@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków"
-html_title:           "Elixir: Konwertowanie daty na ciąg znaków"
-simple_title:         "Konwertowanie daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Konwersja daty do ciągu znaków jest jedną z podstawowych operacji w programowaniu. Jest to proces przekształcania daty w formę czytelną dla komputera, czyli w ciąg znaków. Programiści często wykonują tę operację, aby wyświetlić datę w przyjaznym dla użytkownika formacie lub aby przetwarzać dane w aplikacji.
+## Co i Dlaczego?
+
+Konwersja daty na łańcuch znakowy to proces zamiany obiektu daty na czytelny dla człowieka format tekstowy. Programiści wykonują tę operację, aby łatwiej wyświetlać daty użytkownikom lub zapisywać je w bazach danych.
 
 ## Jak to zrobić:
 
-Aby przekonwertować datę do ciągu znaków w Elixir, użyjemy funkcji `DateTime.to_string/1`. Przykładowy kod wygląda tak:
+W Języku Elixir wykonamy to przy pomocy paczki modułów `Date` i `DateTime`.
+Oto przykładowy kod:
 
 ```elixir
-date = DateTime.utc_now()
-DateTime.to_string(date)
+data = Date.new(2022, 1, 1)
+IO.puts Date.to_string(data)
 ```
 
-Wynik będzie wyglądał mniej więcej tak: `"2021-04-23 14:25:45.151176Z"`. Możemy także określić własny format daty, korzystając z opcjonalnego parametru funkcji `to_string/2`:
+Dajmy przykład z `DateTime`:
 
 ```elixir
-date = DateTime.utc_now()
-DateTime.to_string(date, "{YYYY}-{M}-{D}")
+data_i_czas = DateTime.utc_now()
+IO.puts DateTime.to_string(data_i_czas)
 ```
 
-W tym przypadku wynik będzie prezentowany w formacie `"2021-4-23"`.
+Podczas wykonania powyższego kodu, wypisane zostaną aktualne data i czas w czytelnym formacie tekstowym.
 
-## Deep Dive:
-W przeszłości istniało wiele różnych formatów zapisu daty, ale obecnie najczęściej stosowany jest standard ISO 8601, który ma formę `YYYY-MM-DDTHH:MM:SS.mmmmmmZ`. Dzięki temu standardowi, maszyny są w stanie bezbłędnie przetwarzać daty i nie dochodzi do nieporozumień, które mogłyby mieć miejsce przy użyciu innych formatów.
+## Dogłębniej
 
-Alternatywne sposoby konwersji daty do ciągu znaków w Elixir to użycie funkcji `~D`, która konwertuje datę do formatu `"YYYY-MM-DD"` lub `~T`, która konwertuje czas do formatu `"HH:MM:SS.mmmmmm"`. Możemy też użyć biblioteki `Timex`, która oferuje bardziej zaawansowane możliwości formatowania daty.
+Moduły `Date` i `DateTime` są integralną częścią języka Elixir od wersji 1.3, wydanej w 2016 roku. Przed ich wprowadzeniem, konwersje dat musiały być realizowane za pomocą zewnętrznych bibliotek.
 
-## Zobacz również:
-Dokumentacja Elixir na temat konwersji daty: 
-https://hexdocs.pm/elixir/DateTime.html#to_string/1
-Dokumentacja Elixir na temat standardów ISO 8601: 
-https://en.wikipedia.org/wiki/ISO_8601
-Biblioteka Timex do zarządzania datami i czasem w Elixir: 
-https://github.com/bitwalker/timex
+Alternatywą może być bezpośrednie formatowanie łańcuchów tekstowych, choć jest to technika zalecana raczej przy mniej skomplikowanych przypadkach, głównie ze względu na wydajność i potencjalne problemy z lokalizacją.
+
+Pod spodem, konwersja `Date.to_string/1` i `DateTime.to_string/1` działa poprzez skonstruowanie łańcuchów znakowych reprezentujących poszczególne składowe daty (rok, miesiąc, dzień, godzina, itd.), a następnie złączenie ich w odpowiednim formacie.
+
+## Zobacz także
+
+1. Dokumentacja modułu `Date` w Elixirze: https://hexdocs.pm/elixir/Date.html
+2. Dokumentacja modułu `DateTime` w Elixirze: https://hexdocs.pm/elixir/DateTime.html
+3. Poradnik na temat formatowania łańcucha znaków w Elixirze: https://hexdocs.pm/elixir/String.html

@@ -10,72 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por quê?
+## Porquê e para quê?
 
-Calcular uma data no futuro ou no passado é um processo comumente usado por programadores para realizar tarefas como programação de alarmes ou temporizadores. Essencialmente, é uma forma de usar o tempo e a data do mundo real em nossos códigos e tornar nossos dispositivos mais interativos e funcionais.
+Calcular uma data no futuro ou passado é a ação de determinar um dia específico com base em um ponto de referência de tempo definido. Programadores usam isto para funções como avaliar períodos de tempo ou projetar prazos.
 
 ## Como fazer:
 
-```
-Arduino nano;
-int dia = 15; //dia desejado
-int mes = 6; //mês desejado
-int ano = 2021; //ano desejado
-int hora = 13; //hora desejada
-int minutos = 30; //minutos desejados
-int segundos = 0; //segundos desejados
+Vamos implementar esta função na plataforma Arduino usando a biblioteca TimeLib. A biblioteca TimeLib é uma grande ferramenta para manipulação de tempo e datas no Arduino.
+
+Instale a biblioteca através do gerenciador de bibliotecas do Arduino, procurando por "TimeLib".
+
+Agora vamos calcular uma data exatamente uma semana no futuro de uma data inicial.
+
+```Arduino
+#include <TimeLib.h>  
 
 void setup() {
-    Serial.begin(9600);
-    pinMode(2, OUTPUT); //pino para controlar o LED
+  Serial.begin(9600);
+  
+  setTime(12, 0, 0, 1, 1, 2022); // Configuração de tempo inicial (Hora, Minuto, Segundo, Dia, Mês, Ano)
 }
 
 void loop() {
-    //definir a data atual
-    const unsigned long dataAtual = atualData();
-    
-    //definir data desejada
-    const unsigned long dataDesejada = dateToLong(dia, mes, ano, hora, minutos, segundos);
-    
-    //calcular diferença de tempo
-    unsigned long diferenca = dataDesejada - dataAtual;
-    
-    //converter diferença para dias, horas e minutos
-    int dias = (int)diferenca / (24*60*60);
-    int horas = (int)diferenca / (60*60) % 24;
-    int minutos = (int)diferenca / 60 % 60;
-    
-    //imprimir resultado
-    Serial.println("Faltam " + String(dias) + " dias, " + String(horas) + " horas e " + String(minutos) + " minutos para chegar à data desejada!");
-    
-    //liga ou desliga o LED se a data desejada for no dia de hoje
-    if(diferenca == 0) {
-        digitalWrite(2, HIGH);
-    }
-    else {
-        digitalWrite(2, LOW);
-    }
-    
-    delay(5000);
-}
+  time_t currentTime = now(); // Tempo atual ou seja, tempo inicial definido
+  time_t futureTime = currentTime + SECS_PER_WEEK; // Calcutando exatamente uma semana no futuro
 
-//função para obter a data atual
-unsigned long atualData() {
-    return ((unsigned long)day() * 24*60*60 + (unsigned long)month() * 60*60 + (unsigned long)year() * 60);
-}
+  Serial.println("Data atual: ");
+  Serial.print(day(currentTime));
+  Serial.print("/"); 
+  Serial.print(month(currentTime));
+  Serial.print("/");
+  Serial.println(year(currentTime));
+  
+  Serial.println("Data no futuro: ");
+  Serial.print(day(futureTime));
+  Serial.print("/"); 
+  Serial.print(month(futureTime));
+  Serial.print("/");
+  Serial.println(year(futureTime));
 
-//função para converter data para um formato legível
-unsigned long dateToLong(int dia, int mes, int ano, int hora, int minutos, int segundos) {
-    return ((unsigned long)dia * 24*60*60 + (unsigned long)mes * 60*60 + (unsigned long)ano * 60 + (unsigned long)hora * 60 + (unsigned long)minutos * 60 + (unsigned long)segundos);
+  delay(5000);
+
 }
 ```
 
-## Deep Dive:
+## Um pouco mais:
 
-Calcular datas no futuro ou no passado é um recurso amplamente usado em diferentes áreas da programação, como automação residencial, projetos de IoT, jogos e muito mais. Ele nos permite criar dispositivos que respondem a diferentes eventos baseados no tempo e torna nossos códigos mais precisos e interativos. Existem também algumas bibliotecas disponíveis para facilitar o cálculo de datas no Arduino, como a biblioteca Time.h.
+Calcular datas futuras ou passadas é uma prática que tem sido utilizada desde a era dos mainframes. É essencial em muitas tarefas de programação, principalmente nos campos de cronometragem e agendamento.
 
-## Veja também:
+Existem outras bibliotecas e aproximações para realizar estas operações, sendo a TimeLib a mais recomendada para Arduino pela sua simplicidade e robustez.
 
-- [Página oficial do Arduino](https://www.arduino.cc)
-- [Documentação da biblioteca Time.h](http://playground.arduino.cc/Code/Time)
-- [Arduino para iniciantes: programando datas e horas](https://www.filipeflop.com/blog/arduino-para-iniciantes-programando-datas-e-horas/)
+Quando calculamos uma data futura como fizemos acima, estamos basicamente adicionando o número de segundos correspondentes ao período de tempo desejado (uma semana neste caso) ao tempo inicial definido.
+
+Contudo, é importante ter em consideração que a biblioteca TimeLib não leva em conta o horário de verão ou os fusos horários. Portanto, caso seja sensível a estes aspetos, serão necessários ajustes adicionais.
+
+## Ver também:
+
+- Biblioteca TimeLib no GitHub: https://github.com/PaulStoffregen/Time
+- Documentação oficial Arduino: https://www.arduino.cc/en/guide/libraries
+
+Neste artigo, nós cobrimos o básico de como calcular datas futuras ou passadas no Arduino. A partir daqui, esperamos que possam explorar mais e implementar funcionalidades mais complexas e adaptadas às suas necessidades!

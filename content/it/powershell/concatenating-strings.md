@@ -1,7 +1,7 @@
 ---
-title:                "Unione di stringhe"
-html_title:           "PowerShell: Unione di stringhe"
-simple_title:         "Unione di stringhe"
+title:                "Concatenazione di stringhe"
+html_title:           "Bash: Concatenazione di stringhe"
+simple_title:         "Concatenazione di stringhe"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,53 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## Cos'è e Perché?
+Concatenare le stringhe, in pratica, è l'unione di due o più stringhe per formare una singola stringa. I programmatori lo fanno per manipolare e presentare i dati in modo più significativo o utile.
 
-La concatenazione di stringhe è un'operazione fondamentale nella programmazione. Si tratta di un processo in cui due o più stringhe vengono unite insieme in una sola. I programmatori utilizzano la concatenazione di stringhe per creare frasi, espressioni o testo dinamico all'interno dei loro script.
+## Come si fa:
+Powershell fornisce vari modi per concatenare stringhe. Qui ci sono alcuni esempi:
 
-## Come fare:
-
-Ecco alcuni esempi di codice in PowerShell per dimostrare come concatenare le stringhe.
-
+```PowerShell
+# Utilizzando l'operatore `+`
+$stringa1 = "Ciao "
+$stringa2 = "Mondo!"
+$stringa3 = $stringa1 + $stringa2
+echo $stringa3 
 ```
-#Esempio 1: Unire due stringhe usando l'operatore +
+Output: `Ciao Mondo!`
 
-$nome = "Maria"
-$cognome = "Rossi"
-
-$nomeCompleto = $nome + " " + $cognome
-Write-Output $nomeCompleto
-
-#Output: Maria Rossi
+```PowerShell
+# Utilizzando il metodo `.Concat`
+$stringa1 = [string]::Concat("Ciao ", "Mondo!")
+echo $stringa1
 ```
+Output: `Ciao Mondo!`
 
+```PowerShell
+# Utilizzando la formattazione delle stringhe
+$stringa1 = "Ciao {0}!"
+echo ($stringa1 -f "Mondo")
 ```
-#Esempio 2: Unire più stringhe usando l'operatore + all'interno di una singola espressione
+Output: `Ciao Mondo!`
 
-$paese = "Italia"
-$citta = "Roma"
-$indirizzo = "Via Nazionale"
+## Approfondimento
+Concatenare le stringhe è una pratica da lungo tempo in programmazione. PowerShell, essendo un linguaggio basato su .NET, eredita molti dei suoi metodi di concatenazione delle stringhe dal framework .NET. 
 
-$indirizzoCompleto = "$indirizzo, $citta, $paese"
-Write-Output $indirizzoCompleto
+Ci sono numerose alternative per concatenare le stringhe in PowerShell, come l'uso di operatori di assegnazione composti (+=), il metodo StringBuilder e l'uso di guillemet (o virgolette).
 
-#Output: Via Nazionale, Roma, Italia
-```
+Quando si tratta di implementazione, implica semplicemente l'assegnazione di una nuova variabile con l'unione delle stringhe.
 
-```
-#Esempio 3: Unire un array di stringhe usando il metodo .Join()
-
-$listaNomi = @("Giovanni", "Luca", "Sara")
-$elencoNomi = $listaNomi -join ", "
-Write-Output $elencoNomi
-
-#Output: Giovanni, Luca, Sara
-```
-
-## Approfondimento:
-
-La concatenazione di stringhe è un'operazione che ha origini nella programmazione delle prime versioni dei linguaggi di programmazione. In PowerShell, oltre all'uso dell'operatore + e del metodo .Join(), è possibile utilizzare anche il comando [string]::Concat() per unire le stringhe. Un'alternativa alla concatenazione di stringhe è l'uso di formattazione delle stringhe, che consente di inserire valori dinamici all'interno di una frase predefinita.
-
-## Vedi anche:
-
-Per ulteriori informazioni sulla concatenazione di stringhe in PowerShell, puoi consultare la documentazione ufficiale di Microsoft su [Concatenare stringhe in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1#concatenating-strings-in-powershell).
+## Consulta anche
+1. [String interpolation: New and Improved in PowerShell 6, 7](https://adamtheautomator.com/powershell-string-interpolation/)
+2. [How to Use PowerShell String Concatenation](https://www.top-password.com/knowledge/powershell-string-concatenation.html)
+3. [Manipulating Strings in PowerShell](https://ss64.com/ps/syntax-operators.html)
+4. [Running powershell with arguments](https://docs.microsoft.com/it-it/powershell/scripting/learn/ps101/10-functions?view=powershell-7.1)

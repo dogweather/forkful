@@ -1,7 +1,7 @@
 ---
-title:                "패턴과 일치하는 문자 삭제"
-html_title:           "C++: 패턴과 일치하는 문자 삭제"
-simple_title:         "패턴과 일치하는 문자 삭제"
+title:                "패턴에 일치하는 문자 삭제"
+html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자열에서 원하는 패턴에 일치하는 문자를 삭제하는 것은 프로그래머들이 자주 하는 작업 중 하나입니다. 이 작업은 보통 문자열에서 불필요한 데이터를 제거하거나 원하는 형식으로 데이터를 정리하기 위해 필요합니다.
+## 무엇이며 왜 그럴까?
 
-## 방법:
-다음은 문자열에서 포함된 "a" 문자를 제거하는 간단한 예제입니다.
+패턴에 일치하는 문자를 삭제하는 것은 특정 패턴이나 문자열이 코드 내에 중복되거나 필요하지 않게 되었을 때, 그것을 제거하는 작업을 말합니다. 이는 코드의 효율성과 가독성을 향상시키기 위해 필요한 작업입니다.
 
-```C++
+## 어떻게 하나요?
+
+다음은 C++의 `regex_replace` 함수를 사용하여 문자열에서 패턴이 일치하는 문자를 제거하는 방법입니다.
+
+```c++
+#include <regex>
 #include <iostream>
-#include <string>
-
-using namespace std;
 
 int main() {
-    // 예제 문자열
-    string str = "apple, banana, carrot";
-    
-    // "a" 문자 제거
-    str.erase(remove(str.begin(), str.end(), 'a'), str.end());
+    std::string str = "Hello, World!";
+    std::string pattern = "[aeiou]";
+    std::regex r(pattern, std::regex_constants::icase);
+    std::string result = std::regex_replace(str, r, "");
 
-    // 결과 출력
-    cout << str; // "pple, bn, crot"
-    
+    std::cout << result << std::endl; // 출력: "Hll, Wrld!"
     return 0;
 }
 ```
 
-위 코드에서는 <code>remove</code> 함수를 사용하여 문자열에서 해당하는 문자를 모두 제거하고, <code>erase</code> 함수를 사용하여 삭제된 문자열을 재할당합니다. 이 방법을 사용하면 원하는 패턴에 해당하는 문자를 간편하게 삭제할 수 있습니다.
+`regex_replace` 함수는 주어진 정규 표현식과 일치하는 문자를 제거(혹은 바꿈)하여 결과적으로 "Hello, World!"에서 모든 모음이 제거된 "Hll, Wrld!"를 출력함을 확인할 수 있습니다.
 
-## 깊이 파고들기:
-### 역사적 배경:
-패턴에 일치하는 문자를 삭제하는 방법은 오래전부터 프로그래밍에서 사용되어왔습니다. 그러나 과거에는 이러한 작업을 수행하는 데에는 더 많은 수작업이 필요했습니다. 그래서 현재처럼 코드 한 줄만으로 작업을 완료할 수 있던 것은 컴퓨터 과학 기술의 발전 덕분입니다.
+## 깊이 들어가서 보기
 
-### 대안:
-패턴에 일치하는 문자를 삭제하는 대안으로는 정규표현식이 있습니다. 정규표현식은 문자열에서 원하는 패턴을 찾고 삭제하는 데에도 사용할 수 있습니다. 그러나 정규표현식을 사용하면 코드의 이해가 어려워지고, 일부 언어에서는 성능도 저하될 수 있습니다.
+문자열에서 패턴에 일치하는 문자를 삭제하는 작업은 컴퓨터 프로그래밍의 초기 시점부터 있었으며, 특히 텍스트 처리나 데이터 클리닝 작업에 일반적으로 사용됩니다. C++ 외에도 Python, Java, Javascript 등 많은 언어들이 이 작업을 지원하는 내장 함수를 가지고 있습니다.
 
-### 구현 세부사항:
-위에서 사용한 코드에서 <code>erase</code> 함수의 내부 구현은 다음과 같은 과정을 거칩니다.
-1. 문자열에서 패턴에 일치하는 문자를 모두 제거한 후 제거된 문자열의 새로운 끝 위치를 반환합니다.
-2. 반환된 위치부터 문자열의 끝까지의 문자를 모두 제거합니다.
-3. 제거할 문자가 없다면 문자열의 끝 위치를 그대로 반환합니다.
+그밖에도 문자열의 `erase`와 `remove_if` 함수를 함께 사용하여 문자 삭제를 수행하는 등의 다른 방식도 존재합니다. 하지만 `regex_replace` 함수를 이용하면 좀 더 간편하게 그리고 강력하게 문자열 처리 작업을 할 수 있습니다.
 
-## 참고:
-- <a href="https://www.geeksforgeeks.org/delete-characters-matching-pattern-string/">GeeksforGeeks - Delete characters matching a pattern in a string</a>
-- <a href="https://www.geeksforgeeks.org/remove-characters-from-the-first-string-which-are-present-in-the-second-string/">GeeksforGeeks - Remove characters from the first string which are present in the second string</a>
-- <a href="https://www.regular-expressions.info/">Regular-Expressions.info - Regular Expressions Tutorial</a>
+이러한 기능들은 내부적으로 문자열을 순회하면서 각 문자를 검사하고 조건에 일치하면 해당 문자를 삭제하는 방식으로 동작합니다. 일반적으로 이러한 연산들은 O(n)의 시간 복잡도를 가집니다.
+
+## 참고 자료
+
+정규 표현식, 문자열 처리 등에 대한 더 많은 정보와 예제를 원하시면 아래의 링크를 참조하세요.
+
+- C++ 정규 표현식: http://www.cplusplus.com/reference/regex/
+- 문자열 처리 관련 C++ 표준 라이브러리: http://www.cplusplus.com/reference/string/
+- 대체적인 방법 `remove_if` 함수에 관한 정보: http://www.cplusplus.com/reference/algorithm/remove_if/

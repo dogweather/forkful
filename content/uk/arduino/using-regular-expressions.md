@@ -10,32 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Регулярні вирази - це спеціальні шаблони, які допомагають програмістам шукати та опрацьовувати тексти згідно з заданими критеріями. Вони є потужним інструментом для роботи з текстовими даними і дозволяють ефективно здійснювати операції, які раніше вимагали багато коду.
+## Що і чому?
 
-## Як:
+Регулярні вирази, або RegExp, це потужний інструмент для пошуку і маніпуляцій з текстом у коді. Програмісти використовують їх для ефективного виявлення, витягування та заміни певних шаблонів у стрічках.
+
+## Як це працює:
+
+Нижче наведено приклад пошуку стрічки, що містить слово "Arduino" за допомогою регулярних виразів.
+
 ```Arduino
-// Приклад використання регулярних виразів для перевірки правильності електронної адреси
-String email = "test@example.com";
+#include <regex.h>
+String input = "I love Arduino";
+regex_t regex;
+int check;
 
-if (email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i)) {
-  Serial.println("Електронна адреса вірна");
+check = regcomp(&regex, "Arduino", 0);
+check = regexec(&regex, input.c_str(), 0, NULL, 0);
+
+if(!check) {
+  Serial.println("Match found");
+} else if(check == REG_NOMATCH) {
+  Serial.println("No match");
 } else {
-  Serial.println("Невірна електронна адреса");
+  regerror(check, &regex, input, sizeof(input));
+  Serial.println("Regex match failed");
 }
-
-// Приклад використання регулярних виразів для перетворення тексту вищого регістра в нижній
-String text = "HELLO, WORLD";
-
-text.toLowerCase();
-
-Serial.println(text); // виведе "hello, world"
 ```
 
-## Глибокий занурений:
-Регулярні вирази були створені в 1956 році і використовувалися в багатьох мовах програмування, зокрема у Perl, Java та JavaScript. Є альтернативи до регулярних виразів, такі як використання вбудованих методів рядків, але вони можуть бути менш ефективними та потребувати більше коду. Для використання регулярних виразів у середовищі Arduino необхідно використовувати бібліотеку regex.
+Виведення:
 
-## Дивіться також:
-- [Документація по бібліотеці regex для Arduino](https://www.arduino.cc/reference/en/libraries/regex/)
-- [Основи регулярних виразів](https://www.regular-expressions.info/tutorial.html)
-- [10 корисних прикладів використання регулярних виразів](https://www.keycdn.com/blog/regular-expressions-examples)
+```Arduino
+"Match found"
+```
+
+## Глибше занурення
+
+1. Регулярні вирази були вперше впроваджені в 1951 році в теорію формальних мов та автоматів. Вони стали основою багатьох сучасних мов програмування включно з Arduino.
+
+2. Альтернативами RegExp є методи пошуку та заміни вбудованих бібліотек стрічок, але вони не надають такої гнучкості та точності.
+
+3. Arduino підтримує більшість стандартних синтаксисів RegExp, але можуть бути виключення в залежності від версії та бібліотеки.
+
+## Дивись також
+
+1. [Докладніше про регулярні вирази в Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/RegularExpression)
+2. [Документація по RegExp для програмістів Arduino](https://www.nongnu.org/avr-libc/user-manual/group__avr__regexp.html)
+3. [Довідник по регулярним виразам](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)

@@ -1,7 +1,7 @@
 ---
-title:                "寻找字符串的长度"
-html_title:           "Swift: 寻找字符串的长度"
-simple_title:         "寻找字符串的长度"
+title:                "查找字符串的长度"
+html_title:           "Javascript: 查找字符串的长度"
+simple_title:         "查找字符串的长度"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,31 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是字符串长度？为什么程序员要这样做？
+## 什么 & 为什么？
+获取字符串长度是操作程序中字符串变量的一种方式，通过识别计算字符数量来实现。程序员这么做是为了在必要时有效控制和操作字符数据。
 
-字符串是由一系列字符组成的数据。程序员经常需要找出字符串的长度，即字符的数量。这可以帮助他们在处理文本数据时准确地确定字符的位置和分析字符串的结构。
-
-## 如何找出字符串的长度？
-
-使用Swift编程语言，我们可以使用内置的count属性来找出字符串的长度。例如，假设我们有一个名为“hello”的字符串，我们可以通过以下代码找出它的长度：
+## 如何实现？
+在Swift中，我们使用String的count属性来获取字符串长度。以下是代码示例和输出：
 
 ```Swift
-let hello = "Hello"
-print(hello.count) // 5
+let myString = "编程是有趣的"
+print("字符串长度: \(myString.count)")
 ```
+输出：
+```Swift
+字符串长度: 6
+```
+这段代码首先定义了一个名为myString的字符串，然后使用.count属性找到并打印字符串的长度。
 
-可以看到，我们可以直接通过count属性来获取字符串的长度。在这个例子中，我们使用了print语句来打印字符串长度的结果，即5。
+## 深入浅出
+获取字符串长度这个概念不是Swift特有的，它在很多其他编程语言中也有应用。例如，在Python中，我们用len()函数， 而在Java和Javascript中，我们用.length属性。
 
-## 深入探讨
+请注意，关于计算字符的方式，Swift处理字符串的方式略有不同。标准的".count"方法在Swift中返回的是具有扩展字形集群的字符数量（例如：附带变音记号的字母被视为单个字符），而不是单独的Unicode标量数量。这与其他一些编程语言（例如JavaScript）有所不同，在JavaScript中,".length"属性返回的是UTF-16代码单元的数量。
 
-在早期的编程语言中，通常需要自己编写函数来计算字符串的长度。但是在现代编程语言中，如Swift，已经为我们提供了方便的内置属性来完成这个任务。
+在Swift中，你也可以使用utf16.count或utf8.count属性获取字符串的字节长度，但记住，这与人类可读的文字长度可能会有所不同。
 
-有时，程序员也可以使用循环来迭代字符串中的每个字符，并计算它们的数量来获得字符串的长度。然而，这种方法通常更加冗长和低效。
-
-在Swift中，我们也可以使用“utf8”或“utf16”属性来计算字符串的字节数和代码单元数，但这两个属性可能会受到特殊字符的影响。
-
-## 参考链接
-
-了解更多关于字符串长度的信息，请查看官方Swift文档：[String](https://developer.apple.com/documentation/swift/string)。
-
-通过使用内置的count属性，我们可以轻松地找出字符串的长度，并准确地处理文本数据。希望本篇文章帮助你更好地理解并应用这个重要的编程概念！
+## 参见
+对于更深入的信息，请参考以下链接：
+- Swift Docs: [Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Unicode Info: [Unicode Character Count](http://unicode.org/glossary/#character)
+- StackOverflow: [Length of a String in Swift](https://stackoverflow.com/questions/24092884/what-is-the-length-of-a-string-in-swift)

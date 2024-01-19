@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "Lua: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,60 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i Dlaczego?
 
-Interpolacja ciągu znaków to proces łączenia zmiennych z łańcuchami znaków w celu stworzenia nowego łańcucha znaków. Programiści często używają interpolacji ciągu znaków, ponieważ ułatwia to tworzenie dynamicznych i zmieniających się łańcuchów znaków w swoim kodzie.
+Interpolacja łańcuchów to proces, który pozwala wstawiać zmienne i wyrażenia bezpośrednio w łańcuchy. Programiści to robią, aby pisać bardziej czytelny, zwięzły i elastyczny kod.
 
 ## Jak to zrobić:
 
-### Przykład 1:
+Lua nie posiada wbudowanej funkcji do interpolacji łańcuchów. Możesz to jednak zrobić za pomocą funkcji `string.format`.
+
 ```Lua
--- deklarowanie dwoch zmiennych
-local imie = "Anna"
-local nr = 1
-
--- interpolacja ciągu znaków 
-local wynik = "Witaj, jestem " .. imie .. "! Jestem osobą numer " .. nr
-
--- wydrukowanie wyniku
-print(wynik)
+name = "Jan"
+greet = string.format("Cześć, %s", name)
+print(greet) -- "Cześć, Jan"
 ```
 
-#### Wynik:
-```
-Witaj, jestem Anna! Jestem osobą numer 1
-```
+Podobnie możemy robić operacje na zmiennych, które chcemy wstawić do łańcucha.
 
-### Przykład 2:
 ```Lua
--- deklarowanie zmiennej
-local liczba = 3.14
-
--- interpolacja ciągu znaków
-local wynik = "Liczba PI jest równa " .. liczba
-
--- wydrukowanie wyniku z dokładnością do 2 miejsc po przecinku
-print(string.format("%.2f", wynik))
+x = 7
+y = 8
+msg = string.format("Suma %d i %d wynosi %d", x, y, x+y)
+print(msg) -- "Suma 7 i 8 wynosi 15"
 ```
 
-#### Wynik:
+## Głębsze spojrzenie:
+
+Interpolacja łańcuchów pochodzi z Pascala i została wprowadzona do większości języków programowania. W Pythonie i Ruby, interpolacja łańcuchów jest wbudowana, ale Lua wymaga ręcznego formatowania.
+
+Alternatywą dla `string.format` jest stworzenie własnej funkcji, która wykonuje interpolację łańcuchów.
+
+```Lua
+function interp(s, tab)
+    return (s:gsub('($%b{})', function(w) return tab[w:sub(3, -2)] end))
+end
+
+tab = { name = "Jan", age = 22 }
+s = "Mam na imię ${name} i mam ${age} lata."
+print(interp(s, tab)) -- "Mam na imię Jan i mam 22 lata."
 ```
-Liczba PI jest równa 3.14
-```
 
-## Głębsze zagadnienia:
-
-### Kontekst historyczny:
-Interpolacja ciągu znaków jest popularną techniką używaną przez programistów od wielu lat. Początkowo wykorzystywana w językach programowania nie obsługujących konkatenacji, interpolacja stała się powszechnie używanym sposobem tworzenia dynamicznych łańcuchów znaków w wielu językach.
-
-### Alternatywy:
-Alternatywą dla interpolacji ciągu znaków jest konkatenacja. W obu przypadkach można osiągnąć podobne wyniki, jednak interpolacja jest bardziej czytelna i skuteczna.
-
-### Szczegóły implementacji:
-W języku Lua interpolacja ciągu znaków jest możliwa za pomocą operatora konkatenacji ```..```, który łączy dwa łańcuchy znaków w jeden. Można także używać funkcji ```string.format()``` do formatowania wyjściowego łańcucha znaków.
+Ta metoda korzysta z przekazywania tablicy do funkcji i wyszukuje odpowiednich wartości.
 
 ## Zobacz też:
 
-Oficjalna dokumentacja języka Lua: https://www.lua.org/docs.html
-
-Przykładowe rozwiązania problemów z użyciem interpolacji ciągu znaków w Lua: https://rosettacode.org/wiki/Interpolated_string_interpolation#Lua
+1. [Tutorial Lua](http://tylerneylon.com/a/learn-lua/) - dla nauki podstaw Lua.
+2. [Dokumentacja Lua](https://www.lua.org/manual/5.4/) - aby uzyskać więcej informacji o funkcji `string.format` i innych funkcjach Lua.
+3. [Artykuł o interpolacji łańcuchów](https://en.wikibooks.org/wiki/Lua_Programming/Strings) - dla bardziej szczegółowych szczegółów i porównań z innymi językami.

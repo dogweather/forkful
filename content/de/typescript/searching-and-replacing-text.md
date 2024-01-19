@@ -1,6 +1,6 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-html_title:           "TypeScript: Suchen und Ersetzen von Text"
+html_title:           "C#: Suchen und Ersetzen von Text"
 simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -12,31 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Suchen und Ersetzen von Text ist eine häufige Aufgabe für Programmierer. Es beinhaltet das Durchsuchen von Text nach einem bestimmten Muster oder einer bestimmten Zeichenfolge und das Ersetzen dieses Musters oder dieser Zeichenfolge durch eine andere. Programmierer tun dies, um schnell große Textmengen zu bearbeiten oder um bestimmte Fehler oder Probleme im Code zu beheben.
+Suchen und Ersetzen ist eine leistungsfähige Funktion, die Suchmuster erkennt und den entsprechenden Text durch einen Ersatzwert ersetzt. Programmierer nutzen sie, um Code zu optimieren, Fehler zu beheben oder Informationen in Datenstrukturen zu aktualisieren.
 
-## Wie?
+## Wie macht man das:
 
-Ein einfaches Beispiel für die Suche und den Ersatz von Text in TypeScript:
+Ein einfacher Weg, Text zu suchen und zu ersetzen, ist die `replace()` Methode in TypeScript. Hier ist ein Beispiel:
 
+```TypeScript
+let text = 'Hallo Welt, wie geht es dir Welt?';
+let suchmuster = /Welt/g;
+let ersatz = 'Erde';
+
+let ergebnisText = text.replace(suchmuster, ersatz);
+
+console.log(ergebnisText); // "Hallo Erde, wie geht es dir Erde?"
 ```
-let text = "Hello World!";
-let newText = text.replace("World", "Universe");
-console.log(newText);
-// Output: Hello Universe!
-```
 
-In diesem Beispiel wird die Methode `replace()` verwendet, um das Wort "World" durch "Universe" zu ersetzen. Die Methode durchsucht den gegebenen Text nach dem angegebenen Muster und ersetzt dieses durch die angegebene Zeichenfolge.
+In diesem Beispiel suchen wir nach allen Vorkommen von "Welt" (dank dem /g Faktor) und ersetzen sie durch "Erde".
 
-## Tiefer Einblick
+## Deep Dive
 
-Das Konzept des Suchens und Ersetzens von Text ist nicht auf die Programmierung beschränkt, sondern ist schon seit langem ein Teil von Texteditoren und anderen Softwareanwendungen. Es ist eine effiziente Methode, um Text zu bearbeiten und wurde bereits in frühen Textverarbeitungsprogrammen wie dem berühmten "ed" Editor in Unix implementiert.
+Suchen und Ersetzen von Text gibt es seit den frühesten Tagen der Programmiersprachen. Sie wurde hauptsächlich verwendet, um Antworten in Mensch-Maschine Kommunikation zu schreiben oder Daten in Datenbanken zu aktualisieren.
 
-Alternativen zum Suchen und Ersetzen von Text in TypeScript sind beispielsweise die Methode `split()` und `join()`, die ähnliche Funktionen bieten. Auch reguläre Ausdrücke können zur Suche und zum Ersatz von Text verwendet werden, bieten jedoch noch mehr Flexibilität und bieten eine leistungsstarke Möglichkeit, komplexe Suchmuster zu erstellen.
+Alternativen zu `replace()` sind Methoden wie `substr()` oder `split()` zum Finden, und dann `concat()` oder `join()` zum Neuverbinden von Strings.
 
-In TypeScript gibt es mehrere eingebaute Methoden für das Suchen und Ersetzen von Text, wie zum Beispiel `replace()`, `search()` und `match()`. Jede hat ihre eigenen Besonderheiten und Anwendungsfälle, daher ist es wichtig, die Dokumentation zu lesen und herauszufinden, welche Methode am besten für den jeweiligen Zweck geeignet ist.
+Die genaue Implementierung von `replace()` variiert je nach Sprache und Engine. In der Regel nutzen es ähnliche Konzepte: Reguläre Ausdrücke zur Identifizierung des Suchmusters und String-Manipulation zur Durchführung der Ersatzoperation.
 
-## Siehe auch
+## Siehe Auch:
 
-- [Offizielle TypeScript Dokumentation zu Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [Informationen zu regulären Ausdrücken in TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Verwenden der replace() Methode in JavaScript](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [W3Schools: JavaScript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)

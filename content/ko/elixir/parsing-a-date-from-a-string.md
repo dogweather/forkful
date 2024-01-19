@@ -1,6 +1,6 @@
 ---
 title:                "문자열에서 날짜 분석하기"
-html_title:           "Elixir: 문자열에서 날짜 분석하기"
+html_title:           "Gleam: 문자열에서 날짜 분석하기"
 simple_title:         "문자열에서 날짜 분석하기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,41 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇과 왜?
-문자열에서 날짜를 파싱한다는 것은 문자열에서 날짜 형식을 읽어서 프로그래머가 원하는 형식으로 변환하는 것입니다. 이를 통해 사용자 입력이나 외부 API에서 받은 데이터를 더 쉽게 처리할 수 있습니다.
+
+날짜를 문자열에서 파싱하는 것은 문자열로 표현된 날짜를 Elixir가 사용할 수 있는 Elixir의 DateTime 자료형으로 변환하는 것을 의미합니다. 프로그래머들이 이 작업을 수행하는 주된 이유는 문자열로 표현된 데이터를 처리하게 되는 경우가 많기 때문입니다. 
 
 ## 방법:
-주어진 문자열에서 날짜를 파싱하는 가장 간단한 방법은 Elixir의 `Date` 모듈을 사용하는 것입니다. `Date.from_iso8601` 함수를 사용하면 ISO 8601 형식의 문자열을 날짜로 변환할 수 있습니다.
+
+문자열에서 날짜를 파싱하는 가장 간단한 방법은 `Elixir`의 `DateTime#from_iso8601` 함수를 사용하는 것입니다. 
 
 ```Elixir
-date_string = "2021-10-05"
-date = Date.from_iso8601(date_string)
-IO.inspect date
-
-# Output:
-# ~D[2021-10-05]
+iex> DateTime.from_iso8601("2001-02-03T04:05:06Z")
+{:ok, ~U[2001-02-03T04:05:06Z]}
 ```
 
-더 복잡한 날짜 형식을 파싱하려면 정규표현식을 사용할 수도 있습니다. Elixir의 `Regex` 모듈을 활용하면 자유롭게 문자열을 분리하고 날짜로 변환할 수 있습니다.
+이 함수는 ISO 8601 날짜와 시간 표기법을 파싱합니다.
 
-```Elixir
-date_string = "October 5th, 2021"
-{:ok, [_, month, day, _, year]} = Regex.run(~r/\A(\w+)\s(\d+)[a-z]+,\s(\d+)\z/, date_string)
-{month, valid} = String.to_integer(month)
-{day, valid} = String.to_integer(day)
-{year, valid} = String.to_integer(year)
-date = Date.new(year, month, day)
-IO.inspect date
+## Deep Dive:
 
-# Output:
-# ~D[2021-10-05]
-```
+날짜를 문자열에서 파싱하는 과정은 컴퓨터 프로그래밍의 역사에 깊이 뿌리를 두고 있습니다. 데이터가 종이 등의 물리적 매체에서 디지털 시스템으로 옮겨지면서 이러한 변환 작업이 필요하게 되었습니다. Elixir의 `DateTime#from_iso8601` 함수 외에도 다양한 라이브러리가 이 작업을 수행합니다. 풍부한 기능을 제공하는 `Timex`와 같은 라이브러리를 선택할 수도 있습니다.
 
-## 깊게 들어가기:
-프로그래밍에서 날짜를 파싱하는 것은 오래전부터 널리 사용되어 온 기법입니다. 이를 통해 다양한 형식의 날짜를 동일한 형식으로 통일할 수 있으며, 이는 다른 프로그램과의 호환성을 높여줍니다. 또한 Elixir의 `DateTime` 모듈을 사용하면 시간대나 시간을 고려한 날짜 처리도 가능합니다.
+특히 `DateTime#from_iso8601` 함수는 문자열을 `DateTime` 구조체로 변환합니다. 이 구조체는 표준 ISO 8601 날짜와 시간을 표현하며, 앞서 언급한 `~U[...]` 형태의 문자열을 반환합니다.
 
-다른 대안으로는 `Calendar` 모듈의 `Date` 타입을 사용하는 것이 있습니다. 이를 활용하면 더 많은 날짜 관련 기능을 사용할 수 있습니다.
+## 연관 자료:
 
-## 관련 자료:
-- [Elixir Date 문서](https://hexdocs.pm/elixir/Date.html)
-- [Elixir Regex 문서](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir Calendar 문서](https://hexdocs.pm/elixir/Calendar.html)
+Elixir의 날짜와 시간에 대한 더 많은 정보를 위해 다음 사이트를 방문해보세요.
+
+1. 공식 Elixir 문서: [DateTime](https://hexdocs.pm/elixir/DateTime.html#content)
+2. Timex 라이브러리: [Timex Documentation](https://hexdocs.pm/timex/readme.html) 
+
+Remember, the landscape of date parsing is rich and varied. 각 사용 사례에 최적화된 도구와 라이브러리를 찾는 것이 중요합니다.

@@ -1,6 +1,6 @@
 ---
 title:                "Création d'un fichier temporaire"
-html_title:           "Ruby: Création d'un fichier temporaire"
+html_title:           "Kotlin: Création d'un fichier temporaire"
 simple_title:         "Création d'un fichier temporaire"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,39 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Pourquoi et Pour Quoi?
 
-Créer un fichier temporaire est une action couramment utilisée par les programmeurs Ruby. Cela consiste à créer un fichier qui sera utilisé temporairement pour stocker des données ou exécuter certaines actions. Les programmeurs le font souvent lorsqu'ils ont besoin d'écrire ou de lire des données sans avoir à utiliser un fichier permanent.
+La création d'un fichier temporaire est une technique qui permet de stocker des données de manière provisoire pendant l'exécution d'un programme. Les développeurs l'utilisent fréquemment pour manipuler d'énormes quantités de données sans consommer de l'espace mémoire excessif et pour préserver les données entre les sessions d'exécution d'un programme.
 
-## Comment faire:
+
+## Comment faire :
+
+Créer un fichier temporaire avec Ruby est simple grâce à la bibliothèque intégrée `Tempfile`. Regardez cet exemple :
 
 ```Ruby
-# Créer un fichier temporaire et écrire des données dedans
-temp_file = File.open("example.txt", "w")
-temp_file.puts("Ceci est un fichier temporaire")
-temp_file.close
+require 'tempfile'
 
-# Lire les données stockées dans le fichier temporaire
-temp_file = File.open("example.txt", "r")
-puts temp_file.read
-temp_file.close
+# Création d'un fichier temporaire
+mon_fichier_temp = Tempfile.new('mon_fichier')
+
+# Écriture dans le fichier temporaire
+mon_fichier_temp.write("Salut Ruby !")
+
+# Lecture du contenu du fichier temporaire
+mon_fichier_temp.seek(0)
+
+puts mon_fichier_temp.read
 ```
 
-Output:
+Si vous exécutez ce code, vous verrez :
+
+```Shell
+Salut Ruby !
 ```
-"Ceci est un fichier temporaire"
-```
 
-## Plongée en profondeur
+## Quelques Détails :
 
-Créer des fichiers temporaires est une pratique courante depuis de nombreuses années dans le monde de la programmation. Elle est particulièrement utile lorsque l'on travaille avec des données sensibles qui ne doivent pas être stockées en permanence. Les programmeurs ont également la possibilité d'utiliser des variables ou des structures de données en mémoire, mais cela peut causer des problèmes de performances lorsque les données sont volumineuses.
+Historiquement, la création de fichiers temporaires était un moyen courant de gérer l'échange de données entre différents programmes avant l'apparition des bases de données. 
 
-Heureusement, Ruby offre une solution simple et efficace pour créer des fichiers temporaires avec la méthode `File.open`. Il existe également des alternatives telles que la bibliothèque standard `Tempfile` ou des outils externes comme `TempfilePlus` qui proposent des fonctionnalités supplémentaires telles que la suppression automatique des fichiers temporaires après leur utilisation.
+Comme alternatives, on peut citer les fichiers réguliers ou l'utilisation de la mémoire vive (RAM). Cependant, garder à l'esprit les restrictions : les fichiers réguliers encombrent votre système à long terme, et la RAM a une capacité limitée et ne préserve pas les données après le redémarrage du programme.
 
-L'implémentation de la création de fichiers temporaires dans Ruby est basée sur la fonction `mkstemp` du système d'exploitation, qui crée un fichier avec une structure de nom aléatoire pour éviter les conflits avec d'autres fichiers.
+Quant à la mise en œuvre, les fichiers temporaires sont placés par défaut dans le répertoire temporaire du système (dépend du système d'exploitation : `/tmp` sur Unix, `%TEMP%` sur Windows).
 
-## Voir aussi
+## Voir Aussi :
 
-- [La documentation officielle de Ruby sur la méthode File.open](https://ruby-doc.org/core-2.7.1/File.html#method-c-open)
-- [La bibliothèque standard Tempfile](https://ruby-doc.org/stdlib-2.7.1/libdoc/tempfile/rdoc/Tempfile.html)
-- [La gemme TempfilePlus](https://rubygems.org/gems/tempfile_plus)
+- Documentation officielle de Ruby sur `Tempfile` : [https://ruby-doc.org/stdlib-2.5.1/libdoc/tempfile/rdoc/Tempfile.html](https://ruby-doc.org/stdlib-2.5.1/libdoc/tempfile/rdoc/Tempfile.html)
+- Article StackOverflow sur le sujet : [https://stackoverflow.com/questions/357754/how-can-i-create-a-temporary-file-with-ruby](https://stackoverflow.com/questions/357754/how-can-i-create-a-temporary-file-with-ruby) 
+- Détails d'implémentation des fichiers temporaires sur différent OS : [https://en.wikipedia.org/wiki/Temporary_folder](https://en.wikipedia.org/wiki/Temporary_folder)

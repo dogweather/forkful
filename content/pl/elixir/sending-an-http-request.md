@@ -1,7 +1,7 @@
 ---
-title:                "Przesyłanie żądania http"
-html_title:           "Elixir: Przesyłanie żądania http"
-simple_title:         "Przesyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
+simple_title:         "Wysyłanie żądania http"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,41 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i po co to robimy?
-Wysyłanie zapytania HTTP to sposób na komunikację z internetowymi serwisami i aplikacjami. Programiści często wykonują to działanie w celu pobrania lub przetworzenia danych dostępnych online.
+## Czym to jest i dlaczego?
+
+Wysyłanie żądania HTTP to proces komunikacji między klientem (np. przeglądarką) a serwerem. Programiści wysyłają te żądania, aby pobrać informacje z innej strony, usługi API, lub każdego innego serwera.
 
 ## Jak to zrobić:
-Kilka przykładów kodu z wyjściem dla użycia Elixira w wysyłaniu zapytań HTTP:
+
+White dwa sposoby na wykonanie HTTP request przy użyciu Elixira: ```Httpoison``` i ```HTTPotion```.
+
+Pierwszy to ```Httpoison```. Oto jak to zrobić:
 
 ```Elixir
-# Użycie wbudowanej biblioteki HTTPoison:
-HTTPoison.get("https://www.example.com")
-# => {:ok,
-#    %HTTPoison.Response{
-#      status_code: 200,
-#      headers: [...],
-#      body: "Hello world!"
-#    }
-#   }
-
-# Użycie zewnętrznej biblioteki tesla:
-Tesla.get("https://www.example.com")
-# => {:ok,
-#     %HTTPoison.Response{
-#       status_code: 200,
-#       headers: [...],
-#       body: "Hello world!"
-#     }
-#    }
-
-# Użycie wbudowanej biblioteki Erlanga:
-:inet.request(:get, {"https://www.example.com", []}, [], [])
-# => {:ok, %HTTPPoison.Response {...}}
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 ```
 
-## Ciekawostki:
-Erlang, na którym oparta jest Elixir, jest często używany do tworzenia szybkich i niezawodnych serwerów sieciowych. Dzięki temu, wysyłanie zapytań HTTP w Elixir jest szybkie i skuteczne.
+Teraz, uruchom:
 
-## Zobacz też:
-- [Dokumentacja Elixir o wysyłaniu zapytań HTTP](https://hexdocs.pm/elixir/HTTPoison.html)
-- [Porównanie bibliotek HTTP w Elixir](https://blog.distortedthinking.agency/elixir-http-libraries-compared/)
+```Elixir
+mix deps.get
+```
+
+I oto kod:
+
+```Elixir
+HTTPoison.start
+response = HTTPoison.get!("https://jsonplaceholder.typicode.com/posts")
+IO.puts response.body
+```
+Oto jak używać ```HTTPotion```. Najpierw dodaj go do pliku mix.exs:
+
+```Elixir
+defp deps do
+  [
+    {:httpotion, "~> 3.1"}
+  ]
+end
+```
+
+Teraz, uruchom:
+
+```Elixir
+mix deps.get
+```
+
+I taki będzie kod:
+
+```Elixir
+HTTPotion.start
+response = HTTPotion.get "https://jsonplaceholder.typicode.com/posts"
+IO.puts response.body
+```
+
+## Dogłębnie
+
+Zapytania HTTP są fundamentalnym blokiem budowania większości aplikacji internetowych. HTTP semantyka zapytań jest starszą technologią, która sięga początków internetu i Web 2.0. Istnieje wiele sposobów na wysyłanie żądań HTTP w Elixir, takich jak użycie modułu ```httpc``` w BEAM, ale ```Httpoison``` i ```HTTPotion``` są najpopularniejszymi ze względu na ich prostotę.
+
+## Zobacz też
+
+- Dokumentacja Httpoison: https://hexdocs.pm/httpoison/readme.html
+- Dokumentacja HTTPotion: https://hexdocs.pm/httpotion/readme.html
+- Moduł httpc w BEAM: http://erlang.org/doc/man/httpc.html

@@ -10,47 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi & Pourquoi ?
+En programmation, vérifier si un répertoire existe est une pratique courante. Il s'agit du processus de confirmation de l'existence d'un répertoire dans le système de fichiers avant de le manipuler. C'est crucial pour éviter des erreurs en essayant d'accéder à un répertoire qui n'existe pas.
 
-Vérifier si un répertoire existe est une opération courante dans la programmation Kotlin. Cela permet aux programmeurs de s'assurer qu'ils peuvent accéder aux fichiers ou dossiers nécessaires pour exécuter leur code. Par exemple, si vous avez besoin de lire un fichier dans un certain répertoire, vous devez d'abord vérifier si ce répertoire existe avant d'essayer d'y accéder.
 
-## Comment faire:
+## Comment faire :
+Dans Kotlin, on utilise la méthode `exists()` de la classe `File` pour vérifier l'existence d'un répertoire. Si le répertoire existe, elle renvoie `true`, sinon `false`.
 
-Voici un exemple simple de code montrant comment vérifier si un répertoire existe en utilisant la fonction `exists()` de la classe `File`:
+Je vais vous montrer comment faire dans le code ci-dessous :
 
-```kotlin
-val directory = File("chemin/vers/mon/répertoire")
-if(directory.exists()){
-    println("Le répertoire existe!")
-}else{
-    println("Le répertoire n'existe pas.")
+```Kotlin
+import java.io.File
+
+fun main() {
+    val dir = File("/chemin/vers/le/répertoire")
+    
+    if (dir.exists()) {
+        println("Le répertoire existe.")
+    } else {
+        println("Le répertoire n'existe pas.")
+    }
 }
 ```
 
-Lorsque vous exécutez ce code, vous verrez le message "Le répertoire existe!" si le répertoire spécifié existe, ou "Le répertoire n'existe pas." s'il n'existe pas.
+Lors de l'exécution, si le répertoire existe, vous verrez le message "Le répertoire existe." sinon "Le répertoire n'existe pas."
 
-Il est également possible de vérifier si un répertoire existe en utilisant la fonction `isDirectory()` de la classe `File`. Cette fonction vérifie si le chemin spécifié correspond à un répertoire existant plutôt qu'à un fichier spécifique.
+## Approfondissement :
 
-```kotlin
-val directory = File("chemin/vers/mon/répertoire")
-if(directory.isDirectory()){
-    println("C'est un répertoire!")
-}else{
-    println("Ce n'est pas un répertoire.")
-}
-```
+Historiquement, l'existence d'un répertoire a toujours été vérifiée avant son utilisation, pour éviter les erreurs. Kotlin s'inscrit dans cette tradition bien établie.
 
-Il est important de noter que ces fonctions ne créent pas de nouveaux répertoires s'ils n'existent pas déjà. Si vous essayez d'accéder à un répertoire qui n'existe pas, vous obtiendrez une erreur.
+Il existe des alternatives à la méthode `exists()`. Par exemple, vous pouvez également utiliser la méthode `isDirectory()` qui vérifie non seulement si le répertoire existe, mais aussi s'il s'agit réellement d'un répertoire et non d'un fichier.
 
-## Plongée en profondeur:
+Lorsque vous utilisez `exists()`, notez que la vérification est effectuée lors de l'appel de la méthode et non lors de la création de l'objet `File`. Cela signifie que le statut d'existence peut changer entre la création de l'objet et l'appel de `exists()`. Gardez cela à l'esprit lors de la manipulation de fichiers et de répertoires.
 
-La vérification de l'existence d'un répertoire remonte aux premiers jours de la programmation informatique, lorsque les développeurs devaient s'assurer que les fichiers nécessaires étaient disponibles avant de les utiliser. Cependant, avec le développement d'outils de gestion de fichiers plus avancés, la nécessité de cette vérification a diminué. De nos jours, la plupart des systèmes d'exploitation gèrent ces vérifications automatiquement, mais il est toujours important pour les programmeurs de les effectuer pour s'assurer que leur code fonctionne correctement.
-
-Il existe plusieurs alternatives pour vérifier si un répertoire existe en Kotlin. Par exemple, vous pouvez utiliser la fonction `listFiles()` de la classe `File` pour obtenir une liste de tous les fichiers et répertoires dans un chemin spécifié, puis vérifier si le répertoire que vous recherchez est présent dans cette liste.
-
-En termes d'implémentation, la fonction `exists()` utilise un appel système pour vérifier si le répertoire existe, tandis que `isDirectory()` utilise une combinaison d'appels système et de vérifications de type pour déterminer si le chemin spécifié correspond à un répertoire valide.
-
-## Voir aussi:
-
-- La documentation officielle de Kotlin sur la vérification de l'existence de répertoires : https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/exists.html
-- Un tutoriel vidéo sur la manipulation de fichiers et de répertoires en Kotlin : https://www.youtube.com/watch?v=wlvJctrBX_s
+## Voir également :
+Pour plus d'informations et d'exemples en Kotlin, consultez les liens suivants:
+- Documentation officielle de Kotlin : https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-file/
+- Pour plus d'informations sur la classe `File` : https://www.geeksforgeeks.org/kotlin-file-class/
+- Un guide pour manipuler des fichiers et des dossiers en Kotlin : https://www.baeldung.com/kotlin-file-io

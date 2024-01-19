@@ -1,7 +1,7 @@
 ---
-title:                "Jonojen yhdistäminen"
-html_title:           "Elixir: Jonojen yhdistäminen"
-simple_title:         "Jonojen yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,27 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Näin yhdistät Elixir-merkkijonoja
+## Mikä & Miksi?
 
-## Mitä ja miksi?
-Merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi. Tämä on hyödyllistä, sillä se säästää aikaa ja parantaa koodin luettavuutta.
+Merkkijonojen yhdistäminen on toiminto, jossa yhdistetään kaksi tai useampi merkkijono yhdeksi. Ohjelmoijat tekevät tämän esimerkiksi dynaamisen sisällön luomiseksi tai tiedon esittämiseksi käyttäjälle yksinkertaisessa muodossa.
 
-## Kuinka:
+## Miten näin:
+
+Elixirissä merkkijonot voidaan yhdistää käyttämällä <> operaattoria.
+
 ```Elixir
-string1 = "Tervetuloa"
-string2 = "maailman"
-string3 = "paras"
-string4 = "ohjelmointikieli"
-neljännenMerkinjono = string1 <> " " <> string2 <> " " <> string3 <> " " <> string4
-IO.puts neljännenMerkinjono
+s1 = "Hei, "
+s2 = "maailma!"
+IO.puts s1 <> s2
 ```
 
-Tulostaa: "Tervetuloa maailman paras ohjelmointikieli"
+Tämä antaa seuraavan tuloksen:
 
-## Syväsukellus:
-Merkkijonojen yhdistäminen on tullut osaksi ohjelmointikieliä 1990-luvulta alkaen ja se on yksi perusteellisesti käytetystä ohjelmointipotentiaalista. Vaihtoehtoina on käyttää plusoperaattoria (+), mutta kun kyseessä on suuri määrä merkkijonoja, niin tämä ei ole optimaalinen ratkaisu. Elixir käyttää operaattoria <> yhdistämään merkkijonoja, mikä on tehokas ja helppo tapa tehdä se.
+```Elixir
+"Hei, maailma!"
+```
+
+## Syvempi sukellus:
+
+Elixir perustuu Erlangiin, joka ei alun perin tukenut merkkijonojen yhdistämistä. Tämä on yksi syy, miksi Elixirin merkkijonojen yhdistäminen tehdään käyttämällä operaattoria <>, eikä traditioanlista  '+' operaattoria kuten joissakin muissa ohjelmointikielissä.
+
+Elixirissa on operaattorien lisäksi myös funktioita merkkijonojen yhdistämistä varten. `String.concat/1` erikoistoiminto on esimerkiksi yksi tällainen vaihtoehto, se ottaa listan merkkijonoja ja yhdistää ne yhdeksi merkkijonoksi.
+
+```Elixir
+String.concat(["Hei, ", "maailma!"])
+> "Hei, maailma!"
+```
 
 ## Katso myös:
-- [Elixirin virallinen dokumentaatio](https://elixir-lang.org/)
-- [Miksi merkkijonoja ei pitäisi koskaan yhdistää plusoperaattorilla](https://til.hashrocket.com/posts/6c7bdd033d-why-you-should-never-concatenate-strings-with-plus)
-- [Oppia lisää merkkijonojen käsittelystä Elixirissä](https://www.learnelixir.tv/p/a-deep-dive-into-working-with-strings-in-elixir)
+
+* Elixirin virallinen dokumentaatio merkkijonoista: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
+* Joel Quenneville's artikkeli "Understanding Elixir's String Module": [https://www.bignerdranch.com/blog/elixir-and-io-lists-part-2-io-lists-in-the-wild/](https://www.bignerdranch.com/blog/elixir-and-io-lists-part-2-io-lists-in-the-wild/)
+* Rob Conery's artikkeli "Hexdocs and Elixir Strings"[https://rob.conery.io/2018/04/21/hexdocs-and-elixir-strings/](https://rob.conery.io/2018/04/21/hexdocs-and-elixir-strings/)

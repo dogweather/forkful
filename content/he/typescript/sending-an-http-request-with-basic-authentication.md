@@ -1,7 +1,7 @@
 ---
-title:                "שליחת בקשת http עם הזדהות בסיסית"
-html_title:           "TypeScript: שליחת בקשת http עם הזדהות בסיסית"
-simple_title:         "שליחת בקשת http עם הזדהות בסיסית"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
+simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-שליחת בקשת HTTP עם אימות בסיסי היא תהליך שבו מפתחי תוכנה שולחים בקשה לשרת ללא כניסה משתמש וסיסמה, כאשר הפרטים הם מקודדים במבנה מסוים. מתכנתים עושים זאת כדי לאפשר מענה מהיר ובטוח מהשרת, וכן לבצע פעולות מסוימות על המשווקים או האתרים שלהם. בספרנו נדבר על תהליך זה וכיצד ניתן לבצעו בקלות עם TypeScript.
+## מה זה ולמה?
+שליחת בקשת HTTP עם אימות בסיסי היא שיטה שבה פרטי המשתמשים מועברים בעזרת כותרת `Authorization` של הבקשה. תכנתים משתמשים בזה כדי לאמת משתמשים על מנת לאפשר גישה רק למשאבים מסוימים.
 
-## כיצד לבצע:
-נבדוק כיצד ניתן לשלוח בקשת HTTP עם אימות בסיסי בקוד TypeScript. נשתמש בווידג'ט חיצוני כדי לשלוח את הבקשה ונקרא את התוצאות מהשרת. הלאה בתוך מחברת פעולות שבה נשתמש בקוד TypeScript כדי לבצע את התהליך הנדרש.
+## איך לקודד:
+עליך להוסיף את כותרת `Authorization` לבקשת ה-HTTP שלך ולספק את שם המשתמש והסיסמה שלך בתוך הכותרת:
 
-מצביע של ווידג'ט TLSSCRAPIS ומקבל את פרמטריה כהלכה:
-- את הכתובת של השרת שבו בקשת HTTP תישלח
-- את סוג הבקשה, במקרה זה GET
-- מופע Headers של בקשת ה- GET
-- כתובת אתר עם אימות בסיסי
-- שם משתמש וסיסמה בפרמטרים האחרונים
+```TypeScript
+import axios from 'axios';
 
-נוכל לראות בקטע הקוד הבא כיצד לבצע את הפעולה בעזרת ספריית TLS:
+async function sendRequest() {
+  const username = 'username';
+  const password = 'password';
+  const encodedCredentials = Buffer.from(`${username}:${password}`).toString('base64');
+
+  const response = await axios.get('https://some-url', { 
+    headers: { 
+      'Authorization': `Basic ${encodedCredentials}` 
+    }
+  });
+
+  console.log(response.data);
+}
+
+sendRequest();
 ```
-TypeScript
-tlscrapis({
-  url: 'http://www.mywebsite.com/',
-  method: 'GET',
-  headers: ['Content-Type: application/json'],
-  auth: {
-    url: 'http://www.mywebsite.com/',
-    username: 'JohnDoe',
-    password: 'mypassword'
-  }
-});
-```
-נטען את הספריה הכולל את פונקציות המעבדות את הבקשה לשרת כדי לקבל תשובה תקינה ובטוחה.
 
-## עיון מעמיק:
-ניסיון ראשון בקוד TypeScript היה refactor של שרת הזרימה. במקור השתמשנו בווידג'ט נוי המיועד לשליחת פנימיות HTTPS מסוג MAPI. הווידג'ט הזה לא שימש את הצרכים שלנו בחלק מהמקרים ותואם רק HTTPS סטנדרטי. לכן הגיע רגע שבו החלטנו לשנות כל זאת בספריה שמשתמשת כעת ב- TLS כדי לתמוך באימות בסיסי וחיבורים ביניים עם אתרים אחרים. הקוד שפרסמנו כאן הוא תכנית הראשונה שכוללת סיסמאות בסיסיות בצורה שכולם יכולים להבין.
+כאשר אתה מפעיל את הקוד שלך, אתה צפוי לראות את התגובה מהשרת בקונסול שלך.
 
-## למידע נוסף:
-למידע נוסף על מתודולוגיות וספריות של TypeScript ניתן לבקר באתר האינטרנט של החברה. רישום מגדיר איזו ספריה ניתן להשתמש עבור פלט הבקשה שלנו והתאמתה בצורה שיהיה ניתן להינצח בכל האתרים של הוצאות עבור צוות הפיתוח שלנו. ניתן גם למצוא תחת פרסומי הרשת היוםית כיצד לשלוח מע
+## התרעה אל מוקד:
+שליחת בקשת HTTP עם אימות בסיסי היא מסלול שנקבע כפתרון מוקדם לאימות משתמשים ב-Web. בעבר, היא הייתה מכילה את השמות והסיסמאות בצורה של מילה אחת. אף על פי שהפתרון הנוכחי משתמש בקידוד base64, הוא לא מאפשר הצפנה ובכך מסכן את פרטי המשתמש. חלופות לאימות בסיסי כוללים הצפנת SSL / TLS, OAuth ונתבים API בקנה מידה גדול.
+
+## ראה גם:
+כדי לקבל מידע נוסף, בדוק את המקורות הבאים:
+- [Basic Authentication - MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Axios - NPM](https://www.npmjs.com/package/axios)
+- [שליחת בקשת HTTP עם אימות בסיסי - Stack Overflow](https://stackoverflow.com/questions/34558264/fetching-data-with-basic-auth-and-http-get)

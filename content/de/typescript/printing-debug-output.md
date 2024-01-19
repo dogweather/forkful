@@ -1,7 +1,7 @@
 ---
-title:                "Ausgabe von Debug-Informationen drucken."
-html_title:           "TypeScript: Ausgabe von Debug-Informationen drucken."
-simple_title:         "Ausgabe von Debug-Informationen drucken."
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## Was und Warum?
 
-Debug-Ausgabe ist das Drucken von Informationen während der Ausführung eines Programms, um Probleme oder Unstimmigkeiten im Code zu identifizieren. Programmierer nutzen diese Methode, um Fehler zu finden und zu beheben und die Funktionalität ihres Codes zu überprüfen.
+Debug-Ausgaben drucken ist, wenn wir Daten, Variablen und Werte zur Laufzeit auf unserem Console oder Debug-Interface anzeigen. Wir machen das, um Programmfehler zu finden und das Verhalten des Programms besser zu verstehen.
 
-## Wie geht's:
+## Anleitung
 
-```TypeScript 
-// Beispiel 1: Einfache Debug-Ausgabe
-console.log("Hello world!");
+In TypeScript können Sie mithilfe der console.log() Funktion Debug-Ausgaben drucken. Sehen wir uns ein Beispiel an:
 
-// Beispiel 2: Ausgabe einer Variablen
-let name: string = "John";
-console.log(`Hello ${name}`);
-
-// Beispiel 3: Bedingte Debug-Ausgabe
-let number: number = 5;
-if (number > 10) {
-    console.log("Die Zahl ist größer als 10.");
-} else {
-    console.log("Die Zahl ist kleiner als 10.");
-}
+```TypeScript
+let variable = 'Hallo Welt!';
+console.log(variable);
 ```
 
-Beispiel-Ausgabe:
+Die Ausgabe wäre:
+
 ```
-Hello world!
-Hello John
-Die Zahl ist kleiner als 10.
+Hallo Welt!
 ```
 
-## Tiefer in die Materie:
+## Vertiefung
 
-(1) Debug-Ausgabe wurde in den Anfängen des Computerzeitalters als nützliches Werkzeug für Programmierer entwickelt und ist auch heute noch eine wichtige Methode zur Fehlerbehebung.
+Die Verwendung von Debug-Ausgaben ist alte Praxis, wird aber immer noch weithin akzeptiert und genutzt. Zunächst haben Programmierer mit LED-Blinkcodes gearbeitet, um Zustände zu übermitteln. Mit dem Fortschreiten der Technologie sind wir bei umfangreichen Konsolenmeldungen angelangt.
 
-(2) Eine Alternative zur Debug-Ausgabe ist das Setzen von Breakpoints im Code und das Durchlaufen des Programms Schritt für Schritt. Jedoch kann dies zeitaufwändiger sein als die Verwendung von Debug-Ausgabe, insbesondere bei größeren Programmen.
+Alternative Methoden zur Fehlersuche sind der Step-by-Step Debugger und Profiling-Tools. Diese bieten detailreiche Einblicke, aber manchmal ist die Verwendung von console.log schneller und unkomplizierter, besonders in großen Projekten.
 
-(3) In TypeScript gibt es mehrere Möglichkeiten, Debug-Ausgabe zu nutzen, zum Beispiel die integrierte Konsole oder spezielle Debugging-Tools in Entwicklungsumgebungen wie Visual Studio Code.
+In TypeScript ist console.log auf JavaScript zurückzuführen. JavaScript hat seinen Ursprung im Web und ermöglicht den Zugriff auf das Web-Console-Feature der Browsers.
 
-## Siehe auch:
+## Weiterführende Informationen 
 
-- Offizielle Dokumentation zu Debug-Ausgabe in TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#the-new-and-improved-way-of-working-with-logging-functions
-- Weitere Informationen zu Debugging-Techniken: https://codeburst.io/javascript-debugging-techniques-3cf5633361d5
+- [MDN Web Docs: console.log()](https://developer.mozilla.org/en-US/docs/Web/API/console/log) 
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [The Basics of Debugging in JavaScript](https://www.digitalocean.com/community/tutorials/javascript-debugging)
+- [Step-by-Step Debugging with Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)

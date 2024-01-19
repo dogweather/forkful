@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon päätekirjaimen muuttaminen"
-html_title:           "Go: Merkkijonon päätekirjaimen muuttaminen"
-simple_title:         "Merkkijonon päätekirjaimen muuttaminen"
+title:                "Merkkijonon suuraakkostaminen"
+html_title:           "Go: Merkkijonon suuraakkostaminen"
+simple_title:         "Merkkijonon suuraakkostaminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Saatat huomata, että ohjelmoijat usein käyttävät funktiota, joka muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Tätä kutsutaan "merkkijonon kapitalisoinniksi". Ohjelmoijat tekevät tätä helpottaakseen merkkijonojen käsittelyä ja parantaakseen koodin luettavuutta.
+Merkkijonon isoksi muuttaminen tarkoittaa jokaisen merkin muuttamista isoksi kirjaimiksi. Ohjelmoijat tekevät tämän siksi, että järjestelmät voivat tulkita merkkijonot herkästi kirjainkoosta riippuen.
 
-## Kuinka tehdä:
+## Näin teet:
+
+Go:n tarjoamassa `strings` kirjastossa on funktio `ToUpper()`, jolla voit muuttaa merkkijonon isoksi. Tässä on esimerkki sen käyttömisestä:
 
 ```Go
-func kapitalisoi(teksti string) string {
-    return strings.ToUpper(teksti[0:1]) + teksti[1:]
-}
+package main
 
-kapitalisoi("go kieli") // palauttaa "Go kieli"
-kapitalisoi("FUNKTIO") // palauttaa "FUNKTIO"
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	s := "hei maailma"
+	fmt.Println(strings.ToUpper(s))
+}
+```
+Tämä tulostaa:
+```
+HEI MAAILMA
 ```
 
-## Syvälle sukellus:
+## Syvällisempi tieto:
 
-Merkkijonon kapitalisointia on käytetty ohjelmoinnissa jo pitkään. Se juontaa juurensa vanhoista kirjoituskoneista, joissa isokirjaimisten kirjainten käyttäminen vaati enemmän voimaa kuin pienikirjaimisten.
+Historia: Merkkijonon isoksi muuttamisen käyttö juontaa juurensa aikaan, jolloin tietokonejärjestelmät ja ohjelmat olivat suuria herkkiä kirjainkoosta, esimerkiksi käyttäjätunnukset ja salasanat.
 
-On olemassa myös muita tapoja kapitalisoida merkkijonoja, kuten muuttamalla kaikki kirjaimet isoksi tai pieneksi, tai käyttämällä valmiita funktioita kuten `strings.Title`.
+Vaihtoehdot: Voit myös muuttaa merkkijonon pelkästään ensimmäisen kirjaimen isoksi käyttäen `Title()` funktiota samassa `strings` kirjastossa.
 
-Go:n merkkijonojen käsittely perustuu Unicode-standardiin, mikä tarkoittaa että merkkijonon kapitalisoinnissa täytyy ottaa huomioon myös ei-latinalaiset kirjaimet ja merkit. Tämä tekee Go:n kapitalisointifunktiosta erittäin monipuolisen ja käyttökelpoisen kaikenlaisissa ohjelmissa.
+Yksityiskohdat: Go:n `ToUpper` funktio käy läpi merkkijonon ja muuttaa jokaisen pienaakkosen isoakseliksi käyttäen Unicode:n yleisiä töyssyjä määritellä, mikä merkkijono muuttuu isoksi.
 
 ## Katso myös:
 
-- [Go:n virallinen dokumentaatio merkkijonojen käsittelyyn](https://golang.org/pkg/strings/)
-- [Blogikirjoitus merkkijonon kapitalisoinnista Go:ssa](https://medium.com/@felipedutratine/creating-a-function-to-uppercase-the-first-letter-of-a-string-in-go-b4ed9782304f)
+Muita liittyviä funktioita Go:n `strings` kirjastossa - https://pkg.go.dev/strings.
+Tietoa Unicode säännöstöstä - https://www.unicode.org/standard/standard.html.

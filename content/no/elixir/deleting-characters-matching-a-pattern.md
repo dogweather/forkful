@@ -1,7 +1,7 @@
 ---
-title:                "Slette tegn som matcher et mønster"
-html_title:           "Elixir: Slette tegn som matcher et mønster"
-simple_title:         "Slette tegn som matcher et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+## Hva & Hvorfor?
+Å slette tegn som matcher et mønster, vil si å fjerne spesifikke tegn fra en tekststreng basert på et gitt mønster. Dette gjør programmerere for å manipulere data, hjelpe med formatert utgang, og forandre tekst basert på spesifikke krav.
 
-Å slette tegn som matcher et mønster er en vanlig oppgave i programmering. Dette gjøres for å rydde opp i en tekststreng, fjerne uønskede tegn eller for å filtrere ut data som ikke er relevant for et bestemt formål.
-
-Hvordan:
-
-For å slette tegn som matcher et mønster i Elixir, kan du bruke funksjonen ```String.replace``` og angi mønsteret som skal matches som det første argumentet, og en tom streng som det andre argumentet. La oss si at vi har en streng med navnet "Elixir" og vi vil slette alle bokstavene "x" og "i" fra den. Vi kan gjøre det slik:
+## Slik gjør du:
+Her er et kodeeksempel på hvordan du kan slette tegn som matcher et mønster i Elixir:
 
 ```Elixir
+defmodule Teksthåndtering do
+  def slett_matchende_tegn(tekst, mønster) do
+    Regex.replace(~r/#{mønster}/, tekst, "")
+  end
+end
 
-String.replace("Elixir", "xi", "")
+IO.puts Teksthåndtering.slett_matchende_tegn("Hello, Verden!", "[, !]")
 ```
 
-Dette vil gi følgende output: "Elr". Vi sletter da tegnene "x" og "i" fra strengen.
+Dette gir utgangen:
 
-Dypdykk:
+```Elixir
+"HelloVerden"
+```
 
-I Elixir har vi flere alternativer for å slette tegn som matcher et mønster. En annen nyttig funksjon som vi kan bruke er ```String.replace_leading```, som lar deg slette tegn som matcher et mønster fra starten av en streng. Vi kan også bruke regulære uttrykk for å definere mønsteret vi ønsker å matche.
+## Dypdykk
+Denne teksthåndteringsfunksjonen i Elixir drar fordel av Erlang VM, som Elixir kjører på toppen av. Historisk brukte programmerere vanlig uttrykk eller "regex" i Perl for å matche og manipulere tekst. Elixir gir oss en mer moderne og effektiv måte å håndtere dette på.
 
-Det kan være nyttig å vite litt om historien bak dette konseptet. Sletting av tegn som matcher et mønster er en vanlig oppgave som har eksistert i programmering i lang tid. Elixir, som er et relativt nytt programmeringsspråk, gjør det enkelt å utføre denne oppgaven ved å tilby enkel syntaks og en rekke innebygde funksjoner.
+Alternativt kan programmerere bruke funksjonen `String.replace/3` i stedet for `Regex.replace/3`. Men, en enkelt `String.replace/3` kan kun erstatte eller slette et enkelt, bestemt tegn, og ikke et mønster av tegn.
 
-Se også:
+Hvis det som skal slettes er veldig komplekst, kan det hende du må lage en mer sofistikert regex, eller til og med bruke en ekstern tjeneste. Husk at bruken av komplekse regex-uttrykk kan redusere applikasjonens ytelse.
 
-Hvis du vil lære mer om hvordan du arbeider med tekststrenger i Elixir, kan du se disse ressursene:
-
-- [Offisiell Elixir dokumentasjon] (https://hexdocs.pm/elixir/String.html#replace/3)
-- [Elixir koans] (https://elixirkoans.io/) - øvelsesoppgaver for å lære Elixir
-- [Elixir Forum] (https://elixirforum.com/) - diskusjonsforum for Elixir-samfunnet
+## Se også 
+- For mer info om `Regex.replace/3`, se [Elixir Regex dok](https://hexdocs.pm/elixir/Regex.html#replace/3).
+- For mer info om `String.replace/3`, se [Elixir String dok](https://hexdocs.pm/elixir/String.html#replace/3).

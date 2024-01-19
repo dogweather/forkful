@@ -10,28 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Slumpmässiga Nummer med Arduino
+
 ## Vad & Varför?
-Att generera slumpmässiga nummer är en vanlig uppgift för programmerare, särskilt inom spel- och kryptografindustrin. Detta är ett sätt att skapa variation och osäkerhet i program och spel, vilket leder till en mer realistisk och spännande upplevelse för användaren.
 
-## Så här gör du:
-För att generera slumpmässiga nummer i Arduino kan du använda funktionen random(), som är inbyggd i Arduino-miljön. Detta gör det enkelt att skapa ett nummer inom ett specificerat intervall. Koden nedan visar hur du kan använda funktionen:
+Att generera slumpmässiga nummer innebär att skapa tal som inte kan förutsägas före dess generering. Programmerare använder detta för att skapa osäkerhet i sina program, vilket är särskilt viktigt i spel, simuleringar och tester.
 
-```Arduino 
-int randomNumber = random(1, 10);
-Serial.println(randomNumber);
+## Såhär Uppnår du detta:
+
+Arduino gör att generera slumpmässiga nummer väldigt enkelt. Använd bara `random()` funktionen.
+
+```Arduino
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int randomNumber = random(1, 101); // generera ett slumpmässigt heltal mellan 1 och 100
+  Serial.println(randomNumber);
+  delay(1000); // vänta en sekund
+}
 ```
-Detta kommer att skriva ut ett slumpmässigt nummer mellan 1 och 10 i serieporten.
 
-## Djupdykning:
-För att förstå hur generering av slumpmässiga nummer fungerar, kan det vara intressant att titta på lite historik. Innan datorer hade utvecklat algoritmer för att skapa slumpmässiga nummer, användes fysiska metoder som tärningar och kortlekar för att skapa osäkerhet i spel.
+Liksom med andra funktioner kan du anpassa spannet av möjliga utfall. Värdet 101 är inte inkluderat, så detta kommer att returnera ett takl på 1 till 100.
 
-Det finns också alternativa sätt att generera slumpmässiga nummer i Arduino, som att använda en extern klocka eller störningar i kretsen för att skapa ett osäkert nummer. Detta kan vara användbart för mer avancerade krypteringsapplikationer.
+## Djupdykning
 
-När det gäller implementationen av random() i Arduino, baseras den på en algoritm som kallas "linear congruential generator". Detta är en enkel metod för att skapa ett pseudoslumpmässigt tal baserat på en startpunkt och ett särskilt multiplikator.
+Det är dock inte alla slumpmässiga nummer som är skapade lika. I själva verket använder Arduino pseudoslumpmässiga nummergenerering. Dessa "slumpmässiga" nummer följer en förutbestämd sekvens, men för de flesta ändamål är detta tillräckligt bra. 
 
-## Se även:
-Om du vill lära dig mer om slumpmässiga nummer och genereringen av dem, kan du ta en titt på följande länkar:
+Alternativt, kan du använda `randomSeed()`-funktionen för att skapa en mer verkligt slumpmässig serie av nummer. Denna funktion använder tidbas indata för att sätta upp en startpunkt för den pseudoslumpmässiga sekvensen.
 
-- [Arduino reference för random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [En grundläggande förklaring av algoritmer för generering av slumpmässiga nummer](https://www.geeksforgeeks.org/random-number-generator-in-arbitary-probability-distribution-fashion/)
-- [En översikt av datorers historia och utvecklingen av slumpmässiga nummer](https://history-computer.com/ModernComputer/Basis/random.html)
+```Arduino
+void setup() {
+  Serial.begin(9600);
+  randomSeed(analogRead(0)); // använde en ospecificerad analog ingång för att generera ett slumpmässigt frö
+}
+
+void loop() {
+  int randomNumber = random(1, 101);
+  Serial.println(randomNumber);
+  delay(1000); 
+}
+```
+
+## Se Även
+
+För ytterligare inblick i att generera slumpmässiga nummer kan du besöka följande länkar:
+
+1. [Arduino Random Number Tutorial](https://www.makerguides.com/arduino-random-numbers/)
+2. [Arduino Random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+3. [Historical Perspectives on Random Numbers](https://arxiv.org/pdf/0801.4842.pdf)
+
+Lycka till med dina Arduino-projekt!

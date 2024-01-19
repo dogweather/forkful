@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di una data da una stringa"
-html_title:           "C++: Analisi di una data da una stringa"
-simple_title:         "Analisi di una data da una stringa"
+title:                "Analizzare una data da una stringa"
+html_title:           "Fish Shell: Analizzare una data da una stringa"
+simple_title:         "Analizzare una data da una stringa"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,50 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cos'è e perché?
+## Cos'è & Perché?
 
-Il parsing di una data da una stringa è un'operazione comune per i programmatori che permette di estrarre una data da una stringa di testo. Questo è utile quando si devono manipolare delle date in un programma, ad esempio per convertirle in un formato diverso o per effettuare calcoli su di esse.
+"Analizzare una data da una stringa" significa estrarre e interpretare una data da un testo. I programmatori lo fanno per convertire i dati di ingresso testuali in un formato gestibile da usare nelle elaborazioni.
 
-# Come fare:
+## Come fare:
 
-Per eseguire il parsing di una data da una stringa in C++, è possibile utilizzare la libreria `chrono` e la classe `istringstream`. Iniziamo includendo le relative header:
-
-```C++
-#include <chrono>
-#include <sstream>
-```
-
-Supponiamo di avere una stringa contenente una data in formato "dd/mm/yyyy" e che vogliamo estrarre questa data come oggetto `chrono::system_clock::time_point`. Possiamo fare così:
+Ecco un modo semplice per analizzare una data da una stringa in C++:
 
 ```C++
-std::string dataString = "11/05/2020";
-std::istringstream iss(dataString);
-std::tm dataStruct = {};
-iss >> std::get_time(&dataStruct, "%d/%m/%Y");
-auto data = std::chrono::system_clock::from_time_t(std::mktime(&dataStruct));
-```
+#include<iostream>
+#include<sstream>
+#include<ctime>
 
-Il nostro oggetto `data` ora conterrà la data del nostro stringa. Possiamo anche stamparla in un formato diverso utilizzando la classe `strftime`:
+int main(){
+    struct std::tm tm;
+    std::istringstream ss("2001-10-18");
+    ss >> std::get_time(&tm, "%Y-%m-%d");
 
-```C++
-// per esempio, come "11 MAy 2020"
-std::time_t dataT = std::chrono::system_clock::to_time_t(data);
-char dataFormatted[80];
-std::strftime(dataFormatted, 80, "%d %b %Y", std::localtime(&dataT));
-std::cout << dataFormatted;
-```
+    if (ss.fail()) {
+        std::cout << "Parsing failed\n";
+    } else {
+        std::cout << std::put_time(&tm, "%c") << "\n";
+    }
 
-# Approfondimenti:
+    return 0;
+}   
+```   
+L'output sarà: Gio Ott 18 00:00:00 2001
 
-Il parsing di una data da una stringa è un'operazione che risale ai primi tempi della programmazione. In passato, si utilizzavano metodi più manuali per convertire una data in un formato specifico, come ad esempio la suddivisione della stringa in sottostringhe e la loro conversione in numeri interi. Oggi, invece, con l'utilizzo di apposite librerie e classi, è diventato un processo molto più semplificato.
 
-Esistono anche altre alternative per estrarre una data da una stringa, come l'utilizzo di espressioni regolari o l'utilizzo di librerie esterne specializzate in parsing di date. Tuttavia, l'utilizzo di `chrono` e `istringstream` è uno dei metodi più comuni e semplici in C++.
+## Approfondimenti:
 
-Per quanto riguarda l'implementazione dell'operazione di parsing di una data da una stringa, è importante tenere conto delle eccezioni e dei possibili errori che possono verificarsi durante il processo. Ad esempio, se la stringa non rispetta il formato specificato, il programma potrebbe generare un'eccezione. Inoltre, è consigliabile gestire in modo appropriato eventuali errori di conversione o di allocazione della memoria.
+Le funzioni `get_time` e `put_time` sono incorporate in C++ dal 2011, prima si usavano altre funzioni meno pratiche. Esistono alternative alla libreria standard, come la libreria `boost`, ma la via standard è solitamente sufficiente per la maggior parte delle applicazioni.
 
-# Vedi anche:
+Un dettaglio implementativo importante riguarda il formato di input. Nell'esempio sopra, abbiamo usato "%Y-%m-%d" che corrisponde a un formato data comune: anno-mese-giorno. È necessario che la stringa di input sia conforme a questo formato.
 
-- Documentazione sulla libreria `chrono`: https://en.cppreference.com/w/cpp/chrono
-- Documentazione sulla classe `istringstream`: https://en.cppreference.com/w/cpp/io/basic_istringstream
-- Esempi di parsing di una data da una stringa in C++: https://www.fluentcpp.com/2020/07/03/converting-string-numbers-dates-time-objects-cpp/#dates-and-time
-- Tutorial su come utilizzare espressioni regolari in C++: https://www.learncpp.com/cpp-tutorial/regular-expressions/
+## Vedi Anche:
+
+- [get_time](https://en.cppreference.com/w/cpp/io/manip/get_time): Documentazione ufficiale sul metodo `get_time`.
+- [put_time](https://en.cppreference.com/w/cpp/io/manip/put_time): Documentazione ufficiale sul metodo `put_time`.
+- [Boost Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html): Un'estesa libreria di manipolazione data e ora.

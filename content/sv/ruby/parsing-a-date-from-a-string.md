@@ -1,7 +1,7 @@
 ---
-title:                "Att tolka ett datum från en sträng"
-html_title:           "Ruby: Att tolka ett datum från en sträng"
-simple_title:         "Att tolka ett datum från en sträng"
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -12,36 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att "parsa" eller omvandla ett datum från en sträng är processen att extrahera och formatera ett datum från en textsträng, till exempel "1 januari 2021", till ett format som datorn kan förstå och hantera som ett datum. Programmerare gör detta för att kunna behandla datumet på ett meningsfullt sätt i sina program. 
+Att tolka ett datum från en sträng innebär att omvandla en textrepresentation av ett datum till ett egentligt datum-objekt. Det gör programmerare för att hantera datuminformation på ett enhetligt och lättanvänt sätt.
 
-## Så här gör man:
+## Hur:
 
-För att parsa ett datum från en sträng i Ruby, kan du använda metoden `Date.parse`. Du behöver bara skapa en ny instans av datumklassen och mata in den sträng som innehåller datumet. Här är ett exempel:
+Nu ska vi använda Ruby`s inbyggda bibliotek `Date` för att demonstrera:
 
-```ruby
-date = Date.parse("1 januari 2021")
-puts date
+```Ruby
+require 'date'
+
+str = '2022-05-01'
+datum = Date.parse(str)
+
+puts datum
 ```
 
-Outputen från detta program blir: `2021-01-01`
+Utgivenheten skulle vara:
 
-Om du vill specificera ett visst datumformat, kan du ange det som ett argument till `parse` metoden. Här är ett exempel på hur du kan ange formatet "dd/mm/yyyy":
-
-```ruby
-date = Date.parse("01/01/2021", "%d/%m/%Y")
-puts date
+```Ruby
+2022-05-01
 ```
 
-Outputen från denna kod skulle bli: `01-01-2021`
+Det är så enkelt att göra det i Ruby. Standardbiblioteket `Date` tar varje sträng i "ÅÅÅÅ-MM-DD" format och omvandlar den till ett datumobjekt.
 
 ## Djupdykning:
 
-Att parsa datum från strängar är en vanlig uppgift för programmerare, särskilt för dem som arbetar med webbapplikationer där datum ofta hämtas från användarinput eller databaser. Det finns också alternativa metoder för att parsa datum i Ruby, såsom att använda bibliotek som `Chronic` eller `Date.strptime`.
+1. **Historiskt sammanhang:** Tolkning av datum från strängar har varit nödvändigt sedan programmerares tidiga dagar. När människor började lagra datum i databaser, uppstod behovet att kunna omvandla dem till något mer användbart i kod.
 
-När en sträng parsas till ett datum följer Ruby standarden YYYY-MM-DD. Det är också värt att notera att `parse`- metoden inte hanterar ogiltiga datum, till exempel "30 februari", utan kastar istället ett undantag. För att undvika detta kan du använda  `Chronic`- biblioteket som är mer flexibelt när det gäller att parsa ogiltiga datum.
+2. **Alternativ:** Du kan också använda `strptime` -metoden om ditt datum inte följer standardformatet. T.ex:
 
-## Se också:
+    ```Ruby
+    str = '01-May-2023'
+    datum = Date.strptime(str, '%d-%b-%Y')
+    
+    puts datum
+    ```
 
-- [Ruby dokumentationen om Date klassen](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)
-- [Chronic bibliotekets dokumentation](https://github.com/mojombo/chronic)
-- [Date.strptime dokumentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html#method-c-strptime)
+    Detta ger oss tillbaka:
+
+    ```Ruby
+    2023-05-01
+    ```
+
+3. **Implementeringsdetaljer:** Metoderna `parse` och `strptime` tillhör Ruby`s inbyggda `Date` -klass, vilket gör dem lätta att använda direkt ur boxen.
+
+## Se Också:
+
+1. [Ruby Date Documentation](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
+2. [Tolkning av strängar i Ruby](https://www.rubyguides.com/2018/10/parsing-dates-in-ruby/)
+3. [Ruby `strptime` Documentation](https://www.rubydoc.info/stdlib/core/Date.strptime)
+4. [Ruby Built-in Classes and Modules](https://docs.ruby-lang.org/en/3.0.0/syntax/built_in_classes_and_modules_rdoc.html)

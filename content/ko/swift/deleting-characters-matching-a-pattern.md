@@ -1,7 +1,7 @@
 ---
-title:                "패턴과 일치하는 문자 삭제하기"
-html_title:           "Swift: 패턴과 일치하는 문자 삭제하기"
-simple_title:         "패턴과 일치하는 문자 삭제하기"
+title:                "패턴에 일치하는 문자 삭제"
+html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
-패턴과 일치하는 문자를 삭제하는 것은 프로그래머들이 특정 문자를 제거하고자 할 때 사용하는 방법입니다.
+## 무엇 & 왜?
 
-## 어떻게:
-```Swift
-let string = "Hello Swift!"
-let modified = string.replacingOccurrences(of: "l", with: "")
-print(modified)
-```
-```
-Heo Swift!
-```
+패턴에 맞는 문자 삭제는 특정 패턴 또는 시퀀스를 가진 문자열에서 문자를 제거하는 것을 의미합니다. 이것은 불필요한 공백, 특수문자 등을 제거하거나, 텍스트 데이터를 정리하고 분석 가능한 형태로 변환하는 등의 여러 종류의 프로그래밍 문제를 해결하는 데 도움이 됩니다.
 
-```Swift
-let array = ["apple", "banana", "cherry"]
-let modified = array.filter { $0 != "banana" }
-print(modified)
-```
-```
-["apple", "cherry"]
-```
+## 어떻게 하나:
 
-## 깊이 파고들기:
-(1) 이 기능의 역사적 배경 (2) 대안들 (3) 패턴과 일치하는 문자를 삭제하는 방법에 대한 구체적인 내용
+```swift
+let sentence = "안녕하세요, 이곳은 Swift 세상입니다."
+let charactersToRemove = CharacterSet.punctuationCharacters
 
-패턴과 일치하는 문자를 삭제하는 기능은 주로 문자열이나 배열에서 부분적으로 제거하고자 할 때 사용됩니다. 예를 들어, 특정 문자를 포함하지 않는 새로운 문자열을 만들거나 특정 항목을 제거한 새로운 배열을 생성하고 싶을 때 자주 사용됩니다.
+let result = sentence.components(separatedBy: charactersToRemove).joined()
 
-```Swift
-let string = "Hello World!"
-let modified = string.replacingOccurrences(of: "o", with: "")
-print(modified)
+print(result)  // "안녕하세요 이곳은 Swift 세상입니다"
 ```
-```
-Hell Wrld!
-```
+위의 예제에서, `CharacterSet.punctuationCharacters` 를 사용하여 구두점을 제거하였습니다. 이렇게 하면 문자열에서 모든 구두점이 삭제된 새로운 문자열이 생성됩니다.
 
-대안으로는 ```filter``` 메서드를 사용하는 방법이 있습니다. 이 메서드는 배열에서 특정 조건을 만족하는 항목만을 남길 수 있도록 해줍니다. 위의 예시에서는 "banana"를 제외한 모든 항목을 남기는 방식으로 사용하였습니다.
+## 깊게 알아보기:
 
-이 기능은 다양한 데이터 타입에서도 사용할 수 있습니다. 딕셔너리에서 값이나 키를 삭제하거나, 정규표현식을 사용하여 패턴과 일치하는 문자를 삭제하는 등의 다양한 방법으로 활용할 수 있습니다.
+**1. 역사적 맥락**
+Swift에서 패턴에 맞는 문자 삭제는 문자열 처리에 있어 일반적인 작업 중 하나입니다. 이것은 과거 프로그램언어와 Swift 언어의 진화 과정에서 상속받아왔습니다.
 
-## 관련 정보:
-- [Apple 공식 문서](https://developer.apple.com/documentation/foundation/nsstring/1412491-replacingoccurrences)
-- [Swift Standard Library 문서](https://developer.apple.com/documentation/swift/substring/1643114-replacingoccurrences)
-- [Swift by Sundell: 문맥 기반 문자열 검색](https://www.swiftbysundell.com/tips/contextual-string-searching/)
+**2. 대안들**
+Swift에서는 `replacingOccurrences(of:with:)` 메서드를 사용하여 특정 패턴에 일치하는 모든 인스턴스를 새로운 문자열로 교체할 수 있습니다.
+
+**3. 구현 세부사항**
+Swift에서 문자열 처리는 Unicode를 완전히 지원하기 때문에 복잡합니다. 따라서 문자 삭제와 같이 간단한 작업이라도 세심한 주의가 필요합니다.
+
+## 참고 자료:
+
+- [Swift 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html): Swift 문자열과 문자에 대해 상세히 설명한 공식 문서입니다.
+- [Apple 개발자 문서](https://developer.apple.com/documentation/swift/string): Apple이 제공하는 Swift `String` API 개발자 문서로, 다양한 문자열 처리 메서드에 대한 상세 정보를 제공합니다.

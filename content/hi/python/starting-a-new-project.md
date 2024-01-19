@@ -1,7 +1,7 @@
 ---
-title:                "एक नई प्रोजेक्ट शुरू करना"
-html_title:           "Python: एक नई प्रोजेक्ट शुरू करना"
-simple_title:         "एक नई प्रोजेक्ट शुरू करना"
+title:                "नया प्रोजेक्ट शुरू करना"
+html_title:           "C: नया प्रोजेक्ट शुरू करना"
+simple_title:         "नया प्रोजेक्ट शुरू करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -10,39 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 
-Starting a new project क्या है और क्यों करते हैं? 
-मुख्यतः, Starting a new project एक programmer के द्वारा सोचे गए और बनाए गए नए software या application को दर्शाता है। 
-यह एक creative process है जो उसे नए ideas और technologies को explore करने का मौका देता है और आगे बढ़ने की क्षमता को बढ़ाता है। 
+## क्या और क्यों?
 
-## कैसे करें: 
-एक नया project शुरू करने के लिए आपको आपके system पर Python version 3.0 और उसके libraries के साथ installed होना चाहिए। यदि आपने अभी तक इन्स्टॉल नहीं किया है, तो आप निम्नलिखित command का प्रयोग कर सकते हैं:
+नया प्रोजेक्ट शुरू करना, एक प्रोग्रामर के लिए एक विचारधारा को वास्तविकता में मापने का तरीका है। प्रोग्रामर इसे नई समस्याओं के समाधान के लिए या पुरानी समस्याओं के नए समाधान के लिए करते हैं।
 
-```
-pip install python
-```
+## कैसे करें:
 
-यदि आपने पहले से ही python install कर रखा है तो आप अपने terminal में नया directory create कर सकते हैं जहाँ आप अपना project save कर सकते हैं। 
+Python में किसी नए प्रोजेक्ट को शुरू करने के लिए हमे एक `main.py` फ़ाइल तैयार करने की जरुरत होती है।
 
-```
-mkdir MyProject
-```
+```Python
+# main.py
+def main():
+    print("नमस्ते, आपका स्वागत है!")
 
-अब आप अपने project directory में जाकर अपने code को रचना शुरू कर सकते हैं। नीचे दिए गए code blocks में आपको एक basic code दिखाया गया है जो आपको अपने project में स्टार्ट करने में मदद करेगा:
-
-```
-import numpy as np
-
-print("Hello world!")
+if __name__ == "__main__":
+    main()
 ```
 
-यह code आपको numpy library को import करने कहता है और एक "Hello world!" message दिखाता है। आप अपने project को यहाँ से आगे बढ़ा सकते हैं और अपनी coding skills को नए level पर ले जा सकते हैं। 
+इसमें `main()` फ़ंक्शन में कोड लिखना शुरू करें। फिर टर्मिनल में `python main.py` टाइप करके प्रोग्राम चलायें।
 
-## गहराई में जाएं: 
-Starting a new project एक समय की दृष्टि से देखें तो, यह एकमात्र एक software या application नहीं बल्कि एक क्रियान्वयन process है जिसमें विभिन्न डेवलपमेंट steps शामिल होते हैं। 
-आप अपनी पसंद अनुसार project के लिए coding language चुन सकते हैं जैसे Python, Java, C++, आदि। 
-इसके साथ ही, आप किसी भी साधन या tools का उपयोग कर सकते हैं जैसे GitHub जो आपको अपने project को manage करने में मदद करता है। 
+## गहरी जानकारी
 
-## और देखें: 
-नए project शुरू करने से पहले, आप अपने coding skills को बहुत ज्ञात होना चाहिए ताकि आप अपने project में अपनी आवश्यकताओं को पूरा कर सकें। 
-आप अपने python से संबंधित सभी प्रश्नों के लिए https://www.python.org/ पर जा सकते हैं। आप अपने project के अलावा भी अन्य coding projects को भी कर सकते हैं जो आपके skills को बेहतर बनाते हैं।
+नया प्रोजेक्ट शुरू करने की प्रक्रिया विकसित होती गई है क्योंकि प्रोग्रामिंग भाषाओं की क्षमता बढ़ी है। विकल्प रूप में, किसी नए प्रोजेक्ट को शुरू करने से पहले, आप प्रोजेक्ट के लिए आवश्यक विशेषताओं और उपकरणों के बारे में सोचना चाहेंगे। अगर आप IDE जैसे PyCharm का उपयोग कर रहे हैं, तो यह आपके लिए कुछ प्रोजेक्ट की सेटअप को स्वचालित कर सकता है।
+
+## अधिक जानकारी के लिए देखें
+
+1. Python के बारे में विस्तृत जानकारी के लिए, Python की आधिकारिक वेबसाइट [Python.org](https://www.python.org/) पर जाएँ।
+2. Python की कोडिंग के बेहतरीन अभ्यास के लिए, आपको PEP 8 गाइड लाइन्स का पालन करना चाहिए। [PEP 8](https://www.python.org/dev/peps/pep-0008/) 
+3. इसके अलावा, [Real Python](https://realpython.com/) पर Python के बारे में प्रोग्रामिंग के टुटोरियल, टिप्स, और ट्रिक्स प्राप्त कर सकते हैं।

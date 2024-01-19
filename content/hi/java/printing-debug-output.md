@@ -1,7 +1,7 @@
 ---
-title:                "डेबग आउटपुट छापना"
-html_title:           "Java: डेबग आउटपुट छापना"
-simple_title:         "डेबग आउटपुट छापना"
+title:                "डीबग आउटपुट प्रिंट करना"
+html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,34 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्या और क्यों? 
-डिबग आउटपुट प्रिंट करना क्या है और प्रोग्रामर इसे क्यों करते हैं? डिबग आउटपुट प्रिंट करना एक तकनीक है जिससे प्रोग्रामर समस्याओं को खोजने में मदद मिलती है और अपने कोड को सही काम करने के लिए जांच सकते हैं।
+## क्या और क्यों? / What & Why?
 
-# कैसे करें: 
-डिबग आउटपुट प्रिंट करने के लिए, आपको सिर्फ अपने कोड में `System.out.println()` का इस्तेमाल करना होगा। नीचे कुछ उदाहरण और उनके आउटपुट दिए गए हैं:
+Debug आउटपुट प्रिंट करना का मतलब होता है कि प्रोग्राम के चलने के दौरान हम उसका बिहेवियर मोनिटर करते हैं। इसका मुख्य उद्देश्य होता है प्रोग्राम में होने वाले त्रुटियों का पता लगाना और इन्हें सुधारना।
 
-```java
-System.out.println("Hello world!"); // आउटपुट: Hello world!
-int num = 10;
-System.out.println("The number is: " + num); // आउटपुट: The number is: 10
-boolean flag = true;
-System.out.println("The value of flag is: " + flag); // आउटपुट: The value of flag is: true
+## कैसे: / How to:
+
+Java में debug मेंसज को प्रिंट करने के लिए हमें `System.out.println` (या उसका छोटा रूप, `System.out.print`) का उपयोग करना होता है। आईए एक उदाहरण देखते हैं:
+
+```Java
+public class Main {
+
+  public static void main(String[] args) {
+    for (int i = 0; i < 5; i++) {
+      System.out.println("Debug: i का मूल्य " + i + " है।");
+    }
+  }
+  
+}
 ```
+इस प्रोग्राम का आउटपुट होगा:
 
-# गहराई में जाएं: 
-डिबग आउटपुट प्रिंट करने का इतिहास, वैकल्पिक तकनीकों के बारे में और इसे इम्प्लीमेंट करने के विवरण के बारे में और भी गहराई से जानने के लिए आप और अधिक जानकारी के लिए नीचे दिए गए लिंक्स देख सकते हैं:
+```
+Debug: i का मूल्य 0 है।
+Debug: i का मूल्य 1 है।
+Debug: i का मूल्य 2 है।
+Debug: i का मूल्य 3 है।
+Debug: i का मूल्य 4 है।
+```
+## गहराई से जानकारी / Deep Dive:
+सभी भाषाओं में debugging एक महत्वपूर्ण हिस्सा है। Debugging का उपयोग coordinated system को understand करने और troubleshoot करने के लिए हमेशा से किया जा रहा है। आप `System.out.print` के अलावा जैसे कि logging libraries का उपयोग कर सकते हैं। Logging libraries, जैसे कि Log4j या SLF4J, विस्तारपूर्वक तत्वों को handle करने का समर्थन करते हैं, जैसे कि log message का प्रारूप बदलना, और log messages को अलग-अलग file में लिखना।
 
-## इतिहास: 
-डिबग आउटपुट प्रिंट करने का इतिहास बहुत पुराना है। पहले, प्रोग्रामर बस प्रिंट लाइन शो थाये और इसका उपयोग करके डिबगिंग करते थे। उसके बाद, `System.out.println()` मेथड का इस्तेमाल आया और वह अब भी सबसे ज्यादा उपयोग किया जाने वाला तरीका है।
-
-## वैकल्पिक तकनीकें: 
-डिबग आउटपुट प्रिंट करने के लिए और भी कई वैकल्पिक तकनीकें हैं, जैसे लॉगिंग और डिबगर टूल्स। इन वैकल्पिक तकनीकों का उपयोग सिस्टम को और एफिशिएंट बनाने के लिए किया जाता है।
-
-## इम्प्लीमेंटेशन डिटेल्स: 
-जब आप `System.out.println()` का इस्तेमाल करते हैं, तो आउटपुट को कॉन्सोल में प्रिंट किया जाता है। यह मेथड एक वॉइडली उपयोग किया जाने वाला मेथड है, जो ऑब्जेक्ट को स्ट्रिंग में बदलता है और इसे प्रिंट करता है।
-
-# और भी देखें: 
-डिबग और डिबग आउटपुट प्रिंट करने के बारे में और जानने के लिए निम्नलिखित स्रोतों को देखें:
-
-- [Oracle की आधिकारिक डॉक्यूमेंटेशन](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
-- [बिलगेट इत्यादि से सीखें: Simple Debugging](https://www.th
+## इसे भी देखें / See Also:
+- [Log4j introduction (यहाँ क्लिक करें)](https://logging.apache.org/log4j/2.x/manual/introduction.html)
+- [SLF4J Introduction (यहाँ क्लिक करें)](https://www.slf4j.org/manual.html)
+- [Java Logging Overview (यहाँ क्लिक करें)](https://www.oracle.com/technical-resources/articles/javase/core-patterns-logging.html)

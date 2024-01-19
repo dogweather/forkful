@@ -1,7 +1,7 @@
 ---
-title:                "文字列の大文字化"
-html_title:           "Clojure: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "文字列を大文字にする"
+html_title:           "Clojure: 文字列を大文字にする"
+simple_title:         "文字列を大文字にする"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,24 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「何？そしてなんで？」
+## 何となぜ？
 
-文字列を大文字にすることは、プログラマーの間でよく行われる操作です。大文字にするとは、文字列の最初の文字を大文字にし、残りを小文字にすることを意味します。プログラマーは、読みやすさや一貫性のために文字列を大文字にすることがあります。
+文字列を大文字に変換するとは、文の開始や名前など、文字列の一部または全体を大文字にすることを指します。プログラマーは読みやすさを高めるためや、データの統一性を保つためにこれを行います。
 
-「方法」
+## 方法：
+
+Clojureでは、`clojure.string` の `upper-case` 関数を使用して文字列を大文字に変換します。以下のコード例と出力結果を参照してください。
 
 ```Clojure
-(clojure.string/capitalize "hello world")
-;; => "Hello world"
-(clojure.string/capitalize "Clojure")
-;; => "Clojure"
+(require '[clojure.string :as str])
+
+(str/upper-case "Hello, world!")
 ```
 
-「深く掘り下げる」
+このコードを実行すると、次のような出力を得ることができます：
 
-文字列の大文字化は、ほとんどのプログラミング言語でサポートされています。この機能は、読みやすさやコードの一貫性を確保するために重要です。また、文字列を大文字にすることは、データバリデーションにも役立ちます。文字列の大文字化は、一般的にトップレベルの関数として提供されているため、簡単に使用できます。
+```Clojure
+"HELLO, WORLD!"
+```
 
-「関連情報」
+## 深掘り
 
-- [Clojureドキュメント](https://clojure.org/guides/learn/strings)
-- [Java Stringメソッド](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+文字列の大文字化は古くからプログラムの中で使われてきました。これはユーザーインターフェースやデータの正規化に重要で、現在でもその価値が認識されています。同様の効果を持つ他の関数には `capitalize`や `title-case`がありますが、これらは通常、特定の文字位置の大文字化に使用されます。 
+
+`upper-case`関数はシンプルで、内部的にはJavaの `toUpperCase`メソッドを呼び出しています。これはUnicode準拠で、全ての文字を所定の大文字にマッピングすることが保証されています。
+
+## 関連情報
+
+- Clojure.string APIドキュメント: https://clojuredocs.org/clojure.string/upper-case
+- Clojureの文字列操作全般について: https://clojurebridge.org/community-docs/docs/clojure/clojure-strings/

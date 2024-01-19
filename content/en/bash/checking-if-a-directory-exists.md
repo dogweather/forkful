@@ -11,34 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Checking if a directory exists is a common task in programming, especially in the world of Bash. It is the process of verifying whether a specific directory exists or not, and is necessary for proper program functionality. Programmers do this to ensure that their code runs smoothly and to prevent any errors or unexpected behavior.
+
+Checking if a directory exists in Bash entails programming it to verify the existence of a certain folder. It's vital to avoid errors when addressing files or folders that may not exist, ensuring your code runs smoothly.
 
 ## How to:
-To check if a directory exists in Bash, you can use the ```test``` command. This command allows you to perform a variety of tests on files and directories, including checking for their existence. To use it, simply type the following command in your terminal:
 
+```Bash
+# Check if directory exists
+if [ -d "$DIRECTORY" ]; then
+  echo "Directory exists"
+else
+  echo "Directory does not exist"
+fi
 ```
-test -d <directory_path>
+This code checks whether `$DIRECTORY` exists. If it does, it prints "Directory exists." If not, it prints "Directory does not exist."
+
+## Deep Dive
+
+Historically, file checking has been integral to operating systems, and Bash, born from the Unix tradition, is no exception. It employs the old but gold `-d` option as seen above. 
+
+As for alternatives, `test` can be used in place of the `[... ]` syntax. Check out this syntax variety:
+
+```Bash
+if test -d "$DIRECTORY"; then
+  echo "Directory exists"
+else
+  echo "Directory does not exist"
+fi
 ```
+It functions similarly to the first example.
 
-If the directory exists, this command will return a successful exit status code of 0. Otherwise, it will return a status code of 1, indicating that the directory does not exist. You can also use the ```[...]``` syntax, which is essentially the same as the ```test``` command. Here is an example:
+Implementation details include how `-d` actually works. It checks if something exists and is a directory. Other options like `-f` can be used to check if something exists and is a file.
 
-```
-[ -d <directory_path> ]
-```
+## See Also
 
-Additionally, you can use the ```-e``` flag to check for the existence of any file or directory, not just directories. For example:
-
-```
-test -e <file_or_directory_path>
-```
-
-## Deep Dive:
-In the early days of Bash, the only way to check for the existence of a directory was to use the ```test``` command or the ```[...]``` syntax. However, with the development of newer versions of Bash, the ```[ ... ]``` double square brackets syntax was introduced, providing more functionality and flexibility in conditional expressions. This syntax also became the preferred method for checking if a directory exists.
-
-An alternative approach to checking for the existence of a directory is to use the ```[[ ... ]]``` syntax, which is an augmented version of the ```[ ... ]``` syntax. This syntax is more versatile and supports advanced conditionals, including logical operators and regular expressions. In comparison, the ```test``` command only supports basic conditionals.
-
-## See Also:
-To learn more about checking for the existence of directories in Bash, check out the following resources:
-- [Bash Beginner's Guide on Directory Manipulation](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
-- [Linuxize tutorial on Bash File Test Operators](https://linuxize.com/post/bash-check-if-file-exists/)
-- [Bash Reference Manual for Conditional Constructs](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Conditional-Constructs)
+For further reading, there are many Bash tutorials and resources online. However, the [GNU Bash manual](https://www.gnu.org/software/bash/manual/bash.html) is superb, especially its section on the `-d` file test operator.

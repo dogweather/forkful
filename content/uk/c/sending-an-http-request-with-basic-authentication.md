@@ -1,7 +1,7 @@
 ---
-title:                "Відправка http-запиту з базовою аутентифікацією"
-html_title:           "C: Відправка http-запиту з базовою аутентифікацією"
-simple_title:         "Відправка http-запиту з базовою аутентифікацією"
+title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
+html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
+simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,51 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
+## Що і навіщо?
+Відправлення HTTP-запиту з базовою автентифікацією - це процес передачі ваших облікових данних серверу для перевірки. Програмісти роблять це, щоб забезпечити безпечність даних та доступ до особистих ресурсів.
 
-В програмуванні часто використовується відправлення HTTP-запитів з основною аутентифікацією. Це означає, що наш код буде передавати основну аутентифікаційну інформацію (ім'я користувача та пароль) разом із запитом, щоб сервер міг перевірити нашу ідентичність та дозволити доступ до ресурсів. Це дозволяє нам захистити конфіденційну інформацію та виконувати безпечні запити.
-
-Як це зробити:
-
-```c
-#include <stdio.h>
+## Як це зробити:
+```C
 #include <curl/curl.h>
 
-int main(void)
-{
-  CURL *curl;
-  CURLcode res;
+int main(void) {
+    CURL *curl;
+    CURLcode res;
 
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/api/");
-    // Встановлюємо основну аутентифікацію зі своїми даними
-    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
+    curl_global_init(CURL_GLOBAL_DEFAULT);
 
-    res = curl_easy_perform(curl);
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
 
-    /* Перевіряємо код відповіді */
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERPWD, "user:password");
 
-    /* Завершуємо сеанс */
-    curl_easy_cleanup(curl);
-  }
-  return 0;
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                    curl_easy_strerror(res));
+
+        curl_easy_cleanup(curl);
+    }
+
+    curl_global_cleanup();
+
+    return 0;
 }
 ```
+Вищенаведений код відправить HTTP-запит до "http://example.com" з базовою автентифікацією, використовуючи облікові дані "user:password".
 
-Студія curl/easy та бібліотека libcurl надають нам зручні функції для роботи з HTTP запитами. Ми встановлюємо кодування аутентифікації CURLAUTH_BASIC та передаємо його разом з ім'ям користувача та паролем за допомогою функції CURLOPT_USERPWD. Останній крок - виконати запит за допомогою функції curl_easy_perform. Очікуваний результат повинен бути успішним (0). 
+## Докладний погляд
+Відправлення HTTP-запитів із базовою автентифікацією було впроваджено в RFC 2617 у 1999 році як частина протоколу HTTP 1.1.
 
-Глибоке занурення:
+Щодо альтернатив, ви можете використовувати дайджест-автентифікацію, токени OAuth або SSL-сертифікати для автентифікації на сервері.
 
-HTTP-основна аутентифікація виникла в 90-ті роки, і була єдиною методом аутентифікації для HTTP протоколу до 2010 року. Однак, вона все ще може бути використана в багатьох випадках, де потрібно просте та ефективне забезпечення аутентифікації. 
+Існує декілька різних бібліотек для відправлення HTTP-запитів у C, але libcurl є однією з найпопулярніших частин, частково через свою підтримку різних методів автентифікації.
 
-Можливу альтернативою основній аутентифікації є Digest аутентифікація, яка є більш безпечною, але більш важкою в застосуванні. Також існує можливість використання бібліотеки OpenSSL для основної аутентифікації за допомогою функцій SSL.
+## Дивіться також
+[Офіційна документація libcurl](https://curl.se/libcurl/c/)
 
-Дивитися також:
+[HTTP-автентифікація на MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
 
-- Ofіційна документація libcurl: https://curl.se/libcurl/c/http-auth.html
-- GitHub репозиторій libcurl: https://github.com/curl/curl
+[RFC 2617 - HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)

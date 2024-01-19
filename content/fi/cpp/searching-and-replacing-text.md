@@ -1,6 +1,6 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "C++: Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "C++"
 category:             "C++"
@@ -10,40 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Ehkä olet törmännyt ongelmaan, jossa sinun pitää muuttaa suuri määrä tekstiä samassa tiedostossa tai projektissa. Onneksi ohjelmoijilla on käytössään tehokas työkalu nimeltä "tekstin etsiminen ja korvaaminen" (engl. "search and replace"), jonka avulla tämä työ sujuu nopeasti ja vaivattomasti. Etsiminen ja korvaaminen mahdollistaa tekstin löytämisen ja sen korvaamisen uudella tekstillä hyvin nopeasti, mikä säästää aikaa ja vaivaa. 
+## Mikä & Miksi?
 
-## Miten:
-Etsimisen ja korvaamisen käyttö on yksinkertaista ohjelmoijille. Katso esimerkki alla olevasta koodinpätkästä, joka etsii ja korvaa kaikki "kissa" sanat "koira" sanoilla.
+Tekstin hakeminen ja korvaaminen on prosessi, jossa tekstiä etsitään spesifin mallin tai merkkijonon perusteella ja korvataan uudella tekstillä, jolla on yleensä eri merkitys tai tarkoitus. Ohjelmoijat tekevät tämän parantaakseen tai päivittääkseen koodiaan tai muuttaakseen dataa.
 
-```C++
-std::string teksti = "Näin kissa loikkaa pöydän yli ja nappaa lelunsa.";
-teksti.replace("kissa", "koira");
-std::cout << teksti << std::endl;
-```
-
-Tulostus: "Näin koira loikkaa pöydän yli ja nappaa lelunsa."
-
-Voit myös etsiä ja korvata tekstin tietyn alueen sisältä. Katso esimerkki alla, jossa etsitään ja korvataan vain ensimmäinen "kissa" sana.
+## Näin se tehdään:
 
 ```C++
-std::string teksti = "Kissa loikkaa pöydän yli ja kissa nappaa lelunsa.";
-teksti.replace(teksti.find("kissa"), 5, "koira");
-std::cout << teksti << std::endl;
+#include <iostream>
+#include <string>
+
+void etsi_ja_korvaa(std::string& lause, const std::string& etsittava, const std::string& korvaava) {
+    size_t indeksi = lause.find(etsittava);
+    while(indeksi != std::string::npos) {
+        lause.replace(indeksi, etsittava.length(), korvaava);
+        indeksi = lause.find(etsittava, indeksi + korvaava.length());
+    }
+}
+
+int main() {
+    std::string lause = "Tervetuloa Helsingin ohjelmoijille!";
+    etsi_ja_korvaa(lause, "Helsingin", "Tampereen");
+    std::cout << lause << std::endl;
+
+    return 0;
+}
 ```
 
-Tulostus: "Koira loikkaa pöydän yli ja kissa nappaa lelunsa."
+Tämä koodi etsii merkkijonon "Helsingin" ja korvaa sen merkkijonolla "Tampereen". Tulostee: "Tervetuloa Tampereen ohjelmoijille!"
 
-## Deep Dive:
-Etsimistä ja korvaamista on käytetty ohjelmoinnissa jo vuosikymmenien ajan. Alun perin se oli käsintehtävä, jossa ohjelmoijat etsivät koodistaan tiettyjä sanoja tai lausekkeita ja korvasivat ne uusilla. Nykyään ohjelmointiympäristöt tarjoavat mahdollisuuden automatisoida tämä prosessi, mikä säästää paljon aikaa ja vaivaa.
+## Syvällisemmin:
 
-On myös olemassa muita työkaluja, kuten "bulk replace", jotka voivat olla hyödyllisiä, jos haluat etsiä ja korvata tekstiä useista eri tiedostoista tai projekteista.
+Tekstin etsimisen ja korvaamisen historia ulottuu ensimmäisten tekstieditorien ja tulkintaympäristöjen aikoihin. Se on keskeinen osa monen ohjelmoijan työkalupakkia, ja siksi se on standarditoiminto monissa ohjelmointikielissä.
 
-Tekstin etsimisen ja korvaamisen toteuttaminen tapahtuu monella eri tavalla, ja se riippuu ohjelmointiympäristöstä ja käytetyistä työkaluista. Esimerkiksi joidenkin ohjelmointikielten kirjastoissa on valmiina toiminto tekstiin etsimistä ja korvaamista varten.
+C++:ssa teksin korvaaminen suoritetaan natiivisti `std::string`:in `replace()`-metodilla, joka ottaa korvattavan tekstin indeksit ja korvaavan tekstin. Jos korvattavaa tekstiä ei löydy, `std::string::npos` palautetaan.
 
-## See Also:
-Lyhyesti, tämä artikkeli antaa sinulle yleiskuvan siitä, mitä tekstien etsiminen ja korvaaminen ovat ja kuinka niitä käytetään ohjelmoinnissa. Suosittelemme myös tutustumaan seuraaviin lähteisiin, jotka voivat auttaa sinua lisää:
+On myös olemassa useita tekstin etsimiseen ja korvaamiseen liittyviä kirjastoja, jotka tarjoavat erilaisia työkaluja ja funktioita tätä toimintoa varten, esimerkiksi, `Boost.Regex` ja `std::regex` standardikirjasto.
 
-- [Regular expressions tutorial](https://regexone.com/)
-- [Official C++ documentation](https://en.cppreference.com/w/cpp/string/basic_string/replace)
-- [Bulk replace tool](https://www.bulkrenameutility.co.uk/), joka tarjoaa enemmän vaihtoehtoja kuin useimmat tekstieditorit
+## Katso myös:
+
+1. C++ reference, `std::string::replace`: https://cplusplus.com/reference/string/string/replace/
+2. C++ API-oppaat, `std::string`-luokka: https://cppreference.com/w/cpp/string/basic_string
+3. Boost.Regex, säännöllisten lausekkeiden kirjasto: https://www.boost.org/doc/libs/1_75_0/libs/regex/doc/html/index.html
+4. StackOverflow, kysymyksiä ja vastauksia C++:n tekstinkorvauksesta: https://stackoverflow.com/questions/tagged/c%2B%2B+string-replace.

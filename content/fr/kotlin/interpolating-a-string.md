@@ -1,7 +1,7 @@
 ---
-title:                "Interpoler une chaîne de caractères."
-html_title:           "Kotlin: Interpoler une chaîne de caractères."
-simple_title:         "Interpoler une chaîne de caractères."
+title:                "Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,41 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#### Qu'est-ce que c'est et pourquoi le faisons-nous?
+## Qu'est-ce et Pourquoi ?
 
-L'interpolation de chaîne est le processus de créer une chaîne en insérant dynamiquement des valeurs dans une chaîne existante. Les programmeurs utilisent cela pour simplifier et rendre plus lisible le code en évitant de concaténer plusieurs chaînes ensemble.
+L'interpolation de chaînes en Kotlin est la technique d'insérer des variables au sein d'une chaîne de caractères. Elle rend le code non seulement plus lisible, mais aussi plus efficace lorsqu'on souhaite concaténer des variables et des chaînes de caractères.
 
-#### Comment faire:
+## Comment faire :
 
-Exemples de code et résultats:
+Utiliser le dollar (`$`) pour insérer une variable dans une chaîne. Si vous souhaitez inclure une expression entière, encadrez-la avec des accolades (`{}`). 
 
-```Kotlin
-val name = "Jean"
-val age = 25
-val sentence = "Bonjour, je m'appelle $name et j'ai $age ans."
-println(sentence)
-```
-Résultat: Bonjour, je m'appelle Jean et j'ai 25 ans.
-
-L'utilisation de l'interpolation de chaîne en Kotlin est simple et elle peut être utilisée à la fois avec des variables et des expressions. Il suffit d'ajouter le symbole '$' suivi du nom de la variable ou de l'expression à l'endroit souhaité dans la chaîne. De plus, il est également possible d'utiliser la syntaxe de formatage pour spécifier le nombre de chiffres significatifs à utiliser pour les valeurs numériques.
+En Kotlin, cela ressemble à ça :
 
 ```Kotlin
-val price = 100.50
-val quantity = 3
-val total = price * quantity
-println("Le coût total est de \$%.2f pour $quantity articles.".format(total))
+val nom = "Pierre"
+println("Bonjour, $nom")  // Affiche : Bonjour, Pierre
+
+val age = 30
+println("Bonjour, $nom. Vous avez $age ans.")  // Affiche : Bonjour, Pierre. Vous avez 30 ans.
+
+println("Dans dix ans, vous aurez ${age + 10} ans.")  // Affiche : Dans dix ans, vous aurez 40 ans.
 ```
 
-Résultat: Le coût total est de $301.50 pour 3 articles.
+## Plongée profonde :
 
-#### Approfondissement:
+Historiquement, l'interpolation de chaînes a été introduite pour la première fois dans le langage de programmation ALGOL 68. C'est une fonctionnalité que l'on retrouve dans beaucoup de langages modernes dont Kotlin, bien sûr.
 
-L'interpolation de chaîne est une technique couramment utilisée dans les langages de programmation modernes pour améliorer la lisibilité du code. Elle a été popularisée par le langage de programmation Perl dans les années 1980 et est maintenant utilisée dans d'autres langages tels que Python, Ruby et bien sûr Kotlin.
+Il existe de nombreuses manières alternativas de concaténer des chaînes et des variables, par exemple avec l'opération `+`. Cependant, ce n'est pas recommandé car il peut créer de nombreux objets String inutiles, surtout dans les boucles.
 
-Une alternative à l'interpolation de chaîne est l'utilisation de la concaténation de chaînes, qui consiste à combiner plusieurs chaînes ensemble en utilisant un opérateur de concaténation tel que '+' ou '.concat()'. Cependant, cela peut devenir fastidieux et difficile à lire lorsque plusieurs valeurs doivent être insérées dans une chaîne.
+Par exemple, évitez cela :
 
-En ce qui concerne l'implémentation de l'interpolation de chaîne, elle est gérée par le compilateur Kotlin, ce qui signifie que le code final sera optimisé pour une performance maximale.
+```Kotlin
+val nom = "Pierre"
+val age = 30
+println("Bonjour, " + nom + ". Vous avez " + age + " ans.")
+```
 
-#### Voir aussi:
+En pratique, l'interpolation de chaînes en Kotlin est mise en œuvre en traduisant les expressions `${expression}` en appels à `expression.toString()` lors de la compilation. 
 
-Pour en savoir plus sur l'interpolation de chaîne en Kotlin, vous pouvez consulter la documentation officielle de Kotlin sur [les chaînes et les caractères](https://kotlinlang.org/docs/reference/basic-types.html#strings-and-characters). Vous pouvez également jeter un coup d'œil à [cet article](https://www.baeldung.com/kotlin-string-interpolation) pour plus d'exemples et d'astuces sur l'utilisation de l'interpolation de chaîne en Kotlin.
+## Voir aussi :
+
+Pour en savoir plus, considérez ces ressources :
+
+1. [Documentation officielle sur l'interpolation des chaînes en Kotlin](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
+2. [Article de blog sur l'interpolation des chaînes en Kotlin](https://www.baeldung.com/kotlin-string-interpolation)
+3. [Discussion StackOverflow sur l'interpolation des chaînes en Kotlin](https://stackoverflow.com/questions/46450220/when-should-i-use-string-interpolation-in-kotlin)

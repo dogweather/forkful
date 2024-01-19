@@ -1,6 +1,6 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "TypeScript: הורדת דף אינטרנט"
+html_title:           "C++: הורדת דף אינטרנט"
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"מה ולמה?"
+## מה ולמה?
 
-להוריד דף אינטרנט הוא פעולה שמאפשרת לנו לקבל את קוד המקור של דף אינטרנט מהאתר המרוחק. פעולה זו מאפשרת לנו לעבד את המידע שנמצא בדף אינטרנט ולהציג אותו בצורה שאנחנו רוצים. תכניתנים עושים זאת בכדי ליצור אפליקציות או כלי אוטומציה שצריך להשתמש בנתונים מדף אינטרנט מסוים.
+הורדת דף אינטרנט, זו הפעולה של שליפת קוד HTML של דף אינטרנט ושמירתו על המחשב של ך. מתכנתים עשויים לבצע זאת כדי לנתח, לבדוק או לשמור על נתונים מסוימים לשימוש במועד מאוחר יותר.
 
-"איך לעשות?"
+## איך:
+
+מדריך קצר על כיצד להוריד דף אינטרנט באמצעות Node.js וביבליות 'axios' ו'cheerio'.
 
 ```TypeScript
-import fetch from 'node-fetch';
+import axios from 'axios';
+import cheerio from 'cheerio';
 
-fetch('https://www.example.com')
-  .then((response) => response.text())
-  .then((html) => console.log(html));
+async function downloadHTML(url: string):Promise<void>{
+  const response = await axios.get(url);
+  const $ = cheerio.load(response.data);
+  const content = $('body').html(); 
+  console.log(content); 
+}
+
+downloadHTML('http://google.com');
 ```
+בכול פעם שאתה מריץ את הקוד הזה, הוא יוריד את קוד ה־HTML של גוף הדף של Google וידפיס אותו במסוף.
 
-את הדף אינטרנט מורידים באמצעות פונקציית ה-fetch של ספריית node-fetch. הפונקציה מחזירה לנו תוצאת Promise ואז משתמשים בפונקציות קולבק כדי להתייחס למידע המושג בפעמים הבאות. בדוגמה שלנו, אנחנו מדפיסים את מידע ה-HTML שנמצא בדף האינטרנט.
+## הצצה עמוקה
 
-"עולם מתמעמע"
+הורדת דף אינטרנט כרגע הייתה חלק מתכנות הפקה מאז ימי האינטרנט הראשונים. למרות שלמרבה המקרים בניית API העשירה המאפשרת גישה ישירה לנתונים הדרושים היא הפתרון המועדף, לא תמיד מידע זה זמין או נגיש.
 
-להוריד דפי אינטרנט הינה פעולה שמתבצעת כבר שנים רבות והפונקציונליות שלה חלק מכלי הפיתוח החשובים ביותר. ישנן גם אלטרנטיבות להורדת דפים כגון פרוטוקול כמו https ופקודות Shell מסוג wget או cURL. מימוש הפונקציה כולל שימוש בפרוטוקול HTTP וקבלת התגובה מהשרת.
+חלפה מגוון של טכנולוגיות כמו `XMLHttpRequest` ו`fetch` בצד לקוח ב־JavaScript או אפילו ביבליות `cURL` בצד שרת ב־PHP, אך בסביבות Node.js החשובות 'axios' ו'cheerio'  נהיו נפוצות בזכות הפשטות שלהם והכוח שהם מאפשרים.
 
-"ראו גם"
+## ראה גם
 
-למידע נוסף על פונקציית ה-fetch ניתן לעיין בתיעוד הרשמי של TypeScript: https://www.typescriptlang.org/docs/handbook/enums.html
-
-לדוגמה נוספת והסברים על איך להתמודד עם שגיאות נפוצות בהורדת דף אינטרנט, ניתן לבקר במאמר הבא: https://blog.bitsrc.io/everything-you-need-to-know-about-browser-page-downloads-169dff68ca67
+- [עוד על 'axios'](https://axios-http.com/docs/intro)
+- [עוד על 'cheerio'](https://cheerio.js.org/)
+- [הדרך המודרנית לאתחל את Node: TypeScript, VS Code, Typings](https://medium.com/javascript-scene/the-modern-way-to-run-jest-tests-in-typescript-36e07ee6fb3d)
+- [הכל על TypeScript (המדריך המלא)](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Convertir une chaîne en minuscules"
-html_title:           "Swift: Convertir une chaîne en minuscules"
+html_title:           "PHP: Convertir une chaîne en minuscules"
 simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,44 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Convertis une chaîne de caractères en minuscules signifie simplement changer toutes les lettres majuscules d'une chaîne en lettres minuscules. Les programmeurs font cela pour rendre les données plus cohérentes et faciles à manipuler.
+## Qu'est-ce que c'est & Pourquoi ?
 
-## Comment:
-Voici quelques exemples de code pour convertir une chaîne de caractères en minuscules en Swift:
+La conversion d'une chaîne de caractères en minuscules dans Swift est le processus de transformation de tous les caractères de la chaîne en lettres minuscules. C'est fréquemment réalisé pour faciliter la comparaison et la recherche dans les chaînes de caractères.
 
-```Swift
-let mot = "Bonjour"
-let motEnMinuscules = mot.lowercased()
-print(motEnMinuscules)
-```
-
-Cela produira la sortie suivante:
-
-```
-bonjour
-```
-
-Vous pouvez également utiliser la fonction `map` pour appliquer la conversion à chaque caractère de la chaîne:
+## Comment faire :
 
 ```Swift
-let phrase = "Bonjour à tous!"
-let phraseEnMinuscules = phrase.map { $0.lowercased() }.joined()
-print(phraseEnMinuscules)
+let monChaine = "Bonjour À Tous Les Développeurs Swift"
+let chaineEnMinuscules = monChaine.lowercased()
+
+print(chaineEnMinuscules)
+/* Sortie :
+"bonjour à tous les développeurs swift"
+*/
 ```
+Dans cet exemple, `lowercased()` est la méthode qui transforme tous les caractères de 'monChaine' en minuscules.
 
-Cela produira la sortie suivante:
+## Plongée profonde
 
-```
-bonjour à tous!
-```
+Historiquement, la conversion de chaînes de caractères en minuscules a été cruciale pour rendre les textes plus accessibles et structurés dans les systèmes informatiques. Dans Swift, `lowercased()` fonctionne en prenant en compte les spécificités de chaque langue à l'aide de la norme Unicode. Par exemple, pour le turc, où "I" est transformé en "ı" et non "i".
 
-## Plongée en profondeur:
-Avant Swift, la méthode courante pour convertir une chaîne de caractères en minuscules était d'utiliser la fonction `lowercaseString` disponible dans la classe `NSString` de Foundation. Cependant, cette méthode était lente et ne fonctionnait qu'avec des caractères ASCII. Avec Swift, la fonction `lowercased` est plus rapide et prend en charge tous les caractères de l'unicode.
+Une alternative à `lowercased()` pourrait être d'iterer sur chaque caractère de la chaîne, en vérifiant s'il est en majuscules à l'aide de `isUppercase` puis en le transformant en minuscules avec `lowercased()`. Toutefois, cette alternative manque d'efficacité en termes de performance et de précision linguistique.
 
-Il existe également d'autres méthodes pour convertir une chaîne en minuscules, telles que l'utilisation de l'opérateur d'affectation étendue (`string.lowercased()`) ou l'utilisation de la structure `CharacterSet` pour déterminer les caractères à convertir.
+La mise en œuvre de la conversion en minuscules est faite en interne par Swift. Elle fonctionne pour toutes les chaînes, y compris celles contenant des emojis ou des symboles spéciaux.
 
-## Voir aussi:
-- [La documentation officielle Swift sur la fonction `lowercased`](https://developer.apple.com/documentation/swift/string/2894704-lowercased)
-- [Une comparaison de performances entre les différentes méthodes de conversion en minuscules en Swift](https://www.hackingwithswift.com/articles/174/the-performance-of-strings-in-swift)
-- [La documentation officielle sur la structure `CharacterSet`](https://developer.apple.com/documentation/foundation/characterset)
+## Voir aussi
+
+- Documentation Apple sur les chaînes et les caractères : https://developer.apple.com/documentation/swift/string
+- Unicode : https://home.unicode.org/
+- Normes Unicode pour la casse et le pliage : http://www.unicode.org/versions/Unicode13.0.0/ch03.pdf

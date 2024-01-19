@@ -1,7 +1,7 @@
 ---
-title:                "HTML analysieren."
-html_title:           "Rust: HTML analysieren."
-simple_title:         "HTML analysieren."
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,53 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Parsing HTML ist der Prozess des Extrahierens von Daten aus HTML-Quellcode. Es ist eine wichtige Aufgabe für Programmierer, da es ihnen ermöglicht, Daten von Webseiten zu sammeln und zu analysieren.
+# Rust und HTML Parsing: Ein praktischer Ansatz
+
+## Was und Warum?
+
+HTML-Parsing bezeichnet die Zerlegung von HTML in seine Bestandteile, um sie für Programmierungszwecke nutzbar zu machen. Programmierer machen dies, um Inhalte aus Webseiten zu extrahieren oder um Webseiten zu testen und zu debuggen.
 
 ## So geht's:
-Um HTML in Rust zu parsen, kann das Bibliothekspaket "html5ever" verwendet werden. Der folgende Code zeigt ein einfaches Beispiel, wie man eine HTML-Seite lädt, das DOM-Dokument erfasst und die Titelüberschrift ausgibt:
+
+Wir werden mit dem "scraper" Paket arbeiten. Beginnen wir mit der Einbindung des Pakets in unsere cargo.toml Datei.
 
 ```Rust
-use html5ever::{parse_document, tendril::TendrilSink};
-
-fn main() {
-    let input = r#"
-        <html>
-            <head>
-                <title>Meine Webseite</title>
-            </head>
-            <body>
-                <h1>Willkommen!</h1>
-            </body>
-        </html>"#;
-    let dom = parse_document(RcDom::default(), Default::default())
-        .from_utf8()
-        .read_from(&mut input.as_bytes())
-        .unwrap();
-    let doc = dom.document;
-    let h1 = doc
-        .children[0]
-        .children[1]
-        .children[0]
-        .children[1]
-        .children[0]
-        .as_text()
-        .unwrap();
-    println!("Titel: {}", h1);
-}
-
-// Ausgabe:
-// Titel: Willkommen!
+[dependencies]
+scraper = "0.12.0"
 ```
 
-## Tiefere Einblicke:
-Parsing HTML ist seit den Anfängen des World Wide Web eine wichtige Aufgabe. Früher wurde dies mit regulären Ausdrücken oder anderen Sprachen wie Perl oder Python durchgeführt. Heutzutage gibt es jedoch spezielle Bibliotheken und Werkzeuge, die dies effizienter und zuverlässiger erledigen können.
+Jetzt erstellen wir einen einfachen Parser:
 
-Alternativ zu "html5ever" gibt es auch andere Bibliotheken wie "kuchiki", "scraper" oder "select". Diese unterscheiden sich in ihrer Syntax und Funktionalität, können aber ebenfalls zum Parsen von HTML verwendet werden.
+```Rust
+extern crate scraper;
+use scraper::{Html, Selector};
 
-Die Implementierung von "html5ever" basiert auf dem HTML-Standardspezifikator. Es ist eine Parser-Bibliothek, die das Parsen von HTML gemäß den offiziellen Spezifikationen durchführt.
+fn main() {
+    let html = r#"<p class='red'>Hallo, Welt!</p>"#;
+    let document = Html::parse_document(&html);
+    let selector = Selector::parse(".red").unwrap();
 
-## Siehe auch:
-- Dokumentation zur Bibliothek "html5ever": https://docs.rs/html5ever/
-- Weitere Bibliotheken zum Parsing von HTML in Rust: https://github.com/brson/parse-html-rs
-- Offizieller HTML-Standardspezifikator: https://html.spec.whatwg.org/
+    for element in document.select(&selector) {
+        let text = element.text().collect::<Vec<_>>();
+        println!("{}", text[0]);
+    }
+}
+```
+
+Wenn Sie das ausführen, erhalten Sie den Ausdruck "Hallo, Welt!".
+
+## Vertiefung
+
+Historisch gesehen ist HTML-Parsing direkt mit dem Aufkommen des Webs und der Notwendigkeit verbunden, Websiten zugänglich und nutzbar zu machen. Es gibt viele Alternativen zum HTML-Parsing in Rust, wie z.B. html5ever und kuchiki, die allerdings unterschiedliche Funktionalitäten und Spezifitäten bieten.
+
+Die Implementierung von HTML-Parsing variiert stark je nach Sprache und den spezifischen Anforderungen des Projekts. In Rust konzentrieren wir uns häufig auf Effizienz und Genauigkeit, einschließlich der Fähigkeit, Fehler zu erkennen und darauf zu reagieren.
+
+## Siehe auch
+
+Weitere Informationen, Beispiele und Ressourcen zum HTML-Parsing in Rust finden Sie unter folgenden Links:
+
+- Rust-Dokumentation: https://doc.rust-lang.org/book/
+- Scraper Crate Dokumentation: https://docs.rs/scraper/0.12.0/scraper/
+- Rust Cookbook Eintrag zum HTML-Parsing: https://rust-lang-nursery.github.io/rust-cookbook/web/scraping.html
+- html5ever Repo: https://github.com/servo/html5ever
+- Kuchiki Repo: https://github.com/kuchiki-rs/kuchiki

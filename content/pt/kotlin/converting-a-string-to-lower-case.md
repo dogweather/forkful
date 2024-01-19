@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Kotlin: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O quê e Por quê?
+Converter uma string para minúsculas é uma operação que transforma todas as letras maiúsculas de uma string em letras minúsculas. Programadores fazem isso para padronizar os dados, facilitar comparações de string ou para garantir consistência ao trabalhar com textos sensíveis ao caso.
 
-Convertendo uma string para letras minúsculas é um processo comumente usado por programadores para alterar o formato de texto em seus programas. Isso permite que eles trabalhem com textos uniformes e padronizados, independentemente de como eles foram inseridos pelo usuário ou pelo sistema.
+## Como fazer
+Codigo de exemplo em Kotlin para converter uma string para minúsculas:
 
-## Como:
-
-```
-fun main() {
-    val texto = "UM TEXTO QUALQUER"
-    println(texto.toLowerCase())
-}
-
-// Output:
-// um texto qualquer
+```Kotlin
+val palavra = "Olá, Kotlin!"
+val palavraMinuscula = palavra.lowercase()
+println(palavraMinuscula)
 ```
 
-```
-fun main() {
-    val texto = "caracteresMaiusculos"
-    println(texto.toLowerCase())
-}
+A saída será:
 
-// Output:
-// caracteresmaiusculos
+```Kotlin
+"olá, kotlin!"
 ```
 
-## Mergulho Profundo:
+## Mergulho Profundo
+Na computação, a conversão de strings para minúsculas existe há muito tempo como um meio de facilitar a comparação de textos e a pesquisa. Kotlin, a partir da versão 1.5, mudou o método `toLowerCase` para `lowercase` para estar em conformidade com as convenções de nomenclatura. 
 
-Existem várias maneiras de converter uma string para letras minúsculas em Kotlin, incluindo o uso do método `toLowerCase()` como mostrado acima ou o uso do operador de atribuição `+=` com a função de extensão `lowercase()`.
+Existem alternativas para alcançar a mesma coisa em Kotlin, especialmente se você quiser considerar especificidades de localidade. Por exemplo, você pode usar o método `lowercase(Locale.getDefault())` para garantir que a conversão para minúsculas esteja de acordo com as regras dos idiomas locais.
 
-Embora essa conversão possa parecer simples, ela tem uma longa história e evolução na programação. Antigamente, em idiomas como o COBOL, as letras maiúsculas eram usadas para indicar comandos e as minúsculas para dados. Com o tempo, e especialmente com o uso de computadores pessoais, a distinção se tornou menos necessária e o uso de strings totalmente em minúsculas se tornou uma prática mais comum.
+A implementação deste método está na biblioteca-padrão de Kotlin e usa regras Unicode para realizar a conversão.
 
-Além disso, existem alternativas para converter strings em letras minúsculas, como o uso de expressões regulares ou bibliotecas externas. No entanto, a solução nativa da linguagem Kotlin é mais adequada e eficiente em muitos casos.
-
-## Veja Também:
-
-- [Documentação oficial do método toLowerCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
-- [Tutorial sobre strings em Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_string.htm)
-- [Artigo sobre strings e suas funções em Kotlin](https://www.geeksforgeeks.org/kotlin-strings/)
+## Veja também
+Para mais informações, consulte o link a seguir: 
+- [Documentação oficial do Kotlin sobre Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/lowercase.html)
+- [Post do blog JetBrains sobre Kotlin 1.5](https://blog.jetbrains.com/kotlin/2021/02/new-language-features-preview-in-kotlin-1-5-0/)

@@ -1,7 +1,7 @@
 ---
-title:                "कम्प्यूटर प्रोग्रामिंग पर एक लेख की शीर्षक: कमांड लाइन तर्कों का पठन।"
-html_title:           "PHP: कम्प्यूटर प्रोग्रामिंग पर एक लेख की शीर्षक: कमांड लाइन तर्कों का पठन।"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग पर एक लेख की शीर्षक: कमांड लाइन तर्कों का पठन।"
+title:                "कमांड लाइन तर्कों को पढ़ना"
+html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
+simple_title:         "कमांड लाइन तर्कों को पढ़ना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,53 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## क्या और क्यों?"
+## क्या और क्यों?
 
-कमांड लाइन आर्गुमेंट्स को पढ़ना यह काम है जो प्रोग्रामर्स बार-बार करते हैं। इससे वे उपयुक्त इनपुट प्राप्त करके अपने प्रोग्राम को विभिन्न तरीकों से चालू कर सकते हैं। 
+Command line arguments कुछ पैस के तरह होते हैं जो आपके PHP script को दिए जाते हैं। ये आपके प्रोग्राम को मोडिफाई करने में मदद करते हैं। आमतौर पर, विशेष विकल्पों, उपयोगकर्ता मापदंड, या फ़ाइल पथ के साथ-साथ इसे उपयोग किया जाता है।
 
-"## कैसे करें?"
-
-```PHP
-<?php
-
-// सरलगति के लिए आगंतुक संख्या तय करें:
-$number = $argv[1];
-echo "आपके द्वारा प्रदान किए गए आगंतुक संख्या है: $number";
-
-// वर्ग में उपयुक्त कार्य निष्पादित करें:
-$area = $number * $number;
-echo "आपके द्वारा प्रदान किए गए आगंतुक का वर्ग: $area";
-?>
-```
-
-उपयोगकर्ता कमांड लाइन से आर्गुमेंट दे और देखें कि क्या होता है। 
-
-उपयोगकर्ता कमांड के साथ सांख्यिक संख्या देना सिखाएं। 
+## कैसे:
 
 ```PHP
-आप अपनी php फ़ाइल को इस प्रकार चला सकते हैं: 
-php calculate.php 5
+// PHP script to read command line arguments
+// Get arguments
+$options = getopt(null, ["user:", "path:"]);
+
+// Print arguments
+foreach ($options as $key => $value) {
+    echo "Key: $key; Value: $value\n";
+}
 ```
-उत्पादन: 
+
+यदि यह script को "--user=test --path=/tmp" परमिटर के साथ चलाया जाता है, तो यह output देगा:
+
 ```PHP
-आपके द्वारा प्रदान किए गए आगंतुक संख्या है: 5
-आपके द्वारा प्रदान किए गए आगंतुक का वर्ग: 25
+Key: user; Value: test
+Key: path; Value: /tmp
 ```
 
-"## गहराई में डूबो"
+## गहरी जांच:
 
-कमांड लाइन आर्गुमेंट्स को पढ़ना पुराने और मौजूदा वर्ज़न दोनों में PHP की सुविधा है। इसका विकास समय कतार में हुआ और यह वर्गीकरण की अन्य विधियों के समान था। कुछ अन्य उपलब्ध विकल्पों में स्क्रिप्ट व्यवस्थापक प्यार, POSIX बजार या उत्तरदायी स्पष्टीकरण की भाषा शामिल हैं। 
+PHP में command line arguments को पढ़ना बहुत साधारण होता है, फिर भी बिते समय में कुछ विभिन्न तरीकों का निर्माण हुआ है। उपयोगकर्ता मापदंडों में ``getopt()`` का उपयोग परमिटर्स को सीधे कैप्चर करने के लिए होता है।
 
-"## अधिक जानें"
+विकल्प रूप में, आप ``$_SERVER['argv']`` में पाए जाने वाले command line arguments का उपयोग कर सकते हैं। यह अधिक flexible विकल्प हो सकता है, लेकिन यह परमिटर्स को manual parse करने की आवश्यकता हो सकती है।
 
-आर्गुमेंट के साथ कार्य को चलाने के लिए PHP के दो समान तरीके हैं: $argv और $_SERVER['argv']। दोनों पूर्णियों प्रदान करते हैं। 
+```PHP
+// Manually parsing command line parameters
+$args = $_SERVER['argv'];
+foreach ($args as $key => $value) {
+    echo "Key: $key; Value: $value\n";
+}
+```
 
-रिक्त $argv अपने docref_ext में भी कमांड के नैटिव दूरस्थ आर्गुमेंट हो सकते हैं। इसी स्पष्टीकरण योजना आपको प्रवर्तन से प्रभावित हो सकती है। 
+## देखें भी:
 
-$argc संख्या बताता है कि कितने आर्गुमेंट हैं। चल आप बस संकेतिकाएँ ले सकते हैं, और फिर आपको कमांड को और अधिक ताक पर खींचना होता है। 
-
-"## संबंधित स्रोत देखें" 
-
-- [PHP डॉक्यूमेंटेशन: $argc, $argv] (https://www.php.net/manual/en/reserved.variables.argc.php) 
-- [तुल्य $argc, $arg और $_SERVER ](https://www.php.net/manual/en/reserved.variables.argc.php) 
-- [PHP कमांड लाइन में आर्गुमेंट्स जांचें] (https://www.tutorialspoint.com/php/php_command_line.htm)
+- [PHP Command line usage](https://www.php.net/manual/en/features.commandline.usage.php) - PHP Manual
+- [Manual parsing of command line arguments](https://www.jonathan-petitcolas.com/2014/01/27/parsing-command-line-arguments-in-php.html) - Jonathan Petitcolas
+- [PHP getopt](https://www.php.net/manual/en/function.getopt.php) - PHP Manual

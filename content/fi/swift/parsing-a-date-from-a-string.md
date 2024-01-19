@@ -1,7 +1,7 @@
 ---
-title:                "Ajan erottaminen merkkijonosta"
-html_title:           "Swift: Ajan erottaminen merkkijonosta"
-simple_title:         "Ajan erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Javascript: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,40 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?
+# Parsing Päivämääriä Stringistä Swiftissä
 
-Päivämäärän lukeminen merkkijonosta tarkoittaa, että koodi pystyy ottamaan merkkijonon ja muuntamaan sen päivämääränä. Tämä on erittäin hyödyllistä, kun tarvitsemme tarkkoja päivämääriä tietokannoissa tai muissa järjestelmissä. Ohjelmoijat tekevät tämän helpottaakseen päivämäärän käsittelyä ja tarjotakseen tarkempia tietoja.
+## Mikä & Miksi?
 
-Kuinka:
+Päivämäärien jäsennys (parsing) stringistä on prosessi, jossa päivämäärät muunnetaan tekstistä käyttökelpoiseen muotoon. Tätä tehdään, jotta voidaan käsittellä ja analysoida päivämääriä ohjelmissamme helposti.
 
-Esimerkkejä koodista ja tulosteesta löydät alla olevista Swift-koodilohkoista:
+## Näin teet:
+
+Ohessa esimerkkikoodi Swiftistä, joka jäsentelee stringin päivämääräksi.
 
 ```Swift
-// Luo muuttuja, joka sisältää merkkijonon päivän 6. toukokuuta vuonna 2021
-let dateStr = "6.5.2021"
+import Foundation
 
-// Muunna merkkijono päivämääräksi ja tulosta se konsoliin
-let formatter = DateFormatter()
-formatter.dateFormat = "dd.MM.yyyy"
-if let date = formatter.date(from: dateStr) {
-    print("Tulostus: \(date)") // Tulostus: 2021-05-06 00:00:00 +0000
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd.MM.yyyy"
+
+if let date = dateFormatter.date(from: "27.12.2021") {
+    print(date)
+} else {
+   print("Päivämäärää ei voitu muuntaa.")
 }
 ```
 
-Tämä koodi luo ensin muuttujan, joka sisältää merkkijonon päivän 6. toukokuuta vuonna 2021. Sitten se muuntaa tämän merkkijonon päivämääräksi käyttämällä DateFormatter-luokkaa ja päivämäärämäärämuotoilijaa. Lopuksi se tulostaa päivämäärän konsoliin.
+Esimerkkikoodin tuloste näyttää seuraavalta:
 
-Syväsukellus:
+```Swift
+2021-12-27 00:00:00 +0000
+```
 
-Jos haluat tarkempaa tietoa päivämäärien käsittelystä Swiftissä, voit tutustua seuraaviin lähteisiin:
+## Syvempi Sukellus
 
-- Historiallinen tausta: Päivämäärien käsittely on ollut haasteellista koodaajille pitkään ja on yhä tärkeä osa monia järjestelmiä.
-- Vaihtoehtoiset tavat: Voit myös käyttää Foundation Frameworksia tai AppKit/Cocoa -kirjastoa käsitelläksesi päivämääriä Swiftissä.
-- Toteutuksen yksityiskohdat: Jos haluat tietää lisää siitä, kuinka DateFormatter-muotoilija toimii taustalla, voit lukea dokumentaatiosta.
+Historiallisesti päivämääräjäsennys on ollut osa ohjelmointia lähes sen alusta asti. Vaikka se näyttää yksinkertaiselta, se voi olla yllättävän haastavaa, koska päivämäärämuotoilut vaihtelevat paljon eri puolilla maailmaa. 
 
-Katso myös:
+Vaihtoehtoisia tapoja päivämäärien jäsennykseen Swiftissä ovat mm. `ISO8601DateFormatter` tai muokatun `DateComponents`-olion käyttö.
 
-Jos haluat lisätietoja päivämäärän lukemisesta merkkijonosta Swiftissä, voit tarkistaa seuraavat lähteet:
+Kun jäsennetään päivämäärä stringistä Swiftillä, käytetään taustalla `NSDateFormatter`-luokkaa, joka on osa Foundation-paketin tarjoamia ominaisuuksia. Tämä luokka käyttää Kansainvälisen standardointijärjestön ISO-koodauksia, mukaan lukien aikavyöhyke- ja kalenterikäsittely.
 
-- Swiftin virallinen dokumentaatio: Sieltä löydät lisätietoja Date-muodosta, DateFormatter-luokasta ja päivämäärän muotoilusta Swiftissä.
-- Stack Overflow: Siellä on paljon hyödyllisiä vastauksia ja esimerkkejä päivämäärän käsittelystä Swiftissä.
-- RayWenderlich-sivusto: Se tarjoaa monia opetusohjelmia ja vihjeitä päivämäärien käsittelystä Swiftissä.
+## Katso myös:
+
+Seuraavista lähteistä löydät lisätietoa päivämääräjäsennyksestä Swiftissä:
+
+- Swiftin virallinen käsikirja: [Date ja DateFormatter](https://developer.apple.com/documentation/foundation/date)
+- Stack Overflow: [Keskustelua päivämäärien jäsennyksestä Swiftissä](https://stackoverflow.com/questions/35700281/date-format-in-swift)
+- NSHipster: [NSDateFormatter](https://nshipster.com/nsdateformatter/)

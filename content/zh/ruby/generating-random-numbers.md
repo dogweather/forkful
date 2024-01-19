@@ -1,7 +1,7 @@
 ---
-title:                "产生随机数"
-html_title:           "Ruby: 产生随机数"
-simple_title:         "产生随机数"
+title:                "生成随机数"
+html_title:           "Go: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -10,30 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 做什麼和為什麼？
-隨機數字生成是指使用電腦程式來產生一系列看似無規律的數字。程序員之所以這麼做，是因為隨機數字在很多應用中都扮演著重要的角色。例如遊戲中的隨機地圖生成、加密技術中的密鑰生成等等。
+## 什么和为什么？
+生成随机数是一种编程方法，用于产生无可预测的数值。由于其不确定性，程序员用它来执行涵盖安全性、数据测试、游戏等多种应用的任务。
 
-## 如何：
-首先，我們需要使用 `rand` 方法來產生隨機數字。這個方法可以接受一個參數，指定數字的上限。舉例來說，如果我們想要產生一個 1 到 10 之間的隨機數字，可以使用下面的程式碼：
+## 如何实现：
+在 Ruby 中，生成随机数很简单。使用内置的 `rand` 方法和 `Random` 类，可以方便的生成随机数。如下示例：
 ```Ruby
-rand(10) + 1
-```
-這個表達式的結果會是從 1 到 10 之間的一個整數。如果我們想要產生一個小數，可以使用 `rand` 方法的另一個版本 `rand()`，這個方法會產生介於 0 到 1 之間的一個小數，例如：
-```Ruby
-rand()
-# 輸出可能是 0.8269941163249325 或 0.12461126459170875
-```
-此外，我們也可以利用 `range` 物件來產生一個指定範圍的隨機數，例如：
-```Ruby
-(1..5).to_a.sample
-# 輸出可能是 1、2、3、4 或 5 的隨機數字
-```
+# 使用`rand`生成0到1之间的浮点数
+random_float = rand 
+puts random_float
+# 输出: 0.5872154721384615
 
-## 深入探討：
-隨機數字在現代電腦技術中已經被廣泛運用，其歷史可追溯到 20 世紀。最初，程式員們使用物理現象來產生隨機數，例如擲骰子或翻硬幣。現在，我們通常使用電腦生成偽隨機數，即看似隨機但實際上是按規律生成的數字。除了 `rand` 方法外，Ruby 也提供了其他生成隨機數的方法，例如 `Random` 類別和 `SecureRandom` 模組。如果想要了解更多有關在電腦中生成隨機數的實作細節，可以參考以下資源。
+# 使用`rand`生成1到10之间的整数
+random_number = rand(1..10) 
+puts random_number
+# 输出: 5
 
-## 參考資料：
-- [Ruby `rand` 方法文檔](https://ruby-doc.org/core-3.0.0/Kernel.html#method-i-rand)
-- [Ruby `Random` 類別文檔](https://ruby-doc.org/core-3.0.0/Random.html)
-- [Ruby `SecureRandom` 模組文檔](https://ruby-doc.org/stdlib-3.0.0/libdoc/securerandom/rdoc/SecureRandom.html)
-- [如何在電腦中生成隨機數？](https://blog.csdn.net/On2hill/article/details/89094593) (中文文章)
+# 使用`Random`类生成特定范围的随机数
+random = Random.new
+random_number = random.rand(1..100)
+puts random_number
+# 输出: 42
+```
+## 深度解析：
+生成随机数在计算机世界中有着悠久的历史，和编程一样早。在 Ruby 中，`rand` 和 `Random` 提供了强大且灵活的接口生成随机数。
+对于选择 `rand` 和 `Random` 的考量取决于你需要的随机数类型和范围。`rand` 适合生成0到1之间的浮点数或小范围的整数。`Random` 类适合生成更大范围或更特定类型的随机数。
+此外，Ruby 使用 Mersenne Twister 算法生成随机数，这是一种具有 2^19937 − 1 期的快速伪随机数生成器，深受开发者喜爱。
+
+## 延伸阅读：
+* Ruby 官方文档对 `rand` 方法和 `Random` 类有着详细的介绍: 
+[rand](https://ruby-doc.org/core-2.4.1/Kernel.html#method-i-rand) 和 [Random](https://ruby-doc.org/core-2.5.1/Random.html) 
+* Mersenne Twister 算法的详细解析: [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister) 
+* 更多随机数生成的应用: 
+[Random Number Generation in Ruby](https://www.rubyguides.com/2019/05/ruby-random/)

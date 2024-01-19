@@ -1,7 +1,7 @@
 ---
-title:                "Wyświetlanie danych do debugowania"
-html_title:           "C++: Wyświetlanie danych do debugowania"
-simple_title:         "Wyświetlanie danych do debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -12,30 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-W drukowaniu wyjścia debugowania, programiści wykorzystują komunikaty w celu śledzenia i analizowania kodu. Jest to przydatne narzędzie do znajdowania błędów i poprawiania ich w trakcie pracy nad projektem.
+Drukuje drukowanie debugowania to technika programowania służąca do śledzenia wartości zmiennych i błędów w programie w czasie rzeczywistym. Programiści robią to, aby sprawniej naprawiać błędy i zrozumieć działanie swojego kodu.
 
 ## Jak to zrobić:
 
+Prosty przykład wyników debugowania:
+
 ```C++
 #include <iostream>
-using namespace std;
 
 int main() {
-   int x = 5;
-   cout << "Wartość zmiennej x to " << x << endl;
-   return 0;
+    int a = 5;
+    std::cout << "Wartość a: " << a << std::endl;
+    return 0;
 }
 ```
 
-Po uruchomieniu kodu powyżej, wyświetlony zostanie napis "Wartość zmiennej x to 5".
+Po uruchomieniu powyższy kod wypisze na ekranie:
 
-## Głębszy wgląd:
+```
+Wartość a: 5
+```
 
-W przeszłości, gdy komputery były wolniejsze i posiadały mniej pamięci, drukowanie wyjścia debugowania było nieefektywne. Dziś, dzięki zwiększonej mocy obliczeniowej i pamięci komputerów, jest to na ogół standardowe narzędzie programistyczne. Alternatywnie, programiści mogą używać narzędzi do debugowania, takich jak debugger, które pozwalają śledzić wywołania funkcji i wartości zmiennych w trakcie wykonywania kodu.
+## W głąb tematu:
+
+Drukuje debugowanie używane jest od początków programowania. W przeszłości zamiast tego, programiści używali lamp i oscylografów do śledzenia działania programu.
+
+Alternatywą dla drukowania debugowania jest użycie bardziej zaawansowanych narzędzi do debugowania kodu, takich jak GDB dla C++. Te narzędzia oferują więcej funkcji, ale są też bardziej skomplikowane do użytku.
+
+Szczegółowy opis implementacji drukowania debugowania zależy od języka programowania. W C++ najprostszym sposobem jest użycie `cout` z biblioteki standardowej `iostream`, jak w naszym powyższym przykładzie.
 
 ## Zobacz też:
 
-Inne opcje debugowania w C++:
-- [debugging tutorial](https://www.cplusplus.com/articles/1AqpX9Sz/) på stronie cplusplus.com
-- [Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging) - jedno z narzędzi do debugowania
-- [gdb](https://www.gnu.org/software/gdb/) - konsolowe narzędzie do debugowania kodu
+- Oficjalna dokumentacja C++ na temat `cout` i `iostream`: www.cppreference.com/w/cpp/io
+- Szczegółowy przewodnik na temat debugowania w C++ z użyciem GDB: www.gnu.org/software/gdb/documentation/
+- Przewodnik na temat technik debugowania: www.geekhideout.com/debug.shtml

@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum aus einer Zeichenkette analysieren"
-html_title:           "Kotlin: Ein Datum aus einer Zeichenkette analysieren"
-simple_title:         "Ein Datum aus einer Zeichenkette analysieren"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -12,36 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Parsing (oder auch Parstudiung) eines Datums aus einem String ist eine Methode, um ein Datum in einer bestimmten Form (z.B. "dd/MM/yyyy") aus einem Text zu extrahieren. Programmierer verwenden diese Methode, um benutzerdefinierte Eingaben oder Daten aus externen Quellen wie Datenbanken oder APIs zu verarbeiten.
+Das Parsen eines Datums aus einem String bedeutet, einen Text mit Datum und Uhrzeit in eine Datenstruktur umzuwandeln, die im Code verwendet werden kann. Dies ist nützlich, um Daten aus externen Quellen zu lesen oder ein menschenlesbares Format in etwas umzuwandeln, das für Berechnungen verwendet werden kann.
 
 ## So geht's:
+
+In Kotlin ist das Parsen eines Datums aus einem String ziemlich einfach. Hier ist ein einfaches Beispiel:
 
 ```Kotlin
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-// Erstelle ein Beispiel-Datum als String
-val dateString = "12/03/2021"
-
-// Definiere das gewünschte Datumsformat
-val dateFormat = "dd/MM/yyyy"
-
-// Parse das Datum aus dem String unter Verwendung des gewünschten Formats
-val parsedDate = LocalDate.parse(dateString, DateTimeFormatter.ofPattern(dateFormat))
-
-// Gib die geparste Date aus
-println("Geparstes Datum: $parsedDate")
+fun main() {
+    val dateString = "2022-10-20"
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    val parsedDate = LocalDate.parse(dateString, formatter)
+    println(parsedDate)
+}
 ```
 
-**Output:** Geparstes Datum: 2021-03-12
+Wenn Sie diesen Code ausführen, sehen Sie folgenden Output:
 
-## Tiefere Einblicke:
+```Kotlin
+2022-10-20
+```
 
-- Historischer Kontext: Früher mussten Programmierer komplexe Algorithmen verwenden, um Daten aus Strings zu parsen. Mit der Einführung der Java-Klasse "DateTimeFormatter" und der Unterstützung für reguläre Ausdrücke wurde dieser Prozess viel einfacher.
-- Alternativen: Neben der Verwendung von "DateTimeFormatter" gibt es auch andere Bibliotheken oder Frameworks, die das Parsen von Daten aus Strings unterstützen, wie z.B. "Joda-Time".
-- Implementierungsdetails: Die Klasse "DateTimeFormatter" verwendet ein Muster-basiertes Ansatz, um das gewünschte Datumsformat zu definieren. Es kann auch verschiedene Optionen wie Lokalisierung oder Zeitzone anpassen.
+## Tiefer eintauchen:
+
+Historisch gesehen musste man früher komplexe Algorithmen implementieren, um ein Datum aus einem String zu parsen. Heutzutage ermöglichen uns Bibiliotheken wie `java.time.format.DateTimeFormatter` in Kotlin, dies auf einfache Weise zu erreichen.
+
+Alternativen zur `DateTimeFormatter`-Klasse umfassen die `SimpleDateFormat`-Klasse, die ähnlich funktioniert, aber eine andere Syntax verwendet.
+
+Wenn es um Implementierungsdetails geht, entspricht das Muster, das Sie in `ofPattern` zur Verfügung stellen, genau dem Format des Datums in Ihrem String. Wenn diese nicht übereinstimmen, schlägt das Parsen fehl und Sie erhalten eine Ausnahme.
 
 ## Siehe auch:
 
-- [Offizielle Kotlin-Dokumentation für das Parsen von Datums aus Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/java.time.-date-time/parse.html)
-- [Tutorial zur Verwendung von regulären Ausdrücken in Kotlin](https://www.baeldung.com/kotlin-regex)
+- [Umgang mit Daten und Zeiten in Kotlin - baeldung.com](https://www.baeldung.com/kotlin/dates)
+- [Datumsformatierung - offizielle Kotlin-Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/format.html)
+- [SimpleDateFormat - Oracle Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)

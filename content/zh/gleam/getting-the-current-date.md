@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Gleam: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 当前日期是什么，为什么程序员要获取它？
+## 什么和为什么？
+获取当前日期是检索和使用现在的日期和时间的过程。程序员之所以这样做，是因为它可以帮助他们进行时间记录，比如跟踪用户活动、生成日志或协调事件。
 
-当前日期是指今天的日期，通常以月/日/年的格式表示。程序员通常需要获取当前日期来跟踪工作时间、生成文件名或日志，或者简单地用于程序中的时间戳。
-
-## 如何获取当前日期：
-
-要获取当前日期，我们可以使用Gleam语言中的内置函数`Time.now()`。让我们看看下面的示例代码：
+## 如何操作：
+在Gleam中，我们可以使用标准库接口`datetime`的`now`函数来获取当前日期和时间。以下是如何实现的代码：
 
 ```Gleam
-import gleam/time
-
-fn main() {
-  let current_date = Time.now()
-  IO.println(current_date)
-}
+import gleam/datetime
+let now = datetime.now()
 ```
 
-运行以上代码将输出当前日期，例如：`2021-08-18`。
+这将会生成像这样的输出：
 
-## 深入了解：
+```Gleam
+#Datetime(.year=2022, .month=March, .day=26, .hour=5, .minute=30, .second=0, .millisecond=0, .zone=Utc)
+```
 
-- 历史背景：在过去，程序员通常需要手动编写代码来获取当前日期。但随着计算机技术的发展，操作系统开始提供内置函数来获取日期，如今Gleam语言也提供了内置函数来简单地获取当前日期。
-- 其他方法：除了Gleam语言提供的`Time.now()`函数，程序员们还可以使用其他语言和工具来获取当前日期。例如，在JavaScript中，可以使用`new Date()`函数来获取当前日期。
-- 实现细节：`Time.now()`函数在Gleam语言中使用标准库中的`os.date()`函数来获取当前日期，并返回一个`Y-m-d`格式的字符串。
+## 深度解析
+### 历史背景
+从1980年代早期开始，计算机程序就开始获取和利用当前日期。这有各种各样的应用，比如计算年龄、时间段等。
 
-## 参考链接：
+### 替代方案
+如果你只需要时间而不需要日期，你可以使用`Time.now`，如果你只需要日期，你可以使用`Date.today`。请注意，所有这些函数都返回UTC时间。
 
-- Gleam语言官方网站：https://gleam.run/
-- 文档中关于日期和时间的指南：https://gleam.run/articles/guides/datetime/
-- JavaScript中获取当前日期的方法：https://www.w3schools.com/js/js_date_methods.asp
+### 实现细节
+在Gleam中，日期和时间是使用ISO 8601格式表示的，这也是为什么你在输出中看到一个带有`Utc`的`zone`字段。
+
+## 参见
+- Gleam官方文档中的`datetime`模块： [Gleam datetime](https://hexdocs.pm/gleam_stdlib/gleam/datetime.html)
+- Gleam中日期和时间的相关讨论： [Gleam Forum Date and Time](https://community.gleam-lang.org/t/best-practice-for-date-and-time/135)

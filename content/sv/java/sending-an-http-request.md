@@ -1,7 +1,7 @@
 ---
-title:                "Skicka ett http-anrop"
-html_title:           "Java: Skicka ett http-anrop"
-simple_title:         "Skicka ett http-anrop"
+title:                "Att skicka en http-begäran"
+html_title:           "Go: Att skicka en http-begäran"
+simple_title:         "Att skicka en http-begäran"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -12,51 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att skicka en HTTP-begäran är en vanlig uppgift för programmerare. Det är en metod för att kommunicera med servrar och få återkoppling på våra begäranden. Genom att skicka en HTTP-begäran kan vi till exempel hämta information från en webbsida, skicka data till en databas eller få tillgång till ett API.
+HTTP-begäran är en standardmetod för att kommunicera information på webben. Programmerare skickar HTTP-begäran för att interagera med webbsidor, hämta data, posta data och mycket mer. 
 
-## Så här gör du:
+## Hur man gör:
 
-För att skicka en HTTP-begäran i Java använder vi oss av klassen "HttpURLConnection" i "java.net" biblioteket. Vi måste ange URL:en för servern vi vill kommunicera med och ange vilken typ av begäran vi vill göra (t.ex. GET, POST, PUT). Här är ett exempel på kod som skickar en GET-begäran och får tillbaka ett svar från servern:
+Här är en enkel Java-kod för att skicka en GET-request:
 
 ```Java
-try {
-    // Ange URL:en för servern
-    URL url = new URL("https://example.com/api/data");
-    
-    // Skapa en HTTP-anslutning
-    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-    
-    // Ange vilken typ av begäran vi vill göra
-    connection.setRequestMethod("GET");
-    
-    // Hämta svaret från servern
-    BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-    
-    // Läs svaret rad för rad
-    String inputLine;
-    StringBuilder response = new StringBuilder();
-    while ((inputLine = in.readLine()) != null) {
-        response.append(inputLine);
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(new URI("http://example.com"))
+            .build();
+
+        HttpResponse<String> response = 
+            client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.body());
     }
-    in.close();
-    
-    // Skriv ut svaret
-    System.out.println(response.toString());
-} catch (IOException e) {
-    System.out.println("Något gick fel med begäran: " + e.getMessage());
 }
 ```
 
-Körning av kodexemplet ovan kommer att skriva ut det svar som servern skickade tillbaka.
+När du kör denna kod, kommer output att vara HTML-innehållet i webbplatsen http://example.com
 
-## Djupdykning:
+## Djupdykning
 
-HTTP-protokollet utvecklades av Tim Berners-Lee och presenterades för första gången 1991. Det finns många andra sätt att kommunicera med servrar, såsom FTP, SMTP och WebSocket. Men HTTP är det vanligaste protokollet för att implementera API:er och för att hämta och skicka data över internet.
+Sedan HTTP introducerades 1991, har metoden för att skicka HTTP-begäran förändrats. I Java, före version 11, användes `HttpURLConnection`. Java 11 introducerade `HttpClient` som är mer effektiv och lättare att använda.
 
-Om du vill skicka mer komplexa begäranden som innehåller till exempel inloggning eller autentisering, kan det vara lämpligt att använda ett tredjepartsbibliotek som "OkHttp" eller "Apache HttpComponents".
+Alternativ till Java inkluderar programmeringsspråk som Python och libraries som Apache HttpClient. 
 
-## Se även:
+Att skicka en HTTP-begäran involverar flera steg: att skapa en `HttpClient`, bygga en `HttpRequest`, skicka begäran och fånga svaret. Varje steg kan anpassas efter dina behov.
 
-- [Java HttpURLConnection documentation](https://docs.oracle.com/javase/9/docs/api/java/net/HttpURLConnection.html)
-- [OkHttp](https://square.github.io/okhttp/)
-- [Apache HttpComponents](https://hc.apache.org/index.html)
+## Se även
+
+- [Java 11 HttpClient dokumentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+- [Mozilla Developer Network HTTP-guide](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [Apache HttpClient](http://hc.apache.org/httpcomponents-client-4.5.x/index.html)

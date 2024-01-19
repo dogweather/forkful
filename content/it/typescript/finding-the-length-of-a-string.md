@@ -1,7 +1,7 @@
 ---
-title:                "Calcolo della lunghezza di una stringa"
-html_title:           "TypeScript: Calcolo della lunghezza di una stringa"
-simple_title:         "Calcolo della lunghezza di una stringa"
+title:                "Trovare la lunghezza di una stringa"
+html_title:           "Haskell: Trovare la lunghezza di una stringa"
+simple_title:         "Trovare la lunghezza di una stringa"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
+---
 
-Ottenere la lunghezza di una stringa è un'operazione comune nella programmazione e si riferisce al numero di caratteri presenti in una stringa di testo. I programmatori spesso devono conoscere la lunghezza di una stringa per poter manipolarla o analizzarla in modo efficace.
+## Che Cos'è & Perché? 
 
-## Come fare:
+Lunghezza stringa è il numero di caratteri in una stringa. I programmatori lo fanno per validare l'input, troncare la stringa, o per eseguire il loop attraverso i caratteri.
+
+## Come se fa:
+
+Ecco come trovare la lunghezza di una stringa in TypeScript:
 
 ```TypeScript
-const stringa = "Ciao mondo!";
-console.log(stringa.length); 
-// Output: 11
+let str: string = "Ciao mondo!";
+console.log(str.length); // Risultato: 12
 ```
+In questo esempio, la stringa "Ciao mondo!" ha 12 caratteri, comprendendo sia le lettere e lo spazio.
 
-In questo esempio, la parola "Ciao mondo!" è una stringa e utilizzando il metodo "length" possiamo ottenerne la lunghezza, che in questo caso è 11. Il metodo length è disponibile per tutte le stringhe in TypeScript.
+## Sotto il cofano
 
-## Approfondimento:
+Historicamente,JavaScript (da cui nasce TypeScript) conta la lunghezza delle stringhe come Unicode code points. Ad esempio, un'emoji come "😀" viene conteggiato come due, non uno.
 
-Quando si parla di linguaggi di programmazione, il concetto di stringa è stato introdotto nel 1960 con il linguaggio ALGOL. Dal momento che le stringhe sono una parte importante di qualsiasi programma, la maggior parte dei linguaggi moderni ha implementato un modo per ottenere la loro lunghezza.
+Invece di utilizzare la proprietà `length`, è anche possibile utilizzare il metodo `split('')` per ottenere un array di tutti i caratteri e poi usare la proprietà perché `length` ritorna la lunghezza dell'array.
 
-Un'alternativa al metodo "length" è l'utilizzo del metodo "charCodeAt (index)", che restituisce il valore Unicode del carattere specificato al determinato indice nella stringa.
+```TypeScript
+let str: string = "Ciao mondo!";
+console.log(str.split('').length); // Risultato: 12
+```
+Nonostante questo, il modo più frequente ed efficiente è sicuramente usando `length`.
 
-## Guarda anche:
+## Vedi Anche
 
-- [MDN Web Docs: String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [MDN Web Docs: String.prototype.charCodeAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charCodeAt)
+- Documentazione ufficiale di TypeScript sulla [tipizzazione delle stringhe](https://www.typescriptlang.org/docs/handbook/basic-types.html#string).
+- Articolo di Mozilla sulla [lunghezza delle stringhe Javascript](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/length).

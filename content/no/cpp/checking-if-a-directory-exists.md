@@ -1,7 +1,7 @@
 ---
-title:                "Sjekker om en mappe finnes"
-html_title:           "C++: Sjekker om en mappe finnes"
-simple_title:         "Sjekker om en mappe finnes"
+title:                "Sjekker om en katalog eksisterer"
+html_title:           "C++: Sjekker om en katalog eksisterer"
+simple_title:         "Sjekker om en katalog eksisterer"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Når vi programmerer, må vi ofte sjekke om en mappe eksisterer. Dette er en viktig oppgave fordi det lar oss håndtere situasjoner der vi trenger å finne, lese eller skrive filer i en bestemt mappe. Ved å sjekke om en mappe eksisterer, sikrer vi at programmet vårt ikke krasjer eller gir feil når vi prøver å håndtere disse situasjonene.
+## Hva & Hvorfor ?
 
-## Hvordan:
-For å sjekke om en mappe eksisterer i C ++, kan vi bruke funksjonen `std::filesystem::exists()`. Denne funksjonen tar inn en sti til mappen og returnerer en bool-verdi som indikerer om mappen eksisterer eller ikke. Her er et eksempel på hvordan vi kan bruke denne funksjonen:
+Å sjekke om en mappe eksisterer er en handling hvor programmet bestemmer om en bestemt sti på datamaskinens filsystem peker på en ekte mappe eller katalog. Programmerere checker dette for å unngå feil som kan oppstå når de prøver å arbeide med en mappe som ikke eksisterer.
+
+## Hvordan?
+
+Her er en grei metode for å sjekke om en mappe eksisterer ved hjelp av eksperimentell filsystembiblioteket i C ++ 17: 
 
 ```C++
-#include <iostream>
 #include <filesystem>
 
+bool directoryExists(const std::string& path) {
+    return std::filesystem::exists(path) && std::filesystem::is_directory(path);
+}
+
 int main() {
-    std::filesystem::path myPath = "/Users/User/Documents";
-    if (std::filesystem::exists(myPath)) {
-        std::cout << "Mappen finnes!" << std::endl;
+    std::string path = "/sti/til/mappen/din";
+
+    if (directoryExists(path)) {
+        std::cout << "Mappen eksisterer.\n";
+    } else {
+        std::cout << "Mappen eksisterer ikke.\n";
     }
-    else {
-        std::cout << "Mappen finnes ikke." << std::endl;
-    }
+
     return 0;
 }
 ```
+Hvis mappen finnes, vil utskriften være "Mappen eksisterer." Ellers vil den være "Mappen eksisterer ikke."
 
-I dette eksempelet har vi en variabel `myPath` som inneholder banen til mappen vi vil sjekke. Vi bruker deretter `if`-setningen til å sjekke om mappen eksisterer ved hjelp av `std::filesystem::exists()`. I tillegg skriver vi ut en melding til konsollen basert på resultatet av vår sjekk.
+## Dypdykk
 
-## Dypdykk:
-Mens `std::filesystem::exists()` er den enkleste måten å sjekke om en mappe eksisterer i nyere versjoner av C ++, har det også vært andre måter å gjøre dette på. For eksempel pleide programmerere å bruke `std::experimental::filesystem::exists()` i stedet, men denne funksjonen er nå deprecated.
+Historisk sett, før C++17, måtte programmerere ofte stole på plattformspesifikke systemkall for å sjekke om en mappe eksisterer. Dette kunne gjøre koden mindre bærbar. 
 
-En annen måte å sjekke etter en mappe er å bruke `stat()`-funksjonen, som returnerer informasjon om en gitt sti, inkludert om den peker til en mappe eller ikke. Dette er imidlertid en mer komplisert tilnærming og brukes ikke så mye i dag.
+Et alternativ til det eksperimentelle filsystembiblioteket er boost::filesystem, men dette krever at Boost-bibliotekene er installert. 
 
-Når det gjelder implementasjonen av `std::filesystem::exists()`, avhenger det av den underliggende operativsystemet. På Windows er den basert på `GetFileAttributes()`-funksjonen, mens den på Linux bruker `stat()`-funksjonen. Det er viktig å merke seg at selv om denne funksjonen er nyttig, er den ikke garantert å være helt nøyaktig, da en mappe kan bli opprettet eller slettet mens programmet kjører.
+En del av implementeringsdetaljene å merke seg er at funksjonen `std::filesystem::exists()` sjekker om stien eksisterer i filsystemet, og `std::filesystem::is_directory()` bekrefter at det er en mappe.
 
-## Se også:
-- [`std::filesystem::exists()` dokumentasjon](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [`std::experimental::filesystem::exists()` dokumentasjon](https://en.cppreference.com/w/cpp/filesystem/experimental/is_directory)
-- [stat() funksjonen dokumentasjon](https://linux.die.net/man/2/stat)
+## Se også
+
+Her er noen nyttige linker til andre kilder og relatert materiale:
+1. [C++ std::filesystem dokumentasjon](http://www.cplusplus.com/reference/filesystem/)
+2. [Stackoverflow - Sjekk om mappe eksisterer](https://stackoverflow.com/questions/8233842/how-to-check-if-directory-exist-using-c-and-winapi)
+3. [Boost Filesystem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)

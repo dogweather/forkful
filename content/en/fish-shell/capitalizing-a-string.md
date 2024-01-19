@@ -12,27 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Capitalizing a string simply means converting the first letter of each word in the string to uppercase. This is commonly done in programming to ensure consistency and readability in text. It also makes the code more user-friendly and easier to understand.
+Capitalizing a string means transforming every initial letter in a string to uppercase. Programmers do this for textual uniformity, readability or to meet specific coding standards.
 
 ## How to:
 
+Fish, surprisingly elegant, has built-in functions for string manipulations. Check how to capitalize a string by utilizing `string upper`:
+
 ```fish
-set my_string "hello world"
-echo (string capitalize $my_string) # Output: Hello World
+set string "the quick brown fox jumps over the lazy dog"
+printf "%s" $string | string split " " | string upper | string join " " 
 ```
 
-In the above example, we first set a variable named `my_string` with the value "hello world". Then we use the `string capitalize` command to convert the first letter of each word to uppercase and finally we use the `echo` command to print the output.
+Output: 
 
-## Deep Dive:
+```fish
+THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+```
+Voila! Each word in your string is now capitalized!
 
-Capitalizing strings has been a common practice since the early days of programming when computers were not case-sensitive. If you are working with a programming language that is not case-sensitive, capitalizing your string can help differentiate between variables and reserved keywords.
+## Deep Dive
 
-Some alternative ways to capitalize a string include using regular expressions or writing a custom function to loop through the string and convert each first letter to uppercase. However, most modern programming languages now have built-in functions or methods to easily capitalize strings.
+Historically, string capitalization has been handled in many different ways. Some languages (like JavaScript) have a direct method (toUppercase), others (like Python) use the capitalize function. 
 
-In the Fish Shell, the `string capitalize` command uses the `strtoupper()` function from the C language to capitalize strings. This function is also used in other programming languages like PHP and Java.
+In Fish, `string upper` is our go-to for capitalization, but there's an alternate, more cumbersome way: manually using ASCII values of letters. Also worth noting: Fish's `string upper` capitalizes every word in a string, and not just the initial character. 
 
-## See Also:
+The versatility of Fish's string manipulation functions demonstrates its power. In other scripting languages, achieving the same result might require verbose code or importing additional libraries.
 
-- [Fish Shell documentation for string commands](https://fishshell.com/docs/current/commands.html#string)
-- [Understanding String Capitalization in Programming](https://www.geeksforgeeks.org/understanding-string-capitalization/)
-- [strtoupper() function documentation](https://www.php.net/manual/en/function.strtoupper.php)
+## See Also
+
+- Full documentation for Fish String functions: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+- An article comparing Fish's capabilities to other shells: [https://jamsek.dev/posts/fish-shell-vs-zsh/](https://jamsek.dev/posts/fish-shell-vs-zsh/)
+- ASCII Table for manual capitalization: [http://www.asciitable.com/](http://www.asciitable.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Eine Datum in eine Zeichenfolge umwandeln."
-html_title:           "TypeScript: Eine Datum in eine Zeichenfolge umwandeln."
-simple_title:         "Eine Datum in eine Zeichenfolge umwandeln."
+title:                "Ein Datum in einen String umwandeln"
+html_title:           "Java: Ein Datum in einen String umwandeln"
+simple_title:         "Ein Datum in einen String umwandeln"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,27 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Das Konvertieren eines Datums in eine Zeichenkette ist ein gängiger Prozess in der Programmierung, bei dem ein Datumsobjekt in ein einfacheres Format umgewandelt wird, das leichter lesbar und verarbeitet werden kann. Programmierer verwenden dieses Verfahren beispielsweise, wenn sie Datumsangaben in Textnachrichten oder Dateinamen einbetten möchten.
+# Was & Warum?
 
-## So geht's:
+Umwandeln eines Datums in einen String (Date to String) ermöglicht uns, das Datum in eine gut lesbare, menschenfreundliche Form zu präsentieren. Programmierer machen das, um ein konsistentes und lokalisiertes Format zu gewährleisten, das leicht zu verstehen ist.
+
+# Wie macht man das?
+
+Die `toLocaleString()` Funktion kann verwendet werden, um ein Datum in einen String umzuwandeln. Schauen wir uns ein Beispiel an:
+
 ```TypeScript
-// Datum in eine Zeichenkette mit dem Standardformat konvertieren
-let dateToString = new Date().toISOString();
-
-// Ausgabe: 2020-10-05T14:30:00.000Z
-
-// Datum in eine Zeichenkette mit benutzerdefiniertem Format konvertieren
-let options = { year: 'numeric', month: 'short', day: 'numeric' };
-let dateToStringCustom = new Date().toLocaleDateString('de-DE', options);
-
-// Ausgabe: 5. Oktober 2020
+let aktuellesDatum: Date = new Date();
+let datumAlsString: string = aktuellesDatum.toLocaleString('de-DE');
+console.log(datumAlsString);
 ```
 
-## Tiefere Einblicke:
-Das Konzept, ein Datum in eine Zeichenkette umzuwandeln, ist nicht neu und wurde bereits in frühen Programmiersprachen wie BASIC verwendet. In TypeScript gibt es mehrere Methoden, um dieses Verfahren durchzuführen, einschließlich der Verwendung von integrierten Funktionen wie `toISOString()` und `toLocaleDateString()`, aber auch der Verwendung von externen Bibliotheken wie Moment.js. Es ist auch möglich, benutzerdefinierte Formate zu erstellen, um das Datum in verschiedenen Sprachen und für verschiedene Anwendungsfälle darzustellen.
+In der Ausgabe könnte etwas wie "26.5.2021, 12:30:45" erscheinen, was ein für Deutschsprachige interpretierbares Datum ist.
 
-## Siehe auch:
-- [MDN Web Docs: Zusammenarbeit mit Datum und Uhrzeit](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js Dokumentation](https://momentjs.com/docs/)
-- [Codepen Beispiel: Konvertieren eines Datums in eine Zeichenkette](https://codepen.io/patrickkempff/pen/ZJqdmz)
+## Tiefentauchen
+
+Das Konzept des String-Rendering von Daten kommt aus den frühen Tagen der Informatik, als Terminals ausschließlich Text darstellten. Die Umsetzung in TypeScript basiert auf ECMAScript internationalization API, die verschiedene Kulturen unterstützt.
+
+Es gibt auch Alternativmethoden wie `toISOString()` oder `toDateString()`. Ihre Verwendung hängt vom gewünschten Format ab.
+
+Zudem ist die genaue Implementierung von `toLocaleString()` browserabhängig, sodass die Ausgabe leicht variieren kann.
+
+## Siehe auch
+
+- [MDN: Date.prototype.toLocaleString()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+- [ECMAScript Internationalization API](https://262.ecma-international.org/ECMA-402/1.0/#sec-13.3.1)
+- [TC39: Proposal Temporal](https://github.com/tc39/proposal-temporal), eine moderne Alternative zu `Date`.

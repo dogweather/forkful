@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comandos"
-html_title:           "Go: Leyendo argumentos de línea de comandos"
-simple_title:         "Leyendo argumentos de línea de comandos"
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,53 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+# Lección Práctica de Go: Leyendo Argumentos de la Línea de Comandos 
 
-Leer argumentos de línea de comandos es simplemente obtener información que ingresa un usuario en la terminal al ejecutar un programa. Los programadores necesitan esto para poder personalizar y modificar la ejecución de su código según los valores provistos por el usuario.
+## ¿Qué y por qué?
 
-## Cómo:
+Los argumentos de la línea de comandos son entradas que los usuarios pueden introducir cuando corren tu programa. Estos son esenciales porque permiten una mayor personalización y flexibilidad en tus aplicaciones.
+
+## Cómo hacerlo:
+
+Go hace muy sencillo la lectura de argumentos de la línea de comandos con ayuda del paquete `os`.
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-    // Leemos los argumentos proporcionados por el usuario y los almacenamos en una variable.
-    args := os.Args
-    // Iteramos a través de los argumentos y los imprimimos uno por uno.
-    for i, arg := range args {
-        fmt.Printf("Argumento #%d: %s\n", i+1, arg)
-    }
+	argsWithProg := os.Args
+	argsWithoutProg := os.Args[1:]
+
+	arg := os.Args[3]
+
+	fmt.Println(argsWithProg)
+	fmt.Println(argsWithoutProg)
+	fmt.Println(arg)
 }
 ```
+Cuando corres este programa con `go run main.go primer_arg segundo_arg tercer_arg` la salida será:
 
-Ejemplo de entrada:
-
-```bash
-go run main.go hola mundo 123
+```Go
+[main.go primer_arg segundo_arg tercer_arg]
+[primer_arg segundo_arg tercer_arg]
+tercer_arg
 ```
 
-Salida:
+## Inmersión Profunda:
 
-```
-Argumento #1: main.go
-Argumento #2: hola
-Argumento #3: mundo
-Argumento #4: 123
-```
+Go, lanzado por Google en 2007, tomó una posición única para manejar los argumentos de la línea de comandos, diferente a lenguajes como C y Perl. El índice 0 contiene el nombre del programa, que es una convención usada por muchas lenguajes de programación Unix.
 
-## Profundizando:
+Además de `os.Args`, existen alternativas como el paquete `flag` para un manejo más avanzado de los argumentos. `flag` permite que argumentos con nombres, algo similar a las opciones en los comandos de Linux.
 
-La lectura de argumentos de línea de comandos ha sido una funcionalidad esencial desde los inicios de la programación. Además de obtener datos del usuario, también puede ser utilizada en sistemas operativos para proveer información al programa sobre cómo debe ser ejecutado.
+`os.Args` es un slice y por tanto, puedes usar todas las funciones y métodos disponibles para los slices en Go. Como en el ejemplo mostrado arriba, `os.Args[1:]` te dará todos los argumentos excepto el nombre del programa.
 
-En Go, la forma más común de leer argumentos es utilizando la función `Args()` del paquete `os`. Sin embargo, también existen otras opciones como el uso de la biblioteca `flag` o el módulo `os/exec` para ejecutar comandos externos y leer sus resultados.
+## Ver También:
 
-## Vea también:
+Algunos enlaces útiles si quieres seguir profundizando en este tema:
 
-- [Documentación oficial de Golang sobre lectura de argumentos de línea de comandos](https://golang.org/pkg/os/#Args)
-- [Guía de la comunidad de Golang sobre el uso de la biblioteca `flag`](https://gobyexample.com/command-line-flags)
-- [Artículo de blog sobre el módulo `os/exec` para ejecutar comandos externos en Go](https://blog.golang.org/execing-child-processes)
+- Documentación oficial de Go para el paquete os: https://golang.org/pkg/os/
+- Paquete flag de Go: https://golang.org/pkg/flag/
+- Guía de Gotuts sobre cómo manejar argumentos de la línea de comandos: https://gobyexample.com/command-line-arguments

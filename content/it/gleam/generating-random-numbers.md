@@ -1,6 +1,6 @@
 ---
 title:                "Generazione di numeri casuali"
-html_title:           "Gleam: Generazione di numeri casuali"
+html_title:           "Arduino: Generazione di numeri casuali"
 simple_title:         "Generazione di numeri casuali"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,41 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
+## Cosa & Perchè?
 
-Generare numeri casuali è un processo fondamentale nella programmazione. Ciò consente ai programmatori di creare elementi casuali nei loro programmi, come generare password sicure o selezionare un elemento a caso in una lista.
+Generare numeri casuali significa creare una serie di numeri i cui pattern non possono essere prevedibili. I programmatori lo fanno per molte ragioni, come l'esecuzione di test randomizzati e l'implementazione di giochi.
 
-## Come fare:
+## Come:
 
-Per generare un numero casuale in Gleam, puoi utilizzare la funzione `random.int` fornita dalla libreria standard `gleam/random`. Esempio:
+Ecco un semplice esempio su come generare numeri casuali in Gleam.
 
-```Gleam
-import gleam/random.{int}
+```gleam
+import gleam/number.{random}
+import gleam/io.{println}
+import gleam/list
+import gleam/result.{Ok}
+import gleam/task
 
-let num = random.int(1, 100) // genera un numero casuale tra 1 e 100
+pub fn main() {
+  task.async(Ok)
+  |> task.map(_, fn(x) { number::random.between(1, 100) } )
+  |> task.on_success(_, fn(x) { io::println(to_string(x)) } )
+}
 ```
 
-Output: il valore di `num` sarà un numero casuale compreso tra 1 e 100.
+Ecco una possibile output di questo codice:
 
-Puoi anche utilizzare la funzione `random.float` per generare numeri casuali con la virgola. Esempio:
-
-```Gleam
-import gleam/random.{float}
-
-let num = random.float(0, 1) // genera un numero float tra 0 e 1
+```gleam
+// Output
+42 
 ```
-
-Output: il valore di `num` sarà un numero casuale con la virgola compreso tra 0 e 1.
 
 ## Approfondimento:
 
-La generazione di numeri casuali è stata storicamente una sfida per i programmatori, con diverse tecniche sviluppate nel corso degli anni per rendere i numeri più "casuali". In Gleam, vengono utilizzati algoritmi di generazione di numeri pseudo-casuali, che utilizzano un particolare metodo matematico per produrre una sequenza di numeri che appaiono casuali.
+Durante gli anni '40 e '50, i numeri casuali erano generati attraverso processi meccanici o elettronici, come lanciare dadi o selezionare carte casuali. Grazie ai progressi nel campo dell'elettronica e dell'informatica, oggi possiamo generare numeri casuali con programmazione.
 
-Un'alternativa a questi algoritmi è l'utilizzo di generatori di numeri veramente casuali, come ad esempio attraverso una fonte esterna, come un dispositivo fisico che registra l'entropia ambientale.
+In Gleam, il modulo di `gleam/number` si usa per generare numeri casuali. Tuttavia, ci sono anche altre alternative, come la utilizzazione di seminari o l'integrazione con librerie esterne.
 
-Per chi vuole approfondire l'implementazione dei generatori di numeri casuali in Gleam, consigliamo di consultare il codice sorgente della libreria `gleam/random` e di approfondire gli algoritmi di generazione di numeri pseudo-casuali.
+Lo standard utilizzato da Gleam per i numeri casuali è basato su un algoritmo di Generatore di Numeri Pseudo-casuali che utilizza un seme per creare una serie di numeri apparentemente non collegati.
 
-## Vedi anche:
+## Vedi Anche:
 
-- Documentazione ufficiale sulla libreria `gleam/random`: https://gleam.run/modules/gleam/random/latest/
-- Articolo su algoritmi di generazione di numeri pseudo-casuali: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+Per ulteriori informazioni sull'argomento, potete consultare questi link:
+
+- Documentazione ufficiale di Gleam su "gleam/number": https://hexdocs.pm/gleam_stdlib/gleam/number.html 
+- Articolo Wikipedia sull'argomento "Numeri casuali" : https://it.wikipedia.org/wiki/Numero_casuale
+- Tutorial su come generare numeri casuali in Gleam: https://dev.to/thejoker131/how-to-generate-random-number-in-gleam-2ch8

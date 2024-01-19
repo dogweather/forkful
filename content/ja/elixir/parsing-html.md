@@ -1,6 +1,6 @@
 ---
 title:                "HTMLの解析"
-html_title:           "Elixir: HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ElixirでHTMLをパースする方法
+## 何となぜ？
 
-## 概要
+HTMLのパースは、HTMLファイルを解析し、その構造とデータを理解するプロセスです。プログラマーはこれを行うことで、ウェブページから情報を取得したり、HTMLの構造を操作したりすることが可能になります。
 
-HTMLパースとは、HTML文書を解析して必要な情報を抽出するプロセスのことです。プログラマーは、Webスクレイピングやデータ収集などのためにHTMLパースを行います。
+## どうやるか：
 
-## 手順
-
-以下の例では、ElixirのNokogiriライブラリを使用して、HTML文書から特定のセレクターに一致するテキストを取得する方法を示します。
+ElixirでHTMLをパースする基本的なコード例を以下に示します。この例では、Flokiというライブラリを使用しています。
 
 ```Elixir
-html = "<h1>Hello World</h1>"
-
-# HTML文書をパース
-doc = Nokogiri.HTML(html)
-
-# h1セレクターに一致するテキストを取得
-text = doc |> Nokogiri.select("h1") |> List.first() |> Nokogiri.text()
-
-# 出力結果: "Hello World"
+{:ok, html} = File.read("example.html")
+parsed_html = Floki.find(html, "h1")
+IO.inspect(parsed_html)
 ```
 
-## 詳細
+上記のコードは、"example.html"というファイルを読み込み、その中のh1タグを探し、最後に結果を表示します。 Floki.find関数は、ターゲットのHTMLエレメントを探します。
 
-### 歴史的背景
+出力例：
 
-HTMLパースは、早くても1990年代初期に開始されました。当時は、Webスクレイピングやデータ収集のための簡単な方法として使用されていました。しかし、CSSやJavaScriptの普及により、より洗練された組み込みブラウザーが提供され、HTMLパースの需要は低下しました。
+```Elixir
+[{"h1", [{"class", "header"}], ["Hello, world!"]}]
+```
 
-### 代替手段
+出力では、h1エレメント、その属性、およびテキスト内容を確認できます。
 
-HTMLパースには、Elixirの他にも多くの言語やライブラリがあります。例えば、RubyにはNokogiriやMechanize、PythonにはBeautiful SoupやScrapyがあります。それぞれの言語やライブラリによって構文や使い方が異なるため、HTMLパースを行う際は適切なものを選択する必要があります。
+## 深掘り
 
-### 実装の詳細
+HTMLのパースは、ウェブブラウザがHTMLを解析してレンダリングする工程の一部を再現するものです。貴重な情報がHTML内に埋め込まれているため、この技術はデータマイニングおよびウェブスクレイピングに広く利用されています。
 
-Elixirでは、Nokogiriライブラリを使用することでHTMLパースを行うことができます。NokogiriはElixir版のRubyのNokogiriライブラリで、HTML文書をパースしてDOMツリーを構築することができます。また、CSSセレクターを使用してHTML文書内の特定の要素を選択することができます。
+ElixirでHTMLをパースするための代替手段としては、mochiweb_htmlやhtml5ever_elixirなどがあります。これらはいずれも異なる機能を提供します。適切なライブラリを選ぶためには、実際にパースしたいHTMLの内容と、そこから取得したい情報を考慮する必要があります。
 
-## 関連情報
+FlokiライブラリはNokogiri（Rubyライブラリ）の"CSSセレクタによるノード選択"という機能をElixirで再現しようとして作られました。これにより、ElixirでもCSSセレクタを用いたHTMLパーシングが容易になりました。
 
-- Nokogiriライブラリ公式ドキュメント (https://hexdocs.pm/nokogiri/readme.html)
+## 関連情報：
+
+- [公式Elixirドキュメント](https://hexdocs.pm/elixir/Kernel.html)
+- [FlokiのGitHubリポジトリ](https://github.com/philss/floki)
+- [mochiweb_html GitHubリポジトリ](https://github.com/mochi/mochiweb)
+- [html5ever_elixir GitHubリポジトリ](https://github.com/HTMLParseErrorsSoft/html5ever_elixir)

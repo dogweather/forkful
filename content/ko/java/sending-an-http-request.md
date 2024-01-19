@@ -1,6 +1,6 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Java: HTTP 요청 보내기"
+html_title:           "Clojure: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Java"
 category:             "Java"
@@ -10,22 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-HTTP 요청을 보내는 것은 원격 서버에 정보를 요청하고 응답을 받는 과정을 말합니다. 프로그래머들이 이를 하는 이유는 웹 애플리케이션을 개발하거나 데이터를 가져오는 등 다양한 목적을 위해서입니다.
+# HTTP 요청을 보내는 것은 무엇이며 왜 필요한가?
 
-## 하우 투:
+HTTP 요청은 웹서버에 정보를 요청하거나 전달하는 방법입니다. 개발자들은 이것을 통해 웹에 있는 다양한 자원들과 상호작용하게 됩니다.
+
+# 어떻게 해야 할까?
+
+Java에서 HTTP 요청을 보내기 위해 우리는 `java.net.http.HttpClient` 라이브러리를 사용한다. 아래에 예시를 나타내줍니다.
+
 ```Java
-// Java에서 HTTP 요청 보내기 예제
-URL url = new URL("http://www.example.com/"); // 요청을 보낼 URL 생성
-HttpURLConnection con = (HttpURLConnection) url.openConnection(); // URL을 통해 연결 생성
-con.setRequestMethod("GET"); // GET 요청 설정
-int responseCode = con.getResponseCode(); // 응답 코드 받기
-System.out.println("응답 코드: " + responseCode); // 200 OK가 출력됩니다.
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+              .uri(new URI("http://example.com"))
+              .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.body());
+    }
+}
 ```
 
-## 딥 다이브:
-HTTP 요청은 웹 서버와의 통신에 필수적인 기술입니다. HTTP 프로토콜은 1990년대 초에 Tim Berners-Lee에 의해 개발되었으며, 웹 애플리케이션 개발에 큰 영향을 미쳤습니다. 이제는 서버와의 통신에 다른 프로토콜을 사용하는 경우도 있지만, 여전히 HTTP 요청은 널리 사용되고 있습니다. HTTP 요청을 보낼 때는 GET, POST 등의 메소드를 선택할 수 있으며, URL의 파라미터 또는 요청 본문에 데이터를 넣어 서버에 전송할 수 있습니다.
+위 코드를 실행하면 "http://example.com" 의 결과를 출력하게 됩니다.
 
-## 관련 자료:
-- [Java에서 HTTP 요청 보내기](https://www.baeldung.com/java-http-request)
-- [HTTP 프로토콜 설명](https://developer.mozilla.org/ko/docs/Web/HTTP/Overview)
+# 더 깊게 알아보기
+
+HTTP 요청은 웹의 기본적인 구조를 이루는 요소 중 한 가지입니다. 웹은 1990년대 중반에 처음 등장하여, 그 시작부터 HTTP는 핵심 역할을 하고 있습니다.
+
+Java에서는 여러 가지 방법으로 HTTP 요청을 보낼 수 있습니다. 예를들어 `HttpURLConnection`, `HttpClient` 등이 있습니다. 이 중 `HttpClient`는 Java 11에서 추가되었으며, 편리한 API와 함께 모던한 기능들을 제공합니다.
+
+내부적으로 `HttpClient` 는 각 요청을 병렬로 처리하며, 결과는 `CompletableFuture`를 통해 반환됩니다. 이러한 방식을 사용함으로써 Java는 효율적이고 확장가능한 HTTP 요청 처리를 제공합니다.
+
+# 참고 자료
+
+다음의 링크들에서 HTTP 요청과 관련된 더 많은 정보를 찾아볼 수 있습니다.
+
+1. [Oracle의 HttpClient 문서](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+2. [모던 Java에서의 HTTP 통신](https://www.baeldung.com/httpclient-guide)
+3. [Java와 HTTP 통신](https://www.javaworld.com/article/2078583/java-concurrency/building-an-http-server-in-java-part-1--multi-threaded-server.html)

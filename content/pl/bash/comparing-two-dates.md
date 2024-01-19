@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "Bash: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest porównywanie dwóch dat i dlaczego programiści to robią?
+## Co i dlaczego?
 
-Porównywanie dwóch dat jest procesem polegającym na porównaniu dwóch dat w celu ustalenia, która jest wcześniejsza, późniejsza lub czy są one sobie równe. Programiści często muszą porównywać daty w swoich programach, aby podejmować odpowiednie decyzje lub wyświetlać informacje w odpowiedniej kolejności.
+Porównywanie dwóch dat to proste działanie, które sprawdza, która data jest wcześniejsza, późniejsza lub czy są one równe. Programiści często muszą to robić, aby kontrolować przepływ swoich skryptów lub programów, na przykład kontrolując ważność licencji lub ustalając osi czasu.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Sprawdzenie, która z dwóch dat jest wcześniejsza, późniejsza lub czy są sobie równe w Bashu jest dość proste. Aby tego dokonać, należy użyć porównania operatorem `-gt`, `-lt` lub `=`. Poniżej przedstawiono przykładowy kod, który porównuje dwie daty i wyświetla odpowiednie komunikaty w zależności od wyniku.
+Porównanie dwóch dat w Bashu jest dość proste. Ściśle rzecz biorąc, traktujemy je jako ciągi znaków i porównujemy je.
 
 ```Bash
-# Przykładowe daty
-data1="2020-01-01"
-data2="2019-12-31"
+data1=$(date -d "2022-05-01" +%s)
+data2=$(date -d "2022-06-01" +%s)
 
-# Porównanie dat
-if [[ "$data1" -gt "$data2" ]]; then
-  echo "$data1 jest wcześniejsza niż $data2"
-elif [[ "$data1" -lt "$data2" ]]; then
-  echo "$data1 jest późniejsza niż $data2"
+if [ $data1 -eq $data2 ]; then
+ echo "Daty są równe"
+elif [ $data1 -lt $data2 ]; then
+ echo "Data1 jest wcześniejsza"
 else
-  echo "Daty są sobie równe"
+ echo "Data2 jest wcześniejsza"
 fi
 ```
+Podczas wykonywania tego skryptu zobaczysz, która data jest wcześniejsza.
 
-**Wynik:**
+## Wgłębne informacje:
 
-```Bash
-2020-01-01 jest wcześniejsza niż 2019-12-31
-```
+Bash to interpretowany język powłoki, który został wydany po raz pierwszy w 1989 roku. Wynika z niego wiele technik porównywania dat, ale ta metoda za pomocą stempli czasu jest jedną z najpowszechniejszych. Alternatywą może być użycie zewnętrznych narzędzi jak `awk` lub `perl`, ale po co komplikować, skoro Bash daje nam co potrzeba? Należy jednak pamiętać, że porównanie dat jako ciągów działa poprawnie tylko w przypadku formatów dat, które są porównywalne jako ciągi, takie jak YYYY-MM-DD.
 
-## Głębsze wgląd
+## Zobacz również:
 
-Porównywanie dat jest szeroko wykorzystywaną funkcją w Bashu i innych językach programowania. Określenie, która z dwóch dat jest wcześniejsza lub późniejsza, jest często niezbędne do wykonywania różnych operacji, na przykład sortowania lub filtrowania danych. Alternatywnym sposobem na porównywanie dat w Bashu jest użycie polecenia `bc`, które pozwala na wykonywanie obliczeń matematycznych z wykorzystaniem różnych operatorów, w tym porównania `<` i `>`.
-
-W Bashu daty mogą być przechowywane w różnych formatach, na przykład `YYYY-MM-DD` lub `DD-MM-YYYY`. Dlatego ważne jest, aby upewnić się, że daty są w tym samym formacie przed ich porównywaniem.
-
-## Zobacz także
-
-- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/)
-- [Porównywanie dat z użyciem polecenia 'bc'](https://www.shell-tips.com/bash/math-arithmetic-calculation/#compare)
+Możesz dowiedzieć się więcej o manipulacji datami w Bashu na stronach:
+- [Advanced Bash-Scripting Guide: Chapter 16. Time/Date Operations](https://www.tldp.org/LDP/abs/html/timedate.html)
+- [How to compare two dates in a shell script](https://stackoverflow.com/questions/34317857/how-to-compare-two-dates-in-a-shell-script)

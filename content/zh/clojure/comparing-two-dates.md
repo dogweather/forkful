@@ -10,29 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
-比较两个日期是指将两个日期进行比较，通常是通过比较这两个日期之间的时间差来确定哪一个日期早于或晚于另一个日期。程序员们经常进行这种操作，因为日期比较是许多应用程序中常用的功能，比如日历应用和任务管理工具。
+## 什么和为什么？
+两个日期的比较就是为了决定哪个日期在日历上更早，或者是两个日期是否完全相同。程序员之所以要做这个，是因为他们需要对时间点进行排序，或者确定特定事件是否已经发生。
 
-## 如何进行?
-下面是使用Clojure语言比较日期的示例代码和输出结果：
-```Clojure
-(import [java.util Date])
-(let [date1 (Date.),
-      date2 (Date. 2000 1 1)]
-  (compare date1 date2))
+## 如何做：
+在Clojure中，我们可以使用内建的java.util.Date库来比较两个日期。以下是一些基本的示例：
 
-; Output: 1
+```clojure
+(import 'java.util.Date)
+
+(def date1 (Date. 120 0 1)) ;; 2020-01-01
+(def date2 (Date. 120 0 2)) ;; 2020-01-02
+
+(defn date-comparison []
+  (if (.before date1 date2)
+    (println "Date1 is before Date2")
+    (println "Date1 is not before Date2")))
+
+(date-comparison)
 ```
-上述代码中，首先我们通过`import`指令导入了Java的Date类，这个类用来表示日期和时间。然后我们定义了两个日期变量`date1`和`date2`，分别表示今天的日期和2000年1月1日的日期。最后，使用`compare`函数来比较这两个日期，返回值为1，表示`date1`日期晚于`date2`日期。
+输出如下:
+```clojure
+Date1 is before Date2
+```
+## 深入探讨:
+Clojure的java.util.Date库基于Java的同名类。最初的Java Date类在1995年发布，尽管在之后的版本中很多方法已经过时，但在Clojure中仍然可以使用。
 
-## 深入了解
-在计算机科学的早期，像比较日期这样的基本功能并不像现在这么容易。以前，日期是以不同的格式存储，并且使用基于当地文化的不同日历系统。这导致了在开发跨文化应用程序时经常出现日期错误的问题。
+另一个选择是使用Java 8新增的java.time库，这个库使用更现代的日期时间API，提供了更丰富和灵活的日期时间操作方法。
 
-除了使用Clojure的`compare`函数来比较日期，我们也可以使用Java的`compareTo`函数来完成同样的操作。此外，也有许多第三方库可以用来解决日期比较的问题，比如Joda-Time和java.time包。
+在比较日期时，你通常会使用`.before` 或 `.after`方法，这两个方法都返回一个布尔值，表示一个日期是否在另一个日期之前或之后。你也可以使用`.compareTo`方法，这个方法会返回一个整数，表示两个日期的顺序（-1: 第一个日期在前，1: 第二个日期在前，0:两个日期相等）。
 
-在实现日期比较时，一个常见的问题是处理闰年。Clojure的`compare`函数和Java的`compareTo`函数都已经处理了这个问题，但是在使用第三方库时，需要注意是否需要手动处理闰年。
-
-## 相关资源
-- [Clojure官方文档关于日期和时间的介绍](https://clojure.org/reference/java_interop#_dates_and_times)
-- [Joda-Time官方网站](https://www.joda.org/joda-time/)
-- [Java 8中处理日期和时间的新API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+## 参阅：
+1. [Clojure官方文档](https://clojure.org/)
+2. [Java Date Official Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+3. [Java Time Official Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

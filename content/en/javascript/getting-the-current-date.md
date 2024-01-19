@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "Javascript recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -12,41 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Getting the current date is a way for programmers to keep track of time and date in their code. It is essential for creating time-based functionalities such as scheduling tasks or logging events.
+Getting the current date in JavaScript is the process of fetching real-time date information using built-in functions. Coders do it to keep track of when events happen, timestamp data, manage schedules, and compare times. 
 
-## How to:
+## How To:
 
-To get the current date using Javascript, we can use the built-in `Date()` object. This object has various methods for retrieving different components of the date. For example:
-
-```Javascript
-const currentDate = new Date()
-
-console.log(currentDate.getFullYear()) // outputs current year
-console.log(currentDate.getMonth()) // outputs current month
-console.log(currentDate.getDate()) // outputs current day of the month
-console.log(currentDate.getHours()) // outputs current hour
-console.log(currentDate.getMinutes()) // outputs current minutes
-console.log(currentDate.getSeconds()) // outputs current seconds
-```
-
-We can also get the current date and time in a specific format using the `toLocaleDateString()` method. For example:
+Simple and easy, here's your snippet:
 
 ```Javascript
-const formattedDate = currentDate.toLocaleDateString("en-US")
-
-console.log(formattedDate) // outputs current date in MM/DD/YYYY format
+let currentDate = new Date();
+console.log(currentDate);
 ```
 
-## Deep Dive:
+Your output will look similar to this:
 
-Getting the current date is not a new concept in programming. In fact, it has been a part of languages like Java and C++ for a long time. However, Javascript's `Date()` object was introduced in the ECMAScript 1.0 standard in 1997.
+```Javascript
+Tue Sep 07 2021 11:01:57 GMT-0500 (Central Daylight Time)
+```
 
-There are also alternative methods for getting the current date in Javascript. One popular method is using libraries such as Moment.js or Luxon, which provide more readable and flexible ways of handling dates.
+Need just the date part? Here's how:
 
-Internally, the `Date()` object in Javascript stores the date and time as the number of milliseconds passed since January 1, 1970, 00:00:00 UTC. This value is referred to as the Unix timestamp and can be retrieved using the `getTime()` method.
+```Javascript
+let currentDate = new Date();
+let date = currentDate.getDate();   //Day of the month
+let month = currentDate.getMonth(); //Month of the year
+let year = currentDate.getFullYear();//Year
 
-## See Also:
+console.log(date + '/' + month + '/' + year);
+```
 
-- [MDN web docs on the Date object in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js library documentation](https://momentjs.com/docs/)
-- [Luxon library documentation](https://moment.github.io/luxon/)
+This prints:
+
+```Javascript
+7/8/2021
+```
+
+## Deep Dive
+
+Ditching the fluff, JavaScript dates have a storied history. Originally, the process was painful—confusing string manipulation and various date formats. Thankfully, JavaScript matured. We hopped on the fast track with the native `Date` object, standardized in ECMAScript 1st edition (1997).
+
+If `Date` isn't your thing, alternatives exist. Libraries like Moment.js or date-fns come equipped with more powerful date-time functionalities, easier manipulation, and formatting. But remember, they come at a cost—additional dependencies and potential bloat to your application. 
+
+Now, about the `Date` object. It works by storing the number of milliseconds since the Unix Epoch (January 1, 1970). Every `Date` method you use is a wrapper around this value, converting it into something human-readable or manipulable.
+
+## See Also
+
+Want more details? Dive deeper with these resources:
+
+- [MDN Web Docs - JavaScript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [JavaScript Info - Date and Time](https://javascript.info/date)
+- [Moment.js](https://momentjs.com/)
+- [date-fns - Modern JavaScript Date Utility Library](https://date-fns.org/)

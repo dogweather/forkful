@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków"
-html_title:           "PHP: Konwertowanie daty na ciąg znaków"
-simple_title:         "Konwertowanie daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -11,31 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
- Konwersja daty na łańcuch znaków oznacza przekształcenie daty i godziny, zapisanej w formacie ułatwiającym przetwarzanie przez komputer, na tekstowy format wyświetlany użytkownikowi. Programiści używają tego sposobu, aby dostosować wyświetlany czas do potrzeb użytkownika lub do formatowania na stronie internetowej.
+
+Konwersja daty na tekst umożliwia nam zapisanie tej daty w czytelniejszym formacie, który z łatwością można wyświetlić lub zapisywać. Programiści przeprowadzają tę operację, aby ułatwić prezentację danych datowych w human-friendly formie oraz aby ułatwić przechowywanie i manipulację tymi danymi.
 
 ## Jak to zrobić:
-``` PHP
-$timestamp = 1577854800;
-echo date("d-m-Y", $timestamp);
+
+Użyjemy wbudowanej funkcji PHP o nazwie `date()`. Operuje ona na obiekcie `DateTime`.
+
+`date()` przyjmuje dwa argumenty. Pierwszy to format, w jakim chcielibyśmy zobaczyć naszą datę. Drugi, który jest opcjonalny, to znacznik czasu Unix, który chcemy przekształcić.
+
+```PHP
+<?php
+
+$date = new DateTime('2000-01-01');
+
+echo $date->format('Y-m-d H:i:s') . "\n";
+?>
 ```
 
-**Output:**
-01-01-2020
+To wygeneruje:
 
-W powyższym przykładzie $timestamp oznacza liczbę sekund, która minęła od Początku Ery Unix (1 stycznia 1970 r.), a "d-m-Y" to format daty, w którym:
-" d " oznacza dzień, " m " - miesiąc, a " Y " - rok.
-
-``` PHP
-echo date("l, F d, Y");
 ```
-**Output:**
-Wednesday, January 01, 2020
+2000-01-01 00:00:00
+```
+## Głębsze zanurzenie:
 
-Powyższy kod nie wymaga podania timestamp, ponieważ automatycznie pobiera aktualną datę i godzinę.
+Funkcję `date()` wprowadzono w PHP 4, a od tej pory stała się jednym z podstawowych narzędzi dla każdego programisty PHP. 
 
-## Głębsza analiza:
- Konwersja daty na łańcuch znaków jest często wykorzystywana w tworzeniu aplikacji internetowych, blogów, czy wszędzie tam, gdzie wyświetlanie aktualnej daty i godziny jest istotne. Alternatywą dla tej metody może być wykorzystanie gotowych bibliotek lub pluginów, które umożliwiają bardziej zaawansowane formatowanie daty oraz uwzględnienie stref czasowych.
+Alternatywą dla `date()` jest funkcja `gmdate()`, która działa dokładnie tak samo, z tym wyjątkiem, że zawsze zwraca czas GMT.
 
-## Zobacz także:
-- Dokumentacja PHP: https://www.php.net/manual/en/function.date.php
-- Porównanie różnych sposobów konwersji daty w PHP: https://www.tutorialrepublic.com/php-tutorial/php-working-with-date-and-time.php
+`DateTime::format '()` jest metodą obiektu `DateTime` wprowadzoną w PHP 5.2.0, która umożliwia konwertowanie daty na ciąg zgodnie z podanym formatem.
+
+Wszystkie te funkcje korzystają z formatów opartych na tych używanych przez funkcję `strftime()` w języku C. Istnieje wiele różnych znaczników, które można zastosować, każdy reprezentujący różne elementy daty i czasu, na przykład `Y` dla pełnego roku, `m` dla miesiąca i `d` dla dnia.
+
+## Zobacz też:
+
+1. Dokumentacja PHP dla date() - https://www.php.net/manual/pl/function.date.php
+2. Dokumentacja PHP dla gmdate() - https://www.php.net/manual/pl/function.gmdate.php
+3. Dokumentacja PHP dla DateTime - https://www.php.net/manual/pl/class.datetime.php
+4. Dokumentacja PHP dla DateTime::format() - https://www.php.net/manual/pl/datetime.format.php
+5. Formaty języka C używane w PHP - https://www.php.net/manual/pl/function.strftime.php.

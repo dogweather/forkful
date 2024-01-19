@@ -1,7 +1,7 @@
 ---
-title:                "Zusammenführen von Zeichenketten"
-html_title:           "Java: Zusammenführen von Zeichenketten"
-simple_title:         "Zusammenführen von Zeichenketten"
+title:                "Strings verketten"
+html_title:           "Bash: Strings verketten"
+simple_title:         "Strings verketten"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,31 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das & Warum?
-Beim Programmieren in Java müssen wir oft mehrere Texte miteinander kombinieren, z.B. um einen Satz mit Variablen zu erstellen oder eine lange Nachricht zusammenzusetzen. Wir verwenden einen Prozess namens "String-Konkatenation", um diese Texte nahtlos zu verbinden und den gewünschten Output zu erhalten. Es ist ein unverzichtbares Werkzeug für Entwickler, um dynamische und vielseitige Texte zu erstellen.
+## Was & Warum?
 
-## Wie geht's?
-Die String-Konkatenation wird durch das "+" -Zeichen in Java ermöglicht. Wir können mehrere Strings miteinander verbinden, indem wir sie einfach hintereinander schreiben und das "+" -Zeichen zwischen ihnen platzieren. Hier ist ein Beispielcode:
+Das Zusammenfügen von Zeichenketten (String-Konkatenation) in Java ist die Methode zur Verknüpfung von zwei oder mehr Strings zu einem einzigen. Programmierer tun dies, um Informationen effizient auszudrücken und den Code lesbarer zu machen.
 
+## So geht's:
+
+In Java ist die String-Konkatenation ein einfacher Vorgang. Hier ist ein grundlegendes Beispiel:
+
+```Java
+String begin = "Guten ";
+String end = "Tag!";
+String gruss = begin + end;
+System.out.println(gruss);
 ```
-String name = "Max";
-String message = "Hallo, mein Name ist " + name + ".";
+Dies wird ausgeben: `Guten Tag!`
+
+StringBuilder oder StringBuffer können auch verwendet werden, um Strings effizient zu verbinden, besonders in einer Schleife:
+
+```Java
+StringBuilder builder = new StringBuilder();
+for (int i = 0; i < 5; i++) {
+  builder.append("Ja");
+}
+System.out.println(builder.toString());
 ```
+Dies wird ausgeben: `JaJaJaJaJa`.
 
-Der Variable "name" wird der Wert "Max" zugewiesen und dann wird der gesamte Satz in der Variable "message" gespeichert. Wenn wir nun "message" ausgeben, sehen wir: "Hallo, mein Name ist Max."
+## Tiefere Einzelheiten:
 
-## Tiefer tauchen
-Die Idee der String-Konkatenation ist nicht neu und wird in vielen Programmiersprachen verwendet. In Java gibt es jedoch eine effektivere Alternative, die sogenannte "StringBuilder"-Klasse. Sie ist speziell für die Konkatenation von Strings optimiert und kann die Leistung verbessern, wenn wir viele Texte miteinander verbinden müssen.
+Historisch gesehen waren String-, StringBuilder- und StringBuffer-Klassen die gängigsten Methoden zur Verbindung von Strings in Java. String-Konkatenation ist einfach zu verwenden, hat aber in größeren Loops Leistungsprobleme, da Strings in Java unveränderlich sind. Jede Konkatenation erzeugt ein neues String-Objekt, was zu einem hohen Speicherverbrauch führt.
 
-Ein weiterer wichtiger Aspekt bei der Benutzung von String-Konkatenation ist die Formatierung von Zahlen oder anderen Datentypen. Wir können "%" -Zeichen verwenden, um Platzhalter in unseren Texten zu erstellen und dann die entsprechenden Werte darauf zu übertragen. Hier ist ein Beispielcode:
+Als Alternative können wir StringBuilder oder StringBuffer verwenden. Sie sind effizienter als String-Konkatenation, da sie String-Manipulationen ohne Erzeugung neuer Objekte ermöglichen. Der Unterschied zwischen beiden liegt in der Thread-Sicherheit: StringBuffer ist thread-sicher und daher etwas langsamer als StringBuilder.
 
-```
-int x = 5;
-int y = 9;
-String result = "Die Summe von %d und %d ist %d." % (x, y, x + y);
-```
+Es ist erwähnenswert, dass der Java-Compiler StringBuilder intern zur Optimierung von String-Konkatenationen verwendet.
 
-In diesem Beispiel wird das Ergebnis "Die Summe von 5 und 9 ist 14" sein.
+## Siehe auch:
 
-## Siehe auch
-Weitere Informationen zur String-Konkatenation und der "StringBuilder"-Klasse finden Sie in der offiziellen [Java-Dokumentation] (https://docs.oracle.com/javase/tutorial/java/data/buffers.html) und in zahlreichen Tutorials im Internet. Sie können auch praktische Übungen machen, um Ihr Verständnis zu vertiefen und zu festigen.
+Für mehr Details, überprüfen Sie die Java-Dokumentation:
+- [String (Java Platform SE 8 )](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [StringBuilder (Java Platform SE 8 )](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+- [StringBuffer (Java Platform SE 8 )](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html)
+
+Und erweiterte Themen:
+- [Efficiency of Java "Double Brace Initialization"?](https://stackoverflow.com/questions/924285/efficiency-of-java-double-brace-initialization)
+- [How do I optimally concatenate strings in Java?](https://stackoverflow.com/questions/1532461/stringbuilder-vs-string-concatenation-in-tostring-in-java)

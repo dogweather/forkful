@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Gleam: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,39 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+# Ein Eintauchen in Gleam: Das Lesen von Befehlszeilenargumenten 
 
-Das Lesen von Befehlszeilenargumenten ist eine gängige Aufgabe für Programmierer. Es bedeutet, dass das Programm beim Start Informationen aus der Befehlszeile erhält, die es dann verarbeiten kann. Dies ist besonders nützlich, wenn das Programm auf unterschiedlichen Eingaben basieren oder konfiguriert werden soll.
+## Was und Warum?
 
-# Wie geht's?
+Das Lesen von Befehlszeilenargumenten erlaubt es uns, Daten dynamisch an ein Programm zu übergeben. Das ermöglicht flexiblere und vielseitigere Softwareanwendungen.
 
-In Gleam kann dies mit der Funktion `command_args` erreicht werden. Diese nimmt keine Argumente entgegen und gibt ein Array von Strings zurück, die die Befehlszeilenargumente enthalten. Hier ist ein Beispiel:
+## Wie geht das?
 
-``` Gleam
-fn main() {
-  let args = command_args()
-  io.println("Befehlszeilenargumente:")
-  for arg in args {
-    io.println(arg)
+Fangen wir an, wie man Befehlszeilenargumenten in Gleam liest. Verwenden wir dafür die folgende einfache Codebeispiele:
+
+```gleam
+import gleam/io.{Argument}
+
+fn main(args: List(Argument)) {
+  case args {
+    [] ->
+      io.println("Es wurden keine Argumente angegeben.")
+    [arg1] ->
+      io.println("Angabe des ersten Arguments: " ++ arg1)
+    [_, arg2] |
+    [_, _, arg2] ->
+      io.println("Angabe des zweiten Arguments: " ++ arg2)
+    
+    _ ->
+      io.println("Es wurden zu viele Argumente angegeben.")
   }
 }
 ```
 
-Wenn wir dieses Programm mit dem folgenden Befehl ausführen:
-```
-$ gleam run example.gleam arg1 arg2
-```
-Lautet die Ausgabe:
-```
-Befehlszeilenargumente:
-arg1
-arg2
-```
+In diesem Beispiel prüfen wir die Anzahl der übergebenen Argumente und handeln entsprechend.
 
-# Tiefere Einblicke
+## Vertiefung
 
-Das Lesen von Befehlszeilenargumenten ist keine neue Aufgabe und wird von vielen Sprachen unterstützt. Alternativ können auch Umgebungsvariablen oder Konfigurationsdateien verwendet werden, um Programme zu konfigurieren. Das Lesen von Befehlszeilenargumenten ist oft schneller und einfacher, da keine externe Datei oder Variablen erstellt werden müssen. In Gleam werden Befehlszeilenargumente durch die Standardbibliothek `gleam/io` verarbeitet.
+Die Möglichkeit, Befehlszeilenargumente zu lesen, ist eine Funktion, die in den meisten Programmiersprachen vorhanden ist, von PERL bis hin zu Python. Es gibt auch verschiedene Möglichkeiten, dies in Gleam zu implementieren, abhängig von der Komplexität Ihrer Anforderungen und der Anzahl der zu verarbeitenden Argumente.
 
-# Siehe auch
+Einer der Hauptvorteile des Lesens von Befehlszeilenargumenten besteht darin, dass es eine einfache Methode zum Empfangen von Eingaben ohne Benutzerinteraktion darstellt. Die Verwendung von Befehlszeilenargumenten kann jedoch unübersichtlich werden, wenn zu viele davon benötigt werden. In solchen Fällen sind Konfigurationsdateien oder Umgebungsvariablen oft praktikablere Alternativen.
 
-Weitere Informationen zur Verwendung von Befehlszeilenargumenten in Gleam finden Sie in der offiziellen Dokumentation der Standardbibliothek: https://gleam.run/std/io#command-args.
+## Siehe auch
+
+- [Gleam's Offizielle Dokumentation zum Argumentmodul](https://gleam.run/book/tour/lists.html)
+- [StackOverflow Diskussion über das Einlesen von Befehlszeilenargumenten in Gleam](https://stackoverflow.com/questions/tagged/gleam)
+
+In diesen Quellen können Sie weiterführende Informationen suchen und eine tiefergehende Diskussion über die Verwendung von Befehlszeilenargumenten in Gleam finden.

@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamienianie tekstu"
-html_title:           "Swift: Wyszukiwanie i zamienianie tekstu"
-simple_title:         "Wyszukiwanie i zamienianie tekstu"
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,20 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest wyszukiwanie i zamiana tekstu & Dlaczego to robimy?
-Wyszukiwanie i zamiana tekstu to jedna z podstawowych czynności programistycznych, polegająca na znalezieniu i podmianie określonego ciągu znaków w tekście. Programiści często wykonują tę czynność, aby automatycznie poprawić błędy ortograficzne, zmienić formatowanie lub zaktualizować przestarzały kod.
+## Co i dlaczego?
 
-## Jak to zrobić? 
-Możesz użyć funkcji ```replacingOccurrences(of:with:)``` aby wyszukać i zamienić tekst wewnątrz innego tekstu. Na przykład, jeśli chcesz zamienić wszystkie wystąpienia słowa "kot" na "pies" w zdaniu "Lubię koty", użyjemy następującego kodu:
+Wyszukiwanie i zastępowanie tekstu to różnego rodzaju operacje na ciągach znaków. Programiści często korzystają z tych funkcji, aby zmienić dane w bardziej pożądany, użyteczny lub zrozumiały format.
+
+## Jak to zrobić?
+
+Swift umożliwia łatwe wyszukiwanie i zastępowanie tekstu. Skorzystajmy z przykładu. 
 
 ```Swift
-let zdanie = "Lubię koty"
-let noweZdanie = zdanie.replacingOccurrences(of: "kot", with: "pies")
-print(noweZdanie) // Output: Lubię psy
- ```
- 
- ## Głębsza analiza
-Wyszukiwanie i zamiana tekstu jest jedną z najważniejszych funkcji w procesie przetwarzania tekstów. W przeszłości, wymagało to użycia wyrażeń regularnych lub ręcznego sprawdzania i podmieniania każdego wystąpienia tekstu. Jednak dzięki funkcji ```replacingOccurrences(of:with:)```, możemy wygodnie i efektywnie wykonać tę czynność.
+var powitanie = "Cześć, Karol."
+powitanie = powitanie.replacingOccurrences(of: "Karol", with: "Anna")
+print(powitanie)
+```
 
-## Zobacz także
-Jeśli chcesz dowiedzieć się więcej o wyszukiwaniu i podmianie tekstu w Swift, możesz przeczytać dokumentację Apple na ten temat: https://developer.apple.com/documentation/foundation/nsstring/1412186-replacingoccurrences. Możesz również wypróbować inne metody podmiany tekstu, takie jak funkcja ```replacingCharacters(in:with:)```, aby rozszerzyć swoje umiejętności programistyczne.
+Na wyjściu zobaczysz: 
+
+```Swift
+Cześć, Anna.
+```
+
+Tutaj klasa `String` posiada funkcję `replacingOccurrences()`, która zastępuje wszystkie wystąpienia danego ciągu znaków innym ciągiem.
+
+## Deep Dive
+
+Operacje na ciągach znaków mają długą historię w programowaniu, od prostych operacji wykonywanych ręcznie przez programistów aż po obecne, zaawansowane metody dostępne w nowoczesnych językach programowania jak Swift.
+
+Alternatywą dla `replacingOccurrences()` może być użycie wyrażeń regularnych (RegEx), które są bardziej elastycznymi, ale zarazem bardziej skomplikowanymi narzędziami do manipulowania tekstem.
+
+Swift implementuje wyszukiwanie i zastępowanie tekstu poprzez protokół `StringProtocol`. Ten protokół definiuje zestaw metod, które są wspólne dla wszystkich typów, które są operacyjne jako ciągi znaków.
+
+## Zobacz też
+
+1. [Swift String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html) - Podstawowe informacje o pracy ze stringami w Swift.
+2. [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression) - Jak używać wyrażeń regularnych w Swift.

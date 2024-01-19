@@ -1,7 +1,7 @@
 ---
-title:                "Parsing html"
-html_title:           "C++: Parsing html"
-simple_title:         "Parsing html"
+title:                "Analisi sintattica dell'HTML"
+html_title:           "C++: Analisi sintattica dell'HTML"
+simple_title:         "Analisi sintattica dell'HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Il parsing HTML è il processo di analisi dei contenuti di una pagina web e della loro struttura per estrarre informazioni significative. I programmatori si impegnano nello sviluppo di algoritmi di parsing HTML per creare applicazioni che possano elaborare e manipolare i dati dei siti web in modo efficiente.
+## Che Cosa e Perché?
 
-## Come fare:
- Di seguito sono riportati alcuni esempi di codice in ```C++``` che illustrano come eseguire il parsing HTML utilizzando la libreria ```libxml2```. Il codice di seguito mostra come ottenere il contenuto di un elemento ```<p>```:
+Il parsing HTML è il processo di estrazione dati da un documento HTML. I programmatori lo fanno per manipolare, interrogare o visualizzare questi dati in modi che vanno oltre il semplice rendering in un browser web.
 
-```
-#include <libxml/HTMLparser.h>
+## In pratica:
 
-void parseHTML(char *filename) {
-    htmlDocPtr doc; /* puntatore al documento HTML da analizzare*/
-    xmlNodePtr cur; /* puntatore al nodo corrente*/
+Qui di seguito è un esempio di come si può eseguire il parsing di un documento HTML in C++ utilizzando la libreria Gumbo. Prima di tutto, è necessario installare la libreria Gumbo.
 
-    doc = htmlReadFile(filename, NULL, HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING | HTML_PARSE_NONET);
-    cur = xmlDocGetRootElement(doc);
+```C++
+#include <iostream>
+#include <gumbo.h>
 
-    if (cur == NULL) {
-        fprintf(stderr,"Errore nella lettura del documento\n");
-        return;
-    }
+int main() {
+    GumboOutput* output = gumbo_parse("<h1>Ciao, Mondo!</h1>");
 
-    cur = cur->children; // si passa al primo nodo figlio
-    while (cur != NULL && strcmp((const char*)cur->name, "p"))
-        cur = cur->next; // si scorrono i nodi figli fino a trovare quello con l'elemento "p"
+    GumboNode* node = output->root;
 
-    printf("Il contenuto dell'elemento <p> è %s\n", xmlNodeGetContent(cur)); // si stampa il contenuto del tag <p>
-    
-    xmlFreeDoc(doc); // si rilasciano le risorse allocate
-    return;
+    //Codice per lavorare con 'node' qui
+
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    return 0;
 }
 ```
+Dopo l'esecuzione del codice, otterremo il nodo root del documento HTML, e da qui è possibile muoversi in tutto l'albero del documento.
 
 ## Approfondimento:
-Il parsing HTML ha una lunga storia, a partire dal suo utilizzo pionieristico negli anni '90 per la creazione dei primi motori di ricerca. Oggi, esistono varie alternative per eseguire il parsing HTML, tra cui librerie come ```libxml2```, ```HTMLParser``` e ```BeautifulSoup```. Il processo di parsing può essere complesso, in quanto è necessario gestire varie eccezioni e gli standard del linguaggio web sono in costante evoluzione.
 
-## Vedi anche:
-- [Documentazione ufficiale di libxml](http://xmlsoft.org/html/)
-- [Documentazione ufficiale di HTMLParser](https://htmlparser.sourceforge.io/)
-- [Documentazione ufficiale di BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+(1) Negli anni, ci sono stati vari approcci al parsing HTML, con diversi trade-off in termini di velocità, flessibilità, e conformità agli standard. La libreria Gumbo è una di queste soluzioni, sviluppata da Google, che punta a bilanciare tutte queste preoccupazioni.
+
+(2) Altri metodi per il parse HTML includono l'uso di espressioni regolari (anche se questa tecnica è generalmente scoraggiata per la sua mancanza di flessibilità), SAX (Simple API for XML), e DOM (Document Object Model).
+
+(3) Quando si esegue il parsing HTML con Gumbo, la libreria costruisce un albero di nodi che rappresenta il documento. Ogni nodo può essere un elemento, un testo, un commento, o uno spazio vuoto.
+
+## Vedi Anche:
+
+- Documentazione della libreria Gumbo: [Gumbo Parser](https://github.com/google/gumbo-parser)
+  
+- Guida di introduzione al parsing: [Introduction to Parsing](https://tomassetti.me/guide-parsing-algorithms-terminology)
+  
+- Articolo su perché non usare le espressioni regolari per il parsing HTML: [RegEx match open tags except XHTML self-contained tags](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)

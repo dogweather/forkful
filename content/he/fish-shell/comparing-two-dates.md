@@ -1,7 +1,7 @@
 ---
-title:                "השוואת שני תאריכים"
-html_title:           "Fish Shell: השוואת שני תאריכים"
-simple_title:         "השוואת שני תאריכים"
+title:                "השוואה בין שני תאריכים"
+html_title:           "Arduino: השוואה בין שני תאריכים"
+simple_title:         "השוואה בין שני תאריכים"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+## מה ולמה?
+השוואת שני תאריכים היא כלי חשוב בעולם התכנות. תOften, we need to determine the order of events, calculate the time elapsed between dates, or simply check the validity. 
 
-השוואה של שתי תאריכים היא פעולה שבה אנחנו משווה בין שתי תאריכים כדי לבדוק אם הם זהים, או אם אחד מהם קודם לאחד השני. תכנתנים עושים זאת כדי לבדוק את הסדר הכרונולוגי של אירועים או כדי לבדוק תאימות בין תאריכים שונים.
+## כיצד לעשות:
+בקוד ה-Fish Shell הבא, אנו משווים שני תאריכים כדי לבחון מי מהם מקודם. 
 
-## איך לעשות זאת:
+```Fish Shell
+function compare_dates
+  set date1 (date -d $argv[1] "+%s")
+  set date2 (date -d $argv[2] "+%s")
 
-```fish
-set date1 (date -d "25 August 2021" +%s)
-set date2 (date +"%s")
-
-math $date2 - $date1
-
+  if test $date1 -eq $date2
+    echo "Dates are the same"
+  else if test $date1 -gt $date2
+    echo "$argv[1] is later than $argv[2]"
+  else
+    echo "$argv[1] is earlier than $argv[2]"
+  end
+end
 ```
 
-פרק זה מדגים כמה דרכים לבצע השוואה של שתי תאריכים באמצעות Fish Shell. הכלי "date" ניתן לשימוש כדי ליצור תאריכים ולהשוות בינהם, לפי הדגשת הפקודות שבתזת. הפונקציה "%s" מכוונת לספר השנייה של התאריכים לתוך ערכים כמספרי בסיס 2 ומאפשרת לנו להשוות תאריכים בצורה פשוטה יותר.
+כאן מהיציאה של הדוגמה:
 
-## צלילה עמוקה:
+```Fish Shell
+> compare_dates "2022-01-01" "2022-01-02"
+2022-01-01 is earlier than 2022-01-02
 
-השוואת שתי תאריכים היא פעולה יסודית בתכנות ונעשית כדי לנתח תאריכים ולהבין את הסדר הכרונולוגי של אירועים. אלטרנטיבות לכלי "date" כוללות את "strtotime" ו-"mktime" שמאפשרות המרת תאריכים לספרים, או השימוש בתכנית חיצונית כמו "diffutils" לבדוק את ההפרשים בין שתי תאריכים.
+> compare_dates "2022-01-02" "2022-01-01"
+2022-01-02 is later than 2022-01-01
 
-המימוש המדויק של השוואת תאריכים תלוי בשפת התכנות המועדפת, כך שיש להתאים את הקוד לפי הדרישות המיוחדות של כל מקרה. ישנן גם כמה דימויים של השוואת תאריכים כמו השוואה של תאריכים עם שעות ודקות מדובר בתאריכים, או כאלה שמתעסקים עם תהודות לשנה העברית.
+> compare_dates "2022-01-01" "2022-01-01"
+Dates are the same
+```
 
-## ראה גם:
+## צלילה עמוקה
+השוואת תאריכים היא בעצם בעיה מתמטית. יש לה היסטוריה ארוכה, כולל בבניית הלוח שנה עצמו.
+אם אנציקלופדיה, אנו יכולים להשתמש בספריות דרדשת חיצוניות או פונקציות מובנות (כמו `date` שב-Fish Shell) לטפל בפרטים אלה.
+בפונקציה שהצגנו, אנו משתמשים במערכת הפקודות של UNIX ‎ובטיפול יעיל של פלט פונקציית `date` ‎.
 
-- [תיעוד Fish Shell](https://fishshell.com/docs/current/cmds/date.html)
-- [דפי הוראות של Fish Shell](https://fishshell.com/docs/current/commands.html#date)
-- [מיון תאריכים בשפת תכנות ב- C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+## ראה גם
+למידע נוסף על Fish Shell ואיך להשתמש בו, קראו [המדריך הרשמי של Fish Shell](https://fishshell.com/docs/current/index.html).
+לומדים את המונחים בפיתוח קז'ואלי? המשיך לקרוא [באינטרנט](https://www.codecademy.com/learn/learn-the-command-line).
+העמיקו עם ה-[UNIX ‎command line documentation‎](http://man7.org/linux/man-pages/man1/date.1.html).

@@ -1,6 +1,6 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "Swift: חילוץ תת-מחרוזות"
+html_title:           "Bash: חילוץ תת-מחרוזות"
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,35 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
-קיצור מסדרת אותיות הוא תהליך של ניתוח נתונים טקסטואליים כדי למצוא חלקים מסוימים של טקסט. תוכניתאים עושים זאת כדי לעבוד עם מידע ספציפי ולהפשיט את הנתון לפי הצורך.
+## מה ולמה?
+חיצוב תת-מחרוזות הינו המנוהל שבו מזיקים מחרוזת למחרוזות ממוזערות. מתכנתים משתמשים בכך למידע ביניים, לניתוח נתונים, ולטיפול בטקסט.
 
-## כיצד לעשות זאת: 
-להלן כמה דוגמאות עם מידע ופלט לתוכנת Swift ... 
+## איך לעשות:
+נפתח עם דוגמה פשוטה, חתיכת קוד Swift שמחלצת תת-מחרוזת:
 ```Swift
-let sentence = "שלום! אני תוכנית סוויפט." 
-let substring = sentence[17..<24] 
-
-print(substring) // תוכנית
+let str = "Hello, Swift"
+let indexStart = str.index(str.startIndex, offsetBy: 7)
+let indexEnd = str.index(str.startIndex, offsetBy: 12)
+let substring = str[indexStart..<indexEnd]
+print(substring) //"Swift"
 ```
+הפלט הוא "Swift". סרגלים למטה מגדירים טווח החיצוב. 
 
-```Swift 
-let text = "מעוניינים ללמוד סוויפט? הצטרפו עכשיו!" 
-let part = text[16..<20] 
+## צלילה עמוקה:
+השיטה הזו סביב מערך כמו של Swift הושפעה מ- Objective-C. האלטרנטיבות הפשוטות היו לחתוך את המחרוזת או אפילו להשתמש בספליט. פירוט על מנגנון החיצוב מכיל את האינדקסים והטווחים בתוך המחרוזת.
 
-print(part) // סוויפט
-```
-
-```Swift 
-let name = "יוסף" 
-let firstName = name[0..<2] 
-
-print(firstName) // יו
-```
-
-## נכנסים לתהליך: 
-קיצור מסדרת אותיות משמש כלי מאוד עוצמתי בתכנות, ומשתמשים בו מזה שנות ה- 1950. זה אופציה נוחה לעבוד עם טקסטים ולחלץ אינפורמציה מסוימת. ישנם גם אפשרויות אחרות כמו החיתוך של מחרוזות, אך קיצור מסדרת אותיות מספק אפשרויות מתקדמות יותר ומאפשר למנוע שגיאות.
-
-## ראה גם:
-- [מדריך מלא על קיצור מסדרת אותיות ב-Swift](https://www.appcoda.com/swift-string-substring/)
-- [תיעוד רשמי של Swift על קיצור מסדרת אותיות](https://developer.apple.com/documentation/swift/string/1642959-substring)
+## ראו גם:
+עיין במקורות אלו למידע נוסף:
+1. מדריך Apple למחרוזות Swift: https://developer.apple.com/documentation/swift/string
+2. מידע נוסף על טווחים במחרוזות Swift: https://www.hackingwithswift.com/example-code/strings/how-to-split-a-string-into-an-array

@@ -1,7 +1,7 @@
 ---
-title:                "Criando um arquivo temporário."
-html_title:           "Clojure: Criando um arquivo temporário."
-simple_title:         "Criando um arquivo temporário."
+title:                "Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
+simple_title:         "Criando um arquivo temporário"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O Que é & Porquê?
 
-Criar um arquivo temporário significa criar um arquivo que será utilizado apenas temporariamente para armazenar informações necessárias em um programa. Programadores fazem isso para garantir que seus códigos sejam executados de maneira mais eficiente e para evitar sobrecarregar o sistema com arquivos desnecessários.
+Criar um arquivo temporário significa gerar um arquivo para armazenamento temporário de dados, que é útil em operações de I/O (input/output). Programadores fazem isso para salvar dados intermediários, resolver problemas de conversão e lidar com grandes volumes de informação que não cabem na memória.
 
-## Como fazer:
+## Como Faz:
 
-```Clojure
-;; Em Clojure, podemos criar um arquivo temporário utilizando a função 'with-open'. 
-(with-open [temp-file (java.io.File/createTempFile "temp" ".txt")]
-  ;; Aqui dentro, podemos realizar qualquer operação com o arquivo, como escrever ou ler dados.
-  (.write temp-file "Este é um exemplo de conteúdo do arquivo temporário.")
-  ;; Assim que o bloco 'with-open' for concluído, o arquivo temporário será excluído automaticamente.
-  )
+Clojure, sendo uma linguagem moderna e concisa, tem a biblioteca java.nio.file que facilita a criação de arquivos temporários.
+```clojure
+(import 'java.nio.file.Files)
+(import 'java.nio.file.Paths)
+
+(defn create-temp-file []
+  (Files/createTempFile (Paths/get "/tmp" (into-array String [])) "temp" ".txt"))
 ```
-Output:
-Um arquivo de texto chamado 'tempXXXXXX.txt' será criado e armazenado na pasta temporária do sistema. O conteúdo do arquivo será "Este é um exemplo de conteúdo do arquivo temporário.".
+Este código define uma função chamada `create-temp-file`, que cria um arquivo temporário chamado "temp.txt". Você pode ver a saída abaixo:
+```clojure
+#object[java.nio.file.Path 0x6e38ffe0 "/tmp/temp5814890766880106554.txt"]
+```
+Este é o caminho para o arquivo temporário criado.
 
-## Mergulho Profundo:
+## Aprofundando:
 
-Criar arquivos temporários é uma prática comum em programação e já existem diversas soluções implementadas em diferentes linguagens de programação. Em Clojure, a função 'with-open' é uma opção fácil e eficiente para criar e gerenciar arquivos temporários. No entanto, é importante lembrar que essa função só funciona para arquivos criados na pasta temporária do sistema e que a exclusão do arquivo é forçada quando o bloco 'with-open' é concluído.
+Historicamente, antes dos pacotes java.nio.file, a criação de arquivos temporários era mais engorçada, muitas vezes envolvendo manipulação manual de strings para caminhos de arquivo.
 
-## Veja também:
+Alternativamente, você pode usar a função de arquivo temporário no pacote java.io:
+```clojure
+(import 'java.io.File)
+(defn create-temp-file []
+  (.createTempFile (File. "/tmp") "temp" ".txt"))
+```
+Mas java.nio.file é recomendado por ser mais moderno e versátil.
 
-- Site oficial do Clojure: https://clojure.org/
-- Documentação da função 'with-open': https://clojuredocs.org/clojure.core/with-open
-- Outras formas de gerar arquivos temporários em Clojure: https://stackoverflow.com/questions/30330977/how-to-create-temporary-file-in-clojure
+Relativamente a detalhes de implementação, os arquivos temporários são armazenados no diretório especificado (aqui, "/tmp"). O nome do arquivo é uma combinação do prefixo fornecido ("temp") e um longo gerado automaticamente para garantir unicidade.
+
+## Veja Também:
+
+- [Clojure Java Interop](https://clojure.org/reference/java_interop)
+- [Java Doc - Files](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html)
+- [Java Doc - Paths](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Paths.html)

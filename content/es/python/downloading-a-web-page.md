@@ -1,6 +1,6 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Python: Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "Python"
 category:             "Python"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+# Descargando una Página Web con Python - Una Guía Sencilla
 
-Descargar una página web simplemente significa guardar una copia de la página en tu computadora. Los programadores suelen hacer esto para analizar el código fuente de la página o extraer datos estructurados de ella.
+## ¿Qué y Por Qué?
 
-## ¡Cómo hacerlo!
+Descargar una página web es básicamente obtener el código fuente HTML de la misma. Los programadores suelen hacerlo para realizar web scraping o pruebas automatizadas.
 
-Para descargar una página web en Python, puedes utilizar el módulo incorporado `urllib.request` y la función `urlretrieve()`. En el siguiente bloque de código, usaremos esta función para descargar la página principal de Wikipedia y guardarla en nuestro directorio actual como "wikipedia.html":
+## Cómo hacerlo:
 
-```Python 
-from urllib.request import urlretrieve
+Para hacer esto en Python, uno de los módulos más útiles es `requests`. Aquí está la forma más simple de cómo puede hacerlo:
 
-url = "https://es.wikipedia.org/wiki/Wikipedia:Portada"
-urlretrieve(url, "wikipedia.html")
+```Python
+import requests
+
+url = "http://www.google.com"
+respuesta = requests.get(url)
+
+print(respuesta.text)
 ```
 
-Una vez que se ejecute el código, la página de Wikipedia se guardará en la misma carpeta que tu archivo de Python. ¡Fácil, ¿verdad?
+Esto descargará el HTML de la página de inicio de Google e imprimirá el resultado en la consola.
 
-## Una visión más profunda
+## Inmersión Profunda
 
-Descargar páginas web ha sido una práctica común entre los programadores desde los primeros días de Internet. Antes de la existencia de bibliotecas y módulos especializados, los programadores solían escribir su propio código para descargar y analizar páginas web.
+Historia: El paquete `requests` de Python se introdujo en 2011 como una forma mejorada y más fácil para los programadores de Python para trabajar con solicitudes HTTP.
 
-Además de la función `urlretrieve()`, también puedes usar la biblioteca `requests` de Python para descargar páginas web. Esta biblioteca es más fácil de usar y proporciona una API más consistente para hacer solicitudes HTTP.
+Alternativas: Además de `requests`, también puedes elegir `urllib` que es una biblioteca incorporada en Python. Sin embargo, `requests` es a menudo preferido por su interfaz de usuario amigable.
 
-También existen herramientas como wget y curl que pueden descargar páginas web rápidamente desde la línea de comandos. Sin embargo, no ofrecen las poderosas capacidades de procesamiento y análisis de Python.
+Detalles de implementación: Cuando llamas a `requests.get()`, estás enviando una solicitud HTTP GET al servidor y recibes una respuesta que contiene el HTML de la página web.
 
-## Vea también
+## Ver También
 
-Para obtener más información sobre cómo descargar páginas web en Python, revisa la documentación oficial de Python sobre `urllib.request` y `requests`. También puedes explorar las bibliotecas de terceros como Beautiful Soup y Scrapy para analizar páginas web. ¡Feliz descarga!
+Si deseas explorar más sobre web scraping o el paquete `requests`, aquí tienes algunos enlaces útiles:
+
+- Para `requests`: [Documentación Oficial de Requests](https://docs.python-requests.org/en/latest/)
+- Para web scraping: [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
+- Para un tutorial más avanzado: [Web Scraping con Python: Guía Completa](https://realpython.com/python-web-scraping-practical-introduction/)

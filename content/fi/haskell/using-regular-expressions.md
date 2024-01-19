@@ -10,37 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mikä & Miksi?
 
-Säännöllisillä lausekkeilla (regular expressions) tarkoitetaan tekstinkäsittelyyn tarkoitettuja ilmaisuja, jotka kuvaavat tiettyjä merkkijonoja tai merkkijonojen joukkoja. Näitä ilmaisuja käytetään usein ohjelmointitehtävissä, kuten tekstien haussa ja korvaamisessa. Säännölliset lausekkeet helpottavat näiden tehtävien suorittamista ja säästävät aikaa ja vaivaa.
+Säännölliset lausekkeet ovat kaavoja, joita käytetään merkkijonojen etsimiseen ja korvaamiseen. Ohjelmoijat käyttävät niitä, koska ne säästävät aikaa ja tekevät koodista selkeää.
 
-## Miten:
+## Näin tehdään:
 
-Haskellissa säännölliset lausekkeet ovat osa kirjastoa nimeltään "Text.Regex". Niiden käyttö vaatii kirjaston tuomisen näkyville, jonka jälkeen voimme aloittaa ilmaisujen käytön esimerkiksi seuraavasti:
+Käytä `Text.Regex.Posix`-moduulia merkkijonojen käsittelemiseen. Tässä on esimerkki säännöllisen lausekkeen käytöstä.
 
 ```Haskell
-import Text.Regex
+import Text.Regex.Posix
 
-teksti = "Tervetuloa Haskelliin!"
+lahtoteksti = "Hello, Haskell!"
 
-match "Haskell" teksti
+lahtoteksti =~ "Haskell" :: Bool
 ```
-Tulos olisi ```Just ("Haskell", "")```, koska tekstissä esiintyy sana "Haskell" ja se vastaa säännöllistä lauseketta.
 
-Toinen esimerkki, jossa säännöllisiä lausekkeita käytetään korvaamiseen:
-```Haskell
-replace "Haskell" "Hask" teksti
-```
-Tulos olisi sana "Tervetuloa Haskiin!", koska lauseke korvattiin uudella sanalla.
+Jos "Haskell" löytyy `lahtotekstistä`, tuloksena on `True`.
 
-## Syväsukellus:
+## Syvällisemmin:
 
-Säännölliset lausekkeet ovat peräisin matematiikasta ja ovat kehitetty tekstien käsittelyyn jo 1950-luvulla. Nykyään lähes jokaisella ohjelmointikielellä, mukaan lukien Haskell, on mahdollisuus käyttää säännöllisiä lausekkeita. On myös muita vaihtoehtoja, kuten rekursiivinen tekstien käsittely, mutta säännölliset lausekkeet ovat yleisesti hyväksytty ja tehokas tapa suorittaa näitä tehtäviä.
+### Historia:
 
-Sisäisesti säännölliset lausekkeet käännetään deterministisiksi automaateiksi, jotka suorittavat vertailut ja korvaukset. Ne ovat siten nopeampia kuin manuaalinen tekstien käsittely koodilla.
+Säännölliset lausekkeet tulivat tunnetuiksi ed-vi-tekstieditorin myötä 1970-luvulla. Haskell-ohjelmointikielessä niiden käyttöön otettiin `Text.Regex`-kirjasto.
 
-## Katso myös:
+### Vaihtoehdot:
 
-- [Haskellin dokumentaatio säännöllisistä lausekkeista](https://hackage.haskell.org/package/regex-base)
-- [RegExr - interaktiivinen säännöllisten lausekkeiden testaus- ja oppimisalusta](https://regexr.com/) 
-- [Säännöllisten lausekkeiden perusteet - opetusvideo (englanniksi)](https://www.youtube.com/watch?v=5hjLQVFLDs4)
+`Text.Regex.Posix` on suosittu, mutta tilanteesta riippuen voit käyttää `Text.Regex.PCRE` tai `Text.Regex.TDFA` -kirjastoja.
+
+### Toteutus:
+
+Haskellissa säännölliset lausekkeet käsitellään monadisen tyylin mukaisesti, joka takaa laskennan laiskuuden ja parantaa suorituskykyä.
+
+## Tutustu myös:
+
+[Learn You a Haskell for Great Good](http://learnyouahaskell.com/) on hyvä resurssi Haskelliin ja sen ominaisuuksiin.
+
+[Haskell Text.Regex.Posix documentation](https://hackage.haskell.org/package/regex-posix-0.96.0.0/docs/Text-Regex-Posix.html) sisältää kaiken tiedon mitä tarvitset `Text.Regex.Posix`-kirjaston käyttöön.

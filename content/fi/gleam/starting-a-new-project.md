@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "Gleam: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,47 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+# Alkamassa Uusi Projekti Gleam-ohjelmointikielellä 
 
-Aloittaessa uutta projektia ohjelmoijat asettavat suunnitelman joka määrittää mitä he haluavat luoda ja miten se tulee toimimaan. Uusi projekti tarjoaa mahdollisuuden kehittää uusia taitoja ja luoda jotain uutta ja jännittävää. 
+## Mikä & Miksi?
 
-## Kuinka:
+Aloitamme uuden projektin, kun haluamme luoda jotain uutta. Koodaajat tekevät tämän jatkuvasti, koska se on tapa oppia, kokeilla uusia ideoita ja löytää ratkaisuja ongelmiin.
 
-```
-Gleam projekti nimeltä "Hei Maailma"
-```
+## Miten tehdä:
 
-```
-moduuli Main
+Luodaan uusi Gleam-projekti nimeltä "hello_gleam" käyttämällä Rebar3: n käynnistyskomentoa. Koodimme näyttää tältä:
 
-heitäHeippa() {
-  io.println("Hei Maailma!")
-  io.println("Tervetuloa Gleamiin!")
-}
+```Gleam
+$ rebar3 new gleam_lib hello_gleam
+$ cd hello_gleam
+$ rebar3 eunit
 ```
 
-*Esimerkkituloste:*
+Suorittamalla yllä olevat komennot luo uuden projektihakemiston "hello_gleam", jossa voit alkaa kehittää Gleam-ohjelmistoasi.
 
-```
-Hei Maailma!
-Tervetuloa Gleamiin!
-```
+## Syvä Sukellus:
 
-## Syventyminen:
+Gleam on suhteellisen uusi kieli, joka on luotu tarjoamaan turvallisempi, tehokkaampi ja nautittavampi tapa kirjoittaa Erlang/OTP-sovelluksia. Aikaisemmin Erlang/OTP-projekteja varten on luotu useita projektiluomistyökaluja, mukaan lukien 'rebar', 'relx' ja 'erlang.mk', mutta 'Rebar3' on nykyään yleisin ja suositelluin. 
 
-*Historiallinen konteksti:*
+'hello_gleam'-esimerkki näyttää, kuinka voit alkaa kehittää Gleam-projekti 'Rebar3':lla. Kun oivalletaan 'Rebar3':n rakenteiden luoma rakenne, voit tästä lähteä toteuttamaan monimutkaisempia sovelluksia ja projekteja.
 
-Gleam on kieli joka on kehitetty Erlang-virtuaalikoneen päälle. Se yhdistää funktionaaliset ja oliopohjaiset ohjelmointityylit ja sen avulla voidaan luoda skaalautuvia ja virhealttiita ohjelmistoja.
+## Katso myös: 
 
-*Vaihtoehdot:*
-
-Jos et halua käyttää Gleamia uuden projektin aloittamiseen, voit myös kokeilla muita ohjelmointikieliä, kuten Python, Java tai JavaScript.
-
-*Toteutus:*
-
-Gleamin virallinen dokumentaatio tarjoaa tarkempia tietoja kielen toteutuksesta ja sen toiminnasta. Voit myös osallistua yhteisön kehitykseen GitHubissa.
-
-## Katso myös:
-
-- Gleamin virallinen dokumentaatio: https://gleam.run/
-- Gleamin GitHub-sivu: https://github.com/gleam-lang/gleam
+- [Gleam-koti](https://gleam.run/)
+- [Gleam GitHub](https://github.com/gleam-lang/gleam)
+- [Rebar3 opas](https://www.rebar3.org/docs/getting-started)
+- [Gleam-oppaat ja esimerkit](https://github.com/gleam-lang/example-projects)

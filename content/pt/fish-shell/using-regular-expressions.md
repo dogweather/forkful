@@ -1,6 +1,6 @@
 ---
 title:                "Usando expressões regulares"
-html_title:           "Fish Shell: Usando expressões regulares"
+html_title:           "Gleam: Usando expressões regulares"
 simple_title:         "Usando expressões regulares"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que é e Por Que Usar Expressões Regulares?
+## O que & Por que?
+Regular Expressions (expressões regulares) são sequências de caracteres que formam um padrão de pesquisa. Programadores usam expressões regulares para manipular texto de forma mais eficiente e simplificar processos de validação de strings.
 
-Expressões regulares são padrões de texto utilizados para procurar e manipular strings de caracteres em programas de computador. Programadores usam expressões regulares para facilitar a busca e substituição de padrões específicos de texto, tornando o processo mais rápido e eficiente.
+## Como fazer:
+Vamos dar uma olhada em alguns exemplos básicos usando o Fish Shell.
 
-Como Fazer:
+- Para verificar se uma string está dentro de outra string, você poderia usar o comando `string match`.
 
 ```Fish Shell
-# Para procurar um padrão específico de texto, use o comando "grep" seguido de um padrão e um arquivo
-grep "padrão" arquivo.txt
-
-# Para substituir um padrão por outro, utilize o comando "sed" com a sintaxe "s/padrão/substituição/"
-sed "s/padrão/substitução/" arquivo.txt
-
-# Para evitar erros de digitação, use a opção "-i" para fazer as mudanças diretamente no arquivo
-sed -i "s/padrão/substituição/" arquivo.txt
+set minha_string "Olá, mundo!"
+string match -r "mundo" $minha_string
 ```
 
-Deep Dive:
+Saída:
+```
+mundo
+```
 
-Expressões regulares tiveram suas origens em ferramentas de busca e edição de texto na década de 1950. Hoje em dia, existem várias alternativas para manipulação de texto, como AWK, Perl e Python, mas expressões regulares ainda são amplamente utilizadas devido à sua simplicidade e eficiência. A linguagem de programação Fish Shell possui suporte nativo para expressões regulares, facilitando o seu uso em tarefas rotineiras de programação.
+- Buscando todas as ocorrências de uma string específica em um arquivo usamos `grep`:
 
-Veja também:
+```Fish Shell
+grep -o 'Mundo' meu_arquivo.txt
+```
 
-- [Documentação oficial da Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial sobre Expressões Regulares na Fish Shell](https://fishshell.com/docs/current/tutorial.html#using-regular-expressions)
+## Aprofundamento
+(1) As expressões regulares têm sua origem na teoria formal de linguagem e automatos da ciência da computação. Elas se tornaram especialmente populares após serem incluídas no utilitário de edição de texto Unix, `ed`, em 1970.  
+(2) Alternativas: Padrões de pesquisa semelhantes podem ser implementados também usando wildcards ou globbing, mas são menos poderosos e flexíveis em comparação com as expressões regulares. 
+(3) Fish Shell usa uma implementação de expressões regulares baseada em POSIX, que é uma das implementações de expressões regulares mais comuns, bastante utilizada em Unix-like systems.
+
+## Veja também
+- Documentação oficial do Fish Shell: https://fishshell.com/docs/current/index.html
+- Guia de expressões regulares: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions
+- Para uma compreensão mais profunda da teoria por trás das expressões regulares, consulte este tutorial do MIT: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-045j-automata-computability-and-complexity-spring-2011/lecture-notes/MIT6_045JS11_lec04.pdf.

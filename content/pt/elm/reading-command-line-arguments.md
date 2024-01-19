@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "Elm: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,29 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O Que & Porquê?
 
-Ler argumentos de linha de comando é uma técnica essencial para os programadores em Elm. Isso permite que o programa obtenha informações do usuário através da linha de comando, tornando-o mais interativo e versátil.
+- Ler argumentos da linha de comando é uma forma com que programas interagem com o ambiente em que eles estão rodando.
+- Programadores fazem isso para modificar o comportamento de um programa, baseando-se em parâmetros de entrada definidos.
 
-## Como:
+## Como fazer:
 
-Usando a função ```Elm CommandLine.builtin```, podemos ler os argumentos da linha de comando e armazená-los em uma lista de strings. Por exemplo:
+Elm é uma linguagem de programação que roda no navegador, não no sistema operacional. Portanto, não tem acesso direto aos argumentos da linha de comando. No entanto, nós podemos simular este processo usando flags ao iniciar um aplicativo Elm.
 
+```elm
+import Browser
+import Html exposing (text)
+import Json.Decode as Decode
+
+main =
+  Browser.sandbox { init = init, update = update, view = view }
+
+type alias Model = 
+    { input : String }
+
+init : Model
+init input =
+  { input = input }
+
+type Msg 
+= DoNothing
+
+update : Msg -> Model -> Model
+update msg model =
+  model 
+
+view : Model -> Html.Html Msg
+view model =
+  text model.input
 ```
-Elm CommandLine.builtin
--- Utilizando o comando "run", execute o programa com argumentos
-run 1 2 3
--- Output: ["1", "2", "3"]
+
+Na linha de comando, você pode iniciar seu aplicativo Elm com argumentos como este:
+
+```shell
+elm make Main.elm --optimize --output=main.js
 ```
 
-## Detalhes:
+## Visão Profunda
 
-Ler argumentos de linha de comando é uma funcionalidade comum em muitas linguagens de programação, incluindo Elm. Essa técnica permite que os programas sejam mais interativos, pois podem receber informações do usuário em tempo de execução. Alternativas para a leitura de argumentos incluem a entrada de dados por meio de um prompt ou através de um arquivo externo.
+- Os argumentos de linha de comando existem desde os primórdios da computação. Isso permitiu que programas fossem versionados e reutilizáveis.
+- Como alternativa aos argumentos da linha de comando, algumas linguagens têm variáveis de ambiente para passar informações para um programa.
+- No Elm, as flags são usadas para simular a leitura de argumentos da linha de comando. Entretanto, essa é uma limitação do Elm por ser executado no navegador e, não no sistema operacional.
 
-A função ```Elm CommandLine.builtin``` usa uma biblioteca conhecida como "System Exec Extra" que fornece uma interface para o sistema de arquivos e processo de entrada/saída em Elm. Isso significa que os argumentos da linha de comando são lidos diretamente do sistema operacional, tornando o processo rápido e eficiente.
+## Veja também
 
-## Veja também:
-
-- Documentação oficial do Elm: https://elm-lang.org/
-- Sistema Exec Extra: https://package.elm-lang.org/packages/elm/core/latest/
-- Tutorial sobre entrada/saída em Elm: https://guide.elm-lang.org/interop/
+- [Documentação oficial do Elm](https://guide.elm-lang.org/)
+- [Fórum Elm para discussões](https://discourse.elm-lang.org/)
+- [StackOverflow Elm para perguntas específicas](https://stackoverflow.com/questions/tagged/elm)

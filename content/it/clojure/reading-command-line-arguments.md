@@ -1,7 +1,7 @@
 ---
-title:                "Leggere gli argomenti dalla riga di comando"
-html_title:           "Clojure: Leggere gli argomenti dalla riga di comando"
-simple_title:         "Leggere gli argomenti dalla riga di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cos'è & Perché?
 
-Leggere gli argomenti dalla riga di comando è una pratica comune che i programmatori utilizzano per interagire con un programma durante l'esecuzione. Questi argomenti possono essere forniti dall'utente e influenzare il comportamento del programma.
+Leggere gli argomenti della riga di comando significa interpretare gli input che un utente fornisce al tuo programma quando lo lancia da una console o terminale. Lo facciamo perché questo apre la strada alla creazione di script o applicazioni più dinamici e interattivi.
 
-## Come:
+## Come fare: Esempi di codice
+
+Supponiamo di voler leggere gli argomenti della linea di comando in Clojure. Ecco un semplice esempio:
 
 ```Clojure
 (defn -main
   [& args]
-  (println "Benvenuto! Gli argomenti che hai passato sono:")
-  (println args))
-  
-```
-Esclusivo alla funzione ```-main``` di Clojure, la variabile ```args``` conterrà una lista di tutti gli argomenti passati dalla riga di comando. Possiamo quindi stamparli a schermo utilizzando la funzione ```println```. Ad esempio, se eseguiamo il programma con gli argomenti "programma Clojure", otterremo l'output:
-
-```
-Benvenuto! Gli argomenti che hai passato sono:
-("programma" "Clojure")
+  (println "Hai fornito gli argomenti seguenti:" args))
 ```
 
-## Approfondimento:
+E quando lo lanci fornendo dei parametri, vedrai qualcosa di simile nell'output:
 
-L'utilizzo degli argomenti dalla riga di comando è stato introdotto negli anni '70 con la creazione dei primi sistemi operativi a linea di comando. Oggi è ancora una pratica comune, ma ci sono alternative come l'utilizzo di variabili d'ambiente o la lettura da un file di configurazione.
+```Shell
+$ lein run arg1 arg2 arg3
+Hai fornito gli argomenti seguenti: (arg1 arg2 arg3)
+```
 
-Per implementare la lettura degli argomenti dalla riga di comando, Clojure utilizza la funzione ```& args``` che combina automaticamente tutti gli argomenti passati in una lista.
+## Approfondiamo
 
-## Vedi anche:
+Tradizionalmente, in linguaggi come C o Perl, la lettura degli argomenti della riga di comando avviene tramite l'array argv e l'intero argc. Clojure, essendo un linguaggio funzionale moderno, offre un'implementazione più pulita e intuitiva.
 
-- [Documentazione ufficiale di Clojure sulla lettura degli argomenti dalla riga di comando](https://clojure.org/reference/evaluation#_command_line_args)
+Un'alternativa consisterebbe nell’utilizzare librerie esterne, come tools.cli, che forniscono funzioni di parsing più elaborate.
+
+Riguardo i dettagli di implementazione, `-main` è il punto di ingresso per i programmi basati su Clojure. Gli argomenti della riga di comando vengono passati come una lista alla funzione `-main`.
+
+## Vedi Anche
+
+1. Documentazione ufficiale di Clojure: [https://clojure.org/](https://clojure.org/)
+2. La libreria tools.cli per un parsing avanzato degli argomenti della riga di comando: [https://github.com/clojure/tools.cli](https://github.com/clojure/tools.cli)
+3. Articolo di Stack Overflow su Clojure e argomenti della riga di comando: [https://stackoverflow.com/questions/2352020/clojure-how-do-i-get-the-un-evaluated-command-line-arguments](https://stackoverflow.com/questions/2352020/clojure-how-do-i-get-the-un-evaluated-command-line-arguments)

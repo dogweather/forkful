@@ -1,7 +1,7 @@
 ---
-title:                "Impression des sorties de débogage"
-html_title:           "TypeScript: Impression des sorties de débogage"
-simple_title:         "Impression des sorties de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le programmer?
-L'impression du débogage est une pratique courante chez les programmeurs pour afficher des informations utiles sur l'exécution d'un programme pendant le processus de développement. Cela peut aider à identifier les erreurs, à suivre le flux d'exécution et à comprendre le comportement du code.
+## Quoi & Pourquoi ?
+L'impression de debug est une méthode utilisée par les programmeurs pour suivre l'exécution de leur code. C'est une technique précieuse pour détecter et résoudre les bugs dans le code, voir l'état des variables à un instant précis et comprendre le flux du programme.
 
-## Comment faire:
-Voici un exemple en TypeScript pour afficher "Hello World" en utilisant la fonction *console.log* :
+## Comment faire :
+En TypeScript, on utilise surtout `console.log()` pour imprimer le debug. Voici quelques exemples de base:
+
 ```TypeScript
-console.log("Hello World");
+let nom: string = "Pierre";
+console.log(nom); // Sortie: Pierre
+
+let age: number = 35;
+console.log(`J'ai ${age} ans.`); // Sortie: J'ai 35 ans.
 ```
 
-La sortie de ce code sera: `Hello World`.
+Vous pouvez aussi imprimer les objets et les tableaux comme ceci :
 
-Si vous voulez afficher des variables ou des valeurs, vous pouvez utiliser des expressions de modèle de chaîne de caractères comme ceci:
 ```TypeScript
-let name = "John";
-console.log(`Bonjour ${name}, comment vas-tu?`);
+let tableau: number[] = [1, 2, 3];
+console.log(tableau); // Sortie : [1, 2, 3]
+
+let objet: { [key: string]: any; } = { "nom": "Marie", "age": 28 };
+console.log(objet); // Sortie : { "nom": "Marie", "age": 28 }
 ```
 
-La sortie sera: `Bonjour John, comment vas-tu?`.
+## Approfondissement
+Historiquement, le debug a été introduit par les programmeurs d'assemblage pour suivre leur code linéaire. Avec l'évolution des langages de programmation, les méthodes de debug sont devenues plus sophistiquées.
 
-## Plongée en profondeur:
-L'impression du débogage existe depuis les débuts de la programmation. Avant l'existence de l'interface graphique, c'était le seul moyen pour un programmeur de suivre l'exécution de son code. Avec l'avènement des outils de débogage modernes, l'impression du débogage est devenue moins courante, mais reste utile dans certaines situations.
+Il existe d'autre méthodes pour le debug en TypeScript comme utiliser un débogueur TypeScript intégré dans un IDE comme Visual Studio Code, WebStorm etc. Vous pouvez également utiliser des outils externes pour le debug de code Node.js comme `node-inspect` ou `iron-node`.
 
-Il existe également d'autres méthodes pour le débogage telles que l'utilisation de breakpoints ou d'outils de profilage, mais l'impression du débogage continue d'être un moyen rapide et facile pour afficher des informations sur l'exécution du code.
+La méthode `console.log()` est une partie de l'interface de console Web API présente dans le JavaScript. Elle est supportée par tous les navigateurs modernes et a été adaptée pour Node.js. C'est pourquoi il est recommandé d'utiliser cette méthode pour le debug du code TypeScript.
 
-L'implémentation de l'impression du débogage peut varier selon les langages de programmation. En TypeScript, l'utilisation de la fonction *console.log* fournie par JavaScript est le moyen le plus courant de le faire.
+## Voir Aussi
+Pour plus d'informations et des exemples de code sur le debug en TypeScript, consultez ces ressources :
 
-## Voir aussi:
-- [Documentation officielle de TypeScript sur l'impression du débogage](https://www.typescriptlang.org/docs/handbook/basic-types.html#basic-types)
-- [Article sur les différentes méthodes de débogage en informatique](https://en.wikipedia.org/wiki/Debugging#Debugging_methods)
+1. [Documentation de TypeScript](https://www.typescriptlang.org/docs/)
+2. [Debugging TypeScript in VS Code](https://code.visualstudio.com/docs/typescript/typescript-debugging)
+3. [Debugging Node.js with TypeScript in VS Code](https://medium.com/@david.garcia_42524/debugging-typescript-in-vs-code-94e8b4fd769)

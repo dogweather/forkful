@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "Arduino: Analizando html"
-simple_title:         "Analizando html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,41 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué? 
+## ¿Qué y Por Qué?
 
-Parsing HTML es el proceso de analizar y estructurar el código HTML de una página web para poder manipularlo y extraer información específica. Los programadores usan este proceso para automatizar tareas como extraer datos de una página web o crear contenido dinámico.
+Interpretar HTML se refiere a tomar una cadena de texto HTML y convertirla en un objeto o estructura de datos manipulable. Los programadores necesitan interpretar HTML para interactuar y manipular páginas web de forma automática, a veces para extraer datos o para pruebas automatizadas.
 
-## Cómo hacerlo: 
+## ¿Cómo se hace?
 
-Para analizar y parsear HTML en Arduino, podemos utilizar la librería HTMLino. A continuación se muestra un ejemplo de código que extrae el título de una página web y lo imprime en el monitor serial:
+Aquí tienes un ejemplo básico de cómo puedes interpretar HTML utilizando la biblioteca Arduino HttpClient para solicitar páginas HTML y ArduinoJson para interpretar los datos.
 
-```
-#include <HTMLino.h>
+```Arduino
+#include <HttpClient.h>
+#include <ArduinoJson.h>
 
-HTMLNode* root;
+HttpClient client;
+String url = "http://miweb.com";
 
-void setup() {
-  Serial.begin(9600);
-  HTMLino.get("https://www.ejemplo.com", root); // URL de la página a analizar
+int httpCode = client.get(url);
+if(httpCode) {
+  String payload = client.getString();
+  DynamicJsonBuffer jsonBuffer;
+  JsonObject& root = jsonBuffer.parseObject(payload);
+  
+  const char* titulo = root["titulo"];
+  const char* contenido = root["contenido"];
+  
+  Serial.println(titulo);
+  Serial.println(contenido);
 }
-
-void loop() {
-  if(HTMLino.update(root)){
-    Serial.println(root->readInner("title")); // extrae el título de la página y lo imprime en el monitor serial
-  }
-}
 ```
 
-La salida en el monitor serial sería algo como "Ejemplo de página web".
+El resultado será el título y el contenido de la página web solicitada.
 
-## Profundizando:
+## Mergullo Profundo
 
-La necesidad de analizar y parsear HTML surgió con el auge de la web en la década de 1990. En aquel entonces, se requería procesar manualmente el código HTML para extraer información, lo que era un proceso tedioso y propenso a errores. La alternativa a utilizar una librería como HTMLino sería escribir nuestro propio código para analizar y estructurar el código HTML, lo que es mucho más complejo y requiere un conocimiento avanzado de programación.
+El análisis de HTML ha sido una parte integral de la programación desde los primeros días de la web. Los primeros intentos de interpretar HTML incluyen la utilización de complejas expresiones regulares.
 
-La librería HTMLino es compatible con HTML 3.2, 4.0 y 5.0, lo que nos permite analizar páginas web modernas sin problemas. Además, también permite manipular el código HTML, por ejemplo, para agregar o eliminar elementos.
+Hoy en día, existen numerosas bibliotecas para interpretar HTML, como BeautifulSoup para Python o JSoup para Java. Arduino no cuenta con una biblioteca dedicada para este propósito, por lo que hacemos uso de HttpClient y ArduinoJson para obtener y procesar los datos.
 
-## Ver también:
+Es importante tener en cuenta que la interpretación de HTML puede variar dependiendo de la estructura de la página web. Algunas páginas usan AJAX para cargar contenido dinámico que podría no ser visible al realizar una solicitud get simple.
 
-- [Documentación de la librería HTMLino](https://arduinojson.org/)
-- [Tutorial de HTMLino](https://randomnerdtutorials.com/parsing-html-arduino-esp8266-esp-32/)
-- [Ejemplos de código con HTMLino](https://github.com/ekolodenko/HTMLino/tree/master/examples)
+## Ver También
+
+Si estás interesado en aprender más sobre la interpretación de HTML o buscar otras soluciones, consulta las siguientes fuentes:
+- BeautifulSoup para Python: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- JSoup para Java: https://jsoup.org/
+- HttpClient para Arduino: https://www.arduino.cc/en/Reference/HttpClient
+- ArduinoJson para JSON en Arduino: https://arduinojson.org/

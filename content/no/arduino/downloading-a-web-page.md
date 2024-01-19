@@ -1,6 +1,6 @@
 ---
 title:                "Laste ned en nettside"
-html_title:           "Arduino: Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
 simple_title:         "Laste ned en nettside"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,83 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Nedlasting av en nettside betyr å hente informasjon fra en nettside og bruke den i koden din. Dette er nyttig for å få tilgang til og behandle data fra eksterne kilder. 
+## Hva & Hvorfor?
 
-Programmerere gjør dette for å få tilgang til og behandle data fra nettsider, som kan brukes til å lage interaktive prosjekter eller hente nyttig informasjon for å forbedre deres kodingsarbeid. 
+Å laste ned en webside innebærer å motta data fra en nettserver og lagre den i en lokal fil. Programmerere gjør dette for å hente og behandle data fra weben i deres prosjekter.
 
-# Hvordan:
-Eksempel på kode for å laste ned en nettside og skrive ut innholdet:
+## Slik Gjør Du:
+
+Her er et enkelt eksempel på hvordan du kan laste ned en webside med Ethernet-biblioteket i Arduino.
+
 ```Arduino
-#include <WiFi.h>
-#include <WiFiClient.h>
-#include <WiFiMulti.h>
-#include <HTTPClient.h>
-
-// Vær sikker på å endre SSID og passord til ditt eget nettverk
-const char* ssid = "ditt_wifi_navn";
-const char* password = "ditt_wifi_passord";
-
-WiFiMulti wifiMulti;
-WiFiClient client;
-HTTPClient http;
+#include <Ethernet.h>
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
 
-  // Koble til Wi-Fi
-  wifiMulti.addAP(ssid, password);
-  Serial.println("Kobler til Wi-Fi...");
-  while (wifiMulti.run() != WL_CONNECTED) {
-    Serial.print(".");
-    delay(500);
+  // Oppstart Ethernet-klienten
+  if (Ethernet.begin(mac) == 0) {
+    Serial.println("Konfigurasjon mislyktes");
+    while (true);
   }
-  Serial.println();
-  Serial.println("Koblet til Wi-Fi!");
+  delay(1000);
 
-  // Koble til nettsiden
-  http.begin(client, "http://nettsted.no"); // Endre URL-en til nettsiden du vil laste ned
-  int httpCode = http.GET();
-  if (httpCode > 0) {
-    Serial.println("Nettside lastet ned:");
-    String payload = http.getString();
-    Serial.println(payload);
+  // Koble til serveren
+  if (client.connect(server, 80)) {
+    client.println("GET / HTTP/1.1");
+    client.println("Host: www.example.com");
+    client.println("Connection: close");
+    client.println();
   }
-  http.end();
 }
 
 void loop() {
-  // Din kode her
+  // Skriv ut responsen fra serveren
+  if (client.available()) {
+    char c = client.read();
+    Serial.print(c);
+  }
 }
 ```
 
-Eksempel på utdata fra koden ovenfor:
-```
-Kobler til Wi-Fi...
-Koblet til Wi-Fi!
-Nettside lastet ned:
-<!DOCTYPE html>
-<html>
-<head>
-<title>Min nettside</title>
-</head>
-<body>
-<h1>Velkommen til min nettside!</h1>
-<p>Her finner du nyttig informasjon om programmering og Arduino.</p>
-</body>
-</html>
-```
+## Dypdykk
 
-# Nærere Undersøk:
-## Historisk Kontekst:
-Nedlasting av nettsider har blitt mye enklere med utviklingen av Wi-Fi-moduler og biblioteker som støtter HTTP-tilkoblinger. Tidligere måtte programmerere implementere komplekse protokoller som TCP eller UDP for å få tilgang til nettsider.
+Laste ned websider har blitt en vanlig praksis siden webens begynnelse. Tidlig på 1990-tallet ble det vanlig å bruke protokoller som HTTP til å anmode data fra servere og lagre disse dataene lokalt.
 
-## Alternativer:
-I stedet for å laste ned en hel nettside, kan du også bruke API-er for å få tilgang til spesifikk data på nettsider. Dette kan være mer effektivt og kreve mindre dataoverføring.
+Som et alternativ til det innebygde Ethernet-biblioteket, kan du også bruke andre nettverksbiblioteker som WiFi101, WiFiNINA eller Ethernet2 avhengig av hardwaren din.
 
-## Implementeringsdetaljer:
-Denne koden bruker WiFi-, WiFiClient- og HTTPClient-biblioteker for å koble til og laste ned nettsiden. Det er viktig å sørge for at bibliotekene er riktig installert og inkludert i koden din for å unngå feil.
+Detaljer rundt implementeringsmetodene er varierte. Kodeeksempelet over bruker `GET`-metoden til å hente hovedsiden på webserveren ved hjelp av HTTP/1.1-protokollen. Den bruker 'client.available()' til å sjekke for tilgjengelige bytes å lese og viser deretter responsen.
 
-# Se Også:
-- [WiFi Biblioteket for Arduino](https://www.arduino.cc/en/Reference/WiFi)
-- [HTTP Biblioteket for Arduino](https://arduinogetstarted.com/tutorials/arduino-http-client-library)
+## Se Mer:
+
+- [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
+- [HTTP](https://developer.mozilla.org/no/docs/Web/HTTP)
+- [Protokoller](https://www.sololearn.com/Course/Networking/))

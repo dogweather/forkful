@@ -1,7 +1,7 @@
 ---
-title:                "「ウェブページのダウンロード」"
-html_title:           "Java: 「ウェブページのダウンロード」"
-simple_title:         "「ウェブページのダウンロード」"
+title:                "ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
+simple_title:         "ウェブページのダウンロード"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,56 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が & 何故？
+タイトル: プログラミング：JavaによるWebページのダウンロード方法 
 
-ウェブページをダウンロードするとは何かを説明します。プログラマーがそれを行う理由を説明します。
- 
-ウェブページをダウンロードするとは、インターネット上にあるページのコンテンツをローカルのコンピューターにコピーすることです。 プログラマーは、このようなタスクを自動化するためにウェブページをダウンロードします。 
+## 何となぜ？
+Webページのダウンロードとは、通常、ウェブサイトの特定のページのHTMLをローカルストレージに保存することを指します。これはプログラマがウェブスクレイピング、ウェブコンテンツの分析、又はオフラインの参照のために行います。
 
-## 方法：
+## どうやるの？
+以下のJavaコードは、URLからデータを取得し、そのコンテンツを出力します。
 
-次の ```Java ... ``` コードブロックで、コード例と出力例を示します。 
+```Java
+import java.net.URL;
+import java.net.URLConnection;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-```Java 
-// URL オブジェクトの作成
-URL url = new URL("https://www.examplesite.com/");
-
-// バッファリングされた文字入力ストリームの作成
-BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
-
-// 1 行ずつ文字列を読み込む
-String line;
-while ((line = br.readLine()) != null) {
-   // 出力
-   System.out.println(line);
+public class Main {
+    public static void main(String[] args) throws Exception {
+        URL url = new URL("http://www.example.com");
+        URLConnection conn = url.openConnection();
+        
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader(conn.getInputStream()));
+        
+        String inputLine;
+        
+        while ((inputLine = br.readLine()) != null)
+            System.out.println(inputLine);
+        
+        br.close();
+    }
 }
-// 接続を閉じる
-br.close();
 ```
 
-出力例:
-```
-<html>
-<head>
-<title>Example Website</title>
-</head>
-<body>
-<h1>Welcome to Example Website!</h1>
-<p>Thank you for visiting our website.</p>
-</body>
-</html>
-```
+出力は試してみてください。provided URLのHTMLが表示されるはずです。
 
-## もっと詳しく：
+## 更に深く
+**(1)歴史的な背景**:
+Javaはもともと1995年にウェブアプリケーションの作成のために設計されました。それ以来、そのネットワーキング機能は非常に進化し、様々なウェブ関連のタスクに対応しています。
 
-ウェブページのダウンロードは、ウェブスクレイピングの一例です。 これは、ウェブサイトから情報を抽出するプロセスを指します。 ウェブスクレイピングには、JavaScript の実行や HTML のパースなどが必要になることがあります。
+**(2)代替策**:
+他のプログラミング言語、特にPythonやPHPはウェブスクレイピングとWebページのダウンロードに大変強力で多機能なライブラリを持っています。それにも関わらず、Javaの強力なオブジェクト指向機能と広いユーザベースが、多くの場合、その選択の理由となります。
 
-代替方法として、Java では HTTP クライアントライブラリを使用することもできます。 これにより、より高度な処理やログインの自動化などが可能になります。
+**(3)実装の詳細**:
+このコードはjava.netパッケージのクラスを使用しています。このパッケージはJavaの核となる部分であり、ネットワーキング機構の基本的なクラスとインターフェースを提供しています。
 
-ウェブページのダウンロードには、Java の URL クラスや HttpURLConnection クラスなどを使用することができます。 これらのクラスを使用すると、ウェブページをダウンロードする際に必要なヘッダーやクエリパラメータを設定できます。
-
-## 関連リンク：
-
-- [Java での URL ダウンロード方法](https://www.javatpoint.com/how-to-download-url-in-java)
-- [ウェブスクレイピングについての Javatpoint のチュートリアル](https://www.javatpoint.com/web-scraping-in-java)
-- [Apache HttpClient ライブラリのドキュメント](https://hc.apache.org/httpcomponents-client-ga/)
+## 参照リンク
+- Oracleの公式Javaドキュメント: [ここをクリック](https://docs.oracle.com/en/java/)
+- Javaによるウェブスクレイピングについてのトピック: [ここをクリック](https://www.geeksforgeeks.org/web-scraping-with-java/)
+- Javaによるネットワーキングに関する詳細なチュートリアル: [ここをクリック](https://www.tutorialspoint.com/java/java_networking.htm)

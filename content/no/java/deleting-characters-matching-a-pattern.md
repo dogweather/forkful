@@ -1,6 +1,6 @@
 ---
 title:                "Slette tegn som samsvarer med et mønster"
-html_title:           "Java: Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
 simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Java"
 category:             "Java"
@@ -11,38 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sletting av tegn som matcher et mønster er en vanlig metode innen programmering for å fjerne uønskede tegn fra en tekststreng. Dette kan være nyttig for å filtrere ut uønsket informasjon eller for å formatere en tekst på en spesifikk måte. Det er en effektiv måte å manipulere tekst på og er derfor populært blant programmere.
+Slette tegn som passer til et mønster, betyr at du fjerner bestemte symboler fra en streng ved hjelp av et bestemt filtreringsmønster. Programmerere gjør dette for å rense eller formatere data.
 
-## Hvordan:
-Det finnes ulike måter å implementere sletting av tegn basert på et mønster i Java. Et eksempel er ved å bruke metoden `replaceAll()` som tar inn et regulært uttrykk og erstatter alle tegn som matcher dette uttrykket med et annet tegn eller en tom streng. Se eksempelet nedenfor:
-
-```Java
-String tekst = "Hei, dette er en tekst med tall som jeg ønsker å fjerne: 1234567";
-String nyTekst = tekst.replaceAll("\\d", "");
-System.out.println(nyTekst);
-```
-**Output:** Hei, dette er en tekst med tall som jeg ønsker å fjerne:
-
-Her bruker vi regulære uttrykket `\d`, som matcher alle tall i tekststrengen vår, og erstatter dem med en tom streng. Dette resulterer i at alle tallene blir fjernet fra teksten.
-
-En annen metode er å bruke `Pattern` og `Matcher` klassene. Dette gir mer kontroll over hvilke tegn som skal fjernes og hvordan mønsteret skal utformes. Se nedenfor for et eksempel:
+## Slik gjør du:
+Java tilbyr `String.replaceAll(regex, replacement)` funksjonen for å slette tegn som passer til et mønster. Her er et enkelt eksempel:
 
 ```Java
-String tekst = "Denne teksten inneholder både tall og symboler! :) #hello";
-Pattern pattern = Pattern.compile("[^a-zA-Z\\s]");
-Matcher matcher = pattern.matcher(tekst);
-String renTekst = matcher.replaceAll("");
-System.out.println(renTekst);
+public class Main {
+    public static void main(String[] args) {
+        String txt = "Hei verden123!";
+
+        // Sletter alle tall i teksten
+        String cleanTxt = txt.replaceAll("\\d", "");
+
+        System.out.println(cleanTxt);
+    }
+}
 ```
-**Output:** Denne teksten inneholder bde tall og symboler hello
 
-Her bruker vi et regulært uttrykk som matcher alle tegn som ikke er bokstaver eller mellomrom. Disse tegnene erstattes så med en tom streng.
+Når du kjører programmet, vil det returnere følgende utskrift:
 
-## Deep Dive:
-Sletting av tegn basert på et mønster har vært en del av programmering i lang tid og er en viktig funksjon innen automatisering og tekstbehandling. I tillegg til Java, finnes det også alternative metoder for å håndtere tekstmanipulasjon i andre programmeringsspråk som for eksempel Python og C++. Ulike programmeringsmiljøer kan også gi ulike funksjonaliteter for å håndtere sletting av tegn. Det er derfor viktig å være bevisst på de forskjellige metodene som finnes og velge den som passer best for det spesifikke prosjektet.
+```Java
+Hei verden!
+```
 
-Når det gjelder implementasjonsdetaljer i Java, kan det være lurt å bruke `StringBuilder` i stedet for `String` når man skal gjøre større tekstmanipulasjoner. Dette kan være mer effektivt og har mindre overhead. Det kan også være lurt å utføre slettingen i en egen tråd for mer effektivitet i større programmer.
+## Dyp Dykk
+Først og fremst, hele idéen om å slette tegn basert på et mønster stammer fra regulære uttrykk (regex), som er viktig i strengmanipulasjoner. Regulære uttrykk er kraftige, men er kanskje ikke alltid det mest effektive, spesielt i Java. 
 
-## Se også:
-- [Java Pattern og Matcher dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
-- [Java StringBuilder dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html)
+Alternativt kan du bruke `StringBuilder`-klassen i Java, som er raskere når du har et stort datasett å manipulere. Her er et eksempel:
+
+```Java
+public class Main {
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder("Hei verden123!");
+    
+        for(int i = 0; i < sb.length(); i++){
+            // hvis tegnet på indeks i er et tall, slett det.
+            if(Character.isDigit(sb.charAt(i))){
+                sb.deleteCharAt(i);
+                i--; // justerer indeksen etter karakteren er slettet
+            }
+        }
+    
+        System.out.println(sb.toString());
+    }
+}
+``` 
+
+Når du kjører denne koden, vil du også få samme utskrift som "Hei verden!".
+
+Begge metodene kan være gunstig avhengig av dine behov og datatyper.
+
+## Se også
+For mer informasjon om Java String-klassen, se [Java String-dokumentasjonen](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html).
+
+For ytterligere detaljer og alternativer for å slette tegn fra en streng i Java, kan du besøke følgende [Stack Overflow tråd](https://stackoverflow.com/questions/5724644/remove-character-from-a-string-at-a-certain-position-java). 
+
+For informasjon om Java StringBuilder-klassen, kan du følge [den offisielle Oracle-dokumentasjonen](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/StringBuilder.html).

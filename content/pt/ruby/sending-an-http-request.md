@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "Ruby: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,51 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que é e por que fazer:
+## O que é e por quê?
 
-Enviar uma solicitação HTTP (Hypertext Transfer Protocol) é essencialmente enviar uma mensagem para um servidor de hospedagem web. Os programadores fazem isso para obter informações ou executar ações em um site ou aplicativo, como acessar dados, enviar formulários ou receber respostas de APIs.
+Enviar um pedido HTTP é basicamente pedir a um servidor web informações ou ações. Os programadores fazem isso para interagir com APIs, recuperar informações, enviar dados, entre outras coisas.
 
-# Como fazer:
+## Como fazer:
 
-```ruby
-require 'net/http' # importa a biblioteca para enviar solicitações HTTP
-uri = URI('https://www.example.com') # define a URI (Uniform Resource Identifier) do site ou API que você deseja acessar
-response = Net::HTTP.get_response(uri) # envia a solicitação e espera pela resposta do servidor
-puts response.body # exibe o conteúdo da resposta do servidor
+Vamos usar a gem `net / http` para isso. Aqui está um exemplo de como enviar um GET request.
+
+```Ruby
+require 'net/http'
+require 'uri'
+
+uri = URI.parse("http://example.com")
+response = Net::HTTP.get_response(uri)
+
+puts response.body
 ```
 
-Output:
+Este script se conectará ao "http://example.com" e imprimirá a resposta.
 
+Para enviar uma solicitação POST, podemos fazer:
+
+```Ruby
+require 'net/http'
+require 'uri'
+
+uri = URI.parse("http://example.com")
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Post.new(uri.request_uri)
+response = http.request(request)
+
+puts response.body
 ```
-<!DOCTYPE><html>
-<head>
-    <title>Example Domain</title> <!-- resposta do servidor -->
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-    /* ... */
-    </style> 
-</head>
 
-<!--
-    Solicitação HTTP pode ser usada para acessar qualquer tipo de conteúdo em um site ou aplicativo, como HTML, JSON e imagens, 
-    além de poder executar ações específicas, como fazer POST em um formulário ou autenticar um usuário.
--->
+Este exemplo enviará uma solicitação POST a "http://example.com" e imprimirá a resposta.
 
-# Profundando:
+## Mergulho Profundo
 
-1. Contexto histórico:
-O HTTP foi proposto em 1989 por Tim Berners-Lee, o pai da World Wide Web. É um protocolo universal e independente de plataforma para comunicação entre servidores e clientes, facilitando a troca de dados na internet.
+O protocolo HTTP foi desenvolvido no início da internet para permitir a comunicação entre clientes e servidores. A biblioteca `net / http` do Ruby, que estamos usando neste exemplo, está na linguagem desde o início.
 
-2. Alternativas:
-Além do Net::HTTP, que vem incluído na biblioteca padrão do Ruby, existem outras bibliotecas, como HTTParty e Faraday, que oferecem recursos mais avançados para enviar solicitações e receber respostas HTTP.
+Existem outras gems que você pode usar para enviar solicitações HTTP em Ruby, como 'httparty' e 'faraday'. Eles fornecem interfaces mais amigáveis e são mais fáceis de usar em alguns casos.
 
-3. Detalhes de implementação:
-A biblioteca Net::HTTP é construída em torno de uma classe homônima, que possui métodos para configurar a solicitação, adicionar cabeçalhos, autenticar com HTTP Basic ou Digest, entre outros recursos. Além disso, ela também usa um objeto Net::HTTPResponse para armazenar a resposta do servidor.
+Por último, ao enviar uma solicitação HTTP, é importante lembrar de lidar com possíveis erros. Isso pode incluir verificar o status da resposta e implementar timeouts.
 
-# Veja também:
+## Veja também
 
-- [Ruby documentação sobre Net::HTTP](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
-- [HTTParty](https://github.com/jnunemaker/httparty)
-- [Faraday](https://github.com/lostisland/faraday)
+- Documentação 'net / http' do Ruby: https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html
+- 'httparty': https://github.com/jnunemaker/httparty
+- 'faraday': https://github.com/lostisland/faraday

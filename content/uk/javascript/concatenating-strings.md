@@ -1,7 +1,7 @@
 ---
-title:                "З'єднання рядків"
-html_title:           "Javascript: З'єднання рядків"
-simple_title:         "З'єднання рядків"
+title:                "Конкатенація рядків"
+html_title:           "PHP: Конкатенація рядків"
+simple_title:         "Конкатенація рядків"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і для чого?
+## Що і чому?
+Об'єднання рядків - це процес злиття двох або більше рядків у один. Програмісти роблять це для гнучкого створення складних рядків без потреби в перезаписуванні чи дублюванні коду.
 
-З'єднання рядків є важливою функцією у багатьох програмах на Javascript. Воно дозволяє поєднувати різні фрагменти тексту для створення одного великого рядка. Це використовується для побудови повідомлень, конкатенації URL-адрес або створення складніших рядків для виведення на екран.
+## Як це робити:
+Нижче наведено приклади коду на JavaScript і вихідних даних.
+```Javascript
+// Method 1: Using '+' operator
+let string1 = "Привіт, ";
+let string2 = "Світ!";
+let greeting = string1 + string2;
+console.log(greeting); // "Привіт, Світ!"
 
-## Як це зробити?
-
-Для з'єднання рядків у Javascript використовується спеціальний оператор ```+```. Ось приклад коду:
-
-```javascript
-let firstName = "Олег";
-let lastName = "Шевчук";
-
-console.log(firstName + " " + lastName); // Виведе: Олег Шевчук
+// Method 2: Using concat() method
+let string3 = "Насолоджуйся, ";
+let string4 = "програмування!";
+let message2 = string3.concat(string4);
+console.log(message2); // "Насолоджуйся, програмування!"
 ```
 
-У цьому прикладі ми використовуємо оператор ```+``` для з'єднання двох рядків - значення змінних `firstName` і `lastName` - разом з пробілом між ними.
+## Поглиблений матеріал
+Метод об'єднання рядків існує в JavaScript з його задуму, оскільки він є фундаментальною функцією в більшості мов програмування. Альтернативою безпосередньому чи методу `concat()` є метод `join()`, який може бути корисним для об'єднання великої кількості рядків. Об'єднання рядків в JavaScript відбувається за допомогою бінарного `+` оператора або за допомогою методу об'єкта `String.concat()`, що бере два рядки і повертає новий, що є їхнім поєднанням.
 
-## Глибока підготовка
+```Javascript
+// Using join() method
+let stringsArray = ["Привіт, ", "Світ!", " Насолоджуйся, ", "програмування!"];
+let message3 = stringsArray.join("");
+console.log(message3); // "Привіт, Світ! Насолоджуйся, програмування!"
+```
 
-Історично оператор ```+``` використовувався тільки для обчислення арифметичних виразів, але з появою Javascript став доступний також для з'єднання рядків. Існують також інші способи з'єднання рядків, наприклад, метод `.concat()`, але оператор ```+``` є більш коротким та полегшує читання коду.
-
-Щоб уникнути помилок при з'єднанні чисел та рядків, рекомендується використовувати метод `.toString()` для перетворення чисел у рядкового типу даних перед їх з'єднанням.
-
-## Дивись також
-
-[MDN - З'єднання рядків у Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-
-[MDN - Оператор з'єднання (+)](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Operators/Addition)
+## Дивіться також:
+1. [Mozilla Developer Network (MDN) - String.prototype.concat()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+2. [Mozilla Developer Network (MDN) - Array.prototype.join()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+3. [JavaScript Info - Basic string operations](https://javascript.info/string#concatenation-assignment-operator)

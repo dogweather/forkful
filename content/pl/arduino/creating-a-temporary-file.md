@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "Arduino: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,29 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Tworzenie tymczasowego pliku to jest ważna część programowania, ponieważ umożliwia przechowywanie krótkotrwałych danych lub informacji, które nie są potrzebne dłużej niż przez określony okres czasu. Może również służyć do testowania różnych funkcji w kodzie w sposób niezależny od innych części programu.
+## Co i dlaczego?
+Tworzenie tymczasowego pliku polega na stworzeniu pliku, który jest używany tymczasowo i zazwyczaj usuwany po zakończeniu jego użycia. Programiści robią to, by przechować dane, które są potrzebne tylko przez krótki czas i nie ma potrzeby zapisywać ich trwale.
 
 ## Jak to zrobić:
-```
-Arduino
-{
-    int tempFile = 2;
-    // Stwórz tymczasowy plik o nazwie "tempFile"
-    
-    tempFile = 5;
-    // Przypisz wartość 5 do zmiennej "tempFile"
-    
-    Serial.print(tempFile);
-    // Wyświetl wartość tymczasowego pliku w monitorze szeregowym
+Środowisko Arduino nie obsługuje bezpośrednio tworzenia plików tymczasowych, ale możemy to osiągnąć za pomocą karty SD i biblioteki SD. 
+
+```Arduino
+#include <SD.h>
+
+File tempFile;
+
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("Nieudane inicjalizowanie karty SD");
+    return;
+  }
+  
+  tempFile = SD.open("temp.txt", FILE_WRITE);
+  
+  if (tempFile) {
+    tempFile.println("To jest plik tymczasowy");
+    tempFile.close();
+    Serial.println("Plik tymczasowy został stworzony");
+  }
+  else {
+    Serial.println("Błąd przy tworzeniu pliku tymczasowego");
+  }
+}
+
+void loop() {
+  // Nie robimy nic w pętli głównej
 }
 ```
-Output: 5
 
-## Głębsze Zoazbadanie:
-Tworzenie tymczasowego pliku jest praktykowane od dawna w świecie programowania i wykorzystywane w wielu językach programowania. Alternatywnie, można również użyć funkcji "tempfile" w języku C++, która automatycznie generuje unikalną nazwę dla tymczasowego pliku. Implementacja w Arduino jest prosta i wymaga jedynie przypisania wartości do zmiennej, która będzie pełnić rolę tymczasowego pliku.
+Po uruchomieniu kodu, powinieneś zobaczyć na monitorze szeregówkowym informację o utworzeniu pliku.
 
-## Zobacz również:
-- Dokumentacja Arduino: https://www.arduino.cc/reference/en/language/variables/file-handling/
-- Poradnik na temat tworzenia tymczasowych plików w języku C++: https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm
-- Inne przydatne informacje na temat programowania w Arduino: https://www.robocore.net/tutorials/arduino.html
+## Dogłębne spojrzenie:
+Nie ma konkretnej instancji w historii, gdy pojawiło się tworzenie plików tymczasowych w Arduino. Jest to koncept, który pochodzi z bardziej zaawansowanych systemów operacyjnych, ale nadal może być użyteczny w Arduino ze względu na ograniczone zasoby. 
+
+Alternatywą dla tworzenia tymczasowego pliku na karcie SD mogłoby być użycie EEPROM do przechowywania tymczasowych danych, chociaż jest ona bardziej odpowiednia do przechowywania małej ilości danych, które muszą przetrwać reset.
+
+Kiedy tworzymy plik tymczasowy na karcie SD, dane są zapisywane na karcie jako bloki, co oznacza, że nawet małe zmiany mogą spowodować zapisanie całego bloku.
+
+## Zobacz też:
+- [Biblioteka SD w Arduino](https://www.arduino.cc/en/reference/SD)
+- [Przechowywanie danych na karcie SD](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite)
+- [Arduino - EEPROM](https://www.arduino.cc/en/Reference/EEPROM)

@@ -10,58 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Quoi & Pourquoi?
+Calculer une date dans le futur ou le passé, c'est simplement déterminer une date qui est soit avant soit après une date donnée. Les programmeurs le font souvent pour des besoins de suivi de tâches, de planification et d’analyse historique.
 
-Calculer une date dans le futur ou le passé consiste à utiliser un algorithme pour trouver la date qui correspond à un certain nombre de jours avant ou après une date donnée. Les programmeurs utilisent souvent cette technique pour des tâches telles que la planification de rendez-vous, le calcul de délais ou le traitement de données chronologiques.
-
-## Comment faire:
-
-Voici un exemple de code en Rust qui utilise la bibliothèque standard pour calculer une date dans le futur:
+## Comment faire :
+Voici un exemple basique de calcul d'une date dans le futur dans Rust:
 
 ```Rust
-// Importer la bibliothèque "chrono"
-use chrono::{NaiveDate, Duration};
+extern crate chrono;
+use chrono::{DateTime, Duration, Utc};
 
-// Définir une date de départ
-let start_date = NaiveDate::from_ymd(2021, 11, 24);
+fn main() {
+  let now: DateTime<Utc> = Utc::now();
+  let future_date = now.checked_add_signed(Duration::days(5)).unwrap();
+  println!("Dans 5 jours, la date sera : {}", future_date);
+}
+```
+Exécution de ce code donne un résultat qui ressemble à:
 
-// Ajouter 10 jours à la date de départ
-let future_date = start_date + Duration::days(10);
-
-// Afficher le résultat
-println!("La date dans 10 jours sera: {}", future_date);
-
-// Output: La date dans 10 jours sera: 2021-12-04
+```
+Dans 5 jours la date sera: 2025-09-18T09:28:00.434187Z
 ```
 
-Vous pouvez également utiliser la bibliothèque "time" pour calculer une date dans le passé:
+## Plongée en profondeur
+Historiquement, le calcul de dates a longtemps été un défi dans le domaine de l'informatique. De nombreux bugs et problèmes ont été rencontrés dans le passé. Avez-vous entendu parler du bug de l'an 2000 ?
 
-```Rust
-// Importer la bibliothèque "time"
-use time::Date;
+Il existe plusieurs alternatives pour calculer une date dans le futur ou le passé en Rust. Vous pourriez utiliser la bibliothèque `time` qui propose des méthodes similaires à `chrono`.
 
-// Définir une date de fin
-let end_date = Date::from_utc(time::OffsetDateTime::from_unix_timestamp(1624284000), time::Utc);
+Les détails de l'implémentation liés au calcul des dates dans `chrono` sont complexes. `chrono` gère les durées, les fuseaux horaires, les périodes ainsi que les formats d'affichage et de parsing de dates.
 
-// Soustraire 7 jours à la date de fin
-let past_date = end_date - time::Duration::days(7);
-
-// Afficher le résultat
-println!("La date il y a 7 jours était: {}", past_date);
-
-// Output: La date il y a 7 jours était: 2021-06-15
-```
-
-## Plongez plus en profondeur:
-
-Calculer des dates dans le futur ou le passé est une tâche courante dans la programmation depuis de nombreuses années. Avant l'essor de bibliothèques spécialisées telles que "chrono" et "time", les programmeurs devaient souvent écrire leur propre code pour gérer ces calculs.
-
-Parmi les alternatives à ces bibliothèques, vous pouvez trouver des packages tiers tels que "date" et "datetime" qui proposent également des fonctionnalités de calcul de dates.
-
-En termes d'implémentation, la plupart de ces bibliothèques utilisent des algorithmes de base tels que l'addition et la soustraction de jours pour calculer les dates futures ou passées. Cependant, elles peuvent également prendre en compte des facteurs tels que les années bissextiles et les fuseaux horaires pour une précision maximale.
-
-## Voir aussi:
-
-- [Documentation de la bibliothèque "chrono"](https://docs.rs/chrono/0.4.19/chrono/)
-- [Documentation de la bibliothèque "time"](https://docs.rs/time/0.2.25/time/)
-- [Autres bibliothèques pour calculer des dates en Rust](https://crates.io/search?q=date)
+## Voir aussi
+Pour plus d'informations, consultez les docs et exemples de la librairie `chrono` ici: [chrono - Rust](https://docs.rs/chrono/0.4.19/chrono/) et pour la librairie `time` ici: [time - Rust](https://docs.rs/time/0.1.42/time/).

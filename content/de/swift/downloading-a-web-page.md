@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "Swift: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,26 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und Warum?
-Das Herunterladen von Webseiten kann als das Abrufen von Inhalten von einer Internetquelle betrachtet werden. Programmierer tun das, um diese Inhalte in ihre Anwendungen einzubinden oder zu verarbeiten.
+## Was & Warum?
 
-## Wie geht's?
-Um eine Webseite herunterzuladen, können Sie die folgende Methode verwenden:
+Das Herunterladen einer Webseite bedeutet, Daten aus dem Internet zu extrahieren und auf deinem Gerät zu speichern. Warum machen Programmierer das? Um Informationen zu sammeln, Content zu analysieren oder um Offline-Zugriff zu ermöglichen.
+
+## So geht's:
+
+In Swift könntest du URLSession verwenden, um eine Webseite herunterladen. Hier ist ein einfacher Codeausschnitt:
+
 ```Swift
-let url = URL(string: "https://www.example.com")
-let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-    guard let data = data, let content = String(data: data, encoding: .utf8) else { return }
-    print(content)
+import Foundation
+
+let url = URL(string: "https://www.example.com")!
+
+let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+    if let error = error {
+        print ("Fehler: \(error)")
+    } else if let data = data {
+        let str = String(data: data, encoding: .utf8)
+        print("Daten:\n\(str!)")
+    }
 }
 task.resume()
 ```
 
-Das obige Beispiel zeigt, wie man mithilfe von `URLSession` eine Datenanfrage ausführt und die Antwort in Form von Daten erhält. Diese Daten können dann zur weiteren Verarbeitung oder Anzeige verwendet werden.
+Führe das aus und du wirst HTML-Daten im Konsolenlog sehen.
 
-## Tief tauchen
-Das Herunterladen von Webseiten hat eine lange Geschichte in der Programmierung. In den Anfängen des Internets geschah dies mithilfe von Bibliotheken wie `wget`, die die Verarbeitung von URLs und das Herunterladen von Dateien ermöglichten. Heutzutage gibt es jedoch APIs wie `URLSession`, die dies wesentlich einfacher machen.
+## Detailbetrachtung:
 
-Es gibt auch Alternativen zum Herunterladen von Webseiten, wie z.B. das Abrufen von Informationen von APIs oder das Parsen von HTML-Dateien. Letztendlich hängt die Wahl vom konkreten Anwendungsfall ab.
+Das Extrahieren von Webseiten ist keine neue Praxis. Es entstand mit dem Wachstum des Internets und des Informationstauschs. Historisch gesehen wurde dies oft mit Sprachen wie Perl und Bibliotheken wie LWP durchgeführt.
 
-## Sieh auch
-Weitere Informationen und Beispiele zu diesem Thema finden Sie in der offiziellen Dokumentation von Swift: https://docs.swift.org/swift-book/LanguageGuide/URLSessions.html
+Es gibt alternativen zu URLSession, wie z.B. Alamofire, eine Swift-basierte HTTP-Netzwerkbibliothek. Alamofire kann in vielerlei Hinsicht nützlich sein, einschließlich der Unterstützung für mehrere Datenformate und Network Reachability.
+
+Was die Implementierung betrifft, so erledigt URLSession unter der Haube die meisten Aufgaben. Du brauchst nur die Methode dataTask(with:completionHandler:) aufrufen, die dann die Daten für dich holt.
+
+## Siehe auch:
+
+Für eine Vertiefung deines Wissens hier einige hilfreiche Quellen:
+
+1. Apple's URLSession - https://developer.apple.com/documentation/foundation/urlsession
+2. Alamofire auf GitHub - https://github.com/Alamofire/Alamofire
+3. Web-Sraping Leitfaden - https://www.datacamp.com/community/tutorials/web-scraping-using-python

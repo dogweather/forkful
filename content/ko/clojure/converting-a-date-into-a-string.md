@@ -1,6 +1,6 @@
 ---
 title:                "날짜를 문자열로 변환하기"
-html_title:           "Clojure: 날짜를 문자열로 변환하기"
+html_title:           "Arduino: 날짜를 문자열로 변환하기"
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-날짜를 문자열로 변환하는 것은 날짜 데이터를 사람이 이해할 수 있는 형식으로 표현하는 것을 의미합니다. 프로그래머들은 날짜 데이터를 다양한 출력 형식으로 변환할 필요가 있기 때문에 이 작업을 수행합니다.
+## 무엇이며 왜 사용하나?
 
-## 방법:
-`Clojure` 코드 블록 내에 코딩 예제와 출력 예시를 제공합니다.
+날짜를 문자열로 변환하는 것은 일정한 표현식으로 표현된 날짜를 접근하고 가공하기 위한 기법입니다. 이는 파일 이름을 시간 관련 정보와 함께 생성하거나, 사용자에게 날짜 정보를 표시하는 등 다양한 경우에 활용됩니다.
+ 
 
+## 어떻게 사용하나?
+
+Clojure에서는 `java.text.SimpleDateFormat` 클래스를 이용하여 날짜를 문자열로 쉽게 변환할 수 있습니다.
+
+```Clojure
+(import 'java.text.SimpleDateFormat)
+(import 'java.util.Date)
+
+(defn date-to-string [date format]
+  (let [formatter (SimpleDateFormat. format)]
+    (.format formatter date)))
+
+(println (date-to-string (Date.) "yyyy-MM-dd HH:mm:ss")) ;; 예제 출력: 2021-12-03 18:20:25
 ```
-; 날짜를 YYYY-MM-DD 형식의 문자열로 변환하기
-(str (format "%04d-%02d-%02d" year month day))
-; 결과: "2021-05-01"
-```
 
-```
-; 날짜와 시간을 YYYY년 M월 D일 HH시 MM분 형식의 문자열로 변환하기
-(str (format "%04d년 %d월 %d일 %02d시 %02d분" year month day hour minute))
-; 결과: "2021년 5월 1일 09시 30분"
-```
+## 깊은 이해
 
-## 깊이 들어가기:
-날짜를 문자열로 변환하는 작업은 다양한 프로그래밍 언어에서 지원되고 있으며, 대부분의 언어에서는 `format` 함수를 사용하거나 내장 함수를 제공합니다. `Clojure`에서는 `str` 함수와 `format` 함수를 사용하여 날짜를 원하는 형식의 문자열로 변환할 수 있습니다.
+1. **역사적 배경:** 초기에는 날짜에 대한 형식을 직접 지정해야 했습니다. 이후 Java에서는 SimpleDateFormat 클래스를 제공해 날짜를 문자열로 쉽게 변환합니다.
 
-## 참고문헌:
-- https://clojure.org/api/java.time/readme
-- https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+2. **대안:** Clojure에서는 java.time 모듈을 사용하여 더 심화된 날짜 및 시간 작업을 수행할 수 있습니다. 
+
+3. **구현 세부사항:** Clojure 프로그램에서는 Java 클래스를 직접 호출하여 작업을 수행합니다. 이 경우 `SimpleDateFormat` 클래스와 `format` 메서드를 사용하여 날짜를 특정 형식의 문자열로 변환합니다.
+
+## 참고 자료
+
+1. [Clojure에서 날짜 다루기](https://clojure-doc.org/articles/tutorials/dates_and_time.html)
+2. [Java SimpleDateFormat 문서](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html) 
+3. [Clojure에서 java.time 사용하기](https://clojure.github.io/clojure/java.time.html)

@@ -1,7 +1,7 @@
 ---
-title:                "एचटीएमएल का विश्लेषण"
-html_title:           "Gleam: एचटीएमएल का विश्लेषण"
-simple_title:         "एचटीएमएल का विश्लेषण"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Gleam: HTML को पार्स करना क्या है और क्यों करते हैं?
+## क्या और क्यों?
+HTML पार्सिंग का मतलब होता है एक HTML डॉक्यूमेंट को विश्लेषण करना। प्रोग्रामर्स यह तभी करते हैं जब वे एक HTML डॉक्यूमेंट से डाटा निकालना चाहते हैं।
 
-HTML को पार्स करना एक प्रोग्रामर के लिए वेब साइटों को समझने और ऐसे चर तत्वों को पढ़ने का अनुभव है जो आमतौर पर इंटरनेट पर मौजूद होते हैं। पार्सिंग एक प्रोसेस है जिसमें विभिन्न कोडों और अनुक्रम द्वारा HTML दस्तावेज़ों को पढ़ा जाता है और उससे डेटा प्राप्त किया जाता है।
-
-### कैसे करें:
+## कैसे करें:
+Gleam में HTML पार्सिंग एकल इस तरह की स्क्रिप्ट द्वारा की जा सकती है:
 
 ```Gleam
-import http
-import html_parser
+pub fn main() {
+import gleam/httpc
+import gleam/html
 
-html_doc = http.get("https://example.com")
+let document = httpc.get("http://example.com").unwrap()
+let parsed = html.parse(document.body).unwrap()
 
-doc = html_parser.parse(html_doc)
-
-print(doc.body.title) // Output: Example Domain
+parsed
+}
 ```
+इसे चलाने पर, आपको पार्स किए गए HTML डॉक्यूमेंट की एक संरचना मिलेगी।
 
-यह सादी एक्साम्पल दिखाता है कि कैसे आप Gleam का प्रयोग करके वेबसाइट से HTML डॉक्यूमेंट को पार्स कर सकते हैं। import द्वारा आप, वेब पैकेज और HTML पार्सिंग लाइब्रेरी को एक साथ लोड कर सकते हैं। उसके बाद, http पैकेज को प्रयोग करके आप वेबसाइट से HTML डॉक्यूमेंट प्राप्त कर सकते हैं, जिसे आप फिर html_parser पैकेज से उपयोग करके पार्स कर सकते हैं। और अंत में, आप डॉक्यूमेंट के शीर्षक को प्रिंट कर सकते हैं।
+## गहराई में:
+### ऐतिहासिक संदर्भ
+HTML पार्सिंग का विचार पहली बार 1990 में WWW project के दौरान किया गया था।
 
-### गहरी खुदाई:
+### वैकल्पिक विधियाँ
+हालांकि Gleam एक मजबूत विकल्प है, फिर भी अन्य भाषाओं जैसे कि Python, Java और Ruby में भी HTML पार्सिंग लाइब्रेरी मौजूद हैं।
 
-इसके पीछे इतिहासिक परिवेश, प्रतिकार, और एपीआई से HTML को पार्स करने के विभिन्न तरीकों का अनुसंधान करने के अलावा, Gleam में HTML पार्सिंग की गहराई में पूरी तरह से सुलभ है। HTML पार्सिंग के लिए कई अन्य लाइब्रेरी भी उपलब्ध हैं, लेकिन Gleam से आप एक संपूर्ण प्रोग्रामिंग भाषा में अपने कोड को लिख सकते हैं और मैक्रोग्रामिंग का लाभ उठा सकते हैं। Gleam की एक अन्य बड़ी फायदा यह है कि उससे HTML पार्सिंग को प्रोसेस के दौरान चालू रखना बहुत आसान है।
+### कार्यान्वयन विवरण
+एक HTML पार्सर का उद्देश्य है एक HTML डॉक्यूमेंट को एक संरचनात्मक रूप में बदलना, जिसे DOM (Document Object Model) कहा जाता है।
 
-### और भी देखें:
-
-Gleam की अन्य फीचर्स और उनका उपयोग परिशुद्ध कोडिंग के लिए एक अद्भुत जरिया है। यदि आप गहन जानकारी रखना चाहते हैं तो आप इसके ऑफिशियल दस्तावेज़ों को देख सकते हैं।
+## अन्य पढ़ने के लिए:
+1. Gleam का आधिकारिक डॉक्यूमेंटेशन: [https://gleam.run/docs/](https://gleam.run/docs/)
+2. HTML Parsing के बारे में विस्तार से: [https://developer.mozilla.org/en-US/docs/Web/HTML/Parser](https://developer.mozilla.org/en-US/docs/Web/HTML/Parser)
+3. Python और अन्य भाषाओं में HTML पार्सिंग: [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)

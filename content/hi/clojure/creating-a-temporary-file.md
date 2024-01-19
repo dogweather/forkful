@@ -1,6 +1,6 @@
 ---
 title:                "एक अस्थायी फ़ाइल बनाना"
-html_title:           "Clojure: एक अस्थायी फ़ाइल बनाना"
+html_title:           "Arduino: एक अस्थायी फ़ाइल बनाना"
 simple_title:         "एक अस्थायी फ़ाइल बनाना"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,43 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-एक अस्थायी फाइल बनाना यह एक तकनीक है जो कोडिंग में उपयोग किया जाता है। इसका मुख्य उद्देश्य यह होता है कि जब हमारे प्रोग्राम एक फाइल को स्थायी रूप से संचित नहीं कर सकते हैं, तो हम एक अस्थायी फाइल बनाते हैं।
+
+अस्थायी फ़ाइल बनाना मतलब एक अधिसूचना सुरक्षित/अस्थायी भंडारण स्थल पर डेटा रखना। कोडर्स इसे कई कारणों से करते हैं - मुख्यतः जब वे अस्थायी डेटा (जैसे - पीढ़ी के परिणाम) संग्रहित करने के इच्छुक होते हैं इसका उपयोग करते हैं।
 
 ## कैसे करें:
-यहां, हम एक अस्थायी फाइल कैसे बनाएं इसके बारे में कुछ कोडिंग उदाहरण देखेंगे।
 
-उदाहरण १:
-```Clojure
-(with-open [temp-file (java.io.File/createTempFile "prefix" "suffix")]
-  (spit temp-file "This is a temporary file.")
-  (println (slurp temp-file)))
-;; आउटपुट: This is a temporary file.
+आप Clojure के `java.io.File/createTempFile` का उपयोग करके अस्थायी फ़ाइलें तैयार कर सकते हैं। यहां पर एक उदाहरण है:
+
+```clojure
+(import 'java.io.File)
+
+(def tempfile (File/createTempFile "prefix" "suffix")) 
+
+(println tempfile) ; print the temporary file path
 ```
 
-उदाहरण २:
-```Clojure
-(with-open [temp-file (java.io.File/createTempFile "prefix" nil)]
-  (let [file-writer (clojure.java.io/writer temp-file)]
-    (binding [*out* file-writer]
-      (println "This is a temporary file.")
-      (println "Another line added."))))
-;; आउटपुट:
-This is a temporary file.
-Another line added.
-```
+यह स्क्रिप्ट एक अस्थायी फ़ाइल बनाती है और फ़ाइल का पथ प्रिंट करती है।
 
-## गहराई में जाएं:
-अब आप जानते हैं कि अस्थायी फाइल क्या है और हम इसे क्यों घरघराते हैं, आइए इसके गहराई में जाते हैं और इसके पीछे की कुछ और जानकारी प्राप्त करें।
+## गहरा दौरा:
 
-1. इतिहासिक संदर्भ: अस्थायी फाइलों का उपयोग पहले से ही किया जाता था, लेकिन यह शुरुआत में सिस्टम में फाइल लेखन के साथ समस्याओं को हल करने के लिए ही होता था।
+अस्थायी फ़ाइलों का उपयोग डैटा को अस्तित्व में रखने के लिए किया जाता है, जब तक कि वह आवश्यक न हो जाए। इसके ऐतिहासिक प्रक्षेपण में, यह एक उचित उपाय था जब कंप्यूटर में स्थायी संग्रहण स्थल की कमी होती थी। वैकल्पिक रूप से, एप्लिकेशन डाटा को in-memory डेटा संरचनाओं में संग्रहीत कर सकते हैं, यदि वे इसे अस्थायी मानते हैं। अस्थायी फ़ाइलें JVM (Java Virtual Machine) पर काम करने के लिए क्लोजर को केवल `java.io` लाइब्रेरी का उपयोग करते हुए बनाई जाती हैं।
 
-2. विकल्प: अस्थायी फाइल बनाने के लिए Clojure में एक और तकनीक है, जहां हम फाइल को अस्थाई रूप से लेखन के लिए mmap (memory-mapped file) का उपयोग कर सकते हैं।
+## देखने के लिए भी:
 
-3. प्रयोजन का विवरण: अस्थायी फाइल बनाने के लिए Clojure में java.io.File और java.nio.file.Files श्रेणियों का उपयोग किया जाता है।
-
-## जुड़े रहें:
-अस्थायी फाइलों के बारे में अधिक जानने के लिए निम्नलिखित स्रोतों को जांचें:
-
-- [Clojure डॉक्यूमेंटेशन](https://clojuredocs.org/clojure.java.io/create-temp-file)
-- [Java डॉक्यूमेंटेशन](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile%28java.lang.String,%20java.lang.String,%20java.io.File%29)
-- [Stack Overflow चर्चाएं](https://stackoverflow.com/questions/8209998/temporary-files-in-java)
+- क्लोजर डॉक्यूमेंटेशन ([link](https://clojure.org/api/api))
+- Java टेम्प फ़ाइल API ([link](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html#createTempFile(java.nio.file.Path,%20java.lang.String,%20java.lang.String,%20java.nio.file.attribute.FileAttribute...)))
+  
+यदि आप क्लोजर में नए हैं तो इन लिंक्स की परीक्षा लेने से आपको बहुत फ़ायदा होगा।

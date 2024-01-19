@@ -1,7 +1,7 @@
 ---
-title:                "Søking og erstatting av tekst"
-html_title:           "C: Søking og erstatting av tekst"
-simple_title:         "Søking og erstatting av tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,34 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Hva & Hvorfor?
-Søking og erstatting av tekst er en vanlig praksis blant programmere for å endre eller erstatte spesifikke deler av en tekst. Dette kan for eksempel være å bytte ut et ord med et annet, eller å endre deler av kode for å gjøre den mer effektiv. Det er viktig for programmere å kunne gjøre disse endringene raskt og nøyaktig for å spare tid og sikre at koden fungerer som den skal.
+# Søk og Erstatt Tekst i C Programmering
 
-##Hvordan:
-```
-#include <stdio.h>
+## Hva & Hvorfor?
 
-int main() {
-  char str[] = "Hei alle sammen!";
-  char *ptr = str;
-  
-  while (*ptr != '\0') {
-    if (*ptr == 'e') {
-      *ptr = 'a'; //erstatter alle forekomster av 'e' med 'a'
+Søk og erstatt tekst refererer til den prosessen hvor du lokaliserer en bestemt tekststreng i et større datasett og bytter det ut med annen tekst. Dette er avgjørende for programmerere da det vesentlig hjelper ved behandling av tekstfiler, oppdatering av kode eller datatabeller.
+
+## Hvordan:
+
+La oss gå rett til koden. Vi vil bruke funksjonen `strstr` for å søke og funksjonen `strcpy` for å erstatte tekst. Se eksempelet nedenfor.
+
+```C
+#include<stdio.h>
+#include<string.h>
+
+#define MAX_RLEN 50
+
+void search_replace(char *str, char *oldWord, char *newWord){
+    char buffer[MAX_RLEN];
+    char *ch;
+ 
+    // Sjekker om det gamle ordet er i strengen
+    while((ch = strstr(str, oldWord)) != NULL){
+        // Backup pekeren
+        strncpy(buffer, str, ch-str); 
+        buffer[ch-str] = '\0';
+        
+        // Legg det nye ordet til bufferen
+        strcat(buffer, newWord);
+ 
+        // Legg resten av den opprinnelige strengen til bufferen
+        strcat(buffer, ch+strlen(oldWord));
+ 
+        // Kopier buffer til den opprinnelige strengen
+        strcpy(str, buffer);
     }
-    ptr++;
-  }
-  
-  printf("%s", str); //output: Hai alla samm*n!
-  return 0;
 }
 
+int main(){
+    char str[] = "Hei verden";
+    char oldWord[] = "verden";
+    char newWord[] = "Norge";
+
+    search_replace(str, oldWord, newWord);
+
+    printf("%s", str);
+
+    return 0;
+}
 ```
-I dette eksemplet ser vi hvordan man kan enkelt kan erstatte bokstaven 'e' med 'a' i en gitt tekst ved å bruke en løkke og pekere i C.
 
-##Dypdykk:
-Søking og erstatting av tekst har vært en viktig del av programmering siden språket C ble utviklet på 1970-tallet. Siden da har det kommet mange alternative metoder og verktøy for å gjøre dette mer effektivt, som for eksempel Regex (Regular Expressions). Implementasjonen av søk og erstatting kan variere avhengig av programmeringsspråk, men konseptet er det samme.
+Kjører dette vil gi følgende utskrift:
 
-##Se også:
-- [Regular Expressions i C](https://www.geeksforgeeks.org/regular-expressions-in-c/)
-- [C programming language på Wikipedia](https://en.wikipedia.org/wiki/C_(programming_language))
+`Hei Norge`
+
+## Dyp Dykk
+
+Historisk sett har søk og erstatt tekst vært en funksjon som har vært tilgjengelig på mange forskjellige høynivåspråk og tekstbehandlingsapplikasjoner. I C underbygger det mange funksjoner og er viktig for alle som jobber med store tekstfiler.
+
+Alternativene til `strstr` og `strcpy` inkluderer funksjoner som `strchr` (søke etter første forekomst av en karakter) og `strrchr` (søke etter siste forekomst av en karakter), samt funksjoner som `strncat` og `strncpy`.
+
+Disse funksjonene baserer seg på å streife gjennom hvert karakter av strengen, fra første til siste karakter, og sjekk med forekomsten av det gamle ordet. Dette gjør at 'søk og erstatstekst' fungerer i konstant tidsspredning.
+
+## Se Også:
+
+For mer info om tekstbehandling i C, sjekk ut:
+1. [C-programmeringsspråk](https://no.wikipedia.org/wiki/C_(programmeringsspr%C3%A5k))
+2. [C String-handling Library](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

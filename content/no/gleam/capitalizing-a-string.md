@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstavføring av streng."
-html_title:           "Gleam: Stor bokstavføring av streng."
-simple_title:         "Stor bokstavføring av streng."
+title:                "Sette en streng i store bokstaver"
+html_title:           "Gleam: Sette en streng i store bokstaver"
+simple_title:         "Sette en streng i store bokstaver"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,24 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & hvorfor?
-Å kapitalisere en streng i programmering betyr å gjøre den første bokstaven stor. Dette er nyttig for å gjøre en streng mer leselig for mennesker, og også for å følge vanlige navneregler. Programmerere gjør dette for å sikre konsekvent lesbarhet og konsistens i sin kode.
+# Stor Bokstav: En Guide for Gleam Programmering 
 
-# Hvordan:
+Gleam er et sterkt statisk typet, funksjonelt programmeringsspråk designet for å bygge pålitelige, robuste og effektive systemer. Ingenting er mer nyttig og pålitelig enn å formatere strenger, spesielt stor bokstav. 
+
+## Hva & Hvorfor?
+Capitaliserer en streng, ganske enkelt, betyr å konvertere det første tegnet i strengen til et stort symbol. Og hvorfor ville vi ville gjøre dette? Generelt hjelper det med lesbarheten av teksten, og skiller ut visse strenger i koden din.
+
+## Hvordan:
+Her er kodeeksempler på hvordan du gjøre det i Gleam.
+
 ```Gleam
-let streng1 = "hallo verden"
-let kapitalisert = String.capitalize(streng1)
-// Resultat: "Hallo verden"
+import gleam/string.{from_utf8, slice, to_uppercase}
+
+fn stor_bokstav(string: String) {
+  let first_char = slice(string, 0, 1)
+  let rest_chars = slice(string, 1, byte_size(string))
+
+  to_uppercase(first_char) ++ rest_chars
+}
 ```
+Eksempelutgangen vil se slik ut:
+
 ```Gleam
-let streng2 = "en annen streng"
-let kapitalisert = String.capitalize(streng2)
-// Resultat: "En annen streng"
+sto_bokstav("hallo verden") 
+// Output: "Hallo verden"
 ```
+## Dyp Dykk
+Historisk sett har stor bokstav i programmering blitt brukt til å vise brukerinput i en bedre formatert og lesbar form. Det er alternativer til å bruke stor bokstav metoden som vises her, som innebygde bibliotekfunksjoner i andre språk som `.toUpperCase()` i JavaScript. 
 
-# Dypdykk:
-Historisk sett har å kapitalisere strenger vært en del av konvensjonen i mange programmeringsspråk, og brukes fortsatt i dag. Alternativet til å bruke en innebygd funksjon som String.capitalize i Gleam er å manuelt endre hver streng som trenger å bli kapitalisert, noe som kan føre til mer kode og potensielt flere feil. I Gleam, og mange andre språk, er kapitalisering av en streng en standardfunksjon som er enkel å implementere takket være brukervennlige biblioteker.
+I Gleam, brukes `slice()` funksjonen for å splitte strengen i to deler: det første tegnet og resten av strengen. 'to_uppercase()' funksjonen brukes deretter til å gjøre om det første tegnet til stor bokstav, og strengene slås sammen igjen.
 
-# Se også:
-- [Gleam sin offisielle dokumentasjon om strenger](https://gleam.run/documentation/the_gleam_language/strings.html)
-- [En sammenligning av strengfunksjonalitet i forskjellige programmeringsspråk](https://github.com/hoverbear/rust-rosetta#strings)
+## Også Se
+For mer informasjon, ta en titt på [Gleam string dokumentasjon](https://hexdocs.pm/gleam_stdlib/gleam/string.html).
+
+Lykke til med din Gleam programmering!

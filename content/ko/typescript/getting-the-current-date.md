@@ -1,6 +1,6 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "TypeScript: 현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,24 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 현재 날짜란 무엇인가?
+## 무엇이며 왜 필요한가? 
+현재 날짜를 얻는 것은 컴퓨터에서 현재의 시간을 표시하거나 추적하기 위한 과정입니다. 프로그래머들은 이 기능을 이용하여 작업의 타임스탬프를 생성하거나, 사용자에게 실시간 정보를 보여주기 위해 사용합니다.
 
-현재 날짜를 가져오는 것은 프로그래머가 현재 시간과 날짜를 가져오기 위해 사용하는 방법입니다. 이는 특히 사용자에게 현재 시간을 표시하거나, 일정한 기간이 지난 후 다시 실행해야 할 경우에 사용됩니다.
-
-## 방법:
+## 실행 방법:
+TypeScript에서 현재 날짜를 얻는 가장 간단한 방법은 다음의 코드처럼 새로운 Date 객체를 생성하는 것입니다:
 
 ```TypeScript
-const currentDate = new Date();
-console.log(currentDate); // Sample output: Mon Mar 08 2021 19:07:15 GMT+0900 (Korean Standard Time)
+let currentDate = new Date();
+console.log(currentDate);
 ```
+이 코드를 실행하면, 현재 날짜와 시간이 표시됩니다.
 
-위의 코드는 Date 객체를 생성하고, 그 객체를 사용하여 현재 날짜를 가져와 콘솔에 출력하는 예시입니다. TypeScript에서는 Date 객체를 사용하여 날짜와 시간을 다양한 형식으로 가져올 수 있습니다.
+## 심화 학습
+일찍이, 컴퓨터 시스템에서는 시간을 수치로 변환하여 처리했습니다. Unix 시간 ("UNIX timestamp")은 이러한 예로, 1970년 1월 1일부터 세기마다 숫자가 증가합니다. 
 
-## 깊게 들어가보기:
+다른 방법으로는 'moment.js'와 같은 라이브러리를 활용할 수 있지만, 최근에는 JavaScript의 Date 객체의 표준화로 인해 이러한 라이브러리의 필요성이 줄고 있습니다.
 
-현재 날짜를 가져오는 방법은 기본적으로 Date 객체를 생성하는 것입니다. 이 객체는 자바스크립트에서 제공하는 내장 객체이며, 날짜와 시간과 관련된 다양한 메서드를 제공합니다. 또한, moment.js와 같은 라이브러리를 사용하여 편리하게 현재 날짜를 가져올 수도 있습니다.
+'new Date()' 는 JavaScript의 클래스이며, TypeScript에서는 이를 그대로 사용합니다. 이 내부에서는 현재 시스템의 로케일 설정과 시간대에 따라 결과가 달라질 수 있습니다.
 
-## 관련 자료:
-
-- [Date 객체 - MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [moment.js 라이브러리 - 공식 사이트](https://momentjs.com/)
+## 참조 링크
+- [MDN Web Docs - Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [moment.js 라이브러리](https://momentjs.com/)
+- [UNIX 타임스탬프 계산기](https://www.unixtimestamp.com/index.php)

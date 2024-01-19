@@ -10,34 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-目标与原因:
+## 什么 & 为什么?
 
-解析HTML是将网页的HTML代码转换为可读取、可操作的数据的过程。它对于程序员来说非常重要，因为它使得我们能够动态地从网页中提取信息，例如从网页中抓取数据或者执行特定的操作。
+解析HTML就是提取HTML文档中的有用信息。程序员之所以解析HTML，是因为这样能更有效地抓取网页数据。
 
-代码实现:
+## 如何做:
+
+Clojure 允许我们使用Enlive库轻松解析HTML。首先，让我们添加Enlive依赖项到项目中。
 
 ```Clojure
-(require '[clojure.data.xml :as xml]) ;; 引入XML库
-
-(def html "<html><head><title>Hello, world!</title></head><body><h1>Welcome to my website</h1><p>This is the content of my website.</p></body></html>") ;; 声明一个HTML变量
-
-(xml/parse-str html) ;; 将HTML代码转换为XML数据
-;; 输出:
-;; {:tag :html, :attrs nil, :content [{:tag :head, :attrs nil, :content [{:tag :title, :attrs nil, :content [\"Hello, world!\"]}]}, {:tag :body, :attrs nil, :content [{:tag :h1, :attrs nil, :content [\"Welcome to my website\"]}, {:tag :p, :attrs nil, :content [\"This is the content of my website.\"]}]}]}
+(defproject your-project "0.1.0-SNAPSHOT"
+  :dependencies [[org.clojure/clojure "1.10.0"]
+                 [net.cgrand/enlive "1.1.6"]])
 ```
 
-深入了解:
+接下来, 我们将会解析一个包含书籍列表HTML的概述。
 
-解析HTML在互联网的发展过程中起着重要作用。在早期的互联网，网页的内容是静态的，它们只能展示信息，而无法与用户进行交互。但随着技术的发展，人们发现从网页中提取信息和执行操作是非常有用的，因此解析HTML的技术逐渐被引入。
+```Clojure
+(ns your-namespace
+  (:require
+   [net.cgrand.enlive-html :as html]
+   [clojure.string :as str]))
 
-除了Clojure自带的XML库，还有其他的库可以用来解析HTML，例如Enlive和Hickory。它们提供不同的解析方式和特性，程序员可以根据自己的需求选择最合适的库。
+(defn parse-html [html-source]
+  (->> html-source
+       html/html-resource
+       (html/select [:div.book])
+       (map (fn [div]
+              (let [title (-> div (html/select [:h2]) first :content)
+                    author (-> div (html/select [:span.author]) first :content)]
+                {:title (str/join "" title)
+                 :author (str/join "" author)})))))
+```
 
-代码实现细节:
+函数 `parse-html` 接收一个HTML源文件，并返回一个包含书名和作者的映射列表。
 
-解析HTML的过程包括识别HTML标签、属性和内容，并将它们转换为对应的数据结构。Clojure的XML库使用了Clojure中的关键字作为标签，而属性和内容则分别存储在关键字的值和子列表中。
+## 深度剖析:
 
-相关资源:
+在Clojure序列处理和函数编程的指导下，HTML解析因其音质而备受赞誉。尽管现有许多其它库，如jsoup和java-html-parser，但Enlive的强大表达力、对HTML解构的出色支持，以及较小的性能损失使它成为Clojure中首选的HTML解析库。
 
-- 元层库 [clojure.data.xml](https://github.com/clojure/data.xml)
-- Enlive [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
-- Hickory [https://github.com/davidsantiago/hickory](https://github.com/davidsantiago/hickory)
+然而，这并不是没有问题的。Enlive旨在提供一个声明性的HTML转换引擎，有些用户可能会发现其API有点复杂和难以理解。
+
+## 延伸阅读:
+
+[Enlive GitHub](https://github.com/cgrand/enlive)
+[Clojure官方源](https://clojure.org/)
+[jsoup官方文档](https://jsoup.org/)
+[java-html-parser官方源](https://htmlparser.info/)

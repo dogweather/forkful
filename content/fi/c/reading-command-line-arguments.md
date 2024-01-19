@@ -1,7 +1,7 @@
 ---
-title:                "Lukemalla komentoriviparametreja"
-html_title:           "C: Lukemalla komentoriviparametreja"
-simple_title:         "Lukemalla komentoriviparametreja"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Elm: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,51 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Komentoriviparametrien lukeminen tarkoittaa ohjelman argumenttien lukemista komentoriviltä. Tämä on tärkeää, jotta voidaan antaa ohjelmalle tarvittavat syötteet sen suorittamiseen. 
+Komennon riviparametrien lukeminen on toimintatapa, jolla käyttäjän syötteitä voidaan lukea suoraan ohjelman käynnistyksen yhteydessä. Tätä tarvitaan usein, jolloin ohjelma voi käsitellä dynaamisia tietoja tai suorittaa erilaisia tehtäviä käyttäjän määritelmän mukaan.
 
-Ohjelmoijat lukevat komentoriviparametreja, jotta he voivat mukauttaa ohjelmiaan käyttäjän antamilla arvoilla. Tämä tekee ohjelmista joustavampia ja käyttäjäystävällisempiä.
+## Näin se tehdään:
 
-## Miten tehdään?
+Tässä yksinkertainen esimerkki C-kielen koodista, jossa luetaan ja tulostetaan komennot riviparametrit.
 
-Voit lukea komentoriviparametreja hyödyntämällä **argc** ja **argv** -muuttujia, joiden avulla pääset käsiksi kaikkiin komentorivillä annettuihin argumentteihin. Käytämme **argc**-muuttujaa saadaksemme tiedon siitä, kuinka monta komentoriviparametria on annettu, ja **argv**-muuttujaa saadaksemme itse parametrien arvot.
+```C 
+#include <stdio.h>
 
-```C
-int main(int argc, char* argv[]) {
-    // Käytä argc:ta parametrien lukumäärän tarkistamiseen
-    if (argc < 2) {
-        printf("Komentoriviparametreja ei annettu!\n");
-        return 0;
-    }
-    
-    // Käytetään argv-muuttujaa tarkistamaan tiettyä parametria (esim. "tulosta")
-    for (int i = 0; i < argc; i++) {
-        if (strcmp(argv[i], "tulosta") == 0) {
-            printf("Parametri 'tulosta' annettu!\n");
-        }
+int main(int argc, char *argv[]) {
+    int i;
+    for(i = 0; i < argc; i++) {
+        printf("Argument %d: %s\n", i, argv[i]);
     }
     return 0;
 }
 ```
 
-**Esimerkki syötteestä ja tulosteesta:**
+Käynnistä ohjelma komennolla `./ohjelma arg1 arg2`. Ohjelman tuloste näyttää seuraavalta:
 
 ```
-$ ./ohjelma tulosta lisää tuloste
-Parametri 'tulosta' annettu!
+Argument 0: ./ohjelma
+Argument 1: arg1
+Argument 2: arg2
 ```
 
-## Syvällisemmin
+## Syvempi sukellus:
 
-Alunperin komentoriviparametreja käytettiin vain komentokehotteisiin, jotta voitaisiin helposti antaa tietoa ohjelmalle sen suorittamista varten. Nykyään käyttö on laajentunut muun muassa graafisten käyttöliittymien yhteydessä.
+Komennon riviparametrien lukeminen on ollut osa C-kieltä sen alkuvuosista lähtien, tämän takia se on keskeinen osa ohjelmointikielen käsittelyä ja käyttöä. Vaihtoehtoja komentorivin parametrien lukemiseen ovat mm. stdio-kirjaston scanf-funktio tai tiedoston luku funktiot.
 
-Myös muita tapoja antaa ohjelmalle syötteitä on olemassa, kuten lataamalla ne tiedostoista tai käyttämällä ympäristömuuttujia. Jokaisella vaihtoehdolla on omat etunsa ja haittansa.
+Riviparametrien lukemisessa käytettävät "argc" ja "argv" muuttujat ovat osa ohjelman "main" fuktiota. Argc kuvastaa argumenttien lukumäärää ja argv on osoitin merkkijonojen taulukkoon, jossa argit ovat.
 
-Komentoriviparametrien lukeminen perustuu ANSI C -standardiin, joten se on mahdollista kaikilla C-kielellä kirjoitetuilla ohjelmilla. Kuitenkin jokaisella käyttöjärjestelmällä voi olla omat toteutustapansa komentorivin käsittelyyn ja parametrien välittämiseen ohjelmalle.
+## Katso myös:
 
-## Katso myös
+Vaikka tämä artikkeli antaa yleiskuvan komentoriviparametrien lukemisesta, seuraavat lähteet tarjoavat syvempää tietoa ja konkreettisia esimerkkejä.
 
-[Lukemattomat komentoriviargumentit](https://linux.die.net/man/3/getopt) - C-kirjasto lukemiseen argumentteja komentoriviltä Linux-käyttöjärjestelmässä
-
-[Komentoriviparametrien lukeminen Visual Studiolla](https://docs.microsoft.com/en-us/cpp/cpp/how-to-parse-command-line-arguments) - Ohjeita ja esimerkkejä lukemiseen komentoriviargumentteja Visual Studiolla.
+- C Programming Language, 2nd Edition by Brian W. Kernighan and Dennis M. Ritchie: https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628
+- Learn C the Hard Way by Zed Shaw: https://learncodethehardway.org/c/
+- C tutorial by TutorialsPoint: https://www.tutorialspoint.com/cprogramming/index.htm

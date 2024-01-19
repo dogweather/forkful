@@ -1,7 +1,7 @@
 ---
-title:                "Créer un fichier temporaire"
-html_title:           "Elixir: Créer un fichier temporaire"
-simple_title:         "Créer un fichier temporaire"
+title:                "Création d'un fichier temporaire"
+html_title:           "Kotlin: Création d'un fichier temporaire"
+simple_title:         "Création d'un fichier temporaire"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,24 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
-Créer un fichier temporaire est une pratique courante en programmation qui consiste à créer un fichier qui ne restera que temporairement sur le système. Les programmeurs utilisent souvent cette méthode pour stocker temporairement des données ou des informations pendant l'exécution d'un programme.
 
-## Comment faire:
-Pour créer un fichier temporaire en utilisant Elixir, vous pouvez utiliser la fonction `Tempfile` du module `File`. Voici un exemple de code:
+Créer un fichier temporaire, c'est exactement ce que cela signifie : un fichier destiné à stocker des informations pour une courte période. Les programmeurs le font pour gérer les flux de travail qui nécessitent un stockage temporaire sans affecter les données permanentes.
 
-```Elixir
-{:ok, file} = File.tempfile("my_temp_file")
-IO.puts file.path
+## Comment faire :
+
+Pour créer un fichier temporaire en Elixir, vous pouvez utiliser le module `:file` de Erlang/OTP. Voici comment :
+
+1. Générez un nom de fichier unique et créez le fichier.
+
+```elixir
+{:ok, path} = :file.mktemp()
+IO.puts(path)
 ```
 
-Dans cet exemple, nous utilisons la fonction `tempfile` pour créer un fichier avec le préfixe "my_temp_file" dans le répertoire de travail actuel. La fonction retourne un tuple contenant l'atome `:ok` et l'objet de type `File`. Nous pouvons ensuite utiliser la méthode `path` pour obtenir le chemin du fichier temporaire créé.
+2. Écrivez dans le fichier temporaire.
 
-## Plongée en profondeur:
-La création de fichiers temporaires est une pratique qui a été largement utilisée depuis les débuts de la programmation. Avant l'arrivée des ordinateurs à disque dur, les fichiers temporaires étaient créés en utilisant des bandes magnétiques ou des cartes perforées. De nos jours, il existe plusieurs alternatives pour créer des fichiers temporaires, notamment en utilisant la mémoire vive (RAM) ou en utilisant des bases de données.
+```elixir
+{:ok, file} = File.open(path, [:write])
+IO.binwrite(file, "Du texte temporaire")
+File.close(file)
+```
 
-En ce qui concerne Elixir, la fonction `tempfile` utilise en fait la mémoire RAM pour stocker temporairement le fichier avant de l'écrire sur le disque dur. Cela le rend plus rapide que les autres méthodes de création de fichiers temporaires.
+3. Lisez le contenu du fichier temporaire.
 
-## À voir aussi:
-- [Documentation sur `File` dans Elixir](https://hexdocs.pm/elixir/File.html#tempfile/2)
-- [Plus d'informations sur la création de fichiers temporaires en programmation](https://www.baeldung.com/java-temporary-files)
-- [Article sur les avantages et les inconvénients de différentes méthodes de création de fichiers temporaires](https://unix.stackexchange.com/questions/31991/temporary-file-for-shell-script)
+```elixir
+{:ok, file} = File.read(path)
+IO.puts(file)
+```
+
+## Plongée profonde
+
+Au fil des années, de nombreux langages et systèmes ont fourni diverses manières de créer des fichiers temporaires. En Elixir, grâce à l'interopérabilité avec Erlang/OTP, nous pouvons profiter du module `:file`.
+
+Il existe d'autres alternatives en Elixir pour créer des fichiers temporaires. Par exemple, vous pouvez utiliser le module `System` pour obtenir un nom de fichier unique basé sur le PID du processus Elixir, puis créer le fichier à l'aide de `File.open/2`.
+
+Les détails de mise en œuvre comprennent l'utilisation de `:file.mktemp/0,1,2` qui crée un fichier dans le répertoire temporaire. Il garantit également que le nom de fichier est unique en utilisant le PID du processus Erlang actuel et un numéro unique.
+
+## À voir également
+
+Pour plus d'informations sur le traitement des fichiers en Elixir, consultez la documentation officielle de [File](https://hexdocs.pm/elixir/File.html) et [:file](http://erlang.org/doc/man/file.html). 
+
+La question pertinente sur [Stack Overflow](https://stackoverflow.com/questions/35473854/how-to-generate-a-temporary-file-name-in-elixir) fournit également diverses idées et solutions pour la gestion des fichiers temporaires en Elixir.

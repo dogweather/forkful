@@ -1,6 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
-html_title:           "Clojure: HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,26 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
 ## Mitä & Miksi?
 
-HTML parsing tarkoittaa HTML-koodin purkamista ja analysointia. Ohjelmoijat käyttävät tätä työkalua lukeakseen ja muokatakseen verkkosivujen sisältöä ja rakennetta. 
+HTML:n jäsentäminen tarkoittaa HTML-dokumentin rakenteen muuttamista ymmärrettävään muotoon. Ohjelmoijat tekevät sen, koska se mahdollistaa sivujen sisällön analysoinnin ja muokkaamisen sujuvasti.
 
+## Miten:
 
-## Kuinka tehdä:
+Clojuren `hiccup`-kirjastoa voidaan käyttää HTML:n jäsennykseen. 
 
-```Clojure
-(def html-string "<html><head><title>Otsikko</title></head><body><p>Tervetuloa!</p></body></html>")
+```clojure
+(ns my-namespace.core
+  (:require [hiccup.core :refer [html]]))
 
-(require '[clojure.data.xml :as xml])
-
-(xml/parse-str html-string)
-; => {:tag :html, :attrs nil, :content [{:tag :head, :attrs nil, :content [{:tag :title, :attrs nil, :content ["Otsikko"]}]} {tag :body, :attrs nil, :content [{:tag :p, :attrs nil, :content ["Tervetuloa!"]}]}]} 
+(defn greet []
+  (html
+    [:html
+      [:head
+        [:title "Tervetuloa!"]]
+      [:body
+        [:h1 "Hei, maailma!"]]]))
 ```
 
-## Syvemmälle sukeltaminen:
+Koodin suorittaminen palauttaa HTML-stringin:
 
-HTML-parsingilla on pitkä historia ja se on tärkeä työkalu verkkokehittäjille. On olemassa myös muita tapoja selata HTML-sisältöä, kuten käyttämällä CSS-selektoreita tai XPath-kyselykieltä. Clojuren tapauksessa käytetään clojure.data.xml -kirjastoa, joka perustuu .NET-ohjelmointikieleen.
+```clojure
+"<html><head><title>Tervetuloa!</title></head><body><h1>Hei, maailma!</h1></body></html>"
+```
+
+## Sukellus syvemmälle:
+
+HTML-jäsennys sai alkunsa 1990-luvun alussa WWW:n kanssa. Ensimmäiset parserit olivat yksinkertaisia kirjastoja, mutta ovat sittemmin kehittyneet monimutkaisiksi työkaluiksi.
+
+Clojure-kielessä on myös muita tapoja jäsennellä HTML-sisältöä, kuten `enlive` ja `clojure.data.xml`. Valinta riippuu siitä, kuinka kompleksisia sivustoja analysoit.
+
+Hiccupin sisällä HTML-elementit esitetään Clojure-vetoina, joissa ensimmäinen elementti on tageja ja loput attribuutteja tai lapsielementtejä. Luonteenomaisen datarakenteen ansiosta hiccup mahdollistaa Clojure-syntaksin käytön HTML:n manipuloimiseksi.
 
 ## Katso myös:
 
-https://clojure.github.io/clojure/clojure.data.xml-api.html
+1. Hiccupin dokumentaatio: [https://github.com/weavejester/hiccup](https://github.com/weavejester/hiccup)
+2. Clojuren HTML-jäsentäminen – Stack Overflow: [https://stackoverflow.com/questions/3478592/parsing-html-in-clojure](https://stackoverflow.com/questions/3478592/parsing-html-in-clojure)
+
+---
+
+Huomio: Tämä artikkeli olettaa, että sinulla on perustiedot Clojuresta ja HTML:stä. Jos haluat syvällisempää tietoa, suosittelemme lukemaan lähdemateriaalia ja kokeilemaan koodiesimerkkejä.

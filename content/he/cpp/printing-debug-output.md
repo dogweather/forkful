@@ -1,7 +1,7 @@
 ---
-title:                "הדפסת פלט דיבאג"
-html_title:           "C++: הדפסת פלט דיבאג"
-simple_title:         "הדפסת פלט דיבאג"
+title:                "הדפסת פלט ניפוי שגיאות"
+html_title:           "Arduino: הדפסת פלט ניפוי שגיאות"
+simple_title:         "הדפסת פלט ניפוי שגיאות"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -11,33 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הדפסת פלט דיבאג היא פעולה שמתבצעת על ידי מפתחי תוכנה כדי לעזור להמציא באגים וללא כלות שימוש. מפתחים מתנסים בהפעלת קוד בדיקה שמדפיסה ערכים ומידע נוסף על תוכניות מסוימות כדי לבדוק אם הם פועלים כמצופה.
 
-## איך לבצע:
-כאשר משתמשים בשפת C++, ישנם מספר דרכים להדפסת פלט דיבאג. הנה כמה דוגמאות:
+הדפסת פלט ניפוי הוא תהליך שבו התכנה מדפיסה מידע נוסף העוזר לנו לאבחן תקלות ולבחון את תנודות הקוד. מתכנתים משתמשים בה כשהם מעוניינים למצוא ולתקן שגיאות ולהבין יותר טוב את התנהגות התוכנה.
+
+## איך לעשות:
 
 ```C++
-// הדפסת מספר שלם לשם בדיקת פעולת תנאי
-int num = 5;
-cout << "המספר הוא " << num << endl;
+#include <iostream>
 
-// הדפסת ערך בוליאני לשם בדיקת שגיאה
-bool flag = true;
-cout << "הערך הוא " << flag << endl;
-
-// הדפסת ערך מצבי להדגשת נקודות דפוס
-int pos[] = { 1, 2, 3 };
-for (int i = 0; i < 3; i++) {
-    cout << "המיקום הנוכחי הוא " << pos[i] << endl;
+int main() {
+    int variable = 5;
+    std::cout << "Debug: The value of variable is " << variable << '\n';
+    return 0;
 }
 ```
 
-אם אתה רוצה להדפיס מוצעים מסובכים יותר, אתה יכול להשתמש בפונקציות ייעודיות כמו `printf` או `sprintf`.
+הפלט של הדוגמה:
+```
+Debug: The value of variable is 5
+```
 
-## לעמוד בעומק:
-במודע כי בעבר, מפתחים היו נאלצים להימנע מהדפסת פלט דיבאג בשביל לחסוך בזמן ומשאבים. במאמר זה, אנו צורכים בדרך נקייה ויעילה יותר באמצעות פונקציות ייעודיות. אולם, דבר נכון לגירסת C++ 11 אין צורך לדאוג מכך, כי השפה מציעה דפסות דירקטיות פשוטות יותר. בנוסף, ישנם כלים נוספים כגון מניפולציות בדפוס עם הפונקציות `cerr` ו`clog` כדי להדגיש חשיבה לכוחות הביצוע.
+## בעומק הנושא:
 
-## ראה גם:
-- [איך לבצע Debug ב-C++](https://www.geeksforgeeks.org/how-to-debug-c-programs-using-gdb-in-linux/)
-- [שיטות להוצאת מידע מזמין ב-C++](https://www.geeksforgeeks.org/methods-to-output-the-contents-of-a-vector-in-c/)
-- [מדריך לחדר Debugging ב-Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-techniques-in-visual-studio?view=vs-2019)
+1. היסטוריה: הדפסת פלטים לניפוי באה לידי ביטוי מאז שהתחילה התכנות. היה תמיד צורך להבין את מהלך התכנה. 
+2. אלטרנטיבות: Unix/Linux מספקת כלי שנקרא stderr בו אנחנו יכולים לדפיס את הדיבאג.
+3. פרטי המימוש: ב-C++ המנגנון פשוט. אנו משתמשים בספריית ה-I/O stream ומשתמשים בפונקציה `std::cout` (console out) להדפסה.
+
+## ראו גם:
+
+1. [std::debug in C++](https://en.cppreference.com/w/cpp/io/cerr)
+2. [Debugging with Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
+3. [Effective Debugging Methods](https://www.wiley.com/en-us/Effective+Debugging%3A+66+Specific+Ways+to+Debug+Software+and+Systems-p-9780134395076)

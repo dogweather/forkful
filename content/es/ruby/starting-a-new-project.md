@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Ruby: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Empezar un nuevo proyecto en programación simplemente significa iniciar un nuevo proyecto de código desde cero. Los programadores hacen esto para crear nuevas aplicaciones, programas o funcionalidades que no existen todavía y así poder resolver problemas o mejorar nuestras vidas.
+Iniciar un nuevo proyecto en programación es como tomar un lienzo en blanco y comenzar a pintar una obra de arte. Los programadores inician nuevos proyectos para transformar ideas en realidad, resolver problemas o simplemente para mejorar sus habilidades en codificación.
 
-## ¿Cómo hacerlo?
+## ¿Cómo se hace?:
 
-Es muy sencillo empezar un nuevo proyecto en Ruby. Solo necesitas escribir en tu terminal `ruby new.rb` y automáticamente se creará un nuevo proyecto con una estructura básica. A continuación, puedes empezar a codificar tus ideas dentro de los archivos generados.
+Para comenzar un nuevo proyecto en Ruby, necesitas una comprensión básica de cómo funciona este lenguaje de programación. Asegúrate de tener instalado Ruby en tu sistema. Luego, creas un nuevo archivo de Ruby y comienzas a escribir tu código.
 
-```
-Ruby new.rb
+Aquí tienes un ejemplo de un script simple de "Hola Mundo" en Ruby.
 
-Nuevo proyecto creado: "mi_proyecto"
-├─ mi_proyecto.rb
-├─ archivo_1.rb
-├─ archivo_2.rb
-├─ ...
+```Ruby
+# Crea un nuevo archivo, 'hola.rb'
+puts 'Hola Mundo'
 ```
 
-## Profundizando
+Y esto enviará la salida:
 
-El concepto de empezar un nuevo proyecto es algo que ha existido desde los inicios de la programación. Sin embargo, con el avance de la tecnología, han surgido otras alternativas como utilizar plantillas o frameworks para agilizar el proceso de inicio de un proyecto. Sin embargo, muchos programadores prefieren empezar desde cero para tener un mayor control y personalización en su código.
+```
+Hola Mundo
+```
+
+## Inmersión Profunda
+
+Ruby fue desarrollado en la década de 1990 por Yukihiro "Matz" Matsumoto en Japón. Matsumoto diseñó Ruby para ser divertido y productivo, con un enfoque en la simplicidad y eficiencia.
+
+Alternativas a Ruby pueden incluir Python, que es aún más fácil de aprender pero puede no tener la misma profundidad de bibliotecas. Otros lenguajes como Java o C++ pueden ser más poderosos pero también más complejos.
+
+En Ruby, la implementación de un nuevo proyecto puede variar dependiendo de su propósito. Sin embargo, generalmente se inicia creando un nuevo archivo `.rb`, escribiendo su código y luego ejecutando el archivo con el intérprete de Ruby.
 
 ## Ver también
 
-- [Guía de inicio rápido de Ruby](https://www.ruby-lang.org/es/documentation/quickstart/)
-- [Frameworks populares en Ruby](https://www.ruby-toolbox.com/)
-- [Plantillas de proyectos en GitHub](https://github.com/topics/ruby-templates)
+Aquí hay algunos enlaces a recursos relacionados que pueden ser útiles:
+
+- [Documentación oficial de Ruby](http://ruby-doc.org)
+- [El Poignant Guide to Ruby](http://poignant.guide)
+- [Ruby en Codecademy](http://www.codecademy.com/learn/learn-ruby)
+- [Ruby en Learn Ruby the Hard Way](http://learnrubythehardway.org)

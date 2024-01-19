@@ -1,7 +1,7 @@
 ---
-title:                "Das Lesen von Befehlszeilenargumenten."
-html_title:           "Python: Das Lesen von Befehlszeilenargumenten."
-simple_title:         "Das Lesen von Befehlszeilenargumenten."
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -12,41 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für Programmierer. Es ermöglicht uns, Eingaben vom Benutzer zu erhalten und diese in unserer Python-Anwendung zu verarbeiten. Dadurch können wir unsere Programme flexibler gestalten und auf verschiedene Situationen reagieren.
+Das Lesen von Befehlszeilenargumenten ist der Prozess, bei dem Eingabewerte von der Befehlszeile eines Betriebssystems an ein Programm übergeben werden. Programmierer tun dies, um Flexibilität und Anpassungsfähigkeit ihrer Programme zu erhöhen.
 
 ## So geht's:
 
-Die folgenden Beispiele zeigen, wie man Befehlszeilenargumente in Python lesen kann:
+In Python ist das Lesen von Befehlszeilenargumenten sehr einfach mit dem built-in Modul `sys`. Hier ist ein einfaches Beispiel:
 
 ```Python
 import sys
-# liest das erste Argument, welches nach dem Dateinamen eingegeben wird
-arg1 = sys.argv[1] 
-print("Das erste Argument ist:", arg1)
 
-# liest eine Liste aller Argumente
-args = sys.argv[1:] 
-print("Alle Argumente:", args)
+def main():
+    # sys.argv ist die Liste der Befehlszeilenargumente
+    print('Anzahl der Argumente:', len(sys.argv), 'Argumente.')
+    print('Argument Liste:', str(sys.argv))
+    
+if __name__ == "__main__":
+    main()
 ```
 
-Beispielaufruf in der Kommandozeile: `python my_program.py argument1 argument2`
+Wenn Sie dieses Programm mit Argumenten starten, wie folgt:`python myprogram.py arg1 arg2`, ist die Ausgabe:
 
-Ausgabe:
-
-```
-Das erste Argument ist: argument1
-Alle Argumente: ['argument1', 'argument2']
+```Python
+Anzahl der Argumente: 3 Argumente.
+Argument Liste: ['myprogram.py', 'arg1', 'arg2']
 ```
 
-## Tiefere Einblicke:
+## Tiefere Infos:
 
-Das Lesen von Befehlszeilenargumenten ist ein grundlegender Bestandteil der Unix-Philosophie "Kleine Werkzeuge schnell miteinander kombinieren". Es ermöglicht eine einfache Kommunikation zwischen verschiedenen Programmen und stellt sicher, dass Programme unabhängig voneinander funktionieren können.
+Eines der ältesten Konzepte in der Computerprogrammierung ist die Verwendung von Befehlszeilenargumenten. Es ermöglichte die Flexibilität und Skalierbarkeit, die für die Interaktion mit Betriebssystemen erforderlich ist. 
 
-Alternativ zum Lesen von Befehlszeilenargumenten können auch Umgebungsvariablen oder Konfigurationsdateien genutzt werden, um Eingaben vom Benutzer zu erhalten. Diese Methoden bieten eine größere Flexibilität, erfordern jedoch auch eine höhere Komplexität bei der Implementierung.
+Alternativen zum `sys` Modul in Python sind `argparse` und `click`, die bei komplexeren Anforderungen wie der Vereinfachung der Verwendung von Flags oder der Bereitstellung von detaillierteren Hilfeinformationen nützlich sind.
 
-Um Befehlszeilenargumente in Python zu lesen, wird die `sys` Bibliothek genutzt, die Funktionen und Variablen für die Interaktion mit dem Python-Interpreter bereitstellt.
+In Bezug auf die Implementierungsdetails, Python's `sys.argv` ist einfach eine Liste in Python, die Zeichenketten enthält. Das erste Element, `sys.argv[0]`, ist immer der Name des Python-Skripts selbst.
 
 ## Siehe auch:
 
-- [Python-Dokumentation zu sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
-- [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)
+1. Python's `argparse` Dokumentation: <https://docs.python.org/3/library/argparse.html>
+2. Python's `click` Dokumentation: <https://click.palletsprojects.com/en/7.x/>
+3. Python's `sys` Modul Dokumentation: <https://docs.python.org/3/library/sys.html>
+4. Mehr Details über Kommandozeilenargumente: <http://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html>

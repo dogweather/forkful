@@ -1,6 +1,6 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "Arduino: Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,19 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Usuwanie znaków pasujących do wzorca jest stosowaną techniką programowania polegającą na usunięciu wszystkich znaków z danego zestawu danych, które pasują do określonego wzorca. Programiści często wykorzystują tę technikę do wstępnego przetwarzania tekstów lub filtrowania danych.
+## Co i dlaczego?
+
+Usuwanie znaków według wzorca to operacja polegająca na zidentyfikowaniu i usunięciu określonych znaków z tekstu w procesie programowania. Programiści robią to, aby przesiewać i oczyszczać dane wejściowe, usuwać niepotrzebne spacje, znaki specjalne i formatowanie nim przystąpią do przetwarzania danych.
 
 ## Jak to zrobić:
-```Arduino
-String tekst = "Przykładowy tekst";
-tekst.replace("y", ""); //usunięcie wszystkich wystąpień litery "y"
-Serial.println(tekst); //wypisze "Prkładow tekst"
-```
 
-## Głębsza analiza:
-Technika usuwania znaków pasujących do wzorca jest powszechnie stosowana w programowaniu, a jej początki sięgają czasów, gdy programiści musieli ręcznie przetwarzać i filtrować dane tekstowe. W dzisiejszych czasach istnieją również inne podejścia do rozwiązania tego problemu, takie jak wykorzystanie wyrażeń regularnych. W implementacji tej techniki ważne jest, aby dokładnie określić wzorzec, aby uniknąć niepożądanych usunięć znaków.
+Poniżej znajduje się przykład usuwania znaków pasujących do wzorca w Arduino.
+
+```Arduino
+String inputStr = "Przykładowy tekst.";
+String outputStr;
+for (char &c: inputStr)
+{
+  if (c != '.') // wzorzec, którego szukamy
+  {
+    outputStr += c;  
+  }
+}
+Serial.println(outputStr);
+```
+Po uruchomieniu kodu, na konsoli powinniśmy zobaczyć "Przykładowy tekst", gdzie został usunięty znak ".".
+
+## Pogłębienie:
+
+Usuwanie znaków według wzorca nie jest nowym konceptem w programowaniu. Kiedy dane wejściowe są nieprzewidywalne, często musimy je oczyścić z niepotrzebnych znaków. Inna strategia to korzystanie z funkcji `replace()`. Ta metoda jednak wymaga więcej zasobów, ponieważ tworzy nowy łańcuch zamiast modyfikować istniejący.
 
 ## Zobacz także:
-- Dokumentacja Arduino - https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/
-- Przykładowe projekty wykorzystujące technikę usuwania znaków pasujących do wzorca - https://create.arduino.cc/projecthub/projects/tags/text/filtering
+
+Jeśli chcesz dowiedzieć się więcej o programowaniu w Arduino i szukaniu wzorców, możesz odwiedzić następujące źródła:
+
+1. [Dokumentacja Arduino](https://www.arduino.cc/reference/pl/)
+2. [Poradnik do operacji na ciągach znaków](https://startingelectronics.org/software/arduino/learn-to-program-course/18-string-functions/)
+3. [Dokumentacja funkcji replace()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)

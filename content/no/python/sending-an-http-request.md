@@ -1,6 +1,6 @@
 ---
 title:                "Å sende en http-forespørsel"
-html_title:           "Python: Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
 simple_title:         "Å sende en http-forespørsel"
 programming_language: "Python"
 category:             "Python"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Når vi programmerer, må vi noen ganger kommunisere med andre datamaskiner og servere for å hente informasjon eller utføre handlinger. Dette kalles å sende en HTTP-forespørsel. Det er en vanlig og viktig oppgave for mange programmer.
+---
 
-## Slik gjør du det:
-For å sende en HTTP-forespørsel i Python, kan du bruke biblioteket "requests". Først importerer du biblioteket:
+## Hva & Hvorfor?
+Å sende en HTTP-forespørsel er en måte datamaskiner henter eller sender data på gjennom Internett. Programmers bruker dette til å hente web-sideinnhold, API-data, filnedlasting og mer.
+
+---
+
+## Hvordan å:
+
+For å sende en HTTP-forespørsel i Python, kan du bruke `requests` biblioteket. Hvis det ikke er installert, kan du enkelt legge det til med pip: 
+
+```Python
+pip install requests
 ```
+
+Når `requests` er installert, kan du bruke det til å sende en GET forespørsel som dette:
+
+```Python
 import requests
-```
-Deretter kan du bruke funksjonen `get()` for å sende en GET-forespørsel. For eksempel:
-```
+
 response = requests.get('https://www.google.com')
-```
-Dette vil sende en forespørsel til Google sin nettside og lagre svaret i variabelen `response`. Du kan deretter hente informasjon fra svaret, for eksempel statuskoden til forespørselen (200 betyr suksess) og innholdet i svaret (HTML-koden til nettsiden). For eksempel:
-```
 print(response.status_code)
-print(response.content)
 ```
-Dette vil gi deg følgende utput:
-```
-200
-b'<!doctype html>\n<html ... '
-```
+
+I dette tilfellet vil `status_code` gi oss HTTP-statuskoden for forespørselen. For en vellykket GET-forespørsel, skal du se `200`.
+
+---
 
 ## Dypdykk:
-Å sende HTTP-forespørsler har vært en viktig del av webutvikling siden starten av internett. Det finnes flere alternative måter å sende slike forespørsler, som for eksempel "urllib" og "httplib". Men "requests" er den mest populære og anbefalte måten å gjøre det på i Python. Det finnes også avanserte teknikker for å konfigurere og håndtere HTTP-forespørsler i mer kompliserte programmer.
+1. **Historisk kontekst**: HTTP-forespørsler ble først definert i 1991 som en del av HTTP-protokollen, som er grunnlaget for all datakommunikasjon på World Wide Web.
 
-## Se også:
-- [Requests dokumentasjon](https://requests.readthedocs.io/en/master/)
-- [W3Schools HTTP tutorial](https://www.w3schools.com/whatis/whatis_http.asp)
-- [Enkel guide til HTTP-forespørsler](https://krakenservices.github.io/kraken-rest/docs/http.html)
+2. **Alternativer**: Selv om `requests` er det mest populære valget, er det flere alternativer tilgjengelige for å sende HTTP-forespørsler i Python. Noen av disse inkluderer `httplib`, `urllib` og `http.client`.
+
+3. **Implementeringsdetaljer**: Når en forespørsel er sendt, venter klienten på et svar fra serveren. HTTP-protokollen definerer både strukturen på forespørsler og svar. 
+
+---
+
+## Se Også:
+
+* HTTP-forespørsler med Python - [Offisiell dokumentasjon](https://docs.python-requests.org/en/latest/user/quickstart/)
+* Forstå HTTP-forespørsler - [Mozilla-veiledning](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+* HTTP i Python - [W3Schools veiledning](https://www.w3schools.com/python/module_requests.asp)

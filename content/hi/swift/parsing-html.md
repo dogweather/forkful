@@ -1,7 +1,7 @@
 ---
-title:                "HTML को पार्स करना"
-html_title:           "Swift: HTML को पार्स करना"
-simple_title:         "HTML को पार्स करना"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,26 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या & क्यों?
-पार्सिंग HTML क्या है और क्यों प्रोग्रामर इसे करते हैं? HTML पृष्ठों को कंप्यूटर को समझने और प्रसंस्करण के लिए संरचित डेटा में रूपांतरित करने के लिए उपयोग किया जाता है। प्यारोसिंग HTML से, हम वेब पृष्ठों से जानकारी प्राप्त कर सकते हैं और उसे अपनी आवश्यकताओं के अनुसार समायोजित कर सकते हैं।
+##क्या और क्यों?
+
+HTML पार्सिंग यानी HTML कोड को पढ़ने और उसे डाटा संग्रह करने की प्रक्रिया होती है। प्रोग्रामर इसे वेब पेज के डाटा को उत्पादन करने, संरचना, और विश्लेषण के लिए उपयोग करते हैं। 
 
 ## कैसे:
-```Swift
-let html = "<html><head><title>Swift HTML Parsing</title></head><body><h1>Welcome to Swift</h1><p>This is a tutorial on HTML parsing using Swift programming language.</p></body></html>"
-let parser = HTMLParser()
-let parsedHTML = parser.parse(html: html)
-print(parsedHTML)
-```
-आपको परिणाम में निम्नलिखित मिलेंगे:
 
+तो चलिए Swift में HTML पार्स करने की प्रक्रिया देखते हैं। हम SwiftSoup लाइब्रेरी का उपयोग करेंगे, जो आपको आसानी से HTML को पार्स करने देती है। 
+
+``` Swift
+import SwiftSoup
+
+let html = "<html><head><title>मेरा शीर्षक</title></head><body><p>यहां पाठ दर्ज करें</p></body></html>"
+do {
+    let doc: Document = try SwiftSoup.parse(html)
+    let title: String = try doc.title()
+    print("शीर्षक: ", title)
+} catch Exception.Error(_, let message) {
+    print(message)
+} catch {
+    print("error")
+}
 ```
-[<html>, <head>, <title>, Swift HTML Parsing, </title>, </head>, <body>, <h1>, Welcome to Swift, </h1>, <p>, This is a tutorial on HTML parsing using Swift programming language., </p>, </body>, </html>]
+उपरोक्त कोड का आउटपुट होगा:
+
+``` Swift
+शीर्षक: "मेरा शीर्षक"
 ```
 
-## गहराई में खुदी:
-पार्सिंग HTML को सबसे पहले 1993 में टिम बर्नर्स-ली के द्वारा विकसित किया गया था। आजकल, कई भाषाओं और टूल्स को HTML पार्स करने के लिए उपयोग किया जाता है, लेकिन Swift पार्सिंग के लिए एक शक्तिशाली विकल्प है। Swift के लिए कुछ प्रमुख पार्सिंग लाइब्रेरी हैं, जैसे HTMLReader और Kanna। आप अपनी आवश्यकताओं के अनुसार किसी भी पुस्तकालय का उपयोग कर सकते हैं।
+## गहराी में:
 
-## देखें भी:
-- [Apple's Official Documentation for String](https://developer.apple.com/documentation/foundation/string)
-- [HTMLParser Library for Swift](https://github.com/tid-kijyun/Swift-HTML-Parser)
-- [An Introduction to Parsing HTML using Swift](https://medium.com/@rzrasel/introduction-to-parsing-html-in-swift-42a0385facc5)
+HTML पार्सिंग की आवश्यकता 1990 के दशक से ही थी, जब HTML का आविष्कार हुआ था। इसके विकल्पों में, मुख्य रूप से,()यूजर्स की XML पार्सिंग की विधि होती है। लेकिन XML पार्सर HTML को सही से पार्स नहीं कर पाते हैं। 
+
+Swift में HTML पार्सिंग, SwiftSoup बिबलियोथेकी के साथ होती है। यह बिबलियोथेकी जावा के Jsoup बिबलियोथेकी पर आधारित है, और HTML5 के DOM में सही से ट्रांसफॉर्म करने का एक सटीक तरीका प्रदान करती है। 
+
+## यह भी देखे:
+
+Swift के आधिकारिक डाक्यूमेंटेशन -[Swift Website](https://swift.org/documentation/)
+
+SwiftSoup गिटहब पेज -[GitHub](https://github.com/scinfu/SwiftSoup)
+
+HTML के लिए W3Schools ट्यूटोरियल -[W3Schools](https://www.w3schools.com/html/default.asp)

@@ -1,6 +1,6 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "Python: 文字列から日付を解析する"
+html_title:           "Bash: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "Python"
 category:             "Python"
@@ -10,26 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするの？
-日付文字列を解析することは、日付の情報を含む文字列から日付を抽出することです。プログラマーがこれを行うのは、日付情報をより効率的に処理するためです。
+## 何となぜ？
 
-## 方法：
+文字列から日付を解析するとは、文字列形式のデータを日付形式に変換することを意味します。これは、プログラマが文字列情報を特定の形式の日付として操作する必要があるときに行われます。
+
+## どうやって:
+
+Pythonの`datetime`モジュールの`strptime`関数を使います。見てみましょう：
+
+```Python
+from datetime import datetime
+
+date_string = "2022年4月5日"
+date_object = datetime.strptime(date_string, "%Y年%m月%d日")
+
+print(date_object)
 ```
-# 日付の文字列から日付を解析する方法
-import datetime
 
-# 日付の文字列の定義
-date_string = '2021年1月1日'
+これは、以下の出力を表示します：
 
-# 文字列を日付に変換する
-parsed_date = datetime.datetime.strptime(date_string, '%Y年%m月%d日')
-
-print(parsed_date.date()) # 2021-01-01
+```Python
+2022-04-05 00:00:00
 ```
 
-## 詳細説明：
-日付を含む文字列から日付を抽出するというアイデアは、プログラミングの初期から存在しています。古くはプログラム言語に含まれておらず、自分で関数を書く必要がありましたが、今では多くの言語に組み込まれています。代表的な方法として、パターンマッチングや正規表現を使用して日付を抽出する方法があります。
+ここで、`strptime`関数は文字列を日付オブジェクトに変換します。第二パラメータは特定の日付形式を示します。
 
-## 参考情報：
-- [Pythonのdatetimeモジュール](https://docs.python.org/ja/3/library/datetime.html)
-- [日付文字列を解析する方法についての詳しい説明](https://realpython.com/python-datetime/#parsing-dates-from-strings)
+## 深掘り：
+
+1. 歴史的な文脈: Pythonで日付を解析するための関数はPythonの初期バージョンから存在しています。しかし、現在版であるPython 3.8以降では、より簡単な解析のために新しい関数が導入されています。
+
+2. 代替案: `dateutil.parser`は自動的に日付を解析するオプションを提供します。
+
+```Python
+from dateutil.parser import parse
+
+date_string = "2022年4月5日"
+date_object = parse(date_string)
+
+print(date_object)
+```
+
+3. 実装詳細: `strptime`は内部的にCライブラリの関数を使用していて効率的です。ただし日付形式を間違えるとエラーが返ってきます。
+
+## 参照：
+
+- Python公式ドキュメントに`datetime`が詳しく解説されています：https://docs.python.org/3/library/datetime.html
+
+- dateutil.parserの使用についてはこちらをご覧ください：https://dateutil.readthedocs.io/en/stable/parser.html

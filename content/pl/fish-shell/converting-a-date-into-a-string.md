@@ -1,7 +1,7 @@
 ---
-title:                "Przekształcenie daty na ciąg znaków"
-html_title:           "Fish Shell: Przekształcenie daty na ciąg znaków"
-simple_title:         "Przekształcenie daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,34 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
 
-Konwersja daty na ciąg znaków to proces przekształcenia daty (np. "2021-01-01") w formacie zrozumiałym dla komputera (np. "1 stycznia 2021"). Programiści często wykonują tę operację, aby dane mogły być łatwiejsze do przetwarzania i wyświetlania.
+Konwersja daty na ciąg znaków umożliwia przedstawienie daty w czytelnej formie. Programiści robią to, aby ułatwić interpretację daty przez użytkowników lub zapisanie jej do pliku.
 
 ## Jak to zrobić:
 
-```
-Fish Shell pozwala na łatwą konwersję daty na ciąg znaków za pomocą wbudowanej funkcji `strftime`. Należy podać dwie informacje - format daty oraz data, którą chcemy skonwertować. 
-```
-
-Przykładowy kod:
+Poniższy kod Fish Shell pokazuje, jak przekształcić datę na ciąg znaków w standardowym formacie YYYY-MM-DD:
 
 ```Fish Shell
-strftime "%d %B %Y" 2021-01-01
+set data (date -u +"%Y-%m-%d")
+echo $data
 ```
 
-Przykładowy wynik:
+Kiedy go uruchomisz, zobaczysz coś takiego:
 
+```Fish Shell
+2022-03-25
 ```
-1 stycznia 2021
+
+Możesz także dostosować format, na przykład pokazać tylko rok i dzień:
+
+```Fish Shell
+set data (date -u +"%Y-%d")
+echo $data
 ```
 
-## Głębsze zagadnienia:
+Da to wynik:
 
-Konwersja daty na ciąg znaków jest powszechnie stosowanym procesem w programowaniu. Przez długi czas jedynym sposobem na to było ręczne przekształcanie daty w odpowiedni format, co było czasochłonne i podatne na błędy. Obecnie istnieją również inne narzędzia, takie jak biblioteki programistyczne, które ułatwiają tę operację. Fish Shell jest jednym z wielu języków programowania, które oferują wbudowaną funkcję do konwersji daty na ciąg znaków.
+```Fish Shell
+2022-25
+```
 
-## Zobacz także:
+## Pogłębione informacje:
 
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/cmds/strftime.html
-- Inne narzędzia do konwersji daty na ciąg znaków: https://www.datetimeformatter.com/
-- Przydatne informacje dotyczące formatowania daty: https://www.strfti.me/
+Zasoby systemu Unix zapewniają funkcję `date`, która po raz pierwszy pojawiła się w systemie Time-Sharing System (TSS/8) w 1970 roku. To właśnie ona pozwala nam na manipulację datami w Fish Shell.
+
+Alternatywnie, możesz użyć innych języków, takich jak Python czy JavaScript, aby przekształcić datę na ciąg znaków, jednak Fish Shell zapewnia prostszy sposób, bez potrzeby dodawania dodatkowych bibliotek.
+
+Dużą zaletą jest możliwość dowolnego formatowania daty. Możemy ustawić dowolny układ rok, miesiąc, dzień dzięki różnym opcjom, które podajemy jako argumenty do funkcji `date`.
+
+## Inne materiały:
+
+Jeśli chcesz dowiedzieć się więcej o Fish Shell i manipulacji datami, oto kilka linków do powiązanych źródeł:
+
+1. [Dokumentacja Fish Shell](https://fishshell.com/docs/)
+2. [Artykuł na temat formatowania dat w Unix](https://www.geekhideout.com/date.shtml)
+3. [Kurs online o Fish Shell](https://www.learnshell.org/)
+4. [Dyskusja na StackExchange na temat konwersji daty na ciąg znaków](https://unix.stackexchange.com/questions/4671/date-command-conversion-to-string)

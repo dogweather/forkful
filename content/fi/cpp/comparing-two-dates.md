@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "C++: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "C++: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,57 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Vertaillessa kahta eri päivämäärää ohjelmoijat tarkistavat, ovatko päivämäärät samat vai erilaiset. Tämä on tärkeää esimerkiksi kun halutaan tarkistaa, onko tietty tapahtuma tapahtunut ennen vai jälkeen tiettyä päivää.
+## Mikä & Miksi?
 
-Asioita voi vertailla monella eri tavalla kaikkien mahdollisten laskutoimitusten avulla, mutta tiettyjen tietueiden käyttö helpottaa prosessia ja tekee sen luotettavammaksi.
+Päivämäärien vertaaminen viittaa prosessiin, jossa kahta päivämäärää verrataan toisiinsa, esimerkiksi selvittämään, mikä niistä tulee ennen tai jälkeen tai ovatko ne samat. Ohjelmoijat tekevät tämän usein ajanjaksojen laskemiseksi tai aikataulutuksen hallitsemiseksi.
 
-## Kuinka: 
-Vertaillaan kahta päivämäärää: 01 toukokuuta 2021 ja 15 kesäkuuta 2021.
+## Näin teet
+
 ```C++
 #include <iostream>
 #include <ctime>
-using namespace std;
+#include <iomanip>
 
-// Funktio vertailee kahta annettua päivämäärää
-// Palauttaa true, jos päivämäärät ovat samat
-bool vertailePäivämääriä(int pv1, int kk1, int v1, int pv2, int k2, int v2)
-{
-    if (pv1 == pv2 && kk1 == k2 && v1 == v2)
-        return true;
-    return false;
-}
+// esimerkki päivämäärien luomisesta ja vertaamisesta
+int main() {
+    // luodaan kaksi aikapiste-olioo
+    std::tm a = {};
+    std::tm b = {};
 
-int main()
-{
-    int pv1 = 1; // Ensimmäisen päivämäärän päivä
-    int kk1 = 5; // Ensimmäisen päivämäärän kuukausi
-    int v1 = 2021; // Ensimmäisen päivämäärän vuosi
+    a.tm_year = 120; a.tm_mon = 5; a.tm_mday = 25;   // 25.6.2020
+    b.tm_year = 121; b.tm_mon = 5; b.tm_mday = 25;   // 25.6.2021
 
-    int pv2 = 15; // Toinen päivämäärä
-    int kk2 = 6;
-    int v2 = 2021;
+    // muunnetaan aikapisteet epoch-ajaksi (sekunneissa alkaen 1.1.1970)
+    std::time_t x = std::mktime(&a);
+    std::time_t y = std::mktime(&b);
 
-    if (vertailePäivämääriä(pv1, kk1, v1, pv2, kk2, v2))
-        cout << "Päivämäärät ovat samat.";
+    // verrataan sekunneiksi muutettuja aikoja
+    if (x < y)
+        std::cout << "a tulee ennen b:tä";
+    else if (y < x)
+        std::cout << "b tulee ennen a:ta";
     else
-        cout << "Päivämäärät ovat erilaiset.";
-    return 0;
+        std::cout << "a ja b ovat samana päivänä";
 }
+
 ```
 
-Output:
-```
-Päivämäärät ovat erilaiset.
-```
+## Syvällisemmin
 
-## Syväsukellus:
-Varhaisemmissa ohjelmissa päivämääriä vertailtiin usein yhdistämällä ne yhteen merkkijonoon ja vertailemalla sen avulla. Tämä tapa ei ollut kovin käytännöllinen, sillä se aiheutti usein ongelmia eri muodoissa olevien päivämäärien kanssa.
+Historiallinen konteksti: Ajan laskeminen sekunneissa vuodesta 1970 eteenpäin, ns. "epoch-aika", on Unix-järjestelmien perintöä. Tämä muoto on hyvä päivämäärien vertailuun, koska se muuntaa päivämäärät yksinkertaisiksi numeroiksi.
 
-Nykyisin monet kielet tarjoavat valmiita tietueita päivämäärien käsittelyä varten, mikä tekee vertailun helpommaksi ja luotettavammaksi. Vaihtoehtoisesti voidaan myös käyttää erilaisia päivämääräkirjastoja, jotka tarjoavat erilaisia toimintoja ja tarkemman kontrollin päivämäärien vertailuun.
+Vaihtoehtoisia malleja ovat päivämäärä- ja aika-kirjastot, kuten [Date](https://en.cppreference.com/w/cpp/chrono) ja [Boost.Date_Time](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html).
 
-Päivämäärien vertailussa tarkastellaan yleensä päivä-, kuukausi- ja vuosilukuja. Lisäksi on tärkeää huomioida esimerkiksi karkausvuodet ja eri aikavyöhykkeet, jotta vertailu on mahdollisimman tarkka ja tehokas.
+Yksityiskohtia toteutuksesta: C++ tarjoaa useita tapoja päivämäärien ja aikojen vertailemiseen. Tässä esimerkissä käytetty ```mktime``` -funktio muuntaa päivämäärän sekunneiksi, joiden vertailu on yksinkertaista.
 
-## Katso myös:
-- [cppreference.com - Date and time library](https://en.cppreference.com/w/cpp/chrono)
-- [GeeksforGeeks - Comparing dates in C++](https://www.geeksforgeeks.org/comparing-dates-cpp/)
+## Katso myös
+
+Hyödyllisiä lähteitä ovat:
+
+1. C++ aikakirjaston virallinen dokumentaatio ([std::time](https://en.cppreference.com/w/cpp/chrono/c/tm))
+2. Päivämäärien vertailun opas ([stackoverflow](https://stackoverflow.com/questions/6556700/comparing-date-in-c))
+3. Lisätietoja epoch-ajasta ([Unix Time](https://en.wikipedia.org/wiki/Unix_time))

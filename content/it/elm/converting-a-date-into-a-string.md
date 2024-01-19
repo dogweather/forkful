@@ -1,6 +1,6 @@
 ---
 title:                "Convertire una data in una stringa"
-html_title:           "Elm: Convertire una data in una stringa"
+html_title:           "Javascript: Convertire una data in una stringa"
 simple_title:         "Convertire una data in una stringa"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Convertire una data in una stringa è un'operazione comune per i programmatori. Ci permette di visualizzare una data in un formato più leggibile per gli utenti finali. Ad esempio, invece di mostrare una data come "2021-05-24", potremmo volerla visualizzare come "24 maggio 2021". Questo rende le informazioni più comprensibili e user-friendly.
+## Cos'è & Perché?
+La conversione di una data in una stringa significa trasformare un oggetto data in testo leggibile. I programmatori lo fanno per semplificare la rappresentazione e la visualizzazione delle date.
 
 ## Come fare:
-Ecco un esempio di codice Elm che converte una data in una stringa nel formato "gg MMMM aaaa", utilizzando la libreria integrata `Date` di Elm:
-```elm
-import Date exposing (Day, Month, Year, toIsoString)
+Utilizza la funzione `toString` di Elm per convertire una data in una stringa.
 
-dateToString : Day -> Month -> Year -> String
-dateToString day month year =
-    toIsoString (Date.fromMonthYear day month year)
-    |> String.split "-" 
-    |> List.reverse 
-    |> String.join " "
-    |> String.toUpper
-```
-Output:
-```elm
-dateToString 24 May 2021
-"24 MAGGIO 2021"
+```Elm
+import Time
+
+main =
+    let
+        time = Time.millisToPosix 1463480130000
+    in
+    text (Time.toIsoString time)
 ```
 
-## Approfondimento:
-In passato, le date venivano rappresentate in modo diverso nei vari paesi e culture. Ciò ha portato a diverse convenzioni e formati per mostrare le date. Con l'avvento del computer e della standardizzazione dei formati di dati, come l'ISO 8601, è diventato più semplice convertire le date in una stringa.
+Questo produrrà un output come:
 
-Esistono anche altre librerie di terze parti in Elm, come `alwaysAI/elm-date-format` e `dillonkearns/elm-local-datetime`, che offrono funzioni più avanzate per la gestione delle date.
+```Elm
+"2016-05-17T08:02:10Z"
+```
 
-Quando si lavora con date in Elm, è importante prestare attenzione al fuso orario e alla differenza tra tempo locale e UTC. La libreria `Date` di Elm utilizza il fuso orario per impostazione predefinita e può causare problemi se non viene gestita correttamente.
+In questo esempio, abbiamo prima convertito i millisecondi in un oggetto POSIX e poi l'abbiamo convertito in una stringa ISO.
 
-## Vedi anche:
-- Documentazione ufficiale della libreria `Date` di Elm: https://package.elm-lang.org/packages/elm/time/latest/Date
-- Articolo sul formato delle date ISO 8601: https://it.wikipedia.org/wiki/ISO_8601
-- Esempi di altri formati per le date: https://en.wikipedia.org/wiki/Date_format_by_country
+## Approfondimento
+La conversione delle date in stringhe esiste da quando le date sono state introdotte nei linguaggi di programmazione. Elm usa lo standard internazionale ISO 8601 per la conversione, assicurando che le stringhe risultanti siano universali.
+
+Ci sono alternative, come l'uso di librerie esterne o la creazione di una funzione personalizzata per adattare l'output alle tue esigenze. Tuttavia, la funzione `toIsoString` incorporata di Elm è generalmente l'approccio più semplice e consigliato.
+
+L'implementazione di `toIsoString` in Elm segue l'ora UTC. Questo significa che la stringa prodotta è sempre in relazione all'orario GMT (Greenwich Mean Time), non all'ora locale.
+
+## Vedi Anche
+- Documentazione Elm su [Time.toIsoString](https://package.elm-lang.org/packages/elm/time/latest/Time#toIsoString)
+- Standard [ISO 8601](https://it.wikipedia.org/wiki/ISO_8601) su Wikipedia
+- ISO 8601 in Elm: [Date and Time Formats](https://discourse.elm-lang.org/t/iso-8601-date-and-time-formats/2997)
+- Esempi di codice Elm per manipolare le date: [Elm Date Examples](https://ellie-app.com/a/Dm63Q8b9N7ja1)

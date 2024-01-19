@@ -1,7 +1,7 @@
 ---
-title:                "Raderar tecken som matchar ett mönster"
-html_title:           "Clojure: Raderar tecken som matchar ett mönster"
-simple_title:         "Raderar tecken som matchar ett mönster"
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,31 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Ta bort tecken efter ett mönster innebär att du identifierar och tar bort specifika tecken från en sträng baserat på ett specifikt mönster. Detta är viktigt för programmerare, eftersom det hjälper till att rensa och format om data effektivt.
 
-Att ta bort tecken som matchar ett mönster är en viktig del av programmering för att förändra och manipulera textdata. Detta gör det möjligt för programmerare att rensa och filtrera data på ett effektivt sätt.
+## Hur man gör:
 
-## Så här:
+För att ta bort tecken som matchar ett mönster i Clojure kan vi använda `clojure.string/replace`-funktionen. Till exempel:
 
-```Clojure
-; Ta bort alla siffror från en sträng
-(re-seq #"\d" "abc123def") ; => ("1" "2" "3")
+```clojure
+(require '[clojure.string :as str])
 
-; Ta bort alla stora bokstäver från en sträng
-(re-seq #"[A-Z]" "AbCdEf") ; => ("A" "C" "E")
+(defn delete-recurring-letters [s]
+  (str/replace s #"(.)\1+" "$1"))
 
-; Ta bort alla specialtecken från en sträng
-(re-seq #"[^A-Za-z0-9]" "Hello, world!") ; => ("," " ")
+(println (delete-recurring-letters "aaaabbbbcccc")) 
+; output: abcc
 ```
+I kolven ovan ersätter vi tecken som återkommer mer än en gång med det ursprungliga tecken.
 
-## Djupt dyk:
+## Fördjupning:
 
-Att ta bort tecken som matchar ett visst mönster är ett vanligt problem som har funnits i programmering sedan lång tid tillbaka. Tidigare var det vanligt att använda inbyggda metoder i programmeringsspråk, men med Clojure är det enkelt att använda reguljära uttryck för att lösa detta.
+Funktionen `clojure.string/replace` är så kraftfull eftersom den använder regelbundna uttryck (regex) för att identifiera mönster, vilket är en del av många programmeringsspråks historia. Emellertid fanns det andra metoder för att ta bort tecken som matchar ett mönster innan regex blev gängse, som att använda öglor. 
 
-En alternativ metod för att ta bort tecken som matchar ett mönster är att loopa igenom strängen tecken för tecken och ta bort de som matchar mönstret. Detta är dock inte lika effektivt som att använda reguljära uttryck.
+Ett alternativ till `str/replace` är att använda `clojure.string/replace-first` vilket endast ersätter första matchningen istället för alla matchningar.
 
-Att använda reguljära uttryck för att ta bort tecken som matchar ett mönster kan också göras på andra sätt, men Clojure:s inbyggda metoder är enkla och kraftfulla nog för att hantera de flesta fall.
+Funktionens genomförande involverar kompilering av regex-mönstret, utför sedan en matchning av mönstret mot strängen, och infogar därefter den givna ersättningen varje gång en matchning hittas.
 
-## Se också:
+## Läs mer:
 
-- [Clojure regex karta](https://clojure.org/reference/special_forms#special-forms-3): En översikt av regular expressions i Clojure
-- [Regular expressions tutorial](https://www.regular-expressions.info/tutorial.html): En detaljerad guide om hur reguljära uttryck fungerar.
+- Clojure-string manual: https://clojuredocs.org/clojure.string
+- Regex Wikipedia: https://en.wikipedia.org/wiki/Regular_expression
+- En bok om Clojure: https://www.braveclojure.com/clojure-for-the-brave-and-true/

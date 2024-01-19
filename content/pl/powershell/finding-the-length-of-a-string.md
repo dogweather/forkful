@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "PowerShell: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego? 
-Znalezienie długości ciągu znaków jest ważnym elementem programowania, ponieważ pozwala na określenie ile znaków zawiera dany ciąg. Jest to przydatne zwłaszcza przy manipulowaniu tekstem, gdzie często musimy sprawdzić długość wyrazów lub zdań.
+## Co i dlaczego?
 
-## Jak to zrobić: 
-Aby znaleźć długość ciągu znaków w programie PowerShell, możemy użyć wbudowanej funkcji `Len`. Poniżej przedstawiamy przykładowy kod i jego output:
+Określenie długości łańcucha oznacza identyfikację liczby znaków w danym ciągu. Programiści robią to, aby efektywnie zarządzać i manipulować danymi tekstowymi.
 
-```
-PowerShell
-$zmienna = "Hello World!"  
-Len $zmienna
-```
+## Jak to zrobić:
 
-Output: 
-```
-12
+Używamy cmdlet `Measure-Object`, aby określić długość łańcucha w PowerShell.
+
+```Powershell
+$ciagZnakow ="Powershell jest fajny"
+$ciagZnakow.Length
 ```
 
-## Głębszy wgląd: 
-Funkcja `Len` jest dostępna w wielu językach programowania i została wprowadzona już w pierwszych wersjach programu BASIC w latach 60-tych. W niektórych językach, np. Java, istnieje również metoda `length()`, która może być użyta do znalezienia długości ciągu znaków.
+Zwróci to liczbę 21, co oznacza, że łańcuch zawiera 21 znaków.
 
-Alternatywą dla wbudowanej funkcji `Len` w programie PowerShell może być zastosowanie operatora `.` po zmiennej, a następnie metody `Length`, na przykład `$zmienna.Length`.
+## Deep Dive
 
-## Zobacz także: 
-Jeśli chcesz dowiedzieć się więcej o innych funkcjach i zastosowaniach programu PowerShell, polecamy zajrzeć na oficjalną stronę dokumentacji: [https://docs.microsoft.com/en-us/powershell/](https://docs.microsoft.com/en-us/powershell/)
+Historia: Pomiar długości łańcucha nie jest nową koncepcją w programowaniu. Właściwość `Length` w PowerShell istnieje od jego początków.
+
+Alternatywy: Choć `Length` jest najprostszym sposobem znalezienia długości łańcucha, można też użyć cmdlet `Measure-Object`. 
+
+```Powershell
+$ciagZnakow | Measure-Object -Character | Select-Object -Property Characters
+```
+
+Implementacja: Wewnętrznie, `Length` jest właściwością klasy string w .NET Framework, której PowerShell jest częścią. Działanie polega na zliczaniu znaków łańcucha, co jest efektywne i niezawodne.
+
+## Zobacz też
+
+1. [String.Length Property in .NET](https://docs.microsoft.com/en-us/dotnet/api/system.string.length)
+2. [Using the PowerShell "Length" Property](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-day-to-day-admin-tasks-length-property/) 
+3. [Guide to PowerShell String](https://www.educba.com/powershell-string/)
+4. [PowerShell Measure-Object cmdlet](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/measure-object)

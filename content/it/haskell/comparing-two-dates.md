@@ -1,7 +1,7 @@
 ---
-title:                "Confrontare due date."
-html_title:           "Haskell: Confrontare due date."
-simple_title:         "Confrontare due date."
+title:                "Confronto tra due date"
+html_title:           "Elixir: Confronto tra due date"
+simple_title:         "Confronto tra due date"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa & Perché?
+## Cos'è e Perché?
 
-Comparare due date è un'attività comune per i programmatori. Ciò significa confrontare due date per determinare se una è precedente, più recente o uguale all'altra. Questo può essere utile per gestire le operazioni temporali, come ad esempio la pianificazione di eventi o il calcolo del tempo trascorso.
+Il confronto tra due date è un'operazione comune che permette di stabilire se una data è anteriore, successiva o uguale ad un’altra. Questo è essenziale in vari contesti di programmazione come nel pianificare eventi o nel calcolo di intervalli di tempo.
 
-Come fare:
+## Come fare:
 
-Ecco alcuni esempi di codice Haskell per confrontare due date:
+In Haskell, puoi utilizzare le funzioni incorporate per manipolare e confrontare le date. Osserva questo esempio di base:
 
 ```Haskell
 import Data.Time.Calendar
-import Data.Time.Calendar.OrdinalDate
 
--- Creazione di due date
-let data1 = fromGregorian 2021 10 13
-let data2 = fromGregorian 2021 10 14
+data1 = fromGregorian 2021 12 16
+data2 = fromGregorian 2022 01 01
 
--- Confronto di date
-data1 >= data2  --output: False
-data1 < data2   --output: True
-data1 == data2  --output: False
+compareContents = compare data1 data2
 
--- Calcolo del numero di giorni trascorsi tra due date
-let diff = diffDays data1 data2 --output: 1
+main = print compareContents
 ```
+L'output sarà: 
+```Haskell
+LT
+```
+Questo perchè 'LT' indica che `data1` è meno di `data2`.
 
-Deep Dive:
+## Approfondimenti
 
-La comparazione di date è diventata un requisito importante per i programmatori con l'avvento delle applicazioni di gestione del tempo e delle operazioni temporali. In precedenza, questo compito poteva essere svolto manualmente, ma grazie alle funzioni disponibili nei linguaggi di programmazione, come Haskell, è diventato molto più semplice.
+Haskell usa il tipo di dato `Day` per rappresentare le date. Questo tipo è una 'Newtype' basata sull´intero, dove il valore rappresenta il numero di giorni trascorsi dal 'day zero', ovvero il primo Gennaio 1 del 1858.
 
-Alternativamente, è possibile utilizzare librerie esterne specializzate per la manipolazione delle date, come ad esempio la libreria "time" di Haskell. Questa libreria offre funzionalità avanzate per manipolare e confrontare le date, rendendo il codice più leggibile e manutenibile.
+Ci sono diverse alternative per confrontare le date in Haskell, come l'uso di librerie esterne come `time` o `date`. Tuttavia, le funzioni integrate forniscono un modo semplice ed efficiente per farlo.
 
-In Haskell, le date sono rappresentate con il tipo di dato "Day", che rappresenta una data del calendario gregoriano. Ciò consente di utilizzare funzioni specializzate per confrontare le date in modo efficiente.
+La funzione `compare` è una funzione predefinita in Haskell che ti consente di confrontare i valori di due elementi. Questo funziona solo se i tipi degli elementi che stai cercando di comparare implementano l'interfaccia `Ord`, che, per fortuna, è implementata dal tipo `Day`.
 
-Vedi anche:
+## Approfondisci Portando a Conoscenza
 
-- Documentazione ufficiale di Haskell sulla funzione "compare": https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Ord.html#v:compare
-- Tutorial su come utilizzare la libreria "time" di Haskell per manipolare le date: https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/formatting-dates-and-times
+Ecco alcuni link per approfondire l'argomento:
+
+1. [Documentazione Haskell ufficiale](https://www.haskell.org/documentation/)
+2. [Pacchetto Time su Hackage](https://hackage.haskell.org/package/time)
+3. [Corso di introduzione a Haskell](https://www.futurelearn.com/courses/functional-programming-haskell)

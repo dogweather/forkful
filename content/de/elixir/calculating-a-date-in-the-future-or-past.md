@@ -1,7 +1,7 @@
 ---
-title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Elixir: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines zukünftigen oder vergangenen Datums"
+html_title:           "Elixir: Berechnung eines zukünftigen oder vergangenen Datums"
+simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -11,18 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Die Berechnung eines Datums in der Zukunft oder Vergangenheit ist eine häufige Aufgabe für Programmierer. Dabei handelt es sich um eine Funktion, die ein bestimmtes Datum um eine festgelegte Anzahl von Tagen, Wochen, Monaten oder Jahren verschiebt. Programme benötigen diese Funktion, um zukünftige Termine zu planen oder vergangene Ereignisse zu verfolgen.
 
-## Wie geht's?
-Um ein Datum in Elixir zu berechnen, kannst du die Funktion `Date.add/2` verwenden. Sie nimmt zwei Argumente an: das ursprüngliche Datum und die Anzahl der Tage, Wochen, Monate oder Jahre, um die es verschoben werden soll. Zum Beispiel:`ElixirDate.add({2021, 6, 1}, 2)` ergibt das Datum 3. Juni 2021.
+Berechnung eines zukünftigen oder vergangenen Datums ist eine gängige Programmieroperation. Diese Operation ist nützlich, um Berechnungen wie Fristen, Verzögerungen oder Ereignisdaten durchzuführen.
 
-Um eine bestimmte Einheit zu verwenden, kannst du zusätzliche Funktionen verwenden, wie z.B. `Date.add_days/2`, `Date.add_weeks/2`, `Date.add_months/2` und `Date.add_years/2`. Zum Beispiel:`ElixirDate.add_weeks({2021, 6, 1}, 2)` ergibt das Datum 15. Juni 2021.
+## So Geht's:
 
-## Tiefer Einblick
-Die Berechnung von Daten in der Zukunft oder Vergangenheit ist ein häufiges Problem in der Programmierung und es gibt viele verschiedene Ansätze, um es zu lösen. Manche Programmiersprachen haben integrierte Funktionen, um dies zu tun, während andere auf externe Bibliotheken angewiesen sind. In Elixir ist es einfach dank der eingebauten `Date`-Klasse.
+In Elixir gibt es eine wunderbare Bibliothek namens `Timex`, die Ihre Vorgaben erfüllen kann. 
 
-Es ist auch wichtig zu beachten, dass bei der Berechnung von Daten in der Zukunft oder Vergangenheit Faktoren wie Schaltjahre und Schaltmonate berücksichtigt werden müssen. In Elixir können diese komplexen Berechnungen mit der `Date.shift`-Funktion durchgeführt werden.
+Zuerst müssen Sie es zu Ihrer App hinzufügen:
+```Elixir
+def deps do
+  [
+    {:timex, "~> 3.6"}
+  ]
+end
+```
 
-## Sieh dir auch an
-- [Elixir-Dokumentation zu Datum und Zeit](https://hexdocs.pm/elixir/Date.html)
-- [Einführung in Elixir: Eine funktionale Sprache für elegante Codierung](https://www.educba.com/introduction-to-elixir/)
+Für die Berechnung eines zukünftigen Datums könnten Sie das folgende tun:
+```Elixir
+iex> duration = Timex.Duration.from_days(3)
+iex> future_date = Timex.shift(Timex.now(), days: duration)
+iex> Timex.to_date(future_date)
+~D[2021-12-19]
+```
+
+Und für ein Datum in der Vergangenheit:
+```Elixir
+iex> duration = Timex.Duration.from_days(3)
+iex> past_date = Timex.shift(Timex.now(), days: -duration)
+iex> Timex.to_date(past_date)
+~D[2021-12-13]
+```
+
+## Tief Tauchen:
+
+Historisch betrachtet, wurde dies schon immer anders in den verschiedenen Programmiersprachen gemacht. In Elixir haben Sie das Glück, dass mit `Erlang/OTP 21` und höher natives Zeit-Tracking eingeführt wurde, was den Umgang mit Datum und Zeit erheblich vereinfacht hat.
+
+Alternativen zu `Timex` sind `Calendar` und `Ecto.DateTime`. `Timex` wird jedoch allgemein als die vollständigste und flexibelste Option angesehen. 
+
+Die Implementierungsdetails für das Berechnen von Daten in der Zukunft oder Vergangenheit sind eigentlich recht einfach, das schwierige Teil ist genau zu definieren, was "3 Tage später" bedeutet. Es könnte 3 * 24 Stunden später bedeuten, es könnte am selben Ort der nächsten Tage bedeuten, abhängig von den Anforderungen.
+
+## Siehe Auch:
+
+- ["NaiveDateTime" in Elixir-Dokumentation](https://hexdocs.pm/elixir/NaiveDateTime.html)
+- ["Timex" Dokumentation](https://hexdocs.pm/timex/readme.html)
+- ["Calendar" in Elixir-Dokumentation](https://hexdocs.pm/calendar/readme.html)
+- ["Ecto.DateTime in Ecto-Dokumentation"](https://hexdocs.pm/ecto/Ecto.DateTime.html)

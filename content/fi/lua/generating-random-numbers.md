@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaisten lukujen generointi"
-html_title:           "Lua: Satunnaisten lukujen generointi"
-simple_title:         "Satunnaisten lukujen generointi"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Numbers"
@@ -10,24 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Satunnaisten numeroiden luominen on tärkeä osa monien ohjelmien toimintaa. Satunnaiset numerot ovat lukuja, jotka eivät seuraa mitään tiettyä kaavaa, ja niitä voidaan käyttää moniin eri tarkoituksiin ohjelmoinnissa. Tämän vuoksi ohjelmoijat käyttävät satunnaislukugeneraattoreita varmistaakseen, että ohjelma toimii joka kerta eri tavalla.
+## Mikä & Miksi?
 
-## Miten:
-Random-numeroiden generoiminen Lua-kielellä on helppoa ja nopeaa. Käytä funktiota `math.random()`, joka voi ottaa joko yhden tai kaksi parametria. Ensimmäinen parametri määrittää pienimmän mahdollisen arvon ja toinen parametri suurimman mahdollisen arvon, esimerkiksi:
-```
-Lua
-math.random(1,5) -- palauttaa satunnaisen luvun väliltä 1-5
-math.random() -- palauttaa satunnaisen luvun väliltä 0-1
-```
-Voit myös asettaa vakioksi käytettävän satunnaislukugeneraattorin käyttämällä funktiota `math.randomseed()`, esimerkiksi:
-```
-Lua
-math.randomseed(123) -- käyttää satunnaisten lukujen luomiseen samaa järjestystä joka kerta
+Satunnaislukujen luominen on prosessi, jossa erilaisia numeroita luodaan ilman näkyvää kaavaa. Ohjelmoijat tekevät tämän usein simuloidakseen satunnaisuutta tai testatakseen ohjelmiensa suorituskykyä.
+
+## Miten toimii:
+
+Lua-toteutuksessa satunnaislukujen luominen on melko yksinkertaista käyttämällä 'math.random' -funktiota:
+
+```Lua
+-- Alustaa satunnaislukugeneraattorin
+math.randomseed(os.time())
+
+-- Tuottaa satunnaisen kokonaisluvun väliltä 1-100
+randomNumber = math.random(100)
+print(randomNumber)
 ```
 
-## Syvemmälle:
-Satunnaisten lukujen generointi on ollut tärkeä osa ohjelmointia jo vuosikymmenien ajan. Alun perin tietokoneet eivät pystyneet luomaan oikeasti sattumanvaraisia numeroita vaan tietokoneen aika ja käyttäjän antamat syötteet käytettiin apuna satunnaisuutta luodessa. Nykyään tietokoneet voivat generoida täysin sattumanvaraisia numeroita, mutta joissain tapauksissa voidaan silti käyttää muita menetelmiä, kuten satunnaisten lukujen generoimista ulkopuolisista lähteistä.
+Metodi 'math.random()' palauttaa satunnaisen luvun välillä 0 ja 1. Se voi myös palauttaa kokonaisluvun tietyn alueen sisällä.
+
+## Syvempi tieto:
+
+Historiallisessa kontekstissa satunnaislukujen generointi on ollut välttämätöntä monien perusohjelmistojen, kuten simulaatioiden ja tietokonepelien, toiminnalle. Lua tukee tätä perustoimintoa 'math.random' -toiminnolla.
+
+Satunnaislukugeneraattorin vaihtoehtoja on useita, kuten Mersenne Twister tai Xorshift, mutta Lua käyttää C-kielisen tasoista rand()-funktiota, joka pohjautuu lineaariseen kongruenssialgoritmiin.
+
+Yksityiskohdat toteutuksesta: 'math.randomseed' -funktiota tulisi kutsua kerran ohjelman alkaessa ja 'math.random' -funktiota käytetään lukujen tuottamiseen. Todellista satunnaisuutta ei voida saavuttaa, mutta tämä saa aikaan riittävän "epädeterministisen" tuloksen.
 
 ## Katso myös:
-Voit löytää lisää tietoa satunnaislukujen generoimisesta Lua-kielellä LuaWikista: [LuaWiki - Satunnaiset numerot](https://lua.wikia.org/wiki/Math.random)
+
+1. Lua math.random dokumentaatio: [Link](https://www.lua.org/manual/5.4/manual.html#6.7)
+2. Mersenne Twister Wikipedia: [Link](https://fi.wikipedia.org/wiki/Mersenne_twister)
+3. Xorshift Wikipedia: [Link](https://fi.wikipedia.org/wiki/Xorshift)

@@ -1,6 +1,6 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "Go: Obteniendo la fecha actual"
+html_title:           "C#: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Go"
 category:             "Go"
@@ -10,25 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué? 
-Obtener la fecha actual es una tarea común para los programadores. Esta función les permite obtener información precisa sobre el tiempo de ejecución de su código y también les permite realizar operaciones dependientes de la fecha actual.
+## ¿Qué es y por qué?
+
+Obtener la fecha actual significa que tu programa está accediendo a la fecha y hora actual del sistema. Los programadores hacen esto para marcar eventos, generar informes basados en el tiempo, o para programar tareas.
 
 ## Cómo hacerlo:
-Utilizando el lenguaje de programación Go, obtener la fecha actual es muy fácil. Simplemente debes utilizar la función `Now()` del paquete `time` y asignarla a una variable. Aquí tienes un ejemplo:
+
+En Go, puedes obtener la fecha y hora actual con la función `Now` del paquete `time`. Aquí te muestro cómo:
 
 ```Go
+package main
+import "fmt"
 import "time"
 
-fechaActual := time.Now()
+func main() {
+    fmt.Println(time.Now())
+}
+```
+Cuando ejecutas este programa, puedes esperar una salida similar a esta:
+
+```Go
+2009-11-10 23:00:00 +0000 UTC m=+0.000000001
 ```
 
-El resultado se almacenará en la variable `fechaActual` y estará en formato de tiempo estándar UTC. También puedes utilizar la función `Now().Local()` para obtener la hora local.
+## Profundizamos:
 
-## Profundizando:
-En cuanto a alternativas, existen diferentes paquetes y bibliotecas disponibles para obtener la fecha actual en Go. Algunos de los más populares son `time`, `strconv` y `daytime`. Puedes investigar más sobre estas opciones para encontrar la que mejor se adapte a tus necesidades.
+Históricamente, los lenguajes de programación han ofrecido diversas funciones para obtener la fecha y hora actual. En C, podrías usar `time(NULL)`. En Python, usarías `datetime.datetime.now()`. Sin embargo, Go hace un excelente trabajo manteniéndolo simple pero potente con la función `Now`.
 
-En cuanto a la implementación, Go utiliza un reloj interno para obtener la fecha y hora actuales. Este reloj se actualiza a medida que cambia la hora del sistema y se sincroniza con servidores de tiempo externos para evitar desfases.
+Alternativamente, puedes usar la función `Unix` del paquete `time` para obtener la fecha y hora en formato Unix (segundos desde 1970):
+
+```Go
+fmt.Println(time.Now().Unix())
+```
+
+Al llamar a `Now`, estás obteniendo un objeto `Time` que incluye información más allá de sólo la fecha y hora. Este objeto incluye la zona horaria, y métodos para formatear la fecha y hora de la forma que quieras.
 
 ## Ver también:
-- Documentación oficial de Go: [función Now() de time](https://pkg.go.dev/time#Now)
-- Tutoriales sobre cómo obtener la fecha actual en Go [en](https://www.sohamkamani.com/blog/2017/11/20/golang-date-time-tutorial/) [inglés](https://zetcode.com/golang/datetime/)
+
+Para obtener más detalles sobre el paquete `time` en Go, consulta [la documentación oficial de Go](https://golang.org/pkg/time/). Para aprender más sobre el manejo de fechas y horas en general, [w3schools tiene un excelente recurso](https://www.w3schools.com/go/go_date_time.asp).

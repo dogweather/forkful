@@ -1,7 +1,7 @@
 ---
-title:                "Verifica l'esistenza di una directory"
-html_title:           "Arduino: Verifica l'esistenza di una directory"
-simple_title:         "Verifica l'esistenza di una directory"
+title:                "Verifica se una directory esiste"
+html_title:           "Arduino: Verifica se una directory esiste"
+simple_title:         "Verifica se una directory esiste"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,29 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Controllare se una directory esiste è un'azione comune per i programmatori. Questo processo consiste nell'esaminare se una certa directory esiste nel sistema operativo, e nel caso contrario, crearla. I programmatori fanno spesso questo controllo per garantire che il loro codice funzioni correttamente e per evitare errori imprevisti.
+## Che cosa & Perché?
+Controllare se una directory è esistente significa verificare se un dato percorso di cartella esiste nel tuo sistema file SD. Lo facciamo per evitare errori nel tentativo di aprire una directory che non esiste.
 
 ## Come fare:
-Per controllare se una directory esiste in Arduino, si può utilizzare la funzione ```exists()``` della libreria SD. Di seguito un esempio di codice:
+Utilizziamo la funzione `SD.exists()` per verificare l'esistenza di una directory. Vediamo come:
 
-```
+```Arduino
+#include <SPI.h>
 #include <SD.h>
 
-if(SD.exists("nome_directory")){
-  //code to be executed if the directory exists
+void setup() {
+  Serial.begin(9600);
+
+  if (!SD.begin(4)) {
+    Serial.println("Initialisation failed!");
+    while (1);
+  }
+
+  if (SD.exists("/example_directory")) {
+    Serial.println("Directory exists.");
+  } else {
+    Serial.println("Directory doesn't exist.");
+  }
 }
-else{
-  //code to be executed if the directory doesn't exist
+
+void loop() {
+  // nothing here
 }
 ```
+Ecco l'output:
+```Arduino
+Directory exists.
+```
+o:
+```Arduino
+Directory doesn't exist.
+```
 
-Il codice sopra utilizzerà la funzione ```exists()``` per verificare se la directory "nome_directory" esiste nella scheda SD. Se esiste, il codice all'interno del primo blocco di codice verrà eseguito. In caso contrario, il codice nel secondo blocco verrà eseguito.
+## Approfondimenti
+Storicamente, `SD.exists()` è utilizzato ampiamente in Arduino per controllare l'esistenza di file e directory. Alternativamente, alcune librerie come `SdFat` offrono metodi simili. Però, `SD.exists()` ha un vantaggio significativo essendo incluso nelle librerie standard Arduino. È importante notare che, il metodo `SD.exists()` restituisce `true` anche se il percorso specificato è un file, non una directory.
 
-## Approfondimento:
-Controllare l'esistenza di una directory è diventato una pratica comune tra i programmatori grazie all'aumento del numero di dispositivi e piattaforme su cui viene eseguito il codice. Sebbene esistano alternative come la creazione programmata della directory, controllarne l'esistenza è un metodo più sicuro ed efficace. Per implementare questo controllo, si possono utilizzare diverse funzioni di libreria, come ad esempio la già citata ```exists()```. Inoltre, questo controllo può essere esteso ad altri file system oltre alla scheda SD, come per esempio la memoria flash.
-
-## Vedi anche:
-- [Documentazione ufficiale della libreria SD](https://www.arduino.cc/en/Reference/SD)
-- [Esempi di codice per utilizzare la libreria SD](https://www.arduino.cc/en/Tutorial/SDFat)
-- [Ulteriori informazioni sull'uso della memoria flash con Arduino](https://www.arduino.cc/en/Reference/WiFiNINAFileSystem)
+## Vedi Anche
+1. Documentazione Arduino sulla libreria SD: https://www.arduino.cc/en/Reference/SD
+2. Guida dettagliata su SD.exists(): https://www.arduino.cc/en/Tutorial/LibraryExamples/Files
+3. Documentazione sulla libreria SdFat: https://github.com/greiman/SdFat

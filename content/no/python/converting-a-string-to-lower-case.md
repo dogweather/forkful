@@ -1,7 +1,7 @@
 ---
-title:                "Konvertering av en streng til små bokstaver"
-html_title:           "Python: Konvertering av en streng til små bokstaver"
-simple_title:         "Konvertering av en streng til små bokstaver"
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,34 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+Title: "Konvertere en streng til små bokstaver i Python-programmering"
 
-Konvertering av en streng til små bokstaver er en vanlig oppgave for programmerere. Dette er for å sikre at all tekst behandles på samme måte, uavhengig av store eller små bokstaver. Dette er spesielt viktig når vi sammenligner eller søker i tekst, da det kan gi mer nøyaktige resultater.
+## Hva & Hvorfor?
+Å konvertere en streng til små bokstaver er prosessen der vi endrer alle bokstavene i en streng til små bokstaver. Dette gjøres ofte for å normalisere og sammenligne strenger, eller å fjerne eventuelle forskjeller på grunn av brev tilfelle. 
 
-# Slik gjør du det:
+## Hvordan gjøre det:
+Python gjør denne konverteringen veldig enkelt, takket være den innebygde lower()-funksjonen. Her er et eksempel:
 
-```python
-# Definer en streng:
-streng = 'HEI på DEG'
-
-# Bruk lower() funksjonen for å konvertere til små bokstaver:
-endret_streng = streng.lower()
-
-# Skriv ut den endrede strengen:
-print(endret_streng)
+```Python
+tekst = "Hei Verden!"
+print(tekst.lower())
 ```
-Output:
+
+Dette vil gi følgende output:
+
 ```
-hei på deg
+hei verden!
 ```
-# Dypdykk:
 
-Historisk sett har konvertering av tekst til små bokstaver vært en utfordring for datamaskiner, spesielt fordi alfabetet var strengt begrenset til store bokstaver. Men i dag støtter de fleste programmeringsspråk funksjoner for å enkelt konvertere tekst til både store og små bokstaver.
+## Dypdykk
+- Historisk kontekst: Python has had the ability to convert strings to lower case since its inception. Having this built-in function allows for rapid and efficient text manipulation, a common need in many programming tasks.
 
-I tillegg til lower() funksjonen, er det også en upper() funksjon for å konvertere til store bokstaver. I tillegg kan man også bruke islower() og isupper() for å sjekke om en streng er i henholdsvis små eller store bokstaver.
+- Alternativer: If you are using pandas for data manipulation, you can use the str.lower() function to convert all the string values of a Series or DataFrame to lower case. 
 
-# Se også:
+```Python
+import pandas as pd
 
-- [Dokumentasjon for lower() funksjonen](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- [Python string metoder](https://www.w3schools.com/python/python_strings_methods.asp)
-- [Stack Overflow diskusjon om konvertering av strenger til små bokstaver](https://stackoverflow.com/questions/6797984/how-to-convert-string-to-lowercase-in-python)
+data = pd.Series(['Hei Verden!', 'Python er Gøy'])
+print(data.str.lower())
+```
+- Implementeringsdetaljer: Python's lower() function doesn't modify the original string; instead, it returns a new string all the characters converted to lower case. This is because strings in Python are immutable.
+
+## Se Også:
+For mer informasjon, sjekk ut disse nyttige ressursene:
+- Python-doc: [https://docs.python.org/3/library/stdtypes.html#str.lower](https://docs.python.org/3/library/stdtypes.html#str.lower)
+- Panda's str.lower(): [https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.lower.html](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.str.lower.html)

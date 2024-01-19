@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "C++: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,50 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+## O Que & Por Que?
+Comandos de linha (Command line arguments em inglês) são especificações que um programa recebe quando ele é iniciado, ou seja, informações adicionais que orientam o comportamento do programa. Programadores usam isso para adicionar flexibilidade aos programas, permitindo aos usuários especificar comportamentos personalizados no momento da execução.
 
-Ler argumentos da linha de comando é uma habilidade importante para programadores em C++. É a capacidade de ler e processar informações fornecidas na linha de comando quando um programa é executado. Isso facilita a interação com o usuário e permite que o programa receba informações essenciais para seu funcionamento.
-
-## How to:
-
-Ao ler os argumentos da linha de comando, é necessário declarar e inicializar a variável argc, que representa o número total de argumentos fornecidos na linha de comando. Também é necessário declarar a variável argv, que é um array de strings que armazena os argumentos individuais.
-
-```C++
-int main(int argc, char *argv[]) {
-    // código do programa
-}
-```
-
-Abaixo está um exemplo de um programa simples que lê um argumento da linha de comando e imprime seu valor:
-
+## Como Fazer:
 ```C++
 #include <iostream>
 using namespace std;
 
-int main(int argc, char *argv[]) {
-    if (argc > 1) {
-        cout << "O argumento fornecido é: " << argv[1] << endl;
-    } else {
-        cout << "Nenhum argumento fornecido." << endl;
+int main(int argc, char** argv) {
+    cout << "Número de argumentos: " << argc << endl;
+    for(int i = 0; i < argc; ++i) {
+        cout << "Argumento " << i << ": " << argv[i] << endl;
     }
     return 0;
 }
 ```
-
-Caso o programa seja executado com o argumento "hello", o output será o seguinte:
-
+A execução desse código com argumentos "arg1 arg2 arg3" na linha de comando produziria:
 ```
-O argumento fornecido é: hello
+Número de argumentos: 4
+Argumento 0: ./programa
+Argumento 1: arg1
+Argumento 2: arg2
+Argumento 3: arg3
 ```
 
-## Deep Dive
+## Mais Detalhes:
+Os argumentos da linha de comando são uma prática antiga, vinda dos primórdios do UNIX. Alternativas atuais para passar informações para programas incluem o uso de um arquivo de configurações ou entrada interativa do usuário durante a execução.
 
-A habilidade de ler argumentos da linha de comando tem sido usada desde os primeiros dias da linguagem C++. Além disso, existem alternativas para ler informações durante a execução de um programa, como a entrada padrão e argumentos de função.
+Em C++, os argumentos da linha de comando são passados para a função 'main' como um array de strings. O primeiro argumento, argv[0], normalmente é o nome do programa. 'argc' é o número de argumentos passados, incluindo o próprio nome do programa.
 
-A implementação da função main com os argumentos argc e argv é um requisito obrigatório para todos os programas C++, conforme definido pelo padrão da linguagem.
-
-## See Also
-
-- [C++ Reference - Arguments](https://www.cplusplus.com/articles/DEN36Up4/)
-- [C++ Tutorial - Command Line Arguments](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
-- [cppreference - main function](https://en.cppreference.com/w/cpp/language/main_function)
+## Veja Também:
+- Tutorial do cplusplus.com sobre argumentos da linha de comando: http://www.cplusplus.com/articles/DEN36Up4/
+- StackOverflow discute quando usar argumentos da linha de comando: https://stackoverflow.com/questions/3024317/when-should-i-use-the-command-line-arguments

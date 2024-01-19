@@ -1,7 +1,7 @@
 ---
-title:                "Eliminazione dei caratteri corrispondenti a un determinato modello"
-html_title:           "C++: Eliminazione dei caratteri corrispondenti a un determinato modello"
-simple_title:         "Eliminazione dei caratteri corrispondenti a un determinato modello"
+title:                "Eliminazione dei caratteri corrispondenti a un modello"
+html_title:           "PowerShell: Eliminazione dei caratteri corrispondenti a un modello"
+simple_title:         "Eliminazione dei caratteri corrispondenti a un modello"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,54 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cancellazione di caratteri corrispondenti a un pattern in C++: Una guida rapida
+## Cos'è e perché?
 
-## Che cosa & Perché?
-La cancellazione dei caratteri corrispondenti a un pattern è un processo comune per i programmatori, che consiste nell'eliminare dal testo tutti i caratteri che soddisfano un determinato criterio. Ciò può essere utile per ripulire il testo da dati indesiderati o per sostituire parti di testo con stringhe vuote.
+Eliminare i caratteri corrispondenti a un modello è il processo di rimozione di specifici elementi di testo da una stringa sulla base di un criterio definito. I programmatori lo fanno per manipolare e pulire i dati, migliorando così la precisione dell'output del codice.
 
 ## Come fare:
-Di seguito sono riportati alcuni esempi di codice in C++ per eliminare i caratteri corrispondenti a un pattern e l'output corrispondente.
+
+Per rimuovere un carattere da una stringa in C++, utilizzeremo la funzione `erase()` e `remove()`. Ecco un esempio:
 
 ```C++
-// Elimina tutte le vocali da una stringa
-#include <iostream>
-#include <string>
-#include <algorithm>
+#include<iostream>
+#include<algorithm>
 
-int main()
-{
-    std::string s = "Ciao, come stai?";
-    s.erase(std::remove_if(s.begin(), s.end(), [](char c) { return std::tolower(c) == 'a' || std::tolower(c) == 'e' || std::tolower(c) == 'i' || std::tolower(c) == 'o' || std::tolower(c) == 'u'; }), s.end());
-    
+int main(){
+    std::string s = "gattobello";
+    s.erase(std::remove(s.begin(), s.end(), 't'), s.end());
     std::cout << s << std::endl;
-    // Output: C, cm st?
     
     return 0;
 }
 ```
 
-```C++
-// Elimina tutti i numeri da una stringa
-#include <iostream>
-#include <string>
-#include <algorithm>
+L'output sarà:
 
-int main()
-{
-    std::string s = "Questa stringa contiene 123 numeri!";
-    s.erase(std::remove_if(s.begin(), s.end(), [](char c) { return std::isdigit(c); }), s.end());
-    
-    std::cout << s << std::endl;
-    // Output: Questa stringa contiene numeri!
-    
-    return 0;
-}
+```
+gabello
 ```
 
-## Approfondimento:
-La tecnica di cancellazione dei caratteri corrispondenti a un pattern è stata introdotta con l'introduzione del linguaggio C nel 1972 da Ken Thompson. Esistono anche altre tecniche per la rimozione di caratteri da una stringa, come l'utilizzo delle espressioni regolari o dei loop, tuttavia la cancellazione di caratteri corrispondenti a un pattern è spesso la soluzione più efficiente e veloce.
+## Approfondimento
 
-## Vedi anche:
-- [Documentazione di C++](https://en.cppreference.com/w/cpp/string/basic_string/erase)
-- [Tutorial su espressioni regolari in C++](https://www.geeksforgeeks.org/regular-expressions-in-c-with-examples/)
-- [Discussione su Stack Overflow riguardo la cancellazione dei caratteri in una stringa](https://stackoverflow.com/questions/16329358/c-efficient-way-to-remove-all-occurrences-of-a-character)
+(1) Nell'ambito della programmazione, l'eliminazione di caratteri è stata una necessità fin dall'avvento dei linguaggi di programmazione. In C++, `erase()` e `remove()` offrono un modo diretto e standard per farlo.
+
+(2) Esistono delle alternative. Ad esempio, potresti iterare sulla stringa originale e comporre una nuova stringa senza i caratteri indesiderati.
+
+(3) `remove()` sposta gli elementi da rimuovere alla fine della sequenza e poi ritorna un iteratore indicante il nuovo past-the-end elemento. `erase()` è poi invocata a rimuovere questi elementi extra.
+
+## Vedi anche
+
+1. [Documentazione C++ su string::erase](http://www.cplusplus.com/reference/string/string/erase/)
+2. [Documentazione C++ su std::remove](http://www.cplusplus.com/reference/algorithm/remove/)
+3. [Stack Overflow: Cosa fa std::remove?](https://stackoverflow.com/questions/347949/how-to-remove-certain-character-from-a-string)

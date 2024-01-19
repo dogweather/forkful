@@ -1,7 +1,7 @@
 ---
-title:                "दो तारीखों का तुलना करना"
-html_title:           "Ruby: दो तारीखों का तुलना करना"
-simple_title:         "दो तारीखों का तुलना करना"
+title:                "दो तारीखों की तुलना"
+html_title:           "Elixir: दो तारीखों की तुलना"
+simple_title:         "दो तारीखों की तुलना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्या और क्यों?
-दो तारीखों को तुलना करना क्या है और इसको क्यों प्रोग्रामर्स करते हैं? दो तारीखों को तुलना करना एक आम कार्य है जो कोडिंग में अहम भूमिका निभाता है। यह प्रोग्रामर्स को अपने कोड को सुनिश्चित करने में मदद करता है कि दो तारीखों के बीच अंतर समझने और लंबाई के आधार पर विभिन्न कार्यों का निर्धारण करने में।
+# रूबी में दो तारीखों की तुलना करना: एक मार्गदर्शिका 
 
-# कैसे:
+## क्या और क्यों?
+
+तारीखों की तुलना एक बहुत ही सामान्य कार्य होता है. यहां हम दो तारीखों को तुलना करना सीखेंगे, जिससे हमें समयावधि, तारीख-वक्त की गणनाें और तारीख-यातायात में सहायता मिल सकती है।
+
+## कैसे करें:
+
+रूबी में दो तारीखों की तुलना करना बहुत सरल है। ये कोड उदाहरण देखिए:
 ```Ruby
-# दो तारीखों के बीच अंतर निकालें
-first_date = Date.new(2021, 10, 5)
-second_date = Date.new(2021, 10, 8)
-difference = second_date - first_date
-puts difference # 3
+require 'date'
 
-# दो तारीखों के बीच तुलना करें
-first_date = Date.new(2021, 10, 5)
-second_date = Date.new(2021, 10, 8)
-if first_date < second_date
-  puts "पहली तारीख दूसरी तारीख से पहले है"
+date1 = Date.new(2021, 05, 15)
+date2 = Date.new(2021, 06, 01)
+
+if date1 > date2
+  puts "date1 is later"
+elsif date1 < date2
+  puts "date2 is later"
 else
-  puts "पहली तारीख दूसरी तारीख से बाद है"
+  puts "both dates are the same"
 end
 ```
+यदि हम इस कोड को चलाते हैं, हमें `date2 is later` का परिणाम मिलेगा, क्योंकि 01 जून 2021, 15 मई 2021 से बाद का दिन है।
 
-# गहराई में जाएं:
-दो तारीखों को तुलना करने के लिए कई विभिन्न तरीके हैं, जैसे date और time स्ट्रक्चर्स का उपयोग करना या स्ट्रिंग या नंबर को तारीख में प्रेरित करना। इन सभी तकनीकों में, date और time स्ट्रक्चर्स सबसे आसान और समझने में सरल हैं। इनका उपयोग करके प्रोग्रामर्स तारीखों को तुलना कर सकते हैं और दो तारीखों के बीच अंतर को निकाल सकते हैं।
+##गहरी जांच:
 
-# और देखें:
-प्रोग्रामिंग में दो तारीखों को तुलना करने के और तरीकों को जानने के लिए निम्न लिंक की जाँच करें:
+रूबी भाषा में `Date` लाइब्रेरी का इस्तेमाल करके हम तारीखों की तुलना कर सकते हैं। इसके अलावा, आप `Time` वर्ग का भी इस्तेमाल कर सकते हैं, जब आपको विशेष समय पर ध्यान केंद्रित करना हो।
+वैकल्पिक रूप से, आप `DateTime` क्लास का उपयोग कर सकते हैं, जो मिलिसेकंड तक की गणना सटीकता से कर सकता है।
 
-- [Date and Time in Ruby](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html)
-- [Using date arithmetic in Ruby](https://www.rubyguides.com/2015/07/ruby-date/)
-- [Date Comparison in Ruby](https://www.geeksforgeeks.org/comparing-dates-in-ruby/)
+## आगे देखें:
+
+- दो तारीखों के बीच के दिनों की गणना कैसे करें?: [Link](https://stackoverflow.com/questions/4502245/how-can-i-calculate-the-number-of-days-between-two-date-objects-in-ruby)
+- एक तारीख को दूसरी तारीख में परिवर्तित कैसे करें?: [Link](https://stackoverflow.com/questions/5937577/convert-date-to-another-time-zone-in-ruby)
+- कुछ विशेष तारीखों की तुलना कैसे करें?: [Link](https://stackoverflow.com/questions/38387529/comparing-some-specific-dates-in-ruby)

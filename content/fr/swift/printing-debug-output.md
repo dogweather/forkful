@@ -1,6 +1,6 @@
 ---
 title:                "Imprimer la sortie de débogage"
-html_title:           "Swift: Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
 simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,27 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-L'impression de sortie de débogage est une façon pour les programmeurs d'afficher des informations utiles lorsqu'ils travaillent sur leur code. Cela peut inclure des messages d'erreur, des valeurs de variables ou d'autres informations de débogage qui peuvent aider à comprendre et à corriger les problèmes dans le code.
+## Qu'est-ce que c'est & Pourquoi ?
+L'affichage de debug est une méthode pour visualiser les messages d'erreur dans le console. Les programmeurs l'utilisent pour identifier et corriger les erreurs dans le code.
 
-## Comment faire:
-Voici un exemple simple de code en Swift pour imprimer une message de débogage:
+## Comment faire :
+En Swift, on utilise la fonction `print()` pour afficher le debug. 
 
 ```Swift
-let number = 42
-print("La réponse ultime est: \(number)")
+var bugFinder = "Erreur inconnue"
+print("Le bug est :", bugFinder)
 ```
 
-La sortie de ce code serait `La réponse ultime est: 42`.
+Cela affichera: Le bug est : Erreur inconnue
 
-## Plongée en profondeur:
-L'impression de sortie de débogage n'est pas une nouvelle pratique, elle existe depuis longtemps dans le monde de la programmation. Cependant, les programmeurs ont souvent d'autres options pour déboguer leur code, telles que l'utilisation d'un débogueur ou d'outils de profilage.
+On peut aussi afficher plusieurs éléments en une seule commande :
 
-Dans Swift, il existe également une fonction de débogage appelée `debugPrint()` qui peut être utile dans certaines situations. Cette fonction inclut des informations supplémentaires telles que le nom de la variable et son type. Cela peut être particulièrement utile lors du débogage de code plus complexe.
+```Swift
+var codeLine = 43
+print("Le bug est :", bugFinder, "à la ligne", codeLine)
+```
+Ce code affichera : Le bug est : Erreur inconnue à la ligne 43
 
-## Voir aussi:
-Si vous souhaitez en savoir plus sur l'impression de sortie de débogage en Swift, voici quelques sources utiles:
+## Approfondissement
+Swift a modernisé le concept de l'affichage de debug, qu'on trouve dans les langues historiquement importantes comme C.
 
-- [Documentation officielle sur la fonction `print()`](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID284)
-- [Article sur l'utilité de la débogage par impression de sortie](https://medium.com/@rinkeshchauhan/imprimaide-for-swift-b3afde8f709e)
-- [Différentes méthodes de débogage dans Swift](https://medium.com/@xabir19/ways-of-debugging-in-swift-8a61d5fac402)
+Alternativement, on peut utiliser la fonction `debugPrint()`, qui fournit plus de détails que `print()`. Par exemple,
+
+```Swift
+debugPrint("Le bug est :", bugFinder)
+```
+Cette commande montre aussi le fichier, la date, l'heure, et la ligne de l'erreur.
+
+Swift convertit nos données en chaînes de caractères avant de l'imprimer. Si notre donnée est un objet, Swift appelle sa méthode `description` pour la convertir.
+
+## Voir aussi :
+Pour une compréhension plus approfondie et des exemples détaillés sur l'impression de debug, reportez-vous à :
+- [Official Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html)
+- [StackOverflow Discussions on Swift Debugging](https://stackoverflow.com/questions/tagged/debugging+swift)
+- [RayWenderlich Tutorial on Debugging](https://www.raywenderlich.com/105-debugging-with-xcode-10-console-breakpoints-print-statements)

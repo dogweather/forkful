@@ -1,6 +1,6 @@
 ---
 title:                "下载网页"
-html_title:           "C++: 下载网页"
+html_title:           "Arduino: 下载网页"
 simple_title:         "下载网页"
 programming_language: "C++"
 category:             "C++"
@@ -10,100 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是下载网页？为什么程序员要这么做？
-下载网页是指从互联网上获取网页内容的过程。程序员经常使用这种技术来获取网页上的数据，比如图片、文本等，以进行后续的处理。
+## 什么和为什么？
 
-## 如何操作：
-以下是用C++实现下载网页的代码示例和输出结果：
+下载网页是获取网页源代码的过程，并以文件的形式存储在您的设备上。程序员这样做是因为他们可以离线检查源代码，分析其结构和内容，或将其用于数据挖掘和网络爬行等。
+
+## 怎么样：
+
+我们将使用C++中的库CPR(即Curl for People)来下载网页。这里有一个基本的代码例子：
 
 ```C++
-#include <iostream>
-#include <curl/curl.h>
-
-// URL to download
-#define URL "https://www.example.com"
-
-// This function will be used to write the downloaded data
-size_t write_callback(char* ptr, size_t size, size_t nmemb, void* userdata) {
-    std::string* str = (std::string*)userdata;
-    str->append(ptr, size * nmemb);
-    return size * nmemb;
-}
-
-int main() {
-    // Initialize CURL object
-    CURL* curl = curl_easy_init();
-
-    // Set URL to download
-    curl_easy_setopt(curl, CURLOPT_URL, URL);
-
-    // Set callback function to write data
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &received_data);
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-
-    // Download the webpage
-    CURLcode res = curl_easy_perform(curl);
-
-    // Check for errors
-    if (res != CURLE_OK) {
-        std::cout << "Error: " << curl_easy_strerror(res) << std::endl;
-    }
-
-    // Clean up
-    curl_easy_cleanup(curl);
-
-    return 0;
+#include <cpr/cpr.h>
+int main(){
+    cpr::Response r = cpr::Get(cpr::Url{"http://www.example.com"});
+    std::ofstream fout("example.html");
+    fout << r.text;
 }
 ```
 
-输出：
+运行此代码后，您将在同一目录中找到一个名为"example.html"的文件，该文件包含从web页面"www.example.com"下载的源代码。
 
-```
-<!doctype html>
-<html>
-<head>
-    <title>Example Domain</title>
+## 深度学习：
 
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style type="text/css">
-    body {
-        background-color: #f0f0f2;
-        margin: 0;
-        padding: 0;
-        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        /* svg displays a black bar at the bottom on iPad */
-        /* Thanks initially to Thierry Koblentz: tjkdesign.com/articles/svg-and-the-iphone */
-        font-size: 100%;
-        /* medium is the default body font size */
-    }
-    :root {
-        color-scheme: light dark;
-    }
+(1) 历史背景：在许多年前的早期互联网时代，Web浏览器的主要任务就是下载和显示网页。从那时起，我们已经看到了各种工具和库的发展，比如curl和wget，它们可以帮助编程语言（包括C++）下载网页。
 
-    body {
-        color: #000000;
-    }
-    </style>    
-</head>
+(2) 选择替代方案：虽然本文提到的CPR库非常容易使用，但是还有其他一些库也可以达到同样的目的，比如Poco和Boost.Asio。
 
-<body>
-<div>
-    <h1>Example Domain</h1>
-    <p>This domain is for use in illustrative examples in documents. You may use this
-    domain in literature without prior coordination or asking for permission.</p>
-    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
-</html>
-```
+(3) 实现细节：当我们谈到下载网页时，实际上我们是在发送HTTP GET请求到服务器，然后接收返回的数据。这是web浏览器如何获取和显示网页的方式。
 
-## 深入了解：
-下载网页的技术起源于早期的数据提取和网页抓取技术，又称为数据挖掘。除了使用C++，程序员还可以使用其他编程语言实现网页下载，比如Python、Java等。另外，也可以借助现有的网络爬虫框架来简化下载网页的过程，如Scrapy、Puppeteer等。
+## 另请参阅：
 
-## 了解更多：
-- [CURL官方文档](https://curl.se/libcurl/)
-- [使用C++来抓取网页内容](http://www.cppblog.com/ifsight/archive/2009/03/03/74003.html)
-- [网络爬虫框架Scrapy](https://scrapy.org/)
-- [Chrome开发者工具的使用](https://developer.chrome.com/docs/devtools/)
+1. CPR库的GitHub页面：https://github.com/whoshuu/cpr
+2. 详细的HTTP GET和POST请求解释：https://www.w3schools.com/tags/ref_httpmethods.asp
+3. C++中的其他库Poco：https://pocoproject.org/ 和 Boost.Asio：https://www.boost.org/doc/libs/1_63_0/doc/html/boost_asio.html
+4. 用于同样目的的其他编程语言如Python中用于下载网页的库有urllib和requests等。

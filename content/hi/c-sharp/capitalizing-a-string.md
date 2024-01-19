@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग को कैपिटलाइज़ करना"
-html_title:           "C#: एक स्ट्रिंग को कैपिटलाइज़ करना"
-simple_title:         "एक स्ट्रिंग को कैपिटलाइज़ करना"
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+html_title:           "C#: स्ट्रिंग को कैपिटलाइज करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,36 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्या और क्यों?
+## क्या और क्यों?
+"स्ट्रिंग को capitalise करना" का मतलब होता है कि स्ट्रिंग के पहले अक्षर को बड़ा बनाना। प्रोग्रामर इसे सरलता और स्पष्टता के लिए करते हैं, जैसे कि नाम या शीर्षक में.
 
-एक स्ट्रिंग को कैपिटलाइज करना मतलब उसमें हर शब्द के पहले अक्षर को बड़ा लिखना है। यह एक प्रोग्रामिंग टेक्निक है जिससे विशेष शब्दों पर ध्यान केंद्रित किया जाता है और लोग अपनी कोडिंग रिपोर्ट्स या लोगों को प्रभावी विश्वव्यापी स्ट्रिंग्स बनाते हैं।
-
-# कैसे करें:
-
-``` C#
-string sentence = "hello world";
-string capitalizedSentence = sentence.ToUpper();
-Console.WriteLine(capitalizedSentence);
-```
-
-आउटपुट:
-HELLO WORLD
+## कैसे करें:
+यहां एक उदाहरण दिया गया है कि कैसे हम C# में स्ट्रिंग को capitalise कर सकते हैं:
 
 ```C#
-string sentence = "hello world";
-string capitalizedSentence = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(sentence);
-Console.WriteLine(capitalizedSentence);
+string inputStr = "hello world";
+TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+string outputStr = myTI.ToTitleCase(inputStr);
+Console.WriteLine(outputStr);
+```
+इसका आउटपुट होगा:
+```
+Hello World
 ```
 
-आउटपुट:
-Hello World
+## गहराई से:
+स्ट्रिंग को Capitalise करने का विचार पहले से ही तब आया जब डिजिटल टेक्स्ट का उपयोग किया गया था। वैकल्पिक तरिके जैसे कि Substring() या Char.ToUpper() का उपऔग भी किया जा सकता है, लेकिन ToTitleCase() एक सामर्थ्यवान और क्षेत्रीय सेटिंग्स को सम्मानित करता है।
 
-# गहराई का खोज
-
-इस टेक्निक को लागू करने का इतिहास वास्तव में स्ट्रिंग्स पर काम करने का ही है। यह कई प्रायोगिक उदाहरण भी है जैसे कि प्रोग्रामिंग में कोडिंग रिपोर्ट्स और भाषाई टेक्स्ट को प्रभावी करने के लिए। इस टेक्निक का एक विकल्प है शब्द तरह का प्रसिद्धी। इसमें स्ट्रिंग्स को विशेष शब्दों पर बड़े अक्षरों या विशेष चिह्नों के साथ प्रस्तुत किया जाता है। इसके अलावा, कुछ प्रोग्रामिंग भाषाओं में यह कैपिटलाइज करने के लिए विशेष फंक्शन भी होते हैं।
-
-# भी देखें:
-
-https://www.c-sharpcorner.com/article/capitalize-a-string-with-C-Sharp/
-https://www.geeksforgeeks.org/capitalize-first-letter-string-java/
-https://www.tutorialspoint.com/uppercase-and-lowercase-string-characters-in-csharp
+## और भी देखें:
+Capitalisation के बारे में अधिक जानने के लिए, आप इन लिंक्स पे जाएँ:
+- Microsoft's TitleCase: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0
+- Stackoverflow Discussion on Capitalisation in C#: https://stackoverflow.com/questions/4135317/make-first-letter-of-a-string-upper-case-with-maximum-performance

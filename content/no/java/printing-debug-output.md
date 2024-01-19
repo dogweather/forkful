@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Java: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -11,39 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å printe ut feilsøkingsmeldinger er en viktig del av programmering. Det er en måte for utviklere å se hva som skjer i programmet under kjøring, og å finne og fikse eventuelle feil eller problemer. Det kan også hjelpe til med å forstå hvordan koden fungerer og optimalisere den for bedre ytelse.
+Printerfeilsøkingsoutput er en måte programmerere legger inn midlertidig kode for å spore feil eller betingelser gang imellom. Vi bruker det for å forstå hvorfor og hvordan noe uventet skjedde i koden.
 
-## Slik gjør du:
-For å printe ut debug output i Java, kan du bruke metoden `System.out.println()`. Denne metoden tar inn en parameter og skriver ut verdien til denne parameteren i konsollen. For eksempel:
+## Hvordan gjøre det:
+Bruk `System.out.println()` for å skrive ut til konsollen. Her er et eksempel i Java:
+
+```Java
+public class DebugExample {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 0;
+        
+        System.out.println("Starting the division operation...");
+        
+        try {
+            int z = x / y;
+        } catch(Exception e) {
+            System.out.println("Caught an error: " + e);
+        }
+        
+        System.out.println("Ended the operation.");
+    }
+}
+```
+Output:
 
 ```
-Java
-int num = 5;
-System.out.println("Verdien til num er: " + num);
-
-// Output: Verdien til num er: 5
+Starting the division operation...
+Caught an error: java.lang.ArithmeticException: / by zero
+Ended the operation.
 ```
 
-Du kan også bruke `System.out.print()` for å printe uten å legge til en ny linje. Dette kan være nyttig hvis du vil printe en del av en setning og deretter skrive mer ut på samme linje. For eksempel:
+Du får en umiddelbar innsikt i hva som skjer underveis i koden.
 
-```
-Java
-int num1 = 10;
-int num2 = 20;
+## Dypdykk
+Å printe debug-output er praksis som går tilbake til de tidligste dagene av programmering. Alternativer inkluderer bruken av feilsøkingsverktøy som lar deg «steg-for-steg» gjennom koden og inspisere data. Men, når det er sagt, er å printe debug-output ofte raskere og mer intuitivt for enkle feilsøkinger.
 
-System.out.print("Summen av num1 og num2 er: ");
-System.out.println(num1 + num2);
+Husk å fjerne alle `System.out.println()`-statements fra produksjonskode fordi de vil bremse ytelsen. Java bruker en synkronisert ut-datastrøm for `System.out.println()`, noe som kan føre til at tråder blokkeres mens de venter på at utgangene skal bli klare.
 
-// Output: Summen av num1 og num2 er: 30
-```
-
-## Dypdykk:
-Å printe ut feilsøkingsmeldinger har vært en del av programmering siden de tidlige dagene. Før i tiden var det vanlig å bruke såkalte "print statements", der man printet ut variabler og strings på ulike steder i koden for å se hva som skjer under kjøring. Dette kunne være en tidkrevende og tungvint prosess.
-
-Et alternativ til å printe ut feilsøkingsmeldinger er å bruke et debugger-verktøy. Dette er et programmeringsverktøy som lar deg pause koden og visualisere hva som skjer i ulike deler av programmet. Debugger-verktøy kan være mer effektive i å finne og fikse feil, og er ofte mer avanserte og tilpassbare enn å printe ut meldinger.
-
-Implementasjonen av debugging i Java er enkelt og intuitivt takket være `System.out`-metodene som er inkludert i språket. Det er også mulig å bruke andre metoder for å skrive ut feilsøkingsmeldinger, som f.eks. `Log`-klassen i `java.util.logging`-biblioteket.
-
-## Se også:
-[Java debugging tutorial](https://www.journaldev.com/13163/how-to-debug-java-application-in-eclipse)  
-[Eclipse debugger tutorial](https://www.tutorialspoint.com/eclipse/eclipse_debugging_programs.htm)
+## Se Også
+Feilsøking i Java: https://www.baeldung.com/java-debugging-strategies
+Logger i Java: https://www.vogella.com/tutorials/Logging/article.html
+IntelliJ IDEA debugging: https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html

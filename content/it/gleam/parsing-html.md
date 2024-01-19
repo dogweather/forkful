@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di html"
-html_title:           "Gleam: Analisi di html"
-simple_title:         "Analisi di html"
+title:                "Analisi sintattica dell'HTML"
+html_title:           "C++: Analisi sintattica dell'HTML"
+simple_title:         "Analisi sintattica dell'HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,53 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa è e perché: 
+## Cos'è & Perché?
 
-Il parsing HTML è il processo di analisi di un documento HTML per identificare estrarre i contenuti e la struttura del documento. I programmatori lo fanno per elaborare e manipolare i dati presenti in una pagina web.
+Il parsing di HTML significa interpretare documenti HTML per estrarre dati significativi. I programmatori lo fanno per manipolare, estratto, e analizzare i dati web in modo efficiente.
 
-Come fare:
+## Come fare:
+In Gleam, possiamo utilizzare le librerie di terze parti come 'Floki' per il parsing dell'HTML. Ecco un esempio di base:
 
 ```Gleam
-import gleam/html/parser
+import floki.Parser
 
-html = """
-<html>
-  <head>
-    <title>Titolo della pagina</title>
-  </head>
-  <body>
-    <h1>Benvenuto nella pagina</h1>
-    <p>Contenuto della pagina</p>
-  </body>
-</html>
-"""
-
-document = html
-|> gleam/html/parse
-|> match(_{
-  Ok(p) -> 
-    // Ottieni il titolo
-    title =
-      p.children
-      |> List.head
-      |> Parser.parent
-      |> Parser.data
-    // Ottieni il contenuto
-    content =
-      p.children
-      |> List.last
-      |> Parser.parent
-      |> Parser.data
-  Err(_) ->
-    // Gestisci l'errore
-})
-
+let parsedHtml = Parser.from_string("<html><body><h1>Ciao, mondo!</h1></body></html>")
 ```
+L'output mostra l'HTML convertito in una struttura ad albero:
 
-Deep Dive:
+```Gleam
+{:ok,
+ [
+  {:tag,
+   "html",
+   [],
+   [
+    {:tag,
+     "body",
+     [],
+     [
+      {:tag, "h1", [], [text: "Ciao, mondo!"]}
+     ]}
+   ]}
+ ]}
+```
+Questo ti permette di trattare l'HTML come una struttura di dati manipolabile.
 
-Il parsing HTML è stato introdotto nel 1993 come parte della creazione del linguaggio HTML. Prima, i documenti HTML erano analizzati manualmente, ma ciò si è rivelato inefficace quando le pagine web sono diventate più complesse. Un'alternativa al parsing HTML è l'utilizzo di librerie di scraping, ma questa tecnica è più complessa e dipende dalla struttura del sito web.
+## Approfondimenti
 
-See Also:
+Nel contesto storico, il parsing dell'HTML è esistito fin dall'inizio del web per facilitare il trattamento e l'analisi dei dati. Ci sono molte alternative come 'Beautiful Soup' in Python o 'Cheerio' in JavaScript, ed è importante scegliere la libreria più adatta alle tue necessità.
 
-Per ulteriori informazioni sul parsing HTML in Gleam, puoi consultare la documentazione ufficiale della libreria [html_parser](https://gleam.run/lib/gleam/html_parser/). Inoltre, puoi approfondire l'argomento sui siti [W3Schools](https://www.w3schools.com/xml/dom_intro.asp) e [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
+L'implementazione del parsing HTML può variare, ma tutte condividono un obiettivo comune: suddividere il testo in elementi logici come tag, attributi e contenuto di testo.
+
+## Guarda anche
+
+Per ulteriori informazioni, consulta questi link:
+
+1. Documentazione di Gleam: https://gleam.run/docs/
+
+2. Documentazione Floki: https://github.com/philss/floki
+
+3. Wikipedia su HTML Parsing: https://en.wikipedia.org/wiki/HTML_parsing

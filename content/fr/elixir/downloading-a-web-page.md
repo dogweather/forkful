@@ -1,7 +1,7 @@
 ---
-title:                "Téléchargement d'une page web"
-html_title:           "Elixir: Téléchargement d'une page web"
-simple_title:         "Téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,29 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire ?
-Télécharger une page web est essentiellement demander au navigateur de récupérer une page web à partir d'une adresse URL spécifique. Les développeurs le font souvent pour extraire des données à partir de sites web ou pour automatiser des tâches. 
+# Télécharger Une Page Web En Elixir: Un Guidage Simple et Clair
 
-## Comment faire :
+## C'est quoi et pourquoi?
+Télécharger une page web signifie récupérer et stocker son contenu sur votre ordinateur. Les programmeurs le font pour analyser les informations, pour l'intégration de données, le scraping de sites web, les tests d'interface utilisateur, et bien plus.
+
+## Comment faire:
+
+Voici comment vous pouvez télécharger une page web en utilisant Elixir et la bibliothèque HTTPoison.
+
 ```Elixir
-requête = HTTPoison.get("https://www.example.com")
-HTML.parse(requête.body)
+defmodule Download do
+  def web_page(url) do
+    case HTTPoison.get(url) do
+      {:ok, %HTTPoison.Response{body: body}} ->
+        {:ok, body}
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        {:error, reason}
+    end
+  end
+end
 ```
-Résultat :
+
+Utilisez-le comme ceci:
+
 ```Elixir
-{ :ok,
-  %HTTPoison.Response{
-    status_code: 200,
-    body: "<html><head><title>Mon exemple de page web</title></head><body><p>Ceci est un exemple de page web.</p></body></html>",
-    headers: [...],
-    request_url: "https://www.example.com"
-  }
-}`
+case Download.web_page("https://example.com/") do
+  {:ok, body} -> IO.puts body
+  {:error, reason} -> IO.puts "Erreur: #{reason}"
+end
 ```
+## Plongée en Profondeur
 
-## Plongée en profondeur :
-Le téléchargement de pages web a été rendu possible grâce à l'évolution des technologies web et des langages de programmation tels que Elixir. D'autres alternatives pour télécharger des pages web existent, comme l'utilisation de bibliothèques Python ou l'utilisation d'outils de scraping. L'implémentation de cette opération nécessite une bonne connaissance des requêtes HTTP et de la structure HTML.
+Télécharger des pages web a commencé dans les années 90 avec des navigateurs web primitifs. Aujourd'hui, c'est une méthode courante utilisée dans le développement web. En Elixir, il existe plusieurs bibliothèques pour le faire, dont HTTPoison et HTTPotion. 
 
-## Voir aussi :
-- Documentation sur la fonction HTTPoison : https://hexdocs.pm/httpoison/HTTPoison.html#get/3
-- Tutoriel sur l'utilisation du HTTPoison : https://elixirschool.com/en/lessons/specifics/http/
+HTTPoison est la plus populaire car elle fournit une interface simple pour effectuer des requêtes HTTP. Son principal avantage est sa facilité d'utilisation combinée à sa flexibilité. Elle permet des requêtes HTTP asynchrones, ce qui peut considérablement accélérer les opérations de téléchargement en parallèle.
+
+L'implémentation ci-dessus effectue une requête GET pour récupérer le contenu de la page. En cas de succès, elle retourne le corps de la réponse, sinon elle retourne l'erreur.
+
+## A Voir Aussi
+
+Pour plus d'informations, consultez les liens suivants:
+
+- [HTTPoison sur Github](https://github.com/edgurgel/httpoison)
+- [HTTPotion sur Github](https://github.com/myfreeweb/httpotion)
+- [Guide Elixir officiel](https://elixir-lang.org/getting-started/introduction.html)

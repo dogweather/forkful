@@ -1,7 +1,7 @@
 ---
-title:                "Invio di una richiesta http"
-html_title:           "Javascript: Invio di una richiesta http"
-simple_title:         "Invio di una richiesta http"
+title:                "Inviare una richiesta http"
+html_title:           "C++: Inviare una richiesta http"
+simple_title:         "Inviare una richiesta http"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -12,44 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Cosa & Perché?
 
-L'invio di una richiesta HTTP è un'operazione comune nella programmazione web. È il modo in cui i programmatori fanno comunicare il loro codice con altri server per ottenere dati o eseguire azioni. Questo può essere fatto tramite browser o utilizzando librerie di codice come Axios o Fetch.
+Inviare una richiesta HTTP è essenzalmente il processo di chiedere informazioni a un server web. I programmatori lo fanno per interagire con API web, recuperare o inviare dati.
 
 ## Come fare:
 
-### Esempio 1: Utilizzo del metodo GET per ottenere dati da un server
+Ecco un esempio con Javascript utilizzando il metodo `fetch()`:
 
 ```Javascript
-fetch('https://api.example.com/posts')
+fetch('https://api.example.com/data', {
+  method: 'GET',
+})
 .then(response => response.json())
-.then(data => console.log(data));
+.then(data => console.log(data))
+.catch((error) => {
+  console.error('Errore:', error);
+});
 ```
 
-Output: Un array di oggetti contenenti post dal server richiesto.
-
-### Esempio 2: Utilizzo del metodo POST per inviare dati a un server
+Output previsto (sample):
 
 ```Javascript
-const data = { title: 'Nuovo Post', body: 'Contenuto del post' };
-const options = {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(data)
-};
-
-fetch('https://api.example.com/posts', options)
-.then(response => response.json())
-.then(data => console.log(data));
+{
+  "key1": "value1",
+  "key2": "value2"
+}
 ```
 
-Output: L'oggetto appena creato, con un ID univoco assegnato dal server.
+## Immersione Profonda
 
-## Approfondimento:
+Iniziando con la versione 0.10.0, Node.js prevedeva il modulo 'http' per le richieste HTTP. Nonostante ciò, con l'avvento di nuove nuove librerie come `fetch` e `axios`, ora è più comune e semplice utilizzare queste alternative più moderne.
 
-Questo è solo uno degli innumerevoli modi in cui è possibile inviare una richiesta HTTP in Javascript. Oltre alla libreria Fetch, esistono anche altre opzioni come jQuery o Axios. Inoltre, è importante tenere conto della sicurezza quando si inviano dati sensibili tramite richieste HTTP.
+`fetch` è nativo nei browser più recenti, e torna una Promise. Se invece preferisci un approccio basato su async/await, `axios` potrebbe essere la scelta giusta per te.
 
-## Vedi anche:
+Ecco un breve esempio su come utilizzare `axios`:
 
-- [Documentazione ufficiale Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [Documentazione ufficiale Axios](https://axios-http.com/docs/intro)
+```Javascript
+const axios = require('axios');
+
+axios.get('https://api.example.com/data')
+.then(function (response) {
+  console.log(response.data);
+})
+.catch(function (error) {
+  console.error(error);
+});
+```
+
+## Vedi Anche
+
+[Documentazione ufficiale Fetch API su MDN](https://developer.mozilla.org/it/docs/Web/API/Fetch_API)
+
+[Documentazione ufficiale Axios su GitHub](https://github.com/axios/axios)
+
+[Github Fetch API Polyfill](https://github.com/github/fetch) per supportare browser più vecchi.

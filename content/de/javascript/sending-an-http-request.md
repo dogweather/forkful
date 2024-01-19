@@ -1,7 +1,7 @@
 ---
-title:                "Eine HTTP-Anfrage senden"
-html_title:           "Javascript: Eine HTTP-Anfrage senden"
-simple_title:         "Eine HTTP-Anfrage senden"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,53 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+### Was & Warum?
 
-Das Senden einer HTTP-Anfrage ist einfach gesagt die Art und Weise, wie ein Programm mit einem externen Server kommuniziert, um Informationen auszutauschen. Programmierer tun das, um zum Beispiel Daten von einer Datenbank abzurufen oder um mit einer API zu integrieren.
+Das Senden einer HTTP-Anforderung ist ein Weg, Kommunikation zwischen Client und Server herzustellen, um beispielsweise Daten zu erhalten oder zu versenden. Dies ist essenziell für die Funktionalität webbasierter Anwendungen, da sie auf dem Austausch und der Manipulation von Daten basieren.
 
-## Wie geht's?
+### Wie machst du das?
 
-Um eine HTTP-Anfrage in Javascript zu senden, können wir die ```fetch``` Funktion verwenden. Hier ist ein Beispiel für eine GET-Anfrage:
+Wir werden den Fetch-API verwenden, um eine HTTP-Anforderung zu senden.
 
 ```Javascript
-fetch("https://api.example.com/users")
+fetch('https://api.meineseite.de/daten')
   .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error(error);
+  .then(data => console.log(data))
+  .catch((error) => {
+    console.error('Fehler:', error);
   });
 ```
 
-In diesem Beispiel wird eine GET-Anfrage an die URL "https://api.example.com/users" gesendet und die Antwort als JSON-Objekt ausgegeben. Wir können auch Daten in unsere Anfrage einschließen, indem wir ein Objekt als zweiten Parameter an die ```fetch``` Funktion übergeben. Hier ist ein Beispiel für eine POST-Anfrage:
+In diesem Beispiel senden wir eine GET-Anforderung an 'https://api.meineseite.de/daten'. Dann verarbeiten wir die Antwort zu JSON, bevor wir sie ausgeben.
 
-```Javascript
-const request = {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ username: 'John', password: 'pass123' })
-}
+### Deep Dive
 
-fetch("https://api.example.com/login", request)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.error(error);
-  });
-```
+Die Verwendung von HTTP-Anforderungen zum Empfangen oder Senden von Daten ist kein neues Konzept. Es stammt aus der Anfangszeit des Webs, als sich Webseiten von statischen zu interaktiven entwickelten.
 
-Dieses Mal wird ein Objekt mit den Anfrage-Parametern erstellt und als zweiter Parameter an die ```fetch``` Funktion übergeben. Dadurch wird eine JSON-kodierte Anfrage an die URL "https://api.example.com/login" gesendet.
+Es gibt Alternativen zum Fetch-API, wie die "XMLHttpRequest"-API. Doch Fetch bietet einen moderneren, leistungsfähigeren und flexibleren Ansatz.
 
-## Tiefer tauchen
+Bezüglich der Implementierungsdetails ist zu beachten, dass HTTP-Anfragen asynchron sind. Das heißt, Ihr Code wird nicht angehalten, während er auf die Antwort vom Server wartet. Stattdessen wird Ihr Programm weiter ausgeführt und die Antwort wird verarbeitet, sobald sie verfügbar ist.
 
-Früher war es üblich, XMLHttpRequest (XHR) zu verwenden, um HTTP-Anfragen in Javascript zu senden. Diese Methode ist jedoch veraltet und wurde durch die ```fetch``` Funktion ersetzt. Eine andere Alternative ist die Verwendung von Bibliotheken wie jQuery oder axios, die das Senden von HTTP-Anfragen vereinfachen. 
+### Siehe auch
 
-Es ist auch wichtig zu beachten, dass die ```fetch``` Funktion standardmäßig keine Cookies oder Authentifizierungsheader überträgt. Um dies zu ermöglichen, müssen wir die Optionen ```credentials``` und ```headers``` in unserer Anfrage angeben.
-
-## Siehe auch
-
-- [MDN Dokumentation zur fetch Funktion](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [W3Schools Anleitung zur HTTP-Anfrage in Javascript](https://www.w3schools.com/js/js_ajax_http.asp)
+1. [MDN - Fetch API](https://developer.mozilla.org/de/docs/Web/API/Fetch_API)
+2. [MDN - XMLHttpRequest](https://developer.mozilla.org/de/docs/Web/API/XMLHttpRequest)
+3. [MDN - Asynchronous Javascript](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/async_function)

@@ -1,6 +1,6 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "Rust: Buscando y reemplazando texto"
+html_title:           "C: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,25 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Reemplazar texto es una tarea común en la programación, en la que se busca un fragmento de texto específico y se reemplaza por otro. Los programadores lo hacen para corregir errores, hacer cambios masivos de texto, o para mejorar la eficiencia de su código.
+Buscar y reemplazar texto es una función que permite localizar un string específico y sustituirlo por otro. Los programadores recurren a este método para modificar código de manera eficiente, evitar la redundancia y acelerar la corrección de errores.
 
-## Cómo:
+## Cómo hacerlo:
 
-Aquí hay un ejemplo simple de cómo buscar y reemplazar texto en Rust:
+Vamos a explorar cómo buscar y reemplazar texto en Rust. Asegúrate de haber instalado la última versión antes de iniciarlo.
 
-```Rust
-let texto = "Hola! Me llamo Rust.";
-let nuevo_texto = texto.replace("Rust", "Ferrugem"); // Reemplaza "Rust" con "Ferrugem"
-println!("{}", nuevo_texto); // Imprime "Hola! Me llamo Ferrugem."
+```rust
+fn main() {
+     let texto = "Hola Mundo!";
+     let resultado = texto.replace("Mundo", "Rust");
+     println!("{}", resultado);
+}
 ```
 
-## Profundizando:
+Cuando ejecutas este código, aparecerá el siguiente resultado:
 
-En el pasado, la búsqueda y reemplazo de texto se hacía manualmente, lo que requería mucho tiempo y esfuerzo. Ahora, gracias a herramientas como Rust, esta tarea se puede realizar de manera más eficiente. Además de la función `replace()` mostrada anteriormente, hay otras formas de buscar y reemplazar texto en Rust, como el uso de expresiones regulares.
+```rust
+"Hola Rust!"
+```
+En este ejemplo, hemos reemplazado "Mundo" por "Rust" en el string "Hola Mundo!".
 
-## Ver también:
+## Inmersión Profunda
 
-- [Documentación oficial de Rust sobre la función replace()](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Tutorial de Rust sobre expresiones regulares](https://doc.rust-lang.org/book/ch09-06-pattern-syntax.html#regular-expressions)
+Buscar y reemplazar texto tiene sus raíces en el antiguo lenguaje de programación ed de Unix, y ha sido implementado en la mayoría de los lenguajes de programación modernos, incluido Rust.
+
+Otros métodos para manipulaciones de texto en Rust incluyen push_str() para agregar strings, y trim() para quitar espacios en blanco. 
+
+La implementación de buscar y reemplazar en Rust, utiliza el método replace() de la biblioteca estándar que realiza una búsqueda lineal, lo que significa que la eficacia del método decrece a medida que el tamaño del texto aumenta.
+
+## Ver También
+
+Rust tiene una amplia base de documentación, aquí te dejamos algunos enlaces para aprender más sobre manipulación de texto en Rust:
+
+1. [Libro de programación Rust](https://doc.rust-lang.org/book/)
+2. [Biblioteca estándar de Rust: std::string::String](https://doc.rust-lang.org/std/string/struct.String.html) 
+3. [Documentación de Rust sobre el método replace()](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)

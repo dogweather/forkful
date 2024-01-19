@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subtrings"
-html_title:           "Fish Shell: Extraindo subtrings"
-simple_title:         "Extraindo subtrings"
+title:                "Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,44 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Extrair Substrings em Fish Shell
+
 ## O que & Por quê?
-
-Extrair substrings é um processo de separação de uma string maior em partes menores. Isso é comumente usado pelos programadores para obter partes específicas de uma string, como uma palavra ou um caractere específico.
-
-Os programadores usam a extração de substrings para manipular e analisar dados de forma mais eficiente, permitindo que eles obtenham apenas a informação necessária para suas tarefas.
+Extrair substrings é o ato de retirar uma parte específica de uma string. Programadores fazem isso para manipular e analisar dados levando em conta apenas as informações necessárias.
 
 ## Como fazer:
+No Fish Shell, você pode extrair substrings usando a função `string sub`. Veja um exemplo:
 
-```Fish Shell
-# Extrair caracteres específicos
-set string "Olá mundo"
-echo $string[2]
-
-# Resultado: "á"
-
-# Extrair palavras específicas
-set string "Eu amo programar em Fish Shell"
-echo $string[4..7]
-
-# Resultado: "programar em Fish"
-
-# Extrair partes de uma URL
-set url "https://github.com/nathaliairodrigues?tab=repositories"
-echo $url[8..21]
-
-# Resultado: "github.com"
-
+```fish
+string sub -s 3 -l 5 "Ola, mundo"
 ```
 
-## Mergulho Profundo:
+Esse código retorna `a, mu`, que começa na 3ª posição e tem um comprimento de 5 caracteres.
 
-A extração de substrings tem sido uma técnica essencial desde os primeiros dias da programação de computadores. Anteriormente, era feita manualmente usando funções específicas de cada linguagem de programação. No entanto, com o avanço da tecnologia, as linguagens de programação modernas, como Fish Shell, possuem funções integradas para facilitar a extração de substrings.
+## Mergulho Profundo
+A extração de substrings tem suas raízes na concepção inicial das linguagens de programação. Em Fish Shell, oferece uma alternativa às expressões regulares ou ao uso de `awk` e `sed`.
 
-Algumas alternativas para a extração de substrings incluem o uso de expressões regulares ou de recursos específicos da linguagem, como o método "slice" em Python.
+A função `string sub` em Fish foi implementada como uma maneira menos verbosa e mais intuitiva de lidar com strings. Pela escolha do início (-s) e do comprimento (-l), você consegue extrair precisamente a parte desejada da string.
 
-A implementação da função de extração de substrings em Fish Shell é baseada no indexamento de strings, que é a capacidade de acessar caracteres específicos em uma string usando sua posição numérica. Isso significa que o primeiro caractere em uma string tem o índice 1, o segundo tem o índice 2 e assim por diante.
-
-## Veja também:
-
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial de extração de substrings em Fish Shell](https://dev.to/nathaliairodrigues/how-to-extract-substrings-in-fish-shell-1kom)
+## Ver Também
+Para mais informações sobre a manipulação de strings no Fish Shell, confira os seguintes links:
+1. [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/commands.html#string)
+2. [Tutorial sobre a manipulação de strings no Fish](https://jorge.fbarr.net/2011/11/27/fish-shell-string-functions/)
+3. [Exemplos de uso do comando `string sub`](https://www.baeldung.com/linux/fish-shell-string-operations)

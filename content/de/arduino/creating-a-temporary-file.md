@@ -1,7 +1,7 @@
 ---
-title:                "Erstellen einer temporären Datei"
-html_title:           "Arduino: Erstellen einer temporären Datei"
-simple_title:         "Erstellen einer temporären Datei"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Java: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,39 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was und Warum?
+## Was & Warum?
 
-Bevor wir uns in die Details stürzen, lassen Sie uns zunächst klären, was das Erstellen einer temporären Datei bedeutet. Eine temporäre Datei ist eine Datei, die vorübergehend erstellt wird, um Daten zu speichern oder zu übertragen und dann gelöscht wird. Programmierer nutzen temporäre Dateien, um beispielsweise Zwischenergebnisse zu speichern oder bestimmte Prozesse zu optimieren.
+Eine temporäre Datei ist eine Datei, die zur vorübergehenden Speicherung von Daten während der Laufzeit eines Programms erstellt wird. Programmierer nutzen sie, um den Speicher effizient zu nutzen, indem sie nicht benötigte Daten vorübergehend auslagern.
 
-Wie geht's?
+## So geht's:
 
-In der Arduino-Programmierung gibt es einige Möglichkeiten, temporäre Dateien zu erstellen. Hier sind zwei Beispiele mit den entsprechenden Codeblöcken:
-
-1. Verwendung der `File`-Klasse:
+Im Arduino gibt es leider keine spezielle Funktion zum Erstellen temporärer Dateien, da es auf einer Microcontroller-Plattform basiert, die ein einfacheres Dateisystem nutzt. Aber dennoch kann man „temporäre“ Dateien mit der SD-Bibliothek erstellen. Hier ist ein Beispiel:
 
 ```Arduino
-File tempFile; // Erstellen Sie eine Variable vom Typ "File"
-tempFile = SPIFFS.open("/temp.txt", "w+"); // Öffnen oder erstellen Sie eine temporäre Datei namens "temp.txt"
-tempFile.println("Temporäre Datei erstellt!"); // Schreiben Sie Daten in die Datei
-tempFile.close(); // Schließen Sie die Datei
+#include <SD.h>
+
+void setup()
+{
+  Serial.begin(9600);
+  SD.begin(4);
+
+  File tempFile = SD.open("temp.txt", FILE_WRITE);
+  
+  if (tempFile) {
+    tempFile.println("Dies ist eine temporäre Datei!");
+    tempFile.close();
+    Serial.println("Temporäre Datei erfolgreich erstellt.");
+  }
+  else {
+    Serial.println("Fehler beim Erstellen der temporären Datei!"); 
+  }
+}
+
+void loop() {
+}
 ```
 
-2. Verwendung der `Filesystem`-Bibliothek:
+Das obige Programm erstellt eine Datei namens "temp.txt" und schreibt die Zeichenkette "Dies ist eine temporäre Datei!" hinein. 
 
-```Arduino
-Filesystem.createTemporaryFile("/temp.txt"); // Erstellen Sie eine temporäre Datei namens "temp.txt"
-```
+## Vertiefung
 
-Wenn Sie die erste Option wählen, können Sie die `.write()`-Methode verwenden, um Daten in die temporäre Datei zu schreiben, während Sie mit der zweiten Option eine bestimmte Dateigröße festlegen können.
+Da Arduino eine microcontroller-basierte Plattform ist, ist seine Dateioperation im Vergleich zu vollwertigen Betriebssystemen sehr begrenzt. Einer der Gründe ist, dass viele Mikrocontroller, einschließlich derer auf Arduino-Platinen, keinen Zugriff auf ein vollwertiges Dateisystem oder eine Festplatte wie ein Desktop-Computer haben.
 
-Tiefer ins Detail
+Es gibt Alternativen zur Verwendung von temporären Dateien auf Geräten mit begrenzten Ressourcen wie Arduino. Eine Option ist die Nutzung des EEPROMs (electrically erasable programmable read-only memory), obwohl wegen seiner begrenzten Lebensdauer der Schreibzyklen Vorsicht geboten ist.
 
-In der Vergangenheit wurden temporäre Dateien häufig verwendet, um Daten zwischen verschiedenen Programmen oder Prozessen auszutauschen. Heutzutage wird jedoch häufiger der interne Speicher des Computers verwendet, da dieser schneller und effizienter ist. Alternativ können auch temporäre Variablen oder Arrays verwendet werden, um Daten zu speichern und zu übertragen.
+## Weiterführendes
 
-Zur Implementierung von temporären Dateien wird normalerweise eine Datenstruktur verwendet, um die Daten zu speichern, bis sie in die endgültige Datei übertragen werden. Viele Programmiersprachen, einschließlich Arduino, stellen bereits Funktionen oder Bibliotheken zur Verfügung, um temporäre Dateien einfach zu erstellen und zu verwalten.
-
-Siehe auch
-
-Weitere Informationen zu temporären Dateien finden Sie in der offiziellen Arduino-Dokumentation: <https://www.arduino.cc/reference/en/libraries/spiffs/open/>.
-
-Weitere Informationen zu alternativen Methoden der Datenübertragung finden Sie hier: <https://www.howtogeek.com/179265/10-useful-options-you-can-configure-in-your-computers-bios/>
+- Arduino SD Library: https://www.arduino.cc/en/Reference/SD
+- EEPROM-Bibliothek: https://www.arduino.cc/en/Reference/EEPROM

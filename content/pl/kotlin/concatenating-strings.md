@@ -1,7 +1,7 @@
 ---
-title:                "Łączenie łańcuchów znaków"
-html_title:           "Kotlin: Łączenie łańcuchów znaków"
-simple_title:         "Łączenie łańcuchów znaków"
+title:                "Konkatenacja ciągów znaków"
+html_title:           "Bash: Konkatenacja ciągów znaków"
+simple_title:         "Konkatenacja ciągów znaków"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co chodzi?
+## Co i dlaczego?
 
-Łączenie napisów, znane też jako konkatenacja, jest powszechną operacją w programowaniu. Polega ona na łączeniu dwóch lub więcej napisów w jeden większy napis. Programiści często wykonują tę operację, aby tworzyć bardziej czytelny i dynamiczny kod.
+Konkatenacja ciągów polega na łączeniu dwóch lub więcej ciągów znaków w jeden. Programiści korzystają z tego, aby manipulować danymi tekstowymi i utworzyć dynamiczne ciągi znaków.
 
 ## Jak to zrobić:
 
-Konkatenacja w języku Kotlin jest bardzo prosta i intuicyjna. Możemy tego dokonać przy użyciu operatora „+” lub wykorzystując funkcję `plus()`.
+Wykorzystaj operator `+` do łączenia ciągów. Oto przykładowy kod:
 
 ```Kotlin
-// przykład użycia operatora
-val imie = "Anna"
-val nazwisko = "Kowalska"
-val pelneImie = imie + " " + nazwisko // wyświetli "Anna Kowalska"
-
-// przykład użycia funkcji plus()
-val tekst1 = "Hello"
-val tekst2 = "World"
-val wynik = tekst1.plus(" ").plus(tekst2) // wyświetli "Hello World"
+fun main() {
+    val str1 = "Cześć "
+    val str2 = "Świecie!"
+    val result = str1 + str2
+    println(result) // Wyświetli: "Cześć Świecie!"
+}
 ```
 
-## Głębsze zagadnienia:
+Możesz też użyć funkcji `plus`.
 
-Historia konkatenacji sięga początków programowania, gdy napisy były jedynym sposobem na reprezentację tekstu w komputerze. W języku Kotlin, operacja łączenia napisów jest wydajna, ponieważ zawsze tworzony jest nowy napis zamiast zmieniać istniejący. Alternatywnym sposobem na konkatenację jest wykorzystanie klasy `StringBuilder`, która jest używana do budowania i modyfikowania napisów.
+```Kotlin
+fun main() {
+    val str1 = "Cześć "
+    val str2 = "Świecie!"
+    val result = str1.plus(str2)
+    println(result) // Wyświetli: "Cześć Świecie!"
+}
+```
 
-## Zobacz też:
+## Dogłębna analiza
 
-- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Porównanie wydajności konkatenacji w Kotlin i Java](https://medium.com/@lushnikov/benchmark-string-concatenation-in-java-kotlin-groovy-scala-clojure-89b970d5a00b)
+Concatenacja była obecna w wielu starszych językach takich jak C czy Java, stąd pojawienie się w Kotlinie. Alternatywą dla niej może być interpolacja ciągów (czyli wstawianie odpowiednich wartości do ciągów).
+
+Chociaż funkcje plus i operator `+` działają podobnie, musisz pamiętać, że obie tworzą nowy łańcuch, który jest połączeniem obu łańcuchów. Nie zmieniają one oryginalnych łańcuchów.
+
+## Zobacz też
+
+Do bardziej skomplikowanych operacji związanych z ciągami, poznaj Bibliotekę Standardową Kotlin dla Stringów.
+([Tutaj](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/))
+
+Interpolacja ciągów może być bardziej wydajna, jeśli konkatenujesz wiele ciągów jednocześnie. Więcej na ten temat znajdziesz [tutaj](https://kotlinlang.org/docs/basic-types.html#string-templates).

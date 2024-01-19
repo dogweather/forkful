@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum aus einem String auslesen"
-html_title:           "Fish Shell: Ein Datum aus einem String auslesen"
-simple_title:         "Ein Datum aus einem String auslesen"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was und Warum?
+Das Parsen eines Datums aus einem String bezeichnet den Prozess der Umwandlung des Zeichenkettenformats eines Datums in ein tatsächliches Datumsobjekt, das von einem Programm verwendet werden kann. Programmierer machen das häufig, weil viele Systeme und Datenformate Daten in Zeichenkettenform zurückgeben.
 
-Das Parsen eines Datums aus einem String bedeutet, ein Datum aus einer Zeichenkette zu extrahieren und in ein Standardformat umzuwandeln. Programmierer tun dies, um mit Datumswerten arbeiten zu können, wie zum Beispiel beim Vergleichen oder Sortieren. 
+## So geht's:
+Sie können den eingebauten "date" Befehl in der Fish Shell verwenden, um ein Datums-String zu parsen. Hier ist ein einfaches Beispiel, wie man das macht:
 
-# Wie geht's?
+```Fish Shell
+# Definiere einen Datum-String
+string Datum="2022-03-14"
 
-```
-# Ein Beispiel mit Fish Shell
-
-set str "13.12.2020"
-set format "+%Y-%m-%d"
-echo (date -f $format $str)
-
-# Ausgabe: 2020-12-13
+# Parse das Datum mit dem "date"-Befehl
+date -d $Datum
 ```
 
-Das obige Beispiel zeigt, wie man mit Fish Shell ein Datum aus einem String extrahieren kann. Zuerst wird die Zeichenkette "13.12.2020" in der Variable str gespeichert. Dann wird das Format "+%Y-%m-%d" definiert, das dem Standardformat für Datumswerte entspricht. Schließlich wird mit dem Befehl "date" das Datum aus dem String in das definierte Format umgewandelt und ausgegeben.
+Der obige Code gibt das geparste Datum in der Form "Mon DD HH:MM:SS CET YYYY" aus.
 
-# Tief Einblick
+```Fish Shell
+# Beispiel Ausgabe
+Mon Mar 14 00:00:00 CET 2022
+```
 
-Das Parsen von Datumswerten aus Zeichenketten ist in der Programmierung sehr wichtig, um mit Datumswerten arbeiten zu können. Früher war dies oft eine zeitaufwändige Aufgabe, da unterschiedliche Länder verschiedene Datumsformate verwenden. In Fish Shell wird dies jedoch durch die Verwendung des Befehls "date" erleichtert, der eine Vielzahl von Optionen bietet, um Datumswerte zu konvertieren und zu formatieren.
+## Deep Dive:
 
-Alternativen zu Fish Shell für das Parsen von Datumswerten sind zum Beispiel die Programmiersprachen Python oder Java. Auch hier werden spezielle Funktionen für das Extrahieren von Datumswerten aus Zeichenketten angeboten. In Fish Shell ist es jedoch besonders einfach, da der Befehl "date" bereits vorhanden ist und die Arbeit erleichtert.
+- Historischer Kontext: Der Gebrauch von Datumsparsing ist seit der Anfangszeit von UNIX weithin bekannt. Der "date"-Befehl, den wir in Unix-ähnlichen Systemen (wie die Fish Shell) sehen, hat seine Wurzeln in den 1970er Jahren.
 
-# Siehe auch
+- Alternativen: Obwohl der "date"-Befehl universell genutzt wird, gibt es andere Tools wie "datetime" in Python, die ausgefeiltere Funktionen wie Zeitzonenumwandlungen und Zeitspannenberechnungen bieten.
 
-- Fish Shell Dokumentation: https://fishshell.com/docs/current/index.html
-- Ein Tutorial zum Parsen von Datumswerten aus Zeichenketten mit Fish Shell: https://fishshell.com/docs/current/tutorial.html#tut_parsing
+- Implementierungsdetails: Der "date"-Befehl in der Fish Shell verwendet die glibc-Funktion "strptime" für das Parsen von Datum-Strings. Sie bietet eine Vielzahl von Möglichkeiten, das Format Ihres Datum-Strings anzugeben.
+
+## Siehe auch:
+
+- Offizielle Dokumentation für den "date"-Befehl (https://linux.die.net/man/1/date)
+
+- Fish Shell GitHub Seite (https://github.com/fish-shell/fish-shell)
+
+- Fish Shell Programmierhandbuch (https://fishshell.com/docs/current/index.html)

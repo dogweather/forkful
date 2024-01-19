@@ -1,7 +1,7 @@
 ---
-title:                "Parsing av html"
-html_title:           "Arduino: Parsing av html"
-simple_title:         "Parsing av html"
+title:                "Analysering av html"
+html_title:           "C#: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,20 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**Hva & Hvorfor?**
+## Hva & Hvorfor?
 
-Parsing HTML er en prosess der data fra en nettside blir analysert og strukturert slik at de kan brukes av en datamaskin. Dette er viktig fordi det gjør det mulig å hente ut spesifikke data fra en nettside, for eksempel prisene på produktene eller værvarselet for en bestemt by.
+Parsing av HTML er prosessen når en HTML-dokument blir analysert og konvertert til en struktur som er enkel for programmerere å forstå og jobbe med. Vi gjør dette for å lette datautvinning og web skraping.
 
-**Hvordan:**
+## Hvordan gjør man det:
 
-For å parse HTML på Arduino trenger du en Ethernet-skjerm og en internettforbindelse. Først må du bruke ```Ethernet.begin(mac, ip)``` for å sette opp forbindelsen. Deretter må du definere en ```client``` for å koble til nettsiden du vil hente data fra. Du kan bruke ```client.connect(ip, port)``` for å knytte deg til serveren på nettsiden. Når forbindelsen er etablert, kan du bruke ```client.println("GET / HTTP/1.1")``` for å be om nettsidens HTML-kode. Deretter bruker du ```client.readStringUntil('\r')``` for å lese nettsidens HTML-kode linje for linje. Du kan bruke ```Serial.println()``` for å skrive ut koden på seriell monitor, eller du kan bruke ```String```-variabler for å lagre informasjonen og bruke den videre i koden din.
+Her er enkel kode for å parse HTML ved hjelp av en Arduino Ethernet skjold og Ethersheild bibliotek. Vi bruker Google-hjemmesiden som eksempel:
 
-**Dypdykk:**
+```Arduino
+#include <EtherShield.h>
+ 
+// Definer nettverksdetaljer
+byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
+byte ip[] = {10, 0, 0, 2};
+byte gw[] = {10, 0, 0, 1};
+byte dns[] = {8, 8, 8, 8};
 
-Parsing HTML har vært en viktig del av webutvikling siden de tidlige dagene av internett. Før HTML-styler og moderne webdesign ble vanlig, var HTML primært brukt til å generere enkel tekst og lenker. Men med utviklingen av moderne nettsteder som er rike på innhold og data, ble det nødvendig å kunne tolke og strukturere HTML-kode for å hente ut spesifikke data. Alternativer til å parse HTML inkluderer å bruke API-er eller webskraping-verktøy.
+// Opprett en Ethernet-klient
+EthernetClient client;
 
-Når du parser HTML på Arduino, er det viktig å være oppmerksom på at det kan være utfordrende å hente ut bestemte data fra nettsiden, siden HTML-kode kan variere fra nettside til nettside. Du må også være nøye med å følge riktig syntaks og elementer når du bruker HTML-parseren på Arduino.
+void setup() {
+  Ethernet.begin(mac, ip, dns, gw);
+  Serial.begin(9600);
 
-**Se også:**
+  // Koble til Google
+  if (client.connect("www.google.com", 80)) {
+    Serial.println("Connected to Google");
+    // Send en HTTP-forespørsel
+    client.println("GET / HTTP/1.0");
+    client.println();
+  }
+  
+  // vent og motta data
+  while (client.available()) {
+    char c = client.read();
+    Serial.print(c);
+  }
 
-For mer informasjon om parsing av HTML på Arduino, kan du se på dokumentasjonen for Ethernet-biblioteket og prøve ut forskjellige eksempler for å øve deg på å hente ut data fra forskjellige nettsider. Du kan også se på forumet på Arduino-nettsiden for å få hjelp og råd fra andre brukere.
+  // Lukk tilkoblingen
+  client.stop();
+}
+
+void loop() {
+  // Ikke noe som trengs her
+}
+```
+Eksempelutgang vil være rå HTML-kode fra Google-hjemmesiden.
+
+## Dyp Dykk
+
+Parsing av HTML har vært standard siden opprettelsen av web-skraping, hvor programmerere trengte å trekke ut spesifikk data fra nettsider. Ytterligere alternativer for parsing inneholder biblioteker som Beautiful Soup (Python), Jsoup (Java) og HtmlAgilityPack (.NET).
+
+HTML Parser bruker generelt en teknikk kjent som Tre-gående, hvor Parser går gjennom HTML-treet og utfører spesifikke handlinger basert på nodetype.
+
+## Se Også
+
+1. Arduino Ethernet Shield dokumentasjon: https://www.arduino.cc/en/Main/ArduinoEthernetShield
+2. Ethershield bibliotek: https://www.arduino.cc/en/Reference/Ethernet
+3. "Tregående algoritmer" for mer dybde på hvordan parsing teknikker jobber: https://en.wikipedia.org/wiki/Tree_traversal

@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Fish Shell: Säännöllisten lausekkeiden käyttö"
+html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,24 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Regular expressionien käyttö tarkoittaa lyhyesti sanottuna tietynlaisten merkkijonojen etsimistä ja manipulointia ohjelmoinnissa. Tämä on erityisen hyödyllistä silloin, kun työskennellään suurten ja monimutkaisten tietomassojen kanssa, sillä regex:ien avulla voidaan nopeasti ja tarkasti löytää haluttuja kappaleita tekstistä. Näin säästytään turhalta manuaaliselta etsimiseltä ja korjailulta.
+Säännölliset lausekkeet tai "regex:it" ovat tehokas tapa vastata kysymyksiin kuin "löytyykö tästä merkkijonosta tietty kuvio?" Ohjelmoijat käyttävät regex:ja tekstien käsittelyssä, kuten syötteen validoinnissa, tiedostojen jäsennyksessä ja datan suodattamisessa.
 
 ## Miten:
-Koodin avulla on helpointa havainnollistaa regex:ien käyttöä. Alla on esimerkkejä Fish Shell -komentorivityyppisillä koodiblokeilla.
+```Fish Shell
+# Luoja funktio joka luetella kaikki teksti tiedostot päätteellä .txt
+function list_txt_files
+   for file in *.txt
+       echo $file
+   end
+end
 
+# Suorita funktio
+list_txt_files
 ```
-Fish Shell Regular Expression
+Tässä esimerkissämme Fish Shell tulostaa kaikki .txt-päätteiset tiedostot hakemistossa.
 
-# Hakee ja tulostaa kaikki sähköpostiosoitteet tekstitiedostosta
-pcregrep -o '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b' tiedosto.txt
-
-# Korvaa kaikki välilyönnit tekstistä väliviivalla
-sed 's/ /-/g' tiedosto.txt
-```
-
-## Syvempi sukellus:
-On hyödyllistä tietää, että regular expressionit ovat olleet käytössä jo pitkään ja ne ovat lähes välttämättömiä ohjelmoinnin maailmassa. On myös olemassa muita vaihtoehtoisia tapoja käsitellä merkkijonoja, kuten esimerkiksi string-metodeilla, mutta regex:it tarjoavat monipuoliset ja tehokkaat työkalut. Fish Shell käyttää PCRE (Perl Compatible Regular Expression) -kirjastoa, joka mahdollistaa monimutkaisempien regex:ien käytön.
+## Syvällisemmin:
+Regex:ien historia juontaa juurensa 1950-luvun matemaattisiin malleihin, joita sovellettiin 1970-luvulla Unix-tekstieditoriin. Regex:eille on muitakin vaihtoehtoja, kuten jäsennyspuut ja synteettiset ilmaisimet. Fish Shell toteuttaa regex:it POSIX-yhteensopivalla tavalla, ja se tarkistaa vastaavuudet laiskasti, mikä tarkoittaa, että se lopettaa tarkistuksen heti kun match löytyy.
 
 ## Katso myös:
-- [Fish Shell -dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Regex-tutoriaali ja -harjoituksia](https://regexone.com/)
+1. [Fish Shellin viralliset dokumentit](https://fishshell.com/docs/current/index.html)
+2. [POSIXin määrittelemät säännölliset lausekkeet](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html)
+3. [Unixin ed:in manuaali](https://www.gnu.org/software/ed/manual/ed_manual.html#Regular-Expressions), jossa regex:it ensin esiteltiin.

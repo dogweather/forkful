@@ -1,7 +1,7 @@
 ---
-title:                "Att interpolera en sträng"
-html_title:           "Bash: Att interpolera en sträng"
-simple_title:         "Att interpolera en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,37 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att interpolera en sträng innebär att infoga variablernas värden inom en sträng direkt. Programmerare gör detta för att skapa dynamisk kod, effektivisera utskriften och förbättra kodläsbarheten.
 
-Att interpolera en sträng innebär att sätta in variabler eller kommandon i en sträng. Det används för att göra kod mer dynamisk och läsbar.
+## Så här gör du:
+Vårt exempel kommer att använda echo-kommandot för att demonstrera stränginterpolation i Bash. 
 
-Vanligtvis använder vi detta för att skapa mer effektiva och flexibla skript där vi kan återanvända samma kod med olika värden för variablerna.
-
-## Hur du gör:
-
-För att interpolera en sträng i Bash, använd "echo" kommandot och sätt variabeln inuti ett dollartecken följt av ett kapiteltecken. Som exempelvis: 
 ```Bash
-first_name="Lisa"
-last_name="Andersson"
-echo "Hej, mitt namn är $first_name $last_name."
+#!/bin/bash
+name="Stockholm"
+echo "Jag bor i $name"
+```
+Kör detta skript och du kommer att se följande utdata:
+
+```Bash
+Jag bor i Stockholm
 ```
 
-Detta skulle ge utdatan "Hej, mitt namn är Lisa Andersson."
+## Djupdykning
+Stränginterpolation i Bash går tillbaka till skapandet av Unix-skriptspråken. Det är en standardfunktion och föredras framför att använda konkatenation. Det finns liknande funktioner i andra skriptspråk som Python och Ruby. Införandet av stränginterpolation förbättrade effektiviteten i kodningen och minskade komplexiteten. 
 
-Om du vill använda ett kommando som en variabel, kan du använda "$($command)" notation. Till exempel: 
-```Bash
-current_date=$(date +%Y-%m-%d)
-echo "Idag är det $current_date."
-```
+Alternativen till stränginterpolation inkluderar användning av "expr" eller 'printf'-funktionen. Men dessa kan vara mer komplicerade och mindre lättlästa än stränginterpolation.
 
-Detta skulle ge utdatan "Idag är det 2021-10-05."
+När det gäller implementeringsdetaljer, när en variabel interpoleras i en sträng, byter Bash automatiskt ut variabelnamnet med dess värde. Det kräver inte några extra resurser och påverkar därmed inte programmets prestanda. 
 
-## Fördjupning:
+## Se också 
+För mer information om Bash och stränginterpolation, se följande länkar: 
 
-Historiskt sett har interpolering av strängar funnits i många programmeringsspråk sedan början av 70-talet. Det finns också andra sätt att interpolera strängar i Bash, såsom "printf" kommandot eller att använda dubbela citattecken istället för enkla för att få med variabler.
-
-Implementeringen av interpolering i Bash är snabbare och mer effektiv än att använda "concatenation" (sammanfogning) för att skapa en sträng med variabler, eftersom den undviker att skapa onödiga kloner av strängar.
-
-## Se även:
-
-- [Bash Reference Manual: Command Substitution](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Command-Substitution)
-- [Bash Hackers Wiki: Command substitution](https://wiki.bash-hackers.org/syntax/expansion/cmdsubst)
+1. [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_03.html)
+2. [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/string-manipulation.html)
+3. [Bash vs Python: stränginterpolation](https://opensource.com/article/19/10/bash-vs-python)
+   
+Notera: för att läsa artiklarna ovan behöver du engelska kunskap.

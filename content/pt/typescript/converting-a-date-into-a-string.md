@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma data em uma string"
-html_title:           "TypeScript: Convertendo uma data em uma string"
+html_title:           "C++: Convertendo uma data em uma string"
 simple_title:         "Convertendo uma data em uma string"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,27 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-Converter uma data em uma string é um processo comum entre os programadores, que permite representar uma data de forma legível para humanos. Isso é útil para exibir datas em formato de texto em interfaces do usuário, gerar logs ou salvar dados em um formato específico.
+## O quê & por quê?
+
+Traduzir uma data para string é um processo que permite representar datas como textos de fácil leitura para humanos ou para fins de armazenamento. Programadores fazem isso para facilitar o processamento, a visualização ou o armazenamento de datas.
 
 ## Como fazer:
-```TypeScript 
-const myDate = new Date();
-const dateString = myDate.toDateString();
-console.log(dateString); // Saída: "Thu Jul 22 2021"
-```
+
+No TypeScript, temos várias maneiras de converter uma data em uma string. Vamos usar o objeto Date e seus métodos.
 
 ```TypeScript
-const myDate = new Date();
-const options: Intl.DateTimeFormatOptions = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
-const dateString = myDate.toLocaleDateString("pt-BR", options);
-console.log(dateString); // Saída: "quinta-feira, 22 de julho de 2021"
+let agora = new Date();
+console.log(agora.toString()); // "Fri Jun 18 2021 12:20:18 GMT+0100 (Horário de Verão da Europa Ocidental)"
+console.log(agora.toISOString()); // "2021-06-18T11:20:18.290Z"
 ```
 
-## Mergulho profundo:
-A necessidade de converter datas em strings surgiu junto com a criação das primeiras linguagens de programação, que não tinham tipos de dados específicos para representar datas. Atualmente, existem diversas formas de realizar essa conversão, como usando bibliotecas externas ou formatando manualmente a string. A implementação nativa em TypeScript utiliza a classe `Date` e os métodos `toDateString()` e `toLocaleDateString()` para realizar a conversão de acordo com a localização do usuário.
+O `toString()` devolve a data e a hora no formato de string humano, enquanto o `toISOString()` retorna um string no formato ISO 8601, que é sempre de 24 caracteres.
 
-## Veja também:
-- [Documentação oficial do método toDateString()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString)
-- [Documentação oficial do método toLocaleDateString()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
-- [Tudo sobre datas em TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html#support-for-similar-tojson-methods-in-class-declarations)
+## Mergulho profundo
+
+Como alternativa, podemos usar `toLocaleString()`, `toLocaleDateString()` e `toLocaleTimeString()`. Eles permitem formatação mais regional:
+
+```TypeScript
+console.log(agora.toLocaleString()); // "18/06/2021, 12:20:18"
+console.log(agora.toLocaleDateString()); // "18/06/2021"
+console.log(agora.toLocaleTimeString()); // "12:20:18"
+```
+
+Historicamente, lidar com datas na programação tem sido notoriamente problemático devido a questões como fusos horários e a variedade de formatos de data. Por isso, existem bibliotecas como o Moment.js que fornecem funções robustas para manipulação de datas e horas.
+
+Use a abordagem que melhor atenda às necessidades do seu projeto, seja para internacionalização, armazenamento eficiente de espaço ou compatibilidade com outras tecnologias.
+
+## Veja também
+
+- Documentação oficial do JavaScript [Date](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date) na MDN Web Docs
+- Library [Moment.js](https://momentjs.com/) para manipulação de datas e horas
+- Guia de comparação de [Date libraries](https://programmingwithmosh.com/javascript/javascript-date-libraries-momentjs-date-fns-luxon-dayjs/)
+- Conceitos básicos de [Time and Date](https://www.tutorialspoint.com/typescript/typescript_date_object.htm) no TypeScript

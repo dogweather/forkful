@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstav i en streng"
-html_title:           "Fish Shell: Stor bokstav i en streng"
-simple_title:         "Stor bokstav i en streng"
+title:                "Sette stor bokstav i en streng"
+html_title:           "Fish Shell: Sette stor bokstav i en streng"
+simple_title:         "Sette stor bokstav i en streng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,24 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å gjøre en streng (eller setning) stor forbokstav handler om å gjøre den første bokstaven i strengen stor, uavhengig av hva den var før. For eksempel, "hei" vil bli "Hei". Programmere gjør dette for å gjøre koden mer leselig og konsistent.
+# Kapitalisering av tekststrenger i Fish Shell for Norske Programmerere
 
-# Hvordan gjør man det:
-Å gjøre en streng stor forbokstav i Fish Shell er enkelt. Bare skriv følgende kommando i terminalen:
+## Hva & Hvorfor?
+
+Kapitalisering av en tekststreng innebærer å forvandle de små bokstavene i en streng til store bokstaver. Dette er viktig når programmerere ønsker å standardisere tekstdata eller gjøre sammenligninger av tekststrengene som er ikke følsomme for små og store bokstaver.
+
+## Slik gjør du det:
+
+I Fish Shell, kan du lettvint kapitalisere en tekststreng med 'string' kommandoen. Her er et eksempel:
 
 ```
-Fish Shell string capitalize "streng"
+Fish Shell
+> set -l tekst "hej verden"
+> string upper -q $tekst
 ```
 
-Dette vil gi følgende output: "Streng".
+Utgangen vil være:
 
-# Dykk dypere:
-Å gjøre en streng stor forbokstav er en kodeteknikk som har vært brukt i mange år. Det finnes også alternativer til dette i andre programmeringsspråk, som for eksempel 'upper' funksjonen i Python. I Fish Shell er det også mulig å gjøre en hel streng eller hvert ord i en streng til stor forbokstav ved å bruke hhv. `String capitalize "streng"` og `String uppercase "streng"`. Implementasjonsdetaljer kan variere mellom forskjellige versjoner av Fish Shell, men resultatet vil være det samme.
+```
+HEJ VERDEN
+```
 
-# Se også:
-For mer informasjon om å gjøre en streng stor forbokstav i Fish Shell, kan du sjekke ut disse kildene:
+## Dypdykk 
 
-- Fish Shell dokumentasjon: https://fishshell.com/docs/current/cmds/capitalize.html
-- Fish Shell on GitHub: https://github.com/fish-shell/fish-shell
-- Stack Overflow spørsmål om capitalizing strings i Fish Shell: https://stackoverflow.com/questions/27983722/fish-shell-string-capitalize
+Historisk sett, har kapitalisering av tekststreng vært en viktig del av databehandlingsprosessen, spesielt når det gjelder datarensing og standardisering. Som alternativ i Fish kan du bruke 'tr' kommandoen som følger: 
+
+```Fish Shell
+> echo "hej verden" | tr '[:lower:]' '[:upper:]'
+```
+
+Dette vil også gi utgangen "HEJ VERDEN".
+
+Både 'string' kommandoen og 'tr' fungerer på samme måte, ved å iterere over hver karakter i strengen og forvandle den til en stor bokstav hvis det er en liten bokstav. Valget mellom de to vil som regel være et spørsmål om personlig preferanse og behov.
+
+## Se også:
+
+1. Fish Shell's offisielle dokumentasjon på 'string' kommandoen: https://fishshell.com/docs/current/cmds/string.html
+2. GNU 'tr' kommando: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html

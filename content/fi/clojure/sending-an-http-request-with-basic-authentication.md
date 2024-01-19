@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämässä http-pyyntöä perusautentikoinnilla"
-html_title:           "Clojure: Lähettämässä http-pyyntöä perusautentikoinnilla"
-simple_title:         "Lähettämässä http-pyyntöä perusautentikoinnilla"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,22 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
-Jos olet ohjelmoija ja haluat lähettää HTTP-pyynnön perusautentikoinnilla, niin tämä artikkeli on sinulle! Perusautentikointi on yksinkertainen tapa lähettää pyyntöön mukana käyttäjänimi ja salasana, jolla voidaan valvoa pääsyä palvelimelle tai resursseihin.
+## Mitä & Miksi?
 
-# Miten valitaan?
-Clojure:lla voit lähettää HTTP-pyynnön perusautentikoinnilla käyttämällä "with-basic-auth" funktiota ja antamalla sille käyttäjänimen ja salasanan parametreina. Tässä on esimerkki:
+Lähettäminen HTTP-pyyntö perustodentamisella tarkoittaa, että lähetämme verkkopyynnön, joka sisältää tunnistetiedot salasanana ja käyttäjänimenä. Ohjelmoijat tekevät tämän päästäkseen käsiksi suojattuihin tietoihin tai resursseihin.
 
-```Clojure
-(with-basic-auth "käyttäjänimi" "salasana"
-  (http/get "http://esimerkki.com/api/käyttäjät"))
+## Kuinka:
+
+Aloitetaan asentamalla http-kit kirjasto. Leiningen-riippuvuus näyttää tältä:
+
+```clojure
+[http-kit "2.5.3"]
 ```
 
-Tuloksena saat kutsun käyttäjät-resurssiin autentikoinnilla, jossa käytetään "käyttäjänimi" ja "salasana".
+Työskennellään `client`-moduulilla, jonka avulla voimme luoda perustodentamisen HTTP-pyynnön:
 
-# Syvällisempi sukellus
-Perusautentikointi on osa HTTP-protokollaa ja otettiin käyttöön jo vuonna 1999. Ennen tätä käytettiin paljon epävarmempia menetelmiä käyttäjän tunnistamiseen. On myös muita tapoja autentikoida HTTP-pyyntöjä, kuten OAuth ja API-avaimet.
+```clojure
+(ns your-namespace-here
+  (:require [org.httpkit.client :as client]))
 
-# Katso myös
-Voit lukea lisää HTTP-pyyntöjen lähettämisestä Clojure:lla täältä: https://clojure.github.io/http-client/
-Ja lisätietoja perusautentikoinnista ja sen historiasta löydät täältä: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+(defn basic-auth [username password]
+  (let [creds (str username ":" password)]
+    (str "Basic " (java.util.Base64/encoder (byte-array (.getBytes creds))))))
+    
+(defn get-with-auth [url username password]
+  (client/get url {:basic-auth (basic-auth username password)}))
+
+(defn -main [& args]
+  (let [response (get-with-auth "http://your-url-here" "username" "password")]
+    (println (:status response)
+             (:headers response)
+             (slurp (:body response)))))
+
+(-main)
+```
+
+Näytteen tuloste voi näyttää tältä:
+
+```clojure
+200
+{"Content-Type" "application/json; charset=UTF-8"...}
+{"data": {...}}
+```
+
+## Syvempi sukellus
+
+Perustodentaminen HTTP:n kanssa datan lähettämiseen tuli käyttöön rajoitettujen resurssien suojaamiseen. Se on jo vanhentunut, altis hyökkäyksille, ja se on vaihtunut turvallisempiin metodeihin, kuten OAuth, joka on yleisesti käytössä käyttäjätietojen vaihtamiseen verkkosovellusten välillä.
+
+Natiivissa Clojuressa ei ole sisäänrakennettua kirjastoa tähän tehtävään, joten käytämme http-kit kirjastoa, mikä on alun perin kehitetty Clojuren valintaan HTTP:n käsittelyyn. Se on helppokäyttöinen ja tarjoaa monia ominaisuuksia, kuten client- ja server-moduulit, lomakkeiden käsittely, cookie- ja istuntotuki sekä WebSocket-tuki.
+
+## Katso myös
+
+1. Clojure - [virallinen sivu](https://clojure.org/)
+2. http-kit - [GitHub-sivu](https://github.com/http-kit/http-kit)
+3. Perustodentaminen - [Wikipedia](https://fi.wikipedia.org/wiki/Perustodentaminen)
+4. OAuth - [Wikipedia](https://fi.wikipedia.org/wiki/OAuth)

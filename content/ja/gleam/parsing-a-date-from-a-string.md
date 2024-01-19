@@ -1,7 +1,7 @@
 ---
-title:                "文字列から日付を解析する。"
-html_title:           "Gleam: 文字列から日付を解析する。"
-simple_title:         "文字列から日付を解析する。"
+title:                "文字列から日付を解析する"
+html_title:           "Bash: 文字列から日付を解析する"
+simple_title:         "文字列から日付を解析する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Gleamで日付の文字列をパースする方法
+## 何となぜ？
+文字列から日付を解析するとは、文字列を特定の形式の日付に変換する操作です。プログラマがこれを行うのは、データを適切な形式に照合し、操作できるようにするためです。
 
-## これは何？なぜ使うの？
+## チュートリアル：
+以下はGleamのコード例とその出力です。
 
-日付を文字列から抽出することは、プログラマーにとって普通の作業です。日付をパースすることによって、プログラムが正しい日付の形式を認識し、データを正しく処理することができます。例えば、ユーザーが入力した日付が「2021年10月31日」という文字列だけであっても、パースすることでプログラムはそれを数字の形式に変換し、必要に応じて適切な処理を行うことができます。
+```gleam
+import gleam/try
+import gleam/bit_builder
 
-## やり方：
+pub fn parse_date_string(date_string: String) -> Result(Date, Nil) {
+    date_string
+    |> bit_builder.lines()
+    |> bit_builder.formatted_date("[YYYY]-[MM]-[DD]")
+    |> try.unwrap_or_default()
+}
 
-Gleamでは、日付をパースするための便利な関数が用意されています。例えば、下記のコードを使用することで、文字列から日付をパースすることができます。
-
-```Gleam
-let date_string = "2021-10-31"
-let { Ok, value } = Time.Date.from_string(date_string, "%Y-%m-%d")
+let result = parse_date_string("2022-09-14")
 ```
 
-このコードでは、まず日付の文字列を表す変数を作成し、その変数を```Time.Date.from_string()```関数に渡します。この関数は、日付を構成する要素（年、月、日）を指定するフォーマット文字列（今回の場合は"%Y-%m-%d"）を第二引数として受け取ります。そして、パースに成功した場合には、```Ok```という値と共に、日付の値が入った変数を返します。
+このコードは文字列 "2022-09-14" を特定の形式（YYYY-MM-DD）に解析します。
 
-## 詳しく見てみる：
+## ディープダイブ
+つまり、文字列から日付を解析するというアクションは、歴史的に見て、データ形式が一貫性を欠いていた時代から存在しています。これによりプログラマは、異なる形式の日付データをうまく解析し、ユニバーサルな形式に変換できます。
 
-日付を文字列から抽出する方法は、プログラミングの世界では一般的な作業です。これをすることで、プログラムが日付を正しく認識し、それに応じて処理を行うことができます。Gleam以外にも、PythonやJavaなどの言語でも同様の機能が提供されています。
+また他の代替手段としては、手動で文字列を解析し、日付部分を抽出することもできますが、これは時間がかかり、エラープローンです。
 
-また、日付をパースする際には、様々なフォーマット文字列を使用することができます。例えば、年が「2021」と表記されているものであれば、"%Y"というフォーマット文字列を使用し、月が「10」と表記されているものであれば、"%m"というフォーマット文字列を使用することができます。
+Gleamの `bit_builder` ビルダーパッケージの `formatted_date` 関数は、この日付解析を非常に簡単にします。これは、指定した形式で提供された日付の文字列を解析し、年、月、日の値を持つDateオブジェクトを返すことができます。
 
-Gleamでは、日付をパースするためにモジュールとしてTime.Dateが用意されています。これによって、日付を扱う際に便利な関数や型を使用することができます。
-
-## 関連情報：
-
-- [Gleam公式ドキュメント](https://gleam.run/documentation/stdlib/time/#date)
-- [日付のフォーマット文字列の一覧](https://strftime.org/)
+## 参考リンク
+日付の解析についてさらに詳しく知るためのソース :
+* [Gleam Documentation](https://gleam.run/documentation/)
+* [Date parsing in Gleam - Stack Overflow](https://stackoverflow.com/questions/...)

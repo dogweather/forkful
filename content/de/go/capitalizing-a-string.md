@@ -1,7 +1,7 @@
 ---
-title:                "Großschreibung eines Strings"
-html_title:           "Go: Großschreibung eines Strings"
-simple_title:         "Großschreibung eines Strings"
+title:                "Einen String großschreiben"
+html_title:           "Go: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -12,13 +12,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Capitalizing a string is the act of converting the first letter of each word in a string to uppercase. Programmers do this in order to improve the readability and aesthetics of their code, as well as to conform to certain coding conventions and style guides.
+Das Kapitalisieren eines Strings in der Programmierung beschreibt das Umwandeln aller Anfangsbuchstaben eines Textes in Großbuchstaben. Programmeure verwenden es, um Inhalte für den Benutzer lesbar und ästhetisch ansprechend zu machen.
 
-## Wie geht's:
+## Wie zu:
 
-Der folgende Code verwendet die ```Go strings``` Bibliothek, um eine Funktion zu erstellen, die einen gegebenen String in Großbuchstaben umwandelt und zurückgibt:
+Im Folgenden finden Sie Codebeispiele, die zeigen, wie man einen String in Go kapitalisiert. 
 
-```
+```Go
 package main
 
 import (
@@ -26,27 +26,37 @@ import (
 	"strings"
 )
 
-func capitalize(s string) string {
-	words := strings.Split(s, " ")
-	for i, word := range words {
-		words[i] = strings.Title(word)
-	}
-	return strings.Join(words, " ")
-}
-
 func main() {
-	s := "hallo welt!"
-	fmt.Println(capitalize(s))
-	// Ausgabe: Hallo Welt!
+	text := "hallo, Welt!"
+	fmt.Println(strings.Title(text)) // Ausgabe: Hallo, Welt!
 }
 ```
 
-## Ein tieferer Einblick:
+In diesem Code benutzen wir die `Title`-Funktion aus dem `strings`-Paket, um den ersten Buchstaben jedes Worts im String in einen Großbuchstaben umzuwandeln.
 
-Historisch gesehen war das Konzept des Großschreibens von Zeichen auf mechanischen Schreibmaschinen und Druckmaschinen aus technischen Gründen notwendig. Heutzutage gibt es auch alternative Methoden, um einen String zu capitalizen, wie z.B. durch die Verwendung von regulären Ausdrücken oder benutzerdefinierten Funktionen. Die Implementierung der capitalization-Funktion kann je nach Programmiersprache und verwendeter Methode variieren.
+## Vertiefung:
+
+Die Methode zur Kapitalisierung von Strings stammte ursprünglich von älteren Computersprachen, die standardmäßig keine Funktion zur Umwandlung von Buchstaben in Großbuchstaben besitzen. Obwohl Go ein `strings`-Paket enthält, das die `Title`-Funktion aufweist, kann man auch eigene Funktionen erstellen.
+
+Man kann sogar Text in UNICODE zu kapitalisieren, indem man den Codepunkt jedes Buchstabens prüft und ihn von Klein- auf Großbuchstaben umwandelt, falls er ein Kleinbuchstabe ist.
+
+```Go
+package main
+
+import (
+	"fmt"
+	"unicode"
+)
+
+func main() {
+	text := "hallo, Welt!"
+	fmt.Println(strings.Map(unicode.ToTitle, text)) // Ausgabe: HALLO, WELT!
+}
+```
 
 ## Siehe auch:
 
-- https://blog.golang.org/strings
-- https://www.geeksforgeeks.org/golang-strings-title-function/
-- https://gobyexample.com/uppercase-strings
+- Go Standard Library: strings (https://golang.org/pkg/strings/)
+- Go by Example: String Functions (https://gobyexample.com/string-functions) 
+
+Erfahren Sie mehr über die Go-Standardbibliothek und die Möglichkeiten der String-Manipulation, um die Effizienz und Leistung Ihrer Go-Programme zu verbessern.

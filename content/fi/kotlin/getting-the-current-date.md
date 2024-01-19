@@ -1,7 +1,7 @@
 ---
-title:                "Nykyisen päivämäärän saaminen"
-html_title:           "Kotlin: Nykyisen päivämäärän saaminen"
-simple_title:         "Nykyisen päivämäärän saaminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Kotlin-ohjelmointikielessä nykyisen päivämäärän hankkiminen tarkoittaa nykyisen päivämäärän ja ajan näyttämistä tietokoneellesi. Ohjelmoijat tekevät tämän yleensä seuratakseen ajan kulkua ja tallentaakseen päivämäärän ja ajan tietokannassa.
+# Kotlinilla päivämäärän haku. Käymme läpi mitä se on ja miksi se on tärkeää
 
-## Kuinka?
-Käytä seuraavaa koodia hankkiaksesi nykyisen päivämäärän ja ajan Kotlinissa:
+## Mikä & Miksi?
+
+Päivämäärän haku viittaa nykyisen päivämäärän saamiseen ohjelmoijien tarpeisiin. Sitä tarvitaan ajanilmaisujen, lokielementtien ja aikasidonnaisten tietojen käsittelyyn. 
+
+## Miten se tehdään:
 
 ```Kotlin
 import java.time.LocalDate
 
-val currentDate = LocalDate.now()
+fun main() {
+    val currentDate = LocalDate.now()
+    println("Nykyinen päivämäärä on: $currentDate")
+}
+````
 
-println(currentDate)
+Suoritettaessa yllä olevan koodin tuloste on:
+
+```Kotlin
+Nykyinen päivämäärä on: YYYY-MM-DD (esimerkiksi 2023-12-12)
 ```
 
-Tämän koodin tulostus voi olla esimerkiksi: "2021-11-12".
+## Syvemmälle:
 
-## Syväsukellus
-Hankkimalla nykyisen päivämäärän ja ajan tietokoneesi kautta, voit tarkkailla ajan kulkua ja seurata esimerkiksi tapahtumien ajoitusta. Tämä voi myös auttaa tallentamaan päivämäärän ja ajan esimerkiksi tietokantaan tai tekemään aikaleimauksia.
+Historiallisesti päivämäärän hakeminen on ollut osa ohjelmointikielien ydintoimintoja. Kotlinissa, joka on nykyversiona 1.5.30 (kirjoitushetkellä), päivämäärän haku on integroitu suoraan `java.time.LocalDate` -luokkaan.
 
-On olemassa myös muita tapoja hankkia nykyinen päivämäärä ja aika Kotlinissa, kuten käyttämällä Java Calendar- tai LocalDateTime-luokkia. Jokaisella lähestymistavalla voi olla omat etunsa ja haittansa.
+Vaihtoehtoisesti voidaan käyttää `java.util.Date`, mutta se on vanhentunut ja siinä on joitakin ongelmia, kuten kuukausien indeksointi aloittaminen nollasta.
 
-## Katso myös
-Voit lukea lisää päivämäärän ja ajan hankkimisesta Kotlinilla esimerkiksi Kotlinin dokumentaatioista tai Stack Overflow -sivustolta: 
-https://kotlinlang.org/docs/datetime.html
-https://stackoverflow.com/questions/39182501/how-to-get-current-date-in-kotlin
+Nykyisen päivämäärän saaminen Kotlinissa on varsin suoraviivaista. Yllä esitetyn esimerkin `LocalDate.now()` -metodi palauttaa nykyisen päivämäärän.
+
+## Katso myös:
+
+1. Kotlinin virallinen dokumentaatio [`java.time.LocalDate`](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/index.html)
+2. Stack Overflow -keskustelu nykyisen päivämäärän saamisesta [`LocalDate`](https://stackoverflow.com/questions/66907223/how-to-get-current-date-in-kotlin)
+3. Verkkosivusto, josta tarjoaa monia esimerkkejä päivämäärän ja ajan kanssa työskentelystä Kotlinissa: [Baeldung](https://www.baeldung.com/kotlin-dates)

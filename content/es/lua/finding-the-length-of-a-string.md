@@ -1,6 +1,6 @@
 ---
 title:                "Encontrando la longitud de una cadena"
-html_title:           "Lua: Encontrando la longitud de una cadena"
+html_title:           "Arduino: Encontrando la longitud de una cadena"
 simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-En programación, encontrar la longitud de una cadena es una tarea común y útil. La longitud de una cadena se refiere al número de caracteres que contiene. Los programadores a menudo necesitan conocer la longitud de una cadena para realizar operaciones como la validación de entradas de usuario o el formateo de texto.
+## ¿Qué y Por qué?
+Encontrar la longitud de una cadena es determinar el número de caracteres que contiene. Los programadores a menudo necesitan esta información para manipular cadenas de manera eficiente.
 
-## Cómo:
-- Para encontrar la longitud de una cadena en Lua, se puede utilizar la función ```string.len()```. Esta función toma una cadena como argumento y devuelve la longitud como un número.
+## Cómo hacerlo:
+La longitud de una cadena en Lua se encuentra utilizando el operador de longitud `#`.
+
+Aquí un simple ejemplo:
+```Lua
+cadena = "Hola Mundo"
+print(#cadena)
 ```
-Lua
-nombre = "Juan"
-print(string.len(nombre))
--- Output: 4
+Resultado:
 ```
-- También se puede usar el operador de longitud ```#``` en una cadena para obtener su longitud. Sin embargo, este operador solo cuenta los caracteres hasta el primer carácter nulo, por lo que podría no ser preciso en caso de cadenas con caracteres nulos en medio.
+10
 ```
-Lua
-nombre = "Juan"
-print(#nombre)
--- Output: 4
+En este ejemplo, `#cadena` devuelve 10 porque "Hola Mundo" contiene 10 caracteres.
+
+## Inmersión Profunda
+
+1. **Contexto histórico**: El lenguaje de programación Lua, originario de Brasil y lanzado en 1993, siempre ha tenido soporte para cadenas.
+
+2. **Alternativas**: Aunque el operador de longitud `#` es el más común, también puedes usar la función `string.len()`.
+```Lua
+cadena = "Hola Mundo"
+print(string.len(cadena))
 ```
 
-## Inmersión profunda:
-- En el pasado, muchas implementaciones de lenguajes de programación no incluían una función para encontrar la longitud de una cadena. En su lugar, los programadores tenían que recorrer manualmente cada carácter de la cadena y contarlo. Por suerte, la mayoría de los lenguajes modernos, incluyendo Lua, proporcionan una función incorporada para esta tarea.
-- Además de la función ```string.len()``` y el operador ```#```, también se pueden usar otras funciones en Lua para obtener la longitud de una cadena. Por ejemplo, la función ```string.gmatch()``` puede ser utilizada para iterar sobre los caracteres de una cadena y contarlos.
-- Internamente, la función ```string.len()``` utiliza la biblioteca estándar de C para obtener la longitud de una cadena. En otras palabras, está diseñada para ser eficiente y rápida en comparación con un método hecho a mano.
+Resultado:
+```
+10
+```
+3. **Detalles de la implementación**: En Lua, las cadenas son inmutables y cada cadena distinta se memoriza exactamente una vez. El operador `#` y `string.len()` devuelven rápidamente la longitud previamente calculada.
 
-## Ver también:
-- [Documentación de Lua para string.len()](https://www.lua.org/manual/5.4/manual.html#pdf-string.len)
-- [Uso del operador # en Lua](https://lua.org/pil/3.3.html)
-- [Métodos alternativos para obtener la longitud de una cadena en Lua](https://stackoverflow.com/questions/9133051/lua-length-of-string#9133090)
+## Ver También
+[Referencia Oficial de Lua](https://www.lua.org/manual/5.4/manual.html#3.4.7) | [Guía de Programación en Lua](https://www.lua.org/pil/11.1.html) | [Tutoriales de Lua](https://www.tutorialspoint.com/lua/lua_strings.htm)

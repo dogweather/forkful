@@ -1,6 +1,6 @@
 ---
 title:                "读取命令行参数"
-html_title:           "C#: 读取命令行参数"
+html_title:           "C: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "C#"
 category:             "C#"
@@ -10,39 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##什么是命令行参数？为什么程序员要使用它？
-命令行参数（Command Line Arguments）是指在运行一个程序时，通过命令行输入的参数。程序员使用它来为程序提供额外的信息，使程序更加灵活和可定制。
+## 什么 & 为什么？
 
-## 如何实现？
-在C#中，可以使用System命名空间下的Environment类的GetCommandLineArgs方法来读取命令行参数。代码示例如下：
-```
+命令行参数的读取是指从控制台程序获取输入的过程。程序员使用它来创建更灵活和响应用户需求的程序。
+
+## 如何做：
+
+下面的代码示例展示了在C#中如何读取命令行参数：
+
+```C#
 using System;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // 读取命令行参数
-        string[] arguments = Environment.GetCommandLineArgs();
-
-        // 输出参数
-        foreach (string arg in arguments)
+        for (int i = 0; i < args.Length; i++)
         {
-            Console.WriteLine("Argument: " + arg);
+            Console.WriteLine("Arg[{0}] = [{1}]", i, args[i]);
         }
     }
 }
 ```
-假设我们运行该程序并输入命令行参数"Hello"和"World"，则输出结果如下：
-```
-Argument: Program.exe
-Argument: Hello
-Argument: World
+
+假如你在控制台输入以下命令：
+
+```C#
+dotnet run arg1 arg2 arg3
 ```
 
-## 深入探讨
-命令行参数的使用可以追溯到早期的计算机操作系统，如Unix。目前，也有其他方式来为程序提供输入，如用户界面（User Interface）或配置文件（Config file）。但是命令行参数仍然是很多程序员首选的方式，因为它简单且易于使用。
+那么输出结果将会是：
 
-##参考资料
-- [C#命令行参数的使用](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=netframework-4.7.2)
-- [命令行参数介绍](https://en.wikipedia.org/wiki/Command-line_interface#Command-line_argument)
+```C#
+Arg[0] = [arg1]
+Arg[1] = [arg2]
+Arg[2] = [arg3]
+```
+
+## 深入探讨：
+
+在早期的命令行程序中，命令行参数被广泛地用于读取用户在命令行中输入的信息。在现代编程中，尽管有更人性化的用户界面，但命令行参数的使用仍然很常见。
+
+现代的C#提供了很多解析命令行参数的工具库，例如CommandLineParser库，它可以帮助你更容易地处理复杂的参数模式。
+
+原生地，C#在程序的Main函数中获取命令行参数。这些参数被存储在一个字符串数组中，程序启动时，`.NET runtime`会自动填充这个数组。
+
+## 参考资料：
+
+- [C# 101: Introduction to C# & .NET Core](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/intro-to-csharp/)
+- [Command-Line Parsing in C#](https://m.dotnetperls.com/command-line-args)
+- [CommandLineParser Library](https://github.com/commandlineparser/commandline)

@@ -1,7 +1,7 @@
 ---
-title:                "Analizando una fecha de una cadena"
-html_title:           "PowerShell: Analizando una fecha de una cadena"
-simple_title:         "Analizando una fecha de una cadena"
+title:                "Analizando una fecha desde una cadena de texto"
+html_title:           "PHP: Analizando una fecha desde una cadena de texto"
+simple_title:         "Analizando una fecha desde una cadena de texto"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué es y por qué hacerlo?
-La manipulación de fechas es una tarea común en la programación. Cuando se trabaja con fechas en formato de texto, es necesario convertirlas a un formato que el ordenador pueda entender y manipular. Esto se conoce como analizar una fecha desde una cadena de texto. Los programadores hacen esto para poder realizar cálculos y comparaciones con fechas de manera más fácil y precisa.
+# Analizando Fechas desde Cadenas en PowerShell 
 
-## Cómo:
+## ¿Qué y Por Qué?
+
+Una cadena que indica una fecha y hora se analiza para regresar un objeto de fecha en un lenguaje de programación. Los programadores hacen esto para realizar cálculos, comparaciones y otras operaciones con fechas de una manera más sencilla.
+
+## ¿Cómo Hacerlo?
+
+Podemos utilizar el cmdlet `Get-Date` de PowerShell para analizar una fecha desde una cadena. Aquí hay un ejemplo:
+
 ```PowerShell
-# Ejemplo básico: convirtiendo una cadena de texto a un objeto de fecha y hora.
-$fecha = "01/01/2021"
-[DateTime]$fechaObjeto = [DateTime]::Parse($fecha)
-```
-El código anterior convierte la cadena de texto "01/01/2021" a un objeto de fecha y hora en el formato predeterminado del sistema operativo. Dependiendo del formato de la fecha en la cadena de texto, puede ser necesario especificar un formato de fecha personalizado en la función `Parse()`. 
-```PowerShell
-# Ejemplo avanzado: manipulando la fecha y hora.
-$fecha = "01/01/2021 10:00 AM"
-[DateTime]$fechaObjeto = [DateTime]::ParseExact($fecha, "dd/MM/yyyy hh:mm tt", $null)
-# Imprimir solo la fecha.
-$fechaObjeto.Date
-# Salida: 01/01/2021
-# Agregando días a la fecha.
-$fechaObjeto.AddDays(7)
-# Salida: 08/01/2021 10:00 AM
+$cadenaFecha = '31/12/2019 23:59'
+$fecha = Get-Date -Date $cadenaFecha
+echo $fecha.DayOfWeek
 ```
 
-## Inmersión profunda:
-Analizar fechas de cadenas de texto ha sido una tarea compleja en los primeros lenguajes de programación. Sin embargo, con la introducción de .NET Framework, se ha vuelto mucho más fácil y preciso gracias a la clase `DateTime` y sus métodos `Parse()` y `ParseExact()`. Alternativas a la hora de manipular fechas incluyen el uso de bibliotecas externas o el uso de expresiones regulares para extraer los distintos componentes de una fecha en una cadena de texto. 
+El código marca la salida `Tuesday` que es el día de la semana de la fecha analizada.
 
-## Ver también:
-- [Documentación oficial de Microsoft sobre la clase DateTime](https://docs.microsoft.com/es-es/dotnet/api/system.datetime?view=net-5.0)
-- [Método Parse de la clase DateTime](https://docs.microsoft.com/es-es/dotnet/api/system.datetime.parse?view=net-5.0)
-- [Método ParseExact de la clase DateTime](https://docs.microsoft.com/es-es/dotnet/api/system.datetime.parseexact?view=net-5.0)
+## Análisis Profundo
+
+1. **Contexto Histórico:** PowerShell fue desarrollado por Microsoft en 2006 para ayudar a los administradores de sistema a gestionar y automatizar las tareas del sistema operativo. Desde su creación, ha estado mejorando constantemente en funcionalidad y ahora ofrece una forma efectiva de analizar fechas desde cadenas.
+
+2. **Alternativas:** Puedes usar la función `[DateTime]::ParseExact()` para analizar una fecha desde una cadena en un formato específico. Te da un control más granular sobre el análisis de las fechas.
+   
+3. **Detalles de Implementación:** PowerShell utiliza la función `DateTime.TryParse()` de .NET Framework internamente para analizar la fecha desde una cadena. Intentará hacer coincidir la cadena de fecha con varios formatos conocidos.
+
+## Ver También
+
+Aquí algunos enlaces útiles para más detalles:
+
+1. [Documentación Oficial de PowerShell](https://docs.microsoft.com/es-es/powershell/)
+2. [Cmdlet de Get-Date](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+3. [La Clase DateTime en .NET](https://docs.microsoft.com/es-es/dotnet/api/system.datetime?view=net-5.0)

@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Kotlin recipe: Comparing two dates"
+html_title:           "Elm recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,37 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Kotlin 101: Comparing Dates
+---
 ## What & Why?
-
-Comparing two dates is the process of determining if one date is before, after, or equal to another date. Programmers often compare dates when dealing with tasks such as sorting, filtering, or scheduling. By comparing dates, programmers can make decisions based on the chronological order of events or tasks.
+Simply put, comparing two dates means determining whether one date is earlier, same, or later than another. As programmers, we often need this to trigger actions based on time events, like sending feedback when a trial period ends. 
 
 ## How to:
-
-To compare two dates in Kotlin, we can use the built-in functions of the Date class. We will use two dates, date1 and date2, and compare them using the compareTo function. The function returns an integer value based on the comparison, with a value of 0 indicating that the two dates are equal.
+Comparing dates in Kotlin is super straightforward. Use the `isBefore`, `isAfter` or `isEqual` methods. Let's view some code:
 
 ```Kotlin
-val date1 = Date(2021, 8, 1)
-val date2 = Date(2021, 8, 15)
+import java.time.LocalDate
 
-val comparison = date1.compareTo(date2)
-
-println("Date1 is $comparison compared to Date2.")
+fun main() {
+    val date1 = LocalDate.of(2022, 1, 1)
+    val date2 = LocalDate.of(2022, 2, 1)
+  
+    if (date1.isAfter(date2)) {
+        println("$date1 comes after $date2")
+    } else if (date1.isBefore(date2)) {
+        println("$date1 comes before $date2")
+    } else {
+        println("The dates are equal")
+    }
+}
 ```
-
-The output for this code would be:
+Output:
 ```
-Date1 is -1 compared to Date2.
+2022-01-01 comes before 2022-02-01
 ```
-This means that date1 is before date2.
-
 ## Deep Dive:
+Historically, date and time handling was quite tedious. With Java 8, the `java.time` package (JSR-310), a comprehensive and 'leap-year proof' framework, was introduced. Kotlin provides native support for this JSR-310 API. 
 
-When comparing dates, it is important to consider the time zone and daylight saving time. In Kotlin, the Date class is based on the Java Date class, which uses the UTC time zone by default. However, if the dates are based on different time zones, it can affect the comparison result. To avoid this issue, we can use the Calendar class to set the time zone before comparing dates.
+As alternatives, you could also use `java.util.Date` or `java.util.Calendar` but these are tedious and error-prone. `java.time.LocalDate` is preferred for date comparisons.
 
-Alternatively, we can use the Joda-Time library to compare dates in a specific time zone. This library allows for more customizable and accurate date comparisons.
+The `isBefore`, `isAfter`, and `isEqual` methods use the `compareTo` method under the hood. The `compareTo` method returns a negative integer, zero, or a positive integer if this `LocalDate` is less than, equal to, or greater than the specified `LocalDate`.
 
 ## See Also:
+To explore more about the Date and Time API, see these docs:
 
-- Kotlin Date class documentation: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/
-- Java Date class documentation: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
-- Joda-Time library: https://www.joda.org/joda-time/
+1. [Java SE 8 Date and Time](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+
+2. [Kotlin's java.time.LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/index.html)
+
+Note: This article assumes familiarity with basic Kotlin syntax. If not, start with the [Kotlin docs](https://kotlinlang.org/docs/home.html).

@@ -1,6 +1,6 @@
 ---
 title:                "Eine Textdatei lesen"
-html_title:           "Elixir: Eine Textdatei lesen"
+html_title:           "Bash: Eine Textdatei lesen"
 simple_title:         "Eine Textdatei lesen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,25 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Lesen einer Textdatei bezieht sich auf den Prozess, durch den ein Programm Daten aus einer Datei extrahiert. Programmierer machen das oft, um Daten für die weitere Verarbeitung zu erfassen oder Anwendungen mit persistierenden Daten zu versorgen.
 
-Textdateien lesen ist eine gängige Aufgabe für Programmierer. Dabei geht es darum, den Inhalt einer Textdatei in das Programm einzulesen und damit zu arbeiten. Dies kann nützlich sein, wenn man große Datenmengen übersichtlich verarbeiten möchte oder bestimmte Informationen aus einer Textdatei extrahieren muss.
-
-## Wie geht's?
-
-Um eine Textdatei in Elixir zu lesen, verwenden wir die Funktion ```File.read/1```. Diese Funktion erwartet als Argument den Dateinamen der Textdatei und gibt den Inhalt als Zeichenkette zurück. Hier ein Beispiel:
-
+## So geht's:
+Im Folgenden finden Sie ein Beispiel, wie Sie mit Elixir eine Textdatei lesen können:
 ```elixir
-content = File.read("beispiel.txt")
-IO.puts content
+File.read("meine_datei.txt")
+```
+Diese Funktion gibt ein Tupel zurück. Wenn der Vorgang erfolgreich ist, erhalten Sie `{:ok, data}`. Andernfalls, wenn ein Fehler auftritt, erhalten Sie `{:error, reason}`. Hier ist ein Beispiel für den erwarteten Ausgabe:
+```elixir
+{:ok, "Der Dateiinhalt"}
+# oder
+{:error, :enoent}
 ```
 
-In diesem Beispiel wird die Datei "beispiel.txt" eingelesen und der Inhalt in der Variablen "content" gespeichert. Mit der Funktion ```IO.puts/1``` wird der Inhalt dann auf der Konsole ausgegeben.
+## Tiefere Einblicke
+Datei-Lesevorgänge gehören zu den grundlegendsten Operationen in der Informatik. Seit den Anfängen der Computerprogrammierung haben verschiedene Sprachen unterschiedliche Methoden für diesen Vorgang bereitgestellt.
 
-## Tiefentauchen
+In Elixir ist `File.read/1` die einfachste Möglichkeit, eine Datei zu lesen. Es gibt jedoch auch Alternativen wie `File.stream/3`, das einen Stream zurückgibt und für große Dateien nützlich sein kann, die nicht in den Arbeitsspeicher passen.
 
-Das Lesen von Textdateien ist eine grundlegende Funktion, die in Elixir mit der integrierten Modulbibliothek "File" gelöst wird. Dabei können verschiedene Konvertierungsmöglichkeiten, wie z.B. UTF-8, eingestellt werden. Eine Alternative zur Funktion ```File.read/1``` ist die Funktion ```File.stream!/2```, welche den Inhalt zeilenweise in einem Strom von Daten zurückgibt. Im Hintergrund wird dabei die Funktion ```IO.stream/1``` verwendet. Die Implementierung des Lesens von Textdateien in Elixir basiert auf dem "IO Device"-Protokoll, welches auch für die Ein- und Ausgabe in Dateien verwendet wird. Weitere Informationen zu diesem Protokoll finden sich in der offiziellen Dokumentation von Elixir.
+Die Implementierung der Datei-Lebefunktionen in Elixir stützt sich auf die Funktionen des Erlang-Standardmoduls `:file` . Diese Funktionen verfolgen ein genaues Konzept und sind von den Rechten des Betriebssystems abhängig, das auf die Datei zugreifen will.
 
-## Siehe auch
-
-- Offizielle Dokumentation von Elixir zu Textdateien: https://hexdocs.pm/elixir/File.html
-- ElixirForum Diskussion über das Lesen von Textdateien: https://elixirforum.com/t/reading-lines-from-text-file/10489
+## Siehe auch:
+Für detaillierte Informationen über das 'File'-Modul in Elixir: https://hexdocs.pm/elixir/File.html.
+Der Erlang `:file` Modul Dokumentation: http://erlang.org/doc/man/file.html.
+Für mehr Beispiele über das Arbeiten mit Dateien in Elixir besuchen Sie: https://elixirschool.com/de/lessons/advanced/otp-concurrency/.

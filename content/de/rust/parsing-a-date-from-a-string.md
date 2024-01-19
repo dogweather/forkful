@@ -1,7 +1,7 @@
 ---
-title:                "Eine Datumsangabe aus einem String extrahieren"
-html_title:           "Rust: Eine Datumsangabe aus einem String extrahieren"
-simple_title:         "Eine Datumsangabe aus einem String extrahieren"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
-Das Umwandeln eines Datums aus einem String ist eine gängige Aufgabe für Programmierer. Das bedeutet, dass ein Datumsausdruck in einem bestimmten Format (z.B. "12.05.2021") in ein standardisiertes Format (z.B. "2021-05-12") umgewandelt wird. Dies ist wichtig für die Verarbeitung und Speicherung von Daten in Programmen.
+## Was & Warum?
 
-Wie geht's?
-Das Parsen eines Datums aus einem String ist in Rust durch die Verwendung der standardmäßigen Bibliothek "chrono" einfach. Hier ist ein Beispielcode, der ein Datum aus einem String im Format "DD.MM.YYYY" umwandelt:
+Das Parsen eines Datums aus einem String ist der Prozess, bei dem ein Textdatumsformat in ein datumsfähiges Format konvertiert wird. Wir tun dies, um Datumsdaten besser zu manipulieren und zu vergleichen.
 
-```Rust
+## So funktioniert's:
+
+In Rust kann man mithilfe der 'Chrono'-Bibliothek ein Datum parsen. Hier ist ein einfaches Beispiel:
+
+```Rust 
+extern crate chrono;
 use chrono::NaiveDate;
 
 fn main() {
-    let str_date = "12.05.2021";
-    let date = NaiveDate::parse_from_str(str_date, "%d.%m.%Y").unwrap();
-    println!("Umgeformtes Datum: {}", date);
+    let dt = NaiveDate::parse_from_str("2022-10-12", "%Y-%m-%d").unwrap();
+    println!("{}", dt);  
 }
 ```
 
-Ausgabe: Umgeformtes Datum: 2021-05-12
+Das obige Programm gibt `2022-10-12` aus.
 
-Tiefer eintauchen
-Die Idee des Parsens von Daten aus Strings ist nicht neu und wurde schon seit den Anfängen der Programmierung verwendet. Es ist wichtig, um sicherzustellen, dass Daten in einem standardisierten und einheitlichen Format vorliegen, um Fehler und Unklarheiten zu vermeiden. Neben der Verwendung der "chrono" Bibliothek gibt es auch andere Möglichkeiten, Daten aus Strings umzuwandeln, wie z.B. reguläre Ausdrücke oder benutzerdefinierte Funktionen.
+## Deep Dive
 
-Sieh dir auch gerne diese Quellen an:
-- Dokumentation zu "chrono": https://docs.rs/chrono/0.4.19/chrono/
-- "How to Parse Date and Time in Rust": https://www.educative.io/edpresso/how-to-parse-date-and-time-in-rust
-- "Parsing dates and times in Rust": https://dev.to/joaquimadraz/parsing-dates-and-times-in-rust-400o
+Das Parsen von Datumswerten aus Strings ist eine lang geübte Praxis in der Programmierung. Es hat seine Wurzeln in der Notwendigkeit, Daten in menschenlesbaren Textformaten zu speichern und zu übertragen, die anschließend leicht in maschinenverarbeitbare Formate konvertiert werden können.
+
+Es gibt Alternative Lösungen, wie using `time`-Bibliothek oder direkt mit `std::time`-Bibliothek arbeiten. Aber `Chrono` ist einfach zu verwenden und bietet auch Zeitzonen-Unterstützung, was bei den anderen beiden fehlt.
+
+`Chrono` wird verwendet, weil es Funktionen bietet, die das menschenlesbare Format (String) eines Datums in eine für die Maschine verständliche Form parsen können.
+
+## Siehe auch 
+
+Hier sind einige zusätzliche Ressourcen zu diesem Thema:
+
+1. Die offizielle Dokumentation zur `Chrono`-Bibliothek: https://docs.rs/chrono/0.4.19/chrono/
+2. Ein Tutorial zur Verwendung der `Chrono`-Bibliothek in Rust: https://www.forrestthewoods.com/blog/how-to-display-localized-dates-in-rust/
+3. Rust-Datums- und Zeitdokumentation: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html

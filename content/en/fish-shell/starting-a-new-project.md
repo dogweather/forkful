@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Fish Shell recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,19 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Start a New Project Using Fish Shell
+
 ## What & Why?
-Starting a new project is the process of creating a new program or application from scratch. Programmers do this to solve a problem, build a new tool, or to learn and practice their skills.
+
+Starting a new project means creating a distinct workspace and files for a specific software or app development. It helps keep your work organized and separate from other tasks.
 
 ## How to:
-Coding is the key to starting a new project, and with Fish Shell, it's even easier. Here's an example of creating a new project directory and navigating into it:
+Open up your terminal and let's roll:
+
+Check the current installed version
+```fish
+fish --version
 ```
-Fish Shell  ``` 
-$ mkdir my-project
-$ cd my-project
-``` 
+You will get output similar to this
+```fish
+fish, version 3.2.2
+```
 
-## Deep Dive:
-It's believed that the term "project" originated from the Latin word "proiectum," meaning "something thrown forth." In the world of programming, starting a new project is essential for creativity and innovation. While there are many different programming languages and tools available, Fish Shell is a popular choice for its simplicity and powerful capabilities.
+Now, set up a new project:
+```fish
+mkdir my_fish_project
+cd my_fish_project
+touch Main.fish
+```
 
-## See Also:
-To learn more about starting a new project using Fish Shell, check out the official documentation: https://fishshell.com/docs/current/index.html#project This website provides step-by-step instructions and additional tips and tricks for optimizing your project creation process. Additionally, you can explore other popular tools and alternatives for starting a new project, such as Bash Shell or Z Shell. Happy coding!
+Set up Fish as your default shell:
+```fish
+chsh -s /usr/local/bin/fish
+```
+Restart your terminal and check your default shell using the command:
+```fish
+echo $SHELL
+```
+It should show `/usr/local/bin/fish`.
+
+## Deep Dive
+
+Fish Shell or "friendly interactive shell" is an intuitive and user-friendly shell. Released in 2005, it's not installed by default in UNIX-based systems, but it can be installed alongside other shells. It differed from Bash, the default shell in many UNIX systems, by focusing on interactive user experiences and plain English commands.
+
+If you prefer, alternatives to Fish exist. These include Zsh, which also emphasizes improved user experience, and Bash, the omnipresent and proven option. 
+
+While starting a new project isn't technical, certain things run in the background when you do so in Fish Shell. When you set Fish as your default shell, the system changes your default shell pointer in `/etc/passwd` file. 
+
+Fish doesn't support POSIX, the compliance standard for shells, fully. However, it does so enough to be reliable in a productive system. When a new project is initiated, it's placed as a working directory in Fish's stack, providing structure and continuity. 
+
+## See Also
+[Official Fish Documentation](https://fishshell.com/docs/current/index.html)
+
+[A comparison of Bash, Zsh, and Fish](https://www.slant.co/versus/167/169/~bash_vs_zsh_vs_fish)

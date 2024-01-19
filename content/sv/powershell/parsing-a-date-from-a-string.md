@@ -1,7 +1,7 @@
 ---
-title:                "Uppdelning av en datum från en sträng"
-html_title:           "PowerShell: Uppdelning av en datum från en sträng"
-simple_title:         "Uppdelning av en datum från en sträng"
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -11,30 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att konvertera en datumsträng till ett datum är en vanlig uppgift för utvecklare. Det kan till exempel vara användbart när man vill sortera data efter datum eller jämföra olika datumvärden. Det finns inga inbyggda funktioner i PowerShell som direkt konverterar en datumsträng, men det går att använda vissa metoder för att åstadkomma detta.
 
-## Hur?
-Här är ett exempel på hur man kan konvertera en datumsträng till ett datum i PowerShell:
+Att tolka ett datum från en sträng innebär att konvertera en textsträng till ett datumformat. Programmerare gör det när de behöver manipulera, jämföra eller göra beräkningar baserat på datumen.
 
-```PowerShell
-[DateTime]::ParseExact("20200501", "yyyyMMdd", $null)
-```
+## Hur man gör:
 
-Det här koden kommer att skapa ett DateTime-objekt med värdet 2020-05-01 baserat på den givna datumsträngen och det specifierade formatet.
-
-En annan metod är att använda en typomvandlare för att konvertera datatypen från sträng till datum:
+Här är en grundläggande exempel på hur man tolkar ett datum från en sträng i PowerShell:
 
 ```PowerShell
-[DateTime]"20200501"
+# Definiera en sträng med ett datum
+$datumStrang = "2021-11-12"
+
+# Använd [datetime]::Parse metod för att tolka datumet
+$datum = [datetime]::Parse($datumStrang)
+
+# Visa det tolkade datumet
+Write-Output $datum
 ```
 
-Det här kommer också att returnera ett DateTime-objekt med värdet 2020-05-01.
+När du kör detta script kommer du att se följande utmatning:
 
-## Djupdykning
-I äldre versioner av PowerShell kunde man använda metoden [System.DateTime]::Parse() för att konvertera en datumsträng till ett datum. Denna metod har sedan ersatts av [DateTime]::ParseExact() som ger en mer preciserad kontroll över hur datumet tolkas.
+```PowerShell
+fre den 12 november 2021 00:00:00
+```
 
-Det finns också andra sätt att konvertera en datumsträng, som att använda Get-Date cmdlet eller använda .NET-klassen [System.Convert]. För mer komplexa parsinguppgifter kan man använda Regular Expressions.
+## Djupdykning:
 
-## Se även
-- [System.DateTime]::ParseExact() Dokumentation: https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact
-- Typomvandlare Dokumentation: https://docs.microsoft.com/en-us/powershell/scripting/learn/cookbooks/using-data-types?view=powershell-7
+PowerShell använder .NET's DateTime-typ för datumhantering. Metoden "[datetime]::Parse" har använts sedan de tidiga versionerna av .NET.
+
+Det finns flera sätt att tolka ett datum från en sträng i PowerShell. Utöver Parse-metoden, kan du även använda ParseExact-metoden, vilket är användbart när du vet exakt formatet av din datumsträng.
+
+När det gäller komplikationerna, om den inmatade strängen inte matchar ett giltigt datumformat kommer [datetime]::Parse att kasta undantag. För att undvika detta kan du använda TryParse-metoden som returnerar ett booleskt värde för att indikera om tolkningen lyckades eller misslyckades.
+
+## Se även:
+
+- [.NET DateTime dokumentation](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [PowerShell-dokumentation om datum och tidsomvandlingar](https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-dates-and-times?view=powershell-7.1)

@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Javascript: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Getting Started"
@@ -10,25 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
-Iniciar um novo projeto em programação significa começar uma nova tarefa ou empreendimento usando linhas de código para alcançar um objetivo específico. Programadores iniciam novos projetos para criar novas funcionalidades, solucionar problemas ou desenvolver ideias criativas.
+## O Que & Por Que?
+
+Iniciar um novo projeto é o processo de estabelecer a base para o desenvolvimento de software. Isso fornece uma plataforma para codificar, testar e implantar funcionalidades. Nós programadores fazemos isso para criar produtos que atendam às necessidades específicas de um problema ou cliente.
 
 ## Como fazer:
-```
-// Exemplo de código para criar uma variável com o valor "Olá Mundo"
-const mensagem = "Olá Mundo";
-console.log(mensagem);
-```
-```
-// Saída esperada:
-"Olá Mundo"
+
+Para começar um novo projeto JavaScript, aqui está um exemplo de código simples:
+
+```Javascript
+console.log("Olá, Mundo!");
 ```
 
-## Deep Dive:
-Iniciar um novo projeto pode parecer assustador, mas não precisa ser. Com as ferramentas e recursos disponíveis hoje em dia, é possível iniciar um projeto em qualquer lugar e a qualquer momento. Além disso, há também várias linguagens de programação que podem ser usadas para iniciar um projeto, como Python, C++, Java, entre outras. É importante escolher uma linguagem que seja mais adequada para a sua necessidade e familiaridade.
+Ao rodar esse programa, você verá:
+
+```
+Olá, Mundo!
+```
+
+Podemos também criar um projeto mais avançado com `npm` (Node Package Manager):
+
+```Javascript
+// Abra um terminal e digite:
+
+npm init -y
+// Isto irá criar um novo arquivo package.json em seu diretório.
+```
+
+## Mergulho Profundo
+
+Iniciar um projeto de software não é algo novo, mas a maneira como fazemos isso mudou ao longo do tempo. Antigamente, a codificação era feita manualmente, linha por linha. Hoje, temos ferramentas como gerenciadores de pacotes, frameworks e ambientes de desenvolvimento integrados (IDEs) para nos ajudar.
+
+Existem várias maneiras alternativas de iniciar um projeto JavaScript, como manualmente criando uma estrutura de pastas e arquivos, ou usando geradores de projeto como `yeoman` ou `create-react-app`.
+
+Os detalhes da implementação de um projeto dependerão do que você deseja alcançar. Pense em tópicos como segurança, performance, escalabilidade e sustentabilidade desde o início do projeto.
 
 ## Veja também:
-Algumas fontes que podem ajudar na hora de começar um novo projeto em Javascript:
-- [Documentação do Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-- [Comunidade brasileira de Javascript](https://github.com/braziljs/comecar-em-javascript) 
-- [Repositório de exemplos do Javascript](https://github.com/gpaiva00/exemplos-javascript)
+
+- [Tutorial Node.js para iniciantes](https://nodejs.dev/learn)
+- [criar reagir aplicativo](https://pt-br.reactjs.org/docs/create-a-new-react-app.html)
+- [yeoman gerador](http://yeoman.io/)
+- [npm documentação](https://docs.npmjs.com/)

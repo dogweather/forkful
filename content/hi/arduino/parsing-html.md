@@ -1,7 +1,7 @@
 ---
-title:                "हैंडिंग हैटम्ल"
-html_title:           "Arduino: हैंडिंग हैटम्ल"
-simple_title:         "हैंडिंग हैटम्ल"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,51 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-HTML पार्सिंग क्या है और क्यों प्रोग्रामर इसे करते हैं? यह एक तरीका है जिससे हम वेबपेज्स से डेटा को निकाल सकते हैं और उसे अपने प्रोग्राम में उपयोग कर सकते हैं।
+## क्या और क्यों? 
 
-## कैसे:
+HTML पार्सिंग, इसने वेबपेज को खोलकर, उसे पढ़ने और मशीन-पढ़ने योग्य फॉर्मेट में संगठित करने का काम करता है। इसे प्रोग्रामर्स वेबपेज की संरचना को समझने, उसे रेकोड करने और विश्लेषित करने के लिए आता है।
+
+## कैसे : 
+
+निम्नलिखित Arduino कोड HTML कॉंटेंट को पार्स करने के उदाहरण के साथ :
+
 ```Arduino
+#include <Arduino.h>
 #include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+#include <ESP8266WebServer.h>
 #include <ESP8266HTTPClient.h>
 
-void setup() {
-  // Wi-Fi कनेक्शन सेट करें
-  WiFi.begin("wifi_स्थानीय", "पासवर्ड");
+const char* ssid = "नाम";
+const char* password = "पासवर्ड";
 
-  // सर्वर से डेटा डाउनलोड करें
-  HTTPClient http;
-  http.begin("https://example.com/");
-  int httpCode = http.GET();
+void setup () {
 
-  // डाउनलोड किए गए डेटा को पार्स करें
-  String data = http.getString();
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
 
-  // समझें कि आप चाहते हैं कि स्ट्रिंग किसी HTML एलिमेंट से प्राप्त हो
-  // उदाहरण के लिए: <p id="name">Arduino लेख निर्माण विधि</p> 
-  // हमें प्रकाशित लेख के साथ बहुत सारे प्रकार के डेटा को निकालना है जो हमें स्ट्रिंग <p id="name"> से ऊपर लेते हैं। 
-  // इसके लिए, हम अपनी स्ट्रिंग को split() फंक्शन का उपयोग करके पार्स करते हैं। 
-  // हम अपने डेटा को कोई भी दिया गया अलगाव-friendly ठस्कहेरा मानता हूँ 
-  // उदाहरण के लिए: <p id="name"> 
-  String result = data.split("<p id=\"name\">")[1].split("</p>")[0]; 
+  while (WiFi.status() != WL_CONNECTED) {
 
-  // प्रिंट करें
-  Serial.println(result);
+    delay(1000);
+    Serial.println("वाईफ़ाई से कनेक्ट करने का प्रयास ...");
+
+  }
+
+  Serial.println("वाईफ़ाई से जुड़ गया है।");
+  Serial.println("आईपी पता: ");
+  Serial.println(WiFi.localIP());
 }
 
-void loop() {}
+void loop() {
 
+  if (WiFi.status() == WL_CONNECTED) { 
+
+    WiFiClient client;
+    HTTPClient http;  //Declare object of class HTTPClient
+
+    http.begin("http://jsonplaceholder.typicode.com/comments?id=1");  //Specify request destination
+    int httpCode = http.GET();  
+
+    if (httpCode > 0) { 
+
+      String payload = http.getString();
+      Serial.println(payload);
+    }
+
+    http.end();   //Close connection
+  }
+
+  delay(5000);
+}
 ```
 
-आउटपुट: "Arduino लेख निर्माण विधि"
+## गहरी गोता 
 
-## गहराई में जाएं:
-इतिहासी परिस्थिति: HTML का अस्तित्व 1993 में टिम बर्नर्स-ली द्वारा दिया गया था। 
-वैकल्पिक: HTML पार्सिंग के लिए अन्य तरीके भी हैं जैसे कि एक्सप्रेस्स और जावास्क्रिप्ट पर आधारित पुरोहित आदि। 
-अंतर्जाल प्रकरण: यह समझने के लिए महत्वपूर्ण है कि आप स्ट्रिंग को किस तत्व से प्राप्त करना चाहते हैं। 
-इसके लिए आपको समान और असमान के अलावा कुछ और विकल्प हैं।
+1. ऐतिहासिक प्रासंगिकता : HTML पार्सिंग मशीनों के लिए वेब कंटेन्ट को और अधिक उपयोगी बनाता है।
+2. विकल्प : सीधे मैन्युअल तरीके से डेटा एक्सट्रैक्ट करने की तुलना में, Python के BeautifulSoup और JavaScript के cheerio जैसे टूल्स का उपयोग करके HTML पार्स करनाकाफी आसान है। 
+3. क्रियान्वयन विवरण : Arduino के प्रयोग द्वारा HTML पार्सिंग, HTTPClient और WiFiClient के क्लास का उपयोग कर वेबपेज से डेटा एक्सट्रैक्ट करता है।
 
-## भी देखें:
-- [ESP8266WiFi Library](https://github.com/esp8266/Arduino)
-- [Arduino स्प्लिट फंक्शन](https://www.arduino.cc/reference/en/language/functions/strings/string/split/)
-- [डेटा पार्सिंग के लिए कुछ और अल्गाव-friendly ठस्क हैं](https://www.arduino.cc/reference/en/language/functions/communication/serial/parseint/)
+## अधिक देखें 
+
+1. Arduino कोडिंग गाइड : https://www.arduino.cc/reference/en/
+2. BeautifulSoup और Cheerio का उपयोग करने का तरीका : https://realpython.com/beautiful-soup-web-scraper-python/
+3. JSON Placeholder डेटा: https://jsonplaceholder.typicode.com/

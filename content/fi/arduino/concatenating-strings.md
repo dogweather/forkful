@@ -1,7 +1,7 @@
 ---
-title:                "Tietokoneohjelmointi: Merkkijonojen yhdistäminen"
-html_title:           "Arduino: Tietokoneohjelmointi: Merkkijonojen yhdistäminen"
-simple_title:         "Tietokoneohjelmointi: Merkkijonojen yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,29 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mikä & Miksi?
 
-Miksi ohjelmoijat yhdistävät merkkijonoja? Merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi merkkijonoksi. Tämä on hyödyllistä, kun halutaan luoda uusia ja monipuolisempia tietoja, kuten esimerkiksi tekstimuotoisia viestejä, otsikoita tai kokonaisia lauseita.
+Merkkijonojen yhdistäminen, eli konkatenointi, on tapa yhdistää kaksi tai useampia merkkijonoja toisiinsa. Ohjelmoijat tekevät sen muokatakseen tai esittääkseen dataa haluamallaan tavalla.
 
-# Miten:
+## Kuinka tehdä:
 
-Arduino-ohjelmointiympäristössä merkkijonojen yhdistäminen tehdään käyttämällä "+" -operaattoria. Tämä yhdistää kaksi merkkijonoa yhdeksi. Alla on esimerkki, miten voit yhdistää "Hei" ja "maailma" yhdeksi merkkijonoksi "Hei maailma".
+Arduino-koodissa on lukuisia tapoja yhdistää merkkijonoja. Poimimme muutaman yksinkertaisen esimerkin.
 
 ```Arduino
-String ensimmainen = "Hei"
-String toinen = "maailma"
-
-String yhdistetty = ensimmainen + " " + toinen;
-
-Serial.println(yhdistetty); //tulostaa "Hei maailma" sarjaliikenneportille
+String stringOne = "Hei ";
+String stringTwo = "Maailma!";
+String greeting = stringOne + stringTwo;
+Serial.println(greeting);  // Tulostaa: "Hei Maailma!"
 ```
 
-# Syvällinen sukellus:
+Voit yhdistää string-luokan avulla käyttämällä '+'-operaattoria, kuten yllä, tai voit käyttää concat()-metodia.
 
-Merkkijonojen yhdistäminen on ollut käytössä ohjelmoinnissa jo pitkään ja sitä käytetään yleisesti kaikentyyppisissä ohjelmointikielissä. Lisäksi, voi myös käyttää "String.format()" -funktiota yhdistelemään merkkijonoja monimutkaisilla tavoilla, mikäli halutaan esimerkiksi sisällyttää muuttujia osaksi yhdistettyä merkkijonoa. Siinä tavoin muodostuu kompleksisia viestejä, kuten laskuja tai muistiinpanoja.
+```Arduino
+String stringOne = "Hei ";
+String stringTwo = "Maailma!";
+stringOne.concat(stringTwo);
+Serial.println(stringOne);  // Tulostaa: "Hei Maailma!"
+```
 
-# Katso myös:
+## Syvä sukellus
 
-[Koko ohjelmointiopas Arduino:lle](https://www.arduino.cc/en/Guide/Introduction)
+**Historiallinen konteksti:** Konkatenaatio on ollut tärkeä osa ohjelmointia sen alkuajoista lähtien. Se on varhainen tapa manipuloida tekstiä eri ohjelmissa.
 
-[Stack Overflow -kysymys merkkijonojen yhdistämisestä Arduinossa](https://stackoverflow.com/questions/30040485/concatenate-string-and-integer-arduino)
+**Vaihtoehdot:** Arduino tarjoaa myös sprintf()-toimintoa, joka voidaan olla tehokkaampi muistinkäytön kannalta isommissa projekteissa.
+
+```Arduino
+char buffer[50];
+char *s = "Hei ";
+char *t = "Maailma!";
+sprintf(buffer, "%s%s", s, t);
+Serial.println(buffer);  // Tulostaa: "Hei Maailma!"
+```
+
+**Toteutuksen yksityiskohdat:** Muista, että kaikki merkkijonot Arduino-koodissa käyttävät muistia. Pyri pitämään merkkijonot ja niiden käyttö minimaalisena muistin säästämiseksi.
+
+## Katso myös
+
+- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/) - Arduinon merkkijonoluokan dokumentaatio ja lisätiedot.
+- [Concatenation on Wikipedia](https://en.wikipedia.org/wiki/Concatenation) - Lisätietoa merkkijonojen yhdistämisestä ja sen historia.

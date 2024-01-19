@@ -1,6 +1,6 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Haskell: Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Tekstin etsiminen ja korvaaminen on tärkeä osa ohjelmointia, sillä se mahdollistaa tietyn merkkijonon löytämisen ja korvaamisen toisella. Tämä voi olla hyödyllistä esimerkiksi virheiden korjaamisessa tai halutun tiedon etsimisessä suuresta tietokannasta.
+## Mikä & Miksi?
+Tekstin hakeminen ja korvaaminen on toiminto, joka etsii tietyt merkkijonot ja korvaa ne sitten uusilla. Koodaajat käyttävät tätä metodia ohjelmoinnissa manipuloidakseen merkkijonoja ja korjatakseen virheitä.
 
-## Kuinka tehdä?
-Seuraavassa on joitakin esimerkkejä siitä, kuinka voit etsiä ja korvata tekstiä Haskell-kielellä:
+## Miten:
+Tässä on Haskell esimerkkikoodi - koodi joka etsii ja korvaa merkkijonot:
 
 ```Haskell
--- Etsi merkkijono "kuinka" ja korvaa se "miten"
-replace "kuinka" "miten" "Kuinka tehdä hyvä kahvi?"
--- output: "Miten tehdä hyvä kahvi?"
+import Data.List.Utils
 
--- Etsi ja korvaa kaikki isot kirjaimet pieniksi kirjaimiksi
-map toLower "HELLO WORLD"
--- output: "hello world"
+replaceText :: String -> String -> String -> String
+replaceText old new = join new . split old
 
--- Etsi ja korvaa kaikki numerot nollilla
-map (\x -> if isDigit x then '0' else x) "He1llo 2Wor3ld"
--- output: "He0llo 0Wor0ld"
+main :: IO ()
+main = putStrLn $ replaceText "vanha" "uusi" "Tämä on vanha teksti."
 ```
 
-## Syväsukellus
-Historiallisesti tekstien etsiminen ja korvaaminen on ollut yleinen tapa tehdä muutoksia ohjelmakoodiin ennen kuin versionhallintatyökalut tulivat käyttöön. Nykyään on olemassa myös muita vaihtoehtoja, kuten säännölliset lausekkeet, joita voi käyttää tekstien etsimiseen ja korvaamiseen monimutkaisemmissa tapauksissa. Haskellissa tekstien etsimiseen ja korvaamiseen on tarjolla myös useita kirjastoja, kuten "regex" ja "replace-megaparsec".
+Käynnistä ohjelma, se tulostaa: "Tämä on uusi teksti."
 
-## Katso myös
-- [Haskellin viralliset ohjeet](https://www.haskell.org/documentation/)
-- [Säännölliset lausekkeet](https://regexr.com/)
+## Syvä sukellus:
+Historiallisesti, merkkijonojen korvaaminen on ollut ohjelmoinnin tärkeä toiminto, sen juuret ulottuvat takaisin varhaiseen konekoodaukseen.
+
+Vaihtoehtoisia menetelmiä tekstin korvaamiseen Haskellissa ovat esimerkiksi regex-kirjastot tai Text.ICU-kirjasto. Valinta riippuu kuitenkin vaatimuksista ja henkilökohtaisista mieltymyksistä.
+
+Haskell toteuttaa merkkijonojen korvaamisen luomalla väliaikaisen listan, joka sisältää kaikki erilliset tekstin osat (split function), nämä osat yhdistetään sitten uudestaan uuden merkkijonon kanssa (join function).
+
+## Katso myös:
+Tässä on muutamia linkkejä, joista saa lisätietoja:
+- Tekstin korvaaminen Haskelissa: https://stackoverflow.com/questions/30551033/replace-a-substring-in-haskell 
+- Data.List.Utils dokumentaatio: http://hackage.haskell.org/package/MissingH-1.4.3.0/docs/Data-List-Utils.html
+- Text.ICU kirjasto: http://hackage.haskell.org/package/text-icu

@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "Gleam: Inviare una richiesta http"
+html_title:           "C++: Inviare una richiesta http"
 simple_title:         "Inviare una richiesta http"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,29 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa & Perché?
+# Invio di una richiesta HTTP con Gleam
 
-In poche parole, inviare una richiesta HTTP significa trasmettere informazioni a un server web e richiedere una risposta. I programmatori lo fanno per interagire con le API, recuperare dati da un server o eseguire operazioni di base come l'accesso a una pagina web.
+## Che Cos'è e Perché?
 
-Come fare:
+L'invio di una richiesta HTTP è un metodo per comunicare con server e servizi web. I programmatori lo usano per interagire con API, recuperare dati, inviare informazioni e molto altro ancora.
 
-Gleam semplifica l'invio di richieste HTTP grazie alla sua libreria integrata "httpc". Di seguito un esempio che utilizza "httpc.get" per inviare una richiesta GET e ottenere una risposta da un server:
+## Come si fa:
+Ecco un esempio di come si invia una richiesta HTTP GET utilizzando Gleam:
+
+```Gleam 
+import gleam/httpc
+import gleam/uri.{Uri}
+
+pub fn main(args: List(String)) {
+  let uri = uri.parse("http://my-website.com").unwrap()
+  let response = httpc.get(uri)
+  case response {
+    Ok(response) -> io.println(response.status)
+    Error(err) -> io.println(err)
+  }
+}
+```
+Quando esegui questo codice, vedrai qualcosa del genere:
 
 ```Gleam
-import httpc
-
-let url = "https://swapi.dev/api/people/1/"
-let response = httpc.get(url)
+200 OK
 ```
 
-Il risultato sarà un record contenente la risposta del server, come ad esempio: ```some({ statusCode: 200, body: "{\"name\":\"Luke Skywalker\",\"height\":\"172\",\"birth_year\":\"19BBY\",\"films\":[\"https://swapi.dev/api/films/1/\",\"https://swapi.dev/api/films/2/\",\"https://swapi.dev/api/films/3/\",\"https://swapi.dev/api/films/6/\",\"https://swapi.dev/api/films/7/\"]}")```
+## Approfondimento:
 
-Deep Dive:
+### Contesto storico:
+L'HTTP (Hypertext Transfer Protocol) è stato sviluppato negli anni '90 come componente fondamentale del World Wide Web. Da allora, è diventato lo standard per la comunicazione tra client e server.
 
-Le richieste HTTP sono state introdotte nel 1991 e hanno da allora rivoluzionato il modo in cui interagiamo con i server web. Al giorno d'oggi esistono diverse alternative per inviare una richiesta HTTP, come l'utilizzo di librerie di terze parti o l'utilizzo diretto delle API di sistema del sistema operativo. La libreria "httpc" di Gleam utilizza la libreria "libcurl" per l'implementazione delle richieste.
+### Alternative:
+Oltre a HTTP, esistono altri protocolli come HTTPS (versione sicura di HTTP), FTP, SMTP e altri. Tuttavia, HTTP rimane il più popolare per le applicazioni web moderne.
 
-Vedi anche:
+### Dettagli di implementazione:
+Gleam utilizza il modulo `httpc` per inviare richieste HTTP. Un URI viene passato alla funzione `get` per eseguire la richiesta. Il risultato restituito è un `Result` che può essere un `Ok` con la risposta HTTP o un `Error` con un errore HTTP.
 
-- Documentazione ufficiale Gleam su "httpc": http://gleam.run/modules/httpc
-- "What is an HTTP request?": https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
-- "libcurl": https://curl.se/libcurl/
+## Vedi Anche:
+
+1. Documentazione ufficiale di Gleam sugli [moduli HTTP](https://gleam.run/book/tour/http-requests.html)
+2. Post sul blog su [Come iniziare con Gleam](https://dev.to/gleam/starting-with-gleam-30j1)
+3. Documentazione [HTTP](https://developer.mozilla.org/it/docs/Web/HTTP) da Mozilla Developer Network.

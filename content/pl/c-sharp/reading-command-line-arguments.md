@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów z linii poleceń"
-html_title:           "C#: Odczytywanie argumentów z linii poleceń"
-simple_title:         "Odczytywanie argumentów z linii poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+# Praca z argumentami wiersza polecenia w C#
 
-Odczytywanie argumentów z wiersza poleceń to częsty aspekt programowania, który pozwala programom działać w zależności od różnych warunków. Programiści używają tej techniki, ponieważ pozwala im na dostosowywanie działania programu bez konieczności zmieniania kodu źródłowego.
+## Co i dlaczego?
+Argumenty wiersza polecenia to parametry przekazywane do programu podczas jego uruchomienia. Pozwalają użytkownikowi na wpływanie na funkcję programu bez zmieniania kodu.
 
-# Jak to zrobić:
+## Jak to zrobić:
+Najprostszą drogą do odczytywania argumentów wiersza polecenia w C# jest użycie tablicy stringów jako parametru dla metody `Main()`. 
 
-~~~C#
-/* Przykładowy kod w języku C# pokazujący jak odczytać argumenty z wiersza poleceń */
-
-using System;
-
-class Program
+```C#
+static void Main(string[] args)
 {
-    static void Main(string[] args)
+    foreach (string arg in args)
     {
-        // Jeśli wprowadzone zostały argumenty
-        if (args.Length > 0)
-        {
-            // Wyświetl pierwszy argument
-            Console.WriteLine("Pierwszy argument: " + args[0]);
-        }
-        else
-        {
-            // Wyświetl informację o braku argumentów
-            Console.WriteLine("Brak wprowadzonych argumentów.");
-        }
+        Console.WriteLine(arg);
     }
 }
+```
 
-/* Przykładowe wywołanie programu z argumentami "argument1 argument2" spowoduje wyświetlenie tekstu "Pierwszy argument: argument1" */
+Gdy uruchomisz program z linii poleceń, np. `program.exe arg1 arg2`, wydrukuje:
 
-~~~
+```
+arg1
+arg2
+```
 
-# Wprowadzenie do tematu:
+## Zagłębianie się
+Argumenty wiersza polecenia były podstawą sterowania najwcześniejszymi programami komputerowymi. W przeciwieństwie do graficznego interfejsu użytkownika (GUI), wiersz poleceń umożliwia precyzyjne i zautomatyzowane sterowanie programami. 
 
-Odczytywanie argumentów z wiersza poleceń nie jest nową techniką i powszechnie używana jest w wielu językach programowania. Alternatywą dla ręcznego odczytywania argumentów jest użycie gotowej biblioteki lub frameworka. W języku C# istnieje wiele takich rozwiązań, na przykład biblioteka "Command Line Parser" lub framework "Microsoft.Extensions.CommandLineUtils".
+Zamiast metody `Main()`, alternatywnie możemy użyć klasy `Environment` i jej właściwości `GetCommandLineArgs()`. Ta metoda jest rzadziej używana, ale daje dostęp do pełnej listy argumentów, w tym nazwy pliku wykonywalnego.
 
-# Zobacz też:
+Szczegóły implementacji zależą od środowiska wykonawczego .NET, ale argumenty są zazwyczaj przekazywane do procesu przez system operacyjny.
 
-- Dokumentacja dotycząca odczytywania argumentów z wiersza parancov
-- Poradnik dla programistów dotyczący wykorzystania biblioteki "Command Line Parser" w języku C#
+## Zobacz także
+Gdy już opanujesz argumenty wiersza polecenia, możesz chcieć dowiedzieć się więcej o innych aspektach C# i .NET. 
+
+Dokumentacja Microsoft na temat argumentów wiersza polecenia:
+[https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/main-and-command-args/](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/main-and-command-args/)
+
+Interactive C# Tutorial: [https://www.learn-c-sharp.com/](https://www.learn-c-sharp.com/)

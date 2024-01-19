@@ -1,6 +1,6 @@
 ---
 title:                "Analysering av html"
-html_title:           "Python: Analysering av html"
+html_title:           "C#: Analysering av html"
 simple_title:         "Analysering av html"
 programming_language: "Python"
 category:             "Python"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & hvorfor?
-Parsing av HTML er en vanlig oppgave for programmerere som ønsker å trekke ut spesifikk informasjon fra nettsider. Dette gjøres ved å analysere HTML-koden som utgjør nettsiden og ekstrahere ønsket innhold.
+## Hva & Hvorfor?
+Å parse HTML betyr å nøste opp innholdet i en webside, slik at det gir mening for datamaskinen. Programmerere parser HTML for å trekke ut bestemt informasjon, som linker eller tekst, fra nettsider.
 
-En av hovedårsakene til å gjøre parsing av HTML er å automatisere prosesser som ellers ville vært tidkrevende. Dette kan for eksempel være å hente informasjon fra flere nettsider og sammenstille den i en enkel tabell.
+## Hvordan Gjøre Det:
+Her er et enkelt eksempel med bruk av `BeautifulSoup`, en populær Python-bibliotek for web skraping. For å begynne, installere `beautifulsoup4` og `requests` pakker:
 
-# Hvordan:
-```Python
-# Importer BeautifulSoup biblioteket
-from bs4 import BeautifulSoup
-
-# Definer en variabel med HTML-koden du ønsker å parse
-html = "<html><body><h1>Hei, verden!</h1></body></html>"
-
-# Bruk BeautifulSoup til å lage en parser
-parser = BeautifulSoup(html, "html.parser")
-
-# Hent ut teksten innenfor <h1> taggen og skriv den ut
-print(parser.h1.text)
-
+```Python 
+pip install beautifulsoup4 requests
 ```
-Output: Hei, verden!
 
-# Dypdykk:
-Historisk sett har parsing av HTML vært en viktig del av webutvikling og datautvinning. Første versjon av HTML ble utviklet på begynnelsen av 1990-tallet og siden da har versjonsnumrene stadig økt og nye teknologier og standarder har blitt introdusert.
+Etter installasjonen, her er hvordan å parse en enkel HTML:
 
-Selv om de fleste programmerere bruker BeautifulSoup til å parse HTML, finnes det også andre alternativer som for eksempel lxml og html5lib bibliotekene. Disse bibliotekene kan være nyttige hvis man har spesielle behov eller ønsker å bruke mer avanserte teknikker for parsing.
+```Python
+from bs4 import BeautifulSoup
+import requests
 
-Implementeringen av BeautifulSoup er basert på DOM (Document Object Model) trær, som betyr at hver HTML-element blir representert som en node i treet. Dette gjør det enkelt å navigere i koden og hente ut ønsket informasjon.
+html_text = requests.get('https://www.google.com').text
+soup = BeautifulSoup(html_text, 'html.parser')
 
-# Se også:
-- [BeautifulSoup biblioteket](https://www.crummy.com/software/BeautifulSoup/)
-- [lxml biblioteket](https://lxml.de/)
-- [html5lib biblioteket](https://html5lib.readthedocs.io/)
+print(soup.prettify())
+```
+
+Når du kjører dette skriptet, vil det vise HTML-strukturen til Google's hjemmeside i terminalen.
+
+## Dybdeplunge
+HTML-parsing har eksistert siden HTML ble oppfunnet tidlig på 90-tallet. Mens `BeautifulSoup` er en populær løsning, er det mange alternativer som `lxml`, `html.parser`, og til og med regulære uttrykk (men disse frarådes for komplekse HTML-dokumenter på grunn av deres begrensninger).
+
+Parsing HTML kan være mer eller mindre komplekst, avhengig av koden du arbeider med. For eksempel, noen nettsteder kan benytte JavaScript til å laste inn data, noe som kan komplisere den vanlige parsingprosessen.
+
+## Se Også
+ - BeautifulSoup Dokumentasjon: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+ - Python's `lxml` bibliotek: https://lxml.de/tutorial.html
+ - HTML parsing med regulære uttrykk i Python: https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags

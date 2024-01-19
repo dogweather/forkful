@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "PowerShell: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Getting Started"
@@ -12,46 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Quoi et Pourquoi?
 
-Lancer un nouveau projet est le processus de démarrage d'une nouvelle tâche ou d'un nouveau projet en tant que programmeur. Cela peut inclure la création de nouveaux fichiers, l'installation de dépendances, la mise en place de l'environnement de développement, etc. Les programmeurs le font pour commencer à travailler sur une nouvelle idée ou fonctionnalité, ou pour simplement mettre à jour un projet existant.
+Commencer un nouveau projet en programmation signifie créer un nouveau cadre de travail pour développer une nouvelle fonctionnalité ou une application. Les programmeurs le font pour organiser leur travail, faciliter la gestion des versions et optimiser la collaboration.
 
-## Comment faire:
+## Comment faire :
 
-```PowerShell
-# Créer un nouveau dossier pour le projet
-New-Item -ItemType Directory -Name "NouveauProjet"
+Pour commencer un nouveau projet en PowerShell, on utilise généralement des scripts. Voici un exemple de base pour créer un nouveau répertoire pour votre projet :
 
-# Naviguer dans le dossier créé
-cd .\NouveauProjet
+```PowerShell 
+# créer un nouveau dossier appelé 'MonProjet'
+New-Item -ItemType Directory -Path ./MonProjet
+```
 
-# Initialiser un nouveau projet Git
-git init
+Pour se déplacer dans le nouveau répertoire :
+```PowerShell 
+Set-Location -Path ./MonProjet
+```
+Pour créer un nouveau fichier script :
+```PowerShell 
+New-Item -ItemType File -Name MonScript.ps1
+```
+Voila! Vous avez maintenant un nouveau projet avec un script PowerShell.
 
-# Créer un nouveau fichier de script PowerShell
-New-Item -ItemType File -Name "monScript.ps1"
+## Plongée profonde :
 
-# Ouvrir le fichier dans l'éditeur de code par défaut
-code .\monScript.ps1
+Historiquement, PowerShell a été développé par Microsoft pour automatiser les tâches administratives sur Windows. Il s'est ensuite étendu à d'autres plateformes et est maintenant largement utilisé pour la gestion de configuration et l'automatisation.
 
-# Ajouter du code à votre script
-Write-Host "Bonjour, monde!"
+Il existe plusieurs alternatives pour commencer un nouveau projet, y compris Git et SVN, qui offrent des fonctionnalités supplémentaires comme le control de version et la collaboration à distance.
 
-# Exécuter le script
-./monScript.ps1
+Concernant les détails d'implémentation, PowerShell utilise le .NET Common Language Runtime (CLR) et accepte les scripts écrits en .NET languages. Il permet une grande flexibilité et une puissance, permettant aux programmes de contrôler et d'automatiser presque toutes les aspects de Windows.
 
-# Installer des dépendances avec PowerShellGet
-Install-Module -Name "nomdumodule"
-``` 
+## Voir aussi :
 
-## Plongée en profondeur:
-
-Histoire: PowerShell a été créé par Microsoft en 2006 pour fournir une interface en ligne de commande et un langage de script pour les systèmes Windows. Son design s'inspire grandement d'autres langages tels que Bash, Perl et Python.
-
-Alternatives: Bien qu'il existe d'autres langages de script et d'outils de gestion de projet, PowerShell reste populaire en raison de son intégration étroite avec les systèmes Windows et sa syntaxe facile à apprendre pour les programmeurs débutants.
-
-Détails de l'implémentation: Au-delà de la simple création de fichiers et de dossiers, l'utilisation de PowerShell pour démarrer un nouveau projet peut également inclure l'installation de dépendances, la mise en place de tâches automatisées, et plus encore. De plus, de nombreux modules sont disponibles pour étendre les fonctionnalités de base de PowerShell et le rendre encore plus utile pour les développeurs.
-
-## Voir aussi:
-
-- [Documentation officielle Microsoft sur PowerShell](https://docs.microsoft.com/fr-fr/powershell/)
-- [Installation de modules avec PowerShellGet](https://docs.microsoft.com/fr-fr/powershell/scripting/gallery/working-with-packages/getting-started?view=powershell-7.1)
-- [Introduction à PowerShell pour les débutants](https://docs.microsoft.com/fr-fr/powershell/scripting/overview?view=powershell-7.1)
+Pour plus d'information sur PowerShell :
+1. Site officiel PowerShell : https://docs.microsoft.com/fr-fr/powershell/
+2. Tutorial PowerShell : https://www.tutorialspoint.com/powershell/index.htm
+3. Créer un nouveau projet avec Git : https://docs.github.com/fr/github/getting-started-with-github/create-a-repo
+4. Microsoft's guide on how to write a PowerShell script : https://docs.microsoft.com/fr-fr/powershell/scripting/learn/ps101/02-scripting-environment?view=powershell-7.1

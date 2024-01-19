@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "Rust: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,26 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
-Enviar uma solicitação HTTP é um processo no qual um programa faz uma comunicação com o servidor por meio do protocolo HTTP. Programadores fazem isso para acessar e enviar dados entre o cliente e o servidor, permitindo a interação com aplicativos que funcionam na web.
+# Enviando uma requisição HTTP com Rust
+
+## O que & Por que?
+
+Enviar uma requisição HTTP é a forma de comunicar entre um cliente (seu programa) e um servidor web. Programadores fazem isso para interagir com serviços na web como APIs, baixar conteúdo e muito mais.
 
 ## Como fazer:
-```rust
-use reqwest::blocking::{Client, Error};
 
-fn main() -> Result<(), Error> {
-    let client = Client::new();
-    let response = client.get("https://www.example.com")
-        .send()?;
-    println!("{}", response.text()?);
+```Rust
+use reqwest;
+
+#[tokio::main]
+async fn main() -> Result<(), reqwest::Error> {
+    let response = reqwest::get("https://httpbin.org/get").await?;
+    println!("Status: {}", response.status());
+    let body = response.text().await?;
+    println!("Body:\n\n{}", body);
     Ok(())
 }
 ```
 
-## Detalhando:
-Enviar uma solicitação HTTP é uma ação comum em programação web. É uma maneira de fazer seu aplicativo se comunicar com outros servidores para acessar recursos da internet. Existem várias bibliotecas em Rust que podem ajudar nessa tarefa, como a popular reqwest.
+Quando você executa esse código, você receberá uma resposta semelhante a essa:
 
-## Veja também:
-- [Documentação official do Rust sobre enviar solicitações HTTP](https://doc.rust-lang.org/stable/std/net/index.html)
-- [Referência para a biblioteca reqwest em Rust](https://docs.rs/reqwest/0.11.1/reqwest/)
-- [Exemplos de código para enviar solicitações HTTP em Rust](https://gist.github.com/nakabonne/f3fc181900d70457e88989dc5b783c9b)
+```Rust
+Status: 200 OK
+Body:
+
+{
+  "args": {}, 
+  "headers": {
+    ...
+  }, 
+  ...
+}
+```
+
+## Aprofundando
+
+Enviar requisições HTTP tem sido uma atividade fundamental em programação web desde os primeiros dias da internet. No contexto de Rust, existem várias bibliotecas que facilitam essa ação, como `reqwest`, `hyper`, e `ureq`.
+
+Embora nesse tutorial tenhamos usado a biblioteca `reqwest`, você poderia considerar `hyper` se precisasse de um maior controle sobre os aspectos de baixo nível das requisições HTTP, ou `ureq` para uma abordagem mais minimalista e síncrona.
+
+Por baixo dos panos, estas bibliotecas estão lidando com a geração de uma requisição HTTP correta, o envio desta requisição ao servidor, a análise da resposta do servidor e a entrega desta resposta ao resto do seu código.
+
+## Veja também
+
+Para mais detalhes sobre como fazer requisições HTTP com Rust, confira estes links:
+
+- [Documentação do Reqwest](https://docs.rs/reqwest)
+- [Tutorial Hyper](https://hyper.rs/guides/client/basic/)
+- [Uso do Ureq](https://github.com/algesten/ureq)

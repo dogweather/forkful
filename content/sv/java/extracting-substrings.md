@@ -1,7 +1,7 @@
 ---
-title:                "Utvinna delsträngar"
-html_title:           "Java: Utvinna delsträngar"
-simple_title:         "Utvinna delsträngar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,23 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att extrahera substrängar är ett sätt för programmerare att få specifika delar av en textsträng som uppfyller vissa kriterier. Det används ofta för att hantera data från användarinmatning eller för att manipulera text på ett mer precist sätt.
+# Hålla det Kort och enkelt med Substrängar i Java
 
-## Så här gör du:
-Java har inbyggda metoder för att extrahera substrängar från befintliga strängar. Här är ett exempel på hur man kan extrahera en delsträng från ett användarinmatat lösenord:
+## Varför och Varför?
+
+Extrahering av substrängar involverar att hämta en specifik del av en sträng. Programmers använder det för att interagera med och manipulera data effektivt inom strängen.
+
+## Hur man gör:
+
+Utvunna substrängar i Java är enkla. De två vanligaste metoderna vi använder är `substring(int beginIndex)` och `substring(int beginIndex, int endIndex)`. Här är ett exempel:
 
 ```Java
-String password = "supersekretochlångtlösenord";
-String extracted = password.substring(0, 6);
-System.out.println(extracted);
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hej Världen!";
+        System.out.println(str.substring(4)); //utskrift: Världen!
+        System.out.println(str.substring(0, 3)); //utskrift: Hej
+    }
+}
 ```
+I det första fallet börjar understrängen vid den angivna indexeringen och strecker sig till slutet av strängen. I det andra fallet anger du både start och slut.
 
-Detta kodexempel kommer att skriva ut de första sex tecknen från lösenordet, vilket i detta fall skulle vara "superse". Observera att indexeringen börjar från 0, så 0 är det första tecknet och 6 är det sjunde tecknet.
+## Fördjupning
 
-## Djupdykning:
-Att extrahera substrängar är en vanlig operation inom programmering och det finns flera olika sätt att göra det på. I Java kan man också använda metoden `substring()` för att extrahera en delsträng baserat på ett specifikt tecken eller ett teckens intervall. Det finns också andra typer av strängmanipulation som kan användas för att uppnå samma resultat, som regex-uttryck eller split-funktionen.
+**Historisk sammanhang:** 
+Metoderna substring i Java har varit en del av Java Standard Edition sedan version 1.0, och de är en del av Java.lang.String-klassen.
 
-## Se även:
-- <https://www.w3schools.com/java/java_strings_substring.asp>
-- <https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html#substring(int,%20int)>
+**Alternativ:**
+Vissa situationer kan kräva användning av andra strängfunktioner som `split()`, `indexOf()` eller biblioteket `Apache Commons Lang`, specifikt `StringUtils.substring()` som är mer robust.
+
+**Implementering detaljer:**
+Notera att strängindexering börjar från noll. Djupare ser vi att substrängsmetoderna skapar en ny strängobjekt, allmänt resulterar detta i ökad minnesanvändning.
+
+## Se Även
+
+1. Java String substring() metod: [Officiell Java-dokumentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int))
+2. Java String API-översikt: [Oracle Java-dokumentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+3. Apache Commons Lang: [Officiell Apache dokumentation](http://commons.apache.org/proper/commons-lang/)
+
+Skapa kraftfulla program med substrängar, och lycka till med din kodning!

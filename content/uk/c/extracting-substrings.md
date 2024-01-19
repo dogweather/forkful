@@ -1,7 +1,7 @@
 ---
-title:                "Отримання підрядка"
-html_title:           "C: Отримання підрядка"
-simple_title:         "Отримання підрядка"
+title:                "Видобування підрядків"
+html_title:           "C++: Видобування підрядків"
+simple_title:         "Видобування підрядків"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,37 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
-Екстракція підрядків - це процес витягування певної частини тексту з рядка в програмі для подальшого використання. Програмісти часто використовують цей метод для отримання необхідної інформації з великих рядків або для обробки даних у певному форматі.
+## Що та навіщо?
 
-Як це зробити:
-```C
-char str[20] = "programming is fun";
-char substr[10];
-int index = 5;
-int length = 2;
-//extracting substring "in"
-strncpy(substr, str + index, length);
-printf("%s", substr);
-```
-Вивід: "in"
+Витягування підрядків у програмуванні - це процес отримання окремого рядка з більшого рядка. Ми це робимо для обробки та аналізу специфічних частин даних в більших рядках.
+
+## Як це зробити:
+
+Ось базовий приклад того, як ви можете витягнути підрядок в мові C за допомогою функції 'strncpy'.
 
 ```C
-char str[] = "Hello World!";
-char substr1[6];
-char substr2[6];
-int index = 6;
-//extracting substrings "Hello" and "World"
-strncpy(substr1, str, index);
-strncpy(substr2, str + index, strlen(str) - index);
-printf("%s, %s!", substr1, substr2);
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+    char source[] = "Вітаю, друже!";
+    char destination[20];
+
+    strncpy(destination, source, 5);
+    destination[5] = '\0'; // закінчуємо рядок нульовим символом
+
+    printf("%s\n", destination); // Виводить: Вітаю
+
+    return 0;
+}
 ```
-Вивід: "Hello, World!"
 
-Глибше розбираємось:
-Екстракція підрядків була популярна задовго до сучасного програмування. Наприклад, в редакторі тексту Vi, програміст міг обрізати або копіювати певну частину тексту з рядка. У деяких мовах програмування, таких як Python, є спеціальні функції для екстракції підрядків. У C це зробити дещо складніше, але все ж можливо за допомогою функцій, таких як ```strncpy()``` та ```strlen()```.
+## Поглиблено:
 
-Дивіться також:
-- [Стаття про функцію strncpy в C](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)
-- [Порівняння різних способів екстракції підрядків у C](https://www.geeksforgeeks.org/efficiently-extract-a-substring-from-a-string-in-c/)
-- [Приклади роботи з рядками у C](https://www.programiz.com/c-programming/c-strings)
+### Історичний контекст
+Функція 'strncpy' є частиною стандартної бібліотеки C, що була інтегрована ще з часів розробки мови. 
+
+### Альтернативи
+На відміну від інших мов програмування, в С немає вбудованої функції для вилучення підрядків. Однак, ви можете використовувати 'strchr' та 'strrchr' для пошуку місця підрядка в рядку і потім використовувати 'strncmp' або 'strcpy' для копіювання підрядка.
+
+### Деталі реалізації
+' strncpy ' працює, копіюючи символи з одного рядка в інший до тих пір, поки вона не досягне кінця вихідного рядка або не досягне максимальної довжини підрядка.
+
+## Дивіться також:
+
+1. Функція 'strncpy': [link](https://www.cplusplus.com/reference/cstring/strncpy/)
+2. Функції 'strchr' та 'strrchr': [link](http://www.cplusplus.com/reference/cstring/strrchr/)
+3. Функція 'strncmp': [link](https://www.cplusplus.com/reference/cstring/strncmp/)
+4. Створення власних функцій вилучення підрядків в C: [link](https://www.geeksforgeeks.org/c-program-to-extract-a-portion-of-string/) 
+
+Програмування на мові C потребує розуміння як працювати з рядками та вилучати підрядки. Це важливий навик, який допоможе вам стати кращим програмістом.

@@ -1,6 +1,6 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "Java: Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Java"
 category:             "Java"
@@ -10,23 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Imprimir la salida de depuración es una técnica ampliamente utilizada por los programadores para rastrear y solucionar errores en su código. Con él, pueden imprimir mensajes en la consola o en un archivo de registro que les ayuden a comprender qué está sucediendo en su programa y por qué se están produciendo ciertos errores.
+# "## ¿Qué y Por Qué?"
 
-## Cómo hacerlo:
-Una forma común de imprimir la salida de depuración en Java es utilizar el método `System.out.println()`. Este método toma cualquier objeto como argumento y lo imprime en la consola. Aquí hay un ejemplo:
+Imprimir la salida de depuración en Java te permite rastrear y entender el comportamiento de tu código mientras se está ejecutando. Lo hacemos principalmente para detectar y solucionar errores en nuestras aplicaciones.
+
+# "## Cómo Hacerlo:"
+
+Para imprimir la salida de depuración en Java, generalmente utilizamos `System.out.println()`. Aquí hay un ejemplo:
 
 ```Java
-int num1 = 5;
-int num2 = 10;
-System.out.println("La suma de " + num1 + " y " + num2 + " es " + (num1 + num2));
+public class Main {
+    public static void main(String[] args) {
+        for(int i=0; i<5; i++) {
+            System.out.println("El número es: " + i);
+        }
+    }
+}
 ```
 
-Este código imprimirá "La suma de 5 y 10 es 15" en la consola. También se pueden usar expresiones y variables en la cadena para imprimir valores dinámicos.
+Este script imprimirá en la consola:
 
-## Profundizando:
-La impresión de la salida de depuración se ha utilizado desde los primeros días de la programación, cuando se usaban impresoras en papel para imprimir mensajes de depuración. En la actualidad, también hay otras formas de depurar código, como usar un depurador integrado en un IDE o escribir pruebas unitarias. Sin embargo, la impresión de la salida de depuración sigue siendo una técnica ampliamente utilizada debido a su simplicidad y flexibilidad.
+```
+El número es: 0
+El número es: 1
+El número es: 2
+El número es: 3
+El número es: 4
+```
 
-## Ver también:
-- [Debugging with System.out.println() in Java](https://www.geeksforgeeks.org/debugging-in-java-using-system-out-println/)
-- [Difference between printing to console and writing to log file](https://stackoverflow.com/questions/5360248/printing-to-the-console-vs-writing-to-a-file/5360295)
+# "## Buceo Profundo":
+
+Históricamente hablando, imprimir salida de depuración ha sido una de las formas más sencillas de rastrear el comportamiento de nuestras aplicaciones desde los primeros días de la programación. Aunque existen alternativas más elegantes y robustas, como el uso de depuradores y trazadores de pila, la impresión de la salida de depuración sigue siendo una herramienta útil y directa en la arsenal del programador.
+
+Una curiosidad sobre `System.out.println()` es que, en realidad, Java simplemente está accediendo a una variable estática "out" en la clase "System", que es una instancia de la clase "PrintStream". Este objeto "PrintStream" tiene un método "println()", que es el que utilizamos para imprimir en la consola.
+
+Existen alternativas, por ejemplo, usar un logger como `java.util.logging` o un log4j. Estas librerías ofrecen gran flexibilidad y opciones de configuración avanzadas, permitiéndonos, por ejemplo, escribir la salida de depuración en un archivo en lugar de la consola.
+
+```Java
+import java.util.logging.Logger;
+
+public class Main {
+    private final static Logger LOGGER = Logger.getLogger(Main.class.getName());
+
+    public static void main(String[] args) {
+        for(int i=0; i<5; i++) {
+            LOGGER.info("El número es: " + i);
+        }
+    }
+}
+```
+
+# "## Ver También":
+
+Encuentra más información en las siguientes fuentes:
+
+1. [The Java Tutorials: Logging](https://docs.oracle.com/javase/tutorial/essential/logging/) (en ingles)
+2. [Stack Overflow: System.out.println vs Logger](https://stackoverflow.com/questions/513600/should-i-use-java-util-logging-or-org-apache-log4j) (en ingles)
+3. [Tutorial de Oracle: Java System Class](https://docs.oracle.com/javase/tutorial/essential/environment/system.html) (en ingles)

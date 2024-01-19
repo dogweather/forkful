@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "Java: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?
-Luodessa väliaikaista tiedostoa, ohjelmoijat luovat tilapäisen tiedoston, jota voidaan käyttää ohjelman suorituksen aikana. Tämä voi olla tarpeellista esimerkiksi tiedon tallentamiseksi, väliaikaisen työn suorittamiseksi tai muussa tilanteessa, jossa tiedostoa ei haluta säilyttää pysyvästi.
+## Mitä & Miksi?
 
-Kuinka:
-```Java 
+Luodaan väliaikainen tiedosto, kun tarvitsemme tiedostoa, mutta ei haluta, että se jää pysyvasti tietokoneellemme. Tämä on hyödyllistä, kun käsittelemme suuria tietomääriä, jotka haluamme kertakäyttöisiksi tai kun testaamme ohjelmistoamme.
+
+## Miten:
+
+Java tarjoaa `File`-luokkaa väliaikaisten tiedostojen luomiseen. Katsotaan esimerkkiä:
+
+```Java
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
-public class TempFileExample {
-  public static void main(String[] args) throws IOException {
-    // Määritetään polku väliaikaiselle tiedostolle
-    Path tempFilePath = Paths.get("C:/Users/Kayttaja/Documents/TempFile.txt");
-    // Luodaan uusi väliaikainen tiedosto
-    Files.createTempFile(tempFilePath, "TempFile", ".txt");
-    // Tulostetaan tiedoston nimi
-    System.out.println("Luotu väliaikainen tiedosto: " + tempFilePath.getFileName());
+public class Main {
+  public static void main(String[] args) {
+
+    // Luodaan väliaikainen tiedosto
+    try {
+      File tempFile = File.createTempFile("testi", ".txt");
+
+      // Tulostetaan tiedoston polku
+      System.out.println("Väliaikaista tiedostoa luotu: " + tempFile.getAbsolutePath());
+
+      // Tiedosto poistetaan, kun JVM sulkeutuu
+      tempFile.deleteOnExit();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 }
 ```
+Tämä luo uuden väliaikaisen tiedoston, tulostaen sen tiedoston polun ja poistaen sen, kun JVM sulkeutuu. Käytämme `deleteOnExit()`-metodia varmistamaan, että tiedosto poistetaan, kun ohjelma päättyy.
 
-Tulostus:
-```
-Luotu väliaikainen tiedosto: TempFile.txt
-```
+## Deep Dive:
 
-Syväsukellus:
-Luomalla väliaikaisen tiedoston, ohjelmoijat voivat varmistaa, että heillä on tarvittavat tiedot ohjelman suorituksen aikana. Tämä menetelmä on ollut käytössä jo pitkään, ja on edelleen yksi parhaimmista tavoista käsitellä tilapäistä tietoa. Vaihtoehtoisena menetelmänä voisi olla esimerkiksi käyttää muuttujia tai tallentaa tiedot tietokantaan, mutta nämä vaihtoehdot voivat olla monimutkaisempia ja vaatia enemmän koodia.
+Väliaikaisten tiedostojen käyttö ei ole uusi käsite - ohjelmoijat ovat luoneet niitä aina tarvittaessa, varsinkin suurissa datan käsittelyprosesseissa.
 
-Muut tiedostojen luomiseen liittyvät metodit, kuten File.createNewFile() tai new File() -komento, eivät luoda väliaikaista tiedostoa, vaan pysyvän. Väliaikainen tiedosto poistuu automaattisesti ohjelman suorituksen päätyttyä ja ei vie ylimääräistä tallennustilaa.
+Jos olet törmännyt tilanteeseen, jossa `File.createTempFile()` ei ole tarpeeksi, harkitse java.nio.file -paketin `Files.createTempDirectory()`-metodia, joka luo väliaikaista hakemistoa.
 
-Katso myös:
-Virallinen Java-tiedostojen luomiseen liittyvä dokumentaatio: https://docs.oracle.com/javase/tutorial/essential/io/file.html
-Java Path-luokan dokumentaatio: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html
-Tietoa tiedostojen hallinnasta Java-ohjelmoinnissa: https://www.baeldung.com/java-file-management
+Java luo väliaikaiset tiedostot käyttäjän kotihakemiston alihakemistoon. Voit muuttaa oletushakemistoa asettamalla `java.io.tmpdir`-järjestelmäominaisuuden.
+
+## Katso Myös:
+
+1. [Oracle Java File Documentation](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html)
+2. [Oracle Java IO tutorial](https://docs.oracle.com/javase/tutorial/essential/io/)
+3. [How to create temporary file in Java](https://www.journaldev.com/960/java-create-temporary-file)

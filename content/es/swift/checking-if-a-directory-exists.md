@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si existe un directorio"
-html_title:           "Swift: Comprobando si existe un directorio"
-simple_title:         "Comprobando si existe un directorio"
+title:                "Verificando si un directorio existe"
+html_title:           "Javascript: Verificando si un directorio existe"
+simple_title:         "Verificando si un directorio existe"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,22 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué y por qué?
-Comprobar si un directorio existe es una operación común en la programación Swift. Esencialmente, se trata de verificar si hay una carpeta en una ubicación específica en el sistema. Los programadores suelen hacer esto para garantizar que su código funcione correctamente y manejar posibles errores si el directorio no existe.
+## ¿Qué y Por Qué?
 
-Cómo hacerlo:
-Para verificar si un directorio existe en Swift, podemos utilizar la función `FileManager.default.fileExists()` y pasar como argumento la ruta del directorio que queremos comprobar. Por ejemplo, si queremos comprobar si existe un directorio llamado "Documentos" en el directorio de inicio del usuario, podemos hacer lo siguiente:
+Verificar si un directorio existe es un proceso en el cual, con código, determinamos la existencia de un directorio específico en el sistema de archivos. Los programadores lo hacen para evitar errores durante la operación de lectura o escritura de archivos.
+
+## ¿Cómo se hace?
+
+En Swift, puedes comprobar si un directorio existe con funciones de FileManager. Aquí tienes un ejemplo:
 
 ```Swift
-if FileManager.default.fileExists(atPath: "/Users/Usuario/Documentos") {
+import Foundation
+
+let fileManager = FileManager.default
+let directorio = "/ruta/tu_directorio" 
+
+if fileManager.fileExists(atPath: directorio) {
     print("El directorio existe.")
 } else {
     print("El directorio no existe.")
 }
 ```
+En este código, primero importamos el módulo Foundation y luego inicializamos una instancia de `FileManager`. Luego, verificamos si un directorio con la ruta dada existe o no.
 
-Profundizando:
-En el pasado, para comprobar si un directorio existía, era necesario utilizar funciones en C y Objective-C. Sin embargo, con la introducción del framework `FileManager` en Swift, ahora es mucho más sencillo. Además de `fileExists()`, también podemos utilizar la función `fileExists(atPath:)` para comprobar la existencia de un archivo específico en lugar de un directorio.
+## Un Vistazo Más Profundo
 
-Véase también:
-Para obtener más información sobre la comprobación de la existencia de directorios y archivos en Swift, consulta la documentación oficial de Apple sobre `FileManager`. También puedes encontrar más detalles sobre la gestión de directorios en Swift en el blog de Swift by Sundell.
+Históricamente, diversos lenguajes de programación han implementado formas de verificación de la existencia de directorios, debido a que la operación de archivos es un componente crucial en programación. En Swift, el módulo Foundation proporciona la clase `FileManager` para gestionar los archivos y directorios.
+
+Además de `fileExists(atPath:)`, Swift ofrece `attributesOfItem(atPath:)`, que puede proporcionar más información detallada, como fecha de creación y modificación, del directorio.
+
+```Swift
+try? fileManager.attributesOfItem(atPath: directorio)
+```
+Esta función devolverá `nil` si el directorio no existe, lo cual también te dice que el directorio no existe. Si el directorio existe, te dará un diccionario con sus atributos.
+
+## Ver También
+
+- "Trabajar con rutas de archivos y directorios": https://developer.apple.com/documentation/foundation/filemanager
+- "Verificar si un archivo o directorio existe": https://stackoverflow.com/questions/30056471/check-if-a-file-exists-in-swift
+
+En estos enlaces puedes encontrar información más detallada sobre cómo trabajar con directorios y archivos en Swift. Las referencias te ayudarán a entender mejor y aplicar de manera efectiva estas operaciones.

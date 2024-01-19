@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie czy istnieje katalog"
-html_title:           "C: Sprawdzanie czy istnieje katalog"
-simple_title:         "Sprawdzanie czy istnieje katalog"
+title:                "Sprawdzanie, czy katalog istnieje"
+html_title:           "C: Sprawdzanie, czy katalog istnieje"
+simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,50 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego? 
+## Co to i dlaczego?
 
-Spójrzmy prawdzie w oczy - jak programiści mamy wiele zadań do wykonania, a jednym z nich jest sprawdzanie, czy dany katalog istnieje. Może wydawać się to trywialne, ale w rzeczywistości jest to ważna część procesu programowania. Sprawdzanie istnienia katalogu jest niezbędne, aby zapewnić, że nasz program działa poprawnie i nie wywala się na błędzie. 
+Sprawdzanie, czy katalog istnieje, to proces weryfikacji obecności określonej ścieżki katalogu w systemie plików. Programiści robią to, aby zapobiec błędom podczas operacji na plikach i katalogach.
 
-# Instrukcja:
+## Jak zrobić:
 
-Oto przykład kodu, który sprawdzi, czy dany katalog istnieje i wyświetli odpowiedni komunikat: 
+Poniżej przedstawiam kod w języku C, który sprawdza, czy dany katalog istnieje. 
 
 ```C
-#include <stdio.h> 
-#include <sys/stat.h> 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
-int main() { 
-    struct stat st = {0}; 
-    char* path = "/my/directory/path"; 
-
-    // funkcja stat() pobiera informacje o pliku lub katalogu
-    if (stat(path, &st) == 0) { 
-        // jeśli wynik jest równy 0, oznacza to, że katalog istnieje 
-        printf("Katalog %s istnieje.\n", path); 
-    } 
-    else { 
-        // jeśli wynik jest inny niż 0, oznacza to, że katalog nie istnieje lub wystąpił błąd 
-        printf("Katalog %s nie istnieje.\n", path); 
-    } 
-
-    return 0; 
-} 
+int main() {
+    struct stat st = {0};
+    if (stat("/path/to/your/directory", &st) == -1) {
+        printf("Katalog nie istnieje.\n");
+    } else {
+        printf("Katalog istnieje.\n");
+    }
+    return 0;
+}
 ```
 
-Przykładowy wynik: 
+Jeżeli katalog istnieje, to wyświetli "Katalog istnieje.", a jeżeli nie - "Katalog nie istnieje.".
 
-``` 
-Katalog /my/directory/path istnieje. 
-```
+## Bunny Dive
 
+Chociaż specyficzna funkcja stat() nie była dostępna w pierwszych wersjach C, podobna funkcjonalność była dostarczana przez różne biblioteki. W nowszych wersjach języka C funkcja stat() została dodana do języka jako część API POSIX.
 
-# Głębsza analiza:
+Co więcej, inny sposób sprawdzenia, czy katalog istnieje, to użycie funkcji opendir() z biblioteki dirent.h, ale ta metoda jest mniej popularna, ponieważ może otworzyć katalog, co nie jest zawsze pożądane.
 
-Sprawdzanie, czy dany katalog istnieje, jest ważną częścią programowania od samego początku. Starsze języki programowania, takie jak C, nie posiadały wbudowanych funkcji do tego celu, dlatego trzeba było opracować różne sposoby na rozwiązanie tego problemu. Jedną z metod było wykorzystanie funkcji "stat", która pobiera informacje o pliku lub katalogu i zwraca wynik w postaci struktury. W przypadku istnienia katalogu, funkcja zwraca wartość 0, w przeciwnym razie inny wynik. Obecnie istnieją już standardowe funkcje, takie jak "opendir" czy "access", które ułatwiają sprawdzanie istnienia katalogu. 
+Podczas używania funkcji stat(), warto pamiętać, że sprawdza ona wszelkiego rodzaju "pliki", nie tylko katalogi. Oznacza to, że może ona zwrócić true, nawet jeśli podana ścieżka jest do pliku, a nie do katalogu. Dlatego ważne jest, aby dodatkowo sprawdzić wartość S_ISDIR(st.st_mode) aby upewnić się, że podana ścieżka jest ścieżką do katalogu.
 
-# Zobacz również:
+## Zobacz także
 
-Dla bardziej zaawansowanych informacji na temat sprawdzania istnienia katalogu możesz zajrzeć na te strony: 
-
-- [Dokumentacja funkcji stat() w języku C](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.2.0/com.ibm.zos.v2r2.bpxbd00/stat.htm) 
-- [Porównanie funkcji stat(), opendir() i access()](https://stackoverflow.com/questions/21644669/what-is-the-difference-between-stat-opendir-access-in-unix-c-programming)
+- Dokumentacja funkcji stat(): http://man7.org/linux/man-pages/man2/stat.2.html
+- Dokumentacja funkcji opendir(): http://man7.org/linux/man-pages/man3/opendir.3.html
+- Szczegóły na temat API POSIX: https://pl.wikipedia.org/wiki/POSIX

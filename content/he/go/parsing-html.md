@@ -1,6 +1,6 @@
 ---
 title:                "ניתוח HTML"
-html_title:           "Go: ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Go"
 category:             "Go"
@@ -10,41 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing HTML בשפת גוגל גו
-
 ## מה ולמה?
 
-פארסינג של HTML היא התהליך שבו מתוכנתים נכנסים לתוך דף אינטרנט, קוראים את הקוד שלו ויוצאים בעלת מידע מועיל על הדף. תהליך זה חשוב למתכנתים כדי לאפשר להם לשלב נתונים מועילים מדפי אינטרנט ולמאפיין אותם לניתוח ועיבוד.
+אנליזת HTML היא התהליך שבו קוד מחשב מפרש את מבנה ה- HTML בדף אינטרנט. מתכנתים עושים זאת כדי לאפשר עיבוד של מידע מהדף.
 
-## איך לעשות זאת:
+## כיצד:
 
-התכנית הבאה מדגימה את השימוש בספריית הפניהור כדי לפרסם ולהדפיס את התוכן של דף אינטרנט:
+הנה קטע קוד בסיסי ב Go שמנתח קובץ HTML:
+
 ```Go
+package main
+
 import (
-    "fmt"
-    "net/http"
-    "github.com/PuerkitoBio/goquery"
+	"fmt"
+	"golang.org/x/net/html"
+	"os"
 )
 
 func main() {
-    response, _ := http.Get("https://examplewebsite.com")
-    defer response.Body.Close()
-    document, _ := goquery.NewDocumentFromReader(response.Body)
-    
-    document.Find("h1").Each(func(index int, element *goquery.Selection) {
-        fmt.Println(element.Text())
-    })
+	file, err := os.Open("example.html")
+	if err != nil {
+		fmt.Printf("error: %v\n", err)
+		os.Exit(1)
+	}
+	defer file.Close()
+
+	tokenizer := html.NewTokenizer(file)
+
+	for {
+		tokenType := tokenizer.Next()
+
+		switch {
+		case tokenType == html.ErrorToken:
+			// הגענו לסוף הקובץ, יציאה מהלולאה
+			return
+		case tokenType == html.StartTagToken:
+			token := tokenizer.Token()
+
+			// טיפול בכל מנות tag 
+			fmt.Println("tag name: ", token.Data)
+		}
+	}
 }
 ```
-פלט התוכנית ישיג את כותרת הדף מהתגית h1 וידפיס אותה בטקסט נקי.
+זה הפלט:
+```Go
+tag name:  html
+tag name:  head
+tag name:  title
+tag name:  body
+tag name:  h1
+tag name:  p
+```
 
-## כיול עמוק:
+## צלילה עמוקה
 
-פירוט קצר של מה פעילות הנדסת HTML מיישמת בתכנות השלב בפיתוח הווב, מספר פתרונות ספציפיים שאפשר להשתמש בהם במקום הפניהור וכיצד הוא מתממש.
+אנליזת HTML התפתחה לאורך השנים כתשובה לצורך של מתכנתים לדלות מקוונים ולנהל מידע באופן אוטומטי. Go היא שפת תכנות המספקת קטעי קוד מוכנים מראש (packages) שמאפשרים ניתוח HTML. חלופות כוללות שפות עם ספריות XML/HTML תואמות, כמו Python או JavaScript.
 
-מעבר לספריית הפניהור, ישנם פתרונות אחרים שניתן להשתמש בהם כדי לפרסם דפים אינטרנט בגוגל גו, כגון הספרייה המדורגת גיני. בנוסף, חשוב לציין כי גוגל גו מציע תמיכה מלאה בכתיבת אפליקציות אינטרנט המשתמשות ב HTML כאשר ההתאמה לעולם הווב הינה תמיד מהירה ויעילה.
+כאשר אנו משתמשים בפונקציה NewTokenizer, היא מחזירה פונקציה שנותנת לנו גישה לtoken הבא בקובץ.
 
-## ראה גם:
+## ראה גם
 
-- דוקומנטציה רשמית של ספריית הפניהור של גוגל גו: https://godoc.org/github.com/PuerkitoBio/goquery
-- ערוץ האינטרנט של גוגל גו עם תוכן מגוון על פיתוח ותכנות: https://www.youtube.com/channel/UC0NErq0RhP51iXx64ZmyVfg
+טיפים נוספים ועומק נוסף בנושא ניתוח HTML ב Go מוצגים במקורות הבאים:
+- מדריך Go הרשמי: [המדריך הרשמי](https://golang.org/pkg/net/html/)
+- מידע על החבילה "x/net/html": [GoDoc](https://godoc.org/golang.org/x/net/html)
+- מדריך פרקטי לאנליזת HTML ב- Go: [מדריך](https://www.devdungeon.com/content/web-scraping-go)

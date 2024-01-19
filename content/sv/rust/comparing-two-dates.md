@@ -1,7 +1,7 @@
 ---
-title:                "Jämföra två datum"
-html_title:           "Rust: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,42 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-När man programmerar kan man ibland behöva jämföra två datum för att t.ex. se om ett datum kommer före eller efter ett annat. Detta är vanligt när man jobbar med kalendrar eller scheman och behöver sortera och filtrera datum. 
+## Vad och varför?
 
-## Hur går det till:
-För att jämföra två datum i Rust, kan man använda sig av ```PartialOrd``` traitet. Det här traitet låter oss jämföra värden som har en ordning, som till exempel siffror och datum. Genom att använda funktionen ```partial_cmp``` kan vi jämföra två datum och få tillbaka en ```Option<cmp::Ordering>``` som visar vilket datum som kommer före det andra. 
+Att jämföra två datum är, precis som det låter, processen att utvärdera hur två specifika datum relaterar till varandra. Programmerare behöver denna operation för att ordna händelser, mäta tid mellan dem, eller bara för att avgöra om en tidpunkt har inträffat.
 
-Exempelkod:
-```
-use std::cmp::Ordering;
-use chrono::NaiveDate;
+
+## Hur man gör:
+
+Här är ett exempel på hur man kan jämföra två datum i Rust:
+
+```Rust
+use chrono::{DateTime, Utc};
 
 fn main() {
-    let date1 = NaiveDate::from_ymd(2020, 06, 30);
-    let date2 = NaiveDate::from_ymd(2020, 07, 01);
-
-    match date1.partial_cmp(&date2) {
-        Some(Ordering::Less) => println!("{} kommer före {}", date1, date2),
-        Some(Ordering::Equal) => println!("{} är samma som {}", date1, date2),
-        Some(Ordering::Greater) => println!("{} kommer efter {}", date1, date2),
-        None => println!("Ingen ordning för dessa datum")
+    let datum1: DateTime<Utc> = Utc::now();
+    let datum2: DateTime<Utc> = Utc::now();
+    
+    if datum1 == datum2 {
+        println!("Datumen är lika");
+    } else if datum1 < datum2 {
+        println!("Datum1 är före datum2");
+    } else {
+        println!("Datum1 är efter datum2");
     }
 }
 ```
+Kör ovanstående kod och du kommer att se utmatning baserat på de nuvarande datum och tider.
 
-Exempeloutput:
-```
-2020-06-30 kommer före 2020-07-01
-```
 
-## Deep Dive:
-Historiskt sett har det funnits olika sätt att jämföra datum, beroende på vilket kalendersystem som används (t.ex. gregorianska eller julianska kalendern). I moderna programmeringsspråk som Rust används vanligtvis en tidsstandard som kallas Coordinated Universal Time (UTC) för att undvika komplikationer med olika kalendrar. 
+## Djupdykning
 
-Det finns också alternativa metoder för att jämföra datum, såsom att konvertera datum till en numrering som börjar vid ett visst datum och sedan jämföra dessa nummer. Det är viktigt att noga överväga vilken metod som passar bäst för ens specifika användningsområde när man jämför datum i en applikation.
+Rusts `chrono` bibliotek, som vi använde i ovanstående exempel, har en rik uppsättning av datum och tid funktionalitet. Detta bibliotek skapades för att övervinna begränsningarna hos tidigare bibliotek, som `time`, genom att tillhandahålla mer fullständiga, nogranna, och user-friendly funktioner. Vad gäller alternativ, kan specificering av tidszoner och skottår vara faktorer att överväga.
 
-När det gäller implementationen i Rust, använder ```PartialOrd``` traitet funktionen ```partial_cmp``` för att jämföra två värden. Om funktionen returnerar ```None``` betyder det att värdena inte kan jämföras, till exempel om de är i olika tidszoner eller format. 
+Också viktigt att notera är Rusts representational conservatism kring jämförelser av två datum: Det är tyst när det gäller att hoppa över verification steps för giltighet och likhet. Detta utgör en väsentlig skillnad mot andra språk som kan förenkla jämförelser genom att ersätta externa åtgärder.
 
-## Se även:
-- [Chrono biblioteket](https://docs.rs/chrono/latest/chrono/index.html): Ett populärt bibliotek för att hantera datum och tider i Rust.
-- [Official Rust documentation](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html): Mer information om ```PartialOrd``` traitet och andra jämförelsemetoder i Rust.
+För ytterligare detaljer, utforska `DateTime`, `Date`, och `Duration` struct dokumentation. Att förstå dem bättre kommer sannolikt att förbättra kvaliteten på dina datum och tid operationer.
+
+## Se också
+
+För mer läsning om detta, ta en titt på följande resurser:
+
+- [Chrono dokumentation](https://docs.rs/chrono/0.4.19/chrono/)
+- [Chrono på GitHub](https://github.com/chronotope/chrono)
+- [Rust By Example](https://doc.rust-lang.org/stable/rust-by-example)

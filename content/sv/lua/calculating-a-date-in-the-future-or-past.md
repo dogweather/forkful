@@ -12,29 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att beräkna ett datum i framtiden eller det förflutna är en vanlig uppgift för programmerare. Det innebär helt enkelt att man tar ett befintligt datum och lägger till eller drar av ett antal dagar, veckor, månader eller år för att få en ny datum. Detta är användbart i många situationer, som att generera deadlines, almanackor eller planera resor.
+Beräkning av ett datum i framtiden eller förflutet är konceptet att hitta ett exakt datum baserat på en viss tidsperiod från ett känt datum. Programmerare gör det för att hantera tidskänsliga uppgifter som schema beräkningar, påminnelser, avståndsberäkningar och liknande applikationer.
 
-## Hur man:
+## Så här gör du:
+
+I Lua, vi kan beräkna förflutna eller framtida datum med hjälp av `os.date` och `os.time` funktioner. Här är ett exempel:
 
 ```Lua
--- Addera 50 dagar till dagens datum
-local dagens_dag = os.date("*t")
-dagens_dag.day = dagens_dag.day + 50
-print(os.date("%Y-%m-%d", os.time(dagens_dag)))
--- Output: 2022-02-14
+dagar_fram = 7
+futur_datum = os.date("*t", os.time() + (dagar_fram * 24 * 60 * 60))
+print(string.format("Framtida datum är: %s/%s/%s", futur_datum.day, futur_datum.month, futur_datum.year))
+```
 
--- Subtrahera 2 veckor från ett specifikt datum
-local datum = os.time{year=2021, month=10, day=10}
-datum = datum - (14 * 24 * 60 * 60) -- 14 dagar i sekunder
-print(os.date("%Y-%m-%d", datum))
--- Output: 2021-09-26
+Provutmatning:
+```Lua
+Framtida datum är: 27/7/2022
 ```
 
 ## Djupdykning:
 
-Att beräkna datum i Lua är enkelt tack vare dess inbyggda funktioner för datum och tidsberäkning. Det finns också alternativ, som att använda en bibliotek som "date" eller "lua-date" för mer avancerade funktioner. Det är viktigt att ha koll på tidszoner, särskilt vid resor eller globala projekt, då olika regioner kan ha olika datum- och tidsformat.
+Historiskt sett, har beräkningarna av datum i framtiden eller förflutet inte alltid varit en lätt uppgift, särskilt med hänsyn till olika kalendersystem och tidszoner. Därför är programmeringsspråk utrustade med inbyggda funktioner eller bibliotek för att hantera dessa utmaningar.
 
-## Se också:
+Ett alternativ til `os.date` och `os.time` i Lua är att använda tredjepartsbibliotek som Penlight eller Date, där mer avancerade och komplexa datumoperationer är möjliga.
 
-- Lua funktionen för datum och tid: https://www.lua.org/manual/5.4/manual.html#pdf-os.date
-- Date biblioteket för Lua: https://keplerproject.github.io/date/index.html
+När det kommer till implementeringsdetaljer, fungerar `os.time` funktionen genom att returnera det aktuella datumet och tiden, uttryckt i sekunder sen Unix epoch. Genom att lägga till eller dra uttryck i sekunder till detta värde, kan vi få ett nytt datum.
+
+## Se även
+
+För mer information om datum och tidshantering i Lua, följande länkar kan vara till hjälp:
+
+- [Lua 5.1 Referensmanual - os.date](https://www.lua.org/manual/5.1/manual.html#pdf-os.date)
+- [Lua 5.1 Referensmanual - os.time](https://www.lua.org/manual/5.1/manual.html#pdf-os.time)
+- [Penlight Documentation](https://stevedonovan.github.io/Penlight/api/index.html)
+- [Date (Lua library)](https://github.com/Tieske/date)

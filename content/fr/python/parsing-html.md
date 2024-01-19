@@ -1,7 +1,7 @@
 ---
-title:                "Analyser du html"
-html_title:           "Python: Analyser du html"
-simple_title:         "Analyser du html"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi est-ce important ?
+## Qu'est-ce et pourquoi?
+L'analyse de HTML (HTML parsing) consiste à décomposer et à comprendre une page web codée en HTML. Les programmeurs utilisent souvent des parseurs HTML pour extraire des données spécifiques à partir de sites Web ou pour réorganiser et modifier les sites existants.
 
-Analyser du HTML, c'est le processus de traitement et de conversion du code HTML en une structure de données utilisable par un programme. Les programmeurs le font pour extraire des informations spécifiques des pages Web, pour les traiter ou pour les manipuler dans leur code.
-
-# Comment faire :
-
-Voici un exemple de code Python qui utilise le module Beautiful Soup pour extraire tous les liens d'une page Web :
+## Comment faire:
+Voici un exemple simple en utilisant BeautifulSoup, une librairie Python populaire pour le parsing HTML.
 
 ```Python
-# import du module Beautiful Soup
 from bs4 import BeautifulSoup
-# définition de la page à analyser
-page = '<html><body><a href="https://www.example.com">Lien 1</a><a href="https://www.example.com">Lien 2</a></body></html>'
-# création d'un objet BeautifulSoup
-soup = BeautifulSoup(page, 'html.parser')
-# recherche de tous les liens et affichage de leur attribut "href"
-for link in soup.find_all('a'):
-    print(link.get('href'))
+import requests
+
+url = "http://example.com"
+response = requests.get(url)
+
+soup = BeautifulSoup(response.text, 'html.parser')
+
+print(soup.title.text) # Affiche le titre du site web
 ```
 
-Cela produirait la sortie suivante :
+Résultat:
 
+```Python
+'Example Domain'
 ```
-https://www.example.com
-https://www.example.com
-```
 
-# Plongée en profondeur :
+## Plongée profonde:
 
-Parser le HTML est un processus courant dans le développement Web, car il permet de récupérer des données précieuses à partir de pages Web. Les alternatives sont généralement basées sur différents langages ou techniques, telles que l'utilisation de CSS pour extraire des données ou le web scraping. La bibliothèque intégrée de Python, "html.parser", est également disponible pour l'analyse de HTML.
+**Histoire:** L'analyse HTML est un processus aussi ancien que l'Internet lui-même. Au fil du temps, le processus d'analyse a été amélioré et optimisé.
 
-# Voir aussi :
+**Alternatives:** Il existe d'autres options pour l'analyse HTML en Python, comme html.parser, lxml et html5lib. Le choix entre eux dépend des besoins spécifiques tels que la vitesse, la quantité de mémoire utilisée et la facilité d'utilisation.
 
-- [Documentation de Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Tutoriel sur le web scraping avec Beautiful Soup](https://realpython.com/beautiful-soup-web-scraper-python/)
-- [Documentation officielle Python sur l'analyse de HTML](https://docs.python.org/fr/3/library/html.parser.html)
+**Détails d'implémentation:** BeautifulSoup traduit simplement le document HTML en une structure arborescente d'objets Python. Ensuite, vous pouvez accéder et/ou interagir avec ces objets de la même manière que vous le feriez pour n'importe quel autre objet Python.
+
+## Voir aussi:
+
+1. Documentation de Beautiful Soup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+2. Tutoriel de scraping web avec Python et Beautiful Soup: https://www.dataquest.io/blog/web-scraping-python-using-beautiful-soup/
+3. Comparaison de différentes librairies de parsing HTML en Python: https://www.geeksforgeeks.org/best-python-libraries-for-web-scraping/

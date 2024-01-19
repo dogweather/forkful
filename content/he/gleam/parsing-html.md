@@ -1,7 +1,7 @@
 ---
-title:                "ניתוח שפת התכנות של האתרים HTML."
-html_title:           "Gleam: ניתוח שפת התכנות של האתרים HTML."
-simple_title:         "ניתוח שפת התכנות של האתרים HTML."
+title:                "ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-פרצות קוד HTML הן קלות לקריאה עבורנו, אבל עבור מחשבים, הן לא כך פשוטות. חלק מתיקוני התקלות באפליקציות נמצאים באופן בו נרצה לפרק את קוד ה-HTML לאלמנטים נפרדים כדי לוודא שהוא תקין ונכון למטרת המשתמש. תכנות HTML יכול להסייע לנו לזהות ולתקן בעיות באפליקציות ומערכות.
+## מָה ולָמָה?
+פירוז HTML הוא התהליך בו מפענחים ומנתחים מידע ממסמכי HTML. מתכנתים עשויים לתקל בצורך לבצע פירוז HTML כדי להפיק מידע בר-שימוש מקבצים או מקורות חיצוניים.
 
 ## איך לעשות זאת:
-כדי לבצע פרשנות של HTML בקוד, אנו ניצור משתנה מסוג רשימה ונשתמש בפונקציות כמו `parse_html` ו- `get_elements` כדי לפרש את הקוד ליחידי HTML ולתקן אותם אם נדרש. אם נרצה להדפיס הודעה שתוכל להכיל קוד HTML מעוצב, נוכל להשתמש בפונקציה `format_html` כדי להפוך את הבלוק שלנו לקוד נכון.
-
+הנה דוגמא של איך להשתמש בגלים לניתוח HTML.
 ```Gleam
-let html = "<strong>Hello, world!</strong>"
-get_elements(html)
+import gleam/http.{Method, Uri}
+import gleam/httpc
+
+fn main() {
+    let response = httpc.send(Method.Get, Uri.from_string("http://example.com").unwrap())
+    let html = response.body.to_string()  
+    println(html)      
+}
 ```
+כאשר תריצו את קטע הקוד הזה, תקבלו את כל ה-HTML של האתר כדי לנתח.
 
-הפלט של הקוד הבא יחזיר לנו את התוצאה הבאה:
+## צניחה עמוקה
+ניתוח HTML הוא תהליך עתיק, ואכן הוא ממשיך להשתמש באופן נרחב. ניתן להשתמש במיני דרכים רבות, כולל מספר של אלטרנטיבות כמו XML או JSON. מרבית סיפריות הניתוח מחזירות מסד נתונים לייצוג המסמך, דרכו הפרטים במסמך המקורי בדרך כלל ניתנים לחיפוש באופן מבני. Gleam, כמו רוב השפות, משתמשת בספריות חיצוניות כדי לאפשר את פירוז HTML.
 
-```Gleam
-[ Element("strong", [], [ Text("Hello, world!") ]) ]
-```
+## עיין גם
+עיין במקורות הבאים למידע נוסף על ניתוח HTML:
+- [HTML Parsing Wikipedia](https://en.wikipedia.org/wiki/HTML_parsing)
+- [Gleam HTML parsing library documentation](https://docs.gleam.run/tour/)
+- [HTML5 parsing techniques and specifications](https://html.spec.whatwg.org/multipage/parsing.html)
 
-## לקח נעמוך:
-תכנות HTML התחיל כהשראת פרשנות הסימנים של מקדונלד כלן בתחילת שנות ה־60 כדי לסייע לסצנת מופע ואומנות להוריד את עמס העבודה בהנגשה עבור כולם. עבור תכניות אמיתיות, פרשנות HTML היא פעמים רבות כלי חשוב כדי להבין את התכנית המלאה שכתובה הקשורה לנראות של הדפדפן או האפליקציה המנדטית יתר על מה שמדוע נכתב כך.
-
-פרשנות תחבורה מעצבת ביד חשובה בפעילות תוכניות-א ותמכות תגיות אקסטראנים משחקים. אם חייבים B4 גם סנן, D4 נרתק להחלפת פעולות פחמימים ו Shard בפרטי רהוט,הכל גם זה באמצעות as릭.mixer/Jakase.haml.קורה במשתמשים יותר ויותר? לאט לאט, כי זה חשוב לתופס הלחם הגבוה הנלמד במרכז לווינג, למשל. שפה HTML נרתק באיטלה Un-כיום רפאת שפוחז מעיל לסקריפט לאקראיות (CSS), אשר מספקים נועזותsolution
-לפזמונאיות בתאריך היום.
-
-
-## ראה גם:
-- [Gleam HTML אתר שמע בניר ](https://gleam.run/news/html-the-highway-to-full-stack-development/)
-- [תיעוד ה-Torrent API של דקתהל](https://gleam.run/news/meta.html)
+#### בלי סיכום:
+במאמר זה, דיברנו על הגדרת ניתוח HTML, הסיבות לניתוח HTML, כיצד לנתח HTML באמצעות גלים, ופרטים נוספים. אין לנו "סיכום" במאמר זה כי אנו רוצים לשמור על שפה קצרה וברורה.

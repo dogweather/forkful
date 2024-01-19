@@ -1,7 +1,7 @@
 ---
-title:                "Создание временного файла"
-html_title:           "Swift: Создание временного файла"
-simple_title:         "Создание временного файла"
+title:                "Створення тимчасового файлу"
+html_title:           "C: Створення тимчасового файлу"
+simple_title:         "Створення тимчасового файлу"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Створення тимчасових файлів - це процес створення файлів, які використовуються тимчасово під час виконання програми. Програмісти часто використовують такі файли для збереження проміжних результатів або для тимчасового збереження даних.
+**## Що й чому?**
 
-## Як це зробити:
+Створення тимчасових файлів - це процес обміну даними між різними частинами коду або зберігання проміжних результатів виконання кожного сегменту. Програмісти це роблять, щоб всандалити проект, який працює в багатозадачному режимі або виконувати багатокроковые оперативні завдання.
+
+**## Як це зробити:**
+
+Розглянемо реалізацію прикладів на Swift:
+
 ```Swift
-// Створення тимчасового файлу з використанням унікального імені
-let temporaryFileURL = URL(fileURLWithPath: NSTemporaryDirectory())
-    .appendingPathComponent(UUID().uuidString)
+import Foundation
 
-// Запис даних в тимчасовий файл
-try "Hello World".write(to: temporaryFileURL, atomically: true, encoding: .utf8)
+let temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+let temporaryFileURL = temporaryDirectoryURL.appendingPathComponent(UUID().uuidString)
 
-// Читання даних з тимчасового файлу
-let data = try Data(contentsOf: temporaryFileURL)
-print(String(data: data, encoding: .utf8)!) // Output: Hello World
+try "Hello, World!".write(to: temporaryFileURL, atomically: true, encoding: .utf8)
 
-// Видалення тимчасового файлу
-try FileManager.default.removeItem(at: temporaryFileURL)
+print(try String(contentsOf: temporaryFileURL))
 ```
+Код вище створює тимчасовий файл з випадковим ім'ям і використовує його для збереження рядка "Hello, World!". Потім він читає та друкує строку з цього файлу.
 
-## Поглиблене вивчення:
-Створення тимчасових файлів датується з 1970-х років, коли ОС Unix почала використовувати їх для оптимізації роботи з дисковим простором. Варіанти створення тимчасових файлів можуть відрізнятись залежно від платформи та мови програмування. Наприклад, у Java та C# цей процес виконується використовуючи класи "File.createTempFile" та "Path.GetTempFileName" відповідно.
+**## Глибше занурення**
 
-## Дивіться також:
-- [Створення тимчасового файлу в Swift](https://www.avanderlee.com/swift/temporary-files/)
-- [Стаття блогу "Про тимчасові файли"](https://www.wendy.dev/blog/temporary-files/
+1) **Історичний контекст:** Тимчасові файли стали поширеними у програмуванні шляхом забезпечення спосібу обробки великих обсягів даних, які не можуть бути збережені в оперативній пам'яті, але які потребують якогось формату обміну або передачі між різними частинами коду або між різними програмами.
+
+2) **Альтернативи:** Альтернативою тимчасовим файлам можуть бути пайпи (в Unix та Linux), анонімні блоки пам'яті або навіть обмін даними через базу даних.
+
+3) **Деталі виконання:** Під час створення тимчасових файлів необхідно враховувати вопроси безпеки. Це означає, що ви повинні забезпечити належний доступ до них, щоб зловмисні процеси не могли використовувати ваші тимчасові файли.
+
+**## Додатково**
+
+[Керівництво по Swift](https://swift.org/documentation/#the-swift-programming-language)
+
+[Принципи роботи з файлами і каталогами в Swift](https://developer.apple.com/documentation/foundation/filemanager)

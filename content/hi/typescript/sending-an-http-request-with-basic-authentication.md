@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
-html_title:           "TypeScript: बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,31 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-हिंदी रीडर्स के लिए एक TypeScript प्रोग्रामिंग आर्टिकल:
+## क्या और क्यों?
 
-## यह क्या है और क्यों? 
-HTTP अनुरोध को आसान ऑथेंटिकेशन के साथ भेजना क्या है, और क्यों प्रोग्रामर्स इसे करते हैं, इसके बारे में दो से तीन सेटेंसेज़ बताती है। 
+HTTP अनुरोध भेजना साथ में मौलिक सत्यापन का अर्थ है कि एक क्लाइंट एक सर्वर से कुछ जानकारी मांगता है, साथ ही एक प्रमाणीकरण हैडर भेजता है जिसे सर्वर बालीधान कर सके। प्रोग्रामर्स इसे तभी करते हैं जब वे एक HTTP अनुरोध के साथ सुरक्षित जानकारी भेजते हैं जैसे कि यूजरनेम और पासवर्ड। 
 
-## कैसे करें:
-```TypeScript
-// बेसिक आसान ऑथेंटिकेशन के साथ HTTP अनुरोध भेजना
-import axios from 'axios';
-axios.get('http://example.com', {auth: {username: 'username', password: 'password'}})
-    .then(response => console.log(response))
-    .catch(error => console.log(error));
-// संभावित आउटपुट: 200 अथवा 401 या 403
+## कैसे: 
+
+```TypeScript 
+// हमें `http` और `Buffer` मॉड्यूल की आवश्यकता होती है: 
+import { request } from 'http'; 
+import { Buffer } from 'buffer'; 
+
+// यूजरनेम और पासवर्ड का प्रयोग 
+let username = 'यूजरनेम'; 
+let password = 'पासवर्ड'; 
+
+// हमें यूज़रनेम और पासवर्ड को Base64 में एन्कोड करना है
+let authString = `${username}:${password}`;
+let authEncoded = Buffer.from(authString).toString('base64'); 
+
+// HTTP अनुरोध की स्थापना 
+let options = { 
+  host: 'example.com', 
+  port: 80, 
+  path: '/auth-endpoint', 
+  method: 'GET', 
+  headers: { 
+    'Authorization': `Basic ${authEncoded}` 
+  } 
+}; 
+
+// HTTP अनुरोध का प्रयोग 
+let req = request(options, (res) => { 
+  res.on('data', (data) => { 
+    console.log(`Response: ${data.toString()}`); 
+  }); 
+}); 
+
+req.end(); 
 ```
 
 ## गहराई में: 
-HTTP अनुरोध को आसान ऑथेंटिकेशन के साथ भेजने के लिए अन्य विकल्पों के बारे में और प्रगति के साथ के बारे में विस्तृत जानकारी दी जाती है। 
 
-1. ऐतिहासिक पृष्ठभूमि: आसान ऑथेंटिकेशन HTTP अनुरोध का उपयोग अतिरिक्त सुरक्षा स्तर प्रदान करने के लिए किया जाता है।
-2. वैकल्पिक रूप से, OAuth और JWT जैसे अन्य प्रोटोकॉल इस्तेमाल किए जा सकते हैं जो बेहतर सुरक्षा प्रदान करते हैं।
-3. इससे कैसे काम करता है: एक उदाहरण के साथ, एक यूजर आईडी और पासवर्ड को सर्वर को भेजकर, यह उपयोगकर्ता की पहचान के रूप में इस्तेमाल किया जाता है और एक टोकन जनरेट किया जाता है। यह टोकन अब से हर बार हेडर में शामिल करके, आसान ऑथेंटिकेशन के रूप में स्वीकृत हो जाता है। 
+**ऐतिहासिक प्रसंग:** मौलिक प्रमाणीकरण HTTP का एक बहुत पुराना भाग है, RFC 2617 (1999) में परिभाषित किया गया था। 
 
-## देखें भी:
-सम्बंधित स्रोतों के लिंक दिये गए हैं: 
+**विकल्प:** मौलिक प्रमाणीकरण कुछ विशेष स्थितियों में उपयोगी है, लेकिन आधुनिक एप्लिकेशन में आमतौर पर टोकन आधारित प्रमाणीकरण (जैसे JWT) का उपयोग किया जाता है। 
 
-- [आसान ऑथेंटिकेशन के साथ HTTP का अपनांदा उपयोग करना](https://www.moesif.com/blog/technical/authentication/Adding-Basic-Auth-to-Your-HTTP-APIs/)
-- [आसान ऑथेंटिकेशन की विस्तृत जानकारी](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [HTTP कृपया आसानी सीखें](https://www.w3schools.com/js/js_ajax_http_send.asp)
+**कार्यान्वयन विवरण:** मौलिक प्रमाणीकरण विवरण को बेस64 में एन्कोड करता है, जो आसानी से डिकोड किया जा सकता है। इसलिए, इसका उपयोग केवल HTTPS संचार में ही किया जाना चाहिए।
+
+## देखें भी: 
+
+1. [HTTP प्रमाणीकरण (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+2. [TypeScript संदर्भ मैन्युअल](https://www.typescriptlang.org/docs/handbook/intro.html)
+3. [Buffer वर्ग (Node.js डॉक्स)](https://nodejs.org/api/buffer.html)

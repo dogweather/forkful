@@ -1,7 +1,7 @@
 ---
-title:                "「httpリクエストの送信」"
-html_title:           "Arduino: 「httpリクエストの送信」"
-simple_title:         "「httpリクエストの送信」"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,67 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
+## 何となぜ？
 
-HTTPリクエストを送信するとは、Arduinoがインターネット上の別のサーバーにデータを要求することを意味します。プログラマーがこれを行う理由は、Arduinoがインターネット上の情報を取得したり、オンラインサービスとやり取りしたりすることができるようにするためです。
+HTTPリクエストの送信とは、ウェブサーバーに情報をリクエストまたは送信するプロセスのことを指します。これにより、プログラマーはウェブ上の別のシステムと通信し、データを取得または更新することができます。
 
-## 方法：
+## 実行方法
+
+Arduinoとウェブサーバとの間でHTTPリクエストを送信するための基本的なコードは以下の通りです。
 
 ```Arduino
-#include <WiFiClient.h>
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
+
+const char* ssid     = "your_SSID";
+const char* password = "your_PASSWORD";
+
+const char* host = "maker.ifttt.com";
 
 void setup() {
+  Serial.begin(115200);
+  delay(10);
 
- //WiFiに接続するための情報を設定
- const char* ssid = "WiFiネットワーク名";
- const char* password = "WiFiパスワード";
+  // We start by connecting to a WiFi network
 
- //WiFi接続を開始
- WiFi.begin(ssid, password);
+  Serial.println();
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
 
- //WiFiが接続されるまで待機
- while (WiFi.status() != WL_CONNECTED) {
-   delay(500);
-   Serial.println("Connecting to WiFi..");
- }
+  WiFi.begin(ssid, password);
 
- //HTTPリクエストを送信するためのクライアントを作成
- WiFiClient client;
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
 
- //リクエストを送信する先のサーバーを指定
- if (client.connect("example.com", 80)) {
-
-   //リクエストを文字列で作成
-   client.print("GET / HTTP/1.1\r\n");
-   client.print("Host: example.com\r\n");
-   client.print("Connection: close\r\n\r\n");
-
-   //サーバーからのレスポンスを読み込み
-   while (client.available()) {
-     String line = client.readStringUntil('\r');
-     Serial.print(line);
-   }
-
-   //接続を閉じる
-   client.stop();
- }
+  Serial.println("");
+  Serial.println("WiFi connected");  
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {
- //何もしない
+  WiFiClient client;
+  const int httpPort = 80;
+  if (!client.connect(host, httpPort)) {
+    Serial.println("connection failed");
+    return;
+  }
+
+  String url = "/trigger/event/with/key/your_key";
+
+  Serial.print("Requesting URL: ");
+  Serial.println(url);
+  
+  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" + 
+               "Connection: close\r\n\r\n");
+  delay(10);
+
+  while(client.available()){
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
+  }
 }
 ```
 
-実行すると、シリアルモニターにサーバーのレスポンスが表示されます。
+これでサーバーへのHTTPリクエストが可能になります。
 
-## 深く掘り下げる：
+## ディープダイブ
 
-1. HTTPリクエストは、ウェブブラウザーとサーバー間の通信を可能にするために開発されたプロトコルです。
-2. この例では、[ESP8266WiFiライブラリ](https://arduino-esp8266.readthedocs.io/en/latest/)を使用してHTTPリクエストを送信していますが、[Ethernetライブラリ](https://www.arduino.cc/en/Reference/Ethernet)を使用することもできます。
-3. HTTPリクエストは、GETメソッドの他にPOST、PUT、DELETEなどのメソッドで送信することもできます。詳細については[こちら](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)を参照してください。
+HTTPリクエストの送信は、初期のインターネットの時代、つまり90年代初頭から存在します。それはウェブページへのアクセスに使用され、ちょうど今日のArduinoで使用されているように、デバイス間で情報を交換する手段となりました。
 
-## 参考：
+このコードの代わりに使用可能な代替手段としては、HTTPSを使用した安全なリクエストの送信や、UDPを使用したデータの送信などがあります。
 
-- [HTTPリクエストについてのArduino公式ドキュメント](https://www.arduino.cc/en/Tutorial/HttpClient)
-- [HTTPメソッドについてのMDNウェブドキュメント](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)
+この実装に関しては、WiFi.hライブラリを使用して、Arduinoがインターネットに接続できるようにしました。そして、その接続を使ってHTTPリクエストを作成し、特定のURLに対してそれを送信しています。
+
+## 参考資料
+
+1. Arduino公式ドキュメンテーション：[https://www.arduino.cc/en/main/docs](https://www.arduino.cc/en/main/docs)
+2. WiFi.hライブラリのドキュメンテーション：[https://www.arduino.cc/en/Reference/WiFi](https://www.arduino.cc/en/Reference/WiFi)

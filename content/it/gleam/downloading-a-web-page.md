@@ -1,7 +1,7 @@
 ---
-title:                "Scaricare una pagina web."
-html_title:           "Gleam: Scaricare una pagina web."
-simple_title:         "Scaricare una pagina web."
+title:                "Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
+simple_title:         "Scaricare una pagina web"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+# Scarica una pagina web con Gleam
 
-Scaricare una pagina web è il processo di recuperare il contenuto di una pagina web e salvarlo sul proprio dispositivo. I programmatori spesso eseguono questa operazione per analizzare il contenuto di una pagina, estrarne informazioni o utilizzarlo per creare applicazioni web.
+## Che cosa e perché?
+Scaricare una pagina web significa recuperarlo dal server web su cui è ospitata. I programmatori fanno questo per vari motivi, tra cui l'analisi dei dati, il controllo delle modifiche e l'automazione dei compiti sulla web.
 
-## Come Fare:
+## Come fare:
+Ecco un esempio di come scaricare una pagina web usando la libreria `gleam/httpc` in Gleam. 
+Assicurati di aver aggiunto "gleam/httpc" al tuo file `rebar.config`.
 
-In Gleam, è possibile utilizzare il modulo `Http` per scaricare una pagina web. Ecco un esempio di come farlo:
+```gleam
+import gleam/httpc
+import gleam/http.{Request}
 
-```
-Gleam import Http
-
-let response = Http.get("https://esempio.com")
-
-case response {
-  Ok(_, body) -> body
-  Error(_) -> "Errore nel scaricare la pagina"
+fn scarica_pagina() {
+  let req = Request(url: "https://example.com") 
+  let _ = httpc.send(req)
 }
 ```
 
-Questo codice utilizza la funzione `get` del modulo `Http` per effettuare una richiesta alla pagina `esempio.com`. Se la richiesta ha successo, verrà restituito il corpo della risposta nella variabile `body`. Se ci sono errori durante il download, verrà stampato un messaggio di errore.
+Quando esegui questo codice, invierai una richiesta GET a "https://example.com" e riceverai una risposta dal server.
 
-## Approfondimento:
+## Approfondimento
+Il download di pagine web è una pratica che risale alla nascita del web stesso. Inizialmente, il download di una pagina web era un'operazione semplice: si inviava una richiesta GET a un server e si riceveva il codice HTML della pagina. Oggi, molte pagine web sono dinamiche e richiedono un numero più complesso di passaggi per essere scaricate completamente.
 
-Scaricare pagine web è diventato una parte essenziale della programmazione moderna, poiché ci sono sempre più dati disponibili online. Esistono anche alternative a Gleam per scaricare pagine web, come il modulo `Httpc` di Erlang. L'implementazione di questa funzionalità richiede l'utilizzo dei protocolli HTTP e HTTPS.
+Ci sono molte librerie e strumenti alternativi per scaricare pagine web in diverse lingue e piattaforme. Alcuni popolari includono `requests` in Python, `axios` in Javascript, e `HttpClient` in .NET. 
 
-## Vedi Anche:
+`gleam/httpc` è una libreria di Gleam che rende semplice inviare richieste HTTP. La sua implementazione è un wrapper intorno all'implementazione Erlang di httpc, che è molto affidabile e ben supportata.
 
-Consulta la documentazione di Gleam sul modulo `Http` per ulteriori informazioni sull'uso di questa funzione. Puoi anche esplorare altri moduli utili per la manipolazione di dati web in Gleam, come `Html` e `Json`.
+## Vedi anche
+Per saperne di più su come utilizzare la libreria `gleam/httpc`, consulta la [documentazione ufficiale](https://hexdocs.pm/httpc/readme.html).
+
+Per un'introduzione più dettagliata al Gleam, potrebbe essere utile la [Guida di introduzione a Gleam](https://gleam.run/getting-started/).

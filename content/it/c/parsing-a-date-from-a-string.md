@@ -1,7 +1,7 @@
 ---
-title:                "Parsing di una data da una stringa"
-html_title:           "C: Parsing di una data da una stringa"
-simple_title:         "Parsing di una data da una stringa"
+title:                "Analizzare una data da una stringa"
+html_title:           "Fish Shell: Analizzare una data da una stringa"
+simple_title:         "Analizzare una data da una stringa"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
-"Analizzare una data da una stringa" è il processo di estrapolare la data da una stringa di testo. I programmatori spesso lo fanno per convertire una data in un formato diverso o per verificarne la validità.
+# Analisi di una Data da una Stringa in C
+
+## Cos'è & Perché?
+
+L'interpretazione di una data da una stringa è l'azione di estrarre informazioni sulla data da un formato di stringa. I programmatori lo fanno per processare e manipolare le date in una forma più utilizzabile nel codice.
 
 ## Come fare:
-```C
-//Esempio di analisi di una data da una stringa nel formato "dd/mm/aaaa"
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
-int main()
-{
-    char date_str[] = "15/07/2021"; //stringa contenente la data
-    struct tm date; //struttura per contenere la data
-    //Analisi della stringa usando la funzione sscanf()
-    sscanf(date_str,"%d/%d/%d",&date.tm_mday,&date.tm_mon,&date.tm_year);
-    //Stampa della data nel formato "mm/dd/yy"
-    printf("%02d/%02d/%02d",date.tm_mon,date.tm_mday,date.tm_year);
+Ecco un esempio semplice su come analizzare una data da una stringa usando la funzione `strptime` della libreria `time.h` in C.
+
+```C
+#include <time.h>
+#include <stdio.h>
+
+int main() {
+    struct tm tm;
+    char buf[255];
+
+    strptime("2022-02-15 22:45:50", "%Y-%m-%d %H:%M:%S", &tm);
+    strftime(buf, sizeof(buf), "%d %B %Y", &tm);
+    
+    printf("Data analizzata: %s\n", buf);
+    
     return 0;
 }
 ```
-Output: 07/15/21
 
-## Approfondimento:
-Il parsing di una data da una stringa è una pratica comune nella programmazione ed è utilizzato in molteplici contesti, come ad esempio nei sistemi di prenotazione e nei database. Esistono alcune alternative per gestire questa operazione, come l'utilizzo di librerie esterne o la creazione di funzioni personalizzate. Inoltre, il processo di parsing può essere più complesso se si vogliono gestire formati di data diversi.
+Uscita:
 
-## Vedi anche:
-- Manuale di C: <https://www.codingunit.com/c-tutorial-date-time-function/>
-- Libreria di parsing di data esterna: <https://github.com/HowardHinnant/date>
-- Tutorial su come creare una funzione di parsing personalizzata: <https://www.geeksforgeeks.org/how-to-parse-a-date-string-in-c/>
+```
+Data analizzata: 15 February 2022
+``` 
+
+## Approfondimento
+
+1. **Contesto storico**: L'interpretazione di una data da una stringa è una necessità comune nella programmazione da quando le date sono state rese disponibili in formato di stringa. Le funzioni come `strptime` sono state introdotte per risolvere questo problema.
+   
+2. **Alternative**: Ci sono diverse librerie disponibili che offrono funzioni di parsing della data come `date.h` o `boost/date_time.hpp` in C++. Queste offrono una gamma più ampia di funzioni e opzioni.
+
+3. **Dettagli Implementativi**: La funzione `strptime` prende una stringa e un formato come input e restituisce una struttura `tm`. Questa struttura contiene dettagli sulla data come anno, mese, giorno, ora, minuto, e secondo.
+
+## Vedi Anche
+
+- [`strptime`](https://pubs.opengroup.org/onlinepubs/007908799/xsh/strptime.html), La Funzione Originale da `time.h`
+- [`boost::date_time`](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html), Eccezionali Capacità di Parsing della Data in C++
+- [`strftime`](https://www.cplusplus.com/reference/ctime/strftime/), Per Formattare la Data in Stringhe

@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinje-argumenter"
-html_title:           "TypeScript: Lesing av kommandolinje-argumenter"
-simple_title:         "Lesing av kommandolinje-argumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,34 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Lesing av kommandolinjeargumenter i TypeScript
+
 ## Hva & Hvorfor?
-Lesing av argumenter fra kommandolinjen i TypeScript er en måte for programmerere å få tilgang til informasjon som sendes inn når programmet kjører. Dette kan være nyttig for å kunne tilpasse programmet til forskjellige situasjoner eller brukerpreferanser.
 
-## Hvordan:
+Kommandolinjeargumenter er de dataene du gir til et program når du starter det i et kommandolinjemiljø. Vi bruker det for å kontrollere run-time oppførsel av programmet.
+
+
+
+## Hvordan gjøre:
+
+Husk at den første argumentet alltid er stien til din Node.js kjerne, og det andre argumentet er stien til utførelsesfilen. Så de reelle argumentene starter fra indeks 2.
+
 ```TypeScript
-// Enkelt eksempel på å lese et enkelt argument fra kommandolinjen
-const argument = process.argv[2];
-console.log(`Argumentet fra kommandolinjen er: ${argument}`);
-
-// Eksempel på å lese flere argumenter og lagre de i et array
-const argumenter = process.argv.slice(2);
-console.log(`Alle argumenter fra kommandolinjen er: ${argumenter}`);
+let myArgs = process.argv.slice(2);
+console.log(myArgs);
+```
+Du kan kjøre programmet ditt med argumenter som dette: 
+```
+$ node myfile.js one two=three four
+```
+Output vil være:
+```
+[ 'one', 'two=three', 'four' ]
 ```
 
-Eksempel output:
+Du kan også parse argumentene etter eget behov. For eksempel:
+
+```TypeScript
+let myArgs = process.argv.slice(2);
+let argsParsed = myArgs.map(arg => arg.split('='));
+console.log(argsParsed);
 ```
-$ node readCommandLineArguments.ts --navn Bob --alder 30
-Argumentet fra kommandolinjen er: --navn
-Alle argumenter fra kommandolinjen er: --navn, Bob, --alder, 30
+Kjør programmet ditt med argumentene som ovenfor, vil output nå være:
+```
+[ [ 'one' ], [ 'two', 'three' ], [ 'four' ] ]
 ```
 
-## Dypdykk:
-Lesing av argumenter fra kommandolinjen er en vanlig praksis i de fleste programmeringsspråk. Dette ble introdusert for å gi programmerere mulighet til å gi input til et program når det kjøres, i tillegg til å gjøre det mer fleksibelt for å tilpasse programmet til forskjellige situasjoner.
 
-En alternativ måte å lese argumenter fra kommandolinjen på er å bruke et tredjeparts bibliotek, som for eksempel "yargs". Dette kan gi en mer strukturert og enkel måte å håndtere argumentene på.
+## Dyp Dykk
 
-Når du leser argumenter fra kommandolinjen i TypeScript, vil argumentene være tilgjengelige i prosessens "argv" array. Det første argumentet i arrayet vil være selve kommandoet som ble brukt for å kjøre programmet, mens de påfølgende argumentene vil være eventuelle input gitt av brukeren.
+Historisk sett, lesing av kommandolinjeargumenter er stammer fra Unix og Linux systemer, før GUI-er ble utbredt. Til tross for fremveksten av mer brukervennlige grensesnitt, forblir kommandolinjeargumentlesing en viktig teknikk, særlig for utvikling av skript og automatiserte oppgaver.
+
+I Node.js, er det alternative måter å håndtere kommandolinjeargumenter på. Noen populære biblioteker som minimist, yargs, og commander.js kan hjelpe med parsing og validering.
+
+Ved implementering, vær oppmerksom på at `process.argv` er en globalt tilgjengelig array innenfor Node.js miljøet som alltid er tilgjengelig for deg. Men det er viktig å vite at argumentene er alltid strenger. Selv tall må konverteres før du behandler dem som numeriske verdier.
+
 
 ## Se også:
-- [Dokumentasjon for prosessmodulen i Node.js](https://nodejs.org/api/process.html)
-- [Yargs dokumentasjon](https://github.com/yargs/yargs)
+
+For mer om dette emnet, se følgende linker:
+
+[Node.js dokumentasjon, process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+
+[yargs, et kraftig argument parsing biblioteket for Node.js](https://www.npmjs.com/package/yargs)
+
+[minimist, et minimalistisk Node.js argument parsing biblioteket](https://www.npmjs.com/package/minimist)
+
+[commander.js, en fullfunksjonert Node.js kommandolinje grensesnitt](https://www.npmjs.com/package/commander)

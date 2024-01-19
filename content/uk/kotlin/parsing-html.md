@@ -1,7 +1,7 @@
 ---
-title:                "Аналіз html"
-html_title:           "Kotlin: Аналіз html"
-simple_title:         "Аналіз html"
+title:                "Розбір HTML"
+html_title:           "Arduino: Розбір HTML"
+simple_title:         "Розбір HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-- ## Що & Чому?
-Парсинг HTML - це процес отримання окремих елементів веб-сторінки з її коду. Це корисно для програмістів, оскільки дозволяє автоматизувати взаємодію з веб-сайтами, отримувати потрібну інформацію та обробляти її подальше.
- 
-- ## Як:
-Нижче показані приклади коду і вихідні дані, які демонструють, як можна використовувати Kotlin для парсингу HTML.
- 
-```Kotlin
-val html = "<html><body><h1>Hello World!</h1><p>This is a sample paragraph.</p></body></html>"
-val doc = Jsoup.parse(html)
- 
-val title = doc.select("h1").text() //отримує текст заголовка
-val paragraph = doc.select("p").text() // отримує текст абзацу
- 
-println(title) // виводить "Hello World!"
-println(paragraph) // виводить "This is a sample paragraph."
-```
+## Що та навіщо?
 
-- ## Глибокий занурення:
-Історичний контекст:
-Парсинг HTML був дуже популярним у 90-х роках, коли широке поширення отримав Інтернет і веб-розробка. Раніше це був єдиний спосіб отримати дані з веб-сторінок, оскільки інші методи, такі як APIs, не були настільки розвиненими.
-Альтернативи:
-На сьогоднішній день існує багато альтернатив для парсингу HTML, такі як API для розробників, спеціальні програми та бібліотеки для різних мов програмування, включаючи Kotlin. Вибір підходящого інструменту залежить від потреб та завдань, які потрібно вирішити.
-Деталі реалізації:
-Для парсингу HTML використовується бібліотека Jsoup, яка дозволяє зручно працювати з різними елементами веб-сторінки, такими як заголовки, таблиці, посилання та інші. Для цього використовуються CSS-селектори - спеціальні шаблони для вибору певних елементів на сторінці.
- 
-- ## Дивитися також:
-Документація бібліотеки Jsoup: https://jsoup.org/
-Курс "Основи роботи з HTML": https://html.com/
-Стаття "HTML-парсинг від А до Я": https://webistana.com/blog/html-parsing/
+Парсинг HTML - це процес вилучення специфічної інформації з HTML файлів. Програмісти роблять це для автоматизації перегляду веб-сторінок, сбору та обробки даних.
+
+## Як це зробити:
+
+Kotlin має відмінну бібліотеку для парсингу HTML - jsoup. Щоб здійснити парсинг, ось код:
+```Kotlin
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+import org.jsoup.nodes.Element
+
+fun main() {
+    val htmlContent = "<html><head><title>Test</title></head><body><p>Hello, world!</p></body></html>"
+    val document: Document = Jsoup.parse(htmlContent)
+    val bodyElement: Element = document.body()
+    println(bodyElement.text())  // Виведе: "Hello, world!"
+}
+```
+Цей код перетворює HTML-рядок у `Document` об'єкт, а потім вилучає з нього текст з тіла сторінки.
+
+## Глибше занурення
+
+1. Історичний контекст: Парсинг HTML у незв'язних об'єктах був першим методом автоматизації перегляду веб-сторінок. Jsoup був створений, щоб програмісти могли легко працювати з HTML на високому рівні.
+2. Альтернативи: Інші альтернативи для парсингу HTML в Kotlin включают HtmlCleaner та TagSoup.
+3. Деталі реалізації: Jsoup парсить HTML, використовуючи DOM (Document Object Model), створюючи структуру дерева, яка дозволяє легко пересуватись та вилучати дані.
+
+## Дивіться також
+
+1. [Kotlin документація](https://kotlinlang.org/docs/home.html)
+2. [Jsoup документація](https://jsoup.org/)
+3. [HtmlCleaner документація](https://htmlcleaner.sourceforge.io/)
+4. [TagSoup документація](https://home.ccil.org/~cowan/XML/tagsoup/)

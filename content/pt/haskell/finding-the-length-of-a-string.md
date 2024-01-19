@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando o comprimento de uma string."
-html_title:           "Haskell: Encontrando o comprimento de uma string."
-simple_title:         "Encontrando o comprimento de uma string."
+title:                "Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,32 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por Que?
+# Encontrando o tamanho de uma string em Haskell
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação, pois permite aos desenvolvedores saber quantos caracteres uma determinada string possui. Isso é útil para várias aplicações, como validação de entrada do usuário, manipulação de texto e formatação de saída.
+## O que é e por quê?
 
-## Como Fazer:
+Encontrar o tamanho de uma string significa determinar o número de caracteres que ela contém. Como programadores, fazemos isso quando precisamos saber quantos caracteres um usuário inseriu, ou quando estamos trabalhando com análises de texto.
 
-Para encontrar o comprimento de uma string em Haskell, podemos usar a função `length` da biblioteca padrão `Prelude`. Veja abaixo um exemplo de código:
+## Como fazer:
+
+Para encontrar o tamanho (ou comprimento) de uma string em Haskell, você pode usar a função `length`.
 
 ```Haskell
--- Definir uma string
-let minhaString = "Hello World!"
--- Usar a função `length` para encontrar o comprimento
-length minhaString
--- Saída: 12
+tamanho :: String -> Int
+tamanho str = length str
 ```
 
-Observe que a função `length` retorna um valor do tipo `Int`, que representa um número inteiro.
+Para testar, você pode utilizar essa função no interprete do Haskell.
 
-## Mergulho Profundo:
+```Haskell
+ghci> tamanho "Ola, mundo!"
+13
+```
 
-A função `length` em Haskell é baseada no conceito de lista. Uma lista é uma estrutura de dados que pode armazenar múltiplos valores de um mesmo tipo. No caso de uma string, cada caractere é considerado um elemento da lista.
+Este resultado indica que a string "Ola, mundo!" tem 13 caracteres.
 
-Existem também outras formas de encontrar o comprimento de uma string em Haskell, como usando a função `genericLength` da biblioteca `Data.List`, que retorna um valor do tipo `Integer`.
+## Mergulhando fundo
 
-## Veja Também:
+A função `length` em Haskell tem sua raiz no cálculo Lambda, um conceito que é fundamental para a programação funcional e para Haskell em si. Por estar usando listas, essa função precisa percorrer toda a lista (ou seja, a string) para contar seus elementos, o que implica em um tempo de execução de O(n).
 
-- [Documentação da função `length` em Haskell](https://hackage.haskell.org/package/base/docs/Prelude.html#v:length)
-- [Tutorial sobre strings em Haskell](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
-- [Documentação da função `genericLength` em Haskell](http://hackage.haskell.org/package/base-4.12.0.0/docs/Data-List.html#v:genericLength)
+Há outras maneiras de encontrar o tamanho de uma string em Haskell. Você pode usar recursão direta para implementar uma função de comprimento por conta própria. No entanto, `length` é mais comumente usado por causa de sua simplicidade e eficiência.
+
+Além disso, é importante lembrar que strings em Haskell são listas de caracteres. Portanto, o tamanho de uma string é o número de caracteres que ela contém, e não o número de bytes.
+
+## Veja também
+
+Você pode aprender mais sobre strings e listas em Haskell nos seguintes recursos:
+
+1. LYAHFGG (Learn You a Haskell For Great Good) sobre [listas](http://learnyouahaskell.com/starting-out#tuples)
+2. Real World Haskell: [Strings e listas de caracteres](http://book.realworldhaskell.org/read/using-typeclasses.html)
+3. A implementação da função [length](https://hackage.haskell.org/package/base-4.15.0.0/docs/src/GHC.List.html#length) na biblioteca padrão de Haskell
+4. Se você é novo em Haskell, você pode achar útil esse tutorial sobre [setup de ambiente e sintaxe básica](http://learnyouahaskell.com/introduction).

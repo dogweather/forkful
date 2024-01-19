@@ -1,6 +1,6 @@
 ---
 title:                "ウェブページのダウンロード"
-html_title:           "Arduino: ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,45 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何と、なぜするの？
+# 何となぜ？ (What & Why?)
+ウェブページをダウンロードするとは、ウェブサーバーから情報を取得し、自分のデバイスに保存することです。プログラマーはこれを行うことで、オフラインでアクセス可能なデータを提供したり、特定の情報を取得したりします。
 
-ウェブページをダウンロードするとは、インターネットから特定のウェブページを取得することです。プログラマーは主に、ウェブサイトから必要なデータを取得するためにこれを行います。
-
-##  方法：
-
-```
-Arduinoを使用し、ウェブページをダウンロードする方法はいくつかあります。まず、ウェブサーバーへの接続を確立する必要があります。次に、HTTPリクエストを使用して特定のページを指定し、サーバーからデータを取得します。最後に、必要なデータを処理し、使用する形式に変換します。以下は、ダウンロードしたウェブページをシリアルモニターに表示する例です。
+# どうやって：(How To:)
+以下は、Arduinoでウェブページをダウンロードするための基本的なコードです。
 
 ```Arduino
-// ウェブサーバーへの接続を確立する
-WiFiClient client;
-if (!client.connect(server, 80)) {
-  Serial.println("接続に失敗しました");
-  return;
+#include <Ethernet.h>
+#include <SPI.h>
+
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+char server[] = "www.example.com";
+
+EthernetClient client;
+
+void setup()
+{
+  Ethernet.begin(mac);
+  Serial.begin(9600);
+
+  if (client.connect(server, 80)) {
+    Serial.println("connected");
+    client.println("GET / HTTP/1.1");
+    client.println("Host: www.example.com");
+    client.println("Connection: close");
+    client.println();
+  }
+  else {
+    Serial.println("connection failed");
+  }
 }
 
-// ページを要求する
-client.println("GET /index.html HTTP/1.1");
-client.println("Host: www.example.com");
-client.println("Connection: close");
-client.println();
-
-// ページのデータを取得する
-while(client.available()){
-  char c = client.read();
-  Serial.print(c);
+void loop()
+{
+  if (client.available()) {
+    char c = client.read();
+    Serial.print(c);
+  }
+  
+  if (!client.connected()) {
+    client.stop();
+    for(;;)
+      ;
+  }
 }
-
-// 接続を閉じる
-client.stop();
 ```
+このコードはwww.example.comのホームページをHTTP GETリクエストを使ってダウンロードします。
 
-## ディープダイブ：
+# ディープダイブ (Deep Dive)
+インターネットの初期段階では、ウェブページのダウンロードはFTPを使用して行われていた代わりに、今日ではHTTPが主流となっています。Arduinoでは、今上記で説明したEthernetライブラリのほか、WiFiライブラリも利用可能で、具体的なライブラリの選択はプロジェクトのニーズや使用しているハードウェアによります。
 
-ウェブページをダウンロードする方法には、さまざまなアプローチがあります。Arduino以外にも、例えばESP32やESP8266を使用することもできます。また、HTTP以外のプロトコルを使用することも可能です。さらに、ウェブスクレイピングと呼ばれる、ウェブサイトからデータを収集する方法もあります。
+データの読み取り方も重要です。上記の方法は大量のデータに対しては非効率的で、実際にはデータの流れを管理しながらページをダウンロードするための追加コードが必要です。
 
-## 関連リンク：
-
-- [ウェブスクレイピングについての記事](https://qiita.com/manabuyasuda/items/edb7e6f69622c9ccf28d)
-- [ESP32を使用したウェブページのダウンロードの方法についてのチュートリアル](https://randomnerdtutorials.com/esp32-web-server-getting-query-parameters/)
-- [ESP8266を使用したウェブページのダウンロードの方法についてのチュートリアル](https://circuitdigest.com/microcontroller-projects/esp8266-based-web-page-download-to-sd-card)
+# さらに見るべきもの (See Also)
+1. Arduino Ethernet ライブラリ: https://www.arduino.cc/en/Tutorial/LibraryExamples/Ethernet 
+2. Arduino WiFi ライブラリ: https://www.arduino.cc/en/Reference/WiFi 
+3. HTTPの概要: https://www.w3.org/Protocols/

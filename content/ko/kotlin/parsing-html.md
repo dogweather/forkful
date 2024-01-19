@@ -1,7 +1,7 @@
 ---
-title:                "HTML 분석하기"
-html_title:           "Kotlin: HTML 분석하기"
-simple_title:         "HTML 분석하기"
+title:                "HTML 파싱"
+html_title:           "Fish Shell: HTML 파싱"
+simple_title:         "HTML 파싱"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-아마도 당신은 "파싱 HTML"이라는 용어를 들어본 적이 있을 것입니다. 그렇다면 이게 무엇이고, 왜 프로그래머들이 이런 작업을 하는 걸까요? 우선 "파싱"이란 HTML 문서에서 원하는 정보를 추출하는 과정을 말합니다. 예를 들어, 웹사이트를 크롤링하기 위해 웹 페이지의 내용을 파싱해서 원하는 데이터를 추출할 수 있습니다. 이것은 많은 웹 개발 프로젝트에서 중요한 부분입니다.
+## 무엇 & 왜?
 
-## 가상 환경 설정
-파싱을 위해 가상 환경을 먼저 설정해야 합니다. 코틀린에서 사용하는 Jsoup 라이브러리는 HTML 문서를 파싱하는 데 있어서 가장 많이 사용되는 라이브러리입니다. 먼저 프로젝트의 build.gradle 파일에 다음과 같은 의존성을 추가합니다.
+HTML 파싱은 HTML 코드를 분석하고 이해 가능한 구조로 변환하는 과정입니다. 이를 통해 프로그래머들은 웹 페이지의 데이터를 쉽게 추출하고 처리할 수 있습니다.
 
-```Kotlin
+## 어떻게:
+
+Kotlin에서 HTML 파싱을 수행하려면, jsoup 라이브러리를 사용하면 됩니다. 
+```kotlin
+// 첫째로, jsoup 라이브러리를 프로젝트에 추가해야 합니다.
 dependencies {
-    implementation('org.jsoup:jsoup:1.13.1')
+    implementation 'org.jsoup:jsoup:1.14.1'
+}
+
+// 그런 다음 HTML를 파싱하는 가장 간단한 방법은 다음과 같습니다.
+
+fun main() {
+    val html = "<html><head><title>제목</title></head><body>내용</body></html>"
+    val doc = Jsoup.parse(html)
+    println("Title: " + doc.title())
+    println("Body: " + doc.body().text())
 }
 ```
+이러한 코드는 '제목'을 프린트하는 데 사용되며, 그렇지 않으면 '내용'을 프린트합니다.
 
-이제 코드를 작성해보겠습니다. Jsoup 객체를 사용하면 간단하게 HTML 문서를 파싱할 수 있습니다. 예를 들어, "http://example.com" 웹 사이트의 제목을 가져와보겠습니다.
+## 깊게 파보기:
+   
+HTML 파싱은 웹 크롤링의 가장 기본적인 부분으로, 웹의 초기부터 사용되어 왔습니다. 이를 대체할 수 있는 것들로는 DOM 파싱, SAX 파싱, XML 파싱 등이 있으나 이 모든 것들이 HTML 파싱을 완전히 보안할 수 있는 것은 아닙니다. HTML 파싱의 구현 세부 사항은 자신이 사용하는 라이브러리에 따라 다르지만, 대부분의 경우 Document Object Model (DOM)을 기반으로 합니다.
 
-```Kotlin
-Jsoup.connect("http://example.com").get().title()
-```
+## 참고 자료:
 
-위의 코드에서 `connect()` 메서드를 이용해 웹 사이트에 연결하고, `get()` 메서드를 이용해 HTML 문서를 가져옵니다. 그리고 `title()` 메서드를 사용해 해당 문서의 제목을 가져옵니다. 간단하죠? 이렇게 간단한 코드로도 다양한 정보를 추출할 수 있습니다.
+[jsoup 공식 문서](https://jsoup.org/cookbook/extracting-data/selector-syntax)
 
-## 깊이있게 들어가보기
-HTML 문서 파싱은 현재 웹 개발에서 매우 일반적으로 사용되는 기술입니다. 하지만 이 기술은 인터넷의 초기부터 존재해왔습니다. 과거에는 웹 스크래핑을 위해 Perl이나 Python과 같은 언어를 주로 사용했지만, 지금은 Jsoup과 같은 라이브러리를 사용하여 더 쉽고 효율적으로 파싱을 할 수 있습니다. 또한, 웹 스크래핑 외에도 자동화된 테스트나 데이터 마이닝 등 다양한 분야에서 파싱이 활용되고 있습니다.
+[HTML 파싱에 대한 위키백과 정보](https://en.wikipedia.org/wiki/HTML_parsing)
 
-또한, 코틀린에는 Jsoup 이외에도 파싱을 위한 라이브러리가 존재합니다. 예를 들어, KnoXML은 XML 문서를 파싱할 때 유용하며, KPath는 JSON 문서를 파싱할 때 사용될 수 있습니다. 따라서 프로젝트의 목적과 상황에 맞게 적합한 라이브러리를 선택하시면 됩니다.
-
-마지막으로, 파싱을 할 때 주의해야 할 점이 있습니다. HTML 문서는 구조적이지 않고 태그의 순서나 구성이 바뀔 수 있기 때문에 늘 예상치 못한 결과가 나올 수 있습니다. 따라서 잘못되지 않도록 코드를 작성하는 것이 중요합니다.
-
-## 함께 알아보기
-파싱을 위한 코드 작성은 프로젝트에서 매우 중요한 부분입니다. 따라서 다양한 라이브러리를 비교하고, 원하는 정보를 추출하는 방법에 대해 더 자세히 공부하는 것이 좋습니다. 아래 링크에서 더 많은 정보를 찾아보세요.
-
-https://kotlinlang.org/docs/reference/jsoup.html
+[Kotlin 공식 문서](https://kotlinlang.org/docs/home.html)

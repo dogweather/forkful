@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de l'html"
-html_title:           "Swift: Analyse de l'html"
-simple_title:         "Analyse de l'html"
+title:                "Analyser le HTML"
+html_title:           "Kotlin: Analyser le HTML"
+simple_title:         "Analyser le HTML"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,30 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Qu'est-ce que c'est & Pourquoi ?
 
-Paser l'HTML est une tâche importante pour les programmeurs car cela leur permet de récupérer des données à partir d'une page web et de les utiliser dans leurs applications. Cela implique d'analyser les balises et les structures de la langue HTML pour extraire les informations nécessaires.
+L'analyse HTML (HTML parsing) est le processus d'interprétation du code HTML pour le transformer en une structure de données manipulable. On l'utilise pour extraire des données spécifiques depuis un document HTML, nécessaire pour le développement web et le web scraping.
 
-## Comment faire:
+## Comment faire :
+
+Tout d'abord, installez le package `SwiftSoup` via Swift Package Manager.
 
 ```Swift
-// Exemple de code pour récupérer le titre d'une page web en utilisant SwiftSoup
-
-let siteURL = "https://www.monsite.com"
-let html = try! String(contentsOf: URL(string: siteURL)!, encoding: .utf8)
-let doc: Document = try SwiftSoup.parse(html)
-let title: String = try doc.title()
-print("Le titre de la page web est: \(title)")
+ .package(url: "https://github.com/scinfu/SwiftSoup.git", from: "2.3.2")
 ```
 
-Output: Le titre de la page web est: Mon site
+Pour analyser du HTML, utilisez le code suivant:
 
-## Plongée en profondeur:
+```Swift
+import SwiftSoup
 
-L'analyse syntaxique HTML existe depuis les débuts du web et est toujours un processus important dans le développement web. Avant les bibliothèques telles que SwiftSoup, les programmeurs devaient utiliser des expressions régulières pour extraire des données à partir de HTML. Cela était difficile et sujet à des erreurs. Maintenant, grâce à des bibliothèques comme SwiftSoup, le processus de parsing HTML est plus facile et plus fiable. D'autres alternatives incluent des outils tels que XPath et CSS pour sélectionner des éléments spécifiques dans une page web.
+let html = "<html><body><p>Hello, World!</p></body></html>"
+do {
+    let doc: Document = try SwiftSoup.parse(html)
+    let bodyText: String = try doc.body()!.text()
+    print(bodyText)
+}
+catch Exception.Error(_, let message) {
+    print(message)
+}
+catch {
+    print("error")
+}
+```
 
-## Voir aussi:
+Dans ce code, "Hello, World!" sera imprimé à la console.
 
-- [SwiftSoup Documentation](https://github.com/scinfu/SwiftSoup/blob/master/Documentation/GettingStarted.md)
-- [Understanding HTML parsing in Swift](https://medium.com/@theonlyandone/understanding-html-parsing-in-swift-840e60edc134)
-- [XPath vs CSS: Which One to Use for Web Scraping](https://www.promptcloud.com/blog/xpath-vs-css-which-is-better-for-scraping/)
+## Plongée profonde 
+
+L'analyse HTML a une longue histoire; bien avant Swift, les langages tels que Perl, Python et PHP étaient utilisés pour cela. Swift est de plus en plus préféré pour son efficacité et sa sécurité. 
+
+Il existe de nombreuses alternatives à SwiftSoup pour analyser du HTML en Swift, y compris Kanna et Ji. Chacun a ses propres avantages et inconvénients, donc votre choix dépendra de vos besoins spécifiques. 
+
+Lors de l'analyse HTML avec SwiftSoup, le HTML est converti en une structure connue sous le nom d'arbre DOM (Document Object Model). C'est une représentation en arbre des éléments HTML du document qui permet le traitement et la manipulation.
+
+## Voir aussi 
+
+1. Documentation SwiftSoup: https://github.com/scinfu/SwiftSoup
+2. Kanna, une autre librairie Swift pour l'analyse HTML: https://github.com/tid-kijyun/Kanna
+3. Tutoriel sur l'analyse HTML en Swift: https://www.hackingwithswift.com/articles/140/how-to-make-sense-of-html-using-swiftsoup

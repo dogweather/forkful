@@ -11,33 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Getting the current date means retrieving the current date and time from the system. Programmers often do this to display the current date and time on their applications or keep track of when certain events occurred.
+
+Fetching the current date refers to obtaining the exact day, month and year at a particular moment in time. This is crucial in programming for logging activities, timestamping data entries, and implementing features based on real-time or date-specific conditions.
 
 ## How to:
+
+Getting the current date in Elm is quite straightforward. Here's a simple snippet:
+```Elm
+import Time
+
+currentDate : Task.Task Time.Error Time.Posix
+currentDate =
+    Time.now
 ```
-Elm.Time.now
-```
+Within Elm, the `Time.now` function is not synchronous like in some other languages. It creates a `Task` instead; when executed, the task will give us the current time.
 
-This function from the Elm Time module returns the current date and time as a Timestamp value. It can be called on its own or combined with other functions to manipulate the current date and time.
+## Deep Dive
 
-Example:
-```
-Elm.Time.now -- returns the current date and time
-|> Elm.Time.toDate -- converts the Timestamp value to a Date value
-|> Elm.Date.toIsoString -- converts the Date value to an ISO string
-```
-Output: "2021-09-21T10:00:00.000Z" (output may vary depending on the current date and time)
+Historically, obtaining the current date and time was a simple task in many languages, but often led to common mistakes related to time zones and daylight saving time. Elm, eager to avoid such pitfalls, provides the `Posix` time representation that captures an instant in time, independent of time zones.
 
-## Deep Dive:
-### Historical Context:
-The concept of getting the current date and time has been around since the early days of computing. Originally, programmers had to manually enter the current date and time into their programs. With the development of operating systems, accessing the system's current date and time became possible.
+Whilst `Time.now` is probably the most used technique, remember that it returns a `Task`. This behavior can be surprising if coming from a language like JavaScript, where `Date.now()` returns the current date as a simple value. Tasks in Elm enable handling asynchronous operations and side-effects in a pure functional language.
 
-### Alternatives:
-Elm has a few alternative functions for retrieving the current date and time, such as `Elm.Time.millisToUtc`, `Elm.Date.toUtc`, and `Elm.Date.toIsoString`. However, `Elm.Time.now` is the simplest and most widely used method.
+The specific time format you use (ISO, Unix, etc.) will mostly depend on your particular needs. Elm provides `Time.toIsoString`, `Time.fromIsoString`, `Time.toMillis` and `Time.fromMillis` functions to convert `Posix` values to and from these common formats.
 
-### Implementation Details:
-When you call `Elm.Time.now`, it makes a request to the system's clock and returns the current time as a Timestamp value. The Timestamp value is a record with fields for year, month, day, hour, minute, second, and millisecond. In order to get a more user-friendly date and time format, you can use additional functions to convert the Timestamp value to a Date value and then to a string.
+## See Also
 
-## See Also:
-- Elm Time module documentation: https://package.elm-lang.org/packages/elm/time/latest/
-- MDN Date object: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+Elm's documentation provides more specific details about working with time:
+
+1. [Elm - Time](https://package.elm-lang.org/packages/elm/time/latest/Time)
+2. [Elm - Date and Time](https://elmprogramming.com/date-and-time.html)
+3. [Elm - Tasks](https://guide.elm-lang.org/effects/tasks.html) (For understanding how `Time.now` works)

@@ -1,7 +1,7 @@
 ---
-title:                "정규식을 사용하는 방법"
-html_title:           "Bash: 정규식을 사용하는 방법"
-simple_title:         "정규식을 사용하는 방법"
+title:                "정규 표현식 사용하기"
+html_title:           "Bash: 정규 표현식 사용하기"
+simple_title:         "정규 표현식 사용하기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -12,32 +12,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-regular expressions를 사용하는 것은 무엇인지 설명해보자면, 정규 표현식은 문자열에서 특정한 패턴을 찾는 데 사용되는 표현 방식입니다. 프로그래머들은 이것을 사용하는 이유는, 예를 들어 문자열 검색, 문서 분석 또는 데이터 추출 같은 작업을 더 쉽게 할 수 있기 때문입니다.
+정규식(regular expression)은 특정 패턴이 문자열에 포함되어 있는지 여부를 확인할 때 사용하는 강력한 도구입니다. 프로그래머들은 효율적인 문자열 검색, 치환 등을 위해 정규식을 활용합니다.
 
-## 방법:
+## 사용법:
 
-`Bash` 블록 안에 코드 예제와 결과물을 포함하여 코딩 예제를 설명하겠습니다. 
-
-```Bash
-# "Hello, World!" 문자열에서 'o'를 찾는 예제
-$ echo "Hello, World!" | grep 'o'
-o
-```
+여러분이 정규식을 활용하여 한 문자열에서 다른 문자열을 찾아내는 방법을 알려 드리겠습니다.
 
 ```Bash
-# 임의의 텍스트 파일에서 이메일 주소를 추출하는 예제
-$ cat input.txt
-Hi, my email is example@gmail.com and I love coding!
-$ grep -o '[a-zA-Z0-9_.-]*@[a-zA-Z]*.[a-z]{2,3}' input.txt
-example@gmail.com
+echo "Welcome to Bash programming!" | grep -o "Bash"
 ```
 
-## 깊게 파고들기:
+이 명령어를 실행하면 #### 창에 'Bash'라는 단어가 표시됩니다. `grep` 명령은 입력받은 문자열에서 검색하고자 하는 패턴을 찾는 역할을 합니다. `-o` 옵션을 사용하면 일치하는 정확한 단어만 표시하게 됩니다.
 
-정규 표현식은 1950년대에 톰슨 외에도 여러 고급 프로그래머들이 개발을 한 이래로, 프로그래밍에 매우 유용한 기능으로 자리 잡고 있습니다. 대안으로는 Shell 스크립트에서 문자열 관련 작업에 자주 사용되는 `awk`, `sed` 등의 명령어가 있으며, 이러한 명령어들도 정규 표현식을 기반으로 작동합니다. 구현 상세 정보로는 `Regex` 엔진이 작동하는 방식, 파서와 어떻게 동작하는지 등이 포함될 수 있습니다.
+## 깊이 알기:
 
-## 관련 자료:
+정규식은 1950년대에 이론화되어, 다양한 언어와 시스템에서 반복적 작업을 처리하는 데 사용됩니다. `awk` 또는 `sed` 같은 방식도 문자열 처리를 위해 사용되지만, `grep`은 가장 일반적인 방식입니다.
 
-- [Bash 정규 표현식 소개](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
-- [Regex 테스트와 배움터](https://regex101.com/)
-- [정규 표현식을 대체할 수 있는 명령어들](https://www.lifewire.com/search-commands-by-specific-criteria-2201117)
+정규식의 구현은 대체로 최소화 DFA(Deterministic Finite Automaton를 활용한 컴파일과정을 통해 이루어집니다. 이는 복잡하지만, 자세한 내용은 우리 토픽 범위를 벗어나므로 이 부분은 패스하겠습니다.
+
+## 참고 자료:
+
+- [정규 표현식 쿡북 2판](https://www.hanbit.co.kr/store/books/look.php?p_code=B4300598719)
+- [Bash에서 정규식 사용하기](https://wiki.kldp.org/wiki.php?page=RegularExpression%20in%20Bash)
+- [정규식에 대한 MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)

@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns"
-html_title:           "C++: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en katalog existerar"
+html_title:           "C++: Kontrollera om en katalog existerar"
+simple_title:         "Kontrollera om en katalog existerar"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att kontrollera om en mapp existerar är en process som programmerare använder för att försäkra sig om att en viss mapp eller sökväg finns på en dator eller server. Detta är ett viktigt steg för att säkerställa att programmet kan fortsätta köra utan problem.
+## Vad & Varför:
 
-## Hur man:
-Du kan använda C++ biblioteket **<filesystem>** för att kontrollera om en mapp finns eller inte. Här är ett exempel på hur man kan göra det:
+Att kontrollera om en katalog finns är enkelt: det är bara att se om en viss mapp har skapats på din filsystem. Varför gör vi detta? För att undvika felmeddelanden eller systemkrascher när vi försöker ändra eller flytta till en mapp som inte finns.
 
-```
+## Så här gör du:
+
+För jämna saker ut, låt oss dyka in i lite kod. Vi kommer att behöva följa `#include <filesystem>`. `std::filesystem::exists()` kommer att göra jobbet.
+
+```C++
 #include <iostream>
 #include <filesystem>
-    
+
 int main() {
-    if(std::filesystem::exists("C:/Users/mappnamn")) {
-        std::cout << "Mappen finns!" << std::endl;
+    if(std::filesystem::exists("/your/path")) {
+        std::cout << "Katalogen finns!\n";
     } else {
-        std::cout << "Mappen finns inte!" << std::endl;
+        std::cout << "Katalogen finns inte.\n";
     }
     return 0;
 }
 ```
 
-**Output:** Mappen finns eller Mappen finns inte beroende på om mappen existerar eller inte.
+Om katalogen finns kommer output vara "Katalogen finns!", annars kommer det vara "Katalogen finns inte."
 
-## Deep Dive:
-Att kontrollera en mappexister är ett vanligt behov för många olika program, speciellt för program som hanterar filer eller mappar på en dator. Alternativet att använda **<filesystem>** biblioteket i C++ är en enkel och effektiv metod för att lösa denna uppgift.
+## Djupdykning:
 
-Det finns också andra metoder för att kontrollera om en mapp existerar i C++, som till exempel att använda **_stat** funktionen eller **GetFileAttributes** funktionen från Windows API. Dessa metoder kräver emellertid mer kod och kan vara svårare att använda än att helt enkelt använda **<filesystem>** biblioteket.
+Dina alternativ är inte begränsade till `std::filesystem::exists()`. Första versionen av filsystem API tillägget kommer ifrån boost biblioteket före C++17. Ett annat alternativ är att använda `stat` systemanrop, men det kommer vara svårare att portera ditt program till andra plattformar. 
 
-När du använder **<filesystem>** biblioteket för att kontrollera om en mapp existerar görs detta genom att söka igenom filsystemet efter den givna sökvägen. Om mappen finns kommer funktionen att returnera **true**, annars kommer den att returnera **false**.
+## Se Även: 
 
-## Se även:
-- [std::filesystem::exists](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [_stat function](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/stat-wstat-_stat32-wstat32)
-- [GetFileAttributes function](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesa)
+Vill du se mer? Kolla in dessa relaterade resurser:
+
+- cppreference.com: [std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
+- boost.org: [Filesysteem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)
+- linux.die.net: [stat system call](https://linux.die.net/man/2/stat)

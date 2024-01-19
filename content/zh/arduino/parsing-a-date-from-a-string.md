@@ -1,6 +1,6 @@
 ---
 title:                "从字符串解析日期"
-html_title:           "Arduino: 从字符串解析日期"
+html_title:           "C: 从字符串解析日期"
 simple_title:         "从字符串解析日期"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,23 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是解析日期？ 
-解析日期是从一个字符串中提取出日期信息的过程。对于程序员来说，解析日期是十分重要的，因为它可以帮助我们将文本中包含的日期信息转换成计算机可以识别和处理的格式。
+## 什么以及为什么?
+解析字符串中的日期意味着将字符串转化为程序可以理解的日期格式。程序员之所以要这么做，是因为这能帮助我们正确处理和操作日期数据。
 
-## 如何进行解析日期
-Arduino提供了几种方法来解析日期，具体步骤如下：
-1. 通过使用 ```parseInt()``` 函数将字符串中的日期信息转换成整数。例如，字符串 “2021年06月23日” 将会被转换成对应的整数 20210623。
-2. 使用 ```substring()``` 函数来从字符串中截取出日期信息的各个部分。例如，“2021年06月23日” 可以通过截取字符串的前四个字符得到年份信息。
-3. 将截取出的日期信息合并起来，在Arduino内部使用 ```DateTime``` 函数来创建一个日期时间对象。通过这个对象，我们就可以方便地对日期进行比较、格式化等操作。
+## 如何做：
+在Arduino中，我们可以使用内建函数，来解析字符串中的日期。例如：
 
-## 深入了解
-解析日期在程序设计领域有着悠久的历史。在早期的计算机中，日期格式化是由人工完成的，而后来的编程语言则提供了内置的日期处理功能。如今，解析日期已经成为程序员必备的一项技能，因为几乎所有的软件都需要处理日期信息。
+```Arduino
+#include <TimeLib.h>
 
-除了Arduino提供的方法外，还有一些其他的解析日期的工具和库，例如 ```TimeLib``` 函数库和第三方库 ```DateTime```。这些工具可以帮助程序员更简单、高效地处理日期信息。
+time_t t;
+char dateStr [] = "2022-07-22 19:30:01";
 
-关于日期的格式和解析方式，在不同的国家和文化可能有所不同。因此，在编写程序时，务必要注意清楚所使用的日期格式，并做好适配处理，以避免因格式不匹配而导致的错误。
+void setup() {
+  Serial.begin(9600);
+  t = parseTime(dateStr);
+  if (t == 0) {
+    Serial.println("Failed to parse time");
+  } else {
+    Serial.println("Time parsed successfully");
+  }
+}
 
-## 参考链接
-- Arduino官方文档：https://www.arduino.cc/reference/en/language/functions/communication/serial/parseint/
-- TimeLib函数库：https://github.com/PaulStoffregen/Time
-- DateTime第三方库：https://www.locoduino.org/spip.php?article5
+time_t parseTime(char* dateTime) {
+  char *dateToken;
+  int year, month, day, hour, minute, second;
+
+  dateToken = strtok(dateTime, "-");
+  year = atoi(dateToken);
+
+  dateToken = strtok(NULL, "-");
+  month = atoi(dateToken);
+  
+  dateToken = strtok(NULL, " ");
+  day = atoi(dateToken);
+ 
+  dateToken = strtok(NULL, ":");
+  hour = atoi(dateToken);
+
+  dateToken = strtok(NULL, ":");
+  minute = atoi(dateToken);
+
+  dateToken = strtok(NULL, "\0");
+  second = atoi(dateToken);
+
+  return makeTime(second, minute, hour, day, month, year);
+}
+```
+
+当你运行这段代码，Arduino代码就会从`dateStr`字符串中解析出日期和时间，并打印出成功的消息。
+
+## 深入探讨
+解析字符串日期有着悠久的历史，但Arduino直到最近才发展出强大的库支持。除了`<TimeLib.h>`，还有其他库如`<DateTime.h>`可供选择。 需要注意的是，使用不同的库，方法名和参数可能会有所不同，但基本概念是相同的。 
+
+日期解析的具体实现中涉及到了`strtok`和`atoi`这两个重要的函数。`strtok`函数用于分割字符串，而`atoi`函数则用于将字符串转换为整数。
+
+## 参考文献
+为了提高你的Arduino编程技能，你可能会对以下资源有兴趣：
+1. Arduino 官方网站: <https://www.arduino.cc/>
+2. Arduino中文社区论坛: <http://www.arduino.cn/>
+3. 《Getting Started with Arduino》
+4. 《Arduino Cookbook》

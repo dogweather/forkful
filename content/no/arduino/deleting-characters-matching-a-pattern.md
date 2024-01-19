@@ -11,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å slette tegn som matcher et mønster er rett og slett en måte for programmerere å fjerne uønsket informasjon fra en tekststreng. Dette kan være nyttig for å rense og strukturere data, for eksempel når man jobber med sensoravlesninger.
 
-## Hvordan:
-For å slette tegn som matcher et mønster i Arduino, kan man bruke funksjonen "replace()". Denne funksjonen tar inn tre parametere: teksten man vil søke gjennom, mønsteret man ønsker å slette og teksten man vil erstatte matchen med. 
+Å slette tegn som matcher et mønster handler om å identifisere spesifikke tegnkombinasjoner i tekst og fjerne dem. Dette er nyttig for å rydde opp i data, luke ut uønskede tegn og effektivisere behandlingen av informasjon.
 
-```Arduino
-replace("Det er en tekst", "er", "");
-```
+## Hvordan gjøre det:
 
-Dette vil gi følgende output:
+For å demonstrere, la oss lage en funksjon for å slette alle tall fra en tekststreng. Her er en kodebit som gjør jobben:
 
 ```Arduino
-"Dt en tekst"
+String tekst = "D123ette4 er 56en 789test";
+String nyTekst = "";
+
+for (int i = 0; i < tekst.length(); i++){
+ if (!isDigit(tekst.charAt(i))){
+   nyTekst += tekst.charAt(i);
+ }
+}
+
+Serial.println(nyTekst);
 ```
 
-Man kan også bruke denne funksjonen til å fjerne flere tegn ved å erstatte det man ønsker å slette med et lengre tomt tekststreng. For eksempel:
+Utdata vil være: "Dette er en test".
 
-``` Arduino
-replace("abc123def456", "123", "   ");
-```
+## Dypdykk:
 
-Dette vil gi følgende output:
+Historisk sett, har funksjonen for sletting av tegn som matcher et mønster sin opprinnelse fra regulære uttrykk (RegEx), som ble introdusert allerede i 1950-tallet.
 
-```Arduino
-"abcdef456"
-```
+Det finnes alternativer til å bruke en for-løkke og isDigit-funksjonen som i eksemplet over. For eksempfel, avhengig av problemet du prøver å løse, kan du bruke innebygde funksjoner som String.replace() eller lage dine egne funksjoner for å fjerne tegn.
 
-## Dykk dypere:
-Sletting av tegn som matcher et mønster har vært en vanlig teknikk i programmering i mange år. En alternativ måte å gjøre dette på er å bruke såkalte regulære uttrykk, som er et mer komplekst mønster-søke-verktøy. Men for enkle søk og slettinger, er "replace()" i Arduino en enkel og effektiv løsning.
+For å implementere funksjonaliteten over på en effektiv måte, er det viktig å huske på at strenger i C++ (som Arduino bruker) er uforanderlige. Dette betyr at hver gang du endrer en streng, lager du faktisk en ny. For store strenger eller i løkker kan dette føre til minneproblemer.
 
-## Se også:
-- [Dokumentasjon om funksjonen "replace()" i Arduino](https://www.arduino.cc/reference/en/language/functions/string/replacement/)
-- [En enkel guide til regulære uttrykk](https://www.regular-expressions.info/)
-- [En mer dyptgående forklaring på søk og sletting av mønstre i tekststrenger](https://www.geeksforgeeks.org/remove-multiple-characters-from-string-in-arduino/)
+## Se Også:
+
+[Introduksjon til RegEx](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+
+[Arduino String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+
+[Arduino Memory](https://www.arduino.cc/en/tutorial/memory)

@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum aus einem Strings auslesen"
-html_title:           "Arduino: Ein Datum aus einem Strings auslesen"
-simple_title:         "Ein Datum aus einem Strings auslesen"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -12,31 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Parsen des Datums aus einem String ist ein häufiges Verfahren in der Programmierung und bezieht sich auf die Extrahierung eines Datums aus einer Zeichenfolge, die möglicherweise andere Zeichen oder Wörter enthält. Programmierer nutzen diese Technik, um die Daten aus Benutzereingaben oder anderen Quellen zu extrahieren und in einem bestimmten Format zu speichern oder weiter zu verarbeiten.
+Parsing eines Datums aus einem String ist die Umwandlung von Text in ein Datenstruktur, die auf einen spezifischen Tag verweist. Programmierer machen dies, um komplexe Datumsmanipulationen zu erleichtern oder Informationen aus Benutzereingaben oder Dateien auszulesen.
 
-## Wie Geht's?
+## So geht's:
 
-Das folgende Beispiel zeigt, wie man das Datum aus einer Zeichenfolge in Arduino extrahieren kann:
+Hier ist ein einfacher Arduino-Code, der einen String in ein Datum umwandelt:
 
 ```Arduino
-String zeichenfolge = "15.05.2021";
-int tag = zeichenfolge.substring(0,2).toInt(); //Extrahiert Tag (15) und konvertiert in Integer
-int monat = zeichenfolge.substring(3,5).toInt(); //Extrahiert Monat (05) und konvertiert in Integer
-int jahr = zeichenfolge.substring(6,10).toInt(); //Extrahiert Jahr (2021) und konvertiert in Integer
-
-Serial.print("Tag: ");
-Serial.println(tag); //Gibt 15 aus
-Serial.print("Monat: ");
-Serial.println(monat); //Gibt 5 aus
-Serial.print("Jahr: ");
-Serial.println(jahr); //Gibt 2021 aus
+#include <TimeLib.h>  
+#include <Time.h>
+ 
+void setup() {
+  Serial.begin(9600);
+}
+ 
+void loop() {
+  String datum = "06.12.2021";
+  int Tag = datum.substring(0,2).toInt();
+  int Monat = datum.substring(3,5).toInt();
+  int Jahr = datum.substring(6,10).toInt();
+  
+  tmElements_t tm;
+  
+  tm.Day = Tag;
+  tm.Month = Monat;
+  tm.Year = Jahr - 1970;  
+  
+  time_t t = makeTime(tm);
+  
+  Serial.println(day(t));
+  Serial.println(month(t));
+  Serial.println(year(t));
+    
+  delay(1000);
+}
 ```
+Mit diesem Code lesen wir das Datum als Tag, Monat und Jahr aus dem String und konvertieren es in einen `time_t` Datentyp.
 
-## Tief Tauchen
+## Vertiefung:
 
-Das Parsen von Daten aus einer Zeichenfolge hat eine lange Geschichte und wird in vielen Programmiersprachen verwendet. Alternativ können Programmierer auch reguläre Ausdrücke nutzen, um die Datumsinformationen zu extrahieren. Die genaue Implementierung kann je nach Programmiersprache und gewünschtem Ergebnis variieren.
+Historisch gesehen, war Parsing von Strings zu Datumsformaten in vielen Programmiersprachen eine Herausforderung aufgrund von verschiedenen Datumskonventionen und Zeitzonen. In Arduino wurde diese Aufgabe durch die `TimeLib.h` Bibliothek vereinfacht. 
 
-## Siehe Auch
+Alternativ können auch andere Methoden wie sscanf() verwendet werden, die ein wenig komplexer sind und mehr Kontrolle bieten. Für das Einfügen von Datum und Zeit in einen String gibt es Funktionen wie sprintf().
 
-- [Dokumentation zu String-Methoden in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-- [Reguläre Ausdrücke in der Programmierung](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+Besonders bemerkenswert ist, dass die Arduino `TimeLib.h` Bibliothek das Jahr relativ zu 1970 berechnet. Daher muss beim Setzen des Jahres 1970 subtrahiert werden.
+
+## Siehe auch:
+
+Weitere Informationen und Beispiele können Sie in der offiziellen Arduino Time Library Dokumentation finden (https://playground.arduino.cc/Code/Time) und im Arduino Forum (http://forum.arduino.cc/), wo viele Diskussionen über dieses Thema geführt wurden. Für tiefere Einsichten in das Thema empfehlen sich auch Bücher wie "Programming Arduino: Getting Started with Sketches" von Simon Monk.

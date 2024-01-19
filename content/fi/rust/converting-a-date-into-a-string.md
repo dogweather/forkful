@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
-html_title:           "Rust: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -12,23 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-Päivämäärän muuntaminen merkkijonoksi tarkoittaa päivämäärän esittämistä tekstinä. Tätä tarvitaan esimerkiksi tiedostojen tallentamisessa tai näyttämistä käyttäjälle. Ohjelmoijat tekevät tämän jotta päivämäärät olisivat helpommin ymmärrettäviä ja hallittavissa.
+Päivämäärän muuntaminen merkkijonoksi on prosessi, jossa päivämäärä esitetään tietokoneelle luettavassa tekstissä. Ohjelmoijat tekevät tämän usein päivämäärätietojen visualisointiin tai lokiin.
 
-## Miten:
+## Kuinka tehdä:
 
-Esimerkkituloste:
+Rustissa päivämäärän hieman muuttamiseksi tekstimuotoon käytetään `chrono` kirjastoa ja `NaiveDate` tyyppiä. Tässä on perusesimerkki:
 
-Rust alloitti ohjelmointikehittäjää. 
+```Rust
+use chrono::{NaiveDate, Datelike, Weekday};
 
+fn main() {
+    let date = NaiveDate::from_ymd(2016, 7, 8);
+    println!("{}", date);
+}
 ```
-Rust begin programmer.
-```
 
-## Syväsukellus:
+Kun suoritat tämän koodin, tulostus on: `2016-07-08`.
 
-Päivämäärän muuntaminen tekstimuotoon on ollut tärkeä osa tietokoneohjelmointia jo pitkään. Aikaisemmin tämä oli monimutkaisempi tehtävä, mutta nykyään tämä on yksinkertaista Rust-ohjelmointikielellä. Muita tapoja muuntaa päivämäärä merkkijonoksi ovat erilaiset kirjastot ja sovellukset. Rustilla tämä toiminto tapahtuu automaattisesti käyttämällä `format!()` -funktiota.
+## Syvä Sukellus:
 
-## Katso myös:
+Rustissa päivämäärän ja ajan hallintaan suositellaan `chrono`-kirjastoa, joka esiteltiin Rustin versiossa 0.4.0. Se tarjoaa rikkaan joukon ominaisuuksia päivämäärän ja ajan käsittelyyn. Jos sinun ei tarvitse työskennellä aikavyöhykkeiden kanssa, `NaiveDate` on yksinkertainen ja suoraviivainen ratkaisu.
 
-- Rustin virallinen verkkosivusto: https://www.rust-lang.org/
-- Ohjelmointikielen historia: https://fi.wikipedia.org/wiki/Rust_(tietokoneohjelmointikieli)
+Vaihtoehtoisia lähestymistapoja ovat `time`-kirjasto tai käyttäjän määrittämät ratkaisut, jotka käyttävät perinteisiä unix-aikaleimoja. Kuitenkin, `chrono` tarjoaa parhaan tasapainon käytettävyyden ja tehokkuuden välillä.
+
+Päivämäärän muuttamisen toteutustiedot riippuvat tarpeistasi. `chrono`-kirjasto tukee useita muotoja, joten sinun tulee valita sopivin.
+
+## Katso Myös:
+
+Lisätietoja voit löytää seuraavista lähteistä:
+* Chrono-kirjasto: https://docs.rs/chrono/0.4.19/chrono/
+* Rustin virallinen dokumentaatio: https://doc.rust-lang.org/std/
+* StackOverflow keskustelut aiheesta: https://stackoverflow.com/questions/tagged/rust+chrono

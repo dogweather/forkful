@@ -1,6 +1,6 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Haskell: Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
 simple_title:         "Interpolering av en streng"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Interpolering av strenger er prosessen med å sette inn variabler eller verdier i en streng. Dette gjøres for å bygge mer dynamiske og fleksible strenger som kan tilpasses ulike situasjoner. Mange programmerere bruker denne teknikken for å gjøre koden sin mer intuitiv og lesbar.
+## Hva & Hvorfor?
 
-# Hvordan:
-Her er et eksempel på bruk av interpolering i Haskell:
+Stringinterpolasjon er teknikken å sette, eller bytte inn, verdier inni en streng. Programmerere bruker det for å lage lesebare koder og formatere strenger mer effektivt.
+
+## Slik gjør du:
+
+I Haskell bruker vi `printf` funksjonen for å interpolere strenger. Her er et enkelt eksempel:
 
 ```Haskell
--- Definerer en funksjon som tar inn navn og alder og returnerer en setning med informasjonen
-introduksjon :: String -> Int -> String
-introduksjon navn alder = "Hei, mitt navn er " ++ navn ++ " og jeg er " ++ show alder ++ " år gammel."
+import Text.Printf (printf)
 
--- Kaller funksjonen med parameterverdiene "Lise" og 25
-introduksjon "Lise" 25
+navn = "Ola"
+jobb = "Programmør"
+printf "Hei, mitt navn er %s og jeg er en %s." navn jobb
 ```
 
-Output:
+Resultatet vil være:
 
+```Haskell
+"Hei, mitt navn er Ola og jeg er en Programmør."
 ```
-Hei, mitt navn er Lise og jeg er 25 år gammel.
-```
+## Dypdykk
 
-Her bruker vi ```++``` operatoren til å kombinere de statiske delene av setningen med verdiene av parameterene som blir gitt når funksjonen kalles. Vi bruker også funksjonen ```show``` for å konvertere Integer alderen til en String slik at den kan settes inn i setningen.
+Strenginterpolasjon har vært en del av programmeringsspråk siden tidlig i historien. I noen språk, som Perl og Ruby, er det mer innebygd i språket selv. I Haskell er det litt mer begrenset, men `printf` funksjonen gir oss likevel en god del fleksibilitet.
 
-# Dypdykk:
-Interpolering av strenger har blitt en vanlig teknikk i mange programmeringsspråk, inkludert Haskell. Det er en effektiv måte å lage mer dynamiske og leselige strenger på. Før denne teknikken ble vanlig, måtte programmere bruke mer komplekse metoder for å samle en setning med variabler og verdiene til disse variablene.
+Alternativt kan du bruke biblioteket `interpolate`, som gir et mer "Haskellete" måte å gjøre strenginterpolasjon på.
 
-Et alternativ til interpolering er bruk av funksjoner som ```printf``` og ```format``` som tillater programmerere å spesifisere hvordan verdiene skal settes inn i en setning. Dette er vanligvis brukt i språk som C og Python.
+Implementeringen av strenginterpolasjon i Haskell er avhengig av hvordan `printf` eller `interpolate` er implementert. Det er visitig å nevne at i Haskell handler det meste om funksjonalitet og mindre om lavnivåimplementeringer.
 
-I Haskell bruker man i stedet funksjoner som ```show``` for å konvertere verdien av en variabel til en String som kan brukes i en interpolert streng. Dette kan virke litt mer tungvint, men i Haskell er det vanligvis bedre å ha klart definerte funksjoner som gjør spesifikke oppgaver, i stedet for å ha mer generelle funksjoner som kan føre til forvirrende kodesnutter.
+## Se også
 
-# Se også:
-- [Haskell dokumentasjon om String Interpolasjon](https://wiki.haskell.org/String_interpolation)
-- [En sammenligning av ulike metoder for å sette inn verdier i strenger](https://www.safaribooksonline.com/blog/2011/09/29/c-comparing-printf-to-user-defined-formatters-in-c/)
+For mer informasjon, se:
+
+1. `Printf` https://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html
+2. `Interpolate` https://hackage.haskell.org/package/interpolate

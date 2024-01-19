@@ -1,6 +1,6 @@
 ---
 title:                "Sammanslagning av strängar"
-html_title:           "C: Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
 simple_title:         "Sammanslagning av strängar"
 programming_language: "C"
 category:             "C"
@@ -10,39 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad är strängkonkatinering och varför gör programmerare det?
+## Vad & Varför?
 
-Strängkonkatenering är när man sammanslår flera strängar till en enda sträng. Detta är användbart när man vill skapa en längre sträng utifrån flera mindre delar. Programmerare använder detta för att bygga dynamiska strängar, till exempel i ett meddelande eller en filväg.
+Strängsammanfogning är processen för att kombinera två eller flera strängar i ett enkelt uttryck. Utvecklare gör det för att förbereda meddelanden, skapa SQL-frågor, eller helt enkelt för att bearbeta textdata på olika sätt.
 
-Så här gör du det:
+## Hur gör man:
+
+Följande kodbit demonstrerar användningen av `strcat()` och `strncat()` för strängsammansättning i C:
 
 ```C
-// Skapa två strängar
-char förnamn[] = "Karin";
-char efternamn[] = "Svensson";
+#include <stdio.h>
+#include <string.h>
 
-// Konkatenera dem till en ny sträng
-char namn[50];
-strcat(namn, förnamn);
-strcat(namn, " ");
-strcat(namn, efternamn);
-
-// Skriv ut den nya strängen
-printf("Namn: %s", namn);
-
-// Output: Namn: Karin Svensson
+int main() {
+   char str1[50] = "Hej ";
+   char str2[] = "Sverige!";
+   
+   strcat(str1, str2);
+   
+   printf("%s\n", str1);
+   
+   char str3[50] = "Hej ";
+   char str4[] = "världen!";
+   
+   strncat(str3, str4, 7);
+   
+   printf("%s\n", str3);
+   
+   return 0;
+}
 ```
 
-Djupdykning:
+Output:
 
-Historiskt sett har strängkonkatenering varit en viktig funktion i programmeringsspråk. I äldre språk, som Fortran och COBOL, var det vanligt att använda förutbestämda storlekar på strängarna, vilket gjorde det viktigt att kunna sammanslå strängar för att undvika att överskrida gränserna.
+```shell
+Hej Sverige!
+Hej världen!
+```
 
-I moderna programmeringsspråk finns det dock alternativ till strängkonkatenering, som till exempel möjligheten att skapa dynamiska strängar. I vissa språk, som Python, är strängar även immutabla vilket innebär att de inte kan ändras vilket gör strängkonkatenering mindre användbart.
+## Djup Dykning:
 
-Implementeringen av strängkonkatenering kan variera beroende på programmeringsspråk och dess funktioner. I C använder man funktionen `strcat()` för att sammanslå strängar, medan man i andra språk kanske använder en operator som `+`.
+Strängsammanfogning har använts i C sedan dess början. Tidigare versioner av C hade ingen inbyggd funktion för att utföra denna, så utvecklare var tvungna att skriva sina egna. Lösningen var att introducera `strcat()`. En aspekt att notera är att `strcat()` lägger till det andra strängargumentet till slutet av det första. 
 
-Se även:
+Alternativt finns det `strncat()`, som är en säkrare version eftersom den låter programmeraren specifiera ett maximalt antal tecken som ska kopieras från källan till målet. Denna funktion förhindrar överlöpningar av strängbuffertar. Du kan också skapa din egen skräddarsydda sammansättningsfunktion i C om du vill.
 
-- Dokumentation för `strcat()`: https://www.programiz.com/c-programming/library-function/string.h/strcat
+Implementationen av `strcat()` och `strncat()` är tillräckligt komplicerat att man oftast är bättre att lita på standardbibliotekets rutiner. `strcat()` använder en enda pekare för att scanna två strängar. Först skanner den genom den första strängen till '\0', sedan skriver över '\0' med tecken från den andra strängen, och lägger till sin egen '\0'.
 
-- En jämförelse mellan C och andra programmeringsspråk: https://hackr.io/blog/c-programming-vs-python
+## Se även:
+
+- `strcat`-dokumentationen i GNU C-biblioteket: [https://www.gnu.org/software/libc/manual/html_node/String-Concatenation.html](https://www.gnu.org/software/libc/manual/html_node/String-Concatenation.html)
+- `strcat` på Cplusplus: [http://www.cplusplus.com/reference/cstring/strcat/](http://www.cplusplus.com/reference/cstring/strcat/)
+- `strncat` på Cplusplus: [http://www.cplusplus.com/reference/cstring/strncat/](http://www.cplusplus.com/reference/cstring/strncat/)

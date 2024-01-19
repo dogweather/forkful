@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "Fish Shell: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,32 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire ?
+## Qu'est-ce & Pourquoi ?
 
-Démarrer un nouveau projet, c'est simplement commencer à travailler sur un nouveau projet de programmation. Les programmeurs le font souvent lorsqu'ils ont une nouvelle idée pour une application ou un logiciel, ou lorsqu'ils ont besoin de mettre à jour un projet existant.
+Commencer un nouveau projet en programmation, c'est comme écrire une histoire à partir de rien. Les programmeurs le font pour résoudre un problème, pour créer un service, ou simplement pour apprendre et se perfectionner dans un nouveau langage de programmation.
 
-## Comment le faire :
+## Comment faire :
 
-Le shell Fish est un excellent outil pour démarrer un nouveau projet en raison de sa syntaxe simple et de ses nombreuses fonctionnalités pratiques. Voici un exemple de code pour créer un nouveau projet dans Fish Shell :
+Voici comment créer un nouveau script Fish Shell :
 
 ```Fish Shell
-mkdir mon_projet
-cd mon_projet
-touch index.html
+touch my_script.fish
+open my_script.fish
 ```
 
-Cela créera un nouveau dossier pour votre projet, se déplacera dans ce dossier et créera un fichier index.html vide à l'intérieur.
+Ensuite, écrivez votre script :
 
-## Plongée en profondeur :
+```Fish Shell
+function hello
+    echo "Bonjour, le monde!"
+end
+```
 
-Historiquement, les programmeurs utilisaient des éditeurs de texte pour créer de nouveaux projets, mais Fish Shell facilite grandement ce processus en le rendant plus rapide et plus intuitif. Bien sûr, il existe également d'autres outils et méthodes pour démarrer un nouveau projet, mais Fish Shell offre une expérience particulièrement agréable et efficace.
+Maintenant, c'est le moment de l'exécuter :
 
-Pour démarrer un projet plus rapidement, vous pouvez également utiliser des modèles prédéfinis dans Fish Shell. Vous pouvez également personnaliser votre configuration de Fish Shell pour qu'elle soit adaptée à votre style de programmation.
+```Fish Shell
+. my_script.fish
+hello
+```
 
-## À voir aussi :
+Votre terminal donnera l'impression suivante :
 
-Pour en savoir plus sur les débuts de projet en programmation avec Fish Shell, consultez ces liens utiles :
+```Fish Shell
+Bonjour, le monde!
+```
 
-- [Documentation officielle Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Un tutoriel sur la création de projets avec Fish Shell](https://medium.com/@techtonics/getting-started-with-fish-shell-3697a09a7c6a)
-- [Un aperçu des différents shells de ligne de commande, y compris Fish Shell](https://opensource.com/article/18/6/bash-vs-zsh)
+## Plongée plus profonde
+
+Le Fish Shell, introduit en 2005, s'est démarqué notamment par une interface conviviale, des suggestions automatiques, et une syntaxe plus compatible avec les scripts POSIX. Toutefois, ne négligez pas d'autres coquilles comme Bash ou Zsh. Chaque shell a ses forces et ses lacunes; à vous de choisir celui qui correspond le mieux à vos besoins. Lors de la création d'un nouveau projet, prenez en considération l'architecture, le déploiement, et la gestion de votre code source.
+
+## Voir aussi
+
+Pour une plongée encore plus profonde dans les entrailles du Fish Shell, jetez un coup d'œil aux liens suivants :
+
+- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Introduction à la programmation Shell sur Linux](https://openclassrooms.com/fr/courses/43538-reprenez-le-controle-a-laide-de-linux/40401-ecrire-un-script-shell)
+- [Git & GitHub pour la gestion de code source](https://git-scm.com)
+
+Notez que l'apprentissage constant est la clé de la maîtrise en programmation. Bonne chance !

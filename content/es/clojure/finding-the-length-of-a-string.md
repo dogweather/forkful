@@ -1,7 +1,7 @@
 ---
-title:                "Encontrar la longitud de una cadena"
-html_title:           "Clojure: Encontrar la longitud de una cadena"
-simple_title:         "Encontrar la longitud de una cadena"
+title:                "Encontrando la longitud de una cadena"
+html_title:           "Arduino: Encontrando la longitud de una cadena"
+simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,29 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-La longitud de una cadena es simplemente la cantidad de caracteres que contiene, incluyendo espacios y signos de puntuación. Los programadores buscan encontrar la longitud de una cadena para poder manipular y analizar datos de manera efectiva.
+# Encontrar la Longitud de una Cadena en Clojure
 
-## Cómo:
-Para encontrar la longitud de una cadena en Clojure, podemos utilizar la función `count` que devuelve el número de elementos en una colección.
+## ¿Qué y Por Qué?
 
-```Clojure
-(count "¡Hola Mundo!") ; devuelve 12
+Encontrar la longitud de una cadena es determinar el número de caracteres en una cadena dada. Los programadores a menudo necesitan esta información para controlar los flujos de datos y para operaciones de manipulación de cadenas.
+
+## Cómo hacerlo:
+
+En Clojure, usaríamos la función `count` para encontrar la longitud de una cadena. Aquí hay un ejemplo:
+
+```clojure
+(def cadena "Hola, Mundo!")
+(print "La longitud de la cadena es: " (count cadena))
 ```
 
-Si queremos obtener la longitud de una cadena sin contar los espacios, podemos utilizar la función `replace` para reemplazar los espacios con una cadena vacía y luego contar los caracteres restantes.
+La salida de este código sería:
 
-```Clojure
-(count (replace "¡Hola Mundo!" #" " "")) ; devuelve 10
+```
+La longitud de la cadena es: 13
 ```
 
-## Inmersión Profunda:
-En el pasado, encontrar la longitud de una cadena era una tarea más compleja ya que los lenguajes de programación no tenían una función dedicada para esto. Los programadores tenían que utilizar métodos como iteraciones o bucles para contar la longitud de una cadena.
+## Deep Dive:
 
-En Clojure, también podemos usar la función `str` para convertir la cadena en una secuencia y luego contar la longitud usando la función `count`. Sin embargo, este enfoque no es tan eficiente como el uso de `count` directamente.
+1. Contexto histórico: Clojure es un dialecto de Lisp y comparte con este la prioridad de tratar el código como datos y tener una sintaxis Unicode. Aunque Lisp tradicionalmente no enfatiza las cadenas, Clojure, que se construyó para interopera con la Máquina Virtual de Java (JVM), consideró crucial una funcionalidad sólida de cadenas.
 
-Otra opción es utilizar la función `seq` para convertir la cadena en una secuencia y luego utilizar la función `into` para agregarla a un conjunto vacío y contar la longitud de ese conjunto. Nuevamente, este enfoque no es tan eficiente como el uso de `count` directamente.
+2. Alternativas: Puedes usar Java Interop para acceder al método `length` de una cadena de Java:
 
-## Ver también:
-- [Documentación oficial de Clojure sobre count](https://clojuredocs.org/clojure.core/count)
-- [Guía práctica de Clojure](https://practicalli.github.io/clojure/strings-counting-and-manipulation.html#counting-the-length-of-a-string) para encontrar la longitud de una cadena.
+```clojure
+(.length "Hola, Mundo!")
+```
+
+Esto daría el mismo resultado que la función `count`. Sin embargo, esta opción es menos idiomatica y más orientada hacia Java que la función `count`.
+
+3. Detalles de la implementación: En Clojure, `count` es una función multiplataforma, lo que significa que puede operar en varias colecciones además de las cadenas. Cuando se aplica a una cadena, llama la función de longitud de la clase String en Java. Tras bambalinas, esta función se implementa mediante el conteo de unidades de código Unicode, lo que puede dar resultados inesperados con algunos caracteres especiales.
+
+## Véase También:
+
+Para más detalles sobre las cadenas y su manipulación en Clojure, consulta estos recursos:
+
+1. [Clojure Strings - Clojure Documentation](https://clojure-doc.org/articles/tutorials/strings.html)
+2. [Strings and Characters - Clojure Programming Cookbook](https://www.oreilly.com/library/view/clojure-programming-cookbook/9781785885037/ch01s04.html)
+3. [Clojure from the ground up: basic types](https://aphyr.com/posts/302-clojure-from-the-ground-up-basic-types)
+4. [Clojure for the Brave and True: Learn the Ultimate Language and Become a Better Programmer](https://www.braveclojure.com/)

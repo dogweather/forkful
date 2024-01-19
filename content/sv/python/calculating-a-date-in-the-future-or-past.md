@@ -1,7 +1,7 @@
 ---
-title:                "Beräkning av ett datum i framtiden eller förflutnan"
-html_title:           "Python: Beräkning av ett datum i framtiden eller förflutnan"
-simple_title:         "Beräkning av ett datum i framtiden eller förflutnan"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "Python: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,34 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att beräkna ett datum i framtiden eller förflutna är en vanlig uppgift för programmerare. Det innebär att ta ett befintligt datum och tillägga eller subtrahera ett visst antal dagar, veckor, månader eller år från det. Det här är användbart för att automatiskt generera datum för tidsbaserade uppgifter eller för att skapa en kalenderfunktion i en applikation.
+# Artikel: Beräkna datum i framtiden eller förflutna med Python
 
-# Hur man gör:
-Om du vill beräkna ett datum i framtiden använder du funktionen ```datetime.timedelta()``` i Python. Till exempel, om du vill veta datumet 2 veckor från idag kan du skriva följande kod:
+## Vad & Varför?
+Beräkning av datum i framtiden eller förflutna innebär att hitta ett specifikt datum baserat på ett annat datum och ett intervall, som kan vara i dagar, veckor, månader, etc. Programmerare gör detta för att spåra händelser, hantera återkommande uppgifter eller bara för att hantera tidsdatauppdrag.
 
-```
+## Hur gör man:
+Nedan finns en kodsnutt i Python för att beräkna framtida och förflutna datum.
+
+```python
 import datetime
-fut_date = datetime.date.today() + datetime.timedelta(weeks=2)
-print(fut_date)
+
+# dagens datum
+nu = datetime.datetime.now()
+
+# beräkna ett datum 5 dagar framåt
+framtida_datum = nu + datetime.timedelta(days=5)
+print("Framtida datum: ", framtida_datum.date())
+
+# förflutet datum 3 dagar tillbaka
+forflutet_datum = nu - datetime.timedelta(days=3)
+print("Förflutet datum: ", forflutet_datum.date())
 ```
 
-Resultatet kommer att vara 2 veckor från dagens datum. För att beräkna ett datum i förflutna använder du istället minus-tecknet (-). Till exempel, om du vill veta datumet 6 månader tillbaka från idag kan du skriva följande kod:
+Exempel output:
 
+```shell
+Framtida datum: 2022-11-16
+Förflutet datum: 2022-11-08
 ```
-import datetime
-past_date = datetime.date.today() - datetime.timedelta(months=6)
-print(past_date)
+
+## Djupdykning
+Beräkning av datum i framtiden och förflutet är en gemensam uppgift i programmering och har varit det sedan tidiga dagar inom mjukvaruutveckling. Python gör detta enkelt med `datetime` och `timedelta` moduler, men det finns också andra alternativ som `dateutil.relativedelta` som kan hantera mer komplexa beräkningar.
+
+Det finns ett antal sätt att implementera detta i Python. Ovanstående exempel använder `timedelta`, vilken representerar en varaktighet, skillnaden mellan två datum eller tider.
+
+```python
+from dateutil.relativedelta import relativedelta
+
+nu = datetime.datetime.now()
+
+# framtida datum 1 månad framåt
+framtida_datum = nu + relativedelta(months=1)
+print("Framtida datum: ", framtida_datum.date())
+
+# förflutet datum 1 år tillbaka
+forflutet_datum = nu - relativedelta(years=1)
+print("Förflutet datum: ", forflutet_datum.date())
 ```
 
-Resultatet kommer att vara 6 månader tillbaka från dagens datum.
-
-# Djupdykning:
-Att beräkna datum i framtiden eller förflutna är ett vanligt problem som har existerat i många år. Innan moderna programmeringsspråk som Python fanns, var det nödvändigt att göra dessa beräkningar manuellt. Idag är det dock mycket enklare med hjälp av inbyggda funktioner som ```datetime.timedelta()```.
-
-Det finns också andra metoder för att hantera datumberäkningar, inklusive att använda bibliotek som arrow och dateutil. Dessa bibliotek erbjuder fler funktioner för att hantera tidsberäkningar och hantera tidszoner.
-
-# Se även:
-- Python officiella dokumentation om datetime: https://docs.python.org/3/library/datetime.html
-- arrow bibliotek: https://arrow.readthedocs.io/en/latest/
-- dateutil bibliotek: https://dateutil.readthedocs.io/en/stable/
+## Se också
+1. [Python officiella dokumentation för datetime](https://docs.python.org/3/library/datetime.html)
+2. [Python officiella dokumentation för dateutil](https://dateutil.readthedocs.io/en/stable/)
+3. [Datetime - Python Modul av Veckan](https://pymotw.com/3/datetime/)

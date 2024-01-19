@@ -1,7 +1,7 @@
 ---
-title:                "Beregning av dato i fremtiden eller fortiden"
-html_title:           "Haskell: Beregning av dato i fremtiden eller fortiden"
-simple_title:         "Beregning av dato i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "Haskell: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -11,24 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å beregne en dato i fremtiden eller fortiden er en vanlig oppgave for programmere. Dette kan være nyttig for å finne ut når noe skal skje, for eksempel å planlegge en hendelse eller vise tidsbestemte data.
+Å beregne en fremtidig eller tidligere dato betyr å finne ut når en dato vil eller har falt på basis av oppgitte dager, måneder eller år. Dette er nyttig i programmering for å håndtere planlegging, hendelsesstyring og tidsbasert logikk i applikasjoner.
 
 ## Hvordan:
-Det finnes mange måter å utføre dato beregninger i Haskell, men en enkel metode er å bruke "Data.Time" modulen. Her er et eksempel på hvordan du kan beregne en dato 30 dager i fremtiden:
+Vi bruker et innebygd bibliotek 'Data.Time.Calendar' for dette formålet. For eksempel, manifestasjonen:
 
 ```Haskell
-import Data.Time
-import Data.Time.Calendar.OrdinalDate
+import Data.Time.Calendar
+import Data.Time.Clock
 
-addDays 30 $ fromGregorian 2019 03 31 
--- output: 2019-05-01
+main = do
+    let today = fromGregorian 2021 9 1
+    print $ addDays 90 today
+    print $ addDays (-90) today
 ```
-
-Her legger vi 30 dager til den nåværende datoen (31. mars 2019), ved hjelp av funksjonen "addDays" og "fromGregorian" som konverterer året, måneden og dagen til en "Day" datatype. Vi får da ut en ny dato (1. mai 2019).
+Utfører følgende:
+```
+2021-11-30
+2021-06-03
+```
+Disse linjene utskriver en dato 90 dager frem i tid og en dato 90 dager tilbake i tid fra en gitt dato (1. september 2021).
 
 ## Dypdykk:
-Å beregne datoer har vært en viktig oppgave innen programmering siden begynnelsen. Tidligere brukte man komplekse matematiske formler for å beregne datoer, men nå finnes det enkle og effektive funksjoner som gjør jobben enklere. Alternativt kan man også bruke tredjepartsbiblioteker som "time" eller "chronos" for å utføre dato beregninger. Implementasjonen av slike funksjoner er vanligvis basert på algoritmer og kalenderinformasjon.
+Å beregne en dato i fremtiden eller fortiden har vært en viktig del av programmering siden tidlige dager. En slik beregning er nyttig i mange sammenhenger, som flyreservasjoner, påminnelser og planlægning af aktiviteter.
 
-## Se også:
-- ["Data.Time" dokumentsjon](https://hackage.haskell.org/package/time)
-- ["chronos" bibliotek](https://hackage.haskell.org/package/chronos)
+En alternativ tilnærming ville være å bruke biblioteket 'Data.Time.LocalTime', som gir mer kontroll over lokal tid og tidssoner.
+
+En interessant detalj er at funksjonen 'addDays' usynlig håndterer skuddår, så det er en pålitelig metode for datoaddisjon.
+
+## Se Også:
+- [Time Library Documentation](https://hackage.haskell.org/package/time-1.10/docs/Data-Time.html)
+- [Haskell Wiki Time Page](https://wiki.haskell.org/Time)
+- [Haskell Add Days To Date Example](http://learnyouahaskell.com/input-and-output)

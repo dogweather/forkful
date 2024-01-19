@@ -1,7 +1,7 @@
 ---
-title:                "Extrahieren von Teilstrings"
-html_title:           "Javascript: Extrahieren von Teilstrings"
-simple_title:         "Extrahieren von Teilstrings"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Was & Warum?"
-Substring-Extraktion ist das Verfahren, bei dem Teilstrings aus einem vorhandenen String extrahiert werden. Programmierer nutzen dies häufig, um spezifische Teile eines Textes zu isolieren oder zu bearbeiten.
+# Extrahieren von Unterteilen in JavaScript
 
-"## Anleitung:"
-Das Erzeugen von Substrings in Javascript ist einfach und erfordert nur wenige Codezeilen. Hier sind zwei Beispiele:
+## Was & Warum?
 
-```Javascript
-let string = "Hallo Welt!";
-console.log(string.substring(0, 5)); // Ausgabe: "Hallo"
-console.log(string.substring(6, 11)); // Ausgabe: "Welt!"
+Das Extrahieren von Teilen von Strings, auch bekannt als Unterteil, ist ein üblicher Prozess in der Programmierung. Es erlaubt uns, spezifische Segmente von Textdaten zu isolieren und mit diesen zu arbeiten.
+
+## So geht's:
+
+In JavaScript gibt es mehrere Methoden, um String-Unterteile zu extrahieren: `substring()`, `slice()`, und `substr()`.
+
+```Javascript  
+let str = "Hallo, Welt!";
+
+// Mit substring()
+let teilStr = str.substring(0, 5);
+console.log(teilStr); // "Hallo"
+
+// Mit slice()
+teilStr = str.slice(7);
+console.log(teilStr); // "Welt!"
+
+// Mit substr()
+teilStr = str.substr(7, 5);
+console.log(teilStr); // "Welt"
 ```
+Jede dieser Methoden hat ihre eigenen Merkmale und Bedingungen. Sie wählen die geeignete Methode basierend auf Ihren Bedürfnissen.
 
-Der obige Code erzeugt zwei Substrings aus dem ursprünglichen String "Hallo Welt!". Durch Angabe des Start- und Endpunktes können wir genau definieren, welcher Teil des ursprünglichen Strings extrahiert werden soll.
+## Vertiefung
 
-"## Tiefere Einblicke:"
-Die Substring-Extraktion ist ein häufig verwendetes Verfahren in der Programmierung, aber woher stammt es überhaupt? Ursprünglich wurde dieses Konzept in der Programmiersprache "BASIC" implementiert und ist seitdem in vielen anderen Programmiersprachen, einschließlich Javascript, weit verbreitet.
+Die Wahl der Methode zum Extrahieren von Teilen eines Strings ist historisch gewachsen. Die `substring()` und `slice()` Methoden sind aus den frühen JavaScript-Versionen übrig geblieben.
 
-Es gibt auch Alternativen zur Substring-Extraktion wie Regular Expressions, die ebenfalls zur Manipulation von Strings verwendet werden können. Allerdings ist die Verwendung von RegExp oft komplizierter als die einfache Substring-Extraktion und erfordert eine andere Syntax.
+Einige Programmiersprachen bauen auf dieser Idee auf und fügen zusätzliche Funktionen hinzu, um das Arbeiten mit Text zu erleichtern (z.B. "split()", "join()", etc.). Aber die Grundlage bleibt: Das Extrahieren von String-Unterteilen ist ein grundlegender Teil des Arbeitens mit Text in fast jeder Programmiersprache.
 
-Bei der Implementierung der Substring-Extraktion in Javascript gibt es einige Dinge zu beachten. Zum Beispiel ist die Funktion "substring()" nicht in allen Browsern verfügbar und kann daher auf Probleme stoßen, wenn sie in älteren Versionen verwendet wird. In solchen Fällen ist es ratsam, die Funktion "slice()" zu verwenden, die ähnlich wie "substring()" funktioniert, aber in den meisten Browsern unterstützt wird.
+## Weiterführende Links
 
-"## Siehe auch:"
-Für weitere Informationen über Substring-Extraktion und ihre Verwendung in anderen Programmiersprachen, schauen Sie sich diese nützlichen Quellen an:
+Die vollständige Dokumentation zu diesen Methoden und einigen weiteren, die mit Strings in JavaScript arbeiten, finden Sie in der [Mozilla Developer Network Dokumentation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String).
 
-- Mozilla Developer Network (MDN): Substring-Extraktion in Javascript: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/substring
-- W3Schools.com: Substring-Extraktion in BASIC: https://www.w3schools.com/jsref/jsref_substring.asp
+Eine zusätzliche Ressource, die beim Arbeiten mit Strings hilfreich sein könnte, ist [W3Schools](https://www.w3schools.com/jsref/jsref_obj_string.asp), die bietet interaktive Beispiele und eine breite Palette von Tutorials zu ähnlichen Themen.
+
+Beachten Sie bitte, dass jede Methode ihre eigene spezifische Verhaltensweise hat, insbesondere bei der Behandlung von Randbedingungen und ungültigen Eingabewerten. Es ist ratsam, diese in der Dokumentation nachzuschlagen, um sie richtig zu verwenden.

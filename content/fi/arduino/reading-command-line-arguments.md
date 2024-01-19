@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "Arduino: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Elm: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Komentoriviparametrien lukeminen on tapa saada ulkoisia tietoja koodiin. Ohjelmoijat tekevät sitä usein käyttäjän antamien arvojen tai toimintojen hallitsemiseksi.
+## Mikä ja Miksi?
 
-## Miten:
-Esimerkkejä koodista ja tulosteesta, ```Arduino ...``` -lohkoissa.
+Komentoriviparametrien lukeminen tarkoittaa tietojen vastaanottamista käyttäjältä ohjelmaan. Tämä antaa ohjelmoijille mahdollisuuden lisätä joustavuutta ohjelmiinsa, säästäen samalla aikaa kompleksisten graafisten käyttöliittymien kehittämisessä.
 
-Esimerkki: 
+## Kuinka Tehdään:
+
 ```Arduino
-int merkki; 
-
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  if (Serial.available() > 0) {
-    merkki = Serial.read(); 
-    Serial.print("Käyttäjän antama merkki: ");
-    Serial.println(merkki); 
+  while (Serial.available() > 0) {
+    char c = Serial.read();  
+    Serial.println(c);
   }
 }
 ```
+Yllä olevassa koodissa Arduino lukee saapuvat merkit sarjaportista ja tulostaa ne takaisin. Tätä voidaan käyttää komentoriviparametrien lukemiseen.
 
-Tuloste:
+## Sukellus Syvemmälle
 
-Käyttäjän antama merkki: X
+Alun perin komentoriviparametreja lukivat vain tekstipohjaiset ohjelmat, mutta nyt monimutkaisemmat graafiset ohjelmat voivat myös lukea ja käsitellä niitä. Vaihtoehtoisesti voidaan käyttää erilaisia tietoliikenneratkaisuja, kuten esimerkiksi TCP/IP-yhteyksiä parametrien siirtämiseen. Arduinon kannalta, komentoriviparametrien lukeminen toteutetaan lähinnä sarjaportin kautta.
 
-## Syväsukellus:
-Kommentoriviparametrien lukeminen on ollut käytössä ohjelmoinnissa jo pitkään. Se on yleinen tapa kommunikoida käyttäjän kanssa ja antaa heille mahdollisuus ohjata ohjelmaa.
+## Katso Myös
 
-On olemassa myös muita tapoja saada ulkoisia tietoja koodiin, kuten tiedostojen lukeminen tai käyttäjän kanssa vuorovaikutuksessa olevan käyttöliittymän luominen.
+Arduino-ohjelmointiin liittyvät linkit, mukaan lukien lisätietoja sarjaportin kautta tapahtuvasta komentoriviparametrien lukemisesta:
 
-Kommentoriviparametrien lukeminen on mahdollista myös monilla muilla ohjelmointikielillä, ei vain Arduino-ympäristössä.
-
-## Katso myös:
-- [Arduino Language Reference - Serial.read()](https://www.arduino.cc/reference/en/language/functions/communication/serial/read/)
-- [Wikipedia - Command-line interface](https://en.wikipedia.org/wiki/Command-line_interface) 
-- [The C Programming Language](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628)
+1. [Arduino Sarjaväylän Käyttö](https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent)
+2. [Komentoriviparametrit C++ -ohjelmassa](https://www.cplusplus.com/articles/DEN36Up4/)
+3. [Koodiesimerkkejä komentoriviparametrien lukemisesta](https://gist.github.com/jimfleming/0afa8c0f360a7dd09469)

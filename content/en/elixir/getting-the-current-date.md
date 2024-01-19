@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elixir recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,42 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Get Current Date in Elixir: Riding the Time Machine
+
 ## What & Why?
 
-Getting the current date is pretty self-explanatory - it's a process of obtaining today's date from the system. Programmers usually need it to log events, timestamp records, or to handle date-specific functions in applications.
+Getting the current date is simply retrieving the present day’s information (year, month, day) in the system timezone. Coders do it when building features such as event logging, time tracking, or date stamping records.
 
-## How To:
+## How to:
 
-### Getting current date in Elixir:
-In Elixir, you can obtain the current date using the `Date.utc_today/0` function from the `Date` module. Here's how you do it:
+In Elixir, you use the `DateTime` module to get the current date. Here's how you do it:
 
-```Elixir
-Date.utc_today()
+```elixir
+DateTime.utc_now() |> DateTime.to_date()
 ```
-To demonstrate, let's run it in Elixir's interactive shell (IEx):
 
-```Elixir
-iex> Date.utc_today()
-~D[2022-03-18]
+When you run it, you can expect to see something like this:
+
+```elixir
+~D[2022-03-17]
 ```
-In this example, the output is `~D[2022-03-18]`, which represents March 18, 2022, in UTC timezone (replace with current date when used as a sample).
 
-## Deep Dive
+This returns the current UTC date.
 
-### Historical Context:
-The `Date.utc_today/0` function in Elixir is built upon Erlang, Elixir's underlying language. Erlang provides fantastic support for native date and time handling, which Elixir leverages.
+## Deep Dive 
 
-### Alternatives:
-Elixir also offers alternatives to get current date:
-- `NaiveDateTime.utc_now/0`: This method returns both the current date and time.
-- `DateTime.utc_now/0`: Similar to `NaiveDateTime.utc_now/0`, but this one also includes timezone information.
+Elixir's `DateTime` was introduced in version 1.3 as part of the standard library. Before that, developers used libraries like Timex. However, the introduction of `DateTime` as a built-in Elixir module made handling date and time simpler and more straightforward.
 
-### Implementation Details:
-`Date.utc_today/0` returns a `Date` struct which represents a date keeping year, month, and day fields only. It's important to note that it does not consider timezone, and always returns the date in UTC.
+Despite `DateTime`'s functionality ease, you might want to use other ways to get the current time. For instance, `NaiveDateTime.local_now/0` gives local date and time without timezone info. 
 
-## See Also:
+Your choice depends on whether your application needs to account for time zones. But remember: it's usually best to use UTC date and handle timezone conversions separately.
 
-To delve deeper into Elixir's date and time manipulation, take a look at these:
-1. Elixir's official docs about `Date` module: [https://hexdocs.pm/elixir/Date.html](https://hexdocs.pm/elixir/Date.html)
-2. Elixir School's guide to Date & Time: [https://elixirschool.com/en/lessons/basics/date-time/](https://elixirschool.com/en/lessons/basics/date-time/)
-3. Erlang's official docs on time module: [https://erlang.org/doc/man/time.html](https://erlang.org/doc/man/time.html)
+Another aspect to consider is system clock skews, which might give imprecise results. However, this is a larger timekeeping issue not specific to Elixir programming.
+
+## See Also
+
+To learn more about working with dates and times in Elixir, check out these resources:
+
+- Elixir's `DateTime` Official Docs: https://hexdocs.pm/elixir/DateTime.html
+- Tutorial on Elixir's date, time and timestamps: https://www.mitchellhanberg.com/posts/2018/07/31/elixir-dates-times-and-timestamps.html
+- Why timezones, leap seconds matter: https://zachholman.com/talk/utc-is-enough-for-everyone-right

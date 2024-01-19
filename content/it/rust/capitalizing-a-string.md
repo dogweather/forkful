@@ -10,33 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Cosa e perché? 
+## Cos'è e Perché?
 
-Capitalizzare una stringa è il processo di trasformare la prima lettera di ogni parola in maiuscolo. I programmatori spesso lo fanno per aumentare la leggibilità del codice o per seguire una particolare convenzione di stile.
+Capitalizzare una stringa significa rendere maiuscola la prima lettera. I programmatori lo fanno per vari motivi - ad esempio, per migliorare l'estetica del testo o per soddisfare le convenzioni di formattazione.
 
-## Come fare:
+## Come si fa:
+
+Ecco un esempio su come capitalizzare una stringa in Rust.
 
 ```Rust
-let nome = "rust";
-println!("{}", nome.to_uppercase()); 
+fn main() {
+    let mut s = String::from("ciao mondo");
+    let uppercase = s.to_uppercase();
+    println!("{}", uppercase);
+}
 ```
+Se esegui questo codice, la tua uscita sarà:`CIAO MONDO`.
 
-Output:
+## Approfondimento
+
+**1. Contesto storico:** Rust attualmente non offre una funzione nativa per capitalizzare solo la prima lettera di una stringa. Quindi, dobbiamo fare un po' di lavoro extra per ottenere quel risultato.
+
+**2. Alternative:** In Rust puoi capitalizzare una stringa utilizzando il metodo `to_uppercase`. Però, se vuoi solo capitalizzare la prima lettera, anche questa è un'opzione:
+
 ```Rust
-RUST 
+fn main() {
+    let s = String::from("ciao mondo");
+    let mut chars = s.chars();
+    match chars.next() {
+        None => String::new(),
+        Some(first) => first.to_uppercase().chain(chars).collect(),
+    }
+}
 ```
 
-## Approfondimento:
-
-La capitalizzazione delle stringhe è una pratica comune nei linguaggi di programmazione per rendere il codice più leggibile per gli esseri umani. Originariamente, la capitalizzazione delle stringhe era utilizzata principalmente nei linguaggi orientati agli oggetti per indicare che un metodo o una funzione era definita come parte di una classe o di una struttura dati. Tuttavia, anche nei linguaggi non orientati agli oggetti, la capitalizzazione delle stringhe è spesso utilizzata per indicare un concetto o un elemento di codice importante.
-
-Alcune alternative alla capitalizzazione delle stringhe includono l'utilizzo di commenti o di nomi di variabili espliciti per evidenziare un concetto importante. Tuttavia, la capitalizzazione delle stringhe rimane uno dei metodi più diffusi e convenzionali per enfatizzare parti significative del codice.
-
-Per quanto riguarda l'implementazione, il processo di capitalizzazione di una stringa può variare leggermente a seconda del linguaggio di programmazione utilizzato. In Rust, è possibile utilizzare il metodo `to_uppercase()` per convertire una stringa in maiuscolo.
-
+**3. Dettagli di implementazione:** Il metodo `to_uppercase()` ritorna una nuova `String` con tutti i caratteri maiuscoli. Per ottenere solamente la prima lettera maiuscola, dobbiamo estrarre la prima lettera, capitalizzarla e riassemblare la stringa.
 
 ## Vedi anche:
 
-- La documentazione ufficiale di Rust su `to_uppercase()`: https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase
-- Un articolo su Medium sull'importanza della capitalizzazione delle stringhe nel codice: https://medium.com/better-programming/why-you-should-capitalise-text-in-your-code-7ac52f963c0c
-- Una discussione su Stack Overflow sulla differenza tra `to_uppercase()` e `to_ascii_uppercase()` in Rust: https://stackoverflow.com/questions/41873608/what-is-the-difference-between-to-uppercase-and-to-ascii-uppercase-in-rust
+Per approfondire sulle stringhe in Rust, consigliamo di dargli un'occhiata alla documentazione ufficiale: [std::string::String - Rust](https://doc.rust-lang.org/std/string/struct.String.html)
+
+Per un'introduzione più dettagliata su Rust, consigliamo "The Rust Programming Language" di Steve Klabnik e Carol Nichols: [The Rust Programming Language - an overview](https://doc.rust-lang.org/book/title-page.html)
+
+Se vuoi esercitarti, dai un'occhiata alla sezione "stringhe" su Exercism: [Exercism: Rust Track](https://exercism.io/tracks/rust)

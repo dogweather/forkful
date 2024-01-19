@@ -1,7 +1,7 @@
 ---
-title:                "Nykyjonojen interpolointi"
-html_title:           "Go: Nykyjonojen interpolointi"
-simple_title:         "Nykyjonojen interpolointi"
+title:                "Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
+simple_title:         "Merkkijonon interpolointi"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,27 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Stringien interpolointi on tekniikka, joka mahdollistaa muuttujien lisäämisen merkkijonoihin. Tämä tekee koodista dynaamisempaa, sillä muuttujia voidaan käyttää joustavasti erilaisten lauseiden ja lausekkeiden muodostamiseen. 
+## Mitä & Miksi?
 
-Stringien interpolointi on kätevä tapa lisätä monimuotoisuutta koodiin ja tehdä koodista helpommin luettavaa ja ymmärrettävää. 
+Merkkijonon interpolointi on programattavuuden tekniikka, jossa muuttujan arvo sijoitetaan suoraan merkkijonojen sisään. Ohjelmoijat tekevät tätä helpottaakseen luettavan ja hallittavan koodin kirjoittamista.
 
-## Miten:
-Stringien interpolointi suoritetaan lisäämällä muuttuja merkkijonoon sekä sijoittamalla merkkijono lainausmerkkien väliin. Tämä tehdään käyttämällä kirjoitusmerkkiä ``` ``` Go kielellä. Alla on esimerkki:
+## Näin se tehdään:
+
+Katsotaan esimerkkiä Go:n Fmt-paketin `Sprintf`-funktion avulla:
+
+```Go
+package main
+import "fmt"
+
+func main() {
+    name := "Pekka"
+    age := 32
+    s := fmt.Sprintf("%s on %d vuotta vanha.", name, age)
+
+    fmt.Println(s)
+}
 ```
-Go
-x := 25
-fmt.Println(``Merkkijono, johon on lisätty x-muuttuja:``, x)
-```
-Tuloste: `Merkkijono, johon on lisätty x-muuttuja: 25`
 
-## Syvä sukellus:
-Stringien interpolointi on kehittynyt merkkijonojen käsittelyn avulla. Ennen interpolointia käytettiin usein String Formatting-tekniikkaa tai konkatenointia muuttujien lisäämiseen merkkijonoihin. Nyt interpolointi on yleisesti käytössä monissa ohjelmointikielissä, kuten Go:ssa. 
+Kun tämä esimerkkikoodi ajetaan, tulostetaan `Pekka on 32 vuotta vanha.`
 
-On myös olemassa muita tapoja lisätä muuttujia merkkijonoihin, kuten Substitution ja f-string, mutta nämä ovat enemmän Python-kieleen liittyviä tekniikoita. 
+## Syvällisempi sukellus:
 
-Go:ssa stringien interpolointi tapahtuu käyttämällä ```fmt.Printf()``` ja ```fmt.Sprintf()``` -funktioita, jotka ovat osa Go:n standardikirjastoa. Näiden funktioiden avulla voidaan hallita muuttujien lisäämistä ja muotoilua merkkijonoihin. 
+Merkkijonon interpolointi on yleinen ominaisuus monissa ohjelmointikielissä palaten asti 1970-luvulle. Go:ssa `Sprintf`-funktiota käytetään, mutta jotkut muut kielet (kuten Python tai JavaScript) tarjoavat lisäsyntaksiä tätä varten.
+
+Vaihtoehtoisesti Go:ssa voidaan käyttää `+` operaattoria merkkijonojen liittämiseen, mutta tämä ei ole yhtä suoraviivaista kuin interpolointi.
+
+`Sprintf`-funktion toteutuksessa käytetään monimutkaista seurantajärjestelmää muuttujien tyyppejä ja arvoja varten. Se käy läpi merkkijonon, etsii muotoilukomennot (kuten `%s` tai `%d`), ja korvaa ne argumenttilistan vastaavalla arvolla.
 
 ## Katso myös:
-- [Golang.org: Stringien interpolointi](https://golang.org/doc/effective_go.html#string_interpolation)
-- [Slant.co: Mikä on paras tapa interpoloida stringeja](https://www.slant.co/topics/2314/~best-way-to-interpolate-strings)
+
+- Fmt-paketti Go:n standardikirjastossa: [https://golang.org/pkg/fmt/](https://golang.org/pkg/fmt/)
+- Lisää merkkijonon käsittely menetelmistä Go:ssa: [https://gobyexample.com/string-formatting](https://gobyexample.com/string-formatting)
+- Yksityiskohtainen katsaus merkkijonon interpoloinnin historiaan: [https://en.wikipedia.org/wiki/String_interpolation](https://en.wikipedia.org/wiki/String_interpolation)

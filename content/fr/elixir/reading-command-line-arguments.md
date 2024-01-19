@@ -1,6 +1,6 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "Elixir: Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,28 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
-La lecture des arguments de ligne de commande est le fait de récupérer et de traiter les informations saisies par un utilisateur dans la ligne de commande lors de l'exécution d'un programme. Les programmeurs le font pour permettre à leurs programmes d'interagir avec les utilisateurs et de prendre en compte leurs entrées de manière dynamique.
+
+La lecture d'arguments de ligne de commande est le processus par lequel une application reçoit des paramètres externes au lancement. C'est utile pour personnaliser le comportement d'un programme à l'exécution sans avoir à modifier le code source.
 
 ## Comment faire:
-La lecture des arguments de ligne de commande peut être réalisée en utilisant la fonction `System.argv/0` en Elixir. Voici un exemple de code montrant comment récupérer et afficher les arguments saisis par l'utilisateur en utilisant cette fonction:
 
+En Elixir, nous utilisons `System.argv/0` pour les lire. Voici un exemple de son utilisation:
+
+```elixir
+defmodule Main do
+  def main() do
+    args = System.argv()
+    IO.inspect(args)
+  end
+end
 ```
-args = System.argv()
-IO.puts(args)
-```
+Si vous lancez ce programme avec `elixir main.exs arg1 arg2`, l'affichage sera `["arg1", "arg2"]`.
 
-En exécutant le programme en ligne de commande en utilisant la commande `elixir`, vous pouvez entrer des arguments séparés par des espaces et les voir s'afficher dans la sortie.
+## Approfondissement
 
-```
-elixir mon_programme.exs argument1 argument2 argument3
-```
-Sortie: `[argument1, argument2, argument3]`
+Des alternatives existent, chaque langage de programmation ayant sa propre façon de gérer les arguments de ligne de commande. Par exemple, en Python, nous utilisons `sys.argv`.
 
-## Plongée en profondeur:
-La lecture des arguments de ligne de commande est couramment utilisée pour créer des scripts et des programmes en ligne de commande en Elixir. Cependant, il existe d'autres alternatives comme l'utilisation de modules tels que `OptionParser` ou en utilisant des frameworks de ligne de commande comme `Escript`.
+Historiquement, le concept de lecture d'arguments de ligne de commande existe depuis les premiers jours des systèmes d'exploitation en ligne de commande. Il offre une grande flexibilité dans la manière dont les programmes peuvent être utilisés et combinés.
 
-La fonction `System.argv/0` utilise l'argument `process.argv` de l'Erlang Virtual Machine (VM) pour récupérer les arguments saisis par l'utilisateur. La VM stocke ces arguments dans une liste sous forme de chaînes de caractères. Il est donc important de les convertir en types de données appropriés avant de les utiliser dans votre programme.
+La fonction `System.argv/0` en Elixir simplement renvoie les arguments lancés avec le script comme une liste de chaînes de caractères. Les arguments sont lus dans l'ordre et sont accessibles immédiatement lors de l'exécution du programme.
 
-## Voir aussi:
-- Documentation officielle pour `System.argv/0`: https://hexdocs.pm/elixir/System.html#argv/0
-- Article sur l'utilisation de modules pour la lecture des arguments de ligne de commande en Elixir: https://medium.com/red-ventures-br-tech/reading-command-line-arguments-in-elixir-fd6bbb3204d8
+## Voir Aussi
+
+Voici quelques liens pour approfondir vos connaissances sur le sujet:
+
+1. [System.argv — Elixir v1.11.3](https://hexdocs.pm/elixir/System.html#argv/0)
+2. [Lecture des arguments depuis la ligne de commande - Wikilivres](https://fr.wikibooks.org/wiki/Programmation_Python/Lecture_des_arguments_depuis_la_ligne_de_commande)
+3. [How Command Line Parameters Are Parsed](https://docs.microsoft.com/en-us/previous-versions//17w5ykft(v=vs.85))

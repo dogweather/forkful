@@ -1,7 +1,7 @@
 ---
-title:                "Lendo um arquivo de texto."
-html_title:           "TypeScript: Lendo um arquivo de texto."
-simple_title:         "Lendo um arquivo de texto."
+title:                "Lendo um arquivo de texto"
+html_title:           "Bash: Lendo um arquivo de texto"
+simple_title:         "Lendo um arquivo de texto"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,41 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+---
 
-Ler um arquivo de texto é o processo de ler e interpretar o conteúdo de um arquivo de texto. Programadores frequentemente fazem isso para acessar ou manipular informações armazenadas em um arquivo, como dados de configuração ou texto formatado. É uma maneira útil de interagir com arquivos de texto sem ter que abri-los manualmente e ler o conteúdo.
+# Lendo um ficheiro de texto com TypeScript
+
+## O que & Por quê?
+
+Ler um ficheiro de texto é o processo de obter dados digitais em formato de texto a partir de um ficheiro. Os programadores fazem isso para manipular ou aproveitar informações já existentes sem ter que hardcoded-las no programa.
 
 ## Como fazer:
 
+A biblioteca nativa `fs (file system)` de Node.js nos permite ler um ficheiro de texto de maneira simples e eficiente.
+
 ```TypeScript
-// Importando a biblioteca fs do Node.js
-import * as fs from 'fs';
+import fs from 'fs';
 
-// Lendo um arquivo de texto de forma síncrona
-const fileContent = fs.readFileSync('arquivo.txt', 'utf-8');
-console.log(fileContent);
-
-// Lendo um arquivo de texto de forma assíncrona
-fs.readFile('arquivo.txt', 'utf-8', (err, data) => {
+fs.readFile('meuficheiro.txt', 'utf8' , (err, data) => {
   if (err) {
-    // Caso ocorra um erro, ele será impresso no console
-    console.log(err);
-  } else {
-    // Caso contrário, o conteúdo do arquivo será impresso no console
-    console.log(data);
+    console.error(err);
+    return;
   }
-});
-
+  console.log(data);
+})
 ```
 
-A saída do código acima depende do conteúdo do arquivo "arquivo.txt". Se o arquivo possuir o texto "Hello world!", a saída será "Hello world!".
+Quando corre esse código, ele vai ler o conteúdo do ficheiro `meuficheiro.txt` e vai imprimir na consola.
 
-## Aprofundando:
+## Deep Dive
 
-Ler arquivos de texto é uma tarefa comum em programação e existem várias opções para fazê-lo. Além do método explicado acima, também é possível usar a biblioteca "fs-extra" para ler arquivos de forma mais simples e com mais recursos. Além disso, o TypeScript também possui a opção de ler arquivos usando "streams", o que pode ser mais eficiente para arquivos grandes.
+Historicamente, a leitura de ficheiros em Javascript era um pouco incômoda devido ao seu modelo de thread única. No entanto, com a introdução de Node.js e o seu ambiente assíncrono, essa tarefa se tornou muito mais simples e eficiente.
 
-## Veja também:
+Existem outras alternativas como a biblioteca `readline` que permite ler ficheiros de texto de forma linear, linha por linha, tornando útil para ficheiros grandes que não cabem na memória. 
 
-- Documentação oficial do Node.js sobre a biblioteca "fs": https://nodejs.org/api/fs.html
-- Biblioteca "fs-extra" para ler arquivos no Node.js: https://github.com/jprichardson/node-fs-extra
-- Tutorial sobre como ler arquivos de texto com streams no TypeScript: https://www.digitalocean.com/community/tutorials/reading-files-with-node-js
+Por trás das cortinas, a função `readFile` do módulo `fs` usa uma implementação do sistema de arquivos POSIX que é muito eficiente em ambientes Unix-like e também em Windows.
+
+## Ver também
+
+1. Documentação oficial do Node.js [`fs` module](https://nodejs.org/api/fs.html)
+2. [`readline module`](https://nodejs.org/api/readline.html) - se necessita ler ficheiros grandes linha por linha 
+3. Documentação oficial do TypeScript [TypeScript in Node.js](https://nodejs.org/api/fs.html) - para compreender melhor como utilizar TypeScript com o Node.js
+4. [POSIX](https://pt.wikipedia.org/wiki/POSIX) - para uma visão mais profunda do que está a acontecer por trás do código
+
+---

@@ -1,6 +1,6 @@
 ---
 title:                "Opprette en midlertidig fil"
-html_title:           "Elm: Opprette en midlertidig fil"
+html_title:           "C#: Opprette en midlertidig fil"
 simple_title:         "Opprette en midlertidig fil"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,22 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Oppretting av en midlertidig fil er en vanlig praksis blant utviklere for å lagre midlertidig data som er nødvendig i løpet av programkjøring. Dette kan være data som bare er nødvendig for en kort periode, og som ikke skal lagres permanent i systemet.
+# Opprettelse av Midlertidige Filer i Elm
 
-## Hvordan:
-Å opprette en midlertidig fil i Elm er enkelt og kan gjøres ved å bruke funksjonen `File.temporary`. Her er et eksempel på å opprette en midlertidig fil med navnet "temp.txt" og skrive teksten "Dette er en midlertidig fil" til den:
+## Hva & Hvorfor?
+Opprette midlertidig fil er handlingen av å lage en usalet fil for kort tid. Programmers bruker dette for lagring av mellomliggende data som ikke trenger å bli lagret for en lengre varighet.
+
+## Hvordan gjøre: 
+Elm har ingen innebygd mulighet til å håndtere filskriving eller -lesing på grunn av sin renhet og funksjonelle natur. Men du kan bruke porter for å kommunisere med JavaScript for å oppnå dette. Her er en eksempel på hvordan å gjøre det:
 
 ```Elm
-tempFil = File.temporary "temp.txt"
-       |> Task.andThen (\res -> File.write tempFil "Dette er en midlertidig fil")
+port module Main exposing (..)
+
+port sendToJS : String -> Cmd msg
 ```
+Når sendToJS blir kalt, vil det utløse `sendToJS.subscribe` i din JavaScript kode:
 
-## Dykk dypere:
-Opprettelsen av midlertidige filer har vært en etablert praksis i programmering i lang tid. I eldre programmeringsspråk, som C og C++, var det vanlig å bruke midlertidige filer for å lagre data mellom steg i en prosess. I dag er det også flere alternativer til å opprette midlertidige filer, som å bruke i-minnet databaser eller direkte arbeide med data i minnet.
+```JavaScript
+var app = Elm.Main.init();
+app.ports.sendToJS.subscribe(function(tempFile) {
+   // Handle temporary file creation with JS here
+});
+```
+Legg merke til at mens dette lar deg opprette en midlertidig fil gjennom Elm, utføres den virkelige filopprettelsen i JavaScript, ikke Elm. 
 
-Når man oppretter en midlertidig fil, vil det bli opprettet en unik fil i systemet som kun er tilgjengelig under programkjøringen. Når programmet avsluttes, vil denne filen automatisk bli slettet.
+## Dyp Dykk
+Historisk sett har opprettelse av midlertidige filer vært utført i imperativ programmering. Når det gjelder funksjonelle programmeringsspråk som Elm, prøver de å unngå bieffekter, og å opprette filer er en slik bieffekt som skaper en varig forandring i systemet ditt.
 
-## Se også:
-- [Offisiell dokumentasjon for File-modulen i Elm](https://package.elm-lang.org/packages/elm/file/latest/File)
-- [Enkel og kortfattet forklaring av hva en midlertidig fil er](https://www.linode.com/docs/tools-reference/linux-filesystem-structure/#temporary-files)
+Som alternativer, kan du vurdere å bruke server-side lagring eller in-memory databaser.
+
+På detaljnivå, innebærer implementeringen å opprette en unik filnavn for å unngå kollisjoner, og deretter skrive data til denne filen. Dette kan gjøres ved å bruke program som `tempfile()` i JavaScript. 
+
+## Se Også
+- [Elm's offisielle om porter](https://guide.elm-lang.org/interop/ports.html)
+- [StackOverflow diskusjon på filoperasjoner i Elm](https://stackoverflow.com/questions/43038198/how-to-read-write-a-local-file-in-elm)
+- [Mozilla om FileReader API i JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)

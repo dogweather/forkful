@@ -1,7 +1,7 @@
 ---
-title:                "Convirtiendo una fecha en un string"
-html_title:           "C++: Convirtiendo una fecha en un string"
-simple_title:         "Convirtiendo una fecha en un string"
+title:                "Convirtiendo una fecha en una cadena de texto"
+html_title:           "C++: Convirtiendo una fecha en una cadena de texto"
+simple_title:         "Convirtiendo una fecha en una cadena de texto"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,74 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué es y Por qué?
 
-Convertir una fecha en una cadena de texto es una técnica utilizada por los programadores para transformar una fecha de formato de fecha y hora a un formato legible para humanos. Esto es útil cuando se desean mostrar fechas en un formato específico o cuando se necesitan procesar fechas en una forma más manejable en el código.
+Convertir una fecha en una cadena en C++ significa representar una fecha como texto, en lugar de tenerla almacenada en un formato numérico o de fecha/hora. Los programadores hacen esto por legibilidad y para facilitar la manipulación y el formato de fechas, como la presentación de fechas en formas específicas para diferentes regiones del mundo.
 
-## Cómo:
+## ¿Cómo hacerlo?
 
-### Ejemplo 1:
-
-```C++
-#include <iostream>
-#include <ctime>
-using namespace std;
-
-int main() {
-    // Obtiene la fecha actual
-    time_t now = time(0);
-    
-    // Convierte la fecha en una cadena de texto
-    char* dt = ctime(&now);
-    
-    // Imprime la fecha en el formato predeterminado
-    cout << "La fecha actual es: " << dt << endl;
-    
-    return 0;
-}
-```
-
-**Salida:**
-
-```
-La fecha actual es: Sat Nov 21 10:23:48 2020
-```
-
-### Ejemplo 2:
+Es simple usar la biblioteca `<chrono>` y la biblioteca `<sstream>` para este propósito en C++.
 
 ```C++
-#include <iostream>
-#include <ctime>
-using namespace std;
+#include <chrono>
+#include <sstream>
 
-int main() {
-    // Obtiene la fecha actual
-    time_t now = time(0);
-    
-    // Convierte la fecha en una cadena de texto en formato personalizado
-    char* dt = strftime("%d/%m/%Y", localtime(&now));
-    
-    // Imprime la fecha en el formato personalizado
-    cout << "La fecha actual es: " << dt << endl;
+std::string getDate(){
+    auto ahora = std::chrono::system_clock::now();
+    std::time_t tiempo = std::chrono::system_clock::to_time_t(ahora);
+    std::tm* ptm = std::localtime(&tiempo);
+    std::stringstream fecha;
+    fecha << (ptm->tm_year+1900) << "/" // año 
+          << (ptm->tm_mon+1) << "/" // mes
+          <<  ptm->tm_mday;  // día
+    return fecha.str();
 }
 ```
+Al ejecutar `getDate()`, obtendrías una salida como `2022/03/04`.
 
-**Salida:**
+## Profundización
 
-```
-La fecha actual es: 21/11/2020
-```
+### Contexto histórico
+El formato de fecha-a-cadena ha sido un componente esencial para aumentar la legibilidad en la programación desde sus inicios. Antes de C++11, los programadores usaban la biblioteca `<ctime>` para realizar esta tarea, que ahora se realiza principalmente con `<chrono>` y `<stringstream>`.
 
-## Profundizando:
+### Alternativas
+Otras bibliotecas, como Boost DateTime, pueden proporcionar un enfoque más rico y alternativo para convertir la fecha en cadena.
 
-La conversión de fechas a cadenas de texto se ha vuelto más importante en la programación moderna debido a la necesidad de mostrar fechas en diferentes formatos y en diferentes idiomas. Antes de las bibliotecas estándar de C++, los programadores tenían que implementar sus propias soluciones para convertir fechas en cadenas de texto.
+### Detalles de implementación
+En el código anterior, se utiliza `<chrono>` para obtener la hora del sistema en milisegundos desde la época y se convierte en `time_t`. Luego, convertimos `time_t` en `tm` (estructura de tiempo) usando `localtime`. Finalmente, usamos `stringstream` para formatear y almacenar la fecha en una variable de cadena.
 
-Existen diferentes formas de realizar esta conversión, como utilizando la biblioteca estándar `<ctime>` o la biblioteca de clases `<datetime>`. También es posible utilizar bibliotecas externas, como Boost.DateTime, para realizar conversiones más avanzadas y precisas.
+## Ver También
 
-Para convertir fechas en cadenas de texto, es importante tener en cuenta el formato deseado y la zona horaria en la que se quiere mostrar la fecha. Algunas funciones, como `strftime`, permiten especificar el formato deseado, mientras que otras funciones, como `ctime`, utilizan un formato predeterminado.
-
-## Ver también:
-
-- [Biblioteca estándar de C++ - <ctime>](https://en.cppreference.com/w/cpp/chrono/c)
-- [Biblioteca de clases <datetime>](https://www.cplusplus.com/reference/datetime/)
-- [Boost.DateTime](https://www.boost.org/doc/libs/1_74_0/doc/html/date_time.html)
+Para profundizar en el tema, puedes consultar:
+- [cppreference - std::chrono](https://en.cppreference.com/w/cpp/chrono)
+- [cppreference - std::stringstream](https://en.cppreference.com/w/cpp/io/basic_stringstream)
+- [Boost DateTime documentation](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html) for more complexity and variety in dealing with dates and times in C++.

@@ -1,6 +1,6 @@
 ---
 title:                "Iniziare un nuovo progetto"
-html_title:           "Elixir: Iniziare un nuovo progetto"
+html_title:           "Arduino: Iniziare un nuovo progetto"
 simple_title:         "Iniziare un nuovo progetto"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,21 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-In Elixir, avviare un nuovo progetto significa iniziare a scrivere codice per creare una nuova applicazione o un nuovo servizio. I programmatori lo fanno per eseguire un'idea o una funzionalità specifica, o per risolvere un problema specifico.
+## Che cosa & Perché?
+Avviare un nuovo progetto significa creare una base vuota da cui sviluppare il tuo software, ciò viene fatto per organizzare i file del codice in una struttura standardizzata. I programmatori lo fanno per ottenere un ambiente coerente e facilmente gestibile.
 
-## Come fare:
-``` Elixir
-defmodule Nuovo.Progetto do 
-  IO.puts("Benvenuto nel mio nuovo progetto!") 
-end 
+## Come Fare:
+Per avviare un nuovo progetto in Elixir, usiamo Mix, un tool built-in di Elixir per la gestione dei progetti. Avviarlo è semplice come inventare il nome del tuo progetto e correre un comando Mix. Ecco l'esempio:
+
 ```
-Output: "Benvenuto nel mio nuovo progetto!"
+Elixir
+mix new my_project
+```
+
+Avrai quindi l'output:
+
+```
+Elixir
+* creating README.md
+* creating .formatter.exs
+* creating .gitignore
+* creating mix.exs
+* creating lib
+* creating lib/my_project.ex
+* creating test
+* creating test/test_helper.exs
+* creating test/my_project_test.exs
+
+Your Mix project was created successfully.
+```
+
+In questo modo, otterrai un nuovo progetto con una struttura di directory standardizzata e un file mix.exs per la configurazione del progetto.
 
 ## Approfondimento:
-Avviare un nuovo progetto in Elixir può anche significare creare un nuovo mix, ovvero un progetto pronto per essere compilato e distribuito. Un'alternativa a Elixir per avviare un nuovo progetto è Ruby on Rails, ma Elixir offre una sintassi più concisa e una migliore gestione del multi-threading. Elixir utilizza anche la MVVM (Model-View-ViewModel) che facilita la gestione dei dati tra gli elementi dell'interfaccia grafica.
+La creazione di un nuovo progetto è un concetto fondamentale, in qualsiasi linguaggio di programmazione. L'uso di Mix in Elixir risale alla sua creazione nel 2012. Le alternative a Mix includono Rebar3 per Erlang o Leiningen per Clojure, ma Mix è diventato lo strumento di gestione di progetti standard per Elixir. 
 
-## Vedi anche:
-- [Guida ufficiale di Elixir per iniziare nuovi progetti](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
-- [Documentazione di Ruby on Rails](https://guides.rubyonrails.org/)
-- [Elixir vs Ruby on Rails: qual è il migliore per avviare nuovi progetti?](https://medium.com/@leeboonstra/ruby-vs-elixir-what-would-be-the-right-choice-to-build-your-next-web-application-f8200c3c37a9)
+La creazione di un nuovo progetto con Mix ti dà un progetto Elixir pronto all'uso con una configurazione standard, incluso un semplice modulo .ex come punto di partenza. Avviare un progetto con Mix significa iniziare con una solida base.
+
+## Vedi Anche:
+Per un approfondimento su Mix, consulta la documentazione ufficiale di Elixir [qui](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html).
+
+Per una discussione più ampia su come avviare nuovi progetti in diversi linguaggi di programmazione, vedi [questo](https://www.freecodecamp.org/news/how-to-start-a-new-coding-project/) articolo di FreeCodeCamp. 
+
+Per apprendere di più su Elixir, consulta la guida introduttiva [qui](https://elixir-lang.org/learning.html).

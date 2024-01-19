@@ -1,6 +1,6 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-html_title:           "C#: Utilizzo delle espressioni regolari"
+html_title:           "Bash: Utilizzo delle espressioni regolari"
 simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "C#"
 category:             "C#"
@@ -10,26 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa e perché?
-Le espressioni regolari, o regex, sono una serie di caratteri che vengono utilizzati per identificare determinati pattern all'interno di una stringa di testo. I programmatori le utilizzano per semplificare e velocizzare l'analisi e la manipolazione di dati testuali.
+# Uso delle Espressioni Regolari in C#
 
-## Come fare:
-Per utilizzare le espressioni regolari in C#, è necessario utilizzare la classe Regex e i relativi metodi. Ecco un esempio di codice che cerca una parola all'interno di una stringa e la sostituisce con un'altra:
+## Cosa & Perché?
+
+Le espressioni regolari, o regex, sono potenti strumenti utilizzati per identificare schemi in stringhe di testo. Consentono di effettuare complesse operazioni di ricerca, verifica e sostituzione su codici con semplicità e precisione.
+
+## Come Fare:
+
+Ecco un esempio di come usare le espressioni regolari in C#. Tutto ciò che devi fare è importare il modulo Regex e utilizzarlo!
 
 ```C#
-var regex = new Regex(@"\bApple\b"); // crea una nuova istanza della classe Regex con il pattern da cercare
-string input = "I love apples!"; // stringa di input
-string output = regex.Replace(input, "oranges"); // sostituisce la parola "apples" con "oranges"
-Console.WriteLine(output); // stampa "I love oranges!"
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "Ciao, mi chiamo Mario e il mio numero di telefono è 123-456-7890.";
+        Regex regex = new Regex(@"\d{3}-\d{3}-\d{4}");
+        Match match = regex.Match(input);
+        
+        if (match.Success)
+        {
+            Console.WriteLine("Il numero di telefono rilevato è: " + match.Value);
+        }
+    }
+}
 ```
+Questo programma stamperà: `Il numero di telefono rilevato è: 123-456-7890`.
 
-## Approfondimenti:
-Le espressioni regolari esistono da molto tempo, risalendo ai primi anni della programmazione. Negli anni, sono state implementate in molti linguaggi di programmazione, tra cui C#. Tuttavia, ci sono anche alternative come la libreria String.RegularExpressions di .NET Framework e la classe Pattern di Java.
+## Approfondimento
 
-Le espressioni regolari sono basate su un linguaggio formale, chiamato teoria dei linguaggi formali. Inoltre, ci sono numerosi siti web, come Regex101 e Regexr, che consentono di testare ed esplorare i pattern delle espressioni regolari.
+Le espressioni regolari sono presenti nella programmazione sin dagli albori. Sono uno strumento ereditato dalla teoria della computazione, diffuso in molti linguaggi di programmazione moderni, incluso C#.
 
-## Vedi anche:
-- [Microsoft: Espressioni regolari](https://docs.microsoft.com/it-it/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Wikipedia: Espressioni regolari](https://it.wikipedia.org/wiki/Espressione_regolare)
-- [Regex101](https://regex101.com/)
-- [Regexr](https://regexr.com/)
+Ci sono alternative alle espressioni regolari per operazioni semplici, come l'uso di metodi stringa predefiniti per la ricerca o la sostituzione. Tuttavia, per operazioni più complesse, le regex spesso offrono la soluzione più flessibile ed efficiente.
+
+In C#, le espressioni regolari sono implementate nel modulo `System.Text.RegularExpressions`, che fornisce metodi per eseguire corrispondenze, ricerche e sostituzioni.
+
+## Per Saperne di Più
+
+Per ulteriori dettagli su come usare le espressioni regolari in C#, visita la [documentazione ufficiale di Microsoft](https://docs.microsoft.com/it-it/dotnet/api/system.text.regularexpressions.regex?view=net-6.0).
+
+Per approfondimenti sulla teoria delle espressioni regolari e su come comporre i tuoi modelli, consulta [Regular-Expressions.info](https://www.regular-expressions.info/tutorial.html).

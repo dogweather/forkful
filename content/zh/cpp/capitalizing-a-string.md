@@ -1,7 +1,7 @@
 ---
-title:                "字符串大写化"
-html_title:           "C++: 字符串大写化"
-simple_title:         "字符串大写化"
+title:                "将字符串变为大写"
+html_title:           "C++: 将字符串变为大写"
+simple_title:         "将字符串变为大写"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,49 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是大写字符串？为什么程序员这么做？
+## 什么&为什么?
 
-大写字符串是指将字符串中的所有字符都转换成大写形式。程序员们经常这么做是因为它可以方便比较字符串，更准确地进行判断逻辑，以及避免大小写导致的错误。
+把字符串转化为大写（capitalize a string）就是把字符串的所有字符都变成大写字母。程序员这么做是为了在诸如用户输入、文件处理等场景保持数据的一致性。
 
-# 如何实现大写字符串？
+## 如何实现:
 
-下面是一个使用C++语言的示例代码，以及它的输出结果：
+在C++中，你可以这样做:
 
 ```C++
+#include <algorithm>
+#include <string>
 #include <iostream>
-#include <cstring>
-using namespace std;
 
 int main() {
-  // 定义一个字符串
-  string str = "hello, WORLD";
-  // 使用C++中的内置函数toupper()将字符串转换为大写形式
-  for (int i = 0; i < str.length(); ++i) {
-    str[i] = toupper(str[i]);
-  }
-  // 输出结果为"HELLO, WORLD"
-  cout << str << endl;
-  return 0;
+    std::string s = "hello";
+    std::transform(s.begin(), s.end(), s.begin(), ::toupper);
+
+    std::cout << s;
 }
 ```
 
-# 深入了解大写字符串
+运行此代码后，您将看到输出为"HELLO"。
 
-## 历史背景
+## 深入了解
 
-在早期的计算机系统中，字符和字符串都是以ASCII码来表示的，其中大写和小写的字母是有着固定的对应关系的。随着计算机技术的发展，Unicode编码开始被广泛使用，大小写的概念变得更加复杂，因此在比较字符串时，将所有字符都统一为大写形式可以避免一些不必要的问题。
+(1) 在早期的编程语言中，字符的大小写转换并不总是一个简单的任务，有时要依赖于特定的ASCII表。现在，我们的现代语言如C++已经提供了标准库来完成这个任务。
 
-## 其他方法
+(2) 除了使用::toupper和std::transform之外，你也可以使用现代C++中更灵活的`for_each`算法。他们之间的主要区别在于transform在每个元素上应用一个函数并将结果存回容器，而for_each则仅在每个元素上应用函数，不改变容器中的元素。
 
-除了使用C++中的内置函数toupper()，程序员们也可以使用不同的方法来实现大写字符串，比如使用第三方库、自定义函数等。
+(3) 当使用::toupper时，输入必须是一个unsigned char或者EOF，其它输入可能导致未定义的行为。事实上，::toupper是一个以当前locale为参数的宏，它返回对应大写字母的值，如果输入不是小写字母则返回输入本身。
 
-## 实现细节
+## 参考资料
 
-在C++中，字符和字符串都是以数组的形式保存在内存中的，因此要将所有字符都转换为大写形式，只需要遍历这个数组并对每个字符进行转换即可。同时，要注意处理特殊字符和非字母字符的情况。
-
-# 参考资料
-
-- [C++参考手册](http://www.cplusplus.com/reference/)
-- [ASCII编码表](https://www.asciitable.com/)
-- [Unicode编码表](https://unicode-table.com/cn/)
-- [C++中的字符串处理函数](https://www.geeksforgeeks.org/string-class-in-c/)
+- C++ Reference关于[toupper](https://en.cppreference.com/w/cpp/string/byte/toupper)函数的详细介绍。
+- Stack Overflow关于C++ [capitalizing strings](https://stackoverflow.com/questions/735204/convert-a-string-in-c-to-upper-case)的讨论。
+- 关于C++[algorithms](https://www.cplusplus.com/reference/algorithm/)库的深入教程。

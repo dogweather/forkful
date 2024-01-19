@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http avec authentification de base"
-html_title:           "C++: Envoi d'une requête http avec authentification de base"
-simple_title:         "Envoi d'une requête http avec authentification de base"
+title:                "Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
+simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,54 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire ?
+## Quoi & Pourquoi?
 
-L'envoi d'une requête HTTP avec une authentication de base est une façon standard pour sécuriser les communications entre un client et un serveur web. Les programmeurs le font pour s'assurer que seules les personnes autorisées puissent accéder à certaines ressources.
+L'envoi d'une demande HTTP avec authentification de base est une méthode où les identifiants (nom d'utilisateur et mot de passe) sont envoyés dans l'en-tête de la demande HTTP au format base64. Les programmeurs le font pour accéder à des ressources sécurisées sur un serveur ou une API.
 
-# Comment faire :
+## Comment faire:
+
+Vous pouvez utiliser la bibliothèque C++ `cpp-httplib`. D'abord, installez la bibliothèque.
 
 ```C++
-#include <iostream>
-#include <curl/curl.h> // Pour utiliser la librairie cURL
- 
-int main(){
-    // Initialiser ses identifiants de connexion
-    std::string username = "mon_nom_d'utilisateur";
-    std::string password = "mon_mot_de_passe";
-    
-    // Initialiser la requête HTTP
-    CURL *curl;
-    curl = curl_easy_init();
-    if(curl) {
-        // Définir l'URL de la ressource cible
-        curl_easy_setopt(curl, CURLOPT_URL, "https://mon-site-web.com/chemin_vers_ressource");
-        // Ajouter l'authentication de base à la requête
-        curl_easy_setopt(curl, CURLOPT_USERPWD, (username + ":" + password).c_str());
-        
-        // Envoyer la requête
-        CURLcode res = curl_easy_perform(curl);
-        
-        // Vérifier si la requête a réussi
-        if(res == CURLE_OK) {
-            std::cout << "Requête envoyée avec succès !";
-        }
-        else {
-            std::cerr << "Erreur lors de l'envoi de la requête : " << curl_easy_strerror(res) << std::endl;
-        }
-        
-        // Nettoyer
-        curl_easy_cleanup(curl);
+// Exemple d'envoi d'une requête HTTP GET avec authentification de base
+#include <httplib.h>
+
+int main() {
+    httplib::Client cli("httpbin.org");
+
+    httplib::Headers headers = {
+        { "Authorization", "Basic " + httplib::detail::base64_encode("user:pass") }
+    };
+
+    auto res = cli.Get("/basic-auth/user/pass", headers);
+
+    if (res) {
+        std::cout << res->status << std::endl;
+        std::cout << res->body << std::endl;
     }
-    return 0;
 }
 ```
 
-# Plongée en profondeur :
+L'exécution de ce code affiche la réponse HTTP à notre demande, y compris le code de statut et le corps de la réponse.
 
-L'authentication de base est un mécanisme d'authentification simple où les informations d'identification (nom d'utilisateur et mot de passe) sont encodées en base64 et incluses dans l'en-tête Authorization de la requête HTTP. Cette méthode est considérée comme étant moins sécurisée que d'autres méthodes telles que l'OAuth, car les informations d'identification peuvent être facilement décodées. Cependant, elle reste largement utilisée dans certaines applications où la sécurité n'est pas une priorité absolue.
+## Plongée en profondeur
 
-# Voir aussi :
+Historiquement, l'authentification de base est une méthode simple et largement adoptée pour sécuriser l'accès au web. Cependant, elle présente des inconvénients, tels que la vulnérabilité aux attaques "man-in-the-middle".
 
-- [Documentation cURL](https://curl.se/docs/)
-- [L'authentication HTTP expliquée](https://www.veracode.com/security/authentication/http-authentication)
-- [Guide de l'OAuth pour les débutants](https://blog.restcase.com/restful-api-oauth2-how-to-get-started/)
+Alternativement, "Bearer Token", "Digest Access", et "OAuth" sont d'autres méthodes d'authentification HTTP couramment utilisées.
+
+L'authentification de base envoie les identifiants dans l'en-tête de chaque requête, les exposant potentiellement si la connexion n'est pas sécurisée (HTTPS). De plus, le serveur doit comparer les identifiants fournis avec ceux stockés, généralement dans une base de données, à chaque requête.
+
+## voir également:
+
+1. [cpp-httplib Github](https://github.com/yhirose/cpp-httplib)
+2. [RFC 7617 - Authentification de base HTTP](https://tools.ietf.org/html/rfc7617)
+3. [Comment fonctionne l'authentification de base](http://www.ietf.org/rfc/rfc2617.txt)

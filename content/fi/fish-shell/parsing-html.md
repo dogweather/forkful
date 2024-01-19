@@ -1,7 +1,7 @@
 ---
-title:                "Html-tiedostojen jäsentäminen"
-html_title:           "Fish Shell: Html-tiedostojen jäsentäminen"
-simple_title:         "Html-tiedostojen jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä & Miksi?
+## Mikä & Miksi?
 
-HTML-analysointi on prosessi, jossa tietokone ohjelmallisesti lukee ja käsittelee HTML-koodia. Tämän avulla ohjelmoijat voivat hakea tietoja verkkosivuilta tai muuttaa niitä tarpeidensa mukaan.
+HTML:n jäsentäminen tarkoittaa HTML-koodin muuttamista järkeväksi rakenteeksi, jota ohjelma voi ymmärtää. Ohjelmoijat tekevät tämän tiedon eristämiseksi ja jäsennetyn datan käytön helpottamiseksi.
 
-Miksi ohjelmoijat tekevät tätä? Esimerkiksi web-kehittäjät voivat käyttää HTML-analysointia verkkosivujen sisällön jäsentelemiseen ja muokkaamiseen. Data-analyytikot taas voivat hyödyntää HTML-analysointia hakeakseen tietoja verkkosivuilta ja luodakseen raportteja.
+## Näin teet:
 
-# Miten:
+```Fish Shell
+# Asenna html-xml-utils
+sudo apt-get install html-xml-utils
 
-```Fish Shell``` tarjoaa HTML-analysointiin kätevän ```curl```-komenton, joka mahdollistaa verkkosivujen lataamisen suoraan terminaalista. Tämän jälkeen voit käyttää ```sed```-työkalua HTML-koodin parsimiseen.
+# Muuntoskriptin luominen fishillä
+function parse_html
+    set url $argv[1]
+    curl $url | hxnormalize -x
+end
 
-Esimerkiksi voit hakea verkkosivun otsikot seuraavasti:
-
+# Skriptin käyttö
+parse_html "https://esimerkki.fi"
 ```
-set url "https://www.esimerkkiverkkosivu.fi"
-curl $url | sed -n 's/<title>\(.*\)<\/title>/\1/p'
-```
 
-Tämä tulostaa verkkosivun otsikon terminaaliin. Voit myös tallentaa otsikon muuttujaan ja käyttää sitä myöhemmin.
+Yllä olevassa esimerkissä luodaan funktion `parse_html`, joka lataa ja jäsentää HTML-sivun käyttämällä `curl`- ja `hxnormalize`-työkaluja.
 
-# Syväsukellusta:
+## Deep Dive:
 
-HTML-analysoinnilla on pitkä historia, ja se on ollut tärkeä osa web-kehitystä alusta lähtien. Nykyään on olemassa myös muita tapoja analysoida HTML-koodia, kuten käyttämällä kirjastoja kuten Beautiful Soup tai lxml.
+HTML:n jäsentämisessä ei ole mitään uutta; se on ollut web-kehittäjille tarpeellista 90-luvun alkupuolelta lähtien. Vaihtoehtoja Fish Shellille ovat esimerkiksi Python, JavaScript tai Ruby, mutta Fish erottuu selkeydellään. Tässä esimerkissä käytämme `hxnormalize`-työkalua, joka on osa `html-xml-utils`-pakettia. Se ottaa syötteenä raakaa HTML-koodia ja palauttaa siitä siistin, jäsennetyn version.
 
-Fish Shellin avulla voit myös luoda skriptejä, jotka automatisoivat HTML-analysointiprosessin ja säästävät aikaa ja vaivaa.
+## Katso myös:
 
-# Katso myös:
+1. [Fish:](https://fishshell.com/)
+Suosittu yksinkertainen komentosarjan kieli.
 
-- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html) - Lisätietoa Fish Shellin toiminnoista ja ominaisuuksista.
-- [Beautiful Soup dokumentaatio](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - Kirjasto, jolla voi helposti analysoida HTML-koodia Pythonissa.
-- [lxml dokumentaatio](https://lxml.de/) - Toimiva ja nopea kirjasto XML- ja HTML-dokumenttien parsimiseen Pythonissa.
+2. [HTML-XML-utils:](https://www.w3.org/Tools/HTML-XML-utils/)
+Kokoelma yksinkertaisia ohjelmia HTML- ja XML-tiedostojen käsittelyyn.
+
+3. [Curl:](https://curl.se/)
+Työkalu tiedon siirtämiseen verkkoprotokollilla.

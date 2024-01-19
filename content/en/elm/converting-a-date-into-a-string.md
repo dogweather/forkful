@@ -1,6 +1,6 @@
 ---
 title:                "Converting a date into a string"
-html_title:           "Elm recipe: Converting a date into a string"
+html_title:           "Arduino recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,45 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Converting a date into a string simply means taking a date and turning it into a text format that is readable and understandable for humans. This is commonly done by programmers to display dates on a website or application in a way that is user-friendly and follows a specific format.
-
+Converting a date to a string in Elm means transforming a date object into a format that is easier to read and interpret for humans. Programmers do this to simplify data presentation and enhance user experience.
+  
 ## How to:
+You can leverage Elm's `Date` and `Time` libraries to manipulate dates. Here is an example where we convert the current date into a string using `Date.toIsoString`.
 
-To convert a date into a string in Elm, we make use of the `toString` function, which takes in a date as its parameter and returns a string representation of that date. Let's take a look at an example code below:
+```Elm
+import Time exposing (Posix)
+import Date
 
+formatDate : Posix -> String
+formatDate date = 
+    date
+    |> Time.toHour
+    |> Date.fromTime
+    |> Maybe.map Date.toIsoString
+    |> Maybe.withDefault "invalid date"
+
+main : Html msg
+main =
+    let
+        date = Time.millisToPosix 1609459200000
+    in
+        text (formatDate date)
 ```
-Elm.toString October 24 2021
-```
-
-The output of this code will be:
-
-```
-"Sun Oct 24 2021"
-```
-
-Alternatively, we can also specify a specific format for our output using the `Date.format` function. The code and output for this would look like:
-
-```
-Date.format "%A, %B %d %Y" October 24 2021
-```
-
 Output:
-
-```
-"Sunday, October 24 2021"
+```Bash
+2021-01-01
 ```
 
 ## Deep Dive
+Historically, Elm initially lacked built-in capabilities for date/time manipulation. The community developed packages to cover this gap, with the top ones being `justinmimbs/date` and `elm/time`. These libraries are now commonly used due to their reliability and performance.
 
-Prior to the invention of computers, people used to write dates in a long-form textual format, such as "Sunday, October 24, 2021." However, with the increasing use of technology and the need for consistent formatting, dates started being represented in numeric formats, such as "10/24/2021" or "24.10.2021." However, this format is not easily readable for humans, hence the need for converting dates into strings.
+A couple of alternatives to `Date.toIsoString` are `Date.toRfc1123String` and `Date.toRfc3339String` from the `justinmimbs/date` package or the `Date.Extra.Formats` module from `rluiten/elm-date-extra`, allowing customization of format.
 
-In terms of alternatives, there are other functions in Elm that allow us to manipulate dates, such as `Date.add` to add or subtract time from a given date and `Date.fromTime` to convert a time value into a date. Additionally, there are also external libraries such as `elm-time` and `Time.Clock` that provide more robust date and time functionalities.
-
-In terms of implementation, the `toString` and `Date.format` functions use the `Date` and `Time` modules in Elm to convert dates into strings. These modules also allow for more advanced manipulations of dates, such as comparing dates and checking for leap years.
+When using `Date.toIsoString`, a date is converted to a String following the ISO 8601 date format. Nonetheless, if the conversion process finds an invalid date, it will default to "invalid date".
 
 ## See Also
 
-- [Elm official documentation for Date and Time](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Using Dates in Elm video tutorial](https://www.youtube.com/watch?v=-G8xTa6XMcA)
-- [elm-time package on GitHub](https://github.com/elm/time)
+- Elm documentation: [Time](https://package.elm-lang.org/packages/elm/time/latest/) & [Date](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
+- Conversion between different time types in Elm: [Time management](https://elmprogramming.com/time-management.html)
+- Library for additional formatting options: [rluiten/elm-date-extra](https://package.elm-lang.org/packages/rluiten/elm-date-extra/latest/Date-Extra-Formats)
+- Differences between `toIsoString`, `toRfc1123String`, and `toRfc3339String`: [Date formats](https://www.w3.org/TR/NOTE-datetime)
+- Elm Reddit discussion on [date and time manipulation](https://www.reddit.com/r/elm/comments/ah9onw/decoding_and_managing_dates_and_times_in_elm/)

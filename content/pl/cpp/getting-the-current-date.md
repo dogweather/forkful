@@ -1,7 +1,7 @@
 ---
-title:                "Pobieranie bieżącej daty"
-html_title:           "C++: Pobieranie bieżącej daty"
-simple_title:         "Pobieranie bieżącej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robimy?
-Pobieranie aktualnej daty jest ważnym elementem w programowaniu, ponieważ często potrzebujemy aktualnych informacji w celu wykorzystania ich w naszym programie. Programiści używają tej funkcji do ustalania daty i godziny, rejestracji zdarzeń, sprawdzania ważności licencji i wielu innych zadań.
+# Pobieranie Aktualnej Daty w C++ 
+
+## Co i Dlaczego?
+
+Osiąganie aktualnej daty polega na pobieraniu bieżącej daty i czasu z systemu komputera. Programiści często robia to do logowania zdarzeń, generowania sygnatur czasowych czy śledzenia postępów procedur.
 
 ## Jak to zrobić:
-Poniżej przedstawiamy przykładowy kod w języku ```C++```, który pomoże Ci uzyskać aktualną datę w formacie "dd/mm/yyyy":
+
+Nowoczesne C++ (od C++11) oferuje zintegrowane narzędzia do osiągania aktualnej daty. Poniżej znajduje się przykład użycia:
 
 ```C++
 #include <iostream>
+#include <chrono>
 #include <ctime>
-using namespace std;
 
-int main() {
-  time_t now = time(0);
-  char* dt = ctime(&now);
-  cout << "Aktualna data i czas: " << dt << endl;
+int main() 
+{
+    auto teraz = std::chrono::system_clock::now();
+    time_t czas_teraz = std::chrono::system_clock::to_time_t(teraz);
+    std::cout << "Aktualna data i czas: " << ctime(&czas_teraz) << '\n';
+    return 0;
 }
 ```
 
-Output:
+Po skompilowaniu i uruchomieniu tego kodu, wydrukuje on aktualną datę i czas w czytelnej formie.
 
-```
-Aktualna data i czas: Thu Jun 17 18:05:36 2021
-```
+## Głębiej:
 
-## Głębsza analiza:
-Pobieranie aktualnej daty jest możliwe dzięki wykorzystaniu biblioteki ```ctime```, która dostarcza funkcje i struktury potrzebne do manipulowania czasem i datą w programie. Alternatywą dla tej metody jest użycie klasy ```std::chrono```, która oferuje większą precyzję i elastyczność przy operacjach na czasie.
+- **Kontekst historyczny**: W przeszłości, aby uzyskać aktualną datę w C++, programiści musieli polegać na funkcjach czasu z C i manipulować danymi na niskim poziomie. Od C++11, standard udostępnia bibliotekę `<chrono>`, która upraszcza te zadania.
+    
+- **Alternatywy**: Oprócz `<chrono>`, niestandardowe biblioteki, takie jak Boost.DateTime, oferują również funkcje do manipulowania datą i czasem.
 
-## Zobacz także:
-- Dokumentacja biblioteki ```ctime``` w języku C++: [https://en.cppreference.com/w/cpp/chrono/c/time](https://en.cppreference.com/w/cpp/chrono/c/time)
-- Przykładowe zastosowania pobierania aktualnej daty w programowaniu: [https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
-- Porównanie metod pobierania aktualnej daty: [https://www.chrono-timer.com/cxx-time_fnc.html](https://www.chrono-timer.com/cxx-time_fnc.html)
+- **Szczegóły implementacyjne**: Funkcja `system_clock::now()` zwraca aktualny punkt czasu jako obiekt `std::chrono::time_point`. `to_time_t()` konwertuje ten punkt czasu na klasyczny `std::time_t`.
+
+## Zobacz tez: 
+
+1. Dokumentacja C++ na temat biblioteki `<chrono>`: https://en.cppreference.com/w/cpp/chrono
+2. Dowiedz się więcej o Boost.DateTime: https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html
+3. Przegląd technik obsługi czasu w C++: https://www.modernescpp.com/index.php/the-three-clocks

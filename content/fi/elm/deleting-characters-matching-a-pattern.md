@@ -1,7 +1,7 @@
 ---
-title:                "Kuvion mukaiseen merkkijonon poistaminen."
-html_title:           "Elm: Kuvion mukaiseen merkkijonon poistaminen."
-simple_title:         "Kuvion mukaiseen merkkijonon poistaminen."
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Miksi poistaisit merkkejä, jotka vastaavat tiettyä kuvioa? Tämä on yksi tapa luoda ohjelmia, jotka suodattavat ja järjestävät tietoa. Se on tärkeää, koska se auttaa meitä hallitsemaan suuria tietomääriä tehokkaammin. 
+# Mitä & Miksi?
 
-## Miten:
-### Poista merkit määritetyn kuvion perusteella:
+Hahmojen poistaminen mallin mukaan on ohjelmointitehtävä, jossa tiettyjä merkkejä tai merkkijonoja poistetaan suuremmasta merkkijonosta. Ohjelmoijat tekevät tämän datan jalostamiseksi, siivoamiseksi tai järjestämiseksi.
+
+# Kuinka tehdä
+
+Elm-ohjelmointikielessä merkkijonoja käsitellään usein `String`-moduulin avulla. Tässä on esimerkki siitä, miten voit poistaa kaikki tietyn mallin mukaiset merkit merkkijonosta.
+
 ```Elm
-List.filter (\char -> char /= "a") ["a", "b", "c", "a", "d"]
---["b", "c", "d"]
+import String
+
+removeChars : String -> String -> String
+removeChars pattern text =
+    let
+        isNotPattern char = 
+            if String.fromChar char |> (\x -> String.contains pattern x) |> not then
+                Just char
+            else
+                Nothing
+    in
+    String.foldr isPattern "" text
 ```
+Kun ajat tämän koodin, esimerkiksi `removeChars "a" "banana"` palauttaa `"bnn"`.
 
-### Hae parilliset luvut listasta:
-```Elm
-List.filter (\num -> modBy 2 num == 0) [1, 2, 3, 4, 5]
---[2, 4]
-```
+# Syvempi sukellus
 
-### Lisävinkki:
-Voit myös käyttää `not` toimintoa helpottamaan ehtoja. Esimerkiksi:
-```Elm
-List.filter (not << String.contains "a") ["a", "b", "c", "a", "d"]
---["b", "c", "d"]
-```
+Hahmojen poistaminen mallin mukaan on konsepti, joka ylittää ohjelmointikielten. Se on ollut osa ohjelmointia lähes sen alusta lähtien, kun ohjelmoijat huomasivat tarpeen käsitellä ja siivota tekstimassaa.
 
-## Syvempi sukellus:
-### Historiallinen tausta:
-Poista merkit toiminto on kehitetty jo alkuaikoina, kun ohjelmointikieliä kehitettiin käsittelemään tietoa. Se on ollut käytössä monissa kielissä, kuten Perl, Python ja Ruby.
+Elmissä on monia muitakin tapoja hoitaa tämä. Aina ei tarvitse luoda omaa funktiota. Elm-yhteisö on kehittänyt useita paketteja, jotka tekevät tekstin käsittelystä helpompaa.
 
-### Vaihtoehtoisia tapoja:
-On olemassa muita tapoja käsitellä tietoja, kuten suodatus, joka käyttää säännöllisiä lausekkeita. Toisaalta, poistamalla merkkejä, jotka vastaavat tiettyä kuvioa, voimme tarkemmin valita, mitkä merkit haluamme poistaa.
+Elm takaa puhtaat toiminnot ja tyypin turvallisuuden, joten tekstinkäsittely ja merkkien poistaminen on suoraviivaista ja turvallista. Se ei kuitenkaan tue säännöllisiä lausekkeita, koska ne ovat vaikeasti ymmärrettäviä ja niitä voidaan käyttää väärin.
 
-### Toteutuksen yksityiskohdat:
-Poista merkit toiminto käyttää taustalla korkeamman asteen funktioita, kuten `filter` ja `not`. Nämä toiminnot mahdollistavat koodin tiistikkämpää ja helpommin luettavissa. 
-
-## Katso myös:
-- [Official Elm Documentation: Filtering Lists](https://guide.elm-lang.org/lists/filter.html)
-- [Stack Overflow: Deleting Characters Matching a Pattern in Elm](https://stackoverflow.com/questions/50559679/deleting-characters-matching-a-pattern-in-elm)
+# Katso myös
+- [Elmin virallinen String-dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm-paketit tekstinkäsittelyyn](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)
+- [Elmin keskustelupalsta pattern matchingista](https://discourse.elm-lang.org/t/pattern-matching-strings/2329)

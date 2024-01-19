@@ -1,7 +1,7 @@
 ---
-title:                "Розбір дати з рядка"
-html_title:           "Java: Розбір дати з рядка"
-simple_title:         "Розбір дати з рядка"
+title:                "Аналіз дати з рядка"
+html_title:           "C++: Аналіз дати з рядка"
+simple_title:         "Аналіз дати з рядка"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,33 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
-Розбір дати з рядка означає перетворення рядка з датою у відповідну дату у форматі Java. Це корисний процес для програмістів, який дозволяє зробити роботу з датами більш простою та ефективною.
+## Що і навіщо?
 
-Як робити:
-Для розбирання дати з рядка у Java, можна використати клас "SimpleDateFormat". Спочатку потрібно визначити шаблон для формату дати, наприклад "yyyy-MM-dd". Далі, можна застосувати метод "parse" до об'єкта "SimpleDateFormat", передавши рядок з датою як параметр. Результуючий об'єкт "Date" з буде містити дату у відповідному форматі.
+1) Парсинг дати з рядка - це процес перетворення текстового представлення дати і часу на об'єкт `java.util.Date` або `java.time.LocalDate`. 
+2) Програмісти це роблять, щоб маніпулювати цими даними під час розробки ПЗ.
 
-```Java
-SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-Date date = format.parse("2020-10-23");
-System.out.println(date);
-// Output: Fri Oct 23 00:00:00 EEST 2020
+## Як це зробити:
+
+```java
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Main {
+    public static void main (String [] args) {
+        String str = "2022-01-01";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate date = LocalDate.parse(str, formatter);
+        System.out.println(date);
+    }
+}
 ```
 
-Задля зручності, клас "SimpleDateFormat" також має метод "format", який дозволяє перетворити об'єкт "Date" назад у рядок за вказаним шаблоном.
+Виведення:
 
-```Java
-SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-Date date = new Date();
-String dateString = format.format(date);
-System.out.println(dateString);
-// Output: 2020-10-23
+```text
+2022-01-01
 ```
 
-Глибокий занурення:
-Розбір дати з рядка є досить поширеною задачею для програмістів, оскільки дати є важливою частиною багатьох програм та систем. У Java є також інші альтернативи для роботи з датами, наприклад, клас "DateFormatter", який був створений в пізніших версіях Java 8.
+## Глибше занурення:
 
-Щоб зробити процес розбору дати більш точним і надійним, можна використовувати метод "setLenient" і передавати йому значення "false". Це дозволить виключити можливі помилки при неправильних форматах дати у рядку.
+1) Історичний контекст: Перші спроби парсингу дати з рядка в програмуванні були величезною проблемою через різницю в загальноприйнятих форматах дати і часу. Java просто розв'язала цю проблему шляхом введення нового API для дати і часу в Java 8. 
 
-Дивіться також:
-Для детальної інформації про клас "SimpleDateFormat" можна переглянути документацію на офіційному сайті Java. Також, на сайтах Stack Overflow та GitHub є багато варіантів коду для розбирання дати з рядка в Java.
+2) Альтернативи: Сама Java надає багато способів парсингу дати з рядка. Ви також можете використовувати сторонні бібліотеки, наприклад Joda-Time.
+
+3) Подробиці реалізації: За замовчуванням, класи Java для парсингу дати використовують шаблон ISO-8601. Ми можемо кастомізувати це, використовуючи `DateTimeFormatter`.
+
+## Дивіться також:
+
+1) [Java - Date Time] (https://www.tutorialspoint.com/java/java_date_time.htm)
+
+2) [Java LocalDate] (https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+
+3) [Java - DateTimeFormatter] (https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+
+4) [Joda-Time Library] (https://www.joda.org/joda-time/)

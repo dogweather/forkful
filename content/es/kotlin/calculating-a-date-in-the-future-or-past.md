@@ -10,27 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Calcular una fecha en el futuro o en el pasado es una tarea común para los programadores. Se refiere a encontrar una fecha específica, ya sea en el futuro o en el pasado, basado en una fecha de partida y una cantidad de tiempo (días, meses, años) especificada. Los programadores pueden utilizar esta función para realizar tareas como calcular plazos de entrega o programar recordatorios.
+## ¿Qué y Por Qué?
 
-## Cómo:
-Puedes calcular una fecha en el futuro o en el pasado en Kotlin utilizando la clase `LocalDate` y sus métodos `plus` y `minus`.
+Calcular una fecha en el futuro o pasado es un proceso para proyectar con precisión los puntos en el tiempo. Los programadores a menudo realizan cálculos de fecha para mantener seguimiento de los eventos, programar tareas y establecer tiempos de espera.
 
-```Kotlin
-// Calculando una fecha 3 meses en el futuro
-val fechaActual = LocalDate.now()
-val fechaFutura = fechaActual.plusMonths(3)
-println("La fecha en 3 meses será: $fechaFutura") // Output: La fecha en 3 meses será: 2022-04-16
+## ¿Cómo Hacerlo?
 
-// Calculando una fecha 1 año en el pasado
-val fechaPasada = fechaActual.minusYears(1)
-println("La fecha hace 1 año fue: $fechaPasada") // Output: La fecha hace 1 año fue: 2020-04-16
+Aquí hay un ejemplo de cómo calcular una fecha en el futuro utilizando Kotlin. Supongamos que queremos saber la fecha dentro de 10 días.
+
+``` Kotlin
+import java.time.LocalDate
+fun main() {
+    val fechaActual = LocalDate.now()
+    val fechaFutura = fechaActual.plusDays(10)
+    println("Fecha futura: $fechaFutura")
+}
 ```
 
-## Profundizando:
-La clase `LocalDate` fue introducida en Java 8 y fue diseñada para ser una alternativa más moderna a la clase `Date` con funcionalidades más completas y menos propensa a errores. Utilizar la clase en línea con los métodos de `plus` y `minus` para calcular fechas en el futuro o en el pasado es más sencillo y menos propenso a errores que realizar cálculos matemáticos con fechas.
+Si corres este código, obtendrás un resultado como esto:
 
-Además, también existe la clase `LocalDateTime` que permite la manipulación de fechas y horas específicas.
+``` 
+Fecha futura: 2023-06-10
+```
 
-## Ver también:
-Para obtener más información sobre la clase `LocalDate` y sus métodos, puedes consultar la documentación oficial de Kotlin: https://kotlinlang.org/docs/reference/datetime.html#date-time-arithmetic
+Para una fecha en el pasado, solo necesitamos alterar una línea. Por ejemplo, si queremos saber la fecha hace 10 días:
+
+``` Kotlin
+import java.time.LocalDate
+fun main() {
+    val fechaActual = LocalDate.now()
+    val fechaPasada = fechaActual.minusDays(10)
+    println("Fecha pasada: $fechaPasada")
+}
+```
+
+Corriendo este código, obtendrías algo así:
+
+```
+Fecha pasada: 2023-05-21
+```
+
+## Análisis Profundo
+
+Historicamente, los cálculos de fechas se realizaron manualmente, siendo una tarea ardua y propensa a errores. Kotlin y otros lenguajes modernos han simplificado esta tarea proporcionando bibliotecas para manipulación de fechas.
+
+En Kotlin, tienes varias alternativas para manejar las fechas. Puedes usar `Calendar` o `Date` además de `LocalDate`, pero `LocalDate` es más recomendado ya que es inmutable y tiene una API más intuitiva.
+
+Los cálculos de fecha en Kotlin, especialmente la adición de días con 'plusDays' y sustracción con 'minusDays', se manejan automáticamente teniendo en cuenta los años bisiestos y otros factores del calendario, lo que hace que la implementación sea bastante robusta.
+
+## Ver También
+
+Para un conocimiento más profundo y avanzado, puedes visitar los siguientes enlaces:
+
+- Documentación oficial de Kotlin sobre la fecha y hora: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/
+- Guía de Java/Kotlin de baeldung sobre cómo calcular la diferencia entre dos fechas: https://www.baeldung.com/kotlin/dates
+- Artículo "Working with Date, Time, and ChronoUnit Enum in Kotlin" de Medium: https://medium.com/@igorkulikov/working-with-date-time-and-chronounit-enum-in-kotlin-b1e5fb1d48ee

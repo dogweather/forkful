@@ -1,7 +1,7 @@
 ---
-title:                "ディレクトリが存在するかどうかをチェックする"
-html_title:           "Haskell: ディレクトリが存在するかどうかをチェックする"
-simple_title:         "ディレクトリが存在するかどうかをチェックする"
+title:                "ディレクトリが存在するかどうかを確認する"
+html_title:           "Haskell: ディレクトリが存在するかどうかを確認する"
+simple_title:         "ディレクトリが存在するかどうかを確認する"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,38 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-インフォーマルなトーンと冗長な表現を避け、分かりやすく要点を伝えることを心がけました。
-
-## 何か？何故か？
-
-ディレクトリが存在するかどうかを確認することは、プログラマーにとって重要なことです。これは、プログラムが正しく動作するために必要なファイルが存在するかどうかを確認するために行われます。
+## 何となぜ？
+ディレクトリ存在確認は、あるディレクトリが存在するか否かをチェックするプロセスのことを指します。これはプログラマーが不必要なエラーを防ぎ、効率的にディレクトリへの読み書き操作を行うために行います。
 
 ## 方法：
-
-まず、Haskellの"System.Directory"モジュールをインポートします。次に、"doesDirectoryExist"関数を使用して、チェックしたいディレクトリのパスを指定します。この関数は、ディレクトリが存在した場合は"True"を、存在しなかった場合は"False"を返します。
+Haskellでは、System.Directory モジュール内の doesDirectoryExist 関数を使用します。以下はその使用例です。
 
 ```Haskell
 import System.Directory
 
 main = do
-  let path = "Documents/MyFiles"
-  exist <- doesDirectoryExist path
-  if exist
-    then putStrLn "指定したディレクトリは存在します。"
-    else putStrLn "指定したディレクトリは存在しません。"
+    isDir <- doesDirectoryExist "/your/directory/path"
+    if isDir
+      then putStrLn "Directory exists"
+      else putStrLn "Directory does not exist"
 ```
+これを実行すると、指定したパスがディレクトリとして存在する場合は "Directory exists"、存在しない場合は "Directory does not exist" と出力されます。
 
-```Haskell
-出力：
-指定したディレクトリは存在しません。
-```
+## 深い掘り下げ
+歴史的な背景としては、この関数は GHC 6.4 から利用可能で、その後 Haskell の標準ライブラリに組み込まれています。代替手段としては、手元にST Monadを使用してこの処理を自作することも可能ですが、既に標準ライブラリに存在する関数を使用した方がコードは簡潔になります。実装については、この関数は裏側でOSのシステムコールを呼び出してディレクトリの存在を確認しています。
 
-## 深い掘り下げ：
-
-プログラミング言語によっては、ディレクトリの存在を確認するための別の方法があります。例えば、Bashならば、"test -d"コマンドを使用することができます。しかし、Haskellでは、"System.Directory"モジュールを使用することで、簡単にディレクトリの存在を確認することができます。
-
-また、"System.Directory"モジュールには、ディレクトリを作成したり、削除したりするための関数もあります。これらの関数を使用することで、プログラムの中でディレクトリを操作することができます。
-
-## 関連情報：
-- [Hackage - System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Hoogle - doesDirectoryExist](https://hoogle.haskell.org/?hoogle=doesDirectoryExist)
+## 参考文献：
+* System.Directory モジュール公式ドキュメンテーション: [http://hackage.haskell.org/package/directory](http://hackage.haskell.org/package/directory)
+* HaskellのST Monadについて: [https://wiki.haskell.org/State_Monad](https://wiki.haskell.org/State_Monad)

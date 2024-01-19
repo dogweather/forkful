@@ -1,7 +1,7 @@
 ---
-title:                "String-Interpolation"
-html_title:           "Fish Shell: String-Interpolation"
-simple_title:         "String-Interpolation"
+title:                "Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
+simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,25 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-String-Interpolation ist ein häufig verwendetes Konzept in der Programmierung, das es ermöglicht, dynamische Variablen oder Ausdrücke in eine Zeichenkette einzufügen, um diese besser lesbar und flexibler zu gestalten. Programmierer nutzen dies, um das Einfügen von Variablenwerten oder anderen Ausdrücken in Texten, beispielsweise in Fehlermeldungen oder Ausgabemeldungen, zu erleichtern.
 
-## So geht's:
-Fish Shell bietet eine einfache und intuitive Möglichkeit, String-Interpolation zu nutzen. Dazu werden die Variablen oder Ausdrücke in geschweifte Klammern innerhalb der Zeichenkette eingefügt. Bei der Ausführung des Skripts werden diese Klammern automatisch durch die entsprechenden Werte oder Ausdrücke ersetzt. Hier ein Beispiel:
+Die Zeichenketten-Interpolation ist eine Technik, bei der wir Werte innerhalb von Zeichenketten einfügen. Warum? Es erleichtert das Kodieren und macht Code deutlicher und verständlicher.
+
+## Wie geht das? 
+
+Im Fish Shell kannst du den Namen einer Variablen direkt in deinem String platzieren, um Interpolation zu erreichen. Hier ist ein einfaches Beispiel:
 
 ```Fish Shell
-
-set name "Max"
-set age 25
-echo "Mein Name ist {$name} und ich bin {$age} Jahre alt."
+set name "Freddy"
+echo "Hallo $name"
 ```
-Ausgabe: "Mein Name ist Max und ich bin 25 Jahre alt."
 
-## Tiefere Einblicke:
-String-Interpolation gibt es schon seit vielen Jahren in verschiedenen Programmiersprachen. Auch in Fish Shell sind alternative Methoden wie die `eval`-Funktion bekannt, aber die Verwendung von geschweiften Klammern ist in der Regel die bevorzugte Methode, da sie übersichtlicher und sicherer ist.
+Der Ausgabe wäre dann:
 
-Die Implementierung von String-Interpolation in Fish Shell basiert auf der Verwendung von Unterstreichen vor und nach Variablen oder Ausdrücken innerhalb von Zeichenketten. Diese Unterstriche signalisieren dem Interpreter, an welchen Stellen die entsprechenden Werte oder Ausdrücke eingefügt werden müssen.
+```Fish Shell
+Hallo Freddy
+```
 
-## Siehe auch:
-- Offizielle Fish Shell Dokumentation zu String-Interpolation: https://fishshell.com/docs/current/index.html#string-interpolation
-- Tutorial zur Verwendung von String-Interpolation in Fish Shell: https://dev.to/dwightwatson/advanced-string-interpolation-in-fish-shell-5a78
-- Vergleich von String-Interpolation in verschiedenen Programmiersprachen: https://en.wikipedia.org/wiki/String_interpolation#Comparison_table
+Der Wert der Variablen `name` wurde in die Zeichenkette eingefügt.
+
+## Tiefere Einblicke
+
+Die Zeichenketteninterpolation hat eine lange Programmierhistorie und existiert in viele verschiedene Sprachen. Fish Shell macht es besonders einfach: keine Notwendigkeit für Konkatenation oder spezielle Formatierungszeichenketten!
+
+Alternativen in Fish Shell? Du kannst mehrere Argumente an `echo` übergeben und sie werden zusammen mit Leerzeichen verbunden.
+
+```Fish Shell
+set nachname "Krüger"
+echo "Hallo" $name $nachname
+```
+
+Der Ausgabe:
+
+```Fish Shell
+Hallo Freddy Krüger
+```
+
+Tiefgreifende implementierungsdetails? Nun, es ist verankert in den Grundlagen der Fish Shell und von vielen anderen Shells übernommen.
+
+## Siehe Auch
+
+- Die Fish Shell Dokumentation für [Zeichenketteninterpolation](https://fishshell.com/docs/current/index.html#expand)
+- [Tutorial zu Fish Shell Variablen](https://fishshell.com/docs/current/tutorial.html#tut_variables)
+
+Nutze sie und verschönere deinen Fish Code mit Zeichenketteninterpolation. Alles ist Fisch!

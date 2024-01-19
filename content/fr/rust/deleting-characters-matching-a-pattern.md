@@ -1,7 +1,7 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
-html_title:           "Rust: Suppression de caractères correspondant à un motif"
-simple_title:         "Suppression de caractères correspondant à un motif"
+title:                "Supprimer les caractères correspondant à un modèle"
+html_title:           "Ruby: Supprimer les caractères correspondant à un modèle"
+simple_title:         "Supprimer les caractères correspondant à un modèle"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -12,42 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Quoi & Pourquoi?
 
-Supprimer des caractères correspondant à un motif est l'action de supprimer tous les caractères qui correspondent à un patron spécifique dans une chaîne de texte. Les programmeurs le font souvent pour nettoyer ou manipuler des données avant de les utiliser dans leur code. Cela peut également être utile pour traiter de grandes quantités de données ou pour effectuer des modifications en masse.
+Supprimer les caractères correspondant à un motif est une opération qui consiste à éliminer de façon sélective certains caractères dans une chaîne de texte. C'est une tâche courante en programmation pour éliminer les données inutiles ou pour formater les données en vue de leur analyse.
 
-## Comment:
+## Comment faire:
 
-Voici deux méthodes pour supprimer des caractères correspondant à un motif en Rust:
-
-```Rust
-let mut text = String::from("Hello, world!");
-let pattern = "l";
-text = text.replace(pattern, "");
-
-println!("{}", text);
-```
-
-Cet exemple utilise la méthode `replace` pour remplacer toutes les instances du caractère "l" dans la chaîne `text` par une chaîne vide. Le résultat sera "Heo, word!".
+Voici comment vous pouvez supprimer certains caractères dans Rust. Disons que vous voulez supprimer tous les 'a' de la chaîne "banana". Vous pouvez le faire avec la méthode `replace()`:
 
 ```Rust
-let mut text = String::from("Bonjour le monde!");
-let pattern = Regex::new("[aeiou]").unwrap();
-text = pattern.replace_all(&text, "").to_string();
-
-println!("{}", text);
+let chaine = "banana";
+let nouveau = chaine.replace("a", "");
+println!("{}", nouveau);
 ```
 
-Dans cet exemple, nous utilisons la bibliothèque Regex pour créer une expression régulière qui correspond à toutes les voyelles en français. Ensuite, nous utilisons la méthode `replace_all` pour remplacer toutes les voyelles dans `text` par une chaîne vide. Le résultat sera "Bnjr l mnd!".
+Output:
 
-## Plongée en profondeur:
+```bash
+bnn
+```
 
-Supprimer des caractères correspondant à un motif a été une tâche courante pour les programmeurs depuis les débuts de la programmation. Auparavant, cela impliquait souvent d'utiliser des fonctions de bas niveau pour parcourir manuellement une chaîne et supprimer les caractères souhaités. Avec l'avènement des expressions régulières, cette tâche a été grandement simplifiée, offrant aux programmeurs des options plus flexibles et efficaces.
+Comme vous pouvez le voir, tous les 'a' de "banana" ont été supprimés.
 
-Alternativement, plutôt que de supprimer des caractères correspondant à un motif, les programmeurs peuvent également utiliser des méthodes pour extraire ou remplacer ces caractères. Cela peut être utile dans d'autres cas où vous avez besoin de conserver certaines données plutôt que de les supprimer complètement.
+## Un plongeon plus profond:
 
-Sur le plan de l'implémentation, les expressions régulières sont souvent utilisées pour trouver et remplacer des caractères correspondant à un motif. Cela peut être dû à leur flexibilité et à leur grande efficacité pour traiter de grandes quantités de données. Cependant, d'autres méthodes peuvent également être utilisées, en fonction des besoins spécifiques du programmeur.
+Historiquement, la suppression de caractères en fonction d'un motif est un concept qui provient du langage de programmation Perl. Rust possède sa propre implémentation efficace basée sur ses mécanismes de gestion de la mémoire et de la chaîne.
+
+Alternativement, on peut utiliser la méthode `chars().filter()`, qui donne plus de flexibilité en termes de modèles que vous pouvez supprimer, mais qui est généralement plus lente.
+
+```Rust
+let chaine = "banana";
+let nouveau: String = chaine.chars().filter(|&c| c != 'a').collect();
+println!("{}", nouveau);
+```
+
+Output:
+
+```bash
+bnn
+```
+
+En interne, la fonction `replace()` repose sur le concept de recherche et remplacement. Elle recherche le motif spécifié et le remplace par une chaîne vide. La performance de cette opération dépend du nombre d'occurrences du motif.
 
 ## Voir aussi:
 
-- [Documentation officielle de Rust sur les expressions régulières](https://doc.rust-lang.org/std/str/struct.Regex.html)
-- [Tutoriel sur les expressions régulières en Rust](https://learnxinyminutes.com/docs/fr-fr/regex/)
-- [Article sur les avantages et les inconvénients des expressions régulières en programmation](https://www.iamtechnical.com/blog/regular-expressions-using-in-programming-languages)
+Pour en savoir plus sur la programmation Rust et les chaînes en particulier, consultez les ressources suivantes:
+
+- La documentation officielle de Rust sur les chaînes <https://doc.rust-lang.org/std/string/>
+- Le livre de Rust, un guide complet de toute la programmation en Rust <https://doc.rust-lang.org/book/>
+- Le forum des utilisateurs de Rust, où vous pouvez poser des questions et discuter des sujets liés à Rust <https://users.rust-lang.org/>

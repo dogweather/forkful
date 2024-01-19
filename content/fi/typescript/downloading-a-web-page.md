@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "TypeScript: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,32 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## Mikä & Miksi?
 
-Verkkosivun lataaminen tarkoittaa yksinkertaisesti sivun sisällön hakemista internetistä ja sen tallentamista omalle tietokoneelle tai järjestelmälle. Ohjelmoijat tekevät tätä usein esimerkiksi siksi, että he haluavat tarkastella sivun sisältöä ja käyttää sitä omassa koodissaan.
+Lataaminen tarkoittaa verkkosivujen tietojen hakemista palvelimelta. Ohjelmoijat tekevät näin, kun heidän täytyy saada pääsy ja käsitellä verkkosivun sisältöä, ajaa skriptejä tai tallentaa tietoja myöhempää käyttöä varten.
 
-## Kuinka tehdä:
+## Miten tehdään:
 
-Voit käyttää TypeScriptiä verkkosivun lataamiseen seuraavalla tavalla:
+Käytämme axios-kirjastoa TypeScriptissä verkkosivun lataamiseksi. Asennetaan se ensin.
 
-```TypeScript
-const fetch = require('node-fetch');
-
-fetch('https://example.com')
-  .then(res => res.text())
-  .then(body => {
-    console.log(body);
-  });
+```npm
+npm install axios
 ```
 
-Tämä koodi käyttää `node-fetch` -kirjastoa verkkosivun hakemiseen ja tulostaa sivun sisällön konsoliin.
+Koodinäyte:
 
-## Syvemmälle:
+```TypeScript
+import axios from 'axios';
 
-Verkkosivun lataaminen on yleisesti ottaen ollut välttämätöntä ohjelmoinnissa jo pitkään, ja tähän tarkoitukseen on kehitetty monia erilaisia kirjastoja ja työkaluja. TypeScript on yksi suosituimmista ohjelmointikielistä tällä hetkellä, joten sen avulla on helppo ladata verkkosivuja ja käsitellä niiden sisältöä.
+const downloadPage = async (url: string): Promise<void> => {
+  try {
+    const response = await axios.get(url);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+downloadPage('https://www.example.com');
+```
+
+## Syväsukellus:
+
+Teknologia kehittyy jatkuvasti, ja verkkosivujen lataaminen ei ole poikkeus. Historiallisesti tämä tehtiin usein puhelinlinja-viritetyillä modeemeilla, mutta nykyään prosessi on paljon nopeampi ja tehokkaampi.
+
+On myös vaihtoehtoja axios-kirjastolle, kuten fetch API ja request Promise, jotka ovat käyttökelpoisia jotkut skenaariot. Suosittelemme tutkimista ja valitsemaan sen, mikä sopii parhaiten projektisi vaatimuksiin.
+
+Axios-kirjasto käsittelee HTTP-pyynnöt ja vastaukset. Käytämme tässä esimerkissä GET-menetelmää, joka on yleisin tapa ladata verkkosivuja. Axios palauttaa lupauksen, joka ratkaistaan, kun vastaus saapuu.
 
 ## Katso myös:
 
-- [Node.js:n virallinen dokumentaatio](https://nodejs.org/en/docs/)
-- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/)
-- [node-fetch-kirjaston dokumentaatio GitHubissa](https://github.com/node-fetch/node-fetch)
+1. [Axios GitHub](https://github.com/axios/axios) - Täydellinen axios-kirjaston dokumentaatio
+2. [Fetch API](https://developer.mozilla.org/fi/docs/Web/API/Fetch_API) - Kätevä tapa tehdä verkkopohjaisia ​​pyyntöjä
+3. [Request Promise](https://github.com/request/promise) - Kevyempi vaihtoehto lataamiseen
+4. [HTTP-viestit](https://developer.mozilla.org/fi/docs/Web/HTTP/Messages) - Selitys HTTP-pyynnöistä ja vastauksista
+5. [Lupaukset JavaScriptissä](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Using_promises) - Perusteellisempi katsaus lupauksiin.

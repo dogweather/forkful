@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
-html_title:           "Java: बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,68 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-
-एचटीटीपी अनुरोध को बुनियादी प्रमाणीकरण के साथ भेजना क्या है, और क्यों प्रोग्रामर इसे करते हैं, यह दो से तीन सेन्टेंस हैं।
+HTTP अनुरोध वितारण जिसमे बेसिक प्रमाणन (basic authentication) होता है एक मूलभूत क्रिया है । इसका प्रयोग वेब सर्वरसे डेटा लेने या डेटा गुजारने के लिए किया जाता है। यह सुरक्षित तरीका होता है APIs से जुड़ने का।
 
 ## कैसे करें:
-
-यहां, हम आपको एक जावा मेथड का उदाहरण और उसका आउटपुट दे रहे हैं:
-
 ```Java
-public void sendRequest(){
-    String username = "myUsername";
-    String password = "myPassword";
-    
-    String url = "https://www.example.com/api";
-    
-    //Setting up basic authentication
-    String authString = username + ":" + password;
-    byte[] authEncBytes = Base64.getEncoder().encode(authString.getBytes());
-    String authStringEncoded = new String(authEncBytes);
-    
-    //Creating HttpUrlConnection
-    URL obj = new URL(url);
-    HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-    
-    //Setting request method
-    con.setRequestMethod("GET");
-    
-    //Adding Authorization header
-    con.setRequestProperty("Authorization", "Basic " + authStringEncoded);
-    
-    //Sending request
-    int responseCode = con.getResponseCode();
-    System.out.println("Response Code: " + responseCode);
-    
-    //Reading response
-    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-    String inputLine;
-    StringBuffer response = new StringBuffer();
-    
-    while ((inputLine = in.readLine()) != null) {
-        response.append(inputLine);
+import java.net.http.HttpClient;
+import java.net.http.HttpHeaders;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
+
+public class HttpBasicAuth {
+
+    public static void sendRequest() throws Exception {
+
+        HttpClient client = HttpClient.newHttpClient();
+
+        String auth = "user:password";
+        String encodedAuth = Base64.getEncoder()
+          .encodeToString(auth.getBytes(StandardCharsets.UTF_8));
+
+        HttpRequest request = HttpRequest.newBuilder()
+          .uri(new URI("http://your-url.com"))
+          .header("Authorization", "Basic " + encodedAuth)
+          .build();
+
+        HttpResponse<String> response = client.send(request,
+          HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.statusCode());
+        System.out.println(response.body());
     }
-    in.close();
-    
-    //Printing response
-    System.out.println(response.toString());
+
+    public static void main(String[] args) throws Exception {
+        sendRequest();
+    }
 }
 ```
+उपरोक्त कोड सारी आवश्यकताओं को पूरा करेगा और सर्वर से प्रतिक्रिया आने पर इसे छाप देगा।
 
-उपरोक्त कोड आउटपुट के साथ एक धारणात्मक रूप में निम्न परिणाम देगा:
+## गहराई में:
+HTTP और Basic Authentication की जोड़ी का इतिहास वेब के आरम्भिक दिनों से ही जुड़ी हुई है। बेसिक प्रमाणन (Basic Authentication) के विकल्प OAuth और Digest Access Authentication होते हैं। हालांकि, बेसिक प्रमाणन सबसे आसान होता है लेकिन इसे HTTPS के साथ उपयोग करना चाहिए क्योंकि यह क्रेडेंशियल्स को एन्कोड करता है, न कि एन्क्रिप्ट। 
 
-```
-Response Code: 200
-{"message": "Success"}
-```
-
-## गहराई में जाने:
-
-बुनियादी प्रमाणीकरण के साथ एचटीटीपी अनुरोध को भेजने के लिए कुछ अन्य विकल्प भी हैं। सरल अनुमत आधार प्रणाली (Simple Authorization System) और क्रिप्टोग्राफिक अल्गोरिथ्म भी सबसे आम हैं। इन सभी अल्गोरिथ्म में सर्वश्रेष्ठता को मिलाने के लिए आपको क्लास का सेट करना पड़ता है (चार्कों और शब्दांशों के स्पष्ट नमूने, जैसे, साउंड्स लॉगिंग)।
-
-बुनियादी प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजने के लिए जावा में क्रिप्टोग्राफिक अल्गोरिथ्म का एक अनुमानित उपयोग दो बोलों में इस DARPA द्वारा किया गया था कि कारण एक अनौपचारिक शीर्षक है। भाषाएँ। अपनी हार्डवेयर और सॉफ्टवेयर को अपग्रेड करते गए । (एंप्ट्ले 2000, 2007 इत्यादि)
-
-## के साथ देखो:
-
-- यह वीडियो जावा अनुरोधों को बेसिक प्रमाणित करना सिखाता है: https://youtu.be/oUa3wqoMLtY
-- अपने एपीआई से एचटीटीपी प्रमाणीकरण का उपयोग करने के लिए आलेख: https://www.baeldung.com/java-http-request
+## See Also:
+1. जावा नेटवर्किंग (भाग 1) - Socket, ServerSocket, और InetAdress ट्यूटोरियल: https://www.guru99.com/java-networking.html 
+2. जावा के साथ HTTP सर्वर तक पहुंचना: https://www.baeldung.com/java-http-request 
+3. ऑथोराइज़ेशन हेडर्स और एचटीटीपी अनुरोध: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization
+4. Basic और Digest Access Authentication का RFC: https://tools.ietf.org/html/rfc2617

@@ -1,6 +1,6 @@
 ---
 title:                "임시 파일 생성하기"
-html_title:           "C++: 임시 파일 생성하기"
+html_title:           "Python: 임시 파일 생성하기"
 simple_title:         "임시 파일 생성하기"
 programming_language: "C++"
 category:             "C++"
@@ -10,61 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이며 왜 사용합니까? 
+임시 파일 생성은 애플리케이션이 동작하는 동안 발생하는 중간 데이터를 일시적으로 저장하는 방법입니다. 이는 프로그램 오류 시 데이터 손실을 방지하며, 데이터 분석 및 디버깅에 유용하게 사용됩니다.
 
-임시 파일 생성은 프로그래머가 컴퓨터 메모리에 임시로 데이터를 저장하고, 나중에 필요할 때 이를 불러와 사용하기 위해 사용됩니다. 이는 프로그램 실행 중에 메모리를 사용하는 데에 문제가 발생할 때 유용하며, 특히 대규모 작업을 처리할 때 매우 유용합니다.
-
-## 방법:
+## 어떻게:
+다음은 C++에서 임시 파일을 생성하는 예시 코드입니다.
 
 ```C++
-// 임시 파일을 생성하는 예제입니다.
-#include <iostream>
-#include <fstream>
-#include <cstdlib>
-using namespace std;
+#include <cstdio>
 
-int main () {
-    // 파일 이름을 임의로 생성합니다.
-    char* tempname = tempnam(NULL, NULL);
-    // 임시 파일을 생성합니다.
-    ofstream outfile (tempname);
-    // 생성한 임시 파일에 데이터를 작성합니다.
-    outfile << "임시 파일 생성 예제입니다.";
-    outfile.close();
-    // 임시 파일을 읽어옵니다.
-    ifstream infile (tempname);
-    infile >> tempname;
-    // 임시 파일의 데이터를 출력합니다.
-    cout << tempname << endl;
-    // 파일을 삭제합니다.
-    remove(tempname);
-    free(tempname);
-    return 0;
+int main() {
+    char tempFileName[L_tmpnam] = {0}; 
+    tmpnam( tempFileName );
+    printf( "생성된 임시 파일: %s\n", tempFileName );
 }
 ```
 
-위 코드를 실행하면 다음과 같은 출력 결과를 얻을 수 있습니다.
+매번 실행할 때마다 서로 다른 파일 이름이 출력됩니다.
 
-```C++
-임시 파일 생성 예제입니다.
+```bash
+생성된 임시 파일: /tmp/gyw294v
+생성된 임시 파일: /tmp/xyz382h
 ```
+## 깊은 내용: 
+ * **역사적 맥락**: 프로그래밍 초기 단계에서, 임시 파일은 소프트웨어 오류 대비를 위해 중요한 역할을 했습니다. 데이터 저장의 물리적 한계 때문에 메모리 유실이 잦아, 임시 파일이 보안 역할을 했습니다.
 
-## 더 깊이 들어가보기:
+ * **대안들**: 대안으로는 메모리에 직접 데이터를 쓰고 읽는 '메모리 맵 파일'이 있습니다. 하지만 이렇게 하면 쓰기 메모리에 제한이 생각보다 크기 때문에 임시 파일이 여전히 중요합니다.
 
-### 역사적 배경:
+ * **구현 상세**: C++에서는 파일을 삭제하지 않고도 임시 파일을 생성할 수 있으며, 이는 프로그램이 종료될 때 자동으로 삭제됩니다. 이것은 이러한 파일을 다룰 때 발생할 수 있는 유지 관리 작업을 최소화합니다.
 
-임시 파일 생성은 미리 설정된 파일 이름을 사용하지 않고, 프로그램 실행 중에 임의의 파일 이름을 생성하는 기능입니다. 이는 초기에는 운영체제에서 이용한 메모리를 최적화하기 위해 개발되었습니다.
-
-### 대안:
-
-임시 파일 생성 방법 중 하나는 rand 함수를 이용해 임의의 숫자로 된 파일 이름을 생성하는 것입니다. 또 다른 대안은 Unix 계열 운영체제에서는 /tmp 디렉토리를 이용하는 것입니다.
-
-### 구현 세부 사항:
-
-임시 파일 생성에는 여러 가지 방법을 사용할 수 있지만, 일반적으로는 헤더 파일 <cstdlib>의 tempnam 함수를 이용해 임의의 파일 이름을 생성하고, <fstream> 헤더 파일의 ofstream 함수를 이용해 임시 파일을 생성하며, remove 함수를 이용해 새로 생성된 임시 파일을 삭제합니다.
-
-## 더 알아보기:
-
-- [C++ Reference - tempnam](https://www.cplusplus.com/reference/cstdlib/tempnam/)
-- [C++ Reference - ofstream](https://www.cplusplus.com/reference/fstream/ofstream/)
-- [C++ Reference - remove](https://www.cplusplus.com/reference/cstdio/remove/)
+## 참고 자료: 
+1. [Creating and Using a Temporary File](https://www.cplusplus.com/reference/cstdio/tmpnam/)
+2. [Working with Temporary Files](https://www.ibm.com/docs/en/zos/2.4.0?topic=operations-working-with-temporary-files)
+3. [Memory-Mapped Files](https://en.cppreference.com/w/cpp/memory/shared_ptr)

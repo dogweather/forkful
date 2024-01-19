@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Clojure recipe: Comparing two dates"
+html_title:           "Arduino recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,29 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Comparing Two Dates in Clojure 
+
 ## What & Why?
-Comparing two dates is the process of determining whether one date is earlier, later, or equal to another date. This is a common task for programmers when working with date-related data, such as scheduling events or calculating durations. It allows them to efficiently organize and manipulate data based on their chronological order.
+
+Comparing two dates involves determining if one date is earlier, later, or the same as another date. Programmers do this to implement functionalities like sorting events, calculating time intervals, and setting time-based constraints.
 
 ## How to:
-To compare two dates in Clojure, we can use the `compare` function. This function takes two date values and returns an integer that indicates the relationship between the two dates. Here's an example:
+
+Clojure has built-in functions for date comparison. Below is an example of how to compare two dates using `compare` function.
 
 ```Clojure
-(compare (java.util.Date. 2000 1 1) (java.util.Date. 2000 1 2))
+(import 'java.time.LocalDate)
+
+(def date1 (LocalDate/of 2022 3 15))
+(def date2 (LocalDate/of 2023 3 15))
+
+(defn compare-dates [date1 date2]
+  (compare date1 date2))
+
+(println (compare-dates date1 date2))
 ```
 
-This will return -1, indicating that the first date is earlier than the second date. Here are all the possible return values and their corresponding relationships:
+The compare function returns `-1` if the first date is earlier, `1` if the first date is later, and `0` if both dates are the same. In the above example, it will output `-1`.
 
-- -1: First date is earlier than second date
-- 0: Dates are equal
-- 1: First date is later than second date 
+## Deep Dive
 
-## Deep Dive:
-The `compare` function in Clojure is based on the `java.util.Date` class, which represents a specific moment in time. This class has a `compareTo` method that is used by the `compare` function to determine the relationship between two dates.
+Historically, date comparison in Clojure could get messy due to the quirks of `java.util.Date`. Thankfully, `java.time.LocalDate` in JDK 8 onwards simplifies date handling, and Clojure, being a JVM language, can take full benefit of it.
 
-An alternative way to compare dates in Clojure is to use the `before?` and `after?` functions. These functions take two date values and return a boolean value indicating whether the first date is before or after the second date.
+You can use `before` or `after` methods of `LocalDate` instance for more specific comparisons:
 
-Implementing date comparison in Clojure is relatively straightforward due to its built-in support for the `java.util.Date` class. However, it's important to be aware of potential issues with time zones and daylight saving time when dealing with date comparisons.
+```Clojure
+(.isAfter date1 date2)
+(.isBefore date1 date2)
+```
+These will return either `true` or `false`.
 
-## See Also:
-- [Clojure Date and Time library](https://github.com/clj-time/clj-time)
-- [Official Clojure Documentation on java.util.Date](https://clojure.org/reference/java_interop#_java_util_date)
+For non-JDK means, you can rely on libraries like `clj-time` which provide a Clojure-friendly interface for Joda Time, a rich date-time library.
+
+## See Also
+
+1. Clojure docs on [Date-Time](https://clojure.org/about/date_time): Offers insights into Clojure's date and time handling capabilities.
+2. Official Java 8 [LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) docs
+3. [clj-time](https://github.com/clj-time/clj-time) on GitHub: A Clojure Library for creating, parsing and manipulating dates and times.

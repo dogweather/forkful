@@ -1,6 +1,6 @@
 ---
 title:                "Å sende en http-forespørsel"
-html_title:           "Elixir: Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
 simple_title:         "Å sende en http-forespørsel"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,29 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Å sende en HTTP-forespørsel i Elixir 
+
+Elixir er et flott verktøy for å håndtere nettverksforespørsler. Her er en hurtig veiledning for HTTP-forespørsler. 
+
 ## Hva & Hvorfor?
 
-Sending av HTTP-forespørsler er en essensiell del av moderne webutvikling. Det betyr at programmene våre kan kommunisere med andre datamaskiner og hente informasjon fra internett. Det gjør programmererens liv mye enklere og gjør at vi kan bygge kraftige applikasjoner som kan tilfredsstille våre behov.
+HTTP-forespørsler er forespørsler en klient sender til en server for ett av fire formål: hente, lage, oppdatere eller slette data. Programmerere gjør dette for å få tilgang til data i applikasjoner og tjenester utenfra. 
 
-## Slik gjør du:
+## Hvordan:
 
-```Elixir
-# Bruk HTTPoison biblioteket
-# For å gjøre en GET-forespørsel:
-response = HTTPoison.get("https://www.example.com")
-# For å gjøre en POST-forespørsel:
-response = HTTPoison.post("https://www.example.com/users", body: %{name: "John", age: 25})
-# Hent ut statuskoden
-response.status_code
-# Hent ut responsens kropp
-response.body
+Her er hvordan du sender en GET-forespørsel for å hente data ved hjelp av Elixir. Vi skal bruke biblioteket HTTPoison. 
+
+```elixir
+defmodule MyModule do
+  require HTTPoison
+  def request do
+    {:ok, response} = HTTPoison.get("https://eksempel.com/navn")
+    IO.puts response.body
+  end
+end
 ```
 
-## Dykk dypere:
+Når du kjører denne koden vil responsen fra "https://eksempel.com/navn" bli skrevet ut i terminalen.
 
-HTTP-protokollen ble utviklet for å tillate kommunikasjon mellom klienter og servere på internett. Første versjon ble introdusert i 1991 og det har vært flere versjoner siden. Det finnes flere alternativer for å sende HTTP-forespørsler i Elixir, men HTTPoison er et populært valg på grunn av sin enkle og intuitive API. Det er også verdt å nevne at Elixirs innebygde "httpc" bibliotek gir mulighet for å sende HTTP-forespørsler uten å installere tredjeparts biblioteker.
+## Dyp Dykk
 
-## Se også:
+1. Historisk Kontekst: Elixir bruker Erlang's HTTPc-modul for å sende HTTP-forespørsler. Erlang ble utviklet på Ericson, og bruker en svært pålitelig, høyt konkurransedyktig "aktørmodell". 
+   
+2. Alternativer: Andre alternativer til HTTPoison inkluderer Tesla og HTTPotion som er ganske populære. Disse gir mange av de samme funksjonene og det endelige valget kommer nok ned til personlig preferanse.
 
-- [HTTPoison dokumentasjon](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Elixir HTTP klienter sammenlignet](https://dev.to/castore/elixir-http-clients-compared-1i3a)
+3. Implementasjonsdetaljer: Elixir tilbyr flere metoder for å sende HTTP-forespørsler. Du kan sende synkrone (blokkerende) eller asynkrone (ikke-blokkerende) forespørsler.
+   
+## Se også
+
+- HTTPoison dokumentasjon: https://hexdocs.pm/httpoison/readme.html
+- Tesla dokumentasjon: https://hexdocs.pm/tesla/readme.html
+- HTTPotion dokumentasjon: https://hexdocs.pm/httpotion/readme.html
+- Erlang dokumentasjon: https://erlang.org/doc/apps/inets/http_client.html

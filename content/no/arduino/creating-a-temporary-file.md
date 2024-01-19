@@ -1,7 +1,7 @@
 ---
-title:                "Lage en midlertidig fil"
-html_title:           "Arduino: Lage en midlertidig fil"
-simple_title:         "Lage en midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "Arduino: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -11,37 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-En midlertidig fil er en midlertidig lagret fil som brukes av programmerere for å lagre data eller informasjon. Dette gjøres for å unngå å overskrive eller miste viktig informasjon mens programmet kjører.
+Å opprette en midlertidig fil gir programmet muligheten til å lagre data midlertidig. Dette er nyttig når du behandler store mengder data som ikke passer inn i RAM, eller når du må dele data mellom forskjellige økter av en app.
 
-## Slik gjør du det:
+## Hvordan:
+La oss lage en temp fil i Arduino med SD-kortmodulen:
+
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
 
-File tempFile; // Oppretter en variabel for den midlertidige filen
+File tempFile;
 
 void setup() {
-  SD.begin(10); // Initialiserer SD-kortet
-  tempFile = SD.open("TEMP.txt", FILE_WRITE); // Oppretter og åpner den midlertidige filen
-
-  if (tempFile) { // Sjekker om filen ble opprettet og åpnet riktig
-    tempFile.println("Dette er en midlertidig fil."); // Skriver informasjon til filen
-    tempFile.close(); // Lukker filen
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("Initialization Failed!");
+    return;
+  }
+  tempFile = SD.open("temp.txt", FILE_WRITE);
+  
+  if (tempFile) {
+    tempFile.println("This is a temp file!");
+    tempFile.close();
+    Serial.println("Temp file write done.");
+  } else {
+    Serial.println("Error opening temp.txt");
   }
 }
 
 void loop() {
-  // Kan bruke den midlertidige filen til å lagre data eller informasjon
+  // put your main code here, to run repeatedly:
 }
 ```
 
-## Dykk dypere:
-Opprettelsen av midlertidige filer har vært en vanlig praksis blant programmerere i lang tid. Dette ble gjort for å sikre at viktig data ikke gikk tapt under programkjøring og for å unngå å overskrive andre filer som allerede eksisterer.
+Output blir: `"Temp file write done."`
 
-Som en alternativ metode, kan programmerere også bruke variabler til å lagre midlertidig informasjon. Dette kan være et enklere alternativ i mindre og enklere programmer. Imidlertid kan det å bruke midlertidige filer være mer effektivt for å lagre større mengder data.
+## Dypdykking
+Historisk sett har programmerere alltid hatt behov for å lagre data midlertidig, og midlertidige filer har vært løsningen. Men, det er noen alternativer nå:
 
-Implementeringen av midlertidige filer kan variere avhengig av programmeringsspråk og operativsystem. I Arduino bruker vi funksjonen ```SD.open()``` for å opprette og åpne filen.
+- Bruke databasesystemer som SQLite i stedet for midlertidige filer.
+- Bruke innebygd EEPROM for små lagringsbehov.
 
-## Se også:
-- [SD.h bibliotekdokumentasjon](https://www.arduino.cc/en/Reference/SD)
-- [Fildeling og lagring i Arduino](https://www.arduino.cc/en/Tutorial/FileReadWrite)
+Å lage en midlertidig fil i Arduino innebærer å bruke SD.h-biblioteket, som tillater lesing og skriving til SD-kortet. 
+
+## Se Også
+For mer informasjon om hvordan du jobber med filer og SD-kort i Arduino, besøk disse kildene:
+
+- [Arduino SD-biblioteket](https://www.arduino.cc/en/reference/SD)
+- [SD-kortmodulveiledning](https://lastminuteengineers.com/arduino-sd-card-module-tutorial/)
+- [Lær mer om EEPROM](https://www.arduino.cc/en/Tutorial/LibraryExamples/EEPROM)

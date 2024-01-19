@@ -1,7 +1,7 @@
 ---
-title:                "Interpolowanie ciągu znaków"
-html_title:           "C#: Interpolowanie ciągu znaków"
-simple_title:         "Interpolowanie ciągu znaków"
+title:                "Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
+simple_title:         "Interpolacja ciągu znaków"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,28 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Interpolowanie łańcuchów jest ważnym elementem w języku C#, umożliwiającym łączenie łańcuchów tekstowych z innymi typami danych. Programiści często używają tej funkcji, aby wyświetlać zmienną lub wyrażenie wewnątrz tekstu.
+## Co to jest i dlaczego?
 
-## Jak to zrobić?
-Możesz użyć znaku dolara ($) przed otwarciem nawiasu klamrowego, aby określić, że chcesz użyć interpolowanego łańcucha. Na przykład:
+Interpolacja łańcuchów to technika formatowania tekstu w C#, która pozwala na wstawianie zmiennych bezpośrednio w łańcuch. Programiści używają jej, aby zwiększyć czytelność kodu i ułatwić formatowanie.
 
-```C#
-string name = "Jan";
-Console.WriteLine($"Cześć, nazywam się {name}."); // Output: Cześć, nazywam się Jan.
-```
+## Jak to zrobić:
 
-Możesz również użyć interpolacji łańcucha w wyrażeniu warunkowym. Na przykład:
+W C#, interpolację łańcuchów wykonuje się za pomocą wyrażeń „$”.
 
 ```C#
-int age = 25;
-Console.WriteLine($"Jesteś { (age >= 18 ? "pełnoletni" : "niepełnoletni") }."); // Output: Jesteś pełnoletni.
+string imie = "Jan";
+string powitanie = $"Witaj, {imie}!";
+Console.WriteLine(powitanie); // Wyświetli: Witaj, Jan!
 ```
 
-## Głębsze zagadnienia
-Interpolacja łańcuchów została wprowadzona w C# 6.0 jako alternatywa dla metody `String.Format()`. Jest bardziej czytelna i wygodniejsza w użyciu. Istnieją również biblioteki strony trzeciej, takie jak `StringInterpolationHelpers`, które dodają dodatkowe funkcje, takie jak formatowanie i tłumaczenie interpolowanych łańcuchów.
+Tu, zmienna `imie` jest interpolowana do łańcucha `powitanie`. 
 
-## Zobacz także
-- [Dokumentacja Microsoft na temat interpolacji łańcuchów w C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/language-reference/tokens/interpolated)
-- [Przykładowe zastosowania interpolacji łańcuchów](https://www.c-sharpcorner.com/UploadFile/8911c4/interpolated-strings-in-c-sharp/)
-- [Biblioteka StringInterpolationHelpers](https://github.com/haacked/StringInterpolationHelpers)
+Możemy również interpolować wyrażenia, takie jak:
+
+```C#
+int x = 5;
+int y = 10;
+Console.WriteLine($"Suma {x} i {y} wynosi {x + y}."); // Wyświetli: Suma 5 i 10 wynosi 15.
+```
+
+## Deep Dive:
+
+Interpolacja łańcuchów została wprowadzona w C# 6.0 jako ulepszona alternatywa dla funkcji `string.Format`. Interpolacja łańcuchów ma lepszą wydajność od `string.Format` ponieważ stara się minimalizować liczbe alokacji.
+
+Alternatywą dla interpolacji łańcuchów jest używanie konkatenacji łańcuchów, ale jest ona zazwyczaj mniej czytelna i powoduje wiele niepotrzebnych alokacji, które mogą obciążyć system.
+
+Interpolacja działa poprzez przekształcenie łańcucha tekstowego z interpolacją na łańcuch konkatynowany za pomocą operatora `+` albo na `string.Format`, w zależności od użycia.
+
+## Zobacz również:
+
+1. Opracowanie Microsoft na temat interpolacji łańcuchów: 
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated
+
+2. Wykład na YouTube o interpolacji łańcuchów w C#: 
+https://www.youtube.com/watch?v=hUzj3FG0IfY
+
+3. Artykuł dotyczący sprawności interpolacji stringów w C#:
+https://www.hanselman.com/blog/exploring-c-6s-stringinterpolationperf-improvements

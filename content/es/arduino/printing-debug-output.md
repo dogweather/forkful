@@ -10,41 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Imagina esto: Estás escribiendo un código en Arduino y todo parece funcionar bien hasta que de repente, la luz LED que debería estar parpadeando no lo hace. ¿Pero qué pudo haber salido mal? Aquí es donde imprimir la salida de depuración o "debug output" en inglés, llega al rescate. 
-
-La impresión de salida de depuración es simplemente mostrar mensajes en la consola de la computadora para saber si una parte de nuestro código se está ejecutando correctamente. Los programadores lo usan para encontrar errores en su código y solucionarlos de manera más eficiente.
+Imprimir datos de depuración consiste en desplegar la información útil en un terminal durante la ejecución de un código. Los programadores lo hacen para diagnosticar los problemas en sus programas.
 
 ## Cómo hacerlo:
 
-Para imprimir la salida de depuración en un código de Arduino, necesitamos usar la función `Serial.print()` o `Serial.println()`, seguida de los datos que deseamos imprimir entre paréntesis. Por ejemplo:
-
 ```Arduino
-int x = 5;
-Serial.print("El valor de x es ");
-Serial.println(x);
+void setup() {
+  Serial.begin(9600);   //Iniciamos la comunicación serial a 9600 baud
+}
+
+void loop() {
+  Serial.println("¡Hola, Mundo!");   //Imprimimos el mensaje
+  delay(1000);    //Pausamos por 1 segundo
+}
 ```
 
-Esto imprimirá en la consola: `El valor de x es 5`. También podemos imprimir variables y operaciones matemáticas. Por ejemplo:
+El bloque de código anterior inicia la comunicación serial a 9600 baud en la función setup() y luego, en un bucle infinito, imprime "¡Hola, Mundo!" en la terminal serie cada segundo.
 
-```Arduino
-int num1 = 10;
-int num2 = 3;
-Serial.print("El resultado de la operación es ");
-Serial.println(num1 * num2);
-```
+## Profundizando
 
-Esto imprimirá en la consola: `El resultado de la operación es 30`.
+La depuración es una parte esencial de la programación desde sus inicios. Los programadores solían depurar imprimiendo el estado de su programa en tarjetas perforadas. Hoy en día, la impresión de datos por el puerto serial es la forma más común de depuración en sistemas Arduino.
 
-## Inmersión Profunda:
+Existen alternativas a esta técnica, como la depuración paso a paso, otras bibliotecas de depuración e incluso osciloscopios. Sin embargo, la impresión de la salida de depuración es fácil de implementar y de aprender para los principiantes.
 
-La impresión de salida de depuración ha existido desde los primeros días de la programación y sigue siendo una herramienta útil y predilecta para los programadores. Sin embargo, también existen otras formas de depuración, como usar puntos de interrupción y la creación de pruebas unitarias.
+La implementación del debug en Arduino es bastante directa gracias a la biblioteca Serial. Puedes elegir la velocidad de comunicación (en baud), imprimir cualquier cosa que necesites y luego mostrarla con el Monitor Serial integrado en el IDE de Arduino.
 
-En Arduino, además de usar `Serial.print()`, también podemos usar `Serial.write()` para imprimir datos en formato binario. Además, también podemos cambiar la velocidad de transmisión de datos a través del Puerto Serial de Arduino con la función `Serial.begin()`.
+## Ver También
 
-## Ver también:
-
-- [Documentación de Arduino sobre la impresión de datos de depuración](https://www.arduino.cc/en/Tutorial/Debugging)
-- [Guía de depuración de Arduino por Adafruit](https://learn.adafruit.com/debugging-arduino-circuitpython/code-debugging-with-arduino)
-- [Video tutorial de depuración de Arduino en YouTube](https://www.youtube.com/watch?v=kW24J_zEiMw)
+- [Documentación oficial de Arduino en la biblioteca Serial (en inglés)](https://www.arduino.cc/en/Reference/Serial)
+- [Control de errores en Arduino (en español)](https://programarfacil.com/blog/arduino-blog/control-de-errores-arduino/)
+- [Depuración de programas en Arduino (en español)](https://www.luisllamas.es/arduino-depuracion-paso-a-paso/)

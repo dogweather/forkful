@@ -1,6 +1,6 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Gleam: Generando números aleatorios"
+html_title:           "Arduino: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,29 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¡Generando Números Aleatorios con Gleam!
+# Generando Números Aleatorios en Gleam: Un Vistazo Simple y Al Grano
 
-Si eres un programador, es muy probable que hayas escuchado hablar de la generación de números aleatorios. Pero, ¿qué es exactamente? Y más importante aún, ¿por qué los programadores lo hacen? En resumen, la generación de números aleatorios es un proceso en el que se producen números de forma aleatoria, sin seguir un patrón o secuencia predecible. Los programadores usan esto para varios propósitos, como juegos, simulaciones y criptografía.
+## ¿Qué & Por qué?
 
-## ¡Así se hace!
+Generar números aleatorios en programación significa crear números que no siguen ningún patrón predecible. Los programadores lo hacen para simular aleatoriedad en tareas como cálculos científicos, juegos, pruebas, y más.
 
-Para generar números aleatorios en Gleam, podemos utilizar la biblioteca `random` incorporada. Aquí hay un ejemplo de cómo podemos generar un número aleatorio entre 1 y 10:
+## ¿Cómo se hace?
 
-```Gleam
-import gleam/random
-let mi_numero_aleatorio = random.int(1,10)
+Ejemplos prácticos son la mejor forma de aprender. Así es cómo puedes generar números aleatorios en Gleam.
+
+```gleam
+import gleam/atom.{Atom}
+import gleam/float.{from_int}
+import gleam/list.{filter_map, map}
+import gleam/option.{Some}
+import gleam/random.{next_int}
+import gleam/io.{println}
+import gleam/tuple.{from_list}
+import gleam/map.{from_list}
+
+fn main() {
+  let rng = next_int(in 1..10, from_int(1))
+  |> expect
+  |> from_int
+  |> to_string
+  println(rng)
+}
 ```
 
-El resultado será un número aleatorio entre 1 y 10.
+Esto producirá un número aleatorio entre 1 y 10.
 
-## Un Vuelco Profundo
+## Inmersión Profunda
 
-La generación de números aleatorios puede parecer algo sencillo, pero tiene una interesante historia detrás. Originalmente, se utilizaban métodos como arrojar monedas o lanzar dados para producir números aleatorios. Con el avance de la tecnología, se desarrollaron algoritmos y computadoras para generar números aleatorios. Sin embargo, estos algoritmos se basan en datos conocidos, lo que significa que los resultados no son totalmente aleatorios. Para resolver este problema, se han desarrollado generadores de números aleatorios verdaderamente aleatorios, utilizando fuentes externas como la radioactividad o el ruido atmosférico.
+En la programación, los números aleatorios datan desde los tiempos de las primeras computadoras. Sin embargo, Gleam, por ser un lenguaje de programación basado en Erlang, tiene una forma única de generar estos números.
 
-Existen muchas alternativas para generar números aleatorios en Gleam, como la biblioteca `rand` y la función `random.float`. Además, los programadores pueden implementar sus propios algoritmos para generar números aleatorios en función de sus necesidades específicas.
+La principal alternativa a `next_int` en Gleam es `next_float` que proporciona números de punto flotante aleatorios.
 
-## ¡Más Información!
+Asegúrate de entender que estos números no son verdaderamente aleatorios, sino pseudoaleatorios - generados por un algoritmo determinista.
 
-Para obtener más información sobre la generación de números aleatorios en Gleam, puedes consultar la documentación oficial de IBM sobre la biblioteca `random` (https://gleam.run/docs/gleam/random.html). También puedes revisar la implementación del módulo `random` en el repositorio de Gleam en GitHub (https://github.com/gleam-lang/gleam_stdlib/blob/master/random/src/random.gleam).
+## Para Investigar Más
 
-¡Ahora estás preparado para generar números aleatorios en tus proyectos de Gleam! Recuerda que es importante entender cómo funcionan los generadores de números aleatorios y cuándo es necesario utilizarlos. ¡Diviértete explorando y experimentando con ellos!
+1. Documentación oficial de Gleam: [Gleam](https://gleam.run/)
+2. Un vistazo sobre generación de números aleatorios: [Random Number Generation](https://en.wikipedia.org/wiki/Random_number_generation)
+3. Más detalles sobre Gleam y Erlang: [Erlang and Gleam](https://hackernoon.com/erlang-and-elixir-and-gleam-oh-my-9bb91a5300d6)

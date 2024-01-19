@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "Bash: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,18 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czego dotyczy i dlaczego?
+## Co i dlaczego?
 
-Generowanie losowych liczb jest popularnym narzędziem w programowaniu. Pozwala na losowe wybieranie wartości zdefiniowanych przez programistę i jest niezwykle przydatne w wielu scenariuszach, na przykład w symulacjach, grach czy testowaniu aplikacji.
+Generowanie losowych liczb to proces tworzenia liczb, które nie mają żadnego przewidywalnego wzorca. Programiści robią to, aby dodać element nieprzewidywalności do swoich aplikacji, co jest niezbędne w grach, symulacjach czy testach bezpieczeństwa.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Możemy wygenerować losową liczbę w Bashu za pomocą funkcji $RANDOM. Przykładowo, kod ```Bash echo $RANDOM ``` zwróci losową liczbę w przedziale od 0 do 32767. Możemy także określić własny zakres, np. ```Bash echo $((RANDOM%10+1)) ``` wylosuje liczbę od 1 do 10.
+W Bashu możemy wygenerować losową liczbę korzystając z predefiniowanej zmiennej `$RANDOM`. Poniżej znajduje się przykładowy skrypt:
 
-## Wnikliwszy rozkład
+```Bash
+echo $RANDOM
+```
 
-Istnieje wiele sposobów na generowanie losowych liczb w Bashu, takich jak uzycie polecenia ```Bash shuf ``` lub funkcji ```Bash random [options] ```. Dodatkowo, możliwe jest dokładniejsze kontrolowanie rozkładu wygenerowanych liczb za pomocą algorytmów takich jak Mersenne Twister. Warto także pamiętać, że wygenerowane liczby nie są w pełni losowe, tylko pseudo-losowe, co oznacza, że stanowią ciąg liczb, który można przewidzieć.
+Wywołanie tego skryptu da nam losową liczbę pomiędzy 0 a 32767. 
 
-## Zobacz także
+Jeśli chcemy losową liczbę w określonym przedziale, np. od 1 do 100, możemy to zrobić następująco:
 
-Dla większej ilości informacji na temat generowania losowych liczb w Bashu, polecamy zapoznać się z dokumentacją Bashową oraz artykułami na temat używania funkcji $RANDOM. Możesz także poszukać innych sposobów generowania liczb, takich jak wykorzystanie zewnętrznych narzędzi lub bibliotek.
+```Bash
+echo $((RANDOM%100+1))
+```
+
+## Głębsze spojrzenie:
+
+Zmienna `$RANDOM` w Bashu istnieje od czasów, gdy losowość była rzadkością. Choć jest prosta w użyciu, ma kilka ograniczeń. Najważniejsze to fakt, że generuje tylko liczby z przedziału 0-32767.
+
+Istnieją alternatywne metody generowania losowych liczb w Bashu. Jedną z nich jest korzystanie z `/dev/urandom` lub `/dev/random`.
+
+Implementacje `$RANDOM` różnią się w zależności od systemu i bashowej wersji. `$RANDOM` generuje pseudolosowe liczby zgodnie z liniowym kongruentnym generatorem liczb losowych.
+
+## Zobacz też:
+
+Szczegółowy artykuł na temat generowania liczb losowych w Bashu: https://www.linuxjournal.com/content/generate-random-numbers-bash 
+
+Informacje o `$RANDOM` na stronie Bash Shell Scripting Wiki: https://bash.cyberciti.biz/guide/$RANDOM 
+
+Bashowa dokumentacja dla `$RANDOM`: https://www.gnu.org/software/bash/manual/bash.html#Shell-Variables.

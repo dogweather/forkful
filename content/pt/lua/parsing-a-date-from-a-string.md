@@ -1,7 +1,7 @@
 ---
-title:                "Analisando uma data de uma string"
-html_title:           "Lua: Analisando uma data de uma string"
-simple_title:         "Analisando uma data de uma string"
+title:                "Analisando uma data a partir de uma string"
+html_title:           "PowerShell: Analisando uma data a partir de uma string"
+simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+# Parseando uma data de uma string no Lua
 
-Parsear uma data de uma string é o processo de converter uma data presente em uma string para um formato que possa ser utilizado e manipulado em um programa de computador. Isso é útil para programadores que precisam trabalhar com datas em seus códigos, e também para usuários finais que desejam inserir datas de forma mais fácil e legível.
+## O que & Por quê? 
+
+Parsear uma data de uma string consiste em extrair e convertê-la para um tipo data. Programadores fazem isso para manipular, comparar e calcular datas de forma mais eficiente.
 
 ## Como fazer:
 
+No Lua, não existe uma função embutida para parsear datas, mas podemos criar a nossa própria função. Aqui está um exemplo:
+
 ```Lua
--- Exemplo de como parsear uma data de formato comum (DD/MM/YYYY) em Lua.
-local data = "01/04/2021" -- string contendo a data a ser parseada
-local dia, mes, ano = data:match("(%d+)/(%d+)/(%d+)") -- utilizando o método match para extrair o dia, mês e ano da string
--- note que os valores extraídos estarão em formato de string, então é necessário convertê-los para números caso necessário
-print("O dia é: " .. dia) -- saída: O dia é: 01
-print("O mês é: " .. mes) -- saída: O mês é: 04
-print("O ano é: " .. ano) -- saída: O ano é: 2021
+function parsearData(str)
+    local y, m, d = str:match("(%d+)%-(%d+)%-(%d+)")
+    return os.time({year=y, month=m, day=d})
+end
+
+dataStr = "2022-03-18"
+data = parsearData(dataStr)
+
+print(os.date("%x", data))
 ```
 
-## Aprofundando:
+A saída deste código será a data em formatada:
 
-Para entender melhor como o processo de parsear datas de uma string funciona, é importante conhecer o histórico por trás dessa técnica. Antigamente, datas eram armazenadas em formatos específicos de acordo com a máquina e o sistema operacional, o que tornava difícil utilizar essas informações em diferentes plataformas. Com o avanço da tecnologia e a padronização de datas em formatos universais, o parsing se tornou uma ferramenta essencial para lidar com datas em programas de computador.
+```Lua
+18/03/2022
+```
 
-Existem diversas formas de fazer o parsing de datas em Lua, incluindo a utilização de expressões regulares e módulos específicos para essa tarefa. No entanto, o método mostrado acima é uma das formas mais comuns e simples de se fazer o parsing em Lua.
+## Mergulho profundo
 
-## Veja também:
+No passado, a biblioteca `date.lua` era usada para manipular datas, contudo, ela não é nativa do Lua. É mais comum usar os recursos nativos do Lua para manipular datas.
 
-- [Lua.org](https://www.lua.org/): Página oficial da linguagem de programação Lua.
-- [Lua-Users.org](http://lua-users.org/wiki/Main_Page): Comunidade de usuários de Lua, com fóruns e artigos relacionados à linguagem.
-- [Tutorial de Lua](https://www.tutorialspoint.com/lua/index.htm): Tutorial completo e bem explicado da linguagem Lua.
+Quanto às alternativas, existe uma biblioteca chamada `lua-date`: uma biblioteca leve e eficiente para parsear datas. A decisão entre criar a sua própria função ou usar uma biblioteca dependerá das necessidades específicas do seu projeto.
+
+Além disso, é importante frisar que o Lua considera o mês a partir do índice 1 - Janeiro, ao contrário de outras linguagens que começam do 0 - Janeiro. Outro ponto notável é que a função `os.time()` retorna a data em segundos desde o Epoch (01/01/1970).
+
+## Veja também
+
+- Documentação do Lua: https://www.lua.org/manual/5.1/
+- Github da biblioteca lua-date: https://github.com/tieske/date
+- Tutorial mais avançado sobre datas no Lua: http://lua-users.org/wiki/DateAndTime
+Nota: As bibliotecas de terceiros requerem a instalação separada.

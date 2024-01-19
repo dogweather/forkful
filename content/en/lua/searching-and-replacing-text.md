@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Lua recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,36 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Searching and replacing text is a fundamental task in programming. It involves finding a specific set of characters in a string and replacing it with another set of characters. Programmers do this to make changes to their code efficiently and quickly. For example, if you want to change a variable name in multiple places, you can use a search and replace function to avoid manually changing each occurrence.
+Searching and replacing text involves finding a specific sequence of characters in a block of text and substitifying it with a new constellation of characters. It's a common task in any software development process - used for refactoring code, manipulating data, fixing bugs and more.
 
-## How to:
+## How to?
+
+Lua provides an in-built function `gsub` for search and replace operations. Let's learn it via examples:
 
 ```Lua
--- To perform a simple search and replace:
-local my_string = "Hello World"
-local new_string = string.gsub(my_string, "World", "Universe")
-print(new_string) -- Output: "Hello Universe"
-
--- To make a case-insensitive search and replace:
-local my_string = "hello world"
-local new_string = string.gsub(my_string, "WORLD", "Universe", 1, true) -- The 1 limits the replacements to one occurrence
-print(new_string) -- Output: "hello Universe"
-
--- To use a replacement function:
-local my_string = "Hello World"
-local new_string = string.gsub(my_string, "%w+", function(match) return match:upper() end)
-print(new_string) -- Output: "HELLO WORLD" (all words capitalized)
+s = "Lua is great"
+new_s = string.gsub(s, "great", "awesome")
+print(new_s)
 ```
 
-## Deep Dive:
+The output:
 
-Searching and replacing text has been a programming concept since the early days of computing. In the past, it was often done manually, taking hours or even days to make changes to a large program. However, with the advancement of technology, specialized functions like `gsub` have been developed to make this task more efficient.
+```Lua
+Lua is awesome
+```
 
-Alternatives to using `gsub` include using a text editor with a find and replace function or using regular expressions. In Lua, the `re` library can be used for advanced regular expression matching and replacing.
+The `gsub` function takes in a string, a pattern for search, and the replacement string. The function returns the new string with replacements made. 
 
-Implementations of `gsub` vary depending on the programming language and its specific syntax and options. In Lua, `gsub` can accept a fourth and fifth argument, allowing for limiting the number of replacements and case-insensitive matching.
+In cases where you need to replace multiple substrings, you'll call `gsub` again:
 
-## See Also:
+```Lua
+s = "Lua is great, Lua is powerful"
+new_s = string.gsub(s, "Lua", "Python")
+print(new_s)
+```
 
-- [Lua string library documentation for `gsub`](https://www.lua.org/manual/5.4/manual.html#pdf-string.gsub)
-- [Lua Re (regular expression) library](https://github.com/rrthomas/lua-re)
+Output:
+
+```Lua
+Python is great, Python is powerful
+```
+
+## Deep Dive
+
+`gsub` stands for 'Global Substitution'. It traces back to Unix's `ed` command line editor which had a `g/re/p` command (global/regular expression/print) that influenced many text-manipulating tools today.
+
+Alternatives to `gsub` in Lua include: manually parsing and replacing the string with loops and conditional statements (not recommended due to complexity); or using LPEG (Lua Parsing Expression Grammars), a powerful pattern-matching tool built using Parsing Expression Grammars (PEGs).
+
+As for `gsub`, it relies on regex-like patterns to locate strings for replacement. But beware, Lua's pattern matching is not as robust as full-fledged regex libraries in languages like Python or JavaScript.
+
+## See Also
+
+Learn more on Lua's string operations in the official Lua documentation: https://www.lua.org/manual/5.4/manual.html#6.4
+
+Unearth more about parsing in Lua using LPEG: http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html
+
+Dive further into the `gsub` function and Lua's pattern matching: https://www.lua.org/pil/20.2.html

@@ -1,7 +1,7 @@
 ---
-title:                "מחיקת תווים התואמים דפוס"
-html_title:           "Gleam: מחיקת תווים התואמים דפוס"
-simple_title:         "מחיקת תווים התואמים דפוס"
+title:                "מחיקת תווים התואמים לתבנית"
+html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה זה ולמה?
-מחיקת תווים התואמים לתבנית היא פעולת תכנות שבה תווים מסוימים המתאימים לתבנית מסוימת נמחקים מהטקסט. תכניתנים מבצעים פעולה זו כדי לממש פעולות כמו ניקוי טקסט או החלפת מחרוזות.
+## מה ולמה?
+מחיקת תווים לפי תבנית היא פעולה בה מוחק המתכנת תווים מסוימים מתוך מחרוזת. זה מועיל לניקוי ועיבוד נתונים, כמו שינוי פורמט המחרוזת או הסרת תווים לא רצויים. 
 
-כיצד לעשות זאת:
+## איך:
+כאן יש דוגמאות לקוד שמראות איך למחוק תווים התואמים לתבנית ממחרוזת בשפת Gleam.
+
 ```Gleam
-let text = "Hello, World!";
-let pattern = /,/;
-let new_text = delete_chars(text, pattern);
+import gleam/string.{from_tuple, fold, from}
+
+fn delete_pattern(text: String, pattern: String) -> String {
+  fold(from_tuple(String.to_tuple(text)),
+    fn(_, accumulator) {
+      case from(pattern) {
+        Ok(_) -> accumulator
+        Error(_) -> append(from_tuple(accumulator), _)
+      }
+    },
+    ""
+  )
+}
+
+let text = "Hello, Gleam programmers!"
+let pattern = ","
+
+// remove commas
+delete_pattern(text, pattern)  //-> "Hello Gleam programmers!"
 ```
-פלט:
-```Gleam
-"Hello World!"
-```
-מציגים דוגמאות של כיצד למחוק תווים שמתאימים לתבנית בעזרת הפונקציה ```delete_chars``` בשפת גלים.
 
-האקדמיה:
-מחיקת תווים בעזרת תבנית היא טכניקה תכנותית ייחודית שנוצרה בשנות ה-60 של המאה ה-20. זהו אחד הדרכים הנפוצות לעיבוד טקסט, אשר משמשת בתוכנות עיבוד טקסט ותכניות כמו חיפוש והחלפת טקסט. ישנן גם טכניקות אחרות למחיקת תווים, כגון השימוש בפונקציות לקיצור והחלפת מחרוזות.
+## צוללים לעומק
+למרות שהפונקציה `delete_pattern` שיצרנו בקוד שלנו מתאימה למחיקת תווים מסוימים, ישנם דרכים אחרות להשיג את אותו התוצאה בשפת Gleam. 
 
-פירוט עמוק:
-כאשר מחיקת תווים עובדת על ידי התאמת תבנית ומחיקת התווים שמתאימים לתבנית, יש לוודא כי התבנית מופיעה רק פעם אחת בכל פעם שניקוי התווים מתבצע. זה מנקה את הטקסט מתווים לא מתאימים וממשיך עם התבנית הבאה כפולה.
+במקרה מסויים, ניתן לשקול להשתמש בפונקציות ושיטות אחרות כמו `filter`, `replace` ו`reduce`. בדרך כלל, הבחירה בין האפשרויות הללו מתבצעת לפי הדרישות הספציפיות של המשימה. 
 
-ראה גם:
-למידע נוסף על מחיקת תווים בעזרת תבנית בשפת גלים, ניתן לבדוק את האתר הבא:
+## ראו גם
+שפת Gleam מקנה למתכנתים כמה שיטות לעבוד עם מחרוזות. ניתן למצוא מידע נוסף על השימוש במחרוזות בGleam בכתובות האינטרנט הבאות: 
 
-- טכניקות נוספות לעיבוד טקסט: https://en.wikipedia.org/wiki/Text_processing
-- תיעוד רשמי על פונקציית ```delete_chars``` בגלים: https://gleam.run/docs/guide/strings#delete_chars
+1. (Gleam String API)[https://docs.gleam.run/stdlib/string/]
+2. (GitHub - Gleam Cookbook)[https://github.com/gleam-lang/gleam-cookbook#string] 
+3. (Gleam String tutorial)[https://gleam.run/book/tour/strings.html]

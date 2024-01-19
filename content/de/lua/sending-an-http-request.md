@@ -1,7 +1,7 @@
 ---
-title:                "Das Versenden einer http-Anfrage"
-html_title:           "Lua: Das Versenden einer http-Anfrage"
-simple_title:         "Das Versenden einer http-Anfrage"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,41 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# HTTP Anfragen in Lua: Ein Schneller Überblick
+
 ## Was & Warum?
 
-HTTP-Anfragen sind eine Möglichkeit für Programmierer, Daten von externen Servern abzurufen. Dies kann verwendet werden, um Informationen von einer Web-API zu erhalten oder um auf Webinhalte zuzugreifen. Es ist ein wesentlicher Bestandteil von vielen Anwendungen, die auf das Internet zugreifen.
+Das Senden einer HTTP-Anfrage ist eine Aktion, bei der ein Client Daten von einem Server anfordert. Programmierer tun dies, um Daten aus dem Web zu extrahieren oder um serverseitige Aktionen auszulösen.
 
-## Wie geht das?
+## So geht's:
 
-Der folgende Code zeigt, wie man mit Lua eine HTTP-Anfrage sendet:
+In Lua verwenden wir meistens das `socket.http` Modul für HTTP-Anfragen. Hier ist ein einfaches Beispiel:
 
-```lua
-local http = require("socket.http") -- Lua-Modul zum Senden von HTTP-Anfragen
-
-local response = http.request("https://www.example.com") -- Sendet eine Anfrage an die angegebene URL und speichert die Antwort
-
-print(response) -- Gibt die erhaltenen Daten aus
+```Lua
+http = require("socket.http")
+url = "https://example.com"
+response, status_code, header = http.request(url)
+print(response)
 ```
 
-Output:
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Beispiel Webseite</title>
-</head>
-<body>
-  <h1>Willkommen bei unserem Beispiel!</h1>
-</body>
-</html>
+Lauf dieses Skript und du wirst die Antwort des Servers auf deinem Bildschirm sehen.
+
+## Deep Dive
+
+HTTP-Anfragen sind seit dem Beginn des Internets im Einsatz. Um HTTP-Anfragen in Lua zu ermöglichen, wurde das `socket.http` Modul eingeführt, das Teil der LuaSocket Bibliothek ist.
+
+Obwohl `socket.http` das am häufigsten genutzte Modul zum Senden von HTTP-Anfragen in Lua ist, gibt es auch Alternativen wie `luajit-request` oder `lua-http`.
+
+Eines der interessantesten Merkmale von `socket.http` ist die Möglichkeit, benutzerdefinierte Header und weitere Optionen in den Anfragen zu setzen. Hier findest du einen Beispiel dafür:
+
+```Lua
+http = require("socket.http")
+http.TIMEOUT = 2
+response, status_code, header = http.request
+{
+  url = "https://example.com",
+  method = "GET",
+  headers = 
+  {
+    ["Content-Type"] = "application/json",
+    ["Cookie"] = "key=value"
+  }
+}
+print(response)
 ```
 
-## Tief tauchen
+In diesem Code fügen wir einen "Content-Type" und "Cookie" Header zu unserer Anfrage hinzu und setzen einen Timeout von 2 Sekunden für die Anfrage.
 
-In den frühen Tagen des Internets war das Senden von HTTP-Anfragen sehr komplex und erforderte viel manuelle Arbeit. Mit der Einführung von Lua und anderen Programmiersprachen wurde dieser Prozess jedoch vereinfacht. Es gibt auch alternative Ansätze wie die Verwendung von Web-Frameworks, die das Senden von HTTP-Anfragen noch einfacher machen können. Die Implementation von HTTP-Anfragen in Lua basiert auf dem Standardmodul "socket.http" und nutzt die TCP/IP-Verbindung, um Daten mit dem Server auszutauschen.
+## Siehe Auch
 
-## Siehe auch
+Für weitere Informationen, siehe diese Links:
 
-- [Lua-Dokumentation zu HTTP-Anfragen](http://www.lua.org/manual/5.3/manual.html#6.4)
-- [Einfache Möglichkeit, mit Lua auf API-Daten zuzugreifen](https://www.youtube.com/watch?v=x5MOgOqM0EY)
-- [LuaSocket-Modul](https://github.com/diegonehab/luasocket) für erweiterte HTTP-Funktionen
+- [LuaSocket HTTP Documentation](https://w3.impa.br/~diego/software/luasocket/http.html)
+- [Lua HTTP client library comparison](https://notebook.kulchenko.com/programming/http-requests-in-lua-comparison-of-5-tools)
+- [LuaJIT Request GitHub Page](https://github.com/LPGhatguy/luajit-request)
+- [Lua HTTP GitHub Page](https://github.com/daurnimator/lua-http)

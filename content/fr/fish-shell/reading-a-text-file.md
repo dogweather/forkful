@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Fish Shell: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi et Pourquoi?
 
-Lecture d'un fichier texte est simplement le fait de parcourir et de lire le contenu d'un fichier texte. Les programmeurs le font souvent pour extraire des données utiles ou pour manipuler des données dans un format spécifique.
+La lecture d'un fichier texte est l'opération de récupération et d'interprétation des informations contenues dans un fichier au format texte. Les programmeurs le font pour gérer et manipuler des données, travailler avec des fichiers de configuration, lire des journaux, et mener d'autres tâches nécessitant une interaction avec des fichiers.
 
-## Comment faire:
+## Comment faire :
 
-```Fish Shell ...``` devrait être votre meilleur ami lorsque vous travaillez avec des fichiers texte. Voici quelques exemples de code pour vous montrer comment cela fonctionne:
+Voyons comment lire un fichier texte en Fish Shell. 
 
-#### Lire un fichier texte:
-```
-cat monfichier.txt
-```
+```Fish Shell
+function lire_fichier
+    for ligne in (cat $argv[1])
+        echo $ligne
+    end
+end
 
-#### Lire un fichier texte ligne par ligne:
-```
-while read line
-  echo $line
-end < monfichier.txt
+lire_fichier "nom_du_fichier.txt"
 ```
 
-#### Afficher un aperçu d'un fichier texte:
-```
-head monfichier.txt
-```
+Dans ce script, nous avons une fonction qui utilise la commande `cat` pour lire le contenu d'un fichier passé en argument. Le contenu est ensuite affiché ligne par ligne.
 
-#### Copier le contenu d'un fichier texte dans un autre:
+## Plongée en profondeur :
+
+Historiquement, `cat` est une des plus anciennes commandes de UNIX pour la lecture des fichiers textes. Alternativement, `less` et `more` sont utilisés pour une lecture facilitée de grands fichiers.
+
+La plupart des shells UNIX (y compris Fish) offrent la possibilité de rediriger les sorties (`>`). Vous pouvez ainsi sauvegarder le contenu de votre fichier dans une variable :
+
+```Fish Shell
+set contenu (cat "nom_du_fichier.txt")
 ```
-cp monfichier1.txt monfichier2.txt
-```
+Avec cette technique, il est possible d'accéder aux lignes spécifiques en utilisant leur index, par exemple `$contenu[1]` pour la première ligne.
 
-## Plongée en profondeur:
+## Voir Aussi :
 
-Lecture de fichiers texte est une tâche courante dans la programmation et elle a été rendue encore plus facile avec les avancées en matière de langages de script comme Fish Shell. Avant, les programmeurs devaient utiliser des langages de programmation plus compliqués pour lire des fichiers texte, comme le C ou le Java. Maintenant, avec Fish Shell, il est beaucoup plus simple d'effectuer cette tâche. Bien sûr, il existe des alternatives telles que Python ou Perl, mais si vous travaillez souvent avec Fish Shell, cela peut être le choix le plus pratique.
-
-## Voir aussi:
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guide de la ligne de commande Fish](https://fishshell.com/docs/current/tutorial.html)
-- [Lecture d'un fichier texte avec d'autres langages de programmation](https://www.tecmint.com/ways-to-read-a-file-line-by-line-in-shell-script/)
+Si vous souhaitez vous aventurez davantage avec les fichiers en Fish Shell, je vous recommande ces ressources :
+- [Fish Shell Official Documentation](https://fishshell.com/docs/current/index.html)
+- [Tutorial on reading and writing files with Fish shell](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-from-shell-scripts)
+- [An Introduction to UNIX/Linux file handling](https://swcarpentry.github.io/shell-novice/04-pipefilter/index.html)

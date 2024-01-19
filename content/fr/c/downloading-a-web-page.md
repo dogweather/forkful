@@ -1,6 +1,6 @@
 ---
 title:                "Télécharger une page web"
-html_title:           "C: Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
 simple_title:         "Télécharger une page web"
 programming_language: "C"
 category:             "C"
@@ -10,42 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-
-Télécharger une page web en programmation signifie récupérer le contenu d'une page web à partir de son URL. Les programmeurs le font souvent pour automatiser le processus de récupération de données à partir de sites web ou pour construire des outils de web scraping.
+## Quoi & Pourquoi?
+Télécharger une page web, c'est essentiellement copier son contenu depuis le serveur web vers un ordinateur local. Les programmeurs font cela pour extraires des données, tester la disponibilité des serveurs, ou sauvegarder du contenu pour une utilisation hors ligne.
 
 ## Comment faire:
-
-La bibliothèque standard C fournit la fonction `fopen()` pour ouvrir une page web et `fgets()` pour lire le contenu ligne par ligne. Voici un exemple de code pour télécharger une page web:
+L'exemple de code suivant en C illustre comment utiliser la librairie `curl` pour télécharger une page web.
 
 ```C
 #include <stdio.h>
+#include <curl/curl.h>
 
-int main () {
-   FILE *file = fopen("https://www.example.com/", "r"); 
-   char buffer[1024];
-   if (file) {
-        while (fgets(buffer, sizeof(buffer), file) != NULL) {  
-            printf("%s", buffer); 
-        }
-        fclose(file); 
-   }
-   return 0;
+int main(void)
+{
+  CURL *curl;
+  CURLcode res;
+
+  curl_global_init(CURL_GLOBAL_DEFAULT);
+  curl = curl_easy_init();
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+
+    res = curl_easy_perform(curl);
+    
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() a échoué: %s\n",
+              curl_easy_strerror(res));
+
+    curl_easy_cleanup(curl);
+  }
+
+  curl_global_cleanup();
+  return 0;
 }
 ```
+Sortie d'échantillon :
 
-La sortie de ce code sera le contenu de la page web imprimé dans la console.
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</html>
+```
 
-## Plongée profonde:
+## Approfondissement
+Télécharger une page web est une pratique qui existe depuis les débuts du web. Pendant longtemps, `wget` et `curl` ont été les outils privilégiés pour cette tâche. Il existe d'autres méthodes, comme l'utilisation de librairies spécifiques à certains langages de programmation. L'implémentation varie avec le langage, mais la philosophie reste la même : envoyer une requête HTTP au serveur et enregistrer la réponse.
 
-À l'origine, les programmeurs utilisaient la fonction `gethostbyname()` pour résoudre un nom de domaine en adresse IP, puis établissaient une connexion TCP pour récupérer le contenu de la page. Aujourd'hui, la bibliothèque standard C fournit des fonctions plus faciles à utiliser telles que `fopen()` et `getc()`.
-
-Alternativement, vous pouvez utiliser des bibliothèques tierces comme libcurl pour télécharger des pages web. Elles offrent plus de fonctionnalités, comme la prise en charge des protocoles HTTPS et FTP.
-
-## À voir également:
-
-Pour en savoir plus sur le téléchargement de pages web en C, consultez ces ressources:
-
-- [Documentation de la bibliothèque standard C](https://en.cppreference.com/w/c)
-- [Tutoriel sur l'utilisation de la bibliothèque libcurl](https://curl.haxx.se/libcurl/c)
-- [Exemples de téléchargement de pages web en C](https://gist.github.com/ankushagarwal/6328278)
+## Voir Aussi
+- Documentation officielle libcurl : https://curl.haxx.se/libcurl/
+- UNIX man page pour curl : https://man7.org/linux/man-pages/man1/curl.1.html
+- Guide de programmation avec libcurl : https://curl.se/libcurl/c/libcurl-tutorial.html

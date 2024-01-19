@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
+## Що таке та навіщо?
 
-Парсинг HTML є процесом видобування даних з різноманітних веб-сайтів. Програмісти використовують цей процес, щоб автоматизувати збір необхідної інформації з веб-сторінок, що допомагає скоротити час та зусилля при роботі з великим обсягом даних.
+Парсінг HTML - це процес видобування даних із HTML документу. Програмісти роблять це для перетворення структурованого хтмл в код щоб легко доступитися до його компонентів.
 
-Як це зробити:
-```Javascript
-const request = require('request');
-const cheerio = require('cheerio');
+## Як це зробити:
 
-// Використовуємо модуль request для отримання коду сторінки
-request('https://example.com', (error, response, html) => {
-    if (!error && response.statusCode == 200) {
-        // Використовуємо cheerio для отримання доступу до DOM сторінки
-        const $ = cheerio.load(html);
+Можна використовувати Node.JS з JSDOM для парсингу HTML. Ось код, який ви можете спробувати:
 
-        // Знаходимо елемент за допомогою CSS селектора та отримуємо його текст
-        const title = $('h1').text();
-
-        // Виводимо результат
-        console.log(title);
-    }
-});
+```javascript
+var jsdom = require("jsdom");
+var { JSDOM } = jsdom;
+var dom = new JSDOM(` 
+  <!DOCTYPE html>
+  <div class="hello-world">Привіт, світ! </div>`);
+console.log(dom.window.document.querySelector(".hello-world").textContent); // "Привіт, світ!"
 ```
+## Поглиблений огляд:
 
-Глибше вдивимося:
-(1) Історичний контекст: Парсинг HTML був розроблений для автоматизації збору даних з веб-сторінок, що спрощує життя програмістам.
-(2) Альтернативи: Замість використання бібліотеки cheerio, можна також використати Puppeteer або JSDOM для парсингу веб-сторінок.
-(3) Деталі виконання: Після отримання HTML-коду сторінки, бібліотека cheerio дозволяє шукати елементи за допомогою CSS селекторів та отримувати потрібну інформацію.
+1. **Історичний контекст:** Парсинг HTML з'явився з розвитком вебу. Він покращив якість взаємодії користувачів з інтернетом.
 
-Дивіться також:
-- [Модуль request] (https://www.npmjs.com/package/request)
-- [Бібліотека cheerio] (https://cheerio.js.org/)
-- [Підходи до парсингу веб-сторінок у Node.js] (https://hackernoon.com/a-guide-to-web-scraping-in-node-js/)
+2. **Альтернативи:** Інші варіанти парсингу HTML включають бібліотеки, такі як "Beautiful Soup" (Python) або "Cheerio" (Node.js).
+
+3. **Деталі реалізації:** Під час парсингу HTML, код програми читає файл HTML та перетворює його на дерево об'єктів, зазвичай DOM.
+
+## Див. також:
+
+1. [JSDOM Documentation](https://github.com/jsdom/jsdom)
+2. [Cheerio Documentation](https://cheerio.js.org/)
+3. [Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)

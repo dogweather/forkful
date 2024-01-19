@@ -1,7 +1,7 @@
 ---
-title:                "Beräkna ett datum i framtiden eller det förflutna"
-html_title:           "Elm: Beräkna ett datum i framtiden eller det förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller det förflutna"
+title:                "Beräkning av ett datum i framtiden eller förflutna"
+html_title:           "Elm: Beräkning av ett datum i framtiden eller förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller förflutna"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,34 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att beräkna ett datum i framtiden eller förflutet är när man använder kod för att förutsäga en specifik dag, månad eller år baserat på ett startdatum och ett antal dagar som ska läggas till eller dras bort. Detta kan vara användbart för att skapa kalendrar, planera händelser eller visualisera tidsperioder. Programmerare använder ofta denna teknik för att göra sina appar och webbplatser mer dynamiska och användarvänliga.
+# Vad & Varför?
+Beräkna ett framtida eller tidigare datum handlar om att justera dagar, månader eller år från ett specifikt datum. Programmerare gör detta för att hantera tidbaserade händelser som schemaläggning, påminnelser och tidsramar.
 
-## Hur man gör:
-För att beräkna ett datum i Elm kan du använda Date.add-funktionen. Till exempel, för att få det datum som är 30 dagar efter ett givet datum:
+# Hur man gör:
 ```Elm
 import Date exposing (..)
+import Time exposing (millisecond, Minute, second)
 
-futureDate : Date
-futureDate = 
-    add 30 Days myDate
+calculateFutureDate : Date.Date -> Int -> Date.Date
+calculateFutureDate today daysToAdd =
+    Date.add Days daysToAdd today
+
+calculatePastDate : Date.Date -> Int -> Date.Date
+calculatePastDate today daysToSubtract =
+    Date.add Days (-daysToSubtract) today
 ```
-För att få det datum som är 30 dagar före ett givet datum:
-```Elm
-import Date exposing (..)
+Kodexemplet ovan visar hur man kan skapa funktioner för att beräkna framtida eller tidigare datum baserat på ett antal dagar.
 
-pastDate : Date
-pastDate = 
-    subtract 30 Days myDate
-```
-Se till att importera Date-modulen och ersätta "myDate" med ditt eget startdatum.
+# Djupdyk:
+Historiskt sett har datumberäkningar varit en utmaning på grund av kalendersystemens komplexitet och variation. I Elm erbjuder `Date`-modulen enkelhet vid hantering av datum och tider. Ett alternativ till `Date` är `Time`-modulen, som tillhandahåller mer detaljerade tidsenheter som timmar, minuter och sekunder. Detaljerna i implementeringen av datumberäkningar i Elm bygger på att dagar läggs till eller dras från dagens datum, vilket sedan konverterar till rätt datum.
 
-## Djupdykning:
-Beräkning av datum i framtiden eller förflutet har använts av människor sedan antiken. Tidiga civilisationer som egyptierna och babylonierna använde solkalendern för att förutsäga datum och händelser baserat på solens position. Idag finns det också andra programmeringsspråk som erbjuder liknande funktioner som Elm, till exempel JavaScripts "Date()" -funktion.
-
-En viktig detalj att tänka på är att datum och tidshantering kan vara komplicerat på grund av skillnaderna mellan tidszoner, sommar- och vintertid, och kalenderformat. Därför kan det vara användbart att använda bibliotek som "elm-time-extra" för att hantera dessa utmaningar.
-
-## Se även:
-Här är några resurser som kan hjälpa dig att lära dig mer om att beräkna datum i Elm:
-- Officiell Elm dokumentation för Date-modulen: https://package.elm-lang.org/packages/elm/time/latest/Date
-- Officiella Elm-gemenskapspaketet för att hantera datum och tid: https://package.elm-lang.org/packages/elm-community/elm-time-extra/latest/
+# Se också:
+1. [Elm Official Guide](https://guide.elm-lang.org/)
+2. [Elm Date Documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
+3. [Elm Time Documentation](https://package.elm-lang.org/packages/elm/time/latest/Time)

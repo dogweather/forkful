@@ -1,7 +1,7 @@
 ---
-title:                "Das Parsen eines Datums aus einem String"
-html_title:           "Elixir: Das Parsen eines Datums aus einem String"
-simple_title:         "Das Parsen eines Datums aus einem String"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
-Das Parsen eines Datums aus einer Zeichenfolge ist ein häufiges Problem bei der Entwicklung von Software. Dabei geht es darum, ein Datum aus einer Zeichenfolge zu extrahieren und in ein Datumobjekt umzuwandeln. Programmierer nutzen diese Funktion, um Nutzereingaben oder Daten aus externen Quellen zu verarbeiten.
+# Parse von Datum mit Elixir
 
-Wie geht's?
-In Elixir gibt es mehrere Möglichkeiten, ein Datum aus einer Zeichenfolge zu parsen. Eine der einfachsten Methoden ist die Verwendung der Funktion ```Date.from_iso8601/1```, die eine ISO 8601-Formatierte Zeichenfolge akzeptiert und ein Datumobjekt zurückgibt. Hier ist ein Beispiel:
+## Was & Warum?
 
-```Elixir
-iex> Date.from_iso8601("2020-06-10")
-{:ok, ~D[2020-06-10]}
+Ein Datum aus einem String zu parsen bedeutet, einen Text-String in ein brauchbares Datum umzuwandeln. Programmierer machen das, weil sie oft Daten aus Textdateien, Datensätzen und Benutzereingaben verwenden müssen.
+
+## Wie zu:
+
+In Elixir wird das Parsen eines Datums aus einem String normalerweise mit dem Modul DateTime oder Date durchgeführt.
+
+```elixir
+datum_string = "2023-11-22 14:38:43Z" # String mit Datum und Uhrzeit
+{:ok, datum} = DateTime.from_iso8601(datum_string)
+IO.inspect(datum)
 ```
-
-Es ist auch möglich, benutzerdefinierte Formate zu verwenden, indem man die Funktion ```Date.from_string/2``` verwendet und das gewünschte Format als zweiten Parameter angibt. Hier ist ein Beispiel mit dem Format "dd/mm/yyyy":
-
-```Elixir
-iex> Date.from_string("10/06/2020", "dd/mm/yyyy")
-{:ok, ~D[2020-06-10]}
+Ausführung des obigen Skripts gibt:
+```elixir
+%DateTime{year: 2023, month: 11, day: 22, hour: 14, minute: 38, second: 43, utc_offset: 0, time_zone: "Etc/UTC"}
 ```
+## Deep Dive
 
-Tiefer schürfen
-Das Parsen von Datumsangaben aus Zeichenfolgen ist ein Problem, das schon seit langem existiert und von Programmierern auf der ganzen Welt gelöst wurde. In anderen Sprachen gibt es ähnliche Funktionen, z.B. ```datetime.strptime``` in Python oder ```DateTime.parse``` in Ruby. Alternativ kann man auch Bibliotheken wie das Elixir-Paket ```timex``` verwenden, um erweiterte Funktionen für die Datummanipulation zur Verfügung zu haben.
+Historisch gesehen erforderte das Parsen von Datumsstrings im Allgemeinen entweder benutzerdefinierten Code oder spezialisierte Bibliotheken. Elixir hat jedoch ab Version 1.3 Standardmodule für Datum und Zeit eingeführt. Es lohnt sich immer, auf dem neuesten Stand zu bleiben.
 
-Nicht zu vergessen ist, dass das Parsen von Datumsangaben nicht nur in Programmen vorkommt, sondern auch in alltäglichen Situationen. Denken Sie z.B. an die Umwandlung von geschriebenen Datumangaben in ein einheitliches Format wie den ISO 8601. Das parsen von Datumsangaben ist also nicht nur ein technisches Problem, sondern auch ein allgemeines Problem.
+Als alternative Methode könnten Sie auch die Library `timex` nutzen, die mächtige und flexible Tools für die Arbeit mit Datum und Zeit bietet. Dennoch bevorzugen viele Entwickler die eingebauten Methoden, um Abhängigkeiten zu minimieren.
 
-Schau auch mal hier:
-- [Elixir-Dokumentation zu Date](https://hexdocs.pm/elixir/Date.html)
-- [Elixir-Dokumentation zu timex](https://hexdocs.pm/timex/Timex.html)
-- [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+Die `DateTime.from_iso8601/1`-Funktion in Elixir überprüft das Format streng. Wenn der String nicht die richtige ISO 8601-Syntax hat, schlägt die Funktion fehl.
+
+## Siehe auch
+
+- Offizielle Elixir-Dokumentation zum Umgang mit Datums- und Zeitangaben: [Elixir DateTime official documentation](https://hexdocs.pm/elixir/DateTime.html#content)
+- Anleitung zur Elixir Library Timex: [Using Timex guide](https://hexdocs.pm/timex/readme.html)

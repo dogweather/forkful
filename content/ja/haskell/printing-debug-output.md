@@ -1,7 +1,7 @@
 ---
-title:                "「デバッグ出力の印刷」"
-html_title:           "Haskell: 「デバッグ出力の印刷」"
-simple_title:         "「デバッグ出力の印刷」"
+title:                "デバッグ出力の印刷"
+html_title:           "Fish Shell: デバッグ出力の印刷"
+simple_title:         "デバッグ出力の印刷"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,57 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？それが何であり、プログラマーがなぜそれをするのか
+## 何と何のために? (What & Why?)
 
-デバッグ出力のプリントとは、プログラムの実行中に発生した情報やエラーメッセージをコンソールやファイルに出力することを指します。プログラマーはこの出力を使用して、プログラムの実行中に何が起こっているかを把握し、問題を特定して修正することができます。
+デバッグ出力の印刷は、コードがどのように動作し、何が起こっているのかを調べるためのプログラマーの手段です。これにより、エラーの発見と修正が容易になります。
 
-## 方法：
+## どうやって (How to)
 
-Haskellでは、 ```print```関数を使用してデバッグ出力をプリントすることができます。
-
-例：
+Haskellでは、プリントデバッグは `Debug.Trace` モジュールを使って行います。以下に簡単な例を示します:
 
 ```Haskell
-num1 :: Int
-num1 = 5
+import Debug.Trace
 
-num2 :: Int
-num2 = 10
-
-print (num1 + num2)
+main = putStrLn (trace "This will be printed to the console" "Hello, world!")
 ```
 
-出力：
-```Haskell
-15
-```
+これを実行すると、"This will be printed to the console" と "Hello, world!" の両方が出力されます。
 
-また、特定の条件でのみ出力するように制御することもできます。例えば、特定の変数の値がある値よりも大きい場合にのみ出力するようにするには、以下のようにします。
+## ディープダイブ (Deep Dive)
 
-```Haskell
-num :: Int
-num = 20
+`Debug.Trace` モジュールは、Haskellを純粋関数型言語として保持しながら標準出力に文字列を出力する機能を提供します。これは歴史的には、IO処理と辺り合いで特殊な例外を含むHaskellの純粋性と相互作用する方法として追加されました。
 
-if num > 10
-  then print "Num is bigger than 10"
-  else print "Num is smaller than or equal to 10"
-```
+それでは、なぜ通常の`putStrLn`を使わないのでしょうか？その理由は、`trace`が純粋なコードの中で使用でき、IOアクションを扱うのに便利だからです。
 
-出力：
-```Haskell
- "Num is bigger than 10"
-```
+ただし、`Debug.Trace`の関数はIOをバイパスするため、副作用が発生します。そのため、最終的なプログラムでは使用すべきではありません。デバッグ目的でのみ使用することをお勧めします。
 
-## 詳細：
+## 参考文献 (See Also)
 
-デバッグ出力は、プログラミング言語の歴史が古い時代から使用されてきました。初期のプログラミング言語では、コンソールに直接メッセージを出力することが一般的でしたが、近年ではファイルに出力することも可能になりました。
+より詳しい情報や別の視点を得るためには、以下のページが役立つかもしれません。
 
-Haskell以外にも、他のプログラミング言語でも同様のデバッグ出力機能が利用できます。例えば、Pythonでは ```print```関数を使用して出力することができます。
-
-デバッグ出力の実装は、基本的にはプログラミング言語の標準ライブラリに含まれていますが、コンソールやファイルに出力する方法はプログラミング言語ごとに異なります。
-
-## 関連リンク：
-
-- [Haskellの公式ドキュメント](https://www.haskell.org/documentation/)
-- [Pythonの公式ドキュメント](https://www.python.org/doc/)
-- [プログラミング入門サイト「ドットインストール」のPython講座](https://dotinstall.com/lessons/basic_python_v2)
+- [Debug.Traceの公式ドキュメント](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
+- [Real World Haskell](http://book.realworldhaskell.org/read/debugging-and-profiling.html)のデバッグとプロファイリングの節
+- [HaskellのIO](http://learnyouahaskell.com/input-and-output)についての詳細なガイド

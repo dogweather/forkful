@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "Haskell: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mikä & Miksi?
 
-Päivämäärän parsiminen merkkijonosta tarkoittaa päivämäärän erottamista merkkijonosta ja muuntamista tietokoneen ymmärtämään muotoon. Tätä tehdään yleensä ohjelmoinnissa, kun halutaan käsitellä päivämääriä ja vertailla niitä toisiinsa.
+Aikaleimamuotoilu on prosessi, jossa otetaan merkkijono, joka kuvaa päivämäärää, ja muutetaan se koneen ymmärtämään päivämäärämuotoon, esimerkiksi siihen muotoon, että sitä voidaan vertailla muihin päivämääriin. Ohjelmoijat tekevät sen, kun heidän tarvitsee käsitellä päivämääriä, jotka ovat tulleet tiedostosta, verkkolomakkeesta tai muusta liikkuvasta lähteestä.
 
-## Kuinka tehdä?
-
-Merkkijonosta parsimiseen on useita tapoja, mutta Haskell tarjoaa kätevät työkalut tähän tarkoitukseen. Alla on esimerkkejä, miten voit parsia päivämäärän merkkijonosta Haskellilla:
+## Näin tehdään:
 
 ```Haskell
-parseDate "12.12.2021" -- palauttaa Just 2021-12-12
+import Data.Time
+
+parseDate :: String -> IO UTCTime
+parseDate input = parseTimeM True defaultTimeLocale "%Y-%m-%d" input :: IO UTCTime
+
+main = do
+    parsedDate <- parseDate "2020-07-01"
+    print parsedDate
 ```
 
-```Haskell
-parseTimeM True defaultTimeLocale "%d.%m.%Y" "12.12.2021" :: Maybe Day -- palauttaa Just 2021-12-12
-```
-
-```Haskell
-parseTimeM True defaultTimeLocale "%d.%m.%Y" "12.12.2021" :: Maybe UTCTime -- palauttaa Just 2021-12-12 00:00:00 UTC
-```
+Tämä ohjelma ottaa sisään päivämäärämerkkijonon huipputason funktiolle `parseDate` ja palauttaa tulokset keskitason päivämääränä.
 
 ## Syvemmälle
 
-Päivämäärän parsiminen merkkijonosta on tullut tärkeäksi erityisesti tietokoneohjelmoinnissa, sillä monet ohjelmistot ja sovellukset käsittelevät päivämääriä ja halutaan, että ne ovat yhteensopivia keskenään eri formaateilla. On myös mahdollista parsia päivämäärä useilla eri tavoilla riippuen tarpeesta. Esimerkiksi Haskellissa on tarjolla valmiita funktioita ja työkaluja, mutta myös itse voi luoda oman parsimistoiminnon.
+Haskellin aikapäivämäärän parseaushistoria perustuu POSIX-tyylisiin aikatoimintoihin ja funktioihin, jotka ovat jo pitkään olleet ohjelmistokehityksen vakiotoiminnot. Haskellissa on myös useita vaihtoehtoisia tapoja päivämäärän jäsennys, esim. Parsec-kirjasto.
+
+`parseTimeM`-toiminto tekee kaiken raskaan työn. Sille annetaan lokalisointitiedot - tässä tapauksessa `defaultTimeLocale`, joka kertoo kuinka voisit analysoida merkkijonot, sillä on oletetta, että olemme käsittelemässä ISO 8601 -muotoisia päivämääriä.
 
 ## Katso myös
 
-- [Haskellin virallinen dokumentaatio päivämäärien parsimiseen](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
-- [Stack Overflow: How to parse date string in Haskell?](https://stackoverflow.com/questions/14101283/how-to-parse-date-string-in-haskell)
+- [Data.Time-moduuli Hoogle-ohjelmassa](https://hoogle.haskell.org/?hoogle=Data.Time)
+
+- [Parsec-kirjasto Hackage-sivustolla](https://hackage.haskell.org/package/parsec) 
+
+- [Haskell Wiki: Päivämäärät ja ajat](https://wiki.haskell.org/Dates_and_times)

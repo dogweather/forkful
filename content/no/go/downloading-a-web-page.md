@@ -1,7 +1,7 @@
 ---
-title:                "Nedlasting av en nettside"
-html_title:           "Go: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,36 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Når en programmerer laster ned en nettside, tar de en kopi av innholdet fra nettsiden og lagrer det på sin egen datamaskin. Dette kan være nyttig for å beholde en kopi av informasjonen, eller for å analysere og bruke dataen for å utvikle applikasjoner eller automatisere oppgaver.
+## Hva & Hvorfor?
+Å laste ned en nettside betyr å hente data fra en server til din lokale maskin. Programmerere gjør dette for å analysere websidens innhold, lagre den for senere bruk eller skrape data.
 
-# Hvordan:
-For å laste ned en nettside i Go, kan du bruke "net/http" pakken og dens "Get" funksjon. Dette eksempelet viser hvordan du kan laste ned en nettside og skrive ut hele innholdet:
+## Hvordan:
+Laste ned en nettside i Go er enkelt. Her er et grunnleggende eksempel:
 
 ```Go
-resp, err := http.Get("https://www.example.com")
-if err != nil {
-    log.Fatal(err)
-}
-defer resp.Body.Close()
+package main
 
-body, err := ioutil.ReadAll(resp.Body)
-if err != nil {
-    log.Fatal(err)
-}
+import (
+	"io/ioutil"
+	"net/http"
+)
 
-fmt.Printf("%s", body)
+func main() {
+	resp, err := http.Get("http://example.com/")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	println(string(body))
+}
 ```
+Koden over vil laste ned nettsiden "http://example.com/" og skrive innholdet til konsollen.
 
-Dette vil gi deg en kopi av nettsidens innhold som en byte slice, som deretter kan behandles og brukes som du ønsker.
+## Dyp Dykk
+Historisk sett har folk lastet ned nettsider fra før internetts fødsel - tenk på teletype maskiner. 
 
-# Dypdykk:
-Laste ned en nettside har vært en nødvendig del av webutvikling og automatisering i lang tid. Før "net/http" pakken ble introdusert, måtte utviklere bruke "net" og "net/http" pakker sammen for å oppnå samme funksjonalitet.
-Alternativt kan du også bruke tredjeparts biblioteker som "GoQuery" eller "Colly" for mer avanserte funksjoner.
+Noen andre måter å laste ned nettsider inkluderer bruk av `curl` (for kommandolinjer), nettleser-extensjoner, eller Python's `requests` bibliotek for å nevne noen.
 
-Implementeringen av "net/http" pakken er basert på et modulært design som tillater tilpassing og utvidelse for spesifikke behov. Dette gjør det enkelt å laste ned og behandle ulike typer nettressurser.
+Når det gjelder Go, vil `http.Get()` sende en HTTP GET forespørsel, og `ioutil.ReadAll()` leser svaret. 
 
-# Se også:
-- [Golang.org: net/http](https://golang.org/pkg/net/http/)
-- [GoQuery](https://github.com/PuerkitoBio/goquery)
-- [Colly](http://go-colly.org/)
+Hvis du trenger å håndtere cookies, autentisering eller andre komplekse oppgaver, bør du bruke HTTP klienten i `http.Client`.
+
+## Se Også
+For mer detaljerte informasjon eller relaterte emner, sjekk ut disse linkene:
+
+1. Go sin offisielle net/http pakke dokumentasjon: https://golang.org/pkg/net/http/
+2. Et mer detaljert blikk på HTTP i Go: https://golang.org/src/net/http/
+3. Web scraping med Go: https://edmundmartin.com/writing-a-web-crawler-in-golang/.

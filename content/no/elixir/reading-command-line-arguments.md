@@ -1,7 +1,7 @@
 ---
-title:                "Lese kommandolinje-argumenter"
-html_title:           "Elixir: Lese kommandolinje-argumenter"
-simple_title:         "Lese kommandolinje-argumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,33 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Når vi snakker om å lese kommandolinje-argumenter, mener vi å ta innspill fra brukeren direkte fra kommandolinjen mens de kjører et program. Dette gir programmerere større fleksibilitet, slik at de kan lage mer dynamiske og tilpassbare programmer.
 
-Lesing av kommandolinje-argumenter er en vanlig prosedyre for utviklere, da den tillater dem å lese input fra brukeren uten å avbryte eller stoppe programmet. Dette gjør det mulig å gi interaktivitet til applikasjoner som kjører i en kommandolinje-terminal.
-
-## Hvordan:
-
-For å lese kommandolinje-argumenter i Elixir, kan du bruke funksjonen `System.argv/0`. Denne funksjonen returnerer en liste med alle argumentene som er gitt til programmet ved kjøring. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+## How to:
+Bruke `System.argv/0` funksjonen i Elixir lar deg gripe og håndtere kommandolinje-argumenter. Her er en enkel bruk:
 
 ```Elixir
-args = System.argv()
-IO.puts("Du har gitt følgende argumenter: #{inspect args}")
+defmodule Test do
+  def main(args) do
+    IO.inspect(args)
+  end
+end
+
+System.argv(["-e","Test.main([])"])
 ```
 
-Om du kjører dette programmet med kommandolinje-argumenter, for eksempel: `elixir les_argumeter.ex arg1 arg2`, vil resultatet bli:
+Når du kjører dette, vil du se at det blir printet en liste med strengene "-e" og "Test.main([])" til terminalen.
 
-```bash
-Du har gitt følgende argumenter: ["arg1", "arg2"]
-```
+## Deep Dive
+Lesing av kommandolinjeargumenter var en nødvendighet helt tilbake til de tidligste operativsystemene. Spesifikt for Elixir, kan du også bruke funksjonen `OptionParser.parse/2` for mer kompliserte inngangstolkninger. Dette er spesielt nyttig hvis du trenger å håndtere flagg eller nøkkel-verdi par. På implementasjonsnivå blir disse argumentene lagt til i en liste og passert til hovedfunksjonen ved oppstart.
 
-## Dypdykk:
-
-Å lese kommandolinje-argumenter har vært en viktig del av programmering siden tidlige dager. På den tiden da datamaskiner var store, tunge og dyre, var det vanlig å kjøre programmer gjennom kommandolinjen. Dette gjorde det nødvendig å gi argumenter til programmene på denne måten.
-
-I dag har vi mange moderne grensesnitt som gjør kommandolinjen mindre vanlig, men det er fortsatt viktig å kunne lese og behandle input på denne måten i programmering.
-
-Et alternativ til å bruke `System.argv/0` er å bruke et bibliotek som kalles `OptionParser`, som gir mer avanserte funksjoner for å lese og behandle kommandolinje-argumenter.
-
-## Se Også:
-
-- [Dokumentasjon for System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Dokumentasjon for OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+## See Also
+For mer informasjon om hvordan du bruker `System.argv/0` og `OptionParser.parse/2`, se den offisielle Elixir-dokumentasjonen:
+- [System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0)
+- [OptionParser.parse/2](https://hexdocs.pm/elixir/OptionParser.html#parse/2)

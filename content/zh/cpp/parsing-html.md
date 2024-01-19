@@ -1,7 +1,7 @@
 ---
-title:                "分析HTML"
-html_title:           "C++: 分析HTML"
-simple_title:         "分析HTML"
+title:                "解析HTML"
+html_title:           "Clojure: 解析HTML"
+simple_title:         "解析HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,62 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是HTML解析？为什么程序员会这样做？
+## 什么 & 为什么？
+HTML解析是一种处理并理解HTML文档的过程，从而使编程者可以对其进行操作和处理。我们程序员之所以要做这个，主要是因为要处理网页数据，从HTML代码中提取有用的信息。
 
-HTML解析指的是从HTML代码中提取特定信息的过程。程序员通常会将HTML解析作为网页抓取和数据提取的工具，从而实现自动化的网页处理。
-
-## 如何实现：
+## 如何操作：
+在C++中，我们可以使用著名的库Gumbo来解析HTML。下面是一个简单的例子。
 
 ```C++
-// 导入所需的头文件
 #include <iostream>
-#include <string>
-using namespace std;
+#include "gumbo.h"
 
-// 定义一个HTML解析函数
-void parseHTML(string html) {
-
-    // 遍历字符串，查找特定的HTML标签
-    for (int i = 0; i < html.length(); i++) {
-        if (html[i] == '<') {
-            // 将HTML标签的内容打印出来
-            for (int j = i + 1; html[j] != '>'; j++) {
-                cout << html[j];
-            }
-            cout << endl;
-        }
-    }
+static void search_for_links(GumboNode* node) {
+  if (node->type != GUMBO_NODE_ELEMENT) {
+    return;
+  }
+  GumboAttribute* href;
+  if (node->v.element.tag == GUMBO_TAG_A &&
+      (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
+    std::cout << href->value << "\n";
+  }
+  GumboVector* children = &node->v.element.children;
+  for (unsigned int i = 0; i < children->length; ++i) {
+    search_for_links(static_cast<GumboNode*>(children->data[i]));
+  }
 }
 
 int main() {
-    // 定义一个HTML代码示例
-    string html = "<html><head><title>示例网页</title></head><body><h1>Hello world!</h1></body></html>";
-    // 调用解析函数
-    parseHTML(html);
-    return 0;
+  GumboOutput* output = gumbo_parse("<a href='http://www.google.com'>Google</a>");
+  search_for_links(output->root);
+  gumbo_destroy_output(&kGumboDefaultOptions, output);
 }
 ```
 
-输出：
+这段代码会输出：
+
 ```
-html
-head
-title
-/body
-/title
-/head
-h1
-/h1
-/html
+http://www.google.com
+```
 
-## 深入了解：
+## 深入探讨：
+HTML解析历来是网页抓取、内容提取和自动化测试的关键步骤。这个过程可以追溯到90年代，随着网络和网页的发展，需求逐渐增加。虽然选择多样，但C++的Gumbo库因其高效率和良好的错误处理，被广泛应用在各种大型项目中。
 
-- HTML解析的历史：在早期，HTML解析一般是通过手动编写文本编辑器来进行的。随着技术的不断发展，解析工具也变得越来越强大，能够实现自动化和高速处理。
-- 其他选择：除了C++，还有其他编程语言也可以实现HTML解析，如Python、Java等。
-- 实现细节：HTML解析的具体实现可以通过正则表达式、DOM解析和CSS选择器等方法来提取HTML标签和属性。
+在实施细节方面，HTML解析首先是词法分析，将输入的HTML字符串划分为一系列的令牌。然后，解析器根据这些标记创建DOM树。此过程称为“树构筑”。
 
-## 参考链接：
+处理可能出现的HTML语法错误也是解析过程的重要部分。例如，如果存在未关闭的标签，解析器通常会自动修复。
 
-- [HTML解析 - 维基百科](https://en.wikipedia.org/wiki/HTML_parsing)
-- [HTML解析教程 - w3schools](https://www.w3schools.com/whatis/whatis_htmldom.asp)
-- [用C++实现HTML解析 - GeeksforGeeks](https://www.geeksforgeeks.org/html-parsing-c-set-1/)
+## 参见：
+1. [Gumbo文档](https://github.com/google/gumbo-parser)
+2. [W3C对HTML解析的规定](https://html.spec.whatwg.org/multipage/parsing.html)
+3. [HTML解析的维基百科](https://en.wikipedia.org/wiki/HTML_parsing)

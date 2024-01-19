@@ -1,7 +1,7 @@
 ---
-title:                "Imprimindo saída de depuração"
-html_title:           "Go: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Imprimindo saída de debug"
+html_title:           "C#: Imprimindo saída de debug"
+simple_title:         "Imprimindo saída de debug"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer?
+## O Que é e Por Que?
 
-"Impressão de debug output" é um termo utilizado pelos programadores para se referir à prática de exibir informações de depuração durante a execução de um programa. Isso pode incluir informações como valores de variáveis, mensagens de erro ou outras informações úteis que possam ajudar a entender e solucionar problemas no código. Os programadores fazem isso para facilitar a identificação e correção de erros em seus programas, tornando o processo de desenvolvimento mais eficiente e eficaz.
+A impressão de saída de depuração permite que os programadores monitorizem e analisem o comportamento de um programa durante o seu desenvolvimento e teste. A saída de depuração ajuda a identificar e corrigir erros ou "bugs".
 
-## Como fazer:
+## Como Fazer:
+
+No Go, você pode usar o pacote "fmt" para exibir mensagens de depuração. Um exemplo simples:
 
 ```Go
-// Exemplo de imprimir informações de depuração
 package main
 
 import "fmt"
 
 func main() {
-    var num1, num2 int = 5, 10
-    fmt.Println("Iniciando programa...")
-    fmt.Println("Primeiro número:", num1)
-    fmt.Println("Segundo número:", num2)
-    fmt.Println("Resultado da soma", num1 + num2)
+  fmt.Println("Isto é uma mensagem de depuração!")
 }
 ```
 
-Ao executar este programa, a saída seria:
+A saída deste código será:
 
 ```
-Iniciando programa...
-Primeiro número: 5
-Segundo número: 10
-Resultado da soma: 15
+Isto é uma mensagem de depuração!
 ```
 
-## Profundando:
+## Uma Olhadela Mais Profunda
 
-A impressão de debug output tem sido uma prática comum entre programadores desde os primeiros dias da programação. Antigamente, os programadores utilizavam técnicas como saídas em papel para identificar problemas em seus códigos, mas com o avanço da tecnologia, tornou-se possível imprimir as informações diretamente no console do computador. Embora seja uma técnica útil, é importante notar que existem outras formas de depuração, como o uso de ferramentas de debug específicas. No caso de Go, a própria linguagem oferece uma biblioteca de depuração chamada "log", que pode ser utilizada para exibir informações de debug.
+O pacote "fmt" do Go é baseado na biblioteca printf do C, que existe desde a década de 1970 para formatar a saída. Uma alternativa ao "fmt" é o pacote "log", que tem uma funcionalidade adicional de timestamping. Além disso, o Go também suporta depuração no nível da linguagem com o uso do pacote "runtime/debug", que pode produzir rastreamentos de pilha e outras informações para fins de depuração.
 
-## Veja também:
+## Veja Também
 
-- Documentação oficial do pacote de debug da linguagem Go: https://golang.org/pkg/log/
-- Tutorial completo sobre como fazer impressão de debug output em Go: https://aprenda-golang.space/channels/debugging-output/
-- Vídeo explicando diferentes formas de depuração em Go: https://www.youtube.com/watch?v=Y-9epIwG8cM
+1. Documentação oficial do Go para pacote "fmt": https://golang.org/pkg/fmt/
+2. Documentação oficial do Go para pacote "log": https://golang.org/pkg/log/
+3. Documentação oficial do Go para pacote “runtime/debug”: https://golang.org/pkg/runtime/debug/

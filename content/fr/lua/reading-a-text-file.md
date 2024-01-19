@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Lua: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire ?
-Lire un fichier texte en programmation signifie ouvrir un fichier contenant du texte et en extraire son contenu pour l'utiliser dans votre code. Les programmeurs le font souvent pour lire des données externes ou pour stocker des informations dans un format facilement accessible.
+# Lire un Fichier Texte avec Lua
 
-# Comment faire :
-Dans Lua, vous pouvez utiliser la fonction "io.open()" pour ouvrir un fichier texte et stocker son contenu dans une variable. Ensuite, vous pouvez utiliser la méthode "read()" pour lire le contenu du fichier. Voici un exemple de code :
+## Quoi & Pourquoi ?
+Lire un fichier texte en programmation consiste à extraire les données d'un fichier texte existant. Les programmeurs le font pour manipuler, analyser et utiliser ces données dans leur code.
+
+## Comment faire :
+Saisissons directement les points essentiels. Voici comment lire un fichier texte en Lua:
 
 ```Lua
--- Ouvrir le fichier texte "monfichier.txt" en mode lecture
-local fichier = io.open("monfichier.txt", "r")
-
--- Stocker le contenu du fichier dans une variable
-local contenu = fichier:read()
-
--- Fermer le fichier
-fichier:close()
-
--- Afficher le contenu du fichier
-print(contenu)
+fichier = io.open("mon_fichier.txt", "r") -- ouvre le fichier en mode lecture
+if fichier then -- vérifier si le fichier a été ouvert correctement
+    contenu = fichier:read("*a") -- lit tout le fichier
+    fichier:close() -- ferme le fichier
+end
+print(contenu) -- affiche le contenu du fichier
 ```
 
-Si le contenu du fichier est "Bonjour le monde !", la sortie sera "Bonjour le monde !". Vous pouvez également utiliser la méthode "lines()" pour lire le fichier ligne par ligne, ou "read("*all")" pour lire tout le contenu du fichier en une seule fois.
+Assurez-vous que "mon_fichier.txt" existe dans le même répertoire que votre script Lua. Ce code ouvrira "mon_fichier.txt", lira tout son contenu, le fermera et finalement, imprimera le contenu.
 
-# Plongée en profondeur :
-La fonction "io.open()" provient du module standard "io" de Lua, qui fournit des fonctions pour gérer les entrées et sorties. Avant Lua 5.2, la fonction "file:read()" était utilisée pour lire le contenu des fichiers, mais elle a été remplacée par un objet de fichier avec différentes méthodes, telles que "file:lines()" et "file:read()". Alternativement, vous pouvez également utiliser le module "lfs" pour lire des fichiers avec des fonctionnalités supplémentaires telles que la possibilité de spécifier le mode d'ouverture.
+## Plongée Profonde
+Historiquement, la lecture des fichiers en Lua est basée sur les principes de bas niveau du langage C, mais avec une interface simplifiée. 
 
-# Voir aussi :
-Pour en savoir plus sur la gestion des fichiers en Lua, vous pouvez consulter la documentation officielle sur le module "io" et le module "lfs". Vous pouvez également trouver des exemples pratiques sur des blogs et des tutoriels en ligne. Bonne lecture !
+Deux alternatives à la fonction `io.open` sont `io.input` (qui définit le fichier comme entrée par défaut) et `io.lines` (qui vous permet de lire le fichier ligne par ligne). 
+
+Dans `fichier:read("*a")`, le "*a" est un modificateur qui indique de lire tout le fichier. D'autres modificateurs sont disponibles, comme "*l" pour lire une ligne ou "*n" pour lire un nombre.
+
+## Voir Aussi
+* Documentation officielle de Lua sur les E/S fichiers: http://www.lua.org/manual/5.3/manual.html#6.9
+* Tutoriel interactif sur les fichiers Lua: https://www.tutorialspoint.com/lua/lua_file_io.htm

@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga tal"
-html_title:           "Fish Shell: Generering av slumpmässiga tal"
-simple_title:         "Generering av slumpmässiga tal"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -11,19 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att generera slumpmässiga nummer är en vanlig uppgift för programmerare. Det kan användas för att skapa unika ID-nummer, simulerar spel eller testa program. Detta görs genom matematiska algoritmer som genererar slumpmässiga tal baserat på ett startvärde, kallat en frövärde.
+Generering av slumpmässiga tal är processen av att skapa ett nummer på ett sätt som dess värde inte kan förutsägas logiskt. Programmerare gör detta för att simulera händelser, tester eller för att skapa säkerhetskoder.
 
 ## Hur gör man:
-Fish Shell har inbyggda funktioner för att generera slumpmässiga nummer. Här är ett exempel på hur man genererar ett slumpmässigt heltal mellan 1 och 10:
+Här är ett kodexempel för att generera ett slumpmässigt tal i Fish Shell.
 
 ```Fish Shell
-set random_num (math --random 1 10)
-echo $random_num
+# Anger ett övre gräns för det slumpmässiga talet
+set -l upperLimit 100
+
+# Genererar ett slumpmässigt tal mellan 1 och övre gräns
+set -l randomNumber (math (random) % $upperLimit + 1)
+echo $randomNumber
 ```
-Det första kommandot sätter variabeln "random_num" till ett slumpmässigt tal mellan 1 och 10 med hjälp av den inbyggda matematikfunktionen "math --random". Sedan skrivs det slumpmässiga talet ut med hjälp av kommandot "echo".
 
-## Djupdykning:
-Generering av slumpmässiga nummer innebär matematiska algoritmer som tar ett startvärde och producerar en sekvens av nummer baserat på det. Det finns olika metoder för att skapa slumpmässiga tal och vissa är bättre än andra. En alternativ metod kallas "true random number generation" som hämtar tillfälliga värden från fysiska fenomen som radioaktivt sönderfall eller atmosfäriska brus. Fish Shell använder dock en metod som bygger på algoritmer för att skapa mer förutsägbara, men ändå slumpmässiga, tal.
+Exempel nummerutmat:
 
-## Se även:
-Djupdykning: https://fishshell.com/docs/current/cmds/math.html#math---random
+```Fish Shell
+45
+```
+
+## Djupdykning
+Historiskt sett har slumpnummergenerering använts i en mängd applikationer, från spel till säkerhetssystem. Det finns olika sätt att generera ett slumpmässigt nummer, och de skiljer sig i komplexitet och nivå på slumpmässighet.
+
+Alternativen till `random`-kommandot i Fish Shell kan inkludera att använda externa kommandon som `jot` eller `shuf`.
+
+Vad gäller implementeringsdetaljer använder `random`-kommandot en pseudoslumpmässig nummergenerator för att producera tal. Detta betyder att siffrorna i princip är förutsägbara, men för den genomsnittliga användaren kommer de att verka slumpmässiga.
+
+## Se även
+För mer djupgående information, kolla in följande källor:
+
+1. [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+2. [GNU Coreutils: Shuf](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
+3. [The Jot Command](http://manpages.ubuntu.com/manpages/eoan/man1/jot.1.html)

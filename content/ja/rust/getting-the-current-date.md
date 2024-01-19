@@ -1,6 +1,6 @@
 ---
 title:                "現在の日付を取得する"
-html_title:           "Rust: 現在の日付を取得する"
+html_title:           "PowerShell: 現在の日付を取得する"
 simple_title:         "現在の日付を取得する"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が必要であるか？
-現在の日付を取得することは、プログラマーにとって重要なことです。これにより、特定の日付に関連するアクションを実行したり、時間に基づいて動作を制御したりすることができます。
+## 何 &なぜ?
+現在の日付を取得するとは、コンピュータの内部時計から年月日を取り出すことです。これはプログラムが時制を管理したり、時間に基づいた制御を行ったりするために重要です。
 
-## 方法：
-現在の日付を取得するには、```Rust ... ```コードブロック内のサンプルコードを使用します。
+## 実行方法:
+Rustには`chrono`という、非常に便利で使いやすい日付と時間のライブラリがあります。以下にその使用例を示します。
 
 ```Rust
-use std::time::SystemTime;
+// 先にCargo.tomlにchronoライブラリを追加してください
+extern crate chrono;
+use chrono::prelude::*;
 
 fn main() {
-  let current_time = SystemTime::now();
-  println!("Current Date: {:?}", current_time);
+    let now = Utc::now();
+    println!("{}", now.format("%Y-%m-%d").to_string());
 }
 ```
 
-出力：
+これを実行すると、今日の日付が年-月-日の形式で表示されます。
 
-```
-Current Date: Tue, 09 Mar 2021 10:35:12 GMT
-```
+## 詳細について:
+### 歴史的背景
+UNIXエポック (1970年1月1日の午前0時 UTC) からの経過時間という考え方は、これまでのコンピュータ科学にとって非常に重要でした。だからこそ、日時を扱うためのダイナミックな方法を持つRustのようなモダンな言語は、非常に役立つと言えるでしょう。
 
-## 深く掘り下げる
-日付を取得する方法にはさまざまな方法があります。Rustでは、標準ライブラリの中にある `time` モジュールから `SystemTime` 構造体を使用することで現在の日付を取得できます。また、 `chrono` ライブラリを使用する方法もあります。
+### 代替案
+Rustには、日付と時間を扱うための他のライブラリもあります。`time`、`date-time`、`naive-datetime`などがそれに該当します。
 
-## 参考
-- [Rust Documentation on time](https://doc.rust-lang.org/std/time/)
-- [Chrono crate for handling dates and times in Rust](https://github.com/chronotope/chrono)
+### 実装の詳細
+RustのDateTime型は、ナノ秒単位での精度を持つことができます。また、`chrono`ライブラリはtime zoneにも対応しており、グローバルなコンテキストで使うのに適しています。
+
+## 参考資料:
+- Chronoライブラリの公式ドキュメンテーション（英語） [Chrono](https://docs.rs/chrono/0.4.19/chrono/)
+- Rustの日付と時刻についての公式ドキュメンテーション（英語） [Date and Time](https://doc.rust-lang.org/std/time/)

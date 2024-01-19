@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Elm: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,46 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Wysyłanie żądania HTTP z podstawową autoryzacją jest sposobem na uwierzytelnienie żądania do serwera za pomocą podanych danych logowania. Programiści wykorzystują to, aby uzyskać dostęp do zabezpieczonych zasobów lub przesłać poufne informacje.
+
+Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to możliwość dostępu do chronionych zasobów sieciowych poprzez podanie danych logowania. Programiści robią tak, aby bezpiecznie dostęp do ważnych danych lub funkcji.
 
 ## Jak to zrobić:
-Przykładowy kod w Elm wykorzystujący wysyłanie żądania HTTP z podstawową autoryzacją:
+
 ```
+Elm
+
 import Http
-import Basics.Time as Time exposing (Time)
-import Json.Decode as Decode exposing (..)
-import Json.Decode.Pipeline exposing (..)
+import Http.BasicAuth as BasicAuth
 
-request : Time -> Time -> Time -> Http.Request
-request startTime endTime syncTime =
-    let
-        body =
-            [ ("start_time", Json.Encode.float startTime)
-            , ("end_time", Json.Encode.float endTime)
-            , ("sync_time", Json.Encode.float syncTime)
-            ]
-                |> Json.Encode.object
-    in
-        Http.post
-            { url = "https://example.com/api"
-            , body = body
-            , expect = Http.expectJson Decode.int
-            }
+request : Http.Request String
+request =
+    Http.get
+        { url = "https://twoja.strona/api"
+        , expect = Http.expectString Ok BadUrl
+        , headers = [ BasicAuth.header "NazwaUżytkownika" "Hasło" ]
+        }
 ```
 
-Możesz również dodać nagłówek autoryzacyjny do żądania w następujący sposób:
-```
-Http.post
-    { url = "https://example.com/api"
-    , body = body
-    , headers = [ ( "Authorization", "Basic dXNlcjpwYXNzd29yZA==" ) ]
-    , expect = Http.expectJson Decode.string
-    }
-```
+Po uruchomieniu kodu, Elm wyśle żądanie GET na podany URL. W razie powodzenia otrzymasz string, który może być przetworzony na potrzeby twojego programu.
 
-## Lewe kolano:
-Wysyłanie żądania HTTP z podstawową autoryzacją było powszechnym sposobem uwierzytelniania żądań do serwera przed wprowadzeniem bardziej zaawansowanych metod takich jak tokeny uwierzytelniające. Jednak nie jest to zalecane dla zabezpieczonej komunikacji, ponieważ dane logowania są przesyłane w formie niezaszyfrowanej przez sieć.
+## Głębsze zrozumienie
 
-## Zobacz też:
-- [Dokumentacja zakresu Elm Http](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Przewodnik po podstawach Elm](https://guide.elm-lang.org/)
+Podstawowe uwierzytelnienie HTTP, wprowadzone po raz pierwszy w specyfikacji HTTP/1.0 w 1996 roku, jest jednym z najprostszych metod uwierzytelniania. Alternatywą jest Digest Authentication, który oferuje jeszcze lepszą ochronę kilka podobieństw do Basic Authentication. Mimo to, popularnością zaczyna przeważać uwierzytelnienie oparte na tokenach, takie jak OAuth.
+
+Pamiętaj, że podstawowe uwierzytelnienie przesyła dane uwierzytelniające jako niezaszyfrowane teksty, więc zawsze używaj protokołu HTTPS do ochrony tych danych.
+
+## Zobacz również
+
+- [Dokumentacja Elm HTTP](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Podstawowe uwierzytelnienie w Elm](https://github.com/truqu/elm-basic-auth)
+- [Jak korzystać z HTTPS w Elm](https://korban.net/posts/elm/2018-07-23-using-https-elm/)

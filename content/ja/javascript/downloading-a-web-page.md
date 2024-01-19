@@ -1,6 +1,6 @@
 ---
 title:                "ウェブページのダウンロード"
-html_title:           "Javascript: ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,27 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
+## 何となぜ？
 
-ウェブページのダウンロードとは、インターネット上の情報を自分のコンピューターに保存することです。プログラマーがこれを行う理由は、ウェブページの内容をオフラインで参照するために必要な場合があるからです。
+ウェブページをダウンロードするとは、ウェブサーバーからインターネットを通じてローカルコンピュータへHTMLなどのデータを転送することです。プログラマーがこれを行う理由は、ウェブページの内容を解析、使い勝手の改善、またはデータ集録を行うためです。
 
-## 方法：
+## 実践方法：
+
+以下に示す Javascript コードスニペットは、「node-fetch」を利用してウェブページをダウンロードする方法です。
 
 ```Javascript
-const request = require('request');
-request('https://www.example.com', function(err, res, body) {
-    console.log(body);
-});
+const fetch = require('node-fetch');
+
+fetch('https://example.com')
+    .then(response => response.text())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 ```
 
-このコードはNode.jsを使用して、指定したウェブページをダウンロードし、ターミナル上に表示します。データを取得するために ```request``` パッケージを使用し、サーバーからのレスポンスを取得するためにコールバック関数を使用しています。
+このスクリプトを実行すると、https://example.com の HTMLをコンソールに出力します。
 
-## 深堀り：
+## 詳解：
 
-ウェブページをダウンロードするプロセスは、1990年代初めに開発されたHTTPプロトコルに依存しています。以前は、ウェブページのダウンロードは手動で行われましたが、今ではプログラマーは自動化したスクリプトを使用して、大量のページをダウンロードすることができます。代替手段として、ブラウザーの機能を使用してウェブページをダウンロードすることもできます。ウェブページのダウンロードは、ウェブスクレイピングやデータ収集など、様々な用途に使用されています。
+ウェブページをダウンロードするというテーマは、インターネットが公開されたときから存在します。最初生のHTMLは非常に基本的でしたが、技術の進歩とともにその複雑性は増してきました。
 
-## 関連リンク：
+現在でも Curl や Wget などのコマンドラインツールを使って手動でウェブページをダウンロードすることができますが、 Javascript のようなプログラミング言語を利用の方が自動化やカスタマイズが可能になります。
 
-- [Node.js requestパッケージ](https://www.npmjs.com/package/request)
-- [ブラウザーでのウェブページのダウンロード](https://www.top10bestwebsitebuilders.com/how-to-download-a-website)
-- [ウェブスクレイピングの活用例](https://www.webharvy.com/articles/web-scraping-examples.html)
+上記の実例では 'node-fetch' ライブラリを利用しましたが、これだけでなく 'axios' や 'request'-（現在非推奨）などのライブラリもウェブページをダウンロードするために良く使われます。
+
+## 参考リンク：
+
+1. NPM にある 'node-fetch' : 
+[https://www.npmjs.com/package/node-fetch](https://www.npmjs.com/package/node-fetch)
+
+2. NPM にある 'axios' :
+[https://www.npmjs.com/package/axios](https://www.npmjs.com/package/axios)
+
+3. Mozilla MDN Web Docs の "Fetch API" :
+[https://developer.mozilla.org/ja/docs/Web/API/Fetch_API](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API)
+
+4. W3Schools にある "Introduction to AJAX" :
+[https://www.w3schools.com/js/js_ajax_intro.asp](https://www.w3schools.com/js/js_ajax_intro.asp)

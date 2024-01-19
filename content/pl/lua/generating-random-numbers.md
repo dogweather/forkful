@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie losowych liczb"
-html_title:           "Lua: Tworzenie losowych liczb"
-simple_title:         "Tworzenie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Numbers"
@@ -10,19 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Po co?
-Generowanie losowych liczb w programowaniu jest procesem, w którym tworzymy liczby bez określonego wzoru lub sekwencji. Programiści często wykorzystują ten mechanizm do symulacji różnych sytuacji lub tworzenia losowych wyników w grach.
+## Co i Dlaczego?
+Generowanie liczb losowych to proces tworzenia ciągu liczb, które nie mają żadnego wzorca czy przewidywalności. Programiści tego używają do symulacji naturalnego zachowania, do tworzenia różnorodności w grach czy do zabezpieczeń.
 
 ## Jak to zrobić:
-- Wykorzystaj wbudowaną funkcję ```math.random()```, aby wygenerować losową liczbę z zakresu 0-1.
-- Możesz użyć również funkcji ```math.randomseed()```, aby ustawić ziarno dla losowości.
-- Aby wygenerować losową liczbę całkowitą z zakresu od 1 do 100, można użyć kodu ```math.random(1, 100)```.
+W Lua generowanie liczb losowych jest proste. Używamy wbudowanej funkcji `math.random`, która zwraca liczbę losową między 0 a 1.
 
-## Głębszy Zanurzenie:
-- Generowanie losowych liczb było wykorzystywane już w początkach nauki matematyki, aby symulować różne wyniki w rzeczywistych sytuacjach.
-- Alternatywnym sposobem na generowanie losowych liczb jest użycie zewnętrznych generatorów lub generatorów sprzętowych.
-- W Lua generowanie losowych liczb jest realizowane przy użyciu algorytmu pseudolosowego opartego na generatorze Mersenne Twister.
+```Lua
+print(math.random())  -- Wydrukuje losową liczbę między 0 a 1
+print(math.random(10))  -- Wydrukuje losową liczbę między 1 a 10
+```
 
-## Zobacz też:
-- Więcej informacji na temat generowania losowych liczb w Lua można znaleźć w [dokumentacji](https://www.lua.org/pil/14.2.html).
-- Jeśli chcesz zgłębić ten temat dalej, możesz zapoznać się z [algorytmem Mersenne Twister](https://pl.wikipedia.org/wiki/Mersenne_Twister) lub z [alternatywnymi metodami generowania losowych liczb](https://www.javatpoint.com/random-number-generator-algorithms).
+## Dogłębna Analiza:
+Generowanie liczb losowych ma długą historię. Na początku były to mechanizmy fizyczne, takie jak rzuty kostką czy monetą. W kontekście programowania, generator liczb losowych to algorytm, który tworzy ciąg liczb, który wydaje się być losowy. Lua korzysta z generatora Mersenne Twister, który jest dobrze zrozumianym i szeroko stosowanym algorytmem.
+
+Alternatywą jest użycie zewnętrznych bibliotek, takich jak OpenSSL czy /dev/random na systemach Unix, które mogą dostarczyć bardziej "prawdziwe" liczby losowe korzystając z danych z otoczenia, takich jak ruch myszy czy czas procesora.
+
+W trakcie implementacji musimy pamiętać o tym, że wiele algorytmów potrzebuje "ziarna" do startu. Ziarno to początkowa wartość, która wpływa na ciąg generowanych liczb. W Lua możemy użyć `math.randomseed(os.time())` do ustawienia ziarna na aktualny czas.
+
+## Zobacz Również:
+Dla bardziej szczegółowych informacji, zobacz oficjalną dokumentację Lua na temat [`math.random`](https://www.lua.org/manual/5.3/manual.html#6.7) i [`math.randomseed`](https://www.lua.org/manual/5.3/manual.html#pdf-math.randomseed). Jeśli jesteś zainteresowany różnymi algorytmami generatorów liczb losowych, Wikipedia ma doskonały [artykuł](https://pl.wikipedia.org/wiki/Generator_liczb_losowych) na ten temat.

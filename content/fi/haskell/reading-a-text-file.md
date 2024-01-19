@@ -1,7 +1,7 @@
 ---
-title:                "Tiedostojen lukeminen"
-html_title:           "Haskell: Tiedostojen lukeminen"
-simple_title:         "Tiedostojen lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,34 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Tiedoston lukeminen on prosessi, jossa ohjelma lukee datan sisältämän tiedoston ja tallentaa sen muistiin. Tämä on tärkeää, sillä tiedostot ovat yleinen tapa tallentaa tietoa ja ohjelmien on usein käsiteltävä näitä tietoja. Siksi tiedostojen lukeminen on tärkeä taito kaikille ohjelmoijille.
+## Mikä & Miksi?
 
-## Miten:
-Tiedoston lukeminen Haskellissa voi tapahtua monella eri tavalla, mutta yleisin tapa on käyttää ```getContents``` funktiota, joka lukee tiedoston sisällön ja palauttaa sen merkkijonona. Tämän jälkeen voit käsitellä tiedoston sisältöä miten haluat, esimerkiksi tulostaa sen näytölle.
+Tekstitiedoston lukeminen on prosessi, jossa ladataan tiedot tiedostosta ohjelmaan tai muistitilaan. Koodaajat tekevät tämän datan käsittelyä varten.
 
-Esimerkki koodi:
+## Miten Näin?
+
+Haskellin lukutoiminnot ovat yksinkertaisia. Voit lukea tekstitiedoston seuraavasti:
 
 ```Haskell
-import System.IO
+-- Ottaa tiedosto "teksti.txt", lukee sen ja tulostaa sisällön
 
-main = do
-  fileContents <- getContents
-  putStrLn fileContents
+main = do  
+    sisalto <- readFile "texti.txt"  
+    putStrLn sisalto
 ```
 
-Tämä koodi lukee tiedoston sisällön ja tulostaa sen näytölle.
+Tämän koodin suorittaminen lukee "teksti.txt" -tiedoston ja tulostaa sisällön.
 
-Osassa "Deep Dive" voit tutustua muihin tapoihin lukea tiedostoja Haskellissa ja tutkia syvemmin tiedoston käsittelyn yksityiskohtia.
+## Syvempi Sukellus
 
-## Deep Dive:
-Haskell tarjoaa monia erilaisia tapoja lukea tiedostoja, kuten ```readFile``` ja ```withFile```. Voit myös käyttää lisäpakettia ```Data.ByteString``` tehokkaampaa tiedostonlukua varten.
+Historiallisessa kontekstissa, Haskellin lukutoimintojen suunnittelu pohjautuu Unixin filosofiaan, että "kaikki on tiedosto". Se tarjoaa yksinkertaisen rajapinnan tiedostojen käsittelyyn.
 
-On myös tärkeää mainita, että vaikka tiedoston lukeminen on yleinen tapa, se ei aina ole paras vaihtoehto. Joskus on parempi tallentaa data tietokantaan tai käyttää APIa hakeaksesi tiedot suoraan ilman tallentamista.
+Vaihtoehtoja tiedostojen lukemiseen Haskellissa on monia. Voidaan käyttää byrokirjastoja kuten `ByteString` tai `Text` tehokkaaseen tiedostonkäsittelyyn, erityisesti suurille tiedostoille.
 
-Tässä osassa voit myös tutustua tiedostonmuotoihin ja niiden erilaisiin käsittelytapoihin.
+Haskell lukee tiedoston 'laiskasti'. Tämä tarkoittaa että se ei lataa kaikkea kerralla, mutta paloittelee sen pienempiin osiin. Tämä tekee suurten tiedostojen käsittelyn mahdolliseksi ilman suuren määrän muistin kaeyttöä.
 
-## See Also:
-Vertaisitkesi tiedoston lukemista muihin tapoihin käsitellä dataa, kuten tietokantoihin tai integraatioihin APIen kanssa. Voit myös tutkia lisää ```System.IO``` paketista ja sen tarjoamista tiedostonkäsittelytoiminnoista.
+## Katso Myös
 
-Lue lisää Haskellin tiedostonkäsittelystä täältä: [tiedostonkäsittely Haskellissa](https://www.haskell.org/tutorial/io.html)
+Lisätietoja Haskellin tiedostonlukutoiminnoista löydät seuraavista lähteistä:
+
+- [Haskell-tiedostonluku opetusohjelma](https://www.haskell.org/tutorial/io.html)
+- [Haskell ByteString-paketti](http://hackage.haskell.org/package/bytestring)
+- [Haskell Text-paketti](http://hackage.haskell.org/package/text)
+
+Seuraavaksi suosittelen tutustumaan Haskellin tiedostonkirjoitusfunktioihin, jotka toimivat yhdessä lukutoimintojen kanssa tiedostojen manipuloimiseksi.

@@ -1,6 +1,6 @@
 ---
 title:                "Slette tegn som samsvarer med et mønster"
-html_title:           "Python: Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
 simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Python"
 category:             "Python"
@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Sletting av tegn som matcher et mønster er en vanlig oppgave som programmerere må håndtere. Dette innebærer å fjerne spesifikke tegn fra en streng som passer til et gitt mønster. Dette kan være nyttig for databehandling og tekstbehandling i et program.
+## Hva & Hvorfor?
+
+Sletting av tegn som matcher et mønster er en prosess hvor spesifikke karakterer fjernes fra en tekststreng basert på et definert mønster. Dette gjøres av programmerere for å manipulere tekst data, og for å forbedre datarensing og tekstbehandling.
 
 ## Hvordan:
-For å slette tegn som matcher et mønster i Python, kan du bruke <<code>> ```re.sub()``` <<code>> funksjonen fra <<code>> re <<code>> biblioteket. Her er et eksempel på å fjerne alle vokaler fra en streng:
 
-```Python 
-import re 
-streng = "Hei, dette er en test"
-ny_streng = re.sub(r'[aeiou]', "", streng)
-print(ny_streng)
+Her er et eksempel på bruk av Python's innebygde "re" modul for å slette alle ikke-tall fra en tekststreng. 
+
+```Python
+import re
+
+def delete_pattern(input_str, pattern):
+    return re.sub(pattern, '', input_str)
+
+input_str = "123abc456def"
+pattern = "[^0-9]"  # alt som ikke er et tall
+print(delete_pattern(input_str, pattern))  # output: 123456
 ```
+Erstatt "pattern" med det mønsteret du ønsker å slette, f.eks. "[^a-zA-Z]" for å slette alt som ikke er en bokstav.
 
-Output: H, dt t n tst
+## Deep Dive:
 
-Du kan også bruke <<code>> .replace() <<code>> funksjonen for å erstatte alle forekomster av et spesifikt tegn eller tegnsekvens med et annet tegn. For eksempel:
+Historisk sett, konseptet av mønster matching kommer fra formelle språkteorier og ble først implementert i programmeringsspråk gjennom bruk av regulære uttrykk (regular expressions). I Python, er den mest direkte måten å slette tegn som matcher et mønster å bruke Python's "re" modul.
 
-```Python 
-streng = "Hei, dette er en test"
-ny_streng = streng.replace("e", "a")
-print(ny_streng)
-```
+Det finnes også alternative måter å oppnå dette på. En kan bruke list comprehension, eller "filter"- og "translate"-funksjonen. Men i forhold til ytelse og lesbarhet, er "re.sub()" generelt det beste valget.
 
-Output: Hai, ditta ar an tast
+Implementeringen av "re.sub()" i Python er basert på Thompson's algoritme for konstruksjon av en ikke-deterministisk endelige automaten (NFA) fra et regulært uttrykk.
 
-## Dykk dypere
-Sletting av tegn som matcher et mønster har sin opprinnelse i regulære uttrykk, eller regex. Dette er et kraftig verktøy for tekstbehandling og mønstergjenkjenning. I tillegg til <<code>> re.sub() <<code>> funksjonen, kan du også bruke andre regex-metoder som <<code>> re.match() <<code>> og <<code>> re.search() <<code>> for å finne og erstatte tegn.
+## Se også:
 
-Avhengig av behovet ditt, kan du også vurdere å bruke enkel strengbehandling som <<code>> .strip() <<code>> funksjonen for å fjerne tegn fra begynnelsen eller slutten av en streng. Du kan også bruke <<code>> .translate() <<code>> funksjonen for mer avansert karakterbehandling.
-
-## Se også
-Du kan lære mer om hvordan du håndterer tekst i Python ved å lese dokumentasjonen for <<code>> re <<code>> og <<code>> string <<code>> bibliotekene. Du kan også se på flere eksempler og praktiske bruksområder for sletting av tegn som matcher et mønster i Python.
+- Python's "re" modul dokumentasjon: https://docs.python.org/3/library/re.html
+- Introduksjon til Regulære Uttrykk i Python: https://realpython.com/regex-python/
+- Python's 'translate' og 'filter' funksjoners dokumentasjon: https://docs.python.org/3/library/stdtypes.html#str.translate, https://docs.python.org/3/library/functions.html#filter

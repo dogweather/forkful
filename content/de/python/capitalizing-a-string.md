@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenkette großschreiben"
-html_title:           "Python: Eine Zeichenkette großschreiben"
-simple_title:         "Eine Zeichenkette großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "Python: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,22 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-In Python können wir eine Zeichenkette (String) in Großbuchstaben (Capital letters) umwandeln. Wir machen das, damit die Ausgabe konsistenter und lesbarer wird.
+Die Großschreibung eines Strings in Python bedeutet, dass wir den ersten Buchstaben des Strings in einen Großbuchstaben umwandeln. Programmierer verwenden diese Technik häufig, um Text korrekt zu formatieren und leserlicher zu machen.
 
-## Wie geht's?
-Wir können die Methode `.upper()` verwenden, um eine Zeichenkette in Großbuchstaben zu verwandeln. Sehen wir uns ein Beispiel an:
+## Wie geht es?
+Um einen String in Python zu kapitalisieren, nutzen wir die eingebaute Methode `.capitalize()`. Hier ist ein Codebeispiel dazu:
 
 ```Python
-string = "hallo welt"
-print(string.upper())
+s = "hallo welt"
+s = s.capitalize()
+print(s)
 ```
 
-Die Ausgabe wäre: `HALLO WELT`.
+Die Ausgabe dieses Codeausschnitts wäre:
 
-## Tiefgründiges
-Diese Methode existiert nicht nur in Python, sondern auch in anderen Programmiersprachen wie Java und C++. Eine Alternative zur `.upper()` Methode ist die Verwendung der `.capitalize()` Methode, die nur den ersten Buchstaben großschreibt. Einige Implementationen, wie z.B. in Python 2, haben auch die `.title()` Methode, die jeden Anfangsbuchstaben in einer Zeichenkette großschreibt.
+```Python
+'Hallo welt'
+```
+
+## Tiefgang
+Die Großschreibung von Text kann auf eine laaaaaange Geschichte in der Typografie und Drucktechnik zurückblicken. In Python, entstand die `.capitalize()` Methode schon in dessen ersten Versionen.
+
+Alternativ zur Methode `.capitalize()`, können Sie auch die Methode `.title()` verwenden, die jeden ersten Buchstaben eines Wortes groß schreibt:
+
+```Python
+s = "hallo welt"
+s = s.title()
+print(s)
+```
+
+Die Ausgabe wäre:
+
+```Python
+'Hallo Welt'
+```
+
+Die Methode `.capitalize()` funktioniert so: Der Python-Interpreter wandelt den ersten Buchstaben des Strings in eine entsprechende Unicode Großbuchstabenänderung um.
 
 ## Siehe auch
-- [Python String Methods](https://www.w3schools.com/python/python_strings_methods.asp)
-- [Python 2 vs. Python 3: What's Different?](https://www.codecademy.com/articles/python-2-vs-python-3)
-- [The History of Python Programming Language](https://www.edureka.co/blog/history-of-python/)
+Für weitere Informationen, Sie können diese Links besuchen:
+
+1. Offizielle Python-Dokumentation über Strings: https://docs.python.org/3/library/stdtypes.html#string-methods
+2. Wikipediaseite über String (Informatik): https://de.wikipedia.org/wiki/String_(Informatik)
+3. Ein Python-Tutorial auf Deutsch: https://www.python-lernen.de/

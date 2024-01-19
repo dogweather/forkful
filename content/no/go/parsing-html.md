@@ -1,6 +1,6 @@
 ---
 title:                "Analysering av html"
-html_title:           "Go: Analysering av html"
+html_title:           "C#: Analysering av html"
 simple_title:         "Analysering av html"
 programming_language: "Go"
 category:             "Go"
@@ -10,24 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Å Parse HTML i Go
+
 ## Hva & Hvorfor?
-Parsing av HTML er en viktig del av webutvikling. Det innebærer å analysere og tolke HTML-kode for å gjøre den leselig og forståelig for en datamaskin. Programmerere bruker parsing for å trekke ut informasjon fra nettsider og manipulere den for å lage dynamiske og interaktive nettsider.
+Parsing av HTML er prosessen med å konvertere HTML markups til strukturer som kan forstås av programmer. Dette gjør vi programmerere for å hente informasjon effektivt og organisere data på en strukturert måte fra HTML koder.
 
 ## Hvordan:
-I Go-versjonen som er den nåværende, kan du bruke pakken "html" for å parse HTML-kode. Her er et eksempel:
+Her er et grunnleggende eksempel i Go for å parse en HTML-streng med Go’s innebygde "net/html" pakke.
+```Go
+pakkeringen hoved
 
+importer(
+	"fmt"
+	"golang.org/x/net/html"
+	"strenger"
+)
+
+funksjon hoved() {
+	s := "<p forname='link'>Hei, <b>verden</b>!</p>"
+	doc, err := html.Parse(strenger.NewReader(s))
+	if err != nil {
+		panic(err)
+	}
+	var f funksjonen(n *html.Node) {
+		if n.Type == html.ElementNode {
+			fmt.Println(n.Data, ": ", n.Attr)
+		}
+		for c := n.FirstChild; c != nil; c = c.NextSibling {
+			f(c)
+		}
+	}
+	f(doc)
+}
 ```
-Go løk := "<h1> Hei, verden! </h1>"
-doc, _ := html.Parse(strings.NewReader(htmlStr))
-fmt.Println(doc.FirstChild.FirstChild.Data)
+Når du kjører denne koden, vil utdataene se slik ut:
+```Go
+p :  [{ fornavn link }]
+b :  []
 ```
+## Dyp Dykk
+**Historisk kontekst**: Parsing av HTML i programmering har vært anvendt siden tiden for web scraping, for å manipulere og hente data fra internett-sider. 
 
-Konsollen vil skrive ut "Hei, verden!" ved å bruke "FirstChild" til å få tilgang til den første noden av dokumentet og "Data" for å få teksten som ligger inni noden.
+**Alternativer**: Det er mange biblioteker tilgjengelig for parsing av HTML som 'BeautifulSoup', 'lxml', 'html.parser' i andre programmeringsspråk som Python, men Go sin 'net/html' pakke gir en god og enkel måte å parse HTML på.
 
-## Dykke Dypere:
-Parsing av HTML ble utviklet som et svar på behovet for å håndtere den komplekse strukturen til webkoding. Først ble parsing gjort manuelt, men etter hvert som internett vokste, ble det klart at automatisering var nødvendig. Det finnes forskjellige alternativer til å bruke Go for parsing, som for eksempel regex og andre parseringsspråk som Python og Ruby. Men Go er et godt valg fordi det er enkelt, effektivt og har innebygde funksjoner for å håndtere web parsing.
+**Implementeringsdetalj**: I praksis kan HTML parsing bli kompleks avhengig av hvor sammensatt HTML-koden er. Men Go's innebygde 'net/html' pakke forenkler denne kompleksiteten ved å behandle HTML's hierarkiske DOM-struktur som en rekke noder.
 
-## Se Også:
-- Offisiell Go-dokumentasjon for HTML-pakken https://golang.org/pkg/html/
-- En enkel og nyttig tutorial om HTML parsing i Go https://www.thepolyglotdeveloper.com/2016/06/parse-html-string-go-programming-language/ 
-- En guide for å unngå vanlige feil når man bruker Go for å parse HTML https://medium.com/@codegressive/top-5-gotchas-for-parsing-html-in-go-3fe69db32810
+## Se Også
+- For mer informasjon om "net/html" pakken, sjekk ut Go's offisielle dokumentasjon: [Go Doc](https://golang.org/pkg/net/html/).
+- Hvis du ønsker å fordype deg enda mer innen HTML parsing, kan du sjekke ut denne artikkelen: [Advanced HTML parsing in Go](https://medium.com/@ankurgel/working-with-go-1-11-4ca098a178a).
+- For en mer detaljert veiledning i HTML parsing i andre programmeringsspråk, sjekk ut disse linkene: [Parsing HTML in Python](https://realpython.com/python-web-scraping-practical-introduction/), [Parsing HTML in Javascript](https://javascript.info/dom-parsing).

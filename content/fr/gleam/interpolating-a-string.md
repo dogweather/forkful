@@ -1,6 +1,6 @@
 ---
 title:                "Interpolation d'une chaîne de caractères"
-html_title:           "Gleam: Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
 simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Qu'est-ce & pourquoi ?
 
-Vous avez probablement remarqué que les programmeurs utilisent souvent des chaînes de caractères entourées de caractères spéciaux tels que des "backticks" (`) ou des accolades ({}) dans leur code. Cela s'appelle l'interpolation de chaîne et c'est un moyen pratique de combiner des chaînes et des variables en une seule chaîne de caractères.
+L'interpolation de chaînes est une méthode permettant d'insérer des variables à l'intérieur d'une chaîne de caractères. Les programmeurs l'utilisent pour rendre leur code plus lisible et facile à maintenir.
 
-Les programmeurs ont recours à l'interpolation de chaîne pour rendre leur code plus lisible et facile à maintenir. Au lieu de concaténer manuellement plusieurs chaînes et variables, ils peuvent simplement les inclure dans une seule chaîne avec des espaces vides et des symboles spéciaux pour les séparer.
+## Comment faire :
 
-## Comment faire:
+Une démonstration simple d'interpolation de chaîne en Gleam ressemblerait à ceci :
 
+```gleam
+let nom = "Pierre"
+io.println("Bonjour, {nom}!")
 ```
-Gleam
-fn main() {
-  let name = "Jean";
-  let greeting = "Bonjour";
+La sortie serait : `Bonjour, Pierre!`
 
-  let message = `${greeting} ${name}! Comment ça va?`;
+La balise `{nom}` à l'intérieur de la chaîne est remplacée par la valeur de la variable `nom`.
 
-  io::println(message);
-}
-```
+## Approfondissement :
 
-Ce code utilise la syntaxe d'interpolation de chaîne de Gleam pour créer une variable "message" qui contient une chaîne avec le nom et le salut de la personne. Lorsque vous l'exécutez, vous obtiendrez le résultat suivant:
+Historiquement, l'interpolation de chaînes a été introduite pour la première fois dans les langages de script d'Unix dans les années 70. Aujourd'hui, presque tous les langages de programmation modernes, y compris Gleam, prennent en charge cette fonctionnalité pour faciliter le formatage du texte.
 
-```
-Bonjour Jean! Comment ça va?
-```
+Comme alternatives, certains préfèrent utiliser l'opérateur de concaténation ou la fonction `format()` pour combiner les chaînes et les variables. Cependant, l'interpolation est plus concise et plus lisible.
 
-## Plongée en profondeur:
+Dans Gleam, l'opérateur d'interpolation `{}` fonctionne en convertissant les variables en chaînes et en les insérer directement dans la chaîne parente. 
 
-L'interpolation de chaîne existe depuis longtemps dans de nombreux langages de programmation, elle n'est donc pas spécifique à Gleam. Cependant, chaque langage peut avoir sa propre syntaxe pour cela. Par exemple, dans le langage Python, on utilise des f-strings (pour "formatted strings") tandis que dans le langage Ruby, on utilise des chaînes avec des caractères spéciaux tels que #{} pour effectuer une interpolation.
+## Voir aussi :
 
-Alternativement, au lieu d'utiliser l'interpolation de chaîne, les programmeurs peuvent concaténer des chaînes à l'aide de fonctions spéciales telles que "join" ou "format". Cependant, ces méthodes peuvent être moins lisibles et nécessitent plus de code.
+Pour en savoir plus sur l'interpolation de chaînes, consultez ces ressources :
 
-Au niveau de l'implémentation, l'interpolation de chaîne peut être réalisée en utilisant des expressions régulières ou en parcourant la chaîne et en remplaçant les symboles spéciaux par les valeurs réelles.
-
-## Voir aussi:
-
-Voir la documentation officielle de Gleam sur l'interpolation de chaîne pour plus d'exemples et d'informations.
+1. Documentation de Gleam : https://gleam.run/docs/
+2. Guide rapide sur l'interpolation de chaînes : https://www.joezimjs.com/javascript/a-guide-to-string-interpolation/
+3. Comparaison de l'interpolation par rapport à d'autres méthodes : https://www.oreilly.com/library/view/you-dont-know/9781491905159/ch04.html

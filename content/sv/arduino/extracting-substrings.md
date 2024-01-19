@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att extrahera substrängar är när man tar en del av en större text och använder den enskilda delen på ett separat sätt. Detta kan göras av programmerare för att effektivt hantera och manipulera data.
+## Vad & varför?
+
+Att extrahera substrängar innebär att plocka ut en specifik del av en sträng i kod. Det är väldigt användbart vid programmering för att bearbeta och analysera data effektivt.
 
 ## Hur man gör:
-Det är enkelt att extrahera substrängar i Arduino. Du behöver bara använda funktionen ```substring()``` och ange vilken del av texten du vill extrahera och på vilket sätt du vill använda den.
+Extrahera substrängen "hej" från strängen "hej världen" i Arduino är enkelt. Här är kodexempel och utmatningsexempel:
 
-Exempel:
+```Arduino
+void setup() {  
+  Serial.begin(9600);  
+}  
+void loop() {  
+  String str = "hej världen";  
+  String subStr = str.substring(0, 3);  
+  Serial.println(subStr); 
+  delay(1000);
+}
+
 ```
-String text = "Hej! Det här är en text.";
-String extraheradText = text.substring(4, 13); // Extraherar "Det här är"
-```
+När du laddar upp och kör denna kod, kommer "hej" att visas i serieterminalen varje sekund.
 
-Resultat:
-```
-extraheradText = "Det här är"
-```
+## Fördjupning:
+Extraktion av substrängar har varit en viktig del av programmering sedan starten. I Arduino är den mest populära metoden att använda `substring()`-metoden. Men det finns alternativ som inkluderar att använda pekare och teckenarrayer, även om det kan vara mer komplicerat.
 
-## Djupdykning:
-Det finns flera olika sätt att extrahera substrängar på, men i Arduino är det vanligaste sättet att använda sig av funktionen ```substring()```.
+För att `substring()` ska fungera effektivt behöver Arduino minne att lagra substrängen. Det är också viktigt att vara medveten om att indexeringen börjar från noll - det vill säga att första tecknet i strängen är på indexplatsen noll.
 
-Historiskt sett har substrängar varit användbara för att samla och hantera data, särskilt i tidiga datorprogram. I dag används det fortfarande flitigt i programmering för att hantera och manipulera textbaserade data.
+Du bör också vara medveten om att `substring()`-metoden skapar en ny sträng och det ökar minnesanvändningen. I projekt där minne är en knapp resurs kan andra metoder behöva övervägas.
 
-Det finns också alternativ till att använda ```substring()```, såsom att använda andra metoder som ```indexOf()``` och ```split()```. Dessa kan också användas för att extrahera substrängar, men i vissa fall kan de vara mindre effektiva.
+## Se också:
+För ytterligare information och källor se följande länkar:
 
-För implementeringsdetaljer om funktionen ```substring()```, kan du titta på Arduinos dokumentation eller läsa källkoden på GitHub.
+1. [Arduino String Objects](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+2. [String Manipulation](http://www.cplusplus.com/reference/string/string/substr/)
 
-## Se även:
-- [Arduinos dokumentation om ```substring()```](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Källkoden för ```substring()``` på GitHub](https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/WString.cpp#L1515)
-- [Andra funktioner för att manipulera text i Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+Öva och experimentera med koden och du kommer att få grepp om att ta ut substrängar på nolltid. Lycka till!

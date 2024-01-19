@@ -1,7 +1,7 @@
 ---
-title:                "HTML Parsen"
-html_title:           "Kotlin: HTML Parsen"
-simple_title:         "HTML Parsen"
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,38 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist damit gemeint und Warum? 
-HTML-Parsing ist der Prozess des Lesens und Analysierens von HTML-Code. Programmierer tun dies, um Daten von einer Webseite zu extrahieren, um sie in anderen Anwendungen zu nutzen oder um die Struktur und den Inhalt einer Webseite zu verstehen.
+## Was & Warum?
+HTML-Parsing ist der Prozess, bei dem HTML-Text in seine Strukturbestandteile zerlegt wird. Programmierer machen das, um die Daten der Webseiten zu analysieren, zu ändern oder zu extrahieren.
 
-## So geht's: 
-```Kotlin 
-// Importiere die benötigten Bibliotheken 
-import org.jsoup.Jsoup 
-import org.jsoup.nodes.Document 
-import org.jsoup.select.Elements 
+## So geht's:
+Lasst uns loslegen! Wir werden jsoup verwenden, eine praktische Kotlin-Bibliothek, um HTML zu parsen.
 
-// Erstelle eine Verbindung zur Webseite 
-val url = "https://www.example.com" 
-val doc = Jsoup.connect(url).get() 
+Fügen Sie zuerst die jsoup-Bibliothek zu Ihrem Projekt hinzu.
 
-// Finde alle Links auf der Webseite 
-val links: Elements = doc.select("a[href]") 
+```Kotlin
+dependencies {
+  implementation 'org.jsoup:jsoup:1.13.1' 
+}
+```
+Nun können wir eine einfache Webseite analysieren.
 
-// Gebe die gefundenen Links aus 
-for (link in links) { 
-    println(link.attr("href") + " " + link.text()) 
-} 
+```Kotlin
+import org.jsoup.Jsoup
+
+fun main() {
+    val html = "<html><head><title>Erste Parsing Seite</title></head>"
+              + "<body><p>Hallo Welt!</p></body></html>"
+    val doc = Jsoup.parse(html)
+    println(doc.title())
+    println(doc.body().text())
+}
+```
+Die Ausgabe wird sein:
+```
+Erste Parsing Seite
+Hallo Welt!
 ```
 
-Output: 
-https://www.example.com/Home Startseite 
-https://www.example.com/About Us Über uns 
-https://www.example.com/Contact Kontakt 
+## Tiefgreifende Besprechung
+HTML-Parsing hat eine lange Geschichte, die mit der Entwicklung des Webs selbst zusammenfällt. Ursprünglich erfolgte das HTML-Parsing manuell über String-Manipulation. Mit der Entwicklung von Sprachen wie Python, JavaScript und jetzt Kotlin haben sich Bibliotheken entwickelt, die Parsing einfacher und sicherer machen.
 
-## Tiefer eingetaucht: 
-HTML-Parsing hat sich im Laufe der Jahre weiterentwickelt und ist in vielen verschiedenen Programmiersprachen verfügbar. Alternativen zu Jsoup sind beispielsweise BeautifulSoup für Python und Nokogiri für Ruby. Beim Parsen von HTML ist es wichtig zu beachten, dass der Code fehleranfällig sein kann, da er von verschiedenen Quellen erstellt wird. Es ist daher wichtig, robuste Parser wie Jsoup zu verwenden, die mit unvollständigem oder fehlerhaftem Code umgehen können.
+Alternativen zu jsoup umfassen Bibliotheken wie HtmlCleaner und Jericho HTML Parser. Jede dieser Bibliotheken hat Vor- und Nachteile, abhängig von Ihren speziellen Anforderungen.
 
-## Siehe auch: 
-- Offizielle Jsoup-Dokumentation: https://jsoup.org/
-- BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/
-- Nokogiri: https://nokogiri.org/
+Beim HTML-Parsing mit jsoup handelt es sich um top-down-Parsing. Erst wird die gesamte HTML-Datei geladen und dann wird der HTML-Baum von oben nach unten analysiert. Dies ist wichtig zu wissen, wenn Sie mit sehr großen HTML-Dokumenten arbeiten, da dies ihren Speicherbedarf beeinflusst.
+
+## Siehe auch
+Für weitere Informationen über das HTML-Parsing in Kotlin, werfen Sie einen Blick auf folgende Quellen:
+1. [jsoup Dokumentation](https://jsoup.org/cookbook/)
+2. [HtmlCleaner GitHub](https://github.com/HolgerBrandl/theduplicates)
+3. [Jericho HTML Parser](https://jericho.htmlparser.net/docs/index.html)
+4. [Kotlin-Dokumentation](https://kotlinlang.org/docs/reference/)

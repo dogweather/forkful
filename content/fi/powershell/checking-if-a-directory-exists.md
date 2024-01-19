@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan, onko hakemistoa olemassa"
-html_title:           "PowerShell: Tarkistetaan, onko hakemistoa olemassa"
-simple_title:         "Tarkistetaan, onko hakemistoa olemassa"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "C: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,32 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
-Tarkistaminen, onko hakemisto olemassa, on yksinkertainen mutta tärkeä askel PowerShell-ohjelmoijille. Se mahdollistaa tiedostojen käyttämisen ja käsittelyn oikeassa paikassa, jolloin koodi toimii sujuvammin.
+## Mikä & Miksi?
+Tarkistamme onko hakemisto olemassa, koska tiedostojen tai folderien käsittelyssä on tärkeää varmistaa, ettei törmätä olemattomiin hakemistoihin. Tämä estää virheilmoituksia ja ohjelman kaatumisia.
 
-# Miten:
+## Näin se tehdään:
+Seuraava esimerkki näyttää kuinka voit tarkistaa, onko tietty hakemisto olemassa PowerShellilla:
 ```PowerShell
-# Tarkistetaan, onko hakemisto olemassa
-Test-Path C:\Users\Käyttäjä\Asiakirjat
-
-# Tulos: 
-True
+if (Test-Path -Path C:\esimerkki) {
+    Write-Output "Hakemisto löytyy"
+} else {
+    Write-Output "Hakemisto ei ole olemassa"
+}
 ```
+Tämä koodi palauttaa joko "Hakemisto löytyy" tai "Hakemisto ei ole olemassa", riippuen siitä, löytyykö hakemisto "C:\esimerkki" vai ei.
 
-```PowerShell
-# Esimerkki, jossa hakemisto ei ole olemassa
-Test-Path C:\Users\Käyttäjä\Kuvat
+## Syväluotaus
+Tarkastellessamme, onko hakemisto olemassa, sen 'Test-Path' komento on ollut osa Powershellia sen ensimmäisestä versiosta lähtien. Test-Path on yksinkertainen ja suoraviivainen tapa tarkistaa, onko hakemisto tai tiedosto olemassa, mutta myös muita vaihtoehtoja, kuten 'Get-ChildItem' tai '.NET'-kirjastoja, voidaan käyttää samaan tarkoitukseen. Huomaathan, että 'Test-Path' komento palauttaa aina boolean arvon (tosi tai epätosi) riippumatta siitä, onko kyseessä tiedosto vai hakemisto.
 
-#Tulos:
-False
-```
-
-# Syvempi sukellus:
-- Historiallinen konteksti: Tarkistaminen, onko hakemisto olemassa, on ollut osa Unix-käyttöjärjestelmää jo vuosikymmeniä. PowerShellissä se mahdollistaa joustavan koodin kirjoittamisen tiedostojen käsittelyyn.
-- Vaihtoehtoiset tavat: Lisäksi Test-Path-komento, on myös mahdollista käyttää [Get-ChildItem](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1) tai [dir](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/dir?view=powershell-7.1) komentoja hakemiston tarkistamiseen.
-- Toteutus: Test-Path-komento perustuu [Provider](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.1)-periaatteeseen, joka mahdollistaa tiedostojen ja hakemistojen käsittelemisen yhtenäisellä tavalla.
-
-# Katso myös:
-- [About_Providers](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-7.1)
-- [Get-ChildItem](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)
-- [dir](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/dir?view=powershell-7.1)
+## Lisätietoa
+- Test-Path komennon tarkemmat tiedot: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1
+- Hakemistot ja tiedostot PowerShellissa: https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-files-and-folders?view=powershell-7.1
+- .NET-kirjaston FileSystemInfo-luokka: https://docs.microsoft.com/en-us/dotnet/api/system.io.filesysteminfo?view=net-5.0

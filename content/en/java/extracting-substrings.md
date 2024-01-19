@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Java recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Java"
 category:             "Java"
@@ -10,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Extracting Substrings in Java 
 
-Extracting substrings in Java refers to the process of retrieving a smaller string from a larger string. This is a useful task for string manipulation, data validation, and data processing. Programmers often use it to extract specific information or validate user input.
+## What & Why?
+Extracting substrings is about taking a portion, or subsequence, of a given string. As programmers, we do this to handle and manipulate only the data we need, improving both efficiency and specificity in our code.
 
 ## How to:
 
-To extract substrings in Java, you can use the `substring()` method. This method takes in two parameters: the starting index and the ending index of the substring. It then returns a new string containing the characters from the original string within the specified range.
+Java provides two methods, `substring(int beginIndex)` and `substring(int beginIndex, int endIndex)` to extract substrings. Here are some examples:
 
 ```Java
-String str = "Hello World!";
-String subStr = str.substring(6, 11); // Retrieves "World"
-System.out.println(subStr); // Outputs "World"
-```
+String str="Hello World!";
 
-You can also use the `length()` method to get the length of the string and use it to extract substrings from the end of the string.
+// using substring(beginIndex)
+String sub1=str.substring(6);  
+System.out.println(sub1);  // Outputs: World!
 
-```Java
-String str = "Hello World!";
-String subStr = str.substring(str.length() - 6); // Retrieves "World!"
-System.out.println(subStr); // Outputs "World!"
+// using substring(beginIndex, endIndex)
+String sub2=str.substring(0, 5);  
+System.out.println(sub2);  // Outputs: Hello
 ```
 
 ## Deep Dive
+Java's `substring()` became part of Java's native libraries in version 1.0, so its roots go deep. 
 
-The `substring()` method was introduced in Java 1.0 and remains an essential tool for string manipulation. It allows for more efficient and concise code compared to manually looping through the string characters. However, alternative methods such as `split()` and `StringTokenizer` can also be used for substring extraction.
+As an alternative, you could iterate over a string with a loop and grab characters manually, but that's slower and tedious. Using `substring()` is generally preferred because it's fast, simple, and less prone to errors.
 
-Implementation-wise, the `substring()` method utilizes the `StringIndexOutOfBoundsException` class to handle invalid index inputs. It also creates a new `String` object for the extracted substring, which may result in performance issues for large strings.
+In terms of implementation, `substring()` uses Java’s `String` class, part of Java's core libraries. It’s important to remember that Java Strings are 0-indexed, meaning counting starts from 0 not 1.
 
 ## See Also
+For more detailed info, check out Oracle's official `String` API:
+[Java String Documentation](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html)
 
-- [Java String Class Documentation](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html)
-- [Official Java Tutorials: Strings](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
-- [Using String Methods in Java](https://www.tutorialspoint.com/java/java_string_substring.htm)
+For other handy `String` method assistance, see:
+[Java String Methods](https://www.w3schools.com/java/java_ref_string.asp)

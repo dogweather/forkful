@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
-html_title:           "C++: Senden einer http-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,60 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-HTTP Anfragen mit grundlegender Authentifizierung zu senden bedeutet, dass man eine spezielle Anfrage an einen Webserver schickt, inklusive Nutzername und Passwort für den Server. Programmierer tun dies, um sich bei bestimmten Webdiensten oder APIs anzumelden und auf geschützte Ressourcen zuzugreifen.
+# HTTP-Anfrage mit Basic-Authentifizierung in C++
 
-## Wie geht's?
+## Was & Warum?
+
+Eine HTTP-Anfrage mit Basic-Authentifizierung erlaubt es einem Client, sich über ein Benutzername-Passwort-Paar an einem Server zu authentifizieren. Programmierer tun dies, um sicherzustellen, dass nur autorisierte Benutzer Zugriff auf bestimmte Ressourcen haben.
+
+## Anleitung:
+
+In C++ könnten wir die Bibliothek libcurl verwenden, um eine HTTP-Anfrage mit Basic-Authentifizierung zu senden. Erstellen wir einen einfachen Code:
+
 ```C++
-#include <iostream>
 #include <curl/curl.h>
 
 int main() {
-  CURL *curl;
-  CURLcode res;
 
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-    curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-    curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+    CURL *curl;
+    CURLcode res;
 
-    res = curl_easy_perform(curl);
+    curl_global_init(CURL_GLOBAL_DEFAULT);
 
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",curl_easy_strerror(res));
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
 
-    curl_easy_cleanup(curl);
-  }
-  return 0;
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+
+        res = curl_easy_perform(curl);
+
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+
+        curl_easy_cleanup(curl);
+    }
+    
+    curl_global_cleanup();
+    
+    return 0;
 }
 ```
-**Output:**
-`<!doctype html>
-<html>
-<head>
-  <title>Example Domain</title>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+Dieser Code würde eine GET-Anfrage an http://example.com mit dem Benutzernamen "username" und dem Passwort "password" senden.
 
-<body>
-<div>
-  <h1>Example Domain</h1>
-  <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
-  <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
-</html>`
+## Vertiefung
 
-## Tief tauchen
-Eine grundlegende Authentifizierung wurde bereits 1999 im RFC 2617 definiert und verwendet Base64- kodierten Nutzernamen und Passwörter. Eine alternative zur grundlegenden Authentifizierung ist die Digest Authentifizierung, welche stärkere Sicherheitsmaßnahmen bietet. Die Implementierung einer grundlegenden Authentifizierung erfordert die Nutzung von HTTP-Headern und kann in verschiedenen Programmiersprachen durchgeführt werden, nicht nur in C++.
+Basic-Authentifizierung ist ein alter Mechanismus, der 1995 mit der Veröffentlichung von HTTP/1.0 eingeführt wurde. Es gibt viele Alternativen dazu, wie OAuth und JWT, die sicherer und flexibler sind, aber Basic-Authentifizierung ist immer noch in Gebrauch, meist wegen seiner Einfachheit.
 
-## Siehe auch
-[Offizielle cURL Dokumentation](https://curl.haxx.se/libcurl/c/curl_easy_setopt.html)
+In Bezug auf die Implementierung wird das Benutzername-Passwort-Paar zu einem String "username:password" konvertiert, dann wird dieser String Base64-kodiert und in den Authorization-Header der HTTP-Anfrage eingefügt, sodass es so aussieht: "Authorization: Basic base64(username:password)".
 
-[HTTP Authentifizierung und Curl](https://curl.haxx.se/docs/httpauth.html)
+## Weiterführende Links
 
-[HTTP Grundlegendes Authentifizierungs RFC](https://tools.ietf.org/html/rfc2617)
+1. libcurl Dokumentation: https://curl.haxx.se/libcurl/c/
+2. HTTP-Basic-Authentifizierung: https://developer.mozilla.org/de/docs/Web/HTTP/Authentication
+3. Verwendung von libcurl mit SSH-Support in C++: https://curl.haxx.se/libcurl/c/Using-libcurl-with-SSH-support-in-Cplusplus.html

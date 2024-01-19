@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 파일 읽기"
-html_title:           "Elm: 텍스트 파일 읽기"
+html_title:           "Bash: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,20 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐고 왜해? 
+## 무엇과 왜?
 
-텍스트 파일을 읽는 것은 이전 보관 데이터를 가져오는 것입니다. 이를테면, 프로그래머는 이미지 파일에서 사용자 정보나 설정값과 같은 데이터를 추출하기 위해 읽기 기능을 사용합니다.
+텍스트 파일 읽기는 컴퓨터에 저장된 텍스트 파일의 콘텐츠를 가져와 프로그램에서 사용할 수 있도록 하는 과정입니다. 이는 정보를 가져오고 처리하며 데이터 분석에 필요한 중요한 단계입니다.
 
-## 어떻게?
+## 방법:
 
-Elm에서 텍스트 파일을 읽는 방법은 ```Elm 파일 읽기 ``` 함수를 사용하는 것입니다. 해당 함수는 입력 파일 경로를 받아들이고 파일의 내용을 문자열 형태로 반환합니다. 예를 들어, ```Elm 파일 읽기 "users.txt"```는 "users.txt" 파일 내용을 문자열로 반환합니다.
+Elm은 웹 브라우저 환경에서 실행되기 때문에 파일 시스템에 직접 접근할 수 없습니다. 대신, JavaScript와의 상호작용을 통해 텍스트 파일을 로드할 수 있습니다. 
 
-## 깊이 들어가보기
+Elm의 `port`를 이용하여 JavaScript 함수와 연결하는 예제코드는 다음과 같습니다.
 
-텍스트 파일 읽기는 일반적으로 데이터를 저장하는 가장 기본적인 방법 중 하나입니다. 이전에는 일반적으로 데이터베이스를 사용하여 데이터를 저장했지만, 텍스트 파일을 사용하면서 데이터 접근이 더 쉬워졌습니다. 또한 Elm에서는 텍스트 파일을 읽는 외에도 다양한 함수들을 제공하여 데이터를 처리할 수 있습니다.
+```Elm
+port module Main exposing (..)
 
-## 관련 자료 보기
+port sendText : (String -> msg) -> Sub msg
 
-- [Elm 파일 읽기 함수 문서](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Elm 텍스트 파일 읽기 예제 코드](https://github.com/elm/file/blob/master/examples/text.elm)
-- [Elm 파일 관련 내용 학습하기](https://guide.elm-lang.org/architecture/effects/file.html)
+type Msg =
+    TextFromFile String
+
+subscriptions : Model -> Sub Msg
+subscriptions _ = 
+    sendText TextFromFile
+```
+
+이 Elm 코드를 사용하면 JavaScript 컨텍스트에서 텍스트 파일의 내용을 가져와 Elm으로 전송할 수 있습니다.
+
+## 깊이 들여다 보기:
+
+텍스트 파일 읽기는 컴퓨터 프로그래밍의 원조 기술이며, 많은 언어가 이를 지원합니다. Elm는 Purely Functional, Statically Typed Language로써, 직접적으로 파일 시스템을 조작하는 기능을 제공하지 않습니다. 이것은 Elm 종단의 순수성과 예측 가능성 유지에 도움이 됩니다. 하지만, 포트를 통해 JavaScript와 소통함으로써 이 제한을 해결할 수 있습니다.
+
+## 추가로 확인해볼 것들:
+
+- Elm 포트에 대한 더 많은 정보를 얻기 위해 Elm Guide의 [Interoperability](https://guide.elm-lang.org/interop/) 섹션을 참조하십시오. 
+- 브라우저에서 JavaScript를 사용하여 [File API](https://developer.mozilla.org/ko/docs/Web/API/File/Using_files_from_web_applications) 을 사용하여 텍스트 파일을 읽는 방법에 대한 자세한 정보를 찾을 수 있습니다.

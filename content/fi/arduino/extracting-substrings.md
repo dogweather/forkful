@@ -1,7 +1,7 @@
 ---
-title:                "Alaryhmien erotteleminen"
-html_title:           "Arduino: Alaryhmien erotteleminen"
-simple_title:         "Alaryhmien erotteleminen"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,23 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## Mitä & Miksi?
+"Substringin" poimiminen tarkoittaa merkkijonon osan erottamista. Ohjelmoijat tekevät sen tarvitessaan tietystä merkkijonosta vain tiettyä osaa, esimerkiksi nimeä tai osoitetta.
 
-Substringien erottaminen tarkoittaa merkkijonon osan erottamista toisesta merkkijonosta. Ohjelmoijat tekevät tätä usein helpottaakseen tietojen käsittelyä, kuten esimerkiksi tekstin etsimistä tai muokkaamista. 
-
-## Kuinka tehdä:
+## Kuinka Tehdään:
+Seuraavassa on esimerkki substrings-funktion käytöstä Arduino-koodissa.
 
 ```Arduino
-String teksti = "Moi maailma!";
-String alkuosa = teksti.substring(0,3); // Alkuosa = "Moi"
-String loppuosa = teksti.substring(4,7); // Loppuosa = "maa"
+String teksti = "Tervetuloa Arduino-ohjelmoinnin maailmaan!";
+String osa = teksti.substring(12, 21);
+Serial.println(osa);  //tulostaa "Arduino"
 ```
+Tämä koodi luo merkkijonon "teksti", ottaa siitä osan indeksivälillä 12-21 ja tulostaa sen.
 
-## Syvempi sukellus:
+## Etene Syvemmälle:
+Substring-toiminnon esittelemistä aiemmin ohjelmoijat usein luopuivat sivuttaessaan pitkiä merkkijonoja manuaalisesti, mikä oli aikaa vievää ja virhealtista. Tämän funktion avulla voit keskittyä merkkijonon tärkeimpään osaan automaattisesti.
 
-Substringien erottelu on hyödyllinen tekniikka, joka on ollut käytössä ohjelmoinnissa jo pitkään. Vaihtoehtoiset lähestymistavat voivat sisältää esimerkiksi tekstin pilkkomisen osiin tai säännöllisten lausekkeiden käytön. Erilaiset ohjelmointikielit voivat myös tarjota erilaisia tapoja käsitellä ja erottaa substringeja. Arduino unohtaa automaattisesti ysilukuisen merkin, joten teksti muuttuu ```Moi maailma!n``` sijasta ```Moi maailma!```
+Vaihtoehtoisesti, voit taistella toisen merkkijono-funktion, "indexOf()", kanssa. Tämä antaa sinulle ensimmäisen esiintymän sijainnin merkkijonossa, jonka voit sitten syöttää "substring()" -funktioon.
 
-## Katso myös:
+Toteutustietojen osalta Arduino leikkaa merkkijonot "laiskasti". Tämä tarkoittaa, että se tekee todellisen leikkauksen vain, kun tarvitset puristetun merkkijonon. Tämä säästää luonnollisesti arvokasta aikaa.
 
-- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Artikkeli substringistä Whoishacking-sivustolla](https://www.whoishacking.com/theory/data/ch11.html)
+## Katso Lisää:
+Lisätietoja löydät seuraavista lähteistä:
+- Arduino ohjelmistokehitys : https://www.arduino.cc/
+- String luokan dokumentaatio : https://www.arduino.cc/en/Reference/StringObject
+- Tehokas ohjelmointi Arduino: https://learn.adafruit.com/adafruit-arduino-lesson-11-lcd-displays-1/arduino-sketch

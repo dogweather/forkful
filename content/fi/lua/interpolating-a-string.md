@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Lua: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Stringin interpolaatio on tapa yhdistää muuttujia ja tekstejä yhdeksi merkkijonoksi. Tämä on hyödyllistä silloin kun halutaan luoda dynaamisia viestejä, jotka vaihtelevat ympäristön tai käyttäjän mukaan. Tämä on yleinen käytäntö ohjelmoijien keskuudessa, joka nopeuttaa koodin kirjoittamista ja parantaa lopputulosta.
+## Mikä & Miksi?
 
-## Miten?
-Esimerkki osoittaa, kuinka voit käyttää stringin interpolaatiota Lua-kielellä:
+Merkkijonojen interpolaatio on tapa lisätä muuttujien arvoja suoraan merkkijonojen sisälle. Tätä tekniikkaa käyttävät ohjelmoijat tuottaakseen dynaamisen ja lueteltavissa olevan tekstin.
 
-```Lua
--- Luo muuttujat
-local nimi = "Matti"
-local ikä = 30
--- Käytä stringin interpolaatiota
-print("Tervetuloa, " .. nimi .. ". Olet " .. ikä .. " vuotta vanha.") 
-```
-
-Tulostus:
-
-`Tervetuloa, Matti. Olet 30 vuotta vanha.`
-
-Voit myös käyttää stringin interpolaatiota merkkijonon sisällä " $" -merkkien avulla:
+## Miten tehdä:
+Käytetään esimerkkinä `string.format`-funktioon. 
 
 ```Lua
--- Luo muuttujat
-local nimi = "Matti"
-local ikä = 30
--- Käytä stringin interpolaatiota
-print("Tervetuloa, ${nimi}. Olet ${ikä} vuotta vanha.") 
+nimi = "Erkki"
+tervehdys = string.format("Hei, %s", nimi)
+print(tervehdys)
 ```
 
-Tulostus:
+Ohjelman tulostus:
+```Lua
+Hei, Erkki
+```
+`%s` toimii paikkamerkkinä `string.format` -funktiossa, joka täytetään muuttujan `nimi` arvolla.
 
-`Tervetuloa, Matti. Olet 30 vuotta vanha.`
+## Syvällisemmin:
+Valitettavasti Lua ei sisällä sisäänrakennettua merkkijonojen interpolaatiota, kuten jotkut muut ohjelmointikielet (esimerkiksi Python tai JavaScript). Historiallisesti merkkijonojen interpolaatio ei ollut suosittu ominaisuus, mutta se on lisätty useimpiin ohjelmointikieliin sen tuottaman koodin selkeyden ja helppokäyttöisyyden vuoksi.
 
-Huomaa, että täytyy käyttää erillistä kirjastoa kuten "string.format" lisätäksesi muotoilua merkkijonon sisällä.
+Vaihtoehtoina merkkijonojen interpolaatioon on kaksi yleistä metodia: konkatenointi ja formatointi. Olemme jo nähneet `string.format`-funktion aiemmin.
 
-## Syväsukellus
-Stringin interpolaatiolla on ollut pitkä historia ohjelmoinnissa ja se löytyy monista kielistä, kuten C ja Python. Se on usein parempi vaihtoehto kuin käyttää yksittäisiä merkkijonoja muuttujien kanssa, sillä se on yleensä helpompaa lukea ja ylläpitää.
+Merkkijonojen suiskeiden toteutus yksityiskohdat vaihtelevat ohjelmointikielen mukaan. Joissakin, kuten Python, on sisäänrakennettu tuki, toisissa, kuten JavaScript, on käytössä erityinen merkkijonoliteraali (``). Luassa se on toteutettu `string.format`-funktion avulla.
 
-Voit myös käyttää merkkijonojen yhdistämisen sijaan Lua-kielen "string.format" -toimintoa, joka tarjoaa enemmän muotoilumahdollisuuksia. Voit lukea lisää tästä Lua-käsikirjasta: https://www.lua.org/manual/5.3/manual.html#pdf-string.format
-
-Stringin interpolaation toteutus Lua-kielessä perustuu Lua-metodoihin, jotka tarjoavat joustavan tavan yhdistää merkkijonoja ja muuttujia.
-
-## Katso myös
-- Lua-käsikirja: https://www.lua.org/manual/5.3/
-- Ohjelmointiopas: https://www.tutorialspoint.com/lua/lua_string_interpolation.htm
-- GitHub esimerkkejä: https://github.com/search?q=lua+string+interpolation
+## Ks myös:
+- Lua: Kirjaston merkkijonotoiminnat: https://www.lua.org/manual/5.4/manual.html#6.4
+- Stack Overflow: Lua merkkijonojen interpolaatio: https://stackoverflow.com/questions/9145432/lua-string-interpolation

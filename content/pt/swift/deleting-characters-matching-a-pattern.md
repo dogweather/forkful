@@ -1,7 +1,7 @@
 ---
-title:                "Exclusão de caracteres que correspondem a um padrão"
-html_title:           "Swift: Exclusão de caracteres que correspondem a um padrão"
-simple_title:         "Exclusão de caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão"
+html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
+simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O Que & Por Quê?
+Eliminar caracteres que correspondem a um padrão é um processo em que certos caracteres em uma string são removidos com base em um padrão definido. Fazemos isso para limpar ou formatar dados, removendo caracteres indesejados ou desnecessários.
 
-Excluir caracteres que correspondem a um padrão é uma técnica comum usada pelos programadores para manipular e limpar dados em suas aplicações. Isso permite que eles filtrem e removam informações indesejadas de uma maneira rápida e eficiente.
+## Como se faz:
+No Swift, podemos usar o método `removeAll` junto com um closure para combinar caracteres e removê-los. Aqui está um exemplo:
 
-## Como Fazer:
-
-Para excluir caracteres que correspondem a um padrão em Swift, você pode usar a função ```replacingOccurrences``` ou a propriedade ```filtered``` para strings. Por exemplo, se quisermos remover todas as vogais de uma string, podemos fazer o seguinte:
-
-```swift
-let string = "Esta é uma frase com vogais."
-
-let semVogais = string.replacingOccurrences(of: "[aeiou]", with: "", options: .regularExpression, range: nil)
-
-print(semVogais) // St frs cm vgl.
+```Swift
+var str = "Olá, Swift!"
+str.removeAll(where: { $0 == "," || $0 == "!" })
+print(str) // Imprime "Olá Swift"
 ```
 
-## Mergulho Profundo:
+Neste exemplo, estamos removendo as vírgulas e os pontos de exclamação da string. O resultado será "Olá Swift".
 
-A prática de excluir caracteres que correspondem a um padrão existe há décadas e é comumente usada em linguagens de programação para manipular strings. Alternativas para essa técnica incluem o uso de expressões regulares e laços de repetição para percorrer e modificar a string manualmente.
+## Aprofundando
+Historicamente, é comum ter que lidar com o gerenciamento de caracteres inapropriados ou desnecessários dentro de uma string. Swift, como muitas outras linguagens, possui uma maneira incorporada de lidar com isso.
 
-No Swift, a função ```replacingOccurrences``` e a propriedade ```filtered``` foram introduzidas na versão 4.0 da linguagem, tornando a manipulação de strings ainda mais simples e poderosa.
+Existem diversas alternativas em Swift para alcançar o mesmo efeito. Além do método `removeAll`, você pode usar o método `replacingOccurrences(of:with:)` para substituir padrões específicos de caracteres.
 
-## Veja Também:
+```Swift
+var str = "Olá, Swift!"
+str = str.replacingOccurrences(of: ",", with: "")
+str = str.replacingOccurrences(of: "!", with: "")
+print(str) // Imprime "Olá Swift"
+```
 
-Para mais informações sobre a função ```replacingOccurrences``` e a propriedade ```filtered```, consulte a documentação oficial do Swift em https://developer.apple.com/documentation/swift/string/.
+Na prática, usar um método em vez de outro depende das circunstâncias e das suas necessidades específicas. Enquanto `removeAll` é útil para remover vários caracteres, `replacingOccurrences(of:with:)` é mais versátil e permite substituir caracteres, em vez de simplesmente removê-los.
 
-Para aprender mais sobre expressões regulares, confira este tutorial da Ray Wenderlich em https://www.raywenderlich.com/1425-regular-expressions-tutorial-getting-started.
-
-E para descobrir outras maneiras de manipular strings em Swift, dê uma olhada neste artigo do Hacking with Swift em https://www.hackingwithswift.com/articles/141/8-useful-swift-extensions.
+## Veja Mais
+- [Documentação oficial Swift - String](https://developer.apple.com/documentation/swift/string)
+- [Exemplo de Swift Playground - Manipulação de String](https://developer.apple.com/documentation/swift/string)
+- [Guia de programação do Swift - Trabalhando com strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Erzeugung von Zufallszahlen"
-html_title:           "Fish Shell: Erzeugung von Zufallszahlen"
-simple_title:         "Erzeugung von Zufallszahlen"
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,35 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und warum machen Programmierer das?
+## Was & Warum?
 
-Das Generieren von Zufallszahlen ist eine Methode, um eine zufällige Zahl innerhalb eines bestimmten Wertebereichs zu erstellen. Programmierer nutzen diese Technik oft, um zufällige Werte für Spiele, Verschlüsselung oder Tests zu erzeugen.
+Zufällige Zahlen zu erzeugen bedeutet, eine Reihe von Werten zu erstellen, die nicht vorhersehbar sind. Dies ist für Programmierer wichtig, um beispielsweise einzigartige Identifikationscodes zu erzeugen oder Testdaten zu simulieren.
 
-## Wie geht das?
+## So geht's:
 
-Das Erstellen von Zufallszahlen ist in Fish Shell sehr einfach. Nutze einfach den Befehl `math random` und gib den gewünschten Wertebereich an. Zum Beispiel:
+Mit Fish Shell können Sie mithilfe des Befehls 'random' zufällige Zahlen erstellen. Hier sind ein paar Beispiele dazu:
 
-```
-Fish Shell math random 1 10
-# gibt eine zufällige Zahl zwischen 1 und 10 zurück
-```
-
-Du kannst auch den Zusatz `--count` nutzen, um eine bestimmte Anzahl von Zufallszahlen zu generieren. Zum Beispiel:
-
-```
-Fish Shell math random --count=5 1 10
-# gibt 5 verschiedene Zufallszahlen zwischen 1 und 10 zurück
+```Fish Shell
+# Erzeugt eine Zufallszahl zwischen 1 und 100
+random 1 100
 ```
 
-## Tiefer Einblick
+Ausgabe:
 
-Das Generieren von Zufallszahlen ist ein wichtiger Teil der Programmierung. Es wird oft benutzt, um eine zufällige Reihenfolge in Spiele, Musik-Playlists oder Lottozahlen zu erzeugen. Es gibt auch verschiedene Algorithmen, die für die Generierung von Zufallszahlen verwendet werden, jeder mit seinen eigenen Vor- und Nachteilen.
+```Fish Shell
+57
+```
 
-Eine Alternative zum `math random` Befehl in Fish Shell ist die Verwendung der `shuf` Funktion, die zufällige Zeilen innerhalb einer Datei ausgibt.
+oder
 
-In Fish Shell wird der `math random` Befehl basierend auf einer XORshift-Pseudozufallszahlengenerator-Implementierung ausgeführt.
+```Fish Shell
+# Erzeugt eine Liste von 5 Zufallszahlen zwischen 1 und 50
+for i in (seq 5)
+    random 1 50
+end
+```
 
-## Siehe auch
+Ausgabe:
 
-- Offizielle Dokumentation für den Fish Shell `math random` Befehl: https://fishshell.com/docs/current/commands.html#math-random
-- Eine Einführung in die Bedeutung von Zufallszahlen in der Programmierung: https://de.wikipedia.org/wiki/Zufallszahlengenerator
+```Fish Shell
+23
+2
+45
+19
+36
+```
+
+## Hintergrundwissen
+
+Zufallszahlen haben eine lange Geschichte in der Programmierung. Ihre Verwendung zur Erzeugung von einzigartiger Identifikation und Testdaten ist weit verbreitet. Es gibt unterschiedliche Ansätze, um Zufallszahlen zu generieren. Fish Shell bietet einen Ansatz, der auf dem /dev/random des Betriebssystems basiert. 
+
+Als Alternative können Sie auch das Bibliothekmodul 'random' in Python verwenden oder die Funktion 'rand' in C. Die Implementationsdetails können variieren, das Konzept bleibt jedoch das Gleiche. 
+
+## Weiterführende Links
+
+- Fish Shell Dokumentation: https://fishshell.com/docs/current/commands.html#random 
+- Python Random Modul: https://docs.python.org/3/library/random.html 
+- C rand Funktion: https://en.cppreference.com/w/c/numeric/random/rand

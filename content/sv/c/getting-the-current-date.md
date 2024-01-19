@@ -1,7 +1,7 @@
 ---
-title:                "Att få den nuvarande datumet."
-html_title:           "C: Att få den nuvarande datumet."
-simple_title:         "Att få den nuvarande datumet."
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -12,43 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att få den aktuella datumet är en mycket vanlig uppgift för programmerare. Det hjälper till att hålla koll på när ett program eller en applikation är i drift och om det behöver uppdateras eller inte.
+Att få det nuvarande datumet är en process där programmet får information om aktuellt datum från operativsystemet. Programmerare gör detta för att spåra händelser, logga information eller hantera datumbaserade operationer. 
 
 ## Hur man gör:
 
-För att få den aktuella datumet i C, används funktionen `time()` tillsammans med `ctime()` för att konvertera tidsinformationen till ett läsbar format. Se kodexemplet nedan:
+Här är ett enkelt exempel på hur man får dagens datum i C-programmering. Den här koden använder `time.h` biblioteket för att få aktuellt datum.
 
 ```C
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-  // Hämtar den aktuella datumet
-  time_t t = time(NULL);
-
-  // Konverterar till ett läsbart format
-  char *aktuellt_datum = ctime(&t);
-
-  // Skriver ut den aktuella datumet
-  printf("Aktuellt datum: %s", aktuellt_datum);
-
-  return 0;
+   time_t nu;
+   time(&nu);
+   
+   printf("Dagens datum: %s", ctime(&nu));
+   
+   return 0;
 }
 ```
 
-### Utskrift:
+Kör denna kod, och utdatan kommer att vara något liknande:
+
+```C
+Dagens datum: Wed Sep 15 14:25:06 2021
 ```
-Aktuellt datum: Fri Feb 05 12:34:17 2021
-```
 
-## Djupdykning:
+## Djupdykning
 
-Att få den aktuella datumet har varit en viktig uppgift för programmerare sedan begynnelsen av datorer. Innan standardbiblioteket `time.h` introducerades, var det mycket mer komplicerat att få den aktuella datumet. Alternativen idag inkluderar användning av API:er från olika operativsystem eller användning av färdiga bibliotek som `boost::date_time` för C++. 
+Få det aktuella datumet är en grundläggande funktion i programmering som har använts sedan början av datorteori. C standardbiblioteket `time.h` innefattar funktioner att manipulera datum och tid.
 
-När funktionen `time()` anropas, returneras antalet sekunder sedan UNIX-epoken (1 januari 1970 00:00:00 UTC). Sedan konverteras detta nummer till en läsbar sträng med funktionen `ctime()`.
+Det finns alternativ till `time.h` biblioteket, som `sys/time.h` vilket ger mer precision. Beslutet vilket bibliotek att använda beror på de specifika kraven i ditt projekt.
 
-## Se även:
+Få det aktuella datumet i C sker genom funktionen `time()`, som returnerar systemtiden. Denna tid kan sedan konverteras till en mer läsbar form med `ctime()` funktionen.
 
-- [C time library](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [boost::date_time](https://www.boost.org/doc/libs/1_72_0/doc/html/date_time.html)
-- [Alternative methods for getting current date in C](https://www.geeksforgeeks.org/alternative-ways-get-current-date-java/)
+## Se också
+
+För mer läsning om tidsfunktioner i C, besök följande länkar:
+
+1. C Library - `<time.h>`: https://www.tutorialspoint.com/c_standard_library/time_h.htm
+2. Time and Date in C: https://www.geekhideout.com/cdate.shtml
+3. `sys/time.h` and `time.h`: https://stackoverflow.com/questions/24104313/how-do-i-use-sys-time-h

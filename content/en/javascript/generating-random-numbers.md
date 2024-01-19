@@ -1,6 +1,6 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Javascript recipe: Generating random numbers"
+html_title:           "Arduino recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -12,30 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Generating random numbers is a built-in feature in Javascript that allows programmers to generate pseudorandom numbers for various purposes. From creating random games and simulations to enhancing security with randomized keys, random numbers are essential in modern programming.
+Generating random numbers in JavaScript is the creation of an unpredictable number within a given range. We do it in programming to achieve variety, for example, in games, statistics, security algorithms, or simulations.
 
 ## How to:
 
-To generate a random number in Javascript, we can use the ```Math.random()``` method. This method returns a number between 0 (inclusive) and 1 (exclusive). To get a random number within a specific range, we can use the formula ```Math.random() * (max - min) + min```. For example, if we want a random number between 1 and 10, we can use ```Math.random() * (10 - 1) + 1```, which will give us a value between 1 (inclusive) and 10 (exclusive).
+To generate a random number in JavaScript, we use the `Math.random()` function. 
 
+Here's a simple example where we generate a decimal number between 0 (inclusive) and 1 (exclusive):
+
+```JavaScript
+let random = Math.random();
+console.log(random);
 ```
-// Generate a random number between 1 and 10
-let randomNumber = Math.random() * (10 - 1) + 1;
-console.log(randomNumber); // output: 5.743568029182
+If you want a whole number, for example within a specified range, like 1 to 10, you can use a formula like this:
 
-// Generate a random integer between 1 and 10
-let randomInteger = Math.floor(Math.random() * (10 - 1 + 1) + 1);
-console.log(randomInteger); // output: 7
+```JavaScript
+let random = Math.floor(Math.random() * 10) + 1;
+console.log(random);
 ```
 
-## Deep Dive:
+## Deep Dive
 
-The ```Math.random()``` method has been a part of the Javascript language since its inception in 1995. It uses a mathematical algorithm to generate a sequence of pseudorandom numbers that appear to be random. However, this algorithm can still produce patterns and should not be used for critical security purposes. For more secure random numbers, specialized libraries and tools are recommended.
+Historically, JavaScript uses a pseudo-random algorithm as the basis for `Math.random()`. It's "pseudo" because it's deterministic and would generate the same sequence from the same seed value.
 
-There are alternative methods to generate random numbers in Javascript, such as using the ```Date``` object or libraries like Lodash. These methods may provide different levels of randomness and can be used based on specific needs.
+Alternatives to `Math.random()` include libraries such as Chance.js or crypto.getRandomValues for cryptographic purposes.
 
-## See Also:
+Under the hood, when you call `Math.random()`, JavaScript's runtime environment utilizes a C++ function behind the scenes to generate these 'random' numbers. This algorithm varies between runtime environments - while Node.js uses V8's implementation, browsers might use different ones.
 
-- [MDN Web Docs - Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [FreeCodeCamp - How to Generate Random Numbers in JavaScript](https://www.freecodecamp.org/news/how-to-generate-random-numbers-in-javascript/)
-- [Lodash - Random](https://lodash.com/docs/4.17.15#random)
+## See Also
+
+Check these out for more info:
+
+1. [MDN Web Docs on `Math.random()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+2. [Details about potential pitfalls when using `Math.random()`](https://v8.dev/blog/math-random)
+3. [Chance.js library](http://chancejs.com/)
+4. [W3Schools guide on JavaScript Random](https://www.w3schools.com/js/js_random.asp)

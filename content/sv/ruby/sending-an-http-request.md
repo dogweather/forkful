@@ -1,7 +1,7 @@
 ---
-title:                "Skicka en http-förfrågan."
-html_title:           "Ruby: Skicka en http-förfrågan."
-simple_title:         "Skicka en http-förfrågan."
+title:                "Att skicka en http-begäran"
+html_title:           "Go: Att skicka en http-begäran"
+simple_title:         "Att skicka en http-begäran"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -12,34 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att skicka en HTTP-begäran är när en programör använder ett programmeringsspråk som Ruby för att skicka ett begärande med specifik information till en annan server. Detta kan inkludera att hämta data från en annan webbsida eller att skicka information till en annan applikation.
+Att skicka en HTTP-begäran innebär att begära data från en annan server genom internetprotokollet HTTP (Hypertext Transfer Protocol). Programmerare gör detta för att interagera med webbtjänster, uppnå datautbyte och möjliggöra flera andra funktioner i sina program.
 
-Varför skickar programörer HTTP-begäran? Detta kan bero på olika skäl, till exempel att hämta information och använda den i sin egen applikation, eller att integrera med andra applikationer för ett smidigare användarupplevelse.
 
-## Hur gör man:
+## Hur man:
 
-För att skicka en HTTP-begäran med Ruby, kan du använda "Net::HTTP" modulen som finns tillgänglig i Ruby standardbiblioteket. Låt oss säga att vi vill hämta innehållet på en specifik webbsida, till exempel Wikipedia:s startsida:
+För att skicka HTTP-begäran i Ruby, använder vi ofta the `net/http` bibliotektet. Här är några exempel:
 
-```
-require 'net/http'
+```Ruby
+require 'net/http' 
+require 'uri'
 
-uri = URI('https://sv.wikipedia.org/wiki/Wikipedia:Huvudsida')
+uri = URI.parse("http://example.com/") 
 response = Net::HTTP.get_response(uri)
 
 puts response.body
 ```
 
-Detta kommer att skriva ut hela innehållet på Wikipedia:s huvudsida i vår terminal, eftersom vi använder "puts" för att skriva ut innehållet i "response.body" variabeln.
+När du kör det här programmet, tar det kontakt med webbservraren på http://example.com/ och returnerar sedan svar från webbplatsen.
 
-## Djupdykning:
+## Djup Dykning:
 
-I dagens internetålder är det vanligt för applikationer att behöva integrera med andra applikationer, och därför är skicka HTTP-begäran en viktig del av en programmerarens verktygslåda. Innan "Net::HTTP" modulen fanns tillgänglig i standardbiblioteket, behövde man använda tredjepartsbibliotek som "HTTParty" eller "RestClient" för att skicka HTTP-begäran.
+### Historisk Kontext
+HTTP-protokollet lanserades 1991 och används för kommunikation på världsomspännande webben. Ruby själv lanserades 1995, och möjligheten att skicka HTTP-begäran byggdes in i Ruby-biblioteket tillsammans med andra nätverksfunktioner.
 
-Om du är intresserad av att lära dig mer om HTTP, kan du läsa på om dess historiska kontext och olika versioner för att få en djupare förståelse för protokollet. Det finns också alternativa sätt att skicka HTTP-begäran, som till exempel att använda cURL kommandoraden i terminalen.
+### Alternativ
+I Ruby, finns det andra bibliotek som kan användas för att skicka HTTP-begäran, som 'faraday', 'httparty' och 'rest-client'. Med 'faraday' till exempel, kan du använda flera olika adapter för att skicka begäranden.
 
-## Se även:
+### Implementationsdetaljer
+`net/http` biblioteket använder en instans av `Net::HTTP::Get` (eller `Post`, `Put`, etc.) för att skapa en HTTP-begäran. Den här begäran skickas sedan till servern med `Net::HTTP#request` metoden.
 
-- [Ruby standardbiblioteket: Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [HTTParty](https://github.com/jnunemaker/httparty)
-- [RestClient](https://github.com/rest-client/rest-client)
-- [En djupdykning i HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+## Se Även
+
+- HTTP-protokollet: www.w3.org/Protocols/
+- 'net/http' dokumentation: www.ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html
+- Alternativa bibliotek: 'faraday'(github.com/lostisland/faraday), 'httparty'(github.com/jnunemaker/httparty), 'rest-client'(github.com/rest-client/rest-client).

@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga nummer"
-html_title:           "TypeScript: Generering av slumpmässiga nummer"
-simple_title:         "Generering av slumpmässiga nummer"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -10,25 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Generera Slumptal i TypeScript
+
 ## Vad & Varför?
-Att generera slumpmässiga nummer är en vanlig praxis inom programmering för att skapa oprognoserbarhet och varierande resultat. Det är användbart för spel, simuleringar och kryptering.
+Slumptalsgenerering handlar om att skapa tal som inte kan förutsägas, vilket är viktigt i många programmeringsuppgifter som spel, kryptering och modellering av slumpmässiga händelser.
 
-## Så här:
-### Generera ett heltal mellan 0 och 10:
-```TypeScript
-Math.floor(Math.random() * 10);
+## Hur man gör:
+Här är ett enkelt exempel på hur man genererar ett slumptal mellan 0 och 1 i TypeScript:
+
+```TypeScript 
+let slump = Math.random();
+console.log(slump);
 ```
-Output: (exempel) 5
 
-### Generera ett flyttal mellan 0 och 1:
-```TypeScript
-Math.random();
+Och för att få ett heltal mellan två gränser, använder vi följande kod:
+
+``` TypeScript 
+function faSlumptal(min: number, max: number): number {
+  let slump = Math.floor(Math.random() * (max - min + 1)) + min;
+  return slump;
+}
+console.log(faSlumptal(1, 10));
 ```
-Output: (exempel) 0.823491249269
 
-## Djupdykning:
-Slumpmässig nummergenerering har funnits sedan länge, även om de ursprungliga algoritmerna var långsamma och resurskrävande. I modern tid har matematik och maskininlärning bidragit till mer effektiva och säkra metoder för att skapa slumpmässiga nummer. Alternativ till den inbyggda Math.random() funktionen inkluderar att använda dedikerade bibliotek som Crypto.getRandomValues() för bättre säkerhet.
+## Djupdykning
+Den historiska bakgrunden till slumptalsgenerering sträcker sig tillbaka till de tidiga dagarna för datorer. På den tiden var maskinvaredongligt verkligen slumpmässiga, men i moderna datorer genereras "slumpmässiga" tal algoritmiskt och de kallas för pseudoslumpmässiga tal.
 
-## Se även:
-* [Slumpmässighet på Wikipedia](https://sv.wikipedia.org/wiki/Slumpmässighet)
-* [JavaScript random() funktion](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+Det finns andra sätt att generera slumpmässiga nummer i TypeScript, till exempel genom att använda andra bibliotek som crypto eller uuid för att generera unika ID.
+
+Huvuddelen av `Math.random()`-funktionen i JavaScript (som TypeScript bygger på) är en implementation av en variant av Mersenne Twister, en välkänd algoritm för pseudoslumpmässiga tal.
+
+## Se även 
+Kolla in följande källor för mer information och alternativa tillvägagångssätt:
+
+- [MDN Web Docs on Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Node.js crypto module documentation](https://nodejs.org/api/crypto.html)
+- [Understanding UUIDs](https://www.sohamkamani.com/blog/uuid-versions-explained/)

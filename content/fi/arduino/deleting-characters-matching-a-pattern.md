@@ -1,7 +1,7 @@
 ---
-title:                "Samanmallisten merkkien poistaminen"
-html_title:           "Arduino: Samanmallisten merkkien poistaminen"
-simple_title:         "Samanmallisten merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## Mitä & Miksi?
 
-Mikä on merkkijonojen poistaminen, joka vastaa malleja? Se on ohjelmointitapa poistaa ja korvata merkkijonoja tietystä kuvion tai mallin mukaan. Tätä käytetään yleensä muokkaamaan ja muokkaamaan tietoja muodossa.
+Mallin mukaisten merkkien poistaminen tarkoittaa joidenkin tiettyjen merkkien tai merkkijonojen poistamista tekstistä tai datasta. Ohjelmoijat tekevät näin usein saadakseen datan puhtaaksi käsiteltäväksi, eli pois kaikki mistä ei ole hyötyä.
 
-Miksi ohjelmoijat tekevät sitä? Merkkijonojen poistaminen on hyödyllistä, kun haluat muuttaa tietokannan tai muiden tietokoneen tallentamien tietojen muotoa. Se voi myös auttaa voittamaan palvelunestohyökkäyksiä ja muuta ei-toivottua sisältöä.
+## Miten:
 
-# Kuinka?
+Koodiesimerkkejä ja näytteen tuloksia seuraavissa ```Arduino ... ``` koodilohkoissa.
 
-Arduinoa voidaan käyttää poistamaan merkkijonoja, jotka vastaavat tiettyjä malleja. Tässä on yksinkertainen koodiesimerkki käyttäen funktiota ```replace()``` ja sen syötettä ```"README"```:
-
-```
-String teksti = "Tämä on README-tiedosto";
-String uusiTeksti = teksti.replace("README", "Ohjeet");
-Serial.println(uusiTeksti); // Tulostaa "Tämä on Ohjeet-tiedosto"
+```Arduino
+String txt = "Hei, Maailma!";
+txt.replace(" ", ""); // Poistaa kaikki välilyönnit.
+Serial.println(txt); // Tulostaa "Hei,Maailma!"
 ```
 
-Käytetäänkö funktiota ```replace()``` poistaaksesi merkkijonoja tietystä mallista, joka on integer eli kokonaisluku ja neljää merkkiä lyhyempi.```
+Tämä poistaa kaikki välilyönnit tekstistä. 'Replace' funktio korvaa kaikki " " tyhjillä, ja 'Serial.println' tulostaa lopputuloksen.
 
-String teksti = "12345";
-String uusiTeksti = teksti.replace("1234", "");
-Serial.println(uusiTeksti); // Tulostaa "5"
+```Arduino
+String txt = "Hello, Maailma!";
+txt.replace("ll", ""); // Poistaa kaikki 'll' merkkijonot.
+Serial.println(txt); // Tulostaa "Heo, Maailma!"
 ```
 
-Voit myös käyttää funktiota ```remove()``` Arduinoa poistamaan merkkijonoja tietystä alueelta. Katso seuraava esimerkki:
+Tässä esimerkissä 'Replace' funktio korvaa kaikki 'll' merkkijonot tyhjillä, ja 'Serial.println' tulostaa lopputuloksen.
 
-```
-String teksti = "Tämä on tekstikirjaimet";
-String uusiTeksti = teksti.remove(14, 7);
-Serial.println(uusiTeksti); // Tulostaa "Tämä on kirjaimet"
-```
+## Syvempi sukellus:
 
-# Syvä sukellus
+Historiallinen konteksti - Merkkien poistaminen mallin perusteella on ollut yleistä tietokoneohjelmoinnissa jo pitkään. Arduino-ympäristö on hyödyntänyt tätä käytäntöä tarjoamalla funktioita, kuten 'Replace'.
 
-Merkkijonojen poistaminen on ollut käytössä jo pitkään ohjelmoinnissa, ja sitä käytetään monissa eri ohjelmointikielissä. Nykyään on olemassa myös muita tapoja poistaa merkkijonoja, kuten säännölliset lausekkeet.
+Vaihtoehdot - Voit myös poistaa merkkejä käyttäen muita menetelmiä, kuten 'substring' tai 'charAt' funktioita, mutta 'Replace' tarjoaa yksinkertaisen ja tehokkaan tavan.
 
-Arduino tarjoaa kuitenkin hyvin yksinkertaiset ja tehokkaat metodit merkkijonojen poistamiseen, ja se on erinomainen vaihtoehto, kun tarvitaan nopeaa ja yksinkertaista ratkaisua.
+Implementaation yksityiskohdat - 'Replace' funktio tarkistaa jokaisen merkin tai merkkijonon vastaavuuden määritettyyn malliin ja vaihtaa sen. Tämä voi olla hyödyllistä, kun tarvitset erityisen merkkijonon tai merkin poistamista.
 
-# Katso myös
+## Katso myös:
 
-- Säännölliset lausekkeet: https://fi.wikipedia.org/wiki/S%C3%A4%C3%A4nn%C3%B6llinen_lausers
-- Arduino kirjallisuus: https://www.arduino.cc/reference/en/
+1. Arduino dokumentaatio 'Replace' funktiolle: [Arduino Replace](https://www.arduino.cc/en/Tutorial/StringReplace) 
+2. Arduino Substring-funktion käyttää merkkien poistamiseen: [Arduino SubString](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+3. Katsaus eri funktioihin merkkien käsittelyssä Arduinossa: [Arduino String Functions](https://startingelectronics.org/software/arduino/learn-to-program-course/12-strings/)

@@ -1,6 +1,6 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "Rust: Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Entendiendo la impresión de la salida de depuración en Rust
+
 ## ¿Qué y por qué?
 
-Imprimir información de depuración (debug output) es una técnica común en la programación para mostrar mensajes, valores de variables y otros datos relevantes durante el proceso de desarrollo y depuración de código. Los programadores lo hacen para entender mejor el flujo del programa y detectar errores más fácilmente.
+La impresión de la salida de depuración es una forma de rastrear y diagnosticar el estado de tu programa durante su ejecución. Los programadores lo hacen para descubrir y resolver errores.
 
-## Cómo:
+## Cómo hacerlo:
 
 ```Rust
-// Crear una variable y mostrar su valor en la consola
-let num = 10;
-println!("El valor de num es: {}", num);
-
-// Mostrar un mensaje en la consola
-println!("¡Hola, mundo!");
-
-// Mostrar información de una estructura
-struct Persona {
-    nombre: String,
-    edad: u8,
-}
-
-let persona = Persona {
-    nombre: String::from("Juan"),
-    edad: 25,
-};
-
-println!("La persona se llama {} y tiene {} años.", persona.nombre, persona.edad);
+# Mostrando un entero de forma depurada
+let x = 5;
+println!("x = {:?}", x);
 ```
 
-## Inmersión profunda:
+La salida será: `x = 5`
 
-Imprimir información de depuración ha sido una práctica común desde los primeros días de la programación, ya que ayuda a los programadores a entender cómo funciona el código y a encontrar problemas. Además de `println!`, otra forma de imprimir información de depuración en Rust es utilizando la macro `dbg!`, que es útil cuando se necesita imprimir datos de forma más detallada o en un formato específico.
+Para estructuras de datos más complejas:
 
-También existen otras herramientas y métodos para imprimir información de depuración en Rust, como las trazas de ejecución (logging) y las herramientas de depuración integradas en la mayoría de los entornos de desarrollo.
+```Rust
+# Una tupla
+let x = (32, "Hola");
+println!("{:?}", x);
 
-En términos de implementación, las macros `println!` y `dbg!` utilizan el mismo mecanismo interno en Rust para imprimir información en la consola. Este mecanismo se basa en la capacidad de Rust de formatear cadenas de texto en tiempo de compilación, lo que lo hace muy eficiente en comparación con otros lenguajes de programación.
+# Un vector
+let x = vec![1, 2, 3];
+println!("{:?}", x);
+```
 
-## Ver también:
+Las salidas serán: `(32, "Hola")` y `[1, 2, 3]` respectivamente.
 
-- [Documentación oficial de Rust sobre macros de depuración](https://doc.rust-lang.org/std/macro.dbg.html)
-- [Guía práctica sobre la impresión de información de depuración en Rust](https://dev.to/rust-avengers/the-complete-guide-to-debugging-in-rust-2ejp)
+## Buceo Profundo
+
+1. **Contexto histórico:** Rust, lanzado en 2010, tomó la noción de salida de depuración de lenguajes antiguos como C++, incorporando mejoras en legibilidad y manejo de errores.
+2. **Alternativas:** La biblioteca `log` de Rust proporciona capacidades de registro más avanzadas si necesitas más control que el ofrecido por `println!`.
+3. **Detalles de implementación:** `println!("{:?}", x)` utiliza el `trait` `Debug` del lenguaje para formatear la salida. `Debug` está diseñado para la depuración del programador, con formato libre y diseñado para ser humano-legible.
+
+## Ver También
+
+1. [Documentación oficial de Rust](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html)
+2. [El Libro de Rust](https://doc.rust-lang.org/book/ch18-02-refutability.html)
+3. [Guía de Rust](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

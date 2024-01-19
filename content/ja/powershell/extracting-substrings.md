@@ -1,7 +1,7 @@
 ---
-title:                "「サブストリングの抽出」"
-html_title:           "PowerShell: 「サブストリングの抽出」"
-simple_title:         "「サブストリングの抽出」"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をして、なぜ？　
-部分文字列を抽出するとは何かを説明し、プログラマーがそれをする理由を2〜3文で説明します。
+## 何となぜ? (What & Why?)
 
-部分文字列を抽出するとは、文字列の一部を取り出すことです。例えば、 "Hello World"という文字列から"World"という部分文字列を抽出することができます。プログラマーが部分文字列を抽出する理由は、文字列を処理する際に、必要な情報のみを取り出して使用するためです。
+部分文字列の抽出は、既存の文字列から特定の部分を取り出す過程を指します。これはデータのフィルタリング、マッチング、もしくは解析する際にプログラマーによって行われます。
 
-## 方法：
-下の「PowerShell ...」コードブロック内のコーディング例とサンプルの出力をご覧ください。
+## どうやってやるの? (How to)
 
-```PowerShell
-# 文字列から部分文字列を取得する例
-$string = "Hello World"
-$substring = $string.Substring(6,5) # 開始位置6から5文字分取得する
-Write-Output $substring # 出力結果は"World"となります
-```
+以下にPowerShellで部分文字列を抽出する基本的な方法を紹介します。
 
 ```PowerShell
-# 文字列を文字ごとに区切る例
-$string = "PowerShell"
-$characters = $string.ToCharArray() # 文字配列に変換する
-Write-Output $characters # 出力結果は"P", "o", "w", "e", "r", "S", "h", "e", "l", "l"となります
+# 文字列の宣言
+$sourceString = "こんにちは、山田さん"
+
+# 部分文字列の抽出
+$substring = $sourceString.Substring(6,4)
+
+# 結果の表示
+$substring
 ```
+上記を実行すると、以下のような出力が得られます。
 
-## 詳細説明：
-部分文字列を抽出する方法には、いくつかのアプローチがあります。以前は、C言語の関数である「substr」を使用する方法が一般的でしたが、現在は多くのプログラミング言語で部分文字列を扱うための組み込み機能が備わっています。
+```PowerShell
+山田さん
+```
+この例では、6番目から始まり4文字の部分文字列を抽出しました。
 
-他のプログラミング言語ではどのように部分文字列を扱っているかについては、関連ソースをご参照ください。
+## ディープダイブ (Deep Dive)
 
-## 関連リンク：
-- [PowerShellで文字列を扱う方法 (https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_string)](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_string)
-- [C言語の「substr」関数 (https://www.tutorialspoint.com/c_standard_library/c_function_substr.htm)](https://www.tutorialspoint.com/c_standard_library/c_function_substr.htm)
+PowerShellにおける部分文字列の抽出は、主に .NET Framework のメソッドである `Substring` に依存しています。たとえば、`Substring(6,4)`は6番目の位置から始まって4文字の長さの部分文字列を取り出します。
+
+`Substring`メソッドの代わりに正規表現も利用できます。
+
+```PowerShell
+# 正規表現による部分文字列の抽出
+$sourceString -match '、(.*?)$'
+
+# 結果の表示
+$Matches[1]
+```
+この方法は、特定のパターンにマッチする部分文字列を抽出するときに非常に便利です。
+
+## 参考資料 (See Also)
+
+-[Microsoft PowerShell 文字列操作の公式ドキュメント](https://docs.microsoft.com/ja-jp/powershell/scripting/learn/deep-dives/everything-about-string-substitutions?view=powershell-7.1)
+-[正規表現基本説明](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/regular-expressions)
+
+以上、この記事がPowerShellで部分文字列を抽出する際の参考になれば幸いです。

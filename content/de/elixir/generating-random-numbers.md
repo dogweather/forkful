@@ -1,6 +1,6 @@
 ---
 title:                "Zufallszahlen generieren"
-html_title:           "Elixir: Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
 simple_title:         "Zufallszahlen generieren"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was und Warum?
-Generieren von Zufallszahlen ist ein wichtiger Bestandteil der Programmierung, da es Entwicklern ermöglicht, auf zufällige Ereignisse zu reagieren oder zufällige Daten zu erstellen. Zufallszahlen werden in vielen Anwendungen verwendet, wie z.B. bei der Simulation von Spielen, bei der Kryptographie oder bei der Erstellung von Zugangscodes.
+## Was & Warum?
 
-Wie geht's?
-Die Generierung von Zufallszahlen ist in Elixir sehr einfach mit dem Befehl `:random.uniform()` zu erreichen. Dieser Befehl gibt eine zufällige Gleitkommazahl zwischen 0 und 1 zurück. Um eine Ganzzahl zwischen einem bestimmten Bereich zu erhalten, können wir `:random.uniform(min, max)` verwenden.
+Zufallszahlen generieren beschäftigt sich mit der Erstellung von Zahlen, die keinen Zusammenhang haben, also zufällig sind. Programmierer tun dies, um Datensätze zu simulieren, Spiele zu erzeugen oder ungeordnete Elemente anzuzeigen. 
 
-```Elixir
-IO.puts :random.uniform()
-# Beispieloutput: 0.342523564
-IO.puts :random.uniform(1, 10)
-# Beispieloutput: 6
+## So geht's:
+
+Erzeugen Sie eine einfache Zufallszahl mit der `random`-Funktion des Erlang-Moduls wie folgt:
+```elixir
+:rand.uniform(10) # Gibt eine Zufallszahl zwischen 1 und 10 zurück
 ```
 
-Tiefergehendes
-Die Generierung von Zufallszahlen ist ein wichtiges Konzept in der Informatik und hat eine lange Geschichte. Früher haben Programme oft sogenannte "Pseudozufallszahlen" verwendet, die auf bestimmten Algorithmen basierten und scheinbar zufällig waren. In der heutigen Zeit gibt es jedoch fortschrittlichere Methoden, um wirklich zufällige Zahlen zu generieren, wie z.B. durch die Verwendung von Umgebungsgeräuschen oder Radioaktiviät.
+Schauen wir uns einen Beispielausdruck an:
+```elixir
+IO.puts(:rand.uniform(10)) # Kann irgendeine Zahl zwischen 1 und 10 ausgeben, z.B. 3
+```
 
-Alternativen zur Elixir-Bibliothek `:random` sind die Bibliotheken `:rand` und `:erlang.rand`. Alle bieten ähnliche Funktionen für die Generierung von Zufallszahlen. Es ist jedoch wichtig zu beachten, dass diese Funktionen nicht unbedingt für sicherheitsrelevante Anwendungen geeignet sind, da sie teilweise vorhersehbare Ergebnisse liefern können.
+## Tiefer tauchen:
 
-Weiterführende Informationen
-Für weitere Informationen zur Generierung von Zufallszahlen in Elixir empfehlen wir die offizielle Dokumentation sowie die Community-Foren zu besuchen. Dort können Sie auch Unterstützung bei spezifischen Problemen mit der Generierung von Zufallszahlen erhalten.
+Historisch gesehen, nutzte Erlang (und somit Elixir) das :random-Modul zur Erzeugung von Zufallszahlen. Es wurde jedoch durch das :rand-Modul ersetzt, das bessere zufällige Verteilungen ermöglicht.
 
-See Also
-Offizielle Dokumentation: https://hexdocs.pm/elixir/:random.html
-Community-Foren: https://elixirforum.com/
+Es gibt auch eine Option, den Zufallszahlengenerator zu erzeugen und zu verwalten. Zum Beispiel:
+```elixir
+{:ok, s} = :rand.make_seed(:exrop)
+```
+`make_seed/1` erzeugt einen Anfangszustand für den Zufallszahlengenerator, wobei `:exrop` das Exponential Roulette Wheel Parent Atom ist. Der Generator kann dann mit `uniform/1` verwendet werden, z.B. `:rand.uniform(100, s)`.
+
+## Siehe auch:
+
+Weitere Informationen finden Sie unter den folgenden Links:
+Erlang :rand-Modul Dokumentation: (http://erlang.org/doc/man/rand.html)
+Elixir-Schulungszentrum: (https://elixir-lang.org/getting-started/introduction.html)
+Offizielles Forum für Elixir-Entwicklung und -Diskussionen: (https://elixirforum.com/)

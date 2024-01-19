@@ -10,28 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que & Porquê?
+## O Que & Porquê?  
 
-Calcular a data no futuro ou no passado é um processo muito comum na programação. Isso envolve determinar uma data específica com base em uma data inicial e uma duração de tempo, como um número de dias ou meses. Os programadores fazem isso para automatizar tarefas, como programar lembretes ou agendar eventos.
+Calcular uma data no futuro ou passado é um processo de adicionar ou subtrair dias a uma data existente. Os programadores fazem isso para manipular cronogramas, organizar eventos futuros ou analisar dados históricos.
 
-# Como fazer:
+## Como Fazer:  
 
-O Gleam tem várias funções embutidas que podem ser usadas para calcular a data no futuro ou no passado. Aqui está um exemplo de código que calcula a data de nascimento de uma pessoa daqui a 25 anos:
+O Gleam torna fácil trabalhar com datas. Aqui está um exemplo que subtrai dias de uma data:
 
-```Gleam
-let data_nascimento = Date.from_iso8601("1997-05-12")
-let data_futura = Date.add(data_nascimento, Time.Duration.months(25 * 12))
+```gleam
+import gleam/otp.{calendar, date}
+
+fn main() {
+  let hoje = calendar.local_today()
+  let uma_semana_atras = date.subtract(hoje, date.days(7))
+  uma_semana_atras
+}
 ```
 
-A saída será ```2022-05-12```, a data de nascimento da pessoa daqui a 25 anos. Você também pode adicionar ou subtrair dias, semanas, anos e até mesmo períodos de tempo mais específicos, como horas ou minutos.
+E o resultado:
 
-# Mergulho profundo:
+```s
+# (2022, 2, 10)
+```
 
-O cálculo de datas é uma tarefa fundamental na programação e é usado em muitas aplicações diferentes, como gerenciamento de calendário, sistemas de agendamento e processamento de transações financeiras. Além do Gleam, existem outras linguagens de programação que também têm funções embutidas para calcular datas, como Python e Java.
+E para adicionar dias a uma data:
 
-Ao trabalhar com datas no Gleam, é importante ter em mente os formatos de data comuns, como o ISO 8601 (YYYY-MM-DD), que é usado no exemplo acima. Também é importante entender como a linguagem manipula os tipos de dados de data e tempo e como fazer conversões entre eles.
+```gleam
+fn main() {
+  let hoje = calendar.local_today()
+  let uma_semana_depois = date.add(hoje, date.days(7))
+  uma_semana_depois
+}
+```
+## Mergulho Profundo
 
-# Veja também:
+Historicamente, calcular a data do futuro ou passado é um desafio. Existem várias formas e calendários para marcar o tempo. E, ao lidar com datas, devemos levar em conta os anos bissextos.
 
-- Documentação oficial do Gleam sobre funções de data: https://gleam.run/documentation/standard-library/datetime
-- Exemplo de cálculo de datas com Python: https://www.geeksforgeeks.org/python-program-to-calculate-number-of-days-between-two-given-dates/
+Outras maneiras de calcular datas envolvem o uso de bibliotecas, como a `date-fns` no JavaScript. Porém, o Gleam tem um bom suporte para isso na biblioteca standard OTP.
+
+Internamente, ao adicionar ou subtrair dias a uma data, o Gleam converte a data para uma estrutura de timestamp, realiza a operação, e então converte de volta para o formato de data. Isso permite que o Gleam manipule datas de maneira precisa e eficiente.
+
+## Veja Mais:
+
+- Documentação Oficial do Gleam: https://gleam.run/docs/
+- Calendários e a Sua História: http://www.webexhibits.org/calendars/
+- Biblioteca JavaScript date-fns: https://date-fns.org/

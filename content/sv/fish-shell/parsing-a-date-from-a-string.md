@@ -1,7 +1,7 @@
 ---
-title:                "Att tolka ett datum från en sträng"
-html_title:           "Fish Shell: Att tolka ett datum från en sträng"
-simple_title:         "Att tolka ett datum från en sträng"
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,36 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+# Hantera datum från strängar med Fish Shell
 
-Att ”parsa” ett datum från en sträng är när man tar en textsträng och konverterar den till ett datumformat som datorn kan förstå och hantera. Detta är vanligtvis användbart när man hanterar användarinput i ett program eller när man behandlar data från en annan källa. Det är en nödvändig del av programmering för att kunna hantera datum och tider på ett effektivt sätt.
+## Vad och Varför?
 
-## Så här gör du:
+Att tolka ett datum från en sträng innebär att omvandla textuell data till ett datumsobjekt. Programmerare gör det för att enkelt hantera och manipulera datumdata i sina program.
 
-```Fish Shell 
-set date (date -f %m/%d/%Y 11/20/2021)
-echo $date
+## Hur till:
+
+Fish Shell är ett kraftfullt verktyg för att hjälpa till med detta. Här är några kodblok med exempel:
+
+```fish
+# Skapa en sträng
+set -l mydate "2022-03-21"
+
+# Omvandla strängen till ett datum
+set -l parsed_date (date -u -d $mydate "+%Y-%m-%d")
+
+# Skriv ut det tolkade datumet
+echo $parsed_date
 ```
-Output: 20 Nov 2021
-
-I det här exemplet använder vi Fish Shell för att konvertera en textsträng i formatet månad/dag/år till ett datum med hjälp av kommandot "date" och formatet "%m/%d/%Y". Genom att sedan använda "echo" kan vi skriva ut det konverterade datumet till terminalen.
-
-```Fish Shell
-set date (date -f %d%m%Y 20210712)
-echo $date
+Resultat:
 ```
-Output: 12 Jul 2021
+2022-03-21
+```
 
-I det här exemplet kan vi se hur formatet på inputsträngen påverkar utgången av det konverterade datumet. Genom att ändra formatet till "%d%m%Y" förändras ordningen på dag och månad i det utskrivna datumet.
+## Djupdykning
 
-## Djupdykning:
+Historiska sammanhang: Datumtolkning är ingen ny ide; redan i tidiga programmeringsspråk behövde man ordna datum från textdata. Fish Shell har gjort processen mycket enklare och mer intuitiv.
 
-Att konvertera datum från strängar är något som har funnits sedan de tidiga dagarna av dataprogrammering. Det är en viktig del av att hantera kalenderfunktioner och tidshantering inom datorer. Alternativ till att använda Fish Shell för detta inkluderar andra kommandoradbaserade skal som Bash eller Zsh, men också mer komplexa programmeringsspråk som Python eller Java.
+Alternativ: Det finns andra skal som Bash och Zsh som kan göra samma saker, men Fish Shell skiljer sig ut för dess användarvänlighet.
 
-Något att tänka på när man arbetar med att parsea datum från strängar är att se till att formatet på strängen matchar formatet som används för konverteringen. Om formatet inte matchar kan det leda till felaktiga eller oförutsägbara resultat. Det kan också vara viktigt att se till att det konverterade datumet hanteras på rätt sätt, till exempel att det inte finns några felaktiga datum som den 29 februari när det inte är ett skottår.
+Verkställighetsdetaljer: När du skriver `date -u -d $mydate "+%Y-%m-%d"`, ber du `date`-kommandot att tolka värdet i `mydate`-variabeln som ett datum och sedan returnera det formatet som en sträng i `YYYY-MM-DD`-formatet.
 
-## Se även:
+## Se också:
 
-- [Fish Shell dokumentation för kommandot "date"](https://fishshell.com/docs/current/cmds/date.html)
-- [Unix timestamp konverterare för att parsad datum och tid till olika format](https://www.unixtimestamp.com/)
-- [En guide till att hantera datum och tider i programmeringsspråket Python](https://realpython.com/python-datetime/)
+Du kan läsa mer om datum i Fish Shell i dess dokumentation: [Fish Docs - Date Command](https://fishshell.com/docs/current/commands.html#date)
+
+För att förstå mer om strängmanipulation, ta en titt på denna artikel: [Fish Shell - String Operations](https://fishshell.com/docs/current/commands.html#string)
+
+För mer detaljerad förståelse kring datumformatering kan du besöka: [Fish - Date formatting](https://fishshell.com/docs/current/tutorial.html#date)

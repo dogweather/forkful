@@ -1,6 +1,6 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "Haskell: वर्तमान तारीख प्राप्त करना"
+html_title:           "C#: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,53 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-
-प्रोग्रामर्स को प्रोग्राम समय को ऑनलाइन समय के साथ तुलना करने और एक विशिष्ट या वर्तमान तारीख को प्राप्त करने की आवश्यकता होती है।
+वर्तमान तारीख प्राप्त करना इसका मतलब है की आप उस समय की तारीख प्राप्त करने की कोशिश कर रहे हैं जब यह कोड चलाया जाता है । प्रोग्रामर इसे हाँडल करने, समय-संबंधी लॉजिक को कार्यान्वित करने और डेटा को ट्रैक करने के लिए करते हैं।
 
 ## कैसे करें:
+Haskell में, हम `Data.Time` पैकेज का उपयोग करके वर्तमान तारीख प्राप्त कर सकते हैं।
 
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
+import Data.Time
 
--- प्रभावशाली निष्पादन
+main :: IO ()
 main = do
-  currentDateTime <- getCurrentTime
-  let (year, month, day) = toGregorian $ utctDay currentDateTime
-      (TimeOfDay hour minute _) = timeToTimeOfDay $ utctDayTime currentDateTime
-  putStrLn $ "आज की तारीख: " ++ show day ++ "/" ++ show month ++ "/" ++ show year
-  putStrLn $ "वर्तमान समय: " ++ show hour ++ ":" ++ show minute
+    now <- getCurrentTime
+    putStrLn $ "अभी का समय है: " ++ show now
+```
+और आउटपुट होगा:
 
--- और एक बदलाव के साथ:
--- टाइमज़ोन के साथ विशिष्ट समय वर्ग तैयार ज्वलन
-main = do
-  currentDateTime <- getCurrentTime
-  let (year, month, day) = toGregorian $ utctDay currentDateTime
-      tod@(TimeOfDay hour minute _) = timeToTimeOfDay $ utctDayTime currentDateTime
-      timeZone = hoursToTimeZone 5
-      localDateTime = LocalTime (fromGregorian year month day) tod
-      zonedDateTime = localTimeToZonedTime timeZone localDateTime
-  putStrLn $ "आज की तारीख: " ++ show day ++ "/" ++ show month ++ "/" ++ show year
-  putStrLn $ "वर्तमान समय: " ++ (show $ todHour $ localTimeOfDay zonedDateTime) ++ ":" ++
-    (show $ todMin $ localTimeOfDay zonedDateTime)
-
--- Lyrics के साथ अपनी निर्मिति बाल की
--- क्लासिक उदाहरण जिनके कारण उन्होंने के रूप में ठीक से unified निष्पादन किया:
--- https://wiki.haskell.org/Haskell
--- कास्केज देश के वर्णन के साथ आवश्यकता होती है साथ मोनाड - यह κ_1 और κ_2 के कास्केज सहायक अभी-कृत!
--- मोनाड आनन्द बहुगुणा L.E.Gupta को क्योंकि उन्होंने क्यों विभाजन में अपने सुरक्षित उपयोग एक होले सेट को रखने के लिए:
--- https://wiki.haskell.org/Monad#do_Notation_vs._Context_Passing
+```Haskell
+अभी का समय है: 2022-03-09 17:20:03.6288822 UTC
 ```
 
-> आज की तारीख: 08/09/2021
-> वर्तमान समय: 21:30
+## गहरा डाइव
+Haskell में `Data.Time` पैकेज 2006 में पेश किया गया था। यह व्यापक और विस्तारित समय एपीआई प्रदान करती है। `getCurrentTime` के विकल्प स्वरूप आप `Data.Time.Clock.POSIX` का उपयोग कर सकते हैं जो POSIX इपॉक को प्राप्त करेगा।
 
-## गहराई तक जाओ:
+```Haskell
+import Data.Time.Clock.POSIX
 
-एक लंबा हिस्टोरीकल कंटेक्स्ट के साथ प्रोग्राम समय को प्राप्त करने के प्रत्येक से गुजर चूका है होता है। हालांकि क्या समय-संसार अनुप्रयोग और मूल समय का उपयोग कर सकते हैं जो विकसित में सक्षम हो समय प्रभावों होते हुए भी प्रमाणित किए गए के लिए लोग जोखिम तो?
-कर सकते है समय प्रभावों और समय सेटिंग्स दोंनो को एक जोखिम या तिमाही - प्राप्त ऻतर विकसित में बढ़ाने के लिए व्यवस्था को अनुमति देता है।
+currentTime :: IO POSIXTime
+currentTime = getPOSIXTime
+```
 
-## सम्बंधित स्त्रोत:
-
-https://wiki.haskell.org/Haskell
-https://wiki.haskell.org/Monad#do_Notation_vs._Context_Passing
+## भी देखें
+अधिक जानकारी के लिए जरूर देखें:
+1. Haskell का आधिकारिक डॉक्युमेंटेशन `Data.Time`: [यहां](https://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)
+2. बारेंड डुकास का लेख POSIX समय मापदंड पर: [यहां](https://www.barre.land/blog/posix-time-in-haskell)
+3. अधिक जानकारी Haskell समय लाइब्रेरी पर: [यहां](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/daemons-and-services/haskell-and-posix-pipes-part-2)

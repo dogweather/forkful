@@ -1,6 +1,6 @@
 ---
 title:                "Convertire una stringa in minuscolo"
-html_title:           "PHP: Convertire una stringa in minuscolo"
+html_title:           "Arduino: Convertire una stringa in minuscolo"
 simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
+## Cosa & Perché?
 
-La conversione di una stringa in caratteri minuscoli è un'operazione comune che i programmatori effettuano per rendere uniforme il contenuto dei dati. Ciò è particolarmente utile quando si lavora con stringhe che possono contenere una combinazione di lettere maiuscole e minuscole, come ad esempio i nomi di utenti o password. 
+La conversione di una stringa in minuscolo è una operazione comune nel campo della programmazione. Si fa per semplificare le operazioni di confronto di stringhe, eliminando le differenze tra maiuscole e minuscole.
 
-La maggior parte dei linguaggi di programmazione, compreso PHP, forniscono una funzione predefinita per convertire una stringa in caratteri minuscoli. Convertire una stringa in minuscolo rende più facile confrontare e manipolare i dati all'interno del codice.
+## Ecco Come:
 
-## Come fare:
+Utilizziamo la funzione `strtolower()` per convertire una stringa in minuscolo in PHP.
 
 ```PHP
-$stringa = "Marco";
-echo strtolower($stringa);
+$stringa = 'Ciao Mondo';
+$stringa_minuscolo = strtolower($stringa);
+echo $stringa_minuscolo; // Output: ciao mondo
 ```
-Output: marco
 
-La funzione "strtolower" accetta una stringa come parametro e restituisce la stessa stringa ma con tutti i caratteri convertiti in minuscolo.
+## Approfondimenti
 
-## Approfondimento:
+Ora, delve più profondamente. La funzione `strtolower()` esiste nei linguaggi di programmazione da molto tempo, risalente alle prime edizioni di Unix negli anni '70. 
 
-La conversione dei caratteri in minuscolo è una pratica comune che risale ai primi giorni della tecnologia informatica. In passato, quando il supporto dei caratteri maiuscoli e minuscoli nei computer era limitato, la conversione in minuscolo era necessaria per garantire la compatibilità dei dati.
+C'è un'alternativa `mb_strtolower()`, che offre più controllo sulla codifica dei caratteri rispetto a `strtolower()`. 
 
-Oltre alla funzione "strtolower", PHP offre anche altre due funzioni per manipolare il caso dei caratteri: "strtoupper" per convertire le stringhe in maiuscolo e "ucfirst" per convertire il primo carattere della stringa in maiuscolo.
+In termini di implementazione, `strtolower()` utilizza una semplice mappa di caratteri per mappare tutti i caratteri ASCII maiuscoli ai loro equivalenti minuscoli.
 
-Inoltre, è possibile utilizzare l'operatore "=" per assegnare una stringa in minuscolo a una variabile già esistente. Ad esempio: ```$stringa = "Nome Utente"; $stringa = strtolower($stringa);```
+```PHP
+$accent_string = 'CIAO MÒNDO';
+$accent_string_lower = mb_strtolower($accent_string, 'UTF-8');
+echo $accent_string_lower; // Output: ciao mòndo
+```
 
-## Vedi anche:
+## Vedi Anche
 
-- [Funzioni stringa di PHP](https://www.php.net/manual/en/ref.strings.php)
-- [Strtolower nella documentazione ufficiale di PHP](https://www.php.net/manual/en/function.strtolower.php)
-- [Tutorial su stringhe in PHP](https://www.w3schools.com/php/php_string.asp)
+Per ulteriori dettagli su come convertire una stringa in minuscolo in PHP:
+- Documentazione PHP [strtolower()](http://php.net/manual/en/function.strtolower.php)
+- Documentazione PHP [mb_strtolower()](http://php.net/manual/en/function.mb-strtolower.php)
+- StackOverflow: ["When to use mb_strtolower instead of strtolower?"](https://stackoverflow.com/questions/3686425/when-to-use-mb-strtolower-instead-of-strtolower)
+- Confronto tra [difference strtolower() vs mb_strtolower()](https://www.geekhideout.com/urlcode.shtml)

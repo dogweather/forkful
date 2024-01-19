@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottelu merkkijonosta"
-html_title:           "Clojure: Päivämäärän erottelu merkkijonosta"
-simple_title:         "Päivämäärän erottelu merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -11,26 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Päivämäärän parsiminen merkkijonosta tarkoittaa sen muuntamista tekstimuodosta päivämääräobjektiksi, jota tietokone voi käsitellä. Tämä on tärkeää, koska ohjelmissa käytetään usein päivämäärätietoa, joka tulee ulkoisesta tietolähteestä merkkijonona.
 
-## Ohjeet:
-```Clojure
-(require '[clojure.string :as string])
-(require '[clojure.java-time :as t])
+Päivämäärän jäsennys merkkijonosta tarkoittaa päivämäärän hahmottamista merkkijonosta. Ohjelmoijat tekevät tätä käyttäjän syötteiden, tiedostojen tai tietokannan päivämäärämuotoilujen ymmärtämiseksi. 
 
-;; Parsi päivämäärä päiväysmuodosta.
-(t/parse str "2018-12-06")  ;; => #object[java.time.LocalDate 0x75a6ee41 "2018-12-06"]
+## Kuinka Näin:
 
-;; Parsi aika aikaleimanmuodosta.
-(t/parse-time str "13:45:30")  ;; => #object[java.time.LocalDateTime 0x57396a42 "2019-02-19T13:45:30"]
+Jäsentää päivämäärä merkkijonosta Clojuren avulla:
+
+```Clojure 
+(require '[clj-time.format :as f])
+(def iso-formatter (f/formatters :date-time-no-ms))
+(f/parse iso-formatter "2012-12-12T12:12:12Z")
 ```
 
-## Syvempi sukellus:
-Päivämäärän parsiminen merkkijonosta on ollut haastava tehtävä ohjelmoinnissa jo pitkään. Aiemmin tälle tarpeelle kehitettiin monimutkaisia algoritmeja, mutta nykyään onneksi löytyy helppokäyttöisiä kirjastoja kuten Java-Time Clojure-kirjasto.
+Tulostaa tuloksen: `#object[org.joda.time.DateTime 2012-12-12T14:12:12.000Z]`, päivämäärä- ja aikaolio vakiomuodossa.
 
-Jos haluat lukea lisää päivämäärän parsimisesta, suosittelemme tutustumaan LocalDateTimeAPI:n dokumentaatioon sekä Java-Time-tutoriaaleihin.
+Mutta entä jos meillä on muoto, jota Clojure ei ymmärrä oletusarvoisesti? Ei hätää, voit määritellä oman muodon:
+```Clojure 
+(def custom-formatter (f/formatter "dd-MM-yyyy"))
+(f/parse custom-formatter "12-12-2012")
+```
+Tämä tuottaa saman tuloksen kuin edellinen, mutta nyt muotoillaan päivämäärä omalla muodolla.
 
-## Katso myös:
-- [Java-Time Clojure-kirjasto](https://github.com/java-time/java-time)
-- [LocalDateTimeAPI:n dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
-- [Java-Time -tutoriaalit](https://www.baeldung.com/java-8-date-time-intro)
+## Syvempi sukellus
+
+Alun perin, ohjelmoijat käyttivät JavaScriptin pudotetun Date.parse-toiminnon, jolla on paljon haittoja, kuten epäjohdonmukaisuus selaimen alustoilla. Clojure tarjoaa selkeämmän ja joustavamman lähestymistavan, joka perustuu Joda-Time-kirjastoon, täynnä erilaisia aika- ja päivämääränmuuntoja ja -muotoja.
+
+Vaihtoehtoisia tapoja päivämäärän jäsennystä varten merkkijonosta ovat muun muassa Java.util.Date ja SimpleDateFormat, mutta ne ovat suhteellisen monimutkaisia käyttää ja niillä on monia aikavyöhykkeisiin liittyviä kysymyksiä.
+
+Clojuren toteutus käyttää sisäisesti Joda-Time-menetelmiä, jotka tekevät siitä vakaan ja tehokkaan. Se määrittää formattereita käyttäen DateTimeFormat-luokan menetelmää, joka palauttaa DateTimeFormatter-olioita - nämä voivat valita parse-strategian merkkijonojen perusteella.
+
+## Katso myös
+
+Linkit liittyviin lähteisiin:
+- [Clojure Date Time Documentation](https://clojuredocs.org/clojure.instant)
+- [Joda-Time Github](https://github.com/JodaOrg/joda-time)
+- [More on Time in Clojure](https://www.baeldung.com/clojure-time-and-date)

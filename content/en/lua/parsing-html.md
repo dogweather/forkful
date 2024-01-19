@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "Lua recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,41 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing HTML is the process of analyzing and decoding HTML code to extract relevant information. Programmers often do this in order to gather data from websites or to modify and manipulate HTML structures for specific purposes.
+Parsing HTML is a way to break down and understand an HTML document's structure and content. Programmers parse HTML to extract, manipulate or interact with data within web pages.
 
 ## How to:
-Parsing HTML can be easily achieved in Lua using the LuaXML library. First, install the library by running the command ```luarocks install LuaXML```. Then, import the library in your code using the line ```local xml = require("xml")```. Next, use the ```xml.load()``` function to load the HTML code into a Lua table. Finally, you can access the data in the HTML code by using the table's keys and values.
 
-A simple example would be extracting all the links from a webpage. We can achieve this using the following code:
+To parse HTML using Lua, there’s a convenient library named LuaHTML. If it’s not installed yet, Then use Luarocks package manager to install:
 
 ```Lua
+luarocks install luahtml
+```
+
+Afterwards, you can parse HTML like so:
+
+```Lua
+local luahtml = require("luahtml")
+
 local html = [[
 <html>
-<head>
-<title>Lua Website</title>
-</head>
-<body>
-<h1>Welcome to Lua</h1>
-<a href="https://lua.org">Visit the official Lua website</a>
-</body>
+  <body>
+    <h1>Hello, world!</h1>
+  </body>
 </html>
 ]]
 
-local data = xml.load(html)
+local root = luahtml.parse(html)
 
-for _, link in ipairs(data.body.a) do
-    print(link["@href"]) -- prints "https://lua.org"
-end
+root:query_selector("h1")[1]:get_text() -- This will output 'Hello world!'
 ```
 
-## Deep Dive:
-Parsing HTML has been a common practice in web development since the early days of the internet. In its simplest form, it involves analyzing the HTML structure and identifying different elements, tags, and attributes. This enables the manipulation, extraction, and modification of HTML code, making it an essential tool for web developers and data scientists.
+The function `query_selector()` will grab the elements which match the CSS selector you've given, returning them in a Lua table.
 
-While there are alternative methods for parsing HTML, Lua's LuaXML library offers a lightweight and efficient solution. In addition to retrieving specific data from HTML code, the library also supports manipulation and modification of HTML structures.
+## Deep Dive
 
-For more advanced usage, the LuaHTML library is another option that provides a more comprehensive approach to parsing HTML, including handling errors and invalid syntax.
+HTML parsing has many uses including web scraping, testing web applications, and building web crawlers. HTML parsing started just after the creation of HTML language itself back in 1990 because technically HTML is meant to be parsed for rendering it in the browser. 
+
+In the early 2000s, with surge in dynamic content delivery on the web and increase in custom analytics requirements the usage of HTML parsing outside of browser also exploded.
+
+Besides LuaHTML, Lua programmers have other library options for parsing HTML like lua-expat (based on the well known Expat XML parser) or htmlparser.lua. The choice depends on your specific requirements and the compatibility with your current Lua version.
+
+LuaHTML shines in its ability to carry out HTML parsing using simple and familiar CSS selectors, making it a very intuitive choice for your HTML parsing needs.
 
 ## See Also:
-- [LuaXML](https://github.com/michal-kottman/luaexpat) - Official LuaXML library
-- [LuaHTML](https://github.com/tylerneylon/lua-htmlparser) - Lua library for parsing HTML
-- [HTML Parsing in Lua](https://www.sqlite.org/src/doc/trunk/artifact/1d084c05d65b82bb) - In-depth discussion on HTML parsing in Lua.
+
+- More about LuaHTML: https://github.com/siffiejoe/lua-luahtml
+- HTML parsing with lua-expat: https://matthewwild.co.uk/projects/luaexpat/
+- Lua's htmlparser library: https://github.com/msva/lua-htmlparser
+- Official Lua website: https://www.lua.org
+- LuaRocks: https://luarocks.org/

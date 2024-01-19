@@ -1,6 +1,6 @@
 ---
 title:                "Convertir une date en chaîne de caractères"
-html_title:           "Python: Convertir une date en chaîne de caractères"
+html_title:           "Gleam: Convertir une date en chaîne de caractères"
 simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Python"
 category:             "Python"
@@ -10,37 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi?
-Convertissez une date en une chaîne de caractères est une tâche courante en programmation. Cela signifie simplement prendre une date au format de données et la transformer en une représentation textuelle.
+## Pourquoi et Quoi?
 
-Les programmeurs font cela pour pouvoir afficher les dates de manière lisible pour les utilisateurs, ainsi que pour faciliter la comparaison et la manipulation de dates dans le code.
+La conversion d'une date en chaîne de caractères est une méthode qui permet de transformer un objet de date Python en une chaîne de caractères. Les programmeurs le font souvent pour faciliter la présentation et le stockage des dates.
 
-# Comment faire:
-Les exemples suivants montrent comment convertir une date en une chaîne de caractères en utilisant la librairie datetime en Python:
+## Comment faire:
 
 ```Python
+# Importer le module datetime
 from datetime import datetime
 
-# Convertir une date en une chaîne de caractères avec le format par défaut
-date = datetime(2020, 10, 15)
-str_date = date.strftime("%d-%m-%Y")
-print(str_date) # output: 15-10-2020
+# Créer une date
+d = datetime(2021, 7, 2)
 
-# Changer le format en français
-str_date = date.strftime("%d %B %Y")
-print(str_date) # output: 15 octobre 2020
+# Convertir la date en chaîne de caractères
+str_d = d.strftime('%d-%m-%Y')
+
+print(str_d)
+```
+Quand vous exécutez ce code, il produira:
+```
+'02-07-2021'
 ```
 
-# Plongée profonde:
-Historiquement, les dates étaient stockées sous forme de nombres dans les programmes, rendant la manipulation et l'affichage difficile. La librairie datetime en Python a été introduite pour simplifier le travail avec les dates en fournissant des méthodes pour convertir les dates en chaînes de caractères.
+## Approfondissement
 
-Il existe également d'autres façons de représenter les dates en texte, telles que le format ISO 8601 qui suit une structure année/mois/jour et permet une meilleure lisibilité pour les machines.
+La méthode strftime est présente dans Python depuis sa première version, ce qui en fait une solution éprouvée pour convertir des dates en chaînes de caractères. Cependant, vous pouvez également utiliser la fonction format() pour obtenir le même résultat. Les détails de mise en œuvre de cette conversion sont relativement simples, des méthodes intégrées à Python étant disponibles pour cette tâche.
 
-L'implémentation de la conversion d'une date en une chaîne de caractères peut varier en fonction du langage de programmation utilisé. Par exemple, en JavaScript, on peut utiliser la fonction ```toDateString()``` pour obtenir une version courte de la date.
+```Python
+# Exemple en utilisant la fonction format()
+str_d = "{:%d-%m-%Y}".format(d)
 
-# Voir aussi:
-Pour plus d'informations sur la librairie datetime en Python, vous pouvez consulter la documentation officielle: https://docs.python.org/fr/3/library/datetime.html
+print(str_d)
+```
 
-Pour en savoir plus sur les normes et conventions de représentation des dates en programmation, vous pouvez consulter cet article: https://www.clivern.com/format-dates-python/
+Cela donne le même résultat:
+```
+'02-07-2021'
+```
 
-Et voici un guide pratique sur la manipulation et la conversion de dates dans différents langages de programmation: https://www.dateformat.io/
+## Voir aussi
+
+Pour plus d'informations sur la manipulation des dates en Python, consultez les ressources suivantes:
+
+1. Documentation officielle de Python sur le module datetime: https://docs.python.org/fr/3/library/datetime.html
+2. Tutoriel sur le site Real Python: https://realpython.com/python-datetime/
+3. Post de blog technique sur le formatage des dates en Python: https://www.geeksforgeeks.org/python-format-function/

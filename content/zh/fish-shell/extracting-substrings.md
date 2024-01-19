@@ -1,6 +1,6 @@
 ---
 title:                "提取子字符串"
-html_title:           "Fish Shell: 提取子字符串"
+html_title:           "Arduino: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,24 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
-提取子字符串是什么？它指的是从一个字符串中获取部分内容。程序员之所以这样做，是因为它能够帮助他们从复杂、长的字符串中获取所需的特定信息。
+## 什么和为什么？
 
-## 如何：
-提取子字符串在Fish Shell中是一个简单的任务，只需使用内置的子字符串命令即可。以下是一个例子，假设我们有一个字符串 "Hello Mandarin readers!"，我们想要提取 "Mandarin":
-```
-set string "Hello Mandarin readers!"
-echo $string[6..13]
+子字符串的提取是从长字符序列中获取特定部分的过程。程序员会这样做以简化字符串处理任务和高效进行数据分析。
+
+## 如何做：
+
+在 Fish Shell 中，我们可以使用 `string sub` 命令来提取字符串：
+
+```Fish Shell
+> set str 'Hello, World!'
+> string sub -s 8 -l 5 -- $str
+
+World
 ```
 
-输出将会是：
-```
-Mandarin
-```
+在上述代码中，`-s` 参数定义了起始位置，'-l' 定义了长度，`--` 后面就是你的字符串。
 
-## 深入了解：
-提取子字符串作为一种技术已经存在了很长一段时间，它可以追溯到早期的Unix系统。除了使用Fish Shell内置命令之外，也可以使用其他编程语言来实现提取子字符串的功能，如Python、Java等。在实际应用中，提取子字符串常用于从大型数据文本中提取特定的信息。
+## 深潜：
 
-## 参考链接：
-- [Fish Shell Github Repository](https://github.com/fish-shell/fish-shell)
-- [Python字符串提取](https://www.geeksforgeeks.org/python-string-extraction/)
+在历史上，许多 Shell （比如 Bash） 使用了类似 `${string:position:length}` 的语法来提取字符串。但是 Fish Shell 引入了 `string sub` 命令，使得这个过程变得更明确和易懂。
+
+还有其他的选择，比如用 `sed` 或 `awk` 这样的工具，但是 `string sub` 命令在易用性和可读性上具有明显的优势。
+
+为了更高效的执行，Fish Shell 采用了`Newlocale`做字符边界处理，这让不同的语言环境（比如在处理非ASCII字符）得以更精准的定位和提取。
+
+## 另请参阅：
+
+1. Fish Shell 官方文档，详细解释如何使用 `string sub` 提取子字符串：https://fishshell.com/docs/current/cmds/string.html
+2. 关于字符串处理的一般性理论和实践，可以参考：https://en.wikipedia.org/wiki/String_operations
+
+没有结束部分。

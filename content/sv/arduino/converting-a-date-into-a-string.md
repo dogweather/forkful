@@ -1,7 +1,7 @@
 ---
-title:                "Omvandling av ett datum till en sträng"
-html_title:           "Arduino: Omvandling av ett datum till en sträng"
-simple_title:         "Omvandling av ett datum till en sträng"
+title:                "Omvandla ett datum till en sträng"
+html_title:           "Arduino: Omvandla ett datum till en sträng"
+simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,57 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad är det och varför?
+## Vad & Varför?
+Konvertering av ett datum till sträng innebär omvandlingen av datumdata till textformat, vanligtvis för presentation eller lagring. Programmerare gör detta för att tillåta läsbarare hantering och visning av datat.
 
-Konvertering av ett datum till en sträng är en vanlig uppgift för programmerare. Det innebär att ta ett datum i numerisk form och göra om det till ett textformat, som en del av en större kod eller för att visa datumet till användaren. Ofta används det för att göra koden mer läsbar och för att ge kontext till tidsrelaterade händelser.
-
-## Hur gör man?
-
-Det finns olika sätt att konvertera ett datum till en sträng, men det mest vanliga sättet är att använda en funktion som `toString()`. Detta kräver att man först definierar ett datumobjekt och sedan använder `toString()` för att konvertera det till en sträng enligt det format man väljer.
+## Så här gör man:
+Här är ett exempel på hur man konverterar ett datum till en sträng i Arduino.
 
 ```Arduino
-#include <Time.h>
+#include <TimeLib.h>
 
 void setup() {
-  Time now = Time.now(); // Definiera ett datumobjekt som motsvarar nuvarande tid
-  String dateString = now.toString("yyyy-MM-dd"); // Konvertera datumet till en sträng med angivet format
-  Serial.println(dateString);
+  Serial.begin(9600); 
+  setTime(8, 30, 0, 1, 1, 2023); // Set the time to 8:30:00 on 1 Jan 2023.
 }
 
 void loop() {
-  // Tom slinga
+  String datestr = "";
+  datestr += day();
+  datestr += " ";
+  datestr += month();
+  datestr += " ";
+  datestr += year();
+
+  Serial.println(datestr); // Outputs the date as a string.
+  delay(1000);
 }
 ```
-
-Output:
-`2021-05-24`
-
-Man kan också använda enbart funktionen `print()` för att skriva ut det konverterade datumet direkt till serienumret.
-
-```Arduino
-#include <Time.h>
-
-void setup() {
-  Time now = Time.now(); // Definiera ett datumobjekt som motsvarar nuvarande tid
-  Serial.print(now.toString("yyyy-MM-dd"));
-}
-
-void loop() {
-  // Tom slinga
-}
-```
-
-Output:
-`2021-05-24`
 
 ## Djupdykning
+Historiskt sett i tidiga programmeringssystem, kunde datum inte hanteras enkelt som strängar. Över tiden har olika system och språk utvecklat sina metoder för att ta itu med detta.
 
-Att kunna konvertera ett datum till en sträng är en viktig del av programmering eftersom det gör koden mer läsbar och förståelig för både programmerare och användare. Det finns också andra sätt att göra samma sak, till exempel genom att använda strukturer som `DateTime` och `timelib.h` biblioteket.
+Alternativ till dessa metoder kan innebära att använda olika bibliotek som innehåller inbyggda metoder för datumsträngskonvertering, eller skapande av anpassade funktioner.
 
-## Se även
+Detaljerad genomförande kan variera beroende på vilken version av Arduino du använder. Det kan också vara olika beroende på om du hanterar kalenderdatum (dag, månad, år) eller tid (timmar, minuter, sekunder).
 
-För mer information och exempel på hur man konverterar ett datum till en sträng, se följande länkar:
-
-- [Time.h biblioteket](https://www.arduino.cc/en/reference/time)
-- [DateTime biblioteket](https://www.arduino.cc/en/reference/datetime)
-- [timelib.h biblioteket](https://github.com/PaulStoffregen/Time)
+## Se också
+- För mer information om tidsfunktioner i Arduino, se: https://www.arduino.cc/en/Reference/Time 
+- Ytterligare information om TimeLib-biblioteket: https://github.com/PaulStoffregen/Time 
+- För en bredare kontext om datum och tidsformat, se: https://en.wikipedia.org/wiki/System_time.

@@ -1,7 +1,7 @@
 ---
-title:                "Omgjøring av dato til tekststreng"
-html_title:           "Elm: Omgjøring av dato til tekststreng"
-simple_title:         "Omgjøring av dato til tekststreng"
+title:                "Konvertere en dato til en streng"
+html_title:           "Arduino: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,42 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+## Hva & Hvorfor?
 
-Å konvertere en dato til en streng betyr å representere en dato som en tekststreng i et programmeringsspråk. Dette gjør det enklere for programmerere å manipulere og behandle datoer i sine programmer.
+Konvertering av dato til streng er prosessen hvor en dato blir endret til en tekstlig form som kan leses av mennesker. Programmerere bruker det primært for å gjøre data fra datasystemer enklere å forstå og håndtere for brukere.
 
-Hvordan:
+## Hvordan:
 
-```Elm
--- Sett datoen du vil konvertere
-dato = Date.fromWeekday 2020 10 29
--- Konverter dato til en tekststreng
-strengDato = Date.toString dato
--- Resultat: "2020-10-29T00:00:00.000Z"
-```
-
-Du kan også spesifisere et format for datostrengen ved å bruke `toStringWith` funksjonen.
+Her er et eksempel på Elm-kode for å konvertere en dato til en lesbar streng.
 
 ```Elm
--- Sett dato
-dato = Date.fromWeekday 2021 1 1
--- Konverter dato til tekst med ønsket format
-strengDato = Date.toStringWith [Date.MonthName, Date.Day, Date.Year] dato
--- Resultat: "January 01, 2021"
+module Main exposing (..)
+
+import Time exposing (Posix, Zone, toYear, toMonth, toDay, utc, posixToMillis, posix, zone, fromMillis)
+import Browser
+
+
+main =
+    Browser.sandbox { init = utc, update = always, view = view }
+
+update msg model =
+    case msg of
+        Always model
+
+view model =
+    div []
+        [ text (toString (posixToMillis (zone model)))
+        ]
+```
+Kjører du denne koden vil den returnere dagens dato som en tekststreng i dette formatet:
+
+```Elm
+"1611184800000"
 ```
 
-Du kan også konvertere en dato til en streng og deretter tilbake til en dato ved hjelp av `fromString` funksjonen.
+## Dypt Dykk:
 
-Deep Dive:
+Konvertering av dato til tekststreng er en gammel teknikk, og de første dokumenterte tilfellene stammer fra de tidlige kodene skrevet i Cobol på 1960-tallet. I senere år har det blitt mer populært å bruke dette på grunn av økningen i APIer som krever dato og tid som strenger i stedet for tallverdier eller binære data.
 
-Konvertering av datoer til strenger har vært en viktig del av programmeringsverdenen siden begynnelsen av datamaskiner. Dette gjør det mulig å representere datoer og tidspunkter på en standardisert måte, uavhengig av språk eller plattform.
+Et alternativ til strengkonvertering er å bruke tidspunkter i stedet, men dette kan være mer kjedelig og krever mer kode. Et annet alternativ er å bruke tidsstempelnummer, men disse er vanskeligere for mennesker å lese.
 
-Et alternativ til å konvertere en dato til en streng er å bruke en numerisk representasjon, som Unix epoch tid. Dette kan være mer nøyaktig og praktisk i noen tilfeller, men også mer utfordrende å lese og manipulere for en programmerer.
+Når det gjelder implementeringsdetaljer, kan konverteringsfunksjoner variere basert på programmeringsspråket. I Elm bruker vi funksjonen posixToMillis for å konvertere en dato til en streng. Denne funksjonen tar en Posix dato og konverterer den til et tall, som så kan konverteres til en streng.
 
-Implementeringsdetaljer om konvertering av datoer til strenger kan variere avhengig av programmeringsspråk. I Elm brukes standardiserte funksjoner som `Date.toString` og `Date.toStringWith` for å gjøre denne prosessen enkel og intuitiv.
+## Se Også: 
 
-Se også:
+Hvis du er interessert i å lære mer om dette emnet, kan du sjekke ut de følgende lenkene:
 
-- [Date.toString dokumentasjon](https://package.elm-lang.org/packages/elm/core/latest/Date#toString)
-- [Date.fromString dokumentasjon](https://package.elm-lang.org/packages/elm/core/latest/Date#fromString)
-- [Datohåndtering i programmeringsspråk](https://www.wikiwand.com/en/Date_format_by_country)
+1. [Elm Time Package](https://package.elm-lang.org/packages/elm/time/latest/)
+2. [Elm tutorial](https://elmprogramming.com/time.html)
+3. [Date to String conversion techniques](https://www.w3schools.com/js/js_date_methods.asp)

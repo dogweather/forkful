@@ -1,7 +1,7 @@
 ---
-title:                "एक http अनुरोध भेजना"
-html_title:           "Arduino: एक http अनुरोध भेजना"
-simple_title:         "एक http अनुरोध भेजना"
+title:                "http अनुरोध भेजना"
+html_title:           "Elixir: http अनुरोध भेजना"
+simple_title:         "http अनुरोध भेजना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,26 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-क्या है और क्यों?
-हमारे आसपास कुछ ऐसे उपकरण हैं जो इंटरनेट से जुड़ते हैं, जैसे कि स्मार्टफोन, स्मार्ट टीवी या लैपटॉप। आपने शायद सोचा होगा कि कैसे ये उपकरण इंटरनेट से जुड़ते हैं? इसका जवाब है HTTP रिक्वेस्ट! अपने खास डेवाइस से आप एक या एक से अधिक सर्वरों को रिक्वेस्ट भेज सकते हैं। कई प्रोग्रामर्स ऐसा करते हैं ताकि वे अपने उपकरण को दूसरे उपकरणों या सर्वरों से डेटा को सम्भालने या सुविधाओं को हासिल करने के लिए बात करने के लिए इस्तेमाल कर सकें।
+## क्या और क्यों?
 
-कैसे करें:
-यदि आपको अपने आर्दुइनो बोर्ड से HTTP रिक्वेस्ट भेजने की कोशिश करनी है, तो आपको सर्वर के लिए अपने प्रोग्राम को लिखने की आवश्यकता होगी। नीचे आपको कुछ `Arduino ...` कोड ब्लॉक के साथ कुछ उदाहरण और उसके आउटपुट दिए गए हैं।
+HTTP request भेजना, किसी web server से data को fetch करने का एक simple तरीका है। Programmers इसे तभी use करते हैं जब उन्हें अपने Arduino device को remotely control करना होता है या किसी बाहरी source से data प्राप्त करना होता है।
 
-```
-Arduino डिजिटल पिन 9 को हाई सेट करें;
-```
-इसका मतलब है कि हम डिजिटल पिन 9 को एक्टिवेट करेंजो। आपको सर्वर के लिए इस प्रकार का डेटा भेजना होगा।
+## कैसे करें:
 
-```
-Arduino डिजिटल पिन 9 को लो सेट करें;
-```
-इसका मतलब है कि हम डिजिटल पिन 9 को डे-एक्टिवेट करेंजो। अर्थात, हमें डेटा डेटा को लो लेवल पर लाना होगा।
+Arduino HTTP request bhjene ke liye, ESP8266WiFi library ko use karte hain. Niche ek example diya gaya hai:
 
-```
-Arduino डिजिटल पिन 9 पर 1000ms का टाइमआउट';
-```
-यह कोड आपको सर्वर से डेटा पाने के लिए प्रतीक्षा करने के लिए 1000ms का टाइमआउट सेट करेगा। आप इस टाइमआउट को अपनी आवश्यकतानुसार बदल सकते हैं।
+```Arduino
+#include <ESP8266HTTPClient.h>
+#include <ESP8266WiFi.h>
 
-गहराई में जाएं:
-कुछ साल पहले, हमारे उपकरण सिर्फ डिवाइस से डिवाइस कोम्यूनिकेशन के लिए उपयोगी थे। पर अब इंटरनेट की विस्तारित दुनिया में, हम अपने उपकरणों को इंटरनेट से भी जोड़ सकते हैं। लेकिन HTTP रिक्वेस्ट भेजने के अलावा भी कई और तरीके हैं जो इंटरनेट से जुड़ने के लिए उपयोगी हो सकते हैं, जैसे कि TCP/IP, UDP या प्रोटोकॉल्स जो कई अन्य ऑपरेशनों के साथ काम कर सकते हैं। आप अपनी आवश्यकतानुसार इनमें से किसी भी प्रोटोकॉल का उपयोग कर सकते हैं, लेकिन
+void setup() {
+  WiFi.begin("your_SSID", "your_PASSWORD");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+  }
+
+  HTTPClient http;
+  
+  http.begin("http://example.com"); 
+  int httpCode = http.GET();                                       
+      
+  if (httpCode > 0) {
+    String payload = http.getString();    
+    Serial.println(payload);
+  }
+  
+  http.end(); 
+}
+
+void loop() {}
+```
+Example program में, हम्हे "your_SSID" और "your_Password" अपने WiFi network के details से replace करना होगा। इसके बाद, इस program को run करने से हमें "http://example.com" website का response mil jayega।
+
+## गहराई में:
+HTTP request का concept World Wide Web के early दिनों से ही use किया जा रहा है। Arduino में इसका implementation HTTPClient library के through होता है, जो की कई different types की HTTP methods supports करता है, जैसे की GET, POST, PUT, DELETE, etc। 
+
+Arduino के alternatives में Particle, BeagleBone Black, और Raspberry Pi होते हैं। ये सभी boards internet-connected applications के लिए use किये जा सकते हैं, अलग-अलग boards का use different situations में होता है। जैसे की, Raspberry Pi में एक fully functional operating system hota है जो complex tasks के लिए suitable होता है। 
+
+## और भी देखें:
+
+- Arduino's HTTPClient Library documentation: [link](https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient/readme.html)
+- More about HTTP requests: [link](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- Alternatives to Arduino: [Raspberry Pi](https://www.raspberrypi.org/), [BeagleBone](https://beagleboard.org/bone), [Particle](https://www.particle.io/)

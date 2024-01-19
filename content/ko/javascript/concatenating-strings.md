@@ -1,6 +1,6 @@
 ---
 title:                "문자열 연결하기"
-html_title:           "Javascript: 문자열 연결하기"
+html_title:           "Arduino: 문자열 연결하기"
 simple_title:         "문자열 연결하기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,22 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 뭐고 왜 하는 거야?  
-문자열 연결(concatenation)이 무엇인지와 프로그래머들이 왜 이를 하는지에 대해 설명할게. 문자열 연결은 두 개 이상의 문자열을 하나로 합치는 것을 말해. 예를 들어, "안녕하세요"와 "반가워요"라는 두 문자열을 연결하면 "안녕하세요반가워요"라는 하나의 문자열이 만들어지는 것이지. 프로그래머들은 문자열 연결을 사용해 긴 문장이나 내용을 만들거나 다양한 문자열 조합을 할 수 있어서 유용하게 활용해.
+# 문자열 연결하기: 무엇이며 왜 해야하는가?
 
-# 어떻게 하지?  
-자바스크립트에서 문자열 연결은 "+" 기호를 사용해 할 수 있어. 이를 코드로 보면 다음과 같아:  
-```javascript
-let str1 = "안녕하세요";
-let str2 = "반가워요";
-let hello = str1 + str2;
-console.log(hello); // "안녕하세요반가워요"
+## 무엇이며 왜?
+
+문자열 연결은 두 개 이상의 문자열을 하나로 결합하는 것입니다. 이 작업을 통해 동적으로 생성된 내용을 포함하는 문자열을 재사용하거나 만들 수 있습니다.
+
+## 어떻게?
+
+```Javascript
+let str1 = '안녕';
+let str2 = ',';
+let str3 = ' 세상아!';
+let greeting = str1 + str2 + str3;
+console.log(greeting); // "안녕, 세상아!"
 ```
-이외에도 다양한 방식으로 문자열 연결을 할 수 있어. 예를 들어, "문자열".concat("연결")을 사용하거나 `${변수}` 를 활용할 수도 있어.
 
-# 더 살펴보기  
-문자열 연결은 프로그래밍 언어에서 오래된 개념으로 자바스크립트뿐만 아니라 다른 언어에서도 많이 사용되고 있어. 또한, 배열을 사용해 문자열을 연결하는 방법도 많이 존재해. 이뿐만 아니라 문자열을 처리하는 다양한 기능들을 제공하는 라이브러리들도 있어서 필요에 따라 선택적으로 사용할 수 있어.
+템플릿 문자열을 사용하면 더 간단하게 할 수 있습니다:
 
-# 관련 자료  
-- [자바스크립트 문자열 연결 메소드 - MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/concat)  
-- [자바스크립트 문자열 - MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)
+```Javascript
+let str1 = '안녕';
+let str3 = ' 세상아!';
+let greeting = `${str1}, ${str3}`;
+console.log(greeting); // "안녕, 세상아!"
+```
+
+## 심화 학습
+
+문자열 연결은 오래 전 컴퓨터 과학의 첫날부터 있었습니다. 복잡한 출력을 만들기 위해선 필수적인 기능입니다. 대안으로는 배열 결합, `concat()` 함수, `join()` 함수 등이 있습니다. 
+
+`+`와 `+=`연산자는 문자열을 연결하고 새 문자열을 반환합니다. 반면에 `concat()`과 `join()` 함수는 기존의 문자열을 변경하지 않습니다. 
+
+## 참고 자료 
+
+[MDN 문자열 연결](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/concat)  
+[MDN 템플릿 리터럴](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals)  
+[문자열 연결 대 애스팅의 성능 차이](https://www.joelonsoftware.com/2001/12/11/back-to-basics/)

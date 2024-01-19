@@ -1,6 +1,6 @@
 ---
 title:                "HTMLの解析"
-html_title:           "Clojure: HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,26 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何か？なぜ？
-HTMLのパースとは何か、そしてプログラマーがそれをする理由を説明します。
+## 何となぜ？ (What & Why?)
 
-## 方法：
+HTMLのパ−ジングとは、ウェブページのHTMLを読み込み、それを解析し、情報を抽出するプロセスです。プログラマーがこれを行う理由は主に、特定のウェブサイトからデータを取得したり、ウェブページを解析して特定の情報を抽出するためです。
+
+## 実装方法 (How to)
+
+次のコードは、ClojureでEnliveライブラリを使ってHTMLをパーズする例を示しています。
+
 ```Clojure
 (ns html-parser.core
-  (:require [org.jsoup :as jsoup]))
+  (:require [net.cgrand.enlive-html :as html]))
 
-(defn parse-html [url]
-  (jsoup/select (jsoup/connect url) "body"))
+(defn parse-html [html-string]
+  (html/html-snippet html-string))
 
-(parse-html "https://www.example.com")
+(def doc (parse-html "<html><body><p>Hello, World!</p></body></html>"))
+
+(println doc)
 ```
-この例では、 Clojureの`jsoup`ライブラリを使用して、指定されたURLからHTMLを取得し、そのHTMLの`<body>`要素をパースします。出力結果は、指定されたURLのウェブサイトの`<body>`要素に含まれるすべてのコンテンツのリストとなります。
 
-## 深く掘り下げる
-HTMLパースは、HTMLドキュメントをコンピューターが理解できる形式に変換するプロセスです。これにより、プログラマーはウェブサイトから必要な情報を収集し、処理することができます。代替え手段としては、他のプログラミング言語でHTMLパースを行うことや、手動でHTMLを分析することもあります。また、`jsoup`以外にも、`Enlive`や`html-kit`などのHTMLパース用のライブラリがあります。`jsoup`の実装では、HTMLドキュメントをDOMツリーとしてロードし、それをクエリ言語を使用して操作することができます。
+このコードはHTML文をパースし、それを出力します。この例では、文字列は単純なHTMLページで、「Hello, World!」というテキストを含む一つのパラグラフです。出力は次のようになります：
 
-## 関連リンク：
-- [Clojure.org](https://clojure.org/)
-- [jsoup](https://jsoup.org/)
-- [Enlive](https://github.com/cgrand/enlive)
-- [html-kit](https://github.com/nakkaya/html-kit)
+```
+{:tag :html, :attrs nil, :content [{:tag :body, :attrs nil, :content [{:tag :p, :attrs nil, :content ["Hello, World!"]}]}]}
+```
+## 詳細について (Deep Dive)
+
+HTMLのパースは古くからある問題で、多数のソリューションが存在します。JavaではJsoupやHtmlUnit、PythonではBeautifulSoupなど、多くの言語で複数の解決策が開発されています。Clojureでも、EnliveやHickoryなどのライブラリがあります。
+
+一方、HTMLのパースは難しく、HTMLが正しく形式化されていないケースはよくあります。このような場合は、Robustness principle（ロバストネスの原則）が推奨されます。すなわち、「入力に対しては寛容に、出力に対しては慎重に」行動します。
+
+## 参考資料 (See Also)
+
+以下は関連するリンクです:
+
+- Enlive GitHub: https://github.com/cgrand/enlive
+- Hickory GitHub: https://github.com/davidsantiago/hickory
+- Jsoup: https://jsoup.org/
+- BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/

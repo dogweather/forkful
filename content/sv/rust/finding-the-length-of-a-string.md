@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden på en sträng"
-html_title:           "Rust: Att hitta längden på en sträng"
-simple_title:         "Att hitta längden på en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,28 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Hitta längden av en sträng är en vanlig uppgift för programmerare. Det handlar helt enkelt om att räkna antalet tecken i en given sträng, oavsett om det är bokstäver, siffror eller specialtecken. Detta görs ofta för att kunna behandla strängar på ett effektivt sätt i en programkod.
+Att hitta längden på en sträng innebär att räkna antalet tecken i den. Programmerare gör detta för att hantera data effektivt, till exempel vid loopar, minnesallokering eller validering av användarinmatning.
 
-## Så här gör du:
+## Hur man Gör:
+Här är ett exempel på hur man får längden på en sträng i Rust:
 ```Rust
-let my_string = "Hej från Sverige!";
-
-// Använd funktionen .len() för att hitta längden av strängen
-let length = my_string.len();
-
-// Skriv ut resultatet
-println!("Längden av strängen är: {}", length);
+fn main() {
+    let string = "Hej, världen!";
+    println!("{}", string.len());
+}
 ```
+När du kör den här koden får du outputet `14`, vilket är antalet tecken i strängen, inklusive blanksteg och interpunktion.
 
-Output:
-`Längden av strängen är: 18`
+## Djupdykning
+Historiskt sett behandlar olika programmeringsspråk stränglängder olika. I C++, till exempel, inkluderar stränglängd inte nolltecknet vid slutet av en sträng. Rust, däremot, räknar alla tecken i en sträng, inklusive blanksteg och interpunktion.
 
-## Deep Dive
-Intressant nog är konceptet att hitta längden av en sträng inte unikt för programmeringsspråket Rust. Det finns andra språk som också har inbyggda funktioner för detta, som till exempel Python (len()) och Java (length()). I historisk kontext är det här en viktig funktion eftersom det hjälper till att hantera och behandla textdata på ett effektivt sätt.
+Ett alternativ till `len()` metoden i Rust är att använda `chars().count()`, vilket ger samma resultat men kan vara mindre effektivt för stora strängar. Skillnaden ligger i implementationen: `len()` returnerar direkt antalet byte i strängen, medan `chars().count()` itererar över varje tecken.
 
-Ett annat sätt att hitta längden av en sträng är genom att loopa igenom varje tecken och räkna antalet. Detta kan dock vara mindre effektivt och mer tidskrävande, särskilt när det gäller längre strängar.
+## Se Även
+Mer information om detta ämne finns i Rusts officiella dokumentation. Här är några nyttiga länkar:
 
-I Rust är det värt att notera att längden av en sträng faktiskt mäts i byte, inte tecken. Detta kan vara viktigt att komma ihåg om du hanterar flerspråkiga program där tecken kan ha olika byte-längd.
-
-## Se även
-Läs mer om strängar och hur de hanteras i Rust på [Rust-std.org](https://doc.rust-lang.org/std/string/index.html).
+- Strängtyper i Rust: [Rust Docs String](https://doc.rust-lang.org/std/string/index.html)
+- Metoder för att manipulera strängar: [Rust Docs str](https://doc.rust-lang.org/std/primitive.str.html)
+- Guiden till Rusts standardbibliotek: [Rust Standard Library](https://doc.rust-lang.org/std/)
+Om du vill ha en uttömmande guide till Rust, kan du läsa [The Rust Programming Language](https://doc.rust-lang.org/book/) - en gratis, officiell bok om Rust.

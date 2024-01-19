@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "C#: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "C#"
 category:             "C#"
@@ -10,30 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么和为什么？
+---
 
-在C＃编程中，将字符串转换为小写是一种常见的操作。这意味着将字符串中的所有字母转换为小写形式。程序员经常这样做是因为在比较字符串时，它可以帮助我们忽略字母的大小写，从而使比较更加准确和精确。
+## 什么和为什么?
 
-## 如何做？
+将字符串转换为小写是一个常用的编程任务，它将字符串中的所有大写字母转换为小写字母。程序员这样做主要是为了使数据输入无效，避免大小写问题导致的错误。
 
+## 如何操作:
+
+以下是一个将字符串转换为小写的基本C#代码示例。
+
+```C#
+string str = "Hello World!!";
+string lowerStr = str.ToLower();
+Console.WriteLine(lowerStr);
 ```
-string input = "HeLLo WoRlD";
-string output = input.ToLower();
-Console.WriteLine(output);
-```
 
-这段代码的输出将是 "hello world"。
+运行以上代码，将会打印出“hello world!!”。
 
-## 深入探讨
-尽管转换字符串到小写看起来很简单，但实际上它涉及到了几个步骤。首先，计算机使用ASCII码来表示字母和符号，每个字母都有一个特定的数字代码。小写字母和大写字母的ASCII码是不同的。因此，当我们将字符串转换为小写时，计算机必须将每个字母的ASCII码转换为对应的小写字母的ASCII码。这就是为什么我们可以使用ToLower（）方法来帮助我们实现这一点。
+## 深度挖掘:
 
-另一种方法是使用LINQ查询来转换字符串。它可以写成类似下面的形式：
+1. 历史背景: 在早期的编程语言中，并没有内置的方法用于把字符串转换为小写，程序员需要手动来进行这一操作。但随着语言的发展，像C#这样的现代语言已经为此提供了内置功能。
 
-`string output = string.Join("", input.Select(c => char.ToLower(c)));`
+2. 替代方案: 除了ToLowerCase()方法，我们还可以使用LINQ轻松地将字符串转换为小写，如下面的示例所示:
 
-这个方法会更慢一些，但是在某些情况下可能更方便和灵活。
+    ```C#
+    string str = "Hello World!!";
+    string lowerStr = new string(str.Select(c => Char.ToLower(c)).ToArray());
+    Console.WriteLine(lowerStr);
+    ```
 
-## 参考链接
+3. 实现细节：`ToLower()`方法的工作方式是通过查找字符的Unicode值并找到相应的小写字母。
 
-- [String.ToLower 方法 (System) - Microsoft文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.string.tolower?view=netcore-3.1)
-- [ASCII码表 - Baidu百科](https://baike.baidu.com/item/ASCII/309296)
+## 参考资料:
+
+1. Microsoft Official Documentation on ToLower method: [https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
+
+2. StackOverflow discussion on converting strings to lowercase: [https://stackoverflow.com/questions/1805796/how-do-i-convert-a-string-to-lower-case](https://stackoverflow.com/questions/1805796/how-do-i-convert-a-string-to-lower-case).
+
+---

@@ -1,7 +1,7 @@
 ---
-title:                "一時ファイルを作成する"
-html_title:           "Javascript: 一時ファイルを作成する"
-simple_title:         "一時ファイルを作成する"
+title:                "一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
+simple_title:         "一時ファイルの作成"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## とにかく何がしたいのか？
-一時的なファイルを作成するとは、プログラマーが一時的なデータを保存するために使う方法です。例えば、プログラムが実行中にデータを取得する必要がある場合、一時的なファイルを作成してそのデータを保存します。プログラマーはこの方法を使うことで、プログラムの効率性やデータの安全性を向上させることができます。
+## 何それ？なぜしたい？
+一時ファイルの作成は、プログラミングでしばしば使用される技術で、以下の2つの場面で役に立ちます。(1) 大量のデータを一時的に保存するとき、(2) 一時的な結果を共有するときです。
 
-## 方法：
-```Javascript
-// ファイルシステムモジュールを使用する
-const fs = require('fs');
+## どうやる？
+Javascriptでは、`tmp`というライブラリを使用して一時ファイルを作成します。以下は簡単な例です。
 
-// 一時的なファイルを作成する
-fs.writeFileSync('tempfile.txt', 'このファイルは一時的なものです');
+```Javascript 
+const tmp = require('tmp');
 
-// 一時的なファイルを読み取る
-const tempData = fs.readFileSync('tempfile.txt', 'utf8');
-console.log(tempData);
-// Output: このファイルは一時的なものです
+tmp.file((err, path, fd) => {
+  if (err) throw err;
 
-// 作成したファイルを削除する
-fs.unlinkSync('tempfile.txt');
+  console.log('Temporary file path: ', path);
+});
 ```
+上記のコードを実行すると、一時ファイルのパスがコンソールに表示されます。例えば、「Temporary file path: /tmp/abc123」といった形です。
 
-## 深く掘り下げる：
-1. 歴史的な文脈：一時的なファイル作成は、古いコンピューターシステムの時代から存在していました。当時は、RAM(メモリー)が高価だったため、一時的なデータを保存するためにディスクドライブを使用することで、システムのメモリーを節約することができました。
-2. 代替方法：一時的なファイル作成にはさまざまな方法があります。例えば、プログラマーが手動でファイルを作成したり、外部のライブラリを使用したりすることもあります。
-3. 実装の詳細：一時的なファイル作成には、通常ファイルシステムモジュールを使用する必要があります。このモジュールには、ファイルを作成、読み取り、削除するためのさまざまなメソッドがあります。
+## 深掘り
 
-## 関連リンク：
-- [Node.js ファイルシステムモジュール](https://nodejs.org/api/fs.html)
-- [一時ファイルとは？ - Qiita](https://qiita.com/tobira-code/items/db4db40a3dd201fc3416)
+1. **歴史**
+一時ファイルはUNIXシステムから始まり、プログラムが一時的なデータを保存し、後でアクセスするために使用されました。
+
+2. **代替手段**
+`fs`モジュールを使用して一時ファイルを作成することも可能ですが、`tmp`はより簡単で使い易いと言えます。
+
+3. **実装詳細**
+`tmp.file`関数はOSに依存せず、一時的な空のファイルを作成します。ファイルはプログラム終了時に自動的に削除されます。
+
+## 参考になるリンク
+
+* [tmpの公式文書](https://github.com/raszi/node-tmp): 一時ファイルの作成について更に詳しく知る。
+* [Node.jsのfsモジュール](https://nodejs.org/api/fs.html): ファイルとフォルダの操作について詳しく学ぶ。

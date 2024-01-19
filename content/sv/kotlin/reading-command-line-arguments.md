@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av kommandoradsargument"
-html_title:           "Kotlin: Läsning av kommandoradsargument"
-simple_title:         "Läsning av kommandoradsargument"
+title:                "Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -11,31 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att läsa in kommandoradsargument betyder att läsa de inmatade argumenten från terminalen när du kör ditt program. Det är en viktig funktion för programmerare eftersom det tillåter ett program att ta emot olika argument och på så sätt skapa mer anpassade och flexibla lösningar.
 
-## Så här gör du:
-Kotlin har en inbyggd funktion för att läsa in kommandoradsargument, nämligen ```main(args: Array<String>)```. Här är ett exempel på hur du kan använda den:
+Kommandoradsargument är de data som du matar in direkt i kommandoradsapplikationen när du kör den. Programmerare använder detta för att göra sina program mer flexibla och interaktiva.
+
+## Hur man gör:
+
+Här är ett enkelt exempel på hur du läser kommandoradsargument i Kotlin:
 
 ```Kotlin
 fun main(args: Array<String>) {
-  println("Antal argument: ${args.size}")
-  println("Argument: ${args.joinToString()}")
+    for (arg in args) {
+        println(arg)
+    }
 }
 ```
-Om vi kör detta program och anger argumenten "Hej" och "Världen" när vi kör det, så får vi följande utmatning:
 
+I det här exemplet kommer varje argument du matar in när programmet körs att skrivas ut i konsolen. Till exempel:
+
+```Shell 
+\$ kotlin MainKt.kt Hej världen 
+Hej 
+världen
 ```
-Antal argument: 2
-Argument: Hej, Världen
-```
 
-## Djupdykning:
-Att läsa in kommandoradsargument är en viktig funktion för att kunna skapa mer anpassade program som kan köras med olika parametrar. Det ger också användaren större kontroll över programmet och möjlighet att anpassa det efter deras behov.
+## Fördjupning:
 
-Alternativ till att läsa in kommandoradsargument är att använda användarens inmatning via terminalen eller att ha färdigdefinierade variabler i koden. Men båda dessa alternativ är mindre flexibla och kan göra det svårt att anpassa programmet till olika situationer.
+Historiskt sett har läsning av kommandoradsargument alltid varit en grundläggande funktion i många programmeringsspråk, med rötter i tidiga operativsystem som Unix.
 
-Implementationen av kommandoradsargument är relativt enkel i Kotlin tack vare den inbyggda funktionen ```main(args: Array<String>)```. Det är viktigt att notera att argumenten läses in som en array av strängar, så eventuella omvandlingar till andra datatyper måste göras manuellt.
+Det finns också alternativ till standardmetoden att läsa kommandoradsargument, bland annat med användning av bibliotek som Apache Commons CLI och Argparser för att ge mer avancerade tolkningsegenskaper.
 
-## Se också:
-- Kotlin Tutorials: [Reading Command Line Arguments](https://kotlinlang.org/docs/tutorials/command-line.html)
-- Baeldung: [Passing Command Line Arguments to a Kotlin App](https://www.baeldung.com/java-command-line-arguments-kotlin)
+När det gäller implementeringsdetaljer, beror det på hur din Kotlin-kod körs. Om koden körs som en scriptfil (.kts), behandlas argumenten på samma sätt som i Java.
+
+## Se även:
+
+1. [Kotlin Dokumentation - Kommandoradsprogram](https://kotlinlang.org/docs/command-line.html)
+2. [Apache Commons CLI](https://commons.apache.org/proper/commons-cli/)
+3. [Argparser](https://github.com/xenomachina/kotlin-argparser)

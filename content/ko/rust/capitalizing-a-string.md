@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "Rust: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열 대문자화"
+html_title:           "Rust: 문자열 대문자화"
+simple_title:         "문자열 대문자화"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,24 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 개요
-이번에는 Rust의 가장 기본적인 프로그래밍 개념 중 하나인 문자열 대문자 변환에 대해 알아보려고 합니다. 이 기술은 보통 문자열의 모든 문자를 대문자로 변경하는 것을 의미합니다. 이번 글에서는 문자열 대문자 변환의 필요성과 구현 방법에 대해 간단하게 알아보겠습니다.
+## 무엇이며 왜 사용하나요?
 
-## 무엇이고 왜?
-문자열 대문자 변환은 일반적으로 텍스트 데이터를 다룰 때 자주 사용됩니다. 프로그래머들은 이 기술을 사용하여 텍스트 내용을 일관된 형식으로 표현하거나, 대소문자 비교를 위해 문자열을 대문자로 맞추기도 합니다.
+문자열 대문자 변환은 모든 문자를 대문자로 바꾸는 과정을 의미합니다. 프로그래머들은 사용자 입력 맞춤, 데이터 일관성 유지 등을 위해 이를 사용합니다.
 
-## 직접 해보세요
-문자열 대문자 변환을 직접 해보겠습니다. 먼저, ```Rust 
+## 어떻게 사용하나요:
+
+다음은 Rust에서 문자열 대문자 변환하는 예시입니다:
+
+```Rust
 fn main() {
-  let lowercase = "hello world";
-  let uppercase = lowercase.to_uppercase();
-  println!("{}", uppercase);
+    let s = "Hello, world!";
+    println!("{}", s.to_uppercase());
 }
-``` 
-위와 같이 코드를 작성합니다. 그리고 실행하면, ```Rust HELLO WORLD ``` 다음과 같은 결과가 나타나게 될 것입니다. 간단한 예제지만 문자열 대문자 변환의 기본적인 프로세스를 이해하는 데는 충분합니다.
+```
 
-## 더 깊게 들어가기
-문자열 대문자 변환은 예전부터 사용되어 왔습니다. 하지만 이제는 다양한 알고리즘을 통해 더 빠르고 효율적으로 대문자 변환을 수행할 수 있게 되었습니다. 또한, 문자열 대문자 변환 외에도 소문자 변환을 수행하는 함수도 제공됩니다. Rust에서는 문자열 변환이나 비교 등을 위해 표준 라이브러리의 String 타입을 사용할 수 있습니다.
+출력결과:
 
-## 더 알아보기
-이번 글에서는 Rust에서 문자열 대문자 변환을 수행하는 방법에 대해 간단하게 알아보았습니다. Rust 공식 문서에서는 문자열 변환을 비롯한 다양한 문자열 처리 기능에 대해 자세히 설명하고 있으니 관심 있는 분들은 함께 참고해보시기 바랍니다. 또한, 다른 언어에서도 문자열 변환을 위해 간단한 코드를 작성할 수 있으니 참고해보시기 바랍니다.
+```Rust
+HELLO, WORLD!
+```
+
+이 코드는 'Hello, world!' 문자열을 대문자로 변환하여 'HELLO, WORLD!'를 출력합니다.
+
+## 깊이 있게 살펴보기:
+
+문자열 대문자 변환은 프로그래밍 언어의 역사와 거의 동시에 나왔습니다. 특히, 대소문자를 구분하지 않는 언어 (예: SQL)에서 이 기능은 매우 중요하게 쓰여왔습니다. Rust에서는 'to_uppercase' 메서드를 사용하여 문자열을 대문자로 변환합니다. 이 메서드는 'char' 타입이 아닌 'String' 타입에만 적용됩니다.
+
+그럼에도 불구하고, Rust에서 대문자 변환을 사용하는 다른 방법도 존재합니다. 예를 들면, 'ASCII 대문자 변환'이라는 것이 있는데, 이는 오직 ASCII 문자만 대문자로 변환합니다.
+
+```Rust
+use std::ascii::AsciiExt;
+
+fn main() {
+    let s = "Hello, world!";
+    println!("{}", s.make_ascii_uppercase());
+}
+```
+
+위 코드는 'Hello, world!'라는 문자열을 'HELLO, WORLD!'라는 대문자로 출력합니다.
+
+## 관련 자료:
+
+- Rust 문서: https://doc.rust-lang.org/std/primitive.str.html
+- Rust에서 문자열 다루기: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html#strings-are-always-valid-utf-8

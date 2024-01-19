@@ -1,7 +1,7 @@
 ---
-title:                "Das Lesen einer Textdatei"
-html_title:           "Arduino: Das Lesen einer Textdatei"
-simple_title:         "Das Lesen einer Textdatei"
+title:                "Eine Textdatei lesen"
+html_title:           "Bash: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,64 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Das Lesen von Textdateien in Arduino
+
+*Note: This article is in Informal German.
+
 ## Was & Warum?
 
-Das Lesen einer Textdatei ist eine häufige Aufgabe in der Programmierung, bei der es darum geht, den Inhalt einer Textdatei in ein elektronisches Format zu übertragen, das von einem Computer gelesen werden kann. Programmierer verwenden diese Technik, um Daten zu importieren oder zu analysieren oder um Benutzereingaben zu verarbeiten.
+Das Lesen von Textdateien ist ein Prozess, bei dem Daten aus einer Datei abgerufen werden. Programmierer machen dies oft, um voreingestellte Werte zu laden, Protokolle zu speichern oder zur Verarbeitung von Daten.
 
-## Anleitung:
+## So wird's gemacht:
 
-Um eine Textdatei mit Arduino zu lesen, müssen wir zunächst die Textdatei auf der SD-Karte speichern. Dazu benötigen wir ein SD-Kartenmodul, das an den Arduino angeschlossen wird. Dann können wir die `SD` Library in unserem Code verwenden, um auf die Datei zuzugreifen und den Inhalt zu lesen.
+Ein Beispiel zeigt das Lesen einer Textdatei mit Arduino. Beachten Sie, dass ein SD-Kartenleser erforderlich ist.
 
-```Arduino 
-#include <SD.h> // SD-Library einbinden
-File myFile; // Erstellen des Dateiobjekts
+```Arduino
+#include <SPI.h>
+#include <SD.h>
+
+File meineDatei;
 
 void setup() {
   Serial.begin(9600);
-  // Initialisierung der SD-Karte
   if (!SD.begin(4)) {
-    Serial.println("SD-Karte konnte nicht initialisiert werden!");
+    Serial.println("Initialisierung fehlgeschlagen!");
     return;
   }
-  Serial.println("SD-Karte initialisiert.");
   
-  // Öffnen der Textdatei zum Lesen
-  myFile = SD.open("text.txt", FILE_READ);
-
-  if (myFile) {
-    Serial.println("Textdatei geöffnet:");
-    
-    // Ausgabe des Dateiinhalts Zeile für Zeile
-    while (myFile.available()) {
-      Serial.write(myFile.read());
+  meineDatei = SD.open("test.txt");
+  if (meineDatei) {
+    while(meineDatei.available()) {
+      Serial.write(meineDatei.read());
     }
-    
-    myFile.close(); // Schließen der Datei
+    meineDatei.close();
   } else {
-    Serial.println("Fehler beim Öffnen der Datei.");
+    Serial.println("Fehler beim Öffnen der Datei");
   }
 }
 
 void loop() {
-  
+
 }
 ```
 
-Die Ausgabe im Seriellen Monitor wird so aussehen:
+Wenn "Hallo Welt" in der Datei `test.txt` gespeichert ist, wird die Ausgabe:
 
-``` 
-Textdatei geöffnet:
-Hallo, dies ist eine Beispieltextdatei.
-Hier steht noch mehr Text.
+```
+Hallo Welt
 ```
 
-## Tiefere Einblicke:
+## Tiefgreifende Details:
 
-Die Möglichkeit, Textdateien zu lesen, war historisch gesehen ein wichtiger Entwicklungsschritt bei der Programmierung. Frühere Computer konnten oft nur mit harten Codes arbeiten, was die Bearbeitung von Programmen schwierig machte. Das Lesen von Textdateien ermöglichte es Programmierern, flexiblere und leichter zu bearbeitende Programme zu entwickeln.
-
-Alternativ können auch andere Methoden verwendet werden, um Textdateien mit Arduino zu lesen, z.B. die `Serial` und `SPI` Libraries oder die Nutzung des USB-Host-Schilds. Beim Lesen von Textdateien ist es wichtig, auch auf die Codierung der Datei zu achten, um sicherzustellen, dass der Inhalt korrekt interpretiert wird.
+Historisch gesehen wurde das Lesen von Dateien in Arduino erstmals mit der Implementierung der SD-Bibliothek möglich. Alternativ kann das Lesen von Dateien auch mit Ethernet- oder WiFi-Shields und einer Verbindung zu einem Server ermöglicht werden. Der hier vorgestellte Ansatz verwendet die `read()` -Methode der `File` -Objekte aus der SD-Bibliothek. Diese Methode gibt ein Byte der Datei zurück und bewegt den "Cursor" um ein Byte weiter.
 
 ## Siehe auch:
 
-- [Arduino SD Library Dokumentation](https://www.arduino.cc/en/Reference/SD)
-- [Tutorial für das Lesen von Textdateien auf der SD-Karte mit Arduino](https://www.developershome.com/read/text/readTextArduino.asp)
+Besuchen Sie diese Ressourcen, um mehr zu erfahren:
+
+1. [Arduino SD Bibliotheksdokumentation](https://www.arduino.cc/en/Reference/SD)
+2. [Dateizugriff mit Arduino](https://learn.adafruit.com/adafruit-data-logger-shield/using-the-real-time-clock-3)
+3. [Arduino Datei-Lesen-Tutorials](https://create.arduino.cc/projecthub/projects/tags/file+read)

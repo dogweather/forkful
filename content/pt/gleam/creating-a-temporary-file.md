@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Gleam: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,20 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que & Por quê?
-Criar um arquivo temporário é uma prática comum entre programadores, pois permite que dados sejam armazenados temporariamente em um local específico durante a execução de um programa. Isso é útil para manipular arquivos grandes, gerar logs e executar testes. 
+# Lidando com Arquivos Temporários em Gleam: Um Guia Vegetativo
 
-# Como fazer:
-Criar um arquivo temporário em Gleam é simples. Basta usar a função `File.tmp` e fornecer um caminho para onde o arquivo será criado. A seguir, temos um exemplo de código e o respectivo output:
+## O Que & Por Quê?
+Criar um arquivo temporário significa estabelecer um local para armazenar dados de curta duração. Fazemos isso quando precisamos usar esses dados durante uma sessão de programa e depois descartá-los sem deixar qualquer pegada persistente.
 
-```Gleam
-temp_file = File.tmp("meu_arquivo.txt")
+## Como Fazer:
+Vamos dividir isso em duas seções. Primeiro, criação e escrita para um arquivo temporário. Segundo, leitura e exclusão deste arquivo.
+
+```gleam
+import gleam/otp/process
+import gleam/io
+
+fn main() {
+    let name = io.tmpfile().unwrap()
+    io.write_file(name, "Trabalhando com arquivos temporários em Gleam.")
+    io.println(name)
+}
 ```
-Output: `Created temporary file at: meu_arquivo.txt`
+Este código cria um arquivo temporário, escreve um string nele, e então imprime o nome do arquivo. Agora vamos ler e excluir o arquivo.
 
-# Mergulho profundo:
-A criação de arquivos temporários é uma técnica que vem sendo utilizada há anos na programação. Na era pré-computador, os programadores costumavam utilizar cartões perfurados ou papeis para armazenar temporariamente dados. Hoje em dia, existem diversas alternativas para criar arquivos temporários, como a utilização de memória RAM ou bancos de dados. Em Gleam, a função `File.tmp` é implementada de forma eficiente, pois utiliza a memória swap do sistema operacional para criar o arquivo temporário.
+```gleam
+import gleam/otp/process
+import gleam/io
 
-# Veja também:
-- Documentação oficial da função `File.tmp`
-- Tutorial sobre criação de arquivos temporários em Gleam
+fn read_and_delete(filename: String) {
+    let content = io.read_file(filename).unwrap()
+    io.println(content)
+    io.delete_file(filename)
+}
+```
+Deve ser bem direto - leia o arquivo, gratifique-se com a magia impressa na tela e limpe depois que terminar.
+
+## Mergulho Profundo
+Trabalhar com arquivos temporários tem sido uma parte fundamental da programação desde o início dos dias computacionais. Por que? Porque a memória não-volátil era (e ainda é) um recurso valioso e o espaço de armazenamento era (e algumas vezes, ainda é) limitado.
+
+No Gleam, os arquivos temporários são manipulados em uma base por-sessão. Isso significa que eles são criados no início de uma sessão de programa e removidos automaticamente no final dela, a não ser que você o faça explicitamente (como fizemos no exemplo acima).
+
+Em termos de alternativas, poderíamos ter usado datastores em memória (como Redis) ou mesmo uma base de dados normal se nossos dados tivessem sido mais persistentes.
+
+## Veja Também
+- Documentação oficial de Gleam IO: https://hexdocs.pm/gleam/io/
+- Aplicações práticas de arquivos temporários: https://betterprogramming.pub/why-and-how-to-use-temporary-files-in-your-programs-8207ec601d6e
+
+Basta intercalar essas duas pequenas funções no seu código e você terá os arquivos temporários sob controle!

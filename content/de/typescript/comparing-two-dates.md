@@ -1,7 +1,7 @@
 ---
-title:                "Vergleich zweier Daten"
-html_title:           "TypeScript: Vergleich zweier Daten"
-simple_title:         "Vergleich zweier Daten"
+title:                "Vergleich von zwei Daten"
+html_title:           "C#: Vergleich von zwei Daten"
+simple_title:         "Vergleich von zwei Daten"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
+## Was & Warum?
 
-Das Vergleichen von zwei Datumsangaben ist ein gängiges Problem für Programmierer. Es ermöglicht die Überprüfung, ob ein Datum früher oder später als ein anderes ist. Dadurch kann zum Beispiel die korrekte Reihenfolge von Ereignissen in einer Anwendung gewährleistet werden.
+Verfügt man über zwei Daten (Datum und Uhrzeit), ist es meist notwendig, diese miteinander zu vergleichen. Programmierer tun dies, um Ereignisse zu planen, Zeitspannen zu berechnen oder Reihenfolgen zu erstellen - ziemlich alltägliche Aufgaben in der Softwareentwicklung.
 
-Wie:
+## So geht's:
 
-Das Vergleichen von zwei Datumsangaben in TypeScript ist relativ einfach. Zunächst müssen wir die beiden Datumsangaben als Objekte vom Typ 'Date' erstellen. Dann können wir den Vergleichsoperator '>' oder '<' verwenden, um zu überprüfen, ob das erste Datum früher oder später als das zweite ist. Hier ist ein Beispiel:
+Vergleich von zwei Daten in TypeScript ist recht einfach. Schauen wir uns das anhand von Beispielen an.
 
 ```TypeScript
-let date1: Date = new Date(2021, 11, 31);
-let date2: Date = new Date(2022, 0, 1);
+let datum1 = new Date('2021-12-01');
+let datum2 = new Date('2022-01-01');
 
-if (date1 > date2) {
-    console.log('Date 1 is later than Date 2');
+if (datum1 > datum2) {
+    console.log("Datum1 ist später als Datum2.");
+} else if (datum1 < datum2) {
+    console.log("Datum1 ist früher als Datum2.");
 } else {
-    console.log('Date 1 is earlier than Date 2');
+    console.log("Datum1 und Datum2 sind gleich.");
 }
 ```
+In der Ausgabe von oben sehen wir "Datum1 ist früher als Datum2." Das liegt daran, dass das '2021-12-01' vor '2022-01-01' ist.
 
-Der Output wäre in diesem Fall: 'Date 1 is earlier than Date 2'.
+## Vertiefung:
 
-Deep Dive:
+Historisch gesehen hat JavaScript, die Basis von TypeScript, diese eingebaute Date-Objekt-Klasse schon immer gehabt. Dieselbe Methodologie wird auch in TypeScript angewendet.
 
-Das Vergleichen von Datumsangaben hat eine lange Geschichte und geht zurück bis ins antike Ägypten. Dort wurde der Kalender von den Pharaonen verwendet, um das Datum des jährlichen Nil-Hochwassers vorherzusagen. Heutzutage gibt es viele verschiedene Arten, wie Datumsangaben in Computerprogrammen dargestellt werden können, zum Beispiel die Unix-Zeit oder ISO-Datumsformate.
+Es gibt mehrere Methoden, um zwei Daten zu vergleichen, darunter: den Zeitstempel zu vergleichen, die native JavaScript-Datei-Objektvergleichmethode zu verwenden, oder Bibliotheken wie Moment.js zu verwenden, wenn man mit komplexer Zeitmanipulation zu tun hat.
 
-Es gibt auch alternative Möglichkeiten, um zwei Datumsangaben zu vergleichen. Eine davon ist die Verwendung der 'getTime()' Funktion, die die Millisekunden seit dem 1. Januar 1970 zurückgibt. Durch die Verwendung dieser Funktion können wir zwei Datumsangaben direkt miteinander vergleichen, ohne die Verwendung von Vergleichsoperatoren.
+Aus Implementierungssicht gibt TypeScript den Entwicklern mehr Typensicherheit beim Umgang mit Daten und Zeiten, da es statische Typprüfungen und Code-Vervollständigungsfunktionen bietet, die in nativem JavaScript nicht vorhanden sind.
 
-See Also:
+## Weiterführende Links:
 
-- [TypeScript Documentation on Date Objects](https://www.typescriptlang.org/docs/handbook/basic-types.html#date)
-- [MDN Web Docs on Date Objects](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [History of Calendars and the Gregorian Calendar](https://www.history.com/news/6-calendars-better-than-yours)
+- [Mozilla Developer Network - Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js - Display](https://momentjs.com/docs/#/displaying/)
+- [TypeScript - Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)

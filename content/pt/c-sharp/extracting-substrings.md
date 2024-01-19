@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo Substrings"
-html_title:           "C#: Extraindo Substrings"
-simple_title:         "Extraindo Substrings"
+title:                "Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Extrair substrings é quando um programador pega uma parte de um texto maior e a separa em uma string separada. Os programadores fazem isso quando precisam manipular ou analisar apenas uma parte específica de uma string maior.
+**## O quê e Por quê?**
 
-## Como fazer:
-Para extrair substrings em C#, podemos usar o método `Substring()` da classe `string`. Veja o exemplo abaixo para extrair o sobrenome de um nome completo:
+Extrair substrings é uma operação comum em programação que envolve a retirada de uma parte de uma string. Nós, programadores, fazemos isso para manipular dados de texto de maneira mais precisa, como dividir nomes de usuários ou analisar o conteúdo do texto.
 
-```C#
-string nomeCompleto = "João da Silva";
-string sobrenome = nomeCompleto.Substring(8);
-Console.WriteLine(sobrenome);
+**## Como fazer:**
 
-// Output: da Silva
-```
-
-Também é possível especificar um índice de início e um comprimento para a substring desejada:
+Extrair substrings em C# é fácil. Você só precisa usar o método `Substring()`. Veja estes exemplos:
 
 ```C#
-string text = "Hello World";
-string substring = text.Substring(6, 5);
-Console.WriteLine(substring);
+string frase = "Amo programação em C#";
+string subfrase = frase.Substring(4, 12);
+Console.WriteLine(subfrase);
+```
+A saída será:
 
-//Output: World
+```C# 
+programação em
 ```
 
-## Mergulho profundo:
-A extração de substrings é uma técnica comum e amplamente utilizada em programação, com muitas aplicações práticas, como análise de texto, manipulação de dados e processamento de linguagem natural. Antes do método `Substring()` estar disponível em C#, os programadores precisavam usar funções adicionais para manipular strings, o que era mais trabalhoso e propenso a erros.
+O método `Substring(4, 12)` está a extrair uma substring que começa do 5º caractere (índice 4) e tem um comprimento de 12 caracteres.
 
-Embora o método `Substring()` seja o mais comum, existem alternativas que podem ser usadas para extrair substrings em C#. Alguns programadores preferem a função `Substr()` do pacote `System.Linq` ou usar expressões regulares para encontrar e extrair substrings.
+**## Mergulho profundo:**
 
-## Veja também:
-- Documentação oficial do método `Substring()` em C#: https://docs.microsoft.com/en-us/dotnet/api/system.string.substring
-- Tutorial sobre expressões regulares em C#: https://www.c-sharpcorner.com/article/regex-in-c-sharp/
-- Função `Substr()` da biblioteca `System.Linq`: https://docs.microsoft.com/en-us/dotnet/api/system.linq.substring?view=netcore-3.1
+Historicamente, a extração de substrings está presente em praticamente todas as linguagens de programação, de Assembly a C#. Todavia, em C#, é abstraído de forma que torna mais fácil para os programadores.
+
+Alternativas ao método `Substring()` são os métodos `Remove()` e `Split()`. O `Remove()` corta a string a partir de um índice específico enquanto o `Split()` divide a string em substrings baseado em caracteres específicos.
+
+As substrings no C# são imutáveis, uma vez que strings em C# também são imutáveis. Isto significa que quando você cria uma substring, na realidade você está criando uma nova string.
+
+**## Veja também:**
+
+Você pode mergulhar mais fundo na extração de substrings com estes recursos:
+
+1.   [Documentação Microsoft do método Substring.](https://docs.microsoft.com/pt-br/dotnet/api/system.string.substring?view=net-5.0)
+2.   [Tutorial em vídeo sobre a extração de substrings em C#.](https://www.youtube.com/watch?v=TQxGgZ-5V0c)
+3.   [Artigo detalhado em português sobre manipulação de textos em C#.](https://www.devmedia.com.br/trabalhando-com-strings-em-c/37982)

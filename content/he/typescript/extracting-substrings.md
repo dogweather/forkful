@@ -1,6 +1,6 @@
 ---
 title:                "חילוץ תת-מחרוזות"
-html_title:           "TypeScript: חילוץ תת-מחרוזות"
+html_title:           "Bash: חילוץ תת-מחרוזות"
 simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,47 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הפרידה של תדרים (או substrings באנגלית) היא תהליך שבו מתבצעת הפרידה של מחרוזות לחלקים קטנים יותר בהתאם לתנאים מסוימים. תהליך זה נעשה על ידי מתכנתים כדי לעבד מחרוזות עם יותר יעילות וכדי להפוך את הקוד לקריא יותר.
 
-## איך לעשות?
-תחת תבניות ```TypeScript ... ``` ישנם כמה דוגמאות לשימוש בפונקציות הקשורות להפרידה של תדרים ולפלט הנתונים המתקבלים.
+חילוץ תת-מחרוזות הוא פרק של מחרוזת מתוך מחרוזת אחרת. מתכנתים משתמשים בזה שכזה נותן להם את היכולת להתמקד במחרוזת מקטנה יחסית מתוך המחרוזת הארוכה.
 
-### דוגמאות בשפת TypeScript:
-```
-// פיצול מחרוזת לפי מספר שלם
-const str: string = 'Hello World!';
-const sub1 = str.substring(0, 5); // sub1 = 'Hello'
+## איך ל־:
 
-// פיצול מחרוזת לפי מספר תווים מהסוף
-const sub2 = str.substring(-3); // sub2 = 'rld!'
+נשתמש בJavaScript function `substring` או `slice` כדי לחלץ תת-מחרוזות בTypeScript:
 
-// חיתוך מחרוזת לתוך מערך
-const arr: string[] = str.split(' '); // arr = ['Hello', 'World!']
-
-// איחוד מספר מחרוזות לתוך מחרוזת אחת
-const newStr = ['My', 'name', 'is'].join(' '); // newStr = 'My name is'
+```TypeScript 
+let txt = "בית הקפה המקומי";
+console.log(txt.substring(0, 4));  // Outputs: "בית"
+console.log(txt.slice(-3));  // Outputs: "מקומי"
 ```
 
-### דוגמאות בשפת JavaScript:
-```
-// פיצול מחרוזת לפי אות בודדת
-let str = 'Hello World!';
-let sub1 = str.substr(2, 5); // sub1 = 'llo W'
+## צלילה עמוקה:
 
-// קפיצת התו הראשון במחרוזת
-let sub2 = str.substr(-2); // sub2 = 'd!'
+גילויים טכניים גאוניים לפני שנים רבות אפשרו לנו לחלץ תת-מחרוזות באמצעות `substring` ו`slice`. שני השיטות האלה הן די דומות, אך יש לההן הבדלים מקטינים. `substring` לא מתמודדת טוב עם ארגומנטים שליילים, בעוד `slice` כן.
 
-// חיתוך מחרוזת לתוך מערך
-let arr = str.split(' '); // arr = ['Hello', 'World!']
+(MDN הוא מקור מצוין אם אתה מעונין לקרוא יותר על `substring` ו`slice`.)
 
-// איחוד מחרוזת ומספר לתוך מחרוזת אחת
-let newStr = 'I have ' + 5 + ' apples.'; // newStr = 'I have 5 apples.'
-```
+## גם ראה:
 
-## חפירה עמוקה
-התהליך של הפרידה של תדרים הוא חלק חשוב בעיבוד של מחרוזות וקיים כבר עוד מתחילת התכנות. בשפת תכנות "C" כבר מספר שנים, פונקציות כמו "substring" ו"substr" היו קיימות והשתמשו ביותר מתקנים כגון "char" ו-"char*" לעיבוד תדרים. בשנים האחרונות, עם התפתחות שפת JavaScript וכיוונה לשפת TypeScript מודרנית יותר, יצאו פונקציות כמו "substring" ו-"split" שניתנות לשימוש יותר נוח בעבודה עם מחרוזות. בנוסף, ישנם גם אלגוריתמים יעילים יותר כמו Regex (ביטויים רגולריים) שיכולים לעבוד עם מחרוזות כדי להפיק תוצאה דמויתה לשימוש בתהליך הפרידה של תדרים.
-
-## ראו גם
-למידע נוסף על פונקציות של תדרים בשפות תכנות נוספות:
-- [פונקציות של תדרים בשפת C](https://www.tutorialspoint.com/c_standard_library/c_function_str.htm)
-- [פונקציות של תדרים בשפת JavaScript](https://developer.mozilla.org/he/docs/Web/JavaScript/Reference/Global_Objects/String)
+1. [MDN - Substring method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+2. [MDN - Slice method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)

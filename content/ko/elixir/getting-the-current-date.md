@@ -1,7 +1,7 @@
 ---
-title:                "현재 날짜 받아오기"
-html_title:           "Elixir: 현재 날짜 받아오기"
-simple_title:         "현재 날짜 받아오기"
+title:                "현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 지금 뭐 & 왜?
+## 무엇 & 왜?
 
-현재 날짜 받기는 프로그래머들이 현재 시각을 얻기 위해 사용하는 것이다.
+현재 날짜를 가져오는 것은 시스템의 현재 날짜와 시간을 불러오는 작업입니다. 프로그래머들이 이것을 사용하는 이유는 시간에 따른 계산을 수행하거나 데이터를 시간에 따라 정렬하기 위해서입니다.
 
-## 어떻게:
+## 어떻게 하는가:
 
-```Elixir
-Date.utc_today()
-```
-
-위의 코드는 Elixir에서 현재 날짜를 얻는 방법의 가장 간단한 예시이다. 실제로 실행하면 아래와 같은 결과가 나온다.
+현재 날짜를 가져오는 방법은 매우 간단합니다. Elixir에서는 DateTime 모듈의 `utc_now/0` 함수를 사용하여 현재 날짜와 시간을 UTC 형태로 가져옵니다.
 
 ```Elixir
-~D[2019-08-20]
+DateTime.utc_now() |> DateTime.to_string()
 ```
 
-위 코드에서 `~D`는 날짜를 나타내는 데이터 타입을 의미하고, 대괄호 안에 실제 날짜 정보가 나타나게 된다.
+이 코드를 실행하면 현재 날짜와 시간이 문자열 형태로 출력됩니다. 아래는 예시 출력입니다.
 
-## 좀 더 파헤쳐보기:
+```Elixir
+"2022-08-07 14:00:35.920268Z"
+```
 
-Elixir에서 현재 날짜를 얻는 방법은 `Date.utc_today()` 말고도 몇 가지가 있다. `Date.local_today()`는 현재 로컬 시각을 기준으로 날짜를 얻는 방법이다. 또한 `DateTime.utc_now()`와 `DateTime.local_now()`는 시간까지 포함하여 현재 시각을 얻는 방법이다.
+## 딥 다이브
 
-만약 Elixir가 아닌 다른 프로그래밍 언어를 사용하고 있다면, 현재 날짜를 얻는 다른 방법도 있을 수 있다. `Date()` 함수를 사용하는 방법이 대표적인 예시이다. 하지만 이 방법은 시간 정보를 제공하지 않으므로, 정확한 시각이 필요한 경우에는 `DateTime()` 함수를 사용하는 것이 더 적절하다.
+현재 날짜를 가져오는 기능은 컴퓨터 프로그래밍에서 매우 오래 동안 사용되어 왔습니다. 이기능은 기록을 정확하게 유지하는데 사용되며, 서브루틴의 실행 시간을 기록하거나, 사용자 인터페이스를 업데이트하는 데에도 이용됩니다.
 
-## 더 알아보기:
+Elixir의 경우 다양한 방법으로 날짜를 처리할 수 있습니다. DateTime 모듈 외에도 `Date`와 `Time` 모듈이 있으며, 각각은 날짜와 시간을 별도로 처리합니다.
 
-- [Elixir Date 모듈 문서](https://hexdocs.pm/elixir/Date.html)
-- [Elixir DateTime 모듈 문서](https://hexdocs.pm/elixir/DateTime.html)
-- [Datetime vs Date in Elixir](https://stackoverflow.com/questions/45527853/datetime-vs-date-in-elixir)
+Elixir의 DateTime은 ISO 8601 날짜 및 시간 표준을 준수하며, 기본적으로 UTC 형태로 반환합니다. 이는 우리가 서로 다른 지역에서 동일한 시간을 가지게 되지 않도록 해주는 중요한 기능입니다.
 
-## 참고하기:
+## 참고하기: 
 
-- `Date.now()` 와 같은 다른 프로그래밍 언어에서 현재 날짜를 얻는 방법이 있다면, 참고하여 사용해보는 것도 좋은 방법이다. 다른 방법을 알면 더 효율적으로 코드를 작성할 수 있을 것이다.
+더 많은 정보를 원한다면, Elixir 공식 문서를 참조하십시오:
+- [DateTime 공식 문서](https://hexdocs.pm/elixir/DateTime.html)
+- [Date 공식 문서](https://hexdocs.pm/elixir/Date.html)
+- [Time 공식 문서](https://hexdocs.pm/elixir/Time.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "Python: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Czym jest generowanie liczb losowych i dlaczego programiści to robią?
+## Co i Dlaczego?
 
-Generowanie liczb losowych to proces, w którym komputer tworzy wartości liczbowe w sposób przypadkowy. Programiści często wykorzystują to w swoim kodzie, aby wprowadzić element przypadkowości lub symulować sytuacje, w których występują losowe wartości.
+Generowanie liczb losowych to proces tworzenia ciągu liczb, które są nieprzewidywalne i nie powtarzają się w regularny sposób. Programiści generują liczby losowe aby generować dane testowe, symulować różne scenariusze, do gier komputerowych czy dla kodów jednorazowego użytku (OTP).
 
-# Jak to zrobić?
+## Jak to zrobić:
 
-Python zapewnia wiele wbudowanych funkcji do generowania liczb losowych. Aby ich użyć, musisz najpierw zaimportować moduł "random". Poniżej znajduje się przykładowy kod generujący losową liczbę całkowitą w zakresie od 1 do 10:
-
-```python
-import random
-
-print(random.randint(1, 10))
-```
-
-Powyższy kod wywoła wyjście takie jak to:
-
-```
-7
-```
-
-Możesz również wygenerować losowe liczby zmiennoprzecinkowe przy użyciu funkcji "random()" oraz zdefiniować własny zakres. Przykładowy kod może wyglądać tak:
+Biblioteka "random" w Pythonie umożliwia generowanie liczb losowych, oto przykładowy kod:
 
 ```python
 import random
 
-print(random.random() * 10) # wygeneruje losową liczbę zmiennoprzecinkową w zakresie od 0 do 10
+# Generuje losową liczbę zmiennoprzecinkową między 0 i 1
+random_number = random.random()
+print(random_number)
+
+# Losuje liczbę całkowitą z zakresu (włącznie)
+random_integer = random.randint(1, 10)
+print(random_integer)
+
+# Losuje element z listy
+random_element = random.choice(['jabłko', 'banan', 'cytryna'])
+print(random_element)
 ```
 
-# Głębsze zagadnienia
+## Pogłębione informacje:
 
-Pierwsza metoda generowania liczb losowych została opracowana przez amerykańskiego matematyka George'a Marsagliego w 1964 roku. Obecnie dostępne są również inne metody, takie jak metoda mieszana L'Ecuyera czy algorytm Mersenna Twister. Istnieją również biblioteki do wykonywania bardziej skomplikowanych operacji na liczbach losowych, takich jak ciągi Fibonacciego czy symulacje Monte Carlo.
+Historia generowania liczb losowych sięga lat 40., kiedy John von Neumann wprowadził "metodę środkowego kwadratu". W Pythonie, biblioteka "random" korzysta z algorytmu Mersenne Twister, który jest jednym z najczęściej stosowanych generatorów liczb pseudolosowych.
 
-# Zobacz również
+Istnieją inne metody generowania liczb losowych, jak np. generator liczb pseudolosowych z wykorzystaniem kryptografii (CSPRNG). Generator ten jest używany do zastosowań bezpieczeństwa i kryptografii, gdzie ważny jest wysoki poziom losowości.
+  
+Dla szczegółowej kontroli nad generowanymi liczbami, Python oferuje również moduł "random", który umożliwia dostęp do wielu funkcji, takich jak generowanie z dystrybucji normalnej, wybór losowego elementu z sekwencji i przetasowanie sekwencji.
 
-Możesz zgłębić temat generowania liczb losowych poprzez te źródła:
+## Zobacz również:
 
-- Dokumentacja Pythona na temat modułu "random": https://docs.python.org/3/library/random.html
-- Strona Wikipedia na temat generatorów liczb losowych: https://pl.wikipedia.org/wiki/Generator_liczb_losowych
-- Poradnik "Jak wygenerować losowe liczby w Pythonie": https://www.w3schools.com/python/ref_random.asp
+1. Moduł random Python [link](https://docs.python.org/3/library/random.html)
+2. Metoda środkowego kwadratu [link](https://en.wikipedia.org/wiki/Middle-square_method)
+3. Algorytm Mersenne Twister [link](https://pl.wikipedia.org/wiki/Mersenne_Twister)
+4. Generator liczb pseudolosowych z wykorzystaniem kryptografii (CSPRNG) [link](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator)

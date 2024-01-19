@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Clojure: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Jonojen yhdistäminen on tapa yhdistää kaksi tai useampaa merkkijonoa yhdeksi. Tämä on hyödyllistä esimerkiksi silloin, kun haluat yhdistää nimet ja sukunimet yhdeksi kokonaisuudeksi. Ohjelmoijat käyttävät jonojen yhdistämistä lähinnä tiedon esittämiseen ja käsittelyyn.
+## Mitä & Miksi?
+Yhdistämällä merkkijonoja voimme liittää kaksi tai useampia merkkijonoja yhteen. Ohjelmoijille tämä on hyödyllistä, kun he haluavat esimerkiksi muodostaa dynaamisia merkkijonoja.
 
-## Kuinka tehdä?
-```Clojure
-(def etunimi "Mikko")
-(def sukunimi "Virtanen")
-(str etunimi " " sukunimi) ; "Mikko Virtanen"
-```
-
-Voit myös yhdistää useampia merkkijonoja samassa lauseessa:
+## Näin teet:
+Clojure tukee merkkijonojen yhdistämistä `str` -funktion avulla.
 
 ```Clojure
-(str "Hei " etunimi " " sukunimi "!") ; "Hei Mikko Virtanen!"
+(let [name "Maija" greeting "Hei"]
+    (str greeting ", " name "."))
+;; Outputtaa: "Hei, Maija."
 ```
 
-## Syväsukellus
-Jonojen yhdistäminen on yleinen käytäntö monissa ohjelmointikielissä. Joissakin kielissä käytetään erillisiä operaattoreita, kuten "+" tai "&", kun taas Clojuressa käytetään funktiota "str". Myös muutamat sisäänrakennetut tietotyypit, kuten listat ja vektorit, voidaan yhdistää käyttämällä funktiota "into".
+## Syvä sukellus
+Merkkijonon yhdistäminen on peräisin menneisyydestä, kun ohjelmoijien piti hallinnoida manuaalisesti muistia. Clojuren yhdistäminen käyttää Javan `StringBuilder` -luokkaa tehokkaiden ja muistitehokkaiden yhdisteiden luomiseksi.
 
-Mikäli haluat yhdistää suuren määrän merkkijonoja, voi olla tehokkaampaa käyttää Clojuressa sisäänrakennettua "StringBuilder" luokkaa.
+Vaihtoehtona voit myös käyttää `StringBuilder` -luokkaa suoraan, jos tarvitset enemmän kontrollia tai tehokkuutta. 
+
+Joissakin tapauksissa voit käyttää `format` -funktiota, kun haluat muotoilla merkkijonoja erityisellä tavalla.
+
+```Clojure
+(let [name "Pekka"]
+    (format "Hei, %s." name))
+;; Outputtaa: "Hei, Pekka."
+```
 
 ## Katso myös
-Lisää tietoa jonojen yhdistämisestä löydät [Clojure-dokumentaatiosta](https://clojure.org/reference/strings). Voit myös tutustua muihin tapoihin manipuloida merkkijonoja Clojuressa [tästä artikkelista](https://clojurefundamentals.com/10-manipulating-strings-in-clojure/).
+[Tutustu Clojuren viralliseen dokumentaatioon merkkijonoista.](https://clojure.org/guides/learn/strings)
+[Javan StringBuilder dokumentaatio saatat myös olla hyödyllinen.](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)

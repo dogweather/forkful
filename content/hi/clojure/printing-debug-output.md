@@ -1,7 +1,7 @@
 ---
-title:                "डिबग आउटपुट प्रिंट करना"
-html_title:           "Clojure: डिबग आउटपुट प्रिंट करना"
-simple_title:         "डिबग आउटपुट प्रिंट करना"
+title:                "डीबग आउटपुट प्रिंट करना"
+html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -11,22 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-डिबग आउटपुट प्रिंट करना क्या है, और क्यों प्रोग्रामर यह करते हैं, उसको बताने के लिए हम इस लेख में हैं।
+
+डिबग आउटपुट प्रिंट करने का तात्पर्य सीधे तौर पर एक प्रोग्राम के आंतरिक कार्यान्वयन की जांच करने से होता है। yes, it is programmed as much. यही कारण है कि प्रोग्रामर्स इसे करते हैं: यह उन्हें त्रुटियां सुधारने में सहायता करता है और उन्हें मार्गदर्शन करता है कि कौन से भाग काम कर रहे हैं और कौन से नहीं।
 
 ## कैसे करें:
-डिबग आउटपुट प्रिंट करना बहुत आसान है। सिंपली, `println` फ़ंक्शन का उपयोग करें।
 
-कोड उदाहरण:
+Clojure में, आप `println` फ़ंक्शन का उपयोग करके डिबग संदेशों को प्रिंट कर सकते हैं।
+```Clojure
+(defn sample-function [x]
+  (println "Debug: Entering sample-function")
+  (* x x))
 ```
-(println "यह एक डिबग आउटपुट है")
+और जब आप `sample-function` चलाते हैं, आपको निम्नलिखित आउटपुट मिलेगा:
+```Clojure
+(Debug: Entering sample-function)
 ```
+## गहरी जानकारी
 
-`यह एक डिबग आउटपुट है`
+डिबग आउटपुट का इतिहास संगणक के इतिहास के साथ ही शुरू होता है। किसी भी भाषा में, डेवलपर्स को अपने कोड को ट्रैक करने और उससे डिबग करने की आवश्यकता होती है। Clojure में, आपके पास `println` के अलावा भी कुछ विकल्प हो सकते हैं, जैसे कि `print`, `pr`, और `printf`. `print` और `printf` का कार्य `println` के समान होता है, लेकिन `println` के विपरीत, वे नयी लाइन नहीं डालते हैं. 
 
-## गहराई में जाएँ:
-अगर आपको वर्तमान संस्करण के साथ क्रोजर का इस्तेमाल करना है, तो `(.println System/out "यह एक डिबग आउटपुट है")` का भी प्रयोग कर सकते हैं। यह दोनों समान ही हैं।
+## अन्य जानकारी 
 
-आगे बढ़ने के लिए [क्रोजर के डॉक्यूमेंटेशन](https://clojure.org/reference/java_interop) का भी अध्ययन कर सकते हैं।
+प्रिंटलें और डिबगगिंग के बारे में अधिक जानकारी के लिए, आप निम्नलिखित लिंकों पर जा सकते हैं:
 
-## इसके अलावा:
-डिबग आउटपुट करने के लिए अन्य षड्यंत्रजनित तरीके भी हैं जो हमारे [मंच पर एक चर्चा](https://stackoverflow.com/questions/39786724/clojure-difference-between-println-and-out-println/39788293#39788293) में विस्तार से वर्णन किये हैं। जब आप कोड को अपनी टीम से साझा करना चाहते हैं, तो आप `logging` ग्रंथि का भी उपयोग कर सकते हैं। इससे आप आपके कोड में डिबग आउटपुट के स्थान पर लगित एकिंग हिस्सों को हटा सकते हैं।
+- Clojure का अधिकारिक डॉक्यूमेंटेशन: [https://clojure.org](https://clojure.org)
+- Clojure प्रिंटलें और डिबग: [https://clojuredocs.org/clojure.core/println](https://clojuredocs.org/clojure.core/println)
+- Clojure Debugging: [https://clojure.org/guides/repl/debugging](https://clojure.org/guides/repl/debugging)

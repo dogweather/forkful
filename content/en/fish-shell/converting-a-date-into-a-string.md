@@ -1,6 +1,6 @@
 ---
 title:                "Converting a date into a string"
-html_title:           "Fish Shell recipe: Converting a date into a string"
+html_title:           "Arduino recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,39 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+# An Uncomplicated Guide to Converting Date to String in Fish Shell
 
-Converting a date into a string is the process of changing the format of a date to fit a specific string pattern, making it easier for programmers to manipulate and display dates in their code. This can be useful for various tasks such as sorting, filtering, and displaying dates in a user-friendly format.
+## What & Why?
 
-# How to:
+Converting a date to a string involves transforming a date object into a written or printable form. Programmers do this to make dates human-readable and suitable for displaying or processing further.
 
-In Fish Shell, you can use the `date` command to convert a date into a string. Let's take a look at some examples:
+## How to:
 
-```
-Fish Shell > date "+%Y-%m-%d"
-2021-04-30
-```
+In Fish Shell, you'd commonly use the built-in `date` command to convert a date into a string.
 
-In this example, we are using the `date` command with the `+%Y-%m-%d` option to convert the current date to the format of year-month-day. The output will vary depending on the date when you run this command.
+Here is how to get the current date in a commonly human-readable format:
 
-You can also specify a specific date to convert, instead of using the current date. For example:
-
-```
-Fish Shell > date -d "yesterday" "+%A, %B %d, %Y"
-Thursday, April 29, 2021
+```Fish Shell
+echo (date "+%m-%d-%Y")
 ```
 
-This command uses the `-d` option to specify a date (in this case, "yesterday") and the `+%A, %B %d, %Y` option to convert it to the format of day, month, date, and year.
+The output would look something like this representing, month-day-year:
 
-# Deep Dive
+```Fish Shell
+09-14-2022
+``` 
 
-Converting a date into a string is a common task in programming, especially when dealing with data that includes dates. In the past, it was a more complicated process, requiring manual conversions and calculations. However, with the `date` command in Fish Shell, it has become much simpler and more efficient.
+If you wish to name your weekdays, use `%A` for the full day name, or `%a` for abbreviated. Let's try:
 
-There are alternative ways to convert a date into a string, such as using built-in functions in other languages like Python or JavaScript. However, Fish Shell's `date` command is a handy tool for quick conversions without the need for additional dependencies.
+```Fish Shell
+echo (date "+%A, %m-%d-%Y")
+```
 
-For those interested in the technical details, the `date` command in Fish Shell uses the `strftime` function, which is a C library function that converts a date into a specified string format.
+The output will look like this:
 
-# See Also
+```Fish Shell
+Wednesday, 09-14-2022
+```
 
-- [Fish Shell documentation for the `date` command](https://fishshell.com/docs/current/cmds/date.html)
-- [strftime function documentation](https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html#Formatting-Calendar-Time)
+## Deep Dive:
+   
+Computers store dates as numerical formats. The Unix timestamp for example, represents the number of seconds elapsed since January 1, 1970. While this is great for computations, it's not very human-friendly. String representation of dates existed back when the Unix `date` command was created in the early 1970s.
+
+Alternative ways for date representation include using external utilities or programming languages. Python, for example, provides extensive date manipulation capabilities with its built-in `datetime` library. 
+
+In Fish Shell, `date` command default output format depends on the system locale. But by using formatting options, like `%m` for month, `%d` for day, `%Y` for year, you have control over the string output.
+
+## See Also:
+
+Here's where you can dive deeper:
+
+- Fish Shell documentation: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
+- `date` man page: [https://linux.die.net/man/1/date](https://linux.die.net/man/1/date)
+- Python `datetime` library: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "Gleam: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Gleam: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,26 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Användningen av regelbundna uttryck är en vanlig och användbar teknik inom programmering. Det är ett sätt för utvecklare att söka och manipulera textsträngar baserat på ett specifikt mönster. Detta gör det möjligt att snabbt och effektivt utföra uppgifter som jämförelse, ersättning och extrahering av data. Reguljära uttryck används ofta för att hantera data inom textbaserade filer eller för att validera inmatning från användare.
+## Vad & Varför?
+Reguljära uttryck (regex) är ett kraftfullt verktyg för att matcha och bearbeta strängar. Det används av utvecklare för att spara tid och för att effektivisera koden genom att hitta specifika mönster av tecken i en textvaror.
 
-## Hur man använder:
-Att använda reguljära uttryck i Gleam är enkelt och kräver bara några rader med kod. För att använda dem, inkludera "gleam/regexp" biblioteket och ange sedan det specifika mönstret som du vill matcha i ett reguljärt uttryck. Här är ett exempel på enkel användning:
+## Hur man:
+Här är några exempel på Gleam-kod som visar hur man använder regex:
 
-```Gleam
-import gleam/regexp
+```Gleam 
+import gleam/regex
 
-let email_regex = regexp.regex("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[_a-z0-9-]+(\.[_a-z0-9-]+)*(\.[a-z]{2,})$")
-let email = "example@email.com"
+let phones = regex.from_string("(07|08)[0-9]{8}") |> should.from_result!
 
-regexp.match(email_regex, email) // Returns `true`
+"0734567890, 0834567890, 0934567890"
+|> regex.find_all(phones)
+|> should.equal(Ok(["0734567890", "0834567890"]))
 ```
 
-I detta exempel definierar vi ett reguljärt uttryck som matchar e-postadresser och kontrollerar om e-postadressen "example@email.com" matchar det mönstret.
+Koden ovan matchar alla telefonnummer som börjar med 07 och 08 och har totalt 10 siffror. De telefonnummer som matchar detta mönster returneras sedan.
 
-## Djupdykning:
-Reguljära uttryck har funnits sedan 1950-talet och har sedan dess utvecklats och implementerats i flera olika programmeringsspråk. Alternativ till reguljära uttryck inkluderar strängmanipulering med inbyggda funktioner eller att använda andra strukturtyper som listor eller träd. Det bör noteras att användningen av reguljära uttryck ibland kan vara komplicerad och svår att läsa, vilket kan leda till buggar eller förvirring, så det är viktigt att vara försiktig och testa noggrant.
+## Fördjupning
+Reguljära uttryck har funnits sedan 1950-talet och är ett etablerat verktyg inom programmering. Alternativ till regex finns, exempelvis strängmanipulationsfunktioner, men de når inte upp till regex flexibilitet och effektivitet.
 
-## Se även:
-- [Gleam's officiella dokumentation om reguljära uttryck](https://gleam.run/documentation/drafts/regexp.html)
-- [En guide för användning av reguljära uttryck i andra programmeringsspråk](https://www.linode.com/docs/development/regular-expressions-overview/)
+Implementera regex i Gleam kan vara lite komplicerat eftersom du behöver matcha strängen exakt. Du behöver alltid börja med att importera regex-modulen.
+
+## Se även
+Vill du veta mer? Här är några användbara länkar:
+- Gleam Documentation: [Gleam regex](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
+- Learn Regex The Hard Way: [Learn Regex](https://learnxinyminutes.com/docs/gleam/)
+- RegExr: [RegEx testing site](https://regexr.com/)
+
+Ovanstående länkar erbjuder djupgående studiematerial och verktyg för att vidareutveckla din förståelse och färdigheter inom regex.

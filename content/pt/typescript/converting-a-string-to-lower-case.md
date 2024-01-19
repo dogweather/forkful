@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "TypeScript: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+# Convertendo uma string para letras minúsculas em TypeScript
 
-Converter uma string para letras minúsculas em TypeScript é um processo de transformação de uma sequência de caracteres em letras minúsculas. Os programadores fazem isso para padronizar a cadeia de caracteres e torná-la mais legível para processamento e comparação.
+## O que & Por quê?
+
+Converter uma string para letras minúsculas significa transformar todas as letras maiúsculas de uma cadeia de texto para minúsculas. Programadores fazem isso para facilitar a comparação e classificação de strings, ignora-se a diferença entre maiúsculas e minúsculas.
 
 ## Como fazer:
 
-```typescript
-const myString = 'Olá MUNDO!';
+Em TypeScript, você pode usar o método 'toLowerCase()' para converter uma string para letras minúsculas.
 
-console.log(myString.toLowerCase());
-// Saída: olá mundo!
+```TypeScript
+let texto = "Olá Mundo!";
+let textoMinusc = texto.toLowerCase();
+console.log(textoMinusc);
 ```
 
-O código acima usa o método `toLowerCase()` para transformar a string em letras minúsculas. Isso pode ser útil ao processar dados de entrada de usuários, pois torna a comparação de strings mais fácil, já que não há diferença entre maiúsculas e minúsculas.
+Na execução desse código, você verá a saída:
 
-## Deep Dive:
+```TypeScript
+"olá mundo!"
+```
 
-Embora a conversão de string para minúsculas possa parecer uma tarefa simples, é importante entender sua importância e funcionamento. Historicamente, as linguagens de programação são sensíveis a maiúsculas e minúsculas, o que significa que elas são tratadas como caracteres diferentes. Novamente, a conversão de string para minúsculas permite que os programadores lidem com strings de maneira mais consistente e previsível.
+## Mergulho Profundo:
 
-Além disso, existem opções alternativas de métodos para converter strings, como `toUpperCase()` que transforma a string em letras maiúsculas. Também é possível usar expressões regulares para manipular strings, mas isso pode ser mais complexo e exigir mais conhecimento técnico.
+A conversão de strings para letras minúsculas é uma prática antiga em programação, derivada desde o tempo das primeiras linguagens de programação. Em engenhos de pesquisa e bancos de dados, isso é fundamental para garantir a correspondência e ordenação correta dos dados.
 
-A implementação do método `toLowerCase()` em TypeScript garante que apenas strings sejam aceitas como argumento e não altera o valor original da variável. Isso significa que é seguro usar o método em uma string sem se preocupar com alterar o valor original.
+Algumas alternativas para converter strings para minúsculas incluem loops que iteram sobre cada caracter, mas essas soluções são geralmente menos eficientes do que usar 'toLowerCase()'.
 
-## Veja também:
+Em TypeScript, 'toLowerCase()' funciona perfeitamente com caracteres especiais e acentos em strings porque a linguagem suporta Unicode.
 
-- [Documentação do método `toLowerCase()` em TypeScript](https://www.typescriptlang.org/docs/handbook/utility-types.html#lowercasestring)
+## Veja Também:
 
-- [Exploiting the Lowercase Tack: A History of Case Manipulation in Programming Languages](https://arstechnica.com/information-technology/2012/11/exploiting-the-lowercase-tack-a-history-of-case-manipulation-in-programming-languages/)
+- Programação TypeScript: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
+- Documentação do método toLowerCase(): [https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

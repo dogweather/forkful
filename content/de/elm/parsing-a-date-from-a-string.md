@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum aus einem String analysieren"
-html_title:           "Elm: Ein Datum aus einem String analysieren"
-simple_title:         "Ein Datum aus einem String analysieren"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,25 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Parsen eines Datums aus einem String bedeutet, dass man einen Text in ein von der Programmiersprache verständliches Dateiformat umwandelt. Programmierer machen dies, um z.B. Benutzereingaben zu verarbeiten oder Datenbankabfragen zu erstellen.
 
-## Wie geht's:
-Um ein Datum aus einem String zu parsen, können wir die `Date.fromString` Funktion in Elm verwenden. 
-```Elm 
-Date.fromString "10/14/2020"
-```
-Dies gibt uns ein `Maybe Date` zurück, da der String möglicherweise kein gültiges Datum enthält. 
-So können wir mit `Maybe.withDefault` eine Standardwert festlegen, falls kein gültiges Datum zurückgegeben wird. 
+Das Parsen eines Datums aus einem String bezeichnet den Prozess, bei dem ein String in eine Datumsstruktur umgewandelt wird. Programmierer machen das, um eine menschenlesbare Datumsdarstellung in eine für die Maschine verarbeitbare Form zu bringen.
+
+## So geht's:
+
+Hier ist eine Code-Beispiel in Elm, wie man ein Datum in der Form von - Jahr-Monat-Tag - in ein tatsächliches Datum umwandeln kann:
+
 ```Elm
-Maybe.withDefault (Date.fromCalendarDate 2020 10 14) (Date.fromString "30/02/2020") 
---> { year = 2020, month = 10, day = 14 }
+import Time
+
+stringZuDatum : String -> Maybe Date
+stringZuDatum s =
+  case String.split "-" s of
+      [ jahr, monat, tag ] ->
+          Time.fromString (jahr ++ "T" ++ monat ++ "-" ++ tag )
+
+      _ ->
+          Nothing
 ```
 
-## Tiefentauchen:
-Die Notwendigkeit, Daten aus einem String zu parsen, entstand mit der zunehmenden Nutzung von digitalen Geräten und der Notwendigkeit, unterschiedliche Datumseingaben standardisiert zu verarbeiten. 
-Alternativen wie die Verwendung von Regular Expressions können unzuverlässig und fehleranfällig sein. 
-Die `Date.fromString` Funktion nutzt die von der ECMAScript-Sprache definierten Regeln für die Interpretation von Datumsangaben.
+Probieren wir es mit dem String "2022-03-30". Die Ausgabe sollte das Datum "30. März 2022" als `Date`-Objekt sein.
 
-## Siehe Auch:
-[Die Elm Dokumentation zur Date.fromString Funktion] (https://package.elm-lang.org/packages/elm/time/latest/Date#fromString) 
-[Der Elm Zeit-package] (https://package.elm-lang.org/packages/elm/time/latest/) für weitere zeitbezogene Funktionen.
+```Elm
+main =
+    Html.text <| case stringZuDatum "2022-03-30" of
+        Just date ->
+            toString date
+
+        Nothing ->
+            "Fehler beim Parsen des Datums"
+```
+
+## Tiefere Einblicke
+
+Historisch gesehen, mussten Programmierer zunächst die einzelnen Teile des Datums (Tag, Monat, Jahr) aus dem String extrahieren und dann in Einzelteile umwandeln. Modernere Sprachen wie Elm bieten jedoch einfache Funktionen, die diesen Vorgang automatisieren und vereinfachen.
+
+Als Alternative könnte man die Datumsteile auch mathematisch berechnen, dies eignet sich aber eher für Fälle, in denen man mit spezifischen Datumstypen und -formaten arbeitet. 
+
+Die Implementierungsdetails variieren je nach Sprache und Framework. In Elm verwenden wir `Time.fromString`, die ein `String` annimmt und versucht, ihn in ein `Date` umzuwandeln, indem sie das Standard-ISO-8601-Datumsformat verwendet.
+
+## Siehe auch
+
+Weitere Informationen finden Sie in den offiziellen Elm-Dokumenten und in verwandten Tutorials:
+
+- [Elm Time Paket](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Parse a Date from a String in Elm](https://korban.net/posts/elm/2019-11-20-parse-date-string-elm/)
+- [Understanding Dates in Elm](https://dev.to/michaeljacobdavis/understanding-dates-in-elm-3i2a)

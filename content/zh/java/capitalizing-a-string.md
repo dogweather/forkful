@@ -1,7 +1,7 @@
 ---
-title:                "将一个字符串首字母大写"
-html_title:           "Java: 将一个字符串首字母大写"
-simple_title:         "将一个字符串首字母大写"
+title:                "将字符串转化为大写"
+html_title:           "Java: 将字符串转化为大写"
+simple_title:         "将字符串转化为大写"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,24 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是大写字符串及为什么要这么做？
-大写字符串是指将字符串中的每个字符都转换为大写形式。程序员通常会这样做是为了让字符串更易于比较和处理，因为大写和小写形式的字符被计算机视为不同的字符。这可以避免在程序中出现不必要的错误。
+## 什么以及为什么？
+字符串大写是指把字符串的每一个单词的首字母转换成大写。程序员之所以这样做是为了更好地格式化和展示数据。
 
-## 如何进行大写字符串？
-下面是一个Java代码示例，展示了如何使用内置的String类中的toUpperCase()方法来将字符串转换为大写形式：
+## 如何做：
+```Java
+public class Main {
+    public static void main(String[] args) {
+        String myStr = "hello, world!";
+        String capitalizedStr = myStr.substring(0, 1).toUpperCase() + myStr.substring(1);
+        System.out.println(capitalizedStr);
+    }
+}
 ```
-String str = "hello world";
-String upperCaseStr = str.toUpperCase();
-System.out.println(upperCaseStr);
+输出结果：
+```Java
+Hello, world!
 ```
-输出结果为："HELLO WORLD"
 
-## 深入了解
-大写字符串的概念可以追溯到早期计算机系统，其中只有有限的字符集可用。由于这种限制，程序员被迫使用大写形式来表示不同的字符，以避免混淆。然而，随着计算机技术的发展，这个习惯仍然被保留下来，并被纳入到编程规范中。
+## 深入探讨
+在Java历史的发展中，处理字符串大小写的需求一直存在。对于大写化字符串，可以有多种替代方案。 
 
-除了使用String类中的toUpperCase()方法，还有其他一些方法来进行大写字符串，如利用循环遍历每个字符并将其转换为大写形式。但是使用内置方法更加简洁和高效。
+1. 使用StringBuilder/StringBuffer的append方法将每个单词的首字母大写。 
+2. 使用Apache Commons库的WordUtils.capitalize方法。 
 
-## 参考资料
-- [Java String toUpperCase()方法文档](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
-- [String Handling in Java](https://www.geeksforgeeks.org/string-handling-java/)
-- [ASCII码表](http://www.asciitable.com/)
+在Java中，这些都可以实现相同目标。但是，内部实现会因为采用的数据结构和期望的决策性能而有所不同。 
+
+## 可参考资料
+* [Oracle官方文档：toUpperCase()](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#toUpperCase())
+* [Apache Commons工具：StringUtils](https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Lecture d'un fichier texte."
-html_title:           "C++: Lecture d'un fichier texte."
-simple_title:         "Lecture d'un fichier texte."
+title:                "Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
+simple_title:         "Lecture d'un fichier texte"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,50 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi & Pourquoi?
+# Lire un fichier texte en C++
 
-On entend souvent parler de la lecture de fichiers texte lorsqu'on parle de programmation, mais qu'est-ce que cela signifie exactement? En bref, la lecture d'un fichier texte consiste à ouvrir un fichier écrit en texte brut et à en extraire les données pour les utiliser dans un programme. Les programmeurs utilisent souvent cette méthode pour accéder à des données externes, telles que des fichiers de configuration, des bases de données ou des fichiers de données.
+## Qu'est-ce que c'est et Pourquoi?
 
-# Comment faire:
+Lire un fichier texte, c'est récupérer les données stockées dans ce fichier pour les utiliser dans votre programme. C'est essentiel car cela permet aux programmeurs d'accéder et de manipuler des informations enregistrées en dehors du code.
+
+## Comment faire:
+
+Voici comment lire un fichier texte en C++.
 
 ```C++
 #include <iostream>
 #include <fstream>
-
-using namespace std;
+#include <string>
 
 int main() {
-  ifstream file("exemple.txt"); // Ouverture du fichier en lecture seule
-  string line = ""; // Déclaration d'une variable pour stocker chaque ligne
-  while(getline(file, line)) { // Boucle pour lire toutes les lignes du fichier
-    cout << line << endl; // Affichage de la ligne
-  }
-  file.close(); // Fermeture du fichier
-  return 0;
+    std::ifstream fichierTexte("fichier.txt"); //ouvre le fichier
+    if (fichierTexte.is_open()) { //vérifie si le fichier est ouvert
+        std::string ligne;
+        while (getline(fichierTexte, ligne)) { //lit le fichier ligne par ligne
+            std::cout << ligne << '\n'; //affiche chaque ligne
+        }
+        fichierTexte.close(); //ferme le fichier
+    }
+    else std::cout << "Impossible d'ouvrir le fichier";
+    return 0;
 }
 ```
 
-**Exemple de contenu du fichier 'exemple.txt':**
-```
-Bonjour à tous!
-Ceci est un exemple de fichier texte.
-J'espère que cela vous aide à comprendre la lecture d'un fichier.
-Au revoir!
-```
-**Sortie du programme:**
-```
-Bonjour à tous!
-Ceci est un exemple de fichier texte.
-J'espère que cela vous aide à comprendre la lecture d'un fichier.
-Au revoir!
-```
+La sortie de l'échantillon sera le contenu de votre fichier texte, affiché ligne par ligne.
 
-# Plongée en profondeur:
+## Plongée plus profonde
 
-La lecture de fichiers texte est une méthode très ancienne en programmation, étant donné que les premiers programmes étaient souvent écrits en utilisant des fichiers texte comme moyen de stockage. Aujourd'hui, il existe d'autres méthodes plus avancées pour accéder à des données externes, telles que les bases de données ou les services de cloud. Cependant, la lecture de fichiers reste une méthode simple, rapide et pratique pour accéder aux données stockées localement.
+Historiquement, la lecture de fichiers textes a toujours été un aspect important de la programmation, du stockage de données au développement de systèmes de gestion de bases de données. 
 
-# A voir également:
+Comme alternatives à la lecture de fichiers textes, nous avons les bases de données SQLite, MySQL, ainsi que les fichiers binaires - bien que les fichiers textes soient généralement plus faciles à utiliser et portables.
 
-- [Documentation sur la lecture de fichiers en C++](https://www.cplusplus.com/doc/tutorial/files/)
-- [Vidéo sur la lecture de fichiers en C++](https://www.youtube.com/watch?v=Iho2EdJgusQ)
-- [Article sur l'importance de la lecture de fichiers en C++](https://www.journaldev.com/6022/cplusplus-file-handling-classes-write-read)
+Lorsque nous lisons un fichier texte en C++, le fichier est ouvert en mode lecture, puis le flux d'entrée (`ifstream`) est utilisé pour lire les données. Les détails d'implémentation comprennent l'utilisation de la fonction 'getline' pour lire ligne par ligne, et l'utilisation de 'cout' pour l'affichage.
+
+## Voir aussi
+
+Pour plus d'informations sur la lecture de fichiers en C++, consultez ces liens utiles:
+
+- Documentation officielle (https://en.cppreference.com/w/cpp/io)
+- Guide pour débutants (https://www.guru99.com/cpp-file-read-write-open.html)
+- Manière efficace de lire un grand fichier texte (https://stackoverflow.com/questions/17925051/fast-textfile-reading-in-c)
+
+N'oubliez pas, pratiquer et expérimenter avec de vrais problèmes de programmation sont les meilleurs moyens d'apprendre.

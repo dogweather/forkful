@@ -1,6 +1,6 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "Ruby: Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,38 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
+# Imprimir Debug Output en Ruby: Una Guía Rápida
 
-El proceso de imprimir salidas de depuración (debug output) es una técnica comúnmente utilizada por los programadores para verificar el funcionamiento de su código y encontrar posibles errores. Al imprimir ciertas variables o mensajes específicos en diferentes puntos de un programa, los desarrolladores pueden tener una mejor comprensión de lo que está sucediendo en cada etapa y así detectar y solucionar problemas más fácilmente.
+## ¿Qué y Por Qué?
+El debug output es información útil que se muestra mientras se ejecuta un programa. Los programadores lo usan para resolver problemas y entender mejor cómo funciona su código.
 
-# Cómo hacerlo:
+## Cómo hacerlo:
+Vamos a imprimir "Hola Mundo" en la línea de comando mediante el método `puts`. Es muy fácil. Mira:
 
-En Ruby, podemos imprimir salidas de depuración utilizando el método `puts` o `p`. A continuación se muestra un ejemplo de cómo imprimir un mensaje y el valor de una variable:
-
+```ruby
+puts "Hola Mundo"
 ```
-puts "¡Hola Ruby!"
+
+La salida será simplemente:
+```
+Hola Mundo
+```
+
+Ahora, si deseas visualizar el valor de una variable para depurar, utiliza el método `p` para imprimir su valor y su tipo de datos.
+
+```ruby
+x = 5
 p x
 ```
 
-La salida sería:
-
+La salida será:
 ```
-¡Hola Ruby!
-42
+5
 ```
 
-Aquí podemos ver cómo se imprime el mensaje y el valor de la variable `x`, que en este caso es igual a 42.
+¿Y si necesitamos más detalles? En ese caso, podemos usar `pp` (pretty print):
 
-# Profundizando:
+```ruby
+require 'pp'
 
-La impresión de salidas de depuración no es una técnica exclusiva de Ruby, de hecho, se utiliza en muchos otros lenguajes de programación. Sin embargo, Ruby cuenta con algunas características que la hacen especialmente adecuada para esta tarea.
+a = [1, 2, 3, ['a', 'b', 'c'], {x: 1, y: 2, z: 3}]
+pp a
+```
 
-Una alternativa común a la impresión de debug output es utilizar un depurador (debugger). Sin embargo, a diferencia de la impresión de salidas, los depuradores requieren de habilidades adicionales y pueden ser más complicados de usar.
+La salida será más legible para objetos complejos:
+```
+[1, 2, 3, ["a", "b", "c"], {:x=>1, :y=>2, :z=>3}]
+```
 
-En cuanto a la implementación, el método `puts` es más adecuado para imprimir mensajes y `p` para imprimir valores de variables. `p` también incluye información adicional como el tipo de dato de la variable, lo que puede ser útil para la depuración.
+## Análisis en Profundidad
+La salida de depuración tiene sus raíces en los primeros días de la programación, antes de que existieran las herramientas gráficas de depuración. Aunque hay otras maneras de depurar programas en Ruby como crear tus propios `logger` o usar herramientas de depuración gráficas, imprimir la salida de depuración sigue siendo una herramienta valiosa y rápida.
 
-# Ver también:
+Implementar métodos de impresión de depuración en Ruby es fácil, ya que el lenguaje es rico en métodos de salida incorporados y módulos estándar como el módulo `pp`.
 
-- [Documentación oficial de Ruby sobre `puts`](https://ruby-doc.org/core-3.0.0/Kernel.html#method-i-puts)
-- [Documentación oficial de Ruby sobre `p`](https://ruby-doc.org/core-3.0.0/Kernel.html#method-i-p)
-- [Aprende a depurar en Ruby](https://www.rubyguides.com/2015/05/byebug/)
+## Ver También
+Para más detalles, puedes visitar estos enlaces de la documentación de Ruby:
+- [El método de impresión `puts`](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-puts)
+- [El método de impresión `p`](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-p)
+- [El módulo `pp` (pretty print)](https://ruby-doc.org/stdlib-2.7.0/libdoc/pp/rdoc/PP.html)

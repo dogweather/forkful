@@ -1,6 +1,6 @@
 ---
 title:                "Łączenie ciągów znaków"
-html_title:           "PowerShell: Łączenie ciągów znaków"
+html_title:           "Arduino: Łączenie ciągów znaków"
 simple_title:         "Łączenie ciągów znaków"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,36 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego?
+## Co i dlaczego?
 
-Łączenie ciągów znaków to proces łączenia dwóch lub więcej ciągów w jeden dłuższy ciąg. Programiści często stosują to narzędzie, aby łatwiej i szybciej tworzyć i manipulować tekstem.
+Łączenie ciągów (string concatenation) to proste polegające na złączeniu dwóch lub więcej ciągów znaków (strings) w jeden. Programiści często to robią, aby tworzyć dynamiczne komunikaty, sformułowania czy ścieżki do plików.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Użyj operatora + lub polecenia Join-String, aby połączyć dwa ciągi znaków w jeden.
+Połączenie ciągów w PowerShell jest łatwe. Najprostszym sposobem jest użycie operatora '+'. Dajmy na to:
 
 ```PowerShell
-# Przykład 1: Używanie operatora + 
-"Fajna" + "aplikacja" # Output: Fajnaaplikacja
-
-# Przykład 2: Używanie polecenia Join-String
-Join-String -Separator " " -String "Fajna", "aplikacja" # Output: Fajna aplikacja
+$str1 = "Cześć, "
+$str2 = "świecie!"
+$połączone = $str1 + $str2
+Write-Output $połączone
 ```
 
-Możesz również połączyć więcej niż dwa ciągi i dostosować separator między nimi. Dodatkowo, parametr -Join w poleceniu Write-Output automatycznie łączy argumenty w jeden ciąg.
+Wyjście:
 
-## Głębsza analiza
+```PowerShell
+Cześć, świecie!
+```
 
-Łączenie ciągów znaków jest powszechnie stosowane w programowaniu i ma szerokie zastosowanie w różnych językach programowania. W PowerShell jest to szczególnie przydatne do przetwarzania tekstu i tworzenia wyrażeń regularnych.
+Pamiętaj, że za pomocą operatora '+' możesz łączyć tylko ciągi. Jeśli chcesz dodać liczby do ciągu, musisz je najpierw przekonwertować na ciągi.
 
-Alternatywą dla łączenia ciągów może być użycie polecenia Format-String, które pozwala na formatowanie tekstu z uwzględnieniem zmiennych. Można również użyć polecenia Out-File, aby zapisać łączony ciąg do pliku.
+## Głębsze zrozumienie:
 
-Implementacja łączenia ciągów w PowerShell jest zoptymalizowana pod kątem wydajności, dzięki czemu jest szybka i wydajna w użyciu.
+Historia łączenia ciągów jest stara jak programowanie. Jest to jedna z najprostszych operacji, które programista może wykonać.
 
-## Zobacz również
+W PowerShell, alternatywą dla operatora '+' jest użycie metody '.Concat()' klasy String:
 
-Dokumentacja Microsoft na temat używania operatora + w PowerShell: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators 
+```PowerShell
+$str1 = "Cześć, "
+$str2 = "świecie!"
+$połączone = [string]::Concat($str1, $str2)
+Write-Output $połączone
+```
 
-Dokumentacja Microsoft na temat polecenia Join-String: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/join-string 
+Wydanie będzie takie samo jak wcześniej.
 
-Przykłady użycia polecenia Format-String i Out-File: https://www.howtogeek.com/tips/how-to-quickly-create-a-text-file-using-the-command-line-or-powershell/
+Warto wspomnieć, że operator '+' tworzy nowy ciąg, a nie zmienia istniejących. To ważne w kontekście zarządzania pamięcią.
+
+## Zobacz też:
+
+1. Szczegółowy przewodnik po ciągach w PowerShell: https://ss64.com/ps/syntax-strings.html
+2. Oficjalna dokumentacja Microsoftu na temat ciągów w PowerShell: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1
+3. Dokumentacja Microsoftu na temat operatorów w PowerShell: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1

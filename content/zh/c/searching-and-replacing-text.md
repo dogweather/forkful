@@ -1,6 +1,6 @@
 ---
 title:                "搜索和替换文本"
-html_title:           "C: 搜索和替换文本"
+html_title:           "Kotlin: 搜索和替换文本"
 simple_title:         "搜索和替换文本"
 programming_language: "C"
 category:             "C"
@@ -10,39 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么及为什么?
+## 什么和为什么?
+搜索和替换文本是计算机程序中常见的任务，可以在字符串中寻找特定模式或字词，并将其替换为新的内容。程序员这样做是为了实现数据的更新、清理和重新格式化。
 
-搜索和替换文本是程序员经常做的事情。它是为了快速更改大量文本，以使代码更易于维护。当你在开发一个大型项目时，经常需要改变变量或函数名，这时就需要搜索和替换文本来保持代码的一致性和准确性。
+## 如何做:
+在C语言中，我们可以使用`strtok`, `strstr`和`sprintf`函数来搜索和替换文本。这是一段示例代码，其中搜索和替换 "dogs" 为 "cats"。
 
-# 如何：
-
-`` `C
+```C
+#include <string.h>
 #include <stdio.h>
 
-int main() {
-    int num = 5;
-    printf("原始数字为：%d\n", num);
+void replace_char(char *str, char *orig, char *rep) {
+    static char buffer[4096];
+    char *p;
+
+    p = strstr(str, orig);
     
-    // 使用搜索和替换来改变变量名
-    num = 10;
-    printf("新数字为：%d\n", num);
-    
-    return 0; 
+    if (p == NULL) {
+        printf("%s", str);
+    } else {
+        strncpy(buffer, str, p-str);
+        buffer[p-str] = '\0';
+
+        sprintf(buffer+(p-str), "%s%s", rep, p+strlen(orig));
+        printf("%s", buffer);
+    }
 }
-`` `
+
+int main () {
+    char string[] = "I love dogs.";
+    replace_char(string, "dogs", "cats");
+
+    return(0);
+}
 ```
-原始数字为：5
-新数字为：10
+
+这个程序的输出将会是:
+
+```C
+I love cats.
 ```
 
-# 深度挖掘：
+## 深入研究
+搜索和替换文本的历史可以追溯到早期的文本处理系统，如UNIX的编辑器`sed`。它允许用户在整个文本文件中搜索并替换任何模式。
 
-1. 历史背景：搜索和替换最早可以追溯到1968年，在古老的编辑器ED和EMACS中。如今，它已经成为现代编程语言的基本功能之一。
-2. 其他替代方法：除了搜索和替换，还有其他方法来改变代码，比如使用重构工具。但在一些特定情况下，搜索和替换仍然是最有效的方法。
-3. 实现细节：搜索和替换的实现基本上是查找所需替换的文本，然后将其替换为新的文本。在这个过程中，还需要考虑文本的位置和替换的范围。
+在C语言中，我们使用标准库函数来实现搜索和替换。但是，也有更复杂的方法，如使用正则表达式。
 
-# 参考链接：
+另一个可选择的C语言库是`PCRE(Perl Compatible Regular Expressions)`，它提供了对正则表达式的强大支持。但需要注意的是，使用PCRE可能会增加您的代码的复杂性和使用的空间。
 
-- [C语言文本搜索和替换的实现](https://www.studytonight.com/c/file-handling-in-c.php)
-- [Visual Studio Code 中搜索和替换的快捷方式](https://code.visualstudio.com/docs/editor/codebasics#_search-and-replace)
-- [搜索和替换的历史发展](https://www.folklore.org/StoryView.py?project=Macintosh&story=Truth_Lies_and_Oranges.txt)
+## 参考资料
+1. [`strtok` - C++ Reference](http://www.cplusplus.com/reference/cstring/strtok/)
+2. [`strstr` - C++ Reference](http://www.cplusplus.com/reference/cstring/strstr/)
+3. [`sprintf` - C++ Reference](http://www.cplusplus.com/reference/cstdio/sprintf/)
+4. [Regular Expressions in C: PCRE](https://www.pcre.org/)

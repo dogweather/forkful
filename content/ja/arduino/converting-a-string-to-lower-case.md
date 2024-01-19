@@ -1,7 +1,7 @@
 ---
-title:                "「文字列を小文字に変換する」"
-html_title:           "Arduino: 「文字列を小文字に変換する」"
-simple_title:         "「文字列を小文字に変換する」"
+title:                "文字列を小文字に変換する"
+html_title:           "Arduino: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-文字列の大文字を小文字に変換することは、プログラマーにとって重要なことです。なぜなら、コンピューターは大文字と小文字を区別し、間違った結果を与えることがあるからです。そのため、文字列を正確かつ効率的に処理するために、大文字を小文字に変換する必要があります。
+## なんで？どうして？
+文字列を小文字に変換するとは、文字列中の全ての大文字を対応する小文字に変えるプログラムの動きのことを指します。これはプログラマーがユーザー入力の一貫性を保つため、またはデータ比較時にケースセンシティブな問題を回避するために行います。
 
-## How to:
-Arduinoでは、stringオブジェクトである変数`myString`を使用して、次のように文字列を小文字に変換することができます。
+## どうやって：
+まずは基本的な構文から見ていきましょう。以下のコードは「Hello,Arduino!」という文字列を小文字に変換します。
+
+```Arduino
+#include <Arduino.h>
+
+void setup() {
+  String message="Hello,Arduino!";
+  message.toLowerCase();
+  Serial.begin(115200);
+  Serial.print(message);
+}
+
+void loop() {
+
+}
 ```
-Arduino
-myString.toLowerCase();
-```
-このコードを実行すると、`myString`の値が全て小文字に変換されます。
+このコードブロックを実行すると、Serial Monitorで「hello,arduino!」を確認することが出来ます。
 
-例えば、文字列`"HELLO"`を小文字に変換すると、`"hello"`という文字列が結果として得られます。
+## より深く理解する
+文字列の小文字化はArduinoプログラミングの初期から存在しました。元々は、ユーザー入力の変動や多様性を吸収するために用いられてきました。他の方法としては、まず各文字がアルファベットの大文字であるかを確認し、そうであれば小文字に変換するという方法があります。しかしアルファベット以外の文字列の場合にはこの方法は使えません。そこでそのような場合には、Arduinoの内蔵関数`toLowerCase()`が便利です。この関数は文字列全体を一度に小文字化します。
 
-## Deep Dive:
-大文字を小文字に変換する方法は、コンピューターの歴史と共に発展してきました。昔は、大文字を小文字に変換するためには手動でアルファベット表を記憶し、大文字を小文字に変換する必要がありました。しかし、今ではプログラミング言語に組み込まれた関数を使用することで簡単に変換することができます。
-
-また、大文字を小文字に変換する方法には複数のアルゴリズムがあります。最も一般的なものはASCIIコードを使用する方法で、コンピューターは英文字のASCIIコードを変換することで大文字を小文字に変換します。
-
-## See Also:
-- [String Library Reference (Arduino)](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
-- [ASCII Code (Wikipedia)](https://en.wikipedia.org/wiki/ASCII)
+## 他にも知っておきたい：
+- Arduinoの公式リファレンスの[String.toLowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)にはより詳しい情報と更なる例があります。
+- 別の観点から学びたい場合は、[文字列を大文字に変換する](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)も参照してみてください。

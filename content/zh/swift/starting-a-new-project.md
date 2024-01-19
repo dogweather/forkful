@@ -1,7 +1,7 @@
 ---
-title:                "开始一个新项目"
-html_title:           "Swift: 开始一个新项目"
-simple_title:         "开始一个新项目"
+title:                "开始新项目"
+html_title:           "Lua: 开始新项目"
+simple_title:         "开始新项目"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -10,26 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什麼是新項目？為什麼程序員要開始一個新項目？
+## 什么和为什么？
 
-開始一個新項目是指開始一個全新的程式碼專案。程序員經常這麼做是因為他們需要解決一個新的問題，或者改進現有的解決方案。開始一個新項目也能讓程序員保持新鮮感，學習新技術並挑戰自己。
+开始一个新项目，基本上就是创建一个全新的编程环境来建立你的应用程序或软件。他们这么做是因为制定一个明确的起点可以有助于确保项目组织的清晰度，也可以更好地控制版本和依赖关系。
 
-## 如何：
+## 如何操作：
 
+创建新的Swift项目其实非常简单。这是一个使用Xcode创建新项目的基本过程：
+
+```Swift 
+// 打开Xcode ->点击 "Create new Xcode project"
+// 选择 "App" ->点击 "Next"
+// 为项目命名，并选择适合的Team和Organization Identifier
+// 选择在硬盘的哪个位置保存新项目 ->点击 "Create"
 ```
-Swift 
-```
 
-程式碼塊中的程式碼是用於示範如何開始一個新項目的。首先，您需要使用```Swift```關鍵字來定義一個新的Swift程式碼專案。然後，您可以使用```print()```函式來顯示一些文字。最後，編譯並運行您的程式碼，您將在控制台中看到您的文字輸出。
+这样，一个新的Swift项目就创建好了！
 
-## 深入探討：
+## 深入研究：
 
-開始一個新項目可以讓程序員收穫許多好處。首先，它能幫助程序員學習新的技術並提高他們的技能。其次，它能讓程序員擁有更多的自由度，因為他們可以自由決定如何設計和實現他們的項目。另外，開始一個新項目還可以讓程序員保持對程式碼的熱情和興趣，並保持學習和成長的動力。
+当我们在谈论创建一个新的Swift项目时，我们实际上参考的是Swift语言的历史背景。Swift是由苹果在2014年创立的，它旨在有助于开发者更快捷、更易于编写代码。
 
-如果您想了解更多關於Swift程式碼專案的歷史背景，請參考以下相關資源。
+实际上，你也可以选择使用命令行来创建新项目，只需在终端输入`swift package init --type executable`即可。但是，使用Xcode的主要优势在于它提供了一个全面的开发环境，包括编码、测试和排错工具。
 
-## 參考資源：
+实现新项目的关键在于适当的项目管理。一个好的开始是定义清楚的版本和依赖关系，以便在团队中共享代码时避免混淆。
 
-- [Swift 官方網站](https://swift.org/)
-- [Swift 程式語言介紹](https://www.appcoda.com.tw/swift-introduction/)
-- [Swift 程式語言歷史](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/AboutTheSwiftLanguage/AboutTheSwiftLanguage.html)
+## 参考资料：
+
+1. [学习Swift](https://developer.apple.com/documentation/swift)
+2. [设置新的Xcode项目](https://help.apple.com/xcode/mac/current/#/dev5a8256ff1)
+3. [Swift历史背景](https://en.wikipedia.org/wiki/Swift_(programming_language))

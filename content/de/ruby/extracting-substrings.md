@@ -1,7 +1,7 @@
 ---
-title:                "Extrahieren von Teilstücken"
-html_title:           "Ruby: Extrahieren von Teilstücken"
-simple_title:         "Extrahieren von Teilstücken"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,44 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Wenn du schon eine Weile programmierst, hast du sicher schon öfter Substrings gehört. Es ist einfach ein Teil eines String, der einen Teil der ursprünglichen Zeichenkette beinhaltet. Das kann sehr hilfreich sein, um bestimmte Daten aus einem String zu extrahieren oder um Strings zu durchsuchen. Substrings sind eine grundlegende Funktion in vielen Programmiersprachen, einschließlich Ruby, und werden häufig in der Praxis verwendet.
 
-## Wie geht's?
-Substrings können auf verschiedene Arten in Ruby extrahiert werden. Die einfachste Methode ist die Verwendung von Indizes innerhalb eckigen Klammern ```[start, length]```, wobei ```start``` der Index des ersten Zeichens und ```length``` die Anzahl der zu extrahierenden Zeichen ist. Ein Beispiel dafür wäre:
+Substring Extraktion ist der Vorgang, bei dem ein Teilstring aus einem größeren String herausgeholt wird. Das ist nützlich, um spezifische Daten oder Muster innerhalb eines Texts zu isolieren.
 
-```Ruby
-str = "Hallo Welt!"
-puts str[3, 4]
-
-# Output: lo W
-```
-
-Du kannst auch negative Indizes verwenden, um von hinten zu zählen. Zum Beispiel:
+## Wie macht man das?
 
 ```Ruby
-str = "Hallo Welt!"
-puts str[-5, 2]
-
-# Output: We
+text = "Hallo, Welt!"
+substring = text[7,5]
+puts substring
+```
+Output:
+```Ruby
+Welt!
 ```
 
-Eine andere Methode ist die Verwendung von Regulären Ausdrücken, auch bekannt als Regex. Mit Regex kannst du nach bestimmten Mustern in einem String suchen und Substrings basierend auf diesen Mustern extrahieren. Zum Beispiel:
+Eine andere Methode ist `.slice()`. 
 
 ```Ruby
-str = "Hallo Welt!"
-puts str[/e.*t/]
-
-# Output: elt
+text = "Ich liebe Ruby!"
+substring = text.slice(7,4)
+puts substring
 ```
+Output:
+```Ruby
+Ruby
+```
+## Vertiefung
 
-Weitere nützliche Methoden zum Extrahieren von Substrings sind ```slice```, ```slice!```, ```substring``` und ```split```. Sie alle bieten verschiedene Möglichkeiten, um Substrings zu extrahieren und zu manipulieren.
+Die Substring-Extraktion gibt es schon seit den frühen Tagen der Programmiersprachen. In Ruby gibt es mehrere Methoden, um Substrings zu extrahieren, einschließlich `slice()`, `[]` und `slice!()`. Es sei zu beachten, dass `slice!()` das Original verändert, indem es den extrahierten Substring entfernt.
 
-## Tiefgehende Einblicke
-Substrings haben ihren Ursprung in der Informatik und sind eine grundlegende Funktion von Programmiersprachen. Sie wurden entwickelt, um Datenverarbeitungsaufgaben wie Textverarbeitung und Suchalgorithmen zu erleichtern. Eine der Alternativen zu Substrings ist die Verwendung von regulären Ausdrücken, wie bereits erwähnt. Diese können jedoch komplexer und schwieriger zu lesen und zu verstehen sein.
+Alternative Methoden sind die Verwendung von regulären Ausdrücken, um spezifischere oder komplexere Muster zu extrahieren.
 
-Die Implementierung von Substrings in Ruby basiert auf der Ruby-Bibliothek String, die verschiedene Methoden zur Manipulation von Zeichenketten bietet. Ruby ermöglicht es auch, benutzerdefinierte Methoden für Strings zu erstellen, um Substrings auf spezifischere Weise zu extrahieren.
+Der Ruby Interpreter extrahiert Substrings, indem er den Index jedes Zeichens in einem String als Ausgangspunkt verwendet. Er zählt dann die Anzahl der folgenden Zeichen, die sich aus der angegebenen Länge ergeben.
 
 ## Siehe auch
-- [Ruby String Documentation](https://ruby-doc.org/core-3.0.1/String.html)
-- [Regular Expressions in Ruby](https://www.regular-expressions.info/ruby.html)
-- [Ruby String Manipulation Tutorial](https://www.rubyguides.com/2018/02/ruby-string-methods/)
+
+Ruby-Dokumentation zu `slice()`: https://ruby-doc.org/core-2.7.0/String.html#method-i-slice
+
+Ruby-Dokumentation zu `[]`: https://ruby-doc.org/core-2.7.0/String.html#method-i-5B-5D
+
+Einführung zu regulären Ausdrücken in Ruby: https://ruby-doc.org/core-2.5.1/Regexp.html

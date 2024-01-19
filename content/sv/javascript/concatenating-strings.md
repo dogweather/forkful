@@ -1,7 +1,7 @@
 ---
-title:                "Sammanfogande av strängar"
-html_title:           "Javascript: Sammanfogande av strängar"
-simple_title:         "Sammanfogande av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,32 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+# Sammansättning av strängar med JavaScript
+### Översättning till svenska och innehåll som är relevant för svenska läsare.
 
-Konkatenering av strängar är en vanlig teknik inom programmering där man kombinerar flera individuella strängar till en enda sträng. Detta görs oftast för att skapa en mer läsbar och användbar sträng, till exempel för att skriva ut text på en webbsida eller för att skicka meddelanden till användare.
+## Vad & Varför?
+Sammansättning av strängar är det sätt som vi lägger samman två eller flera strängar till en. Varför gör vi det? För att snabbt och enkelt skapa nya strängar från redan befintliga bitar av information.
 
 ## Så här gör du:
+Nu över till koden. Här är några exempel på hur du kan använda JavaScript för att sätta samman strängar:
 
 ```Javascript
-// Skapa två variabler med strängar
-var namn = "Anna";
-var hälsning = "Hej!";
-
-// Kombinera strängarna med hjälp av + operatorn
-var meddelande = namn + " " + hälsning;
-
-// Skriv ut resultatet
-console.log(meddelande); // Utmatning: "Anna Hej!"
+    var hej = "God morgon";
+    var namn = " Bob";
+    var hälsning = hej + namn;
+    console.log(hälsning);
 ```
 
-## Djupdykning:
+Resultatet blir "God morgon Bob".
 
-Konkatenering av strängar har funnits sedan de tidiga dagarna av programmering, då man använde en metod som kallades för "string interpolation". Detta involverade att man manuellt placerade samman individuella strängar och mellanslag för att skapa en komplett sträng. Idag finns det dock många moderna metoder i språk som Javascript som gör konkatenering enklare och mer effektiv.
+Ett annat sätt är att använda `concat()` metoden:
 
-En annan alternativ metod för att kombinera strängar är template literals, som introducerades i ES6. Istället för att använda + operatorn, kan man använda backticks och variabelnamn inuti strängen för att dynamiskt bygga en sträng.
+```Javascript
+    var hej = "God morgon";
+    var namn = "Bob";
+    var hälsning = hej.concat(namn);
+    console.log(hälsning);
+```
 
-När det gäller implementation så är Javascript en dynamiskt typat språk, vilket innebär att man inte behöver specificera datatyp för variabler. Det betyder att man kan konkatenera strängar med andra datatyper, som nummer eller booleska värden, utan problem.
+Resultatet blir också "God morgonBob".
 
-## Se också:
+Och det senaste sättet, med hjälp av `Template literals`:
 
-Mer information och exempel på konkatenering av strängar i Javascript: https://www.w3schools.com/jsref/jsref_concat_string.asp
+```Javascript 
+    var hej = "God morgon";
+    var namn = "Bob";
+    var hälsning = `${hej} ${namn}`;
+    console.log(hälsning);
+```
+
+Resultatet blir "God morgon Bob".
+
+## Djupdykning
+Förenklat sagt, sammansättning av strängar har varit en del av JavaScript sedan det första lanserades som LiveScript 1995. Men metoder för att åstadkomma det har utvecklats över åren. Till exempel, `concat()` metoden, `+` operatorn och `Template literals`.
+
+När det gäller alternativ finns det andra programmeringsspråk som också erbjuder funktioner för strängsammansättning, till exempel Python med sin format-metod och C# med sin `StringBuilder` klass.
+
+När det kommer till implementationen, när vi sätter samman strängar med `+` operatorn eller `concat()` metoden, skapar JavaScript egentligen nya strängar eftersom strängar i JavaScript är oföränderliga. Men när vi använder `Template literals`, bygger JavaScript egentligen en enda sträng utifrån de givna literals och uttrycken.
+
+## Se Även
+- [MDN Web Docs: String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#string_operators)
+- [JavaScript.info: String concatenation](https://javascript.info/string#string-concatenation-binary-plus)
+- [Stack Overflow: JavaScript string concatenation and performance](https://stackoverflow.com/questions/7299010/why-is-string-concatenation-faster-than-array-join)

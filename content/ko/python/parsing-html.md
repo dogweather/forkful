@@ -1,6 +1,6 @@
 ---
 title:                "HTML 파싱"
-html_title:           "Python: HTML 파싱"
+html_title:           "Fish Shell: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Python"
 category:             "Python"
@@ -10,58 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 파이썬에서 HTML 파싱하기
+## 무엇과 왜?
 
-## What & Why?
-HTML 파싱이란 무엇인가요?
-HTML 파싱은 웹 페이지에서 정보를 추출하거나 내용을 분석하기 위해 사용되는 프로세스를 말합니다. 이를 통해 우리는 웹 페이지의 텍스트, 링크, 이미지 등을 쉽게 분석하고 추출할 수 있습니다.
+HTML 파싱이란, 웹 페이지 즉 HTML 문서의 구조를 분석하는 것을 말합니다. 프로그래머들이 이 작업을 수행하려하는 이유는 웹 상에서 데이터를 쉽고 빠르게 가져오기 위함입니다.
 
-왜 프로그래머들은 이를 사용할까요?
-웹 스크래핑, 데이터 마이닝, 정보 추출 등과 같은 다양한 목적으로 사용될 수 있기 때문입니다. 예를 들어, 웹 스크래핑을 통해 수많은 웹 페이지에서 가격 정보를 추출할 수 있어서 경쟁 업체의 가격 변동을 쉽게 파악할 수 있습니다.
+## 실습 방법:
 
-## How to:
-```python
-# requests 모듈 import
+Python에서는 `BeautifulSoup` 라이브러리를 이용해 HTML을 쉽게 파싱할 수 있습니다. 간단한 예제를 보겠습니다.
+
+```Python
+from bs4 import BeautifulSoup
 import requests
 
-# requests를 사용해 웹 페이지 불러오기
-res = requests.get("https://www.example.com")
+# 웹 사이트 HTML 가져오기
+response = requests.get('https://www.example.com')
+html_content = response.text
 
-# BeautifulSoup 모듈 import
-from bs4 import BeautifulSoup
+# BeautifulSoup 객체 생성
+soup = BeautifulSoup(html_content, 'html.parser')
 
-# BeautifulSoup을 사용해 HTML 파싱하기
-soup = BeautifulSoup(res.text, "html.parser")
-
-# CSS Selector를 이용해 원하는 HTML 태그 추출하기
-title = soup.select_one("h1")
-
-# 추출한 태그의 내용 출력하기
-print(title.text)
-
-# 여러 개의 태그 추출하기
-links = soup.select("a")
-
-# 추출한 태그들의 링크 출력하기
-for link in links:
-    print(link.get("href"))
+# HTML 파싱
+tag = soup.find('h1')
+print(tag.text)
 ```
 
-## Deep Dive:
-HTML 파싱의 역사적 배경은 어떻게 되나요?
-1990년대에 웹 페이지가 등장하면서 전통적인 데이터 추출 방식은 더 이상 사용할 수 없게 되었습니다. 따라서, HTML 파싱 기술이 발전하며 새로운 방식의 데이터 추출이 가능하게 되었습니다.
+위 예제의 결과는 웹 사이트 `www.example.com`의 `h1` 태그 내용을 출력하게 될 것입니다.
 
-대안으로 어떤 것들이 있을까요?
-HTML 파싱은 많은 대안들이 존재합니다. Beautiful Soup, lxml, PyQuery 등과 같은 파이썬 라이브러리를 사용하는 것도 일반적인 방법입니다. 또한 정규 표현식을 사용해서도 HTML 파싱이 가능합니다.
+## 깊이 들어가보기:
 
-HTML 파싱의 구현 방법은 어떻게 되나요?
-HTML 파싱은 주로 CSS Selector, XPath 등의 기술을 사용합니다. 이러한 기술들을 사용하면 웹 페이지의 특정 부분을 선택하고 추출할 수 있습니다. 또한, 정규 표현식을 사용하여 추출하거나, 검색 엔진과 같은 기술을 이용해서도 구현할 수 있습니다.
+HTML 파싱은 웹 스크래핑의 핵심이며, 초기 인터넷 붐의 시기인 1990년대부터 사용되어 왔습니다. Python에서는 `BeautifulSoup` 외에도 `lxml`이나 `html.parser` 등 다른 라이브러리를 이용해 HTML 파싱을 할 수 있습니다.
 
-## See Also:
-- [Python requests](https://requests.readthedocs.io/en/master/)
-- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [lxml](https://lxml.de/)
-- [PyQuery](https://pythonhosted.org/pyquery/)
-- [정규 표현식](https://docs.python.org/ko/3.9/library/re.html)
-- [CSS Selector](https://www.w3schools.com/cssref/css_selectors.asp)
-- [XPath](https://www.w3schools.com/xml/xpath_intro.asp)
+`BeautifulSoup`는 구조화되지 않은 HTML 및 XML 파일을 구조화하여 파싱하는 데 있어 직관적이고 편리해 넓게 사용되고 있습니다. `lxml`은 속도가 빠르다는 장점이 있지만, `BeautifulSoup`보다 사용하기 어려운 편입니다.
+
+## 추천하는 자료:
+
+아래 자료들을 참조하면 파이썬을 이용한 HTML 파싱에 대해 더 깊게 이해하실 수 있습니다.
+
+1. BeautifulSoup 공식 문서: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+2. lxml 공식 문서: https://lxml.de/
+3. Python 공식 문서 - HTML 파싱 모듈: https://docs.python.org/3/library/html.parser.html
+4. Real Python - Practical Introduction to Web Scraping in Python: https://realpython.com/python-web-scraping-practical-introduction/

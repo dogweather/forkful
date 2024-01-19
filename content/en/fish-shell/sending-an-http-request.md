@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "Fish Shell recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,25 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Interactive Studio: Programming with Fish Shell - Sending HTTP Requests
+
 ## What & Why?
-Sending an HTTP request is a way for a computer program to communicate with another program or server over the internet. Programmers use this to retrieve data, make changes, or perform other actions on a remote server or web application.
+Sending an HTTP request is your means of asking a web server to give you stuff (document, image, video, etc.). Knowing how to do it is a must for any programmer, as it allows you to interact with APIs, collect data from websites, and submit data to online databases.
 
 ## How to:
-To send an HTTP request in Fish Shell, you can use the `curl` command. Here's an example of making a GET request to an API and saving the response to a variable named `response`:
-```
-set response (curl https://api.example.com)
-```
-You can then use this variable to access the data returned by the API. For example, to get the status code of the response:
-```
-echo $response_status
-```
+Here's a simple way to send a GET request using curl in Fish shell:
 
-## Deep Dive:
-HTTP requests have been around since the early days of the internet, and are a fundamental part of how web applications and services communicate with each other. In addition to `curl`, there are other tools and libraries that can be used to send HTTP requests in Fish Shell, such as `wget` and the `httpie` library. These tools offer different features and syntax, so it's worth exploring them to find the best fit for your use case.
+```Fish Shell
+curl https://example.com
+```
+Resulting data will be spat out right into your terminal.
 
-Sending an HTTP request involves several steps, including establishing a connection, sending the request, and receiving and parsing the response. There are different types of HTTP requests, such as GET, POST, PUT, and DELETE, each serving a different purpose.
+To send a POST request with some data:
 
-## See Also:
-- [Curl Official Documentation](https://curl.se/docs/)
-- [HTTP Requests with Wget](https://www.gnu.org/software/wget/manual/html_node/HTTP-Options.html)
-- [HTTPie Library Documentation](https://httpie.io/docs)
+```Fish Shell
+curl -X POST -d "name=fish&color=blue" https://example.com
+```
+This sends a 'name' and 'color' to the example.com server. Look out for JSON or XML data in response.
+
+## Deep Dive
+The `curl` command dates back to 1996. It's a Swiss Army knife for transferring data with URLs - making it a perfect tool for us. 
+
+Fish shell runs `curl` just like any other Unix-like terminal. You have alternatives like `wget` for downloading or `httpie` for prettified, colorized HTTP traffic. They differ in syntax and functionality, but the essence - sending an HTTP request from terminal - stays the same.
+
+## See Also
+Explore more with:
+- Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- cURL: [https://curl.se/](https://curl.se/)
+- HTTPie: [https://httpie.io/](https://httpie.io/)
+- Beginners guide to HTTP: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+
+Go on and flex those Fish fins in the vast sea of web data!

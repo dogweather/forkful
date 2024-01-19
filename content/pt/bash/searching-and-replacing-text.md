@@ -1,7 +1,7 @@
 ---
-title:                "Buscando e substituindo texto"
-html_title:           "Bash: Buscando e substituindo texto"
-simple_title:         "Buscando e substituindo texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,33 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
 ## O que & Por quê?
 
-"Buscar e substituir" é uma função comum entre os programadores que permite alterar texto em um arquivo ou documento. Isso pode ser útil para fazer correções rápidas em um código ou para substituir uma palavra ou trecho em várias linhas de uma só vez. É uma maneira eficiente de fazer alterações em grande escala em um arquivo.
+Pesquisar e substituir texto refere-se a localizar um texto específico (string) e trocá-lo. É uma operação comum para qualquer programador, seja para modificar código, corrigir erros ou processar dados.
+
+---
 
 ## Como fazer:
 
-Para buscar e substituir texto em Bash, você pode usar o comando "sed". Aqui está um exemplo simples:
+No Bash, utilizamos `sed` para pesquisar e substituir texto. Aqui está um exemplo simples:
 
 ```Bash
-sed 's/velha/nova/g' arquivo.txt
+echo "Olá, mundo!" | sed 's/mundo!/Programação Bash/g'
 ```
 
-Este comando irá substituir a palavra "velha" por "nova" em todo o arquivo "arquivo.txt". O "g" no final indica que a substituição deve ser feita em todas as ocorrências da palavra no arquivo.
-
-Você também pode usar expressões regulares para fazer substituições mais complexas. Por exemplo, para substituir todas as letras maiúsculas por minúsculas, você pode usar o seguinte comando:
+O seguinte é impresso na tela: 
 
 ```Bash
-sed 's/[A-Z]/[a-z]/g' arquivo.txt
+Olá, Programação Bash!
 ```
 
-Este comando usaria uma expressão regular para identificar todas as letras maiúsculas e substituí-las por letras minúsculas. Isso pode ser útil para padronizar o texto em um arquivo.
+Nesse exemplo, `sed 's/mundo!/Programação Bash/g'` localiza 'mundo!' e substitui por 'Programação Bash'.
 
-## Profundidade:
+---
 
-[Buscar e substituir] tem sido uma função essencial para programadores por décadas. Existe desde a criação do editor de texto "ed" em 1971. Além do comando "sed", existem outras ferramentas que podem ser usadas para buscar e substituir texto em Bash, como "awk" e "grep". Cada uma dessas ferramentas tem suas próprias funcionalidades e é importante entender suas diferenças para escolher a ferramenta certa para cada situação.
+## Mergulho profundo:
+
+1. **Contexto histórico:** `sed` é uma ferramenta de edição de fluxos que tem sido uma parte essencial do Unix desde os primórdios do sistema operacional.
+2. **Alternativas:** Existem várias alternativas ao `sed`, tais como `awk`, `perl`, `python`, etc. Todos tem suas próprias vantagens dependendo do fluxo de trabalho.
+3. **Detalhes de implementação:** `sed 's/pesquisa/substituição/g'` usa expressões regulares para pesquisar o texto. A letra 'g' no final é para substituir globalmente todos as ocorrências no texto.
+
+---
 
 ## Veja também:
 
-- [Artigo sobre "sed" no Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html)
-- [Documentação sobre expressões regulares em Bash](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html#Pattern-Matching)
+* [Tutorial sed em Português](http://aurelio.net/sed/)
+* [Manipulação de strings no Bash](https://www.cyberciti.biz/faq/unix-linux-bash-remove-string/)
+* [Referência de expressões regulares para sed](https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html)

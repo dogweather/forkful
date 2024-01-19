@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "C#: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "C#"
 category:             "C#"
@@ -10,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why? 「何をするのか」
+## 何となぜ？
 
-検索と置換は、テキストの特定の部分を見つけて、別のテキストに置き換えることです。これは、プログラマーがコードやファイル内の特定の単語やパターンを素早く見つけて変更できるようにするために行われます。
+検索と置換は、コード内の特定のテキストを見つけて新しいテキストで置き換えるプログラミングの一部です。この操作は、誤字の修正、特定の語彙の統一、またはコードのリファクタリングに便利です。
 
-## How to: 「やり方」
+## 方法
 
-検索と置換は、C#で簡単に実装することができます。まず、次のように「Regex.Replace」メソッドを使用して、テキスト内の特定の単語を別の単語に置き換えます。
-
-```C#
-string text = "今日は晴れです";
-string newText = Regex.Replace(text, "晴れ", "雨");
-// newTextは「今日は雨です」になります
-```
-
-また、正規表現を使用して、テキスト内のパターンを置き換えることもできます。次の例では、パターン「\d\d\d\d」（４つの数字）を見つけて、置き換えます。
+この例では "Hello world" という文字列から "world" を "Japan" に置換します. 
 
 ```C#
-string text = "私の電話番号は1234-5678です";
-string newText = Regex.Replace(text, @"\d\d\d\d", "1111");
-// newTextは「私の電話番号は1111-5678です」になります
+string text = "Hello world";
+string searchText = "world";
+string replaceText = "Japan";
+
+string newText = text.Replace(searchText, replaceText);
+Console.WriteLine(newText);
+```
+このコードを実行すると、結果は "Hello Japan" になります。
+
+## 詳細
+
+**歴史的な文脈:** 比較的単純な操作だが, プログラミングの対話形式やXML プロセッサー, データベースのクエリ言語などの多くのコンテキストで使われてきました.
+
+**代替:** `Regex.Replace` メソッドは、正規表現を使用して複雑な検索と置換を行う場合の代替手段として存在します. 
+
+```C#
+string pattern = @"\bworld\b";
+string input = "Hello world";
+string replaceWith = "Japan";
+string result = Regex.Replace(input, pattern, replaceWith);
+Console.WriteLine(result);
 ```
 
-## Deep Dive 「深堀り」
+**実装の詳細:** 'Replace'はC#言語の内部で達成されます. メモリに新しい文字列のスペースを割り当て、古い文字列を新しい空間にコピーし、特定のテキストを新しいテキストで置き換えます.
 
-検索と置換は、テキスト処理における基本的な操作です。これらは、テキストエディタやプログラムの内部で使用されることがあります。また、正規表現を使用することで、さらに柔軟な検索と置換が可能になります。
+## 関連リンク
 
-代替手段としては、テキストエディタやコマンドラインツールでの検索と置換機能があります。ただし、プログラム内で行うことで、より高度な処理が可能になります。
-
-C#で検索と置換を行うには、正規表現の知識が必要です。正規表現は、パターンマッチングにおいて非常に強力なツールであり、他の言語やプログラムでも使用することができます。
-
-## See Also 「参考」
-
-- [C#で正規表現を使用した検索と置換の方法](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/how-to-search-strings-using-regular-expressions)
-- [正規表現の基礎を理解する](https://www.ibm.com/support/knowledgecenter/SSCP65_5.8.5/com.ibm.help.tspj_5.8.5.doc/SPJUG_Help/Regex_Asym_RegExIntro.html)
+- [Microsoft公式ドキュメント - String.Replace メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.replace?view=net-5.0)
+- [Microsoft公式ドキュメント - Regex.Replace メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)

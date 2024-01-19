@@ -1,7 +1,7 @@
 ---
-title:                "コマンドライン引数の読み込み"
-html_title:           "Rust: コマンドライン引数の読み込み"
-simple_title:         "コマンドライン引数の読み込み"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Bash: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,27 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？ 
-コマンドライン引数の読み取りとは、プログラマーがプログラムを実行する際にコマンドラインから入力された値を取得することです。プログラマーは、ユーザーからの入力によってプログラムの挙動を変えたり、パラメーターを設定するために、コマンドライン引数を使用します。
+## 何そして、なぜ？
+コマンドライン引数の読み取りは、プログラム起動時にユーザーからデータを受け取る手段です。プログラマーはコマンドラインオプションやファイル取り扱い、その他外部からインプットを受け取るために、これを使用します。
 
-## 方法： 
-Rustでコマンドライン引数を読み取る方法は簡単です。下記のコードを使用して、```cargo run``` コマンドを実行することで、コマンドライン引数をプログラムに渡すことができます。
+## やり方：
+Rustでは、コマンドライン引数を読み取るために std::env::args() 関数を利用します。
 
-```
-use std::env;
-
+```Rust
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    println!("コマンドライン引数は {} です", args[1]);
+    let args: Vec<String> = std::env::args().collect();
+
+    for arg in args {
+        println!("{}", arg);
+    }
 }
 ```
+これをコマンドラインで実行すると、引数は順序通りに印字されます。
 
-コマンドライン引数として「Hello World」と入力された場合、プログラムは ```コマンドライン引数は Hello World です```と出力します。
+```bash
+> cargo run arg1 arg2 arg3
+```
 
-## 詳しく見ていく 
-コマンドライン引数を読み取る機能は、プログラミング言語やプログラムによって異なります。Rustでは、標準ライブラリの ```env``` モジュールを使用して、コマンドライン引数を取得することができます。また、ライブラリやフレームワークを使用することで、より細かいオプションやユーティリティ機能を提供することもできます。
+出力:
 
-## 参考情報 
-Rustの ```env``` モジュールの詳細や使用方法については、公式ドキュメントを参照してください。また、他のプログラミング言語でも同様の機能を提供していることがありますので、興味があれば調べてみてください。
+```bash
+target/debug/rust_program
+arg1
+arg2
+arg3
+```
 
-公式ドキュメント：https://doc.rust-lang.org/std/env/index.html
+## ディープダイブ
+1. コマンドライン引数の概念は、Unixオペレーティングシステムの初期から存在しています。この概念は、多くのモダンプログラミング言語、Rustを含む、に引き継がれました。
+
+2. コマンドライン引数を読む為の代替手段として、ファイルや環境変数、ユーザーの直接のインタラクションなどが考えられます。
+
+3. Rustでは、コマンドライン引数はオペレーティングシステムからプログラムへと伝達されます。他のプログラムと同様に、Rustプログラムも0番目の引数として自身の名前を受け取ります。
+
+## 参考情報
+1. Official Rust Documentation: std::env::args: https://doc.rust-lang.org/std/env/fn.args.html
+2. The Rust Book: Command Line Programs: https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html
+3. Command Line Arguments in Rust: https://stevedonovan.github.io/rustifications/2018/09/08/common-command-line-arguments-in-rust.html

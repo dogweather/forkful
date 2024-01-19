@@ -1,7 +1,7 @@
 ---
-title:                "Tulostetaan debuggaus-tulosteita"
-html_title:           "Lua: Tulostetaan debuggaus-tulosteita"
-simple_title:         "Tulostetaan debuggaus-tulosteita"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+# Tulostus virheenjäljityksen: mitä, miksi, ja miten? Lua ohjelmoinnissa
 
-Tulostaminen debug-tulosteena on yksinkertainen tapa tarkistaa koodin suorittamisen vaiheita ohjelman aikana. Ohjelmoijat käyttävät sitä vianmäärityksen ja koodin toiminnan ymmärtämisen apuvälineenä.
+## Mitä ja Miksi?
+Virheenjäljityksen tulostus on keino nähdä ohjelman toiminta sen suorituksen aikana. Se on tärkeä, koska se tarjoaa yksityiskohtaisen kuvan siitä, mitä sovelluksesi tekee juuri nyt.
 
-# Miten:
-Esimerkki koodin tulostamisesta debug-tulosteena:
+## Kuinka?
+Käytämme `print()` funktiota tulostamaan virheenjäljityksen tulostuksen. Katso alla olevat esimerkit:
 
 ```Lua
-local luku = 10
-print("Debug-tulostus: Luku on", luku)
+-- Luodaan muuttuja
+local muuttuja = "Tämä on testi!"
+-- Tulostetaan muuttuja
+print(muuttuja)
 ```
-
-Esimerkin tulostus:
-
+Lähtö:
 ```
-Debug-tulostus: Luku on 10
+Tämä on testi!
 ```
+## Deep Dive
+Historiallisesti, tulostus on aina ollut olennainen osa virheenjäljitystä. Se on nopea ja tehokas tapa nähdä, mitä ohjelmasi tekee reaaliajassa.
+Vaihtoehtoinen lähestymistapa olisi käyttää debuggaaja, joka antaa enemmän hallintaa ja tietoa, mutta se voi olla ylimitoitettu yksinkertaisiin tarpeisiin.
 
-# Syväsukellus:
-## Historiallinen tausta:
-Debug-tulostamisella on pitkä historia ohjelmoinnissa. Ennen modernimpia työkaluja, kuten debuggereita, ohjelmoijat joutuivat turvautumaan tulostamaan koodin suoritusvaiheita ymmärtääkseen, missä kohtaa koodi ei toimi odotetusti.
+`print()` on yksinkertainen ja tehokas työkalu. Mutta on olemassa kehittyneempiä työkaluja kuten `io.write()` jos haluat suuremman määrän kontrolia.
 
-## Vaihtoehtoiset metodit:
-Debug-tulostamisen lisäksi ohjelmoijat voivat käyttää muita vianmääritystyökaluja, kuten debuggereita ja testausohjelmia, joista voi olla hyötyä monimutkaisemmissa tapauksissa.
-
-## Toteutus:
-Debug-tulostamisessa käytetään yleensä "print" -funktiota, joka tulostaa halutut tiedot ohjelman konsoliin tai muuhun määritettyyn paikkaan. Ohjelmoija asettaa tulostettavan tiedon haluamaansa kohtaan koodia ja suorittaessaan ohjelman, hän näkee tulosteen ja voi sen avulla tarkistaa koodin suoritusvaiheita.
-
-# Katso myös:
-- [Lua:n viralliset verkkosivut](https://www.lua.org/)
-- [Lua-kieliopas](https://www.tutorialspoint.com/lua/index.htm)
-- [Lua Debugger](https://studio.zerobrane.com/)
+## Katso myös
+Tutustu näihin linkkeihin saadaksesi lisätietoja:
+- Lua virallinen dokumentaatio: https://www.lua.org/docs.html
+- Debuggaus Lua -kirjastoissa: https://www.lua.org/pil/23.1.html
+- Kehittyneitä virheenjäljitystekniikoita: https://www.lua.org/pil/23.2.html

@@ -1,6 +1,6 @@
 ---
 title:                "Analysera html"
-html_title:           "TypeScript: Analysera html"
+html_title:           "Arduino: Analysera html"
 simple_title:         "Analysera html"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,37 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Parsing HTML (HTML-analys) är en process där man tar en HTML-kod och omvandlar den till en trädstruktur, vilket gör det möjligt att enklare manipulera och visa informationen från koden. Detta är en vanlig uppgift för webbutvecklare, eftersom det tillåter dem att skapa dynamiska webbsidor med hjälp av JavaScript.
+HTML-tolkning handlar om att läsa HTML-kod och omvandla den till ett formellt format, vilket ofta är ett objektträd. Programmerare gör det för att extrahera, analysera och manipulera webbinnehåll, och till och med skrapa webbplatser.
 
 ## Hur man gör:
+Följande är ett exempel på hur man tolkar HTML med Node.js och `jsdom` biblioteket i TypeScript:
 
 ```TypeScript
-const html = "<h1>Hello World</h1><p>This is a paragraph</p>";
+import { JSDOM } from 'jsdom';
 
-// Skapa en HTML-analysator
-const parser = new DOMParser();
+async function parseHTML(html: string) {
+   const dom = new JSDOM(html);
+   return dom;
+}
 
-// Konvertera HTML-koden till ett träd
-const doc = parser.parseFromString(html, "text/html");
-
-// Hämta alla element med taggen "p"
-const paragraphs = doc.getElementsByTagName("p");
-
-// Visa innehållet av det första elementet
-console.log(paragraphs[0].textContent);
-
-/* Output:
-   This is a paragraph
-*/
+const html = "<div>Hej Världen!</div>";
+parseHTML(html).then(dom => {
+  console.log(dom.window.document.querySelector("div").textContent);
+});
 ```
 
-## Djupdykning:
+När du kör denna kod, borde output vara:
 
-HTML parsering har funnits sedan början av webbens utveckling för att göra processen med att visa webbsidor mer effektiv. Det finns flera olika alternativ för att utföra HTML parsering, inklusive inbyggda funktioner i webbläsare och externa bibliotek. I TypeScript kan man använda DOMParser för att analysera HTML och sedan använda DOM-trädet för att manipulera eller visa elementen på en webbsida.
+```
+Hej Världen!
+```
 
-## Se även:
+## Djupdykning
+Historiskt sett har det funnits flera metoder för att tolka HTML, inklusive men långt ifrån begränsat till standard DOM-API: er och bibliotek som ``beautifulsoup`` (Python) och ``jquery`` (JavaScript). 
 
-- [DOMParser dokumentation](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [Bärklara HTML parser](https://github.com/taoqf/node-html-parser)
-- [Implementering av HTML parser i TypeScript](https://github.com/Microsoft/TSJS-lib-generator/blob/master/src/lib/dom.generated.d.ts#L10163)
+Ett alternativ till att använda ``jsdom`` är att använda cheerio-biblioteket, vilket kan ge bättre prestanda för server-side rendering men saknar förmågan att hantera JavaScript inuti HTML.
+
+När det gäller implementation, konverterar `jsdom` hela HTML-strängen till ett DOM-träd i minnet. Detta kan leda till stora minnesfotavtryck för stora HTML-dokument, så se upp för det.
+
+## Se även
+- JSDOM GitHub repo: [https://github.com/jsdom/jsdom](https://github.com/jsdom/jsdom)
+- Cheerio GitHub repo: [https://github.com/cheeriojs/cheerio](https://github.com/cheeriojs/cheerio)
+- HTML-parsing med Node.js: [https://nodejs.org/api/all.html#all_console_dir_obj_options](https://nodejs.org/api/all.html#all_console_dir_obj_options)

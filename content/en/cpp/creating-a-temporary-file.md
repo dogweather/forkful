@@ -1,6 +1,6 @@
 ---
 title:                "Creating a temporary file"
-html_title:           "C++ recipe: Creating a temporary file"
+html_title:           "C# recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "C++"
 category:             "C++"
@@ -12,41 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Creating a temporary file in programming refers to the process of generating a file that is used only temporarily to store data. Programmers often create temporary files to store intermediate data during their program execution, or to handle large amounts of data that cannot be easily stored in memory.
+Creating temporary files in C++ means generating files that hold data temporarily during your program’s execution. Useful for things like caching heavy computations or storing information between multiple application runs.
 
-## How to:
+## How To:
 
-Creating a temporary file in C++ is a simple process that involves using the standard library function ```tmpfile()```. This function creates a temporary file and returns a pointer to the file stream. The file is automatically deleted when the program terminates. See the example below:
+Luckily, the `<filesystem>` library in C++ contains functions for creating temporary files. Here’s a quick example:
 
 ```C++
-#include <stdio.h>
+#include <filesystem>
+#include <iostream>
+
 int main() {
-    FILE *fp = NULL;
-    fp = tmpfile();
-    if (fp == NULL) {
-        printf("Failed to create temporary file.");
-    }
-    else {
-        printf("Temporary file created successfully.");
-    }
+    std::filesystem::path tmpPath = std::filesystem::temp_directory_path();
+    tmpPath /= "tempFileXXXXXX";   // pattern for the temporary file name
+
+    char tmpName[] = "tempFileXXXXXX";
+    int fileDescriptor = mkstemp(tmpName);
+
+    std::cout << "Temporary file created: " << tmpName << std::endl;
+
+    close(fileDescriptor);  // Don't forget to close the file descriptor!
     return 0;
 }
 ```
-Output:
-```
-Temporary file created successfully.
-```
 
-## Deep Dive:
+This will create a file with a unique name in your system's temp directory.
 
-Creating temporary files dates back to the early days of computing when disk storage was limited and expensive. Temporary files were commonly used to store intermediate results of a program to increase efficiency. Now, with larger storage capacity, temporary files may not always be necessary, but are still used for a variety of reasons such as handling large data, sharing data between processes, and creating backups.
+## Deep Dive 
 
-Alternatives to creating a temporary file in C++ include using in-memory data structures, such as arrays or linked lists, to store temporary data. However, this approach can be limiting for handling large amounts of data. Another alternative is using pipes or sockets to share data between processes, but this requires additional coding and may not be as efficient as using temporary files.
+Historically, creating temporary files in C++ was not as easy. Before introducing the `<filesystem>` library, developers often had to write OS-specific code or employ third-party libraries. Having this functionality in standard C++ significantly simplifies things.
 
-The implementation of creating a temporary file in C++ varies depending on the operating system. On Unix-based systems, the temporary file is created in the ```/tmp``` directory, while on Windows, it is created in the current directory. Additionally, the operation of the temporary file might differ between operating systems, such as the automatic deletion of the file or the maximum size of the file.
+As an alternative, one might consider creating temporary files in RAM using a RAM disk. This is usually faster but consumes more memory. 
 
-## See Also:
+In our code, `mkstemp` generates a unique temporary file, replacing 'XXXXXX' in the file name with a unique string to ensure the file does not exist. The `fileDescriptor` returned can be used to interact with the file.
 
-- [C++ tmpfile() function](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-- [Alternatives to temporary files in C++](https://mixelblog.ru/en/blog/development/c-tutorials/temporary-files-cols-in-memory/)
-- [Creating temporary files in different operating systems](https://beej.us/guide/bgipc/output/html/multipage/pipeamp.html#glibc_notemp)
+## See Also
+
+For further knowledge:
+- [C++ Filesystem library](https://en.cppreference.com/w/cpp/filesystem)
+- [Using Temporary Files Securely](https://owasp.org/www-community/Using_Temporary_Files_Securely)
+- [C++ mkstemp function](http://www.cplusplus.com/reference/cstdlib/mkstemp/)

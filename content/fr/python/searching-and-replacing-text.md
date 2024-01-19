@@ -1,6 +1,6 @@
 ---
 title:                "Recherche et remplacement de texte"
-html_title:           "Python: Recherche et remplacement de texte"
+html_title:           "Arduino: Recherche et remplacement de texte"
 simple_title:         "Recherche et remplacement de texte"
 programming_language: "Python"
 category:             "Python"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & pourquoi ?
-Remplacer du texte est une tâche courante pour les programmeurs. Cela consiste à trouver un certain motif ou une chaîne de caractères dans un texte et à la remplacer par une autre chaîne de caractères. Les programmeurs le font pour automatiser les changements de texte dans leurs programmes et pour gagner du temps lors de la mise à jour de leur code.
+## Qu'est-ce que c'est et pourquoi?
+Chercher et remplacer du texte signifie trouver certaines chaînes de caractères dans un texte et les remplacer par d'autres. Les programmeurs le font pour manipuler des données, automatiser des tâches répétitives et nettoyer des chaînes de caractères.
 
-## Comment faire :
-Pour remplacer du texte en Python, il existe différentes méthodes dont la plus utilisée est la fonction `replace()`. Elle prend deux arguments, le motif ou la chaîne de caractères à remplacer et la nouvelle chaîne de caractères. Voici un exemple de code :
+## Comment faire:
+En Python, on utilise la méthode `replace()` pour chercher et remplacer du texte. Voici un exemple:
 
 ```Python
-my_string = "Hello World!"
-new_string = my_string.replace("World", "Universe")
-print(new_string)
+texte = "J'aime la pomme"
+nouveau_texte = texte.replace("pomme", "banane")
+print(nouveau_texte)
 ```
 
-Résultat :
-```
-Hello Universe!
-```
+La sortie serait: 'J'aime la banane'.
 
-Il existe également la méthode `sub()` du module `re` qui permet de remplacer du texte en utilisant des expressions régulières. Voici un exemple de code :
+## Approfondissement:
+Historiquement, chercher et remplacer du texte est une fonction fondamentale dans les éditeurs de texte depuis les années 70. En Python, le module `re` offre une alternative avec plus de flexibilité, permettant des recherches et remplacements basés sur des expressions régulières.
 
 ```Python
 import re
-
-my_string = "Hello 123!"
-new_string = re.sub(r"[0-9]+", "World", my_string)
-print(new_string)
+texte = "J'aime la pomme et la pomme"
+nouveau_texte = re.sub("pomme", "banane", texte)
+print(nouveau_texte)
 ```
 
-Résultat :
-```
-Hello World!
-```
+La sortie: 'J'aime la banane et la banane'.
 
-## Deep Dive :
-De nombreux langages de programmation offrent des moyens de rechercher et de remplacer du texte, mais certains sont plus performants que d'autres. Par exemple, l'utilisation d'expressions régulières en Python peut être plus complexe que dans d'autres langages, mais elle offre une grande flexibilité.
+Notez que `replace()` ne prend pas en compte les majuscules et minuscules alors que `re.sub()` peut le faire avec l'argument `re.IGNORECASE`.
 
-Pour les programmeurs débutants ou ceux qui souhaitent simplement effectuer des remplacements de base, la fonction `replace()` est généralement suffisante. Cependant, pour des besoins plus avancés, il peut être utile d'explorer les possibilités offertes par les expressions régulières.
-
-## Voir aussi :
-- La documentation officielle de Python sur la fonction `replace()` : https://docs.python.org/3/library/stdtypes.html#str.replace
-- La documentation officielle de Python sur le module `re` : https://docs.python.org/3/library/re.html
-- Un tutoriel sur les expressions régulières en Python : https://www.w3schools.com/python/python_regex.asp
+## Voir aussi:
+Pour plus d'informations sur la méthode `replace()`, consultez: https://docs.python.org/3/library/stdtypes.html#str.replace 
+Pour plus de détails sur `re.sub()`, visitez: https://docs.python.org/3/library/re.html#re.sub

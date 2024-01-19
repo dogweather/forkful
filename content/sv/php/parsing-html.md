@@ -1,7 +1,7 @@
 ---
-title:                "Att tolka html"
-html_title:           "PHP: Att tolka html"
-simple_title:         "Att tolka html"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,37 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att "parsa" HTML betyder att behandla HTML-kod för att extrahera och använda specifik information. Det är en vanlig praxis för programmerare när de arbetar med webbplatser eller applikationer, eftersom det gör det möjligt att få tag i specifika data från en webbsida för att sedan manipulera och presentera det på ett lämpligt sätt.
+## Vad & varför?
 
-## Hur man gör:
-Att parsning av HTML i PHP är ganska enkelt och kan utföras med hjälp av några inbyggda funktioner och metoder i PHP. Här är ett grundläggande exempel på hur man hämtar och skriver ut titlarna på länkar från en webbsida:
+Att tolka (parse) HTML handlar om att omvandla webbsidors HTML-kod till något mer användbart, ofta en datastruktur. Programmerare gör det vanligtvis för att extrahera viss data från webbsidor.
+
+## Hur gör man:
+
+Använd PHP's inbyggda DOMDocument-klass för att tolka HTML. Här är ett enkelt exempel:
 
 ```PHP
-<?php 
-$html = file_get_contents('https://www.sweden.se/'); // hämta HTML-kod från en webbsida
-$dom = new DOMDocument(); // skapa en DOMDocument för att få tillgång till HTML-elementen 
-$dom->loadHTML($html); // ladda in HTML-koden från webbsidan
-$anchors = $dom->getElementsByTagName('a'); // hämta alla <a> element
-foreach($anchors as $anchor) { // loopa igenom alla länkar
-  echo $anchor->getAttribute('title'); // skriv ut titeln på varje länk
-}
+<?php
+$dom = new DOMDocument;
+$dom->loadHTML('<html><body><p>Hej Värld!</p></body></html>');
+$p = $dom->getElementsByTagName('p');
+echo $p->item(0)->nodeValue;
 ?>
 ```
-**Resultat:**
-- "In A Class Of Its Own: Discovering English Schools In Sweden"
-- "How Sweden's Feminist Foreign Policy Is Changing The World"
-- "Nordens Lumsk: Mörkertid Och Monster"
-- "So Long Landfill: Zleep Hotels Want To Change The Hotel Industry"
-- "Join Us On A Trek Through Sweden's Autumn Wonderland"
-- "Midsummer Music Festival Goes Baltic — And Acoustic"
+När du kör koden ovan, kommer du att se denna output:
+
+```PHP
+Hej Värld!
+```
+Vår kod har tolkat HTML-strängen och utskrivit texten inom `<p>`-taggen.
 
 ## Djupdykning:
-Parsning av HTML-kod har funnits i många år och är en viktig del av webbutvecklingen. Det har också lett till utvecklingen av andra parsningstekniker, såsom regelbundna uttryck, för att lösa specifika problem eller göra parsningen mer effektiv.
 
-När det gäller implementation av parsning av HTML i PHP, finns det flera tredjepartsbibliotek som erbjuder mer avancerade funktioner och metoder för att underlätta parsningsprocessen. Ett exempel är PHP Simple HTML DOM Parser som ger enkla och intuitiva sätt att hämta data från en webbsida.
+Tolka HTML kan vara en komplex uppgift. Tillbaka på 90-talet, var HTML kode ännu inte noggrant standardiserat, vilket gjorde tolkning svår. PHP's DOMDocument, introducerad i PHP 5, följer W3C's Dokument Objek Modell (DOM), som skapades för att ta itu med dessa problem.
+
+Det finns också alternativ till DOMDocument för HTML-tolkning i PHP, som t.ex. Simple HTML DOM Parser och PHP’s inbyggda XML-Parser, men de är inte lika robusta.
+
+När det gäller implementering av HTML-tolkning, representerar DOMDocument HTML-dokumentet som ett trädstruktur av nod-objekt. Varje nod motsvarar en del av dokumentet, som till exempel ett specifikt element eller textbit.
 
 ## Se även:
-- [PHP Simple HTML DOM Parser](https://simplehtmldom.sourceforge.io/) - ett tredjepartsbibliotek för parsning av HTML i PHP
-- [Official PHP documentation for DOMDocument](https://www.php.net/manual/en/class.domdocument.php) - officiell dokumentation för PHP:s DOMDocument-klass som används för att hantera HTML-dokument
-- [Regular Expressions in PHP](https://www.php.net/manual/en/function.preg-match.php) - dokumentation för PHP:s inbyggda funktioner för regelbundna uttryck
+
+För mer information om att tolka HTML med PHP, rekommenderas följande källor:
+
+- PHP's officiella dokumentation för DOMDocument: [https://www.php.net/manual/en/class.domdocument.php](https://www.php.net/manual/en/class.domdocument.php)
+- Simple HTML DOM Parser: [https://simplehtmldom.sourceforge.io/](https://simplehtmldom.sourceforge.io/)

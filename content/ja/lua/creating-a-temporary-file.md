@@ -1,6 +1,6 @@
 ---
 title:                "一時ファイルの作成"
-html_title:           "Lua: 一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
 simple_title:         "一時ファイルの作成"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をやっているの？
-一時ファイルを作成するとは、一時的に保存するために使用されるファイルを作成することです。プログラマーは、一時ファイルを使用して、作業中のファイルをバックアップしたり、一時的なデータを保存したりすることができます。
+## 何？ そして、なぜ？
 
-## 方法：
-以下のように、```Lua ... ```コードブロック内にコーディング例とサンプルの出力を示します。
+一時ファイル作成は一時的なストレージ場所を作り出すプロセスです。プログラマーはデータを一時的に保存し、後で使用するためやデバッグ情報を出力するためにこれを行います。
 
-```lua
--- 一時ファイルを作成
-local tempFile = io.tmpfile()
-print(tempFile) --<userdata>
+## 実際にやってみよう:
 
--- 一時ファイルにデータを書き込む
-tempFile:write("This is a temporary file")
--- 一時ファイルを閉じる
-tempFile:close()
+以下にLuaで一時ファイルを作成し、それに書き込むサンプルコードを示します。
+```Lua
+os.execute("echo 'This is a temp file.' > tmp.txt")  --一時ファイル作成と書き込み
+local file = assert(io.open("tmp.txt", "r"))  --一時ファイルを開きます
+local content = file:read("*all")  --一時ファイルの内容を読み込みます
+file:close()  
+print(content)  --ファイルの内容を表示します
 ```
 
-## 深く掘り下げる：
-### 歴史的背景：
-一時ファイルは、プログラムが実行されている間のみ存在するファイルです。そのため、ファイルの管理を簡単にするために使用されてきました。
+このコードを実行すると次のような出力が得られます:
+```Lua
+This is a temp file.
+```
 
-### 代替手段：
-一時ファイルの作成には、```io.tmpfile()```を使用する方法以外にも、```os.tmpname()```や```os.tmpfile()```を使用する方法があります。
+## ディープダイブ：
 
-### 実装の詳細：
-一時ファイルは、オペレーティングシステムのテンポラリディレクトリに作成され、プログラムが終了すると自動的に削除されます。
+一時ファイルの作成は古くからのプログラミングのプラクティスです、デバッグ、一時的なデータの保存、大規模なデータセットの操作などで用いられます。
 
-## 関連情報：
-- [Luaユーザーズワイキー：一時ファイルを作成する方法](https://www.lua.org/pil/21.2.html)
-- [Luaリファレンスマニュアル：io.tmpfile()](https://www.lua.org/manual/5.3/manual.html#pdf-io.tmpfile)
-- [Luaリファレンスマニュアル：os.tmpname()](https://www.lua.org/manual/5.3/manual.html#pdf-os.tmpname)
-- [Luaリファレンスマニュアル：os.tmpfile()](https://www.lua.org/manual/5.3/manual.html#pdf-os.tmpfile)
+Luaではいくつかの代替方法も存在します。例えば、`os.tmpname`関数を利用して一時ファイルの名前を生成できます。
+
+一時ファイルの実装詳細については、多くはオペレーティングシステムに依存します。Lua自体はファイル作成方法については特に定めていませんが、一般的にはシステムの一時ファイルディレクトリ(`tmp`や`Temp`など)が使用されます。
+
+## 参考資料:
+
+- [Lua Manual: Input and output facilities](https://www.lua.org/manual/5.4/manual.html#6.8)
+- [Lua Users Wiki: File Input/Output](http://lua-users.org/wiki/FileInputOutput)

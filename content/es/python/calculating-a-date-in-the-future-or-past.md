@@ -1,7 +1,7 @@
 ---
-title:                "Calculando una fecha en el futuro o pasado"
-html_title:           "Python: Calculando una fecha en el futuro o pasado"
-simple_title:         "Calculando una fecha en el futuro o pasado"
+title:                "Calcular una fecha en el futuro o pasado"
+html_title:           "Python: Calcular una fecha en el futuro o pasado"
+simple_title:         "Calcular una fecha en el futuro o pasado"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,32 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Calcular una fecha en el pasado o en el futuro es una tarea común para los programadores, ya que a menudo necesitamos realizar operaciones con fechas para nuestras aplicaciones. Por ejemplo, podemos necesitar mostrar la fecha de cumplimiento de un evento o calcular la edad de un usuario.
+# ¿Qué y Por Qué?
 
-## Cómo:
-Para calcular una fecha en el futuro o en el pasado en Python, podemos usar el módulo datetime. Primero, debemos importar el módulo usando la palabra clave ```import``` y luego podemos usar la función ```date``` para crear un objeto de fecha con la fecha deseada. A continuación, podemos usar el método ```replace``` para cambiar el valor de la fecha y obtener la fecha deseada en el futuro o en el pasado. Aquí hay un ejemplo de cómo calcular la fecha de hoy menos 30 días:
+Calcular una fecha en el futuro o el pasado es simplemente agregar o quitar una cantidad de tiempo (generalmente días) a una fecha existente. Los programadores hacen esto para realizar programaciones, análisis de datos o para decidir cuándo debe ejecutarse cierto código.
+
+# Cómo Hacerlo
+A continuación, te muestro cómo calcular una fecha futura usando la biblioteca `datetime` en Python:
 
 ```Python
-import datetime
+from datetime import datetime, timedelta
 
-hoy = datetime.date.today()
-fecha_pasada = hoy.replace(day=hoy.day-30)
-print(fecha_pasada)
-```
-Output:
-```
-2020-04-07
+hoy = datetime.now()
+print('Hoy:', hoy)
+
+tres_dias_despues = hoy + timedelta(days=3)
+print('Tres días después:', tres_dias_despues)
 ```
 
-## Inmersión profunda:
-El cálculo de fechas es un problema común en la programación y ha sido una tarea importante durante décadas. Antes de que existieran los lenguajes de programación, la calidad de los calendarios era muy pobre y no había una forma estándar de representar las fechas. Sin embargo, con el advenimiento de los lenguajes de programación y la estandarización de la representación de fechas, el cálculo de fechas se ha vuelto más fácil y preciso.
+Y aquí está la salida de ejemplo:
 
-Existen otras formas de calcular una fecha en el futuro o en el pasado en Python, como usando el módulo ```timedelta```, el cual permite especificar una cantidad de tiempo para agregar o restar a una fecha. También hay módulos de terceros disponibles para cálculos más complejos de fechas.
+```Python
+Hoy: 2022-05-07 09:42:14.857688
+Tres días después: 2022-05-10 09:42:14.857688
+```
 
-En cuanto a la implementación, debemos tener en cuenta el formato en el que queremos mostrar la fecha, ya que puede variar según el país o la región. También debemos asegurarnos de manejar adecuadamente los años bisiestos y los diferentes calendarios utilizados en diferentes culturas.
+Y este es un ejemplo de cómo calcular una fecha en el pasado:
 
-## Ver también:
-- Documentación oficial de Python sobre el módulo datetime: https://docs.python.org/es/3/library/datetime.html
-- Módulo timedelta de Python:https://docs.python.org/es/3/library/datetime.html#timedelta-objects
-- Paquete dateutil de terceros para operaciones avanzadas con fechas: https://dateutil.readthedocs.io/en/stable/
+```Python
+tres_dias_antes = hoy - timedelta(days=3)
+print('Tres días antes:', tres_dias_antes)
+```
+
+# Buceo Profundo
+
+**Contexto histórico**: La capacidad de calcular fechas en el futuro o el pasado se incorporó a Python en la primera versión de la biblioteca `datetime` en 2003.
+
+**Alternativas**: Aparte de `datetime`, también puedes usar bibliotecas como `delorean`, `arrow`, `pendulum` y `Maya` que pueden realizar fácilmente cálculos de fechas.
+
+**Detalles de implementación**: `timedelta` es una clase que permite operaciones matemáticas con objetos `datetime`. Acepta parámetros como días, segundos, microsegundos, milisegundos, minutos, horas, semanas, y realiza cálculos en función de esos valores.
+
+# Ver También
+
+- Documentación oficial de Python `datetime`: https://docs.python.org/3/library/datetime.html
+- Guía de calculo de tiempo y fechas en Python: https://realpython.com/python-datetime/
+- Librerías alternativas para manejo de fechas y tiempo: 
+  - `delorean`: https://delorean.readthedocs.io/
+  - `arrow`: https://arrow.readthedocs.io/
+  - `pendulum`: https://pendulum.eustace.io/
+  -  `maya`: https://github.com/kennethreitz/maya.

@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "Rust: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+## Co i dlaczego? 
+Generowanie losowych liczb to proces tworzenia ciągu liczb, które są nieprzewidywalne i nie powtarzają się. Programiści robią to, aby zapewnić różnorodność danych, symulacje, gry, testy i więcej.
 
-Generowanie losowych liczb to proces, w którym komputer tworzy liczby bez żadnego określonego wzoru. Jest to niezwykle ważne dla programistów, ponieważ pozwala im na włączenie elementu losowości do swoich programów, co może być bardzo przydatne w wielu różnych zastosowaniach.
-
-# Jak to zrobić:
-
-```Rust
-use rand::{thread_rng, Rng};
+## Jak to zrobić:
+Aby wygenerować losową liczbę w Rust, musisz najpierw dodać zależność 'rand' do pliku Cargo.toml:
+```Rust 
+[dependencies]
+rand = "0.8.3"
+```
+Następnie możesz użyć funkcji `thread_rng().gen_range()` do wygenerowania losowej liczby:
+```Rust 
+use rand::Rng;
 
 fn main() {
-    let mut rng = thread_rng();
-    
-    let random_number: i32 = rng.gen();
-    println!("Random number: {}", random_number);
+    let num = rand::thread_rng().gen_range(1..101);
+    println!("Wylosowana liczba to: {}", num);
 }
 ```
+## Głębsze spojrzenie
+Początki generowania losowych liczb sięgają starożytności, kiedy ludzie rzucają kostkami do gier. W komputerach używamy algorytmów, takich jak Mersenne Twister albo algorytmu Xorshift, do generowania tych liczb.
 
-Typowy sposób generowania losowych liczb w języku Rust to użycie biblioteki `rand`. Musimy najpierw zaimportować ją do naszego programu za pomocą `use rand::{thread_rng, Rng};`. Następnie definiujemy zmienną `rng` za pomocą funkcji `thread_rng()`, która zapewnia dostęp do generatora liczb losowych. W przykładzie powyżej wykorzystujemy tę zmienną do wygenerowania jednej losowej liczby całkowitej i wyświetlenia jej.
+W Rust jest wiele alternatyw do 'rand', takich jak 'fastrand' czy 'oorandom'. Każdy z nich ma swoje atuty i wady, które należy rozważyć, zależnie od wymagań projektu. 
 
-# Głębsza analiza:
+Szczegóły implementacyjne 'rand' można znaleźć [tutaj](https://rust-random.github.io/book/guide-rngs.html). 
 
-Historia generowania losowych liczb jest ściśle związana z rozwojem matematyki. Jednym z pierwszych algorytmów do generowania liczb losowych był tzw. "twórca liczb losowych" zaprojektowany przez Johna von Neumanna. Obecnie istnieje wiele różnych algorytmów do generowania liczb losowych, w tym LCG (Linear Congruential Generator) i Mersenne Twister. W języku Rust biblioteka `rand` wykorzystuje algorytm Xorshift, który jest szybki i zapewnia dość losowe wyniki.
-
-Alternatywnym sposobem na generowanie liczb losowych jest użycie wartości zmiennych losowych, takich jak temperatura czy wilgotność. Należy jednak pamiętać, że te wartości nie są całkowicie losowe i mogą być przewidywalne.
-
-# Zobacz również:
-
-Jeśli chcesz dowiedzieć się więcej o generowaniu losowych liczb w języku Rust, polecamy zapoznać się z dokumentacją biblioteki `rand` oraz zacząć eksperymentować z różnymi algorytmami i ustawieniami. Możesz również zobaczyć, jak inne języki programowania obsługują generowanie liczb losowych i porównać je do Rust.
+## Zobacz również
+- Dokumentacja 'rand': [https://docs.rs/rand](https://docs.rs/rand)
+- Artykuł o generowaniu losowych liczb: [https://en.wikipedia.org/wiki/Random_number_generation](https://en.wikipedia.org/wiki/Random_number_generation)
+- Porównanie różnych bibliotek do generowania losowych liczb: [https://www.reddit.com/r/rust/comments/j5bthu/rand_vs_fastrand](https://www.reddit.com/r/rust/comments/j5bthu/rand_vs_fastrand)

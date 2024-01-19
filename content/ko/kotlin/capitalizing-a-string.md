@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "Kotlin: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열 대문자화"
+html_title:           "Kotlin: 문자열 대문자화"
+simple_title:         "문자열 대문자화"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,36 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뜻과 이유: 
-문자열을 대문자로 변환하는 것, 그리고 프로그래머들이 왜 이런 작업을 하는지에 대해 설명합니다.
+## 무엇이며 왜 사용합니까?
+문자열 대문자 변환은 모든 단어의 첫 글자를 대문자로 바꾸는 것을 의미합니다. 이를 통해 텍스트를 읽는 게 좀 더 용이해지며 간혹 특정 문법 규칙을 따르는 데도 사용됩니다.
 
-## 하는 법: 
-`Kotlin ...` 코드 블록 안에 코딩 예제와 샘플 출력을 제공합니다.
+## 어떻게 사용합니까?
+다음은 Kotlin에서 문자열의 첫 글자를 대문자로 변환하는 방법입니다.
 
+```Kotlin
+fun String.capitalizeWords(): String = split(" ").map { it.capitalize() }.joinToString(" ") 
+
+fun main() {
+  val text = "hello world"
+  println(text.capitalizeWords())  // 출력: Hello World
+}
 ```
-val string = "hello world"
-val capitalizedString = string.toUpperCase()
-println(capitalizedString)
+위의 코드는 각 단어의 첫 글자를 대문자로 변환하는 확장 함수를 정의하고 사용하는 예입니다.
 
-// Output:
-HELLO WORLD
-```
+## 깊게 알아보기
+- **역사 측면**: 문자열 대문자 변환은 프로그래밍 언어가 발명된 초기부터 사용되어 왔습니다. 특히, 더 잘 읽히고 이해하기 쉬운 코드를 작성하는 데 도움이 됩니다.
+- **대안**: `capitalize()` 함수 외에도 Kotlin은 첫 글자만 대문자로 바꾸는 `capitalizeFirstLetter()` 같은 다양한 함수를 제공합니다.
+- **구현 세부사항**: `capitalize()` 함수는 사실 내부적으로 첫 번째 문자를 대문자로 바꾸고 나머지 문자를 그대로 두는 `replaceFirstChar()` 함수를 사용해 구현됩니다.
 
-## 더 깊이 들어가보기: 
-문자열을 대문자로 변환하는 것의 역사적 배경, 대안, 그리고 구현 세부 사항 등에 대해 설명합니다.
-
-### 역사적 배경: 
-C 언어에서는 대문자와 소문자의 아스키 코드 값이 단지 32만큼 차이나기 때문에 소문자로 된 문자열을 매번 대문자로 변환하는 것은 간단한 작업이었습니다. 하지만 자바에서는 이를 좀 더 우아하게 처리할 수 있는 `toUpperCase()` 메소드를 제공하기 시작했습니다. 현재 Kotlin에서도 이를 지원하며, 보다 간단하고 효율적인 방법으로 문자열을 대문자로 변환할 수 있습니다.
-
-### 대안: 
-Kotlin에서는 문자열을 변환할 때 다양한 방법을 제공하고 있습니다. 대문자는 `toUpperCase()` 메소드를 사용하여 변환할 수 있고, 소문자는 `toLowerCase()` 메소드를 사용하여 변환할 수 있습니다. 또한, `capitalize()` 메소드를 사용하면 문자열의 첫 글자를 대문자로 변환할 수 있습니다. 이 외에도 정규식이나 비트 연산을 사용하여 문자열을 변환하는 방법이 있습니다.
-
-### 구현 세부 사항: 
-Kotlin에서 문자열을 대문자로 변환하는 방법은 내부적으로 유니코드를 사용합니다. 즉, 문자열의 각 문자를 대문자로 변환하는 것이 아니라, 유니코드 상에서 대문자에 해당하는 코드 포인트로 변경하여 문자열을 처리합니다. 이를 통해 다국어 문자열을 지원하는데 큰 장점이 있습니다.
-
-## 관련 자료: 
-문자열을 변환하는 방법에 대한 관련 정보를 아래 링크에서 확인할 수 있습니다.
-
-- [Kotlin 표준 라이브러리 문서: `toUpperCase()` 메소드](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
-- [Online Java Tutorials: `toUpperCase()` 메소드](https://www.javatpoint.com/java-string-touppercase)
-- [Java String 기본 메소드](https://www.w3schools.com/java/java_ref_string.asp)
+## 참고하기
+-[Kotlin Official Documentation on Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/): Kotlin 공식 문서에서 문자열에 대해 자세히 설명하고 있습니다.
+-[Kotlin String.capitalize()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html): 이 함수에 대한 Kotlin 공식 문서 링크입니다.

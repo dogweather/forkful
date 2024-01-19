@@ -1,6 +1,6 @@
 ---
 title:                "HTMLの解析"
-html_title:           "C: HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "C"
 category:             "C"
@@ -10,28 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何が必要であるか？
-HTMLのパースとは、HTMLコードから文書の構造を解析することです。プログラマーはこのような作業を行うことで、ウェブページのコンテンツを把握し、データを取得したり変更したりすることができます。
+# HTMLパージングの何となぜ？
+HTMLパーシングとは、HTML文書を解析しデータを抽出するプロセスのことです。プログラマはHTMLパージングを使用してウェブページから情報を引き出し、データ分析やwebクローリングの作業を可能にします。
 
-# 方法：
+# 方法:
+GitHubで公に利用できるGumboというライブラリを使ってHTMLのパーサを作りましょう。 Gumboは純粋なCライブラリで、Googleによってメンテナンスされています。以下にその一例を示します。
+
 ```C
 #include <stdio.h>
+#include <gumbo.h>
+#include <assert.h>
+
+static void search_for_links(GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
+    GumboAttribute* href;
+    if (node->v.element.tag == GUMBO_TAG_A &&
+        (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
+        printf("%s\n", href->value);
+    }
+
+    GumboVector* children = &node->v.element.children;
+    for (unsigned int i = 0; i < children->length; ++i) {
+        search_for_links(children->data[i]);
+    }
+}
 
 int main() {
-  // Your code here
-  return 0;
+    GumboOutput* output = gumbo_parse("<a href='http://example.com'>Hello, world!</a>");
+    search_for_links(output->root);
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    return 0;
 }
 ```
+これにより、「http://example.com」と出力されます。
 
-まず、HTMLコードを文字列として入力します。次に、解析したいデータを抽出するための適切な関数を使用します。最後に、抽出したデータを出力します。例えば、ウェブページのタイトルを抽出する場合は、<title>タグを見つける関数を使用し、それを出力します。
+# 深掘り:
+HTMLパーシングは、ユーザーがウェブサイトから必要な情報を取得できるようにするために発明されました。初期のパーサは独自の実装をしていましたが、代わりに標準化された方法でHTMLを解析するための新しいライブラリが開発されるようになりました。
 
-# 深く掘り下げる：
-HTMLのパースは、ウェブの発展とともに重要性を増してきました。以前は、静的なコンテンツしか存在しなかったため、HTMLのパースはあまり必要ありませんでした。しかし今日、ウェブは非常に動的であり、複雑なコンテンツも含まれています。そのため、HTMLのパースはより頻繁に行われるようになりました。
+HTMLパーシングの代替手段としては、JavaScriptやPythonなどの他の言語を使用する方法があります。これらの言語はHTMLを解析するために多くのライブラリを持っています。
 
-また、HTMLのパースには他の方法もあります。例えば、JavaScriptを使用することでウェブページのコンテンツを動的に変更することができます。しかし、C言語を使用することでより高速にパースすることが可能です。
+Gumboの実装では、トークンの抽出からDOMツリーの生成までが行われます。これにより、フロントエンドとバックエンド両方で利用できるデータ構造が生成されます。
 
-HTMLのパースでは、タグの構造や属性などの詳細についても理解する必要があります。そのため、ウェブの技術を学ぶ上で重要なスキルとなります。
-
-# 参考：
-- [HTML Parsing in C](https://www.w3schools.in/c-tutorial/html-parsing/)
-- [Parsing HTML with C](https://stackoverflow.com/questions/448981/parsing-html-with-c)
+# 参考資料:
+- Gumbo GitHubリポジトリ: https://github.com/google/gumbo-parser
+- PythonによるHTMLパーシング: https://docs.python.org/3/library/html.parser.html
+- JavaScriptによるHTMLパーシング: https://developer.mozilla.org/ja/docs/Web/API/DOMParser

@@ -1,7 +1,7 @@
 ---
-title:                "Webseite herunterladen"
-html_title:           "Lua: Webseite herunterladen"
-simple_title:         "Webseite herunterladen"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,40 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Herunterladen einer Webseite bezieht sich auf den Prozess des Abrufens und Speicherns von Dateien, die Teil einer bestimmten Webseite sind. Programmierer nutzen diesen Vorgang, um Inhalte aus dem Internet für ihre Anwendungen oder Programme zu extrahieren und zu verwenden.
 
-## Wie geht das?
-```
--- Hier ist ein Beispiel, wie man eine Webseite in Lua herunterladen kann:
-local http = require("socket.http")
-local body, code, headers = http.request("https://www.example.com")
+Das Herunterladen einer Webseite bedeutet, deren Inhalt auf Ihrem Rechner zu speichern. So testen Programmierer z.B. ihre Tools in einer kontrollierten Umgebung oder sammeln Daten für die Bearbeitung.
 
-print("HTTP Code: ", code)
-print("Headers:")
-for k, v in pairs(headers) do
-    print(k, v)
-end
-print("Body: ", body)
-```
-**Ausgabe:**
-```
-HTTP Code: 200 OK
-Headers:
-Content-Type    text/html; charset=UTF-8
-Content-Length  1254
-Date            Tue, 06 Apr 2021 12:00:00 GMT
-Server          Apache
-Connection      close
-Body: <html>
-<head>
-<title>Example Domain</title>
-...
+## So geht's:
+
+Mit Lua und der Bibliothek "luasocket" sowie dem Modul "http" kann man eine Webseite herunterladen:
+
+```Lua
+-- Pakete importieren
+http = require("socket.http")
+ltn12 = require("ltn12")
+
+-- Datei zum Speichern öffnen
+file = io.open("webInhalt.txt", "w")
+
+-- Anfrage, Seite herunterladen
+http.request{
+  url = "http://example.com",
+  sink = ltn12.sink.file(file)
+}
 ```
 
-## Tiefergehende Informationen
-Das Herunterladen von Webseiten ist seit den Anfängen des Internets ein wichtiger Bestandteil der Programmierung. Es gibt auch alternative Ansätze wie z.B. das Scraping von Inhalten oder API-Zugriffe. In Lua wird in der Regel die Bibliothek "socket.http" verwendet, um Webseiten herunterzuladen. Es ist auch möglich, externe Bibliotheken oder Frameworks zu verwenden, um den Prozess zu vereinfachen.
+Der Inhalt von "http://example.com" wird in "webInhalt.txt" gespeichert.
 
-## Weitere Quellen
-- Dokumentation zu socket.http: https://w3.impa.br/~diego/software/luasocket/http.html
-- Ein einfaches Web-Scraping-Beispiel mit Lua: https://stackoverflow.com/questions/60413538/lua-webscraping-fails-on-httpsi-cannot-load-the-webpage
-- Ein umfangreiches Framework für den Webzugriff in Lua: https://github.com/alua-dev/alua
+## Tiefere Einblicke
+
+Lua und Luasocket sind 1993 bzw. 2003 veröffentlicht worden. "luasocket" gilt als Standardnetzwerkbibliothek von Lua. Es bieten sich auch Alternativen wie "lua-http" oder "luacurl" an, je nach Anforderung und Umgebung.
+
+Das Herunterladen einer Webseite mit Lua besteht aus einer HTTP-Anfrage an den Server, welcher die Seite hostet. Diese Anfrage wird von der "http.request"-Funktion verarbeitet. Die Pufferung der Antwort, um sie in eine Datei zu schreiben, wird durch "ltn12.sink.file" geleistet.
+
+## Siehe auch
+
+Um Lua und das Web-Scraping besser zu verstehen, gibt es hilfreiche Quellen im Internet:
+
+Lua Handbuch: (https://www.lua.org/manual/5.4/) 
+
+Luasocket Dokumentation: (https://github.com/diegonehab/luasocket)
+
+Tutorial zu ltn12: (http://lua-users.org/wiki/FiltersSourcesAndSinks)

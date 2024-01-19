@@ -1,6 +1,6 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "TypeScript: 웹 페이지 다운로드하기"
+html_title:           "Arduino: 웹 페이지 다운로드하기"
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# TypeScript로 웹 페이지 다운로드하기
+
 ## 무엇 & 왜?
 
-웹 페이지를 다운로드한다는 것은 인터넷에서 특정 웹사이트의 데이터를 내 컴퓨터로 가져오는 것을 의미합니다. 이를 프로그래머들은 다양한 목적으로 사용할 수 있습니다. 예를 들어, 웹 페이지 데이터를 가공하여 다양한 시각화를 만들거나, 웹사이트 크롤링을 통해 데이터를 수집하는 등의 용도로 사용할 수 있습니다.
+웹 페이지를 다운로드한다는 것은, 웹 서버로부터 코드를 가져와 로컬에 저장하는 것입니다. 이를 통해 프로그래머들은 웹사이트의 구조를 분석하거나, 데이터를 수집하고, 자동화된 테스팅을 수행할 수 있습니다.
 
-## 하는 방법:
+## 어떻게 하는가:
 
-TypeScript를 사용하여 웹 페이지를 다운로드하는 방법을 살펴보겠습니다. 첫째로, HTTP 요청을 보내어 웹 페이지를 가져와야 합니다. 이를 위해서는 HTTP 라이브러리를 사용하거나, 더 간편한 Fetch API를 사용할 수 있습니다. 둘째로, 웹 페이지의 데이터를 가공하여 필요한 정보를 추출하거나 시각화할 수 있습니다. 아래는 TypeScript 코드 예시입니다.
+아래의 코드 블록은 Node.js 환경에서 `Axios` 라이브러리를 사용하여 웹 페이지를 다운로드하는 TypeScript 코드 예시입니다:
 
 ```TypeScript
-// HTTP 라이브러리를 사용하는 방법
-import * as http from 'http';
+import axios from 'axios';
+import fs from 'fs';
 
-http.get('https://www.example.com', (res) => {
-    let rawData = '';
+async function downloadPage(url: string, outputPath: string) {
+    const response = await axios.get(url);
+    fs.writeFileSync(outputPath, response.data);
+}
 
-    res.on('data', (chunk) => {
-        rawData += chunk;
-    });
-
-    res.on('end', () => {
-        console.log(rawData);
-        // 가져온 데이터를 가공할 수 있습니다. 
-    });
-});
-
-// Fetch API를 사용하는 방법
-fetch('https://www.example.com')
-    .then(response => response.text())
-    .then(text => console.log(text));
+downloadPage('https://example.com', 'example.html');
 ```
 
-## 더 파헤쳐보기:
+위 코드를 실행하면 `example.com` 웹 페이지의 HTML 코드가 `example.html` 파일로 저장됩니다.
 
-웹 페이지를 다운로드하는 방법은 간단하지만, 프로그래머들은 다양한 라이브러리와 API를 사용하여 좀 더 효율적으로 데이터를 처리할 수 있습니다. 예를 들어, Puppeteer 라이브러리는 웹 페이지를 렌더링하고 자바스크립트를 실행하여 JavaScript 코드로 웹 페이지를 스크래핑할 수 있습니다. 또한, Cheerio 라이브러리를 사용하여 jQuery 스타일의 선택자를 사용하여 DOM을 처리할 수도 있습니다. 웹 페이지 다운로드에 대해 더 깊이 알아보려면 아래 링크를 참고하세요.
+## 깊게 알아보기
 
-## 더 알아보기:
+웹 페이지를 다운로드하는 일은 웹의 초기 시절부터 일반적인 작업이었습니다. 원격 서버에 저장된 HTML 코드를 가져와 로컬에서 분석하거나 실행할 수 있기 때문입니다.
 
-- [Puppeteer 라이브러리](https://github.com/puppeteer/puppeteer)
-- [Cheerio 라이브러리](https://cheerio.js.org/)
+물론, 다른 방법들도 있습니다. `fetch API` 또는 `request`와 같은 라이브러리를 이용하는 것이 대표적인 방법들입니다. 이러한 방법을 선택할 때는, 라이브러리 개발 상태, 요구되는 기능, 그리고 개인의 코딩 스타일에 따라 다르게 선택해 사용할 수 있습니다.
+
+앞서 나온 코드에서는 `Axios` 라이브러리를 사용했습니다. 이 라이브러리의 특징인 Promise 기반 API를 활용하면, 비동기 작업을 처리하는 데 편리하게 사용할 수 있습니다. 또한, 내장된 TypeScript 타입 정의가 있어, TypeScript 환경에서 코드 품질을 높이는 데도 좋습니다.
+
+## 그 밖에 볼 만한 것
+
+- [Axios GitHub](https://github.com/axios/axios)
+- [MDN fetch API](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API)
+- [request GitHub](https://github.com/request/request)

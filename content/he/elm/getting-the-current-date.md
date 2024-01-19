@@ -1,7 +1,7 @@
 ---
-title:                "קבלת התאריך הנוכחי (Kablat hata'arikh hanokhi)"
-html_title:           "Elm: קבלת התאריך הנוכחי (Kablat hata'arikh hanokhi)"
-simple_title:         "קבלת התאריך הנוכחי (Kablat hata'arikh hanokhi)"
+title:                "קבלת התאריך הנוכחי"
+html_title:           "C#: קבלת התאריך הנוכחי"
+simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זה ולמה?
+## מה זה ולמה? 
+לקבלת התאריך הנוכחי באמצעות הקוד מאפשר לנו לעקובאחרי זמן ריצת התוכנית, ליצור תגיות תאריך לאירועים, ולהתמודד עם זמן ממשי. זה חיוני למגוון של יישומים, כולל יישומים של שרת וממשק משתמש.
 
-התאריך הנוכחי הוא פעולה חשובה ונפוצה בתכנות. כמו שמשמעותו, הוא מחזיר את התאריך הנוכחי במחשב. תכנתנים עושים זאת לפעמים כדי לבדוק את התאימות של התאריך למטרות מסוימות או ליישומים שונים.
+## איך לעשות: 
 
-# איך לעשות:
+קוד Elm צפוי לשליפת התאריך הנוכחי הוא בעצם פונקציה שמחזירה `Task`, אשר מציין פעולה שצריכה להתבצע בזמן ריצה:
 
 ```Elm
-import Time exposing (..)
+import Time
 
-currentDate : Time.Posix
-currentDate =
+getTime : Task x Time.Posix
+getTime =
     Time.now
 ```
-Output:
-```Elm
-16050969456031‬
-```
+בחלק זה של הקוד, פונקצית ה`now` ממודול `Time` נקראת להחזיר את השנייה הנוכחית מאז אפס הזמן, מאגר POSIX.
 
-# הצצה עמוקה:
+## צלילה עמוקה: 
 
-## קישורים שימושיים:
+באופן היסטורי, אותה טכניקה של שליפת התאריך והשעה משמשת מתחילת המחשב. השפה של Elm רק מבצעת אותה בצורה הפשוטה והמפורשת ביותר.
 
-* [רשימת פונקציות התאריך ב- Elm](https://package.elm-lang.org/packages/elm/time/latest/Time)
-* [הסבר נרחב יותר על תאריך נוכחי ב-‫Coderslang‬](https://www.coderslang.com/blog/how-to-get-current-date-in-elm)
-* [ראוויו משתמשים למנגנון תאריך ב- Elm](https://discourse.elm-lang.org/t/interview-with-author-of-elm-time-module/3598)
+למרות שהגישה הזו היא המקובלת ביותר על ידי הקהל של Elm, דרכים אחרות יכולות לעזור לטפל בתאריך ובזמן בכדי להתאים יותר לצורכים שונים.
 
-## אלטרנטיבות:
+המידע שמחזירה הפונקציה, `Time.Posix`, הוא תאריך ושעה 
+בפורמט POSIX, זמן אוניברסלי מתאים, המציין את מספר השניות שחלפו מאז 1 בינואר 1970.
 
-ישנן כמה אלטרנטיבות לשימוש במנגנון התאריך של Elm. בנוסף לקוד המוצג בסעיף "איך לעשות", ניתן להשתמש גם בתכונת time המתאימה להגדרת התאריך הנוכחי כתכונה במודל.
+## ראו גם:
 
-# ראה גם:
-
-להבנת נושא התאריך הנוכחי ב- Elm, מומלץ לקרוא גם את הפוסט הנ"ל באתר Coderslang ולעיין בתיעוד הפונקציה Time.now הקשורה לנושא זה. בנוסף, ניתן להתנסות במנגנון זה דרך תרגילי תירוצים ב- Codewars או להשתתף בפורום המשתמשים שלט אלם כדי לשאול שאלות נוספות בנושא זה.
+1. [Time.Posix documentation](https://package.elm-lang.org/packages/elm/time/latest/Time-Posix): הסביר את זה באופן מפורט יותר. 
+2. [Working with time in Elm](https://elmprogramming.com/working-with-time.html): המדריך הזה מסביר איך עובדים עם Time באמת. 
+3. [Elm’s Time module documentation](https://package.elm-lang.org/packages/elm/time/latest/Time): כל אפשרויות השימוש של מודול Time.

@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando o comprimento de uma string."
-html_title:           "PHP: Encontrando o comprimento de uma string."
-simple_title:         "Encontrando o comprimento de uma string."
+title:                "Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que é importante?
+# Encontrando o Comprimento de uma String em PHP
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação, pois permite que os programadores saibam quantos caracteres uma string contém. Isso pode ser útil para diversas tarefas, como validação de entrada de dados ou manipulação de strings em algoritmos.
+## O Que & Por Quê?
+
+Determinar o comprimento de uma string significa saber quantos caracteres existem nela. Isso é útil em diversas situações, como validação de entrada do usuário, manipulação de texto e controle de fluxo do programa.
 
 ## Como fazer:
 
-O PHP possui uma função integrada, `strlen()`, que pode ser usada para encontrar o comprimento de uma string. Veja um exemplo de como usá-la:
+Use a função `strlen()` para encontrar o comprimento de uma string. Aqui está um exemplo:
 
 ```PHP
-$texto = "Olá, mundo!";
-echo strlen($texto);
-// Saída: 12
+$texto = "Olá, Mundo!";
+$comprimento = strlen($texto);
+echo $comprimento; // Saída: 12
 ```
 
-É importante notar que a função contará todos os caracteres presentes na string, incluindo espaços e pontuação.
+Neste exemplo, a string "Olá, Mundo!" tem 12 caracteres, incluindo espaços e pontuação.
 
-## Mais detalhes:
+## Mergulho Profundo
 
-Na história da programação, encontrar o comprimento de uma string era uma tarefa mais complexa, muitas vezes exigindo o uso de funções personalizadas e cálculos matemáticos. No entanto, com o avanço das linguagens de programação, funções como `strlen()` tornaram essa tarefa muito mais simples.
+A função `strlen()` existe desde as primeiras versões do PHP e é a maneira padrão de se encontrar o comprimento de uma string em PHP. Ela conta o número de bytes da string, não o número de caracteres. Isto é importante quando você está trabalhando com caracteres multibyte (como os usados em alguns idiomas não latinos).
 
-Além disso, algumas linguagens de programação, como Python, possuem uma função semelhante chamada `len()`, que pode ser usada para encontrar o comprimento de uma string.
+Se precisar lidar com caracteres multibyte, use a função `mb_strlen()`. 
 
-A implementação da função `strlen()` no PHP é eficiente e otimizada, utilizando algoritmos de baixo nível para contar os caracteres de forma rápida e precisa.
+```PHP
+$texto = "çäö";
+$comprimento = strlen($texto);
+$comprimento_mb = mb_strlen($texto);
+echo $comprimento; // Saída: 6
+echo $comprimento_mb; // Saída: 3
+```
 
-## Veja também:
+Neste exemplo, `strlen()` retorna 6 porque cada caracter especial "çäö" tem 2 bytes. Mas, `mb_strlen()` retorna 3, o que é o número real de caracteres.
 
-- Documentação oficial do PHP sobre a função `strlen()`: https://www.php.net/manual/pt_BR/function.strlen.php
-- Vídeo tutorial sobre como usar a função `strlen()` no PHP: https://www.youtube.com/watch?v=dQsIXL1h6VI 
-- Outras funções úteis para manipulação de strings no PHP: https://www.php.net/manual/pt_BR/ref.strings.php
+## Veja Também
+
+1. Documentação oficial do PHP para `strlen()`: [https://www.php.net/manual/pt_BR/function.strlen.php](https://www.php.net/manual/pt_BR/function.strlen.php)
+2. Documentação oficial do PHP para `mb_strlen()`: [https://www.php.net/manual/pt_BR/function.mb-strlen.php](https://www.php.net/manual/pt_BR/function.mb-strlen.php)
+3. Um guia mais aprofundado sobre strings em PHP: [https://www.tutorialrepublic.com/php-tutorial/php-strings.php](https://www.tutorialrepublic.com/php-tutorial/php-strings.php)

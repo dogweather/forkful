@@ -1,6 +1,6 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "Kotlin: Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-La lecture des arguments de la ligne de commande est un moyen pour les programmeurs de spécifier des paramètres au moment de l'exécution d'un programme. Cela permet de rendre les programmes plus flexibles et adaptables.
+## Quoi et Pourquoi ?
+Lire des arguments ligne de commande en Kotlin, c'est déchiffrer les instructions qu'un utilisateur a donné à votre programme via l'interface de ligne de commande. On fait ça pour permettre aux utilisateurs d'interagir avec nos applications de façon flexible.
 
-## Comment faire:
-Voici un exemple de code en Kotlin pour lire les arguments de la ligne de commande et les afficher:
+## Comment faire :
+Pour lire les arguments ligne de commande en Kotlin, on utilise `args: Array<String>`. Voici un exemple simple.
 
-```Kotlin
+```Kotlin 
 fun main(args: Array<String>) {
-    println("Les arguments de la ligne de commande sont: ")
     for (arg in args) {
         println(arg)
     }
 }
 ```
 
-Si nous exécutons ce programme avec les arguments "Hello" et "World", nous obtiendrons la sortie suivante:
+Quand vous exécutez ce programme avec des arguments comme 'Salut' et 'Bonjour', voici la sortie :
 
+``` 
+Salut
+Bonjour
 ```
-Les arguments de la ligne de commande sont:
-Hello
-World
-```
 
-## Plongée en profondeur:
-Avant l'émergence des interfaces graphiques, la ligne de commande était le principal moyen d'interagir avec un ordinateur. La lecture des arguments de la ligne de commande était donc une tâche courante pour les programmeurs. Aujourd'hui, il existe des alternatives telles que les menus déroulants et les boîtes de dialogue, mais la lecture des arguments de la ligne de commande reste importante pour les programmes qui doivent être exécutés en ligne de commande.
+## Approfondissement
+Historiquement, la lecture des arguments de ligne de commande est une tradition des premiers jours de l'informatique, lorsque l'interface graphique n'était pas encore une chose.
 
-Le moyen le plus courant de lire les arguments de la ligne de commande en Kotlin est d'utiliser la fonction "main" avec un paramètre de type "Array<String>" pour stocker les arguments. Il est également possible d'utiliser la fonction "args" dans la propriété "System" pour accéder aux arguments de la ligne de commande.
+En Kotlin, vous pouvez aussi utiliser `readLine()` pour lire les entrées de l'utilisateur durant l'exécution du programme. Mais ce n'est pas la même chose que la lecture des arguments de ligne de commande qui sont donnés en une fois avant que le programme ne commence à s'exécuter.
 
-## Voir aussi:
+En coulisses, Kotlin fait en sorte que les arguments passés à votre programme soient disponibles via l'objet `args` de type `Array<String>`. Vous pouvez parcourir cet array comme tout autre tableau en Kotlin.
 
-- Kotlin Reference: [Command Line Arguments](https://kotlinlang.org/docs/command-line.html)
-- Baeldung: [Command Line Argument Parsing with Kotlin](https://www.baeldung.com/kotlin/command-line-arguments)
-- Java Program to Parse Command Line Arguments: [GeeksforGeeks](https://www.geeksforgeeks.org/command-line-argument-parsing-in-java/)
+## Voir aussi :
+Pour plus d'informations sur la lecture des arguments de ligne de commande  et de l'entrée utilisateur, consultez ces liens :
+
+1. Les fonctions main en Kotlin: [https://kotlinlang.org/docs/functions.html#main-function]
+2. Tutoriel de Kotlin pour les débutants: Arguments de Ligne de Commande: [https://www.programiz.com/kotlin-programming/command-line-argument]

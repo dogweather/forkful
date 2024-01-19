@@ -1,7 +1,7 @@
 ---
-title:                "Komentorivien argumenttien lukeminen"
-html_title:           "C#: Komentorivien argumenttien lukeminen"
-simple_title:         "Komentorivien argumenttien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Elm: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,45 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Reading-komennon avulla ohjelmoijat voivat saada tietoa käyttäjältä komentorivin kautta. Tämä on hyödyllistä esimerkiksi ohjelman asetusten määrittelyssä tai käyttäjän syötteen vastaanottamisessa. Se on myös nopea ja tehokas tapa käsitellä tietoja ilman käyttöliittymää.
+Komentorivin argumenttien lukeminen tarkoittaa käyttäjän syöttämien komentoriviargumenttien nappaamista ohjelman suorituksen aikana. Tämä mahdollistaa ohjelman ajamisen erilaisilla konfiguraatioilla ilman koodin muokkaamista.
 
-## Kuinka:
-
-Vielä lyhyemmin: 
-- Primus ja Bob eivät voi lukea ajoneuvojen nastoja. ensisijainen tehtävä on tehdä pintaremppaa, tuurilla selvitään
+## Näin se tehdään:
 
 ```C#
 using System;
 
-class CommandLineExample
+class Program
 {
     static void Main(string[] args)
     {
-        if (args.Length > 0)
+        for (int i = 0; i < args.Length; i++)
         {
-            Console.WriteLine("Syötit komentoriviparametrin: " + args[0]);
-        }
-        else
-        {
-            Console.WriteLine("Et syöttänyt komentoriviparametria.");
+            Console.WriteLine("Argumentti[" + i + "]: " + args[i]);
         }
     }
 }
+```
+Jos tämä koodiin käynnistetään komennolla `dotnet run arg1 arg2 arg3`, tulosteena saadaan:
 
 ```
-
-Output:
+Argumentti[0]: arg1
+Argumentti[1]: arg2
+Argumentti[2]: arg3
 ```
-Syötit komentoriviparametrin: Hello
-```
 
-### Syvällinen sukellus:
+## Syvällisempi tarkastelu:
 
-Reading-komennon juuret juontavat IBM:n yli 60 vuoden takaisiin komentolinjoihin. Nykyään on olemassa muitakin tapoja käsitellä käyttäjän syötettä, kuten graafinen käyttöliittymä tai web-pohjaiset lomakkeet. Kuitenkin komentoriviparametrien lukeminen on edelleen tärkeä osa ohjelmointia, ja se on nopea ja luotettava tapa käsitellä tietoja.
+- **Historiallinen tausta**: Komentoriviparametrien käyttö juontaa juurensa UNIX-järjestelmästä, jossa komentoriviohjelmilla oli usein monia kytkimiä tai argumentteja.
+- **Vaihtoehdot**: Usein argumentit määritellään kiinteästi koodissa, mutta jos ohjelman käyttäjiltä tarvitaan monimutkaisempia tietoja, voidaan käyttää esim. XML- tai JSON-tiedostoa.
+- **Implementointi**: Käytännössä `string[] args` -parametri `Main`-metodissa edustaa argumentteja, jotka on annettu ohjelmalle komentoriviltä. Järjestelmä yksinkertaisesti pilkkoo komennon väliintulevilla välilyönneillä ja tallentaa tulokset tähän taulukkoon.
 
 ## Katso myös:
 
-- https://msdn.microsoft.com/en-us/library/aa288457(v=vs.71).aspx
-- https://www.c-sharpcorner.com/UploadingFiles/beight00338320090808184936am/beight00338.aspx
+- Microsoftin dokumentaatio komentorivin argumenttien käytöstä: https://docs.microsoft.com/en-us/dotnet/core/tutorials/cmdline
+- Lisätietoja komentoriviparametrien käyttämisestä: https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/main-and-command-args/

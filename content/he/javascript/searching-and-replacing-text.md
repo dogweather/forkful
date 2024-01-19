@@ -1,7 +1,7 @@
 ---
-title:                "חיפוש והחלפת טקסטים"
-html_title:           "Javascript: חיפוש והחלפת טקסטים"
-simple_title:         "חיפוש והחלפת טקסטים"
+title:                "חיפוש והחלפת טקסט"
+html_title:           "Elm: חיפוש והחלפת טקסט"
+simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-החיפוש וההחלפה של טקסט הוא כלי חשוב בתכנות המאפשר למתכנתים למצוא ולהחליף חלקי טקסט בקלות. כאשר מתכנתים צריכים לעדכן את הקוד, לתקן טעויות או לשנות מידע בטקסט, היכולת לחפש ולהחליף טקסט מאפשרת להם לעבוד ביעילות ובמהירות יותר.
+## מה ולמה? 
 
-## איך לעשות זאת:
-קטעי קוד ופלט דוגמה יתווספו להלן כדי להדגים את השימוש בחיפוש והחלפה של טקסט ב-Javascript.
+חיפוש והחלפה של טקסט הוא ההתאמה של מחרוזת לתבנית מיוחדת והחלפתה במחרוזת חדשה. מתכנתים עושים את זה כדי לשנות, לתקן או לשדרג קוד באופן מהיר ויעיל.
+
+## איך?
+
+בלוק הקוד הבא מציג את החיפוש וההחלפה של טקסט באמצעות JavaScript:
 
 ```Javascript
-// חיפוש והחלפה של מדפסות בתוך מערך המכיל מהדפסות שונות
-let printers = ["HP", "Epson", "Canon", "Brother"];
-let replacePrinter = printers.replace("Brother", "Samsung");
-
-// כעת מערך יוצא: ["HP", "Epson", "Canon", "Samsung"]
-console.log(replacePrinter);
+let str = "שלום עולם!";
+let newStr = str.replace("עולם", "javascript");
+console.log(newStr);
 ```
 
-## העמקה:
-החיפוש וההחלפה של טקסט הוא תכונה משמעותית בשפת Javascript כדי לשנות ולעדכן טקסט בקלות. תכונה זו זמינה כבר מתחילת שנות 90 ועודנה מאפשרת למתכנתים להתאים את הקוד לצרכיהם. כמו כן, ישנן אפשרויות נוספות לחיפוש והחלפה של טקסט ב-Javascript כגון פונקציות מובנות וספריות חיצוניות.
+התוצאה שתודפס היא: `"שלום javascript!"`
 
-## ראו גם:
-למידע נוסף על החיפוש וההחלפה של טקסט ב-Javascript, ניתן להיעזר במקורות הבאים:
+## צלילה עמוקה
 
-- המדריך המפורט של MDN לחיפוש והחלפה של טקסט: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+(1) במקור, פונקציית ה-replace ב-JavaScript יכלה להחליף רק מופע ראשון של מחרוזת. בעזרת ES6, מתאגרת מחזוריות משופרת הוצגה, מאפשרת את ההחלפה של כל המופעים של המחרוזת.
+(2) אלטרנטיבות שונות כוללות שימוש ב-loop לטיפול במחרוזת או ביישום של מחלק אלגוריתמים מבני נתונים.
+(3) אפשר להשתמש בתו גלובלי 'g' בשילוב עם regex להחלפה גלובלית של המחרוזת:
 
-- חיפוש והחלפה של טקסט במדריך המקוון של W3Schools: https://www.w3schools.com/js/js_regexp.asp
+```Javascript
+let str = "שלום עולם! עולם, טוב לראות אותך!";
+let newStr = str.replace(/עולם/g, "javascript");
+console.log(newStr);
+```
+זה ידפיס: `"שלום javascript! javascript, טוב לראות אותך!"`
+
+## ראה גם 
+
+1. [MDN replace() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+2. [JavaScript RegExp](https://www.w3schools.com/js/js_regexp.asp)
+3. [Understanding JavaScript's replace()](https://www.digitalocean.com/community/tutorials/js-string-replace-method)

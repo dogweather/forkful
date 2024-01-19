@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "TypeScript: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć programiści!
+## Co i dlaczego?
 
-## O co chodzi & Dlaczego?
-
-Ściąganie strony internetowej to proces pobrania zawartości strony internetowej na nasz komputer. Programiści często wykonują ten krok, aby mieć dostęp do informacji lub aby przetworzyć je w programowaniu.
+Pobieranie strony internetowej to proste pobranie zawartości HTML danej strony. Programiści robią to w celu analizy, testowania, a czasem nawet scrapingu danych.
 
 ## Jak to zrobić:
 
 ```TypeScript
-const request = require('request');
+import axios from 'axios';
 
-request.get('https://www.example.com/', (error, response, body) => {
-  console.log(body);
-});
+const getPokemons = async () => {
+  try {
+    const response = await axios.get('https://pokeapi.co/api/v2/pokemon/ditto');
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+getPokemons();
 ```
 
-Output:
-`<html> ... </html>`
+To jest nieskomplikowany kod TypeScript do pobierania strony API Pokemon za pomocą `axios`. Po uruchomieniu będziesz widział dane Pokemonu - 'Ditto'.
 
-## Wchodzimy w szczegóły:
+## Wgłębna analiza
 
-Ściąganie stron internetowych jest jednym z głównych procesów wykorzystywanych w web scrapingu (pobieranie danych z internetu). Innym sposobem na zrobienie tego jest wykorzystanie narzędzi takich jak Selenium, ale jest to bardziej złożony proces i wymaga użycia przeglądarki internetowej.
+Historia pobierania stron internetowych rozpoczęła się wraz z rozwojem internetu. Początkowo, było to stosowane do testowania i analizowania stron. Dziś jest to podstawa do scrapingu danych i automatyzacji sieci.
 
-## Zobacz także:
+Jest wiele alternatyw do `axios`, takich jak `fetch`, `request` czy `superAgent`. Każda z nich ma swoje plusy i minusy, a wybór zależy od twoich specyficznych potrzeb.
 
-Jeśli chcesz się dowiedzieć więcej o web scrapingu, możesz przeczytać artykuł "Web Scraping: Co to jest i dlaczego jest ważne?" na stronie [https://www.edureka.co/blog/web-scraping/](https://www.edureka.co/blog/web-scraping/)
+Szczegółowa implementacja pobierania strony internetowej zależy od wielu czynników; np. jak skomplikowany jest twój cel, jakie dane chcesz wydobyć, czy chcesz to zautomatyzować itp.
+
+## Zobacz też:
+
+1. Axios - https://github.com/axios/axios
+2. Fetch - https://developer.mozilla.org/pl/docs/Web/API/Fetch_API/Using_Fetch
+3. Request - https://github.com/request/request
+4. SuperAgent - https://github.com/visionmedia/superagent
+
+Zawsze sprawdzaj i porównuj swoje opcje przed podjęciem decyzji. Zapoznaj się z powyższymi linkami i wybierz najbardziej efektywne narzędzie dla swoich potrzeb. Dobre programowanie!

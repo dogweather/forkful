@@ -1,7 +1,7 @@
 ---
-title:                "插入字串"
-html_title:           "Lua: 插入字串"
-simple_title:         "插入字串"
+title:                "插值字符串"
+html_title:           "Arduino: 插值字符串"
+simple_title:         "插值字符串"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,26 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lua 编程：String 插值
+# INTERPOLATING A STRING IN LUA
 
-## 什么是String插值？
-String 插值是一种快速而方便的方法，可以在字符串中插入变量的值。这使得程序员能够在字符串中动态地添加变量值，而不是硬编码它们。这使得代码更有可读性，并且可以节省大量的时间和努力。
+## 什么是什么？它为何重要？
+字符串插值是一种编程术语，指将变量值插入字符串的过程，从而创建新的字符串。在编程中完成这个过程可以提高代码的可读性和维护性。
 
-## 如何实现String插值？
-使用字符串插值非常简单。只需在变量名称前加上一次 '%'，然后将变量添加到字符串中即可。让我们来看一个例子：
+## 怎样操作：
+Lua 并没有内建字符串插值的功能。我们可以通过格式化字符串 (`string.format` 函数) 来达到类似的效果。
 ```Lua
-local name = "John"
-local age = 25
--- 使用字符串插值
-print("%s is %d years old.", name, age)
+name = "世界"
+msg = string.format("你好, %s", name)
+print(msg)
 ```
-输出：John is 25 years old.
+以上代码输出：
+```Lua
+你好, 世界
+```
+## 深入探讨
+1) **历史背景**：Lua 之所以没有内建的字符串插值功能，主要是瞄准了其本身作为一种嵌入脚本语言的定位。
+2) **其他选择**：如果你需要一个可以进行字符串插值的 Lua 库，可以尝试 "interpolate"。
+3) **实现细节**：`string.format` 函数与 C 语言中的 `printf` 函数行为类似。
 
-## 深入挖掘
-- 历史背景：String插值最初在Perl语言中实现，随后被引入到多种编程语言中。
-- 替代方法：除了字符串插值，程序员也可以使用字符串连接符来构建一个包含变量值的字符串。
-- 实现细节：在Lua中，字符串插值是通过调用`string.format()`函数来实现的，该函数使用类似于C语言中的`printf()`函数的语法。
-
-## 相关资料
-- [Lua官方文档](https://www.lua.org/docs.html)
-- [Lua字符串插值的实现](https://github.com/lua/lua/blob/master/lstrlib.c)
+## 参阅资料
+1) Lua 5.3 中的 [string.format 函数](https://www.lua.org/manual/5.3/manual.html#pdf-string.format)
+2) ["interpolate" Lua 库](https://luarocks.org/modules/bt/interpolate)

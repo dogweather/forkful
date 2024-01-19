@@ -1,6 +1,6 @@
 ---
 title:                "Extrahera delsträngar"
-html_title:           "Gleam: Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
 simple_title:         "Extrahera delsträngar"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,26 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att extrahera substränger är processen att ta en del av en sträng, vanligtvis baserat på en viss position eller längd, och returnera det som en separat sträng. Programerare gör detta för att hantera väldigt långa strängar eller för att manipulera och utföra vissa operationer på specifika delar av en sträng.
 
-## Så här gör du:
-I Gleam kan du använda funktionen `String.slice()` för att extrahera en del av en sträng. Här är ett exempel på hur man extraherar de första sex tecknen i en sträng:
+Ordningsföljden av tecken inom en sträng benämns som substräng. Programmerare använder substrängar för att behandla delar av datan, utan att störa den totala informationen.
+
+## Hur till:
+
+För att extrahera substrängar i Gleam använder vi `slice` funktionen. Låt oss testa med en exempelsträng "Hej, världen!".
 
 ```Gleam
-let sträng = "Hej världen!"
-let del = String.slice(sträng, 0, 6)
-IO.println(del)
+let min_sträng = "Hej, världen!"
+
+let substräng = slice(min_sträng, 4, 10)
 ```
-Detta kommer att skriva ut "Hej vä" eftersom det första argumentet är den ursprungliga strängen, det andra argumentet är startpositionen och det tredje argumentet är längden på den del som ska extraheras.
+I det här fallet kommer `substräng` att vara ", värld".
 
-## Djupdykning:
-Att extrahera substränger är en vanlig operation inom programmering och det finns många sätt att göra det. Alternativen inkluderar att använda inbyggda funktioner i andra programmeringsspråk som `substring` i Java och `substr` i JavaScript. Gleam erbjuder också funktionen `String.take()` och `String.drop()` som kan användas för att extrahera delar av en sträng baserat på antingen antal tecknen eller ett villkor.
+## Djup Dykning
 
-Implementationen av `String.slice()` i Gleam är baserad på det funktionella programmeringsspråket Erlang, som Gleam bygger på. Detta ger en robust och effektiv implementation av substrängsextraktion i Gleam.
+Idén att extrahera substrängar kommer inte enbart från Gleam. Den har djupa rötter i många andra programmeringsspråk som C och JavaScript. Som alternativ kan funktionen `split_at` användas för att dela strängen på en specifik position. De interna detaljerna involverar att kopiera tecken från en startposition till en slutposition.
 
-## Se även:
-Här är några resurser för att lära dig mer om substrängsextraktion och hur det kan användas i Gleam:
+## Se Även
 
-- [Dokumentation för `String.slice()` i Gleam](https://gleam.run/documentation/std-lib-trip/0.1.1/String.html#function.slice)
-- [En djupare titt på Erlang och dess påverkan på Gleams implementation av substrängsextraktion](https://www.researchgate.net/publication/310390220_String_Subtraction_Function_Using_Erlang)
-- [En introduktion till funktionell programmering och dess fördelar i Gleam](https://gleam.run/articles/functional-programming.html)
+Se mer om substrängar och strängmanipulation på Gleam's officiella dokumentation (https://hexdocs.pm/gleam_stdlib/latest/gleam/string/). Det finns även en hel del användbara informationskällor på StackOverflow (https://stackoverflow.com/).

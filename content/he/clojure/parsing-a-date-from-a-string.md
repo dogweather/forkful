@@ -1,7 +1,7 @@
 ---
-title:                "מהדורת תאריך ממחרזת."
-html_title:           "Clojure: מהדורת תאריך ממחרזת."
-simple_title:         "מהדורת תאריך ממחרזת."
+title:                "פענוח תאריך ממחרוזת"
+html_title:           "Bash: פענוח תאריך ממחרוזת"
+simple_title:         "פענוח תאריך ממחרוזת"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,41 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+## מה זה אומר ולמה?
+פארסינג תאריך ממחרוזת הוא התהליך שבו ממירים מחרוזת שמכילה תאריך לפורמט תאריך שהמחשב יכול לעבוד איתו. תכניתאים עושים זאת כדי להפוך את הנתונים לפורמט שיכול להשתלב בלוגיקה של התוכנה, מאפשר ניתוחים על התארים ומאפשר תצוגה אחידה של תאריך למשתמש הסופי.
 
-תיקון תאריך ממחרוזת הוא תהליך שבו מתאריך רווח תאריך ממחרוזת טקסטית. פעולה זו חשובה למתכנתים כי כאשר מנסים לעבוד עם נתונים ממין שונה, כמו תאריכים, נדרשים המרות כדי להפוך את הנתונים למבנים דטה שניתן לעבוד איתם.
+## איך לעשות:
+ניתן להשתמש במודול `clj-time` ב-Clojure לפארסינג של תאריכים.
 
-## איך לעשות זאת?
+```clojure
+(require '[clj-time.format :as f])
 
-Clojure מציע כמה אפשרויות לתיקון תאריך ממחרוזת. נבחר באחת מהן ונדגים כיצד להשתמש בה בעזרת קוד ותוצאות מדגמה.
+(defn parse-date [date-str] 
+  (f/parse (f/formatter "yyyy-MM-dd") date-str))
 
-```Clojure
-(require '[clojure.java-time :as t])
+(parse-date "2022-01-30")
 ```
 
-שימוש בפונקציית צפייה (parse) כדי להמיר את המחרוזת לתאריך:
+במקרה הזה, נקבל כתוצאה – `#object[org.joda.time.DateTime 2022-01-30T00:00:00.000Z]`.
 
-```Clojure
-(t/local-date "30/11/2021")
-=> #object[java.time.LocalDate 0x4597bcdf "2021-11-30"]
-```
+## חקירה יותר מעמיקה:
+1. היסטוריה: באופן כללי, פארסינג של תאריכים היה תמיד קשה עד שהתפתחו ספריות מסוימות שמקלות על התהליך.
+2. אלטרנטיבות: יצרני Clojure יכולים לבחור בין מספר ספריות עיבוד תאריכים: `java.util.Date`, `java.time` ו-`clj-time`.
+3. פרטי אמיתה: `clj-time` הוא ספרייה Clojure על פני Joda-Time (ספריית Java), המקלה על עיבוד תאריכים וזמנים ב-Clojure.
 
-שימוש בטפסים של נתוני Java.time כדי ליצור אובייקט תאריך ישירות:
-
-```Clojure
-(import 'java.time.format.DateTimeFormatter)
-(import 'java.time.LocalDate)
-
-(def date-formatter (DateTimeFormatter/ofPattern "dd/MM/yyyy"))
-
-(LocalDate/parse "30/11/2021" date-formatter)
-=> #object[java.time.LocalDate 0x1d26e08d "2021-11-30"]
-```
-
-## מיומנות עמוקות
-
-תיקון תאריך ממחרוזת היה תהליך מורכב בשבעיםים, כאשר תכנות המחשב נמצא בשלבי התחילתיים. רק בעזרת טכנולוגיות חדשות יותר, כמו Java.time, למתכנתים יש כעת כלים מתקדמים יותר כדי לעבוד עם תאריכים ושעות. פונקציות נוחות כמו parse מוכנות בClojure כדי לפשט את התהליך של תיקון תאריכים ממחרוזת.
-
-## ראו גם
-
-למידע נוסף על איך להשתמש בתאריכים ושעות בClojure, אנא בקרו במדריך הרשמי של Clojure עבור Java.time: https://clojure.org/guides/java_interop
+## קישורים נוספים:
+1. [תיעוד clj-time](https://github.com/clj-time/clj-time)
+2. [מדריך ל- java.util.Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+3. [מדריך ל- java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

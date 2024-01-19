@@ -1,7 +1,7 @@
 ---
-title:                "Html-analysointi"
-html_title:           "Java: Html-analysointi"
-simple_title:         "Html-analysointi"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-HTML:n jäsentäminen (parseaminen) tarkoittaa HTML-koodin muuttamista selkeämmäksi ja helpommin käsiteltäväksi muodoksi. Tämä on tärkeää, koska monet ohjelmat käyttävät HTML-koodia ja haluavat saada siitä tietoa. Näiden tietojen avulla ohjelmat voivat tehdä asioita kuten näyttää verkkosivuja ja hakea tietoja.
+# "## Mitä ja Miksi?"
 
-## Miten:
-Koodiesimerkki Java-kielellä ja sen tulosteet:
+HTML:n jäsentäminen tarkoittaa HTML-koodin lukemista ja sen analysoimista. Ohjelmoijat tekevät tämän saadakseen tietoa tai muokatakseen web-sivuja.
+
+# "## Kuinka tehdä:"
+
+Jsentääksemme HTML:ää Javassa tarvitsemme Jsoup kirjaston. Esimerkiksi, jos haluat hakea otsikkotekstin (header) nettisivulta:
 
 ```Java
-// Luodaan HTML-lähtömerkkijono
-String html = "<p>Tervetuloa <strong>Java-ohjelmointimaailmaan!</strong></p>";
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
-// Jäsentäminen
-Document doc = Jsoup.parse(html);
-
-// Hae elementti id:n avulla
-Element element = doc.getElementById("firstElement");
-
-// Tulosta elementin sisältö
-System.out.println(element.text());
-
-// Tulostus:
-// Tervetuloa Java-ohjelmointimaailmaan!
+public class Main {
+    public static void main(String[] args) throws Exception{
+        Document doc = Jsoup.connect("http://www.example.com").get();
+        String title = doc.title();
+        System.out.println("Otsikko : " + title);
+    }
+}
 ```
 
-Tämä koodi luo HTML-lähtömerkkijonon, jäsentää sen ja hakee tietyn elementin sisällön id:n avulla. Lopuksi tulostetaan elementin sisältö, joka tässä tapauksessa on teksti "Tervetuloa Java-ohjelmointimaailmaan!".
+Koodin tuloste olisi:
 
-## Syvemmälle:
-HTML parseamisella on pitkä historia, ja sitä käytetään laajasti web-ohjelmoinnissa. Java-kielessä on useita kirjastoja, kuten Jsoup, joka sallii helpomman tavan jäsentää HTML-koodia. On myös muita tapoja, kuten regular expressionien käyttäminen, mutta se ei ole yhtä luotettava ja voi olla hankalampi toteuttaa.
+```
+Otsikko : Example Domain
+```
+# "## Syvempi sukellus"
 
-## Lue myös:
-- [Jsoup kirjaston dokumentaatio](https://jsoup.org/)
-- [Vinkkejä HTML:n jäsentämiseen Java-kielellä](https://dzone.com/articles/modern-way-of-parsing-html-in-java)
+HTML:n jäsentäminen kehittyi web-skrapingin myötä, metodina tiedon käsittelyyn HTML-sivuilta. Tämän lisäksi on olemassa myös muita keinoja HTML:n jäsentämiseen, kuten Regular Expressions (RegEx), mutta ne voivat olla monimutkaisempia ja vähemmän luotettavia.
+
+Jsoup toimii lukemalla koko HTML-dokumentin, rakentaa siitä puumaisen rakenteen (DOM tree), josta dataa on helpompi hakea ja käsitellä.
+
+# "## Katso myös"
+
+[Jsoup kodin sivu](https://jsoup.org/)
+
+[Ohjelmalli HTML:n jäsentämiseen RegEx:llä](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)

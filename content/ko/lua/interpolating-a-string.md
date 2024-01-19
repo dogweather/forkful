@@ -1,7 +1,7 @@
 ---
-title:                "문자열 보간"
-html_title:           "Lua: 문자열 보간"
-simple_title:         "문자열 보간"
+title:                "문자열 보간하기"
+html_title:           "Clojure: 문자열 보간하기"
+simple_title:         "문자열 보간하기"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,37 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇 & 왜?
 
-문자열 보간(interpolating a string)은 문자열 안에 변수 또는 다른 값들을 삽입하는 것을 말합니다. 이렇게 함으로써 우리는 동적인 문자열을 만들 수 있고, 정보를 보다 편리하게 표시할 수 있게 됩니다. 프로그래머들이 문자열 보간을 하는 이유는 코드의 가독성을 높이고, 반복적인 작업을 줄여 더 편리하게 코드를 작성하기 위해서입니다.
+문자열 보간(string interpolation)은 문자열 내에서 변수나 표현식을 동적으로 대입하는 것을 말합니다. 이를 통해 코드를 더 간결하고 읽기 쉽게 만들 수 있습니다.
 
-# 방법:
+## 어떻게 할까?
 
-```
--- 변수를 문자열 안에 삽입하기
-local name = "John"
-print("안녕하세요, " .. name .. "님!")
+Lua에서 문자열 보간을 하려면 기본적으로 `string.format` 함수를 사용합니다. 작성된 예제로 살펴보겠습니다.
 
--- 숫자를 문자열로 변환하기
-local age = 25
-print("나이는 " .. tostring(age) .. "살입니다.")
+```Lua
+local name = "Lua"
+local message = string.format("Hello, %s", name)
+print(message)  -- 'Hello, Lua' 출력
 ```
 
-출력:
+`%s`는 문자열 값을, `%d`는 정수 값을 대입하는 데 사용됩니다.
+
+```Lua
+local age = 20
+local message = string.format("나이: %d", age)
+print(message)  -- '나이: 20' 출력
 ```
-안녕하세요, John님!
-나이는 25살입니다.
+
+## 깊게 알아보기
+
+Lua에서 문자열 보간에 대해 알아보면 이 기능이 다른 언어에서는 어땠는지 궁금해질 수 있습니다. 예를 들어, JavaScript와 Python 같은 언어들은 "string interpolation"문법이 별도로 있습니다.
+
+```Lua
+-- Lua에서는 존재하지 않는 기능
+local name = "Lua"
+local message = `Hello, ${name}`  -- JavaScript
+local message = f"Hello, {name}"  -- Python
 ```
 
-# 깊이 파헤치기:
+Lua는 더 간단하고 빠르게 구현될 수 있도록, 개발 초기부터 이런 복잡한 기능은 배제하였습니다. 따라서 Lua에서 문자열 보간을 사용하려면, `string.format` 함수나 비슷한 함수를 사용하거나, 직접 구현해야 합니다.
 
-1. 역사적 맥락: 문자열 보간은 다른 언어에서도 사용되었지만, Lua에서는 ".." 연산자를 사용하여 구현됩니다.
-2. 대안: 문자열 보간 대신 문자열을 연결하는 방식으로도 값을 삽입할 수 있지만, 가독성과 편의성 측면에서 문자열 보간이 더 우수합니다.
-3. 구현 상세: ".." 연산자는 문자열에 대한 메타테이블을 이용하여 구현됩니다. 문자열의 concat 메소드를 변경하여 값을 삽입하도록 만듭니다.
+## 참고 자료
 
-# 참고 자료:
-
-문자열 보간에 대한 더 자세한 내용은 아래 링크를 참고하세요.
-- [Lua 문자열 보간 소개](https://www.w3schools.com/lua/lua_strings.asp)
-- [메타테이블 문서](https://www.lua.org/manual/5.3/manual.html#2.4)
-- [역사적 맥락에 대한 내용](https://www.lua.org/about.html)
+- [Lua 사용자 위키: 문자열 보간](http://lua-users.org/wiki/StringInterpolation)
+- [Programming in Lua (Fourth Edition): 포맷 문자열](https://www.lua.org/manual/5.4/manual.html#6.4.2)

@@ -1,6 +1,6 @@
 ---
 title:                "Generera slumpmässiga nummer"
-html_title:           "Rust: Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
 simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,33 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att generera slumpmässiga tal är en vanlig uppgift inom programmering. Det ger möjligheten att skapa unika värden för olika användningar, som spel, kryptering och testning av kod. 
 
-## Så här gör man:
+Generera slumpmässiga nummer handlar om att producera nummer som är oförutsägbara och icke-repetitiva. Programmerare genererar slumpmässiga tal för att simulera data, åstadkomma unika ID:er, eller för att skapa varierade resultat i spel och simuleringar.
+
+## Hur man gör:
+
+För att generera ett slumpmässigt heltal i Rust, kan vi använda `rand::Rng` trait och `rand::thread_rng()` funktionen. Se exemplet nedan.
+
 ```Rust
+extern crate rand;
 use rand::Rng;
 
 fn main() {
-  // Skapa en ny slumpgenerator med hjälp av standardbiblioteket "rand"
-  let mut rng = rand::thread_rng();
-  
-  // Generera slumpmässigt heltal mellan 1 och 100
-  let random_number = rng.gen_range(1, 101);
-  
-  println!("Det slumpmässiga talet är: {}", random_number);
+    let mut rng = rand::thread_rng();
+    let numb: i32 = rng.gen();
+    println!("Random number: {}", numb);
 }
 ```
-Exempeloutput:
-`Det slumpmässiga talet är: 47`
+Kör det här programmet och du kommer bot få ett slumpmässigt nummer.
 
-## Djupdykning:
-Att generera slumpmässiga tal har varit en utmaning inom programmering sedan tidigt 1900-tal. Tidigare användes frön från tiden för att skapa slumpmässiga sekvenser, men dessa kunde vara förutsägbara och repeteras. Med utvecklingen av moderna algoritmer och datorteknik, finns det nu bättre metoder för att skapa säkra slumpmässiga tal. 
+## Fördjupa sig:
 
-En annan metod för att generera slumpmässiga tal är genom användning av hårdvarugenererade tal, vilket använder extern hårdvara för att skapa sekvenser av bitar som kan användas som slumpmässiga tal.
+Historiskt sätt, att generera slumpmässiga tal i programmering var faktiskt svårt på grund av datorernas deterministiska natur. Metoder för att skapa dessa "slumpmässiga" nummer inkluderade användning av tidpunkter (som det nuvarande tid och datum), tangenttryckningar eller musrörelser.
 
-I Rust finns flera bibliotek för att generera slumpmässiga tal, såsom "rand" som användes i exemplet ovan. Det finns också möjligheten att skapa din egen slumpgenerator med hjälp av kryptografiska algoritmer som ger extra säkerhet för vissa applikationer.
+Rust ger oss alternativen `rand::thread_rng()` och `rand::random()` för att generera slumpmässiga nummer. `rand::thread_rng()` är en trådsäker generator som är lokal till den nuvarande tråden. `rand::random()` är ett enkelt sätt att producera ett slumpmässigt tal, men det har inte trådsäkerhet.
+
+Implementationen av slumpmässig nummergenerering i Rust är baserat på en algoritmen Xorshift RNGs. Detta är en klass av pseudoslumpmässiga nummergeneratorer som har fördelen av att vara snabb och att använda liten mängd minne.
 
 ## Se även:
-- [Dokumentation för Rust's "rand" bibliotek](https://docs.rs/rand/)
-- [Wikipedia artikel om generering av slumpmässiga tal](https://sv.wikipedia.org/wiki/Slumpgenerator)
-- [Artikel om hårdvarugenererade slumpmässiga tal](https://www.eniac.com/the-basics-of-hardware-generated-random-numbers)
+
+För mer detaljer och guider om antalet generering och programmering i Rust, se följande resurser:
+
+- [Rust Dokumentation för `rand::Rng` trait](https://doc.rust-lang.org/rand/rand/trait.Rng.html)
+- [Rust by Example, Kapitel 15.2: Genrer](https://doc.rust-lang.org/rust-by-example/std_misc/rand.html)
+- [Wikipedia: Slumpmässiga Nummer Generering](https://en.wikipedia.org/wiki/Random_number_generation)

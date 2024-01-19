@@ -1,7 +1,7 @@
 ---
-title:                "Trouver la longueur d'une chaîne de caractères"
-html_title:           "Elixir: Trouver la longueur d'une chaîne de caractères"
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
+title:                "Trouver la longueur d'une chaîne"
+html_title:           "Go: Trouver la longueur d'une chaîne"
+simple_title:         "Trouver la longueur d'une chaîne"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,50 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+## Quoi & Pourquoi ?
 
-Trouver la longueur d'une chaîne de caractères est une opération courante en programmation. Cela implique de déterminer le nombre de caractères présents dans une chaîne donnée. Les programmeurs doivent souvent trouver la longueur d'une chaîne pour effectuer différentes manipulations de données, telles que la concaténation ou la comparaison de chaînes.
+La détermination de la longueur d'une chaîne est un élément fondamental de la programmation. Elle mesure combien de caractères sont inclus dans une certaine chaîne. C'est essentiel lorsque vous avez besoin de manipuler ou de valider des données textuelles.
 
-## Comment faire:
+## Comment faire :
 
-Voici comment vous pouvez trouver la longueur d'une chaîne de caractères en utilisant Elixir:
+Voici comment trouver la longueur d'une chaîne en Elixir :
 
-```
-Elixir 
-str = "Bonjour le monde"
-IO.puts(String.length(str))
-``` 
-Output:
-```
-16
+```Elixir
+chaîne = "Bonjour, Monde!"
+IO.puts String.length(chaîne)
 ```
 
-Dans cet exemple, nous avons utilisé la fonction `String.length` pour obtenir la longueur de la chaîne "Bonjour le monde". Cette fonction renvoie un entier représentant le nombre de caractères dans la chaîne donnée.
+La sortie sera `15`. Ce résultat comprend tous les caractères de la chaîne, y compris les espaces, les virgules et les points d'exclamation.
 
-## Analyse Approfondie:
+## Plongeon en profondeur
 
-La nécessité de trouver la longueur d'une chaîne de caractères remonte aux premiers jours de la programmation informatique. Cela était dû au fait que les ordinateurs stockaient les chaînes de caractères dans un emplacement de mémoire prédéterminé avec une taille fixe. Aujourd'hui, avec les langages de haut niveau comme Elixir, la longueur des chaînes peut varier et être gérée dynamiquement.
+En parlant d'Elixir, nous ne pouvons pas éviter la mention d'Erlang car Elixir est construit sur la machine virtuelle d'Erlang (BEAM). Donc, quand nous appelons `String.length/1` en Elixir, cela se passe en fait avec `erlang:byte_size/1`.
 
-En plus d'utiliser la fonction `String.length`, il existe d'autres façons de trouver la longueur d'une chaîne en Elixir. Par exemple, vous pouvez utiliser le module Enum et sa fonction `count` pour compter le nombre de caractères dans une chaîne :
+Par ailleurs, il est important de noter que `String.length/1` compte le nombre de caractères graphiques dans une chaîne, pas le nombre d'octets. Par exemple :
 
-```
-Elixir
-str = "Bonjour le monde"
-IO.puts(Enum.count(str))
+```Elixir
+String.length("é") \\ Renvoie 1, même si "é" utilise 2 octets en UTF-8
 ```
 
-De manière similaire, vous pouvez utiliser la fonction `length` du module Enum pour obtenir la longueur d'une liste de caractères :
+C'est là que Elixir se distingue de la plupart des autres langages qui comptent le nombre d'octets dans une chaîne, pas le nombre de caractères.
 
-```
-Elixir
-str = ["Bonjour", "le", "monde"]
-IO.puts(Enum.length(str))
-```
+## Voir Aussi
 
-En termes d'implémentation, la fonction `String.length` utilise la fonction interne `String.length/1`, tandis que la fonction `Enum.count` utilise la fonction interne `Enum.reduce/3`.
+Pour plus de détails, consultez la documentation officielle Elixir :
+1. [String module](https://hexdocs.pm/elixir/String.html)
+2. [Kernel.byte_size/1](https://hexdocs.pm/elixir/Kernel.html#byte_size/1)
+3. [String.length/1](https://hexdocs.pm/elixir/String.html#length/1) 
 
-## Voir aussi:
-
-Pour plus d'informations sur les fonctions `String.length` et `Enum.count` en Elixir, consultez la documentation officielle : https://hexdocs.pm/elixir/String.html#length/1 et https://hexdocs.pm/elixir/Enum.html#count/1.
-
-Vous pouvez également découvrir d'autres méthodes pour trouver la longueur d'une chaîne de caractères en Elixir en consultant ce lien : https://www.tutorialspoint.com/elixir/elixir_data_types.htm.
+Ces ressources vous donneront plus d'informations sur les opérations de chaîne de caractères en Elixir.

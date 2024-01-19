@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "C#: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Gleam: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Reguljära uttryck, eller regular expressions, är ett verktyg som används av programmerare för att söka, matcha och manipulera textsträngar enligt ett visst mönster. Detta sparar tid och minskar mängden kod som behövs för att utföra komplexa sök-operationer.
+## Vad och varför?
 
-## How to:
-För att använda reguljära uttryck i C#, behöver du först importera System.Text.RegularExpressions namespace. Sedan kan du använda klassen Regex för att skapa en instans och sedan använda dess metoder för att söka och hantera textsträngar. Nedan är ett exempel på hur man söker efter ett visst mönster, utnyttjande av RegexOptions för att göra sökningen fall-insensitivt: 
+Regular expressions (RegEx) är en kraftfull teknik för att matcha och arbeta med textmönster. Programmers använder det på grund av dess flexibilitet att matcha, hitta, manipulera och splittra strängar baserade på bestämda mönster.
 
-```
+## Hur till:
+
+I C# används System.Text.RegularExpressions namespace för att jobba med RegEx. MCS-standarden är använd för syntaxen. Här är ett exempel:
+
+```C#
+using System;
 using System.Text.RegularExpressions;
 
-// Skapa en Regex-instans
-Regex regex = new Regex("hej", RegexOptions.IgnoreCase);
-
-// Sök efter matchning i en sträng
-Match match = regex.Match("Hejsan! Vad gör du idag?");
-
-// Hämta matchningar
-Console.WriteLine("Matchning: " + match.Value); 
+class Example {
+    static void Main() {
+        Regex rgx = new Regex(@"\d+");    // matchar alla sekvenser av en eller flera siffror
+        string sentence = "13 äpplen, 47 päron och 0 vindruvor.";
+        
+        MatchCollection matches = rgx.Matches(sentence);
+        foreach (Match match in matches) {
+            Console.WriteLine("Matchat nummer: " + match.Value);
+        }
+    }
+}
 ```
 
-Koden ovan kommer att returnera "Matchning: Hej".
+Output:
 
-## Deep Dive:
-Reguljära uttryck har funnits sedan tidigt 1960-tal och användes ursprungligen inom språkprocessorer. Idag är de ett oumbärligt verktyg för programmerare inom många olika programmeringsspråk, inklusive C#. Det finns dock alternativa sätt att hantera textsträngar, såsom sträng-metoder och LINQ-förfrågningar, men reguljära uttryck har fördelen av att erbjuda en mer kraftfull och flexibel lösning för komplexa sök-operationer.
+```
+Matchat nummer: 13
+Matchat nummer: 47
+Matchat nummer: 0
+```
 
-För att implementera reguljära uttryck i C# finns det flera olika matchningsmetoder att välja mellan, beroende på vilka behov man har. Det finns också möjlighet att använda reguljära uttryck i LINQ-förfrågningar.
+## Fördjupning
 
-## See Also:
-- [MSDN Documentation on Regular Expressions in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [W3Schools Tutorial on Regular Expressions in C#](https://www.w3schools.com/code/tryit.asp?filename=FMJWWOZQVQ3J)
-- [Official C# Language Reference on Regular Expressions](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/regular-expression-operators)
+RegEx härstammar från 1950-talets teoretiska datavetenskap, men har anammats i många programmeringsspråk inklusive C#. Det finns flera alternativ till RegEx som LINQ och String Methods, men inget är lika dynamiskt. Oftast implementeras RegEx i C# genom metoder som `Match()`, `Matches()`, `Replace()` och `Split()`, vilka returnerar anpassade resultat baserade på tillämpat mönster.
+
+## Se även
+
+1. Microsoft's officiella dokumentation: [Regular Expressions (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/regular-expressions)
+2. Video tutorial: [C# Regular Expressions](https://www.youtube.com/watch?v=OwDt-klLgE0)
+3. Online regex testare: [Regex Storm](https://regexstorm.net/tester)

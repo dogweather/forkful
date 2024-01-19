@@ -1,6 +1,6 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "Gleam: Interpolazione di una stringa"
+html_title:           "Clojure: Interpolazione di una stringa"
 simple_title:         "Interpolazione di una stringa"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,29 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Interpolazione di stringhe è un modo per inserire valori variabili all'interno di una stringa. I programmatori usano questa tecnica per semplificare il processo di creazione di stringhe dinamiche, rendendo il codice più leggibile e mantenibile. 
+## Che Cos'è & Perché? 
 
-## Come fare:
-Utilizzare l'operatore `~` per inserire una variabile all'interno di una stringa. Ad esempio:
+L'interpolazione delle stringhe in programmazione è un processo dove combiniamo variabili e stringhe. I programmatori lo fanno per creare dinamicamente i dati testuali, rendendo l'output più facile da leggere e da manipolare.
+
+## Come si fa:
+
+Ecco un esempio di come eseguire l'interpolazione delle stringhe in Gleam:
+
 ```Gleam
-let nome = "Maria"
-let saluto = "Ciao, ~!"
+fn main() {
+  let nome = "Mario"
+  let eta = 30
+  Io.print("Ciao, {nome}! Hai {eta} anni.", [nome, eta])
+}
 ```
-L'uscita sarà "Ciao, Maria!".
-Si possono anche concatenare più variabili utilizzando `~`.
-```Gleam
-let nome = "Maria"
-let cognome = "Rossi"
-let saluto = "Ciao, ~ ~!"
+
+L'output sarà:
+
+```ui.dialog
+Ciao, Mario! Hai 30 anni.
 ```
-L'uscita sarà "Ciao, Maria Rossi!".
 
-## Approfondimento:
-Interpolazione di stringhe è una tecnica molto comune utilizzata in numerosi linguaggi di programmazione come Javascript, Python e Ruby. In alcuni linguaggi, invece di utilizzare `~`, si utilizza il carattere `\` per indicare una variabile all'interno di una stringa.
-Alcune alternative alla interpolazione di stringhe includono la formattazione di stringhe e la concatenazione di stringhe manualmente, ma queste possono essere meno efficienti e più soggette a errori.
-Nel codice sorgente di Gleam, l'interpolazione di stringhe è implementata come una funzione che accetta una stringa di formato e un numero variabile di argomenti da inserire al suo interno.
+## Approfondimento
 
-## Vedi anche:
-- [Documentazione di Gleam su interpolazione di stringhe](https://gleam.run/book/tour/interpolation.html)
-- [Pagine di riferimento sulle stringhe in Gleam](https://gleam.run/book/std/string.html)
+(1) Storicamente, l'interpolazione delle stringhe risale ai primi giorni della programmazione, con la necessità di combinare insieme dati variabili e testi fissi.
+
+(2) Ci sono molte alternative all'interpolazione delle stringhe, ad esempio la concatenazione delle stringhe. Tuttavia, l'interpolazione delle stringhe è più leggibile e meno incline a errori.
+
+(3) In Gleam, l'interpolazione delle stringhe avviene tramite la funzione `Io.print()`. I valori all'interno delle parentesi graffe { } vengono sostituiti dai valori specificati nell'elenco di argumenti alla fine della funzione.
+
+## Vedere Anche
+
+- [Gleam: String interpolation](https://gleam.run/book/tour/basic-types.html#string)
+- [The Gleam Programming Language Guide](https://gleam.run/guides/)

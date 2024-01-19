@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di sottostringhe"
-html_title:           "C++: Estrazione di sottostringhe"
-simple_title:         "Estrazione di sottostringhe"
+title:                "Estrazione di sottosequenze"
+html_title:           "Arduino: Estrazione di sottosequenze"
+simple_title:         "Estrazione di sottosequenze"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché:
-Estrarre sottostringhe è il processo di selezione di una parte di una stringa più grande. I programmatori spesso lo fanno per analizzare e manipolare dati in modo più preciso e efficiente.
+## Cosa & Perché?
+L'estrazione di sottosequenze è l'azione di prendere una parte di una stringa di testo. I programmatori la utilizzano per manipolare, analizzare o semplicemente isolare parti specifiche di una stringa.
 
 ## Come fare:
-Ecco un esempio di codice in C++ che mostra come estrarre una sottostringa da una stringa più grande utilizzando la funzione `substr()`:
+Vediamo un esempio di come estrarre una sottosequenza in C++:
 
 ```C++
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 int main() {
-    string str = "Ciao mondo!";
-    string subStr = str.substr(5, 5); // estrae "mondo" dalla posizione 5 con una lunghezza di 5 caratteri
-    cout << subStr; // output: mondo
+    std::string s = "Ciao, mondo!";
+    std::string sub = s.substr(6, 5); // Estrae la sottosequenza
+
+    std::cout << sub << std::endl; // Stampa la sottosequenza
     return 0;
 }
 ```
+L'output sarà:
 
-## Approfondimento:
-Estrarre sottostringhe è un concetto comune in programmazione. In C++ ci sono diverse alternative come ad esempio l'utilizzo delle funzioni `strncpy()` e `memcpy()`. La funzione `substr()` è stata introdotta nella libreria standard di C++ a partire dalla versione 98 e offre una sintassi più semplice e intuitiva.
+```C++
+mondo
+```
 
-## Vedi anche:
-- [La documentazione ufficiale di C++ sulla funzione `substr()`](https://en.cppreference.com/w/cpp/string/basic_string/substr)
-- [Un tutorial su come utilizzare la funzione `substr()` in C++](https://www.studytonight.com/cpp/string-basic-string-substr-function.php)
-- [Altre alternative per estrarre sottostringhe in C++](https://www.cplusplus.com/forum/general/78848/)
+In questo esempio, abbiamo preso la stringa "Ciao, mondo!", e abbiamo estratto la sottosequenza "mondo" utilizzando il metodo `substr`.
+
+## Un Approfondimento
+La funzione `substr` è stata introdotta per la prima volta in C++98 e da allora è un componente fondamentale delle stringhe in C++.
+
+Ci sono alternative all'estrazione di sottosequenze, come l'uso di puntatori o l'iterazione attraverso la stringa, ma `substr` è ampiamente preferita per sua facilità d'uso e chiarezza.
+
+A livello di implementazione, `substr` crea un nuovo oggetto stringa con il contenuto specificato dal indice di inizio e la lunghezza fornita. Quindi, attenzione a non eccedere i limiti della stringa originale, altrimenti solleverà un'eccezione `out_of_range`.
+
+## Vedi Anche
+Per ulteriori dettagli sulla manipolazione delle stringhe in C++, consultare: 
+- cppreference: [std::string::substr](http://en.cppreference.com/w/cpp/string/basic_string/substr)
+- cplusplus.com: [std::basic_string::substr](http://www.cplusplus.com/reference/string/string/substr/)

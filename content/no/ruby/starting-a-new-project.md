@@ -1,7 +1,7 @@
 ---
-title:                "Å starte et nytt prosjekt"
-html_title:           "Ruby: Å starte et nytt prosjekt"
-simple_title:         "Å starte et nytt prosjekt"
+title:                "Starter et nytt prosjekt"
+html_title:           "Arduino: Starter et nytt prosjekt"
+simple_title:         "Starter et nytt prosjekt"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -11,27 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Når en programmerer starter et nytt prosjekt, betyr det at de begynner å skrive kode for en ny applikasjon, program eller nettside. Dette gjøres vanligvis for å løse et spesifikt problem eller for å skape noe nyttig. Ved å starte et nytt prosjekt, kan programmereren bygge noe fra grunnen av og ha full kontroll over koden.
+
+Å starte et nytt prosjekt handler om å initieres arbeid med en ny idé eller å løse et nytt problem. Programmerere gjør dette for å bygge nye applikasjoner, teste teorier eller lære nye ferdigheter. 
 
 ## Hvordan:
+
+Her starter vi et nytt Ruby-prosjekt:
+
 ```Ruby
-# Opprett en ny fil kalt "hello_world.rb"
-touch hello_world.rb
+# Installer Ruby hvis du ikke allerede har det
+$ sudo apt-get install ruby-full
 
-# Åpne filen i en tekstredigerer
-code hello_world.rb
+# Lag en ny katalog for prosjektet ditt
+$ mkdir mitt_nye_prosjekt
 
-# Skriv koden for å skrive ut "Hei verden!" i terminalen
-puts "Hei verden!"
+# Gå inn i prosjektkatalogen
+$ cd mitt_nye_prosjekt
 
-# Kjør filen i terminalen
-ruby hello_world.rb
+# Lag en ny Ruby-fil
+$ touch hoved.rb
 
-# Output: Hei verden!
+# Åpne filen i tekstredigeringsprogrammet
+$ nano hoved.rb
 ```
-## Dypdykk:
-Det å starte et nytt prosjekt kan også være en mulighet til å eksperimentere med nye programmeringsspråk eller teknologier. Det finnes også alternative måter å starte et prosjekt på, som for eksempel å bruke en eksisterende mal eller en integrert utviklingsmiljø (IDE). Implementation details omfatter valg av dependencies, versjonskontroll og å følge best practices for prosjektstruktur og organisering.
 
-## Se også:
-- [Getting Started with Ruby](https://www.ruby-lang.org/en/documentation/quickstart/)
-- [The Pragmatic Programmer: From Journeyman to Master](https://pragprog.com/book/tpp20/the-pragmatic-programmer-20th-anniversary-edition)
+Skriv inn følgende i `hoved.rb`:
+
+```Ruby
+puts "Hei, verden!"
+```
+
+For å kjøre programmet:
+
+```Ruby
+$ ruby hoved.rb
+```
+
+Resultatet skal være:
+
+`Hei, verden!`
+
+## Dyp Dykk
+
+### Historie
+
+Ruby har vært i omløp siden 1995, med sikte på å gi programmereren en effektiv og underholdende opplevelse. Dens syntax ble påvirket av Perl, Smalltalk, Eiffel, Ada og Lisp.
+
+### Alternativer
+
+Det er mange andre programmeringsspråk du kan bruke til å starte et nytt prosjekt. Noen eksempler er Python, Java, JavaScript, C#, PHP, Swift eller Go. Valget avhenger av kravene til prosjektet, dine personlige preferanser og arbeidsplassen sin standard.
+
+### Implementeringsdetaljer
+
+Ruby er et tolket, høy-nivå, generelt bruk programmeringsspråk. Det betyr at Ruby-koden din kjøres linje for linje, så du kan enkelt teste og justere koden din.
+
+## Se Også
+
+1. [Offisiell Ruby-Dokumentasjon](https://www.ruby-lang.org/en/documentation/)
+2. [Yehuda Katz's Guide to Building Gems](https://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/)
+3. [Praktisk Ruby for Systemansvarlige](https://www.apress.com/gp/book/9781484220633)
+
+Husk, øvelse gjør mester. Lykke til med Ruby-prosjektet ditt!

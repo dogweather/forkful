@@ -1,7 +1,7 @@
 ---
-title:                "Trasformare una data in una stringa"
-html_title:           "Kotlin: Trasformare una data in una stringa"
-simple_title:         "Trasformare una data in una stringa"
+title:                "Convertire una data in una stringa"
+html_title:           "Javascript: Convertire una data in una stringa"
+simple_title:         "Convertire una data in una stringa"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Convertire una data in una stringa in Kotlin
+## Cosa & Perché?
 
-## Cos'è e perché?
-
-Convertire una data in una stringa significa rappresentare una data in un formato leggibile per gli esseri umani. Questo è utile quando si vuole mostrare la data su un'interfaccia utente o salvarla in un database. I programmatori fanno questo per migliorare l'usabilità del loro codice e rendere più semplice la gestione delle date.
+La conversione di una data in una stringa in Kotlin è un metodo per trasformare un oggetto data in un formato di testo leggibile. I programmatori lo fanno per semplificare la presentazione e la visualizzazione dei dati.
 
 ## Come fare:
 
-#### Esempio 1:
+```Kotlin
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
+fun main() {
+    // Crea un oggetto Data corrente
+    val dataCorrente = LocalDateTime.now()
+    println("Data e ora in formato predefinito: $dataCorrente")
+
+    // Formatta la data in una stringa
+    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")
+    val dataFormattata = dataCorrente.format(formatter)
+    println("Data e ora nel formato stringa: $dataFormattata")
+}
 ```
-val date = SimpleDateFormat("dd/MM/yyyy").format(Date())
-println(date)
+
+Output:
+
 ```
-Output: 20/07/2020
-
-In questo esempio, abbiamo utilizzato la classe SimpleDateFormat per convertire la data corrente in una stringa in formato "giorno/mese/anno" e poi l'abbiamo stampata a video.
-
-#### Esempio 2:
+Data e ora in formato predefinito: 2022-03-04T11:39:00.123
+Data e ora nel formato stringa: 04-03-2022 11:39
 ```
-val sdf = SimpleDateFormat("dd MMMM yyyy", Locale.ITALIAN)
-val date = sdf.parse("25 luglio 2020")
-println(date)
-```
-Output: Sat Jul 25 00:00:00 GMT 2020
 
-Qui abbiamo utilizzato la classe SimpleDateFormat anche per il viceversa, ovvero convertire una stringa in una data. Nota che abbiamo specificato anche la lingua locale per ottenere il nome del mese in italiano.
+## Approfondimento
 
-## Approfondimento:
+- **Contesto storico**: La conversione della data in una stringa è stata una pratica standard nei linguaggi di programmazione fin dalla loro creazione. Questa funzionalità aiuta i programmatori a manipolare e presentare i dati in modo che sia facile da capire per gli utenti.
 
-### Contesto storico:
-La necessità di convertire le date in stringhe e viceversa è nata con l'avvento dei computer e la gestione delle informazioni digitali. Prima di questo, le date venivano solitamente scritte in un formato leggibile per gli esseri umani, ad esempio "25 luglio 2020". Con l'avvento dei computer, è stato necessario standardizzare il formato delle date per un facile utilizzo nei sistemi informatici.
+- **Alternative**: Oltre al metodo illustrato sopra, esistono altri modi per convertire una data in una stringa in Kotlin, come l'uso di SimpleDateFormat e Date.toString().
 
-### Alternative:
-Oltre alla classe SimpleDateFormat, Kotlin offre anche altre opzioni per la conversione delle date, come la classe DateTimeFormatter di Java 8 e la libreria Joda-Time.
+- **Dettagli di implementazione**: Il formato di data e ora può essere personalizzato utilizzando diversi simboli di formato. Ad esempio, 'yyyy' rappresenta l'anno completo a 4 cifre, 'MM' rappresenta il mese a 2 cifre, ecc.
 
-### Dettagli di implementazione:
-La classe SimpleDateFormat, come suggerisce il nome, offre una semplice e flessibile implementazione per la formattazione delle date. Utilizza come base il formato della classe java.text.DateFormat e supporta molti simboli per la formattazione personalizzata della data.
+## Vedi anche
 
-## Vedi anche:
-- [Classe SimpleDateFormat di Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-simple-date-format/)
-- [Libreria Joda-Time](https://www.joda.org/joda-time/)
-- [Classe DateTimeFormatter di Java 8](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- Kotlin official documentation: [Link](https://kotlinlang.org/docs/dates-and-times.html)
+- Android developer guide on how to work with dates and times: [Link](https://developer.android.com/training/basics/dates-times)
+- Tutorial su come lavorare con le date e le volte in Kotlin: [Link](https://www.raywenderlich.com/324-working-with-date-and-time-in-kotlin)

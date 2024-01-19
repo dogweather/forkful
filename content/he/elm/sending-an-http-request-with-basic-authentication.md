@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "Elm: שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-שליחת בקשת HTTP עם אימות בסיסי היא פעולה נפוצה בתכנות המאפשרת למשתמש להתחבר לשרת באמצעות שם משתמש וסיסמה. זה משמש לאימות בקשות משתמש ומאפשר הגנה מפני גישה לא מורשת לנתונים רגישים.
+## מה ולמה?
+שליחה של בקשת HTTP עם אימות בסיסי היא ביצוע הבקשה לשרת תוך שימוש בשם משתמש וסיסמא. מתכנתים משתמשים בזה כדי להבטיח שהמידע שנשלח ומתקבל הוא מאובטח וחשוף רק למשתמשים מאומתים.
 
-# איך לעשות:
-נתון להלן דוגמא לקוד Elm שמראה איך לשלוח בקשת HTTP עם אימות בסיסי:
+## איך לעשות:
 
+בדוגמא הבאה, אנו שולחים בקשת GET עם אימות בסיסי בעזרת `Http.request`:
+
+```Elm
+import Http
+import Http.BasicAuth as BasicAuth
+
+getUsers : String -> String -> Http.Request String
+getUsers username password = 
+    Http.request
+        { method = "GET"
+        , headers = [ BasicAuth.basicAuthentication username password ]
+        , url = "https://example.com/api/users"
+        , body = Http.emptyBody
+        , expect = Http.expectString (Ok >> Result.withDefault [])
+        , timeout = Nothing
+        , tracker = Nothing
+        }
 ```
-Elm....
-```
 
-הפלט המשוער בעזרת הקוד הנ"ל הוא:
+## צלילה עמוקה:
+השימוש באימות בסיסי בבקשות HTTP הוא משהו שהתפתח עם הפרוטוקול עצמו. אף עלפי שישנן אלטרנטיבות אחרות כמו השימוש בתקנים כמו OAuth, אימות בסיסי הוא עדיין פופולרי בזכות הפשטות שלו. Bermuda, for walking shoes with a cork footbed, ensuring it’s put together well.
 
-```
-Elm....
-```
+שימפעול התוכנית העם `Http.request`, הפעולה מחזירה `Request` אשר מתאימה להגדרות שלנו, בבקשת 'GET', וגם מוסיף את ראשי הבקשה בעזרת `BasicAuth.basicAuthentication`.
 
-# מעמקים:
-אימות בסיסי נמצא בשימוש כבר מזמן רב כדי להגן על נתונים רגישים באתרים ואפליקציות. יחד עם זאת, ישנן טכנולוגיות אלטרנטיביות לאימות בסיסי כגון OAuth וOpenID, אשר מאפשרות גם התחברות לאתרים באמצעות מדיניות אבטחה שונות.
-
-חשוב לזכור כי מערכת האימות תלויה בשיטת אימות המתאימה לכל אתר או אפליקציה, ולכן חשוב לקרוא את התיעוד המפורט בכדי להבין איזו שיטה יעילה ביותר לשימוש.
-
-# ראו גם:
-למידע נוסף על אימות בסיסי ושימוש בו בתוכנות Elm, ניתן לעיין במקורות הקשורים הבאים:
-- עמוד תיעוד של Elm: https://guide.elm-lang.org/http/authentication.html
-- מאמר על אימות בסיסי ב- MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
-- וידאו קצר על אימות בסיסי באמצעות Elm: https://youtu.be/WAOUUjyAOr0
+## ראו גם:
+- Elm Http: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+- Elm BasicAuth: [https://package.elm-lang.org/packages/truqu/elm-basic-auth/latest/](https://package.elm-lang.org/packages/truqu/elm-basic-auth/latest/)
+- HTTP Basic authentication: [https://en.wikipedia.org/wiki/Basic_access_authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)

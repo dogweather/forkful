@@ -1,7 +1,7 @@
 ---
-title:                "「HTTPリクエストの送信」"
-html_title:           "C: 「HTTPリクエストの送信」"
-simple_title:         "「HTTPリクエストの送信」"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,54 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をして、何のために？
+## 何となぜ ?
+HTTPリクエストを送信するとは、サーバーに特定のデータを要求する方法です。これはよくウェブページのデータを取得したり、ウェブサービスと交信したりするために行います。
 
-HTTPリクエストを送ることは、Webサーバーやクライアント間でデータをやり取りする方法です。プログラマーは、この方法を使うことで、Webサービスを作成し、データを取得したり送信したりすることができます。
-
-## 方法：
-
-以下の例を参考に、```C ... ```コードブロック内にコーディング例とサンプルの出力を記述します。
-
-```
+## 実際にどうやるの？
+```C
 #include <stdio.h>
 #include <curl/curl.h>
 
 int main(void)
 {
-  CURL *curl;
-  CURLcode res;
+    CURL *curl;
+    CURLcode res;
 
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-    res = curl_easy_perform(curl);
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        res = curl_easy_perform(curl);
 
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                        curl_easy_strerror(res));
+        }
 
-    curl_easy_cleanup(curl);
-  }
-
-  return 0;
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
+上記のコードはhttp://example.comにHTTPリクエストを送信し、応答を表示します。
 
-### 出力：
+## 詳説
+HTTPリクエストの送信は、インターネットが生まれたときから行われている基本的な操作です。代替手段としては、HTTPS（セキュアなHTTP）、FTP（ファイル転送プロトコル）などがありますが、目的により適切な手段を選びます。
 
-```
-curl_easy_perform() failed: Couldn't connect to server
-```
+この実装では、Open Sourceのライブラリであるlibcurlを使用しています。libcurlは、HTTPをはじめとする様々なプロトコルの通信をシンプルに抽象化し、より高度な機能を提供します。
 
-## 深堀り：
-
-- **歴史的背景：** HTTPリクエストは、1996年に最初のバージョンが公開されました。その後、HTTP/1.1と呼ばれるバージョンが定着しましたが、最近ではHTTP/2が普及してきています。
-- **代替方法：** HTTPリクエストを送る方法には、他のプログラミング言語やツールもあります。例えば、PythonのRequestsライブラリやPostmanというツールなどがあります。
-- **実装の詳細：** HTTPリクエストには、GETやPOSTのようなさまざまなメソッドがあります。また、リクエストヘッダーやボディーなどのパラメーターを指定することで、より詳細なリクエストを行うことができます。
-
-## 関連情報：
-
-- [curl - man page](https://curl.haxx.se/docs/manpage.html)
-- [HTTP/2の仕様書](https://tools.ietf.org/html/rfc7540)
-- [Python Requestsライブラリの公式ドキュメント](https://2.python-requests.org/en/master/)
-- [Postman公式サイト](https://www.postman.com/)
+## 参考リンク
+1. libcurlの公式ページ：[https://curl.haxx.se/libcurl/](https://curl.haxx.se/libcurl/)
+2. HTTPの詳細な仕様（英語）: [https://tools.ietf.org/html/rfc2616](https://tools.ietf.org/html/rfc2616)

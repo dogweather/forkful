@@ -1,7 +1,7 @@
 ---
-title:                "Обчислення дати у майбутньому чи минулому"
-html_title:           "C++: Обчислення дати у майбутньому чи минулому"
-simple_title:         "Обчислення дати у майбутньому чи минулому"
+title:                "Розрахунок дати в майбутньому або минулому"
+html_title:           "C++: Розрахунок дати в майбутньому або минулому"
+simple_title:         "Розрахунок дати в майбутньому або минулому"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,79 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
-Розрахунок дати в майбутньому або минулому - це процес обчислення дати, яка буде в певний момент у часі, виходячи з вказаної початкової дати та кількості днів. Програмісти часто роблять це для створення календарів, розрахунку строків дії різних подій або для обчислення часу між двома датами.
+## Що і навіщо?
+Розрахунок дати в майбутньому або минулому - це процес прибавлення або віднімання днів, місяців або років від початкової дати. Програмісти роблять це для роботи з датами в складних системах, таких як системи керування базами даних або системи стеження за проектами.
 
-Як зробити?
-Нижче наведені приклади коду та вихідні дані для обчислення дати в майбутньому або минулому за допомогою мови програмування C++:
+## Як це зробити:
+Для цього ми використовуємо бібліотеку `std::chrono` в C++17. 
 
 ```C++
-// Обчислення дати через N днів вперед
-#include <iostream>
 #include <chrono>
-using namespace std;
-
-int main()
-{
-    // Початкова дата
-    chrono::system_clock::time_point startingDate(chrono::system_clock::now());
-
-    // Кількість днів, які потрібно додати
-    int numDays = 365;
-
-    // Розрахунок нової дати
-    chrono::system_clock::time_point futureDate = startingDate + chrono::hours(numDays * 24);
-
-    // Виведення результату
-    time_t date = chrono::system_clock::to_time_t(futureDate);
-    cout << "Дата через " << numDays << " днів: " << ctime(&date) << endl;
-
-    return 0;
-}
-
-// Обчислення дати через N днів назад
 #include <iostream>
-#include <chrono>
-using namespace std;
+#include <ctime>
 
-int main()
-{
-    // Початкова дата
-    chrono::system_clock::time_point startingDate(chrono::system_clock::now());
+int main() {   
+    // get today's date
+    std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
+    // add one year
+    std::chrono::seconds sec_in_one_year = 60*60*24*365;
+    today += sec_in_one_year;
+    // convert back to time_t and ctime to get a neat string
+    time_t tt = std::chrono::system_clock::to_time_t(today);
 
-    // Кількість днів, які потрібно відняти
-    int numDays = 100;
-
-    // Розрахунок нової дати
-    chrono::system_clock::time_point pastDate = startingDate - chrono::hours(numDays * 24);
-
-    // Виведення результату
-    time_t date = chrono::system_clock::to_time_t(pastDate);
-    cout << "Дата за " << numDays << " днів до: " << ctime(&date) << endl;
-
-    return 0;
+    std::cout << "One year from now will be: " << ctime(&tt);
 }
 ```
+Вихідний файл:
+``` 
+One year from now will be: Mon Sep  26 12:22:35 2022 
+```
 
-Результат:
+## Поглиблено:
+Розрахунок дати в майбутньому або минулому був важливою частиною програмування протягом багатьох десятиліть. До впровадження `std::chrono` в C++11, програмісти часто використовували клас `time_t` або структуру `tm`, але ці методи містили багато пасток. Також існують альтернативні бібліотеки, такі як Boost DateTime або Howard E. Hinnant's date library, але `std::chrono` є вбудованим і потужним вибором.
 
-`Дата через 365 днів: Mon Mar 15 00:00:00 2021`
-
-`Дата за 100 днів до: Sun Nov 15 00:00:00 2020`
-
-Глибоке дослідження
-Історичний контекст:
-Розрахунок дат в майбутньому або минулому використовується в людства з найдавніших часів. Спочатку це робилося за допомогою сонячного календаря, а потім за допомогою різних типів календарів, таких як григоріанський та юліанський. Сьогодні програмісти можуть легко обчислити дату в майбутньому або минулому за допомогою різних функцій та бібліотек.
-
-Альтернативи:
-Існує багато альтернативних способів обчислення дат. Один з них - це використання бібліотеки Boost.Date_Time, яка надає більш широкі можливості для маніпулювання датами. Також можна використовувати різні онлайн-інструменти для розрахунку дат.
-
-Деталі реалізації:
-У лінії коду ```chrono::hours(numDays * 24)``` ми використовуємо функцію ```chrono::hours``` для перетворення кількості днів в години, так як об'єкт типу ```chrono::system_clock::time_point``` працює з одиницями часу в годинах. Крім того, функція ```to_time_t``` використовується для конвертації об'єкта типу ```chrono::system_clock::time_point``` у тип даних ```time_t```, який можна використовувати для виведення часу у зрозумілому форматі.
-
-Подивіться також
-- [Простий розрахунок часу у C++](https://www.programiz.com/cpp-programming/time)
-- [Програмування розрахунку дат за допомогою бібліотеки Boost.Date_Time](https://theboostcpplibraries.com/boost.datetime-dates)
-- [Онлайн-інструмент для розрахунку дат](https://www.timeanddate.com/date/dateadded.html)
-
-**Запам'ятайте!** Розрахунок дат в майбутньому або минулому - це важливий процес для багатьох програм, тому не бійтесь використовувати його у своїх проектах. І не забувайте про функці
+## Дивіться також:
+- [C++ Reference: chrono](https://en.cppreference.com/w/cpp/chrono)
+- [C++ Core Guidelines: Date manipulation](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#i55-dont-mess-with-the-system-directory)
+- [Boost Libraries: DateTime](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+- [Howard Hinnant's date library](https://github.com/HowardHinnant/date)

@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "C recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "C"
 category:             "C"
@@ -10,71 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Concatenating Strings in C - A Handy Guide
+
 ## What & Why?
 
-Concatenating strings in C refers to combining multiple strings into one. This is a common task in programming, as it allows us to manipulate and display text in different ways. Whether it's creating a dynamic message or building a file path, string concatenation is a valuable tool for any C programmer.
+Simply put, concatenating in programming means joining two or more strings together into a single string. Developers often use this to effectively generate or manipulate textual data.
 
-## How to:
+## How To:
 
-The basic syntax for concatenating strings in C is to use the `strcat()` function, which is defined in the `string.h` header file. Here's an example of how to use it:
+Here's a basic example of concatenating, or joining, two strings using the strcat() function in C:
 
-```
-#include <stdio.h>
+```C
 #include <string.h>
+#include <stdio.h>
 
 int main() {
-    char first_name[] = "John";
-    char last_name[] = "Doe";
-    char full_name[20];
+    char str1[100] = "Hello, ";
+    char str2[] = "World!";
 
-    strcat(full_name, first_name);
-    strcat(full_name, " ");
-    strcat(full_name, last_name);
+    strcat(str1, str2);
 
-    printf("Hello, %s!", full_name);
+    printf("%s\n", str1);
 
     return 0;
 }
 ```
 
-Output: 
-```
-Hello, John Doe!
-```
+Running this would output: 
 
-Note that the `strcat()` function appends the second string to the end of the first string, so it's important to make sure the first string has enough space to accommodate the additional characters.
-
-If you want to concatenate more than two strings, you can use multiple `strcat()` functions or use the `sprintf()` function, which allows you to specify a format string to combine multiple strings. Here's an example:
-
-```
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char string[20];
-
-    sprintf(string, "The answer is %d.", 42);
-
-    printf("%s", string);
-
-    return 0;
-}
+```C
+Hello, World!
 ```
 
-Output:
-```
-The answer is 42.
-```
+This C code takes two separate strings - "Hello, " and "World!", and joins them together into a single string "Hello, World!".
 
-## Deep Dive
+## Deep Dive 
 
-In the early days of C, there was no `strcat()` function, so programmers had to write their own functions to concatenate strings. One common method was to use a loop to copy characters from one string to another until reaching the end of the first string, and then copying the second string. However, this method was not very efficient and could potentially cause buffer overflows.
+The ability to concatenate strings in C comes from string handling functions defined in the string.h library. Specifically, the strcat() function as shown above. 
 
-Another alternative to `strcat()` is the `strcpy()` function, which copies one string to another. However, this method only works if the target string is empty, so it's not ideal for concatenating multiple strings.
+And why strcat()? Its history is as old as the C language itself - Brian Kernighan and Dennis Ritchie introduced it in C's earliest versions. 
 
-In terms of implementation, the `strcat()` function works by searching for the null character at the end of the first string and then copying the characters of the second string to that position. It then adds a null character at the end to terminate the string. As a result, it's important to make sure the first string has enough space to accommodate the additional characters.
+As for alternatives, we have the strncat() function, snprintf(), and sprintf(). They provide more flexibility and safety, especially when working with buffers and limiting string lengths.
 
-## See Also
+However, it's noteworthy that C strings are null-terminated. This means whenever you use concatenation, the function needs to traverse until it finds the null character. So, if you're dealing with long strings, it can affect efficiency.
 
-- [The `string.h` header file in C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [C `strcat()` function documentation](https://www.programiz.com/c-programming/library-function/string.h/strcat)
+## See Also 
+
+For more details and understanding, you can refer to these sources:
+
+- strcat(): https://en.cppreference.com/w/c/string/byte/strcat
+- strncat(): https://en.cppreference.com/w/c/string/byte/strncat
+- C String handling functions: https://www.tutorialspoint.com/c_standard_library/string_h.htm

@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns"
-html_title:           "PHP: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en katalog finns"
+html_title:           "Bash: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,27 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Checka om en mapp finns är en viktig del av programmering eftersom det tillåter programmet att göra vissa åtgärder beroende på om en viss mapp finns eller inte. Detta hjälper till att göra koden mer robust och kraschsäker.
+## Vad & varför?
+Kontroll av om en katalog finns är en standardfunktion i PHP programmering som används för att säkert verifiera om en specifik katalog redan finns i systemet. Programmerare gör detta för att undvika fel vid skapande eller användning av en katalog, och för att garantera korrekt databehandling.
 
-## Hur du gör:
-Kolla om en mapp finns i PHP är enkelt tack vare den inbyggda funktionen `file_exists()`. Här är ett kodexempel:
+## Hur man gör:
+Här är ett grundläggande exempel på hur du kontrollerar om en katalog finns med PHP:
 
 ```PHP
-if (file_exists("min_mapp")) {
-    echo "Mappen finns";
+<?php
+$dir ="your/directory/path";
+if (is_dir($dir)){
+    echo "Katalogen finns.";
 } else {
-    echo "Mappen finns inte";
+    echo "Katalogen finns INTE.";
 }
+?>
 ```
 
-Detta kodexempel kommer att kolla om en mapp med namnet "min_mapp" finns och skriva ut ett lämpligt meddelande baserat på resultatet. Om mappen finns, kommer det att skriva ut "Mappen finns", annars kommer det att skriva ut "Mappen finns inte".
+Om katalogen finns, kommer det att skriva ut "Katalogen finns." Annars kommer det att skriva ut "Katalogen finns INTE."
 
-## Djupdykning:
-Att kolla om en mapp finns är en viktig del av fil- och mapphantering i PHP. Innan inbyggda funktioner som `file_exists()` fanns, var det nödvändigt att använda mer komplexa metoder som att köra systemanrop för att utföra samma uppgift. Nu kan vi enkelt använda den inbyggda metoden som gör att koden blir mer effektiv.
+## Fördjupning
+Det är viktigt att notera att `is_dir()` funktionen introducerades i PHP 4 och har varit en stabil del av språkets standardbibliotek sedan dess. 
 
-Om du letar efter en mer specifik metod för att kolla om en mapp finns, kan du också använda `is_dir()` som returnerar sant om sökvägen leder till en mapp. Detta kan vara användbart om du bara vill kontrollera om en specifik sökväg pekar på en mapp eller inte.
+Som alternativ kan du också använda `file_exists()` funktionen som kontrollerar både filer och kataloger. Men 'is_dir()' är mer effektiv om du bara behöver verifiera kataloger.
 
-## Se också:
-- [PHP manual för file_exists()](https://www.php.net/manual/en/function.file-exists.php)
-- [PHP manual för is_dir()](https://www.php.net/manual/en/function.is-dir.php)
+En intressant implementation detalj kring `is_dir()` är att den faktiskt läser innehållet i katalogen för att verifiera dess existens, vilket kan påverka prestanda i stora filsystem.
+
+## Se även
+- PHP Dokumentation om 'is_dir()': https://www.php.net/manual/en/function.is-dir.php
+- PHP Dokumentation om 'file_exists()': https://www.php.net/manual/en/function.file-exists.php
+- För en mer detaljerad förklaring och fler exempel, besök denna diskussion på Stack Overflow: https://stackoverflow.com/questions/18017607/check-dir-if-exists-php

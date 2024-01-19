@@ -1,7 +1,7 @@
 ---
-title:                "阅读命令行参数"
-html_title:           "Java: 阅读命令行参数"
-simple_title:         "阅读命令行参数"
+title:                "读取命令行参数"
+html_title:           "C: 读取命令行参数"
+simple_title:         "读取命令行参数"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,20 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是读取命令行参数？为什么程序员要这么做？
+---
 
-读取命令行参数是指在编写Java程序时，程序员可以让程序在运行时接受命令行输入的指令或参数。这样可以使程序更加灵活多变，并根据不同的输入执行不同的操作。
+## 什么和为什么? (What & Why?)
 
-## 如何读取命令行参数？
+命令行参数是传递给程序的输入参数。程序员使用它是因为它使软件的运行更加灵活。
 
-我们可以使用Java内置的命令行参数相关类来读取命令行传入的参数。下面是一个简单的示例代码：
+---
+
+## 如何操作 (How to)
+
+我们将介绍如何在Java中使用命令行参数。看这个简单的例子：
 
 ```Java
-public class CommandLineArgumentsExample {
+public class Main {
 
     public static void main(String[] args) {
-        // 输出传入的参数
-        System.out.println("命令行参数：");
+
         for (String arg : args) {
             System.out.println(arg);
         }
@@ -31,28 +34,26 @@ public class CommandLineArgumentsExample {
 }
 ```
 
-假设我们将以上代码保存为`CommandLineArgumentsExample.java`并在命令行中编译运行，则可以通过在命令行中输入参数来进行测试，例如：
+如果你运行这段代码，并在调用时加上参数（如“Hello World”），输出就会是：
 
 ```
-java CommandLineArgumentsExample param1 param2
+Hello
+World
 ```
 
-程序将会输出如下结果：
+---
 
-```
-命令行参数：
-param1
-param2
-```
+## 深入研究 (Deep Dive)
 
-需要注意的是，在使用命令行参数时，需要在程序运行命令中指定参数的数量和顺序，否则程序可能无法正常执行。
+在早期的编程语言中，使用命令行参数来配置程序是常见的。Java作为一门现代化的语言，也加入了这个功能。
 
-## 深入探讨
+对于替代方案，Java还可以从输入流读取数据，通过网络接收数据，或者从配置文件加载参数。
 
-读取命令行参数这一技术其实早在Java发展初期就已经存在，并且在许多其它编程语言中也有类似的实现。除了使用Java内置的命令行参数相关类，我们还可以使用一些第三方库来处理命令行参数，例如Apache Commons CLI。另外，对于一些复杂的命令行参数处理需求，我们还可以使用命令行参数解析器，它可以帮助我们更加灵活地解析和处理命令行参数。
+在Java中，命令行参数被定义为`main`方法的参数。它们被存储为字符串数组，这是因为它们是从命令行接收的文本。
 
-## 参考资料
+---
 
-- [Java命令行参数文档](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Apache Commons CLI网站](https://commons.apache.org/proper/commons-cli/)
-- [Command Line Parameter Parser网站](https://github.com/jopt-simple/jopt-simple)
+## 另请参阅 (See Also)
+
+- [Java命令行参数（Oracle 官方文档）](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Java命令行参数（教程）](https://www.tutorialspoint.com/java/java_command_line_arguments.htm)

@@ -1,7 +1,7 @@
 ---
-title:                "Sammanfogning av strängar"
-html_title:           "Go: Sammanfogning av strängar"
-simple_title:         "Sammanfogning av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,30 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Sätta ihop strängar i Go - En nybörjarguide
+
 ## Vad & Varför?
-Konkatenation av strängar är när du kombinerar flera strängar till en enda längre sträng. Programmers använder detta för att skapa dynamiska meddelanden, bygga URL-adresser, och för andra tillfällen när olika delar av text behöver sammanfogas till en helhet.
+Att sammanfoga strängar, eller string concatenation, innebär att du sätter ihop två eller flera strängar till en enda. Programmerare gör detta för att manipulera textdata på effektiva sätt.
 
-## Hur gör man:
-```Go 
-// Skapa en variabel som håller den första strängen
-första := "Hej"
+## Så här gör du: 
+Låt oss dyka rätt in i enkla koder:
 
-// Skapa en variabel som håller den andra strängen
-andra := "världen!"
+```Go
+package main
 
-// Kombinera strängarna med hjälp av + operatorn
-resultat := första + " " andra
+import "fmt"
 
-// Skriv ut den kombinerade strängen
-fmt.Println(resultat)
-
-// Output: Hej världen!
+func main() {
+    str1 := "Hej, "
+    str2 := "världen!"
+    result := str1 + str2
+    fmt.Println(result)
+}
 ```
-Genom att använda + operatorn, kan vi enkelt kombinera strängar och skapa dynamiska meddelanden.
+Utmatning:
+```
+Hej, världen!
+```
+Genom att använda '+' operatorn kan vi sätta ihop strängar i Go.
 
-## Djupdykning:
-Detta koncept av att sammanfoga eller "konkatenation" av strängar har funnits länge inom programmering, och har funnits i andra språk som C och C++. Andra alternativ för att kombinera strängar i Go inkluderar metoder som `fmt.Sprintf` eller `strings.Join`. När det kommer till att faktiskt implementera detta i koden, så bör man vara medveten om effektiviteten, då varje konkatenation skapar en ny sträng vilket kan påverka prestandan vid hantering av stora mängder data.
+## Djupdykning
+Historiskt sett har string concatenationget varit en del av programmeringsspråk sedan deras tidiga dagar. Alternativen till '+' operatorn i Go inkluderar `fmt.Sprintf` och `strings.Join`.
 
-## Se även:
-- [Go Docs: utf-8 and string operations](https://golang.org/doc/faq#utf_and_string_ops)
-- [The Go Programming Language Specification: Operators](https://golang.org/ref/spec#Operators)
+När vi talar om implementeringsdetaljer är det viktigt att nämna att Go hanterar string concatenation på ett mycket effektivt sätt. I många fall optimerar Go kompileraren bort konkatenering helt och hållet och skapar en enda sträng vid kompileringstid.
+
+Här är ett exempel på hur du kan använda `fmt.Sprintf`:
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+    str1 := "Hej, "
+    str2 := "världen!"
+    result := fmt.Sprintf("%s%s", str1, str2)
+    fmt.Println(result)
+}
+```
+Och `strings.Join`:
+
+```Go
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    str1 := "Hej, "
+    str2 := "världen!"
+    strSlice := []string{str1, str2}
+    result := strings.Join(strSlice, "")
+    fmt.Println(result)
+}
+```
+
+## Se också
+För mer information rekommenderar vi följande länkar:
+1. [Go’s official documentation](https://golang.org/pkg/fmt/#Sprintf): Innehåller djupgående information om `fmt.Sprintf`.
+2. [Go’s official documentation](https://golang.org/pkg/strings/#Join): Här hittar du information om `strings.Join`.
+3. [General guide on string concatenation](https://en.wikipedia.org/wiki/Concatenation): En allmän guide om konceptet strängkonkatenering.

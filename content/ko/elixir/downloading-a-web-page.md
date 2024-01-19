@@ -1,6 +1,6 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "Elixir: 웹 페이지 다운로드하기"
+html_title:           "Bash: 웹 페이지 다운로드하기"
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,28 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 뭐 & 왜?
+## 무엇이며 왜 사용하나요?
 
-웹 페이지를 다운로드한다는 것은 간단히 말해 인터넷에서 파일을 내 컴퓨터로 내려받는 것을 뜻합니다. 프로그래머들은 이것을 하는 이유는 다양합니다. 예를 들어, 웹 스크래핑과 같은 작업을 하기 위해서이거나, 서버에서 웹 페이지를 제공하는 것과 같은 자동화된 작업을 수행하기 위해서입니다.
+웹 페이지 다운로드란 특정 웹사이트의 내용을 HTML 형식의 파일로 저장하는 것을 말합니다. 프로그래머들이 이를 사용하는 이유는 웹사이트의 데이터를 분석하거나, 웹 크롤링을 통해 다양한 정보를 수집하기 위해서입니다.
 
-# 어떻게:
+## 어떻게 사용할까요?
+
+다음은 Elixir를 사용한 웹 페이지 다운로드 예제입니다. 
 
 ```Elixir
-# 요청 라이브러리 불러오기
-require HTTPoison
+#HTTPoison 라이브러리 추가
+defp deps do
+  [{:httpoison, "~> 1.8"}]
+end
 
-# HTTP 요청 보내기
-HTTPoison.get!("https://www.example.com")
-
-# 가져온 결과 확인하기
-{:ok, %HTTPoison.Response{status_code: 200, body: "<html><head>...</head><body>...</body></html>"}}
+#URL을 다운로드
+def download_url() do
+  case HTTPoison.get("http://example.com") do
+    {:ok, %HTTPoison.Response{body: body, status_code: 200}} ->
+      {:ok, body}
+    {:ok, %HTTPoison.Response{status_code: code}} ->
+      {:error, "Unexpected status code: #{code}"}
+    {:error, %HTTPoison.Error{reason: reason}} ->
+      {:error, reason}
+  end
+end
 ```
 
-# 깊이 들어가보기:
+## 깊게 알아보기
 
-이러한 웹 페이지 다운로드 작업은 인터넷에서 정보를 얻고 처리하는 데 필수적입니다. 이전에 이 작업을 수행하기 위해 프로그래머들은 더 낮은 수준의 프로그래밍 언어를 사용해야 했지만, 지금은 Elixir와 같은 고급 언어를 사용할 수 있습니다. 또한 라이브러리를 사용하는 것 또한 이 작업을 간단하게 만드는 방법 중 하나입니다.
+웹 페이지 다운로드의 역사는 웹이 처음 개발된 이후로 거슬러 올라갑니다. 웹 페이지 다운로드를 통해 데이터 분석, 웹 크롤링 등 많은 방면으로 활용될 수 있습니다. 
+다른 언어에서는 `wget`이나 `curl` 같은 툴을 사용해 웹 페이지를 다운로드 합니다. 
+Elixir에서는 `HTTPoison` 라이브러리를 사용하는 것이 일반적입니다.
 
-# 관련 자료:
+## 참고 링크
 
-- Elixir 공식 홈페이지 (https://elixir-lang.org)
-- HTTPoison 라이브러리 문서 (https://hexdocs.pm/httpoison/HTTPoison.html)
+더 알아보기 위해 아래의 링크를 참고하시기 바랍니다:
+
+- Elixir 공식 문서: https://elixir-lang.org/docs.html 
+- HTTPoison GitHub: https://github.com/edgurgel/httpoison 
+- 웹 크롤링에 대해: https://en.wikipedia.org/wiki/Web_scraping

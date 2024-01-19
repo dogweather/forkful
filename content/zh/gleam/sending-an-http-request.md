@@ -1,7 +1,7 @@
 ---
-title:                "发送HTTP请求"
-html_title:           "Gleam: 发送HTTP请求"
-simple_title:         "发送HTTP请求"
+title:                "发送http请求"
+html_title:           "C#: 发送http请求"
+simple_title:         "发送http请求"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,21 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-发送HTTP请求是指通过互联网协议向服务器请求数据。程序员会发送HTTP请求来获取远程服务器上的文件或数据，这样就可以轻松地获取和处理网络数据。
+## 是什么 & 为什么？
 
-## 如何：
+HTTP请求就是客户端给服务器发送的一条信息，其中包括了你想请求的内容。程序员经常发送HTTP请求以获取一些在线信息或者连接到其他应用。
+
+## 怎么做：
+
+在Gleam中我们可以用`httpc:request`发送HTTP请求，下面是一个例子:
+
+```gleam
+let response =
+  httpc.request(
+    http.get("https://example.com")
+  )
+
+case response {
+  Ok(#http.Response(body: body)) ->
+    io.println(body)
+  Error(e) ->
+    io.println(e)
+}
 ```
-Gleam.http.send("GET", "https://example.com/api/users", [], body)
-```
-这段代码将使用Gleam中的HTTP模块发送一个GET请求到指定的URL，并且可以通过body变量来访问来自服务器的数据。
+运行后，你会从"https://example.com"接收到的HTTP响应。
 
-## 深入了解：
-- 发送HTTP请求已经成为现代软件开发的常见做法。它可以为您带来更加灵活和强大的网络功能。
-- Gleam是一种函数式编程语言，持有着强大的类型检查，它可以确保发送HTTP请求的代码的正确性和安全性。
-- HTTP请求发送的方式还有其他选择，例如使用其他编程语言或者框架，但Gleam为程序员提供了一种简洁而有效的方法。
+## 深入了解:
 
-## 参考资料：
-- Gleam官方文档：https://gleam.run
-- HTTP模块的具体用法：https://gleam.run/packages/http.html
-- 更多关于网络编程的知识：https://en.wikipedia.org/wiki/HTTP
+发送HTTP请求的方法早在90年代初期就开始出现，目的是为了能够让不同的设备和软件进行交互。
+你也可以选择其他发送请求的库,例如`mochiweb`, 但是`httpc`库比较稳定，好用。
+在实现上，这个请求信息经过互联网，到达服务器，服务器再返回响应信息。这个过程需要很精确的错误处理和重试机制。
+
+## 另请参阅:
+
+如果你对于Gleam编程语言有更多的兴趣，以下是一些有用的附加资源：
+- [Gleam官方网站](https://gleam.run/)
+- [Gleam GitHub 项目](https://github.com/gleam-lang/gleam)
+- [Gleam语法详解](https://gleam.run/book/tour/introduction.html)

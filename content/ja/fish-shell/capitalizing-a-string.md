@@ -1,7 +1,7 @@
 ---
-title:                "文字列の先頭を大文字にする"
-html_title:           "Fish Shell: 文字列の先頭を大文字にする"
-simple_title:         "文字列の先頭を大文字にする"
+title:                "文字列の大文字化"
+html_title:           "Fish Shell: 文字列の大文字化"
+simple_title:         "文字列の大文字化"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ファーストシェルで文字列を大文字にする方法
+## 何となぜ？
 
-### 何が & どうして?
+文字列を大文字化するとは、全ての文字を大文字に変換することを言います。プログラマーがこれを行う理由は、主にコード内の一貫性を維持し、文字列の比較を簡単にするためです。
 
-文字列を大文字にすることは、文字列中の全ての文字を大文字に変換することを意味します。プログラマーがこのようなことをする理由は、データの整理や比較を容易にするためです。例えば、ファイルやデータベース内の同じ文字列が大文字と小文字で異なるものとして処理されてしまう場合、文字列をすべて大文字にすることで正しい比較ができるようになります。
+## 実装方法:
 
-## やり方: 
+Fish Shellで文字列を大文字化する例を見ていきましょう。
 
-文字列を大文字にするには、以下のようにコードを書きます。
-
+```Fish Shell
+function capitalize
+    echo (string upper $argv)
+end
 ```
-fish_shell -c "set -U string "hello world""
-fish_shell -c "echo $string | tr '[:lower:]' '[:upper:]'"
+
+上記の関数はコマンドライン引数を大文字化するものです。これを "Hello world" を用いてテストしてみます。
+
+```Fish Shell
+capitalize "Hello world"
 ```
 
-`set -U string` を使って `hello world` を設定し、その後 `echo` と `tr` を使って大文字に変換します。
+出力:
 
-## ディープダイブ:
+```Fish Shell
+HELLO WORLD
+```
 
-### 過去のコンテクスト:
+## ディープダイブ
 
-文字列を大文字に変換する方法は、昔からあります。古い言語では、大文字と小文字の区別がない場合もあり、大文字に変換する必要がありました。しかし、現代の言語では大文字と小文字の区別をすることができるため、この方法は必ずしも必要ではありません。
+(1)歴史的な文脈: 文字列の大文字化は、比較を単純化し、検索を容易にし、パターンマッチングを強化するために古くから使われています。
 
-### 代替方法:
+(2)代替方法: Fish Shellには別の文字列大文字化方法があります。以下はその一例です。
 
-文字列を大文字に変換する代替方法としては、 `sed` コマンドや `awk` コマンドを使うことができます。これらのコマンドは、テキスト操作に特化しており、一部のプログラムでは依存性として使用されていることがあります。
+```Fish Shell
+echo 'Hello world' | tr '[:lower:]' '[:upper:]'
+```
 
-### 実装の詳細:
+出力が "HELLO WORLD"になります。
 
-Fish Shell は、文字列を大文字に変換するために内部的に `tr` コマンドを使用しています。このコマンドは、標準入力から受け取った文字列を大文字に変換する機能を持っています。
+(3)実装の詳細: Fish Shellの`string upper`関数はUnicode文字も大文字化できます。これにより、英語だけでなく、他の言語で書かれた文字列も適切に処理できます。
 
-## 関連リンク:
+## 参考資料
 
-- [Fish Shell documentations - string interpolation and manipulation](https://fishshell.com/docs/current/cmds/set.html)
-- [sed command](https://www.gnu.org/software/sed/)
-- [awk command](https://www.gnu.org/software/gawk/)
+- Fish Shellの文字列操作について詳しくは[公式ドキュメンテーション](https://fishshell.com/docs/current/cmds/string.html)をご覧ください。
+
+- 文字列の大文字化について詳しく知りたい場合は、この[Stack Overflowのスレッド](https://stackoverflow.com/questions/2264428/how-to-convert-a-string-to-lower-case-in-bash)もご覧ください。

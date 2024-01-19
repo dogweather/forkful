@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Kotlin: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+## O Que & Porquê?
 
-Iniciar um novo projeto é quando você começa a trabalhar em um novo software, seja para criar algo novo ou aprimorar um projeto existente. Programadores iniciam novos projetos para atender às necessidades de seus clientes ou para explorar novas ideias e tecnologias.
+Iniciar um novo projeto de programação é criar uma base limpa para começar a codificar. Programadores começam novos projetos para resolver problemas específicos ou para desenvolver novas funcionalidades.
 
-## Como fazer:
+## Como Fazer:
 
-```Kotlin
+Para iniciar um novo projeto em Kotlin, usaremos o IntelliJ IDEA. Aqui está um exemplo de código Kotlin básico:
+
+```Kotlin 
 fun main() {
-    println("Bem-vindo ao meu novo projeto em Kotlin!")
-    println("Este é um exemplo simples de código que você pode usar para começar seu próprio projeto.")
+    println("Olá, Mundo!")
 }
 ```
 
-Saída:
+Quando correr este programa, a sua saída será: 
 
 ```
-Bem-vindo ao meu novo projeto em Kotlin!
-Este é um exemplo simples de código que você pode usar para começar seu próprio projeto.
+Olá, Mundo!
 ```
 
-## Mergulho Profundo:
+Assim, criamos um novo projeto e escrevemos nosso primeiro programa Kotlin.
 
-Quando se trata de iniciar um novo projeto em Kotlin, é importante entender o contexto histórico do Kotlin e por que ele se tornou uma escolha popular entre os programadores. Outras alternativas para iniciar um novo projeto incluem linguagens como Java ou Python, mas o Kotlin oferece uma sintaxe mais concisa e moderna, além de uma forte integração com o ambiente de desenvolvimento Android. Para implementar um novo projeto em Kotlin, basta configurar um novo projeto no seu IDE preferido e começar a escrever seu código.
+## Aprofundamento:
 
-## Veja também:
+A linguagem Kotlin foi revelada pela JetBrains em 2011, oferecendo um tipo de sistema estático que torna o desenvolvimento mais fácil e rápido. 
 
-Confira o site oficial do Kotlin para aprender mais sobre a linguagem e ver exemplos de projetos em Kotlin: https://kotlinlang.org/
+Em relação a alternativas, poderíamos usar Java ou Scala para desenvolver nossos projetos. No entanto, Kotlin oferece sintaxe mais limpa e menos verbosa.
 
-Para obter inspiração e ideias para seu novo projeto em Kotlin, confira o repositório oficial do Kotlin no GitHub: https://github.com/JetBrains/kotlin
+A implementação em Kotlin envolve escrever código, compilar e executá-lo. À medida que cresce, separar o código em diferentes arquivos e pastas por funcionalidade ajuda a manter o projeto organizado.
+
+## Veja Também:
+
+Para mais informações sobre Kotlin, aqui estão alguns links úteis:
+
+- Documentação Kotlin: https://kotlinlang.org/docs/home.html
+- Kotlin para desenvolvimento Android: https://developer.android.com/kotlin/get-started
+- Tutorial de Kotlin na Baeldung: https://www.baeldung.com/kotlin-tutorial

@@ -1,7 +1,7 @@
 ---
-title:                "השוואת שתי תאריכים"
-html_title:           "Kotlin: השוואת שתי תאריכים"
-simple_title:         "השוואת שתי תאריכים"
+title:                "השוואה בין שני תאריכים"
+html_title:           "Arduino: השוואה בין שני תאריכים"
+simple_title:         "השוואה בין שני תאריכים"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-להשוות שתי תאריכים הוא פעולה שמטרתה להשוות בין שני תאריכים כדי לקבוע מי מהם הוא ישן יותר או אם הם זהים. מתכנתים משתמשים בפעולה זו כדי לבצע תנאים לוגיים, לקבוע את הטווח של אירועים או לנהל טבלאות.
+## מה ולמה?
+השוואה בין שני תאריכים שזה נתון חשוב שמאפשר לנו להבין את החלל זמן בין שני אירועים. למובנים אלו אנו שמים לב בהקשר של תוכניות תיזומים, מערכות ניהול, אפליקציות שיתוף פעולה, ועוד.
 
-## איך לעשות זאת:
-### תאריך ושעה:
+## כיצד לעשות:
+להלן דוגמאות של קודים מוגדרים של השוואה בין שני תאריכים באמצעות Kotlin:
+
 ```Kotlin
-val date1 = Calendar.getInstance()
-date1.set(2020, Calendar.NOVEMBER, 25)
+import java.time.LocalDate
 
-val date2 = Calendar.getInstance()
-date2.set(2021, Calendar.JANUARY, 1)
+fun main() {
+    val date1 = LocalDate.of(2022, 3, 20)
+    val date2 = LocalDate.of(2022, 3, 21)
 
-if (date1.before(date2)) {
-    println("תאריך 1 אחרי תאריך 2")
-} else if (date1.after(date2)) {
-    println("תאריך 1 לפני תאריך 2")
-} else {
-    println("שני התאריכים זהים")
+    println(date1.isBefore(date2)) // returns true
+    println(date1.isAfter(date2)) // returns false
+    println(date1.isEqual(date2)) // returns false
 }
 ```
-פלט:
-```
-תאריך 1 לפני תאריך 2
+הפלט שמוצג מתחת להם:
+
+```Kotlin
+true
+false
+false
 ```
 
-## נחישות:
-פעולת השוואת תאריך היא חלק חשוב מאוד בתכנות. זה נותן לנו את היכולת לשוות תאריכים על פני טווחים שונים ולהתאים אירועים לפי המרוויח המתאים ביותר. ניתן להשתמש בפעולה זו גם בתור מהדרך לנהל אירועים, למשל להרחיב את הטווח של מכירות או להקצות זמן לפי מועדו.
+## צלילה עמוקה:
+לאור ההשפעה של Java על Kotlin, המידע שאנו שמים כאן הגיע אלינו דרך java.time API. הAPI המקורי לא הציע את התמיכה המלאה בתאריכים, אז נפתח פרויקט תוספת שנקרא "Joda-Time". כיום, הממשקים השלמים של java.time מתמקדים בעבודה עם תאריכים. חשוב לזכור שניתן לבדוק גם את הדרך שנכתבה בביבליות שלך: Android's TimeUtils, or the Apache Commons Lang DateUtils class.
 
-## ראה גם:
-למידע נוסף על השוואה של תאריכים בכל הקוד הפייתון, שווה לך לבדוק את הקישורים הבאים:
-- <https://kotlinlang.org/docs/reference/comparison-operations.html>
-- <https://www.programiz.com/kotlin-programming/examples/compare-date>
-- <https://www.geeksforgeeks.org/kotlin-different-ways-compare-two-dates/>
+## ראו גם:
+1. [מדריך לתאריך ושעה ב-Kotlin](https://www.baeldung.com/kotlin/date-time)
+2. [Java 8 Date-Time API](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+3. [Comparing Dates in Android](https://developer.android.com/reference/android/text/format/TimeUtils)
+4. [Apache's Commons Lang DateUtils class](https://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/time/DateUtils.html)

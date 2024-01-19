@@ -1,7 +1,7 @@
 ---
-title:                "Sammanfogning av strängar"
-html_title:           "C#: Sammanfogning av strängar"
-simple_title:         "Sammanfogning av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,28 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att sammanslå strängar är en vanlig operation inom programmering där strängar (text) kombineras till en enda sträng. Detta kan användas för att skapa mer dynamiska och anpassade meddelanden och uttryck inom en applikation.
+## Vad & Varför?
+Strängkonkatenering innebär att sammanfoga två eller flera strängar till en enda sträng. Detta används för att skapa mer komplexa strängar/manipulera textdata utifrån enkel data.
 
-Det är vanligt att programmerare använder sammanslagning av strängar för att skapa dynamiska och anpassade meddelanden till användare, visa data i en läsbar form eller manipulera data för att uppfylla specifika behov.
-
-# Hur man gör:
-Du kan använda funktionen "string.Concat" för att sammanslå två eller flera strängar i C#. Du kan också använda "+" operatorn för att sammanslå strängar. Exempelvis:
+# Hur:
+För att konkatenera strängar i C# använder vi '+' operatören. Men man kan också använda `StringBuilder` eller `string.Concat` funktionen.
 
 ```C#
-string s1 = "Detta är";
-string s2 = "en sträng";
-string resultat = string.Concat(s1, " ", s2);
-Console.WriteLine(resultat);
+string fornamn = "Sven";
+string efternamn = "Svensson";
+string fulltNamn = fornamn + " " + efternamn; // "Sven Svensson"
+
+// Använda StringBuilder
+StringBuilder sb = new StringBuilder();
+sb.Append(fornamn);
+sb.Append(" ");
+sb.Append(efternamn);
+string fulltNamn2 = sb.ToString(); // "Sven Svensson"
+
+// Använda string.Concat
+string fulltNamn3 = string.Concat(fornamn, " ", efternamn); // "Sven Svensson"
 ```
-Output: Detta är en sträng.
 
-# Djupdykning:
-Sammanslagning av strängar har funnits sedan de tidiga dagarna av programmering. Innan det fanns funktioner som "string.Concat", användes operatorsymbolen "&" för att sammanslå strängar i C#. Det finns också andra sätt att sammanslå strängar, som att använda String.Format() funktionen eller StringBuilder klassen i C#.
+## Fördjupning
+Historiskt sett var `+` operatören den föredragna metoden för att konkatenera strängar i C#, men det kan leda till minnesproblem vid stora operationer eftersom varje `+` operation skapar en ny sträng. Därför introducerades klassen `StringBuilder` och metoden `string.Concat` för mer effektiv konkatenering.
 
-När det kommer till prestanda, är det bäst att använda StringBuilder klassen för att sammanslå stora mängder av strängar, eftersom den används för att bygga en sträng steg för steg istället för att skapa en ny sträng varje gång som Concat-funktionen gör.
+Alternativt till dessa metoder finns också funktionerna `string.Join` och `string.Format` som kan vara mer lämpliga beroende på situation.
 
-# Se även:
-- [MSDN Documentation on String.Concat Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.concat)
-- [MSDN Documentation on String.Format Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.format)
-- [MSDN Documentation on String Builder Class](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)
+```C#
+string fulltNamn4 = string.Format("{0} {1}", fornamn, efternamn); // "Sven Svensson"
+string fulltNamn5 = string.Join(" ", fornamn, efternamn); // "Sven Svensson"
+```
+
+## Se också
+För mer information om strängkonkatenering och andra sätt att manipulera strängar i C#, se följande länkar:
+
+- [Strängmanipulation i C#](https://docs.microsoft.com/sv-se/dotnet/csharp/programming-guide/strings/)
+- [Använda StringBuilder för effektiv strängkonkatenering](https://docs.microsoft.com/sv-se/dotnet/api/system.text.stringbuilder)
+- [String.Format metoden](https://docs.microsoft.com/sv-se/dotnet/api/system.string.format)
+- [String.Join metoden](https://docs.microsoft.com/sv-se/dotnet/api/system.string.join)

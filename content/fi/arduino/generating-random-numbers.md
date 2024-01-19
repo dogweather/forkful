@@ -1,7 +1,7 @@
 ---
-title:                "Sattumanvaraisten numeroiden luominen"
-html_title:           "Arduino: Sattumanvaraisten numeroiden luominen"
-simple_title:         "Sattumanvaraisten numeroiden luominen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Ohjelmoijat käyttävät satunnaislukujen tuottamista monissa projekteissa, joissa tarvitaan sattumanvaraista toimintaa tai epäjatkuvuutta. Satunnaislukujen tuottaminen on prosessi, jossa ohjelma luo arvoja ilman määrättyä järjestystä tai ennustettavuutta.
+## Mitä & Miksi?
+Satunnaislukujen luominen liittyy epäsäännöllisyyksien tai ennakoimattomien tulosten luomiseen ohjelmassa. Ohjelmoijat käyttävät sitä jakaakseen resursseja, testatakseen ohjelmistoja tai pelien kehittämisessä.
 
-## Miten:
-Satunnaislukujen tuottaminen on helppoa ja nopeaa Arduino-ohjelmoinnissa. Voit käyttää sisäänrakennettua random() -funktiota saadaksesi satunnaisen luvun tietyltä väliltä. Voit myös käyttää analogRead() -funktiota hyödyntääksesi ulkoista satunnaislukugeneraattoria. Katso alla olevat esimerkit ja tulosteet.
-
+## Näin se tehdään:
 ```Arduino
-// Esimerkki 1: Random-funktio
-
 void setup() {
-  Serial.begin(9600); // alustaa sarjaportin
+  Serial.begin(9600);
+  randomSeed(analogRead(0));
 }
 
 void loop() {
-  int randomNum = random(0,100); // luo satunnaisen luvun väliltä 0-99
-  Serial.println(randomNum); // tulostaa luvun sarjaportille
-  delay(1000); // odota sekunti ennen uuden luvun luomista
+  Serial.println(random(100)); // Tulostaa satunnaisluvun väliltä 0-99
+  delay(1000);
 }
 ```
-Tuloste: 34, 77, 12, 93, 45, 0, 99, 65, 21, 48, 8, ...
+Koodiesimerkissä Arduino lukee dataa analogisesta pinnistä A0 ja käyttää sitä randomSeed() funktion lukemaan, mikä asettaa satunnaislukugeneraattorin alkutileeksi. Tämä tulee luomaan todellisen satunnaisluvut.
 
-```Arduino
-// Esimerkki 2: analogRead-funktio
+## Syvempi tutkimus
+Satunnaislukujen luomisen historia ulottuu kauas kreikkalaiseen ajanlaskuun, jossa erilaisia menetelmiä käytettiin arpakuutioiden heittoon. Sittemmin ohjelmistoissa on kehitetty useita erilaisia algoritmeja, joista kaikkea ei edes voida käsitellä tässä artikkelissa. Arduinon mallissa käytetään lineaarista kongruenssimenetelmää. Se on melko yksinkertainen, mutta tarpeeksi monipuolinen useimpiin tarkoituksiin. Kuitenkin huomioitavaa on, että se ei ole riittävän turvallinen kryptografian näkökulmasta, joten sen käyttö turvallisuuskriittisissä sovelluksissa ei ole suositeltavaa.
 
-void setup() {
-  Serial.begin(9600); // alustaa sarjaportin
-}
+## Katso myös
+Voit syventää tietämystäsi satunnaislukujen luomisesta ja eri menetelmistä seuraavien linkkien kautta:
+1. [Random Number Generation in C++](https://www.cplusplus.com/reference/random/)
+2. [Generating random numbers in Python](https://docs.python.org/3/library/random.html)
+3. [Understanding Random Numbers in JavaScript](https://www.javascripttutorial.net/javascript-random/)
 
-void loop() {
-  int sensorValue = analogRead(A0); // lukee analogisen signaalin A0-portista
-  int randomNum = map(sensorValue, 0, 1023, 0, 100); // muuntaa luvun välille 0-100
-  Serial.println(randomNum); // tulostaa luvun sarjaportille
-  delay(1000); // odota sekunti ennen uuden luvun luomista
-}
-```
-Tuloste: 45, 77, 12, 82, 34, 93, 2, 68, 99, 23, 48, ...
-
-## Syvemmälle:
-Satunnaislukujen tuottamisella on ollut merkittävä rooli tietokoneohjelmoinnissa ja matematiikassa jo vuosikymmenten ajan. Ennen tietokoneita, satunnaislukuja tuotettiin fyysisillä mekanismeilla, kuten noppien tai arpapallojen avulla. Nykyään satunnaislukuja tuotetaan yleisesti tietokoneella erilaisilla algoritmeilla.
-
-On myös muita tapoja tuottaa satunnaisia lukuja Arduinossa, kuten käyttämällä aiemmin mainittujen lisäksi millis() - ja randomSeed() -funktioita. Jokaisella näistä tavoista on omat etunsa ja haittansa, joten kannattaa tutustua niihin tarkemmin tarpeen mukaan.
-
-## Katso myös:
-- Arduino:n virallinen dokumentaatio satunnaislukujen tuottamisesta: https://www.arduino.cc/reference/en/language/functions/random-numbers/
-- Satunnaislukugeneraattorien käyttö tietokoneohjelmoinnissa: https://en.wikipedia.org/wiki/Random_number_generation
+Päätimme tässä vaiheessa, koska tämä artikkeli on tarkoitettu olemaan epämuodollinen ja suoraviivainen introduktio Arduino-ohjelmointiin suunnattuna suomalaisille lukijoille. Toivottavasti nautit oppimasta!

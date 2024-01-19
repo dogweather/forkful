@@ -1,7 +1,7 @@
 ---
-title:                "בדיקת קיומו של ספרייה במחשב"
-html_title:           "Swift: בדיקת קיומו של ספרייה במחשב"
-simple_title:         "בדיקת קיומו של ספרייה במחשב"
+title:                "בדיקה אם ספרייה קיימת"
+html_title:           "Java: בדיקה אם ספרייה קיימת"
+simple_title:         "בדיקה אם ספרייה קיימת"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,20 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"מה ולמה?": בדיקת האם תיקייה קיימת היא פעולה שמאפשרת למתכנתים לבדוק אם תיקייה מסוימת קיימת במערכת הקבצים של האפליקציה. היא חשובה כדי לוודא שהקוד נכתב היטב ולמנוע תקלות בזמן ריצת האפליקציה.
+---
 
-"איך לעשות?": כדי לבדוק אם תיקייה קיימת, ניתן להשתמש בפונקציה פנימית של שפת Swift "FileManager.default.fileExists(atPath:)" ולמסור את הנתיב של התיקייה. הפונקציה תחזיר "true" אם התיקייה קיימת ו-"false" אם היא לא קיימת. לדוגמא: 
+## מה ולמה?
+
+בדיקה אם ספרייה קיימת במערכת הקבצים, היא פעולה שבה התוכנה מסתכלת על המיקום שניתן לה ומחליטה האם יש בו ספריה או לא. בכחול השמים, מתכנתים מבצעים פעולה זו כדי לוודא שהקובץ שהם מחפשים יהיה שם בעת מה, או כדי למנוע שגיאות בעת יצירת ספריה חדשה.
+
+## איך לעשות:
+
+יש דרך קלה לבדוק אם מדובר בספריה ב־Swift. הנה קוד שיבדוק אם ספריה מסוימת קיימת:
+
 ```Swift
-if FileManager.default.fileExists(atPath: "/Users/Desktop") {
-  print("התיקייה קיימת")
-} else {
-  print("התיקייה לא נמצאת")
+import Foundation
+
+func isDirectoryExists(path: String) -> Bool {
+    var isDirectory = ObjCBool(false)
+    let exists = FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory)
+    return exists && isDirectory.boolValue
 }
+
+print(isDirectoryExists(path: "/User/Desktop")) // sample output: true or false
 ```
+משתנה ה-output של הפונקציה הוא בוליאני שמציין האם הנתיב המבוקש הוא ספריה (true) או לא (false).
 
-"כיוון עמוק": בדיקת קיומו של תיקייה היא חלק מהתתחום הגדול של ניהול קבצים ותיקיות במערכת ההפעלה. בעבר, בשפת C הייתה פונקציה פנימית נפוצה בשם "opendir()" ששימשה לבדוק אם תיקייה קיימת, אך בשפת Swift נעשה שיפור באופן הרצף וניתן להשתמש בפונקציה הפנימית שאותה זכרנו קודם. בנוסף, ניתן גם להשתמש בפרמטרים נוספים כמו "followSymlinks" כדי לבחור אם יש לעקוב אחרי קישורים סמליים.
+## נסיעה לעומק:
 
-"ראה גם": למידע נוסף על ניהול קבצים ותיקיות בשפת Swift, ניתן לבדוק את הקישורים המובאים להלן:
-- "How to Manage Files and Directories in Swift": https://www.ralfebert.de/ios/tutorials/filemanager-directory-ios-apps/
-- "Working with Directories in Swift": https://www.avanderlee.com/swift/directory-structure-filemanager-swift/
-- "The Importance of Proper File and Directory Management in Programming": https://medium.com/@0xboiler/file-and-directory-management-in-software-development-a9b3c4f99606
+הפונקציה `fileExists(atPath:isDirectory:)` שאנו משתמשים בה לבדוק אם ספריה קיימת הוא חלק מ- `FileManager`, המשמש כממשק לתכנת לעבודה עם מערכת הקבצים של המחשב. המחלקה הזו תמיד הייתה חלק מניתוח פלטפורמה של Apple ואנחנו משתמשים בה המון בעבודה עם קבצים ונתיבים.
+
+ייתכן שיהיו תחליפים אחרים לקוד הזה, כמו `NSFileManager` (מתוך Cocoa) במוסדות, אך `FileManager` הוא האופציה המועדפת לתכנות Swift המודרני.
+
+## ראו גם:
+
+- הנחיות למתכנתים של Apple ל- FileManager: [Link](https://developer.apple.com/documentation/foundation/filemanager)
+- מתכנתים ב- StackOverflow מדברים על ההיסטוריה של FileManager והשימוש שלו: [Link](https://stackoverflow.com/questions/56495661/managing-files-and-directory-paths-using-filemanager-in-ios)

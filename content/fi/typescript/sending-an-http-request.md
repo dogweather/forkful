@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämällä http-pyyntö"
-html_title:           "TypeScript: Lähettämällä http-pyyntö"
-simple_title:         "Lähettämällä http-pyyntö"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,35 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kiitos HTTP-pyynnön: miksi ja MITÄ?
-Lähettäessäsi HTTP-pyynnön, pyydät verkkosivulta tai palvelimelta tietoja. Tämä voi sisältää esimerkiksi hakemista, lähettämistä tai päivittämistä. Ohjelmoijat käyttävät tätä hyödyksi saadakseen esimerkiksi uusimmat tiedot palvelimelta tai tallentaakseen tietoja.
+## Mikä & Miksi?
 
-## Näin teet sen:
+HTTP-pyynnön lähettäminen on, kun ohjelma luo ja lähettää HTTP-muotoisen viestin palvelimelle. Ohjelmoijat tekevät tämän tiedon saamiseksi palvelimelta tai tietojen lähettämiseksi palvelimelle. 
+
+## Kuinka:
+Näin lähetetään HTTP-pyyntö TypeScriptillä axios-kirjaston avulla.
+Lisää axios-projektiisi seuraavasti:
+
 ```TypeScript
-import { HttpClient } from '@angular/common/http';
-
-const url = 'https://example.com/api/users';
-
-//luodaan uusi HTTP-asiakas
-const http = new HttpClient();
-
-//lähetetään GET-pyyntö ja haetaan vastaus
-http.get(url).subscribe(response => {
-    console.log(response);
-}, error => {
-    console.log(error);
-})
+npm install axios
 ```
-Tässä esimerkissä käytetään Angularin HttpClient-kirjastoa lähettämään GET-pyyntö haluttuun URL-osoitteeseen. Vastaus saadaan Observable-muodossa, joka käsitellään sitten subscribe-metodilla.
 
-## Syvempään perehtyminen:
-HTTP-pyyntöjen käyttö on yleistynyt internetin kehittymisen myötä. Nykyään suurin osa verkkosivuista ja sovelluksista kommunikoi muiden palvelimien kanssa lähettämällä ja vastaanottamalla HTTP-pyyntöjä.
+Tämän jälkeen voit lähettää HTTP-pyyntöjä seuraavasti:
 
-On myös muita tapoja lähettää ja vastaanottaa dataa kuin HTTP-pyynnöt, kuten esimerkiksi WebSockets, joka mahdollistaa reaaliaikaisen kommunikoinnin palvelimien kanssa. HTTP-pyyntöjen toteuttaminen on kuitenkin edelleen tärkeä ja yleinen tapa ohjelmoijien keskuudessa.
+```TypeScript
+import axios from 'axios';
 
-HTTP-pyyntöjen toteuttaminen TypeScriptillä on helppoa, sillä on olemassa valmiita kirjastoja, kuten Angularin HttpClient, joka tekee pyynnön lähettämisestä ja vastauksen käsittelystä yksinkertaista.
+axios.get('https://api.example.com')
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.error(error);
+    });
+```
+Tämä ohjelma tulostaa palvelimen vastauksen konsoliin.
 
-## Katso myös:
-- [HttpClient Angularin dokumentaatiossa](https://angular.io/guide/http)
-- [Express.js -framework Node.js-pohjaisten web-sovellusten kehittämiseen](https://expressjs.com/)
-- [MDN WebSocketsin dokumentaatiossa](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
+Kohta "catch" käsittelee virhetapaukset. 
+
+## Sukellus syvemmälle
+HTTP-pyynnöt ovat olennainen osa web-ohjelmointia. Ne otettiin käyttöön ensimmäisen kerran 1990-luvun alussa, kun web alkoi kehittyä. 
+
+On olemassa monia tapoja lähettää HTTP-pyyntöjä. Axios on yksi suosituimmista kirjastoista JavaScript/TypeScript -ympäristössä http-pyyntöjen tekemiseen, mutta voit halutessasi käyttää myös muita kirjastoja, kuten fetch tai superagent. 
+
+Axios-kirjasto tekee useita asioita http-pyyntöprosessissa automaattisesti, jotta sen käyttäjien ei tarvitse. Axios käsittelee esimerkiksi virheiden tarkistamisen, pyynnön muotoilun ja vastauksen lukemisen automaattisesti. 
+
+## Katso myös: 
+Lue lisää axios-kirjastosta ja HTTP-pyynnoistä seuraavista lähteistä:
+
+1. Axios-kirjaston virallinen dokumentaatio: [axios](https://axios-http.com/docs/intro)
+2. Erittäin yksityiskohtainen johdatus HTTP-protokollaan: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+3. Google Developersin koostamaa tietoa HTTP-pyynnöistä ja -vasteista: [Google Developers](https://developers.google.com/web/fundamentals/performance/http2/)

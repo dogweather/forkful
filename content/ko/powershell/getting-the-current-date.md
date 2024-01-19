@@ -1,6 +1,6 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "PowerShell: 현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,28 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+# PowerShell로 현재 날짜 얻기
+---
 ## 무엇 & 왜?
-현재 날짜를 알아내는 것은 프로그래머들이 간단하게 처리할 수 있는 작업 중 하나입니다. 이 작업은 다양한 프로그래밍 작업에서 필수적이며, 데이터 분석이나 로그 관리와 같은 작업에서 활용될 수 있습니다.
+
+현재 날짜를 얻는 것이란, 우리가 사용중인 컴퓨터의 시간에 따라 현재의 결정적인 날짜가 무엇인지 계산하는 것입니다. 이를 통해 우리는 로그를 구분하거나, 시간 간격을 계산하거나, 특정 일에 자동화 작업을 실행할 수 있습니다.
 
 ## 어떻게:
-```PowerShell
-Get-Date
-```
 
-위의 코드를 실행하면 현재 날짜와 시간이 출력됩니다.
+이런 식으로 명령어를 배치해 보세요.
 
 ```PowerShell
-Get-Date -Format "dddd, MMMM dd, yyyy"
+# 현재 날짜 및 시간을 얻습니다.
+$현재일시 = Get-Date
+echo $현재일시
 ```
 
-위의 코드를 실행하면 현재 날짜가 "월요일, 1월 01, 2021"과 같은 형식으로 출력됩니다.
+샘플 출력은 다음과 같습니다:
 
-## 깊숙한 곳:
-현재 날짜를 가져오는 것은 현대의 컴퓨터 시스템에서 가장 당연한 일 중 하나입니다. 하지만 예전에는 현재 날짜를 얻기 위해 다양한 방법이 사용되었습니다. 하드웨어의 시간을 읽어오는 방식이나 사용자가 직접 입력하는 방식 등이 주로 사용되었습니다.
+```PowerShell
+2021-09-15T14:32:00.3647008+09:00
+```
 
-현재 날짜를 가져오는 방법은 다양하지만 가장 일반적인 방법은 시스템의 시간과 날짜를 읽어오는 것입니다. 하지만 PowerShell에서는 다양한 포맷을 지원하여 원하는 형식으로 날짜를 출력할 수 있습니다.
+## 깊게 들어가보기
 
-## 참고 자료:
-- [Microsoft 문서: Get-Date](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
-- [Rookie Note: Get-Date 사용 예제](https://rookienote.tistory.com/105)
-- [Linux에서 현재 시간을 가져오는 방법](https://linuxize.com/post/how-to-get-current-date-time-in-bash/)
+PowerShell에서 현재 날짜를 얻는 방법은 오래 전부터 표준화되어 왔습니다. 이렇게 간단한 작업을 수행하기 때문에, 이제는 거의 모든 프로그래밍 언어에서 이와 유사한 함수나 메서드를 제공하고 있습니다. 
+
+PowerShell은 다른 방식으로도 날짜를 얻을 수 있습니다. 예를 들어, .NET Framework의 DateTime 클래스를 직접 사용할 수도 있습니다:
+
+```PowerShell
+$현재일시 = [DateTime]::Now
+echo $현재일시
+```
+
+또한 "Get-Date" cmdlet는 현재 시스템의 지역 설정에 따라 날짜 및 시간을 반환합니다. 
+
+## 참고 자료
+
+1. [PowerShell 공식 문서](https://docs.microsoft.com/en-us/powershell/)
+2. [Get-Date 공식 문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7)
+
+이런 간략하고 핵심적인 스타일을 선호하는 여러분에게 유용한 정보가 되었기를 바랍니다.

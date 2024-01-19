@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "PHP: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Co i dlaczego?
+## Co i dlaczego?
 
-Pobieranie stron internetowych to proces pobierania danych z serwera internetowego i wyświetlenia ich na ekranie użytkownika. Programiści często wykonują tę czynność, aby uzyskać potrzebne informacje lub dane z innych stron internetowych.
+Pobieranie strony internetowej to proces ściągania wszystkich jej danych potraktowanych jako plik. Programiści robią to, aby np. analizować strukturę strony, przeszukiwać informacje czy testować szybkość ładowania.
 
-##Jak to zrobić:
+## Jak to zrobić:
 
-Pobieranie strony internetowej w PHP jest łatwe i wymaga tylko kilku prostych kroków. Najpierw musimy użyć funkcji `file_get_contents` z odpowiednim adresem URL, aby pobrać treść strony. Następnie możemy użyć funkcji `echo` do wyświetlenia pobranego tekstu na ekranie. Na przykład:
+Możemy użyć do tego celu wbudowanej funkcji w PHP: `file_get_contents`. Oto jak to zrobić:
 
 ```PHP
-$strona = file_get_contents("https://www.example.com");
+$url = 'http://nasza-strona.pl';
+$strona = file_get_contents($url);
 echo $strona;
 ```
 
-To polecenie pobierze zawartość strony internetowej z adresu URL "https://www.example.com" i wyświetli ją na ekranie.
+W ten prosty sposób pobieramy i wyświetlamy zawartość strony internetowej.
 
-Możemy także użyć funkcji `file_put_contents` do zapisania pobranego tekstu do pliku na naszym serwerze. Na przykład:
+## Głębiej:
 
-```PHP
-$strona = file_get_contents("https://www.example.com");
-file_put_contents("nazwa_pliku.html", $strona);
-```
+Historia pobierania stron sięga początków samego internetu, kiedy to wszystko było tekstem i różne strony były ściągane dla analizy lub przeglądania offline. Dziś technologia poszła dalej, ale podstawowy proces pozostał ten sam.
 
-Ten kod spowoduje pobranie strony z adresu URL "https://www.example.com" i zapisze ją jako plik "nazwa_pliku.html" na naszym serwerze.
+Istnieją alternatywy dla `file_get_contents`, takie jak cURL, który daje więcej możliwości konfiguracji i lepiej radzi sobie z błędami.
 
-##Głębsza Analiza:
+Omawiana funkcja `file_get_contents` działa poprzez nawiązanie połączenia z serwerem, wysłanie żądania HTTP GET i zwrócenie odpowiedzi jako string. W przypadku błędu zwraca FALSE.
 
-Pobieranie stron internetowych jest powszechnie wykorzystywaną techniką w PHP, szczególnie w kontekście zautomatyzowania procesów i pozyskiwania danych. Niektóre alternatywne metody to użycie biblioteki cURL lub funkcji `fopen` wraz z `fread`, jednak funkcja `file_get_contents` jest popularnym i prostszym wyborem.
+## Zobacz również:
 
-Podczas pobierania stron internetowych ważne jest również uważać na możliwe błędy związane z niedostępną lub błędną stroną. Dlatego warto dodać obsługę wyjątków do naszego kodu i sprawdzić poprawność adresu URL przed próbą pobrania strony.
+Najlepszym miejscem do dalszego zgłębiania tematu jest oficjalna dokumentacja PHP. Znajdziesz tam więcej informacji na temat `file_get_contents` i o wiele więcej:
+- [file_get_contents](https://www.php.net/manual/pl/function.file-get-contents.php)
+- [cURL](https://www.php.net/manual/pl/book.curl.php)
 
-##Zobacz również:
+Jeśli chcesz dowiedzieć się więcej o HTTP, polecam dokumentacje Mozilla Developer Network:
+- [Zrozumienie HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Overview)
 
-Jeśli chcesz dowiedzieć się więcej o funkcji `file_get_contents` w PHP, możesz znaleźć pomocne informacje w poniższych źródłach:
-
-- Dokumentacja PHP: https://www.php.net/manual/en/function.file-get-contents.php
-- Wideo na YouTube o pobieraniu stron internetowych w PHP: https://www.youtube.com/watch?v=m68_qUn-Prw
-- Poradnik na Codecourse o pobieraniu zawartości stron internetowych w PHP: https://www.codecourse.com/lessons/automating-tasks-in-php/995
-
-Wykorzystanie tej funkcji może być bardzo przydatne przy tworzeniu skryptów do automatyzacji różnych działań związanych z pobieraniem danych z internetu. Dlatego warto poświęcić trochę czasu na dokładniejsze poznanie jej działania.
+Powodzenia z kodowaniem w PHP!

@@ -1,6 +1,6 @@
 ---
 title:                "Suchen und Ersetzen von Text"
-html_title:           "C: Suchen und Ersetzen von Text"
+html_title:           "Bash: Suchen und Ersetzen von Text"
 simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "C"
 category:             "C"
@@ -10,27 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Die Suche und Ersetzung von Text ist ein grundlegender Vorgang in der Programmierung. Sie erlaubt uns, nach bestimmten Zeichenfolgen innerhalb unseres Codes zu suchen und diese durch neue Zeichenfolgen zu ersetzen. Programmierer nutzen diesen Vorgang, um effizienter und schneller zu arbeiten, indem sie repetitive Aufgaben automatisieren und Fehler im Code korrigieren.
+## Was & Warum?
 
-# Wie funktioniert es?
-Um in C Text zu suchen und zu ersetzen, haben wir zwei grundlegende Funktionen zur Verfügung: `strchr()` und `strstr()`. Die `strchr()` Funktion sucht nach einem bestimmten Zeichen innerhalb einer Zeichenkette und gibt einen Zeiger auf die erste Übereinstimmung zurück. Die `strstr()` Funktion sucht nach einem bestimmten Teilstring innerhalb einer Zeichenkette und gibt ebenfalls einen Zeiger auf die erste Übereinstimmung zurück. Wir können diese Funktionen verwenden, um dann die gefundenen Zeichen zu ersetzen, indem wir den entsprechenden Teil der Zeichenkette mit der `strcpy()` Funktion überschreiben.
+Suchen und Ersetzen von Text ist eine Operation, bei der ein bestimmter Text (das "Suchmuster") gefunden und durch einen anderen (den "Ersatz") ersetzt wird. Programmierer tun dies häufig, um redundante Aufgaben zu automatisieren oder definierte Muster im Code zu manipulieren.
 
-Ein kleines Beispiel:
-```C
-char string[50] = "Hallo, Welt!";
-strchr(string, 'W')[0] = 'w';
-// string enthält nun "Hallo, welt!"
+## So geht's:
+
+Die C-Standardbibliothek bietet `strstr` und `sprintf` Funktionen zum Suchen und Ersetzen von Texten. Hier ist ein kurzes Beispiel:
+
+```C 
+#include<stdio.h>
+#include<string.h>
+
+char* suchen_und_ersetzen(char* str, char* alt_text, char* neu_text) {
+    static char buffer[4096];
+    char *p;
+ 
+    if(!(p = strstr(str, alt_text)))
+        return str;
+
+    strncpy(buffer, str, p-str);
+    buffer[p-str] = '\0';
+
+    sprintf(buffer+(p-str), "%s%s", neu_text, p+strlen(alt_text));
+
+    return buffer;
+}
+
+int main() {
+    char str[] = "Hallo Welt!";
+    char alt_text[] = "Welt";
+    char neu_text[] = "Zuhause";
+   
+    printf("%s\n", suchen_und_ersetzen(str, alt_text, neu_text));
+
+    return 0;
+}
 ```
 
-# Tiefergehende Informationen
-Die Suche und Ersetzung von Text hat eine lange Geschichte in der Programmierung. Bereits in den 1960er Jahren wurde der Befehl `s///` in der Programmiersprache SNOBOL verwendet, um Text zu suchen und zu ersetzen. In modernen Programmiersprachen wie C werden diese Funktionen oft durch spezielle Bibliotheken wie `<string.h>` unterstützt. Im Vergleich zu manuellen Ersetzungen sparen Suche- und Ersetzungsvorgänge Zeit und minimieren die Wahrscheinlichkeit von Fehlern.
+Der Output wird `"Hallo Zuhause!"` sein.
 
-Es gibt auch alternative Ansätze zum Suchen und Ersetzen von Text, wie zum Beispiel die Verwendung von regulären Ausdrücken. Diese ermöglichen es, komplexere Muster in einem Text zu suchen und zu ersetzen. Allerdings erfordern sie eine gewisse Einarbeitungszeit und sind möglicherweise nicht in allen Programmiersprachen verfügbar.
+## Vertiefende Infos 
 
-Die Implementierung von Such- und Ersetzungsfunktionen in C kann je nach Anforderung variieren. In der Regel werden dabei Zeichensatzfunktionen wie `strncpy()` oder `strncat()` verwendet, um sicherzustellen, dass der ersetzte Text die gleiche Länge wie der ursprüngliche Text hat.
+Historisch gesehen war die Textsuch- und Ersetztechnik bereits in frühen Texteditoren wie `ed` und `vi` implementiert. Alternative Methoden zum Suchen und Ersetzen von Text können mit fortschrittlicheren Regex oder KMP-Algorithmen erreicht werden. Da C keine eingebaute Unterstützung für String-Manipulation bietet, verwenden wir hier ein manuelles Verfahren zum Finden und Ersetzen von Text, was einige Einschränkungen aufweist, wie z.B. die Begrenzung der Größe des Buffers.
 
-# Weitere Informationen
-- [C Strangfunktionen Referenz](https://www.codingunit.com/c-reference-stdlib-h-file-function-strchr)
-- [Reguläre Ausdrücke in C](https://www.codingunit.com/c-reference-regex-h-file-function-regex-replace)
-- [Geschichte der Suche und Ersetzung von Text in der Programmierung](https://en.wikipedia.org/wiki/Find_and_replace)
+## Siehe auch
+
+1. [GNU C Library Documentation: String and Array Utilities](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html)
+2. [C Programming/stdlib.h/strstr](https://en.wikibooks.org/wiki/C_Programming/string.h/strstr)
+3. [Tutorialspoint - C Programming - strstr](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)

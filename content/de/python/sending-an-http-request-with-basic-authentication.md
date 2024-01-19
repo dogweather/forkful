@@ -1,7 +1,7 @@
 ---
-title:                "Eine http-Anfrage mit grundlegender Authentifizierung senden"
-html_title:           "Python: Eine http-Anfrage mit grundlegender Authentifizierung senden"
-simple_title:         "Eine http-Anfrage mit grundlegender Authentifizierung senden"
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,37 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Senden einer HTTP-Anfrage mit grundlegender Authentifizierung ist eine Möglichkeit für Programmierer, Daten von einem Server abzurufen, der eine Authentifizierung erfordert. Dies ist wichtig, um auf geschützte Daten zuzugreifen und sicherzustellen, dass nur autorisierte Benutzer darauf zugreifen können.
+# Von Python aus HTTP-Anfragen mit Basic Authentication senden
 
-# Wie geht das?
-```python
+## Was & Warum?
+Eine HTTP-Anfrage mit Basic Authentication ist eine einfache Methode, um Benutzerdaten an einen Server zu senden. Programmierer nutzen sie oft, um sich mit Web-APIs zu verbinden, die eine Authentifizierung benötigen.
+
+## Wie man:
+Python stellt das `requests` Modul zur Verfügung, das unkompliziert für HTTP-Anfragen mit Basic Authentication verwendet werden kann. Hier ist ein einfaches Beispiel:
+
+```Python
 import requests
+from requests.auth import HTTPBasicAuth
 
-# URL und Benutzerdaten definieren
-url = "https://example.com/api/users"
-username = "john"
-password = "password"
+response = requests.get('http://example.com', auth=HTTPBasicAuth('username', 'password'))
 
-# Authentifizierung hinzufügen und HTTP-Anfrage senden
-r = requests.get(url, auth=(username, password))
-
-# Antwort ausgeben
-print(r.json())
+print(response.status_code)
+print(response.content)
 ```
+Dieses Skript sendet eine HTTP GET-Anfrage an 'http://example.com' mit einem Basic Authentication Header. Die Antwort wird anschließend gedruckt.
 
-Das obige Beispiel zeigt, wie man eine HTTP-Anfrage mit grundlegender Authentifizierung in Python sendet. Wir importieren das requests-Modul und definieren die URL und die Benutzerdaten. Dann fügen wir die Authentifizierung zur HTTP-Anfrage hinzu und senden sie. Schließlich geben wir die Antwort als JSON-Format aus.
+## Vertiefung
+Ein Stück Geschichte: Basic Authentication ist seit den Anfängen des HTTP-Protokolls Teil dieses Standards, da sie eine einfache Art der Authentifizierung darstellt.
 
-# Tiefgehende Einblicke
-## Historischer Hintergrund
-HTTP steht für Hypertext Transfer Protocol und ist das Hauptprotokoll, das im World Wide Web verwendet wird. Ursprünglich wurde es entwickelt, um HTML-Dokumente auszutauschen, aber jetzt wird es für eine Vielzahl von Anfragen und Antworten verwendet, einschließlich dem Abrufen von Daten von einem Server. Die grundlegende Authentifizierung wurde als einfache Methode eingeführt, um Benutzer zu verifizieren, und wird von vielen APIs noch immer verwendet.
+Alternativen: Abhängig vom Sicherheitsbedarf gibt es sicherere Authentifizierungsmethoden, wie OAuth oder JWT.
 
-## Alternativen
-Es gibt verschiedene Arten der Authentifizierung, die verwendet werden können, um eine HTTP-Anfrage zu senden. Die grundlegende Authentifizierung ist die einfachste Methode, aber sie hat auch Nachteile wie die Übertragung von Passwörtern im Klartext. Eine sicherere Methode ist die Verwendung von Token oder OAuth, die jedoch komplexer zu implementieren sind.
+Implementierungsdetails: Python `requests` Bibliothek kodiert den Benutzernamen und das Passwort mit Base64 und fügt diesen String in den Header der HTTP-Anfrage ein.
 
-## Implementierungsdetails
-Um eine grundlegende Authentifizierung durchzuführen, müssen Sie den Header "Authorization" zu Ihrer HTTP-Anfrage hinzufügen. Dieser Header enthält den Benutzernamen und das Passwort in einem Base64-kodierten Format. Der Server, der die Anfrage empfängt, entschlüsselt die Anmeldeinformationen und überprüft sie.
-
-# Siehe auch
-- [HTTP authentication types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [Requests library documentation](https://requests.readthedocs.io/en/master/user/authentication/)
+## Siehe auch
+Weitere Informationen über HTTP Basic Authentication und das Python `requests` Modul finden Sie unter den folgenden Links:
+- [Python `requests` Documentation](https://requests.readthedocs.io/en/master/)
+- [HTTP Basic Authentication on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

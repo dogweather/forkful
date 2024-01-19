@@ -1,7 +1,7 @@
 ---
-title:                "Uthenting av undertekster"
-html_title:           "PowerShell: Uthenting av undertekster"
-simple_title:         "Uthenting av undertekster"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,40 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
+# Utdrag av delstrenger i PowerShell
+
+---
+
 ## Hva & Hvorfor?
 
-Å trekke ut delstrenger, også kjent som substringer, er en vanlig oppgave for programmerere når de arbeider med tekstbaserte data. Dette innebærer å hente ut en del av en lengre tekststreng basert på visse kriterier, for eksempel å finne et bestemt ord eller tall. Dette er nyttig for å behandle og analysere store datasett, og hjelper programmerere med å finne spesifikke informasjoner raskt.
+I programmering, er utdrag av delstrenger prosessen med å ta en del av en streng og gjøre den om til en ny streng. Vi gjør dette i flere tilfellene, for eksempel for å analysere loggfiler, sanitere input data eller manipulere tekst.
 
-## Slik gjør du det:
+---
 
-Du kan bruke PowerShell til å trekke ut substringer fra en tekststreng ved hjelp av `Substring`-metoden. La oss si at vi har en tekststreng som heter `$Tekst = "Hei verden!"` og vi vil trekke ut ordet "verden". Da kan vi bruke følgende kommandoer:
+## Hvordan:
 
-```PowerShell
-$Tekst.Substring(4, 6)
+### Eksempel 1:
+Du kan trekke ut en delstreng fra en streng ved å bruke metoden `.Substring()` i PowerShell. For eksempel:
+``` PowerShell
+$streng = "Hallo Verden"
+$delstreng = $streng.Substring(6)
+Write-Output $delstreng
+```
+Output vil være:
+``` PowerShell
+Verden
 ```
 
-Her sier vi at vi vil starte på indeks 4 (som tilsvarer bokstaven "v") og ta seks tegn fra dette punktet. Resultatet vil være `verden`, som er ordet vi ønsker å trekke ut.
-
-Du kan også bruke `Substring`-metoden til å finne og trekke ut tall fra en tekststreng. For eksempel, hvis vi har en tekststreng som heter `$Tekst = "I år er det 2021"`, og vi ønsker å trekke ut tallet 2021, kan vi bruke følgende kommandoer:
-
-```PowerShell
-$Tekst.Substring(10, 4)
+### Eksempel 2:
+Du kan også angi både startposisjonen og lengden på delstrengen du vil trekke ut.
+``` PowerShell
+$streng = "Hallo Verden"
+$delstreng = $streng.Substring(6, 5)
+Write-Output $delstreng
 ```
+Output vil være:
+``` PowerShell
+Verde
+```
+---
 
-Her sier vi at vi vil starte på indeks 10 (som tilsvarer tallet 2) og ta fire tegn fra dette punktet. Resultatet vil være `2021`.
+## Dyp Dykk
 
-## Dykk dypere:
+Substring metodikk har vært en del av programmeringsspråk lenge, og det er ikke noe unikt for PowerShell. Det gir et kraftig verktøy for å styre og manipulere tekstbaserte data. 
 
-Extracting substrings har vært en vanlig oppgave for programmerere siden de første tekstbaserte dataprogrammene ble utviklet. Før i tiden ble det ofte gjort ved hjelp av "manipulering" av tekststrenger, som innebar å bruke kompliserte formelsett for å hente ut deler av en tekststreng. Med PowerShell kan du enkelt bruke `Substring`-metoden for å oppnå det samme resultatet.
+Når det gjelder alternativene, kan `regex`(regular expression), `split` metoden eller fremgangsmåten `indexof` også være nyttige, avhengig av scenarioet. Selv om `.Substring()` er mest brukt, kan det være tilfeller der andre metoder vil være mer passende.
 
-Det finnes også alternative metoder for å trekke ut substringer, som for eksempel `Regex` (regulære uttrykk) og `Split`-metoden. Disse kan være nyttige i andre situasjoner og det kan være lurt å undersøke dem for å finne den beste løsningen for ditt spesifikke behov.
+Implementasjonsdetaljene for `.Substring()` er ganske enkle: første argumentet er startposisjonen; det andre argumentet (hvis gitt) er lengden på delstrengen som skal trekkes ut. Hvis lengden ikke er angitt, tar `.Substring()` resten av strengen fra startposisjonen.
 
-Når det kommer til implementeringsdetaljer, er det viktig å merke seg at indeksering i PowerShell starter på 0. Det betyr at den første bokstaven i en tekststreng er på indeks 0, og ikke 1 som man vanligvis ville trodd. Dette kan være viktig å huske på når du skal hente ut deler av en tekststreng ved hjelp av `Substring`-metoden.
+---
 
 ## Se også:
 
-Hvis du ønsker å lære mer om hvordan du kan arbeide med tekststrenger i PowerShell, kan du sjekke ut følgende kilder:
+- MSDN dokumentasjon på `.Substring()`: https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0
 
-- [PowerShell dokumentasjon](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
-- [PowerShell for nybegynnere](https://www.udemy.com/course/powershell-for-beginners/)
-- [Offisiell PowerShell-blogg](https://devblogs.microsoft.com/powershell/)
+- Forstå strenger i PowerShell mer dybdegående: https://devblogs.microsoft.com/scripting/understanding-powershell-strings/
+
+- Hvis du trenger mer avansert strengmanipulasjon, se `regex`: https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions
+
+---

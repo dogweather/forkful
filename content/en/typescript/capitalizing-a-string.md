@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# "Capitalize String in TypeScript: A Swift Dive"
+
 ## What & Why?
-Capitalizing a string refers to the act of making the first letter of a word uppercase, while making the rest of the letters lowercase. Programmers often do this to ensure consistency and readability in their code.
+**String Capitalization** is transforming the first letter of a string to uppercase while keeping the remaining characters unchanged. It's done for grammatical correctness, readability, or meeting specific system requirements.
 
 ## How to:
-Capitalizing a string can be easily achieved in TypeScript using the string method `toUpperCase()` and `toLowerCase()`. These methods convert a string to all uppercase or all lowercase letters. For example:
 
+Enforcing string capitalization in TypeScript is simple. Here's how you can do it:
+
+```TypeScript
+function capitalizeString(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+console.log(capitalizeString("hey, how are you?")); //--> "Hey, how are you?"
 ```
-TypeScript
-let str: string = "hello world";
-console.log(str.toUpperCase()); // Outputs: HELLO WORLD
-console.log(str.toLowerCase()); // Outputs: hello world
+The `capitalizeString()` function takes a string, extracts the first character, converts it into uppercase using `toUpperCase()`, concatenates it with the rest of the string (starting from index 1), and returns this new string.
+
+## Deep Dive
+**Historical context:** Capitalizing strings can be traced back to the early days of computing. The focus here is meeting grammatical rules in interface messages, documentations, etc., making them more human-friendly.
+
+**Alternatives:** TypeScript has no built-in function for this unlike other languages, but a simple function as illustrated earlier does the trick. With JavaScript libraries like Lodash, you can import and use the `capitalize` method to achieve the same:
+
+```TypeScript
+import { capitalize } from 'lodash';
+
+console.log(capitalize("hey, how are you?")); //--> "Hey, how are you?"
 ```
-In this example, the `toUpperCase()` method is used to capitalize the string, while the `toLowerCase()` method is used to convert it back to lowercase.
+**Implementation details:** The critical point here is that JavaScript (and consequently TypeScript) strings are immutable. Therefore, when you capitalize a string, you essentially create a new one, leaving the original string untouched.
 
-## Deep Dive:
-Capitalizing a string has been a common practice in programming since the early days. It helps to improve the readability and maintainability of code, as well as reduce errors caused by typos or inconsistencies.
+## See Also
+- TypeScript official docs: https://www.typescriptlang.org/docs/
+- Lodash library: https://lodash.com/docs/4.17.15#capitalize
+- String methods in JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 
-There are a few alternative methods to capitalize a string in TypeScript, such as using the spread operator to split the string into an array, capitalizing the first letter, and then using the `join()` method to combine the array back into a string.
-
-For example:
-```
-TypeScript
-let str: string = "hello world";
-let strArray: string[] = [...str];
-strArray[0] = strArray[0].toUpperCase();
-let capitalizedStr: string = strArray.join("");
-console.log(capitalizedStr); // Outputs: Hello world
-```
-Additionally, there are also libraries and packages available that offer more advanced ways to capitalize strings and handle edge cases, such as strings containing special characters or multiple words.
-
-## See Also:
-- [String.prototype.toUpperCase documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [String.prototype.toLowerCase documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [lodash.capitalize documentation](https://lodash.com/docs/4.17.15#capitalize)
-- [npm capitalize package](https://www.npmjs.com/package/capitalize)
+Discussing string functions might seem trivial, especially if you're new to TypeScript or programming as a whole; however, these are the building blocks that will help you start creating complex programs. Happy coding!

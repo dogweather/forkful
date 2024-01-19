@@ -1,7 +1,7 @@
 ---
-title:                "Аналіз html"
-html_title:           "Rust: Аналіз html"
-simple_title:         "Аналіз html"
+title:                "Розбір HTML"
+html_title:           "Arduino: Розбір HTML"
+simple_title:         "Розбір HTML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,34 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Парсинг HTML - це процес аналізування та інтерпретації HTML-документів. Програмісти використовують цей процес для отримання даних з веб-сторінок і подальшого їх оброблення.
+## Що і Навіщо?
 
-## Як це зробити:
+Парсинг HTML - це процес вилучення конкретних даних з HTML-документів. Програмісти це роблять для високої автоматизації обробки веб-контенту.
+
+## Як це робити:
+
+Бібліотека `scraper` дозволяє легко парсити HTML у Rust. Давайте подивимося на простий приклад:
+
 ```Rust
-use html5ever::{parse_document, tendril::TendrilSink};
+use scraper::{Html, Selector};
 
-let html = "<html><body><p>Hello, world!</p></body></html>";
+fn main() {
+  let html_doc = r#"
+    <html>
+      <body>
+        <h1>Hello, World!</h1>
+      </body>
+    </html>
+  "#;
 
-let dom = parse_document(Default::default()).from_utf8().read_from(html.as_bytes()).unwrap();
-let root = dom.document;
+  let fragment = Html::parse_document(&html_doc);
+  let selector = Selector::parse("h1").unwrap();
 
-for child in root.descendants() {
-    match child.data() {
-        Element { name, .. } => println!("{}", name.local),
-        Text { contents, .. } => println!("{}", contents.borrow()),
-        _ => (),
-    }
+  for element in fragment.select(&selector) {
+    let text = element.text().collect::<Vec<_>>();
+    println!("{:?}", text);
+  }
 }
 ```
+В результаті ви отримаєте наступне:
 
-Вивід: `html, body, p, Hello, world!`
+```Rust
+["Hello, World!"]
+```
 
-## Глибокий занурення:
-1. Історичний контекст: Парсинг HTML з'явився з появою перших веб-сторінок і є важливою частиною веб-розробки.
-2. Альтернативи: Існують інші мови програмування, такі як Python і JavaScript, які також мають бібліотеки для парсингу HTML.
-3. Деталі реалізації: У Rust для парсингу HTML використовується бібліотека html5ever, яка підтримує стандарти HTML, такі як HTML5 та XHTML.
+## Поглиблений Занурення
 
-## Дивіться також:
-- Документація html5ever: https://docs.rs/html5ever/0.24.0/html5ever/
-- Приклади парсингу HTML на Rust: https://github.com/kbknapp/html5ever-examples-rs
+Історично, парсинг HTML здебільшого використовувався для веб-скрапінгу і індексації. Однак, з появою сучасних технологій як, наприклад, JSON API, потреба в HTML-парсингу зменшилась.
+
+Варто відмітити, що у вас є багато альтернатив для парсинга HTML. У Rust варто розглянути бібліотеки, такі як `html5ever` та `xml5ever`.
+
+Щодо деталей реалізації, `scraper` використовує `html5ever` під капотом для синтаксичного аналізу HTML. Він також надає удобний API для вибору елементів за допомогою CSS-селекторів.
+
+## Дивись Також
+
+- Документація `scraper`: [https://docs.rs/scraper](https://docs.rs/scraper)
+- Документація `html5ever`: [https://docs.rs/html5ever](https://docs.rs/html5ever)
+- Документація `xml5ever`: [https://docs.rs/xml5ever](https://docs.rs/xml5ever)
+- Специфікація HTML5: [https://www.w3.org/TR/html5/](https://www.w3.org/TR/html5/)

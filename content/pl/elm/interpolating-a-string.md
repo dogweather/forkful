@@ -1,7 +1,7 @@
 ---
-title:                "Interpolacja ciągów znakowych"
-html_title:           "Elm: Interpolacja ciągów znakowych"
-simple_title:         "Interpolacja ciągów znakowych"
+title:                "Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
+simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co & Dlaczego?
+## Co i dlaczego?
 
-Interpolacja ciągów znaków w Elmie jest procesem wstawiania wartości zmiennych wewnątrz napisów. Robią to programiści, aby dynamicznie budować napisy i wyświetlać zmienne wartości bez konieczności pisania dużych bloków kodu.
+Interpolacja ciągu polega na wstawianiu zmiennych bezpośrednio do tekstu. Programiści robią to, by zwiększyć czytelność kodu i uniknąć powtarzalności.
 
-# Jak to zrobić?
+## Jak to zrobić:
 
-Elm ma wbudowany operator ```(\`)``` który umożliwia interpolację ciągów znaków. Można go użyć wewnątrz napisu, dodając ```{}``` w miejscach, gdzie chcemy umieścić wartość zmiennej. Na przykład:
+Interpolacji ciągów w Elm nie robi się tak jak w innych językach. W jego przypadku musimy skorzystać z funkcji `++` do łączenia ciągów. Zobacz poniższy przykład:
+
 ```Elm
-nazwaSportu = "koszykówka"
-nazwaDrzwi = "okrągłe"
-"The quick brown fox jumps over the {} dog! - {} jest świetnym sportem do gry, ze względu na swoje {} drzwi."
+name = "Jan"
+hello = "Cześć, " ++ name ++ ", jak się masz?"
+
+-- Wynikiem będzie: "Cześć, Jan, jak się masz?"
 ```
-Wyjście:
+Interpolację można również zrealizować za pomocą funkcji `String.concat`:
+
 ```Elm
-"The quick brown fox jumps over the okrągłe dog! - koszykówka jest świetnym sportem do gry, ze względu na swoje okrągłe drzwi."
+name = "Jan"
+hello = String.concat ["Cześć, ", name, ", jak się masz?"]
+
+-- Wynikiem będzie: "Cześć, Jan, jak się masz?"
 ```
+## Głębsza wiedza
 
-Można również używać interpolacji w celu wyświetlenia wartości zmiennych wewnątrz znaczników HTML, na przykład:
-```Elm
-imie = "Jan"
-"Hello, <h1>{imie}!</h1>"
-```
-Wyjście:
-```elm
-"Hello, <h1>Jan!</h1>"
-```
+Elm oferuje bezpieczne łączenie ciągów, różni się od innych języków, gdzie interpolacja ciągów mogłaby prowadzić do podatności na ataki. Interpolację w Elm zaimplementowano w taki sposób, by zapewnić bezpieczeństwo.
 
-# Głębsze wgląd
+Alternatywą dla interpolacji w Elm jest korzystanie z `String.concat` lub funkcji `++`. Wybór między tymi dwoma zależy od preferencji twórcy kodu.
 
-Interpolacja ciągów znaków jest powszechnie używanym sposobem na dynamiczne budowanie napisów w wielu językach programowania. Alternatywnym podejściem jest używanie funkcji do łączenia napisów lub formatowania ich z użyciem specjalnych znaczników. Jednakże, w Elmie interpolacja jest często preferowaną metodą ze względu na prostotę i czytelność kodu.
+## Zobacz także:
 
-W celu dokładniejszego zrozumienia jak działa interpolacja ciągów znaków w Elmie, warto przeczytać dokumentację na stronie [Elm Guide](https://guide.elm-lang.org/) lub obejrzeć interaktywny kurs [Elm Crash Course](https://shreddd.github.io/elm-crash-course/).
-
-# Zobacz również
-
-Dokumentacja oraz przykładowy kod można znaleźć na [oficjalnej stronie Elma](https://elm-lang.org/). W celu dalszej nauki programowania w Elmie polecamy kurs [Learn Elm in Y minutes](https://learnxinyminutes.com/docs/pl-pl/elm/), który zawiera wiele przykładowych scenariuszy i rozwiązań.
+- Dokumentacja Elm (https://elm-lang.org/docs)
+- Przewodnik po String.concat (https://package.elm-lang.org/packages/elm/core/latest/String#concat)
+- Dyskusja na forum Elm na temat interpolacji ciągów (https://discourse.elm-lang.org/t/string-interpolation-in-elm/638/6)

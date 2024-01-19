@@ -1,7 +1,7 @@
 ---
-title:                "Ermittlung der Länge eines Strings"
-html_title:           "Elm: Ermittlung der Länge eines Strings"
-simple_title:         "Ermittlung der Länge eines Strings"
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,24 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Finden der Länge einer Zeichenkette ist eine gängige Aufgabe bei der Programmierung. Dabei geht es darum, die Anzahl der Zeichen in einer Zeichenkette zu bestimmen. Programmierer tun dies, um beispielsweise die Größe eines Arrays zu bestimmen oder um die Eingabe des Benutzers zu überprüfen.
+Die Länge eines Strings zu finden bedeutet, die Anzahl der Zeichen darin zu zählen. Programmierer tun dies in Fällen, in denen sie die Texteingabe kontrollieren oder Daten validieren müssen.
 
-## So geht's:
-Um die Länge einer Zeichenkette in Elm zu finden, kann die Funktion `String.length` verwendet werden. Diese Funktion erwartet eine Zeichenkette als Argument und gibt die Anzahl der Zeichen zurück. Hier ist ein Beispielcode:
+## Wie geht's:
+In Elm ist es einfach, die Länge eines Strings zu finden. Alles was Sie brauchen ist die eingebaute Funktion `String.length`.
 
 ```Elm
-let
-    string = "Hallo"
-    length = String.length string
-in
-    length -- Ergebnis: 5
+import String
+
+main =
+    String.length "Hallo Welt!" --> Ausgabe ist 12
 ```
+In diesem Code ist "Hallo Welt!" unser String und das Ergebnis ist 12 (da es 12 Zeichen enthält, einschließlich Leerzeichen und Ausrufezeichen).
 
-## Tiefgehende Informationen:
-Die Idee, die Länge einer Zeichenkette zu bestimmen, ist nicht neu. Schon in den frühen Programmiersprachen wie C oder Java gab es entsprechende Funktionen. Alternativen zu `String.length` in Elm sind die Funktionen `String.foldl` und `String.foldr`, die jedoch etwas komplexer zu verwenden sind.
+## Tiefere Tauchgänge
+Schon seit den Anfängen der Programmierung sind Strings und ihre Manipulationen wie das Finden der Länge ein grundlegender Aspekt. In früheren Versionen von Programmiersprachen war das Zählen der Zeichen nicht immer so einfach, oft mussten wir durch jeden Buchstaben des Strings iterieren.
 
-Intern verwendet die Funktion `String.length` in Elm eine Schleife, um jedes Zeichen in der Zeichenkette zu zählen. Dies ist eine effiziente Methode, die in den meisten Fällen ausreichend ist.
+In Bezug auf Alternativen könnten Sie eine benutzerdefinierte Funktion schreiben, die die Zeichen einzeln zählt. Allerdings ist die Verwendung der eingebauten `String.length` Funktion effizienter und macht Ihren Code sauberer.
 
-## Siehe auch:
-- [Dokumentation zu String-Funktionen in Elm](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Umgang mit Zeichenketten in Elm](https://guide.elm-lang.org/strings/)
+Bezüglich der Implementierung verwendet Elm interne Algorithmen zur Optimierung der String-Längenbestimmung. Im Grunde wird jedes Zeichen im String gezählt, aber aufgrund von Optimierungen geschieht dies schnell und effizient.
+
+## Siehe auch
+Für weitergehende Studien empfehle ich diese Quellen:
+
+* Elm Dokumentation: String - https://package.elm-lang.org/packages/elm/core/latest/String
+* Elm Diskussionsforum: Verwendung von String Funktionen - https://discourse.elm-lang.org/
+* Buch: Programmieren in Elm - https://pragprog.com/titles/jfelm/programming-elm/
+
+Bitte seien Sie sich bewusst, dass diese Artikel jeweils auf Englisch sind.

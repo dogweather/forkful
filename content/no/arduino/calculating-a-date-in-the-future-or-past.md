@@ -1,7 +1,7 @@
 ---
-title:                "Å beregne en dato i fremtiden eller fortiden"
-html_title:           "Arduino: Å beregne en dato i fremtiden eller fortiden"
-simple_title:         "Å beregne en dato i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "Arduino: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,51 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## Hva & Hvorfor?
+Å beregne en dato i fremtiden eller fortiden er prosessen med å fastslå en bestemt dato basert på en gitt dato og et intervall. Programvareutviklere gjør dette for å håndtere oppgaver som planlegging, sporing av hendelser og tidshåndtering.
 
-Å beregne en dato i fremtiden eller fortiden er en vanlig oppgave for programmerere. Dette innebærer å bruke en algoritme for å finne ut når en bestemt dato vil være basert på en gitt startdato og et gitt antall dager. Dette kan være nyttig for en rekke applikasjoner, som for eksempel å lage en kalender eller en tidsstyringsprogramvare.
+## Hvordan:
+Her er en enkel måte å beregne en fremtidig dato ved hjelp av Arduino kode:
 
-# Hvordan:
+```Arduino
+#include <TimeLib.h>
 
-En enkel måte å beregne en dato i fremtiden eller fortiden i Arduino er å bruke datofunksjoner innebygd i språket. Her er et eksempel på å finne ut datoen 30 dager fra nå:
+void setup() {
+  setTime(12, 0, 0, 1, 1, 2020); // set time to 12:00:00am, Jan 1 2020
+}
 
-```arduino
-#include <Time.h>
-// Definer startdato
-int dag = 5;
-int måned = 9;
-int år = 2020;
+void loop() {
+  time_t future_date = now() + (7 * SECS_PER_DAY); // calculate 7 days in future
+  digitalClockDisplay(future_date);
+  delay(1000);
+}
 
-// Legg til 30 dager
-int dagerTillegg = 30;
-
-// Bruk setTime funksjonen for å sette startdatoen
-setTime(0,0,0,dag,måned,år);
-
-// Bruk time_t funksjonen til å beregne datoen i fremtiden
-time_t futureDate = now() + (dagerTillegg * SECS_PER_DAY);
-
-// Bruk nåværende tid funksjonen til å få dato i riktig format
-tmElements_t futureElements;
-breakTime(futureDate, futureElements);
-
-// Skriv ut datoen
-Serial.print(futureElements.Day); Serial.print("/"); Serial.print(futureElements.Month); Serial.print("/"); Serial.print(futureElements.Year);
+void digitalClockDisplay(time_t t){
+  Serial.print(hour(t));
+  Serial.print(":");
+  
+  if (minute(t) < 10)
+    Serial.print('0');
+  Serial.print(minute(t));
+  Serial.println();
+}
 ```
 
-Dette vil resultere i følgende utskrift:
+Programmet vil da vise klokkeslettet for 7 dager frem i tid fra satt dato.
 
-```
-4/10/2020
-```
+## Dyp Dykk
+Historisk sett har beregning av fremtidige eller tidligere datoer vært en utfordring for programmerere, særlig på grunn av skuddår og ulikheter i månedslengder. 
 
-# Dypdykk:
+Alternativer inkluderer bruk av robuste dato- og tidsbiblioteker som TimeLib på Arduino, som håndterer mange av disse detaljene for deg.
 
-Beregning av datoer har vært en viktig del av programmering i lang tid. Før datamaskiner ble vanlige, måtte folk regne ut datoer manuelt. Dette førte til utvikling av ulike algoritmer for å forenkle prosessen. En alternativ måte å beregne datoer på i Arduino er å bruke en tredjeparts bibliotek, som TimeLib eller DateTime. Disse kan tilby flere funksjoner og muligheter for beregning av datoer.
+Ved implementering, vær oppmerksom på tidsbegrensninger og intervaller. For eksempel, Arduino's `millis()` funksjon tilbakestiller seg selv etter ca. 50 dager, noe som kan skape problemer i langvarige prosjekter.
 
-En ting å merke seg er at Arduino ikke har innebygde funksjoner for å håndtere skuddår. Dette kan føre til feil i datoene dersom de ikke blir inkludert eller håndtert manuelt.
-
-# Se også:
-
-- [TimeLib bibliotek](https://www.arduino.cc/en/Reference/Time)
-- [DateTime bibliotek](https://www.arduino.cc/en/Reference/DateTime)
+## Se Også
+- [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
+- [Arduino's millis() Function](https://www.arduino.cc/reference/en/language/functions/time/millis/)

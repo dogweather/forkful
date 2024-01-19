@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "Kotlin: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Päivämäärien vertaaminen on yksinkertainen tapa selvittää, mikä päivämäärä on aikaisempi tai myöhempi toiseen verrattuna. Tämä on hyödyllistä esimerkiksi silloin, kun haluat tarkistaa, onko jokin tapahtuma jo tapahtunut vai odotatko sitä vielä. Ohjelmoijat käyttävät tätä toimintoa usein monimutkaisempien sovellusten luomiseen, jotka vaativat päivämäärien vertailua ja päivämääriin liittyvää logiikkaa.
+## Mitä ja Miksi?
+Vertaamme kahta päivämäärää, kun haluamme tietää, kumpi päivämäärä sijoittuu aikajanalla ennen tai jälkeen. Ohjelmoijat tekevät niin esimerkiksi aikasarja-analyysissä ja loki-data-analysoinnissa.
 
-## Näin teet sen:
-### Yksinkertainen vertailu:
+## Kuinka tehä:
+Tässä on esimerkki, kuinka voit verrata kahta päivämäärää Kotlin-koodissa.
+
 ```Kotlin
-val ensimmäinenPäivä = LocalDate.parse("2021-01-01")
-val toinenPäivä = LocalDate.parse("2021-01-05")
+import java.time.LocalDate
 
-if (ensimmäinenPäivä < toinenPäivä) {
-  println("Ensimmäinen päivä on ennen toista päivää.")
-} else if (ensimmäinenPäivä > toinenPäivä) {
-  println("Ensimmäinen päivä on jälkeen toista päivää.")
-} else {
-  println("Päivämäärät ovat samat.")
+fun main() {
+    val pvm1 = LocalDate.of(2020, 1, 1)
+    val pvm2 = LocalDate.of(2021, 1, 1)
+    
+    if (pvm1.isBefore(pvm2)) {
+        println("pvm1 on ennen pvm2")
+    } else if (pvm1.isAfter(pvm2)) {
+        println("pvm1 on jälkeen pvm2")
+    } else {
+        println("pvm1 ja pvm2 ovat samat")
+    }
 }
 ```
-Tulostus:
-```
-Ensimmäinen päivä on ennen toista päivää.
-```
+Tässä otoksen tuloksessa, `pvm1` on ennen `pvm2`, joten tulostettu viesti on "pvm1 on ennen pvm2".
 
-### Tarkempi vertailu:
-```Kotlin
-val ensimmäinenPäivä = LocalDate.parse("2021-01-01")
-val toinenPäivä = LocalDate.parse("2021-01-05")
+## Syventyminen
+Päivämäärien vertailu ei ole uusi konsepti ohjelmoinnissa. Sen taustalla on paljon monimutkaisuutta, jota ei päivittäisessä ohjelmointikäytössä aina huomioi. Päivämäärän ja ajan vertailussa huomioitavia tekijöitä voivat olla aikavyöhykkeet, karkausvuodet ja DST (Daylight Saving Time).
 
-if (ensimmäinenPäivä.isBefore(toinenPäivä)) {
-  println("Ensimmäinen päivä on ennen toista päivää.")
-} else if (ensimmäinenPäivä.isAfter(toinenPäivä)) {
-  println("Ensimmäinen päivä on jälkeen toista päivää.")
-} else {
-  println("Päivämäärä on sama.")
-}
-```
-Tulostus:
-```
-Ensimmäinen päivä on ennen toista päivää.
-```
+Vaihtoehtoina Kotlinin sisäänrakennetulle funktiolle on monia kirjastoja, kuten Joda-Time. Jotkut näistä tarjoavat lisää joustavuutta ja yksityiskohtaista tarkastelua monimutkaisissa tilanteissa.
 
-## Syventävä tieto:
-Ennen Java 8:aa päivämääriä vertailtiin käyttämällä `Date`-luokan `before()` ja `after()` metodeita. Nykyään Kotlinin `LocalDate`-luokka tarjoaa oman `isBefore()` ja `isAfter()` metodit päivämäärien vertailuun. Lisäksi jotkin kolmannen osapuolen kirjastot, kuten Joda-Time, tarjoavat kattavampia päivämäärätoimintoja.
+Päivämäärien vertailun toteuttamiseen Kotlinissa ei tarvitse kirjoittaa monimutkaista funktiota. Kotlinin sisäänrakennettu LocalDate-luokka käsittelee päivämäärän vertailun kaikki yksityiskohdat.
 
-## Katso myös:
-- [Kotlinin LocalDate-dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
-- [Java 8:n LocalDate-dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Joda-Time-kirjaston kotisivu](https://www.joda.org/joda-time/)
+## Katso myös
+Jos haluat tietää lisää, tutustu näihin lähteisiin:
+
+Kotlinin LocalDate-dokumentointi: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/index.html
+
+Joda-Time-dokumentointi: http://joda-time.sourceforge.net/api-release/index.html

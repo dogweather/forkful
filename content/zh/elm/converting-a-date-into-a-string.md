@@ -1,6 +1,6 @@
 ---
 title:                "将日期转换为字符串"
-html_title:           "Elm: 将日期转换为字符串"
+html_title:           "Bash: 将日期转换为字符串"
 simple_title:         "将日期转换为字符串"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,29 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么？为什么？
+## 什么和为什么？
 
-将日期转换为字符串是将日期数据转换为可读格式的过程。程序员经常这样做是因为他们需要以可读的方式显示日期，而不是作为计算机内部的一串数字。
+将日期转换为字符串是一种编程操作，它能将机器可读的日期（通常是数字及日期时间对象）转变为人类友好的可读格式。程序员们常进行这种转换以便更好地在图形用户界面或文本输出中显示日期数据。
 
-## 如何：
+## 如何操作：
 
 ```Elm
+import Date exposing (Date)
 import Time
+from Time import (..)
 
-Date.toString (Time.millisToPosix 1555530699822)
---> "2019-04-17"
-
-Date.toString (Time.millisToPosix 1586229199000)
---> "2020-04-07"
+getTimeString : Posix -> String
+getTimeString time =
+  Time.toHour minute time
+  |> Tuple.pair 0
+  |> Time.posixToTime
+  |> Time.toString
 ```
+这段代码用于将 POSIX 时间对象转换为字符串。下面是结果示例：
 
-## 深入探讨：
+```Elm
+getTimeString (Time.millisToPosix 1592431766433)
+-- "5:36 AM"
+```
+这将时间戳 `1592431766433` 转换为 `5:36 AM`。
 
-日期表示法在历史上有很多不同的变化，比如使用日历系统、时区等等。目前，最常用的日期格式是ISO 8601标准，也就是我们在上面的代码示例中使用的格式。
+## 深入解析：
 
-除了使用 `Date.toString` 函数之外，还可以使用 `Date.fromCalendarDate` 函数来创建日期对象，然后再使用 `Date.toString` 将日期对象转换为字符串。
+在过去，尤其是在计算机科技不那么发达的年代，日期和时间的处理是非常困难的，因为计算机和人类理解时间的方式有本质的差异。为了简化这个复杂的问题，许多编程语言包括Elm，都采用了 POSIX 时间戳的标准。这是一种全球通用的、以秒为单位的时间表示方法。
 
-## 参考资料：
+此外，有几种备选的日期到字符串的转换方式,例如使用 `Time.toIsoString` 函数来获取 ISO 8601 时间字符串。或者，直接使用原生 JavaScript 进行日期和时间的处理。
 
-- [Elm Documentation: Date](https://package.elm-lang.org/packages/elm/time/latest/Time-Date)
-- [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+转换过程中值得注意的是Elm中情况的处理方式。例如，在上述代码实例中即`Tuple.pair 0`的操作，截取了分钟数，实现了跨越时间区的处理。这便是Elm语言细腻的细节处理方式。
+
+## 另见：
+
+Elm 日期和时间包文档： https://package.elm-lang.org/packages/elm/time/latest/
+
+Elm语言处理日期和时间的相关博客文章： https://elmprogramming.com/dates-and-time.html
+
+转换日期为字符串的其他方式：https://korban.net/posts/elm/2019-12-12-elm-date-format-library-overview/

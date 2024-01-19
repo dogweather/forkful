@@ -10,32 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que e porque?
+## O Que & Por Quê?
 
-Capitalizar uma string significa colocar a primeira letra de cada palavra em maiúsculo. Programadores geralmente fazem isso para seguir as convenções de formatação de código e para tornar o texto mais legível.
+Capitalizar uma string significa transformar a primeira letra de cada palavra numa letra maiúscula. Programadores fazem isso para melhorar a legibilidade e a aparência dos dados exibidos.
 
-# Como fazer:
+## Como fazer?
 
-```
-# Exemplo 1:
-puts "ruby é uma linguagem incrível".capitalize
-# Saída: "Ruby é uma linguagem incrível"
+Vamos usar o método `capitalize` disponível em Ruby para capitalizar uma string. Ele retorna uma nova string com a primeira letra em maiúscula e o restante em minúsculas.
 
-# Exemplo 2:
-string = "estou aprendendo a programar em ruby"
-puts string.capitalize
-# Saída: "Estou aprendendo a programar em ruby"
+```Ruby
+s = "olá mundo!"
+s.capitalize
+=> "Olá mundo!"
 
-# Exemplo 3:
-puts "lychee".capitalize
-# Saída: "Lychee"
+s = "vamos programar em ruby"
+s.split.map(&:capitalize).join(' ')
+=> "Vamos Programar Em Ruby"
 ```
 
-# Mergulho Profundo:
+## Uma análise aprofundada
 
-A prática de capitalização de strings pode ser vista em muitas linguagens de programação, incluindo Ruby, para manter um padrão consistente de formatação. Alternativas incluem o uso de métodos como `upcase` e `downcase`, que alteram todas as letras da string para maiúsculas ou minúsculas, respectivamente. A implementação do método `capitalize` em Ruby se baseia no uso de expressões regulares para encontrar os limites de cada palavra e transformar a primeira letra em maiúscula.
+Por muitos anos, a capitalização foi usada em linguagens de programação e continua sendo uma prática comum por ser uma ótima forma de melhorar a legibilidade. 
+Existem alguns métodos alternativos além do `capitalize` em Ruby. O método `titleize` do Rails faz algo similar, porém, ele insere uma letra maiúscula a começar de cada palavra e minúscula no restante, perfeito para títulos. 
 
-# Veja também:
+A implementação do metodo `capitalize` em Ruby é bastante simples. Ele basicamente percorre a string e transfere cada letra para maiúscula ou minúscula dependendo da sua posição.
 
-- Documentação oficial da linguagem Ruby: https://www.ruby-lang.org/pt/
-- Stack Overflow: https://stackoverflow.com/questions/18386618/how-to-capitalize-a-string-in-ruby
+```Ruby
+class String
+  def capitalize
+    self[0].upcase + self[1..-1].downcase
+  end
+end
+```
+É importante lembrar que `capitalize` não modifica a string original, mas retorna uma nova string.
+
+## Veja também
+
+[A identidade Ruby: Guia de estilo de codificação Ruby](https://github.com/rubocop/ruby-style-guide#naming)
+
+[Documentação Ruby](https://ruby-doc.org/core-2.7.2/String.html)
+
+[Documentação Rails - titleize](https://api.rubyonrails.org/classes/String.html#method-i-titleize)

@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "Kotlin: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -11,29 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skriva ut felsökningsutdata är en process där man skriver ut extra information i koden för att hjälpa till med felsökning av programvaran. Detta görs för att underlätta för utvecklare att hitta och åtgärda fel i koden.
 
-## Hur man gör:
-Kotlin har en inbyggd funktion, ```println()```, som används för att skriva ut felsökningsutdata. Den tar ett argument, som kan vara en sträng eller en variabel, och skriver ut värdet på det argumentet i konsolen. 
+Att skriva ut debugginformation är en process där programmerare skriver ut data från koden för felsökning. Det används för att få insikt i din kods beteende och för att hjälpa till med att identifiera och lösa problem.
 
-Exempel:
+## Hur gör man:
 
-```Kotlin
-var name = "Kotlin"
-println("$name är ett programmeringsspråk.")
+Här är några exempel hur du skriver ut debuginformation i Kotlin med kommentarer.
+
+```kotlin
+// Skriv ut text med println
+println("Hello, World")
+
+// Skriv ut värden av variabler
+val name = "Kotlin"
+println("Hej, $name")
+
+// Skriv ut resultaten av en funktion
+fun addition(a: Int, b: Int) = a + b
+println("Summan av 1 + 2 är ${addition(1, 2)}")
 ```
-Output:
 
-Kotlin är ett programmeringsspråk.
+När du kompilerar och kör ovanstående exempel, får du följande output:
 
-## Djupdykning:
-Att skriva ut debug output är ett vanligt felsökningsverktyg som har funnits sedan programmeringens tidiga dagar. Innan moderna felsökningverktyg fanns tillgängliga var det den enda metoden för att hitta och åtgärda fel i koden. 
+```
+Hello, World
+Hej, Kotlin
+Summan av 1 + 2 är 3
+```
 
-Idag finns det också andra alternativ för felsökning, såsom debuggingverktyg, som låter utvecklare steg för steg gå igenom koden för att hitta fel. Men att skriva ut debug output kan fortfarande vara ett användbart verktyg för att snabbt identifiera enkla fel och göra snabba korrigeringar i koden.
+## Djupdykning
 
-Det är viktigt att komma ihåg att debug output inte bör användas i produktionskod, eftersom det kan påverka prestanda och säkerhet. Det är enbart avsett som ett verktyg för felsökning och bör tas bort eller kommenteras ut när koden publiceras.
+Historiskt sett, före tillgången till avancerade debuggers och IDE:er, har utskrift av debugginformation varit ett viktigt verktyg för att förstå vad som hände i en applikation. De kallades ofta "printf-debugging", efter printf-funktionen i C.
 
-## Se även:
-Officiell Kotlin dokumentation om ```println()```: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html
+Ett alternativ till utskrift av debugginformation är att använda en debugger. En debugger ger mer sofistikerade möjligheter att inspektera din kod, men i enklare fall kan det vara snabbare och enklare att bara skriva ut informationen.
 
-En guide om felsökning i Kotlin: https://medium.com/@baphemot/whats-the-debugging-like-for-kotlin-be5749f8f817
+I Kotlin, metoden `println()` är en inbyggd standardkod för att skriva ut information till terminalen. Den kan hantera alla former av variabler och funktioner genom att konvertera dem till teckensträngar före utskrift.
+
+## Se också
+
+- Kotlin Dokumentationen om [println()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html)
+- JetBrains artikel om [Debuggering i Kotlin](https://www.jetbrains.com/help/idea/debugging-your-first-kotlin-application.html)

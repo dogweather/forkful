@@ -1,7 +1,7 @@
 ---
-title:                "送信のHTTPリクエスト"
-html_title:           "C++: 送信のHTTPリクエスト"
-simple_title:         "送信のHTTPリクエスト"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,113 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何かとは？
-HTTPリクエストを送信することは、ウェブサイトやアプリケーションからデータを取得するためのプロセスです。プログラマーは、必要なデータを取得するためにHTTPリクエストを送信します。
+## 何となぜ?
+HTTPリクエストを送信するとは、サーバーに情報を要求または送信するためのメッセージです。これにより、プログラマーはウェブサーバーと双方向でデータ交換ができます。
 
-## 方法：
-### GETリクエストの送信
-```c++
-#include <iostream>
-#include <curl/curl.h>
+## どうやって:
+C++を使用してHTTPリクエストを送信する基本的なコードを次に示します。 まず、必要なライブラリを含めることから始めます。
 
-// HTTPリクエストを送信する関数
-void sendRequest(std::string url){
-  CURL *curl;
-  CURLcode res;
-
-  // curlの初期化
-  curl = curl_easy_init();
-
-  // リクエストの設定
-  curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-
-  // サーバーからのレスポンスをデフォルト出力に出力
-  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-
-  // リクエストの送信
-  res = curl_easy_perform(curl);
-
-  // エラー処理
-  if(res != CURLE_OK)
-    std::cout << "Error:" << curl_easy_strerror(res) << std::endl;
-
-  // curlの終了処理
-  curl_easy_cleanup(curl);
-}
-
-// main関数
-int main(){
-  std::string url = "https://example.com/api"; // 送信するURL
-  sendRequest(url);
-
-  return 0;
-}
-
-// curlの出力を受け取り、デフォルト出力に出力する関数
-size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
-    std::cout << (char*)ptr;
-    return size * nmemb;
-}
+```C++
+#include <cpprest/http_client.h>
+#include <cpprest/filestream.h>
 ```
 
-### POSTリクエストの送信
-```c++
-#include <iostream>
-#include <curl/curl.h>
+次に、HTTPリクエストを送信するシンプルな関数を作成します。
 
-// HTTPリクエストを送信する関数
-void sendRequest(std::string url){
-  CURL *curl;
-  CURLcode res;
+```C++
+pplx::task<void> HTTPPostAsync()
+{
+    web::http::client::http_client client(U("http://example.com"));
 
-  // curlの初期化
-  curl = curl_easy_init();
+    // Post 방식으로 전송할 request 메시지를 만듭니다.
+    web::http::http_request request(web::http::methods::POST);
+    request.set_body(U("Sample Data"));
 
-  // リクエストの設定
-  curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-  curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "param=value&param2=value2"); // 送信するパラメーターを設定
-
-  // サーバーからのレスポンスをデフォルト出力に出力
-  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-
-  // リクエストの送信
-  res = curl_easy_perform(curl);
-
-  // エラー処理
-  if(res != CURLE_OK)
-    std::cout << "Error:" << curl_easy_strerror(res) << std::endl;
-
-  // curlの終了処理
-  curl_easy_cleanup(curl);
+    return client.request(request)
+        .then([](web::http::http_response response)
+    {
+        // Print the status code.
+        std::cout << response.status_code() << std::endl;
+    });
 }
 
-// main関数
-int main(){
-  std::string url = "https://example.com/api"; // 送信するURL
-  sendRequest(url);
-
-  return 0;
-}
-
-// curlの出力を受け取り、デフォルト出力に出力する関数
-size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
-    std::cout << (char*)ptr;
-    return size * nmemb;
+int main()
+{
+    HTTPPostAsync().wait();
+    return 0;
 }
 ```
+サンプルの出力で成功メッセージを確認することができます。
 
-## 深く掘り下げる：
-### 歴史的文脈：
-HTTPリクエストは、1990年にTim Berners-Leeによって開発されたウェブの基礎を形作るプロトコルであるHTTP(HyperText Transfer Protocol)の一部です。当初はハイパーテキストドキュメントを転送するために使用されていましたが、次第にウェブ上の様々な要求に応えることができるようになりました。
+```
+200
+```
 
-### 代替案：
-HTTPリクエストを送信するためには、上記の例のようにcurlライブラリを使用する方法の他にも、wgetやlibcurlなどのライブラリを使用することもできます。また、特定のプログラミング言語に特化したHTTPリクエストの送信方法もあります。
+## ディープダイブ
+HTTPリクエストの送信は、早くも1991年からWebが生まれたときからありました。C++でのHTTPリクエストの送信には他にもオプションがあります。libcurl、QtのQNetworkAccessManagerなどがここで言及できます。
 
-### 実装の詳細：
-HTTPリクエストは、ユーザーが指定したURLにアクセスし、そのサーバーからレスポンスを受け取るというプロセスです。GETリクエストでは、URLに指定したパラメーターを使用してデータを取得し、POSTリクエストでは、指定したパラメーターをサーバーに送信します。また、HTTPリクエストには様々なメソッドがあり、各メソッドによってデータのやり取りの仕方が異なります。
+この記事では、Microsoftのcpprestsdkを示しましたが、これは非同期プログラミングパターンに基づいています。これは効率的なリソース利用を提供する一方で、クラシックな同期I/Oよりも少し学ぶのが難しくなる可能性があります。
 
-## 関連リンク：
-- [curl library](https://curl.haxx.se/)
-- [wget](https://www.gnu.org/software/wget/)
-- [libcurl](https://curl.haxx.se/libcurl/)
-- [HTTP Methods](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)
+## 参照リンク
+1. Microsoft cpprestsdkのドキュメンテーション: [ここ](https://github.com/microsoft/cpprestsdk)を参照
+2. libcurlについての詳細: [ここ](https://curl.haxx.se/libcurl/c/)から確認できます
+3. QtのQNetworkAccessManagerの使い方: [ここ](https://doc.qt.io/qt-5/qnetworkaccessmanager.html)を参照してください

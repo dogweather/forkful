@@ -1,6 +1,6 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Elm: Читання текстового файлу"
+html_title:           "Arduino: Читання текстового файлу"
 simple_title:         "Читання текстового файлу"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,59 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-
-Читання текстового файлу - це процес отримання текстової інформації з файлу на комп'ютері. Програмісти виконують цю дію, щоб отримати доступ до даних, які можуть бути використані для подальшого аналізу або обробки.
+## Що і чому?
+Читання текстового файлу - це процес, під час якого програма відкриває та читає вміст текстового документу. Програмісти роблять це, щоб вивчити дані, збережені у файлі, або для програмного маніпулювання цими даними.
 
 ## Як зробити:
+Elm не підтримує читання з файлів напряму, але ви можете обробити вхідні дані через порти. Нижче наведено приклад коду.
 
 ```Elm
-import File exposing (readAsText)
-import Json.Decode exposing (decodeString)
-import Http exposing (get, string)
-import String
-import Task exposing (attempt)
+port module Main exposing (..)
 
-readFile : String -> Task Http.Error String
-readFile filePath =
-  get filePath string
+import Html exposing (..)
 
-decodeContents : String -> Result String a
-decodeContents contents =
-  case String.split "," contents of
-    Right values ->
-      Ok values
-    Left e ->
-      Err e
+type alias Model = 
+    { fileContent: String
+    }
 
-convertToTask : Task Http.Error String -> Task Http.Error (Result String a)
-convertToTask task =
-  Task.map decodeContents task
+init : Model
+init =
+    { fileContent = ""
+    }
 
-fileTask : Task Http.Error (Result String a)
-fileTask =
-  readFile "sample.txt"
-    |> Task.andThen convertToTask
+-- Port binding to read file
+port readFile : (() -> msg) -> Sub msg
 
 main =
-  case attempt (\_ -> Decode.wrap String.fromString fileTask) of
-    Err err ->
-      error (show err)
-
-    Ok task ->
-      task |> Task.attempt (\_ -> IO.succeed "File read successfully: " ++ (toString task))
+    Html.program
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        }
 ```
 
-## Глибоке занурення:
-
-Історичний контекст: ще з початків програмування, читання текстових файлів було необхідною частиною роботи з даними. Але з впровадженням графічних інтерфейсів та розширенням інтернету, цей процес став менш потрібнею дією.
-
-Альтернативи: нативні функції зчитування файлів існують у багатьох мовах програмування, включаючи C ++ та Java. Але у Elm є вбудовані функції, які спрощують читання текстових файлів.
-
-Деталі реалізації: функція `readAsText` використовує вбудований `File` модуль у Elm для зчитування та повернення текстових даних з файлу. Навіть якщо файл не існує, функція поверне порожній рядок замість повідомлення про помилку.
+## Поглиблено:
+Починаючи з Elm 0.19, мову Elm обмежено таким чином, щоб вона була більш безпечною і прогнозованою. Це означає, що немає нативної підтримки для таких речей, як читання файлів. Замість цього Elm використовує порти для взаємодії з JavaScript для таких операцій. Хоча це може бути незручно, це запобігає багатьом типам помилок.
 
 ## Дивись також:
-
-- Elm документація про зчитування файлів: https://package.elm-lang.org/packages/elm/file/latest/File
-- Різні способи читання файлів у мові програмування Elm: https://discourse.elm-lang.org/t/reading-files-in-elm/4507/2 
-- Відео покрокового процесу читання файлів в Elm: https://www.youtube.com/watch?v=BeV_hQHi6pY
+1. [Elm Guide on Interacting with JavaScript](https://guide.elm-lang.org/interop/)
+2. [Elm package for File Handling](https://package.elm-lang.org/packages/elm/file/latest/)
+3. [Blog post on Reading files in Elm](https://orasund.gitbook.io/elm-cookbook/direct-manipulation/javascript-interop-part1)

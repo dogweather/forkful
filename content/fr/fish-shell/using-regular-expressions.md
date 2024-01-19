@@ -1,6 +1,6 @@
 ---
 title:                "Utiliser les expressions régulières"
-html_title:           "Fish Shell: Utiliser les expressions régulières"
+html_title:           "C: Utiliser les expressions régulières"
 simple_title:         "Utiliser les expressions régulières"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi les programmeurs l'utilisent-ils?
+## Quoi & Pourquoi ?
 
-Les expressions régulières sont des modèles de caractères utilisés pour trouver des motifs spécifiques dans du texte. Les programmeurs utilisent les expressions régulières pour automatiser la recherche et le traitement de données dans des fichiers texte, ce qui peut leur faire gagner beaucoup de temps et d'efforts.
+Les expressions régulières sont des séquences de caractères qui définissent un modèle de recherche. Elles permettent aux programmeurs d'analyser et de manipuler des chaînes de caractères de manière efficace et précise.
 
-## Comment faire:
+## Comment faire :
 
-Voici quelques exemples de code utilisant les expressions régulières dans le Fish Shell avec leur résultat :
+```Fish Shell
+# Cherchez une correspondance exacte
+grep 'exemples' fichier.txt
 
-```
-# Trouver toutes les lignes contenant un mot qui commence par "p"
-grep -E "p\w+" text.txt
-# Résultat : fish, pour, partir, passe
+# Cherchez une correspondance de modèle
+grep -E 'exemples|modèles' fichier.txt
 
-# Remplacer tous les mots qui commencent par "h" par "ville" dans le fichier text.txt
-sed -E "s/h\w+/ville/g" text.txt
-# Résultat : Je suis allé à la ville, la ville était belle, j'ai quitté la ville
-
-# Vérifier si une chaîne de caractères correspond à un schéma d'adresse email
-if string match -r "^\w+@\w+\.\w+$" $email
-  echo "Valide"
-else
-  echo "Non valide"
-end
+# Remplacer une chaîne de caractères
+echo 'Hello, World!' | sed 's/World/Monde/g'
 ```
 
-## Plongée en profondeur:
+Ce qui donnera respectivement :
 
-Les expressions régulières existent depuis les années 1950 et ont été développées pour être utilisées dans les langages de programmation. Bien que le Fish Shell ait son propre ensemble de commandes pour travailler avec les expressions régulières, d'autres langages de script comme Perl, Python et Java ont également des bibliothèques dédiées à leur utilisation.
+```Fish Shell
+# des exemples
+# des exemples
+# des modèles
+# Hello, Monde!
+```
 
-Les alternatives aux expressions régulières sont les fonctions de manipulation de texte intégrées dans la plupart des langages de programmation. Cependant, ces fonctions peuvent être limitées et moins flexibles que les expressions régulières.
+## Plongée en Profondeur :
 
-L'implémentation des expressions régulières dans le Fish Shell est basée sur la bibliothèque "PCRE" (Perl Compatible Regular Expressions), qui fournit des fonctionnalités avancées pour manipuler des modèles de caractères complexes.
+Les expressions régulières existent depuis les années 1950 et ont été développées initialement pour le langage de programmation Lisp. Il existe plusieurs alternatives, y compris globbing (pour des modèles plus simples) et des moteurs d'expression régulière plus performants comme PCRE. Sous Fish Shell, `grep` et `sed` sont intégrés et prennent en charge les expressions régulières par défaut.
 
-## Voir aussi:
+## Voir Aussi :
 
-Pour en savoir plus sur les expressions régulières et leur utilisation dans le Fish Shell, vous pouvez consulter les ressources suivantes :
+Pour approfondir votre connaissance sur les expressions régulières, vous pouvez consulter les ressources suivantes :
 
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutoriel pour débuter avec les expressions régulières dans le Fish Shell](https://fishshell.com/docs/current/index.html#quick-tutorial-on-fishs-easy-string-substitution-methods)
-- [Cheat sheet pour les expressions régulières dans le Fish Shell](https://hackersandslackers.com/scrape-an-array-fish/)
+- Le guide officiel de `Fish Shell` sur Comment utiliser les expressions régulières : http://fishshell.com/docs/current/index.html#regular-expressions 
+- Le site web Regular-Expressions.info fournit une ressource complète pour la syntaxe et l'utilisation des expressions régulières : https://www.regular-expressions.info/
+- Un tutoriel interactif pour apprendre les expressions régulières : https://regexone.com/

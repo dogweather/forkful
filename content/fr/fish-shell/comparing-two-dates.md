@@ -1,6 +1,6 @@
 ---
 title:                "Comparer deux dates"
-html_title:           "Fish Shell: Comparer deux dates"
+html_title:           "Clojure: Comparer deux dates"
 simple_title:         "Comparer deux dates"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi?
 
-Comparer deux dates en programmation consiste à comparer la valeur numérique de deux dates pour déterminer leur ordre chronologique. Les programmeurs le font souvent pour trier des données ou pour vérifier si une date est antérieure ou ultérieure à une autre.
+Comparer deux dates, c'est simplement déterminer quelle date est la plus récente ou la plus ancienne. Et pourquoi les programmeurs font-ils cela? Pour résoudre une myriade de problèmes comme le calcul des échéances, la planification de tâches, etc.
 
 ## Comment faire:
 
-Voici un exemple de code en Fish Shell pour comparer deux dates:
-
-```
-# Définir les variables des deux dates à comparer
-set date1 20210215
-set date2 20210315
-
-if [ $date1 -eq $date2 ]
-    echo "Les deux dates sont identiques"
-else if [ $date1 -lt $date2 ]
-    echo "La date 1 est antérieure à la date 2"
-else
-    echo "La date 1 est ultérieure à la date 2"
+Voici comment vous pouvez comparer deux dates en Fish Shell:
+```Fish Shell
+set date1 (date -u +%s -d "2022-04-01")
+set date2 (date -u +%s -d "2022-04-02")
+if test "$date1" -gt "$date2"
+   echo "Date1 est plus récente"
+else 
+   echo "Date2 est plus récente"
 end
 ```
-
-Voici le résultat de l'exécution du code:
-
+Output:
+```Fish Shell
+"Date2 est plus récente"
 ```
-La date 1 est antérieure à la date 2
-```
+Ici, le script convertit d'abord les dates en timestamp Unix (secondes écoulées depuis 1970), puis les compare.
 
-## Plongée en profondeur:
+## Approfondissement:
 
-Cette méthode de comparaison de dates est basée sur le format numérique YYYYMMJJ, où Y représente l'année, M le mois et J le jour. Cela provient de la méthode utilisée par le système Unix pour stocker et comparer les dates. 
-Cependant, il existe d'autres méthodes pour comparer les dates, telles que l'utilisation de fonctions spécifiques au langage de programmation, comme la fonction `strcmp()` en C.
+Historiquement, la comparaison de dates a toujours été une tâche essentielle dans le codage. Mais chaque langage de programmation a sa propre façon de le faire. Dans Fish Shell, les dates sont converties en timestamps Unix pour faciliter la comparaison. Cependant, il existe d'autres alternatives comme l'utilisation de commandes intégrées de certaines langues pour comparer directement les dates.
 
-## À voir également:
+L'implémentation du code ci-dessus est simple. Elle fait usage de commandes Unix comme `date` et `test`. La commande `date -u +%s` produit un timestamp Unix et `-d` permet de spécifier la date. Ensuite, la commande `test` est utilisée pour comparer les deux timestamps.
 
-Vous pouvez en apprendre davantage sur la comparaison de dates en consultant les sources suivantes:
+## Voir aussi:
 
-- Documentation officielle de la commandee `test` en Fish Shell: http://fishshell.com/docs/current/cmds/test.html
-- Tutoriel sur la manipulation de dates en Fish Shell: https://devhints.io/fish
-- Exemple de comparaison de dates en utilisant la fonction `strcmp()` en C: https://www.geeksforgeeks.org/strcmp-in-c-cpp/
+Voici quelques liens pertinents où vous pouvez en savoir plus sur le sujet:
+
+[Documentation officielle de la Fish Shell](https://fishshell.com/docs/current/index.html)
+
+[Comparaison de dates en Unix](https://unix.stackexchange.com/questions/2465/how-to-compare-to-a-date-in-a-shell-script)
+
+[Détails sur les dates Unix](https://www.computerhope.com/unix/udate.htm)
+
+Bonne programmation avec Fish Shell!

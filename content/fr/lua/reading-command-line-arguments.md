@@ -1,6 +1,6 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "Lua: Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce quec'est que la lecture des arguments de ligne de commande? 
-La lecture des arguments de ligne de commande est le fait de récupérer les valeurs saisies par l'utilisateur dans le terminal lorsqu'il exécute votre code Lua en ligne de commande. Les programmeurs utilisent cette méthode pour rendre leurs programmes plus flexibles et personnalisables, car elle permet aux utilisateurs de fournir des informations spécifiques au moment de l'exécution.
+## Quoi & Pourquoi?
 
-## Comment faire: 
-Dans Lua, il existe une variable globale appelée "arg" qui contient tous les arguments de ligne de commande sous forme de tableau. Voici un exemple de code pour afficher tous ces arguments sur le terminal:
+Lire les arguments de la ligne de commande contrairement au Lua, c'est récupérer des valeurs externes lors du lancement de votre script. Pourquoi le faire? Simplicité, flexibilité, et interactivité, généralement pour modifier le comportement de votre programme.
+
+## Comment faire:
+
+En Lua, les arguments de l'invite sont stockés dans un tableau de script global nommé `arg`. Voyons cela en action:
 
 ```Lua
-for i, v in ipairs(arg) do
-  print(i, v)
+--fichier: showargs.lua
+for i = 0, #arg do
+    print('arg[' .. i .. ']= ' .. arg[i])
 end
 ```
 
-Si vous souhaitez récupérer un argument spécifique, vous pouvez utiliser son index comme ceci:
+Exécutez-le avec des arguments, comme ça:
 
-```Lua
-local argument = arg[1] -- récupère le premier argument
-print("Mon argument est: ", argument)
-```
-Exemple de sortie:
-```
-1	love
-2	hello
-3	world
+```bash
+lua showargs.lua arg1 'second arg' arg3
 ```
 
-## Plongée en profondeur: 
-Cette méthode de lecture des arguments de ligne de commande existe depuis les premières versions de Lua. Cependant, il existe également d'autres solutions telles que la bibliothèque "argparse" pour une gestion plus poussée des arguments. De plus, Lua permet également aux programmeurs de définir des options en utilisant le caractère "-" pour les séparer des arguments. Par exemple: `myprogram.lua -v arg1 arg2`, où "-v" serait l'option définie par le programmeur.
+Il affiche:
 
-## A voir également: 
-- Documentation officielle de Lua sur la variable "arg": https://www.lua.org/pil/12.1.html
-- Documentation de la bibliothèque "argparse": https://github.com/mpeterv/argparse
+```bash
+arg[0]= showargs.lua
+arg[1]= arg1
+arg[2]= second arg
+arg[3]= arg3
+```
+
+## Plongée profonde
+
+Historiquement, les arguments de ligne de commande datent du début de systèmes d'exploitation basés sur des textes, bien avant Lua. Comme alternatives à Lua, vous pouvez utiliser des bibliothèques spécialisées comme `lapp` ou `argparse`. Notez que Lua stocke ses arguments à partir de l'index 0, qui contient toujours le nom du script lui-même.
+
+## Voir aussi
+
+Pour comprendre plus de détails, consultez les ressources suivantes :
+
+- Documentation Lua - [Programme en Ligne de Commande](https://www.lua.org/pil/25.html)
+- Un article intéressant sur [l'utilisation des arguments en Lua](https://riptutorial.com/lua/example/2037/command-line-arguments)

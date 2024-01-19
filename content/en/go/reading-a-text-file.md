@@ -12,41 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading a text file is the process of accessing and extracting data stored in a file that is made up of plain text. Programmers commonly do this in order to retrieve important information, such as user data, from a file. 
+Reading a text file is pulling in and accessing information from a file stored as text on your computer. Programmers do it to interact with and manipulate data.
 
 ## How to:
 
-In Go, reading a text file involves using the `ioutil` package's `ReadFile()` function. First, we need to import the `ioutil` package into our code. Next, we can use the `ReadFile()` function to read a text file and store its contents into a variable. Below is an example code that reads a text file named "data.txt" and prints its contents to the standard output:
+Simple text file reading in Go involves the `os` and `bufio` packages.
 
 ```Go
+package main
+
 import (
-  "fmt"
-  "io/ioutil"
+	"fmt"
+	"bufio"
+	"os"
 )
 
 func main() {
-  data, err := ioutil.ReadFile("data.txt")
-  if err != nil {
-    fmt.Println(err)
-  }
-  fmt.Println(string(data))
+    file, err := os.Open("test.txt")
+
+    if err != nil {
+        log.Fatalf("failed to open file: %s", err)
+    }
+
+    scanner := bufio.NewScanner(file)
+    scanner.Split(bufio.ScanLines)
+
+    for scanner.Scan() {
+        fmt.Println(scanner.Text())
+    }
+
+    file.Close()
 }
 ```
 
-The output of this code will be the contents of "data.txt", as shown below:
-
-```
-This is the data stored in the text file.
-```
+This script chooses a file (`test.txt`), checks it can be opened, scans it line by line, prints each line, then finally closes the file.
 
 ## Deep Dive:
 
-Historically, reading a text file was a much more complicated process as each programming language had its own unique way of accessing and extracting data from a file. However, with the advancements in modern programming languages, reading a text file has become a standardized and simplified process. 
+- **Historical Context:** File reading has been around since programmers starting storing data in files. It's a basic but vital operation.
 
-An alternative to using the `ioutil.ReadFile()` function is to use the `os.Open()` function in combination with the `bufio` package's `NewScanner()` function, which provides more functionality for reading and manipulating data from a text file.
+- **Alternatives:** 
+    - `ioutil` package: In older Go versions, the `ioutil.ReadFile` function was a simpler way to read a file. But it's been deprecated in Go 1.16.
+    - `os` package: Apart from `os.Open`, you can also use `os.ReadFile` to directly get the file content.
 
-The implementation details of reading a text file primarily involve handling any errors that may occur, such as the file not being found or not having the correct permissions. It is important to properly handle these errors to ensure that the program can continue running smoothly.
+- **Implementation Details:** `bufio.Scanner` is efficient for files with smaller lines as it buffers the input. For large files or if you want more control, consider `bufio.Reader`.
 
 ## See Also:
 
-To learn more about reading a text file in Go, you can check out the official [Go documentation](https://golang.org/pkg/io/ioutil/#ReadFile). You can also explore other techniques and methods for reading text files, such as using regular expressions, as well as different use cases for storing and extracting data from files in general.
+- Full Go documentation on file reading: [Go Docs on package os](https://golang.org/pkg/os/)
+- Walkthrough on Go file operations: [File handling in Go](https://www.golangprograms.com/go-language/file-handling)
+- Good comparison of `ioutil` vs `os`: [Reading Files in Go - The Full Guide](https://levelup.gitconnected.com/reading-files-in-go-the-full-guide-83f59ab5e7a9)

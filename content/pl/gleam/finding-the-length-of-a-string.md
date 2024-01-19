@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Gleam: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-Znalezienie długości łańcucha znakowego to podstawowa umiejętność programistów. Polega ona na określeniu ilości znaków w danym ciągu. Jest to często potrzebne do przetwarzania danych lub tworzenia warunków logicznych w programach.
+Znajdowanie długości łańcucha to proces określania liczby znaków w danym ciągu tekstowym. Programiści robią to, aby obsługiwać, manipulować, sprawdzać dane wejściowe lub dla operacji skracania.
 
 ## Jak to zrobić:
 
-### Gleam:
+W Gleamie znajdowanie długości łańcucha jest proste i intuicyjne. Używamy wbudowanej funkcji `size`, jak w poniższym przykładzie:
 
-```gleam
-let string = "Hello, world!"
- 
-let length = String.length(string)
- 
-// length = 13
+```Gleam
+let message = "Witaj, Gleam!"
+let length = message.size
 ```
 
-## Głębsze Wprowadzenie
+Gdy teraz wydrukujesz zmienną `length`, wyjście będzie wyglądało tak:
 
-### Kontekst historyczny:
+```Gleam
+io.println(length) // Wyjście: 13
+```
 
-Pierwszym językiem programowania, który wprowadził funkcję dla znajdowania długości znaków, był ALGOL 60. Następnie stało się to standardem w językach programowania.
+## W głąb tematu
 
-### Alternatywy:
+Gleam, mimo iż jest stosunkowo nowym językiem programowania, posiada mechanizmy dobrze ugruntowane w historii informatyki. Funkcja `size` jest na przykład zaimplementowana podobnie jak w innych językach pokrewnych do Erlanga.
 
-Innym sposobem na znalezienie długości łańcucha znakowego jest użycie pętli i inkrementowania licznika przy każdym przejściu przez kolejny znak. Jednak w języku Gleam funkcja String.length jest szybsza i bardziej wydajna.
+Alternatywą do `size` jest przeglądanie łańcucha po jednym znaku naraz, ale jest to mniej efektywne. Metoda `size` jest zdecydowanie szybsza i bardziej bezpośrednia.
 
-### Szczegóły implementacji:
+Ciekawostką jest fakt, że `size` działa nie tylko na łańcuchach, ale również na listach i innych strukturach danych. Oznacza to, że jest bardzo uniwersalna.
 
-Funkcja String.length zwraca liczbę całkowitą, która reprezentuje długość łańcucha znakowego. Jest ona zaimplementowana w języku Erlang, na którym opiera się Gleam.
+## Zobacz również
 
-## Zobacz też:
-
-- [Dokumentacja Gleam o funkcji String.length](https://gleam.run/documentation/)
+1. [Dokumentacja Gleam's String](https://hexdocs.pm/gleam_stdlib/gleam/string@v0.18.2.html) - zawiera pełną listę funkcji łańcuchowych dostępnych w Gleam.
+2. [Erlang String Operations](http://erlang.org/doc/man/erlang.html#length-1) - dla zrozumienia, jak Gleam, będąc bazowany na Erlangu, implementuje operacje na łańcuchach.

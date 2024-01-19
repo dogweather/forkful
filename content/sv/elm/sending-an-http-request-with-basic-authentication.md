@@ -1,6 +1,6 @@
 ---
 title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Elm: Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
 simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,40 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att skicka en HTTP-begäran med grundläggande autentisering innebär att göra en förfrågan till en server och validera din identitet med brukernamn och lösenord. Programmerare gör det för att få tillgång till skyddade resurser på servern.
 
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att vi skickar inloggningsuppgifter tillsammans med vår förfrågan för att få åtkomst till en resurs på webben. Detta görs av programmerare för att säkerställa att endast auktoriserade användare kan använda vissa funktioner eller se viss information.
+## Hur fungerar det:
+För att skicka en HTTP-förfrågan, använd `Http.post` eller `Http.get` och passera in URL:n och dina autentiseringsuppgifter.
 
-## Hur man:
+```Elm
+import Http
+import Http.Basic
 
+myRequest : Http.Request String
+myRequest =
+    Http.post
+        { url = "https://example.com/login"
+        , body = Http.stringBody "text/plain" ""
+        , headers = [ Http.Basic.authentication "yourUsername" "yourPassword" ]
+        , expect = Http.expectString (Result.Ok >> Ok)
+        }
 ```
-Elm.Http.send
-  { verb = "GET"
-  , headers = [("Authorization", "Basic ZnJlZDpzYW1wbGU=")]
-  , url = "http://example.com/resource"
-  , body = Http.emptyBody
-  , expect = Http.expectString (Http.expectOk receiveResponse)
-  }
-```
-Detta är ett exempel på hur man skickar en GET-förfrågan med grundläggande autentisering i Elm. Vi anger http-metoden `verb` och lägger till en `Authorization`-huvud- rad med våra inloggningsuppgifter i base64-kodning. Slutligen anger vi url och förväntade resultat.
+Resultatet blir antingen en `Ok String` med serverns svar, eller ett `Err Http.Error` om något går fel.
 
-```
-Elm.Http.send
-  { verb = "POST"
-  , headers = [("Authorization", "Basic dXNlcjpwYXNzd29yZA==")]
-  , url = "http://example.com/login"
-  , body = Http.stringBody "{\"username\": \"user\", \"password\": \"pass\"}"
-  , expect = Http.expectString receiveResponse
-  }
-```
-Här är ett exempel på hur man skickar en POST-förfrågan med grundläggande autentisering. Denna gång anger vi också en `body` med vår användarnamn och lösenord i JSON-format.
+## Djupdykning
+Historiskt sett har autentisering använts sedan början av datorsystem som ett sätt att skydda data. Grundläggande autentisering är en av de enklaste formerna och är baserad på HTTP-protokollet. Några alternativ till grundläggande autentisering inkluderar OAuth och Digest-autentisering. Implementeringen av HTTP-begäran i Elm görs via Http-paketet, vilket gör processen kodstorleksvänligt och mindre komplicerat jämfört med JavaScript.
 
-## Deep Dive
-
-HTTP-grundläggande autentisering är en av många autentiseringstyper som stöds av protokollet. Det infördes i HTTP-specifikationen år 1999 och har sedan dess använts som ett enkelt sätt att skydda resurser på webben. Alternativet till grundläggande autentisering är digest autentisering, som erbjuder bättre säkerhet genom att inte skicka lösenord i klartext, men är också mer krävande att implementera.
-
-Det finns många sätt att implementera grundläggande autentisering i Elm, men det kan vara enklare att använda ett ramverk som [elm-http-builder](https://github.com/lucamug/elm-http-builder) eller [elm-url-builder](https://github.com/lucamug/elm-url-builder), som gör det möjligt att bygga HTTP-förfrågningar på ett mer modulärt sätt.
-
-## Se även:
-
-- [HTTP Basic Authentication i Elm](https://package.elm-lang.org/packages/elm/http/latest/Http-Basic)
-- [HTTP Digest Authentication i Elm](https://package.elm-lang.org/packages/elm/http/latest/Http-Digest)
+## Se Även:
+För mer information om att skicka HTTP-förfrågningar i Elm, se följande länkar:
+- Elm Http-paket dokumentation: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+- Grundläggande autentisering på MDN: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+- Alternativ till grundläggande autentisering: [https://oauth.net/](https://oauth.net/)

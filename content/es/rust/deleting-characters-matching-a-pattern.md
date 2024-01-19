@@ -1,6 +1,6 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "Rust: Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,24 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Borrando caracteres que coinciden con un patrón en Rust
+
 ## ¿Qué y por qué?
-Eliminar caracteres que coinciden con un patrón es una tarea común en la programación. Consiste en eliminar de una cadena de texto los caracteres que cumplan con cierta condición, como por ejemplo, todos los números o todas las vocales. Los programadores realizan esta tarea para limpiar datos o para modificar una cadena de texto según ciertas reglas.
+
+Eliminar caracteres que coinciden con un patrón es una operación común que implica quitar todas las instancias de un patrón específico en una cadena de texto. Los programadores hacen esto para limpiar datos, extraer información específica o transformar textos.
 
 ## ¿Cómo hacerlo?
-En Rust, podemos usar el método `replace` de la clase `String` para eliminar caracteres que coinciden con un patrón. Veamos un ejemplo de cómo eliminar todos los números de una cadena de texto:
+
+Aquí tienes un ejemplo de cómo puedes hacer esto en Rust. La operación `replace()` viene al rescate, permitiéndonos reemplazar todos los casos de un patrón con otra cadena elegida.
 
 ```Rust
-let texto = "H0l4 m6nd0";
-let nuevo_texto = texto.replace(|c: char| c.is_numeric(), "");
-println!("{}", nuevo_texto);
-
-// Output: Hl md
+fn main() {
+    let s = "Hola, mi número de teléfono es 123456. Por favor, no lo compartas.";
+    let cleaned = s.replace("123456", "");
+    println!("{}", cleaned);
+}
 ```
 
-En este ejemplo, usamos el método `replace` pasándole como argumento una función que toma cada caracter de la cadena y devuelve `true` si es un número. En ese caso, ese caracter será reemplazado por una cadena vacía, eliminándolo así de la cadena original. El resultado será la cadena "Hl md", sin los números originales.
+La salida de este programa sería:
 
-## Profundizando
-Este tipo de manipulación de cadenas es una tarea común en la programación, por lo que existen diferentes formas de lograrlo en distintos lenguajes. En Rust, además del método `replace`, también podemos utilizar las funciones `trim`, `trim_start` y `trim_end` para eliminar caracteres de los extremos de una cadena de texto, y la macro `format!` para crear una nueva cadena a partir de una cadena original con ciertas modificaciones.
+```
+Hola, mi número de teléfono es . Por favor, no lo compartas.
+```
 
-## Enlaces adicionales
-Si quieres conocer más acerca de cómo trabajar con cadenas de texto en Rust, puedes leer la documentación oficial aquí: https://doc.rust-lang.org/std/string/. Además, aquí hay un artículo interesante sobre cómo manipular cadenas de texto en Rust: https://dev.to/kmamiya/working-with-strings-in-rust-11ho.
+Así hemos eliminado todas las instancias de "123456" de la cadena de texto.
+
+## Análisis en profundidad
+
+La función `replace()` en Rust no es específica para la limpieza de texto, pero se utiliza con frecuencia para este propósito. Apareció en Rust 1.0, y ha sido una herramienta valiosa para los programadores de Rust desde entonces.
+
+Una alternativa sería usar el módulo `regex` para eliminar caracteres que coinciden con un patrón más complejo. Sin embargo, `replace()` es más rápida y fácil de utilizar para patrones sencillos.
+
+La supresión de caracteres que coinciden con un patrón se implementa en Rust a través de un ciclo en el que el programa busca el patrón en la cadena, y si lo encuentra, lo reemplaza con la segunda cadena proporcionada, en este caso, una cadena vacía.
+
+## Ver también
+
+Para más información sobre el tema, puedes consultar los siguientes enlaces:
+- [Documentación oficial de Rust sobre la función `replace`](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Tutorial de Rust Strings](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)
+- [Discusión de la comunidad de Rust sobre el manejo de cadenas](https://users.rust-lang.org/t/how-to-handle-string-in-rust/26396)

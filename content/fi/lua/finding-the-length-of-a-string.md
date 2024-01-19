@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "Lua: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,32 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Merkkijonon pituuden löytäminen tarkoittaa sitä, että selvität, kuinka monta merkkiä tai merkintää siinä on. Ohjelmoijat tekevät tätä esimerkiksi tekstin muotoilun, tietokannan käsittelyn tai järjestelyjen tekemistä varten.
+
+Merkkijonon pituuden etsiminen on toimenpide, jolla selvitetään kuinka monta merkkiä merkkijonossa on. Ohjelmoijat tekevät tämän esimerkiksi silloin, kun heidän tarvitsee rajoittaa merkkijonon pituutta tai jakaa se osiin.
 
 ## Miten:
-Lua-koodiblokkien sisällä näet esimerkkejä siitä, miten voit hakea merkkijonon pituuden ja millainen tulos siitä saat.
 
-```Lua
-local merkkijono = "Tämä on merkkijono."
-print(string.len(merkkijono))
--- Output: 21
+Katsotaanpa, kuinka se toimii suoraan esimerkkiä käyttäen:
+
+```Lua 
+local str = "Hei, Suomi!"
+print(#str)
 ```
 
-```Lua
-local merkkijono = "Tässä on 123 merkkiä."
-print(string.len(merkkijono))
--- Output: 21
+Se tulostaa:
+
+```Lua 
+12
 ```
 
-```Lua
-local merkkijono = ""
-print(string.len(merkkijono))
--- Output: 0
-```
+Tämä Lua-koodi laskee merkkijono "Hei, Suomi!" merkkien määrän ja tulostaa sen.
 
 ## Syväsukellus:
-Merkkijonon pituuden määrittäminen on ollut oleellinen osa ohjelmointia jo kauan aikaa. Monet kielet, kuten C ja Java, käyttävät nollapäätteisiä merkkijonoja, joissa käytetään erillistä merkkiä lopettamaan merkkijono. Tämä voi olla hankalaa käsitellä, sillä merkkiä täytyy varoa oikean merkkijonon pituuden laskemisessa. Lua käyttää sen sijaan pituutta tallentavaa arvoa, jolloin merkkijonon pituuden hakeminen on huomattavasti helpompaa.
+
+(1) Historiallinen asiayhteys: Lua on ohjelmointikieli, joka on suunniteltu erityisesti upotettaviin sovelluksiin. Se on yksinkertainen ja tehokas, ja sen sisäänrakennetut työkalut, kuten merkkijonon pituuden laskeminen, tekevät siitä sopivan valinnan moniin tehtäviin.
+
+(2) Vaihtoehtoja: On muitakin tapoja laskea merkkijonon pituus Luassa. Yksi näistä on 'string.len' funktio. Esimerkki:
+
+```Lua
+local str = "Hei, Suomi!"
+print(string.len(str))
+```
+
+(3) Toteutuskohdat: '#'-operaattori Luassa on kätevä työkalu, mutta sillä on myös rajoituksia. Se ei esimerkiksi toimi kunnolla, jos merkkijonossa on nolla tavua ('\0'). Tässä tapauksessa 'string.len' -funktio on parempi valinta, koska se laskee kaikki tavut.
 
 ## Katso myös:
-Voit löytää lisätietoa Lua:n string-kirjastosta Lua:n viralliselta verkkosivustolta.
-https://www.lua.org/manual/5.3/manual.html#6.4
+
+Koodin viite: [Lua 5.4 merkkijono-operaattoridokumentaatio](http://www.lua.org/manual/5.4/manual.html#3.4.7)
+
+Ohjekirja: [Programming in Lua](https://www.lua.org/pil/)
+
+Luiz Henrique de Figueiredonin sivu: [Lua-ohjelmointikielen tie operaattorien luomiseen](http://lua-users.org/wiki/User:LuizHenriqueDeFigueiredo)

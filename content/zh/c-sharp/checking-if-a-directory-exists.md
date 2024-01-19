@@ -10,26 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什麼 & 為什麼？
-檢查目錄是否存在指的是在程式設計中，我們經常需要確認一個目錄是否存在於電腦中。這通常是為了確保程式運行時能夠順利找到需要使用的檔案。透過檢查目錄是否存在，我們可以提前處理可能的錯誤，確保程式的效率和可靠性。
+## 什么和为什么？
 
-## 如何：
-我們可以使用 C# 的 `Directory.Exists` 方法來檢查目錄是否存在。假設我們想要檢查一個名為 `myFolder` 的目錄是否存在，我們可以使用以下程式碼：
+查看目录是否存在是检查特定文件夹路径是否真实存在的过程。程序员这么做是为了避免在访问不存在的目录时引发运行时异常。
+
+## 如何做：
+
+使用C#来检查目录是否存在相当简单。`System.IO.Directory`类中的`Exists`方法就可以实现这个功能。
+
 ```C#
-if(Directory.Exists("myFolder"))
+using System.IO;
+
+string dirToCheck = @"C:\Program Files";
+
+if (Directory.Exists(dirToCheck)) 
 {
-    Console.WriteLine("目錄存在。");
-}
-else
+    Console.WriteLine("The directory exists.");
+} 
+else 
 {
-    Console.WriteLine("目錄不存在。");
+    Console.WriteLine("The directory does not exist.");
 }
 ```
-透過這樣的程式碼，我們可以在程式執行時得到相關訊息，並根據需要做出相應的處理。
 
-## 深入探討：
-檢查目錄是否存在的概念在程式設計中早有應用。在過去，我們可能會使用其他的方法，例如使用系統指令來檢查目錄是否存在。但現在透過 C# 的 `Directory.Exists` 方法，我們可以更加方便地處理這個問題。另外，我們還可以使用 `DirectoryInfo` 物件來處理較複雜的目錄操作。
+运行这段代码，如果"C:\Program Files"目录存在，就会打印出"The directory exists."，否则会打印出"The directory does not exist."。
 
-## 參考資料：
-- [C# Directory Class](https://docs.microsoft.com/zh-tw/dotnet/api/system.io.directory?view=net-5.0)
-- [C# DirectoryInfo Class](https://docs.microsoft.com/zh-tw/dotnet/api/system.io.directoryinfo?view=net-5.0)
+## 深度解析
+
+检查目录存在性的方法在早期编程中并不常见，直到微软推出了.NET框架才引入这个方便的功能。
+
+虽然C#中直接使用Directory.Exists是最直观的方法，但有一些其他的替代方案也可以实现同样的效果。例如，可以试图打开目录，如果抛出异常，则说明目录不存在。这是一种叫做"备选方案（EAFP）"的编程风格。
+
+对于Directory.Exists的底层实现，.NET基础库在调用Directory.Exists时会直接调用一次系统API检查目录是否存在。而无论目录是否存在，这个系统API调用都会产生一定的性能开销。因此，如果你的程序需要在短时间内检查大量的目录，可能需要考虑其他的解决方案。
+
+## 更多参阅
+
+- Official Documentation for DirectoryInfo.Exists: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=netframework-4.8
+- File and Directory Operations in .NET: https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-check-that-a-file-or-directory-exists

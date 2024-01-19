@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "PHP: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,32 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Luodessaan väliaikaisia tiedostoja, ohjelmoijat voivat käsitellä ja tallentaa väliaikaista tietoa ilman pysyvää muutosta alkuperäisiin tiedostoihin. Tämä on erityisen hyödyllistä esimerkiksi tietojen tallentamisessa järjestelmän toiminnan aikana tai muokatessa tiedostoja tilapäisesti.
+Väliaikaistiedoston luominen on tekniikka, jossa ohjelmoija luo tiedoston, jonka tarkoituksena on joko säilyttää tietoja lyhyeksi aikaa tai toimia tiedonsiirron välittäjänä. Tätä tehdään yleisesti suurten datamäärien käsittelyssä tai monimutkaisten laskentojen väliaikaisessa tallennuksessa.
 
-## Kuinka tehdä:
+## Näin teet:
+
+Alla on esimerkki väliaikaisen tiedoston luomisesta PHP:ssa.
 
 ```PHP
-$tempfile = tmpfile();
-fwrite($tempfile, "Tämä on väliaikainen tiedosto");
-echo fread($tempfile, filesize($tempfile));
-fclose($tempfile);
+<?php
+
+$temp_file = tmpfile();
+
+$data = "Tämä on väliaikaista tietoa!";
+
+fwrite($temp_file, $data);
+
+rewind($temp_file);
+
+echo fread($temp_file, 1024);
+
+fclose($temp_file);
+
+?>
 ```
 
-Tulos:
+Tuloste tulisi näyttää seuraavalta:
+
 ```
-Tämä on väliaikainen tiedosto
+Tämä on väliaikaista tietoa!
 ```
 
-## Syvällinen sukellus:
+## Syvempi sukellus
 
-Luodessaan väliaikaisia tiedostoja PHP-koodilla, käytetään funktiota `tmpfile()`, joka luo tiedostonpalauttimen ja avaa sen tiedostoon. Tämän jälkeen tiedostoon voidaan kirjoittaa tai lukea kuten normaaleihin tiedostoihin. Tiedoston sulkemisen jälkeen se poistetaan automaattisesti, joten käyttäjän ei tarvitse huolehtia sen poistamisesta. Aiemmin PHP:ssä väliaikaiset tiedostot luotiin käyttämällä funktiota `fopen()` ja sen jälkeen poistamalla tiedosto manuaalisesti.
+Väliaikaistiedostojen historiassa ohjelmoijat ovat käyttäneet niitä jo vuosikymmenien ajan monissa eri ohjelmointikielissä. PHP:n tapauksessa 'tmpfile()' -funktio on ollut olemassa jo sen varhaisista versioista lähtien, tarjoten tavan käsitellä helposti tiedostoja, jotka eivät vaadi pysyvää tallennustilaa.
 
-Vaihtoehtoisesti, jos väliaikaisen tiedoston luominen ei ole välttämätöntä, voidaan käyttää muuttujaa tai taulukkoa tietojen tallentamiseksi.
+Käytettäessä upotettuja tietokantoja tai muistinvaraisia tietokantoja kuten SQLite tai Redis, voi väliaikaistiedoston luonti tulla tarpeettomaksi. Nämä tietokannat mahdollistavat datan säilyttämisen nopeasti ja tehokkaasti ilman tarvetta tiedostoille. Kuitenkin, joissain tapauksissa tiedostojen avulla hallittu datan tallennus voi olla parempi vaihtoehto.
+
+PHP:n `tmpfile()` palauttaa tiedoston kahvan väliaikaiseen tiedostoon. Tämä tiedosto poistetaan automaattisesti kun kahva suljetaan tai skriptin suorittaminen päättyy. Jos haluat säilyttää tiedoston, voit käyttää `tempnam()`-funktiota, joka luo väliaikaistiedoston antamaasi hakemistoon.
 
 ## Katso myös:
 
-- PHP virallinen dokumentaatio `tmpfile()` funktiosta: https://www.php.net/manual/en/function.tmpfile.php
-- Artikkeli "Temporary files in PHP" (englanniksi): https://www.php.net/manual/en/features.file-upload.php#114004
-- PHP-keskustelufoorumi aiheesta: https://stackoverflow.com/questions/642125/managing-temporary-files-in-php
+* PHP:n virallinen dokumentaatio `tmpfile`-funktiosta: https://www.php.net/manual/en/function.tmpfile.php
+* Stackoverflow-keskustelu väliaikaistiedostojen käytöstä: https://stackoverflow.com/questions/3391811/how-do-i-use-a-temporary-file-in-my-php-script
+* Tietoa muistinvaraisista tietokannoista: https://www.sqlite.org/inmemorydb.html

@@ -1,6 +1,6 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "Swift: Obteniendo la fecha actual"
+html_title:           "C#: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,32 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qué es y por qué lo hacemos:
+## ¿Qué y Por Qué?
 
-Obtener la fecha actual es una tarea común que los programadores realizan para obtener información sobre el momento en el que se está ejecutando un programa. Esto puede ser útil para realizar operaciones basadas en fechas, como mostrar la fecha actual en una aplicación o calcular la duración entre dos fechas.
+Obtener la fecha actual en la programación nos permite marcar cuando ocurren eventos específicos. Los programadores a menudo la utilizan para crear sellos de tiempo y realizar tareas relacionadas con la fecha y la hora.
 
-Cómo hacerlo:
+## ¿Cómo se Hace?
 
-Para obtener la fecha actual en Swift, podemos utilizar el objeto `Date()` y el objeto `DateFormatter()`. Primero, creamos un objeto `Date()` para representar la fecha actual y luego lo formateamos utilizando un objeto `DateFormatter()`. Luego podemos imprimir la fecha formateada utilizando el método `string(from: Date)`.
+Puedes obtener la fecha y hora actuales en Swift con el objeto `Date`. Aquí tienes un ejemplo:
 
 ```Swift
-let fechaActual = Date()
-let formatoFecha = DateFormatter()
-formatoFecha.dateFormat = "dd-MM-yyyy"
-let fechaFormateada = formatoFecha.string(from: fechaActual)
-print(fechaFormateada) // Salida: 18-03-2021
+let ahora = Date()
+print(ahora)
 ```
 
-Deep Dive:
+Corres este código, y veamos qué obtienes.
 
-La necesidad de obtener la fecha actual ha existido desde los primeros días de la programación. Antes del año 1970, los sistemas de tiempo se basaban en el reloj del sistema y no tenían una forma estándar de representar la fecha y hora. Sin embargo, con el desarrollo de sistemas operativos modernos, se ha establecido una forma estándar de representar la fecha y hora utilizando el llamado "Tiempo Unix", que es la cantidad de segundos transcurridos desde el 1 de enero de 1970.
+```Swift
+2022-04-12 14:20:43 +0000
+```
 
-Hay varias alternativas para obtener la fecha actual en Swift, como utilizar bibliotecas externas o la API de tiempo de iOS, pero la forma presentada anteriormente es una solución simple y nativa que debería ser suficiente para la mayoría de los casos.
+## Detalle Profundo
 
-Más información:
+El objeto `Date` en Swift usa la hora Unix, que cuenta los segundos desde el 1 de enero de 1970. A diferencia de otras alternativas para obtener la fecha y hora actuales, `Date` tiene la ventaja de ser inmutable, lo que facilita su uso con múltiples hilos.
 
-Para obtener más información sobre cómo trabajar con fechas en Swift, puedes visitar la documentación oficial de Apple: https://developer.apple.com/documentation/foundation/date.
+Para casos en los que las fechas y horas pueden requerir de un manejo más complejo, Swift ofrece la `Calendar` API. Esto puede ser útil si te encuentras con problemas de zonas horarias y fechas locales. Una limitación es que `Date` en Swift no tiene en cuenta las zonas horarias por sí mismo, simplemente representa un punto en el tiempo.
 
-También puedes explorar otras formas de obtener la fecha actual en Swift y sus ventajas y desventajas en este artículo: https://swiftwithmajid.com/2020/01/15/getting-current-date-and-time-in-swift/.
+Aquí tienes un ejemplo de cómo puedes usar la `Calendar` API:
 
-¡Happy coding!
+```Swift
+let ahora = Date()
+let calendario = Calendar.current
+let hora = calendario.component(.hour, from: ahora)
+let minuto = calendario.component(.minute, from: ahora)
+print("Hora: \(hora), Minuto: \(minuto)")
+```
+
+Esto te dará la hora y el minuto actual del sistema.
+
+## Ver También
+
+Puedes aprender más sobre el manejo de fechas y horas en Swift en los siguientes enlaces:
+
+- [Apple Developer Documentation - Date](https://developer.apple.com/documentation/foundation/date)
+- [Apple Developer Documentation - Calendar](https://developer.apple.com/documentation/foundation/calendar)
+- [NSHipster - Swift Dates, DateComponents, and Calendar](https://nshipster.com/datecomponents/)

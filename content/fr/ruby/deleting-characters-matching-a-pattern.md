@@ -1,7 +1,7 @@
 ---
-title:                "Suppression de caractères correspondant à un motif."
-html_title:           "Ruby: Suppression de caractères correspondant à un motif."
-simple_title:         "Suppression de caractères correspondant à un motif."
+title:                "Supprimer les caractères correspondant à un modèle"
+html_title:           "Ruby: Supprimer les caractères correspondant à un modèle"
+simple_title:         "Supprimer les caractères correspondant à un modèle"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est & Pourquoi?
 
-Supprimer des caractères correspondant à un modèle est une pratique courante chez les programmeurs pour nettoyer ou filtrer des données en fonction d'un certain modèle. Cela peut être utile pour formater des chaînes de texte ou pour supprimer des caractères indésirables tels que des espaces vides ou des caractères spéciaux.
+La suppression des caractères correspondant à un motif est un processus qui retire tous les caractères d'une chaîne qui correspondent à un modèle spécifique. Les programmeurs l'utilisent souvent pour nettoyer ou normaliser les données textuelles.
 
-## Comment faire:
+## Comment faire :
 
-Voici un exemple simple de code Ruby pour supprimer tous les chiffres d'une chaîne de caractères:
-
-```Ruby
-string = "Abc123def45ghi"
-string.delete!("0-9") # supprime les chiffres de 0 à 9
-puts string # output: Abcdefghi
-```
-
-Vous pouvez également utiliser une expression régulière pour supprimer des caractères correspondant à un modèle spécifique. Dans l'exemple ci-dessous, nous supprimons tous les caractères de ponctuation d'une chaîne de caractères:
+Voici comment vous pouvez supprimer des caractères dans Ruby en utilisant la méthode 'delete'. Supposons que nous voulions supprimer toutes les voyelles d'une chaîne.
 
 ```Ruby
-string = "Hello, World!"
-string.gsub!(/[[:punct:]]/, "") # supprime tous les caractères de ponctuation
-puts string # output: HelloWorld
+chaine = "Bonjour, comment ça va ?"
+nouvelle_chaine = chaine.delete 'aeiouyAEIOUY'
+puts nouvelle_chaine
 ```
 
-## Plongée en profondeur:
+Et voici la sortie de ce code :
 
-Cette pratique de suppression de caractères correspondant à un modèle tire son origine des expressions régulières (regex) qui sont des outils puissants pour la manipulation de chaînes de caractères. Ces expressions sont un langage de programmation en soi et peuvent être utilisées pour effectuer des recherches et des remplacements complexes dans du texte. Cependant, il existe également d'autres méthodes pour supprimer des caractères correspondant à un modèle, telles que la méthode `gsub` de Ruby ou des bibliothèques spécifiques comme `StringScanner`.
+```
+Bnjr, cmmnt ç v ?
+```
 
-## Voir aussi:
+## Plongée en profondeur
 
-Pour en savoir plus sur l'utilisation des expressions régulières, consultez la documentation officielle de Ruby: https://ruby-doc.org/core-3.0.1/Regexp.html
+La méthode 'delete' existe en Ruby depuis ses débuts, ce qui démontre sa nécessité dans les opérations sur les chaînes. En termes d'alternatives, vous pouvez utiliser une expression régulière avec la méthode 'gsub' pour atteindre le même objectif, mais 'delete' est généralement plus performant pour des opérations simples de suppression de caractères.
 
-Vous pouvez également explorer les différentes méthodes de manipulation de chaînes de caractères de Ruby dans la documentation: https://ruby-doc.org/core-3.0.1/String.html
+```Ruby
+chaine = "Bonjour, comment ça va ?"
+nouvelle_chaine = chaine.gsub(/[aeiouyAEIOUY]/, '')
+puts nouvelle_chaine
+```
+
+L'implémentation interne de 'delete' est assez simple en Ruby. La méthode itère chaque caractère de la chaîne et vérifie si ce caractère est dans la chaîne de caractères à supprimer. Si c'est le cas, il est supprimé.
+
+## Voir aussi
+
+Pour plus d'informations sur la manipulation de chaînes en Ruby, consultez les sources suivantes :
+
+- La documentation officielle de Ruby sur les chaînes : [https://ruby-doc.org/core-2.7.0/String.html](https://ruby-doc.org/core-2.7.0/String.html)
+- Un guide pratique pour gérer les expressions régulières en Ruby : [https://www.rubyguides.com/2015/06/ruby-regex/](https://www.rubyguides.com/2015/06/ruby-regex/)

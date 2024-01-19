@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Elixir: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was und Warum?
-Das Einlesen von Befehlszeilenargumenten ist eine Technik, die es Programmierern ermöglicht, Benutzereingaben direkt in ihrem Code zu verarbeiten. Es ist eine effiziente Möglichkeit, eine interaktive Anwendung zu erstellen oder das Verhalten einer Anwendung anzupassen, ohne den Quellcode ändern zu müssen.
+## Was & Warum?
 
-Wie geht's?
-Um Befehlszeilenargumente in Elixir zu lesen, können wir die "System.argv" Funktion verwenden. Diese Funktion gibt eine Liste der Argumente zurück, die bei dem Aufruf des Codes angegeben wurden. Wir können sie dann in unserem Code verwenden, um die gewünschten Aktionen auszuführen.
+Das Lesen von Kommandozeilenargumenten ermöglicht die Interaktion des Benutzers mit deinem Programm über die Kommandozeile. Entwickler nutzen diese Funktion, um flexible Programme zu erstellen, die unterschiedliche Aktionen basierend auf den eingegebenen Argumenten ausführen.
 
+## Wie macht man das:
+
+Es ist sehr einfach, Kommandozeilenargumenten in Elixir zu verwenden. Betrachten wir die folgenden Codeschnipsel:
+
+```Elixir
+defmodule Hello do
+  def main(args) do
+    args
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+end
+
+System.argv |> Hello.main
 ```
-Elixir
-args = System.argv
-IO.puts("Das erste Argument ist: #{args[0]}")
-```
+Wenn Sie das obige Programm mit Argumenten aus der Befehlszeile ausführen, z. B. `elixir hello.exs Hallo Welt`, gibt es `Hallo Welt` auf dem Bildschirm aus.
 
-Beispieloutput:
-```
-> elixir argumente.exs argument1 argument2
-Das erste Argument ist: argument1
-```
+## Vertiefung 
 
-Tiefgehende Einblicke
-Das Einlesen von Befehlszeilenargumenten ist eine gebräuchliche Technik in vielen Programmiersprachen, einschließlich Elixir. Es ermöglicht es uns, interaktive Anwendungen zu erstellen, ohne dass der Benutzer jedes Mal die gleichen Eingaben tätigen muss. Alternativ können wir auch Umgebungsvariablen verwenden, um Benutzereingaben zu lesen. Einer der Gründe, warum Programmierer Befehlszeilenargumente verwenden, ist die Flexibilität und Anpassbarkeit, die sie bieten.
+Elixir basiert auf der Erlang-VM, einem System, das ursprünglich für robuste Telekommunikationssysteme entwickelt wurde. Daher bietet es starken Support für Kommandozeilenanwendungen, einschließlich des Zugriffs auf Kommandozeilenargumente.
 
-Siehe auch
-- [Official Elixir Documentation for System.argv](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Understanding Command Line Arguments in Elixir](https://medium.com/@vgraziano/understanding-command-line-arguments-in-elixir-2ebfe9160f6d)
-- [Elixir - Reading Command Line Input](https://learngowith.me/elixir-reading-command-line-input)
+Ein Alternativansatz zum Lesen von Befehlszeilenargumenten ist die Verwendung der Funktion `:init.get_plain_arguments/0`. Diese Funktion gibt Ihnen direkten Zugriff auf die Argumentenliste, die der Erlang-VM beim Start übergeben wird.
+
+Die Implementierung der Argumentenlesung in Elixir erfolgt durch das `System.argv` Modul. Dieses Modul bietet Funktionen zum Abrufen und Ändern der aktuellen Argumentenliste des Prozesses.
+
+## Siehe auch
+
+- [Elixir School: Command line](https://elixirschool.com/de/lessons/basics/mix/#command-line)
+- [Official Elixir docs: System.argv](https://hexdocs.pm/elixir/System.html#argv/0)
+- [Erlang docs: init.get_plain_arguments](http://erlang.org/doc/man/init.html#get_plain_arguments-0)

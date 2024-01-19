@@ -1,7 +1,7 @@
 ---
-title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "C++: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines zukünftigen oder vergangenen Datums"
+html_title:           "C++: Berechnung eines zukünftigen oder vergangenen Datums"
+simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,39 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Beim Berechnen eines zukünftigen oder vergangenen Datums manipulieren wir Daten, um eine bestimmte Anzahl von Tagen, Monaten oder Jahren hinzuzufügen oder abzuziehen. Programmierer tun dies oft, um Ablaufdaten, geplante Ereignisse oder Fristen zu berechnen.
 
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist eine gängige Aufgabe für Programmierer. Dabei geht es darum, ein bestimmtes Datum auf Basis eines gegebenen Datums und einer festgelegten Anzahl von Tagen in der Zukunft oder Vergangenheit zu berechnen. Diese Funktion kann in vielen verschiedenen Anwendungsbereichen nützlich sein, zum Beispiel für Terminkalender, Reiseplanung oder Finanzberechnungen.
-
-## Wie geht das?
-
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, benötigt man das aktuelle Datum und eine Variable, die die Anzahl der Tage angibt, um die das Datum verschoben werden soll. Der folgende Code zeigt ein Beispiel für die Berechnung eines zukünftigen Datums, das um 10 Tage verschoben wird:
+## Wie zu:
+Werfen wir einen Blick auf ein praktisches Codebeispiel:
 
 ```C++
-// Aktuelles Datum
-int aktuellesDatum = 20210817;
+#include <iostream>
+#include <ctime>
+#include <chrono>
 
-// Anzahl der Tage in der Zukunft
-int zukunft = 10;
+int main() 
+{
+    std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+    struct tm newdate = *std::localtime(&now);
+    newdate.tm_mday += 30; // Berechne das Datum 30 Tage in der Zukunft
+    std::time_t future = std::mktime(&newdate);
 
-// Berechnung des zukünftigen Datums
-int zukuenftigesDatum = aktuellesDatum + zukunft;
+    // Ausgabe: Das aktuelle Datum und 30 Tage zukünftiges Datum
+    char str_now[20];
+    strftime(str_now, 20, "%d.%m.%Y", std::localtime(&now));
+    std::cout << "Heutiges Datum: " << str_now << '\n';
 
-// Ausgabe des Ergebnisses
-cout << zukuenftigesDatum << endl;
-// Ausgabe: 20210827
+    char str_future[20];
+    strftime(str_future, 20, "%d.%m.%Y", std::localtime(&future));
+    std::cout << "Zukünftiges Datum: " << str_future << '\n';
+
+    return 0;
+}
+```
+Beispiel-Ausgabe:
+
+```C++
+Heutiges Datum: 01.05.2022
+Zukünftiges Datum: 31.05.2022
 ```
 
-Einfach, oder? Die Berechnung eines Datums in der Vergangenheit funktioniert auf die gleiche Weise, indem man die Anzahl der Tage als negative Zahl angibt.
+## Tief Tauchen
+**Historischer Hintergrund**: Historisch gesehen wurde diese Methode entwickelt, um mit dem Bedarf von Geschäfts- und Unternehmensanwendungen umzugehen. Diese Anwendungen müssen oft vergangene, gegenwärtige und zukünftige Daten verwalten.
 
-## Tiefere Einblicke
+**Alternativen**: Es gibt mehrere Wege, um dieses Ziel zu erreichen. Andere Optionen umfassen die Verwendung von Bibliotheken wie Boost.Date_Time oder datetime in Python, die Berechnungen wie diese transparenter machen können.
 
-Die Berechnung von Daten in der Zukunft oder Vergangenheit hat eine lange Geschichte. Bereits im antiken Rom entwickelten Mathematiker komplexe Kalender, um Datumsberechnungen durchführen zu können. Heutzutage gibt es verschiedene Alternativen zur Berechnung von Datum, zum Beispiel die Verwendung von Datumsbibliotheken oder die Verwendung von eingebauten Funktionalitäten in Programmiersprachen wie PHP und JavaScript.
-
-In der Implementierung kann es wichtig sein, auf Datums- und Zeitformate zu achten, um sicherzustellen, dass die berechneten Daten korrekt angezeigt werden. Es kann auch hilfreich sein, Randfälle wie Schaltjahre und unterschiedliche Kalenderformate zu berücksichtigen.
+**Implementierungsdetails**: Beachten Sie, dass in unserem Codebeispiel das mktime-Funktion rollt über, wenn wir über den aktuellen Monat hinaus Tage hinzufügen. Wenn wir beispielsweise am 30. April 30 Tage hinzufügen, gibt mktime uns den 30. Mai zurück.
 
 ## Siehe auch
+**C++ Referenz - `mktime`:** https://en.cppreference.com/w/cpp/chrono/c/mktime
 
-- [C++: Datums- und Zeitfunktionen](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
-- [PHP: Datum und Uhrzeit](https://www.php.net/manual/de/function.date.php)
-- [JavaScript: Datum und Uhrzeit](https://www.w3schools.com/js/js_dates.asp) 
-- [Geschichte der Datumsberechnung](https://www.timeanddate.com/date/history.html)
+**C++ Referenz - `strftime`:** https://en.cppreference.com/w/cpp/chrono/c/strftime
+
+**Boost.Date_Time-Dokumentation:** https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html
+
+Erforschen Sie diese Ressourcen, um Ihre Kenntnisse zu vertiefen und mehr über die verschiedenen Optionen zur Berechnung von zukünftigen und vergangenen Daten in C++ zu erfahren.

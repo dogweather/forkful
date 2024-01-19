@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
+## Quoi & Pourquoi?
+Calculer une date dans le futur ou le passé signifie déterminer une date spécifique en ajoutant ou en soustrayant un certain temps à une date donnée. Les programmeurs le font pour gérer des tâches comme le suivi du temps, les rendez-vous, les alertes et autres opérations similaires.
 
-Calculer une date dans le futur ou dans le passé est une tâche couramment effectuée par les programmeurs afin de réaliser des opérations temporelles dans leurs programmes. Par exemple, cela pourrait permettre de déterminer la date d'expiration d'un abonnement ou la date de livraison d'une commande en ligne.
+## Comment faire :
+Ruby offre une manière simple d'ajouter ou de soustraire des dates. Considérez l'exemple suivant:
 
-## Comment faire:
+```ruby
+require 'date'
 
-Voici un exemple de code en Ruby pour calculer une date dans le futur en utilisant la méthode `advance` :
+# Aujourd'hui
+aujourdhui = Date.today
 
-```Ruby
-future_date = Date.today.advance(days: 10)
-puts future_date #=> 2020-10-27
+# Dans le futur
+future = aujourdhui + 30
+
+# Dans le passé
+passe = aujourdhui - 30
+
+puts "Aujourd'hui : #{aujourdhui}"
+puts "Dans 30 jours : #{future}"
+puts "Il y a 30 jours : #{passe}"
 ```
 
-Et voici un exemple pour calculer une date dans le passé en utilisant la méthode `days_ago` :
+Dans cet exemple, vous constaterez que nous manipulons la date de manière à calculer les dates dans le futur (`future`) et dans le passé (`passe`). Nous ajoutons ou soustrayons le nombre de jours à la date d'aujourd'hui.
 
-```Ruby
-past_date = Date.today.days_ago(7)
-puts past_date #=> 2020-10-13
-```
+## Plongée en profondeur
+Historiquement, les opérations sur les dates étaient assez compliquées en raison de la diversité des calendriers et des calculs impliqués. Ruby simplifie cela en encapsulant ces détails derrière la classe `Date` et ses méthodes associées.
 
-## Plongée en profondeur:
+Vous pouvez aussi utiliser d'autres bibliothèques comme `ActiveSupport::TimeWithZone` ou `Time` pour d'autres manipulations temporaires. 
 
-Historiquement, le calcul de dates dans le futur ou dans le passé a été un défi pour les programmeurs, car cela impliquait une prise en compte des années bissextiles et des différents calendriers utilisés à travers le monde. Cependant, avec l'avènement de bibliothèques de gestion de dates telles que Ruby's `Date`, cette tâche est désormais simplifiée et gérée de manière transparente.
+Ruby stocke les dates sous forme de Gregorian Julian Day Number, une mesure du nombre de jours passés depuis le 1er janvier 4713 av. J-C. C'est pourquoi on peut facilement ajouter ou soustraire des jours à partir d'une date donnée.
 
-Dans le cas où vous préférez utiliser une bibliothèque différente pour gérer les dates, il existe plusieurs alternatives telles que `Chrono` ou `Timecop` qui peuvent être utilisées avec Ruby pour gérer les opérations temporelles.
+## Voir aussi
+Prenez le temps de consulter la documentation Ruby sur les dates pour obtenir plus d'informations et d'exemples : [https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
 
-## À voir également:
+Aussi, pour une compréhension plus profonde de la manipulation des dates et des heures dans Ruby, je vous recommande ce guide complet par Daniel Kehoe : [https://learn.co/lessons/ruby-intro-to-enumerables](https://learn.co/lessons/ruby-intro-to-enumerables). 
 
-Pour en savoir plus sur la gestion des dates en Ruby, vous pouvez consulter la documentation officielle de Ruby sur les objets `Date` et `DateTime` ainsi que des tutoriels et des articles en ligne pour découvrir plus de détails sur la gestion des dates dans le langage de programmation Ruby.
+Enjoy your coding!

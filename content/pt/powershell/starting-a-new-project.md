@@ -1,6 +1,6 @@
 ---
 title:                "Iniciando um novo projeto"
-html_title:           "PowerShell: Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
 simple_title:         "Iniciando um novo projeto"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,41 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Criando um novo projeto com PowerShell
+# Começar um novo projeto no PowerShell: Tudo o que você precisa saber
 
-## O que & Por quê?
+## Que é e por quê?
 
-Começar um novo projeto pode ser um conceito confuso para iniciantes na programação. Basicamente, é o processo de criar um novo código ou aplicativo a partir do zero. Os programadores geralmente fazem isso quando precisam resolver um problema específico ou criar uma nova ferramenta útil para os usuários.
+Começar um novo projeto em programação é o processo de estabelecer uma estrutura básica onde ficará seu código. É necessário para que possamos manter o código organizado, escalável e fácil de manter.
 
-## Como fazer:
-
-Para iniciar um novo projeto com PowerShell, você pode seguir alguns passos simples:
+## Como fazer: 
+Irei mostrar uma maneira simples de iniciar um novo projeto no PowerShell. 
 
 ```powershell
-# Crie uma nova pasta para o projeto
-New-Item -Path "C:\Users\usuario\Documents\NovoProjeto" -ItemType Directory
+# Criar um novo diretório para o projeto
+New-Item -ItemType Directory -Path C:\meu_projeto
 
-# Navegue até a pasta criada
-Set-Location -Path "C:\Users\usuario\Documents\NovoProjeto"
+# Navegar para o novo diretório
+Set-Location -Path C:\meu_projeto
 
-# Crie um novo arquivo de script
-New-Item -Path "script.ps1" -ItemType File
+# Criar um novo arquivo de script PowerShell
+New-Item -ItemType File -Name "meu_script.ps1"
 ```
+E pronto! Agora você tem um novo projeto com um arquivo de script PowerShell.
 
-Depois de criar a pasta e o arquivo, você pode começar a escrever seu código dentro do arquivo `script.ps1`. Lembre-se de salvar seu progresso regularmente e testar seu código à medida que avança.
+## Mergulho Profundo
 
-## Mergulho Profundo:
+### Contexto Histórico
+O PowerShell foi projetado pela Microsoft para automatizar o gerenciamento de tarefas, especialmente as tarefas de administração de sistemas. Ele utiliza uma linguagem de script crível e fazer melhorias contínua desde o seu lançamento em 2006.
 
-Antes de começar um novo projeto com PowerShell, é importante entender que este é apenas um dos muitos caminhos possíveis. Existem outras linguagens e ferramentas que podem ser usadas para alcançar o mesmo resultado. Por exemplo, você também pode criar um projeto em C#, Python ou Ruby.
+### Alternativas
+Existem outras ferramentas que podem ser usadas para iniciar um novo projeto, como Python, Node.js e Java. A escolha depende de vários fatores, incluindo requisitos do projeto, preferência pessoal e experiência.
 
-Se você estiver trabalhando em equipe, é importante definir um sistema de controle de versão, como o Git, para que todos possam colaborar e acompanhar as mudanças no código.
+### Detalhes de implementação
+Ao iniciar um novo projeto no PowerShell, é uma boa prática seguir os princípios DRY(Don't Repeat Yourself). Para isso, podemos usamos funções e modulos no nosso código, tornando-o mais organizado.
 
-Ao iniciar um novo projeto, também é crucial ter um planejamento claro e definir os requisitos e objetivos do projeto antes de começar a escrever qualquer linha de código. Isso economizará tempo e evitará problemas no futuro.
+## Veja Também
 
-## Veja também:
-
-Para aprender mais sobre como iniciar um novo projeto com PowerShell, confira os links abaixo:
-
-- [Documentação oficial do PowerShell](https://docs.microsoft.com/powershell/)
-- [Curso gratuito de PowerShell para iniciantes](https://www.microsoft.com/powershell/learningpath-beginner)
-- [Artigo sobre boas práticas de gerenciamento de projetos](https://www.freecodecamp.org/news/the-ultimate-guide-to-approach-a-new-programming-project-for-beginners/)
+Se você quiser conhecer mais sobre a programação em PowerShell, sugiro os seguintes recursos:
+- Documentação do PowerShell da Microsoft: [https://docs.microsoft.com/en-us/powershell/](https://docs.microsoft.com/en-us/powershell/)
+- PowerShell para iniciantes: [https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7)
+- Livro "Aprendendo PowerShell": [https://www.amazon.com.br/Aprendendo-PowerShell-Jonathan-Hassell/dp/8575224862](https://www.amazon.com.br/Aprendendo-PowerShell-Jonathan-Hassell/dp/8575224862)

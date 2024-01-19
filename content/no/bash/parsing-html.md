@@ -1,7 +1,7 @@
 ---
-title:                "Håndtering av html"
-html_title:           "Bash: Håndtering av html"
-simple_title:         "Håndtering av html"
+title:                "Analysering av html"
+html_title:           "C#: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,41 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**## Hva og Hvorfor?**
+## Hva & Hvorfor?
+Parsing av HTML er prosessen med å oversette HTMLs tekstdokumenter til objekter for programmet å manipulere. Programmerere bruker det fordi det lar dem trekke ut data, manipulere innhold, og dynamisk oppdatere nettsider.
 
-Parsing HTML handler om å tolke og analysere koden som utgjør nettsider. Dette er et viktig verktøy for utviklere når de jobber med å bygge nettapplikasjoner eller automatisere prosesser.
-
-**## Hvordan:**
-
-For å parse HTML i Bash, kan du bruke verktøyet "grep". Dette verktøyet søker gjennom en fil eller et utdatastrøm etter et spesifikt uttrykk, og returnerer linjene som matcher uttrykket.
+## Hvordan gjøre det:
+La oss starte med en enkel oppgave: ekstrahere alle `<a>` tags fra en HTML-fil. `grep` verktøyet med regulære uttrykk kan brukes:
 
 ```Bash
-grep "target" index.html
+$ grep -o '<a[^>]*>.*</a>' file.html
 ```
 
-Dette kommandoen vil søke gjennom "index.html"-fila og returnere alle linjene som inneholder ordet "target". Output vil se omtrent slik ut:
+Hvis du vil hente attributtene til en tag, kan du bruke `sed`:
 
 ```Bash
-<a href="#top" target="_blank">Til toppen</a>
-<h1 class="title" target="_blank">Overskrift</h1>
+$ sed -n 's/.*<a href="\([^"]*\).*/\1/p' file.html
 ```
+Resultatet blir nettadressene som `<a>` tags referer til.
 
-Du kan også bruke "sed" kommandoen for å manipulere HTML-koden. For eksempel kan du øke verdien av "src" attributten til alle "img" elementer i en fil ved å kjøre denne kommandoen:
+For mer komplisert HTML-parsing, kan du bruke biblioteker som pup, xmlstarlet, eller hxselect.
 
-```Bash
-sed -i '' 's/src=/src="https://bilder.no"/g' index.html
-```
+## Dypdykk
+HTML-parsing har vært nødvendig siden nettlesere begynte å vise sider skrevet i HTML. Det finnes mange alternative verktøy for parsing av HTML, som bs4 for Python eller Beautiful Soup for Ruby.
 
-Dette vil legge til en standard "src" attributt til alle bildeelementer i fila "index.html". 
+Når det gjelder implementering, kan HTML-parsing være komplisert avhengig av kompleksiteten til HTML-dokumentet. En XML-parser kan brukes for enkel HTML, men hvis dokumentet inneholder spesielle karakterer eller ikke-standard syntax, kan det være nødvendig med en spesiell HTML-parser.
 
-**## Dykk Dypere:**
+## Se Også
+For dypere forståelse, besøk disse linkene:
 
-Parsing HTML har vært en del av utviklerverktøykassen i lang tid, og det finnes mange alternativer i tillegg til "grep" og "sed". Et mer avansert og kraftig verktøy er "xmlstarlet", som lar deg gjøre komplekse endringer i HTML-koden ved hjelp av XPath og XSLT språk.
-
-Når du parser HTML i Bash, er det viktig å være nøye med bruk av regex-uttrykk for å sikre nøyaktig tolkning av koden. En annen viktig ting å huske på er at HTML er et språk som stadig utvikler seg, og derfor kan du oppleve ulike resultater ved bruk av forskjellige verktøy.
-
-**## Se Også:**
-
-- Dokumentasjon for "grep": https://linux.die.net/man/1/grep
-- Dokumentasjon for "sed": https://linux.die.net/man/1/sed
-- Dokumentasjon for "xmlstarlet": http://xmlstar.sourceforge.net/doc/UG/xmlstarlet-ug.html
+- grep: http://www.gnu.org/software/grep/
+- sed: http://www.gnu.org/software/sed/
+- pup: https://github.com/ericchiang/pup
+- xmlstarlet: http://xmlstar.sourceforge.net/
+- hxselect: http://www.html-xml-utils.org/hxselect.1.html

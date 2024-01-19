@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "Clojure: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Generere tilfeldige tall"
+html_title:           "Arduino: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -10,17 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Randomnummergenerering med Clojure
+# Generere tilfeldige tall i Clojure
 
 ## Hva & Hvorfor?
-Generering av tilfeldige tall er en viktig del av programmering fordi det lar oss skape variabel data som kan brukes i ulike scenarioer. Dette er spesielt nyttig i spill, simuleringer og sikkerhetsapplikasjoner.
 
-## Slik:
-Bruk funksjonen ```(rand)``` for å generere et tilfeldig flyttall mellom 0 og 1. Dette kan deretter skaleres ved å multiplisere med ønsket område. For eksempel: ```(rand)``` * 100 vil gi et tilfeldig tall mellom 0 og 100. Du kan også bruke funksjonen ```(rand-int)``` for å generere et tilfeldig heltall.
+Generere tilfeldige tall er å opprette numeriske verdier på en uforutsigbar måte. Programmerere gjør dette for å simulere forskjellige scenarioer, lage testdata, eller la spill ha uforutsigbare utfall.
 
-## Dypdykk:
-Generering av tilfeldige tall er en viktig del av datalogiens historie og har blitt brukt i ulike sammenhenger siden begynnelsen av datamaskinenes tidsalder. Det finnes også ulike alternativer til å bruke ```rand``` og ```rand-int``` i Clojure, som for eksempel [java.util.Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html). Videre er det viktig å være klar over at disse funksjonene ikke genererer ekte tilfeldige tall, men heller pseudo-tilfeldige tall basert på et startpunkt kalt "seed". Seedet kan endres ved å bruke funksjonen ```(set! clojure.core/*rand-seed* <numbers>)``` for å få ulike sekvenser av tilfeldige tall.
+## Hvordan:
 
-## Se også:
-- [Offisiell Clojure dokumentasjon for ```rand``` og ```rand-int```](https://clojure.org/api/cheatsheet)
-- [Artikkel om bruk av tilfeldige tall i datamaskiner](https://www.experiment-resources.com/random-number-generators-in-computers.html)
+Her er et enkelt eksempel på hvordan du genererer alle slags tilfeldige tall i Clojure:
+
+```Clojure
+(defn tilfeldig-tall []
+ (rand-int 100))
+```
+
+Eksempel output:
+
+```Clojure
+(tilfeldig-tall) ;; Kjører denne funksjonen kan gi forskjellige resultater hver gang, for eksempel 37, 72, osv.
+```
+
+En annen måte:
+
+```Clojure
+(defn tilfeldig-tall-innen-område [min max]
+  (+ min (rand-int (- max min))))
+```
+
+Eksempel output:
+
+```Clojure
+(tilfeldig-tall-innen-område 50 60) ;; gir tall mellom 50 og 60 som 52, 57, osv.
+```
+
+## Dyp Dykk
+
+Clojure's `rand` og `rand-int` funksjoner er basert på Java's `java.util.Random` klasse. Dette betyr at uforutsigbarheten og ytelsen til disse funksjonene er i stor grad avhengig av Java's tilsvarende funksjoner.
+
+I historisk kontekst, den første algoritmen for generering av pseudo-tilfeldige tall ble foreslått av en britisk matematiker, John von Neumann, i 1946. Commits til Clojure's kodebase antyder at dens innebygde funksjoner for generering av tilfeldige tall har vært tilstede siden den aller første utgivelsen.
+
+Alternativer til `rand` og `rand-int` kan være algoritmer som Mersenne Twister, Xoshiro256**, eller PCG. Disse gir bedre statiske egenskaper eller ytelse, men kan være vanskeligere å implementere. 
+
+## Se Også
+
+Du kan sjekke ut de følgende koblingene for mer informasjon:
+- Clojure's offisielle dokumentasjon for `rand` og `rand-int`: [Clojure Doc](https://clojure.org/reference/data_structures#Numbers)
+- Java's `Random` klasse dokumentasjon: [Java Doc](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)

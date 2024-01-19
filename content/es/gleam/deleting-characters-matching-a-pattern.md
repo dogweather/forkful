@@ -1,7 +1,7 @@
 ---
-title:                "Borrando caracteres que coincidan con un patrón"
-html_title:           "Gleam: Borrando caracteres que coincidan con un patrón"
-simple_title:         "Borrando caracteres que coincidan con un patrón"
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola programadores de Gleam!
+## ¿Qué y Por qué?
 
-¿Alguna vez te has encontrado con la necesidad de eliminar ciertos caracteres de una cadena de texto que coinciden con un patrón específico? En Gleam, esto se conoce como "borrar caracteres que coinciden con un patrón". ¿Y por qué los programadores hacen esto? Bueno, a veces necesitamos limpiar una cadena de entrada antes de analizarla o simplemente queremos reemplazar caracteres no deseados.
+Eliminar caracteres que coinciden con un patrón implica borrar secuencias especificas de caracteres dentro de un texto o cadena. Los programadores hacen esto para manejar mejor y manipular los datos textuales.
 
-## ¿Qué y por qué?
+## Cómo hacerlo:
 
-"Borrar caracteres que coinciden con un patrón" se refiere a eliminar ciertos caracteres de una cadena de texto que encajan con un patrón establecido. Esto es especialmente útil cuando queremos manipular una cadena de texto de manera más específica. Los programadores a menudo lo hacen para limpiar datos de entrada antes de usarlos o para eliminar caracteres no deseados de una cadena.
-
-## Cómo:
-
-En Gleam, podemos usar la función ```delete_from_string``` para lograr este objetivo.
+Aquí está un ejemplo de cómo puedes utilizar Gleam para eliminar caracteres que coinciden con un patrón.
 
 ```Gleam
 import gleam/string
 
-let my_string = "¡Hola mundo!"
-let cleaned_string = gleam/string.delete_from_string(my_string, "¡")
-
-// El resultado será "Hola mundo!"
+pub fn main(args: List(String)) {
+  let texto_original = "Comandante en Jefe de la flota estelar"
+  let texto_limpio = string.replace(texto_original, " ", "")
+  texto_limpio
+}
 ```
 
-También podemos usar expresiones regulares para encontrar y eliminar caracteres específicos de una cadena.
+Salida de muestra:
 
 ```Gleam
-import gleam/regex
-
-let my_string = "¡Hola mundo!"
-let cleaned_string = regex.replace(my_string, ~r/¡/, "")
-
-// El resultado será "Hola mundo!"
+"ComandanteenJefedelaflotaestelar"
 ```
 
-## Inmersión profunda
+En este ejemplo, eliminamos todos los espacios en blanco de la cadena `texto_original`, dejando intactos el resto de caracteres.
 
-¿Sabías que la eliminación de caracteres que coinciden con un patrón ha existido por mucho tiempo? En el pasado, los programadores solían hacerlo con lenguajes de programación como Perl o Python. Sin embargo, con el auge de lenguajes funcionales como Gleam, ahora podemos usar un enfoque más declarativo para lograrlo.
+## Viaje Profundo:
 
-Además, existen diferentes formas de lograr este resultado. Mientras que en Gleam podemos usar la función ```delete_from_string``` o expresiones regulares, en otros lenguajes podemos encontrar funciones específicas como ```strip()``` en Python o ```trim()``` en PHP.
+Historicamente, eliminar caracteres es un truco comúnmente utilizado para procesar datos textuales y preparar entradas para aplicaciones como motores de búsqueda o análisis de texto. Como alternativa, podría usar expresiones regulares para abordar patrones más complejos o usar métodos como `slice` o `substring` si se conocen las posiciones exactas de los caracteres a eliminar. Implementar esto en Gleam es bastante sencillo gracias a su enfoque funcional y su énfasis en la tipificación estática y robusta.
 
-En cuanto a la implementación en Gleam, la función ```delete_from_string``` es simplemente un envoltorio alrededor de la función ```replace``` del módulo ```gleam/std``` que se encarga de eliminar los caracteres específicos de una cadena.
+## Ver También:
 
-## Ver también
+1. Documentación oficial de Gleam: https://gleam.run/docs/
+2. API de Strings en Gleam: https://hexdocs.pm/gleam_stdlib/gleam/string.html
+3. Expresiones regulares en Gleam: https://gleam.run/tour/pattern-matching/
 
-Si deseas saber más sobre cómo trabajar con cadenas de texto en Gleam, puedes consultar la documentación del módulo ```gleam/string```. También puedes aprender más sobre expresiones regulares en la guía de Gleam sobre manejo de patrones.
-
-¡Eso es todo por ahora! Espero que este artículo te haya proporcionado una breve pero útil introducción sobre cómo borrar caracteres que coinciden con un patrón en Gleam. ¡Hasta la próxima!
+Recuerda que la mejor forma de aprender es experimentando. Así que explora estas funciones y ve qué más puedes hacer!

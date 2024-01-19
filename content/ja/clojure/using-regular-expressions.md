@@ -1,7 +1,7 @@
 ---
-title:                "正規表現を使用する"
-html_title:           "Clojure: 正規表現を使用する"
-simple_title:         "正規表現を使用する"
+title:                "正規表現の使用"
+html_title:           "Bash: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何と、なぜ？
-正規表現を使うとは、文字やパターンマッチングを簡単に行うことができるプログラミングの手法です。プログラマーがこれを行う理由は、特定の文字列を検索したり、変更したり、フィルタリングしたりすることが簡単になるからです。
+## 何となぜ？
+正規表現は文字列から特定のパターンを検索、置換したり一致するものを見つけたりする技法です。これがあると、データ検証、スクレイピング、パターンマッチングなどを効率的に行うことができます。
 
-## 使いかた：
+## 使い方:
+次のコード例では、特定の文字列("Clojure")がテキスト内に存在するかどうかを確認します。
+
 ```Clojure
-;; 文字列の検索
-(re-find #"apple" "I love apples!")
-;; 結果： "apple"
+(defn contains-clojure? [text]
+  (re-find #"Clojure" text))
 
-;; パターンマッチング
-(re-find #"\d{3}-\d{2}-\d{4}" "My social security number is 123-45-6789.")
-;; 結果： "123-45-6789"
-
-;; 文字列の変更
-(clojure.string/replace "Hello World" #"World" "Universe")
-;; 結果： "Hello Universe"
+(println (contains-clojure? "I love Clojure programming")) ; => "Clojure"
 ```
 
-## 詳細について：
-正規表現は、1960年代から使われている古い技術です。他のプログラミング言語でも利用できますが、Clojureでは特別な記法を使用して簡単に実装することができます。正規表現以外にも、文字列操作にはさまざまな方法がありますが、特定のパターンを検索したり、変更したりする際には正規表現が最適な選択肢です。Clojureでは、`re-matches`や`re-seq`のような便利な関数が正規表現と組み合わせて使うことができます。
+また、次のコード例では、数字を全て抽出します。
 
-## 関連リンク：
-- [Official Clojure Guide on Regular Expressions](https://clojure.org/guides/regular_expressions)
-- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [Learn X in Y minutes - Regular Expressions](https://learnxinyminutes.com/docs/regular-expressions/)
+```Clojure
+(defn extract-numbers [text]
+  (re-seq #"\d+" text))
+
+(println (extract-numbers "I have 2 apples and 3 oranges.")) ; => ("2" "3")
+```
+
+## ディープダイブ:
+正規表現は1950年代に開発され、その後多くのプログラミング言語で採用されてきました。Clojureでも`java.util.regex`パッケージを用いています。
+
+しかし、正規表現を書くのは複雑であるため、必要に応じてORMや専用の検索エンジンなどの代替手段を利用することもあります。
+
+正規表現の動作は、入力テキストの長さに対して時間的に線形となることが多いですが、特定のパターンでは非常に時間がかかることもあります。
+
+## 参考情報:
+- Clojure公式ドキュメンテーションの正規表現セクション: [Here](https://clojure.org/reference/other_functions#regex)
+- 正規表現の詳細: [Regular-Expressions.info](https://www.regular-expressions.info/)
+- Clojureでの正規表現使用例: [Prismatic's Schema](https://github.com/plumatic/schema)

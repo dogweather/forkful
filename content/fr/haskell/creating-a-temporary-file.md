@@ -1,7 +1,7 @@
 ---
-title:                "Créer un fichier temporaire."
-html_title:           "Haskell: Créer un fichier temporaire."
-simple_title:         "Créer un fichier temporaire."
+title:                "Création d'un fichier temporaire"
+html_title:           "Kotlin: Création d'un fichier temporaire"
+simple_title:         "Création d'un fichier temporaire"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+# Créez un fichier temporaire en Haskell !
 
-Créer un fichier temporaire est une pratique courante pour les programmeurs. Il s'agit de créer un fichier vide qui existe uniquement pour une durée limitée ou pour une tâche spécifique. Les programmeurs le font pour éviter d'encombrer leur système de fichiers avec des fichiers inutiles ou pour stocker des données qui ne seront utilisées qu'une seule fois.
+## Quoi & Pourquoi ?
+La création d'un fichier temporaire, c'est faire un fichier provisoire qui est utilisé pour stocker des données de manière transitoire pendant l'exécution du programme. Les programmeurs le font généralement pour gérer de grandes quantités de données qui ne sont pas nécessaires une fois le programme terminé.
 
-## Comment faire ?
-
+## Comment faire :
+Voici comment vous créeriez un fichier temporaire en Haskell.
 ```Haskell
 import System.IO
-import System.Directory
-import System.FilePath
+import System.IO.Temp
 
-main = do
-    tempDir <- getTemporaryDirectory
-    (tempFile, tempHandle) <- openTempFile tempDir "example.txt"
-    putStrLn $ "Fichier temporaire créé : " ++ tempFile
-    hPutStrLn tempHandle "Contenu du fichier temporaire"
-    hClose tempHandle
+main = withSystemTempFile "prefix" $ \tempPath tempHandle -> do
+  hPutStr tempHandle "Ce texte est temporaire!"
+  hFlush tempHandle
+  contents <- readFile tempPath -- reads the file back in
+  putStrLn $ "I wrote: " ++ contents
 ```
+L'échantillon ci-dessus écrit une ligne de texte dans le fichier temporaire, puis lit et affiche le contenu. 
 
-Output :
+## Exploration profonde :
+La fonction `withSystemTempFile`, utilisée ci-dessus, a été introduite dans la version 4.3.3.0 de la bibliothèque `base` de Haskell. 
 
-```
-Fichier temporaire créé : /var/folders/f8/kjk123kalkjsdf/example.txt
-```
+Les alternatives à l'utilisation des fichiers temporaires incluent les pipes nommées, les mémoires tampons en mémoire dédiées (RAM), et les bases de données temporaires. Le choix dépend de la quantité de données à gérer et des performances requises.
 
-## Plongée en profondeur
+Les détails de l'implémentation diffèrent selon les plateformes. Par exemple, `mkstemp` est utilisé sur Unix pour générer un nom de fichier unique dans le dossier temporaire, tandis que `GetTempPath` et `CreateFile` sont utilisés sur Windows.
 
-Créer des fichiers temporaires est une pratique courante en programmation depuis de nombreuses années. Avant les ordinateurs, les programmeurs le faisaient en utilisant du papier ou des cartes perforées pour stocker temporairement des données. De nos jours, il existe des alternatives telles que l'utilisation de la mémoire ou de bases de données temporaires pour stocker des données temporaires.
-
-L'implémentation de la création d'un fichier temporaire dépend du langage de programmation utilisé. En Haskell, la fonction ```openTempFile``` utilise le répertoire de l'utilisateur par défaut pour stocker le fichier temporaire, mais il est également possible de spécifier un répertoire différent.
-
-## À voir aussi
-
-Pour en savoir plus sur la manipulation de fichiers en Haskell, vous pouvez consulter la documentation officielle : https://www.haskell.org/documentation/#files. Vous pouvez également trouver des exemples de création de fichiers temporaires dans des projets open source tels que Hackage : https://hackage.haskell.org/.
+## Voir aussi :
+- Documentation GHC pour [System.IO.Temp](http://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
+- Discussion StackOverflow sur [fichiers temporaires en Haskell](https://stackoverflow.com/questions/6001627/generating-temporary-file-names-in-haskell)
+- Article en depth sur [la gestion des fichiers temporaires](https://www.haskell.org/tutorial/io.html#tempfiles) dans le Tutorial Haskell 
+- Source code de la module [System.IO.Temp](https://hackage.haskell.org/package/temporary-1.3/docs/src/System-IO-Temp.html) sur Hackage

@@ -1,7 +1,7 @@
 ---
-title:                "Stora bokstäver i en sträng"
-html_title:           "Lua: Stora bokstäver i en sträng"
-simple_title:         "Stora bokstäver i en sträng"
+title:                "Gör om en sträng till versaler"
+html_title:           "Lua: Gör om en sträng till versaler"
+simple_title:         "Gör om en sträng till versaler"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,24 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att "kapsla in" en sträng innebär att göra om den första bokstaven i varje ord till en stor bokstav. Programmerare gör detta ofta för att göra texten mer läsbar och för att följa allmänna kodningsstilar.
 
-## Hur?
-För att kapsla in en sträng i Lua, använd funktionen "string.upper". Nedan är ett exempel där vi förvandlar en sträng till alla stora bokstäver:
+Kapitalisering av en sträng i programmering innebär att förändra en bokstav från små till stora. Programmerare gör det för att förbättra läsbarheten och göra viktig text mer framträdande.
 
-```Lua
-local str = "denna sträng kommer att förvandlas"
-print(string.upper(str))
+## Så här gör du:
+
+Här är ett praktiskt exempel på att tydliggöra en sträng i Lua:
+
+```lua
+-- Lua fungerar inte inbyggt med string.capitalize, så vi skapar vår egen funktion.
+function string.capitalize(s)
+  return (s:gsub("^%l", string.upper))
+end
+
+print(string.capitalize("hello world"))   -- "Hello world"
 ```
+Notera att vi skapade en funktion för att hantera kapitaliseringen eftersom Lua på egen hand inte erbjuder denna funktionalitet.
 
-Detta skulle ge oss följande utmatning:
-`DENNA STRÄNG KOMMER ATT FÖRVANDLAS`
+## Djupdykning:
 
-## Djupdykning
-Historiskt sett har kapsling av strängar använts för att förbättra läsbarheten av text i olika språk. Det finns också alternativ till att använda "string.upper" funktionen, som till exempel att använda nyckelordet "local" för att definiera en variabel. Implementeringsdetaljer för denna funktion kan variera beroende på språket som används.
+Historiskt sett har många programmeringsspråk inbyggda funktioner för strängmanipulation, inklusive kapitalisering, men Lua är inte ett av dem. Alternativen är att skapa en funktion själv, vilket vi visade tidigare, eller att använda en extern bibliotek som Penlight.
 
-## Se också
-Om du vill lära dig mer om strängar och andra grundläggande koncept i Lua, se följande källor:
-- [Lua.org](https://www.lua.org/) – Officiell hemsida för Lua med dokumentation och resurser.
-- [Lua-tutorial.org](http://lua-tutorial.org/) – En nybörjarvänlig handledning för Lua-programmering.
-- [Learn Lua in 15 Minutes](https://learnxinyminutes.com/docs/lua/) – En snabb översikt av Lua:s syntax och funktioner.
+Implementeringen av strängkapitalisering i Lua är inte svår. Funktionen vi skapade använder regex (gmatch) för att matcha det första lilla bokstaven i strängen och gör om det till stor bokstav.
+
+## Se Mer:
+
+För mer djupgående resurser för strängkapitalisering och strängmanipulation i Lua, kolla in följande länkar:
+
+1. Lua String Library: https://www.lua.org/manual/5.3/manual.html#6.4
+2. Penlight Lua Libraries: https://github.com/stevedonovan/Penlight
+3. Lua Patterns (Regex): https://www.lua.org/pil/20.2.html

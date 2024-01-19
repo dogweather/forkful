@@ -1,7 +1,7 @@
 ---
-title:                "पार्सिंग HTML"
-html_title:           "Java: पार्सिंग HTML"
-simple_title:         "पार्सिंग HTML"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,29 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
+HTML पार्सिंग हमारे समाहारक को HTML कोड में लिखूई जानकारी को समझने की क्षमता देता है। प्रोग्रामर्स इसे प्रयोग करते हैं ताकि वे HTML पेज से डाटा को संग्रहित और प्रयोग कर सकें।
 
-पार्सिंग HTML एक काम है जो वेब पेज को संरचित फॉर्म में प्रस्तुत करने में मदद करता है। इसका मुख्य उद्देश्य वह डेटा है जो अंदर है और वेब प्रोग्राम को अधिक स्वचालित बनाता है।
-
-## कैसे करे:
-
-एक HTML फ़ाइल को पार्स करने के लिए, हमें सबसे पहले उस फ़ाइल को खोलना होगा। अपने कोड में, हम उस फ़ाइल के URL को प्रविष्ट कर सकते हैं और उसे ओपन कर सकते हैं। तब, हम इस फ़ाइल को पार्स करेंगे और उसमें होने वाले फ़ॉर्मेट से डेटा को निकालेंगे।
+##  कैसे करें:
+सबसे पहले JSoup लाइब्ररी उपयोग करके HTML पार्स करने का उदाहरण देखें:
 
 ```Java
-String url = "https://example.com";
-Document doc = Jsoup.connect(url).get();
-Element element = doc.select("form").first();
-String data = element.text();
-System.out.println(data);
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class Main {
+  public static void main(String[] args) {
+    String html = "<html><head><title>मेरा पहला वेब पेज</title></head>"
+                   + "<body><p>यहाँ पाठ होता है।</p></body></html>";
+                   
+    Document doc = Jsoup.parse(html);
+    System.out.println(doc.title());
+    System.out.println(doc.body().text());
+  }
+}
 ```
+आउटपुट:
 
-आपको निकलने वाला डेटा देखने के लिए, आपको अब केवल ```System.out.println()``` का उपयोग करके डेटा को प्रिंट करना होगा।
+```
+मेरा पहला वेब पेज
+यहाँ पाठ होता है।
+```
+JSoup लाइब्ररी ने HTML को पार्स करके शीर्षक और बॉडी में लिखी जानकारी को प्रिंट किया है।
 
-## गहराई में उतरें:
+## गहराई की ओर:
+HTML पार्सिंग की आवश्यकता 1990 के दशक में उत्पन्न हुई जब WWW आरंभ हुआ। इसके विकल्पों में HTMLUnit, JSoup, и HtmlCleaner, आदि शामिल हैं। यदि आप संगठनात्मक डाटा के साथ काम कर रहे हों, तो आप JSON या XML पार्सिंग भी विचार कर सकते हैं। पार्सिंग के अंतर्गत हमारे पार्सर कोड ने इनपुट HTML को डरबेन (ट्री) संरचना में परिवर्तित किया, तथा फिर हम उस डाटा का उपयोग कर सके।
 
-पार्सिंग HTML का प्रयोग बहुत समय से हो रहा है, और विभिन्न प्रकार के लोगों के लिए बहुत सुविधाजनक हो सकता है। अलग-अलग प्रकार के पार्सर उपलब्ध हैं, जो आपके वेब पेज को पार्स करने में आपकी आसानी से मदद कर सकते हैं। इन पार्सरों को अपनी आवश्यकताओं के आधार पर चुन सकते हैं और आपके प्रोजेक्ट को अधिक ज्ञानवर्धक बना सकते हैं। HTML पार्सिंग को सीखने के लिए, आपको स्वयं को स्वयंसेवक संसाधनों का उपयोग करके परीक्षा करना होगा।
+## अधिक जानने के लिए:
+* [JSoup लाइब्ररी](https://jsoup.org/)
+* [HTMLUnit](http://htmlunit.sourceforge.net/)
+* [HTMLCleaner](https://htmlcleaner.sourceforge.io/)
+* [XML पार्सिंग](https://www.tutorialspoint.com/java_xml/java_dom_parse_document.htm)
+* [JSON पार्सिंग](https://www.javatpoint.com/json-tutorial)
 
-## आपको इससे जुड़ी कुछ और साधन देखें:
-
-- [w3schools पार्सिंग HTML ट्यूटोरियल] (https://www.w3schools.com/js/jsoup_parse.asp)
-- [वजनवाले पार्सिंग हब] (https://jsoup.org/)
-- [बेहतरीन HTML पार्सिंग पार्सिंग बिल्डर] (https://htmlparser.sourceforge.net/)
+इन स्रोतों पर जाकर आपको HTML पार्सिंग की अधिक जटिलताओं को समझने में मदद मिलेगी।

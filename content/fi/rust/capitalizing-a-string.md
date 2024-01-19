@@ -1,7 +1,7 @@
 ---
-title:                "Stringin ensimmäisten kirjainten merkitys"
-html_title:           "Rust: Stringin ensimmäisten kirjainten merkitys"
-simple_title:         "Stringin ensimmäisten kirjainten merkitys"
+title:                "Merkkijonon kirjainten muuttaminen isoiksi"
+html_title:           "Rust: Merkkijonon kirjainten muuttaminen isoiksi"
+simple_title:         "Merkkijonon kirjainten muuttaminen isoiksi"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,48 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?
-Tekstijonojen muuttaminen isolla alkukirjaimella viittaa siihen, että kaikki jonojen ensimmäiset kirjaimet muutetaan isoksi. Ohjelmoijat tekevät tätä yleensä yhdenmukaistamaan ja helpottamaan jonojen vertailua ja käsittelyä.
+# Rust Ohjelmointi: Miten suurella alkukirjaimella alkaa merkkijono
 
-Kuinka:
-Esimerkki 1:
+## Mikä & Miksi?
+
+Suurella alkukirjaimella alkavia merkkijonoja käytetään ohjelmoinnissa normisto- ja navigointitarkoituksiin. Se tarkoittaa jokaisen sanan muuttamista niin, että ensimmäinen kirjain on iso ja muut kirjaimet pieniä.
+
+## Miten tehdä:
+
+Rust-ohjelmointikielessä emme voi suoraan muuttaa merkkijonon ensimmäisen kirjaimen suureksi, koska Rustin merkkijonot (Strings) ovat immuuttisia. Seuraavassa esimerkissä näytämme, kuinka tämä voidaan saavuttaa:
 
 ```Rust
-let string = "tämä on tekstijono";
-let capitalized_string = string.to_uppercase();
-println!("Alkuperäinen jono: {}", string);
-println!("Isolla alkukirjaimella: {}", capitalized_string);
-```
-Output:
-```
-Alkuperäinen jono: tämä on tekstijono
-Isolla alkukirjaimella: TÄMÄ ON TEKSTIJONO
-```
-
-Esimerkki 2:
-```Rust
-fn capitalize(string: &str) -> String {
-    let mut new_string = String::from(string);
-    new_string.replace_range(0..1, &string[0..1].to_uppercase());
-    new_string
+fn paaoma(mut s: String) -> String {
+    if let Some(r) = s.get_mut(0..1) {
+        r.make_ascii_uppercase();
+    }
+    s
 }
 
-println!("{}", capitalize("tämä on toinen esimerkki"));
+fn main() {
+    let s = String::from("rust ohjelmointi");
+    println!("{}", paaoma(s));
+}
 ```
 
-Output:
+Yllä oleva koodi antaa seuraavan tulosteen:
+
 ```
-"Tämä on toinen esimerkki"
+Rust ohjelmointi
 ```
 
-Deep Dive:
-Tekstijonojen muuttaminen isolla alkukirjaimella on osa laajempaa tietojen käsittelyä ohjelmoinnissa. Se auttaa yhdenmukaistamaan erilaisia tietoja ja helpottamaan niiden vertailua ja käsittelyä. Tekniikka on ollut käytössä jo pitkään ja sitä käytetään eri ohjelmointikielissä.
+## Sukellus
 
-Vaihtoehtoisia tapoja muuttaa tekstijonoja isolla alkukirjaimella on esimerkiksi käyttää merkkijonoitten manipulointiin tarkoitettuja kirjastoja tai itse kirjoittaa algoritmi, joka tekee muutokset. Rustissa on valmiita toimintoja, kuten `to_uppercase()`, jotka helpottavat tätä.
+Historiallisesti katsottuna eri ohjelmointikielet ovat tarjonneet erilaisia tapoja toteuttaa merkkijonot suurella alkukirjaimella. Esimerkiksi JavaScriptissä on `toUpperCase`-metodi ja Javassa `toUpperCase()`. Rustissa on monia tapoja tehdä tämä, joista yksi on yllä olevassa esimerkissä käytetty.
 
-Tekstiä käsiteltäessä Rustissa on hyvä tietää, että merkkijonojen sisältämä data on pitkälti muuttumaton. Tämä tarkoittaa sitä, että kun muokkausoperaatio tehdään merkkijonolle, siitä ei luoda uutta kopioita vaan tehdään muutokset alkuperäisessä muuttumattomassa merkkijonossa.
+Rustissa on kuitenkin olemassa kirjastojen, kuten `titlecase` tai `propper`, jotka tarjoavat toiminnallisuuden merkkijonon muuntamiseen suurella alkukirjaimella.
 
-See Also:
-- [Rust String Documentation](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Rust String Methods](https://doc.rust-lang.org/std/string/struct.String.html#impl-String)
-- [Rust String Manipulation Libraries](https://crates.io/keywords/string-manipulation)
+Rustissa merkkijonot ovat oletusarvoisesti immuuttisia. Tämä immuuttisuus on tehty muistiturvallisuuden paranttaminen mielenkiinnossa.
+
+## Katso myös:
+
+Lisää merkkijonojen käsittelemisestä Rustissa löytyy osoitteesta: [link](https://doc.rust-lang.org/book/ch08-02-strings.html)
+
+Lisätietoja kirjastosta `titlecase`: [link](https://crates.io/crates/titlecase)
+
+Lisätietoja kirjastosta `propper`: [link](https://crates.io/crates/propper)

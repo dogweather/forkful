@@ -1,6 +1,6 @@
 ---
 title:                "Leyendo un archivo de texto"
-html_title:           "TypeScript: Leyendo un archivo de texto"
+html_title:           "Arduino: Leyendo un archivo de texto"
 simple_title:         "Leyendo un archivo de texto"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,31 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Leer un archivo de texto es una tarea esencial para los programadores. Se refiere a la acción de acceder al contenido de un archivo de texto y utilizarlo en un programa. Los programadores suelen utilizar esta técnica para obtener datos de un archivo o para escribir en él.
+## ¿Qué & Por qué?
 
-## ¿Cómo hacerlo?
-En TypeScript, la forma más común de leer un archivo de texto es utilizando la función `readFileSync()` de Node.js. Veamos un ejemplo sencillo de cómo hacerlo:
+Leer un archivo de texto significa extraer la información almacenada en esas líneas de texto mediante un programa. Los programadores hacen esto para manipular datos, analizar la información, y automatizar tareas en un archivo de texto.
 
-```TypeScript
-import * as fs from 'fs';
+## Cómo hacerlo:
 
-const contenido = fs.readFileSync('archivo.txt', 'utf8');
-console.log(contenido);
+Para leer un archivo de texto en TypeScript, se usa el paquete built-in `fs` (File System) de Node.js. Asegúrate de tener Node.js en tu proyecto. 
+
+```TypeScript 
+const fs = require('fs');
+
+fs.readFile('nombre-del-archivo.txt', 'utf8' , (err, data) => {
+  if (err) {
+    console.error(err);
+  }
+  console.log(data);
+});
 ```
 
-Este código importa el módulo `fs` de Node.js, el cual proporciona varias funciones para trabajar con archivos en el sistema. Luego, se utiliza la función `readFileSync()` para leer el archivo de texto especificado como primer argumento. El segundo argumento, en este caso `'utf8'`, indica que se desea obtener el contenido del archivo como una cadena de texto en lugar de un búfer de bytes. Finalmente, se imprime el contenido del archivo en la consola utilizando la función `console.log()`.
+En el caso de TypeScript, una alternativa a fs.readFile sería usar fs.promises.readFile:
 
-### Resultado:
+```TypeScript 
+const fs = require('fs').promises;
 
-`Este es el contenido del archivo de texto.`
+async function main() {
+    const data = await fs.readFile('nombre-del-archivo.txt', 'utf8');
+    console.log(data);
+}
 
-## Profundizando
-La lectura de archivos de texto es una técnica ampliamente utilizada en la programación desde hace décadas. Antes de la llegada de Node.js, los lenguajes de programación tenían sus propias formas de leer archivos de texto, como por ejemplo en C se utiliza la función `fopen()`. Sin embargo, el uso de funciones como `readFileSync()` en Node.js hace que esta tarea sea más sencilla y accesible para los programadores.
+main().catch(console.error);
+```
 
-En TypeScript, también es posible utilizar la función `readFile()` de Node.js, la cual es asincrónica y utiliza callbacks para manejar el resultado de la operación. Además, existen librerías externas como `fs-extra` que proporcionan funciones adicionales para trabajar con archivos y directorios.
+## Inmersión Profunda:
 
-## Ver también
-- [Documentación de Node.js sobre la función `readFileSync()`](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
-- [Node.js para principiantes: trabajar con archivos](https://www.digitalocean.com/community/tutorials/nodejs-fundamentals-nodejs-file-system)
-- [fs-extra: una librería de Node.js para trabajar con archivos y directorios](https://www.npmjs.com/package/fs-extra)
+Leer archivos de texto es una habilidad fundamental que se realiza desde los inicios de la informática. Muchos archivos de configuración y muchas aplicaciones aún dependen de los archivos de texto por su simplicidad.
+
+Existen alternativas a `fs` en Node.js, como `readline` y `stream`, que pueden ser útiles en situaciones donde el rendimiento y la eficiencia de memoria son críticos, como cuando se leen archivos de texto muy grandes. 
+
+La formtación específica de cómo se lee el archivo - línea por línea, o todo de una sola vez - puede variar dependiendo de tus necesidades. 
+
+## Ver También:
+
+1. [Documentación Node.js fs](https://nodejs.org/api/fs.html)
+2. [Node.js readline en la documentación oficial](https://nodejs.org/api/readline.html)
+3. [Cómo trabajar con archivos de texto en JavaScript](https://developer.mozilla.org/es/docs/Learn/JavaScript/Guide/Working_with_text_files)

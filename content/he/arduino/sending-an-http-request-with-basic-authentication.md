@@ -1,7 +1,7 @@
 ---
-title:                "שליחת בקשת Http עם אימות בסיסי"
-html_title:           "Arduino: שליחת בקשת Http עם אימות בסיסי"
-simple_title:         "שליחת בקשת Http עם אימות בסיסי"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
+simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,45 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-שליחת בקשת HTTP עם אימות בסיסי היא פעולה שמאפשרת למתכנתים לשלוח תוכן או לבצע פעולות על שרתים מרחוק באמצעות פרוטוקול ה-HTTP. מתכנתים משתמשים בפעולה זו לשלוח מידע לשרתי אינטרנט כמו אתרים או אפליקציות דרך קוד תכנותי בסביבת Arduino.
+# מה ולמה?
+שליחת בקשת HTTP באמצעות אימות בסיסי היא אחת מן השיטות להעביר נתונים בין רכיבים של מערכת. מתכנתים משתמשים בה לתקשר עם שרתים ולשלוט על הנתונים שהם מוסרים ומקבלים.
 
-## איך לעשות?
+# איך לעשות:
 ```Arduino
-#include <ESP8266WiFi.h> // ייבוא ספריות
+#include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
 
-const char* ssid = "WiFi_שלך"; // הכנס כאן את ה-SSID של רשת ה-WiFi
-const char* password = "סיסמת_רשת_ה-WiFi_שלך"; // הכנס כאן את סיסמת רשת ה-WiFi
+const char* ssid = "שם_הרשת";
+const char* password =  "סיסמה";
 
 void setup() {
-  WiFi.begin(ssid, password); // התחברות ל-WiFi
-  while (WiFi.status() != WL_CONNECTED) { // המתן להתחברות
-    delay(500);
-  }
-  if(WiFi.status() == WL_CONNECTED){ // בדיקה שהתחברנו בהצלחה
-    Serial.begin(115200); // פתיחת קומוניקציה עם מחשב במהירות 115200
-    HTTPClient http; // יצירת אובייקט שישמש לבצע את הבקשה HTTP
-    http.begin("https://www.example.com"); // הכנס כאן את הכתובת של השרת שאליו תרצה לשלוח את הבקשה
-    http.setAuthorization("username", "password"); // הכנס כאן את שם המשתמש והסיסמה לאימות בקשת HTTP
-    int httpResponseCode = http.GET(); // שליחת בקשת GET וקבלת תשובת הקוד מהשרת
-    String payload = http.getString(); // קבלת המידע שנשלח מהשרת ושימוש במשתנה payload לאחסונו
-    Serial.println(httpResponseCode); // הדפסת תשובת הקוד מהשרת
-    Serial.println(payload); // הדפסת המידע שקיבלנו מהשרת
-    http.end(); // סיום סשן HTTP
+
+  Serial.begin(115200);
+
+  // התחברות לרשת עם שם וסיסמה
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("מתחבר לרשת...");
   }
 }
 
 void loop() {
-  // כאן נמשיך לעשות פעולות נוספות עם המידע שקיבלנו מהשרת
+  if (WiFi.status() == WL_CONNECTED) {   
+    HTTPClient http;
+
+    http.begin("http://your.server.com");  
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    http.setAuthorization("שם_משתמש", "סיסמה");  
+
+    int httpCode = http.POST("your data to send");
+    String payload = http.getString();    
+
+    Serial.println(httpCode);
+    Serial.println(payload);
+  }
 }
 ```
+הפלט, לדוגמה:
+```
+200
+הפלט מהשרת
+```
 
-## צלילה מעמוקה
-- היסטוריה: שליחת בקשת HTTP עם אימות בסיסי מתאפשרת דרך הפרוטוקול הפשוט להעברת הפרוטוקולים (HTTP) שנוצר בשנת 1991 על ידי טים ברנרס לצורך שיתוף תוכן בין מחשבים. השימוש באימות בסיסי נוצר כדי להשלים את פעולות האימות בעת שליחת בקשות HTTP.
-- אלטרנטיבות: ישנן שיטות אלטרנטיביות לאימות בסיסי בשרתי האינטרנט, כגון אימות OAuth או טוקן.
-- פרטי רישום: בשליחת בקשות HTTP עם אימות בסיסי, יש לוודא כי שם המשתמש והסיסמה בקישוריות מאובטחת. מומלץ להשתמש בקישוריות מאובטחת (HTTPS) כדי להגן על המידע המועבר בין המכשיר והשרת.
+# עומק
+שליחת בקשת HTTP באמצעות אימות בסיסי היא מרכיב מרכזי באינטרנט מאז שהוא נוצר. ישנם גם שיטות אלטרנטיביות, כמו אימות Digest או אימות Bearer, אך הם מסובכים יותר. השיטה המוצגת כאן משתמשת בספריית ESP8266HTTPClient של Arduino, שמסתפקת בהוספת שורה אחת עם השם משתמש והסיסמה לבקשה.
 
-## ראה גם
-- מדריך לשליחת דוא"ל עם אימות בסיסי בשביל קוד Arduino: https://create.arduino.cc/projecthub/tremotoz/email-with-basic-authentication-for-arduino-code-c9d41e
-- קוד דוגמה לשליחת בקשת HTTP עם אימות בסיסי על גבי NodeMCU:
+# עוד מקורות למידע
+1. [מידע על ESP8266HTTPClient](https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html)
+2. [מידע על אימות בסיסי](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+3. [מדריך לשליחת בקשות HTTP ב-Arduino](https://techtutorialsx.com/2020/09/12/esp32-esp8266-http-post-requests-with-basic-authentication/)

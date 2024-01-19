@@ -1,7 +1,7 @@
 ---
-title:                "Utvinning av delstrenger"
-html_title:           "Kotlin: Utvinning av delstrenger"
-simple_title:         "Utvinning av delstrenger"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,22 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Utvinning av delstrenger er en prosess der vi tar ut en del av en større tekst eller en streng. Dette gjøres ofte for å få tilgang til en spesifikk del av teksten, slik som et ord eller en setning. Programmere gjør dette for å manipulere data og få mer presis kontroll over arbeidet sitt.
+## Hva og hvorfor?
 
-## Slik gjør du:
-Kotlin har innebygde funksjoner for å ekstrahere delstrenger, som gjør det enkelt og effektivt å bruke. La oss si du har en streng som heter ```tekst = "Dette er en tekst"```, og du vil bare ha ordet "tekst" fra den. Her er et eksempel på hvordan du kan gjøre dette:
+Å trekke ut substrings betyr å velge deler av en streng basert på posisjon eller mønster. Dette er viktig i programmering for å manipulere tekstdata effektivt.
+
+## Hvordan:
+
+Her er noen enkle eksempler på hvordan du trekker ut substrings i Kotlin:
+
 ```Kotlin
-val start = tekst.indexOfFirst { !it.isLetterOrDigit() } + 1
-val end = tekst.indexOfLast { !it.isLetterOrDigit() } + 1
-val delstreng = tekst.substring(start, end) // delstreng vil nå være "tekst"
-println(delstreng) // Vil skrive ut "tekst"
+val text = "Hei,Verden!"
+println(text.substring(0,3)) //Output: Hei
+
+val fraIndex = text.indexOf(",") + 1
+println(text.substring(fraIndex)) //Output: Verden!
 ```
 
-## Dykk dypere:
-Denne teknikken blir ofte brukt i tekstbehandling og analyse, og har vært en viktig del av programmering siden tidlig i datamaskinens historie. Det finnes også andre måter å få tilgang til delstrenger på, som for eksempel ved hjelp av regulære uttrykk eller maskering. Det er viktig å huske at indeksering i de fleste programmeringsspråk begynner med 0, så første bokstav i en streng vil ha indeks 0.
+I det første eksemplet trekker vi ut de første tre tegnene av strengen. I det andre eksempelet finner vi indexen til kommaet og trekker ut alt som kommer etter.
+
+## Dypdykk:
+
+Hensikten med å trekke ut substrings går langt tilbake i programmeringshistorien. Tekstbehandling og mønster-gjenkjenning er noen av hjørnesteinene i informatikk. 
+
+I Kotlin kan du også bruke `substringBefore` og `substringAfter` funksjonene som gir deg mer direkte kontroll over hva som ekstraheres.
+
+```Kotlin
+val text = "Hei,Verden!"
+println(text.substringBefore(",")) //Output: Hei
+println(text.substringAfter(",")) //Output: Verden!
+```
+
+En annen viktig detalj er håndteringen av 'IndexOutOfBoundsException'. Dersom du prøver å trekke ut en substring utenfor strengens lengde, vil programmet kaste en unntak. Det er derfor viktig å sjekke indeksene før man prøver å trekke ut substrings.
 
 ## Se også:
-- [Kotlins offisielle dokumentasjon om delstrenger](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/substring.html)
-- [Tutorial om delstrenger i Kotlin](https://www.programiz.com/kotlin-programming/substring)
-- [The Coding Train: Extracting Substrings in Kotlin](https://www.youtube.com/watch?v=1rUPaF6nQZo)
+
+1. [Offisiell Kotlin dokumentasjon på substrings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+2. [En detaljert tutorial på tekstbehandling i Kotlin](https://www.baeldung.com/kotlin/strings)

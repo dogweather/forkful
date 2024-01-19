@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "Elm recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,42 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Sending an HTTP request is simply a way for a programmer to communicate with other systems on the internet. It allows for retrieving and sending data between different servers and clients. Programmers often use this to access and manipulate data from external sources, such as APIs, databases, or web services.
+HTTP requests allow programs to talk to the outside world, grabbing content like web pages or API data. Programmers use them to fetch data from external sources or interact with web services.
 
 ## How to:
-To send an HTTP request in Elm, we can use the HTTP module. First, we need to import it in our code:
+In Elm, we mainly use the `Http` package for creating and sending an HTTP request. Instal the Http package:
+
+```Elm
+elm install elm/http
 ```
+
+Import the Http module in your code:
+
+```Elm
 import Http
+```
+  
+A simple HTTP GET request in Elm:
 
-```
-Next, we can use the `send` function to create a request and send it to a specific URL:
-```
-Http.send
-    { method = "GET"
-    , headers = [ ]
-    , url = "https://example.com/api"
-    , body = Http.emptyBody
-    , expect = Http.expectJson (\_ -> Json.Decode.succeed SuccessMsg)
-    }
-```
-
-This code will send a GET request to `https://example.com/api`, with no headers and an empty body. The `expect` field specifies the type of data we expect to receive in response, in this case, a `SuccessMsg` defined beforehand.
-
-The `send` function is asynchronous, meaning the code after it will continue executing while the request is being sent. To handle the response, we can use the `Task` module. Here's an example:
-```
-Http.send MsgDecoder <| Http.get "/api/user/123"
+```Elm
+get : String -> Task Http.Error String
+get url =
+    Http.get
+        {
+            url = url,
+            expect = Http.expectString
+        }
 ```
 
-In this example, we use `Http.get` which is a shorthand for creating a GET request. `MsgDecoder` is a function that decodes the received data and triggers a `Msg` type with the decoded data. We can then handle this `Msg` type in our `update` function.
+The `get` function requests a URL and expects a response as a string.
 
-## Deep Dive:
-The HTTP module was created to provide a simple and type-safe API for making HTTP requests. It also handles various errors and exceptions that might occur while communicating with external systems.
+For execution of the HTTP task and handling of the HTTP result:
 
-There are alternative ways to send HTTP requests in Elm, such as using libraries built on top of the HTTP module, or combining the HTTP module with the `Task` module. However, using the default HTTP module is recommended for simpler and more streamlined code.
+```Elm
+main =
+    get "https://api.github.com/users/elm"
+        |> Task.attempt HandleResponse
+```
+Here, "https://api.github.com/users/elm" is the URL we're requesting. The `get` function returns a task, which we attempt with a `HandleResponse` function that we'd define elsewhere. 
 
-The implementation details of the HTTP module involve using the Fetch API in the browser, which handles the actual sending of requests. In addition, the Elm compiler enforces a type system on HTTP requests, ensuring they are well-structured and will not fail due to type errors.
+## Deep Dive
+HTTP requests have been integral to web development since Tim Berners-Lee cemented HTTP as the core protocol of the web. In the Elm language, sending HTTP requests is usually done using the `Http` library, but other libraries, like `elm-http-builder` or `elm-ajax`, can be used for more complex cases. 
 
-## See Also:
-- Official Elm documentation for HTTP: https://package.elm-lang.org/packages/elm/http/latest/
-- A beginner-friendly tutorial on using the HTTP module in Elm: https://elmprogramming.com/advanced/http.html
-- A detailed explanation of how the HTTP module works under the hood: https://medium.com/@robertsosinski/the-internals-of-elm-http-90e2e5e97589
+Under the hood, Elm's `Http` library uses JavaScript's Fetch API (or XMLHttpRequest for older browsers) for sending HTTP requests. The result is then channeled back into the Elm world as a `Task`, which is a model for asynchronous operations that can succeed or fail. 
+
+However, unlike in JavaScript where an HTTP request runs automatically once created, Elm chooses to make HTTP requests “cold”. This means HTTP requests don't do anything until they're given explicit permission. This reflects Elm's overall philosophy of having no side effects by default, ensuring a consistent and predictable behavior.
+
+## See Also
+- [Elm Guide: The Http package](https://guide.elm-lang.org/effects/http.html) 
+- [MDN: Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [GitHub: elm-http-builder](https://github.com/lukewestby/elm-http-builder)
+- [GitHub: elm-ajax](https://github.com/evancz/elm-ajax)

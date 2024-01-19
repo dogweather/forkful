@@ -1,6 +1,6 @@
 ---
 title:                "Extrahera delsträngar"
-html_title:           "C++: Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
 simple_title:         "Extrahera delsträngar"
 programming_language: "C++"
 category:             "C++"
@@ -10,43 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hej programmerare!
+# Substrängar i C++: Hur och Varför Man Extraherar 
 
-## Vad & Varför?
+## Vad & Varför? 
+Extrahering av substrängar innebär att avskilja en liten del av en större sträng. Programmerare gör detta för att manipulera, söka i eller jämföra specifika delar av strängar.
 
-Att extrahera substrängar betyder att man tar ut en mindre del av en större sträng. Det kan vara användbart när man behöver komma åt en specifik del av en väldigt lång sträng. Programmerare använder detta verktyg för att effektivisera och förenkla sin kodning.
-
-## Så här:
-
-```C++
-#include <iostream> 
-#include <string> 
-
-int main() { 
-   std::string ord = "Programmering"; 
-   std::cout << ord.substr(3,5) << std::endl; 
-return 0; 
-}
-```
-
-Output: "gramm"
+## Hur man gör:
+Funktionen `substr()` i C++ används för att extrahera substrängar. Låt oss ta en titt på ett exempel:
 
 ```C++
-#include <iostream> 
+#include <iostream>
 #include <string>
-int main() { 
-   std::string mening = "Jag älskar att koda!"; 
-   std::cout << mening.substr(8,4) << std::endl; 
-return 0; 
+
+int main() {
+    std::string str = "Hej programmerare!";
+
+    std::string substr = str.substr(4, 14);
+
+    std::cout << substr;  // Skriver ut "programmerare!"
+    
+    return 0;
 }
 ```
+Ovanstående kod extraherar substrängen "programmerare!". Funktionen `substr()` tar två argument: startpositionen och antalet tecken att extrahera.
+  
+## Fördjupning 
+Extrahering av substrängar i programmering har en lång historia. Det används frekvent för att lösa ett flertal problem, från textredigering till dataanalys.
 
-Output: "att k"
+I tidigare versioner av C++, innan `std::string` introducerades, använde man C-stilsträngar och teckenpekare för att arbeta med strängar. Men det ökade komplexiteten och skapade minneshanteringsproblem.
 
-## Deep Dive:
+Det finns även alternativa sätt att extrahera substrängar i C++, särskilt med regex (reguljära uttryck) vilket ger dig mer möjlighet att anpassa din sökning.
 
-Extrahera substrängar har funnits länge inom programmeringen och är ett viktigt verktyg för att hantera textdata. Istället för att behöva manipulera hela strängen kan man enkelt extrahera en del som behövs. Det finns även andra sätt att göra detta, som användning av arrayer och loopar, men substrängar är ofta en mer effektiv och enklare lösning. Det finns även flera metoder för att extrahera substrängar, som till exempel `find` och `substring`, men `substr` är den enklare att använda av de tre.
+Djupare in i kodningen, `substr()` funktionen skapar och returnerar en ny sträng. Det kan ha en prestandapåverkan om du arbetar med mycket stora strängar eller om din kod kör `substr()` ofta.
 
-## Se även:
-
-För mer information om `substr`, kan du kolla in dokumentationen för [C++ substr function](https://www.cplusplus.com/reference/string/string/substr/) eller läsa mer om [manipulering av strängar i C++](https://www.geeksforgeeks.org/substring-in-cpp/).
+## Se också
+För att ytterligare förstå konceptet extrahera substrängar rekommenderas följande källor:
+- CPlusPlus.com: [std::string::substr](http://www.cplusplus.com/reference/string/string/substr/)
+- Stack Overflow: [Understanding the use of 'std::string::substr'](https://stackoverflow.com/questions/4643512/when-we-use-substr-in-c)
+- GeeksforGeeks: [std::string substr() in C++ library](https://www.geeksforgeeks.org/stdstringsubstr-in-cpp-library/)

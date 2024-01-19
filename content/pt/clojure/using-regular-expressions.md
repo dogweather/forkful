@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expressões regulares"
-html_title:           "Clojure: Utilizando expressões regulares"
-simple_title:         "Utilizando expressões regulares"
+title:                "Usando expressões regulares"
+html_title:           "Gleam: Usando expressões regulares"
+simple_title:         "Usando expressões regulares"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & por quê?
+## O Que e Por Que?
 
-O uso de expressões regulares em programação é uma maneira eficiente de realizar a busca e manipulação de padrões de texto em uma string. Programadores frequentemente usam expressões regulares para simplificar o processo de análise e transformação de dados em seus códigos.
+Expressões regulares (regex) são padrões usados para encontrar combinações correspondentes em strings. Os programadores as utilizam para manipular, analisar e validar dados de texto, economizando tempo e esforço.
 
-## Como fazer:
+## Como se faz:
 
-```
-(require '[clojure.string :as str])
+Aqui está como você pode usar expressões regulares em Clojure:
 
-;; Função para verificar se um número de telefone é válido:
-(defn valid-phone? [phone]
-  (if (re-find #"^\(\d{3}\)\s\d{3}-\d{4}$" phone)
-    true false))
+```Clojure
+(def frase "Bem-vindo ao mundo de Clojure.")
 
-(str/replace "Olá, meu número é (123) 456-7890" #"(\d{3})\s(\d{3})(-(\d{4}))" "$1-$2$3")
+if(print (re-seq #"o" frase))
+  ; => ("o" "o" "o")
 
-(valid-phone? "(123) 456-7890")
-```
+(defn validar-email [email]
+  (boolean (re-matches #".+@.+\\..+" email)))
 
-Resultado:
-```
-(123)-456-7890
-true
+if(print (validar-email "meu.email@teste.com"))
+  ; => true
 ```
 
-## Aprofundando:
+Neste caso, re-seq é usado para encontrar todas as correspondências de "o" na frase e re-matches para validar um formato de email.
 
-### Contexto histórico:
-Expressões regulares foram inventadas pelo matemático norte-americano Stephen Kleene na década de 1950 como uma forma de representar padrões em linguagens formais. Sua utilização ganhou popularidade na década de 1970, com o desenvolvimento das linguagens de programação.
+## Mergulho Profundo
 
-### Alternativas:
-Embora expressões regulares sejam amplamente utilizadas em programação, existem alternativas, como os módulos de manipulação de strings em diversas linguagens de programação e bibliotecas específicas para processamento de dados, como o Apache Spark.
+As expressões regulares derivam dos automatos finitos da teoria dos formalismos gramaticais, conceito criado por Stephen Kleene na década de 50. Em Clojure, além das funções re-seq e re-matches, você também pode usar re-find para encontrar a primeira correspondência ou re-pattern para criar um padrão.
 
-### Detalhes de implementação:
-Em Clojure, as expressões regulares são representadas por um padrão entre ```#""```, incluindo os metacaracteres que definem as regras para a busca de padrões. A função ```re-find``` busca a ocorrência do padrão na string e a função ```str/replace``` substitui a ocorrência pelo novo padrão especificado.
+Entretanto, esteja ciente de que elas não são sempre a melhor solução. Em situações complexas, é recomendado utilizar uma verdadeira análise textual (parsing) ou uma biblioteca especializada.
 
-## Veja também:
+## Veja Também
 
-- Documentação oficial de expressões regulares em Clojure: https://clojuredocs.org/clojure.string/replace
-- Livro "Mastering Regular Expressions" de Jeffrey Friedl: https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/
-- Tutorial interativo sobre expressões regulares: https://regexone.com/
+Para se aprofundar no assunto, sugerimos os seguintes recursos:
+
+- Documentação oficial de expressões regulares em Clojure: [cljdoc.org](https://cljdoc.org/d/clojure/clojure/1.10.3/doc/core-functions#re-seq)
+- Um guia detalhado e interativo sobre expressões regulares: [regex101.com](https://regex101.com/)
+- Para problemas mais complicados, considere bibliotecas como: [instaparse](https://github.com/Engelberg/instaparse) e [parsec](https://github.com/satta/parsec)

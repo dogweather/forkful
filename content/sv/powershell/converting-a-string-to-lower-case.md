@@ -1,7 +1,7 @@
 ---
-title:                "Konvertera en sträng till gemener"
-html_title:           "PowerShell: Konvertera en sträng till gemener"
-simple_title:         "Konvertera en sträng till gemener"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -11,25 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att konvertera en sträng till gemener är en vanlig process inom programmering. Det innebär helt enkelt att ändra alla bokstäver i en sträng till deras gemena motsvarighet. Detta görs ofta för att underlätta jämförelse av strängar.
+
+Att konvertera en sträng till små bokstäver innebär att ändra varje stor bokstav till motsvarande liten bokstav i en given sträng. Programmerare gör detta för att standardisera data, vilket underlättar jämförelser och sökningar.
 
 ## Hur man gör:
+
+Här är ett enkelt exempel på hur man konverterar en sträng till små bokstäver med PowerShell:
+
 ```PowerShell
-$str = "HeJ VarlDen!"
-$str.ToLower()
+# Definiera en sträng med stora bokstäver
+$originalString = "HEJ VÄRLDEN"
+
+# Konvertera strängen till små bokstäver
+$lowercaseString = $originalString.ToLower()
+
+# Skriv ut resultatet
+Write-Output $lowercaseString
 ```
-Ger följande utmatning:
-`hej världen!`
 
-## Deep Dive:
-### Historiskt sammanhang:
-Att konvertera strängar till gemener har varit en del av programmering sedan tidiga datorer. Detta beror på att de flesta system har en skillnad mellan gemena och versala bokstäver och det är viktigt att programspråken använder rätt format för att undvika konstiga fel.
+När du kör koden ovan kommer utdata att vara "hej världen".
 
-### Alternativ:
-Det finns flera alternativ för att konvertera strängar till gemener i PowerShell. En annan metod som kan användas är `.ToUpper()` för att göra alla bokstäver versala istället för gemena.
+## Djupdykning
 
-### Implementation:
-Konvertering till gemener görs genom att använda metoden `.ToLower()` på en sträng. Detta returnerar en ny sträng med alla bokstäver omvandlade till gemener. Om man vill ändra den ursprungliga variabeln så måste man sätta det nya värdet tillbaka till samma variabel.
+Konvertera strängar till små bokstäver är inte en ny idé - faktum är att det har varit en standardverktyg för programmerare sedan de tidigaste dagarna av programmering. För dem som kommer från andra programmeringsspråk, till exempel Python, kanske du känner igen `lower()`-metoden, som gör samma sak.
 
-## Se även:
-- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/to-lower?view=powershell-7.1 - Officiell dokumentation för `.ToLower()` metod i PowerShell.
+Som alternativ, använd `.ToLowerInvariant()` i stället för `.ToLower()` när det gäller att hantera data för internationell programmering. Detta beror på att `.ToLowerInvariant()` skapar en kulturneutral representation av strängen, vilket kan vara fördelaktigt för att undvika oväntade problem.
+
+Från en implementeringssynpunkt använder ToLower()-metoden i .NET Framework informationsborddefinierade av Unicode-standarden för att mappa varje stor bokstav till motsvarande gemene bokstav. 
+
+## Se också
+
+Här är några användbara referenser för att utforska mer om strängmanipulering i PowerShell:
+
+1. Officiell dokumentation för [PowerShell](https://docs.microsoft.com/en-us/powershell/).
+2. [PowerShell String Manipulation](https://www.technipages.com/powershell-string-manipulation).
+3. [.NET String.ToLower Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower).

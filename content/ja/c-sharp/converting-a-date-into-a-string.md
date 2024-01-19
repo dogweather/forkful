@@ -1,6 +1,6 @@
 ---
 title:                "日付を文字列に変換する"
-html_title:           "C#: 日付を文字列に変換する"
+html_title:           "C++: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "C#"
 category:             "C#"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「## 何&なぜ？」
+## 何となぜ？ (What & Why?)
+日付を文字列に変換するとは、日時データを指定した形式の文字列に変換することです。これは、データの表示や日時データのシリアライズ及びデシリアライズの際に行います。
 
-日付を文字列に変換することは、日付を表すデータをテキスト形式に変換することを意味します。プログラマーは、日付を文字列に変換する主な目的は、日付をユーザーにわかりやすい形式で表示するためです。例えば、ウェブアプリケーションでユーザーが予約した日付を表示する際に、日付を文字列に変換する必要があります。
-
-「## 方法：」
-
+## どうやって？ (How to?)
 ```C#
-DateTime date = new DateTime(2021, 1, 15); //日付を指定
-Console.WriteLine(date.ToString()); //出力：1/15/2021
-Console.WriteLine(date.ToString("MM/dd/yyyy")); //出力：01/15/2021
-Console.WriteLine(date.ToString("dddd, MMMM dd, yyyy")); //出力：Friday, January 15, 2021
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        DateTime date = DateTime.Now;
+        string dateToString = date.ToString("MM/dd/yyyy");
+        Console.WriteLine(dateToString);
+    }
+}
+```
+これで出力はこんな感じになります:
+```C#
+"12/01/2022"
 ```
 
-「## 詳細を深く掘り下げる：」
+## ディープダイブ (Deep Dive)
+### 歴史的文脈
+.NET フレームワークが策定された当初から、日付を自由な形式の文字列に変換する機能が提供されています。
 
-日付を文字列に変換する方法は、プログラミング言語によって異なります。一般的な方法としては、日付を表すデータをテキスト形式に変換するための専用の関数やメソッドを使用します。また、日付の表示形式を指定することも可能です。C#の場合、```ToString()```メソッドを使用して日付を文字列に変換します。このメソッドには日付の表示形式を指定するオプションが用意されており、応用的な使い方ができます。
+### 代替手段
+Date.ToStringメソッドの他にも、フォーマット指定子を含むString.Formatメソッドや、より自由度の高い自作メソッドなどを利用することも可能です。
 
-日付を文字列に変換する代替手段として、日付を表すデータ型を文字列型に変換する方法もあります。しかし、この方法では日付の表示形式を指定することはできず、テキスト形式が固定されてしまいます。そのため、より自由度の高い日付を文字列に変換する際は、専用の関数やメソッドを使用することが推奨されます。
+### 実装詳細
+ToStringメソッドは、日付を文字列に変換する際、適用される特定の書式を指定することが可能です。
 
-日付を文字列に変換する際に実際にどのような処理が行われているかというと、日付を表すデータをテキスト形式に変換するために、内部的には日付を数値データに変換してからそれをテキストに変換します。また、日付の表示形式を指定する際は、特定の書式指定子を使用して指定した書式に合わせて文字列を作成しています。
-
-「## 参考リンク：」
-
-- [C#で日付を文字列に変換する方法](https://www.it-swarm.jp.net/ja/c%23/%E6%97%A5%E4%BB%98%E3%82%92%E6%97%A5%E4%BB%98%E3%81%AE%E4%B8%80%E6%90%9C%E3%81%A7%E6%96%87%E5%AD%97%E5%88%97%E3%81%AB%E3%81%97%E3%81%9F%E3%81%84%E3%81%AE%E3%81%AF%E4%BD%95%E3%81%A7%E3%81%99%E3%81%8B/970796798/)
-
-- [日付を文字列に変換する方法（C#）](https://qiita.com/ogawatt/items/bd5cc166437ff34b518a)
+## 参照資料 (See Also)
+- [String Formatting](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.format?view=net-6.0)
+- [Standard Date and Time Format Strings](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/standard-date-and-time-format-strings)

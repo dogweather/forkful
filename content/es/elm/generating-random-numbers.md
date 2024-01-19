@@ -1,6 +1,6 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Elm: Generando números aleatorios"
+html_title:           "Arduino: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,23 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & ¿Por qué?
-Generar números aleatorios es una técnica comúnmente utilizada en programación para producir valores no predecibles. Los programadores suelen utilizarla para incorporar elementos de azar en sus aplicaciones, como juegos o sorteos.
+# Generar Números Aleatorios en Elm
+
+## ¿Qué y por qué?
+
+La generación de números aleatorios es una manera de obtener números sin patrón predeterminado. Los programadores usan números aleatorios para características como pruebas aleatorias y simulaciones.
 
 ## Cómo hacerlo:
-Para generar un número aleatorio en Elm, podemos usar la función `Random.int` que toma dos argumentos: el límite inferior y el límite superior del rango en el que se generará el número. Por ejemplo, si queremos obtener un número aleatorio entre 1 y 10, podemos escribir:
 
+Generar un número aleatorio en Elm es simple. Por ejemplo:
+
+```Elm
+import Random exposing (..)
+
+generarAleatorio : Seed -> (Int, Seed)
+generarAleatorio semilla = 
+    randomInt 1 100 semilla
 ```
-Elm
-import Random
+Donde `semilla` es la semilla inicial para generar el número aleatorio.
 
-Random.int 1 10
-```
+Corriendo este código se obtendrá un número aleatorio entre 1 y 100 junto con una nueva semilla.
 
-La salida podría ser `8`, `3`, `6` o cualquier otro número entre 1 y 10.
+## Inmersión Profunda:
 
-## Profundizando:
-La generación de números aleatorios ha sido un tema ampliamente estudiado en matemáticas y ciencias de la computación. A lo largo de los años, se han desarrollado muchas técnicas y algoritmos diferentes para generar secuencias de números aparentemente aleatorios. Además, existen alternativas a la función `Random.int` en Elm, como por ejemplo `Random.float`, que genera números decimales aleatorios en lugar de enteros.
+Historia: Los números aleatorios han jugado un papel importante en informática desde sus inicios.
 
-## Ver también:
-Puedes encontrar más información sobre la generación de números aleatorios en la [documentación oficial de Elm](https://guide.elm-lang.org/effects/random.html) y en [este artículo](https://www.mathworks.com/content/dam/mathworks/mathworks-dot-com/moler/random.pdf) escrito por Cleve Moler, uno de los pioneros en este campo.
+Alternativas: Existen varias formas de generar números aleatorios, y Elm escoge una que produce resultados predecibles dada una semilla.
+
+Detalles de Implementación: Elm maneja la aleatoriedad de manera especial, creando números aleatorios que son puramente funcionales y seguros para su uso en un entorno de programa puro.
+
+## Consulta También: 
+
+Enlace a la documentación oficial de Random en Elm: [Random en Elm](https://package.elm-lang.org/packages/elm/random/latest/)
+Para profundizar más sobre la generación de numeros aleatorios en la computación puedes visitar: [Aleatoriedad wiki](https://es.wikipedia.org/wiki/Aleatoriedad)

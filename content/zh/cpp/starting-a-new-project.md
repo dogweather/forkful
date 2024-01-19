@@ -1,7 +1,7 @@
 ---
-title:                "开始一个新项目"
-html_title:           "C++: 开始一个新项目"
-simple_title:         "开始一个新项目"
+title:                "开始新项目"
+html_title:           "Lua: 开始新项目"
+simple_title:         "开始新项目"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-开始一个新项目是程序员给自己提出的挑战。这意味着构思和创造一种新的解决方案，通过编写代码来实现它。程序员通常会这样做，因为他们想要解决一个特定的问题或者创造一个新的产品。
+## 什么和为什么?
 
-## 怎么做：
-首先，你需要选择一种编程语言。在这篇文章中，我们将会使用C++作为例子。接着，你需要在你的电脑上安装一个C++编译器，比如[Visual Studio](https://visualstudio.microsoft.com/downloads/)。然后，你就可以开始编写你的代码了。下面是一个简单的例子：
+启动新项目意味着创建一个全新的编程任务。程序员之所以这么做，是因为这可以让他们构建符合特定需求的应用程序。
+
+## 如何做：
+
 ```C++
+// 准备一个示例项目：Hello World 程序
 #include <iostream>
 
 int main() {
-    std::cout << "Hello World!" << std::endl;
+    std::cout << "Hello World!";
     return 0;
 }
 ```
-运行这段代码，你会得到输出：
-```
+当你运行这个程序时，你会看到如下输出：
+
+```C++
 Hello World!
 ```
-现在你已经成功地开始了你的第一个C++项目！
 
-## 深入了解：
-在20世纪80年代，C++成为了一种流行的编程语言，它拥有丰富的功能和广泛的用途。但是现在，它已经有了很多的竞争者，比如Java和Python。因此，选择一种编程语言来开始一个新项目并不是一件容易的事情，你需要考虑它的特点以及它是否适合你的需求。除了C++，还有很多其他的编程语言，每一种都有自己的优点和缺点。所以，你可以先了解各种语言的特点，然后再根据你的需求做出选择。
+## 深入探讨
 
-## 相关资料：
-- [Visual Studio下载](https://visualstudio.microsoft.com/downloads/)
-- [C++基础教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
+历史背景：C++首次出现在1985年，由Bjarne Stroustrup开发。从此，许多程序员开始创建新的项目，以适应各种需求。
+
+替代方案：除C++外，你还可以使用Java，Python，Ruby等等来创建新的项目。选择哪种语言取决于你的项目需求。
+
+实施细节：在C++中，新项目通常从包含`main`函数的文件开始。然后，你可以添加更多的.cpp和.h文件，以构建更复杂的项目。你也可以使用诸如Makefile或CMake之类的工具来管理项目构建。
+
+## 还可以参考
+
+1. ["C++ 参考"](http://www.cplusplus.com/)
+2. ["C++ 标准库"](https://zh.cppreference.com/)
+3. ["C++ 教程"](https://www.runoob.com/cplusplus/cpp-tutorial.html)

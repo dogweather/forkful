@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
-html_title:           "Javascript: Wyszukiwanie i zamiana tekstu"
-simple_title:         "Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,52 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robić?
+## Co & Dlaczego?
 
-W programowaniu często występuje potrzeba zmiany tekstu wewnątrz naszego kodu. Na przykład, chcielibyśmy zmienić wszystkie wystąpienia słowa "kot" na "pies", lub usunąć określone fragmenty z tekstu. Do tego służy tzw. wyszukiwanie i zastępowanie tekstu, czyli proces znajdowania i zmiany konkretnych fragmentów tekstu w danym pliku lub programie. Programiści korzystają z tej funkcji, aby ułatwić sobie i przyspieszyć pracę nad swoim kodem.
+Wyszukiwanie i zastępowanie tekstu to podstawowe operacje manipulacji tekstem w dowolnym języku programowania. Programiści robią to na co dzień, aby zmieniać, aktualizować, ulepszać lub naprawiać dane tekstowe we własnym kodzie.
 
 ## Jak to zrobić:
 
-### Wyszukiwanie tekstu:
-W JavaScript możemy wyszukiwać tekst przy użyciu wbudowanej funkcji `indexOf()` lub `lastIndexOf()`. Obie funkcje zwracają indeks pierwszego lub ostatniego znalezionego wystąpienia szukanego słowa. Możemy też użyć wyrażeń regularnych, co pozwoli na bardziej zaawansowane i precyzyjne wyszukiwanie.
+W JavaScript możesz użyć wbudowanej metody `replace()`, aby zlokalizować i zastąpić tekst. Na przykład:
 
-#### Przykład:
-```javascript
-let text = "Kotek to mały łowca myszy";
-let index = text.indexOf("kot"); // zwróci 0
-// ponieważ pierwsze wystąpienie słowa "kot" znajduje się na początku tekstu
+```Javascript
+let string = "Cześć, jestem Programista";
+let newString = string.replace("Programista", "JavaScript Dev");
+console.log(newString);  // Wypisze: "Cześć, jestem JavaScript Dev"
 ```
-```javascript
-let text = "Kotek to mały łowca myszy";
-let lastIndex = text.lastIndexOf("kot"); // zwróci 18
-// ponieważ ostatnie wystąpienie słowa "kot" znajduje się na pozycji 18
+W powyższym przykładzie, metoda `replace()` przeszukuje wartość zmiennej `string` w poszukiwaniu słowa "Programista" i zastępuje go tekstem "JavaScript Dev".
+
+## Głębsza analiza:
+
+Metoda `replace()` w JavaScript ma swoje korzenie w historycznym kontekście języków programowania. Pochodzi z tradycji wcześniejszych języków, takich jak PERL, gdzie strumień tekstu był przetwarzany linia po linii, a każde wystąpienie wzorca było zastępowane na bieżąco.
+
+Co do alternatyw, JavaScript oferuje `RegExp` (Regular Expressions). "RegExp" znajduje szersze użycie, gdy mamy wiele wystąpień do zastąpienia. Metoda `replace()` zastępuje tylko pierwsze dopasowanie, chyba że użyjesz wyrażeń regularnych. 
+
+```Javascript
+let str = "Jak jesteś? Jak się masz?";
+let newStr = str.replace(/Jak/g, "Dzień dobry");
+console.log(newStr);  // Wypisze: "Dzień dobry jesteś? Dzień dobry się masz?"
 ```
-
-### Zastępowanie tekstu:
-Aby zastąpić dany fragment tekstu, możemy użyć funkcji `replace()` wraz z wyrażeniami regularnymi. Ta funkcja zastąpi pierwsze wystąpienie wyszukanego wyrażenia danym tekstem lub innym wyrażeniem.
-
-#### Przykład:
-```javascript
-let text = "Kotek to mały łowca myszy";
-let newText = text.replace("kot", "pies"); // zwróci "Piesek to mały łowca myszy"
-```
-```javascript
-let text = "Kotek to mały łowca myszy";
-let newText = text.replace(/kot/g, "pies"); // zwróci "Piesek to mały łowca myszy"
-// dzięki użyciu flagi 'g' zastąpione zostaną wszystkie wystąpienia
-```
-
-## Głębszy zanurzenie:
-
-### Kontekst historyczny:
-Wyszukiwanie i zastępowanie tekstu jest nieodłączną częścią programowania już od początków tej dziedziny. Pierwsze narzędzia do przetwarzania tekstu pojawiły się w latach 50. XX wieku, a od tego czasu stały się nieodzownym elementem każdego języka programowania.
-
-### Inne metody:
-W zależności od języka programowania, istnieje wiele różnych metod i funkcji do wyszukiwania i zastępowania tekstu. JavaScript oferuje wbudowane funkcje, ale w niektórych przypadkach może być też przydatne użycie narzędzi zewnętrznych.
-
-### Szczegóły implementacji:
-W celu wykonania wyszukiwania i zastępowania tekstu w JavaScript, wykorzystywane są wyrażenia regularne, czyli specjalne wzorce służące do dopasowania i manipulacji tekstami. Ważne jest także użycie odpowiednich funkcji, aby dokładnie określić czego szukamy i jakie zmiany chcemy wprowadzić.
+Powód, dla którego funkcja ta nie zastępuje wszystkich wystąpień bez RegExp, wynika z zasady jednokrotnego dopasowania, która jest domyślna dla wielu operacji na łańcuchach w większości języków programowania.
 
 ## Zobacz także:
-- [Metody String w JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String)
-- [Wyrażenia regularne w JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
+
+Dodatkowe źródła do nauki i zrozumienia szukania i zastępowania tekstu w JavaScript:
+1. W3Schools: [JavaScript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)
+2. MDN Web Docs: [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+3. JavaScript.INFO: [Strings](https://javascript.info/string)
+4. GeeksforGeeks: [JavaScript | String replace()](https://www.geeksforgeeks.org/javascript-string-replace/)

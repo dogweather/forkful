@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラムに関する記事のタイトル：コマンドライン引数の読み取り"
-html_title:           "C#: コンピュータプログラムに関する記事のタイトル：コマンドライン引数の読み取り"
-simple_title:         "コンピュータプログラムに関する記事のタイトル：コマンドライン引数の読み取り"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Bash: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## はじめに
-プログラマーとして、コマンドライン引数を読み込むことが重要だと感じていますか？実際に、多くのプログラマーがコマンドライン引数を読み込んでプログラムをより柔軟にすることができます。それでは、C#を使用してコマンドライン引数を読み込む方法について見ていきましょう。
+## 何それ & なぜ？ (What & Why?)
+コマンドライン引数とは、プログラムに渡す外部入力のことです。プログラマーはこれを使用して、プログラムの動作を制御または変更します。
 
-## 何か？
-コマンドライン引数とは、コマンドラインツールやプログラムを実行する際に渡されるコマンドラインのパラメーターのことです。例えば、ファイル名やオプションなどがコマンドライン引数になります。
-
-プログラマーがコマンドライン引数を読み込むのは、プログラムを実行する際に柔軟性を持たせるためです。ユーザーがプログラムを実行する際にさまざまなパラメーターを指定できるようにすることができるため、プログラムをより使いやすくすることができます。
-
-## どのように？
-C#では、Mainメソッドのパラメーターとしてstring配列を指定することでコマンドライン引数を読み込むことができます。以下の例では、ユーザーがプログラムを実行する際にパラメーターとして渡した文字列をコンソールに表示する方法を示します。
-
+## 実行方法 (How to:)
 ```C#
-static void Main(string[] args)
+class Program
 {
-    // 最初の引数を表示する
-    Console.WriteLine(args[0]);
-    
-    // すべての引数を表示する
-    foreach (var arg in args)
+    static void Main(string[] args)
     {
-        Console.WriteLine(arg);
+        foreach (var arg in args)
+        {
+            Console.WriteLine(arg);
+        }
     }
 }
-
-// プログラムを実行する際にパラメーターとして渡した文字列がコンソールに表示される
-// > program.exe hello world
-// hello
-// hello
-// world
+```
+コマンドラインから次のように実行します。`program.exe arg1 arg2 arg3`
+出力は次の入力に反映されます。
+```C#
+arg1
+arg2
+arg3
 ```
 
-## 詳細について
-コマンドライン引数の読み込みは、C言語で開発されたUnixシステムから普及した機能です。現在では、ほぼすべてのプログラミング言語でサポートされています。
+## じっくりと調べる (Deep Dive)
+コマンドライン引数の利用は、古くから存在する技術で、一部のプログラムではユーザー入力の主要な形態となっています。選択肢としては、環境変数や設定ファイルなどの他の入力源を利用することも可能ですが、コマンドライン引数は直感的で簡単です。C#では、string型の配列にすべての引数が格納されます。これらの引数は実行ファイルの名前の後にスペースで分けて記述されます。
 
-コマンドライン引数の代わりに、プログラム実行時にユーザーから対話的に入力を受け取る方法もあります。しかし、コマンドライン引数を使用することで、ユーザーが簡単にプログラムを実行できるだけでなく、自動化することもできます。
-
-C#では、Environment.GetCommandLineArgsメソッドを使用することで、Mainメソッド以外でもコマンドライン引数を取得できます。また、CommandLineパッケージを使用することで、より柔軟なコマンドライン引数の読み込みが可能になります。
-
-## 関連リンク
-- [C#でコマンドライン引数を使用する方法 (Microsoft 公式ドキュメント)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [C# CommandLineパッケージ (NuGet Gallery)](https://www.nuget.org/packages/CommandLineParser/)
+## 参考文献 (See Also)
+- [コマンドライン引数についてさらに知る (Learn more about command line arguments)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [他の入力方法について学ぶ (Learn about other input methods)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
+- [C# の詳細なチュートリアル (Detailed C# tutorials)](https://www.microsoft.com/ja-jp/dev/tutorial/csharp)

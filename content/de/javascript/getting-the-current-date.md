@@ -1,7 +1,7 @@
 ---
-title:                "Das aktuelle Datum erhalten"
-html_title:           "Javascript: Das aktuelle Datum erhalten"
-simple_title:         "Das aktuelle Datum erhalten"
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Gleam: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,29 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Getting the current date (das aktuelle Datum) is a fundamental task in programming, as it allows us to display the current date and time in our programs. This is especially important for applications that rely on time-sensitive functions, such as calendars, scheduling, and event-based systems.
+# Javascript aktuelles Datum und Zeit holen
+## Was und Warum?
+Das Abrufen des aktuellen Datums in JavaScript bietet uns ein live Zeitstempel. Programmierer verwenden es, um Aktivitäten zu protokollieren, Zeitberechnungen durchzuführen oder Ereignisse zu planen.
 
 ## So geht's:
-```
-// Code block 1: Using the built-in Date() constructor to get the current date
-let currentDate = new Date();
-console.log(currentDate);
-// Output: Wed Sep 08 2021 19:57:04 GMT+0200 (Central European Summer Time)
+Hier ist ein einfacher Weg, um das aktuelle Datum und die aktuelle Uhrzeit in JavaScript zu erhalten.
 
-// Code block 2: Getting the current date in a specific format
-let currentDate = new Date();
-let day = currentDate.getDate();
-let month = currentDate.getMonth() + 1; // January is represented by 0, so we need to add 1 to get the correct month
-let year = currentDate.getFullYear();
-console.log(`${day}/${month}/${year}`);
-// Output: 08/09/2021 
+```Javascript
+let jetzt = new Date();
+console.log(jetzt);
 ```
 
-## Tief tauchen:
-The concept of getting the current date can be traced back to the first programmable computers in the 1940s. However, the Date() object was introduced in JavaScript in 1995, making it easier for developers to handle dates and times in their programs. Alternative ways of getting the current date include using a third-party library like moment.js or using the new Date.now() method introduced in ES5.
+Wenn Sie diesen Code ausführen, erhalten Sie eine Ausgabe ähnlich dieser:
 
-## Siehe auch:
-- MDN Web Docs: [Date()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- W3Schools: [JavaScript Date()](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- Moment.js: [Parsing, validating, manipulating, and formatting dates](https://momentjs.com/)
+```
+Wed Oct 20 2021 16:34:22 GMT+0200 (Mitteleuropäische Sommerzeit)
+```
+
+## Vertiefung
+Historisch gesehen verwendet JavaScript das Date-Objekt und seine Methoden, um mit Datums- und Zeitwerten zu arbeiten. Wir haben Alternativen wie die `moment.js` Bibliothek für komplexere Anforderungen.
+
+Darüber hinaus sollte beachtet werden, dass JavaScript das Datum und die Uhrzeit im Browser des Benutzers basierend auf dessen Zeitzoneneinstellungen ermittelt. Dies bedeutet, dass der Wert, den Sie erhalten, von Benutzer zu Benutzer unterschiedlich sein kann.
+
+## Siehe Auch:
+1. [MDN Web Docs: Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date): Weiterführende Informationen über das Date-Objekt in JavaScript.
+2. [Moment.js](https://momentjs.com/): Eine leistungsfähige Bibliothek zum Arbeiten mit Datum und Uhrzeit in JavaScript.

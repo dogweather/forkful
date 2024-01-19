@@ -1,7 +1,7 @@
 ---
-title:                "HTTP अनुरोध भेजना"
-html_title:           "Lua: HTTP अनुरोध भेजना"
-simple_title:         "HTTP अनुरोध भेजना"
+title:                "http अनुरोध भेजना"
+html_title:           "Elixir: http अनुरोध भेजना"
+simple_title:         "http अनुरोध भेजना"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,35 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-HTTP request भेजना क्या है, और क्यों करते हैं, इसके बारे में ये दो-तीन वाक्य बताते हैं। वे इसे वेब डेवलपमेंट में डेटा को पास करने का सबसे प्रमुख तरीका बताते हैं।
+HTTP request (हाइपर टेक्स्ट ट्रांसफर प्रोटोकॉल अनुरोध) कैसे और क्यों भेजें, इसे समझना बहुत महत्वपूर्ण है। यह एक सिग्नल भेजता है जो किसी सर्वर से जानकारी लेना चाहता है। प्रोग्रामर्स इसे वेब डेटा क्षेत्रीयकरण, ऐपीआई एक्सेक्यूशन और रिमोट सर्वर एक्सेक्यूशन के लिए उपयोग करते हैं।
 
 ## कैसे करें:
-जब आप HTTP request भेजते हैं, आपका ब्राउज़र डेटा को एक वेब सर्वर से लेकर आता है और उसे डिस्प्ले करता है। बहुत सारे वेब साइट में, आप नोटिस कर सकते हैं कि ब्राउज़र के URL बार में कुछ डाटा होता है, जो तारीख, समय, स्थान या उपयोगकर्ता की पहचान को प्रदर्शित करता है। बहुत सारे वेब साइटों के पीछे ये डाटा HTTP request के जरिए होता है।
+Lua में HTTP request भेजने के लिए `lua-http` पैकेज का उपयोग होता है। नीचे एक उदाहरण दिया गया है:
 
-आपको एक HTTP request भेजने के लिए कुछ simple steps फॉलो करने होंगे:
-```
-Lua
-
--- 1. अपने कोड में http module जोड़ें:
-local http = require("socket.http")
-
--- 2. आपकी रिकवेस्ट के लिए एक URL तय करें:
-local url = "https://example.com"
-
--- 3. http.request() का प्रयोग करें और उसका response स्टोर करें:
-local response = http.request(url)
-
--- 4. जब आप चाहें, response को प्रिंट करें:
-print(response)
+```Lua
+local http_request = require "http.request"
+local _, stream = assert(http_request.new_from_uri("http://example.com"):go())
+local body = assert(stream:get_body_as_string())
+print(body)
 ```
 
-ये आपको आपकी रिक्वेस्ट का response दिखाएगा, जो आमतौर पर HTML, XML या JSON फॉर्मेट में होता है।
+इस कोड स्निपेट का उद्देश्य "http://example.com" पर HTTP request भेजना है और सर्वर का प्रतिसाद प्रिंट करना है।
 
-## गहराई जाँच:
-HTTP request का इतिहास बहुत पुराना है, और ये web डेवलपमेंट के शुरुआती दिनों से ही उपयोग में है। ये किसी भी वेब डेवलपर के लिए आवश्यक है, क्योंकि ये ब्राउज़र और सर्वर के बीच कम्यूनिकेशन बनाता है। अन्य विकल्पों में, आप भी HTTP request को करने के लिए cURL, Postman जैसे उपकरण का उपयोग कर सकते हैं।
+## गहराई के संग:
+HTTP अनुरोधों का इस्तेमाल 90 के दशक से हो रहा है, जब इंटरनेट नई-नई शुरू हुई थी। Lua में, इसे `lua-http` द्वारा लागू किया गया है, जो सॉकेट, कोरूटाइन्स और HTTP/1 और HTTP/2 सपोर्ट ला सकता है। `lua-http` के विकल्प में `luasocket http` शामिल है, यदि आपको आवश्यकता होती है तो।
 
-HTTP request को बहुत ही सरल और स्ट्रेटफ़ारड तरीके से implement किया जाता है। प्रमुख भाषाओं में से एक Lua भी एक http library प्रदान करती है जो HTTP request को भेजने के लिए काम करती है। इस लाइब्रेरी को समझने के लिए आपको Lua में network programming की भी जानकारी होनी चाहिए।
-
-## इससे जुड़ा भी देखें:
-- [luahttp](https://github.com/hishamhm/luahttp) - Lua के लिए एक साधारण HTTP multiplexer
-- [HTTP रिक्वेस्ट के बारे में सिखना](https://www.tutorialspoint.com/http/http_requests.htm) - एक HTTP रिक्वेस्ट कंप्यूटर नेटवर्किंग में कैसे काम करता है का एक प्रच्यून ट्युटोरियल
+## यह भी देखें:
+अधिक जानकारी के लिए, नीचे दिए गए संसाधनों पर जाएं:
+- Lua-http प्रलेखन: http://daurnimator.github.io/lua-http/
+- Luasocket प्रलेखन: http://w3.impa.br/~diego/software/luasocket/http.html
+- HTTP विकी पन्ना: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol

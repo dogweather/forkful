@@ -1,7 +1,7 @@
 ---
-title:                "Beräkning av ett datum i framtiden eller förflutna"
-html_title:           "PowerShell: Beräkning av ett datum i framtiden eller förflutna"
-simple_title:         "Beräkning av ett datum i framtiden eller förflutna"
+title:                "Beräkna ett datum i framtiden eller förfluten"
+html_title:           "PowerShell: Beräkna ett datum i framtiden eller förfluten"
+simple_title:         "Beräkna ett datum i framtiden eller förfluten"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,57 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad och varför?
 
-Att beräkna ett datum i framtiden eller förfluten tid är en vanlig uppgift för programmerare. Det kan vara användbart i många olika situationer, som att planera scheman, automatisera uppgifter eller skapa påminnelser.
+Beräkning av ett datum i framtiden eller förflutna är praktiken att fastställa ett specifikt datum utifrån ett givet datum plus eller minus ett antal dagar. Programmerare gör detta för att hantera allt från uppgiftsplanering till periodiska och fördröjda händelser.
 
-Varför gör programmerare detta? För att undvika manuellt arbete och öka effektiviteten. Genom att använda beräknade datum kan man spara tid och minimera risken för fel.
+## Hur man gör:
 
-# Hur man:
-
-Att beräkna ett datum i framtiden eller förfluten tid är enkelt med hjälp av PowerShell. Här är några exempel på hur du kan göra det och vilket resultat du kan förvänta dig:
-
-## Beräkna ett datum i framtiden: 
+Här är några exempel på hur du kan beräkna ett datum i framtiden eller förflutna i PowerShell.
 
 ```PowerShell
-$date = (Get-Date).AddDays(5)
-$date.ToString("yyyy-MM-dd")
+# Lägga till 10 dagar till aktuellt datum
+(Get-Date).AddDays(10)
+
+# Dra av 7 dagar från aktuellt datum
+(Get-Date).AddDays(-7)
 ```
-
-Output: 2021-04-25
-
-I det här exemplet använder vi cmdleten "AddDays" för att lägga till 5 dagar till dagens datum. Vi använder sedan "ToString" för att formatera resultatet till önskad format.
-
-## Beräkna ett datum i förfluten tid: 
-
+När du kör detta ser utdata något ut så här:
 ```PowerShell
-$date = (Get-Date).AddYears(-2)
-$date.ToString("MM/dd/yyyy")
+# För dagens datum (2022-07-18)
+2022-07-28 14:32:48
+
+# Och för sjunde dagen i framtiden
+2022-07-11 14:32:48
 ```
+## Fördjupning
 
-Output: 04/20/2019
+Beräknad datumhantering i PowerShell har förändrats betydligt sedan dess ursprung i Windows Shell skript. Det finns också alternativ för att räkna ut datum, till exempel att använda tredjepartsbibliotek eller komma in i.NET ramverket för mer granulära funktioner.
 
-Här använder vi samma teknik som i det förra exemplet men med cmdleten "AddYears" för att ta bort 2 år från dagens datum och sedan formatera resultatet.
+Implementation av PowerShell-datummatematik är förvånansvärt enkelt tack vare .NET-understrukturen. Funktionen AddDays() som nämnts ovan är i själva verket en integrerad funktion i .NET DateTime-objektet, vilket gör det bekvämt och enkelt för utvecklare att utföra datummatematik.
 
-## Använda specifika datumvärden: 
+## Se också
 
-```PowerShell
-$date = Get-Date -Year 2022 -Month 12 -Day 31
-$date.ToString("dddd, dd MMMM yyyy")
-```
+För mer att läsa om datum- och tidsmanipulation i PowerShell, kolla in följande länkar:
 
-Output: Saturday, 31 December 2022
+1. [Arbeta med datum och tidsobjekt i PowerShell](https://docs.microsoft.com/sv-se/powershell/scripting/samples/working-with-date-and-time-objects?view=powershell-7.1)
+2. [Om DateTime-objekt i .NET](https://docs.microsoft.com/sv-se/dotnet/api/system.datetime?view=net-5.0)
 
-I det här exemplet använder vi cmdleten "Get-Date" med specifika värden för år, månad och dag för att skapa ett datum. Vi formaterar sedan resultatet till önskat format med "ToString".
-
-# Deep Dive
-
-Att beräkna datum är inte något nytt, det har gjorts sedan långt tillbaka i tiden då det användes för att planera jordbruk och ceremonier. Idag finns det olika sätt att utföra denna uppgift, men i PowerShell använder man oftast cmdleten "Add" för att lägga till och "Subtract" för att ta bort från ett datum.
-
-Det finns också andra alternativ, som att använda .NET Frameworks DateTime-metoder eller skapa egna funktioner i PowerShell. Det viktigaste är att hitta det sätt som passar bäst för din specifika uppgift och behov.
-
-# See Also
-
-- [PowerShell Add Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.add?view=net-5.0)
-- [PowerShell Subtract Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.subtract?view=net-5.0)
-- [DateTime Structure in .NET](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+Dyka djupare in i dessa ämnen hjälper till att illustrera flexibiliteten och kraften i PowerShell som ett verktyg för både administratörer och utvecklare. Lycka till!

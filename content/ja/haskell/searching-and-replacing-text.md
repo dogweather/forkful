@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Haskell: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-テキストの検索と置換とは何か？それを行うプログラマーの理由はなんですか？
+## 何？そして、なぜ？
+テキストの検索・置換は、特定の文字列を見つけて新しい文字列に置き換えるプロセスです。プログラムの内部でデータを操作したり、ユーザーからの入力を適切に処理したりするために、プログラマーがよく使います。
 
-テキストの検索と置換とは、プログラミングにおいて、特定の文字列を見つけて、別の文字列に置き換えることを意味します。プログラマーがこれを行う理由は、プログラム内のテキストを変更する必要があるからです。たとえば、複数のファイル内の特定の単語を一括で変更したい場合などに、検索と置換を使用することができます。
-
-## How to:
-どのようにして、テキストの検索と置換を行うのでしょうか？
+## どうやって：
+Haskellでは`Data.List.Utils`の`replace`関数で文字列を置き換えることができます。ただし、この関数を使う前に`Data.List.Utils`をインストールする必要があります。
 
 ```Haskell
--- `replace`関数を使用して、"Hello"を"こんにちは"に置換する例
-import Data.Text -- `replace`関数を使用するために必要なモジュール
-let newStr = replace "Hello" "こんにちは" oldStr
+import Data.List.Utils
+
+main = do
+  let originalText = "Hello, World!"
+  let newText = replace "World" "Haskell" originalText
+  print newText
 ```
 
-実行例：
-```
-Input: "Hello, world!"
-Output: "こんにちは, world!"
-```
+このコードは "Hello, Haskell!" を出力します。
 
-```Haskell
--- `replaceAll`関数を使用して、複数の文字列を一括で置換する例
-import Data.Text -- `replaceAll`関数を使用するために必要なモジュール
-let newStr = replaceAll [("Hello", "こんにちは"), ("World", "世界")] oldStr
-```
+## ますます深く：
+**歴史的な文脈:** テキストの検索と置換はEDI(エレクトロニック・データ・インタチェンジ)では古くから一般的でした。これは後にテキストエディタやワードプロセッサー、更にはプログラミング言語にも導入されました。
 
-実行例：
-```
-Input: "Hello, World!"
-Output: "こんにちは, 世界!"
-```
+**代替案:** Haskellでは他にも`subRegex`関数を使って正規表現を使用した置換を行うこともあります。
 
-## Deep Dive
-テキストの検索と置換にはどのような背景や代替方法があるのでしょうか？
+**実装の詳細:**`replace`関数の内部では二つのリストを比較しています。もしリストが一致すれば、置換文字列に変え、一致しなければそのままにしています。
 
-テキストの検索と置換は、古くから使われてきた機能で、多くのプログラミング言語でサポートされています。別の方法としては、正規表現を使用する方法があります。また、テキストエディタや統合開発環境などにも同様の機能が備わっています。
-
-実際に、テキストの検索と置換は、内部的には文字列の操作として実装されています。文字列の中から特定の文字列を見つけ、別の文字列に置き換える処理を行うことで実現されています。
-
-## See Also
-関連する情報源：
-
-- [HaskellのData.Textモジュールのドキュメント](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
-- [正規表現のチュートリアル](https://www.tutorialspoint.com/regex/index.htm)
-- [テキストエディタの検索と置換機能についての記事](https://learn.rupert.run/what-is-a-regex-and-how-do-i-use-it/)
+## 参照：
+1. ["Haskell Text" パッケージ](https://hackage.haskell.org/package/text)
+2. ["Haskellでの正規表現の扱い"](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/regex)

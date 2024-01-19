@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "Fish Shell: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,30 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
+## Cos'è & Perché?
 
-Quando si scarica una pagina web, si sta effettivamente copiando il codice HTML e il contenuto di una pagina web dal suo server web su un dispositivo. Ciò è utile per i programmatori perché consente loro di analizzare, manipolare e utilizzare il codice HTML e il contenuto della pagina web per scopi diversi.
+Scaricare una pagina web significa recuperare i suoi dati attraverso Internet. I programmatori fanno ciò per analizzare il contenuto della pagina, manipolare i dati o conservarli per un uso successivo.
 
 ## Come fare:
 
-Questo è un semplice codice di esempio in Fish Shell per scaricare una pagina web utilizzando il comando `curl`:
-
 ```Fish Shell
-curl www.example.com
+# Installa wget se non presente
+if not type -q wget
+ sudo apt install wget
+end
+
+# Scarica una pagina web
+wget 'http://esempio.com'
+
+# Controlla se il download è avvenuto con successo
+if test -e 'index.html'
+ echo 'Download riuscito!'
+else
+ echo 'Download fallito.'
+end
 ```
 
-Questo comando scaricherà il contenuto della pagina web www.example.com e lo mostrerà nel terminale.
+Il codice sopra prima controlla se `wget` è installato. Se non lo è, lo installa. Poi scarica una pagina web (http://esempio.com in questo caso). Infine, verifica se il file `index.html` esiste, il che significa che il download è stato un successo.
 
-## Approfondimento:
+## Approfondimento
 
-Storicamente, ci sono stati diversi modi per scaricare una pagina web, come l'utilizzo di un browser o di un'applicazione dedicata come `wget`. Tuttavia, oggi molti programmatori preferiscono utilizzare strumenti di linguaggio di scripting come Fish Shell per automatizzare il processo di download delle pagine web.
+Storicamente, il download di pagine web ha iniziato con la nascita del World Wide Web. `wget` è uno dei primi strumenti sviluppati per questo scopo.
 
-Altri strumenti utili per il download di pagine web includono `wget` (soprattutto per l'utilizzo da riga di comando), `selenium` (per l'automazione del browser) e `BeautifulSoup` (per il parsing del codice HTML).
+Ci sono diverse alternative a `wget`, come `curl` e `httpie`. Ognuno ha i suoi punti di forza e debolezza, quindi la scelta dipende dalle esigenze specifiche.
 
-Per quanto riguarda l'implementazione, il comando `curl` utilizza il protocollo di trasferimento di dati HTTP per scaricare il contenuto delle pagine web dal server. Inoltre, i programmatori possono anche specificare opzioni aggiuntive per modificare il comportamento del comando, come il salvataggio dei dati scaricati in un file o l'utilizzo di un proxy.
+Nel cuore del download di una pagina web, c'è una richiesta HTTP GET. La risposta HTTP contiene il contenuto della pagina web. `wget` salva automaticamente questo contenuto in un file.
 
-## Vedi anche:
+## Vedi Anche
 
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/)
-- [Guida al download di pagine web utilizzando curl](https://linuxize.com/post/curl-download-files-with-ftp-sftp-ftp/)
-- [Esempi di utilizzo di Beautiful Soup per il parsing di pagine web in Python](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
+- [WGet man page](https://www.gnu.org/software/wget/manual/wget.html): Documento ufficiale di `wget`.
+- [Curl vs Wget](https://daniel.haxx.se/docs/curl-vs-wget.html): Confronto tra `curl` e `wget`.
+- [HTTPie](https://httpie.io/): Un altro strumento di download.
+- [HTTP Request Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods): Informazioni sulle richieste HTTP.

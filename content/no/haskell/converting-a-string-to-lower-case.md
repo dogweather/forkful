@@ -1,7 +1,7 @@
 ---
-title:                "Konvertering av en streng til små bokstaver"
-html_title:           "Haskell: Konvertering av en streng til små bokstaver"
-simple_title:         "Konvertering av en streng til små bokstaver"
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,44 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Gjør strenger om til små bokstaver i Haskell
+
 ## Hva & Hvorfor?
-Konvertering av en streng til små bokstaver er å endre alle bokstavene i en tekststreng til små bokstaver. Det er nyttig for å standardisere og forenkle tekstbehandling og sammenligning av strenger. Programmere gjør dette for å sikre lik behandling av tekst og unngå unødvendige feil.
+Konvertering av en streng til små bokstaver betyr å endre alle store bokstaver i strengen til tilsvarende små bokstaver. Programmerere gjør dette ofte for å unngå å forskjellsbehandle data basert på bokstavstørrelse.
 
 ## Hvordan:
-Kodeeksempler og sample output:
+Her bruker vi Haskell-funksjonen `toLower` fra  `Data.Char`-modulen til å konvertere en streng til små bokstaver.
 
 ```Haskell
 import Data.Char (toLower)
 
-lowerCaseString :: String -> String
-lowerCaseString s = map toLower s
+toLowerString :: String -> String
+toLowerString = map toLower
 
-lowerCaseString "HeLlO WoRlD"  -- output: "hello world"
+main = print $ toLowerString "HELLO, WORLD!"
 ```
 
-En annen måte å konvertere en streng til små bokstaver er å bruke funksjonen `map` sammen med `Data.Etafunktor` modulen:
+Kjører du dette programmet, vil oppførselen bli som følger:
+
+```
+"hhello, world!"
+```
+
+## Dykker i Dybden
+Det å omforme store til små bokstaver i programmering har en lang historie. I tidlige ASCII-kode systemer var det separasjon mellom store og små bokstaver. Konvertering mellom de to ble ofte gjort ved å bruke litt-manipulasjon.
+
+I Haskell bruker vi `toLower`-funksjonen, som håndterer dette for oss. Men det er verdt å nevne at Haskell er en unicode-bevisst språk. Derfor vil `toLower` fungere korrekt selv for ikke-ASCII-tegn. For eksempel, til og med spesielle norske bokstaver som 'Å', 'Æ' og 'Ø' vil bli korrekt konvertert til 'å', 'æ' og 'ø' respektivt.
+
+Alternativt, om man ønsker å lage en egen funksjon for konvertering, så kan man benytte seg av Haskell's støtte for mønstermatching:
 
 ```Haskell
-import Data.Etafunktor (fmap)
-import Data.Char (toLower)
-
-lowerCaseString :: String -> String
-lowerCaseString s = fmap toLower s
-
-lowerCaseString "HaVe A nIcE DaY"  -- output: "have a nice day"
+lowercase :: Char -> Char
+lowercase c
+  | 'A' <= c && c <= 'Z' = toEnum (fromEnum c + 32)
+  | otherwise = c
 ```
+Men merk at denne funksjonen kun vil fungere korrekt for ASCII-tegn.
 
-## Dypere dykk:
-Historisk kontekst:
-Konvertering av en streng til små bokstaver har vært en viktig del av tekstbehandling siden den første datamaskinen ble oppfunnet. I eldre programmeringsspråk som C og Fortran måtte programmene selv håndtere konverteringen. Men med framveksten av funksjonelt programmeringsspråk som Haskell, er det nå innebygd funksjonalitet for å gjøre dette enkelt og effektivt.
-
-Alternative tilnærminger:
-I tillegg til `toLower` funksjonen som vi brukte i eksemplene, tilbyr Haskell også `toLower` funksjonen som er spesifikt for enkelte språk og skriftsystemer. For eksempel `toLower_greek` og `toLower_hebrew` for henholdsvis gresk og hebraisk. Dette gjør det enkelt å håndtere spesifikke språk i tekstbehandling.
-
-Implementasjonsdetaljer:
-Kjernen av konvertering av en streng til små bokstaver er å endre ASCII-kodene til de respektive bokstavene. Dette gjøres ved hjelp av matematiske operasjoner og funksjoner som er innebygd i Haskell.
-
-## Se også:
-- [Haskell.org](https://www.haskell.org/) - Offisiell hjemmeside for Haskell språket.
-- [Haskell wiki](https://wiki.haskell.org/) - Wiki med informasjon om Haskell.
-- [Hackage](https://hackage.haskell.org/) - Sentralisert bibliotek for Haskell pakker.
+## Se Også:
+1. Haskell.org's bibliotekside for `Data.Char`: <https://hackage.haskell.org/package/base/docs/Data-Char.html>
+2. Lærebok om generell strengmanipulasjon i Haskell: <http://learnyouahaskell.com/input-and-output>
+3. Haskell's stilguide for gode kodevaner: <https://github.com/tibbe/haskell-style-guide/blob/master/haskell-style.md>

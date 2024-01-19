@@ -1,6 +1,6 @@
 ---
 title:                "Converting a date into a string"
-html_title:           "Elixir recipe: Converting a date into a string"
+html_title:           "Arduino recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,32 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-We convert dates to strings in programming to make them human-readable and portable. Often, we store, display, or transport dates in a string format, such as `"2022-12-01"`.
+
+In Elixir programming, converting a date to a string means changing the data format from a Date data structure to a readable string format. Programmers often do this to make dates easier for humans to read and understand, or to serialize dates for storage in databases or transmission between systems.
 
 ## How to:
-We can use Elixir's built-in function `Date.to_string/1`. This function takes a Date struct and returns a string in the "YYYY-MM-DD" format. Let's dive into the simple example for better clarity:
+
+Here's a basic example of converting a date to a string in Elixir:
+
+```Elixir 
+date = Date.utc_today()
+date_string = to_string(date)
+IO.puts(date_string)
+```
+
+This script gets today's date, converts it to a string, and then outputs it. Here's what typical output might look like:
 
 ```Elixir
-date = Date.new(2022, 12, 1)
-IO.puts Date.to_string(date)
+"2022-04-01"
 ```
-
-The code will output:
-
-```
-"2022-12-01"
-```
-Easy peasy, right?
 
 ## Deep Dive
-This operation of converting date to string in Elixir has its ground rooted in the ISO 8601 standard that was introduced in 1988. This standard is used because it avoids confusion between different date formats, you no need to wonder if "12-01-2022" means December 1st or January 12th.
 
-As for alternatives, we have `NaiveDateTime.to_string/1` and `DateTime.to_string/1`, which not only enclose date but also time information. These functions are handy when you need more than just dates.
+Looking into Elixir's past, you can notice a commitment to flexible manipulation of data formats. José Valim, the creator of Elixir, worked on the Rails core team, where different ways of representing dates were crucial. This informs the flexibility of the `Date` module in Elixir.
 
-Peeking under the hood of the `Date.to_string/1`, it's interesting to know that it leans heavily on pattern matching, a technique that Elixir language borrows from the functional paradigm, making things more explicit and easy to maintain.
+Elixir has different ways or alternatives of converting a date to a string. For instance, you can use `Date.to_string/1`, or `NaiveDateTime.to_string/1` depending on your needs. These cater to naive datetimes, where you don’t consider timezones, or normal date.
 
-## See Also
-For additional context and advanced usage, here are some resources you may find helpful:
-- Full Elixir Language Documentation: https://hexdocs.pm/elixir/Kernel.html
-- Dates and Times in Elixir: https://hexdocs.pm/elixir/Date.html
-- More about ISO 8601: https://en.wikipedia.org/wiki/ISO_8601
+When converting a Date struct to a string in Elixir, the `to_string/1` function relies on the Erlang Runtime System. It’s one of the ways Elixir leverages the power of the underlying Erlang system. It uses Erlang's `:calendar` module (from OTP 20 and onwards) to handle the conversion, producing an ISO 8601-compliant string.
+
+## See Also:
+
+1. Official Elixir `Date` documentation: https://hexdocs.pm/elixir/Date.html
+2. Erlang's `:calendar` module: http://erlang.org/doc/man/calendar.html
+3. José Valim in depth discussion about dates and calendars in Elixir: https://www2.erlang-solutions.com/elixirconf6
+4. 'Learn Elixir' guide on data manipulation: https://www.learn-elixir.dev/#data-manipulation

@@ -1,7 +1,7 @@
 ---
-title:                "Unione di stringhe"
-html_title:           "Javascript: Unione di stringhe"
-simple_title:         "Unione di stringhe"
+title:                "Concatenazione di stringhe"
+html_title:           "Bash: Concatenazione di stringhe"
+simple_title:         "Concatenazione di stringhe"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,23 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché utilizzarlo?
-Il concatenamento di stringhe è un'operazione comune nel mondo della programmazione. Consiste nell'unione di due o più stringhe per formare una nuova stringa più lunga. I programmatori eseguono questa operazione per creare output più leggibili e per manipolare e gestire i dati in modi specifici.
+## Cos'è e Perché?
 
-## Come: 
+Concatenare stringhe significa unire due o più stringhe in una sola. Lo facciamo per creare frasi dinamiche, costruire parti di codice HTML, o per manipolare dati di testo in vari modi.
+
+## Come si fa:
+
+Un esempio semplice di concatenazione di stringhe in Javascript:
+
 ```Javascript
-console.log('Buongiorno ' + 'a tutti!'); 
-// Output: Buongiorno a tutti!
-let nome = 'Maria'; 
-let saluto = 'Ciao '; 
-console.log(saluto + nome); 
-// Output: Ciao Maria
+var saluto = "Ciao, ";
+var nome = "Mario!";
+var interoSaluto = saluto + nome;
+
+console.log(interoSaluto); // "Ciao, Mario!"
+```
+In Javascript moderno (ES6), possiamo utilizzare i template string per un processo più pulito ed efficace.
+
+```Javascript
+var saluto = "Ciao, ";
+var nome = "Mario!";
+var interoSaluto = `${saluto}${nome}`;
+
+console.log(interoSaluto); // "Ciao, Mario!"
 ```
 
-## Approfondimento: 
-Il concatenamento di stringhe è una tecnica ampiamente utilizzata fin dai primi giorni della programmazione. In passato, i programmatori utilizzavano il metodo "concat" per unire le stringhe, ma con l'avvento di ES6, è possibile utilizzare il simbolo "+" per concatenare le stringhe. Esistono anche alternative come il template literals e il metodo "join". Quando si concatenano stringhe, è importante tenere conto del tipo di dati utilizzati per evitare errori e problemi di codifica.
+## Approfondimento:
 
-## Vedi anche: 
-- [Documentazione di Javascript sull'operatore di concatenamento](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment)
-- [Tutorial su come concatenare stringhe in Javascript](https://www.w3schools.com/js/tryit.asp?filename=tryjs_strings_concat)
-- [Esposizione più approfondita sull'utilizzo di template literals per il concatenamento di stringhe](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+La concatenazione di stringhe è un concetto quasi antico quanto la programmazione stessa. In Javascript, dove la concisione del codice è importante, esistono metodi alternativi come il sopra menzionato template string.
+
+Un'altra alternativa è l'uso del metodo `concat()`. Questo è un po' più verboso, ma altrettanto efficace.
+
+```Javascript
+var stringa1 = "Ciao, ";
+var stringa2 = "Mario!";
+var interoSaluto = stringa1.concat(stringa2);
+
+console.log(interoSaluto); // "Ciao, Mario!"
+```
+
+Ricorda, ogni tecnica ha il suo utilizzo ideale. La concatenazione con `+` funziona meglio con poche stringhe, mentre `concat()` e template string sono più ideali per la concatenazione di molte stringhe.
+
+## Vedere anche:
+
+Per approfondire ulteriormente, ecco alcune risorse correlate:
+
+1. [Template strings](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Template_literals) - Una guida approfondita sulle stringhe di modello in Javascript sul sito web Mozilla Developer Network.
+2. [Metodo concat()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/concat) - Documento di riferimento MDN sul metodo `concat()`.
+3. [Javascript String Concatenation + vs concat()](https://www.codeproject.com/Questions/5263473/Javascript-string-concatenation-vs-concat) - Un'analisi comparativa tra `+` e `concat()`.
+4. [Javascript Info: String](https://javascript.info/string) - Una guida generale sulle stringhe in Javascript.

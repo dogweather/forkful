@@ -1,7 +1,7 @@
 ---
-title:                "Запис строки з великої літери"
-html_title:           "Java: Запис строки з великої літери"
-simple_title:         "Запис строки з великої літери"
+title:                "Великі літери в рядку"
+html_title:           "Java: Великі літери в рядку"
+simple_title:         "Великі літери в рядку"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,39 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
+##  Що це та навіщо потрібно?
+Великими буквами в Java розуміється перетворення всіх символів рядка на великі букви. Програмісти це роблять для унормованості даних або для порівняння рядків без урахування регістру.
 
-В програмуванні, просто кажучи, "капіталізація рядка" означає першу літеру кожного слова у рядку перетворити у велику літеру. Це один зі способів форматування рядків для полегшення читання. Програмісти часто капіталізують рядки для того, щоб покращити читабельність свого коду та зробити його більш зрозумілим для інших розробників.
+## Як це робити
+Метод `toUpperCase()` в Java використовується для перетворення усіх символів в рядку на великі букви. Ось приклад:
 
-Як?
-
-```Java
-public class CapitalizeString {
+```Java 
+public class Main {
   public static void main(String[] args) {
-    String name = "john doe";
-    System.out.println("Before capitalization: " + name);
-    name = name.toUpperCase();
-    System.out.println("After capitalization: " + name);
+    String s = "привіт світе!";
+    String s1 = s.toUpperCase();
+    System.out.println(s1);
   }
 }
-
-// Output:
-// Before capitalization: john doe
-// After capitalization: JOHN DOE
 ```
 
-Глибоке пір'я
+Виведе: "ПРИВІТ СВІТЕ!"
 
-Історичний контекст:
-Капіталізація рядків виникла з необхідності створення зрозумілого текстового формату для інформації, наприклад, в електронних таблицях та базах даних. У мовах програмування вона також застосовується для полегшення завантаження та швидкого знаходження інформації.
+## Поглиблений аналіз
+Рядки в Java незмінні, тому, коли ви викликаєте метод `toUpperCase()`, він створює новий рядок, а старий рядок залишається незмінним. 
 
-Альтернативи:
-Є багато інших способів форматування рядків, таких як нижній регістр, CamelCase або Snake_case, й кожен з них має свої переваги в певних ситуаціях.
+Єдиного стандартизованого способу приведення рядків до верхнього регістру не існує. Вибір конкретного методу залежатиме від ваших потреб. Зауважте, що метод `toUpperCase()` має перевагу в універсальності, але може стати проблемою, коли працюєте з рядками невеликих розмірів у великих об'ємах через невеликі, але кумулятивні витрати ресурсів.
 
-Деталі реалізації:
-У Java є вбудований метод для капіталізації рядка - `toUpperCase()`, який можна викликати на об'єкті типу `String`. Цей метод повертає новий рядок з першою літерою кожного слова у великому регістрі.
-
-Дивіться також:
-
-- [Java Strings](https://www.w3schools.com/java/java_strings.asp)
-- [String.toUpperCase() JavaDoc](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())
+## Дивіться також 
+- Java String toUpperCase(Locale locale) Method: [https://www.javatpoint.com/java-string-touppercase](https://www.javatpoint.com/java-string-touppercase)
+- The Java String Class API: [https://docs.oracle.com/javase/7/docs/api/java/lang/String.html](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)

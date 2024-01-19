@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Ruby: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Debugging er en viktig del av programmering og innebærer å finne og fikse feil i koden vår. En enkel og effektiv måte å finne disse feilene er å skrive ut informasjon om variabler, funksjoner og andre deler av koden mens programmet kjører. Dette kalles å printe debug output. Ved å gjøre dette kan vi se hva som skjer i koden vår og finne eventuelle feil som må rettes.
+## Hva & Hvorfor?
 
-## Slik gjør du det:
-For å printe debug output i Ruby, kan du bruke metoden "p" eller "puts". Metoden "p" vil gi deg en detaljert utskrift av variabler og objekter, mens "puts" vil gi deg en enkel utskrift. La oss se på et eksempel:
+Utskrift av feilretting, eller 'debug output', er en programmeringsteknikk hvor kode vises i sanntid mens programmet kjører. Det er viktig for utviklere fordi det hjelper med å spore og rette feil i koden raskt.
 
-```ruby 
-# Definerer en variabel 
-x = 10 
+## Hvordan:
+Her er hvordan du kan skrive ut debug-utdata i Ruby:
 
-# printer debug output med metoden "p" 
-p x 
-# Output: 10 
-
-# printer debug output med metoden "puts" 
-puts x 
-# Output: 10 
+```ruby
+print "debug: x har nå verdien: #{x}\n"
 ```
 
-Som du kan se, gir begge metodene samme resultat, men "p" gir oss mer informasjon om variabelen.
+Når du kjører denne koden, vil den skrive ut den nåværende verdien av x.
 
-## Dykk ned i det:
-Historisk sett har programmers brukt "puts" til å printe debug output, men "p" ble introdusert i Ruby 1.9 og har blitt mer populær på grunn av sin detaljerte utskrift. Alternativene til å printe debug output inkluderer også å bruke en logger eller debuggingsverktøy som Pry eller Byebug.
+La oss se på et eksempel med en løkke:
 
-Implementeringen av "p"-metoden i Ruby er ganske enkel. Den bruker egenskapene til "inspect" metoden for å skrive ut en string-representasjon av variabelen eller objektet. Dette er nyttig for å se alle attributter og verdier til et objekt.
+```ruby
+for x in 1..5
+  print "debug: x har nå verdien: #{x}\n"
+end
+```
+Eksempel utdata vil være:
 
-## Se også:
-For mer informasjon om debugging i Ruby, kan du sjekke ut disse kildene:
+```
+debug: x har nå verdien: 1
+debug: x har nå verdien: 2
+debug: x har nå verdien: 3
+debug: x har nå verdien: 4
+debug: x har nå verdien: 5
+```
 
-- [Ruby Docs: Debugging](https://ruby-doc.org/core-2.7.1/doc/guides/debugging.html)
-- [Pry](https://github.com/pry/pry)
-- [Byebug](https://github.com/deivid-rodriguez/byebug)
+## Dyp Dykk
+
+Historisk sett, har utskrift av debugging vært en viktig del av programmering siden dagene med hulkort og unix-terminaler. I Ruby, `puts` og `print` funksjonene er vanligvis brukt til dette formålet, men det finnes mer avanserte biblioteker som `debugger` og `byebug`.
+
+Alternativt kan du også bruke Logger biblioteket:
+
+```ruby
+require 'logger'
+
+logger = Logger.new(STDOUT)
+logger.debug("x har nå verdien: #{x}")
+```
+
+Hovedforskjellen mellom å skrive ut direkte og å bruke Logger er at Logger gir deg større kontroll over hvor og hvordan utskriften vises. Du kan også rotere logger-filer for å spare på diskplass.
+
+## Se Også
+
+Hvis du vil lære mer om debugging og utskrift av debug-utdata i Ruby, sjekk ut disse nyttige lenkene:
+
+1. [Ruby Debugging Guide](https://www.rubyguides.com/2015/06/ruby-debugging/)
+2. [The Logger Library](https://ruby-doc.org/stdlib-2.5.1/libdoc/logger/rdoc/Logger.html)
+3. [Byebug Debugger](https://github.com/deivid-rodriguez/byebug)

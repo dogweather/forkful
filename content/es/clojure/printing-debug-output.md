@@ -1,7 +1,7 @@
 ---
-title:                "Imprimiendo la salida de depuración"
-html_title:           "Clojure: Imprimiendo la salida de depuración"
-simple_title:         "Imprimiendo la salida de depuración"
+title:                "Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,36 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+# "Imprimir la Salida del Depurador en Clojure"
 
-La impresión de mensajes de depuración es un proceso en el que los programadores incluyen mensajes en su código para ayudar a identificar errores o problemas durante la ejecución. Esto les permite seguir el flujo de su programa y detectar posibles problemas antes de que se conviertan en errores críticos.
+## ¿Qué & Por Qué?  
+Imprimir la salida del depurador es una técnica en la que los programadores producen mensajes informativos en la consola para entender el funcionamiento interno de un programa. Hacemos esto para detectar errores y comprender mejor cómo se ejecuta nuestro código.
 
-## Cómo hacerlo:
-
-Para imprimir mensajes de depuración en Clojure, simplemente utilizamos la función *prn* seguida de los valores que deseamos imprimir. Por ejemplo:
-
-```Clojure
-(prn "Hola Mundo!")
-(prn (+ 2 3))
-```
-
-Esto producirá la siguiente salida en la consola:
+## ¿Cómo hacerlo?
+Vamos a utilizar la función ```println``` incorporada en el lenguaje Clojure.
 
 ```Clojure
-"Hola Mundo!"
-5
+(defn hello-world []
+  (println "¡Hola, Mundo!"))
+
+(hello-world)
 ```
 
-## Profundizando:
+Ejecutando este código tendrá la siguiente salida:
 
-La impresión de mensajes de depuración ha sido una práctica común en la programación desde los primeros días de la informática. En lugar de interrumpir la ejecución con un punto de interrupción, los programadores pueden utilizar la impresión de mensajes de depuración para seguir el flujo del programa y ver los valores de las variables en diferentes puntos del código.
+```Clojure
+¡Hola, Mundo!
+```
+También puedes imprimir varias cosas a la vez:
 
-Existen varias alternativas a la impresión de mensajes de depuración, como el uso de un depurador interactivo o una herramienta de visualización de datos. Sin embargo, la impresión de mensajes sigue siendo una técnica valiosa y sencilla que puede ser utilizada en cualquier momento.
+```Clojure
+(defn print-numbers []
+  (println "Los números son:" 1 2 3 4))
 
-En términos de implementación, la función *prn* es en realidad una forma abreviada de la función *println*, que es una función interna que imprime su argumento en la salida estándar. Además, la función *prn* también imprime una nueva línea después de cada argumento.
+(print-numbers)
+```
 
-## Ver también:
+La salida será:
 
-- [Página de documentación de Clojure](https://clojure.org/)
-- [Otra forma de imprimir mensajes en Clojure](https://clojuredocs.org/clojure.core/pr)
-- [Uso de depuradores interactivos en Clojure](https://clojuredocs.org/stateful.html#important-note-on-the-use-of-a-debugger)
+```Clojure
+Los números son: 1 2 3 4
+```
+
+## Inmersión Profunda
+
+1. **Contexto Histórico**: Desde los primeros días de la programación, la depuración ha sido esencial. Aunque los depuradores visuales modernos a menudo ofrecen una interfaz gráfica de usuario y puntos de ruptura, imprimir la salida todavía se utiliza debido a su simplicidad y conveniencia. 
+
+2. **Alternativas**: Clojure tiene librerías como 'tools.logging' y 'seesaw' para manejar registros más complejos. Estas librerías ofrecen más control y se ajustan mejor a aplicaciones en producción.
+
+3. **Detalles de Implementación**: En Clojure, `println` imprime a `*out*`, el "valor var" actual de la salida estándar. Puedes redirigir la salida a un archivo o a otra ubicación si lo prefieres. Por ejemplo:
+```Clojure
+(binding [*out*  (java.io.PrintWriter. "archivo.txt")]
+  (println "hola"))
+```
+
+## Vea También
+
+1. [Función println en Clojure](https://clojuredocs.org/clojure.core/println)
+2. [Librería 'tools.logging'](https://github.com/clojure/tools.logging)
+3. [Librería 'seesaw'](https://github.com/daveray/seesaw)

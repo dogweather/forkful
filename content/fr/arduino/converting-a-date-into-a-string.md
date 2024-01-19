@@ -1,7 +1,7 @@
 ---
-title:                "Transformation d'une date en chaîne de caractères"
-html_title:           "Arduino: Transformation d'une date en chaîne de caractères"
-simple_title:         "Transformation d'une date en chaîne de caractères"
+title:                "Convertir une date en chaîne de caractères"
+html_title:           "Gleam: Convertir une date en chaîne de caractères"
+simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,53 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Comment & Pourquoi?
+## C'est quoi & Pourquoi ?
+La conversion d'une date en chaîne est le processus de transformation d'un objet de date en une chaîne de caractères. Les programmeurs l'utilisent pour représenter la date d'une manière plus lisible ou pour une utilisation dans des formats qui ne supportent que les chaînes de caractères.
 
-## Qu'est-ce que la conversion d'une date en chaîne?
-Convertir une date en chaîne consiste à transformer une date dans un format compréhensible par les ordinateurs en une série de caractères, ou "chaîne de caractères". Cela permet aux programmeurs de manipuler et d'afficher la date de manière plus efficace dans leurs programmes.
+## Comment faire :
+Voici comment vous pouvez convertir une date en chaîne en Arduino. 
 
-## Pourquoi les programmeurs le font-ils?
-La conversion d'une date en chaîne est couramment utilisée dans les programmes informatiques, car cela permet aux utilisateurs de saisir et de traiter la date dans divers formats, sans avoir à modifier le code source du programme à chaque fois.
+```Arduino
+#include <TimeLib.h> 
 
-# Comment faire:
+void setup() {
+  Serial.begin(9600);
+  setTime(22,30,00,5,11,1955); // set time to Saturday 8:30:00am, Nov 5 1955
+}
 
-Voici un exemple de conversion de la date en chaîne en utilisant la fonction `str()` dans Arduino :
+void loop() {
+  digitalClockDisplay();
+  delay(1000);
+}
 
-```
-#include <Time.h>
-
-// Initialiser la date à convertir en chaîne
-int jour = 14;
-int mois = 03;
-int annee = 2021;
-
-// Convertir la date en chaîne
-String date = "";
-date += jour;
-date += "/";
-date += mois;
-date += "/";
-date += annee;
-
-// Afficher la date en chaîne
-Serial.println(date);
+void digitalClockDisplay() {
+  char buffer[50];
+  sprintf(buffer, "%02d:%02d:%02d %02d/%02d/%4d", hour(), minute(), second(), month(), day(), year());
+  Serial.println(buffer);
+}
 ```
 
-La sortie de ce code sera `14/03/2021`, qui est la date au format dd/mm/yyyy.
+En exécutant ce code, vous verrez l'output suivant :
 
-# Plongée en profondeur:
+```Arduino
+22:30:00 05/11/1955
+``` 
 
-## Contexte historique:
-La conversion de la date en chaîne a été rendue populaire dans les années 1970 avec l'introduction du langage de programmation C. Avant cela, les dates étaient stockées sous forme de nombres dans les langages de programmation, rendant difficile la manipulation et l'affichage de la date pour les programmeurs.
+## Plus d'informations :
+La manipulation des dates a toujours été une partie essentielle de la programmation. Il y a plusieurs façons de convertir une date en chaîne en Arduino. Ici, nous avons utilisé la fonction sprintf() pour formater notre date. On peut également utiliser la PROGMEM pour stocker le format de date, ce qui peut aider à économiser la mémoire.
 
-## Alternatives:
-Il existe plusieurs façons de convertir une date en chaîne, telles que l'utilisation de bibliothèques tierces ou l'écriture de fonctions personnalisées. Cependant, la fonction `str()` en Arduino est la méthode la plus simple et la plus couramment utilisée.
+En ce qui concerne les alternatives, l'Arduino fournit également des fonctions pour obtenir le jour de la semaine, le jour de l'année, etc. Si vous avez besoin d'une représentation de date plus complexe, il existe des bibliothèques comme la RTClib qui peuvent gérer des formats de date plus sophistiqués.
 
-## Détails de mise en œuvre:
-La fonction `str()` en Arduino convertit simplement un nombre en chaîne de caractères. Pour convertir une date complète en chaîne, il suffit de concaténer chaque élément de la date (jour, mois, année) avec des caractères tels que des barres obliques ou des tirets.
-
-# Voir aussi:
-
-Pour en savoir plus sur la conversion de la date en chaîne en Arduino, vous pouvez consulter la documentation officielle sur la fonction `str()` ici : https://www.arduino.cc/reference/en/language/variables/data-types/string/manipulation/str/.
-
-Vous pouvez également trouver des exemples de code et des tutoriels en ligne pour vous aider à comprendre et à utiliser la conversion de la date en chaîne dans vos projets Arduino.
+## Voir aussi :
+- La documentation officielle de TimeLib: http://playground.arduino.cc/code/time
+- RTClib pour des formats de date plus avancés : https://github.com/adafruit/RTClib
+- Guide de la PROGMEM : https://www.arduino.cc/reference/fr/language/variables/utilities/progmem/

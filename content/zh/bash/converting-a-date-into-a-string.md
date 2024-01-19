@@ -10,34 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是日期转换
-日期转换是指将日期数据转换为字符串格式的过程。程序员经常这样做是为了更好地处理和显示日期数据。
+## 什么和为什么？
 
-## 如何进行日期转换
-### 1. 使用date命令
+日期转换为字符串是将数字格式的日期信息转化为我们能理解的文本形式。这样做可以将日期信息以更符合人类阅读习惯的方式展示出来，也便于进行日期信息的存储和传输。
+
+## 如何做：
+
+你可以使用Bash内置的`date`命令来将日期转换为字符串。看下面的例子：
+
 ```Bash
-date +%Y%m%d  #输出格式为YYYYMMDD的日期字符串
-# 20210507
+# 当前日期和时间
+date_str=$(date)
+echo $date_str
 ```
 
-### 2. 使用date命令结合变量
-```Bash
-#定义变量并获取当前日期
-now=$(date +%Y%m%d)
-echo $now  #输出当前日期字符串
-# 20210507
+输出的样本:
+
+```
+Tue Sep 2 20:20:20 PST 2020
 ```
 
-## 深入了解
-### 1. 历史背景
-在早期的计算机系统中，日期通常以数字形式表示。随着用户需求对日期数据格式的多样性增加，日期转换逐渐成为程序员们必备的技能。
+你也可以自定义日期的格式，例如：
 
-### 2. 其他方法
-除了使用date命令进行日期转换外，还可以使用Shell脚本编写自定义函数来完成这一任务。
+```Bash
+# 自定义日期格式
+date_str=$(date +"%Y-%m-%d %H:%M:%S")
+echo $date_str
+```
 
-### 3. 实现细节
-日期转换实际上是一个字符串格式化的过程。在Bash中，可以使用date命令中的各种格式化选项来控制输出的日期格式。
+输出的样本：
 
-## 参考链接
-- Bash参考手册：https://www.gnu.org/software/bash/manual/bash.html#Date-Manipulation
-- Shell脚本教程：https://www.shellscript.sh/functions.html
+```
+2020-09-02 20:20:20
+```
+
+## 深入探索
+
+虽然Bash的 date 命令可以满足大部分的日期字符串转换需求，但它也有局限性。date命令无法处理多于4位的年份或不符合常规日期格式的输入值。对于这些情况，我们可能需要其它的工具或方法。
+
+历史上，尽管日期和时间处理在计算机科学中一直是个棘手的问题，但是各种语言和工具都提供了丰富的库来支持。例如Perl、Python和Java都具有功能强大的日期处理库。
+
+对于更复杂的日期字符串转换问题，你可能会需要使用这些库或者类似的工具来解决。
+
+## 另请参阅
+
+1. Bash手册中的[`date`命令](https://www.gnu.org/software/bash/manual/bash.html#Shell-Builtin-Commands)的详细说明。
+
+2. Linux命令行的[日期与时间处理](https://ryanstutorials.net/linuxtutorial/scripting.php#dates)
+
+3. [POSIX](https://pubs.opengroup.org/onlinepubs/009695399/utilities/date.html)规范定义的日期命令。

@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Javascript: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,31 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Å sammenligne to datoer er en vanlig oppgave innenfor programmering. Dette innebærer å sjekke om en dato er før, etter eller lik en annen dato. Det er en viktig del av mange programmer og brukes blant annet for å sortere og filtrere data.
+## Hva & Hvorfor?
 
-## Hvordan:
-Du kan sammenligne to datoer ved å bruke innebygde funksjoner i Javascript. Du kan for eksempel bruke Date-objektet og sammenligne det med en annen dato. Her er et eksempel:
+Sammenligne to datoer betyr å bestemme hvilken dato som kommer før eller etter den andre. Programmerere gjør dette for å sortere hendelser, administrere tidsavhengige data eller beregne tidsintervaller.
+
+## Hvordan gjøre det:
+
+Sjekk dette out! Komparere to datoer er så enkelt som pai i Javascript. 
 
 ```Javascript
-let date1 = new Date("2021-01-01");
-let date2 = new Date("2021-01-15");
+let date1 = new Date(2020, 11, 25);
+let date2 = new Date(2022, 11, 25);
 
-if (date1 < date2) {
-  console.log("Dato 1 er før dato 2");
-} else if (date1 > date2) {
-  console.log("Dato 1 er etter dato 2");
+if (date1 > date2) {
+   console.log("date1 er senere enn date2");
+} else if (date1 < date2) {
+   console.log("date1 er tidligere enn date2");
 } else {
-  console.log("Dato 1 er lik dato 2");
+   console.log("date1 og date2 er de samme");
+}
+```
+Output:
+
+```shell
+"date1 er tidligere enn date2"
+```
+
+## Dypdykk:
+
+Historisk sett har sammenligning av datoer vært en del av programmeringsspråk siden dagene som COBOL ble introdusert. I JavaScript, skjønt, det har vært mulig siden ECMAScript 1 hele veien tilbake i 1997. 
+
+Som for alternativer, kan du også bruke `valueOf()` eller `getTime()` funksjoner for å konvertere datoene til millisekunder siden 1. januar 1970 og deretter sammenligne tallene. 
+
+```Javascript
+if(date1.getTime() < date2.getTime()){
+   console.log("date1 er tidligere enn date2");
 }
 ```
 
-Output: Dato 1 er før dato 2
-
-## Dykk dypere:
-Det å sammenligne datoer har vært en del av programmering helt siden tidlige datamaskiner. I dag er det mange forskjellige metoder for å sammenligne datoer, og noen programmeringsspråk har spesifikke funksjoner for dette. I tillegg til å bruke innebygde funksjoner i Javascript, kan du også bruke en tredjeparts bibliotek som Moment.js for å gjøre det enklere å håndtere og sammenligne datoer.
+Når det gjelder implementeringsdetaljer, når du bruker `new Date()`, bruker JavaScript dagens dato og tid som standard. 
 
 ## Se også:
-- [Date-objektet i Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js biblioteket](https://momentjs.com/)
-- [Enkel guide til å sammenligne datoer i Javascript](https://www.digitalocean.com/community/tutorials/compare-dates-in-javascript)
+
+1. [MDN Web Docs: Date](https://developer.mozilla.org/nb-NO/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. [ECMAScript 2016: Date Objects](https://www.ecma-international.org/ecma-262/7.0/index.html#sec-date-objects)
+3. [StackOverflow: Hvordan sammenligne datoer i JavaScript](https://stackoverflow.com/questions/492994/compare-two-dates-with-javascript)

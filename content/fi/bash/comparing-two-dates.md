@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "Bash: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä Ja Miksi? 
-Vertaillessaan kahta päivämäärää, ohjelmoijat voivat selvittää aikajärjestystä tai laskea kuinka monta päivää on kulunut kahden tapahtuman välillä. Tätä taitoa käytetään usein aikaleimojen tarkistamisessa tai aikaperusteisten laskelmien suorittamisessa.
+## Mitä & Miksi?
 
-## Kuinka: 
-Koodiesimerkit ja tulosteet alla olevilla ```Bash``` koodilohkoilla.
+Vertaaminen kahden päivämäärän kesken on prosessi, jossa tutkitaan kahden eri ajanhetken suhteellista sijoittumista aikajanalla (onko toinen aikaisempi vai myöhäisempi kuin toinen). Ohjelmoijat tekevät tämän yleisesti lokaamaan tapahtumia aikajanalla, aikarajoitusten hallintaan tai tehdäkseen aikaleimojen välisiä matemaattisia laskelmia.
 
-### Esimerkki 1:
-```Bash 
-päivä1 = date -d "11/18/2021" +%s 
-päivä2 = date -d "11/15/2021" +%s 
-eros = $(($(($päivä1 - $päivä2)) / 86400))
-echo "Päiviä päivämäärän 11/15/2021 ja 11/18/2021 välillä on $eros päivänä."
-```
-Tuloste:
-```
-Päiviä päivämäärän 11/15/2021 ja 11/18/2021 välillä on 3 päivää.
-```
+## Kuinka tehdä:
 
-### Esimerkki 2:
+Voit verrata kahta päivämäärää käyttäen Bash-skriptauskieltä tässä esimerkissä:
+
 ```Bash
-päivä1 = date -d "now" +%s 
-päivä2 = date -d "12/25/2021" +%s 
-jos [ $((päivä1 <päivä2)) -eq 1 ] 
-sitten echo "Jouluaattoon on $((($(($päivä2 - $päivä1))) / 86400)) päivää."
-```
-Tulote: 
-```
-Jouluaattoon on 39 päivää.
+# Päivämäärien luominen
+PVM1=$(date -d"2021-12-31" +%s)
+PVM2=$(date -d"2022-01-01" +%s)
+
+# Vertailu
+if [ "${PVM1}" -gt "${PVM2}" ]; then
+    echo "Päivämäärä 1 on suurempi (myöhempi) kuin päivämäärä 2."
+elif [ "${PVM1}" -eq "${PVM2}" ]; then
+    echo "Päivämäärät ovat samat."
+else
+    echo "Päivämäärä 2 on suurempi (myöhempi) kuin päivämäärä 1."
+fi
 ```
 
-## Syväsukellus:
-Vertaamalla kahta päivämäärää voimme selvittää mitkä päivämäärät ovat aiemmin ja mitkä myöhemmin. Tämä on erityisen hyödyllistä päivämäärän aikaleimojen tarkistamisessa, kuten tapahtumien järjestystä tai keston laskemista. Bashissa vertaamme päivämääriä UNIX-aikaleimoiksi, jotka edustavat sekunteja, jotka ovat kuluneet 1. tammikuuta 1970 klo 00.00 UTC:sta tähän päivään asti. Toinen tapa vertailla päivämääriä on käyttää dateutil-moduulia Pythonissa.
+## Syvällinen tarkastelu:
+
+Historiallisesti päivämäärien vertailu ei ole aina ollut yksinkertainen prosessi johtuen erilaisista päivämäärämuodoista ja tietokonejärjestelmien erilaisesta käsittelystä. Bash on ollut yksi työkalu, joka on yksinkertaistanut päivämäärien käsittelyn Unix-pohjaisissa järjestelmissä.
+
+Vaihtoehtoja Bashille päivämäärien vertailussa ovat mm. Python, Java, php, jne. Näissä voidaan käyttää eri päivämääräluokkia päivämäärävertailuun, joissa saatavilla on myös monimutkaisempia toimintoja.
+
+Vertailu Bashissa tapahtuu muuntamalla päivämäärät Unix-aikaleimoiksi (sekuntien määrä 1.1.1970 klo 00.00.00 jälkeen) ja vertaamalla sitten näitä aikaleimoja.
 
 ## Katso myös:
-- "How to Compare Dates in Bash" (https://www.baeldung.com/linux/bash-compare-dates)
-- "The dateutil Module in Python" (https://dateutil.readthedocs.io/en/stable/)
-- "Understanding UNIX Time" (https://www.epochconverter.com/)
+
+- Bash-ohjekirja: http://www.gnu.org/software/bash/manual/bash.html
+- Päivämääränkäsittelyn historiasta: https://en.wikipedia.org/wiki/System_time
+- Alternatives - päivämäärän käsittely Pythonilla: https://docs.python.org/3/library/datetime.html

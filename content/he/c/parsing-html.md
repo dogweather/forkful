@@ -1,7 +1,7 @@
 ---
-title:                "פרשים את ה־HTML"
-html_title:           "C: פרשים את ה־HTML"
-simple_title:         "פרשים את ה־HTML"
+title:                "ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -11,46 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הִיפֶּרְטִינְג (parsing) של ה-HTML הוא תהליך שבו מתבצעת קריאה וניתוח של קוד ה-HTML בכדי להבין וליישם את המידע המכיל בו. תהליך זה חשוב מאוד למתכנתים שמעוניינים לעבוד עם אתרי אינטרנט או לכתוב כלי עזר כגון ניתוחי אתרים אוטומטיים.
+עיבוד HTML הוא התהליך שבו מנתחים קוד HTML ומשנים אותו למודל מבנה שאפשר לתכנים לעבוד איתו בקלות יותר. במערכות רבות, זה דרך בטוחה ויעילה לשנות את התוכן והמבנה של דף האינטרנט.
 
 ## איך לעשות:
-```
-// כאן מופיע קוד בשפת C 
-// לדוגמה, פונקציה שלדאגת קריאה ופרסור של דף HTML באמצעות ספריית libxml2
+נסקור בקוד C איך לנתח מסמך HTML באמצעות הספרייה Gumbo. Gumbo היא ספרייה של C לניתוח HTML שנוצרה על ידי Google.
+
+```C
 #include <stdio.h>
-#include <libxml/parser.h>
+#include <gumbo.h>
 
-int main()
-{
-  // הגדרת משתנים רלוונטים
-  xmlDoc *doc = NULL;
-  xmlNode *root_element = NULL;
+void search_for_links(GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
+    GumboAttribute* href;
+    if (node->v.element.tag == GUMBO_TAG_A &&
+    (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
+        printf("%s\n", href->value);
+    }
 
-  // קריאת דף HTML שבו נרצה לבצע פרסור
-  doc = xmlReadFile("example.html", NULL, 0);
+    GumboVector* children = &node->v.element.children;
+    for (unsigned int i = 0; i < children->length; ++i) {
+        search_for_links(children->data[i]);
+    }
+}
 
-  // בדיקה שהקריאה התבצעה בהצלחה
-  if (doc == NULL)
-  {
-    printf("קריאת הדף נכשלה.");
-    return 1;
-  }
-
-  // צימוד לאירועים של הדף ובחירת האלמנט הראשון
-  root_element = xmlDocGetRootElement(doc);
-
-  // הדפסת תוצאות הקריאה והפרסור של הדף HTML
-  printf("שם האלמנט הראשי: %s\n", root_element->name);
-
-  // השתחררות מזיכרון פנימי
-  xmlFreeDoc(doc);
-
-  return 0;
+int main() {
+    GumboOutput* output = gumbo_parse("<a href='www.google.com'>Google</a>");
+    search_for_links(output->root);
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
 }
 ```
+התוצאה הצפויה היא קישור לגוגל: www.google.com
 
-## נכיר בעומק:
-תהליך הפרסור של HTML קיים כבר מאז זמן רב והתחיל במטרה להפיק מידע מדויק מקוד ה-HTML בכדי לאפשר לכלי חיפוש כמו גוגל לבנות את המפתחות לניווט באינטרנט. כיום, ישנן אפשרויות רבות לפרסור HTML כגון באמצעות כלי חיצוני כמו פייתון או JavaScript ולא רק עם שפת תכנות גנרית כמו C.
+## צלילה עמוקה
+פעם, הכיוון הכללי בניתוח HTML היה לכתוב את המנתח שלך. זה לא תמיד היה יעיל ותמיד הכיל סיכונים של שגיאות. כיום, ישנן ספריות רבות, כמו Gumbo של Google, שהוקמו כדי לפשט את התהליך ולהפוך אותו למדויק יותר. אפשר לעבוד עם XML ושפות פיתוח אחרות כמו Python במקום C אם זה מתאים לצרכים שלך.
 
-## ראו גם:
-למידה נוספת על הפעולות של פרסור HTML בשפת C והאפשרויות השונות שלו ניתן למצוא בכתב אחר: https://www.geeksforgeeks.org/web-scrapping-c-programming-language/
+## ראה גם
+- [מסמך ה-W3C על ניתוח HTML](https://www.w3.org/TR/html51/syntax.html#parsing)
+- [מדריך למנתח ה-HTML של Google Gumbo](https://github.com/google/gumbo-parser)
+- [דוגמאות לשימוש בספריית Gumbo של Google](https://github.com/google/gumbo-parser/tree/master/examples)

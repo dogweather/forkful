@@ -1,6 +1,6 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "C: Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
 simple_title:         "Interpolering av en streng"
 programming_language: "C"
 category:             "C"
@@ -11,38 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Interpolering av en streng i C-programmering er det å sette verdier inn i en streng ved kjøring. Dette gjør at programmene våre kan generere dynamisk og tilpasset tekst, noe som gir høyere fleksibilitet og brukervennlighet.
 
-Interpolering av strenger er en metode for å sette inn dynamiske verdier i ulike tekststrenger. Dette gjøres ved å kombinere statiske tekststrenger med variabler som inneholder informasjon som trengs i teksten. Dette er en nyttig teknikk som gjør programmering mer fleksibelt og effektivt.
-
-## Hvordan:
-
-Interpolering av strenger i C gjøres ved å bruke spesielle formatteringsmellomrom, kalt "placeholders". Disse mellomrommene markeres med et prosenttegn (%) og en spesifisert angivelse av datatypen som skal plasseres der.
+## Sånn gjør du:
+La oss se på hvordan interpolere en streng i C ved hjelp av `sprintf` funksjonen.
 
 ```C
-int alder = 25;
-char *navn = "Per";
+#include <stdio.h>
 
-printf("%s er %d år gammel.", navn, alder);
+int main() {
+    char buffer[50];
+    int a = 10;
+    float b = 20.5;
+
+    sprintf(buffer, "Int: %d, Float: %f", a, b);
+    printf("%s\n", buffer);
+
+    return 0;
+}
 ```
 
-Dette vil gi følgende utput:
+Dette vil gi følgende output:
 
 ```C
-Per er 25 år gammel.
+Int: 10, Float: 20.500000
 ```
 
-## Dypdykk:
+## Dybdedykk
+Historisk sett har C programmering ikke en innebygd strenginterpoleringsfunksjon som mange nyere språk. Men med bruk av funksjonene som `sprintf`, kan vi oppnå dette.
 
-Interpolering av strenger i C ble introdusert i versjon C99 av programmeringsspråket. Tidligere måtte man bruke funksjoner som `sprintf` eller `strcat` for å oppnå samme resultat, noe som var mer komplisert og ineffektivt.
+Alternativt kan `snprintf` brukes for å unngå buffer overflow, der andrepunktet er maksimal størrelse på strengen.
 
-Det finnes også alternative metoder for å sette inn variabler i tekststrenger, for eksempel konkatenering ved hjelp av `+`-operatoren. Men interpolering er å foretrekke da det gir en mer ryddig og oversiktlig kode.
+Når det gjelder implementeringsdetaljer, `sprintf` fungerer ved å formatere en streng og lagre den i buffervariabelen. `%d` og `%f` er format spesifiseringer for henholdsvis int og float.
 
-Implementeringen av interpolering av strenger i C er basert på en del av språket som heter variadiske funksjoner, som tillater bruk av et variabelt antall argumenter.
+## Se også 
+For mer dyptgående detaljer og alternative metoder, se disse kildene:
 
-## Se også:
-
-For mer informasjon og eksempler på interpolering av strenger i C, se:
-
-- [C99 Standard at ISO.org](https://www.iso.org/standard/29237.html)
-- [C99 Standard at ISO.org (PDF)](https://www.iso.org/standard/29237.html?browse=tc)
-- [C String Formatting at TutorialsPoint](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)
+* https://www.cplusplus.com/reference/cstdio/sprintf/
+* https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm
+* https://www.geeksforgeeks.org/snprintf-c-library/

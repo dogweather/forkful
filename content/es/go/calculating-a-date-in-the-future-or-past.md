@@ -10,29 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Calcular una fecha en el futuro o en el pasado es una tarea común entre los programadores. Es el proceso de determinar una fecha específica que se encuentra en el futuro o en el pasado, basado en ciertos parámetros dados. Los programadores lo hacen para facilitar la planificación y la organización de tareas, así como para realizar cálculos en aplicaciones como calendarios y recordatorios.
+## ¿Qué y Por qué?
 
-## Cómo:
-Hay varias formas de calcular fechas en el futuro o en el pasado en Go. Una manera es utilizando la función `AddDate()` de la librería `time`. Por ejemplo, para obtener la fecha de mañana, se puede escribir:
+Calcular una fecha en el futuro o el pasado es determinar una fecha específica apartándose de una fecha inicial dada. Nosotros, como programadores, lo hacemos para actividades como temporización de eventos, rastreo de cambios y planificación de recordatorios.
 
-```Go
-t := time.Now()
-tomorrow := t.AddDate(0, 0, 1)
-```
-Esto añadirá un día a la fecha actual y devolverá la fecha de mañana en formato de tiempo.
+## ¿Cómo hacerlo?
 
-Otra forma de calcular fechas es utilizando la librería `date` que proporciona la función `daysIn()`. Esta función toma un año y mes como parámetros y devuelve el número de días en ese mes. Por ejemplo:
+Aquí está un pedazo de código básico en Go que se usa para calcular fechas en el futuro/pasado.
 
 ```Go
-daysInMonth := date.DaysIn(2021, 2)
+paquete main 
+
+importar (
+    "fmt"
+    "time"
+)
+
+func main() {
+    hoy := time.Now()
+
+    fmt.Println("Hoy es :", hoy)
+
+    // Calcular una fecha 3 días desde ahora.
+    futuro := hoy.Add(time.Hour * 24 * 3)
+
+    fmt.Println("3 días desde ahora :", futuro)
+
+    // Calcular una fecha 3 días antes.
+    pasado := hoy.Add(-time.Hour * 24 * 3)
+
+    fmt.Println("3 días atrás:", pasado)
+}
 ```
-Este código devolverá el número de días en el mes de febrero de 2021, en este caso 28.
+Salida de muestra:
 
-## Deep Dive:
-Calcular fechas en el futuro o en el pasado es una funcionalidad que ha sido necesaria desde los primeros sistemas computacionales. En los primeros lenguajes de programación, como el Fortran, se utilizaban técnicas matemáticas complejas para realizar estos cálculos. Sin embargo, con el tiempo, se han desarrollado librerías y funciones más intuitivas y fáciles de usar, como en Go.
+```Go
+Hoy es: 2024-01-24 12:00:00 +0000 UTC
+3 días desde ahora: 2024-01-27 12:00:00 +0000 UTC
+3 días atrás: 2024-01-21 12:00:00 +0000 UTC
+```
 
-Existen otras librerías y funciones en Go que permiten realizar cálculos de fechas más específicos y complejos, como el paquete `time.Parse()` que permite convertir una cadena de texto en una fecha en formato de tiempo. Además, también es posible calcular fechas en zonas horarias específicas utilizando la función `in()` del paquete `time`.
+## Análisis en profundidad:
 
-## See Also:
-Es posible encontrar más información sobre el cálculo de fechas en Go en la documentación oficial de Go y en la comunidad en línea, como en el foro de Go o en sitios como Stack Overflow. También hay varios tutoriales y videos disponibles en línea que proporcionan ejemplos detallados y explicaciones sobre cómo realizar cálculos de fechas en Go. ¡Explora y encuentra el método que mejor funcione para ti!
+1. Contexto histórico: La capacidad de calcular fechas en el futuro o el pasado ha sido una necesidad en la programación desde sus primeros días. Originalmente se hizo a través de operaciones manualmente intensivas usando fechas Julianas o ticks del reloj. Sin embargo, con lenguajes modernos como Go, esta tarea se ha simplificado enormemente.
+
+2. Alternativas: Además del método mostrado arriba, también puedes usar la función `AddDate` para operaciones más complejas. 
+
+```Go
+pasado := hoy.AddDate(0, 0, -3) // hacia atrás por 3 días
+```
+3. Detalles de implementación: La hora y la fecha en Go se manejan usando el paquete `time`. La funcionalidad para agregar o sustraer tiempo está incorporada en este paquete. La duración del tiempo (en este caso, un día) se especifica utilizando las constantes de tiempo disponibles en el paquete `time`. La función `Add` luego toma esta duración y devuelve la nueva fecha/hora.
+
+## Ver también:
+
+Para obtener más información, consulte la documentación oficial de Go sobre el paquete `time`: https://golang.org/pkg/time/ y otros recursos como:
+
+- Método de adición de tiempo: https://golang.org/pkg/time/#Time.Add
+- Método de adición de fecha: https://golang.org/pkg/time/#Time.AddDate

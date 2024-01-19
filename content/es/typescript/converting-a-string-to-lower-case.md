@@ -1,6 +1,6 @@
 ---
 title:                "Convirtiendo una cadena a minúsculas"
-html_title:           "TypeScript: Convirtiendo una cadena a minúsculas"
+html_title:           "Bash: Convirtiendo una cadena a minúsculas"
 simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,22 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
-Convertir una cadena de texto a minúsculas consiste en cambiar todas las letras mayúsculas de una cadena de texto por sus correspondientes minúsculas. Los programadores suelen hacerlo para normalizar y estandarizar los datos, ya que en algunos casos es necesario que las cadenas estén en el mismo formato para poder compararlas o procesarlas correctamente.
+## ¿Qué y Por Qué?
+La conversión de un string a minúsculas es un proceso que cambia todos los caracteres alfabéticos en una cadena de texto a minúsculas. Los programadores lo hacen para normalizar datos, facilitar las comparaciones y prevenir errores.
 
-## Cómo hacerlo:
+## Como hacer:
+Según TypeScript, se puede convertir un string a minúsculas usando el método `toLowerCase()`. Aquí tienes un ejemplo:
+
 ```TypeScript
-const cadena = "EJEMPLO DE CADENA";
-const cadenaMinuscula = cadena.toLowerCase();
-
-console.log(cadenaMinuscula); // Salida: "ejemplo de cadena"
+let str = "Hola Mundo!";
+let lowerStr = str.toLowerCase();
+console.log(lowerStr);  // Output: "hola mundo!"
+```
+Asímismo, puedes convertir a minúsculas directamente en la línea de salida:
+```TypeScript
+console.log("Hola Mundo!".toLowerCase());  // Output: "hola mundo!"
 ```
 
-## Profundizando:
-Existen varias formas de convertir una cadena a minúsculas, como por ejemplo utilizando el método `toLowerCase()` o mediante el uso del método `replace()` combinado con expresiones regulares. También es importante tener en cuenta que este proceso puede afectar a los caracteres especiales de algunos idiomas, por lo que es necesario considerar la codificación y el idioma de la cadena.
+## Inmersión Profunda
+Desde los comienzos de la computación se han utilizado los métodos de conversión a minúsculas para asegurar la consistencia en los datos. A efectos de implementación, el método `toLowerCase()` simplemente analiza cada carácter en el string y, si es una letra mayúscula, lo reemplaza por su correspondiente minúscula.
 
-En cuanto al rendimiento, convertir una cadena a minúsculas puede ser un proceso relativamente costoso, ya que cada carácter debe ser evaluado y cambiado. Por lo tanto, es importante tener en cuenta el tamaño de las cadenas que se están procesando para no afectar negativamente el rendimiento de una aplicación.
+En JavaScript, del cual TypeScript es un superconjunto, existen métodos alternativos como `toLocaleLowerCase()`, que respeta las reglas de localización de texto; en lenguajes donde ciertas letras pueden cambiar dependiendo de la localización, este método puede ser útil.
 
-## Ver también:
-- [Método toLowerCase() en la documentación de TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#string-operations)
-- [Alternativas para convertir cadenas a minúsculas en TypeScript](https://www.codecademy.com/articles/alternatives-to-uppercase-string)
+## Ver También
+1. [Método toLowerCase() - Mozilla Developer Network](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+2. [Método toLocaleLowerCase() - Microsoft Docs](https://docs.microsoft.com/es-es/javascript/api/built-ins/string/tolocalelowercase?view=javascript-1.6)

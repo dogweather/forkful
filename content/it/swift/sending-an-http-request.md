@@ -1,7 +1,7 @@
 ---
-title:                "Inviare una richiesta http."
-html_title:           "Swift: Inviare una richiesta http."
-simple_title:         "Inviare una richiesta http."
+title:                "Inviare una richiesta http"
+html_title:           "C++: Inviare una richiesta http"
+simple_title:         "Inviare una richiesta http"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-In poche parole, inviare una richiesta HTTP significa comunicare con un server web per ottenere o mandare dati. I programmatori lo fanno per creare applicazioni web, servizi RESTful, e molto altro.
+## Cos'è e Perché?
+
+Inviare una richiesta HTTP è un modo per i programmi di comunicare tra loro attraverso la rete. I programmatori lo usano comunemente per richiedere dati da server web e API.
 
 ## Come fare:
-Un esempio di codice semplice per inviare una richiesta GET ad un sito web:
+
+Ecco un semplice esempio di come inviare una richiesta HTTP in Swift.-
 
 ```Swift
-let url = URL(string: "https://www.example.com")!
-let request = URLRequest(url: url)
-let session = URLSession.shared
+import Foundation
 
-session.dataTask(with: request) { data, response, error in
-    if let data = data, let response = response {
-        print("Il server ha risposto con status code \(response.statusCode)")
-        print("Il contenuto della risposta è \(String(data: data, encoding: .utf8)!)")
-    } else if let error = error {
-        print(error.localizedDescription)
+let url = URL(string: "https://miositoapi.com")!
+let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+    if let error = error {
+        print("Errore: \(error)")
+    } else if let data = data {
+        let str = String(data: data, encoding: .utf8)
+        print("Risposta ricevuta:\n \(str!)")
     }
-}.resume()
+}
+
+task.resume()
 ```
 
-Output:
+Questo codice stampa la risposta ricevuta dalla richiesta HTTP.
 
-```
-Il server ha risposto con status code 200
-Il contenuto della risposta è <html>...</html>
-```
+## Approfondimento:
 
-## Profondità Inesplorata:
-La richiesta HTTP è una tecnica chiave nella programmazione web, utilizzata per comunicare con server da applicazioni client. Ci sono alternative come WebSocket e TCP sockets, ma sono più complesse da implementare. In Swift, è possibile utilizzare la libreria nativa URLSession o librerie di terze parti come Alamofire per gestire la comunicazione HTTP.
+1) **Contesto storico**: HTTP nasce nel 1991 come protocollo di rete essenziale per il funzionamento del web. La capacità di inviare richieste HTTP è un aspetto centrale della maggior parte delle applicazioni web e mobile.
 
-## Vedi anche:
-- [Introduzione a HTTP](https://developer.mozilla.org/it/docs/Web/HTTP/Overview)
-- [Documentazione URLSession di Apple](https://developer.apple.com/documentation/foundation/urlsession)
-- [Documentazione Alamofire](https://github.com/Alamofire/Alamofire)
+2) **Alternative**: Altre opzioni per inviare richieste di rete includono protocolli come FTP e WebSocket. Tuttavia, HTTP rimane la scelta più popolare grazie alla sua ampia adozione e supporto.
+
+3) **Dettagli di implementazione**: Quando inviamo una richiesta HTTP in Swift, facciamo affidamento su URLSession, uno degli strumenti di networking fondamentali in iOS. Le richieste possono essere personalizzate attraverso l'aggiunta di intestazioni, la definizione di metodi di richiesta e l'inclusione di dati nel corpo della richiesta.
+
+## Vedere anche: 
+
+Per ulteriori informazioni sul networking in Swift, consiglio i seguenti link:
+
+- Documentazione ufficiale Apple URLSession: [link](https://developer.apple.com/documentation/foundation/urlsession)
+- Corso su "Networking in Swift" da Ray Wenderlich: [link](https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started)
+  (nota: in inglese)
+- Articolo "HTTP Requests in Swift": [link](https://fluffy.es/http-request-in-swift/)
+  (nota: in inglese)

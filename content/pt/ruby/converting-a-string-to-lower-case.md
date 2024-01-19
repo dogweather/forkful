@@ -1,7 +1,7 @@
 ---
-title:                "Convertendo uma cadeia de caracteres para letras minúsculas"
-html_title:           "Ruby: Convertendo uma cadeia de caracteres para letras minúsculas"
-simple_title:         "Convertendo uma cadeia de caracteres para letras minúsculas"
+title:                "Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer?
-Converter uma string para minúsculas é um processo em que todas as letras maiúsculas em uma string são convertidas para letras minúsculas. Programadores geralmente fazem isso para padronizar as strings em seu código e torná-las mais fáceis de comparar.
+## O quê e Por quê?
+
+Converter uma string para letras minúsculas é uma ação comum no processamento de texto em programação. Normalmente, é feito para garantir a consistência ao comparar ou manipular strings.
 
 ## Como fazer:
-Existem várias maneiras de converter uma string para minúsculas em Ruby. Aqui estão alguns exemplos:
+
+Vamos usar o método .downcase em Ruby para converter todas as letras de uma string para minúsculas. Aqui está um exemplo:
 
 ```Ruby
-# Método 1:
-string = "EXEMPLO"
-puts string.downcase
-# Saída: exemplo
-
-# Método 2:
-string = "OUTRO EXEMPLO"
-puts string.downcase!
-# Saída: outro exemplo (a string original foi alterada)
-
-# Método 3:
-string = "MAIS UM EXEMPLO"
-puts string.mb_chars.downcase.to_s
-# Saída: mais um exemplo
+nome = "SEU NOME"
+nome_minusculo = nome.downcase
+puts nome_minusculo # Exibirá "seu nome"
 ```
 
-## Profundando:
-O método downcase foi introduzido na versão 1.9 do Ruby e é uma abreviação do método downcase!. Este método não é destrutivo, ou seja, ele não altera a string original, mas retorna uma nova string com letras minúsculas. O método downcase! é destrutivo e altera a string original.
+## Deep Dive
 
-Outra maneira de converter uma string para minúsculas é usando o método mb_chars, que lida melhor com caracteres multibyte. Este método é mais útil quando estamos trabalhando com strings em idiomas que utilizam caracteres especiais.
+A necessidade de converter strings para minúsculas remonta aos primeiros dias da computação. É uma forma de normalizar os dados de entrada para evitar erros causados por variações indesejadas na capitalização.
+
+Existem algumas alternativas para o método .downcase em Ruby. Por exemplo, podemos usar o método .lowercase mas ele não é tão comumente usado. Outra opção é utilizar expressões regulares, no entanto, .downcase é normalmente a opção mais eficiente.
+
+Por baixo dos panos, o método .downcase no Ruby verifica cada caractere da string. Se o caractere for uma letra maiúscula, ele a substitui pela mesma letra, mas em minúscula. 
 
 ## Veja também:
-- Documentação do Ruby sobre o método downcase: https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase
-- Documentação do Ruby sobre o método mb_chars: https://ruby-doc.org/core-2.7.1/ActiveSupport/Multibyte/Chars.html#method-i-downcase
+
+Para saber mais sobre o processamento de strings em Ruby, confira os seguintes links:
+
+- [Ruby Doc - Downcase](https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase)
+- [Ruby Guides - Strings](https://www.rubyguides.com/2017/07/ruby-strings/)

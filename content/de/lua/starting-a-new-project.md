@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "Lua: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Getting Started"
@@ -10,47 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Eine neue Programm starten bedeutet, dass man ein neues Projekt beginnt, in dem man eine Software bzw. ein Programm entwickelt. Programmierer tun dies, um neue Ideen umzusetzen, bestehende Probleme zu lösen oder um ihre Fähigkeiten zu verbessern.
+# Erste Schritte in Lua: Ein neues Projekt beginnen
 
-## Wie geht's:
+## Was und Warum?
 
-Die folgenden Beispiele zeigen, wie man in Lua ein neues Projekt starten kann und welches Ergebnis dabei erzielt wird. Alle Beispiele sind in Codeblöcken dargestellt und müssen daher in einem Code-Editor ausgeführt werden.
+Ein neues Projekt zu starten bedeutet, mit einer frischen Codebasis zu beginnen, die spezifische Anforderungen erfüllt. Programmierer starten ständig neue Projekte, um innovative Lösungen oder Tools zu entwickeln und um ein tieferes Verständnis ihrer ausgewählten Programmiersprache zu erlangen.
+
+## Wie geht das:
+
+Einstieg mit einem simplen "Hallo Welt!"-Beispiel.
 
 ```Lua
--- Beispiel 1: Ein einfacher "Hello World" Programm
-print("Hello World")
+print("Hallo Welt!")
 ```
-Ausgabe: `Hello World`
+
+Führe das Programm aus und erwarte folgende Ausgabe:
 
 ```Lua
--- Beispiel 2: Eine Variable definieren und anzeigen
-local message = "Willkommen!"
-print(message)
+Hallo Welt!
 ```
-Ausgabe: `Willkommen!`
+
+Und hier ist ein weiteres Beispiel, in dem wir eine einfache Funktion in Lua erstellen:
 
 ```Lua
--- Beispiel 3: Eine Schleife durchlaufen lassen und Werte ausgeben
-for i = 1, 5 do
-  print("Zahl: " .. i)
+function willkommen(name)
+    return "Hallo " .. name
 end
-```
-Ausgabe: 
-```
-Zahl: 1
-Zahl: 2
-Zahl: 3
-Zahl: 4
-Zahl: 5
+
+print(willkommen("Max"))
 ```
 
-## Tief tauchen:
+Die Ausgabe des Programms sollte sein:
 
-Lua wurde in den 1990er Jahren von Roberto Ierusalimschy, Waldemar Celes und Luiz Henrique de Figueiredo entwickelt. Es ist eine leichtgewichtige, interpretierte Programmiersprache, die sich durch ihre Einfachheit und Flexibilität auszeichnet. Alternativen zu Lua sind zum Beispiel Python, JavaScript oder Ruby. Um ein neues Projekt in Lua zu starten, benötigt man einen Texteditor und die Lua Runtime Environment, die auf der offiziellen Website von Lua heruntergeladen werden kann.
+```Lua
+Hallo Max
+```
+
+## Tief dive:
+
+Historisch gesehen wurde die Lua-Programmiersprache in den frühen 90er Jahren entwickelt, um Softwareentwicklung für eingebettete Systeme und Client-Server-Anwendungen zu vereinfachen. Es gibt natürlich Alternativen für die Programmierung wie Python, Java oder C++, aber Lua unterscheidet sich durch seine einfache Syntax und Flexibilität. 
+
+Wenn du ein neues Projekt startest, empfiehlt es sich, zunächst deine Anforderungen klar zu definieren und die passende Umgebung einzurichten. Lua hat ein leichtgewichtiges, effizientes Laufzeitsystem und benötigt daher wenig Ressourcen. Um ein Lua-Projekt zu starten, muss lediglich ein Lua-Interpreter installiert werden, danach kannst du direkt mit dem Coden beginnen.
 
 ## Siehe auch:
 
-- [Offizielle Lua Website](https://www.lua.org)
-- [Lua Einführung](https://learnxinyminutes.com/docs/lua/)
-- [Lua Tutorials](https://www.tutorialspoint.com/lua/)
+Verweise auf weiterführende Quellen, die zum Verständnis von Lua und seiner Verwendung in Projekten beitragen können, finden sich hier:
+
+1. [Offizielle Lua Website](https://www.lua.org/)
+2. [Lua Benutzer Wiki](http://lua-users.org/wiki/)
+3. [Programmieren in Lua (Erste Auflage)](https://www.lua.org/pil/)
+4. [Lua Tutorial auf tutorialspoint](https://www.tutorialspoint.com/lua/index.htm)

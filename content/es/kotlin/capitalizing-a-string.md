@@ -1,7 +1,7 @@
 ---
-title:                "Capitalización de una cadena"
-html_title:           "Kotlin: Capitalización de una cadena"
-simple_title:         "Capitalización de una cadena"
+title:                "Capitalizando una cadena de texto"
+html_title:           "Kotlin: Capitalizando una cadena de texto"
+simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,25 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Capitalizar una cadena de texto se refiere a hacer que la primera letra de cada palabra en la cadena sea una letra mayúscula. Los programadores lo hacen para mejorar la legibilidad y presentación de textos en sus programas.
+Capitalizar una cadena significa convertir la primera letra de cada palabra en mayúsculas. Los programadores lo hacen para mejorar la legibilidad y la presentación visual del texto en las interfaces de usuario.
 
 ## Cómo hacerlo:
 ```Kotlin
-val texto = "hola, ¿cómo estás?"
-val textoCapitalizado = texto.capitalize()
-
-println(textoCapitalizado)
+val cadena = "hola, mundo kotlin"
+val cadenaCapitalizada = cadena.capitalize()
+println(cadenaCapitalizada)
 ```
+Salida:
+```
+Hola, mundo kotlin
+```
+En la cadena de ejemplos, `"hola, mundo kotlin"` se convirtió en `"Hola, mundo kotlin"` después de usar el método `capitalize()`.
 
-Output:
-Hola, ¿cómo estás?
+## Análisis Profundo
+Kotlin hereda muchas de sus funciones de manejo de cadenas de Java, incluida la función para capitalizar una cadena. Como alternativa, puedes usar la función `toLowerCase()`, que convierte todas las letras de la cadena a minúsculas, y luego convertir solo la primera letra a mayúsculas. Cabe destacar que solo se capitaliza la primera letra del primer valor de la cadena, y no cada palabra individual.
 
-## Profundizando:
-Existen diferentes formas de capitalizar una cadena en Kotlin dependiendo de lo que se quiere lograr. Algunas alternativas incluyen `toLowerCase()`, `toUpperCase()`, `replaceFirstChar()`, entre otras. Además, es importante tener en cuenta el idioma y las reglas de capitalización de cada lenguaje para obtener los resultados deseados.
+```Kotlin
+val cadena = "hola, mundo kotlin"
+val primeraLetra = cadena[0].uppercase()
+val restoDeCadena = cadena.substring(1)
+val cadenaCapitalizada = primeraLetra + restoDeCadena
+println(cadenaCapitalizada)
+```
+Salida:
+```
+Hola, mundo kotlin
+```
+Mencionar también que la función `uppercase()` está disponible a partir de Kotlin 1.5, reemplazando la función `toUpperCase()`.
 
-## Ver también:
-- [Kotlin Doc - Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [The Ultimate Guide to Kotlin Strings](https://medium.com/swlh/the-ultimate-guide-to-kotlin-strings-361bb338788a)
-- [Formato de texto: mayúsculas, minúsculas y capitalización en Kotlin](https://medium.com/@amaljugale/apps4all-tutorial-de-kotlin-6-formato-de-texto-may%C3%BAsculas-min%C3%BAsculas-y-capitalizaci%C3%B3n-8534d581698c)
+## Ver También
+Consulta la documentación oficial de Kotlin para más detalles:
+1. [capitalize()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+2. [toUpperCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
+3. [toLowerCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+4. [uppercase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/uppercase.html)

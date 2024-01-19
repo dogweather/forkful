@@ -10,29 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å konvertere en streng til små bokstaver betyr å endre alle bokstavene i strengen til deres tilsvarende små bokstaver. Dette er nyttig fordi det gjør det lettere å sammenligne strenger og søke etter bestemte tegn eller ord. Programmere gjør dette for å gjøre koden mer effektiv og lesbart.
+## Hva og Hvorfor?
+Lavere case konvertering av en streng er når vi endrer alle tegnene i en tekststreng til små bokstaver. Programmerere gjør dette for å standardisere data, eliminere potensiell forvirring og forenkle sammenligningen av strenger.
 
-# Hvordan:
+## Hvordan til:
+For å konvertere en streng til lavere case i Arduino, bruker vi toLowerCase() funksjonen. Her er et eksempel:
+
 ```Arduino
-String tekst = "HEI, JEG ER EN TEKST";
-tekst.toLowerCase();
-Serial.println(tekst);
-```
-```Arduino
-String tekst = "Bygge roboten skrevNE store";
-tekst.toLowerCase();
-Serial.println(tekst);
-```
-Output:
-```
-hei, jeg er en tekst
-bygge roboten skrevne store
+String melding = "Hei Verden!";
+melding.toLowerCase();
+Serial.println(melding); // utskriften vil være "hei verden!"
 ```
 
-# Dypdykk:
-Å konvertere en streng til små bokstaver har vært en vanlig praksis i programmering siden de tidlige dagene av datamaskiner. Det ble vanligvis gjort for å redusere kompleksiteten og størrelsen på koden. Alternativene til å bruke innebygde funksjoner som `toLowerCase()` i Arduino inkluderer å skrive en egen funksjon eller å bruke biblioteker som stringfuncs.h. For å implementere dette i koden kan en enkel `for`-løkke brukes til å iterere gjennom strengen og endre bokstavene.
+I dette eksempelet endrer toLowerCase() funksjonen bokstavene i "melding" variabelen til små bokstaver.
 
-# Se også:
-- [String LowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/stringfunctions/lowercase/) - Dokumentasjon for `toLowerCase()` funksjonen i Arduino.
-- [StringFuncs](https://github.com/starkillerOG/stringfuncs) - Et bibliotek for å manipulere strenger i Arduino.
+## Dyp Dykk
+Historisk sett, strengmanipuleringen som konvertering til lavere case, har vært avgjørende for mange programmeringsoppgaver, spesielt for tekst analyse og databehandling. 
+
+Et alternativ til toLowerCase() i Arduino ville være å skrive din egen funksjon for å håndtere konverteringen. Men dette er mer komplisert og utsatt for feil, så det anbefales å bruke innebygde funksjoner som toLowerCase().
+
+Implementering av konvertering til lavere case i Arduino Zone klasse er relativt enkelt. Funksjonen går gjennom hver karakter i strengen, og hvis den finner en stor bokstav, endrer den den til en liten bokstav.
+
+## Se Også
+For mer informasjon om strengmanipulering i Arduino, sjekk ut disse ressursene:
+
+1. [Arduino String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+2. [Text String Manipulation In Arduino](http://playground.arduino.cc/Main/TextString)
+3. [Arduino Programming Notebook](http://www.arduino.cc/playground/uploads/Main/arduino_notebook_v1-1.pdf)

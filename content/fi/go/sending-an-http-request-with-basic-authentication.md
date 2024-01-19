@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämällä http-pyyntö perusautentikoinnilla"
-html_title:           "Go: Lähettämällä http-pyyntö perusautentikoinnilla"
-simple_title:         "Lähettämällä http-pyyntö perusautentikoinnilla"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,45 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?: Lähettäminen HTTP-pyyntö perusautentikoinnilla on tapa tarkistaa käyttäjän tunnistetiedot ennen pääsyä tiettyihin verkkopalveluihin. Tämä on tärkeää, jotta estäisi luvattomat käyttäjät pääsemästä pääsyä tietojärjestelmiin.
+## Mikä & Miksi?
 
-Miten: Alla on esimerkki koodista Go-kielellä, jossa lähetetään HTTP-pyyntö perusautentikoinnilla ja tulostetaan vastauksen statuskoodi sekä sisältö:
+HTTP-pyynnön lähettäminen perusautentikoinnilla on prosessi, jossa lähetetään pyyntö verkkoserverille kiinnittäen mukanaan käyttäjänimen ja salasanan tiedot. Ohjelmoijat käyttävät tätä tekniikkaa, kun heidän täytyy kommunikoida suojattujen web-resurssien kuten API-palveluiden kanssa.
 
-'''
+## Miten se toimii:
+
+```Go
 package main
 
 import (
-	"fmt"
 	"net/http"
-	"io/ioutil"
+	"fmt"
 )
 
 func main() {
-	// Määritellään pyyntö
-	req, _ := http.NewRequest("GET", "https://example.com", nil)
+	req, err := http.NewRequest("GET", "https://api-url", nil)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	req.SetBasicAuth("username", "password")
 
-	// Lisätään autentikointi headeriin
-	req.SetBasicAuth("käyttäjänimi", "salasana")
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		log.Fatalln(err)
+	}
 
-	// Lähetetään pyyntö
-	resp, _ := http.DefaultClient.Do(req)
-
-	// Tulostetaan vastauksen statuskoodi
-	fmt.Println("Status: ", resp.Status)
-
-	// Luetaan vastauksen sisältö
-	body, _ := ioutil.ReadAll(resp.Body)
-
-	// Tulostetaan sisältö
-	fmt.Println("Sisältö: ", string(body))
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	fmt.Println(string(body))
 }
-'''
+```
 
-Tulostaa:
+Tämä koodi luo uuden HTTP-pyynnön (GET), asettaa sille perusautentikointitiedot ja lähettää sen. Vaste tulostetaan.
 
-Status: 200 OK
-Sisältö: <h1>Tervetuloa</h1>
+## Syvällisempi tieto:
 
-Deep Dive: Perusautentikointi on yksi vanhimmista tavoista tunnistautua verkkopalveluun ja se on yhä tärkeä osa monien verkkosovellusten turvallisuutta. On myös muita tapoja lähettää HTTP-pyyntöjä, kuten määrittää API-avain tai OAuth-tunnistus, mutta perusautentikointi on yhä käytössä esimerkiksi sisäisten järjestelmien välisessä kommunikaatiossa.
+Perusautentikointi on ollut mukana HTTP-prokollan alkuvuosista saakka, mutta sen käyttö on vähentynyt sen yksinkertaisuuden ja turvatarkastusten puutteen vuoksi. Vaihtoehtoja ovat muun muassa kehittyneemmät autentikointimalleja, kuten OAuth ja JWT.
 
-Katso myös: Jos haluat oppia lisää perusautentikoinnista ja sen toteutuksesta Go-kielellä, niin suosittelemme lukemaan Go-kirjaston "net/http" dokumentaatiota ja kokeilemaan erilaisia lähestymistapoja lähettää HTTP-pyyntö perusautentikoinnilla. Voit myös tutustua muihin HTTP-tunnistusmenetelmiin, kuten Digest-autentikointiin, joka tarjoaa paremman salauksen salasanoille.
+Perusautentikoinnin toteutuksessa Go:ssa, `SetBasicAuth` funktio asettaa `Authorization` otsikon arvoksi käyttäjänimen ja salasanan, jotka on koodattu base64:ään.
+
+## Lisätietoja:
+
+- [HTTP-autentikointi](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
+- [Golangin http package dok](https://golang.org/pkg/net/http/)
+- [Korvaavat autentikoinnit, kuten OAuth ja JWT](https://jwt.io/introduction/)

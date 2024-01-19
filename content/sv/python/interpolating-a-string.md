@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av en sträng"
-html_title:           "Python: Interpolering av en sträng"
-simple_title:         "Interpolering av en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,40 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad & Varför?
 
-Interpolering av en sträng är ett sätt att bygga en ny sträng genom att ersätta variabler med specifika värden. Detta gör det möjligt för programmerare att dynamiskt skapa strängar med variabelt innehåll.
+Stränginterpolation är tekniken att infoga variabler i en sträng. Det sparar tid för programmerare och gör koden tydligare.
 
-# Så här gör du:
+## Hur man gör:
 
-```python
-# Exempel på interpolering av en sträng med hjälp av en f-string
-name = "Johan"
-age = 25
-print(f"Hej, jag heter {name} och är {age} år gammal.")
+Python tillhandahåller flera sätt att interpolera strängar. Här kommer exempel på varje metod.
+
+- Det äldre sättet att göra detta är att använda %-formatmetoden:
+
+```Python
+name = "Anna"
+print("Hej %s!" % name)  # "Hej Anna!"
 ```
 
-Output:
-```
-Hej, jag heter Johan och är 25 år gammal.
-```
-```python
-# Exempel på interpolering av en sträng med hjälp av .format()
-username = "pythonlover"
-print("Din användarnamn är {}".format(username))
+- Du kan också använda str.format-metod:
+
+```Python
+name = "Anna"
+print("Hej {}!".format(name))  # "Hej Anna!"
 ```
 
-Output:
+- Eller det nya sättet med hjälp av s-strings (för Python3.6 och senare):
+
+```Python
+name = "Anna"
+print(f"Hej {name}!")  # "Hej Anna!"
 ```
-Ditt användarnamn är pythonlover
-```
 
-# djupdykning:
+## Fördjupning 
 
-Interpolering av strängar har funnits i Python sedan version 3.6 och är ett modernare alternativ till .format(). Det finns också andra sätt att interpolera strängar, som t.ex. str.format() och % -operatorn. Det är viktigt att komma ihåg att interpolering endast fungerar med strängar, och om man vill inkludera andra datatyper måste man omvandla dem till strängar först. 
+Stränginterpolation har sin historia i språk som Perl och Ruby. Python införde det sedermera för att förenkla koden. Förutom de metoder som nämndes, det finns också en metod som kallas "Template Strings". Det är dock begränsat och används mindre frekvent.
 
-# Se även:
+S-strings (f-strings) är det modernaste sättet att interpolera strängar i Python. De är inte bara mer läsbara utan också snabbare eftersom de körs vid kompilering istället för körning.
 
-[Python f-string guide](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
+## Se också:
 
-[Python string formatting](https://www.programiz.com/python-programming/string-interpolation)
+För mer information, kolla följande länkar:
+
+- Python Docs på strängformatering: https://docs.python.org/3/library/string.html
+- PEP 3101, som introducerade str.format i Python 2.6: https://peps.python.org/pep-3101/
+- PEP 498, som introducerade f-strings i Python 3.6: https://peps.python.org/pep-0498/

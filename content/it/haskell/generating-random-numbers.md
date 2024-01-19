@@ -1,6 +1,6 @@
 ---
 title:                "Generazione di numeri casuali"
-html_title:           "Haskell: Generazione di numeri casuali"
+html_title:           "Arduino: Generazione di numeri casuali"
 simple_title:         "Generazione di numeri casuali"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,30 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Generare numeri casuali è il processo di ottenere numeri in maniera casuale, senza un pattern definito. I programmatori lo fanno per diversi motivi, come ad esempio creare giochi con elementi di casualità, testare algoritmi o generare dati simulati per sperimentare con il codice.
+# Generatore di Numeri Casuali in Haskell
 
-## Come Fare:
-Per generare numeri casuali in Haskell, è necessario utilizzare il modulo "System.Random". Questo modulo contiene diverse funzioni per generare numeri casuali, incluse "random" e "randomR" per numeri interi e "randomIO" e "randomRIO" per numeri in virgola mobile.
+## Cos'è & Perché?
 
-```Haskell
+Generare numeri casuali significa creare una sequenza di numeri senza logica apparente. In programmazione, usiamo questa tecnica per eventi imprevedibili, simulazioni e, a volte, testing.
+
+## Come fare:
+
+In Haskell, il modulo `System.Random` rende semplice la generazione di numeri casuali.
+
+```Haskell 
 import System.Random
 
--- Genera un numero casuale intero tra 0 e 10
-randomNumber :: IO Int
-randomNumber = randomRIO (0, 10)
-
--- Genera un numero casuale in virgola mobile tra 0 e 1
-randomFloat :: IO Float
-randomFloat = randomIO
+main = do
+    numeroCasuale <- randomRIO (0, 100) :: IO Int
+    print numeroCasuale
 ```
 
-## Approfondimento:
-La generazione di numeri casuali ha origini antiche ed è stata utilizzata per secoli in molteplici campi, come la divinazione e la statistica. In Haskell, il modulo "System.Random" utilizza un algoritmo chiamato "Mersenne Twister" per generare numeri casuali di alta qualità.
+Ecco un esempio di output:
 
-Esistono anche alternative per generare numeri casuali in Haskell, come il modulo "Random" che utilizza l'algoritmo "Simple Good Generator". Inoltre, è stato sviluppato un modulo chiamato "random-fu" che offre funzioni più avanzate per la generazione di numeri casuali.
+```
+58
+```
 
-## Vedi Anche:
-- Documentazione ufficiale di Haskell sul modulo "System.Random": https://hackage.haskell.org/package/random/docs/System-Random.html
-- Discussione su Reddit sull'utilizzo del modulo "System.Random": https://www.reddit.com/r/haskell/comments/bi7grj/systemrandom_vs_random/
-- Documentazione di "random-fu": https://hackage.haskell.org/package/random-fu/docs/System-Random-Fu.html
+## Approfondimento
+
+1. Contesto storico: Haskell ha un ricco ecosistema di librerie per la generazione di numeri casuali. Il modulo `System.Random`, introdotto negli anni '90, rimane uno dei più utilizzati.
+
+2. Alternative: Un'alternativa popolare a `System.Random` è la libreria `mwc-random`, conosciuta per la sua velocità. `random-fu` è un'altra opzione che offre un'interfaccia più funzionale.
+
+3. Dettagli implementativi: Haskell genera numeri casuali in maniera diversa rispetto ad altri linguaggi di programmazione. Usa un generatore di numeri pseudocasuali - una funzione che produce una successione di valori che appaiono casuali.
+
+## Per saperne di più
+
+Per ulteriori informazioni, si prega di visitare le seguenti risorse:
+
+1. Documentazione ufficiale di `System.Random`: [https://hackage.haskell.org/package/random-1.1/docs/System-Random.html](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
+2. Libreria `mwc-random`: [https://hackage.haskell.org/package/mwc-random](https://hackage.haskell.org/package/mwc-random)
+3. Libreria `random-fu`: [https://hackage.haskell.org/package/random-fu](https://hackage.haskell.org/package/random-fu)

@@ -1,6 +1,6 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "C: Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
 simple_title:         "Interpolando uma string"
 programming_language: "C"
 category:             "C"
@@ -10,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
-Interpolar uma string e simplesmente substituir variaveis em uma frase ou texto. Isso e util para criar strings dinamicas que mudam de acordo com as variaveis envolvidas. Programadores usam isso para tornar seus codigos mais flexiveis e dinamicos.
+## O Que & Porquê?
 
-## Como fazer:
-Aqui esta um exemplo simples de interpolacao de string em C:
+A interpolação de string é a inclusão de variáveis diretamente em strings. Os programadores fazem isso para tornar o código mais legível e eficiente, em vez de usar concatenação de string.
+
+## Como Fazer:
+
+Um exemplo prático é demonstrado abaixo. Para a interpolação de string, nós usamos a função `sprintf` no C. Observe:
+
 ```C
 #include <stdio.h>
 
 int main() {
-  char *nome = "Joao";
-  int idade = 25;
-  printf("Meu nome e %s e tenho %d anos.", nome, idade);
-  return 0;
+    char buffer[50];
+    int a = 10, b = 20;
+
+    sprintf(buffer, "A soma de %d e %d é %d.", a, b, a + b);
+    
+    printf("%s\n", buffer);
+
+    return 0;
 }
 ```
-Output:
-```
-Meu nome e Joao e tenho 25 anos.
+
+A saída deste programa será:
+
+```C
+A soma de 10 e 20 é 30.
 ```
 
-## Profundidade:
-A interpolacao de string eh comumente usada em linguagens de programacao, mas teve sua origem no COBOL na decada de 1950. Algumas alternativas para interpolacao de string incluem concatenacao manual de strings e a funcao sprintf em C. Para implementar a interpolacao de string em C, eh necessario usar a funcao printf e especificar os tipos de dados das variaveis envolvidas.
+## Aprofundando o Assunto
 
-## Veja Tambem:
-- [Documentacao oficial do C sobre a funcao printf](https://docs.microsoft.com/pt-br/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l?view=msvc-160)
-- [Artigo sobre interpolacao de string em C](https://www.tutorialspoint.com/cprogramming/c_string_interpolation.htm)
-- [Tutorial de C para iniciantes](https://www.geeksforgeeks.org/c-programming-language/)
+Historicamente, a interpolação de strings não foi inicialmente suportada em C, o que levou à adoção da função `sprintf` para realizar essa tarefa. 
+
+Há outras alternativas para interpolação de strings em C, como utilizar a função `snprintf`, que é semelhante ao `sprintf`, mas mais segura, pois inclui o tamanho do buffer como argumento para evitar a sobrecarga de buffer.
+
+Em termos de implementação, `sprintf` basicamente leva uma string e argumentos separados, e formata a string preenchendo os marcadores de posição com os argumentos.
+
+## Veja Também
+
+- [Documentação sprintf - cplusplus.com](http://www.cplusplus.com/reference/cstdio/sprintf/)
+- [Documentação snprintf - cplusplus.com](https://www.cplusplus.com/reference/cstdio/snprintf/)
+- [Interpolação de String no C# - Microsoft Docs](https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/strings/interpolation)

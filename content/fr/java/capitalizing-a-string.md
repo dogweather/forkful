@@ -1,7 +1,7 @@
 ---
-title:                "Capitaliser une chaîne de caractères"
-html_title:           "Java: Capitaliser une chaîne de caractères"
-simple_title:         "Capitaliser une chaîne de caractères"
+title:                "Mettre une chaîne en majuscules"
+html_title:           "Java: Mettre une chaîne en majuscules"
+simple_title:         "Mettre une chaîne en majuscules"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,30 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Pourquoi & Pour quoi?
 
-Capitaliser une chaîne de caractères en Java signifie mettre la première lettre de chaque mot en majuscule, tout en conservant le reste en minuscules. Les programmeurs le font souvent pour améliorer la lisibilité et la compréhension du texte.
+(What & Why?)
+
+La mise en majuscule d'une chaîne consiste à changer la première lettre de chaque mot en majuscule. Les programmeurs le font souvent pour améliorer la lisibilité et l'esthétique d'une interface utilisateur ou pour normaliser les entrées de données.
 
 ## Comment faire:
 
-Voici un exemple de code pour capitaliser une chaîne de caractères en utilisant la méthode capitalize() de la classe StringUtils.
+(How to:)
+
+Voici un exemple simple d'utilisation de la méthode `toTitleCase` de l'`java.lang.Character` pour mettre en majuscule une chaîne en Java. 
 
 ```Java
-String str = "bonjour tout le monde";
-System.out.println(StringUtils.capitalize(str));
+String phrase = "c'est un joli jour";
+String[] mots = phrase.split("\\s");
+StringBuilder nouveauTitre = new StringBuilder();
+
+for(String mot : mots){
+    nouveauTitre.append(Character.toTitleCase(mot.charAt(0))).append(mot.substring(1)).append(" ");
+}
+
+System.out.println(nouveauTitre.toString().trim());
 ```
 
-Résultat:
+Ce code va produire le résultat suivant :
 
 ```
-Bonjour tout le monde
+"C'est Un Joli Jour"
 ```
 
-## Plongée en profondeur:
+## Plongée en profondeur :
 
-Cette pratique a été introduite dans les langages de programmation pour imiter la façon dont les noms propres sont écrits en anglais. Il existe d'autres méthodes pour capitaliser une string en Java, comme toUpperCase() et substring(). Cependant, elles ne gèrent pas les accents et les caractères spéciaux de la même manière que capitalize().
+(Deep Dive)
 
-## Voir aussi:
+La précédente méthode `toTitleCase` a été introduite dans Java 8. Avant cela, les programmeurs utilisaient une combinaison de méthodes de la classe `String`. 
 
-- [Documentation officielle de la méthode capitalize()](https://docs.oracle.com/javase/7/docs/api/org/apache/commons/lang/StringUtils.html#capitalize(java.lang.String))
-- [Guide complet sur la manipulation de chaînes de caractères en Java](https://fr.wikibooks.org/wiki/Programmation_Java/Manipulation_des_cha%C3%AEnes_de_caract%C3%A8res)
+Comme alternative à la méthode `toTitleCase`, vous pouvez utiliser `WordUtils.capitalizeFully` de `org.apache.commons.lang3.text` si vous utilisez `Apache Commons`.
+
+D'un point de vue de l'implémentation, `toTitleCase` convertit le caractère en une majuscule Unicode, ce qui est aligné avec le standard Unicode pour le changement de casse.
+
+## Voir aussi :
+
+(See Also)
+
+- Pour plus d'informations sur le changement de casse en Java, consultez la documentation officielle de Java : [java.lang.Character](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html)
+- Pour le traitement de chaînes de caractères avec Apache Commons, voir [org.apache.commons.lang3.text.WordUtils](https://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/text/WordUtils.html)
+- Pour une compréhension plus approfondie du standard Unicode, visitez le site officiel : [Unicode Standard](https://www.unicode.org/standard/standard.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-html_title:           "Lua: Sjekke om en mappe eksisterer"
-simple_title:         "Sjekke om en mappe eksisterer"
+title:                "Sjekker om en mappe eksisterer"
+html_title:           "Lua: Sjekker om en mappe eksisterer"
+simple_title:         "Sjekker om en mappe eksisterer"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -11,29 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å sjekke om en katalog eksisterer er det å verifisere tilstedeværelsen av et spesifikt katalognavn innen et bestemt filsystem. Programmerere gjør dette for å unngå feil når de prøver å få tilgang til kataloger som kanskje ikke eksisterer.
 
-Sjekke om en mappe eksisterer i programmering er en måte å verifisere om en spesifikk mappe finnes i et filsystem eller ikke. Dette er en viktig del av feilsøking og kan også være nødvendig for å sikre at programmet ditt fungerer som det skal.
-
-## Slik gjør du:
-
-Det er flere måter å sjekke om en mappe eksisterer i Lua. Her er et eksempel på hvordan du kan gjøre det ved hjelp av io.popen-funksjonen:
+## Hvordan gjør man dette:
+Her er en grunnleggende kodebit på Lua for å sjekke om en katalog eksisterer:
 
 ```Lua
-if io.popen("ls -d /path/to/directory"):read("*a") == "" then
-    print("Mappen eksisterer ikke.")
-else
-    print("Mappen eksisterer.")
+local lfs = require('lfs')
+
+function directory_exists(path)
+  return lfs.attributes(path, 'mode') == 'directory'
 end
+
+print(directory_exists("./example_directory"))
 ```
+Utførelsen av denne koden vil returnere `true` hvis 'example_directory' eksisterer, og `false` hvis den ikke gjør det.
 
-Dette eksempelet vil returnere en tom verdi hvis mappen ikke eksisterer, og ellers vil den returnere navnet på mappen.
+## Dypdykk:
+Historisk sett har det alltid vært behov for metoder for å sjekke om en katalog eksisterer innen programmering. Det er fordi at ønsket tilgang til en ikke-eksisterende katalog ville være katastrofalt for mange programmer. 
 
-## Dykk dypere:
+Alternativer til `lfs.attributes` funksjonen finnes, som bruk av `os.execute` funksjonen med en shellkommando. Dette er imidlertid ikke anbefalt da det er plattformavhengig og potensielt usikker. 
 
-Det er flere måter å sjekke om en mappe eksisterer i Lua på, inkludert å bruke file-exists-funksjonen og os.execute-kommandoen. Det kan også være lurt å inkludere unntakshåndtering for å håndtere situationer der mappen ikke kan bli sjekket av en eller annen grunn.
+Implementeringsdetaljene for å sjekke om en katalog eksisterer i Lua stammer fra `lfs.attributes` funksjonen som er en del av LuaFileSystem-biblioteket. Når det gis en sti og 'mode' som argumenter, returnerer det modusattributtet til den gitte stien, noe som muliggjør verifikasjon av om stien er en katalog.
 
 ## Se også:
-
-- [Lua dokumentasjon om filbehandling](https://www.lua.org/pil/21.2.html)
-- [Lua referansehåndbok](https://www.lua.org/manual/5.4/) for flere detaljer om Lua-koding
-- [Sjekk om en fil eksisterer i Lua](https://www.lua.org/pil/21.2.2.html) for lignende funksjonalitet
+1. [LuaFileSystem Dokumentasjon](http://keplerproject.github.io/luafilesystem/manual.html)
+2. [Lua Programmeringsguide](http://www.lua.org/pil/contents.html)
+3. ['lfs.attributes' funksjonsdetaljer på Stack Overflow](https://stackoverflow.com/questions/1340230/check-if-directory-exists-in-lua)
+4. [Sikker kodepraksis for Lua på Lua-Users](http://lua-users.org/wiki/SecureProgramming)

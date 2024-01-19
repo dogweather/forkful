@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "C++ recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "C++"
 category:             "C++"
@@ -10,71 +10,89 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Article Title: Downloading a Web Page in C++
+
 ## What & Why?
 
-Downloading a web page is the act of retrieving the code and content of a webpage from the internet. Programmers do this in order to access and utilize the information found on the webpage, whether it be for data analysis or web scraping.
+Downloading a web page is the act of pulling down HTML content from a specific URL to work with it locally. Programmers often do this to parse data, automate actions or test functionality. 
 
 ## How to:
-Before we can download a web page, we must first include the necessary libraries and headers. In our case, we will be using the "WinInet.h" header from the WinInet library to make HTTP requests. Here's an example of a simple function that downloads the HTML content of a webpage:
+
+Modern C++ has a powerful library complement for network operations: `Boost.Beast` for HTTP(S) and `Boost.Asio` for lower level TCP/UDP. However, for now, we'll use libcurl because it's easy and widely adaptable. Make sure you've got libcurl installed. Here's a simple snippet to download a webpage's HTML.
 
 ```C++
-#include <Windows.h> 
-#include <WinInet.h> 
+#include <iostream>
+#include <string>
+#include <curl/curl.h>
 
-void downloadWebpage(const char* url) { 
+std::size_t callback(
+    const char* in,
+    std::size_t size,
+    std::size_t num,
+    std::string* out)
+{
+    const std::size_t totalBytes(size * num);
+    out->append(in, totalBytes);
+    return totalBytes;
+}
 
-// HINTERNET is a handle representing an internet session 
-HINTERNET hInternet = InternetOpenA("Mozilla/5.0 (compatible; MSIE10.0; Windows NT 6.2)", INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, 0); 
+int main()
+{
+    CURL* curl = curl_easy_init();
 
-// HINTERNET is also used as a handle for an opened URL 
-HINTERNET hUrl = InternetOpenUrlA(hInternet, url, NULL, 0, INTERNET_FLAG_PRAGMA_NOCACHE | INTERNET_FLAG_KEEP_CONNECTION, 0); 
+    // Set remote URL.
+    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
 
-char data[2048]; 
+    // Don't bother trying IPv6, which would increase DNS resolution time.
+    curl_easy_setopt(curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
 
-// Read the content of the webpage into the data array 
-InternetReadFile(hUrl, data, 2048, 0); 
+    // Don't wait forever, time out after 10 seconds.
+    curl_easy_setopt(curl, CURLOPT_TIMEOUT, 10);
 
-// Display the downloaded content 
-std::cout << data << std::endl; 
+    // Follow HTTP redirects if necessary.
+    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
 
-// Close the handle and free the memory 
-InternetCloseHandle(hUrl); 
-InternetCloseHandle(hInternet); 
-} 
+    // Response information.
+    int httpCode(0);
+    std::unique_ptr<std::string> httpData(new std::string());
 
-int main() { 
-downloadWebpage("https://example.com"); 
-return 0; 
+    // Hook up data handling function.
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, callback);
+
+    // Hook up data container (will be passed as the last parameter to the
+    // callback handling function).  Can be any pointer type, since it will
+    // internally be passed as a void pointer.
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, httpData.get());
+
+    // Run our HTTP GET command, capture the HTTP response code, and clean up.
+    curl_easy_perform(curl);
+    curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &httpCode);
+    curl_easy_cleanup(curl);
+
+    if(httpCode == 200)
+    {
+        std::cout << "\nGot successful response from " << url << " :\n";
+        std::cout << httpData->c_str() << "\n";
+    }
+    else
+    {
+        std::cout << "Couldn't GET from "<< url <<" - exiting\n";
+    }
+
+    return 0;
 }
 ```
 
-**Output:**
-```
-<!doctype html>
-<html>
-<head>
-<title>Example Domain</title>
+## Deep Dive
 
-<meta charset="utf-8" />
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style type="text/css">
-body {
-background-color: #f0f0f2;
-margin: 0;
-padding: 0;
-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+Downloading webpages has been around since the formative days of the internet. Early HTTP was simple and unencrypted, evolving over time to include secure transport (HTTPS), better status codes, and full-featured libraries.
 
-...
-```
+Alternatives to libcurl include Boost.Beast and others. If you need low-level networking or websocket support, opt for Boost.Beast tied with Boost.Asio.
 
-## Deep Dive:
-In the past, downloading a webpage was done using the "Winsock.h" header and functions like "socket()" and "connect()". However, this was a tedious and error-prone process, which is why the "WinInet.h" header was introduced. It provides simpler and more efficient functions for making HTTP requests.
+The C++ code leverages HTTP's simple request-response cycle. We make a GET request to the server hosting our desired page. The server responds with the page's HTML, which our program processes, here just printing it to stdout.
 
-Apart from using WinInet, you can also use the libCurl library to download web pages. It offers more advanced features and supports multiple protocols. However, due to its complexity, it may not be suitable for simple web page downloads.
+## See Also
 
-When downloading a webpage, there are various HTTP status codes that can be returned, indicating the success or failure of the request. These codes can be accessed using the "HttpQueryInfoA()" function.
-
-## See Also:
-- [Microsoft Docs: WinInet](https://docs.microsoft.com/en-us/windows/win32/wininet/wininet)
-- [libCurl Official Website](https://curl.haxx.se/libcurl/)
+1. libcurl - [https://curl.haxx.se/libcurl/c/](https://curl.haxx.se/libcurl/c/)
+2. HTTP - [https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+3. Boost.Beast - [https://www.boost.org/doc/libs/develop/libs/beast/](https://www.boost.org/doc/libs/develop/libs/beast/)

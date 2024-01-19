@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "Clojure recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,37 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-HTML parsing is the process of extracting data from HTML documents, which are the foundation of web pages. Programmers do this to retrieve specific information from websites, such as prices of products or titles of articles. This data can then be used for various purposes, such as building web crawlers or creating data visualizations.
+
+Parsing HTML simply means interpreting HTML documents into a structure a computer can understand. Programmers do it to manipulate, extract or change webpage contents automatically.
 
 ## How to:
-Parsing HTML in Clojure is made easy with the help of the library "Enlive". First, we need to add the library as a dependency in our project.clj file:
 
-```Clojure
-:dependencies [[net.cgrand/enlive "1.1.6"]]
-```
-
-Next, we can use Enlive's "html-resource" function to retrieve the HTML document from a URL or a local file. For example, if we want to parse the HTML from the webpage "https://example.com":
+In Clojure, libraries like Enlive and Hickory make HTML parsing easier. Here's a basic example using Enlive:
 
 ```Clojure
 (require '[net.cgrand.enlive-html :as html])
 
-(html/html-resource "https://example.com")
+(defn parse-html [html-content]
+  (-> html-content
+      java.io.StringReader.
+      html/html-resource
+      html/select [[:p]]))
+
+(println (parse-html "<p>Hello, Clojure!</p>"))
 ```
 
-This will return a data structure that we can navigate using Enlive's selectors. For example, if we want to extract the title of the webpage, we can use the "html/select" function and provide a CSS selector for the title element:
+Running this code will print the text inside the paragraph tag:
 
-```Clojure
-(html/select (html/html-resource "https://example.com") 
-             [:head :title])
+`[Hello, Clojure!]`
 
-;; Output: ["Example Domain"]
-```
+## Deep Dive
 
-## Deep Dive:
-Using Enlive for HTML parsing in Clojure has become the preferred method due to its simplicity and powerful features. Before Enlive, the main alternative was using Java DOM parsers, which required more code and knowledge of Java. Enlive also provides a selector syntax that is similar to CSS, making it easier for web developers to understand and use.
+Parsing HTML in Clojure is not traditionally done by built-in functions but with third-party libraries. Enlive, used above, offers parser and selector capabilities and has been around since Clojure 1.2. Alternatively, Hickory offers Clojure idioms for HTML as data and is praised for its simplicity.
 
-Under the hood, Enlive works by transforming the HTML document into a data structure called "selectors", which can then be used to navigate and extract data from the document. This approach is known as "structure-based" parsing and is different from the traditional "text-based" parsing.
+Internally, these libraries implement HTML parsing via Java libraries (like Jsoup for Enlive and TagSoup for Hickory). An HTML document is converted to a parse tree, which Clojure can manipulate as a simple data structure.
 
-## See Also:
-- Enlive documentation: https://github.com/cgrand/enlive/blob/master/README.md
-- HTML parsing alternatives for Clojure: https://github.com/functional-koans/clojure-koan-answers/wiki/Alternate-HTML-libraries-for-Clojure
+## See Also
+
+For further reading, here are some great resources:
+
+1. [Enlive GitHub](https://github.com/cgrand/enlive) - For advanced usage and detailed documentation.
+
+2. [Hickory GitHub](https://github.com/davidsantiago/hickory) - For further understanding on HTML parsing in the Hickory style.
+
+3. [Clojure for the Brave and True](https://www.braveclojure.com/) - Provides a good starting point for those new to Clojure.
+
+4. [StackOverflow: Parsing HTML](https://stackoverflow.com/questions/5374495/parsing-html-in-clojure) - A discussion on various ways to parse HTML in Clojure.

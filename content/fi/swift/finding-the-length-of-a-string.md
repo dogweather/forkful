@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "Swift: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,22 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Merkkijonon pituuden löytäminen on yksinkertainen mutta tärkeä ohjelmointikäytäntö, jota käytetään usein Swiftissä. Se tarkoittaa yksinkertaisesti merkkijonon sisältämien merkkien määrän laskemista. Tämä on hyödyllistä esimerkiksi merkkijonojen käsittelyssä ja tarkistamisessa.
+## Mikä & Miksi?
 
-## Miten:
+Merkinjonon pituuden löytäminen tarkoittaa merkkien määrän laskemista jonossa. Ohjelmoijat tekevät tämän usein, kun heidän pitää hajottaa, analysoida tai muokata merkkijonoa tavalla tai toisella.
+
+## Miten se tehdään:
+
+Voit laskea merkinjonon pituuden Swiftin `count`-ominaisuudella. Tässä esimerkki:
+
 ```Swift
-let text = "Tervehdys!"
-print(text.count) // Tulostaa 10
+let tervehdys = "Moi, Swiftin ohjelmoijat!"
+print(tervehdys.count)
 ```
+Kirjoitettuasi nämä rivit saat tulosteena luvun 26, mikä on `tervehdys`-muuttujan merkkien lukumäärä.
 
-Yllä oleva esimerkki käyttää Swiftin `count`-ominaisuutta laskeakseen merkkijonon pituuden. Se toimii laskemalla kaikki merkit merkkijonosta ja palauttamalla niiden määrän. Voit myös käyttää `String`-tyypin `count`-metodia samalla tavalla.
+## Syvempi sukellus:
 
-## Syväsukellus:
-Merkkijonojen pituuden laskeminen on ollut olennainen osa ohjelmointia jo pitkään. Aikaisemmin tämä tehtiin usein manuaalisesti laskemalla merkkien määrää merkkijonosta. Nykypäivän ohjelmointikielissä, kuten Swiftissä, on kuitenkin sisäänrakennettuja ominaisuuksia tähän tarkoitukseen.
+Historiallisesti C-kielisenä koodina merkkijonot päättyivät nollaoktettiin, eikä niitä voitu suoraan laskea. Tämä lisäsi virheen mahdollisuuden.
 
-Jos haluat löytää merkkijonon pituuden ilman näitä sisäänrakennettuja ominaisuuksia, voit käyttää myös `index(startIndex, offsetBy: String.IndexDistance)` -metodia. Tämä metodi palauttaa annetun määrän metkkiä alkuperäisen merkkijonon alusta ja laskee niiden määrän.
+Swift-kieli tarjoaa `count`-ominaisuuden, joka on tehokkaampi ja turvallisempi tapa laskea merkkijonon pituus. Mutta ole varovainen: `count` palauttaa merkkiyhdistelmien lukumäärän, ei varsinaisesti kirjainten lukumäärää. Esimerkiksi emoji, joka on merkkiyhdistelmä, lasketaan yhdeksi merkiksi.
 
 ## Katso myös:
-- [Swiftin virallinen dokumentaatio String-tyypin `count`-ominaisuudesta](https://developer.apple.com/documentation/swift/string)
-- [Stack Overflow - Englanninkielinen keskusteluketju merkkijonon pituuden laskemisesta Swiftissä](https://stackoverflow.com/questions/24050634/counting-length-of-a-string-in-swift)
+
+- Swiftin dokumentaatio String-tyypistä: [https://developer.apple.com/documentation/swift/string](https://developer.apple.com/documentation/swift/string)
+- `count`-ominaisuuden turvallisuudesta: [https://developer.apple.com/documentation/swift/string/2996991-count](https://developer.apple.com/documentation/swift/string/2996991-count)
+- Hyödyllinen Swift-oppaan kappale merkkijonojen kanssa työskentelystä: [https://swift.org/documentation](https://swift.org/documentation)

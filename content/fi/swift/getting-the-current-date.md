@@ -1,7 +1,7 @@
 ---
-title:                "Lain päivämäärän hankkiminen"
-html_title:           "Swift: Lain päivämäärän hankkiminen"
-simple_title:         "Lain päivämäärän hankkiminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -11,34 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
+Hankitaan päivämäärätieto tietokoneen sisäisestä kellosta Swift-ohjelmointikielellä. Tätä tietoa voidaan käyttää esimerkiksi sen varmistamiseen, että tiedot tallennetaan oikealla aikaleimalla.
 
-Päivämäärän hankkiminen tarkoittaa nykyisen päivämäärän - eli tämän päivän päivämäärän - saamista tietokoneessa. Ohjelmoijat tekevät tämän usein, koska he tarvitsevat tietoa ajasta ohjelmassaan tai sen ulkopuolella.
+## Näin teet:
+Alla oleva Swift-koodi hakee nykyisen päivämäärän ja tulostaa sen kehykseen.
 
-## Miten:
+``` Swift 
+import Foundation
 
-Hanki nykyinen päivämäärä Swiftillä käyttämällä Date-luokan nykyistä metodia. Alla olevassa koodiesimerkissä tulostamme nykyisen päivämäärän konsoliin.
+let nyt = Date()
+print(nyt)
+```
+Tämä tuottaa seuraavanlaisen tuloksen:
 
-```Swift
-let currentDate = Date() 
-print(currentDate) // tulostaa esimerkiksi "2019-10-02 12:34:56 +0000"
+``` Swift 
+// Tulostaa: "2022-02-24 10:45:32 +0000"
 ```
 
-Voit myös muokata tulostuksen formaattia käyttämällä DateFormatter-luokkaa ja sen apufunktioita. Esimerkiksi alla oleva koodi tulostaa päivämäärän muodossa "2.10.2019".
+## Syvempi tarkastelu
+Historiallisesti ajantasaisen päivämäärätiedon saaminen on ollut olennainen osa ohjelmointia esimerkiksi logitietojen generoinnissa.
 
-```Swift
-let currentDate = Date() 
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd.MM.yyyy"
-let formattedDate = dateFormatter.string(from: currentDate)
-print(formattedDate) // tulostaa "2.10.2019"
+Vaihtoehtoisesti voimme muotoilla tulostetun päivämäärän haluamaamme muotoon, esimerkiksi "24 Feb 2022", käyttämällä DateFormatter-luokkaa seuraavasti:
+``` Swift
+let muotoilija = DateFormatter()
+muotoilija.dateStyle = .medium
+print(muotoilija.string(from: nyt))
 ```
 
-## Syvä sukellus:
+Tämä saa aikaan:
 
-Päivämäärän hankkiminen on tärkeä osa ohjelmointia, sillä se liittyy lähes kaikkiin ohjelmiin jollakin tavalla. Alunperin päivämäärän hankkiminen oli monimutkaisempaa, mutta nykyään Swift tarjoaa helpon tavan käsitellä päivämääriä Date-luokan avulla. On myös muita tapoja hankkia päivämäärä, kuten käyttämällä alustariippumattomia kirjastoja kuten Foundation tai Cocoa.
+```Swift
+// Tulostaa: "24 Feb 2022"
+```
+
+Date- ja DateFormatter-luokat perustuvat Apple Foundation -perustan asianmukaisiin toteutuksiin, joten ne tarjoavat luotettavan lähestymistavan päivämäärätietojen hallintaan Swiftissä.
 
 ## Katso myös:
-
-- [Apple Swift - Dokumentaatio](https://developer.apple.com/documentation/swift/date)
-- [Foundation-luokka päivämäärän hankkimiseen](https://developer.apple.com/documentation/foundation/nsdate)
-- [NSCalendar-luokka ajan laskemiseen ohjelmassa](https://developer.apple.com/documentation/foundation/nscalendar)
+- [Apple: Working With Date and Time](https://developer.apple.com/documentation/foundation/date)
+- [Swift Documentation: Date](https://developer.apple.com/documentation/foundation/date)
+- [Swift Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)

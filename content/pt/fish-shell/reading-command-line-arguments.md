@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "Fish Shell: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O quê e por quê?
+## O quê e Por quê?
 
-Ler argumentos da linha de comando é um processo comum para os programadores. Isso envolve acessar e ler os dados passados ​​para um programa a partir da linha de comando. Os programadores fazem isso para tornar seus programas mais interativos e para permitir que os usuários forneçam informações relevantes durante a execução do programa.
+Argumentos de linha de comando são entradas fornecidas ao programa durante sua execução no terminal. Os programadores os usam para personalizar a execução de um programa, permitindo que o mesmo código se comporte de maneiras diferentes dependendo de suas entradas.
 
 ## Como fazer:
 
-```
-Fish Shell tem suporte integrado para ler argumentos da linha de comando. Você pode acessar esses argumentos usando as variáveis ​​específicas do Fish, como $argv e $argc. Aqui está um exemplo simples:
-```
+Em Fish Shell, você lê argumentos da linha de comando usando a variável especial `$argv`. Veja um exemplo simples:
 
-```
-$ fish programa.fish arg1 arg2
-```
-
-```
-O código acima irá ler os argumentos "arg1" e "arg2" e você pode acessá-los usando $argv[1] e $argv[2], respectivamente. Aqui está um exemplo de código para percorrer todos os argumentos passados ​​para o programa:
-```
-
-```
+```Fish Shell
 for arg in $argv
-	echo $arg
+    echo "Argumento: $arg"
 end
 ```
 
-## Profundando:
+Executando este script com `./meuscript.fish arg1 arg2 arg3`, você veria:
 
-Ler argumentos da linha de comando é uma técnica que tem sido usada há décadas por programadores. Antes do Fish, outras linguagens de shell, como o Bash, também suportavam a leitura de argumentos da linha de comando. No entanto, o Fish tem uma sintaxe mais simples e intuitiva para acessar esses argumentos.
+```Fish Shell
+Argumento: arg1
+Argumento: arg2
+Argumento: arg3
+```
 
-Existem alguns outros métodos para ler argumentos da linha de comando, como usando uma biblioteca externa ou implementando sua própria função de parsing. No entanto, o suporte integrado do Fish torna o processo mais fácil e rápido.
+## Mergulho Profundo
 
-## Veja também:
+O Fish Shell é relativamente novo na cena do shell, lançado em 2005, mas desde então se tornou popular devido à sua sintaxe fácil de entender e excelente suporte para script. Embora outras shells como bash e zsh também possuam recursos para ler argumentos de linha de comando, o Fish é especialmente apreciado por sua clareza.
 
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial sobre como ler argumentos da linha de comando em Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_arguments)
-- [Discussão sobre a leitura de argumentos da linha de comando no Fish Shell Github](https://github.com/fish-shell/fish-shell/issues/206)
+Alternativas para ler argumentos incluem o uso de flags e a sintaxe `getopts`, proporcionando maior controle sobre a entrada, mas esses métodos podem ser mais complexos.
+
+O Fish implementa a leitura de argumentos como um array indexado de `$argv`, começando do 1. Esta é uma diferença chave das linguagens de programação C-like onde o array geralmente começa no 0. Esteja ciente disso ao escrever seus scripts.
+
+## Veja Também
+
+1. [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
+2. [Guia de argumentos de linha de comando do Fish Shell](https://fishshell.com/docs/current/commands.html#arguments)
+3. [Tutorial de programação em Fish Shell](https://scriptingosx.com/2017/05/fish-shell-scripting/)

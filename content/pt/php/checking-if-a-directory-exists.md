@@ -1,6 +1,6 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "PHP: Verificando se um diretório existe"
+html_title:           "Bash: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,38 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-Verificar se um diretório existe é uma maneira útil de garantir que seu código funcione corretamente antes de executar certas ações. Programadores frequentemente verificam se um diretório existe para garantir que seu código não seja interrompido por um erro inesperado.
+## O Que & Porquê?
 
-## Como fazer:
-Para verificar se um diretório existe em PHP, você pode usar a função `is_dir ()`. Ele retorna `TRUE` se o diretório existir e `FALSE` se não existir. Aqui está um exemplo de código:
+Hã? Verificar se um diretório existe é algo que nos permite confirmar a existência de um diretório numa determinada localização no sistema de arquivos. E por que fazemos isto? Para evitar erros e criar diretórios se necessário.
 
-```PHP
-if(is_dir("/caminho/do/diretório")) {
-  echo "O diretório existe.";
-}else {
-  echo "O diretório não existe.";
-}
-```
+## Como Fazer: 
 
-Saída:
-`O diretório existe.`
-
-Você também pode usar a função `file_exists ()` para verificar se um diretório existe, mas é importante notar que ela também pode ser usada para verificar se um arquivo existe. Aqui está um exemplo de código que verifica se uma pasta específica existe:
+Para verificar se um diretório existe em PHP, usamos a função `is_dir()`, que retorna TRUE se o diretório existe e FALSE caso contrário.
 
 ```PHP
-if(file_exists("/caminho/do/diretório") && is_dir("/caminho/do/diretório")) {
-  echo "O diretório existe.";
-}else {
-  echo "O diretório não existe.";
+<?php
+$dir = '/caminho/para/o/diretorio';
+
+if (is_dir($dir)) {
+    echo "$dir existe.";
+} else {
+    echo "$dir não existe.";
 }
+?>
 ```
 
-Saída:
-`O diretório existe.`
+Se você executar o código e o diretório existir, a saída será:
 
-## Detalhes avançados:
-Verificar a existência de um diretório é uma técnica de programação comum e útil. Antes de executar ações em um diretório, é importante garantir que ele exista para evitar erros em seu código. Além das funções `is_dir ()` e `file_exist ()`, você também pode usar a função `file_get_contents ()` para verificar se um diretório existe. No entanto, esta função retornará o conteúdo do diretório se ele existir, o que pode não ser útil em algumas situações.
+```PHP
+/caminho/para/o/diretorio existe.
+```
 
-## Veja também:
-Para saber mais sobre a função `is_dir ()` e outras funções de verificação de diretório em PHP, confira a documentação oficial do PHP em https://www.php.net/manual/en/book.filesystem.php.
+E se o diretório não existir, a saída será:
+
+```PHP
+/caminho/para/o/diretorio não existe.
+```
+
+## Mergulhando Mais Fundo: 
+
+**Contexto histórico:** A função `is_dir()` foi introduzida no PHP 4, lançado em 2000, e permaneceu um meio eficaz de verificar a existência de diretórios desde então.
+
+**Alternativas:** É possível também executar um comando shell usando a função `shell_exec()`, mas tem que nos assegurarmos de que o usuário PHP tenha as permissões necessárias para executar comandos shell.
+
+**Detalhes de implementação:** Por baixo do capô, a função `is_dir()` no PHP usa a função `stat` do sistema operacional para verificar a existência do diretório. Esta função é muito rápida e eficaz, mas a sua disponibilidade pode depender do sistema operacional e das permissões de acesso ao sistema de arquivos.
+
+## Veja Também:
+
+* [Referência oficial da função PHP is_dir()](https://www.php.net/manual/pt_BR/function.is_dir)
+* [Fórum Stackoverflow sobre checar se diretório existe em PHP](https://stackoverflow.com/questions/1707801/making-a-new-directory-in-php)
+* [Tutorial detalhado sobre manipulação de diretório em PHP](https://www.w3schools.com/php/php_ref_directory.asp)

@@ -1,6 +1,6 @@
 ---
 title:                "Ottenere la data corrente"
-html_title:           "C++: Ottenere la data corrente"
+html_title:           "Java: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "C++"
 category:             "C++"
@@ -10,40 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Ottenere la data attuale è un'operazione comune tra i programmatori, che serve ad inserire la data corretta in diverse applicazioni. Solitamente si utilizza questa funzionalità per registrare gli eventi, generare rapporti o per calcolare la durata tra due date.
+# Ottenere la data corrente in C++
 
-## Come fare:
-Per ottenere la data attuale in C++, è possibile utilizzare la libreria standard ```ctime```. Questa libreria fornisce la funzione ```std::time()``` che restituisce il numero di secondi trascorsi dal 1 gennaio 1970. Ecco un esempio di codice:
+## Che cos'è e perché?
+
+Ottenere la data corrente in C++ significa recuperare la data dell'orario corrente del tuo sistema. E' uno strumento utile per timestamp log, o tracciare eventi temporali specifici nel tuo programma.
+
+## Ecco come si fa:
+
+C++11 ha introdotto la libreria chrono, rendendo più semplice l'ottenimento della data corrente. Ecco un breve esempio:
 
 ```C++
+#include <chrono>
 #include <iostream>
 #include <ctime>
 
 int main() {
-  // Ottenere la data attuale
-  std::time_t t = std::time(nullptr);
+    auto now = std::chrono::system_clock::now();
+    std::time_t currentTime = std::chrono::system_clock::to_time_t(now);
+    
+    std::cout << "La data corrente è: " << std::ctime(&currentTime) << "\n";
 
-  // Convertire i secondi in una struttura tm
-  struct std::tm * now = std::localtime(&t);
-
-  // Stampare la data attuale
-  std::cout << "La data attuale è: "
-            << now->tm_mday << '/' << (now->tm_mon + 1) << '/' << (now->tm_year + 1900)
-            << std::endl;
-
-  return 0;
+    return 0;
 }
 ```
 
-Output:
+Nell'esecuzione del programma, l'output sarà come:
+
 ```
-La data attuale è: 31/12/2021
+La data corrente è: Thu Jun 20 14:30:10 2023
 ```
 
-## Approfondimento:
-La funzione ```std::time()``` è stata introdotta nella libreria ```ctime``` nel C++11, ma esistono anche altre alternative per ottenere la data attuale, come ad esempio la libreria ```chrono```. Inoltre, è importante notare che la funzione ```std::time()``` restituisce i secondi trascorsi dal 1970 nell'orario locale, ma ci sono altre funzioni che permettono di ottenere la data in UTC.
+## Approfondimento
 
-## Vedi anche:
-- [Documentazione della libreria ctime in C++](https://en.cppreference.com/w/cpp/chrono/c/strftime)
-- [Tutorial sulla gestione della data in C++](https://www.geeksforgeeks.org/date-manipulation-c-c/)
+Prima di C++11, ottenere la data corrente richiedeva l'uso di funzioni C, che possono essere più complesse da utilizzare. `-<ctime>` fornisce la funzione `time()`, che può essere utilizzata per ottenere il tempo corrente. Tuttavia, la libreria chrono offre un'interfaccia più moderna e sicura.
+
+Esistono anche alternative a chrono, come Boost DateTime, ma queste richiedono librerie esterne e quindi potrebbero non essere ideali per tutti i progetti.
+
+In termini di funzionamento interno, `std::chrono::system_clock::now()` interagisce con l'orologio del sistema sottostante per ottenere l'ora corrente. La funzione è portabile e dovrebbe funzionare su tutti i sistemi moderni.
+
+## Vedi anche
+
+Per saperne di più sulla manipolazione del tempo in C++, dai un'occhiata a questi link:
+
+1. [cppreference: chrono](https://en.cppreference.com/w/cpp/chrono)
+2. [cplusplus.com: ctime](http://www.cplusplus.com/reference/ctime/)
+3. [Boost: DateTime](https://www.boost.org/doc/libs/1_67_0/doc/html/date_time.html)

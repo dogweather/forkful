@@ -11,30 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Interpolering av strängar är sättet att infoga variabler direkt i strängar. Programmerare använder det för att göra koden mer läsbar och minska skrivfel.
 
-Interpolering av en sträng innebär att kombinera en statisk text med variabler för att skapa en dynamisk sträng. Programmerare gör detta för att enkelt kunna anpassa och visa information som kan förändras.
+##Hur gör man:
+Här är ett exempel på hur du interpolerar en sträng i Arduino:
 
-## Hur man:
+```Arduino
+int ålder = 25;
+String namn = "Olle";
 
-Arduino gör det lätt att interpolera strängar med hjälp av följande syntax:
-
-```arduino
-Serial.println("Välkommen till " + stad + "!");
+Serial.begin(9600);
+Serial.println("Hej, jag heter " + namn + " och jag är " + ålder + " år gammal.");
+```
+Output:
+```
+Hej, jag heter Olle och jag är 25 år gammal.
 ```
 
-```console
-Välkommen till Stockholm!
-```
+## Djup dykning
+Historiskt sett, innan stränginterpolering introducerades, använde programmerare konkatenering för att lägga in variabler i strängar, vilket kunde vara rörigt. Ett alternativ till stränginterpolering kan vara användning av sprintf-funktionen, men det kan leda till mer komplex kod. Stränginterpolering görs genom att lägga till variablets värde direkt i strängen vid runtime.
 
-I detta exempel kombineras den statiska texten "Välkommen till" med variabeln "stad". När koden körs, kommer värdet av variabeln att ersätta platsmarkören och visa den aktuella staden.
-
-## Djupdykning:
-
-Interpolering av strängar har funnits sedan början av programmering, men har blivit mer populärt på senare tid på grund av dess enkelhet och flexibilitet. Alternativ till interpolering innefattar att skapa en sträng med flera variabler och sedan använda en funktion för att kombinera dem, vilket kan vara mer tidskrävande.
-
-I Arduino har användningen av "string" biblioteket förenklat uppgiften att interpolera strängar. Det finns också flera inbyggda funktioner som kan användas för att formatera och manipulera strängar.
-
-## Se även:
-
-- [Arduino String referens](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Interpolation i andra programmeringsspråk](https://en.wikipedia.org/wiki/String_interpolation)
+## Se också
+1. [Arduino String Object](https://www.arduino.cc/reference/tr/language/variables/data-types/stringobject/)
+2. [Arduino Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+3. [String Interpolation In C++](https://en.cppreference.com/w/cpp/language/string_literal)
+4. [The Efficient Interpolation of Strings in Modern C++](https://levelup.gitconnected.com/the-efficient-interpolation-of-strings-in-modern-c-b542b48f01f3)

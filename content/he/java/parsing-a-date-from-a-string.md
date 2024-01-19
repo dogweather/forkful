@@ -1,7 +1,7 @@
 ---
-title:                "פיענוח תאריך ממחרוזת"
-html_title:           "Java: פיענוח תאריך ממחרוזת"
-simple_title:         "פיענוח תאריך ממחרוזת"
+title:                "פענוח תאריך ממחרוזת"
+html_title:           "Bash: פענוח תאריך ממחרוזת"
+simple_title:         "פענוח תאריך ממחרוזת"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,36 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-פריסת תאריך ממחרוזת הוא תהליך שבו מתבצע קריאה למחרוזת המכילה תאריך והמרתה לאובייקט של תאריך בפורמט של השפת תכנות Java. תהליך זה נדרש בעיקר כאשר התאריך מועבר כפרמטר או נשתמש בו לעיבוד נתונים.
+## מה ולמה?
 
-# איך לבצע?
-תחת כותרת זו נציג לדוגמה כמה קוד Java ואת הפלט המצורף כדי להדגים איך לפרוס תאריך ממחרוזת.
+זיקוי תאריך ממחרוזת הוא התרגום של מידע תאריך ממחרוזת לאובייקט Date. מתכנתים עושים את זה כאשר התאריך מגיע כמחרוזת ונדרש להמשיך עם החישובים או התמריצים.
+
+## כיצד:
+
+הנה הקוד מסוים עבודה איתו:
 
 ```Java
-// קוד לפריסת תאריך ממחרוזת שיש בה פורמט של חודש/יום/שנה
-SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
-String dateStr = "04/20/2020"; // מחרוזת המכילה תאריך בפורמט של חודש/יום/שנה
-Date date = sdf.parse(dateStr); // פריסת התאריך מהמחרוזת לאובייקט של תאריך
-System.out.println(date); // פלט: Mon Apr 20 00:00:00 IST 2020 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-// קוד לפריסת תאריך ממחרוזת שיש בה פורמט של שנה/חודש/יום
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-String dateStr = "2020/04/20"; // מחרוזת המכילה תאריך בפורמט של שנה/חודש/יום
-Date date = sdf.parse(dateStr); // פריסת התאריך מהמחרוזת לאובייקט של תאריך
-System.out.println(date); // פלט: Mon Apr 20 00:00:00 IST 2020 
-
-// קוד לפריסת תאריך ממחרוזת שיש בה פורמט של חודשים ושנים באותיות שנכתבים
-SimpleDateFormat sdf = new SimpleDateFormat("MMM dd, yyyy");
-String dateStr = "Apr 20, 2020"; // מחרוזת המכילה תאריך בפורמט של חודשים ושנים באותיות שנכתבים
-Date date = sdf.parse(dateStr); // פריסת התאריך מהמחרוזת לאובייקט של תאריך
-System.out.println(date); // פלט: Mon Apr 20 00:00:00 IST 2020
+public class Main {
+    public static void main(String[] args) {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        try {
+            Date date = formatter.parse("23-10-2021");
+            System.out.println(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+שימו לב לפלט:
+```Java
+Sat Oct 23 00:00:00 CEST 2021
 ```
 
-# כיול עמוק
-הפריסה של תאריך ממחרוזת היא תהליך נרחב המשתמש בו תאריכים נכתבים בפורמטים שונים. פעם אחת ההתאם הפירוש היה ל "תאריך כרויו ושמו של התאריך" ובכך היה לא פשוט לכתוב תאריכים לפי רצון כי הפירוש של התאריכים היה קשור לממשק המכשיר הנסוי. עם המחשובים התקדמים בתחילת שנות ה- 80-ונתקלו באתגר דומה לענייני תאריכים, שהם תאריכים שנגרסו בתוך מחרוזת והיה דורש להתאים את התאריך והתחלפו לרצון של התאריך. 
+## צוללים לעומק:
 
-# ראה גם
-* [תיעוד Java רשמי על פריסת תאריך ממחרוזת] (https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-* [הוראות לקריאה וכתיבה של חלק מתאריכים ב Java] (https://www.baeldung.com/java-dates)
-* [ספריה פתוחה לפריסת תאריך] (https://github.com/JodaOrg/joda-time)
+1) באופן היסטורי, מפענחי תאריכים ב- Java הופקו לשימוש בשעון מחשב בפורמט מחרוזת. זה היה נוח לשימוש בפרויקטים שבהם נדרשה התאמה לפורמטים שונים של תאריך.
+2) מדובר במקרה המקובל, אך ניתן לאמת ולזיקב תאריכים בשפות תכנות אחרות או במקרים שונים. האפשרויות כוללות שימוש ב- LocalDate ו- DateTimeFormatter ב- Java 8 ועוד.
+3) בפרט, המחלקות SimpleDateFormat ו- Date ב- Java מאפשרות לנו לזיקב תאריך ממחרוזת. SimpleDateFormat הוא קלאס שנוצר עם מחרוזת עבור הפורמט המיוחד שאנו רוצים, ומשמש לפענח מחרוזת לאובייקט מסוג Date.
+
+## ראו גם:
+
+היכן ניתן להשיג מידע נוסף:
+1) [Oracle Docs - SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+2) [Baeldung - Java Date Format](https://www.baeldung.com/java-date)
+3) [Stack Overflow - Parsing Strings to Dates](https://stackoverflow.com/questions/4216745/java-string-to-date-conversion).

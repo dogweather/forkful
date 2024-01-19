@@ -1,7 +1,7 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
-html_title:           "PowerShell: Löschen von Zeichen, die einem Muster entsprechen"
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
+title:                "Zeichen löschen, die einem Muster entsprechen"
+html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine gängige Aufgabe in der Programmierung. Oft wollen Programmierer bestimmte Zeichen aus einer Zeichenkette oder Datei entfernen, um die Daten zu bereinigen oder zu formatieren.
+## Was und Warum?
+Das Löschen von Zeichen nach einem Muster ist ein häufiges Vorgehen in der Programmierung, um unerwünschte oder störende Zeichen aus einem Text zu entfernen. Programmierer tun dies oft, um Textdaten für die Verarbeitung zu bereinigen oder zu normalisieren.
 
-## Wie geht's?
-Das Löschen von Zeichen nach einem bestimmten Muster kann in PowerShell mithilfe von regulären Ausdrücken und dem ```-replace``` Operator erfolgen. Hier ist ein Beispiel, um alle Zahlen aus einer Zeichenkette zu entfernen und das Ergebnis auszugeben:
+## So geht's:
 
-```PowerShell
-$string = "1, 2, 3, hello"
-$string -replace '\d+', '' # gibt "hello" aus
+Mit PowerShell können wir das sehr leicht durchführen. Es gibt viele Möglichkeiten, aber hier ist ein einfaches Beispiel:
+
+```PowerShell 
+$text = "Dies ist ein Beispieltext, der unerwünschte Zeichen enthält!!!"
+$pattern = "[,!]"
+$text = $text -replace $pattern, ""
 ```
 
-Um alle Leerzeichen zu entfernen, kann folgender Befehl verwendet werden:
+Die Ausgabe wäre dann:
 
-```PowerShell
-$string = "Hello World"
-$string -replace '\s+', '' # gibt "HelloWorld" aus
+```PowerShell 
+"Dies ist ein Beispieltext der unerwünschte Zeichen enthält"
 ```
 
-## Tiefere Einblicke
-Die Verwendung von regulären Ausdrücken zum Löschen von Zeichen nach einem bestimmten Muster ist eine effektive Methode, um Daten zu bereinigen oder zu formatieren. Es gibt jedoch auch andere Möglichkeiten, dies zu tun. Zum Beispiel können Funktionen wie ```Trim()``` verwendet werden, um bestimmte Zeichen am Anfang und Ende einer Zeichenkette zu entfernen.
+Wir haben einfach einen Text definiert, ein Muster zum Suchen und das unerwünschte Zeichen dann durch Nichts ersetzt.
 
-Die Verwendung von regulären Ausdrücken hat ihren Ursprung in der Theorie der formalen Sprachen und hat sich im Laufe der Zeit zu einem mächtigen Werkzeug in der Programmierung entwickelt. Es gibt auch verschiedene Online-Tools und Tutorials, die dabei helfen können, komplexere reguläre Ausdrücke zu verstehen und zu erstellen.
+##Deep Dive:
 
-Bei der Implementierung von regulären Ausdrücken in PowerShell ist es wichtig zu beachten, dass gewisse Sonderzeichen (wie z.B. ```$```) in der Sprache eine spezielle Bedeutung haben. Um diese Zeichen in regulären Ausdrücken zu verwenden, müssen sie möglicherweise "escaped" werden, um ihre eigentliche Bedeutung zu behalten.
+Historisch gesehen ist das Löschen von Zeichen nach einem Muster aus vielen Programmiersprachen bekannt, obwohl die genaue Umsetzung variiert. In PowerShell benutzen wir reguläre Ausdrücke, um das Muster zu definieren, was sehr flexibel ist.
 
-## Siehe auch
-- [Microsoft Dokumentation zu regulären Ausdrücken in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7)
-- [RegExr - Online Tool zum Erstellen und Testen von regulären Ausdrücken](https://regexr.com/)
+Zu den Alternativen gehört die manuelle Durchführung jedes Zeichens, eine Methode, die bei komplexeren Mustern sehr zeitaufwendig sein kann. Es gibt auch andere Befehle wie -split und -join, die in einigen Situationen möglicherweise nützlich sind.
+
+Die Implementierungsdetails zur Funktion -replace in PowerShell sind ziemlich einfach. Der Operator -replace führt einen regulären Ausdruck Match durch und ersetzt dann jeden Treffer durch den angegebenen Text (in unserem Fall nichts).
+
+Generell gilt: Bevorzugen Sie immer eingebaute Funktionen wie -replace anstelle von selbstgebauten Lösungen, um Zeit zu sparen und Fehler zu vermeiden.
+
+##Siehe auch:
+
+Mehr Informationen zu PowerShell, einschließlich Beispielen und Tutorials, finden Sie auf der offiziellen Microsoft-Dokumentationsseite: [Microsoft PowerShell Documentation](https://docs.microsoft.com/de-de/powershell)
+
+Außerdem gibt es ausgezeichnete Ressourcen zur Arbeit mit regulären Ausdrücken in PowerShell, z.B.: [Regular-Expressions.info](https://www.regular-expressions.info/powershell.html)

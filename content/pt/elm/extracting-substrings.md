@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo Substrings."
-html_title:           "Elm: Extraindo Substrings."
-simple_title:         "Extraindo Substrings."
+title:                "Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,29 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Extrair substrings é o ato de selecionar um pedaço de uma string maior. Programadores frequentemente fazem isso para manipular e analisar dados específicos dentro de uma string, especialmente quando se trata de trabalhar com dados de entrada do usuário.
+## O Que & Por Quê? 
 
-## Como fazer:
+Extrair substrings é o ato de remover uma parte específica de uma string maior. Programadores fazem isso para manipular dados, como criar resumos de texto ou extrair informações únicas de conjuntos maiores de dados.
+
+## Como Fazer:
+
+No Elm, você pode usar a função `String.slice`. Vamos ver um exemplo.
+
+```Elm
+import Html exposing (text)
+
+substringExample : String
+substringExample = 
+    let
+        initialString = "Olá, mundo!"
+    in
+    String.slice 0 5 initialString 
+
+-- Saída: "Olá, "
 ```
-Elm
-import String
 
-string = "Olá, mundo!"
-primeiros5 = String.left 5 string
-ultimos5 = String.right 5 string
+## Mergulho Profundo 
 
--- Saída: "Olá," e "undo!"
-```
-Neste exemplo, usamos o módulo String do Elm para extrair os primeiros e últimos 5 caracteres da string "Olá, mundo!".
+O conceito de substrings remonta aos primórdios da programação, quando os computadores começaram a trabalhar com linguagens de texto. Em Elm, os índices das strings começam do 0, assim como na maioria das linguagens de programação.
 
-## Detalhando mais:
-Extrair substrings é um recurso muito útil em diversas situações. Além de ser usado para manipular dados de entrada, também pode ser útil para formatar strings antes de enviá-las para outros sistemas ou para exibir informações específicas para o usuário.
+Uma alternativa à função `String.slice` é a função `String.dropLeft` ou `String.dropRight`, que permitem que você descarte caracteres do início ou do fim de uma string.
 
-Existem alternativas para realizar essa tarefa, como o uso de funções que percorrem a string e retornam o trecho desejado. No entanto, o uso do módulo String do Elm facilita e agiliza o processo.
+Os detalhes de implementação das funções de substring no Elm são otimizados para melhor performance, aproveitando a estrutura de dados imutável das strings no Elm e a alocação eficiente de memória.
 
-No Elm, as strings são imutáveis, o que significa que não podem ser alteradas após serem criadas. Por isso, a extração de substrings é feita através de funções que criam uma nova string contendo o trecho selecionado da original.
+## Ver Também
 
-## Veja também:
-- [Documentação oficial do módulo String do Elm](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Exemplos de códigos com o uso do módulo String](https://github.com/elm/core/tree/1.0.5/packages/core/src/String.elm)
+A documentação oficial do Elm é sempre uma excelente fonte de informações:
+- [String - Elm Packages](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [String.slice - Elm Packages](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
+- [String.dropLeft - Elm Packages](https://package.elm-lang.org/packages/elm/core/latest/String#dropLeft)
+- [String.dropRight - Elm Packages](https://package.elm-lang.org/packages/elm/core/latest/String#dropRight)

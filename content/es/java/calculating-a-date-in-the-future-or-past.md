@@ -1,7 +1,7 @@
 ---
-title:                "Calculando una fecha en el futuro o pasado"
-html_title:           "Java: Calculando una fecha en el futuro o pasado"
-simple_title:         "Calculando una fecha en el futuro o pasado"
+title:                "Calculando una fecha en el futuro o en el pasado"
+html_title:           "Java: Calculando una fecha en el futuro o en el pasado"
+simple_title:         "Calculando una fecha en el futuro o en el pasado"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,38 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué se calcula una fecha en el futuro o pasado?
-Calcular una fecha en el futuro o pasado es una función común en la programación en Java. Consiste en manipular fechas y horas para obtener una fecha específica, ya sea en el futuro o en el pasado. Los programadores suelen hacer esto para realizar tareas como programar eventos, recordatorios o realizar cálculos basados en ciertas fechas.
+# Calculando una Fecha en el Futuro o en el Pasado en Java 
+
+## ¿Qué & Por qué?
+
+Calcular una fecha en el futuro o en el pasado implica manipular datos de fecha y hora para obtener una nueva fecha. Los programadores hacen esto para gestionar tareas como temporizadores, recordatorios y eventos recurrentes.   
 
 ## Cómo hacerlo:
-Para calcular una fecha en el futuro o pasado en Java, se pueden seguir los siguientes pasos:
 
-- Importar la clase `java.time.LocalDate`: ```Java
-import java.time.LocalDate;
-```
-- Crear un objeto de tipo `LocalDate` con la fecha actual:
+En Java, uno puede utilizar la clase `LocalDate` para hacerlo.
+
 ```Java
-LocalDate today = LocalDate.now();
+import java.time.*;
+
+class FechaFuturaOPasada {
+   public static void main(String args[]){
+      LocalDate hoy = LocalDate.now();
+      LocalDate futuro = hoy.plusDays(10);
+      LocalDate pasado = hoy.minusDays(10);
+
+      System.out.println("Fecha actual: " + hoy);
+      System.out.println("Fecha 10 días en el futuro: " + futuro);
+      System.out.println("Fecha 10 días en el pasado: " + pasado);
+   }
+}
 ```
-- Utilizar el método `plus()` para sumar días, meses o años a la fecha actual: ```Java
-LocalDate result = today.plus(10, ChronoUnit.DAYS);
+
+La salida será similar a esto:
+
+```Java
+Fecha actual: 2022-05-12
+Fecha 10 días en el futuro: 2022-05-22
+Fecha 10 días en el pasado: 2022-05-02
 ```
-- Utilizar el método `minus()` para restar días, meses o años a la fecha actual: ```Java
-LocalDate result = today.minus(10, ChronoUnit.YEARS);
-```
-- Imprimir el resultado: ```Java
-System.out.println("Resultado: " + result);
-```
 
-El resultado final sería una fecha en el futuro o pasado, dependiendo de los parámetros que se hayan utilizado.
+## Análisis a Fondo:
 
-## En detalle:
-La manipulación de fechas y horas en Java se ha vuelto más fácil desde la introducción de la clase `java.time` en la versión 8. Antes de eso, se utilizaban las clases `Date` y `Calendar` que no eran tan eficientes ni fáciles de usar. La clase `LocalDate` ofrece muchos métodos útiles para manipular fechas, como `plus()`, `minus()`, `isBefore()` y `isAfter()`, entre otros.
+Historicamente, antes de Java 8, los programadores usaban `java.util.Date` y `java.util.Calendar`, los cuales son difíciles de usar y propensos a errores. La aparición de `java.time` en Java 8 revolucionó completamente este enfoque.
 
-Otra forma de calcular una fecha en el futuro o pasado es utilizando la clase `java.util.Calendar` y su método `add()`. Sin embargo, esta forma es más verbosa y menos eficiente en comparación con el uso de la clase `LocalDate`.
+Las alternativas a calcular las fechas podrían incluir el uso de bibliotecas de terceros como Joda-Time.
 
-Es importante mencionar que al trabajar con fechas y horas, siempre se deben tener en cuenta posibles errores de formato o de zona horaria. Por lo tanto, es recomendable utilizar clases como `DateTimeFormatter` o `ZoneId` para garantizar la precisión y evitar problemas en el futuro.
+Desde el punto de vista de la implementación, la nueva API de fecha y hora en Java se basa en el estándar ISO 8601, que es el estándar de facto para la representación de la fecha y la hora en los sistemas informáticos.
 
-## Ver también:
-- [API de Java 8 - Clase LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutorial de manipulación de fechas en Java](https://www.baeldung.com/java-date-time-manipulation)
+## Ver También:
+
+- Documentación oficial de Java para LocalDate: [https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- Documentación oficial de Java para la clase `java.time`: [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- Biblioteca Joda-Time: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)

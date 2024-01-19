@@ -1,6 +1,6 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Python: המרת מחרוזת לאותיות קטנות"
+html_title:           "Go: המרת מחרוזת לאותיות קטנות"
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Python"
 category:             "Python"
@@ -11,23 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-המרת מחרוזת לתווים נמוכים היא תהליך שתכניות מחשב עושות כדי להפוך את כל האותיות במחרוזת לאותיות גדולות לאותיות קטנות. זה עשוי להשתמש לכמה מטרות שונות כגון ייצוג בינתוח טקסט או ועבודת דטה.
+המרת מחרוזת לאותיות קטנות ב-Python הוא מטלה פשוטה שמבצעים בעזרת הפונקציה `lower()`. מתכנתים משתמשים בשיטה זו כדי לספר בין מחרוזות באופן שאינו תלוי ברישיות האותיות.
 
-## איך ל:
-כדי להמיר מחרוזת לתווים נמוכים בפייתון, שימוש בפונקציה `lower()` על המחרוזת. לדוגמה:
-
+## כיצד ל:
+כאן נראה את הדרך לשנות מחרוזת לאותיות קטנות ב-Python:
 ```Python
-my_string = "HELLO WORLD"
-print(my_string.lower())
+original_string = "Hello, Python!"
+lowercase_string = original_string.lower()
+print(lowercase_string)
 ```
-תוצאה: `hello world`
 
-אפשר להשתמש גם במתודה `casefold()` כדי לקבל תוצאה דומה.
+בקוד הזה, החזרה הפלט תהיה:
+```
+hello, python!
+```
 
-## שכיח עומק
-המרת מחרוזת לתווים נמוכים היא תהליך נפוץ בכמה שפות תכנות ונעשה בעיקר לצורך ייצוג ועבודה עם טקסט. קיימות גם מתודות אחרות כמו `upper()` שממירה לאותיות גדולות ו `capitalize()` שממירה רק את האות הראשונה במחרוזת לאות גדולה. ההשפעה היסטורית של תהליך זה קשורה לשימוש בשפת תכנות בלהנדה כדי להעביר טקסט לתווים נמוכים מה שיצר את הפונקציה `tolower()`.
+## צלילה עמוקה
+שימוש בפונקציה `lower()` ב-Python אמנם פשוט, אך ישנם דברים מעניינים לדעת עליו. `'Python'` זכה תחילה לפונקציה זו בשביל לסייע בהשוואת מחרוזות שאינן תלויות ברישיות. קיימות גם חלופות ל-`lower()`, כמו `capitalize()` ו-`title()`, אך אלו לא מבצעות את אותו הפעולה.
 
-## ראה גם:
-- [מדריך Python רשמי על `lower()`](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- [תיעוד ל `casefold()` מתוך המדריך הרשמי של פייתון](https://docs.python.org/3/library/stdtypes.html#str.casefold)
-- [מדריך על פונקציות מחרוזת בפייתון](https://www.w3schools.com/python/python_strings.asp)
+## ראו גם
+חפשו מקורות נוספים על עבודה עם מחרוזות ב-Python:
+1. הפונקציה lower() בתיעוד הרשמי של Python [כאן](https://docs.python.org/3/library/stdtypes.html#str.lower).
+2. מדריך מקיף על מחרודת ב-Python באתר [w3schools](https://www.w3schools.com/python/python_strings.asp).

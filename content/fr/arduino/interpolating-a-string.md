@@ -1,7 +1,7 @@
 ---
-title:                "Interpoler une chaîne de caractères"
-html_title:           "Arduino: Interpoler une chaîne de caractères"
-simple_title:         "Interpoler une chaîne de caractères"
+title:                "Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,29 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi?
-Interpoler une chaîne de caractères est une méthode de programmation qui permet de remplacer des valeurs variables dans une chaîne de caractères prédéfinie. Cela peut être utile pour afficher des messages dynamiques ou pour simplifier le code en évitant des répétitions.
+## Qu'est-ce que c'est & Pourquoi ? 
 
-# Comment faire:
-Voici un exemple de code pour interpoler une chaîne de caractères dans Arduino:
+L'interpolation de chaîne est une manière d'insérer des valeurs de variables directement dans une chaîne de caractères. Les programmeurs l’utilisent pour créer des chaînes de caractères plus lisibles et ordonnées.
 
+## Comment faire : 
+
+Dans Arduino, on utilise souvent la fonction `sprintf()` pour interpoler des chaînes. Admettons que vous ayez une variable entière `age` et une chaîne `name`, voici comment ça se fait :
+
+```Arduino
+char name[] = "Pierre";
+int age = 23;
+
+char buffer[50];
+sprintf(buffer, "Bonjour, Je suis %s et j’ai %d ans.", name, age);
+
+Serial.begin(9600);
+Serial.println(buffer);
 ```
-int age = 23;  // Définir une valeur variable
-String message = "J'ai {age} ans.";  // Définir une chaîne de caractères avec un espace réservé pour la variable
 
-// Utiliser la fonction « replace() » pour remplacer l'espace réservé par la valeur de la variable
-message.replace("{age}", String(age));
+Cela affiche : "Bonjour, Je suis Pierre et j’ai 23 ans."
 
-// Afficher le résultat sur le moniteur série
-Serial.println(message);
-```
+## Plongée en profondeur : 
 
-La sortie dans le moniteur série sera : ```J'ai 23 ans.```
+Historiquement, l'interpolation de chaîne était une caractéristique majeure des langages de programmation de scripts tels que Perl et Ruby. En Arduino, nous utilisons la fonction C `sprintf()`. 
 
-# Plongée en profondeur:
-L'interpolation de chaîne de caractères est également connue sous le nom de « formatage de chaîne de caractères ». Elle est souvent utilisée dans les langages de programmation pour simplifier la manipulation de chaînes de caractères. D'autres techniques pour remplacer des valeurs variables dans une chaîne de caractères incluent l'utilisation de « sprintf() » ou de « snprintf() ».
+Il y a des alternatives à `sprintf()`, comme `snprintf()`, qui vérifie que vous n'écrivez pas plus de caractères que le tampon peut en contenir.
 
-# Voir aussi:
-Pour en savoir plus sur l'interpolation de chaîne de caractères dans le contexte d'Arduino, consultez la documentation officielle : https://www.arduino.cc/reference/en/language/structure/strings/stringinterpolation/
+En ce qui concerne les détails, `sprintf()` fonctionne en analysant la chaîne pour y trouver des caractères de format, comme `%s` pour les chaînes, et `%d` pour les entiers. Une fois trouvés, `sprintf()` les remplace par les valeurs des variables que vous avez spécifiées.
 
-Vous pouvez également apprendre davantage sur les différentes méthodes pour manipuler des chaînes de caractères dans Arduino ici : https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/
+## Voir aussi :
+
+Pour plus d'informations sur `sprintf()` et `snprintf()`, consultez les liens suivants :
+- `sprintf()`: http://www.cplusplus.com/reference/cstdio/sprintf/
+- `snprintf()`: http://www.cplusplus.com/reference/cstdio/snprintf/ 
+
+Et bien sûr, la référence Arduino : http://arduino.cc/en/Reference/HomePage

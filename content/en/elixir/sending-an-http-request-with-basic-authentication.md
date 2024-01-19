@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Elixir recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,33 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hitting Home with HTTP in Elixir: Basic Authentication Made Simple 
+# Send an HTTP Request with Basic Authentication in Elixir
 
 ## What & Why?
-The act of sending an HTTP request with basic authentication in Elixir involves making an API call and including a username and password in the header. This is common practice when your code needs to interact with a protected resource.
+
+Sending an HTTP request with basic authentication in Elixir means setting up a secure communication channel between the client and the server over HTTP. Programmers do this to protect sensitive information when the client interacts with the server.
 
 ## How to:
-The most straightforward way to make authenticated HTTP requests in Elixir is to use the popular `HTTPoison` library. With `HTTPoison`, requests become impressively clean and simple. Here’s how to get it done:
+
+In Elixir, we use the [HTTPoison library](https://hexdocs.pm/httpoison/readme.html) to send HTTP requests. First, install it by adding `httpoison` to your list of dependencies in `mix.exs`:
 
 ```Elixir
-{:ok, response} = HTTPoison.get("https://reqres.in/api/users/2", ["Authorization": "Basic #{:base64.encode_to_string('user:password')}"])
-IO.inspect response.body
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 ```
-In the above code, you're telling HTTPoison to send a GET request to the provided URL with an Authorization header containing the base64 encoded username and password.
 
-When you run this code, you should see the server's response printed to your console.
+Now, let's send an HTTP request with Basic Authentication:
+
+```Elixir
+defmodule MyModule do
+  def send_request do
+    case HTTPoison.get("https://api.example.com", ["Authorization": basic_authorization_header()]) do
+      {:ok, response} -> IO.inspect(response.status_code)
+      {:error, reason} -> IO.inspect(reason)
+    end
+  end
+
+  defp basic_authorization_header do
+    credentials = "#{System.get_env("API_USER")}:#{System.get_env("API_PASSWORD")}"
+    "Basic " <> Base.encode64(credentials)
+  end
+end
+```
+
+When we run `send_request/0` function, it makes a GET request to the target URL and outputs the status code of the response.
 
 ## Deep Dive
-In the earlier days of Elixir, developers had to fall back to Erlang libraries to make HTTP requests, and not all of them were user-friendly or thoroughly documented. `HTTPoison`, an Elixir wrapper around the `hackney` Erlang library, simplified matters considerably.
 
-It's worth noting that Elixir's standard library now includes a module called `:httpc`, which also supports basic authentication. Still, `HTTPoison` is often the more intuitive choice.
+The basic authentication in HTTP is a method designed to allow a web browser, or other client program, to provide credentials in the form of a username and password pair. Its notoriety for its simplicity is matched by its criticisms for its lack of protection against eavesdropping or 'man-in-the-middle' attacks. 
 
-If for some reason you need to create the 'Authorization' header by hand, be aware that the string 'user:password' must be encoded in base64. The final result should adhere to this format: "Authorization: Basic {base64_encoded_string}"
+Alternatives include digest authentication or token-based systems like OAuth, which add an extra layer of security by minimizing raw credential exposure. 
+
+In Elixir, when we make the request with HTTPoison, the `:ssl` and `:httpc` options in the request take an important role in setting up the secure connection. While the request is sent, the `Authorization` header, encoded in Base64, is included which carries the credentials.
 
 ## See Also
-For more information on using `HTTPoison` and `Elixir` for HTTP requests, check out the following sources:
 
-- `HTTPoison` GitHub Repo: https://github.com/edgurgel/httpoison
-- `hackney` GitHub Repo: https://github.com/benoitc/hackney
-- Elixir's `:httpc` module: https://erlang.org/doc/man/httpc.html
-- Basic HTTP Authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- [Official Elixir documentation](https://elixir-lang.org/docs.html)
+- [HTTPoison documentation](https://hexdocs.pm/httpoison/readme.html)
+- [Phoenix framework for Elixir](https://hexdocs.pm/phoenix/overview.html)
+- [OWASP guide to authentication](https://owasp.org/www-project-cheat-sheets/cheatsheets/Authentication_Cheat_Sheet.html)

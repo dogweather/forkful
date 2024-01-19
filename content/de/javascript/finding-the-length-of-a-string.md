@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden"
-html_title:           "Javascript: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,27 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Finden der Länge eines Strings ist ein häufiger Vorgang in der Programmierung, der es uns ermöglicht, die Anzahl der Zeichen in einem Text auszuwerten. Dies ist besonders nützlich, wenn wir z.B. überprüfen wollen, ob die Eingabe eines Benutzers die richtige Länge für ein Passwort oder eine Telefonnummer hat.
 
-## Wie geht das?
-Mit Javascript ist es sehr einfach, die Länge eines Strings zu finden. Dafür verwenden wir die eingebaute Funktion ```length```, die auf jedem String aufgerufen werden kann. Hier ist ein Beispiel:
+Die Länge eines Strings zu finden, bezieht sich auf die Bestimmung der Anzahl der Zeichen, die es enthält. Programmierer tun dies oft, um die Eingabevalidierung durchzuführen oder um die Stringmanipulationen zu kontrollieren.
 
-```
-// Deklaration einer Variable "text" mit einem Wert
-let text = "Hallo Welt!";
+## Wie zu:
 
-// Verwendung der "length" Funktion, um die Länge des Strings zu finden
-let laenge = text.length;
-
-// Ausgabe der Länge in der Konsole
-console.log(laenge); // Output: 11
+```Javascript
+let meinString = 'Hallo Welt';
+console.log(meinString.length);
 ```
 
-## Tiefergehende Informationen
-Die Funktion ```length``` gibt uns die Anzahl der Zeichen in einem String zurück, einschließlich Leerzeichen und Sonderzeichen. Sie ist sehr effizient und kann auf allen modernen Webbrowsern und Plattformen verwendet werden.
+Die Ausgabe wäre `11`, weil `Hallo Welt` 11 Zeichen enthält (einschließlich des Leerzeichens).
 
-Alternativ können wir auch die Javascript-Methode ```String.prototype.size``` verwenden, die das gleiche Ergebnis liefert. Allerdings ist sie nicht so weit verbreitet und wird daher nicht so oft genutzt.
+Sie können sogar die Länge eines leeren Strings überprüfen:
 
-## Weitere Quellen
-- [MDN Web Docs: String.prototype.length](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [MDN Web Docs: String.prototype.size()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/size)
+```Javascript
+let leererString = '';
+console.log(leererString.length);
+```
+
+Die Ausgabe wird `0` sein, weil der String keine Zeichen enthält.
+
+## Deep Dive
+
+Die Methode `.length` in JavaScript stammt aus den frühen Tagen von Netscape (ja, das dürfte dich zurückbringen). Sie hat sich als wirksames und einfaches Mittel zur Erkennung der Stringlänge behauptet.
+
+Alternativ könnten Sie eine Schleife verwenden, um jedes Zeichen einzeln zu zählen, aber `.length` ist in den meisten Fällen effizienter und einfacher zu verwenden.
+
+Die Implementierung von `.length` in JavaScript ist ziemlich gerade. Es verfolgt einfach die Anzahl der Zeichen innerhalb des string literal und gibt diesen Wert zurück. Für die Sprache selbst sind keine zusätzlichen Berechnungen erforderlich.
+
+## Siehe Auch
+
+Für weitere Informationen zu Strings in JavaScript, besuchen Sie die MDN Web Docs: [String](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+JavaScript has a lot of methods to manipulate and work with strings, not just `.length`. Check them out here: [String.prototype](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/prototype)

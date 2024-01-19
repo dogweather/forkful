@@ -1,7 +1,7 @@
 ---
-title:                "Textsuche und -ersetzung"
-html_title:           "Swift: Textsuche und -ersetzung"
-simple_title:         "Textsuche und -ersetzung"
+title:                "Suchen und Ersetzen von Text"
+html_title:           "C#: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,30 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Suchen und Ersetzen in Swift
+
 ## Was & Warum?
+Eine Suche und Ersetzung von Text ermöglicht es, bestimmte Teile eines Strings zu finden und auszutauschen. Dies ist in vielen Anwendungsfällen nützlich, wie z.B. bei der Datenbereinigung oder Formatänderung.
 
-Suchen und Ersetzen ist eine häufige Aufgabe in der Programmierung. Sie bezieht sich auf das Durchsuchen von Text nach bestimmten Zeichenfolgen und dann auf das Ersetzen dieser Zeichenfolgen durch eine andere. Programmierer verwenden diese Technik, um schnell bestimmte Wörter oder Codes in ihrem Programm zu finden und zu ändern, anstatt manuell durch den gesamten Code zu suchen.
-
-## Wie geht's:
-
-Eine Möglichkeit, Text in Swift zu suchen und zu ersetzen, ist die Verwendung der built-in Funktion `replacingOccurrences(of:with:)`. Hier ist ein Beispiel:
+## So geht's:
+Im folgenden sehen wir, wie Text in Swift gesucht und ersetzt wird. Wir verwenden die `replacingOccurrences` Methode der `String` Klasse.
 
 ```Swift
-let str = "Hallo, wie geht es dir?"
-let newStr = str.replacingOccurrences(of: "hallo", with: "Hallo")
-print(newStr)
-
-// Ausgabe: "Hallo, wie geht es dir?"
+let originalString = "Hallo Welt"
+let replacedString = originalString.replacingOccurrences(of: "Welt", with: "Swift")
+print(replacedString)  // Ausgabe: Hallo Swift
 ```
+In diesem Codeblock erstellen wir zuerst einen String "Hallo Welt". Dann ersetzen wir "Welt" durch "Swift" und erhalten "Hallo Swift".
 
-In diesem Beispiel ersetzt die Funktion `replacingOccurrences(of:with:)` alle Vorkommen des Wortes "hallo" durch "Hallo" und gibt den neuen String aus. Sie können auch mehrere Ersetzungen in einem String durchführen, indem Sie die Funktion mehrmals aufrufen.
+## Vertiefung
+Historisch gesehen basiert die `replacingOccurrences` Methode auf der Regular Expression Technologie, die ursprünglich von Unix entwickelt wurde. Alternativen zur `replacingOccurrences` Methode wären z.B. die Erstellung eigener Funktionen, allerdings ist `replacingOccurrences` aufgrund ihrer Einfachheit und Effizienz in den meisten Situationen vorzuziehen. Die Methode durchläuft intern den Text, sucht nach Übereinstimmungen und ersetzt diese durch den angegebenen neuen Text.
 
-## Tiefer Eintauchen:
+## Siehe auch
+Für weiterführende Informationen und zusätzliche Kontext siehe die folgenden Ressourcen:
 
-Die Technik des Suchens und Ersetzens gibt es schon seit langem und wird in verschiedenen Programmen verwendet, nicht nur in der Programmierung. Es gibt auch alternative Methoden, um Text in Swift zu suchen und zu ersetzen, wie z.B. die Verwendung von regulären Ausdrücken.
-
-Die Funktion `replacingOccurrences(of:with:)` verwendet standardmäßig das Case-Sensitive-Matching, was bedeutet, dass sie zwischen Groß- und Kleinschreibung unterscheidet. Um dies zu vermeiden, können Sie den Parameter `options` mit dem Wert `caseInsensitive` angeben. Es gibt auch andere Optionen wie `literal`, `numeric`, `anchored` usw., die mehr Kontrolle über das Suchen und Ersetzen bieten.
-
-## Siehe auch:
-
-Wenn Sie mehr über das Suchen und Ersetzen von Text in Swift erfahren möchten, können Sie die offizielle Swift-Dokumentation besuchen oder diese [Tutorial-](https://www.raywenderlich.com/139591/regular-expressions-tutorial-ios-swift) und [Video-](https://www.youtube.com/watch?v=VzBkcFJChuE) Ressourcen erkunden.
+1. [Swift String Dokumentation](https://developer.apple.com/documentation/swift/string)
+2. [Swift Regular Expression Tutorial](https://nshipster.com/swift-regular-expressions/)
+3. [Text Manipulation in Swift](https://www.hackingwithswift.com/articles/141/8-powerful-swift-features-that-sometimes-confuse-beginners)

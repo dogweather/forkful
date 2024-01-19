@@ -1,7 +1,7 @@
 ---
-title:                "Desglosando html"
-html_title:           "Javascript: Desglosando html"
-simple_title:         "Desglosando html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
-El "parsing" es un término técnico que se refiere a la tarea de analizar y procesar datos en un formato específico. En el contexto de la programación de páginas web, el "parsing HTML" se refiere a la tarea de interpretar y manipular el código HTML de una página web. Los programadores realizan esta tarea para poder extraer y utilizar la información contenida en dicha página web.
+## ¿Qué y Por Qué?
+
+El análisis sintáctico (parsing) de HTML es el proceso de analizar el contenido de un documento HTML para entender su estructura. Los programadores lo hacen para manipular o extraer información específica del documento HTML.
 
 ## Cómo hacerlo:
-El parsing HTML se puede hacer utilizando JavaScript, ya que es el lenguaje de programación utilizado para crear interactividad en páginas web. A continuación, se presentan dos ejemplos de cómo parsear HTML en JavaScript:
-```Javascript
-// Ejemplo 1: Utilizando el método fetch() para obtener los datos HTML de una URL
-fetch('https://www.ejemplo.com/pagina')
-  .then(response => response.text()) // convierte el contenido a texto
-  .then(data => {
-    // utilizamos el objeto DOMParser para parsear el HTML y acceder a su contenido
-    const parser = new DOMParser();
-    const htmlDocument = parser.parseFromString(data, "text/html");
-    const titleElement = htmlDocument.querySelector('h1'); // accedemos al primer elemento h1 en la página
-    console.log(titleElement.textContent); // imprimimos el contenido del elemento en la consola
-  });
 
-// Ejemplo 2: Utilizando la librería Cheerio para parsear el HTML de una página
-const cheerio = require('cheerio');
-const html = '<ul><li>Elemento 1</li><li>Elemento 2</li></ul>';
-const $ = cheerio.load(html); // cargamos el HTML utilizando Cheerio
-const listElements = $('li'); // seleccionamos todos los elementos li en la página
-listElements.each((index, element) => {
-  console.log(element.text); // imprimimos el contenido de cada elemento en la consola
-});
+Aquí te dejo un ejemplo sencillo de cómo podemos hacerlo utilizando Javascript y la API DOMParser.
+
+```Javascript
+let parser = new DOMParser();
+let documentoHtml = "<html><body><h1>Hola Mundo!</h1></body></html>";
+let doc = parser.parseFromString(documentoHtml, "text/html");
+console.log(doc.body.textContent); // "Hola Mundo!"
 ```
 
-## Profundizando:
-El parsing HTML es una tarea importante en el desarrollo de páginas web, ya que permite a los programadores acceder y manipular el contenido de una página y utilizarlo de diversas maneras. Antes de la creación de herramientas como DOMParser o Cheerio, se utilizaban métodos más rudimentarios para parsear HTML, como el uso de expresiones regulares. Sin embargo, estas técnicas no eran eficientes y podían generar errores. Gracias a las nuevas herramientas, parsear HTML en JavaScript es mucho más sencillo y preciso.
+En este código, primero creamos un nuevo objeto DOMParser. Después, utilizamos su método `parseFromString()` para convertir una cadena de HTML en un Documento HTML que Javascript puede entender y manipular. Finalmente, extraemos el contenido de texto del cuerpo y lo imprimimos en la consola.
 
-## Ver también:
-- [Documentación oficial de DOMParser](https://developer.mozilla.org/es/docs/Web/API/DOMParser)
-- [Documentación oficial de Cheerio](https://cheerio.js.org/)
+## Inmersión Profunda:
+
+### Contexto Histórico
+Historicamente, el análisis sintáctico de HTML era un trabajo arduo y propenso a errores debido a la naturaleza flexible del lenguaje HTML. Pero con la introducción de las APIs de análisis sintáctico en los navegadores modernos, esto se ha convertido en una tarea más manejable.
+
+### Alternativas
+Además de DOMParser, también puedes usar la librería JSDOM para hacer análisis sintáctico de HTML. Esta librería es especialmente útil cuando trabajas con Node.js, ya que DOMParser no está disponible en Node.
+
+### Detalles de la implementación
+Cuando se parsea un documento HTML, se crea un árbol de nodos (DOM) que representa el contenido del documento. Este árbol puede ser manipulado usando diferentes métodos y propiedades provistas por el API DOM.
+
+## Ver También:
+
+- API DOMParser: https://developer.mozilla.org/es/docs/Web/API/DOMParser
+- Librería JSDOM: https://github.com/jsdom/jsdom
+- Documentación del API DOM: https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model

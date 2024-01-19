@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di una data da una stringa."
-html_title:           "PHP: Analisi di una data da una stringa."
-simple_title:         "Analisi di una data da una stringa."
+title:                "Analizzare una data da una stringa"
+html_title:           "Fish Shell: Analizzare una data da una stringa"
+simple_title:         "Analizzare una data da una stringa"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,25 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
-Il parsing di una data da una stringa è il processo di estrarre una data da una stringa di testo. I programmatori spesso lo utilizzano quando devono manipolare le date in un formato diverso da quello in cui sono memorizzate, per esempio per visualizzarle in un formato più leggibile per gli utenti.
+## Cos'è e Perché?
+L'analisi di una data da una stringa consiste nello scomporre un testo che rappresenta una data in parti più piccole e significative. I programmatori la usano per interpretare e manipolare le date in modo più comodo e funzionale nelle loro applicazioni.
 
 ## Come fare:
-Ecco un esempio di codice PHP che utilizza le funzioni di parsing della data per estrarre la data in formato italiano e visualizzarla come stringa:
+Utilizzare la funzione PHP `date_parse` o `DateTime::createFromFormat` per analizzare una data. Ecco alcuni esempi:
 
 ```PHP
-$date_str = '15/02/2021';
-$date = date_parse_from_format('d/m/Y', $date_str); 
+<?php
+$dataStringa = "2021-11-30";
+$data = date_parse($dataStringa);
 
-// visualizza la data come stringa nel formato "DD/MM/YYYY"
-echo "{$date['day']}/{$date['month']}/{$date['year']}";
+var_dump($data);
+?>
 ```
 
-**Output:** 15/02/2021
+Questo produrrà un output come questo:
 
-## Approfondimento:
-Il parsing delle date da una stringa è diventato un processo necessario con l'avvento dei cosiddetti *Unix timestamps*, ovvero la rappresentazione delle date come numero di secondi trascorsi dal 1 gennaio 1970. Alcune alternative per eseguire il parsing di una data da una stringa sono l'utilizzo di espressioni regolari o di librerie esterne come Carbon. Il PHP offre varie funzioni di parsing della data, come `date_parse` e `strtotime`, che possono essere utilizzate per ottenere diverse informazioni dalla data, come il numero di settimane trascorse o il giorno della settimana.
+```PHP
+array(13) {
+  ["year"]=>
+  int(2021)
+  ["month"]=>
+  int(11)
+  ["day"]=>
+  int(30)
+  ...
+}
+```
 
-## Vedi anche:
-- [Documentazione ufficiale delle funzioni di data e ora in PHP](https://www.php.net/manual/en/function.date.php)
-- [Libreria Carbon per il parsing e la manipolazione delle date in PHP](https://carbon.nesbot.com/)
+O utilizzare "DateTime::createFromFormat":
+
+```PHP
+<?php
+$dataStringa = "Novembre 30, 2021";
+$data = DateTime::createFromFormat('F j, Y', $dataStringa);
+
+echo $data->format('Y-m-d');
+?>
+```
+
+Questo restituirà:
+
+```PHP
+2021-11-30
+```
+
+## Approfondimento
+L'analisi della data da una stringa è una pratica comune da quando le date sono state prima rappresentate come stringhe di testo, piuttosto che come numeri o altri tipi. Alcune alternative all'analisi standard di PHP includono l'uso di librerie esterne, come Carbon per PHP. Queste librerie possono fornire maggiori funzionalità e flessibilità, ma richiedono una dipendenza esterna. Dettagli sull'implementazione dell'analisi delle date in PHP sono disponibili nel manuale PHP e nei commenti degli utenti.
+
+## Vedi Anche
+Per ulteriori dettagli e opzioni, consultare la documentazione PHP ufficiale e le guide disponibili online.
+
+- [Funzioni di data e ora di PHP](https://www.php.net/manual/it/book.datetime.php)
+- [Parser di sintassi datetime compatibile con 
+Strtotime()](https://www.php.net/manual/it/datetime.formats.date.php)
+- [Carbon - Una semplice libreria PHP per Date and Time](https://carbon.nesbot.com/)

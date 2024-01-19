@@ -1,6 +1,6 @@
 ---
 title:                "Att skicka en http-begäran"
-html_title:           "Kotlin: Att skicka en http-begäran"
+html_title:           "Go: Att skicka en http-begäran"
 simple_title:         "Att skicka en http-begäran"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,34 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skicka en HTTP-förfrågan innebär att be en server om information via internet. Programmerare gör detta för att hämta data från en annan plats, till exempel från en API.
 
-## Hur man:
+Att skicka en HTTP-begäran (request) innebär att begära data från en server. Programmerare gör detta för att samla in, läsa, uppdatera, eller radera data på servern i realtid.
+
+## Hur gör man:
+
+För att skicka en HTTP-begäran i Kotlin, kan vi använda biblioteket `khttp`. Låt oss ta en POST-begäran som exempel:
+
 ```Kotlin
-val url = "https://example.com"
-val client = OkHttpClient()
+import khttp.responses.Response
+import khttp.post
 
-val request = Request.Builder()
-    .url(url)
-    .build()
-
-try {
-    val response = client.newCall(request).execute()
-    val body = response.body?.string()
-    println(body)
-} catch (e: IOException) {
-    e.printStackTrace()
+fun main() {
+    val response : Response = post(
+        "https:\/\/eksempel.com/api",
+        data = mapOf("namn" to "Kotlin")
+    )
+    println(response.statusCode)
+    println(response.text)
 }
 ```
 
-Kodexemplet visar hur man skickar en enkel HTTP-förfrågan i Kotlin med hjälp av OkHttp-biblioteket. Först sätts en URL till önskad plats och en HTTP-klient skapas. Sedan byggs en begäran med hjälp av URL:en och tillslut utförs förfrågan och responsen skrivs ut till konsolen.
+Resultatet kan se ut så här:
 
-## Deep Dive
-Att skicka HTTP-förfrågningar har funnits sedan starten av internet och är en fundamental del av webbaserade applikationer. Det finns också andra bibliotek och ramverk som kan användas för att skicka HTTP-förfrågningar, som till exempel Retrofit och Ktor. 
+```Output
+200
+{"meddelande":"Request lyckades"}
+```
 
-För att skicka en HTTP-förfrågan behöver vi en URL för målplatsen och en metod som bestämmer vad som ska göras med denna URL. I vårt fall är det en GET-förfrågan som används, vilket betyder att vi vill hämta data från den angivna URL:en. För att utföra förfrågan behöver vi också en HTTP-klient som hanterar kommunikationen med servern. 
+## Djupdykning:
 
-## Se också
-- [OkHttp](https://square.github.io/okhttp/) - Officiell webbplats för OkHttp-biblioteket
-- [Retrofit](https://square.github.io/retrofit/) - Ett annat populärt bibliotek för att skicka HTTP-förfrågningar i Kotlin
-- [Ktor](https://ktor.io/) - Ett ramverk för att bygga webbapplikationer i Kotlin som också har inbyggda funktioner för att skicka HTTP-förfrågningar.
+1. **Historia**: HTTP-begäran är själva ryggraden i webben och har varit det sedan dess uppkomst 1990. HTTP står för HyperText Transfer Protocol.
+
+2. **Alternativ**: Det finns flera alternativ för att skicka HTTP-begäran i Kotlin, som `OkHttp`, `Retrofit` och `Fuel`.
+
+3. **Genomförande detaljer**: När vi skickar en POST-begäran, sänds datan som en part i kroppen av begäran. Serverns svar skickas tillbaka som svarspayload. I vårt Kotlin-exempel ovan kastar `Response` ett undantag om begäran misslyckades. Det returnerar också information om statuskoden, rubriker, och kroppen i svaret.
+
+## Se även:
+
+Nedan är några användbara resurser för vidare läsning:
+
+- Förstå HTTP-begäran: https://sv.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+- `khttp` dokumentation: https://jitpack.io/p/jkcclemens/khttp
+- `OkHttp` dokumentation: https://square.github.io/okhttp/
+- `Retrofit` dokumentation: https://square.github.io/retrofit/
+- `Fuel` dokumentation: https://github.com/kittinunf/fuel

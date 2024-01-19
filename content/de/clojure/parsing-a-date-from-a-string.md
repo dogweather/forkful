@@ -1,7 +1,7 @@
 ---
-title:                "Das Parsen eines Datums aus einem String"
-html_title:           "Clojure: Das Parsen eines Datums aus einem String"
-simple_title:         "Das Parsen eines Datums aus einem String"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das & Warum?
-Das Parsen von Datum aus einem String ist der Prozess, bei dem ein Datumswert aus einem Text extrahiert wird. Programmierer tun dies, um mit Datumswerten in ihren Programmen zu arbeiten.
+# Clojure-Datumsanalyse: Wie man ein Datum aus einem String in Clojure liest
 
-## Wie geht's?
+## Was & Warum
+Das Parsen eines Datums aus einem String ist der Prozess, einen String zu analysieren und in ein Datumsobjekt umzuwandeln. Dies ermöglicht es Programmierern, Datumsdaten leicht zu manipulieren und zu vergleichen.
+
+## So geht's
+Wir verwenden die Java-Interoperabilität von Clojure und die Java-`SimpleDateFormat`-Klasse, um dieses Problem zu lösen.
+
 ```Clojure
-; Ein Datum aus einem Text extrahieren
-(-> "18. März 2021"           ; Der Text, aus dem das Datum extrahiert wird
-    (parse-date "dd. MMM yyyy") ; Das Datum in gewünschtem Format angeben
-    (.toInstant))              ; Das Datum als Instant Objekt ausgeben
-; Ausgabe: #object[java.time.Instant 0x602b8967 "2021-03-18T00:00:00Z"]
+(import 'java.text.SimpleDateFormat)
 
-; Ein Datum aus einem String parsen und als Date Objekt ausgeben
-(ns my-date-parser.core
-  (:import
-   [java.time LocalDate]
-   [java.time.format DateTimeFormatter]))
-(def formatter (DateTimeFormatter/ofPattern "dd. MMM yyyy"))
-(local-date "1. Januar 2021" formatter) ; Das Datum als LocalDate Objekt ausgeben
-; Ausgabe: #object[java.time.LocalDate 0x72d8b880 "2021-01-01"]
+(defn parse-date [s]
+  (let [df (SimpleDateFormat. "dd-MM-yyyy")]
+    (.parse df s)))
 
-;; Beachten Sie, dass die angegebene Formatierung dem Format des Datums im String entsprechen muss, sonst gibt es eine Exception.
+(println (parse-date "20-12-2020"))
+```
+Wenn dieser obige Code ausgeführt wird, wird er `Sun Dec 20 00:00:00 CET 2020` ausgeben.
 
-## Tiefer in die Materie
-Das Parsen von Datum aus einem String hat seinen Ursprung in der Notwendigkeit, Informationen in lesbarer Form darzustellen. Alternativen zum Parsen von Dateien aus Strings sind das manuelle Erstellen von Datumswerten oder die Verwendung von spezialisierten Bibliotheken.
+## Genauer betrachtet
+Historisch sehen wir, dass die Datumsformatierung und das Parsen in vielen Programmiersprachen ein gebräuchliches Problem darstellen. Alternativ zu unserem Ansatz könnten wir auch auf Clojure-Bibliotheken wie `clj-time` oder `java.time.*` zurückgreifen, die ab Java 8 verfügbar sind.
 
-Die Implementation von Datei-Parsing in Clojure nutzt die Java-Klasse "DateTimeFormatter", die verschiedene Methoden zum Parsen von Datumsangaben bereitstellt. Clojure bietet auch einige Wrapper-Funktionen, um den Prozess zu vereinfachen.
+Bitte beachten Sie, dass beim Parsen eines Datums Zeitzonen berücksichtigt werden müssen. `SimpleDateFormat` analysiert das Datum standardmäßig in der lokalen Zeitzone, es sei denn, Sie stellen eine andere ein.
 
 ## Siehe auch
-- [Java DateTimeFormatter Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- [Java LocalDate Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Clojure DateTimeUtils Bibliothek](https://github.com/clj-commons/clj-time)
+Um Ihre Kenntnisse zu erweitern, sollten Sie diese Links durchschauen:
+
+- Clojure Java-Interop (Offizielle Dokumentation) : https://clojure.org/reference/java_interop
+- SimpleDateFormat Dokumentation: https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+- Clj-Time, eine Clojure Bibliothek für Datum und Zeit : https://github.com/clj-time/clj-time
+- Java Time Dokumentation : https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+
+Dies ist eine einfache, aber verbreitete Aufgabe in vielen Anwendungen. Hoffentlich gibt Ihnen dieser kleine Leitfaden ein besseres Verständnis, wie Sie dies in Clojure erreichen können.

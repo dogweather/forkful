@@ -10,47 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Det å beregne en dato i fremtiden eller fortiden er en vanlig oppgave for programmerere. Dette innebærer å bruke kodede algoritmer til å beregne en dato basert på et spesifisert antall dager i fremtiden eller fortiden. Dette kan være nyttig i en rekke programmer, som for eksempel kalendere eller tidsplanleggingssystemer.
+# Beregne en dato i fremtiden eller fortiden i C++
 
-# Hvordan:
-Det er flere måter å beregne en dato i fremtiden eller fortiden på i C++. Nedenfor finner du et eksempel på hvordan dette kan gjøres ved å bruke en enkel funksjon:
+## Hva & Hvorfor?
+Å beregne en dato i fremtiden eller fortiden er prosessen med å legge til eller trekke fra dager, måneder, eller år til en eksisterende dato. Dette kan være nyttig for programmerere for å administrere oppgaver som eventplanlegging, aldersverifisering eller fristkontroll.
 
+## Hvordan:
+Her er et enkelt C++ eksempel på hvordan beregne en fremtidig dato:
 ```C++
 #include <iostream>
-#include <string>
-#include <ctime>
+#include <chrono>
 
 int main() {
-  // Spesifiserer dato og antall dager i fremtiden eller fortiden
-  std::string current_date = "2021-04-20";
-  int num_days = 10;
+  std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+  std::chrono::system_clock::time_point next_month = now + std::chrono::hours(24 * 30);
 
-  // Bruker stl::tm struct for å konvertere dato til tidsstempel
-  std::tm date = {0};
-  std::strptime(current_date.c_str(), "%Y-%m-%d", &date);
-  std::time_t t = std::mktime(&date);
+  std::time_t time_now = std::chrono::system_clock::to_time_t(now);
+  std::time_t time_next_month = std::chrono::system_clock::to_time_t(next_month);
 
-  // Legger til/subtraherer antall dager til tidsstempel
-  t += num_days * 24 * 60 * 60; // 24 timer * 60 minutter * 60 sekunder
-  std::tm* future_date = std::localtime(&t);
-
-  // Output fremtidig dato som en string
-  std::cout << "Fremtidig dato: " << (future_date->tm_year + 1900) << "-"
-            << (future_date->tm_mon + 1) << "-" << future_date->tm_mday << std::endl;
+  std::cout << "Nåværende dato: " << std::ctime(&time_now);
+  std::cout << "Dato om en måned: " << std::ctime(&time_next_month);
 
   return 0;
 }
 ```
-
-Eksempelutgang:
+Output vil da være:
+```C++
+Nåværende dato: Tue Oct 13 12:00:00 2021
+Dato om en måned: Thu Nov 12 12:00:00 2021
 ```
-Fremtidig dato: 2021-04-30
-```
 
-# Dykk ned:
-Beregning av datoer har vært en viktig del av dataprogrammering siden begynnelsen. Tidligere ble dette gjort ved å bruke komplekse matematiske formler, men med utviklingen av programmeringsspråk som C++ har det blitt mye enklere. Alternativene for å beregne datoer inkluderer også å bruke innebygde funksjoner og biblioteker i stedet for å skrive koden selv. Implementeringsdetaljer for beregning av datoer kan variere avhengig av språk og biblioteker som brukes.
+## Dybdeplunge
+Historisk sett har dato- og tidsberegninger vært en vanskelig oppgave på grunn av kompleksiteten i kalendersystemene. Moderne programmeringsspråk som C++ har innebygde biblioteker som `chrono` som hjelper med disse beregningene.
 
-# Se også:
-- [C++ tid- og dato-funksjoner](https://www.cplusplus.com/reference/ctime/)
-- [Beregning av datoer i andre programmeringsspråk (engelsk)](https://stackabuse.com/calculate-time-difference-in-c/)
+Et alternativ til `chrono` ville være eldre C++ tid og dato biblioteker som `ctime`. Men, `chrono` gir mer presise og fleksible metoder for dato- og tidsberegninger og er å foretrekke i moderne C++ programmering.
+
+En ting å merke seg ved beregning av en dato i fremtiden eller fortiden er håndtering av datoer over månedsgrenser, årsskifter og skuddår, som alle kan påvirke nøyaktigheten av beregningene.
+
+## Se Også:
+1. C++ chrono bibliotek: h[ttps://en.cppreference.com/w/cpp/chrono](https://en.cppreference.com/w/cpp/chrono)
+2. Tid og dato i C++: [https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
+3. C++20 Dato bibliotek: [https://en.cppreference.com/w/cpp/chrono](https://en.cppreference.com/w/cpp/chrono)

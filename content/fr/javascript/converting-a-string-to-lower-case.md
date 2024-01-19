@@ -1,7 +1,7 @@
 ---
-title:                "Conversion d'une chaîne en minuscules"
-html_title:           "Javascript: Conversion d'une chaîne en minuscules"
-simple_title:         "Conversion d'une chaîne en minuscules"
+title:                "Convertir une chaîne en minuscules"
+html_title:           "Arduino: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,27 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est et pourquoi?
 
-La conversion d'une chaîne de caractères en minuscules est un moyen courant pour les programmeurs d'assurer l'homogénéité dans leurs données. En convertissant une chaîne en minuscules, tous les caractères seront facilement comparables et recherchables, indépendamment de leur casse d'origine.
+Convertir une chaîne en minuscule est le processus par lequel toutes les lettres majuscules dans une chaîne de caractères sont converties en minuscules. Les programmeurs le font pour effectuer des comparaisons sans tenir compte de la distinction entre majuscules et minuscules.
 
-## Comment faire:
+## Comment faire :
 
+Voici comment on convertit une chaîne en minuscule en Javascript:
 ```Javascript
-let chaine = "Exemple EN majuscules";
-let chaineMin = chaine.toLowerCase();
-console.log(chaineMin); // affiche "exemple en majuscules"
+let maChaine = "Bonjour Le Monde!";
+let chaineEnMinuscules = maChaine.toLowerCase();
+console.log(chaineEnMinuscules);
 ```
 
-Dans l'exemple ci-dessus, la méthode `toLowerCase()` est utilisée pour convertir la chaîne en minuscules. Cette méthode est intégrée à Javascript, donc pas besoin d'installer un module supplémentaire pour l'utiliser.
+L'exemple ci-dessus affichera "bonjour le monde!" dans la console.
 
-## Profondeur:
+## Plongée en profondeur:
 
-La prise en compte de la casse dans les données n'est pas une tâche nouvelle pour les programmeurs. Avant l'arrivée de la méthode `toLowerCase()`, il était nécessaire de parcourir manuellement les chaînes de caractères pour les convertir en minuscules. Aujourd'hui, il existe également une méthode similaire appelée `toUpperCase()` pour convertir une chaîne en majuscules.
+Historiquement, dans les premiers jours de l'informatique, les systèmes étaient sensibles à la casse. Cela a finalement conduit à la nécessité de fonctions pour manipuler la casse des chaînes.
 
-Si vous travaillez avec des caractères unicode, il peut être utile de connaître la différence entre `toLowerCase()` et `toLocaleLowerCase()`. La méthode `toLocaleLowerCase()` utilise les règles de casse spécifiques à la langue de l'utilisateur, tandis que `toLowerCase()` utilise les règles de casse génériques.
+Il y a quelques alternatives à l'utilisation de `toLowerCase()`. Vous pouvez parcourir chaque caractère de la chaîne, vérifier si c'est une lettre majuscule et, si c'est le cas, le convertir en minuscule.
+
+ ```Javascript
+let maChaine = "Bonjour Le Monde!";
+let chaineEnMinuscules = '';
+for(let i = 0; i < maChaine.length; i++){
+     chaineEnMinuscules += maChaine[i].toLowerCase();
+}
+ console.log(chaineEnMinuscules);
+```
+
+Cependant, utiliser `toLowerCase()` est généralement plus efficace et plus propre dans le code.
 
 ## Voir aussi:
 
-Documentation officielle pour `toLowerCase()`:
-https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/toLowerCase
+- La méthode `toUpperCase()`, qui fait l'inverse, convertit tous les caractères de la chaîne en majuscules. 
+- Documentation JavaScript MDN sur [toLowerCase()](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/toLowerCase) 
+- Stack Overflow: [How to convert string to lowercase in Javascript](https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript)

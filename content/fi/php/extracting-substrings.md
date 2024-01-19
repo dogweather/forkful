@@ -1,7 +1,7 @@
 ---
-title:                "Aliljonojen erottaminen"
-html_title:           "PHP: Aliljonojen erottaminen"
-simple_title:         "Aliljonojen erottaminen"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & miksi?
+## Mikä & Miksi?
 
-Substringien etsiminen on yksi tapa käsitellä merkkijonoja PHP-ohjelmoinnissa. Se tarkoittaa tietyn osan merkkijonosta poimimista ja sen käsittelemistä erillisenä yksikkönä. Tämä voi auttaa ohjelmoijaa käsittelemään ja manipuloimaan tekstin osia tarvittavalla tavalla.
+Aliketjujen erottaminen on prosessi, jossa valitaan ja kopiodaan merkkijonoista osia uuteen merkkijonoon. Ohjelmoijat tekevät tämän, koska se auttaa pitämään koodin siistinä, helpottaa tietojen käsittelyä ja analysointia.
 
-Miksi ohjelmoijat sitten käyttävät substringeja? Syitä on monia, kuten esimerkiksi tekstin analysointi ja käsittely, tiettyjen sanojen tai merkkijonojen etsiminen suuremmasta kokonaisuudesta tai esimerkiksi tekstin muotoiluun liittyvät tarpeet.
+## Kuinka:
 
-Kuinka?
+Käytämme PHP:n sisäänrakennettua `substr()` -funktiota. Tässä esimerkki:
 
-Alla on kaksi yksinkertaista esimerkkiä siitä, kuinka substringeja voi etsiä ja käsitellä PHP:n avulla.
-
-### Esimerkki 1:
-
-```php
-$teksti = "Tervehdys maailma!";
-$substring = substr($teksti, 8);
-echo $substring;
+```PHP
+<?php
+$input = "Hello, World!";
+$result = substr($input, 7, 5);
+echo $result;
+?>
 ```
-Tulos: _maailma_
 
-Kuten esimerkistä nähdään, ```substr()```-funktio ottaa kaksi parametria: ensimmäisenä merkkijonon ja toisena halutun alueen aloituskohdan. Tässä tapauksessa aloitamme merkkijonosta kohdasta 8 ja loppuosa palautuu tuloksena olevaan muuttujaan.
+Tulostettu merkkijono on "World".
 
-### Esimerkki 2:
+## Syvä Sukellus:
 
-```php
-$teksti = "123456789";
-$substring = substr($teksti, 3, 4);
-echo $substring;
-```
-Tulos: _4567_
+Aikaisemmissa PHP-versioissa oli olemassa funktio nimeltä `substr()`, joka toimi samalla tavalla mutta oli hitaampi. PHP 7 paransi tämän. Vaihtoehtoisesti voit käyttää `mb_substr()` -funktiota, jos käsittelet monitavuisia merkkijonoja.
 
-Tässä esimerkissä käytetään myös kolmatta parametria, joka määrittää halutun alueen pituuden. Tässä tapauksessa haluamme etsiä neljä merkkiä aloittaen kohdasta 3.
+PHP:n `substr()` -funktion toteutus on tehokas, tapa, jolla se käsittelee merkkijonoja. Se luo uuden merkkijonon, jossa on sama alkuperäinen merkkijono mutta eri aloitus- ja lopetuspisteet. Tämä tarkoittaa, että `substr()` muistuttaa 'viittauksia' alkuperäiseen merkkijonoon eikä kopioi merkkijonoa, mikä tekee siitä nopean.
 
-## Syvemmälle
+## Katso Myös:
 
-//TODO
-
-## Katso myös
-
-- PHP:n [virallinen dokumentaatio](https://www.php.net/manual/en/function.substr.php)
-- Videotutoriaali [substringien käytöstä PHP:ssä](https://www.youtube.com/watch?v=8-4jsK3B9I8)
-- [Substringien käyttömahdollisuuksia](https://www.codecademy.com/courses/learn-php/lessons/php-substrings/exercises/substr?action=resume_content_item) käytännössä.
+- [PHP:n virallinen dokumentaatio substr-funktiosta](https://www.php.net/manual/en/function.substr.php)
+- [PHP The Right Way - suositukset ja parhaat käytännöt](https://phptherightway.com)
+- [Algoritmit ja tietorakenteet PHP:ssä](https://www.packtpub.com/product/algorithms-and-data-structures-in-php/9781838644028)

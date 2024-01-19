@@ -1,6 +1,6 @@
 ---
 title:                "提取子字符串"
-html_title:           "C: 提取子字符串"
+html_title:           "Arduino: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "C"
 category:             "C"
@@ -10,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 前言：什么是字符串提取
-字符串提取是指从一个更大的字符串中获取子串（或部分字符串）的过程。这对于程序员来说非常有用，因为它允许他们根据需要从一个大型字符串中获取特定的信息或数据，并在程序中使用。
-
-现在，让我们深入了解字符串提取的一些技巧和技术。
-
 ## 什么 & 为什么？
-字符串提取是从一个字符串中提取特定信息的过程。程序员通常在需要从输入数据中获取特定数据时使用字符串提取。例如，他们可以从用户输入的字符串中提取邮箱地址或电话号码。
 
-为什么这么做？因为它可以帮助程序员快速准确地获取所需的信息，避免手动提取的繁琐步骤，并且可以提高代码的可读性。
+分割子串是将字符串中的一段数据取出来。它是编程中常见的需求，可以帮助我们抓取和分析文本数据。
 
-## 如何：
-让我们来看一个简单的例子，展示如何在C语言中提取字符串。假设我们有一个字符串“Hello World”，我们想要提取“World”作为我们的子串。
+## 怎么做：
 
-```
-#include<stdio.h>
+在C语言中，我们使用`strncpy`来分割字符串。但是注意！`strncpy`并不能为新的字符串添加结束符'\0'，你需要自己添加。下面是代码片段：
+
+```C
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-   char str[] = "Hello World";
-   char substr[6];
-   // 从索引6（'W'）开始复制字符到substr数组中
-   strcpy(substr, &str[6]);
-   // 输出结果
-   printf("提取的子串为：%s", substr);
-   
-   return 0;
+    char input[50] = "I love Mandarin!";
+    char output[10];
+
+    strncpy(output, input + 2, 4);
+    output[4] = '\0';  // 不要忘记这个！
+
+    printf("%s\n", output);  // 打印 "love"
+    
+    return 0;
 }
 ```
+运行上面的代码，你可以看到输出结果是："love"，这就是我们从原始字符串中抽取的子串。
 
-输出结果：提取的子串为：World
+## 深入探索：
 
-## 深入了解：
-字符串提取早在计算机程序设计的早期就已经出现了。在早期的编程语言中，如BASIC和FORTRAN，字符串提取通常是通过子字符串函数来实现的。随着计算机语言的发展，各种各样的字符串提取方法开始出现，如正则表达式、循环和子字符串切割。
+C语言的字符串处理函数起源于早期UNIX系统，而分割字符串功能一直是文本处理任务的一部分。虽然方法多样，但是用到的主要思路就是计算起始地址和长度。
 
-在C语言中，我们可以使用strncpy函数来复制字符串的一部分，但是它只能复制指定长度的子串。相比之下，strcpy函数可以根据字符串的结束符来复制整个字符串。
+此外，你还可以使用`sscanf`函数或指针操作来实现字符串的分割，只是在实际应用中应当尽可能选择最适合场景的方法。
 
-## 查看更多：
-- 子字符串函数：https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm
-- 正则表达式：https://www.tutorialspoint.com/c_standard_library/c_function_regexp.htm
-- 循环：https://www.tutorialspoint.com/cprogramming/c_loops.htm
-- 字符串切割：https://www.tutorialspoint.com/cprogramming/c_strings.htm
+值得注意的是，C标准库提供的函数都没有错误检查机制。所以，使用时务必确保操作是安全的，例如，复制的字符数量不能超过目标缓冲区的大小。
+
+## 另请参阅：
+
+这里有一些增进理解和提高技巧的资源：
+
+1. [C语言库函数](http://www.runoob.com/cprogramming/c-standard-library.html): Runoob.com提供的C标准库函数列表和使用详解
+
+2. [C的指针操作](https://learnku.com/docs/p/learn-clang/2018/a-simple-pointer/6073): 这是一个关于C语言指针基础和操作的入门指南。
+
+3. [字符串的内部表示](https://en.wikipedia.org/wiki/String_interning): 认识字符串的内部表示和实现方式。

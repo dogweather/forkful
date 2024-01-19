@@ -1,6 +1,6 @@
 ---
 title:                "Ladda ner en webbsida"
-html_title:           "Elixir: Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,26 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Webbsunder is a powerful tool in Elixir for downloading web pages. Programmers often use this function to extract data from websites or to automate certain tasks related to web browsing.
+# Nedladdning av en webbsida i Elixir 
 
-### Vad & Varför?
-Ladda ner en webbsida är helt enkelt en kod som tillåter dig att hämta innehållet på en webbsida. Detta är särskilt användbart när du behöver få tag på data från en specifik webbplats eller när du vill automatisera vissa uppgifter som är relaterade till webbläsning.
+## Vad & Varför?
+Nedladdning av en webbsida innebär att hela webbsidans innehåll hämtas och sparats i din dator. Programmerare gör det för att extrahera och bearbeta platsens information, övervaka sidans ändringar eller bygga en webbscraping bot.
 
-### Så här gör du:
-Att ladda ner en webbsida i Elixir är enkelt med hjälp av det inbyggda biblioteket HTTPoison. Här är ett exempel på hur du kan använda funktionen Webbsunder för att ladda ner en webbsida och spara den i en fil:
+## Så här gör du
+Låt oss använda HTTPoison biblioteket. För att installera det, lägg till det i din mix.exs-fil:
 
-```Elixir
-url = "https://www.example.com/"
-{:ok, response} = HTTPoison.get(url)
-File.write("example.html", response.body)
+```elixir
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 ```
 
-Detta kodblock gör en GET-förfrågan till den angivna webbplatsen och sparar svaret i en fil med namnet "exempel.html". Du kan ändra namnet på filen och destinationen enligt dina behov.
+Kör sedan `mix deps.get` i din terminal för att hämta biblioteket. 
 
-### Djupdykning:
-Webbsunder är en del av det inbyggda HTTPoison-biblioteket och används för att begära webbsidor. Det finns också andra alternativ för att hämta webbsidor i Elixir, såsom Tesla och Mint. Du kan också använda HTTPoison för att utföra andra HTTP-begäranden som till exempel POST, PUT och DELETE.
+Vi kan nu hämta en webbsida:
 
-När du laddar ner en webbsida med Webbsunder returneras en tupel som innehåller svaret från webbservern och eventuella fel eller statuskod. Du kan utforska detta svar ytterligare för att extrahera specifik information du behöver från webbsidan.
+```elixir
+{:ok, response} = HTTPoison.get("https://example.com")
+IO.puts(response.body)
+```
+Om du kör detta kommer det att skriva ut HTML-innehållet i "https://example.com".
 
-### Se också:
-Du kan läsa mer om Webbsunder och HTTPoison i deras officiella dokumentation på https://hexdocs.pm/httpoison/HTTPoison.html och https://hexdocs.pm/webbsunder/Webbsunder.html. Du kan också utforska alternativen Tesla och Mint för att hämta webbsidor i Elixir.
+## Fördjupning
+Historiskt sett, användes kommando-rad verktyg som 'wget' och 'curl' för att ladda ner webbsidor. Elixir, en ungare språk, tar ett mer modern tillvägagångssätt genom att använda HTTP-klientbibliotek. 
+
+Ett alternativ till HTTPoison skulle vara Tesla, som erbjuder middleware support. 
+
+Elixir använder ett öppet samtidigt system som gör det möjligt att hämta flera webbsidor i bakgrunden, vilket ökar effektiviteten. 
+
+## Se också
+HTTPoison dokumentation: https://hexdocs.pm/httpoison/readme.html
+Tesla på Hex: https://hex.pm/packages/tesla
+Elixir-lang: https://elixir-lang.org

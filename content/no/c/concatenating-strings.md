@@ -1,7 +1,7 @@
 ---
-title:                "Sammenføyning av strenger"
-html_title:           "C: Sammenføyning av strenger"
-simple_title:         "Sammenføyning av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,26 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
- I C programmering, concatenation refers til å legge til to eller flere tekststrenger sammen for å danne en lengre streng. Dette kan være nyttig for å lage dynamiske utskriftssetninger eller bygge tekstbaserte brukergrensesnitt. Programmører bruker ofte denne funksjonaliteten for å effektivt håndtere tekstvariabler og lage mer avanserte programmer. 
+## Hva og hvorfor?
 
-## Slik gjør du:
-Lag to strenger med tekst og bruk `strcat()` funksjonen for å kombinere dem. Her er et eksempel hvor vi legger til "Hei " til "verden" for å få setningen "Hei verden":
+Sammenslåing av strenger (eller "string concatenation") er prosessen med å sette sammen to eller flere strenger til en. Som programmerere gjør vi dette for å manipulere og formatere tekstdata på en effektiv måte.
+
+## Hvordan gjør du:
+
+I C, bruker vi ofte `strcat()` funksjonen fra standardbiblioteket for å legge sammen strenger. Se hvordan det fungerer:
+
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char setning[100] = "Hei, ";
+    strcat(setning, "verden!");
+    printf("%s\n", setning);
+    return 0;
+}
+```
+
+Denne koden vil gi følgende utdata:
 
 ```
-C char string1[20] = "Hei ";
-char string2[10] = "verden";
-strcat(string1, string2);
-printf("%s", string1);
+Hei, verden!
 ```
 
-Output:
-```
-Hei verden
+## Dypere dykk:
+Historisk sett har strengkonkatenering alltid vært grunnleggende for tekstbehandling i programmering. Imidlertid har håndteringen av det variert mellom forskjellige språk. C-standarden leverer `strcat()`, men det krever et destinasjonsbuffer som er tilstrekkelig stor til å holde begge strenger, ellers er overflyt en risiko.
+
+Alternativt kan `strncat()` brukes for å sikre at ikke mer enn `n` tegn blir slått sammen for å forhindre bufferoverflyt:
+
+```C
+char setning[10] = "Hei, ";
+strncat(setning, "verden!", 5);
+printf("%s\n", setning);
 ```
 
-## Dypdykk:
-Historisk sett var konkatenering av tekst gjort ved å bruke `sprintf()` funksjonen, men den nye standarden i C foretrekker `strcat()` funksjonen. En annen mulighet er å bruke `strcpy()` sammen med `strlen()` for å kopiere en streng og deretter finne lengden av den og legge til den andre. Implementasjonen av `strcat()` bruker en løkke og pekere for å håndtere konkatenering av to strenger. 
+Utgangen her vil være "Hei, verd".
 
 ## Se også:
- For mer informasjon om bruk av `strcat()`, se [dokumentasjonen til C](https://www.tutorialspoint.com/c_standard_library/string_h.htm). For en dypere forståelse av strenger i C, se [dette nettstedet](https://www.programiz.com/c-programming/c-strings).
+
+For mer informasjon om sammenkobling av strenger i C, se disse nyttige ressursene:
+
+1. strcat() - [https://www.cplusplus.com/reference/cstring/strcat/](https://www.cplusplus.com/reference/cstring/strcat/)
+2. strncat() - [https://www.cplusplus.com/reference/cstring/strncat/](https://www.cplusplus.com/reference/cstring/strncat/)
+3. Teksthåndtering i C - [https://www.learn-c.org/en/Text_strings](https://www.learn-c.org/en/Text_strings)

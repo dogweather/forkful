@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "Gleam: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,47 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+# In Angriff Nehmen mit Gleam
 
-Ein neues Projekt zu starten bedeutet, dass man als Programmierer einen neuen Code schreibt, der ein bestimmtes Ziel oder Problem löst. Programmierer machen dies, um innovative Ideen umzusetzen, Probleme zu lösen oder verbesserte Funktionen für bestehende Projekte zu erstellen.
+## Was & Warum?
 
-# Wie geht es?
+Ein neues Projekt zu starten bedeutet, von Grund auf mit einem sauberen Schief zu beginnen. Dies gibt Programmierern die Möglichkeit, eine Anwendung oder ein Softwareprodukt nach ihren spezifischen Bedürfnissen und Visionen zu gestalten.
 
-Um ein neues Projekt in Gleam zu starten, müssen Sie zunächst eine Projektstruktur mit `gleam new` erstellen. Dann können Sie die verschiedenen Module und Funktionen mit `gleam gen` generieren und sie mit Ihren eigenen Ideen und Lösungen implementieren.
+## Anleitung:
 
-```
-Gleammaker@MacBookAir ~ % gleam new my_project
-==> Erstelle neues Projekt my_project
-Gleammaker@MacBookAir ~ % cd my_project
-Gleammaker@MacBookAir org_name ~/my_project % gleam gen module MyModule
-==> Erstelle neues Modul MyModule
-```
-
-Um Ihre Module und Funktionen zu testen, können Sie `gleam build` verwenden, um eine ausführbare Datei zu erstellen, und dann `gleam test` ausführen, um Ihre Tests zu überprüfen. Hier ist ein Beispiel für eine Funktion, die zwei Zahlen addiert:
+Zum Starten eines neuen Gleam-Projekts folgen Sie den folgenden Schritten im Terminal. 
 
 ```
-fn add(x, y) {
-    x + y
-}
-
-test "Addition von zwei Zahlen sollte das richtige Ergebnis zurückgeben" {
-    expect(add(2, 3)).toBe(5)
-}
+gleam new mein_projekt
+cd mein_projekt
+rebar3 eunit
 ```
 
+Nach Ausführung des obigen Codes erhalten Sie eine Ausgabe, die so ähnlich aussieht:
+
 ```
-Gleammaker@MacBookAir ~ % gleam build add_test
-Gleammaker@MacBookAir ~ % gleam test add_test.beam
-==> False is True
-==> All tests passed
+===> Verifying dependencies...
+===> Compiling mein_projekt
+===> Performing EUnit tests...
 ```
 
-# Tief bettucht
+## Vertiefung:
 
-Gleam ist eine funktionale, statisch typisierte Sprache, die auf Erlang basiert. Sie wurde entwickelt, um einfache, stabile und parallele Anwendungen zu erstellen. Alternativen zu Gleam sind unter anderem Elixir, Clojure und Haskell. Gleam unterstützt auch die Integration mit bestehenden Erlang-Code.
+Historisch gesehen stammen Gleam und Erlang, auf dem Gleam aufbaut, von Ericsson ab, wo die Bedürfnis an stabiler und weitrechender Konnektivität groß ist. Alternativ gibt es andere statisch typisierte Sprachen wie Rust und Haskell, die sich jedoch in ihrer Syntax und in den zur Verfügung stehenden Bibliotheken unterscheiden können.
 
-# Siehe auch
+Bevor Sie ein Projekt in Gleam starten, ist es wichtig, die Erlang/OTP-Infrastruktur zu verstehen, da sie den Grundstein für Projekte bildet. Insbesondere sollten Sie mit `rebar3` vertraut sein, dem in Erlang geschriebenen Build-Tool, das beim Starten von Gleam-Projekten verwendet wird.
 
-- Offizielle Gleam-Dokumentation: https://gleam.run/
-- Erlang-Programmiersprache: https://www.erlang.org/
-- Andere funktionale Programmiersprachen: https://www.toptal.com/developers/blog/functional-programming-languages
+## Siehe Auch:
+
+Für eine ausführlichere Anleitung zum Starten eines Gleam-Projekts:  
+[https://gleam.run/getting-started/](https://gleam.run/getting-started/)
+
+Für Details zur Erlang-Plattform:  
+[https://www.erlang.org/](https://www.erlang.org/)
+
+Für weitere Informationen zum `rebar3` Build-Tool:  
+[https://www.rebar3.org/](https://www.rebar3.org/)

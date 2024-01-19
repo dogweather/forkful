@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstav i en tekststreng"
-html_title:           "Bash: Stor bokstav i en tekststreng"
-simple_title:         "Stor bokstav i en tekststreng"
+title:                "Gjøre om en streng til store bokstaver"
+html_title:           "Bash: Gjøre om en streng til store bokstaver"
+simple_title:         "Gjøre om en streng til store bokstaver"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å kapitalisere en streng betyr rett og slett å gjøre den første bokstaven stor, og alle de andre bokstavene små. Dette er vanligvis gjort for å gjøre en streng mer leselig og visuelt tiltalende.
+## Hva og Hvorfor?
 
-Mange programmerere velger å kapitalisere strenger for å følge bestemte stilguider eller konvensjoner. Det kan også være nyttig når du jobber med data som skal sorteres eller sammenlignes.
+Store bokstaver i en streng betyr å endre alle tegnene i strengen til store bokstaver. Dette er nyttig for programmører for å gjøre datauniforme, lettere for brukeren å lese, eller for å oppfylle visse systemkrav.
 
-## Hvordan:
-Kodingseksempel: 
-```
-#!/bin/bash
-str="dette er en teststreng"
-echo "${str^}"
-```
-Utskrift:
-```
-Dette er en teststreng
+## Slik gjør du:
+
+I Bash (siste versjon), kan du bruke innebygd `tr` kommando for å gjøre om strenger til store bokstaver. Her er et eksempel:
+
+```Bash
+tekst="jeg liker å kode"
+echo "${tekst}" | tr '[:lower:]' '[:upper:]'
 ```
 
-En annen metode er å bruke "tr" kommandoen:
-```
-#!/bin/bash
-str="dette er en teststreng"
-echo $str | tr '[:lower:]' '[:upper:]'
-```
-Utskrift:
-```
-DETTE ER EN TESTSTRENG
-```
-## Dypdykk:
-Historisk kontekst:
-Kapitalisering av strenger kan spores tilbake til gamle dager med manuell skriving, der det var vanlig å gjøre alle bokstavene i en tittel eller overskrift store for å få det til å se mer formelt ut.
+Output:
 
-Alternativer:
-I tillegg til "tr" kommandoen og strengmanipulasjon med "echo", kan du også bruke "sed" kommandoen for å kapitalisere en streng. Det finnes også spesialverktøy som er dedikert til å formatere strenger, som "rev" og "awk".
+```Bash
+JEG LIKER Å KODE
+```
 
-Implementeringsdetaljer:
-I Bash, er det en rekke innebygde variabler som du kan bruke til å manipulere en streng. For eksempel, ${str^} vil kapitalisere den første bokstaven i "str", mens ${str^^} vil kapitalisere alle bokstavene.
+## Dypdykk
 
-## Se også:
-- [Bash Manual](https://www.gnu.org/software/bash/manual/)
-- [tr kommandoen](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-- [sed kommandoen](https://www.gnu.org/software/sed/manual/sed.html)
-- [rev verktøyet](https://www.gnu.org/software/coreutils/manual/html_node/rev-invocation.html)
-- [awk verktøyet](https://www.gnu.org/software/gawk/manual/gawk.html)
+Historisk sett, var store bokstaver de første som ble implementert i datamaskiner på grunn av deres bruk i telegrafsystemer. 
+
+Alternativt kan du bruke `awk` eller `sed` kommandoene til å endre strengene til store bokstaver. Detaljer om implementering kan variere avhengig av hvilken versjon av Bash du bruker, men `tr` funksjonen er vanligvis den mest universelle og enkle å bruke.
+
+```Bash
+echo "${tekst}" | awk '{print toupper($0)}'
+echo "${tekst}" | sed -e 's/\(.*\)/\U\1/'
+```
+
+## Se Også
+
+1. [Bash Handbook](https://github.com/denysdovhan/bash-handbook)
+2. [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/)
+3. [GNU Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)

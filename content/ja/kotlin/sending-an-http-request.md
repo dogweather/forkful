@@ -1,7 +1,7 @@
 ---
-title:                "「Httpリクエストの送信」"
-html_title:           "Kotlin: 「Httpリクエストの送信」"
-simple_title:         "「Httpリクエストの送信」"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,30 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Koko ga dōyō ni aru
+# KotlinでHTTPリクエストを送信する
 
-## Nani ga dōyō ni suru nodesu ka?
-HTTP kaiō hōseifunō no koto de, anata wa uragawa ka musabakade HTTP kakō o okutte morau koto ga dekimasu. Purogurama wa anata no apurikēshon ni kanren shiteiru sāba atata, serubā, shugō tōk78788a no dōte o okutta riyōshite iru kamo shirenai.
+## 何＆なぜ?
 
-## Dō nasai ka?
-Anata wa Kotlin de HTTP kaiō hōseifunō o suru koto ga dekimasu. Kono tokuni tsuite wa, sāba atatakai sābā ni okutta HTTP kakō o anata wa kokorozasu koto ga dekimasu.
+HTTPリクエストを送信するとは、ウェブサーバーと通信するために使用されるメソッドのことです。これにより、プログラマーはアプリケーションとウェブサーバー間のデータの送受信を可能にします。
 
-<pre><code>
-Kotlin inou: 
-val url = "https://example.com"
-val request = Request.Builder().url(url).build()
+## 実装方法
 
-val client = OkHttpClient()
-val response = client.newCall(request).execute()
+Ktorを使用したサンプルコードを示します。まず、KtorとKotlinのコルーチンを利用するための依存関係を追加します。
 
-println(response.body()?.string())
-</code></pre>
+```kotlin
+dependencies {
+    implementation("io.ktor:ktor-client-core:1.6.3")
+    implementation("io.ktor:ktor-client-cio:1.6.3")
+}
+```
 
-Kotrin kode wa uragawa sābā to kahei hanbai mesudo ga kūka-ten blakutsu nia2000 sanfotsu kyūryō suru naikudookeizi me de saitekkeina hōsokata ga tankmareru.
+HTTPリクエストの送信は次のように行います。
 
-## Fūka Kakōhō
-HTTP kakō wa Iykara busgōdara yoi wakaranai. Astronautas kara fuudo, anata wa HTTP babekode o mokutorai renaidemitte katazu ni kanbetoshi de dekawe karu node sukunai sil kosto shijie ni mochitote iru desu. Dare ga natsu dinga watte yokauga tsukau mazudofrikareta wazuzushii japonisuto katta yasashii katazu ga no de, bokuga mochika ive ni awatclrote shikara reikōen congrat youkotterazu chigau katazuo kano shusavulyo sil takusande mochitte kanbetoshi desu ano vinsbuto ik zondogin ekiymowo ibayo dakhtan puroloadbaroakechirmitotodoso kirashi noshi to eringo hazushi rinjō just otaii keredoforōnenmoorato ezuke epiga – o) .
+```kotlin
+import io.ktor.client.*
+import io.ktor.client.request.*
 
-## See Also
-- [OkHttp - HTTP Client for Android and Java](https://square.github.io/okhttp/)
-- [Kotlin - Official Website](https://kotlinlang.org/)
+suspend fun main() {
+    val client = HttpClient()
+
+    val response: String = client.get("http://example.com")
+
+    println(response)
+}
+```
+
+これにより、`http://example.com`からデータを取得するHTTP GETリクエストが送信されます。応答の文字列がコンソールに表示されます。
+
+## ディープダイブ
+
+HTTPリクエストを送信するというコンセプトは、ウェブの歴史と深く結びついています。これがなければ、ウェブ上の情報を取得または送信することはできません。例えば、銀行のアプリケーションはHTTPリクエストを送信して口座の残高を取得します。
+
+さて、KotlinではKtor以外にも、OkHttpやFuelなどのライブラリを使用してHTTPリクエストを送信することができます。
+
+具体的な実装については、Ktorでは非同期プログラミングを可能にするKotlinコルーチンが使用されています。これにより、HTTPリクエストの送信と受信をブロックせずに行うことができます。
+
+## 参考資料
+
+- [Kotlin公式ドキュメンテーション](https://kotlinlang.org/docs/reference/)
+- [Ktor公式ドキュメンテーション](https://ktor.io/docs/index.html)
+- [OkHttpのページ](https://square.github.io/okhttp/)
+- [Fuelのページ](https://fuel.gitbook.io/documentation/)

@@ -1,7 +1,7 @@
 ---
-title:                "現在の日付を取得する"
-html_title:           "Gleam: 現在の日付を取得する"
-simple_title:         "現在の日付を取得する"
+title:                "現在の日付の取得"
+html_title:           "Bash: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が？なぜ？
-現在の日付を取得するとは何かを説明するために、プログラマがこれを行う理由について説明します。
-大部分のプログラムには、現在の日付を取得する必要があるからです。これにより、特定の日時を追跡したり、時間に基づいて処理を変更したりすることができます。
+## 何 & なぜ？
+現在の日付を取得することは、その日の日付に基づいた情報の記録または調査など、プログラム内でリアルタイムの日付を使いたいさまざまな状況に対応する手段です。これはログのタイムスタンプを生成したり、特定のタスクを一日に一回だけ実行したりするために頻繁に行われます。
 
-## 方法：
+## やり方
+以下のGleamコード例は現在の日付を示します:
 ```Gleam
-let current_date = Time.now()
+import gleam/datetime.{Datetime, Now}
+fn main() {
+  let current_datetime: Result(Datetime, Nil) = Now.now()
+  case current_datetime {
+    Ok(datetime) -> 
+      datetime.year()
+      |> Int.to_string
+      |> IO.println
+    Error(_) -> IO.println("Failed to get current date.")
+  }
+}
 ```
-上記のコードを使用して、現在の日付をGleamで取得することができます。コードを実行すると、出力は以下のようになります。
+このコードを実行すると、現在の年が出力されます。
 
-```Gleam
-2021-01-07T15:42:22.658712Z
-```
-上記のように、日付や時間を表示するフォーマットを指定することもできます。例えば、 `Time.format (current_date, "%Y/%m/%d")` とすると、以下のように表示されます。
-```Gleam
-2021/01/07
-```
+## ディープダイブ
+歴史的に、現在の日付を取得する方法はさまざまなプログラミング言語やシステムで異なります。例えばUnixシステムでは、`time()`関数を使用して1970年1月1日からの秒数を取得し、それを日付に変換します。しかし、Gleamの現在のバージョンでは、組み込みのdatetimeモジュールの`Now.now()`関数を使用します。他の方法としては、外部サービスに問い合わせたり、ユーザーに入力させたりすることもあります。最終的な選択は、用途と精度の要件によります。
 
-## 詳しく見る：
-### 歴史的背景
-日付や時間を取得するための標準的な手段はたくさんありますが、その中でも最も一般的な方法は、『エポック時間』と呼ばれる1970年1月1日からの経過秒数を使用する方法です。しかし、この方法はシステム毎に異なるエポック時間を持っている場合があり、扱いにくくなることがあります。
+## 参照
+1. Gleamの公式ドキュメンテーション: [gleam/datetime](https://hexdocs.pm/gleam_stdlib/gleam/datetime.html)
+2. Gleamでの日付と時刻: [Gleam実践ガイド](https://gleam.run/book/src/appendix-1-date-and-time-in-gleam.html)
+3. Present time in Unix: [unix.com](https://www.unix.com/man-page/posix/time-2/)
 
-### 代替手段
-他にも、Dateモジュールを使用して日付や時間を取得する方法もあります。このモジュールを使用すると、日付や時間をフォーマットするための多様なオプションが提供されます。
-
-### 実装の詳細
-Gleamでは、 `Time` モジュールを使用して日付や時間を取得することができます。バックエンドで `Time` は、エポック時間を使用して日付や時間を計算します。また、 `Time` モジュールには、日付や時間を操作するための多数の関数が用意されています。
-
-## 関連情報を参照：
-- [GleamのTimeモジュールのドキュメント](https://gleam.run/libraries/time)
-- [Dateモジュールを使用して日付や時間を取得する方法の例](https://github.com/gleam-lang/gleam/blob/master/examples/date_time/date.gleam)
+以上が、`Gleam`で現在の日付を取得する基本的な手順です。コードを試したり、参考リンクからさらに学んでみてください。

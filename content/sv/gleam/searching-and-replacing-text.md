@@ -1,6 +1,6 @@
 ---
 title:                "Sökning och ersättning av text"
-html_title:           "Gleam: Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
 simple_title:         "Sökning och ersättning av text"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,25 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att söka och ersätta text är en vanlig uppgift för programmerare. Det innebär att man letar efter specifika ord eller fraser i en text och ersätter dem med något annat. Detta är användbart för att snabbt och enkelt göra stora ändringar i koden eller texten.
+## Vad & Varför?
 
-# Hur man gör:
-För att söka och ersätta text i Gleam, använd dig av funktionen `replace` eller `replace_all` beroende på dina behov. Här är ett exempel på hur man skulle kunna söka efter "hello" och ersätta det med "hey" i en sträng:
+Sökning och ersättning av text är en grundläggande operation där en viss textsträng "söks" och sedan byts ut mot en annan. Programmerare utför detta för att modellera, analysera eller transformera data effektivt.
+
+## Hur gör man:
+
+Här är ett exempel på hur du kan söka och ersätta text inom Gleam:
 
 ```Gleam
-let str = "hello world"
-let new_str = replace_all("hello", "hey", str)
+import gleam/int
+import gleam/string.{replace}
+
+pub fn main() {
+  let text = "Hej, Världen!"
+  let updated_text = string.replace(text, "Världen", "Gleam")
+  assert updated_text == "Hej, Gleam!"
+}
 ```
 
-Detta kommer resultera i ett nytt värde i `new_str` - "hey world". Om du bara vill ersätta det första förekommandet av "hello", använd funktionen `replace` istället.
+När du kör den här kodspoken, kommer utmatningen att bli `"Hej, Gleam!"`.
 
-# Djupdykning:
-Att söka och ersätta text är en viktig del av textmanipulering inom programmering och har funnits med i många språk sedan tidigt 1900-tal. Andra sätt att utföra denna uppgift inkluderar att använda reguljära uttryck eller att använda en specialiserad sök- och ersättningfunktion i ditt textredigeringsprogram.
+## Fördjupning
 
-I Gleam är det möjligt att använda reguljära uttryck genom att importera biblioteket `regex` och använda funktionen `regex_replace`. Detta ger dig ännu mer flexibilitet när du söker och ersätter text.
+(1) Historiskt sett har sök-och-ersätt operationer varit centrala i textredigerare från tidiga UNIX-verktyg som `sed` till moderna programmeringsmiljöer.
+(2) Du kan också använda regelbundna uttryck (eller "regex") i många språk för att göra mer avancerade textförändringar. Gleam har dock inte inbyggt stöd för regex i dagsläget.
+(3) I Gleam ändras textsträngar genom att skapa en ny sträng, eftersom strängar i Gleam är "immutable" (de kan inte ändras när de har skapats).
 
-# Se även:
-- [Gleam dokumentation för replace](https://gleam.run/core-lib/string.List.html#function:replace)
-- [Gleam dokumentation för replace_all](https://gleam.run/core-lib/string.List.html#function:replace_all)
-- [Dokumentation för reguljära uttryck](https://www.regular-expressions.info/)
+## Se även
+
+* [Gleam Docs](https://gleam.run/tour/)
+* [String.replace documentation](https://hexdocs.pm/gleam_stdlib/gleam/string.html#replace/3)
+* [Text Manipulation in Gleam](https://github.com/gleam-experiments/text)

@@ -1,6 +1,6 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Ruby recipe: Deleting characters matching a pattern"
+html_title:           "Lua recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,42 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Deleting characters matching a pattern is the process of removing specific characters from a string or text based on a given pattern. Programmers use this to clean up data or manipulate text in a more efficient manner. It helps to streamline code and make it more readable.
+
+Deleting characters matching a pattern, often referred to as "pattern matching", is the task of removing specific set(s) of characters from a string based on some pattern. Programmers use it for data cleansing, parsing, or to simplify text data.
 
 ## How to:
-To delete characters matching a pattern in Ruby, we can use the `gsub` method. This method takes two arguments - the pattern and the replacement string. Here's an example of how we can use it:
+
+In Ruby, we can use the `String#tr` or `String#gsub` methods. Here's a simple demo where we remove all vowels from a text.
 
 ```Ruby
-string = "Hello, World!"
-new_string = string.gsub("l", "")
-puts new_string
+text = "Hello, world!"
+no_vowels = text.gsub(/[aeiou]/i, '') # using regex, case insensitive
+puts no_vowels  # Outputs: "Hll, wrld!"
 ```
-Output:
-```Ruby
-Heo, Word!
-```
-In the above code, we used the letter "l" as the pattern and an empty string as the replacement. This replaces all occurrences of "l" in the string with an empty string, effectively deleting them.
 
-We can also use regular expressions as patterns to delete characters matching a certain pattern. For instance, if we want to remove all digits from a string, we can use the regex `\d` as the pattern. Here's an example:
+And here's how to do that with `String#tr`:
 
 ```Ruby
-string = "Hello123World456"
-new_string = string.gsub(/\d/, "")
-puts new_string
-```
-Output:
-```Ruby
-HelloWorld
+no_vowels = text.tr('aeiouAEIOU', '')  # case sensitive
+puts no_vowels  # Outputs: "Hll, wrld!"
 ```
 
-## Deep Dive:
-The `gsub` method is part of the `String` class in Ruby and is also available in other programming languages such as JavaScript and PHP. It stands for "global substitution" and is similar to the `replace` method, but with the ability to use regular expressions.
+## Deep Dive
 
-An alternative to using `gsub` for deleting characters matching a pattern is to use the `delete` method. This method takes a string or a character as an argument and removes all occurrences of it from the original string. However, it does not support the use of regular expressions.
+Pattern matching had existed long before Ruby. Perl, for instance, has offered robust regex capabilities that inspired many other languages, including Ruby.
 
-When using `gsub` with regular expressions, keep in mind that the pattern is case-sensitive. So if you want to delete both uppercase and lowercase letters, you can use the `i` flag to make the regex case-insensitive.
+Alternatives to `gsub` and `tr` include: `delete` (for exact matches), `squeeze` (for consecutive duplicates), and `sub` (for first matches). 
 
-## See Also:
-- [Ruby docs on `gsub` method](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
-- [Regular expression tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Online regex tester](https://regex101.com/)
+A peculiarity about `gsub` and `tr` is that they return fresh strings. They don't mutate the original unlike their bang versions i.e., `gsub!` and `tr!`. 
+
+## See Also
+
+1. Ruby Docs - `String#gsub`: https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub
+2. Ruby Docs - `String#tr`: https://ruby-doc.org/core-2.2.0/String.html#method-i-tr
+3. Ruby Guides - Regex: https://www.rubyguides.com/2015/06/ruby-regex/ 
+4. Ruby Docs - `String#delete`: https://ruby-doc.org/core-2.6.3/String.html#method-i-delete 
+
+Note: Always refer to the installation's local docs by typing `ri String#gsub` or `ri String#tr` in the terminal.

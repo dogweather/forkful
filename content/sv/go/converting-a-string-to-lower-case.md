@@ -1,7 +1,7 @@
 ---
-title:                "Konvertera en sträng till små bokstäver"
-html_title:           "Go: Konvertera en sträng till små bokstäver"
-simple_title:         "Konvertera en sträng till små bokstäver"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,22 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Konvertering av en sträng till små bokstäver är en vanlig användning av programmeringsspråket Go. Detta innebär att man omvandlar alla bokstäver i en sträng till deras motsvarande små bokstäver, oavsett om bokstäverna är stora eller små från början. Detta kan vara användbart för att enhetliga hantering av text, för att jämföra textsträngar eller för att bara förbättra läsbarheten.
+# Artikeln: Konvertera en sträng till gemener i Go
 
-## Så här gör du:
-```
-Go package main
-import "strings"
+## Vad och Varför?
+Att konvertera en sträng till gemener innebär att förändra alla versaler till gemener. Programmerare gör detta för att standardisera ingångsdata, vilket möjliggör konsekvent och effektiv databearbetning.
+
+## Hur gör man?
+Programmet nedan demonstrerar hur du konverterar en sträng till gemener i Go.
+
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
 func main() {
-	fmt.Println(strings.ToLower("HELLO WORLD"))
+	s := "HEJ VÄRLD!"
+	fmt.Println(strings.ToLower(s))  // Prints "hej värld!"
 }
 ```
-Detta skulle ge utskrift: "hello world". Vi importerar paketet "strings" för att ha tillgång till dess funktion för att konvertera en sträng till små bokstäver. Sedan använder vi funktionen "ToLower" och ger den som argument den sträng vi vill konvertera. Vi kan också använda denna funktion för att konvertera en variabel istället för en hårdkodad sträng.
 
-## Djupdykning:
-Konvertering av en sträng till små bokstäver är en vanlig operation i många programmeringsspråk, inte bara Go. Detta kallas ibland också för "lågering" eller "normalisering" av en textsträng. I Go finns det också en inbyggd funktion "ToLower" som konverterar en sträng till små bokstäver, men det finns också en alternativ funktion "ToLowerSpecial" som ger möjlighet att specificera en "lokal" (locale) för strängen. Detta kan vara användbart om strängen innehåller speciella tecken eller bokstäver som inte följer standard ASCII-regler.
+När du kör detta program printed den omvandlade strängen "hej värld!" till konsolen.
 
-## Se även:
-- [Go Strings Package](https://golang.org/pkg/strings/)
-- [Converting Strings to Lowercase in Go](https://www.digitalocean.com/community/tutorials/how-to-convert-strings-to-lowercase-in-go)
+## Djupdykning 
+Funktionen `ToLower` introducerades först i ASCII, där idén var att förskjuta bokstavskoderna för versaler till deras motsvarande gemener. Go använder samma koncept, men fungerar med Unicode, vilket är en modernare och mer inkluderande standard för teckenkod.
+
+Ett alternativ till `ToLower` är att iterera över varje tecken i strängen och konvertera versaler till gemener manuellt. Men detta är normalt sett mer komplicerat och ineffektivt jämfört med att använda `ToLower`.
+
+Den inre implementationen av `ToLower` använder en tabell för att kartlägga varje tecken till dess motsvarande gemener. Detta innebär att funktionen är väldigt snabb, eftersom den bara behöver se upp ett resultat i tabellen för varje tecken i strängen.
+
+## Se även
+Fler resurser relaterat till strängomvandling i Go kan hittas på:
+1. [GoDoc för paketet "strings"](https://pkg.go.dev/strings) - Detaljerade dokumentationer för Go's strängfunktionalitet.  
+2. [Go Blog - Strings in Go](https://blog.golang.org/strings) - En djupdykning into strängar i Go, inklusive deras interna representation och funktioner.

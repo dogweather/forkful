@@ -1,7 +1,7 @@
 ---
-title:                "Å kapitalisere en streng"
-html_title:           "PHP: Å kapitalisere en streng"
-simple_title:         "Å kapitalisere en streng"
+title:                "Gjøre en streng stor"
+html_title:           "PHP: Gjøre en streng stor"
+simple_title:         "Gjøre en streng stor"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,23 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
 ## Hva & Hvorfor?
-Å kapitalisere en streng i programmering betyr å gjøre den første bokstaven i hver eneste ord stor, mens resten av bokstavene forblir små. Dette er vanligvis gjort for å gi en bedre visuell presentasjon av en tekst. Programmerere gjør det for å få koden sin til å se mer ryddig ut og for å gjøre den lettere å lese.
+Å kapitalisere en string betyr å gjøre første bokstav i en setning eller en ord til en stor bokstav. Programmers gjør dette for å forbedre lesbarheten og presentasjonen av data, for eksempel titler eller navn.
 
-## Hvordan:
-```PHP
-$string = "dette er en setning som skal kapitaliseres";
-echo ucfirst($string); // Output: Dette er en setning som skal kapitaliseres
-```
+## Hvordan utføre:
+I PHP kan vi bruke den innebygde `ucfirst()` funksjonen for å kapitalisere en streng. Her er et eksempel:
 
 ```PHP
-$string = "dette er en annen setning som skal kapitaliseres for kun det første ordet";
-echo ucwords($string); // Output: Dette Er En Annen Setning Som Skal Kapitaliseres For Kun Det Første Ordet
+<?php
+    $streng = "heisann, verden!";
+    $kapitalisert_streng = ucfirst($streng);
+    echo $kapitalisert_streng;
+?>
+```
+Dette vil returnere:
+```PHP
+"Heisann, verden!"
 ```
 
-## Dypdykk:
-Det å kapitalisere en streng har eksistert siden de tidlige dagene av programmering, og er ofte brukt i typiske programmeringsspråk som C og Java. Alternativet til å bruke de innebygde funksjonene i PHP er å lage din egen funksjon som utfører det samme, men dette kan være mer tidkrevende og mindre effektivt. Implementeringen av kapitaliseringsfunksjonene i PHP legger også til rette for flere språk, ettersom de tar hensyn til forskjellige regler for store og små bokstaver i hvert språk.
+## Dyp Dykk
+Historisk sett, har kapitalisering av strenger blitt brukt i bøker og dokumenter lenge før datamaskinene ble oppfunnet. I forbindelse med programmering, lar det oss håndtere data på en mer leservennlig måte.
 
-## Se Også:
-[PHP ucfirst() funksjonen](https://www.php.net/manual/en/function.ucfirst.php)
-[PHP ucwords() funksjonen](https://www.php.net/manual/en/function.ucwords.php)
+Alternativt til `ucfirst()`, kan vi også bruke `mb_convert_case()` i PHP når vi trenger å håndtere multibyte strenger (for eksempel, strenger med spesielle tegn eller emojis).
+
+Her er et eksempel:
+```PHP
+<?php
+   $streng = "hei𝄞san, verden!"; // her bruker vi et musikalsk symbol som ikke er en del av det normale ASCII-settet
+   $kapitalisert_streng = mb_convert_case($streng, MB_CASE_TITLE, "UTF-8");
+   echo $kapitalisert_streng;
+?>
+```
+Dette vil returnere:
+```PHP
+"Hei𝄞San, Verden!"
+```
+Vær oppmerksom på at `mb_convert_case()` ikke bare kapitaliserte begynnelsen av strengen, men også etter hvert symbol som ikke er en del av det normale ASCII-settet.
+
+## Se Også
+- PHP offisielle dokumentasjon på `ucfirst()` : http://php.net/manual/en/function.ucfirst.php
+- PHP offisielle dokumentasjon på `mb_convert_case()` : http://php.net/manual/en/function.mb-convert-case.php
+- W3Schools' tutorial på PHP String Functions: http://www.w3schools.com/php/php_ref_string.asp

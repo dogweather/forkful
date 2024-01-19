@@ -1,7 +1,7 @@
 ---
-title:                "Unindo strings"
-html_title:           "PHP: Unindo strings"
-simple_title:         "Unindo strings"
+title:                "Concatenando strings"
+html_title:           "Elixir: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,40 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que & Por quê?:
+## O Que & Por Que?
+Concatenar strings é a tarefa de juntar duas ou mais strings numa única. Programadores realizam isso para construir frases dinâmicas e formatar saídas de dados de maneira elegante.
 
-Concatenar strings é um processo de combinar duas ou mais strings para formar uma única string. Programadores o fazem para criar mensagens ou informações dinâmicas, que exigem a junção de diferentes partes em uma única string.
-
-Como fazer:
-
-```PHP
-$string1 = "Olá";
-$string2 = "mundo!";
-echo $string1 . " " . $string2; // Output: Olá mundo!
-```
-
-Você também pode usar o operador de atribuição combinado (.=) para concatenar strings e reatribuir o valor à mesma variável. Isso pode ser útil quando você precisa adicionar mais partes à string em diferentes momentos no seu código.
+## Como fazer:
+Concatenar strings em PHP é simples. Você usa o operador `.` para juntar duas ou mais strings.
 
 ```PHP
-$string = "Olá";
-$string .= " mundo!";
-echo $string; // Output: Olá mundo!
+$primeira = "Olá, ";
+$segunda = "mundo!";
+$frase = $primeira . $segunda;
+echo $frase;
 ```
 
-Para concatenar mais de duas strings ao mesmo tempo, você pode usar a função `implode()` que recebe um delimitador e uma matriz de strings como parâmetros.
+O output será:
+
+```
+Olá, mundo!
+```
+
+Você também pode usar o operador de atribuição `.=`.
+```PHP
+$primeira = "Olá, ";
+$primeira .= "mundo!";
+echo $primeira;
+```
+
+Isto irá imprimir:
+
+```
+Olá, mundo!
+```
+
+## Mergulho Profundo
+
+A concatenação de strings está no PHP desde as suas primeiras versões. Foi pensado como uma maneira de lidar com a manipulação de texto. Existem outras maneiras de juntar strings, como a função `sprintf()` ou o uso de aspas duplas (`""`), mas a concatenação usando o operador `.` é provavelmente a mais eficiente e legível.
 
 ```PHP
-$string1 = "Olá";
-$string2 = "meu";
-$string3 = "amigo!";
-echo implode(" ", array($string1, $string2, $string3)); // Output: Olá meu amigo!
+$primeira = "Olá, ";
+$segunda = "mundo!";
+$frase = sprintf("%s%s", $primeira, $segunda);
+echo $frase;
 ```
 
-Mergulho Profundo:
+Resultado:
+```
+Olá, mundo!
+```
 
-Concatenação de strings é uma técnica comum e importante na programação, especialmente com PHP. Anteriormente, em versões mais antigas do PHP, a função `.` era usada para concatenar strings, mas agora é recomendado usar o operador `.=` ou a função `implode()`. Algumas linguagens de programação possuem concatenação de strings implícita, o que significa que você pode simplesmente adicionar duas strings sem qualquer operador ou função adicional.
+A implementação desta funcionalidade é bastante direta na linguagem PHP. O operador `.` simplesmente une as strings lado a lado, sem adicionar ou remover nenhum caractere.
 
-Veja também:
+## Veja Também
 
-- Documentação PHP sobre concatenação de strings: https://www.php.net/manual/pt_BR/language.operators.string.php
-- Tutoriais de PHP para iniciantes: https://www.php.net/manual/pt_BR/tutorial.php#tutorial.learn
+Para aprender mais sobre concatenação de strings em PHP, as seguintes fontes são recomendadas:
+
+- [Operadores de String no Manual do PHP](https://www.php.net/manual/pt_BR/language.operators.string.php)
+- [Função sprintf() no Manual do PHP](https://www.php.net/manual/pt_BR/function.sprintf.php)
+- [Strings no Manual do PHP](https://www.php.net/manual/pt_BR/language.types.string.php)

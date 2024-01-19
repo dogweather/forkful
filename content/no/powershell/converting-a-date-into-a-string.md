@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en dato til en streng"
-html_title:           "PowerShell: Konvertere en dato til en streng"
+html_title:           "Arduino: Konvertere en dato til en streng"
 simple_title:         "Konvertere en dato til en streng"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,25 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Det å konvertere en dato til en streng er en viktig del av programmering som tillater oss å representere datoer på en meningsfull måte. Dette er spesielt nyttig når vi ønsker å vise datoer på en bestemt måte, for eksempel i et bestemt format eller språk. 
+## Hva & Hvorfor?
 
-## Hva & hvorfor?
-Konvertering av en dato til en streng betyr rett og slett å endre hvordan datoen blir presentert. I stedet for å vise datoen som tall eller i et standardformat, kan vi konvertere den til et mer leselig og forståelig format. Dette gjør det lettere for både deg som programmerer og for brukeren av programmet å forstå datoen som vises. 
+Konvertering av en dato til en streng er å bytte fra en datotype til tekst. Programmere gjør dette for å enklere vise datoen i brukervennlige formater.
 
-## Slik gjør du det:
+## Hvordan gjør jeg det?
+
+Du kan konvertere en dato til en streng i PowerShell ved å bruke `ToString()` metoden. 
+
 ```PowerShell
-Get-Date -Format fi-FI
-```
-Eksempel på utdata:
-```
-torstai 25. joulukuuta 2020 19.44.25
-```
-I dette eksempelet blir datoen konvertert til et finsk format, med datoen og tidspunktet skrevet ut både på finsk og med måneden som navn i stedet for som tall. Dette er bare ett av mange formater som kan brukes, basert på de språk- og datoinnstillingene som er tilgjengelige.
+# Opprette en dato.
+$dato = Get-Date
 
-## Dypdykk:
-Date formatting is not a new concept. It dates back to the early days of computing, when date and time data had to be stored and displayed using limited memory and character sets. As programming languages and platforms evolved, so did the methods for converting dates into strings. In PowerShell, the Get-Date cmdlet allows for a wide range of formatting options, including the ability to customize the date and time formats. There are also alternative approaches to formatting dates in PowerShell, such as using .NET formatting methods or external libraries. 
+# Konvertere dato til streng.
+$streng = $dato.ToString()
 
-## Se også:
-[PowerShell Get-Date cmdlet documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+# Skriv streng.
+Write-Output $streng
+```
 
-[Built-in .NET formatting methods in PowerShell](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+Når du kjører denne koden, får du noe sånt:
+
+```PowerShell
+onsdag 26. januar 2022 14.36.08
+```
+
+Du kan også formatere datoen som du vil ved å gi et formatargument til `ToString()`.
+
+```PowerShell
+# Formatere dato.
+$formatert = $dato.ToString("yyyy-MM-dd")
+
+# Skriv formatert dato.
+Write-Output $formatert
+```
+
+Og du får dette:
+
+```PowerShell
+2022-01-26
+```
+
+## Dypdykk
+
+Historisk sett, i tidligere versjoner av PowerShell, kunne du bruke `ToShortDateString()` eller `ToLongDateString()` for å konvertere datoer til strenger. Men i nyere versjoner, bruker vi `ToString()` for mer fleksibilitet.
+
+Alternativt, du kan bruke `-f` operatoren for å lage en formatert streng direkte.
+
+```PowerShell
+# Bruk -f operatoren.
+$formatert2 = "{0:yyyy-MM-dd}" -f $dato
+
+# Skriv formatert dato.
+Write-Output $formatert2
+```
+
+Dette gir samme resultat:
+
+```PowerShell
+2022-01-26
+```
+
+Noen detaljer om implementeringen: Når du bruker `ToString()`, konverterer PowerShell datoen til en streng basert på standard lokal innstilling, med mindre du spesifiserer et format.
+
+## Se også 
+
+For mer informasjon om datoformat i .NET (som PowerShell bruker), se her: [Custom date and time format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings).
+
+For mer om PowerShell og datoer, se her: [Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1).

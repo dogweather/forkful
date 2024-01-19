@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum in der Zukunft oder Vergangenheit berechnen"
-html_title:           "Gleam: Ein Datum in der Zukunft oder Vergangenheit berechnen"
-simple_title:         "Ein Datum in der Zukunft oder Vergangenheit berechnen"
+title:                "Berechnung eines zukünftigen oder vergangenen Datums"
+html_title:           "Gleam: Berechnung eines zukünftigen oder vergangenen Datums"
+simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum? 
-Berechnung einer zukünftigen oder vergangenen Datum ist ein wichtiger Teil der Programmierung, der es uns ermöglicht, bestimmte Aktionen basierend auf einem bestimmten Datum auszuführen. Programmierer verwenden diese Funktion, um beispielsweise Termine für geplante Aufgaben oder Ereignisse zu setzen.
+## Was & Warum?
 
-Wie geht's?
-Hier sind zwei Beispiele, wie du mit Gleam ein Datum in der Zukunft oder Vergangenheit berechnen kannst:
+Berechnungen von Daten in der Zukunft oder Vergangenheit sind Methoden, um ein bestimmtes Datum basierend auf einem anderen zu ermitteln. Programmierer machen das, weil Zeit wichtige Rollen in Softwareanwendungen spielt, von Erinnerungsfunktionen bis hin zu Ablaufdaten.
+
+## Wie geht's:
+
+Hier ist ein einfaches Beispiel dafür, wie man das in Gleam (der aktuellen Version) macht.
 
 ```Gleam
-// Ein Tag in der Zukunft
-let zukunft = Date.add_days(Date.utc_today(), 1)
+import gleam/date
+import gleam/time.{next_day, previous_day}
 
-// Fünf Jahre in der Vergangenheit
-let vergangenheit = Date.add_years(Date.utc_today(), -5)
+// Ein Beispiel für die Berechnung eines zukünftigen Datums
+let tomorrow = next_day(date.new(2021, 12, 31))
 
-// Ausgabe: zukunft = 2021-05-05 und vergangenheit = 2016-05-05
+//Ein Beispiel für die Berechnung eines vergangenen Datums
+let yesterday = previous_day(date.new(2021, 12, 31))
+
 ```
+Die Ausgabe von 'tomorrow' wäre `2022-01-01` und die von 'yesterday' wäre `2021-12-30`.
 
-Tiefer Einblick
-Die Idee, ein Datum in der Zukunft oder Vergangenheit zu berechnen, ist nicht neu und wurde schon in frühen Programmiersprachen wie COBOL implementiert. Gleam bietet jedoch eine benutzerfreundliche Syntax und eingebaute Funktionen, die es uns ermöglichen, auf einfache Weise beliebige Zeiteinheiten zu berechnen.
+## Tiefere Einblicke:
 
-Alternativ gibt es auch externe Bibliotheken, wie z.B. die Java Time Library, die ähnliche Funktionen bereitstellen. Allerdings ist Gleam eine kompilierte Sprache, was bedeutet, dass alle Fehler während der Kompilierung erkannt werden, während bei interpretierten Sprachen wie Java die Fehler erst während der Ausführung bemerkt werden.
+Historisch gesehen wurde die Berechnung von Datumsangaben bereits in der Frühe der Computertechnik eingesetzt, meistens zum Verwalten von Zeitstempeln und Terminen. Mit der fortschreitenden Entwicklung hat sich das weitaus komplizierter und nuancierter gestaltet. Alternativen zu Gleam können andere Programmiersprachen sein wie Python, Java oder JavaScript, aber Gleam bietet eine saubere und kompakte Art, Datum zu berechnen. 
 
-Weiterführende Links
-- Gleam-Referenzhandbuch: https://gleam.run/book/core_types/date.html
-- Java Time Library: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+Eines der Dinge, die bei der Datumsberechnung zu beachten sind, ist die Berücksichtigung von Schaltjahren.
+
+## Siehe auch:
+
+Prüfen diese Ressourcen aus, um weiter zu lernen:
+
+- Gleam-Dokumentation: [https://gleam.run/book/tour/dates-and-times.html](https://gleam.run/book/tour/dates-and-times.html)
+- Allgemeine Datums- und Zeitfunktionen: [https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Über die Complexity of Time Data Types und Time Arithmetic: [https://infolab.stanford.edu/~ullman/fcdb/material/handouts/time.pdf](https://infolab.stanford.edu/~ullman/fcdb/material/handouts/time.pdf)

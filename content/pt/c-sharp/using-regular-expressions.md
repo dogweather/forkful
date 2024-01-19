@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expressões regulares"
-html_title:           "C#: Utilizando expressões regulares"
-simple_title:         "Utilizando expressões regulares"
+title:                "Usando expressões regulares"
+html_title:           "Gleam: Usando expressões regulares"
+simple_title:         "Usando expressões regulares"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que é e por que usar Expressões Regulares
+## O que & Porquê?
 
-Expressões Regulares são padrões de texto usados para buscar, extrair e substituir informações em uma string. Programadores usam expressões regulares para realizar tarefas como validação de formato de entrada de dados, busca e filtro de informações em um texto e substituição de caracteres específicos.
+Expressões regulares (Regex) são uma ferramenta poderosa e flexível para manipulação de strings. Os programadores usam Regex para encontrar, substituir e validar padrões em textos, o que ajuda a tornar o código mais compacto e eficiente.
 
-Como fazer:
+## Como Fazer:
+
+Em C#, usamos a classe `Regex` no namespace `System.Text.RegularExpressions`. Aqui está um exemplo simples que procura palavras que começam com "a":
+
 ```C#
 using System;
 using System.Text.RegularExpressions;
 
-class Program {
-    static void Main() {
-        // Busca por um padrão específico em uma string
-        string texto = "Olá meu nome é João";
-        string padrao = "João";
-        Regex regex = new Regex(padrao);
-        Console.WriteLine(regex.IsMatch(texto)); //true
+class Program
+{
+    static void Main(string[] args)
+    {
+        string frase = "O avião está no alto.";
+        Match match = Regex.Match(frase, @"\ba\w*\b");
 
-        // Substitui um padrão em uma string
-        string novoTexto = Regex.Replace(texto, "Olá", "Oi");
-        Console.WriteLine(novoTexto); //Oi meu nome é João
+        if (match.Success)
+        {
+            Console.WriteLine("Encontrado: " + match.Value);
+        }
     }
 }
 ```
+Esta execução retorna `Avião`.
 
-Mergulho profundo:
+É importante notar que os caracteres `\b` definem limites de palavras e o `\w*` significa qualquer caracter alfanumérico ou underscore. 
 
-Expressões Regulares têm suas raízes na teoria matemática dos autômatos finitos e suas aplicações práticas remontam à década de 1940. Elas são amplamente usadas em diferentes linguagens de programação e podem variar em sua sintaxe e recursos. Algumas alternativas para expressões regulares incluem o uso de funções de string específicas da linguagem, mas expressões regulares são frequentemente a maneira mais concisa e abrangente para manipular e extrair informações de uma string. A implementação de expressões regulares em C# é feita através do namespace System.Text.RegularExpressions.
+## Mergulho Profundo
 
-Veja também:
-- Documentação oficial do C#: https://docs.microsoft.com/pt-br/dotnet/csharp/
-- Tutorial de expressões regulares em C#: https://www.tutorialspoint.com/csharp/csharp_regular_expressions.htm
+Expressões regulares têm raízes históricas na teoria das linguagens formais e automação. Embora sejam extremamente úteis, elas têm suas limitações e pode haver alternativas dependendo do sistema ou da situação. 
+
+Por exemplo, para tarefas de manipulação de strings muito complexas, pode ser melhor usar um analisador sintático. Além disso, a implementação de Regex pode variar ligeiramente entre diferentes linguagens de programação, portanto, é essencial verificar a documentação relevante.
+
+Para otimizar a performance, C# compila as expressões regulares para o código Intermediate Language (IL) no primeiro uso, e as expressões compiladas são armazenadas em cache para uso futuro.
+
+## Veja Também
+- Documentação Microsoft Regex: [https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex?view=net-5.0](https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)
+- Regex Tutorial Interactivo: [https://regexone.com/](https://regexone.com/) 
+- RegExr, uma ferramenta online para aprender, criar e testar Regex: [https://regexr.com/](https://regexr.com/)

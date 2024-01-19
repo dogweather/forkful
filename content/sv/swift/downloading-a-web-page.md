@@ -1,6 +1,6 @@
 ---
 title:                "Ladda ner en webbsida"
-html_title:           "Swift: Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,27 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Ladda ner en Webbplats sida med Swift
+
 ## Vad & Varför?
-Att ladda ner en webbsida betyder att hämta information från en webbsida och visa den på vår enhet. Programmerare gör detta för att hämta och bearbeta data från olika webbkällor, såsom API:er och websidor.
+Att ladda ner en webbplats sida innebär ganska enkelt att hämta dess kod och innehåll för att sedan använda eller bearbeta lokalt. Programmerare gör det ofta för att skrapa data, testa webbplatser, eller skapa offline-versioner av sidor.
 
 ## Så här gör du:
+Med URLSession, URLSessionTask och URLRequest kan du ladda ner en webbplats sida i Swift. Här är ett exempel:
+
 ```Swift
-if let url = URL(string: "https://www.example.com") { 
-    // Skapa en URL för den webbsida du vill ladda ner 
-    URLSession.shared.dataTask(with: url) { data, response, error in 
-        if let error = error { 
-            print("Det gick inte att ladda ner sidan: \(error.localizedDescription)") 
-        } else if let data = data { 
-            // Bearbeta och visa datan
-            print(String(decoding: data, as: UTF8.self)) 
-        } 
-    }.resume() 
-}
+import Foundation
+
+let url = URL(string: "https://www.dittwebbplats.se")!
+let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+    if let data = data {
+        let str = String(data: data, encoding: .utf8)
+        print("Fått data:\n\(str ?? "")")
+    }
+} 
+
+task.resume()
 ```
 
-## Djupdykning:
-Att ladda ner en webbsida har varit en viktig del av webbutveckling sedan internet började användas. Innan tillgången av API:er var det vanligt att använda skript och botar för att hämta data från webbsidor. Idag finns det också alternativa sätt att hämta data, som till exempel användning av tredjepartsbibliotek och direkt tillgång till databaser på serversidan.
+När du kör det här, bör du se sidans HTML-kod skrivs ut i konsolen.
 
-## Se även:
-- [How to: Hämta webbsidor med Swift](https://www.hackingwithswift.com/example-code/networking/how-to-download-a-webpage-with-swift)
-- [Swift Network Libraries](https://www.raywenderlich.com/1265222-best-swift-networking-libraries-for-ios-and-macos)
+## Djupdykning
+Historiskt sett har vi gått från långsamma nedladdningar via modem, till snabbare bredbandsanslutningar, vilket möjliggör mer komplexa och innehållsrika webbsidor. 
+
+Alternativ till Swift för att ladda ner en webbplats sida inkluderar språk som Python, Java och JavaScript, alla med sina egna bibliotek för webbkommunikation.
+
+När det gäller implementeringsdetaljer har Swift URLSession, URLSessionTask och URLRequest objekt för lättanvänd webbkommunikation. URLSession hanterar en grupp relaterade nätverksåtgärder. URLRequest kapslar in detaljerna i den åtgärd du vill genomföra.
+
+## Se även 
+- Apple Docs URLSession: https://developer.apple.com/documentation/foundation/urlsession
+- Apple Dev Networking: https://developer.apple.com/network/
+- Stanford Swift Course on iTuneU: https://itunes.apple.com/us/course/developing-ios-10-apps-with-swift/id1198467120

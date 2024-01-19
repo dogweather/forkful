@@ -1,6 +1,6 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Arduino: Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,14 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Zaczynanie nowego projektu to proces tworzenia nowego programu lub urządzenia przy użyciu platformy Arduino. Programiści robią to w celu zrealizowania swoich pomysłów i wykorzystania funkcjonalności tej platformy.
+## Co i Dlaczego?
+Rozpoczęcie nowego projektu to pierwsze kroki w tworzeniu nowego kodu, skryptu, aplikacji czy systemu. Programiści robią to, aby zrealizować nową ideę lub rozwiązać aktualny problem.
 
 ## Jak to zrobić:
-Kodowanie w Arduino jest proste i intuicyjne. Możesz zacząć od napisania prostego programu, który wypisze "Hello World!" na ekranie za pomocą funkcji ```Serial.println()```. Następnie możesz wprowadzić różne instrukcje, aby sprawdzić jak działają sensory i aktywatory podłączone do płytki Arduino. Na przykład, możesz użyć funkcji ```analogRead()``` aby odczytać wartość napięcia na danym pinie.
+Przykładowy kod do rozpoczęcia nowego projektu wygląda tak:
 
-## W głębszy obszar
-Historia Arduino sięga 2005 roku, kiedy to grupa programistów stworzyła prostą platformę do tworzenia urządzeń elektronicznych. Alternatywami dla Arduino są inne platformy, takie jak Raspberry Pi lub Micro:bit, jednak Arduino wciąż pozostaje popularnym wyborem ze względu na swoją prostotę i dostępność. Implementacja projektu z wykorzystaniem Arduino wymaga podłączenia płytki do komputera za pomocą kabla USB oraz zainstalowania odpowiedniego oprogramowania.
+```Arduino
+void setup() {
+  // tu wprowadź swoją inicjalizację
+}
 
-## Zobacz także:
-Jeśli chcesz dowiedzieć się więcej o platformie Arduino, zobacz oficjalną stronę internetową [Arduino](https://www.arduino.cc/). Możesz także odwiedzić [Arduino Forum](https://forum.arduino.cc/) aby uzyskać pomoc lub wymienić się pomysłami z innymi użytkownikami.
+void loop() {
+  // tu wprowadź swoją logikę
+}
+```
+
+Gdy uruchomisz ten kod, zaczniesz od pustego miejsca i możesz wstawiać swoje instrukcje.
+
+## Głębsze nurkowanie:
+Rozpoczęcie nowego projektu Arduino to silnik napędowy do odkrywania nowych możliwości. Koncept wywodzi się z lat 70-tych i 80-tych, kiedy proceduralne języki programowania zaczęły zdobywać popularność. Alternatywą dla rozpoczęcia nowego projektu jest klonowanie istniejącego projektu i modyfikowanie go do własnych potrzeb. Jeżeli chodzi o implementację, pamiętaj, że każdy nowy projekt Arduino potrzebuje przynajmniej dwóch funkcje: `setup()` i `loop()`.
+
+## Zobacz również:
+1. Oficjalna dokumentacja Arduino: [kliknij tutaj](https://www.arduino.cc/reference/pl/)
+2. Inne porady dotyczące rozpoczęcia nowego projektu: [kliknij tutaj](https://create.arduino.cc/projecthub)
+3. Pomoc innych programistów Arduine: [forum Arduino](https://forum.arduino.cc/)

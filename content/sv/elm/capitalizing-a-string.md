@@ -1,7 +1,7 @@
 ---
-title:                "Kapitalisera en sträng"
-html_title:           "Elm: Kapitalisera en sträng"
-simple_title:         "Kapitalisera en sträng"
+title:                "Gör om en sträng till versaler"
+html_title:           "Elm: Gör om en sträng till versaler"
+simple_title:         "Gör om en sträng till versaler"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,41 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## Vad och Varför?
+Att göra första bokstav stor i en sträng innebär att ändra strängens första tecken till dess stora motsvarighet. Programmerare gör detta för att öka läsbarheten och göra datum, titlar och namn mer formella.
 
-Kapitalisering av en sträng i programmering innebär att man gör om den första bokstaven i varje ord i strängen till stor bokstav. Detta görs för att göra strängen läsbarare och mer estetiskt tilltalande. Det är en vanlig konvention som följs av många programmerare.
+## Hur till:
+Här är ett exempel på hur du kan göra om det första tecknet i en sträng till stort i Elm.
 
-## Så här gör man:
-
-### Elm:
-
-```
-import String
-
-String.capitalize "detta är en sträng" 
---> "Detta är en sträng"
+```Elm
+capitalise : String -> String
+capitalise string =
+    String.toUpper (String.left 1 string) ++ String.dropLeft 1 string
 ```
 
-### Utdata:
+Anropar du `capitalise "hej"` får du svaret "Hej".
 
-```
-Detta är en sträng
-```
+## Djup Dykning:
+Historiskt sett, stora bokstäver användes i början av meningar och egennamn för att indikera början på en ny tanke eller att något är unikt. Samma princip använder programmerare när de skriver kod.
 
-## Djupdykning:
+Ett alternativ till `String.toUpper` + `String.left` +` String.dropLeft` i Elm kan vara att använda `String.fromChar << Char.toUpper << Char.fromCode << Char.toCode << String.left 1`.
 
-### Historisk bakgrund:
+Details i implementeringen inkluderar hur man handskas med strängar som börjar med icke-alfabetiska tecken. I de fallen returneras den ursprungliga strängen utan att ändras.
 
-Att kapitalisera en sträng har varit en långvarig konvention inom programmeringsvärlden. Det har sitt ursprung i att göra text lättare att läsa för människor och har sedan dess blivit standardiserat i många programmeringsspråk.
-
-### Alternativ:
-
-En alternativ metod för att kapitalisera en sträng är att använda funktionen `String.toUpper`, vilket gör hela strängen till versaler istället för bara den första bokstaven. Detta kan dock påverka läsbarheten i vissa fall.
-
-### Implementeringsdetaljer:
-
-I Elm finns funktionen `String.capitalize` som tar en sträng och returnerar en ny sträng med den första bokstaven i varje ord kapitaliserad. Detta görs genom att först splitta strängen till en lista av ord, sedan använda funktionen `List.map` för att göra om varje första bokstaven till stor bokstav och slutligen använda funktionen `String.join` för att sätta ihop strängen igen.
-
-## Se även:
-
-[Elm Docs - String](https://package.elm-lang.org/packages/elm/core/latest/String)
+## Se Också:
+- Elm: String (https://package.elm-lang.org/packages/elm/core/latest/String) för mer information om strängfunktioner i Elm.
+- Elm: Char (https://package.elm-lang.org/packages/elm/core/latest/Char) för mer information om att arbeta med enskilda tecken i Elm.
+- Stack Overflow: "How do you capitalize the first letter of a string in Elm?" (https://stackoverflow.com/questions/38545464/how-do-you-capitalize-the-first-letter-of-a-string-in-elm) för diskussioner om olika sätt att uppnå detta.

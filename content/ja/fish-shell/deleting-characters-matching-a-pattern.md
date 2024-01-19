@@ -1,7 +1,7 @@
 ---
-title:                "パターンにマッチする文字を削除する"
-html_title:           "Fish Shell: パターンにマッチする文字を削除する"
-simple_title:         "パターンにマッチする文字を削除する"
+title:                "パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何でやるの？ 
-パターンにマッチする文字を削除する、とはどういうことか？プログラマーがこれを行うのはなぜでしょうか？ 
+## 何となぜ？
 
-パターンにマッチする文字を削除するとは、ある文字列から特定の文字パターンを探し出し、それらを削除して新しい文字列を作ることです。プログラマーがこれを行うのは、文書やコードを整形するためや、情報の抜粋を行うためなど、さまざまな目的があります。
+パターンに一致する文字を削除するとは、文字列内の特定のパターンの文字を取り除くプログラミング手法を指します。プログラマーはこの手法を用いて、不要な文字を排除し、データの整形やパースを行います。
 
-## どうやるの？ 
-```Fish Shell```のコードブロック内に、コーディング例と出力のサンプルを示します。 
+## 使い方：
 
-例1: ```string match -r 'abc' 'this is abcdefg'``` 
+Fish Shellにおいて、パターンに合致する文字を削除する方法を示します。
 
-出力1: ```this is defg``` 
+```Fish Shell
+set var "Hello, World!"
+echo $var | string replace -r "World" ""
+```
 
-例2: ```string match -d -r '[0-9]+' 'the price is $100'``` 
+出力結果：
 
-出力2: ```the price is $``` 
+```Fish Shell
+Hello,
+```
 
-## 詳しく調べる 
-### 歴史的背景 
-文字列の操作は、コンピューターの発展とともに発展してきた分野です。古くはAsciiコードに基づいた処理が行われていましたが、現代ではUnicodeなど文字コードの規格が統一されており、より多様な文字を扱うことが可能になりました。 
+上記のコードでは、"World"という文字列を空（""）に置き換えて削除しています。
 
-### 代替手段 
-パターンにマッチする文字を削除する方法は、様々なプログラミング言語やツールで実装されています。たとえば、Perlでは正規表現を使って文字列操作を行うことができます。また、Unixコマンドの```sed```や```awk```などでも同様の操作を行うことができます。 
+## より深く：
 
-### 実装の詳細 
-```Fish Shell```では、パターンにマッチする文字を削除するために、```string match -r```コマンドを使用します。このコマンドは、文字列内のパターンにマッチする部分を置換することで削除を行います。パターンには正規表現などを使用することができます。詳細な使用方法やオプションについては、公式ドキュメントを参照してください。 
+この手法の歴史的な文脈、代替策、実装の詳細について掘り下げます。
 
-## 関連リンク 
-公式ドキュメント: https://fishshell.com/docs/current/cmds/string.html#match 
+1. **歴史的文脈**：Fish Shellは2005年に初リリースされた、ユーザビリティに重点を置いたUnixシェルです。文字列操作はその重要な部分を占め、パターンマッチングの削除はその一部となります。
 
-正規表現について: https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html 
+2. **代替方法**：`sed`コマンドもパターンに一致する文字を削除するために利用できます。
 
-Perlについて: https://www.perl.org/
+    ```Fish Shell
+    echo $var | sed 's/World//g'
+    ```
+
+3. **実装の詳細**：Fish Shellでは`string replace`コマンドを使用して、パターンに一致する文字を削除します。`-r`オプションは正規表現の使用を意味します。
+
+## 関連リンク：
+
+1. [Fish Shell公式ウェブサイト](https://fishshell.com/)
+2. [Fish ShellのGitHubリポジトリ](https://github.com/fish-shell/fish-shell)
+3. [Fish Shellのstring replaceの具体的な使い方](https://fishshell.com/docs/current/cmds/string-replace.html)

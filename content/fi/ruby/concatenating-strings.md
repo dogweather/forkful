@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Ruby: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,40 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mitä & Miksi?
 
-Jonojen yhdistäminen on perustoiminto, jota Ruby-ohjelmoijat käyttävät usein. Se tarkoittaa, että kaksi tai useampi merkkijonoa yhdistetään yhdeksi isoksi merkkijonoksi. Tämä on hyödyllistä esimerkiksi tekstipohjaisten sovellusten kehittämisessä, joissa halutaan luoda pidempiä lauseita tai viestejä yhdistelemällä useita lyhyitä merkkijonoja.
+Merkkijonojen yhdistäminen on toiminto, jossa kaksi tai useampi merkkijono liitetään yhteen, muodostaen yhden yhtenäisen merkkijonon. Ohjelmoijat tekevät näin määrittääkseen tai muokatakseen sisältöä dynaamisesti koodissaan.
 
-# Miten tehdä se?
+## Miten tehdään:
 
-Jonojen yhdistäminen onnistuu yksinkertaisesti käyttämällä plus-merkkiä (+) tai konkatenointioperaattoria (<<) kahden tai useamman merkkijonon välissä. Seuraavassa esimerkissä yhdistetään kolme erillistä merkkijonoa, "Tämä", "on" ja "hyvä!" yhdeksi kokonaiseksi lauseeksi "Tämä on hyvä!":
+Rubyssä merkkijonot voidaan yhdistää (+) operaattorin avulla:
 
 ```Ruby
-jono1 = "Tämä"
-jono2 = "on"
-jono3 = "hyvä!"
-
-yhdessa = jono1 + " " + jono2 + " " + jono3
-# Tämä on hyvä!
-
-# tai käyttäen konkatenointioperaattoria:
-
-yhdessa = jono1 << " " << jono2 << " " << jono3
-# Tämä on hyvä!
+tervehdys = "Moi " + "sinulle!"
+puts tervehdys
 ```
 
-# Syvä sukellus
+Tämä tuottaa tulostuksen: `Moi sinulle!`
 
-Jonojen yhdistämisellä on tärkeä rooli ohjelmoinnissa, sillä se mahdollistaa monipuolisen ja dynaamisen tekstin luomisen. Sitä käytetään muun muassa tekstin muotoiluun ja muuttuja-arvojen yhdistämiseen osaksi isompaa merkkijonoa.
+Toinen vaihtoehto on käyttää `(<<)` operaattoria:
 
-Kuitenkin kannattaa huomata, että jonojen yhdistäminen voi olla tehottomampaa kuin yhdistettyjen merkkijonojen tallentaminen uuteen muuttujaan. Myös Ruby tarjoaa muita tapoja yhdistää merkkijonoja, kuten käyttämällä interpolointia tai tekemällä merkkijonoista taulukoita.
+```Ruby
+tervehdys = "Moi "
+tervehdys << "sinulle!"
+puts tervehdys
+```
 
-Jonojen yhdistämisen tekniikka voi vaihdella kielestä ja ohjelmointistandardista riippuen, mutta pääperiaate pysyy yleensä samana.
+Tämä tuottaa myös tulostuksen: `Moi sinulle!`
 
-# Katso myös
+## Syvempi tarkastelu:
 
-Jos haluat lisätietoa jonojen yhdistämisestä tai Ruby-ohjelmoinnista yleisesti, suosittelemme tutustumaan seuraaviin lähteisiin:
+Ruby syntaksi on muuttunut vuosien saatossa, mutta merkkijonojen yhdistämisen periaate on pysynyt samana. Yllämainittu `(<<)` operaattori on myös vähemmän resurssihakuinen, sillä se muokkaa alkuperäistä merkkijonoa luomatta uutta; tämä on hyödyllistä isojen tekstimassojen käsittelyssä.
 
-- Rubyn virallinen dokumentaatio (https://www.ruby-lang.org/en/documentation/)
-- Codecademyn Ruby-kurssi (https://www.codecademy.com/learn/learn-ruby)
-- RubyGuidesin artikkeli jonojen yhdistämisestä (https://www.rubyguides.com/2019/02/ruby-string-append-concat-operators/)
+Vaihtoehtoisesti voit käyttää `concat()` funktiota, joka toimii samalla tavalla kuin `(<<)` operatori:
+
+```Ruby
+tervehdys = "Moi "
+tervehdys.concat("sinulle!")
+puts tervehdys
+```
+
+Tämä tuottaa tulostuksen: `Moi sinulle!`
+
+Rubyssä on myös `join()` menetelmä, jota käytetään lähinnä taulukoissa:
+
+```Ruby
+tervehdys = ["Moi", "sinulle!"].join(' ')
+puts tervehdys
+```
+
+Tämä tuottaa tulostuksen: `Moi sinulle!`
+
+## Katso myös:
+
+- Ruby Dokumentaatio: String Concatenation: https://ruby-doc.org/core-2.7.0/String.html#method-i-3C-3C
+- Ruby Style Guide: https://rubystyle.guide/
+- StackOverflow: How do I concatenate strings in Ruby: https://stackoverflow.com/questions/4675263/how-do-i-concatenate-strings-in-ruby

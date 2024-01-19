@@ -1,7 +1,7 @@
 ---
-title:                "Html analysieren"
-html_title:           "Java: Html analysieren"
-simple_title:         "Html analysieren"
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,42 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und warum tun Programmierer es?
+# HTML parsen: Was & Warum?
+HTML-Parsing ist der Prozess, bei dem eine HTML-Datei in ihre Elemente zerlegt wird. Dies wird oft in Programmen durchgeführt, die Informationen von Webseiten extrahieren oder manipulieren müssen.
 
-Das Parsen von HTML ist ein wichtiger Schritt in der Webentwicklung, bei dem der HTML-Code einer Webseite analysiert und interpretiert wird. Dadurch können Programmierer sicherstellen, dass die Webseite richtig angezeigt wird und der Inhalt korrekt dargestellt wird.
+## So geht's: 
+Hier ist ein einfaches Beispiel, wie man HTML in Java mit der Bibliothek Jsoup parst. Diese Bibliothek steht unter einer freien Lizenz und kann einfach per Maven oder Gradle installiert werden. 
 
-## Wie geht's:
-
-Um HTML zu parsen, benötigen wir einige Java-Bibliotheken. Eine populäre Wahl ist Jsoup, die es uns ermöglicht, den HTML-Code in ein Document-Objekt einzulesen und dann die Informationen daraus auszulesen.
-
-```
+```Java
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-// HTML-Code in ein Document-Objekt lesen
-Document doc = Jsoup.parse("<html><body><h1>Willkommen!</h1><p>Dies ist ein Beispieltext.</p></body></html>");
+public class Main {
 
-// Elemente auswählen
-Element heading = doc.select("h1").first();
-Elements paragraphs = doc.select("p");
+    public static void main(String[] args) throws Exception {
+        // HTML-Code als String
+        String html = "<html><head><title>Erste Parse</title></head>"
+                + "<body><p>Parsed HTML in einen Körper.</p></body></html>";
+        // Dokument erstellen
+        Document doc = Jsoup.parse(html);
 
-// Ausgabe der ausgewählten Elemente
-System.out.println(heading.text()); // Ausgabe: Willkommen!
-System.out.println(paragraphs.text()); // Ausgabe: Dies ist ein Beispieltext.
+        // Titel des Dokuments auslesen
+        String title = doc.title();
+        System.out.println("Title : " + title);
+        
+        // Elemente per CSS-Selector auswählen
+        Elements paragraphs = doc.select("p");
+        for (Element paragraph : paragraphs) {
+            System.out.println(paragraph.text());
+        }
+    }
+}
+```
+Sample Output:
+```
+Title : Erste Parse
+Parsed HTML in einen Körper.
 ```
 
-## Tiefentauchen:
+## Vertiefung
+Anfang der 90er Jahre, als das Web noch jung war, gab es das HTML-Parsing noch nicht. Andrew H. W. Tanenbaum sagte einmal "Das schöne am HTML ist, dass es fehlertolerant ist." Mitte der 90er Jahre, zusammen mit dem Boom des Internets, erschienen die ersten Bibliotheken, um HTML zu parsen. XmlPull und HTML Tidy sind Beispiele für frühe Bibliotheken.
 
-Historisch betrachtet war das Parsen von HTML eine komplexe Aufgabe, da HTML-Code oft unregelmäßig und fehlerhaft war. Heutzutage gibt es jedoch robuste Bibliotheken wie Jsoup, die das Parsen vereinfachen.
+Heute haben wir mehrere Alternativen zum Parsen von HTML in Java, darunter Jsoup, HTMLUnit, TagSoup und JDom.
 
-Als Alternative zum Parsen von HTML können Programmierer auch auf APIs zugreifen, die den Inhalt einer Webseite direkt in einem strukturierten Format wie JSON oder XML liefern.
+Beim Parsen lesen und analysieren wir den HTML-Code Zeile für Zeile. Welche Methode für Sie am besten geeignet ist, hängt von Ihren speziellen Anforderungen ab. Jede Methode hat ihre eigenen Vorteile und Einschränkungen.
 
-Die Implementation von HTML-Parsing beinhaltet das Verständnis von DOM (Document Object Model) und CSS-Selektoren, um bestimmte Elemente auszuwählen. Es ist auch wichtig, Fehlerbefall zu erkennen und zu behandeln, um sicherzustellen, dass die Webseite korrekt analysiert wird.
-
-## Siehe Auch:
-
-- [Jsoup Bibliothek](https://jsoup.org/)
-- [DOM (Document Object Model)](https://de.wikipedia.org/wiki/DOM_(Document_Object_Model))
-- [CSS-Selektoren](https://de.wikipedia.org/wiki/Cascading_Style_Sheets#Selektoren)
+## Siehe auch
+1. [Jsoup offizielle Dokumentation](https://jsoup.org/)
+2. [HTMLUnit offizielle Dokumentation](http://htmlunit.sourceforge.net/)
+3. [TagSoup offizielle Dokumentation](http://home.ccil.org/~cowan/XML/tagsoup/)
+4. [JDom offizielle Dokumentation](http://www.jdom.org/docs/index.html)

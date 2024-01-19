@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa è e perché?
-Verificare se una directory esiste è un'operazione comune nei linguaggi di programmazione, che consente di verificare la presenza di una cartella all'interno del sistema operativo. I programmatori lo fanno per eseguire diverse operazioni, ad esempio, per determinare se devono creare o eliminare una directory, o semplicemente per controllare la correttezza di un percorso fornito dall'utente.
+## Che cos'è e perché?
 
-## Come fare:
-Controllare l'esistenza di una directory è molto semplice in Gleam, grazie alla sua libreria standard. Basta utilizzare la funzione `exists`, passando come argomento il percorso della directory da verificare. Ecco un esempio di codice:
+Verificare se una directory esiste è l'atto di controllare se un dato percorso del file system contiene una specifica directory. I programmatori lo fanno per prevenire errori durante le operazioni di lettura/scrittura di file.
 
-```Gleam
-let directory = "/path/to/directory"
-let result = exists(directory)
-```
+## Come si fa:
 
-Se la directory esiste, il valore di `result` sarà `true`; in caso contrario, sarà `false`. Possiamo anche utilizzare `match` per gestire entrambi i casi: 
+Ecco un esempio di codice semplice con l'output previsto.
 
 ```Gleam
-let directory = "/path/to/directory"
-match exists(directory) {
-  True -> "La directory esiste"
-  False -> "La directory non esiste"
+import gleam/filesystem
+
+let esiste = filesystem.directory_exists("nome_directory")
+case esiste {
+  Some(_) -> io.println("La directory esiste")
+  None -> io.println("La directory non esiste")
 }
 ```
 
-## Approfondimenti:
-La necessità di verificare l'esistenza di una directory risale ai primi sistemi operativi, in cui era necessario utilizzare comandi specifici per creare o eliminare cartelle. Oggi, ci sono diversi modi per verificare l'esistenza di una directory in diversi linguaggi di programmazione, come ad esempio utilizzando le API del sistema operativo o le librerie specifiche del linguaggio. Tuttavia, la funzione `exists` in Gleam semplifica notevolmente questo processo.
+L'output sarà "La directory esiste" se la directory esiste e "La directory non esiste" altrimenti.
 
-## Vedi anche:
-Per ulteriori informazioni su come utilizzare la funzione `exists` in Gleam, ti consigliamo di consultare la documentazione ufficiale [qui](https://gleam.run/modules/gleam/os.html#exists) e il codice sorgente della libreria standard [qui](https://github.com/gleam-lang/gleam_stdlib/blob/master/gleam/os/exists.gleam).
+## Approfondimenti
+
+1. **Contesto storico**: la funzionalità di controllo dell'esistenza di una directory è stata introdotta per la prima volta nei primi sistemi operativi come Unix. Da allora, è divenuta una pratica standard in molti linguaggi di programmazione, compreso Gleam.
+
+2. **Alternative**: in Gleam, potresti anche utilizzare `filesystem.read_directory` e catturare un'eccezione se la directory non esiste. Tuttavia, questo approccio è più lento e meno elegante.
+
+3. **Dettagli di implementazione**: La funzione `filesystem.directory_exists` di Gleam funziona aprendo semplicemente la directory specificata. Se riesce, ritorna `Some(.)`. Se fallisce, ritorna `None`.
+
+## Collegamenti utili
+
+1. [La documentazione ufficiale di Gleam](https://gleam.run/documentation/)
+2. [Gleam su GitHub](https://github.com/gleam-lang/gleam)
+3. [Funzioni di filesystem in Gleam](https://gleam.run/stdlib/gleam_filesystem/)

@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "Swift: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Generere tilfeldige tall"
+html_title:           "Arduino: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -10,26 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
+# Genererer tilfeldige tall med Swift
+Bli kjent med litt uforutsigbarhet i den forutsigbare verden av programmering.
 
-Å generere tilfeldige tall er en vanlig oppgave for programmerere. Dette innebærer å bruke et datamaskinprogram for å produsere tall som er tilfeldige eller uforutsigbare. Grunnen til at vi gjør dette er for å tilføre variasjon og usikkerhet i programmene våre, og for å løse ulike problemer som krever tilfeldighet, som spill og sikkerhetsprotokoller.
+## Hva & Hvorfor?
+Lage tilfeldige tall er å produsere tall som ikke kan forutses bedre enn ved en tilfeldig gjetning. Denne prosessen er kritisk i mange områder av programmering, som spill, kryptering og simulering.
 
-# Hvordan:
-
-Vi kan generere tilfeldige tall enkelt ved hjelp av Swifts innebygde funksjoner. For å generere et tilfeldig tall mellom to tall, kan vi bruke ```Int.random(in: x...y)``` , hvor x og y representerer det laveste og høyeste mulige tallet i rekken. Her er en kodeblokk som illustrerer dette:
+## Hvordan:
+La oss lage noen virkelig tilfeldige tall i Swift. Her er en enkel måte å gjøre det på:
 
 ```Swift
-let randomNum = Int.random(in: 1...10)
-print(randomNum)
+import Foundation
+
+let random = arc4random_uniform(100)
+print(random)
 ```
-Dette vil produsere et tilfeldig heltall mellom 1 og 10, og skrive det ut i konsollen.
+Når du kjører denne koden, vil det skrives ut et tilfeldig tall mellom 0 og 99.
 
-# Dykk dypere:
+Hvis du trenger et tall mellom en bestemt range, kan du gjøre som følger:
 
-Historisk sett har generering av tilfeldige tall vært en kompleks og krevende oppgave. Tidlige datamaskiner brukte fysiske fenomener som radioaktivt henfall og støy for å produsere tilfeldige tall. I dag bruker vi algoritmer og pseudorandom generatorer for å simulere tilfeldighet. En alternativ måte å generere tilfeldige tall på er å bruke eksterne tjenester som tilbyr "hardware entropy", som tar i bruk fysiske verdier som innspill for å generere tilfeldige tall.
+```Swift
+let range = 10...20
+let randomInRange = range.randomElement()
+print(randomInRange!)
+```
+Her vil vi få et tilfeldig tall mellom 10 og 20.
 
-Implementasjonen av tilfeldige tall i Swift er basert på en variant av Mersenne Twister algoritmen. Denne algoritmen er utviklet for å produsere høykvalitets tilfeldige tall og er mye brukt i ulike programmeringsspråk og applikasjoner.
+## Dypdykk
+Historisk sett har generering av tilfeldige tall vært en utfordring i informatikk. De tidligste programmeringsspråkene tilbudt ingen innebygde metoder for dette, så utviklere måtte lage sine egne med varierende resultater.
 
-# Se også:
+Alternativer for å generere tilfeldige tall i Swift inkluderer bruken av `arc4random_uniform()` eller `nextInt()`, eller bruk av standard bibliotekfunksjoner som `random()`.
 
-For mer informasjon om tilfeldige tall i Swift, se dokumentasjonen for ```Int.random()``` og ```Double.random()```. Du kan også sjekke ut diskusjonsforumet for å få tips og triks fra andre Swift-programmerere om å generere tilfeldige tall.
+Implementeringsdetaljer kan være komplekse, da de involverer forståelse av statistikker og algoritmer. Imidlertid gjør Swift det enklere for oss ved å skjule grunnleggende detaljer og gir oss enkle funksjoner å bruke.
+
+## Se Også
+Du vil kanskje finne disse lenkene nyttige:
+1. [Apple's Random Documentation](https://developer.apple.com/documentation/swift/random)
+2. [Stack Overflow Swift Random Discussion](https://stackoverflow.com/questions/24007461/how-to-enumerate-an-enum-with-string-type)
+3. [Swift by Sundell on Random Numbers](https://www.swiftbysundell.com/articles/random-numbers-in-swift/)
+   
+Fortsett å kode, ha det gøy, og la det være litt plass for tilfeldighetene!

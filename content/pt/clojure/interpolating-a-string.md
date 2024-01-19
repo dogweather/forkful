@@ -1,6 +1,6 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Clojure: Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
 simple_title:         "Interpolando uma string"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Introdução
-O que é a interpolação de string e por que os programadores a utilizam são duas questões importantes a serem respondidas neste artigo. Comecemos por definir o que é a interpolação de string.
+## O Que & Por Quê?
 
-## O que e por que?
-A interpolação de string é uma técnica usada pelos programadores para combinar strings e variáveis em uma única saída. Isso torna o código mais dinâmico e flexível, facilitando a leitura e manutenção do mesmo.
+Interpolar uma string é um processo para substituir placeholders por valores em uma cadeia de texto. Programadores o usam para enriquecer mensagens e melhorar a legibilidade do código.
 
-## Como fazer:
-Para utilizar a interpolação de string em Clojure, basta usar o símbolo `~` seguido da variável ou expressão que deseja interpolar dentro de uma string delimitada por aspas duplas (`" "`). O resultado será a string original com os valores das variáveis substituídos.
+## Como Fazer:
 
-Exemplo:
+Aqui está como você pode fazer a interpolação de strings em Clojure usando `format`:
+
 ```Clojure
-(def nome "João")
-(def idade 30)
-(str "Meu nome é ~nome e tenho ~idade anos.") 
+(let [nome "Ana" idade 25]
+  (format "Oi, meu nome é %s e tenho %d anos." nome idade))
 ```
 
-Output:
-`"Meu nome é João e tenho 30 anos."`
+Isso produzirá a saída:
 
-## Detalhes avançados:
-A interpolação de string é comumente conhecida como uma forma mais concisa de "concatenar" strings e variáveis. Antes dessa técnica, os programadores costumavam usar a função `str` para unir cada parte da string e variáveis, o que tornava o código mais verboso e difícil de ler.
-
-Além disso, é importante mencionar que a interpolação de string só funciona com aspas duplas, e não com aspas simples. Também é possível utilizar expressões mais complexas dentro da `~`, desde que a última expressão seja precedida por `~`.
-
-Exemplo:
-```Clojure
-(def nome "Maria")
-(def sobrenome "Silva")
-(def idade 25)
-(str "Meu nome completo é ~nome ~sobrenome e minha idade é ~(+ idade 5) anos.") 
+```
+Oi, meu nome é Ana e tenho 25 anos.
 ```
 
-Output:
-`"Meu nome completo é Maria Silva e minha idade é 30 anos."`
+## Imersão Profunda:
 
-## Veja também:
-- Documentação oficial de Clojure sobre interpolação de string: https://clojure.org/guides/weird_characters
-- Outras técnicas para combinar strings em Clojure: https://clojuredocs.org/clojure.core/map/join 
-- Aprenda mais sobre Clojure e suas principais funcionalidades: https://clojure.org/
+Na perspectiva histórica, Clojure não vem com suporte inerente para a interpolação de strings, em contraste com algumas outras linguagens de programação, como Python ou Ruby. Ao invés disso, utiliza-se o `format` (como no Java 'String.format()'), que é mais verboso mas fornece poderosas capacidades de formatação.
+
+Como alternativa, você pode usar bibliotecas adicionais como `clojure.string/replace` que podem proporcionar uma experiência de interpolação de string mais elegante.
+
+```Clojure
+(require '[clojure.string :as str])
+
+(let [nome "Ana" idade 25]
+  (str/replace "Oi, meu nome é {nome} e tenho {idade} anos." 
+               {"{nome}" nome "{idade}" idade}))
+```
+
+Em termos de detalhes de implementação, você gostaria de se familiarizar com os vários especificadores de formato no `format` do Clojure. Por exemplo, `%s` para strings, `%d` para integers e `%.nf` para números de ponto flutuante com 'n' dígitos após o ponto decimal.
+
+## Veja Também:
+
+- Documentação oficial Clojure para `format`: https://clojuredocs.org/clojure.core/format
+- Guide to Clojure Strings: https://www.learn-clojure.com/clojure-guide-to-strings
+- Biblioteca `clojure.string`: https://clojuredocs.org/clojure.string.

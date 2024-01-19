@@ -1,7 +1,7 @@
 ---
-title:                "Søke og erstatte tekster"
-html_title:           "Bash: Søke og erstatte tekster"
-simple_title:         "Søke og erstatte tekster"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -12,30 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Søking og erstatning av tekst er en vanlig oppgave for programmerere. Dette innebærer å finne et bestemt stykke tekst og erstatte det med en annen. Å gjøre dette kan hjelpe til med å endre eller forbedre en kode eller tekstfil. Det er en effektiv måte å automatisere endringer på og sikre konsistens i koden din.
+Søk og erstatt funksjonen er en aktivitet der vi finner en spesifikk tekstlinje (eller mønster) i en tekstfil for så å bytte den ut med noe annet. Programme har bruk for denne funksjonen fordi det gjør det mulig å utføre store endringer på kode eller data uten å måtte gjøre det manuelt.
 
 ## Hvordan:
 
-Vi kan bruke "sed" kommandoen i Bash for søking og erstatning av tekst. Dette er et kraftig verktøy som lar oss søke etter et bestemt mønster i en fil og deretter erstatte det med en annen tekst eller en annen fil. La oss si at vi har en fil kalt "hello.txt" som inneholder følgende tekst:
+Vi kan bruke 'sed' kommandoen for å søke og erstatte tekst i en fil ved hjelp av følgende syntaks:
 
-```
-Hello world! Dette er en test.
-```
-
-Hvis vi vil erstatte "Hello world" med "Hei verden" kan vi bruke følgende kommando:
-
-```
-sed -i 's/Hello world/Hei verden/g' hello.txt
+```Bash
+sed 's/jakt/bys'/ filnavn
 ```
 
-Denne kommandoen vil søke gjennom filen, finne mønsteret "Hello world" og erstatte det med "Hei verden". "-i" -flagget lar oss gjøre endringene direkte i den opprinnelige filen. Merk at "s" betyr "substitute" (erstatte) og "g" betyr "global", dette betyr at alle forekomster av mønsteret vil bli erstattet.
+Her erstatter vi ordet 'jakt' med 'bys' i den gitte filen. Hvis du vil lagre endringene tilbake i den opprinnelige filen, bruk '-i' alternativet.
 
-## Dypdykk:
+```Bash
+sed -i 's/jakt/bys'/ filnavn
+```
 
-Søking og erstatning av tekst ble først introdusert i ed teksteditoren på 1970-tallet og har siden blitt en standardfunksjon i mange programmeringsspråk og verktøy. I tillegg til sed, kan vi bruke grep, awk, perl og andre språk for å utføre lignende oppgaver. Det er også verdt å nevne at det finnes grafiske programmer som kan utføre disse oppgavene på en mer brukervennlig måte. Hvis du vil gå mer i dybden på hvordan søking og erstatning fungerer, kan du lese om regulære uttrykk (regex) som er et kraftig verktøy for å finne og manipulere tekst.
+Hvis det er flere forekomster av 'jakt' på en linje og du vil erstatte dem alle, legger du til 'g' etter 's/jakt/bys'.
 
-## Se også:
+```Bash
+sed 's/jakt/bys/g' filnavn
+```
 
-- [Bash sed dokumentasjon](https://www.gnu.org/software/sed/manual/sed.html)
-- [Introduksjon til regulære uttrykk](https://www.regular-expressions.info/)
-- [10 grep-kommandoer alle bør kjenne til](https://www.linode.com/docs/tools-reference/tools/10-grep-command-examples/)
+## Dykk Ned:
+
+Bash ble utgitt i 1989 av Brian Fox, som en gratis erstatning for Bourne Shell. 'sed' kommandoen (kort for 'stream editor') som brukes i søk og erstatt, har faktisk vært rundt siden midten av 1970-tallet, og er en del av UNIX-familien.
+
+Alternativer til 'sed' inkluderer 'awk', en annen tekstbehandlingsverktøy, og Perl, et fullverdig programmeringsspråk som er godt kjent for sine tekstbehandlingsferdigheter.
+
+Det er viktig å merke seg at 'sed' ikke faktisk endrer filen, men heller lager en ny tekststrøm som sendes til standard utdata. Hvis '-i' alternativet er brukt, vil originalfilen bli erstattet av denne nye teksten.
+
+## Se Også:
+
+1. GNU 'sed' Manual: [https://www.gnu.org/software/sed/manual/sed.html](https://www.gnu.org/software/sed/manual/sed.html)
+2. 'awk' Manual: [https://www.gnu.org/software/gawk/manual/](https://www.gnu.org/software/gawk/manual/)
+3. Perl Dokumentasjon: [https://www.perl.org](https://www.perl.org)

@@ -1,6 +1,6 @@
 ---
 title:                "连接字符串"
-html_title:           "Rust: 连接字符串"
+html_title:           "C: 连接字符串"
 simple_title:         "连接字符串"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,34 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 什么 & 为什么？
-字符串连接是指将多个字符串合并成一个长字符串的过程。程序员通常执行这个操作是为了将多个短字符串组成一个更长的字符串，以便在打印输出或存储数据时更方便。
 
-## 如何：
+字符串连接是将两个或多个字符串连成一个的过程。程序员这样做是为了将多个字符串值合并成一个新的长字符串。
+
+## 如何实现：
+
+在Rust编程语言中，我们有许多方法可以连接字符串。其中的一些例子包括使用`+`运算符和`format!`宏。下面是一些使用这些功能进行字符串连接的例子：
+
 ```Rust
-// 使用 `format!` 宏进行字符串连接
-let name = "Alice";
-let message = format!("Hello, {}!", name);
-println!("{}", message);
+let a = "Hello, ".to_string();
+let b = "World!";
+let c = a + b;
 
-// 使用 `+` 运算符进行字符串连接
-let str1 = "Hello,";
-let str2 = "World!";
-let message = str1 + " " + str2;
-println!("{}", message);
+println!("{}", c);
 ```
 
-**输出：**
-```
-Hello, Alice!
-Hello, World!
+这将输出：`Hello, World!`
+
+或者您可以使用`format!`宏更好地管理不同类型的数据。
+
+```Rust
+let a = "Hello, ";
+let b = "World!";
+let c = format!("{}{}", a, b);
+
+println!("{}", c);
 ```
 
-## 深入了解：
-(1) 在早期的编程语言中，字符串连接是一种昂贵的操作，因为它会频繁地分配内存和复制字符串。但是在现代编程语言中，如Rust，这种操作已经被优化，因此程序员可以放心地使用字符串连接来提高代码的可读性。
-(2) 其他替代的方法包括使用模板字符串或使用流式操作符，如Haskell中的`<|`操作符。
-(3) 在Rust中，字符串连接的实现是通过`format!`宏和`+`运算符来实现的。`format!`宏执行的是字符串格式化操作，而`+`运算符则通过使用`Deref` trait来调用`String`类型的`add()`方法来实现字符串的连接。
+这也将输出：`Hello, World!`
 
-## 参考链接：
-- [Rust官方文档：`format!`宏](https://doc.rust-lang.org/std/macro.format.html)
-- [Rust官方文档：`String`类型](https://doc.rust-lang.org/std/string/struct.String.html)
-- [知乎：Haskell中的`<|`操作符](https://www.zhihu.com/question/33747467)
+## Deep Dive：
+
+在计算机科学的早期，因为硬件的限制，字符串的操作被看作是一项非常昂贵的操作。但随着科技的发展，硬件已经足够强大，足以在常规应用程序中处理大量字符串操作。
+
+在Rust中，与C和C++等旧语言不同，内存管理在很大程度上被自动化，因此减轻了程序员的负担。在进行字符串连接时，Rust的`String`数据类型会自动为新字符串分配必要的内存空间。
+
+您也可以考虑使用`join()`方法连接字符串数组：
+
+```Rust
+let strs = ["Hello, ", "World!"];
+let c = strs.join("");
+
+println!("{}", c);
+```
+
+这也会输出：`Hello, World!`
+
+## 参考看看：
+
+1. Rust by Example: https://doc.rust-lang.org/rust-by-example/std/str.html
+2. The Rust Programming Language Book: https://doc.rust-lang.org/book/ch08-02-strings.html
+3. Rust之字符串处理（翻译）: https://blog.csdn.net/weixin_30391145/article/details/98654107

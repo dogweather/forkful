@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Bash: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
 
-Znajdowanie długości ciągu znaków to jedna z podstawowych operacji wykonywanych przez programistów. Polega to po prostu na policzeniu ilości znaków w danym ciągu. Jest to przydatne w wielu sytuacjach, na przykład w celu sprawdzenia, czy użytkownik wprowadził odpowiednią ilość znaków w formularzu lub w celu sprawdzenia, czy dany ciąg został poprawnie zaszyfrowany.
+Długość ciągu to ilość znaków, które go tworzą. Programiści często muszą znać tę długość, na przykład przy sortowaniu wymienności, walidacji danych wejściowych lub tworzeniu dynamicznych tablic.
 
 ## Jak to zrobić:
 
-Możemy wykorzystać polecenie ```wc -c``` w Bashu, aby znaleźć długość ciągu znaków. Przykładowa komenda może wyglądać tak:
+Możemy użyć wbudowanej funkcji Bash `${#string}` do znalezienia długości ciągu. Przykład:
 
 ```Bash
-string="To jest przykładowy ciąg."
-echo "Długość ciągu: $(echo -n $string | wc -c)"
+string="Witaj, Świecie!"
+echo "Długość ciągu to: ${#string}"
 ```
 
-To spowoduje wyświetlenie na ekranie liczby 26, ponieważ tyle znaków znajduje się w ciągu "To jest przykładowy ciąg."
+Gdy uruchomisz powyższy skrypt, output będzie wyglądał tak:
 
-## Głębsze zagadnienia:
+```Bash
+Długość ciągu to: 16
+```
 
-Znajdowanie długości ciągu jest procesem prostym i powszechnie stosowanym w programowaniu. Wcześniej wykorzystywano inne sposoby, na przykład pętlę for w celu liczenia każdego pojedynczego znaku, ale polecenie ```wc -c``` jest bardziej wydajne i szybsze. Istnieją również inne sposoby liczenia długości ciągu, takie jak użycie funkcji strlen w języku C.
+## Deep Dive:
 
-## Zobacz także:
+Funkcja `${#string}` została wprowadzona w Bash 2.0 w 1997 roku jako jedna z kilku nowych funkcji operujących na ciągach znaków. Alternatywnie, możemy użyć polecenia `wc -m` do obliczenia długości ciągu, ale to zazwyczaj daje wynik o 1 większy, ponieważ liczy ono również nową linię. Technicznie rzecz biorąc, `${#string}` jest ekspansją parametru, a nie funkcją. Bash sprawdza literał po znaku '#', a jeśli jest to nazwa zmiennej, zwraca długość wartości zmiennej.
 
-- Dokumentacja polecenia ```wc``` w Bashu: https://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html
-- Inne sposoby liczenia długości ciągu w różnych językach programowania: https://www.geeksforgeeks.org/length-of-a-string-using-recursion
+## Zobacz też:
+
+1. [Advanced Bash-Scripting Guide: Manipulating Strings](http://tldp.org/LDP/abs/html/string-manipulation.html)
+2. [GNU Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
+3. [Stack Overflow: They're discussing the length of a string in Bash](https://stackoverflow.com/questions/17368067/length-of-string-in-bash)
+4. [Unix & Linux Stack Exchange: Here, you can find more alternatives for finding the length of a string](https://unix.stackexchange.com/questions/19057/what-is-the-best-way-to-get-the-length-of-a-string-in-bash)

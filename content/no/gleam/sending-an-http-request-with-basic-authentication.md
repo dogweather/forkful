@@ -1,7 +1,7 @@
 ---
-title:                "Å sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Gleam: Å sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,30 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Når du sender en HTTP-forespørsel med grunnleggende autentisering, betyr det at du sender en forespørsel til et nettsted ved hjelp av et brukernavn og passord for å bekrefte identiteten din. Dette er en vanlig måte for programmerere å autentisere sine forespørsler og få tilgang til sikre nettsider.
+Å sende en HTTP-forespørsel med grunnleggende godkjenning er prosessen hvor en programvare sender data til en server og autentiserer ved hjelp av brukernavn og passord. Programvareutviklere gjør dette for å sikre at bare autoriserte parter får tilgang til spesifikke ressurser.
 
-## Hvordan:
+## Slik gjør du:
+For å sende en HTTP-forespørsel med grunnleggende autentisering i Gleam, kan vi bruke `httpc:request` funksjonen som vist nedenfor:
+
 ```Gleam
-let request = http.request(
-  method="GET",
-  headers=[
-    "Authorization": "Basic YWxleGRhdGU6cGFzc3dvcmQ=",
-  ],
-  url="https://www.example.com/api/data"
-)
-
-let response = http.send(request)
+let response =
+  httpc
+  |> httpc.basic_auth("user", "password")
+  |> httpc.post(
+    "http://www.example.com",
+    body: "Some body",
+    headers: [tuple("Content-Type", "application/x-www-form-urlencoded")],
+  )
 ```
-Output:
-```
-Status Code: 200
-Body: {"data": "some data"}
-```
+Når du kjører detta kode, sender du en POST-request med basic autentisering (brukernavn og passord) til `http://www.example.com`.
 
-## Dypdykk:
-Grunnleggende autentisering er en del av HTTP-protokollen og har blitt brukt i mange år som en sikkerhetsmetode for å beskytte nettverkstrafikken. Det finnes også andre autentiseringsmetoder som OAuth og API-nøkler, men grunnleggende autentisering er fortsatt et populært valg for enkelhet og pålitelighet. Implementeringen av dette i Gleam er enkel og kan være nyttig for å få tilgang til tjenester som krever brukernavn og passord.
+## Dypdykk
+Å sende HTTP-forespørsler med grunnleggende autentisering har blitt brukt siden opprettelsen av weben, da det første gang ble introdusert i HTTP/1.0-spesifikasjonen.
 
-## Se også:
-- [HTTP-protokollen](https://developer.mozilla.org/nb/docs/Web/HTTP)
-- [OAuth-autentisering](https://oauth.net/2/)
-- [Gleam HTTP-biblioteket](https://gleam.run/libraries/http/)
+En alternativ måte å gjøre dette på kan være bruk av OAuth, som gir en mer sikker metode for autentisering. Men, grunnleggende autentisering fortsetter å bli brukt for sin enkelhet og fordi det er supportert av alle HTTP-klienter.
+
+Implementeringsdetaljer er relativt enkle med Gleam. Når httpc-funksjonen brukes med `basic_auth`-metoden, blir brukernavnet og passordet satt i `Authorization`-headeren i HTTP-requesten. Dataene må være base64-kodet, noe som Gleam håndterer i bakgrunnen.
+
+## Se også
+Her er noen nyttige lenker for ytterligere informasjon:
+
+- Gleam HTTP client modul: https://hexdocs.pm/gleam_stdlib/gleam/httpc.html
+- HTTP/1.0-spesifikasjon: https://www.w3.org/Protocols/HTTP/1.0/spec.html
+- OAuth-spesifikasjon: https://oauth.net/

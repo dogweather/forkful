@@ -1,6 +1,6 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "Gleam: Gerando números aleatórios"
+html_title:           "C: Gerando números aleatórios"
 simple_title:         "Gerando números aleatórios"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que e por que gerar numeros aleatorios?
+## O que & por quê?
 
-Gerar numeros aleatorios e um recurso importante para programadores, pois permite criar um elemento de aleatoriedade em seus codigos. Isso pode ser util em jogos, sorteios, e ate mesmo na criacao de senhas seguras. 
+Gerar números aleatórios é a criação de valores (números) sem um padrão previsível ou discernível. Programadores fazem isso para criar diversidade indeterminada em seus programas, muitas vezes para o teste ou simulação.
 
-Como fazer: 
+## Como fazer:
 
-Para gerar numeros aleatorios em Gleam, voce pode usar a funcao ```Gleam.Math.random()```. Esta funcao aceita um parametro opcional, o qual define o limite maximo do numero aleatorio gerado. Abaixo esta um exemplo de como usar essa funcao para gerar um numero entre 1 e 100:
+Para gerar um número aleatório em Gleam, você precisará primeiro importar o módulo `gleam/otp/erlang`.
 
+```Gleam
+import gleam/otp/erlang
+
+...
+
+fn main(_) {
+    // Gerar número inteiro aleatório entre 0 e 100
+    let num = erlang:random_uniform(101)
+
+    // Imprimir o número aleatório
+    io.println(num)
+
+    Ok(Nil)
+}
 ```
-let numero = Gleam.Math.random(100)
-```
 
-Voce pode entao imprimir o numero gerado usando a funcao ```Gleam.IO.inspect()```. O codigo completo fica assim:
+Executar o código acima fornecerá um número aleatório no intervalo de [0, 100].
 
-```
-let numero = Gleam.Math.random(100)
-Gleam.IO.inspect(numero)
-```
+## Mergulho profundo
 
-Isso ira produzir um resultado semelhante a este: 
+Historicamente, a geração de números aleatórios é um problema em computação. Os computadores são projetados para serem previsíveis, mas a aleatoriedade é imprevisível - portanto, os computadores geram números "pseudo-aleatórios".
 
-```
-23
-```
+Em Gleam, você usa a função `erlang:random_uniform/1` do módulo Erlang. Este é um número pseudo-aleatório gerador, pois depende do estado anterior para calcular o próximo número.
 
-Profundidade:
+Alternativamente, você pode usar o módulo `rand` em Erlang se precisar de geradores aleatórios mais sofisticados, como normalmente distribuídos ou exponencialmente distribuídos.
 
-A geracao de numeros aleatorios tem sido uma area de estudo na computacao ha muitos anos. Existem diversas maneiras de se gerar numeros aleatorios, que vao desde algoritmos matematicos ate hardware especializado. Em Gleam, a funcao ```Gleam.Math.random()``` utiliza um algoritmo de geracao de numeros pseudoaleatorios para produzir resultados que possuem uma aparencia de aleatoriedade.
+Em termos de implementação, Gleam simplesmente acessa as bibliotecas de Erlang subjacentes. Isso significa que você tem acesso a uma gama completa de ferramentas para gerar números aleatórios conforme necessário.
 
-Veja tambem:
+## Veja também
 
-Voce pode aprender mais sobre a geracao de numeros aleatorios e como utiliza-la em seus codigos, visitando os seguintes recursos:
-
-- [Documentacao oficial do Gleam](https://gleam.run) 
-- [Artigo sobre geracao de numeros pseudoaleatorios](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- Documentação oficial da biblioteca Gleam: [https://hexdocs.pm/gleam_stdlib/otp.Listener.html](https://hexdocs.pm/gleam_stdlib/otp.Listener.html)
+- Introdução ao módulo Erlang `rand`: [https://erlang.org/doc/man/rand.html](https://erlang.org/doc/man/rand.html)
+- Guia detalhado para geradores de números aleatórios: [https://prng.di.unimi.it/](https://prng.di.unimi.it/)

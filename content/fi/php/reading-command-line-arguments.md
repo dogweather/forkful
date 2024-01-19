@@ -1,7 +1,7 @@
 ---
-title:                "Kommentoriviparametrien lukeminen"
-html_title:           "PHP: Kommentoriviparametrien lukeminen"
-simple_title:         "Kommentoriviparametrien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & miksi?
+# Lukea Komennonriviparametreja PHP:ssä Työkalut ja Vinkit
 
-Lue komentoriviparametrit on prosessi, jossa ohjelmoija lukee käyttäjän antamia komentoja koodin suorittamiseksi. Tämä on tärkeä osa ohjelmointia, koska se mahdollistaa käyttäjälle tietynlaisen interaktion ohjelman kanssa ja antaa enemmän joustavuutta ohjelman suorittamiseen.
+## Mitä & Miksi?
+Komennonriviparametrien lukeminen tarkoittaa, että ohjelman suorittamisen aikana annetaan joukko arvoja tai vaihtoehtoja. Tätä tehdään, jotta ohjelmaa voitaisiin mukauttaa tai ohjata tiettyjen tarpeiden mukaisesti jokaisen suorituksen yhteydessä.
 
-## Miten:
+## Kuinka toimii:
+PHP:n komennonriviparametreja voi lukea `$argv` ja `$argc` globaalin muuttujien avulla. `$argv` on taulukko joka sisältää kaikki parametrit ja `$argc` sisältää parametrien lukumäärän.
 
 ```PHP
-// Otetaan talteen käyttäjän antamat komentoriviparametrit
-$parametri = $argv[1];
+<?php
+// Tulosta kaikki parametrit
+print_r($argv);
 
-echo "Hei, " . $parametri;
+// Tulosta parametrien määrä
+echo "Parametrien määrä: " . $argc;
+?>
 ```
-**Output**: *Hei, [käyttäjän antama nimi]*
 
-Käyttäjä voi antaa komentorivillä haluamansa parametrin, joka tallentuu muuttujaan ja näytetään lopullisessa tulosteessa. Tämä mahdollistaa esimerkiksi henkilökohtaisemman tervehdyksen käyttäjälle.
+Esimerkissä, jos suoritat skriptin käyttäen komentoa `php script.php param1 param2`, tulostus olisi:
 
-## Syvemmältä:
+```PHP
+Array
+(
+    [0] => script.php
+    [1] => param1
+    [2] => param2
+)
+Parametrien määrä: 3
+```
+## Syväsukellus
+Komennonriviparametrien lukemista on käytetty pitkään ja se on peräisin varhaisista ohjelmointikielistä. Vaihtoehtoisia tapoja sisältävät `getopt`-funktion käytön, joka tarjoaa enemmän joustavuutta ja mahdollistaa vaihtoehtojen määrittämisen.
 
-Komentoriviparametrien lukeminen on ollut osa ohjelmointia jo kauan. Ennen PHP:n kehitystä tätä tehtiin esimerkiksi C-kielellä. Näin ollen, jos osaat lukea komentoriviparametrejä PHP:ssä, voit hyödyntää tätä taitoa myös muilla kielillä.
+Yksityiskohtaisemmin, `$argv[0]` sisältää aina skriptin nimen, ja parametrit alkavat indeksistä 1. Muista, että `$argc` sisältää myös skriptinimen, joten se on aina vähintään 1.
 
-Vaihtoehtoisesti, käyttäjä voi myös antaa syötteen esimerkiksi PHP-skriptin luomalla lomakkeella. Tämä on yleisempää web-sovelluksissa, joissa käyttäjä voi antaa syötteen esimerkiksi painamalla lomakkeen submit-nappia.
-
-Komentoriviparametrien lukeminen PHP:ssä tapahtuu käyttämällä `$argv`-muuttujaa, joka on PHP:n sisäänrakennettu muuttuja. Tämä sisältää kaikki käyttäjän antamat parametrit, joita voidaan sitten käsitellä halutulla tavalla.
-
-## Katso myös:
-
-- [PHP: Command Line Usage](https://www.php.net/manual/en/features.commandline.usage.php)
-- [PHP: POST Request](https://www.php.net/manual/en/reserved.variables.post.php)
-- [C - Command Line Arguments](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
+## Katso Myös
+- PHP.net:n dokumentaatio komentoriviohjelmoinnista: [php.net/manual/en/features.commandline.php](https://php.net/manual/en/features.commandline.php)
+- Hyödyllisiä vinkkejä ja jippoja komentoriviparametreihin: [www.sitepoint.com/php-command-line-1/](https://www.sitepoint.com/php-command-line-1/)
+- Kattava opas `getopt` funktio: [php.net/manual/en/function.getopt.php](https://www.php.net/manual/en/function.getopt.php)

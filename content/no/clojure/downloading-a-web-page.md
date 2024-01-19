@@ -1,7 +1,7 @@
 ---
-title:                "Å laste ned en nettside"
-html_title:           "Clojure: Å laste ned en nettside"
-simple_title:         "Å laste ned en nettside"
+title:                "Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,19 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Nedlasting av en nettside er å hente informasjon fra en nettside ved hjelp av en datamaskin. Dette er nyttig for programmerere for å samle data eller automatisere oppgaver.
+## Hva & Hvorfor?
+Nedlasting av en nettside betyr å hente ned data og kode som lager selve nettsiden. Vi programmerere gjør dette for blant annet å analysere innholdet, teste hastigheten, eller hente bestemt informasjon.
 
 ## Hvordan:
+Clojure bruker en innebygd funksjon `slurp` for å laste ned webinnhold. Så enkelt kan det gjøres:
+
 ```Clojure
-(require '[clojure.java.io :as io])
-(io/copy (io/input-stream "https://www.example.com") (io/output-stream "example.html"))
+(defn download-page [url]
+  (slurp url))
 ```
-Dette eksemplet viser hvordan du kan bruke Clojure til å laste ned en nettside og lagre den som en fil kalt "example.html". Du trenger bare å erstatte nettadressen med adressen for nettsiden du vil laste ned.
 
-## Dypdykk:
-Å laste ned nettsider fra internett har vært en viktig del av programmering i mange år. Det finnes også alternativer til Clojure for å gjøre dette, som for eksempel Python og Ruby. For å implementere dette i Clojure, bruker vi funksjonen "copy" fra Java biblioteket for å kopiere informasjonen fra nettsiden og lagre den som en fil.
+La oss teste den med en side:
 
-## Se også:
-- Offisiell "clojure.java.io" dokumentasjon: https://clojure.github.io/clojure/clojure.java.io-api.html
-- En tutorial for å laste ned nettsider i Clojure: https://practicalli.github.io/clojure-webapps/about/01_2-html.html#downloading_an_existing_webpage
+```Clojure
+(download-page "http://example.com")
+```
+
+Output vil være selve HTML-koden av siden.
+
+## Dyp Dykk
+Historisk sett, ble nedlasting av nettsider gjort via terminalprogrammer som `wget` eller `curl`. I dag finnes det hundrevis av biblioteker, i alle programmeringsspråk, for denne oppgaven. Clojure sin innebygde `slurp` funksjon er faktisk ganske høy-nivå sammenlignet med mange alternative løsninger: den gjør mye arbeid i bakgrunnen, som å håndtere nettverkstilkoblinger og strømming av data. Hvis du trenger mer kontroll, f. eks. For å sende spesielle HTTP-headers, kan du bruke mer komplekse biblioteker som `clj-http`.
+
+## Se Også
+- Clj-http: https://github.com/dakrone/clj-http
+- En tutorial på `slurp`: http://clojure-doc.org/articles/tutorials/reading_urls.html
+- Wget: https://www.gnu.org/software/wget/
+- Curl: https://curl.se/

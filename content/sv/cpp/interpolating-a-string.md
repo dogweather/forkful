@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av en sträng"
-html_title:           "C++: Interpolering av en sträng"
-simple_title:         "Interpolering av en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -12,46 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att interpolera en sträng innebär att man ersätter variabler eller uttryck i en sträng med deras värde eller resultat. Det är ett vanligt sätt att dynamiskt skapa textsträngar baserat på olika data eller villkor. Programmerare använder det för att göra koden mer flexibel och effektiv.
+Stränginterpolering är processen att infoga variabler i en sträng. Detta gör det lättare att arbeta med strängar och förhindrar programmeraren från att skriva extra kod för att sammanfoga strängar.
 
-## Så här:
+## Hur man gör:
+
+Stränginterpolering i C++ kan göras med `std::ostringstream` biblioteksfunktionen så här:
 
 ```C++
+#include <sstream>
+#include <string>
 #include <iostream>
-using namespace std;
 
 int main() {
-    // Deklarera variabler
-    string namn = "Lisa";
-    int ålder = 25;
-
-    // Interpolera en sträng
-    string hälsning = "Hej " + namn + "! Du är " + to_string(ålder) + " år gammal.";
-    
-    // Skriv ut hälsning
-    cout << hälsning << endl;
-
+    std::ostringstream ss;
+    int age = 20;
+    std::string name = "Olle";
+    ss << "Hej, jag heter " << name << " och jag är " << age << " år gammal.";
+    std::cout << ss.str() << std::endl;
     return 0;
 }
-
-// Output:
-// Hej Lisa! Du är 25 år gammal.
 ```
 
-## Djupdykning:
+Detta skriver ut:
+```
+Hej, jag heter Olle och jag är 20 år gammal.
+```
 
-### Historisk kontext 
+## Djupdykning
 
-Interpolering av strängar har funnits länge i olika programmeringsspråk, men det har blivit mer populärt och vanligt på senare tid. Det är en del av en större trend mot mer dynamisk och flexibel kod.
+Stränginterpolering har varit ett vanligt koncept inom programmering sedan länge och är tillgängligt i många språk. I C++ har vi alternativ som `sprintf`, men dessa kan vara riskabla på grund av buffertspill. En annan metod är `fmt` biblioteket som ger en Python-liknande syntax.
 
-### Alternativ
+Interpolering fungerar genom att generera en sträng med plats för variabler och sedan ersätta dessa delar med riktiga värden. Detta kräver att tillräckligt minne är reserverat, annars kan vårt program krascha eller bete sig oönskat.
 
-Det finns flera sätt att interpolera strängar i C++. Till exempel kan man använda funktionen `sprintf` eller använda en specialkonstruerad strängklass som stöder interpolering. Det är också möjligt att använda olika specialtecken för att bygga upp en sträng med variabler.
+## Se även
 
-### Implementeringsdetaljer
-
-I C++ kan man interpolera strängar genom att använda operatorn `+` eller funktionen `to_string` för att omvandla variabler till strängar. Det finns också många bibliotek och ramverk som erbjuder mer avancerade sätt att interpolera strängar.
-
-## Se även:
-
-[cppreference.com](https://en.cppreference.com/w/cpp/language/string_literal) för mer information om strängar i C++.
+- Officiell dokumentation för [`std::ostringstream`](http://www.cplusplus.com/reference/sstream/ostringstream/)
+- [`fmt`](https://fmt.dev/latest/index.html) biblioteket för modern strängformatering
+- Hur stränginterpolering fungerar i andra språk som [Python](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting) och [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

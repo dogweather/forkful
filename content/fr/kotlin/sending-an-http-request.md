@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http"
-html_title:           "Kotlin: Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
 simple_title:         "Envoyer une requête http"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,36 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Envoyer une requête HTTP est le moyen pour un programmeur d'envoyer des informations à un serveur à distance pour y accéder. Cela permet d'échanger des données entre le client et le serveur, ce qui en fait un élément essentiel pour les applications Web et mobiles.
+## C'est quoi et pourquoi?
 
-## Comment faire:
-Voici un exemple simple en Kotlin pour envoyer une requête HTTP en utilisant la bibliothèque standard ```HTTPClient```:
+Envoyer une demande HTTP, c'est comme demander une page web spécifique à un serveur. Ça permet aux programmeurs de récupérer des données, gérer des APIs, même automatiser des tâches.
 
-```
-fun main() {
-    val url = "https://www.facebook.com/"
-    val client = HTTPClient()
-    val response = client.get(url)
+## Comment faire :
+
+Pour envoyer une demande HTTP avec Kotlin, nous utilisons ktor, une bibliothèque Kotlin. Voici un exemple rapide :
+
+```kotlin
+import io.ktor.client.*
+import io.ktor.client.request.*
+
+suspend fun main() {
+    val client = HttpClient()
     
-    if (response.statusCode == 200) {
-        println("La requête a été envoyée avec succès!")
-    } else {
-        println("La requête n'a pas abouti, erreur ${response.statusCode}.")
+    client.use {
+        val result: String = client.get("https://example.com")
+    
+        println(result)
     }
 }
 ```
 
-En utilisant la fonction ```get()``` de la classe ```HTTPClient```, nous pouvons spécifier l'URL à laquelle nous souhaitons envoyer notre requête. Ensuite, nous vérifions le code de statut de la réponse pour déterminer si la requête a réussi ou échoué. Dans cet exemple, nous avons utilisé une URL vers Facebook, mais cela pourrait être n'importe quelle adresse Web.
+En exécutant ce code, vous obtiendrez la source HTML de "https://example.com".
 
-## Plongée en profondeur:
-Envoyer des requêtes HTTP a été largement influencé par le protocole TCP/IP et l'exploration et l'évolution de l'Internet. Au fil du temps, de nombreuses bibliothèques et frameworks ont été développés pour faciliter l'envoi de requêtes HTTP, notamment OkHttp, Volley et Retrofit.
+## Plongée en détail
 
-En plus de la bibliothèque standard, Kotlin offre également la possibilité d'utiliser des bibliothèques externes pour envoyer des requêtes HTTP. Ces bibliothèques offrent souvent des fonctionnalités supplémentaires telles que la gestion des cookies, la compression et l'authentification.
+Ktor est relativement récent (2018) mais gagne en popularité chez les programmeurs Kotlin. Alternativement, OkHttp et Fuel sont aussi populaires pour les demandes HTTP. 
 
-Pour implémenter l'envoi d'une requête HTTP dans une application, il est important de comprendre les différents éléments qui la composent, tels que l'URL, les en-têtes et les données de la requête. Il est également crucial de gérer correctement les erreurs et de s'assurer que la sécurité de l'application est maintenue lors de l'envoi de données sensibles.
+Côté implantation, Ktor est non bloquant par défaut, ce qui est intéressant pour des opérations gourmandes en I/O comme les demandes HTTP. Il utilise coroutines pour accomplir cela, une solution légère pour la gestion de la simultanéité Kotlin.
 
-## Voir aussi:
-- Documentation de la bibliothèque standard de Kotlin pour l'envoi de requêtes HTTP (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/http-client.html)
-- Utilisation de la bibliothèque OkHttp en Kotlin (https://www.raywenderlich.com/194376/okhttp-tutorial-getting-started)
-- Tutoriel sur l'utilisation de Retrofit pour envoyer des requêtes HTTP en Kotlin (https://blog.mindorks.com/using-retrofit-in-android-kotlin-tutorial)
+## Voir aussi :
+
+Pour en savoir plus, visitez les documents suivants :
+
+- [ktor.io](https://ktor.io/) (documentation officielle)
+- [OkHttp](https://square.github.io/okhttp/)
+- [Fuel](https://github.com/kittinunf/fuel)
+
+Voilà, vous avez maintenant les bases pour faire des requêtes HTTP avec Kotlin !

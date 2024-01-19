@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga nummer"
-html_title:           "Haskell: Generering av slumpmässiga nummer"
-simple_title:         "Generering av slumpmässiga nummer"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Numbers"
@@ -11,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Generera slumpmässiga nummer är en vanlig uppgift bland programmerare. Det är helt enkelt processen att skapa en sekvens av nummer som verkar slumpmässigt. Detta kan vara användbart för att testa algoritmer, simuleringar eller spel, och det ger en annan dimension av variabilitet till en annars statisk kod.
+Generering av slumpmässiga nummer innebär att skapa nummer på ett sätt som inte kan predikteras bättre än av slumpen. Programmerare gör detta för att simulera oväntad input, generera unika identifierare, eller för att skapa slumpmässigt beteende i spel.
 
-## Så här:
-``` Haskell
+## Så här gör du:
+Haskell erbjuder en enkel lösning för att generera slumpmässiga nummer genom `System.Random`-biblioteket. Använd funktionen `randomRIO` för att generera ett slumpmässigt nummer inom ett visst intervall. 
+
+```Haskell
 import System.Random
 
--- Genererar ett slumpmässigt heltal från 1 till 10
-randomInt :: IO Int
-randomInt = randomRIO (1, 10)
-
--- Genererar ett slumpmässigt flyttal från 0 till 1
-randomFloat :: IO Float
-randomFloat = randomIO
-
--- Genererar en sekvens av 5 slumpmässiga heltal från 1 till 100
-randomList :: IO [Int]
-randomList = replicateM 5 (randomRIO (1, 100))
-
--- Exempel på utskrift:
--- 9
--- 0.5977689417028006
--- [77, 49, 20, 13, 82]
+main = do 
+   randomNum <- randomRIO (1::Int, 6) 
+   putStrLn ("Generated random number: " ++ show randomNum)
+```
+När du kör detta program kan utmatningen vara något i stil med:
+```
+Generated random number: 4
 ```
 
-## Djupdykning:
-Att generera slumpmässiga nummer har varit en utmaning sedan de första elektroniska datorerna uppfanns. Historiskt sett har olika metoder använts, såsom att använda väderobservationer eller radioaktiv nedbrytning. Idag används vanligtvis pseudoslumpgeneratorer, vilket innebär att de genererar en sekvens av nummer som verkar slumpmässiga, men som i själva verket är deterministiska och baserade på en startpunkt kallad en seed. Det finns också andra metoder, som kryptografiska slumpgeneratorer, som ger högre kvalitet på slumpmässigheten. 
+## Djupdykning
+Att generera slumpmässiga nummer är en gammal matematisk utmaning och ämnet för mycket forskning. Haskell's `System.Random`-biblioteket använder sig av en algoritm som kallas Mersenne Twister, efter två japanska matematiker som skapade den 1996.
 
-Alternativet till att generera slumpmässiga nummer är att använda statiska värden eller fördefinierade listor. Detta kan vara tillräckligt i vissa fall, men kan inte replikera den dynamiska och oförutsägbara naturen hos slumpmässiga nummer.
+Det finns dock alternativ till `System.Random`. `tf-random` och `mwc-random` är två bibliotek som erbjuder snabbare och mer kryptografiskt säkra slumpnumreringsfunktioner. 
 
-I Haskell implementeras slumpmässiga nummer med hjälp av en monad, vilket är en speciell typ av datatype som hanterar sidoeffekter. Detta ger en säker och enkel metod för att generera slumpmässiga nummer, samtidigt som det bibehåller programmets funktionella natur.
+Enda begränsningen att notera är att Haskell's random funktioner inte är helt "rena" - de kräver användning av `IO` för att utföra sitt arbete. 
 
-## Se även:
-- [Random number generation in Haskell - Hackage](https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html)
-- [Haskell Wiki - Random numbers](https://wiki.haskell.org/Random_numbers)
+## Se även
+Websites med mer information och diskussion om generering av slumpmässiga nummer i Haskell:
+- [Random Number Generation in Haskell: A Complicated Story](https://kowainik.github.io/posts/haskell-mini-patterns#random-number-generation)
+- [Good Practices for Random in Haskell](https://alex-charlton.com/posts/Good_practices_for_Random_in_Haskell/)
+- [Randomness and Haskell, Part 1](http://www.randomhacks.net/2007/02/21/randomness-and-haskell-part-1/)
+- [Haskell | Random Numbers](https://www.geeksforgeeks.org/haskell-random-numbers/)

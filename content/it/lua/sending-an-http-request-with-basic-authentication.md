@@ -1,7 +1,7 @@
 ---
-title:                "Inviare una richiesta HTTP con autenticazione di base"
-html_title:           "Lua: Inviare una richiesta HTTP con autenticazione di base"
-simple_title:         "Inviare una richiesta HTTP con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,54 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Invio di una richiesta HTTP con autenticazione di base è un modo per accedere a risorse protette su internet. I programmatori lo fanno per garantire che solo utenti autorizzati possano accedere alle risorse sensibili.
+## Che Cosa & Perché?
 
-## Come Fare:
-Ecco un esempio di codice Lua per inviare una richiesta HTTP con autenticazione di base:
+Inviar un HTTP request con l'autenticazione di base in Lua significa trasmettere un pacchetto di dati a un server web usando un codice di accesso predefinito. I programmatori lo fanno per interfacciarsi con API esterne, accedere a database remoti, o intraprendere comunicazioni tra server.
 
-```
-local http = require("socket.http")
-local mime = require("mime")
+## Come si fa:
 
--- definisci i parametri della richiesta
-local url = "https://www.example.com/"
-local username = "utente"
-local password = "password"
+Per inviare una richiesta HTTP con autenticazione di base in Lua, utilizziamo il modulo `luasocket` e `luasec`.
 
--- crea una stringa di autenticazione codificata
-local auth = mime.b64(username .. ":" .. password)
+Qui di seguito, un esempio di codice:
 
--- invia la richiesta con l'intestazione di autenticazione
-local result, status = http.request{
+```Lua
+local http = require('socket.http')
+local ltn12 = require('ltn12')
+
+local url = 'http://mywebsite.com'
+local user = 'myusername'
+local password = 'mypassword'
+
+local auth = 'Basic ' .. (user .. ':' .. password):gsub('(.-)', function(s) return string.format('%02x', s:byte()) end)
+local response_body = {}
+
+http.request{
     url = url,
-    headers = {["Authorization"] = "Basic " .. auth},
+    sink = ltn12.sink.table(response_body),
+    headers = {
+        authorization = auth
+    },
 }
-
--- stampa il risultato e lo stato della richiesta
-print("Risultato: " .. result)
-print("Stato: " .. status)
 ```
 
-Ecco un esempio di output se la richiesta è avvenuta con successo:
-
-```
-Risultato: <!DOCTYPE html>
-<html>
-<head>
-    <title>Example Domain</title>
-    ...
-</head>
-<body>
-    <h1>HTTP Basic Authentication eseguita con successo!</h1>
-</body>
-</html>
-Stato: 200 OK
-```
+In questo esempio, `socket.http` gestisce la connessione, `ltn12` gestisce il flusso di dati, e la sezione headers contiene l'autenticazione.
 
 ## Approfondimento:
-L'autenticazione di base HTTP è stata introdotta nelle specifiche HTTP 1.0 come un modo semplice di autenticazione. Tuttavia, è considerata poco sicura poiché le credenziali sono inviate in chiaro. Alcune alternative più sicure includono l'utilizzo di HTTPS o l'autenticazione a due fattori. L'implementazione della richiesta HTTP con autenticazione di base può variare a seconda della libreria utilizzata.
 
-## Vedi Anche:
-- Documentazione sulla libreria LuaSocket: https://w3.impa.br/~diego/software/luasocket/http.html
-- Spiegazione sull'autenticazione di base HTTP: https://blogs.oracle.com/workmen/http-basic-authentication - Che cos'è l'autenticazione a due fattori: https://www.cloudflare.com/it-it/learning/access-management/what-is-two-factor-authentication/
+L'autenticazione di base è un metodo di autenticazione HTTP reso possibile a partire dalla versione HTTP/1.0. È considerato un sistema rapido ed efficiente, ma è anche sensibile alla sicurezza date le credenziali inviate come testo in chiaro. Per questo, capacità di crittografia come SSL/TLS vengono raccomandate quando si usano queste tecniche.
+
+Esistono anche alternative a questo metodo, come Digest Authentication, o autenticazioni basate su token, ma l'autenticazione di base rimane la più utilizzata grazie alla sua semplicità.
+
+Per quanto riguarda i dettagli implementativi, è importante capire che dovremmo usare sempre connessioni sicure quando inviamo le nostre credenziali utilizzando l'autenticazione di base.
+
+## Altre fonti:
+
+1. [HTTP Autentication - Wikipedia](https://it.wikipedia.org/wiki/HTTP_Authentication)
+2. [Modulo LuaSocket - Documentazione](http://w3.impa.br/~diego/software/luasocket/http.html)
+3. [Modulo LuaSec - Documentazione](https://github.com/brunoos/luasec/wiki) 
+4. [Autenticazione di Base vs Autenticazione Digest](https://www.cloudflare.com/it-it/learning/access-management/http-authentication/)

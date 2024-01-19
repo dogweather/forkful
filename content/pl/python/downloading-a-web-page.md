@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "Python: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Python"
 category:             "Python"
@@ -10,45 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć! Dzisiaj pokażę Ci, jak pobrać stronę internetową za pomocą Pythona. Jest to przydatna umiejętność, którą każdy programista powinien znać.
+# Pobieranie Strony Internetowej w Pythonie
 
-## Co i dlaczego?
-
-Pobieranie strony internetowej oznacza pobranie jej treści, takiej jak tekst, obrazy i inne zasoby, do naszego programu lub systemu. Programiści często pobierają strony internetowe, aby analizować dane, wyświetlać je w aplikacji lub tworzyć własne narzędzia internetowe.
+## Co i Dlaczego?
+Pobieranie strony internetowej to proces zapisywania jej zawartości na dysku twardym. Programiści robią to, żeby analizować dane, skrapować informacje lub monitorować zmiany na stronie.
 
 ## Jak to zrobić:
+Python dostarcza wiele narzędzi do tej pracy, ale najbardziej popularnym jest biblioteka `requests`. Poniżej znajduje się prosta metoda do pobrania strony:
 
 ```Python
 import requests
 
-url = 'https://www.nike.com/pl/pl_pl/c/obuwie'
-r = requests.get(url)
+url = 'http://example.com'
+response = requests.get(url)
 
-print(r.text)
+# Pobrane dane są dostępne za pomocą metody .text
+print(response.text)
 ```
+Po uruchomieniu tego kodu, na ekranie powinien pojawić się kod HTML pobranej strony.
 
-Output:
-```
-<!DOCTYPE html>
-<html lang="pl"><head>
-  <meta charset="UTF-8">
-  ...
-```
+## Głębsze Zanurzenie
+**Historia**: Na początku istnienia internetu, aby pobrać stronę, trzeba było korzystać z niskopoziomowych bibliotek sieciowych. Dzisiaj mamy do dyspozycji wiele wysokopoziomowych narzędzi, takich jak `requests`.
 
-## Głębsza analiza
+**Alternatywy**: Inne biblioteki, które oferują podobne funkcje to `urllib` i `http.client`. Są one wbudowane w Pythona i nie wymagają dodatkowej instalacji, ale są trudniejsze w obsłudze.
 
-1. Kontekst historyczny:
-Pobieranie stron internetowych było jednym z pierwszych sposobów na zastosowanie Pythona w analizie internetowej. Wcześniej użytkownicy korzystali z bibliotek takich jak urllib czy urllib2, ale teraz preferowanym sposobem jest moduł requests.
+**Szczegóły Implementacji**: Kiedy robisz zapytanie GET za pomocą `requests.get()`, wywołujesz kilka warstw abstrakcji obsługujących połączenie sieciowe, przekierowania, kodowanie znaków i wiele innych.
 
-2. Alternatywy:
-Ponadto istnieją inne biblioteki, takie jak Beautiful Soup czy mechanize, które mogą również być wykorzystywane do pobierania stron internetowych. Jednak requests jest uważany za łatwiejszy w użyciu i bardziej wydajny.
-
-3. Szczegóły implementacji:
-Moduł requests jest dostępny jako zewnętrzna biblioteka i musi być zainstalowany za pomocą narzędzia pip. Aby pobrać stronę internetową, najpierw musimy użyć funkcji requests.get() i przekazać jej adres URL. Następnie można uzyskać dostęp do treści strony za pomocą pobieranego obiektu response.
-
-## Zobacz również:
-
-1. Dokumentacja modułu requests: https://requests.readthedocs.io/en/master/
-2. Podręcznik Pythona: https://docs.python.org/pl/3/howto/urllib2.html
-3. Beautiful Soup: https://www.crummy.com/software/BeautifulSoup/bs4/doc
-4. Mechanize: https://pypi.org/project/mechanize/
+## Zobacz Także
+1. Oficjalna dokumentacja `requests`: https://requests.readthedocs.io/en/master/
+2. Dokumentacja `urllib`: https://docs.python.org/3/library/urllib.html
+3. Dokumentacja `http.client`: https://docs.python.org/3/library/http.client.html
+4. Przewodnik `BeautifulSoup` do analizy HTML: https://www.crummy.com/software/BeautifulSoup/bs4/doc/

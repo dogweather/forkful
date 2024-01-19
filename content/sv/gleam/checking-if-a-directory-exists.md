@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns"
-html_title:           "Gleam: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en katalog finns"
+html_title:           "Bash: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -11,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en mapp existerar är en vanlig uppgift för programmerare. Det är en process som innebär att man undersöker om en mapp finns på en viss plats på en dator. Detta kan vara användbart för att se till att programmet kan hitta och använda nödvändiga resurser.
+Att kontrollera om en mapp existerar är en procedur inom programmering som säkerställer att en viss mapp finns i filsystemet. Programmerare gör detta för att undvika felsituationer som kan uppstå om mappen inte finns, till exempel 'FileNotFoundException'.
 
-## Hur man gör:
-För att kontrollera om en mapp existerar i Gleam, kan man använda sig av funktionen ```Gleam.fs.exists```. Nedan finns ett kodexempel som visar hur man kan implementera detta:
+## Så här gör man:
+Följande Gleam-kod visar hur man kontrollerar om en mapp existerar.
 
-```
-import gleam/fs
+```Gleam
+import gleam/otp/applications
+import gleam/otp/application
+import gleam/directory
 
-fn check_directory_exists(path) {
-  case Gleam.fs.exists(path) {
-    True -> "Mappen finns."
-    False -> "Mappen finns inte."
+fn check_directory() {
+  let path = "/my/directory/path"
+  let directory_exists = directory.exists(path)
+  case directory_exists {
+    Ok(exists) ->
+      if exists {
+        io.println("Mappen finns!")
+      } else {
+        io.println("Mappen finns inte!")
+      }
+      
+    Error(err) ->
+      io.println("Ett fel inträffade: ", err)
   }
 }
 ```
 
-Om man till exempel vill kontrollera om en mapp med namnet "Dokument" finns i den aktuella mappen, kan man skriva:
+Kör programmet och beroende på om mappen existerar, så kommer du att se antingen "Mappen finns!" eller "Mappen finns inte!".
 
-```
-fn run() {
-  check_directory_exists("./Dokument")
-}
-```
+## Djupdykning
+Funktionen för att kontrollera om en mapp existerar i Gleam är relativt ny och faktiskt mycket lättare att använda jämfört med tidigare metoder. I äldre programmeringsmiljöer krävdes ibland ett helt bibliotek för att åstadkomma samma sak. 
 
-Detta kommer att ge oss utskriften "Mappen finns." om mappen existerar, eller "Mappen finns inte." om den inte gör det.
+Ett alternativ till att kontrollera om en mapp finns är att helt enkelt försöka använda mappen och hantera eventuella fel som uppstår. Men denna metod kan leda till onödigt komplex kod.
 
-## Djupdykning:
-Det finns flera alternativ för att kontrollera om en mapp existerar, bland annat genom att använda sig av kommandot ```Gleam.os.path.exists``` för att specificera en absolut sökväg. Det finns också andra programmeringsspråk som erbjuder liknande funktioner, som till exempel Python med sin ```os.path.exists()```. I Gleam implementeras ```Gleam.fs.exists``` som en wrapper runt ```Gleam.os.path.exists```, vilket gör det möjligt att enkelt anpassa funktionen vid behov.
+För att göra detta i Gleam, använder vi modulen `gleam/directory` och funktionen `exists`. Detta baseras på Erlangs inbyggda bibliotek för hantering av filsystemet, vilket ger oss stark driftsäkerhet och prestanda.
 
-## Se också:
-- [Gleam fs modul](https://gleam.run/documentation/stdlib/fs)
-- [Python os modul](https://docs.python.org/3/library/os.path.html)
+## Se även
+För mer information om hantering av mappar och filer i Gleam, se de officiella dokumenten:
+
+1. Gleam Directory Module: [https://hexdocs.pm/gleam_stdlib/gleam/directory](https://hexdocs.pm/gleam_stdlib/gleam/directory)
+2. Gleam IO Module: [https://hexdocs.pm/gleam_stdlib/gleam/io](https://hexdocs.pm/gleam_stdlib/gleam/io)

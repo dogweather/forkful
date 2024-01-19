@@ -1,7 +1,7 @@
 ---
-title:                "Puuttuvien parametrien lukeminen"
-html_title:           "Go: Puuttuvien parametrien lukeminen"
-simple_title:         "Puuttuvien parametrien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Lue komentoriviparametrien luominen tarkoittaa rivien sisältöjen lukemista, kun ohjelma käynnistetään terminaalissa. Ohjelmoijat tekevät sitä, jotta he voivat välittää tietoja ohjelmalle jo ennen sen suorittamista.
+Komentoriviparametrien lukeminen on prosessi, jossa ohjelma ottaa käyttäjältä tulevan syötteen suoraan komentoriviltä. Ohjelmoijat tekevät tämän käyttäjälsiirtämättämän toiminnan ja joustavuuden vuoksi.
 
 ## Kuinka:
 
-```Go
-package main 
+Voit lukea komentoriviparametrit Go:lla `os`-paketin `Args`-toimintoa käyttäen.
 
-import "fmt" 
-import "os" 
+```Go 
+package main
 
-func main() { 
-    argsWithProg := os.Args 
-    argsWithoutProg := os.Args[1:] 
- 
-    arg := os.Args[3] 
-    fmt.Println(argsWithProg) 
-    fmt.Println(argsWithoutProg) 
-    fmt.Println(arg) 
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	argsWithoutProg := os.Args[1:]
+	argsWithProg := os.Args
+
+	fmt.Println(argsWithoutProg)
+	fmt.Println(argsWithProg)
 }
 ```
-Esimerkkituloste:
-
+Näyte tuloste:
 ```
-$ go run command_line_arguments.go a b c d 
-[/path/to/command_line_arguments a b c d] 
-[a b c d] 
-c
+$ go run main.go arg1 arg2 arg3 
+[arg1 arg2 arg3]
+[main.go arg1 arg2 arg3]
 ```
 
-## Syvällinen syvennys:
+## Syvällisemmin:
 
-Komentoriviparametrien lukeminen on yleinen käytäntö ohjelmoinnissa ja se juontaa juurensa Unix-käyttöjärjestelmästä. Siinä missä Go-kielellä pystyy lukemaan komentoriviltä syötettyjä parametreja, toiset kielet kuten Python vaativat erillisen moduulin käyttämistä.
+Komentoriviparametrin vastaanottaminen alkoi jo vanhoissa tekstipohjaisissa käyttöjärjestelmissä, kuten UNIX:issa. Se antaa ohjelmoijille mahdollisuuden antaa syötteitä scripteille tai ohjelmille suoraan komentoriviltä.
+
+Go:n `os.Args` tarjoaa suoran pääsyn näihin argumentteihin. Ensimmäinen arvo (os.Args[0]) on ohjelman nimi, ja seuraavat arvot (os.Args[1:], os.Args[2:], jne.) ovat argumentteja, jotka on annettu ohjelmalle.
+
+Vaihtoehtoisesti voit käyttää myös `flag`-pakettia, jos tarvitset kehittyneempiä komentoriviparametrien käsittelyominaisuuksia, kuten lippuja tai kytkimiä.
 
 ## Katso myös:
 
-- [Go-kielen dokumentaatio](https://golang.org/doc/)
-- [Linux-komentoriviparametrit](https://www.tutorialspoint.com/unix_commands/getopt.htm)
+1. Os-paketti Go:n dokumentaatiossa: https://pkg.go.dev/os
+2. Komentoriviparametrit Go:ssa: https://gobyexample.com/command-line-arguments
+3. Käyttöohjeet flag-pakettiin: https://golang.org/pkg/flag/

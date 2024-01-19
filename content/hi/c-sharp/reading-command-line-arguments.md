@@ -1,7 +1,7 @@
 ---
-title:                "कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
-html_title:           "C#: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
-simple_title:         "कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
+title:                "कमांड लाइन तर्कों को पढ़ना"
+html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
+simple_title:         "कमांड लाइन तर्कों को पढ़ना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## क्या और क्यों?"
+# Reading Command Line Arguments in C#
 
-कमांड लाइन आर्ग्यूमेंट पढ़ना क्या है? सादा समझने के लिए, यह आपको अपनी कंप्यूटर पर विभिन्न प्रोग्रामों को रन करने के लिए आपके द्वारा दिए गए जानकारी को उपयोग करने की अनुमति देता है। इसे प्रोग्रामर्स उन इंपुट पैरामीटर्स को प्रोग्राम के साथ संवाद में अपनाने के लिए करते हैं जो स्टैंडअलोन या अन्य कंप्यूटर प्रोग्राम के साथ संवाद की उपलब्धता सुविधा की आवश्यकता होती है। 
+## क्या और क्यों?
+Command Line Arguments वह values होती हैं जो किसी application को command-line से पास की जाती हैं। Programmers इसका use application को अधिक flexible और customizable बनाने के लिए करते हैं।
 
-"## कैसे:"
+## कैसे करें:
+Aao देखते हैं कैसे C# में command line arguments read की जा सकती हैं।
 
 ```C#
-using System;
-
-namespace CommandLineArgs
+static void Main(string[] args)
 {
-    class Program
+    for (int i = 0; i < args.Length; i++)
     {
-        static void Main(string[] args)
-        {
-            // स्थापित कार्यों के बाद किसी भी कमांड लाइन आर्ग्यूमेंट को प्रिंट करें
-            foreach(string arg in args)
-            {
-                Console.WriteLine(arg);
-            }
-
-            // कॉंसोल में सभी आर्ग्यूमेंट को join करें
-            Console.WriteLine(String.Join(" ", args));
-        }
+        Console.WriteLine("Arg[" + i + "]: " + args[i]);
     }
 }
 ```
+जब आप ऊपर के code को किसी arguments के साथ run करोगे, तो output कुछ ऐसा दिखाई देगा:
+```C#
+Arg[0]: FirstArgument
+Arg[1]: SecondArgument
+...
+```
+## गहरी बातचीत:
+1. Historical context: कुछ पुरानी languages, जैसे की C और C++, में command line arguments को process करने के लिए विशेष methods या functions की जरूरत होती थी। C# में यह functionality built-in है।
+2. Alternatives: अगर आपको arguments का advanced uses करना है, तो आपको CommandLineParser library में देखना होगा जो command line arguments को parse करने के लिए बहुत अधिक robust हो सकता है।
+3. Implementation Details: C# में, 'Main' method की एक special version होती है जिसमें string array और 'args' parameter होते हैं। .Net runtime इन 'args' की values को set करता है जो कि command-line arguments होती है। 
 
-उपरोक्त कोड समझने के लिए, आपको इसे एक फ़ाइल में सहेजना होगा और कंपाइल करने के लिए कंपाइलर का उपयोग करें। अब, कमांड लाइन में पहुँचकर, प्रोग्राम की फ़ाइल नाम के साथ उचित आर्ग्यूमेंट को दूसरे आर्ग्यूमेंट के रूप में पास करें और आपको उन्हें आपके कंप्यूटर पर प्रिंट करने के लिए देखने को मिलेगा। अगर आपके पास कोई उपरोक्त स्क्रिप्ट को सही रूप से शुरू करने का उपाय नहीं है, तो आपको माइक्रोसॉफ्ट अक्षमदक्षता साथ कर सकते हैं।
-
-इस प्रोग्राम का उपयोग करके, आप भी एक ही ऐप्प के साथ स्थापित काम कर सकते हैं। आपको मुंबाई बाद Java काम करने के लिए एंकरेज काम जारी कर रहे हैं। उपकरणों में जिसके उपाय प्रदान करने के लिए, आप किसी भी अन्य कोड जनित कर सकते होंगे जो यूजर्स को अपने की गए कंप्यूटर के माध्यम से प्रस्तूत करना हो।
-
-"## गहराई में डूबो"
-
-पैसे का दौर भी, कमांड लाइन आर्ग्यूमेंट पढ़ने में सुविधा की नई शुरूआत है। नय ....
-"## देखें भी"
-
-अभी, आप अपने आदेश लाइन को आमंत्रित किए सकते हैं। उसके अंतर्गत तरह आप अपनी आदेश लाइन को संभावित कोड दिया जा सकता है। हमले। आप अपनी दैनिक हर्जक के युग से अपनी आमंत्रित दूर कर सकते है
+## अधिक देखें:
+१. Official Microsoft Documentation: [Main() and command-line arguments (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
+२. Command Line Parser Library: [CommandLineParser](https://github.com/commandlineparser/commandline)

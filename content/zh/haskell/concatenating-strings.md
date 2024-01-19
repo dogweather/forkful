@@ -1,6 +1,6 @@
 ---
 title:                "连接字符串"
-html_title:           "Haskell: 连接字符串"
+html_title:           "C: 连接字符串"
 simple_title:         "连接字符串"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,35 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是字符串连接及为什么程序员要这么做？
+## 是什么？为什么？
+字符串拼接是将两个或更多的字符串联、连在一起以形成一个新的字符串。程序员之所以这样做，主要是为了创建更复杂的文本结构，或者通过拼接构建新的数据。
 
-字符串连接是将两个或多个字符串合并成一个字符串的过程。程序员通常会这样做是因为在编程过程中，需要将多个字符串一起使用来创建新的字符串或者从数据库或文件中读取数据。
-
-# 如何实现字符串连接？
-
-在Haskell中，使用`++`操作符来连接字符串。下面是一个简单的例子：
+## 如何操作：
+Haskell中，更倾向于使用'++'运算符进行字符串拼接。以下是示例及其输出：
 
 ```Haskell
-"Hello" ++ " " ++ "World"
+main = do
+    let str1 = "Hello"
+    let str2 = "World"
+    putStrLn (str1 ++ " " ++ str2)
+```
+输出：
+
+```Haskell
+Hello World
 ```
 
-该代码将会输出`Hello World`。
+此段代码将字符串"Hello"和"World"拼接起来，并在两者之间添加了一个空格。
 
-# 深入探讨
+## 深入探索
+字符串拼接在计算机科学历史上一直是常见操作。在Haskell中，字符串实质上是字符列表。字符串拼接就相当于合并两个列表。因此，任何关于列表联接的操作都可以应用于字符串联接。
 
-## 历史背景
+在拼接字符串时，还有其他的一些选择，例如使用`concat`函数拼接一个字符串列表等。
 
-字符串连接在编程中一直是一个必要的操作，因为程序员需要将多个字符串合并成一个。在早期的编程语言中，通常需要使用特定的函数来完成这个操作。但是Haskell提供了更简便的方法，使得字符串连接更加易于实现。
+```Haskell
+main = do
+    let words = ["Hello", " ", "World"]
+    putStrLn (concat words)
+```
+输出：
+```Haskell
+Hello World
+```
 
-## 替代方法
+`concat`函数从Haskell的标准库Data.List中导入。这对于拼接大量的字符串尤其有用，因为它可以避免`++`运算符所带来的额外开销。
 
-除了`++`操作符外，在Haskell中也可以使用`concat`函数来实现字符串连接。这个函数接受一个包含多个字符串的列表作为参数，并将它们连接成一个字符串。
-
-## 实现细节
-
-在Haskell中，字符串是由字符的列表组成的，因此可以使用列表操作来实现字符串连接。`++`操作符实际上是将两个字符串的字符列表合并成一个新的字符列表。通过这种方式，可以避免重新分配内存空间，提高程序执行的效率。
-
-# 查看相关资料
-
-- [Haskell字符串操作教程](https://www.tutorialspoint.com/haskell/string_operations_in_haskell.htm)
-- [Haskell官方文档](https://www.haskell.org/documentation/)
+## 更多参考
+查看其他相关文档，来了解更多关于Haskell中字符串相关：
+- Haskell 字符串操作: https://wiki.haskell.org/String
+- Haskell初学者教程：https://www.runoob.com/haskell/haskell-tutorial.html

@@ -1,6 +1,6 @@
 ---
 title:                "Iniciando um novo projeto"
-html_title:           "Rust: Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
 simple_title:         "Iniciando um novo projeto"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que é e por que começar um novo projeto?
+# Começar um novo projeto em Rust: Opa! Como que faz?
 
-Começar um novo projeto é simplesmente iniciar um novo código ou programa do zero. Isso pode ser feito por diversos motivos, como a solução de um novo problema, criação de uma nova funcionalidade ou simplesmente aprimorar uma solução já existente.
+## O que & Por quê?
+Iniciar um novo projeto é literalmente começar a criar um programa do zero. Fazemos isso para atender a um requisito específico que nenhum software existente é capaz de atender, ou simplesmente pelo amor à programação.
 
-Como fazer:
+## Como Fazer:
+Para iniciar um novo projeto em Rust, você precisa ter o gerenciador de pacotes "cargo" instalado. Vamos lá!
 
 ```Rust
-// Para começar um novo projeto em Rust, você pode usar o comando "new" seguido do nome do seu projeto:
 $ cargo new meu_projeto
-
-// Em seguida, navegue até a pasta do seu projeto criado:
 $ cd meu_projeto
+``` 
+Depois disso, a estrutura de pastas do seu novo projeto será assim:
 
-// Agora é só começar a codificar! Você pode usar o comando "run" para executar o seu projeto:
-$ cargo run
+```Rust
+meu_projeto/
+  .gitignore
+  Cargo.toml
+  src/
+    main.rs
 ```
 
-Deep Dive:
+Seu programa "Hello, World!" já está pronto para funcionar:
 
-Há muitos anos, programadores têm criado novos projetos para solucionar problemas e aprimorar tecnologias existentes. Antes do Rust, a linguagem de programação C era amplamente utilizada para iniciar novos projetos, mas com o passar do tempo, foi percebida a necessidade de uma linguagem mais moderna e segura. Foi então que Rust foi criada, com o objetivo de ser uma linguagem de programação de sistemas eficiente e segura.
+```Rust
+$ cargo run
+   Compiling meu_projeto v0.1.0 (file:///path/to/meu/projeto)
+    Finished dev [unoptimized + debuginfo] target(s) in 2.21s
+     Running `target/debug/meu_projeto`
+Hello, World!
+```
 
-Outra alternativa ao iniciar um novo projeto com Rust seria usar outras linguagens de programação, como Java ou Python. No entanto, Rust se destaca por ser uma linguagem de baixo nível e possuir um sistema de tipos estático forte, o que a torna mais eficiente e segura.
+## Mergulho Profundo
+1. **Contexto Histórico:** O Rust surgiu para solucionar problemas comuns em outros sistemas de linguagem, como gerenciamento de memória e concorrência. Ao iniciar um novo projeto usando Rust, você terá menos chances de encontrar bugs relacionados a memória.
 
-Veja também:
+2. **Alternativas:** Você pode criar projetos em qualquer linguagem, como C++, Java, Python, etc. Pero, Rust oferece controle de baixo nível com segurança de alto nível.
 
-- Documentação oficial do Rust: https://www.rust-lang.org/
-- GitHub do projeto Rust: https://github.com/rust-lang/rust
+3. **Detalhes da Implementação:** Ao iniciar um novo projeto, 'cargo' configura tudo para você. O arquivo 'Cargo.toml' gerado terá todas as dependências do seu projeto. O 'main.rs' é onde seu código realmente reside.
+
+## Veja Também
+- Documentação oficial do Rust: https://doc.rust-lang.org/book/
+- Aprenda Rust pelo Exercism.io: https://exercism.io/tracks/rust
+- Fonte "incrivelmente fácil" de Rust: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html

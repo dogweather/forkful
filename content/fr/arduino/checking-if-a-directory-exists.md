@@ -10,24 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Vérifier si un répertoire existe est une fonctionnalité importante pour les programmeurs travaillant avec des systèmes de fichiers. Cela permet de s'assurer qu'un répertoire nécessaire pour le bon fonctionnement d'un programme est bien présent sur l'appareil.
+## Quoi et Pourquoi ?
 
-## Comment faire:
-Utiliser la fonction ```ArduinoFile.exists()``` permet de vérifier simplement si un répertoire existe ou non. Si le répertoire existe, cette fonction renverra "true" et si ce n'est pas le cas, elle renverra "false". Voici un exemple de code qui utilise cette fonction:
+La vérification de l'existence d'un répertoire est une action qui permet de s'assurer qu'un certain dossier ou répertoire existe bien dans votre système de fichiers. Les programmeurs font cela pour empêcher des erreurs lors de la tentative d'accéder à des répertoires qui n'existent pas.
+
+## Comment Faire :
+
+Malheureusement, Arduino ne prend pas en charge directement la vérification de l'existence d'un répertoire comme certains autres langages de programmation. Cependant, on pourrait le faire après avoir configuré un module de carte SD. Voici un exemple de comment cela pourrait être réalisé:
 
 ```Arduino
-if (ArduinoFile.exists("/monRepertoire")) {
-  Serial.println("Le répertoire existe !");
-} else {
-  Serial.println("Le répertoire n'existe pas !");
+#include <SPI.h>
+#include <SD.h>
+
+File racine;
+
+void setup ()
+{
+    Serial.begin (9600);
+    if (!SD.begin (4)) {
+        Serial.println ("Erreur d'initialisation de la carte SD");
+        return;
+    }
+    racine = SD.open ("/");
+
+    if (!racine) {
+      Serial.println("Le répertoire n'existe pas.");
+    } else {
+      Serial.println("Le répertoire existe."); 
+    }
 }
 ```
 
-Lorsque ce code est exécuté, le moniteur série affichera "Le répertoire existe !" si le répertoire "/monRepertoire" existe, sinon il affichera "Le répertoire n'existe pas !".
+## Plongée en Profondeur 
 
-## Plongée en profondeur:
-La possibilité de vérifier si un répertoire existe est venue avec l'ajout des systèmes de fichiers dans les versions récentes d'Arduino. Avant cela, les programmeurs devaient utiliser des bibliothèques tierces pour accéder et gérer les fichiers sur leurs appareils. Il existe également d'autres façons de vérifier si un répertoire existe, comme utiliser la commande système "ls".
+Les langages de programmation modernes, y compris Arduino, ne prennent généralement pas en charge la vérification de l'existence d'un répertoire de manière native. Cependant, en utilisant des bibliothèques supplémentaires comme le module SD dans l'exemple ci-dessus, les développeurs Arduino peuvent introduire cette fonctionnalité.
 
-## Voir aussi:
-Vous pouvez trouver plus d'informations sur la fonction ```ArduinoFile.exists()``` sur la [documentation officielle d'Arduino](https://www.arduino.cc/en/Reference/ArduinoFilesExists). Vous pouvez également consulter des tutoriels en ligne pour en apprendre davantage sur la gestion des fichiers avec Arduino.
+Il existe des alternatives à l'utilisation du module SD, notamment en utilisant le module ESP8266FS, qui contribue également à la gestion de fichiers sur Arduino.
+
+En ce qui concerne les détails de l'implémentation, Arduino ouvre un fichier via la méthode `SD.open` et renvoie un objet `File`. Si la tentative d'ouvrir le fichier échoue (ce qui peut être dû au fait que le fichier n'existe pas), l'objet `File` retourné ne sera pas valide. Vous pouvez alors vérifier si le fichier est valide en utilisant `if (! maFichier)`.
+
+## À Voir Aussi 
+
+Vous pouvez trouver plus d'informations sur la gestion des fichiers sur Arduino en visitant ces liens:
+
+1. Documentation Arduino sur la gestion de fichiers avec une carte SD : https://www.arduino.cc/en/Reference/SD
+2. Un guide sur la gestion des fichiers sur Arduino utilisant ESP8266FS : https://randomnerdtutorials.com/install-esp8266-filesystem-uploader-arduino-ide/
+3. Explication détaillée des objets `File`: https://www.arduino.cc/en/Reference/File

@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando uma string."
-html_title:           "Lua: Interpolando uma string."
-simple_title:         "Interpolando uma string."
+title:                "Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
+simple_title:         "Interpolando uma string"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+## O que é & Por quê?
 
-Interpolar uma string é uma técnica de programação em que você combina strings (texto) e variáveis ​​para criar uma nova string. Isso é útil para criar mensagens e informações dinâmicas em um programa. Os programadores usam a interpolação de strings para tornar seus códigos mais dinâmicos e flexíveis.
+A interpolação de strings em Lua é o processo de substituir placeholders por valores específicos dentro de uma string. Programadores fazem isso para incorporar valores de variáveis ou expressões diretamente em strings, facilitando a leitura e compreensão do código.
 
 ## Como fazer:
 
-```
--- Exemplo 1:
-nome = "João"
-idade = 25
-print("Olá, meu nome é " .. nome .. " e eu tenho " .. idade .. " anos.")
+Segue um exemplo de código em Lua para interpolação de strings usando a função `string.format`.
 
--- Saída: Olá, meu nome é João e eu tenho 25 anos.
-
-
--- Exemplo 2:
-animal = "gato"
-print("Eu tenho um " .. animal .. " e ele se chama " .. nome)
-
--- Saída: Eu tenho um gato e ele se chama João.
+```Lua
+local nome = "João"
+local idade = 25
+local interpolação = string.format("Ola, meu nome é %s e eu tenho %d anos.", nome, idade)
+print(interpolação)
 ```
 
-## Exploração profunda:
+A saída desse código será:
 
-A interpolação de strings já existe há bastante tempo na programação, mas se tornou popular com o surgimento de linguagens de script como Lua. Os programadores geralmente usam a concatenação de strings (juntar strings usando o operador "..") como uma alternativa à interpolação de strings. No entanto, a interpolação pode ser mais simples e legível em casos em que muitas variáveis ​​precisam ser combinadas em uma string.
+```
+Ola, meu nome é João e eu tenho 25 anos.
+```
 
-Uma técnica comum para a interpolação de strings é usar a função `string.format()`, que permite formatar strings com valores de variáveis ​​inseridos em locais específicos. Além disso, muitos frameworks e bibliotecas de Lua, como o LÖVE e o Torch, fornecem recursos de interpolação de strings incorporados para facilitar o uso.
+## Um mergulho profundo:
+
+Historicamente, Lua nunca teve uma função de interpolação de string embutida. Era comum concatenar strings ou usar a função `string.format`. Em termos de alternativas modernas, você pode usar bibliotecas externas como `Penlight` que fornece uma função `printf`. 
+
+Em termos de implementação, o `string.format` em Lua foi baseado no `printf` da linguagem C. Os placeholders começam com o simbolo "%" e terminam com um caractere de conversão que indica o tipo da variável a ser substituída, como "s" para strings e "d" para números inteiros.
 
 ## Veja também:
 
-- [Documentação oficial do Lua sobre interpolação de strings](https://www.lua.org/pil/20.2.html)
-- [Tutorial sobre interpolação de strings em Lua](https://learnxinyminutes.com/docs/lua/)
-- [Exemplos de uso de interpolação de strings em diferentes situações](https://www.tutorialspoint.com/lua/lua_string_interpolation.htm)
+- Lua 5.3 Reference Manual: https://www.lua.org/manual/5.3/
+- Lua-users wiki (String Recipes): http://lua-users.org/wiki/StringRecipes
+- Penlight Documentation: https://stevedonovan.github.io/Penlight/api/index.html

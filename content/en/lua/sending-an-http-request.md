@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "Lua recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,49 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-When programming, sending an HTTP request simply means asking a web server for specific information or functionality. Programmers do this to retrieve data, interact with APIs, or perform web-based tasks within their code.
+
+Sending an HTTP request involves asking a server for a specific resource, often a web page or file, using the HyperText Transfer Protocol (HTTP). Programmers do this to interact with web services, retrieve data from a server, or send user data following actions like form submission.
 
 ## How to:
+
+In Lua, we can use the `lua-http` library to send HTTP requests. Here's an example on how to send a simple GET request.
+
 ```Lua
--- To make an HTTP request in Lua, we first need to load the "socket" library.
-local socket = require("socket")
-
--- Next, we create a TCP connection with the server we want to send the request to.
--- In this example, we will use Google's homepage as our server.
-local connection = socket.tcp()
-connection:connect("www.google.com", 80)
-
--- Now, we'll construct our HTTP request using the appropriate format.
--- The first line contains the request type (GET, POST, etc.) and the path to the resource we want.
-local request = "GET / HTTP/1.1\r\n"
-
--- We can also include specific headers in our request, such as the "Host" and "User-Agent".
-request = request .. "Host: www.google.com\r\n" .. "User-Agent: Lua HTTP Request\r\n"
-
--- Lastly, we add an empty line to signify the end of our request.
-request = request .. "\r\n"
-
--- We can now send our request through the TCP connection.
-connection:send(request)
-
--- Lastly, we'll read and print the response from the server.
-local response = connection:receive("*a")
-print(response)
-
--- Remember to close the connection once we're done.
-connection:close()
+local http_request = require "http.request"
+local headers, stream = assert(http_request.new_from_uri("http://example.com"):go())
+local body = assert(stream:get_body_as_string())
+if headers:get ":status" ~= "200" then
+    error(body)
+end
+print(body)
 ```
+This code sends a GET request to http://example.com and prints the response body.
 
-The above code creates a basic HTTP request and receives the response from the server. However, this is a simplified example and does not include error handling or more complex HTTP methods.
+## Deep Dive
 
-## Deep Dive:
-Sending HTTP requests has been a fundamental part of web development since the early days of the internet. It allows for communication between different systems over the Hypertext Transfer Protocol (HTTP).
+Sending HTTP requests is a cornerstone of web programming. Historically, HTTP started as a simple request-response protocol in the early days of the web. Now, in its current iteration (HTTP/2), it is far more complex and permits concurrent requests, significantly improving performance.
 
-Although Lua does not have a built-in HTTP library, there are multiple popular community-maintained libraries available, such as "luasocket" and "Lua-cURL". These libraries provide more advanced features for handling HTTP requests, such as authentication, cookies, and timeouts.
+While `lua-http` is a great tool to directly control your HTTP requests and responses, other libraries such as `luasocket's http module` or `luajit-request` also provide similar functionality. Depending on your needs, especially in terms of compatibility and flexibility, your mileage may vary.
 
-Alternatively, some Lua frameworks, like "OpenResty", have built-in HTTP client functionality. These libraries and frameworks are often preferred over manually creating HTTP requests, as they handle more complex scenarios and provide a more streamlined approach.
+Lua doesn't have built-in HTTP support like Node.js or Python, so you'll need to include external libraries to work with HTTP. Knowing the right tool for your project and how it works under the hood provides better control and customization, ultimately helping you write better Lua code.
 
-## See Also:
-- LuaSocket library: http://w3.impa.br/~diego/software/luasocket/
-- Lua-cURL library: https://github.com/Lua-cURL/Lua-cURLv
-- OpenResty framework: https://openresty.org/
+## See Also
+
+- HTTP/2: https://en.wikipedia.org/wiki/HTTP/2
+- lua-http: https://github.com/daurnimator/lua-http
+- luasocket:http: http://w3.impa.br/~diego/software/luasocket/http.html
+- luajit-request: https://github.com/LPGhatguy/luajit-request

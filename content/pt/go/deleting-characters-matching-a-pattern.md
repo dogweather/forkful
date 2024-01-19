@@ -1,6 +1,6 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Go: Excluindo caracteres que correspondem a um padrão"
+html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Go"
 category:             "Go"
@@ -10,37 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+## O que e Por que?
 
-Excluir caracteres que correspondam a um padrão é uma técnica comum usada pelos programadores para remover determinados caracteres de uma string. Isso pode ser útil para limpar dados indesejados ou formatar strings de acordo com uma determinada lógica. É uma prática importante para manter o código limpo e eficiente.
+Deletar caracteres que correspondem a um padrão é uma atividade comum no desenvolvimento de software. Programadores fazem isso para limpar dados, remover caracteres indesejados ou anticuados e normalizar strings.
 
 ## Como fazer:
 
-```go
-pattern := regexp.MustCompile(`[aeiou]`) // cria um padrão regex para vogais
-str := "Olá, mundo!"
+No Go, costumamos usar o pacote "strings" para manipular strings. Aqui vai um exemplo de como você pode deletar caracteres que correspondem a um padrão:
 
-cleanStr := pattern.ReplaceAllString(str, "") // retorna "Ol, mnd!"
-fmt.Println(cleanStr)
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "Hello, person! How are you today?"
+	str = strings.ReplaceAll(str, " ", "")
+	fmt.Println(str)
+}
 ```
 
-Aqui, usamos o pacote `regexp` padrão do Go para criar um objeto Regex com o padrão `[aeiou]`, que corresponde a todas as vogais. Em seguida, usamos o método `ReplaceAllString` para substituir todas as ocorrências desse padrão em uma string por uma string vazia, resultando em uma string sem vogais. O mesmo pode ser feito com qualquer outro padrão e pode ser facilmente integrado ao seu código.
+Resultado de saída:
 
-## Profundidade:
+```Go
+Hello,person!Howareyoutoday?
+```
 
-### Contexto histórico:
+No código acima, todos os espaços em branco na string foram removidos.
 
-O conceito de expressões regulares (ou Regex) vem de linguagens formais e teoria da computação, surgindo na década de 1950. Foi posteriormente usado por linguagens de programação para permitir a manipulação de texto de forma eficiente. No Go, a implementação do pacote `regexp` é baseada no mecanismo do Perl e atualmente usa a sintaxe POSIX para expressões regulares.
+## Aprofundando:
 
-### Alternativas:
+Historicamente, a eliminação de caracteres seguindo um padrão tem sido uma prática comum em muitos outros idiomas também. Em linguagens como Python ou JavaScript, funções de substituição de strings também são amplamente utilizadas para esses propósitos.
 
-Existem vários outros métodos para manipular strings e substituir caracteres em uma string, como o uso de funções múltiplas `Replace` no pacote `strings` ou o método `Trim` para remover caracteres específicos. No entanto, o uso de expressões regulares oferece uma maneira mais versátil e eficiente de realizar essas operações.
+Existem várias outras maneiras de abordar tal problema em Go. Alternativamente, você pode usar o pacote "regexp" para corresponder a um padrão em um texto e remover ou substituir:
 
-### Detalhes de implementação:
+```Go
+package main
 
-O pacote `regexp` no Go usa a biblioteca C `re2` para implementar expressões regulares. Ele compila os padrões em um formato determinístico de automato finito que é então usado para comparar com as strings fornecidas. Isso oferece um desempenho aprimorado em comparação com a implementação padrão de expressões regulares em outras linguagens de programação.
+import (
+	"fmt"
+	"regexp"
+)
+
+func main() {
+	str := "Hello, person! How are you today? How about tomorrow?"
+	reg := regexp.MustCompile(`(today|tomorrow)`)
+	str = reg.ReplaceAllString(str, "")
+	fmt.Println(str)
+}
+```
 
 ## Veja também:
 
-- [Documentação oficial do pacote regexp no Go](https://golang.org/pkg/regexp/)
-- [Tutorial sobre expressões regulares no Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go-pt)
+1. [Pacote oficial de strings Go](https://golang.org/pkg/strings/)
+2. [Golang, expressões regulares e o pacote regexp](https://gobyexample.com/regular-expressions)
+3. [Go: uma visão geral das strings](https://go.dev/blog/strings)

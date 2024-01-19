@@ -1,7 +1,7 @@
 ---
-title:                "Tulevan tai menneen päivämäärän laskeminen"
-html_title:           "TypeScript: Tulevan tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "TypeScript: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mikä & Miksi?
 
-Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen tarkoittaa tietyn päivämäärän lisäämistä tai vähentämistä tietyn ajanjakson verran. Tämä voi olla hyödyllistä esimerkiksi sovelluksissa, jotka tarvitsevat määritettyjä päivämääriä toimintojensa suorittamiseen. Ohjelmoijat käyttävät päivämäärän laskemista myös ajan muuntamiseen eri aikavyöhykkeiden välillä.
+Lasketaan tulevaisuuden tai menneisyyden päivämäärä viittaamalla tiettyyn ajanjaksoon tänään. Tätä tarvitaan usein, jotta ohjelman toiminnot ja tiedot pysyvät ajan tasalla ja relevantteina.
 
-## Kuinka tehdä?
+## Näin se tehdään:
 
-TypeSciptissä päivämäärän laskeminen on helppoa Date-olion avulla. Katso esimerkit alla, kuinka lisätä tai vähentää päiviä, kuukausia tai vuosia annetusta päivämäärästä. 
+TypeScriptissä voimme käyttää JavaScriptin `Date` ja `setDate` -metodia laskea-man tulevaisuuden tai menneisyyden päivämäärä.
 
 ```TypeScript
-// Lisätään 10 päivää annettuun päivämäärään
-let date = new Date(2020, 10, 15);
-date.setDate(date.getDate()+10);
-console.log(date); //Tulostaa "Tue Dec 25 2020"
+let tanaan = new Date();
+let viikonPaasta = new Date();
 
-// Vähennetään 2 kuukautta annetusta päivämäärästä
-let date = new Date(2021, 2, 11);
-date.setMonth(date.getMonth()-2);
-console.log(date); //Tulostaa "Thu Jan 11 2021"
+viikonPaasta.setDate(tanaan.getDate() + 7); // Viikon kuluttua
 
-// Lisätään 5 vuotta annettuun päivämäärään
-let date = new Date(2020, 5, 12);
-date.setFullYear(date.getFullYear()+5);
-console.log(date); //Tulostaa "Fri Jun 12 2025"
+console.log(`Tänään on: ${tanaan.toISOString()}`);
+console.log(`Viikon kuluttua on: ${viikonPaasta.toISOString()}`);
 ```
 
-## Syvempi sukellus
+Tämä antaa meille seuraavan tulostuksen:
 
-Historiallisesti päivämäärän laskeminen on ollut tärkeää seuraavien päivämäärien laskemiseksi: päivämäärän lisääminen tai vähentäminen oli helpoin tapa tehdä tämä. Nykyään on olemassa muitakin vaihtoehtoja, kuten päivämäärien muuntaminen aikamerkkien avulla. Date-olion tarjoamat metodit mahdollistavat päivämäärän laskemisen tarkasti ja helposti.
+```Bash
+Tänään on: 2021-12-06T14:30:00.000Z
+Viikon kuluttua on: 2021-12-13T14:30:00.000Z
+```
+
+## Sukellus syvälle
+
+Historiassa ohjelmoijat käyttivät perinteisesti matalan tason kieliä päivämäärien ja aikojen käsittelyyn. Se on yleensä monimutkaista, ja laajempien JS-yhteisöjen tullessa mukaan luotiin yksinkertaisempia, korkean tason käsitteitä, kuten `Date`.
+
+Vaihtoehtoja on myös useita. Voit käyttää libraries kuten Moment.js tarjoama lisäominaisuuksia ja joustavuutta päivämäären ja ajan käsittelyssä. Sinun on kuitenkin harkittava suorituskykyä ja projektin koosta riippuen.
+
+Päivämäärän laskemista tulevaisuudessa tai menneisyydessä käytetään laajalti monissa käyttötapauksissa. Esimerkkejä ovat tapahtumien ajoittaminen, tehtävien aikataulutus, aikaistetut push-ilmoitukset ja monet muut.
 
 ## Katso myös
 
-- [Date-olion dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Muut vaihtoehdot päivämäärän laskemiseen JavaScriptissä](https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/)
+1. [Mozilla Developer Network - Date](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. [Moment.js](https://momentjs.com/)
+3. [TypeScript Handbook - Date](https://www.typescriptlang.org/docs/handbook/basic-types.html#date)

@@ -1,7 +1,7 @@
 ---
-title:                "サブストリングの抽出"
-html_title:           "Arduino: サブストリングの抽出"
-simple_title:         "サブストリングの抽出"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -12,33 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Arduinoで部分文字列を抽出する方法
 
-## なに？なんで？
+## 何となぜ?
+部分文字列の抽出とは、文字列から特定の範囲の文字を取り出すことです。プログラマーは不要な情報を除外し、必要なデータだけに焦点を絞るためにこれを行います。
 
-部分文字列の抽出とは、文字列の中から特定の部分を取り出すことです。プログラマーはこの技術を使用して、必要な情報をより簡単に取得することができます。
+## 方法:
+以下にArduinoの実例を示します。
+```Arduino
+void setup() {
+  String mystr = "こんにちは、Arduino!";
+  Serial.begin(9600);
+  delay(1000);
 
-## 方法
+  // String.indexOf()を使用して部分文字列を見つけ、その位置を取得します
+  int pos = mystr.indexOf('、'); // '、'の位置を探す
+  
+  // String.substring()を使用して部分文字列を抽出します
+  String substring = mystr.substring(0, pos); 
+  
+  // 取得した部分文字列を出力します
+  Serial.println(substring);  //-> "こんにちは"
+}
 
-```arduino
-// 文字列の定義
-String sentence = "こんにちは世界！";
-
-// 部分文字列を抽出する
-String substring = sentence.substring(3,7);
-
-// 出力を表示する
-Serial.println(substring); // 出力: ちは世界
+void loop() {
+  // nothing here
+}
 ```
+上記のコードは、指定の文字位置までの部分文字列を見つけ、それを出力します。
 
-## 詳しく見る
+## ディープダイブ:
+部分文字列の抽出は、初期のプログラミング言語の設計段階から存在しています。この機能は、ファイル操作、データ解析、ユーザー入力の検証など、様々なケースで便利です。
 
-部分文字列の抽出は、文字列処理において非常に重要な概念です。これは、プログラマーが特定の情報を正確に抽出することができるようにするために使用されます。部分文字列を抽出することにより、文字列の中から必要な情報を取得することが容易になります。
+また、他にも多くの方法で部分文字列を抽出できることを覚えておいてください。たとえば、`String.charAt(index)`を使用することで特定の文字位置を取得できます。しかし、Arduinoでは、「String.substring()」メソッドがよく使用されます。このメソッドはある範囲の文字列を返し、元の文字列には影響を与えません。
 
-部分文字列の抽出には、いくつかの代替手段があります。例えば、文字列を配列に分割し、必要な部分だけを使用する方法もあります。しかし、この方法はより複雑であり、部分文字列の抽出よりも処理が遅くなる可能性があります。
+## 参考情報:
+部分文字列の取り扱いに関して詳しく知りたい場合は以下のリンクが参考になります。
 
-部分文字列の抽出の実装には、主に2つの手法があります。一つは、文字列をある一定の位置から切り出すことで、もう一つはある特定の文字を探して切り出すことです。それぞれの実装には長所と短所があり、プログラマーは各状況に合わせて最適な手法を選ぶことが重要です。
-
-## 関連リンク
-
-- [String クラスリファレンス](https://www.arduino.cc/reference/ja/language/variables/data-types/stringobject/)
-- [正規表現と文字列操作](https://www.arduino.cc/reference/ja/language/functions/data-types/string/functions/substring/)
-- [C++言語 - 文字列の部分文字列を抽出する方法](http://www.codingdict.com/article/2179)
+- Arduinoの公式ドキュメント: [Stringオブジェクト](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [文字列処理の基本](http://www.musashinodenpa.com/arduino/ref/index.php?f=1#string_indexof)
+- [Arduino String Manipulation](https://learn.adafruit.com/adafruit-arduino-lesson-22-arduino-tftp)

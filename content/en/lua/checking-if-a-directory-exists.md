@@ -1,6 +1,6 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "Lua recipe: Checking if a directory exists"
+html_title:           "C# recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Checking If a Directory Exists in Lua
 
-Checking if a directory exists in Lua means verifying if a particular folder or directory is present in the file system. Programmers do this to avoid any errors or unexpected behavior that may occur if the code is trying to access a non-existing directory.
+## What & Why?
+Checking if a directory exists is a method of verifying the presence of a particular directory on a file system before running specific operations. Programmers do this to avoid errors when trying to access, modify, or delete directories.
 
 ## How to:
+In Lua, you can check if a directory exists using the `lfs` module. The code is simple:
 
-To check if a directory exists in Lua, we can use the function `lfs.attributes()`. This function takes in a path as its argument and returns a table containing various attributes of the file or directory. To check for the existence of the directory, we can use the `mode` property of the table and see if it returns `directory` or not.
+```Lua
+lfs = require('lfs')
 
-```
-local lfs = require("lfs")
-local directoryName = "/path/to/your/directory"
-local attributes = lfs.attributes(directoryName)
-if attributes and attributes.mode == "directory" then
-  print("Directory exists!")
-else
-  print("Directory does not exist!")
+function isDir(path)
+    if lfs.attributes(path, 'mode') == 'directory' then
+        return true
+    else
+        return false
+    end
 end
+
+print(isDir('/path/to/directory'))   -- Replace with your directory
 ```
 
-The above code first requires the `lfs` library, which provides us with file system-related functions. Then, we specify the path of the directory we want to check for existence in the `directoryName` variable. Next, we use the `lfs.attributes()` function on the directory and store the result in a table called `attributes`. Finally, we use an `if` statement to check if the `attributes` table exists and if the `mode` property of the table is set to `directory`.
+Here, `/path/to/directory` is the directory you want to check. If it exists, this script will print `true`. If it doesn’t, it will print `false`.
 
-## Deep Dive:
+## Deep Dive
+Historically, verifying a directory’s existence hasn’t always been straightforward in Lua. Unlike some other languages, Lua does not have built-in functions supporting this out of the box. Therefore, the Lua File System (`lfs`) module is used for such processes.
 
-Historically, checking if a directory exists was done by using the `os.execute()` function to execute a shell command and checking the return value. However, this approach has been deprecated and the recommended way now is to use `lfs.attributes()`.
+A popular alternative to the `lfs` module approach is executing OS commands within Lua scripts. This is a powerful but dangerous method, as it brings in inherent OS vulnerabilities. Lua developers recommend sticking with the `lfs` module to maintain control over what happens.
 
-There are a few alternatives for checking if a directory exists, such as using the `io.open()` function and checking for any errors, or using the `os.execute()` function to execute a `dir` command and parsing the output. However, these approaches are not recommended as they may not work on all platforms and can have security concerns.
+Under the hood, `lfs.attributes(path, 'mode')` retrieves the `mode` attribute of the file/directory at the given `path`. If this `mode` is 'directory', the function returns `true`, indicating that a directory exists at the given `path`.
 
-When using `lfs.attributes()`, it is important to note that it returns `nil` if the path does not exist, or if there are any permission issues. So, it is necessary to check for the `attributes` table before accessing its properties.
-
-## See Also:
-
-- [Lua lfs Library Documentation](https://keplerproject.github.io/luafilesystem/manual.html)
-- [Lua i/o Library Documentation](https://www.lua.org/pil/21.2.html)
-- [Lua os Library Documentation](https://www.lua.org/manual/5.3/manual.html#6.9)
+## See Also
+1. [Lua File System Tutorial](https://keplerproject.github.io/luafilesystem/tutorial.html)
+2. [Lua `os` Library](https://www.lua.org/manual/5.3/manual.html#6.9) (Remember, it's powerful but use with caution!)
+3. [Tutorial on Manipulating Files and Directories in Lua](https://www.tutorialspoint.com/lua/lua_file_io.htm)

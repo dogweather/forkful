@@ -1,7 +1,7 @@
 ---
-title:                "Aloittaminen uusi projekti"
-html_title:           "C#: Aloittaminen uusi projekti"
-simple_title:         "Aloittaminen uusi projekti"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Getting Started"
@@ -10,52 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+# Aloittaminen uudella projektilla C#-ohjelmoinnissa
 
-Uuden projektin aloittaminen tarkoittaa uuden ohjelmointityön aloittamista tyhjästä. Se voi sisältää uuden sovelluksen, kirjaston tai sivuston kehittämisen. Ohjelmoijat aloittavat uuden projektin, jotta voivat toteuttaa uusia ideoita, parantaa ja päivittää nykyisiä projektejaan tai vain oppia uusia ohjelmointikieliä ja -tekniikoita.
+## Mikä & Miksi?
 
-## Miten:
+Aloittaminen uudella projektilla tarkoittaa ohjelman luomisen alkupistettä - tyhjältä pöydältä kohti lopullista sovellusta. Ohjelmoijat tekevät niin, koska se on tapa ratkaista uusi ongelma tai luoda uusi työkalu.
+
+## Kuinka:
+
+Tässä on yksinkertainen esimerkki C# -projektin luomisesta käyttäen .NET Core -ympäristöä. Projektin nimi on "HelloWorld":
+
+```
+dotnet new console -o HelloWorld
+cd HelloWorld
+```
+
+Kun avaat `Program.cs` -tiedoston, näet jotain tällaista:
 
 ```C#
-C# using System;
+using System;
 
-class MainClass {
-  static void Main(string[] args) {
-    Console.WriteLine("Tervetuloa uuden projektin aloittamiseen!");
-    Console.WriteLine("Seuraavassa on muutamia vinkkejä, jotka auttavat sinua pääsemään alkuun:\n");
-
-    // Luo uusi projektikansio (ohjelma) ja avaa se
-    string projectName = "UusiProjekti";
-    System.IO.Directory.CreateDirectory(projectName);
-    System.IO.Directory.SetCurrentDirectory(projectName);
-
-    // Luo uusi C#-tiedosto ja kirjoita siihen "Hello World!"
-    using (System.IO.StreamWriter file = new System.IO.StreamWriter("Koodi.cs")) {
-      file.WriteLine("using System;\n\nclass MainClass {\n\tstatic void Main(string[] args) {\n\t\tConsole.WriteLine(\"Hello World!\");\n\t}\n}");
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello, World!");
+        }
     }
-
-    // Käännä ja suorita koodi
-    string output = "Hello World!";
-    Console.WriteLine("Käännös ja suoritus:\n");
-    System.Diagnostics.Process.Start("C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\csc.exe", "Koodi.cs").WaitForExit();
-    System.Diagnostics.Process.Start("Koodi.exe").WaitForExit();
-    Console.WriteLine("Ohjelman tuloste: " + output);
-  }
 }
 ```
 
-## Syventävä sukellus:
+Kun ajat ohjelman, se tulostaa "Hello, World!".
 
-C#-kieli on kehitetty Microsoftin toimesta vuonna 2000. Se on Microsoftin pääkieli Windows-pohjaisissa sovelluksissa, mutta sitä voi käyttää myös monilla muilla alustoilla kuten Linux ja iOS. C# on olio-orientoitunut ja sen syntaksi on hyvin samanlainen kuin Javassa.
+```
+dotnet run
+```
 
-Vaihtoehtoisia ohjelmointikieliä uuden projektin aloittamiseen ovat esimerkiksi Java, Python ja C++. Näiden kielien välillä valitessa kannattaa miettiä oman projektin tarkoitusta ja sen käyttötarkoitusta.
+```Output
+Hello, World!
+```
 
-C#-projektin voi aloittaa myös Visual Studion avulla. Visual Studio on suosittu integroitu kehitysympäristö, joka sisältää kaiken tarvittavan ohjelmien kehittämiseen, kuten koodieditorin, debuggerin ja graafisen käyttöliittymän suunnittelijan.
+## Syvällisempi tarkastelu
 
-## Katso myös:
+.NET Core on Microsoftin vapaa ja avoimen lähdekoodin kehitysympäristö aloittaa uusia C# -projekteja. Vaikka .NET Core -projektin aloittaminen `dotnet new` -komennolla on yleisin tapa, on myös muita keinoja kuten Visual Studio IDE:n käyttö. 
 
-- Microsoft C# -dokumentaatio https://docs.microsoft.com/en-us/dotnet/csharp/
+Historiallisessa kontekstissa, alun perin uuden projektin aloittaminen C#:ssa merkitsi monimutkaista prosessia, johon kuului asennettavien tehtäväpohjien määrittämistä ja konfigurointia. Nykyään .NET Core ja modernit IDE:t tekevät prosessista paljon yksinkertaisemman.
 
-- W3Schools C# -opetusohjelma https://www.w3schools.com/cs/
+## Katso myös
 
-- C# -opetusvideoita YouTube-kanavalta https://www.youtube.com/playlist?list=PLAC325451207E3105
+1. Microsoftin virallinen ohje aloittamiseksi uuden .NET Core -projektin kanssa: [https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio](https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio).
+2. Visual Studio 2019:n asennusohjeet: [https://visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/).
+3. StackOverflow-keskustelu projektipohjien ja räätälöityjen mallien määrittämisestä .NET Core:ssa: [https://stackoverflow.com/questions/42505396/do-net-core-projects-have-project-templates](https://stackoverflow.com/questions/42505396/do-net-core-projects-have-project-templates).

@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Lua recipe: Comparing two dates"
+html_title:           "Elm recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,34 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# A Primer to Comparing Dates in Lua
+
 ## What & Why?
-Comparing two dates in programming refers to the process of evaluating whether one date is earlier, later, or the same as another date. This is typically done using various programming functions and methods to retrieve and manipulate the date data. Programmers often compare dates when dealing with time-sensitive data, such as scheduling tasks or tracking events.
+
+Comparing two dates is the practice of determining the time difference between these two points. This allows programmers to make decisions based on the age, duration, or sequence of events, like sending birthday reminders or scheduling tasks.
 
 ## How to:
-To compare two dates in Lua, first, we need to obtain the date values using the `os.time()` function, which returns the number of seconds since January 1st, 1970 00:00:00 UTC. Then, we can use the comparison operators (`<`, `>`, `<=`, `>=`, `==`, `~=`) to compare the two date values. Here's an example of comparing the current date to a specified date:
+
+Lua does not include built-in support for working with dates and times; therefore, we use the os library (specifically os.time() function) to convert dates to timestamps, which are easier to compare. Here's a simple example:
+
 ```Lua
--- Obtaining current date
-currentDate = os.time()
+date1 = os.time({year = 2022, month = 10, day = 17})  -- First date
+date2 = os.time({year = 2021, month = 10, day = 17})  -- Second date
 
--- Obtaining specified date
-specifiedDate = os.time{year=2020, month=12, day=25}
-
--- Comparing dates
-if currentDate < specifiedDate then
-  print("Christmas is coming up!")
-elseif currentDate > specifiedDate then
-  print("Christmas has passed.")
+if date1 > date2 then
+    print("date1 is later than date2")
 else
-  print("It's Christmas today!")
+    print("date2 is later than date1")
 end
-
--- Output: Christmas is coming up!
 ```
 
-## Deep Dive:
-Comparing dates has been a challenge for programmers since the beginning of programming languages. Different languages have their own unique methods of handling dates, and some struggle with exceptions such as leap years and time zones. In Lua, a popular alternative to using the `os.time()` function is the `date` library, which allows for more precise manipulation of date values. However, it requires additional formatting and conversion to perform date comparisons. For implementation details, check out the Lua documentation on date and os modules.
+The output:
 
-## See Also:
-- Learn more about the `os.time()` function: https://www.lua.org/manual/5.3/manual.html#pdf-os.time
-- Explore the `date` library in Lua: https://www.lua.org/pil/22.1.html
-- Check out the Lua Standard Library Reference: https://www.lua.org/manual/5.3/manual.html
+```Lua
+date1 is later than date2
+```
+
+## Deep Dive
+
+Comparing dates has been a ubiquitous need for programmers since computer handling of time-related data is widespread. More complex systems require more advanced libraries, like LuaDate or the Time and Date Manipulation library in LuaRocks.
+
+Alternatives to using `os.time()` include third-party libraries such as LuaDate or built-in features of host environments (like Lua OS Library in WoW Addon programming). The `os.time()` approach works by converting structured date-time data (year, month, day) into Unix timestamps (seconds since 1970). Two timestamps can be directly compared as they are numbers.
+
+Remember that when using `os.time()`, it assumes local time. If you are working with dates in different timezones, conversion is necessary.
+
+## See Also
+
+To better understand date and time in Lua, check these resources out:
+
+- Lua Reference for Time Functions: `www.lua.org/manual/5.4/manual.html#6.9`
+- LuaRocks Time and Date Manipulation Library: `luarocks.org/modules/Tieske/date`
+- LuaDate: `github.com/Tieske/date`
+
+And keep coding!

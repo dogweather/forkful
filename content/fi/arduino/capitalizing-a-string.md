@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon ensimmäisen kirjaimen kirjoittaminen isoksi"
-html_title:           "Arduino: Merkkijonon ensimmäisen kirjaimen kirjoittaminen isoksi"
-simple_title:         "Merkkijonon ensimmäisen kirjaimen kirjoittaminen isoksi"
+title:                "Merkkijonon kirjainten muuttaminen isoiksi"
+html_title:           "Arduino: Merkkijonon kirjainten muuttaminen isoiksi"
+simple_title:         "Merkkijonon kirjainten muuttaminen isoiksi"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,36 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Miks
-Angles
-For people new to programming, one of the first things you may come across is the concept of "capitalizing a string". This simply means converting all the letters in a word or phrase to uppercase. Programmers do this for a variety of reasons, such as ensuring consistency in data or making comparisons easier.
+## Mikä & Miksi?
 
-Mikä & Miksi?
-Miksi haluat muuttaa jonkin sanan tai lauseen isot kirjaimet? No, on monia syitä! Ehkä haluat varmistaa yhtenäisyyden datassa tai helpottaa vertailuja.
+Merkkijonojen isoiksi kirjoittaminen on prosessi, jossa kaikki merkkijonokirjeet muunnetaan isoihin kirjaimiin. Ohjelmoijat tekevät sen tehdäkseen merkkijonoista huomattavampia tai yhdenmukaistavat tiedon ulkoasun.
 
-Miten:
-Aloitetaan yksinkertaisesta koodiesimerkistä, joka muuttaa sanan "koodaus" isot kirjaimet "KOODAUS" käyttäen Arduino-ohjelmointikieltä:
+## Kuinka Tehdä:
+
+Tässä on perusesimerkki siitä, kuinka muunnat merkkijonon isoiksi kirjaimiksi Arduino-ympäristössä:
+```Arduino
+void setup() {
+  // Sarjaportin määrittäminen kommunikointia varten.
+  Serial.begin(9600);
+}
+
+void loop() {
+  
+  String s = "ohjelmointia suomeksi";
+  s.toUpperCase();
+  
+  Serial.println(s);
+  delay(2000);
+  
+}
 ```
-Arduino
-
-/* Aluksi, määritetään muuttuja "sana", johon tallennetaan haluttu sana*/
-String sana = "koodaus";
-
-/* Käytetään String-kirjastoa, joka sisältää capitalize() funktion */
-String cappattu_sana = sana.capitalize();
-
-/* Tulostetaan kapitalisoitu sana sarjamonitoriin  */
-Serial.println(cappattu_sana);
-
-/* Tämä tulostaa "KOODAUS" */
+Kun tämä koodi toteutetaan, tulostus on seuraava:
+```Arduino
+OHJELMOINTIA SUOMEKSI
 ```
-Yksinkertaisesti siis luodaan muuttuja, johon tallennetaan alkuperäinen sana ja käytetään siihen sisäänrakennettua capitalize () -funktiota, joka palauttaa saman sanan mutta isot kirjaimet. Sitten voimme tulostaa kapitalisoidun sanan sarjamonitoriin.
 
-Deep Dive:
-Capitalizing strings ei ole uusi käsite. Se on ollut osa ohjelmointia vuosikymmenten ajan. Alkuperäisesti se tehtiin jokaisen kirjaimen käsittelyllä, jossa pienet kirjaimet muutettiin isot ja tallennettiin uuteen muuttujaan. Nykyiset ohjelmointikielet, kuten Arduino, tarjoavat sisäänrakennetun toiminnon, joka tekee tämän prosessin helpommaksi.
+## Sukellus syvyyksiin:
 
-On myös muita tapoja kapitalisoida merkkijonoja, kuten käyttämällä valmista funktiota tai kirjastoa, joka tekee sen automaattisesti. Esimerkiksi String libraryllä on myös toinen toiminto capitalizeWords(), joka muuttaa jokaisen sanan alkukirjaimen isoksi.
+Tämä merkkijonojen pääoman vaihto ei ole uusi käsite. Se on ollut mukana ohjelmointikielessä jo pitkään, ja sitä käytetään usein, kun haluat tehdä tekstistäsi sääntöjen mukaista tai kun haluat tehdä tekstin erottuvammaksi.
 
-Katso myös:
-- [C++ Reference - touppercase](https://www.cplusplus.com/reference/string/string/toupper/)
-- [W3Schools - PHP strtoupper()](https://www.w3schools.com/php/func_string_strtoupper.asp)
+On olemassa vaihtoehtoinen tapa isontaa merkkijonoja tikutusfunktion avulla. Se on yksityiskohtaisempi ja monimutkaisempi lähestymistapa, mutta se tarjoaa enemmän joustavuutta. Tämä tapa on kuitenkin harvinaisempi, koska useimmissa tapauksissa `toUpperCase` -metodi on riittävä.
+
+On tärkeää myös ymmärtää, että `toUpperCase`-metodi muuttaa alkuperäisen merkkijonon. Jos haluat säilyttää alkuperäisen merkkijonon samalla kun luot iso kirjain version, sinun on ensin kopioitava merkkijono.
+
+## Katso Myös:
+
+Jos haluat oppia lisää merkkijonojen muuntamisesta, tässä on muutamia linkkejä, jotka voivat olla hyödyllisiä:
+1. Arduino String Functions: [Link](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+2. How to Manipulate Strings in C and C++ : [Link](https://learn.adafruit.com/manipulating-c-and-c-plus-plus-strings/)
+3. Arduino Programming Course: [Link](https://startingelectronics.org/software/arduino/learn-to-program-course/)

@@ -1,7 +1,7 @@
 ---
-title:                "Umwandeln einer Zeichenkette in Kleinbuchstaben"
-html_title:           "Bash: Umwandeln einer Zeichenkette in Kleinbuchstaben"
-simple_title:         "Umwandeln einer Zeichenkette in Kleinbuchstaben"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,26 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# String in Kleinbuchstaben Konvertieren in Bash
+
 ## Was & Warum?
-Die Umwandlung eines Strings in Kleinbuchstaben ist ein häufig verwendetes Verfahren in der Programmierung. Dadurch wird sichergestellt, dass eine bestimmte Zeichenfolge immer in einem einheitlichen Format vorliegt und es somit einfacher wird, diese zu vergleichen oder zu verarbeiten.
+Das Konvertieren eines Strings in Kleinbuchstaben bedeutet, alle Großbuchstaben in einem Text zu Kleinbuchstaben zu ändern. Programmierer machen dies, um Dateneingaben zu normalisieren und zu vereinfachen, sodass Groß- und Kleinschreibung keine Rolle bei Vergleichen spielt.
 
-## So geht's:
-Eine Zeichenfolge in Bash in Kleinbuchstaben zu konvertieren, ist relativ einfach. Dazu kann die integrierte Funktion "tr" verwendet werden, die Zeichen ersetzt und somit eine Umwandlung ermöglicht. Der Befehl sieht dabei wie folgt aus:
+## Wie zu:
+Hier sind einige Möglichkeiten, dies in Bash zu erreichen:
 
-``` Bash
-echo "HELLO WORLD" | tr '[:upper:]' '[:lower:]'
+1. Mit der eingebauten Funktion `tr`:
+
+```Bash
+text="Hallo Welt"
+echo "${text,,}"
+# Ausgabe: hallo welt
 ```
 
-Die Ausgabe dieses Befehls wäre dann "hello world", da alle Großbuchstaben in Kleinbuchstaben umgewandelt wurden. Es ist auch möglich, direkt in einem Skript eine Zeichenfolge in kleinere Buchstaben umzuwandeln, indem man den Befehl in Variablen speichert und diese dann verwendet.
+2. Mit der `tr`-Befehl:
 
-## Tiefere Einblicke:
-In der Geschichte der Programmierung gab es verschiedene Ansätze, um Strings in Kleinbuchstaben zu konvertieren. Früher waren oft komplizierte Algorithmen nötig, um diese Umwandlung durchzuführen. Heutzutage gibt es jedoch effiziente und integrierte Funktionen, die diesen Prozess vereinfachen.
+```Bash
+text="Hallo Welt"
+echo "$text" | tr '[:upper:]' '[:lower:]'
+# Ausgabe: hallo welt
+```
 
-Eine alternative Methode, um Zeichenfolgen in Kleinbuchstaben zu konvertieren, ist die Verwendung von Programmiersprachen wie Python oder Java, die eigene Funktionen für diesen Zweck bereitstellen. Diese können je nach Anwendungsfall möglicherweise auch schneller sein als der Einsatz von Bash.
+## Deep Dive
+In der Vergangenheit konnten Sie nicht direkt in Bash einen String in Kleinbuchstaben konvertieren, und mussten Pipe und `tr` benutzen. Seit Bash 4.0 gibt es jedoch die eingebaute Funktion `${text,,}`, die diese Aufgabe erledigt.
 
-Die Implementierung von Kleinbuchstabenkonvertierung in Bash basiert auf der Nutzung von regulären Ausdrücken und dem Austausch von Zeichen im String. Daher kann es in manchen Fällen auch zu unerwartetem Verhalten kommen, wenn beispielsweise Sonderzeichen oder Umlaute verwendet werden.
+Es gibt auch Alternativen wie `awk`, `sed` und `perl`:
 
-## Weitere Informationen:
-- [Bash tr command](https://www.geeksforgeeks.org/tr-command-in-linux-with-examples/)
-- [Python lower() function](https://www.w3schools.com/python/ref_string_lower.asp)
-- [Java toLowerCase() method](https://www.w3schools.com/java/ref_string_tolowercase.asp)
+- Awk:
+    
+    ```Bash
+    echo "Hallo Welt" | awk '{print tolower($0)}'
+    # Ausgabe: hallo welt
+    ```
+
+- Sed:
+
+    ```Bash
+    echo "Hallo Welt" | sed -e 's/\(.*\)/\L\1/'
+    # Ausgabe: hallo welt
+    ```
+
+- Perl:
+
+    ```Bash
+    echo "Hallo Welt" | perl -pe '$_=lc'
+    # Ausgabe: hallo welt
+    ```
+
+Diese Methoden sind mächtig und bieten weitere Funktionen, aber sie sind auch komplexer und schwieriger zu benutzen als die eingebaute Bash-Funktion.
+
+## Siehe Auch
+- [Bash Parameter Expansion](https://wiki.bash-hackers.org/syntax/pe): Weitere Informationen zur Parametererweiterung in Bash.
+- [AWK-Befehl in Unix](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/): Ein tiefer Einblick in den `awk`-Befehl.
+- [Sed & Perl](https://www.linuxjournal.com/content/transforming-text): Wie Sie Text mit `sed` und `perl` manipulieren können.

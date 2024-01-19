@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http."
-html_title:           "Clojure: Wysyłanie żądania http."
-simple_title:         "Wysyłanie żądania http."
+title:                "Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
+simple_title:         "Wysyłanie żądania http"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,22 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Wysyłanie żądania HTTP jest jedną z podstawowych operacji w programowaniu. Polega ona na wysłaniu zapytania do serwera, aby pobrać informacje lub wykonac konkretne działania. Programiści korzystają z tej metody, aby pobierać i przetwarzać dane z różnych źródeł internetowych.
 
-## Jak zrobić: 
-W celu wysłania żądania HTTP w Clojure, musisz użyć funkcji "clojure.core/http-client". Możesz wykorzystać różne opcje, takie jak metoda żądania, nagłówki i ciało zapytania. Na przykład:
+Wysyłanie żądań HTTP to proces komunikacji z serwerem, pozwalający na przesyłanie danych. Programiści robią to, aby interaktywnie komunikować się z aplikacjami internetowymi i manipulować ich danymi.
+
+## Jak to zrobić:
+
+Możemy wysłać żądanie HTTP w Clojure za pomocą biblioteki `clj-http`. Oto prosty przykład:
 
 ```Clojure
-(clojure.core/http-client
-  {:method :get
-  :url "https://www.example.com"
-  :headers {"Content-Type" "application/json"}
-  :body "{:name \"John\", :age 30}"})
+(ns moja-aplikacja.core
+  (:require [clj-http.client :as client]))
+
+(defn wyslij-zadanie []
+  (let [odpowiedz (client/get "http://example.com")]
+    (println "Status: " (:status odpowiedz))
+    (println "Ciało odpowiedzi: " (:body odpowiedz))))
 ```
-W rezultacie otrzymasz odpowiedź od serwera w postaci danych w formacie JSON.
 
-## Głębsze zagadnienia:
-Wysyłanie żądania HTTP jest powszechnie stosowane w aplikacjach internetowych i programowaniu na backendzie. Alternatywnymi sposobami na wymianę danych z serwerem są między innymi protokoły FTP i SSH. W Clojure możliwe jest również użycie biblioteki "clj-http" dla bardziej zaawansowanej obsługi żądań HTTP.
+Po uruchomieniu tego kodu otrzymasz odpowiedź od `http://example.com`, a status i ciało odpowiedzi zostaną wydrukowane.
 
-## Zobacz także: 
-Więcej informacji na temat wysyłania żądania HTTP w języku Clojure można znaleźć w dokumentacji na [stronie oficjalnej](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/http-client). Warto także zapoznać się z przykładami wykorzystania tej funkcji w [bibliotece Ring](https://github.com/ring-clojure/ring/wiki/Getting-Started).
+## Dogłębna analiza:
+
+Historia HTTP zaczyna się od powstania internetu. Był to protokół wykorzystywany do komunikacji między klientem a serwerem. W Clojure, zazwyczaj korzystamy z biblioteki `clj-http` do wysyłania żądań HTTP, ale istnieją również inne alternatywy, takie jak `http-kit` czy `aleph`. Różnią się one szczegółami implementacji i oferowanymi funkcjami.
+
+Co więcej, operacje HTTP w Clojure, tak jak w powyższym przykładzie, są blokujące. Oznacza to, że cały wątek zostaje zatrzymany, dopóki odpowiedź nie zostanie otrzymana. W praktyce, lepiej jest używać odpowiednich mechanizmów do obsługi operacji asynchronicznych.
+
+## Zobacz też:
+
+Więcej na temat żądań HTTP i używanych do tego bibliotek w Clojure można znaleźć na następujących stronach:
+- Dokumentacja clj-http: https://github.com/dakrone/clj-http
+- Przewodnik po http-kit: http://www.http-kit.org/
+- Dokumentacja Aleph: https://github.com/ztellman/aleph

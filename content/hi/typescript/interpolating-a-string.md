@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग इंटरपोलेशन"
-html_title:           "TypeScript: एक स्ट्रिंग इंटरपोलेशन"
-simple_title:         "एक स्ट्रिंग इंटरपोलेशन"
+title:                "स्ट्रिंग का अंतर्कलन"
+html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
+simple_title:         "स्ट्रिंग का अंतर्कलन"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Interpolating a string, also known as String Interpolation, is a way of inserting dynamic values into a string in TypeScript. Programmers use string interpolation to make their code more readable and concise by avoiding the tedious concatenation of strings and variables. It also makes code easier to maintain and debug.
+## क्या और क्यों?
 
-## How to:
-To interpolate a string in TypeScript, use the backtick (```) character instead of the single or double quotes. Then, to insert a dynamic value, use a dollar sign ($) followed by curly braces ({}) containing the variable or expression you want to insert. Here's an example:
+स्ट्रिंग इंटरपोलेशन का अर्थ है कि किसी स्ट्रिंग के भीतर उसकी मूल्य वाली व्यतिरेक्ता स्थल डालना। प्रोग्रामर इसका उपयोग यह सुनिश्चित करने के लिए करते हैं कि कोड में स्पष्टता और पठनीयता बनी रहे।
 
-```TypeScript
-const name = "John";
-console.log(`Hello ${name}!`); 
-```
-Output: Hello John!
+## कैसे करें:
 
-You can also use string interpolation with functions and object properties. Here's an example:
+TypeScript में, हम बैकटिक्स(```) का उपयोग करके इंटरपोलेशन को कर सकते हैं। निम्नलिखित कोड दिखा रहा है कि कैसे:
 
 ```TypeScript
-function add(x: number, y: number) {
-    return x + y;
-}
-
-console.log(`The sum of 2 and 3 is ${add(2,3)}.`);
-
-let person = {
-    name: "Mary",
-    age: 25
-};
-
-console.log(`My name is ${person.name} and I am ${person.age} years old.`);
+const name = "Viraj";
+const message = `नमस्कार, ${name}!`;
+console.log(message); // नमस्कार, Viraj!
 ```
-Output: The sum of 2 and 3 is 5.
-My name is Mary and I am 25 years old.
 
-## Deep Dive:
-String interpolation was first introduced in EMCA Script 6 (ES6) and is now supported by TypeScript and most modern programming languages. Before string interpolation, programmers had to use string concatenation, which resulted in lengthy and cumbersome code. String interpolation improved the readability and efficiency of code by allowing programmers to easily insert dynamic values into strings.
+यहां `${name}` में स्थान होता है जहाँ `name` वेरिएबल का मूल्य स्थापित होता है।
 
-An alternative to string interpolation is using string templates, which are more flexible and allow for multiple lines of code. However, string templates have a slightly different syntax and cannot contain expressions or variables.
+## डीप डाइव:
 
-To implement string interpolation, TypeScript uses Template Literals, which allow for embedded expressions and multi-line strings. The expressions inside the curly braces are evaluated and converted to strings before being inserted into the final string.
+स्ट्रिंग इंटरपोलेशन का उपयोग पहले से ही कुछ भाषाओं में किया जा रहा है, जैसे कि Perl और Ruby। TypeScript, जो JavaScript का एक सुपरसेट है, ने ES6 के साथ इस सुविधा को जोड़ा। 
 
-## See Also:
-- [TypeScript String Interpolation Documentation] (https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
-- [ES6 Template Literals] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [Differences between String Interpolation and String Templates] (https://stackoverflow.com/questions/31961868/difference-between-interpolation-and-template-literal-in-es6)
+विकल्प रूप में, आप `+` ऑपरेटर का उपयोग करके स्ट्रिंग को मिला सकते हैं, लेकिन यह जटिलता और त्रुटि की संभावना बढ़ा सकता है।
+
+स्ट्रिंग इंटरपोलेशन के पिछे का प्रमुख विचार यह है कि यह टेम्पलेट स्ट्रिंग लेता है और उसे रनटाइम पर आवंटित करता है।
+
+## अधिक देखें:
+
+- [MDN Web Docs: Template literals(शब्दों के साँचे)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- [TypeScript Deep Dive: Template literals](https://basarat.gitbook.io/typescript/type-system/template-strings)

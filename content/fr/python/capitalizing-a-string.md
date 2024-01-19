@@ -1,7 +1,7 @@
 ---
-title:                "Mise en majuscule d'une chaîne de caractères"
-html_title:           "Python: Mise en majuscule d'une chaîne de caractères"
-simple_title:         "Mise en majuscule d'une chaîne de caractères"
+title:                "Mettre en majuscule une chaîne"
+html_title:           "Python: Mettre en majuscule une chaîne"
+simple_title:         "Mettre en majuscule une chaîne"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quel est l'intérêt de capitaliser une chaîne de caractères et pourquoi les programmeurs le font
+# Mettre en majuscule une chaîne de caractères en Python
 
-Capitaliser une chaîne de caractères signifie mettre en majuscule la première lettre de chaque mot. Les programmeurs le font pour des raisons de lisibilité et pour suivre les conventions de codage. Cela peut également être utile lors de la comparaison de chaînes de caractères, où une différence de casse peut entraîner un résultat incorrect.
+## Quoi & Pourquoi?
+Cette opération consiste à mettre en majuscule le premier caractère d'une chaîne de caractères. Les développeurs l'utilisent pour formater le texte afin de le rendre plus lisible ou de respecter une convention d'écriture.
 
-# Comment faire :
-
-Voici un exemple de code en Python montrant comment capitaliser une chaîne de caractères :
-
+## Comment faire:
+```Python
+# Exemple d'une chaîne de caractères en minuscules
+sentence = "bonjour tout le monde!"
+print(sentence.capitalize())
 ```
-string = "bonjour, je suis un programmeur"
-string.capitalize() # renvoie "Bonjour, je suis un programmeur"
+Résultat:
 ```
-
-Et voici un autre exemple avec une chaîne de caractères comprenant un mot déjà en majuscule :
-
+Bonjour tout le monde!
 ```
-string = "Python est un Langage de Programmation"
-string.capitalize() # renvoie "Python est un langage de programmation"
+## Approfondissement
+Historiquement, la capitalisation était utilisée dans les langages de programmation pour souligner l'importance d'une variable ou d'une constante. En Python, elle est principalement utilisée pour le formatage de texte.
+
+D'autres méthodes peuvent être utilisées pour mettre en majuscule la première lettre de chaque mot d'une chaîne, comme la fonction title():
+```Python
+print(sentence.title())
 ```
+Résultat:
+```
+Bonjour Tout Le Monde!
+```
+La fonction capitalize() met en majuscule seulement la première lettre de la chaîne, alors que title() met en majuscule la première lettre de chaque mot.
 
-# Plongée en profondeur :
+La mise en œuvre de la fonction capitalize() est codée en C dans l'interprèteur Python pour garantir des performances élevées.
 
-Historiquement, la capitalisation de chaînes de caractères était principalement utilisée pour des raisons esthétiques et de convention. Cependant, avec l'avènement de la programmation orientée objet, la méthode `capitalize()` est devenue plus utile dans le cadre de la comparaison de chaînes de caractères. Il existe également d'autres méthodes pour capitaliser une chaîne de caractères, telles que `upper()` qui met en majuscule toute la chaîne, et `title()` qui met en majuscule la première lettre de chaque mot.
-
-# À voir aussi :
-
-Voici quelques ressources utiles pour en savoir plus sur la capitalisation des chaînes de caractères en Python :
-
-- [Documentation officielle de la méthode `capitalize()`](https://docs.python.org/fr/3/library/stdtypes.html#str.capitalize)
-- [Article sur les méthodes pour manipuler les chaînes de caractères en Python](https://realpython.com/python-strings/)
-
-N'hésitez pas à explorer et à découvrir d'autres méthodes pour manipuler les chaînes de caractères en Python !
+## Voir aussi
+Pour plus d'informations, consultez la documentation officielle de Python sur les méthodes de chaînes de caractères : [Python String Methods](https://docs.python.org/fr/3/library/stdtypes.html#string-methods)

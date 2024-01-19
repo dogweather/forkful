@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "Javascript: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Często podczas pisania kodu w JavaScriptzie potrzebujemy, aby nasz program przyjmował argumenty z linii poleceń. W artykule tym dowiesz się, czym jest odczytywanie argumentów z linii poleceń i dlaczego jest to przydatne dla programistów.
+## Co i dlaczego?
 
-## Co & Dlaczego?
-Odczytywanie argumentów z linii poleceń jest procesem pozwalającym na przekazanie danych do naszego programu podczas jego uruchamiania. Dzięki temu programista może ustawić różne wartości dla tych argumentów, co pozwala na bardziej elastyczne i dostosowane działanie programu.
+Czytając argumenty linii poleceń, możemy wpływać na działanie naszych programów bez konieczności modyfikowania kodu źródłowego. Programiści korzystają z tej techniki, aby utworzyć skrypty bardziej elastyczne i łatwiejsze w konfiguracji.
 
 ## Jak to zrobić:
-Aby odczytać argumenty z linii poleceń w JavaScript, możemy użyć obiektu `process.argv`. Przykładowy kod wygląda następująco:
+
+W Node.js, możesz uzyskać argumenty linii poleceń z właściwości `process.argv`. Oto przykład:
 
 ```Javascript
-const args = process.argv;
-console.log(args);
+console.log(process.argv)
 ```
 
-Jeśli uruchomimy ten kod z argumentami `node index.js one two three`, to otrzymamy następujący wynik:
+Gdy uruchomisz powyższy skrypt z argumentami, tzn:
 
 ```Javascript
-["path/to/node", "path/to/index.js", "one", "two", "three"]
+node myScript.js arg1 arg2
 ```
 
-Pierwsze dwa elementy to ścieżki do plików `node` i `index.js`, a kolejne elementy to przekazane argumenty.
+Owoce Twojej pracy będą wyglądać tak:
 
-## Głębsze spojrzenie:
-Odczytywanie argumentów z linii poleceń jest popularną praktyką w wielu językach programowania. Jeden z najwcześniejszych języków, który pozwalał na to, to C. Wielu programistów używa tego mechanizmu do przekazywania opcji do swojego programu, takich jak np. tryb debugowania, ścieżki do plików, czy ustawienia sieciowe.
+```Javascript
+[ 'C:\\Program Files\\nodejs\\node.exe',
+  'C:\\Users\\YourName\\myScript.js',
+  'arg1',
+  'arg2' ]
+```
 
-Alternatywnym sposobem odczytywania argumentów jest korzystanie z biblioteki `yargs`, która zapewnia bardziej zaawansowane funkcjonalności, takie jak obsługa flag i argumentów pozycyjnych.
+Pierwsze dwa elementy to domyślne argumenty. Faktyczne argumenty zaczynają się od trzeciego elementu.
 
-W implementacji odczytywania argumentów z linii poleceń, warto pamiętać o sprawdzeniu poprawności wprowadzonych danych, aby uniknąć błędów w programie.
+## Deep Dive:
 
-## Zobacz też:
-- [Dokumentacja biblioteki yargs] (https://www.npmjs.com/package/yargs)
-- [Artykuł na temat odczytywania argumentów z linii poleceń w języku Python] (https://realpython.com/python-command-line-arguments/)
+Język Javascript nie był pierwotnie zaprojektowany do odczytywania argumentów z linii poleceń. Dopiero z pojawieniem się Node.js, argumenty z linii poleceń stały się dostępne poprzez obiekt `process`.
+
+Jest wiele alternatywnych bibliotek do obsługi argumentów linii poleceń, jak `commander.js` czy `yargs`, które oferują więcej funkcji i łatwiejsze w użyciu interfejsy.
+
+W przeglądarce, nie jest możliwe bezpośrednie odczytanie argumentów z linii poleceń. Przeważnie dane wejściowe są zbierane przez interfejs użytkownika lub zasoby sieciowe.
+
+## Zobacz także:
+
+- Node.js process.argv: https://nodejs.org/docs/latest/api/process.html#process_process_argv
+- Commander.js: https://github.com/tj/commander.js/
+- Yargs: https://yargs.js.org/

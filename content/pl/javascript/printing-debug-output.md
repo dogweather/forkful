@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie wyjścia debugowania"
-html_title:           "Javascript: Drukowanie wyjścia debugowania"
-simple_title:         "Drukowanie wyjścia debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,19 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
 ## Co i dlaczego?
-W druku wyjściowym debugowania polega na wyświetlaniu informacji o kodzie, takich jak wartości lub funkcje, aby pomóc programistom w zrozumieniu co się dzieje w trakcie działania programu. Jest to szczególnie przydatne podczas debugowania błędów, gdyż pozwala zidentyfikować miejsce i przyczynę problemu.
+Drukowanie informacji diagnostycznych to sposób, w jaki programiści monitorują i debugują swój kod. Pomaga to zrozumieć, co dokładnie dzieje się "pod maską" podczas wykonywania programu.
 
 ## Jak to zrobić:
 ```Javascript
-console.log("Wartość zmiennej x to: " + x);
+console.log("Witaj, jestem informacją diagnostyczną!");
 ```
-W powyższym przykładzie używamy funkcji `console.log()` do drukowania wartości zmiennej `x` w konsoli przeglądarki. Możemy również wyświetlić inne informacje, takie jak tekst czy wynik działania funkcji.
+Po uruchomieniu programu z powyższym poleceniem, wyświetli się komunikat: "Witaj, jestem informacją diagnostyczną!".
 
-## Głęboki wyjazd:
-Printowanie wyjścia debugowania nie jest nowym konceptem. Zostało zapoczątkowane przez programistów, którzy potrzebowali szybkiego sposobu na sprawdzenie wartości zmiennych w trakcie pisania kodu. Alternatywnym sposobem na debugowanie może być stosowanie narzędzi programistycznych, takich jak debugger, ale wydruk wyjścia debugowania nadal jest popularnym i użytecznym sposobem w wielu przypadkach.
+```Javascript
+let zmiennaDebug = "Witaj ponownie";
+console.debug(zmiennaDebug);
+```
+Podobnie jak wyżej, informacja diagnostyczna pokaże komunikat zapisany w zmiennej "zmiennaDebug": "Witaj ponownie".
 
-## Zobacz również:
-- [Wprowadzenie do debugowania JavaScript](https://developer.mozilla.org/pl/docs/Learn/JavaScript/First_steps/What_went_wrong)
-- [Console API w JavaScript](https://developer.mozilla.org/pl/docs/Web/API/Console)
-- [5 przydatnych metod debuggingu w JavaScript](https://medium.com/javascript-in-plain-english/5-przydatnych-metod-debuggingu-w-javascript-c42454eb0673)
+## Bardziej szczegółowo:
+Historia drukowania informacji diagnostycznych sięga początków programowania. Zostało to wprowadzone jako sposób na zrozumienie, co się dzieje z naszym kodem. Alternatywą dla `console.log` i `console.debug` jest `console.info` albo `console.warn`, które mogą być używane do drukowania różnych poziomów informacji diagnostycznych.
+
+Kiedy użyjemy `console.log`, zostaje wywołana wewnętrzna metoda `process.stdout.write`, która wypisuje informacje do strumienia wyjściowego procesu. Przy `console.debug`, informacje zostaną wyświetlone tylko wtedy, gdy jest ustawione odpowiednie środowisko (np. `NODE_DEBUG`).
+
+## Zobacz także:
+1. [Loggery w Node.js](https://nodejs.dev/learn/the-console-module)
+2. [Debugowanie w JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Debugging_in_JavaScript)
+3. [Metody obiektu konsoli](https://developer.mozilla.org/en-US/docs/Web/API/console)

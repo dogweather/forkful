@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Bash: 使用正则表达式"
+html_title:           "Arduino: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,32 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃是什么＆为什么？
-使用正则表达式是一种在编程中用来匹配和操纵文本的强大工具。程序员们使用它来处理各种文本数据，从字符串搜索和替换到数据验证和提取。它可以帮助您节省时间和精力，使您的代码更加有效和灵活。
+---
 
-＃＃＃ 如何：
-编写正则表达式的基本语法如下所示：
-```
-Bash ...
-``` 
-在两个斜杠之间，输入您想要匹配的文本，如：
-```
-Bash hello 
-``` 
-这将匹配任何包含单词“ hello”的文本。您也可以使用通配符和特殊字符来指定更复杂的匹配模式。例如：
-```
-Bash *hello?[a-z]
-``` 
-这将匹配以任意字符开头，后跟“ hello”，然后是任何小写字母的文本。您也可以使用一些有用的命令行工具，如grep和sed，来执行正则表达式搜索和替换操作。下面是一个示例代码和输出：
-```
-Bash echo "Hello world!" | grep -o "Hello"
-``` 
-输出： Hello
+## 什么 & 为什么？
 
-＃＃＃ 深潜：
-正则表达式最初是在20世纪50年代由数学家Stephen Kleene提出的，用于描述正则语言。它们最常用于UNIX和相关系统中的文本编辑器和命令行工具。除了Bash之外，也有一些其他流行的编程语言支持正则表达式，如Python和JavaScript。如果您想了解更多关于正则表达式的内容，还可以阅读有关其使用和语法的在线资源。
+正则表达式（Regular expressions）是用来检查和操作字符串的强大工具。程序员使用正则表达式来节省时间，提高编程效率。
 
-＃＃ 推荐链接：
-- Bash正则表达式文档：https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html
-- 了解正则表达式的更多知识：https://regexone.com/
-- 免费在线正则表达式编辑器：https://regexr.com/
+---
+
+## 操作说明：
+
+用Bash用正则表达式的代码例子如下：
+
+```Bash
+#!/bin/bash
+text="Welcome to AI world."
+pattern="AI"
+
+if [[ $text =~ $pattern ]]; then
+   echo "Pattern found!"
+fi
+```
+
+运行这段代码，输出就是 "Pattern found!"。如果你修改文本里的"AI"，输出就会变。
+
+---
+
+## 深入解析：
+
+### 历史：正则表达式最早在上世纪60年代由Ken Thompson所创。起初是作为Unix操作系统的一部分，现在已经成为几乎所有操作系统和编程语言不可或缺的一部分。
+
+### 另类：正则表达式是处理字符串非常强大的工具，尽管有些编程语言提供了相似的功能，比如Python的字符串方法，但是它们的功能还是无法和正则表达式相比。
+
+### 实现细节：当你在Bash脚本中使用正则表达式时，你实际上是在调用GNU的正则表达式库。这个库包含了一系列函数，能让你在字符串中执行复杂的查找和替换操作。
+
+---
+
+## 参考链接：
+
+1. [GNU正则表达式库](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+2. [正则表达式进阶教程](https://regexone.com/)
+3. [Bash编程指南](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+
+---

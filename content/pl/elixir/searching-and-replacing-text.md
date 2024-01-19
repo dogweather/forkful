@@ -1,7 +1,7 @@
 ---
-title:                "Znajdowanie i zamienianie tekstu"
-html_title:           "Elixir: Znajdowanie i zamienianie tekstu"
-simple_title:         "Znajdowanie i zamienianie tekstu"
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,23 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-"Szukaj i zamieniaj" (ang. search and replace) to proces polegający na wyszukiwaniu określonych fragmentów tekstu i zastępowaniu ich innymi. Jest to często stosowane przez programistów do szybkiej zmiany wielu wystąpień danej frazy na inną, bez konieczności ręcznego edytowania każdego z nich.
+Wyszukiwanie i zamiana tekstu to podstawowe operacje, które programiści wykonują na ciągach znaków. Znajdują one zastosowanie w wielu kontekstach, np. podczas manipulowania danymi, czyszczenia i normalizacji informacji.
 
 ## Jak to zrobić:
 
-Możemy użyć funkcji ```Elixir String.replace/3``` do wyszukania i zamiany tekstu w łańcuchu znaków. Na przykład, 
-```
-Elixir String.replace("Witaj świecie!", "świecie", "śliwka")
-```
-zwróci ```"Witaj śliwka!"```. Można również używać wyrażeń regularnych do jeszcze bardziej zaawansowanych wyszukiwań i zamian.
+```Elixir 
+original_text = "Witam wszystkich w Elixir!"
+new_text = String.replace(original_text, "wszystkich", "Was")
 
-## Głębsza analiza:
+IO.puts new_text
+# Outputs: "Witam Was w Elixir!"
+```
 
-Technika szukaj i zamieniaj została opracowana w latach 70. XX wieku i od tego czasu jest stosowana w różnych językach programowania. W Elixir możemy również użyć funkcji ```Elixir String.replace/4``` do wykonania wyszukiwania i zamiany jedynie na określonej liczbie wystąpień w tekście. Alternatywnym sposobem jest użycie biblioteki ```Elixir Regex``` do użycia wyrażeń regularnych.
+Kod powyżej pokazuje, jak użyć funkcji `replace` z modułu `String` do wyszukania i zamiany słowa 'wszystkich' na 'Was' w tekście "Witam wszystkich w Elixir!".
+
+```Elixir 
+pattern = ~r/wszystkich/i
+replacement = "Was"
+new_text = Regex.replace(pattern, original_text, replacement)
+
+IO.puts new_text
+# Outputs: "Witam Was w Elixir!"
+```
+
+Drugi kod prezentuje alternatywny sposób używania eksperymentalnej składy `~r` do tworzenia wyrażeń regularnych.
+
+## W głąb tematu:
+
+W poprzednich wersjach Elixir metoda 'replace' nie była dostępna. Programiści musieli korzystać z niskopoziomowych funkcji na ciągach znaków lub korzystać z bibliotek firm trzecich.
+
+Metoda 'replace' z modułu 'String' jest prostsza do zrozumienia i stosowania, ale metoda z wyrażeniem regularnym jest bardziej wszechstronna. Może obsłużyć bardziej złożone przypadki, takie jak ignorowanie wielkości liter.
+
+Rozważając, które podejście wybrać, należy wziąć pod uwagę specyfikacje projektu. Na przykład, jeśli robisz dużo złożonych manipulacji na tekstach, warto znać i używać wyrażeń regularnych.
 
 ## Zobacz też:
 
-- Dokumentacja Elixir dla funkcji ```String.replace/3```
-- Dokumentacja Elixir dla funkcji ```Regex.run/2```
+1. [Oficjalna dokumentacja Elixir na temat modułu String](https://elixir-lang.org/getting-started/basic-types.html#strings)
+2. [Poradnik dotyczący składni wyrażeń regularnych w Elixir](https://elixir-lang.org/getting-started/pattern-matching.html#the-pin-operator)
+3. [Dokumentacja dla `~r` składni](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%7Er/2)

@@ -1,7 +1,7 @@
 ---
-title:                "Sammanslående av strängar"
-html_title:           "Rust: Sammanslående av strängar"
-simple_title:         "Sammanslående av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,35 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att konkatenera strängar är när man slår ihop flera strängar till en enda. Det är en vanlig uppgift som programmerare stöter på när de arbetar med textmanipulation. Det kan vara användbart för att skapa dynamiska meddelanden eller för att lägga till variabler i en sträng.
+## Vad och Varför?
 
-## Hur man gör:
-Det finns flera sätt att konkatenera strängar i Rust. Ett sätt är att använda operatorn ```+```. Se exempel nedan:
+Stringssammanfogning är processen att kombinera två eller flera strängar (med text) till en. Programmerare gör detta för att manipulera eller omorganisera information på ett mer meningsfullt och effektivt sätt.
 
-```Rust
-let first_name = "Peter";
-let last_name = "Parker";
-
-let full_name = first_name + " " + last_name;
-println!("Hej, mitt namn är {}", full_name);
-// Resultat: Hej, mitt namn är Peter Parker
-```
-
-Ett annat sätt är att använda makron ```format!``` eller ```format!("{sträng}", variabler)```. Detta gör det möjligt att sätta in variabler i strängen på specifika platser. Se exempel nedan:
+## Så här gör man:
+Se på följande exempel med hjälp av + och format!-makro.
 
 ```Rust
-let first_name = "Peter";
-let last_name = "Parker";
+let s1 = "Hej".to_string();
+let s2 = " värld".to_string();
 
-let full_name = format!("Hej, mitt namn är {} {}", first_name, last_name);
-println!("{}", full_name);
-// Resultat: Hej, mitt namn är Peter Parker
+// Metod 1: använda +
+let s3 = s1 + &s2;
+println!("{}", s3); // Output: Hej värld
+
+// Metod 2: använda format!-makro
+let s4 = format!("{}{}", "Hej", " värld");
+println!("{}", s4); // Output: Hej värld
 ```
 
-## Djupdykning:
-Att konkatenera strängar har varit en vanlig uppgift för programmerare sedan de första programmeringsspråken utvecklades. I vissa språk, som C, behöver man använda en separat funktion för att konkatenera strängar, vilket kan leda till en längre och mer svårförståelig kod. I Rust, däremot, är det lättare och mer intuitivt att konkatenera strängar med hjälp av operatorer eller makron.
+Observera: Använd plus-operatören endast när du vill lägga till en sträng till en annan. Lägga till många strängar skapar oroligt kod och stora prestandakostnader. 
 
-## Se även:
-- Rust dokumentation om strängar: https://doc.rust-lang.org/std/string/index.html
-- Mer om format makron: https://doc.rust-lang.org/book/ch08-02-strings.html#format-makros
+## Djupdykning
+
+### Historisk kontext
+Konceptet att sammanfoga strängar har funnits sedan begynnelsen av programmeringshistoria. Men tillvägagångssättet och genomförandet har varierat beroende på olika programmeringsspråk och deras filosofier.
+
+### Alternativ
+I Rust kan strängar också fogas samman med `push_str`-metoden. 
+
+```Rust
+let mut s5 = "Hej".to_string();
+s5.push_str(" värld");
+println!("{}", s5); // Output: Hej värld
+```
+
+### Interna detaljer
+När vi arbetar med sammanfogning av strängar i Rust, är det viktigt att förstå att "String" och "tuppligt sträng" är olika typer i Rust. I de flesta fall omvandlas "tuppligt sträng" till en "String" för att utföra sammanfoga operationer, vilket kan medföra en prestandakostnad på grund av de extra minnestilldelningarna.
+
+## Se även
+
+Se följande länkar för ytterligare läsning: 
+
+1. [String Vs Str i Rust](https://www.ameyalokare.com/rust/2017/10/12/rust-str-vs-String.html)
+2. [Effektiv strängkonkatenering i Rust](https://fasterthanli.me/articles/efficient-string-concatenation-in-rust)
+3. [Rust String API Dokumentation](https://doc.rust-lang.org/std/string/struct.String.html)

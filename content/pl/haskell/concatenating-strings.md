@@ -1,7 +1,7 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Haskell: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Konkatenacja ciągów znaków"
+html_title:           "Bash: Konkatenacja ciągów znaków"
+simple_title:         "Konkatenacja ciągów znaków"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,26 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Łączenie ciągów znaków jest powszechną operacją w programowaniu. Polega ono na połączeniu dwóch lub więcej ciągów znaków w jeden dłuższy ciąg. Programiści często używają tej operacji, aby łączyć różne teksty i tworzyć bardziej złożone dane.
+## Co i Dlaczego?
+Łączenie napisów, znane jako konkatenacja, to proces łączenia dwóch lub więcej ciągów znaków w jeden ciąg. Programiści robią to, aby manipulować danymi tekstowymi czy tworzyć wiadomości dla użytkowników.
 
 ## Jak to zrobić:
+W Haskellu, operatorem konkatenacji jest `++`. Wygląda to tak:
 ```Haskell
-let str1 = "Witaj"
-
-let str2 = "świecie!"
-
-let concatenated = str1 ++ " " ++ str2
-
-print concatenated 
--- Output: Witaj świecie!
+main = do
+    let a = "Programowanie "
+    let b = "w Haskellu jest fajne"
+    let c = a ++ b
+    putStrLn c
 ```
+Na powyższym przykładzie wydrukuje "Programowanie w Haskellu jest fajne".
 
-Kod ten tworzy dwie zmienne przechowujące ciągi znaków, a następnie łączy je w jedną zmienną "concatenated". Wydrukowanie tej zmiennej w konsoli spowoduje wyświetlenie połączonych ciągów znaków.
+## Zanurzmy się głębiej
+Konkatenacja w Haskellu jest różna od innych języków programowania. W Haskellu znaki są łączone przy użyciu list. Wynika to z historycznego faktu, że Haskell traktuje ciągi jako listy znaków.
 
-## Głębsze zanurzenie:
-Łączenie ciągów znaków jest popularną operacją w wielu językach programowania, a Haskell nie jest wyjątkiem. Pierwsze funkcje do łączenia ciągów znaków pojawiły się już w języku FORTRAN w 1956 roku. W Haskellu używane są operator ++ lub funkcja concat do łączenia ciągów. Alternatywą dla tej operacji może być również użycie biblioteki Data.Text, która oferuje szybsze i bardziej wydajne operacje na ciągach w porównaniu do standardowych funkcji w Haskellu.
+Alternatywą do `++` jest `concat`, które łączy listę napisów w jeden ciąg.
 
-## Zobacz także:
-- Dokumentacja Haskell o operacji łączenia ciągów: https://hackage.haskell.org/package/base-4.15.0.0/docs/GHC-Base.html#g:2
-- Przykłady użycia biblioteki Data.Text: https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html
+Szczegółem implementacji jest to, że `++` ma złożoność O(n), więc jeśli ciągi są duże, `++` może być wolny. W takich przypadkach `Data.Text` i `Data.ByteString` są lepszymi alternatywami.
+
+## Zobacz także
+1. [Dokumenty Hackage dla `++`](http://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:-43--43-)
+2. [Haskell Wiki o ciągach](https://wiki.haskell.org/Strings)
+3. [Haskell Wiki o Data.Text](https://wiki.haskell.org/Data.Text_Function_cheatsheet)

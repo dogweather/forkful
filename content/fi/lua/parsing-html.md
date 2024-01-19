@@ -1,6 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
-html_title:           "Lua: HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,43 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-HTML-analysointi on prosessi, jossa ohjelmoijat käyttävät koodia HTML-tiedoston sisällön analysoimiseen ja strukturointiin. Tämän avulla he voivat helposti lukea ja käsitellä HTML-tiedostoja ja saada tarvittavat tiedot niistä. Ohjelmoijat tekevät tätä usein verkkosivujen sisällön hakemista tai data-scrapingia varten.
+HTML:n jäsennys tarkoittaa HTML-dokumentin rakenteen lukemista ja tulkitsemista. Ohjelmoijat tekevät tämän yleensä joko datan kaivamiseksi tai dokumentin muuntamiseksi johonkin toiseen formaattiin.
 
-## Miten:
+## Miten se tehdään:
 
 ```Lua
--- Luo muuttuja johon tallennetaan HTML-tiedoston sisältö
-local html = [[
-<html>
-<head>
-	<title>Lua HTML-analysointi</title>
-</head>
-<body>
-	<h1>Tervetuloa!</h1>
-	<p>Tässä on esimerkki HTML-tiedostosta.</p>
-</body>
-</html>
-]]
+htmlparser = require("htmlparser")
 
--- Kirjastojen lataaminen
-local htmlparser = require("htmlparser")
+local root = htmlparser.parse('<div>Hei, Suomi!</div>')
 
--- Luo uusi HTML-parseri
-local parser = htmlparser.parse(html)
-
--- Tulosta otsikko
-print(parser.head.title) -- "Lua HTML-analysointi"
-
--- Tulosta kappaleen sisältö
-print(parser.body.p) -- "Tässä on esimerkki HTML-tiedostosta."
+root("div"):each(function(_, div)
+  print(div:getcontent())
+end)
 ```
+Suorittaessasi tämän koodin, tulostuu konsoliin: 'Hei, Suomi!'. Tämä on hyvin perustason esimerkki, jossa etsitään `div`-elementit ja tulostetaan niiden sisältö.
 
-## Syvemmälle:
+## Syvempi tieto:
 
-HTML-parsiin liittyy paljon historiaa. Alun perin se oli tarpeen verkkosivujen sisällön esittämiseen selkeämmin ja helpommin ymmärrettävässä muodossa. Nykyään sitä käytetään usein web-skrapingin eli tiedon poimimisen verkkosivuilta tarkoituksena esimerkiksi analysoida tietoa tai luoda uutta sisältöä. HTML-parsereita on myös olemassa useita erilaisia, joista jokaiseen on omat hyötynsä ja haittansa.
+HTML:n jäsennys on ollut olemassa lähes yhtä kauan kuin HTML itse, 1990-luvun alusta. Muita vaihtoehtoja jäsennykseen ovat esimerkiksi DOM-puun jäsennys tai Regular Expressions -menetelmät.
+
+Lua:ssa HTML:n jäsentämistä varten on useita kirjastoja, esimerkiksi LuaHTML ja HTMLparser, joka on osa LuaSec-kirjastoa. Nuokin kirjastot käyttävät pääsääntöisesti lexikaalista analyysiä tagien erottamiseen ja DOM-puun luomiseen.
 
 ## Katso myös:
 
-- [Lua HTML-parseri](https://github.com/msva/lua-htmlparser)
-- [HTML-parsiminen Wikissä](https://fi.wikipedia.org/wiki/HTML-parsing)
-- [Verkkosivujen data-scraping](https://fi.wikipedia.org/wiki/Web_scraping)
+Lue lisää HTML:n jäsennyskirjastoista ja niiden käytöstä näiltä sivuilta:
+
+- LuaHTML: https://luarocks.org/modules/craigb/luaxml
+- LuaSec (johon HTMLparser kuuluu): https://github.com/brunoos/luasec
+- DOM-puun käyttö HTML:n jäsennyksessä: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+- Regular Expressions -menetelmä: https://www.regular-expressions.info/examples.html

@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinjeargumenter"
-html_title:           "Rust: Lesing av kommandolinjeargumenter"
-simple_title:         "Lesing av kommandolinjeargumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,38 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Lesing av kommandolinjeargumenter er en måte for programmerere å få tilgang til og bruke informasjon som brukeren skriver inn direkte fra kommandolinjen. Dette kan være nyttig for å tilpasse programmet eller utføre spesifikke handlinger basert på brukerens input.
+## Hva & Hvorfor?
 
-# Hvordan:
+Å lese kommandolinjeargumenter er prosessen der programmet ditt mottar data direkte når det er kjørt. Dette tillater brukeren å påvirke programmets oppførsel uten å måtte endre selve koden.
+
+## Hvordan:
+
+Rust har et modul `std::env` som kan brukes for å lese kommandolinje-argumenter. Her er et eksempel:
+
 ```rust
+// Importerer 'std::env'
 use std::env;
 
 fn main() {
-    // Hente kommandolinjeargumentene og lagre dem som en vektor
+    // Bruker 'args()' funksjonen til å hente argumentene
     let args: Vec<String> = env::args().collect();
 
-    // Skrive ut alle argumentene
-    for arg in args.iter() {
+    // Skriver ut hvert argument
+    for arg in args {
         println!("{}", arg);
     }
 }
 ```
 
-Eksempel på output:
-```bash
-$ rustc args.rs
-$ ./args arg1 arg2 arg3
-arg1
-arg2
-arg3
+Når du kjører programmet og gir argumenter til kommandolinjen, vil output være som følger:
+
+```console
+$ rustc main.rs
+$ ./main HelloWorld! Jeg er Rust programmerer.
+./main
+HelloWorld!
+Jeg
+er
+Rust
+programmerer.
 ```
 
-# Dypdykk:
-(1) Reading kommandolinjeargumenter er en vanlig praksis i programmering og stammer fra tiden da datamaskiner ble betjent via terminaler.
-(2) En alternativ måte å få tak i brukerinput på er via standard input-strømmen.
-(3) Rusts standardbibliotek har en modul som heter "env" som inneholder funksjoner for å hente informasjon fra brukerens miljø, for eksempel kommandolinjeargumenter.
+## Deep Dive:
 
-# Se også:
-- Rust dokumentasjon for "env" modul: [https://doc.rust-lang.org/std/env/index.html]
-- En artikkel om å hente input ved hjelp av standard input-strømmen: [https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html]
+Å lese kommandolinje-argumenter er ikke begrenset til Rust, det har blitt brukt i programmering lenge og er tilgjengelig i nesten alle programmeringsspråk. Det gir en interaktiv brukeropplevelse og gjør programmene mer fleksible.
+
+Det finnes også biblioteker som `getopts` og `clap` i Rust-økosystemet som gir mer avanserte funksjonaliteter for å håndtere kommandolinje-argumenter, som å gi standardverdier, tvinge bestemte typer, avkortinger og mer.
+
+Å lese kommandolinje-argumenter i Rust er ganske direkte. `std::env::args()` returnerer en iterator over argumentene. Det første argumentet er tradisjonelt banen til programmet som kjører. De påfølgende argumentene er gitt verdiene som er bestemt av kommandolinjen.
+
+## Se Også:
+
+- Rust Std Lib: [`std::env::args`](https://doc.rust-lang.org/std/env/fn.args.html)
+- Rust Doc: [Kommandolinje-argumenter i Rust](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
+- Rust Bibliotek: [getopts](https://docs.rs/getopts/0.2.21/getopts/)
+- Rust Bibliotek: [clap](https://docs.rs/clap/2.33.3/clap/)

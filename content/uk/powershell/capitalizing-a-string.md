@@ -1,7 +1,7 @@
 ---
-title:                "Капіталізація рядка"
-html_title:           "PowerShell: Капіталізація рядка"
-simple_title:         "Капіталізація рядка"
+title:                "Переведення рядка в верхній регістр"
+html_title:           "PowerShell: Переведення рядка в верхній регістр"
+simple_title:         "Переведення рядка в верхній регістр"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,17 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Що і Чому?"
-Капіталізація рядків є процесом перетворення першої літери кожного слова у рядку великими літерами. Програмісти часто використовують цю техніку для полегшення читання та розрізнення слів у рядку.
+## Що і Навіщо?
 
-"## Як зробити:"
+Перетворення рядка на верхній регістр — це зміна усіх символів рядка таким чином, що вони стають великими буквами. Програмісти роблять це для уніфікації даних, зручності порівняння рядків чи визначення ключових слів.
+
+## Як зробити:
+
+Переведемо рядок у верхній регістр у PowerShell. Подивимося на цей код:
+
 ```PowerShell
-$string = "це приклад рядка для капіталізації"
-$string.ToUpper() # виведе "ЦЕ ПРИКЛАД РЯДКА ДЛЯ КАПІТАЛІЗАЦІЇ"
+$string = "Hello, World!"
+$upperCase = $string.ToUpper()
+Write-Output $upperCase
 ```
 
-"## Глибоке занурення:"
-Капіталізація рядків була вперше використана для зроблення заголовків статей та книг із збільшеною привабливістю та простотою. На сучасному етапі, існують альтернативні методи капіталізації, такі як застосування заголовків у верхньому регістрі, або використання функції CONCATENATE у Microsoft Excel. У програмуванні, капіталізація є важливим елементом для забезпечення читабельності та логіки у коді.
+Цей код виведе:
 
-"## Дивіться також:"
-[Стаття на Інтернет-ресурсі Stack Overflow про капіталізацію рядків](https://stackoverflow.com/questions/22589206/string-capitalize-in-powershell)
+```PowerShell
+HELLO, WORLD!
+```
+
+## Підводимо підсумки:
+
+Переведення рядка в верхній регістр встановлює всі символи рядка у великі букви. Це полезно для того, щоб зробити порівняння рядків нечутливими до регістра, або визначити ключові слова в коді. 
+
+У минулому, програмісти використовували цю технологію для тривіального завдання як простого порівняння рядків. 
+
+Альтернативами є використання `ToLower()` для переведення всіх символів у нижній регістр або `Compare()` для порівняння рядків без урахування регістру. 
+
+Ця функція реалізована в .NET, на якому базується PowerShell. 
+
+## Дивіться також:
+
+1. [Official Microsoft Documentation for ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
+2. [Powershell 101: Step into scripting](https://www.microsoft.com/en-us/microsoft-365/blog/2015/11/30/powershell-101-from-a-to-z/)
+3. [Manipulating Strings in Your PowerShell Scripts](https://www.petri.com/manipulating-strings-in-your-powershell-scripts)
+4. [String manipulation in PowerShell](https://devblogs.microsoft.com/scripting/manipulating-strings)

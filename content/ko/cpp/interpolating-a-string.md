@@ -1,7 +1,7 @@
 ---
-title:                "문자열 보간"
-html_title:           "C++: 문자열 보간"
-simple_title:         "문자열 보간"
+title:                "문자열 보간하기"
+html_title:           "Java: 문자열 보간하기"
+simple_title:         "문자열 보간하기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,37 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자열을 삽입하는 것은 프로그래머에게 익숙한 작업일 것입니다. 이는 문자열 내부에 다른 변수나 값을 삽입하여 보다 다양한 출력을 만들어낼 수 있게 해주는 작업입니다. 프로그래머들은 이를 통해 코드를 더 유연하고 가독성 있게 만들 수 있기 때문에 이 작업을 수행합니다.
+## 무엇이고 왜 사용하는가?
 
-## 하는 법:
+문자열 내삽(Interpolating a string)은 변수 또는 표현식을 쉽게 문자열에 포함시키는 기법입니다. 이는 코드의 가독성을 높이고 문법적인 오류를 최소화하기 위해 프로그래머들이 자주 사용합니다.
+
+## 어떻게 사용하는가:
+
+C++에서 문자열 내삽은 아래와 같이 간단하게 이루어질 수 있습니다.
+
 ```C++
 #include <iostream>
+#include <string>
 
 int main() {
-  std::string name = "홍길동";
-  int age = 30;
-  
-  std::cout << "내 이름은 " << name << "이고, 나이는 " << age << "살입니다." << std::endl;
-  return 0;
+    std::string name = "John";
+    int age = 20;
+    
+    std::cout << "Hello, my name is " << name << " and I am " << age << " years old.\n";
+    
+    return 0;
 }
 ```
-```
-// 출력:
-내 이름은 홍길동이고, 나이는 30살입니다.
+
+코드를 실행하면 출력되는 결과는 다음과 같습니다:
+
+```C++
+Hello, my name is John and I am 20 years old.
 ```
 
 ## 깊은 탐구:
-### 역사적 배경:
-문자열 삽입은 앞서 C언어에서는 변수와 문자열을 활용하는 방법으로 사용되었습니다. 하지만 C++언어의 등장으로 문자열에 대한 다양한 기능과 메서드가 추가되면서 문자열 삽입 역시 더욱 쉬워졌습니다.
 
-### 대안:
-문자열 삽입을 수행하는 다른 방법으로는 문자열 포매팅이 있습니다. 이는 문자열 내부에 % 기호를 사용하여 변수를 삽입하는 방법입니다. 하지만 이 방법은 포맷 문자열을 작성하는 데 있어서 번거로울 수 있고, 잘못된 포맷 문자열을 사용할 경우 오류가 발생할 수 있습니다.
+1. 과거의 C++에서는 문자열 내삽을 하는 방법이 제한적이었으며, 대부분의 경우 문자열 연결(string concatenation) 또는 sprintf 함수를 사용해야 했습니다. 
 
-### 구현 세부 사항:
-C++에서 문자열 삽입은 ``<<`` 연산자를 사용하여 수행할 수 있습니다. 이를 이용하여 숫자, 문자열, 변수 등 다양한 값을 문자열 내부에 삽입할 수 있습니다. 또한 ``+`` 연산자를 사용하여 여러 개의 변수를 삽입할 수도 있습니다.
+2. 하지만 현재의 C++에서는 더 효율적인 방법들이 제공됩니다. 그 중 하나가 위에서 보여준 `<<` 연산자를 이용하는 방법입니다.
 
-## 관련 자료:
-- [C++ Reference - Basic String Operations](https://www.cplusplus.com/reference/string/basic_string/) : C++에서 문자열 다루기에 대한 기본적인 사용법과 예제를 제공하는 사이트입니다.
-- [GeeksforGeeks - String Interpolation in C++](https://www.geeksforgeeks.org/string-interpolation-in-c/) : C++에서 문자열 삽입에 대한 설명과 예제를 제공하는 유용한 사이트입니다.
-- [cppreference.com - String Interpolation](https://en.cppreference.com/w/cpp/language/types#String_literals) : C++에서 문자열 삽입에 대한 공식 문서를 확인할 수 있는 사이트입니다.
+3. C++에서 문자열 내삽을 구현하는 또 다른 방법은 `std::ostringstream` 라이브러리를 사용하는 것입니다. 이 방법을 사용하면 변수를 포함한 문자열을 완벽하게 제어할 수 있습니다.
+
+## 참고자료:
+
+다음은 문자열 내삽에 관련된 추가 정보와 자료를 확인 할 수 있는 사이트 및 문서입니다:
+
+1. [C++ Strings - w3schools](https://www.w3schools.com/cpp/cpp_strings.asp)
+2. [C++ String Interpolation - stackoverflow](https://stackoverflow.com/questions/2342162/stdstring-formatting-like-sprintf)
+3. [C++ String Manipulation - cppreference](https://en.cppreference.com/w/cpp/string)
+4. [C++ User-Defined Literals - cplusplus.com](http://www.cplusplus.com/doc/tutorial/constants/)

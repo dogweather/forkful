@@ -1,7 +1,7 @@
 ---
-title:                "Analisi dell'html"
-html_title:           "Arduino: Analisi dell'html"
-simple_title:         "Analisi dell'html"
+title:                "Analisi del html"
+html_title:           "Arduino: Analisi del html"
+simple_title:         "Analisi del html"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,33 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
+## Che cosa è e Perché?
 
-Il parsing di HTML è il processo attraverso il quale un programmatore estrae informazioni strutturate da una pagina web. Questo può essere utile per ottenere dati specifici dai siti web, come ad esempio l'ultimo punteggio di una partita o il prezzo di un prodotto. 
+L'analisi (Parsing) HTML è la procedura mediante la quale una stringa di codice HTML viene convertita in un formato leggibile dalla macchina. E' molto utilizzata per estrarre informazioni da pagine web professionalmente e comodamente.
 
-## Come fare:
+## Come Fare:
 
-```
-ArduinoHttpClient client;
+Arduino non supporta direttamente l'analisi HTML, ma possiamo utilizzare una libreria esterna come ArduinoJson per farlo. Ecco un esempio di base:
 
-if (client.get("http://www.example.com")) {
-    while (client.available()) {
-        char c = client.read();
-        Serial.write(c);
-    }
+```Arduino
+#include "ArduinoJson.h"
+
+void setup(){
+  Serial.begin(9600);
+  StaticJsonDocument<200> doc;  
+
+  char json[] = "<html><body>Ciao Mondo!</body></html>";
+  
+  DeserializationError error = deserializeJson(doc, json);
+  
+  if(error){
+    Serial.println("Fallimento Deserializzazione");
+  }
+  else{
+    const char* messaggio = doc["html"]["body"]; 
+    Serial.println(messaggio); 
+  }
 }
+
+void loop(){}
 ```
 
-Una volta impostato l'oggetto ```ArduinoHttpClient```, è possibile utilizzare il metodo ```get()``` per effettuare una richiesta HTTP e recuperare il contenuto della pagina web. Il metodo restituirà un valore booleano, ```true``` se la richiesta è andata a buon fine, ```false``` altrimenti. Nel primo caso, si può utilizzare un ciclo ```while``` per leggere il contenuto carattere per carattere e stamparlo sulla porta seriale con il metodo ```Serial.write()```.
+Nel Monitor Seriale, vedrai: `Ciao Mondo!`
 
 ## Approfondimento:
 
-Il parsing di HTML è una tecnica molto comune nel web scraping, ovvero l'estrazione di dati da un sito web. Ci sono diverse alternative per effettuare questa operazione, tra cui l'utilizzo di librerie specializzate come ```ArduinoJSON``` o la creazione di espressioni regolari per individuare i dati desiderati.
+(1) L'analisi di HTML è antica quanto il web stesso, dato che è la tecnica principale utilizzata dai browser per interpretare i siti web.
 
-Il metodo mostrato in questo articolo è adatto soprattutto per pagine web statiche, mentre per quelle dinamiche potrebbe essere necessario utilizzare un approccio diverso, come ad esempio l'automazione di un browser attraverso lo strumento Selenium.
+(2) Ci sono alternative come BeautifulSoup in Python, ma Arduino richiede soluzioni leggere e veloci, quindi l'utilizzo della libreria ArduinoJson è molto indicata.
 
-## Vedi anche:
+(3) L'implementazione dettagliata dell'analisi HTML può variare a seconda del formato e della complessità dell'HTML di input. Tuttavia, il concetto di base rimane sempre lo stesso: leggere l'HTML come stringa e analizzarlo per estrarre le informazioni desiderate.
 
-- [Documentazione ufficiale di ArduinoHttpClient](https://www.arduino.cc/en/Reference/ArduinoHttpClient)
-- [Web scraping con Arduino e Python](https://randomnerdtutorials.com/arduino-automatic-web-scraping/)
-- [Esempio di parsing di HTML con ESP8266 e libreria WiFiClient](https://gist.github.com/sean-h/6ab8fe2c6cute2f4f674)
+## Vedi Anche:
+
+Per ulteriori informazioni, consulta le seguenti risorse:
+
+1. [Documentazione ArduinoJson](https://arduinojson.org/)
+2. [Tutorial parsing JSON con Arduino](https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/using-arduino-ide)
+3. [Guida alla sintassi JSON](https://www.w3schools.com/js/js_json_syntax.asp)

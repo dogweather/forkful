@@ -1,6 +1,6 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "Elixir: 문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Elixir에서 문자열의 길이를 찾는 것은 무엇이고 왜 개발자들이 이를 하는지에 대해 알아보겠습니다.
+## 무엇 & 왜?
 
-## What & Why?
+문자열의 길이를 찾는 것은 문자에 몇 개가 있는지 사용자가 확인하는 방법입니다. 프로그래머는 이를 이용해 빈 문자열을 체크하거나 특정 길이의 문자열을 처리하는 등의 작업을 수행합니다.
 
-문자열의 길이란 문자열이 포함하고 있는 문자의 개수를 의미합니다. 예를 들어, "Hello World" 문자열의 길이는 11입니다. 이것은 전자우편 주소를 검증하거나 데이터베이스 문자열의 길이를 제한하는 등 다양한 상황에서 유용합니다.
+## 어떻게 ?
 
-## How to:
+Elixir에서 문자열의 길이를 찾으려면 `String.length/1` 함수를 사용합니다. 기본적인 예제를 살펴봅시다.
 
-```Elixir
-str = "Hello World"
-IO.puts String.length(str)
+```elixir
+IO.puts String.length("안녕하세요")
 ```
 
-출력 결과는 다음과 같습니다:
+위 코드를 실행하면, 출력 결과로 5가 나옵니다.
 
+```elixir
+IO.puts String.length("")
 ```
-11
-```
 
-## Deep Dive:
+위 코드를 실행하면, 출력 결과로 0이 나옵니다.
 
-문자열의 길이를 찾는 것은 수많은 프로그래밍 언어에서 지원하는 기능입니다. Elixir에서는 String.length 함수를 사용하여 문자열의 길이를 찾을 수 있습니다. 또한, regex를 사용하여 문자열에서 유니코드 문자의 개수를 나타낼 수도 있습니다.
+## Deep Dive
 
-## See Also:
+Elixir의 `String.length/1` 기능은 Unicode 문자열을 정확하게 측정하기 위한 것입니다. Elixir의 초기 버전부터 이 기능이 포함되어 있습니다.
 
-- String.length 문서: https://hexdocs.pm/elixir/String.html#length/1
-- Elixir regex 문서: https://hexdocs.pm/elixir/Regex.html
+대안으로는 수동으로 문자열을 루프하여 카운트를 증가시킬 수 있지만, 이는 더 복잡하고 느립니다. 또한, 이 방법은 문자열에 유니코드 문자가 포함된 경우 정확한 결과를 얻지 못할 수 있습니다.
+
+`String.length/1` 함수는 각 문자의 바이트 길이를 측정하고 더하는 방식으로 구현되어 있습니다.
+
+## See Also
+
+다음은 이 주제와 관련된 몇가지 유용한 링크입니다:
+
+- Elixir 공식 문서: [Elixir String](https://hexdocs.pm/elixir/String.html)
+- Stack Overflow: [How to get string length in Elixir](https://stackoverflow.com/questions/43004961/how-to-get-string-length-in-elixir)
+- Elixir School: [String functions](https://elixirschool.com/en/lessons/basics/strings)

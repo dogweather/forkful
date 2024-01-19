@@ -1,6 +1,6 @@
 ---
 title:                "日付を文字列に変換する"
-html_title:           "Elm: 日付を文字列に変換する"
+html_title:           "C++: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,21 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-日付を文字列に変換することは、プログラマーにとって非常に重要な作業です。これは、日付をデータとして扱う必要がある場合や、ユーザーにわかりやすい形式で日付を表示する必要がある場合に役立ちます。
+# Elmでの日付を文字列に変換する方法
 
-## 方法：
-日付を文字列に変換するためには、Elmの組み込み関数である`Format`モジュールを使用します。`Format.date`関数を使用することで、任意の書式で日付を文字列に変換することができます。例えば、以下のように記述することで、現在の日付を年-月-日の形式で表示することができます。
+## 何となぜ?
+
+日付を文字列に変換するとは、日付データを人間が読み理解しやすいテキスト形式にすることです。これは、ユーザーに日付情報を表示したり、日付データを文字列ベースのデータベースに保存したりするために行われます。
+
+## 実装方法
 
 ```Elm
-Elm.Date.Format.date "%Y-%m-%d" (Elm.Date.now)
--- 例: "2021-10-30"
+import Time
+import Time.Extra
+
+currentDateToString : Time.Posix -> String
+currentDateToString time =
+    let
+        zone = Time.here
+    in
+    Time.toAdjustedZone zone time
+        |> Time.Extra.formatISO8601Millis
+
+main =
+    Time.now
+        |> Task.perform currentDateToString
+        |> Html.program String.empty
 ```
 
-## 深く掘り下げる：
-日付を文字列に変換する方法には、他にもいくつかのオプションがあります。例えば、Elmの`Time`モジュールを使用することで、タイムゾーンやロケールを考慮したより高度な日付のフォーマットが可能です。また、`Date.toUtcString`関数を使用することで、日付を国際標準のISO 8601形式に変換することもできます。
+このコード例では `Time` と `Time.Extra` モジュールを利用しています。現在時間を取得し、それをISO8601形式の文字列に変換しています。
 
-## 関連情報：
-- Elm公式ドキュメンテーション(https://guide.elm-lang.jp/dates.html)
-- ElmのFormatモジュールのドキュメンテーション(https://package.elm-lang.org/packages/elm/core/latest/Date-Format)
-- ElmのTimeモジュールのドキュメンテーション(https://package.elm-lang.org/packages/elm/time/latest/Time-Format)
+## Deep Dive
+
+日付の文字列への変換は歴史的にあらゆるプログラミング言語で実装されてきました。これは主にデータベースとの互換性や、人間が読める形式への変換のニーズによるものです。
+
+Elmにおける日付の文字列への変換の実装は `Time` モジュールに組み込まれており、さらに汎用的な変換関数は `Time.Extra` モジュールにある。
+
+日付から文字列への変換は、あくまで一つの解決策であり、要件により異なる解決策が必要となります。そのため、自身のプロジェクトの要件に応じて最適な方法を選ぶことが重要です。
+
+## See Also
+
+- Elm公式ドキュメンテーションの[Time](https://package.elm-lang.org/packages/elm/time/latest)モジュール
+- [Time.Extra](https://package.elm-lang.org/packages/justinmimbs/time-extra/latest)モジュールのドキュメンテーション
+- ISO8601形式についての[解説記事](https://www.cl.cam.ac.uk/~mgk25/iso-time.html)

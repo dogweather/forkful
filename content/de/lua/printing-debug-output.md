@@ -1,7 +1,7 @@
 ---
-title:                "Ausgabe von Fehlermeldungen drucken"
-html_title:           "Lua: Ausgabe von Fehlermeldungen drucken"
-simple_title:         "Ausgabe von Fehlermeldungen drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Testing and Debugging"
@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Debugausgabe in Lua drucken
+
 ## Was & Warum?
-Debug-Ausgaben zu drucken ist ein gebräuchlicher Prozess unter Programmierern. Es hilft bei der Fehlersuche und bietet Einblicke in den Programmablauf, insbesondere während der Entwicklung.
 
-## Wie geht's?
-Debug-Ausgaben können in Lua ganz einfach durch die Verwendung von ```print```-Funktionen gemacht werden. Zum Beispiel:
-```Lua
-myNumber = 5
-print("Die Variable myNumber hat den Wert:", myNumber)
-```
-Das obige Code-Beispiel würde die folgende Ausgabe erzeugen:
-```
-Die Variable myNumber hat den Wert: 5
-```
-Es ist auch möglich, Debug-Ausgaben in Kombination mit Variablen während des Programmablaufs zu verwenden, um den Wert oder Status von Variablen zu überwachen. Zum Beispiel:
-```Lua
-myCount = 0 
-myCount = myCount + 1 
-print("myCount hat den Wert:", myCount) 
-```
-Dies würde bei jeder Ausführung die Anzahl der Male, die die Variable `myCount` erhöht wurde, ausgeben.
+Im Allgemeinen können wir Debug-Ausgaben mit der Funktion `print()` in Lua ausgeben. Wir machen das, um Problemstellen im Code leicht zu identifizieren und um schnelle und einfache Überprüfungen der Variablen während der Laufzeit zu ermöglichen.
 
-## Tief eintauchen
-Debug-Ausgaben haben in der Programmierung eine lange Geschichte und wurden verwendet, lange bevor Debugger oder andere komplexe Debugging-Tools existierten. Während es andere Möglichkeiten gibt, Debugging-Aufgaben durchzuführen, ist das Drucken von Debug-Ausgaben immer noch eine einfache und effektive Methode, um während des Programmierprozesses Einblicke zu erhalten.
+## So geht's:
+
+Wir können die `print()` Funktion nutzen, um Informationen auf der Konsole auszugeben. Sieh dir dieses einfache Beispiel an:
+
+```Lua
+-- Variablen deklarieren
+local name = "John Doe"
+local age = 32
+-- Ausgabe der Variablen
+print("Name: ", name)
+print("Alter: ", age)
+```
+
+Wenn du dieses Skript ausführst, siehst du die folgende Ausgabe auf dem Bildschirm:
+
+```Lua
+Name:  John Doe
+Alter: 32
+```
+
+## Vertiefung
+
+Frühe Versionen von Lua hatten noch keine eingebauten Funktionen für die Debugausgabe. Programmierer mussten eigene Funktionen dafür schreiben. Heutzutage verwenden viele Lua-Programmierer die Funktion `print()`, da sie einfach zu verwenden und sehr effektiv ist. 
+Es gibt allerdings auch alternativen wie die `io` Bibliothek, die mehr Kontrolle über die Ausgabe gibt. Und schließlich gibt es auch noch das `debug` Modul, dass einen detaillierten Einblick in die Interna von Lua ermöglicht, indem es auch verborgene Details der Variablen ausgibt.
 
 ## Siehe auch
-- [Lua 5.4 Dokumentation](https://www.lua.org/manual/5.4/) für weitere Informationen über `print`-Funktionen und Debugging in Lua.
-- [Lua Debug Library](https://www.lua.org/manual/5.4/manual.html#6.10) für fortgeschrittenere Debugging-Techniken in Lua.
+
+- Der offizielle Lua-Leitfaden: https://www.lua.org/manual/5.4/manual.html
+- Eine tiefgehende Erläuterung des `debug` Moduls: http://lua-users.org/wiki/DebugLibraryTutorial
+- Eine nützliche Reihe von Lua-Tipps zur Fehlerbehebung: https://www.tutorialspoint.com/lua/lua_debugging.htm

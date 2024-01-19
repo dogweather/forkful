@@ -1,6 +1,6 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Java: Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Java"
 category:             "Java"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+---
+## Co i Dlaczego?
 
-Rozpoczęcie nowego projektu to moment, w którym programiści otwierają czysty arkusz kodu i zaczynają tworzyć program od zera. Jest to niezbędny krok w procesie wytwarzania oprogramowania, ponieważ każdy projekt wymaga unikalnego podejścia i rozwiązań. Programiści rozpoczynają nowe projekty, aby dostosować się do zmieniających się wymagań biznesowych lub po prostu zaspokoić własną kreatywność i pasję.
+Zaczynanie nowego projektu to pierwszy krok w tworzeniu dowolnej aplikacji czy usługi programistycznej. Programiści robią to aby stworzyć coś nowego, rozwiązać problem lub ulepszyć istniejące narzędzia.
 
-## Jak to zrobić?
+## Jak to zrobić: 
 
 ```Java
-public class NowyProjekt{
-    public static void main (String[] args){
-        System.out.println("Witaj w nowym projekcie!");
+// Tworzę nowy projekt w Java
+
+public class NowyProjekt {
+    public static void main(String[] args) {
+        System.out.println("Witaj, świecie!”);  
     }
 }
 ```
+Po skompilowaniu i uruchomieniu kodu wyżej, otrzymasz następujący wynik:
 
-Output:
-
+``` 
+Witaj, świecie!
 ```
-Witaj w nowym projekcie!
-```
 
-## Głębsze wgląd
+## Głębsze Zagadnienie
 
-Rozpoczynanie nowego projektu jest nieodłączną częścią rozwoju oprogramowania. W przeszłości programiści musieli zaczynać projekty od zera, pisząc cały kod od podstaw. Jednak dzięki rozwojowi narzędzi i technologii, istnieją teraz alternatywne metody, takie jak korzystanie z szablonów lub frameworków, które ułatwiają i przyspieszają ten proces. W przypadku języka Java, popularne frameworki do rozpoczynania nowych projektów to Spring lub Hibernate.
+(1) Kontekst historyczny: Zaczynanie nowego projektu jest podstawą programowania odkąd powstał pierwszy język programowania. Historia jest pełna przykładów innowacyjnych projektów, które rozpoczęły się od pustego pliku.
 
-## Zobacz również
+(2) Alternatywy: Można także sklonować istniejący projekt i dostosować go do własnych potrzeb lub korzystać z gotowych szablonów projektowych.
 
-Jeśli interesuje Cię więcej informacji na temat rozpoczynania nowych projektów w Javie, zapoznaj się z poniższymi źródłami:
-- [Oficjalna dokumentacja języka Java](https://docs.oracle.com/en/java/)
-- [Strona projektu Spring](https://spring.io/)
-- [Strona projektu Hibernate](https://hibernate.org/)
+(3) Szczegóły implementacji: Tworzenie nowego projektu w Java zaczyna się zazwyczaj od utworzenia nowej klasy z metodą `main()`. Jest to punkt wejścia do twojej aplikacji.
+
+## Zobacz także
+
+1. [Podstawy Java dla nowych programistów](https://java.com/pl/download/help/new_to.html)
+2. [Jak skonfigurować projekt w Javie](https://www.codejava.net/ides/eclipse/how-to-create-a-java-project-with-eclipse)
+3. [Samouczek Java dla początkujących](https://www.learnjavaonline.org/)
+4. [Tworzenie pierwszego projektu w Javie korzystając z IntelliJ IDEA](https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html)

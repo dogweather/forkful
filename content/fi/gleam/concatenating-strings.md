@@ -1,7 +1,7 @@
 ---
-title:                "Lauseiden yhdistäminen"
-html_title:           "Gleam: Lauseiden yhdistäminen"
-simple_title:         "Lauseiden yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,20 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Merkkijonojen linkittäminen on tapa yhdistää kaksi tai useampaa merkkijonoa yhdeksi. Tämä on hyödyllistä esimerkiksi taulukoissa tai viesteissä, joissa tarvitaan dynaamista dataa. Ohjelmoijat käyttävät sitä helpottamaan muutosten tekemistä ja tietojen hallintaa.
+## Mikä & Miksi?
+Merkkijonojen yhdistäminen tarkoittaa useiden merkkijonojen liittämistä yhteen. Ohjelmoijat tekevät tämän yleensä, kun heidän on luotava dynaamisesti muotoiltuja merkkijonoja esimerkiksi käyttäjäviestejä tai loki-merkintöjä varten.
 
-## Miten:
+## Kuinka tehdä:
+Gleam-ohjelmoinnissa voit yhdistää merkkijonoja käyttämällä "+" -operaattoria.
+
 ```Gleam
-let etunimi = "Matti"
-let sukunimi = "Meikäläinen"
-
-merkkijono.concat(etunimi, " ", sukunimi)
-//tulostaa "Matti Meikäläinen"
+let viesti = "Hei" + ", maailma!"
+io.println(viesti)  // Tulostaa: Hei, maailma!
 ```
 
-## Syvemmälle:
-Merkkijonojen yhdistäminen on ollut käytössä jo pitkään ohjelmoinnissa, ja siihen on kehitetty erilaisia menetelmiä kuten interpolointi ja muuttujien sisällyttäminen merkkijonoihin. Muita tapoja yhdistää merkkijonoja ovat muun muassa string.format ja string.concat. Gleamin merkkijonojen yhdistämisfunktio on optimoitu ja nopea, joten sitä kannattaa käyttää tarpeen mukaan.
+## Syvä Sukellus
+Merkkijonojen yhdistäminen on ollut ohjelmoinnissa yksinkertainen ja yleinen tehtävä alusta alkaen. Gleamissa "+" -operaattori yhdistää merkkijonoja luomalla uuden merkkijonon yhdistettyjen merkkijonojen alueelta muistissa. Yksi vaihtoehto on käyttää `concat` -funktiota List-moduulissa, joka liittää luettelossa olevat merkkijonot yhdeksi merkkijonoksi.
 
-## Katso myös:
-Lisää tietoa Gleamin merkkijonojen käsittelyyn löydät dokumentaatiosta: https://gleam.run/documentation/strings/concat. Voit myös tutustua muihin tapoihin yhdistää merkkijonoja muiden ohjelmointikielten, kuten Javascriptin tai Pythonin, avulla.
+```Gleam
+List.concat(["Hei", ", maailma!"])  // Palauttaa: "Hei, maailma!"
+```
+
+Kuitenkin suuren määrän merkkijonojen yhdistämisessä, "+" -operaattori saattaa olla tehoton käyttämän paljon muistia ja aikaa, koska se luo uuden merkkijono jokaisen operaation yhteydessä. Tässä tilanteessa `io.format/2` -funktion käyttäminen on tehokkaampaa.
+
+```Gleam
+let viesti = io.format("Hei, ~p!", ["maailma"])
+io.println(viesti)  // Tulostaa: Hei, maailma!
+```
+
+## Katso Myös
+- [Gleam List Module Documentation](https://hexdocs.pm/gleam_stdlib/gleam/list/): Täältä löydät lisätietoja List-moduulin `concat` -funktiosta.
+- [Gleam IO Module Documentation](https://hexdocs.pm/gleam_stdlib/gleam/io/): Täältä löydät lisää tietoa `io.format/2` -funktiosta ja muista hyödyllisistä IO-operaatioista.
+- [String Concatenation Performance in Erlang](https://erlangcentral.org/wiki/index.php/String_Concatenation): Tämä artikkeli käsittelee merkkijonojen yhdistämiseen liittyviä suorituskykyongelmia Erlangissa ja Gleamissa.

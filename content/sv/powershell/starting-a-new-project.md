@@ -1,7 +1,7 @@
 ---
-title:                "Att börja ett nytt projekt"
-html_title:           "PowerShell: Att börja ett nytt projekt"
-simple_title:         "Att börja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Getting Started"
@@ -11,28 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att starta ett nytt projekt är när en programmerare börjar arbete på ett nytt program eller kodprojekt från grunden. Det finns många olika anledningar till varför programmerare väljer att starta ett nytt projekt, som att utveckla en ny idé, förbättra en befintlig kod eller lära sig en ny programmeringsteknik.
+Att starta ett nytt projekt är processen att skapa grunden för kodstruktur, bibliotek och funktionalitet i ett nytt programmeringsarbete. Programmerare gör det för att etablera en stable grund att bygga vidare på och för att säkerställa smidig utveckling.
 
-## Så här:
-```PowerShell
-New-Item -Name "Ny Mapp" -ItemType Directory 
-```
-
-I detta exempel används cmdlet New-Item i PowerShell för att skapa en ny mapp med namnet "Ny Mapp". Med parameteren -ItemType kan du också ange vilken typ av fil eller mapp du vill skapa.
+## Hur man gör:
+Här är kodexemplen för projektstart i PowerShell. (Observera: output kan variera beroende på din version av PowerShell och inställningar i omgivningen)
 
 ```PowerShell
-cd Ny Mapp
+# Skapa en ny katalog
+New-Item -Path 'C:\MittProjekt' -ItemType Directory
+
+# Byta till den nya katalogen
+Set-Location -Path 'C:\MittProjekt'
+
+# Skapa en ny PowerShell script fil
+New-Item -Path 'C:\MittProjekt' -Name 'mitt-script.ps1' -ItemType File
 ```
 
-Med cmdlet cd (Change Directory) kan du byta till den nya mappen du skapade. Detta är användbart om du vill påbörja ditt kodprojekt i den nya mappen.
+Output kan se ut så här:
 
-## Djupdykning:
-När det kommer till att starta ett nytt projekt finns det flera historiska kontexter att ta hänsyn till. Mer traditionella programmeringsmetoder krävde att man skapade allt från grunden, medan moderna metoder tillåter användning av befintliga kodbaser och verktyg.
+```PowerShell
+Directory: C:\
+Mode                LastWriteTime         Length Name                                                                  
+----                -------------         ------ ----                                                                  
+d-----        9/24/2021   9:53 PM                MittProjekt      
 
-Det finns också flera alternativ till PowerShell för att starta ett nytt projekt, såsom andra programmeringsspråk eller integrerade utvecklingsmiljöer (IDEs). Valet av verktyg beror ofta på programmerarens personliga preferenser och projektets behov.
+Path                                                                                                                
+----                                                                                                                
+C:\MittProjekt\mitt-script.ps1                                                                                      
+```
 
-När det gäller implementation kan det ibland vara mer effektivt att använda PowerShell-moduler eller skript för att hantera upprepade uppgifter i ett projekt. Det är också viktigt att välja en tydlig struktur för ditt projekt, inklusive namngivning av filer och mappar, för att underlätta samarbete och underhåll av kodbasen.
+## Djupdykning
+PowerShell-datastrukturen skapades primärt för att underlätta administration från kommandoraden och skriptförvaltning på Windows OS. Men på senare år har det breddats för att fungera på flera OS inklusive Linux och MacOS.
 
-## Se också:
-- [PowerShell dokumentation](https://docs.microsoft.com/en-us/powershell/)
-- [PowerShell-skript på GitHub](https://github.com/PowerShell/PowerShell-Scripts)
+Alternativ till att använda PowerShell för projektstarter inkluderar: Bash på Linux-baserade system, Terminal.app på MacOS, eller till och med GUI-baserade system som Visual Studio.
+
+När du går vidare med ett PowerShell-projekt finns det många detaljer att överväga. Allt från hur du strukturerar din skript för att vara återanvändbart och flexibelt, till att bygga så att dina skript är automatiserade och schema-anpassade 
+
+## Se Även
+För mer detaljerade resurser om PowerShell, se följande länkar:
+
+- Microsofts officiella dokumentation: [https://docs.microsoft.com/en-us/powershell/](https://docs.microsoft.com/en-us/powershell/)
+- Inlärningsresurser för PowerShell: [https://www.powershellmagazine.com/](https://www.powershellmagazine.com/)
+- PowerShell GitHub Repo: [https://github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell)

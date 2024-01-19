@@ -1,6 +1,6 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "C#: Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "C#"
 category:             "C#"
@@ -10,41 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+# Usuwanie Znaków Pasujących do Wzorca w C# 
 
-Usuwanie znaków pasujących do wzorca jest częstym zadaniem podczas pisania kodu w C#. Polega ono na wyeliminowaniu określonych znaków z łańcucha znaków, aby dostosować go do określonych wymagań. Programiści często wykonują tę operację, ponieważ pomaga im to w czyszczeniu i formatowaniu danych wejściowych.
+## Co i dlaczego?
+Usuwanie znaków pasujących do wzorca polega na wyszukaniu i usunięciu ciągu znaków zgodnych z określonym wzorcem z większego ciągu znaków. Programiści robią to, aby manipulować danymi, czyszcząc tekst lub modyfikując go dla konkretnych celów.
 
 ## Jak to zrobić:
+Zapoznaj się z poniższym przykładem kodu, który ilustruje, jak usunąć znaki pasujące do wzorca 'abc' w C#:
 
-#### Przykład 1:
 ```C#
-string input = "123-456-789";
-string output = Regex.Replace(input, "-", "");
-
+string input = "To jestabc testabc.";
+string pattern = "abc";
+string output = input.Replace(pattern, "");
 Console.WriteLine(output);
+// Wyjście: "To jest test."
 ```
-#### Wyjście:
-123456789
+Jak widać, użyliśmy metody `Replace` w celu usunięcia wzorca z ciągu wejściowego.
 
-#### Przykład 2:
+## Głębsze spojrzenie
+1. Kontekst historyczny: Usuwanie wzorców znaków jest często używane przez programistów od początków języków programowania. W pierwszych wersjach języka C# mnóstwo takich operacji wymagało korzystania z różnych technik i bibliotek, a prostota metody `Replace` wprowadzona w nowszych wersjach znacznie ułatwiła ten proces.
+
+2. Alternatywy: Można również korzystać z wyrażeń regularnych (RegEx) do bardziej skomplikowanych wzorców znaków. Na przykład:
+
 ```C#
-string input = "1A2B3C4D5E";
-string output = Regex.Replace(input, @"\D", "");
-
+string input = "Test 123, test 456";
+string output = Regex.Replace(input, @"\d", "");
 Console.WriteLine(output);
+// Wyjście: "Test , test "
 ```
-#### Wyjście:
-12345
+W powyższym przykładzie, za pomocą RegEx, usunęliśmy wszystkie cyfry z ciągu wejściowego.
 
-## Głębsza Analiza
+3. Szczegóły implementacji: W C#, metoda `Replace` działa poprzez przeszukiwanie ciągu znaków od lewej do prawej i zastępowanie każdego wystąpienia wzorca pustym ciągiem znaków – co skutkuje usunięciem tego wzorca.
 
-Usuwanie znaków pasujących do wzorca nie jest nowym konceptem. W rzeczywistości, podczas programowania często używamy tego w różnych formach. Jedną z popularnych metod w C# jest użycie metody Regex.Replace(), która pozwala na znalezienie oraz zastąpienie określonych znaków za pomocą wybranego wzorca.
+## Zobacz także
+Jak korzystać z wyrażeń regularnych w C#:  
+https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/regular-expressions
 
-Alternatywnym sposobem na usuwanie znaków pasujących do wzorca jest użycie pętli oraz warunków, aby przeprowadzić iterację po każdym znaku i wykluczyć te, które nie pasują do wybranego wzorca. Ta metoda jest bardziej czasochłonna, ale daje większą kontrolę nad usuwaniem znaków.
+Dokumentacja metody `Replace`:  
+https://docs.microsoft.com/pl-pl/dotnet/api/system.string.replace?view=net-6.0
 
-Implementacja usuwania znaków pasujących do wzorca może się różnić w zależności od języka programowania. Jednak w C# zawsze możemy polegać na wygodnej i efektywnej bibliotece Regex, która oferuje wiele metod do manipulacji łańcuchami znaków.
-
-## Zobacz również:
-
-- [Dokumentacja Microsoft do metody Regex.Replace()](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=netcore-3.1)
-- [Poradnik do pracy z wyrażeniami regularnymi w C#](https://www.c-sharpcorner.com/blogs/basics-of-regular-expression-regularexpression-in-c-sharp1)
+Te źródła dostarczą ci więcej informacji na temat usuwania znaków pasujących do wzorca i innych technik manipulacji ciągami w C#.

@@ -1,6 +1,6 @@
 ---
 title:                "部分文字列の抽出"
-html_title:           "PHP: 部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
 simple_title:         "部分文字列の抽出"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,34 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか　そして　なぜ
-抽出部分とは、文字列から特定の部分を切り取ることを指します。プログラマーがこれを行う理由は、大きな文字列をより小さな部分に分割することで、データをより効率的に処理することができるからです。
+## 何となぜ？
+部分文字列の抽出は、大きな文字列から特定の部分を取り出すプロセスです。日々のプログラミング作業では、この技術が必要となるケースが多々あります。例えば、ユーザーからの入力を解析したり、特定の情報を検索したりする際に役立ちます。
 
-## 方法：
-抽出部分を行うためのコード例と、```PHP ... ```コードブロック内のサンプル出力を示します。
+## どのように？
+PHPで文字列を抽出するのは簡単です。それには `substr` と `mb_substr`関数を使用します。例えば：
 
-抽出部分は、PHPのsubstr（）関数を使用して行うことができます。例えば、文字列「Hello World」から5文字目以降の部分を抽出するには、次のように記述します：
-
-```
+```PHP
 <?php
-$string = "Hello World";
-$substring = substr($string, 4);
-echo $substring;
-// 出力： "o World"
+$str = "こんにちは、世界！";
+ 
+// 部分文字列の抽出
+echo substr($str, 0, 9);
+?>
 ```
 
-また、文字列から特定の場所から始まる部分を抽出することも可能です。例えば、文字列「Hello World」から2番目から5文字抽出するには、次のように記述します：
+出力：
 
+```PHP
+こんにちは
 ```
+
+また、日本語（マルチバイト文字列）の操作には `mb_` 関数を使用します。
+
+```PHP
 <?php
-$string = "Hello World";
-$substring = substr($string, 1, 5);
-echo $substring;
-// 出力： "ello"
+$str = "こんにちは、世界！";
+ 
+// 部分文字列の抽出
+echo mb_substr($str, 0, 5);
+?>
 ```
 
-## 深く掘り下げる：
-抽出部分の方法は、初期のバージョンのPHPから使用されてきました。しかし、代替手段として、preg_match（）やstrpos（）といった関数も存在します。抽出部分を行う際の実装の詳細については、PHPのドキュメンテーションを参照することをお勧めします。
+出力：
 
-## 関連情報：
-抽出部分に関するより詳しい情報は、PHPマニュアルやオンラインのソースコードリポジトリを参照することをお勧めします。また、抽出部分を行うためのより高度な専用ライブラリやパッケージも存在します。
+```PHP
+こんにちは
+```
+
+## ディープダイブ
+部分文字列の抽出は、古くから存在するプログラミングの基本技術です。初期のプログラミング言語にも部分文字列の抽出を行う機能は含まれていました。
+
+PHPでも `substr` と `mb_substr` 以外にも、正規表現を使用した `preg_match` や `preg_match_all` を使用することで、より高度な部分文字列の抽出が可能です。
+
+'## 参照先
+- [PHP公式ドキュメンテーション: substr関数](https://www.php.net/manual/ja/function.substr.php)
+- [PHP公式ドキュメンテーション: mb_substr関数](https://www.php.net/manual/ja/function.mb-substr.php)
+- [PHP公式ドキュメンテーション: preg_match関数](https://www.php.net/manual/ja/function.preg-match.php)

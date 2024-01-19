@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran"
-html_title:           "Bash: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Skicka en http-förfrågan"
+html_title:           "Javascript: Skicka en http-förfrågan"
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
+## Vad & Varför?
+Att skicka ett HTTP-begäran är processen att begära data från en server genom HTTP-protokollet. Programmerare gör det för att kommunisera med webbtjänster, hämta data eller göra uppdateringar på distans.
 
-Att sända en HTTP förfrågan är en metod för att kommunicera med en webbserver och begära data. Programmerare använder denna metod för att hämta information från en viss URL eller för att interagera med en webbapplikation.
-
-## Så här gör du:
-
-För att sända en HTTP förfrågan i Bash kan du använda kommandot "curl". Här är ett enkelt exempel på hur du hämtar data från Google.com:
+## Hur man gör:
+Använd `curl` kommandot för att skicka HTTP-begäran i Bash. Här är ett exempel:
 
 ```Bash
-curl google.com
+curl http://example.com
 ```
 
-Detta kommer att skriva ut HTML-koden för Google:s hemsida på din skärm. För att spara resultatet i en fil, kan du använda flaggan "-o" och ange en filnamn:
+Svar från server:
 
 ```Bash
-curl -o google.html google.com
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+</html>
+<body>
+<div>
+    <h1>Example Domain</h1>
+</div>
+</body>
+</html>
 ```
 
-Detta kommer att spara HTML-koden i en fil som heter "google.html". Du kan också ange en specifik metod, såsom GET eller POST, och inkludera parametrar i din förfrågan. Se "Deep Dive"-sektionen för mer information om detta.
+## Djup Dykning
+Historiskt sett, före HTTP-begäran, var datorkommunikation komplicerad och inkonsekvent. HTTP-begäran standardiserade datakommunikation över webben.
 
-## Djupdykning:
+Som alternativ till `curl`, kan du även använda `wget`. Skillnaden mellan `curl` och `wget` är att `wget` laddar ner filerna direkt till din disk.
 
-Att sända HTTP förfrågningar i Bash är möjligt tack vare det kraftfulla verktyget "curl" som har funnits sedan 1997. Det finns dock flera alternativ för att sända HTTP förfrågningar, som till exempel genom att använda programmeringsspråk som Python eller JavaScript. Implementeringen av HTTP-protokollet möjliggör inte bara hämtning av data, utan också möjligheten att skicka och manipulera data, som till exempel vid inlämning av formulär på en webbsida.
+HTTP-begäran är implementerade i Bash genom att använda sockets för att etablera en TCP-koppling till servern. Denna anslutning gör det möjligt för klienten och servern att skicka data fram och tillbaka.
 
-## Se även:
-
-Här är några användbara länkar för att lära dig mer om att sända HTTP förfrågningar i Bash:
-
-- Officiell "curl" dokumentation: https://curl.se/docs/manpage.html
-- En guide för att använda "curl" för att hämta data från en API: https://stackabuse.com/curl-the-command-line-tool-for-transferring-data/
-- En fullständig förklaring av HTTP-protokollet: https://www.tutorialspoint.com/http/index.htm
+## Se Även
+1. [Bash Programming Guide](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
+2. [How To Use Curl](https://linuxize.com/post/curl-command-examples/)
+3. [Details on HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)

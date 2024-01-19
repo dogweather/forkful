@@ -1,7 +1,7 @@
 ---
-title:                "Enviar um pedido http com autenticação básica"
-html_title:           "Haskell: Enviar um pedido http com autenticação básica"
-simple_title:         "Enviar um pedido http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
+simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
-Enviar uma solicitação HTTP com autenticação básica é um processo pelo qual um aplicativo cliente pode acessar uma API protegida por nome de usuário e senha. Programadores fazem isso para garantir que apenas usuários autorizados tenham acesso aos dados da API.
+## O Que & Por Que?
+Enviar uma solicitação HTTP com autenticação básica é o processo pelo qual um cliente fornece credenciais, geralmente um nome de usuário e senha, ao servidor para ser autenticado. Os programadores fazem isso para garantir que apenas usuários autorizados acessem certos recursos ou funcionalidades.
 
-## Como fazer:
+## Como Fazer:
+Em Haskell, podemos usar a biblioteca `http-conduit` para enviar solicitações HTTP. Para a autenticação básica, usamos `applyBasicAuth`. Veja o exemplo:
+
 ```Haskell
-import Network.HTTP
-import Network.HTTP.Auth
-import Network.HTTP.Headers
-import Network.URI
+import Network.HTTP.Simple
+import Network.HTTP.Client ()
+import Data.ByteString.UTF8 (fromString)
 
+main :: IO ()
 main = do
-  -- Criar a URI da API que será acessada
-  let uri = parseURI "http://exemplo.com/api"
-  -- Criar uma requisição HTTP GET
-  let request = Request {rqURI = uri, rqMethod = GET, rqHeaders = [], rqBody = ""}
-  -- Adicionar as credenciais de autenticação básica à requisição
-  let request' = addBasicAuth "usuário" "senha" request
-  -- Enviar a requisição e receber a resposta do servidor
-  response <- simpleHTTP request'
-  -- Obter o corpo da resposta e imprimir na tela
-  let body = rspBody response
-  putStrLn body
-```
+    let username = fromString "usuario"
+        password = fromString "senha"
+        url = setRequestBasicAuth username password defaultRequest
+               { getRequestMethod = "GET"
+               , getRequestBody = RequestBodyBS "dados".toByteString
+               }
 
+    response <- httpBS url
+    putStrLn $ getResponseBody response
 ```
-Output esperado:
-Dados da API protegida por autenticação básica.
-```
+Neste código, `usuario` e `senha` são suas credenciais, e `dados` é a informação que você deseja enviar.
 
-## Deep Dive:
-A autenticação básica HTTP foi definida pela RFC 1945 em 1996 como parte do protocolo HTTP/1.0. Alternativas mais seguras, como o uso de chaves de API, tornaram-se mais populares, mas a autenticação básica ainda é amplamente utilizada, especialmente quando se trabalha com APIs legadas. A implementação acima utiliza a biblioteca HTTP da Haskell Platform, mas também existem outras bibliotecas que oferecem funcionalidades similares, como a wreq e a http-conduit.
+## Deep Dive
+Historicamente, a autenticação básica HTTP é usada há muito tempo. No entanto, ela é insegura por não criptografar as credenciais do usuário, sendo recomendado sempre usá-la com HTTPS.
 
-## Veja também:
-- [RFC 1945 - Protocolo HTTP/1.0](https://tools.ietf.org/html/rfc1945)
-- [HTTP Library - Haskell Platform](https://hackage.haskell.org/package/HTTP)
-- [wreq - Biblioteca para requisições HTTP em Haskell](https://hackage.haskell.org/package/wreq)
-- [http-conduit - Biblioteca para requisições HTTP seguro e data streaming](https://hackage.haskell.org/package/http-conduit)
+Alternativas mais seguras incluem autenticação Digest e autenticação OAuth.
+
+Em termos de implementação, `setRequestBasicAuth` funciona pelo cálculo da codificação Base64 das credenciais do usuário e depois alterando o cabeçalho de autorização do pedido para incluir essas credenciais codificadas.
+
+## Veja Também
+Interessado em aprender mais? Confira esses recursos:
+- Documentação do http-conduit: https://www.stackage.org/haddock/lts-16.23/http-conduit-2.3.7.3/
+- Discussão sobre autenticação básica VS OAuth: https://stackoverflow.com/questions/7565864/oauth-2-0-vs-basic-authentication
+- Documentação Haskell ByteString: http://hackage.haskell.org/package/bytestring-0.10.8.2/docs/Data-ByteString.html

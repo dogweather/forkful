@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "TypeScript: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,53 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robimy?
+# Długość łańcucha w TypeScript: Co, Dlaczego i Jak?
 
-Znalezienie długości ciągu znaków jest jedną z podstawowych operacji, które często wykonywane są przez programistów. Polega ona na określeniu liczby znaków znajdujących się w danym ciągu. Jest to przydatne w wielu sytuacjach, na przykład podczas pracy z tekstami lub analizy danych.
+## Co i Dlaczego?
+Znajomość długości łańcucha, czyli ilości znaków w ciągu, jest kluczowym elementem dla wielu operacji w programowaniu. Pozwala na kontrolowanie wprowadzonych danych, przycinanie długich tekstu czy tworzenie pętli, które przeszukują poszczególne znaki łańcucha.
 
-## Jak to zrobić?
-
-```TypeScript
-let string = "Hello World";
-
-console.log(string.length);
-
-// Output: 11
-```
-
-Możemy wykorzystać wbudowaną metodę ```length```, która jest dostępna dla każdego ciągu znaków w języku TypeScript. W powyższym przykładzie, używając słowa kluczowego ```let``` definiujemy zmienną ```string``` i przypisujemy jej wartość "Hello World". Następnie używamy metody ```length```, która zwraca nam długość ciągu znaków, czyli 11.
-
-Możemy również wykorzystać pętlę ```for``` do iterowania po każdym znaku w ciągu i zwiększania licznika o 1, co będzie oznaczało długość ciągu.
+## Jak to zrobić:
+W TypeScript, aby znaleźć długość łańcucha, korzystamy z właściwości `length`. Zobacz przykład poniżej:
 
 ```TypeScript
-let string = "Hello World";
-let counter = 0;
-
-for (let i = 0; i < string.length; i++) {
-  counter++;
-}
-
-console.log(counter);
-
-// Output: 11
+let napis: string = "Dzień dobry, Polsko!";
+let długośćNapisu: number = napis.length;
+console.log(długośćNapisu); // Wydrukuje: 20
 ```
+Ten kod wyznacza długość łańcucha "Dzień dobry, Polsko!", a następnie wydrukuje rezultat: 20.
 
-## Głębsze zagadnienia
+## Deep Dive
+Ale skąd właściwość 'length' wzięła się w JavaScript / TypeScript?
 
-### Kontekst historyczny
+Właściwość 'length' pochodzi z JavaScript, z którym TypeScript jest ściśle powiązany. Ta właściwość od zawsze istniała w JavaScript dla manipulowania ciągami znaków i tablicami.
 
-Wyliczanie długości ciągu znaków jest jedną z podstawowych operacji wykonywanych przez komputer. Pierwsze systemy operacyjne nie posiadały wbudowanej funkcji do tego celu i programiści musieli samodzielnie implementować tę funkcjonalność w swoich programach.
+Nie zawsze musisz korzystać z metody `length` do znalezienia długości łańcucha. Przykładowo, w Pythonie używamy funkcji `len()`. Ale TypeScript, jak JavaScript, preferuje używanie właściwości `length`.
 
-### Alternatywy
+Ponadto, warto wiedzieć, że liczba wynikowa uwzględnia również spacje i znaki specjalne.
 
-W języku TypeScript jest wiele wbudowanych metod pozwalających na manipulowanie ciągami znaków, takich jak ```substr```, ```substring``` czy ```slice```. Mogą one również zostać wykorzystane do określenia długości ciągu, jednak metoda ```length``` jest najprostszym i najczęściej używanym rozwiązaniem.
-
-### Szczegóły implementacji
-
-W języku TypeScript ciągi znaków przechowywane są jako tablice znaków, dlatego metoda ```length``` wykorzystuje właściwość ```length``` tablicy do określenia długości ciągu. W przypadku gdy ciąg jest pusty, metoda zwraca wartość 0.
-
-## Zobacz także
-
-Dokumentacja języka TypeScript: https://www.typescriptlang.org/docs/
-
-Wprowadzenie do podstawowych operacji na ciągach w TypeScript: https://www.tutorialspoint.com/typescript/typescript_strings.htm
+## Zobacz także:
+1. [TypeScript - String length Property - Tutorialspoint](https://www.tutorialspoint.com/typescript/typescript_string_length.htm)
+2. [JavaScript String length Property - W3Schools](https://www.w3schools.com/jsref/jsref_length_string.asp)
+3. [Mozilla Developer Network (MDN) - String.length ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)

@@ -1,7 +1,7 @@
 ---
-title:                "Przetwarzanie daty z ciągu znaków"
-html_title:           "Gleam: Przetwarzanie daty z ciągu znaków"
-simple_title:         "Przetwarzanie daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i Dlaczego?
 
-Jednym z często spotykanych wyzwań w programowaniu jest konieczność przetwarzania informacji w różnych formatach. Jedną z takich sytuacji jest konieczność wyodrębnienia daty z łańcucha znaków. Programiści często muszą dokonać tej operacji w celu przetwarzania danych wejściowych lub konwersji między różnymi systemami dat. W takich przypadkach niezbędne jest umiejętne parsowanie daty z tekstu. 
+Parsowanie daty ze stringa polega na przekształceniu ciągu znaków reprezentującego datę w faktyczny obiekt daty w programie. Programiści robią to, by móc manipulować danymi daty i stosować różne operacje, takie jak porównywanie, sortowanie itp.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Poniżej prezentujemy przykłady kodów, które można wykorzystać do przeanalizowania daty z łańcucha tekstu przy użyciu Gleam. 
+W aktualnej wersji Gleam, biblioteka do obsługi dat i czasu nie jest jeszcze dostępna. Możesz jednak użyć funkcji Erlang'a do parsowania daty za pomocą interopcji. Oto jak:
 
 ```Gleam
-import gleam/date
+import gleam/erlang/time.{StringToDate}
 
-let parsed_date = date.parse("01/05/2021", "%d/%m/%Y")
-// Zwraca { date: 1, month: 5, year: 2021, valid: True }
-
-let invalid_date = date.parse("15/20/2021", "%d/%m/%Y")
-// Zwraca { valid: False }
+// Parsowanie daty ze stringa formatu "YYYY-MM-DD"
+let date_string = "2021-12-01"
+let maybe_date = StringToDate.string_to_date(date_string)
 ```
 
-## Głębsza Analiza
+Kod zwróci datę w formacie `{Year, Month, Day}` jeśli string jest prawidłowy, w przeciwnym razie zwróci błąd.
 
-Parsowanie daty z tekstu jest niezbędne w wielu aplikacjach, zwłaszcza tych, które operują na różnych strefach czasowych lub wymagają precyzyjnej obsługi różnych formatów dat. W przeszłości programiści musieli pisać specjalne funkcje lub korzystać z zewnętrznych bibliotek do przeanalizowania daty. Dzięki Gleam, można teraz wykorzystać wbudowane funkcje do wygodnego i precyzyjnego parsowania daty z tekstu. 
+## Dogłębne Zagłębianie:
 
-Alternatywne podejścia do parsowania daty z tekstu obejmują użycie wyrażeń regularnych lub korzystanie z bibliotek zewnętrznych. Jednak te metody mogą być mniej wygodne lub mniej efektywne w porównaniu z wbudowanym mechanizmem w Gleam. 
+Parsowanie daty ze stringa jest konceptem, który ma miejsce prawie w każdym systemie, który obsługuje daty. Początkowo, w wielu językach programowania, parsowanie to było dość skomplikowane. Gleam, jako nowoczesny język funkcjonalny, czerpie z doświadczeń tych starszych języków i ma na celu ułatwienie tego zadania.
 
-Implementacja funkcji parsowania daty w Gleam wykorzystuje funkcję ```strptime``` z biblioteki standardowej C. Dzięki temu można dokładnie odwzorować działanie tego mechanizmu w innych językach.
+Jeżeli chodzi o alternatywy, funkcja `StringToDate.string_to_date/1` nie jest jedyną dostępną funkcją do parsowania daty w Erlangu. Istnieją również inne biblioteki, takie jak `calendar` czy `timex`, które oferują o wiele więcej funkcjonalności. 
 
-## Zobacz także 
+Wszystko to jest możliwe dzięki interopcji Gleam z Erlangiem. Dzięki temu można wykorzystywać bogatą bibliotekę funkcji Erlangu w naszych programach napisanych w Gleam.
 
-Gleam oferuje wiele wbudowanych funkcji do wygodnego operowania na datach i przetwarzania łańcuchów znaków. Zapoznaj się z dokumentacją Gleam, aby poznać więcej ciekawych i przydatnych funkcji.
+## Zobacz Również:
+
+- Dokumentacja Gleam: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
+- Kurs Erlanga o parsowaniu daty: [https://learnyousomeerlang.com/time](https://learnyousomeerlang.com/time)
+- Moduł Erlang time: [https://erlang.org/doc/man/time.html](https://erlang.org/doc/man/time.html)

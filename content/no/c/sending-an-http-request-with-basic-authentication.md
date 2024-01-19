@@ -1,7 +1,7 @@
 ---
-title:                "Å sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "C: Å sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -11,42 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Når du sender en HTTP forespørsel med en grunnleggende autentisering, inkluderer du brukernavnet og passordet ditt i forespørselen for å bekrefte identiteten din. Dette gjør at serveren du sender forespørselen til kan validere at du har autorisasjon til å få tilgang til de etterspurte ressursene. Programmere gjør dette for å sikre at bare autoriserte brukere kan få tilgang til bestemte deler av en nettside eller applikasjon.
+Å sende en HTTP-forespørsel med grunnleggende autentisering er en akt en programmerer gjør for å tilgang til eller hente data fra sikre servere. Programmerere gjør dette for å sikre at bare autoriserte brukere har tilgang til beskyttede ressurser.
 
-## Slik gjør du det:
+## Hvordan Gjøre Det:
+For å sende en HTTP forespørsel med Basic Authentication, kan vi bruke `libcurl`, et gratis og lett-å-bruke klient-side URL transfer bibliotek. Ditt C program skal inkludere biblioteket `#include <curl/curl.h>` for å benytte dette.
+
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void) {
+int main(void)
+{
   CURL *curl;
   CURLcode res;
- 
+
+  curl_global_init(CURL_GLOBAL_DEFAULT);
   curl = curl_easy_init();
+  
   if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
-    curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-    curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
- 
+    curl_easy_setopt(curl, CURLOPT_URL, "https://api.website.com/data");
+
+    /* Brukernavn og passord for Basic Authentication */
+    curl_easy_setopt(curl, CURLOPT_USERPWD, "brukernavn:passord");
+
+    /* Utføre forespørsel, res vil få returkoden */
     res = curl_easy_perform(curl);
- 
+
+    /* Sjekke for feil */ 
     if(res != CURLE_OK)
       fprintf(stderr, "curl_easy_perform() failed: %s\n",
               curl_easy_strerror(res));
- 
+
     curl_easy_cleanup(curl);
   }
+  
+  curl_global_cleanup();
+
   return 0;
 }
 ```
-Kodeeksempelet viser hvordan du kan sende en HTTP forespørsel med grunnleggende autentisering ved hjelp av libcurl biblioteket. Etter å ha initialisert og satt opp en CURL handle, kan du angi ønsket URL og legge til autentiseringsopplysningene dine ved å bruke `CURLOPT_HTTPAUTH`, `CURLOPT_USERNAME` og `CURLOPT_PASSWORD` innstillinger. Deretter kan du utføre forespørselen ved hjelp av `curl_easy_perform()` funksjonen.
+Når dette programmet kjøres, sender det en HTTP-forespørsel til api.website.com med Basic Authentication brukernavn og passord.
 
-## Dypdykk:
-HTTP forespørsler med grunnleggende autentisering var en vanlig metode for å sikre identiteten til brukere og tillate tilgang til beskyttede ressurser. Men på grunn av sikkerhetsrisikoene som følger med å sende passord i klartekst, har andre autentiseringsmetoder som token-autentisering blitt mer vanlig.
+## Dyp Dykk
+Historisk sett, Basic Authentication ble introduksert som en del av HTTP/1.0-spesifikasjonen. Det tilbyr en enkel måte å sikre brukergodkjenning over HTTP-protokollen. 
 
-Implementeringen av HTTP forespørselen med grunnleggende autentisering kan variere avhengig av hvilket bibliotek eller API du bruker. Det er også viktig å sørge for at nettstedet eller applikasjonen du sender forespørselen til støtter grunnleggende autentisering og at passordet ditt er sikkert lagret.
+I moderne programmering er det alternativer til Basic Authentication, slik som OAuth2 og JWT (JSON Web Token).
 
-## Se også:
-- [libcurl dokumentasjon](https://curl.haxx.se/libcurl/c/http-auth.html)
-- [Tutorial: Enkel autentisering med cURL](https://www.codetd.com/en/article/36053474)
+I forhold til implementasjon, skal du ta hensyn til at Basic Authentication sender brukernavn og passord i klartekst (Base64-kodet, ikke kryptert). Derfor skal det brukes sammen med HTTPS for å unngå at sensitiv informasjon blir hacket.
+
+## Se Også 
+1. [Mozilla Developer Network - HTTP autentisering](https://developer.mozilla.org/nb/docs/Web/HTTP/Authentication)
+2. [libcurl - Tutorial](https://curl.se/libcurl/c/libcurl-tutorial.html)
+3. [JWT.io - Introduksjon til JSON Web Tokens](https://jwt.io/introduction/)
+4. [OAuth (offisielle side)](https://oauth.net/)

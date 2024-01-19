@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum aus einem String extrahieren"
-html_title:           "C++: Ein Datum aus einem String extrahieren"
-simple_title:         "Ein Datum aus einem String extrahieren"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,51 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Parsen eines Datums aus einem String ist eine gängige Aufgabe für Programmierer. Dabei geht es darum, ein Datum (z.B. 01.01.2021) aus einem String (z.B. "01-01-2021") zu extrahieren und es in ein für den Computer lesbares Format zu konvertieren. Dies ist notwendig, um mit Datumswerten in Programmen zu arbeiten, z.B. für die Berechnung von Altersangaben oder das Sortieren von Datumsangaben.
+## Was und Warum?
+Parsing eines Datums aus einem String bedeutet, dass man eine Datumseinheit aus einer gegebenen Zeichenkette extrahieren und interpretieren kann. Programmierer nutzen dies, um Daten in einem konsumierbaren Format zu manipulieren oder zu verarbeiten.
 
-# Wie geht's?
-Das Parsen eines Datums aus einem String kann auf verschiedene Weise erfolgen, abhängig von der verwendeten Programmiersprache. Im Folgenden wird ein Beispiel in C++ gezeigt:
+## So geht's:
+
+Sie können `std::istringstream` und `std::get_time` aus der Standardbibliothek verwenden, um ein Datum in C++ zu parsen. Hier ist ein einfacher Code, der dies verdeutlicht:
 
 ```C++
 #include <iostream>
-
-using namespace std;
+#include <sstream>
+#include <iomanip>
+#include <ctime>
 
 int main() {
-    // Definieren des Datums-Strings
-    string dateStr = "01-01-2021";
-
-    // Extrahieren des Tages, Monats und Jahres als separate Strings
-    string day = dateStr.substr(0,2);
-    string month = dateStr.substr(3,2);
-    string year = dateStr.substr(6,4);
-
-    // Konvertieren der Strings in Integer-Werte
-    int dayInt = stoi(day);
-    int monthInt = stoi(month);
-    int yearInt = stoi(year);
-
-    // Ausgabe des geparsten Datums
-    cout << "Geparstes Datum: " << dayInt << "." << monthInt << "." << yearInt << endl;
-
+    std::string s = "21-06-2021"; //dd-mm-yyyy
+    std::tm tm = {};
+    std::istringstream ss(s);
+    ss >> std::get_time(&tm, "%d-%m-%Y");
+  
+    if (ss.fail()) {
+        std::cout << "Parse fehlgeschlagen!\n";
+    } else {
+        std::cout << std::put_time(&tm, "%c") << '\n';
+    }
     return 0;
 }
 ```
 
-**Ausgabe:**
-Geparstes Datum: 01.01.2021
+Wenn Sie dieses Programm ausführen, erhalten Sie die Ausgabe:
 
-In diesem Beispiel wird der Datei-Header ```<iostream>``` verwendet, um die Ein- und Ausgabe-Funktionen von C++ zu nutzen. Die Strings werden mit ```string``` definiert und die Funktion ```substr()``` wird verwendet, um bestimmte Teile des Strings zu extrahieren. Mit der Funktion ```stoi()``` werden die extrahierten Strings in Integer-Werte konvertiert.
+```
+Mon Jun 21 00:00:00 2021
+```
 
-# Tiefere Einblicke
-Das Parsen von Datumswerten aus Strings ist eine gängige Aufgabe, die sich im Laufe der Zeit weiterentwickelt hat. Früher wurde dies vor allem manuell durchgeführt, indem der String angepasst und Teile davon extrahiert wurden. Heutzutage gibt es jedoch viele Bibliotheken und Funktionen in verschiedenen Programmiersprachen, die das Parsen von Datumswerten erleichtern.
+## Deep Dive:
 
-Eine Alternative zum manuellen Parsen ist die Verwendung von regulären Ausdrücken (engl. regular expressions), die es ermöglichen, Muster in einem String zu finden und zu extrahieren. Diese eignen sich besonders gut für komplexe Datumsmuster.
+Das Parsen von Daten aus Zeichenketten wurde historisch für alles verwendet, von Webentwicklung bis hin zu maschinellem Lernen. Es hat Entwicklern geholfen, komplexe Datumsangaben zu handhaben und sie flexibel und verwertbar zu machen.
 
-Die Implementierung des Parsers hängt immer von der verwendeten Programmiersprache ab. In C++ ist es beispielsweise möglich, den String in ein ```std::tm```-Objekt zu konvertieren, das die Datumsinformationen in einer strukturierten Form enthält.
+In C++ können Sie auch Bibliotheken wie Boost verwenden, um ähnliche Funktionen zu ermöglichen. Boost bietet eine robustere Erfahrung und mehr Unterstützung für verschiedene Datumsformate.
 
-# Siehe auch
-- https://www.cplusplus.com/reference/ctime/tm/ (Referenz zur Verwendung von ```std::tm``` in C++)
-- https://www.cplusplus.com/reference/string/string/substr/ (Referenz zur Verwendung von ```substr()``` in C++)
-- https://www.cplusplus.com/reference/string/regex/ (Referenz zur Verwendung von regulären Ausdrücken (engl. regular expressions) in C++)
+Eine wichtige Einzelheit in der Implementierung ist, dass `std::get_time` keinerlei Ausnahme wirft, wenn das Parsen fehlschlägt. Stattdessen setzen wir die Failbit des `std::istringstream`-Objekts, welches durch die Methode `fail()` überprüft werden kann.
+
+## Siehe Auch:
+
+- [Cplusplus.com get_time](http://www.cplusplus.com/reference/iomanip/get_time/)
+- [StackOverflow - How to parse date properly](https://stackoverflow.com/questions/5286945/timestamp-string-to-time-t-in-c)
+- [Boost Date Time Library](https://www.boost.org/doc/libs/1_67_0/doc/html/date_time.html)

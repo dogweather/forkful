@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "Bash: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Getting Started"
@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##### Quoi & Pourquoi?
-Commencer un nouveau projet est simplement le processus de créer quelque chose d'entièrement nouveau dans le domaine de la programmation. Les programmeurs le font généralement pour résoudre un problème spécifique, pour créer un nouveau produit ou pour améliorer un produit existant.
+## Quoi & Pourquoi?
 
-##### Comment faire:
-Voici un exemple de code Bash pour commencer un nouveau projet:
+Démarrer un nouveau projet en programmation, c'est comme dessiner un nouveau tableau. Les programmeurs le font pour créer quelque chose d'unique, résoudre un problème spécifique ou simplement améliorer leurs compétences techniques.
+
+## Comment faire:
+
+Créer un nouveau répertoire pour votre projet:
 
 ```Bash
-mkdir nouveau_projet
-cd nouveau_projet
-touch fichier1.txt
-touch fichier2.txt
-echo "Nouveau projet créé avec succès!"
+mkdir mon_projet
+cd mon_projet
 ```
 
-Le résultat de cette commande sera la création d'un nouveau dossier appelé "nouveau_projet" avec deux fichiers vides à l'intérieur. L'utilisation de l'option "echo" permet d'afficher un message à l'utilisateur pour confirmer que le nouveau projet a été créé avec succès.
+Initialiser un dépôt Git:
 
-##### Plus en détail:
-Il existe de nombreuses alternatives pour commencer un nouveau projet en programmation. Certains programmeurs préfèrent utiliser des outils de gestion de projet tels que Git ou GitHub, tandis que d'autres préfèrent simplement créer un nouveau dossier et commencer à coder.
+```Bash
+git init
+```
 
-Implémenter un nouveau projet peut varier en fonction des langages de programmation utilisés et de la complexité du projet lui-même. Cependant, les étapes de base restent les mêmes: créer un nouveau dossier, ajouter des fichiers et commencer à coder.
+Créer un fichier README:
 
-##### Voir aussi:
-Pour en savoir plus sur la création de nouveaux projets en programmation, consultez les ressources suivantes:
-- [Git Tutorial](https://www.atlassian.com/git/tutorials)
-- [GitHub Guides](https://guides.github.com/)
-- [Creating a New Project in Python](https://www.codementor.io/@sheena/how-to-create-a-new-project-in-python-na89nw4vc)
-- [Creating a New Project in Java](https://dev.to/victortrac/starting-a-new-project-in-java-4fc)
+```Bash
+touch README.md
+```
+
+Maintenant, votre nouveau projet est prêt à démarrer! 
+
+## Plongée profonde:
+
+Historiquement, les nouveaux projets étaient débutés à partir de zéro. Maintenant, les programmeurs utilisent des gestionnaires de versions comme Git pour une meilleure organisation et une cooperation plus efficace. Des alternatives à Bash comprennent le PowerShell de Microsoft et Zsh, une amélioration de Bash. Bien que simple, il est important de conserver une structure nette dans votre projet pour éviter les complications à l'avenir.
+
+## Voir aussi:
+
+* [Guide Git](https://git-scm.com/book/fr/v2)
+* [Introduction au Bash Scripting](https://learnxinyminutes.com/docs/fr-fr/bash-fr/)
+* [Zsh vs Bash](https://www.slant.co/versus/2445/2448/~bash_vs_zsh)

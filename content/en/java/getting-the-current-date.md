@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "Java recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Java"
 category:             "Java"
@@ -11,65 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Getting the current date is an important aspect of programming as it allows developers to record when certain events or processes occur in their code. This information is useful for debugging, creating time-sensitive applications, or simply for keeping track of the passing of time in a program.
+Getting the current date in Java is all about fetching real-time date information while the program is running. Whether you're logging events, timestamping user activities, or simply clock displays, you need to do it right.
 
 ## How to:
-To get the current date in Java, we can use the `java.util.Date` class. Here is a simple example:
+
+Here's a quick example that employs `java.time.LocalDate` which is part of Java 8 and onwards:
+
 ```Java
-// Import the Date class
-import java.util.Date;  
+import java.time.LocalDate;
 
-// Create a Date object
-Date currentDate = new Date(); 
+public class Main {
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();
+        System.out.println("Today's Date: " + date);
+    }
+}
+```
+When you run this program, it outputs the current date in the format `yyyy-mm-dd`. For instance, you might get:
 
-// Print the current date
-System.out.println("Current date: " + currentDate); 
 ```
-Output:
-```
-Current date: Mon Oct 04 12:48:38 EDT 2021
-```
-We can also use the `SimpleDateFormat` class to format the date output in a specific way. For example, if we wanted to display the current date in the format `MM/dd/yyyy`, we can do the following:
-```Java
-// Import the classes
-import java.util.Date;
-import java.text.SimpleDateFormat;
-
-// Create a Date object
-Date currentDate = new Date();
-
-// Define the format we want
-SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-
-// Format the date and print it
-String formattedDate = dateFormat.format(currentDate);
-System.out.println("Current formatted date: " + formattedDate);
-```
-Output:
-```
-Current formatted date: 10/04/2021
+Today's Date: 2022-06-10
 ```
 
 ## Deep Dive:
-Before Java 8, the `java.util.Date` class was the primary way to get the current date in Java. However, it had some limitations such as not being thread-safe and not providing an easy way to format the date. In Java 8, the `java.time` package was introduced which provides a more robust and user-friendly way to handle date and time. The `LocalDate` class in this package can be used to get the current date. Here is an example:
+
+* **Historical Context**: Back in the day, Java developers used `java.util.Date` to get the current date. Java 8 introduced a new date and time API under `java.time` package providing a simpler, cleaner, and more accurate solution.
+
+* **Alternatives**: If you need more detailed time information, use `java.time.LocalDateTime` or `java.time.ZonedDateTime` for time zone-specific data. For instance:
+
 ```Java
-// Import the LocalDate class
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-// Create a LocalDate object with the current date
-LocalDate currentDate = LocalDate.now();
-
-// Print the current date
-System.out.println("Current date: " + currentDate);
-```
-Output:
-```
-Current date: 2021-10-04
+public class Main {
+    public static void main(String[] args) {
+        LocalDateTime dateTime = LocalDateTime.now();
+        System.out.println("Current Date and Time: " + dateTime);
+    }
+}
 ```
 
-In addition to the `LocalDate` class, the `java.time` package also offers other classes such as `LocalDateTime` and `ZonedDateTime` for handling time zones and more precise dates and times. It is recommended to use these classes for getting the current date in Java instead of the `java.util.Date` class.
+* **Implementation Details**: `LocalDate.now()` internally uses `Clock.systemDefaultZone()` method, which obtains a clock that returns current instant using best available system clock, converting to date using the default time-zone.
 
 ## See Also:
-- [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)
-- [Java Date and Time Tutorial](https://www.javatpoint.com/java-date-and-time)
-- [java.time package documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+
+* [Oracle Java Docs: LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+* [Oracle Java Docs: LocalDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+* [Oracle tutorial on New Date and Time](https://docs.oracle.com/javase/tutorial/datetime/iso/overview.html)
+* [Baeldung Guide on New Date and Time API](https://www.baeldung.com/java-8-date-time-intro)

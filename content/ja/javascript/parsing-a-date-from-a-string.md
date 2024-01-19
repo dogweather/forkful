@@ -1,7 +1,7 @@
 ---
-title:                "日期を文字列から解析する"
-html_title:           "Javascript: 日期を文字列から解析する"
-simple_title:         "日期を文字列から解析する"
+title:                "文字列から日付を解析する"
+html_title:           "Bash: 文字列から日付を解析する"
+simple_title:         "文字列から日付を解析する"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,20 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ?
-日付を文字列から解析することとは、日付を文字列として表された形式から、プログラマーが理解しやすい形式に変換することです。この処理を行う理由は、プログラミングで日付を扱う必要があるためです。
+## 何となく？（What & Why?）
 
-## 方法:
+日付解析とは、文字列から日付を取りだすプロセスのことを指します。プログラマがこれを行う主な理由は、データを活用しやすい形に変換し、日付としても扱えるようになるからです。
+
+## どうやって？（How to:）
+
 ```Javascript
-const date = new Date("2021/07/16");
+let dateStr = "2021-10-13";
+let date = new Date(dateStr);
+
 console.log(date);
-// 出力: Fri Jul 16 2021 00:00:00 GMT+0900 (Japan Standard Time)
 ```
 
-## 深く掘り下げる:
-日付を文字列から解析することは、プログラマーにとって便利な手段です。これにより、データベースの日付や、APIから受け取った日付などを、プログラマーが必要とする形式に変換することができます。代替手段としては、外部ライブラリを使用する方法もあります。日付を文字列から解析する際の実装の詳細については、各プログラミング言語の公式ドキュメントを確認することができます。
+出力:
 
-## 関連リンク:
-- [MDN Web Docs：Dateオブジェクト](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [w3schools：JavaScript Date メソッド](https://www.w3schools.com/js/js_date_methods.asp)
-- [JavaScript.info：Working with Dates](https://javascript.info/date)
+```Javascript
+2021-10-13T00:00:00.000Z
+```
+
+## 詳細な情報（Deep Dive）
+
+1. 歴史的背景：初期のJavaScriptエンジンは特定の日付文字列形式への対応が不十分で、日付の解析は開発者を悩ませる問題でした。しかし、現代のJavaScriptエンジンはISO 8601日付文字列であれば簡単に解析できます。
+
+2. 代替方法：一部のライブラリ（如、moment.jsやdate-fns等）では、独自の日付解析機能を提供しています。これらを使用すると、多くの形式の日付文字列を解析できます。
+
+3. 実装詳細：`new Date(string)`は、与えられた文字列をECMA-262仕様に従って日付オブジェクトに解析します。この内部の動作はブラウザのJavaScriptエンジンに依存します。
+
+## 参照元（See Also）
+
+- [MDN Web Docs: Date](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js公式ドキュメンテーション](https://momentjs.com/)
+- [date-fns公式ドキュメンテーション](https://date-fns.org/)

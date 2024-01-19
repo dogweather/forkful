@@ -1,7 +1,7 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-html_title:           "Elixir: Sjekke om en mappe eksisterer"
-simple_title:         "Sjekke om en mappe eksisterer"
+title:                "Sjekker om en katalog eksisterer"
+html_title:           "Elixir: Sjekker om en katalog eksisterer"
+simple_title:         "Sjekker om en katalog eksisterer"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,25 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Sjekke om en mappe eksisterer er en måte for utviklere å kontrollere om en spesifikk mappe finnes i et filsystem. Dette er nyttig for å sjekke om en mappe er tilgjengelig før man prøver å utføre noen operasjoner på den.
+# Elixir Programmering: Sjekker om en Mappe Eksisterer
 
-## Hvordan:
-For å sjekke om en mappe eksisterer i Elixir, kan man bruke funksjonen `File.exists?` og gi den navnet på mappen som et argument. Denne funksjonen returnerer enten `true` eller `false` avhengig av om mappen finnes eller ikke. Her er et eksempel:
+## Hva & Hvorfor?
+I Elixir, informerer "å sjekke om en mappe eksisterer" oss om hvorvidt en bestemt mappe er til stede på et gitt sted i systemet. Dette er nødvendig blant annet for å unngå fil- og mappe-relaterte feil i programmer.
+
+## Hvordan til:
+Her er hvordan du kan sjekke om en mappe eksisterer med Elixir:
 
 ```Elixir
-if File.exists?("min_mappe") do
-  IO.puts "Mappen finnes"
-else
-  IO.puts "Mappen finnes ikke"
+:file.dir?("your/directory/path")
+```
+
+Hvis mappen eksisterer, vil funksjonen returnere `:ok`. Hvis ikke, vil den returnere `:error`. Her er et eksempel på bruk:
+
+```Elixir
+case :file.dir?("/tmp") do
+  :ok ->
+    IO.puts("Mappe eksisterer.")
+  :error ->
+    IO.puts("Mappe eksisterer ikke.")
 end
 ```
-Dette vil skrive ut enten "Mappen finnes" eller "Mappen finnes ikke" basert på resultatet av sjekken.
 
-## Dypdykk:
-Å sjekke om en mappe eksisterer er en vanlig operasjon i mange programmeringsspråk og er nyttig for å sikre at man ikke prøver å utføre operasjoner på en mappe som ikke finnes. Alternativet til å bruke `File.exists?`-funksjonen i Elixir er å bruke `File.read_dir` og sjekke om mappenavnet finnes i resultatene. Men dette vil føre til ekstra kompleksitet og kan være mindre effektivt.
+Kjør dette programmet, og utdataen vil skrive ut om mappen "/tmp" eksisterer eller ikke.
 
-Det er verdt å merke seg at å sjekke om en mappe eksisterer ikke garanterer at den vil være tilgjengelig når man faktisk prøver å utføre en operasjon på den. Dette kan skyldes at mappen kan bli slettet av en annen prosess eller bruker mellom sjekken og operasjonen.
+## Dykket dypere
+Historisk sett har denne funksjonaliteten vært et nøkkelaspekt av mange programmeringsspråk, inkludert Elixir, på grunn av dens integrasjon med operativsystemet. I Elixir er metoden for dette laget i Erlang-behendigheter, som det er tilfellet med mye av filsystemfunksjonaliteten.
 
-## Se også:
-[File-modulen i Elixir](https://hexdocs.pm/elixir/File.html)
+Alternativene inkluderer å bruke `File.ls/1` for å liste opp kataloginnhold og deretter se om mappens navn er til stede. Dette er dog mindre effektivt, da det krever mer systemressurser.
+
+Når du kaller `:file.dir?/1`, opprettholder Elixir en kobling til underliggende operativsystemtjenester for å utføre sjekken, ved bruk av Erlang/OTP's `:file`-modul.
+
+## Se Også
+1. Elixir's Dokumentasjon om `:file.dir?/1`: https://hexdocs.pm/elixir/1.12/File.html#module-checking-existence
+2. Erlang's `:file` modul dokumentasjon: https://erlang.org/doc/man/file.html

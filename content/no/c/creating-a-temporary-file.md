@@ -1,7 +1,7 @@
 ---
-title:                "Oppretting av en midlertidig fil"
-html_title:           "C: Oppretting av en midlertidig fil"
-simple_title:         "Oppretting av en midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "C#: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & hvorfor?
-En midlertidig fil er en fil som opprettes og brukes midlertidig av et program under kjøring. Dette kan være nyttig for å lagre midlertidig data eller for å sikre at to eller flere programmer ikke konflikterer med hverandre ved å bruke samme filnavn. Programmere oppretter midlertidige filer for å gjøre programmene sine mer effektive og pålitelige.
+## Hva & Hvorfor?
+Å opprette en midlertidig fil er en metode for å lagre data midlertidig under programutførelse. Progammerere gjør dette for å behandle store data, dele data mellom prosesser, eller bevare tilstanden til data hvis programmet avbrytes.
 
-# Hvordan:
-```c
-#include <stdio.h>
+## Hvordan:
+Her er et grunnleggende eksempel på C koden for å lage en midlertidig fil:
+
+```C
+#include<stdio.h>
+
 int main() {
-  FILE *tfp = tmpfile(); // opprett en ny midlertidig fil
-  if (tfp != NULL) {
-    fputs("Dette er en midlertidig fil.", tfp); // skriv tekst til filen
-    rewind(tfp); // gå tilbake til starten av filen
-    char str[50];
-    fgets(str, 50, tfp); // les filen og lagre teksten i str arrayen
-    printf("Teksten i den midlertidige filen er: %s\n", str); // skriv ut teksten 
-    fclose(tfp); // lukk filen
-  } else {
-    printf("Kunne ikke opprette en midlertidig fil.");
-  }
-  return 0;
+   char tmpname[L_tmpnam];
+   char* filename = tmpnam(tmpname);
+
+   printf("Temporary file name is: %s\n", filename);
+   return 0;
 }
 ```
-Eksempelutgang:
+Når koden kjører, vil output se slik ut:
 ```
-Teksten i den midlertidige filen er: Dette er en midlertidig fil.
+Temporary file name is: /tmp/a1b2c3
 ```
+Dette er navnet på den midlertidige filen som programmene dine kan bruke til å lagre data.
 
-# Dykk dypere:
-I tidligere tider var det vanlig for programmer å kommunisere ved hjelp av filer, og midlertidige filer ble brukt som en måte for programmer å sende data til hverandre. I dag brukes det ofte andre metoder som filpiping eller socket-kommunikasjon. Alternativer til å bruke midlertidige filer kan være å bruke minnebuffer eller å lagre data direkte i en database. Når du oppretter en midlertidig fil, blir den vanligvis lagret i operativsystemets TEMP-diskplassering. Implementeringen av midlertidige filer kan variere avhengig av operativsystem og programmeringsspråk, men konseptet er det samme.
+## Dypdykk
+Oppretting av midlertidige filer har en lang historie i programmering. De ble først brukt da minne og lagringsplass var dyrebare ressurser og har fortsatt å være nyttige for mange moderne brukstilfeller.
 
-# Se også:
-- [tmpfile() function - GeeksforGeeks](https://www.geeksforgeeks.org/c-tmpfile-function/) 
-- [Temporary File - Wikipedia](https://en.wikipedia.org/wiki/Temporary_file)
+Alternativer inkluderer bruk av midlertidige tabeller i databaser, eller minnebasert lagring, som RAM-disker. Valget avhenger av dine spesifikke behov og begrensninger.
+
+Når du oppretter en midlertidig fil i C, bruker du funksjonen `tmpnam()`. Denne funksjonen genererer et unikt filnavn som kan brukes til å opprette filen. Filen er ikke faktisk opprettet når du ringer `tmpnam()`. Du må opprette og åpne den med funksjonen `fopen()` hvis du faktisk vil lagre data i den.
+
+## Se også
+- [tmpfile function in C](https://www.cplusplus.com/reference/cstdio/tmpfile/) 
+- [Advantages and Disadvantages of different file storage methods](https://www.geeksforgeeks.org/advantages-and-disadvantages-of-different-file-storage-methods/)
+- [The C library function tmpnam()](https://www.tutorialspoint.com/c_standard_library/c_function_tmpnam.htm)

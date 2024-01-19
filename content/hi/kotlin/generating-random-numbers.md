@@ -1,7 +1,7 @@
 ---
-title:                "तस्याम्कालित संख्याएं उत्पन्न करना"
-html_title:           "Kotlin: तस्याम्कालित संख्याएं उत्पन्न करना"
-simple_title:         "तस्याम्कालित संख्याएं उत्पन्न करना"
+title:                "यादृच्छिक संख्याओं का निर्माण"
+html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
+simple_title:         "यादृच्छिक संख्याओं का निर्माण"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
@@ -11,24 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-रैंडम नंबर जनरेशन यानि कि ये कैसे काम करता है, ये क्यों प्रोग्रामर्स के लिए महत्वपूर्ण है - इसे लोगों के लिए जो जनरेट किए गए नंबर की जरूरत होती है, और सुरक्षा या गेम डिजाइन में आवश्यकता हो सकती है।
 
-## कैसे करें:
-```kotlin
-// 1 से 100 तक के बीच से एक रैंडम नंबर लेना
-val randomNumber = (1..100).random()
+यादृच्छिक संख्याओं का उत्पन्न करना मतलब है कि किसी अनुप्रेक्ष्य अवलोकन में अन्य संख्याओं से अधिक प्रमाणिकता प्राप्त करना। यह सॉफ़्टवेयर डेवलपर्स के लिए महत्वपूर्ण है क्योंकि आवश्यकतानुसार अद्वितीय संख्याओं की पैदावार की आवश्यकता हो सकती है, जैसे कि पासवर्ड, OTP आदि।
 
-// 0 से 10,000 तक के बीच से धनराशि लेना
-val money = (0..10000).random()
+## कैसे:
 
-// दो से छह्ल तक के बीच से कोई एक संख्या चुनना
-val number = (2..6).random()
+Kotlin में, आप `Random()` क्लास का उपयोग करके यादृच्छिक संख्याएं उत्पन्न कर सकते हैं। 
+
+```Kotlin
+import kotlin.random.Random
+
+fun main(){
+  val randomNo = Random.nextInt(10)
+  println(randomNo)
+}
 ```
 
-## गहराई में गम्भीरता:
-कई स्थितियों में, रैंडम नंबर जनरेशन को अन्य तकनीकों के लिए उपयोग किया जाता है जैसे कि नेटवर्क सुरक्षा या स्पॉर्ट्स बेटिंग। कुछ अल्टर्नेटिव्स जैसे pseudorandom और cryptographically secure random नंबर भी हैं। कोटलिन को रैंडम नंबर जनरेशन के लिए यूनिक्स के ऑपरेटिंग सिस्टम की विशेषताओं और java.util.Random फंक्शन का सहायता लिया जाता है। 
+ऊपरी कोड का चलाने पर आपको 0-9 के बीच का यादृच्छिक संख्या मिलेगा। 
 
-## और भी देखें:
-• [Kotlin docs on Random numbers] (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/kotlin.random/-random) 
-• [A beginner's guide to random number generation] (https://www.geeksforgeeks.org/generating-random-numbers-in-kotlin/) 
-• [Random number generation in game development] (https://gamedevelopment.tutsplus.com/tutorials/random-number-generation-in-game-development--cms-30019)
+## गहराई में:
+
+(1) ऐतिहासिक संदर्भ: मैथ्स में, यादृच्छिक संख्याओं की अवधारणा काे संगणक विज्ञान में लागू करने का विचार 20 वीं सदी के मध्य में आया। 
+
+(2) विकल्प: यादृच्छिक संख्या उत्पादन थर्ड पार्टी लाइब्रेरी, जैसे कि Apache Commons Math, द्वारा भी किया जा सकता है। 
+
+(3) कार्यान्वयन विवरण: Kotlin में `Random()` क्लास का उपयोग करते समय, इसे अंतर्निहित रूप से Java के `java.util.Random` 클래스 का उपयोग करके यादृच्छिक संख्याएँ उत्पन्न की जाती हैं।
+
+## यह भी देखें:
+
+अधिक जानकारी के लिए निम्नलिखित स्रोतों का उपयोग करें:
+1. [जावा उत्कृष्ट प्रयोग (हिंदी)](https://www.baeldung.com/java-random)
+2. [कोटलिन डॉक्स](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
+3. [Apache Commons Math](http://commons.apache.org/proper/commons-math/)

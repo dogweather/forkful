@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "Python recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Python"
 category:             "Python"
@@ -12,38 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Getting the current date in programming is about retrieving today's date. Programmers usually do this to track real-time events, log timestamps, or calculate time intervals.
+Getting the current date in Python is about fetching the real-time date. It's used in timestamping data, tracking events, or performing operations based on the current date.
 
-## How To:
+## How to:
 
-In Python, the built-in `datetime` module makes accessing the current date dirt simple. Here's how:
+The `datetime` library makes it a breeze. Just import it and use `datetime.date.today()`. Like so:
 
 ```Python
 import datetime
 
-# Get today's date
-today = datetime.date.today()
+current_date = datetime.date.today()
 
-print(today)
+print(current_date)
 ```
-You run the code, it'll spit out something similar:
-```Python
-2021-10-14  
+
+If you run this, you'll see something like:
+
+```Output
+2022-02-22
 ```
-It's simply the Year-Month-Day. Pretty straightforward, right?
+
+And that's your current date!
 
 ## Deep Dive
 
-Historically, manipulating dates and times wasn't a side job. Several languages devised their own models, some clunkier than others. Python smoothly traversed this history, and the `datetime` module we use today is the result.
+This way of getting the current date in Python leans on the `date` class of the `datetime` module, standard since Python 2.3. 
 
-There are alternatives. Libraries like `time` or `calendar` can also get the job done. Yet, they lack the simplicity and functionality that `datetime` offers.
+There's extra ways to get the same info. For instance, you can get the current date and time together using `datetime.datetime.now()`:
 
-Under the hood, `datetime` works by interfacing with the system clock, retrieving data, and formatting it to a human-friendly output. Remember, Python prides itself on being user-friendly and readable. That's why `datetime.date.today()` simply makes sense.
+```Python
+import datetime
+
+current_datetime = datetime.datetime.now()
+
+print(current_datetime)
+```
+
+It will show something like:
+
+```Output
+2022-02-22 14:01:22.800600
+```
+
+In the output, '14:01:22.800600' represents the current time (in hours, minutes, seconds, and microseconds).
+
+Internally, `datetime` handles dates as a Gregorian calendar. This way, it supports dates from year 1 to 9999, which is more than enough for most of us!
 
 ## See Also
 
-For more details, head over to the Python docs:
-[datetime — Basic date and time types](https://docs.python.org/3/library/datetime.html)
-
-For advanced date/time handling, check out third-party libraries like Arrow:
-[Arrow: Better dates & times for Python](https://arrow.readthedocs.io/en/latest/)
+For more detail about the `datetime` module, scope out the [Python docs](https://docs.python.org/3/library/datetime.html). Also check out the official Python tutorial's chapter on [dates and times](https://docs.python.org/3/tutorial/stdlib.html#dates-and-times). Happy coding!

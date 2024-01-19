@@ -1,7 +1,7 @@
 ---
-title:                "'Sökning och ersättning av text'"
-html_title:           "Elixir: 'Sökning och ersättning av text'"
-simple_title:         "'Sökning och ersättning av text'"
+title:                "Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,35 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Sökning och ersättning av text är en vanlig uppgift för programmerare. Det handlar helt enkelt om att hitta en viss text i en fil eller en sträng och ersätta den med en annan. Detta är användbart för att göra massvisa ändringar i kod, eller för att korrigera stavfel eller felaktig formatering.
+Att söka och ersätta text innebär att identifiera alla instanser av en specifik sträng i din kod och byta ut dem mot en annan sträng. Det är ett vanligt verktyg i en programmerares verktygslåda för att hjälpa till att förändra, korrigera eller förbättra koden snabbt och effektivt.
 
 ## Så här:
+Här är ett grundläggande exempel på hur du kan söka och ersätta text i Elixir:
 
-För att söka och ersätta text i Elixir kan du använda funktionen `String.replace/4`, som tar in fyra argument: en sträng, ett mönster att söka efter, vad som ska ersättas samt hur många gånger det ska ersättas.
+```Elixir
+defmodule StringOperations do
+  def replace(old_string, to_replace, replace_with) do
+      String.replace(old_string, to_replace, replace_with)
+  end
+end
 
+IO.puts StringOperations.replace("Jag programmerar Elixir", "Elixir", "Python")
+#=>
+"Jag programmerar Python"
 ```
-Elixir
-code = "Hej världen, jag är en programmerare."
-String.replace(code, "programmerare", "kodare", 1)
-# Output: "Hej världen, jag är en kodare."
-```
+Koden söker igenom given sträng, identifierar ordet "Elixir" och byter ut det mot "Python".
 
-Du kan också använda regex för att söka och ersätta text i en sträng med hjälp av funktionen `Regex.replace/3`.
+## Djupdykning
+Searching och replacing av text har djupa rötter i programmeringsspråkshistoria, med Unix-verktyget `sed` som en av de äldsta och mest kända exemplen.
 
-```
-Elixir
-code = "Hej världen, jag är en programmerare."
-Regex.replace(~r/programmerare/, code, "kodare")
-# Output: "Hej världen, jag är en kodare."
-```
+Alternativt till `String.replace` finns funktionen `Regex.replace(regex, subject, replacement)` i Elixir som tillåter mer komplexa byten med reguljära uttryck.
 
-## Djupdykning:
+Viktig detalj att notera är att Elixir är opåverkbar (immutable), vilket innebär att textsträngar inte modifieras på plats utan snarare returnerar nya strängar med de önskade ändringarna.
 
-Sökning och ersättning av text har funnits i många år och är en grundläggande funktion i de flesta programmeringsspråk. I Elixir finns det flera olika funktioner för detta ändamål, såsom `String.replace/4`, `Regex.replace/3` och `String.replace_leading/3`, vilka alla ger olika möjligheter för sök- och ersättningsfunktioner.
-
-En alternativ metod för att söka och ersätta text i Elixir är att använda sig av `String.replace!/4`, där det fjärde argumentet är en modifierare för att ange hur ersättningen ska ske. Mer detaljerade beskrivningar och exempel kan hittas i Elixir-dokumentationen för dessa funktioner.
-
-## Se även:
-
-- Elixir dokumentation för sökning och ersättning av text: https://hexdocs.pm/elixir/String.html#module-replacing-and-removing-substrings
+## Se också
+1. [Elixir String-module documentation](https://hexdocs.pm/elixir/String.html)
+2. [Elixir School String lesson](https://elixirschool.com/lessons/shell/history-and-help/)
+3. [Elixir Regex-module documentation](https://hexdocs.pm/elixir/Regex.html)

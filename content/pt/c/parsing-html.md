@@ -1,7 +1,7 @@
 ---
-title:                "Analisando html"
-html_title:           "C: Analisando html"
-simple_title:         "Analisando html"
+title:                "Analisando HTML"
+html_title:           "C: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,49 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-Parsing HTML (analisar HTML) é o processo de analisar uma página web para identificar sua estrutura e conteúdo. Os programadores fazem isso para poder extrair informações específicas de uma página, como dados de formulários ou texto de uma postagem em um blog.
+# Parseamento HTML em C: Simplificando o Código
+
+## O Que & Por quê?
+
+Parsear HTML é explorar e sintetizar as tags e conteúdo do código HTML. Programadores fazem isso para extrair informações específicas de uma página da web ou manipular sua estrutura.
 
 ## Como fazer:
-Veja aqui alguns exemplos de código em C sobre como fazer o parsing de HTML.
 
-```
-C // Inclua a biblioteca necessária
+Aqui está um exemplo simples de como você pode parsear HTML em C usando a biblioteca Gumbo:
+
+```C
 #include <stdio.h>
-#include <stdlib.h>
+#include <gumbo.h>
 
-int main()
-{
-   // Crie uma variável para armazenar o conteúdo da página
-   char html_code[] = "<html> <head> <title>Minha página</title> </head> <body> <h1>Bem-vindo!</h1> <p>Olá, mundo!</p> </body> </html>";
-   
-   // Imprima na tela o conteúdo da página
-   printf("O código HTML é: %s", html_code);
-   
-   // Faça o parsing do título da página
-   char title[50];
-   sscanf(html_code, "<title>%s</title>", title);
-   
-   // Imprima o título
-   printf("O título da página é: %s", title);
-   
-   return 0;
+static void buscar_links (GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
+
+    GumboAttribute* href;
+
+    if (node->v.element.tag == GUMBO_TAG_A && (href = gumbo_get_attribute (&node->v.element.attributes, "href"))) {
+        printf ("%s\n", href->value);
+    }
+
+    GumboVector* filhos = &node->v.element.children;
+
+    for (unsigned int i = 0; i < filhos->length; ++i) {
+        buscar_links ((GumboNode*) filhos->data[i]);
+    }
+}
+
+int main () {
+    GumboOutput* output = gumbo_parse ("<h1>Olá, mundo!</h1><a href='http://exemplo.com'>Exemplo</a>");
+
+    buscar_links (output->root);
+
+    gumbo_destroy_output (&kGumboDefaultOptions, output);
+    return 0;
 }
 ```
 
-A saída desse código será:
+Ao executar o código acima, você deve ver a seguinte saída:
 
+```C
+http://exemplo.com
 ```
-O código HTML é: <html> <head> <title>Minha página</title> </head> <body> <h1>Bem-vindo!</h1> <p>Olá, mundo!</p> </body> </html>
-O título da página é: Minha página
-```
 
-## Aprofundando:
-O parsing de HTML é uma técnica amplamente utilizada em programação web. Antes do surgimento de frameworks e bibliotecas que facilitam esse processo, os programadores precisavam escrever seus próprios códigos para analisar e extrair dados de páginas web. Hoje em dia, existem várias alternativas para fazer o parsing de HTML, como as bibliotecas libxml, expat e lxml.
+## Imersão completa
 
-Para implementar o parsing de HTML em C, é importante entender como funciona a estrutura do HTML e como utilizar funções de manipulação de strings e expressões regulares para extrair os dados desejados. Também é importante lembrar que o HTML pode mudar e evoluir com o tempo, então é preciso estar sempre atualizado e adaptar o código conforme necessário.
+O parseamento HTML data dos primeiros dias da web. Anteriormente, tinha que ser feito manualmente, mas agora existem bibliotecas como a Gumbo, que simplificam este processo.
 
-## Veja também:
-- [W3Schools - HTML DOM](https://www.w3schools.com/js/js_htmldom.asp)
-- [Tutorialspoint - Parsing HTML](https://www.tutorialspoint.com/parsing_html_using_c_programming/index.htm)
-- [Explicação básica sobre parsing de HTML](https://www.geeksforgeeks.org/parsing-html-using-c/)
+Uma alternativa à Gumbo é a libxml2, que também pode parsear HTML, mas é um pouco mais complexa de usar.
+
+Por trás dos panos, o parseamento HTML envolve a leitura do HTML como uma string, a identificação das tags e a estruturação dessas tags em uma árvore ou outro formato manipulável.
+
+## Veja também
+
+Gumbo - https://github.com/google/gumbo-parser
+
+Libxml2 - http://xmlsoft.org/
+
+Tutorial de Parseamento HTML em C - https://www.htmlgoodies.com/tutorials/getting_started/article.php/3479511/how-to-parse-html-pages-with-c.htm

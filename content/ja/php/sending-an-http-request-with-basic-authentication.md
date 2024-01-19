@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を使用したhttpリクエストの送信"
-html_title:           "PHP: 基本認証を使用したhttpリクエストの送信"
-simple_title:         "基本認証を使用したhttpリクエストの送信"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,53 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
+## 何となんで？
 
-HTTPリクエストを基本認証付きで送信するとは、プログラマーがサーバー上で特権を取得してリソースにアクセスするための方法です。プログラマーは、この認証方法を使用することで、ユーザーのプライバシーを保護し、機密の情報を安全に送信することができます。
+HTTPリクエストでの基本認証を送信するというのは、ユーザー名とパスワードを通じてのリモートサーバーへの認証であり、APIのようなプライベートリソースへのアクセス許可を取得するために、プログラマーが行う必要がある。
 
-## 方法：
+## どうするか？
+
+PHP cURLを用いて、基本なHTTP認証を送る方法を見てみましょう。
 
 ```PHP
-$username = 'ユーザー名';
-$password = 'パスワード';
-$url = 'リクエストを送信するURL';
-
-// 基本認証を使用してHTTPリクエストを送信する
+<?php
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_USERPWD, $username . ":" . $password);
+
+curl_setopt($ch, CURLOPT_URL, "http://your-website.com/api");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+curl_setopt($ch, CURLOPT_USERPWD, "username:password");
 
-// レスポンスを取得する
-$response = curl_exec($ch);
+$result = curl_exec($ch);
+
+if($result === false)
+{
+    echo 'エラー: ' . curl_error($ch);
+}
+else
+{
+    echo $result;
+}
+
 curl_close($ch);
-
-// 結果を出力する
-echo $response;
+?>
 ```
+この短いコードが実行されると、指定のURLに対して基本的なHTTP認証を使用してGETリクエストが送信されます。これにより、サーバーからの応答は変数$result に保存されます。
 
-```PHP
-// Guzzleライブラリを使用してHTTPリクエストを送信する
-$client = new GuzzleHttp\Client();
-$res = $client->request('GET', $url, [
-    'auth' => [$username, $password]
-]);
+## 深堀り
 
-// レスポンスを取得する
-$response = $res->getBody();
+cURLが始まったのは遠く1997年のことで、その役割はHTTP、FTP、SMTPなどのプロトコルによるデータ送信をサポートすることです。現在では、ほとんどのサーバーサイドプログラミングにおいて、HTTPリクエストの送信に使われます。
 
-// 結果を出力する
-echo $response;
-```
+しかし、PHP自体も基本認証を送信するための代替手段を提供します。一つは`file_get_contents`と`stream_context_create`で、これを使うことで基本認証を含むリクエストを送信できます。しかし、この方法はcURLほど高度に機能しません。HTTP認証だけではなく、プロキシ、クッキー、セッション、ヘッダー操作など、より多機能なニーズに応えたい場合はcURLの利用が推奨されます。
 
-## 詳細：
+## 参考資料
 
-基本認証は、HTTPの最も古いセキュリティプロトコルの一つです。これは、サーバーにアクセスするときにユーザー名とパスワードを提供することで認証を行います。しかし、最近では基本認証を使用することは推奨されません。代わりに、トークン認証やOAuthなどのより安全な認証方法が使用されています。
+以下は、HTTP認証及びcURLについての有用なリンクです：
 
-HTTPリクエストを送信する方法はさまざまありますが、PHPではcURLやGuzzleなどのライブラリを使用することで簡単に実装することができます。これらのライブラリは、ネットワークリクエストを作成し、レスポンスを受け取るための便利な機能を提供しています。
-
-## 関連リンク：
-
-- [cURLドキュメンテーション](https://www.php.net/manual/en/book.curl.php)
-- [Guzzleドキュメンテーション](https://docs.guzzlephp.org/en/stable/)
-- [基本認証についての詳細](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [PHP公式のcURLチュートリアル](http://php.net/manual/en/book.curl.php)
+- [HTTP認証 - MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
+- [cURL 公式ドキュメンテーション](https://curl.haxx.se/docs/)

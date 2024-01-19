@@ -1,7 +1,7 @@
 ---
-title:                "Textsuche und -ersetzung"
-html_title:           "Arduino: Textsuche und -ersetzung"
-simple_title:         "Textsuche und -ersetzung"
+title:                "Suchen und Ersetzen von Text"
+html_title:           "Bash: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,19 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Textsuche und -ersetzung ist eine nützliche Programmierfunktion, mit der Text innerhalb von Code leicht gefunden und modifiziert werden kann. Programmierer verwenden diese Funktion, um fehlerhafte Texte zu korrigieren, redundante Wörter zu entfernen oder Texte für unterschiedliche Bedingungen anzupassen.
+Die Suche und Ersetzung von Text ist eine rechenintensive Operation, mit der ein bestimmtes Muster in einer Zeichenkette identifiziert und durch ein anderes ersetzt wird. Dies ist bei der Manipulation von Text oder Daten nützlich, wie beispielsweise zur Änderung von Konfigurationsparametern in Quelldaten.
 
-## Wie?
-Eine Textsuche und -ersetzung kann in Arduino mit der Funktion `replace()` durchgeführt werden. Diese Funktion nimmt zwei Argumente: das zu ersetzende Wort und das neue Wort. Zum Beispiel:
+## Wie geht's:
+Die `replace()` Methode der `String` Klasse kann zum Suchen und Ersetzen von Text in Arduino verwendet werden. Hier ist ein einfaches Beispiel, das zeigt, wie es funktioniert:
+
 ```Arduino
-String text = "Hallo Welt!";
-text.replace("Hallo", "Guten Tag");
-Serial.println(text);
+String myString = "Hallo, meine Freunde!";
+myString.replace("Hallo", "Tschüß");
+Serial.print(myString); // Gibt "Tschüß, meine Freunde!" aus
 ```
-Dieses Beispiel wird "Guten Tag Welt!" ausgeben. Falls mehrere Vorkommnisse des gesuchten Worts vorhanden sind, werden alle ersetzt.
 
-## Tiefere Einblicke
-Die Funktion `replace()` ist eine besonders bequeme Möglichkeit, Text in Arduino zu ersetzen. Eine alternative Methode wäre die Verwendung von `str.replace()`, die in C++ verfügbar ist. Diese Funktion hat jedoch eine andere Syntax und erfordert eine Neuzuweisung des modifizierten Textes. Die `replace()`-Funktion von Arduino hingegen ersetzt den Text direkt im ursprünglichen Objekt.
+In diesem Beispiel suchen wir den Text "Hallo" in `myString` und ersetzen ihn durch "Tschüß". 
 
-## Siehe auch
-Weitere Informationen zu `replace()` und anderen nützlichen Funktionen in Arduino finden Sie in der offiziellen [Dokumentation](https://www.arduino.cc/reference/en/language/functions/communication/stringfunctions/replace/). Weitere Tipps und Tricks zur Textsuche und -ersetzung können Sie auch in [diesem Artikel](https://www.arduino.cc/reference/en/language/functions/communication/stringfunctions/replace/) nachlesen.
+## Vertiefung
+Die `replace()` Methode ist eine relative Neuheit in der Arduino-Entwicklung. In früheren Versionen mussten Such- und Ersetzungsoperationen manuell programmiert werden, meist mit Hilfe von Zeigern und Schleifen.
+
+Ein alternatives Verfahren zur `replace()` Methode ist die Verwendung der `strstr()` Funktion, einer Standard-C Funktion, die einen Zeiger auf den ersten Vorkommnispunkt einer Substring in einer Zeichenkette zurückgibt. Dies kann mit anderen C-Funktionen kombiniert werden, um eine Such- und Ersetzungsoperation durchzuführen, erfordert jedoch mehr Programmieraufwand.
+
+Was Implementierungsdetails betrifft, so ersetzt `replace()` tatsächlich den Originalstring und gibt kein neues Stringobjekt zurück. Dies ist etwas, das man im Hinterkopf behalten sollte, besonders wenn man mit großen Mengen von Daten arbeitet, da dies die Leistung beeinträchtigen kann.
+
+## Weiteres nachschlagen
+
+- Weitere Informationen zur `replace()` Methode finden Sie in der [Arduino-Referenz](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/).
+- Für sehr große Textmengen, empfiehlt sich die Verwendung eines spezielleren Tools wie [grep](https://www.gnu.org/software/grep/), das auf effizientere Textsuch- und Ersatzmethoden zurückgreift.
+- Ein vertiefender Blick in die Textsuch- und Ersetzungsalgorithmen kann in der [Wikipedia](https://de.wikipedia.org/wiki/String-Suchalgorithmus) gefunden werden.

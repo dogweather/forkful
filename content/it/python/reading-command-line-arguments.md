@@ -1,7 +1,7 @@
 ---
-title:                "Leggere gli argomenti dalla riga di comando"
-html_title:           "Python: Leggere gli argomenti dalla riga di comando"
-simple_title:         "Leggere gli argomenti dalla riga di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Lettura degli argomenti della riga di comando è quando un programma Python prende i dati direttamente dalla riga di comando, dopo il nome del programma stesso. I programmatori lo fanno per rendere il loro codice più flessibile e versatile, permettendo loro di passare dati diversi al programma ogni volta che viene eseguito.
+## Che cosa & Perché?
+
+Leggere gli argomenti della riga di comando significa accettare gli input direttamente dal terminale o console. Lo facciamo per permettere agli utenti di personalizzare l'esecuzione del programma senza modificare il codice.
 
 ## Come fare:
-Vediamo un esempio semplice di come leggere gli argomenti della riga di comando in Python:
+
+In Python, `sys.argv` è una lista in Python che contiene gli argomenti della riga di comando. Ecco un esempio semplice:
 
 ```Python
 import sys
 
-args = sys.argv
+# Stampa tutti gli argomenti
+for i in range(len(sys.argv)):
+    print(f"Argomento {i}: {sys.argv[i]}")
+```
+Se salvi il codice sopra come `args.py` e lo esegui da una riga di comando con `python args.py arg1 arg2 arg3`, otterrai:
 
-# Il primo argomento è sempre il nome del programma stesso, quindi saltiamolo e prendiamo il secondo argomento
-numero = int(args[1])
-
-# Stampa il quadrato del numero passato come argomento
-print(numero * numero)
-
-# Esegui questo codice da riga di comando con "python nome_programma.py 5" dove "5" è il numero da elevare al quadrato
+```
+Argomento 0: args.py
+Argomento 1: arg1
+Argomento 2: arg2
+Argomento 3: arg3
 ```
 
-Output:
-```
-25
-```
+## Approfondimento
 
-## Approfondimento:
-La lettura degli argomenti della riga di comando risale ai primi giorni della programmazione quando i computer non avevano ancora una GUI. In alternativa, i programmatori potrebbero utilizzare variabili "hard-coded" nel codice, ma questo lo renderebbe meno flessibile e più difficile da modificare in futuro. Implementare la lettura degli argomenti della riga di comando richiede una comprensione dei concetti di sys.argv e il loro utilizzo in condizioni di loop e cicli per gestire più argomenti.
+Nonostante `sys.argv` sia il metodo più popolare, non era l'unico disponibile quando Python fu rilasciato per la prima volta. La libreria `getopt` era quella più usata nelle prime versioni di Python. Oggi, `argparse` è un alternativa più moderna e potente, che offre validazione avanzata degli argomenti e generazione automatica del messaggio di utilizzo.
 
-## Vedi anche:
-- [Documentazione ufficiale di Python su sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
-- [Esempi di codice per la lettura degli argomenti della riga di comando su GitHub](https://github.com/topics/reading-command-line-arguments?l=python)
+`sys.argv` include sempre il nome dello script come suo primo elemento (indice 0). Gli argomenti successivi, inseriti dall'utente, seguono l'ordinamento.
+
+## Per approfondire
+
+1. Documentazione di Python su `sys.argv`: https://docs.python.org/it/3/library/sys.html#sys.argv
+2. Documentazione di Python su `argparse`: https://docs.python.org/it/3/library/argparse.html
+3. Resoconto storico su `getopt`: https://www.gnu.org/software/libc/manual/html_node/Getopt.html 
+4. Guida pratica sull'uso di `argparse` in Python: https://realpython.com/command-line-interfaces-python-argparse/
+5. Versione leggera della libreria `argparse` per script più piccoli e semplici: https://docs.python.org/it/3/library/argparse.html#argparse.ArgumentParser

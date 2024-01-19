@@ -1,6 +1,6 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Python recipe: Generating random numbers"
+html_title:           "Arduino recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Python"
 category:             "Python"
@@ -12,52 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Generating random numbers is making numbers appear "out of nowhere," without a discernible pattern. We use randomness in programs for tasks like anonymizing data, running statistical simulations, or adding gameplay variety.
+In computer programming, generating random numbers is about producing a sequence of numbers that lack any pattern. As programmers, we use such randomness to create things like unique session identifiers, in games, simulations and cryptography.
 
-## How To
+## How to:
 
-Python’s built-in `random` module makes this simple:
+In Python, you can use the random module to generate random numbers. Here's how:
 
-```Python
+```python
 import random
-
-# random float between 0 - 1
-print(random.random())
+print(random.randint(1, 100))  # Prints a random integer between 1 and 100.
 ```
 
-Or get a random integer within a range:
+Here's another handy function to generate a random float:
 
-```Python
-import random
+```python
+print(random.random())  # Prints a random float between 0 and 1.
+```
 
-# random integer between 1 - 10
-print(random.randint(1, 10))
+And you might get outputs like this:
+
+```python
+52
+0.345834234
+```
+
+You can also generate a list of unique random numbers:
+
+```python
+print(random.sample(range(100), 10))    # Prints 10 unique random numbers from 0 to 99
 ```
 
 ## Deep Dive
 
-Python's `random` module first appeared in version 1.1 (1994). It implements pseudo-random number generators (PRNGs), that generate seemingly random sequences from deterministic initial conditions, a "seed."
+The concept of generating random numbers dates back to ancient times, with dice games being one of the earliest examples. But in the world of computers, "random" is a bit trickier. 
 
-An alternative is Python's `secrets` module, which generates true random numbers, safe for cryptographic use.
+Here's why: Computers are deterministic machines, made to consistently repeat processes. Asking for randomness from a system built on predictability seems paradoxical. That's why we have pseudorandom numbers in computing. Generated using algorithms with deterministic behavior, they're not truly random but "random enough" for most purposes.
 
-We can even implement our own PRNG; Linear Congruential Generator (LCG) is the simplest:
+The main alternative to Python's random module is the numpy module, which provides the function `numpy.random()`. It's much faster for large arrays but requires an extra installation step.
 
-```Python
-def lcg(modulus, a, c, seed):
-    """Linear congruential generator."""
-    while True:
-        seed = (a * seed + c) % modulus
-        yield seed
-
-gen = lcg(9, 2, 0, 1)
-for _ in range(10):
-    print(next(gen))
-```
-A bit complex, it's generally useful to stick with built-ins.
+Underneath the hood, Python's random number generator uses the Mersenne Twister algorithm, a widely-used, well-vetted pseudorandom generator.
 
 ## See Also
 
-- Official [Python `random` module documentation](https://docs.python.org/3/library/random.html)
-- [Module `secrets` official documentation](https://docs.python.org/3/library/secrets.html)
-- Wiki article on [Pseudo-random number generators](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
-- A tech post about [random vs. secrets in Python](https://yasoob.me/posts/understanding-more-about-python-random-and-secrets-module/)
+For more details and functionalities, check out Python's [official documentation](https://docs.python.org/3/library/random.html) for the random module, and [numpy's random sampling](https://numpy.org/doc/stable/reference/random/index.html) for large arrays.

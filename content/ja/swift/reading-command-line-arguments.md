@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミングにおけるコマンドライン引数の読み取り"
-html_title:           "Swift: コンピュータプログラミングにおけるコマンドライン引数の読み取り"
-simple_title:         "コンピュータプログラミングにおけるコマンドライン引数の読み取り"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Bash: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,21 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なんで？
-コマンドライン引数の読み込みとは、プログラマーがプログラムに与えられた入力を読み取ることです。プログラマーがコマンドライン引数を読み込むのは、ユーザーからの入力を受け取ったり、プログラムの動作をカスタマイズしたりするためです。
+## 何となぜ？
 
-## 方法：
-```Swift
-let commandLineArgs = CommandLine.arguments
-print(commandLineArgs)
+コマンドライン引数を読むとは、ユーザーがコマンドラインに入力した情報をプログラムが読み取ることです。このことにより、プログラムの挙動をユーザーが実行時にカスタマイズできます。
+
+## 使い方：
+
+Swiftでコマンドライン引数を読むには、標準ライブラリの`CommandLine`クラスを使用します。
+
+```swift
+for argument in CommandLine.arguments {
+    print(argument)
+}
 ```
 
-上記のように、`CommandLine.arguments`を使用してコマンドライン引数を読み込むことができます。また、`print()`を使用することで、プログラムが受け取った引数を表示することができます。
+上記を例にすると、次のような出力が期待されます:
 
-## 詳細を掘り下げる：
-コマンドライン引数の読み込みは、プログラミング言語によって異なる方法で行われます。Swiftでは、`CommandLine.arguments`を使用することで簡単に読み込むことができます。また、`arguments`にはプログラム名（通常は最初の要素）も含まれることに注意しましょう。コマンドライン引数の読み込みを行わずに、直接ユーザーからの入力を受け取ることも可能ですが、コマンドライン引数を使用することで、プログラムの実行時に引数を与えることができます。
+```bash
+$ swift main.swift apple orange banana
+main.swift
+apple
+orange
+banana
+```
 
-## 関連リンク：
-- [Swift公式ドキュメント（日本語）](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
-- [コマンドライン引数の読み込み方法の記事（英語）](https://www.raywenderlich.com/896-swift-tutorial-part-2-a-simple-ios-app)
-- [コマンドライン引数の活用方法の記事（英語）](https://www.ralfebert.de/snippets/ios/command-line/)
+`CommandLine.arguments`はチューリング完全なプログラミング言語であるSwiftにおいて使います。
+
+## ディープダイブ
+
+コマンドライン引数は、UNIXエポック（1970年代初頭）から現在まで、ユーザーがプログラムの動きを制御するための一般的な方法であり続けています。
+
+一方、Swiftでは、コマンドライン引数を直接操作する代わりに、ライブラリを使用してデータをパースし、より構造化された方法でアクセスすることが一般的となりつつあります。例えば、Appleが提供しているSwift Argument Parser ライブラリがそれに当たります。
+
+また、Swiftではコマンドライン引数は`CommandLine.arguments`プロパティによって読み取られます。このプロパティはStringの配列を返し、0番目の要素は常にプログラム自体の名前です。
+
+## 参考情報
+
+* [Swift Argument Parser: A Swift package for parsing command-line arguments](https://github.com/apple/swift-argument-parser)
+* [Swift Standard Library: CommandLine](https://developer.apple.com/documentation/swift/commandline)
+* [Swift Tutorial: Command Line Programs](https://www.raywenderlich.com/385-command-line-programs-macos-tutorial)

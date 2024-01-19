@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 검색 및 치환하기"
-html_title:           "C++: 텍스트 검색 및 치환하기"
-simple_title:         "텍스트 검색 및 치환하기"
+title:                "텍스트 검색 및 교체"
+html_title:           "Elixir: 텍스트 검색 및 교체"
+simple_title:         "텍스트 검색 및 교체"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,36 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-텍스트 검색 및 교체는 프로그래머들이 자주 하는 작업입니다. 이는 특정 텍스트를 찾아 다른 텍스트로 대체하는 과정입니다. 프로그래머들은 이를 통해 코드의 일관성을 유지하고 에러를 수정할 수 있습니다.
+## 무엇이며 왜 그런가?
 
-## 하는 방법:
-```C++
-// 텍스트 검색 예제
-string text = "Hello World!";
-string search = "World";
+문자열에서 텍스트를 찾고 대체하는 것은 흔한 프로그래밍 작업입니다. 이는 데이터 정제, 사용자 입력 처리, 코드 자동화 등 다양한 컨텍스트에서 사용됩니다.
 
-// 검색된 텍스트를 새로운 텍스트로 교체
-string replace = "Universe";
-replace(text.find(search), search.length(), replace); 
+## 어떻게 하는가:
 
-cout << text; // 출력 결과: Hello Universe!
-```
+다음은 C++에서 문자열 내의 텍스트를 찾아 대체하는 작업을 수행하는 간단한 코드 예제입니다.
 
 ```C++
-// 텍스트 검색 후 범위 지정 예제
-string text = "My favorite color is blue. I also love blueberries.";
-string search = "blue";
+#include <string>
+#include <iostream>
 
-// 두 번째 blue부터 다음 공백까지를 검색 범위로 지정
-replace(text.find(search, text.find(search) + 1), search.length(), "purple"); 
+int main(void) {
+  std::string s = "Hello, World!";
+  size_t pos = s.find("World");
 
-cout << text; // 출력 결과: My favorite color is purple. I also love purpleberries.
+  if(pos != std::string::npos)
+     s.replace(pos, 5, "C++");
+
+  std::cout << s << '\n';
+
+  return 0;
+}
 ```
 
-## 깊이 파고들기:
-텍스트 검색 및 교체는 프로그래밍에서 오랜 역사를 가지고 있습니다. 이전에는 이 작업을 수동으로 수행하여 많은 시간과 노력이 필요했습니다. 하지만 지금은 간단한 명령어로 쉽게 할 수 있습니다. 또한, 검색 범위를 지정하여 보다 정확한 결과를 얻을 수도 있습니다.
+위 코드를 실행하면 결과가 출력됩니다:
 
-## 참고:
-- [C++ 문자열 함수](https://www.cplusplus.com/reference/string/string/)
-- [텍스트 검색 및 교체를 위한 다른 알고리즘](https://www.geeksforgeeks.org/searching-and-replacing-strings-using-a-pattern/)
+```C++
+Hello, C++!
+```
+그래서 "World"라는 단어가 "C++"로 대체되었습니다.
+
+## 깊은 이해
+
+텍스트 탐색 및 대체 기능은 거의 모든 프로그래밍 언어에서 제공되며, 특별히 C++은 STL(Standard Template Library) 내의 문자열에서 직접 사용할 수 있습니다.
+
+대체 방법으로, C++에서 Boost Library의 `replace_all`함수를 사용할 수도 있습니다.
+
+```C++
+#include <boost/algorithm/string/replace.hpp>
+boost::replace_all(s, "World", "C++");
+```
+
+하지만 이 방법은 부스트 라이브러리가 설치되어 있어야 합니다.
+
+## 참조
+
+아래 링크에서 C++ 텍스트 검색 및 대체에 대한 더 많은 정보를 찾을 수 있습니다:
+
+1. [cplusplus.com: std::string - find](http://www.cplusplus.com/reference/string/string/find/)
+2. [cplusplus.com: std::string - replace](http://www.cplusplus.com/reference/string/string/replace/)
+3. [Boost Library: replace_all function](https://www.boost.org/doc/libs/1_73_0/doc/html/string_algo/usage.html#id-1.3.3.6.9)

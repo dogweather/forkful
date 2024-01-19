@@ -1,6 +1,6 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "Kotlin: Extraction de sous-chaînes"
+html_title:           "Arduino: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,34 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est et pourquoi?
 
-Extraire des sous-chaînes de caractères est une technique courante en programmation qui consiste à sélectionner un morceau spécifique d'une chaîne de caractères plus grande. Cela peut être utile pour manipuler ou utiliser des données spécifiques dans un programme.
+L'extraction de sous-chaînes est l'action de retirer une partie spécifique d'une chaîne de caractères. Les programmeurs le font pour récupérer et manipuler des informations spécifiques dans des séquences de texte plus longues.
 
-# Comment faire:
+## Comment faire :
 
-Voici deux façons différentes d'extraire des sous-chaînes en utilisant Kotlin:
+Voici des exemples de la manière de le faire dans Kotlin:
 
 ```Kotlin
-// Exemple 1:
-val str = "Bonjour le monde!"
-println(str.substring(8)) // sortie: "le monde!"
+val chaine = "Apprenez Kotlin facilement"
+val sousChaine = chaine.substring(9, 15)
+println(sousChaine) //Output: Kotlin
+```
+Dans l'exemple ci-dessus, nous avons déclaré une chaîne `"Apprenez Kotlin facilement"` et nous avons utilisé la méthode `.substring(startIndex, endIndex)` pour extraire la sous-chaîne "Kotlin".
 
-// Exemple 2:
-val str = "Hello, je suis un programme"
-println(str.substring(7, 16)) // sortie: "je suis un"
+```Kotlin
+val chaine = "Kotlin est cool"
+val debut = chaine.substring(0, 6)
+val fin = chaine.substring(10)
+println(debut) //Output: Kotlin
+println(fin) //Output: cool
+```
+Ici, nous voyons deux usages de .substring(). L'une pour extraire une sous-chaîne à partir d'un index de début jusqu'à la fin, l'autre à partir du début de la chaîne à un index de fin spécifique.
+
+## Exploration en profondeur
+
+Historiquement, l'extraction de sous-chaînes est une opération courante dans de nombreux langages de programmation. En Kotlin, la méthode `.substring()` est basée sur celle de Java, mais elle est simplifiée pour un usage plus intuitif.
+
+Il existe différentes manières d'extraire des sous-chaînes en Kotlin. Pour plus de contrôle, nous pouvons utiliser `.substringBefore(delimiter)`, `.substringAfter(delimiter)` ou `.substringBetween(delimiter1, delimiter2)`.
+
+```Kotlin
+val chaine = "Apprenez-Kotlin-facilement"
+val sousChaine = chaine.substringBefore("-")
+println(sousChaine) //Output: Apprenez
 ```
 
-# Zoom sur:
+La méthode `.substring()` effectue une copie de la portion de la chaîne originale, ce qui peut avoir un impact sur les performances pour de très longues chaînes. Cependant, pour la plupart des applications, cette différence de performance est négligeable.
 
-- Contexte historique: L'utilisation de sous-chaînes est apparue dès les débuts de la programmation, lorsque les ordinateurs étaient limités en termes de mémoire et de puissance de calcul. Le fait de pouvoir extraire uniquement les données dont on a besoin a grandement aidé à optimiser les performances.
+## Voir aussi
 
-- Alternatives: Bien qu'extraire des sous-chaînes soit une méthode efficace, certains programmeurs préfèrent utiliser des regex (expressions régulières) pour sélectionner des parties spécifiques d'une chaîne de caractères.
+Pour plus d'informations sur les string en Kotlin, consultez ces sources :
 
-- Détails d'implémentation: En Kotlin, la fonction `substring()` prend soit un seul paramètre (l'index de départ à partir duquel extraire la sous-chaîne), soit deux paramètres (l'index de départ et l'index de fin). L'index de début est inclus dans la sous-chaîne, tandis que l'index de fin ne l'est pas.
+1. [Documentation Officielle Kotlin- Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+2. [Baeldung - Manipuler les string en Kotlin](https://www.baeldung.com/kotlin/strings)
+3. [Medium - Exploring Strings in Kotlin](https://medium.com/androiddevelopers/exploring-kotlins-hidden-costs-part-1-fbb9935d9b62)
 
-# Voir aussi:
-
-- La documentation officielle sur les sous-chaînes en Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html
-- Un article sur l'utilisation des sous-chaînes en Java: https://www.baeldung.com/java-substring
-- Des exemples pratiques d'utilisation de sous-chaînes en programmation: https://www.geeksforgeeks.org/g-fact-81/
+Ces ressources couvrent bien les différentes méthodes pour manipuler les chaînes de caractères en Kotlin et vous donneront une meilleure compréhension de comment utiliser efficacement ces méthodes.

@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##[What & Why?]
-テキストの検索と置換とは何かを説明するため、プログラマーがこの作業をする理由を紹介します。テキストの検索と置換とは、プログラム内の文字列を検索して、必要に応じて別の文字列で置き換えることを指します。プログラマーはこの作業を行うことで、多数のコードを手作業で変更する手間を省き、効率的にプログラムを開発することができるようになります。
+## 何と何故？
+ソフトウェア開発では、テキストの検索と置換が一般的な作業です。プログラムに含まれるテキストの更新や修正を行わなければならないシチュエーションが頻繁に発生するためです。
 
-##[How to:]
-Javaを使用してテキストの検索と置換を行う方法をご紹介します。まずは、下記のコードブロックをコピーして使用してください。
+## 実行方法：
+Javaで文字列を検索し置換するための基本コードは以下の通りです。
 
 ```Java
-// テキストの置換を行うためのメソッドを定義する
-public static void replaceString(String original, String target, String replacement){
-    int index = original.indexOf(target);
-    String newString = original.substring(0, index) + replacement + original.substring(index + target.length());
-    System.out.println(newString);
+public class Main {
+    public static void main(String[] args) {
+        String text = "こんにちは、Javaプログラミング！";
+        String searchText = "Java";
+        String replaceText = "Python";
+
+        String result = text.replace(searchText, replaceText);
+
+        System.out.println(result);
+        // 出力: こんにちは、Pythonプログラミング！
+    }
 }
 ```
 
-上記のコードでは、`replaceString`メソッドを使用して「original」という文字列内の「target」という文字列を「replacement」で置き換えています。例えば、`replaceString("Hello World", "World", "Java")`というコードを実行すると、「Hello Java」という結果が得られます。
+## 深掘り：
+テキストの検索と置換は、初期の計算機科学の時代から存在し、今日でもその価値が認識されています。しかし、他の言語、例えばPerlやPythonでは、正規表現を利用したより洗練された検索置換メソッドを提供しています。Javaでも`Pattern`と`Matcher`クラスを使用すれば正規表現が使えます。しかし、一般的な検索置換と比べて設定が難しく、処理速度も若干落ちる点には注意が必要です。
 
-##[Deep Dive]
-テキストの検索と置換は、プログラミングにおいて非常に重要な役割を果たしてきました。以前は、大量のコードを手作業で修正することが一般的でしたが、テキストの検索と置換を使うことで、簡単かつ迅速にコードを変更することができるようになりました。
+## 参考資料：
+1. Javaの`String`クラスについて更に学びたい方は、公式文書を参照してください。 [Java String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+2. 正規表現によるパターンマッチングについて学びたい方は、以下のリンクが参考になります。 [Java Regular Expressions](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
 
-テキストの検索と置換を行う方法は様々ありますが、Javaには`replace()`や`replaceAll()`といったメソッドが用意されており、これらを使用することで簡単にテキストの置換を行うことができます。
-
-また、テキストの検索と置換を行う作業は、プログラムの自動化にも貢献しています。例えば、大きなプロジェクトでは、コードの一部分を変更するだけでも多大な時間を要することがありますが、テキストの検索と置換を使うことで短時間で全てのコードを変更することが可能になります。
-
-##[See Also]
-- [JavaのStringクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
-- [Regular Expressions in Java](https://docs.oracle.com/javase/jp/8/docs/api/java/util/regex/package-summary.html)
-- [Text Editing: Searching and Replacing in Java](https://www.codeproject.com/Tips/441657/Text-Editing-Searching-and-Replacing-in-Java)
+興味があれば各リンクをチェックしてみてください。

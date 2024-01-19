@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "Python: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co to jest i dlaczego to robimy?
+# Co i dlaczego?
+Czytanie argumentów z linii poleceń to proces, w którym program odczytuje dane wprowadzone przez użytkownika podczas uruchamiania programu. Programiści robią to, aby umożliwić użytkownikom dostosowywanie działania programu bez konieczności jego modyfikowania.
 
-Czy kiedykolwiek zastanawiałeś się, jak programy na twoim komputerze otrzymują informacje z wiersza poleceń? To właśnie odczytywanie argumentów z linii poleceń jest odpowiedzialne za tę funkcjonalność. Programiści często korzystają z niego, aby móc dostosować swoje programy do konkretnych potrzeb użytkownika.
+# Jak to zrobić:
+Python ma wbudowany moduł `sys` do odczytywania argumentów z linii poleceń. Po prostu zaimportuj ten moduł i skorzystaj z listy `sys.argv`. Pierwszym elementem listy jest nazwa programu i są tu zapisane wszystkie argumenty linii komend.
 
-# Jak to zrobić?
-
-Odczytywanie argumentów z linii poleceń w Pythonie jest bardzo proste. Wystarczy użyć specjalnej funkcji sys.argv, która jest dostępna w standardowej bibliotece języka. Wystarczy zaimportować bibliotekę sys i użyć jej funkcji argv, aby otrzymać listę wszystkich argumentów przekazanych do programu. Na przykład:
-
-```python
+```Python 
 import sys
 
-# Przykładowy program, który odczytuje i wyświetla argumenty z linii poleceń
-print("Liczba przekazanych argumentów:", len(sys.argv))
-print("Argumenty z linii poleceń:", sys.argv)
+for i in range(len(sys.argv)):
+    print(f"Argument {i}: {sys.argv[i]}")
 ```
 
-Przykładowe wywołanie tego programu mogłoby wyglądać następująco:
+Wywołanie powyższego programu z argumentami linii poleceń `arg1 arg2 arg3` da wynik:
 
+```Bash
+Argument 0: script.py
+Argument 1: arg1
+Argument 2: arg2
+Argument 3: arg3
 ```
-> python program.py hello world
-Liczba przekazanych argumentów: 3
-Argumenty z linii poleceń: ['program.py', 'hello', 'world']
-```
 
-# Głębsza analiza
+# Przyjrzyjmy się bliżej
+Czytanie argumentów z linii poleceń to stary trik w programowaniu. Zostało to zaprojektowane dla systemów operacyjnych typu Unix i zostało przyjęte przez wiele języków programowania.
 
-Odczytywanie argumentów z linii poleceń nie jest nową funkcjonalnością w programowaniu. Już w latach 70-tych, kiedy powstał język C, zaimplementowano to rozwiązanie. Alternatywą może być użycie biblioteki argparse, która oferuje większą kontrolę nad przetwarzaniem argumentów oraz dodatkowe funkcje takie jak generowanie pomocy dla użytkownika. 
+Istnieją alternatywne metody do odczytu argumentów z linii poleceń w Pythonie, jak `argparse` lub bibliotekę `click`. `argparse` jest modaulem wbudowanym i oferuje wiele opcji konfiguracyjnych, podczas gdy `click` jest zewnętrzną biblioteką, która jest łatwa do użycia i czytelna.
 
-Implementacja odczytywania argumentów z linii poleceń w Pythonie jest bardzo intuicyjna i nie wymaga dużo kodu. Warto jednak pamiętać o różnych wyjątkach, które mogą wystąpić, np. brak przekazanych argumentów lub błędny format. W takich przypadkach, warto zastosować odpowiednie bloki try-catch, aby wyłapać i obsłużyć te wyjątki.
+Szczegółem implementacyjnym jest to, że `sys.argv` nie zawiera wartości domyślnych dla argumentów, które nie zostały podane przy uruchomieniu programu. Musisz samodzielnie zapewnić logiczną obsługę takich przypadków.
 
-# Zobacz także
-
-Więcej informacji na temat odczytywania argumentów z linii poleceń w Pythonie można znaleźć w oficjalnej dokumentacji języka: https://docs.python.org/3/library/sys.html#sys.argv 
-
-Dla bardziej zaawansowanych funkcjonalności związanych z obsługą argumentów z linii poleceń, warto zapoznać się z biblioteką argparse: https://docs.python.org/3/library/argparse.html
+# Zobacz też
+1. Moduł `sys` w dokumentacji Pythona: https://docs.python.org/3/library/sys.html
+2. Moduł `argparse` w dokumentacji Pythona: https://docs.python.org/3/library/argparse.html
+3. Biblioteka `click`: https://click.palletsprojects.com/
+4. Arguments command line w Python - tutorial: https://realpython.com/python-command-line-arguments/

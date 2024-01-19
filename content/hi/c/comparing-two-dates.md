@@ -1,7 +1,7 @@
 ---
-title:                "दो तारीखों का तुलना"
-html_title:           "C: दो तारीखों का तुलना"
-simple_title:         "दो तारीखों का तुलना"
+title:                "दो तारीखों की तुलना"
+html_title:           "Elixir: दो तारीखों की तुलना"
+simple_title:         "दो तारीखों की तुलना"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,55 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kya & Kyon?
+---
+title: दो तारीखों की तुलना: सी प्रोग्रामिंग में 
 
-Tareekh aur samay ke do tarikhon ko tulna karne ka matlab hai ki programmer do tarikhon ko mukhay roop se compare karte hain. Yeh aksar prashn hai ki kyoon programmers yeh karte hain. Ek simple sa jawab hai ki hume do tarikhon ke beech antar ya similarities dhundhna hota hai. Isse hume aage ki coding mein madad mil sakti hai ya hume kisi specific kaam ke liye tarikhon ka pata lagana ho sakta hai. Isliye, tarikhon ko compare karna programming mein ek important task hai.
+## क्या और क्यों? 
+तारीखों की तुलना होती है दो तारीखों को मिलाकर देखने उनमें अंतर समझने की प्रक्रिया। प्रोग्रामर्स इसे तारीखों के क्रमबद्धता और अंतरालों को समझने के लिए करते हैं। 
 
-## Kaise Karein?
+## कैसे करें:
+यहाँ एक सरल सी प्रोग्राम है:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-  struct tm date1 = {0}; // pehli tarikh
-  struct tm date2 = {0}; // dusri tarikh
-  
-  // tarikhon ko set karein
-  date1.tm_year = 2020 - 1900; // 2020 saal
-  date1.tm_mon = 10 - 1; // October (1 se kam dena hota hai)
-  date1.tm_mday = 20; // 20th tarikh
-  date2.tm_year = 2020 - 1900;
-  date2.tm_mon = 11 - 1;
-  date2.tm_mday = 25;
-  
-  // tarikhon ko compare karein
-  if (mktime(&date1) < mktime(&date2))
-  {
-    printf("Tarikh 1 pehle aati hai.");
-  }
-  else if (mktime(&date1) > mktime(&date2))
-  {
-    printf("Tarikh 2 pehle aati hai.");
-  }
-  else
-  {
-    printf("Dono tarikhon mein koi antar nahi hai.");
-  }
-  return 0;
+int main(){
+    time_t now;
+    time(&now);
+
+    struct tm *local = localtime(&now);
+
+    // प्रिंट करे यहाँ UTC time 
+    printf("Date: %02d-%02d-%04d\n", local->tm_mday, local->tm_mon + 1, (local->tm_year + 1900));
+
+    return 0;
 }
 ```
 
+आपकी आउटपुट:
+
 ```C
-Output:
-Tarikh 1 pehle aati hai.
+Date: 24-01-2023
 ```
 
-## Gehri Khurafat
+## गहराई में:
+ऐतिहासिकता: `time.h` है एक सी लाइब्रेरी कि तारीख और समय से सम्बंधित फ़ंक्शन्स का समर्थन करती है। यह 1978 में ANSI C स्टैंडर्ड के भाग के रूप में शामिल हुई थी। 
 
-Do tarikhon ko compare karne ka sawaal pehle bhi utha hai. Yeh ek purani problem hai aur bahut saare methods hain jaise ki join aur merge. Par ab yeh problem bahut hi asaan hai kyonki libraries jaise ki ```time.h``` has milti hai. Aur agar aap advanced level par coding karte hain toh aap khud bhi kuch functions likh sakte hain jo tarikhon ko compare karein.
-
-## Aage Padhein
-
-Agar aapko tarikhon ke functions aur algorithms se compare karna accha lagta hai toh aap inke baarein mein aur padh sakte hain: [Date and Time Functions in C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+विकल्प: कई अन्य लिब्र

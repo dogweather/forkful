@@ -1,7 +1,7 @@
 ---
-title:                "Leser en tekstfil"
-html_title:           "Javascript: Leser en tekstfil"
-simple_title:         "Leser en tekstfil"
+title:                "Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,52 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+---
 
-Lesing av en tekstfil er en vanlig oppgave for mange programmerere. Dette innebærer å åpne en fil som inneholder tekst og lese innholdet i programmet. Dette gjøres for å kunne behandle og manipulere teksten, for eksempel å filtrere ut bestemte linjer eller finne spesifikke ord.
+## Hva og Hvorfor?
+Å lese en tekstfil er prosessen med å hente og tolke data lagret i et vanlig tekstformat i en fil. Programmere gjør dette for å manipulere data, analysere informasjon, og mange andre oppgaver som medfører behandling av lagret tekst.
 
 ## Hvordan:
-
-Lesing av en tekstfil kan gjøres ved hjelp av Javascript ved å bruke innebygde metoder som readFile og readFileSync. Disse metodene tar inn filnavnet som parameter og returnerer en streng med filens innhold. Her er et eksempel:
+Her er en enkel kode i Javascript for å lese innholdet i en tekstfil ved hjelp av Node.js 'fs' modul:
 
 ```Javascript
 const fs = require('fs');
 
-// Leser filen asynkront
-fs.readFile('tekstfil.txt', (err, data) => {
-  if (err) throw err;
-  
-  // Konverterer dataen til en streng
-  let tekst = data.toString();
-
-  // Printer tekststrengen
-  console.log(tekst);
+fs.readFile('MinTekstFil.txt', 'utf8', function(err, data){
+    if (err) throw err;
+    console.log(data);
 });
-
-// Leser filen synkront
-let tekst = fs.readFileSync('tekstfil.txt', 'utf8');
-
-// Printer tekststrengen
-console.log(tekst);
 ```
 
-Eksempel på output for tekstfilen "tekstfil.txt":
+Når du kjører denne koden, vil den skrive ut innholdet i teksten 'MinTekstFil.txt' til konsollen.
+
+## Dypdykk:
+Historisk sett, lesingen av tekstfiler går helt tilbake til de tidlige dagene av programmering. Lesing av tekstfiler er en grunnleggende operasjon som har blitt optimert og forenklet over tid.
+
+Alternativt, i nettleserbasert Javascript, kan du bruke File API for å lese tekstfiler. Her er et eksempel på det:
+
+```Javascript
+let fileInput = document.getElementById('myFile');
+let file = fileInput.files[0];
+let reader = new FileReader();
+
+reader.onload = function(e){
+  console.log(reader.result);
+}
+
+reader.readAsText(file);
 ```
-Dette er en tekstfil.
-Her er litt tekst som kan leses inn i et program.
-Vi håper dette var til hjelp!
-```
+Vær oppmerksom på at 'myFile' skal være ID-en til en `<input type="file">` i HTML-en din.
 
-## Dykk Dypere:
+Implementering av lesing av tekstfiler i Javascript avhenger sterkt av miljøet; Node.js vil bruke 'fs' modul, mens nettlesere vil bruke File API. Begge er effektive, men de har litt forskjellige brukssituasjoner.
 
-Å lese en tekstfil har vært en vanlig oppgave lenge før Javascript ble opprettet. Med introduksjonen av node.js, ble det enklere å lese filer asynkront og synkront. For å lese filer fra nettleseren, må det brukes spesielle APIer som FileReader eller AJAX.
-
-Det er også mulig å benytte seg av andre programmeringsspråk som Python, som er spesialisert for å arbeide med tekstdokumenter og har mange innebygde funksjoner for dette formålet.
-
-Det er også viktig å huske på at lesing og skriving av filer kan være en ressurskrevende prosess, så det er alltid lurt å lukke filen etter bruk for å unngå tap av ressurser.
-
-## Se også:
-
-- [Node.js dokumentasjon for fs-modul](https://nodejs.org/api/fs.html)
-- [W3Schools tutorial om å lese filer i Javascript](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [MDN web docs om FileReader API](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+## Se Også:
+- MDN Web Docs: [FileReader.readAsText()](https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsText)
+- Node.js Docs: [fs.readFile()](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
+- W3Schools: [JavaScript HTML DOM Input Text](https://www.w3schools.com/jsref/dom_obj_text.asp)

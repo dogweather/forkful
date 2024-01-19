@@ -1,6 +1,6 @@
 ---
 title:                "Creating a temporary file"
-html_title:           "Lua recipe: Creating a temporary file"
+html_title:           "C# recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,40 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Creating a temporary file in Lua refers to the process of generating a file that is used for a short period of time and then deleted. Programmers often use temporary files to store data temporarily, perform operations on it, and then discard the file once it's no longer needed.
 
-## How to:
-To create a temporary file in Lua, you can use the built-in function ```io.tmpfile()```. This will create a file object that can be used for reading and writing temporary data.
+Creating a temporary file is a common procedure in programming where we make a non-permanent data storage location for interim results or data. Programmers use such files to manage memory, especially in processing large amounts of data or where data consistency and recovery are important.  
 
-```Lua
-local temp_file = io.tmpfile()
-```
+## How to: 
 
-To write data to the temporary file, you can use the ```write()``` method on the file object. Here's an example of writing a string to the temporary file and then reading it back:
+Lua doesn't provide in-built functions to create temp files. But fear not, the standard `os` library is our savior. Here's how we create a temporary file:
 
 ```Lua
-temp_file:write("This is a temporary file.")
-temp_file:seek("set")
-print(temp_file:read("*a"))
+local os = require('os')
+local path = os.tmpname()
+
+-- Now we have a temp file name; let's open it
+local file = assert(io.open(path, 'w'))
+
+-- Ensure to close and remove after
+file:write("Temp data")
+file:close()
+os.remove(path)
 ```
 
-Output:
-```
-This is a temporary file.
-```
+And voila! You successfully wrote and removed a temp file, with "Temp data" written inside.
 
-Once you're finished using the temporary file, you can close it by using the ```close()``` method on the file object.
+## Deep Dive 
 
-```Lua
-temp_file:close()
-```
+Lua, deriving much from Scheme and other languages, often uses libraries for features others include in-built. Our reliance on `os.tmpname()` for temp files is one such case. But, it's no weakness. By providing only the bare minimum, Lua ensures versatility across platforms.
 
-## Deep Dive:
-Creating temporary files has been a common practice in programming for many years. It allows for efficient handling of data that is only needed temporarily without cluttering up the system's permanent files. Alternatives to creating temporary files include using in-memory data structures or using operating system-specific commands.
+Alternatives? In Lua, not so many. The `os` and `io` libraries provide this basic need quite fine. But if you're into languages, many offer direct functions—like `tmpfile()` in C.
 
-Lua's ```io.tmpfile()``` function creates a temporary file in the system's default temp directory. However, you can also specify a specific directory by passing in a string as an argument to the function. The temporary file is automatically deleted when the file object is closed or when the program exits.
+One thing worth noting: the files created by `os.tmpname()` aren't auto-deleted. They're your responsibility to manage. A triple-play of opening, writing, and removing—as shown above—should be your routine.
 
-## See Also:
-- [Lua's File Manipulation Module](https://www.lua.org/manual/5.4/manual.html#6.7)
-- [Using Temporary Files in Lua](https://www.lua.org/manual/5.4/manual.html#6.7.6)
-- [Operating System Integration in Lua](https://www.lua.org/manual/5.4/manual.html#6.9)
+## See Also 
+
+To get familiar with other data management techniques in Lua, check these links:
+
+1. File I/O: https://www.tutorialspoint.com/lua/lua_file_io.htm
+2. Standard Libraries: https://www.lua.org/manual/5.1/manual.html#5.1
+3. `os` Library: https://www.lua.org/pil/22.1.html
+
+And that's it—no fluff, just stuff. Happy coding!

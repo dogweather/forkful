@@ -1,6 +1,6 @@
 ---
 title:                "Eine temporäre Datei erstellen"
-html_title:           "Elm: Eine temporäre Datei erstellen"
+html_title:           "Java: Eine temporäre Datei erstellen"
 simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,36 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Erstellen einer temporären Datei ist ein gängiger Prozess in der Programmierung. Temporäre Dateien dienen als Zwischenspeicher für Daten, die während der Ausführung eines Programms benötigt werden. Sie werden oft verwendet, um große Datenmengen zwischenzuspeichern, die den Arbeitsspeicher überlasten könnten.
 
-## Wie geht's?
-Eine temporäre Datei in Elm zu erstellen ist einfach. Hier ist ein Beispielcode, der eine temporäre Datei erstellt und ihren Namen auf der Konsole ausgibt:
+Ein temporäres Datei-Erzeugen ist der Prozess, eine Datei zu schaffen, die zur Speicherung temporärer Daten während einer Sitzung genutzt wird. Programmierer machen das, um sensiblen Daten-Verlust zu vermeiden und die Performance zu verbessern.
 
+## So geht's:
+
+Elm bietet keine direkten Möglichkeiten zur Dateierstellung. Es ist eine sprachliche aufgedeckt, die zur Verbesserung der Web-Front-Ends entwickelt wurde, und daher nicht direkt mit Dateisystemen interagieren kann.
+
+Aber in der Welt von Elm, kannst du möglicherweise mit temporären Daten auf diese Weise umgehen mit hilfe des `localStorage`:
+
+```Elm
+import Browser
+import Browser.Navigation as Nav
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+
+type alias Model = String
+
+main =
+  Nav.program Url.Parser.identity
+    { init = init
+    , update = update
+    , subscriptions = \_ -> Sub.none
+    , view = view
+    }
+
+init : Url.Url -> Nav.Key -> ( Model, Cmd Msg )
+init url key =
+  ( "Daten laden...", Nav.load ("/it.com/"+ url.fragment) )
+
+type Msg = GotUrl (Result Nav.LoadError String)
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+  case msg of
+    GotUrl (Ok url) ->
+      (url, Cmd.none)
+
+    GotUrl (Err _) ->
+      ( "Fehler beim Laden der URL!", Cmd.none )
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ button [ onClick (Nav.pushUrl model ("http://example.com/" ++ model)) ] [ text "Speichern" ]
+        ]
 ```
-Elm Tempfile Beispiel
 
-import Tempfile exposing (..)
+## Weitergehende Information
 
-main = 
-    let 
-        { success, name } = tempfile "meine_temp_datei" ".txt" 
-    in 
-        if success 
-            then 
-                putStrLn ("Name der Temporären Datei: " ++ name) 
-            else 
-                putStrLn "Fehler beim Erstellen der Temporären Datei"
-```
+In der Vergangenheit waren temporäre Dateien üblicherweise zur Lösung von Speicherproblemen verwendet. Heute sind sie immer noch ein praktikables Mittel zum Datenaustausch zwischen Systemen und Prozessen. Elm, als eher Frontend-orientierte Sprache, ist nicht direkt für solche Aufgaben ausgelegt.
 
-Die Ausgabe dieses Codes wäre:
+Wenn du Alternativen suchst, könntest du eine Backend-Sprache wie Node.js in Betracht ziehen, die eine mächtige und flexible Bibliothek für Dateioperationen bietet. Aber in Elm, ist der Verwendung von `localStorage` eine probate Methode um temporäre Daten zu speichern.
 
-```
-Name der Temporären Datei: meine_temp_datei.txt
-```
+## Siehe auch
 
-## Tiefer Einblick
-Das Konzept der temporären Dateien entstand in den 1960er Jahren mit der Entwicklung von Betriebssystemen, um eine effiziente Verwaltung von Speicherressourcen zu ermöglichen. In Elm gibt es auch andere Möglichkeiten, temporäre Dateien zu erstellen, wie z.B. mit der `Filesystem`-Bibliothek. Diese bietet weitere Funktionen für die Verwaltung von Dateien und Ordnern.
-
-## Sieh dir auch an
-- Die offizielle Elm-Dokumentation zu `Tempfile`: https://package.elm-lang.org/packages/elm-lang/core/latest/Tempfile 
-- Ein Tutorial zum Erstellen von temporären Dateien mit der `Filesystem`-Bibliothek: https://elmprogramming.com/tutorials/create-temporary-file-in-elm.html
+Schau dir auch die Links an:
+1. Temporäre Daten in Webanwendungen: [link]
+2. Nutzung von `localStorage` in Elm: [link]
+3. Node.js Datei-Operationen: [link]

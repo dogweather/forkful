@@ -1,7 +1,7 @@
 ---
-title:                "Analyser une date à partir d'une chaîne de caractères"
-html_title:           "C: Analyser une date à partir d'une chaîne de caractères"
-simple_title:         "Analyser une date à partir d'une chaîne de caractères"
+title:                "Analyser une date à partir d'une chaîne"
+html_title:           "Clojure: Analyser une date à partir d'une chaîne"
+simple_title:         "Analyser une date à partir d'une chaîne"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,50 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi? 
-Parsing une date à partir d'une chaîne est le processus de convertir une date représentée sous forme de chaîne de caractères en un format compréhensible par l'ordinateur. Les programmeurs utilisent cette technique pour manipuler et comparer des dates dans leurs programmes.
+## Quoi & Pourquoi?
+L'analyse d'une date à partir d'une chaîne est le processus de conversion d'une date représentée sous forme de texte en format de date compréhensible par le programme. Les programmeurs le font pour manipuler et comparer les dates efficacement.
 
-## Comment:
-Voici un exemple simple de code en C pour parser une date à partir d'une chaîne :
+## Comment faire :
+Voici un exemple simple qui montre comment analyser une date à partir d'une chaîne en utilisant la fonction `strptime` de la bibliothèque time.h.
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    char date[10] = "15/07/2021";
+int main() {
+    struct tm tm;
+    char buf[255];
+
+    const char *str = "06/04/2021";
+    strptime(str, "%m/%d/%Y", &tm);
     
-    struct tm parsed;
-    
-    // Utilisation de la fonction strptime pour parser la date
-    strptime(date, "%d/%m/%Y", &parsed);
-    
-    // Affichage du jour, mois, année
-    printf("Jour: %d\n", parsed.tm_mday);
-    printf("Mois: %d\n", parsed.tm_mon + 1);
-    printf("Année: %d\n", parsed.tm_year + 1900);
-    
+    strftime(buf, sizeof(buf), "%d %B, %Y", &tm);
+    printf("Date formatée : %s\n", buf);
+
     return 0;
 }
 ```
-
-Résultat :
+Le résultat de cet exemple sera :
 
 ```
-Jour: 15
-Mois: 7
-Année: 2021
+Date formatée : 04 juin, 2021
 ```
-Ce code utilise la fonction `strptime` de la bibliothèque `time.h` pour parser la date. Le format `%d/%m/%Y` indique que la date est représentée comme le jour, mois et année séparés par des barres obliques.
 
-## Plongée en profondeur:
-Parsing de dates à partir de chaînes n'est pas une nouveauté en informatique. En fait, il a été introduit dès les premières versions du langage C. Une alternative à la fonction `strptime` est `scanf` qui peut également être utilisée pour parser des dates en utilisant un format spécifique.
+## Plongeon Profond :
+Historiquement, la conversion de chaînes de date était un processus délicat et sujet à des erreurs. C'est pourquoi la fonction `strptime` a été introduite dans la bibliothèque time.h pour faire cela de manière systématique.
 
-Cependant, avec l'évolution des langages et des bibliothèques, il existe maintenant des outils plus avancés et plus précis pour effectuer cette tâche. Par exemple, la bibliothèque `date.h` incluse dans le langage C11 offre des fonctions pour manipuler les dates et les heures de manière plus simple et fiable.
+Il existe d'autres alternatives pour analyser une date à partir d'une chaîne. Par exemple, vous pouvez utiliser des fonctions spécifiques à une date comme `sscanf` pour extraire et convertir les dates, mais cela peut être plus complexe et sujet à des erreurs.
 
-En termes d'implémentation, le processus de parsing de dates peut être plus complexe lorsque différents formats de date sont utilisés ou lorsqu'il y a des erreurs dans la chaîne de caractères représentant la date. Il est donc important pour les programmeurs de comprendre les différentes méthodes et fonctions disponibles pour s'assurer que les dates sont correctement parseées dans leur programme.
+L'implémentation détaillée du `strptime` peut varier selon les systèmes. Cependant, l'idée de base est de lire la chaîne de caractères en se basant sur le format de date et de remplir la structure `tm` avec des valeurs appropriées.
 
-## Voir aussi:
-- [Documentation officielle de la fonction strptime](https://www.gnu.org/software/libc/manual/html_node/Low_002dLevel-Time-String-Parsing.html)
-- [Bibliothèque date.h pour le langage C11](https://en.wikipedia.org/wiki/Date_and_time_functions_(C))
+## Voir Aussi :
+Pour plus d'informations sur la bibliothèque time.h et ses fonctions, vous pouvez consulter les liens suivants :
+1. Manuel GNU C Library : https://www.gnu.org/software/libc/manual/html_node/Time-Functions.html
+2. Documentation du développeur Apple pour time.h : https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man3/time.3.html
+3. Page du manuel Linux pour strptime: https://man7.org/linux/man-pages/man3/strptime.3.html
+4. Sources complémentaires sur le C : https://www.learn-c.org/

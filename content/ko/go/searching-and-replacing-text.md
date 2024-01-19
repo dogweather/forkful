@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 검색 및 교체"
-html_title:           "Go: 텍스트 검색 및 교체"
+html_title:           "Elixir: 텍스트 검색 및 교체"
 simple_title:         "텍스트 검색 및 교체"
 programming_language: "Go"
 category:             "Go"
@@ -12,56 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-텍스트 검색 및 교체란 무엇인지 알아보고, 프로그래머가 왜 이를 하는지에 대해 이해합니다. 텍스트 검색 및 교체는 프로그래머가 코드나 파일 내에 특정한 텍스트를 찾아 바꾸는 작업을 의미합니다. 이를 통해 코드의 오류를 수정하고, 긴 코드를 더 간단하게 만들거나, 특정한 패턴을 찾아내는 등 다양한 목적을 달성할 수 있습니다.
+텍스트 검색 및 교체는 특정 문자열을 찾아 다른 문자열로 바꾸는 것입니다. 이는 코드 중복을 줄이고, 값 변환, 패턴 일치, 데이터 정렬 등의 작업을 빠르게 처리할 수 있게 해줍니다.
 
-## 방법:
+## 어떻게 해야하나요:
+
+텍스트 검색 및 교체는 Go 언어에서 간단합니다. 아래 코드 예제를 보세요:
 
 ```Go
-// 문자열 내에서 특정한 단어를 찾아 다른 단어로 대체하는 예제
 package main
-
-import (
-	"fmt"
-	"strings"
-)
+import "strings"
+import "fmt"
 
 func main() {
-	text := "Hello, world!"
-	replacedText := strings.ReplaceAll(text, "Hello", "Hi")
-	fmt.Println(replacedText) // 출력결과: Hi, world!
+    sample := "Hello, World of Go programming!"
+    fmt.Println(strings.Replace(sample, "World", "Universe", -1))
 }
 ```
 
+`strings.Replace` 함수가 작동하는 모드:
+처음 두 인자는 원본 문자열 및 검색할 문자열이며, 세 번째 인자는 교체할 문자열입니다. 마지막 인자는 교체 횟수입니다. -1로 설정하면 모든 일치 항목을 교체합니다.
+
+코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다:
+
 ```Go
-// 배열 내에서 특정한 값을 찾아 다른 값으로 대체하는 예제
-package main
-
-import (
-	"fmt"
-)
-
-func main() {
-	numbers := []int{1,2,3,4,5}
-	replacedNumbers := ReplaceAll(numbers, 3, 10)
-	fmt.Println(replacedNumbers) // 출력결과: [1 2 10 4 5] 
-}
-
-func ReplaceAll(numbers []int, oldValue int, newValue int) []int {
-	for index, value := range numbers {
-		if value == oldValue {
-			numbers[index] = newValue
-		}
-	}
-	return numbers
-}
+Hello, Universe of Go programming!
 ```
 
-## 깊이 들어가기:
+## 깊게 들여다 보기:
 
-텍스트 검색 및 교체 기능은 오래전부터 프로그래밍 언어에서 등장했습니다. 이 기능을 사용하면 코드 내에 있는 특정한 패턴을 찾아내고 이를 변경하여 코드의 의미를 바꿀 수 있습니다. Go 언어에서는 `strings` 라이브러리의 `ReplaceAll()` 함수를 사용하여 텍스트를 대체할 수 있습니다. 또한, `bytes` 라이브러리의 `Replace()` 함수를 사용하면 바이트 배열 내에서도 특정한 패턴을 찾아 다른 패턴으로 대체할 수 있습니다.
+텍스트 검색 및 교체는 컴퓨팅의 보편적인 작업으로, 텍스트 편집, 스크립팅 언어, 그리고 프로그래밍 언어의 기본 특징 중 하나입니다.
 
-## 더 보기:
+`string.Replace` 외에도 정규 표현식을 사용해서 더 복잡한 패턴을 검색 및 교체할 수 있고, `bytes.Replace` 또는 `bytes.ReplaceAll` 등의 함수를 사용해 바이트 슬라이스에서 검색 및 교체를 수행할 수 있습니다.
 
-- [Go Documentation] (https://golang.org/pkg/strings/#ReplaceAll)
-- [A Tour of Go: String Functions] (https://tour.golang.org/basics/5)
-- [Go Tutorial: Arrays and Slices] (https://www.callicoder.com/golang-arrays-slices-guide/)
+이러한 함수들은 내부적으로 `bytes.Replace` 및 `bytes.Equal` 등의 함수를 사용하여 문자열 및 바이트 슬라이스에서 패턴을 찾습니다.
+
+## 참고 문헌:
+
+- Go 언어 공식 문서: https://golang.org/
+- Go에 대한 자세한 내용은 'The Go Programming Language' 책을 참고하십시오: https://www.gopl.io/
+- 깊은 이해를 위해 'Learn Go with Tests'를 참조하십시오: https://quii.gitbook.io/learn-go-with-tests/

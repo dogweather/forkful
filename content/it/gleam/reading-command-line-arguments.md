@@ -1,7 +1,7 @@
 ---
-title:                "Leggere gli argomenti della riga di comando."
-html_title:           "Gleam: Leggere gli argomenti della riga di comando."
-simple_title:         "Leggere gli argomenti della riga di comando."
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa sono e perché i programmatori li utilizzano?
-I parametri della riga di comando sono informazioni fornite dal sistema operativo all'avvio di un programma. Sono utilizzati dai programmatori per consentire all'utente di inserire dati aggiuntivi durante l'esecuzione del programma.
+## Cos'è & Perchè?
 
-Come fare:
-Per leggere i parametri della riga di comando in Gleam, è possibile utilizzare la funzione `CommandLine.arguments()`. Di seguito è riportato un esempio di codice:
+La lettura degli argomenti della riga di comando permette di passare informazioni a un programma durante la sua esecuzione. I programmatori lo fanno per rendere i loro programmi più flessibili e personalizzabili.
+
+## Come fare:
+
+In Gleam, si potrebbe usare il modulo `gleam/option` per lavorare con gli argomenti della riga di comando. Ecco un esempio di utilizzo:
 
 ```Gleam
-import gleam/io
+import gleam/option.{Some, None}
 
-fn main(_) {
- let arguments = CommandLine.arguments()
- io.print("I parametri inseriti sono: {arguments}")
+fn main(args: List(String)) -> Nil {
+  case args {
+    | [] -> io.println("Nessun argomento passato")
+    | [first | rest] -> io.println(first)
+  }
+  Ok(Nil)
 }
 ```
 
-Ecco un esempio di output:
-
+Allorquando eseguito con un argomento, lo programmo produrrà:
+```shell
+$ gleam run programma ciao
+ciao
 ```
-> gleam run hello_world.gleam --name "Marco"
-I parametri inseriti sono: ["hello_world.gleam","--name","Marco"]
-```
 
-Approfondimento:
-La lettura dei parametri della riga di comando è una funzionalità comune nei linguaggi di programmazione, poiché consente all'utente di interagire con il programma in modo dinamico. In alternativa a Gleam, è possibile utilizzare la funzione `System.args()` in Erlang, su cui si basa il compilatore di Gleam.
+## Approfondimento:
 
-Vedi anche:
-- Documentazione di Gleam sulla funzione `CommandLine.arguments()`: [link](https://gleam.run/book/introduction#hello-world)
-- Documentazione di Erlang sulla funzione `System.args()`: [link](http://erlang.org/doc/man/sys.html#args-0)
-- Esempi di codice su come utilizzare i parametri della riga di comando in Gleam: [link](https://github.com/gleam-lang/gleam_discuss/issues/121)
+Storicamente, gli argomenti della riga di comando sono stati utilizzati dagli albori dell'informatica per controllare l'esecuzione dei programmi. Nel contesto di Gleam e linguaggi di programmazione funzionale, la manipolazione degli argomenti della riga di comando viene resa facile dall'utilizzo di liste e pattern matching.
+
+Le alternative alla lettura degli argomenti della riga di comando includono l'input dell'utente in tempo reale, il caricamento di file di configurazione o l'interrogazione di un database.
+
+I dettagli implementativi della lettura degli argomenti della riga di comando in Gleam coinvolgono la funzione `main` che prende una `List(String)` come input. Questo è coerente con il concetto di Erlang che "tutto è un processo", dato che `main` è il punto di ingresso per un nuovo processo.
+
+## Vedi anche:
+
+Per ulteriori informazioni su glem/option, consulta la documentazione ufficiale [qui](https://gleam.run/documentation/library/gleam/option/).
+
+Per maggiori dettagli sulla linea di comando in Erlang, dai un'occhiata a [questo post](https://erlangcentral.org/wiki/index.php/Command_line_parsing).

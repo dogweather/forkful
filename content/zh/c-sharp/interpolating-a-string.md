@@ -1,6 +1,6 @@
 ---
 title:                "插值字符串"
-html_title:           "C#: 插值字符串"
+html_title:           "Arduino: 插值字符串"
 simple_title:         "插值字符串"
 programming_language: "C#"
 category:             "C#"
@@ -10,31 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是字符串内插? 为什么程序员要这么做？
+## 什么以及为什么?
+字符串插值是一种在 C# 中创建字符串的方式，通过在大括号 `{} `中插入变量或表达式来生成新字符串。程序员之所以使用字符串插值，主要是为了提高代码的可读性和便捷性。
 
-字符串内插是一种编程技术，它允许我们在一个字符串中插入变量或表达式。它的作用是让我们能够动态地构建字符串，从而使我们的代码更简洁、更易读。程序员使用字符串内插来构建动态信息，比如打印日志消息或创建用户界面。
-
-如何实现字符串内插:
-
+## 如何实现:
+让我们来看一个简单的例子:
 ```C#
-string name = "小明";
-int age = 23;
-Console.WriteLine($"我是{name}, 我的年龄是{age}岁。"); // 输出: 我是小明, 我的年龄是23岁。
+string name = "Michael";
+float score = 85.6f;
+string result = $"学生{name}的成绩是{score}";
+Console.WriteLine(result);
 ```
+这会输出: `学生Michael的成绩是85.6`
 
-深入介绍:
+## 深入研究:
+字符串插值在 C# 6.0 时引入，作为对传统的 `String.Format` 方法的补充。除了字符串插值，你还可以使用 `+` 运算符或 `StringBuilder` 以创建复杂的字符串，但使用字符串插值可能更简洁易懂。字符串插值在运行时被转化为 `String.Format` 方法，因此性能影响微乎其微。
 
-字符串内插最早出现在Python编程语言中，被称为“格式化字符串”。它简化了字符串拼接的步骤，使代码更可读。虽然在C#中，我们也可以使用字符串拼接来构建动态信息，但是字符串内插更加优雅和方便。另一个替代方案是使用String.Format()方法，它也能实现类似的功能，但是语法上稍显复杂。
-
-代码示例:
-
-```C#
-string name = "小红";
-int age = 27;
-Console.WriteLine(String.Format("我是{0}, 我的年龄是{1}岁。", name, age)); // 输出: 我是小红, 我的年龄是27岁。
-```
-
-相关链接:
-
-- [官方文档](https://docs.microsoft.com/zh-cn/dotnet/csharp/language-reference/tokens/interpolated)
-- [Python官方文档](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals)
+## 参看以下资料:
+- 官方C# 文档 [String interpolation (C# reference)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+- MSDN [String Interpolation in C#](https://msdn.microsoft.com/en-us/magazine/mt614271.aspx)
+- StackOverflow上关于[String Interpolation Efficiency](https://stackoverflow.com/questions/36124656/is-string-interpolation-in-c-sharp-efficient)的讨论.

@@ -1,7 +1,7 @@
 ---
-title:                "Perusvahvistuksella http-pyyntöjen lähettäminen"
-html_title:           "PHP: Perusvahvistuksella http-pyyntöjen lähettäminen"
-simple_title:         "Perusvahvistuksella http-pyyntöjen lähettäminen"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,52 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Mitä ja miksi?
+# HTTP-pyynnön lähettäminen perusautentikoinnilla PHP:llä
 
-Kun ohjelmoijat lähettävät HTTP-pyynnön perusautentikaation kanssa, he käyttävät salasanaa ja käyttäjänimeä lähettääkseen tietoja turvallisesti verkossa. Tämä on yleinen tapa tunnistaa käyttäjä tai sovellus palvelimelle.
+## Mikä & Miksi?
+HTTP-pyynnön lähettäminen perusautentikoinnilla tarkoittaa tietyn API-avaimen lähettämistä palvelimelle autentikoimiseksi. Ohjelmoijat tekevät tämän tietojen suojaamiseksi ja sen varmistamiseksi, että vain oikeutetut käyttäjät voivat käyttää tiettyjä resursseja.
 
-### Miten:
+## Näin se tehdään:
+Alla oleva PHP-koodi lähettää HTTP-pyynnön perusautentikoinnilla.
 
-Käyttäen PHP:ta, voit lähettää HTTP-pyynnön perusautentikaation kanssa yksinkertaisella koodilla. Alla on esimerkki, jossa lähetetään JSON-dataa palvelimelle käyttäjänimen ja salasanan avulla:
-
-```PHP
+```PHP 
 <?php
-
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://example.com/api/data",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(
-    "Authorization: Basic " . base64_encode("username:password"),
-    "Content-Type: application/json"
-  ),
+$context = stream_context_create(array(
+    'http' => array(
+        'header'  => "Authorization: Basic " . base64_encode("username:password")
+    )
 ));
-
-$response = curl_exec($curl);
-
-curl_close($curl);
-echo $response;
-
+$response = file_get_contents("http://example.com", false, $context);
 ?>
 ```
 
-Tämä koodi lähettää GET-pyynnön osoitteeseen "http://example.com/api/data" ja lähettää samalla käyttäjänimen ja salasanan otsikkona käyttäen perusautentikaatiota. Palvelin vastaa sitten pyyntöön ja tietoja voi käsitellä edelleen PHP-koodissa.
+Koodi luo ensin yhteyden tiedostovirtaan, johon lisätään HTTP-otsikko perusautentikointia varten. Sitten käytämme `file_get_contents`-funktiota lähettämään pyynnön.
 
-### Syväsukellus:
+## Syvempi sukellus:
+Aikoinaan, PHP koodari ei pystynyt lähettämään HTTP-pyyntöjä perusautentikoinnin kanssa. Tämä oli mahdollista vain käyttämällä CURL-kirjastoa tai muita kolmannen osapuolen kirjastoja.
 
-Perusautentikaatio otettiin käyttöön HTTP-protokollaan jo vuonna 1999 ja sitä käytetään edelleen laajalti. Se on yksi yksinkertaisimmista tavoista tunnistaa käyttäjä tai sovellus palvelimella ja siksi suosittu valinta monissa ohjelmistoprojekteissa. On myös muita tapoja tunnistaa käyttäjä, kuten käyttäjätunnus/salasana-kirjautuminen tai OAuth-autentikaatio.
+On myös muita tapoja autentikointiin kuten OAuth, token-autentikointi ja digest-autentikointi. Mutta perusautentikointi on kaikkein yksinkertaisin, ja se soveltuu yksinkertaisiin sovelluksiin tai nopeaan testaukseen.
 
-Jos haluat lähettää HTTP-pyynnön ilman perusautentikaatiota, voit käyttää esimerkiksi cURL-kirjastoa tai PHP:n sisäistä file_get_contents-funktiota. Nämä tavat eivät kuitenkaan ole yhtä turvallisia kuin perusautentikaatio.
+PHP `file_get_contents`-funktion sisäinen käsittely antaa ohjelmoijan lähettää HTTP-pyyntöjä mukautetulla otsikolla. Tätä toiminnallisuutta voidaan käyttää moniin tarkoituksiin, kuten API-kyselyihin ja web-sivujen kaavintaan.
 
-Perusautentikaation käyttö PHP:ssa vaatii hieman enemmän koodia, mutta on silti melko yksinkertaista. Voit myös tarkistaa palvelimen vastauksen HTTP-koodin avulla ja käsitellä mahdolliset virheet koodissa.
-
-### Katso myös:
-
-Voit lukea lisää perusautentikaation käytöstä PHP:ssa PHP:n virallisesta dokumentaatiosta: [PHP Base Authentication](https://www.php.net/manual/en/features.http-auth.php). Voit myös tutustua erilaisiin tapoihin lähettää HTTP-pyyntöjä PHP:ssa [PHP HTTP Request options](https://www.php.net/manual/en/function.http-request.php).
+## Katso myös:
+1. PHP dokumentointi HTTP-kontekstin luomisesta: [Linkki](https://www.php.net/manual/en/context.http.php)
+2. Curl-kirjaston käyttö PHP:llä: [Linkki](https://www.php.net/manual/en/book.curl.php)
+3. OAuth-autentikointi PHP:llä: [Linkki](https://oauth.net/code/php/)

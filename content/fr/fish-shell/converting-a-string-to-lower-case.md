@@ -1,7 +1,7 @@
 ---
-title:                "Convertir une chaîne en minuscules."
-html_title:           "Fish Shell: Convertir une chaîne en minuscules."
-simple_title:         "Convertir une chaîne en minuscules."
+title:                "Convertir une chaîne en minuscules"
+html_title:           "Arduino: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi les programmeurs le font?
+## Quoi & Pourquoi?
+En programmation, la conversion d'une chaîne de caractères en minuscules est un processus consistant à changer tous les caractères en majuscules d'une chaîne en leurs équivalents minuscules. Les programmeurs font cela souvent pour normaliser les données en vue d'une comparaison non sensible à la casse.
 
-Les programmeurs utilisent souvent la fonction de conversion en minuscules pour modifier le format d'une chaîne de caractères. Cela signifie simplement que toutes les lettres de la chaîne seront transformées en minuscules, peu importe leur forme d'origine. Cette manipulation est couramment utilisée pour simplifier les comparaisons de chaînes de caractères, en ignorant les variations de casse.
+## Comment faire:
+Voici comment vous pouvez convertir une chaîne en minuscules dans Fish Shell:
 
-# Comment le faire:
-
-Voici un exemple de code en Fish Shell qui utilise la fonction de conversion en minuscules:
-
-```
-set myString "Bonjour Tout Le Monde"
-echo $myString | tr '[:upper:]' '[:lower:]'
+```Fish Shell 
+set chaine "Voila, MON TEST"
+echo $chaine | string lower
 ```
 
-La sortie de ce code sera ```bonjour tout le monde```, avec toutes les lettres en minuscules. Nous utilisons la commande  ```tr``` (pour "translate"), qui permet de remplacer les caractères dans une chaîne par d'autres caractères.
+L'exemple de code ci-dessus produira la sortie suivante:
 
-# Analyse approfondie:
+```Fish Shell 
+voila, mon test
+```
 
-## Contexte historique:
-La commande ```tr``` est une fonctionnalité standard disponible sur les systèmes d'exploitation Unix depuis les années 1970. Elle a été créée pour faciliter la manipulation de chaînes de caractères et est toujours largement utilisée par les programmeurs pour de nombreuses tâches, y compris la conversion en minuscules.
+## Plongée profonde
+Historiquement, la possibilité de convertir des chaînes en minuscules, a été d'une grande utilité dans de nombreux contextes de programmation, surtout lors de la manipulation de textes ou de fichiers textuels.
 
-## Alternatives:
-Il existe de nombreuses façons de convertir une chaîne en minuscules, selon le langage de programmation que vous utilisez. Par exemple, en Python, vous pouvez utiliser la fonction ```lower()```, tandis qu'en Java, vous pouvez utiliser ```toLowerCase()```.
+Il existe plusieurs alternatives pour convertir une chaîne en minuscules. Par exemple, en utilisant `tr` dans Unix comme ci-dessous :
 
-## Détails de l'implémentation:
-La commande ```tr``` utilise un algorithme simple pour convertir une chaîne en minuscules : elle parcourt simplement chaque caractère et le remplace par sa version en minuscules, en utilisant les règles définies dans l'alphabet de la langue sélectionnée.
+```Fish Shell 
+echo $chaine | tr '[:upper:]' '[:lower:]'
+```
 
-# Voir aussi:
+La commande `string lower` dans Fish Shell est une implémentation interne qui utilise l'API C++ std::tolower pour faire la conversion. Elle traite chaque caractère de la chaîne, un par un, en le convertissant en minuscule si c'est une lettre majuscule.
 
-Pour en savoir plus sur la manipulation de chaînes de caractères en Fish Shell, vous pouvez consulter la documentation officielle sur les commandes de manipulation de chaînes: https://fishshell.com/docs/current/cmds/set.html#commands-string
+## Voir aussi
+Pour plus d'informations sur les fonctions de chaîne fournies par Fish Shell, vous pouvez consulter la page officielle de la documentation:
+
+- [Documentation Fish Shell](https://fishshell.com/docs/current/commands.html#string)
+
+Pour une information plus profonde sur la fonction std::tolower, consultez:
+
+- [Documentation std::tolower](https://en.cppreference.com/w/cpp/string/byte/tolower) 
+
+Note: Les liens sont en anglais, car il s'agit des sources officielles.

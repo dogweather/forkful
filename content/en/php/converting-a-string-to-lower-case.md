@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "PHP recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "PHP"
 category:             "PHP"
@@ -12,43 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a string to lower case means changing all the letters in a string to their lower case equivalents. Programmers do this to ensure consistency in their code and to make it easier to compare strings without worrying about case sensitivity.
+Converting a string to lower case means turning all the uppercase characters of a string to lowercase. This process is a common programming task when comparing strings, since it provides consistency and mitigates problems caused by different text input.
 
 ## How to:
 
-To convert a string to lower case in PHP, you can use the built-in function `strtolower()`. It takes in one parameter, the string you want to convert, and returns a new string with all lowercase letters. Here's an example:
+To convert a string to lower case in PHP, we use the `strtolower()` function. It's as easy as pie. Here's a quick example:
 
 ```PHP
-$string = "Hello World!";
+<?php
+$string = "HELLO, WORLD!";
 echo strtolower($string);
+?>
 ```
-
-Output: `hello world!`
-
-If the string contains any non-alphabetic characters, like numbers or symbols, they will remain unchanged. For instance:
-
+That will output:
 ```PHP
-$string = "HeLLo 123";
-echo strtolower($string);
+hello, world!
 ```
+It's that simple!
 
-Output: `hello 123`
+## Deep Dive
 
-## Deep Dive:
+The `strtolower()` function has been part of PHP since its infancy (PHP 4). This function works with all string formats and uses ASCII value comparison, thus making it universally applicable. 
 
-### Historical Context
+If you're dealing with multibyte character strings (like Unicode), you may have to consider alternatives like `mb_strtolower()`, which supports a broader spectrum of characters.
 
-The concept of converting strings to lower case may seem trivial now, but in the early days of computing, it was not uncommon for different systems and programming languages to use different letter cases. This led to compatibility issues and confusion, and thus, the need for a standard emerged. Most programming languages now follow the convention of using lower case letters.
+In terms of implementation detail, `strtolower()` loops through the string, checks ASCII value of each character, and converts uppercase ASCII characters to their corresponding lowercase counterparts. This operation generally takes linear time in relation to the length of the string.
 
-### Alternatives
+## See Also
 
-Apart from `strtolower()`, PHP also has two other functions for case conversion: `strtoupper()` and `ucfirst()`. The former converts a string to all upper case, while the latter capitalizes the first letter of a string. Additionally, some programming languages, like JavaScript, have a single `toLowerCase()` method that can convert a string to either lower or upper case depending on the arguments provided.
+1. `strtoupper()`: A counterpart to `strtolower()`, converts all characters to uppercase. [PHP strtoupper() Function - W3Schools](https://www.w3schools.com/php/func_string_strtoupper.asp)
 
-### Implementation Details
+2. `mb_strtolower()`: More suitable for multibyte string (like Unicode). [PHP: mb_strtolower - Manual](https://www.php.net/manual/en/function.mb-strtolower)
 
-Behind the scenes, the `strtolower()` function uses the ASCII table to map each character to its lower case equivalent. This means non-ASCII characters, like accented letters or emojis, will not be affected and will remain in their original form.
+3. ASCII table: To understand ASCII value comparison, check this source. [ASCII Chart – RapidTables](https://www.rapidtables.com/code/text/ascii-table.html)
 
-## See Also:
-
-- [PHP Manual for strtolower()](https://www.php.net/manual/en/function.strtolower.php)
-- [JavaScript toLowerCase() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+Feel free to deepen your understanding of PHP strings by exploring the above resources!

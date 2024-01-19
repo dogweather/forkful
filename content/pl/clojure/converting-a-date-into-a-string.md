@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków"
-html_title:           "Clojure: Konwertowanie daty na ciąg znaków"
-simple_title:         "Konwertowanie daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,32 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
 
-Przetwarzanie daty na ciąg znaków to proces, w którym zamieniamy datę zapisaną w formacie liczbowym na czytelną dla ludzi postać. Programiści często wykonują to w celu wyświetlenia daty użytkownikom lub zapisu jej w pliku lub bazie danych. 
+Konwersja daty na łańcuch znaków to proces przekształcania informacji o dacie z postaci numerycznej na czytelny dla człowieka tekst. Programiści robią to, aby ułatwić prezentację daty użytkownikom, logom czy systemom docelowym.
 
 ## Jak to zrobić:
 
-Przykłady kodu i wyników znajdziesz poniżej:
-```Clojure
-;; Przykład 1:
-(time (format "%1$td-%1$tm-%1$tY" (local-time)))
-"24-08-2021"
+Clojure udostępnia funkcję `format` z biblioteki `java.time.format.DateTimeFormatter`. Przykładowe użycie poniżej.
 
-;; Przykład 2:
-(time (format "%1$tA, %1$tB %1$td, %1$tY" (timezone-adjust (date)))
-"wtorek, sierpnia 24, 2021"
+```Clojure
+(import java.time.LocalDate)
+(import java.time.format.DateTimeFormatter)
+
+(def d (java.time.LocalDate/of 2020 12 31))
+
+(defn date-to-str [date]
+  (.format date (java.time.format.DateTimeFormatter/ofPattern "dd-MM-yyyy")))
+  
+(println (date-to-str d)) ; Wypisuje "31-12-2020"
 ```
 
-## Głębsza analiza:
+## Dogłębne informacje:
 
-URL: https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html 
-URL: https://clojuredocs.org/clojure.instant/set-zone
+### Kontekst historyczny
 
-Aby przekonwertować datę do ciągu znaków, możemy skorzystać z funkcji ```format```. Ta funkcja korzysta z formatowania danych, podobnego do składni znanej z języka Java, która jest wykorzystywana w większości języków programowania. W Clojure można także użyć funkcji ```local-time``` lub ```date```, aby uzyskać aktualną datę w postaci liczbowej. Konwersja daty do ciągu znaków może być również wykonywana w inny sposób, na przykład za pomocą funkcji z biblioteki java-time, jednak formatowanie danych wymaga znajomości odpowiedniej składni.
+Java dostarcza mocne wsparcie dla dat i czasu od początku swej historii. Zatem Clojure, który działa na JVM (Java Virtual Machine), również korzysta z tych możliwości. 
 
-## Zobacz także:
+### Alternatywy
 
-URL: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html 
-URL: https://clojuredocs.org/clojure.time/format 
-URL: https://clojuredocs.org/clojure.instant/ZonedDateTime
+Dla prostszych formatów daty możemy użyć także funkcji `str`.
+
+```Clojure
+(def d2 (java.util.Date.))
+(println (str d2))
+```
+
+### Szczegóły implementacji
+
+Funkcja `format` korzysta z `java.time.format.DateTimeFormatter`, który jest niemutowalny i bezpieczny do używania w środowisku wielowątkowym. 
+
+## Zobacz również:
+
+- Clojure - Working with Dates and Times: https://clojurecookbook.com/clojure_dates_and_times/dates_and_times/
+- Java 8 – How to format LocalDat: https://mkyong.com/java8/java-8-how-to-format-localdate/
+- Java Time API: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html

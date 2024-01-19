@@ -1,6 +1,6 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "Java: 문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Java"
 category:             "Java"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가요? & 왜 이것을 해야 하나요?
+## 무엇이며 왜 사용하나요? (What & Why?)
 
-문자열의 길이를 찾는 것은 입력된 문자열의 길이를 알아내는 것입니다. 이는 프로그래머가 자주 사용하는 작업 중 하나이며, 해당 문자열이 얼마나 긴지 또는 몇 개의 단어로 이루어져 있는지를 파악하기 위해서입니다.
+문자열의 길이를 찾는 것은, 어떤 문자열이 포함된 문자의 개수를 알아내는 것을 의미합니다. 이는 항목을 순환하거나, 배열 또는 문자열을 조작할 때 굉장히 중요한 역할을 합니다.
 
-## 어떻게 하나요?
+## 어떻게 하는 건가요? (How to)
+
+Java에서 문자열의 길이를 찾는 방법은 `length()`라는 메소드를 사용하는 것입니다. 예를 들어,
 
 ```Java
-public class StringLength {
-  public static void main(String[] args) {
-    // 문자열의 길이를 알고 싶은 문자열 입력
-    String myString = "Hello World";
-    // .length() 메소드를 사용하여 문자열 길이 출력
-    System.out.println("문자열의 길이는: " + myString.length());
-  }
+public class Main {
+    public static void main(String[] args) {
+        String str = "프로그래밍";
+        int length = str.length();
+        System.out.println("문자열의 길이: " + length);
+    }
 }
 ```
 
+위 코드를 실행하면 다음과 같이 출력됩니다: 
+
+```Java
+문자열의 길이: 5
 ```
-출력: 문자열의 길이는: 11
-```
 
-## 더 깊게 알아보기
+##깊이 들여다보기 (Deep Dive)
 
-1. [Java API 문서](https://docs.oracle.com/javase/8/docs/api/)에서 `String.length()` 메소드를 찾아보세요.
-2. `length()` 메소드는 String 클래스에 내장된 메소드이기 때문에 따로 import할 필요 없이 사용할 수 있습니다.
-3. `length()` 메소드는 문자열의 길이를 알기 위해 실제로 매번 문자열을 순회하지 않고, 내부적으로 저장된 문자열의 길이를 반환합니다.
+1. 역사적 맥락: `length()` 메소드는 Java가 처음 만들어질 때부터 존재했으며, 문자열의 길이를 찾는 기본적이면서도 효과적인 방법입니다.
 
-## 참고 자료
+2. 대체 방법: 문자열의 길이를 찾는 차선책으로 `toCharArray()` 메소드를 사용하는 방법이 있습니다. 이는 문자열을 문자 배열로 변환하여 그 길이를 측정하는 방식입니다.
 
-- [GeeksforGeeks: Java String length() Method](https://www.geeksforgeeks.org/java-string-length-method-example/): 문자열 길이를 구하는 예제와 설명이 있습니다.
-- [Baeldung: String Length in Java](https://www.baeldung.com/java-string-length): 문자열 길이를 확인하는 다른 방법들을 소개하는 글입니다.
+3. 동작 방식: `length()` 메소드는 내부적으로 문자열의 끝을 가리키는 위치에서 문자열의 시작을 가리키는 위치를 뺀 값을 반환합니다. 따라서, 이 연산의 시간 복잡도는 O(1)이고 실행 시간은 상수입니다.
+
+## 참고하기 (See Also)
+
+문자열과 관련된 Java의 기타 메소드를 더 배우려면 아래 링크를 참조하세요.
+- [Oracle Java Documentation: String](https://docs.oracle.com/javase/9/docs/api/java/lang/String.html)
+- [StackOverflow: length() in java](https://stackoverflow.com/questions/3793650/length-and-length-in-java)
+- [GeeksforGeeks: String length() Method in Java](https://www.geeksforgeeks.org/string-length-method-in-java-with-examples/)

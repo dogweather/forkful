@@ -1,6 +1,6 @@
 ---
 title:                "디렉토리가 존재하는지 확인하기"
-html_title:           "Kotlin: 디렉토리가 존재하는지 확인하기"
+html_title:           "Bash: 디렉토리가 존재하는지 확인하기"
 simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,39 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
-디렉토리가 존재하는지 확인하는 것은 파일 시스템에서 매우 일반적인 작업입니다. 프로그래머들은 이를 사용하여 디렉토리가 이미 존재하는지 확인하고, 필요한 경우 새로운 디렉토리를 생성할 수 있습니다.
+디렉토리가 존재하는지 확인하는 것은 파일 경로가 실제로 존재하고 액세스 가능한지 체크하는 프로그래밍 방법입니다. 이것이 필요한 이유는 무효한 경로에 접근하면서 오류를 피하기 위함입니다.
 
-## 방법:
-### 디렉토리 존재 여부 확인:
+## 어떻게:
 ```Kotlin
-val directory = File("/path/to/directory")
-if (directory.exists()) {
-    println("Directory exists!")
-} else {
-    println("Directory does not exist.")
+import java.nio.file.Files
+import java.nio.file.Paths
+
+fun isDirectoryExists(path: String): Boolean {
+    return Files.exists(Paths.get(path))
+}
+
+fun main() {
+    println(isDirectoryExists("/path/to/directory"))  // Output: true 혹은 false
 }
 ```
+위 코드는 주어진 경로가 존재하는지를 판별하고, 그 결과를 출력합니다. 경로가 존재하면 `true`, 그렇지 않으면 `false`를 출력합니다.
 
-### 새로운 디렉토리 생성:
-```Kotlin
-val directory = File("/path/to/new/directory")
-if (directory.mkdir()) {
-    println("Directory created successfully!")
-} else {
-    println("Failed to create directory.")
-}
-```
+## 깊은 탐색
+디렉토리 확인은 올드 스쿨한 프로그래밍 기법 중 하나로 파일 시스템에 직접적인 영향을 미치는 작업입니다. 
 
-## 깊이 들어가보기:
-### 역사적 배경:
-디렉토리 존재 여부 확인은 오래된 개념이며, 다양한 운영체제에서 사용되었습니다. 예를 들어, 윈도우 운영체제에서는 `dir` 명령어를 사용하여 디렉토리의 존재 여부를 확인할 수 있습니다. 리눅스 운영체제에서는 `ls` 명령어를 사용합니다.
+대안으로, `java.io.File` 클래스의 `exists()` 메소드를 사용할 수 있습니다. 하지만 이 방법은 오래됐으며, 자바 7부터는 `java.nio.file` 패키지를 이용하는 것이 권장됩니다. 
 
-### 대안:
-`File` 클래스의 `exists()` 메서드 외에도, `Files` 클래스의 `exists()` 메서드를 사용하여 디렉토리의 존재 여부를 확인할 수 있습니다. 또한 `listFiles()` 메서드를 사용하여 디렉토리에 포함된 파일 및 디렉토리의 리스트를 가져올 수도 있습니다.
+`Files.exists(Paths.get(path))` 코드 실행 시, 실제로는 파일 시스템의 특정 경로로 접근하여 그 경로가 존재하는지를 확인하게 됩니다. 디렉토리 존재 확인은 단순히 체크만 수행하는 것이 아니라, 나중에 해당 경로를 사용한 작업이 안전하게 수행될 수 있도록 합니다.
 
-### 구현 세부 사항:
-`File` 클래스의 `exists()` 메서드는 해당 파일을 생성하거나 수정할 수 있는 권한이 있는지 검사합니다. 이를 통해 사용자가 여러 가지 작업을 수행할 수 있도록 보호합니다.
-
-## 관련 자료:
-- [Java Documentation on File and Directory Operations](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [Kotlin，주석](https://kotlinlang.org/spec/documentation.html)
+## 참고 자료
+1. [Kotlin 공식 문서](https://kotlinlang.org/docs/reference/)
+2. [Oracle Java NIO 문서](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#exists-java.nio.file.Path-java.nio.file.LinkOption...-)
+3. [Oracle Java IO 문서](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#exists--)
+4. [Kotlin과 자바의 파일 핸들링 비교](http://www.differencebetween.net/technology/difference-between-kotlin-and-java/#:~:text=Difference%20Between%20Kotlin%20and%20Java)
+5. [StackOverflow: 디렉터리 존재 확인 방법 비교](https://stackoverflow.com/questions/3775694/checking-if-a-folder-exists-in-java)

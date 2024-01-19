@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग में शीर्ष अक्षर बड़ी अक्षरों में लिखना"
-html_title:           "Bash: स्ट्रिंग में शीर्ष अक्षर बड़ी अक्षरों में लिखना"
-simple_title:         "स्ट्रिंग में शीर्ष अक्षर बड़ी अक्षरों में लिखना"
+title:                "एक स्ट्रिंग को बड़े अक्षरों में बदलना"
+html_title:           "Bash: एक स्ट्रिंग को बड़े अक्षरों में बदलना"
+simple_title:         "एक स्ट्रिंग को बड़े अक्षरों में बदलना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,27 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों करें?
+## क्या और क्यों?
 
-कैपिटलाइजिंग स्ट्रिंग करना एक तरीका है जिसमें हम एक स्ट्रिंग के प्रथम अक्षर को बड़ा अक्षर में बदलते हैं। यह उन स्थितियों में उपयोगी होता है जब हमें एक बीजी स्ट्रिंग में प्रतिस्थापन करने की आवश्यकता होती है, या प्रोग्रामिंग के साथ जुड़े नियमों को समझने के लिए।
+वर्णमाला के निर्देशन (यानी कोई string capitalizing) का मतलब है कि string के अक्षरों को बड़ा (upper-case) करना। प्रोग्रामर इसे readability सुधारने और डाटा को consistent रखने के लिए करते हैं।
 
-## कैसे करें?
+## कैसे करें:
+
+Bash में आप `tr` command का उपयोग करके string को capitalize कर सकते हैं। यह command एक से अधिक character को replace करती है।
 
 ```Bash
-#!/bin/bash
-echo "Enter a string:"
-read str
-echo $str | awk '{print toupper(substr($0,1,1))substr($0,2)}'
+echo 'hello world' | tr '[:lower:]' '[:upper:]'
 ```
 
-उपरोक्त कोड अपने मूल्यों को दर्शाता है जहाँ हम स्ट्रिंग के प्रथम अक्षर को बड़े अक्षर में बदलते हैं और उसका बाकी हिस्सा प्रिंट करते हैं। उदाहरण के लिए, अगर हम "hello" डालते हैं तो आउटपुट "Hello" होगा।
+इसे चलाने से आपको 'HELLO WORLD' का output मिलेगा।
 
-## गहराई में जाएं
+## गहराई की जांच:
 
-कैपिटलाइजिंग स्ट्रिंग्स की शुरुआत साल 1960 में यूपी के कृत्तर मिश्रणों में देखी गयी थी। अन्य विकल्पों में, हम एक स्ट्रिंग के प्रत्येक शब्द को बड़ा अक्षर में फिर से लिख सकते हैं, लेकिन यह लंबा और समय लेने वाला काम हो सकता है। क्यूट प्रोग्रामिंग भाषा बश में, हम समानांतर तरीके से कैपिटलाइज स्ट्रिंग को लिख सकते हैं, लेकिन दृष्टिकोण से, हमने एक अलग तरीके का चुनाव किया है।
+कई पुराने Unix और Linux systems में यह `tr` command पहले से मौजूद थी, इसलिए इसे बहुत commonly use किया गया। लेकिन, Bash (4.0 और इसके ऊपर) का upcase function इस task के लिए और अधिक suitable है। यह इस प्रकार होता है:
 
-## अन्य प्रत्येक
+```Bash
+string="hello world"
+echo "${string^^}"
+```
 
-और विकल्प प्रोग्रामिंग के लिए यह [जानिए][1] कि कैसे आप पाठक के गीत स्नोबोल से पाठक के गीत या स्ट्रिंग को लूप के द्वारा लाजिम स्ट्रिंग के साथ कैसे लूप सत्रानिरूपण होगा।
+इस के चलने पर आपको 'HELLO WORLD' जैसा output मिलेगा।
 
-[1]: http://www.gnu.org/software/gnulib/manual/html_node/case_002funfold.html
+## और देखें:
+
+1. [Bash scripting guide](https://devhints.io/bash)
+2. [Bash parameter transformations](http://wiki.bash-hackers.org/syntax/pe#case_modification)
+3. [FreeCodeCamp article on Bash commands](https://www.freecodecamp.org/news/the-linux-commands-handbook/)

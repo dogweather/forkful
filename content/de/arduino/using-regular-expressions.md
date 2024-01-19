@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-html_title:           "Arduino: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Reguläre Ausdrücke verwenden"
+html_title:           "Bash: Reguläre Ausdrücke verwenden"
+simple_title:         "Reguläre Ausdrücke verwenden"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,36 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
 
-Beim Programmieren mit dem Arduino verwenden viele Entwickler sogenannte reguläre Ausdrücke. Diese ermöglichen es, Muster in Texten oder Zeichenfolgen zu identifizieren und zu verarbeiten. Programmierer verwenden reguläre Ausdrücke, um komplexe Such- und Ersetzungsaufgaben zu automatisieren und effizienter zu gestalten.
+Reguläre Ausdrücke (oder Regex) sind eine Art Muster, die hilft, Zeichenketten zu matchen, zu suchen, zu ersetzen und zu manipulieren. Programmierer verwenden sie, um Zeit zu sparen und Fehler bei der Bearbeitung von Strings zu vermeiden.
 
-# Wie geht's?
+## So geht's:
 
-Die Verwendung von regulären Ausdrücken wird in der Arduino-Programmierung mithilfe des <code>Regex</code>-Objekts ermöglicht. Wir konstruieren ein neues Objekt mit dem gewünschten Muster und können dann verschiedene Methoden verwenden, um die Überprüfung und Verarbeitung von Zeichenfolgen durchzuführen.
+Um Regex in Arduino zu verwenden, wird eine Bibliothek benötigt. Hier sind einige einfache Beispiele, wie man es macht:
 
 ```Arduino
 #include <regex.h>
 
-// Konstruktion des Regex-Objekts mit dem Muster "Hallo(.*)"
-Regex re("Hallo(.*)");
+void setup() {
+    Serial.begin(9600);
+  
+    regex_t regex;
+  
+    if (regcomp(&regex, "a", 0)) {
+        Serial.println("Regexp Compile Error");
+    }
+  
+    if (!regexec(&regex, "This is a test.", 0, NULL, 0)) {
+        Serial.println("Regexp Match");
+    } else {
+        Serial.println("Regexp No Match");
+    }
 
-// Überprüfung, ob die Zeichenfolge "Hallo Welt" dem Muster entspricht
-if (re.match("Hallo Welt")) {
-  // Ausgabe des gefangenen Textes in den Klammern mit der group() Methode
-  Serial.println(re.group(1)); // Gibt " Welt" aus
+    regfree(&regex);
 }
 
-// Ersetzung eines Teils der Zeichenfolge mit der substitute() Methode
-String neueZeichenfolge = re.substitute("Hallo Welt", "Hallo Mars");
-Serial.println(neueZeichenfolge); // Gibt "Hallo Mars" aus
+void loop() {
+}
 ```
 
-# Tiefer Einblick
+Dieses Programm verwendet den regulären Ausdruck `a`, um nach diesem Buchstaben im gegebenen String zu suchen.
 
-Die Verwendung von regulären Ausdrücken stammt ursprünglich aus dem Bereich der Textverarbeitung und hat sich in der Programmierung als sehr nützlich erwiesen. Alternativen zu regulären Ausdrücken sind z.B. die Verwendung von String-Methoden oder regelbasierte Such- und Ersetzungsfunktionen. Die Implementierung von regulären Ausdrücken in der Arduino-Programmierung basiert auf der C++-Bibliothek <code>regex.h</code>.
+## Vertiefung:
 
-# Siehe auch
+Obwohl reguläre Ausdrücke schon seit Jahrzehnten existieren, sind sie in jüngerer Zeit in vielen Programmiersprachen angekommen. Obwohl Arduino reguläre Ausdrücke nicht nativ unterstützt, gibt es Bibliotheken wie `regex.h` die dies ermöglichen.
 
-- Offizielle Dokumentation zur <code>Regex</code>-Klasse: https://www.arduino.cc/reference/en/language/functions/regular-expressions/
-- Einführung in reguläre Ausdrücke: https://regexone.com/
+Alternativen zu regulären Ausdrücken sind Funktionen wie `strstr()` oder `strtok()`, die aber nicht die gleiche Flexibilität und Benutzerfreundlichkeit bieten.
+
+Wenn es um die Implementierungsdetails geht, ist zu beachten, dass die Regex-Verarbeitung oft zeitaufwendig sein kann, insbesondere auf Mikrocontrollern mit begrenzten Ressourcen.
+
+## Siehe auch:
+
+Weitere Informationen und Beispiele finden Sie unter diesen Links:
+
+1. [C++ Reguläre Ausdrücke (RegEx) - cppreference.com](https://en.cppreference.com/w/cpp/regex)
+2. [Arduino-Referenz - Arduino.cc](https://www.arduino.cc/reference/en/)
+3. [Reguläre Ausdrücke in C - tutorialspoint.com](https://www.tutorialspoint.com/c_standard_library/c_function_regexec.htm)

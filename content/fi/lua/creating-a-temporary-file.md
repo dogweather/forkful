@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "Lua: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Väliaikaisten tiedostojen luominen on käytäntö, jossa luodaan väliaikainen tiedosto ohjelman suorituksen aikana. Tämä on yleinen tapa hallita tietokoneen muistinkäyttöä ja suorituskykyä. Ohjelmoijat käyttävät sitä yleisesti datan tallentamiseen ja käsittelyyn väliaikaisesti, esimerkiksi ohjelmien välissä.
+Tilapäinen tiedosto on ohjelmointimaailmassa yleisesti käytetty tapa tallentaa tietoja tilapäisesti. Näitä tiedostoja käytetään pääasiallisesti säilyttämään tilapäistä tietoa, joka on tarpeen suoritettavan prosessin tai tehtävän aikana.
 
-## Miten:
+## Näin tehdään:
 
-Lua-ohjelmassa väliaikaisten tiedostojen luominen tapahtuu käyttämällä `io.tmpfile()` -funktiota. Tämä luo uuden väliaikaisen tiedoston ja palauttaa sen kahden arvon joukossa. Koska tiedosto on väliaikainen, se poistetaan automaattisesti, kun ohjelman suoritus päättyy.
+Luomme tilapäisen tiedoston Lua-ohjelmointikielellä seuraavalla tavalla:
 
 ```Lua
-local file, err = io.tmpfile()
--- Tarkista onnistuiko tiedoston luominen
-if file then
-  print("Uusi väliaikainen tiedosto luotu.")
-  -- Tee jotain tiedostolle, esim. tallenna dataa
-else
-  print("Virhe luotaessa väliaikaista tiedostoa.")
-end
+os = require('os')
+
+-- Luo tilapäinen tiedosto
+tmpname = os.tmpname()
+
+-- Avaa tiedosto kirjoittamista varten
+file = io.open(tmpname, "w")
+
+-- Kirjoita jotain tiedostoon
+file:write("Hello, World!")
+
+-- Sulje tiedosto
+file:close()
 ```
 
-## Syväsukellus:
+Kun suoritat tämän koodin, se luo tilapäisen tiedoston ja kirjoittaa siihen tekstin "Hello, world!". 
 
-Väliaikaisten tiedostojen luominen oli aiemmin yleisesti tarpeen, kun tietokoneiden muisti oli rajallista ja ohjelmat saattoivat kuluttaa paljon resursseja. Nykyään käytetään yleisesti muita menetelmiä, kuten dynaamista muistinvarausjärjestelmää, joka mahdollistaa tehokkaamman muistin käytön. Myös virtuaalimuisti on muistinhallintatekniikka, joka hyödyntää väliaikaisia tiedostoja.
+## Syvempi sukellus:
 
-Vaihtoehtoisesti, Lua-ohjelmoijat voivat myös käyttää `os.tmpname()` -funktiota, joka luo väliaikaisen tiedoston nimen, mutta ei itse tiedostoa. Tämä voi olla kätevämpi joissain ohjelmissa, jotka käsittelevät paljon tiedostoja.
+Historiallisesti ohjelmoijat ovat luoneet tilapäisiä tiedostoja prosessien ja tehtävien välisten tietojen jakamiseen. Lua yksinkertaistaa tätä prosessia os-moduulillaan, joka tarjoaa `os.tmpname()` -funktion.
 
-## Katso myös:
+Lua ja monet muut ohjelmointikielet tarjoavat myös vaihtoehtoisen tavan säilyttää väliaikaista tietoa muistissa, ns. *prosessin sisäisen muistin*, mutta tämä lähestymistapa ei ole yhtä skaalautuva tai joustava kuin tilapäisten tiedostojen käyttö.
 
-Voit lukea lisää väliaikaisista tiedostoista Lua-kirjastodokumentaatiosta [täältä](https://www.lua.org/manual/5.3/manual.html#6.8). Voit myös tutustua muihin Lua-keskustelufoorumeihin ja verkkosivustoihin, jotka voi tarjota lisätietoa väliaikaisten tiedostojen käytöstä ja parhaista käytännöistä.
+Tilapäisten tiedostojen luomisessa on huomattava, että tiedostot luodaan käyttöjärjestelmän `<TMP>` tai `<TEMP>` -hakemistoon, kaikki riippuu siitä, mitä käyttöjärjestelmä käytät.
+
+## Tutustu myös:
+
+1. Luas os-module official documentation: (https://www.lua.org/manual/5.4/manual.html#6.9)
+2. Stack Overflow discussion on Lua temporary files: (https://stackoverflow.com/questions/15197761/lua-create-temporary-file-in-specified-directory)
+3. Lua-users wiki / File Input Output: (http://lua-users.org/wiki/FileInputOutput)

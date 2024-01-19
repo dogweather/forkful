@@ -1,6 +1,6 @@
 ---
 title:                "Descargando una página web"
-html_title:           "PHP: Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y Por qué?
+## ¿Qué y Por qué?
 
-La descarga de una página web se refiere a la acción de obtener el contenido de una página web y guardarlo en una computadora o dispositivo. Los programadores a menudo usan la descarga de páginas web en sus proyectos para obtener información de otras páginas o para facilitar la visualización de contenido en línea.
+Descargar una página web implica guardar una copia de una página específica en tu dispositivo local. Los programadores lo hacen para analizar la estructura de la página, extraer datos, probar la velocidad de descarga y otras diversas razones funcionalistas.
 
-## Cómo hacerlo:
+## Como hacerlo:
+
+Aquí te mostramos cómo descargar una página web usando PHP. Este es un ejemplo simple que utilizará la función file_get_contents.
 
 ```PHP
-// Utilizando la función file_get_contents()
-$pagina = file_get_contents("https://ejemplo.com"); 
-echo $pagina;
+<?php
+$paginaWeb = file_get_contents('https://www.example.com');
 
-// Utilizando cURL
-$curl = curl_init();
-curl_setopt($curl, CURLOPT_URL, "https://ejemplo.com");
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-$pagina = curl_exec($curl);
-echo $pagina;
+echo $paginaWeb;
+?>
 ```
 
-## Profundizando
+En este ejemplo, si ejecutas este código, verás todo el código HTML de "https://www.example.com" impreso en tu pantalla.
 
-La descarga de páginas web se ha vuelto cada vez más importante con el crecimiento de la web y la abundancia de información en línea. Algunos programadores prefieren utilizar la función file_get_contents() debido a su simplicidad, mientras que otros prefieren utilizar cURL debido a su mayor versatilidad y opciones de configuración.
+## Buceando más profundo
 
-Es importante tener en cuenta que el uso de la descarga de páginas web también puede tener implicaciones legales si se utiliza para obtener información de forma ilegal o sin permiso del propietario del sitio web.
+El método `file_get_contents` en PHP es una solución fácil y rápida para descargar una página web. Sin embargo, fue presentado en PHP 4.3.0, por lo que si trabajas con versiones más antiguas de PHP, este método no funcionará.
+
+Algunas alternativas podrían ser el uso de `cURL` o `fopen/fread`, aunque estos métodos requieren un poco más de configuración y codificación.
+
+Recuerda que cuando descargas una página web con PHP, en realidad estás realizando una petición GET al servidor del sitio web. Asegúrate de que tu uso de este método se adhiere a las políticas de robots.txt del sitio y a las leyes de protección de datos locales.
 
 ## Ver También
 
-- [Documentación de file_get_contents()](https://www.php.net/manual/es/function.file-get-contents.php)
-- [Documentación de cURL](https://www.php.net/manual/es/book.curl.php)
-- [Tutorial de descarga de páginas web en PHP](https://www.php.net/manual/es/function.file-get-contents.php#example-4822)
+1. PHP Official Documentation - file_get_contents: http://php.net/manual/es/function.file-get-contents.php
+2. Tutorial sobre cURL con PHP - StackOverflow: https://stackoverflow.com/questions/5647461/how-do-i-send-a-post-request-with-php
+3. Políticas de robots.txt - Google Webmasters: https://developers.google.com/search/docs/advanced/robots/robots_txt
+4. General Data Protection Regulation (GDPR): https://gdpr-info.eu/

@@ -1,7 +1,7 @@
 ---
-title:                "Å få nåværende dato"
-html_title:           "C: Å få nåværende dato"
-simple_title:         "Å få nåværende dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å få tak i den nåværende datoen er en vanlig oppgave i programmering. Datoen er viktig for å spore tidssensitive hendelser, planlegge oppgaver og sertifisere dokumenter. Programmere bruker ofte denne funksjonen for å få tak i dato- og tidsinformasjon for å bruke i sine programmer.
+# Få tak i dagens dato med C: En guide for programmerere
 
-## Hvordan:
-Det er flere måter å få tak i den nåværende datoen i C-programmering. Her er et eksempel på hvordan du kan gjøre det:
+## Hva & Hvordan?
+Å hente dagens dato innebærer å hente informasjon om dagens år, måned og dag. Vi, programmerere, gjør dette for å holde oversikt over tid og dato i programmer, logger og rapportgenerering.
 
-```
-#include <stdio.h>
+## Hvordan gjøre det:
+Her er koden for hvordan du henter og skriver ut dagens dato i C:
+
+```C
 #include <time.h>
+#include <stdio.h>
 
-int main() 
+int main()
 {
-    time_t now;
-    time(&now); // få tak i nåværende tid
+    time_t t = time(NULL);
+    struct tm *local = localtime(&t);
     
-    printf("Nåværende dato og tid: %s", ctime(&now));
-    
+    printf("Dagens dato: %02d.%02d.%d\n", local->tm_mday, local->tm_mon + 1, local->tm_year + 1900);
+
     return 0;
 }
 ```
 
-Når du kjører dette programmet, vil du få utskrift som viser den nåværende datoen og tiden:
+Koden ovenfor vil generere output som er avhengig av dagens dato, for eksempel:
 
 ```
-Nåværende dato og tid: Wed Sep 8 12:48:41 2021
+Dagens dato: 05.12.2022
 ```
 
-## Deep Dive:
-Å få tak i den nåværende datoen i C er ikke alltid like enkelt som å bruke en innebygd funksjon. Tidligere implementeringer av C hadde ikke enkle måter å få tak i datoen på, og det måtte gjøres manuelt ved å beregne antall sekunder siden en forhåndsbestemt dato. Men med utviklingen av standard C-library, er det nå enklere å få tak i den nåværende datoen ved å bruke funksjoner som `time_t` og `ctime`.
+## Dypdykk
+Historisk sett har programmerere brukt forskjellige metoder for å hente dagens dato, som å bruke `gettimeofday()` eller `ctime()`. Men på grunn av bedre kompatibilitet og enkel bruk, er bruk av `time.h` bibliotek og funksjonene det kommer med, mer utbredt.
 
-Alternativt kan programmere også bruke en rekke tredjepartsbiblioteker for å få tak i datoen og tidspunktet på en enklere måte. Noen av disse bibliotekene inkluderer Boost.Date_Time og Poco DateTime. Disse bibliotekene gir vanligvis mer fleksibilitet og funksjonalitet for å håndtere tid og datoer.
+Alternativer til denne metoden kan være å bruke tredjepartsbibliotek eller kommandolinjemetoder som er spesifikke for operativsystemet, som kanskje kan gi mer presise eller varierte resultater.
 
-## Se Også:
-- [C time.h Bibliotek Referanse](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Boost.Date_Time Bibliotek Dokumentasjon](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)
-- [Poco DateTime Klasse Referanse](https://pocoproject.org/docs/Poco.DateTime.html)
+Når det gjelder implementeringsdetaljer, henter `time(NULL)` det nåværende tidsstempelet, som deretter blir konvertert til lokal tid med `localtime()`. `struct tm` er en innebygd struktur i C for å holde tid og dato.
+
+## Se også
+For mer detaljert informasjon og relaterte emner, bra kilder cygwin.com/cygwin-ug-net/ntcime.html for mer om `ctime()`, og cplusplus.com/reference/ctime/ for mer om tidsbehandling i C generelt.

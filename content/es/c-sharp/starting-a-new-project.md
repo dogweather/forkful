@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "C#: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Getting Started"
@@ -10,34 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Empecemos por lo básico, ¿qué es empezar un nuevo proyecto? En términos sencillos, es el proceso de iniciar un nuevo proyecto de programación. Los programadores hacen esto para crear una solución o aplicación que resuelva un problema o satisfaga una necesidad específica.
+## ¿Qué & Por Qué?
 
-## ¡Así se hace!
-Para empezar un proyecto en C#, simplemente sigue estos pasos:
+Iniciar un nuevo proyecto en programación es el proceso de configuración inicial del ambiente y estructura de tu código. Los programadores inician nuevos proyectos para organizar y establecer una base sólida para su software.
+
+## Cómo hacer:
+
+Para empezar un nuevo proyecto en C#, primero abre tu terminal y técnicamente puedes usar dotnet.
 
 ```C#
-Console.WriteLine("Hola Mundo!");
+dotnet new console -o MiProyecto
 ```
 
-Este código mostrará "Hola Mundo!" en la consola cuando se compile y ejecute. ¡Así de simple es crear un nuevo proyecto en C#!
+Esto crea un nuevo proyecto de consola en un directorio llamado `MiProyecto`. Si navegas a esa carpeta (`cd MiProyecto`), verás un archivo `Program.cs`, que incluye un programa de 'Hola Mundo'.
 
 ```C#
-public class Program
+using System;
+
+namespace MiProyecto 
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.WriteLine("Hola Mundo!");
+        static void Main(string[] args)
+        {
+            Console.WriteLine("¡Hola Mundo!");
+        }
     }
 }
 ```
 
-Este ejemplo también es válido, define una clase llamada "Program" con un método principal que es el que se ejecuta al iniciar el programa.
+Al ejecutar `dotnet run`, verás:
 
-## Profundizando
-Si bien C# es el lenguaje preferido por muchos programadores hoy en día, hay algunos otros lenguajes que también podrías considerar al empezar un nuevo proyecto. Por ejemplo, JavaScript es una buena opción para proyectos web, mientras que Python es popular en el campo de la ciencia de datos. También es importante tener en cuenta la estructura del proyecto y cómo elegir bien tus herramientas y bibliotecas. Investiga y elige lo que mejor se adapte a tus necesidades y habilidades.
+```C#
+> dotnet run
+¡Hola Mundo!
+```
 
-## Mira también
-- Microsoft Docs - [Guía de inicio rápido de C#](https://docs.microsoft.com/es-es/dotnet/csharp/quick-starts/)
-- Codecademy - [Curso de C#](https://www.codecademy.com/learn/learn-c-sharp)
-- Stack Overflow - [Preguntas y respuestas sobre C#](https://es.stackoverflow.com/questions/tagged/c%23)
+## Inmersión Profunda:
+
+El comando `dotnet new` fue introducido con .NET Core, una reimplementación de .NET Framework con énfasis en la portabilidad y la velocidad. Este comando simplifica enormemente la creación de nuevos proyectos en comparación con soluciones anteriores.
+
+Existen alternativas tradicionales para comenzar un nuevo proyecto, como la antigua técnica de copiar y pegar desde un proyecto existente o configurarlo manualmente en un editor de texto. Sin embargo, `dotnet new` es generalmente más rápido y menos propenso a errores.
+
+Los detalles de la implementación de un nuevo proyecto varían dependiendo de las necesidades. Por ejemplo, podrías querer utilizar plantillas de proyectos (`dotnet new react`, `dotnet new mvc`, etc.) o ajustar la configuración del proyecto en el archivo `.csproj`.
+
+## Ver También:
+
+Para profundizar en las posibilidades de `dotnet new` y las configuraciones de proyecto de C#, consulta las siguientes fuentes:
+
+- Guía de Microsoft sobre el comando `dotnet new`: [link](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new?tabs=netcore21)
+- Documentación de Microsoft sobre archivos `.csproj` en C#: [link](https://docs.microsoft.com/en-us/visualstudio/msbuild/msbuild?view=vs-2019)
+- Guía de programación de C# de Microsoft: [link](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/)

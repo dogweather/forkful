@@ -1,6 +1,6 @@
 ---
 title:                "Vergleich von zwei Daten"
-html_title:           "Clojure: Vergleich von zwei Daten"
+html_title:           "C#: Vergleich von zwei Daten"
 simple_title:         "Vergleich von zwei Daten"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
+# Vergleich von zwei Daten in Clojure
 
-Beim Vergleichen von zwei Daten in der Programmierung geht es darum, herauszufinden, welches Datum früher oder später ist. Dies ist besonders nützlich, wenn man beispielsweise verschiedene Ereignisse in einer bestimmten Reihenfolge sortieren möchte. Programmierer nutzen dieses Konzept häufig, um die Logik ihres Codes zu verbessern.
+## Was & Warum?
 
-Wie?
+Beim Vergleich zweier Daten überprüft man, ob ein Datum vor oder nach dem anderen liegt, oder ob sie identisch sind. Das ist wichtig, um Ereignisse zeitlich einzuordnen und um Zeitabläufe zu managen.
 
-Um zwei Daten in Clojure zu vergleichen, können wir die Funktion `compare` verwenden. Diese Funktion gibt entweder -1, 0 oder 1 zurück, abhängig davon, ob das erste Datum früher, gleich oder später als das zweite Datum ist.
+## Wie?
 
-```Clojure
-;; Beispiel:
-(compare (java.util.Date. 2020 1 1) (java.util.Date. 2020 1 2))
+In Clojure verwenden wir die eingebaute Funktion `compare` zum Vergleich von zwei Daten.
 
-;; Output:
--1
+```clojure
+(require '[clj-time.core :as t]   
+         '[clj-time.coerce :as c])
+
+(def date1 (c/to-date-time "2022-01-01T12:00:00Z"))
+(def date2 (c/to-date-time "2022-02-01T12:00:00Z"))
+
+(compare date1 date2) ; -1
 ```
 
-Wir können auch die Funktionen `before?` und `after?` verwenden, um zu überprüfen, ob ein Datum vor oder nach einem anderen Datum liegt. Diese Funktionen geben einen booleschen Wert zurück.
+In diesem Beispiel gibt die Funktion `compare` -1 zurück, weil das erste Datum vor dem zweiten liegt.
 
-```Clojure
-;; Beispiel:
-(before? (java.util.Date. 2020 1 1) (java.util.Date. 2020 1 2))
+## Tiefere Informationen
 
-;; Output:
-true
-```
+Historisch gesehen gibt es in vielen Sprachen Funktionen zum Vergleich von Daten. Clojure verwendet jedoch eine einheitliche und einfache Methode.
 
-Tiefer Einblick
+Alternativen zum direkten Vergleich mit `compare` könnten Funktionen wie `before?` oder `after?` aus dem clj-time-Paket sein. Diese liefern boolesche Werte und können in einigen Fällen einfacher zu verwenden sein.
 
-Das Konzept des Vergleichens von Daten ist nicht neu und wird in vielen Programmiersprachen verwendet. Es ist jedoch wichtig zu beachten, dass es bei verschiedenen Datentypen, wie zum Beispiel Strings oder Integers, unterschiedliche Implementierungen geben kann. Daher ist es immer wichtig, die Dokumentation der verwendeten Funktionen zu lesen.
+Die Implementierungsdetails des Datenvergleichs in Clojure sind ziemlich einfach, da sie die Java-Funktion `Date.compareTo` intern verwenden. Daten werden in Millisekunden seit dem 01.01.1970 (Unix-Zeit) angegeben.
 
-Das Vergleichen von Daten kann auch durch andere Methoden wie dem Überladen von Vergleichsoperatoren oder der Verwendung von Bibliotheken wie Joda Time erreicht werden. Diese Alternativen können in bestimmten Fällen effektiver sein.
+## Siehe auch
 
-Siehe auch
+Für mehr Beispiele und weitere Informationen, siehe:
 
-- Offizielle Dokumentation für Clojure's `compare` Funktion: https://clojuredocs.org/clojure.core/compare
-- Offizielle Dokumentation für Clojure's `before?` Funktion: https://clojuredocs.org/clojure.core/before_q
-- Offizielle Dokumentation für Clojure's `after?` Funktion: https://clojuredocs.org/clojure.core/after_q
-- Joda Time Bibliothek: https://www.joda.org/joda-time/
+- [Clojure Dokumentation](https://clojure.github.io/clojure/)
+- [clj-time Readme auf Github](https://github.com/clj-time/clj-time)
+- [Java Date.compareTo Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html#compareTo-java.util.Date-)

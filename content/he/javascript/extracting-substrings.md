@@ -1,7 +1,7 @@
 ---
-title:                "חילוץ תת מחרוזות"
-html_title:           "Javascript: חילוץ תת מחרוזות"
-simple_title:         "חילוץ תת מחרוזות"
+title:                "חילוץ תת-מחרוזות"
+html_title:           "Bash: חילוץ תת-מחרוזות"
+simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה:
-# חברים היי, בתוך הכתבה הזאת אני אמסור לכם מידע קצר ופשוט על מה זה ממשק substrings ולמה מתכנתים מחשבים זה.
-# כאשר מדברים על חלקים של מחרוזות, נאמר כי נחשבים כמידע נפרד ממחרוזת הראשונה, הנקרא מחרוזת אב. ניתן להשתמש בממשק substring בכדי לחלץ מידע זה ולעזור לנו לעבוד עם מחרוזות בצורה יעילה יותר.
+## מה זה ולמה? 
+משיכת הביטוי החלקי (Substring) הוא התהליך שבו אנו מאחזרים חלק ממחרוזת. מתכנתים עשויים לבצע את זה כאשר הם רוצים להבין, לנתח או לשנות במשתמשים מידע מסוים בתוך מחרוזת גדולה יותר.
 
-# איך לעשות:
-# אם תרצו להעביר למחשב את כל הנתונים ממחרוזות בעזרת פקודת substrings, אז בתור תחום מחשבות אמיתי, לא יהיה הצורך הרב בשימוש בתכנות עם קוד ארוך. אז כדי שלא תטעו את מחשבכם עם הקוד הפשוט והקצר יותר, הנה כמה דוגמאות ותוצאות כאשר משתמשים בממשק Javascript:
+## איך לעשות:
+ב-JavaScript, אנו משתמשים במתודות substring(), substr(), או slice() לחלצת ביטויים חלקיים. הנה דוגמאות:
 
 ```Javascript
-// דוגמה 1: חלץ חלק ממחרוזת
-let str = "קטף תפוחים";
-let substr = str.substring(3, 6);
-console.log(substr);
-// פלט: תפו
-
-// דוגמה 2: חלץ חלק מהסוף של המחרוזת
-let str = "גרם לי לחשוב";
-let substr = str.substring(6);
-console.log(substr);
-// פלט: לי לחשוב
+var str = 'Hello, World!';
+console.log(str.substring(0, 5)); // פלט: Hello
+console.log(str.substr(7, 5)); // פלט: World
+console.log(str.slice(-1)); // פלט: !
 ```
 
-# כיוון ראשון:
-# עכשיו שאנחנו יודעים מה זה מחרוזות ואיך לחלץ חלק ממנו, איך לא לומר מה כן? טוב, דרך אחרת לחלץ חלק מהמחרוזת היא עם עזרת פקודת substr. אנחנו גם יכולים להשתמש בפקודה זו כדי לחלץ את כל הנתונים שבאתר שלנו לשם שימוש ממחרוזת בFutureNet, אחת הדוגמאות המובילות crackler.io בישראל.
+## צלילה עמוקה:
+הצורך לחלץ מחרוזות חלקיות התחיל מתחילת התכנות. בעבר, היינו משתמשים באופרטורים על מחרוזות, אך זה היה מסורבל ותלוי בשפה. JavaScript הקלה עלינו את החיים עם מתודות פשוטות.
 
-# כיוון שני:
-# ניתן להשתמש בממשק substr גם כדי לחלץ מידע ממחרוזות מרובות באותו זמן. זה נועד לשימוש כאשר נרצה ליצור מחרוזת חדשה מהסוג הזה, בדוק את נאמר לעיל. תגמולים כמו אלה בדוגמאות הבאות – דוגמה אחת בוטלה היישר מההצעה ע"י משרד המשפטים בתיקון דיני אספקה, אבל צריך להזכיר ש פקודת substr ניתן להעתיק גם מתוך רף השימוש בממשק toString.
+slice(), substring(), ו- substr() יכולות להיות מבלבלות, אך ההבדל הוא באופן שבו הן מנהלות את האינדקסים. slice() ו- substring() רואות את המספר השלישי כסוף המחרוזת, בעוד ש- substr() רואה את המספר השני כאורך המחרוזת.
 
-# ראה גם:
-# תקשורת ממחרוזת מכיוון שמייעלת את הקשר עם הסרת מחרוזת ועוד יותר מסווגים. תוכלו להינות מכתבה מעניינת נוספת עם ממשק מחרוזת in code.cm, החלפה של מחרוזת רק בקוד אזוקונ עובד מצוין לתחום החישוב של perl. תקשורת משמעה כאן ביושר על רכיב סטנדרטי בקוד אזוקונ rootinit שיש לויזו, ידי בתאריך התועד למשרד ההפקודות sf.net
+אם אתה מעוניין לפרטים נוספים, בדוק את התיעוד הרשמי של MDN.
+
+## עיין גם:
+1. [MDN - String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+2. [MDN - String.prototype.substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+3. [MDN - String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+4. [W3Schools - JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)

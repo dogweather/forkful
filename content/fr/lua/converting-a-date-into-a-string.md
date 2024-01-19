@@ -1,7 +1,7 @@
 ---
-title:                "Convertir une date en une chaîne de caractères"
-html_title:           "Lua: Convertir une date en une chaîne de caractères"
-simple_title:         "Convertir une date en une chaîne de caractères"
+title:                "Convertir une date en chaîne de caractères"
+html_title:           "Gleam: Convertir une date en chaîne de caractères"
+simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+**## Quoi & Pourquoi?**
 
-Convertis une date en une chaîne de caractères signifie simplement transformer une date dans un format lisible pour les humains, comme "26 décembre 2020", plutôt que le format numérique habituel. Les programmeurs font cela pour faciliter la lecture et la compréhension des dates dans leur code.
+Changer une date en chaîne de caractères (string en anglais), c'est transformer une structure de données de date en une série de caractères. Les programmeurs le font pour faciliter l'affichage et le stockage des informations de date.
 
-## Comment faire:
+**## Comment faire:**
+
+Voici un exemple de comment vous pouvez le faire en Lua :
 
 ```Lua
-local date = os.date("%d/%m/%Y")
-print(date)
+os.setlocale('fr_FR') -- configuration de la locale en français
+date = os.date("*t") -- obtenir la date actuelle
+date_str = os.date("%A %d %B %Y", os.time(date)) -- conversion de la date en chaîne
+print(date_str) -- affichage de la chaîne
 ```
 
-Cela utilisera la fonction os.date pour récupérer la date actuelle et la convertir en une chaîne de caractères dans le format spécifié (%d pour le jour, %m pour le mois et %Y pour l'année). Ensuite, il l'imprimera dans la console.
+Dans cet exemple, la sortie pourrait être :
 
-Output: 26/12/2020
+```
+Jeudi 02 Décembre 2021
+```
+Elle affiche le jour de la semaine, le jour, le mois et l'année en Français.
 
-## Plongée en profondeur:
+**## Plongée profonde :**
 
-- Contexte historique: Dans le passé, les dates étaient stockées sous forme de chiffres, ce qui rendait difficile la lecture et la compréhension des dates pour les humains. Grâce à la conversion en chaînes de caractères, il est désormais plus facile de représenter les dates dans un format compréhensible.
+Historiquement, la conversion date en chaîne a toujours été effectuée pour faciliter le traitement des dates. En Lua, on utilise la bibliothèque `os` qui donne un accès simple et pratique aux fonctionnalités du système d'exploitation.
 
-- Alternatives: Une alternative à la fonction os.date est d'utiliser une librairie externe telle que "date.lua". Cette librairie offre des fonctionnalités avancées pour manipuler les dates, tout en conservant une syntaxe simple à utiliser.
+Il y a d'autres façons dont vous pourriez gérer cette tâche en Lua. Par exemple, vous pouvez utiliser la fonction `string.format()` pour formater une date en fonction de vos propres besoins spécifiques.
 
-- Détails d'implémentation: La fonction os.date utilise la bibliothèque C "strftime" pour effectuer la conversion de la date en chaîne de caractères. Elle prend en charge une variété de formats pour personnaliser la présentation de la date.
+Quant aux détails d'implémentation, la fonction `os.date()` prend deux paramètres : un format de chaîne et une heure. L'heure est généralement obtenue à partir de `os.time()`. Le format de chaîne contrôle comment l'heure est formatée.
 
-## A voir également:
+**## Voir aussi :**
 
-- [Documentation officielle de la fonction os.date Lua](https://www.lua.org/manual/5.4/manual.html#6.9)
-- [Librairie date.lua](https://github.com/Tieske/date)
-- [Documentation de la bibliothèque C "strftime"](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+Pour plus d'informations sur les fonctions `os.date()`, `os.time()`, et `os.setlocale()`, consultez la documentation officielle de Lua : https://www.lua.org/manual/5.4/fr/
+
+Pour des informations plus approfondies sur le formatage des dates, jetez un œil sur ces ressources :
+
+- https://www.lua.org/pil/22.1.html
+- https://en.lua-users.org/wiki/OsLibraryTutorial

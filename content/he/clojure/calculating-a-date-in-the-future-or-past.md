@@ -11,41 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+חישוב תאריך בעתיד או בעבר הוא מעין פעולה שבה אנחנו מוסיפים או מחסירים ימים, שבועות, חודשים או שנים מדאת ספציפית. מתכנתים עושים זאת כשהם צריכים לעקוב אחרי מרקמים זמניים - לדוגמא, זמן שליחת דינאמי, ערך של תאריך פקיעה וכדומה.
 
-חישוב תאריך בעתיד או בעבר הוא פעולה שמשמשת מתכנתים לחישוב תאריכים על פי תנאים נתונים. זה יכול להיות מועיל לצורך יצירת קודים מחשבוניים, תכניות תרחיש ומטריצות עבור התאריכים.
+## איך ל:
+Clojure מספקת תמיכה מולדת במניפולציות תאריכים באמצעות ספריית java.time.
 
-## איך לעשות זאת?
+```clojure
+(ns my.namespace
+  (:import [java.time LocalDate]))
 
-לחישוב תאריך בעתיד או בעבר ב-Clojure ניתן להשתמש בפונקציות המובנות `clj-time` ו `calendrical`.
+(defn add-days [date num-days]
+  (.plusDays date num-days))
 
-```Clojure
-(require '[clj-time.core :as time])
+(def today (LocalDate/now))
+(def ten-days-later (add-days today 10))
 
-; לחישוב תאריך בעתיד:
-(time/plus (time/now) (time/days 10))
-
-; לחישוב תאריך בעבר:
-(time/plus (time/now) (time/weeks -2))
-
-; פלט:
-#<DateTime 2020-04-22T21:41:47.061Z>
+(prn "Today is " today)
+(prn "In 10 days it will be " ten-days-later)
 ```
+זה יגדיר שני תאריכים - היום ועוד 10 ימים - ואז ידפיס שני הם.
 
-## חקירה מעמיקה
+## בהרחבה:
+- היסטוריה: נתמך בספריות הקודם של קלוז'ר.
+- אלטרנטיבות: Clojure מאפשרת שימוש בספריות חיצוניות כמו clj-time או clojure.java-time.
+- פרטי ביצוע: המניפולציה של תאריכים באמצעות plusDays מבוססת על מודל של unscaled addition, כלומר, היא תמיד מוסיפה מספר מסוים של ימים, ללא התחשבות בשינויים כמו מעבר לשנה הלועזית.
 
-### היסטוריה
-
-חישוב תאריך בעתיד או בעבר הוא תוכנית ארכיון ישנה שנמצאת בשימוש כבר מזמן רב. כיום, ישנם מספר פתרונות אחרים לחישוב תאריך בעתיד או בעבר כגון ספריות ומודולים אחרים המציעים פונקציונליות דומה.
-
-### אלטרנטיבות
-
-בנוסף לפתרונות המובנים של Clojure, ישנם גם ספריות חיצוניות שנועדו לעזור ללמוד ולחשב תאריכים בעתיד או בעבר. כמה מהן כוללות את `java.time` ו- `org.joda.time`.
-
-### פרטי היישום
-
-כאשר משתמשים בפונקציות המובנות של Clojure לחישוב תאריך בעתיד או בעבר, יש לקחת בחשבון את הפורמטים השונים של תאריכים בפלט ולהתאים אותם לצרכי האפליקציה שלכם.
-
-## ראו גם
-
-- [clj-time Dokumentacio](https://clj-time.github.io/clj-time/doc/index.html)
-- [calendrical Dokumentacio](https://github.com/clj-commons/calendrical)
+## ראו גם:
+- תיעוד ספריית [java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) 
+- פרויקט [clj-time](https://github.com/clj-time/clj-time) ב-GitHub 
+- פרויקט [clojure.java-time](https://github.com/dm3/clojure.java-time) ב-GitHub

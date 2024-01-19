@@ -1,6 +1,6 @@
 ---
 title:                "Extrayendo subcadenas"
-html_title:           "Bash: Extrayendo subcadenas"
+html_title:           "C: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Extraer subcadenas es una técnica común en la programación que consiste en obtener una porción específica de una cadena de texto. Los programadores hacen esto para manipular y analizar datos en una cadena de texto de manera más eficiente.
+Extraer subcadenas es el proceso de obtener partes pequeñas, específicas de una cadena más grande. Los programadores lo hacen para manipular, analizar o transformar datos en formatos más útiles.
 
-## Cómo hacerlo:
+## ¿Cómo se hace?
 
-Para extraer subcadenas en Bash, puedes utilizar el comando `cut`. A continuación se muestra un ejemplo de cómo extraer los primeros 5 caracteres de una cadena:
-
-```Bash
-cadena="Hola Mundo"
-echo ${cadena:0:5}
-```
-
-La salida de este código sería `Hola `. De manera similar, puedes extraer desde un punto específico hasta el final de la cadena utilizando un número negativo en el segundo parámetro:
+Primero, vamos a establecer un string:
 
 ```Bash
-cadena="Hola Mundo"
-echo ${cadena:5}
+cadena="Bienvenidos a Bash, amigos programadores."
 ```
+Para extraer una subcadena, usamos la siguiente sintaxis:
 
-La salida sería `Mundo`.
+```Bash
+echo ${cadena:10:6}
+```
+Esto extraerá 6 caracteres a partir del índice 10. La salida será:
 
-## Buceo profundo:
+```Bash
+"a Bash"
+```
+### Deep Dive
 
-Extraer subcadenas ha sido una técnica utilizada desde los primeros días de la programación. Antes de Bash, había otros lenguajes de programación que también tenían funciones para extraer subcadenas, como Perl o C. También hay alternativas en Bash, como los comandos `grep` y `sed`, que pueden ser utilizados para extraer subcadenas de manera más compleja.
+En sus primeras versiones, el interprete Bash no tenía capacidad para extraer subcadenas directamente. Con el tiempo, esta funcionalidad fue introducida para facilitar las operaciones de cadena, y ahora es uno de los principales usos de Bash.
 
-## Véase también:
+Existen alternativas a Bash para extraer subcadenas, como AWK y Perl. Sin embargo, Bash es muy utilizado y práctico, especialmente para los usuarios de Linux y MacOS.
 
-Si deseas aprender más sobre la manipulación de cadenas de texto en Bash, puedes consultar la documentación oficial de Bash en línea. También puedes encontrar ejemplos y tutoriales en línea que pueden ayudarte a comprender mejor cómo extraer subcadenas en Bash.
+Detrás de escena, cuando extraes una subcadena, Bash la recorre desde el índice que especificaste hasta la longitud que definiste. Si este índice y longitud caen dentro de los límites de la cadena, se devuelve la subcadena. En caso contrario, se devolverá una cadena vacía.
+
+## Ver También
+
+1. [Tutorial de Bash](https://www.learnshell.org/es/Bash_Scripting)
+2. [Bash en Wikipedia](https://es.wikipedia.org/wiki/Bash)
+3. [Extraer subcadenas en Bash](http://tldp.org/LDP/abs/html/string-manipulation.html)
+
+Lo más importante, practica y experimenta por ti mismo. ¡Buena codificación!

@@ -1,7 +1,7 @@
 ---
-title:                "Le téléchargement d'une page web"
-html_title:           "Kotlin: Le téléchargement d'une page web"
-simple_title:         "Le téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,40 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que et Pourquoi?
+## Quoi et Pourquoi?
 
-Télécharger une page web signifie récupérer le contenu d'une page web à partir d'un serveur distant et l'afficher sur votre propre ordinateur. Les programmeurs le font pour automatiser les tâches répétitives, extraire des informations à des fins de traitement de données ou pour le développement de logiciels.
+Télécharger une page web, c'est enregistrer son contenu sur votre disque dur. Les programmeurs le font pour travailler hors ligne, pour du scraping web, ou pour analyser la structure d'une page.
 
-## Comment faire:
+## Comment Faire:
+
+On va faire un exemple simple avec Ktor (une bibliothèque Kotlin). On aura besoin de sa dépendance dans build.gradle:
 
 ```Kotlin
-val url = URL("https://exemple.com")
-val urlConnection = url.openConnection() as HttpURLConnection
-
-try {
-    val responseCode = httpURLConnection.responseCode
-    if (responseCode == HttpURLConnection.HTTP_OK) {
-        val input = urlConnection.inputStream
-        val bufferedReader = BufferedReader(InputStreamReader(inputStream))
-        val response = StringBuffer()
-
-        bufferedReader.useLines { lines -> lines.forEach { response.append(it) } }
-
-        println(response.toString())
-    } else {
-        println("Erreur lors de la récupération de la page web")
-    }
-} finally {
-    urlConnection.disconnect()
+dependencies {
+    implementation 'io.ktor:ktor-client-core:1.6.3'
+    implementation 'io.ktor:ktor-client-cio:1.6.3'
 }
 ```
 
+Maintenant, le code pour télécharger une page web:
+
+```Kotlin
+import io.ktor.client.*
+import io.ktor.client.request.*
+
+suspend fun main() {
+    val client = HttpClient()
+    val pageContent = client.get<String>("https://google.com")
+    println(pageContent)
+}
+```
+Ce script affiche le contenu de la page Google. Modifiez l'URL pour télécharger d'autres pages.
+
 ## Plongée en profondeur:
 
-Télécharger une page web est une pratique courante en développement web et en traitement de données. Les programmeurs peuvent également utiliser des bibliothèques telles que OkHttp ou Retrofit pour une mise en œuvre plus conviviale. Les méthodes utilisées pour télécharger une page web incluent les requêtes GET et POST, ainsi que la manipulation des cookies et des en-têtes.
+Historiquement, les téléchargements de pages web étaient plus complexes, nécessitant des outils comme cURL. Aujourd'hui, des bibliothèques comme Ktor simplifient la tâche.
 
-## À voir aussi:
+Il existe plusieurs alternatives à Ktor, comme OkHttp et Apache HttpClient. OkHttp est parfait pour les opérations plus complexes, tandis qu'Apache HttpClient offre une compatibilité maximale.
 
-- [Guide complet sur la récupération de pages web en Kotlin](https://developer.android.com/kotlin/network/internet-protocols)
-- [OkHttp, bibliothèque de requêtes HTTP pour Kotlin](https://square.github.io/okhttp/)
-- [Retrofit, bibliothèque de requêtes HTTP pour Kotlin](https://square.github.io/retrofit/)
+Concernant le fonctionnement interne de l'exemple, la fonction `get` demande une réponse de type `String`. Ktor récupère la page, la convertit en String et la retourne.
+
+## Voir Aussi:
+
+- Documentation de Ktor: https://ktor.io/docs/welcome.html
+- Guide OkHttp: https://square.github.io/okhttp/
+- Documentation Apache HttpClient: https://hc.apache.org/httpcomponents-client-5.0.x/tutorial/html/fundamentals.html

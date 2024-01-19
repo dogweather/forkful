@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Learn Gleam by Parsing HTML
-
 ## What & Why?
-Parsing HTML revolves around understanding and converting HTML strings into structured data. Programmers parse HTML to enable software to extract or read information embedded in web pages automatically.
+
+Parsing HTML is the decoding of HTML markup into a more structured format. Programmers do so to interact with, extract, modify, or render web content programmatically.
 
 ## How to:
-Here's a swift overview of how to parse HTML in Gleam:
 
-```Gleam
-import gleam/http.{Uri}
-import gleam/string.{replace}
+In Gleam, parsing HTML is not idiomatic due to lack of HTML parsing library. But, let's hypothetically work with a simple string manipulation to retrieve content from HTML.
 
-fn parse_html() {
-  let html_response = "..."
-  let parsed_html = parse_html_data(html_response)
-  case parsed_html {
-    Error(e) -> "HTML parsing error: " ++ e
-    Ok(s) -> "Parsed successfully: " ++ s
+```gleam
+pub fn parse(header: String) -> Result(String, Nil) {
+  case String.split(header, "<title>") {
+    [] -> Error(Nil)
+    [_ | [pre, suf]] ->
+      case String.split(suf, "</title>") {
+        [] -> Error(Nil)
+        [_ | [title, _]] -> Ok(title)
+      }
   }
 }
 
-fn parse_html_data(response: String) -> Result(String, Nil) {
-...
-}
+assert parse("<title>My Webpage</title>") == Ok("My Webpage")
+assert parse("No title here") == Error(Nil)
 ```
-This simply parses HTML from an HTTP response and returns an error message if there's an issue, otherwise, a success message is output. You need to replace `"..."` with the actual HTML response.
 
-## Deep Dive
-HTML parsing's been around since the early web ages, with Perl's HTML::Parser being one of the archaic tools. Today, languages have rich libraries making this once arduous task less daunting.
+The code above splits the input string around `<title>` and `</title>` tags and returns content between them.
 
-Other Gleam alternatives include libraries like HtmlSport and HtmlTrance as well as tools like Beautiful Soup in Python or Nokogiri in Ruby.
+## Deep Dive:
 
-The implementation of HTML parsing in Gleam primarily leverages pattern-matching, a core part of functional programming that Gleam thrives on. This is why the case expressions in the example above are integral.
+Historically, parsing HTML was crucial: web scrapers and SEO tools extract data, web servers render pages, and browsers present sites to users.
 
-## See Also
-1. [Gleam Documentation](https://gleam.run/docs/)
-2. [HtmlSport](https://github.com/warner/HtmlSport)
-3. [HtmlTrance](https://github.com/rrva/htmltrance)
+Alternatives to Gleam for HTML parsing involve languages with more robust libraries, such as BeautifulSoup in Python or Jsoup in Java.
 
-Check these resources to deep dive further into the Gleam landscape.
+In parsing HTML, notable concerns are tag nesting and error handling. Our hypothetical Gleam parsing doesn't address these issues but demonstrates the principle.
+
+## See Also:
+
+Gleam's String API: https://hexdocs.pm/gleam_stdlib/gleam/string/
+
+A discussion on HTML parsing libraries in Rust, which could be a starting point once Gleam attains a wider ecosystem: https://users.rust-lang.org/t/html-parsing/1442
+
+Python's BeautifulSoup Documentation for HTML parsing: https://www.crummy.com/software/BeautifulSoup/doc

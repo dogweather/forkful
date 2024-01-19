@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Elixir recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,53 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Kickstart Using Elixir: Starting A New Project 
 
-Starting a new project in programming is like creating a blueprint for a new idea. Programmers do it to plot out the structure and design of a software concept before jumping into coding. This way, they ensure systematic workflows and fewer bugs during the development phase.
+## What & Why?
+Starting a new project is creating a fresh coding environment where you scaffold your codebase structure. Programmers do this to maintain a well-structured, clean, and maintainable project.
 
 ## How to:
+Starting a new project in Elixir is straightforward, thanks to Mix, Elixir's build tool. Here is how you do it:
 
-In Elixir, you start a new project using Mix, a build tool that ships with Elixir itself. Here's an example:
-
-```elixir
-mix new my_app
+```Elixir
+$ mix new hello_world
 ```
 
-This command creates a new directory named `my_app` with the key files: `mix.exs`, `config`, `lib`, `test`, and a `.formatter.exs` file. The project's structure will look like this:
+This command creates a new directory called `hello_world` with all necessary project files. Check what's inside:
 
-```elixir
-my_app
-├─ config
-│  └─ config.exs
-├─ lib
-│  └─ my_app.ex
-├─ test
-│  ├─ my_app_test.exs
-│  └─ test_helper.exs
-├─ .formatter.exs
-└─ mix.exs
+```Elixir
+$ cd hello_world
+$ ls
 ```
 
-To run your new project, use:
+Output:
 
-```elixir
-iex -S mix
+```
+_config     lib        test     mix.exs
 ```
 
-You're now in an Elixir shell with your project compiled and ready to go.
+Your new Elixir project is now ready for development. The `lib` directory will contain your source code and the `test` your unit tests.
 
 ## Deep Dive
+Elixir introduced Mix looking back at Erlang's build tools shortcomings. It delivers a user-friendlier command-line interface, managing dependencies, running tests, and much more. It's a powerful tool that simplifies setting up and managing an Elixir project.
 
-Today, starting a new project using Mix has become a standard in Elixir programming. But why Mix? Before its inception, Elixir developers were doing everything manually, which was error-prone and time-consuming. Mix simplified this by offering developers the ability to make reusable modules, thus making code more modular, efficient, and easy to manage.
+While alternatives to Mix exist, such as Rebar3 (a well-known build tool in the Erlang world), they aren't as tightly integrated with Elixir. Selecting one over the other will depend largely on your project's specifics and your preference.
 
-While Mix is wonderful, it's not the only option for starting a new project. Other build tools like Rebar and CMake offer similar features, and the choice between them often boils down to the specifics of the project at hand and the developer's preference.
-
-On the implementation front, Mix relies on the OTP (Open Telecom Platform) principles under the hood, which revolves around processes and message passing to create concurrent and scalable programs. 
+When you run `mix new`, under the hood, Mix creates a basic directory structure and a few vital files like `mix.exs`. This file is where you define your application, dependencies, and project version, becoming the go-to place for managing anything related to your project.
 
 ## See Also
-
-Elixir's official getting-started guide: https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html
-
-"A Little Elixir & OTP" by Benjamin Tan: https://www.amazon.com/Little-Elixir-OTP-Benjamin-Tan/dp/1680502522
-
-Elixir School on Mix: https://elixirschool.com/en/lessons/basics/mix/
+1. [Elixir's Official Documentation on Mix](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
+2. [Introduction to Mix on Elixir School](https://elixirschool.com/en/lessons/basics/mix/)
+3. [Rebar3 documentation](https://rebar3.readme.io/)

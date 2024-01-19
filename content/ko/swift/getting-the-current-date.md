@@ -1,7 +1,7 @@
 ---
-title:                "현재 날짜 불러오기"
-html_title:           "Swift: 현재 날짜 불러오기"
-simple_title:         "현재 날짜 불러오기"
+title:                "현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 어떤 것이며 왜 필요한가요?
-현재 날짜를 가져오는 것이란 무엇일까요? 그리고 왜 프로그래머들이 이것을 하는 걸까요? 현재 날짜를 가져오는 것은 프로그래밍에서 매우 유용한 작업입니다. 이는 어떤 기능이나 앱에서 사용 가능한 최신 정보를 제공하고, 시간과 일정을 추적하며, 데이터를 정렬할 때 도움을 줍니다.
+## 무엇 & 왜?
 
-## 방법:
-```
-// 현재 날짜를 가져오는 방법은 간단합니다. Date()를 호출하면 됩니다.
-let currentDate = Date()
-print(currentDate)
-```
-```
-// 날짜를 원하는 형식으로 포맷하는 방법은 다음과 같습니다.
-let format = DateFormatter()
-format.dateFormat = "yyyy/MM/dd"
-let formattedDate = format.string(from: currentDate)
-print(formattedDate)
-```
-출력 예시:
-```
-2019-08-19 13:18:22 +0000
-2019/08/19
+현재 날짜를 받아온다는 것은, 우리가 프로그래밍 중인 컴퓨터 시스템에서 현재의 날짜와 시간을 가져오는 것을 의미합니다. 이 기능은 로깅, 타임스탬프, 혹은 시간 정렬 등 다양한 코딩 태스크를 수행하기 위해 필요합니다.
+
+## 어떻게 하는가:
+
+Swift에는 현재 날짜와 시간을 얻는 방법이 내장되어 있습니다. 'Date()' 함수를 호출하기만 하면 됩니다:
+
+```Swift
+let 현재날짜 = Date()
+print(현재날짜)
 ```
 
-## 깊이 있는 들어보기:
-(1) 현재 날짜를 가져오는 방법에는 여러 가지가 있습니다. Swift의 Date() 외에도 Calendar, strftime() 등의 다양한 옵션이 있습니다. (2) 현재 날짜를 이용해 시계, 알람, 카운트다운 등 다양한 기능을 구현할 수 있습니다. (3) 현재 날짜를 효율적으로 관리하기 위해 Date와 관련된 다양한 함수와 메서드를 알아보세요. 예를 들어, 날짜 간의 차이를 구하는 방법, 날짜를 연산하는 방법 등이 있습니다.
+위 코드를 실행하면, 다음과 같은 출력이 나옵니다 (실행한 시간에 따라 출력은 달라집니다):
+```
+2022-02-10 12:00:00 +0000
+```
 
-## 관련 자료:
-- [Date and Time Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html#//apple_ref/doc/uid/10000039i)
-- [DateFormatter - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Alternative Ways to Get the Current Date and Time - Swift by Sundell](https://www.swiftbysundell.com/posts/alternative-ways-to-get-the-current-date-and-time-in-swift)
+## 심화 학습
+
+Swift에 내장된 'Date()' 함수는 날짜와 시간을 단순하게 가져옵니다만, 사용하는 OS에 따라 해당 시스템 시간 기준으로 처리할 수 있습니다.
+
+'Calendar'와 'DateComponents' 같은 클래스를 활용하면, 더 복잡하거나 세부적인 날짜 및 시간 정보를 가져올 수 있습니다. 예를 들어, 원하는 형식으로 날짜를 호출하거나, 현재 날짜를 기준으로 특정 시간을 계산하고 싶은 경우에 사용합니다.
+
+```Swift
+let calendar = Calendar.current
+let dateComponents = calendar.dateComponents([.day, .month, .year, .hour, .minute, .second], from: Date())
+```
+
+위 코드는 현재 시스템에서 날짜와 시간을 가져와, 해당 날짜와 시간을 구성하는 요소들을 나누게 됩니다.
+
+## 참고자료
+
+더 많은 정보를 얻기 위해 다음 링크를 참조하세요:
+- [Apple's 'Date' Documentation](https://developer.apple.com/documentation/foundation/date)
+- [Apple's 'Calendar' Documentation](https://developer.apple.com/documentation/foundation/calendar)
+- [Apple's 'DateComponents' Documentation](https://developer.apple.com/documentation/foundation/datecomponents)

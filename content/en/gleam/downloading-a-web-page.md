@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Gleam recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,40 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Downloading a web page is the act of retrieving all resources of the site, including HTML, CSS, JavaScript, and media files. Programmers do this for offline browsing, site backup, or data scraping, essentially making the web content accessible regardless of network connection.
+
+Downloading a web page refers to retrieving data from a specific URL and saving the resulting HTML file for later use. This lets programmers analyze, manipulate, or replicate the page's structure and content.
 
 ## How to:
-In Gleam, we can use the `reqw` module to make HTTP requests. Here's a Gleam code sample to download a web page:
+
+While Gleam itself does not support HTTP requests natively, it can utilize the power of Elixir or even Erlang within its environment to do so. Below is an example using Erlang's 'httpc' module:
 
 ```Gleam
-import gleam/result.{Ok}
-import reqw
+import gleam/erlang
 
-pub fn main(url: String) {
-  let resp = reqw.get(url)
+pub fn download_page(url: String) -> Result(BitString, Nil) {
+  let response = erlang.apply(
+    "httpc",
+    "request",
+    [tuple("get", url)
+  ])
 
-  case resp {
-    Ok(response) -> 
-      case response.body {
-        Ok(body) -> 
-          io.println(body)
-        Error(reason) -> 
-          io.println(reason)
-      }
-    Error(_reason) -> 
-      io.println("Failed to fetch page.")
+  case response {
+    Ok(tuple(_, tuple(_, _, body))) -> Ok(body)
+    Error(err) -> Error(Nil)
   }
 }
 ```
 
-Running this code with a valid URL will output the HTML of the requested page. If the URL is not accessible or invalid, it will output an error message.
+If you run this function with a valid URL, it will return the HTML contents of that page, or Error(Nil) if something went wrong.
 
 ## Deep Dive
-Web page downloading has a rich history, tracing back to the initial days of the internet when offline browsing was a necessity due to expensive and unreliable connections. Alternatives include using web scraping libraries in Python (like BeautifulSoup or Scrapy), or JavaScript API methods (like `fetch`). 
 
-In Gleam, the `reqw` module allows us to make HTTP requests. The HTTP response contains the body that is the HTML of the webpage, which can then be parsed or saved as required. It’s simple and effective but lacks features you might find in more full-featured libraries.
+In early days of the web, downloading the raw HTML of a page was a common way to parse data from the web. Modern solutions often use a combination of APIs and JSON to accomplish the same tasks, but in certain cases, or where an API doesn't exist, downloading a web page can still be necessary.
 
-## See Also
-- [Gleam `reqw` docs](https://hexdocs.pm/reqw/reqw.html)
-- [Python Web Scraping with BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [JavaScript fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+The code in Gleam is doing the heavy lifting using Erlang's httpc module underneath the hood, as Gleam runs on the Erlang virtual machine (BEAM). It is important to note that 'httpc' isn't necessarily the best HTTP client available, but it comes packaged with Erlang, and for simple GET requests like this, it's perfectly fine!
+
+## See Also:
+
+- Gleam Documentation: https://hexdocs.pm/gleam_erlang/gleam/erlang/index.html
+- Erlang's 'httpc' HTTP client documentation: http://erlang.org/doc/man/httpc.html
+- 'httpotion' - another popular HTTP client which can be used in Gleam: https://hexdocs.pm/httpotion/readme.html
+- JSON Parsing in Gleam: https://hexdocs.pm/gleam_erlang/gleam/erlang/index.html#json_decode/1

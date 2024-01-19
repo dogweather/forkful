@@ -1,7 +1,7 @@
 ---
-title:                "Enviando uma requisição http"
-html_title:           "C: Enviando uma requisição http"
-simple_title:         "Enviando uma requisição http"
+title:                "Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
+simple_title:         "Enviando uma solicitação http"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,16 +10,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+# Enviando uma solicitação HTTP em C
 
-Enviar uma solicitação HTTP é um processo importante na programação, pois permite que os desenvolvedores interajam com servidores e acessem informações da web. Essa solicitação pode ser feita por meio de um navegador da web ou por meio de um programa de computador.
+## O que & Por quê?
+Enviar uma solicitação HTTP é o ato de pedir a um servidor web, através de HTTP, por dados ou ações para serem executadas. Os programadores o fazem para se comunicar, interagir e operar na internet.
 
-## Como fazer:
+## Como Fazer:
+Aqui está um exemplo de como enviar uma solicitação HTTP usando a biblioteca `curl` em C.
 
-Um exemplo simples de envio de uma solicitação GET pode ser feito da seguinte forma em C:
 ```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <curl/curl.h>
 
 int main(void)
@@ -29,30 +29,30 @@ int main(void)
 
   curl = curl_easy_init();
   if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://exemplo.com"); // URL do servidor
-    res = curl_easy_perform(curl); // solicitação GET
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+    res = curl_easy_perform(curl);
+    /* verifica o erro */
     if(res != CURLE_OK)
-      fprintf(stderr, "Erro ao enviar solicitação: %s\n",
+      fprintf(stderr, "curl_easy_perform() falhou: %s\n",
               curl_easy_strerror(res));
-    curl_easy_cleanup(curl); // limpar CURL
+    /* sempre limpe */
+    curl_easy_cleanup(curl);
   }
   return 0;
 }
 ```
+Quando isso é executado, uma solicitação HTTP GET é enviada para `http://example.com`.
 
-O resultado dessa solicitação seria um código HTML da página do servidor, que pode ser usado para extrair informações específicas ou tomar ações.
+## Mergulho Profundo
+Enviar uma solicitação HTTP é um dos aspectos básicos do trabalho na web e existem muitas maneiras de fazê-lo. O exemplo usou `libcurl`, escolhido pela sua facilidade de uso e apoio da comunidade. 
 
-## Mergulho profundo:
+HTTP foi desenvolvido por Tim Berners-Lee e seu time no CERN no começo dos anos 90. Tem sido o alicerce da World Wide Web desde então, com várias versões lançadas ao longo dos anos.
 
-O protocolo HTTP (Hypertext Transfer Protocol) é a base de comunicação da web. Foi desenvolvido no início da década de 1990 e é amplamente utilizado até hoje. Existem outros protocolos que também podem ser usados para enviar solicitações, como HTTPS e FTP.
+Existem várias outras bibliotecas em C para enviar solicitações HTTP, como `libwww-c`, `neon`, `serf` entre outros. Você pode escolher uma dependendo das necessidades do seu projeto.
 
-Além do libcurl, existem outras bibliotecas que podem ser utilizadas para enviar solicitações HTTP em C, como o HTTPClient e a biblioteca nativa do Windows, WinINet. Além disso, muitas linguagens de programação possuem recursos embutidos para enviar solicitações HTTP, como a biblioteca Requests em Python.
+A implementação da solicitação HTTP envolve a criação de um socket, configuração do cabeçalho HTTP e envio dos dados de solicitação. A resposta do servidor é então recebida e processada.
 
-A implementação exata de uma solicitação HTTP pode variar dependendo da especificação do protocolo e do servidor em questão. É importante estar ciente das diferentes opções e parâmetros disponíveis ao enviar uma solicitação.
-
-## Veja também:
-
-- [Documentação libcurl](https://curl.haxx.se/libcurl/)
-- [Documentação HTTPClient](https://developer.apple.com/documentation/httpclient)
-- [Documentação WinINet](https://docs.microsoft.com/en-us/windows/win32/wininet/wininet?redirectedfrom=MSDN)
-- [Documentação Requests](https://docs.python-requests.org/en/master/)
+## Veja Também
+- Documentação Libcurl: [https://curl.haxx.se/libcurl/c/](https://curl.haxx.se/libcurl/c/)
+- Tutorial Libcurl: [https://curl.se/libcurl/c/libcurl-tutorial.html](https://curl.se/libcurl/c/libcurl-tutorial.html)
+- Detalhes do HTTP: [https://developer.mozilla.org/p/http](https://developer.mozilla.org/p/http)

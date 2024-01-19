@@ -1,6 +1,6 @@
 ---
 title:                "Konwersja daty na ciąg znaków"
-html_title:           "C++: Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
 simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "C++"
 category:             "C++"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co & Dlaczego?
+## Co i dlaczego?
 
-Konwersja daty na ciąg znaków jest procesem przekształcania daty w formacie liczbowym na tekstowy. Programiści często wykonują tę operację w celu wyświetlenia daty w przyjaznym dla użytkownika formacie.
+Konwersja daty na string (lancuch znaków) w C++ to proces zamiany daty z formatu liczbowego na czytelny dla człowieka tekst. Programiści robią to, aby ułatwić odczytywanie dat i uatrakcyjnić interfejs użytkownika.
 
-# Jak to zrobić?
+## Jak to zrobić:
 
-C++ udostępnia wiele metod konwersji daty na ciąg znaków. Przykłady kodu i wyników znajdują się poniżej.
+Oto przykład w C++, jak można przekształcić datę na string:
 
 ```C++
 #include <iostream>
-#include <ctime>
-
-using namespace std;
+#include <chrono>
+#include <iomanip>
 
 int main() {
-    // Pobranie bieżącej daty
-    time_t now = time(0);
-
-    // Konwersja daty na ciąg znaków w formacie "mm/dd/rrrr" 
-    char* date = ctime(&now);
-    cout << "Bieżąca data: " << date << endl;
-
-    // Konwersja daty na ciąg znaków w formacie "miesiąc dd, rrrr" 
-    tm *ltm = localtime(&now);
-    cout << "Bieżący miesiąc: " << 1 + ltm->tm_mon << " " << ltm->tm_mday << ", " << 1900 + ltm->tm_year << endl;
-
+    auto teraz = std::chrono::system_clock::now();
+    std::time_t czas = std::chrono::system_clock::to_time_t(teraz);
+    
+    std::cout << "Teraz: " << std::put_time(std::localtime(&czas), "%Y-%m-%d %X") << std::endl;
+    
     return 0;
 }
 ```
-**Wynik:**
+Przykładowe wyjście:
 
 ```
-Bieżąca data: Wed Jul 28 12:25:38 2021
-Bieżący miesiąc: 7 28, 2021
+Teraz: 2022-03-15 16:22:33
 ```
+## Głębsze spojrzenie
 
-# Głębszy Zanurzenie
+(1) Kontekst historyczny: Przekształcanie dat na stringi jest praktyką starą jak samo programowanie. Format daty jest wyjątkowo istotny przy zapisie danych, aby były one spójne i zrozumiałe zarówno dla ludzi, jak i dla maszyn. (2) Alternatywy: Istnieje wiele bibliotek języka C++, takich jak Boost.Date_Time, które udostępniają narzędzia umożliwiające konwersję dat. (3) Szczegóły implementacji: W tym przypadku używamy biblioteki `<chrono>`, aby pobierać aktualny czas, a następnie konwertować go na format `std::time_t`, który następnie jest przekształcany na czytelny dla człowieka format za pomocą funkcji `std::put_time`.
 
-Konwersja daty na ciąg znaków jest powszechna w programowaniu i często wykorzystywana w kontekście wyświetlania dat w formie czytelnej dla użytkownika. Alternatywnym sposobem konwersji daty jest użycie biblioteki Boost, która dostarcza więcej funkcji i może być bardziej szczegółowa w niektórych przypadkach.
+## Zobacz także
 
-Implementacja konwersji daty wymaga wykorzystania funkcji dostępnych w standardowej bibliotece C++ oraz określenia formatu wyjściowego. W przypadku braku odpowiedniego formatu, funkcje mogą zwrócić nieporządane wyniki.
-
-# Zobacz również
-
-[Przewodnik dla programistów C++ - Konwersja daty](https://www.cplusplus.com/reference/ctime/strftime/)
+1. Dokumentacja C++ - `<chrono>`: https://en.cppreference.com/w/cpp/chrono
+2. Dokumentacja C++ - `put_time`: https://en.cppreference.com/w/cpp/io/manip/put_time
+3. Boost.Date_Time: https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html
+4. Przydatne narzędzia do konwersji dat: https://www.fluentcpp.com/2018/05/15/std-chronos-little-secret/

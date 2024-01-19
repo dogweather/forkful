@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga tal"
-html_title:           "Swift: Generering av slumpmässiga tal"
-simple_title:         "Generering av slumpmässiga tal"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -10,27 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Skapa slumpmässiga tal i Swift: En djupdykning 
+
 ## Vad & Varför?
-Att generera slumpmässiga nummer är en vanlig uppgift för programmerare. Genom att slumpmässigt välja nummer kan vi skapa variation och realism i våra applikationer, spel och simuleringar.
 
-## Hur gör man?
-För att generera slumpmässiga nummer i Swift använder vi antingen den inbyggda funktionen `arc4random()` eller `arc4random_uniform()`. Här är ett exempel på hur man använder dessa funktioner:
+Slumpmässig nummergenerering innebär att skapa tal som inte har något tydligt mönster eller sekvens. Programmerare använder detta för att införa oförutsägbarhet i deras applikationer, exempelvis i spel för att skapa en ovisshet.
+
+## Hur man gör:
+
+I Swift kan du generera ett slumpmässigt tal mellan två gränser genom att använda `Int.random(in:)`:
 
 ```Swift
-let randomNum = arc4random()
-print("Slumpmässigt nummer: \(randomNum)")
-//Output: Slumpmässigt nummer: 2631852051
-```
-```Swift
-let randomNum = arc4random_uniform(100)
-print("Slumpmässigt nummer mellan 0 och 99: \(randomNum)")
-//Output: Slumpmässigt nummer mellan 0 och 99: 56
+let randomNum = Int.random(in: 1..<10)
+print(randomNum)
 ```
 
-## Djupdykning
-Att generera slumpmässiga nummer är en vanlig utmaning inom datavetenskap och används inom många olika områden som spel, simuleringar och kryptering. I äldre versioner av Swift användes funktionen `rand()` för att generera slumpmässiga nummer, men den är numer ersatt av `arc4random()` för att undvika förutsägbarhet i de genererade numren.
+När du kör detta kod, kommer du få ett tal mellan 1 och 9 (observera att övre gränsen inte ingår).
 
-Det finns även andra sätt att generera slumpmässiga nummer i Swift, såsom användning av tredjepartsbibliotek eller implementering av egna algoritmer. Det är viktigt att vara medveten om datatyper och begränsningar när man använder slumpmässiga nummer, såsom att `arc4random()` endast kan användas för positiva heltal.
+## Djupdykning 
 
-## Se även
-Vill du lära dig mer om att generera slumpmässiga nummer i Swift? Kolla in Swifts dokumentation för de inbyggda funktionerna `arc4random()` och `arc4random_uniform()`: https://developer.apple.com/documentation/swift/1540993-arc4random
+Att generera slumpmässiga tal är ingenting nytt och har använts sedan de första dagarna av programmering. Swift förbättrade processen jämfört med tidigare språk genom att allmänt låta programmerare ange övre och nedre gränser för slumpmässiga tal, något många andra språk inte stöder i standardbiblioteket.
+
+Ett alternativ till Swifts inbyggda metoder att skapa slumpmässiga tal är att använda en tredjepartsbibliotek som till exempel GameplayKit, som ger mer sofistikerade funktioner för att skapa slumpmässiga tal.
+
+Det är viktigt att notera att Swift's slumpmässiga nummergenerator är tillräckligt bra för de flesta ändamål, men det kanske inte är tillräckligt robust för mycket känsliga tillämpningar, som kryptografi eller säkerhet. I sådana fall bör du överväga att använda mer avancerade tekniker, såsom kryptografiskt säkra pseudoslump Generatorer.
+
+## Se också:
+
+1. [Swifts officiella dokumentation om 'random'](https://developer.apple.com/documentation/swift/random)
+2. [Apple's GameplayKit](https://developer.apple.com/documentation/gameplaykit)
+3. [Kryptografiskt säkra pseudoslump Generators](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator).

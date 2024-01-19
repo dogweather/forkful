@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Elm: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co to jest i po co to?:
+## Co i Dlaczego?
 
-Znajdowanie długości napisu jest jednym z podstawowych zadań programistycznych. Polega ono na określeniu liczby znaków w ciągu tekstu. Jest to bardzo przydatne narzędzie w manipulowaniu i analizowaniu danych tekstowych. Szczególnie przydatne jest przy pisaniu aplikacji internetowych, gdzie często konieczne jest sprawdzenie, czy wprowadzony tekst spełnia wymagane przez nas kryteria.
+Długość łańcucha to liczba znaków w danym łańcuchu. Programiści potrzebują tej informacji w różnych kontekstach, takich jak generowanie błędów walidacyjnych, przycinanie tekstu lub operacje na tekście.
 
-Jak to zrobić:
+## Jak zrobić?
 
-W Elm istnieje prosty sposób na znalezienie długości napisu. Wystarczy użyć funkcji `String.length`, która przyjmuje ciąg tekstu jako argument i zwraca jego długość jako liczbę. Przykładowy kod może wyglądać tak:
+Aby sprawdzić długość łańcucha w Elm, używamy funkcji `String.length`. Oto przykład:
 
+```Elm
+import Html exposing (text)
+
+main =
+  text (String.fromInt (String.length "Cześć"))
 ```
-Elm String.length "Hello World!" -- wynik: 12
-Elm String.length "Lorem ipsum dolor sit amet" -- wynik: 26
-```
 
-Od razu widać, jak prosty i intuicyjny jest ten proces w Elm. Wynik zwracany przez funkcję jest dokładny i przewidywalny. W przeciwieństwie do innych języków programowania, nie ma konieczności definiowania dodatkowych zmiennych czy operacji, aby uzyskać długość napisu.
+Gdy uruchomisz ten kod, wyświetli się "5" – liczba znaków w słowie "Cześć".
 
-Głębokie nurkowanie:
+## W Głąb Tematu
 
-Historia używania długości napisu sięga czasów maszyn liczących, gdzie była to jedna z podstawowych operacji. W dzisiejszych czasach znalezienie długości napisu jest jeszcze prostsze dzięki gotowym funkcjom w językach programowania. Jednym z popularnych sposobów na wykonanie tego zadania jest użycie pętli i inkrementacji licznika za każdym razem, gdy natrafimy na kolejny znak w ciągu. W Elm jednak możemy wykorzystać gotową funkcję, która znacznie skraca ten proces.
+Elm to język funkcyjny, który podziela wiele cech z Haskell. Warto zauważyć, że choć Elm ma wbudowaną funkcję `String.length`, pamiętać o tym, że ta funkcja działa poprawnie jedynie na łańcuchach reprezentujących poprawny tekst w formacie UTF-16. W przypadku niewłaściwych sekwencji, wynik może być nieprzewidywalny.
 
-Alternatywnym sposobem na znalezienie długości napisu jest użycie metody `length` dostępnej w typie `String` w języku JavaScript. W Elm nie jest to jednak zalecane, ponieważ jest to funkcja skrywana przez kompilator i może powodować nieprzewidziane zachowania.
+Alternatywnie, jeśli operujesz na listach znaków zamiast łańcuchach, możesz użyć funkcji `List.length`.
 
-See also:
+Szczegółami implementacji `String.length` nie musisz się przejmować - język Elm został zaprojektowany z myślą o bezpieczeństwie i łatwości obsługi, więc te niskopoziomowe kwestie są dla Ciebie ukryte.
 
-Jeśli chcesz dowiedzieć się więcej o funkcji `String.length` w Elm, możesz przejrzeć dokumentację języka pod tym linkiem: https://package.elm-lang.org/packages/elm/core/latest/String#length. Dodatkowo, jeśli interesują Cię inne operacje na tekstach w Elm, warto zapoznać się ze wspomnianym wcześniej typem `String`, który zawiera wiele przydatnych funkcji.
+## Zobacz Też
+
+Jeżeli chcesz zgłębić temat operacji na łańcuchach w Elm, zapraszam do lektury następujących źródeł:
+
+- Dokumentacja Elm: [String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Dokumentacja o listach w Elm: [List](https://package.elm-lang.org/packages/elm/core/latest/List)
+- Przydatny artykuł na blogu: [Understanding Strings in Elm](https://elmprogramming.com/strings.html)

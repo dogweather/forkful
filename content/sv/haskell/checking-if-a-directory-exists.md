@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns"
-html_title:           "Haskell: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en katalog finns"
+html_title:           "Bash: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Kontroll av om en katalog finns är en process där en programmerare använder kod för att se om en viss katalog finns på datorn. Detta är ett viktigt steg i utvecklingen av program, eftersom det tillåter programmeraren att hantera fall där en viss katalog inte finns.
+---
 
-## Hur man gör:
-Det enklaste sättet att kontrollera om en katalog finns är att använda funktionen ```doesDirectoryExist``` från ```System.Directory``` biblioteket i Haskell. Här är ett exempel på kod som använder den funktionen:
+# Kolla Om En Katalog Finns Med Haskell
+
+## Vad & Varför?
+
+Att kontrollera om en katalog finns innebär att se till att en specifik sökväg faktiskt pekar på en befintlig katalog. Programmerare gör detta för att förhindra fel som kan uppstå när man försöker manipulera en icke-existerande katalog.
+
+## Hur du gör:
+
+För att kontrollera om en katalog finns i Haskell, kan vi använda `doesDirectoryExist` funktion från `System.Directory` modulen. Se koden nedan:
 
 ```Haskell
 import System.Directory
 
-main :: IO ()
 main = do
-  exists <- doesDirectoryExist "katalogen"
-  if exists
-    then putStrLn "Katalogen finns."
-    else putStrLn "Katalogen finns inte."
+    let dir = "/path/to/directory"
+    exists <- doesDirectoryExist dir
+    print exists
 ```
+Låt oss köra detta program. Om katalogen finns ger den `True`, om inte ger den `False`.
 
-Detta kodexempel kontrollerar om katalogen "katalogen" finns och skriver ut antingen "Katalogen finns." om den gör det, eller "Katalogen finns inte." om den inte gör det.
+## Djupdykning
 
-## Fördjupning:
-Kontroll av om en katalog finns är en vanlig uppgift i många programmeringsspråk och bibliotek. I andra språk kan det dock krävas att man skriver mer komplicerad kod för att uppnå samma resultat. I Haskell kan man använda sig av ```doesDirectoryExist``` funktionen, men det finns också andra alternativ, som att använda ```getDirectoryContents``` för att hämta en lista av alla kataloger och sedan använda  ```elem``` funktionen för att se om en viss katalog finns i listan.
+Funktionen `doesDirectoryExist` är en del av `System.Directory`-modulen sedan Haskell Plattformen 2010.2.0.0. Den baseras på Unix-funktionen `stat`, vilket gör den till en snabb och tillförlitlig metod. 
 
-Det är också värt att notera att funktionen ```doesDirectoryExist``` inte bara returnerar en boolesk variabel, utan faktiskt returnerar en typ som heter ```IO Bool```. Detta beror på att funktionen är "inbakad" i IO-monaden, vilket tillåter Haskell att hantera I/O-operationer på ett säkert och kontrollerat sätt.
+Ett alternativ till `doesDirectoryExist` kan vara att använda `getDirectoryContents` funktion som returnerar en lista med kataloginnehåll, och sen kontrollerar om sökvägen hör till listan. Men detta kan vara mer resurskrävande.
 
-## Se även:
-- [Hackage - System.Directory](https://hackage.haskell.org/package/directory)
-- [Officiell Haskell-dokumentation - System.Directory](https://www.haskell.org/cabal/users-guide/package-descriptions.html#build-depends)
-- [Övning - Kontrollera om en fil finns](https://guide.aelve.com/haskell/check-if-a-directory-exists-in-a-jiffy-121af690.html)
+På låg nivå implementeras `doesDirectoryExist` via `getFileInfo` funktion som hämtar information om filsystemet, inklusive filer och kataloger, i ett effektivt och säkert sätt.
+
+## Se även 
+
+För mer information, ta en titt på dessa länkar:
+
+- [`System.Directory` i Haskells basbibliotek](http://hackage.haskell.org/package/directory)
+- [Dokumentation av `doesDirectoryExist`](http://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html#v:doesDirectoryExist)

@@ -1,6 +1,6 @@
 ---
 title:                "文字列の補間"
-html_title:           "Clojure: 文字列の補間"
+html_title:           "Arduino: 文字列の補間"
 simple_title:         "文字列の補間"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何&なぜ？
+## 何と何のために？
 
-文字列補間とは、文字列の中に変数や式を組み込むことを指します。プログラマーは、ダイナミックな文字列を生成するために文字列補間を使用します。
+文字列補完とは、文字列内に動的なエクスプレッションを挿入することです。プログラマーはコードの可読性と保守性を向上させ、エラーを減らすために行います。
 
 ## 方法：
 
-文字列補間を行うには、バッククォートとドル記号を使用します。例えば、変数`name`を含む文字列を作成する場合、` `Clojure (str ` `` ` ` ` ` ` ` ` ` $name` ` `) ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` ` `というコードを使用します。このように、バッククォートで囲んだ文字列内のドル記号に続けて変数や式を置くことで、文字列内に値を埋め込むことができます。
-
-以下は、Clojureで文字列補間を行う例です。
-
+```Clojure
+; 変数と文字列を組み合わせて補完
+(def name "World")
+(str "Hello, " name)
+; 出力： "Hello, World"
 ```
-Clojure (str ` ` "Hello, " $name "! How are you today?") ` ` 
+
+```Clojure 
+; 複数の変数を組み合わせて補完
+(def user "John")
+(def age 30)
+(format "%s is %d years old." user age)
+；出力: "John is 30 years old."
 ```
 
-このコードは、文字列`Hello, [変数nameの値]! How are you today?`を生成します。
+## 深堀り：
 
-## ディープダイブ：
+1. 歴史的な背景：古い言語では、文字列補完機能が一般的にはありませんでした。各部分を単に結合させただけでした。
+2. 代替手段： 具体的な状況に応じて、文字列を連結する、replace関数を使うなどの方法があります。
+3. 実装詳細： Clojureでは、 `str` や `format` 関数を使って文字列補間を行います。これらは内部的にJavaのString.formatメソッドにマッピングされます。
 
-Clojureには、文字列補間に使用できる他の方法もあります。例えば、`format`関数を使用することもできます。また、`StringBuilder`を使用して文字列を連結する方法もあります。しかし、Clojureではバッククォートとドル記号を使用することで、より簡潔かつ効率的に文字列補間を行うことができます。
+## 参考資料：
 
-## 関連サイト：
-
-- [Clojureチュートリアル](https://clojure.org/guides/getting_started)
-
-- [Clojure公式ドキュメント](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/format)
-
-- [Clojureの文字列補間の仕組みについて](https://www.braveclojure.com/core-library/#Format_and_String_interpolation)
+1. Clojureによる文字列操作：https://clojuredocs.org/clojure.core/str
+2. Clojureの `format` 関数：https://clojuredocs.org/clojure.core/format
+3. JavaのString.formatメソッド：https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-

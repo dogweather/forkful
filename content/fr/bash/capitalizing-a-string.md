@@ -1,7 +1,7 @@
 ---
-title:                "Majuscule d'une chaîne de caractères"
-html_title:           "Bash: Majuscule d'une chaîne de caractères"
-simple_title:         "Majuscule d'une chaîne de caractères"
+title:                "Mettre en majuscule une chaîne"
+html_title:           "Bash: Mettre en majuscule une chaîne"
+simple_title:         "Mettre en majuscule une chaîne"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,33 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et pourquoi?
-La capitalisation d'une chaîne de caractères en informatique consiste à mettre la première lettre de chaque mot en majuscule. Les programmeurs le font pour rendre les données plus lisibles et pour respecter les conventions de codage.
+# La capitalisation des chaînes de caractères en Bash
+
+## Qu'est-ce que c'est et pourquoi?
+
+La capitalisation d'une chaîne est l'opération qui consiste à transformer toutes les lettres en majuscules. Les développeurs l'utilisent pour harmoniser les entrées de l'utilisateur ou pour mettre en évidence certains textes.
 
 ## Comment faire:
-Voici un exemple de code en Bash pour capitaliser une chaîne de caractères donnée:
-```Bash
-string="bonjour à tous"
-capitalizedString="${string^}"
-echo $capitalizedString
-```
-Résultat: "Bonjour à tous"
 
-Pour capitaliser chaque mot dans une chaîne de caractères, vous pouvez utiliser la commande suivante:
+Bash offre plusieurs façons de capitaliser une chaîne. En voici quelques exemples:
+
 ```Bash
-string="bonjour à tous"
-capitalizedString="${string^^}"
-echo $capitalizedString
+# Utiliser ^ (Ceci mettra la première lettre en majuscule)
+string="bonjour tout le monde"
+echo "${string^}"
 ```
-Résultat: "Bonjour À Tous"
+Sortie:
+```Bash
+Bonjour tout le monde
+```
+
+```Bash
+# Utilisez ^^ (Cela va capitaliser toute la chaîne)
+string="bonjour tout le monde"
+echo "${string^^}"
+```
+Sortie:
+```Bash
+BONJOUR TOUT LE MONDE
+```
 
 ## Plongée en profondeur:
-La capitalisation de chaîne de caractères est souvent utilisée en programmation pour améliorer la lisibilité des données et pour respecter les conventions de codage. Cette pratique peut être retracée à l'utilisation de la ponctuation dans le langage courant pour améliorer la compréhension des phrases.
 
-Une alternative à la capitalisation de chaîne de caractères est l'utilisation de fonctions telles que ```tr``` ou ```awk```, qui permettent de modifier directement la casse des caractères dans une chaîne.
+Bien que Bash ne soit pas un langage traditionnellement utilisé pour manipuler des chaînes, ces fonctionnalités ont été ajoutées dans la version 4.0. 
 
-La commande «${variable^}» en Bash utilise en fait la fonction système ```toupper()``` pour capitaliser la première lettre de la variable. La version en majuscules complètes utilise la fonction ```toupper()``` avec l'option «-t» pour capitaliser chaque caractère de la chaîne.
+Il existe d'autres alternatives pour la capitalisation si vous utilisez une version antérieure de Bash, ou si vous préférez une autre approche. Par exemple, vous pouvez utiliser 'tr':
 
-## Voir aussi:
-- Documentation officielle de la commande «string manipulation» en Bash: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
-- Tutoriel sur l'utilisation de la commande ```tr``` pour capitaliser une chaîne de caractères en Bash: https://www.geeksforgeeks.org/tr-command-in-linux-with-examples/
+```Bash
+echo 'bonjour tout le monde' | tr '[:lower:]' '[:upper:]'
+```
+
+Cette façon d’opérer est plus ancienne et universelle, elle fonctionne sur des systèmes Unix plus anciens qui pourraient ne pas avoir une version récente de Bash.
+
+## Voir également:
+
+Pour un aperçu plus détaillé de la manipulation de chaînes dans Bash, consultez ces ressources:
+
+- [GNU Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [String Operations in Bash](http://tldp.org/LDP/abs/html/string-manipulation.html)
+- [Bash Guide for Beginners](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/)

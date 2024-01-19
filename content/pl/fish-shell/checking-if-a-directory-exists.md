@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie istnienia katalogu"
-html_title:           "Fish Shell: Sprawdzanie istnienia katalogu"
-simple_title:         "Sprawdzanie istnienia katalogu"
+title:                "Sprawdzanie, czy katalog istnieje"
+html_title:           "Fish Shell: Sprawdzanie, czy katalog istnieje"
+simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,52 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Czym jest sprawdzanie istnienia katalogu i dlaczego programiści to robią?
+## Co i dlaczego?
 
-Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem, które programiści wykonują, aby upewnić się, że ich program działa poprawnie. Katalog jest po prostu miejscem, w którym można przechowywać pliki w systemie operacyjnym, dlatego jest ważne, aby móc sprawdzić, czy jest on dostępny i można w nim wykonywać różne operacje.
+Sprawdzenie, czy katalog istnieje, to proces polegający na sprawdzeniu, czy dany katalog jest widoczny w systemie plików. Programiści robią to, by uniknąć błędów podczas próby manipulacji nieistniejącymi katalogami.
 
-Jak to zrobić w Fish Shell?
+## Jak to zrobić:
 
-Fish Shell jest potężnym narzędziem, które udostępnia nam wiele komend i funkcji, w tym także możliwość sprawdzenia, czy katalog istnieje. Wystarczy użyć kilku prostych poleceń, aby to zrobić. Oto kilka przykładów:
+Podstawowy kod w Fish Shell-u, który pozwala sprawdzić, czy katalog istnieje, wygląda tak:
 
-```
-Fish Shell: if test -d ~/folder
-  echo "Katalog istnieje"
-else
-  echo "Katalog nie istnieje"
+```fish
+if test -d /scieżka/do/katalogu
+    echo "Katalog istnieje"
+else 
+    echo "Katalog nie istnieje"
 end
 ```
 
-W tym przykładzie korzystamy z komendy `test`, która służy do sprawdzania warunków w skrypcie shell. Z użyciem opcji `-d` mówimy, że chcemy sprawdzić, czy wskazany katalog istnieje. Wewnątrz instrukcji warunkowej, w zależności od wyniku, wyświetlamy odpowiedni komunikat.
+Więc jesli mamy katalog o nazwie "dom", output będzie taki:
 
-Za pomocą tej samej komendy można także wykonać inne działania, na przykład sprawdzić, czy katalog jest pusty:
-```
-Fish Shell: if test -d ~/folder && test -z (ls -A ~/folder)
-  echo "Katalog jest pusty"
-else
-  echo "Katalog nie jest pusty"
-end
-```
-
-Można także wyświetlić listę plików znajdujących się w katalogu, jeśli istnieje:
-```
-Fish Shell: if test -d ~/folder
-  ls ~/folder
-else
-  echo "Katalog nie istnieje"
-end
+```fish
+~> if test -d /dom
+      echo "Katalog istnieje"
+  else 
+      echo "Katalog nie istnieje"
+  end
+Katalog istnieje
 ```
 
-Głębsze zanurzenie
+## Pogłębiona analiza:
 
-Sprawdzanie istnienia katalogu jest powszechną czynnością w programowaniu i używane jest w wielu językach programowania. W wielu systemach operacyjnych istnieje specjalna funkcja lub komenda służąca do tej operacji, jednak w Fish Shell możemy wykorzystać komendę `test`, która jest również bogata w inne opcje i warunki.
+Sprawdzanie, czy katalog istnieje, to jedne z podstawowych operacji, które są wykonywane od początku istnienia systemów operacyjnych. Bez tej możliwości pracowanie z systemem plików byłoby niebezpieczne i nieefektywne.
 
-Alternatywnie, istnieje także kilka innych sposobów na sprawdzenie, czy katalog istnieje. Można na przykład wykorzystać polecenie `ls`, które po prostu wyświetla zawartość danego katalogu. Jeśli katalog nie istnieje, pojawi się błąd.
+Alternatywą dla powyższego kodu jest zastosowanie funkcji `test -e`, która sprawdza, czy ścieżka istnieje, niezależnie od tego, czy jest to plik, czy katalog.
 
-Można także wykorzystać wbudowaną w system funkcję `stat`, która zwraca informacje o danym pliku lub katalogu. Jeśli katalog istnieje, będzie widoczny w wynikach.
+Decydując się na użycie `-d` zamiast `-e`, mamy dodatkową pewność, że ścieżka prowadzi do katalogu, a nie do pliku.
 
-Podsumowując, istnieje wiele sposobów na sprawdzenie, czy katalog istnieje w Fish Shell, jednak komenda `test` jest najbardziej przejrzystym i uniwersalnym rozwiązaniem.
+## Zobacz także:
 
-Zobacz także
+Dodatkowe informacje na temat Fish Shell oraz funkcji `test` znajdziesz w tych źródłach:
 
-Jeśli chciałbyś dowiedzieć się więcej o Fish Shell i jego funkcjonalności, możesz odwiedzić oficjalną dokumentację na stronie https://fishshell.com/docs oraz zapoznać się z innymi dostępnymi funkcjami i komendami. Możesz także zobaczyć różne przykłady użycia na stronie https://github.com/fish-shell/fish-shell.
+1. Dokumentacja Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+2. Wirtualny kurs Fish Shell: [http://fishshell.com/tutorial.html](http://fishshell.com/tutorial.html)
+3. Opis funkcji `test`: [https://fishshell.com/docs/current/cmds/test.html](https://fishshell.com/docs/current/cmds/test.html)

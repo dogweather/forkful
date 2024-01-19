@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Javascript recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -12,40 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a string to lower case in Javascript refers to changing all the letters in a string to lowercase. Programmers do this for various reasons, such as standardizing the input for user data or for string comparisons in code.
+Converting a string to lower case is a common operation that changes all uppercase characters in a string to lowercase characters. Programmers do this for tasks like normalizing data, comparison, and sorting, as it hampers case sensitivity issues.
 
 ## How to:
 
-To convert a string to lower case in Javascript, you can use the built-in method `toLowerCase()`. Let's take a look at an example:
+There is a simple JavaScript method called 'toLowerCase()' which is used for this purpose:
 
-```javascript
-let str = "Hello, World!";
-let lowerStr = str.toLowerCase();
-console.log(lowerStr);
-```
-
-**Output:** hello, world!
-
-In this code, we first declare a string `str` with the value "Hello, World!". Then, we use the `toLowerCase()` method to convert the string to lower case and assign the result to a new variable `lowerStr`. Finally, we log `lowerStr` to the console, which will output "hello, world!".
-
-You can also apply the `toLowerCase()` method directly to the string without assigning it to a variable:
-
-```javascript
-let str = "HELLO";
+```Javascript
+var str = "Hello WORLD";
 console.log(str.toLowerCase());
 ```
 
-**Output:** hello
+This will output:
 
-## Deep Dive
+```Javascript
+"hello world"
+```
 
-- Historical context: Converting strings to lower case has been a common practice in programming for a long time. Before the introduction of built-in methods, developers had to write their own functions to convert strings to lower case.
+## Deep Dive:
 
-- Alternatives: Besides the built-in method `toLowerCase()`, there are other ways to convert a string to lower case in Javascript. Some developers prefer using regular expressions, while others use external libraries.
+### Historical Context:
 
-- Implementation details: The `toLowerCase()` method uses the Unicode character database to determine the proper lowercase version of each character. This means that it can handle not only English letters but also characters from other languages.
+Previously in older languages, converting between different cased strings was a manual task involving character code conversions. JavaScript simplifies this significantly with the direct 'toLowerCase()' method.
 
-## See Also
+### Alternatives:
 
-- [String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase) - an alternative to `toLowerCase()` that takes into account the system's locale.
-- [Regular Expressions in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) - a comprehensive guide on using regular expressions to manipulate strings in Javascript.
+Though 'toLowerCase()' is commonly used, sometimes you need locale-specific conversions. For this, you can use the 'toLocaleLowerCase()' method. For example:
+
+```Javascript
+var str = "I love JavaScript";
+console.log(str.toLocaleLowerCase('tr-TR')); //Turkish conversion
+```
+This will output:
+
+```Javascript
+"ı love javascript"
+```
+Notice the 'I' turned into 'ı', not 'i'. This is due to the specificities of the Turkish alphabet.
+
+### Implementational Details: 
+
+The 'toLowerCase()' method doesn't affect special characters or numbers, only alphabetical characters. Also, since strings are immutable in JavaScript, this method doesn't change the original string but returns a new one.
+
+## See Also:
+
+For more advanced string operations, see the following:
+
+- [MDN Web Docs on String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [JavaScript Kit on Strings and Text](http://www.javascriptkit.com/jsref/string.shtml)
+- [W3Schools String Methods tutorial](https://www.w3schools.com/js/js_string_methods.asp)

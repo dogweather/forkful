@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
-html_title:           "Bash: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,31 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Käännettäessä päivämäärä merkkijonoksi, Bash-ohjelmointikielen nykyinen versio, luo uusi merkkijonotyyppi, joka sisältää päiväyksen tiedon ja mahdollistaa sen muokkaamisen halutulla tavalla. Tämä on hyödyllistä, sillä ohjelmoijat haluavat usein käyttää päivämääriä osana muuta dataa tai tulostaa ne käyttäjälle ymmärrettävässä muodossa. 
+## Mitä & Miksi?
 
-## Miksi ja mitä? 
-Päivämäärän muuttaminen merkkijonoksi tarkoittaa, että voit esittää päivämäärän tiedon tekstiä vastaavassa muodossa. Tämä voi sisältää päivän, kuukauden, vuoden ja kellonajan. Ohjelmoijat tekevät tätä, jotta päivämäärä voidaan tallentaa ja käsittää helpommin.
+Päivämäärän muuntaminen merkkijonoksi on operaatio, jossa päivämääräobjekti esitetään luettavassa muodossa. Tätä suoritetaan usein, jotta päivämäärät voidaan helposti tallentaa, lajitella ja vertailla.
 
-## Kuinka? 
-Bash-kielen `date` -komennon avulla voit muuttaa päivämäärän haluamaksesi merkkijonoksi. Katso alla esimerkki, jossa päivämäärä merkitään Englannin kielellä ja muutetaan Suomen kielelle.
+## Näin se tehdään:
 
-```Bash
-pvm=en_US date
-```
-```bash
-ma elo 23 20:18:36 UTC 2021
-```
+Bashissa päivämäärän muuntaminen merkkijonoksi on yksinkertaista. Käytämme `date`-komentoa ja formatoitua ulostuloa:
 
 ```Bash
-pvm=en_US date +"%A %d.%m.%Y"
+# Nykyinen päivämäärä ja aika
+date +"%Y-%m-%dT%H:%M:%S"
 ```
-```bash
-ma 23.08.2021 
-```
-Voit myös halutessasi tallentaa muokatun päivämäärän muuttujaan tai tulostaa sen suoraan komentoriviltä. Ohjelmointikielen käsittely voi vaihdella, joten tutustu Bashin dokumentaatioon saadaksesi lisätietoja.
+Esimerkiksi tuloste voisi olla `2023-03-28T12:13:14`.
 
-## Syvällisempi katsaus 
-Ennen Bash-versiota 2.0 päivämäärät esitettiin Unix-järjestelmässä sekunteina, jotka kuluivat tietystä päivämäärästä, jota kutsuttiin "epochiksi". Nykyään yleisin muoto on ISO 8601 -standardin mukainen YYYY-MM-DD-muoto. Bashissa voit myös käyttää muita vaihtoehtoja muokataksesi päivämäärää, kuten `date -d` -komennolla.
+## Syvempi sukellus
 
-## Katso myös 
-[Lisätietoja Bashin päivämäärätoiminnosta ja dokumentaatiosta](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameters.html)
+Historiallisesti Unix-tyyliset järjestelmät ovat käyttäneet `date`-komentoa ja sen formaatteja. Vaihtoehtoisina menetelminä voidaan käyttää muita komentoja tai kielikirjastoja, kuten Pythonin `datetime`.
+
+Muunnos perustuu suoraan C-kielen `strftime`-funktioon. Sitä muutetaan kuvauksen mukaan, määrittämällä aikaleimat formatoiduissa merkkijonoissa.
+
+## Katso myös
+
+Seuraavat linkit ovat hyödyllisiä tutkittaessa lisää:
+
+1. Bash: https://www.gnu.org/software/bash/
+2. strftime: http://man7.org/linux/man-pages/man3/strftime.3.html
+3. Python datetime: https://docs.python.org/3/library/datetime.html
+4. GNU Core Utilities (`date` sivu): https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html

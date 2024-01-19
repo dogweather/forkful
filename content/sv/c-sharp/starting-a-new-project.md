@@ -1,7 +1,7 @@
 ---
-title:                "Att påbörja ett nytt projekt"
-html_title:           "C#: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Getting Started"
@@ -10,26 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att starta ett nytt projekt i programmering innebär att skapa en plan och struktur för ett nytt program eller applikation. Programmers startar nya projekt för att lösa specifika problem, förbättra befintliga system eller skapa något nytt och innovativt.
+# Starta ett Nytt Projekt i C#: Ett Basisk Guide
 
-## Hur gör man:
+## Vad & Varför?
+
+Att starta ett nytt projekt innebär att skapa ett rent och till kommerligt arbetsutrymme för att utveckla något nytt. Programmerare gör detta för att organisera koden effektivt och underlätta underhåll.
+
+## Hur:
+
+Det är enkelt att skapa ett nytt projekt i C #. Först startar du programmet Visual Studio. Följ sedan dessa instruktioner:
+
 ```C#
-Console.WriteLine("Hello World!"); 
+// Öppna Visual Studio
+// Klicka på "File" i övre vänstra hörnet
+// Klicka på "New" och sedan "Project"
+// Välj "C #" i den vänstra menyn, välj sedan "Console App (.NET Core)"
+// Skriv in projektnamnet och klicka på "Create"
 ```
 
-Output: Hello World!
+Då skapar Visual Studio ett nytt projekt med en grundläggande "Hello World" program.
 
-Om du vill starta ett nytt projekt i C# är det viktigt att du har tillgång till ett utvecklingsverktyg såsom Visual Studio eller Visual Studio Code. Sedan kan du skapa en ny fil och börja koda efter din plan och struktur.
+```C#
+using System;
 
-## Djupdykning:
-Att skapa struktur och plan för ett nytt projekt är en viktig del av programmering och hjälper till att undvika problem och kaos senare i processen. Vissa programmerare föredrar att använda projektledningsverktyg såsom Agile eller Scrum för att organisera sitt arbete och samarbeta med andra.
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello World");
+    }
+}
+```
 
-Alternativ till att starta ett nytt projekt i C# inkluderar att utnyttja existerande kodbibliotek, använda ett annat programmeringsspråk eller till och med att använda en färdig applikation. Det är viktigt att överväga alla alternativ innan du börjar ett nytt projekt.
+När du kör detta program, kommer följande visas:
 
-När du väl har skapat din plan och struktur är det viktigt att välja rätt designmönster för ditt projekt och implementera det på lämpligt sätt i din kod. Detta hjälper till att hålla koden ren, skalbar och lätt att underhålla.
+```
+Hello World
+```
 
-## Se även:
-- [Learn C# in Y minutes](https://learnxinyminutes.com/docs/csharp/)
-- [Microsoft Visual Studio](https://visualstudio.microsoft.com/sv/)
-- [Agile vs Scrum: What's The Difference?](https://www.atlassian.com/agile/scrum)
+## Djup Dykning
+
+Historiskt sett, innan integrerade utvecklingsmiljöer (IDE) som Visual Studio, var det komplicerat att starta ett nytt projekt. Nu är det en snabb och systematiserad process.
+
+Alternativ till Visual Studio finns, som .NET Core CLI för kommandoradsinterfacet(ok, ett litet ord) och Jetbrains Rider. Dock är Visual Studio det vanligaste verktyget för C # projekt.
+
+När det gäller detaljer, när du startar ett nytt projekt, skapar Visual Studio ett antal filer och mappar. Dessa inkluderar en mapp för ditt projekt, en lösning (`.sln`) fil och en C # (`Program.cs`) fil med en basisk programmetod (Main).
+
+## Se Även
+
+- [Microsoft Visual Studio dokumentation](https://docs.microsoft.com/sv-se/visualstudio/?view=vs-2019)
+- [.NET Core CLI manual](https://dotnet.microsoft.com/download/dotnet-core)
+- [JetBrains Rider Documentation](https://www.jetbrains.com/help/rider/)

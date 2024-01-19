@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "TypeScript: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Getting Started"
@@ -10,19 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Neue Projekte in TypeScript beginnen: ein praktischer Leitfaden
+
 ## Was & Warum?
- Ein neues Projekt zu starten bedeutet, ein neues Softwareprojekt zu beginnen. Programmierer machen das, um neue Ideen umzusetzen, bereits vorhandene Software zu verbessern oder um neue Herausforderungen anzunehmen.
+Ein neues Projekt beginnen bedeutet, von Grund auf neu zu starten: neue Codebase, neue Dependencies und vielleicht eine neue Architektur. Programmierer tun dies, um innovative Lösungen zu entwickeln, zu lernen oder einzigartige Probleme zu lösen.
 
-## Wie geht's?
-Eine Möglichkeit, ein neues Projekt in TypeScript zu starten, ist die Verwendung des Befehls `tsc --init`, der eine tsconfig.json-Datei erstellt, in der die Compiler-Optionen für das Projekt festgelegt werden. Dann können Sie mit dem Schreiben von Code in den entsprechenden Dateien beginnen und ihn mit dem Befehl `tsc` kompilieren.
+## Wie Zum:
+Ein neues TypeScript-Projekt kann leicht mit dem Node-Paketmanager`npm` und TypeScript selbst gestartet werden. Hier ist wie:
 
-Um ein neues Node.js-Projekt zu starten, können Sie den Befehl `npm init` verwenden, der ein package.json-Datei erstellt und Ihnen ermöglicht, Abhängigkeiten zu installieren und Skripte für das Ausführen von Aufgaben hinzuzufügen.
+Installieren Sie zuerst Node.js und npm auf Ihrem System, wenn dies noch nicht geschehen ist. Gehe zu [Node.js](https://nodejs.org/en/)seite.
 
-## Tiefer Einblick
-TypeScript wurde von Microsoft als Open-Source-Superset von JavaScript entwickelt und bietet eine statische Typisierung und andere Features, um die Entwicklung von JavaScript-Anwendungen zu verbessern. Alternativen zu TypeScript sind z.B. Flow und Dart.
+```bash
+# TypeScript installieren
+$ npm install -g typescript
 
-Wenn Sie eine neue Projektstruktur erstellen, können Sie verschiedene Ordner und Dateien wie Tests, Konfigurationen und Dokumentation hinzufügen. Sie können auch einen Versionskontroll-Service wie Git verwenden, um Ihr Projekt zu verwalten.
+# Leeres Projektverzeichnis erstellen
+$ mkdir MeinTypeScriptProjekt && cd MeinTypeScriptProjekt
+
+# Eine neue TypeScript-Konfigurationsdatei erstellen
+$ tsc --init
+
+# Paket.json-Datei erstellen, um Ihre Abhängigkeiten zu verwalten
+$ npm init -y
+```
+
+Ihr Projekt ist nun bereit für die Entwicklung. Sie können Ihre TypeScript-Dateien im Verzeichnis /src erstellen und die Transpiler mit `tsc` laufen lassen.
+
+## Vertiefung
+Das Beginnen neuer Projekte hat eine lange Geschichte in der Softwareentwicklung - es ist die Essenz des Erstellens. TypeScript selbst wurde von Microsoft entwickelt und ist eine typisierte Obermenge von JavaScript, die viele Probleme und Einschränkungen löst, die mit der Entwicklung großer Codebases in JavaScript verbunden sind.
+
+Alternativen zu TypeScript sind Flow (von Facebook entwickelt) und PureScript. Während TypeScript bekannt für seine Strenge und tiefe Integration in die Entwicklungsumgebung ist, bietet Flow eine sanftere Typüberprüfung, und PureScript ist eine rein funktionalere Alternative.
+
+Bei der Implementierung von TypeScript ist zu beachten, dass TypeScript bei der Transpilierung von TypeScript-Code zu JavaScript möglicherweise einige Type-Casting-Probleme übersehen kann. Es ist immer sicherer, notwendige Typüberprüfungen manuell durchzuführen.
 
 ## Siehe auch
-- Offizielle TypeScript-Dokumentation: https://www.typescriptlang.org/docs/home.html
-- Alternativen zu TypeScript: https://www.slant.co/topics/8982/~alternatives-to-typescript
+Für weitere Informationen zu TypeScript und wie Sie mit neuen Projekten beginnen können, sehen Sie sich die folgenden Links an:
+
+- [Offizielle TypeScript-Dokumentation](https://www.typescriptlang.org/docs/)
+- [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/)
+- [TypeScript-Kurs auf Udemy](https://www.udemy.com/course/typescript-the-complete-developers-guide)

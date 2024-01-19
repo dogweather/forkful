@@ -1,7 +1,7 @@
 ---
-title:                "Lendo uma data de uma string"
-html_title:           "Clojure: Lendo uma data de uma string"
-simple_title:         "Lendo uma data de uma string"
+title:                "Analisando uma data a partir de uma string"
+html_title:           "PowerShell: Analisando uma data a partir de uma string"
+simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-
-Para programar em Clojure, é importante entender como lidar com datas. Uma tarefa comum é a análise de uma data que está em formato de string para transformá-la em um tipo de dado que possa ser manipulado pelo código.
-
-Os programadores geralmente fazem isso ao processar informações de entrada, como formulários de usuários, arquivos de texto ou dados de bancos de dados, onde as datas são apresentadas em formatos diferentes.
+## O quê e Por quê?
+Em programação, analisar uma data de uma string significa converter essa string em um objeto de data. Isso é feito para manipulação mais fácil e eficiente de informações de data.
 
 ## Como fazer:
-
-Para analisar uma data de uma string em Clojure, usamos a função `parse` do namespace `java.time`. Aqui está um exemplo:
-
-```Clojure
-(require '[java.time :as time])
-
-(time/parse "2020-06-16")
-```
-Este comando irá retornar uma instância de `Instant`, que representa um momento específico no tempo.
-
-Se quisermos extrair informações específicas da data, podemos usar o método `atZone` para converter o `Instant` em um `ZonedDateTime`:
+Em Clojure, usamos a biblioteca clj-time para essa tarefa. Aqui está um exemplo de código:
 
 ```Clojure
-(time/atZone (time/parse "2020-06-16") (java.time.ZoneId/of "America/Sao_Paulo"))
+(ns meu-projeto.core
+  (:require [clj-time.core :as t]
+            [clj-time.format :as f]))
+
+(defn string-para-data [s]
+  (f/parse (f/formatters :date-time-no-ms) s))
+
+(println (string-para-data "2016-03-05T15:30:00Z"))
 ```
 
-Isso irá retornar um objeto `ZonedDateTime` contendo a informação da data para a zona de tempo especificada.
+Este código irá analisar a string de data e exibir o resultado. O objeto de data gerado será:
 
-## Mergulho profundo:
+```
+#object[org.joda.time.DateTime 0x6fef9fe5 "2016-03-05T15:30:00.000Z"]
+```
 
-A análise de datas em formato de string é uma tarefa comum em programação, que se tornou mais simples com o avanço das linguagens modernas. Anteriormente, os programadores precisavam criar suas próprias funções para lidar com esse tipo de análise, resultando em códigos mais complexos e propensos a erros.
+## Mergulho Profundo
+Clojure não fornece a funcionalidade de análise de data fora da caixa, e esse é o motivo pelo qual precisamos usar bibliotecas externas, como clj-time, que é uma camada fina sobre Joda-Time, uma biblioteca Java bem respeitada para manipulação de data e hora. Uma alternativa ao usar clj-time poderia ser a interoperação direta com a API Java Date e SimpleDateFormat, mas clj-time oferece uma interface mais agradável e idiomática.
 
-Além disso, é importante notar que cada linguagem possui suas próprias funções para manipulação de datas, por isso é importante conhecer bem as ferramentas disponíveis em Clojure para realizar essa tarefa de forma eficiente.
+Com relação aos detalhes de implementação, em clj-time, a string é dada a um objeto *parser* configurado com um formatters específico (`:date-time-no-ms` no nosso exemplo), que reconhece o formato da string de data. Esse *parser* converte a string em um objeto DateTime, que pode ser manipulado e formatado de várias maneiras.
 
-Outra alternativa para análise de datas em Clojure é o uso da biblioteca `clj-time`, que oferece uma API mais amigável para manipulação de datas.
-
-## Veja também:
-
-- Documentação oficial de `java.time`: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-- Biblioteca `clj-time`: https://github.com/clj-time/clj-time
+## Veja também
+1. Para a documentação completa da biblioteca clj-time, veja [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+2. Para uma introdução mais aprofundada à analise de data e hora em Clojure, veja [https://www.baeldung.com/clojure-date-time](https://www.baeldung.com/clojure-date-time)
+3. Para uma compreensão mais profunda sobre a biblioteca Joda-Time que está por baixo do clj-time, veja [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)

@@ -10,46 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-📝תכתובת תכנות TypeScript לקוראים ישראלים בסגנון לא פורמלי וקצר ולעניין. נשתדל לא להוסיף מילים או משפטים מיותרים. המאמר מכיל ארבעה סעיפים המופרדים בכותרות מתורגמות לעברית. ללא סעיף "מסקנה".
+# חישוב תאריך מהעתיד או מהעבר ב-TypeScript
 
-## מה ולמה?
-חישוב תאריך בעתיד או בעבר הוא הפעולה של חישוב תאריך חדש שמבוסס על תאריך קיים וכמות ימים שמוספרת אליו. כמו כן, חישוב תאריך בעתיד או בעבר יכול לעזור למתכנתים ליצור יישומים ותכנים שיכולים להתאים לזמנים שונים, לדוגמה, לתכנן אירועים או הרשאות של משתמשים מסוימים.
+## מה זה ולמה?
 
-## איך לעשות?
-לדוגמה כדי לחשב תאריך של 7 ימים לפני התאריך הנוכחי, נצטרך להשתמש בחיסור את מספר הימים מהתאריך הנוכחי עם פונקציית התאריך המובנית של TypeScript ולהכניס את התוצאה לתוך משתנה חדש. לדוגמה:
+חישוב תאריך בעתיד או בעבר הוא פעולה שבה אנחנו מתאריכים או מקדימים תאריך באמצעות הוספה או חיסור של ימים, חודשים, שנים וכד'. התכנתים עושים זאת לשם שליטה וניתוח של נתוני זמן.
 
-```typescript
-let today: Date = new Date();
-let result: Date = new Date(today.setDate(today.getDate() - 7));
-console.log(result);
+## איך בדיוק?
+
+אז כיצד אפשר להשיג את זה ב-TypeScript? בואו נראה במקום לדבר על זה. 
+
+```TypeScript
+let date = new Date();
+let futureDate = new Date();
+
+// add 3 days to the date
+futureDate.setDate(date.getDate() + 3);
+
+console.log(futureDate);
 ```
 
-פלט המסך:
+הנה דוגמה להחזרת תאריך מהעבר:
 
-```
-2021-07-07T17:57:37.471Z
-```
+```TypeScript
+let date = new Date();
+let pastDate = new Date();
 
-לחישוב תאריך בעתיד, נוסיף את מספר הימים הרצוי לתאריך הנוכחי באמצעות פונקציית התאריך המובנית ונכניס את התוצאה לתוך משתנה חדש. לדוגמה:
+// subtract 5 days from the date
+pastDate.setDate(date.getDate() - 5);
 
-```typescript
-let today: Date = new Date();
-let result: Date = new Date(today.setDate(today.getDate() + 7));
-console.log(result);
+console.log(pastDate);
 ```
 
-פלט המסך:
+## טיפול מעמיק
 
+אין מידע היסטורי מעורר תשוקה על חישוב תאריך מהעתיד או מהעבר, אך ישנן דרכים אחרות להשיג את המטרה. 
+
+```JavaScript
+// Using Moment.js
+const moment = require('moment');
+
+let futureDate = moment().add(7, 'days');
+let pastDate = moment().subtract(7, 'days');
 ```
-2021-07-21T17:57:37.471Z
-```
 
-## לחקור עמוק יותר
-• ההיסטוריה של חישוב תאריכים בעתיד או בעבר מחדשת לאלפי שנים.
-• פתרונות אלטרנטיביים לחישוב תאריכים, כגון שימוש במחלקות מתקדמות של תאריכים.
-• פרטים מעניינים על פונקציות התאריך המובנות של TypeScript ואיך להשתמש בהן לחישוב תאריכים בעתיד או בעבר.
+יש לקחת בחשבון כי במרבית השימושים, השימוש ב-Moment.js ייתן תוצאה זהה. אך, המערכת הפנימית של JavaScript היא יעילה יותר על פי האבחנה של Google Lighthouse.
 
-## לראות כמו כן
-• [תיעוד רשמי של פונקציות התאריך המובנות של TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#the-ecmascript-standard-library)
-• [אפליקציה לחישוב תאריכים בעתיד או בעבר עם TypeScript](https://github.com/apawn/calc-date-ts)
-• [פוסט על חישוב זמן מראש בעזרת TypeScript ופונקציות התאריך המובנות](https://javascriptio.com/view/114909)
+## ראה גם
+
+אם אתם רוצים ללמד יותר על נושא, הנה קישורים שימיים:
+- [w3schools - JavaScript Date setFullYear()](https://www.w3schools.com/jsref/jsref_setfullyear.asp)
+- [Mozilla - JavaScript date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)

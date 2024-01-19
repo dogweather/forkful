@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Ruby recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,40 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Sending HTTP Requests with Basic Authentication in Ruby
+
 ## What & Why?
-Sending an HTTP request with basic authentication is a way for programmers to securely access information from a web server. It involves adding a username and password to the request, which is then verified by the server before granting access. Programmers do this to ensure that sensitive information is only accessible to authorized users.
+Sending an HTTP request with basic authentication is about getting data from a server that needs a username and password. It's used when you're dealing with protected information that you want only specific individuals to access.
 
 ## How to:
-To send an HTTP request with basic authentication in Ruby, we can use the Net::HTTP library. First, we need to require the library:
+Ruby's `net/http` library makes sending HTTP requests and handling responses relatively straightforward.
+
+Here's an example:
+
 ```Ruby
 require 'net/http'
-```
-Next, we create a new instance of the Net::HTTP class with the URL of the server we want to access:
-```Ruby
-http = Net::HTTP.new("www.example.com")
-```
-Then, we create a new request object with the HTTP method we want to use (e.g. GET, POST) and the endpoint we want to access:
-```Ruby
-request = Net::HTTP::Get.new("/api/users")
-```
-Next, we add the username and password to the request using the Net::HTTP::BasicAuth class:
-```Ruby
-request.basic_auth("username", "password")
-```
-Finally, we can send the request and receive a response from the server:
-```Ruby
+require 'uri'
+require 'base64'
+
+uri = URI('http://example.com')
+
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Get.new(uri.request_uri)
+request.basic_auth 'username', 'password'
+
 response = http.request(request)
+
+puts response.body
 ```
-The response object contains information such as the status code and body of the response, which we can access using methods like `response.code` and `response.body`.
+
+In this script, we're requiring necessary libraries, preparing an HTTP request with basic authentication, sending the request, and printing out the server response.
 
 ## Deep Dive
-HTTP basic authentication has been around since the early days of the internet and is a widely used method for securing web requests. It is a simple and elegant solution, but it has some limitations, such as lack of encryption for the username and password, making it vulnerable to attacks like man-in-the-middle.
+Back in the day, basic authentication seemed perfect for a world where simplicity was king. Yet, basic authentication isn't secure on its own — your credentials are essentially in plaintext. For this reason, it's recommended you use it over HTTPS, not HTTP.
 
-Some alternatives to basic authentication include Digest authentication, which includes a nonce value to prevent replay attacks, and OAuth, which allows for more granular access control and does not require sharing of passwords.
+Alternatives to basic authentication include token-based methods, like OAuth, JWT, etc. These methods do not require passing credentials in every request which adds an extra level of security.
 
-In Ruby, basic authentication is implemented using the Authorization header, which includes the username and password encoded in Base64. It is important to note that this encoding does not provide any encryption and can be easily decoded, so it is recommended to use HTTPS when sending requests with basic authentication.
+In our Ruby example, we used a built-in library, `net/http`. Though it’s a bit verbose, `net/http` is part of Ruby’s standard library, doesn't add dependencies, and is reliable.
+
+Want something less verbose? Check out the Faraday and HTTParty gems. They abstract away some complexities of `net/http`, offering a simplified API.
 
 ## See Also
-- [Net::HTTP documentation](https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/)
-- [HTTP basic authentication RFC](https://tools.ietf.org/html/rfc2617)
-- [Alternatives to HTTP basic authentication](https://auth0.com/blog/alternatives-to-basic-authentication-with-apache-and-nginx/)
+- An in-depth guide on HTTP authentication: [HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).
+- Details about Ruby’s net/http library: [Ruby Doc - Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html).
+- Ruby Authentication Libraries: [Devise](https://github.com/heartcombo/devise), [Authlogic](https://github.com/binarylogic/authlogic), [Clearance](https://github.com/thoughtbot/clearance).
+- Alternatives to `net/http`: [Faraday](https://github.com/lostisland/faraday), [HTTParty](https://github.com/jnunemaker/httparty).

@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di sottostringhe"
-html_title:           "Haskell: Estrazione di sottostringhe"
-simple_title:         "Estrazione di sottostringhe"
+title:                "Estrazione di sottosequenze"
+html_title:           "Arduino: Estrazione di sottosequenze"
+simple_title:         "Estrazione di sottosequenze"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,29 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è l'estrazione di sottostringhe e perché i programmatori la fanno
-L'estrazione di sottostringhe è il processo di ottenere una parte specifica di una stringa più grande. I programmatori spesso lo fanno per manipolare o analizzare i dati all'interno delle stringhe in modo più efficiente.
+**## Che cos'è e perché?**
 
-## Come fare:
-Ecco un esempio di codice in Haskell per estrarre una sottostringa specifica da una stringa data:
+L'estrazione di sottostringhe è l'operazione che permette di ottenere una parte di una stringa, partendo da una posizione e una lunghezza specificate. Questa operazione è fondamentale in programmazione per manipolare dati testuali, per esempio per dividere stringhe più grandi in parti più piccole, o per isolare informazioni specifiche all'interno di un testo.
+
+**## Come fare:**
+
+In Haskell, è possibile estrarre una sottostringa usando la funzione `drop` e `take`. `drop n` rimuove i primi `n` caratteri da una stringa, mentre `take m` preleva i primi `m` caratteri da una stringa.
+
 ```Haskell
--- Definizione di una funzione per estrarre una sottostringa
-extractSubstring :: Int -> Int -> String -> String
-extractSubstring start end str = take (end - start) (drop start str)
-
--- Esempio di utilizzo della funzione
-main = do
-    let str = "Questo è un esempio di stringa"
-    let substr = extractSubstring 6 8 str -- Estrae la sottostringa "è un"
-    putStrLn substr -- Stampa "è un"
+substring :: Int -> Int -> String -> String
+substring start len = take len . drop start
 ```
 
-## Approfondimento:
-* Contesto storico: L'estrazione di sottostringhe è una tecnica utilizzata in molti linguaggi di programmazione, derivata dall'operazione di slicing nella programmazione a basso livello.
-* Alternative: Esistono diverse funzioni predefinite in Haskell per estrarre sottostringhe, come `take` e `drop`. Inoltre, è possibile utilizzare espressioni regolari per estrarre parti di una stringa.
-* Dettagli di implementazione: Nell'esempio sopra, la funzione `extractSubstring` prende tre parametri: la posizione di inizio, la posizione di fine e la stringa da cui estrarre. La funzione utilizza le funzioni `take` e `drop` per selezionare le parti desiderate della stringa.
+Ecco un esempio di utilizzo:
 
-## Vedi anche:
-* Documentazione ufficiale di Haskell su come manipolare stringhe: https://www.haskell.org/tutorial/strings.html
-* Un tutorial sulle espressioni regolari in Haskell: https://wiki.haskell.org/Regular_expressions
-* Un esempio più avanzato di estrazione di sottostringhe utilizzando funzioni ricorsive: https://codereview.stackexchange.com/questions/84454/reversing-a-string-in-haskell
+```Haskell
+main = do
+  let s = "Buongiorno, mondo!"
+  print $ substring 0 9 s  -- Output: "Buongiorno"
+  print $ substring 11 5 s -- Output: "mondo"
+```
+Con questo codice, stiamo estraendo le sottostringhe "Buongiorno" e "mondo" dalla stringa "Buongiorno, mondo!".
+
+**## Approfondimento:**
+
+L'estrazione delle sottostringhe è un concetto vecchio quanto il concetto di stringa stessa e viene utilizzato in quasi tutti i linguaggi di programmazione. Mentre alcuni linguaggi hanno funzioni integrate per questa operazione, in Haskell dobbiamo creare una funzione personalizzata utilizzando `drop` e `take`.
+
+Un'alternativa a questa funzione sarebbe l'utilizzo delle funzioni `splitAt` o `slice`, ma non sono tanto flessibili quanto la combinazione di `drop` e `take`.
+
+In termini di prestazioni, l'operazione `drop n` può essere costosa se `n` è grande, in quanto deve scorrere la lista fino all’`n`-esimo elemento. Per il contrario, l'operazione `take m` è effettivamente costante rispetto alla lunghezza della stringa originale.
+
+**## Vedi anche:**
+
+Per ulteriori approfondimenti su come lavorare con le stringhe in Haskell, consulta le seguenti risorse:
+
+1. [Lavorare con le Stringhe in Haskell](http://learnyouahaskell.com/starting-out#an-intro-to-lists)
+2. [Haskell: Manipolazione delle stringhe](https://www.schoolofhaskell.com/user/peter/substring)
+3. [Hoogle: Una Ricerca API per Haskell](https://www.haskell.org/hoogle/)

@@ -1,7 +1,7 @@
 ---
-title:                "Umwandlung eines Strings in Kleinbuchstaben"
-html_title:           "Java: Umwandlung eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,27 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was ist es und warum?
+## Was & Warum?
 
-Die Konvertierung eines Strings in Kleinbuchstaben ist ein häufiger Schritt in der Java-Programmierung, bei dem alle Buchstaben eines Strings in Kleinbuchstaben umgewandelt werden. Dies ist nützlich, um Vergleiche oder Suche nach Zeichenketten einfacher und konsistenter zu gestalten.
+Das Konvertieren eines Strings in Kleinbuchstaben ist ein häufiger Prozess in der Java-Programmierung, bei dem alle Großbuchstaben in einem gegebenen String in Kleinbuchstaben umgewandelt werden. Warum das? Um die Textverarbeitung zu vereinfachen und unnötige Abhängigkeiten von der Groß- und Kleinschreibung zu vermeiden.
 
-# Wie geht es?
+## So geht's:
+
+In Java benutzen wir die `toLowerCase()` Methode, um einen String in Kleinbuchstaben zu konvertieren. Hier ist ein kurzes Beispiel.
 
 ```Java
-String str = "HALLO WELT";
-String lowerCaseStr = str.toLowerCase();
-
-System.out.println(lowerCaseStr); // gibt "hallo welt" aus
+public class Main {
+    public static void main(String[] args) {
+        String text = "Hallo Welt!";
+        String lowerCaseText = text.toLowerCase();
+        System.out.println(lowerCaseText);
+    }
+}
 ```
 
-# Tiefere Einblicke
+Dieser Code gibt aus:
 
-Historisch gesehen wurde die Methode zur Konvertierung von Strings in Kleinbuchstaben in Java ursprünglich von der Klasse `java.util.Locale` bereitgestellt. Seit Java 1.2 ist die Methode jedoch in die Klasse `java.lang.String` verschoben worden.
+```
+hallo welt!
+```
 
-Alternativ können Programmierer die Methode `Character.toLowerCase()` verwenden, um einzelne Buchstaben in Kleinbuchstaben zu konvertieren. Um eine Zeichenkette in Kleinbuchstaben zu konvertieren, müssten Programmierer jedoch jeden Buchstaben in einer Schleife durchlaufen und einzeln konvertieren.
+## Tief Tauchen:
 
-Bei der Implementierung der Methode `toLowerCase()` wird jeder Buchstabe anhand der Unicode-Tabelle in seinen entsprechenden Kleinbuchstaben konvertiert. Es werden keine Sonderzeichen oder Zahlen in Kleinbuchstaben konvertiert, daher bleibt die Reihenfolge dieser Zeichen im ursprünglichen String erhalten.
+Die `toLowerCase()` Methode gibt es schon seit den Anfängen von Java und sie hat ihren festen Platz in der Standardbibliothek. Alternativ könntest du natürlich durch jeden Buchstaben des Strings iterieren und manuell konvertieren, aber das wäre unnötig kompliziert und ineffizient.
 
-# Siehe auch
+Eine wichtige Sache, die zu beachten ist, ist die Verwendung von `Locale` mit `toLowerCase()`. Die Methode `toLowerCase()` kümmert sich um sprachspezifische Konvertierungsregeln. Wenn du kein `Locale` angibst, verwendet Java das Standardlocale der laufenden JVM, was zu unerwarteten Ergebnissen führen kann. Daher empfiehlt es sich, immer das spezifische Locale zu spezifizieren.
 
-Weitere Informationen zur Verwendung von Strings in Java finden Sie in der offiziellen Oracle-Dokumentation unter der [Kategorie String](https://docs.oracle.com/javase/tutorial/java/data/strings.html).
+```Java
+String text = "İstanbul";
+String lowerCaseText = text.toLowerCase(Locale.ENGLISH);
+```
+Dieser Code wird den Text zu "i̇stanbul" konvertieren, anstelle von "ıstanbul", was in einem türkischen Locale der Fall wäre.
+
+## Sieh auch:
+
+- [Java String toLowerCase() Methode - Javatpoint](https://www.javatpoint.com/java-string-tolowercase)
+- [Java String toLowerCase(Locale) Methode - Javatpoint](https://www.javatpoint.com/java-string-tolowercase-locale)
+- Das `Locale` Klassen Dokumentation in [Java Standard API (Englisch)](https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html)

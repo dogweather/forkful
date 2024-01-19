@@ -1,6 +1,6 @@
 ---
 title:                "임시 파일 생성하기"
-html_title:           "Swift: 임시 파일 생성하기"
+html_title:           "Python: 임시 파일 생성하기"
 simple_title:         "임시 파일 생성하기"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+## 무엇이며 왜 사용하는가?
 
-임시 파일을 만드는 것은 프로그래머들이 자주 하는 일입니다. 임시 파일은 일시적으로 사용될 때 유용하며, 새로운 데이터를 만들거나 기존 데이터를 수정할 때 사용됩니다. 임시 파일은 일반적으로 메모리나 디스크 공간을 절약하고, 작업 속도를 높이기 위해 사용됩니다.
+임시 파일 생성은 컴퓨터 메모리에 일시적으로 데이터를 저장하는 프로세스를 의미합니다. 프로그래머들은 대용량 데이터 처리나 사용자의 임시 상태 유지 등을 위해 이를 사용합니다.
 
-## How to:
-임시 파일을 만드는 방법은 간단합니다. Swift에서는 FileManager 클래스를 사용하여 임시 파일을 생성할 수 있습니다. 다음은 임시 파일을 만들고 출력하는 간단한 예제입니다.
+## 어떻게 사용하는가:
+
+임시 파일 생성은 Swift에서 FileManager 클래스를 사용하여 수행됩니다. 예제 코드는 다음과 같습니다.
 
 ```Swift
 import Foundation
 
-let fileManager = FileManager()
-let tempFileURL = fileManager.temporaryDirectory.appendingPathComponent("tempFile.txt")
+let tempDirectoryURL = NSURL.fileURL(withPath: NSTemporaryDirectory(), isDirectory: true)
+let targetURL = tempDirectoryURL.appendingPathComponent(UUID().uuidString)
 
-do {
-    try "Hello World!".write(to: tempFileURL, atomically: true, encoding: .utf8)
-    let tempFileContent = try String(contentsOf: tempFileURL, encoding: .utf8)
-    print(tempFileContent) // Prints "Hello World!"
-} catch {
-    print("Failed to create temporary file")
-}
+print("Temporary file URL: \(targetURL)")
 ```
 
-## Deep Dive:
-1. 임시 파일은 1960년대부터 사용되어 온 개념입니다. 초기에는 메모리 상에 저장되는 가상 파일로 사용되었고, 나중에는 디스크 상에 저장되는 실제 파일로 발전하였습니다.
-2. 다른 언어에서는 임시 파일을 만드는데에 tmpfile() 함수를 사용할 수 있지만, Swift는 파일을 생성할 때 경로를 지정해야 합니다.
-3. 임시 파일은 앱이 실행되는 동안에만 존재하며 앱 종료 시 자동으로 삭제됩니다.
+위의 코드는 임시 디렉토리 경로를 구한 다음 해당 경로에 유니크한 이름을 가진 임시 파일을 생성합니다.
 
-## See Also:
-https://developer.apple.com/documentation/foundation/filemanager
-https://www.brianstorti.com/understanding-temporary-files-in-ruby/
+## 깊게 들어가보자:
+
+아름다운 풍경을 즐기며 임시파일 생성에 대해 더 깊게 알아보겠습니다. 
+
+1) 이전에는 속도 등의 이유로 임시 파일 생성이 필요하다고 생각되지 않았습니다. 하지만 현재는 메모리 관리와 성능 향상을 위해 꼭 필요한 조치라고 강조되고 있습니다.
+
+2) 임시 파일 대신 CoreData, UserDefaults 등의 대안이 있습니다. 이런 대안들은 앱의 데이터 모델링을 도울 수 있지만, 임시 파일은 메모리 관리에 더 유용합니다.
+
+3) Swift에서는 FileManager를 이용해 임시파일을 생성합니다. 단, 임시 파일은 앱이 종료되면 사라져버리니 이 점 유의하세요.
+
+## 참고자료:
+
+1) [Apple Developer Documentation](https://developer.apple.com/documentation): Apple의 공식 문서에서 FileManager에 대해 더욱 자세히 알아볼 수 있습니다.
+2) [Stack Overflow](https://stackoverflow.com/): Stack Overflow는 여러가지 질문과 답변을 통해 임시 파일 생성에 대해 더 깊게 알아볼 수 있는 프로그래밍 커뮤니티입니다.

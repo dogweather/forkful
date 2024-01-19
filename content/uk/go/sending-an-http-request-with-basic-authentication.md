@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http-запиту з основною аутентифікацією."
-html_title:           "Go: Надсилання http-запиту з основною аутентифікацією."
-simple_title:         "Надсилання http-запиту з основною аутентифікацією."
+title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
+html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
+simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,40 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Чому?
-Відправка запиту HTTP з базовою аутентифікацією - це процес, коли програмісти використовують HTTP протокол для посилання запитів до сервера за допомогою особистого ідентифікатора і пароля. Це необхідно для доступу до захищених ресурсів, таких як сторінки з обмеженим доступом або API.
+## Що і чому?
+При відправленні HTTP-запиту з основною аутентифікацією, ми надаємо перевірені дані (логін та пароль) для доступу до ресурсів. Це зазвичай використовують програмісти, щоб обмежувати доступ до веб-служб та серверів.
 
 ## Як це зробити:
+Виконаємо простий запит GET з базовою аутентифікацією. Для цього використовуємо стандартну бібліотеку net/http.
+
 ```Go
-import "net/http"
+package main
+
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
-    // Створення основного запиту з потрібною URL
-    req, err := http.NewRequest("GET", "https://example.com/api/users", nil)
-    
-    // Додавання базової аутентифікації до запиту
-    req.SetBasicAuth("username", "password")
-    
-    // Відправлення запиту і отримання відповіді
-    client := &http.Client{}
-    resp, err := client.Do(req)
+	// Створюємо клієнт HTTP
+	client := &http.Client{}
 
-    // Перевірка помилок та читання відповіді
-    if err != nil {
-        fmt.Println("Помилка при відправці запиту:", err)
-    } else {
-        body, _ := ioutil.ReadAll(resp.Body)
-        fmt.Println("Отримано відповідь:", string(body))
-    }
+	// Генеруємо запит
+	req, err := http.NewRequest("GET", "http://example.com", nil)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// Встановлюємо аутентифікацію
+	req.SetBasicAuth("username", "password")
+
+	// Відправляємо запит
+	resp, err := client.Do(req)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	// Виводимо код статусу
+	fmt.Println("Status code:", resp.StatusCode)
 }
 ```
 
-## Глибоке погруження:
-- Історичний контекст: базова аутентифікація була встановлена як стандартний метод аутентифікації для HTTP протоколу ще в 1999 році.
-- Альтернативи: на сьогоднішній день, існує багато інших методів аутентифікації, таких як OAuth або JWT.
-- Деталі реалізації: більш докладну інформацію з можливостями та обмеженнями базової аутентифікації ви можете знайти в документації Go.
+## Поглиблений занурення
+У минулому, базова аутентифікація вважалась цілком прийнятною, але тепер вона більше не вважається достатньою з точки зору безпеки, особливо при використанні через незахищені протоколи.
+Однією з альтернатив є аутентифікація Bearer, яка часто використовується разом з OAuth2. У реалізації на Go немає нічого особливого, ви просто встановлюєте заголовок "Authorization" зі значенням "Basic " + base64("username:password").
 
-## Дивись також:
-- [Документація Go](https://golang.org/pkg/net/http/#Request.SetBasicAuth)
-- [Стаття на тему аутентифікації в Go](https://itnext.io/authentication-and-authorization-using-jwt-with-golang-ee435ebb6efe)
-- [Офіційна специфікація HTTP базової аутентифікації](https://tools.ietf.org/html/rfc7617)
+## Дивіться також:
+1. [Go HTTP client example](https://golang.org/pkg/net/http/#Client)
+2. [Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+3. [Understanding HTTP Basic Authentication](https://betterprogramming.pub/understanding-http-authentication-schemes-bearer-vs-basic-c2567dd4588d)

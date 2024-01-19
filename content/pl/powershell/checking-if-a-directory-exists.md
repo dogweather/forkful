@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie czy istnieje katalog"
-html_title:           "PowerShell: Sprawdzanie czy istnieje katalog"
-simple_title:         "Sprawdzanie czy istnieje katalog"
+title:                "Sprawdzanie, czy katalog istnieje"
+html_title:           "Go: Sprawdzanie, czy katalog istnieje"
+simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -11,43 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje, to proces identyfikowania, czy określony katalog jest obecny w systemie plików lub nie. Programiści wykonują to, aby uniknąć błędów podczas pracy z plikami lub katalogami, które mogą nie istnieć.
 
-Sprawdzanie, czy istnieje katalog, to proces, w którym programista określa, czy wskazany folder istnieje na komputerze lub serwerze. Jest to ważna część programowania, ponieważ pozwala na wykonywanie odpowiednich akcji w zależności od tego, czy katalog istnieje czy nie.
-
-## Jak to zrobić:
-
-```PowerShell
-if (Test-Path -Path "C:\Users\Example\Documents") {
-    Write-Host "Katalog istnieje."
-}
-else {
-    New-Item -Path "C:\Users\Example\Documents" -ItemType Directory
-    Write-Host "Utworzono nowy katalog."
-}
-```
-**Output:** Katalog istnieje.
+## Jak zrobić:
+Możemy sprawdzić, czy katalog istnieje w PowerShell, za pomocą polecenia `Test-Path`. Oto przykład:
 
 ```PowerShell
-if (Test-Path -Path "C:\Users\Example\Pictures") {
-    Remove-Item -Path "C:\Users\Example\Pictures" -Recurse
-    Write-Host "Katalog usunięty."
-}
-else {
-    Write-Host "Katalog nie istnieje."
+if(Test-Path $path) 
+{
+   Write-Output "Katalog istnieje"
+} 
+else 
+{
+   Write-Output "Katalog nie istnieje"
 }
 ```
-**Output:** Katalog nie istnieje.
+Jeśli katalog istnieje, wyświetli "Katalog istnieje", w przeciwnym razie wyświetli "Katalog nie istnieje".
 
-## Głębokie zanurzenie:
+## Deep Dive
+1. Kontekst historyczny: W przeszłości, przed narodzinami PowerShell, sprawdzanie istnienia katalogu było trudniejsze i wymagało więcej linii kodu. PowerShell uprościł ten proces dzięki swoim wbudowanym poleceniom.
+2. Alternatywy: Możemy również korzystać z .NET Framework do sprawdzenia istnienia katalogu. Poniżej prezentujemy przykład:
 
-Sprawdzanie istnienia katalogu może być stosowane w wielu różnych sytuacjach programistycznych. Jest to szczególnie przydatne, gdy tworzymy skrypty automatyzujące kopiowanie lub usuwanie plików w konkretnym katalogu. Wcześniej, aby wykonać to zadanie, musieliśmy ręcznie sprawdzać, czy katalog istnieje, a następnie podejmować odpowiednie działania. Dzięki funkcji Test-Path w PowerShell, cały ten proces stał się znacznie prostszy i bardziej wydajny.
+```PowerShell
+if([System.IO.Directory]::Exists($path)) 
+{
+   Write-Output "Katalog istnieje"
+} 
+else 
+{
+   Write-Output "Katalog nie istnieje"
+}
+```
 
-Alternatywnym sposobem sprawdzania, czy istnieje katalog, jest użycie metody "Exists" na obiekcie Directory w języku C#. Jednak, w przypadku programowania w PowerShell, funkcja Test-Path jest bardziej wydajna i łatwiejsza do użycia.
+3. Szczegóły implementacji: Polecenie `Test-Path` zwraca prawdę (True) lub fałsz (False) w zależności od istnienia katalogu. Możemy go użyć do zabezpieczenia naszego kodu przed próbą interakcji z nieistniejącym katalogiem.
 
-Kiedy funkcja Test-Path jest wykonywana, sprawdza ona, czy określona ścieżka jest prawidłowa i czy istnieje na komputerze lub serwerze. Może być również używana do sprawdzenia istnienia plików lub rejestrów systemu.
-
-## Zobacz również:
-
-Jeśli chcesz dowiedzieć się więcej o funkcji Test-Path w PowerShell, możesz sprawdzić oficjalną dokumentację na stronie internetowej Microsoft: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path
-
-Możesz również sprawdzić inne źródła, które pomogą Ci lepiej zrozumieć, jak i kiedy używać funkcji Test-Path w swoich skryptach PowerShell.
+## Zobacz też:
+1. [Dokumentacja PowerShell Test-Path](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-6)
+2. [Dokumentacja .NET Framework Directory.Exists](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
+3. [Tutorial do PowerShell dla początkujących](https://docs.microsoft.com/pl-pl/powershell/scripting/overview?view=powershell-7.1)

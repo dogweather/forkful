@@ -1,7 +1,7 @@
 ---
-title:                "השוואת שתי תאריכים"
-html_title:           "Haskell: השוואת שתי תאריכים"
-simple_title:         "השוואת שתי תאריכים"
+title:                "השוואה בין שני תאריכים"
+html_title:           "Arduino: השוואה בין שני תאריכים"
+simple_title:         "השוואה בין שני תאריכים"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,37 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-כתיבת פונקציות בשפת התכנות Haskell נפוצה בעידן המודרני של התכנות, מאפשרת מבנים יעילים וקריאים ליצירת קוד מאורגן. תמיד יש תחום שמתמקד, ועכשיו אנחנו נתמקד בהשוואת שתי תאריכים בפונקציות Haskell ולמה זה חשוב למתכנתים.
-
 ## מה ולמה?
+השוואת שני תאריכים היא בסיסית הפעולה של בחינת היחס הזמני ביניהם. מתכנתים מבצעים את זה כדי לארגן, לסנן או לנתח נתונים מבוססי זמן.
 
-השוואת שתי תאריכים היא תהליך שבו משווהים בפורמט של תאריך את ההבדל בין שני תאריכים. תהליך זה מאפשר למתכנתים לבדוק אם תאריך מסוים מתאים לתנאים מסוימים, כגון תאריך תקין או תאריך מתאים יותר להשוואה.
+## איך לעשות:
 
-## איך לעשות?
-
-לדוגמה, נציג כמה קטעי קוד המדגימים איך לבצע השוואה בין שני תאריכים בפונקציות Haskell.
+בהקשר של השפה של Haskell, נוכל להשתמש בספריית ה- `Data.Time` כדי להשוות שני תאריכים. בהנחה שיש לנו שני `UTCTime`, ההשוואה היא פשוטה:
 
 ```Haskell
--- הגדרת הפונקציה הראשונה, עם פרמטרים שניים המייצגים שני תאריכים
-compareDates :: Integer -> Integer -> Ordering
--- פונקציה המוחזרת מובאתת של השוואת שני תאריכים בעזרת פונקציות המובנות `compare` ו-`fromGregorian`
-compareDates date1 date2 = compare (fromGregorian date1 1 1) (fromGregorian date2 1 1)
--- ערך המוחזר הוא מכיל את התוצאה של השוואה, מייצג באמצעות ערך המכיל את האפשרויות 'LT', 'EQ' או 'GT'
+import Data.Time.Clock
 
--- פונקציה שנייה, המשווה בין שלושה תאריכים בעזרת פונקציות המובנות `diffDays` ו-`fromGregorian`
-compareThreeDates :: Integer -> Integer -> Integer -> Ordering
-compareThreeDates date1 date2 date3 = compare (diffDays (fromGregorian date1 1 1) (fromGregorian date2 1 1)) (diffDays (fromGregorian date1 1 1) (fromGregorian date3 1 1))
--- ערך המוחזר מייצג האם התאריך הראשון נמצא בין התאריכים השני והשלישי, לפי התחלואה של התאריך המקורי.
-
-compareDates 1997 1998 -- אם התאריכים שווים זה לזה, יוחזר EQ
-
-compareThreeDates 1996 1998 2000 -- אם התאריכים נמצאים בסדר שנכון (1998 מתאים לבין 1996 ו2000), יוחזר LT
-
-compareThreeDates 2002 1984 2013 -- אם התאריכים הראשון והשלישי לא נמצאים בין התאריך השני, יוחזר GT
+isFirstDateEarlier :: UTCTime -> UTCTime -> Bool
+isFirstDateEarlier date1 date2 = date1 < date2
 ```
 
-## לעומק
+בהקשר זה, `isFirstDateEarlier` מחזירה `True` אם התאריך הראשון הגיע לפני השני, ו-`False` מאוחר. הנה פלט דוגמה:
 
-כדי להשוות שני תאריכים בפונקציות Haskell, ניתן להשתמש בפונקציה `compare` המשווה בין שני ערכים על ידי השוואת ערכים מספריים. תוצאת השוואה היא בין הערכים LT, EQ או GT, המייצגים התאמה לתנאים שנקבעו. ניתן להשתמש גם בפונקציות נוספות כמו `diffDays`, המשווה בין שני תאריכים לפי היום המסוים בחודש.
+```Haskell
+let date1 = UTCTime (fromGregorian 2020 1 1) 0
+let date2 = UTCTime (fromGregorian 2021 1 1) 0
+isFirstDateEarlier date1 date2 -- Outputs: True
+```
 
-קיימות גם אלטרנטיבות להשוואת שתי תאריכים בפונקציות Haskell,
+## צלילה עמוקה:
+
+כדי להבין את דרך השוואת התאריכים בHaskell, עלינו להעמיק קצת שׁוֹרֶשִׁים לְהִיסטוריה:
+1) **ההקשר ההיסטורי** - בבניית Haskell, מתכנתים ראו חשיבות בתמיכה בפונקציונליות נוספת מעבר להשוואת מחרוזות ומספרים. בנוסף המתמחים במהדורות מוצקות נוסף ההיסטוריה, משם Haskell כדוגמה מובהקת למודל מושגי גיחה להשוואה של תאריכים.
+
+2) **חלופות** - ישנן פונקציות אחרות ב- `Data.Time` שהן גם מאפשרות השוואה של תאריכים - `diffUTCTime` ו- `addUTCTime`. עם ההפונקציות האלה אפשר לחשב את ההפרש בין שני תאריכים או להוסיף זמן נתון לתאריך מסוים.
+
+3) **הימומה אם השוואת תאריכים** - בספריית `Data.Time`, הפונקציות של השוואת תאריכים מממשות מנגנון של פונקציות של `Ord`. זה מאפשר להן להשתמש במגבלות של ה- `Ord` מגבלה Comonad המוכר, כי מאפשר למתכנת צעדים מוכנים של השוואה עם `<`, `>`,` ==`, `<=` ו- `>=`.
+
+## ראה גם:
+
+להלן קישורים למקורות מועילים מקוונים שיבהירו הכול:
+1. הדוקומנטציה הרשמית של `Data.Time`: https://hackage.haskell.org/package/time-1.5.0.1/docs/Data-Time-Clock-UTCTime.html
+2. בלוג גִיּוֹר אגצימ על הגיחה למודלים של זמן: https://yogsototh.github.io/programming/2019/05/06/haskell-time-library-tutorial/
+3. קורס מקוון ב- Coursera מתחיל Jeroen Frisius על תכנות פונקציונלי מתרוכב בHaskell: https://www.coursera.org/lecture/principles-of-functional-programming-in-haskell/d73c37a0c

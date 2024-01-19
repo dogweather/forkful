@@ -1,6 +1,6 @@
 ---
 title:                "Télécharger une page web"
-html_title:           "TypeScript: Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
 simple_title:         "Télécharger une page web"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
-Télécharger une page web signifie récupérer le contenu d'une page web à partir d'un serveur distant. Les programmeurs le font pour pouvoir accéder et manipuler ces données pour l'utiliser dans leurs projets.
+# Téléchargement d'une page Web en TypeScript
 
-## Comment faire:
+## Quoi & Pourquoi ?
+Télécharger une page web, c'est récupérer le code HTML d'une page à partir d'un serveur. Les développeurs font cela pour analyser le contenu de la page, scraper des données ou tester des fonctionnalités.
+
+## Comment faire :
+Pour télécharger une page web en TypeScript, nous pouvons utiliser la bibliothèque `axios`.
+
 ```TypeScript
-import axios from 'axios'; //Importer la bibliothèque axios qui facilite les requêtes HTTP
+import axios from 'axios';
 
-axios.get('https://example.com/') //Envoyer une requête GET à l'URL souhaitée
-  .then(function (response) { //Traiter la réponse avec une fonction de rappel
-    console.log(response.data); //Afficher le contenu de la page téléchargée
-  })
-  .catch(function (error) { //Gérer les erreurs avec une fonction de rappel
-    console.log(error); 
-  });
-```
-**Exemple de sortie :**
-```
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Example Domain</title>
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <h1>Example Domain</h1>
-    <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
-    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-  </body>
-</html>
+async function downloadWebPage(url: string): Promise<string> {
+  const response = await axios.get(url);
+  return response.data;
+}
+
+const pageData = downloadWebPage('https://www.google.com');
+console.log(pageData);
 ```
 
-## Plongée en profondeur:
-Télécharger une page web est un processus couramment utilisé en programmation, en particulier pour les applications web et les outils de scraping (récupération automatique de données). Il existe plusieurs alternatives pour télécharger une page web, telles que l'utilisation de bibliothèques telles que Request ou Puppeteer, ou la mise en place d'un serveur proxy pour récupérer les données. L'implémentation peut varier en fonction de la bibliothèque utilisée et des paramètres de la requête.
+## Plongée en profondeur :
+Historiquement, le téléchargement de pages Web a été utilisé pour le "web scraping", qui consiste à extraire des données à partir d'un site web. Aujourd'hui, les développeurs ont également recours à cela pour tester des portions de code ou des services Web.
 
-## Voir aussi:
-- [Documentation de la bibliothèque Axios](https://github.com/axios/axios)
-- [Utiliser Axios dans un projet Node.js](https://blog.abelotech.com/posts/axios-cancel-request/)
-- [Alternatives pour télécharger une page web en TypeScript](https://stackoverflow.com/questions/42084910/download-html-source-code-with-typescript-node-js/42092276)
+Il existe plusieurs alternatives à `axios`, comme `node-fetch`, `got` ou `request`. Chaque bibliothèque a ses propres avantages et inconvénients et le choix dépendra de vos besoins spécifiques.
+
+Concernant les détails d'implémentation, `axios` résout une `Promise`. Une `Promise` est une valeur qui peut être disponible maintenant, dans le futur, ou jamais. Dans notre cas, la promesse est résolue par les données de la page Web.
+
+## Voir aussi :
+Pour plus d'information concernant le téléchargement de pages Web en TypeScript, vous pouvez visiter les liens suivants :
+
+- Axios sur GitHub : [https://github.com/axios/axios](https://github.com/axios/axios)
+- Article de blog sur le web scraping en Node.js : [https://blog.bitsrc.io/https-puppeteering-a-modern-guide-to-scraping-with-headless-browsers-558f7ab25ed2](https://blog.bitsrc.io/https-puppeteering-a-modern-guide-to-scraping-with-headless-browsers-558f7ab25ed2)
+- Documentation sur les Promises : [https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise)

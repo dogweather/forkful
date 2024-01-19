@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "C: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "C"
 category:             "C"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么和为什么？
-将字符串转换为小写是一种常见的编程操作，它可以把字符串中的所有大写字母转换为小写字母。程序员经常使用这种操作来简化字符串比较以及对用户输入的处理。
+## 什么和为什么？
+将字符串转换为小写是在程序中将所有大写字母更改为其小写形式的过程。程序员这样做主要是为了实现数据的规范化，方便进行字符串比较和排序。
 
-# 如何实现：
+## 如何操作：
+我们可以使用C语言的`tolower()`函数来实现这一转换。这里有一个示例：
+
 ```C
-#include <stdio.h>
 #include <ctype.h>
+#include <stdio.h>
 
 int main() {
-    // 示例字符串
-    char str[] = "HELLO WORLD";
-    int i = 0;
+    char str[] = "HELLO, WORLD!";
 
-    // 使用循环将字符串中的每个字符转换为小写
-    while (str[i]) {
-        str[i] = tolower(str[i]);
-        i++;
+    for (int i = 0; str[i]; i++) {
+        putchar(tolower(str[i]));
     }
-
-    // 打印转换后的字符串
-    printf("转换后的字符串为：%s", str);
 
     return 0;
 }
 ```
-输出结果：hello world
 
-# 深入了解：
-- 历史背景：在早期的计算机系统中，大写字母和小写字母被分别存储在不同的字符集中，因此需要进行大小写转换。而在现代的编程语言中，大小写转换也被广泛应用于字符串比较和用户输入处理。
-- 其他方法：除了使用循环和库函数如`tolower()`之外，也可以使用条件语句和位运算来实现字符串转换。
-- 实现细节：在C语言中，每个字符都是以ASCII码来表示的，在进行大小写转换时，只需要将大写字母的ASCII码加上32，就可以得到对应的小写字母的ASCII码。
+运行上述程序，你会在控制台上看到以下输出：
 
-# 相关资料：
-- C语言参考手册：https://en.cppreference.com/w/c
-- 字符串处理函数：https://en.cppreference.com/w/c/string/byte
-- ASCII码表：http://www.asciitable.com/
+```C
+hello, world!
+```
+这样，我们就成功地将字符串转换为小写了。
+
+## 深入分析
+1. 历史背景：最早的C标准库中就已经包含了`tolower()`函数，这显示了数据规范化的重要性。
+2. 替代方案：你也可以不使用`tolower()`函数，而是直接使用ASCII值进行大小写转换。
+3. 实现细节：`tolower()`函数通过查找ASCII表来进行转换。它检查字符是否为大写，如果是，则将其ASCII值加32（因为在ASCII表中，小写字母的ASCII值比其对应的大写字母大32）。
+
+## 另请参阅
+1. C编程/字符：更深层次了解字符和字符串的知识（地址：www.C-lang-char.com)
+2. ASCII表参考：了解ASCII的各种细节（地址：www.ASCII-ref.com)
+3. C标准库 - `<ctype.h>`：读懂`tolower()`函数的官方文档（地址：www.ctype-h-lib.com)

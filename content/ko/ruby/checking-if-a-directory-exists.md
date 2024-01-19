@@ -1,6 +1,6 @@
 ---
 title:                "디렉토리가 존재하는지 확인하기"
-html_title:           "Ruby: 디렉토리가 존재하는지 확인하기"
+html_title:           "C#: 디렉토리가 존재하는지 확인하기"
 simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이고 왜?
 
-디렉토리가 존재하는지 확인하는 것은 프로그래머들이 자주 하는 작업입니다. 이는 코드에서 파일이나 디렉토리를 찾을 때 유용합니다. 
+디렉토리가 존재하는지 확인하는 것은 특정 디렉토리의 존재를 체크하는 작업입니다. 프로그래머들은 이 작업을 통해 읽기/쓰기 작업 전에 해당 위치에 디렭토리가 실제로 있는지 확인하여 에러를 방지합니다.
 
-## 방법:
+## 어떻게 할까?
 
-`Dir.exist?` 메소드를 사용하여 디렉토리가 존재하는지 체크할 수 있습니다. `true` 또는 `false` 값을 반환하며, 디렉토리가 존재하면 `true`가 반환됩니다. 예를 들어, 다음과 같이 사용할 수 있습니다.
+Ruby에서 디렉토리 존재 확인은 다음과 같이 수행할 수 있습니다.
 
 ```Ruby
-if Dir.exist?('my_folder')
-  puts 'my_folder exists!'
+require 'fileutils'
+
+path = "/path/to/directory"
+
+if Dir.exist?(path)
+  puts "The directory exists."
 else
-  puts 'my_folder does not exist.'
+  puts "The directory does not exist."
 end
 ```
+우리가 원하는 디렉토리의 경로를 `path`에 입력하면, 존재하는지를 확인합니다. 디렉토리가 존재하면 "The directory exists."라고 출력되고, 그렇지 않으면 "The directory does not exist."라고 출력됩니다.
 
-위의 코드를 실행하면 존재하는 디렉토리의 경우 `my_folder exists!`가 출력되고, 존재하지 않는 디렉토리의 경우 `my_folder does not exist.`가 출력됩니다.
+## 깊이 들어가보기
 
-## 깊이 파헤치기:
+디렉토리의 존재 여부를 확인하는 코드는 파일 시스템 성능에 기반하여 작성된 코드입니다. 이는 Ruby가 처음 개발되었을 때부터 그 대부분의 운영 체제와 호환되도록 설계되었습니다.
 
-이 메소드는 Ruby 1.9부터 사용할 수 있습니다. 이전 버전의 Ruby에서는 `File.exists?` 메소드를 사용하여 파일 또는 디렉토리의 존재 여부를 확인할 수 있었습니다. 하지만 `Dir.exist?` 메소드는 메소드명 자체가 더 명확하고 직관적이기 때문에 더 선호됩니다.
+대안으로 `File.directory?(path)`를 사용할 수도 있습니다. 이 메서드는 입력된 경로가 디렉토리면 true를, 그렇지 않으면 false를 반환합니다. 하지만 이는 디렉토리 뿐만 아니라 파일의 존재도 확인합니다. 따라서 이메서드는 디렉토리의 존재 여부만을 확인하려는 목적에는 적합하지 않습니다.
 
-`Dir.exist?` 메소드 외에도 `Dir.exist?` 메소드를 포함하는 `FileUtils` 모듈을 사용할 수도 있습니다. `FileUtils` 모듈에는 디렉토리를 생성하거나 삭제하는 등 다양한 유용한 기능들이 포함되어 있습니다.
+`Dir.exist?` 메서드는 Ruby의 입출력 중 하나인 Dir 클래스의 인스턴스 메서드입니다. 이 메서드는 특정 디렉토리의 존재 여부를 확인하는 역할을 합니다.
 
-## 관련 항목:
+## 참고하기
 
-- [Ruby 문서 - Dir 클래스](https://ruby-doc.org/core-2.6.5/Dir.html)
-- [Ruby 문서 - FileUtils 모듈](https://ruby-doc.org/stdlib-2.6.5/libdoc/fileutils/rdoc/FileUtils.html)
+다음과 같은 레퍼런스에서 관련 내용을 더 찾아볼 수 있습니다.
+- Ruby 공식 문서: [Dir.exist?](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F), [File.directory?](https://ruby-doc.org/core-2.7.1/File.html#method-c-directory-3F)
+- Stack Overflow: [Check if a directory exists in a shell script](https://stackoverflow.com/questions/59838/check-if-a-directory-exists-in-a-shell-script)

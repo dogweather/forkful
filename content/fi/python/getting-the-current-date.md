@@ -1,7 +1,7 @@
 ---
-title:                "Hankkimassa nykyistä päivämäärää"
-html_title:           "Python: Hankkimassa nykyistä päivämäärää"
-simple_title:         "Hankkimassa nykyistä päivämäärää"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-"Päivämäärän hankkiminen" tarkoittaa nykyisen päivämäärän ja ajan selvittämistä. Ohjelmoijat tekevät tätä esimerkiksi aikaleimojen lisäämiseksi tietokantaan tai tiedostoihin.
+Nykypäivän hankkiminen ohjelmassa tarkoittaa nykyisen päiväyksen ja/tai ajan palauttamista. Ohjelmoijat tarvitsevat sitä usein aikaleimoja, ajastimia tai jopa kalenteriominaisuuksia varten.
 
-## Kuinka:
+## Miten tehdään:
 
-```Python
-import datetime
-
-nykyinen_paivamaara = datetime.datetime.now()
-
-print("Nykyinen päivämäärä ja aika:", nykyinen_paivamaara)
-```
+Pythonissa voit käyttää `datetime` kirjastoa nykyisen päivän ja ajan saamiseen. Tässä on yksinkertainen esimerkki siitä, miten se tehdään:
 
 ```Python
-# Tulos:
+from datetime import datetime
 
-Nykyinen päivämäärä ja aika: 2020-12-09 09:30:00.000000
+nykyinen_paiva = datetime.now()
+print(nykyinen_paiva)
 ```
 
-## Syväsukellus:
+Kun suoritat tämän koodin, se palauttaa nykyisen päivämäärän ja ajan muodossa 'Vuosi-Kuukausi-Päivä Tun:Min:Sec.Millisec', esimerkiksi `2023-09-24 13:45:22.914617`.
 
-Päivämäärän ja ajan hankkiminen on yksi perusoletustoiminnoista Pythonissa. Tätä varten käytetään datetime-moduulia, jonka avulla voidaan luoda objekti, joka sisältää nykyisen päivämäärän ja ajan. Tätä objektia voidaan sitten käyttää esimerkiksi erilaisissa laskutoimituksissa ja muissa toiminnoissa.
+## Syvällinen tieto
 
-### Historiallinen konteksti:
+Historiallisessa kontekstissa, aikaisemmissa ohjelmointikielissä saattoi olla paljon monimutkaisempaa saada nykyinen päivämäärä ja aika. Pythonin syntaksi on suunniteltu olemaan luettavampi ja helpompi ymmärtää, mikä tekee tällaisista tehtävistä helpompia.
 
-Aikaisemmissa Pythonin versioissa (ennen versiota 2.3) oli mahdollista käyttää time-moduulia nykyisen ajan ja päivämäärän hankkimiseen. Time-moduuli kuitenkin palauttaa arvonaan tarkkaa aikaa Unix epoch -muodossa, eli sekunteina 1. tammikuuta 1970:stä lähtien. Nykyään datetime-moduuli on suositeltu tapa hankkia nykyinen päivämäärä ja aika, koska se antaa käyttäjälle selkeämmän ja helpommin muokattavan objektin päivämäärälle ja ajalle.
+Alternativejakin toki on, esim. 'time'-kirjasto:
 
-### Vaihtoehtoiset tavat:
+```Python
+import time
 
-Pythonin lisäksi useimmissa käyttöjärjestelmissä ja ohjelmointikielissä on valmiina mahdollisuus hankkia nykyinen päivämäärä ja aika. Esimerkiksi Unix-käyttöjärjestelmässä käytetään "date" -komennolla ja Java-kielellä Date-luokalla.
+nykyinen_aika = time.ctime()
+print(nykyinen_aika)
+```
 
-### Toteutus:
+Tämä palauttaa nykyisen ajan ihmismuotoisessa muodossa (esimerkiksi 'Tue Jun 29 14:05:28 2023').
 
-Datetime-moduulin toiminta perustuu ajanjaksoon, joka on kulunut Unix epochista nykyhetkeen. Moduuli käyttää tätä ajanjaksoa ja siitä laskettua aikaleimaa selvittämään nykyisen päivämäärän ja ajan.
+Näissä koodiesimerkeissä 'datetime' ja 'time' kirjastot palauttavat ajan tietokonejrjestelmän kellosta, joka on yleensä synkronoitu verkon yli.
 
-## Katso myös:
+## Katso myös
 
-- [Datetime-moduuli Pythonin virallisessa dokumentaatiossa](https://docs.python.org/3/library/datetime.html)
-- [Time-moduuli Pythonin virallisessa dokumentaatiossa](https://docs.python.org/3/library/time.html)
+- Pythonin virallinen dokumentaatio: [datetime](https://docs.python.org/3/library/datetime.html) ja [time](https://docs.python.org/3/library/time.html)
+- [Python aloittelijoiden opas](https://www.python.org/about/gettingstarted/)
+- [Redditin Python-yhteisö](https://www.reddit.com/r/Python/), mainio paikka saada kysymyksiin vastauksia.
+
+Muista, tärkeimmästä tähän ja muihin ohjelmoinnin perusteisiin voi löytyä useita ratkaisuja - usein parasta on se, joka on ymmärrettävin itsellesi tai tiimillesi.

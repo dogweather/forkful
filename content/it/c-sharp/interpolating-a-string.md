@@ -1,6 +1,6 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "C#: Interpolazione di una stringa"
+html_title:           "Clojure: Interpolazione di una stringa"
 simple_title:         "Interpolazione di una stringa"
 programming_language: "C#"
 category:             "C#"
@@ -10,28 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
+# L'interpolazione delle stringhe in C#
 
-L'interpolazione di stringhe è un modo efficiente per combinare variabili e testo in una sola stringa. I programmatori lo fanno per rendere il codice più leggibile e facile da mantenere.
+Il tuo strumento pratico per formattare le stringhe in modo pulito.
+
+## Cos'è e perché?
+
+L'interpolazione delle stringhe è un modo per inserire variabili direttamente nelle stringhe. Lo facciamo per ottenere un codice più pulito e leggibile.
 
 ## Come fare:
-
-Ecco un esempio di come utilizzare l'interpolazione delle stringhe in C#:
 
 ```C#
 string nome = "Mario";
 int eta = 30;
-Console.WriteLine($"Ciao, mi chiamo {nome} e ho {eta} anni.");
-```
+string output = $"Ciao {nome}, hai {eta} anni.";
 
-Questo codice produrrà l'output: "Ciao, mi chiamo Mario e ho 30 anni". Come puoi vedere, l'uso delle parentesi graffe all'interno della stringa indica al programma di sostituire quei valori con il contenuto delle variabili.
+Console.WriteLine(output);  
+
+// Output: Ciao Mario, hai 30 anni.
+```
+ 
+'${var}' sostituisce 'var' con il suo valore. Basta con String.Format() laborioso!
 
 ## Approfondimento:
 
-L'interpolazione di stringhe è stata introdotta nella versione 6 di C# con l'obiettivo di semplificare la creazione di stringhe composite. In precedenza, i programmatori dovevano utilizzare concatenazioni di stringhe o metodi di formato per raggiungere lo stesso risultato.
+L'interpolazione delle stringhe esiste dal C# 6.0. Prima eravamo obbligati a usare la vecchia String.Format(), oppure concatenare con '+'. L'interpolazione richiede meno fatica ed è più intuitiva. Di solito, viene convertita in String.Format() dal compilatore.
 
-Ci sono molti altri modi per combinare variabili e testo in una stringa, come ad esempio l'uso del metodo string.Format() o l'operatore +. Tuttavia, l'interpolazione delle stringhe è spesso considerata la soluzione più chiara e leggibile.
+```C#
+//Old
+string output = string.Format("Ciao {0}, hai {1} anni.", nome, eta);
 
-## Vedi anche:
+//Older
+string output = "Ciao " + nome + ", hai " + eta + " anni.";
+```
 
-Per ulteriori informazioni su come utilizzare l'interpolazione di stringhe in C#, puoi consultare la documentazione ufficiale di Microsoft su [String Interpolation](https://docs.microsoft.com/it-it/dotnet/csharp/language-reference/tokens/interpolated).
+Osserva la differenza di chiarezza!
+
+## Approfondisci:
+
+[Microsoft - String Interpolation (C# Reference)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated) 
+
+[DotNetPearls - C# String Interpolation](https://www.dotnetperls.com/string-interpolation)  
+
+C'è sempre spazio per apprendere qualcosa di nuovo. Buona codifica!

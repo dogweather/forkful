@@ -1,7 +1,7 @@
 ---
-title:                "Das Versenden einer HTTP-Anfrage"
-html_title:           "Fish Shell: Das Versenden einer HTTP-Anfrage"
-simple_title:         "Das Versenden einer HTTP-Anfrage"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Eine HTTP-Anfrage zu senden bedeutet, dass ein Programm Daten an einen Server schickt und auf eine Antwort wartet. Programmierer tun dies, um Anfragen an APIs oder Webseiten zu stellen und die erhaltenen Daten weiterzuverarbeiten.
+## Was & Warum?
 
-# Wie geht's?
-Das Senden einer HTTP-Anfrage mit der Fish Shell ist einfach. Dazu verwenden wir den Befehl ```curl```. Erstelle zuerst eine Variable, die die URL enthält, an die du die Anfrage senden möchtest. Dann gib einfach ```curl $url``` ein und voilà, die Antwort des Servers wird direkt in der Shell angezeigt.
+Ein HTTP-Request ist eine Anforderung an einen Webserver, um bestimmte Informationen zu erhalten. Programmierer verwenden diese häufig, um API-Daten zu holen, Webseiten zu scrapen, oder um mit anderen Diensten im Internet zu kommunizieren.
 
-```fish
-set url "https://example.com"
-curl $url
+## So geht's:
+
+```Fish Shell
+# Installation von httpie
+brew install httpie
+
+# Senden einer GET-Anforderung
+http GET beispiel.de
+
+# Senden einer POST-Anforderung mit Daten
+http POST beispiel.de name=Max
 ```
-Ergebnis:
-```
-<html>
-<head>
-<title>Example Domain</title>
-...
+
+Die Ausgabe könnte so aussehen:
+
+```Fish Shell
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
 ```
 
-# Tiefer tauchen
-Das Versenden von HTTP-Anfragen ist ein Teil des Grundgerüsts des Internets und hat eine lange Geschichte. Es gibt auch andere Methoden, um HTTP-Anfragen zu senden, wie z.B. der Befehl ```wget```. Das Verständnis der verschiedenen Optionen und Parameter von ```curl``` kann auch sehr hilfreich sein, um die Ergebnisse der Anfragen besser zu kontrollieren.
+## Vertiefende Infos
 
-# Siehe auch
-- [Offizielle Dokumentation zu curl](https://fishshell.com/docs/current/commands.html#curl)
-- [Verwendung von wget zum Senden von HTTP-Anfragen](https://www.computerhope.com/unix/wget.htm)
-- [Eine kurze Geschichte des HTTP-Protokolls](https://www.w3.org/Protocols/HTTP/AsImplemented.html)
+Historisch gesehen wurden HTTP-Requests meist mit Tools wie `curl` oder `wget` gesendet. Heute gibt es jedoch eine Vielzahl von alternativen Methoden, unter anderem Bibliotheken wie `requests` in Python oder `axios` in JavaScript.
+
+"Httpie" ist hier das Tool der Wahl und eine gute Wahl für das Fisch-Shell, da es leicht zu bedienen ist und klare, farblich codierte Antworten liefert. Es ist jedoch wichtig, zu verstehen, dass HTTP-Anfragen auf niedrigerer Ebene erfolgen und bestimmte Details wie Header oder Body-Daten enthalten können, die die Anfrage beeinflussen.
+
+## Siehe auch
+
+Für mehr Details zu `httpie` besuchen Sie deren offizielle Dokumentation unter https://httpie.io/docs.
+Für weiterführende Informationen zum HTTP-Protokoll und dessen Verwendung, besuchen Sie https://www.w3schools.com/tags/ref_httpmethods.asp

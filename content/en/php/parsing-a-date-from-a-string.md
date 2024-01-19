@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "PHP recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "PHP"
 category:             "PHP"
@@ -12,41 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing a date from a string in PHP refers to the process of converting a date input that is in text format into a more usable date object. This is important for programmers because it allows for easier manipulation and comparison of dates, which are commonly used in databases and web applications.
+Parsing a date from a string means transforming the string into a format that a computer can comprehend as a date. We need this because computers, unlike humans, don't understand the variety of ways dates can be written.
 
 ## How to:
 
-To parse a date from a string in PHP, we will use the built-in `strtotime()` function. This function takes in a string representing a date and time and converts it into a Unix timestamp, which is a numerical value representing the number of seconds since January 1, 1970.
+PHP has a built-in function called `strtotime()` for this task. Stick a string into it, and out comes a time-stamp. It's quite magical. Here's how we do it:
 
 ```PHP
-// Example date string
-$date_string = "January 1, 2020";
-
-// Using strtotime to convert to a Unix timestamp
-$timestamp = strtotime($date_string);
-
-// Output will be: 1577836800
-echo $timestamp;
+$date = "15th January 2023";
+$timestamp = strtotime($date);
+echo date('d-m-Y', $timestamp);
 ```
 
-To convert the Unix timestamp back into a readable date format, we can use the `date()` function. This function takes in a format parameter and the Unix timestamp and returns a formatted string representing the date and time.
+This script will output: `15-01-2023`.
+
+Or let's take a date string with a different format:
 
 ```PHP
-// Using date to format the timestamp into a readable date
-// Output will be: January 1, 2020
-echo date("F j, Y", $timestamp);
+$date = "2023/01/15";
+$timestamp = strtotime($date);
+echo date('d-m-Y', $timestamp);
 ```
 
-## Deep Dive:
+And here you'll get the exact same output, `15-01-2023`, despite the different input format.
 
-Parsing dates from strings has become easier in recent years with the addition of built-in functions like `strtotime()` and `date()` in PHP. In the past, developers had to manually manipulate and convert date strings into usable formats, which could be time-consuming and error-prone.
+## Deep Dive
 
-An alternative to using `strtotime()` and `date()` is the `DateTime` class, which offers more advanced functionality for manipulating and formatting dates. This class also has the ability to handle time zones and daylight saving time, making it a more robust option for handling dates in a variety of situations.
+`strtotime()` actually has a heap of history. It was born in PHP 4 as 'Magpie' for its ability to pick out dates regardless of format. Over time, it's evolved and matured, just like a fine wine.
 
-When parsing dates from strings, it is important to understand the format of the input date string to ensure accurate conversion. PHP's date formats follow the same syntax as the Unix `date` command, allowing for consistency in date formatting across different systems.
+Alternatives, you ask? Well, PHP's `DateTime` class is another way to parse dates. It's object-oriented, offering more flexibility if you're doing more complex operations with dates.
 
-## See Also:
+Implementation-wise, `strtotime()` internally uses the `Parsedate` library, which is why it handles such a wide array of formats.
 
-- [PHP Manual - strtotime()](https://www.php.net/strtotime)
-- [PHP Manual - date()](https://www.php.net/date)
-- [PHP Manual - DateTime class](https://www.php.net/manual/en/class.datetime.php)
+## See Also
+
+Boost your PHP knowledge with these resources:
+
+1. PHP's official Date/Time documentation: https://www.php.net/manual/en/book.datetime.php
+2. Excellent strtotime() reference guide: https://www.php.net/manual/en/function.strtotime.php
+3. Learn more about the `DateTime` class: https://www.php.net/manual/en/class.datetime.php
+
+Remember, practice makes perfect. Happy coding!

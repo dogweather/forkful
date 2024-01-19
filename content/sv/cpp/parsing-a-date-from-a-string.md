@@ -1,7 +1,7 @@
 ---
-title:                "En date från en sträng"
-html_title:           "C++: En date från en sträng"
-simple_title:         "En date från en sträng"
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,44 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att "parsa" ett datum från en sträng innebär att konvertera ett datum som är skrivet som en textsträng till ett formaterat datum som kan användas i ett program. Programerare gör detta för att kunna använda datum som variabler i sina program, för att kunna jämföra och manipulera datum på ett enklare sätt.
+
+Att tolka ett datum från en sträng innebär att konvertera en sträng som representerar ett datum till ett effektivt minnesformat. Detta gör programmerare för att manipulera data, göra beräkningar och visa resultat på ett mer lämpligt eller förståeligt format för användaren.
 
 ## Hur man gör:
-Här är ett enkelt exempel på hur man kan parsea ett datum från en sträng i C++:
 
+Låt oss dyka rakt in i kodexemplen i C++. Vi använder `std::get_time`, ett praktiskt biblioteksfunktion för att tolka datum och tid.
 ```C++
 #include <iostream>
+#include <sstream>
+#include <iomanip>
 #include <ctime>
 
 int main() {
-  std::string date = "2020-07-18"; //strängen som ska parsas
-  std::tm t = {}; //tom struct för att lagra datumet
-  std::istringstream ss(date); //skapar en istringstream för att kunna läsa strängen
-  ss >> std::get_time(&t, "%Y-%m-%d"); //parsar strängen till datumet
-  if(ss.fail()){ //om parsningen misslyckas 
-    std::cout << "Ogiltigt datum!\n";
-  } else { //om parsningen är lyckad
-    std::cout << "År: " << t.tm_year + 1900 << std::endl; //tm_year räknas från 1900
-    std::cout << "Månad: " << t.tm_mon + 1 << std::endl; //tm_mon räknas från 0
-    std::cout << "Dag: " << t.tm_mday << std::endl;
-  }
-  return 0;
+    std::tm tm = {};
+    std::istringstream ss("2021-08-14");
+    ss >> std::get_time(&tm, "%Y-%m-%d");
+    
+    if (ss.fail()) {
+        std::cout << "Det gick inte att tolka datumsträngen.\n";
+    } else {
+        std::time_t time = mktime(&tm);
+        if (time != -1) {
+            std::cout << "Tolkat datum: " << std::asctime(std::localtime(&time));
+        }
+    }
+
+    return 0;
 }
 ```
+När du kör koden får du:
+```C++
+'Tolkat datum: Sat Aug 14 00:00:00 2021'
+```
+## Djupdykning
 
-Kodkommentarer är skrivna på engelska av konvention, men själva koden kan naturligtvis vara på svenska. Output av ovanstående kod skulle bli:
+Historiskt sett, före C++20, användes ofta manuella strängmanipuleringstekniker för att tolka datum. Det öppnade dock för fel och var i allmänhet inte så effektivt.
 
-```2020-07-18
-År: 2020
-Månad: 7
-Dag: 18```
+Alternativ till `get_time` inkluderar strängparsningsbibliotek som `boost::date_time` och `date.h` biblioteket. Nackdelen med dessa lösningar är att de kan vara tunga för att lösa specifika problem.
 
-## Djupdykning:
-Funktionen `get_time()` som används i detta exempel är en del av standardbiblioteket `<ctime>` och introducerades i C++11. Innan dess fanns inte ett standardiserat sätt att parsa datum från strängar i C++, vilket gjorde det svårt och osäkert att göra det på ett portabelt sätt.
+På implementeringsnivå konverterar `std::get_time` strängen till ett `std::tm` objekt, som internt representerar datum som separata fält (t.ex., år, månad, dag, timme, minut, sekund).
 
-Det finns även andra sätt att parsea datum från strängar i C++, bland annat genom att använda bibliotek såsom Boost.Date_Time eller genom att själv implementera en parser. Men många föredrar att använda standardbibliotekets `get_time()`-funktion eftersom det är med i själva språket och därmed mindre beroende av externa bibliotek.
+## Se även
 
-## Se även:
-1. [Dokumentation för `get_time()`](https://en.cppreference.com/w/cpp/io/manip/get_time)
-2. [Boost.Date_Time](https://www.boost.org/doc/libs/1_73_0/doc/html/date_time.html)
-3. [Julian Day - ett numeriskt format för datum](https://en.wikipedia.org/wiki/Julian_day)
+För vidare läsning rekommenderas:
+- [C++ Referens - get_time](http://www.cplusplus.com/reference/iomanip/get_time/)
+- [Alternativ till date.h](https://stackoverflow.com/questions/11213326/how-to-parse-a-date-string-into-a-boostgregorian-date)
+- [Formatering och tolkning av tid och datum](https://en.cppreference.com/w/cpp/io/manip/get_time)

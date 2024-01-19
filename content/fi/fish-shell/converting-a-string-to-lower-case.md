@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuntaminen pienaakkosiksi"
-html_title:           "Fish Shell: Merkkijonon muuntaminen pienaakkosiksi"
-simple_title:         "Merkkijonon muuntaminen pienaakkosiksi"
+title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,36 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
+Muuttujan muuttaminen pieniksi kirjaimiksi (eng. converting a string to lower case) tarkoittaa ohjelmointia, jossa muutetaan merkkijonon kaikki kirjaimet pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän usein normalisoidakseen tietoja, kuten käyttäjätunnuksia tai sähköpostiosoitteita.
 
-Miksi convertata merkkijono pieniksi kirjaimiksi? Tämä on yleinen toimenpide ohjelmoinnissa, kun halutaan varmistaa, että syötetty merkkijono vastaa tiettyä standardeja tai vertailu tapahtuu oikein. Pienillä kirjaimilla varmistetaan myös yhdenmukainen muotoilu.
+## Näin se tehdään:
+Fish Shellissä voit yksinkertaisesti käyttää `string` komentoa muuttaaksesi merkkijonon pieniksi kirjaimiksi. 
 
-## Miten tehdä:
-
-Fish Shell tarjoaa helpon tavan muuttaa merkkijonon pieniksi kirjaimiksi. Tämä tapahtuu käyttämällä `string tolower` komentoa ja antamalla haluttu merkkijono argumenttina.
-
-```
-Fish Shell> string tolower "HELSINKI"
-helsinki
+```Fish Shell
+set muuttuja "Moi Maailma"
+echo $muuttuja | string lower
 ```
 
-Mikäli halutaan tallentaa pienet kirjaimet muuttujaan, komennolla voi käyttää myös `-o` flagia, joka asettaa muutetun merkkijonon muuttujaan.
+Tämä tulostaa: `moi maailma`
 
-```
-Fish Shell> set city "HELSINKI"
-Fish Shell> string tolower -o city
-Fish Shell> echo $city
-helsinki
-```
+## Syvempi sukellus
+Fish Shell, vuonna 2005 julkaistu komentotulkki, lisäsi 'string' toiminnon version 2.3.0 myötä, mikä helpottaa merkkijonoihin liittyviä operaatioita. Vaihtoehtona voitaisiin käyttää `tr` komentoa `tr '[:upper:]' '[:lower:]'`, mutta se saattaa tuottaa odottamattomia tuloksia joillakin Unicode merkkijonoilla. Fishin 'string lower' käyttää kansainvälistä komponenttia, mikä takaa laajemman merkkijonon tuen.
 
-## Syvempi sukellus:
-
-Historiallisesti, merkkijonon konverttaaminen pieniksi kirjaimiksi on ollut tarpeellinen osa tietokoneohjelmointia, sillä eri käyttöjärjelmät käsittävät kirjaimia eri tavoin. Esimerkiksi IBM mainframe tietokoneet käyttävät isoja kirjaimia, kun taas UNIX pohjaiset järjestelmät käyttävät pieniä kirjaimia. Fish Shellin toiminto perustuu käyttöjärjestelmän `tr` komentoon, joka suoritetaan taustalla.
-
-Mikäli Fish Shell ei ole käytettävissä, vastaavan komennon voi suorittaa myös Bash Shellissä käyttämällä `tr` komentoa ja `[:upper:]` ja `[:lower]` merkkisarjoja.
-
-## Katso myös:
-
--  Fish Shellin virallinen dokumentaatio: https://fishshell.com/docs/current/cmds/string.html
--  `tr` komennon dokumentaatio: https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/rtref/stroupperlower.htm
--  `tr` komennon julkaisuhistoria: https://manpages.debian.org/testing/coreutils/tr.1.en.html
+## Katso myös
+- Fishin virallinen dokumentaatio: [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- Yksityiskohtaisempi artikkeli merkkijonojen muuntamisesta: [Converting Strings in Fish](https://riptutorial.com/fish-shell/example/20341/converting-strings)

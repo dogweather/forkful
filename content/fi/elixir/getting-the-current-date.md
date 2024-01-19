@@ -1,7 +1,7 @@
 ---
-title:                "Nykyisen päivämäärän saaminen"
-html_title:           "Elixir: Nykyisen päivämäärän saaminen"
-simple_title:         "Nykyisen päivämäärän saaminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## Mikä & Miksi?
 
-Nykyisen päivämäärän hakeminen on prosessi, jossa ohjelma hakee ja tallentaa nykyisen päivämäärän ja kellonajan tietokoneen järjestelmäkellolta. Tätä tarvitaan usein ohjelmoinnissa esimerkiksi tapahtumien ajoittamisessa tai arkistojen järjestämisessä.
+Nykyisen päivämäärän saaminen ohjelmoinnissa tarkoittaa sitä, että saat työkalut aikaleiman lisäämiseen tietueisiin tai ajan seurantaan reaaliaikaisesti. Se on olennainen osa monia toimintoja, kuten lokiin kirjoittamista, tehtävien ajoitusta ja datan aikasarjojen hallintaa.
 
-# Kuinka:
+## Näin tehdään:
 
-``` Elixir
-Time.utc_now()
-```
-## Tuloste:
+Tässä on Elixir-ohjelmointiesimerkki, joka näyttää kuinka saada nykyinen päivämäärä:
 
-``` Elixir
-# ⟨DateTime.utc_ #<Year: 2021, month: 10, day: 25, hour: 15, minute: 30, second: 45, microsecond: {0, 500, 0}, timezone: Etc/UTC⟩
+```Elixir
+iex> date = Date.utc_today()
+~D[2021-11-11]
 ```
 
-## Syventävä tutkimus:
+Tämä esimerkki palauttaa nykyisen päivämäärän UTC-muodossa.
 
-### Historiallinen konteksti:
+## Syvällisemmin:
 
-Ennen tietokoneita päivämäärät laskettiin käsin tai käytettiin mekaanisia laitteita, kuten aurinkokelloja. Tietokoneiden myötä päivämäärän hakeminen on tullut helpommaksi ja nopeammaksi.
+**Historiallinen yhteys**: Nykyisen päivämäärän hankinta on peräisin päivistä, jolloin tietokonejärjestelmien oli seurattava aikaa ja päivämääriä. Elixir periytti tämän ominaisuuden Erlangilta, sen perustalta.
 
-### Vaihtoehtoisia tapoja:
+**Vaihtoehdot**: Jos tarvitset kellonajan lisäksi päivämäärän, voit käyttää `DateTime.utc_now/0`-funktiota:
 
-On olemassa useita tapoja hakea nykyinen päivämäärä eri ohjelmointikielillä. Elixirissä käytetään Time-moduulia, mutta esimerkiksi Pythonissa käytetään datetime-moduulia.
+```Elixir
+iex> datetime = DateTime.utc_now()
+~U[2021-11-11T08:44:50.044476Z]
+```
+Nämä funktiot palauttavat tietueen nykyisestä päivämäärästä ja ajasta UTC-muodossa.
 
-### Toteutus:
+**Toteutuksen yksityiskohdat**: Elixir käyttää `:erlang.localtime/0`-funktiota saatuaan päivämäärän ja kellonajan. 
 
-Nykyisen päivämäärän hakeminen perustuu tietokoneen järjestelmäkellon tarjoamiin tiedonkeruu- ja tallennusominaisuuksiin. Ohjelma lukee järjestelmäkellon tallentaman päivämäärän ja ajan, ja muuntaa sen sitten haluttuun muotoon.
+## Katso myös:
 
-# Katso myös:
+[Nykyisen päivämäärän ohjeet Elixir-langissa](https://elixir-lang.org/getting-started/io-and-the-file-system.html#getting-date-and-time)
 
-Lisätietoa Elixirin Time-mallista: https://hexdocs.pm/elixir/DateTime.html
-
-Lisätietoa päivämäärän hakemisesta muilla ohjelmointikielillä: https://www.w3schools.com/jsref/jsref_getfullyear.asp
+Lisää tietoa siitä, kuinka käsitellä päivämääriä Elixirissä, löytyy tästä opetusohjelma: [Päivämäärät ja ajat Elixirissä](https://www.learnwithjason.dev/blog/working-with-dates-and-times-in-elixir).

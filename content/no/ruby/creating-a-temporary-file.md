@@ -1,7 +1,7 @@
 ---
-title:                "Lage en midlertidig fil"
-html_title:           "Ruby: Lage en midlertidig fil"
-simple_title:         "Lage en midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "C#: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -12,44 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å opprette en midlertidig fil er en vanlig teknikk blant programmerere for å midlertidig lagre data mens programmet kjører. Dette kan være nyttig for å spare plass og forbedre programytelsen. 
+Opprettelse av en midlertidig fil er prosessen med å lage en fil for kortvarig bruk. Vi gjør det for å lagre data midlertidig, eller når det er for riskabelt å jobbe med originalfilen.
 
-## Hvordan:
+## Hvordan gjøre det: 
 
-For å opprette en midlertidig fil i Ruby, kan du bruke "Tempfile" biblioteket. Det krever bare en linje med kode og vil automatisk opprette en unik fil med et tilfeldig navn. Se eksempler nedenfor: 
+I Ruby er det flere måter å opprette en midlertidig fil på, men den mest grunnleggende er med klassen `Tempfile`. Her er en grunnleggende bruk:
 
-```Ruby 
-require 'tempfile' #Importer Tempfile biblioteket
+```Ruby
+require 'tempfile'
 
-#Opprette en midlertidig fil og skrive til det 
-tf = Tempfile.new('mitt_tidligere_filnavn') 
-tf.write("Dette er en midlertidig fil") 
-puts tf.path # Skriver ut plassen til filen
-tf.close # Lukker filen 
+temp = Tempfile.new('temp1')
+
+begin
+  temp << 'Hello world!'
+  temp.rewind
+  puts temp.read
+ensure
+  temp.close
+  temp.unlink
+end
 ```
 
-Eksempelet ovenfor vil opprette en midlertidig fil med navnet "mitt_tidligere_filnavn" og skrive teksten "Dette er en midlertidig fil" til den. Deretter vil den skrive ut plassen til filen og lukke den. 
+Her er utdata:
 
-Du kan også bruke "open" metoden fra Tempfile biblioteket for å åpne en midlertidig fil og skrive til den. Se eksempel nedenfor: 
-
-```Ruby 
-require 'tempfile' 
-
-#Opprette en midlertidig fil og skrive til det 
-Tempfile.open('mitt_tidligere_filnavn') do |tf| 
-  tf.write("Dette er en midlertidig fil") 
-  puts tf.path # Skriver ut plassen til filen 
-end #Fil lukkes automatisk etter blokken er ferdig
+```Terminal
+Hello world!
 ```
 
-Denne metoden gjør at filen automatisk lukkes når blokken er ferdig, så du trenger ikke å huske å lukke den manuelt. 
+## Dypdykk
 
-## Deep Dive:
+Opprettelsen av midlertidige filer har vært en del av programmeringsspråk siden de tidligste dagene. Det spiller en viktig rolle i håndteringen av store datamengder som kan overskride minnekapasiteten.
 
-Opprettelse av midlertidige filer har vært en vanlig praksis i programmering i mange år. Det er et nyttig verktøy for å håndtere midlertidige data og forbedre programmet ditt sin effektivitet. Alternativer til å opprette en midlertidig fil kan inkludere bruk av minnekort, database eller å lagre data i en variabel. 
+Når det gjelder alternativer til `Tempfile`, kan man også opprette midlertidige filer med `Dir::Mktmpdir`, som lar deg opprette en midlertidig katalog i stedet for bare en fil.
 
-Implementeringen av Tempfile biblioteket i Ruby bruker operativsystemets API for å generere et tilfeldig navn og opprette en midlertidig fil. Dette gjør det enkelt å bruke og gir pålitelig funksjonalitet. 
+Når det kommer til implementering, har `Tempfile` en innebygget metode kalt `#unlink`. Denne metoden vil slette den midlertidige filen umiddelbart etter bruk, noe som bidrar til å forhindre avfall av diskplass.
 
-## Se også: 
+## Se også
 
-For mer informasjon om bruk av Tempfile i Ruby, sjekk ut dokumentasjonen her: https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html.
+For mer detaljert informasjon om midlertidige filer i Ruby, kan du besøke de offisielle Ruby-dokumentene: [Tempfile](https://ruby-doc.org/stdlib-3.1.1/libdoc/tempfile/rdoc/Tempfile.html)
+
+For å lære mer om alternativene, kan du lese den offisielle dokumentasjonen for `Dir::Mktmpdir`: [Dir](https://ruby-doc.org/core-3.1.1/Dir.html#method-c-mktmpdir)

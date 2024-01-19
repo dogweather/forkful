@@ -1,6 +1,6 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Kotlin recipe: Generating random numbers"
+html_title:           "Arduino recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,40 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Generating random numbers is the process of generating a sequence of numbers that appear to be random. Programmers often use this technique to create unpredictable and non-repetitive values for a variety of reasons. This could include creating unique identifiers, simulating real-world scenarios, or implementing algorithms that require a random input.
+Generating random numbers in code is like rolling a digital dice. It's a staple in programming to introduce an element of uncertainty or randomness, allowing for a myriad of applications, from simulating unpredictable behaviors in games to securing data in encryption systems.
 
 ## How to:
+It's pretty straightforward in Kotlin, starting with the basics:
 
 ```Kotlin
-// Generate a random integer between 1 and 10
-val randomInt = (1..10).random()
-
-// Generate a random double between 0.0 and 1.0
-val randomDouble = Math.random()
-
-// Shuffle a list of integers in random order
-val list = listOf(1, 2, 3, 4, 5)
-list.shuffled()
+val randomInt = Random.nextInt() // Get a random Integer
+println(randomInt)
 ```
 
-Output:
+Run it and you'll get a random number, including the negatives.
+
+For a range of numbers? Here you go.
+
 ```Kotlin
-5 // randomInt
-0.4672739049063102 // randomDouble
-[3, 5, 1, 4, 2] // shuffled list
+val randomInRange = Random.nextInt(1, 100) // Get random Integer between 1 and 100
+println(randomInRange)
 ```
 
-## Deep Dive:
+Just change the range to suit what you want. Run it and you'll get a random number between 1 and 100.
 
-The concept of generating random numbers dates back to ancient times, where people used various methods such as rolling dice or drawing from a collection of stones to create unpredictability. In programming, random numbers are typically generated using algorithms that use a seed value to create a sequence of numbers that appear random. These algorithms are known as pseudorandom number generators (PRNGs).
+## Deep Dive
+The Kotlin Random library has roots in ancient history. The concept of generating random numbers computationally dates back to the 1940s and has evolved over time, yielding a variety of methods. 
 
-There are other options for generating random numbers, such as using hardware devices that measure physical phenomena like atmospheric noise. These true random number generators (TRNGs) produce a more genuinely random output but can be more expensive and less efficient.
+For alternatives? There's Java's `Random` or `ThreadLocalRandom`. They have more utility methods but Kotlin's `Random` is simple and does the job.
 
-In Kotlin, the `Random` and `Math` classes offer methods for generating random numbers. The `Random` class uses a PRNG algorithm, while the `Math` class uses a TRNG method. The choice between the two depends on the level of randomness required for the application.
+Under the hood, Kotlin's `Random` uses the "xorshift" algorithm, known for its simplicity and speed. This algorithm generates pseudo-random numbers - calculated, but hard to predict.
 
-## See Also:
+*Fun Fact!* It's mathematically impossible to generate a truly random number computationally. Everything on a computer follows strict, predictable laws. The "random" numbers we get are "good enough" for most purposes.
 
-- [Kotlin Random documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-- [Math.random() documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--)
-- [True random number generation](https://www.random.org/randomness/)
+## See Also
+Check out these resources on random numbers in Kotlin:
+
+- [Kotlin official docs on Random](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
+- [xorshift on Wikipedia](https://en.wikipedia.org/wiki/Xorshift)
+- [Java's Random library](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Random.html) for comparison
+- [Randomness in Cryptography](https://www.sciencedirect.com/science/article/pii/S001999586790140X) for a use-case discussion.

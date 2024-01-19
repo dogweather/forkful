@@ -1,7 +1,7 @@
 ---
-title:                "Mallia vastaavien merkkien poistaminen"
-html_title:           "Haskell: Mallia vastaavien merkkien poistaminen"
-simple_title:         "Mallia vastaavien merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,26 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & miksi?
+## Mikä & Miksi?
 
-Haskellissa merkkijonojen käsittely on helppoa ja kätevää. Yksi hyödyllinen toiminto on poistaa merkkejä, jotka täsmäävät tiettyyn malliin. Tämä voi olla hyödyllistä esimerkiksi tekstin analysoinnissa tai tietynlaisen datan etsimisessä. Monet ohjelmoijat käyttävät tätä toimintoa puhdistaakseen dataa tai muokatakseen merkkijonoja tarvittavaan muotoon.
+Hahmojen poistaminen käyttäen mallia tarkoittaa tiettyjen merkkijonojen poistamista tekstistä. Ohjelmoijat tekevät tämän esimerkiksi koodin seuraavuuden parantamiseksi tai tiedon esittämiseksi sopivammassa muodossa.
 
-## Kuinka tehdä:
+## Miten:
 
-Tässä on esimerkki siitä, kuinka voimme poistaa kaikki numerot sisältävät merkit merkkijonosta nimeltä "hae tuotteet". Tämä voidaan tehdä käyttämällä funktiota ```map```, joka suorittaa annetun funktion jokaiselle listan alkiolle.
+Seuraava koodiesimerkki Haskellissa esittelee, miten voit poistaa kaikki pienet kirjaimet aakkosilta käyttämällä `Data.Char` modulea:
 
 ```Haskell
-removeNumbers string = map (\x -> if not (x `elem` ['0'..'9']) then x else ' ') string
-
-removeNumbers "hae tuotteet" -- Output: "hae tuotteet"
-removeNumbers "hae 123 tuotteet" -- Output: "hae tuotteet"
+import Data.Char (isLower)
+removeLowers :: String -> String
+removeLowers = filter (not . isLower)
 ```
 
-## Syvemmälle:
+Testikäyttö:
 
-Historiallisesti Haskell on tunnettu puhtaasta funktionaalisesta ohjelmointityylistään, jolla on vahva tuki erilaisille tietorakenteille ja rekursiolle. Jos haluat oppia lisää funktionaalisesta ohjelmoinnista ja Haskellin ominaisuuksista, suosittelemme tutustumaan "Learn You a Haskell" -verkkosivustoon. Lisäksi voit käyttää myös muita funktioita, kuten ```filter``` ja ```foldl```, poistaaksesi merkkejä haluamallasi tavalla.
+```Haskell
+removeLowers "Hei, olen Haskell-ohjelmoija!"
+-- Tuottaa: "H, -!"
+```
 
-## Katso myös:
+## Syvempi sukellus:
 
-- [Learn You a Haskell](http://learnyouahaskell.com/): Opettele Haskellin perusteet interaktiivisen oppaan avulla.
-- [Haskell-ohjelmointikieli](https://fi.wikipedia.org/wiki/Haskell): Tietoa Haskellista ja sen historiasta (on huomattava, että Wikipedia-artikkelit eivät ole parhaita lähteitä oppimiseen).
+Mallia vastaavien merkkien poistaminen on ollut ohjelmointikielissä useita vuosia. Esimerkiksi Perlissä ja Pythonissa on laajat menetelmät merkkijonojen käsittelyyn.
+
+Haskellissa saatat haluta kirjoittaa oman suodattimesi, mutta useimmiten `Data.Char` tai `Data.Text` moduulit ovat tarpeeksi tehokkaita moniin käyttötarkoituksiin. Huomaa myös, että suodatusfunktio saa parametrikseen ainoastaan yhden merkin kerrallaan.
+
+Haskellissa, toisin kuin joissakin muissa kielissä, ei ole olemassa suoraa tapaa poistaa merkkijonoja toisista merkkijonoista. Sen sijaan meidän pitää suodattaa niitä merkki kerrallaan. Tämä johtuu Haskellin puhtaasta, funktionaalisesta luonteesta.
+
+## Lisätietoa:
+
+Haskellin virallinen dokumentaatio `Data.Char` moduulille: (https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html)
+
+Haskellin virallinen dokumentaatio `Data.Text` moduulille: (https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+
+Merkkijonojen manipuloinnin opastus Haskellissa: (http://learnyouahaskell.com/starting-out#an-intro-to-lists)

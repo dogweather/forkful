@@ -1,7 +1,7 @@
 ---
-title:                "デバッグ出力のプリント"
-html_title:           "PowerShell: デバッグ出力のプリント"
-simple_title:         "デバッグ出力のプリント"
+title:                "デバッグ出力の印刷"
+html_title:           "Fish Shell: デバッグ出力の印刷"
+simple_title:         "デバッグ出力の印刷"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -10,23 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何と何のために？
-デバッグ出力をプリントすることは、コードの実行中にプログラマーが確認するための出力です。プログラマーがコードの動作を理解し、不具合を見つけるのに役立ちます。
+## 何となぜ？
 
-## 方法：
-```PowerShell
-Write-Host "デバッグ出力をプリントする方法"
-```
-このコードを使用して、コンソールにメッセージをプリントすることができます。
-```PowerShell
-$debug = $true
-Write-Host "デバッグモードが有効です" -Debug:$debug
-```
-「デバッグモードが有効です」というメッセージをプリントし、デバッグモードが有効かどうかを確認することもできます。
+デバッグ出力の印刷は、コードが実行されるたびに特定の情報を出力し、開発者がバグを特定しやすくする、というものです。なぜなら、コードがどのように動作しているかを明らかにするために、それが何をするのか、いつ何をするのかを知る事が必要だからです。
 
-## 深く掘り下げる：
-デバッグ出力をプリントすることは、バグを見つけるために必要不可欠です。以前は、コードの実行中にメッセージをコンソールに手動でプリントする必要がありましたが、PowerShellではWrite-Hostコマンドレットを使用して簡単に行うことができます。また、PowerShellにはStart-Transcriptコマンドレットを使用して、コンソールに表示されたすべての出力をログファイルに保存する機能があります。
+## 使い方：
+
+```PowerShell
+$DebugPreference = "Continue"
+Write-Debug "This is my debug message"
+```
+
+上記のコードでは、デバッグメッセージを有効にして出力を表示しています。出力は次のように表示されます：
+
+```PowerShell
+DEBUG: This is my debug message
+```
+
+## 深い情報：
+
+PowerShellのデバッグメッセージは、古いバージョンのPowerShellでも利用できる機能で、開発者がプログラムのフローを追跡するのに役立ちます。代替として、Write-HostやWrite-Outputがありますが、これらはユーザー向けの情報出力であって、デバッグ出力ではありません。
+
+デバッグ出力は$DebugPreference変数に依存しています。これはデバッグメッセージの挙動を制御し、'SilentlyContinue'を設定するとデバッグメッセージは抑制され、'Inquire'を設定するとユーザーにメッセージ表示の許可を求めます。
 
 ## 参考資料：
-- Write-Hostコマンドレットに関する公式ドキュメント: https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7
-- Start-Transcriptコマンドレットに関する公式ドキュメント: https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7
+
+以下のリンクを参考にしてください。
+
+1. PowerShellのデバッグ：https://docs.microsoft.com/ja-jp/powershell/scripting/learn/deep-dives/everything-about-debugging?view=powershell-7.1
+2. Write-Debugの詳細：https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7.1

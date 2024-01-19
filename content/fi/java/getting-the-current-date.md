@@ -1,7 +1,7 @@
 ---
-title:                "Hanki nykyinen päivämäärä."
-html_title:           "Java: Hanki nykyinen päivämäärä."
-simple_title:         "Hanki nykyinen päivämäärä."
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mitä ja Miksi?
 
-Päivämäärän saaminen tarkoittaa nykyisen päivämäärän ja ajan tarkastelemista tietokonejärjestelmässä. Tämä on tärkeää ohjelmoijille, koska se mahdollistaa aikaleimojen lisäämisen tiedostoihin ja tietojen tallentamisen tietokantaan.
+Nykyisen päivämäärän hankkiminen  on prosessi, jossa saat nyt käynnissä oleva päivämäärä ja aika. Ohjelmoijat tekevät sen esimerkiksi aikaleimojen luomiseksi, ajanhallinnan toteuttamiseksi ja päivämääräriippuvaisten toimintojen suorittamiseksi.
 
-## Miten:
+## Kuinka:
 
-Seuraavassa on esimerkkejä siitä, miten saat nykyisen päivämäärän Java-ohjelmassa:
+Seuraavat ovat esimerkkejä siitä, kuinka hankkia nykyinen päivämäärä Javassa:
 
 ```Java
+// Java 8:sta lähtien
 import java.time.LocalDate;
 
-public class CurrentDateExample {
-    public static void main(String[] args) {
-        // Nykyinen päivämäärä
-        LocalDate currentDate = LocalDate.now();
-        System.out.println("Nykyinen päivämäärä: " + currentDate);
-
-        // Nykyinen vuosi
-        int currentYear = currentDate.getYear();
-        System.out.println("Nykyinen vuosi: " + currentYear);
+public class TamaPaiva {
+    public static void main(String[] args){
+        LocalDate tamaPaiva = LocalDate.now(); 
+        System.out.println("Tämän päivän päivämäärä on: " + tamaPaiva);
     }
 }
 ```
+Kun suoritat tämän koodin, saat tulostuksen:
 
-Esimerkkilähtö:
-
+```Java
+Tämän päivän päivämäärä on: 2022-08-30
 ```
-Nykyinen päivämäärä: 2020-11-23
-Nykyinen vuosi: 2020
+## Deep Dive
+
+Ennen Java 8:aa nykyisen päivämäärän saaminen oli hieman mutkikkaampaa ja sisälsi `java.util.Date`- tai `java.util.Calendar`-olio. Uusi `java.time`-paketti on käyttäjäystävällisempi ja tarjoaa parempaa aikavyöhykehallintaa.
+
+Seuraavat ovat vaihtoehtoisia tapoja saada nykyinen päivämäärä Javassa:
+
+```Java
+// Vaihtoehto 1: käyttää java.util.Date
+import java.util.Date;
+
+Date nykyinenPaivamaara = new Date();
+System.out.println("Tämän päivän päivämäärä on: " + nykyinenPaivamaara);
 ```
 
-## Syvemmälle:
+```Java
+// Vaihtoehto 2: käyttää java.util.Calendar
+import java.util.Calendar;
 
-Päivämäärän saamisen toiminto on osa Java-kirjastoa nimeltä ```java.time```. Tämä kirjasto sisältää paljon erilaisia ​​toimintoja päivämäärän ja ajan hallintaan. On myös olemassa muita tapoja saada nykyinen päivämäärä, kuten käyttämällä ```java.util.Date``` -luokkaa tai käyttämällä järjestelmän kellon aikaa ```System.currentTimeMillis()```.
+Calendar kalenteri = Calendar.getInstance();
+Date nykyinenPaivamaara = kalenteri.getTime();
+System.out.println("Tämän päivän päivämäärä on: " + nykyinenPaivamaara);
+```
 
-## Katso myös:
+## Katso Myös
 
-- Java 8 - Oppikirjan päivämäärä ja aika (https://docs.oracle.com/javase/tutorial/datetime/overview/index.html)
-- W3Schools - Java Date and Time (https://www.w3schools.com/java/java_date.asp)
+Lisätietoja Javan päivämääristä ja ajoista löytyy seuraavista lähteistä:
+
+1. [Oracle Java Docs: java.time package](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+2. [Tutorial Point: Java - Date & Time](https://www.tutorialspoint.com/java/java_date_time.htm)
+3. [Baeldung: A Guide to Java's LocalDate](https://www.baeldung.com/java-8-date-time-intro)

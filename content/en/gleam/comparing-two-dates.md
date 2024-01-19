@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Gleam recipe: Comparing two dates"
+html_title:           "Elm recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,47 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Let's Talk About Date Comparison in Gleam 
-
 ## What & Why?
 
-Comparing two dates is figuring out which comes first, or if they're the same. Programmers do this to sort events, calculate durations, or check deadlines.
+Comparing two dates is testing their chronological order or difference. This is crucial in programming for tasks like scheduling, determining durations, and time-based logging.
 
 ## How to:
 
-In Gleam, dates are compared using the standard comparison operators.
+Let's get hands-on with breaking dates into tuples and comparing them using Gleam.
 
 ```Gleam
-import gleam/date.{from_timestamp, Date}
-import gleam/order.{Order}
-
-fun compare_dates() {
-    let date1 = from_timestamp(1609459200) 
-    let date2 = from_timestamp(1612137600) 
-
-    assert Ok(date1) = from_timestamp(1609459200)
-    assert Ok(date2) = from_timestamp(1612137600)
-
-    case Order.compare(date1, date2) {
-        Equal -> "Dates are equal"
-        Lt -> "Date1 is earlier than Date2"
-        Gt -> "Date1 is later than Date2"
-    }
+pub fn compare_dates(date1: tuple(Int, Int, Int), date2: tuple(Int, Int, Int)) {
+  case(date1, date2) {
+    (
+      tuple(year1, month1, day1),
+      tuple(year2, month2, day2),
+    ) ->
+      case(year1 <=> year2, month1 <=> month2, day1 <=> day2) {
+        (Equal, Equal, Equal) -> "Dates are equal"
+        (Larger, _, _) -> "First date is later"
+        (_, Larger, _) -> "First date is later"
+        (_, _, Larger) -> "First date is later"
+        _ -> "Second date is later"
+      }
+  }
 }
-```
 
-In this above example, we compare two sets of Unix timestamps.
+fn main() {
+  let date1 = tuple(2021, 10, 20);
+  let date2 = tuple(2023, 11, 22);
+  compare_dates(date1, date2)
+  |> io.println("Comparison result: ")
+}
+``` 
+
+Executing the above code will output:
+
+```Gleam
+Comparison result: Second date is later
+```
 
 ## Deep Dive
 
-Comparing dates has been a common practice since early programming. Historical context shows it's critical in time-based computing tasks. In Gleam, implementation uses the Erlang :calendar module for date operations under the hood.
+Historically, comparing two dates was a more complex task due to differences in calendar systems and handling of leap years. Modern programming languages have robust date libraries that handle these complications.
 
-Various alternatives exist for date comparison especially with convenience libraries or in languages with built-in date types. The Date module in Gleam handles the basic comparison and arithmetic tasks using the standard comparison operators.
+An alternative to our approach can be using a date library that provides a native comparison function. Some programming languages provide native support for date comparison, while others may require importing a date library.
 
-## See Also:
+Our implementation detail is converting each date to a tuple and comparing their year, month, and day segments. This is a simple way to break down the problem of date comparison. However, this version doesn't account for leap years and is limited to the Gregorian calendar.
 
-For more about date comparison in Gleam and for further reading:
+## See Also
 
-1. Gleam documentation - [Gleam API](https://hexdocs.pm/gleam_stdlib/gleam/date.html)
-2. Erlang Module - [:calendar](http://erlang.org/doc/man/calendar.html) 
-3. Examples and Tutorials - [Gleam School](https://gleam.run/tour/)
+1. For a deep understanding of date-related issues in Gleam, refer to the [Gleam documentation](https://gleam.run/documentation/).
+2. More about the comparison operations in Gleam can be found [here](https://gleam.run/book/tour/operators.html).
+3. For implementing date-time in Gleam, check out [this resource](https://github.com/gleam-experiments/date-time).
+4. For an understanding of different calendar systems, this [article](https://www.timeanddate.com/calendar/) offers a thorough explanation.

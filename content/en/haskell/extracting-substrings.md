@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Haskell recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,39 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Haskelling Substrings: Extraction Basics
+
 ## What & Why?
-Extracting substrings is the act of taking a specific portion or sequence of characters from a larger string. This is a commonly used operation in programming because it allows us to easily manipulate and work with specific parts of a string.
+
+"Extracting substrings" entails taking a smaller string from within a larger one. It's a common programming necessity: manipulating identifiers, filtering input, parsing language, the list goes on.
 
 ## How to:
-To extract substrings in Haskell, we can use the `take` and `drop` functions from the `Prelude` module. The `take` function takes a specified number of characters from the beginning of a string, while the `drop` function removes a specified number of characters from the beginning of a string. Let's take a look at an example:
+
+In Haskell, `take` and `drop` are your go-to for substring manipulation. Their combination results in very clean, clear substring extraction. 
+
+Here, `take n str` returns the first `n` characters, `drop n str` the remaining. Look:
 
 ```Haskell
-str = "Hello world!"
-take 5 str
--- Output: "Hello"
-
-drop 6 str
--- Output: "world!"
+let str = "Hello, World!"
+take 5 str    -- output: "Hello"
+drop 7 str    -- output: "World!"
 ```
 
-Another useful function for extracting substrings is the `substring` function from the `Data.String.Utils` module. This function allows us to specify a starting index and length to extract a substring from a string. Here's an example:
+"Wanna slice 'n dice within, say, a string's middle? Meet our friend `drop` again:
 
 ```Haskell
-import Data.String.Utils (substring)
-
-str = "Hello world!"
-substring 6 5 str
--- Output: "world"
+let str = "Extract some substring"
+drop 8 (take 12 str)    -- output: "some"
 ```
 
-## Deep Dive:
-Extracting substrings has been a commonly used operation in programming since the early days. In fact, the `substring` function in Haskell was originally inspired by the `substr` function in the C programming language.
+Drop the first 8, take 12 total, the result? The substring "some". Simple? Simple. Elegant? Absolutely.
 
-There are also other alternatives for extracting substrings in Haskell, such as using list comprehensions or regular expressions. However, the `substring` function is often preferred because of its simplicity and efficiency.
+## Deep Dive
 
-When it comes to the implementation, the `substring` function uses the `splitAt` function to split the original string at the specified starting index, and then uses the `take` function to extract the desired length.
+Substring extraction goes way back to the inception of computer programming, being integral to programming languages from COBOL to JavaScript.
 
-## See Also:
-- [Haskell documentation for `take` function](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:take)
-- [Haskell documentation for `drop` function](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:drop)
-- [Hackage page for `substring` function](https://hackage.haskell.org/package MissingH-1.4.0.1/docs/Data-String-Utils.html#v:substring)
+There are alternatives, yes. `splitAt` gives you a tuple with the first half (up to the point of split) and second half of a string.
+
+```Haskell
+splitAt 5 "Hello, World!"    -- output: ("Hello",", World!")
+```
+
+They all essentially use the 'List' implementation within Haskell because, within this lingo, a string is a list of characters.
+
+## See Also
+
+1. `take` and `drop` in Haskell's official documentation [here](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#g:4).
+
+2. Deep dive into String handling within Haskell [here](http://www.cse.unsw.edu.au/~en1000/haskell/inbuilt.html#strings). 
+
+3. Alternative approaches, including Haskell Libraries for regex pattern matching (like Text.Regex) [here](https://wiki.haskell.org/Regular_expressions).
+
+Dive in, and let Haskell's simplicity and power elevate your substring game to the next level.

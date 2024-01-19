@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comandos"
-html_title:           "Fish Shell: Leyendo argumentos de línea de comandos"
-simple_title:         "Leyendo argumentos de línea de comandos"
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -12,38 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Qué y Por Qué?
 
-La lectura de argumentos de línea de comando es una técnica común utilizada por programadores para poder interactuar con sus programas mediante la línea de comandos. Estos argumentos son información adicional que se puede proporcionar al programa al momento de ejecutarlo, lo que permite modificar su comportamiento o realizar tareas específicas de manera más eficiente.
+Leer argumentos de línea de comandos es obtener los valores que se especifican en una línea de comandos cuando se ejecuta un programa. Los programadores los utilizan para personalizar la ejecución de los programas.
 
-Esta funcionalidad es muy útil para aquellos usuarios avanzados que prefieren realizar tareas mediante comandos en lugar de una interfaz gráfica. También es útil para automatizar tareas mediante scripts o para permitir la personalización de un programa según las necesidades del usuario.
+## ¿Cómo Hacerlo?
 
-## Cómo Hacerlo:
+Aquí te muestro cómo capturamos argumentos en el shell de fish.
 
-Fish Shell, al igual que otros intérpretes de línea de comandos, ofrece varias formas de leer y utilizar argumentos de línea de comando. A continuación, se presentan dos ejemplos de cómo hacerlo:
-
+```Fish Shell
+function saludo
+  echo Hola $argv[1]
+end
 ```
-# Ejemplo 1:
-# Supongamos que nuestro programa se llama "contador" y queremos que cuente la cantidad de argumentos que le pasamos
-Fish Shell contador.fish uno dos cuatro
-# La salida será:
-3
+Ejecutamos la función y obtenemos lo siguiente:
 
-# Ejemplo 2:
-# Supongamos que queremos buscar un archivo en una carpeta determinada
-Fish Shell buscar.fish -t txt -d /carpeta -n archivo
-# La salida será:
-El archivo "archivo.txt" ha sido encontrado.
+```Fish Shell
+> saludo Mundo
+Hola Mundo
 ```
+Se pasa "Mundo" como argumento y se imprime "Hola Mundo".
 
-Como se puede ver en los ejemplos, los argumentos de línea de comando se pueden pasar después del nombre del programa, separados por espacios. También se pueden utilizar opciones, como en el segundo ejemplo, para proporcionar información adicional al programa.
+## Profundizando
 
-## Inmersión Profunda
+El concepto de lectura de argumentos se remonta a los primeros días de UNIX. En el pasado, muchos shells no permitían acceso directo a argumentos individuales como `argv[1]`. En su lugar, se usaban desplazamientos de argumentos.
 
-La lectura de argumentos de línea de comando ha sido una funcionalidad presente en los sistemas operativos desde hace décadas. En los sistemas UNIX, es común utilizar la convención de los parámetros con guiones, como en el segundo ejemplo, donde "-t" significa tipo de archivo y "-d" significa directorio. Sin embargo, cada intérprete de línea de comandos tiene su propia forma de trabajar con estos argumentos, por lo que es importante revisar la documentación específica de cada uno.
+Hay soluciones alternativas como usar `for` para iterar a travéz de todos los argumentos:
+```Fish Shell
+function saludo_alternativo
+  for x in $argv
+    echo Hola $x
+  end
+end
+```
+En fish, $argv es una lista que contiene todos los argumentos. Puedes operar en ella como en cualquier otra lista en fish.
 
-También existen alternativas a la lectura de argumentos de línea de comando, como por ejemplo el uso de variables de entorno, que pueden ser útiles en ciertas situaciones. Sin embargo, la lectura de argumentos sigue siendo una técnica ampliamente utilizada y recomendada por su simplicidad y eficiencia.
+## Ver También 
 
-## Ver también
+Para obtener más detalles y algunas recetas geniales, consulta los siguientes enlaces:
 
-- Documentación oficial de Fish Shell: https://fishshell.com/docs/current/cmds/fish.html
-- Tutorial sobre argumentos de línea de comando en Fish Shell: https://www.techgoat.net/fish-shell-command-line-arguments/
-- Comparación entre argumentos de línea de comando y variables de entorno: https://www.baeldung.com/linux/command-line-arguments-vs-environment-variables
+- Documentación oficial | [Parámetros y Variables de Estado](https://fishshell.com/docs/current/commands.html#variables)
+- Fish Scripting | [Tutorial](https://fishshell.com/docs/3.1/tutorial.html)
+- Sitio de la comunidad de Fish Shell | [Obtén Ayuda](https://fishshell.com/community.html)

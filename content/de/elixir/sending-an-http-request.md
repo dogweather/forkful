@@ -1,7 +1,7 @@
 ---
-title:                "Eine http-Anfrage senden"
-html_title:           "Elixir: Eine http-Anfrage senden"
-simple_title:         "Eine http-Anfrage senden"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,27 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
-Das Senden einer HTTP-Anfrage ist ein wichtiger Prozess im Bereich der Webentwicklung. Es ermöglicht Programmierern, Daten von einer Website oder einem Webdienst zu erhalten oder zu senden. Dies ist hilfreich für die Erstellung interaktiver Webanwendungen oder für die Einbindung von externen Diensten in eine Anwendung.
+## Was & Warum?
 
-So geht's:
-Elixir macht das Senden von HTTP-Anfragen einfach mit der in der Standardbibliothek enthaltenen HTTPoison-Bibliothek. Hier ist ein Beispiel, um eine GET-Anfrage an eine URL zu senden und dann die JSON-Antwort zu verarbeiten:
+Das Senden einer HTTP-Anfrage ist der Vorgang der Kommunikation mit einem Server, um Informationen abzurufen oder zu verändern. Programmierer nutzen diese Technik, um datenintensive Aktionen wie Erstellen, Lesen, Aktualisieren und Löschen (CRUD) von Daten zu automatisieren.
 
-```
-Elixir def send_http_request(url) do
-  response = HTTPoison.get(url)
-  case response do
-    {:ok, %{status_code: 200, body: body}} -> IO.puts("Antwort: #{body}")
-    _ -> IO.puts("Es gab ein Problem bei der Anfrage")
-  end
-end
+## So geht's:
+
+In Elixir benutzen wir die Bibliothek HTTPoison. Hier ist ein Beispiel, wie man damit eine HTTP-Anfrage sendet:
+
+```Elixir
+{:ok, %HTTPoison.Response{body: body}} = HTTPoison.get("http://example.com")
+IO.puts body
 ```
 
-Die Ausgabe wird je nach Antwort der URL variieren. Wenn die Anfrage erfolgreich ist, wird der Inhalt der Antwort ausgegeben. Andernfalls wird eine Fehlermeldung ausgegeben.
+Und so sieht die Ausgabe aus:
 
-Vertiefung:
-Das HTTP-Protokoll wurde in den 1990er Jahren von Tim Berners-Lee entwickelt und ist ein grundlegender Teil des World Wide Web. Es gibt auch alternative Möglichkeiten, HTTP-Anfragen zu senden, wie z.B. die in Elixir ebenfalls verfügbare :ibrowse-Bibliothek oder das populäre cURL-Tool.
+```Elixir
+"<html>Beispiel-HTML-Inhalt</html>"
+```
 
-Weiterführende Links:
-- Offizielle Elixir-Dokumentation zur HTTPoison-Bibliothek: https://hexdocs.pm/httpoison/
-- Weitere Möglichkeiten, HTTP-Anfragen in Elixir zu senden: https://hexdocs.pm/elixir/master/elixir-libraries.html#http-clients
+## Vertiefung:
+
+Senden von HTTP Anfragen ist nicht neu. Das HTTP-Protokoll wurde Ende der 1980er Jahre entwickelt, um eine standardisierte Methode für die Kommunikation zwischen Clients und Servern zu schaffen. Es gibt viele Alternativen zum Senden von HTTP-Anfragen. Elixir unterstützt auch andere Bibliotheken wie Tesla und HTTPotion.
+
+Die Implementierung von HTTPoison in Elixir basiert auf der erlang-typischen Concurrency- und Fehlerbehandlungsphilosophie. Die Bibliothek nutzt den Hackney HTTP Client, welcher wiederum die erlang-native Bibliothek gen_tcp verwendet.
+
+## Siehe auch:
+
+- [HTTPoison Dokumentation](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [Erlang gen_tcp Dokumentation](http://erlang.org/doc/man/gen_tcp.html)
+- [Tesla Dokumentation](https://hexdocs.pm/tesla/readme.html)
+- [HTTPotion Dokumentation](https://hexdocs.pm/httpotion/readme.html)

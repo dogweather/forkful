@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "Elixir: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,29 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Päivämäärän Parsiminen Merkkijonosta Elixir-ohjelmointikielessä
-Tässä artikkelissa opimme, miten päivämäärä parsitaan merkkijonosta Elixirin nykyversiolla. 
+## Mitä & Miksi?
 
-## Mikä & Miksi?
-Päivämäärän parsiminen merkkijonosta tarkoittaa merkkijonossa olevan päivämäärän muuttamista päivämääräobjektiksi. Ohjelmoijat tarvitsevat tätä tietojen analysointiin ja tietojen järjestämiseen ajan mukaan.
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa kelvollisen päivämääräobjektin luomista tekstiesityksestä. Ohjelmoijat tekevät tämän usein, koska tietoja tallennetaan ja lähetetään usein merkkijonoina.
 
-## Kuinka:
-Parsiminen Elixirissä voidaan tehdä `Date.from_iso8601/1` -funktiolla.
+## Miten:
+
+Elixirin kanssa voit käyttää DateTime-muuntotoimintoja päivämäärän jäsentämiseen merkkijonosta. Tässä esimerkki:
 
 ```elixir
-{:ok, date} = Date.from_iso8601("2021-07-07")
-IO.inspect(date)
-```
-Elixir palauttaa seuraavat teikstikonsolille:
-```elixir
-~D[2021-07-07]
+string_date = "2022-01-31 10:30:15Z"
+{:ok, date_time} = DateTime.from_iso8601(string_date)
+IO.inspect(date_time)
 ```
 
-## Syvällisempi katsaus
-Elixirin päivämääräparsiminen perustuu ISO8601-standardiin, joka on kansainvälinen standardi päivämäärän ja ajan esittämiseen. On myös mahdollista käyttää muita kirjastoja, kuten Timex, monimutkaisempien päivämäärämuotojen käsittelyyn.
-Joskus merkkijonopäivämäärän tulkinta voi olla virheellinen aikavyöhykkeen takia, joten on tärkeää tarkistaa aikavyöhykkeet datatiedostoissa.
+Tämä muuntaa merkkijonon DateTime-objektiksi. Tuotteen pitäisi näyttää näin:
 
-## Katso myös
-[Elixirin virallinen dokumentaatio päivämäärän parsimisesta](https://hexdocs.pm/elixir/Date.html#from_iso8601/1)  
-[Elixirin Timex-kirjaston dokumentaatio](https://hexdocs.pm/timex/readme.html)
-[Elixirin School-tietosivusto](https://elixirschool.com/en/)
+```
+#DateTime<2022-01-31 10:30:15Z>
+```
+
+## Syvempi sukellus:
+
+Päivämäärän jäsentäminen merkkijonosta on ollut tarpeellinen taito ohjelmoinnissa sen varhaisista päivistä lähtien. Se on tärkeää, koska ihmiset ja järjestelmät ilmaisevat ja tallentavat päivämäärät ja ajat monin eri tavoin.
+
+Elixirlang tarjoaa myös muita tapoja käsitellä merkkijonoja ja päivämääriä. Voit käyttää `NaiveDateTime.from_iso8601/2` ja `Date.from_iso8601/2` jos aikavyöhyke ei ole tarpeellinen tai käytettävissä.
+
+Elixirin DateTime-muunnin toimii ISO 8601 muotoisten päivämäärien kanssa. ISO 8601 on kansainvälinen standardi, joka määrittelee päivämäärän ja ajan esitysmuodon.
+
+## Katso myös:
+
+1. [DateTime Elixir dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
+2. [ISO 8601 Wikipedia](https://fi.wikipedia.org/wiki/ISO_8601)
+3. [Elixir School - Däärien & ajan käsittely](https://elixirschool.com/en/lessons/basics/date_time/)
+4. [Elixir Forum - DateTime jäsentäminen](https://elixirforum.com/t/parsing-date-time-values-from-string/22417)

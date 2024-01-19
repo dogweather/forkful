@@ -1,7 +1,7 @@
 ---
-title:                "Analyser le html"
-html_title:           "Elm: Analyser le html"
-simple_title:         "Analyser le html"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que le parsing HTML et pourquoi les programmeurs le font-ils?
-Le parsing HTML est le processus de conversion du code HTML en une structure de données exploitable pour les programmes informatiques. Les développeurs web ont souvent besoin de parser du code HTML pour extraire des données ou générer des pages web dynamiques.
+## Quoi & Pourquoi ?
+"Parser l'HTML" permet de lire et comprendre le contenu d'un document HTML. Les développeurs font cela pour extraire des informations spécifiques, manipuler des éléments HTML ou créer des applications web dynamiques.
 
-## Comment faire:
-Voici un exemple simple qui utilise la fonction HTML Parser de Elm pour parser un document HTML:
+## Comment faire :
+Voici un exemple de comment parser un document HTML en Elm:
+
+```Elm
+import Html exposing (..)
+import Html.Attributes exposing (..)
+
+main =
+  div []
+    [ h1 [] [ text "Bonjour tout le monde!" ]
+    , p [] [ text "Je suis en train de parser l'HTML avec Elm." ]
+    ]
 ```
-Elm Html.Parser as Parser
 
-html = "<h1>Hello World!</h1>"
+Cette application va afficher un message "Bonjour tout le monde! Je suis en train de parser l'HTML avec Elm.". 
 
-result = Parser.parse Parser.text html
+## Plongeon profond :
+1. **Contexte historique** : Elm, créé par Evan Czaplicki en 2012, est un langage de programmation fonctionnel pour les applications web. Par rapport au JavaScript, Elm offre une syntaxe plus simple et un typage statique fort qui permet de parser l'HTML de manière sûre.
+2. **Alternatives** : D'autres langages comme JavaScript, Python, et PHP peuvent aussi parser l'HTML. Cependant, ils peuvent être plus compliqués et moins sûrs que Elm.
+3. **Détails d'implémentation** : Elm utilise un modèle d'architecture appelé The Elm Architecture (TEA), qui gère la structure d'une application web et facilite la gestion du DOM (Document Object Model).
 
--- Output : Ok "Hello World!"
-```
-Ici, nous utilisons la fonction `Parser.parse` pour analyser le contenu HTML stocké dans la variable `html`. L'appel de la fonction `Parser.text` spécifie que nous voulons extraire le texte à l'intérieur des balises `<h1>`. Le résultat sera alors stocké dans la variable `result` et affichera le texte "Hello World!".
-
-## Plongée en profondeur:
-Le parsing HTML a toujours été un sujet important dans le développement web, car cela permet aux programmes de comprendre et de manipuler le contenu des pages web. Il existe d'autres langages qui peuvent être utilisés pour parser du code HTML, tels que JavaScript ou Python, mais Elm offre une syntaxe propre et fonctionnelle pour le faire.
-
-## Voir aussi:
-Pour plus d'informations sur le parsing HTML avec Elm, vous pouvez consulter la documentation officielle sur la fonction [Parser.parse](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser#parse). Vous pouvez également consulter le tutoriel [Using the Html Parser Package in Elm](https://www.tutorialspoint.com/elm/elm_parsing_packages.htm) pour des exemples plus avancés.
+## Voir aussi :
+1. Guide officiel Elm : [Elm Language](https://elm-lang.org/)
+2. Documentation Elm HTML : [Elm HTML](https://package.elm-lang.org/packages/elm/html/latest/)
+3. Tutoriel Parsing HTML en Elm : [Elm HTML Parsing](https://elmprogramming.com/parsing-html.html)

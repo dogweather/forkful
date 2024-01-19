@@ -1,7 +1,7 @@
 ---
-title:                "HTMLのパース"
-html_title:           "Arduino: HTMLのパース"
-simple_title:         "HTMLのパース"
+title:                "HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,69 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何を & なぜ?
-HTMLのパースとは何かを説明し、プログラマーがそれをする理由を2〜3文で説明します。
+## 何となぜ？
 
-HTMLのパースとは、HTMLのテキストファイルから情報を抽出することを指します。プログラマーがそれを行う理由の1つは、Webスクレイピングやデータの収集など、Web上の情報を取得する必要がある場合です。
+HTML解析は、HTMLコードを個々の要素と属性に分解して理解するプロセスです。これは、Webページの内容を抽出したり、構造を解析したりするためにプログラマーが行う作業です。
 
 ## どのように:
+
+以下のコードスニペットはHTML解析の基本的な例です。
+
 ```Arduino
-#include <Arduino.h>
-#include <SPI.h>
-#include <WiFiNINA.h>
-#include <WiFiClient.h>
-#include <WiFi.h>
-#include "index.html"
+#include <HTMLParser.h>
+
+HTMLParser parser;
 
 void setup() {
   Serial.begin(9600);
-  WiFi.begin(ssid, password);
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-  }
-  Serial.print("Connected to WiFi network!");
-
-  printHTML();
+  parser.begin();
+  parser.parse("<p>Hello, World!</p>");
 }
 
-void loop() {}
-
-void printHTML() {
-  WiFiClient client;
-
-  // Connect to the server
-  if (client.connect(server, port)) {
-    // Send GET request
-    client.println("GET / HTTP/1.1");
-    client.println("Host: www.example.com");
-    client.println("Connection: close");
-    client.println();
-
-    // Read response
-    while (client.available()){
-      char c = client.read();
-      Serial.write(c);
+void loop() {
+  if (parser.parse()) {
+    if (parser.tagName() == "p") {
+      Serial.println(parser.innerText());
     }
   }
-
-  // Disconnect
-  client.stop();
 }
 ```
 
-`printHTML()`関数では、ArduinoがWebサイト「www.example.com」に接続し、HTMLファイルを取得してシリアルモニターに出力します。
+このコードの出力は次のようになります：
+```Arduino
+Hello, World!
+```
 
-## 深堀り:
-HTMLのパースには、さまざまな方法があります。代表的な方法には、正規表現を使用したパターンマッチングや、パーサーライブラリを使用する方法があります。
+## ディープダイブ:
 
-また、HTMLのパースを行うことで、Webスクレイピング以外にも、Webアプリケーションの自動テストやスクリーンスクレイピングなど、さまざまな用途に活用することができます。
+1. 歴史的な文脈: HTML解析はWebスクレイピングの基礎であり、初のWebブラウザが作成された時から存在しています。
 
-具体的な実装については、ArduinoのWiFiライブラリを使用してHTTPリクエストを送信し、レスポンスを取得することでHTMLのパースを行います。
+2. 代替手段: プログラムに依存せず、人間が手動でHTMLを解析することも可能ですが、それは大変時間がかかります。その他のプログラミング言語（Python、JavaScriptなど）もHTML解析をサポートしています。
 
-## 参考資料:
-更に詳しい情報を入手したい場合は、以下のリンクを参考にしてください。
+3. 実装詳細: Arduinoでは、HTMLParserというライブラリを使用してHTMLの解析を行います。このライブラリは、HTMLエレメントを効率的に解析し、分析するためのメソッドを提供します。
 
-- [Arduino WiFiライブラリドキュメント](https://www.arduino.cc/en/Reference/WiFiClient)
-- [正規表現を使用したHTMLのパースの実装例](https://www.w3schools.com/jsref/jsref_match.asp)
-- [HTMLパーサーの比較](https://en.wikipedia.org/wiki/Comparison_of_HTML_parsers)
+## 参考文献:
+
+- Arduinoの公式ドキュメンテーション: [HTML parsing](https://arduino.cc)
+- Stack Overflow: [HTML parsing in Arduino](https://stackoverflow.com/questions/tagged/arduino+html-parsing)

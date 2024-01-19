@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "Elixir: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,24 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
+## Was & Warum?
 
-Der Beginn eines neuen Projekts ist der Prozess, bei dem ein Programmierer sich auf die Entwicklung einer neuen Software oder Anwendung konzentriert. Oftmals geschieht dies, um eine spezifische Aufgabe oder Herausforderung zu lösen oder um eine bereits vorhandene Version zu aktualisieren. Neue Projekte ermöglichen es Programmierern auch, neue Technologien und Programmierkonzepte auszuprobieren.
+Ein neues Projekt anzufangen bedeutet, von Grund auf etwas Neues zu erstellen. Programmeure tun dies, um maßgeschneiderte Lösungen für spezifische Anforderungen zu entwickeln.
 
-Wie?
+## So geht's:
 
-```Elixir
-def new_project do
-  IO.puts("Projekt gestartet!")
-end
+Um ein neues Elixir-Projekt zu starten, verwenden wir `mix`. Hier ist ein Beispiel:
+
+```elixir
+# Starten Sie Ihr Terminal und geben Sie folgendes ein:
+mix new mein_projekt
+# Dies erzeugt ein neues Projekt mit dem Namen 'mein_projekt'
 ```
 
-Dieser Codeblock zeigt, wie einfach es ist, in Elixir ein neues Projekt zu starten. Mit der Funktion `new_project` kann der Programmierer eine Nachricht ausgeben, die bestätigt, dass das Projekt erfolgreich gestartet wurde. 
+Nachdem Sie diese Befehle ausgeführt haben, sehen Sie Folgendes:
 
-Tiefer Einblick
+```elixir
+* creating README.md
+* creating .formatter.exs
+* creating .gitignore
+* creating mix.exs
+* creating config
+* creating config/config.exs
+* creating lib
+* creating lib/mein_projekt.ex
+* creating test
+* creating test/test_helper.exs
+* creating test/mein_projekt_test.exs
+```
 
-Elixir wurde 2011 von José Valim entwickelt und basiert auf der Programmiersprache Erlang. Durch die Kombination von funktionaler Programmierung und Skalierbarkeit ermöglicht Elixir schnelle und effiziente Entwicklung von Anwendungen. Alternativen zu Elixir sind Programmiersprachen wie Ruby oder JavaScript, jedoch bietet Elixir durch seine Concurrent-Berechnungsfunktionen und Fähigkeit, auf der Erlang Virtual Machine zu laufen, besondere Vorteile.
+Dies zeigt, dass `mix` eine Projektstruktur für Sie erstellt.
 
-Siehe auch
+## Tiefer Eintauchen:
 
-Für weitere Informationen über Elixir und die Erstellung von Projekten in dieser Sprache, besuchen Sie bitte die offizielle Website unter [Elixir-lang.org](https://elixir-lang.org/) oder lesen Sie die Dokumentation auf [Hexdocs.pm](https://hexdocs.pm/elixir/new_project.html).
+`mix` ist ein Build-Tool, das mit Elixir eingeführt wurde 2012. Es hat ein einfaches Design und ist doch sehr mächtig. Alternativen zu `mix` könnten andere Build-Tools wie `Maven` oder `Gradle` in der Java-Welt sein. 
+
+Die Implementierungsdetails des `mix new` Befehls belaufen sich auf die Erstellung einer vollständigen, getesteten Projektstruktur, bei der alle nötigen Dateien und Verzeichnisse antizipiert und strukturiert erstellt werden. Es erspart Manuallaufarbeit und ermöglicht es Ihnen, sofort mit dem tatsächlichen Codieren zu beginnen.
+
+## Siehe Auch:
+
+- [Elixir Offizielle Dokumentation](https://elixir-lang.org/docs.html)
+- [Mix Build Tool Dokumentation](https://hexdocs.pm/mix/Mix.html)
+- [Elixirs "Getting Started" Guide](https://elixir-lang.org/getting-started/introduction.html)

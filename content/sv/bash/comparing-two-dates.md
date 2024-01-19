@@ -1,7 +1,7 @@
 ---
-title:                "Jämföra två datum"
-html_title:           "Bash: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,56 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Jämföra två datum är när man kontrollerar om ett datum är tidigare, senare eller lika med ett annat datum. Programmörtar gör detta för att automatisera uppgifter som är beroende av olika datum, t.ex. att skapa en kalender eller schemalägga uppgifter.
+Att jämföra två datum handlar om att avgöra vilket datum som inträffar först. Programmerare gör detta för att hantera tid och datum på ett korrekt och effektivt sätt, till exempel för att spåra ändringar och deadlines.
 
-## Så här gör du:
-Kolla om två datum är lika:
+## Hur man gör:
+För att jämföra två datum i Bash kan vi använda `-d` flaggan i kombination med `date` kommandot. Låt oss jämföra dagens datum med "2022-12-31" till exempel.
+
 ```Bash
-date1="2020-08-10"
-date2="2020-08-10"
-if [ "$date1" == "$date2" ]; then
-  echo "Datumen är lika!"
+TODAY=$(date +%Y-%m-%d)
+END_DATE="2022-12-31"
+
+if [[ "$(date -d $TODAY +%s)" -gt "$(date -d $END_DATE +%s)" ]]; then
+   echo "Today is after the end date."
+else
+   echo "Today is before the end date."
 fi
 ```
-Output:
-```
-Datumen är lika!
-```
+Kodens output kommer att vara antingen "Today is after the end date." or "Today is before the end date." beroende på dagens datum.
 
-Kolla om ett datum är tidigare än ett annat:
-```Bash
-date1="2020-08-10"
-date2="2020-08-11"
-if [[ "$date1" < "$date2" ]]; then
-  echo "Datumet $date1 är tidigare än $date2"
-fi
-```
-Output:
-```
-Datumet 2020-08-10 är tidigare än 2020-08-11
-```
+## Fördjupning
+Bash, avsedda för Unix shell och kommandospråk, skrevs ursprungligen av Brian Fox och släpptes 1989. Att jämföra datum i Bash kan göras på flera sätt. I detta exempel använde vi `date` kommandot och `-d` flaggan för att konvertera stringen till epochtid (antalet sekunder sedan 1970-01-01 00:00:00 UTC) och utförde sedan jämförelsen.
 
-Kolla om ett datum är senare än ett annat:
-```Bash
-date1="2020-08-10"
-date2="2020-08-11"
-if [[ "$date1" > "$date2" ]]; then
-  echo "Datumet $date1 är senare än $date2"
-fi
-```
-Output:
-```
-Ingen output eftersom villkoret inte är uppfyllt.
-```
+Det finns alternativ till Bash för att jämföra datum, till exempel Python och Perl, vilka är mer lämpade för komplexa datumjämförelser, som datum aritmetik. Dock, för några enkla jämförelser, Bash räcker till.
 
-## Djupdykning:
-Att jämföra datum kan vara viktigt inom programmering eftersom många uppgifter är beroende av datum, t.ex. för att säkerställa att en viss uppgift utförs på rätt dag eller för att beräkna ålder.
+De verktyg vi använde här, `date` och `-d`, finns tillgängliga i de flesta Unix-liknande operativsystem. Men notera att deras beteende kan variera något beroende på systemkonfiguration och lokala tidszoninställningar.
 
-Det finns också andra sätt att jämföra datum inom Bash, t.ex. med kommandot "diff" som kan visa skillnaden mellan två datum. Det är också möjligt att konvertera datum till andra format för enklare jämförelse.
-
-Implementeringen av jämförelsen beror på vilket format som används för datum, t.ex. kan datum skrivas som "åååå-mm-dd" eller "dd/mm/åååå". Det är viktigt att använda samma format för att få korrekta resultat.
-
-## Se även:
-- Kommandot "diff" för att jämföra skillnaden mellan två filer eller kataloger: https://www.gnu.org/software/diffutils/
-- Konvertera datum till andra format med "date" kommandot: https://www.gnu.org/software/coreutils/date
-- Mer om datum i Bash: https://www.dostips.com/DtTipsDateTime.php
+## Se även
+För ytterligare läsning och lärande, ta en titt på följande användbara källor:
+- [Bash manpage](https://man7.org/linux/man-pages/man1/bash.1.html)
+- [GNU Date Manual](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Tutorial om Bash Date Jämförelser](https://www.baeldung.com/linux/compare-dates)
+- [Forumsdiskussioner om Bash Date Jämförelser](https://stackoverflow.com/questions/3430181/bash-date-compare)

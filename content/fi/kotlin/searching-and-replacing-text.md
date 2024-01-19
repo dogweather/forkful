@@ -1,6 +1,6 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Kotlin: Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+# Kotlinilla Tekstin Etsintä ja Korvaus: Opas 
 
-Etsiminen ja tekstin korvaaminen ovat tärkeitä osia ohjelmoinnissa. Näitä työkaluja käytetään löytämään tiettyjä merkkijonoihin liittyviä tietoja ja korvaamaan ne halutuilla muutoksilla. Tämä voi auttaa säästämään aikaa ja vaivaa, kun työskentelet suurten tietomäärien kanssa.
+## Mikä & Miksi?
 
-Ohjelmoijien on usein tarpeen muuttaa tietokannan tietoja tai käsitellä suuria määriä tekstidataa. Etsimisen ja korvaamisen avulla nämä prosessit voidaan automatisoida ja ne voidaan suorittaa helposti ilman manuaalista työtä.
+Tekstin etsiminen ja korvaaminen on tapa muuttaa pyydettyä jonoa, korvaamalla se toisella. Ohjelmoijat tekevät tämän yleisesti kun heidän tulee muokata tai käsittellä jonoja tarkoituksenmukaisimmaksi - esimerkiksi, poistamaan alusta tai päästä sanoja tai korvata spesifiset sanat toisilla.
 
-# Miten tehdä?
-
-Kotlin tarjoaa helpon tavan hakea ja korvata tekstiä käyttäen String-luokan funktioita. Voit käyttää funktiota ```replace()``` korvataksesi tietyn merkkijonon toisella merkkijonolla ja ```contains()``` tarkistamaan, sisältääkö merkkijono halutun tekstin.
-
-Esimerkiksi seuraava koodi etsii ja korvaa kaikki puhelinnumerot merkkijonossa:
+## Näin teet:
 
 ```Kotlin
-val teksti = "Puhelinnumeroni on +358 123 456 789."
-val uusiTeksti = teksti.replace("+358", "0") // uusiTeksti on nyt "Puhelinnumeroni on 0 123 456 789."
+val lause = "Tervetuloa Kotlinin maailmaan!"
+val korvattuLause = lause.replace("Kotlinin", "Ohjelmoinnin")
+println(korvattuLause)
 ```
 
-Voit myös käyttää näitä funktioita yhdessä ```if```-lauseen kanssa tarkistaaksesi, sisältääkö merkkijono halutun tekstin:
+Tämän koodin tuloste on: "Tervetuloa Ohjelmoinnin maailmaan!".
 
-```Kotlin
-val teksti = "Tämä on salainen viesti."
-if (teksti.contains("salainen")) {
-  println("Sisältää salaisen viestin!")
-}
-```
+## Syvä sukellus:
 
-# Syväsukellus
+Tekstin etsiminen ja korvaaminen on ollut olemassa melkein yhtä kauan kuin ohjelmointi itsessään. Kotlin tarjoaa helpon tavan sen toteuttamiseksi, mutta on hyvä pitää mielessä, että tämä ei ole ainoa tapa. Myös regex-funktiota (säännöllisiä lausekkeita) voidaan käyttää monimutkaisempiin tekstinkäsittelytehtäviin.
 
-Etsimisen ja korvaamisen käsitteet ovat olleet läsnä ohjelmoinnissa alusta asti. Alkuaikoina käytettiin usein Unix-komentoja, kuten ```grep``` ja ```sed```, jotka toimivat samalla periaatteella kuin nykyaikaiset ohjelmointikielten funktiot.
+Tämä toiminto toimii etsimällä tietoa jokaisesta jonon osasta, kunnes se löytää vastaavuuden, ja sitten se korvaa sen. Kaikkien toimintojen tarkkuus ja nopeus riippuvat siitä, miten hyvin ohjelma on rakennettu ja kuinka hyvin ohjelmointikieli tukee näitä toimintoja.
 
-Kotlin lisäksi tarjoaa myös muita käteviä funktioita, kuten ```substring()``` ja ```matches()```. On myös olemassa vaihtoehtoisia tapoja ratkaista ongelmia, kuten käyttämällä säännöllisiä lausekkeita tai erilaisia tekstinkäsittelykirjastoja.
+## Katso myös:
 
-Tekstin etsimisen ja korvaamisen toteutukseen vaikuttaa myös suorituskyky ja muistinkäyttö. Joissakin tapauksissa erilaiset toteutukset voivat vaikuttaa merkittävästi koodin tehokkuuteen ja suoritusaikaan.
+1. Tekstin käsittely Kotlissa: [Linkki](https://kotlinlang.org/docs/text-operations.html)
+2. Säännölliset lausekkeet Kotlinissa: [Linkki](https://kotlinlang.org/docs/regular-expressions.html)
+3. Tietoa Kotlinin `replace`-funktiosta: [Linkki](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
 
-# Katso myös
+---
 
-- [Kotlinin String-luokan dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Ohjeita tekstinkäsittelyyn Kotlinilla](https://kotlinexpertise.com/kotlin-text-manipulation/)
+Muista, että hyvät ohjelmat ovat aina niitä, jotka ovat hyvin suunniteltuja ja jotka ottavat huomioon yksityiskohdat. Kotlin tarjoaa paljon työkaluja, jotka auttavat tekemään tekstinkäsittelystä tehokkaampaa ja tuottavampaa. Aina on hyvä aika oppia jotain uutta!

@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "Elixir recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,46 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Diving into HTML Parsing with Elixir
-
 ## What & Why?
-HTML parsing is the process of analyzing HTML code to extract meaningful structure - essentially turning HTML into data. Programmers do this to enable the extraction, automation, and manipulation of web content.
+
+Parsing HTML is the process of analyzing HTML code to extract information contained within tags. This is useful in web scraping tasks, data extraction, or when you want to manipulate markup data.
 
 ## How to:
 
-Let's dive right into the action. In Elixir, we can use the package named `Floki` for parsing HTML. Assume that you have installed this dependency.
+Elixir, coupled with the Floki library, provides a powerful way to parse HTML.
 
-```elixir
-def deps do
+To begin, install the Floki library by adding to your mix.exs dependencies:
+```Elixir
+defp deps do
   [
     {:floki, "~> 0.30"}
   ]
 end
 ```
 
-Here is a basic example of how to extract all `href` links from a webpage:
-
-```elixir
-{:ok, body} = HTTPoison.get("https://www.example.com/")
-links = body |> Floki.find("a[href]") |> Floki.attribute("href")
-IO.inspect(links)
+Then fetch the dependencies using mix:
+```Elixir
+mix deps.get
 ```
 
-This script will print a list of all URLs found in the "href" attributes of anchor tags on "https://www.example.com".
+Now you're able to use Floki. Let's try out a simple example of parsing HTML:
+
+```Elixir
+html = "<div><p>Hello, Elixir programmers!</p></div>"
+{:ok, document} = Floki.parse_document(html)
+text = document |> Floki.find("p") |> Floki.raw_html
+```
+The output would be `"Hello, Elixir programmers!"`.
 
 ## Deep Dive
 
-HTML Parsing has been a popular task since the inception of the web. Initially, it was quite simple with basic HTML documents. However, as sites grew more complex, parsing became more involved.
+Historically, because HTML parsing wasn't built into many languages, developers primarily relied on regular expressions or custom parsing functions, which can be quite error-prone and ineffective.
 
-As for alternatives, you might consider using `meeseeks` or `sweet_xml`. These offer similar parsing capabilities as `floki` but can differ in syntax and processing power.
+There are alternatives to Floki for parsing HTML in Elixir, such as Meeseeks or html_sax_parser, but Floki generally provides a simpler API and unifies parsing and querying, hence its popularity among Elixir enthusiasts.
 
-An interesting point about `Floki`'s implementation is it leverages the underlying Cascading Style Sheets (CSS) selector engine; this is what allows for the querying of HTML elements using CSS-like selectors, leading to seamless, intuitive querying of HTML documents.
+Floki implementation uses a combination of different libraries like :mochiweb_html for parsing and :css_selector for handling CSS selection, offering a lightweight yet robust solution for manipulating HTML documents.
 
-## See Also 
+## See Also
 
-- `Floki` documentation: [hexdocs.pm/floki](https://hexdocs.pm/floki)
-- `Meeseeks` documentation: [hexdocs.pm/meeseeks](https://hexdocs.pm/meeseeks)
-- `SweetXML` documentation: [hexdocs.pm/sweet_xml](https://hexdocs.pm/sweet_xml) 
-- Elixir Language Website: [elixir-lang.org](https://elixir-lang.org) 
-
-Enjoy parsing!
+- Official documentation for the Floki library: [https://hexdocs.pm/floki/readme.html](https://hexdocs.pm/floki/readme.html)
+- A comprehensive tutorial on scraping with Elixir and Floki: [https://nerves.build/posts/elixir-scraping-with-floki](https://nerves.build/posts/elixir-scraping-with-floki)
+- For an alternative look into html parsing with Meeseeks: [https://hexdocs.pm/meeseeks/readme.html](https://hexdocs.pm/meeseeks/readme.html)
+- The history of parsing and more parsing in Elixir: [https://pragdave.me/blog/2010/12/16/parsing---a-timeline.html](https://pragdave.me/blog/2010/12/16/parsing---a-timeline.html)

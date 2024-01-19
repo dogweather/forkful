@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Swift recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,25 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Downloading a web page is the process of retrieving the content of a webpage from a server and displaying it on your device. Programmers do this in order to access and utilize information from websites, whether it be for data processing or creating applications.
+
+Downloading a webpage refers to the process of retrieving all the data it contains from the server it resides on. This is common during web scraping, a practice used by programmers to automatically extract large amounts of data from the web.
 
 ## How to:
-To download a web page in Swift, we can use the `Data(contentsOf:)` function. We simply need to provide the URL of the webpage we want to download as a parameter, and the function will return the content of the webpage as an instance of `Data`. For example:
+
+Here's a simple example using the URLSession in Swift to perform a data task (HTTP GET request):
 
 ```Swift
-if let data = try? Data(contentsOf: URL(string: "https://www.example.com")!) {
-    // Content of webpage is now stored in 'data' variable
-    // Use 'data' variable to process or utilize information
+import Foundation
+
+let url = URL(string: "https://your-site.xyz")!
+
+let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+    if let error = error {
+        print("Error: \(error)")
+    } else if let data = data {
+        let str = String(data: data, encoding: .utf8)
+        print("Received data:\n\(str!)\n\n")
+    }
 }
+
+task.resume()
 ```
 
+After you've made requests to an URL, you'll receive raw HTML data which can be converted into a string and printed.
+
 ## Deep Dive:
-Downloading web pages has been a crucial aspect of web development since the early days of the internet. In the past, programmers had to use more complex methods, such as establishing a network connection and sending HTTP requests, to download web pages. However, with the `Data(contentsOf:)` function now available in Swift, the process has become much simpler and more efficient.
 
-An alternative method for downloading web pages in Swift is to use the `URLSession` class. This allows for more control over the download process, such as handling network errors and downloading content asynchronously. However, for simple web page downloads, the `Data(contentsOf:)` function is usually sufficient.
+Historically, downloading a webpage was a bit more intensive. You'd have to open a socket, point it at the web server, and manually send HTTP commands. URLSession, introduced in iOS 7, simplified this by encapsulating the entire HTTP request/response process.
 
-When downloading web pages, it is important to handle any errors that may occur, such as a broken or invalid URL. It is also recommended to download web pages asynchronously in order to avoid blocking the main thread and potentially causing the app to freeze.
+There are other alternatives such as Alamofire library, which provides a more user-friendly interface for server interaction. Additionally, SwiftNIO offers a more extensive set of tools for network programming.
+
+When downloading a webpage, it's worth noting it's a network-bound task. It might take some time. It's advisable to perform this on a background thread to avoid stalling the interface. The URLSession data task will handle this for you.
 
 ## See Also:
-- [Apple Developer Documentation on `Data(contentsOf:)` function](https://developer.apple.com/documentation/foundation/data/1409715-contents)
-- [Apple Developer Documentation on `URLSession` class](https://developer.apple.com/documentation/foundation/urlsession)
+
+1. Designated Initializers vs Convenience Initializers in Swift - [Link](https://docs.swift.org/swift-book/LanguageGuide/Initialization.html)
+2. More about URLSession and Swift Network Programming - [Link](https://developer.apple.com/documentation/foundation/urlsession)
+3. SwiftNIO, a cross-platform asynchronous event-driven network application framework - [Link](https://swift.org/swift-nio/)
+4. Alamofire, an HTTP networking library written in Swift - [Link](https://github.com/Alamofire/Alamofire)

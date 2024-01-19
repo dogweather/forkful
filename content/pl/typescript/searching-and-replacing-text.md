@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamienianie tekstu"
-html_title:           "TypeScript: Wyszukiwanie i zamienianie tekstu"
-simple_title:         "Wyszukiwanie i zamienianie tekstu"
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,29 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
 
-Szukanie i zamiana tekstu to jedna z najczęstszych czynności wykonywanych przez programistów. Polega to na znalezieniu konkretnego ciągu znaków w tekście i jego zamianie na inny. Programiści często wykonują te czynności, aby szybko i łatwo zmieniać, poprawiać lub aktualizować kody źródłowe.
+Wyszukiwanie i zamiana tekstu to technika manipulowania danymi za pomocą programowania. Programiści robią to do zautomatyzowania ciężkich lub monotonnych zadań związanych z tekstem, takich jak poprawa błędów ortograficznych w dużych dokumentach.
 
 ## Jak to zrobić:
 
-```TypeScript
-// Przykład 1:
-let text = "Witaj świecie";
-let newText = text.replace("Witaj", "Hello");
-// Output: "Hello świecie"
+Zobaczmy, jak zastąpić tekst w TypeScript. Użyjemy wbudowanej funkcji `replace()`.
 
-// Przykład 2:
-let text2 = "Lorem ipsum dolor sit amet";
-let newText2 = text.replace("sit", "sitting");
-// Output: "Lorem ipsum dolor sitting amet"
+```TypeScript
+let tekst: string = "Witaj, świecie!";
+let nowyTekst: string = tekst.replace("świecie", "TypeScript");
+console.log(nowyTekst);
 ```
 
-## Głębszy Przegląd
+Wynik:
 
-Wyszukiwanie i zamiana tekstu jest jedną z podstawowych operacji edycyjnych, z którą programiści mają do czynienia od początków programowania. Wcześniej była wykonywana ręcznie, ale dziś istnieje wiele narzędzi i funkcji w edytorach kodu, które ułatwiają ten proces. Alternatywą do szukania i zamiany jest użycie wyrażeń regularnych, które są bardziej zaawansowaną metodą manipulacji tekstem. W implementacji tekstowej, ważne jest uwzględnienie obecnej formy, wielkości liter i innych czynników.
+```
+Witaj, TypeScript!
+```
 
-## Zobacz również
+Metodę `replace()` używamy do wyszukiwania i zamiany części tekstu. Pierwszy argument to ciąg, który chcesz znaleźć. Drugi argument to ciąg, na który chcesz go zmienić.
 
-- [Dokumentacja TypeScript - String Replace](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#template-literal-types)
-- [Poradnik dla początkujących - Zamienianie tekstu w TypeScript](https://www.digitalocean.com/community/tutorials/typescript-zamienianie-tekstu)
+Funkcję `replace()` możemy również używać z wyrażeniami regularnymi, aby zmieniać więcej niż jedno wystąpienie słowa.
+
+```TypeScript
+let tekst: string = "Kocham TypeScript. TypeScript jest wspaniały.";
+let nowyTekst: string = tekst.replace(/TypeScript/g, "JavaScript");
+console.log(nowyTekst);
+```
+
+Wynik:
+
+```
+Kocham JavaScript. JavaScript jest wspaniały.
+```
+
+## Deep Dive
+
+Zastąpienie tekstu jest główną funkcją w większości języków programowania, a jego historia sięga dopóty, dopóki języki programowania początkowo obsługiwały dane tekstowe. W TypeScript, możemy użyć natywnej funkcji `replace()`, ale są również dostępne niezależne biblioteki, jak `lodash`, które oferują większą kontrolę i dodatkowe funkcje.
+
+Można też użyć innych metod, takich jak `slice()` lub `substring()`, aby zastąpić tekst, ale `replace()` jest najprostszy i najbardziej zrozumiały.
+
+## Zobacz też:
+
+- Dokumentacja TypeScript: https://www.typescriptlang.org/docs/
+- Dokumentacja lodash: https://lodash.com/docs/
+- Wyrażenia regularne w JavaScript: https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Wyra%C5%BCenia_reguralne

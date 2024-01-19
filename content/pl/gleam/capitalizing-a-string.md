@@ -1,7 +1,7 @@
 ---
-title:                "Zapisywanie ciągu znaków wielką literą"
-html_title:           "Gleam: Zapisywanie ciągu znaków wielką literą"
-simple_title:         "Zapisywanie ciągu znaków wielką literą"
+title:                "Zamiana tekstu na wielkie litery"
+html_title:           "Gleam: Zamiana tekstu na wielkie litery"
+simple_title:         "Zamiana tekstu na wielkie litery"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,28 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego to robimy?
+## Co i dlaczego?
 
-Kapitalizacja ciągu znaków to proces zamiany pierwszej litery na wielką, a pozostałych na małe. Programiści robią to w celu poprawy czytelności kodu oraz konwencji nazewnictwa.
+Zmiana liter na wielkie w ciągu znaków to proces, który przekształca małe litery w duża; na przykład, 'programowanie' staje się 'PROGRAMOWANIE'. Programiści często korzystają z tej techniki, aby podkreślić ważne fragmenty tekstu lub zmienić wygląd napisów.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Kodując w języku Gleam, wystarczy użyć funkcji `String.capitalize` aby skapitalizować dany ciąg znaków. Przykłady i wyniki można zobaczyć poniżej:
+Zobaczmy, jak możemy to zrobić w Gleam:
 
 ```Gleam
-import Gleam.String
+fn capitalize(text: String) -> String {
+  text
+  |> String.codepoints
+  |> List.map(String.uppercase)
+  |> List.reduce("", append)
+}
 
-let result = String.capitalize("programowanie jest fajne")
-// Output -> "Programowanie jest fajne"
-
-let result2 = String.capitalize("ALa ma kota")
-// Output -> "Ala ma kota"
+fn main(_) {
+  let text = "cześć świecie"
+  capitalize(text)
+  |> Io.format("{}.n", [text])
+}
 ```
 
-## Głębsza analiza
+Przykładowe wyjście:
 
-Kapitalizacja ciągów znaków była wykorzystywana już w dawnych językach programowania, takich jak BASIC i Pascal. Alternatywą dla funkcji `String.capitalize` w języku Gleam jest użycie metody `capitalize` z pakietu `Unicode` lub napisanie własnej funkcji. Implementacja tej funkcji jest prostym zadaniem i może być przydatna w wielu przypadkach.
+```
+CZEŚĆ ŚWIECIE
+```
+
+## Na głębszy poziom
+
+Historia i kontekst: Pierwotnie, konwersja liter na wielkie było istotnym elementem starszych systemów komputerowych i języków programowania, które nie obsługiwały małych liter. Chociaż nowoczesne systemy mają o wiele większą elastyczność, wielkie litery nadal są używane do podkreślania i formatowania tekstu.
+
+Alternatywy: Alternatywą dla metody, którą przedstawiliśmy, jest użycie funkcji `String.to_uppercase`. Ten sposób jest bardziej bezpośredni, ale mniej elastyczny, jeśli chcesz dopasować specyficzne znaki lub użyć niestandardowych reguł kapitalizacji.
+
+Szczegóły implementacji: nasz kod najpierw przekształca tekst na listę punktów kodowych, po czym każdy punkt kodowy jest zamieniany na wielką literę. Na koniec, wszystkie te pojedyncze punkty kodu są łączone w jeden ciąg. Dzięki temu metoda jest bardzo skuteczna dla dowolnej długości tekstu, a także obsługuje znaki specjalne i diakrytyczne.
 
 ## Zobacz także
 
-Dla większej ilości informacji na temat kapitalizacji ciągów znaków w języku Gleam, polecamy przeczytać dokumentację języka lub odwiedzić oficjalną stronę internetową.
+- Dokumentacja Gleam na temat [funkcji String](https://hexdocs.pm/gleam_stdlib/gleam/string/)
+- Artykuł na temat [operacji na ciągach znaków w języku programowania Gleam](https://learnxinyminutes.com/docs/gleam/)
+- Post na blogu na temat [podstaw operacji na ciągu znaków w Gleam](https://blog.gleam.run/posts/)

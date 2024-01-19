@@ -1,6 +1,6 @@
 ---
 title:                "创建临时文件"
-html_title:           "Javascript: 创建临时文件"
+html_title:           "Kotlin: 创建临时文件"
 simple_title:         "创建临时文件"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 创建临时文件这门Javasciprt技能
+## 什么 & 为什么？
+创建临时文件能让我们在不涉及主存储区的情况下编写、读取和存储大量数据，常常用于大文件传输和数据处理。
 
-## 什么是临时文件？为什么要创建它们？
-临时文件是在计算机程序中创建的一种临时文件。它们通常用于存储程序执行过程中的中间数据，这样程序就可以轻松地对这些数据进行操作而无需担心污染原始数据。程序员会用到临时文件来提高程序的效率和可读性，并且在程序完成后，这些临时文件会被自动删除，从而保持整洁。
+## 如何操作：
+在Node.js中，我们可以使用`tmp-promise`库创建临时文件。请先运行`npm install tmp-promise`，然后看下面的代码示例：
 
-## 如何创建临时文件？
-我们可以使用Javasciprt内置的fs模块来创建临时文件。下面的代码演示了如何使用fs模块的mkdtempSync函数来创建一个临时文件夹，并将其路径返回给变量tempDir：
 ```Javascript
-const fs = require('fs');
-const tempDir = fs.mkdtempSync('/tmp/');
-```
-接下来，我们可以使用fs模块的writeFileSync函数来在临时文件夹中创建文件，并向其中写入内容：
-```Javascript
-fs.writeFileSync(`${tempDir}/myTempFile.txt`, 'Hello world!');
-```
-最后，我们可以使用fs模块的unlinkSync函数来删除临时文件夹及其内容：
-```Javascript
-fs.unlinkSync(tempDir);
+const tmp = require('tmp-promise');
+
+(async () => {
+    const { path, cleanup } = await tmp.file();
+    console.log("临时文件路径: ", path);
+
+    // 在此添加你的代码
+    // ...
+
+    await cleanup(); // 别忘了清理临时文件！
+})();
 ```
 
-## 深入了解
-创建临时文件在计算机编程中已经存在了很长时间。在过去，程序员需要手动创建临时文件，并在程序完成后手动删除它们。现在，Javasciprt提供了内置的功能来简化这个过程。除了使用fs模块外，我们也可以使用第三方模块如tmp或temp模块来创建临时文件。
+## 深度剖析
+历史上，生成临时文件在大数据处理和编程语言如Unix shell中是常见的操作。现代语言如JavaScript通常借助第三方库比如`tmp-promise`来实现。
 
-## 查看更多
-- Node.js的fs模块文档：https://nodejs.org/api/fs.html
-- 第三方模块tmp：https://www.npmjs.com/package/tmp
-- 第三方模块temp：https://www.npmjs.com/package/temp
+有些情况下，你可能想要直接在内存中处理所有数据，避免写入硬盘。Node.js就提供了`Buffer`和`Stream`来实现。
+
+创建临时文件的内部细节包括文件路径的生成方式以及何时何地应该删除这些文件。大多数库都帮你自动处理这些问题，但务必理解你使用的库具体是怎么工作的。
+
+## 查阅更多
+1. [Node.js Buffer](https://nodejs.org/api/buffer.html)
+2. [Node.js Stream](https://nodejs.org/api/stream.html) 
+3. [tmp-promise library](https://github.com/benjamingr/tmp-promise)

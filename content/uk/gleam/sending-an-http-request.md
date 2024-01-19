@@ -1,7 +1,7 @@
 ---
-title:                "Відправлення http-запиту"
-html_title:           "Gleam: Відправлення http-запиту"
-simple_title:         "Відправлення http-запиту"
+title:                "Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
+## Що й Навіщо?
 
-В програмуванні часто потрібно здійснювати HTTP запити. Це є процесом відправки запиту до веб-сервера та отримання відповіді. Програмісти це роблять, щоб отримати доступ до даних з інших джерел або взаємодіяти з різними сервісами.
+Надсилання HTTP-запиту - це процес комунікації з веб-сервером: ви "запитуєте" якусь інформацію та очікуєте відповідь. Програмісти роблять це, щоб взаємодіяти з API, отримувати дані, відправляти дані тощо.
 
-## Як зробити:
+## Як це робити:
 
-Щоб зробити HTTP запит у Gleam, можна використовувати вбудований модуль `gleam/http`. Давайте подивимося на приклад коду, який відправить запит до GitHub API та отримає список усіх публічних репозиторіїв користувача `gleam-lang`:
+Ось приклад того, як надіслати HTTP-запит у Gleam:
 
+```Gleam
+import gleam/httpc
+import gleam/http.{Get}
+
+let request = Get("https://httpbin.org/json")
+httpc.send(request)
 ```
-Gleam.http.send(
-  "https://api.github.com/users/gleam-lang/repos",
-  "GET"
-)
-|> Gleam.http.to_result
-|> case {
-  Ok(response) -> response.body
-  Err(error) -> error_to_string(error)
+
+Виправлення помилок може виглядати так:
+
+```Gleam
+case httpc.send(request) {
+  Ok(response) -> response
+  Error(e) -> e
 }
 ```
 
-На виході ми отримаємо список у форматі JSON, який можна подальше обробити за потреби.
+## Поглиблено
 
-## Глибші дослідження:
+Надсилання HTTP-запитів - це сложена практика, корінні якої сягають початків інтернету. Наявність різноманітних методів (POST, GET, DELETE, і т.д.) та типів контенту сприяє гнучкості HTTP-запитів.
 
-HTTP - це протокол, який був розроблений у 1990-х роках і з тих пір став стандартом для комунікації між веб-серверами та клієнтами. У програмуванні є інші інструменти для взаємодії зі зовнішнім світом, такі як WebSockets або UDP протокол, але HTTP є одним з найпоширеніших.
+Як альтернативу HTTP-запитам, можна використовувати більш новітький та замудрений протокол gRPC, але він може бути замудреним для простих завдань.
 
-Як альтернативи, програмісти можуть використовувати бібліотеки на мовах програмування, таких як Python або Java, для здійснення HTTP запитів. Однак, у Gleam це можна зробити безпосередньо за допомогою вбудованого модуля `gleam/http`, що дозволяє досягти більш ефективного та швидкого виконання запитів.
+Дійсно, Gleam використовує під капотом Erlang/OTP для отправки HTTP-запитів, що гарантує високу продуктивність та надійність.
 
-## Дивіться також:
+## Див. також
 
-- Офіційна документація Gleam: https://gleam.run/documentation
-- Репозиторій Gleam у GitHub: https://github.com/gleam-lang/gleam
-- Розділ про HTTP запити у документації Erlang: http://erlang.org/doc/apps/inets/http_client.html
+* [Документація Gleam по httpc](https://hexdocs.pm/gleam_httpc/gleam/httpc/index.html)
+* [Докладніше про HTTP-запити](https://developer.mozilla.org/uk/docs/Web/HTTP/Overview)
+* [Порівняння між HTTP-запитами та gRPC](https://www.ionos.com/digitalguide/websites/web-development/grpc/)

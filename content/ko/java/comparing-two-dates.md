@@ -1,7 +1,7 @@
 ---
-title:                "두 날짜를 비교하는 방법"
-html_title:           "Java: 두 날짜를 비교하는 방법"
-simple_title:         "두 날짜를 비교하는 방법"
+title:                "두 날짜 비교하기"
+html_title:           "C#: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,42 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇 & 왜? 
 
-두 날짜를 비교하는 것은 날짜 간 차이를 계산하는 것을 의미합니다. 프로그래머들은 이를 통해 두 날짜의 관계를 파악하고, 필요한 조건에 따라 프로그램을 실행할 수 있습니다.
+두 날짜 비교하기란 한 날짜가 다른 날짜보다 앞선지, 뒤따르는지, 아니면 동일한지를 판별하는 것을 말합니다. 이를 통해 프로그래머들은 날짜 기반의 이벤트를 일정한 순서로 정렬하거나, 두 이벤트 사이의 시간 간격을 계산할 수 있습니다.
 
-# 방법:
+## 어떻게:
+
+다음은 Java에서 두 날짜를 비교하는 방법의 예입니다:
 
 ```Java
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
 
-LocalDate date1 = LocalDate.of(2020, 5, 15);
-LocalDate date2 = LocalDate.of(2019, 3, 25);
+public class Main {
+    public static void main(String[] args) {
 
-// 두 날짜 간의 일 수 차이 계산
-long daysBetween = ChronoUnit.DAYS.between(date2, date1);
-System.out.println(daysBetween); // 출력: 417
+        LocalDate date1 = LocalDate.of(2020, 1, 1);
+        LocalDate date2 = LocalDate.of(2020, 1, 2);
 
-// 두 날짜 간의 월 수 차이 계산
-long monthsBetween = ChronoUnit.MONTHS.between(date2, date1);
-System.out.println(monthsBetween); // 출력: 14
-
-// 두 날짜 간의 연 수 차이 계산
-long yearsBetween = ChronoUnit.YEARS.between(date2, date1);
-System.out.println(yearsBetween); // 출력: 1
+        if (date1.isBefore(date2)) {
+            System.out.println("date1이 date2보다 이전입니다");
+        } else if (date1.isAfter(date2)) {
+            System.out.println("date1이 date2보다 이후입니다");
+        } else {
+            System.out.println("date1과 date2는 동일합니다");
+        }
+    }
+}
 ```
 
-# 깊게 파헤치기:
+출력 예시:
 
-(1) 역사적 맥락: 날짜 비교는 과거에는 어려운 작업이었습니다. 그래서 자바 8부터 등장한 java.time 패키지에서는 간단하고 편리한 날짜 계산을 제공합니다.
+```
+date1이 date2보다 이전입니다
+```
 
-(2) 대안: 자바 8 이전에는 java.util 패키지의 Date 클래스를 사용하여 날짜 비교를 했습니다. 하지만 이 클래스는 버그가 많고 생각보다 사용하기 어렵습니다.
+## 깊이 들어가보기:
 
-(3) 구현 세부사항: ChronoUnit 클래스는 날짜 비교를 위해 새로 나온 클래스입니다. 새로운 날짜API인 java.time 패키지 오브젝트들과 연동하여 사용하면 편리합니다.
+(1) 날짜 비교는 오랜 역사를 가지고 있습니다. 처음의 컴퓨터 시스템들은 32비트 정수를 사용하여 '1970년 1월 1일'부터 초 단위로 시간을 계산했습니다.
 
-# 더 알아보기:
+(2) 대안으로, Java 8 이후에는 `java.time` 패키지를 사용하여 더욱 정확하고 유연하게 날짜와 시간을 비교할 수 있습니다. 
 
-- [Java 8 API 문서](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Java 포럼 - 자바 8 날짜/시간 API 소개](https://www.java.net/forum/topic/jdk/general/introducing-java-time-jdk-8)
-- [코딩야학 - Java 8의 새로운 날짜 API 소개](https://www.codingyahak.com/java-new-date-time-api-introduction/)
+(3) `isBefore()`, `isAfter()`, `isEqual()` 메소드들은 `LocalDate` 클래스의 인스턴스에 구현되어 있으며, 이를 사용해 날짜를 비교할 수 있습니다.
+
+## 참고 자료:
+
+- Java `LocalDate`에 대한 자세한 설명: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+- JDK의 날짜와 시간에 대한 자세한 사항: https://docs.oracle.com/javase/tutorial/datetime/

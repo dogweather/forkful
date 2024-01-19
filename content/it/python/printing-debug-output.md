@@ -1,6 +1,6 @@
 ---
 title:                "Stampa dell'output di debug"
-html_title:           "Python: Stampa dell'output di debug"
+html_title:           "Bash: Stampa dell'output di debug"
 simple_title:         "Stampa dell'output di debug"
 programming_language: "Python"
 category:             "Python"
@@ -10,24 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Stampare il debug output è un modo per visualizzare le informazioni sul funzionamento di un programma durante l'esecuzione. I programmatori lo fanno per aiutare a identificare e risolvere eventuali errori o bug nel codice.
+## Cos'è e perché?
+
+Il debug, o produzione di output di debug, consiste nell'uscita di informazioni dettagliate relative all'esecuzione di un programma. I programmatori lo fanno per identificare e risolvere qualsiasi problema che potrebbe ostacolare il funzionamento del programma.
 
 ## Come fare:
-Ecco un esempio di codice Python per stampare una variabile e un messaggio di debug:
-```
-# Definiamo una variabile
-numero = 10
-# Stampiamo la variabile e un messaggio di debug
-print("Il numero è:", numero, "e stiamo stampando il debug output")
+
+Python offre varie opzioni per il debug di un programma.
+
+```Python
+# Usare print() per il debug:
+a = 10
+b = 20
+print(f"I valori delle variabili sono - a: {a}, b: {b}")
 ```
 Output:
-```
-Il numero è: 10 e stiamo stampando il debug output
+
+    I valori delle variabili sono - a: 10, b: 20
+
+Un altro modo è utilizzare il modulo logging:
+
+```Python
+import logging
+
+# Crea e configura il logger
+logging.basicConfig(level=logging.DEBUG)
+
+# Utilizzare logging.debug()
+
+a = 10
+b = 20
+logging.debug(f"I valori delle variabili sono - a: {a}, b: {b}")
 ```
 
-## Analisi approfondita:
-Stampare il debug output è diventato una pratica molto comune tra i programmatori per aiutare a individuare gli errori nel codice. Negli albori della programmazione, i programmatori dovevano utilizzare strumenti di debugging più complessi. Oggi, la maggior parte degli IDE (ambienti di sviluppo integrato) ha funzionalità integrate per stampare il debug output. Una possibile alternativa alla stampa del debug output è l'utilizzo di registri di debug, che registrano le informazioni sul funzionamento del programma durante l'esecuzione.
+Questo non produrrà alcun output fino a quando il livello di logging non viene impostato su DEBUG.
+
+## Approfondimento:
+
+La pratica di stampare l'output di debug ha radici storiche, essendo uno dei metodi più antichi e di base per il debug del codice. Pur essendo semplice, è ancora un mezzo efficace per comprendere il flusso di esecuzione di un programma.
+
+Esistono alternative più raffinate come l'uso di debugger integrati in IDE come PyCharm, che offrono un controllo granulare sull'esecuzione del codice. Tuttavia, nulla batte la semplicità e l'accessibilità di un buon vecchio print statement.
+
+Per quanto riguarda i dettagli di implementazione, `print()` e `logging.debug()` sono funzioni di libreria standard in Python. La differenza principale è che `print()` scrive sempre l'output sulla console, mentre l'output di `logging.debug()` può essere configurato per scrivere l'output su diversi luoghi, come file, console, ecc., e ha diversi livelli.
 
 ## Vedi anche:
-Per ulteriori informazioni sulla stampa del debug output in Python, si consiglia di dare un'occhiata alla documentazione ufficiale di Python (https://docs.python.org/3/library/functions.html#print). Inoltre, può essere utile consultare guide e tutorial online su come utilizzare il debug output per risolvere i problemi nel codice.
+
+Per maggiori informazioni, consulta le seguenti risorse:
+- [Python's official documentation on the print function](https://docs.python.org/3/library/functions.html#print)
+- [Python's official documentation on logging](https://docs.python.org/3/library/logging.html)
+- [Python Debugging Techniques](https://realpython.com/python-debugging/)

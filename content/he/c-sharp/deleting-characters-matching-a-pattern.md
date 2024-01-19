@@ -1,7 +1,7 @@
 ---
-title:                "מחיקת תווים התואמים דפוס"
-html_title:           "C#: מחיקת תווים התואמים דפוס"
-simple_title:         "מחיקת תווים התואמים דפוס"
+title:                "מחיקת תווים התואמים לתבנית"
+html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-מחיקת תווים המתאימים לתבנית היא פעולה שתואמת או מוחקת תווים מתאימים לתבנית מסוימת מתוך טקסט או מחרוזת. פעולה זו משמשת כלי חיוני לקידום ותיקון קוד בפיתוח תוכנה. היא מאפשרת למתכנתים להסיר תווים לא רצויים או לעדכן תוכן בטקסטים רבים בקלות ומהירות.
+## מה זה ולמה? | What & Why?
+מחיקת תווים התואמים לתבנית הוא שיטה שבה מוחקים תווים מחרוזת או ממערך של תווים המתאימים לתבנית מסוימת. התכנתים בדרך כלל משתמשים בשיטה זו כאשר הם צריכים לנקות, לתקן או להוציא מידע מנתונים מסוימים.
 
-## איך לעשות זאת:
-קוד דוגמה ותוצאות רצויות:
+## איך מבצעים זאת? | How To
+כאן, אנו מביאים שני דרכים למחוק תווים שתואמים לתבנית.
 
-```c#
-string text = "ברוכים הבאים למאמר על מחיקת תווים המתאימים לתבנית!";
-// המחרוזת המקורית: "ברוכים הבאים למאמר על מחיקת תווים המתאימים לתבנית!"
+```C#
+// Using Built-in String Replace method
+string sampleText = "123abc456def";
+string pattern = "abc";
+string newText = sampleText.Replace(pattern, "");
+Console.WriteLine(newText); // Output: 123456def
 
-string pattern = "תווים המתאימים לתבנית";
-// זו התבנית המתאימה שנרצה למחוק.
+// Using Regular Expressions
+using System.Text.RegularExpressions;
 
-string modifiedText = Regex.Replace(text, pattern, "");
-// המחרוזת המעודכנת: "ברוכים הבאים למאמר על מחיקת!"
-
-Console.WriteLine(modifiedText);
-// פלט רצוי: "ברוכים הבאים למאמר על מחיקת!"
-
+string sampleText2 = "123abc456def";
+Regex rgx = new Regex("abc");
+string newText2 = rgx.Replace(sampleText2, "");
+Console.WriteLine(newText2); // Output: 123456def
 ```
 
-## מעמד מעמיק
-מחיקת תווים המתאימים לתבנית היא פעולה נפוצה בתחום תיקון קוד ויש לה היסטוריה עשירה. ישנן גם תוכניות נרחבות להתפתחות טכנולוגיות חדשות שיכולות לשפר את ביצועי המחיקה ולהפעיל אותה בקלות. יתר על כן, ישנם כמה אפשרויות נוספות לפעולות דומות כגון החלפת תווים ומחיקת מגוון תבניות נוספות. במידה ותרצו ללמוד עוד על הנושא, תוכלו לחפש ברשת כדאי לכם.
+## צלילה עמוקה | Deep Dive
+מחיקת תווים התואמים לתבנית היא טכניקה שנמצאת בשימוש מורחב מאז הימים הראשונים של התכנות. במהלך השנים, שיפרו שפות תכנות רבות את דרכיהן של מידוע תווים תואמים לתבניות מקצועיות.
+השיפור הגיע עם שפת התכנות C# כאשר הוצגה הפונקציה Replace של מחרוזות ועיבוד תווים ומחרוזות באמצעות ביטויים רגילים.  
+כלול מחליפה עבודה הכי טוב כאשר אתה יודע מראש איזה תבנית אתה רוצה למחוק. ביטויים רגילים הם כלי עוצמתי וגמיש הרבה יותר, שאפשר לאתר ולמחוק תבניות מורכבות יותר במחרוזות.
 
-## ראו גם:
-[תיעוד מטלות מורכבות עבור הפעלת קוד](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linqs/tasks-complex-operators-actions)
-
-[מבנה זהה - הוספת תוכן נוסף למאמר זה](https://en.wikipedia.org/wiki/Regular_expression)
+## עיין גם | See Also
+1. [Replace Method - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
+2. [Regular Expressions - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
+3. [C# Language Guide - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/)

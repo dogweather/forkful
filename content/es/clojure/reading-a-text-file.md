@@ -1,6 +1,6 @@
 ---
 title:                "Leyendo un archivo de texto"
-html_title:           "Clojure: Leyendo un archivo de texto"
+html_title:           "Arduino: Leyendo un archivo de texto"
 simple_title:         "Leyendo un archivo de texto"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,25 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Leer un archivo de texto es una tarea común en la programación que consiste en obtener el contenido de un archivo de texto y almacenarlo en memoria para su posterior procesamiento. Los programadores realizan esta tarea para trabajar con datos almacenados en archivos, como configuraciones de software o registros de usuarios.
+## ¿Qué y Por Qué?
+Leer un archivo de texto en programación significa extraer datos de un archivo. Los programadores lo hacen para manipular, analizar y usar esos datos.
 
-## Cómo:
+## ¿Cómo hacerlo?
+Para leer un archivo de texto en Clojure, usamos la función `slurp`. Aquí está el código ejemplo:
+
 ```Clojure
-(def archivo (slurp "ruta/al/archivo.txt"))
-```
-Este código utiliza la función *slurp* para leer el archivo de texto y almacenar su contenido en la variable *archivo*. Podemos imprimir el contenido del archivo utilizando la función *println*:
-```Clojure
-(println archivo)
-```
-La salida será el contenido del archivo de texto. Podemos también especificar la codificación del archivo utilizando el parámetro opcional de *slurp*:
-```Clojure
-(def archivo (slurp "ruta/al/archivo.txt" :encoding "UTF-8"))
+(defn leer-archivo [nombre-archivo]
+  (slurp nombre-archivo))
+
+;; Usando la función para leer un archivo llamado 'ejemplo.txt'
+(leer-archivo "ejemplo.txt")
 ```
 
-## Profundizando:
-En la historia de Clojure, la función *slurp* fue añadida en la versión 1.2 para simplificar la lectura de archivos de texto. Sin embargo, también podemos utilizar la función *reader* para obtener un objeto que nos permite leer el archivo línea por línea. Otras alternativas para leer archivos de texto en Clojure incluyen la librería [clojure.data.csv](https://github.com/clojure/data.csv) para archivos CSV y [clojure.data.json](https://github.com/clojure/data.json) para archivos JSON.
+Si el contenido de `ejemplo.txt` es `"¡Hola, Mundo!`, entonces la salida será: `"¡Hola, Mundo!`
 
-## Ver también:
-- Documentación oficial de Clojure sobre [slurp](https://clojure.org/api/api#clojure.core/slurp)
-- Tutorial de Clojure sobre [lectura de archivos](https://clojure.org/guides/io#reading_text_files)
+## Análisis en Profundidad
+Históricamente, la función `slurp` ha sido la forma estándar de leer archivos de texto en Clojure desde su creación. Sin embargo, existen alternativas como la función `line-seq` que lee el archivo línea por línea, útil cuando se manejan archivos grandes donde no deseas cargar todo el archivo en la memoria a la vez.
+
+La implementación de `slurp` en Clojure no es muy complicada. Principalmente se apoya en las bibliotecas de E/S de Java para hacer el trabajo pesado. No requiere de cerrar explícitamente el archivo; `slurp` lo maneja automáticamente, lo cual es muy conveniente y limita la posibilidad de fugas de recursos.
+
+## Ver también
+Para más información sobre `slurp`, consulta la [documentación oficial](https://clojuredocs.org/clojure.core/slurp). Para entender mejor la lectura de archivos en general, puedes leer el [tutorial de Java sobre E/S](https://docs.oracle.com/javase/tutorial/essential/io/index.html). Y para más técnicas de programación en Clojure, el libro [The Joy of Clojure](https://www.manning.com/books/the-joy-of-clojure) es una excelente referencia.

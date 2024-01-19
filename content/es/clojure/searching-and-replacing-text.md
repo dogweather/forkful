@@ -1,6 +1,6 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "Clojure: Buscando y reemplazando texto"
+html_title:           "C: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,14 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué? 
-La búsqueda y reemplazo de texto es una tarea común para los programadores, que implica encontrar un patrón de texto específico y reemplazarlo con otro. Esto puede ser útil para corregir errores en el código, hacer cambios en una gran cantidad de texto de manera eficiente o adaptar el código a diferentes necesidades.
+## ¿Qué y Por Qué?
 
-## Cómo: 
-La mayoría de los lenguajes de programación tienen una función integrada para buscar y reemplazar texto, y Clojure no es una excepción. Podemos usar la función ```(clojure.string/replace texto patrón reemplazo)``` para realizar esta tarea. Por ejemplo, si queremos cambiar todas las letras 'a' en una cadena por 'e', podemos escribir ```(clojure.string/replace "hola" #"a" "e")``` y el resultado será "hole".
+Buscar y reemplazar texto es un método para localizar cadenas de texto específicas en un cuerpo de texto y cambiarlas por algo diferente. Los programadores lo hacen para manipular datos, corregir errores o adaptar el contenido a nuevas situaciones.
 
-## Profundizando: 
-La búsqueda y reemplazo de texto ha existido desde los primeros días de la programación, y ha evolucionado junto con los lenguajes de programación. Antes, era común realizar esta tarea manualmente, pero gracias a las funciones integradas en los lenguajes, ahora es más sencillo y eficiente. Alternativas a la función ```replace``` en Clojure incluyen expresiones regulares, macros y funciones de biblioteca adicionales.
+## ¿Cómo se hace?
 
-## Ver también: 
-Para obtener más información sobre la búsqueda y reemplazo de texto en Clojure, consulta la documentación oficial en https://clojuredocs.org/clojure.string/replace. También puedes explorar cómo se realiza esta tarea en otros lenguajes de programación para comparar y aprender diferentes enfoques.
+En Clojure, basta con usar el método `clojure.string/replace`. 
+
+Por ejemplo, vamos a reemplazar todas las apariciones de la cadena "Hola" por "Adiós" en un texto:
+
+```clojure
+(require '[clojure.string :as str])
+
+(def text "Hola, Mundo. Hola, Programador.")
+(def new-text (str/replace text "Hola" "Adiós"))
+```
+
+La salida de este código sería: 
+
+```clojure
+"Adiós, Mundo. Adiós, Programador."
+```
+
+## Un vistazo profundo
+
+Buscar y reemplazar textos es tan antiguo como la misma informática. Ya desde los primeros editores de texto, se ha usado para facilitar la edición y manipulación de datos. 
+
+Existen muchas alternativas al método `str/replace`. Puedes usar `str/replace-first` si sólo quieres reemplazar la primera coincidencia. Además, Clojure permite el uso de expresiones regulares para buscar patrones de texto más complejos.
+
+El corazón de la implementación de `str/replace` en Clojure es el API de Java `StringBuilder` y `String`. Cada coincidencia es localizada y el texto es reconstruido con las sustituciones requeridas.
+
+## Consulta También
+
+Para más detalles sobre la manipulación de strings en Clojure, consulta la [documentación oficial](https://clojure.github.io/clojure/clojure.string-api.html). Si quieres un reto, intenta implementar tu propia función de buscar y reemplazar usando los fundamentos de Clojure. Recomendamos [esta guía](https://clojuredocs.org/clojure.core/loop) sobre cómo utilizar el loop y recur para la creación de funciones personalizas.

@@ -1,6 +1,6 @@
 ---
 title:                "Extrayendo subcadenas"
-html_title:           "Python: Extrayendo subcadenas"
+html_title:           "C: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Python"
 category:             "Python"
@@ -10,26 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
-La extracción de subcadenas se trata de obtener una parte específica de una cadena de texto más larga. Los programadores a menudo lo hacen para manipular y analizar cadenas de texto de manera más eficiente.
+# **Extraer subcadenas en Python: una guía rápida**
 
-## Cómo:
+## **¿Qué y por qué?**
+La extracción de subcadenas implica tomar una parte específica de una cadena de texto. Los programadores lo hacen regularmente para analizar datos, manipular texto y realizar tareas similares.
+
+## **Cómo se hace:**
+
+Extraer una subcadena en Python es simple. Utilizamos los índices para hacerlo. Aquí te deja un ejemplo,
+
 ```Python
-# Creamos una cadena de texto
-cadena = "Hola mundo!"
-
-# Extraemos los primeros 4 caracteres
-subcadena = cadena[0:4]
-
-# Imprimimos la subcadena
-print(subcadena)
-
-# Salida: Hola
+frase = 'Hola mundo!'
+primer_palabra = frase[0:4]  # Selecciona los caracteres del 0 al 3, índice 4 no inclusive
+print(primer_palabra)
 ```
 
-## Deep Dive:
-La extracción de subcadenas ha existido desde los primeros días de la programación, ya que es una tarea muy común y útil. Además de usar la notación de corchetes en Python, también se pueden utilizar métodos como `split()` y `substring()` para lograr el mismo resultado. Sin embargo, estos métodos pueden ser más complejos y menos eficientes en ciertos casos.
+Salida:
+```Python
+'Hola'
+```
 
-## See Also:
-- [Tutorial de extracción de subcadenas en Python](https://www.programiz.com/python-programming/methods/string/substring)
-- [Documentación oficial de Python sobre manipulación de cadenas de texto](https://docs.python.org/es/3.8/library/stdtypes.html#text-sequence-type-str)
+Python también nos permite usar índices negativos para contar desde el final.
+
+```Python
+ultima_letra = frase[-1]  # Último carácter 
+print(ultima_letra)
+```
+Salida:
+
+```Python
+'!'
+```
+
+## **Inmersión profunda:**
+
+Históricamente, la extracción de subcadenas se originó con la necesidad de manejar cadenas de texto en lenguajes de programación primitivos. Con el tiempo, Python ha simplificado enormemente este proceso con su sistema de indexación.
+
+Aunque hemos visto cómo hacerlo usando índices directamente, también existen otras maneras de extraer subcadenas, como el método `slice()` y el método `split()`. Ambos pueden ser más adecuados dependiendo de tus necesidades específicas.
+
+En términos de implementación, Python utiliza una estructura de datos conocida como array de caracteres para almacenar cadenas. Cada carácter en la cadena tiene un índice asociado, que se puede utilizar para acceder y extraer ese carácter.
+
+## **Ver también:**
+
+Para más información, te recomiendo las siguientes fuentes:
+
+- [W3Schools: Python Strings](https://www.w3schools.com/python/python_strings.asp)
+- [Real Python: An Overview of Python’s Datatypes](https://realpython.com/python-data-types/)
+- [Python Documentation: Built-in Types](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)

@@ -1,7 +1,7 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón."
-html_title:           "Fish Shell: Eliminando caracteres que coinciden con un patrón."
-simple_title:         "Eliminando caracteres que coinciden con un patrón."
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué es y por qué?
+Eliminar caracteres que coinciden con un patrón significa borrar todos los caracteres que se ajustan a cierto criterio en un fragmento de código. Los programadores lo hacen para modelar los datos, eliminar errores o simplificar el texto.
 
-Eliminar caracteres que coincidan con un patrón en un código es un proceso útil para los programadores, ya que les permite manipular y limpiar datos de manera eficiente y precisa.
+## Cómo hacerlo:
+Aquí te muestro cómo puedes hacerlo en Fish Shell:
 
-## ¿Cómo hacerlo?
-
-Aquí te mostramos dos formas de eliminar caracteres que coincidan con un patrón en Fish Shell:
-
-Fish Shell ofrece un comando integrado para eliminar caracteres que coincidan con un patrón específico. Simplemente usa el siguiente formato:
-
-```
-Fish Shell
-string replace "patrón" "nuevo carácter" -- "cadena original"
+```Fish Shell
+set cadena "Hola, Mundo!"
+echo $cadena | string replace -r "," ""
 ```
 
-Por ejemplo, si tienes una cadena de texto que contiene números separados por comas y quieres reemplazar las comas por espacios, puedes usar el siguiente comando:
+La salida será:
 
-```
-Fish Shell
-string replace "," " " -- "1,2,3"
-```
-
-Esto te dará una salida de: `1 2 3`.
-
-Otra opción es utilizar el comando `sed`, que también es compatible con Fish Shell. En este caso, el formato sería el siguiente:
-
-```
-Fish Shell
-sed "s/ patrón /nuevo carácter/g" "cadena original"
+```Fish Shell
+Hola Mundo!
 ```
 
-Siguiendo con el mismo ejemplo anterior, puedes usar `sed` de la siguiente manera para lograr el mismo resultado:
+En este ejemplo, hemos eliminado todas las comas de la cadena.
 
+## Análisis Profundo:
+Eliminar caracteres que coinciden con un patrón en Fish Shell no tiene un linaje histórico especial, pero es un concepto común de procesamiento de texto en la mayoría de los lenguajes de programación. 
+
+Como alternativa, puedes usar el comando `tr` en shells que no son de Fish, así:
+
+```Bash
+echo "Hola, Mundo!" | tr -d ","
 ```
-Fish Shell
-sed "s/,/ /g" "1,2,3"
-```
 
-## Profundizando
+Tanto Fish Shell como Bash implementan esta característica mediante una búsqueda lineal en la cadena para identificar y retirar los caracteres. No hay una complejidad significativa en este proceso ya que se lleva a cabo en tiempo lineal.
 
-Este proceso de eliminar caracteres que coincidan con un patrón es una técnica común en la programación y ha sido utilizado por décadas en diferentes lenguajes de programación como UNIX y Perl.
-
-Además de los métodos mencionados anteriormente, también puedes utilizar otras herramientas de manipulación de texto en Fish Shell, como `grep` y `awk`, para lograr resultados similares.
-
-Para los desarrolladores interesados en los detalles técnicos, Fish Shell utiliza expresiones regulares y el comando `tr` detrás de escena para lograr esta funcionalidad.
-
-## Ver también
-
-- [Documentación de string replace en Fish Shell](https://fishshell.com/docs/current/commands.html#string-replace)
-- [Guía de expresiones regulares en Fish Shell](https://fishshell.com/docs/current/index.html#regexp)
-- [Manipulación de texto en Fish Shell](https://fishshell.com/docs/current/tutorial.html#execute-commands-in-the)
+## Ver También:
+1. Documentación oficial de `string` en Fish Shell: [https://fishshell.com/docs/current/commands.html#string](https://fishshell.com/docs/current/commands.html#string)
+2. Tutorial sobre `tr` en Bash: [https://linuxhint.com/bash_tr_command/](https://linuxhint.com/bash_tr_command/)
+3. Un análisis interno detallado de cómo Fish Shell procesa las cadenas: [https://github.com/fish-shell/fish-shell/issues/563](https://github.com/fish-shell/fish-shell/issues/563)

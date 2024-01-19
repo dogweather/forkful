@@ -1,7 +1,7 @@
 ---
-title:                "अस्थायी फाइल बनाना"
-html_title:           "Java: अस्थायी फाइल बनाना"
-simple_title:         "अस्थायी फाइल बनाना"
+title:                "एक अस्थायी फ़ाइल बनाना"
+html_title:           "Arduino: एक अस्थायी फ़ाइल बनाना"
+simple_title:         "एक अस्थायी फ़ाइल बनाना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या और क्यों? (What & Why?)
 
-एक अस्थायी फ़ाइल बनाना क्या है और क्यों करते हैं, यह प्रोग्रामर्स के लिए आम है। अस्थायी फ़ाइलें प्रोग्राम के इंटरमीडिएट डेटा को स्टोर करने के लिए उपयोगी होती हैं और इससे उन्हें अपने प्रोग्राम को प्रोटोटाइप करने की सुविधा मिलती है।
+अस्थायी फ़ाइल बनाना, यह एक ऐसी फ़ाइल होती है जिसे सिस्टम के इस्तेमाल के बाद आप स्वतः हटा सकते हैं। प्रोग्रामर इसे डाटा को अल्पकालिन रूप से स्टोर करने के लिए बनाते हैं, जैसे कि: लॉग जानकारी, कैशेड डाटा, अथवा किसी बड़ी कार्यवाही की मध्यवर्ती परिणाम।
 
-## कैसे करें:
+## कैसे (How to)
 
-```java
-try {
-  // अस्थायी फ़ाइल को सिस्टम के अस्थायी फ़ोल्डर में बनाएं
-  File tempFile = File.createTempFile("myTemp", ".txt");
-  tempFile.deleteOnExit(); // फ़ाइल ऐप के एसीआई 7 में अपने बंद होने पर हट जाएगी 
-  System.out.println("सफलतापूर्वक अस्थायी फ़ाइल बनाई गई।");
-} catch (IOException e) {
-  e.printStackTrace();
+```Java
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            Path tempFile = Files.createTempFile(null, ".mytemp");
+            System.out.println("Temporary file path is: "+ tempFile.toAbsolutePath());
+        
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
 ```
 
-आउटपुट:
-```java
-सफलतापूर्वक अस्थायी फ़ाइल बनाई गई।
+ऊपर दी गई Java प्रोग्राम एक अस्थायी फ़ाइल बनाती है। संभावित आउटपुट होता है:
+
+```shell
+Temporary file path is: /tmp/1234567890.mytemp
 ```
 
-## गहराई में जाइए:
+## गहराी की जानकारी (Deep Dive)
 
-### ऐतिहासिक पृष्ठभूमि:
+Java में अस्थायी फ़ाइलें बनाने का तरीका JDK 1.2 से उपलब्ध है और यह आवश्यक सुरक्षा के मानकों का पालन करती है। वैकल्पिक रूप से, कस्टम निर्देशिका और प्रारम्भिक नाम उपयोग करके अस्थायी फ़ाइलें बनाई जा सकती हैं। Java निम्न स्तर में अस्थायी फ़ाइलें उत्पन्न करने में सक्षम होता है, जो प्रणाली-निर्भर होती है और इससे फ़ाइलों की योग्यता और सुरक्षा बढ़ती है।
 
-अस्थायी फ़ाइलें जावा वर्सन 1.2 से ही मौजूद हैं। यह फ़ीचर पूर्व से से ही C और C++ की प्रथा को आगे बढ़ाने का प्रयास था। और आज भी इसके बहुत सारे उपयोग हैं जैसे की फाइल प्रोटोटाइपिंग, डेटा इंटरमीडिएट स्टोरेज आदि।
+## और भी देखें (See Also)
 
-### वैकल्पिक पथ:
+[Oracle: The Java Tutorials - File I/O (Featuring NIO.2)](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
 
-कुछ अन्य तरीके अस्थायी फ़ाइलें बनाने के लिए हैं जैसे की रोकने और फ़ाइलें hो जाएगी। लेकिन इस निर्देशिका में हम जावा का ही प्रमुख चरण चिह्न रखेंगे।
+[Geeks for Geeks: How to create a temporary file in Java](https://www.geeksforgeeks.org/create-temporary-file-java/)
 
-### अमल में लाने की जानकरी:
-
-इस पॉइंट में हम जावा की अस्थायी फ़ाइलों के कुछ प्रतिसादों को चर्चा करेंगे। जैसे की यह dynamically तैयार, सिस्टम की दृढ़ता का उपयोग करते हुए, और बहुत सक्रिय फ़ाइलें है जो निदेशांक हैं इन से, यह इंटरनली अपने एसंब्लर कैसे हैं।
-
-## देखें भी:
-
-- [ऑराकल जावा डॉक्यूमेंटेशन](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [जावा अस्थायी फ़ाइल उदाहरण](https://www.tutorialspoint.com/java/io/file_createtempfile_string_suffix.htm)
+[Jenkov.com: Java Temp File (java.io)](http://tutorials.jenkov.com/java-io/temporary-files.html)

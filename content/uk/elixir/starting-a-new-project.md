@@ -1,7 +1,7 @@
 ---
-title:                "Початок нового проекту"
-html_title:           "Elixir: Початок нового проекту"
-simple_title:         "Початок нового проекту"
+title:                "Початок нового проєкту"
+html_title:           "Elm: Початок нового проєкту"
+simple_title:         "Початок нового проєкту"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,26 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Створення нового проекту - це створення нової програми або додатку в мові програмування Elixir. Програмісти роблять це, щоб реалізувати нові ідеї, вирішити проблеми або покращити наявний код.
+## Що та навіщо?
 
-## Як це зробити:
+Запуск нового проекту в Elixir - це ініціювання першого каменя будови вашого програмного рішення. Програмісти роблять це, щоб почати з чистого аркуша, встановити необхідну структуру проекту та визначити залежності.
+
+## Як до цього приступити:
+
+Розпочнемо з встановлення Elixir на вашу систему, якщо цього ще не зроблено. 
+
 ```Elixir
-defmodule HelloWorld do
-  def hello do
-    IO.puts("Привіт світ!")
-  end
-end
-
-HelloWorld.hello()
+sudo apt-get install elixir
 ```
 
-Використовуючи ключове слово `defmodule`, ми створюємо модуль з ім'ям `HelloWorld`. В середині цього модуля ми використовуємо ключове слово `def` для створення функції `hello`, яка просто виводить рядок `Привіт світ!`. Нарешті, ми викликаємо цю функцію за допомогою `()`.
+Далі, запустімо новий проект з допомогою mix, інструменту побудованого непосередньо в Elixir:
 
-## Глибокий занурення:
-Elixir був створений в 2011 році і базується на байт-коді Erlang. Це функціональна мова програмування, яка підтримує паралельні та конкурентні обчислення. Для створення нового проекту, ви також можете використовувати інші мови програмування, такі як Ruby або Java.
+```Elixir
+mix new my_project
+```
 
-## Дивись також:
-- [Офіційна документація Elixir](https://hexdocs.pm/elixir)
-- [Elixir School](https://elixirschool.com/uk)
-- [Проектний шаблон Elixir](https://github.com/elixir-lang/elixir/blob/HEAD/lib/mix/lib/mix/templates/gen_app/README.md)
+Готово! Ви створили новий проект з ім'ям my_project. Ось що вам скаже Elixir:
+
+```Elixir
+* creating README.md
+* creating .gitignore
+* creating mix.exs
+* creating config
+* creating config/config.exs
+* creating lib
+* creating lib/my_project.ex
+
+Your Mix project was created successfully.
+You can use "mix" to compile it, test it, and more:
+
+    cd my_project
+    mix test
+
+Run "mix help" for more commands.
+```
+
+## Занурення в тему:
+
+Elixir є декларативною, функціональною мовою програмування, спроектована для створення розподіленої та обчислювальної системи. Вона була створена в 2011 році Хосе Валіму, колишнім важливим співробітником в Ruby on Rails.
+
+При написанні коду на Elixir можна скористатися альтернативами старту нового проекту, такими як Rebar3 для Erlang та Leiningen для Clojure. Вони мають подібну до Mix функціональність, але оскільки Mix є нативним для Elixir, він гарантує кращу сумісність та виконання.
+
+Щодо деталей реалізації, Mix генерує для вас схему каталогів, що випливає з Elixir. Він створює файл конфігурації (config.exs), файл ваших основних залежностей проекту (mix.exs), каталог для вашого вихідного коду (lib) та тестів (test).
+
+## Дивись ще:
+
+Щоб отримати більше інформації:
+
+- Офіційна документація Elixir: <https://elixir-lang.org/docs.html>
+- Вступний курс Elixir: <https://elixirschool.com/en/>
+- Гайд по mix: <https://hexdocs.pm/mix/Mix.html>

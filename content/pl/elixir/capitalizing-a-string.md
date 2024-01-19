@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana ciągu na wielkie litery"
-html_title:           "Elixir: Zmiana ciągu na wielkie litery"
-simple_title:         "Zmiana ciągu na wielkie litery"
+title:                "Zamiana ciągu na wielkie litery"
+html_title:           "Elixir: Zamiana ciągu na wielkie litery"
+simple_title:         "Zamiana ciągu na wielkie litery"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,27 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest kapitalizacja ciągu znaków i dlaczego programiści to robią?
+## Co i Dlaczego?
+Capitalizacja łańcucha oznacza zmienienie pierwszej litery napisu na wielką. Programiści robią to, aby poprawić czytelność i formatowanie tekstu w aplikacjach i stronach internetowych.
 
-Kapitalizacja ciągu znaków oznacza zmianę pierwszej litery ciągu na dużą literę, a pozostałych na małe litery. Programiści często wykonują tę operację, aby poprawić czytelność tekstu lub zachować spójność w wyświetlaniu danych.
-
-## Jak to zrobić?
-
+## Jak to zrobić:
+W Elixir, zastosuj funkcję `String.capitalize/2` do zmiany pierwszej litery napisu na wielką literę.
 ```Elixir
-String.capitalize("hello world")
+iolist = IO.iodata_to_binary('elixir jest mocny')
+String.capitalize(iolist, :pl)
 ```
-Output: "Hello world"
-
+Przykładowe wyjście:
 ```Elixir
-String.downcase("Elixir")
+"Elixir jest mocny"
 ```
-Output: "elixir"
 
-## Wnikliwe spojrzenie
+## Głębsze zrozumienie
+- Kontekst historyczny: W starożytnych systemach informatycznych, takich jak systemy pracujące w trybie tekstowym, używano capitalizacji, aby zaznaczyć początki zdań, tytułów, nazw własnych itd.
+- Alternatywy: W Elixir, można również użyć `String.upcase/1` aby zmienić wszystkie litery na wielkie, lub `String.downcase/1` aby zmienić wszystkie litery na małe.
+- Detale implementacji: Funkcja `String.capitalize/2` działa na bajtach, nie znakach, co oznacza, że może nie działać poprawnie na ciągach zawierających znaki spoza standardowego zestawu ASCII. Użycie `iodata_to_binary` przed `capitalize` zapobiega temu problemowi.
 
-Kapitalizacja ciągu znaków jest popularnym zadaniem w programowaniu i istnieje wiele sposobów jego wykonania, w tym funkcja ```capitalize``` w Elixir oraz metoda ```upper``` w innych językach programowania. Dzięki kapitalizacji, dane są wyświetlane w jednolity sposób, co ułatwia ich przetwarzanie i analizę. W przeszłości, kiedy drukowane teksty były złożone z dużych liter, a maszyny do pisania miały tylko klawisze wielkich liter, kapitalizacja była niezbędnym krokiem w tworzeniu wyraźnych i estetycznych dokumentów.
-
-## Zobacz też
-
-https://hexdocs.pm/elixir/String.html#capitalize/1
-https://elixir-lang.org/getting-started/case-cond-and-if.html#capitalizing-a-string
+## Zobacz też:
+- Dokumentacja Elixir dla [String.capitalize](https://hexdocs.pm/elixir/String.html#capitalize/2)
+- Elixir Forum: [Wątek](https://elixirforum.com/t/how-do-i-properly-capitalize-strings/3852) na temat capitalizacji napisów.

@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Haskell recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,35 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
-Searching and replacing text is a common task in programming that involves finding a specific pattern within a string of characters and replacing it with another pattern. This is often done to modify code or data to fit a desired format or to fix errors. Programmers do it to automate repetitive tasks, save time, and ensure consistency in their code.
+# Haskell: The Ins and Outs of Searching & Replacing Text
 
-# How to:
-To search and replace text in Haskell, we can use the `substitute` function from the `Text.Regex.Posix` module. This function takes in a regular expression pattern, the replacement string, and the input string, and returns the modified string.
+## What & Why?
 
-```Haskell
-import Text.Regex.Posix (substitute)
+Searching and replacing text means finding given sequences of characters (strings) within a larger string and swapping them out for other sequences. This operation is core to text processing, making it invaluable to programmers when manipulating data, performing transformations, or removing unwanted characters.
 
--- Replace all occurrences of "foo" with "bar" in "foobar123"
-substitute "foo" "bar" "foobar123"  -- Output: "barbar123"
+## How to:
 
--- Use a regular expression to replace all non-alphabetic characters with "-"
-substitute "[^a-zA-Z]" "-" "abc123def"  -- Output: "abc-def"
-```
-
-We can also use the `=~` operator to replace text in a more concise way, by specifying the replacement string in the regular expression itself.
+Haskell offers inbuilt string functions, but we'll leverage the `Data.Text` library's `replace` function for this exercise. Install the `text` library if you haven't.
 
 ```Haskell
--- Replace all numbers with their respective cubes in "1 2 3"
-"1 2 3" =~ "([0-9]+)" :: String  -- Output: "1 8 27"
+import Data.Text (replace, pack, unpack)
+
+searchAndReplace :: String -> String -> String -> String
+searchAndReplace old new text = unpack $ replace (pack old) (pack new) (pack text)
 ```
 
-# Deep Dive:
-Searching and replacing text has been a fundamental task in programming since the early days of computing, and various methods have been developed over time. In Haskell, the `substitute` function uses POSIX regular expressions, which are powerful tools for string manipulation. However, alternative methods, such as using the `replace` function from the `Data.List.Utils` module or implementing our own custom replace function using recursion, also exist.
+This function works by converting `String` values to `Text`, applying `replace`, then converting back to `String`. 
 
-Internally, the `substitute` function uses the `Text.Regex.Posix.ByteString` module to handle input as bytestrings, which can be more efficient than working with characters directly. Additionally, Haskell's strong type system ensures that our regular expressions are validated at compile time, reducing the chances of runtime errors.
+Let's give it a spin:
 
-# See Also:
-- [Haskell documentation on searching and replacing text](https://hackage.haskell.org/package/regex-posix-0.96.0.0/docs/Text-Regex-Posix.html#v:substitute)
-- [Tutorial on using regular expressions in Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/parsing-floats-with-regular-expressions)
-- [Alternative string manipulation methods in Haskell](https://hackage.haskell.org/package/base/docs/Data-String.html)
+```Haskell
+main :: IO ()
+main = do
+    let old = "banana"
+    let new = "apple"
+    let text = "I love bananas. Do you love bananas too?"
+    putStrLn (searchAndReplace old new text)
+```
+
+This script will output:
+
+```Haskell
+"I love apples. Do you love apples too?"
+```
+
+Bingo! We've replaced all occurrences of "banana" with "apple".
+
+## Deep Dive
+
+Haskell's historical favor for list processing reflects in its core string handling, treating strings as lists of characters. However, this approach isn't ideal for larger applications due to inefficiency. The Haskell `text` library, enacted in 2009, offers high-performance, memory-efficient string processing.
+
+Alternatives include the `stringsearch` library, providing more advanced capabilities like Boyer-Moore and Knuth-Morris-Pratt algorithms. Though `text` is perfectly sufficient for most basic operations and keeps code clean by resembling standard string functions.
+
+While `replace` seems straightforward, it performs multiple transformations: `pack` converts `String` to `Text`, `replace` does the swapping, and `unpack` converts back to `String`.
+
+## See Also
+
+* [Haskell Text Library](https://hackage.haskell.org/package/text)
+* [Intro To Haskell](https://www.futurelearn.com/info/courses/functional-programming-haskell/0/steps/27233)
+* [Haskell String Vs Text Vs ByteString](https://williamyaoh.com/posts/2020-04-14-strings-in-haskell.html)
+* [Haskell stringsearch Library](https://hackage.haskell.org/package/stringsearch)

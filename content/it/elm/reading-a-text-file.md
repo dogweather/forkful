@@ -1,7 +1,7 @@
 ---
-title:                "Leggere un file di testo"
-html_title:           "Elm: Leggere un file di testo"
-simple_title:         "Leggere un file di testo"
+title:                "Lettura di un file di testo"
+html_title:           "C: Lettura di un file di testo"
+simple_title:         "Lettura di un file di testo"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,39 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 
+## Cos'è & Perché?
 
-Cosa & Perché?
-
-Leggere un file di testo è un'operazione molto comune per i programmatori. Consiste semplicemente nella lettura e l'interpretazione del contenuto di un file di testo piuttosto che di un documento o di un database. I programmatori lo fanno per accedere ai dati e utilizzarli nel loro codice.
+Leggere un file di testo significa accedere e interpretare i dati memorizzati al suo interno. Lo facciamo principalmente per operare su tali dati tramite il codice.
 
 ## Come fare:
 
-Per leggere un file di testo in Elm, è possibile utilizzare il seguente codice:
+In Elm, non possiamo leggere direttamente i file di testo a causa del suo ambiente sicuro. Tuttavia, con HTML5 FileReader API, possiamo ottenere i dati. Ecco un esempio pratico:
 
 ```Elm
-import File
-import Text
+type alias Model =
+    { file : Maybe File
+    , content : String
+    }
 
-file: String -> Cmd msg
-file filePath =
-   File.readAsText filePath
-      |> Task.map (Text.lines >> msg)
+type Msg
+    = GotFile (Maybe File)
+    | ReadContent (Result FileReader.Error String)
 
-msg: List String -> msg
-msg lines =
-   -- Fare qualcosa con il contenuto del file
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GotFile maybeFile ->
+            case maybeFile of
+                Nothing ->
+                    ( { model | file = Nothing }, Cmd.none )
 
+                Just file ->
+                    ( { model | file = Just file }
+                    , File.readAsText file
+                        |> Task.attempt ReadContent
+                    )
+
+        ReadContent (Ok content) ->
+            ( { model | content = content }, Cmd.none )
+
+        ReadContent (Err _) ->
+            ( { model | content = "" }, Cmd.none )
 ```
 
-L'output di questo codice sarà una lista di righe del file di testo, che è la struttura dati più comune utilizzata per rappresentare il contenuto di un file di testo.
+Nota: il sopracitato esempio si assume l'uso di elm/file per gestire i files.
 
-## Approfondimento:
+## Approfondimento
 
-Leggere un file di testo è una funzionalità fondamentale nella programmazione. È necessario per accedere ai dati esterni al programma, come ad esempio un database o risorse di rete. Una delle alternative a questa operazione è quella di scrivere un parser personalizzato che analizzi il contenuto del file di testo e lo converte in una struttura dati utilizzabile all'interno del codice.
-Per implementare la lettura di un file di testo in Elm, è necessario importare il modulo File e utilizzare la funzione `readAsText` per ottenere il contenuto del file in una Task. Alcune altre funzioni utili per la manipolazione di file di testo in Elm includono `File.write`, per scrivere su un file, e `File.toBytes` per ottenere i byte di un file come lista.
+Elm è un linguaggio di programmazione funzionale per il web front-end. Pone un'importante enfasi sulla sicurezza, ed è per questo motivo che l'interazione diretta con i file di testo non è possibile in Elm. Tuttavia, utilizzando l'API FileReader di HTML5, siamo in grado di leggere file di testo nel browser.
 
-## Vedi anche:
+Alcune alternative a Elm per la lettura di file di testo includono JavaScript, Python e Ruby. Ognuna di queste lingue ha le sue particolari implementazioni per la lettura dei file.
 
-- [Documentazione ufficiale di Elm su File](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Esempio di lettura di un file in Elm](https://ellie-app.com/5wPfY8WP5Vza1)
+Nell'implementazione della lettura dei file in Elm, ci stiamo basando nel moderno modello di promesse JavaScript, rispecchiandolo in Elm con l'uso dei Task.
+
+## Vedi anche
+
+1. Documentazione ufficiale di Elm: https://guide.elm-lang.org/
+2. API FileReader di HTML5: https://developer.mozilla.org/it/docs/Web/API/FileReader  
+3. Libreria elm/file: https://package.elm-lang.org/packages/elm/file/latest/

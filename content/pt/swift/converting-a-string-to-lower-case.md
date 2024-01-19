@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Swift: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,20 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Converter uma string para letras minúsculas é uma técnica comum usada por programadores para garantir que não haja distinção entre letras maiúsculas e minúsculas em uma string. Isso é especialmente útil ao comparar strings ou ao lidar com entrada do usuário.
+## O Que & Por Quê?
 
-## Como fazer:
-Para converter uma string para minúsculas em Swift, use o método `lowercased()`. Por exemplo:
+Converter uma string para minúscula é simplesmente mudar todas as letras maiúsculas em uma string para letras minúsculas. Os programadores fazem isso para normalizar os dados, permitindo comparações mais precisas e simplificadas entre strings.
+
+## Como Fazer:
+
+Vamos usar o método **lowercased()** da classe String em Swift.
 
 ```Swift
-let exemplo = "Olá, Mundo!"
-let exemploMinusculo = exemplo.lowercased()
-print(exemploMinusculo) // saída: olá, mundo!
+let textoOriginal = "OLÁ, MUNDO!"
+let textoMinúsculo = textoOriginal.lowercased()
+print(textoMinúsculo) 
+// Saída: "olá, mundo!"
 ```
 
-## Mergulho Profundo:
-Converter strings para minúsculas é uma prática comum no mundo da programação. Originalmente, era necessário fazer isso manualmente, mas com a introdução do Unicode na linguagem de programação Swift, isso se tornou muito mais fácil. Além disso, existem outras opções, como o método `capitalized`, que converte apenas a primeira letra de cada palavra em maiúscula.
+## Aprofundamento
 
-## Veja também:
-Para mais informações sobre o método `lowercased` e outros métodos de processamento de strings em Swift, consulte a documentação oficial da linguagem: [Strings and Characters - Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html).
+A conversão de string para minúsculas tem sido uma prática comum por muitos anos, principalmente porque permite um tratamento uniforme das entradas, independentemente de como os dados foram inicialmente inseridos.
+
+Em Swift, além do método **lowercased()**, você pode usar a função **localizedLowercase** que retorna a representação em minúsculas da string de acordo com as regras do local atual.
+
+```Swift
+let textoOriginal = "OLÁ, MUNDO!"
+let textoMinúsculo = textoOriginal.localizedLowercase
+print(textoMinúsculo)
+// Saída: "olá, mundo!"  
+```
+
+Agora, se falarmos sobre detalhes de implementação, o método **lowercased()** percorre a string e para cada caracter verifica se é uma letra maiúscula. Se for, ele a substitui pela versão minúscula.
+
+## Veja Também:
+
+1. [String Manipulation in Swift](https://developer.apple.com/documentation/swift/string)
+2. [Swift Documentation: lowercased() function](https://developer.apple.com/documentation/swift/string/2290197-lowercased)
+3. [Swift Documentation: localizedLowercase](https://developer.apple.com/documentation/swift/string/1641535-localizedlowercase)
+
+Lembre-se de que, ao manipular strings, é importante entender bem as funções que está a usar para evitar erros inesperados. E sempre que ficar em dúvida, consulte a documentação oficial do Swift fornecida pela Apple.

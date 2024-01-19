@@ -1,7 +1,7 @@
 ---
-title:                "提取子串"
-html_title:           "Haskell: 提取子串"
-simple_title:         "提取子串"
+title:                "提取子字符串"
+html_title:           "Arduino: 提取子字符串"
+simple_title:         "提取子字符串"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,28 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是子字符串，为什么程序员会用到它？
+## 什么和为什么？
 
-子字符串指的是从一个字符串中提取出一部分字符组成新的字符串。程序员经常使用子字符串来处理文本，比如搜索和替换特定的字词。这种技术也可以用来解析复杂的文本数据。
+在编程中，提取子字符串是从特定的字符串中获取其中的一部分数据的过程。我们经常需要提取子字符串以获取并处理特定的信息。
 
-## 如何提取子字符串：
+## 如何做：
 
-使用Haskell中的```take```和```drop```函数可以方便地提取子字符串。比如，如果我们有一个字符串"Hello world!"，我们可以使用```take```和```drop```函数来提取出前5个字符"Hello"和后6个字符"world!"。代码示例如下：
+在 Haskell 中，我们可以使用 "take", "drop" 和 "splitAt" 函数来提取子字符串。让我们看一些例子：
 
 ```Haskell
-let str = "Hello world!"
-take 5 str                 -- Output: "Hello"
-drop 6 str                 -- Output: "world!"
+main = do
+  let str = "Haskell编程"
+  print $ take 7 str
+  print $ drop 7 str
+  print $ splitAt 7 str
 ```
 
-## 深入探讨
+当我们运行上面的代码，结果是：
 
-提取子字符串的概念并不新鲜，在Haskell的前身Miranda语言中就有相关的函数。除了使用```take```和```drop```函数，还可以使用```substr```函数来提取子字符串，它接受一个起始位置和提取的长度作为参数。然而，```take```和```drop```函数更加灵活，可以通过结合使用来实现更复杂的提取操作。
+```Haskell
+"Haskell"
+"编程"
+("Haskell", "编程")
+```
 
-## 查看更多信息
+## 深入研究
 
-了解更多有关提取子字符串的信息，请参考以下资源：
+提取子字符串功能最早来源于传统的命令行文本处理工具，如 "cut" 和 "awk"。在Haskell中，"take" 和 "drop" 的实现详细依赖于惰性求值，只有在需要的时候才会求值。
 
-- [Haskell字符串文档](https://www.haskell.org/onlinereport/standard-prelude.html#g:21)
-- [Haskell字符串函数教程](https://wiki.haskell.org/String_functions)
-- [Haskell字符串模式匹配教程](https://wiki.haskell.org/Pattern_matching)
+对于提取子字符串的方法，我们也可以考虑使用其他的库，如 "Text.Regex"，以支持更复杂的字符串匹配和提取，但这通常需要更复杂的实现和额外的工作。
+
+## 参考资料
+
+Haskell substring extraction:
+https://stackoverflow.com/questions/7869/substring-in-haskell
+
+Haskell library string-functions:
+https://hackage.haskell.org/package/string-functions
+
+Haskell string manipulation examples:
+https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/string

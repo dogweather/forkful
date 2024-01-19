@@ -1,7 +1,7 @@
 ---
-title:                "“Mallia vastaavien merkkien poistaminen”"
-html_title:           "PHP: “Mallia vastaavien merkkien poistaminen”"
-simple_title:         "“Mallia vastaavien merkkien poistaminen”"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Merkkien poistaminen, jotka vastaavat jotakin kategoriaa, on tavallinen ohjelmointitekniikka, jota käytetään tietynlaisten merkkijonojen käsittelyyn. Tämä auttaa ohjelmoijia löytämään ja korvaamaan tarpeettomat tai virheelliset merkit tietyissä tapauksissa.
+## Mikä & Miksi?
 
-## Kuinka tehdä:
+Hahmon yhdistävä merkkien poisto on tiettyjen merkkien kohdennettu poistaminen merkkijonosta esimerkiksi /s, p/, r/p/. Ohjelmoijat tekevät näin usein, kun he haluavat puhdistaa tietoa tai muokata syötteitä.
 
-PHP:ssa merkkien poistaminen, jotka vastaavat tiettyä kaavaa, voidaan tehdä käyttämällä ```preg_replace()``` -funktiota. Alla olevassa esimerkissä näytämme, kuinka poistaa välilyönnit merkkijonosta ja tulostaa uuden merkkijonon ilman niitä:
+## Kuinka toimia:
 
+Tässä on yksinkertainen esimerkki PHP:n sisäänrakennetulla `preg_replace()` -funktiolla.
+
+```PHP
+<?php
+$merkkijono = "Hello Pasters! Tervetuloa. 321.";
+$puhdistettu_merkkijono = preg_replace("/[^A-Za-z0-9 ]/", '', $merkkijono);
+echo $puhdistettu_merkkijono;
+?>
 ```
-$merkkijono = "Tämä on esimerkkilause.";
-$uusi_merkkijono = preg_replace('/\s+/', '', $merkkijono);
+Tulos on: "Hello Pasters Tervetuloa 321".
 
-echo $uusi_merkkijono; // Tulostaa "Tämäonesimerkkilause."
-```
+## Syvä sukellus
 
-Vaihtoehtoisesti voimme myös käyttää ```trim()``` -funktiota, joka poistaisi välilyönnit merkkijonon alusta ja lopusta. Alla olevassa esimerkissä näytämme, kuinka tämä toimii:
+Hahmon yhdistävä merkkien poisto on ollut olennainen osa ohjelmointia jo vuosikymmenten ajan. Sen juuret ovat varhaisessa tekstinkäsittelyjä keräilijän ohjelmoinnissa, kun tarvittiin tekniikka ei-toivottujen merkkien poistamiseksi.
 
-```
-$merkkijono = '		Tämä on esimerkkilause.		';
-$uusi_merkkijono = trim($merkkijono);
+Vaihtoehtoja `preg_replace()` toiminnalle ovat str_replace(), strtr() tai jopa omatekoisiin toimintoihin pohjautuvat ratkaisut. Valinta riippuu useista tekijöistä, kuten tehtävästä, suorituskyvyn vaatimuksista ja henkilökohtaisista mieltymyksistä.
 
-echo $uusi_merkkijono; // Tulostaa "Tämä on esimerkkilause."
-```
-
-## Syvällinen sukellus:
-Merkkien poistamisella on pitkä historia ohjelmoinnissa ja sitä on käytetty monissa eri kielissä ja ympäristöissä. Joissakin tapauksissa sitä käytetään myös suorituskyvyn parantamiseen, jos merkkijonon käsittely on välttämätöntä. PHP:ssa on monia muita funktioita, jotka voivat auttaa merkkien käsittelyssä, kuten ```str_replace()```, ```substr()``` ja ```str_split()```.
-
-PHP:ssa on myös mahdollista käyttää erilaisia säännönmukaisia lausekkeita merkkeihin liittyvien kriteerien määrittämiseksi ja poistamiseksi. Tämän avulla ohjelmoijat voivat luoda monimutkaisia skriptejä merkkien käsittelyyn, jotka voivat auttaa heitä korjaamaan tai tarkastelemaan tiettyjä virheitä merkkijonoissa.
+PHP:n `preg_replace()`toiminto luottaa säännöllisten ilmentymien moottoriin, joka tarjoaa erittäin joustavan ja tehokkaan työkalun monimutkaisiin merkkien käsittelytehtäviin.
 
 ## Katso myös:
-- [PHP:n virallinen dokumentaatio merkkien poistamisesta](https://www.php.net/manual/en/function.preg-replace.php)
-- [RegExr - ilmaisinpohjainen työkalu säännönmukaisille lausekkeille](https://regexr.com/)
-- [PHP: Merkkijonon muokkaaminen ja haku -opas YouTube-videona](https://www.youtube.com/watch?v=Fkn96fVUiKI)
+
+1. PHP:n virallinen dokumentaatio säännöllisten ilmentymien käsittelystä: http://www.php.net/manual/en/book.pcre.php
+2. Stack Overflow -keskustelu PHP:n merkkien poisto -toiminnosta: https://stackoverflow.com/questions/1252693/using-regex-to-remove-comma-from-numbers

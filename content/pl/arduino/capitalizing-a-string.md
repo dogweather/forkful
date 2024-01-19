@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana na wielką literę ciągu znaków"
-html_title:           "Arduino: Zmiana na wielką literę ciągu znaków"
-simple_title:         "Zmiana na wielką literę ciągu znaków"
+title:                "Zamiana liter w ciągu na wielkie"
+html_title:           "Arduino: Zamiana liter w ciągu na wielkie"
+simple_title:         "Zamiana liter w ciągu na wielkie"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,18 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Z wielu powodów programiści chcą czasami zmienić niektóre litery w ciągu znaków na duże. Proces ten nazywa się wydobywaniem (ang. capitalization). Pozwala to na lepszą czytelność kodu i ułatwia jego interpretację przez komputer.
 
-## Jak to zrobić?
-Oto przykład kodu w języku Arduino, który wydoba podany ciąg znaków:
+Zwiększanie wartości stringa jest procesem zmieniania wszystkich małych liter w stringach na duże litery. Programiści robią to, aby łatwo porównywać ciągi lub skoncentrować uwagę użytkownika na określonym tekście.
+
+## Jak to zrobić:
+
 ```Arduino
-String ciag = "witaj swiecie";
-Serial.println(ciag.toUpperCase());
+String s = "witam";
+s.toUpperCase();
 ```
-Powyższy kod wypisze na monitorze szeregujnym (ang. serial monitor) ciąg "WITAJ SWIECIE".
 
-## Głębsza analiza
-Historia wydobywania sięga czasów maszyn telegrafiocode.wzór (ang. Morse code). Wówczas było to potrzebne ze względu na ograniczenia techniczne urządzeń i transmisję sygnałów. Obecnie istnieją również inne metody zmiany wielkości liter w ciągach znaków, takie jak konwersja na format ASCII czy użycie pętli do iteracji po każdym znaku.
+Podczas wykonania kodu wejściowego `"witam"`, wyjście będzie wyglądało jak `"WITAM"`.
 
-## Zobacz również
-Jeśli chcesz dowiedzieć się więcej o wydobywaniu, możesz przeczytać o tym w dokumentacji języka Arduino lub poszukać tutoriali w Internecie.
+## Głębsze zrozumienie:
+
+1. Historyczne zaplecze: Koncepcję zwiększania wartości stringów wprowadzono już na wczesnym etapie w językach programowania, aby ułatwić porównywanie ciągów i ułatwić odczytanie pewnych ciągów.
+
+2. Alternatywy: W Arduino możesz także zamienić ciągi na małe litery, używając funkcji `toLowerCase()`.
+
+3. Szczegóły implementacji: Metoda `toUpperCase()` jest wbudowana w bibliotekę łańcuchów Arduino. Przechodzi przez każdą literę w łańcuchu i zamienia ją na wielką literą, jeśli jest to litera mała.
+
+## Zobacz także:
+
+- [Dokumentacja Arduino String](https://arduino.cc/en/ref.string)
+- [Więcej o funkcjach górnych i dolnych liter](https://arduino.cc/en/Tutorial.StringCaseChanges)

@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Clojure: 使用正则表达式"
+html_title:           "Arduino: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,35 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是正则表达式？
-正则表达式是一种用于匹配和处理文本的强大工具。它是基于一组规则和模式来搜索和识别文本中的特定模式。程序员使用正则表达式来查找和检索特定文本、替换或删除文本以及验证输入的格式。
+## 什么和为什么？
 
-为什么程序员需要使用正则表达式？
-正则表达式可以帮助程序员更轻松地处理文本。通过简单的规则和模式，可以快速有效地搜索和处理大量文本数据。这在字词处理、文本分析和数据清理等任务中非常有用。
+正则表达式是一种强大的字符串处理工具，允许我们匹配、查找和替换复杂的文本模式。编程人员使用它们来完成处理文件、验证输入等任务。
 
-如何使用正则表达式？
-首先，在Clojure中导入正则表达式库，如下所示：
-```Clojure
-(import 'java.util.regex.Pattern)
-```
-然后，使用正则表达式的compile函数来创建一个模式对象，并使用它来检索需要的文本。例如，检索一个字符串中所有的数字：
-```Clojure
-(def pattern (Pattern/compile "[0-9]+")) ; 创建一个检索数字的模式
-(def str "abc123def456ghi") ; 需要检索的字符串
-```
-```Clojure
-(re-seq pattern str) ; 输出: ("123" "456")
-```
-如果想要检索的模式包含变量，可以使用re-matches函数，并使用?符号来捕获变量的值。例如，检索一个字符串中所有的英文单词：
-```Clojure
-(def pattern (Pattern/compile "[a-z]+"))
-(re-seq pattern str) ; 输出: ("abc" "def" "ghi")
+## 如何？：
+
+在Clojure中，我们使用 `re-pattern`、`re-matches` 和 `re-seq` 用于正则表达式。`re-pattern` 用于编译正则表达式，`re-matches` 用于完全匹配，`re-seq` 用于部分匹配。
+
+```clojure
+(def re (re-pattern "\\d+")) ;匹配一个或多个数字
+(re-matches re "1234") ;=> "1234"
+(re-seq re "abc 1234 xyz 5678") ;=> ("1234" "5678")
 ```
 
-深入了解
-正则表达式起源于20世纪50年代，但直到1973年，Ken Thompson在Unix系统上加以实现才开始流行。如今，几乎所有的编程语言都支持正则表达式。除了Clojure，还有一些其他选择，比如Perl、Python和Java。在实现细节方面，正则表达式通常基于诸如有限状态机（finite-state machine）等算法来实现。
+## 深入研究： 
 
-相关链接
-- [Clojure正则表达式文档](https://clojure.org/reference/regular_expressions)
-- [正则表达式入门指南](https://www.regular-expressions.info/tutorial.html)
-- [在线正则表达式测试工具](https://regexr.com/)
+1. 历史背景：正则表达式最早在20世纪60年代的Unix工具中出现，作为文本处理的实用工具。
+2. 替代方案：虽然正则表达式非常强大，但并不总是最佳解决方案。有时，简单的字符串操作或解析库可能会更易于使用和理解。
+3. 实现细节：在Clojure中，正则表达式实现是由Java的 `java.util.regex` 类提供的。这意味着Clojure的正则表达式有着和Java完全一样的特性和语法。
+
+## 另请参阅：
+
+- Clojure官方文档中的 [正则表达式](https://clojure.org/guides/learn/regex) 部分，包含许多有用的示例和解释。
+- Java的 [`Pattern`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html) 类文档，可以详细了解其正则表达式语法和特性。

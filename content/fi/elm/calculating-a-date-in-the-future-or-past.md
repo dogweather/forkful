@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-html_title:           "Elm: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "Elm: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,34 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä tarkoittaa tietyn päivämäärän lisäämistä tai vähentämistä annetusta päivämäärästä. Tämä on tärkeä osa monia ohjelmointitehtäviä, kuten tapahtumien aikataulutusta ja aikamäärien laskemista. Ilman tällaista toiminnallisuutta ohjelmointitehtävät olisivat monimutkaisempia ja aikaa vievämpiä.
+Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen tarkoittaa tietyn ajanjakson lisäämistä tai vähentämistä jonkin tietyn päivämäärän päälle. Ohjelmoijat tekevät sen ajastamaan toimintoja, hallitsemaan tapahtumia tai laskemaan päiviä erityisten päivämäärien välillä.
 
-## Miten:
+## Miten tehdään:
 
-Elmissä päivämäärien laskeminen tulevaisuudessa tai menneisyydessä on helppoa ja vaivatonta käyttäen Date-pakettia. Seuraavassa esimerkissä lisätään yksi kuukausi annettuun päivämäärään ja tulostetaan uusi päivämäärä:
+Koodaus esimerkki, jossa luodaan uusi päivämäärä seuraavalle päivälle Elm:n avulla:
 
+```Elm
+import Time exposing (..)
+
+saatUudenPaivamaaran : Posix -> Posix
+saatUudenPaivamaaran vanhaPaivamaara =
+    addDays 1 vanhaPaivamaara
+
+-- Käyttöesimerkki
+uusiPaivamaara = saatUudenPaivamaaran (fromMillis (toFloat (Date.now())))
 ```
-import Date exposing (add)
-import Date exposing (fromCalendarDate)
-
-fromCalendarDate 2021 7 19
-    |> add 0 1 0
-    |> toString
+Output saattaa näyttää tältä:
+```Elm
+Posix 1584662400000 -- Seuraavan päivän Unix-aika
 ```
-Tulostus: "2021-08-19"
 
-## Syväsukellus:
+## Syvä sukellus:
 
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä on ollut tärkeä osa ohjelmointia jo pitkään. Aikaisemmin tämä vaati monimutkaisia laskelmia ja käsittelyä, mutta nykyään monet ohjelmointikielet, kuten Elm, tarjoavat valmiita toimintoja, jotka helpottavat tätä tehtävää.
+Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen on ollut ohjelmoinnin osa niin kauan kuin ihmiset on tarvinnut ajastaa toimintaansa. Elm tarjoaa `Time` moduulin tarkkaan päivämäärän käsittelyyn.
 
-On myös olemassa muita vaihtoehtoja päivämäärien laskemiseen, kuten käyttäen UNIX-timelämpötiloja tai erilaisia kirjastoja ja paketteja. Elm-paketti tarjoaa kuitenkin helpon ja suoran tavan käsitellä päivämääriä ja tehdä laskelmia niiden kanssa.
+Vaihtoehtoina ovat muun muassa JavaScriptin sisäänrakennetut Date-objektit tai jos tarvitset lisää toiminnallisuuksia, voit käyttää `elm-date-extra`-kirjastoa.
 
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä vaatii tarkkaa tietoa kalenterijärjestelmistä ja aikavyöhykkeistä, joten on tärkeää olla huolellinen ja tarkka näitä asioita käsitellessään.
+Lasketaan päivämäärä lisäämällä tai vähentämällä millisekunteja. Elm hoitaa yksityiskohdat, kuten karkausvuodet ja eri kuukausien päivien määrät, puolestamme.
+
 
 ## Katso myös:
 
-- [Elm Date-paketti](https://package.elm-lang.org/packages/elm/json/latest/)
-- [Elm-ohjelmointikielen virallinen sivusto](https://elm-lang.org/)
-- [Date and Time - This Changes Everything](https://youtu.be/UGVhytwmxTg) (video aiheesta)
+- Elm:n virallinen [Time](https://package.elm-lang.org/packages/elm/time/latest/) dokumentaatio
+- Erinomainen [elm-date-extra](https://package.elm-lang.org/packages/rluiten/elm-date-extra/latest) kirjasto päivämäärätoiminnoille

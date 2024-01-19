@@ -1,7 +1,7 @@
 ---
-title:                "HTML 구문 분석"
-html_title:           "Go: HTML 구문 분석"
-simple_title:         "HTML 구문 분석"
+title:                "HTML 파싱"
+html_title:           "Fish Shell: HTML 파싱"
+simple_title:         "HTML 파싱"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,59 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTML Parsing in Go: What and Why?
+## 무엇 & 왜?
 
-HTML parsing is the process of interpreting and analyzing HTML code to extract meaningful information from a web page. Programmers use this technique to scrape data, analyze web content, and build web applications.
+HTML 파싱은 웹 문서의 구조를 이해하고 내용을 추출하는 것입니다. 프로그래머들은 이를 통해 데이터를 수집하고, 웹사이트를 분석하며, 웹 크롤링 같은 작업을 수행합니다.
 
-# How to:
+## 어떻게?
 
 ```Go
 package main
 
 import (
     "fmt"
+    "golang.org/x/net/html"
     "net/http"
-
-    "github.com/PuerkitoBio/goquery"
 )
 
 func main() {
-    // Get the HTML body of a webpage
-    res, err := http.Get("https://www.example.com")
+    resp, err := http.Get("http://example.com")
     if err != nil {
-        fmt.Println("Error:", err)
+        panic(err)
     }
-    defer res.Body.Close()
+    defer resp.Body.Close()
 
-    // Load the HTML document into goquery
-    doc, err := goquery.NewDocumentFromReader(res.Body)
-    if err != nil {
-        fmt.Println("Error:", err)
+    z := html.NewTokenizer(resp.Body)
+
+    for {
+        tt := z.Next()
+        switch {
+        case tt == html.ErrorToken:
+            return
+        case tt == html.StartTagToken:
+            t := z.Token()
+
+            if t.Data == "p" {
+                fmt.Println("We found a paragraph!")
+            }
+        }
     }
-
-    // Find all <a> tags and print the href attribute
-    doc.Find("a").Each(func(i int, s *goquery.Selection) {
-        fmt.Println(s.Attr("href"))
-    })
 }
 ```
 
-Output:
+위의 Go 프로그램이 실행되면 "http://example.com" 웹페이지의 모든 "p" (paragraph) Tags을 찾아 'We found a paragraph!'를 출력합니다.
 
-```
-https://www.example.com
-```
+## 깊이 들여다보기
 
-# Deep Dive
+HTML 파싱은 웹의 태동과 거의 동시에 시작되었으며, 여러가지 방법론과 도구가 이를 지원합니다. Go 언어의 경우, 'golang.org/x/net/html' 패키지가 HTML 파싱을 도와주며, 스트림 기반의 방식을 사용하여 메모리 를 효율적으로 관리합니다. 
 
-HTML parsing has been an essential tool for web developers since the early days of the internet. Before the advent of modern web development frameworks, parsing HTML was the only way to extract data from web pages.
+## 참고
 
-Although there are alternative methods for scraping data, such as using APIs, HTML parsing is still relevant due to its versatility and the sheer amount of data that can be extracted from a single web page.
-
-Go provides various packages and libraries such as goquery, which make parsing HTML in Go a straightforward task. These libraries handle the complexity of parsing HTML and allow developers to focus on building their applications.
-
-# See Also
-
-- [goquery documentation](https://godoc.org/github.com/PuerkitoBio/goquery)
-- [A Beginner's Guide to Web Scraping in Go](https://dev.to/jakubkrawczyk/building-a-simple-web-scraper-in-go-5el8)
-- [scrape - HTML parsing library for Go](https://github.com/yhat/scrape)
+- HTML 파싱 개요: https://en.wikipedia.org/wiki/HTML_parsing
+- Go 라이브러리 문서: https://golang.org/pkg/net/http/
+- Go net/html 패키지: https://godoc.org/golang.org/x/net/html

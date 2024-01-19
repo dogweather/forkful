@@ -1,7 +1,7 @@
 ---
-title:                "Parsowanie HTML"
-html_title:           "Javascript: Parsowanie HTML"
-simple_title:         "Parsowanie HTML"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,26 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robimy?
+## Co i Dlaczego?
+Parsowanie HTML to proces analizowania kodu HTML i przekształcania go w użyteczne dane lub strukturę. Programiści robią to, aby łatwiej manipulować strukturą strony, ekstrahować informacje lub inaczej interaktywować z dokumentem HTML.
 
-W programowaniu, parsowanie HTML to proces analizowania struktury kodu HTML, aby móc wyciągnąć potrzebne informacje. Programiści często używają tego narzędzia, aby odczytać treści ze stron internetowych lub aplikacji.
+## Jak to zrobić:
+Aby przeprowadzić parsowanie HTML w JavaScript, możemy korzystać z interfejsu DOMParser API. Oto prosta demonstracja:
 
-## Jak to zrobić?
+```Javascript
+let tekstHtml = "<h1>Tytuł</h1><p>Paragraf</p>";
+let parser = new DOMParser();
+let dokument = parser.parseFromString(tekstHtml, "text/html");
 
-```javascript
-const htmlContent = "<p>Witaj na mojej stronie!</p>";
-const parser = new DOMParser();
-const parsedHtml = parser.parseFromString(htmlContent, "text/html");
-console.log(parsedHtml.body.textContent);
-// Output: Witaj na mojej stronie!
+console.log(dokument.body.firstChild.textContent);
+console.log(dokument.body.lastChild.textContent);
 ```
 
-## W ciąg głębszy
+Output:
 
-W przeszłości, parsowanie HTML było trudne, ponieważ nie istniały narzędzia do łatwego parsowania dokumentów HTML. Obecnie, istnieje wiele bibliotek i narzędzi, które ułatwiają ten proces, takie jak jQuery czy Cheerio. Można również użyć języków takich jak Python czy PHP, które również mają wbudowane funkcje do parsowania HTML.
+```Javascript
+"Tytuł"
+"Paragraf"
+```
+
+## Na głęboką wodę
+Historia parseing HTML jest blisko związana z historią rozwoju języków znaczników. Początkowo parsowanie HTML było skomplikowane i niewielu programistów rozumiało jak to zrobić, ale z biegiem lat stało się to łatwiejsze dzięki narzędziom takim jak jQuery.
+
+Alternatywą dla DOMParser jest innerHTML, ale jest mniej bezpieczny i może prowadzić do ataków typu cross-site scripting (XSS). Inne narzędzia do parsowania, takie jak `htmlparser2` lub `jsdom`, oferują swoje własne funkcje i mogą być lepiej przystosowane do konkretnych zastosowań.
+
+DOMParser jest wbudowany w większość przeglądarek i przekształca ciąg znaków HTML w obiekty DOM, które są łatwe do manipulowania za pomocą JavaScript. Implementacja będzie zależała od szczegółów konkretnej aplikacji i wymagań.
 
 ## Zobacz także
-
-- [W3Schools HTML DOM Parser](https://www.w3schools.com/js/js_htmldom.asp)
-- [jQuery Official Website](https://jquery.com/)
-- [Cheerio on npm](https://www.npmjs.com/package/cheerio)
+- Dokumentacja DOMParser API - [link](https://developer.mozilla.org/pl/docs/Web/API/DOMParser)
+- Jak zabezpieczyć swoją stronę przed XSS - [link](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet)
+- Pakiet npm htmlparser2 - [link](https://npmjs.com/package/htmlparser2)
+- Pakiet npm jsdom - [link](https://npmjs.com/package/jsdom)

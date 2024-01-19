@@ -1,7 +1,7 @@
 ---
-title:                "Søke og erstatte tekst"
-html_title:           "Python: Søke og erstatte tekst"
-simple_title:         "Søke og erstatte tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,31 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Søking og erstattelse av tekst er en vanlig programmeringsoppgave. Det handler om å finne og erstatte en bestemt del av en tekst med en annen del. Dette kan være nyttig når man ønsker å gjøre endringer i store tekstfiler eller når man ønsker å erstatte gammel kode med ny kode.
+Søking og erstatting av tekst er en måte å lokalisere og endre bestemte segmenter av strenger i koden. Programmerere gjør dette for å manipulere data effektivt, feilsøke, og rationalisere kode.
 
 ## Hvordan:
-For å søke og erstatte tekst i Python kan du bruke innebygde funksjoner som `replace()` og `sub()`. Se eksempler nedenfor for å lære hvordan du kan bruke disse funksjonene i praksis.
+Søking og erstatting tekst i Python kan oppnås ved hjelp av `replace()` -metoden. Her er et enkelt eksempel:
 
-```
-# Eksempel 1: Erstatt et ord i en setning
-setning = "Jeg elsker å programmere."
-ny_setning = setning.replace("programmere", "kode")
-print(ny_setning)
-# Output: Jeg elsker å kode.
-
-# Eksempel 2: Erstatt flere ord i en tekst
-tekst = "Epler, appelsiner, bananer."
-ny_tekst = re.sub("Epler|appelsiner", "jordbær", tekst)
-print(ny_tekst)
-# Output: Jordbær, jordbær, bananer.
+```Python
+tekst = "Jeg elsker eplepai"
+endret_tekst = tekst.replace("eplepai", "blåbærpai")
+print(endret_tekst)
 ```
 
-## Dypdykk:
-Søking og erstatting av tekst har vært en viktig del av programmering siden begynnelsen. Tidligere ble dette gjort manuelt, men i dag har vi avanserte verktøy og funksjoner som gjør det mye enklere. Et alternativ til å bruke innebygde funksjoner i Python er å bruke eksterne moduler som `re` som er spesialisert på å søke og erstatte tekst. Det er også viktig å være oppmerksom på forskjellige metoder og regex-uttrykk som kan brukes for å gjøre søking og erstatting mer effektivt.
+Output:
+
+```Python
+Jeg elsker blåbærpai
+```
+
+I dette tilfellet er "eplepai" erstattet med "blåbærpai" i strengen.
+
+## Dyp dykk:
+Historisk sett har det å søke og erstatte tekst vært en kritisk funksjonalitet i redigering og databehandling. Det finnes mange metoder for å søke og erstatte tekst, inkludert bruk av regulære uttrykk, som kan gi mer fleksibilitet.
+
+I Python blir `replace()` -metoden implementert i strengklassebiblioteket. Hvis ikke ny tekst er gitt, vil `replace()` ganske enkelt fjerne alle forekomster av målteksten.
+
+Alternativt kan du bruke `re` -modulen for mer komplekse søk og erstattinger. Denne modulen tillater bruk av regulære uttrykk.
+
+```Python
+import re
+tekst = "Jeg elsker eplepai og eplejuice"
+endret_tekst = re.sub("eple", "blåbær", tekst)
+print(endret_tekst)
+```
+
+Her erstatter `re.sub` alle forekomster av "eple" med "blåbær".
 
 ## Se også:
-For videre lesning og utforsking av søking og erstatting i Python, kan du sjekke ut følgende ressurser:
-
-- Python dokumentasjon om `replace()` og `sub()`: https://docs.python.org/3/library/stdtypes.html#str.replace https://docs.python.org/3/library/re.html#re.sub
-- En guide til regular expressions i Python: https://realpython.com/regex-python/
-- En tutorial om å søke og erstatte tekst i Python: https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial
+1. Python dokumentasjon - Strengmetoder: https://docs.python.org/3/library/stdtypes.html#string-methods
+2. Python dokumentasjon - 're' modul: https://docs.python.org/3/library/re.html
+3. En grundig veiledning for bruk av regulære uttrykk i Python: https://realpython.com/regex-python/
+4. Søk og erstatt tekst i Python: https://www.geeksforgeeks.org/python-string-replace/

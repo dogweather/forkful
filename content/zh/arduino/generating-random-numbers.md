@@ -1,6 +1,6 @@
 ---
 title:                "生成随机数"
-html_title:           "Arduino: 生成随机数"
+html_title:           "Go: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-生成随机数是指通过计算机程序产生一系列不可预测的数字。程序员这样做的原因是为了增加程序的随机性，使其更加灵活和有趣。
+## 什么和为什么?
 
-## 如何操作：
-下面是一个简单的例子，展示如何通过Arduino生成随机数：
+在编程中，生成随机数是为了创建不可预测的结果。程序员经常使用它们以增加复杂性，例如在游戏设计或加密中。
 
-```arduino
-// 引入随机数库
-#include <stdlib.h>
+## 如何做到：
 
-// 设置随机种子
-randomSeed(analogRead(A0));
+Arduino 提供了一个简单的 `random()` 函数来生成随机数。您只需要为其提供最小值和最大值范围，它就会返回该范围内的随机数。
+例子如下：
 
-// 生成5个随机数
-for (int i = 0; i < 5; i++) {
-  int randomNumber = random(10);
-  Serial.println(randomNumber);
+```Arduino
+void setup() {
+  Serial.begin(9600); // 初始化串口通信
 }
 
-// 示例输出：
-// 5
-// 2
-// 8
-// 3
-// 0
+void loop() {
+  int randNumber = random(10, 100); // 生成10到100之间的随机数
+  Serial.println(randNumber); // 将生成的随机数输出到串口控制台
+  delay(1000); // 延迟1秒
+}
 ```
 
-## 深入了解：
-生成随机数的历史可以追溯到20世纪50年代，当时的计算机程序员发现需要增加随机因素来提高计算机游戏的趣味性。除了使用Arduino内置的随机函数，还可以使用外部模块或传感器来提高随机性。但是，尽管随机数看起来是随意的，但实际上它们是根据特定的算法来生成的。
+以上代码的输出将会是10到100间的一个随机整数，每秒生成一个。
 
-## 参考链接：
-- [Arduino官方文档 - random()](https://www.arduino.cc/reference/zh/language/functions/random-numbers/random/)
-- [哈佛大学课程：随机和模拟 - 随机函数的历史](http://etutorials.org/Misc/computer+science+theory/Part+2+A+Random+Processes+Hidden+Structure/Chapter+13+Randomness+in+Computer+Science/13.2+Random+Algorithms/SOME+CLASSIC+RANDOM+ALGORITHMS/)
-- [解决随机数不随机的问题的方法](https://www.csoonline.com/article/3212878/what-you-need-to-know-about-random-number-generators.html)
+## 深度研究：
+
+虽然 Arduino 的 `random()` 函数看起来简单易用，但背后还有一些历史和实现细节值得我们了解的。
+
+1. 历史背景：随机数生成是计算机科学领域早期就正在探究的问题，早在20世纪50年代，人们就已开始设计硬件随机数生成器，随着时间的推移，出现了众多算法和实现方式。
+
+2. 替代方法：Arduino 还有其他方式可以生成随机数，例如 `rand()` 函数，它和 `random()` 不同的是，它会返回一个完全随机的数，取决于您怎样种子 `srand()`。
+
+3. 实现细节：尽管我们通常说 `random()` 生成了一个"随机数"，实际上它是一个"伪随机数"。这是因为它基于一个固定的算法生成数字，所以如果你多次运行相同的代码，你将会得到同样的结果序列。为了真正的随机，您可以使用 `randomSeed()` 函数，用当前时间作为种子，它可以改变生成的数字序列，使得更接近真正的随机。
+
+## 另请参阅：
+
+1. Arduino 官方文档: [random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/) 函数和 [randomSeed()](https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/) 函数。
+
+2. [每日一编：如何在 Arduino 上生成伪随机数](https://chinese.makezine.com/2013/04/02/daily-arduino-tip-how-to-generate-pseudo-random-numbers-on-an-arduino/)
+
+3. Seifer Tim的博文: [真随机还是伪随机？计算机如何生成随机数](https://medium.com/@timseifer/random-or-pseudo-random-how-computers-generate-random-numbers-74971cd6f131)

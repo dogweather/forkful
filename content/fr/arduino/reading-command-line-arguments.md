@@ -1,7 +1,7 @@
 ---
-title:                "Lire les arguments de ligne de commande"
-html_title:           "Arduino: Lire les arguments de ligne de commande"
-simple_title:         "Lire les arguments de ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,41 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ?
+## Quoi et Pourquoi?
 
-Lire des arguments de ligne de commande est un moyen pour les programmeurs de récupérer des informations saisies par l'utilisateur lors de l'exécution de leur programme. Cela peut être utile pour personnaliser l'exécution du programme en fonction des préférences de l'utilisateur.
+Lire les arguments de la ligne de commande signifie interpréter les options d'input passées lors du lancement d'un programme. Les programmeurs le font pour rendre leurs logiciels plus flexibles et dynamiques.
 
-## Comment faire :
+## Comment faire:
 
-Voici un exemple de code pour lire un argument de ligne de commande dans Arduino :
+Jetez un œil à notre exemple de code. Arduino ne supporte pas directement les arguments de ligne de commande, mais un moyen similaire d'atteindre ce comportement consiste à passer et lire des données provenant du port série.
 
 ```Arduino
+String input;
+
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  if (Serial.available()) {
-    String arg = Serial.readString(); //lit l'argument
-    Serial.println("Argument saisi : " + arg); //affiche l'argument
+  while(Serial.available()){
+    char c = Serial.read();
+    input += c;
+  }
+  
+  if (input.length() > 0) {
+    Serial.println(input);
+    input = "";
   }
 }
 ```
 
-Lors de l'exécution de ce code, l'utilisateur peut saisir un argument dans le moniteur série et celui-ci sera affiché à l'écran.
+Dans cet exemple, tous les caractères entrants sur le port série sont lus et stockés dans une chaîne de caractères. Si une chaîne a été construite, elle est imprimée et la mémoire est ensuite effacée.
 
-Exemple d'entrée utilisateur : "Hello World!"
+## Deep Dive:
 
-Sortie attendue : "Argument saisi : Hello World!"
+Historiquement, la lecture des arguments de ligne de commande est une pratique qui remonte aux jours de Unix. Elle est couramment utilisée dans les langages de programmation basés sur le texte comme C, Perl, et Python.
 
-## Plongée en profondeur :
+Les microcontrôleurs comme Arduino n'ont pas d'accès direct à une ligne de commande, il faut donc utiliser d'autres techniques pour obtenir une fonctionnalité similaire.
 
-Les arguments de ligne de commande sont basés sur le concept plus général des paramètres de la ligne de commande, qui a été introduit dans les systèmes d'exploitation Unix dans les années 1960. Les programmeurs peuvent également utiliser des bibliothèques ou des fonctions spécifiques pour lire des arguments dans Arduino, comme la bibliothèque "CmdParser" ou la fonction "getopt()".
+En alternance, vous pourriez considérer l'utilisation d'un parseur pour lire les commandes spécifiques ou données de configuration depuis une carte SD ou même utiliser un bouclier Ethernet pour recevoir les commandes depuis un serveur web.
 
-## À voir aussi :
+## Voir aussi:
 
-Pour en savoir plus sur l'utilisation des arguments de ligne de commande dans Arduino, vous pouvez consulter ces ressources :
+Visitez le site officiel d'Arduino [ici](https://www.arduino.cc/) pour plus d'informations et de guides sur le travail avec les Arduinos.
 
-- [Documentation officielle Arduino sur la lecture des arguments de ligne de commande](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/)
-- [Exemple de projet utilisant des arguments de ligne de commande dans Arduino](https://github.com/taholmes/arduino-gpio/tree/master/examples/03-commandlineargs)
-- [Vidéo explicative sur les arguments de ligne de commande dans Arduino](https://www.youtube.com/watch?v=0Y9kyChItGU)
+Consultez le [forum de la communauté](https://forum.arduino.cc/) d'Arduino pour plus d'idées sur les projets et les questions techniques.
+
+Enfin, pour une exploration plus approfondie des arguments de ligne de commande dans le contexte de la programmation Unix, voyez [cet article](https://pubs.opengroup.org/onlinepubs/9699919799/functions/getopt.html) de la Single UNIX Specification.

@@ -1,7 +1,7 @@
 ---
-title:                "Mayúsculas de una cadena"
-html_title:           "PowerShell: Mayúsculas de una cadena"
-simple_title:         "Mayúsculas de una cadena"
+title:                "Capitalizando una cadena de caracteres"
+html_title:           "PowerShell: Capitalizando una cadena de caracteres"
+simple_title:         "Capitalizando una cadena de caracteres"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,26 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por qué?
 
-Capitalize una cadena de texto es simplemente convertirla a mayúsculas. Los programadores a menudo lo hacen para normalizar y estandarizar el formato del texto, lo que facilita su manipulación y comparación.
+La capitalización de una cadena consiste en cambiar la primera letra de cada palabra a mayúscula. Los programadores lo hacen para mejorar la legibilidad y la presentación de los textos.
 
 ## ¿Cómo hacerlo?
 
-Utilizar el comando ```.ToUpper()``` en PowerShell es la forma más simple y directa de capitalizar una cadena. Por ejemplo: 
-
-```
+```PowerShell
+# Ejemplo de entrada
 $cadena = "hola mundo"
-$cadena.ToUpper()
+
+# Uso de la función ToTitleCase
+$cadenaCapitalizada = (Get-Culture).TextInfo.ToTitleCase($cadena)
+
+# Visualización de la salida
+Write-Host $cadenaCapitalizada
+```
+El resultado será:
+
+```PowerShell
+Hola Mundo
+```
+## Profundización 
+
+En el pasado, se tenía que hacer una función personalizada para capitalizar las cadenas en PowerShell, ya que esta característica no estaba integrada en las versiones anteriores. Pero con el tiempo, la función ToTitleCase se implementó en .NET y PowerShell la adoptó al ser un shell basado en .NET.
+
+Una alternativa para capitalizar una cadena en PowerShell es utilizando el operador `-replace` con una expresión regular.
+
+```PowerShell
+$cadenaCapitalizada = $cadena -replace '\b\w', { $_.Value.ToUpper() }
 ```
 
-Este código producirá la salida "HOLA MUNDO". 
+Tenga en cuenta que la función `ToTitleCase` de .NET no cambia a minúsculas las letras que están en mayúsculas al principio, solo cambia a mayúsculas las primeras letras en minúsculas. Eso significa que si tienes "HOLA MUNDO", la salida será la misma, "HOLA MUNDO". Si esto te preocupa, podrías convertir toda la cadena a minúsculas antes de aplicar `ToTitleCase`.
 
-## Inmersión profunda
+## Ver También
 
-La capitalización de cadenas de texto ha sido un tema importante en el desarrollo de lenguajes de programación. Antes del uso de las computadoras, los teletipos y las máquinas de escribir solo podían imprimir letras mayúsculas, por lo que era necesario cambiar al modo de mayúsculas para resaltar texto. Sin embargo, en la era de las computadoras, esto ya no era necesario y los lenguajes de programación comenzaron a dar opciones para manejar las cadenas de texto en mayúsculas o minúsculas. Alternativas a la función ```.ToUpper()``` incluyen ```.ToLower()``` y ```.ToTitleCase()```.
+Visita estos enlaces para obtener más información relacionada:
 
-## Ver también
-
-- Documentación de Microsoft para .ToUpper() en PowerShell: https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netframework-4.8
-- Artículo de blog sobre la historia de la capitalización de cadenas: https://stackify.com/quick-history-capitalizing-strings/
+- PowerShell String Manipulation: https://ss64.com/ps/syntax-operators.html
+- .NET TextInfo.ToTitleCase: https://msdn.microsoft.com/en-us/library/system.globalization.textinfo.totitlecase
+- Regex in PowerShell: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions

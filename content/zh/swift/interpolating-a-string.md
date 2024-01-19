@@ -1,7 +1,7 @@
 ---
-title:                "字符串的插值"
-html_title:           "Swift: 字符串的插值"
-simple_title:         "字符串的插值"
+title:                "插值字符串"
+html_title:           "Arduino: 插值字符串"
+simple_title:         "插值字符串"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,23 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么&为什么？
-插值字符串是一种在 Swift 中使用变量和表达式来构建字符串的方法。程序员使用它来方便地将数据插入到字符串中，从而减少重复的代码和提高可读性。
+## 什么 & 为什么？
 
-## 如何实现：
-下面是一个简单的示例，展示了如何使用插值字符串来构建一个打招呼的消息： 
+字符串插值是一种构建新字符串值的方式，能在其中包含常量、变量、字面值和表达式的值。程序员使用它来直观、清晰地定义和控制文本数据的结构，使代码更易于阅读和理解。
+
+## 如何操作：
+
+Swift 中字符串插值的标准语法：
+
 ```Swift
-let name = "小明"
-let greeting = "你好，\(name)！欢迎来到 Swift 世界。"
-print(greeting)
+let name = "张三"
+let greeting = "你好，\(name)！" 
+print(greeting) 
 ```
-输出结果将是： 
-```
-你好，小明！欢迎来到 Swift 世界。
+输出：
+
+```Swift
+你好，张三！
 ```
 
-## 深入了解：
-插值字符串的概念可以追溯到 C 语言，被称为 "格式化字符串"。在 Swift 中，还有另一种类似的方法，使用 `String(format: String, arguments: [CVarArg])` 函数来实现。但插值字符串相比之下更加简洁易懂，并且能直接在字符串中嵌入变量名。在实现上，Swift 编译器将插值字符串转换为普通的字符串拼接操作，因此性能并不会受到影响。
+在 `\( ... )` 内部，我们可以插入代码。
 
-## 参考资料：
-了解更多关于字符串的内容，可以参考苹果官方文档：https://developer.apple.com/documentation/swift/string
+```Swift
+let apples = 3
+print("我有\(apples)个苹果。")
+```
+输出：
+
+```Swift
+我有3个苹果。
+```
+## 深入剖析
+
+1. **历史背景**：Swift 在 1.0 版本引入了字符串插值，现在它成为标准的字符串操作方式。
+2. **替代方案**：在 Swift 之前的编程语言中，我们常常使用 `+` 操作符连接字符串，或使用格式说明符，例如 `%@`，然后调用 `String(format:args:)` 方法。
+3. **实现细节**：Swift 是通过将运算符 `+` 重载为字符串连接操作符来实现字符串插值的。在Swift中，有效的插值仅限于在 `\( ... )` 中可以求值的表达式。
+
+## 参考资料
+
+欲了解更多关于 Swift 的字符串插值，可以访问官方文档：
+https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html 
+
+有关 Swift 字符串的详细讲解，可以查看这篇博客：
+https://www.hackingwithswift.com/articles/162/how-to-use-string-interpolation-in-swift

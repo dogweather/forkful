@@ -1,7 +1,7 @@
 ---
-title:                "Jämföring av två datum"
-html_title:           "TypeScript: Jämföring av två datum"
-simple_title:         "Jämföring av två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,45 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Jämförelse av två datum är en vanlig uppgift för programmerare. Det är ett sätt att bestämma vilket av två datum som är större eller mindre, och det kan vara användbart vid sortering eller filtering av data.
+Att jämföra två datum innebär att avgöra om ett datum är tidigare, samma, eller senare än ett annat datum. Programmerare gör detta för att utföra tidsbaserade operationer, exempelvis för att spåra händelseordning eller beräkna tidsskillnad.
 
-## Hur gör man:
-Du kan använda Date-objektet i TypeScript för att jämföra två datum. Här är ett exempel på hur man kan göra det:
+## Hur man gör:
+Här är ett exempel på hur man jämför två datum i TypeScript:
 
 ```TypeScript
-let date1: Date = new Date(2020, 0, 1);
-let date2: Date = new Date(2020, 1, 1);
+let datum1 = new Date('2022-01-01');
+let datum2 = new Date('2022-12-31');
 
-//För att jämföra om date1 är före date2
-if (date1 < date2) {
-   console.log("date1 är mindre än date2");
-}
-
-//För att jämföra om date1 är efter date2
-if (date1 > date2) {
-   console.log("date1 är större än date2");
-}
-
-//För att jämföra om date1 och date2 är samma datum
-if (date1 === date2) {
-   console.log("date1 och date2 är samma datum");
+if(datum1 > datum2){
+  console.log('Datum1 är senare än Datum2');
+} else if(datum1 < datum2){
+  console.log('Datum1 är tidigare än Datum2');
+} else {
+  console.log('Datum1 är samma som Datum2');
 }
 ```
 
-Resultatet av detta skulle vara:
+I detta exempel kommer output att bli 'Datum1 är tidigare än Datum2'.
 
-```
-date1 är mindre än date2
-```
+## Djupdykning
+Funktionen att jämföra datum introducerades tidigt i programmeringsspråk, framförallt på grund av dess betydelse för organisering och hantering av data baserad på tidsstämplar.
 
-## Djupdykning:
-Jämförelse av datum har funnits länge inom programmering och har alltid varit en viktig uppgift för att hantera och analysera datumdata. Innan Date-objektet introducerades användes numeriska värden för datum och tider, vilket var mer komplicerat att hantera.
+Som alternativ kan du använda bibliotek som moment.js för att jämföra datum, men JavaScript och TypeScript har inbyggd funktionalitet som fungerar lika bra.
 
-Det finns också andra sätt att jämföra datum i TypeScript, såsom användning av ```getTime()``` funktionen som returnerar antalet millisekunder som har passerat sedan 1 januari 1970.
+När datumobjekt jämförs i JavaScript och TypeScript, omvandlas de faktiskt till timestamp (antal millisekunder sedan 1 januari 1970) innan jämförelsen äger rum. Detta är detaljen som möjliggör jämförelseoperationerna.
 
-När man jämför datum är det också viktigt att ta hänsyn till olika tidszoner och sommartid, vilket kan påverka resultatet av jämförelsen.
+## Se även
+För vidare läsning om hantering av datum i TypeScript, se följande källor:
 
-## Se även:
-- [Date-objektet i TypeScript](https://www.typescriptlang.org/docs/handbook/standard-dates.html)
-- [getTime() funktionen i JavaScript](https://www.w3schools.com/jsref/jsref_gettime.asp)
-- [Tidszon och sommartid i JavaScript](https://momentjs.com/docs/#/manipulating/timezone/)
+- [Date - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Working with Dates in TypeScript](https://typeofnan.dev/working-with-dates-in-typescript/)
+
+Observera att jämföra datum kan vara mer komplicerat i vissa situationer, som att hantera tidszoner och skottår. Var noga med att även förstå dessa koncept.

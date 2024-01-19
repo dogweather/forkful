@@ -1,6 +1,6 @@
 ---
 title:                "Hämta aktuellt datum"
-html_title:           "Javascript: Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
 simple_title:         "Hämta aktuellt datum"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,41 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+# Arbeta med dagens datum i JavaScript
 
-Att hämta det aktuella datumet i Javascript är ett vanligt programmeringsproblem. Det är användbart när man behöver visa datumet på en webbsida eller när man vill beräkna tiden mellan två datum.
+## Vad och Varför?
 
-# Hur gör man?
+Att hämta dagens datum i JavaScript innebär att du får en dynamisk tidsstämpel som representerar det nuvarande ögonblicket. Det är värdefullt för att spåra händelser, logga data och skapa funktioner baserade på tid.
 
-Det finns flera sätt att hämta det aktuella datumet i Javascript. Ett enkelt sätt är att använda Date-objektet och dess inbyggda metoder. Här är ett exempel på hur man kan göra det:
+## Hur man gör:
 
-```Javascript
-let currentDate = new Date();
-console.log(currentDate);
-```
-
-Detta kommer att skriva ut det aktuella datumet och tiden i konsolen, som t.ex. "Tue Jun 22 2021 11:31:24 GMT+0200 (Central European Summer Time)".
-
-Om man bara vill hämta datumet utan tiden kan man använda metoden ```getDate()```:
+Här följer en kodsnutt som visar hur du hämtar dagens datum i JavaScript:
 
 ```Javascript
-let currentDate = new Date();
-let date = currentDate.getDate();
-console.log(date);
+let idag = new Date();
+console.log(idag);
 ```
 
-Detta kommer att skriva ut det aktuella datumet, som t.ex. "22".
+Detta ger en utmatning som ser ut något så här:
 
-# Fördjupning
+```Javascript
+2022-03-04T08:00:00.000Z
+```
 
-Att skapa och manipulera datum i datorprogram är ett vanligt problem som har funnits sedan de första programmeringsspråken utvecklades. Tidigare fanns inte inbyggda funktioner för detta och man var tvungen att skriva mer komplicerad kod för att få ut det aktuella datumet.
+Vi kan också bryta ner datumobjektet till specifika delar:
 
-Numera finns det också andra sätt att hämta det aktuella datumet i Javascript, som t.ex. att använda bibliotek som Moment.js eller Day.js. Dessa bibliotek erbjuder fler möjligheter och är extra användbara om man behöver bearbeta eller formatera datumet på olika sätt.
+```Javascript
+let idag = new Date();
+console.log(`År: ${idag.getFullYear()} Månad: ${idag.getMonth()} Dag: ${idag.getDate()}`);
+```
 
-För att implementera detta i din egna kod behöver du först skapa ett Date-objekt och sedan använda dess inbyggda metoder för att hämta önskad information. Det är också viktigt att vara medveten om skillnader i datumformat mellan olika länder och att göra nödvändiga justeringar.
+Detta skapar följande utmatning:
 
-# Se även
+```Javascript
+År: 2022 Månad: 3 Dag: 4
+```
 
-- [Mozilla Developer Network - Date](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
-- [Day.js](https://day.js.org/)
+## Djupdykning
+
+Hämtning av dagens datum i JavaScript är en rutin sak, men det har en rik historisk kontext. JavaScripts Date-objekt introducerades i den första utgåvan av ECMAScript (ES1) 1997.
+
+Det finns alternativ att ta hänsyn till. Om du arbetar med komplexa datum och tidshantering, kan bibliotek som Moment.js eller Day.js vara användbara. Dessa bibliotek erbjuder mer robusta verktyg för att hantera tidszoner, datumformat och beräkningar.
+
+JavaScripts datumobjekt fungerar genom att lagra antalet millisekunder sedan Unixepoken (01 januari 1970, vid midnatt UTC). När du skapar ett nytt datumobjekt utan argument (`new Date()`) returneras antalet millisekunder från Unixepoken till nuvarande tidpunkt.
+
+## Se också
+
+Om du vill läsa mer om datum och tid i JavaScript, kolla in följande källor:
+
+- [MDN dokumentation om Date objektet](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [JavaScript.info guide till datum och tid](https://javascript.info/date)
+- [Moment.js officiella webbplats](https://momentjs.com/)
+- [Day.js officiella webbsida](https://day.js.org/)

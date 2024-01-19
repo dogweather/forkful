@@ -1,6 +1,6 @@
 ---
 title:                "文字列の連結"
-html_title:           "Gleam: 文字列の連結"
+html_title:           "Bash: 文字列の連結"
 simple_title:         "文字列の連結"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なにとなぜ？
-文字列を連結するとは、簡単に言えば、２つの文を１つに結合することです。プログラマーがこれをする理由は、テキストを効率的に操作し、異なるメッセージを作成するためです。
+## 何となぜ？
 
-## 手順：
-下のように,```Gleam ... ```コードブロック内のコーディングの例と出力を見てみましょう。
+文字列の連結とは、複数の文字列を一つにまとめる操作を指す。文字列の組み合わせや改行追加など、データの整形を容易にするためにプログラマーは文字列を連結する。
+
+## 手順
+
+ここでは、Gleamでの文字列連結の例を示します。
 
 ```Gleam
-let greeting = "Hello"
-let name = "Sara"
-let message = greeting <> name
-
-IO.println(message)
+let str1 = "こんにちは"
+let str2 = "、"
+let str3 = "世界"
+let full_str = str1 ++ str2 ++ str3
+io.println(full_str) //--> "こんにちは、世界"
 ```
 
-出力：
+このプログラムでは、3つの文字列を `++` 演算子を使って結合し、結果を表示しています。
 
-```
-HelloSara
-```
+## 深掘り
 
-## 深く掘り下げる：
-（1）歴史的な背景：文字列の結合は、プログラミング言語で一般的に使われてきました。多くの言語では、基本的な機能として組み込まれています。
-（2）代替手法：Gleamには、他にも使用できるテキスト操作のツールがあります。例えば、部分文字列を取得することができます。
-（3）実装の詳細：Gleamでは、文字列を連結するために`<>`演算子を使います。この演算子は、左側の式に右側の式を追加して文字列を作成します。
+文字列を連結するというのは、プログラミングの歴史の中で常に使われてきた手法です。これには代替手段もあります、如何に例えば、`interp`関数を使うことでマークと値を組み合わせるなどがあります。しかし、Gleamでは基本的に文字列を連結する際には `++` 演算子を使います。これは、GleamがErlang VM上で動作し、Erlangではリスト（この場合、文字列）の連結が `++` 演算子で行われるためです。 
 
-## 参考：
-関連する情報源へのリンク：
-- [Gleamドキュメント：文字列の結合](https://gleam.run/documentation/guides-and-tutorials/concatenation)
-- [Gleam GitHubリポジトリ](https://github.com/gleam-lang/gleam)
+## 参考リンク
+
+- [Gleam公式ドキュメント](https://gleam.run/docs/introduction/): Gleamの概要や基本的な特性について詳しく説明しています。
+- [Erlangのリストの扱い](http://erlang.org/doc/programming_examples/list_processing.html): 文字列連結の背後にあるErlangのリスト操作についての詳細です。
+- [Gleamの文字列操作](https://gleam.run/book/tour/strings.html): Gleamでの他の文字列操作についての情報。

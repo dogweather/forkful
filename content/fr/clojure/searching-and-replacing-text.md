@@ -1,7 +1,7 @@
 ---
-title:                "Rechercher et remplacer du texte"
-html_title:           "Clojure: Rechercher et remplacer du texte"
-simple_title:         "Rechercher et remplacer du texte"
+title:                "Recherche et remplacement de texte"
+html_title:           "Arduino: Recherche et remplacement de texte"
+simple_title:         "Recherche et remplacement de texte"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi on le fait ?
+# La recherche et le remplacement de textes dans Clojure
 
-Le remplacement de texte est une opération courante dans la programmation, qui consiste à trouver une chaîne de caractères dans un texte et à la remplacer par une autre chaîne. Les programmeurs le font souvent pour automatiser certaines tâches fastidieuses et pour effectuer des modifications en masse dans leur code.
+## Quoi et Pourquoi?
+La recherche et le remplacement de texte sont des opérations fondamentales dans la programmation. Elles permettent aux développeurs d'ajuster le contenu textuel et de manipuler les données d'une manière flexible et efficace.
 
-## Comment faire :
-
-Voici un exemple de code en Clojure pour effectuer un remplacement de texte :
-
-```Clojure
-(defn replace [text from to]
-  (clojure.string/replace text from to))
-```
-
-Lorsque nous appelons cette fonction avec le texte en premier argument, la chaîne à remplacer en deuxième argument et la chaîne de remplacement en troisième argument, la fonction retourne le texte avec toutes les occurrences de la chaîne remplacées.
-
-Par exemple, si nous avons le texte suivant :
+## Comment faire:
+Dans Clojure, nous utilisons la fonction `clojure.string/replace` pour chercher et remplacer du texte. Voici comment l'utiliser :
 
 ```Clojure
-(def texte "Bonjour le monde")
+(require '[clojure.string :as str])
+
+(defn replace-text [s old new]
+  (str/replace s old new))
+
+(replace-text "Bonjour tout le monde!" "monde" "France")
+;; "Bonjour tout le France!"
 ```
 
-Et que nous appelons notre fonction avec ces arguments :
+## Approfondissement
+Historiquement, la recherche et le remplacement de texte ont été des opérations inhérentes à la programmation depuis ses tout débuts. Elles sont essentielles dans les tâches telles que la transformation de données et la localisation de bugs.
 
-```Clojure
-(replace texte "Bonjour" "Hello")
-```
+En Clojure, `clojure.string/replace` utilise des expressions régulières (regex), qui constituent une fonctionnalité puissante disponible dans la plupart des langages de programmation. Les regex permettent de rechercher des schémas de texte complexes, offrant une grande flexibilité.
 
-Le résultat sera :
+Il existe des alternatives à `clojure.string/replace`, telles que `clojure.string/replace-first`, qui ne remplace que la première occurrence du texte de recherche.
 
-```Clojure
-"Hello le monde"
-```
-
-## Approfondissement :
-
-Le remplacement de texte a été rendu populaire avec l'apparition des expressions régulières, un moyen puissant de rechercher et de remplacer des motifs dans un texte. Cependant, d'autres langages de programmation ont également des fonctions intégrées pour effectuer un remplacement de texte, comme la fonction ```str.replace``` de Python.
-
-En termes d'implémentation, Clojure utilise la bibliothèque de chaînes Java pour effectuer un remplacement de texte. Cela signifie que les mêmes règles et syntaxe s'appliquent que pour la manipulation de chaînes en Java.
-
-## Voir aussi :
-
-- [Documentation officielle de Clojure sur les chaînes](https://clojure.org/reference/java_interop#java-string-methods)
+## Voir aussi
+- Documentation officielle de `clojure.string/replace`: https://clojuredocs.org/clojure.string/replace
+- Tutoriel sur les expressions régulières dans Clojure: https://www.regular-expressions.info/clojure.html
+- Guide pour la manipulation de texte dans Clojure : http://clojure-cookbook.com/chapters/13_strings_and_characters/

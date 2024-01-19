@@ -1,7 +1,7 @@
 ---
-title:                "Invio di una richiesta http con autenticazione di base"
-html_title:           "Haskell: Invio di una richiesta http con autenticazione di base"
-simple_title:         "Invio di una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Autenticazione di base in Haskell: Cos'è e Perché Utilizzarla
+# Invio Richiesta HTTP con Autenticazione Basilare in Haskell
 
-## Cos'è e Perché?
-Invio di una richiesta HTTP con autenticazione di base è il processo di inserimento delle credenziali di accesso (nome utente e password) all'interno di una richiesta HTTP per accedere a risorse protette da restrizioni di accesso. Questo è un modo comune per autenticare le richieste di un client a un server. Solitamente viene utilizzato quando si desidera proteggere l'accesso a determinate risorse, come ad esempio un'API o un'area riservata di un sito web.
+## Che cos'è e perché?
+
+L'invio di una richiesta HTTP con autenticazione basica è un processo in cui un client manda una richiesta al server con le credenziali dell'utente codificate in base64. È un metodo comune per garantire la sicurezza e l'autorizzazione nelle applicazioni web.
 
 ## Come fare:
-Per inviare una richiesta HTTP con autenticazione di base in Haskell, è possibile utilizzare la libreria Network.HTTP.Simple. Il codice seguente mostra un esempio di come inviare una richiesta GET con autenticazione di base:
+
+Per inviare una richiesta HTTP con autenticazione basica in Haskell, puoi usare la libreria `http-conduit`. Installare il pacchetto con il comando `cabal update && cabal install http-conduit`
+
+Ecco un esempio di codice:
 
 ```Haskell
 import Network.HTTP.Simple
+import Network.HTTP.Types.Header
 
-sendRequest :: IO ()
-sendRequest = do
-  request <- parseRequest "GET http://example.com/resource"
-  let auth = basicAuth "username" "password"
-  response <- httpLBS (setRequestBasicAuth auth request)
-  print $ getResponseBody response
+main :: IO ()
+main = do
+  let request' = setRequestBasicAuth "username" "password"
+                $ "http://example.com"
+  response <- httpLBS request'
+
+  putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
+  print $ getResponseHeader "Content-Type" response
+  LBS.putStrLn $ getResponseBody response
 ```
 
-L'esempio sopra utilizza la funzione `basicAuth` per creare un'istanza di `BasicAuth` utilizzando le credenziali fornite. Questa istanza può poi essere passata alla funzione `setRequestBasicAuth`, che a sua volta verrà utilizzata per creare una richiesta con autenticazione di base. Infine, la funzione `httpLBS` viene utilizzata per inviare la richiesta e ottenere una risposta. Il corpo della risposta viene quindi stampato a schermo.
+In questo snippet, stiamo impostando un nome utente e una password sulla richiesta al server. Alla fine, stamperemo il codice di stato, l'intestazione "Content-Type" e il corpo della risposta.
 
-## Deep Dive:
-L'utilizzo dell'autenticazione di base è un approccio semplice ma non sicuro per proteggere l'accesso a risorse. In passato, era uno dei metodi più comuni utilizzati per autenticare richieste HTTP. Tuttavia, a causa della natura non crittografata delle credenziali inviate, è stato spesso criticato per la sua mancanza di sicurezza.
+## Approfondimento
 
-Ciò ha portato alla creazione di alternative più sicure, come ad esempio l'autenticazione a chiave pubblica (SSH). Inoltre, con l'avvento delle tecnologie di autenticazione e autorizzazione basate su token, l'autenticazione di base sta diventando sempre meno popolare.
+L'autenticazione HTTP basica è stata introdotta con la specifica HTTP/1.0 negli anni '90 come metodo semplice e diretto per controllare l'accesso.
 
-Dal punto di vista dell'implementazione, l'autenticazione di base viene utilizzata insieme a vari protocolli di autenticazione, come ad esempio HTTP Digest o OAuth.
+Esistono alternative all'autenticazione basica, come l'autenticazione digest o l'autenticazione token-based. L'autenticazione basica è tuttavia la più semplice da implementare nonostante sia la meno sicura.
 
-## Vedi anche:
-- [Package Network.HTTP.Simple su Hackage](https://hackage.haskell.org/package/http-client)
-- [Specifiche HTTP su w3.org](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
+L'autenticazione basica in Haskell può essere realizzata attraverso la libreria `http-conduit`, che offre un'API di alto livello per l'invio di richieste HTTP.
+
+## Vedi Anche
+
+- Documentazione di http-conduit: http://hackage.haskell.org/package/http-conduit
+- Guida alla sicurezza di HTTP: https://developer.mozilla.org/it/docs/Web/HTTP/Authentication
+- Base64 Encoding: https://www.base64encode.net/base64-url-safe-encoding

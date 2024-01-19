@@ -1,7 +1,7 @@
 ---
-title:                "패턴과 일치하는 문자 삭제하기"
-html_title:           "Clojure: 패턴과 일치하는 문자 삭제하기"
-simple_title:         "패턴과 일치하는 문자 삭제하기"
+title:                "패턴에 일치하는 문자 삭제"
+html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,28 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭘하고 왜?: 
-패턴과 일치하는 문자를 지우는 것은, 프로그래머들이 간단하고 빠르게 특정 문자열을 다룰 수 있도록 해주는 유용한 기술이다. 이 기술을 사용하면, 불필요한 문자를 쉽게 제거할 수 있어 코드를 간결하고 읽기 쉽게 만들 수 있다.
+## 무엇과 왜?
 
-## 어떻게 하나?:
-```Clojure
-;Clojure에서 패턴과 일치하는 문자를 지우는 예제
+특정 패턴에 일치하는 문자를 삭제하는 것이란 코드 내에서 특정 패턴의 문자들을 탐색하고 이들을 제거하는 프로그래밍 기법을 의미합니다. 이런 작업은 불필요한 공백, 특수 문자 등을 없애거나 데이터를 정리하기 위해 주로 사용됩니다.
 
-(defn delete-char [str pattern] ;문자열과 패턴을 매개변수로 받는 함수 선언
-  (apply str (remove #(= % pattern) str))) ;지우고 싶은 패턴이 있는지 확인하고 지우는 함수 적용
+## 이렇게 하세요:
 
-(delete-char "Hello World!" \o) ;"Hello Wld!" 출력
-(delete-char "Clojure is awesome" \e) ;"Clojur is awsm" 출력
+Clojure에서 문자열에서 특정 문자를 제거하는 방법을 살펴보겠습니다. 여기에는 `clojure.string/replace` 함수를 사용하여 선택한 문자를 없애는 방법이 포함됩니다.
 
+```clojure
+(require '[clojure.string :as str])
+
+(defn delete-chars [s chars]
+  (str/replace s #"(?i)[chars]" ""))
+
+(println (delete-chars "Hello, World!" "o"))
+```
+위 코드는 문자열 "Hello, World!"에서 모든 'o'를 제거합니다.
+
+샘플 결과물은 다음과 같습니다:
+```clojure
+"Hell, Wrld!"
+```
+## 심층 분석:
+
+문자열에서 패턴에 일치하는 문자를 제거하는 작업은 옛 컴퓨터 시스템에서 데이터를 정리하거나 파싱하는데 첫 번째로 사용되었습니다. `clojure.string/replace`는 이 문제에 대한 Clojure의 해결책입니다. 이것은 자바의 `java.lang.String` 메서드를 사용하여 구현되었습니다. 
+
+대안으로는 'reduce'와 결합한 'filter'를 사용할 수 있습니다. 이 방법은 좀 더 복잡하지만, 큰 문자열을 처리하는 데 효율적일 수 있습니다.
+
+```clojure
+(defn delete-chars [s chars]
+  (apply str (filter #(not (contains? chars %)) s)))
 ```
 
-## 깊이 파고들기:
-이 기술은 프로그래밍 언어의 역사적인 발전과 관련이 있다. 예전에는 문자열을 다루는 것이 더 어려웠고, 이러한 기능을 사용하지 못했기 때문에 코드가 길어지고 복잡해졌다. 하지만 지금은 이 기술을 사용하여 문자열 처리를 간결하고 쉽게 할 수 있다.
+## 또 보세요:
 
-대안으로, 정규식을 사용하여 패턴과 일치하는 문자를 찾을 수도 있다. 하지만 정규식은 복잡하고 이해하기 어렵기 때문에, 패턴과 일치하는 문자를 지우는 것이 더 간단하고 직관적이다.
+문자열 조작 및 Clojure 프로그래밍에 대한 추가 정보는 다음의 링크를 참조하세요:
 
-Clojure에서 이 기능은 ```remove``` 함수를 사용하여 구현된다. 이 함수는 모든 컬렉션에서 원하는 항목을 제거할 수 있다.
-
-## 관련 자료:
-- [Clojure Documentation](https://clojure.org/)
-- [Regular Expressions in Clojure](https://clojure.org/guides/regular_expressions)
+1. [Clojure.org: String Functions](https://clojure.org/guides/learn/functions#_string_functions)
+2. [Clojure String API Overview](https://clojuredocs.org/clojure.string)
+3. [StackOverFlow: How to remove certain characters from a string using Clojure](https://stackoverflow.com/questions/1920399/string-remove-substrings)

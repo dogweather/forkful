@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "Fish Shell: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?
+## Mitä & Miksi?
+Verkkosivun lataaminen ihmisille suunnitellun verkkoselaimen ulkopuolella on koneellista tiedon keräämistä. Ohjelmoijat tekevät tämän saadakseen tiedot käyttöönsä esimerkiksi analytiikassa tai sisällön indeksoinnissa.
 
-Lataaminen web-sivun ohjelmointina tarkoittaa että tiedot sivulta tallennetaan tietokoneelle. Tämä voi olla hyödyllistä esimerkiksi tietojen keräämiseen tai automatisointiin.
-
-Miten:
-
-Fish Shellin avulla voit ladata web-sivun helposti muutamalla rivillä koodia. Käytämme curl-komentoa lähteenä ja tallennamme sivun tiedot muuttujaan "sivu":
+## Miten:
+Meidän esimerkkimme käyttää `curl` komentoa webbisivun lataamiseen. `curl` on työkalu, jolla voidaan hakea tietoja URL-osoitteista. Koko komennon kirjoitus tapahtuu seuraavasti:
 
 ```Fish Shell
-sivu = curl -s <URL>
+function lataa_webbisivu
+    set sivusto $argv[1]
+    curl $sivusto > sivu.html
+end
 ```
 
-Voimme sitten tulostaa sivun sisällön käyttämällä "echo" komentoa:
+Voidaan kutsua `lataa_webbisivu` -funktiota antamalla sille URL-osoite, esim. Google:
 
 ```Fish Shell
-echo $sivu
+lataa_webbisivu https://www.google.com
 ```
 
-Tämä tulostaa kaiken sivun sisällön konsolille. Voit myös tallentaa tiedot tiedostoon käyttämällä "tee" komentoa:
+Tämä tallentaa Google etusivun `sivu.html` nimiseen tiedostoon.
+
+## Sukellus syvemmälle
+`curl` työkalu on ollut olemassa jo vuodesta 1997 ja se on edelleen aktiivisessa käytössä. Vaikka tässä yhteydeksessä käymme läpi sen käyttöä Fish Shell skriptissä, se on käytettävissä useimmissa ohjelmointiympäristöissä.
+
+Vaihtoehtoisesti voit käyttää `wget` komentoa, joka tarjoaa saman toiminnallisuuden. Ero on lähinnä käytössä ja joidenkin lisäoptioiden saatavuudessa. Fish Shellissä `wget` komennon käyttö näyttää tältä:
 
 ```Fish Shell
-tee sivu.html <<< $sivu
+function lataa_webbisivu
+    set sivusto $argv[1]
+    wget -O sivu.html $sivusto
+end
 ```
 
-## Syvällistä tietoa:
+`curl` ja `wget` suorittavat GET pyyntöjen lähettämisen HTTP protokollan yli. Käytännössä tietokanta pyytää tietoja verkkopalvelimelta, jossa verkkosivu on sijoitettu.
 
-Lataaminen web-sivun ei ole uusi käsite, mutta se on yleistynyt entisestään nopeiden internetyhteyksien myötä. On myös muita tapoja ladata sivuja, kuten esimerkiksi käyttäen Pythonin "urllib" kirjastoa.
-
-"curl" komento on yleisesti käytössä Unix-järjestelmissä ja tarjoaa useita erilaisia ominaisuuksia, kuten esimerkiksi latausten jatkaminen ja verkkotunnusten tunnistaminen.
-
-## Katso myös:
-
-* [Fish Shell dokumentaatio](https://fishshell.com/docs/current/index.html)
-* [Curl manuaali](https://curl.se/docs/manpage.html)
-* [Urllib dokumentaatio](https://docs.python.org/3/library/urllib.html)
+## Katso lisäksi
+Curl komennon dokumentaatio: https://curl.haxx.se/docs/manpage.html
+Wget komennon dokumentaatio: https://www.gnu.org/software/wget/manual/wget.html
+Fish Shellin dokumentaatio: https://fishshell.com/docs/current/index.html
+HTTP protokolla: https://fi.wikipedia.org/wiki/Hypertekstinsiirtoprotokolla

@@ -1,7 +1,7 @@
 ---
-title:                "字符串大写化"
-html_title:           "Javascript: 字符串大写化"
-simple_title:         "字符串大写化"
+title:                "将字符串大写"
+html_title:           "Javascript: 将字符串大写"
+simple_title:         "将字符串大写"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是大写字符串和为什么要使用它？
+## 是什么以及为什么？
 
-在编程中，“大写字符串”是指将字符串中的所有字符都转换为大写形式。这样做的原因是为了在代码中统一风格，更容易识别和比较字符串。另外，某些情况下，输入的字符串可能会包含大小写不规范的错误，使用大写字符串可以避免这个问题。
+大写字符串的操作是什么呢？这是一种将字符串中的每个单词的第一个字母转换为大写的过程。那为什么程序员需要这样做呢？通常，这样做是为了格式化输出，例如标题、人名等。
 
-## 如何使用：
+## 如何做？
+
+以下是大写字符串的Javascript代码示例：
 
 ```Javascript
-// 使用toUpperCase()方法将字符串转换为大写形式
-let str = "hello world";
-let uppercaseStr = str.toUpperCase();
-console.log(uppercaseStr); // 输出: HELLO WORLD
+function titleCase(str) {
+    return str.toLowerCase().split(' ').map(function(word) {
+        return (word.charAt(0).toUpperCase() + word.slice(1));
+    }).join(' ');
+}
 
-// 使用ES6的模板文字（template literals）和toUpperCase()方法
-let name = "John";
-console.log(`Hello, ${name.toUpperCase()}`); // 输出: HELLO, JOHN
+console.log(titleCase('javascript is cool'));
 ```
 
-## 深入探讨：
+程序的输出结果是`"Javascript Is Cool"`。
 
-- 历史背景：大写字符串的概念早在20世纪70年代就已经出现，其目的是为了标准化编程语言和代码风格。如今，它已经成为编程最基本的规范之一。
-- 替代方案：除了使用toUpperCase()方法之外，也可以使用正则表达式或自定义函数来实现字符串大写转换。但是，使用内置的toUpperCase()方法更简单和高效。
-- 实现细节：toUpperCase()方法是String对象的一个原型方法，它会返回一个新的字符串对象，不会改变原始字符串本身。
+## 深入了解
 
-## 查看更多：
+历史背景: 大写字符串的需要早在计算机编程之前就存在了，用于书写规范、印刷媒体等。
 
-- [MDN文档-String.prototype.toUpperCase()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [W3Schools教程-String toUpperCase()方法](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+替代方法: 在特定的情况下，你可以使用CSS实现大写功能，例如标题、名称等。CSS的`text-transform`属性就可以用于这样的转换。
+
+实现细节: `toLowerCase()`和`split(' ')`这两个方法会先将整个字符串所有字母转换为小写，然后将其分割成一个个单词，然后map函数会遍历这些单词，将每个单词的首字母转为大写，并返回新的数组，最后使用`join(' ')`将数组中的每一个词重组成一个新的字符串。
+
+## 参考文献
+
+要了解更多关于字符串大写转换的内容，你可以访问以下链接:
+
+1. [JavaScript String toUpperCase() Method - W3schools](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+2. [JavaScript String toLowerCase() Method - W3schools](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
+3. [JavaScript String split() Method - W3schools](https://www.w3schools.com/jsref/jsref_split.asp)
+4. [Array.prototype.map() - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)

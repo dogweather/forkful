@@ -1,7 +1,7 @@
 ---
-title:                "Analiza składni html"
-html_title:           "Lua: Analiza składni html"
-simple_title:         "Analiza składni html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,25 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Parsowanie HTML to określenie używane przez programistów do opisu procesu analizowania i przetwarzania kodu HTML, który jest podstawowym językiem używanym do tworzenia stron internetowych. Programiści parsują HTML w celu extrakcji danych z różnych stron internetowych lub do analizowania i przetwarzania informacji dla potrzeb swoich aplikacji lub narzędzi.
+## Co i Dlaczego?
+Analiza HTML (parsing HTML) polega na przetworzeniu kodu HTML na strukturę danych, która jest zrozumiała dla komputera. Programiści robią to, aby móc manipulować strukturą strony internetowej lub analizować jej zawartość.
 
 ## Jak to zrobić:
-Lua oferuje wiele narzędzi i bibliotek do parsowania HTML, w tym popularną bibliotekę "LuaHTML Parser", która pozwala na przetwarzanie dokumentów HTML zgodnie z zasadami języka XML. Przykładowe użycie biblioteki wygląda następująco w kodzie lua:
-
 ```Lua
-local html = require("html")
+local lom = require 'lxp.lom'
 
-local doc = html.parse("<html><head><title>Przykład strony</title></head><body><h1>Nagłówek</h1><p>Przykładowy tekst.</p></body></html>")
-print(doc:getElementsByTagName("h1")[1]:getText())       -- Output: Nagłówek
-print(doc:getElementsByTagName("p")[1]:getText())        -- Output: Przykładowy tekst.
+local contents = [[<html>
+<head>
+	<title>Moja Strona WWW</title>
+</head>
+<body>
+	<h1>Witaj Świecie!</h1>
+</body>
+</html>]]
+
+local doc = lom.parse(contents)
+
+for i, element in ipairs(doc) do
+	if type(element) == "table" then
+		print(element.tag)
+	end
+end
+```
+Wyjście:
+```
+head
+body
 ```
 
-## Zanurzenie się w temat:
-Parsowanie HTML ma długą historię, sięgającą początków internetu. Początkowo większość przeglądarek internetowych wykorzystywała własne silniki do parsowania i renderowania HTML, co często prowadziło do różnic w wyświetlaniu stron. Jednym z głównych konkurentów dla biblioteki "LuaHTML Parser" jest popularna biblioteka "lua-htmlparser" napisana w języku C i oferująca wydajne parsowanie za pomocą wyrażeń regularnych.
+## W Głąb Tematu
+(1) W kontekście historycznym, parsing HTML stał się koniecznością z powodu coraz większej złożoności stron internetowych. Programiści potrzebują narzędzi, które pomogą im zrozumieć i manipulować tą złożonością.
+(2) Alternatywą do biblioteki Lua 'lxp.lom' do analizy HTML jest 'htmlparser'. Wybór zależy od konkretnej potrzeby, są one jednak podobne w użyciu.
+(3) Przy implementacji, biblioteka 'lxp.lom' przetwarza kod HTML na strukturę drzewiastą (tree structure), co pozwala na łatwe poruszanie się po jego elementach i manipulowanie nimi.
 
 ## Zobacz także:
-- https://www.lua.org/
-- https://www.lua.org/manual/5.3/manual.html
-- https://github.com/keplerproject/luahtml
-- https://github.com/msva/lua-htmlparser
+- Dokumentacja Lua 'lxp.lom': http://matthewwild.co.uk/projects/luaexpat/lom.html
+- Dokumentacja Lua 'htmlparser': https://github.com/msva/lua-htmlparser
+- Podstawy analizy składniowej (Parsing): https://pl.wikipedia.org/wiki/Analiza_sk%C5%82adniowa

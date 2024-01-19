@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden"
-html_title:           "Rust: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
 
-Die Länge einer Zeichenkette zu finden bedeutet, die Anzahl der Zeichen in einer gegebenen Zeichenkette zu bestimmen. Programmierer tun dies, um Daten zu analysieren, Muster zu erkennen oder um die richtige Größe von Variablen oder Arrays zu bestimmen.
+Das Finden der Länge eines Strings ist ein Prozess, in dem wir zählen, wie viele Zeichen (einschließlich Leerzeichen) in einem String vorhanden sind. Programmierer tun dies oft, um die Anzahl der Benutzereingaben zu bestimmen oder um durch eine Sammlung von Zeichen zu iterieren.
 
-# Wie man es macht:
+## Wie:
 
-Um die Länge einer Zeichenkette in Rust zu finden, kann die Funktion `len()` des String-Typs verwendet werden. Diese Funktion gibt die Anzahl der Unicode-Skalare in der Zeichenkette zurück. Das folgende Beispiel zeigt, wie man die Länge einer Zeichenkette namens `my_string` findet:
-
-```Rust
-let my_string = "Hallo, Welt!";
-println!("Die Länge meiner Zeichenkette ist {}", my_string.len());
-```
-
-Die Ausgabe wird sein:
+Unten finden Sie ein kodierendes Beispiel für die Berechnung der Länge eines Strings in Rust:
 
 ```Rust
-Die Länge meiner Zeichenkette ist 12
+fn main() {
+    let s = String::from("Hallo Welt");
+    println!("Die Länge von '{}' ist {}.", s, s.len());
+}
 ```
 
-# Tiefere Einblicke:
+Wenn Sie das Programm ausführen, wird die Ausgabe sein:
 
-Die Bestimmung der Länge von Zeichenketten ist eine grundlegende Operation in der Programmierung und wird in vielen Sprachen verwendet. In Rust gibt es keine spezielle Funktion, um die Länge einer Zeichenkette zu finden, da sie in die oben genannte Funktion `len()` des String-Typs integriert ist. Alternativ können Entwickler auch die Funktion `chars()` verwenden, um die Anzahl der Zeichen in einer Zeichenkette zu zählen.
+```Rust
+Die Länge von 'Hallo Welt' ist 11.
+```
 
-Es ist wichtig zu beachten, dass bei der Bestimmung der Länge einer Zeichenkette in Rust jede Unicode-Kombination als ein einzelner Skalar betrachtet wird. Dies kann zu unterschiedlichen Ergebnissen führen als in anderen Sprachen, die auf anderen Codierungen basieren.
+## Vertiefung
 
-# Siehe auch:
+Historisch gesehen war die Suche nach der Länge einer Zeichenkette in vielen Programmiersprachen eine O(1) Operation. In Rust bleibt dies so, obwohl die Implementierung komplexer ist, da Rust Unicode-konform ist. Alternativ kann die Methode `chars().count()` verwendet werden, die die Anzahl der Unicode-Zeichen (anstatt der Bytes) zählt. Beachten Sie jedoch, dass `chars().count()` eine O(n) Operation ist und bei sehr langen Zeichenketten langsamer als `len()` sein kann.
 
-- [Rust Dokumentation für `len()`](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
-- [Rust Dokumentation für `chars()`](https://doc.rust-lang.org/std/primitive.str.html#method.chars)
+## Siehe Auch
+
+Weitere Links zu verwandten Ressourcen:
+
+- Rust String-Dokumentation: https://doc.rust-lang.org/std/string/struct.String.html
+- Rust by Example: https://doc.rust-lang.org/rust-by-example/std/str.html
+- Die Rust Programming Language (Buch): https://www.nostarch.com/Rust

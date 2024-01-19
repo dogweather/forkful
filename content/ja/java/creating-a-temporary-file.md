@@ -1,6 +1,6 @@
 ---
 title:                "一時ファイルの作成"
-html_title:           "Java: 一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
 simple_title:         "一時ファイルの作成"
 programming_language: "Java"
 category:             "Java"
@@ -10,46 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに&なぜ？
+## 何となぜ？
 
-一時ファイルを作成することとは、一時的にデータを格納するためにプログラマーが使用するファイル作成の手法を指します。一時ファイルは、プログラムの実行中に一時的に必要なデータを保存するために使用されます。
+一時的なファイル作成は1度だけ使用するデータを格納するためのものです。プログラマーはこのファイルを使用して不要になったらすぐに消去し、システムリソースの無駄遣いを防ぐことができます。
 
-## 作成方法：
+## どうやって：
 
-以下のような方法で、Javaで一時ファイルを作成することができます。
+Javaでは、`java.nio.file`パッケージの`Files`クラスを使用して一時的なファイルを作成できます。以下に具体的なサンプルコードを示します。
 
 ```Java
-import java.io.File;
-import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-public class TempFile {
-
-    public static void main(String[] args) throws IOException {
-        File tempFile = File.createTempFile("tempFile", ".txt");
-        System.out.println("一時ファイルが作成されました: " + tempFile.getName());
+public class Test {
+    public static void main(String[] args) {
+        try {
+            Path tempFile = Files.createTempFile("myTempFile", ".txt");
+            System.out.println("Temp file : " + tempFile.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
 ```
 
-出力：
+上記のプログラムを実行すると、次のような結果が表示されます。
 
-```一時ファイルが作成されました: tempFile3009792589181924680.txt```
+```Java
+Temp file : /tmp/myTempFile123456789.txt
+```
 
-## さらに詳しく
+## 掘り下げる：
 
-### 歴史的背景
+一時的なファイル作成はかつては手間とリソースを要する作業でしたが、Javaにはこれを効率的に行うツールが組み込まれています。これ以前には、各プログラマが自己責任で管理する必要がありました。
 
-一時ファイルの概念は、マルチタスクシステムが普及した1970年代に導入されました。この方法は、複数のプログラムが同時に実行され、それぞれが必要とするデータを保持するために使用されました。
+代替的には、`File`クラスの`createTempFile()`メソッドも使用できますが、効率性と拡張性の観点からは`Files`クラスが推奨されます。
 
-### 代替手法
+Javaの一時ファイル作成は、名前と拡張子が自動で生成され、OSの一時ファイルディレクトリに保存されます。この実装により、ファイルはプログラム終了時に自動的に削除され、システムリソースが節約されます。
 
-一時ファイルの代わりに、メモリ上でデータを一時的に格納する方法もあります。しかし、メモリは限られているため、データが大きすぎる場合には一時ファイルの使用がより効率的です。
+## 参照情報:
 
-### 実装の詳細
+Javaのさらなる学習に役立つリンクを提供します：
 
-一時ファイルは、一時的なファイル名を持ち、プログラムが終了すると自動的に削除されます。また、一時ファイルはデフォルトではプログラムが実行されているディレクトリに作成されますが、任意のディレクトリに作成することも可能です。
-
-## 関連リンク
-
-- [Java: 一時ファイルを作成する](https://sakataharumi.com/detail/685)
-- [Java File API ドキュメンテーション](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+- `Files.createTempFile`: [Oracle oficial documentation](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#createTempFile-java.lang.String-java.lang.String-java.nio.file.attribute.FileAttribute...-)
+- `java.nio.file`: [Oracle official documentation](https://docs.oracle.com/javase/7/docs/api/java/nio/file/package-summary.html)
+- Temporary file in Java: [Java Code Geeks](https://www.javacodegeeks.com/2012/07/java-temporary-files.html)

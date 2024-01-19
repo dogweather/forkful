@@ -1,7 +1,7 @@
 ---
-title:                "Ajan erottaminen merkkijonosta"
-html_title:           "PHP: Ajan erottaminen merkkijonosta"
-simple_title:         "Ajan erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,22 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Päivämäärän muotoilu merkkijonosta on tärkeä taito PHP-ohjelmoijille. Se tarkoittaa päivämäärän erottamista merkkijonosta ja sen kääntämistä päivämäärämuotoon. Tämä on tarpeen esimerkiksi käyttäjän syötteen käsittelyssä tai tietokannan kyselyissä.
+# PHP:n päivämäärien jäsennys stringeistä: Mitä & Miksi?
 
-## Miten:
+Päivämäärän jäsentäminen stringistä on prosessi, jossa datan alustava muoto - string - muunnetaan päivämääräksi, jolla on järkevä, ymmärrettävä muoto. Ohjelmoijat tekevät sen tietojen manipuloinnin helpottamiseksi.
+
+# PHP:n päivämäärien jäsennys stringeistä: Miten se tehdään?
+
+Alla on esimerkki siitä, miten PHP:ssa jäsennetään päivämäärä stringistä `strtotime()`-funktion avulla:
+
 ```PHP
-$date_string = "4/8/2021";
-$date = date("j.n.Y", strtotime($date_string));
-echo $date;
+<?php
+$date_string = "2020-04-01";
+$parsed_date = date("d-m-Y", strtotime($date_string));
+echo $parsed_date;
+?>
 ```
 
-Tuloste: "4.8.2021"
+Tämä skripti tulostaa `01-04-2020`.
 
-## Syvemmälle:
-Päivämäärän muotoilu merkkijonosta on yleinen tehtävä ohjelmoinnissa. Sitä on käytetty jo vuosikymmenien ajan ja se on vasta viime aikoina kehitetty helpommaksi ja monipuolisemmaksi. Vaihtoehtoja päivämäärän muotoiluun ovat esimerkiksi JavaScript-kirjasto Moment.js sekä käsin kirjoittaminen esimerkiksi `explode()` ja `DateTime` -luokkien avulla. Implementaation yksityiskohdat vaihtelevat käytetyn menetelmän mukaan, joten kannattaa tutustua niiden dokumentaatioon.
+# PHP:n päivämäärien jäsennys stringeistä: Syvä sukellus
 
-## Katso myös:
-- [PHP:n virallinen dokumentaatio päivämäärän muotoilusta](https://www.php.net/manual/en/datetime.formats.date.php)
-- [Moment.js -kirjaston dokumentaatio](https://momentjs.com/docs/)
-- [PHP.net -sivuston opetusohjelma päivämäärän muotoilusta](https://www.php.net/manual/en/datetime.formats.date.php#example-4523)
+Historiallisessa kontekstissa PHP tarjosi `strtotime()`-funktion syntaksin ymmärtämiseen ja päivämäärän jäsentämiseen stringistä. Tämä tehtiin sen avulla - mikä ilmestyi jo PHP 1:ssä.
+
+Vaihtoehtoja `strtotime()`-funktiolle ovat DateTime-luokka ja `date_create_from_format()`-funktio. Näiden avulla voidaan jäsennellä päivämäärä erityismuodoista, jotka `strtotime()` ei ymmärrä.
+
+`strtotime()` käsittelee päivämäärien jäsentämisen stringin internalisoimalla sen sisäiseksi päivämääräksi. Tämä sallii monimutkaisten päivämäärien ja aikojen käsittelyn.
+
+# PHP:n päivämäärien jäsennys stringeistä: Katso myös
+
+Lisätietoja päivämäärien jäsentämisen haasteista ja muista PHP-aiheista:
+
+- [PHP Manual: Date and Time Functions](https://www.php.net/manual/en/ref.datetime.php)
+- [DateTime::createFromFormat](https://www.php.net/manual/en/datetime.createfromformat.php)
+- [Understanding Date and Time in PHP](https://www.w3schools.com/php/php_date.asp)

@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "Clojure: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,34 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que e por que?
+## O Que & Por Quê?
+Ler argumentos da linha de comando permite aos programas receberem input diretamente no início do processo. Programadores usam isso para personalizar o comportamento do programa com base na entrada do usuário ou no ambiente.
 
-Ler argumentos da linha de comando é uma maneira que os programadores têm de obter informação a partir da entrada do usuário que vem diretamente da linha de comando. Isso é útil porque permite que os programas sejam executados de diferentes maneiras, dependendo dos argumentos fornecidos pelo usuário.
-
-# Como fazer:
-
-```Clojure
-(def args (command-line-args))
-(prn "O primeiro argumento é:" (first args))
-(prn "O segundo argumento é:" (second args))
-```
-
-Saída:
+## Como fazer:
+Se você precisa acessar os argumentos da linha de comando em Clojure, você pode usar a variável pré-definida `*command-line-args*`. Aqui está um exemplo e sua saída:
 
 ```Clojure
-"O primeiro argumento é: argumento1"
-"O segundo argumento é: argumento2"
+(defn -main
+   [& args]
+   (println "Os argumentos da linha de comando são:" args))
+
+; Saída quando executado com: lein run arg1 arg2
+; Os argumentos da linha de comando são: (arg1 arg2)
 ```
 
-# Profundidade do assunto:
+## Mergulho Profundo
+1. **Contexto histórico**: As linguagens só precisam oferecer funcionalidades para ler argumentos da linha de comando porque a interação com a linha de comando já foi (e ainda é) uma forma comum de se usar sistemas de computador. Essa funcionalidade é herança do estilo Unix de desenvolvimento de software.
 
-Ler argumentos da linha de comando é uma prática comum em linguagens de programação, como uma forma de interação com o usuário e personalização da execução do programa. Antes do uso da linha de comando, os programas geralmente eram executados com parâmetros definidos previamente no código.
+2. **Alternativas**: O `clojure.tools.cli` é um pacote que fornece funções para analisar os argumentos da linha de comando. Ele é mais flexível e poderoso que o `*command-line-args*`, tornando mais fácil a criação de interfaces de linha de comando complexas.
 
-Existem alternativas para a leitura de argumentos da linha de comando, como por exemplo, a leitura de um arquivo de configuração externo. A escolha entre as diferentes opções depende do contexto e do objetivo do programa.
+3. **Detalhes de implementação**: A variável `*command-line-args*` está disponível apenas no script quando ele é iniciado com `lein run`ou um uberjar. Para o REPL ou outro ambiente, você precisará usar uma alternativa.
 
-Em Clojure, a função `command-line-args` retorna uma lista com os argumentos fornecidos pelo usuário na linha de comando. É importante lembrar que esses argumentos são sempre interpretados como strings, então a conversão para outros tipos de dados pode ser necessária.
-
-# Veja também:
-
-- A documentação oficial da função `command-line-args`: https://clojuredocs.org/clojure.core/command-line-args
-- Um exemplo prático de como utilizar a leitura de argumentos da linha de comando em Clojure: https://dzone.com/articles/cli-arguments-in-clojure-the-straightforward-way
+## Veja Também
+1. Documentação oficial do Clojure: [https://clojure.org/reference/vars](https://clojure.org/reference/vars)
+2. clojure.tools.cli no GitHub: [https://github.com/clojure/tools.cli](https://github.com/clojure/tools.cli)

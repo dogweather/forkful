@@ -10,26 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是目录存在性检查？
-一个目录存在性检查是一个编程概念，用于判断一个指定的目录是否存在。这是程序员经常使用的一个小技巧，可以帮助我们避免程序出现错误。
+## 什么以及为什么？
+检查目录是否存在是评估计算机文件系统中特定目录是否存在的过程。程序员这样做主要是为了避免在操作尚未创建或已删除的目录时出现错误。
 
-## 如何操作：
-### Java
+## 如何做：
+Clojure有一个很方便的Java库可以用来检查目录是否存在。以下是一些例子:
+
+```Clojure
+;; 导入java.nio.file
+(require '[clojure.java.io :as io])
+
+;; 检查目录是否存在的函数
+(defn directory-exists? [dir-name]
+  (.exists (io/file dir-name)))
+
+;; 测试片段
+(println (directory-exists? "test_dir"))  ;; 输出：false
 ```
-Clojure (.exists "path/to/directory")
-```
-输出为： true 或 false
+如果目录不存在, 它将会输出false, 反之则输出true.
 
-## 深入了解：
-### 历史背景：
-目录存在性检查最初是出现在Unix系统中，用于在文件系统中查找特定目录的存在性。后来，它被引入到其他编程语言中，并且成为程序员们在处理文件和目录时经常使用的技巧。
+## 深度探讨：
+检查目录存在这个功能在文件操作中非常常见，尤其是在处理用户上传或者读写文件等场景中。早在UNIX/LINUX开发的早期阶段，就已经提供了此功能。
 
-### 替代方法：
-除了使用Clojure的 ```.exists``` 方法之外，还有其他方法可以检查目录的存在性，比如使用```System.getProperty("path/to/directory").exists()```来检查Java虚拟机中的目录。
+各种编程语言都有各种检查目录是否存在的方法，你可以根据自己使用的编程语言选择对应的方法。有一些更便捷的方法，例如Python中的os.path或者Node.js中的fs模块。
 
-### 实现细节：
-在Clojure中，我们使用 ```.exists``` 函数来检查一个目录是否存在。它接受一个字符串作为参数，该字符串表示我们要检查的目录的路径。如果目录存在，则返回 ```true```，否则返回 ```false```。
+在Java（因此，也在Clojure）中，我们通常使用java.nio.file包来操作文件系统。java.nio.file包里的Files.exists可以用来检查一个路径(包括文件和目录)是否存在。
 
-## 查看相关资料：
-- Java Platform SE 11 Documentation: [java.io.File.exists()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html#exists())
-- Clojure API Reference - Files and Directories: [clojure.java.io](https://clojuredocs.org/clojure.java.io.file)
+## 另鉴：
+如果你需要更深入地了解如何在Clojure或其他语言中处理文件，强烈建议你查看以下链接：
+
+1. [Java 7的文件I/O（NIO)教程](https://docs.oracle.com/javase/tutorial/essential/io/index.html)
+2. [Python的os.path模块](https://docs.python.org/3/library/os.path.html)
+3. [Node.js的fs模块](https://nodejs.org/api/fs.html)
+4. [Clojure的java.io库](https://clojuredocs.org/clojure.java.io)

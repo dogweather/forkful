@@ -1,6 +1,6 @@
 ---
 title:                "Using regular expressions"
-html_title:           "Clojure recipe: Using regular expressions"
+html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+## What & Why?
 
-Regular expressions, or regex, are sequences of characters used for pattern-matching and text manipulation. Programmers use regex to efficiently search and modify text data, making tasks such as data validation, parsing, and data extraction easier. It is a powerful tool for manipulating text-based data, allowing programmers to perform complex operations without having to write a lot of code.
+Regular Expressions (RegEx) is a general method to match patterns in text. Programmers use it to detect, extract, and replace string parts based on these patterns.
 
-# How to:
+## How to:
 
-```Clojure 
-; To use regular expressions in Clojure, we use the re-seq function from the clojure.string library
-(require '[clojure.string :as str])
+Clojure includes Java's `java.util.regex` library for RegEx usage. 
 
-; Let's say we have a string with a list of emails that we want to extract only the valid ones
-(def emails "john@gmail.com, jane@yahoo.com, steve@, tom@aol.com")
+Match regex in a string using `re-matches`:
 
-; We can use regex to validate and extract only the valid emails from the string
-(str/re-seq #"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" emails)
-
-; Output: 
-("john@gmail.com" "jane@yahoo.com" "tom@aol.com")
+```clojure
+(re-matches #"\d+" "1234") ; "1234"
+(re-matches #"\d+" "abc") ; nil
 ```
 
-# Deep Dive:
+Find regex with `re-find`:
 
-Regular expressions have been around since the 1950s, with the first version being implemented in the programming language SNOBOL. However, it wasn't until the 1980s that regex became widely popular with the development of the Unix tool "grep." Nowadays, almost all programming languages have support for regular expressions, including Clojure.
+```clojure
+(re-find #"\d+" "abc123def") ; "123"
+```
 
-Some alternatives to using regex include string methods such as substring and indexof, but they are limited in their capabilities and can be cumbersome for complex pattern-matching operations. Another alternative is using a parsing library, but again, this can add unnecessary complexity to simple tasks.
+Replace regex using `re-seq`:
 
-In Clojure, regular expressions are implemented using the Java-based library, java.util.regex. However, Clojure also has its own syntax for regex, making it more concise and easier to use than the Java version.
+```clojure
+(clojure.string/replace "abc123def" #"\d+" "000") ; "abc000def"
+```
 
-# See Also:
+## Deep Dive 
 
-For a more in-depth understanding of regular expressions, check out the following resources:
+Clojure’s RegEx utility traces its root back to Java’s `java.util.regex` package, which was borne out of Perl's rich RegEx expressions. The key difference lies in Clojure's immutable and higher-order functions.
 
-- [Mastering Regular Expressions by Jeffrey E. F. Friedl](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)
-- [Regular Expressions: Learn by Example](https://regexone.com/) 
-- [Clojure regex cheatsheet](https://gist.github.com/telent/1180619)
+Clojure allows RegEx usage without needing external libraries, while in Java you'll need the latter for complex patterns.
+
+`re-pattern` compiles a RegEx string, good for dynamic patterns:
+
+```clojure
+(re-matches (re-pattern (str "\\d" "+")) "123") ; "123"
+```
+
+## See Also 
+
+For more robust RegEx utility in Clojure, check out the [re-pattern](https://clojuredocs.org/clojure.core/re-pattern) function at Clojure Docs.
+
+Familiarize yourself with [Clojure's String API](https://clojuredocs.org/quickref/Clojure%20Core) for more string manipulating goodness.
+
+Finally, master your RegEx skills at [RegexOne](https://regexone.com/). They offer interactive lessons with plenty of examples in different languages, including Clojure.

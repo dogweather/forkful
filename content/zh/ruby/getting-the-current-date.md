@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Ruby: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,52 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-[开始markdown]
+## 什么和为什么？（What & Why?）
 
-如果你是一位入门的 Ruby 程序员，你可能会遇到这个问题：如何获取当前的日期？在本文中，我们将探讨这个问题的答案，并告诉你为什么程序员需要做这件事情。
+获取当前日期是获取计算机系统当前时间的过程。程序员经常需要使用到这在各种场景，如时间戳的记录，事件分析以及用户行为跟踪等。
 
-## 为什么 & 如何？
+## 如何获取当前日期：（How to:）
 
-获取当前日期是一个常见的编程任务。程序员经常需要获取当前日期来进行日志记录、时间戳、计时等操作。通过获取当前日期，程序员可以确保他们的程序在不同的时间运行时具有准确的时间信息。
-
-## 如何：
-
-```ruby
-require 'date'
-
-# 获取当前日期
-current_date = Date.today
-
-# 获取当前日期的时间戳
-current_timestamp = DateTime.now.to_time.to_i
-
-# 获取当前日期和时间
-current_datetime = DateTime.now
+直接使用 `Time.now` 就可以获取到准确的当前时间和日期。来看看如何使用。
+```Ruby
+现在 = Time.now
+puts 现在
+```
+运行上述程序，你将得到如下输出：
+```
+2022-05-23 10:34:45 +0800
 ```
 
-运行以上代码，你将得到类似于以下输出：
+## 深入浅出（Deep Dive）
 
-```text
-# 获取当前日期
-2020-10-17
+获取当前日期作为一种基本功能，在Ruby以及大多数其他编程语言中均有实现。它的用途广泛，比如在日志跟踪中常常用这来创建时间戳，也可以用来分析和跟踪用户的行为模式等。对于Ruby而言，`Time.now` 就是实现这个功能的主要方法。除此之外，你还可以使用 `DateTime.now` 获取相同的结果。
 
-# 获取当前日期的时间戳
-1602886085
-
-# 获取当前日期和时间
-2020-10-17T12:48:17+00:00
+```Ruby
+现在 = DateTime.now
+puts 现在
 ```
+这将得到相似的结果。
 
-## 深入了解：
+取决于你的需求，你可能需要更详细的日期和时间信息，Ruby的 Time 和 DateTime 类提供了一些其他方法，如 `year`, `month`, `day`, `hour`, `min`, `sec`，来获取更详细的信息。
 
-Ruby 中，你可以使用内置的 `Date` 和 `DateTime` 类来获取当前日期。如果你想要更多更精细的日期操作，你可以使用 `Time` 和 `DateTime` 类。
+## 延伸阅读：（See Also）
 
-另外，你也可以使用第三方的日期库，例如 ActiveSupport、Chronic 等来获取当前日期。它们提供了更多功能强大和便捷的日期操作方法。
+Ruby文档中关于Time类的更多信息：https://docs.ruby-lang.org/en/2.7.0/Time.html
 
-关于获取当前日期的实现细节方面，它可能与操作系统和硬件架构相关。例如，在不同操作系统下，时间戳可能有不同的格式，因此你需要根据你的环境调整你的代码。
+关于DateTime类的更多信息：https://docs.ruby-lang.org/en/2.7.0/DateTime.html
 
-## 参考资料：
-
-- Ruby 官方文档：https://ruby-doc.org
-- ActiveSupport GitHub：https://github.com/rails/rails/tree/master/activesupport
-- Chronic GitHub：https://github.com/mojombo/chronic
+你也可以参考这篇文章来更深入理解Ruby中的日期和时间：https://www.jianshu.com/p/aedf422ec2ab

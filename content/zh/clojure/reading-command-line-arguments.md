@@ -1,6 +1,6 @@
 ---
 title:                "读取命令行参数"
-html_title:           "Clojure: 读取命令行参数"
+html_title:           "C: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Clojure中的命令行参数
+---
 
-## 什么是命令行参数？为什么程序员要读取它？
+## 什么 & 为什么?
 
-命令行参数是指在程序运行时通过命令行输入的额外信息。程序员经常使用命令行参数来控制程序的行为，比如指定不同的文件名、设置不同的选项等。这样可以使程序更加灵活、易于使用。
+命令行参数让你的程序更灵活，能基于用户输入作出反应。它可以从启动脚本中获取一些数据，比如文件名或者配置选项。
 
-## 如何读取命令行参数？
+## 怎么做:
 
-要读取命令行参数，可以使用Clojure中的`(command-line)`函数。该函数会返回一个字符串数组，其中包含了所有输入的命令行参数。比如，如果在命令行输入`clojure my-program.clj arg1 arg2`，那么`(command-line)`将返回`["my-program.clj" "arg1" "arg2"]`。
-
-```Clojure
-(defn handle-args [args]
-  (println "The first argument is:" (nth args 0))
-  (println "The second argument is:" (nth args 1))
-  ;; do something with the arguments
-  )
-
-(handle-args (command-line))
-```
-
-输出：
+Clojure 用 `*command-line-args*` 去获取传递给它的命令行参数。以下是一个简单的例子：
 
 ```Clojure
-The first argument is: my-program.clj
-The second argument is: arg1
+(defn -main [& args]
+  (println "命令行参数是: " args))
+
+(defn run []
+  (println "你输入的参数是: " *command-line-args*))
+
+(defn -main [& args]
+  (run))
 ```
 
-## 深入了解
+如果你运行这个程序，比如说 `lein run -- Hello World`，你将看到以下输出：
 
-读取命令行参数在计算机科学中有着悠久的历史。早期的命令行界面即是通过命令行参数来进行交互的。现在除了使用Clojure的`(command-line)`函数外，还可以使用Java的`java.lang.System`类来读取命令行参数。另外，还有一些命令行参数解析库可供程序员使用，比如Clojure自带的`clojure.tools.cli`库。
+```Clojure
+你输入的参数是: (Hello World)
+```
 
-## 相关资源
+## 深入探索:
 
-- `(clojure command-line)`官方文档：https://clojuredocs.org/clojure.core/command-line
-- `(java.lang.System):getProperties`官方文档：https://docs.oracle.com/javase/8/docs/api/java/lang/System.html
-- `clojure.tools.cli`官方文档：https://github.com/clojure/tools.cli
+在许多门语言中，读取命令行参数都是常见的操作。在 Unix 或者 Linux 底下，这是通过 shell 命令，或者是 C 程序中的 main 函数的参数来完成的。Clojure 虽然不同，但是还是继承了这个传统。
+
+然而你可以在 Clojure 中使用其他的方式来读取命令行参数，比如说使用 `tools.cli` 库，或者其他类似的库。此外， `*command-line-args*` 不仅仅是一个全局变量，它也是一个线程精确的变量，这意味着你可以在不影响其他部分代码的情况下修改它。
+
+## 参考链接:
+
+1. [Clojure - Getting Started](https://clojure.org/guides/getting_started)
+2. [tools.cli Github](https://github.com/clojure/tools.cli)
+3. [unix - Command Line Arguments](https://unix.stackexchange.com/questions/31414/how-can-i-pass-a-command-line-argument-into-a-shell-script)

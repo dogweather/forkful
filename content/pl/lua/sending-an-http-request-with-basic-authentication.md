@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Lua: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,48 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
 
-Wysyłanie żądania HTTP z podstawową autentykacją to proces, w którym programista wysyła żądanie HTTP z dodanymi informacjami o uwierzytelnieniu w nagłówku. Używa się tego do zdalnego dostępu do zasobów, które wymagają uwierzytelnienia, takich jak API lub strony internetowe. Programiści to robią, aby dodać warstwę bezpieczeństwa do swoich aplikacji i zapobiec nieautoryzowanemu dostępowi.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem w Lua oznacza wysłanie danych na serwer, który wymaga poufnej informacji, jak login i hasło, przed udostępnieniem swojej zawartości. Programiści to robią, aby uzyskać dostęp do chronionych danych i funkcji oferowanych przez serwer.
 
 ## Jak to zrobić:
 
+Używając biblioteki luasocket i luasec, można to zrobić w ten sposób:
+
 ```Lua
--- przykład wysyłania żądania HTTP z podstawową autentykacją w Lua
-local http = require("socket.http")
-local ltn12 = require("ltn12")
-local mime = require("mime")
+http = require("socket.http")
+ltn12 = require("ltn12")
 
--- ustawienie danych uwierzytelniających
-local user = "nazwa użytkownika"
-local password = "hasło"
+auth = "Basic " .. (mime.b64("login:password")) 
 
--- przygotowanie nagłówka z danymi uwierzytelniającymi
-local credentials = user .. ":" .. password
-local encodedAuth = "Basic " .. mime.b64(credentials)
+body, code, headers, status = http.request
+{
+  url = "http://example.com/rest/api/2/search?jql=assignee=demo",
+  headers = 
+  { 
+    ["Authorization"] = auth,
+    ["Content-Type"] = "application/json"
+  },
+  sink = ltn12.sink.file(io.stdout)
+}
 
--- przygotowanie i wysłanie żądania HTTP
-local response = {}
-http.request({
-    url = "https://example.com/api",
-    headers = {authorization = encodedAuth},
-    sink = ltn12.sink.table(response)
-})
-
--- wyświetlenie ciała odpowiedzi
-print(response[1])
+print("\nResponse data:\n" .. body)
+print("\nCode: ", code) 
+print("\nHeaders: ", headers, "\nStatus: ", status)
 ```
 
-Otrzymamy odpowiedź w formacie JSON zawierającą informacje z API.
+## Głębsze Zanurzenie:
 
-## Deep Dive:
+Wysyłanie żądań HTTP z podstawowym uwierzytelnianiem ma swoje korzenie w standardach protokołu HTTP stworzonych przez IETF. Jest to jedna z wielu metod uwierzytelniania uwzględnionych w specyfikacji HTTP - inne obejmują Digest Authentication czy OAuth.
 
-1. Historyczne tło: Autoryzacja HTTP została wprowadzona w 1994 roku, aby zapewnić bezpieczny dostęp do informacji w Internecie. Podstawowa autentykacja, która jest częścią tej metodologii, jest najprostszą i najmniej bezpieczną formą uwierzytelnienia.
-2. Alternatywy: Istnieje wiele innych metod uwierzytelniania, takich jak uwierzytelnianie z wykorzystaniem tokenów, który jest bardziej bezpieczny niż podstawowa autentykacja.
-3. Szczegóły implementacji: Podstawowa autentykacja jest realizowana przez dodanie nagłówka "Authorization" do żądania HTTP, zawierającego dane uwierzytelniające w formacie "nazwa użytkownika:hasło". Następnie te dane są kodowane do formatu Base64 i przesyłane w pliku nagłówkowym.
+W tym kontekście, alternatywą dla tej metody może być użycie innych bibliotek Lua, jak luajit-request czy lua-http. Decyzja o wyborze zależy od wielu czynników, takich jak wymagany poziom bezpieczeństwa, wygoda użycia czy wydajność.
 
-## Zobacz również:
+Szczegółowo, podczas wysyłania żądania HTTP z uwierzytelnianiem, twoje dane uwierzytelniające są kodowane do formatu base64 i dołączane do nagłówka żądania. Gdy serwer odbiera żądanie, dekoduje informacje uwierzytelniające i sprawdza, czy są poprawne.
 
-1. [Dokumentacja Lua o modułach HTTP i LTN12](http://w3.impa.br/~diego/software/luasocket/http.html)
-2. [Informacje o bezpieczeństwie uwierzytelniania HTTP](https://www.owasp.org/index.php/Basic_Authentication)
-3. [Porównanie różnych metod uwierzytelniania HTTP](https://stackoverflow.com/questions/24204459/whats-the-difference-between-basic-and-digest-authentication-in-http)
+## Zobacz Także:
+
+1. Dokumentacja biblioteki LuaSocket: http://w3.impa.br/~diego/software/luasocket/http.html
+2. Dokumentacja biblioteki LuaSec: https://github.com/brunoos/luasec
+3. Protokół uwierzytelniania HTTP Basic: https://pl.wikipedia.org/wiki/Podstawowy_schemat_uwierzytelniania_HTTP
+4. Biblioteka luajit-request: https://github.com/LPGhatguy/luajit-request
+5. Biblioteka lua-http: https://github.com/daurnimator/lua-http

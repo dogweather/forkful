@@ -1,7 +1,7 @@
 ---
-title:                "Scaricare una pagina web."
-html_title:           "Java: Scaricare una pagina web."
-simple_title:         "Scaricare una pagina web."
+title:                "Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
+simple_title:         "Scaricare una pagina web"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,40 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa & Perché?
-Il download di una pagina web è il processo di recuperare il contenuto di una pagina web da internet e salvarlo sul proprio dispositivo. I programmatori spesso lo fanno per accedere a dati o informazioni utili per i loro progetti.
+## Cos'è e Perché?
 
-Come fare:
-```Java
-URL url = new URL("https://www.esempio.it"); // creare un URL dell'indirizzo web
-URLConnection connection = url.openConnection(); // aprire una connessione verso l'URL
-InputStream input = connection.getInputStream(); // aprire uno stream di input per leggere il contenuto
-BufferedReader reader = new BufferedReader(new InputStreamReader(input)); // creare un lettore per leggere i dati dalla connessione
-String line;
-while ((line = reader.readLine()) != null) { // leggere il contenuto linea per linea finché non si raggiunge la fine
-    System.out.println(line); // stampare il contenuto della linea
+Scaricare una pagina web significa recuperare i dati HTML di una pagina da un server web. I programmatori spesso lo fanno per l'elaborazione dei dati, come per l'estrazione delle informazioni rilevanti, o per testare la funzionalità del sito web.
+
+## Come fare:
+
+Ecco un esempio di codice Java che mostra come scaricare una pagina web utilizzando la classe `java.net.URL` e `java.net.URLConnection`.
+
+```java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+
+public class Downloader {
+    public static void main(String[] args) throws Exception {
+        URL url = new URL("http://www.example.com");
+        URLConnection connection = url.openConnection();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+        reader.close();
+    }
 }
-reader.close(); // chiudere il lettore
 ```
+L'output sarà l'HTML della pagina www.example.com stampato nella console.
 
-Risultato di esecuzione:
-```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Esempio | Sito Web</title>
-</head>
-<body>
-<h1>Benvenuti sul nostro sito!</h1>
-<p>Qui potete trovare informazioni utili sulle nostre attività.</p>
-</body>
-</html>
-```
+## Approfondimenti
 
-Deep Dive:
-Il download di una pagina web è diventato molto comune con l'avvento di internet. Prima, i programmatori dovevano utilizzare metodi più complessi per ottenere i dati di cui avevano bisogno, come ad esempio utilizzare protocolli di rete come FTP. Oggi, invece, è possibile accedere a qualsiasi pagina web e recuperare il suo contenuto utilizzando Java. Ci sono anche alternative al metodo mostrato sopra, come l'utilizzo di librerie specializzate che semplificano il processo di download di una pagina web.
+Storicamente, i programmatori hanno utilizzato varie librerie e metodi per scaricare pagine web. Alcuni utilizzano librerie come `Jsoup` che forniscono più funzionalità come il parsing del DOM o Javascript rendering.
 
-Vedi anche:
-- [Documentazione ufficiale di Java - URL](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
-- [Tutorial di programmazione Java - Download di una pagina web](https://www.javatpoint.com/how-to-download-url-in-java)
-- [Libreria Jsoup per il parsing di pagine web in Java](https://jsoup.org/)
+Alcuni linguaggi come Python hanno semplici funzionalità integrate, come `requests`, per scaricare pagine web. Tuttavia, in Java, si possono utilizzare classi incorporate come `java.net.URL` e `java.net.URLConnection` per aimplementare questa funzione, come dimostrato sopra.
+
+Alcune implementazioni utilizzano approcci asincroni per scaricare pagine web; questi sono spesso utili per scaricare grandi quantità di pagine web in un tempo relativamente breve.
+
+## Vedi Anche
+
+Per un approfondimento sul parsing del DOM e Javascript rendering in Java, consulta la documentazione di Jsoup (https://jsoup.org/).
+
+Per una comparazione dei metodi di scaricamento delle pagine web in diversi linguaggi di programmazione, consulta questo link (https://www.toptal.com/developers/web-scraping-technologies-guide).
+
+Per un'analisi più profonda delle classi `java.net.URL` e `java.net.URLConnection`, riferisci alla documentazione ufficiale Java (https://docs.oracle.com/javase/8/docs/api/java/net/URLConnection.html).

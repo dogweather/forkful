@@ -10,30 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-
-Convertir une chaîne de caractères en minuscules est une fonctionnalité importante pour les programmeurs. Cela permet de standardiser les données et de faciliter la manipulation de chaînes de caractères en les rendant toutes en minuscules. Cela peut être utile pour la comparaison de chaînes ou pour l'affichage de données dans un format uniforme.
+## Qu'est-ce que c'est & Pourquoi ?
+Convertir une chaîne de caractères en minuscules est le processus de transformation de tous les caractères d'une chaîne de texte en lettres minuscules. Les programmeurs font cela pour notamment uniformiser les données textuelles afin de favoriser l'égalité de comparaison.
 
 ## Comment faire :
+Voici un exemple de code pour convertir une string en minuscule sur Arduino :
 
-La conversion d'une chaîne de caractères en minuscules est très simple à réaliser en utilisant l'Arduino. Il suffit d'utiliser la fonction ```toLowerCase()```, qui prend en paramètre la chaîne de caractères que l'on souhaite convertir en minuscules. Voici un exemple de code :
+```Arduino
+char monMessage[] = "Bonjour, ARDUINO!";
 
+void setup() {
+  Serial.begin(9600);
+  for (int i = 0; monMessage[i]; i++) {
+    monMessage[i] = toLowerCase(monMessage[i]);
+    Serial.print(monMessage[i]);
+  }
+}
+
+void loop() {
+  // rien pour le moment!
+}
 ```
-String myString = "Hello World!";
-String lowerString = myString.toLowerCase();
-Serial.println(lowerString); // Output: hello world!
+
+Une fois ce code exécuté, votre sortie de série affichera :
+
+```Arduino
+"bonjour, arduino!"
 ```
 
-## En profondeur :
+## Plongée en Profondeur
+Historiquement, la conversion de chaînes en minuscules a été utilisée pour normaliser les données et améliorer la précision des comparaisons. Dans le monde de l'Arduino, cela peut être particulièrement utile pour comparer des entrées utilisateur, où les lettres majuscules ou minuscules peuvent être entrées de manière aléatoire.
 
-La fonction ```toLowerCase()``` est disponible pour les chaînes de caractères depuis la version 1.0. Cette fonction utilise la table ASCII pour convertir les caractères en minuscules. Il est important de noter que cette fonction ne modifie pas la chaîne originale, mais renvoie une nouvelle chaîne en minuscules.
+En termes d'alternatives, on peut aussi utiliser une fonction personnalisée pour effectuer la conversion. Cependant, utiliser `toLowerCase()` est généralement plus simple et plus rapide.
 
-Une alternative à l'utilisation de la fonction ```toLowerCase()``` est d'utiliser une boucle pour parcourir chaque caractère de la chaîne et de le convertir en minuscule en utilisant la table ASCII. Cependant, cela serait plus laborieux et moins efficace.
+En ce qui concerne les détails de mise en œuvre, la fonction `toLowerCase()` examine chaque caractère de la chaîne un par un, vérifie s'il s'agit d'une lettre majuscule, et si c'est le cas, la convertit en minuscule.
 
-En termes d'implémentation, la fonction ```toLowerCase()``` utilise la fonction ```tolower()``` du langage C, qui est également basée sur la table ASCII.
+## Voir Aussi
+Pour plus d'informations sur la programmation Arduino, les chaînes de caractères et la conversion de types, consultez ces ressources :
 
-## À voir aussi :
-
-Pour en savoir plus sur l'utilisation des chaînes de caractères en Arduino, vous pouvez consulter la documentation officielle ici : https://www.arduino.cc/reference/en/language/variables/data-types/string/
-
-Pour voir l'exemple de code complet utilisé dans cet article, vous pouvez le trouver sur GitHub ici : https://github.com/ArduinoMax/convert-string-to-lowercase
+- Documentation officielle d'Arduino sur les chaînes de caractères : https://www.arduino.cc/reference/en/language/variables/data-types/string/
+- Guide pratique pour travailler avec des chaînes de caractères en Arduino : https://create.arduino.cc/projecthub/project14/strings-a-primer-1f1990
+- Plus d'informations sur `toLowerCase()` : https://www.arduino.cc/reference/tr/language/variables/data-types/string/functions/tolowercase/

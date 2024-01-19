@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Ruby recipe: Comparing two dates"
+html_title:           "Elm recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,45 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Comparing Dates in Ruby: A No-Nonsense Guide
+
 ## What & Why?
 
-Comparing two dates is a way for programmers to determine the difference between two specific dates. This can be useful for tracking time intervals, calculating age, or sorting data chronologically. It also allows for logic-based operations such as determining which date is earlier or later.
+Comparing two dates in programming, in our case Ruby, means discerning which date comes before or after another, or if they're the same. Often used in features such as filters, tracking changes, or organizing records chronologically.
 
-## How to: 
+## How to:
 
-To compare two dates in Ruby, we can use the `Date` class which is part of Ruby's standard library. We can create date objects by specifying the year, month, and day using the `.new` method. 
+Ruby provides a very straightforward way to compare dates. Use the `<`, `>`, `==`, `<=`, or `>=` operators.
 
-```
+Check this out:
+
+```Ruby
 require 'date'
 
-date1 = Date.new(2021, 3, 13) 
-date2 = Date.new(2020, 5, 1)
+date1 = Date.new(2022, 12, 31)
+date2 = Date.new(2023, 1, 1)
+
+puts date1 > date2  # false
+puts date1 < date2  # true
+puts date1 == date2 # false
 ```
 
-We can then use the `.jd` (Julian day) method to return the number of days since the creation of the Julian calendar. Once we have the Julian day for both dates, we can subtract one from the other to determine the difference in days.
-
-```
-p date1.jd - date2.jd # 317 days
-```
-
-Alternatively, we can use the `.between?` method to check if a date falls between two other dates. This method takes two dates as arguments and returns a boolean value.
-
-```
-date3 = Date.new(2020, 12, 25)
-
-p date3.between?(date2, date1) # true
-```
+If you run the snippet, you’ll see it prints `false`, `true`, `false` – just as expected.
 
 ## Deep Dive
 
-The concept of comparing dates dates back to antiquity when different civilizations used various calendars to track time. The Julian calendar, which was introduced by Julius Caesar in 45 BC, was the first to use the concept of a leap year.
+Ruby's `Date` class has been around since the early versions, offering simple yet powerful techniques for date manipulation and comparison. At the core, when comparing dates, Ruby converts dates to a Julian Day Number, a continuous count of days since the beginning of the Julian Period (January 1, 4713 BC), and performs the comparison operation.
 
-In addition to the `Date` class, there are other ways to compare dates in Ruby. The `Time` class also has methods such as `.to_i` (returns the number of seconds since the epoch) and `.strftime` (converts a time object into a specific format) that can be useful for comparison purposes.
+Alternatives for comparison include using Time or DateTime classes, but Date is generally more efficient and sufficient for most needs. Remember, in Ruby, the DateTime class is a subclass of Date, so the comparison techniques remain the same.
 
-When comparing dates, it's important to consider time zones and daylight saving time. Ruby's `DateTime` class takes these factors into account and is more appropriate for comparing dates accurately.
+For implementation, key factors to understand are that the Date class accounts for leap years, and respects time zones if provided (although Date itself is zone-unaware). Also, when comparing, Ruby implicitly handles type conversion if one operand is a `DateTime` and the other is a `Date`.
 
 ## See Also
 
-- [Ruby documentation on Date class](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
-- [Ruby documentation on Time class](https://ruby-doc.org/core-3.0.0/Time.html)
-- [Ruby documentation on DateTime class](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html)
+Ruby's `Date` class - [Official Documentation](https://ruby-doc.org/standard-2.5.1/libdoc/date/rdoc/Date.html)
+
+Detailed guide on time and date in Ruby - [Tutorial](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
+
+Julian Day - [Wikipedia](https://en.wikipedia.org/wiki/Julian_day)

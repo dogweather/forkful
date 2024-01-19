@@ -1,6 +1,6 @@
 ---
 title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Lua: Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
 simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-När man skickar en HTTP-förfrågan med grundläggande autentisering skickar man en begäran till en webbplats med en nyckel för att verifiera sin identitet. Programmerare gör detta för att kunna utföra åtgärder på webbplatser som kräver en användaridentitet för åtkomst, t.ex. att hämta data från en API.
+# Skicka HTTP-förfrågan med grundläggande autentisering i Lua.
 
-## Hur går man tillväga?
-Här är ett enkelt exempel på hur man skickar en HTTP-förfrågan med grundläggande autentisering i Lua:
+## Vad och Varför?
+Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att vi sänder en säker anslutningsbegäran till en server. Detta görs av programmerare för att tillhandahålla en manipulerbar och säker tillgång till webbaserade tjänster.
 
-```Lua
-local http = require "socket.http"
-local ltn12 = require "ltn12"
-
--- Skapa en autentiseringssträng baserad på användarnamn och lösenord
-local credentials = "användarnamn:lösenord"
-
--- Skapa en tabell med nödvändig information för HTTP-förfrågan
-local request = {
-    method = "GET",
-    url = "https://exempel.com/api/data",
-    headers = {
-        ["Authorization"] = "Basic " .. mime.b64(credentials) -- konvertera till Base64
-    },
-    sink = ltn12.sink.table(respBody) -- spara svar i en tabell
-}
-
--- Utför förfrågan
-local response, status_code, response_headers, status_line = http.request(request)
-
--- Skriv ut svarsbodyn
-print(response)
-```
-
-Exempel-utdata:
+## Hur såhär:
+Vi kan använda modulen `LuaSocket` och `luasec` för HTTP-anrop. Men här kommer ett alternativt och enkelt sätt att använda `os.execute` med `curl`.
 
 ```Lua
-Hello, world! This is an authorized response.
+os.execute('curl -u användarnamn:lösenord http://api.webbplats.com/resurs')
 ```
+Var noga med att byta ut `användarnamn` och `lösenord` med dina riktiga uppgifter. `curl` skickar nu en HTTP GET-förfrågan till webbadressen med grundläggande autentisering.
 
-## Djupdykning
-HTTP-förfrågan med grundläggande autentisering skapades först i HTTP/1.0-standarden och används fortfarande i stor utsträckning för att säkra åtkomst till webbplatser och API:er. Alternativ till grundläggande autentisering inkluderar OAuth och mer avancerade autentiseringsmetoder som används för komplexa behörighetssystem. Implementationen av HTTP-förfrågan med grundläggande autentisering i Lua beror på vilken HTTP-bibliotek som används, men den grundläggande principen är densamma.
+Skickar du denna förfrågan kan du få ett svar som liknar något nedan:
 
+```Lua
+{ 'data': { 'key1': 'värde1', 'key2': 'värde2' } }
+```
+## Djup dykning
+Grundläggande autentisering är en standardprocess för att verifiera användare av webbapplikationer. Innan Lua, Curl, och liknande verktyg användes, måste programmerare ställa in och hantera egna metoder för autentisering.
+
+Det finns alternativ till grundläggande autentisering, som OAuth, som ger mer komplexa autentiseringsmöjligheter men också mer kontroll.
+
+När det gäller användning av `os.execute` med `curl`, det skickar och tar emot data genom HTTP mellan klient och server, med `användarnamn` och `lösenord` kodat i Base64. HTTP-header för grundläggande autentisering tittar på detta:
+
+```Lua
+Authorization: Basic base64Encode(användarnamn:lösenord)
+```
 ## Se även
-- [HTTP Authentication: Basic and Digest Access Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) from MDN Web Docs
-- [HTTP-basic-lua](https://github.com/moteus/lua-http-basic) – ett HTTP-bibliotek för Lua som stöder grundläggande autentisering
+För mer information om 
+
+- [Grundläggande autentisering](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Lua och Curl](https://stackoverflow.com/questions/63810057/how-do-i-send-a-get-request-in-lua)
+- [Alternativ till grundläggande autentisering](https://jwt.io/introduction/)
+- [Mer om HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization) 
+
+Bemästra hur man skickar en HTTP-förfrågan med grundläggande autentisering i Lua skapar ett starkt grund för att bygga webbaserade applikationer.

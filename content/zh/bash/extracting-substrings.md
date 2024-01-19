@@ -1,7 +1,7 @@
 ---
-title:                "提取子字符串。"
-html_title:           "Bash: 提取子字符串。"
-simple_title:         "提取子字符串。"
+title:                "提取子字符串"
+html_title:           "Arduino: 提取子字符串"
+simple_title:         "提取子字符串"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是提取子字符串，为什么程序员要这么做？
+## 什么和为什么?
+字符串子串提取是一种在Bash编程中取出字符串一部分的技术。这样做是因为我们广泛使用它来解析和操作数据。
 
-提取子字符串是指从一个较长的字符串中截取出特定的短字符串。程序员经常会这么做是因为在处理大量字符串时，需要用到特定的子串。比如，一个程序需要从用户输入的字符串中找出特定的关键词，或者需要从一个文件路径中提取文件名，这些都需要用到提取子字符串的技巧。
+## 如何操作:
+在Bash中，你可以使用内建子串提取方法从字符串中提取一个字符串。这是几种方法：
 
-## 如何提取子字符串？
-
-通过使用Bash中的字符串提取命令，可以轻松地从一个字符串中提取出需要的子串。下面是一个示例代码，通过提取子字符串来获取文件名：
-
+1. 使用字符串位置和长度提取子串：
 ```Bash
-# 定义一个包含文件路径的字符串
-filepath="/Users/username/Documents/example.txt"
-# 使用字符串提取命令从路径中提取出文件名
-filename=${filepath##*/}
-# 打印文件名
-echo $filename
+my_string="Hello, World"
+echo ${my_string:7:5}
+```
+输出：
+```Bash
+World
+```
+2. 使用字符串位置提取从该位置到末尾的所有字符：
+```Bash
+my_string="Hello, World"
+echo ${my_string:7}
+```
+输出：
+```Bash
+World
 ```
 
-运行以上代码，输出结果为：example.txt。可以看到，通过使用字符串提取命令，我们可以方便地从一个复杂的字符串中提取出我们需要的子串。
+3. 使用负数位置从末尾提取字符：
+```Bash
+my_string="Hello, World"
+echo ${my_string: -5}
+```
+输出：
+```Bash
+World
+```
 
-## 深入了解
+## 深入研究
+子串提取技术在早期Unix shell脚本已经存在。到了Bash，这种技术得以进一步优化和强化。别的编程语言也有不同的实现方式，例如Python使用字符串切片。
 
-提取子字符串的概念不仅仅存在于Bash中，也是在其他编程语言中经常使用的技术。在过去，程序员可能会手动使用循环或者正则表达式来实现字符串提取，但是随着字符串提取命令的出现，这一过程变得更加简单高效。除了Bash字符串提取命令外，还有一些其他的工具和技巧可以实现字符串提取，如使用awk命令或者使用sed命令。
+提取子串有其他的方法，而不仅仅局限于位置和长度。例如，你可以使用正则表达式，或者"tr", "cut"等工具。高级字符串操作可能会用到"sed"和"awk"。
 
-如果想要更深入地了解提取子字符串的原理和使用方法，可以查看Bash的官方文档或者参考其他相关资源。
+在实现上，Bash使用了C标准库中的' `substr` '函数实现子串提取。这允许Bash快速，有效地处理字符串。
 
-## 查看更多
-
-- [Bash文档](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
-- [awk命令参考](https://www.gnu.org/software/gawk/manual/html_node/String-Functions.html)
-- [sed命令参考](https://www.gnu.org/software/sed/manual/sed.html)
+## 参考资料
+- Bash文档: [www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
+- Bash详细教程, 关于字符串提取: [www.tldp.org/LDP/abs/html/string-manipulation.html](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
+- 场景式应用: [www.linuxjournal.com/content/bash-string-manipulation](https://www.linuxjournal.com/content/bash-string-manipulation).

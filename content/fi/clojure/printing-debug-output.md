@@ -1,7 +1,7 @@
 ---
-title:                "Tulostamalla vianetsintätulostetta"
-html_title:           "Clojure: Tulostamalla vianetsintätulostetta"
-simple_title:         "Tulostamalla vianetsintätulostetta"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,25 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä on ja miksi? 
-Debug-tulostuksen printtaaminen tarkoittaa ohjelmakoodin suorituksen aikana tietojen tulostamista terminaaliin. Tämä auttaa ohjelmoijaa hahmottamaan ohjelman suoritusta ja löytämään mahdollisia virheitä tai bugeja. 
+# Artikkeli: Tulostamassa Debug-tulostetta ohjelmoinnissa Clojurella
+ 
+## Mikä & Miksi?
 
-# Miten tehdä: 
+Debug-tulostetta hyödyntämällä ohjelmoija pystyy syöttämään ja tulostamaan ohjelman suorittamisen aikana tietoja, jotka auttavat ohjelman virheiden jäljittämisessä ja korjaamisessa. Se on erittäin tärkeä osa ohjelmoinnissa tapahtuvaa ongelmanratkaisuprosessia.
+
+## Miten:
+
+Seuraavassa esimerkki Clojuren println-funktion käytöstä:
+
 ```Clojure
-(def x 5) 
-(print x)
+(defn debug-esimerkki []
+  (let [x 5
+        y 3]
+    (println "Debug: x on" x ", y on" y)))
 ```
-Tässä esimerkissä määritellään muuttuja x arvolla 5 ja tulostetaan se terminaaliin. 
+
+Kun ajamme tämän funktion, saamme seuraavanlaisen tulosteen:
+
 ```Clojure
-(defn addition [a b]
-  (print "Performing addition...")
-  (println (+ a b)))
+Debug: x on 5 , y on 3
 ```
-Tässä esimerkissä määritellään funktio, joka suorittaa yhteenlaskun ja tulostaa välivaiheessa tiedon sen suorittamisesta. 
 
-# Syvällisempi sukellus: 
-Debug-tulostaminen on ollut käytössä ohjelmoinnissa jo pitkään ja se on yksi tapa helpottaa ohjelmien testaamista ja kehittämistä. Vaihtoehtoisesti voit myös käyttää debuggaus-työkaluja, kuten debugger-ohjelmia, jotka antavat tarkempaa tietoa ohjelman suorituksesta. Implementaation osalta, print-funktio käyttää standardia "OutputStream"-oliota, joka on yhteydessä terminaaliin. 
+## Syväsukellus:
 
-# Katso myös: 
-- [Clojure Debugging Techniques](https://blog.klipse.tech/clojure/2017/02/01/clojure-debug-techique.html)
-- [Clojure Built-In Functions](https://clojuredocs.org/clojure.core/print)
+Historiallisesti ohjelmoijat ovat käyttäneet debug-tulostetta ohjelmisto-ongelmien löytämiseen ja ratkaisemiseen. Clojuren println-funktion lisäksi on olemassa monia muita työkaluja, kuten log4j ja tools.logging, jotka auttavat tuottamaan rikkaamman debug-information. 
+
+Clojuren println-funktio kirjoittaa tiedot konsoliin ja suoritetaan arvojen laskennassa sijaitsevan sijainnin mukaan. Tämä voi olla hyödytön monisäikeisessä ympäristössä, jossa järjestystä ei voida taata.
+
+## Katso myös:
+
+- Clojure Programming Cookbook: https://www.packtpub.com/product/clojure-programming-cookbook/9781785885037
+  Syvempi katsaus Clojuren debug-toimintoihin.
+  
+- Clojure for the Brave and True: https://www.braveclojure.com/
+  Kookoskirja, joka tarjoaa yleiskatsauksen Clojuren eri osa-alueisiin, mukaan lukien debug-tulostaminen.
+
+- Debugging with the Scientific Method: https://www.youtube.com/watch?v=FihU5JxmnBg
+  Videoluento, joka käsittelee tieteellisen metodin soveltamista debuggaamisessa.
+  
+Boon Hellman – Ohjelmoinnin vapaa ammattilainen.

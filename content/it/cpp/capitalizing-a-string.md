@@ -1,7 +1,7 @@
 ---
-title:                "Maiuscolare una stringa"
-html_title:           "C++: Maiuscolare una stringa"
-simple_title:         "Maiuscolare una stringa"
+title:                "Mettere in Maiuscolo una Stringa"
+html_title:           "C++: Mettere in Maiuscolo una Stringa"
+simple_title:         "Mettere in Maiuscolo una Stringa"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Che cos'è e perché: 
-Il processo di capitalizzazione di una stringa si riferisce alla trasformazione dei caratteri iniziali di ogni parola in maiuscolo. Questo è comunemente fatto dai programmatori per rendere più leggibile il testo e per seguire le convenzioni di stile dei linguaggi di programmazione come il C++.
+## Cos'è & Perché?
 
-# Come fare:
+La capitalizzazione di una stringa implica la trasformazione di tutti i suoi caratteri in maiuscolo. I programmatori lo fanno per diverse ragioni, ad esempio per migliorare la leggibilità o per normalizzare i dati input.
+
+## Come fare: 
+
+Ecco un esempio di come capitalizzare una stringa in C++ utilizzando la libreria `algorithm` e la funzione `::toupper`.
+
 ```C++
+#include <algorithm>
+#include <cctype>
 #include <iostream>
-#include <string>
-
-using namespace std;
+#include <string> 
 
 int main() {
-  string str = "prova di capitalizzazione";
-  for (int i = 0; i < str.length(); i++) {
-    str[i] = toupper(str[i]);
-  }
-  cout << str << endl;
-  return 0;
+    std::string s = "questa è una stringa";
+    std::transform(s.begin(), s.end(), s.begin(),
+                   [](unsigned char c) { return std::toupper(c); });
+ 
+    std::cout << s; 
 }
 ```
-## Output: "PROVA DI CAPITALIZZAZIONE"
 
-# Approfondimento:
-La capitalizzazione delle stringhe è un processo comune nei linguaggi di programmazione ed è spesso utilizzata per una migliore leggibilità del codice. In passato, i computer non erano in grado di riconoscere le lettere maiuscole e minuscole, quindi l'utilizzo di capitali era un modo per distinguere tra parole diverse. Tuttavia, oggi questo non è più necessario e si tratta più di una convenzione di stile. Alternativamente, è possibile utilizzare una funzione di formattazione delle stringhe come "capitalize" per ottenere lo stesso risultato.
+Output:
 
-# Vedi anche:
-- [Funzione "capitalize" in C++](https://www.cplusplus.com/reference/string/string/capitalize/)
-- [Convenzioni di stile in C++](https://en.wikipedia.org/wiki/C++_Core_Guidelines)
+```
+QUESTA È UNA STRINGA
+```
+
+## Approfondimento 
+
+La funzione `toupper` esiste già da molto tempo nelle librerie standard del C, prima ancora dell'arrivo del C++. 
+
+Un'alternativa è l'uso del locale con `std::toupper`, che rispetta le caratteristiche della lingua locale.
+
+Dettaglio implementativo: `std::transform` modifica direttamente la stringa originale, risparmiando memoria.
+
+## Vedere Anche 
+
+- [Funzione std::toupper](http://www.cplusplus.com/reference/cctype/toupper/)
+- [Funzione std::transform](http://www.cplusplus.com/reference/algorithm/transform/)
+- [Standard Library cctype](http://www.cplusplus.com/reference/cctype/)
+- [Libreria Standard di algoritmi](http://www.cplusplus.com/reference/algorithm/)

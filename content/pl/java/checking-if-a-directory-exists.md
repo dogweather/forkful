@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie istnienia folderu"
-html_title:           "Java: Sprawdzanie istnienia folderu"
-simple_title:         "Sprawdzanie istnienia folderu"
+title:                "Sprawdzanie, czy katalog istnieje"
+html_title:           "Java: Sprawdzanie, czy katalog istnieje"
+simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,36 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Sprawdzanie czy katalog istnieje w Java
+
 ## Co i dlaczego?
 
-Sprawdzanie, czy istnieje katalog, jest procesem, w którym program sprawdza, czy dany katalog rzeczywiście istnieje w systemie plików. Programiści często wykonują to sprawdzenie, aby upewnić się, że będą mogli odwołać się do katalogu przed wykonaniem dalszych operacji na plikach wewnątrz niego.
+Sprawdzanie, czy katalog istnieje, polega na weryfikacji, czy dany katalog istnieje w systemie plików. Programiści robią to, aby zapobiec błędom podczas pracy z plikami.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-W Javie można użyć metody ```File.exists()```, która zwraca wartość logiczną (true lub false) w zależności od tego, czy katalog istnieje czy nie. Przykładowy kod wygląda następująco:
+Java udostępnia klasę `Files` do manipulacji plikami i katalogami. Możemy użyć metody `exists(Path)` do sprawdzenia, czy dany katalog istnieje. Oto jak to zrobić:
 
-```
-File directory = new File("ścieżka/do/katalogu");
-if (directory.exists()) {
-    System.out.println("Katalog istnieje!");
-} else {
-    System.out.println("Katalog nie istnieje!");
+```Java
+import java.nio.file.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Path path = Paths.get("/sciezka/do/katalogu");
+        
+        if (Files.exists(path)) {
+            System.out.println("Katalog istnieje");
+        } else {
+            System.out.println("Katalog nie istnieje");
+        }
+    }
 }
 ```
 
-Przykładowy wynik:
+Wynik działania programu:
 
+```Java
+Katalog istnieje
+lub
+Katalog nie istnieje
 ```
-Katalog istnieje!
-```
 
-## Wchodząc w szczegóły
+## Pogłębione informacje
 
-Sprawdzanie, czy katalog istnieje, jest ważną częścią programowania, ponieważ pozwala uniknąć błędów, jeśli dana operacja na plikach musi być wykonana w danym katalogu. Alternatywą dla metody ```File.exists()``` jest użycie metody ```Files.exists()``` z pakietu ```java.nio.file```. Jest to bardziej nowoczesne i wydajniejsze rozwiązanie, ale wymaga nieco więcej kodu.
-
-W Javie 8 i wcześniejszych wersjach, aby sprawdzić, czy katalog istnieje, można było użyć metody ```File.isDirectory()``` i sprawdzić, czy zwraca wartość true. Jednak ta metoda nie była dokładna i mogła zwrócić wartość false, nawet gdy katalog istniał w systemie plików.
+- Historyczny kontekst: Wcześniejsze wersje Javy wymagały korzystania z klasy `File` do manipulacji plikami i katalogami. Nowoczesne wersje Javy (od verzji 7), wprowadziły nową bibliotekę `java.nio.file` z klasą `Path` i `Files`, która oferuje bardziej intuicyjne i elastyczne API.
+  
+- Alternatywy: Możemy również użyć klasy `File` w Javie do sprawdzenia, czy katalog istnieje. Metoda `File.exists()` zwraca `true`, jeśli katalog istnieje, i `false` w przeciwnym razie.
+  
+- Szczegóły implementacji: Metoda `java.nio.file.Files.exists(Path)` używa natywnej implementacji systemu plików do sprawdzenia, czy dany plik lub katalog istnieje. Działa to zarówno dla lokalnych systemów plików, jak i sieciowych systemów plików, takich jak NFS.
 
 ## Zobacz także
 
-- Dokumentacja Javy dotycząca klasy ```java.io.File```: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
-- Poradnik na temat operacji na plikach w Javie: https://www.tutorialspoint.com/java/java_files_io.htm
+- [Dokumentacja Oracle na temat klasy Files](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/file/Files.html)
+  
+- [Dokumentacja Oracle na temat klasy Path](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/file/Path.html)
+  
+- [Dokumentacja Oracle na temat klasy File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)

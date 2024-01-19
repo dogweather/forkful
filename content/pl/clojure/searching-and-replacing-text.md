@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu."
-html_title:           "Clojure: Wyszukiwanie i zastępowanie tekstu."
-simple_title:         "Wyszukiwanie i zastępowanie tekstu."
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Czym jest wyszukiwanie i zastąpienie tekstu? Jest to proces, w którym programista szuka w określonej długości tekstu określonej frazy i zamienia ją na inną. Zazwyczaj jest to wykonywane, aby zmienić formatowanie lub uaktualnić zawartość tekstu.
+## Co i dlaczego?
+Wyszukiwanie i zastępowanie tekstu to podstawowe operacje, które programiści wykonują na ciągach znaków. Ułatwiają one m.in. refaktoryzację kodu, naprawę błędów i manipulowanie danymi.
 
-Dlaczego programiści to robią? Istnieje wiele powodów, dla których programiści mogą chcieć przeprowadzić wyszukiwanie i zastąpienie tekstu. Może być to potrzebne do szybkiego zmieniania wielu wersów w kodzie, zmiany składni lub uaktualnienia danych w bazie danych.
-
-### Jak to zrobić:
-Przykłady kodu i wyników w zdawkowych blokach ```Clojure...```
-
-Aby wyszukać i zastąpić tekst w Clojure, możesz użyć funkcji ```replace``` z biblioteki standardowej Clojure, która przyjmuje dwa argumenty: frazę do wyszukania i frazę, którą należy zastąpić. Na przykład:
+## Jak to zrobić:
+Priorytetem Clojure jest czytelność i efektywność, a jego biblioteka standardowa udostępnia wiele rozwiązań umożliwiających manipulację tekstem. Użyj funkcji `clojure.string/replace` do wyszukiwania i zastępowania tekstów.
 
 ```Clojure
-(replace "hello" "hi" "hello world")
+(require '[clojure.string :as str])
+
+(def text "Witaj, Świecie!")
+
+(println (str/replace text "Świecie" "Clojure"))
 ```
-Wynik:
+Po uruchomieniu kodu powyżej, otrzymamy następujący wynik:
 ```Clojure
-"hi world"
+Witaj, Clojure!
 ```
 
-Możesz również użyć funkcji ```replace-first```, która zastąpi tylko pierwsze wystąpienie frazy, lub ```replace-regexp```, która pozwala na użycie wyrażeń regularnych.
+## Głębsze zanurzenie:
+Historia: Clojure, jako język funkcyjny na platformie Java, został zaprojektowany z myślą o łatwym i efektywnym przetwarzaniu danych.
 
-### Głębokie zanurzenie:
-Wyszukiwanie i zastępowanie tekstu jest popularną funkcją w wielu językach programowania, w tym w Clojure. Obecnie można także zastosować to narzędzie do wielu różnych typów dokumentów, na przykład w arkuszach kalkulacyjnych lub edytorach tekstu.
+Alternatywy: Można użyć również wyrażeń regularnych, które są mocnym narzędziem do manipulowania tekstem, ale może być trudniejsze do opanowania.
 
-Alternatywą dla funkcji ```replace``` jest metoda ```str/replace``` z biblioteki ```clojure.string```, która działa na ciągach znaków i może być przydatna, jeśli konkretny tekst jest w zmiennej.
+Szczegóły implementacji: `clojure.string/replace` to uniwersalna funkcja, która jest częścią biblioteki standardowej Clojure. Działa na zasadzie wzorca (stringa lub wyrażenia regularnego) i zamienia wszystkie jego wystąpienia w tekście docelowym.
 
-### Zobacz także:
-- [Dokumentacja Clojure: Replace](https://clojuredocs.org/clojure.core/replace)
-- [Funkcje narzędziowe Clojure do wyszukiwania i zastępowania tekstu](https://stackoverflow.com/questions/22423526/clojure-functions-for-find-and-replace-string-in-file)
-- [Tutorial dla początkujących w Clojure](https://clojure.org/guides/getting_started)
+## Zobacz również:
+1. Dokumentacja Clojure na temat [manipulacji tekstem](https://clojuredocs.org/clojure.string)
+2. Dobry tutorial o [wyrażeniach regularnych w Clojure](https://www.regular-expressions.info/clojure.html)
+3. Poradnik [Refactoring w Clojure](https://dev.to/petrussola/refactoring-in-clojure-with-cognitects-refactor-nrepl-and-emacs-90a) - przykład użycia funkcji replace w praktyce.

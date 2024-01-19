@@ -1,7 +1,7 @@
 ---
-title:                "Parsing html"
-html_title:           "PHP: Parsing html"
-simple_title:         "Parsing html"
+title:                "Analisi sintattica dell'HTML"
+html_title:           "C++: Analisi sintattica dell'HTML"
+simple_title:         "Analisi sintattica dell'HTML"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,29 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Il parsing HTML è il processo di analisi del codice HTML per estrarre informazioni specifiche come tag, attributi e contenuti. I programmatori lo fanno per manipolare e utilizzare i dati raccolti per scopi come il web scraping e l'estrazione di dati.
+## Cosa e Perché?
 
-## Come fare:
-Ecco un esempio di codice PHP per effettuare il parsing di una pagina HTML e stampare il contenuto di un tag specifico utilizzando la libreria DOMDocument:
+L'analisi sintattica (parsing) di HTML è il processo di esaminazione del codice HTML per estrarre informazioni specifiche. I programmatori lo fanno per manipolare, estrarre o modificare dati presenti in una pagina web.
 
+## Come si fa:
+Ecco un esempio semplice di come fare parsing di un documento HTML utilizzando `DOMDocument` e `DOMXPath` in PHP.
+
+```PHP
+<?php
+$doc = new DOMDocument();
+libxml_use_internal_errors(TRUE); // disable libxml errors
+$doc->loadHTML(file_get_contents('https://www.example.com'));
+
+$xpath = new DOMXPath($doc);
+
+$classname = "myClass";
+$elements = $xpath->query("//*[contains(concat(' ', normalize-space(@class), ' '), ' $classname ')]");
+
+if (!is_null($elements)) {
+  foreach ($elements as $element) {
+    echo "<br/>[". $element->nodeName. "]";
+    $nodes = $element->childNodes;
+    foreach ($nodes as $node) {
+      echo $node->nodeValue. "\n";
+    }
+  }
+}
+?>
 ```
-// Creazione di un'istanza DOMDocument
-$dom = new DOMDocument();
-// Caricamento della pagina HTML da analizzare
-$dom->loadHTMLFile("pagina.html");
-// Ricerca del tag desiderato
-$tag = $dom->getElementsByTagName("p")->item(0);
-// Stampa del contenuto del primo paragrafo
-echo $tag->textContent;
-```
 
-Questo codice utilizzerà la libreria DOMDocument per caricare la pagina specificata e ricercare il primo tag "p", quindi stampare il suo contenuto utilizzando la proprietà "textContent".
+Questo script cerca e stampa i nodi che hanno la classe CSS "myClass" nel documento HTML di example.com.
 
 ## Approfondimenti:
-Il parsing HTML è stato introdotto per la prima volta nel 1993 con la specifica HTML 2.0. Ci sono diversi modi per analizzare il codice HTML, tra cui l'utilizzo di librerie come Simple HTML DOM e la creazione di espressioni regolari personalizzate.
+Storicamente, si usavano delle espressioni regolari per fare il parsing dell'HTML. Però, l'HTML non è un linguaggio regolare, quindi è diventato chiaro che un parser vero e proprio è la scelta migliore.
 
-## Vedi anche:
-- [Libreria DOMDocument di PHP] (https://www.php.net/manual/en/class.domdocument.php)
-- [Simple HTML DOM] (https://simplehtmldom.sourceforge.io/)
-- [Tutorial di parsing HTML con PHP] (https://www.w3schools.com/php/php_ajax_html_xml.asp)
+Tra le alternative ci sono SimpleHTML, che è leggermente più facile da usare, e HTML Purifier, che ha una sicurezza maggiore. Per quanto riguarda la scelta, dipende molto dalle esigenze specifiche del tuo progetto.
+
+Quando si parla di implementazione, `DOMDocument` crea un Document Object Model (DOM) del tuo HTML, facendoti andare avanti e indietro attraverso i nodi per raccogliere i dati. `DOMXPath` è un modo molto potente ed efficace per accedere a questo modello.
+
+## Guarda Anche: 
+- "Manipulating HTML and XML documents with cURL and DOM." - https://phpenthusiast.com/blog/manipulate-html-xml-with-php-dom
+- "PHP: DOMDocument - Manual." - https://www.php.net/manual/en/class.domdocument.php
+- "PHP: DOMXPath - Manual." - https://www.php.net/manual/en/class.domxpath.php
+- "PHP Simple HTML DOM Parser." - http://simplehtmldom.sourceforge.net/manual.htm
+- "HTML Purifier - Filter your HTML the standards-compliant way!" - http://htmlpurifier.org/

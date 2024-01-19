@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "Java recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Java"
 category:             "Java"
@@ -10,37 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Reading a Text File in Java: A Practical Guide
+
 ## What & Why?
 
-Reading a text file in Java is the process of extracting data from a plain text file and storing it in a program for further manipulation. Programmers often use this technique to read user-provided data or configuration files in their applications.
+A process of extracting data from a .txt file is referred to as reading a text file. Programmers do this to gather, manipulate, or analyze the existing information without manually inputting it into the program.
 
 ## How to:
 
-Reading a text file in Java can be easily achieved using the `BufferedReader` class. First, we need to create an instance of the class and pass a `FileReader` object containing the path of the text file we want to read. Then, we can use the `readLine()` method to read each line of the file and store it in a String variable. Here is an example code:
+Let's get practical with an example of how to read a text file in Java:
 
 ```Java
-BufferedReader reader = new BufferedReader(new FileReader("data.txt"));
+import java.nio.file.*;
+import java.io.IOException;
 
-String line;
-while((line = reader.readLine()) != null) {
-  System.out.println(line);
+public class Main {
+    public static void main(String[] args) {
+        String fileName = "file_example.txt";
+        
+        try { 
+            String content = Files.readString(Paths.get(fileName));
+            System.out.println(content);
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
-
-reader.close();
 ```
 
-The `readLine()` method returns null when there are no more lines to be read, so we can use it as a condition for our while loop. The `close()` method is used to properly close the file after reading.
+Let's say that `file_example.txt` contains the text `Hello, World!`. Here's what will print:
 
-## Deep Dive:
+```Java
+Hello, World!
+```
 
-Reading text files has been a fundamental aspect of programming since the early days. Before the introduction of object-oriented programming, programmers used to write code in low-level languages like C, where reading a text file involved complex syntax and memory management. Java, with its built-in IO libraries, simplifies this process, making it more accessible for programmers to read data from text files.
+Easy, right?
 
-Additionally, there are alternatives to using the `BufferedReader` class. For example, the `Scanner` class also provides the ability to read text files with a more straightforward syntax. However, it is slower and not recommended for large files.
+## Deep Dive
 
-When reading a text file, it is essential to consider the character encoding used in the file. Java's default character encoding is UTF-8, so if a file's encoding is different, we need to specify it when creating the `FileReader` object. Otherwise, the data may not be read correctly.
+For historical context, before Java 11, reading a text file was a bit more complex, involving loops and buffered readers.
 
-## See Also:
+Java 11 introduced `Files.readString()` and `Files.readAllLines()`, making life much easier. Still, the older methods remain relevant, particularly in scenarios where you want more granular control over the process, like reading a file line by line.
 
-- Java API for `BufferedReader`: https://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html
-- Java API for `Scanner`: https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html
-- Java IO Tutorial: https://www.tutorialspoint.com/java/io/index.htm
+As alternatives, third-party libraries like Apache Commons IO and Google's Guava also provide text-reading functionality with added features.
+
+If you dive deep into `Files.readString()`, you'll find that it uses the UTF-8 character encoding by default. Be mindful of this if you're working with text files written in a different encoding.
+
+## See Also
+
+- Oracle's Official Java Documentation on File I/O ([link](https://docs.oracle.com/javase/tutorial/essential/io/file.html))
+- Tutorial on reading and writing text files before Java 11 ([link](https://www.baeldung.com/java-read-lines-large-file))
+- Apache Commons IO ([link](https://commons.apache.org/proper/commons-io/))
+- Google's Guava ([link](https://github.com/google/guava/wiki))

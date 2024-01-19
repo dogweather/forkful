@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "Gleam recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,40 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Light Up Your Coding With Gleam: Sending HTTP Requests 
+## What & Why?  
+An HTTP request is a way for your program to communicate with a web server by sending a request and receiving a response. Programmers send HTTP requests to interact with APIs, fetch data, or post data onto a server.  
 
-## What & Why?
+## How To:
+In Gleam, we can use the `gleam/httpc` package. Here's a basic example:
 
-In the programming world, sending an HTTP Request is the act of requesting a particular action from a server, such as fetching, updating or deleting data. Whether you're working on a weather app or a food delivery service, you'll use HTTP requests to interact with live data from various APIs.
+```Gleam
+import gleam/httpc
 
-## How to:
-
-Here is a simple example of making a `GET` request with Gleam's `gleam/httpc`:
-
-```gleam
-import gleam/httpc.{get}
-
-pub fn fetch_data() {
-  let response = get("https://api.example.com/data")
-  case response {
-    Ok(response) -> io.println(response.body)
-    Error(err) -> io.println(err)
-  }
+let get_request() {
+    httpc.get("http://example.com")
+    |> result.unwrap_to_string
 }
 ```
+This will send a GET request to `http://example.com`.
 
-To run this code, call `fetch_data()` in your main function. The output will show the body of the http response, or the error if there is one.
+To send a POST request with JSON data, we can do something like this:
+
+```Gleam
+import gleam/httpc.{Headers, Post}
+import gleam/map
+import gleam/uri.{Uri}
+
+let post_request() {
+  let headers = Headers.new(map.from_list([tuple("Content-Type", "application/json")]))
+  let uri = Uri.parse("https://jsonplaceholder.typicode.com/posts")
+  let body = "{\"title\": \"foo\", \"body\": \"bar\", \"userId\": 1}"
+  let request = Post.new_request(uri, body) |> Post.set_headers(headers)
+
+  httpc.send(request)
+  |> result.unwrap_to_string
+}
+```
+This sends a POST request to `https://jsonplaceholder.typicode.com/posts` with JSON data.
 
 ## Deep Dive
+HTTP requests aren't new. They've been part of web communication since HTTP v1.0 back in the '90s. Today, programmers have various ways to send HTTP requests—in Gleam, `httpc` is our go-to package, but alternatives like `curl` or `axios` exist in other languages.
 
-Historically, the HTTP's simple design was a major factor in the rapid adoption and widespread use of the internet. As for the alternatives, there are other data transfer protocols like FTP, but HTTP(S) tends to be the go-to due to its simplicity, statelessness, and interoperability.
-
-In terms of sending HTTP requests in Gleam, the `get` function used in our example is asynchronous, making a non-blocking request. It returns `Result(HttpClient.Response, HttpClient.Error)`, representing either a successful response or an error. 
+The `httpc` package allows flexible interaction with servers using Gleam’s strong typing system. You set up the request, send it, and get a response back that you can handle as you wish.
 
 ## See Also
-
-For further reading, check out these great resources on the subject:
-
-- Gleam's official docs on HTTP Requests: [Gleam Http Library](https://hexdocs.pm/gleam_http/)
-- The history and evolution of HTTP: [HTTP - Wikipedia](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-- A comparison of data transfer protocols: [Comparison of Data Transfer Protocols](https://en.wikipedia.org/wiki/Comparison_of_data_transfer_protocols)
+For more info on the `httpc` package, check out the [Gleam HTTP package](https://hexdocs.pm/httpc/readme.html) docs. For more on Gleam itself, here's its [GitHub Repository](https://github.com/gleam-lang/gleam). Interested in HTTP specifications? The [HTTP/1.1 RFC]( https://tools.ietf.org/html/rfc2616) is worth your time.

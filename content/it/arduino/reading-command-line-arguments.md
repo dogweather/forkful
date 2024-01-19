@@ -1,6 +1,6 @@
 ---
 title:                "Lettura degli argomenti della riga di comando"
-html_title:           "Arduino: Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
 simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,41 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Leggere gli argomenti della riga di comando è il processo di estrarre e utilizzare le informazioni fornite dall'utente al momento dell'esecuzione di un programma. I programmatori lo fanno per personalizzare il comportamento del loro programma o per fornire input dinamici.
+## Cosa e Perche?
+La lettura degli argomenti da riga di comando consiste nel processare le opzioni/argomenti immessi durante l'esecuzione di un programma. I programmatori lo fanno per personalizzare il comportamento di un programma, rendendolo più flessibile e utile.
 
-## Come fare:
-Per leggere gli argomenti della riga di comando in Arduino, è possibile utilizzare la funzione ```main``` e l'array ```argv```. Di seguito è riportato un esempio di codice che stampa l'input fornito dall'utente:
-
-```Arduino
-void setup() {
-  Serial.begin(9600); // inizializza la comunicazione seriale a 9600 bps
-}
-
-void loop() {
-  Serial.println(argv[1]); // stampa il primo argomento fornito dall'utente
-}
-```
-
-Se si esegue questo codice con l'input "Hello World", si otterrà l'output "Hello". Per leggere più argomenti, è possibile utilizzare un loop:
+## Come si fa:
+Ecco un semplice esempio di come leggere gli argomenti da riga di comando in Arduino. Ricorda, Arduino non supporta direttamente la lettura degli argomenti da riga di comando, quindi questo è soltanto un esempio ipotetico.
 
 ```Arduino
+char* argomenti[] = {"programma", "arg1", "arg2", NULL};
+
 void setup() {
   Serial.begin(9600);
+  while (!Serial);
+  for (int i = 0; argomenti[i]; i++) {
+    Serial.println(argomenti[i]);
+  }
 }
 
 void loop() {
-  for(int i = 0; i < argc; i++) {
-    Serial.println(argv[i]); // stampa ogni argomento fornito dall'utente
-  }
+  // qui il magico loop
 }
 ```
 
-## Approfondimento:
-Leggere gli argomenti della riga di comando è un concetto comune nella programmazione e viene utilizzato in vari linguaggi di programmazione, come C e Java. Consente ai programmatori di rendere i loro programmi più personalizzabili e flessibili per l'utente finale.
+Una volta caricato e avviato, dovrebbe stampare:
 
-Un'alternativa all'utilizzo di ```argv``` è l'utilizzo della funzione ```Serial.readString()```, che consente di leggere direttamente l'input dell'utente dalla porta seriale. Tuttavia, questo metodo richiede che l'utente interagisca con il programma attraverso un'interfaccia seriale.
+```
+programma
+arg1
+arg2
+```
 
-## Vedi anche:
-- Documentazione ufficiale di Arduino su ```argv```: https://www.arduino.cc/reference/en/language/variables/environment/argc/
-- Tutorial su come leggere gli argomenti della riga di comando in Arduino: https://create.arduino.cc/projecthub/Aritra/how-to-read-commands-from-command-line-0cbe12
+## Approfondimento
+La lettura degli argomenti da riga di comando ha avuto origine nei primi giorni dei sistemi operativi CLI (Command-Line Interface), per permettere agli utenti di personalizzare l'esecuzione del programma. Con Arduino, si potrebbe ottenere un effetto simile utilizzando l'interfaccia seriale per inserire i dati nel programma.
+
+Una alternativa potrebbe essere l'uso di file di configurazione per memorizzare le impostazioni, oppure l'immissione dei dati tramite l'interfaccia utente del programma se disponibile.
+
+In termini di implementazione, la lettura degli argomenti da riga di comando non è direttamente supportata da Arduino perché non ha un vero sistema operativo o una shell da riga di comando. Tuttavia, può essere emulata mediante l'uso della seriale.
+
+## Per saperne di più
+Per ulteriori informazioni o per approfondire, ecco alcuni link utili:
+
+- [Arduino Reference](https://www.arduino.cc/reference/en/)
+- [Processing Command Line Arguments](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
+- [Command Line Arguments on Wikipedia](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)

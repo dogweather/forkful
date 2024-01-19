@@ -1,6 +1,6 @@
 ---
 title:                "将日期转换为字符串"
-html_title:           "PowerShell: 将日期转换为字符串"
+html_title:           "Bash: 将日期转换为字符串"
 simple_title:         "将日期转换为字符串"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,34 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么？为什么？
+## 什么以及为什么？
+日期转字符串是将日期对象变成可阅读的文字形式的过程。程序员这么做是为了能轻松地在显示设备上展示日期，或者以文字形式存储和传输数据。
 
-将日期转换为字符串是将日期数据转换为文本格式的过程。程序员通常会这样做，因为字符串比日期数据更容易处理和解析。
+## 怎么做：
+在 PowerShell 中，我们可以使用 `Get-Date` cmdlet 和 `-Format` 参数进行日期转字符串操作。
+```PowerShell
+# 获取当前日期并转化为字符串
+$日期 = Get-Date -Format "yyyy-MM-dd"
 
-## 如何实现？
-
-首先，我们需要使用 ```Get-Date``` 命令获取日期数据，然后使用 ```ToString()``` 方法将其转换为字符串。例如：
-
-```powershell
-# 获取今天的日期
-$date = Get-Date
-
-# 将日期转换为字符串，并指定格式
-$dateString = $date.ToString("yyyy-MM-dd")
-
-# 打印输出
-Write-Host $dateString
+# 显示结果
+$日期
 ```
+在上述例子中，你可能会得到如下输出：
+```PowerShell
+2022-04-29
+```
+## 深入研究
+在基于 Unix 的操作系统（比如：Linux）问世之初，日期与时间的表示包含了很多复杂性。为了简化处理，开发者把日期和时间转化为字符串以方便处理和展示。
 
-输出：2021-10-10
+在 PowerShell 里，除了 `Get-Date -Format` 之外，我们还可以使用 `.ToString()` 方法进行日期转字符串操作。这两者的主要区别在于，使用 `Get-Date -Format` 可以支持 Unix 风格的日期和时间字符串格式，而 `.ToString()` 方法则更倾向于 .NET 原生的日期和时间字符串格式。
 
-## 深入了解
-
-日期转换为字符串是一种常见的数据处理方法，因为它使得日期数据更易于理解和操作。在早期的编程语言中，日期数据经常以机器可读的数字形式存储，这使得处理日期变得非常棘手。但是，随着现在的程序员越来越注重代码的可读性，将日期转换为字符串也变得越来越常见。
-
-除了使用 ```ToString()``` 方法，还可以使用其他方法将日期转换为字符串，例如 ```Format()``` 和 ```ParseExact()```。每种方法都有不同的用途和优缺点，可以根据实际情况选择最合适的方法。
-
-## 参考链接
-
-- Get-Date命令文档：https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date
-- 日期转换为字符串的不同方法：https://www.red-gate.com/simple-talk/dotnet/net-framework/custom-date-and-time-format-strings/
+## 参考文档：
+- PowerShell 的 [`Get-Date`](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1) cmdlet 官方文档.
+- `.NET` 的 [`DateTime.ToString`](https://docs.microsoft.com/dotnet/api/system.datetime.tostring?view=net-5.0) 方法官方文档.
+- 关于更多日期和时间字符串格式的讨论，你可以参考 [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) 标准.

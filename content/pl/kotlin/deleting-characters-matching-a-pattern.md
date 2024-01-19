@@ -1,6 +1,6 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "Kotlin: Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Usunięcie znaków dopasowujących wzorzec oznacza usuwanie wszystkich znaków w ciągu, które pasują do określonego wzorca. Programiści często wykonują to zadanie w celu przetwarzania danych i oczyszczenia ich z niechcianych znaków.
+## Co & Dlaczego?
+
+Usuwanie znaków zgodnie z wzorcem to proces, który pozwala programiście zidentyfikować i usunąć konkretne znaki z ciągu (tekstu). Programiści robią to, aby oczyścić dane, usunąć zbędne znaki i upewnić się, że ciąg jest czytelny i zgodny z oczekiwanymi normami.
 
 ## Jak to zrobić:
-Przykładowy kod w języku Kotlin, który usuwa znaki dopasowujące wzorzec:
+
+Potrzebujesz prostego kodu Kotlin do usunięcia znaków z ciągu, które pasują do określonego wzorca? Oto on:
 
 ```Kotlin
-val tekst = "To jest przykładowy tekst z cyframi: 123456789" 
-val nowyTekst = tekst.replace("\\d".toRegex(), "") 
-println(nowyTekst) // Wypisze: "To jest przykładowy tekst z cyframi: "
+fun String.usunZgodne(wzorzec: Regex): String {
+    return this.replace(wzorzec, "")
+}
 
+fun main() {
+    val tekst = "Cześć, jestem Kotek111 i lubię 222ryby333."
+    println(tekst.usunZgodne(Regex("\\d")))  // usunie wszystkie cyfry
+}
 ```
 
-Możemy również wykorzystać wyrażenia regularne do określania bardziej skomplikowanych wzorców do usunięcia. Na przykład, jeśli chcemy usunąć wszystkie numery telefonów z tekstu, możemy użyć następującego kodu:
+Na wyjściu otrzymasz:
+```
+Cześć, jestem Kotek i lubię ryby.
+```
+
+## Deep Dive:
+
+1. **Kontekst historyczny**: Wymaganie usuwania znaków zgodnie z wzorcem istnieje od początku komputerów. Właśnie dlatego większość języków programowania, w tym Kotlin, ma wbudowane metody do wykonywania tej czynności.
+
+2. **Alternatywy**: Można zastosować różne metody do usunięcia konkretnych znaków z ciągu, na przykład iterując przez ciąg znak po znaku czy używając funkcji `filterNot`. Wybór metody zależy od indywidualnych preferencji programisty i specyfiki problemu.
 
 ```Kotlin
-val tekst = "Mój numer telefonu to: 123-456-7890"
-val nowyTekst = tekst.replace("\\d{3}-\\d{3}-\\d{4}".toRegex(), "")
-println(nowyTekst) // Wypisze: "Mój numer telefonu to: "
-
+fun String.usunZgodne(wzorzec: Char): String {
+    return this.filterNot { it == wzorzec }
+}
 ```
 
-## Głębsze Zagadnienia:
-Ściśle mówiąc, usuwanie znaków dopasowujących wzorzec jest częścią większej metody zwanej "wyrażeniami regularnymi". Wyrażenia regularne są bardzo przydatne w przetwarzaniu danych i pozwalają nam na szybkie i skuteczne znalezienie i manipulowanie tekstem. Alternatywnym sposobem usuwania znaków dopasowujących wzorzec może być użycie funkcji "removeIf" w języku Kotlin. Jednak wyrażenia regularne są bardziej wszechstronne i dostosowalne do różnych wzorców.
+3. **Szczegóły implementacji**: Metoda `replace` używana w przykładzie działa poprzez zastępowanie znaków pasujących do określonego wzorca pustym ciągiem, co skutkuje usunięciem tych znaków.
 
-Implementacja usuwania znaków dopasowujących wzorzec w języku Kotlin korzysta z klasy Regex, która umożliwia wykorzystanie wyrażeń regularnych. W tym przykładzie korzystamy z metody "replace", która zastępuje dopasowane wzorce określonym ciągiem znaków.
+## Zobacz też:
 
-## Zobacz również:
-Sprawdź dokumentację języka Kotlin na temat wyrażeń regularnych: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/index.html 
-Aby dowiedzieć się więcej o usuwaniu znaków dopasowujących wzorce, zajrzyj na stronę: https://www.regular-expressions.info/
+- [Dokumentacja Kotlin - Wyrażenia regularne](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/index.html)
+- [Stack Overflow - Usuwanie znaków z ciągu Kotlin](https://stackoverflow.com/questions/52249280/removing-characters-from-string-with-kotlin)

@@ -1,7 +1,7 @@
 ---
-title:                "Tietokoneohjelmointi: Hahmojen poistaminen tiettyä kaavaa vastaavilta"
-html_title:           "C: Tietokoneohjelmointi: Hahmojen poistaminen tiettyä kaavaa vastaavilta"
-simple_title:         "Tietokoneohjelmointi: Hahmojen poistaminen tiettyä kaavaa vastaavilta"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,31 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+# Tervetuloa: Miten Poistaa Merkkejä Vastaavasta Mallista C-ohjelmoinnissa
 
-Character pattern matchingilla tapahtuu merkkien poistaminen, jotka vastaavat tiettyä kaavaa. Tämä on hyödyllistä, koska se mahdollistaa tietyn tyyppisten merkkien nopean ja tehokkaan poistamisen koodista. Se myös tekee koodin lukemisesta ja ylläpidosta helpompaa, mikä säästää aikaa ja vaivaa.
+## Mitä & Miksi?
+Poistaminen merkkejä vastaavasta mallista tarkoittaa tiettyjen merkkien (mallin) poistamista merkkijonosta. Tätä käytetään datan siistimiseen ja tarpeettoman tiedon poistamiseen.
 
-## Miten tehdä?
-
-Esimerkiksi, jos haluamme poistaa kaikki välilyönnit merkkijonosta, voimme käyttää seuraavaa koodinpätkää:
+## Kuinka se tapahtuu:
+Alla on esimerkki siitä, kuinka tämä tehdään.
 
 ```C
-char* str = "Tämä on esimerkkimerkkijono.";
-char* new_str = str_replace(str, " ", ""); 
-printf("%s", new_str); // Tulostaa "Tämäonesimerkkimerkkijono."
+#include <stdio.h>
+#include <string.h>
+
+void delete_pattern(char *str, const char *pattern) {
+    char *p = str;
+    while (*str) {
+        if (strchr(pattern, *str)) {
+            str++;
+        } else {
+            *p++ = *str++;
+        }
+    }
+    *p = '\0';
+}
+
+int main() {
+    char str[] = "Hello, World!";
+    delete_pattern(str, " World!");
+    printf("%s\n", str); // tulostaa: Hello,
+    return 0;
+}
 ```
 
-Tässä koodissa käytämme str_replace-funktiota, joka korvaa kaikki välilyönnit tyhjällä merkillä. Tämä tekee uudesta merkkijonosta "Tämäonesimerkkimerkkijono."
+Mallin " World!" merkkijono poistetaan alkuperäisestä merkkijonosta "Hello, World!".
 
-## Syväsukellus
+## Syvällisempi tarkastelu
+Merkkien poistaminen malleilla on ollut osa C-kieltä alusta asti. Tämän ratkaisemiseksi on olemassa useita vaihtoehtoisia menetelmiä, mutta tässä artikkelissa esitelty menetelmä on yksinkertaisin ja tehokkain.
 
-Historiallisessa kontekstissa, merkkien poistaminen vastaavien kaavojen avulla on ollut tärkeä osa ohjelmointia jo pitkään. Aiemmin se nähtiin tarpeellisena, koska monet järjestelmät eivät pystyneet käsittelemään erikoismerkkejä tai otaksuivat tiettyjä kaavoja.
-
-Nykyään on myös olemassa muita tapoja poistaa merkkejä, kuten suoraan käyttäen merkkijonojen manipulointifunktioita tai käyttämällä säännöllisiä lausekkeita. Jokaisella lähestymistavalla on omat etunsa ja haittansa, joten on tärkeää valita oikea menetelmä tilanteen mukaan.
-
-Koodin toteutuksesta riippuen merkkien poistamisen tehokkuus voi vaihdella. Esimerkiksi, jos käytetään suuria merkkijonoja, kannattaa miettiä muita vaihtoehtoja koodin nopeuttamiseksi. On myös tärkeää huolehtia, että merkkien poistamisen yhteydessä ei vahingoiteta muita osia koodista.
+Toteutuksen osalta funktio `delete_pattern` käy läpi merkkijonon ja verrata sitä malliin. Jos merkki on mallissa, se ohitetaan. Muussa tapauksessa, se kopioidaan uuteen merkkijonoon `p`. 
 
 ## Katso myös
+1. Stack Overflow: Removing all occurrences of a character in a string - [Stackoverflow linkki](https://stackoverflow.com/questions/5457608/how-to-remove-the-character-at-a-given-index-from-a-string-in-c)
+2. Tutorialspoint: String handling functions in C - [Tutorialspoint linkki](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm)
 
-- [Merkkijonojen manipulointifunktiot C:ssä](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Säännölliset lausekkeet C:ssä](https://www.tutorialspoint.com/c_standard_library/regex_h.htm)
+Onnea ohjelmointiprojekteillesi! Koodauksen maailma odottaa.

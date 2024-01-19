@@ -10,47 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que é e por que fazer? 
+## O Que & Por Quê? 
+Verificar se um diretório existe é uma função simples que retorna um valor verdadeiro ou falso dependendo da existência do diretório especificado. Programadores fazem isso para evitar erros - tentar acessar ou manipular um diretório que não existe pode resultar em erros ou comportamento inesperado do programa.
 
-Verificar se um diretório existe é verificar se determinado caminho de arquivo está acessível no sistema. Programadores geralmente fazem essa checagem para garantir que o programa não tente acessar ou salvar arquivos em diretórios inexistentes, evitando erros e instabilidades no sistema.
-
-# Como fazer:
-
-Para verificar se um diretório existe em um programa escrito em C, podemos utilizar a função `opendir()` da biblioteca `<dirent.h>`. Veja o exemplo abaixo:
+## Como Fazer:
+Usamos a função `stat` em C para verificar se um diretório existe. Segue abaixo um exemplo de seu uso.
 
 ```C
-#include <stdio.h>
-#include <dirent.h>
+#include <sys/stat.h>
+#include <stdbool.h>
 
-int main(){
-    // Note que "diretorio" é o caminho para o diretório a ser checado
-    DIR *dir = opendir("diretorio");
+bool DiretorioExiste(const char* dir_path) {
+    struct stat buffer;
+    return (stat(dir_path, &buffer) == 0);
+}
 
-    if (dir){ // Se o diretório foi aberto sem problemas
+int main() {
+    if(DiretorioExiste("/caminho/para/verificar")) {
         printf("O diretório existe!\n");
-        closedir(dir); // Fecha o diretório
-    }
-    else{ // Se o diretório não existe ou ocorreu algum erro ao abri-lo
+    } else {
         printf("O diretório não existe!\n");
     }
-
     return 0;
 }
 ```
 
-A saída do programa será "O diretório existe!" caso o diretório exista no sistema, ou "O diretório não existe!" caso contrário.
+## Mergulhando Fundo
+Historicamente, a função `stat` vem da era Unix, desenvolvida na década de 70. Ela é amplamente utilizada para verificar detalhes do sistema de arquivos, incluindo a verificação de diretórios. 
 
-# Profundando:
+Uma alternativa para a função `stat` é a função `opendir`, que também pode ser usada para verificar se um diretório existe. No entanto, `opendir` tentará realmente abrir o diretório, o que pode ser mais lento que `stat`, que apenas confere as informações sobre o diretório.
 
-Uma das principais razões para programadores checarem se um diretório existe é justamente prevenir problemas no acesso a arquivos e pastas inexistentes. Além disso, essa prática também ajuda a garantir a estabilidade do programa e uma melhor gestão de erros.
+Em termos de implementação, a função `stat` simplesmente preenche uma estrutura `struct stat` com informações sobre o arquivo/diretório. Se o arquivo/diretório não existir, `stat` retornará -1, permitindo assim a verificação da existência do diretório.
 
-Uma alternativa para a utilização da função `opendir()` é a função `access()` da biblioteca `<unistd.h>`, que também pode ser usada para verificar a existência de arquivos e diretórios em C.
-
-No sistema de arquivos do Unix, há a convenção de que se um diretório existir, sua permissão de leitura será negada caso não haja permissão de execução. Ou seja, se o usuário não tiver permissão de execução para um diretório, a função `access()` irá retornar -1, indicando que o diretório não existe. Porém, essa convenção pode variar de sistema para sistema, portanto é importante estar atento às especificidades do seu sistema operacional.
-
-Por fim, vale lembrar que a função `opendir()` também pode aceitar um parâmetro adicional, que é o caminho para um arquivo dentro do diretório a ser verificado. Dessa forma, podemos checar a existência de um arquivo específico dentro de um diretório.
-
-# Veja também:
-
-- [Documentação da função `opendir()` no site cppreference](https://en.cppreference.com/w/c/io/opendir)
-- [Documentação da função `access()` no site cppreference](https://en.cppreference.com/w/c/io/access)
+## Veja Também
+1. Mais sobre a função `stat`: [https://man7.org/linux/man-pages/man2/stat.2.html](https://man7.org/linux/man-pages/man2/stat.2.html)
+2. Sobre a função `opendir`: [https://man7.org/linux/man-pages/man3/opendir.3.html](https://man7.org/linux/man-pages/man3/opendir.3.html)
+3. Documentação completa de referência da biblioteca C: [http://www.cplusplus.com/reference/clibrary/](http://www.cplusplus.com/reference/clibrary/)

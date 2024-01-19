@@ -1,6 +1,6 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "C recipe: Finding the length of a string"
+html_title:           "Arduino recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "C"
 category:             "C"
@@ -11,33 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Finding the length of a string is a common task in programming that involves determining the number of characters in a string. Programmers often need to find the length of a string to perform operations such as string manipulation, memory allocation, and comparison.
+Finding the length of a string means determining the number of characters a string holds. Programmers use this measure in various operations such as loops, comparisons and when allocating memory dynamically for strings.
 
 ## How to:
-To find the length of a string in C, we can use the built-in function `strlen()`. This function takes a string as an argument and returns an integer representing the length of the string. Here is an example of how we can use `strlen()` in our code:
+Let's use the `strlen()` function in `<string.h>` library to find the length of a string.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-   char myString[] = "Hello World";
-   int length = strlen(myString);
-   printf("The length of my string is %d", length);
-   return 0;
+    char str[] = "Hello, Programmer!";
+    int len = strlen(str);
+    printf("Length of string = %d\n", len);
+    return 0;
 }
 ```
+This outputs: `Length of string = 18`. It includes all characters and spaces but doesn't count the concluding null character.
 
-The output of this code will be: `The length of my string is 11`. As you can see, `strlen()` counts the number of characters in the string, including spaces and punctuation.
+## Deep Dive
+Finding the length of a string might seem like a simplistic task, but there's quite a history behind it. In older versions of C, there was no built-in function to achieve this. Programmers needed to loop through the string, counting the characters until a null character (`\0`) was encountered. This is the end-of-string marker in C.
 
-## Deep Dive:
-In the early days of C, programmers had to calculate the length of strings manually using loops and conditional statements. This was a tedious and error-prone process, leading to the development of the `strlen()` function as a standard library function in the C programming language.
+Here's the manual way without `strlen()`:
 
-Other alternatives for finding the length of a string in C include using the function `sizeof()` which returns the size of a variable in bytes, or using pointers to count the number of characters in a string.
+```C
+#include <stdio.h>
 
-The `strlen()` function uses a simple algorithm known as the "linear time" algorithm, which calculates the length of a string by sequentially checking each character until a null terminator is reached. This makes it a very efficient and reliable method for finding the length of a string.
+int main () {
+    char str[] = "Hello, Programmer!";
+    int len = 0;
+    while (str[len] != '\0') {
+        len++;
+    }
+    printf("Length of string = %d\n", len);
+    return 0;
+}
+```
+This outputs: `Length of string = 18`, matching the earlier result. Notice how the code's complexity increased.
 
-## See Also:
-- [C string functions](https://www.programiz.com/c-programming/library-function/string.h)
-- [Memory allocation in C](https://www.tutorialspoint.com/c_standard_library/c_function_malloc.htm)
-- [Comparison operators in C](https://www.programiz.com/c-programming/c-operators)
+The `strlen()` function in the `<string.h>` library was a welcome upgrade. Internally, it loops through the string till it finds a null character, exactly simulating the manual process, but the usage becomes more readable and neat.
+
+## See Also
+To continue your journey into string manipulation in C, here are some useful links:
+- [C String Functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm) on TutorialsPoint.
+- [String Handling in C](https://www.geeksforgeeks.org/string-handling-in-c-set-1/) on GeeksForGeeks.
+- [C Programming/String handling](https://en.wikibooks.org/wiki/C_Programming/String_handling) on Wikibooks.

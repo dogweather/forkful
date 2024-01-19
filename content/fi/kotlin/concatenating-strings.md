@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Kotlin: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,37 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-Konkatenaatio eli merkkijonojen yhdistäminen on ohjelmoinnissa yleinen tapa yhdistää kaksi tai useampaa merkkijonoa yhdeksi kokonaisuudeksi. Tätä tarvitaan esimerkiksi tekstin luomisessa, jolloin halutaan lisätä muuttujiin tallennettuja arvoja halutussa järjestyksessä.
+Merkkijonojen yhdistäminen eli konkatenaatio on se, kun kaksi tai useampi merkkijono yhdistetään lomittain. Ohjelmoijat tekevät tätä, koska se on käytännöllinen tapa muodostaa uusia merkkijonoja tai manipuloida olemassa olevia merkkijonoja.
 
-## Kuinka:
+## Näin se tehdään:
 
-Kotlinissa merkkijonojen konkatenaatio tapahtuu käyttämällä plus-merkkiä (+) kahden tai useamman merkkijonon välissä. Katso esimerkki alla:
+Kotlinissa voit yhdistää merkkijonoja "+"-operaattorin avulla. Tässä esimerkki:
 
-```kotlin
-val etunimi = "Matti"
-val sukunimi = "Mäkinen"
-println(etunimi + " " + sukunimi)
-
-// Output: Matti Mäkinen
+```Kotlin
+fun main() {
+    val s1 = "Hei, "
+    val s2 = "maailma!"
+    val yhdistetty = s1 + s2
+    println(yhdistetty)  //Tulostaa: Hei, maailma!
+}
 ```
 
-Merkkijonon lisäksi plus-merkkiä voidaan käyttää myös muuttujan ja tekstin yhdistämiseen. Katso esimerkki alla:
+## Syvempi sukellus:
 
-```kotlin
-val sivujenMaara = 315
-println("Kirjassa on " + sivujenMaara + " sivua.")
+Ennen Javan SE 5 -versiota, merkkijonojen konkatenoinnin tehokkain tapa oli käyttää StringBuffer-luokkaa. Kotlin perineekin Javan String- ja StringBuilder-luokkien käyttökäytännöt. Nykyään voimme käyttää "+"-operaattoria tai "plus"-metodia merkkijonoihin helposti ja tehokkaasti Kotlinissa.
 
-// Output: Kirjassa on 315 sivua.
+Uusi ja tehokas tapa tehdä merkkijonojen konkatenointi on "string templates". Ne mahdollistavat muuttujien arvojen sisällyttämisen merkkijonojen sisällä.
+
+```Kotlin
+fun main() {
+    val nimi = "Matti"
+    println("Hei, $nimi")  //Tulostaa: Hei, Matti
+}
 ```
 
-## Syväluotaus:
-
-Merkkijonojen konkatenaatio ei ole uusi keksintö, vaan sitä on käytetty ohjelmoinnissa jo pitkään. Aikaisemmin se tehtiin yleensä käyttämällä esimerkiksi C-kielen strcat-funktiota tai Java-kielen StringBuilder-luokkaa.
-
-Kotlinissa konkatenaatio on toteutettu tehokkaasti sisäisen StringBuilder-luokan avulla. Tämä mahdollistaa suorituskyvyn optimoinnin ja tekee koodista helpommin luettavaa.
+On tärkeää tietää, että suurten määrien merkkijonojen yhdistäminen yhden "+"-operaattorin avulla voi hidastaa ohjelman suorituskykyä, koska jokainen "+"-operaatio luo uuden String-olion. Siksi tehokkaampi vaihtoehto on käyttää StringBuilder- tai StringBuffer-luokkaa isojen määrien merkkijonojen yhdistämisessä.
 
 ## Katso myös:
 
-- [Kotlinin dokumentaatio merkkijonojen konkatenaatiosta](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Java StringBuilder-luokan dokumentaatio](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html)
-- [C strcat-funktion dokumentaatio](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
+1. [Kotlinin virallinen dokumentaatio merkkijonon konkatenoinnista](https://kotlinlang.org/docs/strings.html)
+2. [StringBuilder-luokka Kotlinissa](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)
+3. [Merkkijonojen käyttö Kotlinissa](https://medium.com/@fatihcoskun/kotlin-strings-9b7f6cd3f5d0)

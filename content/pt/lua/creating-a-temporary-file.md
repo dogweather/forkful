@@ -1,7 +1,7 @@
 ---
-title:                "Criando um arquivo temporário."
-html_title:           "Lua: Criando um arquivo temporário."
-simple_title:         "Criando um arquivo temporário."
+title:                "Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
+simple_title:         "Criando um arquivo temporário"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por Que?
+## O Que & Por quê?
 
-Criar um arquivo temporário significa criar um arquivo temporário que será apagado após o uso. Programadores geralmente criam arquivos temporários para armazenar informações temporárias que não são necessárias permanentemente e também para evitar sobrecarga no armazenamento.
+A criação de um arquivo temporário em programação é uma prática comum usada para armazenar dados temporariamente durante a execução do programa. Isso pode ser útil em situações onde você precisa manipular uma grande quantidade de dados sem consumir uma quantidade significativa de memória.
 
 ## Como Fazer:
 
-Exemplo de código:
+Aqui está um exemplo de como criar um arquivo temporário em Lua.
 
-```lua
--- forma mais básica de criar um arquivo temporário
-arquivo_temp = io.tmpfile()
+```Lua
+local tmp = os.tmpname()
+local fp = io.open(tmp, "w")
 
--- escrevendo em um arquivo temporário
-arquivo_temp:write("Este é um arquivo temporário!")
+fp:write("Testando o arquivo temporário em Lua")
+fp:close()
 
--- lendo o conteúdo do arquivo temporário
-arquivo_temp:seek("set")
-print(arquivo_temp:read("*a"))
+fp = io.open(tmp, "r")
+print(fp:read())
+fp:close()
 
--- fechando e apagando o arquivo temporário
-arquivo_temp:close()
+os.remove(tmp)
 ```
 
-Saída do código:
+Na execução, o script acima irá imprimir `Testando o arquivo temporário em Lua`.
 
-```
-Este é um arquivo temporário!
-```
+## Aprofundando:
 
-## Mergulho Profundo:
+Historicamente, arquivos temporários têm sido usados em duas ocasiões principais: manipulações de grande quantidade de dados e operações de IO (input/output). Lua, com a sua eficiente manipulação de strings a apenas um comando de distância, possibilita um espaçoso campo para que arquivos temporários possam ser usados em larga escala.
 
-Os arquivos temporários existem desde os primórdios da programação e são uma prática comum para lidar com informações temporárias. Existem alternativas para criar arquivos temporários, como usar a função `os.tmpname()` ou criar um arquivo regular e usá-lo como arquivo temporário. O Lua possui uma biblioteca padrão `io` que fornece métodos para criar, ler e escrever em arquivos temporários.
+Existe uma função alternativa em Lua, `io.tmpfile()`, que cria um arquivo temporário que é automaticamente removido quando o programa termina. No entanto, este arquivo não tem um nome de arquivo válido e não pode ser aberto por outro programa durante a execução do programa Lua.
+
+Quanto à implementação, quando `os.tmpname()` é chamado, Lua cria um nome único para o arquivo temporário. O arquivo é então aberto, escrito, lido e, finalmente, removido usando `os.remove()`.
 
 ## Veja Também:
 
-- [Documentação do Lua sobre arquivos temporários](https://www.lua.org/manual/5.3/manual.html#pdf-io.tmpfile)
-- [Alternativa para criar arquivos temporários em Lua](http://lua-users.org/wiki/TempFileNames)
-- [Exemplos práticos de uso de arquivos temporários em Lua](https://www.tutorialspoint.com/lua/lua_io_files.htm)
+Para mais detalhes sobre os tópicos discutidos, veja os seguintes links:
+
+- Manipulação de arquivos em Lua: https://www.lua.org/pil/21.2.2.html
+- Funções de entrada/saída: https://www.lua.org/pil/21.1.html
+- Documentação oficial de Lua, com referência completa: https://www.lua.org/docs.html

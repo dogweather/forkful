@@ -1,7 +1,7 @@
 ---
-title:                "קריאת פרמטרי שורת הפקודה"
-html_title:           "Elm: קריאת פרמטרי שורת הפקודה"
-simple_title:         "קריאת פרמטרי שורת הפקודה"
+title:                "קריאה של ארגומנטים משורת הפקודה"
+html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
+simple_title:         "קריאה של ארגומנטים משורת הפקודה"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,35 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-קריאת ארגומנטים משורת הפקודה היא תהליך שבו מקבלים פרמטרים מהמשתמש דרך הPCLI ומשתמשים בהם בתוכניות שלהם. התהליך קריטי לתכנות כיסוי המציאויות ולהתאמת האפליקציות לצרכי המשתמשים שונים.
+## מה זה ולמה?
+קריאת ארגומנטים משורת הפקודה זו בעצם אמצעי של התקשרות עם תוכנה בזמן הרצה. מתכנתים משתמשים בזה כדי לאפשר לקוד שלהם להתאים את עצמו למגוון מצבים ולקבל כניסות משתמש במהלך ההרצה.
 
-# איך ?
-```Elm
-import Platform exposing (worker)
-
-main =
-  worker { init = \_ -> ( [], 0 )
-         , update = \_ model -> ( [], model + 1 )
-         , subscriptions = \_ -> Sub.none
-         }
-```
-
-בדוגמה זו ניתן לראות כיצד מתבצעת פעולת הקריאה לארגומנטים באמצעות פונקציית עובד. כאשר נקלוט את הערכים שהמשתמש מגדיר בשורת הפקודה, נוסיף אותם לפרמטרים של הפונקציה. לאחר מכן, בעזרת ה-aggregate function, נגדיר את המשתנה המסכם.
+## כיצד לכתוב:
+חשוב לציין שElm אינו תומך בקריאת ארגומנטים מהשורת הפקודה באופן ישיר. אבל, אפשר להיעזר בJavaScript באמצעות שימוש ב-Elm ports.
+אז נראה דוגמה:
 
 ```Elm
-> elm-make App.elm --args -sunday -location=Israel
-0 1 true "Israel"
+port module Main exposing (..)
+
+port getInput : (String -> msg) -> Sub msg
+```
+ואתה יכול לשלוח בתוך קובץ JavaScript שמשתמש באפליקצית ה-Elm שלך:
+
+```JavaScript
+var app = Elm.Main.init();
+process.argv.forEach(function (val, index, array) {
+  app.ports.getInput.send(val);
+});
 ```
 
-בפלט נמצאים הערכים שנקבלנו משורת הפקודה, כולל את התאריך, היום שבוע ואת המיקום.
+## Deep Dive
+עובדה אינטרסנטית היא שהיכולת לקרוא ארגומנטים משורת הפקודה התפתחה מאוד מוקדם בתולדות התכנות, עוד מימי Unix הראשונים. בחלק מהשפות החדשות יותר, כמו Elm, לא תמצא את הראשית הזו. זו אחת הנחישות של מעצבי השפה, שמגבילים את כמות היכולות שמזמינות חשיפה ישירה למערכת ההפעלה.
 
-# מערכת הפעלה
-מערכת ההפעלה היא אחד הפקטורים המשפיעים על אופן הקריאה לארגומנטים. במערכות כמו Windows ו-Linux, ניתן לפענח את המידע מ- PCLI, בעוד ב- MacOS ניתן לגשת ל-Mach-O Binary ולטפל בהנחיות הקוד. וב-macOS ניתן לגשת גם למידע נוסף על ידי גיבור סיפריית ה-Carbon.
+איזון מעניין להתמודד עליו הוא Node.js, שמאפשרת גישה פשוטה ויעילה לארגומנטים שנשלחו בשורת הפקודה.
 
-# ראה גם
-למידע נוסף על קריאת ארגומנטים ועל מערכות הפעלה, ניתן להתייעץ עם המקורות המצורפים:
-
-- [מדריך רשמי של Elm על ניהול ארגומנטים ב-PCLI](https://guide.elm-lang.org/interop/command_line.html)
-- [מידע על מערכות הפעלה וקריאת ארגומנטים באלמנטים המגודרים](https://github.com/elm-lang/core/blob/master/docs/Cmd.md)
-- [פורום משתמשי Elm עם שאלות ותשובות על קריאת ארגומנטים](https://discourse.elm-lang.org/t/passing-options-to-elm-program/480)
+## לצפייה נוספת
+- דוקומנטציה של Elm: [https://package.elm-lang.org/packages/elm/core/latest/](https://package.elm-lang.org/packages/elm/core/latest/)
+- Elm Ports ספר בתיעוד הרשמי [Ports](https://guide.elm-lang.org/interop/ports.html)
+- [Node.js Process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)

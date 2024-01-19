@@ -1,7 +1,7 @@
 ---
-title:                "Розбір html"
-html_title:           "Clojure: Розбір html"
-simple_title:         "Розбір html"
+title:                "Розбір HTML"
+html_title:           "Arduino: Розбір HTML"
+simple_title:         "Розбір HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і Навіщо?
+## Що і чому?
+Парсинг HTML - це процес витягування специфічної інформації з HTML-документів. Програмісти роблять це, щоб автоматизувати обробку даних з веб-сторінок.
 
-Парсинг HTML - це процес, за допомогою якого програмісти отримують доступ до структурованої інформації з веб-сторінок. Це може бути корисно при створенні веб-скраперів, які автоматично збирають інформацію з інших сайтів, або при аналізі інформації про товари на онлайн-магазинах.
-
-Як це зробити:
+## Як це зробити:
+Clojure надає бібліотеку, яка дозволяє нам парсити HTML документи. Нагадую, що ми працюємо з синтаксисом XML, отже, маємо знати його основи.
 
 ```Clojure
 (require '[net.cgrand.enlive-html :as html])
 
-(html/emit (html/html-snippet "<div>Привіт, світ!</div>"))
+(defn fetch-html [url]
+ (html/html-resource (java.net.URL. url)))
+
+(def parsed-html 
+  (fetch-html "http://somesite.org"))
 ```
 
-Виведе:
+Вищенаведений код: витягуємо HTML соместрічку і парсимо її. `fetch-html` - це функція, яка витягує HTML з URL.
 
-```Clojure
-"<div>Привіт, світ!</div>"
-```
+## Поглиблений розбір
+В історичному контексті, парсинг HTML був складним процесом і потребував багато коду. Але з розвитком мов, як Clojure, це стало набагато простіше.
 
-Поглиблення:
+Альтернативами для парсингу HTML в Clojure є бібліотеки, такі як JSoup або HtmlUnit, хоча вони можуть бути більш складними в використанні.
 
-Історичний контекст: Парсинг HTML з'явився в 1990-х роках, коли почали поширювати стандартизовану мову розмітки веб-сторінок - HTML. До цього, програмісти використовували різні методи для отримання інформації з веб-сторінок, але з появою HTML стало можливим стандартизувати цей процес.
+Використовуючи `enlive-html`, наш HTML документ розбивається на дерево вузлів, яке ми можемо легко переглядати та маніпулювати.
 
-Альтернативи: Крім Clojure, існує багато інших мов програмування, які можуть бути використані для парсингу HTML. Наприклад, Python має бібліотеку BeautifulSoup, а JavaScript - Cheerio.
-
-Деталі реалізації: Clojure використовує бібліотеку Enlive для парсингу HTML, яка дозволяє використовувати CSS-селектори для отримання елементів з веб-сторінки.
-
-Дивіться також:
-
-[Документація Enlive](https://github.com/cgrand/enlive)
-
-[Туторіал з використання Enlive](https://purelyfunctional.tv/lesson/enlive-scraping-web-pages/)
+## Дивіться також
+1. [Clojure для новачків](http://clojurefordummies.com)
+2. [Парсинг HTML з Clojure](https://flyingmachinestudios.com/blog/html-parsing-in-clojure-with-enlive)
+3. [Офіційна документація Enlive](https://github.com/cgrand/enlive). 
+4. [Про XML в Clojure](https://clojuredocs.org/clojure.xml)

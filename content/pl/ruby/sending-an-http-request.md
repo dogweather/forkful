@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "Ruby: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,48 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Wysyłanie żądania HTTP jest ważną częścią tworzenia aplikacji internetowych. Jest to prosty sposób na pobieranie danych z innych stron internetowych lub serwerów. Programiści wykorzystują tę technikę do integracji swoich aplikacji z innymi serwisami oraz do pobierania danych z różnych źródeł.
+## Co i Dlaczego?
+Wysyłanie żądania HTTP to prośba wysłana do serwera, aby udostępnił potrzebne nam dane. Programiści robią to, aby uzyskać dostęp do danych, z którymi chcą pracować, bez konieczności ich przechowywania lokalnie.
 
 ## Jak to zrobić:
+Najprostszym sposobem na wysłanie żądania HTTP w Ruby jest użycie gemu 'net/http'. Oto przykładowe użycie:
 
-```ruby
-require 'net/http' #importowanie biblioteki Net::HTTP
-url = URI('https://example.com') #ustawienie adresu URL
-http = Net::HTTP.new(url.host, url.port) #tworzenie obiektu HTTP
-http.use_ssl = true #włączenie obsługi HTTPS
-request = Net::HTTP::Get.new(url) #tworzenie obiektu żądania GET
-response = http.request(request) #wysłanie żądania i otrzymanie odpowiedzi
-puts response.body #wyświetlenie zawartości odpowiedzi
+```Ruby
+require 'net/http'
+
+url = URI("http://example.com/")
+response = Net::HTTP.get(url)
+
+puts response
 ```
 
-Przykładowy wynik:
+Wykonanie powyższego kodu zwróci ciało żądania jako napis.
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Example Domain</title>
-  </head>
-  <body>
-    <h1>Example Domain</h1>
-    <p>This domain is for use in illustrative examples in documents.</p>
-    <p><a href="https://example.com/">More information...</a></p>
-  </body>
-</html>
+```Ruby
+# Output
+""Hello world"
 ```
 
-## Głębszy zanurzenie:
+## Pogłębiona Analiza
+Ruby nie zawsze miało takie możliwości. W rzeczywistości, obsługa HTTP została dodana już w okolicach Ruby 1.8. WCześniej, musieliśmy polegać na narzędziach zewnętrznych, jak curl.
 
-Wysyłanie żądań HTTP jest jedną z podstawowych funkcji internetowych. Zostało wprowadzone w 1989 roku przez Tima Bernersa-Lee i stanowi podstawę komunikacji między przeglądarkami a serwerami. Alternatywnym podejściem do pobierania danych jest korzystanie z protokołu FTP, jednak możliwości HTTP są znacznie szersze i lepiej dostosowane do potrzeb współczesnych aplikacji internetowych.
+Jest wiele alternatyw dla 'net/http', takich jak 'open-uri' lub 'HTTParty', które oferują bardziej rozbudowane funkcje i łatwiejszy interfejs. W przypadku bardziej skomplikowanych zapytań, mogą okazać się lepszym wyborem.
 
-W Ruby do wysyłania żądań HTTP wykorzystuje się bibliotekę Net::HTTP, jednak istnieją również inne biblioteki, takie jak Faraday czy HTTParty, które mogą ułatwić proces i zapewnić dodatkowe funkcje.
+Wysyłanie żądania HTTP to dość proste zadanie - od strony implementacji najtrudniejszym elementem jest prawdopodobnie obsługa błędów i sytuacji nietypowych. ULatwia to zrozumienie, jak działa protokół HTTP i jakie kody statusu można oczekiwać.
 
-Implementacja żądania GET jest jednym z najprostszych sposobów na pobranie danych z serwera. Jednak istnieją też inne rodzaje żądań, takie jak POST, PUT czy DELETE, które są wykorzystywane do zapisywania, aktualizacji lub usuwania danych.
-
-## Zobacz również:
-
-- [Dokumentacja biblioteki Net::HTTP] (https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Tutorial "HTTP z Ruby" na Medium] (https://medium.com/@dam1891/practical-introduction-to-http-with-ruby-efda7e3e1a77)
-- [Porównanie różnych bibliotek HTTP w Ruby] (https://realpython.com/build-python-web-apps-with-httpx/)
+## Zobacz również
+- [Dokumentacja net/http](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Jak korzystać z HTTParty](https://www.rubyguides.com/2018/08/ruby-http-requests/)
+- [Dokładny opis protokołu HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Overview)

@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "Rust: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Getting Started"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Aloittaessa uutta projektia, ohjelmoijat luovat uuden koodipohjan, jota he voivat muokata ja lisätä uutta toiminnallisuutta. Tämän avulla he voivat luoda uusia sovelluksia ja työkaluja, jotka täyttävät tiettyjä tarpeita.
+# Rust projektit. Mikä ja miksi?
 
-## Näin teet sen:
- ```Rust 
- fn main() {
-     println!("Tervetuloa uuden projektin koodipohjaan");
- }
- ```
+Alussa on tyhjää. Uuden projektin aloittaminen tarkoittaa tyhjän tilan ottamista ja sen täyttämistä koodilla. Koodarit tekevät tämän ongelman ratkaisemiseksi tai idean toteuttamiseksi.
+
+# Miten
+
+Aloitetaan uusi Rust-projekti käyttämällä `cargo` työkalua. Syötä seuraavat komennot komentorivillä:
+
 ```Rust
-fn main() {
-    // Luodaan uusi muuttuja
-    let nimi = "Maailma";
-
-    // Tulostetaan "Hei, nimi!" käyttäen String-interpolaatiota
-    println!("Hei, {}!", nimi);
-}
+$ cargo new amazing_project
+$ cd amazing_project
 ```
- _Tulostaa:_ Hei, Maailma!
 
-## Syvempi sukellus:
-Uuden projektin aloittaminen on ohjelmoinnin perusaskel, joka on tärkeä osa luovaa prosessia. Ennen Rustin käyttöä, on hyödyllistä tutustua sen historiaan ja vaihtoehtoihin. Rustin avulla voit luoda tehokkaita ja luotettavia sovelluksia, joilla on vähemmän muistivirheitä ja turvattomuusriskiä.
+Tämä luo uuden kansio `amazing_project` nimisen projektin. Siirry tämän jälkeen projektiin `cd` komennon avulla.
 
-## Katso myös:
-- [Rustin virallinen sivusto](https://www.rust-lang.org/fi)
-- [Rust-tiedonlähteet](https://www.rust-lang.org/fi/learn)
-- [Rust-yhteisö](https://www.rust-lang.org/fi/community)
+# Syvä sukellus
+
+`cargo new` komento on ollut osa Rustia versiosta 0.12.0 lähtien, jolloin Cargo esiteltiin Rust projektien hallintajärjestelmänä.
+
+Vaihtoehtoja `cargo new` komennolle ovat muut projektisovellukset, kuten `cargo-generate` tai `kickstart`, mutta `cargo new` on Rust yhteisön vakio.
+
+Sisällä, `cargo new` luo uuden kansio struktuurin `src` kansio ja `Cargo.toml` tiedosto. `src` kansio sisältää aloitus tiedoston `main.rs` tai `lib.rs`, jos kyseessä on kirjasto projekti. `Cargo.toml` tiedosto määrittelee projektin pakettiasetukset sekä riippuvuudet.
+
+# Katso myös
+
+Tätä informaatiota ja lisäohjeita voi löytää seuraavista lähteistä:
+
+- [Rust Book](https://doc.rust-lang.org/book/title-page.html) on erittäin hyödyllinen resurssi, minkä tahansa Rust-aiheen tutkimiseen ja ymmärtämiseen.
+- [Cargo Documentation](https://doc.rust-lang.org/cargo/guide/) antaa syvällisen kuvauksen työkalun ominaisuuksista ja käytöstä.

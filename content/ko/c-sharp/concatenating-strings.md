@@ -1,7 +1,7 @@
 ---
-title:                "문자열 병합하기"
-html_title:           "C#: 문자열 병합하기"
-simple_title:         "문자열 병합하기"
+title:                "문자열 연결하기"
+html_title:           "Arduino: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,39 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜? 
-문자열 연결이란 무엇이며, 프로그래머들이 왜 그것을 하는지에 대해 두 덩어리로 나눠 봅시다.
-문자열 연결은 단순히 문자열을 결합하는 것을 말합니다. 프로그래머들이 이 작업을 하는 이유는 기존의 문자열에 새로운 정보를 추가하기 위해서 입니다. 예를 들어, 사용자로부터 입력 받은 값과 일련의 문자열을 결합하여 완전히 새로운 문자열을 만들 수 있게 됩니다.
+## 무엇이며 왜 사용하는가?
 
-## 사용 방법:
-아래의 예시 코드와 출력을 보면서 문자열 연결을 어떻게 할 수 있는지 알아보겠습니다.
+문자열 연결(concatenation)은 여러 개의 문자열을 하나로 합치는 과정입니다. 이를 통해 프로그래머들은 정보를 효과적으로 표현하고 다룰 수 있게 됩니다.
+
+## 사용방법:
+
+다음은 C#에서 문자열을 연결하는 방법에 대한 코드 예제입니다.
 
 ```C#
-// 변수선언 
-string name = "Diana";
-string favoriteColor = "Red";
+string str1 = "Hello, ";
+string str2 = "World!";
+string result = str1 + str2;
+Console.WriteLine(result);  // 출력: "Hello, World!"
+```
+또한, 이렇게 문자열을 연결하는 다른 방법도 있습니다:
 
-// 문자열 연결
-string sentence = "Hi, my name is " + name + ". My favorite color is " + favoriteColor + "!";
-
-// 출력 
-Console.WriteLine(sentence);
+```C#
+string str3 = "Have ";
+string str4 = "a good day!";
+string result2 = String.Concat(str3, str4);
+Console.WriteLine(result2);  // 출력: "Have a good day!"
 ```
 
-출력:
+## 심화 학습:
 
+**역사**:
+문자열 연결은 프로그래밍의 초기에부터 필수적인 기능 중 하나였습니다. C#에도 이 고전적인 기능이 포함될 수 있을 분명한 이유가 있었습니다.
+
+**대체 수단**:
+C#에는 `String.Concat` 나 `+` 연산자 외에도 `StringBuilder` 클래스를 이용할 수 있습니다. 스트링을 여러 번 연결하는 경우 `StringBuilder`가 더 효율적입니다.
+
+```C#
+StringBuilder builder = new StringBuilder();
+builder.Append("Hello, ");
+builder.Append("World!");
+
+Console.WriteLine(builder.ToString()); // 출력: "Hello, World!"
 ```
-Hi, my name is Diana. My favorite color is Red!
-```
+**내부적인 작동 방식**:
+C#의 문자열은 변경 불가능하며, 문자열을 연결할 때마다 실제로는 새 문자열이 생성됩니다. 그래서 많은 양의 문자열을 연결할 때는 비효율적이 될 수 있습니다. 이 문제를 해결하기 위해 `StringBuilder`를 사용할 수 있습니다.
 
-## 더 깊게 파헤치기:
-문자열 연결에 대해 더 알아봅시다!
+## 참고 자료:
 
-- 역사적 배경: 이 기능은 원래 C 언어에서 사용되었으며, 다른 언어들에서도 자주 사용됩니다.
-- 대안들: C#에서는 또 다른 방법으로 문자열 보간 (string interpolation)이 있습니다. 이 기능을 사용하면 더 간단한 방법으로 문자열을 결합할 수 있습니다.
-- 구현 세부 사항: 문자열 연결은 두 개의 문자열을 결합할 때마다 새로운 메모리 공간을 할당합니다. 따라서 많은 문자열을 연결할 경우에는 성능이 저하될 수 있습니다.
-
-## 관련 자료:
-- [C# 문자열 문서](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
-- [C# 문자열 보간](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
-- [C# 문자열 연산자](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/concatenation-operator)
+1. [Microsoft 문서: C# 문자열](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/strings/)
+2. [Stack Overflow: When to use StringBuilder in C#](https://stackoverflow.com/questions/407255/difference-between-stringbuilder-and-string-concatenation-stringbuilder-in-csh)
+3. [GeeksforGeeks: C# String concatenation](https://www.geeksforgeeks.org/c-sharp-string-concatenation/)

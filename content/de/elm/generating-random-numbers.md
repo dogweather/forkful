@@ -1,7 +1,7 @@
 ---
-title:                "Erzeugung zufälliger Zahlen"
-html_title:           "Elm: Erzeugung zufälliger Zahlen"
-simple_title:         "Erzeugung zufälliger Zahlen"
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -11,25 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Zufallszahlen zu generieren bedeutet, dass der Computer eine Zahl aus einer zufälligen Auswahl von Zahlen auswählt. Programmierer nutzen diese Funktion, um Spiele, Simulationen oder kryptografische Anwendungen zu entwickeln.
 
-## So geht's:
-Um Zufallszahlen in Elm zu generieren, kannst du die `random` Bibliothek verwenden. Zuerst musst du sie importieren und dann kannst du die Funktion `generate` verwenden, um eine Zufallszahl zu generieren. Hier ist ein Beispiel, das eine Zufallszahl zwischen 1 und 10 generiert:
+Die Generierung von Zufallszahlen ist ein Prozess, bei dem ein Computerprogramm eine Zahl generiert, die den Anschein von Zufälligkeit hat. Dies ist wichtig, weil es in vielen Bereichen der Programmierung, wie beispielsweise bei der Erstellung zufälliger Passwörter oder bei Computerspielen, erforderlich ist.
+
+## Wie machst du das:
+
+Um in Elm Zufallszahlen zu generieren, verwenden wir die `Random` Bibliothek. Hier ist ein einfaches Beispiel:
 
 ```Elm
 import Random
+import Html exposing (Html, div, text)
+import Task
 
-Random.generate (\_ -> 1 + Random.int 1 10)
+main =
+  Task.attempt (\_ -> Sub.none) (Task.succeed <| div [] [ text (toString <| Random.generate Random.constant 25) ])
 ```
 
-Der Rückgabewert ist ein Ergebnis von einem Typ, den die Bibliothek definiert. Du kannst das Ergebnis in einer Variable speichern oder direkt im Code verwenden.
+Dieses Programm generiert beim Laden eine zufällige Zahl zwischen 0 und 25.
 
-## Tiefgründig:
-Die Generierung von Zufallszahlen ist eine wichtige Funktion in der Informatik und hat eine lange Geschichte. Bevor es Computer gab, wurden Zufallszahlen mit Würfeln oder anderen physischen Mitteln erzeugt. Heutzutage gibt es viele Alternativen zur `random` Bibliothek, wie zum Beispiel externe APIs oder zufällige Ereignisse in der Hardware.
+## Vertiefung
 
-Die `random` Bibliothek von Elm verwendet intern seed-based algorithm. Das bedeutet, dass der Computer einen initialen Wert benötigt, um zufällige Zahlen zu generieren. Diese seed-Wert kann manuell gesetzt werden oder mithilfe von `Random.initialSeed` automatisch generiert werden.
+Die Generierung von Zufallszahlen hat eine lange Geschichte in der Informatik und ist ein Problem, das seit den Anfängen der Computerprogrammierung besteht. Es gibt verschiedene Ansätze und Algorithmen zur Generierung von Zufallszahlen, doch viele dieser Methoden sind nicht wirklich "zufällig". In Elm verwenden wir den Mersenne Twister Algorithmus, eine Methode, die für ihre hohe Qualität an Zufallszahlen bekannt ist. Als Alternative könnten wir auch eine externe API wie RANDOM.org benutzen, die echte Zufallszahlen aus atmosphärischem Rauschen erzeugt. Für die meisten Anwendungen ist dieser Grad an Zufälligkeit jedoch unnötig und der in Elm eingebettete Ansatz ausreichend.
 
-## Siehe auch:
-- Die offizielle Dokumentation von `random`: https://package.elm-lang.org/packages/elm/random/latest/
-- Eine Einführung in die Zufallszahlengenerierung in Elm: https://dev.to/denizdogan/learning-elm-generating-random-numbers-1g72
-- Ein Vergleich von verschiedenen Methoden zur Generierung von Zufallszahlen: https://medium.com/@agm1984/generating-random-numbers-in-elm-ce0d733c54
+## Siehe auch
+
+- Random Bibliothek Dokumentation: https://package.elm-lang.org/packages/elm/random/latest/
+- Mersenne Twister Algorithmus: https://de.wikipedia.org/wiki/Mersenne-Twister
+- RANDOM.org API: https://www.random.org/clients/http/

@@ -1,7 +1,7 @@
 ---
-title:                "Extrahera substrängar"
-html_title:           "Ruby: Extrahera substrängar"
-simple_title:         "Extrahera substrängar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,49 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Hantera delsträngar i Ruby
+
 ## Vad & Varför?
 
-Att extrahera substrängar i Ruby handlar om att hämta en del av en textsträng baserat på dess position eller ett visst mönster. Programerare gör detta för att effektivt hantera och manipulera data medan de utvecklar program och applikationer.
+Att extrahera delsträngar är processen att hitta och hämta specifika delar av en textsträng i Ruby.  Detta är en vanlig uppgift i programmering, särskilt för textbearbetning, dataanalys och webbskrapning.
 
-## Hur Man Gör:
+## Hur man gör:
 
-Här är några exempel på hur man kan extrahera substrängar i Ruby, med en kort beskrivning av hur resultaten blir.
+Följande kodexempel illustrerar hur man extraherar delsträngar i Ruby.
 
-**Från början**
-```ruby
-"Hello World!"[0,5]
-=> "Hello"
+```Ruby
+# Exempel 1 - Använd [] operatorn med index
+str = "Hej, Ruby"
+puts str[0,3]  # output: "Hej"
+
+# Exempel 2 - Använd slice metoden
+puts str.slice(0,3)  # output: "Hej"
+
+# Exempel 3 - Använd Regular Expression
+puts str[/R.*/]  # output: "Ruby"
 ```
 
-**Från slutet**
-```ruby
-"Hello World!"[-1,5]
-=> "World"
-```
+## Djupgående Analys:
 
-**Med en specifik position och längd**
-```ruby
-"Hello World!"[6,5]
-=> "World"
-```
+**1. Historisk kontext:**
 
-**Med regular expressions (regex)**
-```ruby
-"Hello World!"[/[a-z]+/]
-=> "ello"
-```
+Uttagning av delsträngar har alltid varit en del av programmeringsspråk och har existerat sedan Rubys tidigaste versioner.
 
-## Djupare Dyk:
+**2. Alternativ:**
 
-### Historisk Kontext:
-Extrahering av substrängar har varit en viktig del av programmering sedan början av datorer när textbearbetning var en av de främsta användningsområdena. Det är fortfarande en viktig funktion i moderna programmeringsspråk som Ruby.
+Ruby har flera metoder för att extrahera delsträngar, som inkluderar men inte begränsas till: `[]`, `slice`, och `substring`. Var och en passar för specifika situationer.
 
-### Alternativ:
-En annan metod för att extrahera substrängar i Ruby är genom användning av `slice()`-metoden, som fungerar på ett liknande sätt men med lite annorlunda syntax.
+**3. Implementeringsdetaljer:**
 
-### Implementation Detaljer:
-I Ruby är substrängar representerade av `String`-objekt och kan manipuleras med hjälp av inbyggda metoder som `[]` och `slice()`. När substrängar extraheras från en textsträng orsakar det inte några förändringar i den ursprungliga strängen, utan returnerar en helt ny sträng.
+`[]` och `slice` fungerar nästan på samma sätt. Skillnaden är att `slice!` modifierar den ursprungliga strängen.
+
+Reguljära uttryck (`Regex`), å andra sidan, ger mer flexibilitet och komplexitet från att matcha specifika mönster till verkställande av kraftfulla sökningar i stora textmassor
 
 ## Se Även:
 
-För mer information och exempel på hur man kan extrahera substrängar i Ruby, besök [Ruby's officiella dokumentation om strängar](https://ruby-doc.org/core-2.7.1/String.html#method-i-5B-5D).
+- Ruby Docs för strängmetoder: https://ruby-doc.org/core-2.7.0/String.html 
+- Regex i Ruby: https://www.rubyguides.com/2015/06/ruby-regex/
+- String Manipulation i Ruby: https://www.tutorialspoint.com/ruby/ruby_strings.htm

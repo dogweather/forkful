@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden av en streng"
-html_title:           "Go: Å finne lengden av en streng"
-simple_title:         "Å finne lengden av en streng"
+title:                "Finne lengden på en streng"
+html_title:           "Go: Finne lengden på en streng"
+simple_title:         "Finne lengden på en streng"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,13 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Hva & Hvorfor?
+## Hva & Hvorfor?
 
-Å finne lengden på en streng er en vanlig operasjon i programmering. Dette betyr ganske enkelt å bestemme hvor mange tegn en gitt tekststreng inneholder. Dette er nyttig for å manipulere og behandle data på riktig måte.
+Å finne lengden på en streng betyr å telle antall karakterer den inneholder. Dette er ofte nyttig i programmeringssituasjoner, som for eksempel når vi ønsker å iterere gjennom hver karakter i strengen, eller når vi trenger å vite størrelsen på dataene vi behandler.
 
-### Hvordan:
+## Slik gjør du:
 
-Go gir oss en innebygd funksjon for å finne lengden på en streng. Se eksempelet nedenfor for å se hvordan det gjøres:
+Her er et enkelt eksempel på hvordan du finner lengden på en streng i Go:
 
 ```Go
 package main
@@ -24,18 +24,23 @@ package main
 import "fmt"
 
 func main() {
-	tekst := "Dette er en tekststreng"
-	fmt.Println(len(tekst)) // Output: 24
+    str := "Hei på deg, Verden!"
+    fmt.Println(len(str))
 }
 ```
 
-Her bruker vi ```len``` funksjonen og gir den vår tekststreng som parameter, og den vil returnere antall tegn i strengen. 
+Ved kjøretid vil dette skrive ut "19", som er antall karakterer i strengen "Hei på deg, verden!"
 
-### Deep Dive:
-Å finne lengden på en streng kan virke som en enkel operasjon, men det er viktig å forstå at i programmering er hver handling og operasjon nøye utformet og har en historisk sammenheng. Alternativer til å bruke ```len``` funksjonen inkluderer å bruke en løkke og telle antall tegn, eller bruke en innebygd funksjon i et annet språk som Python sin ```len()``` funksjon.
+## Dypdykk:
 
-I Go er lengden på en streng lagret som et heltall, og den bruker en effektiv algoritme for å beregne lengden. Dette betyr at operasjonen er rask og pålitelig, selv for lange strenger.
+Historisk sett har håndtering av strenger alltid vært en sentral del av computing. Fra de tidligste dagene med datainntasting til moderne webapplikasjoner, er strenger, og måling av deres lengde, en nøkkelfunksjon i de fleste programmeringsspråk.
 
-### Se også:
-- [Go offisiell dokumentasjon for strenger](https://golang.org/pkg/strings/)
-- [Wikipedia - String length](https://en.wikipedia.org/wiki/String_length)
+Det finnes alternative måter å finne strenglengden i Go, som å bruke `range`-funksjonen til å iterere gjennom strengen og telle karakterene manuelt. Men `len`-funksjonen er som regel det enkleste og mest effektive alternativet. 
+
+Når det gjelder implementasjonsdetaljer, retter `len`-funksjonen i Go seg mot implementeringen av strengobjektet, noe som betyr at det henter lengden på strengen direkte fra strengstructen. Dette gjør det til en svært rask operasjon sammenlignet med novelleskriving av strengens lengdefunksjon.
+
+## Se Også:
+
+Se detaljert dokumentasjon og mer avansert bruk av `len`-funksjonen i Go:
+- Go offisiell dokumentasjon på len - https://golang.org/pkg/builtin/#len
+- Go tutorial: strings, bytes, runes and characters in Go - https://blog.golang.org/strings

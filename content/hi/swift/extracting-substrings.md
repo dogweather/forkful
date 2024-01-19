@@ -1,7 +1,7 @@
 ---
-title:                "उपस्तंभ निकालना"
-html_title:           "Swift: उपस्तंभ निकालना"
-simple_title:         "उपस्तंभ निकालना"
+title:                "सबस्ट्रिंग्स निकालना"
+html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+# Swift में Substrings निकालना: एक गाइड
 
-Substring निकालना क्या है और programmers इसे क्यों करते हैं, यह दोनों ही महत्वपूर्ण सवाल हैं। Substring, किसी भी string से छोटे हिस्से को निकालना होता है जो उस string के भीतर होता है। Programmers substring का इस्तेमाल अक्सर string में से निर्दिष्ट जानकारी को निकालने और उसे उपयोगी तरीके से प्रदर्शित करने के लिए करते हैं।
+## क्या और क्यों? 
+Substrings निकालना या extracting substrings एक मुख्य programming task होता है, जिसमें आप एक string के भीतर से एक छोटे शब्द (substring) को खोजते हैं और उसे अलग करते हैं। Programmers सुबस्ट्रिंग्स निकालते हैं जब वे डेटा का विश्लेषण करते हैं, फार्म्स पर डेटा वालिडेट करते हैं, या text-based डाटा का मेक्स्ट्रक्शन करते हैं।
 
-## कैसे करें?
-
-`Swift` में substring निकालने का सबसे आसान और प्रभावी तरीका `substring(from: )` और `substring(to: )` है। दूसरे स्थानों पर, `substring(from: )` से आप किसी भी string में से दिया गया starting index से शुरू होकर उपलब्ध character तक का substring निकाल सकते हो। वहीं, `substring(to: )` से आप किसी भी string में से शुरू से लेकर दिए गए ending index तक का substring निकाल सकते हो। नीचे कुछ coding उदाहरण हैं:
-
+## कैसे:
 ```Swift
-let name = "John Doe"
-
-// substring(from: )
-let first = name.substring(from: 0) // output: "John Doe"
-let last = name.substring(from: 5) // output: "Doe"
-
-// substring(to: )
-let beginning = name.substring(to: 6) // output: "John D"
-let end = name.substring(to: 3) // output: "Joh"
+let str = "Hello, Swift Programming!"
+let start = str.index(str.startIndex, offsetBy: 7)
+let end = str.index(str.startIndex, offsetBy: 12)
+let substring = str[start...end]
+print(substring)
+```
+ऊपरी कोड में हमने "Swift" नामक substring निकाला। यह औरपुट देगा:
+```Swift
+Swift
 ```
 
-## गहराई में जाओ
+## गहरी जानकारी:
+1. **ऐतिहासिक प्रसंग**: Swift में उपयोग किए जाने वाले `index(of:)` मेथड की मदद से substrings का पता लगाने की कला कई सालों से चली आ रही है। यह एक कार्यक्षम गणना क्षमता और स्मृति क्षमता दोनों को बचाता है।
 
-Substring का इस्तेमाल बहुत सालों से किया जाता रहा है, और कई अन्य programming भाषाओं में भी उपलब्ध है। उपलब्ध विकल्पों में, `substring` सबसे अधिक प्रभावी तरीका है, और भाषा के उत्पादकों की ओर से इसे समर्थन किया गया है। यह भी उल्लेखनीय है कि `substring` के लिए आपको string का starting index और ending index दोनों ही देने होते हैं, जो कि indexing में ध्यान रखने की जरूरत होती है।
+2. **विकल्प**: आप `range(of:)` का भी उपयोग कर सकते हैं जिसे ध्यानपूर्वक इस्तेमाल करना होगा क्योंकि यह अहसासी होता है और यदि इसे ध्यानपूर्वक ना इस्तेमाल किया जाए तो यह निष्पादन में पेनेल्टी का कारण हो सकता है। 
 
-## अन्य संबंधित लिंक
+3. **आविष्कार**: `substring` का एक विशेष विमर्श Swift की लाइफसाइकल में खोजने के लिए शारीरिक स्ट्रिंग की आवश्यकता होती है। यह एक आंतरहिन संबंध होता है और जब तक `String` जीवित है, तब तक `Substring` भी जीवित रहता है।
 
-- [Swift Official Documentation on Substrings](https://developer.apple.com/documentation/swift/string#2975925)
-- [Substrings Explained in Hindi](https://www.geeksforgeeks.org/swift-substring/)
-- [Understanding String Indices in Swift](https://www.hackingwithswift.com/example-code/strings/what-are-indices-in-swift)
+## अन्य स्रोतों के लिए:
+1. Apple Developer Documentation: [Swift Standard Library](https://developer.apple.com/documentation/swift/swift_standard_library)
+
+2. StackOverflow: [Extract substring in Swift](https://stackoverflow.com/questions/24192881/how-to-extract-a-substring-in-swift)
+
+3. Swift by Sundell: [Working with strings in Swift](https://www.swiftbysundell.com/basics/strings/)

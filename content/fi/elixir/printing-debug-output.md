@@ -1,7 +1,7 @@
 ---
-title:                "Virheenkorjaustulosteen tulostaminen"
-html_title:           "Elixir: Virheenkorjaustulosteen tulostaminen"
-simple_title:         "Virheenkorjaustulosteen tulostaminen"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,25 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## Mikä & Miksi?
 
-Debuggaustulostuksen tulostaminen tarkoittaa ohjelman suorituksen aikana tapahtuvien tapahtumien näyttämistä koodin seassa. Se on tärkeä osa ohjelmointiprosessia, joka auttaa löytämään virheitä ja parantamaan koodin toimivuutta.
+Tulostus debug-esitys on ohjelmointitekniikka, jossa ohjelmoija tulostaa sovelluksen tilaa kuvaavia tietoja konsoliin tai tiedostoon. Sitä käytetään ohjelman virheiden tunnistamiseen ja korjaamiseen.
 
-## Miten:
+## Kuinka Näin:
 
- ```Elixir
-IO.puts "Koodin tämänhetkinen tila on: #{variable}"
+Elixirissa debug-tietojen tulostaminen on suoraviivaista. Käytetään esimerkkinä `IO.inspect/2` funktiota:
+
+```elixir
+defmodule Hello do
+  def greet do
+    name = "Maailma"
+    IO.inspect(name, label: "Name") # Tulostaa: Name: "Maailma"
+    "Hei, #{name}"
+  end
+end
+
+IO.puts Hello.greet # Tulostaa: Hei, Maailma
 ```
-Tämä tulostaa "Koodin tämänhetkinen tila on: [muuttujan arvo]" konsolille, jolloin voit seurata ohjelman suoritusta ja tarkistaa muuttujien arvoja.
+Funktion `IO.inspect/2` avulla voit tarkastella muuttujien arvoja ajon aikana. Se näyttää tiedot ja palauttaa alkuperäisen datan.
 
-## Syväsukellus:
+## Tarkempi Katsaus:
 
-Debuggaustulostus on ollut käytössä jo vuosien ajan, ja se on edelleen tärkeä työkalu ohjelmien kehittämisessä. Vaihtoehtoisia tapoja debuggaustulostusten käyttöön ovat esimerkiksi kirjastot, kuten "Logger", jotka tarjoavat joustavampia ja monipuolisempia ratkaisuja.
+Historiallisessa kontekstissa, ohjelmoijat käyttivät merkkijonotulostusta virheenkorjauksessa ennen kuin debuggertyökalut ja -tekniikat olivat laajasti saatavilla. Siitä huolimatta sen käyttö on yhä merkityksellistä, erityisesti koodin käyttäytymisen nopeaan tarkasteluun.
 
-Elixirissä debuggaustulostukseen käytetään usein IO:n funktioita, kuten "IO.puts" ja "IO.inspect". Nämä toimivat hyvin yksinkertaisissa tilanteissa, mutta monimutkaisemmissa tapauksissa voidaan joutua turvautumaan Loggeriin tai muuhun kirjastoon.
+Elixirissa on myös muita tapoja debug-tulostuksen tekemiseen. Esimerkiksi `:debugger` moduulin avulla, joka on osa Erlangin OTP-kirjastoa, voidaan ottaa käyttöön interaktiivinen debugger.
 
-## Nähdäksesi myös:
+Mitä tulee toteutukseen, `IO.inspect/2` ei muuta ohjelman tilaa tai koodin suoritusjärjestystä. Se palauttaa syöttönä saamansa datan, minkä vuoksi sen voi vapaasti sijoittaa mihin tahansa koodilohkoon purkamisen vaarantamatta ohjelmalogiikkaa.
 
-Lisätietoa debuggaustulostuksesta löydät virallisesta Elixir-dokumentaatiosta: https://hexdocs.pm/elixir/IO.html
+## Katso Myös:
 
-Voit myös tutustua vaihtoehtoisiin tapoihin käyttää debuggaustulostuksia Elixirissä, kuten "Logger": http://www.erlang.org/doc/man/logger.html
+Elixirin virallinen dokumentaatio tarjoaa runsaasti tietoa `IO.inspect/2`:sta ja muista I/O -funktioista. Tutustu myös Erlangin OTP-`debugger` moduuliin osana omia debug-taitojasi.
+
+* [Elixir's IO.inspect](https://hexdocs.pm/elixir/IO.html#inspect/2)
+* [Erlang's :debugger](http://erlang.org/doc/man/debugger.html)

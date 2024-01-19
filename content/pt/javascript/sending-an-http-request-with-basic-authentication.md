@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Javascript: Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,64 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer isso?
+## O Que & Por Quê?
 
-Enviar uma solicitação HTTP com autenticação básica é um processo importante para os programadores. Trata-se de enviar uma solicitação para um servidor com informações de autenticação (como nome de usuário e senha) para acessar dados protegidos. Isso é necessário para assegurar que apenas usuários autorizados possam visualizar as informações.
+Enviar uma solicitação HTTP com autenticação básica envolve incorporar credenciais de login em uma solicitação HTTP para autorizar o acesso a recursos protegidos. Programadores fazem isso quando querem acessar APIs que exigem autenticação de usuário.
 
-## Como fazer:
+## Como:
+
+O código a seguir ilustra como enviar um pedido HTTP com autenticação básica usando a função `fetch` em Javascript:
 
 ```Javascript
-// Importando o módulo "http" do Node.js
-const http = require('http');
+const url = 'https://api.seusite.com';
+let username = 'seuUsername';
+let password = 'suaSenha';
 
-// Definindo as informações de autenticação
-const username = 'exemplo';
-const password = 'senha123';
+let headers = new Headers();
 
-// Definindo a URL e o método da requisição
-const url = 'https://www.exemplo.com/dados';
-const method = 'GET';
+headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
 
-// Criando a string de autenticação
-const authString = `${username}:${password}`;
-
-// Codificando a string de autenticação em Base64
-const encodedAuth = Buffer.from(authString).toString('base64');
-
-// Definindo as opções para a requisição
-const options = {
-  url,
-  method,
-  headers: {
-    'Authorization': `Basic ${encodedAuth}` // Adicionando a autenticação ao header da requisição
-  }
-};
-
-// Enviando a requisição
-http.request(options, (res) => {
-  // Lendo a resposta e imprimindo o conteúdo
-  res.on('data', (data) => {
-    console.log(`${data}`);
-  });
-}).end();
+fetch(url, {method:'GET',
+             headers: headers,
+           })
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.log('Erro: ', error));
 ```
 
-Saída:
+Neste exemplo, a função `btoa` é usada para codificar as credenciais.
 
-```
-// Conexão bem sucedida
-{
-  data: [dados protegidos]
-}
-```
+## Aprofundando
 
-## Mergulho profundo:
+A autenticação básica HTTP é um método de autenticação que foi parte do protocolo HTTP desde o início. Hoje, é considerada insegura para a maioria dos casos e está sendo substituída por métodos mais seguros como autenticação de portador de token ou OAuth.
 
-A autenticação básica é um padrão de autenticação para acesso a recursos da web. Foi criada no início dos anos 90 para fornecer uma forma simples de autenticação em aplicações web. Apesar de ser utilizada amplamente, a autenticação básica não é considerada segura, pois envia as informações de autenticação sem criptografia.
+Um detalhe importante da implementação é a necessidade de codificar as credenciais em base64 usando a função `btoa`. Isso não criptografa ou oculta as credenciais, faz parte do padrão da autenticação básica HTTP.
 
-Existem alternativas mais seguras, como a autenticação baseada em token, que utiliza um token único e criptografado para autenticar as solicitações. Além disso, é importante implementar medidas extras de segurança, como SSL, para garantir a proteção dos dados transmitidos.
+Além disso, a autenticação básica não fornece nenhum mecanismo de logoff. Quando a autenticação é necessária novamente, o navegador simplesmente reenvia as credenciais que já possui.
 
-## Veja também:
+## Veja também
 
-- [Como funciona a autenticação básica](https://www.infoq.com/br/articles/autenticao-web/)
-- [Como implementar autenticação básica em Node.js] (https://gist.github.com/cdaringe/6e83bc3caaa3a7e3262c)
+- [MDN Web Docs: Usando Fetch](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch)
+- [MDN Web Docs: Autenticação HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication)
+- [Autenticação básica HTTP no Wikipedia](https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o_b%C3%A1sica_por_HTTP)

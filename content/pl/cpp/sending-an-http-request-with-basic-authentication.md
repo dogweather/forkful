@@ -1,7 +1,7 @@
 ---
-title:                "Wysłanie żądania http z podstawową autoryzacją"
-html_title:           "C++: Wysłanie żądania http z podstawową autoryzacją"
-simple_title:         "Wysłanie żądania http z podstawową autoryzacją"
+title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,65 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP z podstawową autoryzacją jest sposobem na bezpieczne przesyłanie informacji między aplikacjami. Programiści często używają tego sposobu, aby upewnić się, że tylko uprawnione osoby mają dostęp do żądanych danych.
+## Co to jest i dlaczego?
+
+Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem to nasz sposób na komunikację z serwerem, przekazując przy tym potrzebne nam dane. Programiści robią to, aby bezpiecznie przesyłać niezbędne informacje, takie jak login i hasło, do serwisów internetowych.
 
 ## Jak to zrobić:
-Przykładowe kody i wyniki można znaleźć poniżej:
 
-### Inicjalizacja zmiennych:
-```
-std::string username = "user"
-std::string password = "password"
-```
+Możemy to zrealizować w C++ za pomocą biblioteki libcurl. Przykładowy kod poniżej pokazuje, jak to można zrobić.
 
-### Wysyłanie żądania HTTP z podstawową autoryzacją:
-```
-// Tworzenie nagłówka autoryzacyjnego z kodowaniem Base64 
-std::string credentials = username + ":" + password;
-std::string encodedCredentials = base64_encode(credentials);
+```C++
+#include <curl/curl.h>
 
-// Tworzenie nagłówka Autoryzacji 
-std::string authHeader = "Authorization: Basic " + encodedCredentials;
+int main() {
+    CURL *curl;
+    CURLcode res;
+ 
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    curl = curl_easy_init();
 
-// Ustawienie uchwytu do adresu URL 
-std::string url = "https://example.com/api/data";
-CURL *handle = curl_easy_init();
-if(handle) {
-  // Dodawanie nagłówka Autoryzacji do żądania 
-  struct curl_slist *headers = NULL;
-  headers = curl_slist_append(headers, authHeader.c_str());
-  curl_easy_setopt(handle, CURLOPT_HTTPHEADER, headers);
+    if (curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
 
-  // Wykonanie żądania HTTP 
-  curl_easy_setopt(handle, CURLOPT_URL, url.c_str());
-  curl_easy_perform(handle);
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK)
+          fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
 
-  // Zwalnianie pamięci i usuwanie nagłówka 
-  curl_easy_cleanup(handle);
-  curl_slist_free_all(headers);
+        /* always cleanup */ 
+        curl_easy_cleanup(curl);
+    }
+
+    curl_global_cleanup();
+
+    return 0;
 }
 ```
 
-### Przykładowy wynik:
-```
-<HTTP/1.1 200 OK
-<Content-Type: application/json
-<Content-Length: 37
+Jeśli wszystko przebiegło poprawnie, nie otrzymasz żadnego komunikatu. W przeciwnym razie zostanie wyświetlony komunikat o błędzie.
 
-<{"message": "Dane zostały pomyślnie pobrane"}
-```
+## Rozwinięcie tematu
 
-## Głębsze wgląd:
-### Kontekst historyczny:
-HTTP Basic Authentication zostało wprowadzone w 1996 roku i od tego czasu jest szeroko stosowane w celu zabezpieczenia komunikacji między aplikacjami.
+- Kontekst historyczny: Podstawowe uwierzytelnianie to najstarsza metoda uwierzytelniania w HTTP. Powstała jeszcze w czasach, gdy bezpieczeństwo nie było priorytetem.
 
-### Alternatywy:
-Innym sposobem na bezpieczne przesyłanie informacji są protokoły takie jak HTTPS lub wykorzystanie autoryzacji OAuth.
+- Alternatywa: Jest wiele alternatyw dla podstawowego uwierzytelniania, takich jak uwierzytelnianie Digest czy tokeny JWT. Te metody są bardziej zabezpieczone, ale również bardziej skomplikowane do implementacji.
 
-### Szczegóły implementacji:
-Podstawowa autoryzacja polega na kodowaniu danych autoryzacyjnych za pomocą kodowania Base64. Użytkownik i hasło są konkatenowane i przypisane do nagłówka Authorization w formacie "Użytkownik:Hasło", a następnie zakodowane przy użyciu Base64.
+- Szczegół implementacji: Uwierzytelnianie odbywa się przez dodanie nagłówka "Authorization" do żądania HTTP. W przypadku podstawowego uwierzytelniania, nagłówek ten zawiera słowo "Basic" poprzedzające zakodowane w base64 dane uwierzytelniające, zwykle login i hasło.
 
 ## Zobacz także:
-- [Curl – Oficjalna strona](https://curl.haxx.se/)
-- [HTTP Basic Authentication na Wiki](https://en.wikipedia.org/wiki/Basic_access_authentication)
+
+- Dokumentacja libcurl: [https://curl.se/libcurl/c/](https://curl.se/libcurl/c/)
+- HTTP Authentication: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- Base64 Encoding: [https://en.wikipedia.org/wiki/Base64](https://en.wikipedia.org/wiki/Base64)

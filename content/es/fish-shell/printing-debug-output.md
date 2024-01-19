@@ -1,6 +1,6 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "Fish Shell: Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,40 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## ¿Qué y Por qué?
+La impresión de la salida de depuración es una técnica que permite a los programadores ver y entender qué está pasando en su código durante la ejecución. Es esencial para identificar y corregir errores.
 
-Imagina que estás escribiendo un programa y algo sale mal. ¿Cómo lo solucionarías? Aquí es donde entra en juego la impresión de la salida de depuración. Los programadores la usan para encontrar errores y problemas en su código y arreglarlos.
-
-## Cómo:
-
-```Fish Shell``` viene con un comando incorporado llamado ```echo``` que te permite imprimir mensajes en la pantalla. Para añadir un mensaje de depuración en tu código, simplemente coloca el comando ```echo``` seguido del mensaje entre comillas dentro de tu código.
-
-Por ejemplo:
-
-```
-function sumar
-  echo "Sumando dos números"
-  echo "Resultado: "(expr $argv[1] + $argv[2])
+## Cómo hacerlo:
+En Fish Shell, puedes utilizar el comando `echo` para enviar un mensaje a la salida estándar. Aquí te muestro cómo:
+```Fish Shell
+function hello_world
+    echo "Hola Mundo"
 end
+hello_world
+```
+Y obtendrás:
+```Fish Shell
+Hola Mundo
+```
+Para el caso de depuración usa `echo`  de la siguiente forma:
+```Fish Shell
+function debug_output
+    echo "Debug: El valor de x es $x" >&2
+end
+
+set -l x 5
+debug_output
+```
+Y este será el resultado:
+```Fish Shell
+Debug: El valor de x es 5
 ```
 
-La salida de esto sería:
+## Un vistazo más a fondo
+La salida de depuración es un concepto antiguo en programación y se encuentra presente en numerosos lenguajes. Su implementación en Fish Shell es bastante directa, pero hay alternativas. Una opción es usar `printf` en lugar de `echo`. 
 
-```
-Sumando dos números
-Resultado: 6
-```
+No obstante, la opción de redireccionar la salida estándar a la salida de error con `>&2` es algo que vale la pena destacar. Esto permite mantener separados los mensajes de depuración del resultado final del programa. Si no se necesitan los mensajes de depuración, se pueden silenciar fácilmente.
 
-## Deep Dive:
-
-La impresión de la salida de depuración se originó en los primeros días de la programación, cuando los programadores tenían que inspeccionar manualmente cada línea de código para buscar errores. Con el tiempo, se desarrollaron programas y herramientas que facilitaron este proceso y ahora se ha convertido en una práctica común en todas las formas de programación.
-
-Algunas alternativas a la impresión de salida de depuración incluyen el uso de herramientas de depuración específicas, como GDB o Xdebug, o el uso de métodos de depuración más avanzados, como la introspección.
-
-En cuanto a la implementación, ```echo``` es solo uno de los muchos comandos disponibles en ```Fish Shell``` que facilitan la impresión de la salida de depuración. Otros comandos útiles incluyen ```printf``` para imprimir formatos específicos y ```eerror``` para imprimir mensajes de error.
-
-## Ver también:
-
-- [Documentación de Fish Shell](https://fishshell.com/docs/current/)
-- [Debugging con GDB](https://www.gnu.org/software/gdb/)
-- [Introspección en programación](https://es.wikipedia.org/wiki/Introspecci%C3%B3n_(programaci%C3%B3n)).
+## Ver también
+Para profundizar en el tema, he aquí algunos recursos útiles:
+1. Documentación oficial de Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+2. Tutorial completo sobre la salida de depuración en Fish Shell: [https://fishshell.com/tutorial.html](https://fishshell.com/tutorial.html)

@@ -1,7 +1,7 @@
 ---
-title:                "开始一个新项目"
-html_title:           "Go: 开始一个新项目"
-simple_title:         "开始一个新项目"
+title:                "开始新项目"
+html_title:           "Lua: 开始新项目"
+simple_title:         "开始新项目"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Getting Started"
@@ -10,26 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是开始一个新项目？为什么程序员要这么做？
-开始一个新项目是指从头开始编写一段程序，通常是为了解决特定的问题或达成特定的目标。程序员通常会开始一个新项目来实现新的想法、学习新的技术或改进现有的代码。
+# Go语言新项目:快速上手
 
-## 如何开始一个新项目：
+## 什么 & 为什么?
+开始一个新项目就是让你的难以具象的想法变得形象并可以展现出来。程序员之所以开始新的项目，最常见的理由是解决某种问题，或者仅仅是肆意创新。
+
+## 如何实现:
+Go语言有一个内置工具`go mod`用来创建并管理模块。以下是命令行的使用方式：
+
 ```Go
-package main
+// 在你的工作目录中开始
+mkdir myproject
+cd myproject
 
-import "fmt"
-
-func main() {
-	fmt.Println("Hello, world!")
-}
+// 初始化新的模块
+go mod init github.com/yourusername/myproject
 ```
-输出：Hello, world!
+现在你已经在 `myproject` 目录中创建了一个新的Go模块。
 
-## 深入理解：
-- 历史背景：Go语言于2009年由谷歌开发，旨在提供一种简单、高效、可靠的编程语言。
-- 其他选择：除了Go语言外，还有许多其他编程语言可用于开始新项目，如Python、Java等。
-- 实现细节：在Go语言中，可以使用"package main"来定义程序的名称，默认为main。而"func main()"表示了程序的入口点，必须存在于每一个Go程序中。
+## 深入探讨
+- **历史背景:** Go的模块管理系统在Go1.11版开始出现，一种解决Go包的版本和依赖管理问题的方式。
+- **其它选择:** 在过去，很多第三方工具如`dep`,`glide`等用来管理Go的依赖。但自从Go1.11以后，Go语言团队推荐使用 `go mod` 作为官方的模块处理方式。
+- **实现细节:** `go mod init`创建一个新的`go.mod`文件，这个文件描述了模块路径和依赖关系。
 
-## 相关链接：
-- [Go语言官方网站](https://golang.org/)
-- [Go语言中文网](https://studygolang.com/)
+## 推荐阅读
+- [Go Modules Reference](https://golang.org/ref/mod) 是对Go模块的详细介绍。
+- [Go入门指南](https://tour.golang.org/welcome/1)提供了对Go编程的全面介绍。
+- 在你遇到具体问题时，StackOverflow上的[Go](https://stackoverflow.com/questions/tagged/go)标签往往有很多你需要的答案。

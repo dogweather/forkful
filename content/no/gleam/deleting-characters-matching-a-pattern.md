@@ -1,7 +1,7 @@
 ---
-title:                "Slette tegn som passer mønster"
-html_title:           "Gleam: Slette tegn som passer mønster"
-simple_title:         "Slette tegn som passer mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,21 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Sletting av tegn som matcher et mønster er en nyttig funksjon i programmering som lar deg enkelt fjerne uønskede tegn fra en tekststreng. Dette brukes ofte til å rengjøre og formatere data, og det sparer programmerere tid og arbeid.
+## Hva og Hvorfor?
 
-# Hvordan:
+Sletting av tegn som stemmer med et mønster er en teknikk som fjerner visse tegn fra en streng. Programmerere bruker dette til å rense data, manipulere tekst og lage spesialiserte algoritmer.
+
+## Sånn Gjør Du:
+
+I Gleam kan du bruke funksjonen `string.replace` for å slette tegn som stemmer med et mønster. Her er et eksempel:
+
+```Gleam
+import gleam/string
+
+fn slett_teikn() {
+  string.replace("Dette er en setning.", " ", "")
+}
+slett_teikn()
 ```
-Gleam.string.delete_pattern("Hei, dette er en tekst", ",") // Output: "Hei dette er en tekst"
-Gleam.string.delete_pattern("1234567890", "[0-9]") // Output: ""
+Kjører du denne koden, vil du få følgende resultat:
+
+```Gleam
+"Detteerensetning."
 ```
+Som du ser har alle mellomrom blitt fjernet fra setningen.
 
-Her ser vi eksempler på hvordan vi kan bruke funksjonen `delete_pattern` i Gleam. Vi gir funksjonen en tekststreng som første argument, og et mønster som skal matches og slettes som det andre argumentet. Resultatet vil være en ny tekst med alle tegn som matcher mønsteret fjernet.
+## Dypdykk
 
-# Dypdykk
-Sletting av tegn basert på et mønster har vært en vanlig funksjon i programmering siden begynnelsen av datamaskinens tidsalder. Dette er fordi det er en effektiv måte å håndtere og manipulere data på. Alternativene til å slette tegn basert på et mønster inkluderer manuell looping gjennom tegnene, noe som kan være både tidkrevende og feil-introduserende.
+Historisk sett, har sletting av tegn som samsvarer med et mønster blitt brukt i mange programmeringsspråk, ikke bare Gleam. Alternativene til `string.replace` kan være regex-basert søk og erstatning, som tilbyr flere tilpasningsmuligheter, men på bekostning av lesbarhet og ytelse.
 
-Gleam implementerer sletting av tegn som matcher et mønster ved å bruke regulære uttrykk, som er et kraftig verktøy for å matche mønstre i tekststrenger. Dette gjør det mulig for Gleam å håndtere mer komplekse slettekrav, som å slette alle tall eller alle bokstaver.
+Når det gjelder implementeringsdetaljer, `string.replace` i Gleam bruker Erlang's underliggende `re` modul, som er bygget på PCRE biblioteket. Dette gjør `string.replace` veldig effektiv når det samsvarer med store strenger.
 
-# Se også
-For mer informasjon om hvordan Gleam håndterer tekststrenger og bruk av regulære uttrykk, kan du se dokumentasjonen på deres offisielle nettside: https://gleam.run/documentation/text.html#regular-expressions
+## Se Også:
+
+Vurder følgende ressurser for mer informasjon:
+
+1. Gleam String modul dokumentasjon for flere strengmanipulerende funksjoner: https://hexdocs.pm/gleam_stdlib/Gleam.String.html
+2. PCRE biblioteket for detaljer om hvordan mønstertjenester fungerer: https://pcre.org/
+3. Erlang's `re` modul dokumentasjon for mer informasjon om hvordan `string.replace` er implementert: http://erlang.org/doc/man/re.html

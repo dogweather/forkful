@@ -1,7 +1,7 @@
 ---
-title:                "Att tolka html"
-html_title:           "Haskell: Att tolka html"
-simple_title:         "Att tolka html"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -11,33 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-HTML parsing är processen med att ta en bit HTML-kod och konvertera den till ett träddiagram som kan bearbetas av ett program. Detta är användbart för att extrahera information från webbsidor eller skapa egna skräddarsydda HTML-dokument.
 
-## Hur fungerar det?
-Haskell har ett bibliotek som heter html-parser som gör HTML parsing ganska enkelt. Nedan följer ett exempel på hur man använder detta bibliotek för att extrahera alla länkar från en webbsida:
+Att analysera HTML innebär att granska och utvinna bestämd data från HTML-koden. Programmerare gör detta för att skrapa webbdata, automatisera innehåll eller för att upptäcka specifika element.
+
+## Hur man gör
+
+Vi kommer att använda `tagsoup` biblioteket för att analysera HTML. Låt oss börja med att importera det:
 
 ```Haskell
-import Text.HTML.Parser (parseTokens)
-import Text.HTML.TagSoup (Tag(TagOpen), isTagOpenName, TagName(Link))
-import Network.HTTP (simpleHTTP, getRequest, getResponseBody)
+import Text.HTML.TagSoup
+```
 
-getLinks :: String -> IO [String]
-getLinks url =
-  simpleHTTP (getRequest url) >>= getResponseBody
-    >>= return . filter (isTagOpenName "a") . parseTokens
-    >>= return . map (fromAttrib "href") . filter (isTagOpenName "a")
+I följande exempel parsar vi en enkel HTML-sträng:
 
--- Exempel: Hämtar alla länkar från Google-sidan
-getLinks "https://www.google.com"
--- ["https://mail.google.com","https://www.google.se/imghp?hl=sv&tab=wi"]
+```Haskell
+let html = "<html><body><p>Hello, world!</p></body></html>"
+let tags = parseTags html
+```
+`parseTags` kommer att ge oss en lista med taggar, element och attribut:
+
+```Haskell
+[TagOpen "html" [], TagOpen "body" [], TagOpen "p" [], TagText "Hello, world!", TagClose "p", TagClose "body", TagClose "html"]
+```
+
+För att söka efter specifika taggar, kan vi använda `sections` funktionen. Låt oss hitta vår `p`-tagg:
+
+```Haskell
+let paragraphSections = sections (~== "<p>") tags
+```
+
+Detta ger oss alla element inom `p`-taggen:
+
+```Haskell
+[[TagOpen "p" [], TagText "Hello, world!", TagClose "p"]]
 ```
 
 ## Djupdykning
-Förutom html-parser biblioteket finns det också andra alternativ för HTML parsing i Haskell, såsom tagsoup och hxt. Dessa bibliotek erbjuder olika funktioner och prestanda, så det är värt att utforska dem för att hitta det som passar bäst för ditt projekt.
 
-Implementationen av html-parser biblioteket är baserad på det tredjeparts biblioteket tagsoup. Det använder en parserkombinatorer för att bygga upp trädet av HTML-taggar och använda dessa för att extrahera information.
+HTML-parsning har sitt ursprung i början av webbens tid, när det var nödvändigt att utvinna data från primitiva och ofta inkonsekventa HTML sidor. Det finns flera alternativ till `tagsoup`, till exempel `html-conduit` eller `tagsoup-parsec`.
 
-## Se även
-- [html-parser library](https://hackage.haskell.org/package/html-parser)
-- [tagsoup library](https://hackage.haskell.org/package/tagsoup)
-- [hxt library](https://hackage.haskell.org/package/hxt)
+När det gäller utförande behandlar `tagsoup` HTML som en sekvens av öppna och stängda taggar, snarare än ett uppbyggt dom-träd. Det betyder att det kan bearbeta inkonsekvent och bruten HTML snabbare och enklare än några andra bibliotek.
+
+## Se också
+
+1. [Hackage: TagSoup](http://hackage.haskell.org/package/tagsoup)
+2. [School of Haskell: Parsing HTML](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/tagsoup)
+3. [GitHub: html-conduit](https://github.com/snoyberg/html-conduit)

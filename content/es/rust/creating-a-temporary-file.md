@@ -1,6 +1,6 @@
 ---
 title:                "Creando un archivo temporal"
-html_title:           "Rust: Creando un archivo temporal"
+html_title:           "Arduino: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,30 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Crear un archivo temporal es una práctica común en programación que implica crear un archivo que solo se utiliza durante una sesión de ejecución y se elimina automáticamente al finalizar. Los programadores suelen hacer esto para almacenar temporalmente datos o resultados que no necesitan ser permanentes.
+# Creación de archivos temporales en Rust
 
-## Cómo:
-La siguiente es una forma simple de crear un archivo temporal en Rust utilizando la librería estándar `std::fs`:
+## ¿Qué y por qué?
+
+Crear un archivo temporal significa producir un archivo que se utiliza para almacenar datos de manera transitoria. Los programadores lo hacen para gestionar los datos efímeros sin alterar el estado general del programa.
+
+## ¿Cómo hacerlo?
+
+Rust tiene un módulo integrado para manejar archivos. En primer lugar, importa el módulo de archivo estándar:
 
 ```Rust
-use std::fs::{File, remove_file};
-
-// Crea el archivo temporal "mi_temp_file.txt"
-let archivo = File::create("mi_temp_file.txt").expect("No se pudo crear el archivo");
-
-// Realiza operaciones con el archivo...
-// ...
-
-// Elimina el archivo temporal al finalizar
-remove_file("mi_temp_file.txt").expect("No se pudo eliminar el archivo");
+use std::fs::File;
 ```
 
-## Inmersión profunda:
-La creación de archivos temporales ha sido una práctica común en programación desde los primeros días de la informática. Sin embargo, en algunos lenguajes de programación, como C, esta tarea puede ser tediosa y propensa a errores ya que se requiere administrar manualmente la eliminación del archivo. En Rust, esto se simplifica gracias a la implementación segura de la gestión de recursos con su sistema de tipos.
+Para crear un archivo temporal en Rust, puedes utilizar el método `tempfile()` del paquete `tempfile`. Este método crea un archivo temporal en la ubicación predeterminada de tu sistema operativo.
 
-Otra alternativa para crear archivos temporales en Rust es el uso de la librería `tempfile`, que proporciona funciones más avanzadas para manejar archivos temporales.
+```Rust
+use tempfile::tempfile;
 
-## Ver también:
-- [Librería `std::fs` en la documentación de Rust](https://doc.rust-lang.org/std/fs/index.html)
-- [Librería `tempfile` en crates.io](https://crates.io/crates/tempfile)
+let mut tmpfile = tempfile().unwrap();
+```
+
+El método `unwrap()` se utiliza para manejar posibles errores; si el archivo no se puede crear por alguna razón, el programa panicará.
+
+## Inmersión profunda
+
+Los archivos temporales están presentes desde los primeros días de la programación, principalmente para manejar datos efímeros o hacer cálculos intermedios. 
+
+Una solución alternativa al uso de archivos temporales puede ser el uso de datos en memoria. Sin embargo, las restricciones de memoria pueden hacer que esta alternativa no sea viable para grandes conjuntos de datos. 
+
+En cuanto a los detalles de implementación, cuando creas un archivo temporal con Rust, éste genera un nombre de archivo único para evitar conflictos. Este archivo se guarda en un directorio temporal. Por defecto, en Linux, se utiliza '/tmp', pero esto puede variar dependiendo del sistema operativo.
+
+Asegúrate de gestionar correctamente estos archivos temporales, eliminándolos cuando ya no sean necesarios. Los archivos temporales no gestionados pueden terminar llenando el espacio de disco, causando problemas.
+
+## Ver también
+
+Aquí hay algunos enlaces para explorar más sobre la creación de archivos temporales en Rust:
+
+- Documentación de Rust sobre [El módulo std::fs::File](https://doc.rust-lang.org/std/fs/struct.File.html)
+- Paquete de Rust [tempfile](https://crates.io/crates/tempfile)
+- Artículo de la Wiki de Rust sobre [Gestión de errores](https://doc.rust-lang.org/book/ch09-00-error-handling.html)

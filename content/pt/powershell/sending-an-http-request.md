@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "PowerShell: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,71 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e porque?
+## O que e por que?
 
-Enviar uma solicitação HTTP é uma maneira de um programa se comunicar com um servidor da web. Isso é útil para coletar informações, enviar dados ou executar outras ações em um site. Programadores usam solicitações HTTP para automatizar tarefas, integrar sistemas e criar aplicativos que interagem com a web de forma eficiente.
+Enviar uma solicitação HTTP é pedir informações a um servidor da web. Programadores fazem isso para interagir com APIs, buscar dados, enviar dados, entre outros.
 
 ## Como fazer:
 
+Para enviar uma solicitação HTTP no PowerShell, utilizamos o cmdlet `Invoke-WebRequest`. Aqui está um exemplo simples:
+
 ```PowerShell
-# Exemplo básico:
-Invoke-WebRequest -Uri "https://www.meusite.com"
-
-# Passando parâmetros:
-$Params = @{Param1 = 'valor1'; Param2 = 'valor2'}
-Invoke-WebRequest -Uri "https://www.meusite.com/api" -Method POST -Body $Params
-
-# Autenticação:
-$Cred = Get-Credential
-Invoke-WebRequest -Uri "https://www.meusite.com/api" -Credential $Cred
+$url = "http://api.exemplo.com"
+$response = Invoke-WebRequest -Uri $url
+echo $response.Content
 ```
+Isso chamará a URL e imprimirá a resposta do conteúdo.
 
-Saída de exemplo:
+## Mergulho profundo
 
-```
-StatusCode        : 200
-StatusDescription : OK
-Content           : <html>
-                      <head>
-                        <title>Meu Site</title>
-                      </head>
-                      <body>
-                        <h1>Bem-vindo ao meu site!</h1>
-                      </body>
-                    </html>
-RawContent        : HTTP/1.1 200 OK
-                    Content-Type: text/html
-                    Date: Sat, 01 May 2021 00:00:00 GMT
-                    
-                    <html>
-                      <head>
-                        <title>Meu Site</title>
-                      </head>
-                      <body>
-                        <h1>Bem-vindo ao meu site!</h1>
-                      </body>
-                    </html>
-Forms             : {}
-Headers           : {[Content-Type, text/html], [Date, Sat, 01 May 2021 00:00:00 GMT]}
-Images            : {}
-InputFields       : {}
-Links             : {}
-ParsedHtml        : <html>
-                      <head>
-                        <title>Meu Site</title>
-                      </head>
-                      <body>
-                        <h1>Bem-vindo ao meu site!</h1>
-                      </body>
-                    </html>
-RawContentLength  : 132
-```
+Historicamente, enviávamos solicitações HTTP em PowerShell usando a classe .NET `System.Net.WebRequest`, mas desde o PowerShell 3.0, temos o cmdlet `Invoke-WebRequest` muito mais amigável.
 
-## Deep Dive:
+Se você precisar de uma alternativa ao `Invoke-WebRequest`, pode considerar o `Invoke-RestMethod`, que analisa a resposta diretamente para você quando possível.
 
-Enviar solicitações HTTP é uma técnica amplamente utilizada em programação web. Antigamente, os programadores precisavam escrever seu próprio código para lidar com as comunicações HTTP, mas agora existem muitas bibliotecas e frameworks que simplificam o processo, como o PowerShell. Alternativas para enviar solicitações HTTP incluem usar um navegador da web ou uma ferramenta de linha de comando como o cURL. O PowerShell usa o cmdlet "Invoke-WebRequest" para fazer as solicitações e retorna uma resposta que contém informações como o status, os cabeçalhos e o conteúdo da resposta.
+Ao enviar uma solicitação HTTP, o sistema cria uma conexão TCP com o servidor web, envia os detalhes da solicitação (ou seja, GET, POST, cabeçalhos, etc.), e então espera e coleta a resposta. O `Invoke-WebRequest` abstrai a maior parte disso para você, mas é importante saber o que está acontecendo nos bastidores.
 
-## Veja também:
+## Veja também
 
-- Documentação do cmdlet "Invoke-WebRequest": https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest
-- Exemplos de uso do cmdlet "Invoke-WebRequest": https://dbatools.io/commands/invoke-webrequest/
+1. [Documentação oficial do Microsoft PowerShell](https://docs.microsoft.com/pt-br/powershell/)
+2. [Guia sobre solicitações HTTP em PowerShell](https://adamtheautomator.com/powershell-http-request/)
+3. [Página da web do PowerShell cmdlet Invoke-WebRequest](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+
+Lembre-se, a prática leva à perfeição. Continue codificando e explorando!

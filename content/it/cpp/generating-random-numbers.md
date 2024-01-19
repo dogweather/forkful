@@ -1,7 +1,7 @@
 ---
-title:                "Generare numeri casuali"
-html_title:           "C++: Generare numeri casuali"
-simple_title:         "Generare numeri casuali"
+title:                "Generazione di numeri casuali"
+html_title:           "Arduino: Generazione di numeri casuali"
+simple_title:         "Generazione di numeri casuali"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,40 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Creare Numeri Casuali in C++
 ## Cosa e Perché?
- Generare numeri casuali è un processo fondamentale nella programmazione che consente ai programmatori di creare una casistica più variata e realistica per i loro programmi. I numeri casuali possono essere utilizzati per la creazione di giochi, la simulazione di eventi casuali e molti altri scopi.
+Generare numeri casuali in C++ consiste in creare una sequenza di numeri che non presentano alcuna apparente correlazione. I programmatori lo fanno per simulare eventi che si verificano a caso nella vita reale, quali giochi di sorte, simulazione di scenari nel testing, o creazione di dati casuali per la crittografia.
 
-## Come Fare:
-Ecco un codice di esempio in C++ per generare un numero casuale compreso tra 1 e 10:
+## Come fare:
+Ecco il codice per generare numeri casuali in C++.
 
-```C++
+ ```C++
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 
-int main() {
-    // inizializza il generatore di numeri casuali
-    srand(time(0));
+int main () {
+   //inizializza il generatore di numeri casuali
+   srand(static_cast<unsigned int>(time(0)));
+   
+   //genera un numero casuale tra 1 e 6
+   int randomNumber = rand() % 6 + 1;
+   
+   std::cout << "Numero casuale: " << randomNumber << std::endl;
+   
+   return 0;
+}
+  ```
+
+Ecco un esempio di output:
+`Numero casuale: 4`
+
+## Approfondimento
+Storicamente, in C++ si utilizzava la funzione `rand()` e `srand()` della libreria `cstdlib` per generare numeri casuali. Tuttavia, a partire da C++11, si consiglia di utilizzare il modulo `<random>` che fornisce funzionalità per generare numeri pseudo-casuali di alta qualità e con più opzioni.
+
+Esistono alternative alla funzione `rand()`, come `random_device`, `default_random_engine`, e `uniform_int_distribution`, che possono essere utili per generare numeri casuali più sofisticati.
+
+```C++
+#include <iostream>
+#include <random>
+ 
+int main()
+{
+    std::random_device rd;   //utilizzato per ottenere un seme per il generatore di numeri
+    std::mt19937 gen(rd());  //generatore di numeri Mersenne_twister
+    std::uniform_int_distribution<> dist(1, 6); //distribuzione uniforme
     
-    // genera un numero casuale tra 1 e 10
-    int numero = rand() % 10 + 1;
-    
-    // stampa il numero generato
-    std::cout << "Numero casuale: " << numero << std::endl;
-    
-    return 0;
+    std::cout << "Numero casuale: " << dist(gen) << '\n';
 }
 ```
 
-Output:
+## Vedere anche
+Per ulteriori informazioni, consultate i seguenti collegamenti:
 
-```
-Numero casuale: 7
-```
-
-## Approfondimento:
-La generazione di numeri casuali è una tecnica che risale ai primi giorni della programmazione, con algoritmi come il "linear congruential generator" sviluppato da Lehmer nel 1949. Oggi ci sono diverse alternative all'uso della funzione di generazione di numeri casuali inclusa in C++, come ad esempio la libreria [Boost.Random](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_random.html).
-
-## Vedi Anche:
-- [Documentazione su rand() in C++](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [Articolo su generazione di numeri casuali in C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+1. [`rand()` e `srand()`](http://www.cplusplus.com/reference/cstdlib/rand/)
+2. [Modulo `<random>`](http://www.cplusplus.com/reference/random/)
+3. [Generazione di numeri casuali in C++11](https://stackoverflow.com/questions/19665818/generate-random-numbers-using-c11-random-library)
+4. [`random_device`, `default_random_engine`, e `uniform_int_distribution`](http://www.cplusplus.com/reference/random/)

@@ -1,7 +1,7 @@
 ---
-title:                "Busca e substituição de texto"
-html_title:           "Haskell: Busca e substituição de texto"
-simple_title:         "Busca e substituição de texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,38 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que os programadores fazem isso?
+# Substituição de texto na Haskell: Mais Simples do Que Você Imagina
 
-Substituir e buscar texto é uma tarefa comum para programadores que trabalham com linguagens de programação. Isso envolve encontrar uma determinada sequência de caracteres em um texto e substituí-la por outra. Os programadores geralmente fazem isso para corrigir erros, atualizar informações ou automatizar tarefas repetitivas.
+## O que e Porquê?
 
-## Como fazer:
+A busca e substituição de texto envolve identificar todas as ocorrências de uma string específica (a ser buscada) e substituí-la por outra. Programadores fazem isso para mapear variáveis no código, atualizar funções antigas ou melhorar a legibilidade do código programado.
 
-Substituir e buscar texto em Haskell é fácil e simples. Vamos ver alguns exemplos usando a função `replace` do pacote `Text`.
+## Como Fazer:
 
+Em Haskell, a função `substitute` da biblioteca Data.String.Utils é frequentemente usada.
+
+Instale com o seguinte comando:
+```Haskell
+cabal install MissingH
 ```
-import Data.Text
+Aqui está um exemplo de código:
+```Haskell
+import Data.String.Utils
 
-let texto = "Olá mundo!"
-
-replace "mundo" "Haskell" texto 
--- saída: "Olá Haskell!"
+main = print $ substitute "world" "Haskell" "Hello, world!"
 ```
-
-Podemos também usar a função `replace` em uma lista de strings.
-
+A saída será:
+```Haskell
+"Hello, Haskell!"
 ```
-let lista = ["Olá", "mundo!", "Como", "você", "está?"]
+Neste exemplo, o programa procura pela string "world" na frase "Hello, world!" e a substitui por "Haskell".
 
-map (replace "mundo" "Haskell") lista 
--- saída: ["Olá", "Haskell!", "Como", "você", "está?"]
-```
+## Mergulho Profundo
 
-## Mergulho Profundo:
+Haskell é uma linguagem de programação puramente funcional desenvolvida no final dos anos 80. Uma das alternativas para a função `substitute` é a função `replace`, da biblioteca `Text`.
 
-A substituição e busca de texto é uma tarefa antiga, com suas primeiras formas sendo feitas manualmente através de editores de texto. Com o avanço da tecnologia, surgiram diversas ferramentas e linguagens de programação voltadas para a manipulação de texto. Alternativas em Haskell incluem o uso da biblioteca `regex` para usar expressões regulares em busca e substituição, ou a função `substitute` do pacote `regex-base` para substituir texto especificando a posição exata da string a ser substituída.
+Vale lembrar que a função `substitute` tem complexidade O(n). A complexidade também pode ser afetada dependendo do tamanho do texto a ser pesquisado e substituído.
 
-## Veja também:
+## Veja Também:
 
-- [Documentação da função `replace`](https://hackage.haskell.org/package/text/docs/Data-Text.html#v:replace)
-- [Pacote `regex` para uso de expressões regulares em Haskell](https://hackage.haskell.org/package/regex)
-- [Pacote `regex-base` para substituição de texto em uma posição específica](https://hackage.haskell.org/package/regex-base)
+Para mais informações e assuntos relacionados, você pode visitar os seguintes links:
+
+1. [Haskell: Guia Básico para Iniciantes](https://learnxinyminutes.com/docs/pt-br/haskell-pt/)
+   
+2. [Documentação Oficial da Linguagem Haskell](https://www.haskell.org/documentation/)
+
+3. [Data.String.Utils](http://hackage.haskell.org/package/MissingH-1.2.1.0/docs/Data-String-Utils.html)
+   
+4. [Text](http://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text.html)
+
+Dê uma olhada nos recursos acima para aprender mais sobre Haskell e sua aplicação na busca e substituição de texto.

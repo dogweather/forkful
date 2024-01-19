@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Kotlin recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,39 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Interpolating a string is a way to dynamically insert variables or expressions into a string. This allows for more flexible and concise code, making it a popular choice among programmers.
+String interpolation in Kotlin is a smooth way to insert variables directly into strings. This technique improves readability of the code and prevents mess-ups in concatenation.
 
 ## How to:
 
-To use string interpolation in Kotlin, we can use the "$" symbol followed by the variable or expression we want to insert into the string. Here's an example:
+Let's jump straight in to the code to see string interpolation in action:
 
 ```Kotlin
-val name = "John"
-val greeting = "Hello $name, how are you?"
-println(greeting)
+fun main() {
+    val name = "John"
+    val greeting = "Hello, $name!"
+    println(greeting) // Outputs: Hello, John!
+}
 ```
 
-This will print out the string "Hello John, how are you?" in the console.
-
-String interpolation can also be used for more complex expressions. Let's say we want to display the result of adding two numbers in a string. We can do it like this:
+Easy right? We can also use expressions within the interpolated strings. Surround the expression by curly braces: 
 
 ```Kotlin
-val num1 = 6
-val num2 = 8
-val sum = "The sum of $num1 and $num2 is ${num1 + num2}"
-println(sum)
+fun main() {
+    val apples = 5
+    val oranges = 3
+    println("I have ${apples + oranges} fruits.") // Outputs: I have 8 fruits.
+}
 ```
-
-This will print out "The sum of 6 and 8 is 14" in the console.
 
 ## Deep Dive
 
-String interpolation has been around for a long time, with origins in programming languages like Perl and PHP. It has now become a standard feature in most modern programming languages, including Kotlin.
+String interpolation is not unique to Kotlin. It has long been in languages like Perl, Ruby, and more recently, JavaScript and Python.
 
-An alternative to string interpolation is string concatenation, which involves using the "+" operator to combine strings and variables. However, string interpolation offers a more readable and concise way to achieve the same result.
+While it seems simple, it has important implementation details. Variables are not converted directly to strings. The compiler transforms the code, wrapping variables or expressions inside a `toString()` call. This ensures correct display of the value, no matter its type.
 
-Internally, string interpolation in Kotlin uses the StringBuilder class to combine the string and the inserted variables or expressions. This means that string interpolation is more efficient than string concatenation, especially when dealing with long strings or multiple variables.
+One may wonder, "Could I just concatenate the strings instead?". Sure, you can, but interpolation is easier to read and less error-prone. 
 
 ## See Also
 
-To learn more about string interpolation in Kotlin, you can check out the official documentation here: https://kotlinlang.org/docs/reference/basic-types.html#string-templates
+Read more about string templates in Kotlin [here](https://kotlinlang.org/docs/basic-syntax.html#string-templates). For a more comprehensive look at different approaches to string concatenation and their performance differences in Java (and by extension, Kotlin), [this article](http://www.pellegrino.link/2015/08/22/string-concatenation-with-java-8.html) does a great job.

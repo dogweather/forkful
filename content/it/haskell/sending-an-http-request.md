@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "Haskell: Inviare una richiesta http"
+html_title:           "C++: Inviare una richiesta http"
 simple_title:         "Inviare una richiesta http"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,24 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Mandare una richiesta HTTP significa inviare una richiesta da un client ad un server per ottenere informazioni o eseguire un'azione. I programmatori utilizzano questa tecnologia per scambiare dati tra diverse applicazioni, siti web o dispositivi.
+## Cos'è e Perché?
+Invio di una richiesta HTTP è un metodo per ottenere o inviare dati da/a un server. I programmatori lo fanno per interagire con servizi web, scaricare file, ottenere dati JSON, ecc.
 
 ## Come fare:
-Esempi di codice e output nella sezione ```Haskell ...```
-Per inviare una richiesta HTTP nella versione attuale di Haskell, è possibile utilizzare la libreria "Network.HTTP.Simple". Questa libreria fornisce funzioni per creare e inviare richieste HTTPS, nonché per gestire la risposta del server. Di seguito un esempio di codice per effettuare una richiesta GET e ottenere il contenuto della pagina web richiesta.
+Per inviare una richiesta HTTP in Haskell, usiamo il pacchetto `http-client`. Ecco un esempio semplice per eseguire una richiesta GET.
 
-```Haskell let request = setRequestMethod methodGet $ setRequestPath path defaultRequest 
-let response = httpLbs request
-print $ getResponseBody response 
+```Haskell
+import Network.HTTP.Client 
+import Network.HTTP.Types.Status (statusCode)
+
+main :: IO ()
+main = do
+    manager <- newManager defaultManagerSettings
+
+    request <- parseRequest "http://httpbin.org/get"
+    response <- httpLbs request manager
+
+    putStrLn $ "Il codice di stato HTTP era: " ++ 
+               (show . statusCode . responseStatus $ response)
 ```
 
-L'output del codice sarà il contenuto della pagina web ottenuta come una stringa.
+Quando esegui questo codice, riceverai un output simile a `"Il codice di stato HTTP era: 200"`
 
-## Approfondimenti:
-Le richieste HTTP sono stati introdotte nel 1991 come parte del protocollo HTTP 0.9. Oggi, la versione più utilizzata di HTTP è la 1.1, che supporta la persistenza della connessione e il contenuto compresso. È possibile inviare richieste HTTP utilizzando altre libreria di Haskell, come ad esempio "Network.HTTP.Conduit".
+## Approfondimento:
+(1) Inviare richieste HTTP in Haskell non era sempre così semplice. Prima dell'introduzione del pacchetto `http-client`, era necessario utilizzare librerie di più basso livello che richiedevano molto più codice.
+(2) Ci sono molte altre librerie Haskell per l'invio di richieste HTTP, come `http-conduit` e `wreq`, che forniscono un'interfaccia di alto livello per operazioni HTTP.
+(3) Le richieste HTTP in Haskell vengono inviate in maniera asincrona utilizzando schede verdi o thread leggeri.
 
-## Vedi anche:
-- [Network.HTTP.Simple documentation](http://hackage.haskell.org/package/http-client)
-- [Network.HTTP.Conduit documentation](http://hackage.haskell.org/package/http-conduit)
-- [Introduzione a HTTP](https://developer.mozilla.org/it/docs/Web/HTTP/Overview)
+## Vedi Anche:
+1. Documentazione di `http-client`: https://hackage.haskell.org/package/http-client
+2. Tutorial di `http-conduit`: https://haskell-lang.org/library/http-conduit
+3. Documentazione di `wreq`: https://hackage.haskell.org/package/wreq

@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출하기"
-html_title:           "Ruby: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,37 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 어째서?
+# 루비에서 부분 문자열 추출하기: 기본 안내서 
+## 다람쥐 추출이란 무엇이며 왜 필요한가? 
 
-부분 문자열 추출이란 무엇인지와 프로그래머들이 그것을 왜 하는지를 설명합니다.
+부분 문자열(substring) 추출은 주어진 문자열에서 특정 부분을 뽑아내는 방법입니다. 프로그래머들은 데이터 정리, 파싱 혹은 데이터 에러 수정 등 다양한 이유로 이를 사용합니다.
 
-## 어떻게:
+## 어떻게 하는가: 
 
-아래 코드 블록 내에서 코딩 예제와 샘플 출력을 제공합니다.
+루비에서 부분 문자열을 추출하는 가장 일반적인 방법은 `slice` 메서드입니다. 
 
-```Ruby
-# 원본 문자열 생성
-str = "Hello World"
-
-# 첫 번째 문자부터 세 번째 문자까지 추출
-str[0, 3] #=> "Hel"
-
-# 마지막 문자열 두 개 추출
-str[-2, 2] #=> "ld"
-
-# 특정 문자열을 기준으로 나누고, 그 중 첫 번째 문자열 추출
-str.split(" ")[0] #=> "Hello"
+```ruby
+str = "Hello, Ruby programmer"
+puts str.slice(7, 4) 
 ```
 
-## 깊이 파고들기:
+위 코드를 실행하면, "Ruby"라는 출력 결과를 볼 수 있습니다. 
 
-1. 히스토리 컨텍스트: 문자열 추출은 고대부터 프로그래밍 언어의 일부였습니다. 그리고 루비에서는 간단하고 강력한 메소드를 제공하여 문자열 추출을 더욱 쉽게 만들었습니다.
-2. 대안: 문자열 추출에는 여러 가지 대안이 있지만, 루비는 정규식이나 람다 표현식 등 다른 언어에 비해 더 간결하고 세련된 방식을 제공합니다.
-3. 구현 상세: 루비에서는 내부적으로 문자열을 배열처럼 취급하고, 인덱스를 이용하여 부분 문자열을 추출합니다. 동시에 사용되는 메소드는 인덱스를 활용한 문자 선택과 문자열 조작을 제공합니다.
+## 깊게 들어가면: 
 
-## 참고 자료:
+### * 역사적 배경 : 
+기본 문자열 추출 방법은 루비 언어가 처음 나온 이래로 사용되고 있습니다. 초기 프로그래밍 언어부터 문자열 조작의 핵심 요소였습니다.
 
-관련 소스 링크입니다.
+### * 대안 : 
+`slice` 외에도 `[]` 연산자를 이용하여 부분 문자열을 추출할 수 있습니다.
 
-- [루비 가이드](https://www.ruby-lang.org/en/)
-- [루비 API 문서](https://ruby-doc.org/)
+```ruby
+str = "Hello, Ruby programmer"
+puts str[7, 4] 
+```
+
+### * 구현 세부사항 : 
+부분 문자열을 추출하는 데는 인덱스 위치와 길이가 필요합니다. 인덱스 위치는 문자열에서 추출할 부분의 시작점이며, 길이는 얼마나 많은 문자를 가져올 것인지를 결정합니다.
+
+## 추천 자료: 
+
+1. [Ruby 문서 - String](https://ruby-doc.org/core/String.html): 이 사이트에서는 루비의 String 클래스에 대한 공식 문서를 보실 수 있습니다.
+2. [루비 문자열 쪼개기](https://www.rubyguides.com/2018/01/ruby-string-methods/#ruby-split): this is a good detailed guide on working with Strings in Ruby.
+3. [루비에서 `slice` 사용 예제](https://www.geeksforgeeks.org/ruby-string-slice-function-with-examples/): this site provides a detailed explanation and examples of `slice` usage in Ruby.

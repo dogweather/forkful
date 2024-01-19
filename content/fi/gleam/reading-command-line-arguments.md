@@ -1,7 +1,7 @@
 ---
-title:                "Lukemalla komentorivin argumentit"
-html_title:           "Gleam: Lukemalla komentorivin argumentit"
-simple_title:         "Lukemalla komentorivin argumentit"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mikä & Miksi?
-Komentoriviparametrien lukeminen tarkoittaa sitä, että ohjelma pystyy ottamaan käyttäjän tarjoamat parametrit ja käyttämään niitä ohjelman suorittamiseen. Ohjelmoijat tekevät tätä jotta heidän ohjelmansa olisi joustavampi ja käyttäjäystävällisempi, sillä käyttäjät voivat säätää ohjelman toimintaa käyttämällä erilaisia parametreja.
+## Mitä & Miksi?
+Komennon rivin argumenttien lukeminen merkitsee tietojen saamista käyttäjältä ohjelman suorituksen aikana. Ohjelmoijat tekevät tätä voidakseen saada joustavat ja mukautettavat ohjelmat, joita voidaan muuttaa käyttäjän syötteen perusteella.
 
-Miten?
-Gleamilla on mahdollista lukea komentoriviparametreja käyttämällä moduulia "os". Käyttämällä funktiota "arguments" ohjelmoijat voivat tallentaa parametrit muuttujaan ja käyttää niitä tarvittaessa. Alla on esimerkkejä koodista ja siihen liittyvistä tulosteista:
+## Miten tehdä:
+Gleam-luettelossa ohjelman argumentit on saatavissa stand-alone `main` -funktion kautta. Tässä on esimerkki koodista ja sen tuottamasta tulosteesta:
 
 ```Gleam
-import os
+import gleam/list 
+import gleam/io
 
-fn main() {
-    let arguments = os.arguments()
-    // Käyttäjä antoi parametrina "true"
-    // arguments arvo olisi siis: ["true"]
-    // Voit käyttää parametria esim. tarkistamalla sen arvoa if-lauseella.
-
-    if arguments == ["true"] {
-        // Tee jotain
-    }
+fn main(args: list.List(unicode.String)) {
+    let args_string = list.join(args, ", ")
+    io.println(args_string)
 }
-
 ```
 
-## Syvemmälle
-Komennoriviparametrien lukeminen on ollut osa ohjelmointia jo pitkään ja se on yleinen käytäntö monissa ohjelmointikielissä. Jotkut vaihtoehtoiset menetelmät ovat esimerkiksi ympäristömuuttujien käyttäminen tai konfiguraatiotiedostojen lukeminen. Gleamissa komentoriviparametrien lukeminen on helppoa ja kätevää käyttämällä moduulia "os".
+Suorita tämä ohjelma komentoriviltä ja anna sille muutamia argumentteja. 
+Esimerkiksi, jos annat argumentit "eka", "toka"
+
+```
+$ gleam run my_app eka toka
+```
+
+Ohjelma tulostaa:
+
+```
+eka, toka
+```
+
+## Syvempi tarkastelu
+Komennon rivin argumenttien lukeminen on ollut ohjelmoinnin perusta 1970-luvulta lähtien, jolloin UNIX-käyttöjärjestelmät olivat suosittuja. Vaihtoehtoisesti, interaktiivisessa ohjelmassa voit kysyä syötettä käyttäjältä ohjelmasuorituksen aikana. Lue Gleam-ohjelman argumentit, jotka luodaan `main`-funktion kutsussa, joka on ohjelmasi ensimmäinen kutsuttu funktio.
 
 ## Katso myös
-Voit tutustua tarkemmin parametrien lukemiseen Gleamissa ja moduuliin "os" Gleamin virallisessa dokumentaatiossa. Näin pysyt ajan tasalla uusista ominaisuuksista ja parhaista käytännöistä. https://gleam.run/documentation/
+Lisätietoja ja esimerkkejä Gleam-koodista voi löytää Gleam-dokumentaatiosta ja sen oppaista.
 
-Lopputulos
-Nyt tiedät, mitä komentoriviparametrien lukeminen tarkoittaa ja miksi ohjelmoijat tekevät sitä. Tutustuit myös Gleamin tarjoamaan helpoon ja kätevään tapaan lukea parametreja. Jatkossa voit hyödyntää tätä ominaisuutta omassa ohjelmoinnissasi ja tehdä ohjelmistasi vieläkin monipuolisempia ja käyttäjäystävällisempiä.
+- Gleam-dokumentaatio: https://gleam.run/book/
+- Gleam-opas: https://gleam.run/getting-started/

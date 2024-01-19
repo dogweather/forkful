@@ -1,7 +1,7 @@
 ---
-title:                "Читання текстового файлу."
-html_title:           "C++: Читання текстового файлу."
-simple_title:         "Читання текстового файлу."
+title:                "Читання текстового файлу"
+html_title:           "Arduino: Читання текстового файлу"
+simple_title:         "Читання текстового файлу"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,49 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & чому?
+## Що та чому?
 
-Читання текстового файлу - це процес отримання текстової інформації з файлу на комп'ютері. Це одна з основних дій, які виконують програмісти під час роботи з даними.
+Читання текстового файлу - це процес витягування даних з такого файлу у програму. Це зазвичай роблять, коли програмі треба працювати з зовнішньою інформацією, яка зберігається в текстовому форматі.
 
-## Як:
+## Як це робити:
 
-Щоб прочитати текстовий файл у програмі, вам потрібно скористатися функцією ```ifstream```, яка дозволяє відкрити файл для читання. Потім використовуйте цю функцію для отримання даних з файлу та збереження їх у змінній. Наприклад:
+Ось приклад коду для читання текстового файлу у C++.
 
-```
-#include <iostream>
+```C++
 #include <fstream>
+#include <iostream>
+#include <string>
 
-using namespace std;
+int main() {
+	std::ifstream file("example.txt");
+	std::string str;
 
-int main(){ 
-  ifstream inputFile("file.txt");
+	while (std::getline(file, str)) {
+		std::cout << str << std::endl;
+	}
 
-  if(inputFile.is_open()){ 
-    string data; 
-    inputFile >> data;
-    cout << "Data from file: " << data << endl;
-    inputFile.close();
-  }
-  else {
-    cout << "Unable to open file!" << endl;
-  }
-
-  return 0;
+	return 0;
 }
 ```
 
-Вихідний файл:
+Цей код зчитує кожну строку текстового файлу 'example.txt' та виводить її на консоль.
 
-```bash
-Data from file: Hello world!
-```
+## Поглиблено:
+Читання текстових файлів було важливою частиною програмування з самого початку, коли інформація зберігалася на перфокартах.
+Сучасні альтернативи включають читання з реляційних баз даних, NoSQL баз даних або дані в облаках. Однак текстові файли все ще широко використовуються через їх простоту і універсальність.
+Функція 'std::getline' читає файл лінію за лінією. Це працює швидше, ніж читання по одному символу, але потрібно врахувати, що великі файли можуть зайняти багато пам'яті, тому їх слід читати послідовно.
 
-## Поглиблення:
+## Дивитися також:
 
-Читання текстового файлу є необхідною частинкою роботи з даними в програмуванні. Розглянемо приклад, коли вам потрібно зчитати великий файл з даними. Якщо ви будете використовувати функцію ```ifstream```, збереження великої кількості даних в пам'яті комп'ютера може призвести до зайвого використання ресурсів та замовкливого програмного збою. У таких ситуаціях краще використовувати потоковий метод читання даних.
-
-## Дивись також:
-
-- [Базові функції у C++](https://www.programiz.com/cpp-programming/input-output)
-- [Читання та запис файлів у C++](https://www.geeksforgeeks.org/reading-and-writing-files-in-c/)
-- [Створення та редагування текстових файлів з командного рядка](https://linuxize.com/post/how-to-create-edit-and-manage-text-file
+- C++ Documentation on `std::getline`: https://en.cppreference.com/w/cpp/string/basic_string/getline
+- C++ Documentation on Input/Output with files: https://www.cplusplus.com/doc/tutorial/files/
+- StackOverflow Thread on "Read large files line by line in C++": https://stackoverflow.com/questions/7868936/read-file-line-by-line-using-ifstream-in-c
+- Efficient File IO in C++: https://www.bfilipek.com/2018/07/file-reading-cpp.html

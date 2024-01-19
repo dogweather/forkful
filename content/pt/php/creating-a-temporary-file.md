@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "PHP: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e Porquê?
-Criar um arquivo temporário é uma técnica utilizada por programadores para armazenar dados temporariamente durante a execução de um programa em PHP. Isso é útil para evitar a sobrecarga de memória e garantir um melhor desempenho do código.
+## O Que & Por Quê?
 
-## Como fazer:
-Existem diferentes maneiras de criar um arquivo temporário em PHP, dependendo das suas necessidades. Aqui estão dois exemplos de código:
+Criar um arquivo temporário é um procedimento que consiste na criação de um arquivo com um uso de curto prazo, muitas vezes usado para armazenar dados temporariamente durante a execução de um código. Programadores fazem isso quando precisam de um armazenamento temporário que é mais rápido e fácil de acessar do que um banco de dados, por exemplo.
 
-```
+## Como Fazer:
+
+Aqui temos um exemplo de como criar um arquivo temporário em PHP:
+
+```PHP
 <?php
-// Usando a função tmpfile ()
-$arquivo = tmpfile();
-fwrite($arquivo, "Este é um arquivo temporário.");
-// Retorna um ponteiro para o arquivo temporário
-echo ftell($arquivo); // imprime 30
+$tmpfile = tmpfile();
+fwrite($tmpfile, "Olá Mundo!");
 
-// Usando a função tempnam ()
-$arquivo = tempnam("/tmp", "temp");
-file_put_contents($arquivo, "Este é um arquivo temporário.");
-echo file_get_contents($arquivo); // imprime "Este é um arquivo temporário."
+rewind($tmpfile);
+
+echo fread($tmpfile, 1024); // Isto irá imprimir "Olá Mundo!"
 ?>
 ```
+Neste exemplo, a função `tmpfile()` retorna um recurso de arquivo, e, ao mesmo tempo, cria um arquivo temporário. O `fwrite()` é então usado para escrever a string "Olá Mundo!" no arquivo temporário. O `rewind()` é usado para reposicionar o ponteiro do arquivo no início, permitindo que o `fread()` leia e imprima a string que acabamos de escrever.
 
-## Mergulho Profundo:
-Criar arquivos temporários é uma prática comum em programação e já é amplamente suportada em várias linguagens de programação. No PHP, existem várias funções que podem ser usadas para isso, como as mencionadas acima. Além disso, você também pode optar por criar seus próprios métodos para gerenciar arquivos temporários, dependendo das suas necessidades específicas.
+## Aprofundamento
 
-## Veja também:
-- Documentação oficial do PHP sobre criação de arquivos temporários: https://www.php.net/manual/pt_BR/function.tmpfile.php
-- Tutorial online sobre a criação de arquivos temporários com PHP: https://www.tutorialspoint.com/create-a-temporary-file-in-php
+Historicamente, a criação de arquivos temporários tem sido usada em programação desde os primeiros dias de computação. É uma maneira rápida e fácil de evitar o uso de memória ao lidar com grandes volumes de dados.
+
+Como alternativa à função `tmpfile()`, podemos usar a função `tempnam()` do PHP. Esta função cria um nome de arquivo único, que pode então ser usado para criar um arquivo usando funções como `fopen()`.
+
+No que diz respeito à implementação, quando a função `tmpfile()` é chamada, o PHP cria um arquivo temporário com um nome único em um diretório temporário. Este arquivo é automaticamente removido quando o script PHP termina.
+
+## Veja Também
+
+1. [Função tmpfile() - Manual do PHP](https://www.php.net/manual/pt_BR/function.tmpfile.php)
+
+2. [Função tempnam() - Manual do PHP](https://www.php.net/manual/pt_BR/function.tempnam.php)
+
+3. [Função fopen() - Manual do PHP](https://www.php.net/manual/pt_BR/function.fopen.php)

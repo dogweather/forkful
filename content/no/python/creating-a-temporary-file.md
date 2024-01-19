@@ -1,7 +1,7 @@
 ---
-title:                "Opprettelse av en midlertidig fil"
-html_title:           "Python: Opprettelse av en midlertidig fil"
-simple_title:         "Opprettelse av en midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "C#: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,24 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Opprettelse av midlertidige filer i Python
+
 ## Hva & Hvorfor?
-Å opprette en midlertidig fil betyr å opprette en midlertidig lagringsplass for data som skal brukes i et program. Dette gjøres for å holde programmet ryddig og organisert, og for å sikre at data ikke går tapt.
+Å lage en midlertidig fil betyr å lage en fil som bare lever i en kort tid. Programmerere gjør det for å lagre data midlertidig, for eksempel for å dele data mellom forskjellige prosesser i koden.
 
 ## Hvordan:
-```python
+Hvordan du oppretter en midlertidig fil i Python? Her er hvordan:
+```Python
 import tempfile
-with tempfile.TemporaryFile() as tmp:
-    tmp.write(b'Dette er en midlertidig fil.')
-    tmp.seek(0)
-    data = tmp.read()
-print(data)
 
-# Eksempelutgang:
-b'Dette er en midlertidig fil.'
+# Opprette en midlertidig fil
+tmp = tempfile.TemporaryFile() 
+
+# Skrive til den midlertidige filen
+tmp.write(b'Some data')
+
+# Tilbake til start for å lese data
+tmp.seek(0)
+
+# Lees data
+print(tmp.read())
 ```
-
-## Dypdykk:
-Opprettelsen av midlertidige filer har vært en viktig del av programmering siden tidlig på 1960-tallet. Alternativene til å opprette midlertidige filer inkluderer å lagre data i minnet eller å bruke permanente filer, men sistnevnte kan føre til rotete katalogstrukturer og potensiell datatap i tilfelle krasj. Midlertidige filer brukes også i operativsystemet for å lagre temporære systemfiler.
+Sample output:
+```Python
+b'Some data'
+```
+## Dyp Dykk:
+Historisk sett, har teknikken å lage midlertidige filer vært nyttig for mange prosedyrer, som sortering og hashing. Men, det er noen alternativer til midlertidige filer, som bruk av minnet. Implementeringen av midlertidige filer i Python (og mange andre språk) er gjort via operativsystemet.
 
 ## Se også:
-[Python's tempfile documentation](https://docs.python.org/3/library/tempfile.html)
+For mer informasjon om midlertidige filer i Python, se Pythons offisielle dokumentasjon: https://docs.python.org/3/library/tempfile.html

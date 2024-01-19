@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "Javascript: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,35 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?:
+## Co i dlaczego?
 
-Czy kiedykolwiek zastanawiałeś się, co to znaczy czytać pliki tekstowe w programowaniu? Jest to proces, w którym programista odczytuje zawartość pliku tekstowego, czyli pliku zapisanego w formie tekstu, bez formatowania lub struktury. Programiści często wykonują tę czynność, aby uzyskać dostęp do informacji zapisanych w takim pliku, np. do danych lub ustawień programu.
+Czytanie pliku tekstowego polega na zbieraniu i interpretowaniu danych zawartych w pliku. Programiści robią to, by manipulować informacjami, przeprowadzać analizy danych, stanowić źródło danych do pracy aplikacji i wiele innych.
 
-Dlaczego czytanie plików tekstowych jest ważne dla programistów? Ponieważ daje to możliwość interakcji z różnymi rodzajami danych, które mogą być użyteczne w ich projektach. Może to również pomóc w automatyzacji pewnych zadań, takich jak przetwarzanie danych lub wyświetlanie zawartości pliku dla użytkownika.
+## Jak to zrobić:
 
-## Jak to zrobić?
-Jeśli chcesz nauczyć się czytać pliki tekstowe w Javascripcie, to powinieneś zacząć od poznania kilku podstawowych funkcji i metod. Przykładem może być funkcja `readFile()` z modułu `fs`, która służy do odczytywania plików. Poniżej przedstawiony jest kod, który na przykładzie pliku `data.txt` odczytuje jego zawartość i wyświetla ją w konsoli:
+Podstawowy przykład odczytu pliku tekstowego w Javascript wykorzystuje 'fs' (moduł systemu plików) Node.js.
 
 ```Javascript
-const fs = require('fs');
-fs.readFile('data.txt', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
+const fs = require('fs'); 
+
+fs.readFile('test.txt', 'utf8', function(err, data){ 
+    if(err) throw err; 
+    console.log(data); 
+}); 
+```
+Gdy uruchomisz ten kod, zobaczysz zawartość pliku "test.txt" wydrukowaną w konsoli.
+
+## Głębsze spojrzenie:
+
+Historia: W przeszłości, bez takich modułów jak 'fs' w Node.js, odczytywanie pliku tekstowego w Javascript na serwerze było trudniejsze i mniej wydajne.
+
+Alternatywy: Inny popularny sposób to wykorzystanie funkcji asynchronicznej, co pozwala na bardziej liniowy, czytelny kod.
+
+```Javascript
+const fs = require('fs').promises;
+
+async function readFileAsync() {
+    let data = await fs.readFile('test.txt', 'utf8');
+    console.log(data);
+}
+
+readFileAsync();
 ```
 
-Wykorzystujemy tutaj `readFile()` do odczytania pliku `data.txt`, definiujemy kodowanie jako `utf8`, aby odczytać plik jako tekst, a callback funkcja wyświetla odczytaną zawartość w konsoli. Dodatkowo, musimy obsłużyć błąd, dlatego używamy warunku `if` i `throw` dla błędu.
+Szczegóły implementacji: Wybór między readFile i readFileSync (synchroniczna wersja) zależy od sytuacji. readFile jest nieblokująca, co oznacza, że nie czeka na zakończenie odczytu pliku przed przejściem do następnego zadania. readFile jest lepsza w środowiskach wielu użytkowników, gdzie blokowanie może prowadzić do problemów z wydajnością. 
 
-## Głębszy zanurzenie
-Czytanie plików tekstowych jest powszechnie stosowane w programowaniu, a jedną z przyczyn tego jest fakt, że pliki tekstowe są łatwe do zrozumienia przez komputery. Kodowanie ich jest proste i nie wymaga specjalistycznych narzędzi, co jest dużą zaletą. Innym powodem jest fakt, że pliki tekstowe są uniwersalne, co oznacza, że ​​mogą być czytane przez różne języki programowania.
+## Zobacz również:
 
-Alternatywą dla funkcji `readFile()` jest metoda `readFileSync()`, która działa synchronicznie, co oznacza, że ​​kod zostanie wstrzymany, aż plik zostanie odczytany. Istnieją również inne narzędzia i biblioteki, takie jak `fse` lub `readline`, które mogą ułatwić czytanie plików tekstowych.
-
-W celu lepszego zrozumienia czytania plików tekstowych w Javascripcie, warto zapoznać się z formatem JSON (JavaScript Object Notation), który jest często używany do przechowywania danych w plikach tekstowych.
-
-## Zobacz również
-Jeśli jesteś zainteresowany dalszą nauką na temat czytania plików tekstowych w Javascripcie, to warto przejrzeć poniższe źródła:
-
-- [Dokumentacja JavaScript do odczytywania plików](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/fs/readFile)
-- [Podstawy programowania: czytanie plików w Node.js](https://www.youtube.com/watch?v=6UFyHmQ_Gqk)
-- [Dokumentacja formatu JSON](https://www.json.org/json-pl.html)
+1. [Dokumentacja Node.js 'fs'](https://nodejs.org/api/fs.html)
+2. [Poradnik MDN JavaScript](https://developer.mozilla.org/pl/docs/Learn/JavaScript)
+3. [Czytanie i pisanie plików w Node.js - Stackabuse](https://www.stackabuse.com/read-files-with-node-js/)
+4. [Asynchronous Javascript: From Callback Hell to Async and Await - Twilio](https://www.twilio.com/blog/2015/10/asyncawait-the-hero-javascript-deserved.html)

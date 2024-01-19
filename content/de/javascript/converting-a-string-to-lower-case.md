@@ -1,7 +1,7 @@
 ---
-title:                "Umwandlung eines Strings in Kleinbuchstaben"
-html_title:           "Javascript: Umwandlung eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,19 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Zeichenketten in Kleinbuchstaben umbenennen: Ein JavaScript-Leitfaden
+
 ## Was & Warum?
-Die Konvertierung eines Strings in Kleinbuchstaben bezieht sich auf die Umwandlung aller Buchstaben eines Textes in ihre klein geschriebenen Formen. Programmierer nutzen dies oft, um sicherzustellen, dass Eingabedaten einheitlich verarbeitet werden oder um Vergleiche zwischen verschiedenen Strings durchzuführen.
 
-## So geht's:
+Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, jeden Großbuchstaben in der Zeichenkette in seinen entsprechenden Kleinbuchstaben zu ändern. Dies ist nützlich, wenn wir bei Vergleichen und Suchvorgängen Groß- und Kleinschreibung ignorieren wollen.
+
+## Wie geht das?
+
+In JavaScript ist das Umwandeln einer Zeichenkette in Kleinbuchstaben denkbar einfach. Man verwendet dazu einfach die Methode `toLowerCase()`:
+
 ```Javascript
-const str = "Hallo, Welt!";
-console.log(str.toLowerCase()); // gibt "hallo, welt!" aus
+let str = "Hallo Welt!";
+let lowerCaseStr = str.toLowerCase();
+console.log(lowerCaseStr); // "hallo welt!"
 ```
-Hier wird die eingebaute Funktion ```toLowerCase()``` verwendet, um den String "Hallo, Welt!" in die kleingeschriebene Form "hallo, welt!" umzuwandeln. Diese Funktion kann auf jedem String ausgeführt werden und ist in den meisten gängigen Programmiersprachen verfügbar.
 
-## Tieferer Einblick:
-Die Verwendung von Kleinbuchstaben hat sich aus der Notwendigkeit entwickelt, Texte in alphanumerischer Form zu speichern und zu verarbeiten, da frühe Computersysteme nur Großbuchstaben unterstützten. Alternativ zur Verwendung von ```toLowerCase()``` können Programmierer auch die Funktion ```String.prototype.toLocaleLowerCase()``` verwenden, die möglicherweise bessere Unterstützung für Unicode-Zeichen bietet. Es ist auch wichtig, zu beachten, dass die Umwandlung in Kleinbuchstaben Sprachspezifika berücksichtigen muss, da einige Sprachen wie das Türkische Sonderregeln für die Transformation von Buchstaben haben.
+Die Methode `toLowerCase()` ändert die Ausgangszeichenkette nicht, sondern gibt eine neue Zeichenkette zurück, die aus denselben Buchstaben besteht, aber alle in Kleinbuchstaben.
 
-## Siehe auch:
-- [MDN Web Docs: String.prototype.toLowerCase()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [MDN Web Docs: String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
+## Vertiefung 
+
+Historisch gesehen ist die `toLowerCase()` Methode seit der ersten Version von ECMAScript, dem Standard, auf dem JavaScript basiert, vorhanden. Es gibt keine wirklichen Alternativen zur `toLowerCase()` Methode in JavaScript selbst, es sei denn, Sie programmieren eine eigene Funktion, um diese Aufgabe zu erfüllen. 
+
+In Bezug auf die Implementierungsdetails ist zu beachten, dass die `toLowerCase()` Methode nicht die Ausgangszeichenkette ändert. Das bedeutet, dass sie "unveränderlich" ist (in der Fachsprache "immutable"). Dies ist eine wichtige Eigenschaft von Zeichenketten in vielen modernen Programmiersprachen, einschließlich JavaScript.
+
+## Siehe auch
+
+- [JavaScript String toLowerCase() Methode auf MDN Web Docs](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [JavaScript Zeichenketten Referenz auf W3Schools](https://www.w3schools.com/jsref/jsref_obj_string.asp)
+
+Hoffentlich gibt Ihnen dieser kurze Leitfaden einen guten Überblick und praktisches Wissen über das Umwandeln einer Zeichenkette in Kleinbuchstaben in JavaScript. Viel Spaß beim Coden!

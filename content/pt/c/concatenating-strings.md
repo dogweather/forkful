@@ -1,7 +1,7 @@
 ---
-title:                "Juntando strings"
-html_title:           "C: Juntando strings"
-simple_title:         "Juntando strings"
+title:                "Concatenando strings"
+html_title:           "Elixir: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,46 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O Que & Porquê?
+## O Que e Porquê?
+Concatenação de strings refere-se ao processo de combinarmos duas ou mais strings em uma única string. Fazemo-lo geralmente para criar frases dinâmicas e, às vezes, para economizar memória.
 
-Concatenar strings em programação é quando você combina duas ou mais strings em uma só. Isso é útil quando você precisa unir pedaços de texto para criar uma nova string. Os programadores fazem isso para facilitar o uso de textos mais complexos, como mensagens de erro ou conteúdo gerado dinamicamente.
-
-# Como Fazer:
+## Como Fazê-lo:
+Aqui está um exemplo simples de como concatenar strings no C.
 
 ```C
-
 #include <stdio.h>
-#include <string.h> 
+#include <string.h>
 
 int main() {
+   char str1[20] = "Olá, ";
+   char str2[] = "Mundo!";
 
-   // Exemplo 1: Usando strcat()
-   char str1[50] = "Olá, ";
-   char str2[] = "mundo!";
-   
    strcat(str1, str2);
-   
-   printf("%s", str1); // Output: Olá, mundo!
-   
-   // Exemplo 2: Usando sprintf()
-   char str3[50];
-   int idade = 25;
-   
-   sprintf(str3, "Eu tenho %d anos.", idade);
-   
-   printf("%s", str3); // Output: Eu tenho 25 anos.
-   
+
+   printf("%s\n", str1);  
    return 0;
 }
-
 ```
 
-# Mergulho Profundo:
+O output deste código será:
 
-Concatenar strings é uma técnica muito utilizada na programação, mas não é a única maneira de manipular textos. Existem outras opções, como o uso de ponteiros ou a utilização de bibliotecas de manipulação de strings. Além disso, é importante lembrar que, dependendo da linguagem de programação, a forma de concatenar strings pode variar. Por exemplo, em Java, a concatenação é feita com o operador "+".
+```C
+Olá, Mundo!
+```
 
-# Ver Também:
+## Mergulho Profundo
+1. *Contexto histórico:* A concatenação de strings surgiu desde os primeiros dias da programação. Era uma forma simples e direta de combinar dados de texto.
 
-https://www.geeksforgeeks.org/concatenate-string-integer-integer-strings-c/
-https://www.techopedia.com/definition/25963/concatenate
-https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm
+2. *Alternativas:* Em vez de `strcat()`, também podemos usar `strncat()` para especificar o número máximo de caracteres a serem concatenados.
+
+    ```C
+    strncat(str1, str2, 3);
+    ```
+
+3. *Detalhes de implementação:* `strcat()` e `strncat()` ambas alteram a string original, portanto, verifique por espaço suficiente na string de destino para evitar erros de execução.
+
+## Veja Também
+1. [Documentação strcat na Library GNU](https://www.gnu.org/software/libc/manual/html_node/String-Concatenation.html)
+2. [Documentação strncat na Library GNU](https://www.gnu.org/software/libc/manual/html_node/Concatenating-Strings.html)

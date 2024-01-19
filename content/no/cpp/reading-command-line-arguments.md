@@ -1,7 +1,7 @@
 ---
-title:                "Lese kommandolinje argumenter"
-html_title:           "C++: Lese kommandolinje argumenter"
-simple_title:         "Lese kommandolinje argumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,33 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Lesing av kommandolinjeargumenter er en måte for programvare å ta imot input fra terminalen mens den kjører. Dette kan være nyttig for å gi programmene våre mer fleksibilitet og mulighet til å håndtere forskjellige situasjoner. Programvareutviklere kan også bruke dette for å lage programmer som er enklere å bruke for brukere.
 
-## Hvordan:
-For å lese kommandolinjeargumenter i C++, kan du bruke variabelen "argc" (antall argumenter) og matrisen "argv" (argumenter). En enkel kode for å skrive ut alle argumentene kan se slik ut:
+Kommandolinjeargumenter er informasjon som direkte matet inn i programmer når de kjører. Programmers leser disse for å tilpasse programutførelsen basert på brukerens inngang.
 
-```
+## Hvordan?
+
+Her er en enkel kode for å lese kommandolinjeargumenter i C++. 
+
+```C++
 #include <iostream>
 
 int main(int argc, char** argv) {
-  for (int i = 0; i < argc; ++i) {
-    std::cout << argv[i] << std::endl;
-  }
-  return 0;
+    for(int i=0; i< argc; i++) {
+        std::cout << "Arg " << i << ": " << argv[i] << std::endl;
+    }
+    return 0;
 }
 ```
 
-Hvis vi for eksempel kjører dette programmet med kommandolinjen "./program navn år", vil det skrive ut:
+Når du kjører dette programmet med argumenter, vil du få følgende utgang:
 
+``` 
+$ ./program arg1 arg2 arg3
+Arg 0: ./program
+Arg 1: arg1
+Arg 2: arg2
+Arg 3: arg3
 ```
-./program
-navn
-år
-```
 
-## Dykk dypere:
-Lesing av kommandolinjeargumenter har vært en del av operativsystemene siden Unix ble utviklet på 1970-tallet. Alternativene til å lese dem i C++ inkluderer å bruke "getopt" biblioteket eller å bruke en tredjepartsbibliotek som "Boost.Program_options". Implementasjonen av lesing av kommandolinjeargumenter er vanligvis avhengig av operativsystemet og språket som brukes.
+## Dyp Dykk
 
-## Se også:
-- https://en.cppreference.com/w/cpp/utility/program/getenv
-- https://www.gnu.org/software/libc/manual/html_node/Parsing-Program-Arguments.html
+Historisk kontekst: Lesing av kommandolinjeargumenter har sitt opphav fra Unix-systemer der kommandolinjeverktøyer krever denne funksjonaliteten for fleksibilitets- og brukertilpasningsegenskaper.
+
+Alternativer: Boost.Program_options og TCLAP er eksempler på biblioteker som kan forenkle arbeidet med å håndtere kommandolinjeargumenter.
+
+Implementeringsdetaljer: Argumentene som er gitt til et program, blir lagret i en tabell av strenger (argv) som sendes til main() -funksjonen. Antallet argumenter (argc) blir også sendt.
+
+## Se Også
+
+Nedenfor er linker til noen nyttige ressurser om C++ kommandolinjeargumenter:
+
+- C++ Standard Library: http://www.cplusplus.com/reference/cstdlib/
+- Boost.Program_options: https://www.boost.org/doc/libs/1_76_0/doc/html/program_options.html
+- TCLAP - Templatized C++ Command Line Parser: http://tclap.sourceforge.net/

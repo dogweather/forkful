@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "PowerShell: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -11,29 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Drucken von Debug-Ausgaben ist ein gängiges Verfahren unter Programmierern, um Fehler und Probleme in ihrem Code zu identifizieren und zu beheben. Dabei werden zusätzliche Informationen während der Ausführung des Codes ausgegeben, um den Ablauf und die Werte von Variablen zu überprüfen.
+Drucken von Debug-Ausgaben ist ein Prozess, bei dem Programmierer die Innenarbeit ihres Codes verfolgen. Das hilft uns, Fehler zu finden und zu korrigieren. 
 
-## Wie geht's?
-Um Debug-Ausgaben in PowerShell zu drucken, kannst du das Befehllet ```Write-Debug``` verwenden. Hier ist ein Beispielcode:
+## Wie macht man das:
+PowerShell macht das einfach. Benutze den `Write-Debug` Befehl. Hier ist ein einfaches Beispiel:
 
+```PowerShell
+# Aktivieren Sie zuerst die Debug-Preference
+Set-PSDebug -Trace 1
+
+# Dann docke Debug-Ausgabe
+Write-Debug "Das ist eine Debug-Nachricht"
+
+# Die Debug-Nachricht wird angezeigt
+debug: Das ist eine Debug-Nachricht
 ```
-$var = "Hallo Welt"
-Write-Debug "$var"
-```
 
-Die Ausgabe wird dann in der Konsole angezeigt, wenn du den Skript mit der Option ```-Debug``` ausführst:
+## Tiefer eintauchen
+Historisch gesehen, Debugging wurde seit den frühen Tagen der Programmierung verwendet. In PowerShell, `Write-Debug` ist nicht die einzige Option. Alternativen beinhalten `Write-Verbose` oder `Write-Information`.
 
-```
-PS C:\> .\meinSkript.ps1 -Debug
-DEBUG: Hallo Welt
-```
-
-## Tiefer gehend
-Debug-Ausgaben gab es schon lange vor PowerShell, und viele andere Programmiersprachen haben ähnliche Funktionen wie die ```Write-Debug``` Befehl. Alternativ kannst du auch den Befehl ```Write-Verbose``` verwenden, um zusätzliche Informationen während der Ausführung zu drucken.
-
-Die Implementation von Debug-Ausgaben ist oft eine persönliche Entscheidung des Programmierers und kann je nach Anwendungsfall variieren. Es ist jedoch wichtig, sicherzustellen, dass alle Debug-Ausgaben vor dem Release einer Anwendung entfernt werden.
+Die Implementierung von Debug-Ausdrucken in PowerShell hängt von der `PSDebug`-Preference ab. Mit `Set-PSDebug -Trace 1` aktivieren Sie eine detaillierte Spur aller ausgeführten Befehlslinien.
 
 ## Siehe auch
-[Offizielle Dokumentation zu Write-Debug](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7)
+Für weitere Informationen und Beispiele, schauen Sie sich diese Ressourcen an:
 
-[Weitere Informationen zu Debugging in PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-debugging-revisited/)
+- [PowerShell-Dokumentation zu Write-Debug](http://go.microsoft.com/fwlink/?LinkID=113426)
+- [Set-PSDebug-Dokumentation](http://go.microsoft.com/fwlink/?linkid=2116527)
+- [Artikel über alternative Debugging-Methoden in PowerShell](https://devblogs.microsoft.com/scripting/weekend-scripter-the-many-ways-to-use-powershell/)

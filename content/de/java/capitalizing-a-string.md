@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenfolge großschreiben"
-html_title:           "Java: Eine Zeichenfolge großschreiben"
-simple_title:         "Eine Zeichenfolge großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "Java: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,24 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Capitalizing strings bedeutet, dass alle Anfangsbuchstaben eines Strings in Großbuchstaben umgewandelt werden. Programmierer nutzen dies, um die Lesbarkeit von Texten zu verbessern, insbesondere bei Benutzereingaben oder aus Textdateien.
+## Was & Warum?
+
+Das Großschreiben eines Strings bedeutet, jeden Buchstaben des Strings in Großbuchstaben umzuwandeln. Programmierer tun dies, um Text hervorzuheben oder ein einheitliches Format zu gewährleisten.
 
 ## So geht's:
-```
-public class Capitals {
+
+Mit Java können Sie einen String ganz einfach mit der Methode `toUpperCase()` in Großbuchstaben umwandeln. Hier ist ein Beispiel:
+
+```Java
+public class Hauptprogramm {
     public static void main(String[] args) {
-        String text = "hallo, welt!";
-        System.out.println(text.toUpperCase());
+        String kleinerText = "das ist ein kleiner text";
+        String grosserText = kleinerText.toUpperCase();
+
+        System.out.println(grosserText);  //"DAS IST EIN KLEINER TEXT"
     }
 }
 ```
-Output:
-`HALLO, WELT!`
+Die Ausgabe dieses Codes ist "DAS IST EIN KLEINER TEXT".
 
-## Tiefere Einblicke:
-Das Umwandeln von Strings in Großbuchstaben hat seinen Ursprung im Druckwesen, wo manuelle Buchstaben in Druckschriften in Großbuchstaben geschrieben wurden. Alternativ können Programmierer auch die Methode `String#capitalize()` verwenden, um nur den ersten Buchstaben eines Strings in einen Großbuchstaben zu ändern. Die Implementierung des Capitalizings in Java erfolgt durch die Verwendung von `Locale`-Einstellungen, um sprachliche Unterschiede zu berücksichtigen.
+## Vertiefung:
 
-## Weitere Infos:
-[A stackoverflow thread about capitalizing a string](https://stackoverflow.com/questions/225337/how-do-i-capitalize-the-first-letter-of-a-string-in-java)
-[A tutorial on the usage of `Locale` in Java](https://www.baeldung.com/java-locale)
+Geschichte: Die Methode `toUpperCase()` existiert seit der ersten Version von Java und ist eine der am häufigsten verwendeten Methoden beim Arbeiten mit Strings.
+
+Alternativen: Sie können auch die Methode `Locale.ROOT` verwenden, um sicherzustellen, dass die Großschreibung unabhängig von der Landeseinstellung des Benutzers korrekt erfolgt:
+
+```Java
+String grosserText = kleinerText.toUpperCase(Locale.ROOT);
+```
+
+Implementierung: Unter der Haube verwendet Java einen speziellen Algorithmus, um jeden Kleinbuchstaben im String in einen Großbuchstaben umzuwandeln. Dies wird durch die Anwendung von Unicode-Werten erreicht.
+
+## Siehe auch:
+
+Um mehr über die Arbeit mit Strings in Java zu erfahren, sehen Sie sich die Java-Dokumentation an: 
+- [Java String-Klasse](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java-Dokumentation für Locale](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html).

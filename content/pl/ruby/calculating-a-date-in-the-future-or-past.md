@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & dlaczego? 
-Liczenie dat przyszłych lub przeszłych to proces obliczania daty w przyszłości lub w przeszłości na podstawie podanej daty wyjściowej oraz określonego interwału czasu. Programiści często używają tej metody, aby wyliczyć daty ważnych wydarzeń lub ustalić deadline'y w swoich projektach programistycznych.
+## Co i dlaczego?
 
-## Jak to zrobić? 
-W Ruby istnieje kilka sposobów na obliczenie daty w przyszłości lub przeszłości. Jednym z nich jest użycie metody `Time#advance`, która pozwala na dodanie lub odjęcie określonej liczby dni, tygodni lub miesięcy od podanej daty. 
+Przewidywanie daty w przyszłości lub przeszłości to mechanizm, który umożliwia programistom ustalanie dat poza bieżącą datą systemu. Programiści robią to, aby zarządzać zadaniami i wydarzeniami, które są czasowo zależne.
 
-```Ruby 
-require 'active_support/core_ext/numeric/time'
+## Jak to zrobić:
 
-Time.now.advance(days: 1) # Output: Tue Mar 30 10:04:15 UTC 2021
-Time.now.advance(months: -2) # Output: Sun Jan 31 10:04:15 UTC 2021 
-```
+W Ruby możemy łatwo obliczyć datę w przeszłości lub przyszłości, stosując metody `days`, `months` i `years` dla obiektów `Date` i `Time`.
 
-Możemy również skorzystać z modułu `Date`, który umożliwia obliczenie daty w bardziej precyzyjny sposób. Przykładowo, możemy obliczyć datę z przesunięciem o 5 dni w przód lub 10 dni w tył.
-
-```Ruby
+```ruby
 require 'date'
 
-Date.today + 5 # Output: Fri Apr 02 2021
-Date.today - 10 # Output: Thu Mar 18 2021
+dzisiaj = Date.today
+przyszlosc = dzisiaj + 30 #30 dni do przodu
+przeszlosc = dzisiaj - 20 #20 dni do tyłu
+
+puts dzisiaj
+puts przyszlosc
+puts przeszlosc
 ```
 
-## Głębsze spojrzenie 
-Historia liczenia dat jest stara jak świat. Już starożytni Egipcjanie korzystali z kalendarza słonecznego, aby znać daty ważnych wydarzeń. W dzisiejszych czasach, mamy wiele alternatywnych sposobów na obliczenie daty, takich jak korzystanie z gotowych bibliotek lub funkcji w różnych językach programowania.
+Kiedy uruchomisz ten skrypt, zobaczysz coś podobnego do tego:
 
-Implementacja metody `Time#advance` w Ruby wykorzystuje moduł Active Support, który dostarcza wiele przydatnych funkcji rozszerzających podstawowe klasy Ruby. Dzięki temu, możliwe jest wygodne manipulowanie datami w naszych projektach.
+```ruby
+#2022-01-01
+#2022-01-31
+#2021-12-12
+```
+## Pogłębione informacje:
 
-## Zobacz również 
-- [Dokumentacja Ruby - Metoda Time#advance](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html#method-i-advance)
-- [Ruby Guides -  Working with Dates and Times](https://www.rubyguides.com/2015/03/ruby-date-time/)
-- [Active Support Basics](https://guides.rubyonrails.org/active_support_basics.html)
+1. **Kontekst historyczny**: Ruby od początku zawierał mechanizmy do manipulowania datami i czasem, zwracając uwagę na czytelność i łatwość użycia kodu. 
+
+2. **Alternatywy**: Inne języki, takie jak Python i Java, mają również własne metody do obliczania dat w przeszłości i przyszłości. W tych językach metoda może wyglądać inaczej, ale idea jest ta sama.
+
+3. **Szczegóły implementacji**: Ruby używa biblioteki `date`, która udostępnia zestaw klas (Date, DateTime, etc.) służących do manipulowania datami. Wywołując metodę `+` lub `-` na obiekcie Date, tworzysz nowy obiekt Date, nie modyfikując oryginalnej daty.
+
+## Zobacz także:
+
+1. Dokumentacja Ruby - Klasa Date: [https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
+2. Dokumentacja Ruby - Metody czasu i daty: [https://ruby-doc.org/core-2.5.1/Time.html](https://ruby-doc.org/core-2.5.1/Time.html)
+3. Tutorial Ruby - Praca z datami i czasem: [https://www.tutorialspoint.com/ruby/ruby_date_time.htm](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)

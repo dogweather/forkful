@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Deciphering the Command Line in C++ 
+
 ## What & Why?
-Reading command line arguments in C++ refers to the process of passing input data to a program through the command line. This allows programmers to specify different parameters or options when running the program, providing more flexibility and control over its execution.
+Reading command line arguments is about fetching user-defined inputs when launching a program from a terminal. Programmers do it to make their programs more flexible and user-responsive.
 
 ## How to:
-To read command line arguments in C++, we first need to include the `iostream` and `cstring` libraries. Then, we can use the `int main(int argc, char* argv[])` function to access the arguments passed to the program. `argc` stores the number of arguments, while `argv` is a pointer to an array of strings containing the arguments.
+A glimpse of how to play around with command line arguments in C++. 
 
 ```C++
 #include <iostream>
-#include <cstring>
 
-int main(int argc, char* argv[])
-{
-  // Check if any arguments were passed
-  if (argc > 1) {
-    // Loop through each argument
-    for (int i = 1; i < argc; i++) {
-      // Print the argument and its index
-      std::cout << "Argument " << i << ": " << argv[i] << std::endl;
+int main(int argc, char *argv[]) {
+    // argc gives the count of arguments, argv stores those arguments.
+    for(int i = 1; i < argc; ++i) {
+        std::cout << "Argument " << i << " : " << argv[i] << '\n';
     }
-  } 
-  else {
-    std::cout << "No arguments passed!" << std::endl;
-  }
-  
-  return 0;
+    return 0;
 }
 ```
-### Sample output (command line input: `program.exe Hello World`):
+
+If you fire up the terminal and run, say, `./program firstArg secondArg`, your output will be:
+
+```C++
+Argument 1 : firstArg
+Argument 2 : secondArg
 ```
-Argument 1: Hello
-Argument 2: World
-```
 
-## Deep Dive:
-Command line arguments have been used in programming languages since the early days of computing. They were originally used to provide input data to programs, as there was no graphical user interface available. Today, they are still commonly used for this purpose, as well as for specifying various options or settings when running a program.
+## Deep Dive 
+Historically, we've used the command line to interact with our machines. Even in this age of GUIs, command line arguments help us automate tasks and manage systems. `argc` and `argv` are passed to `main()` to record what the user enters on the command line when invoking the program. 
 
-An alternative to reading command line arguments in C++ is to use libraries such as `getopt` or `boost::program_options`. These libraries provide more advanced features for parsing and handling command line arguments, which can be useful for larger and more complex programs.
+But there are alternatives. Libraries like `getopt` and Boost's Program Options offer a higher, more abstract interface for command line parsing. They provide easy methods for handling flags, options, and usage descriptions.
 
-In terms of implementation, command line arguments are stored as an array of strings, with the first element being the name of the program. The `main` function expects two parameters – `argc` and `argv` – which are automatically passed by the operating system when the program is executed.
+As for the nitty-gritty, C++ conventionally executes the `main()` function first. If invoked from the command line, `argc` gives the total count of command line arguments and `argv` is an array of these arguments. `argv[0]` points to the program name itself, `argv[1]` points to the first command line argument, and so forth.
 
-## See Also:
-- [Command Line Arguments in C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [The getopt function](https://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html)
-- [Boost.Program_options library](https://www.boost.org/doc/libs/1_77_0/doc/html/program_options.html)
+## See Also
+To increase your command line kung fu, check out:
+- getopt - https://www.gnu.org/software/libc/manual/html_node/Getopt.html
+- Boost Program Options: - https://www.boost.org/doc/libs/1_75_0/doc/html/program_options.html
+- Effective C++: 55 Specific Ways to Improve Your Programs and Designs - https://www.oreilly.com/library/view/effective-c/9780321334879/

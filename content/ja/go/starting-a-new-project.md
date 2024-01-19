@@ -1,7 +1,7 @@
 ---
-title:                "新しいプロジェクトを開始する"
-html_title:           "Go: 新しいプロジェクトを開始する"
-simple_title:         "新しいプロジェクトを開始する"
+title:                "新しいプロジェクトを始める"
+html_title:           "C: 新しいプロジェクトを始める"
+simple_title:         "新しいプロジェクトを始める"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Getting Started"
@@ -10,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「What & Why?」
-プログラマーが新しいプロジェクトを始めるとは、新しいソフトウェアやアプリケーションを作成することを指します。プログラマーが新しいプロジェクトを始める理由は、新しいアイデアを実現するためや、既存のコードを改善するためなど、様々あるでしょう。
+## 何？& なぜ？
 
-「How to:」
-`` `Go ... ` ``コードブロック内に、新しいプロジェクトを始めるためのコーディング例とサンプルの出力を記載しました。以下のステップに従うことで、新しいプロジェクトを始めることができます。
+新しいプロジェクトを開始するとは、プログラムの新しいコードベースを作成することです。 これは、新しい機能を開発または既存のソフトウェアを大きく改善するために行います。
+
+## 実行方法 :
+
+以下に示すコードは、Goで新しいプロジェクトを作成および実行する最も基本的なステップです：
+
+```Go
+// main.go
+package main
+
+import "fmt"
+
+func main(){
+fmt.Println("私の新しいプロジェクトへようこそ！")
+}
 
 ```
-// 新しいプロジェクトを作成するためのコマンド
-Go mod init example.com/myproject
+これを終了したらterminalに"go run main.go"を打ち込み、結果を確認します。
+
+```shell
+$ go run main.go
+私の新しいプロジェクトへようこそ！
 ```
 
-```
-// サンプルの出力
-"Initialized module and created go.mod in /Users/example/myproject"
-```
+## より深く
 
-「Deep Dive」
-新しいプロジェクトを始める方法として、`` `Go ... ` ``コードブロックに示した``Go mod init``コマンドを使用することができます。しかし、このコマンドはGo 1.11以降で使用可能であり、それ以前のバージョンを使用している場合は、代わりに``go get``コマンドを使用する必要があります。
+新しいプロジェクトを開始するという概念は、ソフトウェア開発の歴史の初めから存在しています。 Go言語自体は、ソフトウェア開発の繰り返しの問題を解決するためにGoogleで開発されました。 これには、コードの読みやすさ、パフォーマンス、並行性などが含まれます。
 
-また、新しいプロジェクトを始めるための代替手段として、既存のプロジェクトをフォークする方法が挙げられます。これにより、コードベースを再利用することができ、開発をより迅速に進めることができます。
+他の言語でも新しいプロジェクトを開始することは可能で、Python、Java、Rubyなどが例です。これらの言語ごとに、新しいプロジェクトの設立方法は異なります。
 
-「See Also」
-関連情報には以下のリンクを参考にしてください。
+Go言語で新しいプロジェクトを開始するには、最初に"main"パッケージと、プログラムのエントリーポイントである"main"関数を作成します。 "package main"は、Goがエントリーポイントを確認するためのシグナルであり、"func main()" はプログラムが最初に実行する関数です。
 
-- https://golang.org/cmd/go/#hdr-Create_a_new_module_in_the_current_directory
-- https://golang.org/doc/go1.11#modules
+## 参考文献
+
+- Go公式ドキュメンテーション：https://golang.org/doc/
+- Goプロジェクトの最初のステップ：https://golang.org/doc/code.html#Command
+- Goの歴史と目標：https://talks.golang.org/2012/splash.article
+- Turing達人のGo：https://www.turing.com/blog/5-reasons-why-we-switched-from-python-to-go/

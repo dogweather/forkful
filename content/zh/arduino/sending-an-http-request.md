@@ -1,7 +1,7 @@
 ---
-title:                "发送一个HTTP请求"
-html_title:           "Arduino: 发送一个HTTP请求"
-simple_title:         "发送一个HTTP请求"
+title:                "发送http请求"
+html_title:           "C#: 发送http请求"
+simple_title:         "发送http请求"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,35 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是发送HTTP请求？
-发送HTTP请求是指通过互联网向服务器发送一个请求，以获取服务器上的数据或执行特定的操作。程序员经常使用HTTP请求来实现与网络服务的交互，例如获取网页内容、发送电子邮件或下载文件。
+## 什么和为什么?
+HTTP请求是一个典型的计算机网络通信模式. 程序员用HTTP请求来交换数据，以便诸如温度传感器这样的设备可以和远程服务器分享信息。
 
-## 如何发送HTTP请求：
-其中最常用的方法是使用Arduino的WiFiClient库来建立一个HTTP客户端。首先，你需要设置WiFi网络连接，然后将服务器的IP地址和端口号填入代码中。接下来，使用“GET”或“POST”方法来定义你想要发送的请求，然后使用write方法来向服务器发送请求。最后，使用readString方法来读取服务器的响应。
+## 如何实现:
+我们首先需要连接一个WiFi网络，然后使用HTTP客户端发送请求到服务器。下面是一个样例代码：
+
+```Arduino
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+ 
+const char* ssid = "your_SSID";
+const char* password = "your_PASSWORD";
+ 
+void setup () {
+ 
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+ 
+  while (WiFi.status() != WL_CONNECTED) {
+ 
+    delay(1000);
+    Serial.println("Connecting...");
+  }
+}
+ 
+void loop() {
+ 
+  if (WiFi.status() == WL_CONNECTED) {
+ 
+    HTTPClient http;
+ 
+    http.begin("http://jsonplaceholder.typicode.com/comments?id=10");
+    int httpCode = http.GET();
+ 
+    if (httpCode > 0) { 
+ 
+      String payload = http.getString();
+      Serial.println(payload);
+    }
+    http.end();
+  }
+  delay(30000);
+}
+```
+样例输出：
 
 ```
-Arduino WiFiClient client;
-
-// connect to WiFi network
-WiFi.begin(ssid, pass);
-
-// server's IP address and port number
-IPAddress serverIP(192,168,1,1);
-int serverPort = 80;
-
-// send a GET request
-client.write("GET /index.html HTTP/1.1\r\n");
-client.write("Host: serverIP\r\n");
-client.write("\r\n");
-
-// read server's response
-String response = client.readString();
+{
+  "postId": 2,
+  "id": 10,
+  "name": "eaque et deleniti atque tenetur ut quo ut",
+  "email": "Carmen_Keeling@caroline.name",
+  "body": "voluptate iusto quis nobis reprehenderit ipsum amet nulla quia quas dolores velit et non aut quia necessitatibus nostrum deserunt eius est sit sed veniam"
+}
 ```
 
-## 深入了解：
-HTTP请求是由蒂姆·伯纳斯-李（Tim Berners-Lee）在1991年发明的，在当今的互联网中被广泛使用。除了上面提到的WiFiClient库，程序员也可以使用其他库来发送HTTP请求，例如ESP8266HTTPClient库。此外，HTTP请求也可以通过手动编写数据包来实现发送。最后，值得一提的是，HTTPS协议提供了更安全的HTTP请求发送方式，它使用SSL加密来保护数据的传输。
+## 深入探索
+HTTP请求在web应用中被广泛使用，其历史可以追溯到1980年代。虽然有其他方法，如FTP，SMTP，但HTTP请求在获取Web资源方面最为常见。除了WiFi和HTTPClient外，还有其他实现方式，如Ethernet和HttpClient等库。
 
-## 参考：
-- [Arduino WiFiClient Library Reference](https://www.arduino.cc/en/Reference/WiFiClient)
-- [ESP8266HTTPClient Library Reference](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/esp8266wifi-client-secure-client.html)
-- [Hypertext Transfer Protocol - Wikipedia](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+## 参考资料
+1. “HTTP介绍” - Mozilla开发者网络 (https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview)
+2. "ESP8266WiFi库文档" - Arduino官方文档 (https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+3. “Arduino HttpClient库” - Arduino官方文档 (https://www.arduino.cc/en/Tutorial/LibraryExamples/HttpClient)

@@ -1,7 +1,7 @@
 ---
-title:                "从文本提取子字符串"
-html_title:           "Lua: 从文本提取子字符串"
-simple_title:         "从文本提取子字符串"
+title:                "提取子字符串"
+html_title:           "Arduino: 提取子字符串"
+simple_title:         "提取子字符串"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是提取子字符串？为什么程序员要这么做？
+## 什么和为什么？
+"提取子字符串"是指从原始字符串中提取一部分。程序员通常需要它来处理、存储或操作具有特殊意义的字符串部分。
 
-提取子字符串是指从一个字符串中获取一个或多个子串的过程。程序员在处理字符串时需要提取子字符串，以便对其进行进一步的操作和分析，比如搜索、替换或者比较字符串。
+## 如何做：
+Lua提供了内置的`string.sub`函数来实现字符串截取。下面是代码示例和输出结果：
 
-# 如何实现提取子字符串？
-
-### 提取单个子串：
 ```Lua
-str = "Hello World!" --声明一个字符串变量
-substr = string.sub(str, 7, 11) --提取子串，参数分别为原字符串、起始索引和结束索引
-print(substr) --输出 "World"
+s = "Hello, Mandarin readers!"
+print(string.sub(s, 8, 15))
+
+-- Output: Mandarin
 ```
 
-### 提取多个子串：
+在此处，我们抽取了`"Hello, Mandarin readers!"`字符串中的`"Mandarin"`字串。
+
+## 深入了解
+
+1. 历史背景：Lua语言自诞生以来就内置了`string.sub`这个函数，这是由于在字符串处理中，子字符串的提取是很常见的需求。
+
+2. 替代方案：`string.find`函数也可以实现相似的功能，找到特定部分的位置，然后再配合`string.sub`进行提取。
+
 ```Lua
-str = "Welcome to Lua Programming!" 
-substr1, substr2 = string.match(str, "(Lua) (Programming)") --匹配并提取多个子串，参数分别为原字符串和匹配模式
-print(substr1, substr2) --输出 "Lua Programming"
+s = "Hello, Mandarin readers!"
+start, finish = string.find(s, "Mandarin")
+print(string.sub(s, start, finish))
+
+-- Output: Mandarin
 ```
 
-### 提取并替换子串：
-```Lua
-str = "apple,pear,banana,orange" 
-substr = string.gsub(str, "apple", "strawberry") --替换所有匹配的子串，参数分别为原字符串、被匹配的子串和替换的子串
-print(substr) --输出 "strawberry,pear,banana,orange"
-```
+3. 实现细节：在Lua中，字符串的索引从1开始（这与许多其他编程语言中的从0开始的索引有所不同）。`string.sub(s, start, finish)`会提取从`s`中第`start`个字符到第`finish`个字符的子串。
 
-# 深入了解
-1. 提取子字符串的方法最早出现在Kernighan和Ritchie的C语言中，后来被许多其他语言借鉴和实现。
-2. 除了使用Lua的内置函数外，还可以使用正则表达式、循环等其他方法来提取子字符串。
-3. 在Lua中，字符串是不可变的，在提取子字符串后会生成一个新的字符串对象。
+## 另请参阅
 
-# 查看更多
-- [Lua字符串函数](https://www.runoob.com/lua/lua-string.html)
-- [正则表达式教程](https://www.runoob.com/regexp/regexp-tutorial.html)
+1. [Lua 字符串操作](http://www.runoob.com/lua/lua-strings.html)，包括`gsub`，`upper`，`lower`等详细操作指南。
+2. [Lua User wiki](http://lua-users.org/wiki/StringsTutorial)，涵盖了Lua的各种字符串操作和处理方式。

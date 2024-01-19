@@ -1,7 +1,7 @@
 ---
-title:                "Lähettää http-pyyntö"
-html_title:           "Elixir: Lähettää http-pyyntö"
-simple_title:         "Lähettää http-pyyntö"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,26 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Miksi & Miten?
+HTTP-pyynnön lähettäminen tarkoittaa palvelimelle lähetettävää pyyntöä tiedon saamiseksi tai päivittämiseksi. Ohjelmoijat tekevät sen vuorovaikutuksessa palvelinten kanssa esimerkiksi verkkosivustoja tai mikropalveluja luodessaan.
 
-Lähettäminen HTTP-pyyntö on tapa kommunikoida Web-palvelimen kanssa Elixir-ohjelman kautta. Tällä tavalla voit pyytää tietoja palvelimelta tai lähettää sinne tietoja. Ohjelmoijat käyttävät tätä toimintoa luodakseen dynaamisia verkkosovelluksia ja integroida niitä eri palveluihin.
+## Näin se tapahtuu:
+Elixirissä HTTP-pyyntöjen lähettäminen on suoraviivaista `HTTPoison`-kirjaston kanssa. Harkitse esimerkkiä:
 
-## Miten:
+```elixir
+defmodule Kysely do
+  def req(url) do
+    HTTPoison.get!(url)
+  end
+end
 
-Koodiesimerkki osoittaa, kuinka voit lähettää HTTP-pyynnön Elixirillä käyttämällä `HTTPoison`-pakettia:
-
-```Elixir
-response = HTTPoison.get("https://example.com/api/data")
+IO.inspect(Kysely.req("http://example.com"))
 ```
 
-Tämä koodi lähettää GET-pyynnön osoitteeseen "https://example.com/api/data". Palvelimen vastaus tallennetaan `response`-muuttujaan ja sitä voidaan käsitellä haluamallasi tavalla.
+Yllä oleva koodi lähettää GET-pyynnön `http://example.com` -osoitteeseen ja tulostaa vastauksen. Output saattaa näyttää tältä:
 
-## Syvemmälle:
+```elixir
+%HTTPoison.Response{
+  body: "<html>...",
+  headers: [{"Content-Type", "text/html"}, ...],
+  request_url: "http://example.com",
+  status_code: 200
+}
+```
 
-Lähettäminen HTTP-pyyntö ei ole mitään uutta, sillä se on ollut osa Web-protokollia jo vuosia. Ennen Elixirillä tehtyjen pyyntöjen lähettämiseen käytettiin yleensä `HTTPClient`-pakettia. Nykyään `HTTPoison` on kuitenkin suositumpi vaihtoehto sen yksinkertaisemman käyttöliittymän ja paremman suorituskyvyn vuoksi.
+## Syvempi syöksy
+HTTP-pyynnöt ovat olleet olennainen osa verkkosovellusten toimintaa niiden alkuperästä lähtien. Ne ovat keino, jolla clientit, kuten selain, kommunikoivat palvelimen kanssa.
 
-## Katso myös:
+Elixirissä on vaihtoehtoja HTTP-pyyntöjen lähettämiseen, mukaan lukien `ibrowse` ja `gun`. Kuitenkin `HTTPoison` on erityisen suosittu sen yksinkertaisen käyttöliittymän ja monipuolisten toimintojen, kuten streamingin ja hienosäätöisten pyyntöjen ansiosta.
 
-- [`HTTPoison`-dokumentaatio](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [`HTTPClient`-dokumentaatio](http://httpclient.exirel.com/)
-- [Elixirin virallinen verkkosivusto](https://elixir-lang.org/)
+HTTP-pyyntöjen lähettämisen ajatuksena elixirissä on, että HTTPoison.get!:n kutsu palauttaa `HTTPoison.Response` tai `HTTPoison.Error` -rakenteen. Tämä mahdollistaa virheiden käsittelyn riippuen siitä, onko pyyntö onnistunut.
+
+## Katso myös 
+1. HTTPoison käyttöönotto: https://hexdocs.pm/httpoison/readme.html
+2. HTTP-pyyntöjen perusteet: https://developer.mozilla.org/fi/docs/Web/HTTP/Methods
+3. Elixirin virallinen dokumentaatio: https://elixir-lang.org/learning.html
+
+Huomaathan, että tämä on pintapuolinen katsaus HTTP-pyyntöjen lähettämiseen Elixirissä. Jatkuvan kehityksen ja oppimisen tueksi suositellaan aiheesta lisätutkimusta ja harjoittelua.

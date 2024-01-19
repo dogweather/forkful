@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "Elm: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi? 
+## Mitä & Miksi?
 
-Mikä on merkkijonon pituuden löytäminen ja miksi ohjelmoijat tekevät sitä? Merkkijonon pituuden löytäminen tarkoittaa yksinkertaisesti merkkijonon merkkien lukumäärän laskemista. Tätä taitoa tarvitaan usein, kun halutaan esimerkiksi tarkistaa, että käyttäjän antama salasana täyttää minimipituusvaatimuksen tai kun käsitellään tekstin syötteitä.
+Stringin pituuden mittaaminen tarkoittaa merkkien lukumäärän laskemista tietyssä merkkijonossa. Ohjelmoijat tekevät tämän määrittääkseen kuinka paljon tilaa (muistissa) merkkijono vie tai tarkistamaan merkkijonon sisällön.
 
-## Miten:
+## Näin teet:
 
-```Elm
-length "Tämä on merkkijono"
--- Output: 21
-```
-
-Älä huoli, vaikka et ymmärtäisi täysin yllä olevaa koodilohkoa. Se on vain yksi tapa käyttää Elm-ohjelmointikielen tarjoamaa `length`-funktiota löytääksesi merkkijonon pituuden.
-
-Toinen tapa voisi olla esimerkiksi käyttää `String.length` funktiota, kuten alla näemme:
+Voit laskea merkkijonon pituuden Elm kielellä `String.length` funktiolla. Tässä on yksinkertainen esimerkki:
 
 ```Elm
-String.length "Toinen tapa"
--- Output: 12
+import Html exposing (text)
+
+main =
+  let
+    s = "Hei maailma"
+  in
+    text (String.fromInt (String.length s))
 ```
 
-## Syvemmälle:
+Koodin suorittamisen tulostuksena saamme:
 
-Nyt kun tiedämme, miten löytää merkkijonon pituus Elm:llä, voisimme miettiä hieman lisää taustaa. Merkkijonon pituuden löytäminen on yksi yleisimmistä ohjelmoinnissa tehtävistä toiminnoista ja siksi lähes jokainen ohjelmointikieli tarjoaa siihen valmiin funktion tai tavan.
-
-Esimerkiksi JavaScriptissä voimme käyttää `length`-ominaisuutta seuraavasti:
-
-```JavaScript
-"Tämäkin on merkkijono".length
-// Output: 23
+```
+11
 ```
 
-Kuten huomaat, käytettävän kielen syntaksi ja toimintatapa saattavat vaihdella, mutta lopputulos on aina sama - merkkijonon pituus.
+## Syvällisempi tarkastelu
 
-## Katso myös:
+Elm-kieli on suunniteltu erityisesti turvalliseen etu-pääkoodaukseen ja se on saanut inspiraation Haskell- ja Standard ML -kielistä. `String.length` on suoraan periytynyt näistä funktiopohjaisista kielistä.
 
-Jos haluat lukea lisää merkkijonon pituuden laskemisesta, suosittelemme lukemaan tarkemmin Elm-ohjelmointikielen `String`-kirjaston dokumentaatiota, joka tarjoaa lisätietoa erilaisista merkkijonoihin liittyvistä toiminnoista. Voit myös katsoa muita ohjelmointikieliä ja niiden tarjoamia ratkaisuja tämän ongelman ratkaisemiseksi.
+Vaihtoehtoisesti, voit käyttää `List.length << String.toList` yhdistelmää, mutta huomaa, että `String.length` on tehokkaampi, koska se ei muunna merkkijonoa listaksi.
+
+Hajotaksemme Elm:n `String.length` toiminnan, se käy läpi merkkijonon ja lisää laskuria jokaista merkkiä kohden, palauttaen lopullisen arvon. Vaikka tämä kuulostaa yksinkertaiselta, sitä se itsekin on!
+
+## Katso myös
+
+Tässä on lisätietoja Elm:n merkkijonoista ja niiden käsittelystä:
+
+1. Elm String data types: https://package.elm-lang.org/packages/elm/core/latest/String
+2. Elm Language Guide (Strings): https://guide.elm-lang.org/core_language.html#strings
+3. Elm string length function: https://package.elm-lang.org/packages/elm/core/latest/String#length

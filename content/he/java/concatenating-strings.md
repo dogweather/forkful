@@ -1,6 +1,6 @@
 ---
 title:                "חיבור מחרוזות"
-html_title:           "Java: חיבור מחרוזות"
+html_title:           "C++: חיבור מחרוזות"
 simple_title:         "חיבור מחרוזות"
 programming_language: "Java"
 category:             "Java"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-לחיבור מחרוזות הוא תהליך המאפשר למתכנתים לשלב מחרוזות שונות יחד וליצור מחרוזת חדשה. פתרון זה מאפשר לנו ליצור טכסט מיוצג ותוכן משולב ממספר מקורות שונים.
+## מה זה ולמה?: (What & Why?)
+הצירוף של מחרוזות הוא להכניס הרבה מידע בשורה אחת באופן מוסרד. מתכנתים משתמשים בזה להוסיף טטסט, לבנות מחרוזת שמייצגת מידע מרובה או לשים יחד נתונים ממקורות שונים.
 
-איך לעשות זאת?
-להלן, דוגמאות של קוד ופלט לחיבור מחרוזות בשפת Java:
+## איך לעשות זאת: (How to)
+הנה משל לכמה דרכים לעשות זאת ב-Java.
 
-```java
-// דוגמה ראשונה: חיבור של שני מחרוזות
-String message = "שלום";
-String name = "עמית";
-String greeting = message + " " + name + "!";
-System.out.println(greeting); // הפלט המצורף יהיה: שלום עמית!
-
-// דוגמה שנייה: חיבור של מספרים למחרוזת
-int age = 30;
-String birthdayMessage = "יש לי " + age + " שנים! אחלה גיל, הניח שתוא סטאר.";
-System.out.println(birthdayMessage); // הפלט המצורף יהיה: יש לי 30 שנים! אחלה גיל, הניח שתוא סטאר.
+מנותח '+':
+```Java
+String firstName = "John";
+String lastName = "Doe";
+String fullName = firstName + " " + lastName;
+System.out.println(fullName); // Prints: John Doe
 ```
+באמצעות StringBuilder:
+```Java
+StringBuilder sb = new StringBuilder();
+sb.append("John");
+sb.append(" ");
+sb.append("Doe");
+System.out.println(sb.toString()); // Prints: John Doe
+```
+## התרתעות (Deep Dive)
+בהקשר ההיסטורי, המנותח '+' הוא אופציה פופולרית, אך יעיל רק למספר קטן של מחרוזות. עבור צירוף מחרוזת מרובה, StringBuilder הוא אפשרות יותר יעילה מבחינת הביצועים.
 
-טיפ קטן: יש לזכור שבשפת Java, יש להשתמש בסימן הפלוס (+) לחיבור מחרוזות.
+בנוסף ל'+' ו-StringBuilder, קיימות אפשרויות נוספות כמו String.format בעבודה גם עם מחרוזת מורכבת.
 
-לכל הקשר
-בהיסטוריה של שפות התכנות, קיוו התכנתים לאחד או להקטין את מספר הפעולות כדי להפוך את חיבור מחרוזות לפעולה יותר פשוטה ויעילה. בשפות רבות, חיבור מחרוזות מצריך הפרדת המחרוזות באמצעות פסיקים או סימנים אחרים, מה שעשוי להיות מסורבל לתכנתן. עם כניסת שפת Java למדפסת, חיבור מחרוזות הפך להיות פעולה פשוטה בהרבה שאינה דורשת הפרדה בין המחרוזות.
+בהנחה שאתה משתמש ב-Java 8 או גרסה חדשה יותר, ניתן לדעת שהצירוף של מחרוזות מתבצע נכונה במדרך דינמי של JVM בשמו 'indify string concatenation'.
 
-ראו גם
-למידע נוסף על חיבור מחרוזות בשפת Java, אנחנו ממליצים לראות את המקורות הבאים:
-
-- תיעוד המפתחים של Java מכיל דגמאות ונתוני עניין נוספים על חיבור מחרוזות: https://docs.oracle.com/javase/tutorial/java/data/strings.html
-- המדריך הרשמי של Java מתאר כיצד להשתמש במחרוזות בקושיות: https://docs.oracle.com/javase/tutorial/java/
-
-conceptual/java/index.html
-- באתר "Java Code Geeks" יש הסבר מפורט יותר על השתמשות בחיבור מחרוזות בשפת Java: https://www.javacodegeeks.com/2015/09/the
--string-concatenation-operator-in-java.html
+## לראות גם: (See Also)
+- [Documentations on String class in Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Efficient String Concatenation in Java](https://dzone.com/articles/string-concatenation-performacne-improvement-in-ja)
+- [Oracle tutorial on string concatenation](https://docs.oracle.com/javase/tutorial/java/data/buffers.html)

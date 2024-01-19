@@ -1,6 +1,6 @@
 ---
 title:                "Creando un archivo temporal"
-html_title:           "C#: Creando un archivo temporal"
+html_title:           "Arduino: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "C#"
 category:             "C#"
@@ -10,35 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## ¿Qué y por qué?
 
-Crear un archivo temporal es una técnica común utilizada por los programadores para almacenar datos temporalmente durante la ejecución de un programa. Esto puede ser útil en situaciones como mantener registros de una sesión en línea o guardar información para un proceso que se realizará más tarde. Los archivos temporales también pueden ayudar a reducir el uso de memoria del sistema al no almacenar datos innecesarios durante largos periodos de tiempo.
+Crear un archivo temporal implica generar un archivo que guardará datos de manera provisional. Los programadores hacen esto para almacenar información temporal que puede requerir en un proceso posterior.
 
-## Cómo hacerlo:
+## Cómo se hace:
 
-Para crear un archivo temporal en C#, se puede usar la clase ```System.IO.Path``` y su método ```GetTempFileName()```. Este método devuelve una cadena que representa la ruta de acceso a un archivo temporal único en el sistema. A continuación, se puede utilizar esta ruta para crear y escribir datos en el archivo temporal.
+En este bloque de código, veremos cómo se crea un archivo temporal con C#.
 
-```
-string tempFilePath = Path.GetTempFileName();
-// Crear un objeto de archivo temporal
-using (FileStream fs = File.Create(tempFilePath))
-{
-    // Escribir datos en el archivo temporal
-    Byte[] data = new byte[] { 0x0, 0x1, 0x2, 0x3, 0x4 };
-    fs.Write(data, 0, data.Length);
+```C#
+
+using System;
+using System.IO;
+
+class Program {
+    static void Main() {
+        string tempPath = Path.GetTempFileName();
+
+        Console.WriteLine($"Se ha creado el archivo temporal {tempPath}");
+    }
 }
+
+```
+Cuando ejecutas este código, obtendrás un output que luce como este:
+
+```
+Se ha creado el archivo temporal C:\\Users\\Usuario\\AppData\\Local\\Temp\\tmp9B3F.tmp
 ```
 
-## Profundizando:
+## Inmersión profunda
 
-La creación de archivos temporales ha sido una práctica común en la programación desde los primeros días de los sistemas operativos. Antes de la existencia de la clase ```System.IO.Path```, los programadores solían generar nombres de archivo aleatorios para crear sus archivos temporales. Sin embargo, este método no garantizaba la singularidad de los nombres y podría generar conflictos si se utilizaban en diferentes programas.
+Históricamente, los archivos temporales se han utilizado en sistemas de computación desde sus inicios. Estos archivos se crean normalmente en un directorio temporal, cuyo camino varía dependiendo del sistema operativo.
 
-Hoy en día, hay alternativas al uso de archivos temporales en C# como la utilización de almacenamiento en memoria o bases de datos. Sin embargo, el uso de archivos temporales sigue siendo una técnica útil en ciertas situaciones y es una práctica común en la programación actual.
+Existen algunas alternativas para crear archivos temporales en C#, por ejemplo, puedes utilizar la clase `Path` con el método `GetRandomFileName` para generar un nombre de archivo aleatorio, aunque debes crear y manejar el archivo tú mismo.
 
-## Ver también:
+A nivel de implementación, el método `GetTempFileName` de la clase `Path` crea un archivo con un nombre único en el directorio temporal y luego lo cierra, dejándote libre para utilizarlo en tu aplicación.
 
-Para más información sobre la creación y manipulación de archivos temporales en C#, se pueden consultar los siguientes recursos:
+## Ver también
 
-- [Documentación de Microsoft sobre la clase ```System.IO.Path```](https://docs.microsoft.com/es-es/dotnet/api/system.io.path)
-- [Guía de C# para principiantes de Código Facilito](https://codigofacilito.com/guias/aprende-csharp)
-- [Curso de C# de Platzi](https://platzi.com/clases/csharp/)
+- Documentación oficial sobre la clase `Path` en C#: https://docs.microsoft.com/dotnet/api/system.io.path 
+- Una detallada guía sobre cómo trabajar con archivos y directorios en C# : https://docs.microsoft.com/dotnet/standard/io/how-to-use-net-name-spaces
+- Consejos para la gestión de archivos temporales en C#: https://stackoverflow.com/questions/581570/how-can-i-create-a-temp-file-in-c-sharp

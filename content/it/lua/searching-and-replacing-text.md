@@ -1,7 +1,7 @@
 ---
-title:                "Cercare e sostituire testo."
-html_title:           "Lua: Cercare e sostituire testo."
-simple_title:         "Cercare e sostituire testo."
+title:                "Ricerca e sostituzione del testo"
+html_title:           "Arduino: Ricerca e sostituzione del testo"
+simple_title:         "Ricerca e sostituzione del testo"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa & Perché?
-La ricerca e la sostituzione del testo sono due attività fondamentali nel mondo della programmazione. Questo processo consiste nell'individuare un determinato testo all'interno di un documento o di un programma e sostituirlo con un altro testo. I programmatori spesso devono fare questa operazione per modificare, correggere o aggiornare il loro codice.
+## Che cos'è & Perché?
+La ricerca e sostituzione di testo è il processo di trovare e modificare specifici segmenti di testo all'interno di una stringa. Lo usiamo quanto vogliamo modificare dati testuali in modo sistematico e rapido.
 
-Come fare:
-Ecco un esempio di come effettuare la ricerca e la sostituzione del testo in Lua utilizzando la funzione "string.gsub ()". Nel seguente codice, cercheremo la parola "ciao" all'interno della variabile "stringa" e la sostituirà con "salve".
-
-```Lua
-stringa = "Salve mondo, ciao!"
-nuova_stringa = string.gsub(stringa, "ciao", "salve")
-print(nuova_stringa)
-```
-
-L'output di questo codice sarà: "Salve mondo, salve!" Come puoi vedere, la funzione "string.gsub ()" ha trovato la parola "ciao" all'interno della stringa e l'ha sostituita con "salve". 
-
-Un'altra opzione per effettuare la ricerca e la sostituzione del testo in Lua è utilizzare l'espressione regolare. Un'espressione regolare è uno strumento di ricerca avanzato che consente di cercare e sostituire testo basandosi su determinati pattern. Ad esempio, per cercare e sostituire solo le parole che iniziano con la lettera "c", puoi utilizzare l'espressione regolare "^c%w+".
+## Come fare:
+Ecco come puoi ricercare e sostituire testo in Lua. Utilizzeremo la funzione gsub() integrata nel linguaggio.
 
 ```Lua
-stringa = "ciao a tutti, come state?"
-nuova_stringa = string.gsub(stringa, "^c%w+", "salve")
-print(nuova_stringa)
+s = "Ciao, mondo!"
+s = string.gsub(s, "mondo", "universo")
+print(s)  -- output: Ciao, universo!
 ```
 
-L'output di questo codice sarà: "salve a tutti, come state?" Come puoi vedere, è stato effettuato solo il cambio di "ciao" in "salve" perché era l'unica parola che iniziava con "c" seguita da altre lettere.
+Nell'esempio precedente, il codice cerca la parola "mondo" nella stringa s e la sostituisce con "universo".
 
-Approfondimento:
-La ricerca e la sostituzione del testo sono state introdotte nei primi linguaggi di programmazione come una funzionalità per semplificare la modifica del codice. Nel corso degli anni, sono state sviluppate molte librerie e funzioni per gestire in modo più avanzato la ricerca e la sostituzione del testo, come, ad esempio, la libreria "lpeg" che supporta l'utilizzo di grammatiche di espressioni regolari.
+## Approfondimenti
+La funzione gsub() in Lua è una delle diverse funzioni di manipolazione delle stringhe messe a disposizione fin dalle primissime versioni del linguaggio. Nel corso degli anni, Lua ha cambiato significativamente il modo in cui si manipolano le stringhe, ma il concetto di ricerca e sostituzione di testo è rimasto ovviamente costante.
 
-Inoltre, esistono anche altri strumenti per la ricerca e la sostituzione del testo come i text editor avanzati o gli script per l'automazione della modifica di più file di codice.
+In termini di alternative, Lua offre anche la funzione find(), che può essere usata per trovare la posizione di un testo specifico all'interno di una stringa. Ma note che find() non sostituisce il testo, quindi dovresti utilizzarla insieme a altre funzioni per fare questo.
 
-Vedi anche:
-- Documentazione ufficiale di Lua sulla funzione "string.gsub ()": https://www.lua.org/manual/5.3/manual.html#pdf-string.gsub
-- Tutorial sulle espressioni regolari in Lua: https://learnxinyminutes.com/docs/it-it/lua-it/
-- Libreria "lpeg" per espressioni regolari avanzate in Lua: http://www.inf.puc-rio.br/~roberto/lpeg/
+La funzione gsub() sfrutta i pattern dell'espressione regolare per inquadrare la logica di ricerca e sostituzione. Questo significa che puoi avere pattern complicati e sostituzioni dinamiche.
+
+## Vedi anche
+Per ulteriori informazioni sulle stringhe e sugli altri costrutti di programmazione Lua, dai un'occhiata ai seguenti collegamenti:
+
+1. Lua 5.3 Reference Manual - String Manipulation: https://www.lua.org/manual/5.3/manual.html#6.4
+2. Programming in Lua: String Library: https://www.lua.org/pil/20.html
+3. Tutorial su Lua - Stringhe: https://www.tutorialspoint.com/lua/lua_strings.htm

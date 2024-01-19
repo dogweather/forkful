@@ -1,6 +1,6 @@
 ---
 title:                "Sammenslåing av strenger"
-html_title:           "Python: Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
 simple_title:         "Sammenslåing av strenger"
 programming_language: "Python"
 category:             "Python"
@@ -11,48 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Konkatenasjon av strenger er en metode som tillater programmerere å kombinere flere strenger til en enkelt streng. Dette er spesielt nyttig når man ønsker å lage en dynamisk tekst som inneholder variabler eller brukerinput. 
+
+Sammensetting av strenger, eller 'string concatenation' på engelsk, er en aktivitet der vi binder sammen to eller flere strenger (tekst) for å skape en større streng. Programmører gjør dette for å kombinere eller manipulere tekst på en dynamisk og nøyaktig måte.
 
 ## Hvordan:
-Her er et eksempel på hvordan du konkatenere strenger i Python:
 
-```python
-name = "Jonas"
-age = 28
-hobby = "fotografering"
+Python tilbyr flere metoder for å samsette strenger. Her er tre vanlige måter:
 
-# Kombinerer variabler i en setning med pluss operatøren
-sentence = "Hei, jeg heter " + name + " og jeg er " + str(age) + " år gammel. Jeg elsker " + hobby + "!"
+```Python
+# Metode 1: Pluss operatør
+navn = "Ola"
+hilsen = "Hei, " + navn + "!"
+print(hilsen) # Output: Hei, Ola!
 
-print(sentence)
+# Metode 2: Format funksjon
+hilsen = "Hei, {}!".format(navn)
+print(hilsen) # Output: Hei, Ola!
+
+# Metode 3: f-strenger (fra Python 3.6 og fremover)
+hilsen = f"Hei, {navn}!"
+print(hilsen) # Output: Hei, Ola!
 ```
 
-Output:
-```python
-Hei, jeg heter Jonas og jeg er 28 år gammel. Jeg elsker fotografering!
-```
+## Dypdykk
 
-Du kan også bruke `.format()` metoden for å konkatenere strenger:
+Sammensetting av strenger har vært en del av programmering siden begynnelsen av høy-nivå språk. I Python, så ble 'f-strenger' eller 'f-strings' introdusert i versjon 3.6 som en raskere og mer lesbar metode for å samsette strenger.
 
-```python
-fruit = "eple"
+Alternativer for sammensetting av strenger inkluderer metoder som `join()`, `%.formatting`, `string.Template` osv. Valget mellom disse alternativene kommer ofte ned til individuelle preferanser, ytelsesbehov og versjon av Python du bruker. For eksempel, `f-strings` tilbyr bedre ytelse enn de fleste andre metoder, men er bare tilgjengelig i Python 3.6 og nyere versjoner.
 
-# Formatere strengen for å sette inn variabelen
-sentence = "Jeg elsker {}.".format(fruit)
+I Python, når du samensetter strenger, skaper Python faktisk nye strenger. Dette er fordi strenger er 'immutable' i Python, noe som betyr at de ikke kan endres etter at de er laget. Dette er noe å ha i bakhodet hvis du arbeider med store mengder tekst, da det kan påvirke ytelsen til programmet ditt.
 
-print(sentence)
-```
+## Se Også:
 
-Output:
-```python
-Jeg elsker eple.
-```
-
-## Dypdykk:
-Metoden for å konkatenere strenger stammer fra matematisk teori og har blitt en vanlig praksis i programmeringsspråk. En alternativ måte å kombinere strenger på er ved hjelp av `.join()` metoden, men konkatenasjon kan ofte være enklere å bruke, spesielt for nybegynnere.
-
-Når man konkatenere strenger, er det viktig å huske på datatyper. Hvis en variabel er tall, må du bruke `str()` funksjonen for å konvertere til en streng før du kan kombinere den med andre strenger. 
-
-## Se også:
-- [Python Offisiell Dokumentasjon](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [W3Schools: String Concatenation](https://www.w3schools.com/python/gloss_python_string_concatenation.asp)
+1. Python offisiell dokumentasjon om strenger: [Python Docs](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+2. Effektiv string concatenation i Python: [Python Wiki](https://wiki.python.org/moin/PythonSpeed/PerformanceTips#String_Concatenation)
+3. Python's f-Strings: An Improved String Formatting Syntax (Guide): [Real Python](https://realpython.com/python-f-strings/)

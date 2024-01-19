@@ -1,7 +1,7 @@
 ---
-title:                "השוואת שתי תאריכים"
-html_title:           "PowerShell: השוואת שתי תאריכים"
-simple_title:         "השוואת שתי תאריכים"
+title:                "השוואה בין שני תאריכים"
+html_title:           "Arduino: השוואה בין שני תאריכים"
+simple_title:         "השוואה בין שני תאריכים"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-השוואת שתי תאריכים היא פעולה נפוצה בתכנות, שבה משווים תאריך אחד עם תאריך אחר כדי לבדוק אם הם זהים או אם אחד מהם מקדים את השני. תכניתנים מבצעים זאת כדי לבצע משימות שונות, כמו קבלת התאריך המעודכן ביותר או השוואת תאריכים לצורך יצירת דוחות.
+## מה זה & למה זה משמש?
+השוואה של שני תאריכים היא פעולה שבה אנו מבדילים בין שני תאריכים כדי לראות איזה מהם בא מקודם או אם הם שווים. מתכנתים משתמשים בה כדי לנהל ולקבל מידע על סדר תאריכים וזמנים.
 
-## איך לבצע:
-תהליך השוואת שני תאריכים בפווישל מאוד פשוט ונוח. להלן כמה דוגמאות של קוד ופלט:
-
+## איך לעשות:
 ```PowerShell
-# השוואת תאריך עם תאריך אחר:
-"03/01/2021" -eq "03/01/2021" # תוצאה: True
+# יצירת שני תאריכים להשוואה
+$date1 = Get-Date -Year 2021 -Month 3 -Day 5
+$date2 = Get-Date -Year 2021 -Month 5 -Day 3
 
-# השוואת תאריך עם תאריך מקדים:
-"01/01/2021" -lt "01/02/2021" # תוצאה: True
-
-# השוואת תאריך עם תאריך שלא מקדים:
-"05/01/2021" -lt "01/02/2021" # תוצאה: False
+# השוואת התאריכים
+if ($date1 -gt $date2) {
+    "Date1 is later than Date2"
+} elseif ($date1 -lt $date2) {
+    "Date1 is earlier than Date2"
+} else {
+    "Date1 and Date2 are the same"
+}
 ```
+תוצאה משולשת תהיה אחת מהבאות: "Date1 is later than Date2", "Date1 is earlier than Date2" או "Date1 and Date2 are the same" בהתאם להשוואה.
 
-## יציאה יתרה:
-פווישל מאפשר גם להשוות תאריכים לפי פורמט מסוים, לדוגמה:
-
-```PowerShell
-# השוואת תאריך לפי פורמט ספציפי:
-Get-Date -Format "dd-mm-yyyy" # תאריך נוכחי: 06-01-2021
-
-"06-01-2021" -eq Get-Date -Format "dd-mm-yyyy" # תוצאה: True
-```
-
-## עומק נעליים:
-לפני פווישל, יכולנו לבצע השוואת תאריכים רק עם פקודות CMD. אפשרות זו הייתה קשה לשימוש ולא מאפשרת כמה פונקציות של פווישל כגון פורמטינג ובדיקת תקינות. כיום, השוואת תאריכים בפווישל היא יותר נוחה ופשוטה, כך שמאפשרת למתכנתים לבצע זאת בקלות ולהתמקד במשימות עיקריות יותר. למי שמעוניין ללמוד עוד על השוואת תאריכים, הנה כמה מקורות לקריאה נוספת:
+## בהרחבה:
+השוואת תאריכים ב-PowerShell הייתה אתגר בעבר כאשר השפה התמקדה בטקסט לחלופין של נתונים ממדים. אולם, PowerShell גדלה והתפתחה, והציבור דרש דרך רובוסטית יותר לעבוד עם תאריכים. כלים אלטרנטיביים כמו כמה שפות .NET מאפשרות השוואת תאריכים, אך פיתרון PowerShell הוא בהחלט הכי פשוט. להשראה המשך, יש לפנות למסמכי המפרט של PowerShell.
 
 ## ראו גם:
-- [הסבר ודוגמאות נוספות על השוואת תאריכים בפווישל](https://www.itechguides.com/compare-dates-powershell/)
-- [תיעוד רשמי של פונקציות השוואת תאריכים בפווישל](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/compare-object?view=powershell-7.1)
+* [תיעוד PowerShell](https://docs.microsoft.com/powershell/scripting/overview)
+* [.NET DateTime Class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+* [Comparison Operators - PowerShell](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators)

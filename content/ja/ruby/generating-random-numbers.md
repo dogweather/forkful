@@ -1,6 +1,6 @@
 ---
 title:                "ランダムな数字の生成"
-html_title:           "Ruby: ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
 simple_title:         "ランダムな数字の生成"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,25 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+## 何となぜ？
+ランダムな数字の生成は、不確定性をコードに追加することです。これは、ゲームの結果を不確定にしたり、データの秘匿化に役立つなど、プログラムにバラエティを提供するためにプログラマーによって行われます。
 
-ランダムな数字を生成することは、プログラマーがランダムな入力を必要とする場合に使用されるテクニックです。これにより、ランダムな動作を再現したり、ユーザーにランダムなデータを提供したりすることができます。
-
-## How to:
+## どうやって：
+Rubyでは `rand` メソッドを使用してランダムな数を生成します。 ここにいくつかの例があります:
 
 ```Ruby
-# 1から10までのランダムな数字を出力する方法
-puts rand(1..10) #=> 7
+# ０と１の間のランダムな浮動小数点数を生成します
+puts rand()
 
-# アルファベットからランダムに文字を出力する方法
-puts ('a'..'z').to_a.sample(5).join  #=> "kwdos"
+# 0～10の間のランダムな整数を生成します
+puts rand(11) 
+
+# 1～10の間のランダムな整数を生成します
+puts rand(1..10)
 ```
 
-## Deep Dive
+ランダムな数値を生成すると次のように表示されます:
+```Ruby
+0.8975989316511212 
+6
+3
+```
 
-ランダムな数字の生成は、コンピュータサイエンスで非常に重要な役割を果たしてきました。1950年代にジョン・フォン・ノイマンが考案した、線形合同法というアルゴリズムは、多くのプログラミング言語で使用されています。しかし、このアルゴリズムは予測しやすいという欠点があり、より高度なアルゴリズムが開発されました。また、ハードウェアにおいても、ランダム性を得るために、温度や電流のノイズを利用したハードウェア乱数発生器が使用されます。
+## 深いダイブ
+ランダムな数字の生成は古くから存在し、コンピュータサイエンスの初期から主要な役割を果たしてきました。伪乱数(generator)と真の乱数(generator)の間の厳密な識別は、アプリケーションの要件により異なります。
 
-## See Also
+Rubyの `rand` メソッドは、メルセンヌ・ツイスタというアルゴリズムを使用しています。これは、サイクルの長さが非常に長く、高速であるため、多くのアプリケーションで使用されます。
 
-- [SecureRandom クラス](https://docs.ruby-lang.org/en/3.0.0/SecureRandom.html)
-- [線形合同法についての説明](https://ja.wikipedia.org/wiki/%E7%B7%9A%E5%BD%A2%E5%90%88%E5%90%8C%E6%B3%95)
+代替手段として、セキュアランダムライブラリはより安全なランダム数値を提供します。これは、暗号の世界での使用を見越しています。
+
+```Ruby
+require 'securerandom'
+
+# Get a random number in a range (0 to 100)
+puts SecureRandom.random_number(100) 
+```
+
+## 参考情報
+Rubyの `rand` と `securerandom` メソッドについてさらに学びたい方は、以下のリンクをご参照ください。
+
+- Ruby `rand` ：
+  - [https://docs.ruby-lang.org/en/3.0.0/Kernel.html#method-i-rand](https://docs.ruby-lang.org/en/3.0.0/Kernel.html#method-i-rand)
+- SecureRandom：
+  - [https://docs.ruby-lang.org/en/2.5.0/SecureRandom.html](https://docs.ruby-lang.org/en/2.5.0/SecureRandom.html)

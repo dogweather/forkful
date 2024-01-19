@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Bash: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,23 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-En la programación, a veces es necesario enviar una solicitud HTTP con autenticación básica, lo que significa que debemos proporcionar un nombre de usuario y contraseña para acceder a una página o servicio. Los programadores hacen esto para asegurarse de que solo usuarios autorizados puedan acceder a la información protegida.
+# Enviando una solicitud HTTP con autenticación básica en Bash 
 
-## Cómo:
-Para enviar una solicitud HTTP con autenticación básica usando Bash, podemos utilizar el siguiente comando:
+## ¿Qué y Por Qué?
+
+En ocasiones, un programa debe pedir datos de una web que requiere identificación. El envío de una solicitud HTTP con autenticación básica en Bash permite al programa identificarse.
+
+## Cómo hacerlo:
+
 ```Bash
-curl -u username:password URL
+usuario="user123"
+password="pass123"
+
+url="http://miweb.com"
+
+# Utilizamos curl para enviar la solicitud
+respuesta=$(curl -s -u "$usuario:$password" "$url")
+
+# Imprimimos la respuesta
+echo "$respuesta"
 ```
 
-Esto enviará una solicitud GET a la URL especificada con las credenciales de autenticación incluidas en la cabecera. Si la autenticación es exitosa, recibiremos una respuesta del servidor.
+La ejecución mostrará la respuesta del server a tu solicitud.
 
-## Profundizando:
-En el pasado, la autenticación básica era el único método de autenticación disponible en HTTP. Sin embargo, ahora se recomienda el uso de otros métodos de autenticación más seguros, como OAuth. Además, al enviar una solicitud con autenticación básica, las credenciales se envían en texto plano y pueden ser interceptadas fácilmente, lo que hace que este método sea vulnerable a ataques de seguridad.
+## Inmersión Profunda:
 
-El comando curl que usamos en el ejemplo anterior también permite especificar otros parámetros, como el tipo de solicitud, los encabezados de la solicitud y el cuerpo de la misma. Esto nos da más control sobre cómo se envía la solicitud y qué información se incluye en ella.
+Este enfoque viene desde los días tempranos de la web cuando la autenticación básica era el estándar en HTTP. Aunque es menos seguro que otras opciones como la autenticación compleja (digest authentication) o los tokens OAuth2, sigue siendo útil por ser simple y directo.
 
-## Ver también:
-- [Documentación oficial de cURL](https://curl.haxx.se/docs/)
-- [Tutorial de autenticación básica en HTTP](https://www.digitalocean.com/community/tutorials/understanding-basic-authentication-in-http)
-- [Alternativas más seguras a la autenticación básica en HTTP](https://www.owasp.org/index.php/Basic_authentication)
+Alternativas podrían ser `wget` en lugar de `curl`. También puedes usar otros lenguajes de alto nivel como Python o Java, que tienen bibliotecas ricas para HTTP.
+
+Este script en bash usa `curl`, una herramienta potente para transferir datos desde o hacia un servidor. Con la opción `-u`, añades las credenciales necesarias para la autenticación básica.
+
+## Ver También:
+
+Para más información, consulta las siguientes fuentes:
+
+- `curl`: https://curl.se/
+- Autenticación HTTP básica: https://developer.mozilla.org/es/docs/Web/HTTP/Authentication
+- `wget`: https://www.gnu.org/software/wget/
+- Autenticación digest: https://developer.mozilla.org/es/docs/Web/HTTP/Authentication#digest_authentication
+- OAuth2: https://oauth.net/2/

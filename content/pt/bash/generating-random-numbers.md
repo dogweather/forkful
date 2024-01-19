@@ -1,6 +1,6 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "Bash: Gerando números aleatórios"
+html_title:           "C: Gerando números aleatórios"
 simple_title:         "Gerando números aleatórios"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e Porquê?
+## O Que & Por quê?
 
-Gerar números aleatórios é um processo em que um programa de computador produz números sem seguir um padrão específico, tornando imprevisível o próximo número gerado. Programadores fazem isso para criar jogos, simulações e algoritmos que precisam de aleatoriedade para funcionar corretamente.
+Gerar números aleatórios é criar uma sequência de números que não possui padrão previsível. Programadores fazem isso para criar dados de teste, simular cenários em jogos, e para decisões de software que precisam ser imprevisíveis.
 
 ## Como fazer:
 
-Existem várias maneiras de gerar números aleatórios em Bash, mas aqui estão algumas opções simples usando o comando `shuf`:
+Em Bash, você pode gerar números aleatórios usando a variável especial `$RANDOM`. Aqui temos um exemplo:
 
 ```Bash
-# Gerando um número aleatório entre 0 e 100
-echo $(( $(shuf -i 0-100 -n 1) ))
-
-# Gerando um número aleatório entre 1 e 10
-echo $(( $(shuf -i 1-10 -n 1) ))
-
-# Gerando uma letra aleatória entre A e Z
-echo $( shuf -n 1 -e {A..Z} )
+echo $RANDOM
 ```
 
-A saída será um número ou uma letra aleatória, dependendo do comando usado.
+A execução do código acima produzirá um número entre 0 e 32767. Para obter um número em um intervalo específico, use a operação módulo `%`.
 
-## Profundidade:
+```Bash
+echo $((RANDOM % 100))
+```
 
-A geração de números aleatórios tem sido uma parte importante da computação desde o início. Um dos algoritmos mais comuns é o Método Congruente Linear, criado em 1949. Outras alternativas em Bash incluem o comando `fold`, que lê dados de entrada e mistura suas linhas de forma aleatória, e o `random`, que gera números aleatórios de 0 a 32767.
+## Mergulho Profundo
 
-## Veja também:
+A variável `$RANDOM` possui um longo histórico. Originou-se no Unix, e tem sido incorporada na maioria das línguas de script baseadas em Shell, incluindo Bash.
 
-- [Documentação oficial do GNU Bash](https://www.gnu.org/software/bash/)
-- [Tutorial de Bash na Udemy](https://www.udemy.com/course/bash-scripting/)
-- [Job de programador na Caelum](https://www.caelum.com.br/aprenda/programacao/trabalhe-na-caelum/) (precisa saber Bash!)
+Alternativamente, se precisar de um número aleatório mais significativo, como um UUID, você pode utilizar `uuidgen`:
+
+```Bash
+uuidgen
+```
+
+Internamente, `$RANDOM` usa um gerador de números pseudo-aleatórios. Isso significa que, enquanto parece aleatório, se soubermos a "seed" (semente) usada podemos prever os números gerados. Entretanto, para a maioria dos usos, essa previsibilidade não é um problema.
+
+## Veja também
+
+Por fim, aqui estão algumas outras fontes úteis sobre geração de números aleatórios em programas:
+
+1. Manual bash (man bash): O manual oficial do bash. Procure por `$RANDOM`.
+2. Documentação "uuidgen" (man uuidgen): Mais detalhes sobre como gerar um UUID no Bash.

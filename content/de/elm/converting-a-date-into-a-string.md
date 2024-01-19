@@ -1,6 +1,6 @@
 ---
 title:                "Ein Datum in einen String umwandeln"
-html_title:           "Elm: Ein Datum in einen String umwandeln"
+html_title:           "Java: Ein Datum in einen String umwandeln"
 simple_title:         "Ein Datum in einen String umwandeln"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,30 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Beim Programmieren ist es oft nötig, ein Datum in eine Zeichenfolge umzuwandeln. Das bedeutet, dass wir ein Datum, das wir als Objekt haben, in einen lesbaren Text verwandeln müssen. Das kann hilfreich sein, um das Datum auf einer Webseite anzuzeigen oder in einer Datei zu speichern.
+
+Das Konvertieren eines Datums in eine Zeichenkette (auch als String bekannt) ist ein weit verbreiteter Prozess in der Programmierung, bei dem wir einen Datums-/Zeitstempel in einen lesbaren Text konvertieren. Dies erleichtert häufig die Darstellung und Analyse der Daten.
 
 ## So geht's:
-Um ein Datum in eine Zeichenfolge umzuwandeln, gibt es in Elm die `toString` Funktion. Diese Funktion nimmt ein Datum als Argument und gibt eine Zeichenfolge zurück, die das Datum in einem bestimmten Format enthält. Hier ist ein Beispiel:
+
+Elm bietet die `Date` und `Time` Module für das Handling von Datum und Zeit. Hier ist ein einfaches Beispiel, wie man ein Datum in einen String konvertiert.
 
 ```Elm
-import Date exposing (Date)
+import Time
+import Time.Extra
 
- Date.fromCalendarDate 2021 05 20 |> Date.toString    --> "05/20/2021"
+main =
+    let
+        time =
+            Time.millisToPosix 1552063680000
+    in
+    Time.Extra.format "dd.MM.yyyy" time
 ```
 
-Man kann auch angeben, in welchem Format man die Zeichenfolge haben möchte, indem man der `toString` Funktion ein zweites Argument hinzufügt. Hier sind einige Beispiele:
+In diesem Beispiel wird die `format` Funktion aus dem `Time.Extra` Modul verwendet, um ein Datum in einem bestimmten Format darzustellen (hier "dd.MM.yyyy"). Der obige Code liefert "08.03.2019" als Ausgabe.
+
+## Tief Eintauchen
+
+### Historischer Kontext
+Die Date-to-String-Konvertierung ist schon sehr lange ein grundlegendes Feature in fast allen Programmiersprachen. Der Bedarf hierfür entstand durch die Notwendigkeit, Datumsangaben menschenlesbar zu machen, sei es für die Anzeige in der Benutzeroberfläche oder für Berechnungen und Vergleiche.
+
+### Alternativen
+In Elm könnten wir auch die 'toString' Funktion verwenden, um ein Datum in einen String umzuwandeln, aber dann haben wir wenig Kontrolle über das Format des resultierenden Strings.
 
 ```Elm
- Date.fromCalendarDate 2021 05 20 |> Date.toString "dd MMM yyyy"  --> "20 May 2021"
- Date.fromCalendarDate 2021 05 20 |> Date.toString "MM/dd/yy"     --> "05/20/21"
+import Time
+
+main =
+    let
+        time =
+            Time.millisToPosix 1552063680000
+    in
+    String.fromInt time
 ```
 
-## Tiefer Einblick:
-Die Funktion `toString` wird nicht nur in Elm, sondern auch in anderen Programmiersprachen häufig verwendet, da es notwendig ist, das Datum in verschiedene Formate umzuwandeln, je nachdem, wo es angezeigt wird. Es gibt viele Alternativen zu `toString`, wie z.B. die `strftime` Funktion in der Programmiersprache C. Auch in Elm gibt es noch andere Möglichkeiten, ein Datum als Zeichenfolge darzustellen, z.B. mit der `toTime` Funktion, die ein Datum als Zeitstempel in Millisekunden zurückgibt.
+Dies gibt die genaue Zeit in Millisekunden seit dem Unix-Epoch-Zeitpunkt (01. Januar 1970) zurück.
 
-In der `toString` Funktion gibt es auch die Möglichkeit, ein benutzerdefiniertes Format anzugeben, indem man bestimmte Symbole verwendet. Zum Beispiel steht `yyyy` für das vierstellige Jahr, `MM` für die zweistellige Monatsangabe und `dd` für den Tag im Monat. Eine vollständige Liste mit allen verfügbaren Symbolen findet man in der Elm Dokumentation.
+### Implementierungsdetails
+Das `Time.Extra` Modul in Elm verwendet hinter den Kulissen JavaScript's eingebautes `Date` und `Time` Objekte, um seine Funktionen zu ermöglichen. Es bietet aber auch zusätzliche Funktionen, wie das Formatieren von Datums- und Zeitstrings.
 
-## Siehe auch:
-- [Elm Dokumentation zu Datum und Zeit](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Dokumentation zu strftime in C](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [Alternative Möglichkeiten, ein Datum in Elm darzustellen](https://medium.com/@jamesmacaula/elm-dates-done-right-aa3ae559dbb8)
+## Siehe auch
+
+Für weitere Informationen und Beispiele zur Programmierung in Elm, schauen Sie bitte in die offizielle [Elm Dokumentation](https://elm-lang.org/docs) und auch im [Elm Time Package](https://package.elm-lang.org/packages/elm/time/latest). 
+
+Für tiefergehendes Verständnis der Datums- und Zeitbearbeitung in Elm kann das [Elm Time Extra-Paket](https://package.elm-lang.org/packages/justinmimbs/date/latest/) nützlich sein. Es bietet zusätzliche Funktionen wie Zeitprüfungen und -berechnungen.

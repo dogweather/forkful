@@ -1,7 +1,7 @@
 ---
-title:                "Pobieranie bieżącej daty"
-html_title:           "Python: Pobieranie bieżącej daty"
-simple_title:         "Pobieranie bieżącej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,66 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i Dlaczego?
-Pobieranie bieżącej daty w Pythonie jest procesem, w którym programista uzyskuje informację o bieżącym dniu, miesiącu, roku i czasie. Obejmuje to również pobieranie informacji o strefie czasowej, w której znajduje się urządzenie. Programiści używają tego zazwyczaj w celu śledzenia zmiany czasu lub do synchronizacji wydarzeń.
+## Co i dlaczego?
+
+Pobieranie bieżącej daty oznacza wydobycie aktualnej daty z systemu. Programiści robią to, gdy potrzebują zapisywać datę i godzinę zdarzeń lub generować raporty z datami.
 
 ## Jak to zrobić:
-W Pythonie istnieje wiele sposobów na uzyskanie bieżącej daty. Zaprezentujemy kilka z nich poniżej, a także wyjaśnienia, jak czytać i interpretować wynik.
 
-```python
-# Metoda 1: Importowanie modułu datetime
+Możemy zrobić to przy użyciu wbudowanej biblioteki Python "datetime". Sprawdź poniższy kod:
+
+```Python
 import datetime
 
-# Używanie funkcji datetime.now() do pobrania bieżącej daty i czasu
-current_date = datetime.now()
-
-# Wyświetlanie wyniku jako obiekt datetime
-print(current_date)
-```
-Wynik:
-```
-2021-11-22 13:30:45.086682
+teraz = datetime.datetime.now()
+print(teraz)
 ```
 
-```python
-# Metoda 2: Używanie funkcji date.today()
-from datetime import date
+Po uruchomieniu kodu wyżej, wyświetli aktualny czas w formacie 'YYYY-MM-DD HH:MM:SS.ssssss'.
 
-# Pobieranie bieżącej daty
-current_date = date.today()
+## Dogłębna analiza:
 
-# Wyświetlanie tylko daty bez czasu
-print(current_date)
-```
-Wynik:
-```
-2021-11-22
-```
+Historia: Pobieranie bieżącej daty to stara praktyka, która wywodzi się z tradycyjnych języków programowania, które miały wbudowane funkcje do pobierania daty systemowej.
 
-```python
-# Metoda 3: Używanie funkcji time.time()
-import time
+Alternatywy: Oprócz `datetime`, istnieją inne moduły Pythona, takie jak `time` oraz `calendar`, które można wykorzystać do pracy z datami. Każdy z nich ma swoje unikalne funkcje i składnię.
 
-# Pobieranie liczby sekund od początku epoki
-seconds = time.time()
-
-# Aby uzyskać datę, musimy przekonwertować sekundy na datę
-current_date = datetime.fromtimestamp(seconds)
-
-# Wyświetlanie daty i czasu
-print(current_date)
-```
-Wynik:
-```
-2021-11-22 13:39:12.678751
-```
-
-## Głębsze zagłębienie:
-W Pythonie istnieje wiele modułów i funkcji do pracy z datami, ale najbardziej popularnym i zalecanym jest moduł ```datetime```. Jest on łatwy w użyciu, a jednocześnie oferuje wiele opcji i funkcjonalności. Istnieją również inne alternatywy, takie jak moduły ```time``` i ```calendar```, ale nie są one tak wszechstronne i nie oferują takiego samego poziomu precyzji co ```datetime```.
-
-Warto również zauważyć, że pobrana bieżąca data jest zależna od strefy czasowej w której znajduje się urządzenie. Programiści powinni mieć to na uwadze, zwłaszcza w przypadku pracy z różnymi strefami czasowymi.
+Szczegóły implementacji: `datetime.datetime.now()` jest najprostszym sposobem pobrania daty z systemu. Działa to poprzez wywołanie systemowego zegara i pobranie z niego aktualnej daty i czasu.
 
 ## Zobacz także:
-- [Dokumentacja modułu datetime w Pythonie](https://docs.python.org/3/library/datetime.html)
-- [Alternatywne moduły do pracy z datami](https://realpython.com/python-datetime/)
-- [Poradnik wideo o pracy z datami w Pythonie](https://www.youtube.com/watch?v=eirjjyP2qcQ)
+
+Aby dowiedzieć się więcej o pracy z datami w Pythonie, odwiedź poniższe linki:
+
+1. Dokumentacja Python dla modułu `datetime`: https://docs.python.org/3/library/datetime.html
+2. Dokumentacja Python dla modułu `time`: https://docs.python.org/3/library/time.html
+3. Dokumentacja Python dla modułu `calendar`: https://docs.python.org/3/library/calendar.html

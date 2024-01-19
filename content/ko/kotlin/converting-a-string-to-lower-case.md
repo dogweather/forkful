@@ -1,6 +1,6 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "Kotlin: 문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,28 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-자바, 파이썬, 스위프트 등 다양한 프로그래밍 언어에서 문자열을 다루는 경우 문자열을 소문자로 변환하는 경우가 많습니다. 이번 글에서는 코틀린에서 문자열을 소문자로 변환하는 방법에 대해 알아보겠습니다. 이 기능은 대소문자를 구분하지 않고 문자열을 처리해야 할 때 특히 유용합니다.
+## 무엇 & 왜?
 
-## 무엇인가요? 그리고 왜 사용하나요?
-문자열을 소문자로 변환하는 것은 해당 문자열의 대소문자를 잘 구분하지 않고 문자열을 다루어야 할 때 유용합니다. 예를 들어 사용자의 입력 값을 검증하거나 데이터베이스에서 문자열을 검색할 때, 대소문자를 구분하지 않게 됩니다. 또한, 특정한 지역에서는 대소문자를 구분하지 않는 경우도 있습니다. 이러한 경우 문자열을 소문자로 변환하면 일관성있게 문자열을 다룰 수 있습니다.
+문자열을 소문자로 변환하는 것은 모든 대문자를 해당하는 소문자로 바꾸는 프로세스입니다. 프로그래머들은 주로 데이터 검색시 대소문자 불일치 문제를 해결하거나 사용자 입력 값을 표준화하기 위해 이를 사용합니다.
 
-## 어떻게 하나요?
-코틀린에서 문자열을 소문자로 변환하는 방법은 간단합니다. 아래 코드를 참고하세요.
+## 어떻게 하는 것인가:
+
+Kotlin에서는 `toLowerCase()`라는 내장 함수를 사용하여 문자열을 소문자로 쉽게 변환할 수 있습니다.
 
 ```Kotlin
-val str = "Hello, World!"
-val lowerStr = str.toLowerCase()
-println(lowerStr)
+fun main() { 
+    val str = "Hello, World!" 
+    println(str.toLowerCase()) 
+} 
 ```
 
-출력 결과는 다음과 같습니다.
+위의 코드를 실행하면 아래와 같은 출력을 얻을 수 있습니다.
 
-```Kotlin
+```
 hello, world!
 ```
 
-## 딥 다이브
-문자열을 소문자로 변환하는 기능은 처음부터 존재하지는 않았습니다. 옛날에는 문자열을 모두 대문자로 바꾸어 비교하는 방식을 사용했습니다. 하지만 이는 문자열의 길이가 길어질수록 비교하는데 오래 걸리고, 메모리를 많이 사용하게 되는 단점이 있습니다. 이러한 단점을 극복하기 위해 소문자로 변환하는 방식이 나오게 되었습니다. 또한, 문자열을 소문자로 변환하기 위해 다양한 방식이 존재합니다. 위의 예시 코드는 가장 기본적인 방식이며, 더욱 정교한 방식으로 변환할 수도 있습니다. 하지만 일반적인 상황에서는 위의 예시 코드만으로도 충분합니다.
+In this example, the string "Hello, World!" is converted to lower case using `toLowerCase()` function.
 
-## 참고 자료
-- [Kotlin 문서](https://kotlinlang.org/docs/reference/strings.html#string-case-conversion)
+## 더 깊게 살펴보기:
+
+과거에는 대소문자 개념이 흔치 않았지만, 컴퓨터 언어의 발달과 함께 이 제어 도구가 표준화되었습니다. String 클래스의 `toLowerCase()` 메소드는 모든 문자를 소문자로 변환하며, JVM에서 제공하는 Unicode 표준을 따릅니다. 
+
+대안으로, Kotlin 명령형 스타일의 프로그래밍에서는 문자열을 복사한 다음 각 문자를 돌며 대문자일 경우 소문자로 변환하는 방식을 사용할 수도 있습니다.
+
+```Kotlin
+fun main() {
+    val string = "Hello, World!"
+    var result = ""
+
+    for (char in string) {
+        result += if (char.isUpperCase()) char.toLowerCase() else char
+    }
+
+    println(result)
+}
+```
+
+그러나 이 방법은 비효율적이며 `toLowerCase()`를 사용하는 것이 더 좋습니다.
+
+## 참고 사항:
+
+문자열 소문자 변환에 대한 추가 정보 및 다른 방법을 알아보려면 아래의 링크들을 참조하세요.
+
+- Kotlin Official Documentation: String.toLowerCase() - https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html
+- StackOverflow: Alternatives to toLowerCase - https://stackoverflow.com/questions/22550646/alternatives-to-tolowercase-in-kotlin

@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "Swift: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -12,29 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-Luodessa ohjelmistoja, saatat törmätä tarpeeseen luoda väliaikaisia tiedostoja, myös kutsuttuna temp-tiedostoiksi. Nämä ovat tiedostoja, jotka ovat olemassa vain lyhyen aikaa ja poistuvat sitten automaattisesti, yleensä kun niitä ei enää tarvita. Tässä on pari esimerkkiä miksi ohjelmoijat saattavat luoda väliaikaisia tiedostoja: tallentaakseen väliaikaisia tietoja ja suorittaakseen tiettyjä toimintoja, kuten tiedostojen siirtoa tai tallentamista.
+Tilapäisten tiedostojen luominen tarkoittaa sellaisten tiedostojen luomista, joita ohjelma tarvitsee väliaikaisesti, mutta ei lopullisesti. Se on hyödyllistä esimerkiksi välimuistiin tallentamisessa tai suurien tiedostojen käsittelyn välietappeina. 
 
-## Miten:
+## Näin tehdään:
+
+Swiftissa voimme luoda tilapäisen tiedoston seuraavasti:
 
 ```Swift
-let temporaryFile = try FileManager.default.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-try "This is a temporary file".write(to: temporaryFile, atomically: true, encoding: .utf8)
+import Foundation
 
-// Tulostaa: Tämä on väliaikainen tiedosto
-print(try String(contentsOf: temporaryFile))
+let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory())
+let tempFileURL = tempDirectoryURL.appendingPathComponent(UUID().uuidString)
+
+do {
+   try "Temporary File Content".write(to: tempFileURL, atomically: true, encoding: String.Encoding.utf8)
+} catch {
+   print("Failed to write to \(tempFileURL)")
+}
 ```
+Kun suoritat tämän koodin, se luo tilapäisen tiedoston laitteen väliaikaisten tiedostojen polkuun. Tiedoston nimenä toimii tuotettu satunnainen UUID ja sisältönä on "Temporary File Content".
 
-## Syväsukellus:
+## Syvempi sukellus:
 
-Luominen väliaikaisia tiedostoja on ollut hyödyllinen tekniikka ohjelmointimaailmassa jo vuosikymmenien ajan. Se on myös yksi näppärä tapa suorittaa tiettyjä toimintoja ilman, että tarvitsee luoda pysyvää tiedostoa, jota et välttämättä tarvitse myöhemmin. Toinen vaihtoehto väliaikaisille tiedostoille on käyttää ns. "nsurlcache" -toiminnallisuutta, joka tallentaa ja hallinnoi väliaikaisia tiedostoja automaattisesti. Tämä on hyödyllistä esimerkiksi jos haluat tallentaa kuvia tai muita verkkosisältöjä väliaikaisesti. 
+Tilaisten tiedostojen käsitteen historia alkaa aikaan jolloin levytila oli kallista. Sen sijaan, että säilyttäisit tiedot loputtomasti, tiedot tallennettiin tilapäiseen tiedostoon ja vapautettiin levytila lopussa. Nykyaikana, vaikka levytilan saatavuus on parantunut, tilapäisten tiedostojen käyttö on yhä hyödyllistä laskentatehoja vaativissa tapauksissa tai tietoturvaan liittyvissä tapauksissa.
 
-### Tiedostojen luominen väliaikaiseen hakemistoon:
-Kun luot väliaikaisia tiedostoja, yksi tapa voi olla luoda niitä väliaikaiseen hakemistoon. Tämä hakemisto sijaitsee puhelimen tallentamassa tilassa, ja se on hyvä paikka tallentaa väliaikaisia tiedostoja, sillä niille on varattu erillinen tila, ja ne poistuvat automaattisesti. 
+Vaihtoehtoisena tapana tiedostovirta- tai Piped-luokan käyttö voi tarjota samankaltaisen toiminnallisuuden ilman fyysisen tiedoston luontia. Tämä on hyödyllistä tapauksissa, joissa jatkuva tiedonsiirto on tarpeen.
 
-### Kirjoittaminen temp-tiedostoon:
-Ohjataksesi sisältöä luomaasi temp-tiedostoon, tulee sinun ensin luoda "Data" -muotoinen esine, ja kirjoittaa haluamasi sisältö siihen "Data"(data.write(blaa, atomically: true)) -funktiolla. 
+Jokaisen tiedoston istunnon aikana generoidaan satunnainen UUID sen varmistamiseksi, että tiedoston nimi on yksilöllinen. Tämä myös auttaa välttämään mahdollisen tiedoston korvaamisen.
 
 ## Katso myös:
 
-Lisätietoja temp-tiedostoista ja kuinka ne toimivat: https://developer.apple.com/documentation/foundation/filemanager/1407690-url
-Lisätietoja NSURLCachesta: https://developer.apple.com/documentation/foundation/nsurlcache
+1. Apple Developer Documentation: [Foundation Framework Reference](https://developer.apple.com/documentation/foundation)
+2. Stack Overflow: [Difference between tmp and var/tmp?](https://stackoverflow.com/questions/4550296/difference-between-tmp-and-var-tmp)
+3. SwiftString API dokumentaatio: [UUID](https://developer.apple.com/documentation/foundation/uuid)

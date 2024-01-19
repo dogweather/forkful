@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Capitalizing Strings in Elm
+
 ## What & Why?
 
-Capitalizing a string simply means converting the first letter of each word in the string to uppercase. This is a common practice in programming for improving readability and consistency. It also follows certain naming conventions, making the code more standardized.
+“Capitalizing a string” means changing the first letter of each word in that string to uppercase. We do it to create a better user experience and meet style requirements, given that capitalized words often lead to improved text readability. 
 
 ## How to:
 
-```Elm
-import String
+Elm's standard library doesn't directly provide a function to capitalize strings. No worries, with a little tinkering, you can get the job done with `String.toUpper` and `String.uncons`.
 
-String.capitalize "hello world"
--- Output: "Hello World"
+```elm
+capitalize : String -> String
+capitalize word =
+    case String.uncons word of
+        Nothing ->
+            ""
 
-String.capitalize "hello elm"
--- Output: "Hello Elm"
+        Just (firstChar, restOfString) ->
+            String.toUpper (String.fromChar firstChar) ++ restOfString
 ```
+Check out this sample output:
+```elm
+capitalize "elm" -- Outputs: "Elm"
+```
+## Deep Dive
 
-In the above examples, we used the `String.capitalize` function from the `String` module in Elm. This function takes in a string as an argument and returns a new string with the first letter of each word capitalized. It does not modify the original string.
+Historically, Elm emphasizes simplicity and safety, so it offers built-in functions to convert all characters of a string to upper or lower case but doesn't provide a direct way to capitalize strings. However, Elm's `String.uncons` function, that breaks a string into head and tail, comes in handy here.
 
-## Deep Dive:
+There are alternatives around. For example, you could write a function that uses `String.words` and `String.unwords` to capitalize every word in a string. Importantly, keep in mind that `capitalize` is not a universally-defined operation. It might treat special characters, numbers, or non-English letters in unexpected ways.
 
-The practice of capitalizing strings has been around since the early days of computer programming. It originated from the typographical convention of using uppercase letters for emphasis or headings. In programming, it became a way to distinguish between different types of data and improve code readability.
+Implementation details are less about the function's inner workings, and more about understanding `String.toUpper` and `String.uncons`. `String.toUpper` converts entire strings to uppercase, while `String.uncons` separates the string into its first character and the rest, giving us the hook to manipulate each word's first letter.
 
-In Elm, there are other ways to capitalize strings besides using the `String.capitalize` function. One alternative is using the `String.toUpper` function, which converts all letters in the string to uppercase. This may not produce the desired result, especially if the string contains special characters or symbols.
+## See Also
 
-The `String.words` function can also be used to split a string into a list of words, which can then be converted to uppercase using `List.map` and `String.toUpper`. This approach allows for more flexibility in handling different types of strings.
-
-## See Also:
-
-- Elm Documentation on `String`: https://package.elm-lang.org/packages/elm-lang/core/latest/String
-- Functional Programming in Elm: https://guide.elm-lang.org/architecture/
-- String capitalization best practices: https://dev.to/sandrastring/string-capitalization-best-practices-565
+- [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm Function Syntax](https://guide.elm-lang.org/types/function_types.html)
+- [Understanding Strings in Elm](https://thoughtbot.com/blog/understanding-strings-in-elm)

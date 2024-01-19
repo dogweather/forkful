@@ -1,6 +1,6 @@
 ---
 title:                "Å sende en http-forespørsel"
-html_title:           "Bash: Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
 simple_title:         "Å sende en http-forespørsel"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,23 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sende en HTTP-forespørsel er en måte for dataprogrammer å kommunisere med servere og utveksle informasjon. Dette kan være nyttig for å hente data, oppdatere informasjon eller utføre handlinger på nettet. Programmere bruker HTTP-forespørsler for å integrere applikasjoner med internett og lage dynamiske nettsider og applikasjoner.
 
-## Hvordan:
-Her er et enkelt eksempel på hvordan man kan sende en HTTP-forespørsel ved hjelp av Bash:
+Å sende en HTTP-forespørsel er en måte en datamaskin kommuniserer med en annen over internett, hovedsakelig for å be om data. Programmerere gjør dette for å bruke eller manipulere informasjon fra tredjepartstjenester.
+
+## Hvordan gjøre det:
+
+Å sende HTTP-forespørsler er en rett frem prosess i Bash ved hjelp av `curl`. For eksempel for å sende en GET-forespørsel:
 
 ```Bash
-curl https://www.example.com/
+curl https://eksempel.no
 ```
 
-Dette vil sende en GET-forespørsel til nettsiden og returnere innholdet på nettsiden som svar. Man kan også angi en rekke forskjellige alternativer for å tilpasse HTTP-forespørselen etter behov.
+Dette vil sende en GET-forespørsel til eksempel.no og utskriften vil være innholdet på siden.
 
-## Dykk dypere:
-HTTP-forespørsler har eksistert siden starten av World Wide Web og spilte en viktig rolle i utviklingen av internett som vi kjenner det i dag. Det finnes også andre måter å utføre lignende oppgaver på, som for eksempel å bruke verktøy som cURL eller Wget. For å implementere en HTTP-forespørsel i Bash må man først ha en god forståelse av hvordan Bash-kommandoer fungerer og hvordan man kan trekke ut og behandle informasjon fra HTTP-svar.
+For å sende en POST-forespørsel:
 
-## Se også:
-For mer informasjon om HTTP-forespørsler og hvordan man kan bruke dem i Bash, sjekk ut disse ressursene:
-- [cURL documentation](https://curl.haxx.se/docs/)
-- [Bash scripting tutorial](https://www.shellscript.sh/)
-- [HTTP concepts](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-- [Wget documentation](https://www.gnu.org/software/wget/manual/wget.html)
+```Bash
+curl -d "kropp=innhold" -X POST https://eksempel.no
+```
+
+Her sendes en POST-forespørsel med kroppen "kropp=innhold" til eksempel.no.
+
+## Dypdykk
+
+Siden tidlig på 90-tallet har HTTP-forespørsler vært grunnlaget for websurfing, da hver URL-klikk utløser en forespørsel. Alternativer til bruk av `curl` i Bash er `wget` og `httpie`, som har noe varierende funksjonalitet og syntaks. Hverken Bash eller disse verktøyene håndterer HTTP-forespørsler selv, de bruker biblioteker som `libcurl` eller `openssl`.
+
+## Se Også
+
+For enda mer inngående detaljer om `curl`, sjekk ut manualen deres [her](https://curl.se/docs/manual.html). Hvis du er interessert i det historiske aspektet av HTTP, kan du sjekke ut denne [linken](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview). For mer om alternativene `wget` og `httpie`, se [her](https://www.gnu.org/software/wget/) og [her](https://httpie.io/docs/v1.0.0/).

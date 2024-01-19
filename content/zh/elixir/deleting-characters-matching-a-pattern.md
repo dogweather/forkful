@@ -1,7 +1,7 @@
 ---
-title:                "匹配模式的字符删除"
-html_title:           "Elixir: 匹配模式的字符删除"
-simple_title:         "匹配模式的字符删除"
+title:                "删除匹配模式的字符"
+html_title:           "Java: 删除匹配模式的字符"
+simple_title:         "删除匹配模式的字符"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么和为什么？
+## 是什么？为什么？
+在编程中，删除匹配模式的字符是一种常见的字符串操作。通过找到匹配特定模式的子字符串并将其替换为其他字符串或从主字符串中移除，程序员可以处理和操作数据。
 
-删除匹配模式的字符是指从一个字符串中移除满足特定模式的所有字符。程序员进行这种操作的原因通常是为了清洁数据或者进行数据转换，以便更容易地处理信息。
+## 如何操作
+在 Elixir 中，可以使用 `String.replace/3` 函数从字符串中删除匹配模式的字符。使用正则表达式进行匹配。
 
-## 如何：
-
-```Elixir
-# 使用正则表达式删除所有数字
-String.replace("Hello123 World456", ~r/[0-9]/, "")
-
-# 输出：Hello World
+```elixir
+IO.puts String.replace("Hello, World!", ~r/[aeiou]/, "")
 ```
 
-```Elixir
-# 使用模式列表删除所有元音字母
-String.replace("Hello World", ~w[a e i o u], "")
+输出：
 
-# 输出：Hll Wrld
+```elixir
+"Hll, Wrld!"
 ```
 
-## 深入分析：
+上述代码将所有元音 (a, e, i, o, u) 从字符串 "Hello, World!" 中删除。
 
-在历史上，程序员通常使用字符串函数来准备数据进行处理。然而，随着正则表达式的普及，删除字符匹配模式也变得更加容易。另外，Elixir提供了各种函数和操作符来进行字符串处理，使得删除字符匹配模式变得更加方便。
+## 深入了解
+Elixir 的 `String.replace/3` 函数遵循了来自于它所依赖的 ErLang runtime 的正则表达式标准。然而，正则表达式并非唯一的解决方案。你也可以通过 `String.split/2`函数来制定一个模式，然后通过 `Enum.join/2` 函数将结果连接。 
 
-## 查看这些资源：
+举个例子：
 
-- [Elixir字符串处理函数](https://hexdocs.pm/elixir/String.html)
-- [正则表达式在Elixir中的使用教程](https://elixir-lang.org/getting-started/regex.html)
+```elixir
+IO.puts Enum.join(String.split("Hello, World!", ~r/[aeiou]/), "")
+```
+
+输出：
+
+```elixir
+"Hll, Wrld!"
+```
+
+## 参见
+1. [Elixir String Functions](https://hexdocs.pm/elixir/String.html)
+2. [Elixir Regular Expressions](https://hexdocs.pm/elixir/Regex.html)
+3. [Elixir Enumerables](https://hexdocs.pm/elixir/Enum.html)

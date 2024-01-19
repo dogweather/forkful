@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
-html_title:           "Gleam: Senden einer http-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist es & Warum?
+## Was & Warum?
 
-Das Senden einer HTTP-Anforderung mit Basic-Authentifizierung ist ein wichtiger Teil der Entwicklung von Webanwendungen. Es ermöglicht es Programmen, sich bei einem Server zu authentifizieren und Daten sicher zu übermitteln. Programmierer verwenden dies, um sicherzustellen, dass nur autorisierte Benutzer oder Programme auf bestimmte Inhalte oder Funktionen zugreifen können.
+HTTP-Anfragen mit Basic-Authentifizierung dienen dazu, sicherzustellen, dass nur autorisierte Benutzer auf bestimmte Webressourcen zugreifen können. Es ist ein einfacher, aber sicherer Weg, um die Vertraulichkeit und Integrität der zwischen Client und Server ausgetauschten Daten zu gewährleisten.
 
-Wie geht man vor?
-Gleam hat eine integrierte HTTP-Bibliothek, die das Senden von HTTP-Anforderungen mit Basic-Authentifizierung sehr einfach macht. Hier ist ein Beispiel, wie man eine HTTP-Anforderung sendet und den Inhalt der Antwort druckt:
+## Wie es geht:
+
+In Gleam können Sie eine HTTP-Anfrage mit Basic-Authentifizierung senden, indem Sie die Bibliothek `gleam/httpc` verwenden. Hier ist ein Beispiel:
 
 ```Gleam
-// Importiere die HTTP-Bibliothek
-const http = import gleam/http
+import gleam/httpc
+import gleam/http.{HttpClient}
 
-// Definiere die Authentifizierungsdaten
-let username = "Benutzername"
-let password = "Passwort"
-
-// Sende eine GET-Anfrage mit Basic-Authentifizierung
-let response = http.get("https://beispiel.com/meineDaten", |authorisation=Some(http.auth(username, password)))
-
-// Drucke den Inhalt der Antwort auf der Konsole
-pub fn main() {
-  debug.response.body
+fn main(args: List(String)) {
+  let client = HttpClient.start_link().gleam_expect("Failed to start HTTP client")
+  let request = httpc.get("https://example.com")
+  |> httpc.basic_auth("username", "password")
+  let _ = client.send(request)
+  |> result.unwrap(should_crash = True)
 }
 ```
 
-Tiefer Einblick:
+In diesem Beispiel erstellt das Programm eine GET-Anforderung an `https://example.com` und fügt eine Basic-Authentifizierung mit dem gegebenen Benutzernamen und Passwort hinzu.
 
-Die Basic-Authentifizierung ist eine Methode zur HTTP-Authentifizierung, die bereits seit den frühen Tagen des Internets verwendet wird. Es basiert auf dem Versenden von Benutzername und Passwort im Klartext, was jedoch aufgrund von Sicherheitslücken immer mehr durch andere Methoden ersetzt wird. Alternativen zur Basic-Authentifizierung sind z.B. die Digest-Authentifizierung oder OAuth.
+## Vertiefung
 
-In Gleam wird die Authentifizierung mit Basic-Authentifizierung durch die Funktion `http.auth` unterstützt, die einen String im HTTP-Basic-Auth-Format zurückgibt. Diese kann dann zusammen mit der HTTP-Anforderung an den Server gesendet werden. Es ist wichtig zu beachten, dass die Basic-Authentifizierung nicht als sichere Methode zur Datenübertragung betrachtet wird, da die Zugangsdaten im Klartext versendet werden.
+Die Basic-Authentifizierung ist eine der ältesten Methoden zur Authentifizierung von HTTP-Anfragen. Sie wurde erstmals 1996 in RFC 1945 vorgeschlagen. Trotz ihrer Einfachheit bietet sie einen bescheidenen Schutz gegen unautorisierten Zugriff, indem sie Benutzername und Passwort über Base64 codiert.
 
-Weitere Informationen:
+Es gibt jedoch andere Alternativen wie OAuth, das eine sicherere und flexiblere Authentifizierung bietet, indem es Tokens anstelle von Benutzerdaten verwendet. In manchen Fällen kann auch eine IP-basierte Authentifizierung ausreichend sein.
 
-- [Gleam HTTP-Bibliothek Dokumentation](https://gleam.run/modules/gleam_http/latest)
-- [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
-- [Alternative Methoden zur HTTP-Authentifizierung](https://www.baeldung.com/spring-security-choose-authentication-protocol)
+In Gleam wird die Basic-Authentifizierung durch die Funktion `httpc.basic_auth/3` implementiert. Unter der Haube fügt diese Funktion den 'Authorization'-Header zur HTTP-Anfrage hinzu und formatiert den Benutzernamen und das Passwort gemäß dem Basic-Authentifizierungs-Schema.
+
+## Siehe auch
+
+- Offizielle Gleam-Dokumentation: https://gleam.run/documentation/
+- RFC 1945 (HTTP/1.0, einschließlich Basic-Authentifizierung): https://datatracker.ietf.org/doc/html/rfc1945
+- Gleam `httpc` Quellcode (für eine eingehende Untersuchung): https://github.com/gleam-lang/httpc

@@ -1,7 +1,7 @@
 ---
-title:                "Analisi dell'html"
-html_title:           "TypeScript: Analisi dell'html"
-simple_title:         "Analisi dell'html"
+title:                "Analisi sintattica dell'html"
+html_title:           "Bash: Analisi sintattica dell'html"
+simple_title:         "Analisi sintattica dell'html"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cosa & Perché?
+## Cosa & Perché?
 
-Il parsing HTML è il processo di analizzare un documento HTML per identificarne e accedere ai diversi elementi e attributi. I programmatori lo fanno per automatizzare il processo di raccolta e gestione dei dati presenti nelle pagine web. In pratica, il parsing HTML permette di estrarre le informazioni necessarie da una pagina web in modo efficiente e accurato.
+Il parsing HTML comporta l'interpretazione e l'analisi del codice HTML per estrarre dati o manipolare la struttura del documento. Questo viene fatto dai programmatori per estrarre dati da pagine web, o per integrare e manipolare contenuti web.
 
-## Come fare:
+## Come:
 
-Per fare il parsing di un documento HTML in TypeScript, possiamo utilizzare la libreria cheerio. Questa ci offre una serie di metodi per navigare e selezionare gli elementi del DOM. Di seguito un esempio di codice:
+Per iniziare, assicurati di aver installato Node.js e npm. Quindi, installa JSDOM, una libreria che emula un ambiente completo DOM proprio come nel browser, ma in Node.js. Ecco come:
 
 ```TypeScript
-import * as cheerio from 'cheerio';
-
-// URL della pagina da analizzare
-const url = 'https://www.example.com';
-
-// Fa il parsing della pagina utilizzando cheerio
-cheerio.load(url)
-  // Seleziona tutti i tag <a> che hanno l'attributo rel="nofollow"
-  .find('a[rel="nofollow"]')
-  // Itera su ogni elemento trovato
-  .each((index, element) => {
-    // Stampa il valore dell'attributo href per ogni elemento
-    console.log(element.attribs.href);
-});
+npm install jsdom
 ```
-Questo codice ci permette di estrarre tutti i link con attributo `rel="nofollow"` dalla pagina specificata e stamparli in console.
+
+Ecco un esempio semplice con JSDOM:
+
+```TypeScript
+import { JSDOM } from 'jsdom';
+
+const dom = new JSDOM('<!DOCTYPE html><p>Ciao, Mondo!</p>');
+console.log(dom.window.document.querySelector('p').textContent); // "Ciao, Mondo!"
+```
 
 ## Approfondimento:
 
-Il processo di parsing dell'HTML è nato come una soluzione per gestire e analizzare grandi quantità di dati presenti sul web. In passato, era spesso necessario eseguire il parsing dei dati manualmente, mentre oggi è possibile automatizzarlo utilizzando librerie come cheerio.
+Il parsing HTML non è un nuovo concetto, i browser lo fanno ogni volta che carichi una pagina web. Tuttavia, con l'emergere delle applicazioni single page (SPA) e del rendering lato server (SSR), il parsing HTML è diventato un'abilità importante per molti sviluppatori.
 
-Un'alternativa al parsing HTML è l'utilizzo di API fornite direttamente dal sito web, se disponibili. Tuttavia, questa soluzione è limitata solo ai siti che offrono queste API e richiede una maggiore conoscenza tecnica per integrarle nel proprio codice.
+Esistono librerie alternative a JSDOM, come Cheerio o Parse5, che potrebbero essere più appropriate a seconda del tuo uso specifico. JSDOM è uno strumento pesante che emula l'intero ambiente del browser. Al contrario, Cheerio offre un'API simile a jQuery ma molto più leggera, mentre Parse5 è un parser HTML5 conforme alle specifiche W3C.
 
-Per quanto riguarda l'implementazione del parsing HTML, è importante tenere conto delle performance e della compatibilità con i diversi browser. Cheerio, ad esempio, si basa su jQuery ma è ottimizzato per l'utilizzo lato server. È quindi importante scegliere la giusta libreria in base alle proprie esigenze.
+In termini d'implementazione, il parsing HTML richiede molta attenzione ai dettagli. L'HTML è un linguaggio di markup piuttosto flessibile e perdonante per l'utente, ma per un parser, ogni piccolo errore può comportare risultati inaspettati.
 
-## Vedi anche:
+## Vedi Anche:
 
-- [Documentazione di cheerio](https://cheerio.js.org/)
-- [Parsing HTML con JavaScript](https://developer.mozilla.org/it/docs/Web/Guide/HTML/HTML5_parsing)
-- [Parsing HTML e XML con TypeScript](https://medium.com/nerd-for-tech/basic-html-parser-with-typescript-c7ba12c1ae01)
+Esplora più a fondo con queste risorse:
+
+1. [JSDOM GitHub](https://github.com/jsdom/jsdom)
+2. [Cheerio GitHub](https://github.com/cheeriojs/cheerio)
+3. [Node.js](https://nodejs.org/it/)
+4. [npm](https://www.npmjs.com/)
+5. [Parse5 GitHub](https://github.com/inikulin/parse5)

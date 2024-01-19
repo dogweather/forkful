@@ -1,6 +1,6 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "Elixir recipe: Checking if a directory exists"
+html_title:           "C# recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,39 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Checking if a directory exists is a vital operation in file handling applications. Programmers do this to verify the existence of a directory before accessing or modifying its contents to prevent errors.
+Checking if a directory exists in Elixir is a way to verify the presence of a file system directory before performing operations on it. This is crucial to avoid errors while reading, writing, or navigating through directories.
 
 ## How to:
-
-In an Elixir program, you can verify if a directory exists by using the `File.dir?/1` function. Here's an example:
+Checking for a directory in Elixir is straightforward thanks to the inbuilt `File.dir?/1` function:
 
 ```Elixir
-# Check if a directory exists
-def check_directory(directory) do
-  if File.dir?(directory) do
-    IO.puts("#{directory} exists!")
-  else
-    IO.puts("#{directory} does not exists!")
-  end
-end
-
-check_directory("/path/to/directory")
+directory = "/path/to/your/directory"
+File.dir?(directory)
 ```
 
-The function `File.dir?/1` returns a boolean indicating whether the provided path leads to a directory.
+A sample output for a directory would read `true` or `false`, indicating whether the system recognized the path as an existing directory or not.
 
+```Elixir
+iex> directory = "/home/documents"
+iex> File.dir?(directory)
+true
+```
 
+## Deep Dive:
+Historically, checking for the existence of a directory aided in error-proofing core tasks like file navigation, reading, and writing. As programming languages evolved, this basic function became fundamental, including in Elixir, which inherited the tradition from Erlang, its progenitor.
 
-## Deep Dive
+Alternative ways to check for a directory might include checking for errors when attempting to change into the directory with `File.cd/1`. However, using `File.dir?/1` is the preferred method due to its simplicity and readability.
 
-The `File.dir?/1` function is a part of the `File` module in Elixir, which provides functions to read, write, and manipulate files and directories. Introduced in the early versions of Elixir, this function is an essential aspect of the language's I/O operations. 
+Under the hood, Elixir's `File.dir?/1`, just like many file-related functions, relies on Erlang's `:file` module. It essentially wraps the `:file.read_file_info/1` function and checks if the `:type` field of the returned record is `:directory`.
 
-There are alternatives like checking for a directory by trying to open a directory with `File.ls/1` and seeing if it errors, but it's more involved and less explicit.
+## See Also:
+Check out these useful resources that contribute further to this topic:
 
-The `File.dir?/1` is a mere wrapper around the Erlang's `filelib` module's `is_directory/1` function. It emphasizes the interoperation between Elixir, built on Erlang's VM, with Erlang's extensive standard library.
-
-## See Also
-
-Details about the File module: https://hexdocs.pm/elixir/File.html  
-Erlang's `filelib` documentation for more background: http://erlang.org/doc/man/filelib.html
+1. Elixir's official `File` module documentation: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
+2. Erlang's `:file` module documentation: [http://erlang.org/doc/man/file.html](http://erlang.org/doc/man/file.html)
+3. More on Elixir's roots and inheritance from Erlang: [https://elixir-lang.org/getting-started/erlang.html](https://elixir-lang.org/getting-started/erlang.html)

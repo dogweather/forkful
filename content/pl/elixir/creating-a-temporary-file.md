@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "Elixir: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,30 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Tworzenie tymczasowych plików w Elixirze to szybki i wygodny sposób na przechowywanie danych tylko na potrzeby bieżącego wykonania programu. Programiści używają go często do zapisywania tymczasowych danych lub do testowania kodu.
+
+Tworzenie tymczasowego pliku to proces generowania pliku, który jest potrzebny tylko przez krótki okres czasu. Programiści robią to, aby magazynować dane, których nie potrzebują na stałe, ale które są niezbędne dla jakiejś tymczasowej operacji.
 
 ## Jak to zrobić:
-Aby utworzyć tymczasowy plik w Elixirze, musisz wykorzystać moduł `Tempfile`. W poniższym przykładzie stworzymy plik o nazwie `temp.txt` w bieżącym katalogu, a następnie zapiszemy w nim dowolny tekst. 
 
-```Elixir
-file = Tempfile.open("temp.txt")
-IO.write(file.path, "To jest przykładowy tekst.")
+Używając Elixira, możemy łatwo utworzyć tymczasowy plik za pomocą modułu `File` . Poniżej znajduje się kod potrzebny do utworzenia tymczasowego pliku.
+
+```elixir
+File.write!("/tmp/temp.txt", "Oto jakiś tymczasowy tekst")
 ```
 
-Aby potwierdzić, że plik został utworzony i zawiera nasz tekst, można wyświetlić jego zawartość za pomocą następującego polecenia:
+A oto, jak możemy zobaczyć zawartość pliku:
 
-```Elixir
-IO.gets(file.path)
+```elixir
+IO.puts File.read!("/tmp/temp.txt")
 ```
 
-Wynikiem powinien być nasz zapisany tekst.
+Wynik powinien wyglądać mniej więcej tak:
 
-## Dogłębna analiza:
-Tworzenie tymczasowych plików jest powszechnie stosowane przez programistów już od dawna. W starszych językach programowania, takich jak C czy Java, wymagało to bardziej skomplikowanych operacji i bardzo łatwo było popełnić błąd. Dzięki modułowi `Tempfile` w Elixirze, proces ten jest prostszy i nie wymaga od nas pamiętania o zamknięciu pliku po użyciu.
+```elixir
+"Oto jakiś tymczasowy tekst"
+```
 
-Alternatywą dla tworzenia tymczasowych plików w Elixirze jest używanie struktur danych, takich jak mapy czy listy. Jednak w niektórych przypadkach, na przykład w testowaniu kodu, potrzebujemy pliku o rzeczywistym formacie, a nie tylko danych w pamięci.
+## Głębsze rozeznanie
 
-## Zobacz również:
-- [Dokumentacja modułu Tempfile](https://hexdocs.pm/elixir/1.10.1/Tempfile.html)
-- [Poradnik do programowania w Elixirze](https://elixir-lang.org/getting-started/introduction.html)
-- [Tutorial: Tworzenie tymczasowych plików w Elixirze](https://hexdocs.pm/elixir/tempfile.html)
+Tworzenie tymczasowych plików to praktyka, która sięga początków informatyki, kiedy dostęp do pamięci operacyjnej był ograniczony, a programiści musieli opracować sposoby na tymczasowe przechowywanie danych. Alternatywą jest użycie bazy danych do przechowywania tymczasowych danych, ale tworzenie tymczasowego pliku jest zazwyczaj prostszym i szybszym rozwiązaniem. Co do szczegółów implementacji, Elixir korzysta z funkcji systemu operacyjnego do utworzenia tymczasowych plików, a nazwa pliku jest generowana automatycznie, aby zapewnić unikalność.
+
+## Zobacz także 
+
+1. Dokumentacja Elixira na temat modułu `File`: https://hexdocs.pm/elixir/File.html
+2. Artykuł na temat korzystania z tymczasowych plików w Elixer: https://www.elixir.school/basics/collections/ 
+3. Przegląd technik zarządzania plikami w Elixer: https://elixirschool.com/en/lessons/specifics/file_io/

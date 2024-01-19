@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http запиту"
-html_title:           "Fish Shell: Надсилання http запиту"
-simple_title:         "Надсилання http запиту"
+title:                "Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
+## Що і навіщо?
 
-Відправлення HTTP запиту - це коли програміст надсилає запит до іншого комп'ютера, зазвичай сервера, щоб отримати певну інформацію. Це може бути корисним для доступу до даних або взаємодії з іншими програмами.
+Надсилання HTTP-запиту - це процес надсилання запиту від клієнта до сервера через протокол HTTP. Програмісти роблять це для отримання або відправлення даних на веб-сервер або API.
 
-Як це зробити:
+## Як це зробити:
 
-Fish Shell має вбудовану команду "curl" для відправлення HTTP запитів. Давайте подивимося на приклад використання цієї команди:
+```Fish Shell
+# Встановлення програми curl
+sudo apt-get install curl
 
+# Надсилання GET-запиту
+curl "http://example.com"
+
+# Надсилання POST-запиту з JSON-даними
+curl -d '{"key1":"value1", "key2":"value2"}' -H "Content-Type: application/json" -X POST http://localhost:3000/data
 ```
-curl http://www.example.com
-``` 
 
-Цей запит надішлеться до веб-сайту "example.com" і виведе вміст цього сайту в термінал.
+**Вивід:**
+```Fish Shell
+<html>
+<head>
+<title>Example Domain</title>
+...
+</html>
+```
 
-Глибше:
+## Поглиблений огляд:
 
-Історичний контекст: Відправлення HTTP запитів є стандартним способом отримати дані з Інтернету. Вперше цей протокол був розроблений у 1991 році Тімом Бернерс-Лі. 
+(1) Історичний контекст: HTTP-запити були винайдені в 1991 році як основний метод передачі даних в World Wide Web.
+(2) Альтернативи: Деякі альтернативи HTTP-запитів включають WebSocket або документи GraphQL.
+(3) Деталі реалізації: У Fish Shell можна використовувати утиліту curl або wget для відправлення HTTP-запитів. Ви можете налаштувати деталі запиту, такі як заголовки, методи (GET, POST, DELETE тощо) і дані запиту.
 
-Альтернативи: Крім "curl", є також інші програми для відправлення HTTP запитів, такі як "wget" та "httpie". Також можна використовувати програму "telnet", але це потребує більше ручної настройки.
+## Дивись також:
 
-Деталі реалізації: Команда "curl" використовує бібліотеку "libcurl", написану на мові C, для відправлення запитів. Також існують різні налаштування для контролю за поведінкою цієї команди, наприклад, вказання параметрів запиту та обробки помилок.
-
-Дивись також:
-
-- Офіційна документація Fish Shell: https://fishshell.com/docs/current/
-- Документація по команді "curl": https://curl.haxx.se/docs/manpage.html
-- Огляд альтернатив для відправлення HTTP запитів: https://www.tecmint.com/14-command-line-tools-to-send-http-requests/
+- Документація про HTTP-запити: [ссылка](https://developer.mozilla.org/uk/docs/Web/HTTP/Overview)
+- Fish Shell scripting tutorial: [ссылка](https://fishshell.com/docs/current/tutorial.html)
+- Curl manual: [ссылка](https://curl.se/docs/manual.html)

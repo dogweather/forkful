@@ -1,7 +1,7 @@
 ---
-title:                "Estrarre sottostringhe"
-html_title:           "TypeScript: Estrarre sottostringhe"
-simple_title:         "Estrarre sottostringhe"
+title:                "Estrazione di sottosequenze"
+html_title:           "Arduino: Estrazione di sottosequenze"
+simple_title:         "Estrazione di sottosequenze"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+# Estrazione Di Sottostringhe in TypeScript: Il Tuo Nuovo Superpotere
 
-Il processo di estrarre sottostringhe (o "substring") è una pratica comune tra i programmatori. Si tratta di prelevare una sottostringa più piccola da una stringa più grande, in base a criteri specifici. Ad esempio, potresti voler estrarre solo i primi 5 caratteri di una parola.
+## Che Cosa e Perché?
 
-In generale, gli sviluppatori utilizzano la tecnica delle sottostringhe per poter manipolare le stringhe in modo più flessibile e preciso, adattandole alle proprie esigenze.
+L'estrazione di sottostringhe è l'arte di prelevare parti specifiche di una stringa. Noi programmatori lo faciamo per manipolare e analizzare i dati in modi che non sarebbero possibili con stringhe intere.
 
-## Come:
+## Come Fare:
 
-Di seguito ci sono alcuni esempi di come estrarre sottostringhe in TypeScript:
+Utilizziamo i metodi `slice()`, `substr()` e `substring()` in TypeScript per ottenere sottostringhe. Ecco come:
 
-```TypeScript
-let str = 'Benvenuti!';
-let subs = str.substring(0, 5); // estrae i primi 5 caratteri
-console.log(subs); // output: Benve
+``` TypeScript 
+let str = 'Guardiamo i poteri del TypeScript!';
+
+console.log(str.slice(10, 17));  // Output: 'i poteri'
+console.log(str.substr(10, 7));   // Output: 'i poteri'
+console.log(str.substring(10, 17)); // Output: 'i poteri'
 ```
-```TypeScript
-let str = '123456';
-let subs = str.substr(-3); // estrae gli ultimi 3 caratteri
-console.log(subs); // output: 456
-```
+Tutti questi tre metodi restituiscono la sottostringa 'i poteri'.
 
-```TypeScript
-let str = 'Buon compleanno';
-let subs = str.slice(4, 13); // estrae i caratteri dalla posizione 4 alla 12
-console.log(subs); // output: compleanno
-```
+`slice()` e `substring()` accettano due indici per definire l'inizio e la fine della sottostringa. `substr()` invece, accetta l'indice di inizio e la lunghezza della sottostringa.
 
-Oltre alle funzioni `substring()`, `substr()` e `slice()`, TypeScript offre anche il metodo `charAt()` che permette di estrarre un singolo carattere da una stringa in base alla sua posizione.
+## Approfondimenti:
 
-## Approfondimento:
+### Contesto storico:
+L'abilità di estrarre sottostringhe esiste da quando le stringhe sono state introdotte nella programmazione. Nonostante ciò, l'implementazione varia da un linguaggio all'altro.
 
-L'operazione di estrarre sottostringhe ha radici nelle prime versioni di linguaggi di programmazione come il Fortran e il Cobol. In quei tempi, le stringhe erano trattate come array di caratteri e per accedere a una parte specifica si usavano tecniche di indicizzazione simili a quelle utilizzate oggi con le sottostringhe.
+### Alternative:
+In TypeScript, `slice()` e `substring()` si comportano in modo simile ma hanno delle differenze sottili. Se fornisci indici negativi, `slice()` li interpreterà come riferimenti dal fondo della stringa, mentre `substring()` li tratterà come zero.
 
-Un'alternativa alla tecnica delle sottostringhe è l'utilizzo di espressioni regolari, che permettono di manipolare le stringhe utilizzando pattern di ricerca e sostituzione.
+`substr()`, a differenza degli altri due, è considerato obsoleto e potrebbe non essere supportato in tutte le piattaforme JavaScript.
 
-Per quanto riguarda l'implementazione in TypeScript, le funzioni `substring()`, `substr()` e `slice()` si comportano in modo simile alle loro controparti in JavaScript, con alcune differenze riguardo ai valori di input.
+### Dettagli di Implementazione:
+La scelta del metodo da utilizzare dipende dal tuo caso specifico. Ricorda, `substring()` e `slice()` accettano indici di inizio e fine, mentre `substr()` accetta indice di inizio e lunghezza.
 
-## Vedi anche:
+## Link Utili:
 
-- La documentazione ufficiale di TypeScript: https://www.typescriptlang.org/docs/
-- Una guida dettagliata all'utilizzo delle sottostringhe in TypeScript: https://www.tutorialspoint.com/typescript/typescript_strings.htm
-- Un confronto tra le funzioni di manipolazione delle stringhe in TypeScript: https://www.javascripttuts.com/typescript-string-functions/
+- Documentazione ufficiale di TypeScript: [Strings and their methods](https://www.typescriptlang.org/docs/handbook/strings.html)
+- MDN Web Docs: [Basic Data Structures in JavaScript: Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#strings)
+- W3Schools: [JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)

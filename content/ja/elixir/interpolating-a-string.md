@@ -1,6 +1,6 @@
 ---
 title:                "文字列の補間"
-html_title:           "Elixir: 文字列の補間"
+html_title:           "Arduino: 文字列の補間"
 simple_title:         "文字列の補間"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何そしてなぜ？
-文字列を插入することは、変数や式を文字列に置き換えることです。これは、プログラマーが使用することで、より動的な文字列を作成することができます。
+## 何となぜ？
 
-プログラマーは、データベースクエリ、ログメッセージの作成、テンプレートなど、さまざまな場面で文字列の挿入を使用します。これにより、より柔軟で効率的なコードが書けます。
+文字列補間（String Interpolation）とは、文字列内に変数を直接埋め込む機能を意味します。これにより、プログラマーは効率的にダイナミックなコードを書くことができます。
 
-## 使い方：
-```Elixir
-name = "John"
-age = 25
-"Elixir プログラミングを始めましょう #{name}. 年齢は #{age} 歳です。"
-```
-このコードでは、変数の値を文字列の中に挿入しています。出力は次のようになります:
+## やり方：
 
- ```Elixir
-"Elixir プログラミングを始めましょう John. 年齢は 25 歳です。"
-```
-
-また、式を文字列の中に挿入することもできます。例えば:
+Elixirでは、"#{}" を使用して文字列補間を行います。以下に簡単な例を示します。
 
 ```Elixir
-n = 5
-"5を足すと#{n + 5}になります。"
+name = "Tom"
+IO.puts("Hello, #{name}")
 ```
 
-このコードでは、変数の値を使って式を作成し、文字列の中に挿入しています。出力は次のようになります:
+上記のコードを実行すると、出力は次のようになります。
 
 ```Elixir
-"5を足すと10になります。"
+"Hello, Tom"
 ```
 
-## 詳細：
-文字列の挿入は、ドイツのプログラマーであるミトルヘアト・シュトラト(中略)によって発明されました。多くのプログラミング言語で使用されていますが、Elixirではより簡潔で柔軟な構文を提供しています。
+## ディープダイブ：
 
-他のオルタナティブとしては、文字列連結が挙げられますが、これは複数の文字列を組み合わせる必要があり、コードが長くなりがちです。
+歴史的な文脈としては、文字列補間は多くのプログラミング言語で使用されています。Elixirでは、これをシンプルで直感的な構文で実現しています。
 
-Elixirでは、文字列の挿入は「#{}」で囲むことで実現されています。この構文は、Elixir内部で「Kernel.SpecialForms.interpolation/2」と呼ばれるマクロによって処理されます。
+文字列補間の代替手段としては、文字列連結があります。しかし、文字列補間はよりシンプルで美しいコードを生成できるのが特徴です。
 
-## 関連リンク：
-- [Elixir公式ドキュメント](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#interpolation/2)
-- [ミトルヘアト・シュトラトによる文字列挿入の記事](https://blog.8thlight.com/mohit-srate/2014/02/17/string-interpolation-in-programming-languages.html)
-- [Rubyでの文字列挿入](https://ruby-doc.org/core-2.5.0/doc/syntax/literals_rdoc.html#label-String+Interpolation)
+Elixirでは、文字列補間は"^"を用いて実行時までその評価を遅延させることができます。このため、大量のデータ操作でパフォーマンスを向上させることが可能です。
+
+## 参考リンク：
+
+- Elixir公式ドキュメント「Strings」
+  (https://hexdocs.pm/elixir/String.html)
+- Elixir School「Strings」
+  (https://elixirschool.com/ja/lessons/basics/strings/)

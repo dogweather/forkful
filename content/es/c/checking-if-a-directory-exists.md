@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si existe un directorio"
-html_title:           "C: Comprobando si existe un directorio"
-simple_title:         "Comprobando si existe un directorio"
+title:                "Verificando si un directorio existe"
+html_title:           "C: Verificando si un directorio existe"
+simple_title:         "Verificando si un directorio existe"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,34 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
+# Verificación si un Directorio Existe en C
 
-Comprobar si un directorio existe es una tarea común para los programadores de C. Esto significa verificar si un directorio específico está presente en una ubicación dada en el sistema de archivos. Los programadores hacen esto para asegurarse de que su código pueda acceder y manipular los archivos en ese directorio sin causar errores.
+## ¿Qué y Por Qué?
+En programación, queremos saber si un directorio existe antes de usarlo, para evitar errores o problemas inesperados. Esto es especialmente relevante al manipular archivos y rutas.
 
-## Cómo hacerlo:
-
-Para comprobar si un directorio existe en C, podemos utilizar la función `opendir()` de la biblioteca `dirent.h`. Esta función toma el nombre del directorio como argumento y devuelve un puntero al directorio si existe, o `NULL` si no existe. Podemos utilizar una expresión condicional para verificar si el puntero está apuntando a `NULL` o no. Aquí hay un ejemplo de código:
+## ¿Cómo hacerlo?
+En C, puedes verificar la existencia de un directorio mediante el uso de la función `stat()` en la biblioteca `sys/stat.h`. Aquí se muestra un ejemplo de cómo hacerlo.
 
 ```C
-DIR *dir = opendir("/ruta/de/la/carpeta/");
+#include <sys/stat.h>
 
-if (dir == NULL) {
-    printf("El directorio no existe.\n");
-} else {
-    printf("El directorio existe.\n");
-    closedir(dir);
+int directory_exists(const char* path) {
+   struct stat buffer;   
+   return (stat(path, &buffer) == 0);
+}
+
+int main() { 
+   if(directory_exists("/ruta/al/directorio")) {
+       printf("El directorio existe.\n"); 
+   } else {
+       printf("El directorio no existe.\n");
+   }
+   return 0;
 }
 ```
 
-Si el directorio existe, el resultado será "El directorio existe." de lo contrario será "El directorio no existe."
+Si el directorio existe, este programa emitirá "El directorio existe." de lo contrario, emitirá "El directorio no existe.".
 
-## Inmersión profunda:
+## Profundización
 
-Antes de la introducción de `dirent.h` en las versiones más recientes de C, era necesario utilizar funciones de bajo nivel como `opendir()` de la biblioteca de C estándar `unistd.h` para comprobar si un directorio existe. También existen otras formas de lograr el mismo resultado, como utilizar el comando `stat` en sistemas tipo Unix o la API `PathFileExists()` en Windows.
+La función `stat()` ha existido desde los inicios de Unix, y sigue siendo una forma relevante de interactuar con los atributos de archivos y directorios. Sin embargo, no es la única manera de verificar la existencia de un directorio. Alternativamente podría usar `opendir()` de `dirent.h`, que intenta abrir el directorio, devolviendo NULL si falla.
 
-En términos de implementación, la función `opendir()` utiliza la llamada al sistema `open()` para acceder al directorio. Además, `dirent.h` también proporciona funciones como `readdir()` y `closedir()` para obtener información sobre los archivos dentro del directorio y cerrarlo después de su uso.
+Las implementaciones pueden variar según el sistema operativo y el sistema de archivos. Por ejemplo, algunas implementaciones de `stat()` fallarán en rutas que contienen enlaces simbólicos.
 
-## Ver también:
+```C
+#include <sys/stat.h>
+#include <dirent.h>
 
-- [Documentación de `dirent.h` en cppreference.com](https://en.cppreference.com/w/c/io/dirent.h)
-- [Ejemplo de uso de `PathFileExists()` en MSDN](https://docs.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfileexistsa)
+int directory_exists(const char* path) {
+   DIR* dir = opendir(path);
+   if(dir) {
+       closedir(dir);
+       return 1;
+   } else {
+       return 0;
+   }
+}
+```
+
+Este código hace lo mismo que el anterior, pero usando `opendir()`. 
+
+## Ver También
+
+Para aprender más sobre la manipulación de directorios y archivos en C, aquí hay algunas fuentes útiles:
+
+- [Documentación de `sys/stat.h`](http://pubs.opengroup.org/onlinepubs/7908799/xsh/sysstat.h.html)
+- [Documentación de `dirent.h`](http://pubs.opengroup.org/onlinepubs/7908799/xsh/dirent.h.html)
+- [Tutoriales en Tutorialspoint para la programación de archivos en C](https://www.tutorialspoint.com/c_standard_library/c_file_io.htm)

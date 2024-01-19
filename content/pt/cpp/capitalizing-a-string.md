@@ -1,7 +1,7 @@
 ---
-title:                "Colocando as Letras em Maiúsculas: Uma Introdução à Programação de Computadores"
-html_title:           "C++: Colocando as Letras em Maiúsculas: Uma Introdução à Programação de Computadores"
-simple_title:         "Colocando as Letras em Maiúsculas: Uma Introdução à Programação de Computadores"
+title:                "Capitalizando uma string"
+html_title:           "C++: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,44 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Que?
+# Capitalizar uma String em C++: Um guia passo a passo
 
-Capitalizar uma string é transformá-la em uma representação na qual a primeira letra de cada palavra é maiúscula. Os programadores fazem isso para facilitar a leitura e melhorar a organização do código.
+## O Que é e Por Quê?
 
-## Como:
+Capitalizar uma string é transformar as primeiras letras das palavras de uma frase para maiúsculas. Programadores fazem isso para melhorar a legibilidade e uniformidade dos dados de texto.
+
+## Como Faz:
+
+Aqui está um exemplo de código simples em C++ para capitalizar uma string:
 
 ```C++
+#include <locale>
 #include <iostream>
-#include <string>
-#include <algorithm>
 
-using namespace std;
+// Função para capitalizar uma string
+std::string CapitalizeString(const std::string &s) {
+    bool newWord = true;
+    std::string result;
 
-int main(){
-    string texto = "esse é um exemplo de string capitalizada";
-    
-    // usando a função transform da biblioteca algorithm
-    transform(texto.begin(), texto.end(), texto.begin(), ::toupper);
-    cout << texto << endl; // Saída: ESSE É UM EXEMPLO DE STRING CAPITALIZADA
-    
-    // também é possível usar um loop para percorrer a string 
-    // e modificar as letras individualmente
-    for (int i = 0; i < texto.length(); i++){
-        if (texto[i] >= 'a' && texto[i] <= 'z') // verificando se é uma letra minúscula
-            texto[i] = texto[i] - 32; // subtraindo 32 para obter a letra maiúscula correspondente
+    for (auto &&c : s) {
+        if (std::isspace(c)) {
+            newWord = true;
+        }
+        else if (newWord) {
+            c = std::toupper(c);
+            newWord = false;
+        }
+        result += c;
     }
-    cout << texto << endl; // Saída: ESSE É UM EXEMPLO DE STRING CAPITALIZADA
-    
+    return result;
+}
+
+int main() {
+    std::string s = "o rato roeu a roupa do rei";
+    std::cout << CapitalizeString(s) << std::endl;
     return 0;
 }
 ```
 
-## Mergulho Profundo:
+O resultado da função main acima será:
 
-Capitalizar strings tem sua origem no estilo de escrita CamelCase, popularizado pela linguagem de programação Java. Ele foi introduzido para facilitar a leitura e tornar o código mais legível, visto que muitas palavras compostas são utilizadas na programação. Além disso, existem outras formas de capitalização, como a capitalização apenas da primeira letra da primeira palavra, ou a capitalização de todas as letras. A escolha depende da preferência do programador e do estilo adotado pelo projeto.
+```C++
+O Rato Roeu A Roupa Do Rei
+```
 
-## Veja Também:
+## Análise Profunda
 
-- https://www.learncpp.com/cpp-tutorial/capitalization/
-- https://pt.wikipedia.org/wiki/CamelCase
-- https://docs.microsoft.com/pt-br/cpp/standard-library/toupper
+Historicamente, capitalizar strings tem sido um conceito importante desde o advento dos sistemas de computador. Isso é essencial no aprimoramento da limpeza e apresentação dos dados.
+
+Existem muitas alternativas para capitalizar uma string em C++, usando bibliotecas como Boost, funções built-in em IDEs ou bibliotecas personalizadas. No exemplo anterior, optamos por utilizar a biblioteca `<locale>` da linguagem padrão.
+
+A implementação é relativamente simples, iterando cada caractere da string, se o caractere é o início de uma palavra (ou seja, precedido por um espaço em branco ou no início da string), ele é transformado em maiúsculo com a função `std::toupper()`.
+
+## Veja Também
+
+Aqui estão alguns recursos adicionais sobre esta temática em C++:
+
+1. Documentation do C++: [Referência std::toupper()](https://en.cppreference.com/w/cpp/string/byte/toupper)
+2. StackOverflow: [Convertendo uma string inteira em maiúscula ou minúscula em C++](https://stackoverflow.com/questions/735204/convert-a-string-in-c-to-upper-case)
+
+---
+Note que essa abordagem é sensível a idiomas que usam regras especiais para capitalização. Para esses casos, o uso de bibliotecas externas adequadas pode ser necessário.

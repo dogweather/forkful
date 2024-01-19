@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "PHP recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,63 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### What & Why?
+## What & Why?
 
-Downloading a web page in PHP simply means retrieving the content of a web page from the internet using a programming language called PHP. Programmers do this because they often need to access and manipulate data from external websites in their applications.
+Downloading a webpage is the process of obtaining data, specifically HTML, from a website's URL, storing it somewhere for later use. We, programmers, do it to access a website's data or to scrape desired content from the site.
 
-### How to:
+## How to:
 
-To download a web page in PHP, we can use the ```file_get_contents()``` function. This function takes in a URL as its parameter and returns the content of that URL as a string. Here's an example code:
+PHP provides several functions to download a webpage but the simplest one is perhaps `file_get_contents`.
 
-```PHP
-<?php
-// Assign the URL of the web page to a variable
-$url = 'https://www.example.com';
-
-// Use the file_get_contents() function to retrieve the content
-$content = file_get_contents($url);
-
-// Output the content
-echo $content;
-?>
+```php
+$url = 'https://example.com';
+$page_contents = file_get_contents($url);
+echo $page_contents;
 ```
 
-The output of this code will be the HTML of the web page, which we can then use in our application.
+When you run this, it will display the entire HTML content from `https://example.com`.
 
-We can also use the ```curl``` library to download a web page in PHP. This library provides additional functionalities such as data transfer options and error handling. Here's an example code:
+## Deep Dive
 
-```PHP
-<?php
-// Initialize a new curl session
-$curl = curl_init();
+PHP wasn't originally designed do tasks like downloading web pages. It was a server-side scripting language for producing dynamic web pages. However, as the language evolved, it became useful for tasks like this.
 
-// Set the URL of the web page we want to download
-curl_setopt($curl, CURLOPT_URL, 'https://www.example.com');
+There are other ways to download a webpage in PHP, such as using `cURL` library which provides more control, like setting headers, timeout, following redirect links.
 
-// Set return transfer option to true
-curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
-// Execute the request and store the response in a variable
-$response = curl_exec($curl);
-
-// Close the curl session
-curl_close($curl);
-
-// Output the response
-echo $response;
-?>
+```php
+function get_web_page($url)
+{
+    $options = [
+        CURLOPT_RETURNTRANSFER => true,  
+        CURLOPT_HEADER         => false,   
+        CURLOPT_FOLLOWLOCATION => true,   
+        CURLOPT_MAXREDIRS      => 10,     
+        CURLOPT_TIMEOUT        => 30,     
+        CURLOPT_URL            => $url,    
+    ];
+    
+    $ch = curl_init();
+    curl_setopt_array($ch, $options);
+    $content = curl_exec($ch);
+    curl_close($ch);
+    
+    return $content;
+}
 ```
 
-### Deep Dive:
+This function will return the content of a given URL.
 
-PHP has built-in functions like ```file_get_contents()``` and libraries like ```curl``` that make downloading web pages easy. These functions and libraries use the HTTP protocol to send requests to web servers and retrieve the response.
+## See Also:
 
-In the past, developers used the ```fopen()``` function to download web pages, but this method has become obsolete due to security concerns. Another alternative is using the ```stream_context_create()``` function, which allows us to set additional parameters such as headers and authentication.
-
-When downloading web pages, it's important to consider load time and server resources. If we need to frequently access the same web page, we can save the content locally to avoid excessive requests to the web server.
-
-### See Also:
-
-- PHP documentation for ```file_get_contents()```: https://www.php.net/manual/en/function.file-get-contents.php
-- PHP documentation for ```curl```: https://www.php.net/manual/en/book.curl.php
-- Alternatives to ```file_get_contents()```: https://stackoverflow.com/questions/7546017/php-fopen-vs-file-get-contents
+- Official PHP docs for `file_get_contents`: [here](https://www.php.net/manual/en/function.file-get-contents.php)
+- `cURL` in the PHP docs: [here](https://www.php.net/manual/en/book.curl.php)
+- Web scraping with PHP and DOM: [here](https://www.sitepoint.com/php-web-scraping/)
+- Downloading files with PHP: [here](https://davidwalsh.name/php-download-file)

@@ -1,7 +1,7 @@
 ---
-title:                "Riconoscimento di una data da una stringa"
-html_title:           "Fish Shell: Riconoscimento di una data da una stringa"
-simple_title:         "Riconoscimento di una data da una stringa"
+title:                "Analizzare una data da una stringa"
+html_title:           "Fish Shell: Analizzare una data da una stringa"
+simple_title:         "Analizzare una data da una stringa"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,28 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Fischiando: Come Analizzare una Data da una Stringa
-
-## Che cos'è e Perché?
-Parlare di analisi di una data da una stringa può sembrare complicato, ma in realtà è molto semplice. Si tratta di estrarre una determinata data da una stringa di testo, ad esempio dalla frase "Ho acquistato un biglietto per il 25 agosto 2021". I programmatori spesso eseguono questa operazione per convertire una data in un formato comprensibile dai computer, come ad esempio il formato Unix time.
+## Che cosa e perché?
+Parserizzare una data da una stringa appunta a convertire un testo che rappresenta una data in un formato comprensibile per il codice. I programmatori fanno questo per poter manipolare e utilizzare le date nei loro programmi in modo efficiente.
 
 ## Come fare:
-Esempio di codice in Fish Shell per estrarre una data dalla stringa "Ho acquistato un biglietto per il 25 agosto 2021" e stamparla in formato Unix time:
-```
-set stringa "Ho acquistato un biglietto per il 25 agosto 2021"
-set data (date -f "%d %B %Y" $stringa | math * 1000)
+In Fish Shell, possiamo parserizzare una data da una stringa usando il comando 'date':
+
+```Fish Shell
+set data_stringa "2022-03-27 09:00:00"
+
+# Convertire la stringa a data
+set data (date -d $data_stringa)
+
 echo $data
 ```
-Output:
-```
-1629804000000
-```
-Come si può vedere nell'esempio, prima si definisce una variabile con la stringa contenente la data, poi si utilizza il comando `date` specificando il formato della data presente nella stringa. Infine, si moltiplica il risultato per 1000 per ottenere il formato Unix time.
 
-## Approfondimento:
-L'analisi di una data da una stringa ha una lunga storia nell'ambito dell'informatica, grazie alla sempre crescente necessità di elaborare grandi quantità di dati in modo rapido ed efficiente. Alcune alternative alla programmazione in Fish Shell per eseguire questa operazione includono l'utilizzo di librerie come Moment.js o dateutil in altri linguaggi di programmazione.
+Uscita prevista:
 
-## Vedi anche:
-- Documentazione ufficiale Fish Shell: https://fishshell.com/docs/current/index.html
-- Moment.js: https://momentjs.com/
-- dateutil: https://pypi.org/project/python-dateutil/
+```Fish Shell
+Dom 27 Mar 2022 09:00:00 CET
+```
+
+## Approfondire
+Questo conveniente metodo per interpretare le date ha una lunga storia nel comando UNIX 'date', che risale agli albori del sistema operativo Unix negli anni '70. 
+Firefox e Chrome, per esempio, hanno implementato metodi alternativi per il parsing delle date con le loro rispettive funzioni Date.parse(), ma il comando 'date' continua ad essere utilizzato per la sua semplicità e compatibilità con una vasta gamma di sistemi. 
+
+A livello di implementazione, 'date' legge la stringa da sinistra a destra, cercando di abbinare i modelli dei formati di data comuni. Quando trova un match, converte la corrispondenza nel corrispondente valore di data. 
+
+## Vedi anche
+- Manuale di Fish Shell: https://fishshell.com/docs/current/commands.html
+- Uso del comando 'date' in Linux: https://www.lifewire.com/date-command-in-linux-4090726
+- Ulteriori informazioni sui metodi Date.parse() di JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse

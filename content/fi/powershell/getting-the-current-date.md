@@ -1,7 +1,7 @@
 ---
-title:                "Tämänhetkisen päivämäärän saaminen"
-html_title:           "PowerShell: Tämänhetkisen päivämäärän saaminen"
-simple_title:         "Tämänhetkisen päivämäärän saaminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,22 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi? 
-Päivämäärän hankkiminen tarkoittaa nykyisen päivämäärän saamista. Ohjelmoijat tekevät tätä usein skriptien, raporttien tai sovellusten kehityksessä.
+## Mikä & Miksi?
+PowerShellilla päivämäärän hakeminen tarkoittaa tarkalleen sitä miltä se kuulostaakin: saat tietoonsa tämänhetkisen päivämäärän ja kellonajan. Tämä on hyödyllistä aikaleimojen luomisessa, tapahtumien ajoittamisessa tai ohjelman suoritusajasta seuraamisessa.
 
-## Kuinka: 
+## Miten se tehdään:
+Haetaan päivämäärä PowerShellilla näin:
+
 ```PowerShell
-$nykyinenPäivämäärä = Get-Date
+$NykyinenPäivämäärä = Get-Date
+Write-Output $NykyinenPäivämäärä
 ```
 
-## Perusteet: 
-Päivämäärän hankkiminen on erittäin tärkeä osa ohjelmointia, sillä se auttaa pitämään tietokannat ja tiedot ajan tasalla. Se myös mahdollistaa ajastetun tehtävien suorittamisen ja raporttien luomisen tarkasteltavaksi.
+Näin saat tulostettua nykyisen päivämäärän ja kellonajan. Esimerkki tulosteesta saattaa näyttää tällaiselta:
 
-PowerShellissä on valmis funktio, joka on nimeltään Get-Date ja se palauttaa nykyisen päivämäärän. Tämän jälkeen päivämäärä voidaan tallentaa muuttujaan ja käyttää sitä haluttuun tarkoitukseen. 
+```PowerShell
+maanantai, 1. marraskuuta 2021 12:00:00
+```
 
-## Syventävää tietoa: 
-Päivämäärän hankkimiseen on olemassa myös muita tapoja kuin Get-Date funktio. Voit esimerkiksi käyttää CMDlet date tai käyttää .NET-ohjelmointikielen DateTime luokkaa. Nämä toiminnot tarjoavat muita mahdollisuuksia päivämäärien käsittelyyn, kuten erilaisten muotoilujen tekemiseen. 
+## Syvällisempi tieto
+PowerShellilla päivämäärän hakeminen on ollut mahdollista sen julkaisusta lähtien, ja se on pysynyt melko muuttumattomana. Tosin, on olemassa erilaisia tapoja hakea päivämäärätietoja PowerShellilla. Esimerkiksi, voit määrittää tietyn muodon päivämäärälle käyttäen "ToShortDateString()" tai "ToLongTimeString()" metodeja.
 
-## Katso myös: 
-- [Microsoftin PowerShellin viralliset dokumentaatiot](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
-- [PowerShell Wikin päivämäärän ja ajan käyttäminen](https://github.com/PowerShell/PowerShell/wiki/DateTime-and-TimeSpans)
+Implementointiyksityiskohdista, `Get-Date` cmdlet palauttaa nykyisen päivämäärän ja kellonajan objektina, joka on System.DateTime tyyppiä. Se sisältää valtavan määrän tietoja, kuten vuoden, kuukauden, viikonpäivän ja kellonajan sekunnin tarkkuudella.
+
+## Katso myös
+Lisätietoja PowerShellin Get-Date cmdletistä, päivämäärän muotoilusta ja muista päivämäärätoiminnoista löydät seuraavista lähteistä:
+
+- Microsoftin virallinen dokumentaatio Get-Date cmdletistä: 
+  [Täältä](https://docs.microsoft.com/fi-fi/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1).
+  
+- Yksityiskohtainen opas päivämäärän ja ajan käsittelystä PowerShellissa: 
+  [Täältä](https://devblogs.microsoft.com/scripting/weekend-scripter-working-with-powershell-date-commands/). 
+
+- Sovelluksia päivämäärälle ja aikaleimoille PowerShellissa: 
+  [Täältä](https://4sysops.com/archives/use-powershell-to-work-with-date-and-time/).

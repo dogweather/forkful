@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "C++: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -11,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Ein neues Projekt zu starten bedeutet, eine neue Aufgabe in Angriff zu nehmen und ein Codierungsprojekt von Grund auf zu erstellen. Programmierer tun dies, um Probleme zu lösen, innovative Ideen umzusetzen oder bestehende Programme zu verbessern.
 
-## Wie geht's?
-Um ein neues Projekt in C++ zu starten, gibt es mehrere Möglichkeiten. Eine davon ist die Verwendung von IDEs wie Visual Studio oder Eclipse, die eine integrierte Entwicklungsumgebung bieten, um den Prozess zu vereinfachen. Eine andere Möglichkeit ist die Verwendung von Online-Compilern wie Coliru oder Wandbox. Hier sind Beispiele dafür, wie man ein einfaches Programm in C++ schreiben und ausführen kann:
+Ein neues Projekt zu starten bedeutet, ein leeres Blatt Papier in ein erstaunliches Stück Software zu verwandeln. Programmierer starten neue Projekte, um eine kreative Lösung für ein spezifisches Problem anzubieten oder ihre Fähigkeiten zu erweitern.
+
+## So geht's:
+
+Hier ist ein einfacher Weg, ein neues C++ Projekt mit Visual Studio zu beginnen.
+
+```C++
+1. Starten Sie Visual Studio
+2. Wählen Sie "Datei" -> "Neues Projekt" 
+3. Wählen Sie "Leeres Projekt"
+4. Geben Sie Ihrem Projekt einen Namen
+5. Schreiben Sie Ihren Code im Haupt.cpp
+```
+
+Zum Beispiel:
 
 ```C++
 #include <iostream>
-using namespace std;
 
 int main() {
-    cout << "Hello World!";
+    std::cout << "Hallo Welt!";
     return 0;
 }
 ```
 
-**Output:**
+Die Ausgabe wäre dann:
+
 ```
-Hello World!
+Hallo Welt!
 ```
 
-Egal für welche Methode man sich entscheidet, das Grundprinzip bleibt dasselbe: Man definiert Variablen, schreibt Code und führt das Programm aus.
+## Tiefer Tauchen:
 
-## Tiefer Einblick
-C++ wurde in den 1980er Jahren von Bjarne Stroustrup entwickelt und ist eine erweiterte Version der Programmiersprache C. Es ist eine performante und effiziente Sprache, die besonders bei der Entwicklung von Betriebssystemen, Treibern und Anwendungen im Bereich der eingebetteten Systeme beliebt ist.
+1. Historischer Kontext: C++ wurde Anfang der 80er Jahre von Bjarne Stroustrup entwickelt, seitdem hat es diverse Überarbeitungen und Erweiterungen erfahren.
+2. Alternativen: Andere gängige Programmiersprachen zum Starten eines neuen Projektes sind Python, Java oder JavaScript, alle haben ihre eigenen Vorteile und Ansätze.
+3. Implementierungsdetails: C++ ist eine kompilierte Sprache. Das bedeutet, dass Ihr Code in Maschinensprache übersetzt werden muss, bevor er ausgeführt werden kann.
 
-Als Alternative zu C++ gibt es andere Programmiersprachen wie Java oder Python. Diese sind möglicherweise einfacher zu erlernen und bieten bessere Abstraktion, aber sie sind nicht so schnell und ressourcenschonend wie C++.
+## Siehe auch:
 
-Um ein neues Projekt in C++ zu implementieren, sollte man sich mit den grundlegenden Konzepten wie Variablen, Funktionen und Klassen vertraut machen. Auch die Verwendung von Libraries und das Debugging sind wichtige Aspekte bei der Entwicklung von C++ Projekten.
-
-## Siehe auch
-- [C++ Tutorial von W3Schools](https://www.w3schools.com/cpp/)
-- [The C++ Programming Language von Bjarne Stroustrup](https://www.amazon.de/-/en/Bjarne-Stroustrup/dp/0321958322)
-- [C++ Reference auf cplusplus.com](https://www.cplusplus.com/reference/)
+1. [C++ Dokumentation](https://docs.microsoft.com/de-de/cpp/?view=msvc-160)
+2. [Visual Studio Dokumentation](https://docs.microsoft.com/de-de/visualstudio/?view=vs-2019)
+3. [Ein Leitfaden für moderne C++](https://www.modernescpp.com/)

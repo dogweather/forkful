@@ -1,7 +1,7 @@
 ---
-title:                "Interpolowanie ciągu znaków"
-html_title:           "Rust: Interpolowanie ciągu znaków"
-simple_title:         "Interpolowanie ciągu znaków"
+title:                "Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
+simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,25 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest interpolowanie ciągów znaków i dlaczego programiści to robią?
-Interpolowanie ciągów znaków w języku Rust to sposób na łączenie zmiennych z ciągiem znaków. Jest to przydatne w sytuacji, gdy chcemy wyświetlić zmienną wewnątrz tekstu. Programiści korzystają z interpolacji ciągów znaków, aby uniknąć tworzenia wielu ciągów znaków, co może być uciążliwe i nieczytelne.
+## Co i Dlaczego?
+Interpolacja napisów to technika, umożliwiająca formatowanie i wstawianie zmiennych bezpośrednio do napisów w czasie wykonywania programu. Programiści stosują ją do uzyskania większej wydajności i czytelności kodu.
 
-## Jak to zrobić?
+## Jak to zrobić:
+Poniżej przedstawiam kilka przykładów dotyczących interpolacji łańcuchów w języku Rust.
+
 ```Rust
-let name = "Jan";
-println!("Cześć, {}", name);
+let name = "Jan"; 
+let age = 25; 
+println!("Cześć, mam na imię {} i mam {} lat.", name, age);
 ```
-Output:
+
+Wynik:
 ```
-Cześć, Jan
+Cześć, mam na imię Jan i mam 25 lat.
 ```
-W powyższym przykładzie zmienna ```name``` została wstawiona wewnątrz ciągu znaków za pomocą nawiasów ```{}```, a następnie wyświetlona przy użyciu funkcji ```println!()```. Możemy odwoływać się do dowolnej liczby zmiennych w ten sam sposób, zawsze zaczynając od znaku ```{}```.
 
-## Głębsze spojrzenie
-Interpolowanie ciągów znaków jest popularną techniką nie tylko w języku Rust, ale także w innych językach programowania, takich jak Python czy JavaScript. W języku Rust zmienna używana w interpolowanym ciągu musi implementować operator ```Display```, który określa, jak zmienna ma być reprezentowana jako ciąg znaków.
+## Szczegółowe informacje
+Interpolacja łańcuchów nie jest nową techniką i jest powszechnie stosowana w wielu językach programowania. Rust jest jednak wyjątkowy w tym, że nie zezwala na bezpośrednią interpolację łańcuchów, jak w PHP czy JavaScript. Zamiast tego stosuje metody formatowania, które mają podobne możliwości, ale są bezpieczniejsze. 
 
-Alternatywą dla interpolowania ciągów znaków jest funkcja ```format!()```, która także pozwala na łączenie zmiennych z ciągiem znaków, ale w nieco inny sposób. Interpolowanie jest zazwyczaj wybierane ze względu na swoją krótszą składnię i prostsze użycie.
+Alternatywą dla interpolacji łańcuchów jest łączenie napisów za pomocą operatora `+` lub metody `.concat()`. Jednak ograniczeniem tych metod jest to, że obie działają tylko na napisach, natomiast interpolacja pozwala na wstawianie różnego rodzaju danych bezpośrednio do napisu.
 
-## Zobacz także
-- [Dokumentacja interpolacji ciągów znaków w języku Rust](https://doc.rust-lang.org/std/fmt/index.html#formatting-parameters)
-- [Porównanie interpolacji i funkcji format! w języku Rust](https://brson.github.io/2016/11/30/interpolation-vs-format)
+## Ciekawe źródła
+1. Dokumentacja języka Rust: https://doc.rust-lang.org/std/fmt/
+2. Rust by Example: https://doc.rust-lang.org/rust-by-example/std/str.html
+3. Artykuł o formatowaniu i wydrukach w Rust: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html#format-and-print

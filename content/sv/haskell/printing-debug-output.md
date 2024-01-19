@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "Haskell: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,43 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-
-Att skriva ut debug-utdata är när programmerare inkluderar extra information i koden för att hjälpa till att hitta och lösa buggar i sitt program. Detta innebär att man skriver ut variabler, värden och meddelanden i viktiga delar av koden för att kunna spåra problemen.
+## Vad & Varför?
+Skriva ut debug-utdata är handlingen att skicka information om ditt program till en utdataström, såsom en konsol, för att spåra programmet under drift. Detta gör det möjligt för programmerare att effektivt hitta och fixa eventuella fel i koden.
 
 ## Hur man gör det:
-
-För att skriva ut debug-utdata i Haskell, kan du använda funktionen `trace` från paketet `Debug.Trace`. Här är ett exempel på hur det kan se ut:
+Här är ett enkelt exempel som visar hur du kan skriva ut debug-utdata i Haskell:
 
 ```Haskell
 import Debug.Trace
 
 main :: IO ()
-main = do
-  let x = 5
-  trace ("Value of x: " ++ show x) $ do
-    let sum = x + 10
-    putStrLn ("Sum: " ++ show sum)
+main = print (debug "Hej världen!")
+
+debug :: String -> String
+debug msg = trace msg msg
 ```
 
-Detta kommer att skriva ut följande:
+Kör denna kod och den kommer att skriva ut "Hej världen!" på din konsol. `trace` funktionen tar två argument, första argumentet är meddelandet du vill skriva ut och det andra argumentet är värdet du vill returnera från funktionen. Här returnerar den samma meddelande som den skriver ut.
 
-```
-Value of x: 5
-Sum: 15
-```
+## Djupdykning
 
-Som du kan se, skriver vi ut värdet av variabeln `x` före vi beräknar summan. På så sätt kan vi kontrollera att värdet är korrekt.
+`trace` funktionen i Haskell kommer från `Debug.Trace` modulen. Historiskt sett har den använts som en snabb-och-smutsig lösning för att skriva ut debug-meddelanden. Samtidigt är det dock inte den enda lösningen—`Debug.Trace` modulen innehåller flera andra funktioner som `traceShow`, `traceShowId`, och `traceStack` för mer detaljerade utskrifter.
 
-## Djupdykning:
+En viktig sak att notera är att `trace` och liknande funktioner strider mot Haskells rena natur, eftersom de skapar sidoeffekter. De bör därför användas sparsamt och bara för felsökning. Kom ihåg att ta bort dem innan du skjuter upp koden.
 
-Att skriva ut debug-utdata är ett vanligt verktyg som används av programmerare för att felsöka och förbättra sina program. Det är särskilt användbart när man arbetar med större program och komplexa kodsegment.
+## Se vidare
 
-Ett alternativ till att skriva ut debug-utdata är att använda en speciell debugging-miljö eller en interaktiv debugger. Dessa verktyg erbjuder en mer omfattande och interaktiv metod för att felsöka koden.
+För ytterligare läsning kan du kolla in dokumentationen för `Debug.Trace` modulen:
+https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html
 
-För implementationen av `trace` använder Haskell en funktionell teknik som kallas "monad transformers". Detta är en avancerad teknik som gör det möjligt att skapa användbara funktioner som `trace` för att hantera debugging-utdata på ett enklare sätt.
+Eller denna bloggpost som diskuterar olika metoder för felsökning i Haskell:
+https://wiki.haskell.org/Debugging
 
-## Se även:
-
-- [Debug.Trace dokumentation](http://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html)
-- [Haskell debugging verktyg och tekniker](https://wiki.haskell.org/Debugging)
+Hoppas att detta hjälper dig att förstå better utskrift av debug-utdata i Haskell. Lycka till med felsökningen!

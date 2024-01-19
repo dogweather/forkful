@@ -1,7 +1,7 @@
 ---
-title:                "Das heutige Datum abrufen"
-html_title:           "Elixir: Das heutige Datum abrufen"
-simple_title:         "Das heutige Datum abrufen"
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Gleam: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Mit Elixir das aktuelle Datum abrufen
+
 ## Was & Warum?
-Das Abrufen des aktuellen Datums ist ein wichtiger Teil des Programmierens in Elixir. Es ermöglicht es uns, die aktuelle Zeit und Datum in unseren Programmen zu verwenden, was für die Benutzerfreundlichkeit und Funktionalität entscheidend sein kann. Programmierer nutzen dies, um Echtzeitfunktionen in ihren Anwendungen zu implementieren oder um einfach das aktuelle Datum für ihre eigenen Zwecke abzurufen.
 
-## Wie geht es?
-Wir können das aktuelle Datum in Elixir auf verschiedene Arten abrufen. Eine Möglichkeit ist die Verwendung der Funktion `Date.utc_today`, die das aktuelle Datum im UTC-Format zurückgibt. Hier ist ein Beispiel-Code mit der Ausgabe:
+Das Abrufen des aktuellen Datums ist eine Technik, die oft in Software- und Webentwicklung eingesetzt wird, um heutige Daten in Echtzeit zu überwachen oder zu protokollieren. Dies ist in einer Vielzahl von Anwendungsfällen nützlich, wie z.B. Zeitstempel auf Datenbanken, Verfolgen von Aktivitäten und vieles mehr.
 
-```Elixir
-Date.utc_today() 
-#=> {:ok, ~U[2021-03-20 00:00:00Z]}
+## Wie macht man das:
+
+In Elixir können wir die in eingebaute Funktion `Date.utc_today()` verwenden, um das heutige Datum in UTC zu erhalten. 
+
+```elixir
+heute = Date.utc_today()
+IO.puts(to_string(heute))
+
+```
+Die Ausgabe wäre z.B.:
+
+```elixir
+"2022-01-26"
 ```
 
-Wir können auch die Funktion `DateTime.utc_now` verwenden, um das aktuelle Datum und die aktuelle Uhrzeit im UTC-Format zu erhalten. Hier ist ein Beispiel-Code mit der Ausgabe:
+## Vertiefung
 
-```Elixir
-DateTime.utc_now() 
-#=> {:ok, ~N[2021-03-20 17:45:00Z]}
-```
+Historisch gesehen war das Abrufen des Datums immer relevant, seit Menschen begannen, Zeit zu verfolgen. In der Welt der Programmierung kann das Elixir-System das aktuelle Datum vom Betriebssystem abrufen, auf dem es ausgeführt wird.
 
-Schließlich können wir die Funktion `:calendar.universal_time/0` verwenden, um das aktuelle Datum und die aktuelle Zeit im lokalen Format zu erhalten. Hier ist ein Beispiel-Code mit der Ausgabe:
+Bei der Auswahl von Alternativen muss man die Zeitzone beachten. `Date.utc_today()` gibt UTC-Datum zurück. Für das lokale Datum verwenden Sie `Date.local_today()`.
 
-```Elixir
-:calendar.universal_time() 
-#=> {{2021, 3, 20}, {17, 45, 00}}
-```
+Die Implementierungsdetails hängen stark von der verwendeten Elixir-Version ab. Da Elixir auf der Erlang-Laufzeit aufbaut, hängt die Datumsermittlung letztlich von der Funktionsweise des Erlang-Systems ab.
 
-## Tiefer tauchen
-Elixir verwendet unter der Haube die Erlang-Laufzeitumgebung mit dem Namen "Erlang Virtual Machine (EVM)". Dies ermöglicht es Elixir, auf das Datum über die Erlang-Bibliothek `calendar` zuzugreifen. Es gibt auch andere Möglichkeiten, das aktuelle Datum in Elixir zu erhalten, wie zum Beispiel die Verwendung von externen Bibliotheken wie `timex` oder `calendar_date`.
+## Siehe auch 
 
-## Siehe auch
-- [Elixir-Dokumentation zu Date und Time](https://hexdocs.pm/elixir/Date.html)
-- [Erlang-Dokumentation zu `calendar`](http://erlang.org/doc/man/calendar.html)
-- [Elixir-Forum-Thread zu Getting the Current Date](https://elixirforum.com/t/getting-the-current-date/2806)
+Weitere Informationen und hilfreiche Beispiele finden Sie in der offiziellen Elixir-Dokumentation zu `Date` unter [https://hexdocs.pm/elixir/Date.html](https://hexdocs.pm/elixir/Date.html). Es lohnt sich, einen Blick darauf zu werfen. Und natürlich ist Google oder StackOverflow immer eine gute Anlaufstelle, um mehr Informationen oder Beispiellösungen zu finden.

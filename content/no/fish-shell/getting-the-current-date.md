@@ -1,7 +1,7 @@
 ---
-title:                "Få nåværende dato"
-html_title:           "Fish Shell: Få nåværende dato"
-simple_title:         "Få nåværende dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+# Fish Shell Programmering: Hvordan få tak i dagens dato
 
-Å få den nåværende datoen er en viktig funksjon for programmerere, da den lar dem hente og vise den aktuelle datoen under kjøring. Dette kan være nyttig for å organisere og presentere informasjon på en relevant måte.
+## Hva & Hvorfor?
 
-# Hvordan:
+Å få tak i dagens dato innebærer å hente informasjonen om dagens dato og tid. Dette er essensielt for programmerere når de vil spore tidspunktet for bestemte handlinger eller lage tidspesifikke funksjoner i en applikasjon.
 
-Fish Shell har en innebygd kommando,```date```, for å hente den nåværende datoen. Dette kan gjøres ved å følge disse enkle trinnene:
+## Hvordan gjøre det:
 
-1. Åpne Fish Shell-terminalen.
-2. Skriv inn ```date``` og trykk Enter.
-3. Du vil nå se den nåværende datoen i formatet "Day Month Date Hour:Minute:Second Timezone Year".
+I en Fish Shell, å få dagens dato er ganske enkelt. Her er kodeeksempelet og utdataen:
 
-Eksempel output:
-
-``` 
-Fri 19 Feb 16:50:09 CET 2021
+```Fish Shell
+# Få dagens dato
+set -l dagensDato (date +"%Y-%m-%d")
+echo $dagensDato
 ```
 
-# Dypdykk:
+Output vil være på formatet 'ÅÅÅÅ-MM-DD', for eksempel:
 
-Funksjonen for å få den nåværende datoen er ikke begrenset til Fish Shell, men er tilgjengelig i de fleste skall (shells). Dette inkluderer BASH, CSH og ZSH. I tillegg, for å få en mer spesifikk datoformat, kan du bruke flagg som ```date -r``` for å vise dato og klokkeslett for en spesifikk fil og ```date +%B``` for å få kun månedsnavnet.
+```Fish Shell
+2022-12-14
+```
 
-# Se også:
+## Dypdykk
 
-For mer informasjon om å få den nåværende datoen i Fish Shell, sjekk ut dokumentasjonen på [Fish Shell-nettstedet](https://fishshell.com/docs/current/commands.html#date). Du kan også se [date-kommandoen i Linux manualen](http://man7.org/linux/man-pages/man1/date.1.html).
+Historisk sett var tids- og datostyring en kompleks oppgave for tidlige programmerere. Språk som C nødvendig mange linjer kode for å utføre det som nå kan gjøres i en enkelt linje i Fish Shell.
+
+Alternativt kan du i noen tilfeller ønske å bruke (date + "%s") for å hente Unix-tidstempel, som representerer sekundene som har gått siden 1. januar 1970 kl. 00:00 UTC.
+
+Implementeringen av 'date' -kommandoen i Fish Shell stammer fra Unix 'Date' -kommando. Den bringer Unix kraft og fleksibilitet til oppgaven med å hente det nåværende tidspunktet, med den ekstra fordelen av å være enklere å bruke.
+
+## Se også:
+
+For ytterligere lesing og beslektede kilder, se følgende lenker:
+- Fish Shell Dokumentasjon: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- Unix 'Date' -kommando: [https://man7.org/linux/man-pages/man1/date.1.html](https://man7.org/linux/man-pages/man1/date.1.html)

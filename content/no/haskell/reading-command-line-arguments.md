@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinje-argumenter"
-html_title:           "Haskell: Lesing av kommandolinje-argumenter"
-simple_title:         "Lesing av kommandolinje-argumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Lesing av kommandolinjeargumenter er en vanlig og nyttig praksis for Haskell-programmere. Dette innebærer å lese inn informasjon som brukes til å konfigurere og kjøre et program gjennom kommandolinjen. Dette gjør det mulig for brukere å angi spesifikke parametere og verdier til programmet, noe som gir større fleksibilitet og kontroll.
+# Lesing av kommandolinjeargumenter i Haskell: en enkel guide
 
-## Hvordan:
-Vi kan lese kommandolinjeargumenter i Haskell ved å bruke funksjonen `getArgs` fra modulen `System.Environment`. Dette returnerer en liste av strenger som representerer hvert argument som ble gitt når programmet ble kjørt. Vi kan deretter behandle og bruke disse argumentene i vårt program.
+## Hva og hvorfor?
+Kommandolinjeargumenter er parametere som følger etter programnavnet når det kjøres i terminalen. Det å kunne lese disse argumentene gir fleksibilitet ved å tillate brukerinput utenfor selve programmet.
+
+## Slik gjør du det:
+Haskell gir en innebygd funksjon kalt `getArgs` for å hente kommandolinjeargumentene. Her er en enkel bit kode som viser hvordan man gjør det.
 
 ```Haskell
-import System.Environment (getArgs)
-
+import System.Environment
 main :: IO ()
 main = do
-  args <- getArgs
-  putStrLn ("Antall argumenter: " ++ show (length args))
-  putStrLn ("Argumenter: " ++ show args)
+    args <- getArgs
+    print args
 ```
 
-Når vi kjører dette programmet med kommandoen `runhaskell read_args.hs arg1 arg2 arg3`, vil output være:
+Når du kjører dette programmet og skriver argumenter etter programnavnet, vil det trykke argumentene til konsollen. For eksempel:
+
 ```
-Antall argumenter: 3
-Argumenter: ["arg1","arg2","arg3"]
+$ ghc Args.hs
+$ ./Args Hei Haskell
+["Hei", "Haskell"]
 ```
 
-## Dypdykk:
-Selv om det kan virke som en enkel funksjon, har `getArgs` en viktig rolle i Haskell-programmering. I tidligere versjoner av Haskell ble kommandolinjeargumenter lest inn ved hjelp av funksjonen `getArgs` fra modulen `System`. Denne versjonen behandlet argumentene som strenger, mens den nåværende versjonen behandler dem som uendelige lister av strenger.
+## Dypdykk
+Historisk sett har kommandolinjeargumenter vært en måte å parametrisere programmer på siden tidlig utvikling av Unix-systemer. I Haskell, kan du benytte funksjonen `getArgs` som vi viste tidligere, men det finnes også biblioteker som `optparse-applicative` som gir en mer kraftfull og fleksibel håndtering av argumenter.
 
-Det finnes også alternative måter å lese kommandolinjeargumenter på i Haskell, for eksempel ved å bruke biblioteket `optparse-applicative`. Dette biblioteket gir et mer robust og elegant grensesnitt for å håndtere argumenter.
+En interessant ting å merke seg er at `getArgs` returnerer en liste over `String`. Dette er fordi den tolker argumentene som separate strenge hvis de er adskilt av mellomrom på kommandolinjen.
 
-Det er også verdt å merke seg at kommandolinjeargumenter ikke er den eneste måten å gi input til et Haskell-program. Det er også mulig å lese inn filer eller data direkte fra terminalen.
-
-## Se også:
-- [Haskell dokumentasjon for System.Environment](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)
-- [Optparse-applicative biblioteket](https://hackage.haskell.org/package/optparse-applicative)
+## Se også
+Hvis du vil læle mer om dette emnet, er her noen nyttige kilder:
+- [Haskell Wiki: Kommandolinjeoparguments](https://wiki.haskell.org/Command_line_argument_handling)
+- [Biblioteksdokumentasjon for System.Environment](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-Environment.html)
+- [Dokumentasjon for optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)

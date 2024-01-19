@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Kotlin recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,48 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing a date from a string refers to the process of extracting a date from a given string input. This is a common task in programming as it allows developers to manipulate and work with dates in various formats. By parsing a date from a string, programmers can perform operations such as formatting, validation, and conversion to different time zones.
+Parsing a date from a string is simply extracting meaningful date-time information from text. Programmers do this often to use date-time information from user inputs or data files in their programs.
 
 ## How to:
 
-### Simple Date Parsing:
+In Kotlin, we use `parse()` function from `SimpleDateFormat` class to parse a date from a string. Here is an example:
 
-To parse a date from a string in Kotlin, we can use the built-in `DateFormat` class. Here's an example:
+```Kotlin 
+import java.text.SimpleDateFormat
+import java.util.Locale
 
-```Kotlin
-val dateString = "01/02/2020"             // String representing a date
-val format = SimpleDateFormat("MM/dd/yyyy")   // Specify the format of the date
-val date = format.parse(dateString)      // Parse the date from the string
-println(date)                           // Output: Fri Jan 02 00:00:00 EST 2020
+fun main() {
+    val dateString = "12/03/2022"
+    val format = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
+    val date = format.parse(dateString)
+    
+    println(date)
+}
 ```
 
-### Custom Date Parsing:
-
-Sometimes, the date format is not a standard one and might require some customization. In such cases, we can use the `DateTimeFormatter` class to define our own parsing patterns. Here's an example:
+Running this will output:
 
 ```Kotlin
-val dateString = "Wednesday, June 24, 2020"   // String representing a date
-val format = DateTimeFormatter.ofPattern("EEEE, MMMM dd, yyyy") // Specify the custom format
-val date = LocalDate.parse(dateString, format)   // Parse the date from the string
-println(date)                          // Output: 2020-06-24
+Sat Mar 12 00:00:00 PST 2022
 ```
 
-## Deep Dive:
+It reads a date string in `dd/MM/yyyy` format and converts it into a `Date` object.
 
-### Historical Context:
+## Deep Dive
 
-Parsing a date from a string has been a common task in programming for a long time. In the past, developers had to write their own algorithms to extract dates from strings. However, with the rise of high-level programming languages such as Kotlin, built-in classes and methods have made this task much easier and more efficient.
+The concept of parsing dates from strings is as old as programming languages. It's prevalent when dealing with real-world date data. Other languages like Python, Java, and JavaScript also have similar functionalities, but approaches and syntaxes may vary.
 
-### Alternatives:
+Instead of `SimpleDateFormat`, one could use `DateTimeFormatter` from `java.time` package in modern Kotlin:
 
-Apart from Kotlin, other programming languages also have standard libraries for parsing dates from strings. For example, in Java, the `SimpleDateFormat` class is commonly used for this purpose. There are also third-party libraries available, such as Joda-Time, that offer more advanced features for date parsing.
+```Kotlin
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.Locale
 
-### Implementation Details:
+fun main() {
+    val dateString = "12-03-2022"
+    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", Locale.ENGLISH)
+    val date = LocalDate.parse(dateString, formatter)
 
-The `DateFormat` and `DateTimeFormatter` classes use patterns consisting of letters and symbols to represent the format of a date. These patterns are defined in the official documentation and can be customized according to the specific format of the given date string.
+    println(date)
+}
+```
 
-## See Also:
+This code does the same as above but uses a hyphen `-` as a date separator.
 
-- [DateFormat class in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-date-format/)
-- [DateTimeFormatter class in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-date-time-formatter/)
-- [Joda-Time library](https://www.joda.org/joda-time/)
+## See Also
+
+- For advanced date-time operations, check out the Joda-Time library: [Joda-Time](https://www.joda.org/joda-time/)
+- Kotlin's Date and Time APIs: [Kotlin Date and Time](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/)
+- A comprehensive guide to date-time operations in Kotlin: [Baeldung Kotlin DateTime](https://www.baeldung.com/kotlin/dates)

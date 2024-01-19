@@ -1,7 +1,7 @@
 ---
-title:                "現在の日付を取得する"
-html_title:           "Java: 現在の日付を取得する"
-simple_title:         "現在の日付を取得する"
+title:                "現在の日付の取得"
+html_title:           "Bash: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,29 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 今日の日付を取得する理由
-プログラマーにとって、現在の日付を取得することは非常に重要です。それは、コンピューターやネットワーク上のイベントの時間を記録するために使用されるからです。また、プログラム内で特定の日付を確認することで、特定の処理を行う必要がある場合に役立ちます。
+## 何となぜ？
 
-## やり方：
-```
-Java LocalDateTime datetime = LocalDateTime.now(); 
-System.out.println(datetime);
-```
-Output: 2021-08-04T15:30:12.875
+コンピュータ上で現在の日付を取得することは、多くのプログラムやアプリケーションで一般的な操作です。これは、ログのタイムスタンプ、データの時間制限、スケジューリングなど、様々な目的で使用されます。
 
-取得した日付をフォーマットすることもできます。
-```
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); 
-Date date = new Date(); 
-System.out.println(sdf.format(date));
-```
-Output: 2021/08/04
+## 方法:
 
-## 詳しく見る
-(1) 歴史的な背景：Java 1.8以前では、DateクラスやCalendarクラスを使用して日付を取得していましたが、現在ではLocalDateTimeクラスを使用することが推奨されています。
-(2) 代替手段：Java以外にも、PythonやC++などの他のプログラミング言語でも日付を取得する方法は存在します。
-(3) 実装の詳細：JVM（Java Virtual Machine）内のシステム時計にアクセスして現在の日付を取得します。また、現在のローカル時刻やタイムゾーンも取得することができます。
+Javaで現在の日付を取得する基本的な方法を以下に示します。
 
-## 関連情報を見る
-- [Java 8 LocalDateTime Class](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
-- [Java SimpleDateFormat Class](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+```Java
+import java.time.LocalDate;
+
+public class Main {
+  public static void main(String[] args) {
+    LocalDate date = LocalDate.now();
+    System.out.println("Today's date is: " + date);
+  }
+}
+```
+実行すると、以下のような出力が得られます：
+```
+Today's date is: 2021-12-13
+```
+
+## ディープダイブ
+
+Javaでは、`java.util.Date`が元々日付および時刻を扱うためのクラスとして提供されていましたが、その設計は多くの問題を抱えていました。そのため、Java 8で導入された`java.time`パッケージが現在では広く推奨されています。
+
+日付を入手する別の方法として`java.util.Calendar`があります。しかし、これも設計問題があるため、可能ならば新しいAPIを使用することが推奨されます。
+
+`LocalDate.now()`メソッドの実装は、基本的にシステムクロックを使用して現在の日付を取得します。
+
+## 関連リンク
+
+以下のリンクで、Javaの日付と時刻に関するさらに詳しい情報を得ることができます：
+
+1. [Oracle Official Documentation](https://docs.oracle.com/javase/tutorial/datetime/)
+2. [Java 8 Date – LocalDate, LocalTime, LocalDateTime](https://www.mkyong.com/java8/java-8-date-localdate-localdatetime-instant/)
+3. [Comparing Java Date Libraries: An Overview](https://dzone.com/articles/comparing-java-date-libraries)

@@ -1,7 +1,7 @@
 ---
-title:                "产生随机数"
-html_title:           "Rust: 产生随机数"
-simple_title:         "产生随机数"
+title:                "生成随机数"
+html_title:           "Go: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-随机数生成是指通过计算机程序产生一系列随机的数字或值。程序员经常使用随机数来测试程序的性能，随机生成数据或者为游戏设计产生随机事件。
+## 何处和为何？
 
-## 如何：
-Rust 中有一个内置的随机数生成器，可以通过引入 crate 来使用。以下是一个简单的例子：
+生成随机数就是利用计算机程序来生成预定范围内的随机数。程序员之所以需要生成随机数，纯粹是为了保证数据的非规律性或者应对需要完全随机操作的情况。
+
+## 如何操作：
+
+在 Rust 程序设计语言中，我们可以使用 `rand::Rng` trait 和 `rand::thread_rng` 函数生成随机数。下面是一个简单的例子：
 
 ```Rust
 use rand::Rng;
 
-fn main(){
-    let mut rng = rand::thread_rng(); // 初始化随机数生成器
-    let random_num: u32 = rng.gen(); // 生成一个随机的无符号整数
-    println!("随机数是： {}", random_num);
+fn main() {
+    let num = rand::thread_rng().gen_range(0..100);
+    println!("Random number: {}", num);
 }
 ```
 
-输出：
+在这个例子中，我们生成了一个在0到100范围内的随机数，然后将其打印出来。
 
-> 随机数是： 1574519957
+## 深入探索：
 
-## 深入探讨：
-随机数生成在计算机科学中有着重要的历史背景，它被广泛地应用于各种领域，如密码学、模拟、和游戏设计。当使用 Rust 的内置随机数生成器时，需要注意随机数的生成需要消耗计算资源，因此在大量使用时需要谨慎。除了使用内置的随机数生成器外，也可以使用第三方 crate，如 `rand` 和 `rand_pcg` 等。
+随机数生成器从计算机科学的早期就已经存在，主要用于要求复杂性和无规则性的科学计算和密码学。在Rust语言中生成随机数，我们通常选择利用 `rand` 库中的 `rand::Rng` trait 和 `rand::thread_rng` 函数，但实际上还有其他的方式，比如使用 `OsRng` 或者 `StdRng` 等。
 
-## 另请参阅：
-- 关于 Rust 中随机数生成的官方文档：https://doc.rust-lang.org/std/rand/
-- 所有 Rust 的第三方随机数 crate：https://crates.io/keywords/random
-- 更多关于随机数生成的历史和应用：https://en.wikipedia.org/wiki/Random_number_generation
+在有些情况下，我们可能需要产生随机种子，这个时候可以考虑使用 `SeedableRng` trait。而在 `rand` 库内部，随机数是通过使用特定的算法（比如线性同余算法等）产生的。
+
+## 更多参考
+
+如果你对Rust的随机数生成器产生兴趣，请访问以下链接以获取更多信息：
+
+- [官方文档](https://doc.rust-lang.org/rand/rand/trait.Rng.html)
+- [Rand 库在 Github 上的源码](https://github.com/rust-random/rand)
+- [关于随机数生成的维基百科条目](https://en.wikipedia.org/wiki/Random_number_generation)

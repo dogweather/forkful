@@ -1,7 +1,7 @@
 ---
-title:                "Ricerca e sostituzione di testo"
-html_title:           "Gleam: Ricerca e sostituzione di testo"
-simple_title:         "Ricerca e sostituzione di testo"
+title:                "Ricerca e sostituzione del testo"
+html_title:           "Arduino: Ricerca e sostituzione del testo"
+simple_title:         "Ricerca e sostituzione del testo"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-La ricerca e la sostituzione di testo è un'attività comune tra i programmatori, che consente di modificare rapidamente e facilmente una grande quantità di testo all'interno di un file o di un progetto. Ciò è particolarmente utile per correggere errori di battitura, cambiare il nome di una variabile o aggiornare l'uso di una determinata parola chiave. In breve, è un modo efficiente per mantenere il codice pulito e preciso.
+## Cos'è & Perché?
+
+La ricerca e la sostituzione del testo sono operazioni in cui identifichiamo un pattern di caratteri in una stringa (ricerca) e lo sostituiamo con un'altro (sostituzione). I programmatori lo fanno per manipolare e gestire i dati in modo efficace.
 
 ## Come fare:
-Ecco un esempio di come eseguire una ricerca e sostituzione di testo in Gleam:
+
+Ecco un esempio di come fare la ricerca e la sostituzione del testo in Gleam:
 
 ```Gleam
-let pi = 3.14
-println("Il valore di pi è $pi.")
+import gleam/string.{replace}
+
+fn cambia_parola() {
+    let vecchia_stringa = "Ciao Mondo"
+    let nuova_stringa = string.replace(vecchia_stringa, "Mondo", "Gleam")
+    assert nuova_stringa == "Ciao Gleam"
+}
 ```
 
-Nell'esempio sopra, vorremmo aggiornare il valore di pi a 3.14159. Per farlo, possiamo utilizzare la funzione di sostituzione "replace" di Gleam:
+Eseguendo questo codice, l'output sarà: "Ciao Gleam".
 
-```Gleam
-let nuovo_pi = replace("3.14", "3.14159", pi)
-println("Il nuovo valore di pi è $nuovo_pi.")
-```
+## Approfondimento
 
-L'output sarebbe il seguente:
+La funzione di ricerca e sostituzione del testo è stata uno dei primi strumenti fondamentali per la manipolazione delle stringhe nel mondo della programmazione. Se stai considerando altre alternative, potresti utilizzare espressioni regolari (Regex), specialmente quando si lavora con pattern più complessi. Tuttavia, in Gleam, la funzione string.replace è di gran lunga la più comoda e leggibile.
 
-```
-Il nuovo valore di pi è 3.14159.
-```
+## Per saperne di più:
 
-## Approfondimento:
-La ricerca e la sostituzione di testo è stata introdotta nel linguaggio di programmazione AWK negli anni '70 e da allora è diventata una funzionalità comune in molti linguaggi, tra cui Gleam. Alcune alternative alla ricerca e sostituzione di testo includono l'utilizzo di espressioni regolari e l'uso di editor di testo avanzati. 
+Permanipolare ulteriormente le stringhe in Gleam, guarda la documentazione ufficiale: https://gleam.run/documentation/main/libraries/main/gleam/string/
 
-Dal punto di vista dell'implementazione, la ricerca e la sostituzione di testo solitamente si basa sull'utilizzo di due algoritmi: il "pattern matching" e il "replace". Il primo cerca il testo specificato all'interno di un file, mentre il secondo lo sostituisce con il nuovo testo desiderato. Questi due algoritmi insieme permettono di eseguire una rapida e precisa ricerca e sostituzione di testo.
-
-## Vedi anche:
-- Documentazione di Gleam: https://gleam.run/documentation/
-- Tutorial di ricerca e sostituzione di testo in Gleam: https://gleam.run/tutorials/search-and-replace/
+Per maggiori informazioni sulle espressioni regolari (una possibile alternativa), consulta: https://www.regular-expressions.info/

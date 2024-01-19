@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http запиту"
-html_title:           "C: Надсилання http запиту"
-simple_title:         "Надсилання http запиту"
+title:                "Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,11 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що і Навіщо?
 
-Відправлення HTTP-запиту - це процес, за допомогою якого програміст запитує дані з іншого веб-сервера. Це необхідно для отримання актуальної інформації або виклику певної функціональності, яка недоступна на поточному сервері.
+Надсилання HTTP-запиту - це процес відправки запиту до веб-серверу для завантаження веб-сторінки чи отримання даних. Програмісти це роблять, коли їм потрібно взаємодіяти з веб-сервісами або API.
 
-## Як:
+## Як це робити:
+
+У фрагменті коду нижче наведено використання бібліотеки libcurl для надсилання HTTP-запиту.
 
 ```C
 #include <stdio.h>
@@ -24,53 +26,35 @@ int main(void)
 {
   CURL *curl;
   CURLcode res;
-  
-  // створення нового об'єкта CURL
+
   curl = curl_easy_init();
-  
   if(curl) {
-    // налаштування URL-адреси, на яку буде відправлений запит
-    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-    
-    // виконання запиту
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+
     res = curl_easy_perform(curl);
-    
-    // перевірка на помилки
+
     if(res != CURLE_OK)
-      fprintf(stderr, "curl error: %s\n", curl_easy_strerror(res));
-      
-    // закриття з'єднання
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+
     curl_easy_cleanup(curl);
   }
-  
   return 0;
 }
 ```
 
-Вивід:
+При виконанні цього коду, якщо все пройде успішно, відбудеться HTTP-запит до example.com.
 
-```
-<!doctype html>
-<html>
-<head>
-<title>Example Domain</title>
-<meta charset="utf-8" />
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style type="text/css">
-body {
-  background-color: #f0f0f2;
-...
+## Поглиблено
 
-```
+HTTP-запити використовуються з самого початку інтернету – вони є основою передачі даних через веб. Хоча є інші протоколи, такі як FTP і SMTP, HTTP домінує, коли мова йде про взаємодію з веб-сайтами і API.
 
-## Детальний розгляд:
+Є багато способів надсилати HTTP-запити в C. Наведений раніше код використовує libcurl, відому бібліотеку для взаємодії з URL. Але є і інші бібліотеки, наприклад, POCO і Boost.Asio.
 
-Відправлення HTTP-запиту стало необхідним з появою веб-серверів і їхньої загальної доступності для отримання та передачі даних. Протягом років з'явилося багато інструментів для взаємодії з веб-серверами, наприклад, бібліотеки libcurl, яку ми використовуємо у прикладі. Існують також інші альтернативи, такі як використання сокетів або спеціалізовані бібліотеки для роботи зі специфічними видами запитів, наприклад, REST або GraphQL. Отримання даних з інших серверів є важливою частиною веб-розробки, тому важливо мати розуміння процесу відправлення HTTP-запитів.
+Важливо розуміти, що libcurl використовує низькорівневі системні виклики для встановлення з'єднання, надсилання та отримання даних. Код вище тільки приховує цю складність.
 
-## Додаткові матеріали:
+## Див. також:
 
-- Офіційна документація бібліотеки libcurl: https://curl.haxx.se/libcurl/
-- Порівняння спеціалізованих бібліотек для роботи зі специфічними видами запитів: https://www.getpostman.com/docs/v6/postman/sending_api_requests/comparing_libraries
-- Далі про використання сокетів у C: https://www.geeksforgeeks.org/socket-programming-in-cc-handling-multiple-clients-on-server-without-multi-threading/
-- Основи REST та GraphQL: https://www.freecodecamp.org/news/rest-graphql-apis-explained/
+1. [Документацію libcurl](https://curl.haxx.se/libcurl/c/)
+2. [POCO бібліотека](https://pocoproject.org/)
+3. [Boost.Asio бібліотека](https://www.boost.org/doc/libs/1_66_0/doc/html/boost_asio.html)

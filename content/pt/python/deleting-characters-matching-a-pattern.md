@@ -1,6 +1,6 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Python: Excluindo caracteres que correspondem a um padrão"
+html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Python"
 category:             "Python"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Removendo Caracteres Que Correspondem a Um Padrão em Python
 
-Excluir caracteres que correspondem a um padrão é uma tarefa comumente realizada por programadores para limpar strings ou dados. Isso é particularmente útil ao lidar com entradas de usuário que podem conter caracteres desnecessários ou incorretos.
+## O que & Por quê?
+
+Apagar caracteres que correspondem a um padrão é um método comum para manipular strings em Python. Os programadores usam para limpar ou formatar dados, de acordo com uma condição definida.
 
 ## Como fazer:
 
-Para excluir caracteres correspondentes a um padrão em Python, podemos utilizar a função `re.sub()` do módulo `re`. Esta função aceita três argumentos: o padrão a ser buscado, o novo valor a ser substituído e a string na qual a substituição deve ser feita. Aqui está um exemplo de como usá-la para remover todos os números de uma string:
+Apagar caracteres de uma string pode ser feito em Python de várias maneiras. Aqui estão alguns exemplos.
 
-```python
+```Python
 import re
+  
+# Exemplo 1
+texto = "Olá, meu número de telefone é +1234567890."
+print(re.sub("[^0-9]", "", texto))  # Saída: 1234567890
 
-texto = "abc 123 xyz"
-novo_texto = re.sub(r'\d+', '', texto)
-print(novo_texto)
-
-# saída: abc xyz
+# Exemplo 2
+mensagem = "!Wow! Este é o melhor?!.código##."
+print(re.sub('[^A-Za-z0-9 ]+', '', mensagem))  # Saída: Wow Este é o melhor código
 ```
 
-## Profundando:
+O primeiro exemplo remove tudo que não é um número na string, enquanto o segundo remove qualquer caráter que não seja uma letra ou um número.
 
-Deletar caracteres correspondentes a um padrão tornou-se mais fácil graças ao uso de expressões regulares. Essas são sequências de caracteres que definem um padrão de busca de texto. Além da função `re.sub()`, também podemos usar a função `re.findall()` para encontrar todas as correspondências de um padrão em uma string. Outra alternativa seria utilizar o método `replace()` das strings, mas ele só permite substituir uma sequência fixa de caracteres e não suporta expressões regulares.
+## Mergulho Profundo
 
-Além disso, ao utilizar expressões regulares, podemos usar caracteres especiais como `*` e `+` para especificar se a correspondência deve ser encontrada uma ou várias vezes, respectivamente. Existem muitos recursos disponíveis no módulo `re` do Python para ajudar a criar padrões mais complexos e avançados.
+Este método de substituição de caracteres que correspondem a padrões específicos usa expressões regulares (regex), um recurso poderoso introduzido em linguagens de programação para manipular strings.
 
-## Veja também:
+Existem maneiras alternativas de realizar a mesma tarefa, por exemplo,.concatenação de strings ou compreensões de listas. Mas, ao usar regex, estamos condensando a complexidade do nosso código.
 
-- Documentação oficial do módulo `re`: https://docs.python.org/3/library/re.html
-- Tutorial sobre expressões regulares com Python: https://www.w3schools.com/python/python_regex.asp
+Na implementação acima, a função `sub()` do módulo regex é usada. Ela substitui todas as ocorrências de caracteres que correspondem ao padrão por uma nova string (neste caso, uma string vazia '').
+
+## Veja também 
+
+Para mais detalhes sobre regex, você pode consultar a documentação oficial em [Python Docs](https://docs.python.org/3/library/re.html) e um passo a passo de regex em português pode ser encontrado nesse link: [Tutorial Regex](https://pythonhelp.wordpress.com/2013/08/29/expressoes-regulares-em-python/).

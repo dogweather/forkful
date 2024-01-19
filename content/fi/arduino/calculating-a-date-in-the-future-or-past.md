@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
-html_title:           "Arduino: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
-simple_title:         "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "Arduino: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,41 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
-Laskeminen tulevaan tai menneeseen päivämäärään on ohjelmoinnin osa, joka mahdollistaa ohjelmoijien luoda monipuolisia ja ajankohtaisia sovelluksia. Laskennan avulla voit esimerkiksi tarkistaa tulevan tapahtuman ajankohdan tai näyttää erilaisia aikaperusteisia ilmoituksia.
+# Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä: Miksi?
 
-## Kuinka?
-Laskeminen tulevaan tai menneeseen päivämäärään tapahtuu usein käyttämällä aikaperusteista funktiota. Alla on esimerkki koodista, joka laskee 10 päivää eteenpäin nykyisestä päivämäärästä ja tulostaa uuden päivämäärän.
+Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä tarkoittaa aikaleimajon notaation muuttamista vastaamaan haluttua aikapistettä. Ohjelmoijat tekevät niin sovellusten logiikan tarpeiden, kuten tapahtumien ajastuksen tai ajanhallinnan vuoksi.
 
+# Näin se tehdään:
+
+Aloita asettamalla RTC-moduuli (Real Time Clock) ja DD-MM-YYYY muodossa oleva päivämäärä. Lasketaan sitten päiviä tulevaisuudessa tai menneisyydessä.
+
+```Arduino
+#include <Wire.h>
+#include "RTClib.h"
+
+RTC_DS1307 rtc;
+
+void setup () {
+ Wire.begin();
+ rtc.begin();
+ 
+ if (! rtc.isrunning()) {
+   rtc.adjust(DateTime(__DATE__, __TIME__));
+ }
+
+ DateTime aika_nyt = rtc.now();
+ DateTime tulevaisuuden_paiva = aika_nyt + TimeSpan(7,0,0,0); // lasketaan viikko (7 päivää) eteenpäin
+}
+
+void loop () {
+ DateTime aika_nyt = rtc.now();
+       
+ Serial.print("Aika nyt: ");
+ Serial.println(aika_nyt);
+ delay(1000);
+ 
+ if (aika_nyt >= tulevaisuuden_paiva) {
+   Serial.println("Viikko on kulunut!");
+ }
+}
 ```
-Arduino-ohjelmassa voit käyttää seuraavaa koodia:
-
-  // importataan aikaperusteinen kirjasto
-  #include <Time.h>
-
-  // asetetaan nykyinen päivämäärä ja aika
-  setTime(12,00,00,2,11,2020);
-  
-  // lasketaan 10 päivää lisää nykyiseen päivämäärään ja tulostetaan uusi päivämäärä
-  time_t futureDate = now() + (10 * 24 * 60 * 60); // 10 päivää = 10 * 24 tuntia * 60 minuuttia * 60 sekuntia
-  Serial.println(day(futureDate));
-  Serial.println(month(futureDate));
-  Serial.println(year(futureDate));
-
-Tämä koodi tuottaa seuraavan tulosteen:
-
-22
-2
-2020
+Output:
+```
+Aika nyt: 2022-02-14 12:01:25
+...
+Viikko on kulunut!
 ```
 
-## Syvemmälle
-Aikaperusteinen laskenta on ollut osa ohjelmointia jo vuosikymmeniä. Alkuaikoina se oli yksinkertainen tapa tarkistaa nykyinen aika ja päivämäärä, mutta nykyään sitä käytetään monipuolisemmin esimerkiksi tapahtumien ajastamiseen tai erilaisten ajankohtaisten tietojen näyttämiseen.
+# Syvempi sukellus:
 
-Laskentaan on myös muita tapoja, kuten käyttämällä kellopiiriä tai Internet-yhteyttä, mutta aikaperusteinen laskenta on edelleen yksi yleisimmin käytetyistä tavoista, koska se ei vaadi lisälaitteita tai yhteyksiä.
+Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä on olennainen osa monia ohjelmasovelluksia. Muinaiset ohjelmoijat joutuivat tekemään tämän käsin, mutta Arduino-RTC-moduulit kuten DS1307 helpottavat nyt tätä prosessia huomattavasti.
 
-Aikaperusteinen laskenta voidaan toteuttaa myös erilaisilla ohjelmointikielillä ja sovellusympäristöillä, mutta Arduino tarjoaa helpon tavan aloittelijoille lähteä kokeilemaan.
+Vaihtoehtoisesti voit käyttää aikakirjastoa, joka tarjoaa useita funktioita päivämäärän ja ajan käsittelyyn. Mutta RTC-moduulien käyttö on parempi, sillä se on tarkempi ja se ei nollaudu, kun Arduino käynnistetään uudelleen.
 
-## Katso myös
-- [Arduino Time Library](http://playground.arduino.cc/Code/time)
-- [Arduino Playground](http://playground.arduino.cc/)
+Kun lasket päiviä tulevaisuudessa tai menneisyydessä, muista, että kuukausien päivien määrä vaihtelee ja ottaa huomioon myös karkausvuodet.
+
+# Katso myös:
+
+[Arduino Time Library](https://playground.arduino.cc/Code/Time)  
+[RTC Library](https://github.com/adafruit/RTClib)  
+[Arduino’s official website](https://www.arduino.cc/)

@@ -1,6 +1,6 @@
 ---
 title:                "Ottenere la data corrente"
-html_title:           "Fish Shell: Ottenere la data corrente"
+html_title:           "Java: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,60 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
+## Che cos'è & Perché?
 
-Ottenere la data corrente è un'operazione comune tra i programmatori. In sostanza, si tratta di recuperare la data attuale nel formato desiderato per utilizzarla in un programma o script. 
+Ottenere la data corrente significa accedere al giorno, mese e anno correnti del sistema. I programmatori lo fanno per tracciare eventi, registrare timestamp o schedulare attività.
 
-I programmatori spesso utilizzano la data corrente per una varietà di scopi, come ad esempio per tenere traccia del tempo di esecuzione di uno script o per etichettare i file con la data di creazione. Con Fish Shell, è possibile ottenere la data corrente in modo rapido e semplice. Vediamo come.
+## Come fare:
 
-## Come:
-
-```Fish Shell
-$ date
-gio 29 lug 2021 20:53:32 CEST
-```
-
-Il comando da utilizzare per ottenere la data corrente in Fish Shell è semplicemente `date`. Questo restituirà la data attuale nel formato di default, che potrebbe variare a seconda della configurazione del tuo sistema.
-
-Per ottenere la data nel formato specifico che desideri, puoi utilizzare le opzioni del comando `date`. Ad esempio, se vuoi ottenere la data in formato ISO 8601 (AAAAMMGG), puoi utilizzare il parametro `-I` come segue: 
+Ecco un esempio di come ottenere la data corrente in Fish Shell:
 
 ```Fish Shell
-$ date -I
-20210729
+date
 ```
 
-Se vuoi aggiungere anche l'ora al formato ISO, puoi utilizzare il parametro `-I seconds`: 
+Questo vi mostrerà un output simile a:
 
 ```Fish Shell
-$ date -I seconds
-20210729T205332+0200
+Tue Sep 21 14:19:18 CEST 2021
 ```
 
-Per ulteriori opzioni disponibili con il comando `date`, puoi consultare la sua pagina di manuale utilizzando il comando `man date`.
-
-## Deep Dive:
-
-Il comando `date` è una utility di sistema comune utilizzata per visualizzare o impostare la data e l'ora del sistema. È presente in molti sistemi operativi, tra cui Linux, macOS e altri sistemi Unix-like.
-
-Nella maggior parte dei sistemi, `date` utilizza l'orologio di sistema (RTC - Real Time Clock) per ottenere la data e l'ora correnti. Questo significa che se la data o l'ora sono configurate in modo errato nel sistema, il comando `date` restituirà valori errati.
-
-Oltre al comando `date`, ci sono anche altri modi per ottenere la data corrente in Fish Shell. Ad esempio, puoi utilizzare la variabile d'ambiente `__fish_date` per ottenere la data nel formato `%Y%m%d` (anno, mese, giorno):
+Per ottenere solo la data, senza orario, potete usare:
 
 ```Fish Shell
-$ echo $__fish_date
-20210729
+date '+%d-%m-%Y'
 ```
 
-Oppure, puoi utilizzare il comando `strftime`, che formatta una data e un'ora specificata in base a una stringa di formato. Ad esempio, per ottenere la data corrente nel formato `%Y-%m-%d` (anno-mese-giorno), puoi utilizzare il seguente comando:
+Esempio di output:
 
 ```Fish Shell
-$ strftime '%Y-%m-%d' now
-2021-07-29
+21-09-2021
 ```
 
-## See Also:
+## Approfondimento:
 
-- [Documentazione ufficiale Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Pagina di manuale del comando date](https://fishshell.com/docs/current/cmds/date.html)
-- [Info su come utilizzare le variabili d'ambiente in Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_set) 
-- [Pagina di manuale del comando strftime](https://fishshell.com/docs/current/cmds/strftime.html)
+Nel contesto storico, i primi sistemi informatici non avevano un modo integrato per ottenere la data corrente. Questo era spesso fatto manualmente o con script personalizzati.
+
+In quanto alla Fish shell, questo è implementato usando internal commands, non esterne, per garantire che funzioni su qualsiasi sistema, non solo su quelli che hanno certi programmi installati.
+
+Alcune alternative potrebbero includere il comando `printf` con il formato `%T` per ottenere solo l'orario, o il comando `date +%s` per ottenere la data in formato Unix epoch.
+
+## Vedi anche:
+
+Per informazioni più dettagliate, visitate:
+
+- Documentazione ufficiale di Fish Shell: [fishshell.com/docs/current](https://fishshell.com/docs/current/)
+- Tutorial su date e time in Unix: [tutorialspoint.com/unix/unix-date-time.htm](https://www.tutorialspoint.com/unix/unix-date-time.htm)
+- Guida agli Shell Scripts in Linux: [linuxconfig.org/bash-scripting-tutorial-for-beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)

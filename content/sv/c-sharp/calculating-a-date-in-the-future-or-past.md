@@ -1,7 +1,7 @@
 ---
-title:                "Beräkna ett datum i framtiden eller det förflutna"
-html_title:           "C#: Beräkna ett datum i framtiden eller det förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller det förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "C#: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -11,32 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att beräkna ett datum i framtiden eller förflutet innebär att hitta ett datum som är före eller efter ett givet datum med ett visst antal dagar, månader eller år. Exempel på detta kan vara att planera ett möte eller födelsedag eller att skapa ett schema för en period framåt. Det är vanligtvis en funktion som programmerare behöver använda för att göra program mer dynamiska och anpassningsbara.
 
-## Hur man gör:
-Det finns flera sätt att beräkna ett datum i framtiden eller förflutet i C#. Här är några olika metoder för att hjälpa dig komma igång:
+Att beräkna ett datum i framtiden eller förflutna innebär att lägga till eller dra från ett specifikt tal av dagar, månader eller år från ett existerande datum. Det blir ofta tillämpat inom kodning för att manipulera data eller relevanta tidslinjer.
 
-### Metod 1: Använda DateTime.Add metoden
+## Så här gör du:
+
+Här är en exempel på hur detta skulle kunna genomföras i C#:
+
 ```C#
-DateTime start = new DateTime(2021, 12, 31);
-DateTime result = start.AddYears(5).AddMonths(3).AddDays(10);
-Console.WriteLine(result); // Output: 2027-04-10
+//Vi använder DateTime biblioteket
+using System;
+
+namespace Date_Time_Manipulation
+{
+    class Program
+    {
+        static void Main()
+        {
+            // Hämtar dagens datum
+            DateTime today = DateTime.Now;
+            // Skriver ut dagens datum
+            Console.WriteLine("Idag är det: " + today.ToString());
+ 
+            // Beräknar datumet för en vecka från idag
+            DateTime NextWeek = today.AddDays(7);
+            Console.WriteLine("Datumet för en vecka från idag är: " + NextWeek.ToString());
+        }
+    }
+}
 ```
-I det här exemplet har vi först skapat ett DateTime-objekt med startdatumet 2021-12-31. Sedan använder vi AddYears, AddMonths och AddDays metoder för att lägga till 5 år, 3 månader och 10 dagar till vårt startdatum. Resultatet blir 2027-04-10.
 
-### Metod 2: Använda DateTime.AddDays metoden
-```C#
-DateTime start = new DateTime(2021, 12, 31);
-DateTime result = start.AddDays(50);
-Console.WriteLine(result); // Output: 2021-12-31
+Efter att du kört programmet får du ut följande output:
+
 ```
-I det här exemplet använder vi bara AddDays metoden för att lägga till 50 dagar till vårt startdatum. Eftersom 2021 inte är ett skottår är det ingen skillnad mellan det ursprungliga datumet och det nya datumet.
+Idag är det: 2022-03-30 12:43:08
+Datumet för en vecka från idag är: 2022-04-06 12:43:08
+```
+ 
+## Djupdykning:
 
-## Djupdyka:
-Det finns flera andra sätt att beräkna datum i framtiden eller förflutet i C#, som att använda DateTime.Subtract metoden eller DateTime constructor med år, månad och dag argument. Det kan också vara användbart att arbeta med DateTimeOffest-objekt, speciellt om du behöver ta hänsyn till tidszoner.
+(1) Historiskt så skapades DateTime-objektet i C# för att hantera data och tid. Den har blivit ett viktigt verktyg för att till exempel beräkna tidsskillnader och att boka scheman.
 
-När man beräknar datum är det också viktigt att hålla koll på skottår, speciellt om man arbetar med stora tidsperioder. Det kan också vara användbart att konvertera resultatet till det lokala datumformatet med DateTime.ToString metoden.
+(2) Det finns olika alternativ för att beräkna ett datum i framtiden eller förflutit. Ett sätt att göra det är att använda DateTime och dess metoder, som vi gjorde i exemplet ovan, men det finns också alternativ som NodaTime-biblioteket.
 
-## Se även:
-- Microsoft dokumentation för DateTime.Add metoden: https://docs.microsoft.com/en-us/dotnet/api/system.datetime.add?view=net-5.0
-- Tutorialspoint tutorial om datumberäkningar i C#: https://www.tutorialspoint.com/getting-different-types-of-dates-in-csharp-programming
+(3) För att implementera DateTime i din kod behöver du förstå vilka metoder som finns tillgängliga för dig. De mest använda är AddDays, AddMonths och AddYears. Men det finns också mer specifika metoder som AddHours, AddMinutes och AddSeconds. 
+
+## Se också:
+
+- Microsofts officiella dokumentation på DateTime: 
+  [https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+  
+- NodaTime-biblioteket för mer avancerade datum- och tidshantering:
+  [https://nodatime.org/](https://nodatime.org/)  
+
+Kom ihåg, oavsett vilket verktyg eller metoden du väljer, är det viktigaste att det passar dina behov och din kodningsstil.

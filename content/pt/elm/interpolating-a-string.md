@@ -1,6 +1,6 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Elm: Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
 simple_title:         "Interpolando uma string"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,24 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
-A interpolação de string é uma técnica usada pelos programadores para criar mensagens personalizadas a partir de uma string base combinada com variáveis ou outros valores. Isso permite que as mensagens sejam dinâmicas e se adaptem a diferentes contextos e entradas. É uma ferramenta útil para tornar as aplicações mais interativas e agradáveis aos usuários.
+## O que é e Por quê?
+Interpolação de string é uma maneira de incluir valores de variáveis dentro de uma string. Programadores o fazem para tornar o código mais legível e para formatar saída de dados.
 
 ## Como fazer:
-Veja abaixo como realizar a interpolação de string em Elm:
+Elm não tem suporte nativo para a interpolação de strings, mas pode ser feita facilmente com a concatenação de strings, usando o operador `(++)`. Veja isso:
 
 ```Elm
 nome = "João"
-mensagem = "Olá, {nome}! Bem-vindo ao meu site."
+mensagem = "Olá, " ++ nome
+
+-- Saída: "Olá, João"
 ```
 
-Neste exemplo, a variável "nome" é inserida na string usando um par de colchetes e o nome da variável dentro deles. A saída esperada será: "Olá, João! Bem-vindo ao meu site."
+A alternativa é usar a função `String.concat` que aceita uma lista de strings:
 
-## Profundidade:
-A interpolação de string é uma técnica comum em muitas linguagens de programação modernas, como JavaScript e Python. Também é chamada de "formatação de string" em alguns lugares. Uma alternativa para a interpolação de string é o método "concatenação de string", onde valores e strings são combinados usando o operador "+".
+```Elm
+parte1 = "Olá, "
+parte2 = "João"
+mensagem = String.concat [parte1, parte2]
 
-A implementação da interpolação de string em Elm é feita usando o operador "|" e a função "format". A expressão "formato" contém a string base e uma lista de valores a serem inseridos. Para mais informações sobre a sintaxe e possíveis opções de formatação, consulte a documentação oficial.
+-- Saída: "Olá, João"
+```
 
-## Veja também:
-- Documentação oficial Elm sobre interpolação de string:
-https://guide.elm-lang.org/interop/string.html
+## Mergulho Profundo
+Históricamente, Elm prioriza a acessibilidade do código e a segurança em relação à simplificação sintática, é por isso que disge a interpolação de strings. Em termos de alternativas, nas versões anteriores de Elm, usavam-se bibliotecas de terceiros que forneciam funcionalidades de formatação de string. No entanto, com o tempo, as atualizações do Elm desencorajaram esse método em favor da concatenação de string.
+
+Em termos de implementação, as duas maneiras de "interpolating" uma string em Elm - usando a concatenação ou `String.concat` - têm eficiências quase idênticas. O primeiro é mais simples de usar para strings curtas e o último é mais adequado para listas grandes de strings.
+
+## Veja Também
+Para mais discussões e melhores práticas com strings em Elm, consulte os seguintes links:
+
+1. Documentação oficial do Elm para strings: https://package.elm-lang.org/packages/elm/core/1.0.5/String
+2. Discussão no Reddit sobre interpolação de strings em Elm: https://www.reddit.com/r/elm/comments/4l6vma/string_interpolation_in_elm/
+3. Postagem de blog detalhada sobre a manipulação de strings em Elm: https://elmprogramming.com/strings.html

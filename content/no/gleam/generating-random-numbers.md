@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "Gleam: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Generere tilfeldige tall"
+html_title:           "Arduino: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -12,28 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Generering av tilfeldige tall er en vanlig oppgave for programmerere, og med god grunn. Tilfeldige tall brukes ofte for å legge til variasjon og utfordring i spill, simuleringer, og andre programmer. Det kan også være nyttig i sikkerhetstesting og kryptografiske applikasjoner.
+Generering av tilfeldige tall er prosessen med å produsere en sekvens av tall som ikke har noe mønster eller forutsigbarhet. Programmerere gjør det for å simulere ikke-deterministiske hendelser i systemer, bedre data sikkerhet osv.
 
 ## Hvordan:
 
-Å generere tilfeldige tall i Gleam er enkelt med det innebygde Random biblioteket. Her er et eksempel på å generere et tilfeldig tall mellom 1 og 10:
+Her er en måte du kan generere tilfeldige tall på i Gleam:
 
 ```Gleam
-import gleam/random
+import gleam/otp/random.{int, float}
 
-random.int(1, 10)
+fn demo_random_numbers() {
+  let _ = int(1, 100)   // Gir deg et tilfeldig tall mellom 1 og 100
+  let _ = float()       // Gir deg et tilfeldig flyttall mellom 0.0 og 1.0
+}
 ```
+Eksempel utdata kan være noe slik:
 
-Dette vil resultere i et tilfeldig tall hver gang programmet kjøres, for eksempel: 8.
-
-For å generere et tilfeldig desimaltall mellom 0 og 1, kan du bruke funksjonen `random.float()`.
+```Gleam
+demo_random_numbers() => 42, 0.8159627499788994
+```
+Husk, resultatene vil variere hver gang du kjører funksjonen, det er et poeng med tilfeldighet!
 
 ## Dypdykk:
 
-I programmering er det viktig å kunne generere tilfeldige tall pålitelig og effektivt. Tidligere ble pseudorandom tallgeneratorer (PRNGs) brukt til dette formålet, men de hadde en tendens til å følge forutsigbare mønstre og kunne ikke anses som helt tilfeldige. I dag brukes mer sofistikerte metoder som tilfeldige tallgeneratorer (TRNGs) som bruker faktorer som atmosfærisk støy eller subatomære partiklers bevegelse for å generere tilfeldighet.
+Historisk sett har generering av tilfeldige tall vært en kritisk del av mange datamaskinprogrammer, fra spill til sikkerhetssystemer. Alternativene inkluderer andre tilfeldige tallgeneratorer som pseudorandom nummergeneratorer (PRNGs), eller høynivå biblioteker som `random`.
 
-Et alternativ til å bruke det innebygde Random biblioteket er å bruke en ekstern tjeneste som genererer tilfeldige tall. Dette kan være nyttig hvis du trenger å generere ekstremt store eller komplekse tilfeldige tall. Imidlertid bør du være forsiktig med å stole på eksterne tjenester for sikkerhetskritiske formål, da det kan føre til sårbarheter i koden din.
+Detaljer om Gleams implementering er ganske rett frem. Gleam bruker OTP's standard `:rand.uniform/0` og `:rand.uniform/1` funksjonene for å generere tilfeldige flyttall og hele tall.
 
-## Se også:
+## Se Også:
 
-For mer informasjon om hvordan du kan bruke Random biblioteket i Gleam, kan du sjekke ut dokumentasjonen på [Gleam sin nettside](https://gleam.run/libraries/random/0.14.0/). Du kan også utforske andre funksjoner og metoder som tilbys i Random biblioteket for å generere tilfeldige tekststrenger eller tilfeldige datoer og tider.
+For mer informasjon om Gleam og generering av tilfeldige tall, se på disse kildene:
+
+- Gleam's offisielle dokumentasjon: https://hexdocs.pm/gleam_stdlib/gleam/otp/random/
+- Elixir's `:rand` modul: https://hexdocs.pm/elixir/1.12/Kernel.html#functions
+- Mer om tilfeldige tallgeneratorer: https://en.wikipedia.org/wiki/Random_number_generation

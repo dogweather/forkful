@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di sottostringhe"
-html_title:           "PowerShell: Estrazione di sottostringhe"
-simple_title:         "Estrazione di sottostringhe"
+title:                "Estrazione di sottosequenze"
+html_title:           "Arduino: Estrazione di sottosequenze"
+simple_title:         "Estrazione di sottosequenze"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,37 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cos'è e perché?
+L'estrazione di sottostringhe è l'atto di selezionare e recuperare uno specifico set di caratteri all'interno di una stringa più grande. I programmatori la usano per manipolare e analizzare dati basati su testi - indispensabile in molti scenari di lavoro.
 
-Estrazione di sottostringhe è il processo di ottenere una porzione specifica di una stringa più grande. I programmatori spesso usano questa tecnica per manipolare e gestire grandi quantità di dati in modo più efficiente.
-
-## Come fare:
-
-```PowerShell
-$stringa = 'Questo è un esempio di una stringa'
-$stringa.Substring(0, 6)
-```
-
-Output: "Questo è"
+## Come si fa:
+Ecco un rapido esempio su come estraiamo le sottostringhe in PowerShell:
 
 ```PowerShell
-$stringa.Split(' ')[0]
+$testoCompleto = "Ciao, questo è un esempio di PowerShell"
+$sottostringa = $testoCompleto.Substring(6,7)
+Write-Output $sottostringa
 ```
-
-Output: "Questo"
-
+Quando lo eseguisci, riceverai il seguente output:
 ```PowerShell
-$stringa -split ' ' | Select-Object -First 3
+questo 
 ```
+Hai semplicemente estratto e stampato la sottostringa!
 
-Output: "Questo", "è", "un"
+## Approfondimento
+Nel contesto storico, l'estrazione di sottostringhe è una funzione chiave del linguaggio di scripting fin dall'inizio di bash e perl. 
 
-## Approfondimento:
+Per quanto riguarda le alternative, affrontiamo le espressioni regolari. Rappresentano uno strumento potente per analizzare ed estrarre dati da stringhe, anche se possono essere troppo complicati per compiti semplici.
 
-L'esigenza di estrarre sottostringhe è nata con l'avvento dei primi linguaggi di programmazione, in cui non era possibile manipolare singoli caratteri o porzioni di stringhe. Oggi esistono diverse alternative come l'utilizzo di espressioni regolari o la funzione "Substring" disponibile in molti linguaggi di programmazione.
+Per quanto riguarda l'implementazione, la funzione `Substring` inizia a contare dall'indice 0. Quindi, `Substring(6,7)` inizia al 6° carattere e estrae i successivi 7 caratteri.
 
-L'implementazione di questa tecnica dipende dal linguaggio utilizzato ma la logica di base è sempre la stessa: specificare l'indice di inizio e la lunghezza della sottostringa desiderata. In PowerShell, si può anche utilizzare il metodo "Split" per dividere una stringa in un array di sottostringhe in base a un separatore specificato.
-
-## Vedi anche:
-
-Per maggiori informazioni sull'estrazione di sottostringhe, consulta gli articoli di [Microsoft Docs](https://docs.microsoft.com/it-it/powershell/scripting/getting-started/fundamental/working-with-strings?view=powershell-7.1) e [GeeksforGeeks](https://www.geeksforgeeks.org/powershell-split-strings-into-an-array/).
+## Guarda anche
+Per saperne di più sulla gestione delle stringhe in PowerShell, dai un'occhiata a questi link: 
+- [Microsoft Official Documentation on Substrings](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
+- [Understanding PowerShell Substring Method](https://www.tutorialsteacher.com/articles/understanding-powershell-substring-method)

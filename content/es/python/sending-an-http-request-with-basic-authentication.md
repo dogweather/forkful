@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Python: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Python"
 category:             "Python"
@@ -10,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-
-Enviar una solicitud HTTP con autenticación básica es una forma de enviar información a un servidor web de manera segura. Los programadores hacen esto para proteger la información confidencial que se envía a través de la red y garantizar que solo el usuario autorizado pueda acceder a ella.
+## ¿Qué & Por Qué?
+El envío de una solicitud HTTP con autenticación básica se refiere a la transmisión segura de sus credenciales (nombre de usuario y contraseña) a un servidor en la red. Los programadores suelen hacerlo para establecer una conexión segura y proteger la privacidad del usuario mientras interactúa con aplicaciones en la web.
 
 ## Cómo hacerlo:
+Para enviar una solicitud HTTP con autenticación básica en Python, usaremos la biblioteca `requests`. Aquí hay un ejemplo:
 
-El siguiente código en Python muestra cómo enviar una solicitud HTTP con autenticación básica:
-
-```python
+```Python
 import requests
+from requests.auth import HTTPBasicAuth
 
-# Definir nombre de usuario y contraseña
-username = "mi_nombre_de_usuario"
-password = "mi_contraseña"
+respuesta = requests.get('https://miweb.com', auth=HTTPBasicAuth('usuario', 'contraseña'))
 
-# URL del servidor web que se desea acceder
-url = "https://mi_servidor_web.com"
-
-# Enviar la solicitud HTTP con autenticación básica
-r = requests.get(url, auth=(username, password))
-
-# Imprimir el texto de la respuesta
-print(r.text)
+print(respuesta.status_code)
 ```
+El código anterior realiza una solicitud GET a 'miweb.com' utilizando autenticación básica. 'usuario' y 'contraseña' son tus credenciales. Este script imprime el código de estado de la respuesta HTTP.
 
-El resultado de este código será el contenido de la página web a la que se accede, siempre y cuando las credenciales proporcionadas sean correctas.
+## Buceo profundo:
+El protocolo HTTP y la autenticación básica han sido estándares de la industria desde los primeros días de la web. Aunque efectiva y fácil de implementar, la autenticación básica transfiere las contraseñas en texto sin encriptar, lo que puede ser un riesgo para la seguridad en entornos no seguros.
 
-## Profundizando:
+Alternativas a la autenticación básica pueden incluir OAuth, Token JWT (JSON Web Tokens) o autenticación de digest, todos ofreciendo sus propias ventajas en términos de seguridad y flexibilidad.
 
-- **Contexto histórico:** La autenticación básica es una de las primeras formas de autenticación utilizadas en Internet. Fue introducida en la versión 1.0 del protocolo HTTP en 1996 y sigue siendo ampliamente utilizada en la actualidad.
-- **Alternativas:** Aunque la autenticación básica sigue siendo una forma efectiva de proteger información en una solicitud HTTP, existen otras opciones más seguras como la autenticación digest y la autenticación OAuth.
-- **Detalles de implementación:** La autenticación básica utiliza el encabezado `Authorization` en la solicitud HTTP para enviar el nombre de usuario y la contraseña codificados en formato Base64. Sin embargo, es importante destacar que este método no encripta los datos, lo cual puede ser un riesgo si se envía información sensible.
+Cuando utilizas la autenticación básica en Python, la biblioteca `requests` codifica automáticamente tus credenciales en base64 antes de enviarlas en el encabezado HTTP. Sin embargo, considera siempre usar conexiones HTTPS en lugar de HTTP para asegurar que tus credenciales sean encriptadas durante la transmisión.
 
 ## Ver también:
-
-- [Documentación oficial de Python para el módulo `requests`](https://docs.python-requests.org/en/latest/)
-- [Más información sobre autenticación básica en HTTP](https://www.freeformatter.com/http-authentication.html)
+1. Documentation oficial de Python para la biblioteca `requests`: https://docs.python-requests.org/en/master/
+2. Autenticación básica en la documentación de Mozilla: https://developer.mozilla.org/es/docs/Web/HTTP/Authentication#autenticación_básica
+3. Tutorial de autenticación con Python y HTTP: https://realpython.com/python-basic-authentication/

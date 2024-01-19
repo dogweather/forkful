@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando una cadena"
-html_title:           "Arduino: Interpolando una cadena"
-simple_title:         "Interpolando una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,22 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Interpolar una cadena de caracteres es una técnica común en programación donde se insertan variables o valores numéricos en una cadena de caracteres. Esto permite que el texto sea más dinámico y adaptativo a diferentes situaciones. Los programadores lo hacen para facilitar la escritura de código y para crear cadenas de caracteres más expresivas y fáciles de leer.
+## ¿Qué y Por Qué?
 
-## Cómo:
+La interpolación de cadenas permite incorporar variables dentro de una cadena de texto. Los programadores lo hacen para agilizar la concatenación de cadenas y hacer el código más fácil de leer.
+
+## Cómo hacerlo:
+
+El siguiente ejemplo muestra cómo se utiliza la interpolación de cadenas en Arduino.
+
+```Arduino
+String nombre = "Juan";
+String saludo = "Hola, " + nombre;
+Serial.println(saludo);  // El resultado será: Hola, Juan
 ```
-Arduino.println("¡Hola, mi nombre es ${nombre} y tengo ${edad} años!");
+
+En este caso, hemos usado la operación '+' para concatenar la cadena "Hola, " con el valor de la variable 'nombre'.
+
+## Análisis Profundo:
+
+(1) Contexto Histórico: Antes de la escalada de los lenguajes de programación modernos, la concatenación de cadenas era una tarea manual y tediosa para los programadores. La interpolación de cadenas surgió como una solución para simplificar esta tarea.
+
+(2) Alternativas: En lugar de la interpolación de cadenas, también puede usar la función sprintf(). Sin embargo, el uso de la interpolación puede proporcionar un código más limpio y legible.
+
+```Arduino
+char nombre[] = "Juan";
+char saludo[20];
+sprintf(saludo, "Hola, %s", nombre);
+Serial.println(saludo); // El resultado será: Hola, Juan
 ```
 
-En este ejemplo, la cadena de caracteres "¡Hola, mi nombre es" y "y tengo años!" permanecen igual, mientras que las variables `${nombre}` y `${edad}` se reemplazan con los valores que tengan asignados en el código. Así, si la variable `nombre` tiene el valor de "Juan" y la variable `edad` tiene el valor de "20", el resultado será "¡Hola, mi nombre es Juan y tengo 20 años!".
-
-## Inmersión Profunda:
-Interpolar cadenas de caracteres se ha vuelto una técnica muy popular en los últimos años debido a su eficacia y facilidad de uso. Algunos otros métodos alternativos incluyen el uso de concatenación de cadenas de caracteres y formateo de cadenas de caracteres. Sin embargo, interpolar una cadena de caracteres es más eficiente y ofrece una sintaxis más elegante.
-
-En la implementación de Arduino, el símbolo `$` se utiliza para indicar que se va a interpolar una variable o valor en una cadena de caracteres. Además, dentro de la cadena de caracteres, se deben utilizar las llaves `{}` para delimitar la variable o valor que se desea interpolar.
+(3) Detalles de Implementación: La configuración de la memoria puede ser crucial cuando se trabaja con la concatenación de cadenas en Arduino. La concatenación de cadenas puede aumentar la utilización de la memoria si se maneja de manera inapropiada.
 
 ## Ver También:
-- Tutorial de interpolación de cadenas de caracteres en Arduino: https://www.instructables.com/id/Arduino-Tutorial-Interpolation-in-Strings/
-- Documentación oficial de Arduino sobre interpolar cadenas de caracteres: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/interp/
-- Artículo sobre cómo mejorar la legibilidad del código con la interpolación de cadenas de caracteres: https://medium.com/@csell5/interpolating-strings-to-improve-readability-ebf3c21b68e6
+
+Para más detalles sobre la concatenación de cadenas y la interpolación, puede visitar los siguientes enlaces:
+
+1. [Documentación Oficial de Arduino - StringAdditionOperator](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/addition/)
+2. [Tutoría de Arduino – Cadenas de carácteres](https://www.programoergosum.com/cursos-online/arduino-para-jovenes-y-no-tan-jovenes/1637-cadenas-de-caracteres-string-const-char-caracteres-ascii-arduino)
+3. [Stackoverflow - ¿Cómo concatenar múltiples cadenas de caracteres en Arduino?](https://es.stackoverflow.com/questions/126571/c%C3%B3mo-concatenar-m%C3%BAltiples-cadenas-de-caracteres-en-arduino)

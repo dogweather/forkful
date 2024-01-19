@@ -1,6 +1,6 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "C++: 현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "C++"
 category:             "C++"
@@ -10,46 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 현재 날짜를 얻는 방법과 그 이유
+## 무엇, 왜요?
 
-## 무엇인가요?
-현재 날짜를 얻는 것이란, 시스템이나 프로그램이 현재 날짜를 알아내는 것을 말합니다. 프로그래머들은 이 기능을 사용하여 시간 관련 기능을 구현하거나, 로그를 기록하거나, 파일을 만들 때 날짜 정보를 포함시킬 수 있습니다.
+현재 날짜를 가져오기란, 컴퓨터의 시스템 클럭에서 현재 날짜를 읽는 것입니다. 프로그래머들은 파일들의 타임스탬프를 생성하거나, 시간의 흐름을 표현하기 위해 이를 많이 활용합니다.
 
-## 왜 하나요?
-현재 날짜는 프로그램이나 시스템이 언제 작동했는지를 알 수 있는 중요한 정보입니다. 또한 시간 관련 기능을 구현하기 위해 필수적인 요소입니다. 예를 들어, 사용자가 게시물을 작성한 시간을 표시하거나, 파일 이름에 날짜 정보를 포함시켜 다른 파일과 구분할 수 있습니다.
+## 어떻게?
 
-## 방법:
+다음은 C++에서 현재 날짜를 얻는 방법입니다.
+
 ```C++
 #include <iostream>
 #include <ctime>
+ 
+int main()
+{
+    time_t now = time(0);
+  
+    tm *ltm = localtime(&now);
+  
+    std::cout << "Year: "<< 1900 + ltm->tm_year << std::endl;
+    std::cout << "Month: "<< 1 + ltm->tm_mon << std::endl;
+    std::cout << "Day: "<< ltm->tm_mday << std::endl;
 
-using namespace std;
-
-int main() {
-  // 현재 시간을 받아오는 코드
-  time_t now = time(0);
-
-  // time_t 변수에서 현재 날짜 정보를 얻는 코드
-  char* date = ctime(&now);
-
-  // 출력
-  cout << "현재 날짜: " << date << endl;
-
-  return 0;
+    return 0;
 }
 ```
-위의 코드는 현재 날짜를 출력하는 간단한 예제입니다. <code>ctime</code> 함수를 사용하여 <code>time_t</code> 변수에서 날짜 정보를 얻어오고, <code>cout</code> 함수를 사용하여 출력합니다.
 
-## 더 알아보기:
-### 역사적인 배경:
-현재 날짜를 얻는 기능은 시스템에 따라 다르게 구현될 수 있습니다. 예전에는 시스템의 내부 시계를 사용해 현재 날짜를 알아내는 방식이었지만, 이제는 인터넷을 통해 정확한 현재 날짜를 서버에서 받아오기도 합니다.
+이 프로그램을 실행하면 현재 날짜가 출력됩니다. 예를 들어,
 
-### 대안:
-<code>#include <ctime></code> 라이브러리 대신 <code>#include <chrono></code> 라이브러리를 사용하여 현재 날짜를 얻을 수도 있습니다. <code>std::chrono::system_clock::now()</code> 함수를 사용하는 방법이 있습니다.
+```C++
+Year: 2022
+Month: 10
+Day: 16
+```
 
-### 구현 상세:
-<code>time_t</code>는 1970년 1월 1일부터 현재까지의 초 단위를 저장하는 데이터 형식입니다. 따라서 <code>time_t</code> 변수에서 날짜 정보를 얻으려면 초 단위를 일 단위로 변환해주어야 합니다. <code>ctime</code> 함수는 <code>time_t</code> 변수를 파라미터로 받아서 문자열 형태의 날짜 정보를 리턴해줍니다.
+## 깊게 알아보기
 
-## 참고 자료:
-- [ctime 라이브러리 문서](https://www.cplusplus.com/reference/ctime/)
-- [chrono 라이브러리 문서](https://www.cplusplus.com/reference/chrono/)
+현재 날짜 가져오기는 매우 오래전부터 있었으며, 오늘날 많은 프로그래밍 언어들이 이를 기본 라이브러리로 제공합니다.
+
+여러 방법이 있습니다만, 가장 간단하고 흔하게 사용하는 방법이 `ctime` 라이브러리를 이용하는 것입니다. 이 라이브러리는 C 언어에서 물려받은 것이기 때문에 기본적으로 사용되기도 합니다.
+
+하지만, 만약 더 높은 정확도가 필요하거나, 시간대를 다루고 싶다면, C++20의 `chrono` 라이브러리를 확인해보세요. 이 라이브러리는 복잡하지만, 매우 강력하고 세밀하게 시간을 다룰 수 있습니다.
+
+## 참고하기
+
+더 많은 정보를 얻기 위해선 다음 링크들을 참조하세요:
+
+[chrono library](https://en.cppreference.com/w/cpp/chrono)
+
+[how to get current time and date in C++](https://www.geeksforgeeks.org/how-to-get-current-time-and-date-in-c/)
+
+[Time, Date and Time zones in Modern C++](https://akrzemi1.wordpress.com/2011/05/13/dates-and-times-in-c/)

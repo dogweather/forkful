@@ -1,7 +1,7 @@
 ---
-title:                "Att påbörja ett nytt projekt"
-html_title:           "Clojure: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+**## Vad och varför?**
 
-Att starta ett nytt projekt inom programmering handlar om att börja arbeta med en ny idé eller uppgift. Det gör programmören för att utveckla och förbättra sina färdigheter, skapa något nytt och utmana sig själv.
+Att starta ett nytt projekt handlar om att börja på en ny kodningsresans från början, med ett specifikt mål i åtanke. Programmers skapar nya projekt när de behöver konstruera en unik lösning från grunden, eller när de vill lära sig ny teknik på djupet.
 
-## Hur?
+**## Så här gör du:**
 
-Ett nytt projekt kan skapas i Clojure genom att använda kommandot `lein new <project-name>`. Detta kommer att skapa en ny mapp med projektet och dess struktur. Sedan kan det öppnas i en editor som VSCode där man kan börja koda. Nedan följer ett exempel på hur man kan skapa en ny funktion i Clojure:
+Att starta ett nytt Clojure-projekt är enkelt med "Leiningen" verktyget. 
 
-```Clojure
-(defn add [a b]
-  (+ a b))
-
-(add 2 3) ;; Output: 5
+```clojure
+;; Installation av Leiningen
+wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+chmod a+x lein
+mv lein /usr/local/bin/lein
 ```
 
-I exemplet skapar vi en funktion som heter `add` som tar emot två parametrar och returnerar summan av dem. Sedan anropar vi funktionen och skriver ut resultatet.
+När du har installerat Leiningen kan du skapa ett nytt projekt:
 
-## Deep Dive
+```clojure
+lein new app mitt-projekt
+```
+"mitt-projekt" är här namnet på ditt nya projekt.
 
-Clojure är ett funktionellt programmeringsspråk som utvecklades av Rich Hickey år 2007. Det är baserat på Lisp och är känd för sin enkelhet och skalbarhet. Alternativ till Clojure inkluderar andra funktionella språk som Haskell och Scala. För att implementera ett nytt projekt i Clojure behöver man först installera Leiningen, ett byggverktyg som används för att hantera projektstrukturer och beroenden. Man kan också använda sig av en editor som är speciellt anpassad för Clojure, som till exempel Emacs eller Cursive för IntelliJ.
+**## Djupdykning**
 
-## Se även
+Att starta ett nytt projekt har sina rötter i de dagar då programmering var en långsam process, med behov av stora planerings- och övervakningssystem. Nu, dock, med moderna verktyg som Clojure och Leiningen, kan programmerare logiskt portionera deras arbete i mindre, hanterbara projekt.
 
-För mer information om Clojure och hur man använder det kan du besöka följande länkar:
+Ett alternativ till att starta ett nytt projekt från grunden är att bifoga till ett befintligt projekt. Detta är ofta snabbare men kan skapa komplexitet om den ursprungliga koden inte är väl skriven eller underhållen.
 
-- Officiell hemsida: https://clojure.org/
-- Leiningen: https://leiningen.org/
-- Cursive: https://cursive-ide.com/
+Implementation av ett nytt projekt i Clojure är kraftfullt, eftersom språket ger uttrycksfull syntax och datastrukturer, parallell programmering stöd och ett starkt ekosystem av bibliotek.
+
+**## Se också:**
+
+[Leiningen Guide](https://leiningen.org/#install)
+[Clojure Documentation](https://clojure.org/guides/getting_started)

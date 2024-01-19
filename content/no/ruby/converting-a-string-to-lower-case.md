@@ -1,7 +1,7 @@
 ---
-title:                "Konvertering av en streng til små bokstaver"
-html_title:           "Ruby: Konvertering av en streng til små bokstaver"
-simple_title:         "Konvertering av en streng til små bokstaver"
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,18 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å konvertere en streng til små bokstaver betyr at alle bokstavene i en tekst blir endret til små bokstaver. Dette er nyttig for å sikre at teksten er konsekvent og enkelt å behandle for programmerere.
 
-## Slik gjør du det:
-```ruby
-tekst = "HELLO WORLD"
-puts tekst.downcase
+Å konvertere en streng til små bokstaver er når du endrer alle tegnene i en tekststreng til små bokstaver. Programmerere gjør dette for å standardisere data, og det er spesielt nyttig i situasjoner hvor tekstrelevante sammenligninger og søk skal være "case-insensitive".
+
+## Hvordan:
+Her er kjappe eksempler på kodestubber - la oss si vi har strengen "Hei, Verden!" og vi ønsker å konvertere den til små bokstaver.
+
+```Ruby
+# Vi har vår opprinnelige streng
+original_string = "Hei, Verden!"
+
+# Vi bruker downcase-metoden
+lowercase_string = original_string.downcase
+
+# La oss skrive ut resultatet
+puts lowercase_string
+
+# Output vil være: "hei, verden!"
 ```
-Output: hello world
 
-## Dypdykk:
-Konvertering av strenger til små bokstaver har vært en vanlig programmeringsøvelse siden starten av datamaskinens tid. Tidligere måtte programmører manuelt endre bokstavene for å sikre at teksten var konsekvent. Nå er det heldigvis en enkel funksjon som gjør dette for oss. Det finnes også alternative metoder for å konvertere strenger til små bokstaver, for eksempel ved hjelp av regular expressions. Konverteringsprosessen varierer også avhengig av programmeringsspråk.
+## Dyp Dykk:
 
-## Se også:
-- Ruby dokumentasjon for String#downcase: https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase
-- "How to convert a string to lowercase in Ruby" (Stack Overflow): https://stackoverflow.com/questions/10262235/how-to-convert-a-string-to-lowercase-in-ruby
+Ruby's `.downcase` metoden ble opprinnelig introdusert i språket for å hjelpe med tekstbehandling og manipulering. Det er en av flere innebygde metoder som Ruby tilbyr for å operere på strenger. Alternativer kan variere avhengig av situasjon, og kan inkludere bruken av `.upcase` for å konvertere en streng til store bokstaver, eller `.capitalize` for å gjøre den første bokstaven i strengen stor.
+
+Implementeringen av `.downcase` i Ruby bruker konseptet av ASCII-tabellen og endrer hvert tegn deretter. Dette er en svært effektiv metode som kan håndtere store strenger uten noen betydelig ytelsespåvirkning.
+
+## Se Også:
+
+- Ruby Dokumentasjon: [String#downcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
+- Stack Overflow: [Hvordan konvertere en streng til små bokstaver i Ruby](https://stackoverflow.com/questions/5030631/how-do-i-convert-a-string-to-lower-case-in-ruby)
+- RubyGuides: [Spesialtegn og Strengmanipulering](https://www.rubyguides.com/2018/01/ruby-string-methods/)

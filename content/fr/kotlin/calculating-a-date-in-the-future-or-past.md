@@ -10,40 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Calculer des dates dans le passé ou dans le futur avec Kotlin
+# Comment calculer une date future ou passée en Kotlin?
 
-## Quoi & Pourquoi?
-Calculer une date dans le passé ou dans le futur consiste simplement à trouver une date qui se trouve avant ou après une date donnée. Les programmeurs le font souvent pour des tâches telles que la planification d'événements ou le suivi du temps écoulé entre deux dates.
+## Qu'est-ce et pourquoi?
+
+Calculer une date future ou passée consiste à manipuler des dates pour trouver un jour avant ou après une date donnée. Les programmeurs effectuent cette opération pour accomplir une multitude de tâches, telles que la planification de notifications ou le suivi de périodes précises.
 
 ## Comment faire:
-Voici quelques exemples de code en Kotlin pour calculer des dates dans le passé ou dans le futur:
 
-```Kotlin
-// Calculer une date dans le futur
-val dateActuelle = LocalDate.now()
-val dateDansUnAn = dateActuelle.plusYears(1)
-println("La date dans un an sera $dateDansUnAn")
+Kotlin fournit la bibliothèque java.time pour manipuler les dates. Voici comment vous pouvez calculer une date future ou passée.
 
-// Calculer une date dans le passé
-val dateActuelle = LocalDate.now()
-val dateIlYaUneSemaine = dateActuelle.minusWeeks(1)
-println("Il y a une semaine, c'était $dateIlYaUneSemaine")
-```
-Résultat:
+Pour ajouter à une date:
 
-```
-La date dans un an sera 2021-04-16
-Il y a une semaine, c'était 2021-04-09
+```kotlin
+import java.time.LocalDate
+
+fun main() {
+    val currentDate = LocalDate.now()
+    val futureDate = currentDate.plusDays(5)
+    println("Future Date: $futureDate")
+}
 ```
 
-## Plongée en profondeur:
-Historiquement, les calculs de dates ont été un défi pour les programmeurs en raison de la complexité du temps et des différentes façons dont les dates sont calculées dans les différents calendriers. Heureusement, les langages de programmation modernes comme Kotlin offrent des bibliothèques intégrées pour gérer facilement ces calculs.
+Pour soustraire d'une date:
 
-Il existe également des alternatives à la manipulation de dates en utilisant la classe d'origine de Kotlin, telle que l'utilisation d'une bibliothèque externe comme Joda-Time ou en utilisant des outils de gestion de dates dans les bases de données.
+```kotlin
+import java.time.LocalDate
 
-Pour implémenter le calcul de dates dans le passé ou dans le futur, Kotlin utilise le concept de "fluent API" qui permet d'enchainer plusieurs méthodes sur un même objet.
+fun main() {
+    val currentDate = LocalDate.now()
+    val pastDate = currentDate.minusDays(5)
+    println("Past Date: $pastDate")
+}
+```
+
+La sortie sera une date qui est 5 jours avant ou 5 jours après la date actuelle.
+
+## Exploration détaillée:
+
+Historiquement, le calcul des dates était complexe et rempli de pièges grâce aux variations de durée des mois et années. Avec l'introduction de la bibliothèque java.time dans Java 8 et Kotlin, ces problèmes ont été largement surmontés.
+
+Autres alternatives: avant java.time, les programmeurs utilisaient des bibliothèques comme Joda-Time pour manipuler les dates. Malgré la mise à la retraite de Joda-Time pour les nouvelles applications, elle reste une référence historique incontournable.
+
+Détails d'implémentation: la manipulation des dates avec java.time est largement basée sur l'horloge système par défaut. `LocalDate.now()` utilise l'horloge système par défaut pour obtenir la date actuelle. `plusDays()` et `minusDays()` ajoutent ou soustraient des jours basés sur la durée standard de 24 heures du jour.
 
 ## Voir aussi:
-- [Documentation officielle de Kotlin sur la manipulation de dates](https://kotlinlang.org/docs/datetime.html)
-- [Article Medium sur le calcul de dates avec Kotlin](https://medium.com/@mohitsharma_80641/date-and-calendar-apis-in-kotlin-d31ee1614032)
-- [Documentation officielle de Joda-Time](https://www.joda.org/joda-time/)
+
+1. [Documentation officielle de Kotlin sur java.time](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/)
+2. [Guide pratique pour Joda-Time](http://www.joda.org/joda-time/quickstart.html)
+3. [Guide Java sur le travail avec java.time](https://www.baeldung.com/java-8-date-time-intro)

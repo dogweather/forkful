@@ -1,7 +1,7 @@
 ---
-title:                "Umwandlung eines Datums in einen String"
-html_title:           "Fish Shell: Umwandlung eines Datums in einen String"
-simple_title:         "Umwandlung eines Datums in einen String"
+title:                "Ein Datum in einen String umwandeln"
+html_title:           "Java: Ein Datum in einen String umwandeln"
+simple_title:         "Ein Datum in einen String umwandeln"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -12,35 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Konvertieren von Datumsangaben in Zeichenketten ist ein häufiges Problem, mit dem sich Programmierer konfrontiert sehen. Dabei geht es darum, ein Datum in ein menschenlesbares Format umzuwandeln, das leichter zu verarbeiten ist. Programmierer nutzen dies, um zum Beispiel Benutzerinformationen in einem übersichtlichen Format auszugeben oder um Vergleiche zwischen verschiedenen Datumsangaben anzustellen.
+Das Konvertieren eines Datums in einen String ist eine Möglichkeit für Programmierer, ein Datum in einem Format darzustellen, das für Menschen leicht lesbar ist. Dies ist oft nützlich, um Daten in einer benutzerfreundlichen Weise zu präsentieren oder um Daten in einer Datenbank zu speichern.
 
-## Wie geht's?
+## So geht's:
 
-Hier sind einige Beispiele dafür, wie man ein Datum in eine Zeichenkette mithilfe von Fish Shell konvertieren kann:
+Der Befehl `date` wird in Fish Shell verwendet, um ein Datum in eine Zeichenkette zu konvertieren. Hier ist ein einfacher Beispielcode:
 
-```
-Fish Shell  set today (date +"%A, %B %e, %Y")
-Monday, May 3, 2021
-```
-
-```
-Fish Shell  set time (echo (date +"Today is %A at %l:%M %p"))
-Today is Monday at 9:30 AM
+```fish
+# Aktuelles Datum und Zeit anzeigen
+set datum (date)
+echo $datum
 ```
 
+Ausführung dieses Codes liefert etwas Ähnliches wie:
+```fish
+Thu 23 Dec 2021 10:21:27 PM CET
 ```
-Fish Shell  set date (string (date --date="1 month"))
-Thu Jun 3 00:00:00 CEST 2021
+
+Jetzt, wenn Sie ein spezifisches Format wünschen, können Sie es wie folgt tun:
+```fish
+# Datum und Zeit im Format DD-MM-YYYY anzeigen
+set datum (date "+%d-%m-%Y")
+echo $datum
 ```
 
-## Tiefere Einblicke
+Ausführung dieses Codes liefert:
+```fish
+23-12-2021
+```
 
-Das Konvertieren von Datumsangaben in Zeichenketten ist keine neue Herausforderung. Es hat seinen Ursprung in der Notwendigkeit, Daten in einem bestimmten Format für die menschliche Lesbarkeit darzustellen. In Fish Shell gibt es auch andere Methoden, um Datumsangaben zu konvertieren, wie beispielsweise mithilfe des ```strftime``` Befehls.
+## Tiefentauchen:
 
-## Siehe auch
+Fish Shell ist eine moderne Shell, die Anfang der 2000er Jahre entwickelt wurde. Sie baut auf den Erfahrungen und Einsichten auf, die in früheren Shells gewonnen wurden, einschließlich des Konzepts der Datums-/Zeitkonvertierung in eine Zeichenkette.
 
-Weitere Informationen zum Konvertieren von Datumsangaben in Zeichenketten mit Fish Shell können unter folgenden Links gefunden werden:
+Als Alternative zur Fish Shell gibt es andere Shells wie die Bourne Shell (sh), die C Shell (csh), die Korn Shell (ksh) und die Bourne-Again Shell (bash) die ebenfalls `date` verwenden können, um das Datum zu konvertieren.
 
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
-- [Tutorial zum Umgang mit Datum und Uhrzeit in Fish Shell](https://janikvonrotz.ch/2016/12/15/manipulate-time-and-date-in-fish-shell/)
-- [Beispiele für die Verwendung von Datumsangaben in Fish Shell Scripts](https://gist.github.com/jasonwryan/3850615)
+Die Implementierungsdetails des `date`-Befehls in der Fish Shell sind ziemlich komplex, aber im wesentlichen ruft der Befehl die Systemzeit ab, konvertiert sie in eine Zeichenkette und formatiert sie dann entsprechend den vorgegebenen Parameter.
+
+## Siehe auch:
+
+- Offizielle Fish Shell Dokumentation über `date`: [https://fishshell.com/docs/current/commands.html#date](https://fishshell.com/docs/current/commands.html#date)
+- Weitere Informationen zur Datums- und Zeitkonvertierung: [https://de.wikipedia.org/wiki/Datums-_und_Zeitangaben_in_Informatik](https://de.wikipedia.org/wiki/Datums-_und_Zeitangaben_in_Informatik)

@@ -11,34 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Obliczanie daty w przyszłości lub przeszłości jest procesem, w którym dzięki użyciu programowania i odpowiednich funkcji, jesteśmy w stanie wyświetlić lub obliczyć daty z przyszłości lub przeszłości. Programiści często tego używają w celu tworzenia dynamicznych aplikacji, takich jak kalendarze, alarmy lub planery.
+
+Obliczanie daty w przeszłości lub przyszłości to sposób na zdobycie informacji o dacie, która jest wcześniej lub później niż aktualna data. Programiści robią to, aby przewidzieć wydarzenia, zarządzać harmonogramami lub obsługiwać terminy.
 
 ## Jak to zrobić:
-Możemy wykorzystać funkcję `getDate()` do pobrania aktualnej daty oraz funkcję `setDate()` do ustawienia nowej daty. Poniżej znajduje się przykładowy kod, który oblicza datę 7 dni w przyszłości i wypisuje ją w konsoli.
+
+Obliczanie daty w przyszłości lub przeszłości nie jest trudne. Oto prosty przykład:
 
 ```Javascript
-const currentDate = new Date();
-currentDate.setDate(currentDate.getDate() + 7);
-console.log(currentDate);
+let dataTeraz = new Date();
+console.log("Dzisiaj: " + dataTeraz);
+
+// Dodanie 5 dni do obecnej daty
+dataTeraz.setDate(dataTeraz.getDate() + 5);
+console.log("Za 5 dni: " + dataTeraz);
+
+// Odejmowanie 7 dni od obecnej daty
+dataTeraz.setDate(dataTeraz.getDate() - 7);
+console.log("7 dni temu: " + dataTeraz);
 ```
 
-Output: **Tue Mar 30 2021 10:45:56 GMT+0200 (Central European Summer Time)**
-
-Możemy także użyć biblioteki takiej jak Moment.js, która posiada wiele funkcji do manipulowania datami w prostszy sposób. Przykładowy kod wykorzystujący tę bibliotekę wyglądałby następująco:
+Możliwy wynik tego kodu to:
 
 ```Javascript
-const currentDate = moment();
-const futureDate = currentDate.add(7, 'days').format("DD/MM/YYYY");
-console.log(futureDate);
+"Dzisiaj: Thu Sep 16 2021 12:34:56 GMT+0200 (Central European Summer Time)"
+"Za 5 dni: Tue Sep 21 2021 12:34:56 GMT+0200 (Central European Summer Time)"
+"7 dni temu: Tue Sep 14 2021 12:34:56 GMT+0200 (Central European Summer Time)"
 ```
 
-Output: **30/03/2021**
+## Więcej szczegółów:
 
-## Głębsza analiza:
-Obliczanie daty w przyszłości lub przeszłości jest możliwe dzięki tzw. czasowi UNIX-owemu, który jest używany w systemach operacyjnych i oparty jest na liczbie sekund od 1 stycznia 1970 roku. Istnieje również wiele alternatywnych bibliotek i funkcji, które umożliwiają obliczanie dat, np. date-fns czy Luxon. Ważne jest również uwzględnienie stref czasowych i innych czynników, które mogą wpłynąć na obliczenie dokładnej daty.
+Obliczanie daty w przeszłości i przyszłości jest popularne, ale było trudne do zrealizowania na początku ery komputerowej z powodu ograniczeń pamięci i procesora.
 
-## Zobacz również:
-- [MDN Web Docs - Object Date](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date)
-- [Moment.js - dokumentacja](https://momentjs.com/docs/)
-- [date-fns - dokumentacja](https://date-fns.org/docs/Getting-Started)
-- [Luxon - dokumentacja](https://moment.github.io/luxon/index.html)
+Alternatywą dla metody setDate() w JavaScript jest użycie zewnętrznej biblioteki, jak moment.js, która oferuje większą precyzję i polepsza sterowanie datą.
+
+Ważnym aspektem implementacji jest to, że setDate() uwzględnia przepełnienia. Na przykład, jeśli do daty 31 stycznia dodasz jeden dzień, wynikiem będzie 1 lutego.
+
+## Zobacz także:
+
+1. [JavaScript Date Reference na stronie MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. [Biblioteka Moment.js](https://momentjs.com/)
+3. [JavaScript Date Tutorial na W3Schools](https://www.w3schools.com/js/js_date_methods.asp)

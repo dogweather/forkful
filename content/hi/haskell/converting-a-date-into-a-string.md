@@ -1,7 +1,7 @@
 ---
-title:                "एक तारीख को स्ट्रिंग में रूपांतरण करना"
-html_title:           "Haskell: एक तारीख को स्ट्रिंग में रूपांतरण करना"
-simple_title:         "एक तारीख को स्ट्रिंग में रूपांतरण करना"
+title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
+simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Kya aur Kyon?
+## क्या और क्यों? 
 
-Date ko string mein convert karna ek aam tarika hai jo programmers apne code mein use karte hain. Isse hum date ko alag-alag formats mein display kar sakte hain jaise ki 'dd/mm/yyyy' ya 'mm/dd/yyyy'. Isse code ki readability bhi badhti hai aur code maintenance bhi aasan ho jaata hai.
+डेट को एक स्ट्रिंग में बदलना मतलब किसी कैलेंडर दिनांक को टेक्स्ट के रूप में प्रस्तुत करना। प्रोग्रामर इसे करते हैं क्योंकि यह उन्हें डेटा को साढ़े और पठनीय रूप में प्रस्तुत करने की अनुमति देता है। 
 
-Kaise karein?
+## कैसे करें:
 
-```Haskell
-import Data.Time
-import Data.Time.Format
-
--- Convert current date into string
-dateAsString :: IO String
-dateAsString = do
-  now <- getCurrentTime
-  return $ formatTime defaultTimeLocale "%d/%m/%Y" now
-```
-
-Sample output: 02/05/2021
+आंटर के कोड स्निपेट का उपयोग करके, हम एक दिनांक को किसी स्ट्रिंग में बदल सकते हैं:
 
 ```Haskell
 import Data.Time
-import Data.Time.Format
+import System.Locale
 
--- Convert a given date into string
-dateAsString :: Day -> String
-dateAsString day = formatTime defaultTimeLocale "%A, %d %B %Y" day
+main = do
+now <- getZonedTime
+let formatter = formatTime defaultTimeLocale "%F" now
+print formatter
 ```
 
-Sample output: Sunday, 02 May 2021
+जब आप इस कोड को चलाते हैं, आपको निम्नलिखित आउटपुट मिलेगा (आइये, आज की तारीख है "YYYY-MM-DD"):
 
-Maze mein dubein!
+```Haskell
+"YYYY-MM-DD"
+```
 
-Is technique ko use karne se pehle, hume Data.Time aur Data.Time.Format modules ko import karna hoga. Iske baad hume `formatTime` function ka use karke desired format mein date ko convert karna hoga.
+## गहराई से देखें:
 
-Iske alawa, hum khud se bhi ek custom format create kar sakte hain jaise ki 'dth month yyyy', jo ki output mein "2nd May 2021" dega. Iske liye, hum `%e` ko `%d` ke jagah use karenge aur `%B` ko `%B` ke jagah `%{th,nd,rd}` add karenge.
+इस विधि का उपयोग करने के पीछे इतिहास तक पहुंचने के लिए, यह ISO 8601 दिनांक और समय विन्यास मानदंड का पालन करता है जो 1988 में स्थापित किया गया था। 
 
-See Also:
+इसके विकल्पों में अन्य दिनांक-स्ट्रिंग प्रारूप हैं जिन्हें आप उपयोग कर सकते हैं, जैसे कि "%D" (MM/DD/YY) या "%x" (स्थानीय तारीख का प्रारूप). आपके उपयोग के लिए कौन सा प्रारूप सबसे उपयुक्त है, यह आपकी आवश्यकताओं पर निर्भर करेगा। 
 
-- Date, DateTime and Timestamp in Haskell: https://www.geeksforgeeks.org/date-datetime-and-timestamp-in-haskell/
-- The official documentation for Data.Time module: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
+विवरण के लिए, `formatTime` गुण अर्जुमेंट को अपनाता है और छावनी के रुप में मान वापस करता है, जिसे हम फिर प्रिंट करते हैं। 
+
+## और भी देखें: 
+
+- ISO 8601 मानदंड: https://www.iso.org/iso-8601-date-and-time-format.html
+- Haskell द्वारा इस्तेमाल किए जाने वाले सभी प्रारूप धोरियों: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html
+- Haskell 'time' पैकेज: https://hackage.haskell.org/package/time

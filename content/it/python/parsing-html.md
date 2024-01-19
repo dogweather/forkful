@@ -1,7 +1,7 @@
 ---
-title:                "Analisi della sintassi HTML"
-html_title:           "Python: Analisi della sintassi HTML"
-simple_title:         "Analisi della sintassi HTML"
+title:                "Analisi sintattica dell'HTML"
+html_title:           "C++: Analisi sintattica dell'HTML"
+simple_title:         "Analisi sintattica dell'HTML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Che cos'è e perché è importante parseare HTML
-Il parsing di HTML è il processo di analisi e interpretazione di codice HTML in modo da poterlo utilizzare per creare applicazioni o analizzare il contenuto delle pagine web. I programmatori lo fanno per estrarre informazioni utili dai siti web o per creare applicazioni che richiedono l'uso di dati provenienti da pagine web.
+## Cos'è e perché?
 
-# Come fare:
-Di seguito sono riportati alcuni semplici esempi di codice Python e il relativo output per mostrare come fare il parsing di HTML.
+L'analisi del HTML, cioè il Parsing, è una pratica comune per ottenere informazioni specifiche da pagine web. I programmatori lo utilizzano per accedere e manipolare dati estratti da pagine HTML.
+
+## Come fare:
+
+L'uso di BeautifulSoup è un modo comodo per effettuare l'analisi del HTML. Qui un piccolo exemplo di codice per estrarre i titoli di un blog.
+
 ```Python
-# Importazione del modulo BeautifulSoup
 from bs4 import BeautifulSoup
+import requests
 
-# Definizione della pagina web da analizzare
-html = "<html><body><h1>Titolo</h1><p>Questo è un paragrafo</p></body></html>"
+response = requests.get("http://www.eblog.com")
+soup = BeautifulSoup(response.text, 'html.parser')
 
-# Creazione di un oggetto BeautifulSoup
-soup = BeautifulSoup(html, 'html.parser')
-
-# Estrarre il contenuto del tag h1
-titolo = soup.find('h1').text
-
-# Estrarre il contenuto del tag p
-paragrafo = soup.find('p').text
-
-# Stampare il titolo e il paragrafo
-print(titolo, paragrafo)
-
-# Output: 
-Titolo Questo è un paragrafo
+for title in soup.find_all('h2'):
+    print(title.text)
 ```
 
-# Approfondimento:
-Il parsing di HTML è diventato importante con la diffusione di internet e l'aumento del numero di siti web e pagine web disponibili. Ci sono molte alternative per fare il parsing di HTML, tra cui l'utilizzo di diverse librerie di parsing come Beautiful Soup, lxml o Requests-HTML. Nel caso in cui si debba fare il parsing di pagine web più strutturate e complesse, può essere necessario utilizzare tecniche avanzate come il web scraping.
+Nel caso in cui l'URL del blog sia "http://www.eblog.com", l'output mostrerebbe tutti i titoli degli articoli presenti su quella pagina.
 
-# Vedi anche:
-- Documentazione ufficiale di Beautiful Soup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- Documentazione ufficiale di lxml: https://lxml.de/
-- Documentazione ufficiale di Requests-HTML: https://docs.python-requests.org/projects/requests-html/
+## Approfondimento
+
+L'analisi del HTML risale alle prime fasi dello sviluppo del web, quando i dati erano incorporati principalmente in pagine HTML. Oggi, esistono diverse alternative come l'uso di API o di Web scraping a livello di browser. Tuttavia, l'analisi del HTML rimane un'eccellente opzione per i dati contenuti in pagine web statiche.
+
+Alcune librerie, oltre a BeautifulSoup, sono utilizzate per l'analisi del HTML in Python. Queste includono lxml e html.parser, entrambe con vantaggi e svantaggi specifici.
+
+## Vedere anche:
+
+1. Documentazione di BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+2. Guida a Lxml: https://lxml.de/tutorial.html
+3. Documentazione di Html.parser: https://docs.python.org/3/library/html.parser.html
+4. Scrapy: https://scrapy.org/
+5. Selenium: https://www.selenium.dev/

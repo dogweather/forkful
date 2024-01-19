@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla ett datum till en sträng"
-html_title:           "C: Omvandla ett datum till en sträng"
+html_title:           "C#: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "C"
 category:             "C"
@@ -10,43 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+# Omvandla ett datum till sträng i C
 
-Att omvandla ett datum till en sträng är en vanlig uppgift inom programmering. Det innebär att man tar ett datum i ett visst format, som till exempel åååå-mm-dd, och gör om det till en sekvens av bokstäver, siffror och specialtecken. Detta är nödvändigt när man vill visa upp datumet för användaren eller spara det i en databas.
+## Vad och varför?
+Att omvandla ett datum till en sträng innebär att du ändrar datumets format så att det kan manipuleras som en textsträng. Detta behövs ofta för att göra datum lättare att arbeta med i olika programmeringssituationer, som att skriva ut datumet eller bearbeta det som en del av en filnamnstruktur.
 
-# Hur man gör:
+## Så här gör du:
+Att omvandla ett datum till en sträng kan vara rakt på sak. Här är ett exempel på hur du kan göra det med hjälp av `strftime` funktionen i C:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // Skapa ett datum-objekt
-    time_t date;
-    // Tilldela ett datum (2019-10-18)
-    date = mktime(2019, 10, 18, 0, 0, 0);
-    // Skapa en sträng som ska hålla datumet
-    char date_string[11];
-    // Använd funktionen 'strftime' för att konvertera datumet till en sträng
-    strftime(date_string, 11, "%Y-%m-%d", localtime(&date));
-    // Skriv ut strängen
-    printf("Datumet är: %s\n", date_string);
+    char buff[20];
+    time_t nu = time(0);
+    struct tm nu_time = *localtime(&nu);
+
+    strftime(buff, sizeof(buff), "%Y-%m-%d", &nu_time);
+    printf("Datum som sträng: %s", buff);
+
     return 0;
 }
 ```
-Output: Datumet är: 2019-10-18 
 
-I exemplet ovanför använder vi funktionen ```mktime``` för att skapa ett datum-objekt och tilldela det ett datum. Sedan använder vi funktionen ```strftime``` för att konvertera datumet till en sträng enligt det angivna formatet. Det resulterande strängen kan sedan användas för att visa datumet för användaren eller spara det i en databas.
+När du kör den här koden, kommer du att få ett utdata som liknar följande:
 
-# Djupdykning:
+```C
+Datum som sträng: 2022-07-20
+```
 
-Historisk kontext: Konvertering av datum till strängar har sina rötter i Unix-operativsystemet. Eftersom datum lagras som en sekundräknare sedan 1970, är det nödvändigt att konvertera det till ett läsbart format för att användas av människor.
+## Djupdykning
+Funktionen `strftime` används här för att formatera tid och datum. Denna funktion härstammar från Unix-världen och har blivit standard i C-språket. Det finns alternativ till `strftime`, som `asctime` eller `ctime`, men de är inte lika flexibla när det gäller formateringsalternativ.
 
-Alternativ: Det finns flera olika funktioner som kan användas för att konvertera datum till strängar, som till exempel ```ctime``` och ```strptime```. Det finns också externa bibliotek som kan användas för mer avancerade datumsformat.
+Omvandling av datum till textsträngar ger oss möjlighet att använda datumvärden på ett mer mångsidigt sätt. Utöver att skriva ut dem, tillåter det oss att enkelt infoga datum och tidstämplar i filnamn, loggmeldelser och mycket mer.
 
-Implementation detaljer: Konversionen av datum till strängar innebär att man tar bort den inre representationen av datumet och omvandlar det till en läsbar sekvens av tecken. Detta kan göras med hjälp av olika kommandon och teckenkoder, beroende på det önskade formatet.
-
-# Se även:
-
-- Dokumentation för funktionen ```strftime``` i C
-- Mer om tids- och datumhantering i C på StackOverflow
+## Se även:
+För mer information kolla in dessa länkar:
+- C Library - <ctime>: http://www.cplusplus.com/reference/ctime/
+- Funktionen strftime: https://en.cppreference.com/w/c/chrono/strftime
+- C programmeringstid och datum: https://www.learn-cocoa.org/en/dates-and-times-in-c/

@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "PowerShell: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
 simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,52 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Muutamalla rivillä selitän mitä merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa ja miksi ohjelmoijat tekevät sitä.
+## Mitä ja Miksi?
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi tarkoittaa, että kaikki merkit merkkijonossa muutetaan pieniksi kirjaimiksi. Tämä on hyödyllistä esimerkiksi kun vertaillaan kahta merkkijonoa, sillä näin voidaan varmistaa, että kirjainkokoeroja ei huomioida.
+Muuttaa merkkijono pienaakkosiksi tarkoittaa kaikkien isoja kirjaimia sisältävän merkkijonon muuttamista pienaakkosiksi. Tätä tarvitaan, koska ohjelmoijat usein vertailevat merkkijonoja, ja nämä vertailut ovat usein kirjainkoon herkkiä.
 
-## Miten:
-Tässä näytän esimerkkejä koodista ja annan tulosteen. Koodipätkät ovat ```PowerShell... ``` lohkoissa.
 
-Koodiesimerkki 1: Muunna merkkijono "HELLO WORLD" pieniksi kirjaimiksi.
+## Kuinka:
 
-```PowerShell
-$teksti = "HELLO WORLD"
-$muunnettu = $teksti.ToLower()
-write-host $muunnettu
-```
-
-Tuloste:
-
-hello world
-
-Koodiesimerkki 2: Vertaile kahta merkkijonoa ja tarkista merkkijonojen samankaltaisuus.
+PowerShellissä tämä on erittäin yksinkertaista. Käytä `ToLower()` metodia. Tässä on esimerkki:
 
 ```PowerShell
-$teksti1 = "muuttuuko tämä muotoon pienet kirjaimet"
-$teksti2 = "MUUTTUUKO TÄMÄ MUOTOON PIENET KIRJAIMET"
-$muunnettu1 = $teksti1.ToLower()
-$muunnettu2 = $teksti2.ToLower()
-if ($muunnettu1 -eq $muunnettu2){
-  write-host "Merkkijonot ovat samanlaiset"
-}
-else {
-  write-host "Merkkijonot eivät ole samanlaiset"
-}
+$sana = "Moi MAAILMA! "
+$alempi_sana = $sana.ToLower()
+echo $alempi_sana
+
+# Tulostaa: "moi maailma!"
 ```
-Tuloste:
+Verrattuna alkuperäiseen merkkijonoon, uudessa muuttujassa kaikki kirjaimet ovat pieniä.
 
-Merkkijonot ovat samanlaiset
+## Syvällisempi tarkastelu:
 
-## Syvennä:
-Pienet ja isot kirjaimet ovat osa tietokoneiden käyttämää ASCII-merkistöä, joka sisältää kaikki käytössä olevat merkit ja symbolit. ASCII-merkistöä kehitettiin alun perin tekstipohjaisten laitteiden kuten kirjoituskoneiden ja tulostimien tarpeisiin 1960-luvun lopulla.
+Merkkijonon muuttaminen pienaakkosiksi ei ole uusi käsite. Se on ollut mahdollista jo ohjelmointikielistä alkaen, kuten Perl ja JavaScript. PowerShell on sisällyttänyt `ToLower()` metodin .NET-kirjastoihin, jotka ovat olemassa ohjelmointikielestä .NET Framework 1.0, julkaistu vuonna 2002.
 
-Suurin osa nykypäivänä käytetyistä ohjelmointikielistä, myös PowerShell, käyttävät ASCII-merkistöä tietojen tallentamiseen ja käsittelyyn. ASCII-koodit määrittelevät jokaiselle merkille oma numeron, joka kuvaa merkkiä binäärimuodossa.
-
-Toinen tapa muuntaa merkkijono pieniksi kirjaimiksi on käyttää ".ToLower()" -metodia, kuten esimerkeissä näytin. Tämän lisäksi on olemassa myös ".lc()", ".Lowercase()" ja ".Unicode.ToLower()" -metodeja.
+On vaihtoehtoinen tapa muuttaa merkkijono pienaakkosiksi PowerShellissä. Käyttää `mb.ToLower()`-metodia, joka tekee saman asian, mutta se on määritetty tekstin kulttuuriasetuksille. Se muuttaa merkkijonon pienaakkosiksi mukauttamalla merkkijonoa kulttuurille, joka on määritetty nykyiselle threadille.
 
 ## Katso myös:
-- [PowerShell String Operations](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-strings?view=powershell-7.1)
-- [ASCII Character Set](https://www.computerhope.com/ascii.htm)
-- [ASCII versus Unicode](https://www.diffen.com/difference/ASCII_vs_Unicode)
+
+- `.NET String Class`: https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0 
+- `PowerShell Documentation`: https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1

@@ -1,7 +1,7 @@
 ---
-title:                "Encontrar la longitud de una cadena"
-html_title:           "Haskell: Encontrar la longitud de una cadena"
-simple_title:         "Encontrar la longitud de una cadena"
+title:                "Encontrando la longitud de una cadena"
+html_title:           "Arduino: Encontrando la longitud de una cadena"
+simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,54 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
-En programación, encontrar la longitud de una cadena significa determinar la cantidad de caracteres que contiene esa cadena. Esto puede ser útil cuando se trabaja con datos de texto y se necesita saber cuántos caracteres hay en una cadena específica. 
+## ¿Qué y Por Qué?
 
-Los programadores a menudo realizan esta tarea para validar el formato de entrada de datos, asegurarse de que no se exceda el límite de caracteres en una base de datos o simplemente para obtener información sobre la estructura de un texto.
+Obtener la longitud de una cadena significa simplemente contar cuántos caracteres hay en una cadena. Los programadores lo hacen para llevar a cabo diversas acciones, como la iteración a través de caracteres o la validación de entradas.
 
-## Cómo:
-Para encontrar la longitud de una cadena en Haskell, podemos usar la función `length`. Esta función toma una cadena como argumento y devuelve un número entero que representa la longitud de la cadena. Veamos un ejemplo:
+## Cómo se hace:
 
-```Haskell
-length "¡Hola mundo!" 
-```
-
-```
-12
-```
-
-También podemos definir nuestra propia función para encontrar la longitud de una cadena. En este ejemplo, usaremos recursión para contar la cantidad de caracteres en una cadena:
+A continuación, se muestra cómo encontrar la longitud de una cadena en Haskell:
 
 ```Haskell
-findLength :: String -> Int
-findLength [] = 0
-findLength (x:xs) = 1 + findLength xs
+longitudCadena :: String -> Int
+longitudCadena = length
 ```
 
-En este código, la base de la recursión es una cadena vacía, que tiene una longitud de 0. Luego, cada vez que se llama a la función, se quita un carácter de la cadena y se agrega 1 al contador hasta que la cadena esté vacía. Veamos un ejemplo:
+En el entorno ghci, puedes probarlo de la siguiente manera:
 
 ```Haskell
-findLength "¡Hola mundo!"
+ghci> longitudCadena "Hola, Mundo"
+11
 ```
 
-```
-12
-```
+## Deep Dive
 
-## Deep Dive:
-La función `length` en Haskell está definida como una función de tipo `list -> Int`, lo que significa que toma una lista como argumento y devuelve un número entero. En el caso de una cadena, Haskell la trata como una lista de caracteres, por lo que la función `length` funciona también para cadenas.
-
-Una forma alternativa de encontrar la longitud de una cadena en Haskell es usando el operador `#` antes de la cadena, que devuelve la cantidad de elementos en la cadena, incluyendo sus paréntesis. Por ejemplo:
+1. **Contexto histórico**: La función 'length' en Haskell ha existido desde la primera versión de Haskell, Haskell 1.0, lanzada en 1990.
+2. **Alternativas**: Si prefieres no utilizar la función incorporada, puedes usar una función recursiva para encontrar la longitud de una cadena. Por ejemplo:
 
 ```Haskell
-# "Hola"
+longitudCadena' :: String -> Int
+longitudCadena' [] = 0
+longitudCadena' (_:xs) = 1 + longitudCadena' xs
 ```
 
-```
-5
-```
+Esta versión de la función funciona al hacer coincidir el patrón con una cadena. Si la cadena está vacía (`[]`), devolverá 0. Si no lo está, eliminará el primer caracter (significado por `_`) y se llamará a sí misma en la cadena restante (`xs`), sumando 1 cada vez.
 
-## See Also:
-- [Documentación oficial de Haskell](https://www.haskell.org/documentation/)
-- [Tutorial de Haskell para principiantes](https://www.haskell.org/tutorial/index.html) 
-- [Ejercicios de Haskell para practicar](https://exercism.io/tracks/haskell)
+3. **Detalles de implementación**: La función 'length' en Haskell es muy eficiente, ya que opera en tiempo lineal en relación al tamaño del input. Su implementación básica es bastante similar a la versión recursiva que mostramos como alternativa. 
+
+## Ver También:
+
+Haskell Wiki: [Working with lists](https://wiki.haskell.org/Working_with_lists)
+
+Learn You a Haskell: [Strings](http://learnyouahaskell.com/starting-out#strings)
+
+Haskell Documentation: [Data.List](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)

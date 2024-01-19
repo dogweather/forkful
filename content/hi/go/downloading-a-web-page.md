@@ -1,7 +1,7 @@
 ---
-title:                "वेब पेज डाउनलोड करना"
-html_title:           "Go: वेब पेज डाउनलोड करना"
-simple_title:         "वेब पेज डाउनलोड करना"
+title:                "एक वेब पेज डाउनलोड करना"
+html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
+simple_title:         "एक वेब पेज डाउनलोड करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,60 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kya Aur Kyun?
-Web page download karna programming ka ek aam kaam hai jisme ham web se koi bhi page ko apne computer par save kar sakte hain. Programmers ise tab karte hain jab unhe kisi website ya web application ke data ya content ka access chahiye hota hai jisko we offline use mein kar sakte hain.
+## क्या और क्यों?
 
-# Kaise?
+वेब पेज डाउनलोड करना मतलब इंटरनेट से सूचना एकत्र करना। यह डेवलपर्स टास्क ऑटोमेटेट करने, डाटा एनालायज़, और वेब स्क्रेपिंग के लिए होता हैं।
+
+## कैसे करें:
+
+यहां Go लैंग्वेज में एक कोड उदाहरण है कि कैसे वेब पेज डाउनलोड किया जाता है:
+
 ```Go
+package main
+
 import (
-  "fmt"
-  "net/http"
-  "io/ioutil"
+	"fmt"
+	"io/ioutil"
+	"net/http"
 )
 
 func main() {
-  // URL jiska data download karna hai
-  url := "https://example.com"
+	resp, err := http.Get("http://example.com/")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
 
-  // Web page ko download karne ke liye request bhejna
-  response, err := http.Get(url)
-  
-  if err != nil {
-    fmt.Println("Error reading web page:", err)
-    return
-  }
-  
-  // Response ka body read karke print karna
-  body, err := ioutil.ReadAll(response.Body)
-  
-  if err != nil {
-    fmt.Println("Error reading response:", err)
-    return
-  }
-  
-  fmt.Println(string(body))
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(string(body))
 }
 ```
-OUTPUT:
+
+यह साधारण आउटपुट देता है:
+
 ```
-<HTML>
-  <HEAD>
-    <title>Example Domain</title>
-    ...
-  </HEAD>
-  
-  <BODY>
-    <H1>Example Domain</H1>
-    <P>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</P>
-    ...
-  </BODY>
-</HTML>
+<!doctype html>
+<html>
+<head>
+<title>Example Domain</title>
+...
+</html>
 ```
 
-# Gehri Jhaanki
-Web page download ka concept hua hai jab internet ke shuruaat mein log apne computer par files ko download karne ke liye FTP (File Transfer Protocol) ka istemal karte the. Lekin aaj ke zamaneme, browsers aur web technologies ke development se, web page download kaafi aasaan ho gaya hai aur languages jaise Go, ismein capabilities ko improve karne mein madad karte hain. Jaise dusre languages, Go mein bhi alag-alag libraries aur tools available hain jinse web page ko download kar sakte hain.
+## गहराई से जानकारी:
 
-# Dekhein Bhi
-- [Go documentation](https://golang.org/pkg/net/http/)
-- [Downloading files with Go](https://golangbot.com/download-file-from-website/)
-- [How to use Go to make HTTP requests](https://www.digitalocean.com/community/tutorials/how-to-use-go-http-clients-to-create-web-applications)
+- **ऐतिहासिक सन्दर्भ:** वेब पेज डाउनलोडिंग का उपयोग १९९० के दशक से देवलपर्स कर रहे हैं।
+- **विकल्प:** साइट हिट करने के अन्य लैंग्वेज में कोड लिखने के विकल्प भी हैं, जैसे कि Python, Java और JavaScript।
+- **कैसे काम करता है:** Go कोड सीधे टीसीपी/आईपी प्रोटोकॉल पर रिक्वेस्ट भेजता है। ये रिक्वेस्ट वेबसर्वर तक पहुंचती हैं, जो उससे जुड़ी HTML सूचना को डेटा पैकेट में लौटाता है।
+
+## इसके साथ देखिए:
+
+- Go में [वेब स्क्रेपिंग](https://yourbasic.org/golang/web-scraping/) कैसे करें।
+- HTTP रिक्वेस्ट के बारे में और जानने के लिए [Go Docs](https://golang.org/pkg/net/http/) का उपयोग करें।

@@ -1,7 +1,7 @@
 ---
-title:                "Aloittaminen uusi hanke"
-html_title:           "Clojure: Aloittaminen uusi hanke"
-simple_title:         "Aloittaminen uusi hanke"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,38 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-
-Aloittaminen uuden projektin kanssa tarkoittaa uuden ohjelmiston, työkalun tai sovelluksen luomista. Ohjelmoijat tekevät tätä parantaakseen tai laajentaakseen olemassa olevia projektejaan tai luodakseen jotain aivan uutta.
+## Mitä ja Miksi?
+Uuden projektin aloittaminen tarkoittaa uuden ohjelman, sovelluksen tai palvelun luomista alusta alkaen. Ohjelmoijat tekevät niin uusien ideoiden ja innovaatioiden toteuttamiseksi ja ongelmien ratkaisemiseksi.
 
 ## Miten:
-
-Käytä Clojurea aloittaaksesi uusi projektisi helposti ja tehokkaasti:
+Clojure, joka on toiminnallinen ohjelmointikieli, mahdollistaa uuden projektin luomisen sujuvasti. Aloitetaan koodiesimerkeillä. 
 
 ```Clojure
-(ns uusi-projekti.core
-  (:gen-class))
-
-(defn -main
-  "Tämä funktio suoritetaan kun ohjelma käynnistetään"
-  [& args]
-  (println "Tervetuloa uuden projektin maailmaan!"))
+;; Projektipohjan luominen Leiningen-kirjaston avulla
+lein new awesome-project
 ```
+Tämä luo uuden projektin nimellä "awesome-project". Aivan yksinkertaista!
 
-Tuloste: Tervetuloa uuden projektin maailmaan!
+## Syvällä Sukellus:
+Clojure, joskin nuori kieli, on saavuttanut suosiota sen toiminnallisen ohjelmoinnin mallin ja suoraviivaisen lähestymistavan ansiosta. Historiallisesti Clojure on otettu erittäin hyvin vastaan Java-yhteisössä, koska sen JVM-suoritusympäristö. Vaikka Clojure-ohjelmien aloittaminen on helppoa Leiningenin avulla, vaihtoehtoja on myös. Boot ja Clojure CLI/Deps.edn ovat muita arvostettuja työkaluja.
 
-Tässä esimerkissä määritämme uuden projektin Clojure-koodin avulla ja tulostamme yksinkertaisen viestin käynnistyksen yhteydessä.
-
-## Syväsukellus:
-
-Historiallisesti Clojure on kehitetty parantamaan Javaa ja toimimaan sen päällä, mutta sen suosio on kasvanut myös itsenäisenä ohjelmointikieleenä. Clojure tarjoaa puhtaamman ja yksinkertaisemman syntaksin kuin Java, mikä tekee siitä hyvän vaihtoehdon monet monimutkaisille projekteille.
-
-Clojurella on myös laaja ja aktiivinen yhteisö, joka tarjoaa tukea ja apua projekteissa. Lisäksi Clojuren avoin lähdekoodi tekee siitä helpon integroida muiden teknologioiden kanssa.
+Clojure-projektin toteutuksessa on aina hyvä pitää mielessä, että sen ytimessä sen tulisi olla toiminnallinen, muuttumaton ja olemaan huolissaan sivuvaikutuksista.
 
 ## Katso myös:
+Seuraavassa on joitakin hyödyllisiä linkkejä, jotka voivat auttaa sinua ymmärtämään Clojurea ja uuden projektin luomista paremmin:
 
-Halutessasi tutustua aiheeseen tarkemmin, suosittelemme seuraavia lähteitä:
-
-- [Clojuren virallinen verkkosivusto] (https://clojure.org/)
-- [Clojuren käyttöönotto] (https://clojure.org/guides/getting_started)
-- [Clojuren GitHub-sivu] (https://github.com/clojure/clojure)
+1. Clojuren virallinen opas: https://clojure.org/guides/getting_started
+2. Leiningen-kirjastosta: https://leiningen.org/
+3. Clojure-projektien luominen Clojure CLI:n avulla: https://clojure.org/guides/deps_and_cli
+4. Boot-kirjasto: http://boot-clj.com/

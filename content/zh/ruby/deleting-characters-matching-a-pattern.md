@@ -1,7 +1,7 @@
 ---
-title:                "匹配模式的字符删除"
-html_title:           "Ruby: 匹配模式的字符删除"
-simple_title:         "匹配模式的字符删除"
+title:                "删除匹配模式的字符"
+html_title:           "Java: 删除匹配模式的字符"
+simple_title:         "删除匹配模式的字符"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 删掉匹配模式的字符：是什么和为什么？
-
-删掉匹配模式的字符指的是在文本中查找特定模式的字符，然后将它们从文本中删除。这在编程中非常有用，因为它可以让我们更轻松地对文本进行处理和清洗。当我们需要从数据或文本中去除特定的字符时，这个方法就特别有用。
+## 什么和为什么？
+在编程中，“删除匹配模式的字符”是从字符串中删除与提供的模式匹配的所有字符。编程者通常进行此操作来干净地处理数据，剔除不必要或令人困扰的字符，从而满足特定类型输入的需求。
 
 ## 如何操作：
+在Ruby中，您可以使用 `delete`方法删除匹配的字符。这是一个简单示例：
 
-```Ruby
-# 示例1：删除所有的数字
-puts "h3ll0 w0rld".gsub(/\d/, "")
-
-输出：hello world
-
-# 示例2：删除所有的空格
-puts "h e l l o".gsub(/\s/, "")
-
-输出：hello
+```ruby
+s = "Hello, Ruby!"
+puts s.delete(",!")
 ```
 
-## 深入了解：
+此代码的输出将是：
 
-**历史背景：**在计算机科学的早期，人们就开始使用正则表达式来编写模式匹配算法。随着编程语言的发展，正则表达式也变得越来越强大，现在已经成为编程中常用的工具之一。
+```
+Hello Ruby
+```
 
-**替代方法：**除了使用正则表达式，编程语言中也有其他方法来实现删除匹配模式的字符，比如使用字符串操作函数。
+在这个例子中，我们用 `delete`方法删除了逗号和感叹号。
 
-**实现细节：**在Ruby中，我们使用 `gsub` 方法来实现删除匹配模式的字符。它接收两个参数，第一个是要匹配的模式，第二个是要替换的字符。如果第二个参数为空，那么就会将匹配到的字符删除。
+然而，要注意：使用 `delete`方法，它会删除所有匹配的字符，而不仅仅是第一个找到的。
 
-## 参考链接：
+## 深入了解
+实现删除匹配模式的字符功能是以计算机科学早期的需求驱动的，特别是当需要对输入数据进行清理以满足特定的格式要求时。由于Ruby是一种强大且灵活的语言，它提供了许多删除字符的方法，包括 `gsub` 和 `tr`。上述 `delete` 方法对于从字符串中删除指定字符非常直观且有效率。然而，如果您需要执行更复杂的字符串替换或者基于正则表达式的匹配删除，那么 `gsub`或者`tr`方法可能更加适合。
 
-- [Ruby官方文档（gsub方法）](https://ruby-doc.org/core/Regexp.html#method-i-gsub)
-- [正则表达式基础教程](https://regexone.com/)
-- [正则表达式在线测试工具](https://regex101.com/)
+## 另请参阅
+1. [Ruby文档](https://ruby-doc.org/core-2.7.2/String.html#method-i-delete)中的 `delete` 方法。
+2. [Ruby文档](https://ruby-doc.org/core-2.7.2/String.html#method-i-gsub)中的 `gsub`方法。
+3. [Ruby文档中的](https://ruby-doc.org/core-2.7.2/String.html#method-i-tr) `tr`方法。

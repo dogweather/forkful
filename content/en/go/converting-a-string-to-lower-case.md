@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Go recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Go"
 category:             "Go"
@@ -11,41 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+In Go, converting a string to lower case means changing all the letters of the string to their lower case equivalences. This is very handy when performing string comparisons, sorting, or when dealing with user inputs to ensure consistency and prevent potential mishaps.
 
-Converting a string to lower case means changing all the letters in a string to their lowercase counterparts. It's a common operation in programming since it helps with comparison and string manipulation tasks. 
+## How to
+Go makes it very straightforward to convert a string to lower case with the `ToLower` function in the `strings` package. Here's a quick example:
 
-## How to:
+```Go
+package main
+import (
+    "fmt"
+    "strings"
+)
 
-To convert a string to lower case in Go, we can use the built-in ```strings.ToLower()``` function. Let's see it in action:
+func main() {
+    str := "Hello, GO!"
+    fmt.Println(strings.ToLower(str))
+}
+```
+When you run this code, Go will output:
 
 ```
-//declare a string variable
-str := "Hello World!"
-
-//convert string to lowercase
-lowerStr := strings.ToLower(str)
-
-//print the result
-fmt.Println(lowerStr)
+hello, go!
 ```
 
-The output would be: ```hello world!```
+## Deep Dive
+String case conversion isn't unique to Go; it has been part of programming since the early ASCII days. The logic behind it is pretty simple. Each character actually corresponds to a numeric value. ASCII for example, uppercase 'A' is 65 and lowercase 'a' is 97. To convert between the two, you can simply add or subtract 32.
 
+Alternative ways to do this in Go are using `bytes.Buffer` or looping over the string and manually converting each character, but using `strings.ToLower` is usually more efficient and readable.
 
-## Deep Dive:
+The `ToLower` function works by replacing each UTF-8 encoded Unicode code point in the string with its lower case equivalent. It's important to note that this function is case-preserving, which means it leaves any bytes that are not understanding case (like punctuation) untouched.
 
-### Historical Context:
-Manipulating strings has always been an essential part of programming, and converting a string to lowercase is a common task in many programming languages. In the past, programmers had to use complex algorithms or create custom functions to achieve this task. However, with the rise of modern programming languages like Go, this process has become much more streamlined and efficient, thanks to built-in functions like ```strings.ToLower()```.
+## See Also
+For more info, here are a couple of links that may help:
 
-### Alternatives:
-While Go has a built-in function for converting strings to lowercase, other programming languages may have different approaches. For example, in Python, we can use the ```lower()``` method, while in Java, we would use the ```toLowerCase()``` method. As a programmer, it's essential to be familiar with the different syntax and functions of each language.
-
-### Implementation details:
-Internally, the ```strings.ToLower()``` function in Go uses the ```unicode``` package to map the unicode table to lowercase. It also handles special cases like Turkish letters "İ" and "I" to ensure accurate results. 
-
-## See Also:
-
-- [Go documentation](https://golang.org/pkg/strings/#ToLower)
-- [Unicode Table](https://unicode-table.com/en/)
-- [Java documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())
-- [Python documentation](https://docs.python.org/3/library/stdtypes.html#str.lower)
+1. Go's official package documentation: [strings - The Go Programming Language](https://golang.org/pkg/strings/)
+2. Great breakdown on how Go strings work: [Strings, bytes, runes and characters in Go - The Go Blog](https://blog.golang.org/strings)

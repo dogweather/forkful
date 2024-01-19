@@ -1,7 +1,7 @@
 ---
-title:                "Å få gjeldende dato"
-html_title:           "Elm: Å få gjeldende dato"
-simple_title:         "Å få gjeldende dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,34 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-Å få gjeldende dato refererer til å hente ut dagens dato og tidspunkt i et gjeldende tidsformat. Dette er nyttig for programmører for å kunne spore tidspunktet når koden ble kjørt eller for å oppdatere grensesnittet med riktig dato og tid.
+## Hva & Hvorfor?
 
-## Hvordan:
+Å hente den nåværende datoen betyr å få tilgang til den eksakte datoen og klokkeslettet akkurat nå i programmet ditt. Dette kan være nyttig for en rekke programmeringskrav, f.eks for å registrere tidspunktet for en bestemt hendelse i en applikasjon.
+
+## Hvordan gjør du det:
+Her er enkel kode for å hente den nåværende datoen i Elm:
+
 ```Elm
-import Date exposing (Date, Time)
+import Time
+import Task
+import Browser
 
-getDate: Date
-getDate =
-  Date.fromTimezone Time.utc
+type alias Model = 
+  { time : Time.Posix }
 
+init : flags -> ( Model, Cmd Msg )
+init flags =
+  ( Model Time.millisToPosix 0
+  , Task.perform GetCurrentTime Time.now
+  )
+
+type Msg =
+  GetCurrentTime Time.Posix
 ```
+Koden over vil hente den nåværende datoen ved å bruke funksjonene tilgjengelig i `Time`-modulen.
 
-Utskrift:
-```
-2020-04-08 12:00:00 UTC
-```
+## Dyp Dykk
 
-Her importeres ```Date``` biblioteket som gir tilgang til funksjoner for å håndtere dato og klokkeslett. Deretter brukes ```Date.fromTimezone``` funksjonen for å hente ut den gjeldende datoen og klokkeslettet i UTC format.
+Hente den nåværende datoen har sin rot i de tidligste dagene av databehandling. Data og tid er kritiske datatyper som brukes i nesten alle moderne applikasjon.
 
-## Dykk ned:
-1. Historisk kontekst:
-Det har alltid vært viktig for programmerere å kunne spore og håndtere tid. Den første datoen var datert tilbake til Romerriket, men det var først på 1900-tallet at dato og klokkeslett ble standardisert internasjonalt.
-2. Alternativer:
-Det finnes mange måter å få gjeldende dato på, inkludert å bruke JavaScript for å hente ut dato på klientens side eller bruke et tredjeparts bibliotek som moment.js.
-3. Implementasjonsdetaljer:
-```Date``` biblioteket i Elm bruker en internt en numerisk representasjon av dato og klokkeslett som gjør det enkelt å håndtere dato og klokkeslett manipulasjoner.
+I Elm, vi bruker `Time` modul for å håndtere dato og tid funksjonaliteter. Den gir deg funksjonalitet til å konvertere datoen til forskjellige formater som du kan bruke for forskjellige formål i applikasjonen din.
 
-## Se også:
-- [Elm Date dokumentasjon](https://package.elm-lang.org/packages/elm-lang/core/1.0.5/Date)
-- [Moment.js bibliotek](https://momentjs.com/)
+Alternativene for å få dagens dato i Elm kan variere basert på dine spesifikke behov. For eksempel, hvis du bare er interessert i datoen, kan du konvertere `Time.Posix` verdien til en dato-streng.
+
+Implementasjonsdetaljer i Elm er rett frem. `Time.now`-funksjonen brukes til å hente den nåværende datoen og tiden. Den returnerer en oppgave som resultat, som deretter kan utføres for å få en `Time.Posix` verdi som representerer den nåværende datoen.
+
+## Se Også
+
+For mer informasjon om bruk av dato og tid i Elm, kan du referere til følgende dokumenter:
+
+1. Elm Time Modul Dokumentasjon: [https://package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/)
+2. Introduksjon til Funksjonell Programmering i Elm: [https://github.com/dwyl/learn-elm](https://github.com/dwyl/learn-elm)
+3. Elm Real World Eksempler på Github: [https://github.com/elm-community/elm-time](https://github.com/elm-community/elm-time)

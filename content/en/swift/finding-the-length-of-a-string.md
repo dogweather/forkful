@@ -1,6 +1,6 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "Swift recipe: Finding the length of a string"
+html_title:           "Arduino recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Swift"
 category:             "Swift"
@@ -12,31 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Finding the length of a string is a common task in programming that involves determining the number of characters in a given string. This information can be useful in a variety of scenarios, such as validating user input, manipulating data, or formatting output.
+Finding the length of a string refers to determining the number of characters in it. Programmers do it to control text input in UI design, validate user input, or manipulate strings better.
 
 ## How to:
 
-To find the length of a string in Swift, we can use the built-in `count` method. First, we define a string variable. Then, we use the `count` method and assign the result to another variable. Here's an example:
+In Swift, to find out the length of a string, we simply use the `count` property, like so:
 
 ```Swift
-let myString = "Hello, world!"
-let length = myString.count
-
-print("The length of the string is \(length)") // Output: The length of the string is 13
+let myString = "Hello, Swift!"
+print(myString.count)
 ```
 
-In the above example, we defined a string variable `myString` and assigned the value `"Hello, world!"` to it. Then, we used the `count` method on the string and assigned the result, which is the length of the string, to the variable `length`. Finally, we printed the string and its length using string interpolation.
+This will output:
 
-## Deep Dive
+`13`
 
-Since strings are an important part of programming, the concept of string length has been around since the early days of programming. In Swift, the `count` method replaced the older `length` method that was used in Objective-C. The `count` method is also used to determine the number of items in other data types such as arrays and dictionaries.
+The count includes the characters, spaces, and punctuation marks.
 
-There are other ways to find the length of a string, such as using a loop and counting the characters, but the `count` method is the most efficient and recommended way in Swift. Additionally, different languages and programming environments may have their own methods for finding the length of a string.
+Here’s another example that doesn’t include any spaces or punctuation:
 
-Under the hood, the `count` method in Swift uses the log2 sub-structure of a string's `utf8` view, making it a constant-time operation to find the length of a string. This means that regardless of the length of the string, the time to determine its length remains constant.
+```Swift
+let myString = "HelloSwift"
+print(myString.count)
+```
 
-## See Also
+The output will be:
 
-To learn more about strings and the `count` method in Swift, check out the [official documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html) on Strings and Characters. You can also explore other ways to manipulate strings in Swift, such as accessing a specific character or replacing parts of a string.
+`10`
 
-For more in-depth information about Swift and its features, the [Swift Programming Language](https://docs.swift.org/swift-book/) book is a great resource. And if you're interested in learning more about string length and its history, Wikipedia has a [detailed article](https://en.wikipedia.org/wiki/String_(computer_science)#:~:text=The%20length%20of%20a%20string,to%20commonly%20used%20string%20functions.) on the topic. Happy coding!
+## Deep Dive:
+
+While Swift uses the straightforward `count` property via Strings type, this has not been the case throughout the history of programming. Earlier languages like C required a function (`strlen()`) to determine the string length. C++ and Java make use of built-in methods like `.length()`. 
+
+As an alternative, Swift also allows you to use the `utf16.count` or `unicodeScalars.count` based on what length you want to calculate. Differentiating between a Unicode scalar, a character, and a UTF-16 code unit can be important in internationalized scenarios.
+
+The implementation of the string `count` property in Swift is interesting. It doesn't count characters one by one each time you call it. Swift strings are encoded in UTF-8 and might use one to four 8-bit bytes to store each character, but the string also stores the character counts for efficiency. 
+
+## See Also:
+
+1. [String Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/stringsChapters.html#//apple_ref/doc/uid/TP40009472): Learn more about the intricacies of working with strings in Apple's documentation.
+
+2. [The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html): More details about strings and characters in the official Swift language guide.
+
+3. [Swift.org - Strings](https://swift.org/blog/strings/): A blog post from Swift.org featuring strings, their storage, and more.

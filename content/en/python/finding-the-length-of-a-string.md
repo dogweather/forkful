@@ -1,6 +1,6 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "Python recipe: Finding the length of a string"
+html_title:           "Arduino recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Python"
 category:             "Python"
@@ -10,41 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Exploring String Length in Python: Brevity and Simplicity Rule
-
 ## What & Why?
-Determining the size of a string – the number of characters it contains – is a common task in Python. Seeing this count lets programmers handle large data, time-consuming operations, or user input efficiently.
+
+Finding the length of a string involves determining the number of characters in it. Programmers do it to manipulate data, validate input, or loop through characters.
 
 ## How to:
-Finding the length of a string in Python is accomplished using the `len()` function. This function takes a string as its argument and returns the count of characters (including spaces) in it.
-Here’s how you can do it:
 
-```python
-str = "Hello, World!"
-print(len(str))  # Returns 13
+Use Python's built-in `len()` function:
+
+```Python
+text = 'Hello, world!'
+print(len(text)) # Outputs: 13
 ```
 
-The output will be `13`. The comma, space, and exclamation mark are all counted as characters.
+It's simple and works even with Unicode characters:
 
-## Deep Dive:
-
-The `len()` function has been around since the birth of Python and is a built-in function, a testament to its practicality. It's simple, direct, and efficient, being O(1) complexity, meaning it takes constant time regardless of the string size.
-
-In Python, strings are objects and have several built-in methods. These include `__len__()` - you can call `str.__len__()` to get the same result:
-
-```python
-str = "Hello, World!"
-print(str.__len__())  # Returns 13
+```Python
+text = '你好，世界！'
+print(len(text)) # Outputs: 6
 ```
 
-But it's more Pythonic to use `len(str)`. It's simpler and cleaner code.
+## Deep Dive
 
-The `len()` function is preferable over manually iterating through the string with a for-loop and incrementing a counter. Such an approach is more cumbersome, prone to errors from overlooking special characters or forgetting edge cases, and slower because it has an O(n) complexity.
+Python's `len()` was already there in Python's earliest versions in the late '80s. It counts non-null-terminated characters, which is why you get the full Unicode character count.
 
-## See Also:
+An alternative: using a loop to manually count characters:
 
-For more about Python's string built-ins, see the [official documentation](https://docs.python.org/3/library/stdtypes.html#string-methods).
+```Python
+text = 'Hello, world!'
+count = 0
+for char in text:
+  count += 1
+print(count) # Outputs: 13
+```
 
-For more on computational complexity in Python, this [TimeComplexity Wiki](https://wiki.python.org/moin/TimeComplexity) sheds light.
+But `len()` is generally faster and more efficient unless you're doing something very peculiar indeed.
 
-For an insightful understanding of Python's `len()` function, check out this [Stackoverflow Discussion](https://stackoverflow.com/questions/2485466/pythons-len-function-performance).
+`len()` is an O(1) operation in Python. That's because Python strings are objects whose length is stored and accessible without needing to scan the entire string.
+
+## See Also
+
+Check out Python's official documentation on its built-in `len()` function: 
+- [https://docs.python.org/3/library/functions.html#len](https://docs.python.org/3/library/functions.html#len)
+
+And here's more on how Python implements its strings:
+- [https://docs.python.org/3/c-api/unicode.html](https://docs.python.org/3/c-api/unicode.html)
+
+There are plenty of additional Python string manipulations worth learning:
+- [https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)

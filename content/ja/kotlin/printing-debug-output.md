@@ -1,6 +1,6 @@
 ---
 title:                "デバッグ出力の印刷"
-html_title:           "Kotlin: デバッグ出力の印刷"
+html_title:           "Fish Shell: デバッグ出力の印刷"
 simple_title:         "デバッグ出力の印刷"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何（ナニ） & どうして（ナゼ）？
-デバッグ出力を表示することは、プログラマーがコードをテストするために行うことです。デバッグ出力を使用することで、コードの動作を理解し、問題を特定することができます。
+## 何となぜ?
 
-## 方法：
-以下に、Kotlinでデバッグ出力を表示する方法を示します。
+デバッグ出力の印刷は、コード中の値を検証する主要な手段です。プログラマーはデバッグ出力を使ってコードの実行中に何が起こるかを理解し、問題を解決しようとします。
 
-1. メッセージを直接表示する方法：
-```Kotlin
-println("Hello World!")
-```
+## 手順:
 
-2. 変数の値を出力する方法：
-```Kotlin
-val name = "John"
-println("Name: $name")
-```
+Kotlinでは`println()`関数を使用してデバッグ出力を印刷します。例えば:
 
-3. 条件付きでメッセージを表示する方法：
-```Kotlin
-val num = 5
-if (num < 10) {
-	println("Number is less than 10!")
+```kotlin
+fun main() {
+   var number = 5
+   println("Number is: $number")
 }
 ```
 
-## 深く(DEEP DIVE)：
-デバッグ出力は、1980年代にデバッガーの機能が限られていたために生まれました。デバッガーがデバッグ作業をサポートするようになったため、デバッグ出力はあまり使用されなくなっています。しかし、ビジュアルな方法ではなく、単純なテキスト形式でコードを理解することで、複雑な問題に取り組みやすい場合もあります。
+出力:
 
-代替方法としては、ロギングやデバッガーの使用があります。デバッグ出力は、単純な問題を解決するのに便利ですが、より複雑な問題ではロギングやデバッガーの方がより効果的です。
+```
+Number is: 5
+```
 
-デバッグ出力を実現するために、Kotlinでは```println()```という組み込みの関数が使用されます。この関数は、コンソールにメッセージを出力することができます。
+`$`記号を使用して変数を文字列に組み込むことができます。
 
-## 関連情報（SEE ALSO）：
-- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/tutorials/command-line.html#using-the-command-line-to-run-kotlin-programs)
-- [デバッグ入門ガイド](https://www.codecademy.com/articles/intro-to-debugging)
+## ディープダイブ:
+
+Kotlinの`println()`関数は、Javaの`System.out.println()`から直接派生しています。Javaで長い間標準的に使用されてきたコンソールへの出力方法です。
+
+代わりの方法として、`print()`関数も利用できます。これは改行せずに値を表示します。また、ログラム（Log4j、SLF4Jなど）を使用してデバッグ出力を制御し、ファイルに出力したり、出力のレベルを設定したりすることも可能です。
+
+具体的には、`println()`関数は実行時にコンソールに直接出力します。これは特にデバッグ目的で非常に便利ですが、パフォーマンスが必要な本番環境ではログツールを使用した方が良いかもしれません。
+
+## 関連情報:
+
+以下のリンクから更なる情報を得ることが可能です。
+
+- Kotlinの公式ドキュメント: [Basic Types](https://kotlinlang.org/docs/basic-types.html#strings) 
+- [Logging in Kotlin](https://www.baeldung.com/kotlin/logging)
+- Duo Mobileのブログ: [5 Tips For Debugging in Kotlin](https://duo.com/decipher/five-tips-for-debugging-in-kotlin)

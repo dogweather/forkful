@@ -1,7 +1,7 @@
 ---
-title:                "Buscando e substituindo texto"
-html_title:           "PowerShell: Buscando e substituindo texto"
-simple_title:         "Buscando e substituindo texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O que e Por que?
+Substituir texto em programação significa trocar uma instância de um caractere ou uma sequência de caracteres por outra em uma string. Fazemos isso para corrigir erros, atualizar informações e aprimorar a usabilidade do aplicativo.
 
-Substituir textos durante a programação pode ser uma tarefa tediosa e demorada. Felizmente, com o PowerShell, é possível automatizar essa atividade e agilizar o processo de desenvolvimento. 
+## Como fazer:
+Vamos começar com um exemplo simples. Para substituir 'bom dia' por 'boa tarde' em uma string, você pode usar o comando `Replace` assim:
 
-Os programadores geralmente substituem textos para corrigir erros, padronizar códigos ou fazer mudanças em massa em seus scripts. O uso correto dessa ferramenta pode economizar tempo e aumentar a produtividade no trabalho.
-
-## Como Fazer:
-
-Para realizar a substituição de textos no PowerShell, utilizamos o cmdlet ```-replace```acompanhado por dois parâmetros: o texto a ser substituído e o novo texto que o substituirá.
-
-```
-PowerShell -replace “texto antigo”, “novo texto”
+```PowerShell
+$string = "Bom dia, amigos!"
+$trocar = $string.Replace("bom dia", "boa tarde")
+echo $trocar
 ```
 
-Podemos usar o operador '|' para combinar vários comandos e realizar múltiplas substituições em uma única linha:
+A saída será:
 
-```
-(Get-Content arquivo.txt) | ForEach-Object {
-    $_ -replace “texto antigo”, “novo texto” -replace “outro texto antigo”, “outro novo texto”
-} | Set-Content arquivo.txt 
+```PowerShell
+Boa tarde, amigos!
 ```
 
-Caso queiramos fazer a substituição em todos os arquivos de um diretório, utilizamos o cmdlet ```-Path``` para especificar o caminho e utilizamos o ```-Include``` para escolher o tipo de arquivo que será afetado:
+## Mergulhando Fundo
+A função `Replace` vem do .NET Framework, onde PowerShell foi inicialmente desenvolvido, e é muito útil para manipular strings.
 
+Alternativamente, você pode usar o cmdlet `Replace` de PowerShell ou usar expressões regulares para substituições mais complexas. No entanto, eles podem ser mais difíceis de implementar que o método `Replace()`. Aqui está um exemplo usando expressão regular:
+
+```PowerShell
+$string = "Bom dia, amigos!"
+$trocar = $string -replace 'bom dia','boa tarde'
+echo $trocar
 ```
-PowerShell -replace “texto antigo”, “novo texto” -Path C:\diretorio -Include *.txt
+
+A saída também será:
+
+```PowerShell
+Boa tarde, amigos!
 ```
 
-## Deep Dive:
+## Veja Também
+Para mais detalhes, você pode consultar os seguintes links:
 
-A substituição de textos tem sido uma ferramenta essencial para programadores desde os primeiros dias da programação. No entanto, antes do PowerShell, essa tarefa era realizada através de comandos mais complexos e menos intuitivos. 
-
-Existem alternativas para a substituição de textos, como o famoso comando ```sed``` presente em sistemas Unix. No entanto, o PowerShell oferece uma experiência mais amigável e integrada com o sistema Windows.
-
-Para implementar a substituição de textos, o PowerShell utiliza a classe .NET ```Regex``` para encontrar correspondências e realizar as substituições. Isso também permite o uso de expressões regulares, tornando o processo mais flexível e poderoso.
-
-## Veja Também:
-
-Para mais informações sobre a substituição de textos no PowerShell, consulte a documentação oficial da Microsoft: [https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.core/about/about_replace?view=powershell-7.1](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.core/about/about_replace?view=powershell-7.1)
+1. [PowerShell Basics: String manipulation](https://www.randika.info/2020/05/23/powershell-basics-string-manipulation-methods/)
+2. [PowerShell Replace “Method” Versus “Operator”](https://adamtheautomator.com/powershell-replace/)
+3. [Introduction to Regular Expressions (Regex) in PowerShell](https://adamtheautomator.com/regex-powershell/)

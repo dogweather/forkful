@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "PowerShell: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,32 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Mit PowerShell Befehlszeilenargumente lesen
+
 ## Was & Warum?
-Lesen von Befehlszeilenargumenten in PowerShell ist ein wichtiger Teil beim Programmieren. Dabei werden die Argumente, die einem Skript oder einer Anwendung beim Ausführen übergeben werden, eingelesen und verarbeitet. Programmierer machen das, um Benutzern die Möglichkeit zu geben, Einstellungen oder Aktionen beim Starten eines Programms anzupassen oder anzugeben.
 
-## Wie geht's?
-In PowerShell gibt es das automatische Argument-Array `$args`, in dem alle Befehlszeilenargumente gespeichert werden. Zum Beispiel:
+Befehlszeilenargumente sind Eingabeinformationen, die ein Programm beim Start erhält. Programmierer nutzen sie, um die Kontrolle und Flexibilität ihrer Skripte zu erhöhen und um die Benutzerinteraktionen anzupassen.
+
+## Wie geht's:
+
+PowerShell bietet eine einfache Möglichkeit, Befehlszeilenargumente innerhalb eines Skripts zu nutzen. Wir verwenden den speziellen Array-Parameter `$args`.
+
 ```PowerShell
-# Beispielaufruf: powershell.exe -file "C:\MeinSkript.ps1" Argument1 Argument2
+# Beispiel Powershell Skript (myscript.ps1)
+param(
+    [Parameter(Position=0, Mandatory=$true)] [string]$ErstesArgument,
+    [Parameter(Position=1, Mandatory=$true)] [string]$ZweitesArgument
+)
 
-$script = $args[0] # $script enthält "C:\MeinSkript.ps1"
-$arg1 = $args[1] # $arg1 enthält "Argument1"
-$arg2 = $args[2] # $arg2 enthält "Argument2"
-
-Write-Host "Skriptpfad: $script"
-Write-Host "Erstes Argument: $arg1"
-Write-Host "Zweites Argument: $arg2"
-```
-Die Ausgabe wäre:
-```
-Skriptpfad: C:\MeinSkript.ps1
-Erstes Argument: Argument1
-Zweites Argument: Argument2
+Write-Output "Erstes Argument ist: $ErstesArgument"
+Write-Output "Zweites Argument ist: $ZweitesArgument"
 ```
 
-## Tiefentauchen
-Das Einlesen von Befehlszeilenargumenten ist eine gängige Praxis in der Programmierung, die bereits seit den Anfängen der Kommandozeilen-Interfaces verwendet wird. In anderen Skriptsprachen wie Python oder Perl ist es ebenfalls üblich, Befehlszeilenargumente zu verarbeiten. Eine Alternative zu `$args` in PowerShell ist die spezifische Parameter-Deklaration in einem Skript, um benannte Argumente anzunehmen. Implementierungsdetails können je nach Plattform und Skriptsprache unterschiedlich sein.
+Führen Sie das Skript mit Argumenten aus:
 
-## Siehe auch
-- Offizielle Dokumentation zu Befehlszeilenargumenten in PowerShell: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_command_arguments?view=powershell-7.1
-- Blog-Beitrag über Befehlszeilenargumente in PowerShell Skripten: https://adamtheautomator.com/powershell-command-line-arguments/
+```PowerShell
+.\myscript.ps1 "Hallo Welt" "Argument Zwei"
+```
+
+Ausgabe:
+
+```PowerShell
+Erstes Argument ist: Hallo Welt
+Zweites Argument ist: Argument Zwei
+```
+
+## Tiefere Kenntnisse:
+
+Historisch gesehen gibt es die Verwendung von Befehlszeilenargumenten seit den ersten Tagen der Computer. Sie sind ein universeller Bestandteil vieler Programmiersprachen, inklusive PowerShell.
+
+Alternativen zu `$args` sind `-Args` und `param()`. Der Unterschied besteht darin, dass `-Args` ein Array von Argumenten an eine Funktion oder ein Skript übergibt, während `param()` genutzt wird, um Eingabevariablen in Form von Argumenten für ein Skript zu definieren.
+
+PowerShell behandelt Argumente wie ein Array von Strings, das Sie durchlaufen können, um auf jedes einzelne Argument zuzugreifen. Diese Implementierung ist bahnbrechend, da sie den Zugang zu Argumenten weniger komplex und klarer macht.
+
+## Mehr Infos:
+
+Für tiefere Kenntnisse über Befehlszeilenargumente in PowerShell, checken Sie:
+
+**PowerShell Dokumentation:** 
+[Verwenden von Befehlszeilenparametern in Skripten](https://docs.microsoft.com/de-de/powershell/scripting/learn/ps101/09-functions?view=powershell-7.1#using-command-line-parameters-in-your-scripts) 
+
+**StackOverflow Posten:** 
+[Wie arbeitet man mit Befehlszeilenargumenten?](https://stackoverflow.com/questions/2157554/powershell-command-line-arguments)
+
+Viel Spaß beim Coden und entdecken der vielseitigen Möglichkeiten von PowerShell!

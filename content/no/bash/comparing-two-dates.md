@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Bash: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Sammenligning av to datoer er en vanlig oppgave for programmerere. Det er en måte å sjekke om en dato er større, mindre eller lik en annen dato. Det er nyttig for å organisere og filtrere data basert på datoer.
+## Hva & Hvorfor?
 
-## Slik gjør du:
-Bruk følgende syntaks for å sammenligne to datoer i Bash:
-```
-if [ "$date1" -eq "$date2" ]; then
-  echo "Datoene er like"
-elif [ "$date1" -lt "$date2" ]; then
-  echo "Dato1 er før Dato2"
+Sammenligning av to datoer innebærer å sjekke hvilken som kommer først eller sist, eller om de er like. Det er viktig for programmering, fordi det hjelper oss til å håndtere og manipulere tid og datoer effektivt i apps og programmer.
+
+## Hvordan Gjøre Det:
+
+Vi kan sammenligne to datoer i Bash ved bruk av `-gt`, `-lt`, `-ge`, `-le`, `-eq` og `-ne` operatører. Her er noen kodeeksempler:
+
+```Bash
+# Definer datoer
+dato1=$(date -d "2022-01-01" +%s)
+dato2=$(date -d "2022-02-01" +%s)
+
+# Sammenlign datoer
+if [ $dato1 -eq $dato2 ]; then
+    echo "Datoene er like"
+elif [ $dato1 -gt $dato2 ]; then
+    echo "Dato1 er senere enn Dato2"
 else
-  echo "Dato1 er etter Dato2"
+    echo "Dato1 er tidligere enn Dato2"
 fi
 ```
+Dette scriptet vil konvertere datoene til sekunder siden Unix-epoken, og deretter sammenligne dem.
 
-Eksempelutdata:
-```
-date1=2021-01-01
-date2=2021-01-15
-Dato1 er før Dato2
-```
+## Dyp Dykk:
 
-## Dykk dypere:
-I eldre versjoner av Bash ble datofunksjonen "test" brukt for å sammenligne datoer. Men med den nyere versjonen av Bash, kan du bruke operatøren "-eq" for numeriske sammenligninger. Alternativt kan du også bruke Unix-verktøyet "date" for å konvertere datoer til epokenummer og sammenligne dem. Implementeringen av sammenligningen er basert på ISO-datoformatet, og kan variere mellom forskjellige operativsystemer.
+Unix-epoken startet klokken 00:00:00 UTC den 1. januar 1970. Denne metoden for dato-sammenligning forutsetter at bakgrunnssystemet ditt bruker en dato som kan konverteres til sekunder siden denne epoken.
 
-## Se også:
-- [Bash Manual](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- [Using Date in Bash Scripts](https://www.baeldung.com/linux/bash-date-command)
+Alternativt kan du bruke `date` kommandoen med `-d` flagget for å konvertere streng til dato i Bash. Du kan også bruke `strtotime` funksjonen i PHP, eller `datetime` modulen i Python for å sammenligne datoer.
+
+Implementeringsdetaljer vil variere avhengig av system og språk, men hovedkonseptet om å konvertere datoer til et sammenlignbart format forblir det samme.
+
+## Se Også:
+
+- [Unix Tid](https://no.wikipedia.org/wiki/Unix-tid)
+- [Bash Date Command](https://www.linuxtechi.com/date-command-linux-examples/)
+- [Bash Comparison Operators](https://tldp.org/LDP/abs/html/comparison-ops.html)

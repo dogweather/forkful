@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "PHP: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
 simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,25 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Merkkijonon muuttaminen pieniksi kirjaimiksi on yleinen ohjelmoinnin tehtävä, jossa muutetaan merkkijonon kaikki kirjaimet pieniksi. Tätä tehdään yleensä helpottamaan merkkijonon vertailua ja käsittelemistä. Esimerkiksi "Tämä on TESTI" ja "tämä on testi" ovat eri merkkijonoja, vaikka ne olisivatkin sisällöltään samat. Pieniksi kirjaimiksi muuttamisen avulla molemmat merkkijonot olisivat identtisiä ja vertailu olisi helpompaa.
+## Mitä & Miksi?
 
-## Näin teet sen:
-```php
-$str = "Tämä on TESTI";
-echo strtolower($str); // tulostaa "tämä on testi"
+Merkkijonojen muuttaminen pienaakkosiksi tarkoittaa merkkijonojen muuttamista siten, että kaikki suuraakkoset korvataan vastaavilla pienaakkosilla. Tämän avulla voimme tehdä tietojen vertailusta yksinkertaisempaa ja vähemmän virhealtista. 
+
+## Näin se toimii:
+
+Sisäänrakennetun `strtolower()` funktion avulla PHP:ssä voidaan muuttaa merkkijonot pienaakkosiksi. 
+Katso esimerkki alla:
+
+```PHP
+<?php
+$myStr = "PÄIVÄÄ SUOMI";
+echo strtolower($myStr);
+?>
 ```
+Tässä tapauksessa tuloste olisi "päivää suomi".
 
-Pieniksi kirjaimiksi muuttaminen on helppoa PHP:ssä käyttämällä strtolower()-funktiota, jolle annetaan parametrina käsiteltävä merkkijono. Funktio palauttaa uuden merkkijonon, jossa kaikki kirjaimet ovat pieniä.
+## Syvä sukellus:
 
-## Syvempi sukellus:
-Historiallisessa kontekstissa merkkijonon muuttaminen pieniksi kirjaimiksi on tärkeää, koska vanhemmat järjestelmät eivät välttämättä tue isoja ja pieniä kirjaimia samalla tavalla. Tämä voi aiheuttaa ongelmia esimerkiksi tietokantojen kanssa, joissa merkkijonot tallennetaan tietyillä säännöillä. Siksi merkkijonon muuttaminen pieniksi kirjaimiksi voi olla välttämätöntä, jotta järjestelmät toimivat oikein ja tiedot tallentuvat oikein.
+Kun `strtolower()` esiteltiin alunperin PHP 3:ssa, sitä on käytetty laajasti siistimään ja normalisoimaan tietoja. Se on edelleen tärkeä osa PHP:n merkkijonon käsittelyvälineitä. 
 
-Vaihtoehtoja merkkijonon muuttamiseen pieniksi kirjaimiksi on erilaisia, ja onkin tärkeää valita oikea tapa kunkin tilanteen mukaan. Esimerkiksi mb_strtolower()-funktio on samanlainen kuin strtolower(), mutta se toimii myös monikielisissä ympäristöissä. Myös muut koodausstandardit ja työkalut voivat tarjota erilaisia tapoja käsitellä merkkijonoja.
+Vaihtoehtoja on, kuten `mb_strtolower()`, joka hoitaa monikieliset merkkijonot paremmin, mutta `strtolower()` on yleisimmin käytetty tapa PHP:ssa. 
 
-Teknisiä yksityiskohtia merkkijonon muuttamisesta pieniksi kirjaimiksi voi olla mielenkiintoista tutkia, mutta yleensä tuntemus itse toiminnasta ei ole välttämätöntä. Riittää, kun tietää, miten käyttää valmiita toimintoja ja valita oikea vaihtoehto käyttötilanteen mukaan.
+Nämä funktiot toimivat skannaamalla läpi merkkijonon ja korvaamalla jokainen suuraakkonen vastaavalla pienaakkosella käyttäen ASCII-arvotaulukkoa. 
 
 ## Katso myös:
-- [PHP:tä muiden ohjelmointikielten näkökulmasta](https://www.toptal.com/php/your-php-is-not-my-php)
-- [Perusohjeita merkkijonojen käsittelyyn PHP:ssä](https://www.sitepoint.com/processing-strings-using-php/)
-- [mb_strtolower()-funktion dokumentaatio](https://www.php.net/manual/en/function.mb-strtolower.php)
+
+Lisätietoa saadaksesi, tutustu seuraaviin lähteisiin:
+- [PHP:n virallinen ohjekirja strtolower()](https://www.php.net/manual/en/function.strtolower.php)
+- [PHP:n virallinen ohjekirja mb_strtolower()](https://www.php.net/manual/en/function.mb-strtolower.php)

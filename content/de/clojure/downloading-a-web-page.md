@@ -1,7 +1,7 @@
 ---
-title:                "Einen Webseiten-Download durchführen"
-html_title:           "Clojure: Einen Webseiten-Download durchführen"
-simple_title:         "Einen Webseiten-Download durchführen"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -12,38 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Herunterladen einer Webseite bezieht sich auf den Prozess, bei dem eine Programmcode-Datei eine bestimmte Webseite von einem Server im Internet abruft und die darin enthaltenen Daten auf dem Computer speichert. Programmierer nutzen diese Funktion häufig, um Daten und Informationen von Webseiten zu extrahieren und in ihre Anwendungen einzubinden.
+Webseiten herunterladen ist der Prozess des Abrufens von Dateien von einem Server über das Internet. Programmierer tun dies meist, um den Inhalt der Seite für die Analyse oder Offline-Nutzung zu erfassen.
 
-## Wie geht's?
+## Wie man:
 
-Um eine Webseite in Clojure herunterzuladen, kann die folgende Funktion verwendet werden:
-
-```Clojure
-(require '[clojure.java.io :as io])
-
-(defn download-webpage [url]
-  (io/copy (io/input-stream url) (io/output-stream "webpage.html")))
-```
-
-Erst importieren wir die clojure.java.io Bibliothek, um auf Funktionen für das Lesen und Schreiben von Dateien zuzugreifen. Dann definieren wir unsere eigene Funktion namens "download-webpage", die eine URL als Eingabe erwartet. Die Funktion verwendet dann die Funktion "copy" von "clojure.java.io", um den Inhalt der Webseite in eine lokale Datei mit dem Namen "webpage.html" zu kopieren.
-
-Um die Funktion auszuführen, können wir Folgendes tun:
+Hier ist ein einfacher Clojure-Code, um eine Webseite herunterzuladen:
 
 ```Clojure
-(download-webpage "https://www.meinewebseite.de")
-```
+(ns demo.webdownload
+  (:require [clojure.java.io :as io]))
 
-Die Webseite wird dann heruntergeladen und in der aktuellen Arbeitsverzeichnis gespeichert.
+(defn download-site
+  [site-path]
+  (let [site (io/input-stream site-path)
+        webpage (slurp site)]
+    (prn webpage)))
+
+(download-site "https://www.example.com")
+
+```
+Die Ausgabe wird der Inhalt der aufgerufenen Webseite sein.
 
 ## Tiefere Einblicke
 
-Das Herunterladen von Webseiten ist ein wichtiger Bestandteil vieler Anwendungen und Bibliotheken, da es eine einfache Möglichkeit bietet, Daten aus dem Internet zu extrahieren. Es gibt jedoch auch alternative Lösungen, wie beispielsweise APIs oder Web Scraping-Tools.
+Webseiten-Herunterladen hat eine lange Geschichte, die bis zu den Anfängen des WWW zurückreicht. Es gibt verschiedene Alternativen und Methoden, die je nach Kontext, z.B. Ausführungsgeschwindigkeit oder Ressourcenverbrauch, besser sein können. Sie könnten `clj-http.client` für komplexere Anforderungen verwenden, aber die in diesem Artikel vorgestellte Methode ist für einfache Anforderungen ausreichend.
 
-Bei der Implementierung einer solchen Funktion ist es wichtig, sicherzustellen, dass die Webseite gespeichert und gelesen werden kann, unabhängig von der Größe oder Format der Datei. Auch die Behandlung von möglichen Fehlern, wie beispielsweise Serverfehlern oder fehlerhaften URLs, sollte berücksichtigt werden.
+Die Implementierungsdetails des Webseiten-Download variiert je nach der spezifischen Programmiersprache und der Nutzung. In Clojure verwenden wir häufig `slurp` und `java.io.input-stream` zur Vereinfachung. 
 
-## Siehe auch
+## Mehr zu sehen
 
-Weitere Informationen und Tutorials zu Clojure und dem Herunterladen von Webseiten finden Sie unter:
+- Clojure offizielle Dokumentation: (https://clojure.org)
+- Übersicht über das Herunterladen von Webseiten: (https://en.wikipedia.org/wiki/Web_scraping)
+- clj-http.client Dokumentation:  (https://github.com/dakrone/clj-http)
 
-- "Clojure Dokumentation": https://clojure.org/
-- "Web Scraping in Clojure": https://medium.com/clojure-hosting/scraping-the-web-clojure-3db7725af597
+ Bitte beachten Sie, dass Web-Scraping legalen und ethischen Bedenken unterliegt. Informieren Sie sich immer über diese Bedenken, bevor Sie eine Webseite scrapen.

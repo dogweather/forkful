@@ -1,7 +1,7 @@
 ---
-title:                "Analisi dell'html"
-html_title:           "Ruby: Analisi dell'html"
-simple_title:         "Analisi dell'html"
+title:                "Analisi del html"
+html_title:           "Arduino: Analisi del html"
+simple_title:         "Analisi del html"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,41 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Che cosa & Perché?
-Il parsing di HTML è il processo di analisi di un documento HTML per estrarre le informazioni strutturate al suo interno. I programmatori fanno questo per ottenere i dati necessari da un sito web per l'utilizzo in un'applicazione o per la creazione di un altro sito web.
+## Cos'è e Perchè? 
 
-# Come fare:
-```Ruby 
-require ‘nokogiri’
-require ‘open-uri’
+L'analisi sintattica (Parsing) di HTML consiste nell'estrarre dati utili dai documenti HTML. I programmatori la usano per automatizzare il recupero di informazioni dai siti web, per esempio per l'analisi dei dati.
 
-# Creare uno scraper per estrarre i dati
-url = "www.example.com"
-page = Nokogiri::HTML(open(url))
-# Utilizzare i selettori CSS per estrarre le informazioni desiderate
-page.css(".product-name").each do |item|
-  puts item.text.strip
-end
-```
+## Come Fare:
+
+Il pacchetto 'Nokogiri' è uno dei più utili per l'analisi HTML in Ruby. Installalo con:
 
 ```Ruby
-# Analizzare un documento HTML salvato localmente
-file = File.open("index.html")
-doc = Nokogiri::HTML(file)
-# Ottenere il contenuto dell'elemento specificato
-item = doc.at_css("#header").inner_html
-puts item
+gem install nokogiri
 ```
 
-Output:
-```
-Item Name
-<h1>Header</h1>
+Ecco un esempio di come si usa:
+
+```Ruby
+require 'nokogiri'
+require 'open-uri'
+
+html = open('https://www.esempio.com')
+doc = Nokogiri::HTML(html)
+
+titoli = doc.xpath('//h1').map {|h1| h1.content}
+puts titoli
 ```
 
-# Approfondimento:
-Il parsing di HTML è stato introdotto nei primi anni di sviluppo del web per consentire ai programmatori di accedere ai contenuti dei siti web e utilizzarli per scopi diversi. Oltre a Nokogiri, ci sono altre librerie come Hpricot e lo standard Ruby's libxml utilizzabili per il parsing di HTML.
+Questo codice scarica la pagina www.esempio.com, ne estrae tutti i titoli di primo livello (h1) e li stampa.
 
-# Vedi anche:
-- [Documentazione ufficiale di Nokogiri](https://nokogiri.org/)
-- [Tutorial di parsing di HTML con Ruby](https://www.rubyguides.com/2012/01/parsing-html-in-ruby/)
+## Approfondimenti
+
+L'analisi sintattica HTML risale agli albori del web, quando i programmatori iniziarono ad estrarre dati da pagine web per molti scopi. 
+
+Esistono altre librerie per l'analisi HTML in Ruby, come 'hpricot' o 'mechanize', ma 'Nokogiri' è la più popolare ed è generalmente considerata la più facile da usare.
+
+L'implementazione di un parser HTML può variare, ma di solito si tratta di leggere la struttura ad albero del documento HTML e "navigare" tra i suoi nodi.
+
+## Vedi Anche
+
+- Documentazione di Nokogiri: [http://nokogiri.org](http://nokogiri.org)
+- Tutorial su come fare scraping con Nokogiri: [https://www.tutorialspoint.com/ruby-on-rails/rails-web-services.htm](https://www.tutorialspoint.com/ruby-on-rails/rails-web-services.htm)
+- Parsing HTML con Ruby: [https://ruby-doc.org/stdlib-2.6.1/libdoc/open-uri/rdoc/OpenURI.html](https://ruby-doc.org/stdlib-2.6.1/libdoc/open-uri/rdoc/OpenURI.html)

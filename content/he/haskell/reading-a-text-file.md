@@ -1,7 +1,7 @@
 ---
-title:                "קריאה של קובץ טקסט"
-html_title:           "Haskell: קריאה של קובץ טקסט"
-simple_title:         "קריאה של קובץ טקסט"
+title:                "קריאת קובץ טקסט"
+html_title:           "Go: קריאת קובץ טקסט"
+simple_title:         "קריאת קובץ טקסט"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,29 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# הכתיבה ב- Haskell: קריאת קובץ טקסט
+
 ## מה ולמה?
-קריאת קובץ טקסט היא תהליך בו מתבצעת קריאה שורה אחר שורה של טקסט שמוכנס בקובץ מיוחד. תהליך זה מאפשר למתכנתים לקרוא, לערוך ולהתמודד עם קלט של משתמשים ואירועים חיצוניים.
 
-## איך לעשות זאת:
-לאחר התקנת השפה Haskell, ניתן להשתמש בפונקציה "getContents" כדי לקרוא את הקלט הטקסטואלי של המשתמש בצורה נוחה וקלה. בהמשך ניתן להשתמש בפונקציות נוספות כמו "readFile" לקרוא קבצים בצורה יעילה יותר. הנה דוגמאות של קוד ותוצאות:
+קריאת קובץ טקסט היא פעולה שבה תוכנה קוראת נתונים מתוך קובץ טקסט. תיכנים עושים זאת על מנת לעבד מידע, לשמור משתנים, לבנות דטה-בייסים ועוד.
 
-```haskell
-getContents
--- למשל, אם הקלט שהמשתמש מכניס הוא "Hello World!", התוכנית תדפיס: "Hello World!"
+## איך לעשות:
 
-readFile "numbers.txt"
--- אם הקובץ numbers.txt מכיל את הטקסט "1\n2\n3\n4\n5", התוצאה תהיה: "12345"
+קוד ב-Haskell לקריאת קובץ:
+
+```Haskell
+import System.IO
+
+main = do
+    text <- readFile "test.txt"
+    putStrLn text
 ```
 
-## עיון מעמיק:
-לפני יצירת השפה Haskell, בשנת 1990, זאפ מתחוללת הוצע כפתרון לקריאת קבצים טקסטואליים. השיטה הזו מאפשרת לשלוט על הקלט לפי צורת יצירתו ולטפל בו בצורה מאורגנת ויעילה יותר.
+אם "test.txt" מכיל את הטקסט "שלום עולם", הרצת הקוד תחזיר:
 
-ייתכן שחלק מהקוראים יכירו במשפט "open()", שניתן להשתמש בו כדי לקרוא ולכתוב קבצים בשפות כמו C ו-Python.
+```Haskell
+שלום עולם
+```
 
-כעת, עם הגעתו של Haskell, ניתן לנהל קובץ טקסט בצורה פשטנית ומאורגנת באמצעות פונקציות כמו "getContents" ו-"readFile".
+## צלילה עמוקה
 
-## ראו גם:
-למידע נוסף על כיצד לקרוא קבצים בשפת Haskell, ניתן לקרוא את המאמר "List of IO Functions in Haskell" באתר "Haskellers".
-למידע נוסף על זא לחץ כאן
+במרוצת השנים, Haskell פיתחה מספר דרכים לקריאת קבצים. התחלתית, הוספנו מודולים כמו `System.IO` לשם קריאה וכתיבה בקבצים. לאחר מכן, הוספנו פונקציונליות לטיפול בשגיאות שקורות במהלך הקריאה.
 
-https://wiki.haskell.org/Handling_Files
+חלופות לקריאת קבצים ב-Haskell כוללות את המודולים `Data.ByteString` ו- `Data.Text`. כל אחד מהם משמש לטיפולים שונים של טקסט, ונבחר בהתאם לדרישות המצב.
+
+## ראה גם:
+
+1. [Haskell Wiki - עבודה עם קבצים](https://wiki.haskell.org/Working_with_files)
+2. [Real World Haskell - קריאת וכתיבת קבצים](http://book.realworldhaskell.org/read/io.html)
+3. [Hoogle - System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+4. [Stack Overflow - דיון בנושא קריאת קבצים ב-Haskell](https://stackoverflow.com/questions/7860351/reading-from-files-in-haskell)

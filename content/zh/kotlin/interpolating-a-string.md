@@ -1,7 +1,7 @@
 ---
-title:                "插入字符串"
-html_title:           "Kotlin: 插入字符串"
-simple_title:         "插入字符串"
+title:                "插值字符串"
+html_title:           "Arduino: 插值字符串"
+simple_title:         "插值字符串"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是字符串插值？
+## 什么和为什么？
+字符串插值是一种编程模式，它能将变量或表达式直接嵌入到字符串中。程序员之所以这么做，是因为它使得编写和理解字符串更加方便，明了。
 
-字符串插值是一种编程技术，它允许程序员将变量或表达式直接嵌入到字符串中。这样做可以更方便地构建动态的字符串，而无需手动拼接（concatenate）它们。
+## 怎么做？:
+下面是一个Kotlin编程语言的例子，这个例子讲解了如何在字符串中插入变量和表达式。
 
-## 如何使用：
+```Kotlin
+fun main() {
+    val name = "张三"
+    val age = 30
 
-### 基本用法：
+    // 使用字符串插值
+    println("我是$name, 我的年龄是$age。")
 
-```
-val name = "张三"
-val greeting = "你好，$name！" 
-println(greeting) //输出：你好，张三！
-```
-
-### 括号可选：
-
-```
-val num1 = 10
-val num2 = 5
-val result = "${num1}加上${num2}等于${num1 + num2}"
-println(result) //输出：10加上5等于15
+    // 使用表达式
+    println("十年后，我${age + 10}岁了。")
+}
 ```
 
-## 深入了解：
+运行这段程序，您将看到下面的输出。
 
-### 历史背景：
+```
+我是张三, 我的年龄是30。
+十年后，我40岁了。
+```
 
-字符串插值在2011年由Swift语言提出，随后被众多编程语言采纳，包括Kotlin。它的出现使得动态字符串的构建变得更加简单和直观。
+## 深度挖掘
+字符串插值是很早就有的概念，在历史中不同的编程语言有不同的实现方式。如今它已经被许多现代编程语言，包括Kotlin，广泛的采用。然而也有一些其他的方式构造字符串，例如：使用字符串连接方法。
 
-### 其他替代方法：
+在Kotlin 中，字符串插值的实现方式就是通过'$'字符来表示。当Kotlin解析字符串时，遇到'$'字符，就会认为其后的内容需要被插值。
 
-在早期，拼接字符串是一种常用的方法，但它会导致代码可读性差和维护困难。另外，使用Java语言时，可以通过String.format()方法来实现类似的功能，但它相对复杂且易出错。
+## 另请参阅
+如果你还想了解更多关于Kotlin编程语言和字符串插值的信息，那么你可以参考下面的链接。
 
-### 实现细节：
-
-字符串插值通过在字符串前加上"$"符号来实现，在运行时编译器会将字符串拆分为静态部分和变量/表达式。然后使用StringBuilder类来构建最终的字符串，这也是它的效率比拼接字符串高的原因。
-
-## 查看更多：
-
-- [Kotlin官方文档](https://kotlinlang.org/docs/reference/basic-types.html#string-interpolation) 
-- [Swift官方文档](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID293)
+- [Kotlin语言官方文档](https://kotlinlang.org/)
+- [JetBrains公司的Kotlin程序设计语言教程](https://www.jetbrains.com/zh-cn/kotlin/)
+- [菜鸟教程上关于Kotlin字符串插值的讲解](https://www.runoob.com/kotlin/kotlin-strings.html)

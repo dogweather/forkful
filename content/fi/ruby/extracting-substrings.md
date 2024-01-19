@@ -1,7 +1,7 @@
 ---
-title:                "Alimerkkijonojen erottaminen"
-html_title:           "Ruby: Alimerkkijonojen erottaminen"
-simple_title:         "Alimerkkijonojen erottaminen"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,22 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
-Substringien erottaminen on prosessi, jossa ohjelmoijat etsivät ja poimivat osia merkkijonoista, jotka haluavat manipuloida tai tarkastella tietyn algoritmin tai funktion suorittamiseksi. Tätä käytetään usein muutosten tekemiseen olemassa oleviin merkkijonoihin tai niiden jakamiseen pienempiin osiin datan käsittelyä varten.
+# Rubyssa merkkijonojen alijonojen poimiminen
 
-# Miten tehdä se:
-Erota alamerkkijonoja Rubyssa voidaan tehdä useilla eri tavoilla, mutta yleisin tapa on käyttää String-luokan sisäänrakennettuja metodeita, kuten #slice ja #substring. Seuraavassa esimerkissä näytämme, miten voit erottaa alamerkkijonon tietystä merkkijonosta käyttämällä #slice metodia:
+## Mikä & Miksi?
 
-```ruby
-string = "Tervetuloa Rubyyn!"
-puts string.slice(0, 9)
+Substringien poimiminen tarkoittaa sitä, että valitsemme osan merkkijonosta. Ohjelmoijat tekevät tämän, koska usein tarvitsemme vain osan tiedoista, joita merkkijono sisältää.
+
+## Näin teet:
+
+```Ruby
+str = "Hei maailma"
+puts str[0,3]    # "Hei"
+puts str[4,6]    # "maailma"
+puts str[-1]     # "a"
 ```
-Tämä tulostaisi "Tervetulo" terminaalissa. Ensimmäinen parametri #slice metodissa on aloituskirjain indeksi, ja toinen on lopetuskirjain indeksi.
 
-# Syvemmälle:
-Substringien erottaminen on ollut tärkeä osa ohjelmointia pitkään. Alun perin kehitsi IBM:n kehittäjä, ohjelmointikieltä nimeltä SNOBOL. Kuten aiemmin mainittu, Rubyssa on erilaisia ​​tapoja erottaa alamerkkijonot, kuten myös #[] -metodilla, jota käytetään pääasiassa lopputaulukoinnissa.
+Koodissa alijonojen indeksit aloitetaan merkkijonon alusta. Negatiiviset indeksit alkavat merkkijonon lopusta.
+
+```Ruby
+str = "rubyonrails"
+puts str["ruby"] # "ruby"
+puts str["lua"]  # nil
+```
+
+Näissä esimerkeissä käytetty metodi palauttaa alijonon, jos se löytyy merkkijonosta. Muuten palautetaan nil.
+
+## Syvemmälle
+
+Historiassa Rubyn alkuperäiset tekijät lisäsivät substring-toiminnot, koska ne ovat välttämättömiä monissa ohjelmointitehtävissä. Ruby tarjoaa useita tapoja tehdä tämä, kuten `slice()`, `[]`, `substring()`. Todellinen toteutus riippuu siitä, mitä tarvitaan ja kuinka monimutkainen merkkijono on.
 
 ## Katso myös:
-- Ruby String-luokan dokumentaatio: https://ruby-doc.org/core-2.7.1/String.html
-- Ruby String-luokan Github-lähdekoodi: https://github.com/ruby/ruby/blob/master/string.c
-- String methods in Ruby – SitePoint article: https://www.sitepoint.com/ruby-string-methods/
+
+Linkit muihin lähteisiin, jotka voivat olla hyödyllisiä:
+
+1. Rubyn virallinen dokumentaatio merkkijonojen alijonoista: https://ruby-doc.org/core-2.7.1/String.html
+2. Verkkokurssi Ruby-merkkijonoista: https://www.rubyguides.com/2015/03/ruby-strings/
+3. StackOverflow-keskustelut Rubyn alijonoista: https://stackoverflow.com/questions/tagged/ruby+substring

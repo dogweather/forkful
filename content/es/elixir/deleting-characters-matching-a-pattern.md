@@ -10,29 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué es y por qué? 
-Eliminar caracteres que coinciden con un patrón es una técnica común utilizada por los programadores para manipular cadenas de texto y limpiar datos. Se utiliza para eliminar caracteres no deseados que no encajan en un patrón especificado.
+## ¿Qué y por qué?
+Eliminar caracteres que coincidan con un patrón en Elixir se refiere a la eliminación de caracteres específicos en una cadena que coinciden con un patrón definido. Los programadores lo hacen generalmente para limpiar y organizar los datos, y para facilitar su procesamiento y análisis.
 
-Cómo hacerlo:
-Aquí hay un ejemplo sencillo de cómo eliminar caracteres que coinciden con un patrón en Elixir:
+## Cómo se hace:
+Aquí hay un ejemplo de cómo puedes eliminar caracteres que coincidan con un patrón en Elixir:
 
-```Elixir
-str = "Eli…..xir"
-clean_str = Regex.replace(~r/[^A-Za-z]/, str, "")
-IO.puts(clean_str)
-# Output: Elixir 
+```elixir
+    #Ejemplo de código
+    iex> String.replace("¡Hola, Mundo!", ",", "")
+    "¡Hola Mundo!"
 ```
-En este ejemplo, especificamos un patrón utilizando expresiones regulares (`~r/[^A-Za-z]/`) que coincide con cualquier carácter que no sea una letra. Luego utilizamos la función `Regex.replace()` para reemplazar todos los caracteres que coinciden con este patrón con una cadena vacía. Finalmente, imprimimos el resultado utilizando `IO.puts()` y obtenemos la cadena "Elixir" sin los puntos suspensivos.
 
-Profundizando:
-Eliminar caracteres que coinciden con un patrón es una técnica que ha existido desde los primeros días de la programación de computadoras. Se utilizaba principalmente para limpiar datos y eliminar información innecesaria antes de realizar cálculos o análisis. En Elixir, también podemos utilizar la función `String.replace()` para lograr el mismo resultado, pero esta función solo funcionará con patrones más simples sin utilizar expresiones regulares.
+El fragmento de código anterior elimina las comas de la cadena.
 
-Alternativas:
-Además de utilizar la función `Regex.replace()`, también podemos utilizar la función `Regex.split()` para dividir una cadena en una lista basada en un patrón determinado y luego manipular la lista resultante. Otra alternativa es utilizar la función `String.delete_suffix()` o `String.delete_prefix()` para eliminar un sufijo o prefijo específico de una cadena.
+## Inmersión profunda
+Eliminar caracteres por patrones se originó en los lenguajes de programación funcional como Elixir para realizar operaciones de cadena más eficientes y precisas. Aunque hay formas alternativas de lograr el mismo resultado, la eliminación de caracteres por patrón es rápida y eficiente especialmente cuando se trabaja con grandes volúmenes de datos.
 
-Detalles de implementación:
-La función `Regex.replace()` en Elixir utiliza la librería PCRE (Perl Compatible Regular Expressions, expresiones regulares compatibles con Perl) para procesar los patrones especificados. Esta librería está escrita en lenguaje C y es extremadamente rápida y eficiente. Al utilizar expresiones regulares en Elixir, también podemos aprovechar las características avanzadas de la sintaxis de expresiones regulares de PCRE para realizar operaciones más complejas y avanzadas en nuestras cadenas.
+Al usar 'String.replace', Elixir busca el patrón de caracteres en la cadena, y cada vez que encuentra una coincidencia, elimina los caracteres correspondientes. Internamente, 'String.replace' utiliza la funcionalidad de la biblioteca de erlang, lo que la hace extremadamente rápida y eficiente.
 
-Ver también:
-- Documentación de la función `Regex.replace()` en la página oficial de Elixir: https://hexdocs.pm/elixir/Regex.html#replace/3
-- Ejemplos de uso de expresiones regulares en Elixir: https://elixir-examples.github.io/string/regex
+## Ver también
+Para más información, puedes consultar las fuentes relacionadas:
+
+- Guía oficial de Elixir para la manipulación de cadenas: https://elixir-lang.org/getting-started/basic-types.html#strings
+
+- Documentación sobre la función `String.replace`: https://hexdocs.pm/elixir/String.html#replace/3
+
+- Entrada de blog sobre la manipulación de cadenas en Elixir: http://learningelixir.joekain.com/string-manipulation-in-elixir/

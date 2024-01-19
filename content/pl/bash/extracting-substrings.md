@@ -1,7 +1,7 @@
 ---
-title:                "Wycinanie podciągów"
-html_title:           "Bash: Wycinanie podciągów"
-simple_title:         "Wycinanie podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -12,38 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-W programowaniu często zdarza się, że musimy pobrać fragment tekstu z większego ciągu znaków. W Bashu jest to często nazywane "wycinaniem podciągów". Programiści używają tej techniki, aby łatwiej przetwarzać dane i dostosowywać je do swoich potrzeb.
+Operacja wyodrębniania podciągów ("substring") pozwala na wybranie części większego ciągu znaków. Programiści często z niej korzystają, gdy muszą zidentyfikować, zmodyfikować lub użyć określonej części ciągu.
 
 ## Jak to zrobić:
 
-Aby wyciąć podciąg w Bashu, użyjemy polecenia ```cut```. Przedstawimy tutaj trzy przykłady tego, jak możesz z niego skorzystać:
+Oto przykładowy kod Bash i jego wyjście:
 
-1. Pobieranie podciągu od pierwszego do trzeciego znaku:
 ```Bash
-echo "Hello World" | cut -c 1-3
+str="Witaj w świecie programowania!"
+echo ${str:6:5}
 ```
-Wyjście: Hel
 
-2. Pobieranie podciągu od podanego znaku do końca:
+Wyjście:
+
 ```Bash
-echo "Hello World" | cut -c 5-
+w świ
 ```
-Wyjście: o World
 
-3. Pobieranie podciągu od podanego znaku do drugiego wystąpienia innego znaku:
-```Bash
-echo "Hello World" | cut -d " " -f 1
-```
-Wyjście: Hello
+W tym przykładzie ${str:6:5} wyodrębnia 5 znaków zaczynając od 6 pozycji w ciągu `$str`.
 
-## Głębsze zagadnienia:
+## Głębsze zrozumienie
 
-Wycinanie podciągów jest popularną techniką, która istnieje od dłuższego czasu. Już w programie awk, który powstał w latach 70, można było wykorzystywać podobne funkcjonalności do wycinania fragmentów tekstu. Alternatywą dla polecenia ```cut``` jest również ```sed```, które umożliwia bardziej zaawansowane operacje na tekście. Implementacja wycinania podciągów w Bashu jest nieskomplikowana i nie wymaga dużego nakładu pracy.
+Bash, dysponując funkcją wyodrębniania podciągów, kontynuuje tradycję powłok UNIX-owskich, które znane są z obsługi operacji na ciągach znaków na wysokim poziomie. Alternatywą dla tej operacji w Bash jest używanie `awk` czy `sed`, ale wyodrębnianie podciągów jest zazwyczaj szybsze i prostrze. Co do szczegółów implementacji, po prostu indeksuje znaki w ciągu znaków i zwraca ciąg składający się z znaków pomiędzy tymi indeksami.
 
-## Zobacz także:
+## Zobacz też
 
-[Oficjalna dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
+Zapoznaj się z tymi linkami, aby uzyskać dodatkowe informacje:
 
-[Dokumentacja polecenia cut](https://www.linuxcommand.org/lc3_man_pages/cut1.html)
-
-[Dokumentacja polecenia sed](https://www.gnu.org/software/sed/manual/sed.html)
+1. [String Operations in Bash](https://www.baeldung.com/linux/string-operations-bash)
+2. [Extract Substring in Bash](https://linuxconfig.org/how-to-extract-substring-in-bash)
+3. [Bash Substring Documentation](https://tldp.org/LDP/abs/html/string-manipulation.html)

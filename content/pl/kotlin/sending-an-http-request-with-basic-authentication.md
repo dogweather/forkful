@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Kotlin: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,37 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć programiści! Dzisiaj porozmawiamy o tym, jak wysyłać żądania HTTP z podstawowym uwierzytelnieniem w Kotlinie. To nie jest trudne, więc nie będziemy się za dużo rozpisywać. Zacznijmy!
+## Co i Dlaczego?
 
-## Co to jest i po co to robimy?
-
-Wysyłanie żądań HTTP z podstawowym uwierzytelnieniem to po prostu wysyłanie informacji do serwera internetowego wraz z kodem uwierzytelniającym, który jest wymagany do autoryzacji. Programiści robią to, gdy chcą uzyskać dostęp do chronionej przez hasło zawartości lub usługi, na przykład w przypadku aplikacji mobilnych czy stron internetowych z logowaniem.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem umożliwia przekazanie informacji uwierzytelniania jako część żądania HTTP. Programiści tworzą to, aby zabezpieczyć i ograniczyć dostęp do danych poprzez walidację użytkowników.
 
 ## Jak to zrobić:
 
-Kotlin jest jednym z języków programowania, które dobrze wspierają wysyłanie żądań HTTP z podstawowym uwierzytelnieniem. Oto przykładowy kod:
+Użyjemy biblioteki `Ktor` do wysyłania żądań HTTP. 
 
 ```Kotlin
-val url = "adres_url"
-val username = "login"
-val password = "hasło"
+import io.ktor.client.*
+import io.ktor.client.features.auth.*
+import io.ktor.client.features.auth.providers.*
+import io.ktor.client.request.*
 
-val client = OkHttpClient()
-val request = Request.Builder()
-    .url(url)
-    .addHeader("Authorization", Credentials.basic(username, password))
-    .build()
+suspend fun main() {
+    val client = HttpClient() {
+        install(Auth) {
+            basic {
+                username = "mojanazwa"
+                password = "haslo123"
+            }
+        }
+    }
 
-val response = client.newCall(request).execute()
-println(response.body()?.string())
+    val response: String = client.get("http://mojserwer.pl")
+    println(response)
+}
 ```
+Kiedy uruchomisz ten program, jeśli twoje uwierzytelnianie jest poprawne, otrzymasz odpowiedź od serwera z żądanymi danymi.
 
-Bardzo ważne jest, aby znać adres URL, login i hasło, które są wymagane do autoryzacji. Następnie tworzymy obiekt HttpClient i ustawiamy nagłówek Authorization z użyciem metody Credentials.basic, wykorzystując nasze dane logowania. W końcu wykonujemy żądanie i pobieramy odpowiedź, którą drukujemy w konsoli.
+## Głębsze zanurzenie
 
-## Deep Dive:
+Choć to jest teraz standardowe podejście, wywodzi się z początków Internetu, kiedy uwierzytelnianie było zwykle realizowane w ramach protokołu HTTP. Istnieją inne metody uwierzytelniania, takie jak uwierzytelnianie typu bearer token lub uwierzytelnianie OAuth, ale podstawowe uwierzytelnianie jest zwykle najprostszym do zaimplementowania.
 
-Wysyłanie żądań HTTP z podstawowym uwierzytelnieniem jest jednym z sposobów na autoryzację żądań do serwera. Alternatywą może być na przykład OAuth, który jest bardziej bezpiecznym i elastycznym rozwiązaniem dla uwierzytelniania. Implementacja metody Credentials.basic jest oparta na nagłówku Basic Access Authentication, który jest nieważny bez szyfrowania HTTPS.
+Podczas korzystania z podstawowego uwierzytelniania ważne jest skorzystanie z połączenia SSL/TLS, aby zapewnić, że dane uwierzytelniające nie będą narażone na sniffing. `Ktor`, używany w naszym przykładzie, wspiera SSL.
 
-## Zobacz także:
+## Zobacz też
 
-Jeśli chcesz dowiedzieć się więcej o tym, jak wysyłać żądania HTTP z podstawowym uwierzytelnieniem w Kotlinie, zapoznaj się z dokumentacją języka oraz z zasobami dostępnymi online. Powodzenia w pisaniu bezpiecznych i skutecznych aplikacji!
+1. [HTTP Basic Authentication - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+2. [Kotlin Ktor Library - GitHub](https://github.com/ktorio/ktor)
+3. [Securing the transmission with SSL/TLS - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
+4. [OAuth - Wikipedia](https://pl.wikipedia.org/wiki/OAuth)

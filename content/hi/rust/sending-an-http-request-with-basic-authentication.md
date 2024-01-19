@@ -1,6 +1,6 @@
 ---
 title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "Rust: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,50 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+# एचटीटीपी अनुरोध के साथ बेसिक प्रमाणीकरण भेजना रस्ट (Rust) में 
 
-बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना क्या है और क्यों प्रोग्रामर इसे करते हैं? बेसिक प्रमाणीकरण सुरक्षा का एक प्रभावी तरीका है जो एचटीटीपी में डेटा को सुरक्षित रूप से अभिगम करने के लिए इस्तेमाल किया जाता है। प्रोग्रामर उसे सुरक्षा स्तर बढ़ाने और अन्य उपयोगकर्ताओं से डेटा को सुरक्षित रखने के लिए करते हैं।
+## क्या और क्यों?
+बेसिक प्रमाणीकरण (Basic Authentication) क्षेतु में, एचटीटीपी अनुरोध भेजना से आप वेब सेवाओं और एपीआई के साथ सुरक्षित बातचीत स्थापित करते हैं। यह सुनिश्चित करता है कि केवल प्राधिकृत उपयोगकर्ताओं को ही पहुंच हो। 
 
 ## कैसे करें:
-
 ```Rust
-use reqwest;
-use reqwest::header::HeaderValue;
+use reqwest::{Client, header};
+use std::collections::HashMap;
 
-fn main() -> Result<(), reqwest::Error> {
-  // एचटीटीपी अनुरोध बनाएं
-  let req = reqwest::Client::new()
-    .get("https://www.example.com/resource")
-    // बेसिक प्रमाणीकरण शामिल करें
-    .basic_auth("username", Some("password".to_string()))
-    .send()?;
-  
-  // जब सर्वर से प्रतिक्रिया मिले, उसे प्रिंट करें
-  let res = req.text()?;
-  println!("{}", res);
-  
-  Ok(())
+pub async fn send_request() -> Result<(), reqwest::Error> {
+   let mut headers = header::HeaderMap::new();
+   let client = Client::new();
+   
+   let username = "user1";
+   let password = "password123";
+   
+   headers.insert("Authorization", header::HeaderValue::from_str(&format!("Basic {}", base64::encode(&format!("{}:{}", username, password))))?);
+   
+   let res = client.get("https://httpbin.org/anything")
+       .headers(headers)
+       .send()
+       .await?;
+   
+   println!("{:?}", res.status());
+   
+   Ok(())
 }
 ```
 
-उदाहरण के लिए एक यूआरएल से बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजने के परिणाम को नीचे देखें:
+यदि आपकी प्राधिकृति सही है, तो आपको 200 OK स्थिति मिलेगी। यदि आपकी प्राधिकृति अमान्य है, तो आपको 401 Unauthorized मिलेगा।
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>प्रमाणीकरण सफल!</title>
-</head>
-<body>
-  <h1>शुभकामनाएं, आप सफलतापूर्वक लॉग इन हो गए हैं।</h1>
-</body>
-</html>
-```
+## गहराई में:
+बेसिक प्रमाणीकरण, वेब प्रमाणीकरण की पुरानी तकनीक है। अपनी सरलता के कारण, इसे आज भी काफी मात्रा में इस्तेमाल किया जाता है, हालांकि इसे SSL / TLS के साथ संरक्षित कनेक्शन पर ही इस्तेमाल करने की सलाह दी जाती है। 
 
-## गहराई पर जाएं:
+विकल्प स्वरूप, आप Bearer Token अथॉराइजेशन, OAuth, या डाइजेस्ट प्रमाणीकरण का उपयोग कर सकते हैं। 
 
-इस तकनीक को प्रारंभिक अनुरोधों की प्रतिक्रियाओं को सुरक्षित बनाने के लिए विकसित किया गया था। दूसरे प्रमाणीकरण सुरक्षा प्रणालियों के बावजूद, बेसिक प्रमाणीकरण अधिक आसान और प्रभावी होने के कारण आज भी उपयोग में है। यह स्वतंत्रता के साथ इस्तेमाल किया जा सकता है, इसलिए अनुरोधों को अन्य प्रकार के प्रमाणीकरण से अलग करके और कंपनियों को जीत आसान बनाते हुए, और दूसरों की ओर से जांच करने की आवश्यकता न होने के कारण, अधिक पसंद किया जाता है।
+Rust में, `reqwest` क्रेट (crate) HTTP अनुरोध को संभालने के लिए सबसे लोकप्रिय विकल्प है। इसे सिंकनेस (sync) और असिंकनेस (async) दोनों परंपराओं में कार्यान्वित किया जा सकता है। 
 
-## और भी देखें:
+## देखें भी:
+रस्ट (Rust) में Proceeding HTTP अनुरोध करने के बारे में और जानने के लिए, निम्नलिखित संसाधनों का अन्वेषण करें:
 
-बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजने के लिए यह [रस्ट की आधिकारिक पुस्तकालय]https://doc.rust-lang.org/stable/std/net/struct.HttpClient.html#method.get) में आसान और स्पष्ट उदाहरण उपलब्ध है। आप अन्य प्रधान वेब सामग्री वेबसाइट भी जांच सकते हैं, जहां अलग-अलग तकनीकों का उपयोग करके अनुरोध को भेजने का तरीका दिखाया गया है।
+1. Rust's [official documentation](https://doc.rust-lang.org/rust-by-example/std_misc/net/fetch.html) for performing HTTP requests.
+2. The [reqwest crate](https://docs.rs/reqwest/0.11.3/reqwest/) documentation.
+3. [Basic Authentication on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+4. [How to send HTTP Requests in Rust](https://www.section.io/engineering-education/rust-http-request/) guide.

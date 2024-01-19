@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Ruby recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -12,35 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Downloading a web page is the process of retrieving data from a specific URL, usually in the form of HTML, and saving it locally. This allows programmers to access and manipulate website data for various purposes such as data analysis, web scraping, and creating web applications that consume APIs.
+Downloading a web page means acquiring it from the internet onto your local setup. Programmers do this to access the page's data, scrape information, or test website functionality. 
 
 ## How to:
 
-To download a web page in Ruby, we can use the standard library's `OpenURI` module. Here's a simple example:
+Here's simple code to download a webpage in Ruby using `open-uri` and `nokogiri` gems.
 
-```ruby
+```Ruby
 require 'open-uri'
+require 'nokogiri'
 
-url = "https://en.wikipedia.org/wiki/Ruby_(programming_language)"
-html = open(url).read
+def download_web_page(url)
+  Nokogiri::HTML(URI.open(url))
+end
 
-puts html
+page = download_web_page('https://www.example.com')
+
+puts page.title
 ```
 
-This code will retrieve the HTML data from the given URL and save it to a variable named `html`. We can then manipulate this data as needed. For example, we can use regular expressions to extract specific information from the webpage.
-
+The output would be the title of the website `https://www.example.com`.
+   
 ## Deep Dive
 
-The `OpenURI` module is a standard library in Ruby that provides a simple interface for retrieving and reading data from URLs. It supports various protocols including HTTP, HTTPS, and FTP. Prior to Ruby 1.9, the `open-uri` library had to be explicitly required, but it is now included by default.
+Originally, folks used telnet applications to retrieve web pages, but it got easier with the World Wide Web's inception. Ruby's `open-uri` and `nokogiri` simplify this task, taking care of HTTP interaction and HTML parsing. 
 
-There are also alternative frameworks for downloading web pages in Ruby, such as `HTTParty` and `Faraday`, which offer more advanced features and options. Additionally, there are third-party gems that focus specifically on web scraping, such as `Nokogiri` and `Mechanize`.
+An alternative means is using the `Net::HTTP` standard library. It's a bit more intricate but offers finer control over HTTP requests. 
 
-Behind the scenes, the `OpenURI` module uses the `net/http` module to make HTTP requests and retrieve data from websites. It also handles redirects and other HTTP responses gracefully.
+```Ruby
+require 'net/http'
+require 'uri'
 
-## See Also
+def download_web_page(url)
+  uri = URI.parse(url)
+  response = Net::HTTP.get_response(uri)
+  
+  response.body
+end
 
-- [OpenURI documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html)
-- [HTTParty gem](https://github.com/jnunemaker/httparty)
-- [Faraday gem](https://github.com/lostisland/faraday)
-- [Nokogiri gem](https://github.com/sparklemotion/nokogiri)
-- [Mechanize gem](https://github.com/sparklemotion/mechanize)
+page = download_web_page('https://www.example.com')
+
+puts page
+```
+
+This code fetches the entire HTML content of the web page.
+
+## See Also:
+
+Check out these for more knowledge:
+
+- Ruby Doc's URI::open: [`https://ruby-doc.org/stdlib-3.0.2/libdoc/open-uri/rdoc/URI.html#method-c-open`](https://ruby-doc.org/stdlib-3.0.2/libdoc/open-uri/rdoc/URI.html#method-c-open)
+  
+- Nokogiri at [`https://nokogiri.org/`](https://nokogiri.org/)
+
+- Net::HTTP in Ruby Docs: [`https://ruby-doc.org/stdlib-3.0.2/libdoc/net/http/rdoc/Net/HTTP.html`](https://ruby-doc.org/stdlib-3.0.2/libdoc/net/http/rdoc/Net/HTTP.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Å sende en HTTP-forespørsel"
-html_title:           "Gleam: Å sende en HTTP-forespørsel"
-simple_title:         "Å sende en HTTP-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,41 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å sende en HTTP-forespørsel er en måte for programmer å kommunisere med nettressurser som nettsteder eller APIer. Programmerere gjør dette for å hente eller sende data fra/til disse ressursene.
 
-Å sende en HTTP forespørsel betyr å be om data fra en nettside eller server. Dette kan være nyttig for å få informasjon, for eksempel værvarsler eller nyheter, eller for å sende data til en tjeneste, for eksempel å legge til et bilde på en nettside. Programører bruker HTTP-forespørsler for å lage programmer som kan kommunisere med andre nettsteder og tjenester.
-
-## Hvordan:
-
-``Gleam`` har innebygde funksjoner som gjør det enkelt å sende HTTP-forespørsler. Vi kan bruke ``httpc`` modulen til å opprette en forespørsel og få svar fra en server.
-
-Først importerer vi ``httpc`` modulen:
+## Hvordan gjøre det:
+Gleam lar oss enkelt utføre HTTP-anrop via `gleam/httpc` pakken. Her er en enkel GET forespørsel:
 
 ```Gleam
-import httpc
+import gleam/httpc
+import gleam/uri.{Uri}
+
+fn simple_get_request() {
+  let Ok(response) = httpc.get(Uri.parse("https://gleam.run").unwrap())
+  case response {
+    Ok(response) -> httpc.Response.status(response)
+    Error(_error) -> "Noe gikk galt"
+  }
+}
 ```
+Denne koden vil hente webinnholdet fra "https://gleam.run" og returnere statuskoden. 
 
-Vi kan nå bruke funksjonen ``send`` til å opprette forespørselen. Vi må gi den en URL og en liste med parametere, som kan være nyttige for å spesifisere hvilken type forespørsel vi ønsker å sende. Her er et eksempel på en GET-forespørsel:
+## Deep Dive
+Historisk har HTTP-forespørsler blitt brukt som en standard metode for å kommunisere over nettet siden introduksjonen av World Wide Web. Sammen med utviklingen av programmeringsspråk og teknologier, har også metoder for å sende HTTP-forespørsler blitt mer strømlinjeformet og effektiv.
 
-```Gleam 
-let req = httpc.send("https://example.com", [ httpc.method.get ])
-```
+I Gleam, kan vi bruke Pakken `gleam/httpc` for å sende HTTP-forespørsler. Pakken gir et oppsett for å utføre de forskjellige typene av HTTP-anrop, GET, POST, DELETE, osv. Pakken styrer også alle detaljer rundt opprettelsen og håndteringen av forespørslene.
 
-Vi kan også legge til en ``headers`` parameter for å sende spesifikke headere med forespørselen. For å få responsen fra serveren, bruker vi funksjonen ``response``:
+Alternativt kan programmerere også bruke bibliotekene `lhttpc` eller `hackney` for å sende HTTP-forespørsler i Gleam. Valget mellom disse bibliotekene beror ofte på personlig preferanse eller prosjektbehov.
 
-```Gleam
-let resp = req |> httpc.response
-```
-
-Vi kan nå bruke forskjellige funksjoner fra ``httpc`` modulen til å jobbe med responsen, for eksempel ``status_code``, ``headers`` og ``body``.
-
-## Dykk dypere:
-
-HTTP-forespørsler har vært en integrert del av internett siden 1991. I dag er det flere alternativer til HTTP, som for eksempel HTTPS og SPDY. Disse protokollene gir bedre sikkerhet og effektivitet.
-
-Gleam bruker en asynkron tilnærming til å håndtere HTTP-forespørsler, noe som betyr at det ikke blokkerer programmet mens det venter på et svar fra serveren. Dette gjør det mulig for programmet å håndtere flere forespørsler samtidig.
-
-## Se også:
-
-- [Offisiell Dokumentasjon](https://gleam.run/documentation/http/): Lær mer om hvordan du bruker Gleam sin HTTP-modul.
-- [HTTP Clients Explained](https://www.cloudflare.com/learning/ddos/glossary/http-client/): En dyptgående forklaring på hva en HTTP-klient er og hvordan den fungerer.
-- [The History of HTTP](https://www.w3.org/Protocols/rfc2616/rfc2616.html): Lær om utviklingen av HTTP gjennom årene.
+## Se Også
+- Gleam HTTP-forespørsel Doc: [Link](https://hexdocs.pm/gleam_stdlib/httpc.html)
+- Gleam HTTP-forespørsel API: [Link](https://docs.gleam.run/tour/http-client.html)
+- Lær mer om HTTP-forespørsler: [Link](https://www.w3schools.com/tags/ref_httpmethods.asp)

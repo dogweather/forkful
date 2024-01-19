@@ -1,7 +1,7 @@
 ---
-title:                "文字列の長さの検索"
-html_title:           "PowerShell: 文字列の長さの検索"
-simple_title:         "文字列の長さの検索"
+title:                "文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
+simple_title:         "文字列の長さを見つける"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに＆なぜ？
+## 何となぜ？
 
-文字列の長さを見つけることは、プログラマーにとってとても重要です。文字列の長さを見つけることで、データの整理や処理ができます。また、文字列の長さを見つけることで、プログラムの実行中にエラーが発生する可能性を減らすことができます。
+文字列の長さを見つけるとは、文字列に含まれる文字の数を数えることを指します。プログラマーはこの操作を行うことで、入力データの精度を確認し、あるいは必要なメモリの量を推定します。
 
-## 方法：
+## 使い方：
+
+PowerShellにおいて、文字列の長さを取得するためには `.Length` プロパティを使用します。
 
 ```PowerShell
-$myString = "こんにちは、世界！"
-$length = $myString.Length
-Write-Host "文字列の長さは $length です。"
+$string = "Hello, PowerShell"
+$length = $string.Length
+$length
 ```
+
+上記のスクリプトを実行すると、以下のような結果が表示されます：
+
 ```PowerShell
-文字列の長さは 9 です。
+16
 ```
 
-文字列の長さを見つけるには、.Lengthプロパティを使用します。これは、.NET Frameworkで利用できる一般的なプロパティであり、PowerShellでも使用することができます。このプロパティは、文字列の各文字をカウントして長さを算出してくれます。
+## ディープダイブ：
 
-## 深く掘り下げる：
+この操作は、具体的な文字数を特定するという基礎的なコンセプトから始まります。その歴史はコンピュータープログラミングの初期にまでさかのぼります。
 
-### 歴史的な文脈
+代替として、一部のプログラミング言語では `strlen()` や `length()` などの関数を使用しますが、PowerShellでは `.Length` プロパティが一般的に使用されます。
 
-文字列の長さを見つけることは、古くからコンピューターサイエンスの分野で重要な問題でした。プログラム言語においても、最初から文字列の長さを見つけるための機能が組み込まれていました。
+実装の詳細については、文字列はそのコンピューターのメモリ内で各文字を個別のメモリアドレスに格納し、`.Length` プロパティはこれらのアドレスを数えるという形を取ります。
 
-### 代替手段
+## 参照：
 
-文字列の長さを計算する方法としては、他にもプログラミング言語によって異なりますが、一般的にはサブストリング（一部の文字列を切り出す）を使用する方法や、ループを使用して文字列の各文字をカウントする方法があります。
-
-### 実装の詳細
-
-PowerShellでは、文字列の長さを見つけるには、.Lengthプロパティを使用します。このプロパティは、.NET Frameworkで定義されたSystem.Stringクラスのプロパティであり、内部的には文字列の長さをカウントするメソッドが実行されます。
-
-## 関連ソース：
-
-- .NET Framework Class Library: System.String.Length Property - https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netframework-4.8
-- PowerShell .Length Property - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7
+- PowerShellについての詳細\(英語\)：[Microsoft Official Documentation](https://docs.microsoft.com/ja-jp/powershell/)
+- 文字列の長さの取り扱い\(英語\)：[Stack Overflow](https://stackoverflow.com/questions/4652913/how-to-get-string-length-in-powershell)
+- PowerShellスクリプトの基礎\(英語\)：[Microsoft TechNet Blog](https://blogs.technet.microsoft.com/heyscriptingguy/)

@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "Clojure: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i Dlaczego?
+## Co i dlaczego?
 
-Czytanie pliku tekstowego jest procesem, w którym programista odczytuje zawartość tekstu z pliku i przetwarza go zgodnie z określonymi instrukcjami. Jest to powszechna praktyka w wielu językach programowania, w tym w Clojure. Programiści często czytają pliki tekstowe, aby uzyskać dostęp do danych, które są przechowywane w plikach lub dla przetwarzania tekstu w celu wykonania określonych zadań.
+Czytanie pliku tekstowego to proces, w którym program odczytuje dane zawarte w pliku tekstowym. Programiści robią to, aby manipulować danymi, zrozumieć strukturę pliku, a nawet debugować błędy.
 
-# Jak to zrobić:
+## Jak to zrobić:
 
-```Clojure
-;; Wczytanie tekstu z pliku do zmiennej
-(def data (slurp "plik.txt"))
+Poniżej znajduje się przykład użycia Clojure do odczytania pliku tekstowego:
 
-;; Wyświetlenie zawartości pliku
-(println data)
+```clojure
+(require '[clojure.java.io :as io])
+
+(with-open [reader (io/reader "ścieżka/do/pliku.txt")]
+(let [lines (line-seq reader)]
+  (doseq [line lines]
+    (println line))))
 ```
 
-#### Przykładowy plik.txt:
-```
-To jest przykładowy tekst.
-Można wczytać i przetworzyć go w Clojure.
-```
+Wykonanie powyższego kodu spowoduje wyświetlenie zawartości pliku `plik.txt`.
 
-#### Wynik:
-```
-To jest przykładowy tekst.
-Można wczytać i przetworzyć go w Clojure.
-```
+## Głębszy wgląd:
 
-# Głębsze zagadnienia:
+(1) **Kontekst historyczny:** Początki odczytu plików tekstowych w Clojure są ściśle związane z powstaniem samego języka, który zawsze był silnie związany z Javą. Dzięki temu Clojure oferuje doskonałe wsparcie dla operacji na plikach, w tym odczytu plików tekstowych.
 
-1. Kontekst historyczny: Czytanie plików tekstowych jest jedną z podstawowych operacji wykonywanych przez komputery od lat. Odkąd istnieją komputery, programiści posługują się technikami, aby czytać i przetwarzać pliki tekstowe.
-2. Alternatywy: W Clojure można użyć różnych funkcji do czytania plików tekstowych, takich jak `slurp`, `line-seq` czy `re-find`. Można również użyć zewnętrznych bibliotek, takich jak `clojure.java.io`, aby uzyskać lepsze możliwości przetwarzania plików.
-3. Szczegóły implementacji: W celu przeczytania pliku tekstowego, Clojure używa potoku wejściowego `java.io.BufferedReader`. Określone funkcje interpretują odczytany tekst i konwertują go do odpowiedniej postaci, aby można go było łatwo przetwarzać.
+(2) **Alternatywy:** Istnieje wiele różnych bibliotek i technik, które mogą być używane do odczytania plików tekstowych w Clojure, takie jak `clojure-csv` dla plików CSV.
 
-# Zobacz też:
+(3) **Szczegóły implementacji:** W powyższym przykładzie użyliśmy `with-open`, aby otworzyć plik, `io/reader`, aby przetworzyć plik, `line-seq`, aby przechodzić przez każdą linię, a `println`, aby wyświetlić wszystkie linie.
 
-* Dokumentacja Clojure: https://clojure.org/
-* Poradnik dla początkujących w Clojure: https://lispcast.com/clojure-tutorial/
-* Wprowadzenie do czytania i pisania plików w Clojure: https://www.baeldung.com/clojure-read-write-file
+## Zobacz też:
+
+- [Clojure - Reading Files](https://clojure.org/guides/learn/io): Ta strona zawiera wiele użytecznych informacji na temat operacji na plikach w Clojure.
+- [Clojure Docs - clojure.java.io/reader](https://clojuredocs.org/clojure.java.io/reader): Dokumentacja tej funkcji w Clojure.
+- [StackOverflow - How to read a large text file line by line in Clojure](https://stackoverflow.com/questions/44722222/how-to-read-a-large-text-file-line-by-line-in-clojure): Wątek na StackOverflow omawiający, jak odczytywać duże pliki tekstowe linia po linii w Clojure.

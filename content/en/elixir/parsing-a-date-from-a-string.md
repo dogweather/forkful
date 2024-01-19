@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Elixir recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,45 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Parsing Dates from Strings in Elixir
+
 ## What & Why?
 
-Parsing a date from a string means converting that string into a meaningful date format that a computer understands. Programmers do it to handle different date formats and utilize them in their applications.
+Parsing a date from a string is simply converting a readable date-time written in the form of a text string into a standard Date-Time format that a computer can understand and manipulate. Programmers do this for tasks such as sorting dates, calculating time intervals, or formatting dates in different styles.
 
-## How to:
+## How To:
 
-In Elixir, the `DateTime` module comes packed with various functions to parse a date from a string. A function that can be used to achieve this task is `DateTime.from_iso8601/2`. This function parses a string in the format: "YYYY-MM-DD" or "YYYYMMDD". 
+Here's how you can use Elixir's built-in `Date` module to parse a date string:
 
 ```Elixir
-iex> DateTime.from_iso8601("2021-11-22T22:40:05.923678Z")
-{:ok,
- %DateTime{
-   year: 2021,
-   month: 11,
-   day: 22,
-   hour: 22,
-   minute: 40,
-   second: 5,
-   microsecond: {923678, 6},
-   time_zone: "Etc/UTC",
-   utc_offset: 0,
-   std_offset: 0,
-   zone_abbr: "UTC"
- }}
+iex> {:ok, date} = Date.from_iso8601("2022-01-01")
+{:ok, ~D[2022-01-01]}
 ```
+
+In this example above, we're parsing an ISO8601 formatted date string. If the string is not a valid ISO8601 date, `Date.from_iso8601/1` will return `{:error, :invalid_format}`.
+
+```Elixir
+iex> Date.from_iso8601("2022/01/01")
+{:error, :invalid_format}
+```
+
+If parsing of the date string was successful, then you can use the date in further operations. For instance:
+
+```Elixir
+iex> date.day
+1
+```
+
+This will return the day of the parsed date.
 
 ## Deep Dive
 
-Historically, date parsing has always been a common task in many programming languages due to its importance in handling temporal data. The need for a universal date and time standard led to the creation of the ISO 8601 format, which is the default format for `DateTime.from_iso8601/2`.
+Historically, date parsing was not always straightforward in Elixir because of the lack of built-in functions. Developers had to rely on external libraries like Timex. However, with the introduction of the `Date` module in Elixir 1.3, such tasks became much simpler.
 
-However, if your date string isn't in the ISO 8601 format, Elixir provides alternative functions in the `DateTime` module like `DateTime.parse/2`. The `DateTime.parse/2` function takes a date string and a formatter to parse the string into DateTime.
+There are alternatives to `Date.from_iso8601/1` like `Date.new/3` where you pass the year, month, and day as arguments to get a `Date` struct. It's more cumbersome to use, but it gives you more control.
 
-Under the hood, `DateTime.from_iso8601/2` is calling `Calendar.ISO.from_iso8601/1` in the Elixir codebase. It is then validating that the date is a valid Gregorian calendar date before converting and returning it.
+As for the implementation, `Date.from_iso8601/1` first checks the format of the date string. If it's valid, the function separates the year, month, and day components and constructs a `Date` struct. If the format is invalid, it returns `{:error, :invalid_format}`.
 
-```Elixir
-iex> DateTime.parse("13-01-2021 09:00", "{0D}-{0M}-{0Y} {0h}:{0m}")
-{:ok, ~U[2021-01-07T09:00:00Z]}
-```
+## See Also 
 
-## See Also
-
-For a more detailed dive into Elixir Date and Time, check out the `DateTime` module in the Elixir [official doc](https://hexdocs.pm/elixir/DateTime.html). You can also check out other Elixir date parsing libraries like [Timex](https://hexdocs.pm/timex/readme.html) and [Calendar](https://hexdocs.pm/calendar/readme.html) for more date formatting and parsing options.
+- [The Elixir `Date` module documentation](https://hexdocs.pm/elixir/Date.html)
+- [Guide to Date and Time in Elixir](https://codingmindfully.com/elixir-date-time-guide/) 
+- [Mastering DateTime in Elixir](https://medium.com/@cblavier/mastering-datetime-in-elixir-1-elixir-datetime-basics-b9307d0b2fb2)

@@ -1,7 +1,7 @@
 ---
-title:                "用基本认证发送HTTP请求"
-html_title:           "Elixir: 用基本认证发送HTTP请求"
-simple_title:         "用基本认证发送HTTP请求"
+title:                "使用基本认证发送http请求"
+html_title:           "Bash: 使用基本认证发送http请求"
+simple_title:         "使用基本认证发送http请求"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 做什么？为什么？
+## 什么与为什么？
 
-发送带有基本认证的HTTP请求是通过在请求头中包含用户名和密码来验证用户身份的一种方式。程序员通常这样做是因为可以确保请求只能被授权的用户访问，从而保证系统的安全性。
+HTTP基本认证是一种允许用户提供用户名和密码的方式来发送HTTP请求。程序员之所以使用它，是因为它为服务器端验证客户端身份提供了一种简单且快速的方法。
 
-## 如何：
+## 如何操作：
 
-```Elixir
-defmodule HTTP do
-    @moduledoc """
-    This module contains functions for sending HTTP requests with basic authentication.
-    """
-    
-    @spec send_request(String.t, Keyword.t) :: HTTPoison.Response.t
-    def send_request(url, options) do
-        HTTPoison.get(url, options)
-    end
-end
+在Elixir中，我们可以使用HTTPoison库发送带有基本认证的HTTP请求。以下是一个示例:
 
-response = HTTP.send_request("www.example.com", [basic_auth: {"username", "password"}])
-
-IO.inspect response
+```Elixir 
+{:ok, response} = 
+    HTTPoison.get("https://api.github.com", [], 
+    basic_auth: {"username", "password"})
+IO.inspect response.status_code
 ```
 
-输出：
+执行上述代码后，我们可以在终端输出中看到状态码。
 
-```
-%HTTPoison.Response{
-  status_code: 200,
-  body: "Hello world!",
-  headers: [...]
-}
+```Elixir 
+200
 ```
 
-## 深入了解：
+此代码示例发送了一个GET请求到Github的API，并以用户名和密码对作为基本认证。
 
-基本认证是HTTP协议的一部分，它提供了一个简单的身份验证机制，可以确保请求只被授权的用户访问。除了基本认证，还有其他的身份验证方法，例如OAuth和JWT。程序员可以根据具体的需求选择合适的身份验证方法。
+## 深入了解
 
-发出带有基本认证的HTTP请求，实际上就是在请求头中加入一个Authorization字段，其值格式为“Basic username:password”的Base64编码。服务器会根据这个认证信息来验证用户的身份真实性。
+HTTP基本认证可以追溯到HTTP/1.0规范，旨在为应用程序提供一种简单验证方式。尽管如此，由于发送的凭据未经加密，因此不应在没有HTTPS的情况下使用。
 
-## 参考链接：
+在Elixir中，除HTTPoison外，我们还有其他选择进行HTTP请求，如Mint和Tesla。这些库提供了不同的API和不同的特性，你可以根据你的需求来选择。
 
-- [HTTP Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- [HTTPoison](https://github.com/edgurgel/httpoison) - Elixir的一个HTTP客户端库，支持基本认证。
+实现基本认证的关键在于在请求的头部添加一个`Authorization`字段，值为"Basic "后跟由用户名和密码构成的经过Base64编码的字符串。
+
+## 另请参阅：
+
+- [Elixir Docs: HTTPoison](https://hexdocs.pm/httpoison/readme.html)
+- [Elixir School: HTTP requests](https://elixirschool.com/en/lessons/libraries/httpoison/)
+- [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)

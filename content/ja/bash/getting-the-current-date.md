@@ -1,7 +1,7 @@
 ---
-title:                "現在の日付を取得する"
-html_title:           "Bash: 現在の日付を取得する"
-simple_title:         "現在の日付を取得する"
+title:                "現在の日付の取得"
+html_title:           "Bash: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,23 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 今何をしているのか？
-現在の日付を取得することは、プログラマーにとって重要なタスクです。プログラマーは、日付を取得することで、プログラムの実行日時を把握し、データの整理やログの作成に役立てることができます。
+## 何となぜ？
+
+現在の日付を取得とは、システムの現在の日付と時刻を取得することを指します。これは、ログファイルのタイムスタンプや、特定のイベントがいつ発生したかを追跡するために、プログラマーが実行します。
 
 ## 方法：
-```Bash
-# 現在の日付を取得するコマンド
-date
 
-# 出力例：
-Fri May 7 21:39:11 JST 2021
+以下にBashで現在の日付を取得する際の基本的なコードを示します：
+```Bash
+date
+```
+このコードを実行すると、出力は以下のようになります：
+```Bash
+Thu Mar 26 12:34:56 UTC 2020
 ```
 
-## 詳細
-1. 歴史的背景：Unixコマンドの一つである「date」コマンドは、非常に古い歴史を持っています。最初は、データベースやログの作成に使用されていましたが、現在では様々な目的に使用されています。
-2. 代替方法：Bash以外のシェルを使用する場合や、プログラミング言語の組み込み関数を使用することもできます。
-3. 実装の詳細：`date`コマンドは、現在の日付と時刻を出力するだけでなく、様々なオプションを使用することで、出力のフォーマットを変更することもできます。
+日付のフォーマットを指定したい場合は、"+％Y-％m-％d"のようなフォーマットを 'date' コマンドに指定します：
+```Bash
+date "+%Y-%m-%d"
+```
+そして、出力包含の日付部分は次のようになります：
+```Bash
+2020-03-26
+```
 
-## 関連情報
-- [コマンドラインの基礎: dateコマンドの使い方 \| 侍エンジニア塾ブログ](https://www.sejuku.net/blog/54339)
-- [Bash Dateコマンド: シェルスクリプトで日付を扱う方法 \| プログラミングならドットインストール](https://dotinstall.com/lessons/basic_unix/12009)
+## ディープダイブ：
+
+現在の日付を取得するための 'date' コマンドは、Unixの初期のバージョンから存在し、GNUプロジェクトによって改善されました。他の方法として、 'printf' 関数または 'strftime' 関数を使用することも可能です。
+
+また、'date' コマンドは内部的に 'time' システムコールを使用して現在の日時を取得します。これは、システムクロックを読み取り、結果をUTC（協定世界時）で返します。
+
+## 参考に：
+
+関連するリソースを以下にリンクします。
+
+1. [GNU date command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+2. [Unix time system call](http://man7.org/linux/man-pages/man2/time.2.html)
+3. [POSIX strftime function](http://pubs.opengroup.org/onlinepubs/007904975/functions/strftime.html)

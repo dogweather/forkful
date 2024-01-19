@@ -1,7 +1,7 @@
 ---
-title:                "Mayúscula de una cadena"
-html_title:           "PHP: Mayúscula de una cadena"
-simple_title:         "Mayúscula de una cadena"
+title:                "Capitalizando una cadena de texto"
+html_title:           "PHP: Capitalizando una cadena de texto"
+simple_title:         "Capitalizando una cadena de texto"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Capitalizar una cadena de texto significa poner la primera letra en mayúscula y el resto en minúscula. Los programadores hacen esto para mejorar la legibilidad de sus códigos y seguir las convenciones de escritura establecidas.
+## ¿Qué y Por Qué?
 
-## ¿Cómo hacerlo?
-Puedes capitalizar una cadena de texto usando la función integrada de PHP `ucwords()`. Simplemente ingresa la cadena como un parámetro y la función devolverá una nueva cadena con la primera letra de cada palabra en mayúscula. Por ejemplo:
+Capitalizar una cadena significa convertir la primera letra de cada palabra en mayúsculas. Los programadores lo hacen para mejorar la legibilidad y la presentación de los textos en la interfaz del usuario.
+
+## Cómo hacerlo:
+
+Para capitalizar una cadena de texto en PHP, usamos la función `ucwords()`. Mira este ejemplo:
+
 ```PHP
-$string = "hola mundo";
-echo ucwords($string); //Salida: Hola Mundo
+<?php
+$cadena = "hola mundo";
+$cadena_capitalizada = ucwords($cadena);
+
+echo $cadena_capitalizada; // Se imprimirá: "Hola Mundo"
+?>
 ```
 
-Otra opción es usar la función `strtoupper()` que convierte todas las letras de la cadena en mayúsculas. En este caso, también necesitarías usar la función `strtolower()` para convertir la primera letra en minúscula. Por ejemplo:
-```PHP
-$string = "hola mundo";
-echo strtoupper(substr($string, 0, 1)) . strtolower(substr($string, 1)); //Salida: Hola mundo
-```
+Como puedes observar, `ucwords()` convierte la primera letra de cada palabra a mayúscula.
 
-## Exploración en profundidad
-Capitalizar una cadena de texto no es solo una cuestión de estética. En realidad, tiene sus raíces en la tradición de la escritura. En la antigüedad, cuando los textos se escribían a mano, se utilizaba la primera letra en mayúscula para enfatizar el comienzo de una oración. Con el tiempo, esta convención se extendió a los nombres propios y finalmente a todas las palabras en una oración.
+## Inmersión Profunda:
 
-Además de las funciones mencionadas anteriormente, también puedes utilizar expresiones regulares para capitalizar una cadena de texto. Sin embargo, ten en cuenta que esta solución puede ser más compleja y puede afectar el rendimiento de tu código.
+Historia breve: PHP no siempre tuvo una función integrada para capitalizar cadenas. Antes de la versión 5, tenías que escribir manualmente esta función.
 
-## Ver también
-- [Documentación oficial de PHP para `ucwords()`](https://www.php.net/manual/en/function.ucwords.php)
-- [Documentación oficial de PHP para `strtoupper()`](https://www.php.net/manual/en/function.strtoupper.php)
-- [Expresiones Regulares en PHP](https://www.php.net/manual/en/book.pcre.php)
+Alternativas: También tenemos `strtoupper()` que convierte todas las letras a mayúsculas, y `lcfirst()` que convierte la primera letra a minúscula.
+
+Sobre el rendimiento: `ucwords()` es bastante eficiente. Pero si estás trabajando con cadenas muy grandes, ten en cuenta que puede llevar un poco de tiempo procesarlas.
+
+## Ver También:
+
+Para más detalles y ejemplos, echa un vistazo a los siguientes recursos:
+
+- Documentación oficial de PHP para `ucwords()`: [https://www.php.net/manual/es/function.ucwords.php](https://www.php.net/manual/es/function.ucwords.php)
+  
+- Para aprender más acerca de `strtoupper()` y `lcfirst()`: [https://www.php.net/manual/es/function.strtoupper.php](https://www.php.net/manual/es/function.strtoupper.php) y [https://www.php.net/manual/es/function.lcfirst.php](https://www.php.net/manual/es/function.lcfirst.php)

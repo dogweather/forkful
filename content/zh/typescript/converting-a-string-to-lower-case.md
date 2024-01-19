@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "TypeScript: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,24 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-将字符串转换成小写是一种常见的编程技术，它允许程序员将字符串中的所有字母都转换成小写形式。程序员通常这样做是因为小写字符串可以更容易地进行比较，从而简化代码的编写和阅读。
+# 将字符串转换为小写：在TypeScript中解码
 
-## 如何：
-在 TypeScript 中，要将一个字符串转换成小写形式，可以使用内置函数 `toLowerCase()` 。下面是一个示例代码和输出，展示了该函数的使用方法。
+## 什么与为什么？
+在编程中，将字符串转换为小写意味着将所有字符都改为小写形式。程序员之所以执行此操作，通常是因为在处理用户输入或比较字符串时，我们希望忽略大小写差异。
 
-```typescript
-let str = "HeLLo WoRld";
-let lowerStr = str.toLowerCase();
-console.log(lowerStr); // 输出：hello world
+## 如何操作：
+在 TypeScript 中，可以使用 `toLowerCase()` 方法将字符串转换为小写。下面是一个示例：
+
+```TypeScript
+let greeting: string = "Hello World!";
+let lowerCaseGreeting = greeting.toLowerCase();
+console.log(lowerCaseGreeting); 
+// 输出: "hello world!"
 ```
+在此示例中，我们将 "Hello World!" 的每个字符转换成了小写，结果为 "hello world!"。
 
-在上面的代码中，我们首先声明了一个包含混合大小写字母的字符串 `str` ，然后使用 `toLowerCase()` 函数将其转换成小写形式，并将结果赋值给变量 `lowerStr` ，最后通过 `console.log()` 函数打印出结果。
+## 深入解析
+在历史上，一些计算机系统曾对大写和小写字母字符敏感。但现在，在许多场景中（如搜索查询和电子邮件地址），我们希望忽略字母大小写。此时，将字符串统一转换为小写（或大写）可能会非常有用。
 
-## 深入探讨：
-历史上，计算机软件通常只能处理大写字符，因此在编程中，将字符串转换成小写形式是必要的。但随着技术的发展，现代计算机可以处理小写字符，因此这种转换已不再是必须的。作为替代方案，程序员也可以使用 `toUpperCase()` 函数将字符串转换成大写形式。
+有一些可供选择的替代方法。例如，如果你只想比较两个字符串而不改变它们，你可以使用 `localeCompare()` 方法，并在其参数中设定 `sensitivity: 'base'` 。
 
-在实现上，`toLowerCase()` 函数会遍历字符串的每个字符，并将所有大写字母转换成小写字母。这个过程是在运行时完成的，因此可能会对系统性能产生微小的影响，尤其是在大型字符串上。因此，在处理大量字符串时，最好谨慎使用该函数。
+```TypeScript
+let str1: string = "HELLO";
+let str2: string = "hello";
+let result: number = str1.localeCompare(str2, undefined, { sensitivity: 'base' });
+console.log(result);
+// 输出: 0，表示这两个字符串在“base”级别上是相等的
+```
+`toLowerCase()` 方法在 TypeScript 中的实现非常简单直接。实际上，这是从 JavaScript 继承的一个功能。在 JavaScript/TypeScript 引擎内部，此方法会遍历字符串中的每个字符，并将其替换为对应的小写形式。然而，这也意味着它可能不能准确处理某些文化和语言环境中的大小写规则。
 
-## 参考链接：
-- [官方文档：toLowerCase()](https://www.typescriptlang.org/docs/handbook)
+## 另请参见
+- MDN 关于 `toLowerCase()` 方法的文档：[toLowerCase() 文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- StackOverflow 上关于 `toLowerCase()` 和 `toLocaleLowerCase()` 区别的讨论：[讨论链接](https://stackoverflow.com/questions/26827535/javascript-tolowercase-vs-tolocalelowercase)
+- MDN 关于 `localeCompare()` 方法的文档：[localeCompare() 文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare)

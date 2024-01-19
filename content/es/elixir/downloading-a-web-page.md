@@ -1,6 +1,6 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Elixir: Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,42 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por qué?
 
-Descargar una página web es simplemente obtener el contenido de una página de internet y guardarlo en nuestra computadora o dispositivo. Los programadores lo hacen para acceder y manipular datos de la web, como por ejemplo, obtener información de una página de noticias o de una red social.
+Descargar una página web significa tomar los datos (usualmente HTML) de un servidor y guardarlos en una ubicación local. Los programadores hacen esto para trabajar con el contenido de la página sin necesidad de estar siempre conectados a internet.
 
 ## Cómo hacerlo:
 
-Para descargar una página web en Elixir, primero debemos importar el módulo ```HTTPoison``` que nos permitirá realizar solicitudes HTTP. A continuación, utilizando la función ```HTTPoison.get```, podemos especificar la URL de la página que queremos descargar.
+En Elixir, podemos usar la librería HTTPoison para descargar una página web. Al utilizar la función `get`, enviamos una petición GET al URL proporcionado y recibimos una respuesta.
 
-```Elixir
-import HTTPoison
+```elixir
+defmodule MiModulo do
+  def descargar_pagina(url) do
+    case HTTPoison.get(url) do
+      {:ok, respuesta} ->
+        {:ok, respuesta.body}
+      {:error, _} ->
+        {:error, "No se pudo descargar la pagina"}
+    end
+  end
+end
 
-page = HTTPoison.get("http://www.miweb.com")
+IO.inspect(MiModulo.descargar_pagina("http://example.com"))
 ```
+Cuando ejecutas este código, debes ver el contenido de la página que especificaste en la consola.
 
-El resultado de la función será un objeto de tipo ```HTTPoison.Response``` que contiene el contenido de la página web que hemos descargado. Para acceder a este contenido, podemos utilizar la función ```HTTPoison.body```.
+## Profundizando
 
-```Elixir
-content = HTTPoison.body(page)
-```
+Cuando descargamos una página web, en realidad estamos interactuando con la parte el lado servidor de la web. Esta práctica se lleva a cabo desde los primeros días del internet, cuando las conexiones eran lentas y era más óptimo descargar el contenido para verlo localmente.
 
-Finalmente, podemos imprimir el contenido de la página en la consola utilizando la función ```IO.puts```.
+En cuanto a las alternativas, si estás trabajando con Elixir, `HTTPoison` es la opción más común y directa. Sin embargo, otras librerías como `Tesla` también son válidas y ofrecen diferentes ventajas, como una configuración y uso más flexible.
 
-```Elixir
-IO.puts(content)
-```
+En cuanto a los detalles de implementación, `HTTPoison.get(url)` realiza una petición HTTP utilizando el método GET. El servidor responde enviando los datos solicitados, que `HTTPoison` luego guarda en el cuerpo de la respuesta (`response.body`).
 
-## Exploración en profundidad:
+## Ver También
 
-Descargar páginas web se ha vuelto una tarea cada vez más común para los programadores, ya que muchas aplicaciones y servicios dependen de la información que se encuentra en internet. Además, con el avance de tecnologías como el web scraping, se ha vuelto más fácil y común obtener y manipular datos de forma automatizada.
+Aquí hay algunos enlaces a recursos útiles:
 
-Existen alternativas a usar el módulo ```HTTPoison``` para descargar páginas web, como por ejemplo, ```HTTPotion``` o el módulo nativo ```HTTP```. Sin embargo, ```HTTPoison``` ha demostrado ser muy eficiente y sencillo de utilizar en comparación con las otras opciones.
-
-En cuanto a la implementación del módulo ```HTTPoison```, utiliza la librería ```hackney``` para realizar las solicitudes HTTP y tiene una amplia documentación disponible en línea.
-
-## Ver también:
-
-- [Documentación oficial de HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Web scraping con Elixir y Floki](https://medium.com/@jlouis666/web-scraping-with-elixir-floki-597f816b2e81)
-- [Alternativas a HTTPoison](https://erlangcentral.org/?p=1048)
+1. Documentación de HTTPoison: https://hexdocs.pm/httpoison/readme.html
+2. Guía de Tesla: https://hexdocs.pm/tesla/readme.html
+3. Más detalles sobre las peticiones HTTP GET: https://developer.mozilla.org/es/docs/Web/HTTP/Methods/GET

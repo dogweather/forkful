@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "C++ recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "C++"
 category:             "C++"
@@ -10,33 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Searching & Replacing Text in C++
+
 ## What & Why?
-Searching and replacing text is a common task in programming where a specific string of characters is found and replaced with another string, either throughout a single document or across multiple documents. Programmers often perform this task to make changes to their code more efficiently or to fix errors in their code.
+
+Searching and replacing text is the process of locating a specific string and swapping it with another. Programmers do this to manipulate data, correct errors, customize content, or simplify user interactions.
 
 ## How to:
-```
-C++ code for searching and replacing text:
-#include <iostream>
-#include <string>
 
-using namespace std;
+```C++
+#include <string>
+#include <iostream>
 
 int main() {
-    string sentence = "Hello World!";
-    string newSentence = sentence.replace(sentence.find("World"), 5, "Universe");
-    cout << newSentence << endl;
+    std::string str = "Hello, Dude!";
+    std::cout << "Original String: " << str << std::endl;
+    
+    size_t pos = str.find("Dude");
+    if (pos != std::string::npos)
+        str.replace(pos, 4, "World");
+    
+    std::cout << "Modified String: " << str << std::endl;
+    
+    return 0;
 }
 ```
-Output: "Hello Universe!"
 
-## Deep Dive:
-Searching and replacing text has been a crucial feature for programmers since the beginning of programming languages. It allows for quick and efficient changes to be made to code without having to manually go through every line. As technology has advanced, searching and replacing text has become even more powerful, with support for regular expressions, case-sensitive matching, and batch processing.
+This C++ program will search the string "Hello, Dude!" for the substring "Dude", and replace it with "World". The output will be:
 
-While searching and replacing text is mainly performed using built-in functions or tools in programming languages, there are also alternative programs and tools dedicated solely to this task. These include command-line utilities such as grep and sed, as well as text editors like Sublime Text and Notepad++.
+```C++
+Original String: Hello, Dude!
+Modified String: Hello, World!
+```
 
-When it comes to implementation, the method used for searching and replacing text may vary depending on the programming language or tool being used. Some may use algorithms such as Knuth-Morris-Pratt or Boyer-Moore for more efficient search and replace operations.
+## Deep Dive
 
-## See Also:
-- [String class in C++](https://www.geeksforgeeks.org/string-class-in-c/)
-- [Regular Expressions in C++](https://www.geeksforgeeks.org/regular-expression-in-c/)
-- [Grep and Sed utilities](https://www.gnu.org/software/grep/manual/grep.html)
+Historically, text searching and replacing have been essential for text processing. Originating in early command-line interfaces, they're now standard features in most programming languages. 
+
+One alternative to manual search-and-replace is using regular expressions, which allows for pattern-based searching. However, these can be complex and are generally less efficient. 
+
+Under the hood, `std::string::find` scans the string linearly until it finds a match. If a match is found, `std::string::replace` alters the necessary characters. These operations are both O(n), where n is the length of the string.
+
+## See Also
+
+Discover more with these links: 
+
+- `std::string::find`: http://www.cplusplus.com/reference/string/string/find/
+- `std::string::replace`: http://www.cplusplus.com/reference/string/string/replace/
+- Text Processing in C++: https://en.cppreference.com/w/cpp/string
+- Regular Expressions in C++: https://www.cplusplus.com/reference/regex/

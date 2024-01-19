@@ -1,7 +1,7 @@
 ---
-title:                "מציאת אורך מחרוזת"
-html_title:           "Javascript: מציאת אורך מחרוזת"
-simple_title:         "מציאת אורך מחרוזת"
+title:                "מציאת אורך המחרוזת"
+html_title:           "Elm: מציאת אורך המחרוזת"
+simple_title:         "מציאת אורך המחרוזת"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,31 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-מציאת אורך של מחרוזת היא תכונת פונקציונלית בשפת ג'אווהסקריפט שמאפשרת למתכנתים לקבל את מספר התווים במחרוזת. זה מאפשר מתכנתים לנהל ולעבד מחרוזות יעיל יותר, במיוחד כאשר משתמשים במתודות של שפת ג'אווהסקריפט המתבססות על מספר התווים במחרוזת.
+# מציאת אורך המחרוזת: מדריך קצר
+## מה ולמה?
+באופן מרכזי, מציאת אורך המחרוזת ב-Javascript (JS) כוללת ספירת התווים שבה. זה שימושי בהרבה תרחישים, למשל: כאשר אנחנו רוצים לוודא שהמשתמש הזין קלט מסוים.
 
-## איך לעשות זאת:
-הנה כמה דוגמאות לכתיבת הקוד למציאת אורך של מחרוזת ותוצאת מספר התווים בה: 
-```Javascript
-// דוגמא 1:
-let str = "זו מחרוזת לדוגמה";
-console.log(str.length);
-
-// תוצאה צפויה: 16
-
-// דוגמא 2:
-let input = prompt("נא להזין מחרוזת:");
-console.log(`המחרוזת שהזנת יש בה ${input.length} תווים`);
-
-// תוצאה משתנה בהתאם למחרוזת שהמשתמש מזין
+## איך לעשות:
+```Javascript 
+var txt = "Hello World!";
+var len = txt.length;
+console.log(len);  // Prints: 12
 ```
+בדוגמה הזו, אנחנו משתמשים במאפיין `.length` על המחרוזת `"Hello World!"` ומדפיסים את האורך שמצאנו.
 
-## עומק כיוון
-- **היסטורי:** תכונת מציאת אורך של מחרוזת נוצרה כחלק מתכניות שפת ג'אווהסקריפט בשנות ה-90 כדי לתמוך בעיבוד טקסט באמצעות תכונות ופונקציונליות מתקדמות יותר.
-- **אלטרנטיבות:** ישנן פתרונות אלטרנטיביים למציאת אורך של מחרוזת בשפת ג'אווהסקריפט, כגון שימוש במתודת **slice** או **substring**.
-- **פרטי יישום:** תכונת מציאת אורך של מחרוזת מיושמת באמצעות אלגוריתם שמספר כמה תווים נמצאים בתוך המחרוזת ומחזירה את התוצאה בצורה נוחה לשימוש.
+## צלילה עמוקה
+השפה Javascript היא אחת מהראשונות שהציגו מדד טבעי של אורך מחרוזות במאפיין `.length`. בעבר, בשפות אחרות, אנשי קוד היו צריכים לספור תווים באופן תוכניתי. 
 
-## ראה גם:
-- [תיעוד שפת ג'אווהסקריפט על תכונת מציאת אורך של מחרוזת](https://developer.mozilla.org/he/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [מדריך למתחילים בתכונת מציאת אורך של מחרוזת בשפת ג'אווהסקריפט](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [אפשרויות אלטרנטיביות למציאת אורך של מחרוזת בשפת ג'אווהסקריפט](https://www.codecademy.com/courses/introduction-to-javascript/lessons/string-length/exercises/introduction)
+ישנם אלטרנטיבות למאפיין `.length` ב-JS, אך אלה בדרך כלל משמשים למקרים נדירים. למשל: `Array.from(str).length` ימדד את האורך של מחרוזות עם תווים מיוחדים.
+
+דע ביותר! `.length` מחזיר את מספר הייחידות הבסיסיות (code units) מסוג UTF-16 שבמחרוזת, לאו דווקא מספר התווים.
+
+## כדאי לראות גם:
+1. [MDN Web Docs: String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+2. [JavaScript Kit: String properties and methods](http://www.javascriptkit.com/jsref/string.shtml)
+3. [StackOverflow: How does JavaScript .length property handle Unicode characters?](https://stackoverflow.com/questions/5438649/how-does-javascript-length-property-handle-unicode-characters)

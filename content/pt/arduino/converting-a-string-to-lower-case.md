@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Arduino: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,37 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer?
+## O que é e por quê?
 
-Converter uma string para letras minúsculas é um processo comum na programação que permite transformar todas as letras em uma string em minúsculas. Isso pode ser útil para comparação de strings ou para garantir consistência nos dados, independentemente de como eles foram originalmente digitados pelo usuário.
+Converter uma string em letras minúsculas é basicamente transformar todas as letras maiúsculas de uma string em suas versões minúsculas. Os programadores fazem isso para normalizar dados para comparação, armazenamento ou processamento.
 
 ## Como fazer:
 
-Existem várias maneiras de converter uma string para letras minúsculas no Arduino. Uma opção é utilizar a função `toLowerCase()` que está disponível na biblioteca `String`. Veja o exemplo abaixo:
+Aqui está um exemplo de código sobre como você pode fazer isso no seu Arduino:
 
 ```Arduino
-#include <String.h> // inclui a biblioteca String
-
-void setup() {
-  Serial.begin(9600); // inicia a comunicação serial
-  String frase = "OLA AMIGOS"; // cria uma string com todas as letras maiúsculas
-  Serial.println(frase.toLowerCase()); // imprime a string convertida para minúsculas
-}
-
-void loop() {
-  // vazio porque não é necessário no exemplo
-}
+String minhaString = "OI, EU SOU O ARDUINO";
+minhaString.toLowerCase();
+Serial.println(minhaString); // imprimirá: "oi, eu sou o arduino"
 ```
-
-A saída deste código será `ola amigos`, com todas as letras em minúsculas.
+Então, depois de chamar o método `toLowerCase()`, todas as letras da string `minhaString` se tornaram minúsculas.
 
 ## Mergulho profundo:
 
-O processo de converter strings para letras minúsculas tem sido utilizado há muitos anos na programação, como uma forma de padronizar os dados e facilitar a comparação de strings. Existem outras formas de realizar essa conversão, como por exemplo utilizando um loop para percorrer a string e alterar manualmente cada letra para minúscula.
+O método `toLowerCase()` está presente em muitas linguagens de programação além do Arduino/C++, é uma convenção derivada da linguagem de programação original C. Para alternativas, você poderia manualmente iterar por cada caractere na string e usar o método `tolower()` da biblioteca `ctype.h`.
 
-No caso específico do Arduino, a função `toLowerCase()` é uma opção mais simples e eficiente para realizar a conversão. Entretanto, é importante lembrar que a biblioteca `String` pode ocupar bastante espaço na memória do microcontrolador, então é recomendável utilizar esse recurso com cuidado e somente quando necessário.
+Por trás dos panos, `toLowerCase()` funciona percorrendo cada caractere na string, e se for uma letra maiúscula, é substituída pelo equivalente em minúscula. Ele faz isso usando a tabela ASCII, que tem uma correspondência direta entre letras maiúsculas e minúsculas.
 
 ## Veja também:
 
-- [Documentação oficial do Arduino sobre a função `toLowerCase()`](https://www.arduino.cc/reference/en/language/functions/string/character-case-conversion/tolowercase/)
-- [Outras bibliotecas e funções úteis para manipulação de strings no Arduino](https://create.arduino.cc/projecthub/Arduino_Scuola/string-manipulation-functions-in-arduino-ede111)
+Para mais detalhes, confira a documentação oficial do Arduino para a função `String::toLowerCase()` [aqui](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/).
+
+Também dê uma olhada na função `tolower()` da biblioteca `ctype.h`, caso queira realizar esse procedimento manualmente. Aqui está a [documentação](https://www.cplusplus.com/reference/cctype/tolower/).

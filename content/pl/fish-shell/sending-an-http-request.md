@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "Fish Shell: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,27 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP jest procesem, w którym aplikacja komputerowa przesyła informacje do serwera internetowego i oczekuje odpowiedzi od serwera. Programiści często wykorzystują to do pobierania danych z internetu lub komunikacji z innymi aplikacjami.
+## Co i Dlaczego?
+
+Wysyłanie żądania HTTP to proces, w którym twój komputer prosi o dane z serwera internetowego. Programiści robią to, żeby komunikować się z zasobami internetowymi, takimi jak strony internetowe, API, czy bazy danych.
 
 ## Jak to zrobić:
-W poniższych przykładach używając Fish Shell, przedstawione zostaną dwa sposoby na wysyłanie żądania HTTP.
 
+Przykład jak wysłać żądanie GET używając curl w Fish Shell:
+
+```Fish Shell
+function wyslij_get
+  set url $argv[1]
+  curl $url
+end
 ```
-# Wysłanie żądania GET i wyświetlenie odpowiedzi w konsoli
-curl https://example.com
 
-# Używanie wstępnie zdefiniowanego aliasu, aby wysłać żądanie POST z danymi formularza
-alias post 'curl -d "username=user&password=pass" https://example.com/login'
-post
+Teraz możemy wywołać tę funkcję z dowolnym adresem URL, np.:
+
+```Fish Shell
+> wyslij_get https://example.com
 ```
 
-Aby wykonać te przykłady, należy mieć zainstalowane narzędzie `curl`.
+Przykład wyjścia mogłoby wyglądać tak:
 
-## Głębszy zanurzenie:
-Wysyłanie żądań HTTP jest nieodłączną częścią wielu skryptów i aplikacji internetowych. Jest to często wykorzystywana metoda do komunikacji z serwerami i pobierania lub wysyłania danych. Istnieje wiele innych narzędzi, takich jak `wget` czy `httpie`, które można również wykorzystać do wysyłania żądań HTTP.
+```Fish Shell
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
 
-Funkcja `curl` została stworzona w 1997 roku przez szwedzkiego programistę Daniela Stenberg i jest wciąż jednym z najpopularniejszych narzędzi do wysyłania żądań HTTP.
+## Głębsze Zanurzenie 
 
-## Zobacz również:
-Dla bardziej szczegółowych informacji o wysyłaniu żądań HTTP w Fish Shell, polecamy odwiedzić oficjalną dokumentację tego narzędzia. Możesz również zapoznać się z naszym innym artykułem na temat tworzenia komunikacji między aplikacjami z wykorzystaniem Fish Shell.
+Wysyłanie żądań HTTP było podstawową częścią internetu od połowy lat 90-tych. Przede wszystkim używane jest do pobierania zasobów z internetu, ale także do komunikacji z usługami API.
+
+Jest wiele alternatyw dla curl, takie jak wget, httpie czy Postman. Każde narzędzie ma swoje unikalne cechy i przewagi.
+
+Szczegóły implementacji wysyłania żądań HTTP mogą się różnić w zależności od narzędzia używanego do tego celu. W powyższym przykładzie, curl tworzy TCP połączenie do serwera określonego przez URL, a następnie wysyła żądanie HTTP.
+
+## Zobacz również
+
+HTTP: [https://pl.wikipedia.org/wiki/Hypertext_Transfer_Protocol](https://pl.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+
+Curl: [https://curl.se/](https://curl.se/)
+
+Fish Shell: [https://fishshell.com/](https://fishshell.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Sammenstilling av strenger"
-html_title:           "Fish Shell: Sammenstilling av strenger"
-simple_title:         "Sammenstilling av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## Hva & Hvorfor?
 
-Sammenkobling av strenger, også kjent som concatenation, er når man slår sammen to eller flere strenger til en enkelt streng. Dette kan være nyttig for å lage mer komplekse tekster eller variabler i koden din. Programmører gjør det ofte for å lage dynamiske meldinger, konfigurasjonsvariabler og mye mer.
+Strengkonkatenering handler om å binde sammen to eller flere tekststrenger til én. Programmerere gjør dette for å effektivt lage nye tekster fra eksisterende deler.
 
-# Slik gjør du det:
+## Hvordan:
 
-```Fish Shell``` har innebygde funksjoner for å håndtere sammenkobling av strenger. La oss se på et enkelt eksempel:
+Her ser du hvordan du kan kombinere strenger i Fish Shell:
 
-```fish
-set message "Hei, verden!"
-echo $message
+```Fish Shell
+set streng1 "Hallo, "
+set streng2 "Norge!"
+echo $streng1$streng2
 ```
 
-I dette eksempelet, lager vi en variabel kalt "message" som inneholder teksten "Hei, verden!" og bruker deretter "echo" funksjonen for å skrive ut teksten i terminalen. Du kan også kombinere flere variabler eller tekststrenger ved hjelp av "string replace" funksjonen:
+Utdata:
 
-```fish
-set name "Ole"
-set message "Hei, $name!"
-string replace -r "Hei," "" $message
+```Fish Shell
+Hallo, Norge!
 ```
+## Dypdykk
 
-Dette vil resultere i utskriften "Ole!". Som du kan se, brukte vi "$" tegnet for å indikere at teksten som skal settes inn kommer fra en variabel. Dette er en viktig del av konkatenering i ```Fish Shell```.
+Strengkonkatenering har lange historiske røtter i programmering, fra de tidlige dager av Perl og Unix-shell-scripting. I Fish Shell, utføres denne oppgaven enkelt uten behov for spesielle operatorer.
 
-# Dykk dypere:
+Det er flere måter å oppnå det samme på i andre programmeringsspråk. For eksempel, i Python kan du bruke '+' operatoren (`streng1 + streng2`), og i Javascript kan du bruke både '+' og '`'. Begge tilnærmingene gir tilnærmet samme resultat, men forskjellen ligger i detaljene rundt ytelse og lesbarhet.
 
-Sammenkobling av strenger har eksistert siden begynnelsen av programmering og er en grunnleggende del av de fleste programmeringsspråk. Alternativene for sammenkobling kan variere, men i ```Fish Shell```, kan du bruke "string join" eller "printf" funksjonene til å oppnå samme resultat som "string replace" funksjonen.
+Fish Shell tilbyr ikke noen innebyggede funksjoner for strengkonkatenering fordi det er unødvendig. Ved å bruke variabel-navnet direkte, kan du kombinere tekstinnholdet uten noen ekstra kode. Dette forenkler lesbarheten av koden og forbedrer ytelsen.
 
-Når det gjelder implementering, bruker ```Fish Shell``` "string interpolation" for å erstatte variabler i en streng mens den er i ferd med å bli utskrevet. Dette gjør det lettere og raskere enn mange andre programmeringsspråk som krever at variabler må konkatenere først før de kan bli utskrevet.
+## Se Også
 
-# Se også:
+For mer informasjon om hvordan å jobbe med tekststrenger i Fish, sjekk ut følgende ressurser:
 
-- Offisiell dokumentasjon for ```Fish Shell``` sin string handling: https://fishshell.com/docs/current/index.html#string-handling
-- Enkel forklaring av concatenering med eksempler på flere programmeringsspråk: https://www.geeksforgeeks.org/string-concatenation-in-various-programming-languages/
+- Fish sin offisielle dokumentasjon: https://fishshell.com/docs/current/index.html
+- Fish scripting tutorial: https://fishshell.com/docs/current/tutorial.html
+- Håndtering av tekststrenger i Fish: https://fishshell.com/docs/current/commands.html#string
+- StackOverflows diskusjon om strengoperasjoner i Fish: https://stackoverflow.com/questions/21138413/fish-shell-string-operations

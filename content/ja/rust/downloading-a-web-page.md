@@ -1,6 +1,6 @@
 ---
 title:                "ウェブページのダウンロード"
-html_title:           "Rust: ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## これは何？なんでやるの？
-ウェブページをダウンロードすることは、インターネットからコンピューターに情報を取得することです。プログラマーがこれを行う理由は、ウェブスクレイピングやデータマイニングなど、さまざまなタスクを実行するために必要なデータを収集するためです。
+## 何となぜ?
 
-## 方法：
-```Rust
-use std::io::Read;
-use reqwest::Client;
+ウェブページをダウンロードするとは、ウェブサーバーからページのデータを取得して自分のマシンに保存することを意味します。これを行う理由は、コンテンツをオフラインで利用できるようにすること、またはデータ分析のためにウェブページのコンテンツを解析することがあります。
 
-fn main() {
-    let mut response = Client::new().get("https://www.example.com").send().unwrap();
-    let mut body = String::new();
-    response.read_to_string(&mut body).unwrap();
+## 自分で試してみよう:
 
-    println!("Response: {}", response.status());
-    println!("Body: {}", body);
+```rust
+use reqwest;
+use std::fs;
+
+#[tokio::main]
+async fn main() -> Result<(),reqwest::Error> {
+    let content = reqwest::get("https://www.google.com/")
+        .await?
+        .text()
+        .await?;
+    fs::write("google.html", &content).expect("Unable to write file");
+    println!("Download successful!");
+    Ok(())
 }
 ```
 
-出力：
-```
-Response: 200 OK
-Body: <!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-...
-```
+このコードを実行すると、「Download successful!」が出力されます。また、「google.html」という名前の新しいファイルが作成され、その中に取得したウェブページのコンテンツが保存されます。
 
-## 詳しく見る：
-- ウェブページをダウンロードする前に、エンドポイントにリクエストを送信してレスポンスを受け取る必要があります。今回は、`reqwest`クレートを使用していますが、`curl`や`wget`などの代替ツールもあります。
-- ダウンロードする際には、通常HTTPやHTTPSプロトコルを使用しますが、独自のプロトコルを作成して使用することもできます。
-- ウェブページをダウンロードするというタスクは、ウェブスクレイピングやデータマイニングなど、多くの応用分野で必要とされます。
+## ディープダイブ:
 
-## 関連リンク：
-- RustでのHTTPクライアント `reqwest`のドキュメント：https://docs.rs/reqwest/
-- ウェブスクレイピングについての一般的な情報：https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+ウェブページのダウンロードは1990年ごろから行われてきました。それ以来、HTTPクライアント、ブラウザーなどのツールが開発され、この処理を大幅に簡単にしました。Rust言語もHTTPクライアントライブラリ（たとえば`reqwest`や`hyper`）など、ウェブページのダウンロードを容易かつ効率的に行うための強力なツールを提供しています。
+
+ダウンロードの代わりにウェブページをキャッシュする方法もあります。これはパフォーマンス向上やデータの保存のために良く行われますが、それには通常、特別な設定や専門的なツールが必要となります。
+
+## 参考資料:
+
+- [reqwest GitHub](https://github.com/seanmonstar/reqwest)
+- [hyper GitHub](https://github.com/hyperium/hyper)
+- [Rust 公式ドキュメンテーション](https://www.rust-lang.org/)

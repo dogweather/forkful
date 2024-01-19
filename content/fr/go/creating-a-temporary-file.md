@@ -1,6 +1,6 @@
 ---
 title:                "Création d'un fichier temporaire"
-html_title:           "Go: Création d'un fichier temporaire"
+html_title:           "Kotlin: Création d'un fichier temporaire"
 simple_title:         "Création d'un fichier temporaire"
 programming_language: "Go"
 category:             "Go"
@@ -10,13 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est & Pourquoi ?
 
-La création d'un fichier temporaire est une pratique courante en programmation, où un fichier est créé temporairement pour stocker des données ou effectuer une tâche spécifique, puis est supprimé une fois que sa fonction est remplie. Les programmeurs utilisent souvent des fichiers temporaires pour éviter de surcharger la mémoire principale ou pour gérer efficacement des données qui ne sont nécessaires que temporairement.
+Créer un fichier temporaire est l'action de constituer un fichier pour usage à court terme ou en essai. Les programmeurs font cela pour tester des fonctionnalités sans endommager les fichiers permanents ou pour manipuler d'énormes quantités de données sans consommer la mémoire principale.
 
-## Comment faire:
+## Comment faire :
 
-Voici un exemple de code simple en Go pour créer un fichier temporaire:
+Voici un exemple de code en Go pour créer un fichier temporaire.
 
 ```Go
 package main
@@ -28,38 +28,39 @@ import (
 )
 
 func main() {
-    // Crée un fichier temporaire dans le répertoire de travail actuel
-    f, err := ioutil.TempFile(".", "example")
+    tempFile, err := ioutil.TempFile(".", "tempFile-*.txt")
     if err != nil {
-        panic(err)
+        fmt.Println(err)
+        os.Exit(1)
     }
+    defer os.Remove(tempFile.Name())
 
-    // Affiche le nom du fichier temporaire créé
-    fmt.Println("Nom du fichier temporaire: ", f.Name())
-
-    // Effectue des opérations sur le fichier temporaire...
-
-    // Supprime le fichier temporaire une fois que sa fonction est remplie
-    err = os.Remove(f.Name())
-    if err != nil {
-        panic(err)
-    }
+    fmt.Println("Fichier temporaire créé :", tempFile.Name())
 }
 ```
 
-Output:
+Dans ce code, nous utilisons la fonction `ioutil.TempFile` pour créer un fichier temporaire. En exécutant ce code, vous devriez voir un message comme celui-ci :
+
 ```
-Nom du fichier temporaire: example226906199
+Fichier temporaire créé : ./tempFile-123456.txt
 ```
 
-## Plongée en profondeur:
+## Plongée profonde:
 
-La création de fichiers temporaires remonte aux premières années de la programmation informatique, lorsque la mémoire était une ressource limitée. Aujourd'hui, bien que les systèmes aient énormément évolué, la création de fichiers temporaires reste une pratique utile pour les programmeurs.
+Historiquement, les fichiers temporaires sont des éléments ancestraux de la programmation car le stockage sur disque était autrefois beaucoup plus abondant que la mémoire vive. De nos jours, ils restent essentiels pour gérer de grandes quantités de données.
 
-Il existe plusieurs alternatives à la création de fichiers temporaires, telles que l'utilisation de la mémoire virtuelle ou l'utilisation de données temporaires en mémoire sans les stocker dans un fichier. Cependant, ces alternatives peuvent ne pas être aussi efficaces ou pratiques selon le cas d'utilisation.
+Un autre avantage est de servir de tampon entre les opérations de lecture / écriture sur le disque et la mémoire, augmentant ainsi l'efficacité de vos programmes.
 
-En termes d'implémentation, la création d'un fichier temporaire implique généralement l'utilisation d'un nom de fichier unique généré par le système ou par le programmeur lui-même. Le fichier peut également être créé dans un répertoire spécifique ou dans le répertoire de travail actuel.
+Au lieu de `ioutil.TempFile`, vous pourriez aussi utiliser `os.CreateTemp`, une fonction introduite dans Go 1.16. Toutefois, l'ioutil.TempFile` est plus couramment utilisé dans les versions antérieures.
 
-## Voir aussi:
+Voici comment créer un fichier temporaire avec `os.CreateTemp` :
 
-Pour plus d'informations sur la création de fichiers temporaires en Go, consultez la [documentation officielle](https://golang.org/pkg/io/ioutil/#TempFile) de la bibliothèque standard. Vous pouvez également consulter cette [excellente ressource](https://www.geeksforgeeks.org/temporary-files-and-directories-in-operating-system/) sur les fichiers et répertoires temporaires dans les systèmes d'exploitation.
+```Go
+tempFile, err := os.CreateTemp(".", "tempFile-*.txt")
+```
+
+## Voir aussi :
+
+Pour plus d'informations, consultez [la documentation officielle de ioutil.TempFile](https://pkg.go.dev/io/ioutil#TempFile) et [la documentation de os.CreateTemp](https://pkg.go.dev/os#CreateTemp). 
+
+N'oubliez pas non plus de consulter [cette ressource utile](https://go.dev/blog/defer-panic-and-recover) sur l'utilisation correcte de `defer` pour nettoyer les fichiers temporaires.

@@ -1,7 +1,7 @@
 ---
-title:                "Tilapäistiedoston luominen"
-html_title:           "Ruby: Tilapäistiedoston luominen"
-simple_title:         "Tilapäistiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,26 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Luodessaan väliaikaisen tiedoston, ohjelmoijat haluavat tallentaa tilapäisesti tietoja ennen niiden pysyvää tallentamista. Tätä käytetään usein esimerkiksi tiedostojen käsittelyssä tai tietokantojen muokkaamisessa.
+## Mitä ja Miksi?
+Väliaikaisten tiedostojen luonti on prosessi, jossa luodaan tiedosto, jota käytetään vain tilapäisesti. Ohjelmoijat tekevät tämän datan tallentamiseksi väliaikaisesti, esimerkiksi prosessien välisenä puskurina tai suurien tietomäärien käsittelyä varten.
 
-## Kuinka teet sen:
-```ruby
-require "tempfile"
-
-temp_file = Tempfile.new("temp_file") # luo väliaikaisen tiedoston nimellä "temp_file"
-temp_file.write("This is a temporary file.") # kirjoittaa tiedostoon
-temp_file.rewind # palauttaa tiedoston alkuun
-puts temp_file.read # tulostaa tiedoston sisällön
-temp_file.close # sulkee tiedoston
-
-=> "This is a temporary file."
+## Miten:
+Rubyssa voit luoda väliaikaisen tiedoston `Tempfile`-luokalla. Alla on esimerkki:
+```Ruby
+   
+   require 'tempfile'
+  
+   # Tempfile-luokan metodi new luo uuden väliaikaisen tiedoston.
+   temp_file = Tempfile.new('temporary')
+  
+   # Nyt voimme kirjoittaa tiedostoon jotain
+   temp_file.puts("Hello, World!")
+  
+   temp_file.close
 ```
+Kun ajat yllä olevan koodin, se luo uuden väliaikaisen tiedoston nimeltä 'temporary', kirjoittaa siihen "Hello, World!" ja sulkee tiedoston.
 
-## Syvempi sukellus:
-Väliaikaisten tiedostojen luonti on ollut osa ohjelmointia jo pitkään, ja sitä käytetään edelleen laajasti. Useimmissa tapauksissa väliaikaiset tiedostot tuhotaan automaattisesti niiden käytön jälkeen, mutta joissakin tapauksissa ne voidaan myös tallentaa pysyvästi. On myös muita tapoja tallentaa väliaikaisia tietoja, kuten käyttämällä väliaikaisia muuttujia tai muistialueita.
+## Syvällisempää
+Väliaikaisten tiedostojen luomiskäytäntö on peräisin ajalta, jolloin kiintolevytila oli kallista ja rajallista. Nyt ne ovat edelleen hyödyllisiä suurten datamäärien käsittelyssä ja prosessien välisessä kommunikoinnissa. Vaihtoehtojen joukossa on myös `Tempdir`-luokka, jota käytetään luomaan väliaikaisia hakemistoja. `Tempfile` luo tiedostot tehdäkseen niistä vähemmän pysyviä: periaatteessa ne ovat poissa, kun ne suljetaan, vaikka todellisuudessa ne pysyvät, kunnes ne poistetaan muistiin kiintolevyltä.
 
-## Katso myös:
-- https://ruby-doc.org/stdlib-2.7.1/libdoc/tempfile/rdoc/Tempfile.html
-- https://www.geeksforgeeks.org/ruby-tempfile-class/
-- https://www.rubyguides.com/2018/11/temporary-files-in-ruby/
+## Katso myös
+- [Tempfile-kirjaston dokumentointi](https://ruby-doc.org/stdlib-2.5.1/libdoc/tempfile/rdoc/Tempfile.html)
+- [Ruby's IO luokka (josta Tempfile periytyy)](https://ruby-doc.org/core-3.0.1/IO.html)
+- [Ruby's File luokka](https://ruby-doc.org/core-3.0.1/File.html)
+- [Tempdir-kirjaston dokumentointi](https://ruby-doc.org/stdlib-2.5.1/libdoc/tmpdir/rdoc/Dir.html#method-c-mktmpdir)

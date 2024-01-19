@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "Bash: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-Wysyłanie zapytań HTTP jest powszechną praktyką w programowaniu. Polega ona na wysyłaniu żądań do serwera w celu pobrania informacji lub wykonania jakiejś akcji. Programiści stosują to narzędzie, aby uzyskać dostęp do różnego rodzaju zasobów i usług w internecie.
+Wysyłanie żądania HTTP to proces, w którym przeglądarka internetowa (lub inny klient HTTP) prosi o dane od serwera. Programiści robią to, aby pozyskać i manipulować danymi z internetu.
 
 ## Jak to zrobić:
 
-Aby wysłać żądanie HTTP w Bash, należy użyć wbudowanej biblioteki `curl`. Przykładowe żądanie można wykonać w następujący sposób:
+Możemy użyć narzędzia `curl` do wysyłania żądań HTTP, takie jak GET, POST, DELETE, itp. Zobacz poniższy kod:
 
-```Bash
-curl http://www.example.com
+```Bash 
+# Proste żądanie GET
+curl http://example.com 
+
+# Żądanie POST z danymi
+curl -X POST -d "param1=value1&param2=value2" http://example.com
 ```
+Odpowiedzi serwera otrzymamy w terminalu. 
 
-Jeśli chcemy pozyskać konkretną stronę lub zasób, możemy użyć opcji `-o` aby wynik został zapisany do pliku:
+## W głąb tematu:
 
-```Bash
-curl -o nazwa_pliku.html http://www.example.com/strona.html
-```
+Wysyłanie żądań HTTP jest częścią protokołu HTTP, który został zaprojektowany w 1989 roku przez Tima Bernersa-Lee'a. Alternatywą dla `curl` z bash jest `wget`, który ma podobną funkcjonalność. 
 
-Żądanie HTTP może również zawierać dodatkowe nagłówki i parametry. Przykładowo, aby przesłać dane w żądaniu POST, możemy użyć opcji `-d` wraz z danymi, które chcemy przesłać:
+Szczegół implementacji: bash wywołuje `curl` jako proces dziecko, przesyła żądanie HTTP, a `curl` przetwarza odpowiedź i zwraca ją do bash.
 
-```Bash
-curl -d "nazwa=uzytkownika&haslo=tajne" http://www.example.com/login
-```
+## Zobacz też:
 
-## Głębsza Rzecz:
-
-Istnieje wiele alternatywnych narzędzi do wysyłania żądań HTTP w Bash, takich jak `wget`, `httpie` czy `libwww-perl`. Każde z nich ma swoje wady i zalety, dlatego warto przetestować różne rozwiązania i wybrać to, które najlepiej spełnia nasze potrzeby.
-
-Wysyłanie żądań HTTP jest często wykorzystywane w automatyzacji i integracji systemów. Dzięki temu, aplikacje mogą komunikować się ze sobą i wymieniać informacje w sposób łatwy i wydajny.
-
-Implementacja wysyłania żądań HTTP w Bash jest w dużej mierze zależna od wybranego narzędzia. W przypadku `curl`, możemy dostosować żądanie za pomocą wielu opcji, takich jak metoda (GET, POST, PUT), nagłówki lub parametry. Dzięki temu, mamy dużą kontrolę nad sposobem, w jaki chcemy komunikować się z serwerem.
-
-## Zobacz również:
-
-Dla dalszej lektury na temat wysyłania żądań HTTP w Bash, polecamy:
-
-- [Dokumentacja curl](https://curl.haxx.se/docs/)
-- [Porównanie narzędzi do wysyłania żądań HTTP w Bash](https://thoughtbot.com/blog/four-command-line-tools-for-making-http-requests)
+- Dokumentacja `curl`: https://curl.haxx.se/docs/manpage.html
+- Dokumentacja `wget`: https://www.gnu.org/software/wget/manual/wget.html
+- Poradnik HTTP dla programistów: https://developer.mozilla.org/pl/docs/Web/HTTP/Overview

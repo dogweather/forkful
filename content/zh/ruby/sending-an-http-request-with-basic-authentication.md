@@ -1,7 +1,7 @@
 ---
-title:                "你喜欢编程吗？使用基本认证发送http请求"
-html_title:           "Ruby: 你喜欢编程吗？使用基本认证发送http请求"
-simple_title:         "你喜欢编程吗？使用基本认证发送http请求"
+title:                "使用基本认证发送http请求"
+html_title:           "Bash: 使用基本认证发送http请求"
+simple_title:         "使用基本认证发送http请求"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,43 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什麼 & 為甚麼？
+## 什么和为什么？
+HTTP请求的基本认证即是一个验证用户身份的简单过程，通过发送包含用户名和密码细节的HTTP请求实现。程序员使用它主要是为了保护重要的信息，防止未经授权的访问。
 
-發送具有基本驗證的HTTP請求是一種常見的網絡通信方式，它使得程序員可以在發送請求時驗證自己的身份。這樣可以確保只有授權的用戶可以訪問受保護的資源，從而增強了網絡安全性。
+## 如何操作：
+Ruby使得发送带有基本认证的HTTP请求变得很容易。 下面是一个例子：
 
-## 如何實現：
-
-```ruby
-# 首先需要引入 "net/http" 和 "uri" 模塊
+```Ruby
 require 'net/http'
 require 'uri'
- 
-# 通過 URI 對象定義請求地址
-http_uri = URI.parse('https://example.com/api')
-
-# 設置需要驗證的用戶名和密碼
-username = 'username'
-password = 'password'
-
-# 使用 "Net::HTTP::Get" 方法發送帶有驗證的請求
-request = Net::HTTP::Get.new(http_uri, { 'Authorization' => "Basic #{Base64.encode64("#{username}:#{password}")}" })
-
-# 使用 "Net::HTTP" 模塊發送請求
-response = Net::HTTP.start(http_uri.hostname, http_uri.port, use_ssl: http_uri.scheme == 'https') do |http|
-  http.request(request)
-end
-
-# 打印服務器返回的回復狀態碼和回復主體
-p "Status code: #{response.code}"
-p "Response body: #{response.body}"
+uri = URI('http://example.com/data')
+req = Net::HTTP::Get.new(uri)
+req.basic_auth 'user', 'pass'
+res = Net::HTTP.start(uri.hostname, uri.port) {|http|
+  http.request(req)
+}
 ```
 
-## 深入了解：
+运行上述代码，你将看到一个典型的HTTP响应。本例中，我们将'example.com'的数据页面赋值给uri,并设置了一个带有基本认证的GET请求。
 
-發送具有基本驗證的HTTP請求可以追溯到早期的網絡通信方式，它基於HTTP的身份驗證標準。對於程序員來說，還有其他替代方式可供選擇，例如使用OAuth 2.0協議進行驗證。 在實際實現時，還需注意在發送請求時使用加密的HTTPS協議來保護用戶數據的安全性。
+## 深入探讨：
+基本认证（Basic Authentication）在互联网的早期阶段就开始使用。然而，由于它存在一些明显的安全问题（例如密码以明文传输），因此并不总是首选的认证方式。
 
-## 參考鏈接：
+另外一种常见替代方法是摘要认证（Digest Authentication），它提供了一些附加的安全措施。然而这需要更复杂的实现，并且在Ruby中，使用`net/http`库的方式并不直观。
 
-- [Ruby Net::HTTP文檔](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html)
-- [URI模塊文檔](https://ruby-doc.org/stdlib-2.7.2/libdoc/uri/rdoc/URI.html)
-- [HTTP基本認證標準](https://tools.ietf.org/html/rfc7617)
+至于操作细节，Ruby的`Net::HTTP::Get`类提供了一个名为`basic_auth`的方法，它将用户名和密码转化为一个适当的`Authorization`头部（header）。此后，包含这个头部的HTTP请求被发送出去。
+
+## 参阅：
+1. [Ruby Doc: Net::HTTP](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
+2. [Wikipedia: Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+3. [RFC2617: HTTP Authentication](https://tools.ietf.org/html/rfc2617)
+
+由于我们没有'总结'章节，此处就到此为止。这个指南应该对你在Ruby中发送带有基本认证的HTTP请求有所帮助。

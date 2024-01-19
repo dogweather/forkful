@@ -1,6 +1,6 @@
 ---
 title:                "Zufallszahlen generieren"
-html_title:           "Gleam: Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
 simple_title:         "Zufallszahlen generieren"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was sind Zufallszahlen und warum verwenden Programmierer sie?
+## Was & Warum?
 
-Zufallszahlen sind eine Reihe von Zahlen, die auf scheinbar zufällige Weise generiert werden. Programmierer nutzen diese Zahlen, um verschiedene Anwendungen und Funktionen zu erstellen, die zufällige Elemente enthalten, wie zum Beispiel Glücksspiele oder Simulationen.
+Zufallszahlen sind numerische Werte, die durch einen Prozess generiert werden, der so gestaltet ist, dass jedes mögliche Ergebnis genauso wahrscheinlich ist. Programmierer verwenden Zufallszahlen in einer Vielzahl von Anwendungen, wie zum Beispiel in Spielen, in Verschlüsselungsalgorithmen oder bei Simulationen.
 
-Wie geht das? 
+## So geht's:
 
-Die Generierung von Zufallszahlen in Gleam ist einfach. Es gibt verschiedene Methoden, um Zufallszahlen zu erzeugen, je nachdem, welche Art von Zufallszahl benötigt wird.
-
-Ein Beispiel mit Gleam's Random Modul: 
+Der Gleam-Code zum Erzeugen von Zufallszahlen in der aktuellen Version ist recht einfach. Hier ist ein Beispiel:
 
 ```Gleam
-    let zufallszahl = Random.int_in_range(1, 10)
-```
-Die Ausgabe dieser Codezeile kann eine Zufallszahl zwischen 1 und 10 sein, zum Beispiel ```5```.
+import gleam/random.{Generator, new}
 
-Eine andere Möglichkeit ist die Verwendung von Gleam's Crypto Modul, um sicherere Zufallszahlen zu generieren. Hier ist ein Beispiel:
+fn main() -> Nil {
+  let generator = new(12345)
+  let (number, generator) = Generator.int(0, 100, generator)
+  io.println(number)
+}
+```
+
+Dieser Code erzeugt eine Zufallszahl zwischen 0 und 100. Die Ausgabe könnte so aussehen:
 
 ```Gleam
-    let sicherheitsszahl = Crypto.random_bytes(2)
+57
 ```
 
-Die Ausgabe dieses Codes könnte beispielsweise ```<<137, 207>>``` sein, was als eine Abfolge von Bytes dargestellt wird.
+## Vertiefung
 
-Eine Tiefergehende Betrachtung 
+Historisch gesehen haben Programmiersprachen Zufallszahlen durch Algorithmen wie die lineare Kongruenzmethode generiert. Heute gibt es jedoch weitere, teilweise komplexere Methoden, wie Mersenne Twister oder Xorshift.
 
-Die Generierung von Zufallszahlen hat eine lange Geschichte und ist ein essentieller Aspekt der Informatik. Vor der Erfindung von Computern wurden Zufallszahlen durch physikalische oder mathematische Methoden gewonnen. Heutzutage gibt es verschiedene Alternativen zu Gleam, wie zum Beispiel die Verwendung von Hardwarebasierter Zufallszahlen-Generierung, die noch sicherere Zufallszahlen garantieren kann.
+Alternative Ansätze in Gleam umfassen die Verwendung spezieller Funktionen oder Bibliotheken. Beachten Sie jedoch, dass die Verwendung von Zufallszahlen auf bestimmte Weise nicht völlig zufällig sein kann, da sie auf Algorithmen basieren und daher vorhersehbar sind.
 
-Implementierungsdetails sind wichtig beim Umgang mit Zufallszahlen, da selbst geringfügige Fehler zu unvorhersehbaren Ergebnissen führen können. Gleam bietet verschiedene Module, um sicherzustellen, dass die erzeugten Zufallszahlen zuverlässig und sicher sind.
+In Gleam wird der Zufallszahlengenerator so implementiert, dass er einen Initialwert benötigt (in diesem Fall die Zahl 12345) und eine Funktion zum Generieren einer neuen Zufallszahl in einem angegebenen Bereich.
 
-Weiterführende Informationen
+## Siehe auch
 
-Weitere Informationen zur Generierung von Zufallszahlen mit Gleam erhalten Sie in der offiziellen Dokumentation: [Gleam Random Modul](https://gleam.run/modules/random.html) und [Gleam Crypto Modul](https://gleam.run/modules/crypto.html). Sie können auch die Implementierung dieser Module im Github-Repository von Gleam einsehen: [Gleam Repository](https://github.com/gleam-lang/gleam).
+- Gleam's [random module](https://hexdocs.pm/gleam_stdlib/gleam/random/index.html) Dokumentation bietet detailliertere Informationen und Beispiele.
+- Für einen technischen Überblick über Zufallszahlengeneratoren, lesen Sie die [Wikipedia-Seite](https://de.wikipedia.org/wiki/Pseudozufallszahl).
+- Für eine ausführlichere Diskussion über die Nutzung von Zufallszahlen in der Programmierung, empfehle ich dieses [Artikel](https://www.johndcook.com/blog/2016/01/30/9999963619/).

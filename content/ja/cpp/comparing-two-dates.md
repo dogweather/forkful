@@ -1,7 +1,7 @@
 ---
-title:                "「日付の比較」"
-html_title:           "C++: 「日付の比較」"
-simple_title:         "「日付の比較」"
+title:                "2つの日付を比較する"
+html_title:           "Elixir: 2つの日付を比較する"
+simple_title:         "2つの日付を比較する"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,59 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## どのように日付を比較するのか: プログラマーのための解説
+## 何となぜ？
+日付の比較とは、2つの日付を比べ、その結果が最初が二番目より早い、遅い、または同じなのかを判断するプロセスです。これは、何かが何時に起こったか、期限が来る前に任務が完了したかどうかを決定するために、プログラマーによって行われます。
 
-日付を比較することは、特定の日付が過去・現在・未来のどれに当てはまるかを判断することです。プログラマーたちは、日付を比較することで、例えばイベントのスケジュールやデータのソートなど、さまざまな処理を行うことができます。
-
-## どのように: 
+## 方法：
+C++を使った日付の比較例を以下に示します。
 
 ```C++
-#include <iostream>
 #include <ctime>
-
-using namespace std;
+#include <iostream>
 
 int main() {
-  // 現在の日付を取得する
-  time_t now = time(0); 
-  tm *current_date = localtime(&now);
+    // 現在日付を取得します。
+    std::time_t now = std::time(nullptr);
+    struct std::tm timeinfo_now = *std::localtime(&now);
 
-  // 比較したい日付を設定する
-  tm specified_date = {0};
-  specified_date.tm_year = 121; // 2021年
-  specified_date.tm_mon = 5; // 6月 (0から始まるので5を設定)
-  specified_date.tm_mday = 10; // 10日
+    // 来年の同じ日付を設定します。
+    struct std::tm timeinfo_next_year = timeinfo_now;
+    timeinfo_next_year.tm_year++;
 
-  // 比較する
-  if (mktime(&specified_date) < now) { // 指定した日付が過去の場合
-    cout << "指定した日付は過去です" << endl;
-  } else if (mktime(&specified_date) == now) { // 指定した日付が現在の場合
-    cout << "指定した日付は現在です" << endl;
-  } else { // 指定した日付が未来の場合
-    cout << "指定した日付は未来です" << endl;
-  }
+    // mktime関数でtmをtime_tに変換します。
+    std::time_t t_now = std::mktime(&timeinfo_now);
+    std::time_t t_next_year = std::mktime(&timeinfo_next_year);
 
-  return 0;
+    if(t_now < t_next_year) {
+        std::cout << "Now is earlier." << std::endl;
+    } else if(t_now == t_next_year) {
+        std::cout << "Dates are identical." << std::endl;
+    } else {
+        std::cout << "Now is later." << std::endl;
+    }
+
+    return 0;
 }
 ```
+この-outputは「Now is earlier.」です。
 
-### 出力結果 (今日が2021年6月10日の場合):
-```C++
-指定した日付は現在です
-```
+## ディープダイブ：
+もっと深く見てみましょう。C++の初期のバージョンでは、日付の比較は直感的ではありませんでしたが、`<ctime>`ライブラリの導入とともに、これが大幅に改善されました。 
 
-## 深堀り:
+代替案としては、`<chrono>`ライブラリを考えます。これはC++11以降で使用できます。 `std::chrono::system_clock::time_point`を使用して日付を比較することができます。
 
-### 歴史的背景:
-早い時期に、コンピューターでは日付を数値として処理していました。例えば、1970年1月1日からの経過秒数を表す「UNIX時間」がそれに当たります。しかし、この方法では日付の表現が煩雑であり、また世界中で使われるさまざまなカレンダーに対応することができませんでした。そこで、ISO 8601と呼ばれる日付の表記方法が開発され、現在では主流となっています。
+実装の詳細については、`mktime`関数は引数として与えられた`tm`構造体を正規化し、それを`time_t`型の時間に変換します。これは、日付や時間の単位が適切な範囲内に収まるように調整します（例えば、`tm_hour`が24以上の場合など）。
 
-### 他の方法:
-日付の比較にはもう一つ方法があります。それは、日付を「文字列」として扱う方法です。例えば、YYYY/MM/DDのように日付を表した文字列を比較することで、日付の大小を判断することができます。しかしこの方法では、日付を数値として扱うよりも処理が遅くなることが多いため、一般的ではありません。
-
-### 実装の詳細:
-C++では、日付を `tm` 構造体で表します。この構造体にはtm_year、tm_mon、tm_mdayなどのメンバ変数があり、それぞれ年、月、日を表します。また、時間を扱うための `tm_hour` や `tm_min`、 `tm_sec` もあります。
-`mktime()` 関数を使うことで、 `tm` 構造体を `time_t` 構造体に変換し、 `time()` 関数で現在の日付を取得することができます。
-
-## 関連情報:
-- [C++ 日付/時刻ライブラリ](https://en.cppreference.com/w/cpp/chrono)
-- [日付の表記方法 (ISO 8601)](https://ja.wikipedia.org/wiki/ISO_8601)
+## 参考リンク：
+- C++ `<ctime>`プライマリでの日付と時間の操作についてはこちら： [http://www.cplusplus.com/reference/ctime/](http://www.cplusplus.com/reference/ctime/)
+- C++ `<chrono>` ライブラリの詳細はこちら: [http://www.cplusplus.com/reference/chrono/](http://www.cplusplus.com/reference/chrono/)
+- 日付比較のさまざまな方法については、[https://stackoverflow.com/questions/55550/comparing-dates-in-c](https://stackoverflow.com/questions/55550/comparing-dates-in-c) を参照してください。

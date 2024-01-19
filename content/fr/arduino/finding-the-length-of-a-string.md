@@ -1,6 +1,6 @@
 ---
 title:                "Trouver la longueur d'une chaîne"
-html_title:           "Arduino: Trouver la longueur d'une chaîne"
+html_title:           "Go: Trouver la longueur d'une chaîne"
 simple_title:         "Trouver la longueur d'une chaîne"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,33 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Trouver la longueur d'une chaîne de caractères est une tâche essentielle pour les programmeurs. Cela leur permet de vérifier et de manipuler facilement les textes dans leurs programmes. Cette opération est également utile pour les entrées utilisateur et les fonctions de traitement des chaînes de caractères.
+## Qu'est-ce que c'est & Pourquoi ?
 
-## Comment faire:
-```
-Arduino
-char string[] = "Bonjour";
-int length = strlen(string);
-Serial.println(length);  // Output: 7
-```
+Trouver la longueur d'une chaîne signifie compter le nombre de caractères dans une chaîne spécifique. C'est un procédé très courant en programmation, car cela aide à manipuler les chaînes de manière efficace et précise.
 
-Il est important de noter que la longueur d'une chaîne de caractères est comptée à partir de 0, ce qui signifie que la longueur de la chaîne "Bonjour" sera de 6 et non pas 7, car le premier caractère est compté comme 0.
+## Comment faire :
 
-```
-Arduino
-int length = sizeof(string);  // Output: 8
+Voici comment trouver la longueur d'une chaîne en Arduino. Supposons que nous avons une chaîne appelée `phrase`, comme indiqué ci-dessous :
+
+```Arduino
+String phrase = "Arduino est génial";
 ```
 
-La méthode ```sizeof()``` renvoie la taille en bytes d'une variable, donc la longueur de la chaîne "Bonjour" sera de 8, car elle inclut également l'espace pour le caractère de fin de chaîne.
+Vous pouvez obtenir la longueur de `phrase` grâce à la méthode `length()`. Voici comment :
 
-## Plongée en profondeur:
-Trouver la longueur d'une chaîne de caractères n'était pas une opération aussi simple dans les premiers langages de programmation. Les programmeurs devaient utiliser des boucles pour compter le nombre de caractères dans une chaîne. Cependant, avec l'introduction de la bibliothèque de fonctions standard, la fonction ```strlen()``` a été créée pour simplifier cette tâche.
+```Arduino
+int longueur = phrase.length();
+```
 
-Il existe également d'autres méthodes pour trouver la longueur d'une chaîne de caractères, telles que la méthode ```length()```, qui renvoie le nombre de caractères dans une chaîne et exclut le caractère de fin de chaîne, et la méthode ```size()```, qui renvoie la taille totale de la chaîne en bytes.
+Imprimer la longueur sur le moniteur série en utilisant `Serial.println(longueur);` donnera :
 
-Il est important de noter que les chaînes de caractères sont des tableaux de caractères en mémoire, et la première adresse de la chaîne est utilisée pour stocker le nombre de caractères dans la chaîne.
+```Arduino
+Serial.println(longueur);
+```
+La sortie serait :
+```Arduino
+18
+```
+En comptant les espaces, on obtient bien 18 caractères.
 
-## Voir aussi:
-- [La fonction strlen() dans la bibliothèque de fonctions standard C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Comparaison de différentes méthodes pour trouver la longueur d'une chaîne en C++](https://www.geeksforgeeks.org/finding-length-of-a-string-in-cpp/)
+## Plongée en Profondeur 
+
+Historiquement, déterminer la longueur d'une chaîne est une technique qui a toujours été essentielle en programmation depuis les débuts des langages texte.
+
+Il existe également des approches alternatives comme l'utilisation de boucles pour compter manuellement le nombre de caractères. Cependant, l'utilisation de la méthode `length()` est généralement plus pratique et plus efficace.
+
+Concernant les détails d'implémentation, en Arduino, la méthode `length()` fait implicitement une importante part du travail en arrière-plan. Elle parcourt l'ensemble de la chaîne, compte chaque caractère jusqu'à ce qu'elle atteint la fin, et renvoie ce compte.
+
+## Voir Aussi 
+
+Pour plus d'informations sur la manipulation des chaînes en Arduino, consultez les ressources suivantes :
+
+- La référence Arduino officielle sur la classe `String` : [https://www.arduino.cc/reference/en/language/variables/data-types/string-object/](https://www.arduino.cc/reference/en/language/variables/data-types/string-object/)
+- Un tutoriel utile sur les chaînes en Arduino : [https://learn.adafruit.com/arduino-tips-tricks-and-techniques/string-theory](https://learn.adafruit.com/arduino-tips-tricks-and-techniques/string-theory)
+- Une discussion approfondie sur `length()` et d'autres méthodes de chaîne : [https://www.codecademy.com/learn/focus-arduino/modules/learn-arduino-string/cheatsheet](https://www.codecademy.com/learn/focus-arduino/modules/learn-arduino-string/cheatsheet)

@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट की खोज और प्रतिस्थापन"
-html_title:           "C: टेक्स्ट की खोज और प्रतिस्थापन"
-simple_title:         "टेक्स्ट की खोज और प्रतिस्थापन"
+title:                "पाठ की खोज और प्रतिस्थापन"
+html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
+simple_title:         "पाठ की खोज और प्रतिस्थापन"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,35 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-कोड कर्मियों के लिए, टेक्स्ट खोज और प्रतिस्थापन क्या है और वे इसे क्यों करते हैं।
+
+टेक्स्ट की खोज और बदलाव से हम किसी भी स्ट्रिंग में विशेष एलिमेंट्स का पता लगाने और उन्हें बदलने का काम करते हैं। प्रोग्रामर्स इसे करते हैं ताकि वे डाटा को उपयुक्त तरीके से प्रसंस्करण और मानिपुलेट कर सकें। 
 
 ## कैसे करें:
+
+C में, `strstr` और `sprintf` इस्तेमाल होते हैं। हम पहले खोजते हैं, फिर बदलते हैं। 
+
 ```C
-#include <stdio.h>
-#include <string.h>
+#include<stdio.h>
+#include<string.h>
 
-int main() {
-  char str[50] = "Hello World!";
-  
-  // टेक्स्ट का खोज और प्रतिस्थापन
-  printf("Before replacement: %s\n", str);
-  strcpy(str, "Goodbye World!");
-  printf("After replacement: %s\n", str);
+void searchAndReplace(char* source, char* search, char* replace){
+    char buffer[1024] = { 0 };
+    char *insertPoint = &buffer[0];
+    char *tmp = source;
+    char *foundHere;
+    int searchLen = strlen(search);
+    int replaceLen = strlen(replace);
 
-  return 0;
+    while( (foundHere = strstr(tmp, search)) ){
+        memcpy(insertPoint, tmp, foundHere - tmp);
+        insertPoint += foundHere - tmp;
+        memcpy(insertPoint, replace, replaceLen);
+        insertPoint += replaceLen;
+        tmp = foundHere + searchLen;
+    }
+
+    strcpy(tmp, insertPoint);
+    strcpy(source, buffer);
+}
+
+int main(){
+    char testStr[100] = "Hello, world! I love the world!";
+    printf("Before: %s\n", testStr);
+    searchAndReplace(testStr, "world", "Earth");
+    printf("After: %s\n", testStr);
+    return 0;
 }
 ```
-उपलब्ध आउटपुट:
-```
-Before replacement: Hello World!
-After replacement: Goodbye World!
-```
 
-## गहराई समीक्षा:
-1. इतिहास कंटेक्स्ट: टेक्स्ट खोज और प्रतिस्थापन का बदलाव सुविधाजनक ्तरीके को मिलाकर करते हुए कर्मियों को कोडिंग काम को निश्चित रूप से हो सकते हैं।
-2. विकल्प: अन्य भाषाओं में, कुछ अन्य काम में एक अलग ढंग से टेक्स्ट की खोज और प्रतिस्थापन के लिए कोड उपलब्ध हो सकते हैं।
-3. अंतराल: टेक्स्ट की खोज और प्रतिस्थापन को समझाने के लिए, आपको कुछ प्रकार के स्ट्रिंग फ़ंक्शन्स के साथ संबंधित जानकारी होनी चाहिए।
+सैंपल आउटपुट:
 
-## इस तरह:
-- [विकिपीडिया - टेक्स्ट खोज और प्रतिस्थापन](https://en.wikipedia.org/wiki/find_and_replace)
-- [C लैंग्वेज लर्निंग ट्यूटोरियल](https://www.programiz.com/c-programming/c-string-functions)
+    Before: Hello, world! I love the world!
+    After: Hello, Earth! I love the Earth!
+
+## गहरी बातचीत
+
+टेक्स्ट सर्च और रिप्लेस की कामना प्रोग्रामिंग की शुरुआत से रही है। `strstr` और `sprintf` C स्टैंडर्ड लाइब्रेरी का हिस्सा हैं। इन समस्याओं के लिए अन्य विकल्प भी हैं। जैसे की `gnu` लाइब्रेस द्वारा प्रदान किया गया `strcasestr` और `strfry`। इसे लागू करने वाला कोड `buffer` का उपयोग करके काम करता है, जिसे हम 'insertPoint' के माध्यम से index करते हैं ताकि हमें जोड़ना हो, वहां जोड़ सकें।
+
+## यह भी देखें
+
+1. [`strstr` डॉक्युमेंटेशन - Cplusplus.com](http://www.cplusplus.com/reference/cstring/strstr/)
+2. [`sprintf` डॉक्युमेंटेशन - Cplusplus.com](http://www.cplusplus.com/reference/cstdio/sprintf/)
+3. [GNU लाइब्रेस डॉक्युमेंटेशन](https://www.gnu.org/software/libc/manual/)

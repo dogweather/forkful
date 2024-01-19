@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer http Anfrage"
-html_title:           "PowerShell: Senden einer http Anfrage"
-simple_title:         "Senden einer http Anfrage"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -11,33 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Wenn Programmierer eine HTTP-Anfrage senden, handelt es sich um eine Anfrage an einen Webserver, um Daten zu erhalten oder zu senden. Es ist ein grundlegender Teil der Web-Interaktion und ermöglicht es unseren Anwendungen, auf Daten von verschiedenen Quellen zuzugreifen und mit ihnen zu kommunizieren. Dies ist entscheidend bei der Entwicklung von modernen und dynamischen Anwendungen, die ständig mit dem Internet verbunden sind.
 
-## Wie geht das?
-Um eine HTTP-Anfrage in PowerShell zu senden, können wir das `Invoke-WebRequest`-Cmdlet verwenden. Hier ist ein Beispiel:
+Ein HTTP-Anfrage senden bedeutet, eine Datenanforderung an einen Webserver zu senden. Programmierer tun dies, um Informationen von Servern abzurufen, bestimmte Aktionen auf dem Server auszuführen oder Server zu überwachen.
 
-```PowerShell
-$response = Invoke-WebRequest -Uri "https://www.example.com/api" -Method Get
-$response.Content
-```
+## So geht's:
 
-In diesem Beispiel verwenden wir das Cmdlet, um eine GET-Anfrage an die angegebene URL zu senden. Das Ergebnis wird in der Variablen `$response` gespeichert und wir können auf den Inhalt der Antwort über die `Content`-Eigenschaft zugreifen.
-
-Wir können auch Header, Parameter und andere Details zur Anfrage hinzufügen, um spezifischere Anfragen zu senden. Hier ist ein Beispiel, bei dem wir die HTTP-Basisauthentifizierung nutzen:
+Um eine HTTP-Anfrage in PowerShell zu senden, verwendet man Invoke-WebRequest oder Invoke-RestMethod. Die einfachste Anfrage wäre ein GET-Anforderung:
 
 ```PowerShell
-$response = Invoke-WebRequest -Uri "https://www.example.com/api" -Method Get -Headers @{ Authorization = "Basic dXNlcm5hbWU6cGFzc3dvcmQ=" }
+$antwort = Invoke-WebRequest -Uri 'http://example.com'
 ```
+Ausgabe wäre:
 
-In diesem Beispiel geben wir den Benutzernamen und das Passwort in der Kodierung für die Basisauthentifizierung an.
+```PowerShell
+StatusCode        : 200
+StatusDescription : OK
+Content           : {...}
+RawContent        : HTTP/1.1 200 OK
+                    Content-Length: 606
+Headers           : {[Content-Length, 606], [Content-Type, text/html; charset=UTF-8], ...}
+Images            : {}
+InputFields       : {}
+Links             : {...}
+...
+```
+## Tieftauchen
 
-## Tiefergehende Informationen
-Das `Invoke-WebRequest`-Cmdlet wurde erst im Jahr 2013 eingeführt und ersetzt das ältere `Invoke-WebRequest`-Cmdlet. Es ermöglicht eine einfachere Handhabung von Webanfragen und bietet eine Vielzahl von Optionen, um die Anfragen anzupassen.
+Die Verwendung von HTTP-Anfragen in Skriptsprachen stammt aus der Anfangszeit des Internets, als Daten hauptsächlich über HTML-Formulare ausgetauscht wurden. Ein Invoke-Befehl in PowerShell ist eine moderne Möglichkeit, HTTP-Anfragen zu senden.
 
-Es gibt auch Alternativen, um HTTP-Anfragen in PowerShell zu senden, wie zum Beispiel das .NET-Framework oder externe Bibliotheken wie `RestSharp`. Diese bieten möglicherweise mehr Funktionen oder bessere Leistung, aber `Invoke-WebRequest` ist eine zuverlässige und integrierte Option.
+Alternativen zu Invoke-WebRequest oder Invoke-RestMethod in PowerShell sind .NET Klassen wie System.Net.WebRequest oder System.Net.Http.HttpClient.
 
-In Bezug auf die Implementierung sendet das Cmdlet tatsächlich eine `HttpRequestMessage` über den .NET `HttpClient`, weshalb es auch die gleichen Optionen bietet, wie z.B. die Verwendung von Proxys oder Zertifikaten.
+Beachten Sie, dass wenn Sie mit API-Endpunkten arbeiten, der Server manchmal Header oder Cookies benötigt. Hier ist ein Beispiel, wie man einen benutzerdefinierten Header sendet:
 
+```PowerShell
+$headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+$headers.Add("Authorization", "Bearer dein_token")
+
+$antwort = Invoke-RestMethod -Uri 'http://example.com' -Headers $headers
+```
 ## Siehe auch
-- [Invoke-WebRequest Dokumentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-- [.NET HttpClient Klasse](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+
+- Mehr zu Invoke-WebRequest: https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1
+- Mehr zu Invoke-RestMethod: https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1
+- Mehr zu .NET HttpClient: https://docs.microsoft.com/de-de/dotnet/api/system.net.http.httpclient?view=net-5.0

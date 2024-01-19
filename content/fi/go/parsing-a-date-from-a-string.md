@@ -1,7 +1,7 @@
 ---
-title:                "Päiväyksen purkaminen merkkijonosta"
-html_title:           "Go: Päiväyksen purkaminen merkkijonosta"
-simple_title:         "Päiväyksen purkaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,13 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+# Päivämäärän jäsennys merkkijonosta Golla
 
-Päivämäärän parsiminen merkkijonosta tarkoittaa päivämäärän muuttamista ymmärrettävämpään muotoon, kuten numeroksi tai päivämääräksi. Ohjelmoijat tekevät tätä usein, kun he haluavat käsitellä päivämääriä tietokoneella tai verrata niitä toisiinsa.
+## Mikä & Miksi?
+Päivämäärän jäsentyminen merkkijonosta on prosessi, jossa merkkijono muutetaan päivämääräksi tai aikaleimaksi. Ohjelmoijat tekevät tämän, jotta he voivat suorittaa päivämäärään ja aikaan perustuvia toimintoja, kuten ajastettuja tapahtumia.
 
-## Kuinka:
-
-Go-kielellä päivämäärän parsiminen merkkijonosta on helppoa ja kätevää. Se voidaan tehdä käyttämällä Go:n standardikirjaston aikapakkauksen Date()-funktiota. Alla on koodiesimerkki, jossa käytämme tätä funktiota ja tulostamme päivämäärän halutussa muodossa.
+## Näin se tehdään:
+Go-ohjelmointikielessä voit jäsentää päivämäärän `time.Parse` -toiminnolla. Tässä on esimerkki:
 
 ```Go
 package main
@@ -27,32 +27,27 @@ import (
 )
 
 func main() {
-	dateStr := "2020-11-05"
-	date, err := time.Parse("2006-01-02", dateStr)
-	
-	if err != nil{
-		fmt.Println("Virheellinen päivämäärä")
-	}else{
-		fmt.Println("Päivämäärä: ", date.Format("2.1.2006"))
-	}
+	fmt.Println("Tänään " + time.Now().Format("02-01-2006"))
+	t, _ := time.Parse("02-01-2006", "20-12-2022")
+	fmt.Println("Joulun ajankohta: ", t)
 }
 ```
 
-Tuloste:
+Kun suoritat yllä olevan koodin, tuotos näyttää seuraavasti:
 
+```Go
+Tänään 13-03-2022
+Joulun ajankohta:  2022-12-20 00:00:00 +0000 UTC
 ```
-Päivämäärä:  5.11.2020
-```
 
-## Syvempi sukellus:
+## Syvällinen tarkastelu
+Päivämäärän jäsennys merkkijonosta on ollut olennainen osa ohjelmointia jo vuosikymmeniä. Go tarjoaa joustavan `time`-paketin, jonka avulla päivämäärän jäsennys on helppoa ja suoraviivaista.
 
-Päivämäärän parsiminen merkkijonosta on ollut haasteellinen tehtävä ohjelmoinnin alkuaikoina. Ennen aikapakkausta, ohjelmoijien täytyi kirjoittaa oma koodi päivämäärän käsittelyyn, mikä aiheutti paljon virheitä ja oli aikaa vievää.
+Vaihtoehdoiksi `time.Parse`:lle löytyy lukuisia kirjastoja, kuten `go-date`, joka tarjoaa lisäominaisuuksia päivämäärien käsittelyyn. Kuitenkin, useimmissa tapauksissa, käyttökelpoisin vaihtoehtojen joukossa on sisäänrakennettu `time`-paketti.
 
-On olemassa myös muita vaihtoehtoja päivämäärän parsimiseen, kuten käyttää aikapakkauksen ParseAny()-funktiota tai jopa erillistä kirjastoa.
+Go:n `time.Parse` -funktio käyttää erityisiä layout-merkkijonoja, jotka määrittelevät päivämäärän ja ajan formaatin. Tämä layout on peräisin Go:n ajan nopeudesta (joka on tarkalleen nähtävillä `time`-paketin dokumentaatiossa) ja sitä käytetään mallina syötteen jäsentämisessä.
 
-Go:n Date()-funktio käyttää ISO 8601 -standardeja päivämäärien parsimiseen, mikä on aikoinaan luotu helpottamaan päivämäärien käsittelyä eri ohjelmointikielillä. Tämä standardi määrittelee päivään liittyvät numeromuotoiset merkkijonot, kuten "2020-11-05", joka voidaan helposti parsia ja muuttaa haluttuun muotoon.
-
-## Katso myös:
-
-- [Go:n aikapakkaus dokumentaatio](https://golang.org/pkg/time/)
-- [ISO 8601 standardin selitys](https://en.wikipedia.org/wiki/ISO_8601)
+## Katso myös
+- Go:n virallinen time paketin dokumentaatio: http://golang.org/pkg/time/
+- Erinomainen artikkeli, joka käsittelee Go:n date-tietueen jäsentämistä: https://gobyexample.com/time-formatting-parsing
+- Open-source Go päivämääräkirjasto lisäominaisuuksia varten: https://github.com/jinzhu/now

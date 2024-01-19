@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "Lua: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -11,26 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa ajan ja päivämäärän tiedon erottamista merkkijonosta ja muuntamista käyttökelpoiseen muotoon. Tätä tehdään usein, jotta ohjelmointikielet ja tietokannat voivat käsitellä päivämääriä ja aikaa helposti ja tarkasti.
 
-Ohjelmoijat suorittavat tämän tehtävän yksinkertaisemman tietojen käsittelyn ja tarkempien laskelmien mahdollistamiseksi.
+Päivämäärän parsiminen merkkijonosta on prosessi, jossa puramme ja tulkitaan päivämäärä kirjallisesta muodosta sen numeeriseen esitysmuotoon. Ohjelmoijat tekevät tämän tiedon käsittelyn helpottamiseksi ja päivämäärätietojen käytön mahdollistamiseksi ohjelmissaan.
 
-## Kuinka tehdä:
+## Näin se tehdään:
+
+```Lua
+-- Luo ensin päivämäärän desimaalimuotoinen esitys merkkijonosta
+pvm = os.date("*t", os.time({year=2021, month=11, day=23}))
+
+-- tulostetaan päivämäärä
+print(os.date("%x", os.time(pvm)))
 ```
-Lua-päivä KirjauduSisään()
-  Merkkijono = "2020-10-15"
-  Päivämäärä = date.parse(Merkkijono,"%Y-%m-%d")
-  Palauta Päivämäärä
-End
+
+Tämän koodin ajamisen tuloksena saadaan seuraava:
+
+```Lua
+23/11/2021
 ```
-Esimerkiksi yllä olevassa koodissa päivämäärä "2020-10-15" jäsentyy muotoon October 15, 2020.
 
-## Syvemmälle:
-Päivämäärän jäsentäminen merkkijonosta ei ole uusi käsite. Ennen tietokoneiden ja ohjelmointikielten kehittämistä, ilman tätä taitoa ihmiset joutuivat laskemaan päivämäärät ja ajat manuaalisesti. On myös muita tapoja jäsentää päivämääriä, kuten käyttämällä erilaisia ​​päivämäärän esitysmuotoja (esimerkiksi päivämäärän kirjoittaminen kirjaimin).
+## Syvempi perehtyminen:
 
-Lua tarjoaa myös muita tapoja jäsentää päivämäärä merkkijonosta, kuten käyttämällä nk. "luettelon muotoilusääntöjä" (list formatting rules). Tämä mahdollistaa päivämäärä- ja ajatietojen eriyttämisen ja muuntamisen haluttuihin muotoihin.
+Historiallisesti päivämäärän parsiminen merkkijonosta on ollut välttämätöntä aikojen tiedonvälityksessä ja -käsittelyssä lukuisissa sovelluksissa, esimerkiksi logien analysointi ohjelmistojen virheenkorjauksessa. 
+
+Vaikka Lua tarjoaa yllä esitetyn funktion, on monia muitakin tapoja suorittaa tämä toiminto. Esimerkiksi käyttämällä luetteloita, regexejä tai muita kirjastoja, kuten DateLib.
+
+Päivämäärän parsiminen on luonteeltaan yksinkertainen operaatio, mutta sillä on omat sudenkuoppinsa. Lukuisia päivämäärämuotoja ja -standardeja (kuten ISO 8601) huomioonottaen, parsiminen voi olla haaste jos ei käytä oikeita työkaluja tai funktioita.
 
 ## Katso myös:
-- [Lua Reference Manual](https://www.lua.org/manual/5.4/manual.html)
-- [Lua-tutoriaali](http://lua-users.org/wiki/TutorialDirectory)
-- [Päivämäärän jäsentäminen merkkijonosta Pythonilla](https://realpython.com/python-datetime/)
+
+Lisätietoa ohjelmistokehityksestä Lua: 
+- [Lua manual](https://www.lua.org/manual/5.4/)
+- [Lua.org](https://www.lua.org/)
+- [Date and Time in Lua](http://lua-users.org/wiki/DateAndTime)

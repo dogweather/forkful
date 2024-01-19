@@ -1,6 +1,6 @@
 ---
 title:                "下载网页"
-html_title:           "Ruby: 下载网页"
+html_title:           "Arduino: 下载网页"
 simple_title:         "下载网页"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,44 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是下载网页？为什么程序员需要它？
+## 什么和为什么？
+下载网页就是将互联网上的某个网页内容获取并保存到本地的过程。编程人员这么做主要是为了分析网页内容，或者将网页内容用于离线阅读。
 
-下载网页是指从互联网下载并保存某个网页的过程。程序员通常会使用下载网页来获取特定的数据，例如网页上的文本或图像，以便在他们的程序中使用。
+## 如何操作：
+在Ruby中，我们可以用 `open-uri` 和 `nokogiri` 这两个库来下载并分析网页。以下是一个简单的例子：
 
-## 如何使用
+```Ruby
+require 'open-uri'
+require 'nokogiri'
 
-### 使用Ruby下载网页的示例
-
+page = Nokogiri::HTML(open('https://www.example.com'))
+puts page.title
 ```
-require 'net/http'
-url = URI.parse("https://www.youtube.com/")
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = (url.scheme == "https")
-response = http.get(url.path)
-puts response.body
-```
-
-### 示例输出
-
-```
-<!DOCTYPE html><html><head> ... </head><body> ... </body></html>
-```
+如果你运行这段代码，你将看到输出为 "Example Domain"。这就是你从 https://www.example.com 这个网页获取的标题。
 
 ## 深入探讨
+在早期，在对网页内容进行下载和解析的过程中，我们常常需要用到很复杂的方法。而有了 `open-uri` 和 `nokogiri` 等库，这个过程变得相当简单。对于其他语言，例如Python，你可能需要使用 `requests` 和 `beautifulsoup4` 等库。
 
-### 历史背景
+在实现下载网页的功能时，一种可能的做法是直接将网页内容下载到内存中，然后再进行分析。然而这种做法会消耗大量的内存资源，尤其是当前下载的是大型网页的时候。因此，一种更好的做法是使用流的方式来下载和解析网页。
 
-下载网页的概念可以追溯到早期的互联网时代，当时人们开始使用程序来从网络上获取信息。
-
-### 其他方法
-
-下载网页并不是唯一的方法来获取网页上的信息。程序员也可以使用API接口或者爬虫来获取数据。
-
-### 实现细节
-
-在Ruby中，我们使用Net::HTTP类来创建HTTP连接并下载网页。首先，我们需要使用URI解析网页的URL，然后创建一个HTTP对象并指定要下载的URL。如果网页的协议是HTTPS，我们还需要设置`use_ssl`为`true`。最后，使用`get`方法来发送请求并获取网页的响应。再次感谢Ruby语言简洁易用的特性，我们可以轻松地实现这一过程。
-
-## 相关来源
-
-- [Net::HTTP RubyDoc](https://ruby-doc.org/stdlib-2.5.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [What is web scraping?](https://en.wikipedia.org/wiki/Web_scraping)
+## 另请参见
+- Nokogiri 教程：http://www.nokogiri.org/tutorials/
+- Ruby open-uri 官方文档：https://ruby-doc.org/stdlib-2.6.1/libdoc/open-uri/rdoc/OpenURI.html

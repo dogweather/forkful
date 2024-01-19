@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
-html_title:           "Kotlin: Wyszukiwanie i zamiana tekstu"
-simple_title:         "Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest wyszukiwanie i zamienianie tekstu oraz dlaczego programiści to robią?
-
-Wyszukiwanie i zamienianie tekstu to proces polegający na znajdowaniu określonego wzorca w tekście i zastępowaniu go innym tekstem. Jest to bardzo przydatna funkcja w programowaniu, ponieważ pozwala na automatyczne i szybkie modyfikowanie dużej ilości tekstu. Programiści korzystają z tego narzędzia, aby zmieniać nazwy zmiennych, korektować błędy i ułatwiać sobie pracę.
+## Co i Dlaczego?
+Wyszukiwanie i zamiana tekstu to proces lokalizacji i modyfikacji określonych ciągów znaków w tekście. Programiści robią to, aby manipulować danymi lub dostosować wydajność programu.
 
 ## Jak to zrobić:
+W Kotlinie możemy używać metody `replace()` do wyszukiwania i zastępowania tekstu. Spójrz na niżej podany kod:
 
-Kotlin oferuje kilka funkcji, które umożliwiają wykonywanie wyszukiwania i zamiany tekstu w prosty sposób. Najczęściej wykorzystywanymi funkcjami są ```replace``` i ```replaceFirst```. Przykładowy kod wyglądałby następująco:
+```Kotlin
+val tekst = "Kocham Kotlin, Kotlin jest wspaniały!"
+val nowyTekst = tekst.replace("Kotlin", "programowanie")
 
+println(nowyTekst)
 ```
-val text = "Witaj, świecie!"
-val newText = text.replace("świecie", "świecie Kotlin")
-println(newText)
+Na wyjściu otrzymamy:
+
+```Kotlin
+Kocham programowanie, programowanie jest wspaniały!
 ```
-W wyniku powyższego kodu otrzymalibyśmy następującą wiadomość: "Witaj, świecie Kotlin!"
+`replace()` wyszukuje wszystkie wystąpienia "Kotlin" i zastępuje je "programowanie".
 
-## Głębsze zagadnienia:
+## Deep Dive:
+Historia wyszukiwania i zastępowania tekstu to historia komputerów. Od czasów, gdy komputery miały zaledwie kilka bajtów pamięci, programiści znaleźli sposób na manipulowanie tekstami. 
 
-Wyszukiwanie i zamienianie tekstu jest popularną funkcją w wielu językach programowania, w tym również w Kotlinie. Pozwala na szybkie i efektywne przetwarzanie dużej ilości tekstu, co jest szczególnie przydatne w przypadku tworzenia aplikacji webowych lub analizowania danych. Alternatywami do wbudowanych funkcji w Kotlinie są biblioteki zewnętrzne, takie jak Apache Commons Text lub Regex, które oferują jeszcze większą elastyczność w wyszukiwaniu i zamianie tekstu.
+Co ciekawe, Kotlin oferuje alternatywę do `replace()`, metodę `replaceFirst()`, która zastępuje tylko pierwsze wystąpienie ciągu. 
 
-## Zobacz także:
+Szczegóły implementacji `replace()` zależą od implementacji konkretnej JVM. Kotlin jest na tyle elastyczny, że pozwala na korzystanie z natywnych metod Java, co daje programistom dużą kontrolę nad detalami implementacji.
 
-Jeśli chcesz dowiedzieć się więcej o wyszukiwaniu i zamianie tekstu w Kotlinie, możesz zajrzeć na poniższe źródła:
-
-- Dokumentacja Kotlina: https://kotlinlang.org/docs/reference/basic-types.html#strings
-- Wideo tutorial na temat wyszukiwania i zamiany tekstu w Kotlinie: https://www.youtube.com/watch?v=7EILQVxs_WQ
-- Poradnik programisty na forum: https://stackoverflow.com/questions/53062394/how-to-search-and-replace-in-kotlin-string
+## Zobacz też:
+1. Dokumentacja Kotlin: [replace](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+2. Dokumentacja Kotlin: [replaceFirst](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-first.html)
+3. Głębokie zrozumienie JVM i jej wpływ na funkcje Kotlin: [JVM Deep Dive](https://www.baeldung.com/jvm-architecture)

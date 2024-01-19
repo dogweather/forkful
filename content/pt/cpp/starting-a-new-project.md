@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "C++: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e Porquê?
+## O Que & Por Quê?
 
-Começar um novo projeto é iniciar um novo projeto de programação, onde os programadores começam a escrever o código para criar um novo software ou aplicativo. Os programadores fazem isso para criar novos produtos ou atualizar os existentes para melhorar sua funcionalidade ou corrigir problemas.
+Iniciar um novo projeto é criar uma base para desenvolver uma aplicação em C++. Fazemos isso para estruturar nosso código de maneira apropriada, tornando ele mais fácil de manter e melhorar.
 
 ## Como fazer:
 
-Para começar um novo projeto em C++, siga estes passos:
+Aqui está um pequeno exemplo de como você pode iniciar um novo projeto C++:
+
 ```
 C++
+// Arquivo: main.cpp
 #include <iostream>
 
-using namespace std;
-
 int main() {
-	cout << "Olá Mundo!" << endl;
-	return 0;
+    std::cout << "Olá, mundo!" << std::endl;
+    return 0;
 }
 ```
 
-Output:
+Execute o código e você verá a saída:
+
 ```
-Olá Mundo!
+Olá, mundo!
 ```
 
 ## Mergulho Profundo:
 
-Começar um novo projeto em C++ é uma prática comum entre programadores, pois permite que eles criem novos softwares e atualizem os existentes de maneira eficiente. C++ é uma linguagem de programação de alto nível e de código aberto, criada por Bjarne Stroustrup, e é amplamente utilizada para desenvolver aplicativos de alto desempenho e sistemas operacionais. Outras alternativas para começar um novo projeto incluem C, Java e Python.
+1. **Contexto Histórico:** C++ é uma linguagem de programação criada em 1985 por Bjarne Stroustrup. A linguagem foi desenvolvida como uma extensão do C, com a adição de classes e objetos, tornando mais fácil criar projetos significativos.
+
+2. **Alternativas:** Existem várias outras maneiras de iniciar um projeto, dependendo das suas necessidades. Por exemplo, você pode usar estruturas de dados diferentes, outras bibliotecas ou até mesmo outras linguagens de programação.
+
+3. **Detalhes de Implementação:** Quando você inicia um novo projeto, você frequentemente começa definindo o ponto de entrada do seu programa (como o método `main()` em C++), em seguida, adiciona mais código à medida que desenvolve sua aplicação. A estrutura exata do seu projeto pode variar dependendo dos requisitos específicos de sua aplicação.
 
 ## Veja também:
 
-Para saber mais sobre como começar um novo projeto em C++ e as melhores práticas de programação, confira os seguintes links:
-- Link 1: https://www.cplusplus.com/
-- Link 2: https://docs.microsoft.com/pt-br/cpp/?view=vs-2019
-- Link 3: https://www.tutorialspoint.com/cplusplus/cpp_file_io.htm
+Para mais informações sobre C++ e como iniciar um novo projeto, visite os seguintes links:
+
+1. [C++ Language Tutorial](http://www.cplusplus.com/doc/tutorial/)
+2. [Getting Started with C++](https://isocpp.org/get-started)
+3. [C++ Reference](http://en.cppreference.com/w/)

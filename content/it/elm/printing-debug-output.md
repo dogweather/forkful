@@ -1,6 +1,6 @@
 ---
 title:                "Stampa dell'output di debug"
-html_title:           "Elm: Stampa dell'output di debug"
+html_title:           "Arduino: Stampa dell'output di debug"
 simple_title:         "Stampa dell'output di debug"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,26 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Stampare l'output di debug è una tecnica utilizzata dai programmatori per visualizzare informazioni aggiuntive durante l'esecuzione di un programma. Questo può aiutare a identificare ed eliminare eventuali errori o problemi.
+## Cos'è e perché?
+La stampa di output di debug in Elm, ovvero `Debug.log`, è un processo utilizzato per monitorare i dati e verificare l'intero comportamento del programma. Questo semplice strumento consente agli sviluppatori di ispezionare valori e tracciare problemi di esecuzione.
 
 ## Come fare:
-Ecco un esempio di come stampare output di debug in Elm utilizzando la funzione `Debug.log`:
-```
-import Debug exposing (log)
+Ecco un esempio di come potresti utilizzare `Debug.log` in Elm:
 
--- Definizione di una funzione che somma due numeri
+```Elm
+import Debug
+
 add : Int -> Int -> Int
 add x y =
-  Debug.log "Somma" (x + y)
-```
-Output:
-```
-Somma 7
+  let
+    _ = Debug.log "x" x 
+    _ = Debug.log "y" y
+  in
+  x + y
+
+main = 
+   Debug.log "The sum is" (add 5 10)
 ```
 
-## Approfondimento:
-La pratica di stampare l'output di debug è stata utilizzata fin dai primi tempi della programmazione, quando i programmatori dovevano dipendere da output su carta o su console per verificare il funzionamento del loro codice. Oggi, ci sono anche altre tecniche di debugging, come l'utilizzo di debugger e test, ma l'output di debug può ancora essere utile per identificare errori in modo rapido ed efficiente.
+L'output prodotto sarà simile a:
+
+```
+x: 5
+y: 10
+The sum is: 15
+```
+
+Qui, `Debug.log "x" x` e `Debug.log "y" y` stampano i valori di x e y, mentre `Debug.log "The sum is" (add 5 10)` stampa la somma di questi due numeri.
+
+## Approfondimento
+`Debug.log` è un potente strumento per il debug in Elm. Tradizionalmente nel registro degli eventi, gli sviluppatori inseriscono vari messaggi di debug che li aiutano a comprendere come il codice funziona in pratica. In Elm, `Debug.log` offre un mezzo semplice ed efficace per questo. Tuttavia, è importante notare che in un ambiente di produzione, Debug non è disponibile e si dovrebbero eliminare o commentare tutte le chiamate `Debug.log`.
+
+In quanto alle alternative, `Debug.todo` può essere utilizzato quando c'è bisogno di un promemoria su qualcosa che deve essere implementato in futuro. Oppure, è possibile utilizzare `Debug.toString` per convertire qualsiasi valore in una stringa che può essere stampata.
+
+Il funzionamento di `Debug.log` è piuttosto semplice: prende due argomenti, una stringa (il tag del log) e un valore di qualsiasi tipo, infine mostra il tag e il valore nell'output della console.
 
 ## Vedi anche:
-Per ulteriori informazioni sui metodi di debugging in Elm, puoi consultare la documentazione ufficiale su [Debugging](https://guide.elm-lang.org/debugging/).
+1. Documentazione ufficiale di Elm - Debug: https://package.elm-lang.org/packages/elm/core/latest/Debug
+2. Un articolo utile sul debug in Elm: https://www.elm-tutorial.org/en-v01/02-elm-arch/07-debugging.html
+3. Guide per Elm - Debugging: https://guide.elm-lang.org/effects/debugging.html

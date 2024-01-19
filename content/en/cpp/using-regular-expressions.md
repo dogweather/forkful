@@ -1,6 +1,6 @@
 ---
 title:                "Using regular expressions"
-html_title:           "C++ recipe: Using regular expressions"
+html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "C++"
 category:             "C++"
@@ -10,39 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Article: Using Regular Expressions in C++ 
+
 ## What & Why?
-Regular expressions are a tool used by programmers to search for patterns in text. They allow for efficient, flexible text processing and can be used for tasks such as finding and replacing words, extracting data, and validating input. Programmers use regular expressions to save time and write more concise code.
+
+Regular expressions (regex) are a quick way to match patterns in text. Programmers use regex to efficiently search, modify, or validate text against multiple conditions.
 
 ## How to:
-To start using regular expressions in your C++ code, include the `<regex>` header and use the `std::regex` class. Here is an example of matching a three digit number in a string:
+
+Here's how to use regex with C++:
+
 ```C++
-#include <iostream>
 #include <regex>
+#include <iostream>
 
 int main() {
-    std::string str = "Hello 123 world!";
-    std::regex reg("\\d{3}");
-    std::smatch match;
-    
-    if (std::regex_search(str, match, reg)) {
-        std::cout << match[0] << std::endl;
+    std::string myString = "I have 2 cats but I want 3 dogs.";
+    std::regex myRegex ("\\d+");
+
+    std::sregex_iterator it(myString.begin(), myString.end(), myRegex);
+    std::sregex_iterator end;
+
+    while (it != end) {
+        std::cout << it->str() << "\n";
+        ++it;
     }
-    
+
     return 0;
 }
 ```
-Output:
-```
-123
-```
-In this example, we use the `regex_search()` function to search for a match in the string. The `match` object stores the results of the search, and we can access the first match using `match[0]`. Regular expressions can also be used for more complex tasks such as replacing text and validating input. 
 
-## Deep Dive:
-Regular expressions have been around since the 1950s when they were first created by mathematician Stephen Kleene. They have since evolved into a standard tool used in many programming languages. Some alternatives to regular expressions include string manipulation functions and parsers, but regular expressions offer a more concise and versatile solution. 
+This code will output:
 
-Under the hood, regular expressions are converted into a state machine and used to match patterns in the text. The syntax for regular expressions can vary between languages, so it's important to refer to the specific documentation for your chosen language.
+```C++
+2
+3
+```
+
+The code uses the `\\d+` regular expression to find all occurrences of one or more digits in the input string.
+
+## Deep Dive
+
+- **Historical context**: Regular expressions originated in the 1950s, grew in popularity in Unix-based systems, and today, they are found in virtually all programming languages.
+
+- **Alternatives**: For very complex text manipulation, a full-fledged parser might be more appropriate. Lighter tasks can be done with basic string functions.
+
+- **Implementation details**: In C++, regex functionality is provided by the `<regex>` library. Keep in mind regex can be slow. Use wisely to not impact performance.
 
 ## See Also:
-- [C++ Regular Expressions documentation](https://en.cppreference.com/w/cpp/regex)
-- [Regex tutorial for beginners](https://www.regular-expressions.info/tutorial.html)
-- [Regular Expressions cheat sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+
+- Learn more about regex in C++ at [cplusplus.com](http://www.cplusplus.com/reference/regex/)
+- Test and learn regex interactively [Regex101.com](https://regex101.com/)
+- Understand C++ performance implications at [cppreference.com](https://en.cppreference.com/w/cpp/regex)

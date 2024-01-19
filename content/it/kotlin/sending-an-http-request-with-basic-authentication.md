@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Kotlin: Inviare una richiesta http con autenticazione di base"
+html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & perché?
-In poche parole, l'invio di una richiesta HTTP con autenticazione di base implica l'inserimento delle credenziali di accesso (nome utente e password) nel codice per accedere a risorse protette su un server. I programmatori lo fanno per garantire la sicurezza delle loro applicazioni e dei dati sensibili che esse possono accedere.
+## Cosa e Perché? 
+Inviare una richiesta HTTP con autenticazione di base è un metodo che permette l'accesso ad un servizio web collezionando username e password del client. I programmatori lo fanno per garantire la sicurezza, prevenire accessi non autorizzati alle risorse web.
 
-## Come fare:
-Eccoti un esempio di come inviare una richiesta HTTP con autenticazione di base utilizzando Kotlin. Nota che è necessario utilizzare un'istruzione di posta in arrivo e specificare l'URL a cui è indirizzata la richiesta, prima di codificare le credenziali di accesso nella richiesta.
+## Come fare: 
+
+Utilizziamo la libreria Fuel di Kotlin per inviare una richiesta HTTP. 
 
 ```Kotlin
+import com.github.kittinunf.fuel.httpGet
+
 val username = "username"
 val password = "password"
 
-HttpResponse response = Unirest.get("https://www.example.com")
-.basicAuth(username, password)
-.asEmpty()
+val httpAsync = "$YOUR_URL"
+    .httpGet()
+    .authenticate(username, password)
+    .response() { request, response, result -> }
 ```
-
-L'output dovrebbe essere una risposta dello stato "200 OK", indicando che la richiesta è stata inviata con successo e l'accesso è stato autorizzato.
+Qui, `httpGet()` è il metodo che invia la richiesta HTTP. `authenticate(username, password)` consente l'autenticazione di base.
 
 ## Approfondimento:
-L'autenticazione di base è stato il metodo originale per autenticare le richieste HTTP, introdotto nel 1999. Oggi ci sono metodi più sicuri come l'autenticazione OAuth, ma la semplicità e la compatibilità con vecchi sistemi rendono ancora utile l'utilizzo di questo metodo.
 
-Ci sono diverse alternative all'autenticazione di base, come l'autenticazione basata su token o l'autenticazione a chiave pubblica. Tuttavia, l'utilizzo di questi metodi può essere più complesso e richiedere una configurazione aggiuntiva nel server.
+L'autenticazione di base HTTP è uno dei metodi più antichi utilizzato per fornire controllo di accesso ai servizi web. Tuttavia, poiché le credenziali non sono crittografate, non è l'opzione più sicura. Un'alternativa migliore potrebbe essere l'autenticazione 'Bearer', in cui un token di sicurezza viene inviato come parte dell'intestazione HTTP.
 
-Per implementare correttamente l'autenticazione di base su un server, è necessario utilizzare un sistema di hashing per crittografare la password e preventivamente criptarla prima di inviarla nella richiesta.
+Sull'autenticazione di base, le credenziali dell'utente sono inoltrate con ogni richiesta HTTP, aumentando il rischio di intercettazione non sicura. Quindi, dovrebbe essere utilizzato solo su connessioni sicure come HTTPS.
 
 ## Vedi anche:
-- [Autenticazione di base HTTP](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication)
-- [Introduzione alle richieste HTTP con Kotlin](https://kotlinlang.org/docs/reference/http-client.html)
-- [Sicurezza nelle applicazioni Kotlin](https://kotlinlang.org/docs/reference/coroners.html)
+
+- Leggi di più sull'[autenticazione di base HTTP](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication)
+- Per ulteriori dettagli sulla [libreria Fuel di Kotlin](https://fuel.gitbook.io/documentation/).
+Presta attenzione alla [sicurezza delle tue applicazioni web](https://www.owasp.org/index.php/Top_10-2017_Top_10).

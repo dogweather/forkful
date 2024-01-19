@@ -1,6 +1,6 @@
 ---
 title:                "提取子字符串"
-html_title:           "Elixir: 提取子字符串"
+html_title:           "Arduino: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,28 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是字符串提取？
+## 什么和为什么？
 
-字符串提取是指从一个字符串中提取出一部分内容。程序员通常会这样做，因为它可以帮助他们对文本进行处理和分析。
+在编程中，提取子字符串就是从一个更大的字符串中选取特定的字符序列。这常常用于处理字符串数据，这需要我们以更小单元进行操作或分析。
 
-## 怎么做？
+## 如何执行：
 
-在Elixir中，我们可以使用`String.slice/3`函数来提取字符串的子串。例如，我们有一个字符串`"Hello World"`，我们想要提取出`"Hello"`这个子串，我们可以像这样写代码：
+在Elixir中，我们可以使用`String.slice/3`函数来提取字符串。看下面的例子：
 
+```Elixir
+our_string = "程序编程在世界范围内是非常重要的！"
+String.slice(our_string, 0, 4)
 ```
-Elixir String.slice("Hello World", 0, 5)
+
+运行以上代码，会输出：
+
+```Elixir
+"程序编程"
 ```
 
-这会返回一个新的字符串`"Hello"`作为结果。这个函数接收三个参数：原始字符串、要提取的子串起始位置和子串的长度。这意味着我们可以从任意位置提取子串，并指定子串的长度。
+还可以用负数来提取字符串的尾部：
 
-## 深入讨论
+```Elixir
+String.slice(our_string, -6, 4)
+```
 
-字符串提取的历史可以追溯到早期的编程语言，如C和Java。它们也提供了相似的函数来提取子串。然而，Elixir中的`String.slice/3`函数更加灵活，因为它允许我们指定子串的长度，而不是只能指定子串的结束位置。此外，我们还可以使用Elixir的模式匹配功能来提取子串，这也是一种常用的方法。
+运行以上代码，你将得到：
 
-除了`String.slice/3`函数，我们还可以使用其他字符串函数来实现字符串提取功能。例如，`String.split/2`函数可以将字符串根据指定的分隔符拆分为子串，然后我们可以从拆分后的列表中选择我们想要的子串。此外，我们还可以使用正则表达式来提取特定模式的子串。
+```Elixir
+"是非常重"
+```
 
-## 参考资料
+## 深度了解
 
-- [Elixir官方文档：字符串模块](https://hexdocs.pm/elixir/String.html)
-- [字符串提取函数的历史背景（英文）](https://en.wikipedia.org/wiki/Substring#History)
-- [使用模式匹配来提取子串（英文）](https://blog.red-badger.com/blog/2017/02/06/elixir-pattern-matching-and-strings)
+从历史上看，提取子字符串一直是处理和操作字符串数据不可或缺的一部分。历史上的一些编程语言，如Python和JavaScript，都有内置函数来处理子字符串的提取。
+
+在Elixir中，除了`String.slice/3`函数，还有附加的`binary_part/3`函数，这是Erlang内核提供的内置函数，其可以用于任何二进制数据，包括字符串。
+
+在选择哪个函数来提取子字符串时，需要考虑你下一步将要做什么，因为`String.slice`的行为和`binary_part`在不同语境下的行为可能略有差异——`binary_part`只考虑字节数，而`String.slice`考虑代码点。
+
+## 另请参阅
+
+1. [`String.slice/3` Elixir官方文档](https://hexdocs.pm/elixir/String.html#slice/2)
+2. [`binary_part/3` Erlang官方文档](https://www.erlang.org/doc/man/binary.html#part-3)
+3. [Working with Strings in Elixir](https://open.appacademy.io/learn/full-stack-online/software-engineering-foundations/working-with-strings-in-elixir)

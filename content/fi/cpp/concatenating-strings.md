@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "C++: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "C++"
 category:             "C++"
@@ -10,71 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## Mitä ja Miksi?
 
-Miksi haluaisimme yhdistää merkkijonoja koodissamme? Merkkijonojen yhdistäminen on yksinkertaisesti tapa yhdistää kaksi tai useampi merkkijono yhdeksi. Tämä voi olla hyödyllistä esimerkiksi, kun haluamme luoda pidempiä lauseita tai tulostaa useita muuttujia yhdessä.
+Merkkijonojen yhdistäminen, eli konkatenointi, on prosessi jossa kaksi tai useampi merkkijonoja yhdistetään yhdeksi. Tämä on todella hyödyllistä, kun tarvitset yhdistellä useita tietolähteitä yhdeksi lauseeksi tai teksteihin.
 
-# Miten:
+## Kuinka Tehdään:
 
-## Esimerkki 1:
-
-```
+```C++
 #include <iostream>
-
-using namespace std;
+#include <string>
 
 int main() {
-    string name = "John";
-    string country = "Finland";
-
-    string sentence = "Hei, olen " + name + " ja olen kotoisin maasta " + country + ".";
-
-    cout << sentence;
-
+    std::string tervehdys = "Hei ";
+    std::string nimi = "Matti!";
+    std::string kokonainen_tervehdys = tervehdys + nimi;
+    std::cout << kokonainen_tervehdys << std::endl;
     return 0;
-}
-
+ }
 ```
+Tulostaa: ```Hei Matti!```
 
-Tulostuu:
+Käyttämällä `+` operaattoria, voimme yhdistää `tervehdys` ja `nimi` merkkijonot.
+
+## Sukellus Syvemmälle:
+
+Historiallisessa kontekstissa, C:ssa ei ollut sisäänrakennettua tukea merkkijonon konkatenoinnille. Tämä ongelma ratkaistiin C++:ssa sisällyttämällä merkkijonojen käsittelyyn tarkoitettu luokka ja `+` -operaattori.
+
+On olemassa vaihtoehtoisia tapoja yhdistää merkkijonoja C++:ssa. Esimerkiksi `append()` -funktio, joka lisää merkkijonon toisen loppuun:
+
+```C++
+std::string str1 = "Hei ";
+std::string str2 = "Matti!";
+str1.append(str2);
+std::cout << str1 << std::endl; // Tulostaa: "Hei Matti!"
 ```
-Hei, olen John ja olen kotoisin maasta Finland.
-```
+Sisäpuolella, merkkijonojen yhdistäminen C++:ssa tapahtuu luomalla uusi merkkijono, joka sisältää yhdistettyjen merkkijonojen merkit. On tärkeää huomata, että suuret merkkijonot tai usein tapahtuva konkatenointi voivat olla suorituskyvyn kannalta haastavia, koska jokainen konkatenointi luo uuden merkkijonon.
 
-## Esimerkki 2:
+## Katso Myös:
 
-```
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    string word = "koodaaja";
-
-    string phrase = word + " on paras ammatti.";
-
-    cout << phrase;
-
-    return 0;
-}
-```
-
-Tulostuu:
-```
-Koodaaja on paras ammatti.
-```
-
-# Syventävä tieto:
-
-## Historiallinen tausta:
-Merkkijonojen yhdistäminen on ollut osa ohjelmoinnissa jo pitkään. Alun perin, merkkijonojen yhdistäminen oli tehtävä manuaalisesti käyttämällä kirjaimia ja merkkejä yhdessä. Nykyään, voi yksinkertaisesti käyttää operaattoria "+" yhdistääkseen merkkijonoja toisiinsa.
-
-## Vaihtoehtoiset tavat:
-On myös muita tapoja yhdistää merkkijonoja, kuten käyttäen C++ standardikirjaston funktioita, kuten std::string::append() tai std::strcat(). Nämä vaihtoehdot voivat olla hyödyllisiä erilaisissa tilanteissa ja merkkijonojen yhdistäminen operaattorilla "+" onkin vain yksi tapa tehdä se.
-
-## Toteutuksen yksityiskohdat:
-Merkkijonojen yhdistäminen operaattorilla "+" allokoi uuden merkkijonon ja kopioidaan siihen molempien merkkijonojen merkit. Tämä voi olla resurssien intensiveistä, joten on suositeltavaa käyttää muita vaihtoehtoja, jos on tarvetta yhdistää isompia merkkijonoja.
-
-# Katso myös:
-- [C++ std::string::append reference](https://www.cplusplus.com/reference/string/string/append/)
-- [C++ std::strcat reference](https://www.cplusplus.com/reference/cstring/strcat/)
+1. cppreference.com - C++ merkkijono luokka: [linkki](https://en.cppreference.com/w/cpp/string/basic_string)
+2. cplusplus.com - Merkkijonojen yhdistäminen: [linkki](http://www.cplusplus.com/reference/string/string/append/)
+3. Stack Overflow: vinkkejä ja temppuja merkkijonojen yhdistämiseen C++:ssa: [linkki](https://stackoverflow.com/questions/18892281/most-idiomatic-way-to-concatenate-strings)
+4. C++ Standardeja ja laatua merkkijonojen hallintaan: [linkki](https://isocpp.org/wiki/faq/strings)

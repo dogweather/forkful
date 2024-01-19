@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "PHP: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Genererer tilfeldige tall"
+html_title:           "PHP: Genererer tilfeldige tall"
+simple_title:         "Genererer tilfeldige tall"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Generering av tilfeldige tall er en vanlig oppgave i programmering. Dette er en måte å skape en tilfeldig verdi som kan brukes i et program. Programmene våre trenger ofte å håndtere tilfeldige situasjoner, og det å kunne generere tilfeldige tall tillater oss å simulere disse situasjonene og gjøre programmet mer variert og dynamisk.
+## Hva & Hvorfor?
+Generering av tilfeldige tall er prosessen med å produsere tall sekvenser som ikke kan forutsigbart reproduseres. Som programmerere gjør vi dette for å sikre data sikkerhet, simuleringsautentisitet og for å drive statistiske analyser.
 
-## Hvordan:
-Her er et eksempel på hvordan du kan generere et tilfeldig tall i PHP:
-
+## Hvordan til:
+Generering av tilfeldige tall er ganske enkel med PHP's innebygde `rand()` funksjonen. Her er et eksempel:
 ```PHP
-$tilfeldig_tall = rand(1, 10); // Her genereres et tilfeldig tall mellom 1 og 10
-echo $tilfeldig_tall; // Output: 7
+<?php
+echo rand()."\n";       // Viser et tilfeldig heltall mellom 0 og getrandmax()
+echo rand(5, 15)."\n";  // Viser et tilfeldig heltall mellom 5 og 15
+?>
+```
+Output for kvitta kunne være:
+
+```
+456238972
+9
 ```
 
-Du kan også generere tilfeldige tall fra et gitt utvalg ved å bruke funksjonen `array_rand ()`:
+## Dybde Dykk:
+Historisk sett har tilfeldige tall blitt generert ved hjelp av fysiske prosesser, slik som avstivede terninger eller myntkast. Med fremvekst av datamaskiner, har vi gått over til å bruke pseudorandom nummergeneratorer, som generatorfunksjonen `rand()`i PHP.
 
-```PHP
-$alternativer = array("Apple", "Banana", "Orange", "Grape");
-$tilfeldig_frukt = $alternativer[array_rand($alternativer)]; // Her velges en tilfeldig frukt fra listen
-echo $tilfeldig_frukt; // Output: Apple (kan variere)
-```
+For den som søker en mer sikret alternativ, PHP tilbyr også `random_int()`eller `random_bytes()`, som genererer kryptografisk sikre tilfeldige tall eller bytes.
 
-## Dypdykk:
-Å generere tilfeldige tall kan spores helt tilbake til 1930-tallet med utviklingen av Monte Carlo-simuleringer for å løse matematiske problemer. I tillegg til `rand ()` og `array_rand ()` -funksjonene, er `mt_rand ()` -funksjonen også tilgjengelig i PHP, som er en raskere versjon av `rand ()`.
+Dersom `getrandmax()` returnerer et tall som er for lavt for dine behov, bruk mt_rand(), som støtter større tall.
 
-Et alternativ til å bruke innebygde PHP-funksjoner er å bruke en tredjeparts tilfeldighetsgenereringsklasse, for eksempel random_compat. Denne klassen gir viderekomne funksjoner for å generere tilfeldige tall og er også kompatibel med eldre versjoner av PHP.
-
-For en sikrere tilnærming til tilfeldig tallgenerering, kan du bruke den kryptografiske sikre metoden `random_bytes ()` og `random_int ()` funksjonene som er introdusert i PHP 7.
-
-## Se også:
-- [PHP dokumentasjon for tilfeldige tall](https://www.php.net/manual/en/function.rand.php)
-- [random_compat library](https://github.com/paragonie/random_compat)
-- [PHP dokumentasjon for random_bytes og random_int](https://www.php.net/manual/en/function.random-bytes.php)
+## Se Også:
+For mer detaljer, sjekk ut PHP's egen dokumentasjon om random number generation:
+[PHP: rand - Manual](https://www.php.net/manual/en/function.rand.php), 
+[PHP: random_int - Manual](https://www.php.net/manual/en/function.random-int.php),
+[PHP: random_bytes - Manual](https://www.php.net/manual/en/function.random-bytes.php).

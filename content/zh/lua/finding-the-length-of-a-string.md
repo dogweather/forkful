@@ -1,7 +1,7 @@
 ---
-title:                "找到字符串的长度"
-html_title:           "Lua: 找到字符串的长度"
-simple_title:         "找到字符串的长度"
+title:                "查找字符串的长度"
+html_title:           "Javascript: 查找字符串的长度"
+simple_title:         "查找字符串的长度"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,21 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是字符串长度及其作用
-字符串长度指的是字符串中包含的字符的数量。程序员经常需要获取字符串长度以便在处理文本时使用。例如，可以使用字符串长度来确保输入的密码长度满足安全要求，或者将字符串截断为特定长度以适合显示。
+## 什么与为什么？
 
-## 如何获取字符串长度
+查找字符串的长度是找出字符串包含多少个字符。程序员做这个是为了我们能正确地处理字符串数据，例如进行特定的算法操作。
+
+## 如何做：
+
+Lua里面查找字符串长度的方法很直接。你只需要使用内建的`string.len()`函数或者写 `#` 在你的字符串前面。让我们看看它们是如何工作的：
+
 ```Lua
--- 使用 string.len() 函数获取字符串长度
-local str = "Hello world!"
-print(string.len(str))
--- 输出结果为 12
+str = "你好，世界"
+print(string.len(str))  -- 输出 12
+print(#str)             -- 输出 12
 ```
+请注意，由于Lua对Unicode支持有限，这些方法可能不能正确处理包含复杂字符的字符串。
 
-## 深入了解
-字符串长度的概念可以追溯到早期的编程语言。在 Lua 中，字符串长度可以通过使用 string.len() 函数来获取，也可以通过遍历字符串的每个字符并计数来实现。此外，还有其他一些编程语言将字符串长度作为内置函数提供，如 Java 中的 .length() 方法。
+## 深入探究
 
-## 相关资源
-- [Lua 官方文档](https://www.lua.org/docs.html)
-- [Lua 教程](https://www.w3schools.com/lua/)
-- [Lua 字符串操作](https://www.tutorialspoint.com/lua/lua_strings.htm)
+1. 历史背景：`string.len()`在Lua的早期版本就存在。`#`被添加到更晚的版本，使其更易读与快速使用。
+2. 替代方案：你也可以通过遍历字符串中的所有字符来找到长度，但这样做一般效率低下。
+3. 实现细节：在Lua中，string.len()和`#`本质上相同，它们都通过调用底层的`strlen`C函数来找出字符串长度。
+
+## 参见
+
+1. Lua官方文档：[字符串操作](https://www.lua.org/manual/5.4/manual.html#6.4)
+2. ["Lua字符串长度的陷井"](https://stackoverflow.com/questions/9722909/lua-string-length-pitfall)：讲解Lua如何计算包含复杂字符的字符串长度的讨论。
+3. ["Lua中的字符串"](https://learnxinyminutes.com/docs/zh-cn/lua-cn/)：学习Lua中字符串的其他概念以及操作方法的资源。

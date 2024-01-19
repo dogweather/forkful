@@ -1,6 +1,6 @@
 ---
 title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Fish Shell: Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
 simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Czego & Dlaczego?
+## Co i Dlaczego?
 
-W programowaniu często musimy zmieniać tekst w naszym kodzie. To znaczy, że zamieniamy jedno słowo lub zdanie na inne. Robimy to, aby nasz kod był łatwiejszy do czytania i zrozumienia dla innych programistów. 
+Najprościej mówiąc, wyszukiwanie i zastępowanie to techniki na modyfikację tekstu przez znalezienie konkretnych fraz i zmianę ich na inne. Programiści to robią, by edytować kod, poprawiać błędy i przyspieszać pracę.
 
-Jak to zrobić:
+## Jak to zrobić:
 
-Fish Shell oferuje prosty i szybki sposób na wyszukiwanie i zamianę tekstu. Aby tego dokonać, wystarczy użyć komendy "sed". W poniższym przykładzie zastępujemy słowo "hello" wyrażeniem "hi" w pliku o nazwie "text.txt".
+Zastosujmy to w praktyce w Fish Shell:
+```fish
+set -l old_text 'stary tekst'
+set -l new_text 'nowy tekst'
+set -l target 'To jest mój stary tekst.'
 
-```Fish Shell
-sed -i 's/hello/hi/g' text.txt
+echo $target | string replace -r $old_text $new_text
 ```
-Output:
-```
-hi world, hi fish!
-```
+Gdy uruchomisz powyższy skrypt, wydrukuje on: 'To jest mój nowy tekst.'
 
-Możemy także wykonać to samo polecenie na kilku plikach jednocześnie. W tym celu musimy wykorzystać opcję "-exec" oraz komendę "find". Poniższy przykład zamienia "hello" na "hi" w każdym pliku tekstowym znajdującym się w bieżącym katalogu.
+## Głębsze spojrzenie
 
-```Fish Shell
-find . -type f -exec sed -i 's/hello/hi/g' {} \;
-```
+Narzędzie do wyszukiwania i zastępowania tekstu ma długą historię, zaczynającą się od starożytnych edytorów tekstowych, takich jak ed. W Fish Shell, wykorzystaliśmy wbudowaną funkcję `string replace`, która jest wynikiem rozwoju tych historycznych narzędzi.
 
-Deep Dive:
+Inne powszechne metody to używanie `sed` albo `awk`, które są bardziej złożone, lecz także bardziej elastyczne. Zakres ich możliwości daleko wykracza poza to, co prezentowane jest w tym artykule.
 
-Wyszukiwanie i zmiana tekstu jest jednym z najczęściej wykorzystywanych poleceń w edytorach tekstowych oraz w konkurencyjnych powłokach, takich jak Bash. W Fish Shell wykorzystana jest biblioteka libsed do przetwarzania plików i wyszukiwania wyrażeń regularnych. Można także użyć programu "rs" lub "awk", jeśli wymagane jest bardziej złożone wyszukiwanie tekstu.
+Ciekawe jest to, że `string replace` w Fish operuje na całych linijkach, a nie na strumieniach znaków. To oznacza, że nie możesz go użyć do modyfikacji tekstu przekraczającego granice linii - wtedy musisz skorzystać z innych narzędzi.
 
-Zobacz także:
+## Zobacz również:
 
-- Dokumentacja Fish Shell dla polecenia "sed": https://fishshell.com/docs/current/cmds/sed.html
-- Przykłady zastosowań "sed": https://www.gnu.org/software/sed/manual/sed.html#Examples
+- [Dokumentacja Fish Shell 'string replace'](https://fishshell.com/docs/3.0/cmds/string-replace.html)
+- [Przewodnik po używaniu 'awk' w UNIX](https://www.grymoire.com/Unix/Awk.html)
+- [Tutoriale 'sed' - Używanie 'sed' do wyszukiwania i zastępowania tekstu](https://how-to.fandom.com/wiki/How_to_use_sed_to_find_and_replace_text_in_files)

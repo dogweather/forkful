@@ -1,7 +1,7 @@
 ---
-title:                "새 프로젝트 시작"
-html_title:           "TypeScript: 새 프로젝트 시작"
-simple_title:         "새 프로젝트 시작"
+title:                "새 프로젝트 시작하기"
+html_title:           "Arduino: 새 프로젝트 시작하기"
+simple_title:         "새 프로젝트 시작하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Getting Started"
@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## 무엇이며 왜?
 
-새로운 프로젝트를 시작하는 것은 프로그래머들이 새로운 소프트웨어를 만들기 위해 새로운 시작을 하는 것입니다. 이것은 새로운 기능을 추가하거나 기존의 코드를 개선하기 위해 필요합니다.
+새 프로젝트를 시작하는 것은 사실상 새로운 제품이나 기능를 만드는 데 필요한 코드의 컬렉션을 만드는 과정입니다. 프로그래머들은 새로운 문제를 해결하거나 신규 기능을 개발하거나, 개선하려는 목적으로 이를 수행합니다.
 
-## 방법:
+## 실행 방법:
 
-TypeScript를 사용하여 새로운 프로젝트를 시작하는 방법은 매우 간단합니다. 먼저, 다음과 같이 TypeScript를 설치해야 합니다:
+새 프로젝트를 만드는 가장 간단한 방법은 `tsc --init` 명령을 이용하는 것입니다. 이 명령을 실행하면 TypeScript 프로젝트를 위한 기본 `tsconfig.json` 파일이 생성됩니다.
+
+```TypeScript
+$ tsc --init
+message TS6071: Successfully created a tsconfig.json file.
 ```
-npm install -g typescript
-```
-그런 다음, 프로젝트를 시작할 디렉토리에 들어가서 다음 명령어를 실행하면 됩니다:
-```
-tsc --init
-```
-이 명령어는 tsconfig.json 파일을 생성하여 프로젝트 설정을 포함하게 됩니다. 그런 다음, TypeScript를 사용하여 코드를 작성할 수 있습니다. 예를 들어, 다음과 같이 함수를 작성할 수 있습니다:
-```
-function addNumbers(a: number, b: number): number {
-    return a + b;
-}
-```
-이제 TypeScript를 사용하여 작성한 코드를 JavaScript 코드로 컴파일할 수 있습니다. ``tsc`` 명령어를 실행하면 됩니다. 컴파일된 JavaScript 파일은 ``outDir`` 옵션에서 지정한 디렉토리에 생성됩니다.
 
-## 깊이 파고들기:
+그런다음, `src` 폴더를 만들고, 그 안에 우리의 첫 번째 TypeScript 파일 `app.ts`를 생성해보겠습니다.
 
-TypeScript는 Microsoft에서 개발한 오픈 소스 언어로, JavaScript의 슈퍼셋입니다. 따라서 JavaScript를 향상시키는 기능을 추가하면서도 JavaScript의 모든 기능을 그대로 사용할 수 있습니다. TypeScript는 정적 타입을 지원하여 개발자가 코드를 작성하는 동안 발생할 수 있는 오류를 미리 방지할 수 있습니다. 또한 타입스크립트는 ECMAScript 표준을 준수하고 있으므로 대부분의 브라우저에서 지원됩니다. 다른 JavaScript 슈퍼셋으로는 CoffeeScript, Dart 등이 있습니다.
+```TypeScript
+$ mkdir src
+$ echo "console.log('Hello, TypeScript!')" > src/app.ts
+```
 
-## 관련 자료:
+이제 TypeScript 코드를 컴파일하면 JavaScript 파일이 생성됩니다.
 
-- [TypeScript 공식 사이트](https://www.typescriptlang.org/)
-- [TypeScript 핸드북](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [TypeScript 소스 코드](https://github.com/Microsoft/TypeScript)
+```TypeScript
+$ tsc
+```
+
+이제 `app.js` 파일을 실행해 보겠습니다.
+
+```TypeScript
+$ node src/app.js
+Hello, TypeScript!
+```
+
+## 심층 분석:
+
+시작하는 새 프로젝트는 내부 시스템, 기능, 또는 서비스의 개발의 대부분을 구성합니다. 원래 이것은 많은 설정과 준비작업이 필요했지만, TypeScript와 같은 프레임워크의 등장으로 보다 쉽고 빠르게 시작할 수 있게 되었습니다. 그러나 필요에 따라 다른 도구 및 프레임워크도 선택할 수 있습니다. 프로젝트 실행을 위해 Angular, React 같은 프레임워크를 사용할 수도 있습니다. 프로젝트 설정에 따라 필요한 패키지 있форм과 구성을 결정할 수 있습니다. 본질적으로 프로젝트를 시작하는 방법은 문제와 요구 사항에 따라 달라집니다.
+
+## 참고 자료:
+
+- TypeScript 공식 문서: [TypeScript Tutorial](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+- TypeScript 프로젝트 설정: [Get started with TypeScript](https://www.digitalocean.com/community/tutorials/typescript-new-project)
+- TypeScript와 JavaScript의 차이: [What’s the difference?](https://www.freecodecamp.org/news/what-s-the-difference-between-javascript-and-typescript-4b0b38e2ebc0/)

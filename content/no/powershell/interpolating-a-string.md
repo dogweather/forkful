@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av streng"
-html_title:           "PowerShell: Interpolering av streng"
-simple_title:         "Interpolering av streng"
+title:                "Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
+simple_title:         "Interpolering av en streng"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,34 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Interpolering av streng i PowerShell
+
 ## Hva & Hvorfor?
 
-Strenginterpolasjon er en viktig del av programmering i PowerShell. Det er en måte å sette sammen en streng ved å flette inn variabler eller andre uttrykk på en effektiv måte. Dette gjør det enkelt og praktisk å manipulere og formatere tekst i skript.
+Strenginterpolering er en teknikk i programmering der vi kan inneby variabler i en streng direkte. Programmerere gjør dette for å gjøre kode mer lesbar og forenkle formateringsoppgaver.
 
-## Slik gjør du:
+## Hvordan gjøre det:
 
-Be om brukerens navn og ønskede alder ved hjelp av Read-Host cmdlet.
-PowerShell kodeblokker:
+I PowerShell er interpolering av streng bekreftet av dobbel anførselstegn(" "). Se nedenfor:
+
 ```PowerShell
-$navn = Read-Host "Hva er navnet ditt?"
-$alder = Read-Host "Hvor gammel er du?"
-Write-Host "Hei $navn, du er $alder år gammel!"
-```
-Output:
-```
-Hva er navnet ditt? John
-Hvor gammel er du? 25
-Hei John, du er 25 år gammel!
+$navn = "Ola"
+$hilsen = "Hei, $navn"
+$hilsen
 ```
 
-## Ned i detalj:
+Output vil være: 
 
-Strenginterpolasjon ble introdusert i PowerShell 2.0 for å gjøre det enklere å håndtere tekst og variabler i skript. Tidligere var man avhengig av å bruke string concatenation, som innebar mye mer kode og potensielt flere feil. Det finnes også alternative metoder for å interpolere en streng i PowerShell, som for eksempel ved å bruke den innebygde "format" -metoden.
+```
+"Hei, Ola"
+```
 
-Strenginterpolasjonen er implementert ved å plassere variabler eller uttrykk innenfor et settefjes: ```$variabel```. Når PowerShell kjører koden, vil den erstatte settefjeset med verdien til variabelen eller uttrykket. 
+Hvis du bruker enkle anførselstegn, vil det ikke gi det forventede resultatet:
+
+```PowerShell
+$hilsen = 'Hei, $navn'
+$hilsen
+```
+
+Output vil være: 
+
+```
+"Hei, $navn"
+```
+
+## Dypdykk:
+
+Historisk sett har strenginterpolering vært en del av programmeringsspråk i flere tiår, og den tidligste implementeringen kan dateres tilbake til 1960-tallet.
+
+Det er alternativer til strenginterpolering. En av de mest brukte er å bruke en + operatør for å konvertere og koble objekter til strenger. Men dette kan bli rotete når det er mange variabler involvert.
+
+Hvordan strenginterpolering fungerer i bakgrunnen i PowerShell er ganske enkelt: det leter etter $-tegnet inne i dobbelte anførselstegn, og det som følger etter er ansett som en variabel.
 
 ## Se også:
 
-Offisiell dokumentasjon for strenginterpolasjon i PowerShell - https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators 
+Sjekk ut disse ressursene for mer informasjon:
 
-En godt skrevet guide til strenginterpolasjon i PowerShell - https://www.red-gate.com/simple-talk/dotnet/net-development/powershell-stringing-us-little-bit/
+1. [Microsofts offisielle dokumentasjon om strenginterpolering](https://docs.microsoft.com/powershell/)
+2. [Les om forskjellen mellom dobbelt og enkelt anførselstegn i PowerShell](https://ss64.com/ps/syntax-quotes.html)
+3. [Får mer avansert bruk av strenginterpolering](https://www.powershellmagazine.com/2012/11/06/pstip-string-interpolation-in-powershell/)

@@ -1,7 +1,7 @@
 ---
-title:                "Trova la lunghezza di una stringa."
-html_title:           "Rust: Trova la lunghezza di una stringa."
-simple_title:         "Trova la lunghezza di una stringa."
+title:                "Trovare la lunghezza di una stringa"
+html_title:           "Haskell: Trovare la lunghezza di una stringa"
+simple_title:         "Trovare la lunghezza di una stringa"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,42 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
+## Che Cos'è e Perché?
 
-Trovare la lunghezza di una stringa è una pratica comune tra i programmatori di Rust. Consiste nel determinare il numero di caratteri presenti in una stringa e può essere utile per diverse ragioni: ad esempio, per verificare l'integrità dei dati o per effettuare operazioni su porzioni specifiche della stringa.
+Trovare la lunghezza di una stringa significa determinare il numero di caratteri in essa. I programmatori lo fanno per vari motivi, ad esempio per ciclare all'interno della stringa, validare l'input, ecc.
 
 ## Come fare:
 
-Per trovare la lunghezza di una stringa in Rust, possiamo utilizzare il metodo `len()` che restituisce il numero di byte presenti nella stringa. Ad esempio:
+Ecco un esempio semplice su come ottenere la lunghezza di una stringa in Rust.
 
 ```Rust
-let stringa = "Ciao, mondo!";
-let lunghezza = stringa.len();
-println!("La stringa \"{}\" ha una lunghezza di {} byte.", stringa, lunghezza);
-
-// Output: "La stringa "Ciao, mondo!" ha una lunghezza di 13 byte."
+fn main() {
+    let s = "Ciao Mundo!";
+    println!("{}", s.len());
+}
 ```
 
-Possiamo anche utilizzare il metodo `chars()` per ottenere il numero di caratteri invece dei byte. Ad esempio:
+All'esecuzione di questo codice, stampa `12`, che è la lunghezza della stringa `Ciao Mundo!`.
+
+Se hai una stringa con caratteri Unicode, il metodo `len()` potrebbe non comportarsi come ti aspetti. In questo caso, puoi utilizzare il metodo `chars().count()`, come mostrato di seguito.
 
 ```Rust
-let stringa = "Ciao, mondo!";
-let lunghezza = stringa.chars().count();
-println!("La stringa \"{}\" ha una lunghezza di {} caratteri.", stringa, lunghezza);
-
-// Output: "La stringa "Ciao, mondo!" ha una lunghezza di 12 caratteri."
+fn main() {
+    let s = "Ciao Mündò!";
+    println!("{}", s.chars().count());
+}
 ```
+Eseguendo questo codice otterai `11`, tenendo conto dei caratteri Unicode.
 
-## Approfondimento:
+## Approfondimenti:
 
-La necessità di trovare la lunghezza di una stringa risale ai primi giorni della programmazione, quando le stringhe venivano memorizzate come array di caratteri e per determinarne la lunghezza era necessario scorrere tutta la stringa.
+Nel contesto storico, Rust ha introdotto il metodo `len()` con l'intenzione di fornire un modo semplice e rapido per ottenere il conteggio dei byte di una stringa. È importante notare che `len()` ritorna la lunghezza in byte della String, non il conteggio dei caratteri Unicode.
 
-In Rust, oltre ai metodi `len()` e `chars()`, esistono anche altre alternative per trovare la lunghezza di una stringa. Ad esempio, possiamo utilizzare il metodo `as_bytes()` per ottenere l'array di byte della stringa e quindi utilizzare il metodo `len()` per trovare la sua lunghezza.
+In alternativa, per ottenere il conteggio dei caratteri Scala Unicode, puoi usare il metodo `chars().count()`. Rust implementa la libreria standard `str` che fornisce vari metodi tra cui `len()` e `chars().count()` che aiutano a determinare la lunghezza di una stringa.
 
-L'implementazione di `len()` in Rust è molto efficiente, in quanto tiene traccia della lunghezza della stringa in modo da non doverla calcolare ogni volta che viene richiamato il metodo.
+## Vedi Anche:
 
-## Vedi anche:
+[Rust Documentation - len()](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
 
-- [Rust string methods](https://doc.rust-lang.org/std/string/struct.String.html#methods)
-- [Rust byte methods](https://doc.rust-lang.org/std/primitive.str.html)
-- [Rust str methods](https://doc.rust-lang.org/std/primitive.bytes.html)
+[Rust Documentation - chars()](https://doc.rust-lang.org/std/string/struct.String.html#method.chars)
+
+[Rust by Example - Strings](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
+
+[Rust Internals - What's the deal with Strings in Rust?](https://internals.rust-lang.org/t/whats-the-deal-with-strings-in-rust/9812)

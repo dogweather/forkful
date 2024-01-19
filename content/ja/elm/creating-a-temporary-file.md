@@ -1,7 +1,7 @@
 ---
-title:                "「一時ファイルの作成」"
-html_title:           "Elm: 「一時ファイルの作成」"
-simple_title:         "「一時ファイルの作成」"
+title:                "一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
+simple_title:         "一時ファイルの作成"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何&なぜ?
+## 何となぜ？
 
-一時ファイルを作成するとは、一時的な情報やデータを保存するために作成されるファイルのことです。プログラマーは、プログラム実行中に一時的なデータを保存するために一時ファイルを作成します。
+一時的なファイル作成とは、一時的なデータ保管のためにプログラムが取得する静的な場所です。プログラマーは、一時データの保管、デバッグ、または大量のデータを高速に処理するためによく用いられます。
 
-## 方法:
+## 実装方法：
 
+残念ながら、Elmプログラミング言語は一時ファイルを作成する直接的な機能をサポートしていません。このため、ElmからJavaScriptへのポートを使用してこの問題を解決する一方できますが、Elmの純粋性が一部失われます。また、サーバーサイドで一時ファイルの作成を取り扱い、Elmはフロントエンドで結果を取得するという役割を果たすことがあります。以下は、このアプローチを示す伪プログラムです。
+
+```Elm
+module Main exposing (..)
+
+type alias Model = 
+    { tempFilePath : String }
+
+type Msg = 
+    TemporaryFileCreated String
+
+init : Model
+init = 
+    { tempFilePath = "" }
+
+update : Msg -> Model -> Model
+update msg model = 
+    case msg of 
+        TemporaryFileCreated path ->
+            { model | tempFilePath = path }
 ```
-Elm.File.temp 
-```
 
-この関数を使用すると、一時ファイルを作成することができます。
+## より深く：
 
-```
-Elm.File.temp 
-```
+一時ファイルの作成は古くから存在しており、UNIX互換のシステムでは `/tmp` ディレクトリが一般的に使用されます。しかし、一時的なデータ保存やデータの追加・削除などにはリスト、キュー、スタックなどのデータ構造も使用できます。Elmでは、effect managerを使用してファイルを操作する機能を開発することも可能ですが、これは非公式であり、安定性と互換性については保証がありません。
 
-## 深堀り:
+## 参考資料：
 
-一時ファイルの歴史的な文脈は、パソコンやインターネットの登場とともに始まりました。以前は、プログラムを実行する際には、すべてのデータをコンピューターのメモリに保存する必要がありました。しかし、メモリは限られており、大量のデータを保存することができませんでした。そのため、一時ファイルの作成が必要となりました。
+- ElmのEffect managerについて深く学びたい方は、[Elmの公式ガイド](https://guide.elm-lang.org/effect_managers/)をご覧ください。
 
-一時ファイルを作成する方法としては、他にもオンメモリデータベースやメモリマップドファイルなどの方法がありますが、一時ファイルはデータの一時的な保存に便利です。一時ファイルの実装にはさまざまな方法がありますが、その基本的な考え方は同じです。
+- ElmとJavaScriptの連携について詳しく知りたい方は、[こちら](https://elmprogramming.com/interop-with-javascript.html) をご覧ください。
 
-## 関連リンク:
-
-- オンメモリデータベース: https://www.ipsj.or.jp/award/6faeag000000ey4t-att/06-02.pdf
-- メモリマップドファイル: http://www.csclsp2017.org/wp/wp-content/uploads/2017/01/6-2-Shudo.pdf
+以上が一時ファイル作成に関する情報です。楽しくElmプログラミングを進めて行きましょう！

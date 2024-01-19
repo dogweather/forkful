@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av en tekstdokument"
-html_title:           "C#: Lesing av en tekstdokument"
-simple_title:         "Lesing av en tekstdokument"
+title:                "Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,36 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å lese en tekstfil i C# betyr å åpne og lese informasjon fra en tekstfil på datamaskinen din. Programmere gjør dette for å kunne bruke data som er lagret i en tekstfil i sine programmer.
+---
+# Lesere tekstfil i C#: En veiledning
 
-# Hvordan:
-Det er enkelt å lese en tekstfil i C#. Du kan bruke ```File.ReadAllText()``` metoden for å lese innholdet fra en tekstfil som en enkelt streng, eller ```File.ReadAllLines()``` metoden for å lese innholdet i tekstfiler som en matrix av separate linjer. Se eksempler nedenfor.
+## Hva & Hvorfor?
+
+Lesing av en tekstfil er en operasjon som tillater programmerere å få tilgang til og manipulere data lagret i tekstfilformat. Det er en avgjørende oppgave i mange programmeringsscenarioer som dataanalyse, loggføring, konfigurasjoner, etc.
+
+## Hvordan gjøre det:
+
+Her er et enkelt eksempel på lesing av en tekstfil i C# ved hjelp av `System.IO`-biblioteket.
 
 ```C#
-// Eksempel 1: Leser en tekstfil som en enkelt streng
-string tekst = File.ReadAllText("minTekstfil.txt");
-Console.WriteLine(tekst);
+using System;
+using System.IO;
 
-// Eksempel 2: Leser en tekstfil som en matrix av linjer
-string[] linjer = File.ReadAllLines("minTekstfil.txt");
-foreach (string linje in linjer)
+class Program
 {
-    Console.WriteLine(linje);
+    static void Main()
+    {
+		string txtfil = File.ReadAllText(@"C:\Eksempel.txt");
+		Console.WriteLine(txtfil);
+    }
 }
-
-/* Output
-Eksempeltekst på første linje
-Dette er en annen linje med tekst
-Siste linje med litt mer tekst 
-*/
-
 ```
 
-# Dypdykk:
-Å lese og skrive til tekstfiler har vært et essensielt aspekt av programmering siden begynnelsen. Tekstfiler brukes ofte for å lagre landealder, konfigurasjoner, tekst og andre typer data i et lett-å-lese format. Noen alternativer til å bruke ```File``` klassen for å lese tekstfiler inkluderer å bruke andre klasser som ```StreamReader``` eller tredjepartsbiblioteker som ```CsvHelper```. Når du leser tekstfiler i C#, er det også viktig å tenke på formatering, tegnkoding, og eventuell feilhåndtering.
+Forventet output:
 
-# Se også:
-- [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=net-5.0)
-- [StreamReader klasse](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0)
-- [CsvHelper bibliotek](https://joshclose.github.io/CsvHelper/)
+```
+Hallo verden!
+Dette er en prøvetekst.
+```
+
+## Dypdykk
+
+**Historisk kontekst:** Innlesing av tekstfiler er en funsjonalitet som har blitt implementert i mange programmeringsspråk lenge før C#. Dette understreker dens viktighet i ulike programmeringsapplikasjoner.
+
+**Alternativer:** Det finnes flere måter å lese tekstfiler på i C#. Du kan for eksempel bruke `StreamReader`-klassen eller `File.ReadLines()`-metoden for å lese filer linje for linje, noe som er mer minneeffektivt for store filer.
+
+**Implementeringsdetaljer:** `File.ReadAllText()` i eksempelet ovenfor laster hele filen inn i minnet. Dette er greit for små til mellomstore filer, men for større filer anbefales det å bruke en mer minneeffektiv metode, som `File.ReadLines()` som behandler filen linje for linje.
+
+## Se også
+
+1. Microsoft Docs: [How to read a text file one line at a time (Visual C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time)
+2. StackOverflow: [How to read a large text file line by line using Java?](https://stackoverflow.com/questions/5868369/how-to-read-a-large-text-file-line-by-line-using-java)
+3. Microsoft Docs: [Streamreader Class (System.IO)](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
+---

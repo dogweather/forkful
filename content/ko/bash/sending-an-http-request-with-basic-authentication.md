@@ -10,18 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-HTTP 요청을 기본 인증과 함께 보내는 것은 보안을 위해 서버에서 클라이언트로 인증 정보를 요청하는 것을 의미합니다. 이는 프로그래머들이 개인 정보나 중요한 데이터를 보호하기 위해 자주 사용합니다.
+# Bash를 이용한 기본 인증을 통한 HTTP 요청 보내기
 
-## 방법:
+## 왜 필요하고 왜 사용하나요?
+HTTP 요청은 서버-클라이언트 모델에서 클라이언트가 서버에게 정보를 요청하는 방법입니다. 기본 인증을 사용하면 이 요청을 안전하게 보낼 수 있어, 중요 데이터를 보호할 수 있습니다.
+
+## 어떻게 하는 건가요?
+아래는 Bash에서 기본 인증을 사용하여 HTTP 요청을 보내는 간단한 예시입니다.
+
+```Bash
+#!/bin/bash
+
+user="username"
+password="password"
+url="http://mywebsite.com"
+
+curl -u $user:$password $url
 ```
-curl --user username:password https://example.com
+
+실행 결과는 다음과 같습니다.
+
+```Bash
+<html>
+...
+</html>
 ```
-위와 같은 형식으로 cURL을 사용하여 기본 인증을 포함한 HTTP 요청을 보낼 수 있습니다. 인증 정보는 ```username```과 ```password``` 부분에 각각 사용자 이름과 비밀번호를 입력하여 사용합니다. 다른 예시로는 ```wget --user=username --password=password https://example.com```과 같이 사용하는 방법이 있습니다.
 
-## 깊이 보기:
-(1) 기본 인증은 1990년대에 개발된 인증 방식으로, 현재 많은 사이트에서 보안 수준이 낮아 사용되지 않습니다. (2) 다른 인증 방식으로는 OAuth나 JWT 등이 있으며, 이는 보안 수준이 높아 더 자주 사용됩니다. (3) cURL이나 wget 외에도 python의 requests 라이브러리나 JavaScript의 node-fetch 라이브러리를 사용하여 기본 인증을 구현할 수 있습니다.
+HTTP 요청이 성공하면 웹페이지의 HTML을 보여줍니다.
 
-## 관련 자료:
-- [cURL 공식 문서](https://curl.se/docs/httpauth.html)
-- [HTTP 인증 방법: 기본 인증 및 다이제스트 인증 in MDN](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)
+## 깊게 알아보기
+기본 인증은 HTTP/1.0에 처음 소개되었고, 아직까지 많이 사용됩니다. 그러나 누구나 패킷을 가로채서 내용을 볼 수 있기 때문에 안전을 보장하지 못합니다. 그래서 HTTPS가 등장하였고, 최대한 HTTPS를 사용하는 것이 좋습니다.
+
+또한 cURL 외에도 `wget`같은 다른 도구들을 이용해서도 HTTP 요청을 보낼 수 있습니다. 
+
+기본 인증은 `Authorization` 헤더에 사용자 이름과 패스워드를 base64 인코딩하여 추가하는 방식으로 구현됩니다.
+
+## 참고자료
+1. [cURL 공식 문서](https://curl.haxx.se/)
+2. [HTTP 인증 - MDN 웹 문서](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)
+3. [Bash 스크립팅: 기본부터 고급까지](https://devowen.com/744)

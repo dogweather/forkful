@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Fish Shell: Inviare una richiesta http con autenticazione di base"
+html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa & Perché?
+# Invio di una richiesta HTTP con autenticazione di base in Fish Shell
 
-In questo articolo parleremo di come inviare una richiesta HTTP con autenticazione di base usando il Fish Shell. Questa tecnica è comune tra i programmatori perché consente di accedere a risorse protette su internet tramite una combinazione di nome utente e password.
+## Cos'è e perché?
 
-## Come fare:
+L'invio di una richiesta HTTP con autenticazione di base è un mezzo per accedere a risorse Web protette da una semplice forma di identificazione. I programmatori lo fanno per interactare con API che richiedono un livello base di sicurezza.
 
-Utilizzando il Fish Shell, è possibile inviare una richiesta HTTP con autenticazione di base in pochi semplici passi. Ecco un esempio di codice:
+## Come fare
 
-```Fish Shell
+Inviamo una richiesta GET ad esempio, con `curl` e basic auth: 
 
-set -lx username "username"
-set -lx password "password"
-
-set -lx response (curl --user $username:$password http://www.example.com)
-
-echo $response
+```Fish Shell 
+set username 'tuo_nome_utente'
+set password 'tua_password'
+curl -u $username:$password https://esempio.com
 ```
 
-Questo codice definisce una variabile per il nome utente e una per la password, quindi utilizza il comando `curl` per inviare una richiesta HTTP con autenticazione di base al sito web di esempio. Infine, il codice stampa la risposta ricevuta dal server.
+Se l'invio è andato a buon fine, la risposta HTTP comprenderà i dati richiesti.
 
-## Approfondimenti:
+## Approfondimento 
 
-La tecnologia di autenticazione di base è stata introdotta per la prima volta nell'HTTP 1.0 nei primi anni '90. Oggi, ci sono metodi di autenticazione più avanzati disponibili, come OAuth, ma l'autenticazione di base rimane ancora un'opzione popolare per molte applicazioni.
+Questa forma di autenticazione è stato introdotta dagli standard HTTP nel 1996. Da allora, è rimasta un elemento fondamentale delle operazioni HTTP, anche se esistono metodi alternativi più sicuri, come l'autenticazione digest e l'autenticazione basata su token.
 
-Un'alternativa all'utilizzo del Fish Shell per inviare una richiesta HTTP con autenticazione di base potrebbe essere l'utilizzo di un programma specifico per questo scopo, come `curl` o `wget`. Tuttavia, utilizzando il Fish Shell è possibile automatizzare ulteriormente questo processo, rendendo più comodo e veloce l'accesso a risorse protette.
+L'uso di `curl` in Fish Shell per l'invio delle richieste HTTP è una soluzione pratica. Il comando `-u` di `curl` si occupa di applicare l'header di autenticazione corretto (Authorization) alla richiesta HTTP. 
 
-Alcune delle implementazioni più comuni della tecnologia di autenticazione di base includono l'utilizzo di un prompt dove viene richiesto all'utente di inserire nome utente e password e l'utilizzo di header personalizzati per includere le credenziali nella richiesta HTTP.
+Tenga presente, però, che le vostre credenziali sono inviate in chiaro con la Basic auth, quindi è importante assicurarsi che la connessione sia protetta con SSL/TLS.
 
-## Vedi anche:
+## Vedi Anche
 
-Per ulteriori informazioni sull'utilizzo del Fish Shell per inviare richieste HTTP, puoi consultare la documentazione ufficiale qui: https://fishshell.com/docs/current/cmds/set.html
+Per ulteriori informazioni sull’autenticazione di base, si veda la specifica della RFC 7617 a questo [link](https://tools.ietf.org/html/rfc7617). 
 
-Se vuoi approfondire l'utilizzo dell'autenticazione di base, puoi consultare la specifica ufficiale HTTP 1.1 qui: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8
+Altro sul comando `curl` e le sue variabili opzioni si può trovare a questo [link](https://curl.haxx.se/).
 
-E se vuoi saperne di più sulla tua sicurezza online, puoi leggere questo articolo sulla protezione delle password: https://heimdalsecurity.com/it/blog/proteggere-password-importante/
+Per esplorare metodi alternativi di autenticazione HTTP, consultate questa [guida](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication).

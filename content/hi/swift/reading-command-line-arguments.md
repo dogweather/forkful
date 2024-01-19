@@ -1,7 +1,7 @@
 ---
-title:                "कम्प्यूटर प्रोग्रामिंग पर केवल सुझाव"
-html_title:           "Swift: कम्प्यूटर प्रोग्रामिंग पर केवल सुझाव"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग पर केवल सुझाव"
+title:                "कमांड लाइन तर्कों को पढ़ना"
+html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
+simple_title:         "कमांड लाइन तर्कों को पढ़ना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -12,37 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-कमांड लाइन आर्ग्यूमेंट पढ़ने का मतलब है कि एक प्रोग्रामर अपने स्क्रिप्ट या आपातकालीन एप्प्स को आरगुमेंट के रूप में ऑपरेटिंग सिस्टम से प्राप्त कर सकता है। इसे पढ़ने के लिए बनाई गई भाषा हो सकती है।
+वितरक रेखा युक्तियों का पठन एक गतिविधि है जिसमें प्रोग्राम को उसके स्टार्टअप द्वारा दिए गए विचारण, के रूप में inputs मिलते हैं। प्रोग्रामर्स इसे उपयोग करते हैं ताकि प्रयोगकर्ताओं को उनकी ऐप में व्यक्तिगत वरियताओं के साथ इंटरेक्ट करने की अनुमति हो।
 
-## कैसे:
+## कैसे करें
 
-```Swift 
-func main() {
-    let arguments = CommandLine.arguments
-    print(arguments)
+नीचे दिए गए स्विफ्ट कोड स्निपेट में हम Command Line Arguments को पढ़ेंगे:
+
+```swift
+let commandLineArgs = CommandLine.arguments
+
+for arg in commandLineArgs {
+    print("Argument: \(arg)")
 }
 ```
 
-जब आप यह कोड कंपाइल करोगे तो कमांड लाइन आर्ग्यूमेंट सूची प्रिंट हो जाएगी। यदि आपको अपने ऑपरेशन सिस्टम के आर्ग्युमेंट दिखने हैं तो आप उन्हें प्रिंट कर सकते हैं।
+जब आप ऊपर का कोड चलाएंगे, तो Swift प्रत्येक Command Line Argument को प्रिंट करेगा।
 
-### आउटपुट:
+## गहराई से समझना
 
-```Swift
-["./programName", "-o", "output.txt"]
-```
+Command Line Arguments का उपयोग करने का विचार Unix तथा Linux operating systems के प्रथम प्रयोग से आया। उन्होंने इस शैली को बनाया ताकि उपयोगकर्ता कोई भी program decided parameters के साथ चला सके। इस तरह का परामर्श आज भी लागु होता है।
 
-यहां, हमारे कमांड लाइन में तीन आर्ग्यूमेंट्स हैं - `./programName`, `-o` और `output.txt`। आप यह देख सकते हैं कि आर्ग्युमेंट कैसे स्ट्रिंग या संख्याएं के रूप में हो सकते हैं।
+तापसीयाओं का और एक विकल्प हो सकता है फ़ाइल पढ़ने और प्रयोगकर्ता से डेटा प्रेसनलाइज़ड इनपुट के तौर पर लेने का उपयोग करना। हालाँकि, Command Line Arguments अधिक फ्लेक्सिबल और त्वरित तरीका प्रदान करता है, खासकर जब ऐप्लिकेशन को बार-बार दोहराया जाना हो।
 
-### दूर दूर तक:
+इम्प्लीमेंटेशन की विवरण की बात की जाए तो, `CommandLine.arguments` एक ही स्थलीय विचारण सूची प्रदान करता है। 
 
-कमांड लाइन आर्ग्युमेंट्स की पहले से ही तारीख है। पहले इसे पढ़ने के लिए C और C++ का उपयोग किया जाता था। इसके अलावा, आप प्रोग्राम में आर्ग्युमेंट्स पेस करने के लिए एक विशेष फ़ंक्शन भी बना सकते हैं। इससे आप उन्हें प्रोजेक्ट के अन्य हिस्सों में उधेर नहीं भेजना पड़ेगा।
+## अन्य लिंक
 
-## उदाहरणहीन जानकारी:
-
-- **NSProcessInfo**: यह एक Objective-C कक्रिप्टिंग क्लास है जो आपको कमांड लाइन आर्ग्युमेंट्स पढ़ने और जोड़ने की अनुमति देता है। 
-- **ProcessInfo**: यह Swift में उसी प्रयोगशील रूप में काम करता है और NSProcessInfo की Objective-C थोड़ी सी हैै। 
-
-## देखें:
-
-- [Apple's Documentation](https://developer.apple.com/documentation/foundation/processinfo)
-- [Basics of Command Line Arguments in Swift](https://www.hackingwithswift.com/example-code/system/how-to-read-command-line-arguments-using-commandlinetocuments)
+1. [Swift Language Guide's Section on Command line arguments](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+2. [Basic Command Line Scripting in Swift](https://www.swiftbysundell.com/basics/command-line-scripting/)
+3. [Handle command line arguments in a Swift script](https://augmentedcode.io/2019/04/07/handle-command-line-arguments-in-a-swift-script/)

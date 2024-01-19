@@ -1,6 +1,6 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "Gleam: वर्तमान तारीख प्राप्त करना"
+html_title:           "C#: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,31 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kya aur Kyun?
+## क्या और क्यों?
 
-Getting the current date ek aam kaam hai jo developers karte hain. Isse aap apne programs mein current date ko use kar sakte hain. Developers iska use apne programs mein expiration dates, log timestamps aur bahut kuch karne ke liye karte hain.
+'वर्तमान तारीख' प्राप्त करना - यह वह संघटन है, जबकि प्रोग्रामर आवश्यकता अनुसार वर्तमान काल के विवरण को प्राप्त करते हैं। यह तारीख और समय संग्रहीत करने, डेटा को ट्रैक करने और लॉग बनाने की उपयोगिता में आती है।
 
-## Kaise karein?
+## कैसे?
 
-Agar aap Gleam programming language mein current date chahiye toh aap 'DateTime.now()' function ka use kar sakte hain. Yeh function aktiavyakt date aur time ko ek sath lekar aata hai. Iske alava, aap 'Date.now()' function ka bhi use kar sakte hain jo sirf date ko lekar aata hai.
+वर्तमान में, Gleam में 'वर्तमान तारीख' के लिए कोई मूल फ़ंक्शन नहीं है। हालांकि, इरलैंग का `:calendar.universal_time/0` फ़ंक्शन का उपयोग करके इसका समाधान किया जा सकता है। 
 
 ```Gleam
-import gleam/date
+import erlang
 
-DateTime.now()
-// => 2021-05-24T12:00:00Z
-
-Date.now()
-// => 2021-05-24
+fn get_current_date() {
+  erlang.(:calendar.universal_time())
+}
 ```
 
-## Gehri Jhaank
+जब आप इसे चलाते हैं, आपको वर्तमान यूनिवर्सल टाइम मिलेगा।
 
-Getting the current date ka concept bilkul naya nahi hai. Pehle log apne programs mein current date ko manually input karte the, lekin ab iske liye functions aur libraries hain. Iske alava, dusre programming languages jaise Java aur Python mein bhi iska istemaal hota hai.
+## गहरियाँ
 
-## Aur Jaanein
+1. **ऐतिहासिक प्रकटी:** वर्तमान दिनांक / समय का पता लगाना कंप्यूटर प्रोग्रामर का एक पुराना अभ्यास है जिसे डेटा की टाइम स्टैम्पिंग, डेटा ट्रैकिंग, और समाधान देखने के लिए उपयोग किया जाता है।
+2. **विकल्प:** आप `:erlang.localtime/0` फ़ंक्शन का उपयोग भी कर सकते हैं जो व्यवस्था के क्षेत्रीय समय के अनुसार वर्तमान समय की जानकारी प्रदान करते हैं।
+3. **लागू करने का विवरण:** इरलैंग के :calendar.universal_time() फ़ंक्शन का उपयोग Gleam में वर्तमान तारीख प्राप्त करने के लिए किया जाता हैं।
 
-- [Gleam Documentation for Date Module](https://gleam.run/modules/guide/date.html)
-- [Gleam Official Website](https://gleam.run/)
-- [Java Joda Time Library](https://www.joda.org/joda-time/)
-- [Python datetime Module](https://docs.python.org/3/library/datetime.html)
+## यह भी देखें
+
+1. [Erlang Documentation - Time and Date](https://erlang.org/doc/apps/erts/time_correction.html)
+2. [Gleam Documentation - Interoperability](https://gleam.run/book/tour/interop.html)

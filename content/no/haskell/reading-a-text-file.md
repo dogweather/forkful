@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av tekstfil"
-html_title:           "Haskell: Lesing av tekstfil"
-simple_title:         "Lesing av tekstfil"
+title:                "Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
+## Hva & Hvorfor?
 
-Lesing av en tekstfil er en vanlig oppgave for programmerere. Det handler om å lese og tolke informasjon fra en fil lagret på en datamaskin. Dette er nyttig når man ønsker å hente ut data fra en ekstern kilde, som for eksempel en database eller et API. Det kan også være nødvendig å lese en tekstfil i programmering for å utføre spesifikke oppgaver, som for eksempel å manipulere data eller å trekke ut nødvendig informasjon.
+Å lese en tekstfil er prosessen å hente data direkte fra en fil i stedet for å skrive den inn manuelt. Programmører gjør dette for å lagre og gjenbruke store mengder data uten å gjenta koden.
 
 ## Hvordan:
-
-I Haskell kan vi lese en tekstfil ved å bruke funksjonen "readFile". Denne funksjonen tar inn navnet på filen som argument og returnerer innholdet av filen som en streng. La oss se et eksempel på hvordan dette kan gjøres:
+Å lese en fil i Haskell er ganske enkelt. La oss se på et eksempel.
 
 ```Haskell
-main = do
-  fileContents <- readFile "tekstfil.txt"
-  putStrLn fileContents
+import System.IO   
+
+hoved :: IO ()
+hoved = gjøre
+    innhold <- readFile "test.txt"
+    putStrLn innhold
 ```
 
-Her bruker vi "putStrLn" funksjonen til å skrive ut innholdet av filen til standard output. Dette eksempelet antar at tekstfilen "tekstfil.txt" ligger i samme mappe som Haskell-filen.
+Ekte output kan være noe som ligner på følgende:
 
-Når vi kjører dette programmet, vil vi få utskriften av filens innhold på skjermen.
+```Haskell
+Dette er en test.
+Hei, verden!
+```
+
+Dette eksemplet leser innholdet av `test.txt` filen og deretter skriver ut innholdet til konsollen.
 
 ## Dypdykk:
+Historisk sett har programmeringsspråk alltid hatt nødvendigheten av å lese fra en fil, så dette er helt fra begynnelsen av informatikk. Haskell, derimot, ble etablert med en sterk vekt på funksjonell renhet, noe som gjør at operasjoner som fillesing, som er I/O-avhengige, blir håndtert litt annerledes enn andre språk.
 
-Historisk sett var lesing av tekstfiler en viktig oppgave i programmering, spesielt når det gjaldt å lese og tolke data fra eksterne kilder. I dag er det imidlertid flere alternativer for å lese og håndtere data i programmering, som for eksempel bruk av databaser eller nettverkskommunikasjon gjennom API-er.
+Som alternativer kan du bruke `getContents` for å lese fra standard input, eller `Interact` funksjonen for å manipulere input og output på en høyere abstraksjonsnivå.
 
-Når det gjelder utførelse og implementasjon av lesing av tekstfiler, avhenger det av språk og biblioteker som brukes. I Haskell brukes "readFile" funksjonen fra standardbiblioteket "System.IO" til å lese filer. Det finnes også andre funksjoner og biblioteker tilgjengelig for lesing og håndtering av tekstfiler i Haskell.
+Når det gjelder implementeringsdetaljer, er `readfile` faktisk definert ved hjelp av `openFile` og `hGetContents`, som er de grunnleggende byggeklossene for fil IO i Haskell.
 
 ## Se også:
+Studere disse kildene for å sakke perlefiske mer.
 
-- [Haskell Dokumentasjon](https://www.haskell.org/documentation/)
-- [Haskell Biblioteker](https://hackage.haskell.org/)
-- [Haskell Programmeringsspråk](https://www.haskell.org/)
+- [Haskell's IO inside](https://www.haskell.org/tutorial/io.html)
+- [Chapter 7 - I/O](http://learnyouahaskell.com/input-and-output)
+- [Real World Haskell - Files and handles](http://book.realworldhaskell.org/read/io.html)

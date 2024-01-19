@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana wielkości liter w ciągu znaków"
-html_title:           "C#: Zmiana wielkości liter w ciągu znaków"
-simple_title:         "Zmiana wielkości liter w ciągu znaków"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "C#: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Kapitalizacja ciągu znakowego to zmiana pierwszej litery każdego słowa na dużą. Programiści często wykorzystują to w swoim kodzie, aby poprawić czytelność i estetykę wyświetlanych wiadomości lub etykiet.
+# Poradnik do Kapitalizacji Tekstu w języku C# 
+
+## Co i Dlaczego?
+Kapitalizacja tekstu oznacza konwersję pierwszych liter każdego słowa do wielkich liter. Programiści robią to z wielu powodów, takich jak poprawa czytelności i zgodność z konwencjami dotyczącymi tytułów.
 
 ## Jak to zrobić:
-Aby kapitalizować ciąg znakowy w C#, możesz użyć metody `ToUpper` lub `ToTitleCase`. Przykład:
-
+Metodą kapitalizacji w C# jest `TextInfo.ToTitleCase`. Poniżej znajduje się przykładowy kod:
 ```C#
-string message = "witaj, programisto!";
-Console.WriteLine(message.ToUpper());
-// Output: WITAJ, PROGRAMISTO!
+using System;
+using System.Globalization;
+
+class MainClass {
+  public static void Main (string[] args) {
+    TextInfo myTI = new CultureInfo("en-US",false).TextInfo;
+    string myString = "witaj świecie";
+    string myCapitalizedString = myTI.ToTitleCase(myString);
+    Console.WriteLine (myCapitalizedString);
+  }
+}
+
 ```
-
-```C#
-string label = "opcje użytkownika";
-Console.WriteLine(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(label));
-// Output: Opcje Użytkownika
+Output:
 ```
+Witaj Świecie
+```
+## Dogłębne zrozumienie
+C# nie zawiera wbudowanej metody do kapitalizacji, ale `ToTitleCase` w klasie `TextInfo` jest najbliższym odpowiednikiem. 
 
-## Głębsze zanurzenie:
-Metoda `ToUpper` jest dostępna w C# już od wersji 1.0, natomiast `ToTitleCase` pojawiła się dopiero w wersji 4.0. Alternatywą dla tych metod jest użycie pętli i ręcznego zmieniania pierwszych liter w ciągu znaków. Jest to jednak mniej wydajne i bardziej podatne na błędy.
+Projektanci języka C# mogli zdecydować, że nie ma potrzeby włączenia takiej funkcji z naruszeniem zasady jednego odpowiedzialnego za najmniejszą możliwą funkcję.
 
-Jeśli chcesz kapitalizować tylko pierwszą literę całego ciągu, możesz użyć metody `ToTitleCase` w połączeniu z `Substring` i `ToLower`. Aby dodatkowo uniknąć błędów związanych z wielokulturowością, zaleca się użycie klasy `TextInfo` zdefiniowanej w klasie `CultureInfo`.
+Alternatywą dla użycia `ToTitleCase` jest napisanie własnej funkcji lub korzystanie z bibliotek zewnętrznych, które oferują tę funkcję.
 
-## Zobacz także:
-- [Dokumentacja C# dla metody ToUpper](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.toupper?view=net-5.0)
-- [Dokumentacja C# dla metody ToTitleCase](https://docs.microsoft.com/pl-pl/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0)
-- [Pomoc techniczna Microsoft dla klasy TextInfo](https://docs.microsoft.com/pl-pl/dotnet/api/system.globalization.textinfo?view=net-5.0)
+Ważnym elementem projektu `ToTitleCase` jest to, że nie zmienia wielkości liter w środku słów. Dlatego "iPhone" zostanie zachowane, zamiast stawać się "IPhone".
+
+## Zobacz także
+- Microsoft Documentation on TextInfo.ToTitleCase: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase
+- StackOverflow Discussion on Capitalizing in C#: https://stackoverflow.com/questions/4483886/how-can-i-convert-a-string-to-title-case

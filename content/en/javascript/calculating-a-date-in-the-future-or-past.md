@@ -11,31 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Calculating a date in the future or past involves using a programming language like Javascript to determine a specific date by adding or subtracting days, months, or years from a given date. Programmers use this to automate tasks such as scheduling appointments, sending reminders, or setting deadlines.
+
+Calculating a date in the future or past is a common task. We do this to manage events, expiry checks, and reminder systems.
 
 ## How to:
-To calculate a date in the future or past in Javascript, use the `getDate()`, `getMonth()`, and `getFullYear()` methods to get the current date values. Then, use the `setDate()`, `setMonth()`, and `setFullYear()` methods to manipulate the date. Finally, use the `toDateString()` method to convert the date object into a readable format.
 
-Example: 
-```
-//Calculating 10 days in the future
-var today = new Date(); //returns current date
-today.setDate(today.getDate() + 10); //sets new date 10 days in the future
-console.log(today.toDateString()); //displays new date as a string
-```
-Output: 
-```
-Sat Jan 16 2021
-```
-## Deep Dive:
-- Historical context: Before the emergence of programming languages, calculations involving dates were done manually. However, this was prone to human error and time-consuming. With the advancement of technology, programmers were able to automate this process, making it more accurate and efficient.
+Here's the essential code. Adjust `daysToAdd` or use `-` for past dates.
+```JavaScript
+var daysToAdd = 5;
+var date = new Date();
 
-- Alternatives: While Javascript is a popular choice for calculating dates, there are other programming languages such as Python, Java, and C++ that also have date manipulation capabilities.
+date.setDate(date.getDate() + daysToAdd);
 
-- Implementation details: Calculating dates in the future or past involves understanding the syntax of the programming language being used and the methods specific to dates. It also requires knowledge of date formatting to ensure the desired output is achieved.
+console.log(date);
+```
+Run the script, and you'll see a date 5 days from today.
 
-## See Also:
-To learn more about calculating dates in the future or past in Javascript, check out these resources:
-- [MDN web docs on Dates in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools tutorial on Javascript Dates](https://www.w3schools.com/js/js_dates.asp)
-- [Date-fns library for Javascript](https://date-fns.org/)
+## Deep Dive
+
+Historically, `setDate()` and `getDate()` methods arose from Java in the 90s, to simplify date manipulation. There are alternatives, but none native and as straightforward.
+
+You could use libraries like Moment.js or Day.js. Here's an example using Day.js:
+
+```JavaScript
+var dayjs = require('dayjs')
+var date = dayjs().add(5, 'day').toDate();
+
+console.log(date);
+```
+While libraries provide additional functions, they add dependency and load.
+
+What's happening in our original code? `getDate()` fetches the day of the month, `setDate()` alters it. So, when we `setDate(date.getDate() + daysToAdd);`, we shift the date.
+
+## See Also
+
+- JavaScript Date setDate() Method: [https://www.w3schools.com/jsref/jsref_setdate.asp](https://www.w3schools.com/jsref/jsref_setdate.asp)
+- JavaScript Date getDate() Method: [https://www.w3schools.com/jsref/jsref_getdate.asp](https://www.w3schools.com/jsref/jsref_getdate.asp)
+- Day.js Documentation: [https://day.js.org/](https://day.js.org/)
+- Moment.js Documentation: [https://momentjs.com/docs/](https://momentjs.com/docs/)

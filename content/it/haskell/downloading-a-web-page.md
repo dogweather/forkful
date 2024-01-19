@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "Haskell: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,47 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché scaricare una pagina web?
+# L'arte del Download di una Pagina Web in Haskell
 
-Scaricare una pagina web significa ottenere il codice sorgente di una pagina web da un server tramite una connessione Internet. I programmatori spesso scaricano pagine web per analizzare il codice o estrarre informazioni utili.
+## Che Cosa & Perché?
+Il download di una pagina web è il processo di copia dei dati di una pagina web sul tuo computer locale. I programmatori lo fanno spesso per l'elaborazione offline dei dati o l'analisi web.
 
-## Come fare:
+## Come Fare:
+Per scaricare una pagina web in Haskell, puoi usare la libreria http-conduit. Ecco un esempio di codice.
 
-```Haskell 
-import Network.HTTP.Simple
-import qualified Data.ByteString.Lazy as L
-import Network.HTTP.Client
+```Haskell
+import Network.HTTP.Conduit
+import Data.ByteString as B
 
 main :: IO ()
 main = do
-  request <- parseRequest "https://www.example.com"
-  response <- httpLbs request
-  print $ getResponseStatusCode response
-  print $ getResponseHeader "Content-Type" response
-  L.putStr $ getResponseBody response
+  putStrLn "Scarica una pagina web in Haskell"
+  siteData <- simpleHttp "http://www.example.com"
+  B.writeFile "example.html" siteData
+  putStrLn "Fatto, controlla il tuo file example.html."
 ```
 
-Esempio di output:
+Quando esegui il codice sopra, scaricherà il HTML dalla pagina www.example.com e lo salverà nel file 'example.html'.
 
-```Haskell 
-200
-Just "text/html; charset=utf-8"
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-...
-```
 
-## Approfondiamo:
+## Approfondimento:
+La libreria http-conduit è recente rispetto alla maggior parte delle altre librerie HTTP di Haskell. È nata dall'evoluzione delle pratiche di programmazione di rete con Haskell ed è attualmente una delle scelte più popolari per tale scopo. Altre opzioni sono la libreria http ed http-streams, ma http-conduit è più versatile.
 
-Scaricare pagine web è un'operazione comune nella programmazione moderna. Ci sono diverse librerie disponibili in Haskell per farlo, come ad esempio `http-client` e `http-conduit`. Inoltre, è possibile utilizzare anche strumenti come `curl` e `wget` da riga di comando.
+In termini di dettagli di implementazione, `simpleHttp` esegue una richiesta GET al sito web specificato e restituisce i dati come `ByteString`. ByteString è più efficiente in termini di memoria rispetto a String, motivo per cui viene utilizzata in situazioni come questa dove i dati possono essere grandi.
 
-Un aspetto importante da tenere in considerazione quando si scaricano pagine web è il trattamento dei dati sensibili, come ad esempio password e token di autenticazione. E' importante utilizzare protocolli sicuri come HTTPS e gestire correttamente la sicurezza dei dati.
 
-## Vedi anche:
-
-- [Hackage - HTTP Client](https://hackage.haskell.org/package/http-client)
-- [Hackage - HTTP Conduit](https://hackage.haskell.org/package/http-conduit)
-- [CURL](https://curl.haxx.se/)
-- [Wget](https://www.gnu.org/software/wget/)
+## Altre Risorse:
+1. Documentazione della libreria http-conduit: [link](http://hackage.haskell.org/package/http-conduit)
+2. Un tutorial su come effettuare richieste HTTP in Haskell: [link](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/tagsoup).
+3. Il pacchetto http di Haskell: [link](http://hackage.haskell.org/package/HTTP)
+4. Il pacchetto http-streams di Haskell: [link](http://hackage.haskell.org/package/http-streams)

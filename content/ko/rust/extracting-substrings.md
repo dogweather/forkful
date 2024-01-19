@@ -1,6 +1,6 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Rust: 부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
 simple_title:         "부분 문자열 추출"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,25 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-"서브스트링 추출"이란 무엇일까요? 이것은 문자열에서 특정 부분을 추출하는 것을 의미합니다. 프로그래머들은 이것을 주로 사용하는 이유는 문자열에서 필요한 정보만을 추출하고자 할 때, 혹은 문자열을 조작하거나 분석할 때 유용하기 때문입니다.
+# 서브스트링 추출하기: Rust 프로그래밍
+**서브스트링 추출하기**에 대해 배워봅시다. Rust에서 서브스트링 추출하는 방법을 친절하게 설명해드릴게요.
 
-## 어떻게:
+## 서브스트링 추출, 그게 뭐지? 왜 필요해?
+
+서브스트링 추출이란, 문자열의 일부분을 추출하는 행동을 말합니다. 이를 통해 프로그래머들은 문자열의 지정된 부분에만 접근하고 조작할 수 있어요.
+
+## 어떻게 해야할까?
+Rust에서 서브스트링을 추출하는 방법은 아래의 예제를 참고하세요.
+
 ```Rust
-let my_string = "Rust는 최고입니다!";
-let extracted = &my_string[0..4];
-println!("{}", extracted); // Output: Rust
+fn main() {
+    let my_string = "안녕하세요, Rust 프로그래밍!";
+    let hello = &my_string[0..5];
+    let programming = &my_string[12..15];
+    println!("{}", hello); // "안녕하세요"
+    println!("{}", programming); // "프로그래밍"
+}
 ```
-문자열에서 서브스트링을 추출하기 위해서는 대괄호 안에 시작 인덱스와 끝 인덱스를 입력하면 됩니다. 위의 예시에서는 "Rust"라는 문자열의 첫 번째부터 네 번째까지를 추출해 출력하는 코드입니다.
+`[a..b]` 구문을 이용하면 `a`번째 인덱스부터 `b`번째 인덱스까지의 문자열을 얻을 수 있어요. 그 결과는 새 문자열의 참조로 반환됩니다.
 
-## 깊이 파보기:
-1) 역사적 배경: 서브스트링 추출은 옛날부터 다양한 프로그래밍 언어에서 많이 사용되어 왔습니다. C, Java, Python 등 다양한 프로그래밍 언어에서도 이 기능을 지원하고 있습니다.
+## 더 깊게 알아보기
+서브스트링의 추출은 문자열 조작의 기본이며, 많은 프로그래밍 언어에서 공통적으로 제공하고 있습니다.
 
-2) 대안: 서브스트링 추출을 위한 다른 대안으로는 정규 표현식을 이용하는 것이 있습니다. 정규 표현식은 문자열에서 패턴을 찾아 추출하는데 유용합니다.
+Rust의 대안적인 서브스트링 추출 방법으로는 `char_indices` 함수를 사용하는 방법이 있어요. `char_indices` 함수는 각 문자와 그 인덱스를 반복자로 제공합니다. 
+그러나, 위에서 제시된 방법이 보통 가장 쉽고 빠르게 사용할 수 있습니다.
 
-3) 구현 세부 사항: Rust는 문자열을 UTF-8로 인코딩하기 때문에 문자열 슬라이스를 사용하여 서브스트링을 추출할 때에도 주의해야 합니다. 인덱스를 직접 입력하는 것 외에도, 문자열 메서드를 이용하여 인덱스를 계산할 수도 있습니다.
+Rust에서 이용할 수 있는 다른 문자열 조작 기능들도 많이 있으니, 필요에 따라 탐색해보세요.
 
-## 참고자료:
-- Rust 공식 문서: https://www.rust-lang.org/learn
-- "Rust 입문서" 출판물: https://doc.rust-lang.org/book/
-- "Rust From Zero to Async/Await" 유투브 채널: https://www.youtube.com/channel/UCZVlfirg_pmj4gq0qrupj2Q
+## 참고하기
+더 많은 정보와 예제를 참고하려면 아래 링크를 참조하세요.
+
+- Rust 공식 문서: [문자열 조작](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [Rust의 `str` 타입 API 문서](https://doc.rust-lang.org/std/primitive.str.html)
+- [Rust - 문자열 슬라이싱 튜토리얼](https://www.tutorialspoint.com/rust/rust_string_slices.htm)

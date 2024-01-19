@@ -1,6 +1,6 @@
 ---
 title:                "डीबग आउटपुट प्रिंट करना"
-html_title:           "Swift: डीबग आउटपुट प्रिंट करना"
+html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
 simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या और क्यों? (What & Why?)
 
-डीबग आउटपुट प्रिंट करना एक प्रोग्रामरों के लिए बहुत ही महत्वपूर्ण है। यह उनको अपनी कोड में संशोधन करने के लिए आवश्यक जानकारी प्रदान करता है। डीबग आउटपुट से हम अपने कोड की समस्याओं को खोज और उन्हें ठीक कर सकते हैं।
+डीबग आउटपुट प्रिंट करना, मूल रूप से, एक प्रोग्राम का विकल्प होता है जो उसकी क्रियाकलापों की जांच करने में मदद करता है। प्रोग्रामर्स यह करते हैं ताकि वे समस्याओं को खोज सकें और कोड की कार्यकारीता को बेहतर देख सकें। 
 
-## कैसे करें?
+## कैसे : (How To:)
 
- ```Swift
- print("Hello, world!")
- // Output: Hello, world!
- 
- var num1 = 5
- var num2 = 3
- print(num1 + num2)
- // Output: 8
- 
- let str = "Debugging is crucial!"
- print("Don't forget to \(str)")
- // Output: Don't forget to Debugging is crucial!
- ```
-डीबग आउटपुट करने के लिए हम `print()` फंक्शन का उपयोग करते हैं। यह फंक्शन हमारे द्वारा दिए गए आर्ग्यूमेंट को कंसोल पर प्रिंट करता है। हम इस फंक्शन के अंदर किसी भी डेटा टाइप को पास कर सकते हैं, जैसे स्ट्रिंग्स, इंटीजर्स या वेरिएबल्स।
+Swift में, डीबग आउटपुट `print` फ़ंक्शन का उपयोग करने से प्रिंट किया जा सकता है:
 
-## गहराई में जाएं
+``` Swift
+let name = "Swift"
+print("Hello, \(name)")
+```
 
-डीबग आउटपुट प्रिंट करने की खोज बहुत पुरानी है। पहले प्रोग्रामिंग भाषाओं में, यह आधिकारिक तौर पर `printf()` फंक्शन का उपयोग किया जाता था। आज, अधिकांश प्रोग्रामिंग भाषाओं में इसका एक स्वतन्त्र फंक्शन होता है। अन्य विकल्पों के रूप में, हम डीबग लग कर कोड को दौड़ा सकते हैं या निर्माता उत्पादन (debug vs production) सेटिंग्स में अंतरिक्ष दिखा सकते हैं। इम्प्लिमेंटेशन के बारे में, `print()` फंक्शन लगभग लगभग सभी प्रोग्रामिंग भाषाओं में उपलब्ध होता है।
+उपरोक्त कोड का आउटपुट होगा:
 
-## देखें भी
+```
+Hello, Swift
+```
 
-डीबग आउटपुट के बारे में अधिक जानने के लिए, निम्न लिंक देखें:
+## गहरा डाइव (Deep Dive)
 
-- [Apple: Debugging in Swift](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Debugging.html)
-- [Swift Blog: Debugging with Print Statements](https://swift.org/blog/debugging-with-print-statements/)
-- [Medium: Debugging in Swift with Xcode](https://medium.com/@kurtulus/1-debugging-in-swift-with-xcode-67bb2eda5808)
+1. ऐतिहासिक प्रसंग: 
+
+   'print' फ़ंक्शन का उपयोग करने की सलाह 1960 की भाषाओं से होती आई है, जैसे कि FORTRAN। Swift ने इसे भी अपना लिया है।
+
+2. विकल्प: 
+
+   Swift में, डीबग प्रिंट (`debugPrint`) और डीबग लुग (`debugLog`) फ़ंक्शन भी होते हैं, जिन्हें भी उपयोग कर सकते हैं। 
+
+3. विन्यास विवरण:
+
+   `print` फ़ंक्शन debug output के लिए व्यवस्थागत टूल है और इसे आमतौर पर रिलीज़ बिल्ड में नहीं शामिल किया जाता है। 
+
+## देखें भी (See Also)
+
+1. [Apple's Swift Documentation on Console Output](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html)
+2. [Swift Debugging Guide](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/special_debugging_workflows.html)

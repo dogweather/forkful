@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 검색 및 교체"
-html_title:           "Bash: 텍스트 검색 및 교체"
+html_title:           "Elixir: 텍스트 검색 및 교체"
 simple_title:         "텍스트 검색 및 교체"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-검색 및 치환 텍스트는 프로그래머들이 코드에서 특정 텍스트를 찾고 다른 텍스트로 대체하는 것을 말합니다. 이를 통해 프로그래머들은 코드를 빠르게 수정하고 개선할 수 있습니다.
+## 뭐하고 왜?
+텍스트 검색 및 바꾸기는 특정 문자열을 찾아 다른 문자열로 대체하는 것을 말합니다. 이 기능은 코드 수정, 데이터 변환, 자동화 작업 등에 프로그래머들이 자주 사용합니다.
 
-## 하는 방법:
-### 예제 1: 단순한 텍스트 치환
+## 어떻게 하는지:
+간단한 예시로 어떻게 사용하는지 알아봅시다. 다음은 'hello'를 'hi'로 바꾸는 코드입니다:
+
 ```Bash
-# 아래의 코드는 "Hello world"를 "안녕하세요"로 치환합니다.
-echo "Hello world" | sed 's/Hello/안녕/g'
+$ echo "Hello, World!" | sed 's/Hello/Hi/'
 ```
+이 코드를 실행하면, 결과는 다음과 같습니다:
 
-```
-안녕 world
-```
-
-### 예제 2: 정규표현식을 이용한 치환
 ```Bash
-# 아래의 코드는 파일에서 모든 숫자를 "#"로 대체합니다.
-# sed의 -i 옵션은 원본 파일을 직접 수정합니다.
-sed -i 's/[0-9]/#/g' your_file.txt
+Hi, World!
 ```
+이 예시에서, "sed"는 Stream EDitor의 줄임말로 텍스트를 조작할 수 있는 유니버셜 툴입니다. 's/Hello/Hi/'는 'Hello'를 'Hi'로 대체하라는 명령입니다.
 
-```
-# # # # ...
-```
+## 심화 학습
+더 깊이 학습하기 위해 이 기능의 (1) 역사적 배경, (2) 대안, 그리고 (3) 세부 구현 방법에 대해 알아봅시다.
 
-## 깊이 파헤치기:
-### 역사적인 배경:
-검색 및 치환 텍스트는 1970년대에 개발된 ed 에디터에서 최초로 사용되었습니다. 현재 bash 쉘에서는 sed 명령어를 이용하여 검색 및 치환을 수행할 수 있습니다.
+(1) sed는 70년대에 개발되었어요. 이후로 텍스트 편집 및 조작에 우리에게 무궁무진한 가능성을 제공했습니다.
 
-### 다른 대안:
-검색 및 치환을 지원하는 다른 도구로는 awk, perl, python 등이 있습니다. 이들 도구는 각각의 장단점이 있으며, 적합한 상황에 따라 사용할 수 있습니다.
+(2) 검색 및 대체 작업에는 Perl, Python, AWK 같은 다른 언어 또는 도구도 사용할 수 있습니다. 
 
-### 구현 상세:
-검색 및 치환은 정규표현식을 이용하여 이루어집니다. 정규표현식은 특정 패턴을 가진 문자열을 찾는데 사용될 수 있습니다. sed 명령어는 이러한 정규표현식을 쉽게 사용할 수 있도록 도와줍니다.
+(3) sed의 's' 명령어는 검색 및 대체 작업에 사용됩니다. 's/foo/bar/' 형식으로 쓰면 'foo'를 'bar'로 대체하는 작업을 수행합니다.
 
-## 관련 자료:
-- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/bash.html)
-- [sed 명령어 설명서](https://www.gnu.org/software/sed/manual/sed.html)
-- [awk, perl, python 비교](https://stackoverflow.com/questions/6206008/what-is-the-difference-between-sed-awk-and-perl)
+## 참고 자료
+더 많은 정보를 찾으려면 아래 링크를 확인하세요:
+- GNU sed: https://www.gnu.org/software/sed/
+- AWK: https://www.gnu.org/software/gawk/
+- Perl: https://www.perl.org/
+- Python: https://www.python.org/
+
+이해가 필요한 부분이 있다면 언제든 질문해주세요! Happy coding~

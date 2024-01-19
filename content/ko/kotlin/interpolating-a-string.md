@@ -1,7 +1,7 @@
 ---
-title:                "문자열 보간"
-html_title:           "Kotlin: 문자열 보간"
-simple_title:         "문자열 보간"
+title:                "문자열 보간하기"
+html_title:           "Clojure: 문자열 보간하기"
+simple_title:         "문자열 보간하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kotlin에서 문자열 보간하기 
+## 무엇이고 왜 필요한가?
+문자열 템플릿 또는 문자열 의 삽입이라는 것은 무엇일까요? 문자열 템플릿은 개별 변수가 아닌 문자열 내에서 변수를 사용하는 문법입니다. 이를 사용하면 코드가 깔끔해지고, 가독성이 향상되며, 문자열 조작 시 실수를 줄일 수 있으므로 프로그래머들이 주로 사용합니다.
 
-## 무엇이며 왜?
-문자열 보간하기란 변수 값이나 식을 문자열에 쉽게 삽입하는 것을 말합니다. 이를 프로그래머들은 간단한 문장을 만드는데 사용합니다. 예를 들어, 사용자의 이름이나 나이를 출력할 때 유용하게 사용할 수 있습니다.
+## 어떻게 하는가?
+다음은 Kotlin에서 문자열 템플릿을 어떻게 사용하는지에 대한 코드 예시입니다:
 
-## 하는 방법:
+```Kotlin
+fun main() {
+    val name = "Jake"
+    println("Hello, $name!")
+}
 ```
-Kotlin
-val name = "John"
-println("My name is $name") // Output: My name is John
+이 코드를 실행하면 다음의 내용이 출력됩니다:
+
 ```
-```
-Kotlin
-val num1 = 10
-val num2 = 20
-println("The sum of $num1 and $num2 is ${num1 + num2}") // Output: The sum of 10 and 20 is 30
+Hello, Jake!
 ```
 
-## 깊이 들어가기:
-- 문자열 보간은 코틀린 2.0 버전에서 처음 도입되었습니다.
-- 다른 방법으로는  문자열 템플릿 사용이 있습니다. 하지만 문자열 보간은 변수나 식을 더 간편하게 삽입할 수 있도록 해줍니다.
-- 실제로는 변수나 식이 문자열로 변환되는 과정을 통해 동작합니다.
+## 심층 탐구
+1) Kotlin의 문자열 템플릿 문법은 다른 언어, 예를 들어 Python의 f-string 문법이나 JavaScript의 템플릿 리터럴 문법과 유사합니다. 
 
-## 참고자료:
-- [Kotlin 공식 문서](https://kotlinlang.org/docs/reference/basic-types.html#string-interpolation)
-- [Kotlin 코딩 패턴](https://kotlinlang.org/docs/reference/coding-conventions.html#string-interpolation)
+2) 문자열을 조작하는 다른 방법으로는 + 연산자를 사용하여 문자열을 붙이는 방법이 있습니다. 하지만, 이 방법은 코드가 복잡해질수록 가독성이 떨어지고 실수로 인한 버그가 발생할 확률이 높아집니다.
+
+3) Kotlin의 문자열 템플릿은 컴파일 시간에 문자열 연결로 변환되어 실행이 됩니다. 즉, 문자열 템플릿은 실행 성능에 큰 영향을 끼치지 않습니다.
+
+## 참고 자료
+더 자세한 내용은 다음의 링크를 확인해보세요:
+- [Kotlin 공식 문서: 문자열 템플릿](https://kotlinlang.org/docs/string-templates.html)
+- [Kotlin 문자열 사용법 바로알기](https://www.androidhuman.com/lecture/kotlin/2016/07/06/basic_string/)

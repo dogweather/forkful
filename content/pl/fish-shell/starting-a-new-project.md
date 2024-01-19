@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczynając nowy projekt"
-html_title:           "Fish Shell: Rozpoczynając nowy projekt"
-simple_title:         "Rozpoczynając nowy projekt"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -11,22 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Rozpoczęcie nowego projektu to często pierwszy krok w tworzeniu oprogramowania. Programiści robią to z różnych powodów - może to być potrzeba zaktualizowania istniejącego projektu, stworzenia zupełnie nowej aplikacji lub zaspokojenia potrzeb rynku.
+Rozpoczęcie nowego projektu to jak budowla od podstaw - jest to start punkt do kreowania nowego oprogramowania. Programiści robią to, aby rozwiązać nowe problemy lub by poprawić istniejący proces.
 
 ## Jak to zrobić:
+Zaczynamy od instalacji Fish Shella, jeśli jeszcze go nie masz. Najprostszy sposób to:
+```Fish Shell
+brew install fish
+```
+Załóżmy, że chcemy stworzyć nowy projekt o nazwie "MyProject". Tworzymy nowy katalog i przechodzimy do niego:
+```Fish Shell
+mkdir MyProject
+cd MyProject
+```
+Zgodnie z dobrą praktyką, powinieneś zainicjować git w swoim projekcie:
+```Fish Shell
+git init
+```
+I to wszystko! Rozpoczęliśmy nowy projekt.
 
- 
-Fish Shell jest potężnym narzędziem, które ułatwia programistom uruchamianie nowych projektów. Możesz zacząć od stworzenia nowego katalogu dla Twojego projektu, a następnie użyć komendy `fish` w terminalu, aby uruchomić powłokę Fish Shell. Następnie możesz użyć komendy `touch` i nazwać plik `index.html` lub `main.py` w zależności od języka programowania, który chcesz użyć do swojego projektu. Możesz również wprowadzić zmiany w plikach projektu za pomocą polecenia `nano index.html` lub `nano main.py`, aby mieć dostęp do edytora tekstu wewnątrz konsoli.
+## Głębsza wiedza
+Historiczenie, programiści używali różnych shelli do pisania skryptów takich jak Bash czy zsh. Fish jest jednak nowocześniejszy, łatwiejszy w użyciu, i posiada wiele przydatnych funkcji które przyspieszają proces programowania.
 
-## Wgląd:
+Co do alternatyw, mamy wiele innych opcji jak PowerShell, C Shell, Korn Shell i wiele innych. Każdy ma swoje unikalne funkcje i możesz wybrać ten, który najlepiej odpowiada Twoim potrzebom.
 
-Fish Shell został wypuszczony w 2011 roku i jest uważany za bardziej nowoczesną i przyjazną dla użytkownika alternatywę dla innych powłok, takich jak Bash. Pomimo że jest on wzorowany na PowerShellu, jest on bardziej przyjazny dla początkujących programistów. Fish Shell oferuje również wiele przydatnych funkcji, takich jak automatyczne uzupełnianie poleceń i historię poleceń.
+Gdy tworzysz nowy projekt, duże znaczenie ma struktura katalogów i nazwy plików. Ważne jest, aby były one odpowiednie dla Twojego projektu i zgodne z ogólnie przyjętymi standardami.
 
-## Zobacz także:
-
-Linki do źródeł związanych z omawianym tematem:
-
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Studio programowania Fish Shell na YouTube](https://www.youtube.com/watch?v=hljJINn-CGw)
-- [Poradnik Fish Shell na GitHubie](https://github.com/joegoats/awesome-fish)
+## Zobacz też
+1. Dokumentacja Fish Shell - https://fishshell.com/docs/current/index.html
+2. Porównanie różnych shelli - https://www.slant.co/topics/514/~best-unix-shells
+3. Instrukcja jak używać git - https://git-scm.com/doc
+4. Poradnik organizacji projektów - https://docs.python-guide.org/writing/structure/

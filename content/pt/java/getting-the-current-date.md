@@ -1,6 +1,6 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "Java: Obtendo a data atual"
+html_title:           "C: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Java"
 category:             "Java"
@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é & Por quê?
+## O Que & Por Que? 
+Obter a data atual é uma tarefa que envolve recuperar a data e hora atuais de acordo com o sistema ou a zona horária. Programadores fazem isso para registar eventos, marcar transações, gerar relatórios baseados no tempo, entre outros.
 
-A obtenção da data atual é uma função importante em programação, pois permite que os desenvolvedores obtenham a data e hora exatas no momento em que o código é executado. Isso é particularmente útil para aplicativos que dependem de eventos em tempo real, como agendamento de tarefas ou atualizações de dados.
+## Como Fazer:
+Em Java, a classe `LocalDate` do pacote `java.time` nos permite obter a data atual. Aqui está um exemplo:
+```Java 
+import java.time.LocalDate;
 
-## Como fazer:
-
-```
-Java ... 
-import java.util.Date;
-
-public class GetDateExample {
-
-    public static void main(String[] args) {
-
-        // Obtém a data atual
-        Date dataAtual = new Date();
-
-        // Exibe a data atual no formato padrão
-        System.out.println(dataAtual);
-
-        // Exibe a data atual com formatação personalizada
-        System.out.printf("%tB %<te, %<tY at %<tl:%<tM %<Tp", dataAtual);
+public class Principal {
+    public static void main(String[] args) {      
+        LocalDate dataAtual = LocalDate.now();
+        System.out.println("A data de hoje é: " + dataAtual);
     }
 }
 ```
-
-Output:
+No `output` você receberá:
+```Java
+A data de hoje é: 2022-01-04 (por exemplo)
 ```
-Mon Oct 25 12:56:42 EDT 2021
-October 25, 2021 at 12:56 PM
-```
+## Aprofundando
+Historicamente, em versões anteriores do Java, usávamos a classe `java.util.Date` para obter a data e hora atuais. Porém, essa classe é difícil de manipular, levando à introdução do pacote `java.time` no Java 8.
+Alternativas incluem classes como `java.time.LocalDateTime` e `java.time.ZonedDateTime`, que fornecem mais detalhes como horário e fuso horário, respectivamente.
+Em termos de detalhes de implementação, a classe `LocalDate` recupera a data do relógio do sistema com base no fuso horário padrão.
 
-## Mergulho profundo:
-
-Embora possa parecer uma tarefa simples, obter a data atual envolve vários conceitos de programação, como a utilização de bibliotecas padrão e armazenamento da data em diferentes formatos. Além disso, existem várias alternativas para obter a data atual, incluindo o uso de APIs externas ou servidores NTP. Alguns desenvolvedores também podem optar por usar uma variável de ambiente para armazenar a data atual em vez de chamá-la repetidamente no código.
-
-## Veja também:
-
-- [Documentação oficial do Java sobre a classe Date] (https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html)
-- [Como obter a data atual em diferentes formatos em Java] (https://www.w3resource.com/java-tutorial/date-time/how-to-get-current-date-and-time-in-java.php)
-- [Exemplos de uso de APIs externas para obter a data atual] (https://www.baeldung.com/java-date-time)
+## Veja Também
+Aqui estão alguns links para referências relevantes:
+- Documentação oficial da API Java: [java.time.LocalDate] (https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
+- Tutorial da Oracle sobre a API `java.time`: [Date Time] (https://docs.oracle.com/javase/tutorial/datetime/)
+- Stack Overflow para perguntas relacionadas: [java.time] (https://stackoverflow.com/questions/tagged/java.time)

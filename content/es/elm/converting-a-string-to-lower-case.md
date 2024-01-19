@@ -1,6 +1,6 @@
 ---
 title:                "Convirtiendo una cadena a minúsculas"
-html_title:           "Elm: Convirtiendo una cadena a minúsculas"
+html_title:           "Bash: Convirtiendo una cadena a minúsculas"
 simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,22 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
+Convertir una cadena a minúsculas significa cambiar todos los caracteres en mayúsculas a minúsculas. Los programadores a menudo lo hacen para mantener la consistencia de los datos y facilitar las comparaciones sin distinción entre mayúsculas y minúsculas.
 
-Convertir una cadena de texto a minúsculas es un procedimiento común en la programación que implica cambiar todas las letras mayúsculas en una cadena a sus equivalentes en minúsculas. Esto es útil para estandarizar el formato de texto y para hacer comparaciones de texto más precisas. Los programadores a menudo hacen esto al manipular datos de entrada o al comparar entradas de usuario.
-
-## ¿Cómo se hace?
+## ¿Cómo hacerlo? 
+Aquí tienes un ejemplo directo. En Elm, puedes usar la función `String.toLower`:
 
 ```Elm
+import Html exposing (text)
 import String
 
-String.toLower "HOLA MUNDO" -- outputs "hola mundo"
-String.toLower "Elm Programming" -- outputs "elm programming"
+main =
+  text (String.toLower "HOLA MUNDO")
 ```
+Esto devolverá `"hola mundo"`.
 
-## Profundizando
+## Inmersión profunda
+La función `String.toLower` ha existido desde los primeros días de Elm. Aunque es simple y eficaz, solo funciona con el alfabeto inglés. Para idiomas que contienen caracteres especiales es posible que necesites una solución personalizada.
 
-Este proceso de convertir string a minúsculas ha sido utilizado desde los primeros días de la programación, cuando se hacían comparaciones de texto en los lenguajes de bajo nivel. Sin embargo, en Elm, esto se logra a través de la biblioteca estándar `String` en lugar de tener que codificarlo manualmente. Alternativamente, se pueden utilizar diferentes métodos, como `String.foldl` o `String.map`, para lograr el mismo resultado. La implementación de `String.toLower` en Elm usa la tabla Unicode para mapear las letras mayúsculas a sus correspondientes en minúsculas.
+Además, como alternativa, podrías utilizar la función `String.toLowercase` de JavaScript a través de ports si estás integrando Elm en un proyecto más grande de JavaScript.
 
 ## Ver también
+Para más información acerca de `String.toLower` y otras funciones de string en Elm, puedes consultar la documentación oficial de Elm:
 
-Consulte la documentación de la biblioteca `String` en la página oficial de Elm para más información sobre métodos de manipulación de cadenas en Elm. Además, también puede explorar otras formas de manipulación de textos en la biblioteca estándar de Elm como `String.replace` o `String.split`.
+1. [Elm String Module](https://package.elm-lang.org/packages/elm/core/latest/String)
+2. [Elm Guide](https://guide.elm-lang.org/)
+3. En caso de necesitar más información sobre la integración de Elm y JavaScript: [Elm JavaScript Interop](https://guide.elm-lang.org/interop/)

@@ -1,6 +1,6 @@
 ---
 title:                "Creating a temporary file"
-html_title:           "Gleam recipe: Creating a temporary file"
+html_title:           "C# recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,54 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Creating a Temporary File in Gleam: Simple Steps and In-Depth Explorations 
-
 ## What & Why?
 
-Creating a temporary file is a process of making a file that exists until it is deleted by the program or the operating system. Programmers use it as a safe storage space for data during the software's running period to handle big chunks of data or keep sensitive data off the disk.
+Creating a temporary file means generating a file that's meant to exist only until a particular program finishes. Programmers do this to temporarily store large data, reduce memory usage or share data between different parts of a program.
 
 ## How to:
 
-Use Gleam's `file` module to handle temporary files. Here's a quick run. Note that Gleam is statically typed, but infers types so you don't have to declare them.
+In Gleam, you can create a temp file using core libraries. Here's how:
 
 ```Gleam
-import gleam/file.{TempFile}
+import gleam/otp/process
+import gleam/erlang/erlang
+import gleam/io/filesystem.{Dir, File}
 
-fn temp_file_example() {
-  let temp = TempFile.new("example_temp")
-  let _ = file.write(temp, "Hello, Gleam!") 
+pub fn main() {
+  let pid = process.self()
+  let temp_dir = erlang.make_ref()
+    |> erlang.term_to_binary
+    |> erlang.binary_to_list
+  let temp_file = File.append_to(Dir.from_string("..") / Dir.from_string(temp_dir), "temp.txt")
+
+  erlang.io(fwrite("~p~n", [pid]))
+  erlang.io(fwrite("Temp file created: ~s~n", [File.to_string(temp_file)]))
 }
 ```
-
-You can check the creation of the file and its content with:
-
-```Gleam
-import gleam/file.{read}
-
-fn read_temp_file() {
-  let content = read("example_temp")
-  io.println(content)
-}
-```
-
-This will output: 
-
-```Gleam
-Ok("Hello, Gleam!")
-```
+When this code is run, it will generate a temporary file `temp.txt` in the directory pointed at by `temp_dir`, which is a uniquely named directory.
 
 ## Deep Dive
 
-Historically, temporary file management has been a crucial aspect of programming. In languages like C, programmers manually managed these files and took great care to secure, clean, and handle collision scenarios. 
+Historically, temp files were used in early programming to manage memory constraints. As memory sizes increased, this became less critical but still useful for efficiency, particularly in systems dealing with large data sets or processes.
 
-Alternatives to temp files include in-memory-storage (like arrays or lists) or databases. You can choose based on the size, lifecycle, and security of the data.
+Some alternatives to temp files include: using a database, in-memory data structures like lists or maps, or storing the data in the cloud. However, each approach comes with its own trade-offs.
 
-As per implementation in Gleam, `file` module is designed to automate the process. Note the infered type signatures, the Erlang interoperability, and immutability concepts. 
+Gleam leverages the existing Erlang library in its implementation of temp files. This gives excellent interoperability with Erlang and Elixir code, meaning you can confidently script and manage your infrastructure in Gleam.
 
-## See Also:
+## See Also
 
-- Gleam's `file` standard library [documentation](https://gleam.run/documentation/stdlib/file/).
-- Gleam [language guide](https://gleam.run/book/tour/introduction.html) to understand Gleam's features and strengths.
-- To understand file systems, data management, or data handling, see "Data and File Structure" by [Robert L Kruse](https://www.amazon.com/Data-Structure-Program-Robert-Kruse/dp/0131980125/).
-
-Remember, hands-on is the best way to learn programming. Start coding!
+* [Gleam IO docs](https://gleam.run/docs/standard-libraries/gcf/io)
+* [Erlang docs on file operations](http://erlang.org/doc/man/file.html)
+* [A guide to temp files in Unix](https://www.tldp.org/LDP/abs/html/tempfiles.html)

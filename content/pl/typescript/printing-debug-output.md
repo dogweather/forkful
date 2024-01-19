@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie wyników debugowania"
-html_title:           "TypeScript: Drukowanie wyników debugowania"
-simple_title:         "Drukowanie wyników debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,52 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co to jest i dlaczego?
 
-W drukowaniu wyjścia debugowania programiści posługują się przeróżnymi metodami, w tym wypisywaniem danych na konsoli lub zapisywaniem do pliku. Jest to ważny element procesu programowania, ponieważ umożliwia nam śledzenie i zrozumienie tego, co dzieje się wewnątrz naszego kodu. Dzięki temu możemy rozwiązać błędy i ulepszać nasze programy.
+Drukowanie debug outputu to jedna z najprostszych metod śledzenia działania naszego kodu. Umożliwia nam to obserwację zmiennych, sprawdzanie wywołania funkcji i identyfikację miejsc, w których coś idzie nie tak.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-W języku TypeScript istnieje kilka sposobów na wyświetlenie danych debugowania w naszym kodzie. Oto kilka przykładów:
+W TypeScript komunikaty służące do debugowania są najczęściej wyświetlane za pomocą `console.log()`. Możemy je wywołać z dowolnej części naszego kodu, aby sprawdzić stan konkretnej zmiennej lub działanie funkcji.
 
-### Wypisanie danych na konsoli
-```typescript
-console.log("Hello world!");
-// Output: Hello world!
+```TypeScript
+let zmienna: number = 5;
+console.log(zmienna);
+function test() {
+    console.log("Funkcja testowa została wywołana");
+}
+test();
 ```
 
-### Wypisanie danych zmiennych na konsoli
-```typescript
-let name = "Jane";
-let age = 25;
+Dla powyższego kodu otrzymamy w konsoli poniższy output:
 
-console.log(`My name is ${name} and I am ${age} years old.`);
-// Output: My name is Jane and I am 25 years old.
+```Output
+5
+Funkcja testowa została wywołana
 ```
 
-### Zapisanie danych do pliku
-```typescript
-import fs from "fs";
+## Głębsze spojrzenie:
 
-let data = "This is some data to be written to a file.";
+Historically, debugging could sometimes be a complex process, especially in lower level languages that didn't offer built-in debugging tools. However, modern languages like TypeScript have made it much easier, integrating debugging tools directly into the language's standard library.
 
-fs.writeFile("output.txt", data, (err) => {
-	if (err) throw err;
-	console.log("Data saved successfully!");
-});
-// Output: Data saved successfully!
-```
+Historically, debugging sometimes could be a complex process, especially in lower level languages that didn't offer built-in debugging tools. However, modern languages like TypeScript have made it much easier, integrating debugging tools directly into the language's standard library.
 
-## W głębi rzeczy
+Niektóre alternatywy dla `console.log` to `console.info()`, `console.warn()` i `console.error()`, które pozwalają na bardziej specyficzne adnotacje dotyczące naszych komunikatów debugujących.
 
-Drukowanie wyjścia debugowania ma szczególnie ważną rolę w programowaniu, zwłaszcza w świecie języka TypeScript. Kilka innych metod debugowania, np. korzystanie z narzędzi deweloperskich przeglądarki lub debuggera, może być czasochłonne i skomplikowane. Drukowanie wyjścia debugowania jest prostsze i bardziej intuicyjne, zwłaszcza dla osób początkujących.
+Co ciekawe, `console.log` w rzeczywistości nie jest funkcją TypeScriptu, ale jest udostępnione przez środowisko wykonawcze JavaScript. TypeScript jedynie typuje tę funkcję jako `Console.log`.
 
-Jedną z alternatyw dla drukowania wyjścia debugowania jest tworzenie odpowiednich testów jednostkowych. Jednak ta metoda zajmuje więcej czasu i wymaga większej ilości kodu, dlatego często programiści wybierają wygodniejszą opcję wypisywania danych debugowania na konsoli.
+## Zobacz również:
 
-W implementacji, drukowanie wyjścia debugowania polega na użyciu funkcji ```console.log```, która przekazuje podane dane do konsoli i wyświetla je jako wyjście.
+Dla bardziej zaawansowanych funkcji debugowania, warto zaznajomić się z narzędziami debuggera wbudowanymi do TypeScriptu: [Debugging TypeScript](https://www.typescriptlang.org/docs/handbook/debugging.html)
 
-## Zobacz też
-
-- [Dokumentacja TypeScript: Debugging](https://www.typescriptlang.org/docs/handbook/debugging.html)
-- [Wikipedia: Debugowanie](https://pl.wikipedia.org/wiki/Debugowanie)
-- [Blog Devstyle: Debugowanie w programowaniu](https://devstyle.pl/2019/05/30/debugowanie-programowanie/)
+Można również zapoznać się z dokumentacją `console`: [Console API reference](https://developer.mozilla.org/en-US/docs/Web/API/Console)

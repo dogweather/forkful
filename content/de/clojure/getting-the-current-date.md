@@ -1,7 +1,7 @@
 ---
-title:                "Das aktuelle Datum erhalten"
-html_title:           "Clojure: Das aktuelle Datum erhalten"
-simple_title:         "Das aktuelle Datum erhalten"
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Gleam: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,34 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist es & Warum?
-Die aktuellen Datum und Uhrzeit zu erhalten, ist ein häufiges Bedürfnis für viele Programmierer. Es ermöglicht die Verwendung von aktuellen Zeitangaben in Anwendungen und kann für die Datensynchronisation und -archivierung nützlich sein.
+# Das aktuelle Datum in Clojure: Wie und Warum
 
-## Wie geht das?
-Um das aktuelle Datum in Clojure zu erhalten, gibt es zwei Möglichkeiten:
+## Was & Warum?
 
-1. Verwenden Sie die Funktion ```(java.util.Date.)```, um ein Java-Date-Objekt zu erstellen und dann die Funktion ```(.toString)``` anzuwenden, um das Datum als String auszugeben.
+Das Abrufen des aktuellen Datums ist einfach das Holen des momentanen Datums und der Uhrzeit, an dem/zu der dein Programm läuft. Programmierer tun dies oft, um Zeitstempel für Datenprotokollierung, allgemeine Verfolgung und Zeitgesteuerte Funktionen zu erzeugen.
 
-    ```Clojure
-    (def my-date (java.util.Date.)) ; aktuelles Datum erstellen
-    (.toString my-date) ; das Datum als String ausgeben
-    ```
-2. Verwenden Sie die Funktion ```(java.time.LocalDateTime/now)```, um ein Java-LocalDateTime-Objekt zu erstellen und dann die Funktion ```(.toString)``` anzuwenden, um das Datum als String auszugeben. Diese Methode ist mit Java 8 und höher kompatibel.
+## Wie:
 
-    ```Clojure
-    (def my-date (java.time.LocalDateTime/now)) ; aktuelles Datum erstellen
-    (.toSting my-date) ; das Datum als String ausgeben
-    ```
+Enter Clojure! Hier ist, wie man das aktuelle Datum abruft:
 
-Die Ausgabe wird in beiden Fällen folgendermaßen aussehen: ```Wed May 19 17:23:59 IST 2021```
+```clojure
+(require '[clj-time.core :as t])
 
-## Tiefgehende Informationen
-Die Verwendung der Funktion ```(java.util.Date.)``` ist seit Java 1.0 verfügbar und unterstützt nur Datumsangaben bis zum Jahr 2037. Aus diesem Grund empfehlen wir die Verwendung von ```(java.time.LocalDateTime/now)```, da diese Funktion auch mit höheren Jahren kompatibel ist.
+(defn get-current-date []
+  (t/now))
+```
 
-Andere Möglichkeiten, das aktuelle Datum in Clojure zu erhalten, sind die Verwendung von Bibliotheken wie clj-time oder java-time, die zusätzliche Funktionen und Unterstützung für verschiedene Zeitzonen bieten.
+Beispieloutput:
 
-## Siehe auch
-- [clojuredocs.org/java.util.Date](https://clojuredocs.org/java.util.Date)
-- [clojuredocs.org/java.time.LocalDateTime](https://clojuredocs.org/java.time.LocalDateTime)
-- [github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
-- [github.com/dmiller/clojure.java-time](https://github.com/dmiller/clojure.java-time)
+```clojure
+(get-current-date)
+=> #object[org.joda.time.DateTime 2022-01-20T16:55:36.144Z]
+```
+## Tief tauchen:
+
+### Historischer Kontext
+Die Verwendung des Joda-Time-Pakets für Datums- und Zeitoperationen war eine übliche Praxis in der Java-Welt, bevor Java 8 veröffentlicht wurde. Clojure, eine JVM-Sprache, folgte dem Trend und clj-time wurde erstellt.
+
+### Alternativen
+Alternativ könnten Sie auch die eingebaute Java-Funktionalität verwenden:
+
+```clojure
+(java.util.Date.)
+```
+Aber die clj-time-Bibliothek bietet mehr Funktionen und bessere Zeitzonentools.
+
+### Implementierungsdetails
+Im Hintergrund ruft `t/now` die Joda-Time-Methode `DateTime.now` auf, um den aktuellen Zeitstempel zu erzeugen.
+
+## Siehe auch:
+- Offizielle Dokumentation von Clojure: https://clojure.org/
+- clj-time GitHub: https://github.com/clj-time/clj-time
+- Joda-Time in Java: https://www.joda.org/joda-time/

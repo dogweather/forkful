@@ -1,7 +1,7 @@
 ---
-title:                "Concatenando stringhe"
-html_title:           "C: Concatenando stringhe"
-simple_title:         "Concatenando stringhe"
+title:                "Concatenazione di stringhe"
+html_title:           "Bash: Concatenazione di stringhe"
+simple_title:         "Concatenazione di stringhe"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+# Concatenazione di Stringhe in C
 
-La concatenazione di stringhe è un concetto importante nella programmazione che implica la combinazione di due o più stringhe per crearne una nuova. Questo viene comunemente usato per creare output più significativi o per gestire input utente. È importante per i programmatori comprendere come concatenare stringhe per poter creare codice efficiente e flessibile.
+## Cosa & Perché?
+La concatenazione di stringhe è l'operazione di unire due o più stringhe in una singola stringa. I programmatori fanno ciò per manipolare e trasformare i dati testuali.
 
 ## Come fare:
-
-```
+In C, la funzione `strcat()` del library `string.h` si usa per concatenare stringhe.
+```C
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    char str1[] = "Ciao";
-    char str2[] = " mondo!";
-    char output[13];
-    // La nuova stringa avrà una dimensione totale di 13 caratteri
-    sprintf(output, "%s%s", str1, str2);
-    printf(output);
-    // Output: Ciao mondo!
+    char str1[50] = "Ciao, ";
+    char str2[] = "come stai?";
+    
+    strcat(str1, str2);
+    printf("%s\n", str1);
+    
     return 0;
 }
 ```
+Output:
+```C
+Ciao, come stai?
+```
 
-## Approfondimento:
+## Approfondimenti
+La funzione `strcat()` è presente in C sin dalla sua prima versione (1972). Alternativamente, puoi usare `strncat()` se vuoi concatenare un numero specifico di caratteri. Attenzione: `strcat()` non controlla l'overflow del buffer. Assicurati di avere abbastanza spazio nella stringa di destinazione.
 
-La concatenazione di stringhe è stata introdotta per la prima volta nel linguaggio C e da allora è diventata una caratteristica fondamentale di molti linguaggi di programmazione. Alcune alternative alla concatenazione di stringhe includono l'utilizzo di puntatori o l'utilizzo di funzioni di libreria già esistenti per manipolare le stringhe. Per applicarla in modo efficace, è importante comprendere la differenza tra stringhe statiche e dinamiche e come allocare la memoria necessaria per una concatenazione di successo.
-
-## Vedi anche:
-
-- [Understanding String Concatenation in C](https://www.educba.com/string-concatenation-in-c/)
-- [The Evolution of String Concatenation in Programming Languages](https://techbeacon.com/app-dev-testing/evolution-string-concatenation-programming-languages)
+## Vedi Anche 
+- [C Library - <string.h>](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Secure Coding in C and C++: Strings](https://resources.sei.cmu.edu/asset_files/Presentation/2013_017_001_497063.pdf)
+- [Learn to program in C: Strings and string functions](https://opensource.com/life/15/7/learn-how-to-program-C-strings)

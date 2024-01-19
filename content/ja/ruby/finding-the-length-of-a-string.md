@@ -1,7 +1,7 @@
 ---
-title:                "文字列の長さを求める"
-html_title:           "Ruby: 文字列の長さを求める"
-simple_title:         "文字列の長さを求める"
+title:                "文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
+simple_title:         "文字列の長さを見つける"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をしているのか？なぜするのか？
+## 何となぜ？
 
-文字列の長さを見つけるとは、文字列に含まれている文字の数を数えることです。プログラマーがこれをする理由は、コードで使用している文字列の数を把握し、処理を正しく行うためです。
+文字列の長さを求めるとは、文字列の中に含まれる文字数を数えることです。この操作は、特定の文字を探したり、与えられたデータの特性を理解したりするためによく行われます。
 
-## 方法：
+## 使い方：
 
-```ruby
-# 方法1：`.length`メソッドを使用する
-"こんにちは".length #=> 5
+以下のように `length` メソッドを使って文字列の長さを取得しましょう：
 
-# 方法2：`.size`メソッドを使用する
-"こんにちは".size #=> 5
-
-# 方法3：`String#count`メソッドを使用する
-"こんにちは".count("あ-ん") #=> 5
+```Ruby 
+str = "こんにちは、世界！"
+puts str.length # ブロックの結果を出力します
 ```
 
-## 深く掘り下げる
+このコードを実行すると、「こんにちは、世界！」という文字列の長さ、つまり文字数が出力されます。
 
-文字列の長さを見つける方法はいくつかありますが、どのメソッドが最も効率的かは、使用するコードや環境によって異なります。また、文字列の長さを見つけるために正規表現を使用することもできます。しかし、文字列の長さを見つける方法の中で最も一般的で効率的な方法は、`.length`や`.size`メソッドを使うことです。
+## 深掘り
 
-## 関連リンク
+文字列の長さを見つける概念は、コンピュータプログラミングが生まれた当初から存在しています。Rubyは1995年に誕生し、その以降、あらゆる言語でこの基本的な操作が提供されています。
 
-- [Rubyドキュメンテーション - `.length`メソッド](https://docs.ruby-lang.org/en/3.0.0/String.html#method-i-length)
-- [Rubyドキュメンテーション - `.size`メソッド](https://docs.ruby-lang.org/en/3.0.0/String.html#method-i-size)
-- [Rubyドキュメンテーション - `String#count`メソッド](https://docs.ruby-lang.org/en/3.0.0/String.html#method-i-count)
+代替手段として `size` メソッドも存在します。このメソッドも文字列の長さを返しますが、 `length` メソッドと同等の機能を持つため、主にプログラマーの好みによります。
+
+文字列の長さを求めるメソッドは、Rubyの内部で文字列を一文字ずつ確認し、カウントを進めます。バイト単位で文字列の長さを求める `bytesize` メソッドもありますが、一般的な用途では `length` または `size` メソッドが推奨されます。
+
+## 参照元
+
+- [Ruby Documentation: String](https://docs.ruby-lang.org/ja/latest/class/String.html): 文字列に関する全面的な情報と所属するメソッドを提供します。
+
+- [Stack Overflow: Difference between length and size](https://stackoverflow.com/questions/6083219/): `length` と `size` の違いについての議論を提供します。
+
+- [How To Ruby: String Length](https://howtoruby.com/string-length/): Rubyでの文字列の長さの照会方法を解説します。

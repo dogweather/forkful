@@ -1,7 +1,7 @@
 ---
-title:                "Søke og erstatte tekst"
-html_title:           "Rust: Søke og erstatte tekst"
-simple_title:         "Søke og erstatte tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Rust: Søk og erstatt tekst
+## Hva & Hvorfor?
+Søking og erstatting av tekst henviser til prosessen med å identifisere og bytte ut visse strenger i en tekst. Denne operasjonen er grunnleggende for programmerere fordi den muliggjør manipulering og forbedring av data.
 
-## Hva og hvorfor?
-Å søke og erstatte tekst betyr å finne en bestemt streng av tegn i en tekst og bytte den ut med en annen streng. Dette er en vanlig oppgave for programmerere når de ønsker å endre eller forbedre en tekstbasert kode. Ved å bruke dette verktøyet kan man effektivt gjøre endringer på en stor mengde tekst uten å måtte gjøre det manuelt.
-
-## Slik gjør du det:
-Søk og erstatt funksjonalitet finnes innebygd i Rust via standardbiblioteket. Her er et enkelt eksempel på hvordan man kan bruke den med ```str::replace()``` funksjonen:
+## Hvordan gjøre:
+For søking og erstatting av tekst gir Rust deg flere metoder. Her er hvordan du håndterer det:
 
 ```Rust
 fn main() {
-    let mut navn = "Per";
-    println!("{}", navn); // Utskrift: "Per"
-
-    navn = str::replace(navn, "Per", "Ole");
-    println!("{}", navn); // Utskrift: "Ole"
+    let gruppe = "Rusty har rustete programmering. Men, Rust frykter ikke rust.";
+    println!("{}", gruppe.replace("rust", "trost"));
 }
 ```
 
-## Dypdykk
-Søk og erstatt tekst er en vanlig funksjon i mange programmeringsspråk og har vært en del av standardverktøyene i mange år. Alternativer til å bruke innebygde funksjoner inkluderer å bruke regexbiblioteker eller å bruke et tekstbehandlingsprogram for å utføre oppgaven manuelt.
+Etter å ha kjørt koden, vil vi få følgende ut:
 
-## Se også:
-- [Offisiell dokumentasjon for "str::replace()" funksjonen](https://doc.rust-lang.org/std/primitive.str.html#method.replace)
-- [Rust regexbibliotek](https://docs.rs/regex/1.4.2/regex/)
+```Rust
+"Rusty har trostete programmering. Men, Trost frykter ikke trost."
+```
+
+I dette eksemplet brukte vi `replace()` funksjonen for å finne hver forekomst av 'rust' og erstattet den med 'trost'.
+
+## Deep Dive 
+Å søke og erstatte tekst er en gammel teknikk, brukt i mange sammenhenger langt før programmering. I Rust begynte denne funksjonen tilgjengelig siden lanseringen. 
+
+Alternativene til `replace()` funksjonen inkluderer bruk av `regex` biblioteket, som lar deg bruke kraftige regulære uttrykk for å søke og erstatte tekst.
+
+Når det gjelder implementering, bruker Rust eierskapsmodellen for å tillate både trygg og effektiv håndtering av strenger. `replace()` metoden fungerer ved å iterere gjennom hver karakter i strengen, sjekke om den samsvarer med søkebegrepet og, om nødvendig, erstatte det.
+
+## Se Også 
+For mer informasjon om hvordan du jobber med strenger i Rust, kan du se følgende ressurser:
+1. Rusts offisielle dokumentasjon på styring av strenger: [link](https://doc.rust-lang.org/stable/book/ch08-02-strings.html).
+2. For en mer dyptgående diskusjon om regulære uttrykk i Rust, sjekk ut tutorialen her: [link](https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html).
+3. Hvis du vil utforske mer om Rusts eierskapsmodell, kan denne bloggposten være nyttig: [link](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html).

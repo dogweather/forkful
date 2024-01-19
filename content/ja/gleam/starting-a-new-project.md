@@ -1,6 +1,6 @@
 ---
 title:                "新しいプロジェクトを始める"
-html_title:           "Gleam: 新しいプロジェクトを始める"
+html_title:           "C: 新しいプロジェクトを始める"
 simple_title:         "新しいプロジェクトを始める"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 最初は何するの？なぜ？
-新しいプロジェクトを始めることは、新しいプログラムやソフトウェアを作ることを意味します。プログラマーたちはこのようなことをする理由は、より良いソフトウェアを作るためや、新しい技術を学ぶため、または新しいアイデアを実現するためです。
+## 何で、それなぜ？
 
-## 作り方
-以下のコードブロックを参考に、新しいプロジェクトを始める方法を説明します。
+新プロジェクトを開始するとは、新しいコードベースをゼロから作り上げることを指します。プログラマはこれを行うことで、特定の問題を解決する独自のソリューションを作成したり、新しいアプリケーションを開発したりして、自分自身を表現し、スキルを向上させる機会を得ることができます。
+
+## 使い方：
+
+新しいGleamプロジェクトを始めるには、以下のコマンドを使用します。サンプルの出力も示します。
 
 ```Gleam
-fn main() {
-  io.println("Hello, World!")
-}
+$ rebar3 new gleam_lib my_project
 ```
 
-このコードを実行すると、コンソールに"Hello, World!"と表示されます。このように、新しいプロジェクトを始めるにはまず最初にmain関数を定義し、その中で実行したいコードを記述します。
+これにより、新しいプロジェクト「my_project」が作成されます。
 
-## 詳しく見る
-新しいプロジェクトを始める前に、歴史的な背景や代替手段について知ることも重要です。また、Gleamにおけるプロジェクトの実装詳細についても学ぶことができます。
+## 深堀り：
 
-## 関連リンク
-新しいプロジェクトを始める方法についてのより詳しい情報をお探しの場合は、以下のリンクを参考にしてください。
-- Gleam公式ドキュメント: [https://gleam.run/book/getting-started.html](https://gleam.run/book/getting-started.html)
-- ウェブ開発におけるGleamの使用例: [https://medium.com/schoren/gleam-programmatic-web-development-with-websockets-17cdb3fa48c1](https://medium.com/schoren/gleam-programmatic-web-development-with-websockets-17cdb3fa48c1)
+プロジェクトを始める判断は、プログラマのバックグラウンドや必要とする問題解決策に基づくものです。コーディングは1970年代に出現し、以来、さまざまな方法で進化してきました。初期のプログラマは、しばしば完全なソフトウェアプロジェクトを一人で作成していましたが、現在ではチームが一緒に作業することが一般的です。
+
+Gleamの代わりに、他のErlang VM言語（ElixirやLFEなど）を使用しても新しいプロジェクトを開始することは可能です。しかしGleamには、静的な型システムやErlangとの優れた互換性など、他の言語にはない利点があります。
+
+新プロジェクトを開始するとき、実装詳細に注意を払うことは重要です。良いアーキテクチャ設計は、コードの読みやすさとメンテナンス性を向上させ、バグを減らすことができます。
+
+## 参考資料：
+
+1. [公式Gleamドキュメンテーション](https://gleam.run/docs/)
+2. [Gleamリポジトリ](https://github.com/gleam-lang/gleam)
+3. [新プロジェクトの開始に関するブログ記事](https://blog.gleam.run/introduction/)
+4. [Erlang](https://www.erlang.org/)

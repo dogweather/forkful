@@ -1,7 +1,7 @@
 ---
-title:                "Kaavana vastaavien merkkien poistaminen"
-html_title:           "Lua: Kaavana vastaavien merkkien poistaminen"
-simple_title:         "Kaavana vastaavien merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Poistaminen merkkejä vastaava kuvio on prosessi, jossa ohjelmoijat poistavat merkkejä tietystä kohdasta tai osasta merkkijonoa. Tämä voi olla hyödyllistä esimerkiksi tietyn tietokantaoperaation suorittamisessa tai tiettyjen merkkien filtteröimisessä.
+Hahmojen poistaminen tietyn mallin mukaisesti tarkoittaa sellaisten merkkien poistamista, jotka täyttävät tietyn ehdon tai säännön. Ohjelmoijat tekevät tämän yleensä siistimään ja parantamaan dataa.
 
-## Miten:
+## Kuinka Näin:
+
+Voit poistaa merkit tietyn mallin mukaan Lua-ohjelmointikielellä käyttäen gsub-metodia. Esimerkissämme poistetaan kaikki numerot merkkijonosta:
 
 ```Lua
-local string = "Tervetuloa Luaan!"
-string = string.gsub("a", "")
-print(string) -- Tulostaa: Tervetulou Lun!
-```
-```Lua
-local string = "01020304050"
-string = string:gsub("%d%d%d", "")
-print(string) -- Tulostaa: 04050
+merkkijono = "abcd1234"
+muokattu_merkkijono = merkkijono:gsub("%d", "")
+print(muokattu_merkkijono)  -- Output: "abcd"
 ```
 
-## Deep Dive:
+## Syvällisemmin:
 
-Poistaminen merkkejä vastaavan kuvion käsite on ollut käytössä jo pitkään, ja sitä käyttävät monet ohjelmointikielit kuten Perl ja Ruby. Lua tarjoaa myös samanlaisen toiminnallisuuden, joka on hyödyllinen monissa ohjelmointitehtävissä.
+Historiallisessa kontekstissa mallien mukaisten merkkien poistaminen on ollut olennainen osa ohjelmointikielejä vuosikymmenten ajan. Luan gsub-metodi, joka otettiin käyttöön jo varhaisessa versiossa, on peräisin Perl-ohjelmointikielestä.
 
-Toinen vaihtoehto tällaiseen poistamiseen on käyttää säännöllisiä lausekkeita (regular expressions), jotka tarjoavat monimutkaisemman tavan työskennellä merkkijonojen kanssa ja etsiä tiettyjä kuvioita. Lua:ssa on myös mahdollista käyttää säännöllisiä lausekkeita poistamiseen merkkejä vastaavan kuvion sijaan.
+Vaihtoehtoisina lähestymistapoina voidaan käyttää erilaisia mallikirjastoja, kuten lpeg tai rex, jotka tarjoavat laajempia tai erilaisia toiminnallisuuksia.
 
-Lua:ssa poistaminen merkkejä vastaavan kuvion tekee ```gsub``` (global substitution) funktio, joka korvaa kaikki osuvat kuviot tietyn kuvion kanssa. Tämä toiminto tarjoaa myös mahdollisuuden valita, kuinka monta kuvioita korvataan, mikä tekee siitä erittäin joustavan työkalun.
+Gsub-metodin toiminta perustuu siihen, että se etsii merkkijonosta mallin määräämiin kohtiin ja korvaa nämä osat toisella merkkijonolla (tässä tapauksessa tyhjällä merkkijonolla, "" pois lukien mallia vastaavat merkit)
 
-## Katso myös:
+## Katso Myös:
 
-- [Lua: gsub() Funktio](https://www.lua.org/manual/5.3/manual.html#pdf-string.gsub)
-- [Regular Expressions Cheatsheet](https://www.debuggex.com/cheatsheet/regex/javascript)
-- [Lua: string.match() Funktio](https://www.lua.org/manual/5.3/manual.html#pdf-string.match)
+- Lua:n virallinen dokumentaatio gsub-metodista: http://www.lua.org/manual/5.1/manual.html#pdf-string.gsub  
+- Rex-kirjastoja, erityisesti PCRE-mallijärjestelmää varten: http://lualibrary.fandom.com/wiki/REX  
+- Huipputehokas mallitoteutus käyttäen LPEG-kirjastoa: http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html

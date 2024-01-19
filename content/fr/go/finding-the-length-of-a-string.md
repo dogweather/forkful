@@ -1,7 +1,7 @@
 ---
-title:                "Trouver la longueur d'une chaîne de caractères"
-html_title:           "Go: Trouver la longueur d'une chaîne de caractères"
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
+title:                "Trouver la longueur d'une chaîne"
+html_title:           "Go: Trouver la longueur d'une chaîne"
+simple_title:         "Trouver la longueur d'une chaîne"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,29 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Trouver la longueur d'une chaîne de caractères est une tâche courante dans la programmation Go. Cela consiste à déterminer le nombre de caractères présents dans une chaîne de texte. Les programmeurs font souvent cela pour traiter et manipuler des données textuelles.
+## Quoi & Pourquoi ?
+La longueur d'une chaîne est le nombre de caractères qu'elle contient. Les programmeurs la trouvent souvent pour gérer les limites de saisie, découper les chaînes, valider le format, etc.
 
-## Comment faire:
-Il existe plusieurs façons de trouver la longueur d'une chaîne en Go. Voici quelques exemples utilisant la fonction `len()` et la méthode `len()`:
+## Comment faire :
+Voici comment trouver la longueur d'une chaîne en Go:
 
 ```Go
-// Exemple d'utilisation de la fonction `len()` avec une chaîne de caractères
-chaîne := "Bonjour!"
-longueur := len(chaîne) // longueur est égal à 8
+package main
 
-// Exemple d'utilisation de la méthode `len()` avec un tableau de chaînes de caractères
-chaines := []string{"Bonjour", "Salut", "Hello"}
-longueur := len(chaines) // longueur est égal à 3
+import "fmt"
+
+func main() {
+    str := "Bonjour, Go!"
+    fmt.Println(len(str))
+}
 ```
 
-## Plongée en profondeur:
-Trouver la longueur d'une chaîne de caractères peut sembler simple, mais cela a en fait une histoire intéressante. À l'origine, dans les premières versions de Go, il n'y avait pas de fonction `len()` ou de méthode `len()`. Au lieu de cela, les programmeurs utilisaient la boucle `for` pour parcourir la chaîne et compter chaque caractère. Heureusement, avec l'introduction des fonctions et des méthodes, cette tâche est devenue beaucoup plus simple.
+Aussi simple qu'il y paraît, ce code imprime `12`, qui est le nombre de caractères dans `"Bonjour, Go!"`.
 
-Il existe également des alternatives pour trouver la longueur d'une chaîne, telles que les expressions régulières ou l'utilisation de la fonction `RuneCountInString()` pour compter le nombre de runes (caractères Unicode) dans une chaîne.
+## Plongeon en profondeur
+Go utilise UTF-8 pour les chaînes, donc chaque "caractère" peut prendre 1 à 4 octets. La fonction `len()` donne le nombre d'octets, pas toujours le nombre de caractères. Par exemple :
 
-## Voir aussi:
-- Documentation officielle Go sur la fonction `len()` : https://golang.org/pkg/builtin/#len
-- Documentation officielle Go sur les slices (incluant la méthode `len()`) : https://blog.golang.org/slices-intro
-- Documentation officielle Go sur les expressions régulières : https://pkg.go.dev/regexp
-- Tutoriel sur les chaînes en Go : https://www.callicoder.com/strings-in-go/
+```Go
+package main
+
+import "fmt"
+
+func main() {
+    str := "Café"
+    fmt.Println(len(str)) // Affiche 5, pas 4!
+}
+```
+
+Ici, `"Café"` a 4 caractères, mais `len()` donne `5`. Pourquoi? Parce que `len()` compte les octets, et `é` est un caractère UTF-8 de 2 octets.
+
+Si vous voulez le nombre de caractères (rune en Go), utilisez `utf8.RuneCountInString()`. Par exemple :
+
+```Go
+package main
+
+import (
+    "fmt"
+    "unicode/utf8"
+)
+
+func main() {
+    str := "Café"
+    fmt.Println(utf8.RuneCountInString(str)) // Affiche 4
+}
+```
+
+## Voir aussi
+* Documentation officielle de Goodoc sur les chaînes: [Strings](https://golang.org/pkg/strings/)
+* UTF-8 et Go: [Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)
+* Go par l'exemple: [String Functions](https://gobyexample.com/string-functions)

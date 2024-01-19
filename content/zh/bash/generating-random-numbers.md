@@ -1,7 +1,7 @@
 ---
-title:                "产生随机数"
-html_title:           "Bash: 产生随机数"
-simple_title:         "产生随机数"
+title:                "生成随机数"
+html_title:           "Go: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-生成随机数是指在编程中使用特定算法来产生随机的数值。这在程序中非常有用，例如用来产生随机密码、随机抽取数据等。程序员经常会使用随机数来增加程序的随机性，使其更加具有挑战性和真实性。
+## 什么以及为什么？
+生成随机数是产生不可预测值的方法。编程中常常使用它们来测试软件的效率或执行随机事件。
 
-## 怎么做：
+## 如何操作：
+在Bash中，我们可以用 `$RANDOM` 来产生一个随机数，范围在0到32767之间。这是一个基本的例子：
+
 ```Bash
-# 使用$RANDOM来生成0到32767的随机数
 echo $RANDOM
-
-# 生成0到10之间的随机数
-echo $(( $RANDOM % 10 ))
-
-# 生成带小数位的随机数
-echo $(( $RANDOM % 100 ))".". $(( $RANDOM % 100 ))
 ```
 
-输出示例：
+输出:
+
+```Bash
+12529
 ```
-23765
-3
-64.83
+
+如果你想在特定范围内生成随机数，比如在1到100之间，你可以像下面这样做:
+
+```Bash
+echo $(( RANDOM % 100 + 1))
+```
+
+输出:
+
+```Bash
+68
 ```
 
 ## 深入探讨：
-生成随机数在计算机编程中是一个非常重要的概念。随机数生成算法具有复杂的数学基础，并且每一种编程语言都有不同的实现方式。除了使用Bash中提供的$RANDOM，程序员还可以选择使用其他语言中的随机数函数，如Python中的```random```模块。
+`$RANDOM` 是Bash built-in的变量之一，它在1970年代由Stephen Bourne首次引入。尽管 `RANDOM` 非常便捷，在某些复杂的应用程序中，包括加密和大数据分析， 因为它的随机性并不完美，可能不是最佳选择。一些更强大的替代品，如同 `/dev/urandom` 或者 `openssl` 可用于这些场景。
 
-## 参考链接：
-- [Bash documentation for $RANDOM](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-- [Python documentation on random module](https://docs.python.org/3/library/random.html)
+在一个实现的层面，`$RANDOM` 生成随机数是基于线性同余生成器（linear congruential generator）。这是一个在老式电脑系统中很普遍的方法，但是在现代系统中可能无法提供足够的随机性。
+
+## 另请参阅：
+
+1. [SEI Insight on Randomness](https://resources.sei.cmu.edu/asset_files/Presentation/2010_017_001_15287.pdf)
+2. [Cryptographically Secure Pseudo-random Number Generator](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator)
+3. [OpenSSL Rand](https://www.openssl.org/docs/manmaster/man3/RAND_bytes.html)

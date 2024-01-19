@@ -1,6 +1,6 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Javascript: Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,23 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi et Pourquoi?
+Récupérer la date actuelle consiste à obtenir la date et l'heure exactes au moment de l'exécution du programme. Les programmeurs font cela pour des tâches diverses, allant du suivi du temps à générer des enregistrements de date / heure pour le journalisation, et même pour créer des fonctionnalités telles que des comptes à rebours.
 
-Obtenir la date actuelle est une tâche courante pour les programmeurs. Cela leur permet de connaître l'heure exacte à laquelle une partie de code est exécutée, ce qui peut être utile pour le débogage et pour enregistrer l'heure de création de données.
+## Comment faire :
 
-## Comment faire:
+Voici un petit bout de code qui démontre comment récupérer la date et l'heure actuelles en utilisant JavaScript.
 
 ```Javascript
-let today = new Date(); //crée un nouvel objet Date avec la date et l'heure actuelles
-console.log(today); //affiche la date actuelle dans la console 
+let currentDate = new Date();
+console.log(currentDate);
 ```
+Cela renverra quelque chose comme:
 
-L'exemple ci-dessus utilise la méthode `new Date()` pour créer un objet Date avec la date et l'heure actuelles. En utilisant la méthode `getMonth()`, `getDate()`, `getFullYear()` et `getHours()`, vous pouvez obtenir des informations plus précises sur la date et l'heure en cours. 
+```Javascript
+2022-05-21T10:11:09.803Z
+```
+Ceci est le format d'horodatage ISO, qui est largement utilisé et accepté dans le monde de la programmation.
 
-## Plongée Profonde:
+## Plongée profonde:
 
-L'obtention de la date actuelle est une fonctionnalité courante dans les langages de programmation. Elle est initialement apparue en 1970 avec le langage de programmation C et est maintenant disponible dans la plupart des langages courants. Une alternative pour obtenir la date actuelle est d'utiliser un service externe, tel que l'API de Google pour obtenir l'heure mondiale.
+Historiquement, JavaScript a toujours eu l'objet Date intégré pour gérer tout ce qui concerne la date et l'heure. Cependant, des bibliothèques comme Moment.js sont apparues en réponse à la complexité de la gestion des dates et des heures dans différents fuseaux horaires. Ceci est en partie dû au fait que JavaScript utilise le fuseau horaire de l'utilisateur pour déterminer le temps actuel.
 
-## Voir Aussi:
+Une alternative à l'utilisation de l'objet Date ou de Moment.js est la bibliothèque day.js, qui est légère et similaire à Moment.js en termes de syntaxe et d'API, mais sans les dépendances volumineuses.
 
-Pour en savoir plus sur l'utilisation de la date actuelle en Javascript, vous pouvez consulter la documentation officielle de [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) ou regarder des tutoriels en ligne sur YouTube.
+L'implémentation de `new Date()` en JavaScript crée une instance de l'objet Date JavaScript qui représente un seul moment dans le temps. Cet objet Date est basé sur la valeur temps Unix - le nombre de millisecondes écoulées depuis le 1er janvier 1970 00:00:00 UTC.
+
+## Voir aussi: 
+
+Pour plus de détails sur l'objet de la date JavaScript, consultez [Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date)
+
+Pour en savoir plus sur Moment.js et day.js:
+
+- [Moment.js](https://momentjs.com/)
+- [Day.js](https://day.js.org/)

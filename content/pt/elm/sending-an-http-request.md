@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "Elm: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
-
-Enviar uma solicitação HTTP é um processo em que um programa envia um pedido de informação ou ação para um servidor web. Isso é feito para obter dados, como informações de uma API, enviar formulários ou até mesmo para realizar alterações no servidor. Os programadores utilizam esse recurso para criar aplicações interativas e dinâmicas que possam se comunicar com fontes externas.
+## O Que & Por Quê?
+Enviar uma requisição HTTP é o processo de solicitar dados de um servidor ou enviar dados para um servidor, utilizando o Protocolo de Transferência de Hipertexto (HTTP). Programadores fazem isso para trocar dados entre o cliente e o servidor.
 
 ## Como fazer:
+O exemplo a seguir mostra como enviar uma requisição GET usando Elm:
 
 ```Elm
 import Http
+import Json.Decode as Decode
 
-Http.send request = 
-    let
-        method = "GET"
-        url = "https://exemploapi.com"
-        body = Http.emptyBody
-        headers = []
-    in
-        Http.expectStringResponse handleResponse
+getDados : String -> Cmd Msg
+getDados url =
+    Http.get
+        { url = url
+        , expect = Http.expectString GotDados
+        }
+
+type Msg 
+    = GotDados (Result Http.Error String)
 ```
+Quando executamos o comando 'getDados', ele retorna um comando que o Elm irá executar para nos. O resultado é então passado para a nossa função 'GotDados'.
 
-Saída:
+## Mergulho Profundo
+Elm está enviando requisições HTTP desde o seu lançamento em 2012. Embora o jeito Elm de lidar com HTTP possa parecer diferente se você estiver acostumado com JavaScript, a abordagem centrada em segurança e facilidade de uso do Elm resulta em um código previsível e fácil de manutenção.
 
-`"Olá mundo!"`
+Existem outras maneiras e bibliotecas para lidar com HTTP em Elm, como `elm-http-builder` e `elm-http-extra`, mas `elm/http` é a mais direta e normalmente a mais utilizada. Vale a pena explorar as alternativas se você precisar de funcionalidades mais avançadas.
 
-No exemplo acima, utilizamos a função `Http.send` para enviar uma solicitação HTTP utilizando o método `GET` para o URL da API de exemplo. Além disso, definimos o corpo como vazio e nenhum cabeçalho adicional é especificado. Então, esperamos uma resposta em texto e lidamos com ela usando a função `handleResponse`.
+Quando enviamos uma requisição GET, como no exemplo acima, Elm cria uma tarefa que é enviada para o sistema de tempo de execução do Elm, que cuida de executar a tarefa para nós e devolver o resultado quando estiver pronto.
 
-## Profundidade:
-
-A capacidade de enviar solicitações HTTP é um recurso importante para a maioria das linguagens de programação, pois permite que as aplicações se conectem a uma variedade de recursos externos. No contexto histórico, esse recurso foi amplamente utilizado para a criação de páginas da web dinâmicas em linguagens como o HTML e o JavaScript. No entanto, com o avanço das tecnologias, o uso do envio de solicitações HTTP se tornou popular em linguagens de programação de back-end, como o Elm.
-
-O Elm oferece algumas alternativas para realizar solicitações HTTP, como a biblioteca `elm/http` padrão da linguagem ou outras bibliotecas criadas pela comunidade. Além disso, é possível modificar as opções da solicitação, como o método, o corpo e os cabeçalhos, de acordo com as necessidades do projeto.
-
-## Ver também:
-
-- Documentação oficial do Elm sobre o envio de solicitações HTTP: https://guide.elm-lang.org/effects/http.html
-- Explicação detalhada sobre requisições HTTP: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview
+## Veja Mais
+Aqui estão alguns recursos adicionais se você quiser mergulhar mais fundo em HTTP com Elm:
+- A [documentação oficial do Http](https://package.elm-lang.org/packages/elm/http/latest) é um ótimo lugar para começar.
+- [Este post no Elm Discourse](https://discourse.elm-lang.org/t/how-do-you-handle-http-requests-in-elm-0-19/2251) possui vários exemplos de como lidar com requisições HTTP de diferentes maneiras. 
+- O [guia oficial](https://guide.elm-lang.org/) tem um capítulo inteiro dedicado a interações com o servidor, incluindo como trabalhar com JSON.

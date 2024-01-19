@@ -1,6 +1,6 @@
 ---
 title:                "ウェブページのダウンロード"
-html_title:           "Go: ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Go"
 category:             "Go"
@@ -10,50 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするの？なんで？
-ネット上でウェブページをダウンロードすることは、ウェブサイトにアクセスしてコンテンツをオフラインで閲覧することです。プログラマーは、オフラインでコンテンツを閲覧したい場合や、プログラムでウェブページのデータを利用したい場合にダウンロードを行います。
+# ウェブページのダウンロード: Goがどのようにそれを行うか
 
-## 方法：
-```
-Goパッケージ "net/http" を使用して、次のようにウェブページをダウンロードすることができます：
+## 何 & なぜ?
+
+ウェブページのダウンロードとは、特定のURLからデータを取得し、ローカル環境で利用可能にすることです。プログラマーがこれを行う理由は、サイトの情報を収集したり、オフラインで利用するためです。
+
+## 実装方法:
+
+Go言語でウェブページをダウンロードする一つの単純な方法は、`net/http`パッケージを使用することです。
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
+    "io"
+    "net/http"
+    "os"
 )
 
 func main() {
-	// URLを指定してウェブページを取得
-	resp, err := http.Get("https://example.com")
-	if err != nil {
-		// エラー処理
-		fmt.Printf("Could not get webpage: %v", err)
-		return
-	}
+    response, err := http.Get("http://example.com")
+    if err != nil {
+        panic(err)
+    }
+    defer response.Body.Close()
 
-	// リクエストが成功した場合、レスポンスボディを取得
-	defer resp.Body.Close()
-	body, err := ioutil.ReadAll(resp.Body)
-	if err != nil {
-		// エラー処理
-		fmt.Printf("Could not read response body: %v", err)
-		return
-	}
+    file, err := os.Create("output.html")
+    if err != nil {
+        panic(err)
+    }
+    defer file.Close()
 
-	// 出力
-	fmt.Printf("Response body: %s", body)
+    _, err = io.Copy(file, response.Body)
+    if err != nil {
+        panic(err)
+    }
 }
 ```
 
-上記のコードを実行すると、ウェブページのHTMLコードが表示されます。
+このコードは、まず"http://example.com"にHTTP GETリクエストを行います。次に、レスポンスボディを"output.html"という名前のファイルに保存します。
 
-## 詳細な情報：
-ウェブページのダウンロードは、プログラミングにおいてよく行われるタスクの一つです。他の言語にも同様の機能がありますが、Goの場合は「net/http」パッケージを使用することで簡単にダウンロードを行うことができます。また、HTTPリクエストをカスタマイズすることもできます。
+## ディープダイブ:
 
-## 関連情報：
-- [net/httpパッケージドキュメント](https://golang.org/pkg/net/http/)
-- [Goでのウェブスクレイピングの方法](https://qvault.io/go/golang-techniques-for-web-scraping/)
+歴史的な文脈：ウェブスクレイピング（ウェブページのダウンロードを含む）は、インターネットが主流になってからずっと存在しています。それは情報の取得と共有を容易にし、今日のデータ駆動型世界の重要な一部となっています。
+
+代替手段：Go以外の多くの言語、例えばPythonやJavaScriptでは、豊富なライブラリとツールがウェブスクレイピングを補助しています。しかし、Goはそのパフォーマンスと効率性で注目を浴びています。
+
+実装詳細：このコードは、`http.Get()`関数を使用してHTTPリクエストを送信します。その後、`os.Create()`で新しいファイルを作成し、`io.Copy()`でレスポンスデータをそのファイルにコピーします。
+
+## 参考資料:
+
+- Go言語の公式ドキュメンテーション(https://golang.org/doc/)
+- Goによるウェブスクレイピング(https://edmundmartin.com/writing-a-web-crawler-in-golang/)
+- httpプロトコルについての詳細(https://developer.mozilla.org/ja/docs/Web/HTTP)

@@ -1,6 +1,6 @@
 ---
 title:                "날짜를 문자열로 변환하기"
-html_title:           "Ruby: 날짜를 문자열로 변환하기"
+html_title:           "Arduino: 날짜를 문자열로 변환하기"
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐고 왜?
+## 무엇이며 왜 사용하는가?
+날짜를 문자열로 변환하는 것은 일정한 규칙에 따라 날짜 정보를 텍스트 표현으로 바꾸는 것입니다. 이는 사용자가 이해하기 쉬운 형식으로 날짜를 표시하거나, 파일 이름이나 로그 메시지에서 날짜 데이터를 사용할 때 일반적으로 필요합니다.
 
-날짜를 문자열로 변환한다는 것은 무엇인가요? 프로그래머들이 왜 이렇게 하는 걸까요? 문자열로 날짜를 변환하면, 날짜 입력을 플랫폼마다 인식할 수 있는 형식으로 변환할 수 있어서 매우 유용합니다. 예를 들어, 02/03/2021 같은 날짜를 2021년 2월 3일로 해석하고 싶다면, 문자열로 변환해야 합니다.
-
-## 어떻게:
+## 어떻게 사용하나?
+Ruby에서 DateTime 객체를 문자열로 변환하는 가장 기본적인 방법은 아래 코드를 참조하십시오.
 
 ```Ruby
-date = Date.new(2021, 2, 3)
-puts date.to_s
+require 'date'
+
+now = DateTime.now
+puts now.to_s
 ```
+이 코드를 실행하면 DateTime 객체의 내용이 문자열로 출력됩니다.
+
+## 깊게 알아보기
+Ruby에서 날짜를 문자열로 변환하는 방법은 존재합니다. 우리는 다음과 같이 매우 구체적인 형식의 문자열로 날짜를 변환할 수 있습니다.
+
+```Ruby
+require 'date'
+
+now = DateTime.now
+puts now.strftime("%Y-%m-%d %H:%M:%S")
 ```
-2021-02-03
-```
 
-위 코드를 실행하면, 날짜 프로퍼티를 지정하여 날짜 객체를 만들고, ```to_s``` 메소드를 사용하여 문자열로 변환할 수 있습니다. ```to_s```는 간단한 예시로, 실제 프로그래밍에서는 날짜 포맷을 더 다양하고 복잡하게 지정할 수 있습니다.
+이 코드를 사용하면 출력되는 문자열은 `"2022-03-25 17:26:15"`와 같은 형식을 가지게 됩니다.
 
-## 깊이 파고들기:
-
-지금까지 날짜 객체를 문자열로 변환하는 방법만 알아보았지만, 날짜를 표현하는 다양한 형식이 있으므로 참고하면 좋습니다. 예를 들어, 날짜가 다른 형식으로 입력되었을 때도 인식할 수 있도록 처리하는 기능이 필요할 수 있습니다. 이 때는 날짜 포맷을 지정하는 코드를 작성하여 처리할 수 있습니다.
-
-또한, 날짜 객체를 문자열로 변환하는 또 다른 방법으로는 ```strftime``` 메소드를 사용하는 것이 있습니다. 이 메소드는 ```to_s```와 비슷하지만, 포맷을 더 다양하게 지정할 수 있습니다. 이를 활용하면 날짜 포맷을 더 자유롭게 지정할 수 있게 됩니다.
-
-마지막으로, 날짜 객체를 문자열로 변환하는 방법은 다양하지만, 어떤 방법을 선택하느냐에 따라 다양한 결과가 나올 수 있으므로, 역시 프로그래밍에 따라서 구체적인 방법을 선택해야 합니다.
-
-## 더 알아보기:
-
-- [Ruby 날짜 포맷 가이드](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
-- [날짜 포맷에 대한 더 자세한 설명](https://www.rubydoc.info/docs/ruby-doc-bundle/Date:strftime)
-- [날짜와 시간 관련 기능들 참고하기](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html)
+## 참고 자료
+* Ruby 공식 문서 [DateTime](https://ruby-doc.org/stdlib-2.7.3/libdoc/date/rdoc/DateTime.html)
+* Ruby 공식 문서 [strftime](https://ruby-doc.org/core-2.7.3/Time.html#method-i-strftime)

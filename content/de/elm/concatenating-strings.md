@@ -1,7 +1,7 @@
 ---
-title:                "Verkettung von Zeichenketten"
-html_title:           "Elm: Verkettung von Zeichenketten"
-simple_title:         "Verkettung von Zeichenketten"
+title:                "Strings verketten"
+html_title:           "Bash: Strings verketten"
+simple_title:         "Strings verketten"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was wird erreicht und warum? 
-Bei der Programmierung geht es darum, mehrere Strings -- also Zeichenfolgen -- miteinander zu verbinden, um eine längere Zeichenfolge zu erhalten. Das kann hilfreich sein, um zum Beispiel Texte dynamisch zu erstellen oder Dateien mit einem bestimmten Namen zu speichern.
+## Was & Warum?
 
-## Wie funktioniert es:
-```Elm 
-module Main exposing (..)
+Die Zusammenführung von Strings (auf Englisch "Concatenation") ist der Vorgang, bei dem zwei oder mehr Strings aneinander gereiht werden. Programmierer nutzen sie, um Daten zu kombinieren oder klar formatierte Ausgaben zu erzeugen.
 
-concatString : String -> String -> String
-concatString str1 str2 = str1 ++ str2
+## So geht's:
 
-sampleOutput : String
-sampleOutput = concatString "Hello " "world!" 
+In Elm verwenden wir die `++`-Funktion, um Strings zu verbinden. Hier sind ein paar Beispiele:
 
-main : String
-main = sampleOutput 
+```Elm
+name = "Emma"
+nachname = "Schmidt"
+vollständigerName = name ++ " " ++ nachname
 ```
+Die Ausgabe von `vollständigerName` wäre dann `Emma Schmidt`.
 
-Die Ausgabe in diesem Fall wäre "Hello world!".
+## Vertiefung:
 
-## Tiefgründiger Einblick:
-Das Zusammenfügen von Strings wird auch als "String-Konkatenation" bezeichnet und ist ein häufig verwendetes Konzept in der Programmierung. Es ermöglicht es, Texte flexibel und auf verschiedene Weise zu verbinden und so den Code lesbarer und effizienter zu gestalten. Eine Alternative zur Konkatenation von Strings könnte die Verwendung von Listen sein, um Textabschnitte zu speichern und anschließend zusammenzufügen. In Elm wird die Konkatenation mit dem `++` Operator durchgeführt, der zwei Strings miteinander verbindet.
+Die Methode der Zusammenführung von Strings ist fast so alt wie die Programmierung selbst und findet sich in zahlreichen Sprachen wieder.
 
-## Siehe auch:
-- [Elm Dokumentation zu Strings](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Artikel über die Verwendung von String-Konkatenation in der Programmierung](https://medium.com/@jillacion/string-concatenation-and-programming-a-match-made-in-heaven-89cc0e204661)
+Alternativen zur direkten String-Verkettung können String-Interpolation oder Format-Funktionen sein, jedoch unterstützt Elm aktuell diese Techniken nicht out-of-box. Sie können jedoch benutzerdefinierte Funktionen erstellen, die ähnliche Ergebnisse liefern.
+
+Was die Implementierung angeht, so ist die `++`-Funktion in Elm sehr effizient und schnell. Beachten Sie jedoch, dass die Verwendung von `++` in einer Schleife eine quadratische Laufzeitkomplexität aufweisen kann, da bei jeder Iteration ein neuer String erstellt wird.
+
+## Weiterführende Links:
+
+- [Elm Programmiersprache Dokumentation](https://elm-lang.org/docs)
+- [Elm String Bibliothek](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm Funktionen zur Strings-Verarbeitung](https://www.tutorialsteacher.com/elm/elm-string-functions)

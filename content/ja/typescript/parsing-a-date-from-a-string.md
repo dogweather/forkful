@@ -1,6 +1,6 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "TypeScript: 文字列から日付を解析する"
+html_title:           "Bash: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
-日付を文字列から解析することとは、日付を別の形式に変換することです。プログラマーがこのようなことを行う理由は、データを整形したり、データベースやネットワークに送信するために必要だからです。
+## 何となぜ？
+
+日付のパーシングは、文字列から日付形式への変換を指します。プログラマはこれを使って日付の入力を受け取り、行う変更を適用し、次の操作のために日付を使えるようにします。
 
 ## 方法：
-TypeScriptを使用して、文字列から日付を解析する方法は2種類あります。
 
-```TypeScript
-// 方法１：Dateオブジェクトを使用する方法
-let dateString = "2020/10/01";
-let date = new Date(dateString);
-console.log(date); // 結果：Thu Oct 01 2020 00:00:00 GMT+0900 (JST)
+TypeScriptを使った日付パーシングの一例を見てみましょう。
 
-// 方法２：DatePipeを使用する方法
-import { DatePipe } from '@angular/common';
-let dateString = "2020-10-01";
-let date = new Date(dateString);
-let formattedDate = new DatePipe('en-US').transform(date, 'yyyy/MM/dd');
-console.log(formattedDate); // 結果：2020/10/01
+```TypeScript 
+let date = new Date("2020-01-01");
+console.log(date);
 ```
 
-## 詳細：
-日付を文字列から解析する必要が出てきた背景として、インターネットの発達による国際的なやりとりの増加が挙げられます。さまざまな国や地域で異なる日付のフォーマットがあり、それらを統一するために日付を解析する必要が生じました。また、日付をデータベースやネットワークで受け渡す際には、文字列から解析することが必要です。
+出力は次のようになります：
 
-日付を解析する他の方法としては、正規表現を使用する方法やサードパーティ製のライブラリを使用する方法があります。しかし、TypeScriptを使用すると、標準のDateオブジェクトやDatePipeを使用することで、簡単に日付を解析することができます。
+```TypeScript 
+2020-01-01T00:00:00.000Z
+```
 
-## 関連情報：
-- [TypeScript公式ドキュメント - Dateオブジェクト](https://www.typescriptlang.org/docs/handbook/standard-built-in-types.html#date)
-- [Angular公式ドキュメント - DatePipe](https://angular.io/api/common/DatePipe)
+この方式だと、年-月-日の形式で日付を簡単にパースできます。
+
+## 深掘り：
+
+日付のパースは開発の歴史の初めから存在しています。しかしその時間、多くのテクニックとツールが作られ、試されてきました。TypeScriptでは、組み込みの`Date`オブジェクトを使うことで簡単にパースを行うことができます。
+
+しかし、他のライブラリーも存在し、特定の場合下ではより有用かもしれません。例えば、*Moment.js*や*date-fns*などはより細かい制御を提供し、複雑な日付計算が可能です。
+
+TypeScriptの`Date`オブジェクトは、文字列を含むいくつかの入力を受け取り、ISO形式の日付に変換します。それがStringをDateに変換するプロセスの核心です。
+
+## 参照：
+
+- MDNの[Dateオブジェクトの解説](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)（日本語）
+- [Moment.js](https://momentjs.com/)
+- [date-fns](https://date-fns.org/)

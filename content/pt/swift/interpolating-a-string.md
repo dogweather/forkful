@@ -1,6 +1,6 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Swift: Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
 simple_title:         "Interpolando uma string"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,40 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O Que & Por Que?
+A interpolação de strings permite que você insira variáveis ou constantes dentro de uma string. É uma prática eficaz e essencial para a exibição dinâmica de dados nas interfaces do usuário, simplificar a concatenação de strings e melhorar a legibilidade do código.
 
-Interpolação de string é uma técnica usada por programadores para combinar variáveis e strings de forma a criar uma única string com valores dinâmicos. Isso é especialmente útil para imprimir mensagens personalizadas, gerar URLs ou criar logs.
+## Como Fazer:
 
-## Como fazer:
+Vamos inserir uma variável em uma string com Swift:
 
-Veja abaixo dois exemplos simples de interpolação de string em Swift:
-
-```
-// Exemplo de interpolação de string com uma variável
-let nome = "Maria"
-let mensagem = "Olá \(nome)! Seja bem-vinda."
-print(mensagem)
-
-// Saída: Olá Maria! Seja bem-vinda.
-
-// Exemplo de interpolação de string com expressão
-let numA = 5
-let numB = 3
-let resultado = "\(numA) + \(numB) é igual a \(numA + numB)."
-print(resultado)
-
-// Saída: 5 + 3 é igual a 8.
+```Swift
+var nome: String = "João"
+print("Olá, \(nome)!")
 ```
 
-## Profundidade
+O resultado será:
 
-A interpolação de string foi introduzida na linguagem de programação Swift em sua primeira versão, em 2014. Antes disso, os programadores tinham que usar a concatenação de strings para obter o mesmo resultado, o que pode ser mais complicado e menos legível.
+```
+Olá, João!
+```
 
-Além disso, existem outras formas de combinar variáveis e strings, como a formatação de string, que pode ser mais adequada em certas situações. Porém, a interpolação é a maneira mais simples e direta de criar uma string combinando valores dinâmicos.
+Também é possível fazer cálculos dentro das interpolações de string. Por exemplo:
 
-Em termos de implementação, a interpolação de string é obtida por meio do uso de delimitadores de marcação no código fonte, que são substituídos pelos valores das variáveis em tempo de execução.
+```Swift
+var idade: Int = 30
+print("Daqui a cinco anos, \(nome) terá \(idade + 5) anos.")
+```
 
-## Veja também:
+O resultado será:
 
-- [Documentação oficial da interplolação de string em Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID432)
-- [Artigo da Apple sobre interpolação de string em Swift](https://developer.apple.com/documentation/swift/string_interpolation)
+```
+Daqui a cinco anos, João terá 35 anos.
+```
+
+## Aprofundamento:
+
+A interpolação de strings não é uma inovação do Swift. Outras linguagens, como o Perl e o Ruby, também a implementam.
+
+Há alternativas à interpolação de strings, como a concatenação de strings e o formato de string, mas a interpolação de strings oferece maior legibilidade e simplicidade. Por exemplo, em vez de `"Olá " + nome + "!"`, é mais simples escrever `"Olá, \(nome)!"`.
+
+O Swift implementa a interpolação de strings convertendo tudo em uma representação de string. Mesmo números e respostas de funções podem ser convertidos e interpolados em uma string. 
+
+## Veja Também:
+
+- Documentação oficial da Apple sobre Strings e Caracteres em Swift: <a href='https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html'>https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html</a>
+- Um ótimo guia para entender a interpolação de strings: <a href='https://www.hackingwithswift.com/articles/178/super-powered-string-interpolation-in-swift-5-0'>https://www.hackingwithswift.com/articles/178/super-powered-string-interpolation-in-swift-5-0</a> 
+- Tutorial point em Swift: <a href='https://www.tutorialspoint.com/swift/swift_strings.htm'>https://www.tutorialspoint.com/swift/swift_strings.htm</a>

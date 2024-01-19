@@ -1,7 +1,7 @@
 ---
-title:                "Html-analyysi"
-html_title:           "Ruby: Html-analyysi"
-simple_title:         "Html-analyysi"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,33 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-HTML-parseeraus on tärkeä osa ohjelmointia, joka mahdollistaa verkkosivujen sisältämien tietojen keräämisen ja käsittelyn. Käytännön esimerkkinä tästä voisi olla vaikkapa verkkosivun sisältämien tietojen tallentaminen tietokantaan tai tiettyjen tietojen hakeminen sivulta.
+## Mitä & Miksi?
 
-## Kuinka?
-```Ruby
+HTML-tiedostojen jäsentäminen (parsing) on prosessi, jossa muutetaan web-sivun HTML-koodi joukoksi merkityksellisiä elementtejä. Ohjelmoijat tekevät tämän esimerkiksi tiedon kaappaamiseksi tai sivuston rakenteen ymmärtämiseksi.
+
+## Miten:
+
+Rubyssa voit käyttää Nokogiri-gemistön avulla HTML:n jäsentämistä. Tässä on perusesimerkki:
+
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# Määritellään muuttuja, johon tallennetaan haluttu verkkosivu osoitteesta
-page = Nokogiri::HTML(URI.open('https://www.example.com'))
+# Avaa sivu ja luo Nokogiri-objekti
+doc = Nokogiri::HTML(open('http://www.example.com'))
 
-# Käydään läpi verkkosivun kaikki linkit ja tulostetaan ne näkyviin
-page.css('a').each do |link|
-  puts link.text.strip
+# Etsi kaikki linkit (a-tunnisteet)
+links = doc.css('a')
+
+# Tulosta jokaisen linkin teksti
+links.each do |link|
+  puts link.text
 end
 ```
-Esimerkkituloste:
-```
-Home
-About Us
-Products
-Contact Us
-```
 
-## Syvemmälle
-HTML:n luominen ja käsittely on kehittynyt vuosien saatossa ja nykyään siihen on useita erilaisia tapoja, kuten XML, YAML tai JSON. Nämä kaikki tarjoavat erilaisia etuja ja haittoja verrattuna HTML:ään. HTML-parsereita löytyy myös useita erilaisia, kuten Nokogiri, Hpricot ja Html-Parser.
+Tämä koodi käy läpi jokaisen linkin `www.example.com` sivulta ja tulostaa sen tekstin.
 
-## Katso myös
-Tsekkaa lisätietoa Nokogirista: https://nokogiri.org/
-Katso mitä muita vaihtoehtoja on HTML-parsereissa: https://www.ruby-toolbox.com/categories/html_parsing
+## Syväsukellus:
+
+HTML-jäsentämisen historiallinen konteksti on syvällisesti yhteydessä webin kehittymiseen ja sen mukana tulleisiin tietorakenteisiin. Yksinkertaistettuna, HTML-jäsentämisen avulla on mahdollista ymmärtää miten web-sivut on rakennettu ja mitä tietoa ne sisältävät.
+
+Vaihtoehtoja Ruby:n Nokogiri-kirjastolle ovat esimerkiksi `Oga` ja `Hpricot`, mutta Nokogiri on ehkä suosituin sen kattavien ominaisuuksiensa ansiosta.
+
+HTML-jäsentämisen toteuttaminen riippuu siitä, minkä kirjaston tai teknologian valitset ja mitkä ovat vaatimuksesi. Joissakin tapauksissa riittää yksinkertainen säännöllinen lauseke (regex), mutta monimutkaisemmat sivustot vaativat täysiverisen HTML-jäsentimen kuten Nokogirin.
+
+## Katso myös:
+
+1. [Nokogiri-ohjekirja](https://nokogiri.org/tutorials/parsing_an_html_xml_document.html)
+2. [Oga-ohjekirja](https://github.com/YorickPeterse/oga)
+3. [Hpricot](https://github.com/hpricot/hpricot/wiki)

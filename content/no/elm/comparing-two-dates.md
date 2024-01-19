@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Elm: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-"Å sammenligne to datoer" er en vanlig oppgave for programmere. Det innebærer å sjekke om to datoer er like, eller hvilken som kommer først, basert på en gitt format. Dette er nyttig for å sortere data og utføre ulike operasjoner på datoer.
+
+Sammenligning av to datoer er prosessen med å beregne forskjellen mellom dem for å bestemme hvilken som kommer først eller sist. Programmerere gjør dette for å utføre handlinger basert på tid, slik som planlegging av oppgaver eller sortering av hendelser.
 
 ## Hvordan:
-I Elm er det enkelt å sammenligne to datoer ved hjelp av funksjonen `case` og det innebygde `Date` modulen. Her er et eksempel på hvordan du sammenligner to datoer for å se om de er like:
+
+Her er en enkel måte å sammenligne datoer på i Elm:
 
 ```Elm
-import Date exposing (..)
+import Time 
 
-date1 : Date
-date1 = fromString "2019-05-30"
-
-date2 : Date
-date2 = fromString "2019-05-30"
-
-case compare date1 date2 of
-    LT -> "Dato 1 kommer før dato 2"
-    EQ -> "Dato 1 og 2 er like"
-    GT -> "Dato 2 kommer før dato 1"
+dateComparison : Time.Posix -> Time.Posix -> String
+dateComparison date1 date2 =
+    if Time.millisToPosix date1 < Time.millisToPosix date2 then
+        "Date1 er tidligere enn Date2"
+    else if Time.millisToPosix date1 > Time.millisToPosix date2 then
+        "Date1 er senere enn Date2"
+    else
+        "Datoene er like"
 ```
+Her konverterer vi to datoer (date1 og date2) til millisekunder siden "Unix-epoken", og sammenligner millisekundene. Utfallet kan være at den første datoen er tidligere enn, senere enn, eller lik den andre datoen.
 
-Output:
-`Dato 1 og Dato 2 er like`
+## Dypdykk:
 
-## Deep Dive
-Å sammenligne datoer har vært en vanlig oppgave i programmering siden datamaskiner ble først introdusert. I eldre språk som Cobol, måtte programmere håndtere datoer manuelt ved å konvertere de til numeriske verdier. Elm sin `Date` modul tar seg av dette for deg, og gjør sammenligning av datoer enkelt og nøyaktig.
+Sammenligning av datoer har vært en enkel, men viktig del av dataprogrammering siden de tidlige dagene. I Elm, bruker vi `Time.Posix` for å håndtere dato og tid. Dette er basert på Unix-tid, en metode for å spore tid som begynte 1. januar 1970.
 
-Det finnes også alternative måter å sammenligne datoer på, som å bruke en tredjeparts bibliotek som håndterer datoer og tidspunkter. Men i Elm, er det anbefalt å bruke den innebygde `Date` modulen fordi den er designet spesifikt for å håndtere datoer og gir nøyaktige resultater.
+Alternativt kan vi også bruke biblioteket `elm-date-extra`, som gir flere funksjoner for å arbeide med datoer.
 
-Når du sammenligner to datoer, må du huske å bruke samme format for begge datoene for å få riktig resultat. For eksempel, hvis en dato er i formatet `YYYY-MM-DD`, må den andre også være i samme format.
+Dypere detaljer om implementeringen kan variere avhengig av dine spesifikke behov, inkludert håndtering av tidssoner og sommertid.
 
-## Se Også
-Offisiell Elm dokumentasjon for `Date` modulen: https://package.elm-lang.org/packages/elm/time/latest/Date
+## Se også:
+
+For mer informasjon, sjekk ut disse nyttige lenkene:
+
+- Elm Time-modul dokumentasjon: https://package.elm-lang.org/packages/elm/time/latest/
+- Elm Date-Extra bibliotek: https://package.elm-lang.org/packages/rluiten/elm-date-extra/latest
+- Unix-tid: https://no.wikipedia.org/wiki/Unix-tid

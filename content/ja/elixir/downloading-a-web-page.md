@@ -1,7 +1,7 @@
 ---
-title:                "「Webページのダウンロード」"
-html_title:           "Elixir: 「Webページのダウンロード」"
-simple_title:         "「Webページのダウンロード」"
+title:                "ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
+simple_title:         "ウェブページのダウンロード"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,51 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 今回のお題：Webページのダウンロード
+## 何となぜ？
+ウェブページのダウンロードとは、インターネット上のページの内容を自分のコンピュータにコピーすることです。プログラマーは、情報分析やデータスクレイピングの目的でこれを行います。
 
-## 何？
-Webページをダウンロードするというのは、単純に言えばインターネット上で公開されているページを自分のコンピューターに保存することです。プログラマーがこれを行う理由は、ある特定のページを自分のプログラムから呼び出すために使用するためです。
-
-## 方法：
-まずは、 ```HTTPoison``` ライブラリをダウンロードして利用します。次に、 ```HTTPoison.get``` という関数を使って、WebページのURLを指定します。その結果として、ページのコンテンツがバイナリ形式で返されます。以下は、ダウンロードしたページのコンテンツを表示するサンプルコードです。
+## 方法:
+Elixirの`HTTPoison`ライブラリを使えば、ウェブページをダウンロードするのは簡単です。まずはライブラリをインストールしましょう。
 
 ```Elixir
-require HTTPoison
-
-# ページのURLを指定する
-url = "https://example.com/"
-# get関数を使ってページをダウンロードする
-{:ok, response} = HTTPoison.get(url)
-
-# ページのコンテンツを表示する
-IO.puts(response.body)
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 ```
 
-出力結果は以下のようになります。
+その後に、以下のようなコードを使用してウェブページを取得します。
 
+```Elixir
+defmodule Downloader do
+  def download(url) do
+    case HTTPoison.get(url) do
+      {:ok, response} -> IO.puts response.body
+      {:error, reason} -> IO.puts "Error: #{reason}"
+    end
+  end
+end
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
+## Deep Dive
+ウェブページのダウンロードは、ウェブスクレイピングの一部として以前から行われていました。Elixirの前にはPerlやPython等の言語が使われてきました。しかし、Elixirはそのマルチコア対応による強力な並行処理能力やイマーチャンス・オブジェクトの扱いやすさで一歩リードしています。
 
-<div>
-  <h1>Example Domain</h1>
-  <p>This domain is for use in illustrative examples in documents. You may use this
-  domain in literature without prior coordination or asking for permission.</p>
-</div>
+代替手段としては、他のライブラリを使う方法もあります。例えば`Mint`や`Tesla`などがあります。しかし、簡単な仕事では比較的シンプルで使いやすい`HTTPoison`をお勧めします。
 
-</body>
-</html>
-```
+## 参照
+以下のリンクでより詳しい情報を得ることができます:
 
-## 詳細を探る：
-Webページのダウンロードは、大昔から行われてきたプログラミングの基本的な機能です。古い時代には、テキストベースのプロトコルであるTelnetが使用され、現在ではより高性能なHTTPプロトコルが使用されています。また、別の方法としては、 ```HTTPoison.get``` の代わりにOSのコマンドを呼び出すこともできます。
-
-## 関連情報：
-Webページのダウンロードに関する詳細な情報はこちらを参考にしてください。
-
-- [HTTPoison ライブラリ](https://hexdocs.pm/httpoison/readme.html)
-- [Elixir の HTTPoison についての記事](https://elixir.com/blog/understanding-httpoison/)
-- [Telnetプロトコルについての記事](https://www.cloudflare.com/learning/ddos/glossary/telnet/)
-- [OSコマンドの実行についての記事](https://hexdocs.pm/elixir/System.html)
+- Elixir 公式ドキュメンテーション: https://elixir-lang.org/docs.html
+- HTTPoison Github ページ: https://github.com/edgurgel/httpoison
+- Elixir School (HTTP): https://elixirschool.com/ja/lessons/libraries/httpoison/

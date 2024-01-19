@@ -1,7 +1,7 @@
 ---
-title:                "הורדת עמוד אינטרנט"
-html_title:           "Clojure: הורדת עמוד אינטרנט"
-simple_title:         "הורדת עמוד אינטרנט"
+title:                "הורדת דף אינטרנט"
+html_title:           "C++: הורדת דף אינטרנט"
+simple_title:         "הורדת דף אינטרנט"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -12,37 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## מה ולמה?
 
-הורדת דף אינטרנט היא תהליך שבו משתמשים מגוון רחב של מתכנתים בכדי לקבל תוכן מתוך דף אינטרנט ולהשתמש בו להמשך עיבוד או הצגה נוספת. הורדת דף אינטרנט היא חלק בלתי נפרד מפיתוח אפליקציות אינטרנט ומאפשרת למתכנתים לייעל את עבודתם ולהתאים את התוכן לצרכי המשתמשים.
+אימצאט ויב של האינטרנט הוא לשם החזרה של דף אינטרנט ללקוח. תכנתים עושים בדיוק אותו דבר, אבל ישירות מתוך קוד התוכנית שלהם. הם מבצעים את זה לשם איסוף מידע, ניתוח נתונים או יצירת אינטראקציה עם אתרים אחרים שונים.
 
-## איך לעשות זאת:
-
-הנה כמה דוגמאות של שימוש ב־Clojure כדי להוריד דף אינטרנט:
+## כיצד לעשות:
 
 ```Clojure
-(require '[clojure.java.io :as io])
-(def url "https://example.com")
-(io/copy (io/reader url) (io/writer "example.html"))
+(ns downloader.core
+  (:require [clj-http.client :as client]))
+
+(defn download-page
+  [url]
+  (:body (client/get url {:as :string})))
 ```
 
-בתוך הדוגמה, אנו משתמשים בספריית הפונקציות 'java.io' כדי ליצור את הקוד המתאים לפעולת ההורדה. אנו קוראים לפונקציות "reader" ו־"writer" שמחזירות אובייקטים הכוללים את הפעולות הדרושות לקריאה וכתיבה מתוך דף אינטרנט. לאחר מכן, אנו מעתיקים את התוכן שנמצא בדף לקובץ חיצוני בשם "example.html".
-
-הנה דוגמה נוספת שמשתמשת בספריית 'clj-http' המיועדת לטיפול בבקשות HTTP:
+הפונקציה הזו תוריד דף אינטרנט פשוט. לדוגמה:
 
 ```Clojure
-(require '[clj-http.client :as http])
-(def url "https://example.com")
-(http/get url {:as :byte-array})
+(download-page "http://www.example.com")
 ```
 
-בדוגמה זו, אנו משתמשים בפונקציית "get" של הספרייה ומעבירים את הכתובת של הדף ומספר אטריביוטים נוספים, כגון ":as :byte-array" שמציין שהפונקציה תחזיר את התוכן בתור מערך בינארי.
+אתה צפוי לראות את תוכן הדף שורש של http://www.example.com מודפס לקונסולה.
 
-## Deep Dive:
+## בעומק:
 
-לאורך השנים, פיתוח אתרי אינטרנט התפתח והפך למתודה נפוצה יותר ויותר. בתחילת הדרך, עשויות היו שיטות פשוטות יותר עבור הורדת דפי אינטרנט, כמו שימוש בתוכנות גרפיות להעתקת התוכן של הדף. אך עם השנים, פותחו ספריית שפות תכנות רבות המיועדות לטיפול בעקבותיות ושאר פרמטרים שיופיעו באתרים מגוונים.
+1. הדינמיקה של האינטרנט: בפעם הראשונה, האינטרנט היה רק טקסט פשוט. למרבה המזל, כיום, HTTP יכול לבצע הרבה יותר.
+2. חלופות: קיימות שפות אחרות אתה יכול לעשות זאת, למשל Python עם BeautifulSoup או JavaScript עם Cheerio.
+3. פרטי היישום: בסביבת העבודה שלך, אתה עשוי להשתמש בתוספות אחרות כדי להרחיב את פונקציונליות Clj-http, כמו ה- :follow-redirects או :coercion.
 
-בנוסף לשימוש ב־Clojure, תקיים גם אפשרות להשתמש בשפות תכנות אחרות כמו Python או Ruby להורדת דפי אינטרנט. בכל אופן, יהיה על מפתחים להתאים את הכלים והספריות המתאימים לצרכים שלהם ולהעמיד במטרות הרצויות.
+## ראה גם:
 
-## See Also:
-
-- [Clojure.io של Clojure.org](https://clojure.org/reference/io): מדריך לפעולות הקריאה והכתיבה כולל הבהרה על הפונקציות שימושיות בספרייה 'java.io'.
-- [clj-http ב־Github](https://github.com/dakrone/clj-http): הנחיות לשימוש עם הספרייה 'clj-http' כג
+- Clojure עבור המתחיל הזהיר -- http://www.braveclojure.com/clojure-for-the-brave-and-true/
+- קוד מדריך עבור Clj-http client -- https://github.com/dakrone/clj-http
+- Cheerio (JavaScript) -- https://cheerio.js.org/
+- BeautifulSoup (ב-Python) -- https://www.crummy.com/software/BeautifulSoup/bs4/doc/

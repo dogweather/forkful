@@ -1,6 +1,6 @@
 ---
 title:                "Convertire una stringa in minuscolo"
-html_title:           "Ruby: Convertire una stringa in minuscolo"
+html_title:           "Arduino: Convertire una stringa in minuscolo"
 simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,26 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cos'è & Perché?
+Convertire una stringa in minuscolo significa trasformare tutti i suoi caratteri in lettere minuscole. I programmatori lo fanno per normalizzare i dati di input, facilitare il confronto tra stringhe, e per evitare errori dovuti a casi diversi.
 
-Convertire una stringa in minuscolo è un'operazione comune nella programmazione che consiste nel rendere tutti i caratteri di una stringa in minuscolo. I programmatori spesso lo fanno per rendere più facile la comparazione di stringhe o per uniformare l'input dell'utente.
-
-## Come fare:
+## Come si fa:
+In Ruby, la conversione di una stringa in minuscolo è semplice grazie al metodo `downcase`. Ecco un esempio:
 
 ```Ruby
-stringa = "Ciao a Tutti"
+stringa = "Ciao, Mondo!"
 
-puts stringa.downcase
-# output: ciao a tutti
+stringa_minuscola = stringa.downcase
 
-puts stringa
-# output: Ciao a Tutti
+puts stringa_minuscola
+```
+
+L'output sarà:
+
+```Ruby
+"ciao, mondo!"
 ```
 
 ## Approfondimento:
+Originariamente, le operazioni sui casi delle stringhe erano necessarie a causa delle differenze tra i caratteri maiuscoli e minuscoli in ASCII. Oggi, il metodo `downcase` in Ruby è fondamentale per la normalizzazione dei dati, specie nel contesto del confronto tra stringhe.
 
-Convertire le stringhe in minuscolo è una pratica comune nella programmazione moderna, ma ha le sue origini negli albori dei computer. Prima dell'avvento dei moderni linguaggi di programmazione, le stringhe venivano memorizzate in maiuscolo nei computer, in quanto era più efficiente in termini di spazio di memoria. Oggi esistono anche altre opzioni per manipolare le stringhe, come ad esempio utilizzare metodi che consentono di confrontare le stringhe senza doverle prima convertire in minuscolo.
+E' possibile convertire tutto in maiuscolo con l'uso del metodo `upcase`:
+
+```Ruby
+stringa = "Ciao, Mondo!"
+puts stringa.upcase // Output: "CIAO, MONDO!"
+```
+
+Ruby implementa il metodo `downcase` iterando su ciascun carattere della stringa, cambiandolo in minuscolo con l'uso di un semplice mappaggio ASCII.
 
 ## Vedi anche:
-
-Per ulteriori informazioni su metodi di manipolazione delle stringhe in Ruby, puoi consultare la documentazione ufficiale: https://ruby-doc.org/core-2.7.2/String.html
+- [Ruby Documentation: String](https://ruby-doc.org/core-2.7.1/String.html)
+- [ASCII Code - The extended ASCII table](https://www.ascii-code.com/)
+- [Ruby - Strings](https://www.tutorialspoint.com/ruby/ruby_strings.htm)

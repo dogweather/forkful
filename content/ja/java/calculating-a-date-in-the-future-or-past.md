@@ -1,7 +1,7 @@
 ---
-title:                "未来または過去の日付を計算する。"
-html_title:           "Java: 未来または過去の日付を計算する。"
-simple_title:         "未来または過去の日付を計算する。"
+title:                "将来または過去の日付を計算する"
+html_title:           "Java: 将来または過去の日付を計算する"
+simple_title:         "将来または過去の日付を計算する"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,50 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-日付を将来または過去に計算することは、プログラマーにとって非常によく使われる機能です。これは、特定の日付から何かを計算することを可能にし、より柔軟なアプリケーションを作成することができるからです。
-## 方法：
-```java
+# 何となぜ？
+
+未来または過去の日付を計算するとは、特定の日付から特定の期間を加算または減算して新しい日付を得ることです。これにより、プログラマーは日付関連の複雑な問題を効率的に解決することができます。
+
+# 方法：
+
+Javaの標準ライブラリの'LocalDate'クラスを使って見てみましょう。
+
+```Java
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.time.Period;
 
-public class CalculateDate {
-
+public class FuturePastDate {
     public static void main(String[] args) {
-
-        // 現在の日付
         LocalDate today = LocalDate.now();
-        System.out.println("現在の日付: " + today);
+        Period p = Period.ofDays(10);    // Change the period as necessary
 
-        // 1ヶ月後の日付を計算
-        LocalDate oneMonthLater = today.plusMonths(1);
-        System.out.println("1ヶ月後の日付: " + oneMonthLater);
+        LocalDate futureDate = today.plus(p);
+        LocalDate pastDate = today.minus(p);
 
-        // 10年前の日付を計算
-        LocalDate tenYearsAgo = today.minusYears(10);
-        System.out.println("10年前の日付: " + tenYearsAgo);
-
-        // 日付のフォーマットを指定
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-
-        // ある日付の特定のフォーマットで計算
-        String birthday = "2000/01/01";
-        LocalDate nextBirthday = LocalDate.parse(birthday, formatter).plusYears(1);
-        System.out.println("来年の誕生日: " + nextBirthday.format(formatter));
-
+        System.out.println("Today's Date: " + today);
+        System.out.println("Date after 10 days: " + futureDate);
+        System.out.println("Date 10 days ago: " + pastDate);
     }
 }
 ```
-実行結果:
+
+このコードを実行すると、以下の出力が得られます：
+
 ```
-現在の日付: 2021-03-17
-1ヶ月後の日付: 2021-04-17
-10年前の日付: 2011-03-17
-来年の誕生日: 2001/01/01
+Today's Date: 2022-1-1
+Date after 10 days: 2022-1-11
+Date 10 days ago: 2021-12-22
 ```
-## 深堀り：
-この日付の計算機能は、Java8で導入されたjava.timeパッケージに含まれています。以前のバージョンでは、DateやCalendarクラスを使用して日付計算を行っていましたが、その操作性や扱いにくさからjava.timeパッケージが導入されました。このパッケージはより直感的で使いやすいインターフェースを提供しています。また、Joda-TimeやThreeTen-Extraなどの代替ライブラリもあります。
-## 関連記事：
-- [Java8の日付と時刻API](https://docs.oracle.com/javase/jp/8/docs/api/java/time/package-summary.html)
-- [Joda-Time](https://www.joda.org/joda-time/)
-- [ThreeTen-Extra](https://www.threeten.org/threeten-extra/)
+
+# ディープダイブ:
+
+(1) 歴史的背景:
+
+Javaの'Date'クラスは、年-月-日の概念に基づく未来や過去の日付の計算に問題がありました。Java 8で導入された'LocalDate'と'Period'クラスはこの問題を解決しました。
+
+(2) 別の方法:
+
+Javaの'Calendar'クラスを使用して未来または過去の日付を計算する事もできますが、'LocalDate'クラスの使用が推奨されます。
+
+(3) 実装詳細:
+
+'LocalDate'クラスの'plus'と'minus'メソッドは、それぞれ未来と過去の日付を計算します。「Period」クラスは日付間の期間を定義します。
+
+# 関連参考:
+
+- Oracle公式Javaドキュメンテーション: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+- Oracle公式Javaチュートリアル-日付と時刻: https://docs.oracle.com/javase/tutorial/datetime/

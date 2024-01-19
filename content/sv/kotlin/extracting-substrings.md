@@ -1,7 +1,7 @@
 ---
-title:                "Extrahera substrängar"
-html_title:           "Kotlin: Extrahera substrängar"
-simple_title:         "Extrahera substrängar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -12,32 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Strängutvinning är processen att extrahera en del av en sträng baserat på ett givet kriterium. Programmerare använder detta för att få tillgång till specifika delar av data som är intressant för deras program.
+Att extrahera delsträngar innebär att ta en specifik del av en sträng baserat på position. Programmerare gör detta ofta för att bearbeta data och filtrera relevant information.
 
-## Hur man gör:
+## Hur man gör
+
+För att extrahera en delsträng i Kotlin, kan du använda `substring` funktionen. Här är några exempel:
 
 ```Kotlin
-val str = "Det här är en svensk mening."
+val text = "Hej, världen!"
+println(text.substring(0,3))  // Utskrift: "Hej"
 
-// Hämta en delsträng från index 10 till slutet av strängen.
-val del1 = str.substring(10)
-
-// Hämta en delsträng från index 0 till 9.
-val del2 = str.substring(0, 9)
-
-// Hämta en delsträng från index 4 till 8.
-val del3 = str.substring(4, 8)
-
-// Output: svensk mening.
-print("$del1 $del2 $del3")
+val namn = "Nils Svensson"
+println(namn.substring(5))  // Utskrift: "Svensson"
 ```
 
-## Djupdykning:
+I det första exemplet tar vi ut de första tre tecknen. I det andra exemplet tar vi bort de första fem tecknen och tar resten av strängen.
 
-Strängutvinning är en grundläggande del av programmering och har funnits sedan starten av programmeringsspråk. Det finns flera alternativ till `substring()` metoden, såsom `slice()` eller `substr()`. Det finns också implementeringsdetaljer att beakta, då vissa programspråk använder nollindexering medan andra använder ett-indexering.
+## Djupdykning
 
-## Se även:
+`substring` funktionen är en del av Strings API i Kotlin och har funnits sedan Kotlin 1.0. Dess implementation är baserad på Java's `substring`, men med mer lättanvända gränsvärden. 
 
-- [Kotlin String Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [String manipulation techniques in programming](https://www.geeksforgeeks.org/string-manipulation-techniques-in-programming/)
-- [Substring in Java vs Kotlin](https://www.baeldung.com/java-vs-kotlin-substring)
+En alternativ metod för att extrahera delsträngar är att använda `split` funktionen för att dela upp originalet i lösa delar. 
+
+Implementationen av `substring` skapar en ny sträng istället för att visa till originalsträngen. Detta kan ha prestanda konsekvenser för mycket stora strängar.
+
+## Se också
+
+För mer information om att arbeta med strängar i Kotlin, se följande resurser:
+
+- Officiell Kotlin dokumentation på att arbeta med strängar: [Kotlin String API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+- En djupare dykning i Kotlin's Strings med exempel: [Baeldung's Guide to Kotlin Strings](https://www.baeldung.com/kotlin-strings)
+- Ytterligare läsning om Kotlin's prestanda frågor: [Kotlin Performance](https://kotlinlang.org/docs/performance.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Java: Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
 simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Java"
 category:             "Java"
@@ -10,49 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+## Co i dlaczego?
+Wyszukiwanie i zamienianie tekstu to proces, który pozwala odnaleźć konkretne fragmenty tekstu i wymienić je na inne. Programiści robią to przeważnie dla automatyzacji edycji w tekstach o dużym rozmiarze.
 
-W programowaniu, "szukanie i zamienianie" tekstu (znane także jako "replace" lub "find and replace") oznacza wyszukiwanie określonego ciągu znaków w tekście i zamienianie go na inny ciąg. Programiści często stosują tę technikę, aby modyfikować wielokrotnie występujące wyrazy lub frazy w kodzie lub plikach tekstowych.
-
-# Jak to zrobić:
-
-### Przykłady kodu w Javie:
+## Jak to zrobić:
+Oto jak używamy metody `replace()` w Java, aby wyszukać i zamienić tekst:
 
 ```Java
-String text = "Cześć, nazywam się Jan i lubię programować.";
-String newText = text.replace("Jan", "Kasia");
-System.out.println(newText);
+public class Main {
+    public static void main(String[] args) {
+        String txt = "Witaj, świecie!";
+        String newTxt = txt.replace("świecie", "Java");
+
+        System.out.println(newTxt);
+    }
+}
+```
+Na wyjściu dostaniemy:
+
+```
+Witaj, Java!
 ```
 
-Wynik:
-```
-Cześć, nazywam się Kasia i lubię programować.
-```
+## Zanurzmy się głębiej:
+Pierwsze techniki zamiany tekstu pojawiały się w latach 70. z pojawieniem się pierwszych edytorów tekstowych. Alternatywami dla metody `replace()` w Java są skomplikowane metody korzystające z wyrażeń regularnych, takie jak `replaceAll()` lub `replaceFirst()`.
 
-```Java
-String program = "Java";
-String newProgram = program.replace("a", "A");
-System.out.println(newProgram);
-```
+Do implementacji `replace()` w Java używa się algorytmu dwuetapowego. Najpierw przegląda się ciąg znaków, a następnie tworzy nowy ciąg znaków z zamienionym tekstem.
 
-Wynik:
-```
-JAvA
-```
-
-# Dogłębne zagłębienie:
-
-### Kontekst historyczny:
-Pierwsze wzmianki o funkcji "szukaj i zamień" można znaleźć w geodezji i kartografii w latach 40. XX wieku. Później została ona wprowadzona do programów tekstowych w latach 60. XX wieku, umożliwiając szybką i efektywną modyfikację tekstu.
-
-### Alternatywy:
-Istnieje wiele narzędzi i programów do znajdowania i zamieniania tekstu, w tym funkcje wbudowane w popularne edytory tekstu, takie jak Notepad++ czy Visual Studio Code.
-
-### Szczegóły implementacyjne:
-W języku Java, funkcja "replace" jest dostępna dla obiektów klasy String i umożliwia nie tylko zamianę pojedynczego znaku na inny, ale także zamianę całego wyrażenia. Można także określić, czy zamiana ma być wykonywana jedynie dla pierwszego wystąpienia lub dla wszystkich wystąpień w tekście.
-
-# Zobacz także:
-
-[Oficjalna dokumentacja Javy na temat funkcji replace](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-)
-
-[Inne funkcje dostępne dla obiektów String w Javie](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+## Zobacz również:
+1. [Dokumentacja Oracle för metody replace()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-)
+2. [Tutorial do używania metody replace()](https://www.javatpoint.com/java-string-replace)
+3. [Dyskusja o wydajności metody replace()](https://stackoverflow.com/questions/16228992/commons-lang-stringutils-replace-performance-vs-string-replace)
+4. [Porównanie replace() i replaceAll()](http://javaconceptoftheday.com/difference-between-replace-and-replaceall-in-java/)

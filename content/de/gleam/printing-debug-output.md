@@ -1,7 +1,7 @@
 ---
-title:                "Ausgabe von Debug-Meldungen"
-html_title:           "Gleam: Ausgabe von Debug-Meldungen"
-simple_title:         "Ausgabe von Debug-Meldungen"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -11,32 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Debugging-Ausgaben sind Textnachrichten, die während der Ausführung eines Programms gedruckt werden und dabei helfen, Fehler oder Probleme zu identifizieren. Programmierer verwenden sie oft, um zu verstehen, was in ihrem Code passiert und warum bestimmte Probleme auftreten.
 
-## Wie geht es?
-Es gibt mehrere Möglichkeiten, Debugging-Ausgaben in Gleam zu erstellen. Eine Möglichkeit ist die Verwendung des `debug`-Moduls, das eine `debug.print`-Funktion bereitstellt. Zum Beispiel:
+Druckausgabe für Debug-Zwecke ("Debug Output") ist eine Methode, um während der Laufzeit des Programms Daten auszugeben. Programmierer verwenden sie, um den Status des Systems besser zu verstehen und fehlerhafte Bereiche zu ermitteln.
 
-```Gleam
-import debug
+## Wie:
 
-debug.print("Hello World")
-```
-
-Dies würde die Nachricht "Hello World" in der Konsole ausgeben. Eine andere Möglichkeit ist die Verwendung von `debug.expect`, um zu überprüfen, ob ein bestimmter Wert erwartet wird. Zum Beispiel:
+Verwende Gleam's `io.println` Funktion, um Text auszugeben. Hier ist ein einfaches Beispiel:
 
 ```Gleam
-import debug
+import gleam/io
 
-let a = 1 + 2
-debug.expect(a, 3)
+fn main() {
+  io.println("Hallo, Gleam!")
+}
 ```
 
-Dies würde eine Fehlermeldung ausgeben, wenn `a` nicht den erwarteten Wert von 3 hat.
+Ausführen dieses Codes wird "Hallo, Gleam!" in der Konsole ausgeben.
 
-## Tiefentauchen
-Das Drucken von Debugging-Ausgaben ist eine gängige Praxis beim Debuggen von Software und hat eine lange Geschichte. Eine Alternative zu diesem Ansatz ist das Verwenden von integrierten Debugging-Tools oder das Verfolgen von Logs. Die Implementierung von Debugging-Ausgaben in Gleam erfolgt durch die Verwendung von Funktionen aus dem `debug`-Modul, die eng mit dem Standardmodul `io` zusammenarbeiten.
+Um Variablen auszugeben, nutze String Interpolation:
+
+```Gleam
+import gleam/io.{println}
+import gleam/string.{from_int}
+
+fn main() {
+  let num = 5
+  let msg = "Die Nummer ist " <> from_int(num)
+  println(msg)
+}
+```
+
+Dieser Code gibt aus: "Die Nummer ist 5"
+
+## Tiefere Einblicke
+
+Die Verwendung von `Debug Output` ist eine historische Praxis, die auf den Beginn der Programmierung zurückgeht. Es bietet eine einfache Möglichkeit, den Zustand eines Programms zu überwachen und zu verstehen.
+
+Alternativ könntest du ein Logging-Framework wie Lumberjack verwenden, um ein besser konfigurierbares und komplexeres Debugging und Logging zu ermöglichen.
+
+In Gleam Projekten, `println` ist definiert im 'io' Modul, und `from_int` ist definiert im 'string' Modul. Sie arbeiten zusammen, um eine elegante und einfache Möglichkeit zur Überwachung der Programmausgabe zu bieten.
 
 ## Siehe auch
-- [Gleam Handbuch zu Debugging](https://gleam.run/book/introduction.html#debugging)
-- [Gleam Dokumentation zu Debugging](https://gleam.run/packages/gleam_stdlib/latest/debug.html)
-- [Gleam Standardbibliothek: Debug-Modul](https://gleam.run/packages/gleam_stdlib/latest/debug.html)
+
+- Documentation for Gleam’s IO module: <https://hexdocs.pm/gleam_stdlib/gleam/io/index.html>
+- Documentation for Gleam’s string module: <https://hexdocs.pm/gleam_stdlib/gleam/string/index.html>
+- Lumberjack Logging Framework: <https://hexdocs.pm/lumberjack/Lumberjack.html>

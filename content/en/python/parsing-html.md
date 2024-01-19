@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "Python recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Python"
 category:             "Python"
@@ -10,85 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing HTML in Python: A Brief Guide
+# Parsing HTML with Python: A Pragmatic Approach
 
 ## What & Why?
-Parsing HTML refers to breaking down a web page into manageable pieces, essentially making sense of its structure. Programmers parse HTML to extract useful data, automate browser tasks or build web scrapers.
+
+Parsing HTML is the process of making sense of the content in an HTML document. It's a common task for programmers for various reasons, such as web scraping, testing, and automating tasks on websites.
 
 ## How to:
 
-Python provides several libraries for HTML parsing. For simplicity, our tutorial uses `BeautifulSoup4`. To install it, run:
+Let's use Beautiful Soup, a popular Python library due to its ability to simplify HTML parsing.
+
+Install it via pip:
 
 ```Python
 pip install beautifulsoup4
 ```
 
-Let's say you have a simple HTML file named `test.html`.
-
-```HTML
-<html>
-    <head>
-        <title>Test Page</title>
-    </head>
-    <body>
-        <h1>Welcome to the Test Page</h1>
-        <p>This is a simple paragraph.</p>
-    </body>
-</html>
-```
-
-You can open and parse it with BeautifulSoup as follows:
+And here's a basic example of using it to extract all links from a web page:
 
 ```Python
 from bs4 import BeautifulSoup
+import requests
 
-with open('test.html', 'r') as html_file:
-    soup = BeautifulSoup(html_file, 'html.parser')
+# get HTML content
+response = requests.get('https://www.example.com')
+html = response.text
 
-print(soup.prettify())
+# parse HTML
+soup = BeautifulSoup(html, 'html.parser')
+
+# find and print all links
+for link in soup.find_all('a'):
+    print(link.get('href'))
 ```
 
-The output will retain the HTML structure:
-
-```HTML
-<html>
- <head>
-  <title>
-   Test Page
-  </title>
- </head>
- <body>
-  <h1>
-   Welcome to the Test Page
-  </h1>
-  <p>
-   This is a simple paragraph.
-  </p>
- </body>
-</html>
-```
-
-To extract text from the `<h1>` tag:
-
-```Python
-header = soup.find('h1').text
-print(header)
-```
-
-The output will be:
-
-```
-Welcome to the Test Page
-```
+If you run this script with a valid URL, it'll print out all the links found on the page.
 
 ## Deep Dive
 
-HTML parsing in Python dates back to the early days of the web. Developers needed a way to pull data from the once-static web.
+Despite its simplicity, HTML parsing has a rich history and alternatives. The use of regular expressions was a common practice before dedicated libraries emerged. This method, while working for simple use cases, fails with complex HTML and isn't as efficient nor readable as using a parser like Beautiful Soup.
 
-Alternatives to BeautifulSoup include `lxml` and `html.parser`. BeautifulSoup is comprehensive and forgiving with broken HTML. `lxml`, being written in C, is faster. `html.parser`, part of Python's standard library, needs no additional installation.
+Alternatives to Beautiful Soup include lxml and html5lib, which also provide APIs for HTML parsing. Fairly speaking, lxml is significantly faster, but Beautiful Soup is more lenient with error handling and offers a few more features.
 
-BeautifulSoup transforms complex HTML into a tree of Python objects, like tags, navigable strings, or comments. It's an actual parser, not just a regular expression wrapper. This feature allows it to handle inconsistencies and brokenness in the HTML.
+How these parsers work internally varies. Some, like lxml, compile to C code for maximum speed, while others, like Beautiful Soup, are pure Python and emphasize on the ease of use.
 
 ## See Also
 
-For further reading on BeautifulSoup, check out the [official documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/). An alternative Python library for parsing HTML is [lxml](https://lxml.de/). If you're wondering why not to parse HTML with regex, see this famous [Stack Overflow post](http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454).
+Beyond the basic use case presented, there's a lot more that can be done with HTML parsing. Take a look at these resources for a fuller picture:
+
+- [Beautiful Soup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [LXML's Parsing Tutorial](https://lxml.de/parsing.html)
+- [Real Python's Tutorial on Web Scraping](https://realpython.com/python-web-scraping-practical-introduction/)
+- [W3School's HTML Tutorial](https://www.w3schools.com/html/default.asp)

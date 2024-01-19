@@ -1,6 +1,6 @@
 ---
 title:                "Ottenere la data corrente"
-html_title:           "Haskell: Ottenere la data corrente"
+html_title:           "Java: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,30 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-La data corrente è semplicemente la data di oggi. I programmatori spesso utilizzano questa funzionalità per tenere traccia del tempo o per stampare la data in applicazioni come calendari o pannelli di controllo.
+## Cos'è e Perchè?
 
-## How to:
-Per ottenere la data corrente in Haskell, possiamo utilizzare la funzione `getCurrentTime` del modulo `Data.Time`. Dopo aver importato il modulo, possiamo semplicemente chiamare questa funzione per ottenere un valore di tipo `UTCTime`, che rappresenta l'ora corrente in formato universale.
+Ottenere la data corrente significa recuperare la data e l'ora esatte in cui il tuo programma sta girando. Questo può essere utile per molte cose, come la registrazione di quando un evento specifico si è verificato nel sistema o la tracciatura di date di scadenza.
 
-```Haskell
-import Data.Time
-getCurrentTime
-```
-Output: `2021-10-04 20:24:16.123456 UTC`
+## Come Fare:
 
-Possiamo anche convertire la data in un formato più leggibile utilizzando la funzione `formatTime` e specificando il formato desiderato come primo argomento.
+Per ottenere la data corrente in Haskell, useremo la libreria `Data.Time.Clock`. Ecco un esempio:
 
 ```Haskell
-import Data.Time
-import Data.Time.Format
-getCurrentTime >>= print . formatTime defaultTimeLocale "%d/%m/%Y"
+import Data.Time.Clock
+import Data.Time.Calendar
+
+main = do
+    tempo_corrente <- getCurrentTime
+    let giorno_corrente = utctDay tempo_corrente
+    print giorno_corrente
 ```
-Output: `04/10/2021`
 
-## Deep Dive:
-La funzione `getCurrentTime` è stata introdotta nella versione 4.8.0.0 di Haskell e fa parte del pacchetto standard `time`. Inoltre, esistono altre librerie come `haskell-time` e `time-locale-compat` che forniscono funzioni simili per lavorare con le date in Haskell. Tuttavia, è importante notare che la gestione del tempo e delle date può essere complicata e può portare a errori se non trattata correttamente.
+Eseguendo questo codice, otterrai un output simile a questo:
 
-## See Also:
-- [Documentazione ufficiale di `Data.Time`](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Tutorial su come lavorare con le date in Haskell](https://mitchellwrosen.github.io/lifting-applications-ch-24.html)
+```Haskell
+>>> main
+2022-02-22
+```
+
+## Approfondimento:
+
+Historicamente, ottenere la data corrente è un problema comune in programmazione, indipendentemente dal linguaggio utilizzato. In Haskell, la libreria `Data.Time.Clock` è molto comune per ottenere la data corrente. Tuttavia ci sono alternative, come `System.Time` che fornisce la funzione `getClockTime`. 
+
+```Haskell
+import System.Time
+
+main = do
+    tempo_corrente <- getClockTime
+    print tempo_corrente
+```
+
+Però, `System.Time` è deprecato nella versione attuale di Haskell. Preferiamo usare `Data.Time.Clock` che ha un'implementazione più robusta e flessibile.
+
+## Da Vedere Anche:
+
+Per ottenere ulteriori informazioni, consulta le seguenti risorse:
+
+1. Documentazione ufficiale per [`Data.Time.Clock`](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
+2. Una guida completa alla [programmazione di data e ora in Haskell](http://two-wrongs.com/haskell-time-library-tutorial)
+3. Domande e risposte correlate su [Stack Overflow](https://stackoverflow.com/questions/tagged/haskell+date)

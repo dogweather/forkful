@@ -1,6 +1,6 @@
 ---
 title:                "Leyendo un archivo de texto"
-html_title:           "Gleam: Leyendo un archivo de texto"
+html_title:           "Arduino: Leyendo un archivo de texto"
 simple_title:         "Leyendo un archivo de texto"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,22 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-Leer un archivo de texto es simplemente leer el contenido de un archivo que contiene texto. Los programadores lo hacen para poder trabajar con la información del archivo y realizar diferentes operaciones en él.
+## ¿Qué y por qué?
 
-## Cómo Hacerlo:
-Para leer un archivo de texto en Gleam, primero necesitas abrir el archivo usando la función `std.fs.read_file`. Luego, puedes usar la función `file::read` para leer el contenido del archivo en una cadena de texto. Aquí hay un ejemplo:
+Leer un archivo de texto significa tomar datos guardados en este archivo y usarlos en tu programa. Los programadores hacen esto cuando necesitan procesar información almacenada en archivos.
 
+## Cómo hacerlo:
+
+Vamos a leer un archivo de texto usando Gleam. Pon atención a los siguientes bloques de código:
+
+```Gleam
+import gleam/io.{File, open, read}
+
+let file = open("archivo.txt")?
+let contenido = read(file)?
 ```
-archivo := std.fs.read_file("ruta/del/archivo")
-texto := file::read(archivo)
-```
 
-Si el archivo no se puede abrir o leer correctamente, la función devolverá un error. En caso de que el archivo se lea exitosamente, `texto` contendrá el contenido del archivo en forma de cadena de texto.
+Esto abrirá el archivo "archivo.txt", leerá su contenido y lo almacenará en la variable `contenido`.
 
-## Profundizando:
-Leer archivos de texto ha sido una tarea común para los programadores desde los primeros días de la programación. En Gleam, el enfoque en la seguridad de tipos y la concurrencia hace que sea seguro y fácil trabajar con archivos de texto. Alternativas al método descrito anteriormente incluyen el uso de bibliotecas de terceros como `std.text` o `std.io` para leer archivos de manera más eficiente.
+## Inmersión profunda:
 
-## Vea También:
-- Documentación oficial de Gleam sobre lectura de archivos: https://gleam.run/book/tour/files
-- Ejemplo de lectura de un archivo de texto en Gleam: https://github.com/gleam-lang/example-project/blob/master/examples/file_io/file_io.gleam
+¿Por qué leemos archivos de texto? Esta práctica se remonta a los primeros días de la programación. Los archivos de texto son una forma simple y efectiva de almacenar y compartir datos. Pero no es la única opción, también existen las bases de datos y los servicios en la nube.
+
+En Gleam, la implementación de la lectura de archivos es muy directa gracias a su naturaleza funcional. Sin embargo, este proceso puede variar dependiendo del tipo de archivo que estés leyendo y de cómo necesites procesar los datos.
+
+## Ver también:
+
+1. [Documentación oficial de Gleam](https://gleam.run/docs/)
+
+2. [Gleam en GitHub](https://github.com/gleam-lang/gleam)
+
+3. [Gleam IO (Entrada/Salida) documentación](https://hexdocs.pm/gleam_stdlib/gleam/io/index.html)

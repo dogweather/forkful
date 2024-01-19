@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "PowerShell: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,25 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & dlaczego?
-Czy kiedykolwiek zastanawiałeś się, jak programiści odczytują zawartość plików tekstowych? To nic innego jak umiejętność odczytywania linia po linii tekstu z pliku, aby móc przetworzyć te informacje i wykorzystać je w swoim kodzie. Jest to ważna umiejętność dla każdego programisty, ponieważ pliki tekstowe są jednym z podstawowych sposobów przechowywania danych w systemach operacyjnych.
+# Czytanie plików tekstowych w PowerShell - Jak to zrobić?
+
+## Co & Dlaczego?
+Czytanie z plików tekstowych to proces, w którym wskaźnik wczytuje dane z pliku tekstowego do pamięci programu. Programiści robią to, aby móc przetwarzać zapisane wcześniej dane, których używają ich programy.
 
 ## Jak to zrobić:
+Używać będziemy cmdlet `Get-Content`. Przykładowe użycie:
+
 ```PowerShell
-$plik = Get-Content -Path "sciezka/do/pliku.txt" # przypisanie zawartości pliku do zmiennej
-$plik # wyświetlenie zawartości pliku w konsoli
+$tekst = Get-Content -Path C:\mojPlik.txt
+Write-Output $tekst
 ```
 
-Kod powyżej pokazuje, że w celu odczytania pliku tekstowego w PowerShell, możemy użyć cmdletu `Get-Content` i podać ścieżkę do pliku jako argument. Następnie przypisujemy odczytaną zawartość do zmiennej i możemy z niej korzystać w swoim kodzie. Możemy również wyświetlić zawartość w konsoli, używając nazwy zmiennej.
+Jeżeli `mojPlik.txt` zawierałby tekst "Witaj, świecie!", to output wyglądałby tak:
 
-## Deep Dive:
-Odczytywanie plików tekstowych jest ważną umiejętnością od czasów powstania komputerów. Przed wynalezieniem graficznego interfejsu użytkownika, wszystkie dane były zapisywane i przetwarzane jako tekst, dlatego umiejętność odczytywania plików tekstowych była niezbędna dla każdego programisty.
+```PowerShell
+Witaj, świecie!
+```
 
-Alternatywnym sposobem odczytywania plików tekstowych w PowerShell jest użycie metody `ReadAllText` klasy `System.IO.File`. Może to być przydatne, jeśli chcemy odczytać cały plik na raz i nie potrzebujemy przetwarzać go linia po linii.
+## Deep Dive
+Cmdlet `Get-Content` to jeden z najwcześniejszych sposobów na odczyt plików tekstowych wprowadzonych w PowerShell. Alternatywą może być funkcja [.NET](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=net-5.0), takie jak `System.IO.File]::ReadAllText("C:\mojPlik.txt")`. Pod względem wykonania, wydajność cmdlet `Get-Content` jest lepsza przy dużych plikach, ponieważ odczytuje plik sekwencyjnie, podczas gdy `ReadAllText` wczytuje cały plik do pamięci na raz.
 
-Implementacyjne szczegóły odczytywania pliku tekstowego w PowerShell różnią się w zależności od systemu operacyjnego, na którym jest uruchomiony skrypt. Na przykład, w systemie Windows, standardowe znaki końca linii są reprezentowane jako `CR LF` (carriage return i line feed), podczas gdy w systemie Linux jako `LF` (line feed).
+## Zobacz też:
 
-## Zobacz również:
-- Dokumentacja Microsoft dotycząca cmdletu [Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7)
-- Tutorial na temat [pracy z plikami tekstowymi w PowerShell](https://www.pluralsight.com/guides/working-with-file-content)
-- Książka "Learn Windows PowerShell in a Month of Lunches" autorstwa Dona Jonesa.
+- [Dokumentacja Microsoft dla Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
+- [Porównanie wydajności cmdlet 'Get-Content'](https://powershell.org/2013/10/the-get-content-cmdlet/)
+- [Wiecej o System.IO.File]::ReadAllText](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=net-5.0)

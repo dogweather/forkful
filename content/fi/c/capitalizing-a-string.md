@@ -1,7 +1,7 @@
 ---
-title:                "Muutetaan merkkijonoa isolla alkukirjaimella"
-html_title:           "C: Muutetaan merkkijonoa isolla alkukirjaimella"
-simple_title:         "Muutetaan merkkijonoa isolla alkukirjaimella"
+title:                "Merkkijonon pääkirjainten käyttö"
+html_title:           "C: Merkkijonon pääkirjainten käyttö"
+simple_title:         "Merkkijonon pääkirjainten käyttö"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,55 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Tervehdys, ohjelmoijat! Olet varmasti joskus nähnyt sanaan "CAPS" kirjoitettuna isoilla kirjaimilla. Tämä tarkoittaa tekstin isossa kirjoituksessa ja se on yleinen tapa merkitä tekstiä tietokoneessa. Kun ohjelmoijat "kapitalisoivat" merkkijonoja, he tekevät niistä isoja kirjaimia. Tämä on hyödyllistä, kun yrittävät löytää tietyn sanan tai merkkijonon isolla tai pienellä kirjoituksella.
+Merkkijonon pääomittaminen tarkoittaa kaikkien merkkijonon kirjainten muuttamista suuriksi kirjaimiksi. Se auttaa tekemään tekstistä helposti luettavampaa ja erottuvampaa.
 
-## Miten?
-
-Tässä on lyhyt esimerkki siitä, miten voit kapitalisoida merkkijonon C-kielellä:
+## Näin teet sen:
 
 ```C
+#include <ctype.h>
 #include <stdio.h>
 
-// Funktio, joka muuntaa merkkijonon isojen kirjainten muotoon
-void capitalize(char *str) {
-   int i;
-
-   // Käydään läpi jokainen merkki merkkijonosta
-   for (i = 0; str[i] != '\0'; i++) {
-      // Jos merkki on pieni kirjain, muutetaan se isoksi kirjaimeksi
-      if (str[i] >= 'a' && str[i] <= 'z') {
-         str[i] = str[i] - 32;
-      }
-   }
+void Paaomita(char s[]) {
+    for(int i = 0; s[i] != '\0'; i++) {
+        s[i] = toupper(s[i]);
+    }
 }
 
 int main() {
-   char str[50] = "ohjelmointi on hauskaa";
-
-   printf("Alkuperäinen merkkijono on: %s\n", str);
-
-   // Kutsutaan capitalize-funktiota ja tulostetaan muokattu merkkijono
-   capitalize(str);
-   printf("Muutettu merkkijono on: %s\n", str);
-
-   return 0;
+    char teksti[] = "ohjelmointi on hauskaa";
+    Paaomita(teksti);
+    printf("%s\n", teksti); 
+    return 0;
 }
 ```
 
-Tämä koodi tulostaa:
+Tämä ohjelma tulostaa: `OHJELMOINTI ON HAUSKAA`
 
-```
-Alkuperäinen merkkijono on: ohjelmointi on hauskaa
-Muutettu merkkijono on: OHJELMOINTI ON HAUSKAA
-```
+## Syvällä sukelluksella
 
-## Syvempi sukellus
+Ohjelmoinnin alkupäivinä, kun järjestelmät olivat rajoitettuja, merkkijonon pääomittaminen auttoi säästämään arvokasta laskentatehoa. Nykypäivänä se on edelleen hyödyllinen, mutta syistä, jotka liittyvät enemmän käytettävyyteen ja luettavuuteen.
 
-Tietokoneissa käytetään yleensä ASCII-koodausta merkkien tallentamiseen ja käsittelyyn. Tämä tarkoittaa, että jokaisella merkillä on oma numeronsa ja pienet ja isot kirjaimet ovat eri numeroiden takana. Pienestä isoksi muuntamisen yksinkertainen logiikka perustuu ASCII-koodien numeroiden lisäämiseen tai vähentämiseen. Toiset kielet, kuten Java, tarjoavat valmiin capitalized-funktion, mutta C-kielessä sitä täytyy kirjoittaa itse.
+Vaihtoehtoisia tapoja merkkijonon pääomittamiseksi ovat esimerkiksi yksittäisten merkkien käsittely iteraattoreiden, kuten `for_each`, kanssa tai käyttämällä korkeamman tason kirjaston funktioita, kuten `boost::to_upper_copy`.
+
+C:n standardikirjastossa `toupper` -funktio on toteutettu tavallisesti käyttämällä merkkikohtaista taulukkoa, joka sisältää vastaavat suuret kirjaimet. Tämä on tehokasta muistin ja nopeuden kannalta.
 
 ## Katso myös
 
-[C-kirjasto](https://www.cprogramming.com/tutorial/c/lesson14.html)
-[ASCII-koodit](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html)
+- C-kirjasto: ctype.h ([Linkki](https://en.cppreference.com/w/c/string/byte/toupper))
+- Boost kirjasto: to_upper_copy ([Linkki](https://www.boost.org/doc/libs/1_73_0/doc/html/string_algo/usage.html#id-2.9.5.8.5))
+- ISO C-Standardi ([Linkki](https://www.iso.org/standard/74528.html))

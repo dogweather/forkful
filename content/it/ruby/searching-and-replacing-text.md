@@ -1,7 +1,7 @@
 ---
-title:                "Ricerca e sostituzione di testo"
-html_title:           "Ruby: Ricerca e sostituzione di testo"
-simple_title:         "Ricerca e sostituzione di testo"
+title:                "Ricerca e sostituzione del testo"
+html_title:           "Arduino: Ricerca e sostituzione del testo"
+simple_title:         "Ricerca e sostituzione del testo"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cos'è & Perché?
 
-La ricerca e la sostituzione del testo sono due procedure comuni che i programmatori utilizzano per trovare e modificare parti specifiche di un testo o di un codice. Questo è utile per risparmiare tempo e migliorare l'efficienza del lavoro.
+Ricerca e sostituzione del testo è l'opzione che ci permette di trova un particolare pezzo di codice e sostituire con un altro. I programmatori lo fanno per risparmiare tempo e evitare errori manuali.
 
-## Come:
+## Come fare:
 
-Ecco un esempio di come eseguire una ricerca e una sostituzione del testo utilizzando Ruby:
-
-```Ruby 
-text = "Ciao a tutti!"
-p text.sub("Ciao", "Salve")
-```
-
-Output: "Salve a tutti!"
-
-Puoi anche utilizzare le espressioni regolari per rendere la ricerca del testo più flessibile e precisa. Ad esempio:
+Il metodo `gsub` in Ruby ci permette di cercare e sostituire il testo. Vediamo come funziona.
 
 ```Ruby
-text = "Il gatto è seduto sul tappeto"
-p text.gsub(/gatto/, "cane") 
+testo = 'Ciao Mondo'
+testo.gsub!('Mondo', 'Ruby')
+puts testo
 ```
-
-Output: "Il cane è seduto sul tappeto"
+L'uscita di questo codice sarà:
+```
+Ciao Ruby
+```
+`gsub!` è la versione "in place" del metodo `gsub`, che modifica la stringa originale invece di restituire una copia modificata.
 
 ## Approfondimenti:
 
-La ricerca e la sostituzione del testo sono procedure che sono state utilizzate a lungo dai programmatori. In passato, questa operazione richiedeva una grande quantità di codice, ma oggi grazie agli avanzamenti tecnologici è diventato molto più semplice.
+La funzionalità di ricerca e sostituzione del testo è fondamentale nella programmazione sin dalla sua nascita. L'alternativa a `gsub` è utilizzare un ciclo for insieme ai metodi `index` e `[]=` di String, ma è molto più laborioso.
 
-Alcune alternative alla sostituzione del testo includono l'utilizzo di algoritmi di apprendimento automatico e l'automatizzazione delle attività ripetitive. Inoltre, la sostituzione del testo può essere utilizzata anche per identificare e correggere errori di battitura in grandi quantità di testo.
+In termini di implementazione, `gsub` utilizza un automa a stati finiti per la ricerca del testo. In pratica, ciò significa che `gsub` è molto efficiente per le operazioni di ricerca e sostituzione su stringhe lunghe.
 
-Per quanto riguarda l'implementazione, Ruby offre molteplici metodi per eseguire la ricerca e la sostituzione del testo, come ad esempio `sub`, `gsub` e `gsub!`. È importante comprendere la differenza tra queste funzioni e quando è più appropriato utilizzare ognuna di esse.
+## Riferimenti utili:
 
-## Vedi Anche:
+Per approfondimenti su questo argomento, date un'occhiata a questi link:
 
-- [API di Stringhe di Ruby](https://ruby-doc.org/core-2.7.3/String.html)
-- [Documentazione su espressioni regolari di Ruby](https://ruby-doc.org/core-2.7.3/Regexp.html)
-- [Un approfondimento sulla sostituzione del testo con Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
+1. Documentazione Ruby - [String#gsub](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+2. Tutorial Ruby- [Strings](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
+3. Stackoverflow - [How to replace a string in place in Ruby?](https://stackoverflow.com/questions/612189/how-do-i-automatically-replace-a-string-in-place-in-ruby)

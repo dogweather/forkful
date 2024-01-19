@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Swift: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -11,16 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Printing debug output er en måte for programmerere å se på hva som skjer i koden deres mens den kjører. Dette gjør det enklere å finne feil og problemer i koden, og kan også brukes til å bekrefte at koden fungerer som forventet.
+Utskrift av feilsøkingsdata er måten vi kan se kjøringdataen i applikasjonen vår. Programmerere gjør dette for å løse problemer raskt og effektivt.
 
-## Slik gjør du:
+## Hvordan:
+Her er noen grunnleggende Swift-koder for å vise hvordan vi kan skrive ut feilsøkingsdata. 
+
 ```Swift
-print("Hello World") // Dette vil skrive ut "Hello World" i konsollen
+var name = "Ola"
+print("Hei, \(name)!")
 ```
 
-## Dypdykk:
-Print-funksjonen er en av de mest grunnleggende funksjonene i Swift, og har vært en del av språket siden dets opprinnelse. Det finnes også andre måter å debugge koden din på, som for eksempel bruk av breakpoints og debugging verktøy. Det er viktig å være forsiktig med å la debug prints være en del av den endelige koden din, da det kan føre til unødvendig rot og påvirke ytelsen.
+Dette vil gi:
 
-## Se også:
-- [Official Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/Functions.html#ID181)
-- [Debugging in Xcode](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/DebuggingYourApp.html)
+```
+Hei, Ola!
+```
+
+Hvis du vil skrive ut feilsøkingsdata kun i en debugsession, bruk `debugPrint` isteden:
+
+```Swift
+debugPrint("Dette vil kun vises i feilsøkingsøkter.")
+```
+
+## Dypdykk
+**Historisk kontekst:** Utskrift av feilsøkingsdata har alltid vært en del av Swift, og dette stammer fra veletablerte praksis innen programmering. 
+
+**Alternativer:** Du kan også bruke `dump` funksjonen for å skrive ut mer detaljerte objektdetaljer:
+
+```Swift
+struct Person {
+    let name: String
+    let age: Int
+}
+
+let person = Person(name: "Ola", age: 30)
+dump(person)
+```
+
+Output: 
+```
+▿ Person
+  - name: "Ola"
+  - age: 30
+```
+
+**Detaljer om implementering:** Når du bruker `print` eller `debugPrint`, kaller disse funksjonene faktisk `TextOutputStreamable` protokollene for objektene dine. 
+
+## Se Også:
+[Apple Documentation: Debugging with Xcode](https://developer.apple.com/library/archive/documentation/ToolsLanguages/Conceptual/Xcode_Overview/DebugYourApp/DebugYourApp.html)
+[Swift Documentation: Customizing String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

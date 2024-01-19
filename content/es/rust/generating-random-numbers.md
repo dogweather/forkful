@@ -1,6 +1,6 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Rust: Generando números aleatorios"
+html_title:           "Arduino: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,20 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué se hace?
+# ¡Aventurémonos en Rust: Generación de Números Aleatorios!
+## ¿Qué & Por qué?
+La generación de números aleatorios implica producir números que no siguen ningún patrón predecible. Los programadores utilizan números aleatorios para tareas como simulaciones, cifrado o simplemente juegos.
 
-Generar números aleatorios es una técnica utilizada por los programadores para producir valores numéricos aleatorios con propósitos diversos, como juegos, pruebas y criptografía. Al generar números aleatorios, se puede simular diferentes escenarios y crear resultados impredecibles, lo que puede ser útil en muchas aplicaciones.
+## Cómo hacer:
+Esto es cómo generar un número aleatorio en Rust.
 
-## Cómo hacerlo:
+```Rust
+use rand::Rng;
+fn main() {
+    let mut rng = rand::thread_rng();
+    let n: u32 = rng.gen_range(0, 10);
+    println!("Número aleatorio: {}", n);
+}
+```
 
-La biblioteca estándar de Rust proporciona la macro ```rand::random```, que devuelve un valor de tipo ```u64``` aleatorio generado por el generador de números aleatorios global (PRNG). Se pueden especificar tipos específicos agregando una anotación de tipo antes de la llamada a la macro. Por ejemplo, ```let random_number: i32 = rand::random();``` generará un valor entero aleatorio de 32 bits.
+Cuando lo ejecutas, puedes conseguir algo así:
 
-## Exploración profunda
+```Rust
+"Número aleatorio: 4"
+```
 
-La generación de números aleatorios ha sido un área de investigación en la informática desde sus inicios. Algunos de los primeros algoritmos incluyen el método del cuadrado medio, el método del producto medio y el método de congruencia lineal. Hay muchas alternativas al PRNG global implementado en Rust, como el Mersenne Twister, que es conocido por producir secuencias de números aleatorios de alta calidad.
+## Buceo Profundo:
+La generación de números aleatorios tiene un largo historial en la informática. Rust utiliza el paquete `rand` que proporciona una implementación eficaz y fácil de usar.
 
-## Ver también:
+Alternativamente, puedes usar el paquete `rand::distributions` que ofrece diferentes formas de generación de números aleatorios, como distribución uniforme, normal, etc.
 
-- Documentación oficial de Rust sobre generación de números aleatorios: https://doc.rust-lang.org/book/ch07-06-managing-growing-projects-with-packages-crates-and-modules.html#generating-random-numbers 
-- El libro "Introduction to Randomness and Random Numbers" de Miguel Sanchez: http://random.mat.sbg.ac.at/people/sk/2011/sk-isc-2011.pdf
-- Pseudo-random number generator en Wikipedia: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+La clave de la generación de números aleatorios en Rust es la interfaz del generador de números aleatorios, `Rng`. `Rng` define métodos que generan números aleatorios de diferentes formas.
+
+## Ver También:
+1. Rust `rand` Crate Documentation: [https://docs.rs/rand](https://docs.rs/rand)
+2. Generación de Números Aleatorios en Rust: [https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)
+3. Métodos para la Generación de Números Aleatorios: [https://en.wikipedia.org/wiki/Random_number_generation](https://en.wikipedia.org/wiki/Random_number_generation)

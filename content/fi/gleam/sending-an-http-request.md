@@ -1,7 +1,7 @@
 ---
-title:                "Lähettää http-pyyntö"
-html_title:           "Gleam: Lähettää http-pyyntö"
-simple_title:         "Lähettää http-pyyntö"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+Title: Gleam-ohjelmoinnilla HTTP-pyyntöjen lähetys
 
-HTTP-pyynnön lähettäminen on tapa tietokoneohjelman kysyä ja vastaanottaa dataa verkkopalvelimelta. Tätä tehdään usein ohjelmoidessa verkkosovelluksia, jotka tarvitsevat tiedonkulun ulkopuoliseen palvelimeen.
+## Mikä ja Miksi?
+HTTP-pyyntö on tapa, jolla tietokoneet kommunikoivat Internetissä. Ohjelmoijat lähettävät näitä pyyntöjä, koska se on keino hakea, lähettää, päivittää ja poistaa tietoa verkkopalvelimilta.
 
-## Miten:
-
-Esimerkiksi, jos haluat lähettää HTTP-pyynnön osoitteeseen "www.sivusto.fi" ja saada vastauksena "200 OK", niin koodisi näyttää tältä:
+## Kuinka tehdä:
+Voit lähettää HTTP-pyynnön Gleam-koodissa käyttämällä `HttpClient`-kirjastoa näin:
 
 ```Gleam
-request = http.Client.get("www.sivusto.fi")
-``` 
-```Gleam
-expect(request.status_code) == 200
+let request = http.default.get("https://www.example.com")
+let response = http.send(request)
 ```
 
-Tässä koodissa käytetään HTTP-kirjastoa "http", joka tarjoaa metodeja pyyntöjen lähettämiseen ja vastauksien käsittelyyn. Koodi kutsuu "Client" -funktiota ja antaa parametrina osoitteen, johon halutaan lähettää pyyntö. Tämän jälkeen vertaillaan vastauksen "status_code" -arvoa odotetun arvon kanssa.
+Esimerkiksi, jos lähetät GET-pyynnön, saat vastauksen muodossa:
 
-## Syvemmälle:
+```Gleam
+{body: "Hello, world!", status: 200}
+```
 
-HTTP-protokolla kehitettiin alunperin vuonna 1989 Tim Berners-Leen toimesta. Sittemmin on kehitetty muita protokollia, kuten HTTPS, joka salakirjoittaa tiedonkulun ja tekee siitä turvallisemman. On myös olemassa muita käytössä olevia kirjastoja HTTP-pyyntöjen lähettämiseen, kuten "fetch" ja "requests", mutta Gleamin "http" -kirjasto on helppo ja tehokas vaihtoehto.
+## Syvempi tarkastelu:
+HTTP-pyynnöt syntyivät 1990-luvulla, kun internet alkoi kasvaa. On olemassa monia vaihtoehtoja HTTP-pyynnoille, kuten Websockets tai GraphQL.
+
+Implementointi Gleamilla ohjaa BEAM-virtuaalikonetta (joka käyttää Erlangia), mikä tarkoittaa, että se hyödyntää sen massiivista rinnakkaisuutta ja virheensietokykyä.
 
 ## Katso myös:
-
-- https://gleam.run/libraries/http
-- https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+Perehdy seuraaviin lähteisiin saadaksesi tietoa aiheesta:
+- Gleamin HTTP-asiakaskirjaston [ohjeet](https://gleam.run/book/tour/http-clients.html)
+- Gleam [HTTP](https://hexdocs.pm/gleam_http/readme.html) moduuli Hexdocsissa
+- [HTTP-pyynnöt](https://developer.mozilla.org/fi/docs/Web/HTTP/Messages) Mozilla Developer Network (MDN) sivustolla.

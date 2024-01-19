@@ -1,7 +1,7 @@
 ---
-title:                "Extrahering av substrängar"
-html_title:           "PHP: Extrahering av substrängar"
-simple_title:         "Extrahering av substrängar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,31 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-"Att extrahera substrängar" är när du plockar ut en del av en sträng, istället för hela strängen. Det är en vanlig uppgift inom programmering, eftersom det låter dig manipulera data på ett effektivt sätt.
+# Vad & varför?
+Att extrahera delstränger innebär att plocka ut en specifik del av en sträng baserad på givna positioner. Programmerare gör detta för att behandla särskilda delar av data, exempelvis för att samla emails från text eller specifika datum från en loggfil.
 
-## Så här gör du:
-För att extrahera en substräng i PHP kan du använda funktionen `substr()`. Till exempel, om du har en sträng som heter `ord` och vill plocka ut de tre första tecknen, kan du använda följande kod:
+# Så här gör man:
+I PHP kan man använda flera funktioner för att extrahera delstränger, däribland substr() och strstr(). Här är några exempel:
+
+Hämta de första fyra tecknen från en sträng:
+
 ```PHP
-$ord = "hej";
-echo substr($ord, 0, 3);
+<?php
+$string = 'Programmering i PHP';
+$substring = substr($string, 0, 4);
+echo $substring;
+?>
 ```
-Detta skulle resultera i utmatningen "hej".
+Output: `Prog` 
 
-Om du vill plocka ut tecken från slutet av en sträng, kan du använda funktionen `substr()` tillsammans med `strlen()`, som ger längden på strängen. Till exempel, om du vill plocka ut de tre sista tecknen från strängen `hej-hopp`, kan du använda följande kod:
+Strstr() returnerar allt efter det första uppträdandet av ett visst karaktär eller ord:
+
 ```PHP
-$hejhop = "hej-hopp";
-echo substr($hejhop, strlen($hejhop)-3, 3);
+<?php
+$string = 'Programmering i PHP';
+$substring = strstr($string, 'i');
+echo $substring;
+?>
 ```
-Detta skulle resultera i utmatningen "opp".
+Output: `i PHP`
 
-## Djupdykning:
-Extrahering av substrängar är en grundläggande funktion inom programmering, och används ofta för att manipulera data eller filtrera ut relevant information från en större sträng. Innan funktionen `substr()` fanns tillgänglig i PHP, användes funktionen `eregi()` för att göra samma sak, men den är nu depricerad.
+# Djupdykning:
 
-Det finns också andra sätt att extrahera substrängar i PHP, såsom att använda regler för reguljära uttryck med funktionen `preg_match()`. Detta är mer avancerat och används ofta när du behöver söka efter ett mönster i en sträng.
+Historiska sammanhang: PHP's substr() och strstr() funktioner har funnits med sedan de första versionerna av PHP. Dessa tillhandahåller grunden för att manipulera strängar i PHP.
 
-Att använda funktionen `substr()` är enkelt och effektivt, men det är alltid bra att ha kännedom om andra sätt att extrahera substrängar för att kunna använda den lämpligaste metoden för din specifika uppgift.
+Alternativ: Bortsett från substr() och strstr() funktionerna, erbjuder PHP också en funktion som kallas substr_count() för att hitta antalet gånger en substring förekommer inom en sträng.
 
-## Se även:
-- PHP manual för [substr()](https://www.php.net/manual/en/function.substr.php)
-- PHP manual för [preg_match()](https://www.php.net/manual/en/function.preg-match.php)
+Funktionsdetaljer: substr() och strstr() är båda case-sensitive. Om du behöver icke-känsliga alternativ, överväg användning av strtolower() eller strtoupper() för att konvertera strängar till gemena eller versala bokstäver respektive innan extraktion.
+
+# Se även: 
+
+För mer information om hantering av strängar i PHP, se följande länkar:
+
+- PHP Manual: substr() - http://www.php.net/manual/en/function.substr.php
+- PHP Manual: strstr() - http://www.php.net/manual/en/function.strstr.php 
+- PHP Manual: substr_count() - http://php.net/manual/en/function.substr-count.php 
+- PHP Manual: strtolower() - http://php.net/manual/en/function.strtolower.php 
+- PHP Manual: strtoupper() - http://php.net/manual/en/function.strtoupper.php

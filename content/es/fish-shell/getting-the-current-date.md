@@ -1,7 +1,7 @@
 ---
-title:                "Obteniendo la fecha actual."
-html_title:           "Fish Shell: Obteniendo la fecha actual."
-simple_title:         "Obteniendo la fecha actual."
+title:                "Obteniendo la fecha actual"
+html_title:           "C#: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## ¿Qué & Por qué?
+Obtener la fecha actual en programación es capturar el día, mes y año actuales en tiempo real. Los programadores lo hacen para registrar eventos o para estampar marcas de tiempo (timestamps).
 
-Obtener la fecha actual es una función importante en la programación, ya que permite a los desarrolladores crear aplicaciones dinámicas y automatizar tareas basadas en la fecha y hora. La fecha actual también se utiliza a menudo para registrar eventos o transacciones en una aplicación.
+## Cómo hacerlo:
+Aquí te muestro un sencillo trozo de código en Fish Shell para obtener la fecha actual:
 
-## Cómo:
-
-Fish Shell proporciona una forma sencilla de obtener la fecha actual en un formato específico utilizando la función `date` seguida del formato deseado. Por ejemplo:
-
-```
-Fish Shell > date +%d-%m-%Y
-15-05-2021
+```fish
+set -l fecha (date "+%d/%m/%Y")
+echo $fecha
 ```
 
-El código `%d` representa el día, `%m` el mes y `%Y` el año en formato de cuatro dígitos. Fish Shell también permite personalizar el formato de la fecha y hora según las necesidades del programador.
+Al ejecutar este bloque de código, el resultado será algo como esto:
 
-## Inmersión Profunda:
+```fish
+22/02/2023
+```
 
-Obtener la fecha actual es una tarea común en la programación y hay varias formas de lograrlo. Algunos lenguajes de programación, como Python y JavaScript, tienen funciones incorporadas para obtener la fecha actual. En otros lenguajes, como C++ y Java, se pueden utilizar librerías externas para obtener la fecha actual.
+## Más a fondo:
+**Contexto histórico:** Los comandos para obtener la fecha y la hora son tan antiguos como los propios sistemas UNIX, has sido una parte crucial de los scripts y la programación en shell desde sus inicios.
 
-Sin embargo, Fish Shell permite obtener la fecha actual de manera sencilla y directa, sin tener que importar librerías externas o escribir código adicional.
+**Alternativas:** Existen diferentes formas de lograr lo mismo, algunas de las alternativas incluyen el uso de diferentes formatos de fecha (`"%m-%d-%Y"`, `"%Y%m%d"`), o incluso combinar la fecha con la hora actual.
 
-## Ver También:
+**Detalles de implementación:** En Fish Shell, usamos el comando `date` que es una utilidad estándar de UNIX. El formato de la fecha se puede personalizar utilizando códigos como `%d` para el día, `%m` para el mes y `%Y` para el año.
 
-- [Documentación oficial de Fish Shell para la función `date`](https://fishshell.com/docs/current/commands.html#date)
-- [Ejemplos de uso de la función `date` en Fish Shell](https://fishshell.com/docs/current/tutorial.html#command-substitutions)
+## Ver también:
+1. [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
+2. [Manual de UNIX `date`](https://man7.org/linux/man-pages/man1/date.1.html)
+3. [Documentación de código de formato `date`](https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html)

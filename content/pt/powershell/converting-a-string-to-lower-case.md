@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "PowerShell: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,28 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Sobre o que? E por que?
+## O Que & Por Quê? 
 
-Converter uma string para letras minúsculas é um processo em que a caixa alta de todas as letras em uma determinada cadeia de caracteres é alterada para letras minúsculas. Isso pode ser feito por diversos motivos, incluindo padronização de dados, facilitar a comparação de strings e tornar a saída mais legível.
+Converter uma string para caixa baixa significa transformar todas as letras maiúsculas presentes na string em letras minúsculas. Programadores fazem isso para padronizar a entrada de dados, facilitando comparações e buscas.
 
-## Como fazer:
+## Como Fazer:
+
+PowerShell torna esse processo surpreendentemente simples. Vamos usar o método .ToLower() após uma string. Aqui está um exemplo:
 
 ```PowerShell
-# Exemplo de uma string em letras maiúsculas
-$string = "MEU TEXTO EM LETRAS MAIÚSCULAS"
-
-# Utilizando o comando ToLower() para converter para letras minúsculas
-$string.ToLower()
-
-# Saída:
-meu texto em letras maiúsculas
+$Texto = "Olá, Mundo!"
+$TextoMinusculo = $Texto.ToLower()
+$TextoMinusculo
 ```
 
-## Profundidade:
+A saída será:
 
-O processo de conversão de strings para letras minúsculas tem sido utilizado desde os primórdios da programação. Ele é particularmente útil em linguagens de programação case-sensitive, onde é necessário diferenciar entre letras maiúsculas e minúsculas na hora de comparar strings. Existem alternativas para esse processo, como a utilização de expressões regulares ou funções específicas de cada linguagem, mas o uso do comando ToLower() é a forma mais simples e eficaz de converter strings para letras minúsculas em PowerShell.
+```PowerShell
+olá, mundo!
+```
 
-## Veja também:
+Este comando transformara todos os caracteres maiúsculos em minúsculos do texto contido na variável `$Texto`.
 
-- Documentação oficial do comando ToLower(): https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/tolower
-- Mais informações sobre strings em PowerShell: https://devblogs.microsoft.com/scripting/powershell-string-fundamentals-understanding-quoting-rules-operators-and-more/
+## Deep Dive
+
+Historicamente, a normalização de dados, incluindo a conversão para caixa baixa, tem sido fundamental para algoritmos de comparação e pesquisa de strings. No PowerShell, a função ToLower é uma implementação padrão da funcionalidade de conversão de caixa de .NET.
+
+No entanto, é importante conhecer algumas alternativas, assim como entender as nuances da implementação do ToLower. Embora ToLower seja a abordagem mais comum, também pode usar ToLowerInvariant quando for necessário garantir consistência, independentemente das configurações de cultura do sistema.
+
+Agora vamos para os detalhes de implementação. Quando usamos ToLower(), ele retorna uma cópia da string convertida, enquanto a string original não é modificada. Isso ocorre porque as strings em .NET (e, portanto, PowerShell) são imutáveis.
+
+```PowerShell
+$Texto = "Olá, Mundo!"
+$TextoMinusculo = $Texto.ToLower()
+$Texto
+$TextoMinusculo
+```
+
+A saída será:
+
+```PowerShell
+Olá, Mundo!
+olá, mundo!
+```
+
+## Ver Também
+
+1. Documentação oficial do PowerShell: [aqui](https://docs.microsoft.com/pt-br/powershell/)
+2. Método ToLower(): [aqui](https://docs.microsoft.com/pt-br/dotnet/api/system.string.tolower)
+3. Método ToLowerInvariant(): [aqui](https://docs.microsoft.com/pt-br/dotnet/api/system.string.tolowerinvariant)
+4. Discussão sobre ToLower vs. ToLowerInvariant na StackOverflow: [aqui](https://stackoverflow.com/questions/2801508/lowercasestring-tolower-vs-tolowerinvariant)
+5. Mais informações sobre strings imutáveis em C# (aplicável ao PowerShell): [aqui](https://www.c#tutorial.net/csharp-string-immutable/)

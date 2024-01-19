@@ -1,6 +1,6 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "Elm recipe: Checking if a directory exists"
+html_title:           "C# recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,35 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# An Informal Introduction to Elm: Checking If a Directory Exists
+
 ## What & Why?
 
-Checking if a directory exists is a common task for programmers, especially when working with file systems. It is essentially a way to verify if a specific directory (or folder) exists in a given location. Programmers do this to ensure that their code properly handles the situation when a directory is missing, and to avoid errors or unexpected behavior.
+Checking if a directory exists is just like peeking in your mailbox; it's checking to see whether a specific location on your system (a directory) is there or not. As coders, we do this to ensure that we're reading from or writing to a valid location, because if we don't, well...errors happen!
 
 ## How to:
 
-To check if a directory exists in Elm, you can use the built-in `Directory` module. It provides a `exists` function that takes in a `String` representing the directory path, and returns a `Task` with a `Bool` value indicating whether the directory exists or not.
+Unfortunately, Elm, as a front-end focused language, does not have direct file or directory operations available. It can't interact directly with the filesystem due to the security model of the browser where Elm runs. You need to interact with a server using HTTP or through ports with JavaScript. Here's the JavaScript code to check if a directory exists:
 
-```
-Elm.Task
-    .attempt Directory.exists "/path/to/directory"
-    .map (\result -> case result of
-        Err _ -> -- handle error
-        Ok exists -> -- use exists value
-    )
+```JavaScript
+const fs = require('fs');
+
+fs.access('/your-directory-path', fs.constants.F_OK, (err) => {
+  console.log(`${err ? 'does not exist' : 'exists'}`);
+});
 ```
 
-If the directory exists, the `exists` value will be `True`, otherwise it will be `False`.
+And if you absolutely want to stick to Elm, here's how you can utilize JavaScript through ports:
+
+```Elm
+port module Main exposing (..)
+
+port checkDirectory : String -> Cmd msg
+
+port directoryExists : (Bool -> msg) -> Sub msg
+```
+
+In JavaScript, subscribe to `checkDirectory` and send result to `directoryExists`:
+
+```JavaScript
+const app = Elm.Main.init();
+const fs = require('fs');
+
+app.ports.checkDirectory.subscribe(function (path) 
+{
+    fs.access(path, fs.constants.F_OK, (err) => 
+    {
+        app.ports.directoryExists.send(!err);
+    });
+});
+```
+
+If the directory exists, the `directoryExists` will be true.
 
 ## Deep Dive
 
-Historically, checking if a directory exists was a crucial step in file management, especially in operating systems where file permissions and ownership were stricter. It was also important for error handling to prevent invalid paths from being accessed.
+Historically, understanding filesystems wasn't front-and-center for most languages. Languages like C provided this ability early on because they had system-level ambitions. JavaScript - and therefore Elm, which compiles to JavaScript - originally targeted the browser, where security concerns make direct access to the filesystem a non-starter.
 
-An alternative to using the `exists` function is to use `FileSystem.access` which checks for both file and directory existence. However, this approach requires different handling for each type of existence, making the code less concise.
+Even so, here are alternatives:
+  * Menial: Ask the user to submit the directory through an input field.
+  * Clever: Launch a server module (Node.js or Python, perhaps?), and ping it from your Elm app.
 
-The implementation of `exists` in the `Directory` module utilizes the `stat` system call to retrieve information about the directory. It then checks for specific flags in the returned data to determine if the directory exists.
+With regards to implementation, remember Elm ports are not like traditional function calls. Rather, we can think of them as subscription-based models that respond when something engaging happens.
 
-## See Also
+## See Also:
 
-- [Elm Directory Module](https://package.elm-lang.org/packages/elm/core/latest/Directory)
-- [Elm FileSystem Module](https://package.elm-lang.org/packages/elm/filesystem/latest/FileSystem)
-- [stat system call](https://linux.die.net/man/2/stat)
+- Learn more about Elm here: https://elm-lang.org/docs
+- Understand Elm ports: https://guide.elm-lang.org/interop/ports.html
+- Dive deeper into Node.js fs module: https://nodejs.org/api/fs.html

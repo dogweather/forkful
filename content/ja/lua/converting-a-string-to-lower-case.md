@@ -1,6 +1,6 @@
 ---
 title:                "文字列を小文字に変換する"
-html_title:           "Lua: 文字列を小文字に変換する"
+html_title:           "Arduino: 文字列を小文字に変換する"
 simple_title:         "文字列を小文字に変換する"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,42 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 何となぜ？
 
-文字列を小文字に変換することは、プログラマーにとって非常に便利です。小文字の文字列を使用することで、検索や比較が容易になります。また、データの整理や処理を行う際にも、小文字に統一することで処理がスムーズになります。
+文字列を小文字に変換するとは、全ての大文字のアルファベットを対応する小文字に変えることを指します。これを行う主な理由は、ユーザー入力の一貫性を確保し、比較操作を簡単にするためです。
 
-## 方法：
+## 方法:
 
-### 例1：文字列の小文字に変換する
+Luaでは、文字列を小文字に変換するための機能は`string.lower()`関数によって用意されています。以下は簡単な例です。
 
-```
-Lua
-local str = "HELLO WORLD!"
-print(str:lower())  --> hello world!
-```
-
-### 例2：変数の値を小文字に変換する
-
-```
-Lua
-local name = "JESSICA"
-print("Hello, " .. name:lower())  --> Hello, jessica
+```Lua
+s = "Hello, World!"
+lower_s = string.lower(s)
+print(lower_s)
 ```
 
-## 深く掘り下げる
+出力:
+```Lua
+"hello, world!"
+```
 
-### 歴史的背景：
+これにより、文字列`s`はすべて小文字の`lower_s`に変換されます。
 
-文字列の小文字変換は、古くから使われているテキスト処理の基本的な技術の1つです。プログラミング言語やツールによって、実装方法が異なる場合がありますが、目的は同じです。
+## ディープダイブ:
 
-### 代替案：
+大文字を小文字に変換するというアイデアは古くから存在しており、大文字と小文字の間の比較を容易に行うために一般化されました。
 
-一部のプログラミング言語では、小文字の文字列を使用するために、比較や検索を行う前に、文字列を手動で小文字に変換する必要があります。しかし、Luaは文字列オブジェクトにメソッドを提供しているため、より簡単に小文字への変換が可能です。
+Luaでは、`string.lower()`関数はCライブラリ関数`tolower()`を使用して実装されています。よって、性能に関してはあまり心配する必要はありません。
 
-### 実装の詳細：
+しかし、重要な点として、Lua の`string.lower()`関数はASCII文字列のみを変換します。Unicode文字列に対応する場合、lvutf8というライブラリーを使用する必要があります。
 
-Luaでは、文字列オブジェクトに定義されたメソッド```lower()```を使用して、文字列を小文字に変換できます。このメソッドは、文字列内のすべての文字を小文字に変換します。
+## 関連資料:
 
-## 関連リンク：
-
-- [Lua: Official Website](https://www.lua.org/)
-- [Lua: String Library](https://www.lua.org/manual/5.3/manual.html#6.4)
-- [Lua: String Methods](https://www.lua.org/manual/5.3/manual.html#6.4.1)
+- [Lua 5.4 マニュアル](https://www.lua.org/manual/5.4/)
+- [トピックについてのStack Overflow 記事](https://stackoverflow.com/questions/5866607/in-lua-how-can-i-use-string-gsub-to-change-uppercase-to-lowercase)
+- [UnicodeとLua](https://www.lua.org/pil/18.html)

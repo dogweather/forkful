@@ -1,6 +1,6 @@
 ---
 title:                "生成随机数"
-html_title:           "TypeScript: 生成随机数"
+html_title:           "Go: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,17 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 生成随机数是什么？
-生成随机数是一种编程技术，它可以在程序执行时生成不同的数值。程序员经常使用随机数来增加程序的变化性，使其更具有趣味性。 
+## 什么与为什么？  - What & Why?
+生成随机数是计算机程序创建一个与预期输入无关的数字的过程。程序员生成随机数来进行测试，创建数据模拟等。
 
-## 如何实现？
-TypeScript提供了内置的 ```Math.random()```函数来生成随机数。该函数会在0到1之间返回一个随机小数，我们可以通过乘以一个整数来获得我们想要的随机范围，例如```Math.random() * 10```会生成0到10的随机整数。 
+## 怎么做 - How to:
+以下是在 TypeScript 中生成随机数的一种方式：
 
-## 深入了解
-在历史上，生成随机数是一个复杂的过程，需要使用物理设备来模拟随机性。但是现在，计算机可以通过算法来生成伪随机数。除了Math.random()函数，还有一些其他的技术来生成随机数，如生成器函数和加密技术。在程序中，我们要确保随机数的生成过程是真正随机的，否则可能会导致安全漏洞。 
+```TypeScript 
+function getRandomInt(max: number): number {
+    return Math.floor(Math.random() * Math.floor(max));
+}
+console.log(getRandomInt(1000));
+```
 
-## 相关链接
-了解更多关于随机数的知识，可以参考以下链接：
-- [JavaScript中的随机数指南](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [随机数的历史发展](https://www.nist.gov/publications/random-number-generation)
-- [如何保证随机数的安全性](https://medium.com/swlh/avoid-security-vulnerabilities-with-random-numbers-a836814cfc2c)
+此函数将生成一个从0（包含）到max（不包含）之间的随机整数，并使用 console.log() 打印在控制台。
+
+## 深入探讨 - Deep Dive:
+生成随机数的概念有着悠久的历史，它的最早形式可以追溯到古代的摇骰子和抽签。在计算机编程中，我们创建随机数以模拟这些现象。
+
+有许多方式来生成随机数，上述的随机整数生成函数只是其中之一。也可以使用其他库，如 crypto 或者 lodash 来创建更复杂的随机数。
+
+在计算机科学中，生成随机数的具体实现通常涉及一些形式的算法。这些算法的主要差别在于它们能够生成的随机数的范围和分布方式。
+
+## 另请参阅 - See Also:
+- [Math.random() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [lodash.random](https://lodash.com/docs/4.17.15#random)
+- [crypto.randomInt](https://nodejs.org/api/crypto.html#crypto_crypto_randomint_min_max_callback)

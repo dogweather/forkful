@@ -1,7 +1,7 @@
 ---
-title:                "Descargando una página web."
-html_title:           "Elm: Descargando una página web."
-simple_title:         "Descargando una página web."
+title:                "Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
+simple_title:         "Descargando una página web"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,27 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Descargar una página web significa obtener el código y los recursos de dicha página desde un servidor y mostrarlos en tu navegador. Los programadores lo hacen para acceder a información específica de una página, como texto, imágenes o datos, y utilizarla en su aplicación.
+## ¿Qué & Por Qué?
 
-## Cómo hacerlo:
+Descargar una página web se refiere a obtener su código fuente y guardarla en el disco duro. Los programadores suelen hacerlo para analizar la estructura de la página, probar su funcionalidad offline, o para recopilar datos y contenido en su propio proyecto.
+
+## Cómo se hace:
+
+Usando Elm, el módulo `Http` permite hacer este tipo de tareas fácilmente. Aquí tienes un ejemplo simple:
+
+```Elm
+import Html exposing (Html, text)
+import Http
+import Json.Decode as Decode
+
+descargaUrl : String
+descargaUrl =
+    "http://miweb.com"
+
+fetchUrl : Cmd Msg
+fetchUrl =
+    Http.get { url = descargaUrl, expect = Http.expectString GotResponse }
+
+type Msg
+    = GotResponse (Result Http.Error String)
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        GotResponse result ->
+            case result of
+                Err _ ->
+                    ( model, fetchUrl )
+
+                Ok respuesta ->
+                    ( respuesta, Cmd.none )
+
+view : Model -> Html Msg
+view respuesta =
+    text respuesta
 ```
-Elm.Http.get "https://www.paginaweb.com/"
-    |> Http.send handleResponse
-    
-handleResponse response =
-    case response of
-        Ok body ->
-            Html.text "Contenido de la página web: " ++ body
-        Err _ ->
-            Html.text "No se pudo descargar la página web."
-```
 
-El código utiliza la librería `Http` de Elm para enviar una solicitud GET al servidor de la página web y obtener su contenido. Luego, se utiliza la función `text` de la librería `Html` para mostrar el contenido en la página.
+Este código va a obtener la página web en "http://miweb.com". El resultado se almacenará en la variable `respuesta`.
 
-## Profundizando:
-El proceso de descargar una página web es una técnica común utilizada en el desarrollo web para obtener información de otras páginas y utilizarla en tu propia aplicación. Alternativas a Elm para realizar esta acción incluyen JavaScript, PHP y Python. La librería `Http` de Elm utiliza la función `send` para enviar una solicitud con una función de manejo que especifica cómo manejar la respuesta del servidor.
+## Un poco más profundo
 
-## Ver también:
-- Documentación de la librería `Http` de Elm: https://package.elm-lang.org/packages/elm/http/latest/
-- Ejemplos de código para descargar una página web con diferentes lenguajes de programación: https://www.geeksforgeeks.org/downloading-a-webpage-locally-with-curl-in-php/
+Historia: La capacidad de descargar páginas web comenzó a tener importancia después del nacimiento del internet. Como las páginas web comenzaron a ser más interactivas y dinámicas, las técnicas para descargar estas evolucionaron.
+
+Alternativas: En Elm, la forma más simple (como la mencionada anteriormente) es suficiente para muchos casos. Sin embargo, otras herramientas y lenguajes en otras plataformas pueden ofrecer funcionalidad más avanzada, como Python con su módulo `BeautifulSoup` o Node.js con `Puppeteer`.
+
+Detalles de implementación: En Elm, las solicitudes HTTP son un poco diferentes ya que son inmutables y usan el modelo de arquitectura Elm (TEA). Todo se maneja a través de mensajes y comandos asíncronos, lo que nos lleva a tener código más seguro y predecible.
+
+## Vea también.
+
+- [Documentación oficial de Elm](https://guide.elm-lang.org/)
+- [Ejemplos de Elm Http en elmprogramming.com](https://elmprogramming.com/http.html)
+- [Manual de Python `BeautifulSoup`](https://www.crummy.com/software/BeautifulSoup/bs4/doc_es/)
+- [Documentación de Puppeteer en Node.js](https://developers.google.com/web/tools/puppeteer)

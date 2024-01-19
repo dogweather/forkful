@@ -1,7 +1,7 @@
 ---
-title:                "删除符合模式的字符"
-html_title:           "Elm: 删除符合模式的字符"
-simple_title:         "删除符合模式的字符"
+title:                "删除匹配模式的字符"
+html_title:           "Java: 删除匹配模式的字符"
+simple_title:         "删除匹配模式的字符"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是删除匹配模式的字符? 
+## 什么和为什么？
+删除匹配模式的字符是一种在给定字符串中删除与指定模式匹配的所有字符的过程。编程师之所以这样做，是因为它能够帮助我们去除不需要的数据，简化字符串操作。
 
-删除匹配模式的字符指的是从字符串中删除匹配特定模式的字符。程序员之所以这样做是为了处理字符串中不需要的字符，从而使代码更加简洁和有效。 
-
-## 如何操作: 
-
-删除匹配模式的字符可以通过使用String库中的`filter`函数来实现。在下面的代码示例中，我们使用`filter`函数从字符串中删除所有的“a”字符。
- 
-```
+## 如何做：
+```Elm 
+module Main exposing (..)
 import String
-
-Elm String.filter (\c -> c /= 'a') "apple"
+main =
+   let
+       str = "Hello, Elm World!345"
+       removeChars = [',', '!', '3']
+       result = String.foldl (\c acc -> if (List.member c removeChars) then acc else c::acc) [] str |> List.reverse |> String.fromList
+   in
+   Html.text result
 ```
+在这个例子中，我们创建了一个`str`变量来存储我们的字符串，`removeChars`列表用于存放我们要从字符串中删除的所有字符。我们使用了Elm的`foldl`函数，然后通过`List.member` 检查每个字符是否位于我们的`removeChars`列表中，如果是，我们就将其删除。
 
-输出结果为: `"pple"`
+代码运行结果为：
+```
+Hello Elm World45
+```
+你看，我们已经成功删除了所有匹配的字符。
 
-## 深入探讨: 
+## 深入探讨：
+删除匹配模式的字符在编程历史上一直是常见的需求。在80年代，C语言的程序员经常使用ANSI C的`strcspn()`函数来执行此操作。在崭新的Elm编程中, 我们使用高阶函数如 `foldl` 来实现这一功能。
 
-历史背景: 删除匹配模式的字符是一个常用的字符串操作技术，已经被引入了很多编程语言中。在Elm中，这个功能是通过`filter`函数来实现的，它使用了高阶函数的概念。其他编程语言中可能有类似的函数，比如Python中的`filter`函数。
+你也可以使用正则表达式删除匹配的字符，不过在Elm中，并没有提供正则表达式的函数库。Elm语言倾向于使用纯函数编程模式, 享有更容易理解和预测的代码执行过程。
 
-替代方法: 在Elm中，除了使用`filter`函数来删除匹配模式的字符，还可以使用`replaceAll`函数来替换字符串中的特定字符。但是，`replaceAll`函数会将匹配的字符替换为指定的字符串，而不是删除它们。
-
-实现细节: 在Elm中，字符串是不可变的，所以使用`filter`函数来删除匹配模式的字符会生成一个新的字符串，而不会在原始字符串上做出任何改变。
-
-## 参考资料: 
-
-了解更多有关删除匹配模式的字符操作的信息，请参考下面的链接: 
-- Elm中的String库：https://package.elm-lang.org/packages/elm/core/latest/String
-- 在Elm中使用高阶函数：https://guide.elm-lang.org/types/functions.html
+## 另请参见：
+你可以在以下链接找到更多关于String包、List包、和`foldl`函数的相关情况：
+- String包：https://package.elm-lang.org/packages/elm/core/latest/String
+- List包：https://package.elm-lang.org/packages/elm/core/latest/List
+- Foldl函数：https://package.elm-lang.org/packages/elm/core/latest/List#foldl

@@ -1,6 +1,6 @@
 ---
 title:                "Iniciando um novo projeto"
-html_title:           "Arduino: Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
 simple_title:         "Iniciando um novo projeto"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,39 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+## O Que & Por Quê?
+Iniciar um novo projeto em Arduino é criar um plano novo desde o início, abordando qualquer desafio de programação em nível microcontrolador. Programadores fazem isso para resolver problemas específicos com um controle granular dos componentos do hardware.
 
-Começar um novo projeto no Arduino é simplesmente criar e programar um novo circuito usando o microcontrolador Arduino. Os programadores o fazem para criar dispositivos personalizados e automatizar tarefas com facilidade.
+## Como Faz:
+Veja um exemplo de um sketch (programa Arduino) simples com sua respectiva saída.
 
-## Como fazer:
+```Arduino
+void setup() 
+{
+  Serial.begin(9600); 
+}
 
-```
-Arduino.setup(); 
-```
-Esta é a função que inicia um novo projeto no Arduino. Ela define os parâmetros iniciais como o tipo de placa e a porta serial. 
-
-```
-void loop(){
-//código a ser executado
+void loop()
+{
+  Serial.println("Olá, Mundo!"); 
+  delay(1000); 
 }
 ```
-Dentro da função "loop", o código principal do seu projeto é escrito. Ela é responsável por executar repetidamente o código até que o Arduino seja desligado.
+Ao carregar esse código em seu Arduino, ele deve imprimir a frase "Olá, Mundo!" no Monitor Serial a cada segundo.
 
-```
-digitalWrite(LED_BUILTIN, HIGH);
-```
-Este exemplo mostra como acender o LED embutido na placa do Arduino. O "digitalWrite" envia um sinal de alta tensão para o pino especificado, iluminando o LED.
+## Mergulho Profundo
+O Arduino surgiu na Itália em 2005 para proporcionar aos hobbyistas e aos artistas um meio acessível e fácil de usar de incorporar a automação em seus projetos. Alternativas incluem o Raspberry Pi e o BeagleBone. Implementar um novo projeto em Arduino requer escrita de código, carregamento do sketch no hardware Arduino, e depuração. Os microcontroladores Arduino são conhecidos por sua flexibilidade, permitindo a implementação de uma variedade de projetos, desde sistemas de irrigação automatizados a robôs autônomos.
 
-## Profundidade de Mergulho:
-
-O Arduino foi criado por Massimo Banzi e David Cuartielles em 2005, com o objetivo de tornar a eletrônica acessível para pessoas de todas as habilidades. Existem outras placas de desenvolvimento, como o Raspberry Pi, que também podem ser utilizadas para projetos semelhantes.
-
-A comunidade Arduino é muito ativa e existem milhares de projetos e tutoriais disponíveis online. O site oficial do Arduino possui uma vasta documentação para ajudar os iniciantes. 
-
-Em termos de implementação, o Arduino possui uma linguagem de programação própria, baseada em C++, e uma IDE (ambiente de desenvolvimento integrado) simples e fácil de usar.
-
-## Veja também:
-
-- [Site oficial do Arduino](https://www.arduino.cc/)
-- [Documentação do Arduino](https://www.arduino.cc/reference/en/)
-- [Comunidade Arduino](https://create.arduino.cc/projecthub)
+## Veja Também
+* [Documentação Oficial do Arduino](https://www.arduino.cc/reference/en/)
+* [Tutoriais Arduino no Programar Facil](https://www.programarfacil.com/blog/tutoriales-arduino/)
+* [Livros Arduino na Amazon](https://www.amazon.com.br/Arduino/livros/s?k=Arduino)

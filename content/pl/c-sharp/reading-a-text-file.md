@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "C#: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,52 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego to robimy?
-
-Czytasz ten artykuł, co oznacza, że już wiesz, jak ważne jest czytanie. Przeczytanie tekstu jest również ważne dla programistów. W skrócie, czytanie pliku tekstowego to po prostu odczytanie zawartości pliku zapisanego w postaci tekstu.
-
-Programiści często czytają pliki tekstowe, ponieważ są one powszechnie wykorzystywane do przechowywania danych, takich jak ustawienia programu czy dane wejściowe dla aplikacji. Czytanie plików tekstowych pozwala programistom na dostęp i manipulację tymi danymi.
+## Co i dlaczego?
+Czytanie pliku tekstowego to proces odczytania danych zapisanych w formacie tekstowym. Programiści robią to, aby przetworzyć i manipulować danymi do różnych celów, takich jak przekształcanie tych danych w przydatne informacje.
 
 ## Jak to zrobić:
+Biblioteka `System.IO` w C# zawiera wiele przydatnych funkcji do czytania plików tekstowych. Najprostszym sposobem jest użycie `File.ReadAllText()`.
 
 ```C#
-// Przykładowe kodowanie w C# do odczytania pliku tekstowego
-string[] lines = System.IO.File.ReadAllLines(@"C:\scieżka\do\pliku.txt");
-foreach (string line in lines)
+using System.IO;
+
+string path = @"C:\SomeDirectory\SomeFile.txt";
+string readText = File.ReadAllText(path);
+Console.WriteLine(readText);
+```
+Wyjście programu to zawartość pliku `SomeFile.txt`.
+
+Aby odczytać plik wiersz po wierszu, można użyć `File.ReadLines()`.
+
+```C#
+foreach (string line in File.ReadLines(path))
 {
     Console.WriteLine(line);
 }
 ```
+Wyjście programu to linie tekstu w `SomeFile.txt`.
 
-Powyższy kod używa metody `ReadAllLines` z klasy `File` z przestrzeni nazw `System.IO`. Ta metoda odczytuje cały plik tekstowy i zwraca jego zawartość jako tablicę napisów. Następnie w pętli `foreach` każda linia tekstu jest wyświetlana na konsoli.
+## Głębsze zrozumienie
+Czytanie plików tekstowych jest ważnym elementem wielu programów, ciągle się rozwija i ma długą historię, nie tylko w C#. Alternatywnie do wykorzystania klas `File`, istnieje możliwość użycia `StreamReader`, który oferuje większą kontrolę i bardziej zaawansowane funkcje.
 
-Przykładowy plik tekstowy może wyglądać tak:
-
+```C#
+using (StreamReader sr = new StreamReader(path))
+{
+    string line;
+    while ((line = sr.ReadLine()) != null)
+    {
+        Console.WriteLine(line);
+    }
+}
 ```
-Witaj!
-To przykładowy plik tekstowy.
-Jest to druga linia.
-A to trzecia!
-```
+To podejście jest bardziej rozbudowane, ale przydaje się w bardziej skomplikowanych sytuacjach.
 
-Po uruchomieniu przykładowego kodu, na konsoli zostanie wyświetlony następujący wynik:
+## Zobacz też
+Dla bardziej zaawansowanych operacji we/wy warto zainteresować się `System.IO.StreamReader` i `System.IO.StreamWriter`:
+* Dokumentacja Microsoft .NET: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamreader
+* Dokumentacja Microsoft .NET: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamwriter 
 
-```
-Witaj!
-To przykładowy plik tekstowy.
-Jest to druga linia.
-A to trzecia!
-```
-
-## Głębszy zanurzenie:
-
-Czytanie plików tekstowych jest jednym z najprostszych sposobów na dostęp do danych w programowaniu. W przeszłości, gdy jeszcze nie było baz danych, pliki tekstowe były jedynym sposobem na przechowywanie danych. W dzisiejszych czasach inne metody, takie jak bazy danych czy sieciowe API, są często wykorzystywane do dostępu do danych. Jednak pliki tekstowe nadal są popularne ze względu na prostotę ich użycia.
-
-Alternatywnym podejściem do czytania plików tekstowych może być wykorzystanie klasy `StreamReader` z przestrzeni nazw `System.IO`. Klasa ta pozwala na odczyt pliku linia po linii, co może być przydatne przy dużych plikach, gdy nie chcemy wczytywać całego pliku na raz.
-
-Implementacja odczytywania plików tekstowych w C# jest oparta na platformie .NET Framework, więc jest to dostępne dla programistów na platformach Windows i Linux.
-
-## Zobacz też:
-
-Oficjalna dokumentacja Microsoft dla klasy `File`: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.file <br/>
-Oficjalna dokumentacja Microsoft dla klasy `StreamReader`: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamreader
+Dla operacji na plikach i katalogach:
+* Dokumentacja Microsoft .NET: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.file
+* Dokumentacja Microsoft .NET: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.directory

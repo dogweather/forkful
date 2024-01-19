@@ -1,7 +1,7 @@
 ---
-title:                "Erzeugung zufälliger Zahlen"
-html_title:           "C++: Erzeugung zufälliger Zahlen"
-simple_title:         "Erzeugung zufälliger Zahlen"
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,36 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Generieren von Zufallszahlen ist eine Technik, die in der Programmierung häufig verwendet wird, um zufällige oder pseudo-zufällige Werte zu erzeugen. Dies kann hilfreich sein, um Simulationen zu erstellen, Daten zu generieren oder Spiele zu programmieren.
+# C++ Zufallszahlen Generieren - Eine In-depth Anleitung
 
-# Wie geht's?
-Um in C++ Zufallszahlen zu generieren, muss die Bibliothek `cstdlib` eingebunden werden. Dann kann die Funktion `rand()` verwendet werden, um eine Zufallszahl zwischen 0 und `RAND_MAX` zu generieren. Um eine benutzerdefinierte Range zu haben, kann die Funktion `srand()` verwendet werden, um den Startpunkt festzulegen. Hier ist ein Beispiel:
+## Was & Warum?
+
+Zufallszahlen in der Programmierung sind nützlich um zufällige Ereignisse zu simulieren oder um Varianz in ein sonst vorhersagbares System zu bringen. Mit ihnen kann man Krypto-Systeme sicherer machen oder ein unvorhersehbares Benutzererlebnis schaffen.
+
+## Wie geht das?
+
+Beginnen wir mit dem einfachen Weg. Mit C++ können Sie in nur wenigen Zeilen Code Zufallszahlen generieren.
 
 ```C++
 #include <cstdlib>
+#include <ctime>
 #include <iostream>
 
-int main()
-{
-  // Eine Zufallszahl in der Range von 1 bis 10 erzeugen
-  srand(10); // Startpunkt auf 10 setzen
-  int random_number = rand() % 10 + 1; // Ein zufälliger Wert zwischen 0 und 9 wird generiert und mit 1 addiert, um die Range 1 bis 10 zu erhalten.
-  std::cout << random_number << "\n"; // Beispiel: 7
+int main() {
+    srand((unsigned) time(0));
+    for(int i = 0; i < 10; i++) {
+        std::cout << "Random value: " << rand() % 100 << std::endl;
+    }
 
-  // Eine Zufallszahl in der Range von 50 bis 100 erzeugen
-  srand(100); // Startpunkt auf 100 setzen
-  random_number = rand() % 51 + 50; // Ein zufälliger Wert zwischen 0 und 50 wird generiert und mit 50 addiert, um die Range 50 bis 100 zu erhalten.
-  std::cout << random_number << "\n"; // Beispiel: 78
-  
-  return 0;
+    return 0;
 }
 ```
 
-# Tiefgründig
-Das Generieren von Zufallszahlen ist eine Technik, die bereits seit den Anfängen der Computerprogrammierung verwendet wird. Die Funktion `rand()` basiert auf einem Algorithmus, der ein mathematisches Konzept namens linearer Kongruenzgenerator verwendet. Dieser Algorithmus ist nicht perfekt und kann gewisse Muster aufweisen, weshalb alternative Methoden wie die Verwendung von externen Zufallszahlengeneratoren empfohlen werden.
+Wenn Sie dieses Code-Beispiel ausführen, erhalten Sie zehn Zufallszahlen zwischen 0 und 99.
 
-# Siehe auch
-- [C++ Referenz für die Funktion `rand()`](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [Linearer Kongruenzgenerator](https://de.wikipedia.org/wiki/Linearer_Kongruenzgenerator)
-- [Externe Zufallszahlengeneratoren](https://de.wikipedia.org/wiki/Externer_Zufallszahlengenerator)
+## Deep Dive
+
+Frühe Zufallszahlengeneratoren basierten oft auf Pseudozufallszahlen. Diese Zahlen sind eigentlich nicht wirklich zufällig, da sie von einem Anfangswert oder "Seed" abhängen. Ändern Sie den Seed, und Sie erhalten eine andere Zahlenfolge, aber dieselbe Seed führt immer zur selben Folge.  
+
+C++ bietet auch komplexere Möglichkeiten zur Generierung von Zufallszahlen. Ein Beispiel dafür ist die `<random>` Bibliothek. Hier ist ein Codebeispiel:
+
+```C++
+#include <random>
+#include <iostream>
+
+int main() {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distr(0, 99);
+
+    for (int i = 0; i < 10; i++) {
+        std::cout << "Random value: " << distr(gen) << std::endl;
+    }
+
+    return 0;
+}
+```
+
+Diese Version verwendet Mersenne Twister (`std::mt19937`), eine beliebte Methode zum Generieren von pseudozufälligen Zahlen.
+
+## Siehe auch
+
+1. *cppreference.com* zu `<random>`: [http://en.cppreference.com/w/cpp/numeric/random](http://en.cppreference.com/w/cpp/numeric/random)
+2. *cplusplus.com* zu `rand()`: [http://www.cplusplus.com/reference/cstdlib/rand/](http://www.cplusplus.com/reference/cstdlib/rand/)
+3. *Wikipedia*-Artikel über Zufallszahlen: [https://de.wikipedia.org/wiki/Zufallszahl](https://de.wikipedia.org/wiki/Zufallszahl)

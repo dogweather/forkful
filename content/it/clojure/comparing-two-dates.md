@@ -1,7 +1,7 @@
 ---
-title:                "Confrontare due date"
-html_title:           "Clojure: Confrontare due date"
-simple_title:         "Confrontare due date"
+title:                "Confronto tra due date"
+html_title:           "Elixir: Confronto tra due date"
+simple_title:         "Confronto tra due date"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
-
-Comparare due date è un'operazione comune in programmazione per confrontare la precedenza o l'ordine temporale delle date. I programmatori lo fanno per gestire compiti come la pianificazione, la gestione delle scadenze o la creazione di log temporali.
+## Che Cosa & Perché?
+Comparare due date significa determinare se una data è precedente, successiva o uguale a un'altra. Questo è utile per gli sviluppatori quando si devono eseguire operazioni mirate nel tempo, come ad esempio programmare degli eventi o ordinare dati cronologicamente.
 
 ## Come si fa:
+Ecco un esempio su come comparare due date in Clojure:
 
 ```Clojure
-(def data1 (java.util.Date.)) ; crea un oggetto java.util.Date per la data corrente
-(def data2 (java.util.Date. 2018 5 20)) ; crea un oggetto java.util.Date per il 20 maggio 2018 
-(.compareTo data1 data2) ; restituisce -1 se data1 è precedente a data2, 0 se sono uguali, 1 se data2 è precedente a data1
-(.before data1 data2) ; restituisce true se data1 è prima di data2
-(.after data2 data1) ; restituisce true se data2 è dopo data1
-; è possibile utilizzare anche funzioni di terze parti come clj-time per semplificare il confronto di date
-(require '[clj-time.core :as time])
-(time/after? data1 data2) ; restituisce true se data1 è successiva a data2
+(ns clojure.examples
+ (:require [clj-time.core :as t]
+           [clj-time.coerce :as c]))
+  
+(defn compare-dates [date1 date2]
+ (t/compare 
+  (c/to-local-date date1) 
+  (c/to-local-date date2)))
+```
+Uso dell'esempio:
+
+```Clojure
+;; date1 è 2022-11-11
+;; date2 è 2022-11-12
+(compare-dates "2022-11-11" "2022-11-12") 
+;; output: -1
+;; indica che la data1 è prima di data2
 ```
 
 ## Approfondimento:
+Storicamente, nelle prime versioni di Clojure, non era così facile comparare due date. La funzionalità è stata introdotta più tardi con il pacchetto `clj-time`. 
 
-In passato, prima dell'avvento delle librerie come clj-time, il confronto di date in Clojure richiedeva l'utilizzo delle funzioni della libreria Java.util.Date. Oltre a ciò, in alcuni casi si può considerare l'uso della libreria Joda-Time, che offre funzionalità più avanzate per il confronto di date e la gestione del fuso orario. Inoltre, è importante prestare attenzione alle differenze tra i tipi di dati di Java e Clojure nel manipolare le date.
+Esistono metodi alternativi per comparare le date in Clojure. Ad esempio, `java.time` (disponibile dal JDK 8) può essere utilizzato in alternativa a `clj-time`.
 
-## Vedi anche:
+I dettagli di implementazione della funzione `compare` di Clojure possono essere complessi. In sintesi, il metodo `compare` di Java viene utilizzato internamente per fornire la funzionalità di comparazione delle date.
 
-- [The Clojure Cheatsheet: Date and Time](https://clojure.org/api/cheatsheet#_date_and_time)
-- [Java.util.Date documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Joda-Time documentation](https://www.joda.org/joda-time/)
+## Vedi Anche:
+- La documentazione ufficiale di Clojure: [https://clojure.org/](https://clojure.org/)
+- Un'utile guida passo-passo sulla libreria clj-time: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+- La documentazione ufficiale di java.time: [https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html)

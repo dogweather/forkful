@@ -1,6 +1,6 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "C#: Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
 simple_title:         "Interpolando uma string"
 programming_language: "C#"
 category:             "C#"
@@ -10,29 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Interpolação de String em C#
 
-Interpolar uma string é uma maneira mais fácil e eficiente de combinar strings e variáveis em uma única cadeia de caracteres. Os programadores usam a interpolação de string para tornar o código mais legível e manter a formatação correta em suas saídas.
+## 1. O Que e Por Que?
+A interpolação de string é um método para inserir valores de variáveis ​​diretamente em uma string em tempo de execução. Os programadores utilizam isso para construir strings de maneira mais limpa e fácil de ler.
 
-## Como fazer:
+## 2. Como Fazer:
 
-```
-string name = "Maria";
-int age = 25;
-Console.WriteLine($"Olá, meu nome é {name} e tenho {idade} anos."); 
-```
+Eis um exemplo básico de como interpolar uma string:
 
-O resultado será: 
-```
-Olá, meu nome é Maria e tenho 25 anos.
+```C#
+string nome = "João";
+int idade = 30;
+var str = $"O nome é {nome} e a idade é {idade}.";
 ```
 
-## Profundando:
+A saída resultante será:
 
-A interpolação de string foi introduzida no C# 6 e se tornou uma maneira popular de combinar strings e variáveis. Anteriormente, os programadores usavam a concatenação manual ou métodos de formatação como `String.Format()` para realizar essa tarefa. No entanto, a interpolação de string torna o código mais legível e reduz a chance de erros de formatação.
+```
+O nome é João e a idade é 30.
+```
 
-## Veja também:
+Você também pode formatar valores numéricos como no exemplo a seguir:
 
-- [Documentação oficial do C# sobre interpolação de string](https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/tokens/interpolated)
-- [Artigo sobre interpolação de string no DevMedia](https://www.devmedia.com.br/csharp-string-interpolation-interpolacao-de-strings/32916)
-- [Vídeo explicativo sobre interpolação de string no canal Programador BR](https://www.youtube.com/watch?v=4c6FfYQnucM)
+```C#
+double valor = 1234.56789;
+var str = $"O valor formatado é {valor:F2}.";
+```
+
+A saída será:
+
+```
+O valor formatado é 1234.57.
+```
+
+## 3. Análise Profunda
+A interpolação de string foi introduzida no C# 6.0, tornando seu código mais enxuto e mais fácil de manter. Antes disso, os programadores usavam a concatenação de string ou string.Format() que poderiam ser um pouco complicados e propensos a erros.
+
+As alternativas à interpolação de string incluem o uso de concatenação (+) ou do método string.Format(). No entanto, a interpolação de string aumenta a legibilidade, reduzindo erros.
+
+Durante a compilação, as strings interpoladas são convertidas em invocações de `String.Format()`. Isso significa que as strings interpoladas seguem as mesmas regras de formatação que `string.Format()`.
+
+## 4. Veja Também
+Para mais informações sobre a interpolação de string, consulte os links a seguir:
+
+- [Interpolação de String (C# Guia de Programação)](https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/tokens/interpolated)
+- [Interpolação de String C# 6.0](https://www.c-sharpcorner.com/blogs/string-interpolation-in-c-sharp-60)

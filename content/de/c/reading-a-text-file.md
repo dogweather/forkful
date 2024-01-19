@@ -1,7 +1,7 @@
 ---
-title:                "Einen Textdatei lesen"
-html_title:           "C: Einen Textdatei lesen"
-simple_title:         "Einen Textdatei lesen"
+title:                "Eine Textdatei lesen"
+html_title:           "Bash: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,39 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Lesen einer Textdatei ist ein häufiger Vorgang in der C-Programmierung. Dabei handelt es sich einfach darum, den Inhalt einer Textdatei in das C-Programm einzulesen und darauf zugreifen zu können. Programmierer nutzen dies, um Daten zu verarbeiten oder Informationen aus Dateien zu lesen.
+
+Das Lesen einer Textdatei besteht darin, Daten aus einer externen Datei in unser Programm zu importieren. Wir als Programmierer tun dies häufig, um Benutzerdaten zu lesen oder anzuzeigen, oder um Eingaben für unsere Programme zu akzeptieren.
 
 ## So geht's:
-Um eine Textdatei in C zu lesen, verwenden wir die Funktion `fopen()` und die dazugehörigen Funktionen `fscanf()` oder `fgets()`. Hier ist ein Beispiel, das zeigt, wie wir eine Datei öffnen, lesen und schließen können:
+
+Hier ist ein einfaches Beispiel für das Lesen einer Textdatei in C.
 
 ```C
 #include <stdio.h>
+
 int main() {
-  FILE *fp;
-  char buffer[50];
+   char text[1000];
+   FILE *file = fopen("Beispieltext.txt", "r");
 
-  // Öffne die Datei
-  fp = fopen("beispiel.txt", "r");
+   while (fgets(text, sizeof(text), file) != NULL) {
+      printf("%s", text);
+   }
 
-  // Lese die Datei Zeile für Zeile mit fgets
-  while (fgets(buffer, 50, fp)) {
-    printf("%s", buffer);
-  }
-
-  // Schließe die Datei
-  fclose(fp);
-  return 0;
+   fclose(file);
+   return 0;
 }
 ```
 
-Dies wird den Inhalt der Datei `beispiel.txt` ausgeben, Zeile für Zeile.
+Wenn Sie dieses Programm ausführen, sind die Inhalte von "Beispieltext.txt" auf Ihrem Bildschirm sichtbar.
 
-## Tiefer ins Detail:
-Lesen von Textdateien ist in der C-Programmierung seit langem eine gängige Praxis, da die Verarbeitung von Textdaten eine wichtige Aufgabe für viele Programme ist. Es gibt auch alternative Methoden zum Lesen von Dateien, wie zum Beispiel das Einlesen des gesamten Inhalts in einen Puffer mit `fread()` oder das Lesen zeichenweise mit `getc()`. Letztendlich kommt es jedoch auf die spezifischen Anforderungen und Präferenzen des Programmierers an.
+## Vertiefung:
 
-Es ist auch wichtig zu beachten, dass das Lesen von Dateien ein sicherheitsrelevanter Aspekt ist, da fehlerhafte Eingaben oder unerwartete Dateistrukturen zu unerwünschtem Verhalten führen können. Daher ist es immer ratsam, geeignete Fehlerbehandlungen und Validierungen zu implementieren.
+Textdateien wurden seit den Anfängen der Informatik zum Austausch von Daten verwendet. Es gibt andere Methoden, um Daten zu lesen, wie z.B. die Verwendung von Datenbanken oder Webdiensten, aber das Lesen von Textdateien bleibt eine einfache und effektive Methode.
+
+Es gibt auch alternative Funktionen zum Lesen von Textdateien in C, einschließlich fscanf und fread. Beachten Sie, dass "fgets" nur bis zum nächsten Linefeed ("\\n") oder bis zur angegebenen Größe liest, welche zuerst auftritt, während "fread" genau die angegebene Anzahl von Bytes liest.
 
 ## Siehe auch:
-- [C Dateizugriff](https://www.programiz.com/c-programming/c-file-input-output)
-- [Standard-C-Bibliothek - Dateien](https://en.cppreference.com/w/c/io)
-- [LMGTFY - Wie man in C eine Datei liest](https://lmgtfy.app/?q=How+to+read+a+file+in+C)
+
+Für weitere Informationen, schauen Sie sich folgende Quellen an:
+
+1. [Lesen und Schreiben von Dateien in C](https://www.learn-c.org/de/Learn-C-files)
+2. [fgets, fscanf und fread in C](http://www.cplusplus.com/reference/cstdio/)
+
+Es ist immer gut, verschiedene Quellen zu überprüfen und zu sehen, wie die Praktiken variieren. Viel Spaß beim Codieren!

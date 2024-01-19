@@ -1,6 +1,6 @@
 ---
 title:                "Pesquisando e substituindo texto"
-html_title:           "Clojure: Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
 simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,40 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
-
-Procurar e substituir texto é uma tarefa comum para os programadores. Isso envolve encontrar e substituir uma determinada sequência de caracteres em uma string por outro conjunto de caracteres. Isso é útil quando você precisa fazer alterações em grande quantidade de texto ou código em um único comando.
-
-Os programadores fazem isso para economizar tempo e minimizar erros em tarefas repetitivas de edição de texto. Isso também permite alterar rapidamente várias instâncias de um pedaço de código sem ter que fazer manualmente alterações em cada uma delas.
+## O Que & Porquê?
+A procura e substituição de textos é uma operação comum no desenvolvimento de software, isso envolve identificar uma cadeia específica na entrada e substituí-la por outra. Os programadores fazem isso porque é uma maneira eficiente de alterar grandes volumes de informações mantendo a precisão.
 
 ## Como fazer:
+O Clojure oferece várias funções úteis para manipulação de strings. Veja um exemplo de como usar a função replace:
 
 ```Clojure
-;; Para procurar e substituir texto em uma string, use a função "replace" com uma expressão regular e a string de substituição.
-(replace #"antigo" "novo" "Este é um texto antigo.")
-
-;; Output => "Este é um texto novo."
+(use 'clojure.string)
+(replace "Hello, World!" "World" "Clojure")
 ```
-
+Saída:
 ```Clojure
-;; Você também pode procurar e substituir texto em arquivos usando o clojure.java.io namespace.
-(require '[clojure.java.io :as io])
-
-(with-open [in-file (io/reader "arquivo.txt")
-            out-file (io/writer "arquivo_novo.txt")]
-    (replace #"antigo" "novo" in-file out-file))
-
-;; Este exemplo substitui todas as ocorrências de "antigo" por "novo" no arquivo "arquivo.txt" e armazena o resultado em um novo arquivo chamado "arquivo_novo.txt".
+"Hello, Clojure!"
 ```
+Neste exemplo, estamos substituindo "World" por "Clojure" na string "Hello, World!"
 
-## Profundando:
+## Em Detalhes:
+Na verdade, a função replace em Clojure substitui todas as ocorrências da seqüência de destino. Foi projetada desta maneira para uma substituição eficiente e global. Clojure, sendo uma linguagem Lisp, segura a tradição Lisp de imutabilidade e transformação de dados.
 
-Substituir texto em arquivos é uma tarefa comum em linguagens de programação e há diferentes abordagens para isso. Alguns programadores preferem usar um editor de texto com recursos de busca e substituição, enquanto outros optam por usar bibliotecas ou ferramentas especializadas para isso.
+As alternativas para procurar e substituir texto em Clojure incluem funções como `replace-first` que substituirá apenas a primeira ocorrência do padrão de destino. Para mais controle, você pode usar uma função regex, como `re-seq`, para procurar padrões complexos.
 
-Os programadores também podem encontrar expressões regulares (também conhecidas como "regex") úteis para procurar e substituir padrões de texto complexos. No entanto, é importante ter cuidado ao usar expressões regulares, pois elas podem ser facilmente mal interpretadas ou mal utilizadas.
+A implementação real de replace no Clojure é, na verdade, baseada em regex e utiliza a implementação subjacente da JVM.
 
-## Veja também:
-
-- [Documentação oficial do Clojure sobre funções de strings](https://clojuredocs.org/clojure.core/replace)
-- [Guias para expressões regulares em Clojure](https://www.lispcast.com/reg-ex)
-- [Ferramenta gratuita para testar expressões regulares em tempo real](https://regexr.com/)
+## Veja Também:
+Para aprender mais sobre as funções de string Clojure, visite a documentação oficial [aqui](https://clojure.github.io/clojure/clojure.string-api.html).
+Para mais informações sobre expressões regulares (ou regex), um bom recurso é o [Guia de Regex de Clojure](https://clojure.org/guides/learn/regex).

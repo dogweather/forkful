@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "TypeScript: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##
+---
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Kokonaisuudessaan ottaen, merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi merkkijonoksi. Se on yleinen ohjelmoinnin käytäntö, joka helpottaa merkkijonojen käsittelyä ja muotoilua. Se on erityisen hyödyllistä, kun haluat luoda dynaamisia tekstejä, jotka sisältävät muuttujien ja vakioiden arvoja.
+Liittäminen merkkijonoja on prosessi, jossa yhdistetään kaksi tai useampia merkkijonoja yhdeksi. Ohjelmoijat tekevät tätä esittämään ja manipuloimaan sikamääräistä tekstiä tehokkaasti.
 
-## Kuinka se tehdään?
+## Miten
 
-Yhdistämistä voi tehdä käyttämällä plus-merkkiä (+) ja kaksi pistettä (:) merkkijonojen välillä. Esimerkiksi:
+Alla tässä on muutamia tapoja, joilla voit yhdistää merkkijonot TypeScriptissä:
 
-```TypeScript
-let etunimi = "Matti";
-let sukunimi = "Meikäläinen";
-let kokonimi = etunimi + " " + sukunimi;
+```Typescript
+// 1. Perinteinen tapa plus-operaattoria käyttämällä
+let tervehdys = 'Hei' + ' ' + 'Suomi';
+console.log(tervehdys); // Tulostaa: Hei Suomi
 
-console.log(kokonimi);
-// tulostaa "Matti Meikäläinen"
+// 2. ECMAScript 2015 -template literals
+let nimi = 'Suomi';
+tervehdys = `Hei ${nimi}`;
+console.log(tervehdys); // Tulostaa: Hei Suomi
+```
+## Sukellus Syvemmälle
+
+Historiallisesti merkkijonojen liittämisen ajateltiin olevan hidas prosessi joissakin ohjelmointikielessä, mutta moderneissa ympäristöissä, kuten TypeScriptissä, se on erittäin tehokasta. Jos haluat yhdistää suuren merkkijonojen määrän, kannattaa harkita taulukon käyttämistä ja `.join()` -menetelmää.
+
+```Typescript
+let sanat = ['Hei', 'mahtava', 'Suomi'];
+let lause = sanat.join(' ');
+console.log(lause); // Tulostaa: Hei mahtava Suomi
 ```
 
-Voit myös yhdistää merkkijonon ja muuttujan tai vakioiden arvoja suoraan yhteen merkkijonoon käyttämällä kaksi pistettä. Esimerkiksi:
-
-```TypeScript
-let ikä = 25;
-let tervehdys = "Hei, olen " + ikä + ". vuotias.";
-
-console.log(tervehdys);
-// tulostaa "Hei, olen 25. vuotias."
-```
-
-## Syvemmälle syövereihin
-
-Merkkijonojen yhdistämisestä puhuttaessa on tärkeää muistaa, että se ei ole ainoa tapa käsitellä ja muokata tekstejä. Jotkut kielet, kuten Python, tarjoavat kattavammat merkkijonojen käsittelytoiminnot verrattuna TypeScriptin yksinkertaiseen yhdistämiseen.
-
-Toinen asia, jonka on hyvä pitää mielessä, on merkkijonojen yhdistämisen tehokkuus. Jos yhdistät suuren määrän merkkijonoja, se voi hidastaa ohjelman suoritusta. Tässä tapauksessa on parempi käyttää tarkempia työkaluja, kuten StringBuilder.
-
-Merkkijonojen yhdistämiseen käytetään usein myös erityisiä yhdistämisfunktioita, jotka mahdollistavat monimutkaisempien muotoilujen ja muuttujien käytön. Ota siis selvää, mitä vaihtoehtoja ja työkaluja kielesi tarjoaa merkkijonojen käsittelyyn.
+Tämä on erityisen hyödyllistä, jos haluat koota merkkijonon dynaamisesti luotavista osista. Join-menetelmän etu on, että se on yleensä nopeampi kuin perinteinen plus-operaattori erityisesti suurissa merkkijonotaulukoissa.
 
 ## Katso myös
 
-Mikäli haluat oppia lisää merkkijonojen yhdistämisestä TypeScriptissä, suosittelemme lukemaan TypeScriptin virallisen dokumentaation osion [Merkkijonokäsittely](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-handling). Myös esimerkkikoodien läpikäyminen ja kokeileminen auttavat ymmärtämään paremmin kyseistä aihealuetta.
+1. [MDN Web Docs - String concatenation](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Strings#string_concatenation)
+
+2. [TypeScript Handbook - Template Literals](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
+
+---
+
+Toivottavasti tämä artikkeli antoi sinulle hyvän yleiskuvan siitä, kuinka yhdistää merkkijonot TypeScriptissä. Älä epäröi kokeilla eri lähestymistapoja ja löytää se, joka sopii parhaiten projektiisi.

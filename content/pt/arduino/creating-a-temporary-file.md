@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Arduino: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,22 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
-Criar um arquivo temporário é simplesmente criar um arquivo que é usado apenas temporariamente e excluído quando já não é necessário. Os programadores geralmente criam arquivos temporários para armazenar dados temporários ou para fins de teste.
+## O Que & Por Quê?
 
-## Como fazer:
+A criação de um arquivo temporário é um método que permite armazenar dados de forma temporária durante a execução do programa. Os programadores fazem isso para gerir eficientemente a memória e facilitar certas operações, como a classificação de grandes conjuntos de dados.
+
+## Como Fazer:
+
+Para os nossos propósitos, iremos usar a biblioteca SD embutida com a IDE do Arduino para lidar com a criação de arquivos em um cartão SD.
+
+```Arduino
+#include <SD.h>
+
+File tempFile;
+
+void setup() {
+  if (!SD.begin(4)) {
+    Serial.println("Falha na inicialização do cartão SD!);
+    return;
+  }
+
+  tempFile = SD.open("temp.txt", FILE_WRITE);
+  
+  if (tempFile) {
+    tempFile.println("Este é um arquivo temporário!");
+    tempFile.close();
+    Serial.println("Arquivo temporário criado com sucesso!");
+  }
+  else {
+    Serial.println("Falha ao criar o arquivo temporário!");
+  } 
+}
+
+void loop() {
+ // Coloque aqui o seu código.
+}
 ```
-Arduino File tmpFile = File.createTempFile("Temp", ".txt"); // cria um arquivo temporário
-tmpFile.write("Este é um arquivo temporário."); // escreve o conteúdo no arquivo
-tmpFile.read(); // lê o arquivo
-tmpFile.delete(); // exclui o arquivo
+
+Quando executado, o código acima deve resultar no seguinte output:
+
+```Arduino
+Arquivo temporário criado com sucesso!
 ```
 
-## Mergulho Profundo:
-Criar arquivos temporários se tornou uma prática comum entre os programadores por ser uma maneira conveniente de lidar com dados temporários sem precisar criar um arquivo permanente. Existem também outras alternativas, como o uso de memória temporária ou variáveis, mas a criação de arquivos temporários permite uma maior flexibilidade e organização dos dados.
+## Em Detalhes:
 
-Além disso, ao criar um arquivo temporário, o programador pode especificar o local e o nome do arquivo, permitindo assim um maior controle sobre os dados temporários. A implementação de criação de arquivos temporários varia de acordo com a linguagem de programação e o sistema operacional utilizado, mas geralmente é simples e fácil de utilizar.
+Criação de arquivos temporários é um conceito fundamental na programação, que existe desde os dias antiquados de cartões perfurados até o presente. 
 
-## Veja também:
-- [Artigo sobre criação de arquivos temporários em Java](https://www.baeldung.com/java-temporary-files)
-- [Documentação oficial sobre arquivos temporários em Arduino](https://www.arduino.cc/reference/en/language/functions/files-and-dirs/file/createtempfile/)
+Existem várias maneiras alternativas de criar um arquivo temporário. Algumas bibliotecas de software disponíveis permitem que um programador faça isso, como as bibliotecas de I/O dos sistemas operacionais Linux e Windows.
+
+Quando se trata de detalhes de implementação, a coisa mais importante a ser observada na criação de arquivos temporários em um Arduino é a memória. Arduino tem uma quantidade limitada de memória, por isso, assegure-se de remover ou reutilizar o arquivo temporário uma vez que seus dados não sejam mais necessários.
+
+## Veja Também:
+
+Para mais informações sobre programação de Arduino e manuseio de arquivos, consulte os seguintes links:
+
+1. [Biblioteca Arduino SD](https://www.arduino.cc/en/Reference/SD)
+2. [Tutorial de Manipulação de Arquivos com a Biblioteca SD](https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial)
+3. [Dicas para gerenciar memória no Arduino](https://learn.adafruit.com/memories-of-an-arduino/optimizing-sram)

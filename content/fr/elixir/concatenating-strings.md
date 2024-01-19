@@ -1,7 +1,7 @@
 ---
-title:                "Concaténation de chaînes de caractères"
-html_title:           "Elixir: Concaténation de chaînes de caractères"
-simple_title:         "Concaténation de chaînes de caractères"
+title:                "Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
+simple_title:         "Concaténation de chaînes"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faisons-nous?
-La concaténation de chaînes consiste à combiner plusieurs chaînes de caractères en une seule chaîne. Les programmeurs le font souvent pour construire des messages ou des données à partir de parties distinctes. Cette opération est commune dans la programmation car elle permet de manipuler et de formater facilement les chaînes.
+## Qu'est-ce que c'est et pourquoi?
+
+La concaténation de chaînes de caractères consiste à les réunir bout à bout pour former une nouvelle phrase. Les programmeurs la font pour simplifier la présentation et la modification des données textuelles.
 
 ## Comment faire:
-Voici un exemple de concaténation de chaînes en utilisant Elixir:
+
+Regardons quelques exemples de la façon dont vous pouvez concaténer des chaînes en Elixir avec l'opérateur `<>`.
 
 ```Elixir
-message1 = "Bonjour"
-message2 = "monde!"
-message3 = " Comment ça va?"
-joined_message = message1 <> " " <> message2 <> message3
-IO.puts(joined_message)
+chaine1 = "Bonjour, "
+chaine2 = "monde!"
+chaine = chaine1 <> chaine2
+IO.puts(chaine)
 ```
+Le résultat sera : ```Bonjour, monde!```
 
-Résultat:
+## Plongeons plus en profondeur
+
+Historiquement, la concaténation de chaînes est une pratique courante en programmation depuis le développement des premiers langages de programmation. Elixir gère ceci en utilisant l'opérateur de concaténation `<>`.
+
+Toutefois, il est intéressant de noter qu'il existe des alternatives à l'utilisation du `<>`. Par exemple, vous pouvez utiliser l'interpolation de chaîne qui permet d'intégrer une valeur dans une chaîne. 
+
+```Elixir
+chaine3 = "Salut, #{chaine2}"
+IO.puts(chaine3)
 ```
-Bonjour monde! Comment ça va?
-```
+Le résultat obtenu est : ```Salut, monde!```
 
-Vous pouvez également utiliser l'opérateur `<>` pour concaténer plusieurs chaînes en une seule, comme dans l'exemple ci-dessus. Il est important de noter que ceci ne modifie pas les chaînes d'origine, mais crée plutôt une nouvelle chaîne à partir des valeurs combinées.
+En Elixir, la concaténation de chaînes avec `<>` est une simple utilisation de l'opérateur `Kernel.concat/2`. Il est également optimisé pour la concision et la vitesse.
 
-## Plongée en profondeur:
-La concaténation de chaînes est une opération de base dans de nombreux langages de programmation. Elle a été introduite dans le langage de programmation C en tant qu'opérateur "+". Cependant, certains langages plus modernes, comme Elixir, ont incorporé un opérateur dédié, `<>`, pour une utilisation plus efficace et lisible.
+## Voir aussi
 
-Il existe également d'autres moyens de concaténer des chaînes dans Elixir, tels que l'utilisation de `String.concat/2` ou `Kernel.<>/2`, qui peuvent être plus performants dans certains cas. En général, il est recommandé d'utiliser l'approche la plus lisible et la plus facile à comprendre pour votre code.
+Pour davantage d'informations et de ressources sur la concatenation des chaînes en Elixir, jettons un coup d'oeil à ces liens :
 
-## Voir aussi:
-- Documentation sur la concaténation de chaînes en Elixir: https://hexdocs.pm/elixir/String.html#concat/2
-- Exemples de concaténation de chaînes avec `String.concat/2`: https://blog.appsignal.com/2018/11/13/how-to-concatenate-strings-in-elixir.html
-- Vidéo explicative sur la concaténation de chaînes en Elixir: https://www.youtube.com/watch?v=2LrptYn1aH0
+- [La documentation officielle de Elixir](https://elixir-lang.org/getting-started/basic-types.html#strings)
+- [Un guide pratique sur la concaténation en Elixir](https://elixirschool.com/fr/lessons/basics/strings/)
+- [Post de blog sur la concaténation en Elixir](https://learningelixir.joekain.com/concatenate-strings-in-elixir/)

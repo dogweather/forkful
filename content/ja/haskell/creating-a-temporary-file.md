@@ -1,6 +1,6 @@
 ---
 title:                "一時ファイルの作成"
-html_title:           "Haskell: 一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
 simple_title:         "一時ファイルの作成"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何がそれで、それを作る理由は？
+## 何となぜ？
+プログラムでは、一時ファイルの作成がよく行われます。一時ファイルは、データを一時的に格納するためのファイルで、大量のデータ処理やファイル間でのデータ移行に有用です。
 
-一時ファイルを作るとは、プログラマーが一時的にデータを保存するための一時的なファイルを作成することです。これは、コンピューター上で作業する際によく使われます。プログラマーは、一時ファイルを作成することで、プログラムが一時的に必要とするデータを保存し、メモリーを節約することができます。
-
-## 使い方：
+## 作り方：
+Haskellで一時ファイルを作るためのライブラリには[System.IO.Temp](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)があります。このライブラリを使って簡単な一時ファイル作成のコードを以下に示します。
 
 ```Haskell
 import System.IO.Temp
 
-main = do
-  tempFile <- openTempFile "C:/Users/username/Desktop" "tempfile.txt"
-  hPutStr tempFile "Hello world!"
-  hClose tempFile
+myFunc :: IO ()
+myFunc = withSystemTempFile "my_temp.txt" $ \fp h -> do
+            hPutStrLn h "Temporary Data"
+            hClose h
+            putStrLn $ "Created a temp file at " ++ fp
+            -- fp: ファイルのパス, h: ファイルへのハンドル
+```
+この実行すると以下のような出力が得られます。
+
+```Haskell
+"Created a temp file at /tmp/my_temp.txt12345"
 ```
 
-このコードは、 tmpfile.txtという一時ファイルを作り、"Hello world!"という文を書き込み、ファイルを閉じるという処理を行います。
+## ディープダイブ：
+Haskellは一時ファイルの作成が可能な数多くの言語の一つです。この機能が追加されたのは、大規模なデータを処理しやすくするためです。また、ファイルを開く代わりにメモリーにデータをホールドするほうが便利なケースもあるため、Haskellには[`Data.ByteString`](https://hackage.haskell.org/package/bytestring-0.11.1.0/docs/Data-ByteString.html)等の代替モジュールも提供されています。System.IO.Tempの内部では、`openTempFile`というHaskellの標準ライブラリ関数が使われています。
 
-実行結果：
-
-```
-Hello world!
-```
-
-## さらに深く：
-
-一時ファイルの概念は、コンピューターの世界で広く使われています。最も一般的な利用法は、プログラムが作成した一時ファイルを使用したい場合に、他のプログラムがそのファイルにアクセスできるようにすることです。また、データベースの一時的なバックアップファイルを作成する際にも使用されます。
-
-一時ファイルを作成する他の方法としては、一時ファイルを自動的に削除する方法があります。これは、一時ファイルがプログラムの終了時に自動的に削除されるようにする方法です。この場合、一時ファイルの削除に関する余分なコードを書く必要がありません。
-
-一時ファイルの作成には、一時ファイルを作成するためのHaskellの便利なモジュールである"System.IO.Temp"があります。このモジュールを使用することで、一時ファイルの作成と削除を容易にすることができます。
-
-## 参考文献：
-
-- [Temporary files in Haskell](https://mmhaskell.com/blog/2017/12/23/temporary-files-in-haskell)
-- [System.IO.Temp module](https://hackage.haskell.org/package/filepath/docs/System-Temp.html)
-
-以上が、Haskellを使用して一時ファイルを作成する方法です。プログラマーは、一時ファイルを作成することで、実行時エラーやメモリーの問題を回避することができます。Haskellの"System.IO.Temp"モジュールを使用して、一時ファイルを簡単に作成し、プログラムをより効率的に実行することができます。
+## 参考に：
+- [Haskell System.IO.Temp Documentation](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
+- [Haskell Cookbook - Managing Temporary Files and Directories](https://haskell.fpcomplete.com/tutorial/managing-temporary-files-and-directories)
+- [Haskell Tempfile Source Code](https://github.com/haskell/unix/blob/master/System/Posix/Temp.hsc)

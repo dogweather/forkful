@@ -1,7 +1,7 @@
 ---
-title:                "Imprimindo saída de depuração"
-html_title:           "Ruby: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Imprimindo saída de debug"
+html_title:           "C#: Imprimindo saída de debug"
+simple_title:         "Imprimindo saída de debug"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Imprimir a saída de depuração é uma técnica usada pelos programadores para acompanhar seu código e identificar problemas durante o processo de desenvolvimento. Isso pode incluir a visualização de valores de variáveis, mensagens de erro e outras informações úteis para encontrar e solucionar erros no código.
+## O Que é & Por Quê
 
-## Como Fazer:
-Para imprimir uma saída de depuração em seu código Ruby, você pode usar o método `p` ou `puts`. Aqui está um exemplo simples:
+A impressão de output de debug é um método usado por programadores para rastrear o funcionamento do código. Eles fazem isso para encontrar e resolver bugs e melhorar a eficiência do aplicativo.
 
-```
-num = 5
-puts "O número é: #{num}"
-```
+## Como fazer:
 
-Isso irá imprimir a seguinte saída:
+Vou mostrar como o debug é feito no Ruby usando a biblioteca "byebug". Primeiro, precisaremos instalá-la.
 
-```
-O número é: 5
+```Ruby
+gem install byebug
 ```
 
-Se você quiser imprimir uma mensagem de erro, pode fazer o seguinte:
+Agora, digamos que você tenha o seguinte código e queira fazer debug nele.
 
-```
-puts "Oops, algo deu errado!"
-```
+```Ruby
+def soma(a, b)
+  a + b
+end
 
-E isso irá imprimir a seguinte saída:
-
-```
-Oops, algo deu errado!
+soma(1, 2)
 ```
 
-## Mergulho Profundo:
-A técnica de imprimir a saída de depuração é frequentemente usada como uma forma rápida e fácil de rastrear e corrigir erros no código. No entanto, existem outras técnicas que podem ser usadas para depurar, como o uso de ferramentas de rastreamento e o uso de testes automatizados. Além disso, imprimir a saída de depuração pode afetar o desempenho do seu código, pois pode exigir que o programa pare a execução para imprimir os valores. É importante encontrar um equilíbrio entre o uso dessa técnica e outras técnicas de depuração.
+Para isso, você adicionaria 'byebug' logo antes da linha que quer inspecionar, como mostrado abaixo:
 
-## Veja Também:
-Se você quiser saber mais sobre depuração em Ruby, aqui estão algumas fontes úteis:
-- [Guia de Depuração Oficial do Ruby](https://ruby-doc.org/core-2.7.1/Debugger.html)
-- [Vídeo explicando como depurar em Ruby](https://www.youtube.com/watch?v=Zs_DYl-5jkc)
-- [Ferramenta de rastreamento para Ruby chamada Pry](https://github.com/pry/pry)
+```Ruby
+require 'byebug'
+
+def soma(a, b)
+  byebug
+  a + b
+end
+
+soma(1, 2)
+```
+
+Feito isso, ao executar o programa, ele irá parar na linha onde 'byebug' foi chamado, permitindo que você possa inspecionar variáveis e o fluxo do código.
+
+## Mergulho Profundo
+
+Historicamente, a impressão de debug foi uma das primeiras técnicas utilizadas para a depuração de software. Antes de bibliotecas como 'byebug', os programadores costumavam incluir declarações de impressão em partes específicas do código para rastrear o fluxo do programa e o valor das variáveis.
+
+Existem alternativas ao 'byebug', como 'pry'. No entanto, cada uma tem suas próprias vantagens e escolher qual usar depende das necessidades pessoais de cada programador.
+
+Se você está curioso sobre a implementação da impressão de debug, este é essencialmente um processo de I/O - as mensagens de debug são escritas em uma saída (geralmente um console) para serem lidas pelo programador.
+
+## Veja Também
+
+Para mais detalhes e exemplos de como usar o 'byebug', confira a documentação oficial [aqui](https://github.com/deivid-rodriguez/byebug).
+Para olhar mais a fundo em alternativas como 'pry', você pode encontrar a documentação [aqui](https://github.com/pry/pry).

@@ -1,7 +1,7 @@
 ---
-title:                "Análisis de HTML"
-html_title:           "Ruby: Análisis de HTML"
-simple_title:         "Análisis de HTML"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-
-Parsing HTML es el proceso de interpretar y analizar el código HTML de una página web para extraer la información relevante de ella. Los programadores usan esto para crear aplicaciones que puedan automatizar tareas como extraer datos o hacer cambios en un gran número de páginas web de manera eficiente.
+## ¿Qué & Por qué?
+El análisis sintáctico de HTML, o parsing, es el proceso de analizar el código HTML para entender su estructura y significado. Los programadores lo hacen para manipular, extraer o incluso transformar información en páginas web.
 
 ## Cómo hacerlo:
-La siguiente es una manera sencilla de hacer un parsing básico de una página web en Ruby:
-
 ```Ruby
-require 'open-uri'
 require 'nokogiri'
+require 'open-uri'
 
-url = "https://ejemplo.com"
-html = open(url).read
-parsed_html = Nokogiri::HTML(html)
+# HTML de la página web
+html = open("https://www.ejemplo.com")
 
-# Extraer el título de la página
-title = parsed_html.css('title').text
-puts title
-# Output: "Página de ejemplo"
+# Usando Nokogiri para analizar el HTML
+doc = Nokogiri::HTML(html)
 
-# Extraer todos los enlaces en la página
-links = parsed_html.css('a').map { |link| link['href'] }
-puts links
-# Output: ["https://ejemplo.com/pagina1.html", "https://ejemplo.com/pagina2.html", "https://ejemplo.com/pagina3.html"]
+# Extraer títulos de las noticias
+doc.css('.caja-titulo').each do |titulo|
+  puts titulo.text
+end
 ```
 
-## Profundizando:
-La práctica de parsing de HTML tiene sus raíces en los inicios de la World Wide Web, cuando la creación de páginas web todavía era un proceso manual. A medida que la web crecía, se volvió necesaria la automatización de ciertas tareas para hacerlas más eficientes. Alternativas al parsing HTML incluyen el uso de APIs o el acceso a bases de datos con información estructurada.
+Este script abrirá la página web, analizará el HTML y extraerá el texto de cada elemento con la clase "caja-titulo". Si cambias la URL y la clase CSS, podrías usar este script en cualquier sitio.
 
-Para implementar el parsing en Ruby, existen varias gemas disponibles, como Nokogiri, Hpricot y Mechanize, cada una con sus propias características y ventajas.
+## Profundizando
+El análisis sintáctico de HTML ha estado presente desde los primeros días de la web para permitir el procesamiento de sitios web de manera programática. Aunque hemos usado Nokogiri, existen muchas otras librerías y lenguajes que pueden hacer eso, cada uno con sus propias ventajas y desventajas.
 
-## Ver también:
-- Documentación oficial de Nokogiri: https://nokogiri.org/
-- Tutorial de parsing HTML con Ruby: https://www.sitepoint.com/web-scraping-ruby/
-- Gema Hpricot para parsing de HTML: https://github.com/hpricot/hpricot
+Además, los detalles de implementación pueden variar. Por ejemplo, algunos analizadores pueden tomar una cadena HTML y convertirla en un árbol de nodos HTML, mientras que otros pueden generar una versión plana, lista de tokens. Ambos enfoques tienen sus usos dependiendo de lo que necesitas hacer con el HTML analizado.
+
+## Ver También
+1. [Nokogiri Documentation](https://nokogiri.org/tutorials/parsing_an_html_xml_document.html) - Documentación oficial de Nokogiri.
+2. [Open-uri Documentation](https://ruby-doc.org/stdlib-2.6.1/libdoc/open-uri/rdoc/OpenURI.html) - Documentación oficial de la biblioteca 'open-uri' en Ruby.
+3. [W3Schools - HTML DOM parsing Guide](https://www.w3schools.com/xml/dom_nodes.asp) - Una guía en profundidad sobre análisis sintáctico de DOM HTML.

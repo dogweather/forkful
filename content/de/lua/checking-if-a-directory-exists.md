@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis vorhanden ist."
-html_title:           "Lua: Überprüfung, ob ein Verzeichnis vorhanden ist."
-simple_title:         "Überprüfung, ob ein Verzeichnis vorhanden ist."
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+html_title:           "Lua: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,38 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+# Checken, ob ein Verzeichnis existiert in Lua
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist eine wichtige Funktion für Programmierer. Es ermöglicht dem Programm, zu prüfen, ob ein bestimmtes Verzeichnis vorhanden ist, bevor es darauf zugreift. Dies ist besonders hilfreich, um sicherzustellen, dass das Programm nicht abstürzt, wenn das Verzeichnis fehlt.
+## Was & Warum?
 
-# Wie geht's?
+Das Überprüfen, ob ein Verzeichnis existiert, ist ein Vorgang, bei dem ein Programm feststellt, ob ein bestimmtes Verzeichnis auf dem System vorhanden ist. Programmierer machen das, um Fehler zu vermeiden, die auftreten können, wenn sie versuchen, auf ein nicht vorhandenes Verzeichnis zuzugreifen.
 
-Um zu überprüfen, ob ein Verzeichnis existiert, können wir die Funktion `lfs.attributes()` aus der Lua Bibliothek "LuaFileSystem" verwenden. Diese Funktion gibt ein Table mit Informationen über die angegebene Datei oder das Verzeichnis zurück. Hier ist ein Beispielcode, um zu überprüfen, ob das Verzeichnis "Dokumente" im aktuellen Arbeitsverzeichnis existiert:
+## So geht's:
+
+In Lua kann man mit `lfs.attributes()` überprüfen, ob ein Verzeichnis existiert. Hier ist ein kurzer Codeausschnitt:
 
 ```Lua
-local lfs = require("lfs")
-local docDir = "Dokumente"
+local lfs = require('lfs')
 
-local attr = lfs.attributes(docDir) --überprüft, ob "Dokumente" existiert
-
-if attr then --wenn das Verzeichnis existiert
-  print("Das Verzeichnis existiert!")
-else
-  print("Das Verzeichnis existiert nicht!")
+function isDirectory(path)
+    -- `lfs.attributes(path).mode` returns 'directory' if path is a directory
+    return lfs.attributes(path, 'mode') == 'directory'
 end
 
+print(isDirectory('/path/to/directory'))  -- false if the directory does not exist
 ```
 
-Die Ausgabe wird je nachdem, ob das Verzeichnis existiert oder nicht, entweder "Das Verzeichnis existiert!" oder "Das Verzeichnis existiert nicht!" sein.
+## Tiefgehende Betrachtung
 
-# Tiefer eintauchen
+Historisch gesehen war es nicht immer einfach, in Lua zu überprüfen, ob ein Verzeichnis existiert. Vorerst war eine direkte Implementierung nicht vorhanden. Man benutzte oft FFI-Bibliotheken oder rief systemeigene Funktionen auf. Mit der Einführung von 'LuaFileSystem' (lfs), einer portablen Bibliothek zur Manipulation von Dateisystemen, wurde es viel einfacher.
 
-Die Funktion `lfs.attributes()` wurde in LuaFileSystem Bibliothek eingeführt, um Dateiattribute zu erhalten, wie z.B. Größe, Änderungsdatum und Zugriffsrechte. Das Überprüfen, ob ein Verzeichnis existiert, ist eine typische Anwendung dieser Funktion. Eine Alternative zum Überprüfen der Existenz eines Verzeichnisses ist die Verwendung der Funktion `lfs.chdir()`, um in das Verzeichnis zu wechseln und dann zu überprüfen, ob es erfolgreich war.
+Eine Alternative zum obigen Ansatz ist die Verwendung der Funktion `os.execute()`. Aber beachten Sie, dass dieser Befehl systemabhängig ist und möglicherweise nicht auf allen Plattformen funktioniert. 
 
-Bei der Verwendung von `lfs.attributes()` muss beachtet werden, dass die Funktion möglicherweise nicht auf allen Betriebssystemen gleich funktioniert und die zurückgegebenen Attribute variieren können.
+Die Funktionsweise von `lfs.attributes(path, 'mode')` ist recht einfach. Wenn das Verzeichnis existiert, gibt es 'directory' zurück, andernfalls gibt es nil zurück.
 
-# Auch interessant
+## Siehe auch
 
-Weitere Informationen und Beispiele zum Umgang mit Dateien und Verzeichnissen in Lua finden Sie in der offiziellen Dokumentation der Sprache: https://www.lua.org/manual/5.3/manual.html#6.8
-
-Für eine vollständige Referenz zur LuaFileSystem Bibliothek, besuchen Sie die offizielle Website: https://keplerproject.github.io/luafilesystem/
+Für mehr Informationen über `lfs.attributes()`, siehe die offizielle Laravel-Dokumentation: [https://keplerproject.github.io/luafilesystem/manual.html#attributes](https://keplerproject.github.io/luafilesystem/manual.html#attributes)

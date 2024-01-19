@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av tekstfil"
-html_title:           "Kotlin: Lesing av tekstfil"
-simple_title:         "Lesing av tekstfil"
+title:                "Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -11,31 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å lese en tekstfil i programmering betyr å åpne en fil og lese innholdet i den, enten som ren tekst eller strukturerte data. Dette er en vanlig oppgave for programmører, siden mange programmer trenger å hente data fra eksterne filer for å behandle informasjon eller manipulere filene selv.
 
-## Hvordan:
-Å lese en tekstfil i Kotlin er enkelt og kan gjøres ved hjelp av innebygde funksjoner og klasser. Først må filen importeres inn i prosjektet ditt ved hjelp av nøkkelordet "import". Deretter kan du bruke klassen "File" til å åpne filen og lese innholdet. Her er et eksempel på hvordan du kan lese en tekstfil i Kotlin:
+Å lese en tekstfil er en operasjon der vi henter inn innholdet i en fil til vår applikasjon. Dette er vanlig når vi skal behandle data, innstillinger eller dokumenter i programmeringsoppgaver. 
+
+## Slik Gjør Du:
+
+Her er et enkelt eksempel på hvordan du kan lese innhold fra en tekstfil i Kotlin.
 
 ```Kotlin
 import java.io.File
 
 fun main() {
-    val fil = File("tekstfil.txt")
-    //Åpne filen og lagre innholdet i en variabel
-    val innhold = fil.readText()
+    val innhold = File("test.txt").readText()
     println(innhold)
 }
 ```
+Når du kjører koden, vil den skrive ut innholdet i 'test.txt'. Hvis for eksempel 'test.txt' har teksten "Hei, Verden!", vil utskriften være:
 
-Eksempeloutput: 
+```Kotlin
+Hei, Verden!
 ```
-Dette er en tekstfil for illustrative formål. Denne filen vil bli lest av et Kotlin-program.
-```
 
-## Dykk dypere:
-Å lese tekstfiler har vært en del av programmering siden begynnelsen, da det var en vanlig måte å lagre og behandle data på. I dag finnes det også andre måter å håndtere data, for eksempel med databasesystemer eller ved bruk av APIer. Det er også viktig å forstå forskjellen mellom å lese tekstfiler og binærfiler, som er formater som er mer egnet for å lagre og manipulere data som tall og bilder. Kotlin gir også muligheten til å skrive til tekstfiler ved hjelp av funksjoner som "writeText()" og "appendText()".
+## Dypdykk
 
-## Se også:
-Her er noen ressurser for å lære mer om å lese og skrive tekstfiler i Kotlin:
-- [Kotlin Dokumentasjon: Arbeide med filer](https://kotlinlang.org/docs/tutorials/kotlin-for-py/working-with-files.html)
-- [Stack Overflow: Hvordan kan jeg lese en tekstfil i Kotlin?](https://stackoverflow.com/questions/22968818/how-to-read-a-text-file-in-kotlin)
+Leseoperasjoner har vært grunnleggende for programmering siden starten, da mye av programvareutvikling handler om å manipulere lagret data. I Kotlin, har vi ulike metoder for å lese en tekstfil, slik som bruk av BufferedReader, FileInputStream eller Scanner, avhengig av det spesifikke behovet.
+
+Alternativt kan du bruke `readLines()`- metoden for å lese filen linje for linje. Denne metoden kan være praktisk når filen er stor eller når du trenger å behandle data linje for linje.
+
+Det er viktig å merke seg at stien til tekstfilen er relativ til plasseringen av programmet. Hvis tekstfilen ikke finnes, vil `readText()` kaste en FileNotFoundException.
+
+## Se Også
+
+For mer informasjon om filbehandling i Kotlin, sjekk ut:
+
+- [Lese og skrive til filer](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-text.html) i den offisielle Kotlin-dokumentasjonen.
+- [Håndtering av unntak](https://kotlinlang.org/docs/exceptions.html) for når filer ikke eksisterer eller andre problemer oppstår.
+- [Kotlin Tutorial: Lese og skrive til en fil](https://www.programiz.com/kotlin-programming/file-io), for en mer detaljert tutorial om hvordan lese og skrive til filer med Kotlin.

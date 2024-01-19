@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaistiedoston luominen"
-html_title:           "TypeScript: Väliaikaistiedoston luominen"
-simple_title:         "Väliaikaistiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,45 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mikä & Miksi?
 
-Luotaessa ohjelmia, kehittäjät voivat joutua luomaan väliaikaisia tiedostoja, jotka ovat tarpeellisia joko ohjelmantekijän tai ohjelman toiminnan kannalta.
+Väliaikaistiedoston luominen on prosessi, jossa ohjelma luo uuden tiedoston, usein muuntamaan tai tallentamaan tietoja väliaikaisesti. Ohjelmoijat tekevät tämän, koska tiedoston luominen ja poistaminen on helppoa, ja ne toimivat "lyhytaikainen varasto", joka auttaa järjestämään ja hallitsemaan tietoja tehokkaasti.
 
-Väliaikainen tiedosto on lyhytaikainen tiedosto, jota käytetään ohjelman aikana ja se poistetaan käytön jälkeen. Tästä syystä luominen ja poistaminen tulee tehdä jokaisen käytön yhteydessä ja tämä on yleinen tapa käsitellä ohjelman tarvitsemia väliaikaisia tietoja.
+## Näin teet:
 
-# Miten:
+Näytetään esimerkki TypeScript-koodilla:
 
 ```TypeScript
-import { tmpFile, writeFile, deleteFile } from 'fs';
+import { promises as fs } from 'fs';
+import os from 'os';
+import path from 'path';
 
-tmpFile((err, path) => {
-    if (err) throw err;
-    let data = "Tämä on väliaikainen tiedosto!";
-    writeFile(path, data, (err) => {
-        if (err) throw err;
-        console.log("Tiedoston kirjoittaminen onnistui!");
-        deleteFile(path, (err) => {
-            if (err) throw err;
-            console.log("Tiedoston poistaminen onnistui.");
-        });
-    });
-});
+async function createTempFile(data: Buffer): Promise<string> {
+  const tempPath = path.join(os.tmpdir(), Date.now().toString());
+  await fs.writeFile(tempPath, data);
+  return tempPath;
+}
+
+// Käyttö
+const filePath = await createTempFile(Buffer.from('Moikka Maailma!'));
+console.log(`Väliaikaistiedosto luotu osoitteeseen: ${filePath}`);
 ```
 
-Tässä esimerkissä käytämme Node.js:ään kuuluvaa ```fs``` kirjastoa luodaksemme, kirjoittaaksemme ja poistaaksemme väliaikaisen tiedoston. Ensin käyttäjän täytyy koodissa määritellä polku, johon väliaikainen tiedosto tallennetaan ```tmpFile``` funktion avulla. Sitten voidaan kirjoittaa tiedostoon haluttu data ```writeFile``` funktion avulla. Lopuksi poistamme tiedoston ```deleteFile``` funktion avulla.
+Luo väliaikaistiedoston sisältäen tekstin "Moikka Maailma!" ja tulostaa tiedoston sijainnin.
 
-# Syvä sukellus:
+## Syvemälle sukeltaminen
 
-Väliaikaisten tiedostojen käyttö on ollut yleinen tapa ohjelmoidessa jo vuosikymmenten ajan. Ensimmäiset käyttöjärjestelmät käyttivät tätä metodia tiedostojenhallintaan ja viime vuosina tästä on tullut standardi tapa käsitellä väliaikaisia tietoja myös ohjelmointikielet, kuten TypeScript, maailmassa.
+Väliaikaistiedostojen käyttö on aina ollut oleellista ohjelmistojen kehittämisessä. Ne tarjoavat turvallisen tavan käsitellä tietoja vaarantamatta käyttäjän pysyviä tietoja.
 
-On myös muita tapoja luoda väliaikaisia tiedostoja, kuten käyttämällä ```tempfile``` kirjastoa tai hyödyntämällä tietokantoja, mutta ```fs``` kirjaston käyttö on yleinen ja toimiva tapa.
+Vaihtoehtoja on useita. Jotkut ohjelmoijat saattavat käyttää tietokantoja tai nopeampia, mutta häviäviä tietorakenteita, kuten NoSQL tai In-Memory tietokanta.
 
-Väliaikaisten tiedostojen luominen ja poistaminen voi myös vaatia käyttöjärjestelmän lupaa, erityisesti jos se tapahtuu jatkuvasti. On tärkeää huolehtia, että väliaikaiset tiedostot poistetaan asianmukaisesti, jotta ne eivät vie turhaan tilaa tai aiheuta turhia tietoturvariskejä.
+Yksityiskohtia väliaikaistiedostojen käytöstä: Tehokkuutta parantaa se, että useimmissa käyttöjärjestelmissä tiedostojen luominen ja poistaminen väliaikaisissa hakemistoissa on nopeampaa verrattuna muihin sijainteihin.
 
-# Katso myös:
+## Katso myös
 
-[Lisätietoa TypeScript-kielestä](https://www.typescriptlang.org/)
+Suosittelen perehtymään seuraaviin linkkeihin syvemmän ymmärryksen saamiseksi:
 
-[Node.js ```fs``` kirjastodokumentaatio](https://nodejs.org/api/fs.html)
-
-["tempfile" kirjasto](https://www.npmjs.com/package/tempfile)
+- Node.js File System Module: [Linkki](https://nodejs.org/api/fs.html)
+- Temporary Files in Operating System: [Linkki](https://www.geeksforgeeks.org/temporary-files-operating-system/)
+- Creating and Using Temporary Files Securely: [Linkki](https://www.ibm.com/docs/en/zos/2.3.0?topic=services-creating-using-temporary-datasets-program-function)

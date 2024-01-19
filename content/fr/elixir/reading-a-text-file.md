@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Elixir: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Lecture Fichier Texte est une opération courante pour les programmeurs d'Elixir, qui leur permet de lire et d'interpréter le contenu d'un fichier texte. Cela est particulièrement utile lorsque l'on souhaite extraire des données d'un fichier ou traiter un texte de manière automatique.
+## Qu'est-ce et Pourquoi? 
+Lire un fichier texte en programmation, c'est extraire les informations d'un fichier sous forme de texte. Les programmeurs le font pour récupérer des données, analyser des logs, ou même pour lire du code source.
 
 ## Comment faire:
-Voici comment lire un fichier texte en utilisant Elixir:
-```Elixir
-File.read("fichier.txt")
-```
-Le résultat sera une chaîne de caractères contenant le contenu du fichier. Si l'on souhaite spécifier un encodage, on peut le faire en ajoutant une option à la fonction `read`:
-```Elixir
-File.read("fichier.txt", encoding: :utf8)
-```
 
-## Approfondissement:
-Les fichiers textes sont une partie essentielle de l'informatique depuis les débuts de la programmation. Ils ont été utilisés pour stocker des données et échanger des informations entre différentes applications. Aujourd'hui, il existe d'autres formats de fichiers tels que JSON ou XML, mais les fichiers textes restent importants pour des tâches simples et rapides.
+En Elixir, lire un fichier texte est simple. Par exemple :
 
-Pour lire un fichier ligne par ligne, on peut utiliser la fonction `Stream` :
-```Elixir
-File.stream!("fichier.txt") |> Enum.each(&IO.puts/1)
+```elixir
+{:ok, data} = File.read("votre_fichier.txt")
+IO.puts(data)
+```
+La sortie pourrait ressembler à cela, dépendant de votre fichier texte :
+```elixir
+Ceci est une démo pour lire un fichier.
 ```
 
-## Voir aussi:
-- Documentation sur la fonction [`File.read/2`](https://hexdocs.pm/elixir/File.html#read/2) 
-- Article sur la manipulation de fichiers en Elixir : [Manipuler des fichiers en Elixir](https://blog.lelonek.me/working-with-files-in-elixir-part-1-9fdf751eef34)
-- Tutoriel vidéo pour lire un fichier texte en utilisant Elixir : [Lire un fichier texte en Elixir](https://www.youtube.com/watch?v=ORzX5NJtm1E)
+## Approfondissement
+
+Historiquement, la lecture de fichiers est une tâche basique en programmation. Elixir, basé sur Erlang, offre une approche concurrente, ce qui est bénéfique pour lire des fichiers volumineux.
+
+Il existe un certain nombre d'alternatives pour lire un fichier texte en Elixir, comme utiliser `File.stream!`. Cela peut être utile pour lire de gros fichiers ligne par ligne afin d'économiser la mémoire.
+
+Concernant l'implémentation, `File.read` utilise sous le capot le module Erlang `:file` qui fournit des opérations de bas niveau sur les fichiers.
+
+## Voir aussi
+
+Pour des informations supplémentaires, consultez ces liens :
+- Documentation officielle Elixir pour le module `File` ([https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)).
+- Guide pratique pour manipuler des fichiers et du texte avec Elixir ([https://elixirschool.com/fr/lessons/basics/files/](https://elixirschool.com/fr/lessons/basics/files/)).
+- Tutoriel vidéo sur la lecture et l'écriture de fichiers en Elixir ([https://www.youtube.com/watch?v=pOhVj0Mhu1M](https://www.youtube.com/watch?v=pOhVj0Mhu1M)).

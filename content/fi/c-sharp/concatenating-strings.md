@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon yhdistäminen"
-html_title:           "C#: Merkkijonon yhdistäminen"
-simple_title:         "Merkkijonon yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,19 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Miksi muodostaa yhdistettyjä merkkijonoja ohjelmoidessa ja mitä se tarkoittaa? Yhdistetyt merkkijonot ovat yksinkertaisesti kahden tai useamman merkkijonon yhdistämistä yhdeksi merkkijonoksi. Tätä voi tarvita esimerkiksi silloin, kun halutaan muodostaa uusi tekstirivi tai lisätä muuttujan arvo toisen merkkijonon perään.
+## Mikä & Miksi?
 
-## Miten:
-Esimerkki muodostaen yhdistettyjä merkkijonoja ```C# Console.WriteLine("Tervetuloa " + nimi + "!");```
-Esimerkki tulostaa "Tervetuloa Kalle!" mikäli muuttujaan "nimi" on tallennettu arvo "Kalle".
+Merkkijonojen liittäminen on toiminto, jossa yhdistetään kaksi tai useampi merkkijono yhdeksi isommaksi merkkijonoksi. Ohjelmoijat tekevät tämän, kun heidän täytyy tuottaa pitkä merkkijono pienistä palasista.
 
-## Syvällinen sukellus:
-Historiallista taustaa: Merkkijonojen yhdistäminen on ollut osa monia ohjelmointikieliä jo pitkään, mutta C#:ssa tämä tehtiin aluksi käyttämällä "+" operaattoria. Uudemmissa versioissa on myös mahdollista käyttää string interpolation koodin luettavuuden ja suorituskyvyn parantamiseksi.
+## Kuinka:
 
-Vaihtoehtoja: Merkkijonojen yhdistämiseen on myös muita vaihtoehtoja, kuten käyttää StringBuilder-luokkaa, joka suorituskyvyltään voi olla parempi erityisesti suurten tekstien käsittelyssä.
+```C#
+// Luodaan aluksi kaksi merkkijonoa
+string sana1 = "Hei, ";
+string sana2 = "mitä kuuluu?";
+  
+// Yhdistetään merkkijonot
+string tervehdys = sana1 + sana2;
 
-Toteutus: C# käyttää merkkijonojen yhdistämiseen takanaan StringBuilder-luokkaa, joka muodostaa uuden merkkijonon aina kun merkkijonoja yhdistetään. Tämä voi aiheuttaa tehokkuuden menetystä, jos merkkijonoja yhdistetään suuressa määrin.
+// Tulostetaan yhdistetty merkkijono
+Console.WriteLine(tervehdys);
+```
+Tämä koodinpätkä tuottaa outputin:
+```
+Hei, mitä kuuluu?
+```
 
-## Katso myös:
-Täältä löydät lisää tietoa C#:n merkkijonojen yhdistämisestä: https://docs.microsoft.com/fi-fi/dotnet/csharp/language-reference/operators/string-comparison
+## Syvempi syvennys
+
+Merkkijonojen liittämistä on käytetty ohjelmoinnin varhaisista päivistä asti. C#-kielessä on monia tapoja liittää merkkijonoja, mukaan lukien + -operaattorit, `String.Concat()`, `String.Format()`, `StringBuilder` sekä uudessa C# 6-versiossa esitelty interpoloitu merkkijono.
+
+Vaikka + -operaattori on yksinkertaisin ja yleisimmin käytetty tapa liittää merkkijonoja, sen käyttö suurien merkkijonojen tai paljon liitäntöjä vaativissa tilanteissa voi olla heikko ratkaisu suorituskyvyn kannalta. `StringBuilder` tai `String.Concat()` ovat tehokkaampia vaihtoehtoja näissä tilanteissa.
+
+## Katso myös
+
+Lisätietoja merkkijonotyypeistä ja toimenpiteistä, kuten liittäminen, löydät [Microsoftin viralliselta .NET-dokumentaatiosta](https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/strings/).

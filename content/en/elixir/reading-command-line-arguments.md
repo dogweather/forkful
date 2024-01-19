@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "Elixir recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,37 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Working with Command Line Arguments in Elixir
+
 ## What & Why?
 
-Reading command line arguments in Elixir is about dissecting and utilizing inputs given to a script during execution. This practice is integral in molding customizable, interactive, and more dynamic programs.
+Command line arguments are parameters used to modify a program's behavior during its execution. They provide a flexible way for users to interact with our program, enabling bespoke execution paths and custom user input.
 
 ## How to:
 
-Elixir uses the `System.argv/0` function which obtains the list of arguments passed. Let's illustrate this concept with an example:
+Use Elixir's `System.argv/0` function to access command line arguments. Provide arguments at runtime after the script name. Here's a simple illustration:
 
 ```elixir
-IO.inspect(System.argv())
+# commandline.exs
+
+defmodule CommandLine do
+
+  def main(args) do
+    IO.inspect(args)
+  end
+
+end
+
+CommandLine.main(System.argv())
 ```
 
-For instance, if we run `elixir test.exs arg1 arg2`, the output will be:
+Execute with arguments:
 
-```elixir
-["arg1", "arg2"]
+```bash
+elixir commandline.exs arg1 arg2 arg3
 ```
-Our script "test.exs" received the arguments "arg1" and "arg2" that we can use for configurable processing within the script.
+
+This will print:
+
+```bash
+["arg1", "arg2", "arg3"]
+```
+Showing that the arguments are passed as a list of strings to your script.
 
 ## Deep Dive
 
-Historically, command-line argument handling was prominent in scripting languages or C-style syntax languages. Elixir carries this tradition forward, seamlessly integrating it with its functional paradigm.
+Historically, command line arguments have been a staple in Unix-like operating systems, powering versatile command-line interfaces. Elixir, building on this heritage, uses Erlang's `init:get_plain_arguments/0` function under the hood.
 
-There are alternatives to reading command-line arguments in Elixir, including option parsers like `OptionParser.parse/2` which can deliver richer data structures and more complex handling for arguments.
+An alternative to command line arguments is using environment variables with `System.get_env/0`. However, this proves less flexible as these are mainly static.
 
-The implementation of `System.argv/0` fetches its data from a BEAM (Erlang Virtual Machine) call, that compiles and executes Elixir. It's worth mentioning, the Elixir scripts are compiled before running. Hence, arguments can't be changed dynamically while the script is running.
+When you call `System.argv/0`, Elixir fetches arguments passed to the Erlang runtime. Any arguments before `--` are consumed by the runtime itself, while the rest are passed to your script. 
 
-## See Also:
+Elixir also supports argument parsing with `OptionParser.parse/2`, enabling more advanced argument structures like flags or switches.
 
-To dig deeper, visit these handy links:
+## See Also
 
-- Elixir's official doc for System.argv/0: https://hexdocs.pm/elixir/System.html#argv/0
-- Info on the OptionParser: https://hexdocs.pm/elixir/OptionParser.html
-- More on command-line arguments in programming: https://en.wikipedia.org/wiki/Command-line_interface#Arguments
+1. Understanding Command Line Arguments: https://en.wikipedia.org/wiki/Command-line_argument_parsing
+2. Elixir's `System.argv/0` : https://hexdocs.pm/elixir/System.html#argv/0
+3. OptionParser in Elixir: https://hexdocs.pm/elixir/OptionParser.html
+4. Erlang's command line handling: http://erlang.org/doc/man/init.html
+5. UNIX commands and arguments: https://www.ibm.com/docs/en/aix/7.1?topic=concepts-command-line-arguments

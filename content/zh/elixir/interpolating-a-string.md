@@ -1,6 +1,6 @@
 ---
 title:                "插值字符串"
-html_title:           "Elixir: 插值字符串"
+html_title:           "Arduino: 插值字符串"
 simple_title:         "插值字符串"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,20 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-字符串内插是指在字符串中插入变量或表达式的过程。程序员经常使用字符串内插，因为它可以让代码更简洁、清晰明了，同时也提高了速度和可读性。
+## 什么 ＆ 为什么？
+字符串插值是一种在字符串中插入变量或表达式的编程技术。程序员使用它来创建动态字符串，提高代码的可读性与效率。
 
-## 如何：
-Elixir中的字符串内插非常简单，只需要用双引号包裹字符串，然后在字符串中插入变量或表达式，如下所示：
-```Elixir
-name = "Alice"
-"Hello #{name}!" #=> "Hello Alice!"
+## 如何使用：
+我们来看一段 Elixir 中使用字符串插值的代码。
+
+```elixir
+name = "Jessica"
+age = 24
+IO.puts("Hello, my name is #{name} and I'm #{age} years old.")
 ```
 
-## 深入探讨：
-在Elixir的前身Erlang中也有字符串内插的概念，但语法略有不同。在Elixir中，使用#{}来包裹变量或表达式，而Erlang中是使用~p来标记。另外，如果需要在字符串中插入多个变量或表达式，可以使用逗号将它们隔开。
+运行以上代码，你会在输出中看到：
 
-## 更多信息：
-- [“Elixir字符串内插”官方文档](https://hexdocs.pm/elixir/master/String.html#module-string-interpolation)
-- [LearnElixir](https://www.learnelixir.com/string-interpolation)
-- [String Interpolation in Elixir - Kevin Old's Blog](https://blog.kevinold.com/2018/12/02/string-interpolation-in-elixir/)
+```
+Hello, my name is Jessica and I'm 24 years old.
+```
+
+`#{}`中的代码是被计算和插入到字符串中的。
+
+## 深入探讨
+（1）历史背景：字符串插值几乎在所有现代编程语言中都存在，比如Ruby、Python和Javascript。而Elixir遵循此一通用实践。
+
+（2）替代方案：如果不使用字符串插值，你也可以通过字符串连接来合并变量和字符串。但是这种方法代码看起来较为复杂和繁琐。
+
+```elixir
+IO.puts("Hello, my name is " <> name <> " and I'm " <> Integer.to_string(age) <> " years old.")
+```
+
+（3）实现详情：在Elixir中，字符串插值实际上由编译器在编译时展开为字符串连接。
+
+## 更多参考
+1. Elixir官方文档 [Strings in Elixir](https://elixir-lang.org/getting-started/sigils.html#strings)
+
+2. [A Dive into String Interpolation in Elixir](https://blog.appsignal.com/2019/03/19/strings-in-elixir.html)
+
+3. [Elixir String Interpolation](https://hexdocs.pm/elixir/String.html#module-interpolation) 
+
+希望这篇文章有助于你理解和应用Elixir中的字符串插值。

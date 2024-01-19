@@ -1,6 +1,6 @@
 ---
 title:                "Lese en tekstfil"
-html_title:           "TypeScript: Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
 simple_title:         "Lese en tekstfil"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,25 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å lese en tekstfil i programmering betyr å lese data fra en tekstfil og lagre det i variabler eller bruke det til å utføre andre handlinger. Programmere gjør dette for å hente informasjon fra en ekstern kilde, som for eksempel en database eller en annen fil, og bruke den i deres programmering.
+
+Å lese en tekstfil er prosessen med å få informasjon fra en fil i en format som er forståelig for oss mennesker, nemlig tekst. Programmerere gjør det for å få tilgang til, manipulere og analysere data som lagres i filer.
 
 ## Hvordan:
-Å lese en tekstfil i TypeScript er enkelt med innebygde funksjoner som er tilgjengelig i språket. Her er en kodeeksempel som viser hvordan du kan lese en tekstfil og lagre linjene som en liste av strenger:
+
+Her er et eksempel på hvordan du leser en tekstfil i TypeScript ved bruk av Node.js `fs`-modulen.
 
 ```TypeScript
-// Leser inn en tekstfil
-const fs = require('fs');
-let data = fs.readFileSync('/path/til/tekstfil.txt', 'utf8');
-
-// Deler teksten opp i linjer og lagrer det i en liste
-let linjer = data.split('\n');
+import * as fs from "fs";
+fs.readFile("/path/til/din/tekstfil.txt", 'utf8', function (err, data) {
+   if (err) {
+       return console.log(err);
+   }
+   console.log(data);
+});
 ```
 
-Etter å ha kjørt denne koden, vil `linjer` variabelen inneholde alle linjene fra tekstfilen som separate strenger.
+Når du kjører denne koden, vil utgangen være innholdet i din tekstfil, hvis det ikke finnes noen feil i koden eller filstien.
 
-## En Dypere Dykk:
-Å lese en tekstfil er en viktig del av programmering og har blitt gjort i utallige år. Før innebygde funksjoner som i dag, måtte programmerere bruke flere kodelinjer for å lese og tolke en tekstfil. Men i dag, takket være utviklingen av programmeringsspråk, gjøres denne oppgaven enkelt og effektivt med få linjer med kode. Man kan også bruke eksterne biblioteker for å gjøre oppgaven enda enklere, for eksempel `readline` biblioteket i Node.js.
+## Deep Dive:
+
+- Historisk Kontekst: Tekstfiler har lenge vært et middel for å lagre og dele data. De er lette å lage, lese, og modifisere, og krever ingen spesiell programvare utover en enkel teksteditor.
+- Alternativer: Selv om lesing av tekstfiler er enkel og direkte, er det andre metoder for datahåndtering. Databaser, for eksempel, tilbyr kraftige måter å lagre, hente, og manipulere data på. Json og XML er også populært for datautveksling.
+- Implementasjon Detaljer: Når du leser en tekstfil, bruker du I/O operasjoner. Disse operasjonene kan være blokkerende (synchronous) eller ikke-blokkerende (asynchronous). I vårt tilfelle, bruker vi ikke-blokkerende I/O som betyr at andre operasjoner kan fortsette mens filen blir lest.
 
 ## Se Også:
-- [Node.js fs modul](https://nodejs.org/api/fs.html)
-- [GitHub Repo for readline biblioteket](https://github.com/nodejs/node/tree/master/lib/readline.js)
+
+- [Node.js fs Dokumentasjon](https://nodejs.org/api/fs.html): Kilde til grundig forståelse av hvordan `fs`-modulen fungerer.
+- [TypeScript Dokumentasjon](https://www.typescriptlang.org/docs/): Utforsk hva mer du kan gjøre med TypeScript.
+- [MDN Web Docs om Fil og Direktør-APIer](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API): Et alternativ til Node.js for håndtering av filer i nettleseren.

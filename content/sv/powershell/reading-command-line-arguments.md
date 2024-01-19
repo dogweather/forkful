@@ -1,7 +1,7 @@
 ---
-title:                "Att läsa kommandoradsargument"
-html_title:           "PowerShell: Att läsa kommandoradsargument"
-simple_title:         "Att läsa kommandoradsargument"
+title:                "Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad och varför?
-Att läsa kommandoradsargument är en process där en datorprogram visar att den är redo att ta emot instruktioner eller input från en användare genom kommandoraden eller terminalen. Detta är användbart för att utföra uppgifter på ett effektivt sätt och ge en användare möjlighet att anpassa eller ändra en programkörsvariabel i realtid.
+---
 
-# Så här gör du:
+## Vad & Varför?
+
+Kommandoradsargument är värden som sänds till ett program när de körs. Programmerare gör detta för att anpassa programens beteende vid körningstid.
+
+## Så här gör du:
+
+För att läsa in kommandoradsargument i PowerShell använder du `$args` variablen. Till exempel:
+
 ```PowerShell
-# Exempel på hur man läser ett kommandoradsargument:
-param(
-    [string]$inputArgument = "Default value"
+# Skript.ps1
+param (
+    [string]$namn,
+    [string]$ålder
 )
 
-Write-Host "Värdet på inputArgument är: $inputArgument"
+Write-Host "Hej $namn! Du är $ålder år gammal."
 ```
-I det här exemplet skapar vi en ny variabel `inputArgument` och tilldelar den ett standardvärde om inget annat värde ges med vid körning av skriptet. Sedan skrivs värdet av variabeln ut till terminalen.
 
-# Deep Dive
-## Historisk kontext:
-Läsning av kommandoradsargument är en vanlig företeelse inom programmering, särskilt inom skriptspråk som PowerShell. Det är en process som utvecklades för att göra det enklare för användare att anpassa och styra ett program från kommandoraden istället för att behöva göra ändringar direkt i källkoden.
+Och om du kör detta skript med argument skulle det se ut så här:
 
-## Alternativ:
-Det finns flera andra sätt att få input från användare, som att läsa från en textfil eller använda en grafisk användargränssnitt (GUI). Dock är kommandoradsargument ett snabbt och effektivt sätt att ge input till ett program, särskilt när det gäller enklare uppgifter eller skript.
+```PowerShell
+.\Skript.ps1 -namn "Kalle" -ålder 25
+```
 
-## Implementation:
-Läsning av kommandoradsargument sker vanligtvis genom att använda parametern `param` följt av en lista av variabler som programmet ska läsa in och tilldela värden till. Det är också vanligt att ge dem standardvärden, vilket ger en användare möjlighet att ändra värdet om de vill.
+Utskriften skulle då bli:
 
-# Se även:
-* [Making Use of Command Line Arguments in PowerShell](https://www.petri.com/making-use-command-line-arguments-powershell)
-* [PowerShell param Statement Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7)
+```PowerShell
+Hej Kalle! Du är 25 år gammal.
+```
+
+## Djupdykning
+
+Kommandoradsargument användas i programmering länge och har sina rötter i UNIX-världen. Även om `$args` är det vanligaste sättet att läsa in argument i PowerShell, kan parametrar också användas för att skapa mer följsamma och användarvänliga skript.
+
+Det är värt att notera att `$args` fungerar lite annorlunda beroende på scriptets kontext. I script och funktioner representerar `$args` alla icke-namngivna parametrar som inte matchas till en parameterdeklaration. I en fil som inte har någon parametrar deklarerade representerar `$args` alla argument som överförs till filen.
+
+## Se även
+
+- [Om_Functions_Advanced_Parameters](https://docs.microsoft.com/sv-se/powershell/scripting/learn/deep-dives/everything-about-param?view=powershell-7.1)
+- [Om_Arguments](https://docs.microsoft.com/sv-se/powershell/module/microsoft.powershell.core/about/about_argumentCompleters?view=powershell-7.1)

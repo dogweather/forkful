@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "Arduino: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,57 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa & Perché?
+## Che cosa & Perché?
 
-Scaricare una pagina web significa ottenere il codice sorgente di una pagina web dal server e visualizzarlo sul tuo dispositivo. I programmatori lo fanno per accedere a informazioni importanti, come dati, immagini o testo, e utilizzarle all'interno dei loro programmi.
+Scaricare una pagina web significa prelevare il codice di programmazione di un sito web direttamente sul tuo dispositivo. I programmatori lo fanno per estrarre dati, eseguire analisi o salvare una copia locale del sito.
 
-Come fare:
+## Come fare:
 
-```
-Arduino Client: Download a Web Page
-```
+Per scaricare una pagina web con Arduino, usa la libreria Ethernet. Ecco un esempio di codice:
 
-Vuoi scaricare una pagina web utilizzando la tua scheda Arduino? E' possibile farlo utilizzando la libreria di Arduino Client. Ecco come:
+```Arduino
+#include <Ethernet.h>
 
-1. Includi la libreria nel tuo sketch:
-```
-# include <SPI.h>
-# include <Ethernet.h>
-```
+byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
+char server[] = "www.tuosito.it"; 
 
-2. Configura la connessione Internet:
-```
-byte mac [] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; // Cambialo con il tuo MAC
-IPAddress ip (192,168,1,100); // Imposta il tuo indirizzo IP
-Ethernet.begin (mac, ip); // Inizializza la libreria Ethernet
-```
+EthernetClient client;
 
-3. Prepara la richiesta HTTP:
-```
-client.println ("GET /index.html HTTP / 1.1");
-client.println ("Host: www.example.com");
-```
+void setup() {
+  Ethernet.begin(mac);
+  delay(1000);
+  
+  if(client.connect(server, 80)) {
+    client.println("GET / HTTP/1.1");
+    client.println("Host: www.tuosito.it");
+    client.println("Connection: close");
+    client.println();
+  }
+}
 
-4. Invia la richiesta e leggi la risposta:
-```
-client.available ();
-while (client.available()) {
- char c = client.read ();
- Serial.print (c); // Visualizza la risposta sulla seriale
+void loop() {
+  if(client.available()) {
+    char c = client.read();
+    Serial.print(c);
+  }
+
+  if(!client.connected()) {
+    client.stop();
+  }
 }
 ```
 
-Deep Dive:
+Dopo aver caricato questo sketch, l'output del monitor seriale dovrebbe mostrare il codice HTML della pagina web.
 
-In passato, il download di una pagina web richiedeva la necessità di un computer o un dispositivo più avanzato, ma grazie alla tecnologia moderna e alla libreria di Arduino Client, ora puoi farlo utilizzando solo la tua scheda Arduino.
+## Approfondimento
 
-Alcune alternative alla libreria Arduino Client includono la libreria Webduino e l'utilizzo di un modulo Ethernet o WiFi per la connessione Internet. Tuttavia, la libreria Arduino Client è semplice e facile da utilizzare, rendendola la scelta più comune tra i programmatori.
+Storicamente, avevamo bisogno di computer potenti per scaricare pagine web. Ma adesso, con i microcontrollori come Arduino, possiamo farlo facilmente. Un'altra libreria per fare la stessa cosa è WiFi101. In termini di implementazione, ricorda che non tutti i siti consentono web scraping, quindi verifica le politiche del sito prima di scaricare.
 
-Vale la pena notare che il download di una pagina web utilizzando la libreria Arduino Client richiede la conoscenza di HTTP. Se vuoi approfondire o personalizzare ulteriormente il tuo codice, consulta la documentazione ufficiale di HTTP.
+## Vedi anche
 
-Vedi anche:
+Per approfondire, dai un'occhiata a queste risorse:
 
-- Documentazione ufficiale di Arduino Client: https://www.arduino.cc/en/Reference/Client
-- Libreria Webduino: https://github.com/sirleech/Webduino
-- Moduli Ethernet e WiFi per Arduino: https://www.arduino.cc/en/Guide/ArduinoEthernetShield
-- Documentazione ufficiale di HTTP: https://tools.ietf.org/html/rfc1945
+1. Documentazione ufficiale dell'Arduino su Ethernet - [https://www.arduino.cc/en/Reference/Ethernet](https://www.arduino.cc/en/Reference/Ethernet)
+2. Tutorial su come utilizzare la libreria WiFi101 - [https://www.arduino.cc/en/Guide/WiFi101](https://www.arduino.cc/en/Guide/WiFi101) 
+3. Una guida al web scraping etico - [http://webscraping.com/data-extraction-guide](http://webscraping.com/data-extraction-guide)

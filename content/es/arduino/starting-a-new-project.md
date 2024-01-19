@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Arduino: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Iniciar un nuevo proyecto en Arduino significa comenzar a escribir y ejecutar código en una placa Arduino para dar vida a tu idea. Los programadores lo hacen para crear dispositivos interactivos, robots, sistemas de automatización y muchas otras aplicaciones.
+Empezar un nuevo proyecto de Arduino significa crear un conjunto de instrucciones en un programa para un Arduino board. Los programadores hacen esto para transformar el Arduino en una herramienta adaptada a sus necesidades específicas, ya sea un robot, un monitor de temperatura u otros dispositivos automatizados.
 
-## Cómo:
+## Cómo Hacer:
 
-Utiliza el siguiente código en el software de Arduino para iniciar un nuevo proyecto:
+Aquí os muestro un ejemplo de código y su salida correspondiente. Estamos usando un LED conectado al pin digital 13.
 
-```
-Arduino.setup();
-Arduino.loop(){
-  //Agregar código aquí
+```Arduino 
+void setup(){
+  pinMode(13, OUTPUT); 
+}
+
+void loop(){
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
 }
 ```
-Este código establece la configuración inicial de la placa Arduino y luego inicia un bucle infinito donde se ejecuta el código que escribas dentro de las llaves {}.
 
-## Deep Dive:
+Esta salida hace que el LED parpadee cada segundo.
 
-Arduino fue desarrollado en Italia en 2003 como una forma fácil para que artistas y diseñadores crearan dispositivos interactivos. Hoy en día, se ha convertido en una herramienta popular para cualquier persona interesada en electrónica y programación. Alternativas a Arduino incluyen Raspberry Pi y Micro:bit, que tienen características similares pero difieren en términos de tamaño, potencia y precio.
+## Profundización:
 
-Para iniciar un nuevo proyecto en Arduino, necesitarás un microcontrolador, una placa de desarrollo y un cable USB para conectar tu computadora. Además, puedes utilizar una variedad de sensores, actuadores y otros componentes electrónicos para hacer tu proyecto más interesante e interactivo.
+El Arduino surgió en 2005 como una herramienta para estudiantes sin experiencia en electrónica o microcontroladores. Ahora se utiliza a nivel mundial en muchos campos, desde la educación hasta la robótica. Existen alternativas como Raspberry Pi, pero Arduino sigue siendo la opción más sencilla para principiantes. Iniciar un nuevo proyecto consiste sobre todo en definir la configuración inicial (`setup()`) y especificar las tareas que se repiten (`loop()`).
 
-## See Also:
+## Ver También:
 
-Puedes encontrar más información y tutoriales sobre cómo iniciar un nuevo proyecto en Arduino en el sitio web oficial de Arduino (https://www.arduino.cc/), así como en blogs y foros en línea. Además, puedes unirte a comunidades locales de Arduino para compartir tus ideas y aprender de otros entusiastas de Arduino.
+Para aquellos que estén buscando un poco más de ayuda o dosis extra de conocimientos, aquí os dejo algunos enlaces:
+
+- Tutorials de Arduino: https://www.arduino.cc/en/Tutorial/HomePage
+- Foro de Arduino: https://forum.arduino.cc/
+- Referencias de Arduino: https://www.arduino.cc/reference/en/

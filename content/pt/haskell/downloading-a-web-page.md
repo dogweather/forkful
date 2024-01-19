@@ -1,6 +1,6 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "Haskell: Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,29 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que & Por quê?
+---
 
-Baixar uma página da web significa salvar o conteúdo de uma determinada página da web em seu próprio computador. Os programadores geralmente fazem isso para ter acesso offline ao conteúdo da página ou para extrair informações específicas dela.
+# Haskell: Baixando uma página web
 
-Como fazer:
+---
 
-Para baixar uma página da web em Haskell, você pode usar a biblioteca "http-conduit". Aqui está um exemplo de código que baixa uma página e imprime seu conteúdo:
+## O que é e por quê?
 
+Baixar uma página da web significa solicitar e receber o conteúdo HTML de um website. Programadores fazem isso para análise de dados, teste de sites, rastreamento de páginas da web, entre outros.
+
+---
+
+## Como fazer:
+
+Primeiro, instale a biblioteca `http-conduit`. Para isso, use o seguinte comando no terminal:
+
+```Haskell
+cabal install http-conduit
 ```
-import Network.HTTP.Conduit
-import qualified Data.ByteString.Lazy as L
+
+Agora, use a seguinte amostra de código para baixar uma página da web:
+
+```Haskell
+import Network.HTTP.Conduit (simpleHttp)
 
 main = do
-  response <- simpleHttp "https://www.example.com/"
-  print $ L.unpack response
+    putStrLn "Insira a URL:"
+    url <- getLine
+    sourceCode <- simpleHttp url
+    putStrLn (show sourceCode)
 ```
-Este código usará a função "simpleHttp" para fazer a solicitação HTTP e retornar uma resposta em formato de "ByteString". Em seguida, usando a função "print", podemos imprimir o conteúdo da resposta como uma "String".
 
-Profundidade:
+Ao executar este código, a resposta será o código-fonte HTML da página solicitada.
 
-Historicamente, o processo de baixar uma página da web era feito manualmente, usando o protocolo "FTP" para transferir arquivos. No entanto, com o avanço da tecnologia, os programadores desenvolveram ferramentas e bibliotecas para automatizar esse processo. Além da biblioteca "http-conduit", também existem outras opções, como "Curl" e "wget", que podem ser usadas para baixar páginas da web em Haskell.
+---
 
-Vejo também:
+## Mergulho Profundo
 
-- Documentação da biblioteca "http-conduit": https://hackage.haskell.org/package/http-conduit
-- Outras opções para baixar páginas da web em Haskell: https://wiki.haskell.org/Downloading_web_pages
+### Contexto Histórico
+
+O `http-conduit` é uma evolução dos primeiros pacotes Haskell `HTTP`. Ele foi criado para melhorar a conveniência e a segurança.
+
+### Alternativas
+
+Outros pacotes do Haskell para baixar páginas da web incluem `http-client`, `Wreq` e `req`. Cada um desses pacotes tem seus próprios pontos fortes.
+
+### Detalhes de Implementação
+
+O `simpleHttp` da `http-conduit` faz um pedido HTTP GET para a URL fornecida e retorna a resposta. Ele gerencia automaticamente todos os detalhes como redirecionamentos e compactação gzip.
+
+---
+
+## Veja também
+
+Para um maior aprofundamento sobre `http-conduit`, visite [a documentação oficial](https://www.stackage.org/haddock/lts-5.1/http-conduit-2.1.8/Network-HTTP-Conduit.html).
+
+Para problemas comuns e suas soluções ao usar `http-conduit`, confira [esta discussão](https://stackoverflow.com/questions/15660356/how-to-use-http-conduit-in-haskell).
+
+Além disso, para uma visão geral das solicitações HTTP em Haskell, [este tutorial](https://wiki.haskell.org/How_to_write_a_Haskell_web_service_%28from_scratch%29) pode ser útil.

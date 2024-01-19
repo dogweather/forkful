@@ -1,6 +1,6 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "PHP: Завантаження веб-сторінки"
+html_title:           "Gleam: Завантаження веб-сторінки"
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і З чого це?
+## Що і чому?
 
-Завантаження веб-сторінки - це процес отримання інформації з інтернет-ресурсу на свій комп'ютер. Програмісти можуть використовувати цю функцію для отримання інформації з інших веб-сторінок, яка їм може знадобитися, наприклад, для обробки і подальшого використання.
+Завантаження веб-сторінки - це процес отримання HTML коду веб-сторінки. Програмісти це роблять для аналізу даних, тестування або веб-скрапінгу.
 
-## Як це робити
+## Як це зробити:
+
+В PHP (версії 7 і вище) для завантаження веб-сторінки можна використовувати функцію `file_get_contents()`. Нижче наведений приклад:
 
 ```PHP
 <?php
-// Використовуємо функцію file_get_contents для завантаження вмісту вказаної URL-адреси
-$page_content = file_get_contents('https://example.com');
-// Виводимо отриманий вміст
-echo $page_content;
+$url = 'http://example.com';
+$content = file_get_contents($url);
+echo $content;
 ?>
 ```
-**Вихід:**
+
+Запустівши цей код, ви отримаєте HTML-код сторінки `http://example.com`.
+
+## Більш глибоке занурення:
+
+Функція `file_get_contents()` була представлена в PHP 4.3.0, а отже, є однією зі стандартних можливостей PHP для роботи з веб-сторінками.
+
+Іншою популярною заміною є `cURL`, що надає більше можливостей для конфігурації і краще підходить для складних випадків.
+
+```PHP
+<?php
+$url = 'http://example.com';
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$result = curl_exec($ch);
+curl_close($ch);
+echo $result;
+?>
 ```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-</head>
-<body>
-<h1>Example Domain</h1>
-<p>This domain is for use in illustrative examples in documents. You may use this
-domain in literature without prior coordination or asking for permission.</p>
-<p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</body>
-</html>
-```
 
-## Глибокий занурення
+Особливість завантаження сторінок в PHP в тому, що воно працює на сервері, а не на клієнтській стороні, що дає передбачувані результати без залежності від браузера клієнта.
 
-Функція file_get_contents була введена в PHP версії 4 і з того часу є одним з найбільш популярних способів завантаження веб-сторінок. Альтернативою цьому може бути використання CURL (клієнтська бібліотека для передачі даних по мережі) або використання бібліотеки Simple HTML DOM для отримання певної інформації з веб-сторінки. При використанні функції file_get_contents слід враховувати можливість появи помилок або невірного вмісту від веб-сторінки, яку ми завантажуємо.
+## Див. також:
 
-## Дивіться також
+1. [Документація PHP на `file_get_contents()`](http://php.net/manual/ru/function.file-get-contents.php)
 
-- [Офіційна документація PHP для функції file_get_contents](https://www.php.net/manual/en/function.file-get-contents.php)
-- [Керування HTTP-запитами в PHP з використанням CURL](https://www.php.net/manual/en/book.curl.php)
-- [Офіційна документація Simple HTML DOM бібліотеки](http://simplehtmldom.sourceforge.net/)
+2. [Документація PHP на `cURL`](https://www.php.net/manual/ru/book.curl.php)
+
+3. [Курси про PHP на Codecademy](https://www.codecademy.com/learn/learn-php)

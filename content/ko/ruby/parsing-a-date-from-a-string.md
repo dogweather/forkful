@@ -1,7 +1,7 @@
 ---
-title:                "문자열에서 날짜 파싱하기"
-html_title:           "Ruby: 문자열에서 날짜 파싱하기"
-simple_title:         "문자열에서 날짜 파싱하기"
+title:                "문자열에서 날짜 분석하기"
+html_title:           "Gleam: 문자열에서 날짜 분석하기"
+simple_title:         "문자열에서 날짜 분석하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Ruby: 문자열에서 날짜 파싱하기
+## 무엇 & 왜?
 
-## What & Why?
-날짜를 문자열에서 추출하는 것은 프로그래머들이 자주 하는 작업 중 하나입니다. 이 작업은 주어진 문자열에서 날짜를 식별하고 추출하는 과정을 말합니다. 이를 통해 프로그램에서 날짜 데이터를 쉽게 다룰 수 있게 됩니다.
+문자열에서 날짜를 파싱한다는 것은, 문자열을 통해 날짜 정보를 추출하는 작업을 말합니다. 프로그래머들은 데이터 처리, 정렬, 비교 등을 위해 이와 같은 작업을 수행합니다.
 
-## How to:
-Ruby에서 날짜를 문자열에서 추출하는 방법은 간단합니다. 먼저 `Date` 클래스를 불러와야 합니다. 그리고 `parse` 메소드를 사용해서 추출하고자 하는 문자열을 넘겨주면 됩니다.
+## 어떻게 하나요:
 
-```ruby
-require 'Date'
+Ruby에서 문자열에서 날짜를 파싱하기 위해 Date.parse 메소드를 사용할 수 있습니다. 먼저 'date' 라이브러리를 임포트해야 합니다.
 
-date_string = "2020-08-26"
+```Ruby
+require 'date'
 
-date = Date.parse(date_string)
-puts date.day #=> 26
-puts date.month #=> 8
-puts date.year #=> 2020
+date = Date.parse('2022-04-22')
+puts date
 ```
 
-## Deep Dive:
-날짜 파싱은 예전부터 프로그래머들에게 익숙한 작업입니다. 예전에는 문자열에서 날짜를 추출하기 위해 정규식을 사용해야 했지만, 이제는 다양한 언어에서 내장된 날짜 파싱 기능을 제공해줍니다.
+결과는 다음과 같습니다:
 
-날짜를 파싱할 때 선택할 수 있는 다른 방법으로는 `DateTime` 클래스를 사용하는 것입니다. 이 클래스는 `DateTime.parse` 메소드를 제공하고 있으며, 시간 정보도 함께 추출할 수 있습니다. 또한 `strptime` 메소드를 사용해서 날짜 포맷을 지정할 수도 있습니다.
+```Ruby
+2022-04-22
+```
 
-## See Also:
-- [Ruby `Date` 클래스 문서](https://ruby-doc.org/stdlib-2.6.2/libdoc/date/rdoc/Date.html)
-- [Ruby `DateTime` 클래스 문서](https://ruby-doc.org/stdlib-2.6.2/libdoc/date/rdoc/DateTime.html)
-- [날짜 파싱 관련 블로그 포스트](https://www.rubyguides.com/2018/12/date-parsing-in-ruby/)
+## 심화 학습:
+
+1) 역사적 맥락: 초기 프로그래밍 언어에서는 문자열을 날짜로 변환하는 기능이 내장되지 않아 복잡한 알고리즘을 직접 구현해야 했습니다. Ruby에서는 'date' 라이브러리를 통해 이를 쉽게 할 수 있습니다.
+
+2) 대체 방법: 구조화된 문자열에서 날짜를 파싱하는 것 외에, 시간 객체를 직접 생성하거나 epoch 시간(1970년 1월 1일 이후 초)을 계산하는 방법도 있습니다.
+
+3) 구현 세부 사항: 내부적으로 Date.parse는 입력된 문자열을 분석하고 유효한 날짜 형식을 찾습니다. 유효한 형식이 없는 경우, ArgumentError가 발생합니다.
+
+## 참고 자료:
+
+1) Ruby 공식 문서 - Date.parse: https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html#method-c-parse
+2) 문자열을 날짜로 변환하는 다양한 방법: https://www.justinweiss.com/articles/3-ways-to-parse-a-date-in-ruby/
+3) Ruby에서 시간과 날짜 처리: https://www.tutorialspoint.com/ruby/ruby_date_time.htm

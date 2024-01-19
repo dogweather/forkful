@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http avec authentification de base"
-html_title:           "Fish Shell: Envoi d'une requête http avec authentification de base"
-simple_title:         "Envoi d'une requête http avec authentification de base"
+title:                "Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
+simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est & Pourquoi?
+# Envoyer une requête HTTP avec authentification de base en Fish Shell
 
-Envoyer une requête HTTP avec une authentification basique est une façon courante pour les programmeurs d'accéder à des ressources protégées sur le web. Cela permet d'ajouter une couche de sécurité en utilisant un identifiant et un mot de passe pour accéder à des données sensibles.
+## Quoi et Pourquoi ?
+L'envoi d'une requête HTTP avec authentification de base implique l'envoi de données sécurisées via une requête HTTP standard. Les programmeurs font cela pour protéger l'accès aux données sensibles et réservées aux utilisateurs validés.
 
-# Comment faire:
+## Comment faire :
+Dans Fish Shell, vous pouvez le faire de manière assez simple. Jetez un œil au code ci-dessous:
 
-Voici comment envoyer une requête HTTP avec une authentification basique en utilisant le 'Fish Shell':
-
-```Fish Shell
-
-# Premièrement, importez la bibliothèque Curl:
-
-source /dev/stdin <<< "$(curl -fsSL -HCache-Control:no-cache \
-                       https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/tools/web_config.fish)"
-
-# Ensuite, utilisez la commande 'curl' avec l'option '-u' pour spécifier l'identifiant et le mot de passe:
-
-curl -u username:password https://example.com
-
+```fish
+function http_auth_basic
+    set -l auth (printf "%s" "$argv[1]":"$argv[2]" | base64)
+    curl -H "Authorization: Basic $auth" $argv[3]
+end
 ```
 
-# Approfondissement:
+Et voici comment ça marche :
 
-- Contexte historique: L'authentification basique a été introduite dans HTTP en 1996 dans la RFC 2068.
-- Alternatives: Il existe d'autres méthodes d'authentification plus sécurisées telles que l'authentification par token ou OAuth.
-- Détails d'implémentation: L'authentification basique utilise les entêtes 'Authorization' et 'WWW-Authenticate' pour envoyer et recevoir les informations d'identification.
+```fish
+http_auth_basic user password https://exempled'url.com
+```
 
-# Voir aussi:
+## Plongée Plus Profonde
+Historiquement, l'authentification de base a été l'un des moyens les plus simples de sécuriser les échanges de données HTTP. Cependant, en raison de sa simplicité même, elle présente certaines failles de sécurité. Dans le Shell Fish, nous utilisons l'encodage base64 pour augmenter le niveau de sécurité.
 
-Pour plus d'information sur l'authentification basique avec Fish Shell, vous pouvez consulter ces sources:
+Il existe également des alternatives à cette méthode. Par exemple, token bearer et digest access sont deux méthodes populaires qui sont considérées comme plus sûres.
 
-- La documentation officielle sur l'utilisation de Curl avec Fish Shell: https://fishshell.com/docs/current/cmds/curl.html
-- Le tutoriel sur comment envoyer une requête HTTP avec authentification basique en utilisant Curl et Fish Shell: https://medium.com/@younup/using-curl-with-basic-authentication-in-fish-shell-696a01b3e29e
+En ce qui concerne l'implémentation, c'est assez direct. Nous utilisons d'abord la commande `printf` pour formater nos informations d'identification en une seule chaîne. Ensuite, nous les encodons en base64. Enfin, nous utilisons `curl` avec l'option `-H` pour envoyer la requête avec l'authentification de base.
+
+## Voir Aussi
+Pour en savoir plus sur l'authentification de base et comment l'utiliser dans d'autres shells, certains des liens ci-dessous pourraient être utiles:
+
+- [HTTP Basic Authentication](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication#basic_authentication)
+- [Curl with HTTP Authentication](https://curl.haxx.se/docs/httpscripting.html#HTTP_Authentication)
+- [Fish Shell Official Documentation](https://fishshell.com/docs/current/index.html)

@@ -10,28 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Stampare l'output di debug è semplicemente il processo di visualizzare informazioni aggiuntive durante l'esecuzione di un programma per aiutare i programmatori a identificare errori e problemi di codice. I programmatori lo fanno per semplificare il processo di debugging ed effettivamente risolvere gli errori nel loro codice.
+## Che Cosa & Perché?
+
+La stampa di debug è un processo che aiuta a monitorare il flusso di controllo e i valori delle variabili durante l'esecuzione del tuo script. Questa è una pratica molto utilizzata dai programmatori per risolvere gli errori nel codice in maniera più efficiente.
 
 ## Come fare:
-Il modo più semplice per stampare l'output di debug è utilizzare il comando "echo" nella shell di Bash. Ad esempio:
+
+Hai diverse opzioni per stampare il debug in Bash. Qui ci sono due esempi comuni:
 
 ```Bash
-echo "Valore della variabile x: $x"
+#!/bin/bash
+
+# Stampa un messaggio di debug
+echo "Messaggio di debug" >&2
+
+# Usa 'set -x' per attivare il tracciamento di comandi 
+set -x
+comando1
+comando2
+set +x
 ```
 
-Questo stampa il valore della variabile "x" durante l'esecuzione del programma. Si può anche utilizzare il comando "printf" per formattare l'output in modo più specifico. Ad esempio:
+L'output sarà simile a questo:
 
 ```Bash
-printf "L'utente %s è connesso come %s\n" "$USERNAME" "$USER"
+Messaggio di debug
++ comando1
++ comando2
 ```
 
-Questo stampa l'utente attualmente connesso e il suo nome.
+## Approfondimento
 
-## Approfondimento:
-Lo stampare l'output di debug ha una lunga storia nella programmazione e viene ancora utilizzato oggi in molti linguaggi diversi. Tuttavia, ci sono anche alternative come l'utilizzo di un debugger interattivo. L'implementazione dell'output di debug dipende dal linguaggio di programmazione che si sta utilizzando, ma nel caso di Bash, è possibile utilizzare variabili di shell e comandi di print per ottenere i risultati desiderati.
+Bash, lanciato nel 1989 come shell di comando gnu, supporta la stampa di debug fin dalle sue prime versioni. Questa funzionalità viene utilizzata per dare ai programmatori un modo di monitorare il comportamento del loro codice.
 
-## Vedi anche:
-- [GNU Bash official documentation](https://www.gnu.org/software/bash/)
-- [Debugging Bash scripts - tutorial by LINFO](https://www.linuxtoys.org/bash-debugging.html)
-- [Using the Linux command line debugger](https://opensource.com/article/19/10/debug-linux-command-line)
+Esistono altre alternative alla stampa di debug in Bash, incluso l'uso di strumenti di debug più avanzati come gdb, ma la stampa di debug è di solito più semplice da implementare e sufficiente per gli script Bash.
+
+Una cosa da notare sulla stampa di debug in Bash è che, di default, l'output è inviato allo standard error (stderr). Questo è utile perché ti permette di separare l'output di debug dall'output normale del tuo script.
+
+## Vedi Anche
+
+Per ulteriori informazioni, consulta questi link:
+
+1. Manuale di Bash: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html
+2. Guida alla stampa di debug in Bash: https://www.linuxjournal.com/content/debugging-bash-scripts
+3. Articolo su strumenti di debug di Bash: https://www.networkworld.com/article/2693413/using-trap-in-bash-scripts.html

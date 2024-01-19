@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Fish Shell recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,36 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a string to lower case simply means changing all the letters in a string to their lower case equivalent. Programmers often do this to ensure consistency in their code and make it easier to compare and manipulate strings.
+Converting a string to lower case is a basic task that transforms all uppercase letters in a string to lowercase versions. Programmers often do it to normalize input for easier comparison or to maintain a consistent format.
 
 ## How to:
 
-Fish Shell makes it easy to convert a string to lower case using the "string tolower" command. Here's an example:
+In the Fish shell, there's no built-in feature to convert to lower case. However, `string` commands and `tr` commands fill this gap.
 
-```
-set my_string "Hello World"
-string tolower $my_string
-```
+### String commands
 
-This will output "hello world" in the terminal.
-
-If you want to convert a specific part of the string, you can use the "|string tolower" command. For example:
-
-```
-set my_string "Hello World"
-echo $my_string | string tolower
+```fish
+set myString "WELCOME TO FISH"
+set myString (string lower $myString)
+echo $myString
 ```
 
-This will output "hello world" in the terminal as well.
+Output:
+
+```fish
+welcome to fish
+```
+
+### The 'tr' command
+
+```fish
+echo "HELLO, WORLD!" | tr '[:upper:]' '[:lower:]'
+```
+
+Output:
+
+```fish
+hello, world!
+```
 
 ## Deep Dive:
 
-Converting strings to lower case dates back to early computer systems, where data was stored in all uppercase letters for technical reasons. As computers evolved, lowercase letters became more common in programming languages but the convention of storing data in uppercase remained. This led to the need for converting strings to lowercase in order to easily compare and manipulate data.
+Historically, Fish shell didn't have a built-in string manipulation feature until the introduction of its 2.3.0 version in 2016, which came with the `string` command, a tool for string manipulation that works consistently across machines.
 
-While Fish Shell makes it easy to convert strings to lower case, there are other methods such as using built-in functions in other programming languages like Python and JavaScript. However, these methods may require more code and may not be as efficient as using the dedicated "string tolower" command in Fish Shell.
+Although the examples we've seen accomplish our goal, there is a notable difference between `tr` and `string lower`. The `tr` command doesn't support Unicode out of the box, whereas `string lower` does, so depending on your use case, one method might suit you better than the other.
 
 ## See Also:
 
-- [Fish Shell documentation](https://fishshell.com/docs/current/cmds/string.html)
-- [Python lower() function](https://www.w3schools.com/python/ref_string_lower.asp)
-- [JavaScript toLowerCase() method](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
+For deeper insights into character encoding, check out this enlightening [article](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/) by Joel Spolsky, and visit the [Fish documentation](https://fishshell.com/docs/current/).

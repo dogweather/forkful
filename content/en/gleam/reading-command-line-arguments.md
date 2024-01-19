@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "Gleam recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,43 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading command line arguments is all about obtaining user inputs passed via the terminal when launching the program. Programmers do it to customize the behavior of their programs - pretty cool.
+Reading command line arguments is the process of extracting parameters provided to your application by the user. This allows you to change your program's behavior based on user's inputs.
 
 ## How to:
 
-Fire up your terminal. Below is a simple program to read the command-line arguments using Gleam.
+In Gleam, we utilize the `gleam/otp` library to read command line arguments from inside a `start` function. Here's a simple example:
 
 ```Gleam
-import gleam/io.{println}
-import gleam/option.{to_result}
-import gleam/result.{Ok}
+import gleam/otp.{Application}
 
-fn start(args: List(String)) -> Result(Never, Nil) {
-  args
-  |> list.pop
-  |> option.to_result(Nil)
-  |> result.map(println)
-  |> result.unwrap(Never)
+fn start() {
+    let args = Application.get_args() // Fetch the command line arguments
+    case args {
+        Ok(arg_values) -> 
+          // Extracts the list of argument values
+          io.println(arg_values)
+        Error ->
+          io.println("No arguments found")
+    }
 }
 ```
-To test it, compile the program and pass some argument like “Hello, Gleam!”:
 
-```command
-$ ./my_program "Hello, Gleam!"
-Hello, Gleam!
-```
+This will print out the command line arguments used on starting the application. If there's no command line arguments, it will print "No arguments found". 
+
 ## Deep Dive
 
-Historically, command-line arguments exist since the early Unix days, when GUIs were more a dream than reality. Loved by shell scripters worldwide, they significantly enhance a program's flexibility.
+Back in the days of UNIX systems, command line arguments were the first and easiest way to allow interactivity with programs. That's why they're a staple in most modern programming languages.
 
-In Gleam, you may notice the absence of a specific function to read command-line arguments as in other languages. Instead, `start/1` gets a list of arguments, the first being the script name. It's part of Gleam's philosophy to keep core language lightweight.
+There are some alternatives to command line arguments. You can use standard input, which lets your program accept user input while it is running. Or you could use environment variables to have a set of inputs that are present throughout the program's execution.
 
-Also, there's the `gleam/option` and `gleam/result` modules. `option.to_result/2` converts an option into a result and `result.map/2` then prints the argument, while `result.unwrap/1` crashes the program in the Nil case. Gleam’s take on error handling, indeed. 
+In Gleam, the `Application.get_args()` function fetches command line arguments as a Result type. If no command line arguments are given, the Result type will be an `Error`. It's your job to handle this error gracefully! 
 
-## See Also: 
+## See Also
 
-- The Gleam Book: [https://gleam.run/book/](https://gleam.run/book/)
-- Gleam GitHub Repository: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
-- Erlang -- init:get_argument/1: [https://erlang.org/doc/man/init.html#get_argument-1](https://erlang.org/doc/man/init.html#get_argument-1)
-
-Dive in. Get your hands dirty with Gleam. It's fun and pretty darn powerful. Happy coding, folks.
+To learn more about Gleam, visit its [official website](https://gleam.run/). For more detailed information about the `gleam/otp` library, check out [their documentation](https://hexdocs.pm/gleam_otp/readme.html). To see examples of how command line arguments can be used in real-world programs, check out this [Gleam Cookbook](https://github.com/gleam-lang/otp).

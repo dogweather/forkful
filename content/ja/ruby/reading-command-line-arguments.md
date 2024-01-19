@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミング：コマンドライン引数の読み取り"
-html_title:           "Ruby: コンピュータプログラミング：コマンドライン引数の読み取り"
-simple_title:         "コンピュータプログラミング：コマンドライン引数の読み取り"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Bash: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,27 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## コマンドライン引数の読み込みとは？
+## 何となぜ？
 
-コマンドライン引数の読み込みとは、プログラムが実行される際に与えられる引数を、プログラム内で扱うために受け取ることです。プログラマーは、コマンドライン引数を読み込むことで、柔軟性のあるプログラムを作成することができます。
+コマンドライン引数を読み取るとは、ユーザーが直接パラメータを入力できる方法のことを指します。プログラマはこれを利用して、一般ユーザーがプログラムの動作を独自に制御できるようにするために使用します。
 
-## 手順：
+## 使い方:
+
+以下のスクリプトを見てみましょう。
 
 ```ruby
-# コマンドライン引数を読み込む
-ARGV.each do |args|
-  puts "引数: #{args}"
-end
+# hello_world.rb
+name = ARGV.first
+puts "Hello, #{name}!"
+```
+コマンドラインから実行すると次のようになります。
+
+```sh
+$ ruby hello_world.rb Japan
+Hello, Japan!
 ```
 
-上記のコードでは、プログラムを実行する際に与えられた引数を、全て受け取って表示することができます。例えば、「ruby test.rb hello world」というコマンドを実行した場合、「引数: hello」と「引数: world」という出力が得られます。
+ARGVはargsの配列です。そのため、indexを使用して直接アクセスすることも可能です。
 
-## 詳細について：
+## ディープダイブ:
 
-コマンドライン引数の読み込みは、プログラミング言語によって実装方法が異なります。また、代替手段として、環境変数や設定ファイルから読み込む方法もあります。コマンドライン引数の読み込みは、コマンドラインインタフェース（CLI）を持つツールやアプリケーションを作成する際に欠かせない機能です。
+### 史上
 
-## 関連情報：
+UNIXで標準化されたシェルプログラミングと同じコンセプトにRubyも沿っています。この方法はプログラムとユーザーの間の対話を可能にし、同時にコードの再利用性も高めます。
 
-- [Rubyのコマンドライン引数の受け取り方](https://www.techpit.jp/courses/32/curriculums/33/sections/182/parts/627)
-- [プログラム引数の利用方法 (Rubyガイド)](https://ruby-lang.co/programargs/)
-- [コマンドライン引数の基本 (ドットインストール)](https://dotinstall.com/lessons/basic_cli_ruby_v2)
+### 代替案
+
+OptionParserライブラリや、ARGVをより高度に操作するためのgem(最も人気のあるものはThorとTrollop)のような強力なツールもあります。
+
+### 実装詳細
+
+ARGV配列は直接操作することが可能で、ARGV[0]のように索引を用いて要素にアクセスできます。ARGV.eachを使用すればARGV配列の全要素を繰り返し処理することも可能です。
+
+## 関連情報:
+
+- Rubyの公式ドキュメンテーションの[Command Line Arguments](https://www.ruby-lang.org/en/documentation/quickstart/4/) 
+- [OptionParser](https://ruby-doc.org/stdlib-2.1.0/libdoc/optparse/rdoc/OptionParser.html)
+- Thor gemの[Github repository](https://github.com/erikhuda/thor)
+- Trollop gemの[Github repository](https://github.com/RubyMoney/money)

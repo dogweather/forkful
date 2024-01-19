@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-html_title:           "Elixir: Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,26 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
+## Hva & Hvorfor?
 
-Konvertering av en streng til små bokstaver er en vanlig operasjon i programmere. Dette innebærer å ta en tekststreng og endre alle store bokstaver til små. Dette gjøres vanligvis for å standardisere data og gjøre det lettere å sammenligne og manipulere tekst.
+Å konvertere en streng til små bokstaver er prosessen med å endre alle stor bokstaver i en given tekststreng til sine tilsvarende små bokstaver. Programmerere gjør dette for å standardisere data, noe som ofte forenkler søk, sammenligninger og analyse.
 
-# Slik gjør du det:
+## Hvordan:
 
-```Elixir
-iex> String.downcase("Hei Verden")
-"hei verden"
+Eksempler på koding og utdata er som følger:
+```Elixir 
+String.downcase("HELLO WORLD") 
 ```
+Dette vil returnere: 
+```Elixir
+"hello world"
+```
+## Deep Dive:
 
-I dette eksempelet bruker vi den innebygde funksjonen `downcase` fra `String` modulen for å konvertere teksten "Hei Verden" til små bokstaver. Resultatet blir "hei verden".
+Å konvertere en streng til små bokstaver er ikke en ny idé og kommer fra en tid da datasystemer var mer case-sensitive enn de er nå. I Elixir er dette implementert gjennom 'String.downcase' funksjonen, men det er også viktig å merke seg at denne funksjonen er avhengig av operativsystemets lokale innstillinger.
 
-# Utforsk videre:
+Alternativt kan du konvertere en streng til små bokstaver ved å bruke Unicode nedbrekningsalgoritmen. Dette er mer komplekst, men vil gi mer konsistente resultater på tvers av ulike språk og skriftsystemer.
 
-Historisk sett har konvertering av strenger til små bokstaver vært viktig for programmer som arbeider med ASCII-tegnsettet. Alternativt kan man også bruke `String.trim` for å fjerne eventuelle mellomrom og `String.upcase` for å gjøre alle bokstavene store.
+Under implementeringen av `String.downcase`, brukes en nokså enkel tilnærming i Elixir. Funksjonen bruker en innebygd funksjon i Erlang, `:unicode.characters_to_nfc_binary`, for å konvertere hver enkelt stor bokstav til en tilsvarende liten bokstav.
 
-I Elixir er strenger basert på Unicode-tegnsettet, så det er også viktig å være oppmerksom på unicode-tilpasning og håndtering av spesialtegn når man jobber med tekster. Elixir har innebygde funksjoner for dette, som `String.upcase/1`, `String.downcase/1` og `String.titlecase/1`.
+## Se også:
 
-# Se også:
+1. Elixir's `String` modul dokumentasjon: [Link](https://hexdocs.pm/elixir/String.html)
+2. Mer informasjon om case mapping: [Link](https://www.unicode.org/versions/Unicode7.0.0/ch03.pdf)
+3. Djupdykk i Unicode: [Link](http://unicode.org/standard/WhatIsUnicode.html) 
+4. Unicode kollapsalgoritmer: [Link](http://www.unicode.org/reports/tr15/) 
 
-- Elixir dokumentasjon for mer informasjon om `String` modulen: https://hexdocs.pm/elixir/String.html
-- Offisiell Elixir hjemmeside: https://elixir-lang.org/
+Det er ingen 'Konklusjon' seksjon.

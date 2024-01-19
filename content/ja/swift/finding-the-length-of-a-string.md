@@ -1,6 +1,6 @@
 ---
 title:                "文字列の長さを見つける"
-html_title:           "Swift: 文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,25 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が何故必要なのか？
+# Swiftで文字列の長さを求める (Finding the Length of a String in Swift)
 
-文字列の長さを求めるとは、文字列に含まれる文字符号の数を数えることです。プログラマーがこれを行う理由は、与えられた文字列の長さを知ることで、より複雑なプログラムを作るために必要なデータを得ることができるからです。
+## 何とどうして？ (What & Why?)
+文字列の長さを求めるとは、文字列が何文字から構成されているかを数えることです。条件分岐やループ処理をする際に、文字列の長さが必要になることがよくあります。
 
-## 方法：
+## どうやって：(How to:)
 
+Swiftでは、文字列の長さを取得するためには、`count` プロパティを使用します。以下に例を示します。
+
+```Swift
+let str = "こんにちは、世界"
+print(str.count) // 結果は "8"
 ```
-Swift let str = "こんにちは、世界！"
-print(str.count)
+
+上記の例において、"こんにちは、世界"は8文字なので、`print(str.count)`とすると8と表示されます。
+
+## ディープダイブ (Deep Dive)
+
+Swiftでは文字の数を`count`プロパティで簡単に取得できますが、古い言語などではもっと複雑な手法を用いる必要がありました。`count`プロパティの背後では、Stringを文字の配列として扱い、その要素数を数えることで文字列の長さを求めています。
+
+また、`count`以外にも`utf16.count`と`unicodeScalars.count`という方法も存在します。これらは、特定のUnicode文字が2文字として数えられる状況に対応するためのものです。
+
+```Swift
+let emoji = "👨‍👩‍👦"
+print(emoji.count) // 結果は "1"
+print(emoji.utf16.count) // 結果は "8"
 ```
-上記のコードを実行すると、出力結果は`11`となります。文字列の長さは、ドット演算子を使って`count`プロパティにアクセスすることで取得することができます。
 
-## 詳細を深く掘り下げる：
+このケースでは、絵文字は複数のUnicodeスカラー値を持っているため、.countと.utf16.countでは異なる結果になります。
 
-1. 歴史的文脈：文字列の長さを求めるという概念は、古典的なプログラミング言語から派生したものでした。今日、ほとんどのプログラミング言語は、文字列の長さを求めるための組み込み関数やメソッドを提供しています。
-2. 代替手段：文字列の長さを求めるためには、他の方法もあります。例えば、文字列を反復処理してカウントする方法などが挙げられますが、これらの方法は低効率であり、バグの発生もより一般的です。そのため、組み込みの`count`プロパティを使うことが推奨されます。
-3. 実装の詳細：Swiftの`String`型には、`count`プロパティが組み込まれているため、文字列の長さを取得することができます。そのため、追加のコードオーバーヘッドを心配する必要はありません。
+## 参考資料 (See Also)
 
-## 関連リソース：
-
-- [Swift公式ドキュメント：文字列](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [qiita.com：Swiftで文字列の長さを求める](https://qiita.com/t2psyto/items/d513bb7a19001c8ad1c9)
+- Apple公式ドキュメント: [Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Swift String Cheat Sheet: [A Cheat Sheet for Swift Strings](https://useyourloaf.com/blog/swift-string-cheat-sheet/)

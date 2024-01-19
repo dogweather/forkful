@@ -1,6 +1,6 @@
 ---
 title:                "מחיקת תווים התואמים לתבנית"
-html_title:           "C++: מחיקת תווים התואמים לתבנית"
+html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
 simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "C++"
 category:             "C++"
@@ -11,44 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-מחיקת תווים שמכילים התאמה לתבנית היא פעולה שמאפשרת למתכנתים להסיר תווים ספציפיים מתוך מחרוזות. כך ניתן לייצר מחרוזות חדשות או לעבוד עם נתונים ממוזגים ללא תווים מיותרים. מתכנתים מבצעים פעולות מחיקה כדי לשמור על נקיון קוד ולהפחית מספר התווים במחרוזת.
-
-## איך ל:
+מחיקת תווים שמתאימים לדפוס היא פעולה בה אנו מסירים תווים מסוימים ממחרוזת. מתכנתים בוחרים לבצע את זה כדי לנקות את הנתונים, לשפר את הביצועים או להתמקד בתווים שהם רלוונטיים.
+  
+## איך עושים את זה?
+קוד C++ להקתדים:
 ```C++
-#include <iostream>
 #include <string>
+#include <algorithm>
 
-using namespace std;
-
-int main() {
-    // פריצת מצוקה למחרוזת עם תווים מיותרים
-    string input = "H-e-l-l-o'-'-W-o-r-l-d-'-'-'-'-'-'-'-'-";
-    string output;
-
-    // חישוב אורך המחרוזת המקורית
-    int len = input.length();
-
-    // לולאת פור עבור כל תו ובדיקה האם היא תו היפוך
-    for (int i = 0; i < len; i++)
-    {
-        if (input[i] != '-')
-        {
-            output = output + input[i];
-        }
+std::string remove_chars(std::string str, std::string chars_to_remove) {
+    for (char c : chars_to_remove) {
+        str.erase(std::remove(str.begin(), str.end(), c), str.end());
     }
-
-    // פלט תוכן המחרוזת המעודכןה
-    cout << output << endl;;
-
-    return 0;
+    return str;
 }
+
+// דוגמה לשימוש:
+std::cout << remove_chars("Hello, World!", "loW") << std::endl; // Output: "He, rld!"
 ```
-output: Hello World
+פלט מהדוגמה יהיה "He, rld!", כי התווים 'l', 'o' ו- 'W' הוסרו מהמחרוזת.
 
-## מעמקים:
-מחיקת תווים שמכילים התאמה לתבנית היא פעולה שנתקיימת כבר מתקופת התכנות הראשונה. פעולה זו נכתבת בכדי לפנות מחרוזות מיותרות ולתת למתכנתים כלי יעיל לעיבוד נתונים. כיום ישנם גם כלים נוספים להשתמש כדי למחוק מחרוזות, כמו פעולות פריצת מצוקה, ושימוש בתורת ביטויים רגולריים.
+## הצצה עמוקה
+א) במסגרת התולדה של תכנות, הצורך במחיקת תווים מסוימים בא לידי ביטוי במגוון שפות תכנות, בניהן גם C++.
+ב) חלופות לפונקציה שנבחרה יכולה להכלול שימוש במערך תווים במקום `std::string` או שימוש בשיטות אחרות למחיקת התווים.
+ג) הפונקציה שהוזנה משנה את המחרוזת המקורית. היא מנקה את המחרוזת מהתו 'c' ולאחר מכן חוזרת ומוחקת את כל המקומות ש'c' הוסר מהם ושמאחריהם נפלו תווים המורה על סוף המחרוזת.
 
-## ראו גם:
-- [תיעוד רשמי של C++](https://isocpp.org/)
-- [מדריכים ושאלונים בנושא תורת ביטויים רגולריים](http://www.cplusplus.com/reference/regex/)
-- [פוסטים נוספים על תכנות בסגנון זה בבלוג](https://cpptruths.blogspot.com/)
+## ראה גם
+1. [Cplusplus.com - std::remove](http://cplusplus.com/reference/algorithm/remove/)
+2. [Cplusplus.com - std::string::erase](http://cplusplus.com/reference/string/string/erase/)
+3. [Cplusplus.com - std::string::find](http://cplusplus.com/reference/string/string/find/)

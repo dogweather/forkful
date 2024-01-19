@@ -1,7 +1,7 @@
 ---
-title:                "Buscando e substituindo texto"
-html_title:           "Lua: Buscando e substituindo texto"
-simple_title:         "Buscando e substituindo texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,32 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
-Substituir texto é uma técnica utilizada por programadores para manipular e editar grandes quantidades de dados em seus códigos. É especialmente útil para fazer alterações em vários trechos de texto de uma só vez, economizando tempo e esforço. Muitas vezes, é necessário substituir texto para corrigir erros de digitação, atualizar informações ou modificar cadeias de caracteres em vários locais no código.
+# Substituindo Textos na Lua: Guia Prático e Aprofundado
+
+## O Que & Por Quê?
+
+Substituição de texto é o processo de busca e alteração de uma sequência específica em um bloco de texto. Programadores utilizam isso frequentemente para manipulação de strings e alteração de dados em textos.
 
 ## Como Fazer:
-Para substituir texto em Lua, podemos utilizar a função `string.gsub()` que recebe três argumentos: a string que será modificada, o texto que será buscado e o texto que será inserido no lugar do encontrado. Por exemplo:
 
+Utilizamos a função `gsub` em Lua para substituir texto, aqui está um exemplo:
+```Lua
+s = "Olá, Mundo!"
+s = string.gsub(s, "Mundo", "Lua")
+print(s)
 ```
-Lua
-local texto = "Olá, Mundo!"
-local novo_texto = string.gsub(texto, "Mundo", "Lua")
-print(novo_texto)
--- Saída: Olá, Lua!
+Na execução, tal código resultará em:
 ```
-
-Também é possível utilizar expressões regulares para buscar e substituir texto. A sintaxe é a seguinte: ```string.gsub(texto, "padrão", função_de_substituição)```. Por exemplo:
-
+Olá, Lua!
 ```
-lua
-local texto = "Meu nome é João. Estou no nível 10."
-local novo_texto = string.gsub(texto, "(%a+)%.(%a+)", "%2, %1")
-print(novo_texto)
---Saída: Meu sobrenome é João, nome é nível 10.
-```
+No código acima, a string "Mundo" é substituída por "Lua".
 
-## Mergulho Profundo:
-A prática de substituir texto remonta aos primórdios da programação e continua sendo uma ferramenta fundamental nos dias de hoje. Existem alternativas para substituir texto, como a utilização de laços de repetição, porém a função `string.gsub()` é mais rápida e eficiente. Além disso, é possível realizar buscas e substituições em diferentes formas de armazenamento de texto, como arquivos e bancos de dados.
+## Mergulho Profundo
 
-## Veja Também:
-Para saber mais sobre a função `string.gsub()` e expressões regulares em Lua, confira a documentação oficial em https://www.lua.org/manual/5.3/manual.html#pdf-string.gsub e o tutorial de expressões regulares em https://www.lua.org/pil/20.2.html. Além disso, o site Regex101 oferece uma ferramenta online para testar e construir suas próprias expressões regulares em Lua.
+### Contexto Histórico
+
+Lua, do português "Lua", é uma linguagem de script de alto nível criada em 1993 por um grupo brasileiro. Lua não foi originalmente projetada para manipulação de texto, mas essa funcionalidade foi adicionada posteriormente como parte de suas bibliotecas padrão.
+
+### Alternativas
+
+Existem outras funções em Lua que também podem buscar e substituir texto, como `string.find` e `string.match`. Cada função tem seus próprios usos dependendo dos requisitos do usuário.
+
+### Detalhes da Implementação
+
+A função `gsub` usa expressões regulares para encontrar e substituir texto. Ela varre a string de entrada e, para cada correspondência da sequência de busca, substitui-a pela sequência de substituição.
+
+## Veja Também
+
+Para mais informações sobre programação com Lua, confira estes links úteis:
+* [Site Oficial da Lua](http://www.lua.org/)
+* [Documentação da Lua 5.4](http://www.lua.org/manual/5.4/)
+* [Guia de Programação em Lua](https://www.lua.org/pil/)
+
+Terminamos nosso tour pela substituição de textos em Lua. Você está agora pronto para começar a manipular strings como um pro!

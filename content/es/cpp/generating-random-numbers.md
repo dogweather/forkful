@@ -1,6 +1,6 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "C++: Generando números aleatorios"
+html_title:           "Arduino: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "C++"
 category:             "C++"
@@ -10,30 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y Por qué?
-La generación de números aleatorios es una técnica utilizada por los programadores para obtener valores aleatorios en sus aplicaciones. Esto puede ser útil en juegos, simulaciones y algoritmos que requieren una entrada aleatoria para probar su eficacia.
+## ¿Qué y Por Qué?
 
-## Cómo:
-```
+Generar números aleatorios es crear números que no siguen un patrón predecible. Los programadores hacen esto para simular eventos aleatorios en sus programas, como tirar los dados en un juego de mesa virtual.
+
+## ¿Cómo hacerlo?
+
+En C++ (versión actual), tenemos una biblioteca llamada `<random>` para generar números aleatorios. A continuación, te muestro un simple código para generar un número aleatorio entre 1 y 6.
+
+```C++
+#include <random>
 #include <iostream>
-#include <cstdlib>
-using namespace std;
 
 int main() {
-    // Generando un número aleatorio entre 1 y 10
-    int random = rand() % 10 + 1;
-    cout << "El número aleatorio es: " << random << endl;
+    std::random_device rd; 
+    std::mt19937 gen(rd()); 
+    std::uniform_int_distribution<> dis(1, 6);
+
+    std::cout << dis(gen) << '\n'; 
+
     return 0;
 }
 ```
-Salida de ejemplo:
-```
-El número aleatorio es: 7
+
+Una posible salida puede ser:
+
+```terminal
+4
 ```
 
-## Profundizando:
-La generación de números aleatorios se ha utilizado desde los primeros días de la programación y ha evolucionado a lo largo de los años. Además del uso de la función `rand()` en C++, también existen otras bibliotecas y algoritmos para generar números aleatorios. Sin embargo, los resultados de estos métodos no siempre son verdaderamente aleatorios y pueden predecirse en algunos casos.
+## Profundización
 
-## Ver también:
-- [Documentación de la función `rand()` en cplusplus.com](http://www.cplusplus.com/reference/cstdlib/rand/)
-- [Generación de números aleatorios en C++ - Programiz](https://www.programiz.com/cpp-programming/random-numbers)
+Históricamente, los números pseudoaleatorios se generaban mediante una 'semilla' y un algoritmo de generación bastante predecible. El advenimiento de `<random>` en C++11 trajo técnicas modernas y más fiables para generar números aleatorios.
+
+Existen alternativas a `<random>`, como la función `rand()` de C, pero tiene problemas, como un bajo grado de aleatoriedad y un límite superior arcaico.
+
+La generación de números aleatorios con `<random>` implica la creación de un dispositivo aleatorio (`std::random_device`), un generador (\`std::mt19937` en este caso, que es un tipo de generador Mersenne Twister), y una distribución (\`std::uniform_int_distribution<>\`). El dispositivo aleatorio se usa para sembrar el generador, que a su vez alimenta a la distribución para generar números aleatorios.
+
+## Ver también
+
+Para más detalles sobre `<random>`, puedes revisar la documentación en cppreference.com: <https://en.cppreference.com/w/cpp/numeric/random>
+
+Para entender más acerca de los números aleatorios, consulta el siguiente enlace de Wikipedia: <https://es.wikipedia.org/wiki/N%C3%BAmero_aleatorio>
+
+¡Buena suerte con tu generación de números aleatorios!

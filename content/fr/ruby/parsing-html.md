@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de code HTML"
-html_title:           "Ruby: Analyse de code HTML"
-simple_title:         "Analyse de code HTML"
+title:                "Analyser le HTML"
+html_title:           "Kotlin: Analyser le HTML"
+simple_title:         "Analyser le HTML"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,48 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi?
 
-Le parsing HTML est le processus consistant à analyser et traiter le code HTML d'une page web afin d'en extraire des données structurées. Les programmeurs le font souvent pour collecter des informations à des fins de web scraping, d'analyse de données ou de création d'outils qui automatiquement remplissent des formulaires en ligne.
+Le traitement HTML, ou parsing, est le procédé utilisé pour interpréter et analyser du HTML en des composants manipulables. Les programmeurs font cela pour extraire des données, automatiser des tâches ou affiner leur interface utilisateur.
 
-## Comment faire:
+## Comment Faire:
 
-Voici un exemple de code Ruby pour parser du HTML en utilisant la gem Nokogiri:
+Pour analyser du HTML en Ruby, nous avons une gem bien connue appelée `Nokogiri`. Vous pouvez l'installer avec `gem install nokogiri`:
+
+```ruby
+# installation de la gem
+gem install nokogiri
+```
+
+Voici un exemple de son utilisation :
 
 ```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# Obtenez le HTML d'une page web
-html = open("https://www.example.com").read
+# ouverture d'une page web
+doc = Nokogiri::HTML(open("https://www.example.com"))
 
-# Analysez le code avec Nokogiri
-doc = Nokogiri::HTML(html)
-
-# Obtenez tous les éléments avec une balise "p"
-paragraphes = doc.css("p")
-
-# Parcourez les éléments et imprimez leur contenu
-paragraphes.each do |p|
-  puts p.text
+# récupération de tous les titres h1
+doc.css("h1").each do |header|
+  puts header.text
 end
 ```
 
-Résultat:
+Sortie d'échantillon :
 
-```ruby
-"Bienvenue sur notre site web!"
-"Ceci est un exemple de page web."
-"Connectez-vous pour accéder à plus de contenu."
+```
+Voici un exemple de site Web
 ```
 
-## Plongée en profondeur:
+## Exploration Approfondie:
 
-Le parsing HTML est devenu populaire dans les années 1990 avec la montée du web. Aujourd'hui, il existe plusieurs alternatives telles que le parsing basé sur des expressions régulières ou l'utilisation de bibliothèques JavaScript comme Cheerio.
+Le traitement HTML est une pratique courante qui existe depuis les premiers jours du web. Avant `Nokogiri` en Ruby, il fallait écrire des expressions régulières compliquées, ce qui pouvait devenir rapidement désordonné et difficile à gérer.
 
-Pour l'implémentation, Nokogiri est une gem populaire et puissante qui utilise la bibliothèque libxml pour traiter le HTML. Elle offre une large gamme de méthodes pour manipuler et extraire des données à partir du code HTML.
+En ce qui concerne les alternatives, nous avons également `Oga` et `REXML`. `Oga` est une option plus rapide mais moins populaire, tandis que `REXML` est intégré en natif dans Ruby, cependant, son utilisation est déconseillée pour de gros morceaux de HTML.
 
-## Voir aussi:
+Fonctionnellement, `Nokogiri` lit et interprète du HTML en un "document" qui peut être manipulé en Ruby. Chaque balise HTML devient un "nœud" et peut être parcourue, modifiée ou extraite.
 
-- [Nokogiri - Documentation officielle](https://www.nokogiri.org)
-- [Web scraping avec Ruby - Un guide pratique](https://rubyguides.com/2018/08/ruby-web-scraping/)
+## Pour Aller Plus Loin:
+
+- Nokogiri Documentation: https://nokogiri.org/tutorials/parsing_an_html_xml_document.html
+- Oga gem: https://github.com/YorickPeterse/oga
+- Ruby REXML documentation: https://ruby-doc.org/stdlib-2.6.1/libdoc/rexml/rdoc/REXML/Document.html

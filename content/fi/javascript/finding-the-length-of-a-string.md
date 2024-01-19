@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "Javascript: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,21 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Ketjutetun merkkijonon pituuden löytäminen on yksinkertaisesti kyky tietää, kuinka monta merkkiä sisältää ketju. Tämä on hyödyllinen tehtävä ohjelmoinnissa, koska se auttaa löytämäänmikä tahansa merkkijono on, kuinka monta merkkiä se sisältää ja kuinka hyvin se soveltuu eri tarkoituksiin.
+## Sidan pituus: Mitä ja Miksi?
 
-## Kuinka:
-```Javascript 
-let string = 'Tämä on esimerkki stringistä';
-console.log(string.length); 
-```
+Jousen pituuden selvittäminen tarkoittaa sen merkkien lukumäärän laskemista. Tätä tietoa tarvitaan esimerkiksi silloin, kun halutaan tietää, sisältääkö merkkijono tietyn määrän merkkejä tai kun halutaan käydä läpi merkkijonon jokainen merkki.
 
-Tässä esimerkissä olemme määrittäneet muuttujan nimeltä string ja asettaneet sille arvon, joka on merkkijono "Tämä on esimerkki stringistä". Tämän jälkeen käytämme `.length` metodia saadaksemme ketjun pituuden ja tulostamme sen konsoliin. Tulostettu tulos on 27, koska sana "stringistä" sisältää 9 merkkiä ja välilyönnit lasketaan myös mukaan.
+## Näin se tehdään:
 
-## Syvällä:
-Stringin pituuden löytäminen on ollut käytössä ohjelmoinnissa jo vuosien ajan. Aikaisemmin tätä tehtävää varten oli käytettävä monia eri tapoja, kuten for-looppeja tai substringeja. Nykyisin `.length` metodi on helpottanut tätä tehtävää huomattavasti. On myös huomionarvoista, että tämä metodi toimii myös muilla javascriptin tietotyypeillä, kuten numerolla tai taulukoilla.
+Tämä on kuinka voit selvittää merkkijonon pituuden JavaScriptillä:
 
-## Katso myös:
-- [MDN dokumentaatio stringin pituudesta](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [JavaScript 30 -kurssi: stringin pituuden löytäminen](https://javascript30.com/)
-- [Stringin käyttäminen ja manipulointi Javascriptissä](https://www.freecodecamp.org/news/javascript-string-manipulation-2a1a0ea7fca0/)
+ ```Javascript...
+let str = "Hei maailma!";
+let length = str.length;
+console.log(length); // tulostaa: 12
+``` 
+
+Joten, meillä on merkkijono "Hei maailma!", jonka pituus on 12 merkkiä (sisältäen huutomerkki).
+
+## Syvempi sukellus
+
+Sadan pituuden selvittämisen JavaScriptissä on melko suoraviivaista, kuten olemme nähneet. Mutta onko olemassa muita tapoja?
+
+Syvämmällä tasolla JavaScript tallentaa merkkijonot UTF-16-koodauksena, jossa jokainen merkki vie joko kaksi tai neljä tavua tilaa. Tämä tarkoittaa, että jos kyseessä on =unicode merkkijono, .length ei välttämättä palauta odotettua tulosta. Silloin on käytettävä toista toimintoa, kuten Array.from(str).length .
+
+Historiallisesti, ennen ECMAScript 2015, merkkijonon pituuden selvittämiseksi täytyi käydä läpi koko merkkijono käyttäen silmukkaa ja kasvattaa laskuria jokaisella kierroksella. 
+
+## Katso myös
+
+1. [MDN Web Docs: String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+2. [ECMAScript 2015 specs](http://www.ecma-international.org/ecma-262/6.0/#sec-properties-of-string-instances-length)
+3. [JavaScript Info: String](https://javascript.info/string)

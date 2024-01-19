@@ -1,7 +1,7 @@
 ---
-title:                "ディレクトリが存在するかどうかをチェックする"
-html_title:           "Elm: ディレクトリが存在するかどうかをチェックする"
-simple_title:         "ディレクトリが存在するかどうかをチェックする"
+title:                "ディレクトリが存在するかどうかの確認"
+html_title:           "Elm: ディレクトリが存在するかどうかの確認"
+simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,27 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## やること & その理由
-ディレクトリが存在するかどうかを確認することは、プログラマーがそのディレクトリ内のファイルにアクセスできるかどうかを判断するための方法です。これにより、プログラムが想定通りに動作するかどうかを確認できます。
+## 何 & なぜ?
+ディレクトリが存在するかどうかを確認するというのは、指定したディレクトリの存在をプログラムでチェックすることです。プログラマーがこれを行う理由は、特定の操作を行う前に（ファイルの読み書きなど）対象ディレクトリの存在を確認し、エラーを防ぐためです。
 
-## 方法:
-以下のコード例を参考に、どのようにディレクトリの存在を確認するかを学びましょう。
+## やり方:
+Elm（現行バージョン）では残念ながら、ディレクトリが存在するかどうかを確認する直接的な方法は提供されていません。代わりにJavaScriptとの間で情報をやり取りすることで、この確認が可能になります。
 
 ```Elm
-import File
-
--- ディレクトリが存在するかを確認する関数
-folderExists : String -> Task x Bool
-folderExists path =
-  File.exists path True False
+port module Main exposing (..)
+import Html exposing (Html)
+  
+-- request to JavaScript to check directory
+port directoryCheck : String -> Cmd msg
+ 
+ -- get response from JavaScript
+port resultOfCheck : (Bool -> msg) -> Sub msg
 ```
+このコードはElmからJavaScriptにディレクトリの存在確認を依頼する部分です。
 
-上記のコードを実行すると、指定したパスにディレクトリが存在する場合は「True」、存在しない場合は「False」が返されます。
+## ディープダイブ
+ディレクトリの存在確認はOSが実行できる基本的なタスクですが、その実装はプログラミング言語とOSによって異なります。Elmは純粋な関数型言語で、副作用を避けるためにファイルシステムへの直接アクセスを提供していません。これは、クライアント側のWebプログラミングに焦点を当てているため、エラーハンドリングとの結びつきが緩いです。
 
-## 深堀り:
-ディレクトリの存在を確認する方法には、上記のようにElmのFileパッケージを使用する方法以外にも、より低レベルの方法があります。例えば、ファイルシステムに直接アクセスするNativeコードを使用する方法や、サードパーティのライブラリを利用する方法などがあります。
+しかし、JavaScriptを通じてこの機能を実現することができます。JavaScriptとの相互作用を可能にするパブリックポートを使用すると、ディレクトリの存在確認が可能になります。
 
-## さらに参考:
-- [ElmのFileパッケージドキュメント](https://package.elm-lang.org/packages/elm/file/latest/)
-- [ファイルシステムにアクセスするためのNativeコード](https://elmprogramming.com/file-system-elm-3.html)
-- [サードパーティのライブラリを使ったファイル操作の方法](https://github.com/elm/node#filesystem-operations)
+## 関連リンク
+1. ElmとJavaScriptの接続: [ElmとJavaScriptの相互作用](https://guide.elm-lang.org/interop/)
+2. Elmについてさらに学ぶ: [Elm公式ガイド](https://guide.elm-lang.org/)
+3. Elmがファイルシステムにアクセスしない理由: [Elmの哲学](https://github.com/elm/compiler/blob/master/hints/philosophy.md)

@@ -1,7 +1,7 @@
 ---
-title:                "Trova la lunghezza di una stringa."
-html_title:           "Javascript: Trova la lunghezza di una stringa."
-simple_title:         "Trova la lunghezza di una stringa."
+title:                "Trovare la lunghezza di una stringa"
+html_title:           "Haskell: Trovare la lunghezza di una stringa"
+simple_title:         "Trovare la lunghezza di una stringa"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,31 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
+## Cos'è & Perché?
+Trovare la lunghezza di una stringa significa contare il numero di caratteri in essa. I programmatori usano spesso questa funzione nelle applicazioni web, per esempio per convalidare l'input dell'utente o per manipolare le stringhe.
 
-La lunghezza di una stringa si riferisce alla quantità di caratteri presenti all'interno di una stringa di testo in Javascript. I programmatori spesso hanno bisogno di trovare la lunghezza di una stringa per vari motivi, come ad esempio per la gestione dei dati inseriti dagli utenti o per manipolare il testo all'interno di un'applicazione.
+## Come Fare
+Ecco come ottenere la lunghezza di una stringa con JavaScript.
 
-## Come fare:
+```javascript
+var str = "Ciao, mondo!";
+var n = str.length;
 
-Per trovare la lunghezza di una stringa, è possibile utilizzare il metodo ```length``` in Javascript. Di seguito è riportato un esempio di codice con un'input di esempio e l'output atteso:
-
-```Javascript
-let stringa = "Ciao mondo";
-console.log(stringa.length);
-
-// Output: 10
+console.log(n); 
 ```
 
-In questo esempio, la variabile ```stringa``` contiene una stringa di testo con 10 caratteri (spazi inclusi). Utilizzando il metodo ```length```, possiamo trovare la lunghezza della stringa e stamparla a console.
+Questo restituirà: 
 
-## Approfondimento:
+```javascript
+13
+```
+## Approfondimenti
+La proprietà length esiste da quando JavaScript è stato creato, circa 25 anni fa. Non ci sono reali alternative a questa proprietà in JavaScript, dato che è la più veloce e diretta per ottenere il conteggio dei caratteri. Vale la pena notare che length ritorna il numero di unità di codice UTF-16, che non sempre corrispondono al numero di caratteri.
 
-La necessità di trovare la lunghezza di una stringa risale ai primi giorni della programmazione, quando il linguaggio di programmazione C è stato sviluppato negli anni '70. In C, la lunghezza di una stringa è stata trovata contando i byte necessari per rappresentare il testo in memoria.
+## Da Vedere Anche
+Per un'ulteriore lettura, tutto ciò che riguarda le stringhe in JavaScript, controlla i seguenti link:
 
-In Javascript, esistono anche altri modi per trovare la lunghezza di una stringa, come ad esempio utilizzando il metodo ```split``` per suddividere la stringa in un array e contare il numero di elementi. Tuttavia, l'utilizzo del metodo ```length``` è il modo più efficiente per ottenere questo risultato in Javascript.
-
-## Vedi anche:
-
-- [Documentazione di Javascript sul metodo ```length```] (https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [Articolo su come trovare la lunghezza di una stringa in altri linguaggi di programmazione] (https://www.mkyong.com/javascript/how-to-get-the-length-of-a-string-in-javascript/)
-- [Un approfondimento sulle stringhe in Javascript] (https://www.freecodecamp.org/news/javascript-string-manipulation/)
+- Documentazione MDN su Stringhe e Caratteri: https://developer.mozilla.org/it/docs/Web/JavaScript/Guida/Text_formatting
+- Dettagli su UTF-16 su Wikipedia: https://it.wikipedia.org/wiki/UTF-16
+- Guide JavaScript su W3Schools: https://www.w3schools.com/js/js_string_methods.asp

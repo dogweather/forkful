@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Fish Shell: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O que é e por quê?
 
-Criar um arquivo temporário é uma prática comum entre programadores. Basicamente, é um arquivo que é criado temporariamente para armazenar informações ou dados durante a execução de um programa. Os programadores geralmente o fazem para evitar sobrecarregar a memória do computador ou para evitar conflitos ao acessar determinados arquivos.
+Criar um arquivo temporário implica em criar um arquivo de armazenamento curto que desaparece após a sessão do usuário acabar. Os programadores o usam para armazenar dados transacionalmente durante a execução de um programa, por exemplo, ao manipular grandes volumes de dados cuja persistência não é necessária.
 
-## Como fazer:
+## Como usar:
 
-Para criar um arquivo temporário no Fish Shell, você pode usar o comando `mktemp`. Por exemplo:
+No Shell do Fish, a criação de um arquivo temporário é simples. Aqui está um exemplo de código:
 
-```
-Fish Shell $ mktemp
-/tmp/tmp.7sbosSl3uh
-```
-
-Este comando criará um arquivo temporário com um nome aleatório no diretório `/tmp`. Você também pode especificar um prefixo para o nome do arquivo usando a opção `-p`. Por exemplo:
-
-```
-Fish Shell $ mktemp -p mytempfile
-/tmp/mytempfile.esJYLsBM
+```fish
+set tmpfile (mktemp)
+echo "Isto é um arquivo temporário!" > $tmpfile
+cat $tmpfile
+rm $tmpfile
 ```
 
-Você também pode especificar o sufixo do nome do arquivo usando a opção `-s`. Por exemplo:
+E aqui está a saída do código acima, assumindo que `mktemp` retorna `/tmp/tmp.1F2G3H`.
 
+```fish
+Isto é um arquivo temporário!
 ```
-Fish Shell $ mktemp -s .log
-/tmp/tmp.c7TGPXZ6yf.log
-```
-
-Além disso, você pode combinar as opções `-p` e `-s` para ter mais controle sobre o nome do arquivo temporário.
 
 ## Mergulho profundo:
 
-A criação de arquivos temporários é uma técnica usada há muito tempo pelos programadores para lidar com a alocação de memória e garantir a segurança dos sistemas de arquivos. Existem outras maneiras de criar arquivos temporários, como usando a função `tempnam()` na linguagem C ou o módulo `tempfile` no Python. No entanto, o comando `mktemp` no Fish Shell é uma opção rápida e conveniente.
+O conceito de arquivos temporários surgiu como uma maneira de permitir que os programas manipulassem grandes volumes de dados que não precisariam ser mantidos de forma contínua.
 
-Ao usar o comando `mktemp`, é importante lembrar que o nome do arquivo temporário gerado pode ser acessado por outros usuários no sistema. Portanto, certifique-se de ajustar as permissões de acesso ao arquivo, se necessário.
+Existem alternativas ao uso de arquivos temporários. Por exemplo, alguns programadores podem preferir usar Bancos de Dados em Memória, como o Redis. No entanto, para conjuntos de dados particularmente grandes onde a memória pode ser uma preocupação, os arquivos temporários geralmente são a melhor solução.
+
+A implementação dos arquivos temporários no Fish Shell de fato utiliza a ferramenta padrão UNIX `mktemp`, que cria um arquivo único em /tmp. A supressão do arquivo é responsabilidade do programador.
 
 ## Veja também:
 
-- [Documentação do Fish Shell](https://fishshell.com/docs/current/commands.html#mktemp)
-- [Expansão de caracteres no Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_expansion)
+Por favor, revise as seguintes fontes para mais informações:
+
+1. Documentação oficial do Fish Shell: [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+2. Mais informações sobre `mktemp`: [man mktemp](https://man7.org/linux/man-pages/man1/mktemp.1.html)
+3. Alternativas de Banco de Dados em Memória: [Redis](https://redis.io/)
+
+## Conclusão:
+
+Usem arquivos temporários com sabedoria!

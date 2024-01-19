@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "Rust: Analizando html"
-simple_title:         "Analizando html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,41 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+# Entendiendo y utilizando HTML Parsing en Rust
 
-Parsing HTML es el proceso de analizar un documento HTML para identificar su estructura y contenido. Los programadores suelen hacer esto para extraer información específica de una página web o para manipular el contenido dinámicamente.
+## ¿Qué y Por Qué?
 
-## Cómo hacerlo:
+El análisis de HTML (HTML Parsing) es la traducción de código HTML a una representación más manejable, como un árbol de nodos - una necesidad comúnmente surge al desarrollar web crawlers, scrapers, o al modificar el contenido web existente.
+
+## ¿Cómo se hace?
+
+Para ilustrar, utilizaremos `html5ever`, una biblioteca de Rust para análisis de HTML de alta velocidad. Primero, instale la dependencia agregándola a su `Cargo.toml`.
 
 ```Rust
-// Dependencia para parsing HTML
-use scraper::{Html, Selector};
-
-// Creamos una instancia de scraper con un documento HTML
-let html = Html::parse_document(r#"
-    <html>
-        <body>
-            <h1>¡Hola Mundo!</h1>
-        </body>
-    </html>
-"#);
-
-// Usamos un selector para obtener el contenido del elemento H1
-let selector = Selector::parse("h1").unwrap();
-let h1 = html.select(&selector).next().unwrap().text().collect::<Vec<_>>();
-println!("{}", h1);
+[dependencies]
+html5ever = "0.25.1"
 ```
 
-Salida: ¡Hola Mundo!
+Ahora, podemos construir un simple análisis de HTML utilizando `html5ever`.
 
-## Inmersión profunda:
+```Rust
+extern crate html5ever;
 
-Parsing HTML se ha vuelto cada vez más importante a medida que la web se ha vuelto más dinámica. Antes, se utilizaba principalmente para indexar páginas web, pero ahora es una herramienta esencial para el desarrollo de aplicaciones web. Algunas alternativas populares al uso de scraper en Rust son Curl y BeautifulSoup, pero scraper se destaca por su simplicidad y concisión.
+use html5ever::parse_document;
+use html5ever::rcdom::RcDom;
+use html5ever::tendril::TendrilSink;
 
-En términos de implementación, scraper utiliza la librería de HTML5 parse5 para realizar el análisis del documento HTML. Esto le permite procesar el HTML de manera eficiente y precisa.
+let html_content = "<html><body><h1>Hola Mundo!</h1></body></html>";
 
-## Ver también:
+let dom = parse_document(RcDom::default(), Default::default())
+  .from_utf8()
+  .read_from(&mut html_content.as_bytes())
+  .unwrap();
 
-- [Documentación de scraper](https://docs.rs/scraper/)
-- [Ejemplos de scraper](https://github.com/chevdor/scraper/tree/master/examples)
-- [Librería parse5](https://github.com/servo/html5ever)
+println!("{:#?}", dom.document);
+```
+
+La salida será la representación del árbol de nodos de su entrada HTML.
+
+## Profundización
+
+El análisis de HTML se remonta a los primeros días de la web. Durante mucho tiempo, los detalles de implementación y la falta de estándares llevaron a parseadores torpes y propensos a errores. Con la llegada de HTML5, se adoptaron estándares más estrictos para el parsing de HTML, permitiendo bibliotecas como `html5ever`.
+
+Hoy en día, hay alternativas a `html5ever`. `scraper` es otra biblioteca de Rust que proporciona una interfaz de alto nivel para analizar HTML y manipularlo.
+
+Lo interesante de `html5ever` es que tiene como objetivo estar completamente en conformidad con la [especificación de parsing de HTML5](https://html.spec.whatwg.org/multipage/parsing.html), lo que significa que funciona de la misma manera que los navegadores web modernos.
+
+## Ver También
+
+- Documentación oficial de `html5ever`: https://docs.rs/html5ever/
+- Especificación de parsing de HTML5: https://html.spec.whatwg.org/multipage/parsing.html
+- `scraper`, una alternativa a `html5ever`: https://docs.rs/scraper/

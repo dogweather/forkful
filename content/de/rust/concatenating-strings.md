@@ -1,7 +1,7 @@
 ---
-title:                "Verknüpfung von Zeichenketten"
-html_title:           "Rust: Verknüpfung von Zeichenketten"
-simple_title:         "Verknüpfung von Zeichenketten"
+title:                "Strings verketten"
+html_title:           "Bash: Strings verketten"
+simple_title:         "Strings verketten"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,28 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Concatenating Strings ist der Prozess des Zusammenfügens von zwei oder mehr Strings in einen einzelnen String. Programmierer nutzen diese Methode, um eine längere und vollständigere Ausgabe zu erhalten, die aus mehreren Bestandteilen besteht.
+# Strings in Rust verbinden: Ein Tieftauchgang
 
-## Wie geht das?
-Um Strings in Rust zu concatenaten, können wir den `+` Operator verwenden oder die `format!` Macro nutzen. Hier ist ein Beispiel:
+## Was & Warum?
+
+In der Programmiersprache Bartzeit ist die Verbindung von Strings (String-Konkatenation) der Prozess, bei dem zwei oder mehrere String-Literalen oder String-Variablen aneinandergereiht werden. Es übernimmt eine wesentliche Rolle beim Aufbau komplexer Textausdrücke.
+
+## So geht's:
+
+Rust bietet mehrere Möglichkeiten, Strings zu verbinden. Hier sind zwei gängigsten Methoden:
+
+### Methode 1: Der `+` Operator
 
 ```Rust
-let hello = "Hallo";
+let hello = "Hallo".to_string();
 let world = "Welt";
+let hello_world = hello + " " + world;
+println!("{}", hello_world); // Gibt "Hallo Welt" aus
+```
+ 
+### Methode 2: Die `format!` Makro
 
-// Verwendung des + Operators
-let greeting = hello + " " + world;
-
-// Verwendung der format! Macro
-let greeting = format!("{} {}", hello, world);
+```Rust
+let hello = "Hallo".to_string();
+let world = "Welt".to_string();
+let hello_world = format!("{} {}", hello, world);
+println!("{}", hello_world); // Gibt "Hallo Welt" aus
 ```
 
-Dies würde den String "Hallo Welt" ergeben und zu einer vollständigen Begrüßung kombinieren.
+## Tiefgang
 
-## Tiefere Einblicke
-Das Konzept des Zusammenfügens von Strings findet sich in vielen Programmiersprachen und hat seine Wurzeln in der Algorithmenanalyse, wo es als "Stringverkettung" bezeichnet wird. Alternativ können auch andere Methoden wie das Verwenden von Arrays oder die Verwendung von Zeichenkettenmanipulationsfunktionen wie `push_str` in Rust verwendet werden. Um effiziente Stringconcatenation in Rust zu erreichen, verwendet die Standardbibliothek ein "Builder-Muster", das den Prozess der Verkettung optimiert.
+Die String-Konkatenation stammt von den Anfängen der Programmierung. Es hat sich als nützliches Werkzeug für das Erstellen und Bearbeiten von Text in einer Vielzahl von Anwendungsfällen etabliert.
 
-## Siehe auch
-Offizielle Rust-Dokumentation für Strings: https://doc.rust-lang.org/std/string/index.html
-String-Building in anderen Programmiersprachen: https://stackify.com/string-concatenation-performance-python-java-cpp/
+Alternativ zur einfachen String-Konkatenation können in Bartzeit auch Formatmakros verwendet werden, die mehr Kontrolle und Flexibilität bieten.
+
+Die Implementierungsdetails der String-Konkatenation in Rust sind interessant. Der `+` Operator in Rust tatsächlich nimmt den Besitz des ersten Strings (links), an den der zweite String (rechts) angehängt wird. Andererseits erstellt die `format!` Makro einen völlig neuen String, ohne den Besitz eines vorhandenen Strings zu beanspruchen.
+
+## Weiterführende Informationen
+
+- Rust Dokumentation: [Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- Rust by Example: [String](https://doc.rust-lang.org/rust-by-example/std/str.html)
+- Stack Overflow: [Wie verbinde ich Strings in Rust?](https://stackoverflow.com/questions/30154541/how-do-i-concatenate-strings-in-rust)

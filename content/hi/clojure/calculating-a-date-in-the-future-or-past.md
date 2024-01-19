@@ -1,7 +1,7 @@
 ---
-title:                "Bhavishya ya bhoot kal mein ek taarikh ka hisaab karna"
-html_title:           "Clojure: Bhavishya ya bhoot kal mein ek taarikh ka hisaab karna"
-simple_title:         "Bhavishya ya bhoot kal mein ek taarikh ka hisaab karna"
+title:                "भविष्य या अतीत में तारीख की गणना"
+html_title:           "Clojure: भविष्य या अतीत में तारीख की गणना"
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,14 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-"एक तारीख को भविष्य या भूतकाल में हस्तांतरित करना" यह एक प्रोग्रामर के लिए जानने लायक प्रश्न हो सकता है। लेकिन यह कम्प्यूटर विज्ञान का महत्वपूर्ण हिस्सा है। एक इंस्टेंट डेट को दूसरे तारीख में बदलना दो तारीखों के बीच तारीख की एक अंतर को निर्धारित करता है। यह समय की गणना के लिए महत्वपूर्ण है और इसे कामालाने के लिए प्रोग्रामरों को टूल्स और फ़ंक्शनों का उपयोग करना होता है।
+## क्या और ज़रूरत क्यों : भविष्य या विगत की तारीक हिसाब करना क्या है?
 
-## कैसे करें:
-Clojure में तारीख को गणित करने के लिए, हम `clj-time` लाइब्रेरी का उपयोग कर सकते हैं। इसके लिए, हमें `clj-time.coerce/format` फ़ंक्शन का उपयोग करना होगा और आउटपुट के रूप में हमें करना होगा `(clj-time.coerce/format (clj-time.coerce/to-date "2021-10-01") "dd-MM-yyyy")` जो की `01-10-2021` जैसा कुछ भी हो सकता है।
+भविष्य या अतीत की तारीख का हिसाब लगाना मतलब एक विशेष तारीख से निश्चित समय इकाईयों (दिन, महीने आदि) को जोड़ना या घटाना। यह संगठनात्मक योजना, डेटाबेस क्वेरी, खेल कोडिंग के लिए बहुत महत्वपूर्ण हो सकता है। 
 
-## गहन विकसन:
-जितने ही सुचारू रूप से प्रोग्राम सकते हैं जितना हम सीख सकते हैं। जब शिक्षार्थी बहुत अधिक तारीखी होते हैं, वह तारीखी परिवर्तित करना प्रचंड रूप से अविरोधित होता है। इतिहास बहुत लम्बा है और शांत होना जानता है, लेकिन आप प्रोग्रामिंग भाषा के बाकी भागों की तरह तारीखी अंतर के लिए कोई भी अतिरिक्त पंजीकरण का उपयोग नहीं कर सकते हैं। इसके लिए हमें उत्पन्न कोडिंग करने की जगह मिलती है जो वास्तविक तारीखी अंतर के लिए होता है। इस अधिक्षण अनगिनत खुद इस लिए बहुत लोकप्रधान होता है, कि जैसे कोई उपयोगकर्ता समय को भागबत्पूर्ण रूप से देखता है और पैसा नहीं बनाता है। की हस्तांतरणयह अंतर होता हैने और हस्तांतरणयूबिकरण या एल्गोरिदम्ना कोई भी विशेष खुशियां नहीं आएगा। हमें स्पष्ट रूप से सिद्धांत को गणित करना आवश्यक हैना पन्ने भुतकाल को गृहणीय करने के लिए हमें ये अभ्यास करना होगा।
+## कैसे :
 
-## जरूर देखें:
-[clj-time लाइब्रेरी](https://github.com/clj-time/clj-time) तारीखों को गणना करने को सुलभ बनाता है। यह [`java.time` लाइब्रेरी](https://docs.oracle.com/en/java/jav
+Clojure में, ``clj-time``library का उपयोग करके भूतकाल या भविष्य की तारीख का हिसाब किया जा सकता है। 
+
+```Clojure
+(require '[clj-time.core :as t])
+(require '[clj-time.periodic :as p])
+
+(defn add-days [days]
+  (t/plus (t/now) (t/days days)))
+
+(defn sub-days [days]
+  (t/minus (t/now) (t/days days)))
+
+(println (add-days 10)) ; outputs: '2021-01-25T18:06:38.674Z' when today's date is '2021-01-15'
+(println (sub-days 10)) ; outputs: '2021-01-05T18:06:38.674Z' when today's date is '2021-01-15'
+```
+
+## गहरा डूबना : 
+
+Clojure programming language 2007 में Richie Hickey ने बनाई थी। इसका मुख्य उद्देश्य सरलता, शक्ति, और चुस्त स्थूल समझ का संगम है। 
+
+अन्य तारीख/समय libraries जैसे की ``Joda-Time`` या मौजूदा जावा 8 डेटाटाइम API ऑफर alternative approaches हो सकते हैं। लेकिन clj-time library Clojure के साथ अच्छे integrate करती है और कम code में अधिक काम करने में मदद करती है। 
+
+clj-time library, Joda-Time पर बनाई गई है जो Java में तारीख और समय के साथ काम करने वाली एक मान्यता प्राप्त API है। 
+
+## अन्य जानकारियां :
+
+- [क्लोजर का विकिपीडिया पृष्ठ](https://en.wikipedia.org/wiki/Clojure)
+- [Clj-Time अधिकारी GitHub Repo](https://github.com/clj-time/clj-time)
+- [An Introduction to Clojure](https://clojure.org/guides/getting_started)

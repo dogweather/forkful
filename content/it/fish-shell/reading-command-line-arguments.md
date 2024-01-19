@@ -1,6 +1,6 @@
 ---
 title:                "Lettura degli argomenti della riga di comando"
-html_title:           "Fish Shell: Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
 simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,37 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e Perche?
-Leggere argomenti dalla riga di comando è il processo di accettare input da parte dell'utente, tipicamente quando viene eseguito un programma da terminale. I programmatori utilizzano questo per fornire flessibilità e personalizzazione ai loro programmi, consentendo agli utenti di specificare dati o opzioni specifiche al momento dell'esecuzione.
+## Cos'è e Perché?
 
-## Come Fare:
-Di seguito sono riportati alcuni esempi di codice in Fish Shell per leggere e utilizzare argomenti dalla riga di comando:
+Leggere gli argomenti della riga di comando consiste nel prelevare i dati forniti all'esecutore di un programma da un terminale o da uno script. Questo permette ai programmatori di personalizzare le operazioni di un programma in base alle esigenze dell'utente.
 
-```
-#!/usr/bin/fish
+## Come Fare?
 
-# leggi e salva l'argomento in una variabile
-set arg $argv[1]
+In Fish Shell, gli argomenti della riga di comando vengono letti tramite la variabile speciale chiamata `argv`. Ecco un esempio:
 
-# stampa l'argomento
-echo "Il tuo argomento è $arg"
-
-# verifica se è stato fornito un argomento aggiuntivo
-if test "count $argv" -gt 1
-	echo "Hai fornito più di un argomento!"
+```Fish Shell
+# definiamo una funzione 'stampa_argomenti'
+function stampa_argomenti
+    for arg in $argv
+        echo $arg
+    end
 end
 ```
 
-Esempio di output:
-```
-$ myscript.fish hello
-Il tuo argomento è hello
+Ora, se eseguiamo il comando `stampa_argomenti Ciao Mondo`, otterremo:
+
+```Fish Shell
+Ciao
+Mondo
 ```
 
-## Approfondimento:
-La lettura degli argomenti dalla riga di comando è stata introdotta nei primi sistemi operativi, come UNIX e MS-DOS, per consentire agli utenti di personalizzare i comandi che volevano eseguire. Il Fish Shell è una delle alternative al bash, un interprete più comune per la linea di comando. L'implementazione di base per leggere gli argomenti utilizza il programma `getopt`, che consente di specificare opzioni e argomenti richiesti. 
+## Approfondimento
 
-## Vedi Anche:
-Per ulteriori informazioni sulla lettura degli argomenti dalla riga di comando, consulta queste risorse utili:
-- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/cmds/set.html
-- Documentazione di `getopt`: https://www.gnu.org/software/libc/manual/html_node/Getopt.html
+Fish Shell nasce come alternativa ai tradizionali shell come Bash, con un'interfaccia più user-friendly e una semplificazione della sintassi. Anche se la lettura degli argomenti della riga di comando è abbastanza simile a altri shell, Fish offre un modo più intuitivo e diretto attraverso l'uso della variabile `argv`.
+
+Altre alternative a Fish, includono Bash o Zsh, collegati ai sistemi Unix tanto tradizionali quanto moderni. Hanno il vantaggio di essere ubiquitari su vari ambienti, anche se tendono a essere più verbosi e complicati da usare.
+
+## Vedere Anche
+
+Per ulteriori informazioni sulla programmazione in Fish Shell e su come leggere gli argomenti della riga di comando, ecco alcuni link utili:
+
+- [Manuale Ufficiale di Fish](https://fishshell.com/docs/current/index.html)
+
+- [Fish Scripting Tutorial](https://fishshell.com/docs/current/tutorial.html)
+
+- [Fish vs Bash vs Zsh](https://unix.stackexchange.com/questions/325289/bash-vs-zsh-vs-fish)

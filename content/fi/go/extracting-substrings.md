@@ -1,7 +1,7 @@
 ---
-title:                "Alalauseiden poimiminen."
-html_title:           "Go: Alalauseiden poimiminen."
-simple_title:         "Alalauseiden poimiminen."
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,28 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Substringien erottaminen (englanniksi "extracting substrings") on yleinen ohjelmoinnin käsite, joka tarkoittaa osajonon poimimista merkkijonosta tai taulukosta. Tätä tehdään yleensä silloin, kun halutaan käsitellä tiettyjä osia merkkijonosta erikseen tai verrata niitä muihin merkkijonoihin.
+Alimerkkijonon erottaminen on prosessi, jossa valitaan tietty osa merkkijonosta. Ohjelmoijat tekevät tämän usein datan käsittelyn ja analysoinnin helpottamiseksi.
 
-## Näin:
+## Näin se tehdään:
 
 ```Go
-// Merkkijonon erottaminen tiettyjen merkkien perusteella
-str := "Go on mielenkiintoinen ohjelmointikieli"
-substr := str[3:5] // tulos: "on"
+package main
 
-// Taulukon erottaminen tietyn pituisilla osilla
-arr := []int{1, 2, 3, 4, 5, 6, 7, 8}
-substr := arr[2:5] //tulos: [3, 4, 5]
+import "fmt"
+
+func main() {
+	str := "Tämä on esimerkki merkkijonosta"
+  
+	subStr := str[5:14]
+  
+	fmt.Println(subStr)
+}
 ```
 
-## Syvällinen sukellus:
+Ohjelman tulostus on:
 
-Substringien erottaminen on perusoperaatio, jota käytetään useissa eri ohjelmointitilanteissa. Kehittäjät voivat käyttää myös muita tapoja erottaa merkkijonoja ja taulukoita, kuten regex-merkkijonokäsittelyä tai kirjastofunktioita, mutta substringien erottamisella on usein erilaisia käyttötapoja ja se on usein nopeampi ratkaisu.
+```Go
+on esimerk
+```
 
-## Katso myös:
+## Tarkempi tarkastelu
 
-- [Go-kielen viralliset dokumentaatiot](https://golang.org/doc/)
-- [Aloittelijan opas - Opettele Go-kieltä 5 minuutissa](https://learnxinyminutes.com/docs/fi-fi/go-fi)
-- [String-tyyppi – Syvempi sukellus merkkijonokäsittelyyn Go-kielessä](https://www.golangprograms.com/golang/string.html)
+Historiallisesti alimerkkijonojen erottaminen on ollut osa ohjelmointia jo kauan. Se on tarpeellinen toiminto useissa tärkeissä tehtävissä, kuten tiedon kaivaminen merkkijonoista tai koodin optimointi.
+
+Go-kielessä ei ole erityistä funktiota alimerkkijonojen erottamiseen - sen sijaan käytämme indeksointia. Kuten yllä olevasta esimerkistä nähdään, käytämme hakasulkusyntaksia (esimerkkiString[aloitusIndeksi:lopetusIndeksi]) alimerkkijonon erottamiseen. Tämä on kuitenkin vain yksi tapa; sen vaihtoehto on esimerkiksi käyttää built-in "strings" -paketin funktioita, kuten strings.Index tai strings.Split.
+
+On tärkeää muistaa, että Go käyttää puoliväliin suljettua indeksointia, mikä tarkoittaa, että lopetusindeksi ei sisälly tulokseen. Muita yksityiskohtia ovat myös byte-ekvivalenttien sijasta rune-ekvivalenttien indeksien käyttäminen silloin kun merkkijono sisältää universaaleja merkkejä.
+
+## Katso myös
+
+- Go officaalinen dokumentaatio strings paketti: https://golang.org/pkg/strings/
+- Go By Example, Strings: https://gobyexample.com/strings
+- StackOverflow, How to get a substring in Go?: https://stackoverflow.com/questions/7864316/how-to-get-a-substring-in-go

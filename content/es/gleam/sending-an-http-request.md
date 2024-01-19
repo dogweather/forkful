@@ -1,7 +1,7 @@
 ---
-title:                "Enviando una solicitud HTTP"
-html_title:           "Gleam: Enviando una solicitud HTTP"
-simple_title:         "Enviando una solicitud HTTP"
+title:                "Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
+simple_title:         "Enviando una solicitud http"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,35 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Enviar una solicitud HTTP es un proceso mediante el cual se envían datos desde un programa informático a un servidor web. Los programadores lo hacen para comunicarse con otros sistemas o servicios externos, como API's o bases de datos, y así poder obtener o enviar información.
+El envío de una solicitud HTTP es una forma de recoger información de webs o servicios externos en el internet. Los programadores hacen esto para integrar su software con otros sistemas, obtener datos y funcionalidades.
 
 ## Cómo:
-Ejemplo de código en ```Gleam``` para enviar una solicitud GET a una API:
 
+Para enviar solicitudes HTTP en Gleam, primero necesitamos importar el módulo `http`.
+
+```Gleam
+import gleam/http.{get, post}
 ```
-let resultado = Muestra
-                .Servicio
-                .Obtener(url)
-                .expect("Error al realizar solicitud HTTP")
 
-let texto = Http
-            .Respuesta
-            .Contenido(resultado)
-            .expect("Error al obtener contenido de la respuesta")
+Supongamos que queremos obtener datos de un API.
 
+```Gleam
+let response = 
+                  get("https://jsonplaceholder.typicode.com/posts")
+                  |> should_log.(_)
+                  |> response.body
 ```
-El resultado esperado sería el contenido de la respuesta en formato de texto, que se puede utilizar en el programa para realizar operaciones adicionales.
 
-## Inmersión profunda:
-En la historia de la programación, el envío de solicitudes HTTP era una tarea mucho más compleja y manual. Gracias al avance de los lenguajes de programación y las librerías, hoy en día podemos realizar esta tarea de manera simple y eficiente.
+El `get` hace una solicitud GET a la URL especificada. `response.body` hace referencia al cuerpo de la respuesta que hemos obtenido.
 
-Alternativas a ```Gleam``` para enviar solicitudes HTTP incluyen librerías en otros lenguajes como Python o JavaScript, o utilizando programas externos como cURL.
+Ahora bien, supongamos que queremos enviar datos a un API mediante una solicitud POST.
 
-Las implementaciones internas de la función de enviar solicitud HTTP pueden variar dependiendo del lenguaje y la librería utilizada, pero en general, se utilizan protocolos de red como TCP y UDP para establecer conexión con el servidor y enviar y recibir los datos.
+```Gleam
+  let response =
+                  post("https://jsonplaceholder.typicode.com/posts", "{'id': 1}")
+                  |> should_log.(_)
+                  |> response.body;
+```
 
-## Ver también:
-- Documentación oficial de ```Gleam``` (https://gleam.run)
-- Comparación de herramientas para realizar solicitudes HTTP (https://www.toptal.com/developers/http-and-rest/introduction-to-http-rest-and-apis)
-- Tutorial para realizar solicitudes HTTP en diferentes lenguajes (https://www.tutorialspoint.com/http/http_requests.htm)
+El `post` hace una solicitud POST a la URL especificada y envía los datos.
+
+## Inmersión Profunda
+
+Enviar solicitudes HTTP es un enfoque básico y antiguo para la comunicación entre sistemas. Nacido con el surgimiento de la web, ha sido una práctica estándar durante más de dos décadas.
+
+Aunque hay alternativas como GraphQL o gRPC, las solicitudes HTTP siguen siendo de facto para muchas tareas debido a su simplicidad y la amplia adopción.
+
+En el Gleam, las solicitudes HTTP se basan en la biblioteca de cliente HTTP subyacente de Erlang, que es conocida por su robustez y fiabilidad.
+
+## Ver También
+
+- Documento principal de Gleam http client: [https://hexdocs.pm/gleam_http/gleam/http.html]()
+- Tutorial sobre HTTP Request y Response en Gleam: [https://gleam.run/book/tour/http-requests.html]()
+- JSON Placeholder, una API falsa para pruebas y prototipos: [https://jsonplaceholder.typicode.com/]()

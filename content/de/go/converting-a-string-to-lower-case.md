@@ -1,7 +1,7 @@
 ---
-title:                "Ein String in Kleinschreibung umwandeln"
-html_title:           "Go: Ein String in Kleinschreibung umwandeln"
-simple_title:         "Ein String in Kleinschreibung umwandeln"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,47 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Die Umwandlung von Zeichenketten in Kleinbuchstaben ist ein häufig verwendetes Konzept in der Programmierung. Dabei wird jede Großbuchstabe in der Zeichenkette in einen entsprechenden Kleinbuchstaben umgewandelt. Programmierer tun dies, um sicherzustellen, dass alle Eingaben auf die gleiche Weise behandelt werden und keine Fehler auftreten.
+# Strings in Kleinbuchstaben Umwandeln mit Go
 
-## How to:
-In Go ist die Konvertierung einer Zeichenkette in Kleinbuchstaben sehr einfach. Hier ist ein Beispielcode, der eine Eingabeaufforderung ausgibt und die Eingabe in Kleinbuchstaben konvertiert:
+## Was & Warum?
+
+Das Umwandeln eines Strings in Kleinbuchstaben hilft dabei, Code und Benutzereingaben zu standardisieren und Vergleiche zu ermöglichen. Programmierer machen das, um Groß- und Kleinschreibungsunabhängigkeit zu erreichen.
+
+## Wie geht das?
+
+Mit Go können wir die `ToLower` Funktion aus dem `strings` Paket verwenden. Es macht es einfach, einen String in Kleinbuchstaben umzuwandeln.
 
 ```Go
 package main
 
-import "fmt"
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-    fmt.Print("Gib einen Text ein: ")
-    var input string
-    fmt.Scanln(&input)
-    
-    output := strings.ToLower(input)
-    fmt.Println("Dein Text in Kleinbuchstaben: " + output)
+	str := "Hallo Welt!"
+	lowercase := strings.ToLower(str)
+	fmt.Println(lowercase)
+}
+```
+Beim Ausführen gibt dieser Code "hallo welt!" auf der Konsole aus.
+
+## Vertiefung
+
+Die `ToLower` Funktion in Go wurde erstmals in der ersten öffentlichen Version Go 1 eingeführt. Es gibt wenige Alternativen zum `ToLower` Funktion, wie das manuelle Durchlaufen jedes Zeichens im String und Anwenden der `unicode.ToLower` Funktion darauf, aber das ist ineffizient und unpraktisch.
+
+Die `ToLower` Funktion implementiert einen effizienten Algorithmus, der direkt auf einer Kopie der Ursprungszeichenkette arbeitet und sie so in Kleinbuchstaben umwandeln kann. 
+
+```Go
+func ToLower(s string) string {
+	return Map(unicode.ToLower, s)
 }
 ```
 
-Beispiel Eingabe:
+Die Funktion nutzt eine Map-Funktion, um `unicode.ToLower` auf jeden Buchstaben im String anzuwenden. 
 
-```Go
-Gib einen Text ein: GO is Awesome!
-```
+## Siehe Auch
 
-Beispiel Ausgabe:
-
-```Go
-Dein Text in Kleinbuchstaben: go is awesome!
-```
-
-## Deep Dive:
-Die Umwandlung von Zeichenketten in Kleinbuchstaben ist kein neues Konzept und wurde schon seit langer Zeit in verschiedenen Programmiersprachen implementiert. In der Vergangenheit gab es verschiedene Methoden, dies zu erreichen, aber in modernen Programmiersprachen wie Go ist es in der Standardbibliothek enthalten.
-
-Es gibt auch alternative Methoden, um eine Zeichenkette in Kleinbuchstaben umzuwandeln, wie z.B. die Verwendung von regulären Ausdrücken oder manueller Iteration durch jedes Zeichen. In der Regel ist die Verwendung von Standardbibliotheksfunktionen jedoch effizienter und zuverlässiger.
-
-Die Implementierungsdetails der Konvertierung von Zeichenketten in Kleinbuchstaben hängen von der verwendeten Programmiersprache ab. In Go wird die Funktion ```strings.ToLower()``` verwendet, die jeden Buchstaben in der Zeichenkette mit Hilfe der Unicode-Tabelle in den entsprechenden Kleinbuchstaben umwandelt.
-
-## Siehe auch:
-- [Go Strings Package Documentation](https://golang.org/pkg/strings/)
-- [Wikipedia Artikel über Groß- und Kleinschreibung](https://de.wikipedia.org/wiki/Gro%C3%9Fschreibung_und_Kleinschreibung)
+Für eine detailliertere Erklärung zur `ToLower` Funktion und verwandten Funktionen, besuchen Sie die offizielle Go Dokumentseite: [https://golang.org/pkg/strings/#ToLower](https://golang.org/pkg/strings/#ToLower).

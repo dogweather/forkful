@@ -1,7 +1,7 @@
 ---
-title:                "Konvertering av en streng til små bokstaver"
-html_title:           "Swift: Konvertering av en streng til små bokstaver"
-simple_title:         "Konvertering av en streng til små bokstaver"
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,27 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å konvertere en streng til små bokstaver betyr rett og slett å endre alle bokstavene i en streng til små bokstaver i stedet for store bokstaver. Dette gjøres ofte av programmere for å gjøre tekstbehandling enklere og for å sikre konsistens i tekstformatering.
+Konvertering av en streng til små bokstaver er prosessen med å endre alle store bokstaver i en tekststreng til deres tilsvarende små bokstaver. Dette brukes ofte i programmering for å gi uniformitet til data, og for å sikre korrekt sammenligning, søk og sortering av strenger.
 
-## Hvordan:
-Å konvertere en streng til små bokstaver i Swift er enkelt. Du kan bruke "lowercased ()" -metoden på strengen din for å gjøre dette. Se eksemplene nedenfor for å se dette i aksjon.
+## Hvordan?
+Her er hvordan du gjør det i Swift:
 
 ```Swift
-//Eksempel 1:
-let navn = "Marie"
-let lavereNavn = navn.lowercased()
-
-print (lavereNavn) //Output: marie
-
-//Eksempel 2:
-let setning = "Jeg liker å programmere"
-let lavereSetning = setning.lowercased()
-
-print (lavereSetning) //Output: jeg liker å programmere
+let uppercaseString = "Hei Verden!"
+let lowercaseString = uppercaseString.lowercased()
+print(lowercaseString)
+// Output: hei verden!
 ```
 
-## Dypdykk:
-Å konvertere en streng til små bokstaver er en vanlig oppgave for programmere. Det er spesielt nyttig når du jobber med sammenligninger av tekst, da det sikrer at sammenligningen er basert på bare de faktiske bokstavene og ikke på versaler og små bokstaver. Det finnes andre måter å konvertere strenger til små bokstaver i Swift, som for eksempel å bruke "uppercased ()" -metoden for å konvertere til store bokstaver, eller "capitalized ()" -metoden for å konvertere til store bokstaver ved første bokstav i setningen.
+Du ser at 'Hei Verden!' nå er blitt til 'hei verden!'.
 
-## Se også:
-For mer informasjon om string-manipulasjon i Swift, sjekk ut Swift-dokumentasjonen: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID0E8O4STFY
+## Dyp Dykk
+1. Historisk sett har behovet for å konvertere strenger til små bokstaver alltid vært til stede i programmering; ikke bare for å normalisere og standardisere data, men også for å sammenligne strenger effektivt. Hver bokstav i ASCII har forskjellige representasjoner for store og små bokstaver. Derfor, 'A' er ikke lik 'a' i en streng sammenligning.
+
+2. Alternativt kan vi bruke `lowercased()` funksjonen på en streng for å få en ny streng med små bokstaver. Originalstrengen forblir upåvirket.
+
+3. Var mustered av 'String' klassen, `lowercased()` returnerer en ny streng med alle alfabeter i små bokstaver. Denne metoden fungerer ikke bare for engelske bokstaver, men også for andre språkaldersbokstaver.
+
+## Se Også
+- [Apple Documentation: lowercased()](https://developer.apple.com/documentation/swift/string/2293301-lowercased) for ytterligere informasjon om `lowercased()` metoden.
+- [Stack Overflow: Swift](https://stackoverflow.com/questions/tagged/swift) for praktiske diskusjoner om Swift programmering.

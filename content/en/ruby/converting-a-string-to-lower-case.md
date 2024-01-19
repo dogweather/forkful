@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Ruby recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,32 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+## What & Why?
 
-Converting a string to lower case means transforming all the letters in a string to their lowercase equivalent. Programmers do this to standardize data and make it easier to compare strings. It also allows for better data validation and user input handling.
+Converting a string to lower case is changing all the uppercase characters within a string to lowercases. Programmers do this for a variety of reasons, like standardizing input, ensuring data consistency, or case-insensitive comparisons.
 
-# How to:
+## How to:
+
+Ruby has a method (`.downcase`) for this. Here's a basic example:
 
 ```Ruby
-# 1. Using the downcase method
-string = "Hello World"
-puts string.downcase # output: hello world
-
-# 2. Using the lowercase modifier (only supported in Ruby 2.4+)
-string = "Hello World"
-puts string.downcase # output: hello world
+text = "Hello, World!"
+lowercase_text = text.downcase
+puts lowercase_text
 ```
 
-# Deep Dive
+When you run the above code, it will produce:
 
-Converting strings to lower case has been a common practice since the early days of programming. In the early programming languages, there was no built-in function for this task, so programmers had to use complex algorithms to achieve the same result. As programming languages evolved, the downcase method was introduced to make this conversion easier and more efficient.
+```
+hello, world!
+``` 
 
-In Ruby, the downcase method is the standard way of converting strings to lower case. However, there is a newer method, lowercase, which was introduced in Ruby 2.4. This method directly modifies the original string, rather than returning a new one like the downcase method.
+## Deep Dive
 
-The downcase method and lowercase modifier can also be used with non-alphabetic characters, but they will remain unchanged. For example, "123abc" will be converted to "123abc" as all numbers and symbols are ignored.
+Ruby's downcase method has been around since its early versions. It's part of the standard String class that provides tools for manipulating text data. 
 
-# See Also
+In the unicode world, `.downcase` may not behave as you expect. It converts characters based on the Unicode case mapping, which can have unexpected results for characters outside the Latin alphabet.
 
-- [Ruby Documentation on String#downcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
-- [Ruby Documentation on String#lowercase](https://ruby-doc.org/core-2.7.1/String.html#method-i-lowercase)
-- [Stack Overflow Article on String Conversions in Ruby](https://stackoverflow.com/questions/1387002/how-to-convert-a-string-to-lower-or-upper-case-in-ruby)
+An alternative in Ruby is to use `.mb_chars.downcase.to_s`. This uses the multibyte safe method to convert strings to lowercase:
+
+```Ruby
+text = "ĞHello, World!"
+lowercase_text = text.mb_chars.downcase.to_s
+puts lowercase_text
+```
+On running this code, we get:
+
+```
+ğhello, world!
+``` 
+
+Another alternative is to use `.downcase(:fold)`. This performs Unicode case folding, which is a kind of normalization:
+
+```Ruby
+text = "ĞHello, World!"
+lowercase_text = text.downcase(:fold)
+puts lowercase_text
+```
+
+For `:fold`, the output is like `ğhello, world!`.
+
+## See Also
+
+For more information, see:
+
+- [Ruby String downcase method (ruby-doc.org)](https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase)
+- [Working with unicode strings (rubyguides.com)](https://www.rubyguides.com/2015/05/working-with-unicode-strings/)

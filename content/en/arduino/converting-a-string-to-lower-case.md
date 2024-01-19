@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Arduino recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -12,30 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a string to lower case is the process of changing all uppercase letters in a string to their corresponding lowercase letters. Programmers often do this to ensure consistency and uniformity in user input. It also makes searching and comparing strings easier, as uppercase and lowercase letters are treated differently in programming.
+Converting a string to lower case means changing all uppercase characters in a string to lowercase. Programmers often do this for consistency in data processing and comparison tasks. 
 
 ## How to:
 
-To convert a string to lower case in Arduino, we can use the ```toLowerCase()``` function. This function takes in a string as an argument and returns a new string with all lowercase letters. Let's see an example:
+Converting a string to lower case in Arduino is a straight-up task. Here is a simple example:
 
 ```Arduino
-String str = "Hello World";
-String lowerStr = str.toLowerCase();
-
-Serial.println(lowerStr); // Output: hello world
+String message = "HELLO WORLD!";
+message.toLowerCase();
+Serial.println(message);
 ```
+In this code snippet, `"HELLO WORLD!"` is transformed to `"hello world!"`. The `toLowerCase()` function does the magic.
 
-In this example, we create a string variable with the value "Hello World." Then, using the ```toLowerCase()``` function, we convert the string to lowercase and store it in a new variable called ```lowerStr```. Lastly, we use the ```Serial.println()``` function to print the lowercase string to the serial monitor.
+## Deep Dive
 
-## Deep Dive:
+Transforming a string to lower case isn't a new concept. It's been around for as long as the ASCII standard, defined in the 1960s, which specifically separates lowercase and uppercase characters by 32 values.
 
-Converting strings to lowercase has been a common practice in programming languages since the early days of computing. It allows for more flexibility in user input and text manipulation. In some programming languages, there are also other methods for converting strings to lowercase, such as using loops or regular expressions.
+An alternative way is using the `tolower()` function in a loop for each character of the string. However, in a language like Arduino which supports high-level constructs, the `toLowerCase()` method is more efficient and easy-to-use.
 
-An alternative to converting strings to lowercase is to use the ```toUpperCase()``` function to convert all letters to uppercase. However, this may not always be ideal depending on the specific use case.
+The implementation of `toLowerCase()` is based on ASCII values. It scans through each character of the string and if it's an uppercase letter (ASCII value in range 65-90), it adds 32 to its ASCII value, effectively converting it to the corresponding lowercase letter.
 
-In terms of implementation, converting a string to lowercase involves iterating through each character in the string and checking if it is a lowercase letter. If it is, we leave it as is. Otherwise, we convert it to lowercase by adding the ASCII value difference between uppercase and lowercase letters. This process is repeated for each character in the string to create the new lowercase string.
+## See Also
 
-## See Also:
-
-- [Arduino Reference - toLowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
-- [ASCII Table](http://www.asciitable.com)
+Check these for more insights:
+- ASCII table: `http://www.asciitable.com/`
+- Arduino String functions reference: `https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/`

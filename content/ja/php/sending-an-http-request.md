@@ -1,7 +1,7 @@
 ---
-title:                "「HTTPリクエストの送信」"
-html_title:           "PHP: 「HTTPリクエストの送信」"
-simple_title:         "「HTTPリクエストの送信」"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-HTTPリクエストを送信することとは何か、そしてプログラマーがそれを行う理由を説明します。
-## プロセス
-下記のコードブロック内にあるコーディング例とサンプル出力を参照してください。
+## 何となぜ？
+
+HTTPリクエストの送信とは、ウェブサーバーに情報をリクエストする仕組みのことで、共有データの取得や操作が可能となります。プログラマーはAPIにアクセスしたり、他のウェブサービスと通信したりするためにこの手段を利用します。
+
+## 方法：
+
+PHPにはもともとHTTPリクエストを送るための関数が組み込まれています。以下はその例です。
 
 ```PHP
-// cURLを使用してHTTPリクエストを送信する方法
+<?php
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://example.com/api");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$response = curl_exec($ch);
+curl_setopt($ch, CURLOPT_URL, 'http://example.com');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$output = curl_exec($ch);
 curl_close($ch);
-
-// Guzzleを使用してHTTPリクエストを送信する方法
-$client = new GuzzleHttp\Client();
-$response = $client->request('GET', 'https://example.com/api')->getBody();
+print_r($output);
+?>
 ```
 
-## さらに詳しく
-HTTPリクエストを送信するプロセスについての歴史的背景や、他の代替方法、また実装の詳細について詳しく説明します。
-HTTPリクエストを送信する方法には、cURLやGuzzleのようなライブラリを使用する方法が一般的です。これらのライブラリはHTTP通信を簡単に行うことができ、多くのオプションを提供しています。しかし、PHPには標準で用意されている`fopen`や`file_get_contents`といった関数を使用する方法もあります。これらの関数は簡単に使用できますが、オプションの設定はできません。どの方法を使用するかは、目的やプロジェクトの仕様によって異なります。
+## 深堀り：
 
-## 関連リンク
-- [cURLの公式ドキュメント](https://curl.haxx.se/docs/)
-- [Guzzleの公式ドキュメント](https://docs.guzzlephp.org/en/stable/)
-- [PHPマニュアル - fopen関数](https://www.php.net/manual/ja/function.fopen.php)
-- [PHPマニュアル - file_get_contents関数](https://www.php.net/manual/ja/function.file-get-contents.php)
+HTTPリクエストの送信は、ウェブが誕生した1991年から存在します。それ以来、様々なプログラミング言語やライブラリが、この基本的なクライアントとサーバー間の通信の規則を支えてきました。
+
+また代替手段として、`file_get_contents`や`http_get`などのPHP組み込み関数を利用する方法もありますが、これらは一部の限定的なシーンでしか使えないこと、HTTPヘッダー情報が制限されることがデメリットとなります。
+
+実装詳細についてですが、個々のcurl機能はlibcurlというバックエンドライブラリによって可能となっています。具体的には、`curl_init` でセッションを初期化、`curl_setopt`でオプションを設定、最後に`curl_exec`で実行します。
+
+## 参考：
+
+- [PHP: クライアントURLライブラリ - Manual](https://www.php.net/manual/ja/book.curl.php)
+- [HTTPメッセージ - Web開発入門 | MDN](https://developer.mozilla.org/ja/docs/Web/HTTP/Messages)
+- [Guzzle, PHP HTTP client](http://docs.guzzlephp.org/en/stable/) 
+
+これらのリンクを参照して、PHPでのHTTPリクエスト送信についてさらに学びましょう。

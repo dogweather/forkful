@@ -1,7 +1,7 @@
 ---
-title:                "랜덤 숫자 생성"
-html_title:           "C: 랜덤 숫자 생성"
-simple_title:         "랜덤 숫자 생성"
+title:                "랜덤 숫자 생성하기"
+html_title:           "Rust: 랜덤 숫자 생성하기"
+simple_title:         "랜덤 숫자 생성하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,23 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"
 ## 무엇 & 왜?
-난수를 생성한다는 것은 무엇인지, 프로그래머들이 왜 이 일을 하는지에 대해 두-세 문장으로 설명합니다.
 
-## 방법:
+랜덤 숫자 생성이란 무작위의 숫자를 만드는 과정입니다. 프로그래머들은 게임, 시뮬레이션, 머신 러닝 등에서 예측 불가능한 결과를 만들기 위해 이를 활용합니다.
+
+## 어떻게:
+
+방법은 매우 간단합니다. C 언어에서는 `rand()` 함수를 사용하여 랜덤 숫자를 생성할 수 있습니다. 다음은 예제 코드입니다:
+
 ```C
-// 0에서 9 사이의 난수 출력하기
-int random_number = rand() % 10;
-printf("%d", random_number);
-```
-위 코드는 C 언어를 사용하여 난수를 생성하는 예시입니다. `rand()` 함수를 호출하여 0에서 9 사이의 임의의 숫자를 출력합니다. 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-## 깊게 파보기:
-1. 역사적 배경: 난수 생성은 컴퓨터 과학의 초기부터 사용되어 온 기법입니다. 1940년대부터 사용되던 "선형 합동법"이 먼저 등장하여 여전히 사용되고 있습니다.
-2. 대안: 난수 생성 방법은 다양하지만 가장 흔히 사용되는 기법은 "유사 난수"입니다.
-3. 구현 세부사항: C 언어에서 `rand()` 함수는 유사 난수를 생성합니다. 그러나 이는 진정한 난수가 아니며, 시드값에 따라 반복될 수 있는 단점이 있습니다.
+int main() {
+    srand(time(0)); 
+    printf("Random Number: %d\n", rand()%100); 
+    return 0;
+}
+```
+
+이 코드는 0부터 99 사이의 랜덤 숫자를 생성합니다. 출력은 매번 다릅니다.
+
+## 깊게 알아보기:
+
+랜덤 숫자 생성은 컴퓨터과학의 중요한 분야입니다. 초기 컴퓨터 시대부터 랜덤성은 암호학, 시뮬레이션, 테스트 케이스 생성 등에 쓰였습니다.
+
+`rand()` 함수 외에도 다른 생성 방법들도 존재합니다. 예를 들어, cryptographically secure pseudo-random number generator (CSPRNG) 같은 더 강력한 방법들이 있습니다.
+
+레퍼런스를 위해, `rand()` 함수는 실제로는 pseudo-random number generator (PRNG)를 사용합니다. 즉, 초깃값(seed)에 따라 랜덤처럼 보이는 숫자를 생성하는 함수입니다.
 
 ## 참고 자료:
-- [선형 합동법 정보](https://en.wikipedia.org/wiki/Linear_congruential_generator)
-- [흔히 사용되는 난수 생성 방법](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+
+- C 언어의 `rand()` 함수에 대한 더욱 자세한 설명: [https://www.cplusplus.com/reference/cstdlib/rand/](https://www.cplusplus.com/reference/cstdlib/rand/)
+- 랜덤 숫자 생성에 대한 아주 깊고 알찬 내용: [https://en.wikipedia.org/wiki/Random_number_generation](https://en.wikipedia.org/wiki/Random_number_generation)
+- Cryptographically secure pseudo-random number generator (CSPRNG)에 대한 정보: [https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator)

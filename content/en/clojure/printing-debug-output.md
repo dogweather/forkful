@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Clojure recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -12,32 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Printing debug output is the act of displaying information during program execution to help identify and understand issues that may arise. Programmers use this technique to get a better understanding of the code's behavior and to troubleshoot errors or unexpected results.
+Printing debug output refers to generating messages to track code execution. Programmers use it to isolate and identify issues, trace code execution, and verify correctness. 
 
 ## How to:
 
-To print debug output in Clojure, you can use the ```clojure/pprint``` library. This library provides functions that pretty-print data structures, making it easier to read and understand. Here's an example:
+In Clojure, you have several options to print debug output. The most common one is using `println`. Let's demonstrate a simple example:
 
-```
-(clojure/pprint (range 5))
-;; Output: (0 1 2 3 4)
-```
-
-You can also use the ```println``` function, which prints a line to the standard output. Here's an example:
-
-```
-(println "Hello World!")
-;; Output: Hello World!
+```Clojure
+(defn add-numbers [a b]
+  (let [sum (+ a b)]
+    (println "Debug: " sum)
+    sum))
 ```
 
-## Deep Dive:
+When you run `(add-numbers 1 2)`, you will see the following output:
 
-Printing debug output has been a common practice in the programming world, and it remains relevant today. In the past, developers would often use debugging tools or print statements to troubleshoot issues. With the rise of unit testing and integrated development environments, the need for printing debug output has decreased. However, it is still a useful technique, especially for understanding the behavior of complex code or for debugging errors that are difficult to recreate.
+```Clojure
+Debug: 3
+```
 
-Apart from the ```clojure/pprint``` library and the ```println``` function, there are other ways to print debug output in Clojure. For example, you can use the ```prn``` function, which prints its arguments without a newline. Additionally, Clojure has a built-in ```print-dup``` function, which prints the serializable representation of data structures. These alternatives provide more flexibility depending on the debugging task at hand.
+## Deep Dive
 
-Implementation-wise, printing debug output in Clojure is relatively straightforward. The ```clojure/pprint``` library uses the ```clojure.pprint``` namespace, which provides functions for pretty-printing. Similarly, the ```println``` function is defined in the ```clojure.core``` namespace. Understanding how these functions work under the hood can give you a better grasp of the debugging process.
+The concept of printing debug output has been around since the early days of programming. It's usually valuable during development but can clutter the output in production.
 
-## See Also:
+While `println` is an easy way to print debug output, Clojure has alternatives too. One of the popular libraries used for this is `tools.logging`.
 
-To learn more about printing debug output in Clojure, check out the official documentation for the ```clojure/pprint``` library and the ```println``` and ```prn``` functions. You can also explore other debugging techniques and tools, such as unit testing and integrated development environments, to find the best approach for your development workflow. Happy debugging!
+Here is how you can do logging using `tools.logging`:
+
+```Clojure
+(ns my-ns
+  (:require [clojure.tools.logging :as log]))
+
+(defn add-numbers [a b]
+  (let [sum (+ a b)]
+    (log/info "Debug: " sum)
+    sum))
+```
+
+Remember, `println` directly outputs to the console, whereas `tools.logging` gives you more control as you can configure where you want to log (console, file, etc.). 
+
+## See Also
+
+Additional information and related topics can be found at:
+
+1. [Tools.Logging Clojure Documentation](https://clojure.github.io/tools.logging/)
+2. [Clojure Debugging](https://clojuredocs.org/clojure.repl/printf)
+3. [Clojure - A Beginner’s Guide](https://www.braveclojure.com/getting-started/)

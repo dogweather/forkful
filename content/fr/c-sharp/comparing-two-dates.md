@@ -1,6 +1,6 @@
 ---
 title:                "Comparer deux dates"
-html_title:           "C#: Comparer deux dates"
+html_title:           "Clojure: Comparer deux dates"
 simple_title:         "Comparer deux dates"
 programming_language: "C#"
 category:             "C#"
@@ -10,24 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que la comparaison de deux dates et pourquoi les programmeurs le font-ils?
-La comparaison de deux dates est une méthode utilisée par les programmeurs pour déterminer si une date est antérieure, égale ou postérieure à une autre. Cela peut être utile dans de nombreuses applications, telles que la gestion des tâches, les réservations en ligne, ou simplement pour vérifier la validité d'une entrée utilisateur.
+# Article: Comparer deux dates en C#
+
+## Quoi & Pourquoi?
+Comparer deux dates, c'est déterminer leur ordre chronologique. Les programmeurs le font pour exécuter des opérations basées sur la date comme le tri ou pour vérifier l'échéance.
 
 ## Comment faire:
-Pour comparer deux dates en C#, vous pouvez utiliser la méthode `DateTime.CompareTo()`. Elle renvoie un entier négatif si la première date est antérieure à la seconde, 0 si les deux dates sont égales, ou un entier positif si la première date est postérieure à la seconde. Voici un exemple de code avec un résultat de sortie correspondant:
+Voici un exemple de la façon de comparer deux dates en C#:
 
 ```C#
-DateTime date1 = new DateTime(2021, 01, 01);
-DateTime date2 = new DateTime(2021, 02, 01);
+DateTime date1 = new DateTime(2021, 12, 25);
+DateTime date2 = new DateTime(2022, 1, 1);
 
-int result = date1.CompareTo(date2);
-Console.WriteLine(result); // Output: -1
+if (date1 < date2)
+{
+    Console.WriteLine("date1 est avant date2");
+}
+else if (date1 > date2)
+{
+    Console.WriteLine("date1 est après date2");
+}
+else
+{
+    Console.WriteLine("date1 est la même que date2");
+}
 ```
 
-## Plongée en profondeur:
-La comparaison de dates est importante car elle permet de comparer des événements dans le temps et de prendre des décisions en fonction de ces comparaisons. Il est également important de noter que la méthode `CompareTo()` utilise une comparaison basée sur les ticks, qui mesurent le nombre de 100 nanosecondes écoulées depuis le 1er janvier 0001.
+Dans cet exemple, l'output sera:
 
-Il existe également d'autres méthodes pour comparer des dates, telles que `DateTime.Equals()` qui vérifie si les deux dates sont exactement les mêmes, ou `DateTime.Compare()` qui renvoie un résultat différent de `CompareTo()` basé sur plusieurs facteurs. 
+```C#
+"date1 est avant date2"
+```
+
+## Plongée profonde:
+Le support pour la comparaison de dates a été introduit en C# dès sa première version. Vous pouvez également utiliser la méthode `DateTime.Compare` qui renvoie -1, 0, ou 1 basé sur l'ordre des deux dates. Les Détails de mise en œuvre simples sont que les dates sont stockées comme des valeurs numériques qui représentent les ticks (100 nano secondes) depuis une date de base (1er janvier 1), leur comparaison revient à comparer deux nombres.
+
+```C#
+int result = DateTime.Compare(date1, date2);
+```
 
 ## Voir aussi:
-Pour en savoir plus sur la gestion des dates en C#, vous pouvez consulter la documentation officielle de Microsoft sur les méthodes liées aux dates (https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime?view=net-5.0). Vous pouvez également découvrir d'autres méthodes de comparaison de dates en faisant des recherches sur Internet ou en consultant des ressources spécifiques au framework que vous utilisez.
+- Documentation sur la classe DateTime: https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime?view=net-6.0
+- Méthode DateTime.Compare: https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime.compare?view=net-6.0
+- Autre discussion sur le sujet: https://stackoverflow.com/questions/2719437/datetime-compare-function-in-c-sharp

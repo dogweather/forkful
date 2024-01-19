@@ -1,7 +1,7 @@
 ---
-title:                "Beräkning av ett datum i framtiden eller förflutna"
-html_title:           "Fish Shell: Beräkning av ett datum i framtiden eller förflutna"
-simple_title:         "Beräkning av ett datum i framtiden eller förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "Fish Shell: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -12,37 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Beräkning av datum i framtiden eller förflutna är en vanlig uppgift inom programmering. Det innebär att man tar ett befintligt datum och lägger till eller subtraherar en viss mängd tid för att få ett nytt datum. Detta kan vara användbart för att visa framtida händelser eller för att hantera datum inom ett program.
+Att beräkna ett datum i framtiden eller förflutna handlar om att skapa ett datum baserat på en viss tidsförskjutning från nuvarande datum. Det är vanligt bland programmerare för allt från schemaläggning av uppgifter till att skapa tidslinjer för projektplanering.
 
-## Så här gör du:
+## Hur man gör:
 
-```Fish Shell
-# Lägg till 25 dagar till det befintliga datumet
-date -d "+25 days"
+I Fish Shell kan vi använda 'date' kommandot för att beräkna datum. Enkel syntax kan se ut så här:
 
-# Subtrahera 2 veckor från det befintliga datumet
-date -d "-2 weeks"
+```fish
+date -u -d "+30 days"
 ```
 
-Output:
+Detta kommer att returnera ett datum 30 dagar framåt. 
+
+Om vi vill gå tillbaka i tiden, kan vi ändra tecknet till minus:
+
+```fish
+date -u -d "-30 days"
 ```
-# Lägger till 25 dagar från dagens datum
-Thu Apr 4 12:00:00 CEST 2024
 
-# Subtraherar 2 veckor från dagens datum
-Thu Mar 21 12:00:00 CET 2024
-```
+Detta ger ett datum 30 dagar i det förflutna.
 
-## Djupdykning:
+## Djup dykning:
 
-Att räkna ut datum i framtiden eller förflutna är en viktig del av programmering och används ofta i samband med schemaläggning, påminnelser eller hantering av tidsbaserade data.
+Historiskt sett har beräkning av datum baserat på en tidsförskjutning varit en grundläggande uppgift inom programmering, och det är därför det har en stark representation i UNIX-tidskommandot 'date'.
 
-Det finns flera andra språk och verktyg som också kan användas för denna uppgift, såsom Python, Ruby eller Bash. Det är viktigt att välja det som passar bäst för ditt specifika projekt.
+När det gäller alternativ till datumkommandot i Fish Shell, kan du använda mer kraftfulla verktyg som 'DateTime' biblioteket i språk som Python eller JavaScript. Dessa verktyg erbjuder mer sofistikerade metoder för datumhantering.
 
-Fish Shell använder sig av GNU date-kommandot för att hantera datumberäkningar. Det är värt att notera att detta kommando kan ha olika syntax beroende på operativsystemet, så se till att kolla den lokala dokumentationen för att säkerställa korrekt implementation.
+När det gäller att implementera detta i Fish Shell, beror det på 'date' kommandot som anroper systemkärnan för att få det aktuella datumet och tiden, och sedan tillämpar det mängden tid ni önskar för att ge det begärda datumet.
 
-## Se även:
+## Se också:
 
-- Fish Shell dokumentation: https://fishshell.com/docs/current/index.html
-- GNU date manual: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- Alternativa verktyg för att hantera datum: https://www.redhat.com/sysadmin/date-time-calculations
+För mer information om 'date' kommandot och dess användning, kolla in dess man-sida:  [http://man7.org/linux/man-pages/man1/date.1.html](http://man7.org/linux/man-pages/man1/date.1.html)
+
+För mer avancerad datumhantering i programmeringsspråk som Python, se 'DateTime' biblioteket: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)

@@ -10,33 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Starting a New Project in Bash
+
 ## What & Why?
-Starting a new project is the process of creating a new software, application, or program from scratch. Programmers do this to solve a specific problem or fulfill a need, either for themselves or for others.
+
+Let's clear this up right away. Starting a new project in Bash implies assembling a set of structured scripts to accomplish a task or software. We do it to organize our work, make it reusable and manageable.
 
 ## How to:
-To start a new project in Bash, you can follow these steps:
+
+Easy peasy! Start a new script with a text editor, and use the shebang (#!) to specify the shell interpreter.
+
 ```Bash
-# Create a new directory for your project 
-mkdir my_project
-# Move into the directory you just created 
-cd my_project 
-# Initialize the project using Git 
-git init 
-# Create a new file for your project 
-touch app.sh
+#!/bin/bash
+echo "Hello, world!"
 ```
-You now have a new directory for your project and a blank file to start coding in.
 
-## Deep Dive:
-Starting a new project is an essential part of the software development process. It allows programmers to have a clean and organized starting point for their code, making it easier to maintain and add new features as the project evolves.
+Just run the script to see the output.
 
-Before the introduction of Git, programmers typically used version control systems like Subversion or CVS to manage their projects. However, Git offers a more flexible and decentralized approach, making it the preferred choice for many developers.
+```Bash
+$ ./myscript.sh
+Hello, world!
+```
 
-Alternatives to starting a new project in Bash include using a development environment or IDE like Visual Studio Code, which provides built-in project management tools.
+Remember, to run it, you must add execution permission:
 
-There are no specific implementation details for starting a new project in Bash, as it is a simple and straightforward process. However, it is essential to set up proper project organization and version control practices to ensure a smooth development journey.
+```Bash
+$ chmod +x myscript.sh
+```
 
-## See Also:
-- [Bash Guide for Beginners](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [Git Documentation](https://git-scm.com/doc)
-- [Visual Studio Code](https://code.visualstudio.com/)
+## Deep Dive
+
+Historically, Bash has been the default shell in various Unix and Linux distributions. It was released in 1989 as a replacement for the then-default Bourne shell, hence the name, Bash (Bourne Again SHell).
+
+Dealing with alternatives, 'sh' is the original Unix shell. However, Bash is more feature-loaded. You also have Zsh and Fish, in the race, offering more user-friendly and interactive features.
+
+About implementation, here's where it gets a tad bit tricky. The `.bashrc` file is used to configure your Bash sessions, and you can call your scripts from it. This is a potent feature, but be careful - any errors in this file can lead to a non-functioning terminal session!
+
+## See Also
+
+For more on Bash scripting, check these out:
+
+- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
+- [Bash Beginners Guide](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [ShellCheck](https://www.shellcheck.net/), a tool for linting your shell scripts.

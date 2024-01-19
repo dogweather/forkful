@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden på en sträng"
-html_title:           "Python: Att hitta längden på en sträng"
-simple_title:         "Att hitta längden på en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,37 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hitta längden på en sträng är en vanlig uppgift inom programmering. Det betyder helt enkelt att ta reda på hur många tecken en sträng består av. Detta är användbart när man behöver behandla text på olika sätt eller jämföra olika strängar med varandra.
+Söka längden på en sträng betyder att få reda på antalet tecken den innehåller. Programmerare behöver denna information när de behandlar textinmatning, utskriftsformat och dataanalys.
 
-## Så här gör du:
-För att hitta längden på en sträng i Python, använder man funktionen "len()." Det räcker med att skriva detta korta kommando innanför parenteserna, precis som i exemplet nedan:
+## Så här gör man:
+Med Python kan du enkelt hitta strängens längd med `len()` funktionen. 
 
-```Python
-my_string = "Hej världen!"
-print(len(my_string))
+```Python 
+sträng = 'Hej, Sverige!'
+print(len(sträng))
 ```
 
-Detta kommer att returnera värdet 12 i terminalen, eftersom strängen "Hej världen!" består av 12 tecken.
+Resultatet blir:
 
-För att hitta längden på en tom sträng, skriver man bara len() utan några argument innanför parenteserna:
-
-```Python
-empty_string = ""
-print(len(empty_string))
+```
+14
 ```
 
-Detta kommer att returnera värdet 0, eftersom en tom sträng inte innehåller några tecken alls.
+Detta visas eftersom vår sträng innehåller totalt 14 tecken.
 
-## Djupdykning:
-Att hitta längden på en sträng är en grundläggande och vanlig uppgift inom programmering. Det är också en effektiv metod för att jämföra strängar med varandra, eftersom man kan kontrollera om de har samma längd.
+## Djupdykning
+Python's `len()` funktion introducerades redan i Python 1.0. Det är tillgängligt i samtliga versioner och är kärnfunktion i språket, vilket gör det extremt snabbt och effektivt. 
 
-Innan len()-funktionen introducerades i Python, var det vanligt att använda en for-loop för att gå igenom varje tecken i en sträng och räkna dem manuellt. Men med len() blir detta enkelt och snabbt gjort med bara en rad kod.
+Alternativt kan du använda en for-loop för att räkna tecknen, men det kommer att vara långsammare än `len()`. 
 
-Det finns också andra sätt att hitta längden på en sträng, till exempel genom att använda Indexing eller Slicing metoder. Men len() är den mest effektiva och enklaste metoden för att ta reda på längden på en sträng i Python.
+```Python 
+sträng = 'Hej, Sverige!'
+längd = 0
+for tecken in sträng:
+  längd += 1
+print(längd)
+```
+
+Det betyder inte att `len()` är alltid det bästa valet. Om du bara vill veta om strängen är tom eller inte, kanske `sträng == ''` är mer lämpligt och snabbare.
+
+Implementationen av `len()` i Python använder C-stilen att lagra strängar: en null-tecken avslutar strängen, och `len()` fungerar genom att hoppa fram till nollstället och räkna hur många hopp den behövde.
 
 ## Se även:
-Här är några länkar till andra resurser som kan vara användbara för att lära sig mer om att hitta längden på strängar i Python:
-
-- [Python dokumentation om len()](https://docs.python.org/3/library/functions.html#len)
-- [Tre olika sätt att räkna längden på en sträng i Python](https://www.geeksforgeeks.org/python-string-length-count/)
-- [RealPython's guide om att räkna tecken i en sträng](https://realpython.com/python-string-length/)
+- Python officiella dokumentation om `len()` funktionen: https://docs.python.org/3/library/functions.html#len
+- En omfattande guide om hur man arbetar med strängar i Python: https://realpython.com/python-strings/
+- StackOverflow fråga om olika sätt att mäta längden på en sträng: https://stackoverflow.com/questions/1735952/whats-the-fastest-way-in-python-to-measure-the-length-of-a-string

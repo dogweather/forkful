@@ -1,7 +1,7 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Javascript: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Konkatenacja ciągów znaków"
+html_title:           "Bash: Konkatenacja ciągów znaków"
+simple_title:         "Konkatenacja ciągów znaków"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,40 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co i dlaczego?
+## Co i dlaczego?
 
-Konkatenacja ciągów to po prostu połączenie dwóch lub więcej ciągów znaków w jedną dłuższą linię. Programiści wykorzystują tę technikę, aby łączyć różne elementy w celu wyświetlania tekstu lub budowania bardziej skomplikowanych napisów.
+Konkatenacja łańcuchów to proces łączenia dwóch lub więcej łańcuchów znaków w jeden. Programiści używają jej do łączenia różnych informacji, tworzenia wiadomości i udostępniania efektywnych wyjść do użytkownika.
 
-Jak to zrobić:
+## Jak to zrobić:
 
-👨‍💻 W JavaScript, możemy wykorzystać operator + do konkatenacji ciągów znaków:
+W JavaScript można łatwo połączyć łańcuchy znaków za pomocą operatora `+`:
 
-```javascript
-let pierwszyCiąg = "Witaj";
-let drugiCiąg = "świecie!";
-let wynik = pierwszyCiąg + " " + drugiCiąg;
-console.log(wynik); // Wyświetla "Witaj świecie!"
+```Javascript
+let powitanie = "Cześć, ";
+let imie = "Jan";
+let powitanieCale = powitanie + imie;
+console.log(powitanieCale); // Wypisuje: "Cześć, Jan"
 ```
 
-👨‍💻 Możemy również użyć metody concat():
+Można również użyć metody `.concat()`:
 
-```javascript
-let pierwszyCiąg = "Hello";
-let drugiCiąg = "world!";
-let wynik = pierwszyCiąg.concat(" ", drugiCiąg);
-console.log(wynik); // Wyświetla "Hello world!"
+```Javascript
+let powitanie = "Cześć, ";
+let imie = "Jan";
+let powitanieCale = powitanie.concat(imie);
+console.log(powitanieCale); // Wypisuje: "Cześć, Jan"
 ```
 
-Najważniejsze jest to, aby pamiętać, aby wszystkie elementy były ciągami znaków. W przeciwnym razie mogą pojawić się problemy z działaniem kodu.
+## Głębsze zagadnienia:
 
-Pogłębione informacje:
+Historia: Pierwotnie, konkatenacja była używana w wczesnych językach programowania takich jak COBOL czy Fortran. Zasada działania jest identyczna jak w JavaScript.
 
-🔍 Konkatenacja ciągów była możliwa już w języku programowania C, a następnie stała się standardem w innych językach, w tym w JavaScript. Alternatywą dla konkatenacji jest użycie szablonów literałów, które mogą być bardziej czytelne i łatwiejsze do zrozumienia.
+Alternatywy: Jest kilka alternatywnych sposobów łączenia łańcuchów w JavaScript. Można użyć metody `.join()`, która łączy elementy tablicy w jeden łańcuch, lub „Template Literals”:
 
-⚙️ W rzeczywistości, kiedy używamy operatora + do konkatenacji, wewnętrznie używany jest operator +=. W związku z tym, kiedy używamy konkatenacji wielokrotnie, może to mieć wpływ na wydajność kodu.
+```Javascript
+let powitanie = "Cześć, ";
+let imie = "Jan";
+let powitanieCale = `${powitanie}${imie}`;
+console.log(powitanieCale); // Wypisuje: "Cześć, Jan"
+```
 
-Zobacz również:
+Szczegóły implementacji: Operator `+` lub metoda `.concat()` łączy łańcuchy w kolejności, w jakiej są podawane. Wszystko, co nie jest łańcuchem, jest konwertowane na łańcuch.
 
-🔗 [Dokumentacja JavaScript na temat konkatenacji ciągów](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+## Zobacz również:
 
-🔗 [Inne sposoby na łączenie ciągów w JavaScript](https://www.freecodecamp.org/news/three-ways-to-concatenate-strings-in-javascript-8850286b697c/)
+1. [MDN Web Docs: String.prototype.concat()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/concat)
+2. [MDN Web Docs: Template literals (szablony łańcuchów)](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/template_strings)
+3. [JavaScript Info: Konkatenacja łańcuchów](https://pl.javascript.info/string#konkatenacja-czyli-laczenie-lancuchow) 
+4. [W3Schools: JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)

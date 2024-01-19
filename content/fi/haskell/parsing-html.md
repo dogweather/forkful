@@ -1,6 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
-html_title:           "Haskell: HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,27 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-HTML:ää puretaan eli parsitaan monista syistä. Ensisijaisesti parsimisella tarkoitetaan tekstin muuttamista tietokoneen ymmärtämään muotoon. HTML tietokoodi on suunniteltu lukijalle helposti luettavaksi, mutta tietokoneelle se on vain kasa merkkejä ilman merkitystä. Parsimisen avulla saamme HTML koodista jäsennellyn rakenteen, joka auttaa meitä esimerkiksi tekstin etsimisessä ja käsittelyssä.
+HTML:n jäsentäminen tarkoittaa HTML-koodin rakenteen lukemista ja analysointia. Ohjelmoijat tekevät tämän ymmärtääkseen ja käsitelläkseen verkkosivujen sisältöä ohjelmoimallaan tavalla.
 
-## Miten:
+## Kuinka näin:
 
-Käytännössä HTML:n parsiminen tapahtuu siten, että koodi luetaan yksi merkki kerrallaan ja jäsennellään pienen ohjelman avulla. Ohjelma tutkii merkkejä ja niiden järjestystä ja luo niistä puumaisen rakenteen, jossa jokainen elementti on linkitetty vanhempaansa ja lapsiinsa. Esimerkiksi seuraavassa koodissa näkyy div-elementti, joka on näytetty puun muotoisena:
+Tässä on yksinkertainen esimerkki HTML:n jäsentämisestä Haskellin "tagsoup" -kirjaston avulla
 
 ```Haskell
-<div>
-    <p>Tämä on esimerkki</p>
-</div>
+import Text.HTML.TagSoup
+
+haeLinkit :: String -> [String]
+haeLinkit = 
+  map (fromAttrib "href") 
+  . filter (~== "<a href>")
+  . parseTags
 ```
-Puussa div-elementti on pääelementti, ja sen lapsina on p-elementti. Parsimisen jälkeen voimme käyttää tätä rakennetta haluamallamme tavalla, esimerkiksi löytämällä ja tulostamalla sisällä olevan tekstin.
 
-## Syvällisempi katsaus:
+Tämä funktio hakee kaikki linkit annetusta HTML-koodista.
 
-HTML:n parsiminen kehitettiin alun perin helpottamaan web-sivujen luomista ja ylläpitoa. Manuaalinen koodaaminen voi olla aikaa vievää, mutta parsimisen avulla voimme automatisoida tietynlaisten sivujen luomisen. Tällä hetkellä on olemassa monia erilaisia tapoja parsia HTML:tä, kuten regular expressions tai CSS-selektorit. Haskellin puolelta löytyy myös erilaisia kirjastoja, kuten HaXmL ja TagSoup, jotka helpottavat parsimista.
+Esimerkki sen suorittamisesta:
 
-## Katso myös:
+```Haskell
+> haeLinkit "<html><a href=\"http://example.com\"></a></html>"
+["http://example.com"]
+```
 
-- ["Liian kiehtova koodi - HTML:n parsiminen" (englanniksi)](https://www.youtube.com/watch?v=TsvjsFx0S6U)
-- [HaXmL kirjaston dokumentaatio](https://hackage.haskell.org/package/haxml)
-- [TagSoup kirjaston dokumentaatio](https://hackage.haskell.org/package/tagsoup)
+## Syvempi sukellus
+
+HTML-jäsentämisen käyttö on kasvanut verkkosivujen dynaamisuuden ja monimutkaisuuden kasvaessa. Historiallisesti ohjelmoijat ovat luoneet omia jäsentimiä, mutta nyt on saatavilla erilaisia kirjastoja, kuten Haskellin tagsoup.
+
+Kuten monien ohjelmointitehtävien kohdalla, myös HTML-jäsentämisessä on erilaisia tapoja. Yksi alternative jäsentämiselle on 'regex' tai säännölliset lausekkeet, mutta ne voivat olla hankalia ja virheherkkiä monimutkaisen HTML:n käsittelyssä.
+
+Jäsentämisen tekninen toteutus riippuu paljon käytetystä kirjastosta. Tagsoup-kirjasto esimerkiksi luo listan tunnisteista, joita voidaan sitten manipuloida.
+
+## Katso myös
+
+[Tagsoup-kirjaston dokumentaatio](http://hackage.haskell.org/package/tagsoup)
+
+[W3Schoolsin HTML-tutorial](https://www.w3schools.com/html/)
+
+[Haskell Café -keskustelualue](https://mail.haskell.org/pipermail/haskell-cafe/)

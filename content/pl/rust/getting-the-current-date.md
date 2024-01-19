@@ -1,7 +1,7 @@
 ---
-title:                "Uzyskiwanie aktualnej daty"
-html_title:           "Rust: Uzyskiwanie aktualnej daty"
-simple_title:         "Uzyskiwanie aktualnej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,30 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Pobieranie aktualnej daty w Rust: Szybki przewodnik dla programistów
+
 ## Co i dlaczego?
-Zdobycie aktualnej daty to proces, w którym programista pobiera informację o czasie i dacie w chwili uruchomienia programu. Jest to przydatne dla programów, które muszą operować na danych w zależności od aktualnego dnia lub wykonywać operacje związane z kalendarzem.
+Pobieranie aktualnej daty to jedna z najczęstszych operacji w naszej pracy. Czy to do śledzenia zdarzeń, generowania raportów, czy ustalania terminów, ta prosta czynność ma wiele zastosowań.
 
 ## Jak to zrobić:
-Mamy kilka sposobów na pobranie aktualnej daty w języku Rust. Zobaczmy przykłady poniżej.
+
+Współczesna wersja Rust, umożliwia pobranie aktualnej daty w dosyć prosty sposób za pomocą wbudowanej funkcji `SystemTime::now`. Oto proste użycie:
 
 ```Rust
-extern crate chrono; // importujemy bibliotekę
-
-use chrono::{Utc, Local}; // określamy strefy czasowe
-
-fn main() {
-   let utc = Utc::now(); // pobieramy datę i czas aktualnej strefy UTC
-   let local = Local::now(); // pobieramy datę i czas lokalnej strefy czasowej
-
-   // wydrukowanie do konsoli
-   println!("{}", utc); // 2020-06-25 12:00:00 UTC
-   println!("{}", local); // 2020-06-25 14:00:00 CEST
+use std::time::{SystemTime, UNIX_EPOCH};
+fn main(){
+    let now = SystemTime::now();
+    let since_the_epoch = now.duration_since(UNIX_EPOCH)
+        .expect("Time went backwards");
+    println!("{:?}", since_the_epoch);
 }
 ```
+Po uruchomieniu powyższego kodu, zwróci on liczbę sekund od epoki Unix (1 stycznia 1970).
 
-## Głębszy wywód:
-Pobieranie aktualnej daty jest procesem, który ma długą historię w świecie programowania. Dawniej, w językach takich jak C czy C++, programiści musieli ręcznie obsługiwać funkcje związane z datami. W języku Rust jest to zdecydowanie łatwiejsze dzięki bibliotece chrono, która zapewnia mnóstwo pomocnych metod i funkcji. Istnieją również inne alternatywy takie jak biblioteka time, ale chrono jest najczęściej wybieraną opcją ze względu na swoją funkcjonalność.
+## Głebokie zanurzenie:
 
-## Zobacz też:
-- Oficjalna dokumentacja biblioteki chrono: https://docs.rs/chrono/
-- Przykładowy kod pobierania aktualnej daty w języku Rust: https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=22eabd7dbfc1a57374db39a0726f1ca3.
+**Kontekst historyczny:** W Rust pierwotnie nie było łatwego sposobu na pobieranie daty i czasu. Więc to jest swego rodzaju umiejętność, która wymagała wielu dodatkowych kroków i manipulacji, aby móc ją uzyskać..
+
+**Alternatywy:** Do pobierania daty i czasu w Rust można również używać zewnętrznych bibliotek jak Chrono. Chrono dostarcza pełny zestaw narzędzi do manipulacji datą i czasem w wygodny sposób.
+
+**Szczegóły implementacji:** Rust opiera swoje zarządzanie czasem na epoce Unix, czyli na liczbie sekund, które upłynęły od 1 stycznia 1970 roku. W związku z tym musimy zawsze przekształcić czas systemowy na odpowiedni format, który chcemy uzyskać.
+
+## Zobacz także:
+
+1. Dokumentacja Rust na temat zarządzania czasem: https://doc.rust-lang.org/std/time/
+2. Dokumentacja Chrono: https://docs.rs/chrono/0.4.19/chrono/
+3. Przewodnik Rust do zarządzania czasem: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html#misconception-3---the-cure-to-all-your-problems-adding--static

@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "Bash: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,19 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
-Das Herunterladen einer Webseite ist eine häufige Aufgabe für Programmierer, die es ihnen ermöglicht, den Inhalt und die Struktur einer Webseite zu analysieren und zu verwenden. Dies kann nützlich sein, um Daten zu sammeln, automatisierte Aufgaben auszuführen oder einfach nur zu lernen, wie eine bestimmte Webseite aufgebaut ist.
+# Bash-Programmierung: Eine Webseite herunterladen
 
-Wie geht das?
-Das Herunterladen einer Webseite in Bash ist ganz einfach mit dem Befehl ```curl```. Zum Beispiel, um die Webseite "www.example.com" herunterzuladen, können Sie den Befehl ```curl www.example.com``` verwenden. Dies wird den Inhalt der Webseite auf Ihrem Bildschirm ausgeben.
+## Was & Warum?
+Herunterladen einer Webseite ist der Prozess, durch den man den Inhalt einer Webseite auf seinen eigenen Computer speichert. Das wird von Programmierern gemacht, um Web-Inhalte offline speichern und analysieren zu können.
 
-Für eine etwas fortgeschrittenere Nutzung, können Sie auch den Befehl ```wget``` verwenden. Dies ermöglicht es Ihnen, die heruntergeladene Webseite zu speichern und bestimmte Optionen wie die Download-Geschwindigkeit oder die Anzahl der Versuche anzupassen. Ein Beispielbefehl könnte so aussehen: ```wget -O index.html -c -t 3 www.example.com```. In diesem Befehl wird die heruntergeladene Webseite als "index.html" gespeichert, die Download-Geschwindigkeit wird auf maximal und es werden bis zu drei Versuche unternommen, um die Webseite herunterzuladen.
+## So geht's:
+Im Folgenden siehst du die Simplizität des Download-Prozesses einer Webseite mit Bash:
 
-Tiefere Einblicke
-Das Herunterladen von Webseiten in Bash ist ein nützliches Werkzeug, das auf Unix-basierten Systemen seit langem zur Verfügung steht. Es ist schnell, einfach und kann für verschiedene Zwecke eingesetzt werden. Alternativ können Programmierer auch andere Werkzeuge wie Python oder Node.js verwenden, um Webseiten herunterzuladen. Dies kann besonders nützlich sein, wenn Sie zusätzliche Funktionalität wie das Parsen von HTML oder das Speichern von Daten benötigen.
+```Bash
+#!/bin/bash
+# Webseite herunterladen
+curl -O https://example.com
+```
+Nach dem Ausführen erhältst du eine Ausgabe ähnlich wie:
 
-Links
-Für weitere Informationen über den Befehl ```curl``` können Sie die offizielle Dokumentation aufrufen unter: https://curl.haxx.se/docs/manpage.html
-Weitere Informationen über den Befehl ```wget``` finden Sie hier: https://www.gnu.org/software/wget/
-Für eine detailliertere Einführung in das Herunterladen von Webseiten mit Bash, können Sie einen Blick auf diesen Artikel von Linuxize werfen: https://linuxize.com/post/how-to-download-files-using-curl/
-Und für Vergleich und Nachschlagezwecke, können Sie diese Dokumentation über das Herunterladen von Webseiten mit Python und Node.js prüfen: https://docs.python.org/3/library/urllib.request.html und https://nodejs.org/api/http.html#http_http_get_options_callback
+```Bash
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1270k  100 1270k    0     0  2544k      0 --:--:-- --:--:-- --:--:-- 2544k
+```
+Dieser Befehl lädt die Webseite example.com herunter und speichert sie auf deinem lokalen Computer.
+
+## Deep Dive
+
+1. Historischer Kontext: Die Fähigkeit zum Herunterladen von Webseiten existiert seit den frühen Tagen des Internets (Mitte der 90er Jahre), als der Datenverkehr noch begrenzt war und Benutzer Webseiten für die schnelle offline Nutzung herunterladen mussten.
+
+2. Alternativen: Es gibt mehrere Methoden zum Herunterladen von Webseiten, darunter Tools wie `wget` und Programmiersprachen wie Python.
+
+3. Implementierungsdetails: `curl` sendet eine HTTP-GET-Anforderung an die angegebene URL. Das Skript speichert dann die Antwort (das ist die Webseite) in eine Datei auf dem lokalen System.
+
+## Siehe auch:
+
+- Mehr Informationen zur Verwendung von `curl`: [Curl Dokumentation](https://curl.haxx.se/docs/manpage.html)
+- Alternative Tools: [Wget](https://www.gnu.org/software/wget/)
+- Python für das Herunterladen von Webseiten: [Requests: HTTP für Menschen](https://requests.readthedocs.io/de/latest/)

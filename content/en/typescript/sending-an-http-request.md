@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "TypeScript recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,50 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# A Quick Guide to Sending HTTP Requests in TypeScript
 
-Sending an HTTP request is a way for a frontend or backend application to communicate with a web server, usually over the internet. Programmers use HTTP requests to retrieve data from a server, submit form data, or make changes to data stored on the server.
+## What & Why?
+Sending HTTP requests means communicating with a server or external API to retrieve, send, or update data. As a programmer, you'll often do this to fetch data, or to interact with third-party services.
 
 ## How to:
+In TypeScript, we use the `fetch` approach. Let's consider this example:
 
-In TypeScript, we can use the `fetch()` function to send HTTP requests. It takes in a URL and returns a `Promise` that resolves with a `Response` object. Let's take a look at a simple example:
-
-```TypeScript
-fetch('https://example.com/users')
+```TypeScript 
+const url = 'https://jsonplaceholder.typicode.com/posts';
+fetch(url)
   .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.log(error));
+  .then(data => console.log(data));
 ```
 
-This code sends a GET request to the `users` endpoint on `example.com` and logs the response data to the console. We use the `then()` and `catch()` methods to handle the asynchronous response in a more readable way.
+The output will be printed in the console, a list of posts fetched from the placeholder API.
 
-To make a POST request with data, we can pass in an options object as the second parameter:
+For error handling, we can modify our code to:
 
-```TypeScript
-const user = { name: 'John', age: 25 };
-const options = {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(user)
-};
-fetch('https://example.com/users', options)
-  .then(response => response.json())
+```Typescript
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('HTTP error ' + response.status);
+    }
+    return response.json();
+  })
   .then(data => console.log(data))
-  .catch(error => console.log(error));
+  .catch(function () {
+    console.log('An error occurred while fetching data');
+  });
 ```
-
-In this example, we set the request method to POST, specify the content type as JSON, and pass in the user object as the request body. The server can then read this data and process it accordingly.
 
 ## Deep Dive
+Historically, XMLHttpRequest was used for HTTP requests. But over time, `fetch` has largely replaced it due to its more straightforward syntax and the ability to return promises. Alternatively, we can also use the `axios` library, which provides greater functionality than fetch.
 
-HTTP (Hypertext Transfer Protocol) has been used for communication on the web since the early 1990s. It is a request-response protocol, which means that a client sends a request to a server, and the server responds with a message containing the requested data. This protocol is the foundation of the World Wide Web and enables us to access and share information over the internet.
-
-There are also other ways to send data over the web, such as using WebSockets or WebRTC, but HTTP remains the most common and widely supported method.
-
-In addition to using the `fetch()` function, developers can also choose to use third-party libraries like Axios or jQuery to make HTTP requests. These libraries often provide more advanced features, such as automatic parsing of response data or error handling.
+The implementation details of sending an HTTP request involve creating an HTTP/HTTPS request with a method (GET, POST, DELETE, etc.), the URL, and optional headers and body data. It's then sent to the server, which responds and this response might be asynchronously handled.
 
 ## See Also
+For further reading:
 
-- [MDN Web Docs: HTTP Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-- [Axios GitHub Repository](https://github.com/axios/axios)
-- [jQuery AJAX Documentation](https://api.jquery.com/category/ajax/)
+- More on Fetch API: [MDN Web Docs Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- Comparison of Fetch with Axios: [Fetch vs Axios](https://www.smashingmagazine.com/2020/06/rest-api-fetch-axios/)
+- More on XMLHttpRequest: [MDN Web Docs XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- HTTP Methods explained: [RESTful API Methodology](https://restfulapi.net/http-methods/)

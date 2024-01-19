@@ -11,72 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+חישוב תאריך בעתיד או בעבר מתייחס לתהליך של עריכת מספר בימים לתאריך מעובד. מתכנתים מנהלים את התהליך הזה לשלל סיבות, החל מחיררון אירועים לניהול של לוחות זמן.
 
-חישוב תאריך בעתיד או בעבר הוא תהליך שבו מתכנתים משתמשים בכדי לחשב את התאריך המתאים לנקודת זמן מסוימת בעתיד או בעבר. המוצא של התאריך הזה מועיל ליישומים רבים, כגון תכניות לקראת מועדי משלך, אירועים חשובים, או פשוט כדי לבדוק מתי יום הולדתך הבא. בקיצור, זה מסייע לנו להתמקד במספר תאריכים חשובים לנו מתחת לגיליון הזמן.
+## כיצד ל:
+```Haskell
+import Data.Time.Calendar
 
-## איך לעשות:
-
-תחילה, נתקין את הספרייה Data.Time באמצעות פקודת ההתקנה הבאה:
+addDaysToCurrentDate :: Integer -> IO Day
+addDaysToCurrentDate n = do
+  currentDate <- utctDay <$> getCurrentTime
+  return $ addDays n currentDate
+```
+בהנחה שתרצה להוסיף שלושה ימים לתאריך הנוכחי, פלט דוגמה ייראה משהו כזה:
 
 ```Haskell
-cabal install time
+addDaysToCurrentDate 3 
+-- "2022-03-22"
 ```
 
-לאחר מכן, נשתמש בפונקציית addDays כדי לחשב תאריך בעתיד או בעבר על ידי הכנסת הודעת התאריך הנוכחי ומספר הימים המבוקש:
+## בילועלי
+החשיבות של חישוב תאריכים בעבר ובעתיד התבררה בהיסטוריה של מדעי המחשב. לעיתים קרובות, נושאים אחרים כמו חריגת זמנים מאתגרים מאוד, אבל Haskell מספק ספרייה יעילה בשם `Data.Time`. 
 
-``` Haskell
-addDays :: Integer -> Day -> Day
-```
+כלפיים, ישנן ספריות של שלדי זמן, אך `Data.Time` היא ברירת המחדל של Haskell. ישנם שיקולים לבחור באפשרות זו, החל מהתמיכה שלה בכל סוגי הזמן הדרושים, דרך קלות השימוש שלה, ועד ליכולת להתמודד עם שארית סוגי האירועים.
 
-לדוגמה, נרצה לחשב את התאריך של 100 ימים מעכשיו וניראה כך:
-
-``` Haskell
-import Data.Time
-
-main = do
-    tz <- getCurrentTimeZone
-    today <- getCurrentTime
-    let futureDate = addDays 100 (utctDay today)
-    putStrLn $ showGregorian $ LocalDate (utcToLocalTime tz today)
-    putStrLn $ showGregorian $ LocalDate (utcToLocalTime tz futureDate)
-```
-ההפלגה הבאה יודפסה:
-
-``` 
-100 days from now is 2021-11-07 
-and the future date will be 2022-02-10
-```
-
-ניתן גם לחשב תאריך בעבר על ידי כניסת מספר שלילי של ימים, כך שנחזיר את התאריך הנמצא לפני תאריך ההתחלה:
-
-``` Haskell
-import Data.Time
-
-main = do
-    tz <- getCurrentTimeZone
-    today <- getCurrentTime
-    let pastDate = addDays (-100) (utctDay today)
-    putStrLn $ showGregorian $ LocalDate (utcToLocalTime tz today)
-    putStrLn $ showGregorian $ LocalDate (utcToLocalTime tz pastDate)
-```
-
-ההדפסה הבאה תופיע:
-
-```
-100 days ago was 2021-05-28 
-and the past date was 2021-02-24
-```
-
-## חקירה מעמיקה:
-
-תוכנן חישוב תאריך בעתיד או בעבר לראשונה בשנת 1804 על ידי המתמטיקאי לגראן לוקסט. מאז, התהליך נוצר ושופר באמצעות שפות תכנות רבות, כולל Haskell.
-
-בנוסף, למעבר לפונקציית addDays ישנם עוד כמה אפשרויות לחישוב תאריך בעתיד או בעבר, כמו לחשב תאריך באמצעות שנות, חודשים או פונקציות מתומצתות אחרות מתוך Data.Time ספריית מעבדת.
-
-הספרייה Data.Time היא חלק מפרוייקט Haskell שמטרתו לספק ספריית תארים מתקדמים ויעילים כדי לעזור למתכנתים לנהל תאריכים ושעונים באופן יעיל ונוח.
-
-## ראה גם:
-
-- Data.Time ספריית מעבדת: https://hackage.haskell.org/package/time/docs/Data-Time.html
-- ספריית תארים מתקדמים בשפת Haskell: https://haskell.org/haskellwiki/Time_type
-- לגארה לוקהסט, מתמטיקאי שתכנן לראשונה את חישוב תאריך בעתיד ובעבר: https://en.wikipedia.org/wiki/Lagrange%27s_formula
+## ראה גם
+* [האנשי העיון של Haskell ל- `Data.Time`](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+* [הסברים מעמיקים יותר על חריגת זמן ב- Haskell](https://wiki.haskell.org/Haskell_for_dates_and_times)

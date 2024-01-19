@@ -1,7 +1,7 @@
 ---
-title:                "Imprimiendo resultados de depuración"
-html_title:           "Kotlin: Imprimiendo resultados de depuración"
-simple_title:         "Imprimiendo resultados de depuración"
+title:                "Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qué & Por qué?
+## ¿Qué & Por qué?
 
-Imprimir salida de depuración es un proceso común en programación en el que se envían mensajes o datos a la consola para ayudar al desarrollador a entender cómo se está ejecutando un programa y a diagnosticar errores. Los programadores lo hacen para encontrar y corregir problemas en su código de manera eficiente.
+La impresión de salida de depuración en la programación es donde los desarrolladores generan mensajes útiles para rastrear el flujo y los problemas en su código. Lo hacemos para entender y solucionar rápidamente los problemas durante el desarrollo.
 
-Cómo:
+## Cómo hacerlo:
 
-```Kotlin 
-// Ejemplo básico de imprimir salida de depuración en Kotlin
-val nombre = "Juan"
-println("Hola $nombre")
-```
-Salida:
-```
-Hola Juan
-```
+En Kotlin, puedes imprimir en la consola con las funciones `print()` o `println()`. Estas funciones pueden tomar cualquier tipo de valor:
 
 ```Kotlin
-// Otro ejemplo para imprimir el valor de una variable
-val num = 5
-println("El valor actual de 'num' es $num")
+fun main() {  
+    val nombre = "Juan"
+    println("Hola, $nombre")
+}
 ```
-Salida:
+La salida será: `Hola, Juan`.
+
+El registro de depuración se usa frecuentemente con la instrucción `println`. Así que una depuración puede parecerse a esto:
+
+```Kotlin 
+fun main() {
+   val x = 10
+   println("El valor de x es $x")
+}
 ```
-El valor actual de 'num' es 5
-```
+Por lo que la salida será: `El valor de x es 10`.
 
-Deep Dive:
+## Profundizando:
 
-La impresión de salida de depuración ha existido desde los primeros días de la programación. Sin embargo, con la evolución de los lenguajes de programación y las herramientas de depuración, ha habido un cambio hacia el uso de depuradores integrados en lugar de imprimir a la consola. Esto permite a los programadores ver visualmente cómo se ejecuta su código y establecer puntos de interrupción para detener la ejecución en un paso determinado.
+Históricamente, imprimir salida de depuración es una técnica antigua que usan los programadores desde los primeros días de la codificación. Ha sido invaluable para rastrear errores y seguir el flujo del programa.
 
-Aunque la impresión de salida de depuración sigue siendo una técnica útil, los programadores también pueden recurrir a la creación de registros de eventos o el uso de otras herramientas de depuración para una mejor visualización y análisis de su código.
+En Kotlin, además de `print()` y `println()`, puedes usar la biblioteca de Logging para la depuración, que proporcionará más detalles y permitirá un filtrado más efectivo en grandes bases de código.
 
-Ver también:
+La implementación de la impresión de la salida de depuración es sencilla en Kotlin. Ambas funciones, `print()` y `println()`, están incorporadas en la biblioteca estándar de Kotlin, y se pueden invocar en cualquier lugar dentro de tu código.
 
-- Documentación oficial de Kotlin sobre imprimir salida de depuración: https://kotlinlang.org/docs/reference/inline-classes.html
-- Libro de referencia de Kotlin: https://www.kotlincodes.com/
-- Cómo usar un depurador en Kotlin: https://medium.com/codex/using-debugger-in-kotlin-b18d3bbc1fa3
+## Ver también:
+
+Para profundizar más sobre este tema y prácticas similares, puedes visitar los siguientes enlaces:
+
+1. Manual oficial de Kotlin (en inglés): https://kotlinlang.org/docs/reference/basic-syntax.html#printing-to-the-console
+2. Tutorial para principiantes de Kotlin (en inglés): https://developer.android.com/courses/kotlin-bootcamp/
+3. Documentación sobre la biblioteca de Logging en Kotlin (en inglés): https://github.com/MicroUtils/kotlin-logging

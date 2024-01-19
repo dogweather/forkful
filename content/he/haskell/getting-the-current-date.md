@@ -1,7 +1,7 @@
 ---
-title:                "לקבלת התאריך הנוכחי"
-html_title:           "Haskell: לקבלת התאריך הנוכחי"
-simple_title:         "לקבלת התאריך הנוכחי"
+title:                "קבלת התאריך הנוכחי"
+html_title:           "C#: קבלת התאריך הנוכחי"
+simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה? 
+## מה ולמה?
 
-קבלת התאריך הנוכחי היא פעולה שבוצעת כאשר תכנותאנים רוצים להשתמש בתאריך הנוכחי בתוכניותיהם. לדוגמה, כשאנחנו כותבים תאריכים בחלקים שונים של הקוד, נשתמש בפעולה זו כדי להציג את התאריך הנוכחי בתוכניות הריצה שלנו.
+משימה פשוטה שהמתכנתים מבצעים שוב ושוב היא קבלת התאריך הנוכחי. זה עוזר לנו לדעת מתי הוצעו נתונים, לסמן מועדים, או למדוד כמה זמן עבר.
 
-איך לעבוד עם הפקודה:
+## איך מבצעים זאת:
 
-הנה כמה דוגמאות לקוד ולפלט בשפת הפקודות הוסקל:
+אז איך אנו מקבלים את התאריך הנוכחי ב־Haskell? בואו נראה דוגמה עם הספרייה `Data.Time`.
 
 ```Haskell
-import Data.Time (getCurrentTime, utcToLocalTime, formatTime, defaultTimeLocale)
+import Data.Time
 
--- הפונקציה הבאה מחזירה את התאריך הנוכחי בפורמט מתאים
-getCurrentDate :: IO String
-getCurrentDate = do
-  now <- getCurrentTime
-  let localTime = utcToLocalTime defaultTimeLocale now
-  return $ formatTime defaultTimeLocale "%a, %d %b %Y" localTime
-
+main :: IO ()
 main = do
-  currentDate <- getCurrentDate
-  putStrLn $ "התאריך הנוכחי הוא: " ++ currentDate
-
+   current <- getCurrentTime
+   print current
 ```
 
-פלט:
-```Sh
-התאריך הנוכחי הוא: ש' 28 מר 2020
+פלט לדוגמה:
+
+```Haskell
+2022-05-09 12:46:00 UTC
 ```
 
+## חקירה מעמיקה:
 
-עומק נתונים:
+הצורה המקובלת לקבלת התאריך הנוכחי התפתחה מהצורך לקבלת מידע מתוארזם.
 
-יכול להיות שקיבלת התאריך הנוכחי נראת פשוטה, אבל ישנן מספר אפשרויות נוספות למימוש פעולה זו. בעיקר, ניתן להשתמש בספריית נוספת כמו `time`, המציעה פעולות נוספות עבור תאריכים ושעות. בנוסף, ניתן למצוא מידע נוסף על פעולה זו במקורות מקוונים כמו התיעוד הרשמי של הפקודה ובספרים בנושא תכנות ב-Haskell.
+החלופות לקבלת הזמן הנוכחי הן לבנות מנגנון מותאם אישית, או להשתמש בספריות של שפות אחרות.
 
-ראה גם:
+תחת המסך, `getCurrentTime` מושך את הזמן מהמערכת המרחיבה וממשטרת זאת בעזרת הספרייה 'Data.Time'.
 
-- מדריך לפקודות הוסקל הנוספות: https://www.haskell.org/ghc/docs/latest/html/libraries/
+## ראה גם:
 
-- דוגמאות לשימוש בפקודה: https://www.tutorialspoint.com/haskell/haskell_functions.htm
+ניתן למצוא מקורות נוספים בנושא באינטרנט, כולל תיעוד, מדריכים ומאמרים המסבירים בהרחבה:
 
-- ספרייה נוספת לעבודה עם תאריכים: https://hackage.haskell.org/package/time
+- [Bedrock-time: ראשית מאמרים של Haskell(hackage.haskell.org)](http://hackage.haskell.org/package/time)
+- [טיפים לתכנות Haskell למתכנתים מתחילים (www.haskell.org)](https://www.haskell.org/haskellwiki/Haskell_in_5_steps)
+- [כתיבת ביטויים בהכנת תאריך ב־ Haskell (stackoverflow.com)](https://stackoverflow.com/questions/30229412/writing-date-expressions-in-haskell)

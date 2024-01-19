@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comandos"
-html_title:           "C++: Leyendo argumentos de línea de comandos"
-simple_title:         "Leyendo argumentos de línea de comandos"
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,44 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+# Qué y Por qué?
 
-Leer argumentos de línea de comando es una técnica común en la programación que permite a los desarrolladores pasar información a sus programas directamente desde la línea de comandos. Esto es útil para personalizar la ejecución de un programa y realizar tareas específicas sin tener que modificar el código.
+Leer argumentos de línea de comandos implica obtener datos de entrada que el usuario provee cuando inicia una aplicación desde su terminal. Esto es útil, ya que nos permite modificar el comportamiento de nuestra aplicación al iniciarla, sin cambiar el código.
 
-## Cómo:
+# Cómo hacerlo:
 
-Para leer los argumentos de línea de comando en C++, se pueden seguir estos pasos:
+Para leer argumentos de la línea de comandos en C++, utilizamos `argc` y `argv[]` proporcionados por la función `main()`. `argc` es la cantidad de argumentos proporcionados y `argv[]` es un array que contiene los argumentos. El primer argumento siempre es el nombre del programa.
 
-1. Incluir la biblioteca `iostream` para poder utilizar las funciones de lectura.
-2. Declarar una función `main` que acepte dos parámetros: `argc` (que indica el número de argumentos) y `argv` (que contiene los argumentos en forma de una matriz de cadenas).
-3. Utilizar un bucle `for` para iterar a través de la matriz `argv` e imprimir el valor de cada argumento.
-
-```
-#include <iostream>
-
+```C++
+#include<iostream>
 int main(int argc, char *argv[]) {
-  for (int i = 0; i < argc; i++) {
-    std::cout << argv[i] << std::endl;
-  }
+    std::cout << "Número de argumentos: " << argc << "\n";
+    for(int i = 0; i < argc; i++) {
+        std::cout << "Argumento " << i << ": " << argv[i] << "\n";
+    }
+    return 0;
 }
 ```
 
-Ejemplo de salida para el comando `./programa argumento1 argumento2`:
+Si ejecutamos el programa con `./programa arg1 arg2`, la salida sería:
 
 ```
-./programa
-argumento1
-argumento2
+Número de argumentos: 3
+Argumento 0: ./programa
+Argumento 1: arg1
+Argumento 2: arg2
 ```
 
-## Profundizando
+# Profundizando
 
-La lectura de argumentos de línea de comando se ha utilizado desde los primeros días de la programación. Antes de su existencia, los usuarios tenían que ingresar la información directamente en el programa, lo que limitaba su flexibilidad. Hoy en día, existen alternativas más avanzadas como la configuración de archivos o la interacción con interfaces gráficas, pero la lectura de argumentos de línea de comando sigue siendo una opción popular debido a su simplicidad y eficiencia.
+#### Contexto histórico
+Los argumentos de línea de comandos se han utilizado desde los primeros días de la programación en Unix, como una forma eficaz de interactuar con las aplicaciones. Siguen siendo populares en aplicaciones modernas de Unix, Linux y Mac, y también en aplicaciones Windows.
 
-Para acceder a argumentos más específicos, se pueden utilizar funciones de biblioteca como `getopt` o bibliotecas externas como `Boost.Program_options`. Es importante tener en cuenta que los argumentos de línea de comando están limitados en tamaño y no se pueden utilizar para pasar información sensible o confidencial.
+#### Alternativas
+En algunos casos, puede ser mejor usar `getopt()` de la biblioteca de C para parsear argumentos, especialmente si se requiere un manejo más complejo, como soporte para argumentos opcionales, flags, etc.
 
-## Ver también
+#### Detalles de implementación
+`argc` y `argv` son proporcionados por el sistema operativo al programa. `argv[0]` siempre es el nombre del programa, `argv[1]` es el primer argumento proporcionado por el usuario, y así sucesivamente. `argc` es siempre al menos 1.
 
-- [Documentación oficial de C++ sobre argumentos de línea de comando](https://en.cppreference.com/w/cpp/language/main_function)
-- [Ejemplos de uso de getopt en C++](https://www.geeksforgeeks.org/getopt-function-in-c-to-parse-command-line-arguments/)
-- [Boost.Program_options](https://www.boost.org/doc/libs/1_72_0/doc/html/program_options/tutorial.html)
+# Ver también
+
+- [Documentación de C++](http://www.cplusplus.com/)
+- [Getopt para parsear argumentos de línea de comandos](http://man7.org/linux/man-pages/man3/getopt.3.html)
+- [Stackoverflow - Preguntas sobre argumentos de línea de comandos](https://stackoverflow.com/questions/tagged/command-line-arguments)

@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "PHP: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,26 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Merkkijonon interpolointi on tekniikka, jossa muuttujat tai lausekkeet sisällytetään merkkijonoon. Tätä tehdään helpottaakseen ohjelman kirjoittamista ja luettavuutta sen jälkeen. 
+## Mitä ja Miksi? 
+
+Merkkijonon interpolointi on prosessi, jossa muuttujan arvo sidotaan suoraan merkkijonoon. Tämä tehdään helpottamaan ja nopeuttamaan koodin kirjoitusta ja lukemista.
 
 ## Kuinka:
-```PHP
-$name = "Jesse";
-$age = 25;
 
-// String interpolointi kahteen eri tapaan
-echo "Hei, olen {$name} ja olen {$age} vuotta vanha!";
-echo "Hei, olen ".$name." ja olen ".$age." vuotta vanha!";
+Tarkastele seuraavaa koodinäytettä merkkijonon interpoloinnin käytöstä:
+
+```PHP
+<?php
+$nimi = "Pekka";
+echo "Hei, olen $nimi";
+?>
+```
+Ohjelman tulostus on:
+
+```
+Hei, olen Pekka
 ```
 
-Tulostus:
-Hei, olen Jesse ja olen 25 vuotta vanha!
+## Syvempi sukellus:
 
-## Syvä sukellus:
-Merkkijonon interpolointi oli ensin käytössä Perlissä ja se otettiin käyttöön myös PHP:ssä versiosta 4 alkaen. Tämä tekniikka on kehitetty tekemään merkkijonojen käsittelyä helpommaksi ja tehokkaammaksi. Vaihtoehtona on käyttää merkkijonon yhdistämistä (concatenation), mutta se voi olla hankalampi ja hidastaa suorituskykyä.
+Historiallisesti ottaen, PHP-ohjelmoijat alkoivat käyttää merkkijonon interpolointia, kun huomasivat sen nopeuttavan ohjelmien kirjoittamista ja lisäävän koodin luettavuutta.
+
+Sen sijaan, että käyttäisit pitkää ja sekavaa jonon yhdistämistä, kuten:
+
+```PHP
+$nimi = "Pekka";
+echo "Hei, olen " . $nimi;
+```
+
+Voit käyttää interpolointia parantaaksesi koodin selkeyttä ja tehokkuutta.
+
+Ole kuitenkin tietoinen, että interpolointi voi olla haavoittuvainen SQL-injektiohyökkäyksille, jos et suodata syötteitäsi. 
 
 ## Katso myös:
-- [PHP string interpolointi-opas](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.double)
-- [Miksi PHP:n merkkijonon interpolointi on parempi vaihtoehto kuin yhdistäminen?](https://stackoverflow.com/questions/28268468/why-is-string-interpolation-in-php-superior-to-string-concatenation)
-- [Perl:stä PHP:ksi, s. 794](http://ulf-wendel.de/book/book.pdf)
+
+Tässä muutamia linkkejä, jotka voivat auttaa ymmärtämään merkkijonon interpolointia paremmin:
+
+1. [PHP:n viralliset dokumentit](https://www.php.net/manual/en/language.types.string.php)
+2. [PHP:n merkkijonon interpolointi Stackoverflow'ssa](https://stackoverflow.com/questions/28267266/php-string-interpolation-vs-concatenation)
+3. [Hyviä tapoja estää SQL-injektio PHP:ssa](https://www.w3schools.com/php/php_mysql_prepared_statements.asp)

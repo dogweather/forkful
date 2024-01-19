@@ -1,7 +1,7 @@
 ---
-title:                "Ausgabe von Debug-Informationen"
-html_title:           "Ruby: Ausgabe von Debug-Informationen"
-simple_title:         "Ausgabe von Debug-Informationen"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## Was und Warum?
 
-Das Drucken von Debug-Ausgaben ist eine gängige Methode für Programmierer, um während des Entwicklungsprozesses Fehler zu finden und zu beheben. Es ermöglicht uns, den Ablauf unseres Codes zu verfolgen und zu überprüfen, ob die erwarteten Ergebnisse erzielt werden.
+Drucken von Debug-Ausgaben bezeichnet das protokollieren von Programmabläufen zur Fehleranalyse. Dies ist nützlich, um Fehlerursachen bei der Ausführung des Programms zu ermitteln und zu beheben.
 
-## Wie geht's?
-
-Um Debug-Ausgaben in Ruby zu drucken, verwenden wir einfach den Befehl `puts`, gefolgt von der gewünschten Ausgabe. Wir können auch die Methode `p` verwenden, die nicht nur den Inhalt, sondern auch den Datentyp unserer Ausgabe anzeigt. Ein Beispiel:
+## "So geht's":
 
 ```Ruby
-puts "Hallo Welt!"
-#=> Hallo Welt!
+while i < 10
+  puts "Wir befinden uns in der Iteration #{i}"
+  i += 1
+end
+```
+In diesem Codeblock wird in jeder Iteration eine Debug-Ausgabe generiert, die den Moment in der Schleife anzeigt.
 
-name = "Anna"
-p name
-#=> "Anna" (String)
+Ausgabe:
+```
+Wir befinden uns in der Iteration 0
+Wir befinden uns in der Iteration 1
+Wir befinden uns in der Iteration 2
+...
 ```
 
-## Tief eintauchen
+## Deep Dive:
 
-Die Praxis des Druckens von Debug-Ausgaben stammt aus der Zeit, als Programmierer noch auf Papier ausgedruckte Ausgaben verwendet haben, um Fehler zu finden. Heute gibt es auch andere Möglichkeiten, wie z.B. das Debugging mit Breakpoints oder das Verwenden von Debugging-Tools.
+Die Verwendung von Debug-Ausgabe hat ihre Wurzeln in der frühen Geschichte der Programmierung, wo physische Löcher in Lochkartenbändern ausgegeben wurden, um Daten und Code darzustellen.
+Alternativen zur direkten Ausgabe von Debug-Informationen könnten beispielsweise Unit-Tests oder formale Verifikation sein.
+Unter der Haube wird puts in Ruby durch die C-schichtige IO#write Methode implementiert.
 
-Eine wichtige Überlegung beim Drucken von Debug-Ausgaben ist die Wahl des richtigen Ausgabekanals. In Ruby können wir auch den Standardfehlerkanal `STDERR` verwenden, um Ausgaben zu drucken, die als Fehlermeldung angezeigt werden sollen.
+## Siehe auch:
 
-## Siehe auch
+Für weitergehende Informationen sind folgende Quellen empfehlenswert:
 
-- [Ruby's official documentation on `puts`](https://ruby-doc.org/core-2.7.2/Kernel.html#method-i-puts)
-- [A beginner's guide to debugging in Ruby](https://www.rubyguides.com/2019/06/ruby-debugging/)
-- [Different ways to debug in Ruby](https://dockyard.com/blog/2016/02/10/print-debugging-in-ruby-using-printf-p-and-pp)
+- [Ruby Docs: IO](https://ruby-doc.org/core-2.7.0/IO.html)
+- [Practical Debugging in Ruby](https://medium.com/@kevinsimper/debugging-in-ruby-byebug-7e6f8a9a19a1)

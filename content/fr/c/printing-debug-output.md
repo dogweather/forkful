@@ -1,7 +1,7 @@
 ---
-title:                "Afficher la sortie de débogage"
-html_title:           "C: Afficher la sortie de débogage"
-simple_title:         "Afficher la sortie de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi ?
+# Impression de débogage dans C : Un guide simple
 
-L'impression de sortie de débogage est une technique couramment utilisée par les programmeurs pour suivre le déroulement d'un programme et vérifier son comportement. Cela consiste à afficher des informations relatives à l'exécution du code, telles que les valeurs des variables ou les étapes de calcul. Cela peut être particulièrement utile pour comprendre et résoudre les erreurs dans le code.
+## Quoi & Pourquoi ?
+L’impression de débogage c'est une méthode qui nous permet d'afficher des valeurs de variables ou des messages à l'écran durant l'exécution d'un programme. Cette technique sert aux programmeurs pour comprendre le comportement d'un programme, pour identifier et résoudre les bugs.
 
 ## Comment faire :
+Voici un exemple simple de comment réaliser une impression de débogage en utilisant la fonction `printf()` de la bibliothèque standard C :
 
-Voici un exemple simple de code en C qui utilise l'impression de sortie de débogage :
-
-```
+```C
 #include <stdio.h>
 
 int main() {
     int x = 5;
-    int y = 3;
-    int z = x + y;
-
-    printf("x = %d, y = %d, z = %d \n", x, y, z);
-
+    printf("Débogage : x = %d\n", x);
     return 0;
 }
 ```
 
-En exécutant ce code, vous verrez en sortie les valeurs des variables `x`, `y`, et `z` imprimées à l'écran. Cela peut vous aider à comprendre la logique derrière le calcul de `z` et à détecter d'éventuels problèmes.
+Dans ce cas, l'impression de débogage vous montrera `Débogage : x = 5`. Cela peut vous aider à suivre la valeur de la variable `x` pendant l'exécution du programme.
 
-## Plongée en profondeur :
+## Immersion profonde 
+L'impression de débogage est une technique qui existait bien avant le débogueur intégré aux IDE comme Eclipse ou IntelliJ. C'est une technique universelle et indépendante de la langue ou de l'environnement de développement.
 
-L'impression de sortie de débogage est une pratique courante depuis les débuts de la programmation informatique. Cela permet aux programmeurs de mieux comprendre leur code et de le corriger plus rapidement. Toutefois, il existe d'autres méthodes pour déboguer un programme, telles que l'utilisation d'un débogueur (debugger) ou d'un profilage (profiler) pour mesurer les performances du code. Néanmoins, l'impression de sortie de débogage reste une méthode simple et efficace pour comprendre le comportement d'un programme et identifier les erreurs.
+Il existe beaucoup d'alternatives à l'impression de débogage. Il y a d'abord les débogueurs intégrés mentionnés plus haut, mais aussi des outils comme GDB. De plus, certaines langues proposent des fonctions intégrées pour la journalisation et le débogage.
 
-En termes d'implémentation, chaque langage de programmation a sa propre syntaxe pour l'impression de sortie de débogage. En C, on utilise la fonction `printf()` de la bibliothèque standard pour afficher des informations à l'écran. Il est également possible d'utiliser des macros spécifiques, telles que `assert()` ou `debug()`, pour envoyer des messages de débogage à la console.
+Dans le cas de C, la fonction `printf()` est généralement utilisée pour l'impression de débogage. Mais attention, il faut bien penser à enlever ou commenter ces instructions une fois le débogage terminé pour ne pas impacter la performance du programme.
 
-## Voir aussi :
-
-- [Débogueur (Wikipedia)](https://fr.wikipedia.org/wiki/D%C3%A9bogueur)
-- [Profilage (Wikipedia)](https://fr.wikipedia.org/wiki/Profilage_%28informatique%29)
+## Voir aussi
+- [Documentation de la fonction printf()](https://www.cplusplus.com/reference/cstdio/printf/)
+- [Guide d'utilisation de GDB](https://sourceware.org/gdb/current/onlinedocs/gdb/)
+- [Forum StackOverflow pour C](https://stackoverflow.com/questions/tagged/c)

@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden til en streng"
-html_title:           "PowerShell: Å finne lengden til en streng"
-simple_title:         "Å finne lengden til en streng"
+title:                "Finne lengden på en streng"
+html_title:           "Go: Finne lengden på en streng"
+simple_title:         "Finne lengden på en streng"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,27 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Lær PowerShell: Hvordan finne lengden på en streng
+
 ## Hva & Hvorfor?
-Finn lengden til en tekststreng er en måte å bestemme antall tegn i en tekst på, inkludert mellomrom og spesialtegn. Dette er nyttig for å behandle eller formatere tekst, og er en vanlig oppgave for utviklere.
+
+Å finne lengden på en streng betyr å telle antall tegn den inneholder. Det er praktisk for programmerere for å håndtere brukerinngang, validere data, eller manipulere tekster.
 
 ## Hvordan:
-### PowerShell eksempel:
-```
-$tekststreng = "Hei, verden!"
-$tekststreng.Lengde
-```
-### Resultat:
-```
-12
+Her er et enkelt eksempel på hvordan du kan finne strenglengde i PowerShell:
+
+```PowerShell
+$streng = "Hallo Verden!"
+$length = $streng.Length;
+Write-Output "Strenglengden er: $length"
 ```
 
-## Deep Dive:
-Når datamaskinen lagrer tekststrenger, gir den hvert tegn en numerisk verdi kalt en "kodepoeng". Å finne lengden til en tekststreng innebærer å telle antall kodepoeng.
+Resultatet vil se slik ut:
 
-En alternativ måte å finne lengden på en tekststreng i PowerShell er å bruke cmdlet-en `Measure-Object`. Denne kan også brukes til å finne lengden til en CSV-fil eller et objekt.
+```
+Strenglengden er: 13
+```
 
-Implementasjonsdetaljer: I PowerShell blir tekststrenger behandlet som .NET `System.String` objekter. Dette betyr at `.Lengde` egenskapen er tilgjengelig for å finne lengden til teksten.
+## Dyp Dykk
 
-## Se Også:
-- [PowerShell .Lengde egenskapen](https://docs.microsoft.com/nb-no/powershell/module/microsoft.powershell.core/about/about_string_objects?view=powershell-7#properties-of-a-string-object)
-- [Measure-Object cmdlet-en](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/measure-object?view=powershell-7)
+1. Historisk kontekst: Selv om strenglengdefunksjonen er grunnleggende, kommer den ikke alltid innebygget. PowerShell, som er basert på .NET, gjorde dette til gjenstand for egenskapen `.Length` i stedet for en funksjon.
+
+2. Alternativer: Du kan også bruke `Measure-Object` cmdlet som en alternativ metode:
+
+   ```PowerShell
+   "Hallo Verden!" | Measure-Object -Character | Select-Object -Property Characters
+   ```
+   
+3. Implementasjonsdetaljer: `.Length` og `Measure-Object` opererer forskjellig. Mens `Length` er en egenskap fra System.String klasse, teller `Measure-Object` tegnene gjennom en pipeline. `Length` har en bedre ytelse, men `Measure-Object` gir mer detaljert informasjon.
+
+## Se Også
+
+For videre lesing om bruk av strenger i PowerShell, sjekk ut disse kildene:
+
+- [Microsofts veileder om strenger](https://docs.microsoft.com/nb-no/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
+- [PowerShell strengmanipulasjon](https://adamtheautomator.com/powershell-string-manipulation/)
+- [Strenglengde i PowerShell - Stack Overflow](https://stackoverflow.com/questions/1122555/get-string-length-in-powershell)

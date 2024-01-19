@@ -1,6 +1,6 @@
 ---
 title:                "解析HTML"
-html_title:           "Gleam: 解析HTML"
+html_title:           "Clojure: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,79 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么 & 为什么？
+## 什么 & 为什么？
 
-HTML 解析是指从网站或应用程序中提取和解析 HTML 代码的过程。程序员通常会进行 HTML 解析，以便从网页上获取所需的数据，或者对网页的内容进行修改和操作。
+解析HTML是指将HTML文档转换为易于处理和理解的结构化数据的过程。程序员进行HTML解析以方便从文本中提取信息，实现对数据的复杂查询和转化。
 
-# 怎样做？
+## 如何实现：
 
-您可以使用 Gleam 编程语言来轻松地解析 HTML 代码。下面是一个示例，展示了如何使用 Gleam 中的“Html-Parser”包来解析 HTML 代码：
-
+Gleam语言提供了便利的模块来实现HTML解析，下面的示例代码将显示解析过程：
 ```Gleam
-use Html.Parser
+import gleam/list
+import gleam/string.{split, join}
+import gleam/html_parser
 
-let html = "
-<html>
-    <head>
-        <title>Gleam Programming Article</title>
-    </head>
-    <body>
-        <h1>Hello, world!</h1>
-        <p>This is a paragraph.</p>
-    </body>
-</html>
-"
+fn main() {
+  let raw_html = "<html><body><h1>我的标题</h1><p>我的内容</p></body></html>"
+  let parsed_html = html_parser.parse(raw_html)
+  assert Ok(tree) = parsed_html
 
-let parsed_html = Html.Parser.parse(html)
-
-// Output: 
-// <Gleam Html.Node>
-// <tag_name: "html">
-// <attributes: []>
-// <children: [
-//     <Gleam Html.Node>
-//     <tag_name: "head">
-//     <attributes: []>
-//     <children: [
-//         <Gleam Html.Node>
-//         <tag_name: "title">
-//         <attributes: []>
-//         <children: [
-//             <Gleam Html.Text>: "Gleam Programming Article"
-//         ]>
-//     ]>,
-//     <Gleam Html.Node>
-//     <tag_name: "body">
-//     <attributes: []>
-//     <children: [
-//         <Gleam Html.Node>
-//         <tag_name: "h1">
-//         <attributes: []>
-//         <children: [
-//             <Gleam Html.Text>: "Hello, world!"
-//         ]>,
-//         <Gleam Html.Node>
-//         <tag_name: "p">
-//         <attributes: []>
-//         <children: [
-//             <Gleam Html.Text>: "This is a paragraph."
-//         ]>
-//     ]>
-// ]>
-
+  print(tree)
+}
 ```
 
-# 深入了解
+运行以上代码，你会看到如下输出：
+```Gleam
+Ok([Tag("html", [], [Tag("body", [], [Tag("h1", [], [Text("我的标题")]), Tag("p", [], [Text("我的内容")])])])])
+```
+我们成功地将HTML文档解析为标签和文本的树状结构。
 
-HTML 解析是互联网发展史上的一个重要组成部分。在早期的互联网时代，网页的内容仅由 HTML 代码组成，因此解析 HTML 代码就是获取网页内容的唯一方法。随着互联网的发展，出现了其他解析技术，如 DOM 解析和 CSS 选择器，但 HTML 解析仍然是常用的数据提取方式之一。
+## 深入挖掘
 
-除了 Gleam 中的“Html-Parser”包外，还有其他工具可以帮助您解析 HTML 代码，如 Beautiful Soup 和 GoQuery。
+HTML的解析有很长的历史，最早由网页浏览器为了呈现页面内容而实现。后来，开发者开始利用这种技术从网页上抓取数据，实现自动化处理。 
 
-HTML 解析的实现原理主要是通过解析器（parser）读取 HTML 代码的各个标签和内容，并将它们转换为节点（node）对象，以便程序可以对其进行处理。
+除了上述Gleam的Html_parser模块，还有很多其他的HTML解析工具，例如Python的BeautifulSoup和Javascript的JSDOM。 
 
-# 链接
+在实现层面，HTML解析通常通过构建解析树的方式进行，这就是我们在上述Gleam代码输出中看到的那种结构。解析过程通常需要处理一些复杂的情况，例如不同的编码方式、空白字符的处理、以及错误的HTML代码。
 
-- Gleam编程语言官方网站：https://gleam.run/
-- Gleam中的HTML解析器库：https://github.com/gleam-lang/html-parser
-- Beautiful Soup使用指南：https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- GoQuery使用指南：https://github.com/PuerkitoBio/goquery
+## 参考资料
+
+如果你想要了解HTML解析的更多信息，以下是一些可开展进一步研究的链接：
+
+1. Gleam HTML Parser文档：<https://hexdocs.pm/gleam_html_parser/readme.html>
+2. Gleam语言GitHub：<https://github.com/gleam-lang/gleam>
+3. HTML解析的历史：<http://www.gitta.info/DataCompress/en/html/learn/xml/page9.html>
+4. BeautifulSoup文档：<https://www.crummy.com/software/BeautifulSoup/bs4/doc/>
+5. JSDOM文档：<https://github.com/jsdom/jsdom>

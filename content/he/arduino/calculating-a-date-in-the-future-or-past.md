@@ -11,48 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-חישוב תאריך בעתיד או בעבר הינו תהליך בו משתמשים בתכנות כדי ליצור תאריך חדש שמתאים לצרכים מיוחדים. מטרת החישוב היא להגדיר תאריך מסוים באמצעות קוד, תוך שימוש בפונקציות מתמטיות ונתונים כמו תאריך נוכחי. תוצאת החישוב יכולה לשמש למגוון מטרות, כגון יישום באלגוריתמים, משחקים, או הצגת תאריכים בצורה מותאמת אישית.
+חישוב תאריך בעתיד או בעבר הוא פעולה שמאפשרת לנו להגיע לתאריך מסוים המבוסס על מרחק זמן מוחלט מתאריך התחלתי. זה שימושי בתכנות כאשר אנו צריכים להגביל או לתזמן אירועים לפי תאריכים מסוימים.
 
-## איך לעשות זאת?
-ניתן לחשב תאריך באופן מפורט ומדויק באמצעות ארדואינו עם מגוון של קודים פשוטים. להלן מספר דוגמאות של קוד ופלט נדרש לבצע כדי לחשב תאריך בעתיד או בעבר בארדואינו:
+##  איך מבצעים:
+הנה דוגמא של קוד שמראה איך לחשב תאריך בעתיד או בעבר בארדוינו:
 
-```arduino
-// דוגמה 1: הדפסת תאריך של שבוע מתאריך מסוים בעתיד
-#include <DateTime.h>
+```Arduino
+#include <TimeLib.h>
+tmElements_t tm;
 
 void setup() {
-  DateTime futureDate(2021, 11, 1); // הגדרת תאריך עתידי
-  Serial.begin(9600); 
-  Serial.println("תאריך השבוע לאחר 01/11/2021 יהיה : "); 
-  Serial.println(futureDate.dayStr()); 
+  setTime(8, 29, 0, 1, 1, 2021); // Set initial date and time
 }
 
-void loop() { 
-  // לא מצריך פעולות נוספות בלולאת התאריך נוכחי
+void loop() {
+  if (now() % 2 == 0) {
+    addFutureDate(5); // Add 5 days to current date
+  } else {
+    addPastDate(3); // Subtract 3 days from current date
+  }
+}
+
+void addFutureDate(int daysToAdd) {
+  breakTime(now() + daysToAdd * SECS_PER_DAY, tm);
+  printDate();
+}
+
+void addPastDate(int daysToSubtract) {
+  breakTime(now() - daysToSubtract * SECS_PER_DAY, tm);
+  printDate();
+}
+
+void printDate() {
+  Serial.print(tm.Day);
+  Serial.print("/");
+  Serial.print(tm.Month);
+  Serial.println("/");
+  Serial.println(tm.Year);
 }
 ```
 
-```arduino
-// דוגמה 2: הדפסת יום בשבוע של תאריך נוכחי + 100 ימים
-#include <DateTime.h>
+## צלילה עמוקה
+חישוב תאריך בעתיד או בעבר היה חלק מתכנות מאז התחלתו. תוך שהזמן התפתח, ישנן אפשרויות חלופיות רבות שכוללות שימוש בסיפריות חיצוניות או שימוש בפונקציות מובנות. בארדוינו, סיפריית TimeLib מספקת דרך פשוטה וישירה לעבוד עם תאריכים וזמנים.
 
-void setup() {
-  DateTime currentDate = DateTime.now(); // קבלת תאריך נוכחי
-  int daysToAdd = 100; // מספר הימים להוסיף לתאריך נוכחי
-  Weekday futureDay = currentDate.dayOfTheWeek()+ daysToAdd; // חישוב יום בשבוע מתאריך נוכחי + מספר ימים נדרשים
-  Serial.begin(9600); 
-  Serial.print("יום השבוע של תאריך הנוכחי + 100 ימים יהיה: "); 
-  Serial.println(weekday);
-}
-
-void loop() { 
-  // לא מצריך פעולות נוספות בלולאת התאריך נוכחי
-}
-```
-
-## הענק עמוק
-מחשבים כבר מאוחר מאוד נערכו לא רק במונחים של תאריכים ושעות מופשטים, אלא גם במושגים כמו מבנה טורי של חודשים, חודשי עברית וכו'. לאחרונה, פיתח מדד זמן אוניברסאלי (UTC) כדי לקבוע תקופות זמן קבועות שמשמשות כאיבר בכללי המערכת של העולם.
-
-ישנן גם אפשרויות אחרות כדי לחשב תאריך בעתיד או בעבר, כגון תת-תכניות תאריך, שבתבונם ניתן לחשוב ולהציג תאריכים בצורה אלגנטית יותר. עם זאת, חישוב תאריך שונה תלוי במטרות והצורך של המפתח בפרויקט מסוים.
-
-כדי לחשב תאריך בעתיד או בעבר בארדואינו יש להשתמש בפונקציות DateTime הכלולות בספריית DateTime הפופולרית. מדובר בספרייה פש
+## ראה גם
+[TimeLib Library Documentation](https://www.arduino.cc/en/Reference/Time)
+[Arduino Time Library](https://playground.arduino.cc/Code/Time/)

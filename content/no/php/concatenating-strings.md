@@ -1,7 +1,7 @@
 ---
-title:                "Sammensetting av strenger"
-html_title:           "PHP: Sammensetting av strenger"
-simple_title:         "Sammensetting av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,30 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Concatenating strings i programmering er når du kombinerer to eller flere tekststrenger til en enkelt streng. Dette kan være nyttig for å bygge dynamiske setninger eller lenker. Programmere gjør dette for å lage mer fleksible og dynamiske programmer som kan tilpasse seg ulike situasjoner.
 
-## Hvordan:
-For å konkatere strenger i PHP bruker du punktum operatøren ```.```. Se følgende eksempel:
+Strengkonkatinering i PHP er prosessen med å sette sammen to eller flere strenger. Programmerere bruker dette for å dynamisk skape nye strenger ut fra eksisterende data.
+
+## Slik gjør du det:
+
+Her er et grunnleggende eksempel på hvordan du kan konkatere strenger i PHP:
 
 ```PHP
-$string1 = "Hei, ";
-$string2 = "verden!";
-echo $string1 . $string2; // output: Hei, verden!
+$hello = "Hei";
+$world = "verden";
+$complete_sentence = $hello . " " . $world;
+
+echo $complete_sentence; // Outputs: Hei verden
 ```
 
-Du kan også konkatere strenger ved hjelp av attributter. Se følgende eksempel:
+En alternativ metode er å bruke `.= operator` for å tillegge en streng til en eksisterende streng:
 
 ```PHP
-$string1 = "Jeg liker ";
-$string2 = "å kode på ";
-$string3 = "PHP";
-echo $string1 .= $string2 .= $string3; // output: Jeg liker å kode på PHP
+$hello = "Hei";
+$hello .= " verden";
+
+echo $hello; // Outputs: Hei verden
 ```
 
 ## Dypdykk:
-Historisk sett har concatenation vært brukt i programmering for å bygge dynamiske HTML-sider og SQL-uttrykk. Alternativene til string concatenation inkluderer string interpolation og string formatting. Implementeringsdetaljene for string concatenation avhenger av programmeringsspråket som brukes, men det samme konseptet kan bli funnet i de fleste språk.
 
-## Se også:
-- [PHP strings dokumentasjon](https://www.php.net/manual/en/language.types.string.php)
-- [Different ways to concatenate strings in PHP](https://www.tutorialrepublic.com/faq/how-to-concatenate-strings-in-php.php)
-- [String concatenation in other programming languages](https://www.techopedia.com/definition/29912/string-concatenation)
+Historisk, før PHP 5.3, brukte utviklere ofte funksjonene `sprintf` og `printf` for å utføre strengkonkatenering. Men `. og .=` operatørene ga en enklere og mer intuitiv løsning, noe som gjorde dem til standarden.
+
+Selv om `. og .= operatørene` er de mest vanlige og intuitive måtene å konkatere strenger i PHP, er det alternative metoder. En av disse er å bruke `sprintf` funksjonen, som fortsatt er mye brukt i koden som krever formatering av strengen:
+
+```PHP
+$hello = "Hei";
+$world = "verden";
+$complete_sentence = sprintf("%s %s", $hello, $world);
+
+echo $complete_sentence; // Outputs: Hei verden
+```
+
+Når det gjelder ytelse mellom `. og .= operatørene` og `sprintf`, er forskjellene minimale og vil bare være merkbare i applikasjoner med veldig høy last.
+
+## Se Også:
+
+For flere detaljer om strengkonkatinering i PHP, sjekk ut disse nyttige lenkene:
+- PHP Official Documentation: [String concatenation](https://www.php.net/manual/en/language.operators.string.php)
+- Stack Overflow: [Concatenate or Directly Insert Variables into Strings?](https://stackoverflow.com/questions/41367012/php-concatenate-or-directly-insert-variables-into-string)
+- W3School: [PHP String Functions](https://www.w3schools.com/php/php_ref_string.asp)

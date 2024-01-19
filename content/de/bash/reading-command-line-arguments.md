@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Eingabeargumenten in der Befehlszeile"
-html_title:           "Bash: Lesen von Eingabeargumenten in der Befehlszeile"
-simple_title:         "Lesen von Eingabeargumenten in der Befehlszeile"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,24 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Was & Warum?
-Das Lesen von Befehlszeilenargumenten ist ein wichtiger Bestandteil der Bash-Programmierung. Es ermöglicht dem Programm, Daten oder Parameter vom Benutzer bei der Ausführung zu erhalten. Programmierer nutzen dies, um ihre Skripte anzupassen und verschiedene Aktionen basierend auf den gegebenen Argumenten auszuführen.
+# Lesen von Befehlszeilenargumenten in Bash 
 
-### Wie geht's:
-Das Lesen von Befehlszeilenargumenten in Bash ist einfach. Die Argumente können in Variablen gespeichert werden und dann im Skript verwendet werden. Hier ist ein Beispiel, wie man die Argumente "Hallo" und "Welt" in Variablen speichert und ausgibt:
+## Was & Warum?
+Das Lesen von Befehlszeilenargumenten ist der Prozess, durch den ein Bash-Skript Eingaben vom Benutzer erhält. Programmierer tun dies, um die Funktionalität ihrer Skripte zu erhöhen und eine interaktive Benutzererfahrung zu ermöglichen.
 
+## Wie:
+Um Argumente in einem Bash-Skript zu lesen, verwenden wir spezielle Variablen, die als Positionspunkte bezeichnet werden.
 ```Bash
-argument1=$1
-argument2=$2
-echo $argument1 $argument2
+#!/bin/bash
+
+# Das erste Argument anzeigen
+echo $1 
+
+# Das zweite Argument anzeigen
+echo $2
+```
+Wenn wir dieses Skript nun mit den Argumenten "Hallo" und "Welt" ausführen, erhalten wir:
+```Bash
+$ ./meinSkript.sh Hallo Welt
+Hallo
+Welt
 ```
 
-Der Output des Skripts wäre dann: "Hallo Welt". Man kann auch auf einzelne Argumente durch ihre Position zugreifen, z.B. $1 für das erste Argument oder $2 für das zweite Argument und so weiter.
+## Vertiefung
+Die Verwendung von Befehlszeilenargumenten reicht bis in die Anfänge der Unix-Shell zurück und ist ein zentraler Bestandteil der Bash-Programmierung. Alternativen dazu sind die Verwendung von Eingaben/Tastatureingaben während der Programmausführung oder die Lektüre aus einer Datei. 
 
-### Tieferer Einblick:
-Das Konzept des Lesens von Befehlszeilenargumenten stammt aus dem ursprünglichen UNIX-Betriebssystem, auf dem Bash basiert. Es gibt jedoch auch Alternativen wie das Parsen von Umgebungsvariablen oder das Lesen von Eingaben mit dem "read" Befehl. Diese Methoden können nützlich sein, aber das Lesen von Befehlszeilenargumenten ist in der Regel die effizienteste und bevorzugte Methode.
+Die Implementierung des Lesens dieser Argumente in Bash ist relativ einfach, da die Positionspunkte (z.B. `$1`, `$2`, ...) direkt auf die entsprechenden Argumente verweisen. Der spezielle Parameter `$#` gibt die Anzahl der gelieferten Argumente zurück, und `$0` bezieht sich oft auf den Namen des Skripts selbst.
 
-### Siehe auch:
-- [Offizielle GNU Bash Dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Guide für Anfänger](https://opensourceforu.com/2017/02/bash-guide-for-beginners/)
-- [Bash Befehle Referenz](https://linuxize.com/post/bash-scripting-commands/)
+## Siehe auch
+Für weitere Informationen verweisen wir auf folgende Quellen: 
+- [Bash Guide for Beginners: Chapter 3. The Bash environment](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html)
+- [Linuxize: How to Pass Arguments to a Bash Script](https://linuxize.com/post/how-to-pass-arguments-to-a-bash-script/)
+- [Bash Handbook: Command Line Arguments](https://github.com/denysdovhan/bash-handbook/blob/master/README.md#command-line-arguments)

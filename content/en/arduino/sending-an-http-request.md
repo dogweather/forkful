@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "Arduino recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -12,42 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request means establishing communication between a client (like your computer) and a server (like a website). Programmers do it to retrieve data from a server, such as a web page or an API response.
+Sending an HTTP request is a fundamental part of web communication, essentially it's how a device 'talks' to another device over the internet. Programmers do it to fetch or submit data from/to a server, enabling abilities like reading sensor data online or controlling appliances remotely using IoT.
 
-## How To:
+## How to:
 
-To send an HTTP request using Arduino, you'll need the Ethernet library. Below is a basic example using the GET method:
-```
-#include <Ethernet.h>
+Let's dive into how we do this using the Arduino HTTP Client library. Here's a simple code to send a GET request. Make sure your Arduino is connected to the internet.
 
-byte server[] = { 192,168,1,1 }; // server IP address
-char page[] = "/samplepage.html"; // page to request
+```Arduino
+#include <HttpClient.h>
+#include <ArduinoHttpClient.h>
 
-EthernetClient client;
+EthernetClient ethernet;
+HttpClient client = HttpClient(ethernet, server, port);
 
-if (client.connect(server, 80)) { // connect to server on port 80
-  client.print("GET ");
-  client.print(page);
-  client.println(" HTTP/1.1");
-  client.println("Host: 192.168.1.1");
-  client.println("Connection: close"); // close connection after response
-  client.println(); // end of request
+void setup() {
+   Ethernet.begin(mac, ip);  
+   Serial.begin(9600);
+}
+
+void loop() {
+   Serial.println("Making GET request");
+   client.get("/api"); 
+
+   int statusCode = client.responseStatusCode(); 
+   String response = client.responseBody();
+   Serial.print("Status code: ");
+   Serial.println(statusCode);
+   Serial.print("Response: ");
+   Serial.println(response);
 }
 ```
 
-The output will be the response from the server, which you can read and parse in your code.
+When you upload and run, you should see the HTTP status code and response printed in the Serial Monitor.
 
-## Deep Dive:
+## Deep Dive
 
-HTTP (Hypertext Transfer Protocol) was created in 1989 by Tim Berners-Lee for exchanging information on the World Wide Web. It is now widely used for communication between clients and servers. There are several HTTP methods, such as GET, POST, PUT, and DELETE, that specify the type of request being made.
+Sending HTTP requests dates back to early days of the web. It paved the way for web interactivity, reshaping how we use the internet. 
 
-Apart from using the Ethernet library, you can also send HTTP requests using a WiFi shield or module. Additionally, you can use libraries like HttpClient or ESP8266HTTPClient for simplified implementation.
+Alternatives include UDP if speed is important and TCP for reliable transmission, both are less suited than HTTP for web communication but have use cases.
 
-When sending an HTTP request, you must specify the correct header information, including the method, URL, and host. You can also add any necessary headers, such as authentication or content-type.
+When working with the Arduino HttpClient, understand that it's light-weight, suitable for microcontroller with limited resources. Under the hood, it opens a socket to the server, sends HTTP headers, and reads the response.
 
-## See Also:
+## See Also
 
-- Official Ethernet Library documentation: https://www.arduino.cc/en/Reference/Ethernet
-- Alternatives to sending HTTP requests on Arduino: https://www.arduino.cc/en/Reference/WiFi101
-- Arduino HttpClient library: https://github.com/amcewen/HttpClient
-- ESP8266HTTPClient library: https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient
+For further reading and examples, check these links:
+
+- Arduino HttpClient Library Docs: https://www.arduino.cc/en/Reference/ArduinoHttpClient
+- Guide on HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP
+- More on IoT: https://en.wikipedia.org/wiki/Internet_of_things

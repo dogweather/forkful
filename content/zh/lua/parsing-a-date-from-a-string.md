@@ -1,7 +1,7 @@
 ---
-title:                "解析字符串中的日期。"
-html_title:           "Lua: 解析字符串中的日期。"
-simple_title:         "解析字符串中的日期。"
+title:                "从字符串解析日期"
+html_title:           "C: 从字符串解析日期"
+simple_title:         "从字符串解析日期"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"What & Why?": 
-当我们从一个字符串中提取日期时，我们其实是在进行日期解析。程序员通常会这样做是为了把一个日期作为一个变量或者数据结构的一部分来使用，或者是为了改变日期的格式。
+# 什么 & 为什么？
+解析日期从一个字符串就是分析和转换一个字符串为日期格式。程序员之所以这么做，是因为它可以辨认并操作日期信息，方便数据处理。
 
-## How to:
-日期解析在Lua中可以用不同的方法实现。下面是一个基本的实现示例，它会把一个字符串中表示的日期解析为三个数字，分别代表年、月和日的值。
+# 怎么做？
+在Lua中，我们可以使用`os.time()`和`string.gsub()`函数来解析日期。
 
 ```Lua
--- 输入一个日期字符串
-local date_str = "2020-01-31"
+string_to_parse = "20年02月02日"
+year, month, day = string_to_parse:match("(%d+)年(%d+)月(%d+)日")
+parsed_date = os.time({year=year, month=month, day=day})
 
--- 使用字符串的分割方法来获取年、月、日的值
-local year = date_str:sub(1, 4)
-local month = date_str:sub(6, 7)
-local day = date_str:sub(9, 10)
-
-print("Year: " .. year)
-print("Month: " .. month)
-print("Day: " .. day)
+print(os.date("%x", parsed_date))
 ```
 
-此代码的输出将是：
-
+这段代码的输出会是：
+```Lua
+02/02/20
 ```
-Year: 2020
-Month: 01
-Day: 31
-```
+# 深入研究
+（1）在计算机历史的早期，日期解析是一项挑战性的任务，需要严谨地处理每个字符。今天，Lua等语言具有内建函数，可以轻松解析日期。
 
-## Deep Dive:
-在计算机编程中，日期解析是一个常见的操作。在过去的几十年中，随着计算机的发展和广泛应用，人们需要对日期进行更精确的处理和转换。因此，各种编程语言都提供了日期解析的功能，包括Lua。
+（2）除了使用`os.time()`和`string.gsub()`之外，Lua也有许多强大的库（如luadate, penlight）可以用来解析日期。
 
-除了上面的示例代码，Lua也提供了相应的日期库来处理更复杂的日期操作，如日期的比较、格式化、时区转换等。其中比较流行的是[luatz](https://github.com/daurnimator/luatz)和[lua-date](https://github.com/Tieske/date).
+（3）在Lua中，`os.time()`函数返回一个表示日期和时间的数字，而 `string.gsub()`用于执行实际的解析工作，它返回一个新字符串，其中有些字符被其它字符替代。
 
-## See Also:
-- Lua官方文档 - [http://www.lua.org/manual/5.3/manual.html](http://www.lua.org/manual/5.3/manual.html)
-- Lua日期库luatz - [https://github.com/daurnimator/luatz](https://github.com/daurnimator/luatz)
-- Lua日期库lua-date - [https://github.com/Tieske/date](https://github.com/Tieske/date)
+# 另请参阅
+1. Lua Manual: [os.time()](https://www.lua.org/manual/5.3/manual.html#pdf-os.time)
+2. Lua Manual: [string.gsub()](https://www.lua.org/manual/5.3/manual.html#pdf-string.gsub)
+3. Lua日期库：[luadate](https://github.com/Tieske/date)
+4. Lua日常实用库：[penlight](https://github.com/stevedonovan/penlight)

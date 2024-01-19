@@ -12,36 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Capitalizing a string simply means converting the first letter of each word in a sentence to uppercase. Programmers do this to make text more readable and aesthetically pleasing. It is also commonly used in data processing and formatting.
+Capitalizing a string refers to the conversion of the first character of a string to uppercase. Programmers do this quite commonly for formatting purposes, for enhanced readability, and to ensure proper display of user or system data.
 
-## How to:
+## How To:
+
+Here's a quick Clojure function to handle string capitalization:
 
 ```Clojure
-;; using the Java library
-(require '[clojure.string :as str])
-(str/capitalize "this is a string") ;=> "This is a string"
-
-;; using the capitalize function from the clojure.string namespace
-(clojure.string/capitalize "another string") ;=> "Another string"
-
-;; using string manipulation
-(defn capitalize [s]
-  (let [words (str/split s #" ")]
-    (apply str (map #(str/capitalize %) words))))
-
-(capitalize "yet another string") ;=> "Yet Another String"
+(defn capitalize-string [s] 
+  (if (empty? s)
+    ""
+    (str (clojure.string/upper-case (first s)) (subs s 1))))
 ```
 
-## Deep Dive:
+Test run it to see the result:
 
-Capitalizing a string is a common practice in several programming languages. It has been used in English grammar for centuries to mark the beginning of a sentence or proper nouns. In programming, it is often used to improve readability of user inputs, data processing, and formatting of output strings.
+```Clojure
+(capitalize-string "hello world!") ; results in: "Hello world!"
+```
 
-An alternative to capitalizing a string is to use the ```capitalize-title``` function from the ```clojure.java.string``` namespace. This function follows the standard title case capitalization rules. However, for simple text manipulation, using the ```capitalize``` function from the ```clojure.string``` namespace is sufficient.
+There you go - that's string capitalizing!
 
-Clojure's ```capitalize``` function uses the ```String's``` ```toUpperCase``` method to convert the first character to uppercase. This method handles special characters and diacritics accurately in different languages.
+## Deep Dive
+
+In Clojure, capitalizing a string is pretty straightforward, though there exists no built-in function specifically for that task. However, the nature of the language with its fundamental operations on sequences allows us to have a way around. The standard sequence operations combined with the built-in `clojure.string/upper-case` function allows for an effective implementation.
+
+Historically, capitalizing strings is a common operation in many systems ranging from relational databases to GUI forms. It's also useful to convert user input or filenames to a standardized format.
+
+There are different alternatives, for instance, we can use Java Interop to capitalize a string. However, idiomatic Clojure sticks to using sequences and its inbuilt functions where possible.
+
+Implementation-wise, we combine Clojure's `first` to get the first character, `clojure.string/upper-case` to convert it to uppercase, and `subs` to get the rest of the string, finally stringing it all up together with `str`.
 
 ## See Also:
 
-- clojure.string API documentation: https://clojure.github.io/clojure/clojure.string-api.html
-- Ways to capitalize strings in Clojure: https://purelyfunctional.tv/guide/clojure-handle-string-uppercase-lowercase/
-- How to format strings in Clojure: https://clojuredocs.org/clojure.string/format
+- If you need more details about Clojure's string functions you can visit [Clojure.String API](https://clojuredocs.org/clojure.string)
+- For more information regarding Clojure's sequences, check out [Clojure - Sequences](https://clojure.org/reference/sequences)
+- Also, here's a good article about using strings in clojure: [Mastering Clojure Strings](https://dzone.com/articles/mastering-clojure-strings)

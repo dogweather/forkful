@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Python recipe: Comparing two dates"
+html_title:           "Elm recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Python"
 category:             "Python"
@@ -12,46 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Comparing two dates is about determining if one date is earlier, the same, or later than another date. Programmers do this to arrange events chronologically or evaluate time periods.
+Comparing two dates means finding their relative temporal positions. Programmers use this to trigger certain actions, calculate durations, or organize data chronologically.
 
 ## How to:
 
-Here's how you can compare two dates using Python's `datetime` module:
+Let's consider two dates, `date1` and `date2`, and compare using Python built-in datetime module.
 
-```Python
-from datetime import date
+```python
+from datetime import datetime
 
-# Define two dates
-date1 = date(2021, 12, 15)
-date2 = date(2021, 12, 20)
+# defining two dates
+date1 = datetime(2022, 4, 17)
+date2 = datetime(2022, 5, 17)
 
-# Compare the dates
+# comparing dates
 if date1 < date2:
-     print("date1 is earlier")
+    print("date1 is earlier")
 elif date1 == date2:
-     print("The dates are the same")
+    print("Both dates are the same")
 else:
-     print("date1 is later")
+    print("date2 is earlier")
 ```
+You'll see "date1 is earlier".
 
-The output will be:
-```
-date1 is earlier
-```
+## Deep Dive:
 
-## Deep Dive
+Python's built-in datetime module emerged in version 2.3, making date comparison a breeze. There're alternatives like time module for epoch time comparisons, or third-party packages like dateutil.
 
-Python's `datetime` module came to life in 2003 as a part of Python 2.3, allowing programmers to deal more efficiently with dates and times. 
+DateTime comparison actually compares the dates' timestamp values numerically. It's worth noting that Python compares dates/times to the microsecond. 
 
-An alternative to `datetime` can be third-party libraries, like `Pendulum` or `Arrow`, which offer extended functionality and ease of use.
+## See Also:
 
-In Python, when you compare dates, it's actually comparing tuples of the presented date in the format (year, month, day). If you were to write `date1 < date2`, Python internally translates this to `(2021, 12, 15) < (2021, 12, 20)` and evaluates the comparison accordingly.
+Python's datetime documentation [here](https://docs.python.org/3/library/datetime.html)
 
-## See Also
+[Python's time module documentation](https://docs.python.org/3/library/time.html)
 
-Check out these other useful resources for more info:
-
-- Python's official [datetime documentation](https://docs.python.org/3/library/datetime.html)
-- `Pendulum` library [documentation](https://pendulum.eustace.io/docs/)
-- `Arrow` library [documentation](https://arrow.readthedocs.io/en/latest/)
-- A helpful [StackOverflow thread](https://stackoverflow.com/questions/15307623/can-python-compare-date-string-data-to-see-which-is-more-recent) about date comparison in Python.
+[dateutil's PyPi documentation](https://pypi.org/project/python-dateutil/)

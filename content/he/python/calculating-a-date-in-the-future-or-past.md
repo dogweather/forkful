@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה? 
-חישוב תאריך בעתיד או בעבר הוא תהליך המשמש לחשב בדיוק תאריך מסוים בהתאם לזמן הקיים. זהו כלי שחיוני למתכנתים כיוון שמאפשר להם לתכנת יישומים שיכולים לטפל בתאריכים מגוונים בצורה דינמית.
+## מה ולמה?
 
-## איך לעשות זאת:
+חישוב תאריך בעתיד או בעבר מתייחס לפעולה של הוספת או חיסור ימים, חודשים, או שנים מתאריך מסוים. מתכנתים עלולים להשתמש בכך לצורכי לוגיסטיקה, השוואת מידע, תזמון אירועים ועוד.
+
+## איך לעשות את זה?
+
 ```Python
-# נכון לתאריך 1 בינואר, 2021
-import datetime
+from datetime import datetime, timedelta
 
-# לחשב תאריך בעתיד נעטוף את התאריך הספציפי בפונקציה date ונוסיף כמות ימים בפרמטר timedelta
-future_date = datetime.date(2021, 1, 1) + datetime.timedelta(days=30)
-print(future_date) #  ‏2021-01-31
+# חישוב תאריך בעתיד
+future_date = datetime.now() + timedelta(days=30)
+print(future_date)
 
-# לחשב תאריך בעבר נשתמש באותה הפונקציה ונמיר כמות ימים לשלילית
-past_date = datetime.date(2021, 1, 1) - datetime.timedelta(days=30)
-print(past_date) # 2020-12-02
-
+# חישוב תאריך בעבר
+past_date = datetime.now() - timedelta(days=30)
+print(past_date)
 ```
+## צלילה עמוקה
 
-## העמקה:
-עבור רבים החישוב של תאריך בעתיד או בעבר ייחשב כמשימה קלה, אך עם המאפיינים והתכונות הנוספים שנתמכים על ידי פייתון ניתן ליצור יישומים מתקדמים ומוצלחים. תאריך הוא משתנה מקומי וכך הוא מאפשר למתכנתים ליישם אותו בדרך שונה בכל להקשת. ניתן גם ליצור תאריכים תנאיים כגון הכשרת תאריך במקרה של שנה פעולה.
+ראשית, המושגים של חישוב תאריך בעתיד או בעבר נמשו מעניינים מסחריים ישנים, כמו שכירות, תשלומי לווין, ומלחמות. במהלך השנים אנו מצאנו שימושים נוספים במערכות מחשב. 
+אלטרנטיבות לפתרון ה-Python שלנו יכול להיות בשפות אחרות כמו JavaScript או Java, שיש להן הפונקציונליות המשולבת שלהן.
+בפיתוח, חשוב לזכור שהפונקציות `timedelta` ו`datetime.now()` מחזירות תאריך ושעה, לא רק תאריך. אם רק התאריך נחוץ, ניתן להשתמש ב-future_date.date() או past_date.date().
 
-## ראו גם:
-למידע נוסף על חישוב תאריכים בפייתון ניתן לעיין במסמכי המדיניות של פייתון ובפורומים השונים ברשת, כמו גם בספרים ובמדריכים שמתמקדים בנושא זה. ניתן גם להתנסות ולהמציא מטבעי עצמך על ידי השתמשות בכמות הימים והחשבונית הייחודית של כל תאריך.
+## ראה גם
+
+- Python Documentation: datetime — Basic date and time types: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)
+- Python datetime to string without microsecond component: [https://stackoverflow.com/questions/7999935/python-datetime-to-string-without-microsecond-component](https://stackoverflow.com/questions/7999935/python-datetime-to-string-without-microsecond-component)
+- Useful Python date( ) Examples: [https://www.w3schools.com/python/python_datetime.asp](https://www.w3schools.com/python/python_datetime.asp)

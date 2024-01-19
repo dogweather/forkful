@@ -1,7 +1,7 @@
 ---
-title:                "Lukemalla komentorivin argumentit."
-html_title:           "PowerShell: Lukemalla komentorivin argumentit."
-simple_title:         "Lukemalla komentorivin argumentit."
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,30 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mikä & Miksi?
 
-Komentoriviparametrien lukeminen on tapa saada tietoa erilaisista käyttäjän antamista syötteistä ohjelmalle. Tätä käytetään usein mukauttamaan ohjelman käyttäytymistä käyttäjän haluamalla tavalla.
+Komennonriviargumenttien lukeminen on prosessi, jossa ohjelma saa syötteenä arvoja komentoriviltä aloittaessaan. Ohjelmoijat tekevät tämän monista syistä, kuten määrittääkseen ohjelman käyttäytymisen tai välttääkseen koodin liiallisen joustavuuden.
 
-# Miten:
+## Miten:
 
-Käytä seuraavaa koodia luodessasi PowerShell-skriptiä ja halutessasi lukea komentoriviparametrejä ja tulostaa ne:
+```PowerShell
+# Tämä on yksinkertainen esimerkki PowerShell-skriptistä, joka lukee komennonriviargumentteja.
 
+Param(
+   [Parameter(Mandatory=$true)][string]$argumentti1,
+   [Parameter(Mandatory=$false)][string]$argumentti2
+)
+
+Write-Host "Argumentti 1: " $argumentti1
+Write-Host "Argumentti 2: " $argumentti2
 ```
-PowerShell $args
+
+Tulosteessa nähdään:
+
+```PowerShell
+> .\Skripti.ps1 -argumentti1 "Moi" -argumentti2 "Maailma"
+Argumentti 1: Moi
+Argumentti 2: Maailma
 ```
 
-Tässä esimerkissä tulostetaan kaikki komentoriviparametrit yhdellä kertaa. Voit myös valita tietyn parametrin antamalla sen nimen sulkuihin, kuten `$args[0]` ensimmäisestä parametrista. Tai voit käyttää `Read-Host`-komennon lukemaan yksittäisiä syötteitä käyttäjältä.
+## Syvällisempi tarkastelu
 
-# Syvempi sukellus:
+Komennonriviargumenttien lukeminen juontaa juurensa varhaisiin tietokoneisiin, jolloin ne olivat ainoa tapa syöttää ohjelmiin tietoja käytettävän graafisen käyttöliittymän puuttuessa. Nämä menetelmät ovat säilyneet, koska ne ovat yksinkertaisia ja tehokkaita.
 
-Komentoriviparametrit ovat olleet käytössä jo vuosia ja niitä käytetään monissa ohjelmointikielissä, kuten C, Java ja Python. Ne tarjoavat kätevän tavan antaa ohjelmalle tietoa suoraan käyttäjältä, ilman tarvetta muokata koodia joka kerta.
+PowerShellissa on useita tapoja lukea komennonriviargumentteja. Kuten esimerkkikoodissa käytetty Param, Get-Args on toinen tapa käsitellä argumentteja, joiden avulla pääset käsiksi jokaiseen yksittäiseen lähettämääsi argumenttiin.
 
-Toinen vaihtoehto komentoriviparametrien lukemiseen PowerShellissa on käyttää `Param()`-lohkoa skriptissä, mutta tämä vaatii hieman enemmän koodaustaitoja ja on paremmin soveltuvaa suurempiin projekteihin.
+Totuus on, että komennonriviargumenttien lukeminen on haluttu taito ohjelmoijille, koska se antaa joustavuuden määrittää ohjelman suorituksen aikana tarvittavat asiat.
 
-Komentoriviparametrit ovat myös käteviä ohjelman testaamisessa ja virheiden diagnosoinnissa. Jos jokin parametri aiheuttaa ongelmia, voit tarkistaa sen arvon helposti komentoriviltä.
+## Katso myös
 
-# Katso myös:
+1. Microsoft PowerShell Docs - Param: https://docs.microsoft.com/fi-fi/powershell/scripting/learn/deep-dives/everything-about-parameter-validation?view=powershell-7.1
+2. MSDN - Komentoriviargumentit: https://docs.microsoft.com/fi-fi/windows-server/administration/windows-commands/windows-commands
+3. PowerShell.org - Käsittelee komennonriviargumentteja: https://powershell.org/2013/11/24/powershell-args-and-what-to-do-with-them/
 
-Voit lukea lisää komentoriviparametreista ja niiden käytöstä PowerShellissa Microsoftin dokumentaatiosta: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_parsing_command_line_parameters?view=powershell-7
-
-Voit myös löytää erilaisia käyttökelpoisia vinkkejä ja esimerkkejä komentoriviparametrien lukemiseen Stack Overflow -sivustolta: https://stackoverflow.com/questions/15034573/powershell-args
+Muista, että näiden linkkien informaatio on tärkeää ja voi auttaa ymmärtämään paremmin komennonriviargumenttien käyttöä.

@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "Bash: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,55 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Czytanie pliku tekstowego to proces, w którym program przegląda i odczytuje zawartość istniejącego pliku z tekstem. Programiści często korzystają z tej funkcji, aby uzyskać dostęp do informacji przechowywanych w plikach tekstowych lub przeprowadzić operacje na danych zawartych w takich plikach.
+## Co i dlaczego?
+
+Czytanie pliku tekstowego to wydobycie i interpretacja danych zapisanych w pliku. Programiści robią to, aby manipulować danymi, przetwarzać informacje i budować interakcje w swoich aplikacjach.
 
 ## Jak to zrobić:
-Poniżej znajdują się przykładowe kody oraz wyniki wywołania, które pokazują, jak używać polecenia ```cat``` do odczytania zawartości pliku tekstowego, ```grep``` do przefiltrowania wyników i ```wc -l``` do zliczenia ilości linii w pliku.
 
 ```Bash
-# Przykładowy plik tekstowy "dane.txt":
+# Użyj polecenia 'cat'
+cat plik.txt
 
-Imię: Michał
-Nazwisko: Nowak
-Wiek: 28
-Zawód: programista
-
-# Polecenie "cat" odczytuje zawartość pliku tekstowego:
-cat dane.txt
+# Używając polecenia 'less' do czytania długich plików
+less plik.txt
 ```
-
-Wynik:
-
-``` 
-Imię: Michał
-Nazwisko: Nowak
-Wiek: 28
-Zawód: programista
-```
-
+na przykład, jeżeli plik.txt zawiera linie "Hello, World!", output wygląda tak:
 ```Bash
-# Polecenie "grep" przefiltrowuje wyniki:
-cat dane.txt | grep "Nazwisko"
-```
-Wynik:
-```
-Nazwisko: Nowak
+Hello, World!
 ```
 
-```Bash
-# Polecenie "wc -l" zlicza ilość linii w pliku:
-wc -l dane.txt
-```
-Wynik:
-```
-4 dane.txt
-```
+## Głębsze zagłębienie
 
-## Deep Dive:
-Czytanie plików tekstowych jest jedną z podstawowych funkcji w systemie operacyjnym Unix, którą można wykorzystać do wielu celów, takich jak przetwarzanie danych, analiza logów czy przeszukiwanie danych w plikach. Alternatywnymi sposobami odczytu pliku tekstowego są m.in. wykorzystanie narzędzi jak ```head```, ```tail``` lub ```sed```. Proces czytania pliku odbywa się w dwóch etapach: najpierw system operacyjny odczytuje zawartość pliku do pamięci, a następnie program odczytuje dane z pamięci.
+Bash, wprowadzone w 1989 roku, jest jednym z najstarszych języków skryptowych. Inne niż Bash alternatywy do czytania plików tekstowych to Python, Ruby czy PHP. Działanie czytania plików w Bashu polega na buforowaniu zawartości pliku i sekwencyjnym odczytywaniu danych.
 
-## Zobacz także:
-- [Dokumentacja polecenia "cat"](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html)
-- [Porównanie polecenia "cat" z innymi narzędziami do odczytywania plików tekstowych](https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/)
-- [Inne sposoby odczytu pliku tekstowego w systemie Unix](https://www.lifewire.com/how-to-read-a-text-file-line-by-line-2623446)
+## Zobacz też:
+
+* Podstawy Bash: https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php
+* Czytanie plików w Pythonie: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+* Czytanie plików w Ruby: https://ruby-doc.org/core-2.5.0/IO.html#method-i-read
+* Czytanie plików w PHP: https://www.php.net/manual/en/function.fread.php

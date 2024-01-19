@@ -1,7 +1,7 @@
 ---
-title:                "Eliminar caracteres coincidentes con un patrón."
-html_title:           "C#: Eliminar caracteres coincidentes con un patrón."
-simple_title:         "Eliminar caracteres coincidentes con un patrón."
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,34 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Borrar caracteres que coincidan con un patrón es un proceso en el que los programadores eliminan de un texto aquellos caracteres que se ajustan a un cierto conjunto de criterios. Esto puede ser útil para limpiar y organizar datos o para validar la entrada del usuario en una aplicación.
+## ¿Qué y Por Qué?
 
-## Cómo hacerlo:
-Aquí hay un ejemplo sencillo de cómo borrar todos los números de una cadena de texto utilizando el método de expresiones regulares en C#:
+Eliminar caracteres que coinciden con un patrón es una acción que se usa para limpiar cadenas de caracteres no deseados. Los programadores recurren a esta técnica para manejar datos limpios y más eficientes.
 
+## ¿Cómo se hace?
+
+Usaremos un simple código de ejemplo para mostrar cómo se puede hacer esto.
+
+```C#
+using System;
+using System.Text.RegularExpressions;
+
+public class Program
+{
+    public static void Main()
+    {
+        string pattern = "[^0-9]";
+        string input = "ABC123";
+
+        string replaced = Regex.Replace(input, pattern, "");
+
+        Console.WriteLine(replaced);
+    }
+}
 ```
-string texto = "abc123def456ghi";
-string patron = @"\d+";
-string resultado = Regex.Replace(texto, patron, "");
-Console.WriteLine(resultado); // Salida: abcdefghi
+El código anterior producirá la siguiente salida:
+
+```C#
+123
 ```
 
-También es posible borrar caracteres específicos utilizando el método `Remove()` de la clase `StringBuilder` en C#:
+Notarás que todas las letras fueron eliminadas, dejando solo los números.
 
-```
-string texto = "Hola mundo!";
-StringBuilder sb = new StringBuilder(texto);
-sb.Remove(5, 1); // Elimina la letra 'm'
-Console.WriteLine(sb.ToString()); // Salida: Holaundo!
-```
+## En Detalle
 
-## Profundizando:
-Borrar caracteres que coincidan con un patrón es una forma eficiente de manipular grandes cantidades de datos en un texto. Esta técnica utiliza expresiones regulares, que son patrones utilizados para buscar o manipular texto. Alternativamente, también se puede utilizar el método `Replace()` de la clase `String` para reemplazar caracteres específicos en una cadena de texto.
+En el pasado, los métodos alternativos a menudo implicaban emplear bucles para iterar a través de cada carácter en la cadena. Esto resultaba ser tanto poco eficiente como visualmente poco atractivo dentro del código.
 
-En términos de implementación, los algoritmos utilizados para borrar caracteres que coincidan con un patrón pueden variar según el lenguaje de programación y la plataforma utilizados. En C#, la clase `Regex` proporciona métodos como `Replace()` y `Match()` que facilitan la manipulación de texto utilizando expresiones regulares.
+Ahora, con la clase `Regex` en C#, los programadores pueden utilizar potentes expresiones regulares. Esto no solo permite patrones más complejos, sino también una ejecución mucho más eficiente.
 
-## Ver también:
-- [Documentación de Microsoft sobre el método Remove() en C#](https://docs.microsoft.com/es-es/dotnet/api/system.text.stringbuilder.remove)
-- [Ejemplos de expresiones regulares en C#](https://www.dotnetperls.com/regex)
-- [Guía de expresiones regulares en C#](https://www.c-sharpcorner.com/article/regex-in-C-Sharp/)
+Una alternativa a este enfoque puede ser el uso del método `String.Replace`, pero es importante tener en cuenta que este método solo puede reemplazar exactamente las cadenas de caracteres que se le dan. Esto es mucho menos flexible que una expresión regular que permite patrones de coincidencia.
+
+En los detalles de la implementación, `Regex.Replace(input, pattern, "");` es la línea donde realmente se realiza la eliminación de caracteres. Aquí, todos los caracteres del `input` que coinciden con el `pattern` son reemplazados por una cadena vacía.
+
+## Ver También
+
+Puedes profundizar en las expresiones regulares de C# en la [documentación oficial de Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-5.0).
+
+Para más información sobre el manejo de cadenas en C#, consulta [este artículo](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/) en Microsoft Docs.

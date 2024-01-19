@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "Elm: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
 ## Vad & Varför?
-När vi programmerar är det inte alltid lätt att förstå vad som händer i koden. Det är här printfelsökning kommer in i bilden. Det är en metod för att skriva ut olika delar av koden i konsolen för att få en bättre förståelse för vad som händer när koden körs. Detta kan vara särskilt användbart när du försöker lösa buggar eller förstå en komplex algoritm.
 
-## Hur man:
-Elm har en inbyggd funktion för printfelsökning som heter `Debug.log`. Här är ett exempel på hur du kan använda den:
+Att skriva ut felsökningsdata (debug output) är processen med att visa underliggande data och processflöde. Programmerare gör det för att spåra och diagnostisera oväntat beteende och fel i deras kod.
+
+## Så här gör du:
 
 ```Elm
--- Kodexempel
-import Debug exposing (log)
+import Html exposing (Html, text)
+import Debug
 
--- Funktion som tar emot två heltal och returnerar deras summa
-sum : Int -> Int -> Int
-sum x y = 
+main =
   let
-    result = x + y
+    myValue = "Hej världen!"
+    _ = Debug.log "Mitt värde är" myValue
   in
-    Debug.log "Resultatet av summorna är:" result
+  text myValue
 ```
+Operationen `Debug.log` skriver ut följande text i webbläsarkonsolen: `Mitt värde är: "Hej världen!"`. Notera att `_ = Debug.log` är nödvändigt då `Debug.log` returnerar det värde som den just loggade och måste bindas.
 
-Outputen i konsolen kommer att se ut som följande:
+## Djup Dykning
 
-```Elm
-Resultatet av summorna är: 15
-```
+Historiskt sett, har utskrift av felsökningsdata varit ett grundläggande verktyg för programmerare ända sedan de första datorerna. Alternativ till Elm's `Debug.log` inkluderar användning av skräddarsydda funktioner för loggning eller användning av externa paket såsom Elm-Console. Men, vi behöver vara medvetna om att `Debug.log` endast ska användas under utveckling eftersom det tas bort från den slutliga byggen när man använder `--optimize` flaggan under byggprocessen.
 
-Som du kan se har värdet av `result` skrivits ut i terminalen. Detta kan hjälpa dig att förstå vad som händer i koden. Du kan också använda `Debug.log` för att skriva ut andra värden, som till exempel listor eller strängar.
+## Se Även
 
-## Djupdykning:
-Printfelsökning har funnits i många programmeringsspråk sedan lång tid tillbaka, och är ett enkelt men effektivt felsökningsverktyg. Men det finns också andra sätt att felsöka koden, till exempel genom att använda en debugger eller genom att skriva ut felmeddelanden vid exception. Vad som fungerar bäst för dig beror på dina personliga preferenser och projektets behov.
+- [Elm Guide: Debugging](https://guide.elm-lang.org/effects/): Fullständig guide på engelska till debuggan i Elm.
+- [Elm: Beyond Hello World](https://guide.elm-lang.org/error_handling/): Avancerade koncept, inklusive felsökning och felhantering.
+- [Elm Debug Tutorial](https://www.elm-tutorial.org/en-v01/02-elm-arch/06-debug.html): Enkel tutoriel på engelska som visar hur man kan debugga Elm program med `Debug.log`.
 
-När det kommer till implementation så fungerar `Debug.log` genom att lägga till en extra parameter i funktionen som returnerar värdet. Detta gör att värdet kan skrivas ut i konsolen, men har ingen påverkan på själva funktionen i sig.
-
-## Se även:
-- [Officiell dokumentation för Debug-modulen i Elm](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [En guide för felsökning i Elm](https://medium.com/elm-shorts/debugging-elm-2768fbd6e939) 
-- [En jämförelse mellan printfelsökning och debugger i Elm](https://qfpl.io/posts/practical-debugging-in-elm/)
+---

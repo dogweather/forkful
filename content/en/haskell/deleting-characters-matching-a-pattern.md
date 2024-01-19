@@ -1,6 +1,6 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Haskell recipe: Deleting characters matching a pattern"
+html_title:           "Lua recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,48 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Deleting Characters Matching a Pattern in Haskell
+
 ## What & Why?
 
-Deleting characters that match a particular pattern is a common task for programmers. It involves searching through a given string or text and removing any characters that match a specified criteria. This can be useful in data cleaning and formatting, as well as in filtering out unwanted data.
+Deleting characters matching a pattern is a method to cleanse the data or modify text. Whether it's for preprocessing, removing noise data, or ensuring data privacy, programmers often need to delete specific characters from strings.
 
 ## How to:
 
-To delete characters matching a pattern in Haskell, we can use the `filter` function. This function takes two arguments - a predicate function and a list. It returns a new list with only the elements that satisfy the given predicate.
-
-Let's say we want to remove all vowels from a string. We can define a function that checks if a character is a vowel:
+Here's an example, deleting all vowels in a string:
 
 ```Haskell
-isVowel :: Char -> Bool
-isVowel c = c `elem` "aeiou"
+import Data.Char
+import Data.List
+
+deleteVowels :: String -> String
+deleteVowels = filter (`notElem` ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'])
+
+main :: IO ()
+main = do
+    let str = "Hello, World!"
+    putStrLn $ deleteVowels str
 ```
 
-Then, we can use `filter` to remove all vowels from a given string:
+When run, this spits out:
 
 ```Haskell
-filter isVowel "hello world" -- Output: "hll wrld"
+"Hll, Wrld!"
 ```
 
-We can also use more complex patterns or regular expressions with the `filter` function to remove specific characters from a string.
+## Deep Dive
 
-```Haskell
-import Text.Regex.Posix -- Import the regex library
+The idea of pattern matching is rooted in the symbolic manipulation of the Lisp language family. Haskell's implementation, however, is strongly influenced by the pattern matching of the ML language family. The `filter` function is the basic building block to accomplish our goal. It's one of the numerous high-order functions has Haskell offers.
 
--- Function that removes all digits from a string
-removeDigits :: String -> String
-removeDigits str = filter (\x -> not (x =~ "[0-9]" :: Bool)) str
+For more complex patterns, you could use regular expressions, but the use of `filter` and `notElem` illustrates a powerful, idiomatic Haskell technique. If performance is a concern, consider using `Data.Text` instead of `String`, as the former is more optimized.
 
-removeDigits "ABC123" -- Output: "ABC"
-```
+## See Also
 
-## Deep Dive:
+For further reading:
 
-Pattern matching and filtering have been used in programming languages for a long time. In Haskell, the `filter` function is inspired by the mathematical concept of a filter. It takes a list and returns a new list with only the elements that match a certain criteria.
-
-There are other ways of deleting characters in Haskell, such as using the `map` function or list comprehensions. These methods can also be used for deleting elements that match a pattern, but they may have different syntax and usage.
-
-Under the hood, the `filter` function is implemented using recursion. When a condition is met for a particular element, it is added to the result list, and the function is recursively called on the rest of the elements. This continues until all elements have been checked.
-
-## See Also:
-
-- [Haskell filter function](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:filter)
-- [Regular expressions in Haskell](https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base-RegexLike.html)
+- [Learn You a Haskell for Great Good](http://learnyouahaskell.com/)
+- [Real World Haskell](http://book.realworldhaskell.org/)
+- [Haskell Wiki](https://wiki.haskell.org/Main_Page) for in-depth developer resources.

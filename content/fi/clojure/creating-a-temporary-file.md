@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "Clojure: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä & Miksi?
+## Mikä & Miksi?
 
-Väliaikaisten tiedostojen luominen on tapa tallentaa väliaikaisia tietoja ohjelman suorituksen aikana. Tämä on hyödyllistä esimerkiksi, kun halutaan tallentaa väliaikaisia tuloksia laskutoimitusten välillä.
+Tilapäisen tiedoston luominen on ohjelmointiprosessi, jossa luodaan väliaikainen tiedosto datan tallentamiseksi ohjelman ajon aikana. Tätä käytetään suurten datamäärien käsittelyyn, jotka ylittävät suoran muistikäsittelyn.
 
-# Miten:
+## Kuinka:
 
-Väliaikaisten tiedostojen luominen on helppoa Clojuressa seuraavien funktioiden avulla:
+Tässä esimerkissä, kuinka luoda väliaikainen tiedosto Clojurella:
 
 ```Clojure
 (require '[clojure.java.io :as io])
 
-;; Luo väliaikaisen tiedoston valitussa hakemistossa ja palauttaa sen polun:
-(io/file "hakemisto" "tiedoston_nimi")
+(defn create-temp-file [prefix suffix]
+  (-> (java.io.File/createTempFile prefix suffix)
+      (.deleteOnExit)))
 
-;; Luo väliaikaisen tiedoston oletushakemistoon ja palauttaa sen polun:
-(io/file "tiedoston_nimi")
-```
-
-Esimerkki:
+(let [temp-file (create-temp-file "tmp" ".txt")]
+  (with-open [wtr (io/writer temp-file)]
+    (.write wtr "Hello, World!"))
+  (slurp temp-file)) 
+```      
+Tämän suorittaminen tuottaa seuraavan tuloksen:
 
 ```Clojure
-=> (io/file "tmp" "tiedosto.txt")
-/tmp/tiedosto.txt
+"Hello, World!"
 ```
 
-# Syvemmälle:
+## Syvällisemmin
 
-Väliaikaisten tiedostojen luominen on yleinen tapa ohjelmoinnissa, ja sitä käytetään esimerkiksi väliaikaisten tietojen tallentamiseen tai muokkaamiseen. Clojuren lisäksi väliaikaisten tiedostojen luominen on mahdollista myös muilla ohjelmointikielillä, kuten Pythonilla ja Javalla.
+Historiallisen kontekstin osalta väliaikaisia tiedostoja on käytetty ohjelmoinnissa jo kauan, koska ne mahdollistavat suurten datamäärien käsittelyn ilman, että järjestelmän muisti ylikuormittuu.
 
-Väliaikaisten tiedostojen luomiseen Clojuressa on myös muita tapoja, kuten käyttämällä ```deftemp``` -makroa tai ```with-open``` -funktiota. Nämä vaihtoehdot tarjoavat lisää joustavuutta ja kontrollointia väliaikaisen tiedoston käytössä.
+Vaihtoehtoisena strategia on luoda väliaikaisia tietokantoja tai käyttää välimuistin käsittelyä. Ne voivat toimia erityisen hyvin tiettyjen sovellusten, kuten suurten verkkopalvelinten, kanssa.
 
-# Katso myös:
+Mitä tulee toteutuksen yksityiskohtiin, nämä väliaikaiset tiedostot tallentuvat järjestelmän määrittämään väliaikaiseen hakemistoon. `(.deleteOnExit)` -metodia käytetään, jotta tiedosto poistetaan automaattisesti, kun virtuaalikone lopettaa.
 
-- [Clojuren dokumentaatio](https://clojure.org/api/clojure.java.io)
-- [Java'n File-luokka](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+## Katso myös
+
+[GNU Core Utilities: Temporary Files](https://www.gnu.org/software/coreutils/manual/html_node/Temporary-Files.html#Temporary-Files)
+
+[Java Platform SE: Class File](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
+
+[Clojure Docs: clojure.java.io/writer](https://clojuredocs.org/clojure.java.io/writer)

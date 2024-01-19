@@ -1,6 +1,6 @@
 ---
 title:                "Lendo um arquivo de texto"
-html_title:           "Swift: Lendo um arquivo de texto"
+html_title:           "Bash: Lendo um arquivo de texto"
 simple_title:         "Lendo um arquivo de texto"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,22 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que e Porque?
-Ler um arquivo de texto é o ato de acessar e interpretar o conteúdo escrito em um arquivo de formato simples como .txt ou .csv. Os programadores muitas vezes precisam ler arquivos de texto para obter informações úteis e usá-las em seus programas.
+## O Que & Por Quê?
+Ler um arquivo de texto envolve extrair dados de um arquivo de texto armazenado em algum lugar. Programadores fazem isso para manipular e utilizar essas informações de diversas maneiras em suas aplicações.
 
-# Como fazer:
-Para ler um arquivo de texto em Swift, primeiro é necessário criar uma instância de FileManager, que permite o acesso aos arquivos do sistema. Em seguida, é preciso especificar o caminho do arquivo que deseja ser lido. Por fim, basta utilizar o método String(contentsOfFile:) para obter o conteúdo do arquivo e trabalhar com ele da maneira que desejar.
+## Como fazer:
+Antes de começar, certifique-se de que o texto que deseja ler está em um arquivo .txt. Aqui está um exemplo de leitura de um arquivo de texto usando Swift:
 
 ```Swift
-let fileManager = FileManager()
-let filePath = "CaminhoDoArquivo.txt"
-if let contents = try? String(contentsOfFile: filePath) {
-    // Manipule o conteúdo do arquivo aqui
+import Foundation
+
+let filePath = "/caminho/para/o/arquivo.txt"
+
+do {
+    let content = try String(contentsOfFile:filePath, encoding: String.Encoding.utf8)
+    print(content)
+} catch {
+    // Tratamento de erro
+    print("Não foi possível ler o arquivo.")
 }
 ```
+Depois de executar o código acima, o conteúdo do seu arquivo de texto será impresso no console.
 
-# Profundidade:
-Ler arquivos de texto é uma prática comum entre os programadores, pois permite a leitura e utilização de dados essenciais para seus programas. Antigamente, os arquivos de texto eram a única forma de armazenar informações em computadores, mas hoje existem alternativas como bancos de dados. A leitura de um arquivo de texto também pode ser feita de forma assíncrona, tornando o processo mais eficiente.
+## Mergulho Profundo
 
-# Veja também:
-Para mais informações sobre a leitura de arquivos em Swift, consulte a documentação oficial da Apple: https://developer.apple.com/documentation/foundation/filemanager.
+1. **Contexto histórico**: A leitura de arquivos faz parte da programação desde os seus primórdios. Antes, era usada para armazenar dados, programas e configurações. Ainda hoje, é uma maneira eficaz de manejar grandes volumes de dados sem precisar inseri-los manualmente no código.
+
+2. **Alternativas**: Há muitas outras maneiras de ler arquivos em Swift, um exemplo é usar o `URL` em vez do `String`. Isso pode ser útil para ler arquivos que estão na internet, por exemplo.
+
+3. **Detalhes de implementação**: O método ```contentsOfFile``` que estamos usando aqui é um método de alto nível fornecido pela Apple. Ele cuida de muitos detalhes por trás das cenas, como abrir o arquivo, ler seus dados e, em seguida, fechar o arquivo.
+
+## Veja Também
+Para mais detalhes sobre a linguagem Swift e leitura de arquivos, confira estes links:
+
+1. [Documentação Oficial Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+2. [Leitura de arquivos com Swift por Ray Wenderlich](https://www.raywenderlich.com/418-working-with-the-filemanager-in-swift)
+3. [Tratamento de strings e arquivos com Swift](https://learnappmaking.com/string-swift-how-to/)

@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie ciągu znaków na małe litery"
-html_title:           "PowerShell: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,18 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Konwertowanie ciągów znaków na małe litery jest ważnym aspektem programowania, który pozwala na jednolite formatowanie tekstu. Jest to proces zmiany wszystkich znaków w wybranym ciągu na ich małe odpowiedniki. Programiści często wykorzystują tę funkcjonalność do porównywania i sortowania danych, a także do wyświetlania tekstu w czytelny sposób.
+## Co i Dlaczego?
+Zamiana łańcucha znaków na małe litery oznacza przekształcenie wszystkich liter alfabetu w łańcuchu na ich mało literowe odpowiedniki. Programiści robią to, aby ułatwić porównanie i sortowanie napisów, ponieważ operacje te często są niezależne od wielkości liter.
 
 ## Jak to zrobić:
-Aby skonwertować ciąg znaków na małe litery w języku PowerShell, wystarczy użyć wbudowanej funkcji ```ToLower()```. Przykładowo, chcąc skonwertować ciąg "HELLO WORLD" na małe litery, należy wykonać następującą komendę:
-
+Napisy w PowerShell możemy zapisać małymi literami za pomocą metody `.ToLower()`. Oto przykład:
 ```PowerShell
-"HELLO WORLD".ToLower()
+$mojString = "HeLLo PoWeRShELL"
+$mojString.ToLower()
+```
+Po uruchomieniu powyższego kodu output będzie następujący:
+```PowerShell
+"hello powershell"
 ```
 
-## Wnikliwa analiza:
-Konwertowanie ciągów znaków na małe litery jest możliwe dzięki funkcji ```.ToLower()```, która jest dostępna w większości języków programowania. Pomysł na implementację tej funkcji powstał w latach pięćdziesiątych, kiedy to programiści potrzebowali sposobu na porównywanie tekstów bez względu na wielkość liter. Alternatywnym sposobem na osiągnięcie tego efektu jest użycie funkcji ```.ToUpper()```, która konwertuje znaki na duże litery.
+## Głębsze Zanurzenie:
+Metoda `.ToLower()` była dostępna od wczesnych wersji języków programowania .NET, w tym C# i Visual Basic. Alternatywą jest użycie metody `.ToLowerInvariant()`, która zapewnia konsekwencje między różnymi ustawieniami języka.
 
-## Zobacz również:
-Jeśli chcesz dowiedzieć się więcej o funkcjonowaniu funkcji ```.ToLower()``` w języku PowerShell, zapoznaj się z oficjalną dokumentacją na stronie [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/string-methods/tolower?view=powershell-7.1).
+Co więcej, szczegółowa implementacja `.ToLower()` zależy od konkretnego .NET Runtime'a. W środowisku .NET Framework, ta metoda opiera się na informacjach zawartych w "TextInfo" dla aktualnej kultury.
+
+## Zobacz także:
+- Dokumentacja Microsoft na temat metody `.ToLower()`: [link](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0)
+- Poradnik Microsoft na temat sortowania łańcuchów znaków: [link](https://docs.microsoft.com/en-us/dotnet/standard/base-types/comparing-strings?view=net-5.0)
+- Dokumentacja Microsoft na temat znaków niezależnych od kultury: [link](https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings?view=net-5.0)

@@ -1,7 +1,7 @@
 ---
-title:                "हासिल करें सांद्रता संख्याएं"
-html_title:           "Javascript: हासिल करें सांद्रता संख्याएं"
-simple_title:         "हासिल करें सांद्रता संख्याएं"
+title:                "यादृच्छिक संख्याओं का निर्माण"
+html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
+simple_title:         "यादृच्छिक संख्याओं का निर्माण"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,27 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Random numbers are numbers that are generated using a specific algorithm in an unpredictable manner. Programmers use them in various applications such as games, simulations, and cryptography. 
+## क्या & क्यों? (What & Why?)
+यादृच्छिक संख्याओं का उत्पादन यदि आपके कोड का हिस्सा है, तो यह अद्वितीयता और अप्रत्याशितता को सुनिश्चित करता है। खेलों, एन्क्रिप्शन, एल्गोरिदमों आदि में प्रोग्रामर्स इसे उपयोग करते हैं।
 
-## How to:
+## कैसे: (How to:)
+Javascript में, `Math.random()` फ़ंक्शन एक यादृच्छिक संख्या उत्पन्न करता है।
 ```Javascript
-//To generate a random number between 0 and 1 (excluding 1), use the Math.random() function
-let randNum = Math.random();
-console.log(randNum); //0.543013952370924
-
-//To generate a random number between two specified values (included), use the Math.random() function along with some simple calculations
-function getRandom(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-let randNum = getRandom(1, 10);
-console.log(randNum); //6
+let randomNo = Math.random();
+console.log(randomNo);
+```
+उदाहरण के लिए, अगर आप `0` और `10` के बीच एक यादृच्छिक संख्या चाहते हैं तो,
+```Javascript
+let randomNo = Math.floor(Math.random() * 11);
+console.log(randomNo);
 ```
 
-## Deep Dive:
-Generating random numbers has been a common problem in computer science. It was first addressed by John von Neumann in the 1940s when he devised a way to generate random bits using a combination of physical processes and mathematical algorithms. Since then, several other methods have been developed such as linear congruential generators, middle-square method, and Mersenne Twister. However, these methods can sometimes result in patterns and should not be used for cryptographic purposes. A more secure option is to use a true random number generator which utilizes unpredictable physical processes like atmospheric noise or radioactive decay.
+## गहरा डाइव (Deep Dive)
+यादृच्छिक संख्या उत्पन्न करने का आविष्कार 20वीं सदी की शुरुआत में हुआ था और यह क्रॉनिक श्रृंखला के नाम से जाना जाता था।
 
-## See Also:
-- [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Random Numbers and JavaScript: What You Need to Know](https://www.freecodecamp.org/news/random-numbers-and-javascript-what-you-need-to-know-680d524fccca/)
-- [True and Pseudo Random Numbers](https://www.techopedia.com/definition/26811/true-random-number)
+बदले में, `crypto.getRandomValues()` और Web Crypto API लागू कर सकते हैं - यादृच्छिक बाइट्स उत्पन्न करता है।
+
+`Math.random()` उत्पन्न अविश्वसनीय यादृच्छिक संख्याएं उत्पन्न करता है। इसका परिणाम सोचम सीड (seed) का प्रयोग करता है।
+
+## भी देखें: (See Also:)
+1. [MDN Web Docs - Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+2. [MDN Web Docs - crypto.getRandomValues()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues)
+3. [Wikipedia - Pseudorandomness](https://en.wikipedia.org/wiki/Pseudorandomness)

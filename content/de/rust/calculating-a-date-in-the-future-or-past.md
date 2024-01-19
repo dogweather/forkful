@@ -1,7 +1,7 @@
 ---
-title:                "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Rust: Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Rust: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,27 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist ein häufiges Problem in der Programmierung. Es erfordert die Verwendung von verschiedenen Datums- und Zeitfunktionen, um das gewünschte Ergebnis zu erhalten. Programmierer benötigen diese Funktionen, um Daten aufzubereiten und zu organisieren, beispielsweise für die Planung von Ereignissen oder das Erstellen von Zeitplänen.
 
-## Wie geht's?
-Um ein Datum in der Zukunft oder Vergangenheit in Rust zu berechnen, können wir die Datetime-Bibliothek verwenden. Schauen wir uns ein Beispiel an, bei dem wir 10 Tage von einem bestimmten Datum in der Zukunft subtrahieren:
+Das Berechnen eines zukünftigen oder vergangenen Datums ist eine Funktion, die ein bestimmtes Datum hinzuzufügt oder subtrahiert wird. Als Programmierer machen wir dies oft, um Zeitabläufe zu verfolgen oder Fristen zu berechnen.
 
+## So geht's:
+
+Im Rust-Programmiersprache können wir das Bibliothekspaket `chrono` verwenden, um diese Funktion einfach zu implementieren. Wenn du 'chrono' noch nicht hinzugefügt hast, füge es in dein 'Cargo.toml':
+
+```Rust
+[dependencies]
+chrono = "0.4.19"
 ```
-Rust use chrono::prelude::*;
-let date = Utc.ymd(2021, 11, 20);
-let ten_days_before = date - Duration::days(10);
 
-println!("{}", ten_days_before);
+Hier ist ein einfacher Codeblock, der zeigt, wie du einem Datum eine Anzahl von Tagen hinzufügen kannst:
+
+```Rust
+use chrono::{Date, Utc, Duration};
+
+fn main() {
+    let today: Date<Utc> = Utc::today();
+    
+    let next_week = today.checked_add_signed(Duration::days(7)).unwrap();
+    
+    println!("{}", next_week);
+}
 ```
 
-Das obige Beispiel verwendet die Datetime-Bibliothek, um ein Datum in der Zukunft zu erstellen und dann 10 Tage davon zu subtrahieren. Die Ausgabe wird das Datum 10 Tage vor dem angegebenen Datum sein, in diesem Fall 10. November 2021.
+Wenn du dieses Programm laufen lässt, wird es das Datum der nächsten Woche ausgeben.
 
-## Tiefer Einblick
-Das Berechnen von Datum und Zeit kann schwierig sein, da es viele Faktoren zu berücksichtigen gibt, wie z.B. verschiedene Zeitzonen und Schaltjahre. Alternativ können Programmierer auch die Standardbibliothek von Rust verwenden, um auf die Systemzeit zuzugreifen und damit das aktuelle Datum und die aktuelle Zeit zu erhalten.
+## Tiefgehende Analyse
 
-Es gibt auch andere Bibliotheken wie DateTime und Chrono, die ähnliche Funktionen anbieten, aber die Datetime-Bibliothek ist in Rust integriert und wird von der Community unterstützt.
+Die Berechnung von zukünftigen oder vergangenen Daten hat eine lange Geschichte in der Informatik und ihre Anwendungen sind weitreichend. Im Kontext von 'chrono', eine Bibliothek in Rust, könnten alternative Methoden die Verwendung von `checked_add_signed` oder `checked_sub_signed` sein, die eine Option zurückgeben, falls das Ergebnis außerhalb des gültigen Bereichs liegt.
+
+Hinsichtlich der Implementierungsdetails verwendet Rust einen `i64`-Datentype zur Darstellung von Datums- und Zeitwerten. Dies ermöglicht eine präzise Berechnung und Behandlung von Zeiten, auch über sehr große Zeitspannen hinweg.
 
 ## Siehe auch
-- [Datetime-Bibliothek in Rust](https://docs.rs/datetime/0.4.5/datetime/)
-- [Chrono-Bibliothek in Rust](https://docs.rs/chrono/0.4.19/chrono/)
-- [Standardbibliothek in Rust](https://doc.rust-lang.org/std/time/)
+
+Mehr lernen kannst du aus den folgenden Ressourcen:
+
+1. Chrono Documentation: [https://docs.rs/chrono/0.4.11/chrono/]
+2. Rust Documentation: [https://doc.rust-lang.org/std/]
+3. Rust Date and Time Tutorial: [https://www.tutorialspoint.com/rust/rust_date_time.htm]

@@ -1,7 +1,7 @@
 ---
-title:                "L'utilizzo delle espressioni regolari"
-html_title:           "Elixir: L'utilizzo delle espressioni regolari"
-simple_title:         "L'utilizzo delle espressioni regolari"
+title:                "Utilizzo delle espressioni regolari"
+html_title:           "Bash: Utilizzo delle espressioni regolari"
+simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
+## Cos'è & Perché?
 
-Le espressioni regolari in Elixir sono sequenze di caratteri che vengono utilizzate per cercare, sostituire e manipolare testo. Vengono spesso utilizzate dai programmatori per semplificare operazioni di ricerca e manipolazione di stringhe di testo.
+Le espressioni regolari, conosciute come `Regex`, sono una potente sintassi per cercare, abbinare e sostituire una parte di una stringa. Gli sviluppatori le utilizzano per manipolare dati testuali o convalidare gli input secondo specifici formati.
 
 ## Come fare:
 
-Le espressioni regolari possono essere create utilizzando la libreria Regex di Elixir. Ad esempio, possiamo cercare una parola all'interno di una stringa utilizzando il seguente codice:
+Ecco alcuni esempi di come utilizzare le espressioni regolari in Elixir.
 
+```elixir
+# Definire una regex
+re = ~r/ciao/
+
+# Convalidare una stringa
+String.match?("Ciao Mondo", re)   # true
+
+# Sostituire una stringa
+String.replace("Ciao Mondo", re, "Salve") # "Salve Mondo"
 ```
-Elixir Regex.scan("testo di esempio", ~r/testo/)
-```
 
-Questo restituirà una lista contenente tutti i match trovati, nel nostro caso "testo".
+## Approfondimento
 
-Per sostituire una porzione di testo con un'altra stringa, possiamo utilizzare la funzione `Regex.replace`:
+Historicalmente, le `Regex` risalgono al 1950 e sono diventate un'importante strumento di programmazione grazie alla loro inclusione nei linguaggi più popolari, tra cui Perl, JavaScript e, naturalmente, Elixir.
 
-```
-Elixir Regex.replace("testo di esempio", ~r/di/, "del")
-```
+Sebbene le espressioni regolari siano molto utili, esistono alternative nel caso in cui la sintassi risulti troppo complessa o la performance sia una preoccupazione. Ad esempio, potresti considerare l'uso di metodi string-specifici (`index_of`, `split`, ecc.) o librerie di analisi di stringhe dedicate.
 
-Questo sostituirà la parola "di" con "del" all'interno della stringa.
+In Elixir, le espressioni regolari sono implementate attraverso la libreria standard `:re` di Erlang, offrendo piena compatibilità con la sintassi delle espressioni regolari di Perl (conosciuta come PCRE).
 
-## Approfondimento:
+## Guarda anche
 
-Le espressioni regolari sono state inventate negli anni '50 e divennero popolari negli anni '80. Oggi, sono supportate da molti linguaggi di programmazione, compreso Elixir.
+Per approfondire le modalità di utilizzo delle espressioni regolari in Elixir, consulta queste risorse:
 
-In alternativa alle espressioni regolari, alcuni programmatori preferiscono utilizzare le funzioni di manipolazione delle stringhe di Elixir, come `String.replace` e `String.contains?`.
-
-Le espressioni regolari possono sembrare complesse all'inizio, ma una volta che si ha familiarità con la sintassi, possono essere molto potenti nell'elaborazione di dati e testo.
-
-## Vedi anche:
-
-Per ulteriori informazioni sulle espressioni regolari in Elixir, puoi consultare la documentazione ufficiale su [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html).
-
-Inoltre, puoi trovare tutorial e guide su Elixir e le espressioni regolari su siti come [https://www.tutorialspoint.com/elixir/](https://www.tutorialspoint.com/elixir/) e [https://www.regular-expressions.info/tutorial.html](https://www.regular-expressions.info/tutorial.html).
+1. Documentazione ufficiale di Elixir: [Regex](https://hexdocs.pm/elixir/Regex.html)
+2. Erlang/OTP: [modulo `:re`](http://erlang.org/doc/man/re.html)
+3. Learn Elixir: [Manipulating strings and binaries in Elixir](https://elixirschool.com/en/lessons/basics/binaries_strings_and_charlists/)

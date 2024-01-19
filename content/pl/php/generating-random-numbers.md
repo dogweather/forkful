@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie losowych liczb"
-html_title:           "PHP: Tworzenie losowych liczb"
-simple_title:         "Tworzenie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+## Co to i dlaczego?
 
-Generowanie losowych liczb jest procesem polegającym na wygenerowaniu liczby całkowitej lub rzeczywistej w sposób losowy. Programiści często stosują tę technikę do symulacji losowych zdarzeń lub do generowania unikalnych identyfikatorów.
+Generowanie liczb losowych to technika, która tworzy ciąg liczb, które nie mają z góry zdefiniowanej kolejności lub wzoru. Programiści robią to, aby dodać element niewiadomej do swoich programów, co jest szczególnie użyteczne w grach, symulacjach i testach.
 
-# Jak to zrobić?
+## Jak to zrobić:
 
-W PHP możemy wykorzystać funkcję `rand()` do generowania losowych liczb całkowitych w określonym zakresie. Przykładowy kod wygląda następująco:
+Możemy wygenerować liczbę losową w PHP (wersjat 8.0.2) używając funkcji rand(). Oto przykład:
+
+```PHP
+<?php
+echo rand() . "\n";
+echo rand(5, 15);
+?>
 ```
-$x = rand(1, 10);
-echo $x;
+Wynik:
+
+```PHP
+12345
+7
 ```
-Wynik zostanie wyświetlony jako liczba całkowita z zakresu od 1 do 10.
+Pierwsza linia kodu generuje dowolną liczbę losową, a druga linia generuje liczbę losową pomiędzy 5 a 15.
 
-Aby generować losowe liczby rzeczywiste, możemy użyć funkcji `mt_rand()`, która korzysta z algorytmu Mersenne Twister. Przykładowy kod dla wygenerowania liczby zmiennoprzecinkowej z zakresu od 0 do 1 wygląda tak:
-```
-$x = mt_rand() / mt_getrandmax();
-echo $x;
-```
+## Głębsze spojrzenie:
 
-# Wnikliwy przegląd
+Historia generowania liczb pseudolosowych sięga roku 1946, kiedy John Von Neumann zaproponował metodę środkowego kwadratu. Do dzisiaj rozwijane są nowe metody, takie jak LFSR czy Twister Mersenne'a.
 
-Generowanie losowych liczb jest nieodłączną częścią wielu programów i aplikacji. Początkowo, programiści korzystali z funkcji `rand()` w PHP, która wykorzystywała generator liczb pseudolosowych. Jednakże, dla zadań wymagających większej losowości, zaleca się używanie funkcji `mt_rand()`, która jest wydajniejsza i zapewnia lepsze rozkłady losowych wartości.
+Alternatywą dla rand() w PHP jest funkcja mt_rand(), która używa generatora liczb pseudolosowych Twister Mersenne'a. Co więcej, PHP 7.0 wprowadził funkcję random_int(), która jest bezpieczna kryptograficznie.
 
-Alternatywą dla wewnętrznych funkcji PHP jest wykorzystanie zewnętrznych bibliotek, takich jak RandomLib czy PhpSecLib, które oferują bardziej zaawansowane opcje generowania losowych liczb.
+Co do szczegółów implementacji, rand() generuje liczby na podstawie wzoru (a*X + c) mod m. W PHP, 'm' to RAND_MAX, domyślnie ustawiony na wartość 32767.
 
-Ważnym aspektem generowania losowych liczb jest ziarno (ang. seed), które jest używane do inicjalizacji generatora liczb pseudolosowych i określenia początkowego punktu wyjścia. W przypadku PHP, ziarno jest wybierane automatycznie, ale można je także ustalić ręcznie za pomocą funkcji `srand()`.
+## Zobacz też:
 
-# Zobacz też
-
-- Dokumentacja PHP dotycząca funkcji `rand()` i `mt_rand()`: https://www.php.net/manual/en/function.srand.php
-- Biblioteka RandomLib: https://github.com/ircmaxell/RandomLib
-- Biblioteka PhpSecLib: https://github.com/phpseclib/phpseclib
+Do pogłębienia wiedzy na temat generowania liczb losowych, polecam następujące źródła:
+- PHP Manual, funkcja rand(): https://www.php.net/manual/en/function.rand.php
+- Wikipedia, Generowanie liczb pseudolosowych: https://pl.wikipedia.org/wiki/Generowanie_liczb_pseudolosowych
+- PHP Manual, funkcja mt_rand(): https://www.php.net/manual/en/function.mt-rand.php
+- PHP Manual, funkcja random_int(): https://www.php.net/manual/en/function.random-int.php

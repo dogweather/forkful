@@ -11,38 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Extracting substrings refers to the process of extracting a smaller portion of characters from a larger string. This is a commonly used technique in programming to manipulate and access specific parts of a string. In simpler terms, it allows you to easily grab the parts of a string that you need, without having to work with the entire string every time.
+Substring extraction in Arduino involves isolating a specific portion, or "substring", from a longer string of text. This maneuver allows programmers to extract, analyze or manipulate data more precisely and efficiently.
 
 ## How to:
-Extracting substrings is made easy with the use of built-in functions in the Arduino programming language. Here are some examples of how to extract substrings:
+Let's dive in and see a simple example using the `substring()` function.
 
 ```Arduino
-// Extracting a single character at a specific index using charAt()
-String str = "Hello World";
-char character = str.charAt(4); //character = 'o'
+String str = "Hello, Arduino!";
+String newStr = str.substring(7, 15);
+Serial.begin(9600);
+Serial.println(newStr); // Prints "Arduino".
 ```
+In the above code, `str.substring(7, 15)` extracts the substring starting at index 7 and ending at index 14 (note that 15th index is exclusive), which would print "Arduino". If you just input one parameter, it will start at that index and continue to the end of the string.
 
 ```Arduino
-// Extracting a substring with a specific starting index and length using substring()
-String str = "Hello World";
-String subStr = str.substring(3, 7); //subStr = "lo W"
-```
-
-```Arduino
-// Extracting a substring from a specific index until the end of the string using substring()
-String str = "Hello World";
-String subStr = str.substring(6); //subStr = "World"
+newStr = str.substring(7);
+Serial.println(newStr); // prints "Arduino!".
 ```
 
 ## Deep Dive:
-The ability to extract substrings has been a staple in programming languages for decades, and it continues to be a useful tool for developers. Before the introduction of built-in functions, programmers had to manually manipulate strings using techniques like pointers and array slicing. This was time-consuming and error-prone, making the addition of substring extraction functions a welcome feature.
+The `substring()` feature in Arduino's string class has its roots set deeply in many programming languages, whether it's Python's slicing technique or Java's equivalent `substring()` function. 
 
-While there are alternative methods for extracting substrings, such as regular expressions, they are often more complex and may not be supported in all programming languages. Therefore, it is important for programmers to be familiar with the built-in substring functions in their programming language of choice.
+Alternatives? Sure. For instance, you could manually iterate through the characters. But this is inefficient and arduous. Arduino's `substring()` offers a clean, ready-to-use solution.
 
-When implementing substring extraction, it is important to consider the starting index and length of the desired substring. Different programming languages may have different conventions for specifying these values. In Arduino, the starting index is designated as the "beginIndex" and the length is designated as the "length" in the substring() function.
+The `substring()` implementation is pretty straightforward. It instantiates a new String (making it a potentially memory-intensive operation), and copies the required characters from the original string to it.
 
 ## See Also:
-To learn more about substring extraction in Arduino and how to use it in your projects, check out these resources:
-- [Arduino Reference - String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-- [Arduino Tutorial - Manipulating Strings](https://www.arduino.cc/en/Tutorial/StringManipulation)
+To further increase your Arduino knowledge, consider checking out:
+- Arduino's official String page: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Dig into more complex string manipulation techniques: https://www.arduino.cc/en/Tutorial/LibraryExamples/TextString
+- Understanding memory management in Arduino strings: https://learn.adafruit.com/memories-of-an-arduino/optimizing-sram

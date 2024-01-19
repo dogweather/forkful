@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "Clojure: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,34 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-Tworzenie pliku tymczasowego jest powszechną praktyką w programowaniu, polegającą na tworzeniu tymczasowego pliku lub folderu w celu przechowywania danych lub wykonania operacji. Programiści robią to, aby zapewnić bezpieczeństwo i użyteczność swoich aplikacji.
+
+Tworzenie tymczasowych plików to proces zapisywania danych do pliku, który ma być używany tylko przez krótki okres czasu. Programiści robią to, aby przechowywać dane, które są zmienne i tylko chwilowo potrzebne.
 
 ## Jak to zrobić:
-Clojure zapewnia proste metody tworzenia plików tymczasowych za pomocą funkcji `temp-file` i `temp-dir`. Oto przykładowe użycie:
+
+Clojure udostępnia `clojure.java.io` namespace, który zawiera funkcję `make-temp`, aby utworzyć plik tymczasowy. Oto jak to zrobić:
 
 ```Clojure
-;; Tworzenie pliku tymczasowego
-(def temp-file (temp-file))
+(require '[clojure.java.io :as io])
 
-;; Tworzenie folderu tymczasowego
-(def temp-dir (temp-dir))
+(def temp-file (io/make-temp))
+
+(println temp-file)
 ```
 
-Wynik dla powyższego kodu będzie wyglądał tak:
+Wyjście będzie podobne do:
 
+```Clojure
+#object[java.io.File 0x6778f1a4 /tmp/clojure-1587111468591587111.tmp]
 ```
-;; Path of temp-file: /var/folders/qm/1n12wnxd1650j4c0gbmgtqph0000gn/T/8477307537144763517.tmp
-;; Path of temp-dir: /var/folders/qm/1n12wnxd1650j4c0gbmgtqph0000gn/T/11624844423160149821.tmp
-```
 
-## Głębszy Wgląd:
-Tworzenie plików tymczasowych jest praktykowane od dawna jako sposób na umieszczanie danych, które są potrzebne tylko w określonym momencie lub do wykonania określonych operacji. Alternatywne podejścia do tworzenia tymczasowych plików to np. korzystanie z pamięci tymczasowej lub przekazywanie danych jako argumentów do funkcji.
+Plik tymczasowy jest teraz utworzony w domyślnej lokalizacji dla tymczasowych plików w systemie.
 
-Clojure zapewnia również bardziej zaawansowane funkcje tworzenia plików tymczasowych, takie jak `with-temp-file`, która tworzy i usuwa plik tymczasowy automatycznie przy użyciu formy `try/finally`. Są to jedne z wielu sposobów na zarządzanie plikami tymczasowymi w aplikacji Clojure.
+## Wgłębienie się
 
-## Zobacz także:
-Dla bardziej szczegółowych instrukcji i przykładów, zajrzyj na stronę dokumentacji Clojure dotyczącą tworzenia plików tymczasowych: https://clojuredocs.org/clojure.core/temp-file 
+Tworzenie plików tymczasowych jest praktyką stosowaną od początków programowania. Pliki te są niezbędne, gdy dane nie muszą być trwale przechowywane lub gdy programista chce zminimalizować użycie pamięci.
 
-Jeśli chcesz poznać inne sposoby na tworzenie plików tymczasowych w języku Clojure, zerknij na ten artykuł: https://hackernoon.com/temporary-files-in-clojure-a7b6c085905b
+Alternatywą dla tworzenia plików tymczasowych jest stosowanie struktur danych w pamięci, ale jest to zazwyczaj możliwe tylko dla mniejszych zestawów danych. Funkcja `io/make-temp` w Clojure tworzy plik tymczasowy w domyślnej lokalizacji systemu operacyjnego, ale można również określić ścieżkę dostępu i prefix.
 
-Możesz również znaleźć przydatne informacje w społeczności Clojure na forach i grupach dyskusyjnych.
+Clojure jest programem uruchomieniowym dla Javy i korzysta z bibliotek Javy do tworzenia plików tymczasowych. Funkcja `io/make-temp` zwraca obiekt `java.io.File`, który reprezentuje plik tymczasowy.
+
+## Zobacz też
+
+Clojure - Praca z plikami: https://clojuredocs.org/clojure.java.io
+
+Tworzenie plików tymczasowych w Javie: https://www.baeldung.com/java-create-temporary-file

@@ -1,7 +1,7 @@
 ---
-title:                "通过基本身份验证发送一个 http 请求"
-html_title:           "C++: 通过基本身份验证发送一个 http 请求"
-simple_title:         "通过基本身份验证发送一个 http 请求"
+title:                "使用基本认证发送http请求"
+html_title:           "Bash: 使用基本认证发送http请求"
+simple_title:         "使用基本认证发送http请求"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,67 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 啥是HTTP请求与基本认证？为什么程序员会用它？
+## 是什么以及为什么?
 
-HTTP请求是一个在客户端设备（如电脑）和服务器之间进行通信的方法，它允许程序员发送和接收数据，以便进行网络通信。基本认证是一种简单的身份验证方法，通过要求用户提供用户名和密码来确认用户的身份。程序员通常会使用这种认证方式来访问受保护的网络资源或API，以确保数据的安全性。
+发送带有基础认证的HTTP请求是一种常见的网络请求方式，其中将用户ID和密码以 Base64 编码后的形式携带在请求头中。编程人员通过这种方式满足在服务器上进行身份验证以访问受保护的资源。
 
-# 怎样做？
+## 如何实现：
 
-以下示例展示了如何发送带有基本认证的HTTP请求，你需要使用C++编程语言：
+我们可以使用模块上的网络请求库来发送 HTTP 请求。以下是一个在C++中发送带有基本身份验证的HTTP请求的简单示例。我们在这个例子中使用了 `cpr` 库。
 
 ```C++
-#include <iostream>  
-#include <curl/curl.h> //需要先安装cURL库
+// 包含请求库
+#include <cpr/cpr.h>
 
-using namespace std;
+int main(){
+    // 创建认证对
+    cpr::Authentication auth{"username", "password"};
 
-int main()
-{
-  //设置用户名和密码，这些信息将在HTTP请求的标头中使用
-  const char* username = "用户名";
-  const char* password = "密码";
+    // 发送GET请求
+    cpr::Response r = cpr::Get(cpr::Url{"http://httpbin.org/basic-auth/username/password"}, auth);
 
-  //初始化cURL句柄
-  CURL *curl = curl_easy_init();
-  if (curl) {
-    //设置请求的URL地址
-    curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com");
-    //设置认证方式为基本认证
-    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    //设置用户名和密码
-    curl_easy_setopt(curl, CURLOPT_USERNAME, username);
-    curl_easy_setopt(curl, CURLOPT_PASSWORD, password);
-    //发送请求
-    CURLcode res = curl_easy_perform(curl);
-    //检查请求是否成功
-    if (res == CURLE_OK) {
-      cout << "请求已发送成功" << endl;
-    } else {
-      cout << "请求失败: " << curl_easy_strerror(res) << endl;
-    }
-    //清除cURL句柄
-    curl_easy_cleanup(curl);
-  }
-  return 0;
+    // 打印响应 
+    std::cout << r.text << std::endl;
+
+    return 0;
 }
 ```
 
-输出：
+程序的输出可能 resemble以下形式：
 
-```bash
-请求已发送成功
+```JSON
+{
+  "authenticated": true,
+  "user": "username"
+}
 ```
 
-# 深入了解
+##深入研究：
 
-基本认证是最古老的身份验证机制之一，它最初是为了使Internet上的各种网络资源受到保护而设计的。它是一种简单有效的方法，但也有一些缺点，比如无法加密发送的信息。因此，现在许多人更倾向于使用更安全的认证方式，比如OAuth。
+1. 历史背景：最初，HTTP Basic认证由RFC 1945（HTTP / 1.0规范）定义，而后由RFC 2617定义。然而，该方法的主要问题是安全性较低，因为它将用户名和密码明文（尽管是Base64编码）放在HTTP头中。
+2. 替代方案：因为上述的安全问题，程序员可能选择其他认证方法，例如使用OAuth，Bearer tokens，或者是Digest authentication。  
+3. 实施细节：在处理带认证的HTTP请求时，一旦服务器接收到请求，它会解析并验证包含的凭据。如果凭据无效或缺失，服务器将返回状态码401，提示客户端需要提供有效的认证凭据。
 
-除了基本认证，还有其他一些认证方式，比如摘要认证、OAuth、API密钥等。每种方式都有自己的优缺点，程序员应根据具体情况来选择最合适的认证方式。
+## 另请参阅：
 
-HTTP请求中的基本认证步骤其实还有更多细节，比如设置响应状态码和处理错误信息。如果想要进一步了解更多细节，可以查阅cURL库的文档或者搜索相关信息。
-
-# 参考链接
-
-- cURL库文档：https://curl.haxx.se/libcurl/c/
-- cURL Github仓库：https://github.com/curl/curl
-- 各种HTTP认证方式的比较：https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication#Comparison_table_of_different_techniques
+1. [CPR库](https://whoshuu.github.io/cpr/)：C ++的Curl for People，一个轻量且易于使用的网络库。
+2. [HTTP Basic, Digest, NTLM 认证](https://en.wikipedia.org/wiki/Basic_access_authentication)：深度理解基本认证及其替代方案。
+3. [RFC 7617](https://tools.ietf.org/html/rfc7617)：HTTP Basic and Digest access authentication的标准文档。

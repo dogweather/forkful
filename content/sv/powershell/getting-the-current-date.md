@@ -1,7 +1,7 @@
 ---
-title:                "Att få den aktuella datumet"
-html_title:           "PowerShell: Att få den aktuella datumet"
-simple_title:         "Att få den aktuella datumet"
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Att få den nuvarande datumen refererar till att ta reda på det aktuella datumet och klockslaget på din dator eller server. Det är ett viktigt verktyg för programmerare att använda för att spåra och logga händelser, samt för att schemalägga uppgifter och automatiska processer.
+# Få tag på dagens datum i PowerShell: En snabbguide
 
- Hur gör man:
-I PowerShell finns det flera sätt att få den nuvarande datumen. Ett enkelt sätt är att använda cmdleten `Get-Date`, som returnerar det aktuella datumet i standardformatet. Se till exempel:
+## Vad & Varför?
+Att få det aktuella datumet innebär bara att hämta systemets inbyggda "nuvarande" datum och tid. Detta är användbart när du vill logga händelser, tidsstämpla filer, eller beräkna intervall.
 
-```
-PowerShell Get-Date
-```
+## Hur till:
+För att få det nuvarande datumet och tiden i PowerShell, använd kommandot `Get-Date`.
 
-Detta kommer att ge dig ett resultat som liknar detta:
-
-```
- fredag 25 september 2020 14:09:04
+```PowerShell
+Get-Date
 ```
 
-Du kan också använda parametern `-DisplayHint` för att få en mer lättläst version av datumet, till exempel:
+Exempel på output:
 
-```
-PowerShell Get-Date -DisplayHint Date
-```
-
-Denna kod ger dig bara datumet utan tidsinformationen, som visas nedan:
-
-```
-fredag 25 september 2020
+```PowerShell
+onsdag 4 augusti 2021 12:00:00
 ```
 
-Du kan också anpassa formatet på datumet med hjälp av `-Format` parametern. Till exempel kan du ange ett format för att visa datumet i ISO-format genom att använda strängen `yyyy-MM-dd`. Här är ett exempel på hur du kan få det aktuella datumet i detta format:
+För att få dagens datum utan tiden, använd kommandot `Get-Date -DisplayHint Date`.
 
-```
-PowerShell Get-Date -Format "yyyy-MM-dd"
-```
-
-Detta kommer att ge dig resultatet som nedan:
-
-```
-2020-09-25
+```PowerShell
+Get-Date -DisplayHint Date
 ```
 
-Djupdykning:
-Get-Date cmdleten har funnits sedan början av PowerShell och är en del av .NET Framework. Det finns också andra sätt att få den nuvarande datumen, såsom genom att använda .NET-klassen ```System.DateTime```. Detta ger mer precision och anpassningsmöjligheter för datumet, men kräver mer kod för att åstadkomma det.
+Exempel på output:
 
-Se även:
-För mer information om hur du använder Get-Date cmdleten, kan du alltid använda `Get-Help` cmdleten i PowerShell för att få dokumentation och exempel. Du kan också utforska .NET-klassen `System.DateTime` för att lära dig mer om alternativ för att få den nuvarande datumen.
+```PowerShell
+onsdag 4 augusti 2021
+```
+
+## Fördjupning
+`Get-Date` är en del av .NET Framework och har funnits sedan PowerShell v1.0. Det finns alternativ, till exempel `[datetime]::Now` och `[datetime]::Today`, men `Get-Date` är mer lättanvänt och ger mer flexibilitet. Under huven ringer `Get-Date` `DateTime.Now`-metoden, som i sig ringer systemets API för att få den aktuella datumen och tiden.
+
+## Se även:
+1. PowerShell dokumentation om `Get-Date`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date
+2. .NET Framework DateTime dokumentation: https://docs.microsoft.com/dotnet/api/system.datetime
+3. Jämförelse mellan `Get-Date` och `[datetime]::Now`: https://adamtheautomator.com/get-date-powershell/

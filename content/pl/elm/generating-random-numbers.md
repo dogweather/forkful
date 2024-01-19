@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "Elm: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -11,30 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Generowanie losowych liczb jest kluczowym elementem w wielu programach i aplikacjach. Programiści często używają go do symulowania przypadkowych zdarzeń lub do przetestowania swojego kodu.
+Generowanie losowych liczb to proces tworzenia ciągu liczb, które nie mają wzajemnej korelacji. Programiści korzystają z tego do tworzenia różnorodnych sytuacji, takich jak symulacje, gry, testy równoległe czy szyfrowanie danych.
 
 ## Jak to zrobić:
-Aby wygenerować losową liczbę w Elm, można użyć funkcji `Random.int`, która przyjmuje dwa argumenty: początek i koniec zakresu. Na przykład, jeśli chcemy wylosować liczbę od 1 do 10, możemy użyć kodu:
+Generowanie liczby losowej w Elm jest proste. Poniżej znajdziesz przykładowy kod:
+
+```Elm
+import Random
+
+generateRandomNumber : Int -> Int -> Cmd Msg
+generateRandomNumber min max =
+    Random.generate NewNumber (Random.int min max)
+
+type Msg
+    = NewNumber Int
+
+-- Plik Compile.elm
+module Main exposing (..)
+
+import Browser
+import Html exposing (Html, div, button, text)
+import Html.Events exposing (onClick)
+import Random
+
+main =
+  Browser.sandbox { init = init, update = update, view = view }
+
+-- MODEL
+
+type alias Model =
+    { randomNumber : Int }
+
+init : Model
+init =
+    { randomNumber = 0 }
+
+-- UPDATE
+
+type Msg
+    = Generate
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        Generate ->
+            ( model, Random.generate (Random.int 0 100) )
 
 ```
-Elm.Random.int 1 10
-```
+Ten kod generuje losową liczbę z zakresu od 0 do 100.
 
-Wynikiem będzie losowa liczba całkowita w podanym zakresie, na przykład `7`.
+## Deep Dive
+Generowanie liczb losowych ma głębokie korzenie w informatyce, a jednym z pierwszych sposobów były metody sprzętowe. Z czasem odpowiednio programowano komputery do generowania tych losowości. Fellowship of the Ring (FOTR) to jedna z najstarszych metod generacji liczb losowych, używana jeszcze przez komputer Manchester Mark I.
 
-Można także wybrać losową wartość z listy, używając funkcji `Random.list`, która przyjmuje listę wartości i zwraca losowy element z tej listy. Na przykład:
+Na przestrzeni lat, różne implementacje i metody generowania liczb losowych były rozwijane. Na przykład, języki programowania takie jak Python i JavaScript mają własne wbudowane funkcje do generowania liczb losowych.
 
-```
-Elm.Random.list [1, 5, 10]
-```
+W kontekście Elma, Random.generate jest używany do generowania losowego wyniku. Jest to jednak efekt, który musi być obsłużony w modelu update.
 
-Wynikiem może być na przykład `5`.
+## Zobacz również
+Link do dokumentacji Elm na temat modułu losowości: https://package.elm-lang.org/packages/elm/random/latest/
 
-## Wnikliwa analiza:
-Generowanie losowych liczb jest istotnym elementem w programowaniu, ponieważ pozwala na tworzenie realistycznych symulacji lub testowanie różnych scenariuszy w kodzie. W przeszłości, programiści musieli używać specjalnych algorytmów do generowania liczb losowych, ale w Elm ta funkcjonalność jest już wbudowana, co znacząco ułatwia pracę.
+Inne metody generowania liczb losowych, takie jak LFSR (Linear Feedback Shift Register): https://en.wikipedia.org/wiki/Linear-feedback_shift_register
 
-Istnieje wiele alternatywnych bibliotek i narzędzi do generowania losowych liczb w języku Elm, takich jak `elm-random-extras`, które oferują bardziej zaawansowane funkcje i algorytmy. Jednak wbudowana funkcja `Random` jest wystarczająca dla większości zastosowań.
+Historia generowania liczb losowych: https://pl.wikipedia.org/wiki/Generator_liczb_losowych
 
-## Zobacz też:
-- Dokumentacja Elm na temat generowania liczb losowych (https://elm-lang.org/docs/random)
-- Biblioteka `elm-random-extras` (https://package.elm-lang.org/packages/elm-community/random-extra/latest/)
+Przykłady użycia liczb losowych w praktyce: https://levelup.gitconnected.com/real-world-uses-of-random-numbers-8e404ba1c94e

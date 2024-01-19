@@ -1,7 +1,7 @@
 ---
-title:                "Analysere en dato fra en streng"
-html_title:           "Fish Shell: Analysere en dato fra en streng"
-simple_title:         "Analysere en dato fra en streng"
+title:                "Tolke en dato fra en streng"
+html_title:           "Bash: Tolke en dato fra en streng"
+simple_title:         "Tolke en dato fra en streng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,22 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor? 
-Når vi programmerer, kan det ofte være nødvendig å hente ut en dato fra en streng (for eksempel en tekststreng eller et brukerinput). Dette kalles å "parse" en dato fra en streng, og det er nyttig for å kunne behandle og manipulere datoen videre. 
+## Hva & Hvorfor?
 
-## Hvordan: 
-For å parse en dato fra en streng i Fish Shell, kan vi bruke kommandoen `date -f` som tar inn et formatargument og en streng som inneholder datoen. Her er et eksempel på hvordan det kan se ut: 
-```Fish Shell 
-set dato = "2. desember 2021" 
-set format = "%d. %B %Y"
-echo (date -f $format $dato)
+Å analysere en dato fra en streng betyr å konvertere en tekst som representerer en dato til et standard datatidsformat. Programmerere gjør dette for enklere håndtering og manipulering av datoer. 
+
+## Slik Gjør Du Det:
+
+For å analysere en dato i Fish Shell, bruk `date`-kommandoen med `-u`-flagget og skriv datoen som argument. Her er et eksempel:
+
+```fish
+set -l date_string "2022-01-01 00:00:00"
+set -l parsed_date (date -u -j -f "%Y-%m-%d %T" $date_string "+%s")
+echo $parsed_date
 ```
-Dette vil gi følgende output: `tor. 2. desember 2021` 
 
-## Fordypning: 
-Parsing av datoer fra strenger er et vanlig problem for programmerere, spesielt når man håndterer brukerinndata. Det finnes også ulike måter å parse datoer på, avhengig av programmeringsspråket man bruker. I Fish Shell kan man også bruke kommandoen `strptime` for å parse datoer. Denne funksjonen tar inn en streng og et formatargument og gir tilbake en dato. Implementasjonen av parsing av datoer kan være avhengig av systemets lokalinnstillinger. 
+Koden over vil gi uttaket `1640995200`, som er representasjonen av "2022-01-01 00:00:00" i Unix-tidsstempel.
 
-## Se også: 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/date.html)
-- [Fish Shell utvidelser](https://fishshell.com/docs/current/tutorial.html#tut_extending) for å utvide funksjonaliteten til Fish Shell, inkludert parsing av datoer.
-- [Wikipedia](https://en.wikipedia.org/wiki/Date_format_by_country) for mer informasjon om formatering av datoer etter land.
+## Dyp Dykk
+
+Analysere datoer fra strenger har blitt en vanlig oppgave i programmering ettersom det letter datatids-håndtering. I skriptspråk som Fish Shell har dette blitt enda enklere takket være innebygde funksjoner som `date`.
+
+Alternativt kan du også analysere en dato i Fish Shell ved hjelp av `strptime`-funksjonen, men den er mer kompleks og manuell. 
+
+Når det gjelder implementasjon, bruker `date`-kommandoen i Fish Shell `getdate`-funksjonen fra glibc, og formatstrengen følger samme format som `strftime`-funksjonen.
+
+## Se Også:
+
+For mer informasjon om analyse av datoer i Fish Shell, vennligst se følgende kilder:
+
+- [Fish Shell Dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Fish Shell GitHub](https://github.com/fish-shell/fish-shell)
+- [StackOverflow: Parsing Dates in Fish Shell](https://stackoverflow.com/questions/65935528/parsing-dates-in-fish-shell)

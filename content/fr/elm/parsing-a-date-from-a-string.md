@@ -1,7 +1,7 @@
 ---
-title:                "Analyser une date à partir d'une chaîne de caractères."
-html_title:           "Elm: Analyser une date à partir d'une chaîne de caractères."
-simple_title:         "Analyser une date à partir d'une chaîne de caractères."
+title:                "Analyser une date à partir d'une chaîne"
+html_title:           "Clojure: Analyser une date à partir d'une chaîne"
+simple_title:         "Analyser une date à partir d'une chaîne"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Parsor une date à partir d'une chaîne de caractères est le processus de convertir une date représentée sous forme de texte en un format utilisable par un programme informatique. Les programmeurs utilisent cette méthode pour manipuler et comparer facilement des dates dans leurs applications.
+# Parsing d'une date à partir d'une chaîne de caractères en Elm
+
+## Qu'est-ce que c'est & Pourquoi?
+
+Le "parsing" d'une date à partir d'une chaîne de caractère est la conversion d'un format textuel dans une date "réelle" et utile. Les développeurs font cela pour travailler avec les dates dans des calculs, des filtrages et des affichages plus précis.
 
 ## Comment faire:
-Voici un exemple de code Elm pour parser une date à partir d'une chaîne de caractères, en utilisant la fonction `Date.fromString`:
-```
-Elm.Date.fromString "2020-01-01" == Just (Date.fromCalendarDate 2020 1 1)
+
+Voici un exemple simple d'implémentation de parsing d'une date à partir d'une chaîne en Elm:
+
+```Elm
+import Time
+
+type alias DateString = {
+  year : String
+  month: String
+  day  : String
+}
+
+parseDate : DateString -> Time.Posix
+parseDate {year, month, day} = 
+  let
+    y = String.toInt year
+    m = String.toInt month
+    d = String.toInt day
+  in
+  Time.fromCalendarDate y m d
 ```
 
-Vous remarquerez que la fonction renvoie un résultat `Maybe`. Cela signifie qu'il peut y avoir une erreur si la chaîne de caractères ne correspond pas à un format de date valide. Vous pouvez utiliser une expression `case` pour gérer cette possibilité:
-```
-case Elm.Date.fromString "2020-20-20" of
-    Just date ->
-        -- Faire quelque chose avec la date parsée
-        date
-        
-    Nothing ->
-        -- Gérer l'erreur
-        "La date n'est pas valide"
-```
+Dans cet exemple, un objet `DateString` est converti en type `Time.Posix`, utilisable pour des opérations de date.
 
-## Approfondissement:
-Le parsing de dates est un processus couramment utilisé en programmation pour rendre les dates plus faciles à manipuler et à comparer. Avant l'utilisation de bibliothèques comme `Date.fromString` en Elm, les programmeurs devaient souvent écrire leur propre code pour parser les dates à partir de chaînes de caractères, ce qui était fastidieux et sujet à des erreurs.
+## Approfondissement
 
-En dehors de Elm, il existe de nombreuses autres bibliothèques de parsing de dates disponibles dans d'autres langages de programmation, telles que `datetime.strptime` en Python ou `DateTime.Parse` en C#. Chaque langage et bibliothèque peut avoir des différences dans la façon dont les dates sont représentées et traitées, il est donc important de bien comprendre le fonctionnement de ces fonctions de parsing.
+Historiquement, le parsing d'une date à partir d'une chaîne de caractères était plus compliqué, notamment à cause des formats de date différents en fonction des régions du monde. Par exemple, `02/03/2021` peut représenter le 2 mars 2021 ou le 3 février 2021. Elm évite ces problèmes en utilisant le format ISO 8601.
 
-## Voir aussi:
-- [Documentation Elm sur la fonction `Date.fromString`](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Exemples de parsing de dates en Elm](https://elmprogramming.com/elmdateshowto.html)
-- [Comparaison de différentes bibliothèques de parsing de dates en JavaScript](https://www.codingame.com/playgrounds/41820/how-to-play-with-dates-in-javascript/date-parsing)
+Dans Elm, il est possible d'utiliser d'autres bibliothèques pour le parsing de date, telle 'elm/iso8601-date-strings'. Parfois, le parsing personnalisé est même nécessaire, en fonction de vos besoins de format.
+
+La fonction `Time.fromCalendarDate` convertit un ensemble d'entiers en un type Time.Posix. Ce processus inclut la vérification de validité de la date, donc si vous passez une date non valide, le programme peut déclencher une erreur à l'exécution.
+
+## Voir aussi
+
+Pour plus d'informations sur le travail avec les dates et le temps en Elm, vous pouvez consulter:
+
+1. [La documentation officielle Elm sur le module Time](https://package.elm-lang.org/packages/elm/time/latest/Time)
+
+2. [Bibliothèque elm/iso8601-date-strings pour le parsing](https://package.elm-lang.org/packages/elm/iso8601-date-strings/latest)

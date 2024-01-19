@@ -1,7 +1,7 @@
 ---
-title:                "Gerando Números Aleatórios"
-html_title:           "C: Gerando Números Aleatórios"
-simple_title:         "Gerando Números Aleatórios"
+title:                "Gerando números aleatórios"
+html_title:           "C: Gerando números aleatórios"
+simple_title:         "Gerando números aleatórios"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,40 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
-Gerar números aleatórios é um processo de produzir números de forma imprevisível. Isso é útil para programadores que precisam de um elemento aleatório em seus programas, como em jogos ou sorteios.
+# Geração de Números Aleatórios em C
+---
 
-## Como fazer:
-```C 
-#include <stdio.h> 
-#include <stdlib.h> 
-#include <time.h> 
-  
-int main () 
-{ 
-    // Definir a semente para gerar números aleatórios 
-    srand(time(0)); 
-  
-    // Gerar um número aleatório entre 0 e 100 
-    int numero = rand() % 101; 
-  
-    // Imprimir o número gerado 
-    printf("O número aleatório gerado é: %d", numero); 
-  
-    return 0; 
-} 
-``` 
-Saída: O número aleatório gerado é: 52
+## O Que & Porquê?
+
+Geração de números aleatórios é o processo de criação de números de forma imprevisível. Programadores fazem isso para simular eventos naturais, adicionar imprevisibilidade ao software, ou para fins de segurança.
+
+## Como Fazer:
+
+Aqui estão algumas maneiras comuns de gerar números aleatórios em C:
+
+1. Usando a função rand():
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    srand(time(0));   // Inicializa gerador de números aleatórios
+    int num = rand(); // Gera um número aleatório
+
+    printf("%d", num);
+    
+    return 0;
+}
+```
+
+A saída será um número aleatório a cada execução do programa.
+
+2. Geração de um número aleatório dentro de um intervalo especificado:
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    srand(time(0));   
+    int num = rand() % 100; // Gera um número aleatório entre 0 e 99
+
+    printf("%d", num); 
+
+    return 0;
+}
+```
+Aqui a saída será um número aleatório entre 0 e 99.
 
 ## Mergulho Profundo:
-Gerar números aleatórios é uma prática que vem sendo utilizada desde os primórdios da computação. No início, os computadores não conseguiam produzir números aleatórios por conta própria, então era necessário utilizar ferramentas externas, como um lançamento de dados.
 
-Hoje em dia, existem outras formas de gerar números aleatórios, como por exemplo, através de algoritmos que utilizam a hora atual do sistema como base. Porém, é importante ressaltar que esses números não são perfeitamente aleatórios, uma vez que podem ser previstos se o padrão for descoberto.
+1. **Contexto Histórico**:
+ A função rand() foi introduzida na biblioteca padrão do C como a maneira mais simples de gerar números aleatórios. A função srand() foi adicionada posteriormente para permitir a inicialização do gerador com uma semente, normalmente o tempo atual.
 
-Para garantir maior segurança em aplicações que exigem números verdadeiramente aleatórios, é possível utilizar serviços externos que utilizam hardwares especializados, como geradores de ruído eletrônico, para gerar números aleatórios.
+2. **Alternativas**:
+Existem algoritmos de geração de números aleatórios mais sofisticados disponíveis, como o algoritmo de Mersenne Twister, que gera números com uma distribuição uniforme. Contudo, para a maioria dos casos, rand() é suficiente.
 
-## Veja também:
-Links para informações adicionais sobre geração de números aleatórios em C:
-- [Biblioteca rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [Mersenne Twister - um algoritmo popular para geração de números aleatórios](https://en.wikipedia.org/wiki/Mersenne_Twister)
-- [Biblioteca OpenSSL - opção para gerar números aleatórios criptograficamente seguros](https://www.openssl.org/)
+3. **Detalhes de Implementação**:
+A geração de números aleatórios em C é pseudoaleatória, ou seja, gerada por um algoritmo determinístico e, portanto, não é realmente aleatória. Usamos a função srand() para fornecer uma "semente" para o gerador de números aleatórios, para evitar gerar a mesma sequência de números em cada execução do programa.
+
+## Veja Também:
+
+1. Documentação rand() e srand() na referência da biblioteca C: https://en.cppreference.com/w/c/numeric/random/rand
+2. Discutindo a função rand(): https://stackoverflow.com/questions/1653958/why-does-rand-yield-the-same-sequence-of-numbers-on-every-run
+3. Documentação do Mersenne Twister: http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/ARTICLES/mt.pdf

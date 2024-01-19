@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Gleam recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,46 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# A Quick-Start Guide to String Interpolation in Gleam
+
 ## What & Why?
 
-Interpolating a string is a method of injecting variables into a string. It reduces complexity and increases readability by providing an alternative to unwieldy concatenation.
+String interpolation is basically synthesizing new strings using existing values. It helps programmers create dynamic strings without breaking a sweat.
 
 ## How to:
 
-Here's an easy interpolation example in Gleam:
+In Gleam, the interpolation macro `{}` is not supported. You'll have to slice and dice strings. Here's an example:
 
 ```gleam
-let name = "Gleam"
-let output = "Hello, #(name) programmer!"
-
-// Outputs: "Hello, Gleam programmer!"
+fn main() {
+  let name = "Gleam"
+  let message = "Hello, " ++ name ++ ", good to see you!"
+  message
+}
 ```
-
-It's a matter of using `#()` to contain variables you want to interpolate in your text.
+Output:
+```cli
+"Hello, Gleam, good to see you!"
+```
+Concatenation with `++` lets us mix in variables into strings - the manual way. 
 
 ## Deep Dive
 
-Interpolation was initially popularized by Perl before becoming staples in languages like Ruby and JavaScript. Before interpolation, the common approach was string concatenation, splitting a string into separate pieces that are constructed with variables and appended together, like so:
+String Interpolation has not always been around. The folks who coded using `Fortran` had to write lines of code for creating a simple `hello world` string. String interpolation lightens the workload, and it's got some serious popularity in languages like Ruby, JavaScript, Python, etc.
 
-```gleam
-let name = "Gleam"
-let output = "Hello, " ++ name ++ " programmer!"
-```
+In the case of Gleam, the language doesn't support interpolation directly. It takes inspiration from Erlang, a much older language without this feature. 
 
-This can get out of hand pretty quickly for longer, more complex strings. Thus, we use string interpolation as a more effective alternative.
+There are other alternatives like concatenation using `++` as seen above. Also possible are templates in some languages – defining a string structure and replacing placeholders with actual values.
 
-Now, the `#()` used in Gleam's string interpolation isn't magic. Under the hood, the compiler translates them into function calls. Which means `#(name)` is equivalent to: 
+As for how Gleam implements string manipulation, it leverages the Beam VM's binary data type. This makes string manipulation efficient but some modern features (like interpolation) aren't directly available.
 
-```gleam
-let name = "Gleam"
-let output = "Hello, " ++ name.toString() ++ " programmer!"
-```
+## See Also
 
-Gleam simply makes it easier to use these calls in the context of string manipulation.
+Dig deeper into Gleam's string manipulation - [Check out Gleam's Official Docs](https://docs.gleam.run/tour/strings).
 
-## See Also:
+If you're considering alternatives or have glimpses of sadness because of the lack of spiffy interpolation in Gleam, you can check out languages like [Elixir](https://elixir-lang.org/). 
 
-For further reading:
-
-1. The Gleam code style guide - [https://gleam.run/book/tour/](https://gleam.run/book/tour/)
-2. Detailed overview of Gleam's string manipulation approaches - [https://gleam.run/book/tour/string-manipulation.html](https://gleam.run/book/tour/string-manipulation.html)
+And just in case you want to geek out on the history – the Fortran story’s told by [IBM itself](https://www.ibm.com/ibm/history/exhibits/fortran/fortran.html).

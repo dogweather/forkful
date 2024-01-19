@@ -1,7 +1,7 @@
 ---
-title:                "Erzeugen von Zufallszahlen"
-html_title:           "Java: Erzeugen von Zufallszahlen"
-simple_title:         "Erzeugen von Zufallszahlen"
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,34 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Generieren von Zufallszahlen ist ein häufig genutztes Konzept in der Programmierung, bei dem eine Zufallszahl innerhalb eines bestimmten Bereichs erzeugt wird. Programmierer nutzen dies unter anderem, um Spiele zu erstellen, bestimmte Aktionen zufällig auszuführen und Tests durchzuführen.
+## Was & Warum?
 
-# Wie geht's?
-Generierung von Zufallszahlen in Java ist einfach und benutzerfreundlich. Mit der ```Random``` Klasse und der ```nextInt()``` Methode können wir eine Zufallszahl innerhalb eines bestimmten Bereichs generieren und diese in einer Variablen speichern.
+Die Generierung von Zufallszahlen ist eine Methode, bei der eine Serie von Zahlen erzeugt wird, die keine erkennbare Muster oder Reihenfolge haben. Programmiere verwenden dies, um Daten zu verschleiern, Simulationen durchzuführen und Spiele zu erstellen.
 
-```java
-// Importieren der "Random" Klasse
-import java.util.Random;
+## So geht's:
 
-// Deklaration einer "Random" Instanz
-Random random = new Random();
+In Java können wir mithilfe der `Math.random()` Methode oder der Klasse `java.util.Random` Zufallszahlen generieren. Hier sind ein paar Beispiele:
 
-// Generieren einer Zufallszahl zwischen 1 und 10 und Speichern in einer Variablen
-int randomNumber = random.nextInt(10) + 1;
+```Java
+// Methode 1: Verwendung von Math.random()
+double zufallsZahl = Math.random();
+System.out.println("Zufallszahl zw. 0.0 bis 1.0: " + zufallsZahl);
+
+// Methode 2: Verwendung von java.util.Random
+Random rand = new Random();
+int zufallsZahlInt = rand.nextInt(100); // Zufallszahl zw. 0 bis 99
+System.out.println("Zufallszahl zw. 0 bis 99: " + zufallsZahlInt);
 ```
 
-Die ```nextInt()``` Methode erwartet eine ganze Zahl als Parameter, die als obere Grenze für die Zufallszahl dient. Um eine Zufallszahl zwischen 1 und 10 zu erhalten, haben wir daher den Wert 10 angegeben. Da die generierte Zufallszahl auch 0 sein kann, haben wir noch 1 zu dem Ergebnis addiert.
+## Tiefere Einblicke
 
-# Tiefgang
-Das Konzept der Zufallszahlen wurde bereits in den 1940er Jahren von Wissenschaftlern entwickelt, um Simulationen in der Physik und dem Militär durchzuführen. Heutzutage gibt es verschiedene Algorithmen zur Generierung von Zufallszahlen, die in der Programmierung eingesetzt werden.
+Die Methode der Zufallszahlgenerierung hat ihre Wurzeln in der Kryptographie und wurde verwendet, um geheime Codes zu erstellen und zu brechen. Es gibt mehrere alternative Methoden zur Zufallszahlgenerierung in Java, einschließlich `java.security.SecureRandom` und `java.util.concurrent.ThreadLocalRandom`. Die Wahl hängt von den spezifischen Anforderungen deines Programms ab, einschließlich Sicherheitsbedarf und Leistung.
 
-Alternativ zur ```Random``` Klasse gibt es auch die Möglichkeit, die ```Math.random()``` Methode zu nutzen. Diese Methode generiert eine Zufallszahl zwischen 0 und 1 und kann dann entsprechend skaliert werden, um eine Zufallszahl innerhalb eines bestimmten Bereichs zu erhalten.
+Die Implementierungsdetails variieren je nach Methode, aber im Allgemeinen verwenden beide oben diskutierten Methoden einen sogenannten "Seed" (Anfangswert) als Ausgangspunkt. Die Methode `java.util.Random` generiert Pseudo-Zufallszahlen, wobei der Seed auf der Systemzeit basiert.
 
-Die ```Random``` Klasse und die ```Math.random()``` Methode nutzen beide den Java Random Number Generator (RNG) Algorithmus, der auf dem Mersenne-Twister Algorithmus basiert. Dieser Algorithmus gewährleistet eine gleichmäßige Verteilung von Zufallszahlen.
+## Siehe auch:
 
-# Siehe auch
-Wenn du mehr über die Generierung von Zufallszahlen in Java erfahren möchtest, empfehlen wir dir die offizielle Java Dokumentation zur ```Random``` Klasse und zur ```Math``` Klasse.
+Um mehr über Zufallszahlen und ihre Anwendungen in Java zu erfahren, empfehle ich die folgenden Quellen:
 
-Java Random Klasse: https://docs.oracle.com/javase/10/docs/api/java/util/Random.html
-Java Math Klasse: https://docs.oracle.com/javase/10/docs/api/java/lang/Math.html
+- [Offizielle Java Doku zufor java.util.Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Java Tutorials - Zufallszahlen](https://www.programiz.com/java-programming/examples/generate-random-number)
+- [Offizielle Java Doku für Math.random()](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--)

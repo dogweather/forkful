@@ -1,7 +1,7 @@
 ---
-title:                "기본 인증으로 http 요청 보내기"
-html_title:           "Swift: 기본 인증으로 http 요청 보내기"
-simple_title:         "기본 인증으로 http 요청 보내기"
+title:                "기본 인증을 사용하여 http 요청 보내기"
+html_title:           "Bash: 기본 인증을 사용하여 http 요청 보내기"
+simple_title:         "기본 인증을 사용하여 http 요청 보내기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가요? 
-HTTP 기본 인증으로 HTTP 요청을 보내는 것은 무엇인지, 프로그래머들이 왜 이렇게 하는지에 대해 설명하는 두-세 문장입니다.
+## 무엇이며 왜?
+HTTP 요청을 기본 인증과 함께 보내는 작업은 보안이 필요한 통신에서 사용합니다. 이를 통해 우리는 사용자의 자격 증명을 확인하고, 민감한 정보에 대한 접근을 허용하거나 거부할 수 있습니다.
 
-HTTP 기본 인증은 웹 요청을 할 때 사용하는 보안 방식 중 하나입니다. 기본 인증은 사용자 이름과 비밀번호를 인증 서버에 보내고, 유효한 사용자이면 요청을 수락하는 방식입니다. 많은 웹 서비스가 기본 인증을 사용해 사용자 인증을 처리합니다.
-
-## 하는 방법:
-```Swift 
-let credentials = "\(username):\(password)".base64EncodedString()
-let url = URL(string: "https://example.com/api")!
-var request = URLRequest(url: url)
-request.httpMethod = "GET"
-request.setValue("Basic \(credentials)", forHTTPHeaderField: "Authorization")
-
-URLSession.shared.dataTask(with: request) { (data, response, error) in
-    guard let data = data else {
-        print("Error: \(error?.localizedDescription ?? "unknown")")
-        return
-    }
-    print(String(data: data, encoding: .utf8))
-}.resume()
-```
-이 코드는 동일한 URL에서 GET 요청을 보내는 방법을 보여줍니다. 사용자 이름과 비밀번호를 포함하는 인증 헤더를 추가하기 위해 `URLSession` API를 사용합니다. 응답 받은 데이터를 기본 문자열로 변환하여 콘솔에 출력합니다.
+## 사용법
+Swift를 활용해 HTTP 요청을 기본 인증과 함께 보내는 방법을 배워보겠습니다. 다음 예제를 따라해봅시다.
 
 ```Swift
-// 예상 출력:
-Optional("[1, 2, 3]")
+import Foundation
+
+let username = "your_username"
+let password = "your_password"
+let loginString = String(format: "%@:%@", username, password)
+let loginData = loginString.data(using: String.Encoding.utf8)!
+let base64LoginString = loginData.base64EncodedString()
+
+let url = URL(string: "https://www.your-url.com")!
+var request = URLRequest(url: url)
+request.httpMethod = "POST"
+request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+
+let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+    if let error = error {
+      print("Error:\n\(error)")
+    }
+    else if let data = data {
+      let str = String(data: data, encoding: String.Encoding.utf8)
+      print("Received data:\n\(str ?? "")")
+    }
+}
+task.resume()
 ```
 
-## 깊게 살펴보기:
-1. HTTP 기본 인증은 RFC 2617에 정의되어 있습니다. 해당 문서를 읽어보면 인증 헤더의 구조와 인증 알고리즘이 어떻게 작동하는지 자세히 설명되어 있습니다.
-2. HTTP 기본 인증은 보안 수준이 낮아서 중요한 정보를 전송할 때는 사용하지 않는 것이 권장됩니다. 보안 수준이 높은 다른 인증 방식을 사용하는 것이 좋습니다.
-3. Swift에서는 `URLCredential` 및 `URLSessionConfiguration` API를 사용하여 기본 인증을 보다 쉽게 구현할 수 있습니다.
+## 딥다이브
+이 기능은 웹이 거대한 플랫폼으로 성장하면서 사람들이 민감한 정보를 쉽게 공유할 수 있는 방법이 필요했기에 나온 것입니다. HTTP Basic Authentication은 그 중 하나일 뿐, 전체 인증 방식의 일부입니다. 대안으로는 OAuth, JWT(Jason Web Token) 등의 더 안전하고 복잡한 인증 방식이 있습니다. 
 
-## 참고 자료: 
-- [RFC 2617](https://tools.ietf.org/html/rfc2617)
-- [Apple Developer Documentation on URLCredential](https://developer.apple.com/documentation/foundation/urlcredential)
-- [Apple Developer Documentation on URLSessionConfiguration](https://developer.apple.com/documentation/foundation/urlsessionconfiguration)
+Swift에서의 HTTP 요청과 기본 인증은 주로 HTTP 헤더를 통해 수행되며 이 작업은 URLRequest의 `setValue(_:forHTTPHeaderField:)` 메소드를 사용하여 구현됩니다. 
+
+## 참고자료
+- [Swift.org - URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [MDN Web Docs - HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [RFC 7617 - HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc7617)

@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Swift: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire?
-La lecture d'un fichier texte est un moyen pour les programmeurs de récupérer des données textuelles qui sont stockées dans un fichier sur leur ordinateur. Les programmeurs peuvent faire cela pour accéder à des informations statiques ou pour traiter des fichiers à grande échelle.
+## Quoi & Pourquoi? 
+La lecture d'un fichier texte consiste à récupérer des données stockées sous forme de texte dans un fichier. Les programmeurs le font parce qu'il s'agit d'une façon courante de stocker et partager des informations entre différentes parties d’un programme ou différents programmes.
 
-# Comment faire:
-Voici deux façons de lire un fichier texte en Swift:
+## Comment faire:
+Voici un exemple de code Swift pour lire un fichier texte:
 
-**1. Utilisation de la méthode String(contentsOf:encoding)**
-```swift
-let filePath = Bundle.main.path(forResource: "monFichier", ofType: "txt")
-let fileContent = try! String(contentsOfFile: filePath!, encoding: .utf8)
-print(fileContent)
-```
-Sortie:
-> Contenu de monFichier.txt
+``` Swift
+import Foundation
 
-**2. Lecture ligne par ligne en utilisant la méthode readLine()**
-```swift
-var path = "chemin/vers/monFichier.txt"
-let lines = try String(contentsOfFile: path, encoding: .utf8).split(separator: "\n")
-for line in lines {
-  print(line)
+// Chemin du fichier
+let path = "/monChemin/monFichier.txt"
+
+do {
+    // Tente de lire le contenu du fichier
+    let contenu = try String(contentsOfFile: path, encoding: .utf8)
+    print(contenu)
+
+} catch {
+    // capture any errors
+    print("Erreur: \(error)")
 }
 ```
-Sortie:
-> Contenu de chaque ligne de monFichier.txt
 
-# Plongeons plus en profondeur:
-**1. Contexte historique:**
-Lecture des fichiers texte est une fonctionnalité de base offerte depuis les premiers langages de programmation. Auparavant, cela nécessitait une implémentation manuelle de code pour lire et traiter les fichiers.
+La sortie de ce code sera le texte de `monFichier.txt`, à moins qu'il y ait une erreur, auquel cas l'erreur sera imprimée.
 
-**2. Alternatives:**
-Il existe d'autres moyens de récupérer des données à partir de fichiers, tels que l'utilisation de bases de données ou de services de stockage cloud. Cependant, la lecture de fichiers texte est toujours un moyen simple et efficace pour les programmeurs de récupérer des données sur leur ordinateur.
+## Plongée en profondeur
+Historiquement, la lecture de fichiers texte est une pratique courante dès les premiers jours de la programmation. Même aujourd'hui, elle reste une manière fiable et simple de gérer les données.
 
-**3. Détails de mise en œuvre:**
-En utilisant la méthode String(contentsOf:encoding), il est important de spécifier le chemin complet du fichier, sinon cela peut entraîner des erreurs. De plus, en lisant de gros fichiers, il est préférable d'utiliser la méthode readLine() pour éviter de charger tout le contenu en mémoire à la fois.
+En termes d'alternatives, Swift offre des outils plus sophistiqués pour lire des fichiers, comme `InputStream` et `FileHandle`, qui vous permettent de gérer de très gros fichiers plus efficacement en lisant les données par petites portions.
 
-# Voir aussi:
-- [Documentation Apple pour String(contentsOf:encoding)](https://developer.apple.com/documentation/foundation/string/1412575-contents)
-- [Documentation Apple pour readLine()](https://developer.apple.com/documentation/swift/1641190-readline)
+En ce qui concerne les détails d'implémentation, la fonction `String(contentsOfFile:encoding:)` utilise le décodage Unicode UTF-8 par défaut, ce qui fonctionne avec la plupart des fichiers texte modernes.
+
+## Voir aussi:
+1. Documentation officielle sur Swift par Apple: https://developer.apple.com/documentation/swift
+2. Guide de lecture et écriture de fichiers texte en Swift sur raywenderlich.com: https://www.raywenderlich.com/7181017-swift-standard-library-string-and-text
+3. Documentation officielle sur les flux de fichiers en Swift: https://developer.apple.com/documentation/foundation/inputstream

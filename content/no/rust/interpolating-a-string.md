@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av streng"
-html_title:           "Rust: Interpolering av streng"
-simple_title:         "Interpolering av streng"
+title:                "Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
+simple_title:         "Interpolering av en streng"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,20 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å interpolere en streng er en teknikk som tillater programmerere å sette inn variabler eller uttrykk direkte inn i en string. Dette gjør det enklere og mer effektivt å bygge dynamiske meldinger eller utskrifter, spesielt når variabler eller uttrykk endres i løpet av programkjøringen.
 
-## Hvordan:
+Interpolering av en streng i programmering refererer til prosessen med å sette inn variabler inn i en streng. Dette gjøres for å generere dynamisk innhold innenfor en streng på en ryddig og effektiv måte.
+
+## Hvordan Gjøre Det:
+
 ```Rust
-let navn = "Nina";
-let alder = 25;
-let beskjed = format!("Hei, mitt navn er {} og jeg er {} år gammel.", navn, alder);
-println!("{}", beskjed);
+fn main() {
+    let alder = 30;
+    println!("Jeg er {} år gammel.", alder);
+}
 ```
-Output: Hei, mitt navn er Nina og jeg er 25 år gammel.
+Utfall av ovennevnte kode vil være: `Jeg er 30 år gammel.`
 
-## Dykk dypere:
-Interpolering av strenger ble først introdusert i programmeringsspråket Perl i 1987, og har senere blitt adoptert av mange andre språk, inkludert Rust. Det finnes også alternative måter å interpolere strenger på, som for eksempel bruk av escape-sekvenser eller string concatenation. Implentasjonen av string interpolation i Rust er basert på format! makroen, som tillater at en string og variabler eller uttrykk kombineres på en enkel og elegant måte.
+Det er også mulig å interpolere flere variabler:
 
-## Se også:
-- https://doc.rust-lang.org/book/ch08-02-strings.html
-- https://en.wikipedia.org/wiki/String_interpolation
+```Rust
+fn main() {
+    let navn = "Ola";
+    let alder = 30;
+    println!("Hei, jeg heter {} og jeg er {} år gammel.", navn, alder);
+}
+```
+Utfall av denne koden vil være: `Hei, jeg heter Ola og jeg er 30 år gammel.`
+
+## Grundigere Undersøkelse: 
+
+Når det kommer til strenginterpolering, er det noen detaljer det er godt å være klar over. Historisk sett kommer interpolering av strenger fra Perl og har siden blitt adoptert av mange andre språk som Python, Ruby, og selvfølgelig Rust. I Rust gjøres dette ved hjelp av `println!`-makroen, som erstatter krøllparenteser `{}` med tilhørende variabler.
+
+Alternativt, det er tilfeller der du kanskje vil formatere en streng uten å skrive den ut med en gang. I slike tilfeller kan du bruke `format!`-makroen:
+
+```Rust
+fn main() {
+    let navn = "Ola";
+    let alder = 30;
+    let string = format!("Hei, jeg heter {} og jeg er {} år gammel.", navn, alder);
+    println!("{}", string);
+}
+```
+Programmet vil fortsatt skrive ut: `Hei, jeg heter Ola og jeg er 30 år gammel.`
+
+## Se Også:
+
+For mer informasjon om strenginterpolering i Rust, se følgende kilder:
+- [Offisiell Rust dokumentasjon om `println!`](https://doc.rust-lang.org/std/macro.println.html)
+- [Rust by Example: Formatering av utskrift](https://doc.rust-lang.org/rust-by-example/hello/print.html)
+- [Wikipedia: Strenginterpolering](https://en.wikipedia.org/wiki/String_interpolation)

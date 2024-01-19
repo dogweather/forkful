@@ -1,7 +1,7 @@
 ---
-title:                "HTML verarbeiten."
-html_title:           "Clojure: HTML verarbeiten."
-simple_title:         "HTML verarbeiten."
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# HTML Verarbeitung mit Clojure
+
 ## Was & Warum?
 
-Beim Parsen von HTML handelt es sich um den Prozess des Extrahierens von Daten aus einer HTML-Datei. Programmierer tun dies, um die erhaltenen Informationen weiterzuverarbeiten und sie in verschiedenen Anwendungen oder Websites anzuzeigen.
+HTML-Verarbeitung ist die Methode zur Interpretation und Manipulation von HTML-Strukturen. Die Programmierer setzen sie ein, um strukturierte Daten aus Webseiten zu gewinnen oder diese zu manipulieren.
 
-## Wie geht's?
+## Wie man es macht:
 
-Das Parsen von HTML ist in Clojure relativ einfach. Zunächst müssen Sie jedoch das `clojure.data.xml` Paket importieren, um mit XML-Dateien arbeiten zu können. Dann können Sie die Funktion `parse` verwenden, um eine HTML-Datei zu lesen und sie in eine Clojure-Datenstruktur zu konvertieren, die einfach zu verarbeiten ist.
+```Clojure
+;;; Einbindung der Anforderungen
+(require '[clj-http.client :as client])
+(require '[hickory.core :as hickory])
+(require '[hickory.select :as select])
 
-```clojure
-(require '[clojure.data.xml :as xml])
+;;; Webseitenabruf
+(def res (client/get "https://example.com"))
 
-(def file (slurp "path/to/html/file.html"))
-(parse file)
+;;; Parsen des HTML
+(def doc (hickory/parse (:body res)))
+
+;;; Auswahl eines spezifischen HTML-Elements
+(defn get-elements [doc css-selector]
+  (select/select (select/css css-selector) doc))
 ```
+Dieses Beispiel zeigt wie man eine Webseite mit `clj-http.client` abruft und anschließend das HTML mit `hickory` parst. Mit der `get-elements` Funktion kann man spezifische HTML-Elemente auswählen.
 
-Das Ergebnis würde eine Clojure Map sein, die die verschiedenen Elemente der HTML-Datei enthält.
+## Vertiefung
 
-## Tiefer Einblick
+HTML-Verarbeitung hat eine lange Geschichte, die mit der Entwicklung von HTML einhergeht. Es existieren Alternativen wie zum Beispiel `Jsoup`. `Jsoup` ist jedoch eine in Java geschriebene Bibliothek, also nicht nativ in Clojure.
 
-Das Parsen von HTML hat sich in den letzten Jahren stark weiterentwickelt. In der Vergangenheit mussten Entwickler oft auf komplizierte reguläre Ausdrücke zurückgreifen, um Daten aus HTML-Dateien zu extrahieren. Heutzutage gibt es jedoch viele Bibliotheken und Frameworks, die speziell für das Parsen von HTML entwickelt wurden, was den Prozess viel einfacher und effizienter macht.
+Die `hickory` Bibliothek bietet eine schöne Schnittstelle zum Parsen und Auswählen von HTML-Elementen in Clojure. Es verwendet unter der Haube `jsoup` zum Parsen des HTML und erweitert es um eine clojurische API. Der Datenfluss in `hickory` wird durch Map-Transformationen dargestellt.
 
-Als Alternative können Programmierer auch auf DOM-Manipulations-Tools wie Jsoup oder Beautiful Soup zurückgreifen, um HTML-Daten zu analysieren und zu verarbeiten. Diese sind jedoch nicht so gut in Clojure integriert wie das `clojure.data.xml` Paket und erfordern möglicherweise zusätzliche Schritte für die Verwendung in einer Clojure-Anwendung.
+## Siehe Auch
 
-Bei der Implementierung des `parse` Vorgangs verwendet Clojure zwei Hauptfunktionen - `parse` und `parse-str`. Die letztere ist für die Verarbeitung von Strings und die Konvertierung in Clojure-Datenstrukturen zuständig, während die erstere für die Verarbeitung von Dateien und Streams verwendet wird.
-
-## Siehe auch
-
-Für weitere Informationen zum Parsen von HTML in Clojure können Sie die offizielle Clojure-Dokumentation zu `clojure.data.xml` konsultieren. Außerdem gibt es viele Tutorials und Beispiele im Internet, die Ihnen helfen können, das Parsen von HTML in Ihren Projekten effektiv zu nutzen. Mit ein wenig Übung werden Sie schnell in der Lage sein, Daten aus HTML-Dateien zu extrahieren und sie in Ihren Anwendungen zu verwenden. Happy Coding!
+- [Clojure's clj-http Bibliothek](https://github.com/dakrone/clj-http)
+- [Hickory](https://github.com/davidsantiago/hickory)
+- [Hickory's select Modul](https://github.com/davidsantiago/hickory/blob/master/src/hickory/select.clj)

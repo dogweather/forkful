@@ -1,6 +1,6 @@
 ---
 title:                "文字列の長さを見つける"
-html_title:           "Elixir: 文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,24 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ?
-文字列の長さを見つけることは、多くのプログラマーが行うことです。文字列の長さを知ることにより、文字列を処理するために必要な手順をより正確に把握することができます。
+Title: プログラミング言語Elixirで文字列の長さを見つける
 
-## 方法:
-次のコード例を使用して、文字列の長さを見つける方法を学びましょう。
+## なんだそれは? どうして?
+文字列の長さを見つけるとは、文字列が何文字から成るかを計算することです。プログラマーがこれを行う理由は、文字列を操作する際や、バリデーションを行う場面で非常に役立つからです。
+
+## どうやってやるか:
+Elixirでは、文字列の長さを計るために`String.length/1`関数を使用します。以下に使用例を示します。
 
 ```Elixir
-my_string = "Hello, World!"
-IO.puts String.length(my_string)
-```
-**出力:**
-```
-13
+iex> string = "こんにちは、Elixir!"
+iex> String.length(string)
+10
 ```
 
-## 詳しい情報:
-文字列の長さを見つける方法は簡単ですが、歴史的には複雑なものでした。以前は、プログラマーが手動で文字列を数える必要がありましたが、今では言語やフレームワークに組み込まれています。代替方法として、正規表現を使用して文字列の長さを見つけることもできます。文字列の長さを見つけるコードは非常に効率的であり、文字列の操作や処理において不可欠なものです。
+ここでは、Unicode文字列 "こんにちは、Elixir" の長さを計算して、10を返します。
 
-## 関連情報:
-- [Elixir String.length/1 関数ドキュメント](https://hexdocs.pm/elixir/String.html#length/1)
-- [Elixir 言語公式サイト](https://elixir-lang.org/)
+## ディープダイブ
+歴史的な文脈：Elixirは2011年に初めて公開され、エンジニアが効率的にソフトウェアを開発できるよう設計されました。その結果、多数の便利な組み込み関数（`String.length/1`もその一つ）が提供されました。
+
+代替方法：`byte_size/1`関数を用いることもできますが、これはバイト単位で長さを返すため、ユニコード文字列に対して正しい結果を返さない可能性があります。
+
+実装の詳細：Elixirの`String.length/1`関数は、与えられたバイナリの各コードポイントを反復処理し、その数をカウントすることで動作します。この方法は、文字列の本当の長さ（つまり、ユーザーが認識する文字数）を返します。
+
+## 参照するべきもの
+- 公式Elixirドキュメンテーションで`String.length/1`について詳しく学びましょう: [ここ](https://hexdocs.pm/elixir/String.html#length/1)をクリックしてください。
+- Elixirの`byte_size/1`について学びたければ、こちらの[リンク](https://hexdocs.pm/elixir/Kernel.html#byte_size/1)をご覧ください。

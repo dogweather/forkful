@@ -12,30 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a string to lower case simply means converting all the letters to their lowercase counterparts. This is often done by programmers in order to standardize text for comparison or to avoid case sensitivity issues in their code.
+Converting a string to lower case means changing all the uppercase characters in a string to their lowercase counterparts. Programmers often do this to make string comparisons case-insensitive and for data normalization.
 
 ## How to:
 
-```Clojure
-(.toLowerCase "Hello World")
-;; => "hello world"
+Clojure provides an in-built function `clojure.string/lower-case` to convert a string to lowercase.
 
-(lower-case "AbCde")
-;; => "abcde"
+```clojure
+(require '[clojure.string :as str])
+
+(def s "HeLLo WoRLD")
+
+(str/lower-case s)
 ```
+
+When you run the above code, it transforms the string "HeLLo WoRLD" into "hello world".
 
 ## Deep Dive:
 
-Historically, string manipulation has been a common task for programmers. In fact, the earliest programming languages did not have built-in string manipulation functions, and developers had to come up with creative ways to accomplish this task.
+Clojure's `lower-case` function is actually a wrapper around Java's `toLowerCase` method on strings. So not only does it benefit from the simplicity of being a Clojure function, it also enjoys the thoroughness with which Java handles case conversion, taking into account locale-specific rules. Of course, this means your output may vary based on the JVM's default locale setting.
 
-In Clojure, the `lower-case` function was introduced in version 1.3.0, making it easier for developers to convert strings to lower case.
+If, for some reason, you can't (or don't want to) use the `lower-case` function, you can reimplement it manually through a combination of `map` with the `Character/lowerCase` function and a join.
 
-While converting a string to lower case is a simple task, it is worth noting that not all characters will be converted in the same way. For example, some languages have special rules for converting certain characters to lower case, such as the German "ß" to "ss" or the Turkish "I" to "ı." In these cases, additional steps may need to be taken to accurately convert strings to lower case.
+```clojure
+(defn lower-case [s]
+  (->> s
+       (map #(Character/toLowerCase %))
+       (apply str)))
 
-As an alternative to using the `lower-case` function, some developers may choose to use the `(.toLowerCase)` method from Java, which Clojure is built on top of. However, the `lower-case` function is generally preferred as it is more idiomatic and also handles international characters properly.
+(lower-case "HeLLo WoRLD")
+```
+
+This version will likely be slower (since it doesn't benefit from the JVM's optimized string handling) but it could be useful if you're in a context where you can't use clojure.string.
+
+Although both `clojure.string/lower-case` and `Character/lowerCase` are great, be cautious about underestimating Unicode's habit of piling on surprises. 
 
 ## See Also:
 
-- [ClojureDocs: lower-case](https://clojuredocs.org/clojure.core/lower-case)
-- [JavaDocs: String toLowerCase](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
-- [How to Use String Manipulation Functions in Clojure | Thinkster.io](https://www.thinkster.io/tutorials/clojure-string-manipulation-functions)
+- To read more about the `lower-case` function and its alternatives, head over to [clojure.string API documentation](https://clojuredocs.org/clojure.string/lower-case).
+- For a deep dive into Clojure's string handling and Unicode complexities, [this article](https://clojure.org/guides/weird_characters) is a great place to dig in.
+- To see `toLowerCase` method and its usage in Java, refer to [Java String toLowerCase() Method](https://www.javatpoint.com/java-string-tolowercase).

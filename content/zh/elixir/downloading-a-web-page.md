@@ -1,7 +1,7 @@
 ---
-title:                "从网页上下载 (Cóng wǎngyè shàng xiàzài)"
-html_title:           "Elixir: 从网页上下载 (Cóng wǎngyè shàng xiàzài)"
-simple_title:         "从网页上下载 (Cóng wǎngyè shàng xiàzài)"
+title:                "下载网页"
+html_title:           "Arduino: 下载网页"
+simple_title:         "下载网页"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,32 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-当我们浏览网页时，实际上是在下载网页内容并显示在我们的屏幕上。程序员们也会使用类似的方式来下载网页内容，以便进一步处理和操作。
+## 什么以及为什么?
+下载网页是获取服务器上某网页的所有数据并将其保存到本地的过程。程序员经常为了离线访问或进行数据抓取需要下载网页。
 
-### 什么是下载网页和为什么程序员会这么做？
+## 怎么做:
+Elixir 的 `HTTPoison` 包可用于下载网页。执行以下步骤来进行:
 
-下载网页可以被视为一个程序员从网络上获取数据的方式。程序员们需要下载网页内容来进行数据分析、网页抓取和其他数据处理操作。这么做的目的是为了从网页中提取重要信息，或者将网页内容作为输入来进行其他操作。
-
-### 如何实施：
+1.  在项目中添加依赖项, 在 `mix.exs` 文件的 `deps` 函数中添加 `{:httpoison, "~> 1.8"}`.
 
 ```Elixir
-require HTTPoison
-
-{:ok, result} = HTTPoison.get("https://www.example.com")
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 ```
 
-上面的代码使用Elixir内置的HTTPoison库来获取网页内容，并将结果保存在`result`变量中。你可以在这之后使用`result`变量来进一步处理网页内容。
+2. 下载并编译依赖项: `mix deps.get`.
+3. 创建一个函数去发起 GET 请求并获取网页的body.
 
-### 深入了解：
+```Elixir
+defmodule PageDownloader do
+  def download(url) do
+    case HTTPoison.get(url) do
+      {:ok, %HTTPoison.Response{body: body}} -> 
+        IO.puts body
+      {:error, %HTTPoison.Error{reason: reason}} -> 
+        IO.puts "Error: #{reason}"
+    end
+  end
+end
+```
 
-历史背景：在过去，下载网页是通过发送HTTP请求和接收HTTP响应来实现的。然而，随着网络技术的发展，现在可以使用更高效的技术来实现网页下载，例如WebSockets或gRPC。
+运行此代码将获取网页的 body 并打印出来.
 
-替代方案：除了使用Elixir内置的HTTPoison库，程序员也可以使用其他下载网页的工具和库，例如Scrappy和Crawlkit。
+## 深度理解
+在历史长河中，从 web 上下载内容一直是一个普遍的任务。起初，开发者需要与基础的 HTTP 协议进行交互，但现在已经有了众多的库负责处理。
 
-实现详情：HTTPoison库使用Erlang的HTTP-client库来进行网页下载。HTTP-client库又调用Erlang的Inets库来进行底层的网络通信。
+Elixir 的其他包，比如 `Tesla` 和 `Gun`，也可以执行下载网页的任务。`HTTPoison` 相对于这些选择，它更简单且易于使用，特别是对于新手来说。但如果你有特殊需求，例如需要握手，可能需要使用这些其他选项。
 
-### 参考资料：
+具体实现详情，`HTTPoison.get(url)` 实际上是将 HTTP GET请求发送到指定的URL，并返回服务器的响应。响应是 `{:ok, response}` 或 `{:error, reason}`：前者包含响应体（即网页内容），后者则包含错误原因。
 
-- [HTTPoison官方文档](https://hexdocs.pm/httpoison)
-- [Scrappy库官方网站](https://github.com/elixir-scraper/scrappy)
-- [Crawlkit库官方文档](https://hexdocs.pm/crawlkit)
+## 参考来源
+- HTTPoison 文档: https://hexdocs.pm/httpoison/readme.html
+- Elixir 语言官方网站: https://elixir-lang.org/
+- Elixir 的其他 HTTP 客户端: https://hexdocs.pm/awesome-elixir/#http-client

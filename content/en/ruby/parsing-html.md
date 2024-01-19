@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "Ruby recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -12,37 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML means extracting specific data or information from an HTML document. This is commonly done by programmers to automate data extraction from websites, such as scraping product information for an e-commerce website or retrieving data for analytics purposes.
+Parsing HTML involves taking a HTML document as an input and breaking it down into readable elements for manipulation purposes. Programmers do it to extract data, automate web tasks, or modify web content.
 
 ## How to:
 
-To parse HTML in Ruby, we can use the Nokogiri gem. First, we need to install the gem by running `gem install nokogiri` in the terminal. Then, we can use the gem in our code by requiring it at the top: `require 'nokogiri'`. Here's an example of how to parse an HTML document and get the title:
+Parsing HTML in Ruby is a pretty straightforward process. Nokogiri is the most popular HTML parsing library for Ruby.
+
+First, install Nokogiri:
 
 ```Ruby
-# require nokogiri
-require 'nokogiri'
-
-# create Nokogiri object from html document
-doc = Nokogiri::HTML(html_document)
-
-# get title tag from document
-title = doc.css("title").text
-
-# print title
-puts title
+gem install nokogiri
 ```
 
-Output: "My Website"
+To parse HTML:
 
-## Deep Dive
+```Ruby
+require 'nokogiri'
+require 'open-uri'
 
-Parsing HTML has been a common practice among programmers since the early days of web scraping. Before the introduction of gems like Nokogiri, developers had to manually write complex code to extract data from HTML documents. With Nokogiri, the process has become much simpler and more efficient.
+doc = Nokogiri::HTML(open('http://www.example.com'))
+puts doc
+```
 
-An alternative to Nokogiri is using regular expressions to parse HTML, but this can be more complex and prone to errors. Nokogiri, on the other hand, uses a powerful and user-friendly API to navigate and extract data from HTML documents.
+This will print the parsed HTML of the example webpage. To extract specific elements, use CSS selectors:
 
-Nokogiri internally uses the libxml2 and libxslt libraries, which are written in C, to perform the parsing and data extraction process. This makes Nokogiri faster and more efficient compared to other methods.
+```Ruby
+doc.css('h1').each do |header|
+  puts header.content
+end
+```
 
-## See Also
+This code extracts all `<h1>` tags from the parsed HTML and prints their content.
 
-- [Nokogiri gem](https://github.com/sparklemotion/nokogiri)
-- [Libxml2](http://xmlsoft.org/libxml2/) and [libxslt](http://xmlsoft.org/libxslt/) libraries used by Nokogiri
+## Deep Dive:
+
+In the early days of the web, HTML tags were regex-matched, which was cumbersome and error-prone. Nokogiri, introduced in 2007, significantly simplified this process. While other libraries like Hpricot have become obsolete or discontinued, Nokogiri, being quick, reliable, and easy to use, remains popular in Ruby applications.
+
+There are alternatives to Nokogiri, such as Oga and rexml. These can be faster but lack Nokogiri's extensive feature set. 
+
+Nokogiri parses HTML with a native C extension that leverages the libxml2 library. This makes it fast, but also means it might be slower to install than pure Ruby alternatives, as it needs to compile a C extension during installation.
+
+## See Also:
+
+- [Nokogiri documentation](https://nokogiri.org/)
+- [libxml2 library](http://xmlsoft.org/)
+- [Oga libray](https://github.com/YorickPeterse/oga)
+- [rexml library](https://github.com/ruby/rexml)

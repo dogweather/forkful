@@ -1,7 +1,7 @@
 ---
-title:                "Konvertere en streng til små bokstaver."
-html_title:           "Go: Konvertere en streng til små bokstaver."
-simple_title:         "Konvertere en streng til små bokstaver."
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,10 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Konvertering av en streng til små bokstaver er en vanlig operasjon i programmering som gjør at alle bokstavene i en tekst blir byttet ut med tilsvarende små bokstaver. Dette gjøres for å kunne sammenligne og behandle tekst på en mer enhetlig måte, uavhengig av hvilken form den opprinnelig ble skrevet i.
+Å konvertere en streng til små bokstaver innebærer å endre alle store bokstaver i en tekststreng til små bokstaver. Dette utføres ofte for å ignorere forskjeller i store og små bokstaver når man sammenlikner strenger, eller for å normalisere data.
 
 ## Hvordan:
-I Go kan du enkelt konvertere en streng til små bokstaver ved å bruke funksjonen strings.ToLower(). Se eksemplet under for å se hvordan det kan gjøres:
+Her er et eksempel på hvordan du kan konvertere en streng til små bokstaver i Go:
 
 ```Go
 package main
@@ -25,18 +25,21 @@ import (
 )
 
 func main() {
-    tekst := "Dette er EN tekst Som kan VÆRE SkRevET I Ulike FoRMER."
-    konvertertTekst := strings.ToLower(tekst)
-    fmt.Println(konvertertTekst)
+    text := "Hei, Verden!"
+    lower := strings.ToLower(text)
+    fmt.Println(lower)
 }
-
-// Output: dette er en tekst som kan være skrevet i ulike former.
 ```
+Når du kjører denne koden, vil utskriften bli:
+```
+hei, verden!
+```
+## Dyp dykk
+Ingeniører hos Google utviklet "strings" pakken som håndterer strenger i Go, og det inkluderer funksjonen ToLower. Den har vært en del av språket siden dets opprinnelige utgivelse i 2007. Du kan alternativt bruke "bytes" pakken for å oppnå samme resultat, men det er mer komplisert og ineffektivt for vanlige programmeringsoppgaver. Under panseret i ToLower, bredden av hvert tegn i strengen identifiseres og hvis det er en stor bokstav, konverteres den til en liten bokstav.
 
-## Dykk dypere:
-Å konvertere en streng til små bokstaver er en vanlig operasjon som går langt tilbake i dataprogrammeringens historie. Første gang dette ble implementert var i programmeringsspråket COBOL på 1950-tallet. I tillegg til å bruke funksjonen strings.ToLower(), kan man også benytte seg av Unicode- og RegEx-biblioteker for å oppnå lignende resultater.
+## Se Også
+Du kan finne mer informasjon om Go og "strings" pakken i følgende ressurser:
 
-## Se også:
-- [Go strings.ToLower() dokumentasjon](https://golang.org/pkg/strings/#ToLower)
-- [COBOL historie og utvikling](https://www.cs.umd.edu/projects/PL/cobol/)
-- [Unicode og tekstbehandling i programmering](https://www.unicode.org/standard/principles.html)
+1. Go Dokumentasjon: https://golang.org/pkg/strings/
+2. Go et effektivt språk for systemprogrammering: https://www.levlup.com/post/go-efficient-language-systems-programming
+3. "Strings, bytes, runes and characters in Go": https://blog.golang.org/strings

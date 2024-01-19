@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http"
-html_title:           "Go: Envoi d'une requête http"
-simple_title:         "Envoi d'une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,30 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-L'envoi d'une requête HTTP est le processus par lequel un client (tel qu'un navigateur web) demande des données à un serveur web. Les programmeurs effectuent cette action pour récupérer des informations à partir de ressources en ligne et les utiliser dans leur code.
+## Quoi & Pourquoi?
+
+Envoyer une requête HTTP, c'est demander des données à un serveur web utilisant le protocole HTTP. Les programmeurs le font pour obtenir des informations d'une source externe, ou pour interagir avec d'autres systèmes web.
 
 ## Comment faire:
-Go est un excellent langage pour envoyer des requêtes HTTP en raison de son support intégré pour les opérations web. Voici un exemple de code pour envoyer une requête GET simple:
+
+Voici un petit exemple qui illustre comment envoyer une requête HTTP GET en Go. C'est plutôt simple, vous verrez.
 
 ```Go
-resp, err := http.Get("https://example.com")
-if err != nil {
-  fmt.Println("Erreur lors de la requête:", err)
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+)
+
+func main() {
+	resp, err := http.Get("http://example.com/")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("%s", body)
 }
-defer resp.Body.Close()
-body, err := ioutil.ReadAll(resp.Body)
-if err != nil {
-  fmt.Println("Erreur lors de la lecture de la réponse:", err)
-}
-fmt.Println(string(body))
 ```
 
-La sortie de cet exemple sera le contenu de la page d'accueil de "example.com".
+Dans cet exemple, on utilise `http.Get` pour envoyer notre requête. Puis, on utilise `ioutil.ReadAll` pour lire la réponse. La sortie sera le contenu de la page d'accueil du site `http://example.com/`.
 
 ## Plongée en profondeur:
-L'envoi de requêtes HTTP est un élément fondamental de la communication sur le web et a été créé pour permettre aux clients de récupérer des informations de serveurs distants. Il existe plusieurs alternatives à l'utilisation de Go pour envoyer des requêtes, telles que cURL ou JavaScript dans les navigateurs web. Les détails d'implémentation de Go pour l'envoi de requêtes HTTP incluent la possibilité de personnaliser les en-têtes et les méthodes HTTP utilisées.
 
-## Voir aussi:
-- Le package "net/http" de Go: https://golang.org/pkg/net/http/
-- La documentation sur les requêtes HTTP: https://developer.mozilla.org/fr/docs/Web/HTTP/Overview
+Historiquement, les requêtes HTTP ont été l'un des moyens les plus courants d'interagir avec le web. Il y a d'autres alternatives comme les WebSockets pour des communications en temps réel, ou gRPC pour des systèmes d'entreprise complexes.
+
+Une requête HTTP en Go est effectuée par le biais du package `net/http` accompagné souvent de `io/ioutil` pour lire les données de la réponse. La gestion des erreurs est nécessaire à chaque étape.
+
+## Pour aller plus loin:
+
+- Les détails supplémentaires peuvent être trouvés dans la documentation officielle de Go pour le package `net/http` : https://golang.org/pkg/net/http/
+- Pour une perspective historique sur HTTP, ce lien est une lecture utile : https://developer.mozilla.org/fr/docs/Web/HTTP/Overview
+- Pour en savoir plus sur les alternatives, voici une introduction aux WebSockets : https://developer.mozilla.org/fr/docs/Web/API/WebSocket_API
+
+N'oubliez pas de pratiquer pour vous familiariser avec l'envoi des requêtes HTTP en Go. Bonne programmation!

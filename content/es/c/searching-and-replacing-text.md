@@ -11,39 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
+Buscar y reemplazar texto consiste en encontrar una cadena de caracteres específica y sustituirla por otra nueva. Los programadores lo hacen para modificar, actualizar o corregir información en códigos, archivos y bases de datos, lo que aumenta la eficiencia y reduce el tiempo de trabajo.
 
-¿Alguna vez te has encontrado en la tediosa tarea de buscar y reemplazar un texto en código? ¡No te preocupes, no eres el único! La búsqueda y reemplazo de texto es una técnica comúnmente utilizada por programadores para ahorrar tiempo y esfuerzo al realizar cambios en el código.
-
-## Cómo:
-
-El lenguaje de programación C ofrece varias funciones para facilitar la búsqueda y reemplazo de texto en cadenas de caracteres. Aquí te mostramos algunos ejemplos:
-
-- Para buscar una subcadena en una cadena de texto, podemos usar la función `strstr()` que devuelve un puntero a la primera aparición de la subcadena en la cadena de texto. Por ejemplo:
-
+## ¿Cómo hacerlo?
+Vamos a implementar una función simple de búsqueda y reemplazo en C. Este es un caso donde reemplazaremos "Hola" por "Adios" en una cadena dada.
 ```C
-char str[] = "Hola mundo";
-char *ptr = strstr(str, "mundo");
-printf("%s", ptr); // Imprime "mundo"
+#include <stdio.h>
+#include <string.h>
+
+void buscar_reemplazar(char *cadena, char *buscar, char *reemplazar) {
+    char buffer[1024] = { 0 };
+    char *insertar_punto = &buffer[0];
+    const char *tmp = cadena;
+    size_t buscar_len = strlen(buscar);
+    size_t reemplazar_len = strlen(reemplazar);
+
+    while (1) {
+        const char *p = strstr(tmp, buscar);
+
+        // Si no encuentra "buscar", copia el resto y sale.
+        if (p == NULL) {
+            strcpy(insertar_punto, tmp);
+            break;
+        }
+
+        // Copia el contenido antes de "buscar" y luego copia en "reemplazar".
+        memcpy(insertar_punto, tmp, p - tmp);
+        insertar_punto += p - tmp;
+        memcpy(insertar_punto, reemplazar, reemplazar_len);
+        insertar_punto += reemplazar_len;
+
+        // Ajusta el puntero de entrada de la cadena original después de "buscar".
+        tmp = p + buscar_len;
+    }
+
+    strcpy(cadena, buffer);
+}
+
+int main() {
+    char cadena[1024] = "Hola mundo, Hola todos!";
+    printf("Antes de reemplazar: %s\n", cadena);
+    buscar_reemplazar(cadena, "Hola", "Adios");
+    printf("Después de reemplazar: %s\n", cadena);
+    // Salida: Antes de reemplazar: Hola mundo, Hola todos!
+    //         Después de reemplazar: Adios mundo, Adios todos!
+    return 0;
+}
 ```
 
-- Para reemplazar una subcadena en una cadena de texto, podemos usar la función `strreplace()` que permite especificar la subcadena a reemplazar y la nueva subcadena a insertar. Por ejemplo:
+## Inmersión profunda
+El concepto de búsqueda y reemplazo ha sido esencial desde los primeros días del procesamiento digital de texto, y es una funcionalidad básica en la mayoría de editores de texto, procesadores de texto y lenguajes de programación.
 
-```C
-char str[] = "Hola mundo";
-strreplace(str, "mundo", "código");
-printf("%s", str); // Imprime "Hola código"
-```
+Numerosas librerías brindan manejo avanzado de cadenas, incluyendo funciones de búsqueda y reemplazo, como `strstr` y `strcpy` de la biblioteca estándar que utilizamos en el ejemplo. Pero si necesitas mayor eficiencia o capacidades especializadas, es posible proporcionar tu propia implementación o buscar entre las múltiples librerías que existen.
 
-## Profundizando:
+En cuanto a los detalles de implementación, la función `strstr` busca la primera aparición de la subcadena, y `strcpy` y `memcpy` manipulan la cadena para realizar el reemplazo. Tenga en cuenta que debes manejar cuidadosamente las referencias de los punteros y considerar el tamaño de las cadenas para evitar errores o vulnerabilidades.
 
-El concepto de búsqueda y reemplazo de texto no es nuevo, ya que ha sido utilizado desde los inicios de la informática. Sin embargo, con el avance de los lenguajes de programación y las herramientas de desarrollo, cada vez se han creado mejores y más eficientes formas de realizar esta tarea.
-
-Aparte de las funciones mencionadas anteriormente, también existen otras formas de buscar y reemplazar texto en C, como el uso de expresiones regulares. Además, hay herramientas externas como los editores de texto que ofrecen opciones avanzadas de búsqueda y reemplazo en grandes cantidades de código.
-
-En cuanto a la implementación, es importante tener en cuenta la eficiencia de los algoritmos utilizados para buscar y reemplazar texto. Dependiendo del tamaño y complejidad del código, se pueden elegir diferentes enfoques para lograr el mejor rendimiento.
-
-## Ver también:
-
-- [Documentación de la función strstr en C](https://es.cppreference.com/w/c/string/byte/strstr)
-- [Cómo utilizar expresiones regulares en C](https://stackoverflow.com/questions/8065087/using-glib-regex-in-c)
-- [Cómo buscar y reemplazar texto en Vim](https://vim.fandom.com/wiki/Searching#Searching_and_replacing)
+## Ver también
+- "Funciones de la biblioteca string.h en C": puedes ver https://www.programiz.com/c-programming/library-function/string.h
+- "Manejo de cadenas en C": vea más en https://www.geeksforgeeks.org/string-handling-c/ y https://www.learn-c.org/en/Strings
+- "Librerías C para manejo de cadenas": como tidystring: https://github.com/adambarley/tidystring

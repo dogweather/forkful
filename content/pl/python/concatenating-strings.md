@@ -1,6 +1,6 @@
 ---
 title:                "Łączenie ciągów znaków"
-html_title:           "Python: Łączenie ciągów znaków"
+html_title:           "Arduino: Łączenie ciągów znaków"
 simple_title:         "Łączenie ciągów znaków"
 programming_language: "Python"
 category:             "Python"
@@ -10,48 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co to i dlaczego?
 
-Łączenie ciągów znaków, zwane również konkatenacją, jest podstawową czynnością w programowaniu, która polega na łączeniu kilku wyrazów lub zdań w jeden ciąg. Programiści często używają konkatenacji w celu tworzenia dynamicznych wiadomości oraz generowania wyjścia do użytkownika.
+Łączenie ciągów znaków, czyli konkatenacja, to sposób na scalenie dwóch lub więcej napisów w jeden. Programiści robią to, aby manipulować i formatować dane tekstowe w łatwy i wydajny sposób.
 
 ## Jak to zrobić:
 
+W Pythonie mamy kilka podstawowych technik do łączenia ciągów znaków.
+
+1. Operator `+`:
 ```Python
-imie = "Anna"
-nazwisko = "Kowalska"
-wiadomosc = "Witaj " + imie + " " + nazwisko + "!" 
-print(wiadomosc)
+napis1 = "Cześć"
+napis2 = "Pythonie"
+print(napis1 + ", " + napis2)
 ```
+Na wyjściu otrzymasz:
 ```
-Wynik:
-Witaj Anna Kowalska!
+Cześć, Pythonie
+```
 
-Możesz również łączyć więcej niż dwa ciągi znaków, używając operatora `+`:
+2. String Formatowanie:
 ```Python
-liczba_1 = "7"
-liczba_2 = "3"
-wynik = liczba_1 + liczba_2
-print(wynik)
+print("{} jest super!".format("Python"))
 ```
-Wynik:
-73
+Na wyjściu otrzymasz:
+```
+Python jest super!
+```
 
-## Głębsza perspektywa:
-
-Tradycyjnie konkatenacja została wprowadzona w języku programowania Fortran w 1957 roku. Obecnie jest szeroko stosowana w wielu językach programowania, w tym w Pythonie. Alternatywą dla konkatenacji jest używanie nawiasów w celu wyrażenia wielu ciągów w jednym wyrażeniu.
-
-Możesz też użyć metody `.join()` w celu połączenia elementów listy w jeden ciąg znaków:
+3. f-strings (dostępne od Python 3.6):
 ```Python
-lista = ["AB", "CD", "EF"]
-wynik = "-".join(lista)
-print(wynik)
+wersja = 3.6
+print(f"Używamy Pythona {wersja}")
 ```
-Wynik:
-AB-CD-EF
+Na wyjściu otrzymasz:
+```
+Używamy Pythona 3.6
+```
 
-Implementacja konkatenacji w Pythonie jest zoptymalizowana pod kątem wydajności, co oznacza, że łączenie większej liczby ciągów niż dwóch nie będzie powodować większej liczby operacji, a zatem będzie działać szybko i wydajnie.
+## Deep Dive
 
-## Zobacz też:
+Konkatenacja stringów to technika stosowana od początku istnienia języków programowania. Zasada jest prosta: skleić razem różne ciągi znaków. 
 
-- Dokumentacja Pythona na temat konkatenacji: https://docs.python.org/3/library/stdtypes.html#string-methods
-- Porównanie konkatenacji i użycia nawiasów: https://realpython.com/python-strings/
+Ale w Pythonie, mamy więcej niż jedną metodę na łączenie ciągów. Operator `+` jest klasycznym sposobem, ale ma pewne ograniczenia. Nie łączy ciągów z innymi typami danych bez jawnego rzutowania.
+
+Nowocześniejsze metody, takie jak f-strings, są bardziej elastyczne i pozwalają na proste formatowanie ciągów. F-strings są również wydajne pod względem pamięci i wydajności. 
+
+Alternatywą dla wszystkich tych metod może być metoda `join()`. Jest to metoda bardziej Pythoniczna, czyli bardziej zgodna z filozofią Pythona, preferująca czytelność i prostotę.
+ 
+```Python
+lista_słów = ['Cześć', 'świecie', 'Pythona']
+print(' '.join(lista_słów))
+```
+Na wyjściu otrzymasz:
+```
+Cześć świecie Pythona
+```
+
+## Zobacz też
+
+Zaawansowane formatowanie ciągów, dokumentacja Pythona: https://docs.python.org/3/library/string.html#format-string-syntax
+
+PEP 498 -- Literał formatujący ciągu znaków (f-strings) w Pythonie 3.6: https://peps.python.org/pep-0498/ 
+
+Metoda `join()`, dokumentacja Pythona: https://docs.python.org/3/library/stdtypes.html#str.join

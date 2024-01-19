@@ -1,6 +1,6 @@
 ---
 title:                "提取子字符串"
-html_title:           "Rust: 提取子字符串"
+html_title:           "Arduino: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,16 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-What & Why: 提取子串是指从一个字符串中获取一个子集，通常是通过指定起始和结束位置来实现。程序员们在提取子串时通常是为了处理文本数据或者进行字符串的操作。
+## 什么和为什么？
 
-如何: Rust提供了方便易用的方法来提取子串，使用 ```&``` 符号和范围操作符 ```..``` 来指定起始和结束位置即可。代码示例如下：
+在编程中，我们所谓的“提取子串”就是从较大字符串中把特定部分取出来。将字符串分解为更小部分非常有用，例如解析用户输入或处理文件内容。
+
+## 如何做：
+
+在 Rust 中，我们可以使用 slice 操作从字符串中提取子串。让我们看一个例子：
+
 ```Rust
-let sentence = "这是一段文字";
-let substring = &sentence[0..2]; // 从位置0到2提取子串
-println!("提取的子串为： {}", substring);
+fn main() {
+    let s = "Hello World!";
+    let substring = &s[0..5]; // "Hello"
+    println!("{}", substring);
+}
 ```
-输出结果：提取的子串为：这是
 
-深入探讨: 提取子串一直是字符串处理的基本操作，然而在不同的编程语言中，所用的方法可能会有所不同。在早期，C语言中使用的是 ```substr``` 函数，而在Rust中则使用了切片的概念来提取子串。除了切片之外，还可以通过正则表达式来提取特定的子串，但是使用正则表达式会更加复杂一些。
+执行上述代码，你会在控制台上看到输出 "Hello"。
 
-参考资料: 想要了解更多关于提取子串的知识，可以参考Rust官方文档的[String Slices](https://doc.rust-lang.org/std/str/struct.String.html#method.slice.html) 和[Regular Expressions](https://doc.rust-lang.org/std/str/struct.String.html#method.matches.html)部分。
+## 深入探索：
+
+Rust 的字符串与许多其他编程语言的字符串不同，因为它们是 UTF-8 编码的。这意味着你不能简单地通过索引来提取子串。例如，如果你尝试获取一个处于 Unicode 字符边界之内的子串，Rust 会报错。这是为了保护你免于无意间创建无效的 UTF-8 字符串。
+
+有其他方法可以提取子串，比如使用 `chars` 或 `bytes` 方法将字符串转换为字符或字节的迭代器，然后对其进行操作。但是通常情况下，slice 操作已经足够使用了。
+
+## 另请参阅：
+
+1. [官方文档对字符串的解释](https://doc.rust-lang.org/book/ch08-02-strings.html#slicing-strings)
+2. [在Stack Overflow上关于Rust字符串处理的讨论](https://stackoverflow.com/questions/24145826/how-do-i-get-a-substring-of-a-string-in-rust)

@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston lukeminen"
-html_title:           "Python: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä ja Miksi?
+## Mitä ja Miksi?
 
-Tekstitiedoston lukeminen on prosessi, jossa ohjelma lukee sisältöä tiedostosta ja käsittelee sitä. Tämä on tärkeä tehtävä monille ohjelmoijille, sillä tekstitiedostot ovat yleinen tiedostomuoto tietojen tallentamiseen ja jakamiseen.
+Tiedoston lukeminen tarkoittaa tietojen noutamista tekstidokumentista. Ohjelmoijat lukevat tiedostoja silloin, kun heidän on haettava ja käsiteltävä tallennettua tietoa, kuten tekstitiedostoja.
 
-# Kuinka toimia:
+## Kuinka:
+
+Alla on esimerkkejä koodista, jossa luetaan tekstitiedosto Pythonilla.
 
 ```Python
-# Avaa tiedosto "tekstitiedosto.txt"
-f = open("tekstitiedosto.txt", "r")
-
-# Lue tiedoston sisältö ja tallenna se muuttujaan "sisalto"
-sisalto = f.read()
-
-# Tulosta sisältö
+# Avaa ja lue tiedosto
+with open('esimerkki.txt', 'r') as tiedosto:
+    sisalto = tiedosto.read()
 print(sisalto)
-
-# Sulje tiedosto kun olet valmis
-f.close()
 ```
 
-Tämä koodi avaa tekstitiedoston nimeltä "tekstitiedosto.txt" ja tallentaa sen sisällön muuttujaan. Sitten se tulostaa tiedoston sisällön ja lopuksi sulkee tiedoston. Tämän ansiosta voit lukea ja käsitellä tekstitiedoston sisältöä ohjelmassasi.
+Tämä koodi avaa tiedoston nimeltä "esimerkki.txt" lukutilassa ('r') ja tulostaa sen sisällön.
 
-# Syvällinen sukellus:
+## Syvempi sukellus:
 
-Historiallisessa kontekstissa tekstitiedostojen lukeminen on ollut tärkeä osa tietokoneohjelmointia jo pitkään. Ennen graafisia käyttöliittymiä tekstitiedostot olivat yleisin tapa tallentaa ja jakaa tietoa tietokoneiden välillä.
+Historiallinen konteksti: Tiedostojen lukeminen on ollut ohjelmoinnin perusominaisuus alkuaikojen tilan varaamisesta muistissa tekstiedostoille.
 
-Vaikka tekstitiedostot ovat edelleen suosittu tiedostomuoto, on olemassa myös muita tapoja lukea tiedostojen sisältöä ohjelmassa. Esimerkiksi CSV-tiedostot (comma-separated values) ovat hyvä vaihtoehto, jos haluat käsitellä taulukkomuotoisia tietoja.
+Vaihtoehdot: Voit lukea tiedoston sisällön myös riveittäin `readlines` funktion avulla. Kyseessä on hyödyllinen työkalu, kun tiedosto on suuri tai tiedostosta pitää lukea vain tiettyjä rivejä.
 
-Tekstitiedostojen lukeminen tapahtuu yleensä avulla "file" -olioita, jotka tarjoavat joukon käteviä metodeja tiedostojen käsittelyyn. Voit esimerkiksi käyttää "read()" -metodia lukeaksesi tiedoston sisällön tai "close()" -metodia sulkeaksesi tiedoston.
+Vastaavat yksityiskohdat: Pythonissa `open` on sisäänrakennettu funktio, jota käytetään tiedostojen avaamiseen. Se palauttaa "_file object_", jota voidaan käyttää tiedoston lukemiseen tai kirjoittamiseen.
 
-#Katso myös:
+## Katso myös:
 
-Tässä artikkelissa esiteltyjä asioita kannattaa tutkia lisää Pythonin virallisesta dokumentaatiosta, jossa löytyy kattavat ohjeet ja esimerkit tiedostojen käsittelyyn. Voit myös kokeilla lukemista muista tiedostomuodoista kuten CSV:stä tai JSON:ista ja nähdä miten ne eroavat tekstitiedostoista.
+Lisätietoja Pythonin kanssa tiedostojen käsittelystä:
+
+1. Pythonin virallinen dokumentaatio: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+2. W3Schools Python - Tiedostojen lukeminen: https://www.w3schools.com/python/python_file_open.asp
+3. Real Python - Tiedostonkäsittely Pythonissa: https://realpython.com/read-write-files-python/

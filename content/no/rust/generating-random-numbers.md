@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "Rust: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Generere tilfeldige tall"
+html_title:           "Arduino: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -10,36 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
+# Generere tilfeldige tall i Rust: En enkel guide
 
-Generering av tilfeldige tall er en viktig del av programmering, da det tillater oss å lage ulike, unike verdier på en enkel måte. Dette er spesielt nyttig i spill, simuleringer og kryptografi, der tilfeldige tall er nødvendige for å skape et variert og sikkert miljø.
+Lær hvordan du kan generere tilfeldige tall i Rust programmeringsspråk.
 
-## Hvordan:
+## Hva & Hvorfor?
 
-Å generere tilfeldige tall i Rust er enkelt og innebærer bruk av standardbibliotekets funksjoner. Ved å importere "rand" biblioteket og bruke "thread_rng" funksjonen, kan vi opprette en generator som vil produsere et tilfeldig tall hver gang den kalles.
+Generering av tilfeldige tall er prosessen for å lage tall som ikke kan forutsies bedre enn ved en tilfeldig sjanse. Programmerere gjør dette hovedsakelig for å simulere tilfeldige situasjoner i spill, dataanalyse og testing av programvare.
+
+## Hvordan gjør man det:
+
+Her stiller vi et enkelt eksempel på hvordan du kan generere et tilfeldig tall mellom 1 og 10 i Rust:
 
 ```Rust
 use rand::Rng;
-let mut rng = rand::thread_rng();
-let random_number: u8 = rng.gen();
+
+fn main() {
+    let mut rng = rand::thread_rng();
+    let n: u8 = rng.gen_range(1..11);
+    println!("{}", n);
+}
 ```
 
-I dette eksempelet bruker vi "gen" funksjonen for å generere et tilfeldig tall mellom 0 og 255 og lagrer det i variabelen "random_number". Vi kan også bruke "gen_range" funksjonen for å lage tilfeldige tall innenfor et bestemt område.
+Når du kjører programmet over, vil det skrive ut et tilfeldig tall mellom 1 og 10.
 
-```Rust
-let random_number: u8 = rng.gen_range(1, 10);
-```
+## Dypdykk
 
-Dette vil generere et tilfeldig tall mellom 1 og 10.
+Historisk sett brukte de tidligste datamaskinene fysiske prosesser til å generere tilfeldige tall. I dagens høytytende og høy-trådet datamiljøer bruker programmeringsspråk som Rust pseudorandom number generators (PRNGs). Dette er algoritmer som bruker matematiske prosedyrer for å produsere tilsynelatende tilfeldige resultater. 
 
-## Dype dykk:
+Som et alternativ kan du også vurdere bruk av eksterne biblioteker som pcg_rand og fastrand.
 
-Generering av tilfeldige tall har blitt brukt i programmering i mange år og er et viktig verktøy for å skape variasjon og sikkerhet. Det finnes også andre metoder for å generere tilfeldige tall, som for eksempel ved bruk av eksterne enheter som støygeneratorer eller til og med radiosignaler, men dette er mer avanserte og mindre vanlige metoder.
+Når det gjelder implementeringsdetaljer i Rust, bruker det rand::Rng-trait og funksjonen gen_range for å generere tilfeldige tall. rand::Rng er en trait som definerer metoder som genererer tilfeldige tall og trait er tilgjengelig ved å importere rand crate.
 
-Når det kommer til implementering, er det viktig å bruke en pålitelig kilde for å generere de tilfeldige tallene, slik som ved bruk av "thread_rng" funksjonen i Rust. Det er også mulig å sette en frøverdi for å få samme sekvens av tilfeldige tall hver gang, men dette kan også gå ut over sikkerheten.
+## Se også
 
-## Se også:
+Du kan lese mer om generering av tilfeldige tall i Rust fra følgende kilder:
 
-- [Rust Official Documentation on Random Number Generation](https://doc.rust-lang.org/std/rand/)
-- [Understanding and Using Random Number Generators](https://www.computer.org/csdl/magazine/cg/2020/01/mcg2020010019/13Gm3P0MU1Z) (artikkel)
-- [Cryptographically Secure Pseudo-Random Number Generators](https://www.random.org/randomness/) (artikkel og verktøy for å teste tilfeldig tallgeneratorer)
+1. Rust sin offisielle dokumentasjon på [rand crate](https://docs.rs/rand)
+2. Diskusjon om [tilfeldige tall generasjon på Rust sin brukerforum](https://users.rust-lang.org/t/random-number-generation/17225)
+3. Artikkel om [Rust Random Number Generation på StackOverflow](https://stackoverflow.com/questions/44377020/rust-random-number-generation)
+
+Husk, det beste er å eksperimentere på egen hånd. Lykke til med programmeringen din!

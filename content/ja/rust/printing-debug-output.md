@@ -1,7 +1,7 @@
 ---
-title:                "デバッグ出力のプリント"
-html_title:           "Rust: デバッグ出力のプリント"
-simple_title:         "デバッグ出力のプリント"
+title:                "デバッグ出力の印刷"
+html_title:           "Fish Shell: デバッグ出力の印刷"
+simple_title:         "デバッグ出力の印刷"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,25 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何で & なぜ？
+## 何となぜ？
 
-プログラムをデバッグする際に、デバッグ出力を表示することがあります。これは、プログラマーが問題の原因を特定し、解決策を見つけるのに役立つからです。
+デバッグ出力の印刷とは、あなたのコードがどのように動作しているか、またはそれがうまく行かない理由を理解するための方法です。それはエラーやバグを特定し、解決する最善の道です。
 
-## 使い方：
+## 実装方法：
 
-```Rust
-// デバッグ出力を表示する
-println!("デバッグ出力: {}", 変数);
+Rustでは、デバッグ出力は `println!`マクロを使用して印刷できます。
+
+```Rust 
+fn main() {
+    let name = "Rust";
+    println!("Hello, {}!", name); 
+}
 ```
 
-このコードを使用すると、変数の値が表示され、プログラム実行時に問題が発生した場合に、どの値が原因であるかを確認できます。
+出力:
 
-## 深く潜める：
+```Shell
+Hello, Rust!
+```
 
-デバッグ出力は、コンピュータープログラミングの世界において非常に重要です。デバッグ出力を使用することにより、コードの実行中に何が起こっているかを理解し、バグを修正することができます。代替手段として、デバッガーやログファイルの使用が挙げられます。そして、Rustでは、デバッグマクロやデバッグアトリビュートを使用することで、より詳細なデバッグ出力を生成することができます。
+同様に、デバッグ専用の `println!` バージョンが `dbg!` マクロです。
 
-## 関連リンク：
+```Rust 
+fn main() {
+    let name = "Rust";
+    dbg!(name);
+}
+```
 
-- [Rustのデバッグ出力についてのドキュメント](https://doc.rust-lang.org/std/macro.dbg.html)
-- [Rustでデバッグマクロを使ってみよう (英語)](https://dev.to/cad97/rust-debug-macro-15ij)
-- [Rustのログ記録用クレート (英語)](https://rust-lang-nursery.github.io/log/webapp-demo.html)
+出力:
+
+```Shell
+[src/main.rs:3] name = "Rust"
+```
+
+## ディープダイブ：
+
+デバッグ出力の印刷は古くから存在し、疑わしいコードの動作を理解するための最も素朴な方法の1つです。多くの他の言語では、いわゆる「printfデバッグ」が行われてきました。
+
+Rustでは上記以外にもデバッグマクロがいくつかあります。たとえば、 `eprintln!`マクロはエラーメッセージを標準エラー出力に直接書き出すことができます。
+
+デバッグマクロの実装についても少し触れてみましょう。これらのマクロは、コンパイル時に実際の出力コードに置き換えられます。そのため、実行時のパフォーマンスに影響を与えません。
+
+## 参考文献：
+
+- Rust公式ドキュメンテーション: https://doc.rust-lang.org/stable/book
+- Rustプリントと書式設定：https://doc.rust-lang.org/stable/rust-by-example/hello/print.html
+- Rustによるデバッグ：https://doc.rust-lang.org/rust-by-example/hello/print.html

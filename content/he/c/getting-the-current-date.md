@@ -1,7 +1,7 @@
 ---
-title:                "להשיג את התאריך הנוכחי"
-html_title:           "C: להשיג את התאריך הנוכחי"
-simple_title:         "להשיג את התאריך הנוכחי"
+title:                "קבלת התאריך הנוכחי"
+html_title:           "C#: קבלת התאריך הנוכחי"
+simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,56 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## मा ולמה?
+משום שזה מאפשר למתכנתים לשלוט ולשמש את התאריך והשעה הנוכחיים, זהו אלמנט הכרחי בפונקציונליות מערכת ההפעלה. אתה יכול להשתמש בזה לבצע לוגים, השוואות זמן, או ספירות מדוברות ביישומים שונים.
 
-קבלת תאריך נוכחי היא תהליך בו מתכנתים מקבלים את הזמן והתאריך הנוכחיים במחשב. הדבר חשוב בפיתוח תוכניות שצריך לדעת בדיוק מתי נכתב קוד וכמו כן עבור תוכניות שמשתמשות בתאריכים לחישובים שונים.
-
-## איך לעשות:
-
+## איך משיגים:
+להלן דוגמאות קוד ופלטי דגימה בקודי C:
 ```C
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-    // מיקום לכתיבת גישה לתאריך נוכחי
-    time_t currentTime = time(NULL);
+    time_t current_time;
+    char* c_time_string;
 
-    // הטמעת מבנה של tm עבור התאריך נוכחי
-    struct tm localTime = *localtime(&currentTime);
+    /* Obtain current time. */
+    current_time = time(NULL);
 
-    // הדפסת התאריך הנוכחי בפורמט קבוע
-    printf("התאריך הנוכחי הוא: %d/%d/%d \n",
-        localTime.tm_mday,
-        localTime.tm_mon + 1,
-        localTime.tm_year + 1900);
+    /* Convert to local time format. */
+    c_time_string = ctime(&current_time);
 
-    // הדפסת הזמן הנוכחי בפורמט קבוע
-    printf("הזמן הנוכחי הוא: %d:%d:%d \n",
-            localTime.tm_hour,
-            localTime.tm_min,
-            localTime.tm_sec);
-
+    /* Print to stdout. */
+    printf("Current time is %s", c_time_string);
     return 0;
 }
 ```
-
-**פלט:**
-
+פלט מנעד זה יכול להיות משהו בסגנון:
 ```
-התאריך הנוכחי הוא: 23/3/2021
-הזמן הנוכחי הוא: 15:34:27
+Current time is Wed Jun 2 19:19:31 2021
 ```
+## Deep Dive
+1. **הקשר היסטורי:** תיאור הזמן הנוכחי באמצע של מערכת ההפעלה הוא מרכזי להגדרה של ה"תקן C", תקן מתכנת המחשב שהעיד בעשור של שימוש שוטף, התנסות, וחידוש.
+2. **אלטרנטיבות:** ב- C++, אפשר להשתמש ב- `std::chrono` לקבלת הזמן הנוכחי. ב- Python, ניתן להשתמש במודול הספרייה `datetime`.
+3. **פרטי הגשמה:** הפונקציה `time` מחזירה את הזמן הנוכחי מאז שנת 1970 (epoch), והפונקציה `ctime` ממירה את הזמן הזה לפורמט מחרוזת אנושי.
 
-## Deep Dive:
-
-קבלת תאריך נוכחי היא פעולה מאוד נפוצה בשפת התכנות סי, ומתבצעת בעזרת פונקציית `time()` המציגה את הזמן הנוכחי בשניות מיוניו. הפונקציה מחזירה תאריך מסוים בפורמט טוב מאוד לשימוש. במקרים בהם נדרשת התאמת תאריכים לפי אזור זמן מסוים, ניתן להשתמש בפונקציה `asctime()` במקום `localtime()`.
-
-אם לכל הקוד מותקנות ספריות הנקראות `time.h` ו-`stdio.h` יהיה ברור ופשוט הרבה יותר לבצע את הפעולה הנדרשת. ליצירת הפלט המוצג למעלה ניתן להשתמש גם בפונקציה `strftime()` שמאפשרת להתאים תצורה מסוימת לתאריך נוכחי.
-
-ניתן גם להשתמש בפונקציות דומות בשפות תכנות אחרות, כמו `Get-Date` בניסוח מיקרוסופט לשפת פוויז'ן.
-
-## למידע נוסף:
-
-לבקר בדפי ההוראה של שפת סי למידע נוסף על פעולות כמו קבלת תאריך נוכחי.
-[מדריך C ניתוחהי]{https://www.cpp.co.il/}.
-למידע נוסף על שמשתמשים ותאריכים בשפת סי, מומלץ לבקר ב[תיעוד של מיקרוסופט הכולל פונקציות תאריכים]{https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/get-date-and-time-functions}.
+## ראו גם
+1. [תיעוד הפונקציה `time`](http://www.cplusplus.com/reference/ctime/time/)
+2. [תיעוד הפונקציה `ctime`](http://www.cplusplus.com/reference/ctime/ctime/)
+3. [היסטורית תקן C](https://en.wikipedia.org/wiki/C_%28programming_language%29#History)
+4. ['epoch'](https://en.wikipedia.org/wiki/Unix_time) של Unix.

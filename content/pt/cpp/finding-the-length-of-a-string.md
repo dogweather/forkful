@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando o comprimento de uma string."
-html_title:           "C++: Encontrando o comprimento de uma string."
-simple_title:         "Encontrando o comprimento de uma string."
+title:                "Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por quê?
-Encontrar o comprimento de uma string é uma tarefa comum em programação, que consiste em determinar o número de caracteres presentes em uma determinada string. Isso é importante para que os programadores possam manipular as strings corretamente e realizar operações específicas em cada caractere.
+## O Que & Por Quê?
 
-## Como fazer:
-Para encontrar o comprimento de uma string em C++, você pode utilizar a função ```strlen()```, que está presente na biblioteca padrão ```<cstring>```. Veja um exemplo de código abaixo:
+Encontrar o comprimento de uma string em C++ é determinar quantos caracteres há nela, incluindo espaços e caracteres especiais. Os programadores fazem isso para manipulação de texto, loops, memória alocada, dentre outros.
+
+## Como Fazer:
+Aqui está um exemplo de como você pode obter o comprimento de uma string em C++.
 
 ```C++
-#include <iostream>
-#include <cstring>
+#include<iostream>
+#include<string>
+using namespace std;
 
-int main()
-{
-    char string[] = "Olá, mundo!";
-    
-    int tamanho = strlen(string); // Armazena o comprimento da string na variável "tamanho"
-    
-    std::cout << "O comprimento da string é " << tamanho << "." << std::endl;
-    
-    return 0;
+int main(){
+   string str;
+   cout<<"Digite uma string: ";
+   getline(cin, str);
+   cout<<"O comprimento da string é: "<< str.length();
+   return 0;
 }
 ```
+Se você inserir a string "Ola, Mundo!", o programa retornará "O comprimento da string é: 12".
 
-**Saída:**
-```
-O comprimento da string é 12.
-```
+## Mergulho Profundo
 
-## Mergulho profundo:
-A função ```strlen()``` é parte da biblioteca de strings em C++, que foi criada em 1983 para suprir uma lacuna na linguagem. Antes dela, os programadores precisavam escrever suas próprias funções para trabalhar com strings. Além disso, existem outras formas de encontrar o comprimento de uma string, como percorrer o array de caracteres até encontrar o caractere nulo ('\0').
+Historicamente, em C++ original (também conhecido como C++98), as strings eram manipuladas como arrays de caracteres e terminadas por um caractere nulo. Para obter o comprimento de uma string, era necessário iterar através do array até encontrar o caractere nulo.
 
-## Veja também:
-- Informações adicionais sobre a biblioteca de strings em C++: https://www.cplusplus.com/reference/cstring/
-- Comparação entre diferentes linguagens para encontrar o comprimento de strings: https://www.geeksforgeeks.org/comparison-cpp-python-java/
+Quanto a alternativas, em C++ você também pode usar a função `size()` em vez de `length()`. Ambas executam a mesma ação, pois são sinônimos no padrão C++ (ambas retornam o número de bytes, não o número de caracteres).
+
+Sobre a implementação, `length()` e `size()` são implementadas como funções de membro da classe std::string. Eles retornam o número de bytes, não o número de caracteres, o que importa quando sua string contém caracteres multibyte, como em Unicode ou UTF-8.
+
+## Veja Também
+
+1. [Documentação Oficial do C++](http://www.cplusplus.com/)
+2. [C++ para Iniciantes](https://beginnersbook.com/2017/08/cpp-strings/)
+3. [Tutorial de Strings em C++ no Programiz](https://www.programiz.com/cpp-programming/strings)

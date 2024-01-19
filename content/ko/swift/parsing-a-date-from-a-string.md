@@ -1,7 +1,7 @@
 ---
-title:                "문자열에서 날짜 추출하기"
-html_title:           "Swift: 문자열에서 날짜 추출하기"
-simple_title:         "문자열에서 날짜 추출하기"
+title:                "문자열에서 날짜 분석하기"
+html_title:           "Gleam: 문자열에서 날짜 분석하기"
+simple_title:         "문자열에서 날짜 분석하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇을 하고 왜?
-날짜를 문자열에서 구문 분석하는 것은 우리가 날짜를 사용하고 처리하는 방식을 좀 더 유연하게 만들어줍니다. 프로그래머들은 때때로 입력된 날짜 데이터를 분석하고 사용하기 쉬운 형식으로 변환해야할 때가 있기 때문에 이 작업을 수행합니다.
+## 무엇이며 왜필요한가?
+문자열에서 날짜를 파싱하는 것은 번호 및 문자를 사용해 특정 날짜로 변환하는 프로세스입니다. 이로써 프로그래머는 문자열 데이터를 조작하고 활용할 수 있게 됩니다.
 
-## 어떻게 할까요?
+## 어떻게 하는가:
+Swift에서 문자열 날짜를 파싱하려면 DateFormatter를 사용합니다.
+
 ```Swift
-let dateString = "2020-02-14"
+import Foundation
 
-// DateFormatter 인스턴스를 생성하고 설정
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "yyyy-MM-dd"
+let date = dateFormatter.date(from: "2021-07-15")!
 
-// 날짜 문자열을 날짜로 변환
-let date = dateFormatter.date(from: dateString)
-
-// 변환된 날짜를 출력
-print(date) // 2020-02-14 00:00:00 +0000
+print(date)
 ```
 
-## 깊게 들어가보기
-- 역사적 배경: 날짜 구문 분석은 프로그래밍에서 매우 일반적인 작업으로, 초기 시스템에서 날짜를 사용하는 방법과 널리 사용되는 날짜 형식에 따라 달라졌습니다.
-- 대안: Swift에서는 DateFormatter 외에도 Calendar와 DateComponents를 사용하여 날짜를 조작하고 형식을 지정할 수 있습니다.
-- 구현 세부 사항: Swift는 ISO 8601 형식의 날짜를 기본적으로 지원하므로 날짜 문자열의 형식에 대한 지정 없이도 구문 분석이 가능합니다.
+이 코드를 실행하면 "2021-07-15” 문자열이 Date 타입으로 파싱되어 출력됩니다.
 
-## 관련 자료
-- [Apple Developer Documentation - DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift by Sundell - Dates & Time in Swift](https://www.swiftbysundell.com/basics/dates-and-times/)
-- [Hacking with Swift - Working with Dates in Swift](https://www.hackingwithswift.com/articles/158/how-to-work-with-dates-and-times-in-swift)
+## 디퍼다이브:
+날짜 파싱은 오래 전부터 존재하는 과정으로, 용도에 따라 여러 방식으로 구현되곤 했습니다. Swift에서는 날짜 표준 형식을 사용하여 문자열을 날짜로 변환할 수 있으나 다양한 날짜 포맷에도 대응하도록 커스텀 형식을 설정할 수 있습니다.
+
+Swift 외의 다른 프로그래밍 언어에서도 이와 유사한 기능을 제공하며, 대표적으로 Java의 SimpleDateFormat, Python의 datetime 등이 있습니다.
+
+Swift의 DateFormatter는 유연한 날짜 파싱을 가능하게 하지만, 사용간에는 올바른 형식 지정 문자열을 설정해야 하며, 특히 July 와 7월과 같이 지역에 따라 다른 문자열을 적절하게 처리해야 합니다.
+
+## 참고자료:
+1. [Apple Developer Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+2. [Parsing Dates and Times in Swift](https://nshipster.com/dateformatter/)
+3. [Formatting Dates in Swift](https://www.hackingwithswift.com/articles/141/working-with-dates-in-swift)

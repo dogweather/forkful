@@ -10,72 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co & Dlaczego?
 
-Obliczanie daty w przyszłości lub przeszłości jest po prostu wyliczeniem daty wynikowej w zależności od podanej daty początkowej i liczby dni lub lat do dodania lub odjęcia. Programiści często wykorzystują to do tworzenia aplikacji, takich jak kalendarze, planery lub systemy rezerwacji.
+Obliczanie przyszłego lub przeszłego terminu to określanie daty, która będzie następowała po określonym czasie lub która wystąpiła przed danym okresem. Programiści to robią, aby przetrzymywać, sortować i manipulować danymi związanymi z datą w aplikacjach.
 
 ## Jak to zrobić:
 
-Kodowanie takiej funkcji w języku C jest bardzo proste. Poniżej przedstawiono przykłady dla obliczania daty w przyszłości i przeszłości.
-```
-C
-#include <stdio.h>
-#include <time.h>
+Podajemy sposób obliczania daty w przyszłości lub przeszłości za pomocą funkcji „mktime” i „localtime” w języku C. Załóżmy, że chcemy dodać 15 dni do bieżącej daty:
 
-void addDays(int days){
-    time_t now;
-    struct tm *date;
-    
-    time(&now);
-    date = localtime(&now);
-    
-    date->tm_mday = date->tm_mday + days;
+```C
+#include <stdio.h> 
+#include <time.h> 
 
-    mktime(date);
-    printf("Data wynikowa: %d.%d.%d", date->tm_mday, date->tm_mon+1, date->tm_year+1900);
-}
-
-void main(){
-    //obliczanie daty 30 dni w przyszłości
-    addDays(30);
-}
-/*
-Data wynikowa: 31.12.2019
-*/
+int main() { 
+    // Uzyskujemy obecny czas
+    time_t obecny_czas = time(NULL); 
+    struct tm *czas_tm = localtime(&obecny_czas);
+    // Dodajemy 15 dni
+    czas_tm->tm_mday += 15;
+    // Konwertujemy strukturę z powrotem na czas
+    time_t nowy_czas = mktime(czas_tm);
+      
+    printf("Data po 15 dniach: %s", ctime(&nowy_czas)); 
+      
+    return 0; 
+} 
 ```
 
-```
-C
-#include <stdio.h>
-#include <time.h>
+Wyjście:
 
-void subtractYears(int years){
-    time_t now;
-    struct tm *date;
-    
-    time(&now);
-    date = localtime(&now);
-    
-    date->tm_year = date->tm_year - years;
-    
-    mktime(date);
-    printf("Data wynikowa: %d", date->tm_year+1900);
-}
-
-void main(){
-    //obliczanie roku sprzed 30 lat
-    subtractYears(30);
-}
-/*
-Data wynikowa: 1989
-*/
+```C
+Data po 15 dniach: Sun Jan 30 12:40:08 2022
 ```
 
-## Zanurzenie:
+## Deep Dive:
 
-Obliczanie dat w przeszłości i przyszłości jest możliwe dzięki wykorzystaniu funkcji z biblioteki <time.h> w języku C. Istnieją również inne sposoby na to, takie jak wykorzystanie bibliotek zewnętrznych lub wykorzystanie gotowych funkcji z innych języków programowania, na przykład z Pythona.
+Historia: W przeszłości, bez bibliotek do zarządzania datą i czasem, obliczanie dat przeszłych lub przyszłych wymagało ręcznego manipulowania datami, co było skomplikowane i podatne na błędy.
 
-## Zobacz także:
+Alternatywy: Inne języki programowania, takie jak Python czy Java, mają wbudowane metody do obliczania dat przeszłych lub przyszłych bez konieczności pisania tak wiele kodu.
 
-- [Dokumentacja biblioteki time.h w języku C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Przykłady kodów obliczających daty w różnych językach programowania](https://www.geeksforgeeks.org/program-date-time-programs/)
+Szczegóły implementacji: Zastanów się nad przypadek, gdy dodajesz dni do daty i wynik przekracza ostatni dzień miesiąca. Dzień jest zerowany, a miesiąc jest zwiększany o jeden. Jeśli nasze obliczenia przeniosą nas do następnego roku, rok zostanie również zwiększony.
+
+## Zobacz również:
+
+1. [Dokumentacja języka C - funkcja mktime](https://en.cppreference.com/w/c/chrono/mktime)
+2. [StackOverflow: How to add days to the current date?](https://stackoverflow.com/questions/1442116/how-to-get-the-date-of-7-days-ago-in-c)
+3. [GitHub: Various Date and Time functions for C](https://github.com/clibs/timefmt)

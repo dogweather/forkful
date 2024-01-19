@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Gleam: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,39 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¡Enviar solicitudes HTTP con autenticación básica en Gleam!
+## ¿Qué y Por qué?
 
-## ¿Qué y por qué?
+Enviar una solicitud HTTP con autenticación básica significa la transmisión de información de usuario y contraseña con todos los pedidos HTTP. Los programadores hacen esto para obtener acceso seguro a ciertos recursos en línea.
 
-En programación, a menudo necesitamos enviar solicitudes HTTP para comunicarnos con otros servicios en línea. Sin embargo, en algunos casos, el acceso a estos servicios requiere autenticación básica. Esto significa que debemos proporcionar un nombre de usuario y una contraseña para acceder a los recursos del servicio. En Gleam, podemos hacer esto fácilmente con unos pocos pasos.
+## Cómo hacerlo:
 
-## Cómo:
+Aquí está una muestra de cómo hacerlo en Gleam:
 
-Podemos enviar solicitudes HTTP con autenticación básica en Gleam utilizando la biblioteca [Httpc](https://github.com/gleam-lang/httpc). Primero, debemos agregar esta biblioteca a nuestro proyecto en nuestro archivo `gleam.toml`. Luego, podemos usar el módulo `Httpc.Request` para enviar nuestra solicitud.
+```gleam
+import gleam/http.{Request}
 
-```Gleam
-import httpc
-
-// Definir nuestro nombre de usuario y contraseña
-let username = "usuario"
-let password = "contraseña"
-
-// Crear una solicitud HTTP utilizando el método `basic_auth`
-let request = httpc.Request.basic_auth("https://servicio.com/endpoint", username, password)
-
-// Realizar la solicitud
-httpc.send(request)
+let request =
+  Request.new(
+    "https://example.com",
+    [http.basic_auth("nombre_usuario", "contraseña")]
+  )
 ```
 
-Esto enviará una solicitud HTTP a la URL especificada con el encabezado de autenticación básica incluido. Si la autenticación es exitosa, recibiremos una respuesta del servicio.
+Después de crear esta solicitud:
+```gleam
+import gleam/http.{send}
 
-## Profundizando:
+send(request)
+```
 
-En el pasado, se utilizaba ampliamente la autenticación básica en servicios en línea, pero con el tiempo ha sido reemplazada por métodos de autenticación más seguros como OAuth. Sin embargo, aún podemos encontrarnos con servicios que utilizan autenticación básica, por lo que es útil saber cómo implementarla en Gleam.
+Esto le dará algo así como la respuesta:
+```gleam
+Ok(
+  Response(
+    200,
+    [],
+    "¡Has autenticado exitosamente!",
+  )
+)
+```
 
-Otra forma de enviar solicitudes HTTP con autenticación básica es a través de la biblioteca [Erlang](https://github.com/gleam-lang/gleam-lib-erlang/httpc). Esta biblioteca de bajo nivel nos permite interactuar directamente con el sistema de HTTP de Erlang, lo que puede ser útil en situaciones más complejas.
+## Inmersión Profunda
 
-## Ver también:
+1) Contexto Histórico: HTTP Basic Auth se introdujo con el estándar HTTP 1.0 en los años 90. Aunque es simple, tiene fallas de seguridad, ya que las contraseñas se envían como texto sin cifrar.
+2) Alternativas: Puede usar Autenticación de portador de token, OAuth, o incluso una sesión basada en cookies, dependiendo de sus necesidades específicas.
+3) Detalles de Implementación: En la autenticación básica, el encabezado `Authorization` contiene la palabra `Basic` seguida por un espacio y una cadena formada por el usuario y la contraseña codificada en Base64.
 
-- Documentación de [Httpc](https://github.com/gleam-lang/httpc)
-- Biblioteca [Erlang](https://github.com/gleam-lang/gleam-lib-erlang/httpc) para enviar solicitudes HTTP con autenticación básica en Gleam
+## Vea También
+
+Si desea conocer más, estos enlaces pueden ser de utilidad:
+
+- Documentación oficial de Gleam HTTP: https://hexdocs.pm/gleam_http/gleam/http/
+- Autenticación Básica : https://developer.mozilla.org/es/docs/Web/HTTP/Headers/Authorization
+- Comparación de métodos de autenticación: https://www.loginradius.com/engineering/blog/the-seven-types-of-rest-apis/

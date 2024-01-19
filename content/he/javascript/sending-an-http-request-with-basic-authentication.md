@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "Javascript: שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,52 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-שליחת בקשת HTTP עם אימות בסיסי היא פעולה שמאפשרת למתכנתים לשלוח ולקבל מידע מאתרים ושירותים באמצעות פרוטוקול האינטרנט. האימות הבסיסי מבטיח שרק משתמשים מורשים יכולים לגשת למידע המסופק.
+## מה זה ולמה? 
 
-## כיצד לעשות זאת:
-כתיבת בקשת HTTP עם אימות בסיסי מתבצעת באמצעות הוספת כותרת מתאימה לבקשה. הנה דוגמה להרחבה של כותרת זו בשפת ג'אווהסקריפט:
-```javascript
-const username = 'my_username';
-const password = 'my_password';
+שליחת בקשת HTTP עם אימות בסיסי הוא הרבה יותר מהמילים שהובאו כאן. זו התהליך שבו אנחנו מנהלים ביטחונות של משתמש על השרת. המתכנתים עושים את זה להבטיח שרק המשתמשים המאומתים יכולים להתחבר ולגשת למשאבים.
 
-// הפעלת בקשת HTTP עם אימות בסיסי
-fetch('https://example.com/api', {
-  headers: {
-    Authorization: `Basic ${btoa(`${username}:${password}`)}`
-  }
-})
-  .then(response => response.json())
-  .then(data => console.log(data));
+## איך לבצע: 
+
+אז כיצד אתה שולח בקשת HTTP עם אימות בסיסי? הנה דוגמה ב-js:
+
+```Javascript
+const https = require('https');
+
+const options = {
+    hostname: 'www.example.com',
+    port: 443,
+    path: '/api',
+    method: 'GET',
+    auth: 'username:password'
+};
+
+const req = https.request(options, res => {
+    res.on('data', d => {
+        process.stdout.write(d);
+    });
+});
+
+req.on('error', error => {
+    console.error(error);
+});
+
+req.end();
 ```
 
-כאשר מישתמשים בשפת ג'אווהסקריפט, הם יכולים גם להשתמש בספריות כדוגמת Axios כדי לפשט עוד יותר את התהליך:
-```javascript
-const axios = require('axios');
+הדוגמה מראה את היכולת של `node.js` לשנות את אות הבקשה הנשלחת לשרת על ידי שליחת שם משתמש וסיסמא מאומתים בכותרת האימות.
 
-const username = 'my_username';
-const password = 'my_password';
 
-// שליחת בקשת HTTP עם אימות בסיסי באמצעות Axios
-axios.get('https://example.com/api', {
-  auth: {
-    username,
-    password
-  }
-})
-  .then(response => console.log(response.data))
-```
+## צלילה עמוקה: 
 
-## מעמקים:
-אימות הבסיסי נוצר בשנות השמונים כפעולה נפוצה בפרוטוקול האינטרנט. היו דרכים קודמות לזה, אך רבותן לא היו כל כך בטוחות ונסמכו על תעודות TLS/SSL החדשות יותר.
+אימות בסיסי הוא שיטה ישנה ומנומשת, אך טיבעית של אימות ב-HTTP, ששרתים רבים ולקוחות יכולים לתמוך בקלות. בראש ובראשונה, השיטה אינה מאובטחת מאוד, מכיוון שהמידע משודר בצורה לא מוצפנת. אם אתה מעוניין באימות מאובטח יותר, בחן אפשרויות כמו אימות טוקן בעזרת JWT.
 
-בינתיים, ישנן תקן נוסף דרך השתמשות בהסכם צמיתות (Digest Authentication). התקן זה מבטיח אימות עוד יותר אבטחתי, אך הוא מצריך יותר חישובים ובניית הודעות מתוקנות יותר.
+אם אתה רוצה לשנות את הבקשה שיש לך לשרת, כמו לדוגמה `options`, אתה יכול לעשות זאת בעזרת ה-`auth` property. אתה רק צריך להזין את השם והסיסמה שלך, מופרדים על ידי נקודתיים (`:`).
 
-כאשר משתמשים באימות בסיסי, חשוב להשתמש בחיבור מאובטח (HTTPS) כדי למנוע ניגודיות כנגד אימות בסיסי במקומות לא מאובטחים.
+##ראה גם:
 
-## ראו גם:
-למידע נוסף על אימות בסיסי ניתן להיפגש במקומות הבאים:
+אם אתה רוצה להתחיל לעבוד עם הרבה המידע שהצגתי לך כאן, אני ממליץ לך להסתכל על כמה משאבים הבאים:
 
-- [MDN פנקס המידע למתכנתים](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [ויקיפדיה באנגלית](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- [מפרט התקן של האינטרנט לאימות בסיסי](https://tools.ietf.org/html/rfc7617)
+1. [מידע נוסף על אימות בסיסי ב-HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+2. [מדריך מקיף לאימות בJavaScript ו-Node.js](https://www.toptal.com/express-js/nodejs-typescript-rest-api-pt-1)

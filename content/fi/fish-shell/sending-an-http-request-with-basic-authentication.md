@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikoinnin lähettäminen http-pyynnöllä"
-html_title:           "Fish Shell: Perusautentikoinnin lähettäminen http-pyynnöllä"
-simple_title:         "Perusautentikoinnin lähettäminen http-pyynnöllä"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Lähettäminen HTTP-pyyntö perustuu todennukselle yksinkertaisen todennuksen kanssa on tapa lähettää salaiset käyttöoikeudet API:lle tai verkkosivustolle. Ohjelmoijat käyttävät tätä menetelmää saadakseen pääsyn suojattuihin resursseihin ja hallitakseen muiden käyttäjien oikeuksia.
+# Fish Shell: HTTP-pyyntöjen lähettäminen perustodentamisen kanssa
 
-## Miten:
-```Fish Shell ...```
-Esimerkiksi, jos haluat lähettää GET-pyynnön verkkosivustolle, joka vaatii perustodennusta, voit käyttää seuraavaa koodia:
+## Mikä & Miksi?
+HTTP-pyyntö perustodentamisella on menetelmä, jossa lähetetään tietoja verkon yli salasanan ja käyttäjänimen yhdistelmällä. Ohjelmoijat tekevät tämän tietoturvan kannalta olennaisen tiedon suojaamiseksi.
+
+## Miten
+```Fish Shell
+# Lähetetään GET-pyyntö
+
+set kai 'https://website.com'
+set user 'username'
+set pass 'password'
+
+curl -u $user:$pass $kai
+```     
+Tämän pitäisi tuottaa tuloste, joka vastaa palvelimen vastausta. Voit jakaa sen helposti seuraavalla tavalla:
 
 ```Fish Shell
-# URL josta lähetetään pyyntö
-set url https://www.example.com
-# Käyttäjänimi ja salasana
-set username "käyttäjänimi"
-set password "salasana"
-# Lähetä pyyntö käyttäen perustodennusta
-curl -u $username:$password $url
+curl -s -u $user:$pass $kai | json_pp
 ```
-Tämä pyyntö lähettää käyttäjänimen ja salasanan verkkosivustolle HTTP-otsakkeessa perustodennusta käyttäen.
+Lähettääksesi esimerkiksi POST-pyynnön, käytät seuraavaa:
 
-## Syvemmälle:
-Tekniikka perustodennuksen käyttämiseen HTTP-pyynnöissä kehitettiin alunperin 90-luvulla auttamaan SMTP-sähköpostipalvelimia tarkistamaan sähköpostiosoitteiden aitoutta. On olemassa muitakin tapoja lähettää todennettuja HTTP-pyyntöjä, kuten OAuth ja OpenID Connect. Fish Shell tekee tämän prosessin helpoksi tarjoamalla curl-komennon, joka voi käsitellä todennuksen automaattisesti.
+```Fish Shell
+curl -d "param1=value1&param2=value2" -X POST -u $user:$pass $kai
+```
 
-## Katso myös:
-- Fish Shellin virallinen sivusto: https://fishshell.com/
-- Curl-komento: https://curl.se/
-- HTTP-perustodennus: https://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.27
+## Syventävä sukellus
+Perustodentaminen on ollut HTTP-protokollan osa sen alkupäiviltä lähtien. Vaikka se ei olekaan yhtä turvallinen kuin nykypäivän pitkälle kehitetyt menetelmät, kuten OAuth, se on edelleen yksinkertainen ja tehokas tapa suojata tietoja.
+
+Vaihtoehtoja perustodentamiselle ovat muun muassa digitaalinen allekirjoitus (jossa verkkopyyntö signeerataan yksityisellä avaimella) tai token-pohjainen todentaminen.
+
+Fish Shellin toteutus perustuu curl-ohjelmistolle, yhdelle laajimmin käytetylle verkkokirjastoille.
+
+## Katso myös
+- [Curl-manuaali ja -ohjeet](https://curl.se/docs/manual.html)
+- [Fish Shellin kotisivu](https://fishshell.com/)
+- [HTTP:n perustodentamisen yksityiskohtainen kuvaus](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)

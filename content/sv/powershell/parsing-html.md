@@ -1,6 +1,6 @@
 ---
 title:                "Analysera html"
-html_title:           "PowerShell: Analysera html"
+html_title:           "Arduino: Analysera html"
 simple_title:         "Analysera html"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Vad & Varför?
-Att 'parsa' HTML betyder att extrahera specifika delar av en HTML-kodad webbsida för att kunna använda dem i ditt PowerShell-program. Detta gör det möjligt att automatisera uppgifter som att extrahera data från en webbplats eller skapa rapporter baserat på webbsideinnehåll. Det sparar också tid och minimerar risken för misstag som kan uppstå vid manuell insamling av data.
+## Vad & Varför?
 
-### Hur man gör:
-```PowerShell
-# Ladda ner webbsidan som en sträng
-$str = Invoke-WebRequest -Uri "https://www.examplewebsite.com/"
-# Parsa den specifika delen av HTML som du är intresserad av
-$specificPart = $str.ParsedHtml.getElementById("specific-id").innerHTML
-# Skriv ut den parsade delen
-Write-Output $specificPart
-```
+Att analysera HTML innebär att bryta ner HTML-koden till dess beståndsdelar för att sedan använda dessa delar inom programmeringen. Programmörer gör det för att fånga data, manipulera sidor och automatisera uppgifter webbsidors nivå.
 
-**Exempel på utmatning:** Om den specifika delen du är intresserad av är en lista med produkter som är formaterad som HTML-tabell, kan du använda följande kod för att extrahera data om produkterna och skriva ut dem i konsolen.
+## Hur man gör:
+
+Här är ett enkelt exempel på hur man använder PowerShell för att analysera HTML:
 
 ```PowerShell
-# Ladda ner webbsidan som en sträng
-$str = Invoke-WebRequest -Uri "https://www.examplewebsite.com/"
-# Välj den första tabellraderad som innehåller produktnamnen
-$products = $str.ParsedHtml.getElementsByTagName("tr") | Select-Object -First 1
-# Extrahera produktnamnen och skriv ut dem
-foreach ($product in $products){
-    $productName = $product.getElementsByTagName("td")[0].innerText
-    Write-Output $productName
-}
+# Ladda ner en webbsida
+$webcontent = Invoke-WebRequest -Uri "https://www.exempelsida.se"
+
+# Analysera HTML:n, extrahera data
+$data = $webcontent.ParsedHtml.getElementsByTagName('tagname')
+
+# Skriv ut data
+$data | ForEach-Object { Write-Output $_.innerText }
 ```
+I det här exemplet byter du ut "https://www.exempelsida.se" mot webbadressen du vill analysera, och 'tagname' till den HTML-tag du letar efter. Utdata varierar beroende på vilken webbsida och tag du valt.
 
-**Exempel på utmatning:**
-* Produkt 1
-* Produkt 2
-* Produkt 3
-* ...
+## Fördjupning:
 
-### Djupdykning:
-Parsning av HTML är en användbar teknik som har funnits länge och finns också i andra programmeringsspråk som Python och PHP. I PowerShell, kan du använda `Invoke-WebRequest` cmdleten för att hämta och ladda ner en webbsida som en sträng, och sedan använda det inbyggda objektet `$str.ParsedHtml` för att få åtkomst till olika element på webbsidan.
+Historiskt sett har HTML-analys varit komplicerad och beroende av specifika bibliotek. PowerShell förenklar det här mycket genom att innehålla inbyggda metoder för att hämta och analysera webbsidor.
 
-Det finns också alternativa metoder för att parsning av HTML i PowerShell, såsom att använda tredjepartsmoduler som "HtmlAgilityPack". Dessa alternativ kan vara mer robusta och hanterar mer komplext HTML, men de kräver att du installerar och importerar modulen för att använda den.
+Ett alternativ till Invoke-WebRequest är att använda .NET-klassen WebClient, men det är mer komplicerat och kräver mer kod.
 
-Implementationen av parsning av HTML i PowerShell är relativt enkel, men det kräver också förståelse för HTML-struktur och sökning av specifika element baserat på deras ID eller klassnamn.
+Om du behöver mer kontroll över analysprocessen, eller om du hanterar komplicerad HTML, kan det vara värt att titta på mer avancerade verktyg, som t ex. HtmlAgilityPack.
 
-### Se också:
-- [Microsoft Dokumentation om 'Invoke-WebRequest'](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7)
-- [HtmlAgilityPack Modul](https://www.powershellgallery.com/packages/HtmlAgilityPack/)
+Powershell utför analysen genom COM-objektet MSHTML, vilket innebär att analyserna i grunden är beroende av Internet Explorer's rendering och kan därför ge olika resultat beroende på vilken version av IE som är installerad på maskinen.
+
+## Länkar till vidare läsning:
+
+1. Powershell dokumentation på [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+2. En bra artikel om [Web scraping med Powershell](https://adamtheautomator.com/web-scraping-with-powershell/)
+3. Officiella [HTML5-specifikationen](https://www.w3.org/TR/html5/) är oumbärliga om du vill djupdyka in i HTML-analys.

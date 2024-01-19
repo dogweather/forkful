@@ -1,6 +1,6 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "Gleam: Obteniendo la fecha actual"
+html_title:           "C#: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qué y Por Qué?
+## ¿Qué y por qué?
+Obtener la fecha actual en programación significa que se determina la fecha y hora actuales del sistema. Los programadores lo hacen para registrar eventos, hacer programación temporal y rastrear datos.
 
-Obtener la fecha actual es una tarea común en la programación, ya que permite a los programas mostrar la fecha y hora actual al usuario o utilizarla en cálculos y lógica de programación. Los programadores también pueden utilizarla para rastrear la ejecución del programa y monitorear la eficiencia del mismo.
-
-Cómo:
-
-Para obtener la fecha actual en Gleam, utilizamos la función `DateTime.now()`. Este método nos devuelve un objeto de fecha y hora actual, que luego podemos manipular o imprimir según nuestras necesidades.
+## Cómo se hace:
+**Gleam,** que es de tipado estático, no tiene una función incorporada para obtener la fecha y hora actual. Usualmente, se hace a través de Erlang interoperable. Aquí tienes un ejemplo:
 
 ```Gleam
-let current_date_time = DateTime.now()
+import erlang/time
+
+pub fn main(args: List(String)) -> Nil {
+  let current_time = erlang:time.now()
+  |> Result.unwrap_or("Couldn't get the current time")
+  |> Tuple.to_string
+
+  io.println(current_time)
+}
 ```
+Corriendo este código, obtendrás un resultado como este:
 
-El objeto `current_date_time` contiene varias funciones como `day`, `month` y `year` para acceder a las partes específicas de la fecha y hora. También podemos formatear la salida utilizando la función `format` en conjunto con la plantilla de formato deseada. A continuación se muestra un ejemplo de cómo imprimir la fecha en formato ISO 8601:
-
-```Gleam
-let current_date_time = DateTime.now()
-IO.print(format"{iso-8601-date}" current_date_time)
+```shell
+$ gleam run main
+{1593,242924,987304}
 ```
+Estos son los segundos, microsegundos y milisegundos desde Epoch.
 
-La salida sería algo así: `2021-09-05`.
+## Análisis en detalle
+El código de ejemplo llama a la función de Erlang `time.now()`, que devuelve la hora actual en milisegundos desde Epoch. Los programadores tienen esa opción para usar Erlang debido a su eficacia probada en la operación de sistemas a gran escala.
 
-Profundizando:
+Existen alternativas para obtener la fecha y hora actuales. En otros lenguajes, como Python o Java, hay funciones incorporadas. Además, puedes considerar la posibilidad de utilizar bibliotecas adicionales que proporcionan más funciones y mejoras.
 
-La obtención de la fecha actual puede ser especialmente útil en aplicaciones web para mostrar la hora en diferentes zonas horarias a los usuarios o en aplicaciones de seguimiento de tiempo para calcular el tiempo transcurrido. También existen otras formas de obtener la fecha actual en Gleam, como utilizar librerías externas o acceder al sistema operativo.
+La implementación de obtener la fecha y hora actuales puede variar dependiendo del sistema operativo y la zona horaria del sistema.
 
-Vea También:
+## Ver también
+Para información más detallada, consulta los siguientes enlaces:
 
-- Documentación oficial de la función `DateTime.now()` en Gleam: https://gleam.run/documentation/core-libraries/datetime/
-- Ejemplo de la función `now()` en la librería `gleam/datetime`: https://github.com/lpil/gleam/blob/master/lib/gleam/datetime/example/get_intro.now.gleam
+- Documentación oficial de Gleam language: https://gleam.run/docs/
+- Introducción a Gleam (inglés): https://lpil.uk/blog/gleam-v020-released/
+- Tiempo en Erlang (inglés):  https://erlang.org/doc/apps/erts/time_correction.html
+- Tiempo y Fecha en otros lenguajes: 
+    - Python (https://docs.python.org/3/library/datetime.html)
+    - Java (https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

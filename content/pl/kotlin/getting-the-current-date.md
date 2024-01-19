@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Kotlin: Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+# Pozyskiwanie aktualnej daty w Kotlinie
 
-Pobieranie aktualnej daty jest jednym z podstawowych zadań, które często wykonują programiści. Jest to niezbędne dla wielu aplikacji, które muszą wyświetlać aktualną datę lub ją analizować.
+## Co i dlaczego?
 
-## Jak to zrobić?
+Pozyskiwanie aktualnej daty oznacza odczytanie bieżącej daty i godziny z systemu. Programiści robią to, aby umożliwić śledzenie zdarzeń czy logowanie aktywności.
 
-Możemy łatwo pobrać aktualną datę w języku Kotlin za pomocą wbudowanej funkcji `LocalDate.now()`. Poniższy przykład pokazuje, jak można wyświetlić aktualną datę w formacie "dd/MM/yyyy":
+## Jak to zrobić:
 
-```Kotlin
-val currentDate = LocalDate.now()
-println(currentDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))) // Output: 15/11/2021
-```
-
-Możemy również pobrać aktualny miesiąc lub rok z daty za pomocą odpowiednich funkcji `month` oraz `year`.
+Pozyskanie aktualnej daty i godziny w Kotlinie jest bardzo proste. Oto kod pokazujący, jak to zrobić.
 
 ```Kotlin
-// Pobieranie aktualnego miesiąca
-val currentMonth = currentDate.month
-println(currentMonth) // Output: NOVEMBER
+import java.time.LocalDateTime
 
-// Pobieranie aktualnego roku
-val currentYear = currentDate.year
-println(currentYear) // Output: 2021
+fun main() {
+    val current = LocalDateTime.now()
+
+    println("Aktualna data i godzina: $current")
+}
 ```
 
-## Głębszy zanurzenie
+Kiedy uruchomisz ten program, powinieneś zobaczyć wyjście podobne do tego:
 
-Funkcja `LocalDate.now()` została wprowadzona w JDK 8 i jest częścią biblioteki Java Time API. Dzięki temu możemy wygodnie i precyzyjnie manipulować datami i czasem w języku Kotlin.
+```
+Aktualna data i godzina: 2022-03-27T12:34:56.789
+```
 
-Alternatywnym sposobem na pobranie aktualnej daty jest użycie klasy `Calendar`. Jednak Java Time API jest zalecanym sposobem, ponieważ jest lepiej zaprojektowane i bardziej intuicyjne.
+## Deep Dive
 
-Implementacja funkcji `LocalDate.now()` korzysta z systemowego zegara, który przechowuje aktualną datę i czas. Dzięki temu można uniknąć błędów związanych z różnicami w strefie czasowej w różnych regionach.
+Historia Klausury bibljoteki java.time zaczyna się od Javy 8, gdzie została wprowadzona jako poprawka do starszych java.util.Date i java.util.Calendar. W Kotlinie możemy bezpośrednio korzystać z tych klas Javy.
 
-## Zobacz również
+Alternatywą jest użycie biblioteki Trzeciej Strony, takiej jak Joda-Time, która oferuje bogatsze API i lepszą obsługę stref czasowych.
 
-- Dokumentacja Java Time API: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-- Przewodnik dla języka Kotlin: https://kotlinlang.org/docs/datetime.html
+Za kulisami, LocalDateTime.now() jest wywoływane z zegarem systemowym, co oznacza, że dla testów jednostkowych może być potrzebne użycie innego zegara.
+
+## Zobacz też:
+
+1. Dokumentacja joda-time: http://www.joda.org/joda-time/
+2. Dokumentacja java.time: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+3. Więcej informacji o jednostkach testowych z LocalDateTime: https://blog.jetbrains.com/kotlin/2022/01/kotlin-1-5-30-released/

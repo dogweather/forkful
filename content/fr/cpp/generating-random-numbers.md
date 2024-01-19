@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires"
-html_title:           "C++: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elixir: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,36 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Génération de Nombres Aléatoires en C++
-## Qu'est-ce Que C'est Et Pourquoi le Faire?
-La génération de nombres aléatoires est le processus de création de valeurs aléatoires dans un programme informatique. Les programmeurs utilisent cette technique pour apporter une certaine variabilité dans leurs applications, ou pour simuler des situations aléatoires telles que des jeux de hasard.
+---
+titre: Génération de Nombres Aléatoires en C++
 
-## Comment Faire:
+## Qu'est-ce et Pourquoi?
+
+La génération de nombres aléatoires se réfère à la création de nombres qui ne suivent aucun ordre prévisible. C'est essentiel dans la programmation pour des situations comme les jeux, les simulateurs, les tests de stress, et plus.
+
+## Comment faire :
+
+Voici comment vous pouvez générer des nombres aléatoires en utilisant C++.
+
 ```C++
 #include <iostream>
-#include <cstdlib> // Permet d'utiliser la fonction rand()
+#include <cstdlib> 
+#include <ctime> 
 
-int main() {
-   int randomNumber = rand(); // Génère un nombre aléatoire
-   std::cout << "Voici un nombre aléatoire : " << randomNumber << std::endl;
-   return 0;
+int main() 
+{ 
+    srand((unsigned) time(0)); 
+    int random_integer = rand(); 
+    std::cout << "Random Number: " << random_integer << std::endl; 
+
+    return 0; 
 }
 ```
-Output:
-```
-Voici un nombre aléatoire : [un nombre aléatoire différent à chaque exécution]
-```
+Dans ce code, ```srand((unsigned) time(0))``` initialise le générateur de nombres aléatoires avec la valeur actuelle du temps du système. ```rand()``` est ensuite utilisée pour générer un nombre aléatoire.
 
-Il est également possible de générer des nombres aléatoires dans une certaine plage en utilisant des opérations mathématiques sur la valeur retournée par `rand()`. Par exemple, si l'on souhaite générer un nombre aléatoire entre 1 et 10:
+## Plongée profonde
+
+Historiquement, C++ utilisait la fonction ```rand()```. Cependant, dans le standard moderne de C++, ils recommandent d'utiliser le générateur de nombres aléatoires de la bibliothèque ```<random>```. Voici comment vous pouvez l'utiliser:
+
 ```C++
-int randomNumber = 1 + rand() % 10;
+#include <iostream>
+#include <random>
+
+int main() {
+    std::mt19937 generator(std::random_device{}());
+    std::uniform_int_distribution<int> distribution(1,100);
+    int random = distribution(generator);
+    std::cout << "Random Number Between 1 and 100: " << random << std::endl;
+    return 0;
+}
 ```
-## Plongée Profonde:
-La génération de nombres aléatoires est une technique largement utilisée en informatique, particulièrement pour les jeux et les simulations. Cependant, la génération de nombres totalement aléatoires est un défi complexe en informatique, puisque les ordinateurs utilisent des algorithmes déterministes. Pour cette raison, la plupart des programmes informatiques utilisent des générateurs de nombres pseudo-aléatoires, qui produisent des séries de nombres apparemment aléatoires à partir d'une valeur de départ appelée "seed".
+Dans ce code, ```std::mt19937``` est un générateur de nombres pseudo-aléatoires de type Mersenne Twister. ```std::uniform_int_distribution``` produit des nombres aléatoires dans un range spécifique.
 
-Il existe également des libraries spécialisées pour la génération de nombres aléatoires, telles que <random> en C++11 qui fournit des générateurs plus performants et des distributions plus précises.
+Une alternative possible à la génération de nombres aléatoires est l'utilisation de séquences pseudo-aléatoires. Cependant, les séquences pseudo-aléatoires ne sont pas réellement aléatoires, elles suivent seulement un motif difficile à prédire.
 
-## Voir Aussi:
-- [Documentation officielle de rand() en C++](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [Documentation officielle de <random> en C++](https://www.cplusplus.com/reference/random/)
-- [Générateur de nombres aléatoires en ligne](https://www.random.org/integer-sets/)
+## Voir aussi
+
+Voici quelques liens vers des ressources supplémentaires :
+
+1. [cplusplus.com - \<random\>](http://www.cplusplus.com/reference/random/)
+2. [cppreference.com - Random number generation library](https://en.cppreference.com/w/cpp/numeric/random)
+3. [GeeksforGeeks - Random number generator in arbitrary probability distribution fashion](https://www.geeksforgeeks.org/random-number-generator-in-arbitrary-probability-distribution-fashion/)
+
+---

@@ -1,7 +1,7 @@
 ---
-title:                "Beregning av datoer i fremtiden eller fortiden"
-html_title:           "Bash: Beregning av datoer i fremtiden eller fortiden"
-simple_title:         "Beregning av datoer i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "Bash: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,29 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å beregne en dato i fremtiden eller fortiden er prosessen med å finne en bestemt dato basert på et gitt antall dager fra en annen dato. For eksempel, å beregne datoen som er 30 dager fra i dag. Programmere må gjøre dette for å håndtere ulike datoer og kalkulere fremtidige eller fortidsdatoer.
+## Hva & Hvorfor?
 
-# Hvordan:
-Bash har innebygde funksjoner for å beregne en dato i fremtiden eller fortiden. Du kan bruke disse funksjonene ved å legge til eller trekke fra et spesifisert antall dager fra en gitt dato.
+Å beregne en dato i fremtiden eller fortiden innebærer å finne den eksakte datoen som er et visst antall dager før eller etter en spesifikk dato. Programmerere gjør dette for planlegging, tidsstyring eller til og med feilsøking. 
 
-```bash
-# Beregne datoen som er 30 dager fra i dag
-date -d "+30 days"
+## Slik gjør du:
+
+I Bash kan du beregne fremtidige og tidligere datoer ved hjelp av 'date' kommandoen. Her er noen eksempler.
+
+For å beregne en dato 7 dager fra nå:
+
+```Bash
+date -d "+7 days"
 ```
 
-Resultat: Sat Oct 16 00:00:00 CEST 2021
+For å beregne en dato 7 dager før nå:
 
-```bash
-# Beregne datoen som er 10 dager før i dag
-date -d "-10 days"
+```Bash
+date -d "-7 days"
 ```
 
-Resultat: Sun Sep 26 00:00:00 CEST 2021
+Eksempel på utskrift:
 
-# Dypdykk:
-I følge Unix-tidsstempelet, 1. januar 1970 kl. 00:00:00 er referansedatoen for å beregne datoer i fremtiden eller fortiden. Alternativt kan du bruke tredjepartsbiblioteker som moment.js for mer komplekse datooperasjoner. Implementeringsdetaljer varierer avhengig av språk og plattform, men konseptet er det samme.
+```Bash
+Mon Jan 12 18:02:37 CET 2022
+```
 
-# Se også:
-- [Bash's date command documentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Moment.js](https://momentjs.com/) for mer komplekse datooperasjoner
+## Dypdykk:
+
+Historisk har dato-beregninger vært utfordrende på grunn av ulike kalendersystemer og tidssoner. I Unix-verdenen, som Bash stammer fra, er dette løst gjennom 'date'-kommandoen, som bruker Unix-tid (sekunder siden 1970).
+
+Alternativt, for mer komplekse dato-beregninger, kan du bruke noe som Python eller Perl, som har rikere datohåndteringsfunksjoner.
+
+Bash bruker 'strtotime'-funksjonen fra biblioteket 'libc' til å parse strengargumentet til 'date'-kommandoen. Derfor er det direkte støtte for relativ dato-beregning som vist i eksemplene over.
+
+## Se også:
+
+- Bash Manual: https://www.gnu.org/software/bash/manual/bash.html
+- GNU coreutils (date): https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html

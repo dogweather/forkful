@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków"
-html_title:           "Bash: Konwertowanie daty na ciąg znaków"
-simple_title:         "Konwertowanie daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co chodzi i dlaczego?
+## Co i dlaczego?
+Konwersja daty na ciąg to proces przekształcania formatu daty w czytelny tekst. Programiści robią to, aby ułatwić zrozumienie i obsługę daty przez użytkowników.
 
-Konwersja daty na ciąg znakowy jest powszechnie stosowanym zadaniem w programowaniu. Polega ona na zamianie informacji o dacie (np. 15 marca 2021) na odpowiedni format tekstu (np. "2021-03-15"). Jest to przydatne w wielu aplikacjach, takich jak generowanie raportów czy tworzenie plików z nazwami opartymi na dacie.
+## Jak to zrobić:
+Aby przekształcić datę na ciąg, można użyć polecenia `date` w skrypcie powłoki Bash. Poniżej znajduje się przykładowy kod i wynik.
 
-## Jak to zrobić?
-
-W Bashu istnieje wiele sposóbów na konwersję daty na ciąg znakowy. Jeden z najprostszych to użycie polecenia `date` z odpowiednimi opcjami. Na przykład, aby uzyskać datę w formacie RRRR-MM-DD, użyjmy `date +"%Y-%m-%d"`. Oto przykładowy kod:
-
-```bash
-# Ustawiamy zmienną z datą dzisiejszą
-now=$(date +"%Y-%m-%d")
-# Wyświetlamy zmienną
-echo $now
+```Bash
+data=$(date +"%Y-%m-%d")
+echo $data
 ```
+Wynik:
+```Bash
+2023-12-31
+```
+W tym przypadku, data jest formatowana jako "Rok-Miesiąc-Dzień".
 
-Output:
-`2021-03-15`
+## W głąb tematu
+Historia Bash'a sięga końca lat 80-tych, kiedy to został stworzony jako darmowa alternatywa dla Bourne Shell. Co do formatowania daty, bash oferuje wiele opcji, które można dostosować do swoich potrzeb.
 
-## Głębszy zanurzenie
+Istnieją jednak alternatywy dla wbudowanej funkcji `date`. Możemy na przykład użyć komendy `printf` albo skorzystać z zewnętrznych narzędzi jak `awk`.
 
-Konwersja daty na ciąg znakowy jest nie tylko praktyczna, ale również ma swoją historię. Wczesne systemy operacyjne nie miały wbudowanych narzędzi do manipulacji datami, więc programiści musieli tworzyć własne algorytmy do tego celu. Współcześnie, istnieje wiele innych sposobów na uzyskanie różnych formatów daty w Bashu, np. użycie komendy `strftime` lub użycie znaku `#` do oznaczania daty w ciągu znaków.
+Szczegóły implementacji poleceń są zazwyczaj ukrywane dla użytkownika, ale jeśli jesteś ciekawy, zajrzyj do man page dla `date` (wpisz `man date`), gdzie znajdziesz wszystko, co musisz wiedzieć.
 
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej na temat manipulacji datami w Bashu, polecam przeczytać dokumentację oraz przeprowadzić własne eksperymenty. Oto kilka przydatnych źródeł:
-
-- [Oficjalna dokumentacja Bash](https://www.gnu.org/software/bash/manual/)
-- [Artykuł na temat konwersji dat w Bashu](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
-- [Kurs programowania z Bashem](https://www.codecademy.com/learn/learn-bash)
+## Zobacz też
+1. [Bash Date Command](https://linuxize.com/post/bash-date/)
+2. [Date Command In Bash](https://www.cyberciti.biz/faq/unix-linux-shell-scripting-formatting-dates/)
+3. [Bash Date Format: A complete guide to formatting dates](https://phoenixnap.com/kb/bash-date-format)

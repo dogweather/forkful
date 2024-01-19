@@ -1,7 +1,7 @@
 ---
-title:                "מציאת אורך של מחרוזת"
-html_title:           "TypeScript: מציאת אורך של מחרוזת"
-simple_title:         "מציאת אורך של מחרוזת"
+title:                "מציאת אורך המחרוזת"
+html_title:           "Elm: מציאת אורך המחרוזת"
+simple_title:         "מציאת אורך המחרוזת"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,25 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-מציאת אורך של מחרוזת היא כלי חשוב בתכנות המאפשר לנו להבין כמה תווים יש במחרוזת תווים. מתכנתים עושים זאת כדי לעבוד עם מחרוזות ולהציג נתונים בצורה אינטואיטיבית.
+## מה ולמה?
+מציאת אורך המחרוזת היא פעולה שבה מחשבים את מספר התווים המרכיבים מחרוזת מסוימת. תכנתים לרוב משתמשים בזה לבדוק בתוקף של קלט, ללולאות או שחזורים ותיקונים של מחרוזות.
 
-איך לעשות?
-כדי למצוא את אורך המחרוזת ב-TypeScript, ניתן להשתמש בפונקציה המובנית .length. לדוגמה:
-
-```
-let str = "שלום עולם";
-console.log(str.length);
-```
-הפלט יהיה:
-```
-9
+## איך לעשות:
+בצורה בסיסית, ניתן למצוא את אורך המחרוזת ב-TypeScript בעזרת המאפיין length של המחרוזת:
+```TypeScript
+let myString: string = "תכנות ב-TypeScript";
+console.log(myString.length);  // ידפיס לכם 18
 ```
 
-עומק השטח
-מציאת אורך של מחרוזת הוא כלי שנמצא כבר די הרבה שנים ונכתב לראשונה בשפת תכנות דרכדט שנוצרה בשנת 1964. אם אתם מחפשים אלטרנטיבות לפונקציה length, ב-TypeScript ניתן למצוא גם את המתודה .size() שמשמשת לאותו מטרה.
+אם המחרוזת שלכם מכילה תווים יוניקוד, אז האורך עשוי לא להיות מה שאתם מצפים:
+```TypeScript
+let myUnicodeString: string = "מחרוזת עם אימוג'י 😄";
+console.log(myUnicodeString.length);  // ידפיס לכם 18, לא 17
+```
+## צלילה עמוקה
+הפקודה `.length` התפתחה במטרה לספק דרך יעילה ונוחה למציאת אורך של מחרוזת. זכורים, למרות זאת, שהספירה של `.length` היא 1-מבוססת, אז את תווים האוניקוד מחושבים כ-2 תווים. ייתכן אי-התאמה כאשר מתמודדים עם תווים יוניקוד. 
 
-ראה גם
-למידע נוסף על מציאת אורך של מחרוזות ב-TypeScript, ניתן לבדוק את הקישורים הבאים:
-- מידע נוסף על הפונקציה .length: https://www.typescriptlang.org/docs/handbook/basic-types.html#string
-- השוואה בין .length ל-.size(): https://stackoverflow.com/questions/21243970/difference-between-size-method-and-length-property-in-javascript
+כדי להתמודד עם בעיות שכאלה, לנו יש את מתודת `Array.from()`, המאפשרת ספירת תווים בצורה מדויקת יותר:
+```TypeScript
+let accurateLength: number = Array.from(myUnicodeString).length; // יחזיר 17
+```
+## ראו גם
+- [MDN Web Docs: String.length](https://developer.mozilla.org/he/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [Stack Overflow: How to get a character's length in JS](https://stackoverflow.com/questions/54369504/javascript-how-to-get-character-length)

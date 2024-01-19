@@ -1,7 +1,7 @@
 ---
-title:                "Att påbörja ett nytt projekt"
-html_title:           "Haskell: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -12,41 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att starta ett nytt projekt i Haskell är när du skapar en ny mapp och börjar skriva kod för en ny applikation eller bibliotek. Programmerska utför detta för att implementera nya idéer, lära sig nya tekniker eller lösa ett problem som de står inför.
+Att starta ett nytt projekt innebär att inleda skapandet av en ny programvara för att lösa specifika problem eller erbjuda en viss tjänst. Programmerare gör detta för att utveckla unik mjukvara som uppfyller specifika behov, vilket kan inkludera allt från att automatisera uppgifter till att tillhandahålla mer komplexa applikationer.
 
-## Hur man:
+## Hur man gör:
 
-Kodexempel och exempel på output visas nedanför i kodblock vilket signaleras med ```Haskell ... ```
-
-```
--- Skapar en ny mapp för projektet
-mkdir min_haskell_projekt
-
--- Skapar en ny fil som heter "Hello.hs"
-touch Hello.hs
-
--- Öppnar filen med din valda textredigerare, i detta fallet 'vi'
-vi Hello.hs
-```
+För att starta ett nytt Haskell-projekt, behöver du ett grundläggande projekt skelett. Här har vi 'Hello, World!' exempel:
 
 ```Haskell
--- Hello.hs
 main :: IO ()
-main = putStrLn "Hej världen!"
+main = putStrLn "Hello, World!"
+```
+Kör din kod och du kommer att se följande utdata:
+```Haskell
+Hello, World!
 ```
 
-Output:
-```
-Hej världen!
-```
+För att skapa en mer komplex applikation, kan du använda 'Stack' som är ett verktyg som hjälper dig att skapa, testa och publicera ditt Haskell-program.
 
-## Djupdykning:
+## Djupdykning: 
 
-När Haskell skapades på 1980-talet var det en av de första funktionella programmeringsspråken och användes i forskning inom datormatematik. Alternativen till att starta ett nytt projekt i Haskell inkluderar att använda andra språk som till exempel Java, Python eller C++. Implementationen av att starta ett projekt involverar att skapa en skaplig projektmapp och skriva kod i en fil som används för att köra ditt program eller bibliotek.
+Haskell skapades 1990 och var en banbrytande programmeringsspråk med stark statisk typning, lat evaluering och ren funktionsprogrammering. 
 
-## Se även:
+Alternativ till Haskell inkluderar funktionella programmeringsspråk som Erlang, Elixir och Scala. Dessa tillhandahåller liknande funktionsprogrammeringskoncept, men har olika syntax och miljöegenskaper. 
 
-Här är några användbara länkar om hur man startar ett nytt projekt i Haskell:
-- https://www.haskell.org/platform/
-- https://wiki.haskell.org/How_to_write_a_Haskell_program
-- https://www.fpcomplete.com/blog/2019/08/starting-a-haskell-project-an-opinionated-guide
+För ytterligare implementation, överväg att använda byggverktyg och ramverk, såsom Stack och Cabal, för systematisk kodhantering, test och distribution.
+
+## Se också:
+
+1. Learn You A Haskell: (http://learnyouahaskell.com/)
+2. Real World Haskell: (http://book.realworldhaskell.org/)
+3. Haskell Wiki: (https://wiki.haskell.org/)
+4. Stack: (https://docs.haskellstack.org/en/stable/README/) 
+
+Lycka till med ditt nästa Haskell-projekt!

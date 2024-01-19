@@ -1,6 +1,6 @@
 ---
 title:                "生成随机数"
-html_title:           "Python: 生成随机数"
+html_title:           "Go: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "Python"
 category:             "Python"
@@ -10,49 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是随机数 & 为什么要生成它？
-随机数是指在一定范围内没有特定模式的数。程序员经常需要生成随机数，因为它们可以用来模拟真实世界的情况，例如抽奖、游戏中的随机事件等。
+## 是什么以及为什么？
 
-## 如何生成随机数：
+生成随机数是一种让计算机输出不确定的值的做法。程序员常用它来进行随机抽样、生成随机的测试数据，或在构建仿真模型时加入随机性元素。
+
+## 如何操作：
+
+在Python中，我们可以使用random库来生成随机数。以下是一些例子：
+
 ```Python
-# 导入 random 模块
 import random
 
-# 示例 1：生成 0 到 100 之间的随机整数
-random_integer = random.randint(0, 100)
-print(random_integer)
-
-# 示例 2：生成 0 到 1 之间的随机小数
+# 生成一个介于0.0到1.0之间的随机浮点数
 random_float = random.random()
 print(random_float)
 
-# 示例 3：从指定列表中随机选择一个元素
-fruits = ["apple", "banana", "orange"]
-random_fruit = random.choice(fruits)
-print(random_fruit)
+# 生成一个介于1到10之间的随机整数
+random_int = random.randint(1, 10)
+print(random_int)
+
+# 从列表中随机选择一个元素
+my_list = ['apple', 'banana', 'cherry']
+random_choice = random.choice(my_list)
+print(random_choice)
 ```
-输出结果：
+
+运行上述代码，您将得到如下的输出（每次运行结果都会不同）：
 ```Python
-# 示例 1：随机整数（每次结果不同）
-52 
-# 示例 2：随机小数（每次结果不同）
-0.2715 
-# 示例 3：随机选择一个水果（每次结果不同）
-orange 
+0.5387451400628015
+9
+cherry
 ```
 
-## 深入了解：
-### 历史背景：
-在计算机发展的早期，随机数的生成依赖于硬件设备，例如噪声产生器。随着技术的发展，现在我们可以通过软件程序来生成随机数了。
+## 深度解析：
 
-### 其他选择：
-除了使用Python的random模块来生成随机数，还可以使用第三方模块，例如Numpy和SciPy，在处理大量数据时更高效。也可以通过调用随机数生成器的API来实现随机数生成。
+在计算机中生成随机数已经有很长一段历史了，早期的计算机使用物理随机生成器输出随机数。然而，现代计算机主要使用伪随机数生成器，这种算法可以生成看起来像随机数的序列，但实际上是可以预测的。
 
-### 实现细节：
-在计算机上，所谓的“随机数”并不是完全随机的，它们是通过随机数生成算法来生成的。这些算法使用伪随机数生成器（PRNG）来产生伪随机数序列。Python的random模块使用的就是一个伪随机数生成器，需要设置种子数来指定生成的随机数序列。种子数相同的情况下，随机数序列会重复。
+Python中的random模块就是一个伪随机数生成器。这个模块基于Mersenne Twister算法。除了random之外，还有其他库如NumPy和SciPy也可用于生成随机数。
 
-## 参考资料：
-- [Python官方文档 - random模块](https://docs.python.org/3/library/random.html)
-- [Python官方文档 - secrets模块（用于生成安全随机数）](https://docs.python.org/3/library/secrets.html)
-- [Numpy官方文档 - 随机数生成](https://numpy.org/doc/stable/reference/random/index.html)
-- [SciPy官方文档 - 随机数生成及分布](https://docs.scipy.org/doc/scipy/reference/stats.html#random-number-generation-for-generating-random-variables)
+## 参见：
+
+- Python官方文档：random — 生成伪随机数： https://docs.python.org/3/library/random.html
+- Wikipedia：随机数生成器： https://zh.wikipedia.org/wiki/隨機數生成器
+- Python中NumPy随机数函数的使用： https://blog.csdn.net/qq_38663737/article/details/80500366

@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma data em uma string"
-html_title:           "Kotlin: Convertendo uma data em uma string"
+html_title:           "C++: Convertendo uma data em uma string"
 simple_title:         "Convertendo uma data em uma string"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,29 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é isso e por quê?
+# Convertendo uma data em uma string em Kotlin
 
-Converter uma data para uma string é um processo comum na programação, onde uma data é transformada em um formato de texto legível para ser mostrado ou armazenado. Isso é útil para exibir informações de data em interfaces de usuário ou para armazenamento em bancos de dados. Programadores fazem isso para tornar as informações de data mais acessíveis e utilizáveis em seus códigos.
+## O que é e por quê?
+
+Converter uma data em uma string é a prática de formatar e apresentar datas de uma maneira legível para humanos. Os programadores fazem isso para que as datas possam ser facilmente interpretadas e manipuladas no código.
 
 ## Como fazer:
 
+```Kotlin
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
+fun main() {
+    val agora = LocalDateTime.now()
+
+    val formatoDeData = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+
+    val stringData = agora.format(formatoDeData)
+
+    println("Data em Formato String : $stringData")
+}
 ```
-Kotlin val data = Date() // cria uma nova data
-val formatter = SimpleDateFormat("dd.MM.yyyy") // define o formato da string
-val dataString = formatter.format(data) // converte a data para string
-println(dataString) // imprime a data em formato de texto (ex: 13.09.2021)
+
+Este bloco de código Kotlin acima irá produzir um resultado semelhante ao seguinte:
+
+```Kotlin
+Data em Formato String : 07-08-2021 23:45:12
 ```
 
-## Mergulho profundo:
+## Mergulho profundo
 
-Históricamente, o processo de converter uma data para uma string era feito de forma manual, utilizando fórmulas matemáticas complexas. No entanto, com o avanço da tecnologia, linguagens de programação oferecem métodos automatizados para essa tarefa, o que torna o processo muito mais simples e rápido.
+Converter datas em strings é uma prática antiga na programação. LocalDateTime, usado acima, é uma classe Kotlin que simplifica muito a manipulação de datas.
 
-Uma alternativa para converter uma data em uma string é utilizar bibliotecas de terceiros, como o Joda-Time ou o java.time, que possuem funções e métodos mais avançados para manipulação de datas.
+Há várias alternativas para converter uma data em uma string em Kotlin. Além de `LocalDateTime`, você pode usar `SimpleDateFormat`, uma classe mais antiga que também permite formatar datas.
 
-Na implementação do Kotlin, existe o pacote "java.text" que contém as classes SimpleDateFormat e DateFormat, que podem ser utilizadas para formatar e converter datas em strings. Além disso, o Kotlin também possui uma classe nativa chamada "DateTimeFormatter" que facilita o processo de conversão de uma data para uma string com métodos mais intuitivos e flexíveis.
+Quanto aos detalhes de implementação, o `DateTimeFormatter` inclui diferentes padrões para formatar datas. Você pode escolher um que melhor se adapte às suas necessidades!
 
-## Veja também:
+## Veja também
 
-- [Documentação oficial do Kotlin sobre formatação de datas](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/java.text.-date-format/)
-- [Joda-Time API](https://www.joda.org/joda-time/)
-- [Java Date and Time API](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+"Documentação oficial do Kotlin para DateTimeFormatter": [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-java-time/format.date-time/-java-time-format.date-time-fun-.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-java-time/format.date-time/-java-time-format.date-time-fun-.html),
+
+"Documentação oficial Kotlin para LocalDateTime": [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/)
+
+"Postagem de blog sobre formatação de data e hora em Kotlin": [https://www.baeldung.com/kotlin/datetime-format](https://www.baeldung.com/kotlin/datetime-format)

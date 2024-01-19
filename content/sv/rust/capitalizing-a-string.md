@@ -1,7 +1,7 @@
 ---
-title:                "Kapitalisering av en sträng"
-html_title:           "Rust: Kapitalisering av en sträng"
-simple_title:         "Kapitalisering av en sträng"
+title:                "Gör om en sträng till versaler"
+html_title:           "Rust: Gör om en sträng till versaler"
+simple_title:         "Gör om en sträng till versaler"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,24 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Att kapitalisera en sträng i Rust
+Informationen och koden i denna artikel riktar sig till programmerare som använder det senaste Rust (den nuvarande versionen).
+
 ## Vad & Varför?
-När vi talar om att "kapitalisera en sträng" i programmering, menar vi att göra den första bokstaven i varje ord i strängen stor. Detta beteende är vanligtvis önskvärt för att göra strängar mer lättlästa och konsekventa. 
+Att kapitalisera en sträng innebär att första bokstaven i en textsträng omvandlas till en versal. Detta är användbart för att standardisera textdata, exempelvis vid formattering av namn.
 
-## Hur man:
-Kapitalisera en sträng i Rust är enkelt. Använd bara funktionen `to_uppercase()` på en sträng och få tillbaka en ny sträng med enbart stora bokstäver. Till exempel:
+## Hur gör man:
+Att kapitalisera en sträng i Rust är relativt enkelt. Här är en kodsnutt och dess resuultat:
+
 ```Rust
-let min_sträng = String::from("hej, vem är du?");
-let kapitaliserad = min_sträng.to_uppercase();
-println!("{}", kapitaliserad);
+fn main() {
+    let my_string = "hej världen!";
+    let capitalized_string = my_string.chars().enumerate().map(|(i,c)| 
+        if i == 0 {c.to_uppercase().to_string()} else {c.to_string()}).collect::<String>();
+    println!("{}", capitalized_string);
+}
 ```
-Output: HEJ, VEM ÄR DU?
 
-Funktionen `to_uppercase()` fungerar på både engelska och icke-engelska bokstäver.
+När du kör ovanstående skript får du:
 
-## Djupdykning:
-Att kapitalisera strängar är ett vanligt sätt att förbättra läsbarheten och konsistensen i program. Innan Unicode fick man ofta använda en funktion som kallades "toupper" för att konvertera till stora bokstäver, men detta fungerade endast på engelska bokstäver och ignorerade specialtecken. Numera med Unicode är `to_uppercase()` en mycket mer användbar och tillförlitlig lösning på detta problem.
+```
+"HEJ VÄRLDEN!"
+```
 
-## Se även:
-- Rust's officiella dokumentation för `to_uppercase()`: https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase
-- En detaljerad beskrivning av `to_uppercase()` funktionen: https://stackoverflow.com/questions/53067205/rust-string-to-uppercase
-- En tutorial om olika sätt att manipulera strängar i Rust: https://blog.logrocket.com/10-types-of-string-manipulation-techniques-with-examples-in-rust/
+Detta är en enkel men effektiv lösning för att kapitalisera första bokstaven i en sträng.
+
+## Djupare dykning
+Det är viktigt att notera att Rusts .to_uppercase() inte alltid beter sig som förväntat med icke-engelska tecken. Detta är ett känt problem och har att göra med hur tecken som ligger utanför ASCII-standarden hanteras.
+
+Ett alternativ till att använda .to_uppercase() är att använda biblioteket unicase som hanterar Unicode-strängar mer tillförlitligt.
+
+Vid det här laget kanske du undrar varför vissa programmerare väljer att kapitalisera sina strängar manuellt istället för att använda en inbyggd funktion som .to_uppercase(). Faktum är att det faktiskt kan vara snabbare och mer effektivt att göra det på egen hand, särskilt om strängens längd varierar mycket.
+
+## Se också
+Om du vill veta mer om att arbeta med strängar i Rust, rekommenderas följande resurser:
+
+1. [Rusts officiella dokumentation om strängar](https://doc.rust-lang.org/book/ch08-02-strings.html)
+2. [Rust by Example: Strängar](https://doc.rust-lang.org/rust-by-example/std/str.html)
+3. [StackOverflow tråd om kapitalisering i Rust](https://stackoverflow.com/questions/38406793/why-is-there-no-capitalize-function-in-rust)

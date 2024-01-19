@@ -10,62 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Comparing Two Dates with Arduino 
+
 ## What & Why?
-Comparing two dates is the process of determining whether two given dates are the same, earlier, or later than each other. This is a common task for programmers when working with date and time data. By comparing dates, programmers can create conditional statements and perform actions based on date comparisons, making their code more efficient and dynamic.
+Comparing two dates involves determining if one date is before, after, or equal to another. Programmers do this often to set up timers, schedule events, or record data over a certain period.
 
 ## How to:
-Coding examples using the Arduino language below:
-
 ```Arduino
-// Comparing two dates using the if...else statement
-int date1 = 20190501;
-int date2 = 20190502;
+#include <TimeLib.h>
 
-if (date1 == date2) {
-  Serial.println("The dates are the same");
-} else if (date1 < date2) {
-  Serial.println("date1 is earlier than date2");
-} else {
-  Serial.println("date1 is later than date2");
+time_t t1 = now(); // Current time.
+delay(5000); // 5-second delay to create a difference.
+time_t t2 = now(); // New time.
+
+if(year(t1) != year(t2)){ 
+    Serial.println(year(t2) - year(t1)); 
 }
-
-/*
-Output:
-date1 is earlier than date2
-*/
-```
-
-```Arduino
-// Comparing two dates using the switch statement
-int date1 = 20190501;
-int date2 = 20190502;
-
-switch(date1 > date2) {
-  case true:
-    Serial.println("date1 is later than date2");
-    break;
-  case false:
-    switch(date1 == date2) {
-      case true:
-        Serial.println("The dates are the same");
-        break;
-      case false:
-        Serial.println("date1 is earlier than date2");
-    }
-    break;
+else if(month(t1) != month(t2)){ 
+    Serial.println(month(t2) - month(t1)); 
 }
-
-/*
-Output:
-date1 is earlier than date2
-*/
+else if(day(t1) != day(t2)){ 
+    Serial.println(day(t2) - day(t1)); 
+}
+else if(hour(t1) != hour(t2)){ 
+    Serial.println(hour(t2) - hour(t1)); 
+}
+else if(minute(t1) != minute(t2)){ 
+    Serial.println(minute(t2) - minute(t1)); 
+}
+else { 
+    Serial.println(second(t2) - second(t1)); 
+}
 ```
+This code compares two dates on different levels starting from years down to seconds. It only prints out the difference if it finds one.
 
-## Deep Dive:
-- **Historical Context**: The concept of comparing two dates has been around since the invention of calendars and has evolved along with the advancements in technology. Before computers, dates were compared manually or with the help of mechanical devices like abacuses and slide rules. However, with the rise of digital computing, the process of comparing dates became more accurate and efficient.
-- **Alternatives**: There are other ways to compare dates, such as using external date comparison libraries or creating custom functions. Depending on the project's requirements, different methods may be used to compare dates.
-- **Implementation Details**: The examples above show the most basic way of comparing two dates using the if...else and switch statements. However, for more complex comparisons, additional logic and nested conditional statements may be necessary. It is important to consider the format and data type of the dates being compared to ensure accurate results.
+## Deep Dive
+Historically, comparing dates was more complex, dealing directly with UNIX timestamps or hefty date strings. Arduino's TimeLib simplifies this task with accessible date units. 
 
-## See Also:
-- [Arduino Reference - Comparison Operators](https://www.arduino.cc/reference/en/language/structure/comparison-operators/)
-- [Date Comparison Libraries for Arduino](https://www.hackster.io/ArduinoTeam/date-comparison-comparing-dates-can-be-a-pain-6197be)
+While TimeLib is standard, alternatives like RTClib for RTC modules, or built-in date comparison functions in more advanced boards (like ESP32) exist.
+
+Remember, time_t values (UNIX timestamp) are stored as the number of seconds passed since the beginning of 1970. The library’s functions convert this to a more digestible form like year, month, hour, etc.
+
+## See Also
+- Time library for Arduino: [https://www.arduino.cc/reference/en/libraries/time/](https://www.arduino.cc/reference/en/libraries/time/)
+- Alternative RTC approaches: [https://learn.adafruit.com/adafruit-rtc-library](https://learn.adafruit.com/adafruit-rtc-library)
+- Dating with ESP32: [https://randomnerdtutorials.com/esp32-date-time-ntp-client-server-arduino/](https://randomnerdtutorials.com/esp32-date-time-ntp-client-server-arduino/)

@@ -1,6 +1,6 @@
 ---
 title:                "创建临时文件"
-html_title:           "Haskell: 创建临时文件"
+html_title:           "Kotlin: 创建临时文件"
 simple_title:         "创建临时文件"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是临时文件？为什么程序员要创建它？
+# Haskell 临时文件生成：一种简洁的方法
 
-临时文件是在程序运行时临时创建的文件，在程序结束后会被自动删除。程序员经常创建临时文件来存储临时数据，例如在计算过程中的中间结果，或者用来缓存某些信息。这有助于保持程序的整洁和运行的效率。
+## 什么 & 为什么？
 
-## 如何创建临时文件？
+临时文件创作是为了生成一个可以暂存数据的文件，其在程序结束后会被删除。程序员这样做以便管理那些不再需要持久存储的数据。
 
-在Haskell中，我们可以使用```withTempFile```函数来创建临时文件。下面是一个简单的例子：
+## 如何操作:
 
+在Haskell里，我们可以使用 `System.IO.Temp` 库进行临时文件的创建。
+
+```Haskell
+import System.IO.Temp (writeSystemTempFile)
+
+main :: IO ()
+main = do
+    fp <- writeSystemTempFile "tempFile.txt" "This is temporary text"
+    print fp
 ```
-withTempFile "temp.txt" $ \path handle -> do
-    hPutStrLn handle "Hello World!"
-    putStrLn "临时文件已创建并写入信息。"
-```
 
-第一个参数是所创建的临时文件的基本名称，比如这里的```temp.txt```。第二个参数是一个函数，它接受临时文件的路径和一个句柄作为参数。在例子中，我们将```"Hello World!"```写入了临时文件，并在控制台输出相关信息。
+在这个示例中，我们创建了一个名为 "tempFile.txt" 的临时文件，并赋予它一些文本内容（"This is temporary text"）。执行后会在控制台输出文件的完整路径。
 
-## 深入了解
+## 深度解析
 
-在过去，程序员可能会手动创建临时文件，并手动删除它们。但现在，有了像```withTempFile```这样的函数，程序员可以更简单地创建临时文件，并且可以保证这些临时文件会被自动删除，从而避免了每次程序运行后手动清理的麻烦。
+临时文件在UNIX和其它早期操作系统上有深远的历史。它们的设计目标就是为了处理短暂存在但是不能放入内存中的数据。现今，几乎所有的编程语言都提供了创建临时文件的方法。
 
-当然，除了使用```withTempFile```函数来创建临时文件外，还有其他的方法，比如使用操作系统提供的临时文件目录来创建临时文件。但这种方法可能会带来一些安全性问题，因此建议使用库函数来创建临时文件。
+创建临时文件的另一个选择是使用 `System.Directory`，然后手动去删除这个临时文件，但这通常会更复杂，不建议使用。
 
-## 参考链接
+关于实现细节，`writeSystemTempFile` 函数在内部使用了POSIX函数来确保临时文件的唯一性，并且设置了适当的文件权限，使其只对创建它的进程可见。
 
-了解更多关于创建临时文件的方法和技巧，请参考以下链接：
+## 另见
 
-- [Haskell官方文档](https://www.haskell.org/documentation/)
-- [操作系统临时文件目录](https://en.wikipedia.org/wiki/Temporary_folder)
-- [用Haskell编写安全的临时文件处理程序](https://hackage.haskell.org/package/temporary-1.3.0.2/docs/System-IO-Temp.html)
+- [`System.IO.Temp` 文档](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
+- [Haskell 文件 I/O 教程](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/attoparsec)

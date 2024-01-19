@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Gleam: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Seja Criativo com Gleam
+# Iniciando um novo projeto em Gleam
 
-## O que e por que?
+## O quê & Porquê?
 
-Começar um novo projeto significa dar vida a suas ideias e criatividade. Programadores iniciam novos projetos para construir soluções eficientes e inovadoras para problemas do mundo real.
+Iniciar um novo projeto de programação é o ato de definir as bases e estabelecer as estruturas iniciais de um novo software, aplicativo ou utilitário. Programadores fazem isso para transformar uma ideia conceitual em realidade funcional. 
 
 ## Como fazer:
 
-Começar um novo projeto em Gleam é fácil e direto ao ponto. Basta seguir estes passos simples:
+Aqui está um exemplo de como iniciar um novo projeto usando Gleam:
 
-```Gleam
-let mensagem = "Olá, mundo!"
-IO.println(mensagem)```
+```
+$ rebar3 new gleam_lib my_project
+$ cd my_project
+```
 
-O código acima criará uma variável `mensagem` contendo a string "Olá, mundo!" e a imprimirá no console. 
+Este script cria um novo diretório com o nome `my_project` e inicializa uma nova biblioteca de Gleam.
 
 ## Mergulho Profundo:
 
-Gleam é uma linguagem moderna e funcional desenvolvida especificamente para programação concorrente e distribuída. Ela se inspira nas linguagens Erlang e OCaml, combinando suas melhores características em uma única linguagem.
+Iniciar um novo projeto é um processo que tem evoluído ao longo da história da programação. Em termos de Gleam, que se baseia em Erlang/OTP, os programadores se beneficiam de um forte sistema de tipos e recursos para fácil legibilidade e manutenção do código.
 
-Se você está procurando alternativas a Gleam, algumas opções populares são Elixir e Rust. No entanto, Gleam oferece uma sintaxe mais amigável e uma abordagem mais poderosa para lidar com concorrência e escalabilidade.
+Algumas alternativas ao Gleam incluem outras linguagens sobre a VM do Erlang como Elixir.
 
-Ao iniciar um novo projeto em Gleam, você pode escolher entre diferentes frameworks e ferramentas para ajudá-lo nessa jornada. Alguns exemplos são o web framework Phoenix, o frameworket de teste ExUnit e a ferramenta de gerenciamento de dependências rebar3.
+Ao iniciar um novo projeto em Gleam, a estrutura de diretórios criada pelo comando `rebar3 new gleam_lib my_project` inclui vários arquivos e diretórios que são necessários para executar e testar seu código.
 
 ## Veja Também:
 
-Se você quer saber mais sobre Gleam, confira a documentação oficial [aqui](https://gleam.run/). Você também pode se juntar à comunidade ativa de Gleam no [Slack](https://gleam-run.slack.com/) para aprender e compartilhar conhecimento com outros programadores.
+1. [Tutorial de início rápido do Gleam](https://gleam.run/getting-started/)
+2. [Repositório Github do Gleam](https://github.com/gleam-lang/gleam)
+3. [Guia do usuário Rebar3](https://www.rebar3.org/docs)

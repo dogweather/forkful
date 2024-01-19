@@ -1,6 +1,6 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Python: Generando números aleatorios"
+html_title:           "Arduino: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "Python"
 category:             "Python"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-
-Generar números aleatorios es el proceso de generar valores numéricos que parecen ser aleatorios. Los programadores hacen esto para agregar variedad e imprevisibilidad a sus aplicaciones y juegos.
+## ¿Qué y Por Qué?
+La generación de números aleatorios implica producir una secuencia de números que no tienen patrón predictable. Programadores lo hacen para cosas como pruebas automatizadas, simulaciones, y juegos.
 
 ## Cómo hacerlo:
-
-Generar un número aleatorio en Python es muy sencillo. Primero, importamos el módulo `random`:
+El módulo `random` de Python provee funciones para generar números aleatorios. Aquí hay un ejemplo:
 
 ```Python
 import random
+
+# Generar un número flotante aleatorio entre 0 y 1
+num_aleatorio = random.random()
+print(num_aleatorio)
 ```
 
-Luego, podemos utilizar la función `random()` para generar un número decimal aleatorio entre 0 y 1:
+Este código imprimirá un número flotante, como `0.4356684508793945` por ejemplo.
+
+Podemos usar `randrange` para obtener un número entero dentro de un rango específico:
 
 ```Python
-num = random.random()
+# Generar un número entero aleatorio entre 1 y 10
+num_aleatorio = random.randrange(1, 11)
+print(num_aleatorio)
 ```
 
-También podemos generar un número aleatorio entero utilizando la función `randint()` y especificando el rango de valores en el que queremos que se genere el número (incluyendo el número final):
+Esto imprimirá un número entero entre 1 y 10, como `7` por ejemplo.
 
-```Python
-num = random.randint(1, 10)
-```
+## Inmersión Profunda
+La generación de números aleatorios tiene una historia fascinante en computación. Aunque los números generados por computadoras no son verdaderamente aleatorios y son más correctamente llamados "pseudoaleatorios", son suficientemente aleatorios para la mayoría de las aplicaciones.
 
-## Profundizando:
+Existen alternativas al módulo `random` de Python. Por ejemplo, `numpy.random` es una opción popular en el ámbito de la ciencia y la analítica de datos debido a su compatibilidad con los arrays de numpy.
 
-El concepto de generación de números aleatorios ha existido desde la antigüedad, pero con el avance de la tecnología, se han desarrollado algoritmos más complejos y eficientes para generar números realmente aleatorios. Algunas alternativas populares a `random` en Python incluyen `numpy.random`, que ofrece más funciones para generar números aleatorios de diferentes distribuciones.
+Los detalles de implementación detrás de la generación de números aleatorios pueden ser bastante complejos, involucrando conceptos matemáticos avanzados y algoritmos. En esencia, Python usa un algoritmo conocido como Mersenne Twister para generar números pseudoaleatorios.
 
-En cuanto a la implementación, la función `random()` en Python realmente no genera un número verdaderamente aleatorio. En su lugar, utiliza un algoritmo matemático para producir una secuencia de números que parecen aleatorios pero son en realidad predecibles. Por lo tanto, si necesitas una verdadera aleatoriedad, es mejor utilizar un generador externo de números aleatorios y no confiar en el módulo `random` de Python.
+## Más Información
+Para más detalles sobre la generación de números aleatorios en Python, visita la documentación oficial de Python:
 
-## Ver también:
-
-- Documentación oficial de Python para `random`: https://docs.python.org/es/3/library/random.html
-- Ejemplos prácticos de uso de `random`: https://realpython.com/python-random/
-- Alternativas a `random` en Python: https://stackoverflow.com/questions/1471564/whats-the-best-way-to-generate-random-strings-of-a-specific-length-in-python
+- Módulo `random`: https://docs.python.org/3/library/random.html
+- Módulo `numpy.random`: https://numpy.org/doc/1.16/reference/routines.random.html

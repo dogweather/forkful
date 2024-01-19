@@ -1,7 +1,7 @@
 ---
-title:                "문자열에서 날짜 추출하기"
-html_title:           "Java: 문자열에서 날짜 추출하기"
-simple_title:         "문자열에서 날짜 추출하기"
+title:                "문자열에서 날짜 분석하기"
+html_title:           "Gleam: 문자열에서 날짜 분석하기"
+simple_title:         "문자열에서 날짜 분석하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,22 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐고 왜 하는 거야?
-문자열에서 날짜를 분석하는 것은 프로그래머가 일반적으로 문자열 형태로 된 날짜를 컴퓨터가 이해할 수 있는 형식으로 변환하는 것을 의미합니다. 이 과정은 프로그래머가 날짜를 다루기 쉽게 만들어줍니다.
+## 무엇과 왜?
+문자열에서 날짜를 파싱하는 것은 문자 형식의 날짜를 날짜/시간 데이터 타입으로 변환하는 과정입니다. 이를 통해 프로그래머들은 적절한 포맷으로 데이터를 조작하고 계산할 수 있습니다.
 
-## 진행 방식:
-```Java
-// 문자열에서 날짜 분석 예제
-String dateStr = "2020-04-17"; // 문자열 형태의 날짜
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); // 날짜 형식 지정
-LocalDate date = LocalDate.parse(dateStr, formatter); // 문자열 날짜를 LocalDate 객체로 변환
-System.out.println(date); // 변환된 날짜 출력
+## 어떻게 하는 가:
+Java에서는 `java.time` 패키지의 `LocalDate` 클래스를 사용하여 문자열에서 날짜를 파싱할 수 있습니다. 간단한 예를 보겠습니다:
+
+```java
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Main {
+    public static void main(String[] args) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String dateInString = "2018-06-25";
+        LocalDate date = LocalDate.parse(dateInString, formatter);
+        System.out.println(date);
+    }
+}
 ```
-출력 결과: 2020-04-17
+출력 결과는 다음과 같습니다:
+```shell
+2018-06-25
+```
 
-## 더 들어가보기:
-(1) 과거의 맥락: 날짜 처리는 컴퓨터가 처음 개발되었을 때부터 중요한 과제였습니다. 날짜를 컴퓨터가 이해할 수 있는 형식으로 변환하는 것은 오랜 역사를 가지고 있습니다. (2) 대안: 자바의 더 오래된 버전에서는 SimpleDateFormat 클래스를 사용하여 문자열 날짜를 분석하는 방법이 있었지만 Java 8부터는 java.time 패키지에서 제공하는 새로운 API를 사용하는 것이 권장됩니다. (3) 구현 세부 사항: java.time 패키지의 LocalDate 클래스를 사용하여 문자열 날짜를 LocalDate 객체로 변환합니다. 가장 중요한 부분은 날짜 형식을 지정하는 DateTimeFormatter 클래스입니다.
+## 깊이 파고들기:
+날짜를 파싱하는 개념은 프로그래밍의 초기 시절부터 있었습니다. 단순한 문자열을 실제 날짜로 변환함으로써, 프로그래머는 날짜에 관련된 다양한 작업을 쉽게 수행할 수 있습니다. `java.time` 패키지의 도입으로 Java에서의 날짜 파싱이 매우 간결해졌습니다.
+이외에도, `java.text.SimpleDateFormat` 클래스를 사용하여 날짜를 파싱하는 또 다른 방법이 있습니다. 그러나 현대 Java에서는 `java.time` 패키지를 권장합니다. 이는 보다 강력하고, 유연하며, 편리한 API 제공하기 때문입니다.
+디테일을 더 들어가자면, `LocalDate.parse()` 메소드는 문자열과 패턴을 받아서 그에 따라 날짜를 파싱합니다. 이는 날짜뿐만 아니라 시간을 파싱하는 것도 가능합니다.
 
-## 참고자료:
-- [Java 8 날짜와 시간 API 문서](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [SimpleDateFormat 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+## 참고 자료:
+1. Official Oracle Documentation on LocalDate: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+2. Baeldung Guide on Parsing Date and Time: https://www.baeldung.com/java-date
+3. JournalDev Explanation on Java DateTimeFormatter: https://www.journaldev.com/17899/java-datetimeformatter

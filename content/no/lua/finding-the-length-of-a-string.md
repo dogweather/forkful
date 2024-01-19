@@ -1,7 +1,7 @@
 ---
-title:                "Finne lengden på en tekststreng"
-html_title:           "Lua: Finne lengden på en tekststreng"
-simple_title:         "Finne lengden på en tekststreng"
+title:                "Finne lengden på en streng"
+html_title:           "Arduino: Finne lengden på en streng"
+simple_title:         "Finne lengden på en streng"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,34 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## Hva & Hvorfor?
 
-Å finne lengden til en streng er en vanlig og viktig oppgave for programmere. En streng er en serie av tegn, som bokstaver og tall, som utgjør en tekst. Ved å vite lengden på en streng, kan en programmerer effektivt behandle, manipulere og analysere tekstbaserte data.
+Finne lengden på en streng i Lua betyr å telle antall tegn i den gitte strengen. Dette gjør programmerere for å håndtere databehandling, manipulering av tekst eller til og med for løkkontroll i deres kode.
 
-# Hvordan:
+## Hvordan gjøre det:
+
+Her er et par eksempler på hvordan du finner strenglengden i Lua:
 
 ```Lua
--- Eksempel på å finne lengden til en streng
-local tekst = "Hei, verden!"
-print(string.len(tekst))
+s = "Hei Verden"
+print(#s)
 ```
+Eksemplet ovenfor vil gi output `10`, som er antall tegn i strengen "Hei Verden".
 
-Dette vil gi følgende output:
+```Lua
+s = "Lua Programmering"
+print(string.len(s))
+```
+I dette eksemplet bruker vi `string.len()` funksjonen til å finne lengden på strengen "Lua Programmering", som vil gi `17` som output.
 
-`13`
+## Dykk dypere:
 
-I dette eksempelet bruker vi Lua's `string` bibliotek for å finne lengden på strengen "Hei, verden!". Ved å kalle på `len` funksjonen og gi den strengen som argument, får vi tilbake lengden til strengen.
+Historisk sett, med begrensninger i tidlig datateknologi, var lengden på strenger viktig informasjon å ha når du behandlet tekstdata. Lua, selv om det er et relativt nytt språk (første utgivelse i 1993), opprettholder denne funksjonaliteten i sin standardbibliotek.
 
-# Dypdykk:
+For alternativer, kan du også bruke `string.len()` funksjonen, som gir samme resultat som operatøren '#'. Det avhenger av programmererens stil å bestemme hvilken å bruke.
 
-Det å finne lengden til en streng er en svært enkel oppgave i dagens programmeringsspråk, men det har ikke alltid vært tilfellet. I de tidlige dagene av programmering, kunne å finne lengden av en streng være en komplisert og krevende oppgave. Men med utviklingen av mer moderne prosessorer og programvare, er det nå en rask og enkel operasjon.
+For implementeringsdetaljer, bruker Lua intern strenglagring som holder oversikt over strengens lengde som en intern verdi. Dette betyr at å hente lengden på en streng er en veldig rask operasjon - det er bare å hente en eksisterende verdi, ikke behøver å telle tegn individuelt.
 
-Det finnes også alternative måter å finne lengden til en streng på i Lua. For eksempel kan man bruke `#` operatøren, som returnerer lengden til en streng, tabell eller annen sekvens.
+## Se også:
 
-En annen viktig detalj å merke seg er at Lua returnerer lengden av en streng i antall tegn, ikke antall bytes. Dette betyr at det er viktig å vite hvilken tegnsetning som brukes, da noen tegn kan bestå av flere bytes.
+For flere detaljer om behandling av strenger i Lua, sjekk ut disse lenkene:
 
-# Se også:
-
-- [Lua 5.4 dokumentasjon](https://www.lua.org/manual/5.4/manual.html#pdf-string.len)
-- [Lua-programmeringsspråk (engelsk)](https://www.lua.org/)
-- [Lua brukerfora (engelsk)](https://lua-users.org/)
+1. Offisiell Lua 5.4 Manual: https://www.lua.org/manual/5.4/manual.html#6.4 
+2. Lua-users wiki: http://lua-users.org/wiki/StringLibraryTutorial
+3. StackOverflow: https://stackoverflow.com/questions/4465964/what-is-the-length-operator-in-lua

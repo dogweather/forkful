@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrakcja podciągów"
-html_title:           "PowerShell: Ekstrakcja podciągów"
-simple_title:         "Ekstrakcja podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
 
-Wyodrębnianie podciągów to proces wyodrębniania pewnej części tekstu lub znaków z większego ciągu znaków. Programiści często wykorzystują to narzędzie w celu przetwarzania danych w celu uzyskania konkretnych informacji lub formatowania tekstu. Jest to wygodny sposób na manipulację i kontrolę nad danymi w programowaniu.
+Wyodrębnianie podciągów (substringów) polega na uzyskiwaniu mniejszych ciągów z większego ciągu. Programiści robią to, aby manipulować tylko częścią danych, zamiast całości.
 
-## Jak?
+## Jak to zrobić:
 
-### Wyodrębnianie podciągów:
-
-```PowerShell
-$txt = "Witaj, to jest przykładowy tekst"
-$txt.Substring(7, 16)
-```
-Ten kod wykorzystuje funkcję `Substring` do wyodrębnienia tekstu o długości 16 znaków rozpoczynając od 7 znaku, co daje nam wynik "to jest przykladowy".
-
-### Formatowanie tekstu:
+W PowerShell, aby wyodrębnić podciąg, używa się metody `.substring()`. Oto przykład:
 
 ```PowerShell
-$txt = "Tekst który chcemy <strong> wytłuszczyć </strong>"
-$txt -replace "<[^>]*>", ""
+$str = "To jest łańcuch znaków"
+# Wyciągnij podciąg zaczynając od indeksu 2 długości 6
+$subStr = $str.substring(2,6) 
+echo $subStr
 ```
-W tym przykładzie wykorzystujemy funkcję `-replace` w celu usunięcia tagów HTML z tekstu. Wynik wyglądałby następująco: "Tekst który chcemy wytłuszczyć".
 
-## Głębsza analiza
+Output:
 
-Wyodrębnianie podciągów jest powszechnie używane od wielu lat, szczególnie w językach programowania. W PowerShell istnieje wiele wbudowanych funkcji, takich jak `Substring`, `Split` i `Join`, które ułatwiają manipulację tekstów. Alternatywnie, programiści mogą również używać wyrażeń regularnych do wyodrębniania podciągów.
+```PowerShell
+jest ła
+```
 
-## Zobacz również
+## Głębsza wiedza:
+* **Kontekst historyczny**: Metoda substring pojawiła się po raz pierwszy w języku programowania C, a następnie została przeniesiona do innych języków, włączając PowerShell.
+* **Alternatywy**: Inne metody manipulacji ciągami obejmują `split`, `replace` i `trim`. Wybór zależy od konkretnego zadania.
+* **Szczegóły implementacji**: Wyodrębnianie podciągów w PowerShell jest zero-based. Pierwszy indeks to 0. Jeżeli długość nie jest podana, metoda substring zwraca wszystko do końca ciągu.
 
-- [Dokumentacja Substring w PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_substrings)
-- [Poradnik wyrażeń regularnych w PowerShell](https://regex101.com/r/vHXsQu/1)
-- [Blog programistyczny PowerShell](https://powershellexplained.com/)
+## Zobacz też:
+
+* Dokumentacja Microsoft dla [`substring`](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0) w .NET 5.0.
+* Dokumentacja Microsoft dla [manipulacji ciągami](https://docs.microsoft.com/pl-pl/powershell/scripting/samples/string-manipulation?view=powershell-7.1) w PowerShell.

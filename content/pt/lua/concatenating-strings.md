@@ -1,7 +1,7 @@
 ---
-title:                "Unindo strings"
-html_title:           "Lua: Unindo strings"
-simple_title:         "Unindo strings"
+title:                "Concatenando strings"
+html_title:           "Elixir: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,36 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que & Porquê?
 
-A concatenação de strings é quando você combina duas ou mais strings em uma única string. Os programadores geralmente fazem isso para criar mensagens personalizadas ou para unir informações em um formato específico.
+Concatenar strings é o processo de juntar duas ou mais strings. Os programadores fazem isso para marcar texto, criar mensagens dinâmicas ou manipular dados.
 
 ## Como fazer:
 
+Aqui está um exemplo de como concatenar strings em Lua(versão atual):
+
 ```Lua
--- Exemplo 1: Usando o operador de concatenação ".." 
-local nome = "João"
-local sobrenome = "Silva"
-print("Olá " .. nome .. " " .. sobrenome) -- saída: Olá João Silva
-
--- Exemplo 2: Usando a função string.format()
-local preço = 25
-local produto = "livros"
-print(string.format("O preço dos %s é %d reais.", produto, preço)) -- saída: O preço dos livros é 25 reais
-
--- Exemplo 3: Usando a função table.concat()
-local frutas = {"maçã", "banana", "morango"}
-print("Eu gosto de " .. table.concat(frutas, ", ")) -- saída: Eu gosto de maçã, banana, morango
+str1 = "Olá, "
+str2 = "mundo!"
+str3 = str1 .. str2
+print(str3)
+```
+Saída:
+```
+Olá, mundo!
 ```
 
-## Mergulho Profundo:
+## Mergulho Profundo
 
-A concatenação de strings existe há muito tempo e é uma técnica amplamente utilizada em muitas linguagens de programação. Além dos métodos mencionados acima, também é possível realizar a concatenação usando a função string.concat() ou através do uso de placeholders em strings.
+A Lua suporta a concatenação de strings desde seus primeiros dias. Isso foi feito para facilitar a manipulação e formatação de strings com poucos recursos disponíveis.
 
-Embora a concatenação de strings seja uma técnica útil, é importante lembrar que ela pode tornar seu código menos eficiente, pois a criação de novas strings a partir de strings existentes pode consumir muita memória e tempo de processamento. Em algumas situações, é mais eficiente usar a função string.format() ou a função table.concat() para combinar várias strings.
+Uma alternativa à concatenação de strings em Lua seria utilizar a função de formatação `string.format()`. Exemplo:
 
-## Veja também:
+```Lua
+nome = "João"
+idade = 24
+str = string.format("O Olá, %s! Você tem %d anos.", nome, idade)
+print(str)
+```
+Saída:
+```
+Olá, João! Você tem 24 anos.
+```
 
-- [Documentação oficial do Lua sobre concatenação de strings](https://www.lua.org/manual/5.4/manual.html#6.4)
-- [Tutorial sobre manipulação de strings em Lua](https://www.tutorialspoint.com/lua/lua_strings.htm)
-- [Exemplos práticos de concatenação de strings em Lua](https://www.sitepoint.com/lua-string-manipulation-tutorial/)
+A concatenação em Lua é otimizada para garantir o desempenho. No entanto, é importante notar que criar longas cadeias de texto por concatenação contínua pode afetar a performance. É melhor usar a function `table.concat()` quando lidar com muitas strings.
+
+## Veja Também
+
+- Documentação oficial da Lua: [Lua 5.3 Reference Manual](http://www.lua.org/manual/5.3/manual.html)
+- Manipulação de string em Lua: [Tutorial do TutorialsPoint](https://www.tutorialspoint.com/lua/lua_strings.htm)
+- Guia de Lua detalhado: [Guia de Programação em Lua](https://www.lua.org/pil/1.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Ottenere la data corrente"
-html_title:           "TypeScript: Ottenere la data corrente"
+html_title:           "Java: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,35 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Cosa & Perché?
+Ottenere la data corrente significa ritirare le informazioni sulla data e l'ora esatte nel momento in cui un pezzo di codice viene eseguito. I programmatori lo fanno per vari motivi, come timestampare gli eventi, programmare gli avvisi o calcolare il tempo trascorso.
 
-Ottenere la data corrente è il processo di ricevere la data attuale nel formato specifico desiderato. I programmatori spesso utilizzano questo per scopi di programmazione come la registrazione del tempo di un evento o la gestione dei timestamp per le loro applicazioni.
-
-## Come fare:
-
-Ecco un esempio di come ottenere la data corrente in TypeScript utilizzando l'oggetto Date di JavaScript:
+## Come si fa:
+Per ottenere la data corrente in TypeScript, usiamo l'oggetto Date incorporato e il suo metodo `toISOString()`. Ecco un esempio:
 
 ```TypeScript
-let currentDate = new Date();
-console.log(currentDate); // output: Wed Aug 18 2021 17:01:52 GMT+0200 (Central European Summer Time)
+let now = new Date();
+console.log(now.toISOString()); 
 ```
 
-Possiamo anche formattare la data per visualizzarla in un formato specifico utilizzando i metodi dell'oggetto Date:
+Se esegui questo frammento di codice, otterrai un risultato simile a:
+
+```TypeScript 
+'2022-01-01T00:00:00.000Z' 
+```
+
+## Approfondimenti
+L'oggetto Date in JavaScript (e quindi in TypeScript) esiste fin dalla creazione di JavaScript. Ha subito alcune modifiche nel corso degli anni, ma l'essenza è rimasta invariata. 
+
+Ci sono metodi alternativi per ottenere la data corrente, ad esempio, potrebbe essere più appropriato per alcuni casi d'uso usare `Date.now()` che restituisce il timestamp Unix, ovvero il numero di millisecondi trascorsi dal 1 gennaio 1970.
 
 ```TypeScript
-let currentDate = new Date();
-let day = currentDate.getDate();
-let month = currentDate.getMonth() + 1;
-let year = currentDate.getFullYear();
-console.log(`${day}/${month}/${year}`); // output: 18/8/2021
+let timestamp = Date.now();
+console.log(timestamp);
 ```
 
-## Immersione profonda:
+Otterrai un risultato come questo:
 
-La necessità di ottenere la data corrente risale ai primi giorni della programmazione. Prima dell'introduzione dell'oggetto Date in JavaScript nel 1995, i programmatori dovevano utilizzare funzioni di sistema del sistema operativo per accedere alla data corrente. Oltre all'oggetto Date, uno degli strumenti più utilizzati per ottenere la data corrente è Moment.js, una libreria JavaScript popolare per la manipolazione delle date.
+```TypeScript
+1642430253421
+```
 
-Implementare la funzionalità di ottenere la data corrente in TypeScript è semplice grazie alla sua familiarità con JavaScript e alla disponibilità dell'oggetto Date. Tuttavia, è importante prestare attenzione ai fusi orari e agli aggiornamenti automatici della data per garantire una corretta gestione della data corrente all'interno dell'applicazione.
+Riguardo i dettagli di implementazione, intrinsecamente, TypeScript si basa su JavaScript. Quindi, quando usi l'oggetto Date in TypeScript, stai in realtà usando l'oggetto Date JavaScript. TypeScript esiste per fornire tipi statici e altre funzionalità utili, ma non modifica il comportamento di base di JavaScript.
 
-## Vedi anche:
+## Vedi Anche
+Se vuoi approfondire l'argomento, qui ci sono alcuni link utili:
 
-- [Documentazione ufficiale di Date in TypeScript](https://www.typescriptlang.org/docs/handbook/date-and-time.html)
-- [Moment.js](https://momentjs.com/)
+- Documentazione MDN su `Date()`: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Guida TypeScript per principianti di freeCodeCamp: https://www.freecodecamp.org/news/the-typescript-guide-for-javascript-developers/
+- La guida pratica di basarat su TypeScript: https://basarat.gitbook.io/typescript/
+  
+Ricorda, la pratica è la chiave per diventare un esperto! Buona codifica!

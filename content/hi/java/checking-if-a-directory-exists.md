@@ -1,7 +1,7 @@
 ---
-title:                "डायरेक्ट्री मौजूद है या नहीं चेक करना"
-html_title:           "Java: डायरेक्ट्री मौजूद है या नहीं चेक करना"
-simple_title:         "डायरेक्ट्री मौजूद है या नहीं चेक करना"
+title:                "डायरेक्टरी मौजूद है या नहीं, इसकी जाँच करना"
+html_title:           "Java: डायरेक्टरी मौजूद है या नहीं, इसकी जाँच करना"
+simple_title:         "डायरेक्टरी मौजूद है या नहीं, इसकी जाँच करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-क्या और क्यों?
-फोल्डर की जांच करना क्या है और प्रोग्रामर इसे क्यों करते हैं, यह हम जानते हैं कि फोल्डर उपस्थित होने के बारे में हमारे कोड को सुनिश्चित करता है और खराबियों को निवारण करता है।
+## क्या और क्यों?
 
-कैसे करें:
-फोल्डर की जांच करने के लिए, हम डायरेक्टरी क्लास के मदद से जांच कर सकते हैं कि क्या फोल्डर उपस्थित है। मनचाहे फोल्डर को बनाने या फोल्डर के नाम को परीक्षण करने के लिए, हम निम्नलिखित कोड का उपयोग कर सकते हैं:
+डायरेक्टरी मौजूद है या नहीं, इसकी जांच करने का कार्य एक आम समस्या है जिसे प्रोग्रामर्स हल करते हैं। इसे जांचना एक क्लीन और मुकाबले के योग्य कोड का एक महत्वपूर्ण तत्व है क्योंकि यह बाद में जटिलताओं और त्रुटियों से बचता है। 
 
-```Java
-File folder = new File("फोल्डर_का_नाम");
-if (folder.exists()) {
-    System.out.println("फोल्डर मौजूद है");
-} else {
-    System.out.println("फोल्डर मौजूद नहीं है");
-}
-```
+## कैसे करें:
 
-जाँच के लिए, हम अपनी कन्फ़िगरेशन रिकॉर्डर को देख सकते हैं:
+एक डायरेक्टरी मौजूद है या नहीं, इसे जांचने के लिए हम जावा में `Files` क्लास का उपयोग कर सकते हैं।
 
 ```Java
-File folder = new File("रास्टा_प्रतिरूप");
-if (folder.isDirectory()) {
-    System.out.println("इस फोल्डर के लिए रिकॉर्डर मौजूद है");
-} else {
-    System.out.println("इस फोल्डर के लिए रिकॉर्डर मौजूद नहीं है");
+import java.nio.file.*;
+
+public class CheckDirectory {
+    public static void main(String[] args) {
+        Path path = Paths.get("/path/to/directory");
+
+        if (Files.exists(path)) {
+            System.out.println("The directory exists.");
+        } else {
+            System.out.println("The directory doesn't exist.");
+        }
+    }
 }
 ```
+इस कोड का आउटपुट निम्नवत होगा:
 
-गहराई में खोदना:
-फोल्डर की जाँच करने के इतिहास, वैकल्पिक प्रणालियों और इसके प्रदर्शन विवरण के बारे में गर्मी में जगह पर हम बात करते हैं।
+```
+The directory exists.
+```
 
-सम्बंधित लेख:
-जाँच करें कि फ़ाइल या डायरेक्टरी मौजूद है या नहीं जाँचने के बारे में और जानें कि कैसे इसका उपयोग आपके कोड में करें। (https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+अगर पथ मौजूद नहीं होता, तो यह कहेगा: `"The directory doesn't exist."`
+
+## गहराई में:
+
+Java की पहली संस्करणों में, हमें इसे `java.io.File` क्लास के `exists` मेथड के माध्यम से करना पड़ता था। लेकिन, Java NIO पैकेज के आगमन के साथ, हम अब `java.nio.file.Files` क्लास का उपयोग कर सकते हैं, जो एक अधिक शक्तिशाली और लचीली उपकरण है। 
+
+इसके विकल्प के रूप में `File.exists()` का उपयोग भी किया जा सकता है, जैसा कि पहले उल्लिखित किया गया था, लेकिन `Files.exists()` का उपयोग करनादेखभाल में वीचार करने वाले प्रमुख तत्व है।
+
+## देखें भी:
+
+- [Oracle Docs: Java NIO Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- [Java Tutorials: File I/O](https://docs.oracle.com/javase/tutorial/essential/io/)
+- [StackOverflow: Checking if a file or directory exists](https://stackoverflow.com/questions/775395/whats-the-best-way-to-check-if-a-file-exists-in-scratch-java)

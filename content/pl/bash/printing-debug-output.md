@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie wyjścia debugowania"
-html_title:           "Bash: Drukowanie wyjścia debugowania"
-simple_title:         "Drukowanie wyjścia debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,30 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Wyświetlanie danych debugowania jest procesem polegającym na drukowaniu informacji związanych z działaniem programu w celu lepszego zrozumienia jego przebiegu. Programiści używają tej metody, aby zidentyfikować błędy i zobaczyć, w jaki sposób program się zachowuje.
+# Jak używać wydruku debugowania w Bashu
+
+## Co i dlaczego?
+
+Wydruk debugowania to nasz najlepszy przyjaciel przy szukaniu błędów. Pokazuje nam wartości zmiennych, pozwala sprawdzać logikę kroku po kroku.
 
 ## Jak to zrobić:
-Możesz wyświetlać dane debugowania w Bash, używając komendy "echo" lub "printf" i wpisując tekst lub zmienną, którą chcesz wyświetlić. Na przykład, jeśli chcesz zobaczyć wartość zmiennej "x", możesz użyć komendy "echo $x". Inne przydatne opcje to "set -x", które wyświetli wszystkie wykonywane komendy oraz "set -v", które wyświetli również wartości zmiennych.
 
-Przykładowy skrypt w Bash może wyglądać tak:
+W Bashu wydruk debugowania robimy tak:
 
 ```Bash
-echo "Rozpoczynam obliczenia..."
-set -x
-a=1
-b=2
-c=$((a+b))
-echo "Wynik: $c"
+#!/bin/bash
+DEBUG=true
+if $DEBUG 
+then
+    echo "Debugowanie jest włączone"
+fi
 ```
-W tej sekcji skrypt najpierw wyświetli napis "Rozpoczynam obliczenia..." a następnie przestawi wartości zmiennych "a", "b" oraz "c" używając komendy "set -x". Na końcu zostanie wyświetlony wynik obliczeń.
+Output:
+```
+Debugowanie jest włączone
+```
 
-## Wchodzenie w szczegóły:
-Technika wyświetlania danych debugowania w Bash jest popularna ze względu na jej prostotę i użyteczność. W przeszłości programiści używali trudniejszych metod, takich jak używanie specjalnych bibliotek do debugowania, jednak użycie polecenia "echo" lub "printf" jest znacznie prostsze i oszczędza czas.
+Możemy też wykorzystać funkcję do debugowania:
 
-Alternatywą dla wyświetlania danych debugowania w Bash może być użycie różnych narzędzi deweloperskich, takich jak debugger, które pozwalają krok po kroku analizować działanie programu. Jednak nie zawsze jest to możliwe lub potrzebne, dlatego wyświetlanie danych debugowania w Bash pozostaje często wybieraną metodą.
+```Bash
+#!/bin/bash
+DEBUG=true
+debug() {
+   if $DEBUG 
+   then
+      echo "Debug: $*"
+   fi
+}
 
-Jeśli chodzi o szczegóły implementacyjne, warto pamiętać o tym, że wyświetlanie danych debugowania może spowolnić działanie programu, dlatego zaleca się używanie go tylko w celach diagnostycznych i usuwania błędów.
+debug "Zmienna x ma wartość $x"
+```
+Output:
+```
+Debug: Zmienna x ma wartość 5
+```
 
-## Zobacz też:
-Jeśli chcesz poznać więcej o wyświetlaniu danych debugowania w Bash, możesz zapoznać się z dokumentacją oficjalnego manuala Bash. Możesz również znaleźć wiele ciekawych przewodników i poradników na ten temat w Internecie, które mogą pomóc Ci w lepszym zrozumieniu tej metody.
+## Głębsze spojrzenie
+
+Historia: Bash nie miał wbudowanego debugowania. Programiści znaleźli jednak triki, jak to robić.
+
+Alternatives: Możemy użyć wbudowanych skryptów debugujących, jak `set -x` albo `set -v`.
+
+Szczegóły implementacji: W Bashu używamy wydruku debugowania na różne sposoby - przez `set`, `echo`, `printf` czy zmienną środowiskową DEBUG.
+
+## Zobacz również
+
+- Debugowanie Bashu: https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
+- Skrypty debugujące: https://www.linuxjournal.com/content/debugging-bash-scripts
+- Przekierowanie wyjścia błędów: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Redirections

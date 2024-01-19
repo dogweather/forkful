@@ -1,7 +1,7 @@
 ---
-title:                "Slette tegn som matcher et mønster"
-html_title:           "TypeScript: Slette tegn som matcher et mønster"
-simple_title:         "Slette tegn som matcher et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,38 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Slett karakterer som matcher et mønster i TypeScript
+
 ## Hva & Hvorfor?
 
-Sletting av tegn som matcher et mønster er en programmeringsteknikk som innebærer å fjerne alle forekomster av et spesifisert tegnmønster fra en streng. Dette gjøres av forskjellige årsaker, for eksempel å formatere tekst eller fjerne uønskede tegn fra en streng før videre behandling.
+Sletting av karakterer som matcher et mønster er en operasjon som fjerner alle forekomster av en bestemt tegnsekvens i en streng. Dette er viktig for å manipulere og formatere data effektivt.
 
 ## Hvordan:
 
-```TypeScript
-const tekst = "Hei, hvor rart!";
-
-// For å fjerne alle utropstegn fra teksten:
-const formatertTekst = tekst.replace(/!/g, "");
-
-console.log(formatertTekst); // Output: "Hei, hvor rart"
-
-```
+Bruk `replace()`-funksjonen i TypeScript til å fjerne alle forekomster av et gitt mønster. For eksempel:
 
 ```TypeScript
-let tall = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-// For å slette alle partall fra listen:
-tall = tall.filter(tall => tall % 2 !== 0);
-
-console.log(tall); // Output: [1, 3, 5, 7, 9]
+var tekst: string = "Hei, hvordan har du det?";
+console.log(tekst.replace(/h/gi, ''));
 ```
 
-## Deep Dive:
+Output vil være: `ei, voran ar du det?`
 
-Sletting av tegn som matcher et mønster er en vanlig teknikk i mange programmeringsspråk, og det er også støttet av TypeScript. Mønsteret som skal matches kan være både et enkelt tegn eller en mer kompleks kombinasjon av tegn. Alternativene til å bruke denne teknikken inkluderer å bruke en løkke og sjekke hvert tegn i strengen individuelt, men dette kan være mer omstendelig og mindre effektivt.
+Her erstatter `replace(/h/gi, '')` alle 'h'-er i strengen med '' (ingenting), altså sletter den.
 
-Når man sletter tegn som matcher et mønster, erstattes de fjernede tegnene med tomme tegn. Dette kan gi uønskede mellomrom i teksten, som kan løses ved å bruke metoden `trim()` som fjerner mellomrom og linjeskift fra begynnelsen og slutten av en streng.
+## Dypdykk
 
-## Se også:
+Sletting av mønstermatching karakterer har sin opprinnelse i behovet for å rense og forberede data. Det gir muligheten til å fjerne unødvendige, overflødige eller feilplottede tegn.
 
-- [MDN's guide for regular expressions in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [TypeScript's official documentation on string operations](https://www.typescriptlang.org/docs/handbook/strings.html)
+Det er flere måter å utføre denne operasjonen på i tillegg til `replace()`-metoden. For eksempel, fremgangsmåter som bruker regulære uttrykk (RegExp).
+
+Vær oppmerksom på at `replace()` i TypeScript ikke endrer den opprinnelige strengen, men returnerer en ny streng.
+
+## Se også
+
+- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/no/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [TypeScript docs on Strings](https://www.typescripttutorial.net/typescript-tutorial/typescript-string/)
+- [Wikipedia - Regular Expression](https://en.wikipedia.org/wiki/Regular_expression)

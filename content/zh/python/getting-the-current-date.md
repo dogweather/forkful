@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Python: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Python"
 category:             "Python"
@@ -11,24 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 什么与为什么？
-获取当前日期是指获取当前的日期，时间和时区。这对于程序员来说非常重要，因为他们需要跟踪和记录日期和时间以进行数据分析和错误调试。
+获取当前日期为取得当前时刻的日期信息。程序员之所以要获取当前日期，主要是为了在数据分析、时间记录和定时任务等场景中使用。
 
-## 如何：
-使用Python编程语言，可以轻松地获取当前日期。以下是一个简单的代码示例来获取当前日期并将其打印输出：
+## 如何操作：
+Python提供了日期和时间操作的内置库，名为`datetime`。以下示例演示了如何使用`datetime`库获取当前日期。
 
-```python
-import datetime
-today = datetime.date.today()
-print(today)
+```Python
+from datetime import date
+
+# 获取今天的日期
+today = date.today()
+print("今天的日期是:", today)
 ```
 
-输出将是类似于"2021-01-19"的当前日期格式。
+运行上述代码，输出类似这样的结果：
+```Python
+今天的日期是: 2022-06-06
+```
 
-## 深入探讨：
-获取当前日期的方法已经存在了很长一段时间。在Python中，可以使用datetime模块来获取当前日期。如果你想要自定义日期格式，可以使用strptime()函数来解析日期字符串。此外，还有其他的Python库可以用来获取当前日期，例如calendar和arrow。
+## 深度探索：
+### 历史背景
+Python从一开始就引入了`datetime`模块，以便开发者处理日期和时间。`date.today()`函数用于获取当前的日期。
 
-## 瞧一瞧：
-想进一步了解如何获取当前日期和时间的更多方法，请参考以下链接：
-- [Python datetime模块文档](https://docs.python.org/3/library/datetime.html)
-- [Python calendar模块文档](https://docs.python.org/3/library/calendar.html)
-- [Python arrow库](https://arrow.readthedocs.io/en/stable/)
+### 可选方法
+除了使用Python内置的`datetime`模块，你还可以使用像是pandas这样的第三方库来获取当前日期，尤其在进行数据分析的时候这会特别有用。
+
+```Python
+import pandas as pd
+
+# 获取今天的日期
+today = pd.to_datetime("today").date()
+print("今天的日期是:", today)
+```
+
+### 执行细节
+在Python中获取当前日期的标准方法主要涉及`datetime`模块中的`date`类和其`today()`方法。此方法将返回一个`date`对象，包含了当前日期的年份、月份和日期。
+
+## 另请参阅：
+使用Python处理日期和时间的相关资源：
+1. Python官方文档 - datetime模块：https://docs.python.org/3/library/datetime.html
+2. Python日期和时间：https://www.w3schools.com/python/python_datetime.asp
+3. Pandas to_datetime函数文档：https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html

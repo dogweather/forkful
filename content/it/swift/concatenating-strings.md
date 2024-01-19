@@ -1,6 +1,6 @@
 ---
 title:                "Concatenazione di stringhe"
-html_title:           "Swift: Concatenazione di stringhe"
+html_title:           "Bash: Concatenazione di stringhe"
 simple_title:         "Concatenazione di stringhe"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,26 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
-Concatenare le stringhe in Swift significa unire due o più stringhe insieme per formare una nuova stringa più lunga. I programmatori spesso eseguono questa operazione per creare messaggi personalizzati, creare nomi univoci o semplicemente per modificare il contenuto di una stringa esistente.
+## Che Cos'è & Perché?
+
+La concatenazione delle stringhe è l'operazione di unire due o più stringhe in una sola. I programmatori la usano per creare output più dinamico e personalizzato.
 
 ## Come fare:
-Il modo più semplice per concatenare le stringhe in Swift è utilizzando l'operatore "+". Esempio:
+
+La concatenazione delle stringhe in Swift è piuttosto semplice. Puoi usare l'operatore `+` o il metodo `append(_:)`. Ecco alcuni esempi:
 
 ```Swift
+var saluto = "Ciao, "
 let nome = "Marco"
-let cognome = "Rossi"
-let nomeCompleto = nome + " " + cognome
-print(nomeCompleto)
+saluto += nome  // "Ciao, Marco"
+```
+È possibile anche usare l'interpolazione delle stringhe:
+```Swift
+let cibo = "pizza"
+let messaggio = "Adoro la \(cibo)"  // "Adoro la pizza"
 ```
 
-Output:
-```
-Marco Rossi
-```
+## Approfondimento
 
-## Approfondimento:
-L'operatore "+" è stato introdotto nella prima versione di Swift, ed è l'opzione più comune per concatenare le stringhe. Tuttavia, esistono anche altri metodi, come l'utilizzo del metodo .appending(). Inoltre, è possibile concatenare anche stringhe con valori di altri tipi di dati, utilizzando il metodo .map().
+Historicamente, Swift ha migliorato moltissimo la manipolazione delle stringhe rispetto a linguaggi come C e Objective-C. La concatenazione delle stringhe è efficiente ed è in genere preferibile rispetto all'uso di array di stringhe seguito da `join()`, a meno che non si abbiano moltissime stringhe.
 
-## Vedi anche:
-Per ulteriori informazioni su come gestire le stringhe in Swift, puoi consultare la documentazione ufficiale di Apple su [String and Character](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html).
+Esistono alternative alla concatenazione di stringhe, come l'uso di array di stringhe o l'interpolazione di stringhe. Tali alternative possono essere più efficaci in certi contesti, come quando si hanno molte stringhe piccole da unire.
+
+L'implementazione della concatenazione delle stringhe in Swift garantisce che l'operatore `+` e il metodo `append(_:)` funzionino in tempo lineare, il che significa che il tempo richiesto per eseguire l'operazione scala linearmente con la lunghezza delle stringhe. 
+
+## Approfondisci
+
+Per maggiori informazioni e dettagli su come usare le stringhe in Swift, consulta la [guida ufficiale di Swift sulle Stringhe e Caratteri](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html). 
+
+Se sei interessato a capire meglio le prestazioni delle stringhe in Swift, [questo post di Mike Ash](https://www.mikeash.com/pyblog/friday-qa-2015-11-06-why-is-swifts-string-api-so-hard.html) è un ottimo punto di partenza.

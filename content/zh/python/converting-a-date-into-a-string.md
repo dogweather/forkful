@@ -1,6 +1,6 @@
 ---
 title:                "将日期转换为字符串"
-html_title:           "Python: 将日期转换为字符串"
+html_title:           "Bash: 将日期转换为字符串"
 simple_title:         "将日期转换为字符串"
 programming_language: "Python"
 category:             "Python"
@@ -10,32 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是日期转换为字符串？为什么程序员要这样做？
+## 什么与为什么？
+将日期转换为字符串是将日期对象转换为易于理解和读取的格式的操作。此操作在存储日期，将其作为参数传递，或将其显示给用户时极为重要。
 
-日期转换为字符串是将日期数据以特定格式的文本形式呈现出来的过程。程序员通常会将日期转换为字符串是为了方便存储和处理日期数据，比如在数据库或者文件中。
+## 如何：
+Python 中有很多方法可以完成这项任务，但是今天我们将关注 `strftime` 方法。让我们看一些示例。
 
-## 如何进行日期转换为字符串？
+在 Python 中将 date object 转换为字符串：
 
-```Python
-# 导入datetime模块
-import datetime
+```python
+from datetime import date
 
-# 定义一个日期对象
-date = datetime.date(2020, 8, 18)
+d = date.today()
+d_str = d.strftime("%Y-%m-%d")
 
-# 使用strftime()方法将日期转换为字符串，参数为日期格式
-string_date = date.strftime('%Y年%m月%d日')
-
-print(string_date) # 输出：2020年08月18日
+print(d_str)
 ```
 
-## 深入了解日期转换为字符串
+示例输出：
 
-1. 历史背景：在早期的计算机系统中，日期数据并不是以文本形式存在的，需要通过特定的编码方式来表示。随着计算机技术的发展，日期转换为字符串成为一种常用的处理方式。
-2. 其他选择：除了使用strftime()方法，程序员也可以使用其他工具来进行日期转换，比如Python中的datetime模块中的其他方法，或者第三方库。
-3. 实现细节：在进行日期转换为字符串时，需要指定日期的格式，比如年、月、日的顺序，以及使用数字还是文字表示月份等。
+```python
+'2022-03-20'
+```
 
-## 相关资源
+在这个例子中，`strftime` 方法返回一个表示日期的字符串。"%Y-%m-%d"是我们想要的日期格式，其中%Y，%m和%d分别代表年，月和日。
 
-- [Python官方文档-日期和时间](https://docs.python.org/zh-cn/3/library/datetime.html)
-- [日期格式化符号含义](https://strftime.org/)
+## 深度挖掘：
+历史来看，`strftime` 方法的“strf”部分是“string format”的缩略语。这个方法最初是为了解决C语言中日期和时间格式化的问题而引入，Python也借用了这个方案。
+
+另一个即使 `isoformat` 方法，它返回一个符合 ISO 8601 标准的日期字符串，大致相同，但结构不同。
+
+```python
+from datetime import date
+
+d = date.today()
+d_iso = d.isoformat()
+
+print(d_iso)
+```
+示例输出：
+```python
+'2022-03-20'
+```
+
+这两种方法的实现都依赖于 C 库中的 `strftime` 函数，所以实际上，当你在 Python 中使用这些方法时，你在背后调用 C 代码。
+
+## 另请参见：
+1. Python strftime：https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior
+2. ISO 8601 标准：https://www.iso.org/iso-8601-date-and-time-format.html
+3. C 库中的 strftime：http://www.cplusplus.com/reference/ctime/strftime/

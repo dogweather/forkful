@@ -1,6 +1,6 @@
 ---
 title:                "Comparando duas datas"
-html_title:           "Fish Shell: Comparando duas datas"
+html_title:           "C#: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,34 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que é e por que comparar duas datas?
-Comparar duas datas é uma tarefa comum para programadores, pois permite verificar a equivalência ou diferença entre duas datas. Isso é especialmente útil quando se trabalha com dados temporais, como registros de eventos ou vencimento de prazos.
+## O Que & Porquê?
 
-Como fazer:
-Existem diferentes maneiras de comparar duas datas no Fish Shell. Uma opção é usar o comando ```date``` para obter a data atual e, em seguida, compará-la com a data desejada. Por exemplo:
+Comparar duas datas é um meio de determinar a diferença entre essas datas em termos de dias, meses, anos, etc. Programadores costumam fazer isso para lidar com prazos, eventos agendados ou para determinar a duração de certos processos.
 
+## Como Fazer:
+
+No Fish Shell, você pode usar o comando date incorporado com o operador de teste para comparar. Aqui estão os passos:
+
+Primeiro, converta as datas para um formato comparável, como o formato Unix de marca de tempo (segundos desde 1 de janeiro de 1970).
+
+```Fish Shell
+set date1 (date -d "2020-01-01" +%s)
+set date2 (date -d "2020-02-01" +%s)
 ```
-set data_atual (date +%s) # Obtém a data atual em segundos desde 1970
-set data_comparada 1613686800 # Define a data que queremos comparar em segundos desde 1970 
-if test $data_atual -gt $data_comparada # Compara as datas utilizando a opção '-gt' (maior que)
-    echo "A data atual é posterior à data comparada"
+
+Então, use o operador de teste para comparar as datas:
+
+```Fish Shell
+if test $date1 -gt $date2
+    echo "date1 é posterior"
+else if test $date1 -eq $date2
+    echo "As datas são iguais"
+else
+    echo "date2 é posterior"
 end
 ```
 
-Outra opção é usar o módulo ```date``` do Fish Shell, que possui funções específicas para comparação de datas. Por exemplo:
+A saída seria "date2 é posterior".
 
-```
-set data_atual (date +%D) # Obtém a data atual no formato DD/MM/YY 
-set data_comparada 18/02/21 # Define a data que queremos comparar 
-if date -f %D -d "$data_atual" > date -f %D -d "$data_comparada" # Compara as datas utilizando a função '-f' (formato) e '-d' (data)
-    echo "A data atual é posterior à data comparada"
-end
-```
+## Aprofundamento:
 
-Mergulho profundo:
-Comparar datas pode ser uma tarefa complexa, pois é necessário levar em consideração formatos diferentes, fusos horários, entre outros aspectos. Além das opções mencionadas acima, também é possível utilizar ferramentas externas, como o utilitário ```dateutils```, que permite realizar operações com datas no Fish Shell.
+Historicamente, a comparação de datas tem sido um pilar fundamental do gerenciamento de tempo em programação. Nas versões anteriores do Fish Shell, essa tarefa não era tão simples, precisando de contorções com strftime e outros comandos awk. 
 
-Veja também:
-- Documentação oficial do comando ```date```: https://fishshell.com/docs/current/cmds/date.html
-- Documentação do módulo ```date```: https://fishshell.com/docs/current/cmds/date.html#date
-- Utilitário dateutils: https://github.com/hroptatyr/dateutils
+Quanto às alternativas, em outros shells como Bash ou Zsh, você pode usar o comando 'date' de forma semelhante para comparar duas datas. Em linguagens de alto nível como Python ou JavaScript, existem bibliotecas ricas como datetime e moment.js.
+
+Um detalhe de implementação importante no Fish é que as datas são convertidas em formato Unix (segundos desde 1970) usando date -d. Este comportamento pode variar dependendo do sistema operacional e da versão do comando date. Portanto, é sempre recomendado testar a lógica de comparação de datas no ambiente alvo.
+
+## Veja Também:
+
+1. Documentação oficial do Fish Shell: https://fishshell.com/docs/current/index.html
+2. Guia de Manipulação de Data e Hora no Unix: https://www.cyberciti.biz/faq/unix-linux-bsd-appleosx-bash-get-time/
+3. Comparação de datas no Bash: https://www.shellhacks.com/bash-date-difference/
+4. Bibliotecas de Manipulação de Data e Hora: 
+   - Python: https://docs.python.org/3/library/datetime.html
+   - JavaScript: https://momentjs.com/

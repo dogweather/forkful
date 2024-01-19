@@ -1,6 +1,6 @@
 ---
 title:                "正規表現の使用"
-html_title:           "Fish Shell: 正規表現の使用"
+html_title:           "Bash: 正規表現の使用"
 simple_title:         "正規表現の使用"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに？なんで？
-正規表現を使用することは、文字列のパターンをマッチングするプロセスを指します。プログラマーは、データの抽出や検索、置換などの作業をより高速かつ効率的に行うために正規表現を使用します。
+## 何となぜ？
 
-## 使い方：
-```Fish Shell```コードブロック内でコーディングの例とサンプル出力を示します。
+正規表現とは、文字列内の特定のパターンを探したり置換したりするためのパワフルなツールです。これはプログラマーがさまざまなタスクを迅速に達成するのに役立ちます。
 
-```fish
-# パターンにマッチするテキストを抽出する
-set text "こんにちは、私はJamesです。"
-echo $text | grep -o 'James'
-```
-出力：
-```
-James
+## 使い方:
+
+Fish shellで正規表現を使用する基本的な例を示します。grepコマンドを使用して、指定したパターンを含む行を持つファイルを探すことができます。
+
+```Fish Shell
+> echo "Hello, programmer!" > test.txt
+> grep "programmer" test.txt
+Hello, programmer!
 ```
 
-```fish
-# 文字列を置換する
-set text "私はプログラマーです。"
-echo $text | sed -e 's/プログラマー/デザイナー/'
-```
-出力：
-```
-私はデザイナーです。
-```
+この例では、"programmer"というパターンをtest.txtファイル内で探しています。
 
-```fish
-# パターンが存在するかを確認する
-set text "私のメールアドレスはtest@gmail.comです。"
-if string match --regex ".*@gmail\.com" $text
-    echo "メールアドレスが存在します。"
-end
-```
-出力：
-```
-メールアドレスが存在します。
-```
+## 深掘り
 
-## ディープダイブ：
-正規表現は、1960年代に開発された形式言語であり、データ処理に使用されてきました。他の代替手段としては、文字列のマッチングや置換に使用できるQuake Regular Expressionや、Perl Compatible Regular Expression (PCRE)などがあります。Fish Shellでは、主にPOSIXの基本正規表現をサポートしています。
+1. **歴史的なコンテクスト**：正規表現は1950年代に数学者スティーブン・クリーニーによって考案されました。コンピュータサイエンスの重要な要素となりました。
 
-## 関連リンク：
-- 魚シェルガイド正規表現のセクション：https://fishshell.com/docs/current/index.html#regexp
-- 魚シェルガイド文字列置換のセクション：https://fishshell.com/docs/current/index.html#string-replace
-- 魚シェルガイド文章の一致のセクション：https://fishshell.com/docs/current/index.html#string-match
+2. **代替手段**：正規表現なしでパターンマッチングを行う方法も存在しますが、正規表現を使うと効率的にパターンマッチングを行うことができます。
+
+3. **実装の詳細**：Fish shellの正規表現はPOSIX正規表現を使用します。これは、標準化された正規表現の一種であり、他の多くのツールでも使用されています。
+
+## 参考情報
+
+1. [Fish Shellの公式ドキュメンテーション](https://fishshell.com/docs/current/index.html)
+2. [正規表現の詳細](https://www.regular-expressions.info/)
+3. [POSIX正規表現](https://www.gnu.org/software/grep/manual/html_node/POSIX_002dBasic-Regular-Expressions.html)

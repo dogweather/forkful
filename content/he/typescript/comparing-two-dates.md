@@ -1,7 +1,7 @@
 ---
-title:                "השוואת שתי תאריכים"
-html_title:           "TypeScript: השוואת שתי תאריכים"
-simple_title:         "השוואת שתי תאריכים"
+title:                "השוואה בין שני תאריכים"
+html_title:           "Arduino: השוואה בין שני תאריכים"
+simple_title:         "השוואה בין שני תאריכים"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# דייטים בטייפסקריפט: כיצד להשוות שני תאריכים
+
 ## מה ולמה?
-השוואת שתי תאריכים היא תהליך בו משווה מאפיינים של שני תאריכים כדי לקבוע אם הם זהים או אם אחד קודם לאחד. תהליך זה חשוב למתכנתים כי זה מאפשר להם לבנות אלגוריתמים ותנאים מבוססי תאריכים בקוד שלהם.
+השוואת תאריכים היא פעולה שמאפשרת לנו לראות איזה משני תאריכים הוא המוקדם יותר או המאוחר יותר. זה תוך שמירה על מעין "קרונולוגיה" של האירועים.
 
-## איך לעשות:
-נוכל לעשות זאת באמצעות השוואת התאריכים לפי תאריך מסוים, תאריך ושעה או בעזרת פעולות חשבון מתאימות. לדוגמה:
-
+## כיצד:
+הנה דרך פשוטה להשוות שני תאריכים בטייפסקריפט.
 ```TypeScript
-const date1: Date = new Date(2021, 9, 25);
-const date2: Date = new Date(2021, 8, 10);
+let date1 = new Date(2021, 11, 24);
+let date2 = new Date(2022, 11, 24);
 
-// השווה את היום והחודש של date1 ל-date2
-date1.getMonth() === date2.getMonth(); // יוצא תוצאה false
-date1.getDate() === date2.getDate(); // יוצא תוצאה true
-
-// השווה את התאריך המלא של date1 ל-date2
-date1.getTime() === date2.getTime(); // יוצא תוצאה false
+if(date1 > date2) {
+    console.log("date1 is later than date2");
+} else if(date1 < date2) {
+    console.log("date1 is earlier than date2");
+} else {
+    console.log("Both dates are same");
+}
 ```
+<div dir="rtl">
+במידה ו-date1 מאוחר יותר מdate2 הפלט יהיה: "date1 is later than date2". אם date1 מוקדם יותר מdate2 ,הפלט יהיה: "date1 is earlier than date2". כאשר שני התאריכים שווים הפלט יהיה: "Both dates are same".
 
-## נחקר בעומק:
-כבר מתחילת התכנות, השוואת שתי תאריכים הייתה תמיד כלי חשוב בבניית תנאים ואלגוריתמים. בעבר, מתכנתים יצרו פונקציות מותאמות אישית לשוואת תאריכים, אך היום היא נתמכת ישירות על ידי פעולות מתאימות בשפות תכנות כמו TypeScript.
+</div>
 
-קיימות גם תוכנות חיצוניות שיכולות לעזור בשוואת תאריכים, כמו תוכנה המאפשרת להציג תאריכים ביחס לכל הציר הזמן.
+## השקיעה מעמיקה:
+<div dir="rtl">
+השוואת תאריכים היא מרכיב חיוני בתכנות המאפשרת לנו לבצע מגוון פעולות, כמו למשל לסדר אירועים לפי התרחשותם או לחשב מרווחי זמן. למעשה, מאז ימי פורטרן (שם של שפת תכנות עתיקה) אנשים השווו תאריכים. 
+HTML5 ספק דרך חדשה וחכמה יותר לעבוד עם תאריכים דרך סוג ה-input שלו, נותן לנו את הכוח לעבוד עם שני טיפים של תאריכים, date ו-time, המאפשרת לנו להשוות תאריכים ולהדפיס אותם בפורמטים שונים ולא רק כ-strings.
 
-ישנן מספר תחבירים אפשריים לפעולת השוואה, כגון מונחי "קוד ירוק" או "קוד אדום" לציון שתי תאריכים שהם, בהתאמה, זהים או שונים. כמו כן, קיימות גם ממשקי משתמש (API) וספריות חיצוניות הממשפיעות על פעולת השוואה התאריכים ומספקות יישומונים נוספים.
-
-##ראו גם:
-- [תיעוד רשמי של TypeScript על פעולות השוואה של תאריכים](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#partial-support-for-operators-on-tuples-and-classes)
-- [תקן ISO עבור שפת תאריכים וזמנים](https://www.iso.org/iso-8601-date-and-time-format.html)
+</div>
+## ראו גם:
+- [נושא תאריכים בטייפסקריפט](https://developer.mozilla.org/he/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [תאריכים וזמנים ב JavaScript](https://learn.javascript.info/date)
+- [הדרך הנכונה להשוות שניים תאריכים ב JavaScript](https://stackoverflow.com/questions/492994/compare-two-dates-with-javascript)

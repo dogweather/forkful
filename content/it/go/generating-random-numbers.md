@@ -1,6 +1,6 @@
 ---
 title:                "Generazione di numeri casuali"
-html_title:           "Go: Generazione di numeri casuali"
+html_title:           "Arduino: Generazione di numeri casuali"
 simple_title:         "Generazione di numeri casuali"
 programming_language: "Go"
 category:             "Go"
@@ -10,12 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
- Generare numeri casuali è un'attività comune per i programmatori, che consiste nel produrre numeri casuali all'interno di un determinato intervallo. Questo viene spesso utilizzato per scopi di test, simulazione o generazione di dati casuali per applicazioni come i giochi.
- 
- 
-## How to:
-Il linguaggio di programmazione Go fornisce una funzione incorporata per generare numeri casuali, chiamata ```rand.Intn(n)```. Questa funzione restituisce un numero intero casuale compreso tra 0 e n. Di seguito un esempio di codice: 
+## Che Cos'è & Perché?
+
+Generare numeri casuali è l'atto di produrre numeri in modo imprevedibile. I programmatori lo fanno per simulare eventi reali, per esempio, per giochi di sorteggio o criptografia.
+
+## Come si fa:
+
+Proporremo il codice di generazione di un numero casuale tra 0 e 100.
 
 ```Go
 package main
@@ -27,24 +28,22 @@ import (
 )
 
 func main() {
-	//genera un numero casuale tra 0 e 100 e lo salva nella variabile "numero"
-	numero := rand.Intn(100)
-	fmt.Println("Il numero casuale è:", numero)
+	rand.Seed(time.Now().UnixNano())
+	fmt.Println(rand.Intn(100))
 }
 ```
+Dopo l'esecuzione, produrrà un numero casuale tra 0 e 100 come output, ad esempio, "42".
 
-Esempio di output:
+## Approfondimento
 
-```
-Il numero casuale è: 73
-```
+Storicamente, la generazione di numeri casuali era un problema matematico e filosofico prima che i computer esistessero. Dopodiché è diventato un problema di hardware e software.
 
-## Deep Dive:
-La generazione di numeri casuali è un concetto importante nella programmazione e ha una lunga storia. Nel passato, venivano utilizzati diversi algoritmi per generare numeri casuali, spesso basati su calcoli matematici complessi o addirittura su parametri fisici esterni, come il rumore ambientale. Oggi, la maggior parte dei linguaggi di programmazione, incluso Go, offre funzioni semplici e affidabili per generare numeri casuali.
+Se si necessita un numero casuale che non cambi ogni volta che si esegue il programma, si può usare `rand.Seed(1)`.
 
-Esistono anche alternative alla funzione ```rand.Intn(n)```. Ad esempio, è possibile utilizzare ```rand.Float64()``` per generare numeri casuali decimali tra 0 e 1. Inoltre, il pacchetto rand di Go fornisce anche funzioni per la generazione di numeri casuali di altri tipi, come interi a 64 bit o numeri booleani.
+In Go, si usa `rand.Seed(time.Now().UnixNano())` per generare numeri casuali. Questo metodo usa il tempo corrente in nanosecondi dall'epoch come seme per il generatore di numeri pseudo-casuali.
 
-La generazione di numeri casuali in Go utilizza un algoritmo chiamato "linear congruential generator". Questo metodo è abbastanza veloce e produce una buona distribuzione di numeri casuali, ma potrebbe non essere adatto per applicazioni che richiedono un alto grado di casualità, come la crittografia. In questi casi, è consigliabile utilizzare funzioni più complesse e sicure per la generazione di numeri casuali.
+## Vedi Anche
 
-## See Also:
-Per ulteriori informazioni sulla generazione di numeri casuali in Go, è possibile consultare la documentazione ufficiale del linguaggio su [golang.org](https://golang.org/pkg/math/rand/). Inoltre, ci sono numerose risorse online che approfondiscono il concetto di numeri casuali e come implementarli in altri linguaggi di programmazione.
+- Documentazione ufficiale della funzione `rand` Go: https://golang.org/pkg/math/rand/
+- Maggiori informazioni sulla generazione di numeri casuali: https://it.wikipedia.org/wiki/Numero_casuale
+- Generare numeri casuali in altri linguaggi di programmazione: https://www.w3schools.com/python/ref_random_randint.asp (Python), https://www.javatpoint.com/java-math-random-method-example (Java)

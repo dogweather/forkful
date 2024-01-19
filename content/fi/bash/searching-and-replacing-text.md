@@ -1,6 +1,6 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Bash: Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,19 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Hakeminen ja korvaaminen on prosessi, jossa ohjelmoijat korvaavat yhden merkkijonon toisella. Tämä on hyödyllistä silloin, kun halutaan tehdä laajoja muutoksia tekstin sisällössä, tai korvata useita esiintymiä samalla kertaa. Hakeminen ja korvaaminen ovat tärkeitä työkaluja ohjelmoijille, jotka haluavat nopeuttaa työskentelyä ja vähentää inhimillisiä virheitä.
+## Mikä & Miksi?
 
-## Kuinka tehdä?
-Hakeminen ja korvaaminen voidaan tehdä Bashilla helposti käyttämällä "sed" komentoa. Seuraavassa esimerkissä korvaamme kaikki esiintymät sanalla "kissa" sanalla "koira" tiedostossa nimeltä "teksti.txt":
+Tekstin etsintä ja sen korvaaminen tarkoittaa esiintymien löytämistä merkkijonoista ja niiden korvaamista toisella merkkijonolla. Ohjelmoijat tekevät tämän tyypillisesti datan muokkaamiseksi tai virheiden korjaamiseksi.
+
+## Näin se tehdään:
+
+Seuraavassa näet miten voit etsiä ja korvata tekstiä käyttäen `sed` työkalua Bashissa.
 
 ```Bash
-sed -i 's/kissa/koira/g' teksti.txt
+$ echo "Moi Maailma" | sed 's/Maailma/World/'
+Moi World
 ```
-Tämä komento korvaa kaikki "kissa" sanat "koira" sanoilla teksti.txt -tiedostossa ja tallentaa muutokset tiedostoon.
 
-## Syväsukellus
-Hakeminen ja korvaaminen ovat olleet käytössä jo 1970-luvulta lähtien ja ne ovat yksi Bashin tärkeimmistä työkaluista. Nykyään on olemassa myös muita keinoja suorittaa vastaavia operaatioita, kuten tekstieditorit ja tietokoneohjelmistot, mutta Bashin sed-komento pysyy yksinkertaisimpana ja nopeimpana vaihtoehtona.
+Tässä esimerkissä `sed` etsii sanaa 'Maailma' ja korvaa sen sanalla 'World'.
 
-## Katso myös
-Voit lukea lisää Bashista ja sen käyttötavoista Bostwick F. ja Jones J.:n kirjasta "Bash Guide for Beginners". Voit myös tarkistaa Bash-komentorivin Latex Dottorin nettisivuilta, jossa on kattava opas Bashin käytöstä.
+## Syvällisemmin:
+
+Etsintä ja korvaus on ollut osa UNIX-järjestelmiä vuosikymmenien ajan ja `sed` on vain yksi monista Unix-pohjaisista työkaluista, jotka tarjoavat tämän toiminnallisuuden. On olemassa monia muitakin työkaluja, kuten AWK ja Perl, mutta `sed` on usein suosittu sen yksinkertaisuuden vuoksi.
+
+Vaikka Bash itse ei tarjoa suoraa tavalla etsiä ja korvata tekstiä, se tarjoaa kuitenkin mahdollisuuden hyödyntää näitä ulkoisia työkaluja tehdäkseen niin. Käyttäen näitä työkaluja, Bash-ohjelmoijat voivat muokata tiedostoja ja datavirtoja yksinkertaisilla ja tehokkailla tavoilla.
+
+## Katso myös:
+
+Jotta voisit oppia lisää, kannattaa tutustua seuraaviin lähteisiin:
+- [GNU Sed - Manual](https://www.gnu.org/software/sed/manual/sed.html)
+- [Using Bash's 'string operations' for substrings](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
+- [AWK - A Tutorial by Example](https://www.grymoire.com/Unix/Awk.html)
+- [Perl - Mother of Regex](https://www.perl.org/)

@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikoinnin käyttö http-pyynnössä"
-html_title:           "Haskell: Perusautentikoinnin käyttö http-pyynnössä"
-simple_title:         "Perusautentikoinnin käyttö http-pyynnössä"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## Mikä & Miksi?
 
-HTTP-pyyntöjen lähettäminen perusautentikoinnilla tarkoittaa yksinkertaisuudessaan HTTP-käytännön käyttämistä salasanan lähettämiseen pyynnölle. Tämä on tärkeää esimerkiksi, kun käytetään API-rajapintoja, jotta voidaan osoittaa pääsyoikeus palveluntarjoajan tarjoamiin tietoihin.
+HTTP-pyyntöjen lähettäminen perusautentikoinnilla on tapa kommunikoida verkkopalvelimien kanssa, antaen ne meille tietoa tai hallinnoiden niitä. Se on perusedellytys useimmille web-ohjelmistoille ja -sovelluksille.
 
-# Kuinka:
+## Kuinka:
 
-Esimerkiksi, jos haluat lähettää GET-pyynnön, joka sisältää käyttäjätunnuksen ja salasanan, voit tehdä sen seuraavasti:
+Voit lähettää HTTP-pyynnön käyttäen perusautentikointia Haskellissa Wreq-kirjaston avulla. Tässä on pieni esimerkki:
 
 ```Haskell
-import Network.HTTP
-import Network.HTTP.Headers
+import Network.Wreq
 
--- Luodaan HTTP-pyynnön otsikko, jossa käyttäjätunnus ja salasana base64-koodataan.
-authHeader = mkHeader HdrAuthorization ("Basic " ++ (encodeString "käyttäjätunnus:salasana"))
+opts = defaults & auth ?~ basicAuth (toS "username") (toS "password")
 
--- Luodaan GET-pyyntö ja lisätään luotu otsikko.
-request = getRequest "http://esimerkki.com/api/data"
-withAuthority request authHeader
+main = do
+  r <- getWith opts "http://example.com"
+  print r
+  ```
+Tämä ohjelma asettaa HTTP-pyynnön perusautentikoinnin ja huhuilee sen `http://example.com` -sivustoon. Tulos tulostetaan konsoliin.
 
--- Lähetetään pyyntö ja tulostetaan vastauksen koodi ja sisältö.
-response = simpleHTTP request
-print $ rspCode response
-print $ rspBody response
-```
+## Syvällisempi tutkimus:
 
-Tämä koodi lähettää GET-pyynnön osoitteeseen "http://esimerkki.com/api/data", jossa käyttäjätunnus on "käyttäjätunnus" ja salasana on "salasana". Huomaa, että tässä käytetään vain Network.HTTP-moduulin toimintoja, joten se toimii myös Windowsilla.
+Perusautentikointi määriteltiin ensimmäisen kerran HTTP/1.0 -standardissa ja se on ollut olennainen osa HTTP-protokollaa siitä lähtien. Muista, että perusautentikointi lähettää tunnukset Base64-koodattuna, mikä ei ole turvallista.
 
-# Syväsukellus
+Haskell-ohjelmoijana voit myös harkita muita autentikointimenetelmiä. Esimerkiksi Bearer-token-autentikointi, OAuth tai digest-autentikointi, jotka tarjoavat paremman turvallisuuden.
 
-Perusautentikointi on yksi vanhimmista ja yksinkertaisimmista tavoista suojata HTTP-pyyntöjä ja -vastauksia. Siinä käyttäjätunnus ja salasana base64-koodataan ja lähetetään Pohja-autentikointi HTTP-pyyntöjen kautta. Tämä autentikointimuoto ei kuitenkaan ole erityisen turvallinen, sillä käyttäjätunnuksen ja salasanan base64-koodi voidaan helposti purkaa takaisin selkokieliseen muotoon. Siksi sen käyttöä ei suositella, jos tiedonsuoja on ensisijaisen tärkeää.
+Tässä esimerkissä käytämme Wreq-kirjastoa, mutta Haskellin HTTP-klientti -kirjastoa voidaan myös käyttää. Kirjastosta riippumatta HTTP-pyynnön lähettäminen perusautentikoinnilla noudattaa suurelta osin samoja askeleita.
 
-On myös olemassa muita tapoja lähettää pyyntöjä perusautentikoinnilla, kuten käyttäjätunnuksen ja salasanan lisääminen URL-osoitteeseen tai käyttämällä pyyntöä palvelun tarjoaman kirjautumissivun kautta.
+## Katso myös:
 
-HTTP-pyyntöjen lähettämiseen perusautentikoinnilla on olemassa useita tapoja Haskellissa, kuten myös muissa ohjelmointikielissä. Ne vaihtelevat käyttöliittymiltään ja ominaisuuksiltaan, mutta perusperiaatteet pysyvät samoina.
-
-# Katso myös:
-
-- Network.HTTP-moduulin dokumentaatio: https://hackage.haskell.org/package/HTTP/docs/Network-HTTP.html
-- Perusautentikoinnin käyttöoikeus HTTP:llä: https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication
+1. [Wreq-kirjaston dokumentaatio](https://hackage.haskell.org/package/wreq) 
+2. [HTTP-klientti -kirjaston dokumentaatio](http://hackage.haskell.org/package/http-client)
+3. [HTTP-Autentikointi: Perus- ja Digest -tunnistusmenetelmät - dokumentaatio](https://tools.ietf.org/html/rfc2617)
+4. [OAuth 2.0 protokolla](https://tools.ietf.org/html/rfc6749)

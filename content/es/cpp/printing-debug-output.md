@@ -1,7 +1,7 @@
 ---
-title:                "Impresión de salida de depuración"
-html_title:           "C++: Impresión de salida de depuración"
-simple_title:         "Impresión de salida de depuración"
+title:                "Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,54 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué lo hacen los programadores?
+## ¿Qué y por qué?
 
-Imprimir mensajes de depuración (o debug output) es una técnica utilizada por los programadores para verificar el funcionamiento de su código y encontrar posibles errores. Este tipo de mensajes se escriben en la consola o en un archivo de registro y proporcionan información importante sobre el estado del programa durante su ejecución.
-
-Los programadores utilizan mensajes de depuración para facilitar la tarea de identificar y solucionar problemas en sus programas. Al imprimir mensajes en puntos específicos del código, pueden ver qué variables están almacenando, qué condiciones se están evaluando y dónde puede estar ocurriendo un error. Esto ayuda a ahorrar tiempo y esfuerzo en el proceso de depuración.
+La impresión de depuración es una herramienta esencial para los programadores para entender cómo las distintas partes de su código trabajan juntas en tiempo real. Los programadores la usan para detectar y resolver problemas de forma rápida y sistemática.
 
 ## Cómo hacerlo:
 
-```
+Aquí hay un ejemplo simple de cómo imprimir el contenido de una variable en tu consola en C++.
+```C++
 #include <iostream>
-
+ 
 int main() {
-    int x = 5;
-    std::cout << "El valor de x es: " << x << std::endl; // mensaje de depuración
+    int numero = 15;
+    std::cout << "El número es: " << numero << std::endl;
     return 0;
 }
-
-/* Output:
-El valor de x es: 5
-*/
+```
+En este caso, el contenido se imprimirá en tu consola de la siguiente manera.
+```C++
+El número es: 15
 ```
 
-El ejemplo anterior muestra cómo imprimir un mensaje de depuración en C++. Primero se incluye la biblioteca iostream, que proporciona funcionalidades de entrada y salida. Luego, se utiliza la función `cout` para imprimir el mensaje en la consola y se utiliza `endl` para añadir un salto de línea al final del mensaje.
+## Profundización:
 
-Otra opción común es utilizar la macro `assert` para imprimir mensajes de depuración en caso de que se produzca un error en una determinada sección de código. Esta macro toma como argumentos una expresión lógica y un mensaje de error que se imprimirá si la expresión resulta falsa.
+Historicamente, la impresión de depuración ha sido una práctica común en la programación desde el inicio de los lenguajes de alto nivel, incluyendo la primera versión de C++. Aunque puede parecer primitiva, sigue siendo una práctica común debido a su simplicidad y eficiencia.
 
-```
-#include <cassert>
+Para alternativas a la impresión de depuración, se puede considerar el uso de un depurador de código fuente, el cual permite al programador detener la ejecución del programa en puntos específicos y examinar los valores de las variables y el flujo de control. Sin embargo, los depuradores pueden ser más complicados y pesados para usos rápidos y sencillos.
 
-int main() {
-    int x = 5;
-    assert(x > 10 && "El valor de x es menor que 10"); // mensaje de depuración
-    return 0;
-}
-
-/* Output:
-Assertion failed: (x > 10 && "El valor de x es menor que 10"), function main, file example.cpp, line 6.
-*/
-```
-
-## Profundizando:
-
-Históricamente, imprimir mensajes de depuración era una técnica muy utilizada en programación. Sin embargo, con el avance de las herramientas de depuración y los lenguajes de programación más modernos, ha perdido algo de relevancia. Aunque sigue siendo una práctica común y útil, existen otras alternativas, como el uso de depuradores visuales y pruebas unitarias.
-
-La impresión de mensajes de depuración también puede afectar al rendimiento de los programas, especialmente en entornos de producción.  Por esta razón, se recomienda utilizar librerías específicas para depuración o deshabilitar los mensajes de depuración en código compilado en producción.
+Siguiendo con detalles más específicos, puedes usar el objeto 'cerr' de la biblioteca iostream para imprimir mensajes de error a la salida estándar de error. 
 
 ## Ver también:
 
-- [Mensajes de depuración en C++: cómo hacer que sean más fáciles de leer](https://platzi.com/blog/mensajes-de-depuracion-en-c-como-hacer-que-sean-mas-faciles-de-leer/)
-- [Guía para la depuración de código en C++](https://www.drdobbs.com/testing/ultimate-c-debugging-guide-getting-star/225900056)
-- [Introducción a la depuración en C++](https://www.forward.com.au/pfod/CPlusPlus/Debug/Introduction.html)
+- [Tutorial oficial de C++](http://www.cplusplus.com/doc/tutorial/)
+- [C++ Reference](http://www.cplusplus.com/reference/)
+- [GUÍA RÁPIDA C++](https://developerinsider.co/c-guia-rapida-para-principiantes/)
+  
+Recuerda siempre que la impresión de depuración es solo una de las muchas herramientas a tu disposición. Utilízala con discreción y siempre busca la manera más eficiente de resolver los problemas de programación.

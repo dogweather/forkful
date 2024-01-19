@@ -1,7 +1,7 @@
 ---
-title:                "将字符大写"
-html_title:           "Bash: 将字符大写"
-simple_title:         "将字符大写"
+title:                "将字符串转化为大写"
+html_title:           "Bash: 将字符串转化为大写"
+simple_title:         "将字符串转化为大写"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是大写字符串？为什么程序员要这么做？
+## 啥是啥？为啥呢？
+字串大写就是把字串中所有字母都变成大写的格式。有些编程要求必须使用这样的格式，比如常量或者环境变量。
 
-大写字符串指的是把字符串中的所有字母都改成大写形式。程序员经常这么做是因为大写字符串在编程中有很多方便之处。比如，大写字符串可以使得两个字符串的比较更加简单、快速；也可以使得字符串的输出更加规范、易读。
+## 如何做？
+在Bash中，我们可以使用`${string^^}`这一语句来实现字串大写。看下面的例子：
 
-## 如何操作：
-
-在Bash中，我们可以使用内置的tr命令来实现大写字符串的功能。具体的代码如下：
+```Bash
+#!/bin/bash
+string="hello, world"
+echo ${string^^}
 ```
-str="hello world"
-str_caps=$(echo "$str" | tr '[:lower:]' '[:upper:]')
-echo "$str_caps"
+运行结果：
+
+```Bash
+HELLO, WORLD
 ```
-输出为：
+所有的字母都变成了大写。
+
+## 深入了解
+${string^^}在Bash 4.0版本中被引入的，所以在早期的Bash版本中是不能使用的。在早期的Bash版本或者其它的shell中，我们可以通过管道和tr命令把字串变大写：
+
+```Bash
+string="hello, world"
+echo $string | tr 'a-z' 'A-Z'
 ```
-HELLO WORLD
+
+对于某些需要特殊处理的情况，例如只希望把首字母变大写，那就得用另一种方式，具体实现会麻烦一些：
+
+```Bash
+string="hello, world"
+echo ${string^}
 ```
 
-## 深入了解：
-
-大写字符串的概念起源于早期计算机的ASCII编码中，其中只有大写字母，没有小写字母。随着编程语言的发展，大写字符串也被广泛应用于不同的编程语言中，比如C、Java等。
-
-除了使用tr命令，程序员还可以通过自定义函数的方式来实现大写字符串。另外，也可以使用其他工具来实现类似的功能，比如sed命令、awk命令等。
-
-在实现大写字符串的过程中，需要注意的是不同的编程语言对于大小写的敏感程度可能不同，因此在使用时需要留意。
-
-## 参考资料：
-
-- Bash官方文档：https://www.gnu.org/software/bash/manual/bash.html
-- tr命令使用文档：https://www.tutorialspoint.com/unix_commands/tr.htm
-- Bash中的字符串操作：https://www.lifewire.com/string-manipulation-in-unix-commands-4012823
+## 参考资料
+1. Bash的 ${parameter^^} 扩展语法: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
+2. Bash tr命令: https://linux.die.net/man/1/tr
+3. Bash 的 ${parameter^} 扩展语法: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion

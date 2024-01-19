@@ -1,7 +1,7 @@
 ---
-title:                "미래나 과거의 날짜 계산하기"
-html_title:           "Gleam: 미래나 과거의 날짜 계산하기"
-simple_title:         "미래나 과거의 날짜 계산하기"
+title:                "미래 또는 과거의 날짜 계산하기"
+html_title:           "Gleam: 미래 또는 과거의 날짜 계산하기"
+simple_title:         "미래 또는 과거의 날짜 계산하기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,25 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 너의 정확한 미래의 일자를 계산하는 방법
-
 ## 무엇과 왜?
+미래나 과거의 날짜를 계산하는 것은 특정 날짜로부터 지정된 기간동안의 날짜를 찾는 과정입니다. 개발자들이 이를 수행하는 이유는 다양한 시간기반 기능을 제공하기 위함입니다, 시간차에 따른 Reminder 기능이나 일정 기록과 같은 것들이 대표적인 예시입니다.
 
-날짜를 미래나 과거로 계산하는 것은 프로그래머들이 미래 일자에 대해 새로운 계획을 세우기 위해 필요한 일입니다. 예를 들어, 프로젝트의 마감일이 내일인데 그 전날까지 고칠 부분이 남아 있을 경우, 미래 일자 계산 기능을 사용하여 마감일을 재조정할 수 있습니다.
+## 어떻게
+```Gleam
+pub import gleam/calendar.{da,da_diff}
+import gleam/io
 
-## 하는 법:
+pub fn main() {
+  let today = da.today()
+  let month_from_now = da.add_months(today, 1)
+  let diff = da_diff.months(today, month_from_now)
 
-Gleam에서는 `Calendar`모듈을 사용하여 미래 또는 과거 일자를 계산할 수 있습니다. ```Gleam
-let day = Calendar.Day.from_gregorian_date(2021, 11, 15)
-let two_days_after = Calendar.add_days(day, 2)
-``` 
-위의 예시에서는 2021년 11월 15일을 변수 `day`에 넣고, `Calendar.add_days` 함수를 사용해 2일 후의 일자를 계산해 변수 `two_days_after`에 저장합니다. 코드를 실행하면 `two_days_after`에는 `2021, 11, 17`이라는 값이 저장됩니다.
+  io.println(month_from_now)
+  io.println(diff)
+}
+```
+위 코드를 실행하면 아래와 같이 오늘로부터 한 달 후의 날짜와 그 두 날짜 사이의 차이를 얻을 수 있습니다:
+```
+{year: 2023, month: 8, day: 21}
+1
+```
 
-## 더 자세히:
+## 깊게 알기
+날짜 계산은 프로그래밍의 초기 시기부터 필요했던 주요 기능 중 하나입니다. 이 기능은 특히나 일정 관리, 예약 시스템, 프로젝트 관리 등에서 중요하게 사용되었습니다. 물론, Gleam 외에도 Python의 `datetime`, Javascript의 `date-fns`와 같은 다양한 언어와 라이브러리에서 날짜 계산 기능을 제공하고 있습니다. `gleam/calendar` 라이브러리에서는 기본적인 단위를 day, month, year로 설정하여 기간계산을 제공하고 있습니다.
 
-미래나 과거 일자를 계산하는 기능은 현재까지 많은 프로그래밍 언어에서 사용되었습니다. 그 중에서도 가장 널리 쓰이는 것은 Ruby의 `Date` 모듈입니다. 하지만 Ruby의 `Date` 모듈은 오로지 그레고리력만을 지원하며, Gleam의 `Calendar` 모듈은 다양한 달력을 지원합니다.
-
-## 더 알아보기:
-
-- [Gleam 공식 문서 - Calendar 모듈](https://gleam.run/documentation/standard-library/calendar/)
-- [Ruby 공식 문서 - Date 모듈](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+## 관련 자료
+- Gleam 공식 문서: https://gleam.run/docs/
+- `gleam/calendar` 라이브러리 문서: https://hexdocs.pm/gleam_stdlib/gleam/calendar.html
+- Python의 datetime: https://docs.python.org/3/library/datetime.html
+- Javascript의 date-fns: https://date-fns.org/

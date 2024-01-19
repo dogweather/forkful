@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
-html_title:           "Arduino: Wyszukiwanie i zamiana tekstu"
-simple_title:         "Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,23 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wyszukiwanie i zastępowanie tekstu jest procesem polegającym na wyszukiwaniu konkretnego ciągu znaków w tekście i jego zamianie na inny ciąg znaków. Programiści często wykonują tę czynność, aby zmienić pewne części kodu lub ujednolicić jego wygląd.
+## Co & Dlaczego?
+Zamiana i szukanie tekstu polega na lokalizowaniu i podmienianiu wartości tekstowych. Programiści robią to, aby zmodyfikować dane wejściowe na podstawie określonych kryteriów.
 
-## Jak to zrobić:
+## Jak to zrobić
+Załóżmy, że chcemy zamienić słowo "Arduino" na "Mikrokontroler" w napisie.
+```Arduino
+String mojTekst = "Lubie programowanie na Arduino";
+mojTekst.replace("Arduino", "Mikrokontroler");
+Serial.println(mojTekst);  // Wydrukuje: "Lubie programowanie na Mikrokontroler"
 ```
-char text[] = "Witaj świecie!";
-char oldMsg[] = "Witaj";
-char newMsg[] = "Cześć";
-str_replace(text, oldMsg, newMsg);
-Serial.println(text);
-//Output: "Cześć świecie!"
-```
-W powyższym przykładzie mamy zmienną "text", w której znajduje się tekst "Witaj świecie!". Następnie wykorzystujemy funkcję "str_replace" (zdefiniowaną w bibliotece Arduino) w celu zmiany słowa "Witaj" na "Cześć". Ostatecznie na monitorze szeregowym wyświetlany jest zmieniony tekst "Cześć świecie!". W ten sposób możemy dokonywać zastępowania tekstu w dowolnym miejscu naszego kodu.
+Korzystając z funkcji `replace` możemy łatwo zamieniać fragmenty tekstu.
 
-## Zagłębienie:
-Wyszukiwanie i zastępowanie tekstu jest często wykorzystywane w programowaniu, szczególnie przy tworzeniu większych projektów z wieloma plikami i liniami kodu. Można również wykorzystać inne sposoby na dokonanie tej samej czynności, takie jak użycie wyrażeń regularnych. W implementacji funkcji "str_replace" wykorzystywany jest algorytm Knutha-Morrisa-Pratta, co pozwala na wydajne i szybkie wyszukiwanie i zastępowanie tekstu w dłuższych napisach.
+## Zaawansowane informacje
+Historia wyszukiwania i zamiany tekstu sięga początków programowania komputerowego. Istnieją różne metody pozwalające na realizację takiego zadania, takie jak wyrażenia regularne (RegEx), które pozwalają na bardziej złożone manipulacje tekstem. W języku Arduino, najprostszą metodą jest użycie wbudowanej funkcji `replace`.
 
-## Zobacz także:
-- [Kurs programowania Arduino dla początkujących](https://create.arduino.cc/projecthub/Arduino_Genuino/arduino-tutorial-for-beginners-1-113b44)
-- [Dokumentacja funkcji "str_replace" w Arduino](https://www.arduino.cc/reference/en/language/functions/strings/strreplace/)
+## Zobacz też
+[Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/) - Oficjalna dokumentacja funkcji replace w Arduino.
+[RegExR](https://regexr.com/) - Narzędzie do nauki i testowania wyrażeń regularnych, które również mogą być użyte do szukania i zamiany tekstu.

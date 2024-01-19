@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट खोजना और बदलना"
-html_title:           "Swift: टेक्स्ट खोजना और बदलना"
-simple_title:         "टेक्स्ट खोजना और बदलना"
+title:                "पाठ की खोज और प्रतिस्थापन"
+html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
+simple_title:         "पाठ की खोज और प्रतिस्थापन"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,27 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
+नये भाषाभाषी डेवलपर्स के लिए, ध्यान दीजिए कि टेक्स्ट खोजना और बदलना मतलब है एक विशिष्ट टेक्स्ट खोजना और उसे दूसरे टेक्स्ट से बदलना। प्रोग्रामर्स इसे उन समस्याओं को हल करने में करते हैं जहां उन्हें एक विशेष स्ट्रिंग को एक डॉक्यूमेंट में अन्य स्ट्रिंग से बदलना हो।  
 
-टेक्स्ट को खोज और बदलना हर प्रोग्रामर के लिए एक जरूरी काम है। यह उन्हें कोड की सुधार करने और बग्स को ठीक करने में मदद करता है।
-
-## कैसे:
+## कैसे करें:
+चलिए कोडिंग के माध्यम से खोजने और बदलने की प्रक्रिया को समझते हैं।  
 
 ```Swift
-let str = "Hello, World!"
-let newStr = str.replacingOccurrences(of: "World", with: "Swift")
-print(newStr)
-
-// Output: Hello, Swift!
+var str = "नमस्ते, दुनिया!"
+str = str.replacingOccurrences(of: "नमस्ते", with: "अलविदा")
+print(str)
 ```
+संकलित आउटपुट:
 
-इस उदाहरण में, हमने ```replacingOccurrences``` फ़ंक्शन का उपयोग करके वर्तमान स्ट्रिंग से एक शब्द को दूसरे से बदला है। इस तरह से, हम एक सरल और तेज़ तरीके से टेक्स्ट को खोज और बदल सकते हैं।
+```Swift
+"अलविदा, दुनिया!"
+```
+यहां हमने "नमस्ते" को "अलविदा" से बदल दिया।
 
-## गहराई पृष्ठभूमि:
+## गहराई में:
+Swift में 'replacingOccurrences' method हमें टेक्स्ट में खोजने और बदलने में मदद करता है। यह Foundation फ्रेमवर्क का हिस्सा है जिसने कोकोआ और कोकोआ टच साथ दिया। Swift में आप इसे 4.0 संस्करण से उपयोग कर सकते हैं।
+  
+## अन्य विकल्पों के बारे में:
+Swift में लगभग सभी टेक्स्ट (String) operations के लिए बहुत सारे विधियों (methods) हैं। जैसे 'contains', 'split', 'starts(with:)' और 'ends(with:)' आदि। ये विधियाँ टेक्स्ट संरचना के उत्कृष्ट प्रबंधन की आवश्यकताओं को समझते हुए बनाई गईं हैं। 
 
-यह तकनीक पहले से ही दोनों वृत्तों के मध्य साथ उस समय अस्थायी रूप से प्रयोग होता था। इसके अलावा, कई अन्य सूची रखे हैं हो सकते हैं। इससे बाहर, यह साधनें छोटे समय में और पूर्ववत रूप से अप्लाइड करने में कुछ दूरी बनाते हैं।
+## अन्य संसाधन:
+Swift में विशेष टेक्स्ट ऑपरेशन्स के बारे में और गहराई से समझने के लिए, निम्नलिखित लिंक पर क्लिक करें -
 
-## भी देखें:
-
-- [Stack Overflow पोस्ट](https://stackoverflow.com/questions/37700385/how-do-i-search-and-replace-a-string-in-swift)
-- [Apple दस्तावेज़ीकरण](https://developer.apple.com/documentation/foundation/nsstring/1416952-replacingoccurrences)
-- [AppCoda ट्यूटोरियल](https://www.appcoda.com/swift-string/)
+- [Working With Strings in Swift](https://developer.apple.com/documentation/swift/string)
+- [How To Replace Occurrences in a Swift String](https://www.hackingwithswift.com/example-code/strings/how-to-replace-occurrences-of-a-string-within-a-string)

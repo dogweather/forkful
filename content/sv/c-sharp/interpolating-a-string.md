@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av en sträng"
-html_title:           "C#: Interpolering av en sträng"
-simple_title:         "Interpolering av en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,29 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Interpolera en sträng är en programmeringsteknik som gör det möjligt att skapa en sträng genom att kombinera flera variabler och textsträngar. Detta gör det enklare att skapa dynamiska strängar, till exempel för utskrift eller att skapa banor för filer. Programmmare använder detta för att öka effektiviteten och minska fel vid skapandet av strängar med variabler.
+Interpolering av strängar i C# innebär att vi kan injicera variabler direkt i en sträng, vilket gör vår kod mer läsbar och konsis. Utvecklare använder detta som ett alternativ till att använda strängkonkatenering eller formatmetoder.
 
-## Hur To:
-```C# 
-//Skapa en interpolationsträng med hjälp av $-notation
-string name = "Lena";
-string message = $"Hej {name}, välkommen till vår applikation!";
-Console.WriteLine(message);
-```
-Output: Hej Lena, välkommen till vår applikation!
+## Så här gör du:
+Här är en enkel kod som visar hur man interpolerar en sträng i C#.
 
 ```C#
-//Kombinera flera variabler 
-int age = 25;
-decimal salary = 50000.50m;
-string info = $"Min ålder är {age} och min lön är {salary} per år";
-Console.WriteLine(info);
+string name = "Peter";
+int age = 30;
+string greeting = $"Hej {name}, du är {age} år gammal.";
+Console.WriteLine(greeting); // Output: Hej Peter, du är 30 år gammal.
 ```
-Output: Min ålder är 25 och min lön är 50000.50 per år
 
-## Deep Dive:
-Interpolering av strängar introducerades i C# 6.0 och används ofta som ett alternativ till den äldre metoden String.Format(). Det är ett enkelt och lättläst sätt att skapa dynamiska strängar och även minska risken för fel. Implementationen sker genom att lägga till ett dollartecken ($) framför strängen och använda variabler eller uttryck inom måsvingar ({ }).
+Följande kod visar hur man formaterar tal med stränginterpolation.
 
-## Se även:
-https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated 
-https://www.c-sharpcorner.com/article/interpolated-strings-in-C-Sharp-6-0/
+```C#
+double price = 99.99;
+string product = "bok";
+string message = $"Priset för en {product} är {price:C}.";
+Console.WriteLine(message); // Output: Priset för en bok är 99,99 kr.
+```
+
+## Djupdykning
+Stränginterpolation introducerades först i C# 6.0, vilket var ett steg framåt från att använda `String.Format` eller konkatenering, vilket kan bli rörigt för komplexa strängar. Ett alternativ till detta är att använda `StringBuilder`, särskilt när du hanterar stora mängder data.
+
+Stränginterpolation i C# fungerar genom att först översätta din interpolerade sträng till en `String.Format()`-kod. Det betyder att `$"Hej {name}, du är {age} år gammal."` faktiskt översätts till `"Hej {0}, du är {1} år gammal.", name, age` bakom kulisserna.
+
+## Se också
+För ytterligare läsning och relaterad information, se följande länkar:
+- Microsofts dokumentation på stränginterpolation [här](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+- En jämförelse mellan stränginterpolation och andra metoder [här](https://www.codingame.com/playgrounds/6179/string-interpolation-vs-string-format)
+- Ytterligare information om hur `String.Format()` fungerar [här](https://docs.microsoft.com/en-us/dotnet/api/system.string.format)

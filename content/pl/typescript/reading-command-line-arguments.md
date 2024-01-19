@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "TypeScript: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -12,31 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Czy kiedykolwiek słyszałeś o czytaniu argumentów z wiersza poleceń? To po prostu oznacza odczytywanie danych wprowadzonych przez użytkownika w terminalu lub wierszu poleceń na komputerze. Programiści wykonują to aby móc dostosować wykonywane polecenia lub dostosować swoje aplikacje do różnych przypadków użytkowania.
+Obsługa argumentów z linii poleceń to proces odczytywania parametrów przekazywanych do twojego programu podczas jego uruchamiania. Programiści robią to, by umożliwić personalizację zachowania programów bez konieczności edytowania kodu.
 
 ## Jak to zrobić:
-Poniżej przedstawiono przykład kodu w języku TypeScript, który odczytuje argumenty z wiersza poleceń:
+
+Można odczytać argumenty lini poleceć w TypeScript za pomocą wbudowanej globalnej tablicy `process.argv`. Poniżej znajduje się przykład:
+
 ```TypeScript
-import * as process from 'process';
-
-let args: string[] = process.argv;
-for (let i: number = 0; i < args.length; i++) {
-    console.log(`Argument ${i + 1}: ${args[i]}`);
-}
-```
-Wywołując ten kod z wiersza poleceń przy użyciu wiersza poleceń TypeScript: node index.ts argument1 argument2
-Otrzymamy następujący wynik:
-```
-Argument 1: node
-Argument 2: index.ts
-Argument 3: argument1
-Argument 4: argument2
+process.argv.forEach((val, index) => {
+  console.log(`${index}: ${val}`);
+});
 ```
 
-## Pełne zanurzenie:
-Czytanie argumentów z wiersza poleceń jest bardzo przydatne i często wykorzystywane w programowaniu. Historia sięga lat 60., kiedy to pojawiły się pierwsze systemy operacyjne z wierszem poleceń. Alternatywnym sposobem na odczytanie argumentów jest korzystanie z interfejsu użytkownika lub plików konfiguracyjnych, jednak nie są one tak wygodne w użyciu jak wiersz poleceń.
-Implementacja odczytywania argumentów z wiersza poleceń jest wykonywana przy użyciu funkcji dostępnych w bibliotece process w języku TypeScript.
+Po uruchomieniu powyższego skryptu z argumentami, output wyglądałby następująco:
 
-## Zobacz również:
-- [Dokumentacja process w języku TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [Informacje o wierszu poleceń](https://en.wikipedia.org/wiki/Command-line_interface)
+```TypeScript
+// $ node .\index.ts arg1 arg2
+0: node
+1: .\index.ts
+2: arg1
+3: arg2
+```
+
+Powyższy output pokazuje, że pierwsze dwa elementy w `process.argv` zawsze są ścieżką do interpretera node.js (`node`) oraz ścieżką do uruchomionego skryptu.
+
+## Pogłębione spojrzenie:
+
+Odczytywanie argumentów linii poleceń jest techniką używaną od początków programowania - pochodzi ona z języka C.
+
+Egzystują alternatywne metody obsługi argumentów linii poleceć, takie jak używanie paczki zewnętrznej jak `yargs` czy `commander.js`, które dostarczają bardziej rozbudowanej funkcjonalności.
+
+Jak już wspomnieliśmy, w TypeScript (podobnie jak w Node.js), `process.argv` jest domyślnym sposobem odczytywania tych argumentów. Jest to tablica, która zawiera elementy przekazane do skryptu podczas wywołania. Pierwsze dwa elementy to ścieżka do interpretera Node.js i ścieżka do uruchamionego skryptu, a reszta to przekazane argumenty.
+
+## Zobacz też:
+
+Jeżeli jesteś zainteresowany w pełnym zrozumieniem argumentów linii poleceć w TypeScript, zapoznaj się z następującymi źródłami:
+
+- [Dokumetacja Node.js 'process.argv'](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [Paczki dostarczające dodatkowe opcje: 'yargs'](https://www.npmjs.com/package/yargs)
+- ['commander.js'](https://www.npmjs.com/package/commander)

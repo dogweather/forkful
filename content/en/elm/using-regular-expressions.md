@@ -1,6 +1,6 @@
 ---
 title:                "Using regular expressions"
-html_title:           "Elm recipe: Using regular expressions"
+html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,44 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Regular expressions are a powerful tool used by programmers to find and manipulate patterns in text. These patterns can include specific words, numbers, or symbols, making them a crucial part of data validation and text processing. 
+Regular expressions (regex) are sequences used to match character combinations in strings. Programmers use them for pattern matching with strings, or string searching and replacing operations.
 
 ## How to:
-
-To use regular expressions in Elm, first, we need to import the Regex module using the ```import Regex``` statement. Then, we can use the ```Regex.find``` function to search for a specific pattern in a given string. For example, to find all words that start with the letter "a" in a sentence, we can use the following code:
-
-```Elm
-import Regex
-
-sentence = "Apples are always delicious."
-
-Regex.find (Regex.regex "a\\w+") sentence
-
-```
-
-The output would be a list of matches, in this case, ["Apples", "always"].
-
-We can also use regular expressions for more complex patterns, such as email validation. To validate an email address in Elm, we can use the following code:
+In Elm, the `Regex.regex` function is used to create a pattern, and `contains` checks if that pattern exists within a string. Here's an example:
 
 ```Elm
 import Regex
 
-email = "info@example.com"
+pattern : Maybe Regex.Regex
+pattern =
+    Regex.regex "Elm"
 
-Regex.find (Regex.regex "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}") email
+main =
+    let
+        res =
+            case pattern of
+                Nothing ->
+                    False
+
+                Just re ->
+                    Regex.contains re "Hello Elm!"
+    in
+    Html.text <| toString res
 ```
 
-The output would be ["info@example.com"] if the email is valid, or an empty list if it is not.
+Run this and you'll get `True` because the string "Hello Elm!" contains "Elm".
 
-## Deep Dive:
+## Deep Dive
+Elm's regular expressions come from JavaScript, and hence carry some JavaScript flavor. They're defined as ‘patterns’ of characters used in pattern matching with strings. Alternatives to regex in Elm could be functions like `String.startsWith`, `String.endsWith` or `String.contains`. These are good when you're dealing with simple matching scenarios, but nothing beats regex when it comes to complex pattern searches and manipulations. Implementation wise, Elm uses JavaScript regex under the hood.
 
-Regular expressions have been around since the 1950s and are used in many programming languages, including Elm. They offer a concise and efficient way to find and manipulate text patterns. 
-
-While regular expressions can be powerful, they can also be complex and challenging to understand. For simpler text patterns, Elm offers alternative functions such as ```String.startsWith``` and ```String.contains```, which provide an easier way to find specific strings within a given text.
-
-In terms of implementation, regular expressions in Elm are based on the PCRE library and support a wide range of features, including grouping, quantifiers, and character classes. The official Elm website offers detailed documentation on Regex functions and their usage.
-
-## See Also:
-
-To learn more about regular expressions in Elm, check out the official Regex documentation at <https://package.elm-lang.org/packages/elm/regex/latest/>. You can also explore other helpful resources, such as online tutorials and forums, to deepen your understanding of this powerful text processing tool.
+## See Also
+Delve deep into regex with official Elm documentation at: http://package.elm-lang.org/packages/elm/regex/latest/Regex
+Or explore JavaScript's Regex, which Elm uses, at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions

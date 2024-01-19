@@ -1,6 +1,6 @@
 ---
 title:                "문자열 연결하기"
-html_title:           "Fish Shell: 문자열 연결하기"
+html_title:           "Arduino: 문자열 연결하기"
 simple_title:         "문자열 연결하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,20 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자열 연결이 무엇인지 알아봅시다. 문자열 연결은 문자열을 한 줄로 합치는 것을 의미합니다. 프로그래머는 보통 변수나 함수의 출력 결과를 한 줄로 합쳐서 편리하게 사용하기 위해서 문자열 연결을 하게 됩니다.
+## 무엇이며 왜 사용하는가?
 
-## 하는 방법:
-아래에 코드 블록 형식으로 코딩 예제와 출력 결과를 보여드리겠습니다. Fish Shell에서는 문자열을 연결하는 방법이 다양합니다. 아래 예제를 참고해보세요.
+문자열 연결이란 두 개 이상의 문자열을 하나로 합치는 프로그래밍 기법을 말합니다. 프로그래머들이 이를 사용하는 이유는 데이터 조작을 쉽고 빠르게 하기 위해서입니다.
+
+## 어떻게 사용하는가:
+
+Fish Shell에서 문자열을 연결하는 가장 간단한 방법은 아래의 예제들을 참고하세요.
 
 ```Fish Shell
-set name "John" # "John"이라는 변수를 정의합니다.
-echo "Hello " $name "!" # "Hello John!"이라는 결과가 출력됩니다.
+set str1 "Fish"
+set str2 "Shell"
+set str $str1$str2
+echo $str
 ```
 
-## 더 들어가기:
-문자열 연결은 프로그래밍에서 매우 중요하며, 개발자들이 자주 사용하는 기능입니다. 예전에는 문자열을 합치기 위해 많은 수작업이 필요했지만, 지금은 문자열 연결 함수나 메소드를 제공하는 다양한 언어들이 있습니다. 또한 문자열 보간이라는 기능을 이용해서도 문자열을 연결할 수 있습니다. Fish Shell에서는 ```string concatenate```라는 내장 함수를 제공하므로, 이를 이용하면 더욱 편리하게 문자열을 연결할 수 있습니다.
+위의 코드를 실행하면 아래의 결과를 볼 수 있습니다:
 
-## 관련 정보:
-Fish Shell 공식 문서에서 문자열 연결에 대한 자세한 내용을 확인하실 수 있습니다. [https://fishshell.com/docs/current/cmds/string.html#concatenate](https://fishshell.com/docs/current/cmds/string.html#concatenate) 또한 다양한 프로그래밍 언어에서 문자열을 연결하는 다른 방법들을 알아보고 싶다면 아래 링크를 참고하세요.
-[https://www.w3schools.com/python/python_strings_concatenate.asp](https://www.w3schools.com/python/python_strings_concatenate.asp)
+```Fish Shell
+FishShell
+```
+
+## 심층 탐구
+
+문자열 연결은 프로그래밍의 근본적인 개념 중 하나이며 이는 거의 모든 프로그래밍 언어에서 존재합니다. Fish Shell에서는 위에서 보여준 것처럼 간단하게 `$str1$str2`를 사용하여 문자열을 연결할 수 있습니다.
+
+물론, Fish에서는 다른 방법으로도 문자열을 연결할 수 있습니다. 예를 들어, `string join` 명령을 사용하여 두 문자열을 연결할 수 있습니다:
+
+```Fish Shell
+set list (string split " " "Fish Shell")
+string join -- "" $list
+```
+
+## 참고 자료
+
+다음은 Fish Shell과 문자열 연결에 관한 추가 자료입니다:
+
+1. [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
+2. [Fish 에서 string 조작에 대한 훌륭한 토론](https://stackoverflow.com/questions/27996706/string-manipulation-in-fish-shell)
+3. [문자열을 연결하는 다른 방법에 대한 블로그 게시물](https://www.baeldung.com/fish-shell-concatenate-strings)

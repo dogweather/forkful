@@ -1,6 +1,6 @@
 ---
 title:                "Використання регулярних виразів"
-html_title:           "C: Використання регулярних виразів"
+html_title:           "Arduino: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
 programming_language: "C"
 category:             "C"
@@ -10,44 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що і Зачем?
+## Що і чому?
+Регулярні вирази - це могутній інструмент для роботи з рядками, що дозволяє знаходити, перевіряти або заміняти підрядки згідно з вказаним шаблоном. Програмісти використовують їх для ефективної обробки тексту та поверхової перевірки вводу.
 
-Використання регулярних виразів - це спосіб пошуку та обробки тексту за певними шаблонами. Це корисний інструмент для програмістів, оскільки дозволяє автоматизувати задачі, пов'язані з аналізом та зміною тексту.
+## Як це робиться:
+Отже, як ми можемо використовувати регулярні вирази в С? Використовуйте бібліотеку `<regex.h>`.
 
-# Як:
-
-Мова програмування C має вбудовану підтримку для регулярних виразів за допомогою бібліотеки <regex.h>. Нижче наведено приклад коду для пошуку всіх слів "привіт" у рядку і виведення їх кількості:
-
-```
+```C
 #include <stdio.h>
 #include <regex.h>
 
 int main() {
-    int count = 0;
-    char str[] = "Привіт, світ! Привіт, Україно!";
     regex_t regex;
-    regmatch_t matches[1];
-    regcomp(&regex, "привіт", REG_EXTENDED | REG_ICASE);
+    int reti;
 
-    while(regexec(&regex, str, 1, matches, 0) == 0) {
-        count++;
-        str += matches[0].rm_eo;
+    reti = regcomp(&regex, "[а-яА-Я]*", 0);
+    if (reti) {
+        printf("Could not compile regex\n");
+        return 1;
     }
 
-    printf("Кількість слів \"привіт\": %d", count);
+    reti = regexec(&regex, "Привіт, Світ!", 0, NULL, 0);
+    if (!reti) {
+        puts("Match");
+    } else if (reti == REG_NOMATCH) {
+        puts("No match");
+    } else {
+        printf("Regex match failed\n");
+        return 1;
+    }
 
+    regfree(&regex);
     return 0;
 }
 ```
+Якщо буде застосовано зазначений вище код, він перевірить, чи "Привіт, Світ!" є українським словом чи ні, і поверне "Match" або "No match".
 
-Вивід: ```Кількість слів "привіт": 2```
+## Зануримося глибше
+Регулярні вирази виникли у 1956 році і є основою багатьох сучасних мов. Є також альтернативи, такі як парсери, для виконання більш складних завдань. 
+Зверніть увагу, що регулярні вирази можуть бути дуже повільними, якщо ви використовуєте їх неправильно або великими масивами. 
 
-# Поглиблене дослідження:
-
-Поняття регулярних виразів з'явилося в 1950-х роках і зараз використовується в багатьох мовах програмування та текстових редакторах. Існують альтернативи, такі як бібліотека PCRE (Perl Compatible Regular Expressions), яка надає більш розширені можливості та регулярний вираз може використовуватися безпосередньо у вигляді рядка.
-
-# Дивись також:
-
-- [Регулярні вирази в мові програмування C](https://www.cprogramming.com/tutorial/regular-expressions-c.html)
-- [Документація бібліотеки regex.h](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [Онлайн-версія для перевірки регулярних виразів](https://regex101.com/)
+## Дивись також
+- POSIX regex documentation: http://pubs.opengroup.org/onlinepubs/009695399/basedefs/regex.h.html
+- Stackoverflow How Do You Use Regular Expressions in C?: https://stackoverflow.com/questions/1085083/regular-expressions-in-c-examples
+- Wikipedia article on Regular Expressions: https://uk.wikipedia.org/wiki/Регулярні_вирази

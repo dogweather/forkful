@@ -1,6 +1,6 @@
 ---
 title:                "Kontrollera om en katalog finns"
-html_title:           "Ruby: Kontrollera om en katalog finns"
+html_title:           "C: Kontrollera om en katalog finns"
 simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Att kontrollera om en katalog finns är en viktig del av programmering som hjälper till att säkerställa att programmet fungerar korrekt och undvika eventuella felmeddelanden. Det är särskilt användbart när man ska öppna eller skapa filer inom en specifik katalog.
+## Vad & Varför?
 
-## Hur man gör det: 
-Det finns två sätt att kontrollera om en katalog finns i Ruby. Antingen kan man använda sig av standardbiblioteket 'File' eller den inbyggda metoden 'Dir.exist?'. Här är ett exempel på hur man kan använda dessa metoder:
+Att kontrollera om en katalog existerar i Ruby är en handling av att verifiera om en specifik katalog redan finns i filsystemet. Programmerare gör detta för att undvika fel vid försök att läsa, skriva eller ändra kataloger som inte existerar.
+
+## Hur man:
+
+Du kan kontrollera om en katalog existerar i Ruby med `Dir.exist?` metoden. Här är ett exempel:
 
 ```Ruby 
-require 'file'
-if File.directory?("namn på katalog")
-  puts "Katalogen finns"
+if Dir.exist?('/path/to/directory')
+  puts "Katalogen finns!"
 else
-  puts "Katalogen finns inte"
-end
-
-if Dir.exist?("namn på katalog")
-  puts "Katalogen finns"
-else
-  puts "Katalogen finns inte"
+  puts "Katalogen finns inte!"
 end
 ```
 
-Exempeloutput: 
-Katalogen finns
+Om katalogen finns skrivs meddelandet "Katalogen finns!" ut, annars skrivs "Katalogen finns inte!".
 
-## Djupdykning:
-När det kommer till att kontrollera om en katalog finns är det värt att nämna att 'File' biblioteket också har flera metoder som kan användas för att kontrollera om en fil eller en symbolisk länk existerar i en katalog. Några alternativ till dessa metoder är 'File.exist?' och 'File.symlink?'. Det är också värt att notera att 'Dir.exist?' returnerar en boolean (true eller false), medan 'File.directory?' returnerar katalogens namn om den finns och 'nil' om den inte existerar. Om du är osäker på vilken metod som passar dina behov bäst, kan du alltid kolla dokumentationen för att få mer information och hitta alternativ som fungerar bäst för ditt specifika projekt.
+## Djupt Dyk:
 
-## Se också:
-- [Ruby dokumentation för File](https://ruby-doc.org/core-2.7.1/File.html)
-- [Ruby dokumentation för Dir](https://ruby-doc.org/core-2.7.1/Dir.html)
-- [En bra guide för att använda File och Dir](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+1. Historisk kontext: `Dir.exist?` metoden har funnits sedan Ruby version 1.9.3 och det är den rekommenderade metoden för att kolla om en katalog existerar eftersom den inte väcker någon undantag.
+   
+2. Alternativ: Ett annat sätt att kontrollera om en katalog existerar är med `File.directory?`metoden. Men, `Dir.exist?` har fördelen att det är mer läsbart och tydligt.
+
+3. Implementeringsdetaljer: `Dir.exist?` utför en systemanrop till filsystemet för att kolla om katalogen existerar vilket kan vara latency-känsligt i vissa fall.
+
+## Se även:
+
+1. Officiell Ruby dokumentation för Dir.exits?: [https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F) 
+2. Stack Overflow tråd om skillnader mellan `Dir.exist?` och `File.directory?`: [https://stackoverflow.com/questions/15266730/difference-between-file-directory-and-dir-exist](https://stackoverflow.com/questions/15266730/difference-between-file-directory-and-dir-exist) 
+3. Blog post om Ruby fil- och kataloghantering: [http://zetcode.com/lang/rubytutorial/io/](http://zetcode.com/lang/rubytutorial/io/)

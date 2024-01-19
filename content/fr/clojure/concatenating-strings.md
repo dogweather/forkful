@@ -1,7 +1,7 @@
 ---
-title:                "Concaténer des chaînes de caractères"
-html_title:           "Clojure: Concaténer des chaînes de caractères"
-simple_title:         "Concaténer des chaînes de caractères"
+title:                "Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
+simple_title:         "Concaténation de chaînes"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et pourquoi?
-
-La concaténation de chaînes de caractères est un processus qui consiste à joindre plusieurs chaînes pour créer une seule chaîne de caractères plus longue. Les programmeurs utilisent la concaténation de chaînes pour combiner du texte, des variables et d'autres données en une seule chaîne de caractères.
+## Quoi & Pourquoi?
+La concaténation des chaînes fait référence à la liaison de deux ou plusieurs chaînes de caractères en une seule. Les programmeurs font cela pour manipuler et transformer des données textuelles, clefs en programmation.
 
 ## Comment faire:
+La fonction `str` en Clojure peut être utilisée pour concaténer des chaînes. Voyons certains exemples:
 
-Voici un exemple de concaténation de chaînes en Clojure:
 ```Clojure
-;; Définir deux chaînes
-(def str1 "Bonjour")
-(def str2 "monde")
+(str "Bonjour, " "comment ça va?")
+; Résultat: "Bonjour, comment ça va?"
 
-;; Utiliser la fonction str pour concaténer les deux chaînes
-(str str1 str2)  ; Résultat: "Bonjourmonde"
+(str "J'aime " "la " "programmation " "en " "Clojure.")
+; Résultat: "J'aime la programmation en Clojure."
+```
+Note: `str` fonctionne même en combinant des chaînes avec d'autres types:
+
+```Clojure
+(str "Le carré de " 5 " est " (* 5 5) ".")
+; Résultat: "Le carré de 5 est 25."
 ```
 
-Une autre façon de concaténer des chaînes est d'utiliser l'opérateur `+`:
-```Clojure
-(def str1 "Bonjour")
-(def str2 "monde")
+## Plongée en profondeur
+Historiquement, en Clojure, nous avons toujours utilisé `str` pour concaténer des chaînes. C'est simple, propre et efficace.
 
-;; Concaténer avec l'opérateur +
-(+ str1 str2)  ; Résultat: "Bonjourmonde"
+Une alternative pourrait être d'utiliser `clojure.string/join`, mais il est plus utilisé pour unir des chaînes de caractères avec un délimiteur spécifique. Par exemple:
+
+```Clojure 
+(clojure.string/join "-" ["J'aime" "la" "programmation" "en" "Clojure"])
+; Résultat: "J'aime-la-programmation-en-Clojure"
 ```
 
-Vous pouvez également concaténer plus de deux chaînes en utilisant l'opérateur `str` multiple fois:
-```Clojure
-(def str1 "Bonjour")
-(def str2 "à")
-(def str3 "tous")
+Quant aux détails de mise en œuvre, `str` transforme chaque argument en une représentation de chaîne avant de les concaténer, rendant le processus très polyvalent.
 
-;; Utiliser plusieurs str pour concaténer les chaînes
-(str str1 str2 str3 "!")  ; Résultat: "Bonjour à tous!"
-```
-
-## Plongée en profondeur:
-
-Historiquement, la concaténation de chaînes était utilisée principalement pour créer des messages d'erreur et des journaux. Avec l'évolution de la programmation et l'introduction de concepts tels que la programmation orientée objet, d'autres méthodes de manipulation de chaînes de caractères ont émergé. Par exemple, en Clojure, la concaténation peut également être réalisée en utilisant des fonctions telles que `str/join` ou `str/replace`. Cependant, la concaténation avec `str` ou l'opérateur `+` reste la méthode la plus courante et la plus simple pour la plupart des tâches de manipulation de chaînes.
-
-## Voir aussi:
-
-- Documentation officielle Clojure sur la concaténation de chaînes: https://clojuredocs.org/clojure.string/concat
-- Un tutoriel sur la concaténation de chaînes en Clojure: https://www.tutorialspoint.com/clojure/clojure_concatenation.htm
+## Voir aussi
+1. Guide officiel de Clojure : https://clojuredocs.org/clojure.core/str
+2. Pour des exemples plus détaillés : https://www.learn-clojure.com/concepts/string-concatenation
+3. Documentation clojure.string/join : https://clojuredocs.org/clojure.string/join

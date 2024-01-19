@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subcadeias"
-html_title:           "C++: Extraindo subcadeias"
-simple_title:         "Extraindo subcadeias"
+title:                "Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,44 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+# Extraindo Substrings em C++
 
-Extrair substrings é um processo comum na programação que envolve a divisão de uma string em partes menores. Isso pode ser feito com o objetivo de manipular as informações de forma mais eficiente ou para obter apenas uma parte específica da string. Programadores costumam usar esse recurso para tarefas como validação de dados, formatação de texto ou comparação de strings.
+## O Que & Por quê?
 
-## Como fazer:
+Extrair substrings é o processo de obter uma pequena parte de uma string, a partir de uma posição e comprimento especificados. Nós, programadores, fazemos isso para manipular e processar informações dentro de textos maiores de forma eficiente.
 
-Para extrair substrings em C++, você pode usar a função `substr()` da biblioteca padrão `string`. Veja um exemplo de código:
+## Como Fazer:
 
-```
+Você pode extrair substrings em C++ usando o método `substr`, da classe `std::string`. 
+Vamos a um exemplo:
+```C++
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 int main() {
-    string nome = "Alice";
-    string sobrenome = nome.substr(1, 3);
-    cout << sobrenome << endl;
-    
+    std::string str = "Olá, mundo!";
+    std::string sub = str.substr(5, 5);
+    std::cout << sub << std::endl; // Saída: "mundo"
     return 0;
 }
 ```
 
-**Saída:**
-```
-lic
-```
+Isso vai extrair a substring começando na posição 5 (os índices em C++ começam do 0) e contar 5 caracteres.
 
-Neste exemplo, definimos uma string `nome` com o valor "Alice" e usamos a função `substr()` para extrair a segunda e terceira letra da palavra. O primeiro parâmetro informa a posição inicial e o segundo parâmetro é a quantidade de caracteres a serem extraídos.
+## Mergulho Profundo:
 
-## Deep Dive:
+A função `substr` existe em C++ desde a primeira versão da STL (Standard Template Library), que foi incorporada no padrão C++98. É uma das funções básicas de manipulação de strings, mas poderosa e amplamente utilizada.
 
-A função `substr()` foi introduzida na versão C++98 e está disponível na biblioteca `string`, que foi criada a partir da versão C++11. Alguns programadores preferem usar a função `substr()` da biblioteca `cstring`, que é mais antiga e foi herdada do C. Ela funciona da mesma forma, mas requer que o programador gerencie manualmente a posição do ponteiro que aponta para a string.
+Alternativamente, você poderia usar funções como `memmove` ou `strncpy` do C, mas são menos intuitivas e mais propensas a erros.
 
-Existem também outras formas de extrair substrings em C++, como usar laços para percorrer a string e separar os caracteres desejados. No entanto, a função `substr()` geralmente é mais eficiente e recomendada para esse propósito.
+A implementação da `std::string::substr` normalmente cria uma nova string contendo os caracteres desejados. A eficiência disso depende da implementação específica da biblioteca padrão que você está usando, mas geralmente é um processo bastante rápido.
 
-## Veja também:
+## Veja Também:
 
-- [Documentação oficial da função `substr()` do C++](https://en.cppreference.com/w/cpp/string/basic_string/substr)
-- [Tutorial sobre strings em C++](https://www.learncpp.com/cpp-tutorial/strings/)
-- [Perguntas frequentes sobre strings em C++](https://www.learncpp.com/cpp-tutorial/faq-strings/)
+Para mais detalhes sobre manipulação de strings em C++, consulte a documentação oficial:
+
+1. [cplusplus.com reference on std::string::substr](http://www.cplusplus.com/reference/string/string/substr/)
+2. [cppreference.com on std::string](https://en.cppreference.com/w/cpp/string/basic_string)
+3. [Bjarne Stroustrup's website](http://www.stroustrup.com/C++.html)
+
+Lembre-se que a prática leva à perfeição. Então, continue programando e melhorando suas habilidades.

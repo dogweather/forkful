@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "C: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+# Was & Warum?
+In C ermöglicht das Lesen von Befehlszeilenargumenten den Empfang von Eingabewerten direkt bei der Ausführung eines Programms. Dies ist nützlich, um unser Programm dynamischer zu gestalten, indem wir es unterschiedlichen Situationen anpassen, ohne den Code ändern zu müssen.
 
-Das Lesen von Befehlszeilenargumenten ist eine häufige Aufgabe in der Programmierung. Dabei werden die Argumente, die bei der Ausführung des Programms in der Befehlszeile angegeben wurden, vom Programm eingelesen und verwendet. Dies ermöglicht es dem Programmierer, die Ausführung seines Programms zu steuern und anzupassen.
-
-## Wie geht's?
-
-Um Befehlszeilenargumente in C zu lesen, können wir die vordefinierten Variablen `argc` und `argv` verwenden. `argc` enthält die Anzahl der Argumente, die in der Befehlszeile angegeben wurden, und `argv` ist ein Array von Zeigern auf die einzelnen Argumente. Wir können dann einfach über `argv` iterieren und auf die Argumente zugreifen. Zum Beispiel:
-
-```
-#include <stdio.h>
-
+# Wie es geht:
+Für die Definition von argc (Argumentanzahl) und argv (Argumentvektor) sieht die Haupteintragung des C-Programms wie folgt aus:
+```C
 int main(int argc, char *argv[]) {
-  printf("Anzahl der Argumente: %d \n", argc);
-  for (int i=0; i<argc; i++) {
-    printf("Argument %d: %s \n", i, argv[i]);
-  }
-  return 0;
+// Programmcode
 }
 ```
-Wenn wir dieses Programm als `./programmname argument1 argument2` ausführen, erhalten wir die Ausgabe:
-
+Zum Beispiel könnten wir eine kurze Anwendung erstellen, die alle übergebenen Argumente ausgibt:
+```C
+#include<stdio.h>
+int main(int argc, char *argv[]) {
+    for(int i=0; i<argc; i++) {
+        printf("Argument %d ist %s\n", i, argv[i]);
+    }
+    return 0;
+}
 ```
-Anzahl der Argumente: 3
-Argument 0: ./programmname
-Argument 1: argument1
-Argument 2: argument2
+Wenn Sie dieses Programm mit `./myprogram arg1 arg2 arg3` aufrufen, sieht die Ausgabe folgendermaßen aus:
+```
+Argument 0 ist ./myprogram
+Argument 1 ist arg1
+Argument 2 ist arg2
+Argument 3 ist arg3
 ```
 
-## Tiefere Einblicke
+# Vertiefung
+Historisch gesehen sind Befehlszeilenargumente ein Erbe vieler früherer Systeme, darunter Unix. Sie wurden entwickelt, um einigen der frühen Einschränkungen dieser Systeme entgegenzuwirken und gleichzeitig ein hohes Maß an Flexibilität bei der Kommandozeilenausführung von Programmen zu ermöglichen.
 
-Das Lesen von Befehlszeilenargumenten ist eine gängige Aufgabe in vielen Programmiersprachen. Neben C unterstützen auch Sprachen wie Python, Java und Perl das Lesen von Befehlszeilenargumenten auf ähnliche Weise.
+Alternativen zu Befehlszeilenargumenten umfassen das Einlesen von Dateien, Umgebungsvariablen und interaktiven Benutzereingaben. Obwohl diese nützlich sind, bieten sie nicht die gleiche direkte und einfache Mechanik, die Befehlszeilenargumente ermöglichen.
 
-Eine alternative Möglichkeit besteht darin, eine externe Bibliothek zu verwenden, die das Parsen von Befehlszeilenargumenten erleichtert, wie zum Beispiel `getopt` oder `argp` in C.
+Befehlszeilenargumente werden vom Betriebssystem angelegt und beim Start des Programms auf den Stack gelegt. Aus diesem Grund haben sie einen begrenzten Einsatzbereich und nicht jedes Programm muss argc und argv verwenden.
 
-Bei der Implementierung von Befehlszeilenargumenten in C ist es wichtig, auf die Reihenfolge der Argumente und die Behandlung von Optionen und Argumenten zu achten. Es kann auch hilfreich sein, Fehlerbehandlungen und Validierungen hinzuzufügen, um die Benutzerfreundlichkeit des Programms zu verbessern.
-
-## Siehe auch
-
-- [C-Programmierhandbuch: Befehlszeilenargumente](https://www.gnu.org/software/libc/manual/html_node/Command_002dLine-Arguments.html)
-- [How to Read Command Line Arguments in C](https://www.geeksforgeeks.org/how-to-read-command-line-arguments-in-c/)
-- [Using Command Line Arguments in C](https://www.codingunit.com/using-command-line-arguments-in-c)
+# Siehe Auch
+- Einführung in die C-Programmierung: https://www.learn-c.org/
+- Tiefergehende Informationen zum Umgang mit Befehlszeilenargumenten in C: https://www.cprogramming.com/tutorial/c/lesson14.html
+- Unterschiede im Umgang mit Befehlszeilenargumenten je nach Betriebssystem: https://www.geekhideout.com/urlcode.shtml

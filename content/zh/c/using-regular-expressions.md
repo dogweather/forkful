@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "C: 使用正则表达式"
+html_title:           "Arduino: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "C"
 category:             "C"
@@ -10,56 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是正则表达式？
-正则表达式是一种用来匹配和操作文本模式的表达式。它们可以帮助程序员更有效地搜索和处理文本数据，比如查找特定的字符串或者验证用户输入的格式是否正确。
+## 什么 & 为什么?
 
-## 如何使用？
-下面的代码示例展示了如何使用正则表达式来验证一个密码是否含有至少一个大写字母和数字。如果密码符合要求，则输出“密码符合要求”，否则输出“密码不符合要求”。
+正则表达式是用来匹配和处理字符串的强大工具。程序员使用他们因为能极大地提高编写匹配和搜索任务的效率。
+
+## 如何实现:
+
+以下是一个C语言使用正则表达式的例子:
 
 ```C
-#include <stdio.h>
 #include <regex.h>
+#include <stdio.h>
 
 int main() {
     regex_t regex;
-    char password[20];
-    int match;
-
-    printf("请输入密码：");
-    scanf("%s", password);
-
-    // 编译正则表达式
-    match = regcomp(&regex, "[A-Z]+[0-9]+", 0);
-
-    // 验证密码
-    if (match == 0) {
-        match = regexec(&regex, password, 0, NULL, 0);
-        if (match == 0) {
-            printf("密码符合要求");
-        } else {
-            printf("密码不符合要求");
-        }
+    int ret;
+    ret = regcomp(&regex, "abc", 0);
+    if (ret) {
+        printf("Could not compile regex\n");
+        return 1;
     }
-
+    ret = regexec(&regex, "abcdef", 0, NULL, 0);
+    if (!ret) {
+        printf("Match\n");
+    } else if (ret == REG_NOMATCH) {
+        printf("No match\n");
+    } else {
+        printf("Regex match failed\n");
+        return 1;
+    }
+    regfree(&regex);
     return 0;
 }
 ```
 
-输出示例：
+运行上述代码，输出将如下：
 
 ```
-请输入密码：StrongPass1
-密码符合要求
+Match
 ```
 
-## 深入探讨
-正则表达式最早出现在贝尔实验室的UNIX操作系统中，它们被称为“grep”的原因是因为它们作为“global regular expression print”的缩写。它们也经常被称为“regex”，“regexp”或者“RE”。
+## 深入了解:
 
-虽然使用字符串函数也可以完成类似的任务，但是正则表达式提供了更灵活和精确的模式匹配能力。它的替代方法是使用有限状态自动机（finite-state automaton）来搜索和解析文本，但是这种方法更复杂和更难以理解。
+1. 历史背景: 正则表达式起源于20世纪60年代，由IEEE标准化。它们的主要目的是为了进行字符串匹配。
+2. 更换方案: 其他一些字串处理方法包括使用字符串函数进行简单查找和替换。然而, 正则表达式提供更强大和灵活的匹配功能。
+3. 实现细节: 在C语言中, 正则表达式是通过库函数如'regcomp' 和 'regexec' 来编译和执行。
 
-想要在C语言中使用正则表达式，通常需要引入正则表达式的库，比如POSIX标准库或者PCRE库。然后使用现有的函数来编译、匹配和释放正则表达式。
+## 更多资源:
 
-## 参考资料
-- [正则表达式基础教程](https://www.runoob.com/regexp/regexp-syntax.html)
-- [POSIX标准库正则表达式](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [PCRE库](http://www.pcre.org/)
+- "Mastering Regular Expressions": 一本综合而深入的书，是学习正则表达式的绝佳资源。可在这里找到: https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/
+- 'regex.h' 在线手册: 对 'regex.h' 函数库的详尽介绍。在线阅读: http://man7.org/linux/man-pages/man0/regex.h.0p.html

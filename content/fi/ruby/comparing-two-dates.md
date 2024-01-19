@@ -1,7 +1,7 @@
 ---
-title:                "Vertailla kahden päivämäärän välillä"
-html_title:           "Ruby: Vertailla kahden päivämäärän välillä"
-simple_title:         "Vertailla kahden päivämäärän välillä"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,27 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+# Ruby-ohjelmointi: Kaksi päivämäärää - Kuinka verrata?
 
-Päivämäärien vertailu on yksinkertainen prosessi, jossa verrataan kahta eri päivämäärää keskenään. Ohjelmoijat tekevät tätä esimerkiksi tarkistaessaan, kumpi päivämäärä on suurempi tai jos kaksi päivämäärää on sama.
+## Mitä ja Miksi?
 
-## Kuinka:
+Päivämäärän vertailulla tarkoitamme kahden erillisen päivämäärän arvon vertaamista. Ohjelmoijat tarvitsevat sitä esimerkiksi päätelläkseen, onko jokin tapahtuma jo tapahtunut vai tapahtuuko se tulevaisuudessa.
 
-```Ruby
-date1 = Date.new(2021, 1, 25)
-date2 = Date.new(2021, 1, 20)
+## Kuinka tehdä:
+Rubyssa päivämäärän vertailu on melko suoraviivaista. Katsotaan esimerkkiä. Voit verrata niitä kuten vertaat lukuja.
 
-puts date1 > date2 # tulos: true
-puts date1 == date2 # tulos: false
+```ruby
+require 'date'
+
+date1 = Date.new(2000, 1, 1)
+date2 = Date.new(2020, 1, 1)
+
+if date1 > date2
+  puts "date1 on myöhempi"
+elsif date1 < date2
+  puts "date2 on myöhempi"
+else
+  puts "Päivämäärät ovat samat"
+end
 ```
 
-## Syvän sukelluksen
+Tämä tulostaa "date2 on myöhempi", koska 2020 on myöhempi kuin 2000.
 
-Päivämäärien vertailua on käytetty ohjelmoinnissa jo pitkään. Usein siinä käytetään ohjelmointikielen tarjoamia valmiita toimintoja, kuten Rubyssa olevaa > ja == operaattoria. On myös olemassa muita tapoja vertailla päivämääriä, kuten muuntamalla ne UNIX-aikaleimoiksi ja vertailemalla niitä. Tämä voi olla kätevää, jos halutaan tarkastella päivämääriä tarkemmin.
+## Syvällisempi tutkimus
+Ruby tarjoaa `Date`-luokan päivämäärän vertailuun ja käsittelyyn. Tämä luokka on osa Ruby-kielen standardikirjastoa, ja se lanseerattiin Ruby 1.9:ssa, joten se on melko uusi ominaisuus.
 
-## Katso myös
+Muissa ohjelmissa voidaan käyttää myös aikaleimaa vertailuun. Kuitenkin, Ruby-kielen `Date`-luokka on hyvin helppokäyttöinen ja sitä suositellaan, jos aikaleiman tai kellonajan käsittelyä ei tarvita. 
 
-Lisätietoa päivämäärien vertailusta ja vaihtoehtoisia tapoja tehdä se löydät seuraavista lähteistä:
+Huomaa, että päivämäärän vertailu itsessään on yksinkertainen operaatio, mutta asioita voi monimutkaistua, kun aikavyöhykkeet ja kellonajat otetaan huomioon.
 
-* [Ruby Date-luokka](https://ruby-doc.org/core-3.0.1/Date.html)
-* [Unix aikaleimat](https://en.wikipedia.org/wiki/Unix_time)
+## Katso myös:
+- Ruby's Date luokan virallinen dokumentaatio: https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html
+- Ruby ohjelmanoitikielen oppaat ja resurssit: https://www.ruby-lang.org/fi/documentation/
+- Ruby-ohjelmointikielen syvempi tutkimus päivämäärän ja ajan käsittelystä: https://learn.co/lessons/ruby-advanced-class-methods-readme

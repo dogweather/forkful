@@ -1,7 +1,7 @@
 ---
-title:                "Unire stringhe"
-html_title:           "PHP: Unire stringhe"
-simple_title:         "Unire stringhe"
+title:                "Concatenazione di stringhe"
+html_title:           "Bash: Concatenazione di stringhe"
+simple_title:         "Concatenazione di stringhe"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,24 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Concatenare le stringhe in informatica significa unire più stringhe di testo per crearne una sola. I programmatori lo fanno spesso per creare un'unica stringa che contenga informazioni diverse e per facilitare la gestione dei dati. Questo è molto utile quando si lavora con grandi quantità di testo o quando si deve formattare un output specifico.
+## Che cos'è e perchè?
+
+La concatenazione di stringhe è l'operazione di unire due o più stringhe per formarne una nuova. I programmatori lo fanno per creare dinamicamente contenuti di testo, come messaggi personalizzati per gli utenti.
 
 ## Come fare:
+
+Nella programmazione PHP, usiamo l'operatore di concatenazione '.' per unire le stringhe. Guarda l'esempio di seguito:
+
 ```PHP
-$stringa1 = "Ciao";
-$stringa2 = "mi";
-$stringa3 = "chiamo";
-$stringa4 = "Marco";
+$primaStringa = "Ciao, ";
+$secondaStringa = "mondo!";
+$fraseCompleta = $primaStringa . $secondaStringa;
 
-echo $stringa1 . " " . $stringa2 . " " . $stringa3 . " " . $stringa4;
+echo $fraseCompleta;
 ```
-Output: Ciao mi chiamo Marco
 
-## Approfondimento:
-La concatenazione di stringhe è stata introdotta per la prima volta nella versione PHP 4 e da allora è diventata una funzione fondamentale nella gestione dei dati. Un'alternativa alla concatenazione di stringhe è l'utilizzo di variabili con una sintassi dinamica, ma ciò richiede più codice e può essere meno efficiente in alcune situazioni. Per implementare la concatenazione di stringhe, PHP utilizza il carattere di concatenazione "." e permette di unire le stringhe in modo rapido e semplice.
+Otterrai come output:
+
+```PHP
+"Ciao, mondo!"
+```
+
+## Approfondendo:
+
+La concatenazione delle stringhe è un concetto fondamentale della programmazione, presente fin dai primi linguaggi come COBOL e FORTRAN. Nelle versioni precedenti di PHP, l'operatore di concatenazione poteva essere un po' confuso perché usava gli stessi simboli ('+' o '.') usati per l'aggiunta matematica. A partire da PHP 4, l'operatore per la concatenazione è diventato '.'.
+
+Un'alternativa alla concatenazione utilizza le virgolette doppie ("") che permettono di includere variabili direttamente all'interno della stringa: 
+
+```PHP
+$nome = "Mondo";
+echo "Ciao, $nome!";
+```
+
+Rispetto alla concatenazione di stringhe, questo approccio può essere più leggibile, ma nota che non può essere utilizzato con le virgolette singole ('').
 
 ## Vedi anche:
-- [Documentazione ufficiale su stringhe in PHP] (https://www.php.net/manual/en/language.types.string.php)
-- [Tutorial su come usare la concatenazione di stringhe] (https://www.w3schools.com/php/php_operators.asp)
-- [Video tutorial sulla concatenazione di stringhe] (https://www.youtube.com/watch?v=O4z-B9KbdU0)
+
+- [PHP Manual: Concatenazione di stringhe](http://php.net/manual/en/language.operators.string.php)
+- [PHP: The Right Way - Concatenazione di stringhe](http://www.phptherightway.com/pages/The-Basics.html#string-concatenation)
+- [Bello e semplice: Un'introduzione alla stringa in PHP](https://developer.mozilla.org/it/docs/Learn/PHP/Stringhe)
+  
+Ricorda, la pratica rende perfetti. Quindi continua a codificare!

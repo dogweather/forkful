@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "Elm: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
-
-Lire un fichier texte en programmation consiste simplement à accéder aux données écrites dans un texte brut. Les programmeurs peuvent le faire pour extraire des informations, les manipuler ou les utiliser dans leur code.
+## Quoi & Pourquoi?
+La lecture d'un fichier texte est l'opération de récupération des données brutes d'un fichier. Les programmeurs font cela pour manipuler, analyser les données ou simplement pour afficher les données à l'utilisateur.
 
 ## Comment faire:
+Malheureusement, Elm (version actuelle) est un langage de programmation Front-End qui ne fournit pas de fonctionnalité native pour lire directement les fichiers. C'est une mesure de sécurité pour protéger les données sensibles de l'utilisateur. Cependant, vous pouvez gérer cela en utilisant une approche de contournement en utilisant JavaScript. Vous pouvez définir une fonction JavaScript pour lire un fichier et renvoyer le contenu à Elm.
 
-Voici un exemple de code en Elm pour lire un fichier texte et afficher son contenu :
+```JavaScript
+let fileReader = new FileReader();
+fileReader.onload = (() => {
+    return (e) => {
+        let fileContent = e.target.result;
+        yourElmApp.ports.fileContent.send(fileContent);
+    };
+})();
+```
+
+Ensuite, dans Elm, vous définissez une fonction pour traiter le contenu du fichier.
 
 ```Elm
-import Text
-import File
+port module Main exposing (..)
 
-main =
-  Text.fromFile "mon_fichier.txt"
-    |> Text.lines
-    |> List.map Text.toUpper
-    |> String.join "\n"
-    |> Text.print
+port fileContent : (String -> msg) -> Sub msg
+
+-- Une fonction pour gérer le contenu du fichier
+handleFileContent : String -> Msg
+handleFileContent content =
+    content |> Debug.toString |> Browser.Dom.alert
 ```
 
-Résultat :
+## Plongée en profondeur
+Bien qu'Elm n'ait pas de fonctionnalité native pour lire les fichiers, cette mesure de sécurité est en place pour une bonne raison. Dans le passé, la possibilité de lire des fichiers directement depuis le navigateur était une grande faille de sécurité, permettant aux sites Web malveillants d'accéder à des informations sensibles.
+  
+En ce qui concerne les alternatives, vous pouvez choisir d'utiliser une API de serveur pour lire un fichier ou de faire appel à JavaScript, comme montré ci-dessus. De plus, vous pourriez aussi envisager d'utiliser une autre langue qui soutient la lecture de fichiers, telle que Python ou Node.js, selon vos besoins.
+  
+L'implémentation, comme mentionné précédemment, nécessite une communication entre Elm et JavaScript. En Elm, vous créez un port pour envoyer des messages à JavaScript. Ensuite, dans JavaScript, vous définissez une fonction pour lire un fichier et renvoyer le contenu à Elm par le biais du port.
 
-```
-BONJOUR
-COMMENT ÇA VA?
-JE SUIS UN FICHIER TEXTE.
-```
-
-## Plongée en profondeur:
-
-Historiquement, la lecture de fichiers texte est un aspect important de la programmation, car elle permet de travailler avec des données provenant d'autres sources que le code lui-même. Il existe également d'autres façons de traiter des données, telles que les bases de données ou les API.
-
-La lecture de fichiers texte en Elm est rendue possible grâce à l'utilisation de certains modules, tels que Text et File. Il est également important de noter que la manière dont les fichiers texte sont lus peut varier selon le système d'exploitation utilisé.
-
-## Voir aussi:
-
-Pour en savoir plus sur la lecture de fichiers texte en Elm, vous pouvez consulter la documentation officielle sur les modules Text et File. Vous pouvez également explorer d'autres solutions de traitement de données, telles que les bases de données ou les API.
+## Voir Aussi
+1. [Documentation Elm](https://package.elm-lang.org/packages/elm/browser/latest/)
+2. [Documentation FileReader JavaScript](https://developer.mozilla.org/fr/docs/Web/API/FileReader)
+3. [Node.js pour lire les fichiers](https://nodejs.org/en/knowledge/file-system/how-to-read-files-in-nodejs/)
+4. [Python pour lire les fichiers](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)

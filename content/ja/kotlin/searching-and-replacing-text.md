@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Kotlin: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,32 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ？
-検索と置換は、プログラマーがテキスト内で特定の語句を見つけ、それを新しい語句に置き換えることを指します。プログラマーは、コードやドキュメント内の特定の語句を一括で変更するために、この機能を使用します。
+## 何とどうして？
+検索と置換は、特定のテキストを見つけて（検索）それを新しいテキストで置き換える（置換）ことです。プログラマーはこれを用いて、コード内の特定の文字列を一括で変更したり、データの一部を新しい情報で更新するときに使用します。
 
-## 使い方：
-#### 文字列の置換：
+## どうやって：
 ```Kotlin
-val oldString = "Hello World"
-val newString = oldString.replace("World", "Universe")
-println(newString)
+fun main() {
+  var text = "Kotlin programming is fun"
+  println(text)
+  // Output: Kotlin programming is fun
 
-// Output: Hello Universe
+  text = text.replace("fun", "awesome")
+  println(text)
+  // Output: Kotlin programming is awesome
+}
 ```
+この例では、私たちは "fun"という文字列を "awesome"に置替えています。
 
-#### 正規表現の置換：
-```Kotlin
-val sentence = "I have 10 cats and 5 dogs."
-val newSentence = sentence.replace(Regex("[0-9]+"), "3")
-println(newSentence)
+## ディープダイブ
+検索と置換の概念は、ワードプロセッサーが一般的になった1970年代以来、ITの中核的な部分となってきました。この機能は非常に強力で、一連の長いテキストやコードベース内の単語やフレーズをすばやく、正確に見つけて置き換えることができます。代替手段としては手動での検索と置換がありますが、大量のテキストやコード中での使用には向いていません。Kotlinは `replace()` 関数を用いてこの機能を実装していますが、他の言語では異なるメソッドや関数を使用することがあります。
 
-// Output: I have 3 cats and 3 dogs.
-```
-
-## 詳しく見ていきましょう：
-検索と置換は、テキスト処理において非常に重要な機能です。かつては、手作業で文書中の誤字や印刷ミスを修正する必要がありましたが、検索と置換を使うことで簡単に修正することができるようになりました。もしKotlinを使わない場合、Javaでは正規表現を使って実現することができます。
-
-## 参考リンク：
-- Kotlin Strings and Regular Expressions: https://kotlinlang.org/docs/reference/regular-expressions.html
-- Java Pattern Class: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
-- Online Regex Tester: https://regexr.com/
+## 関連資料
+- Kotlin公式ドキュメント: [String operations](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+- StackOverflowのディスカッション: [Search and replace in Kotlin](https://stackoverflow.com/questions/36574183/how-to-replace-substring-in-kotlin)

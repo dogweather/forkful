@@ -1,7 +1,7 @@
 ---
-title:                "Велика перша літера у рядку"
-html_title:           "TypeScript: Велика перша літера у рядку"
-simple_title:         "Велика перша літера у рядку"
+title:                "Перетворення рядка на великі літери"
+html_title:           "TypeScript: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому? 
+# Зміна регістру рядків в TypeScript
 
-З несподіваного істочника, випливає необхідність написання коду, який може бути непередбачуваним для користувача. Це може викликати плутанину, особливо коли кожне слово по-своєму називається. І саме тут на допомогу приходить capitalizing у string. Це означає, що перше слово в рядку буде написано великими літерами, а всі інші - малими. Таким чином, рядок буде більш читабельним і легше розпізнаватися для програміста.
+## Що це і навіщо?
+Зміна регістру рядків полягає в перетворенні перших букв кожного слова на великі (роблення їх "прописними"). Ми це робимо для форматування тексту, наприклад, для заголовків або імен в контекстах, де це стає стандартом.
 
-Як це зробити: 
+## Як це робити:
+Ось як можна це зробити в TypeScript:
 
-```TypeScript 
-const str = "цей рядок потрібно зробити capitalizing"; 
-console.log(str.toUpperCase()); 
-``` 
-Вивід: 
-Це рядок потрібно зробити capitalizing 
+```TypeScript
+function capitalizeString(str: string): string {
+   return str.replace(/\b\w/g, function (char) {
+      return char.toUpperCase();
+   });
+}
+console.log(capitalizeString("hello, world!")) // "Hello, World!"
+```
 
-Глибовка дослідження: 
+Ви бачите, як маленькі букви "h" та "w" у "Hello, World!" були замінені на великі "H" та "W".
 
-Capitalizing не є новим поняттям і використовувалося у багатьох стародавніх персідських і навіть римських текстах. У сучасному програмуванні існує кілька альтернативних способів capitalizing, таких як capitalize першої букви кожного слова, або capitalize кожної букви. У TypeScript, є вбудована функція, яка дозволяє застосувати capitalize до будь-якого рядка, дозволяючи програмістам зробити відсутність чіткого розділення між словами більш правильним.
+## Глибше занурення
+1. Історичний контекст: Ідея приведення рядків до великого регістру зародилась задовго до появи TypeScript. Насправді, це одна з базових операцій обробки тексту в більшості мов програмування.
+2. Альтернативи: В TypeScript можна використовувати метод `toLocaleUpperCase()` для адаптивного зміщення до верхнього регістру, який ураховує специфічні для місцевості варіанти літер.
+3. Деталі реалізації: Наша функція `capitalizeString` використовує регулярний вираз `/ \b\w / g` для пошуку першої букви кожного слова в рядку та заміни її на прописний варіант за допомогою методу `toUpperCase()`.
 
-Приклади: 
-
-```TypeScript 
-const str = "цей рядок потрібно зробити capitalize"; 
-console.log(str.toLocaleLowerCase()); //трохи змінений рядок 
-``` 
-Вивід: 
-цей рядок потрібно зробити capitalize 
-
-##Дивіться також: 
-
-- Документація TypeScript capitalize функції [https://www.typescriptlang.org/docs/handbook/utility-types.html#capitalizet](https://www.typescriptlang.org/docs/handbook/utility-types.html#capitalize)
-- Історія розвитку capitalize в програмуванні [https://en.wikipedia.org/wiki/Capitalization](https://en.wikipedia.org/wiki/Capitalization)
+## Дивіться також
+1. [TypeScript - String toUpperCase()](https://www.tutorialsteacher.com/typescript/typescript-string-touppercase)
+2. [Javascript String toUpperCase()](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+3. [Mastering JavaScript Single Line String Manipulation](https://itnext.io/making-your-javascript-functions-more-readable-by-writing-less-c0a351af38e4)

@@ -10,58 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que é e por que fazemos isso?
+## O Que é & Porquê?
+Em programação, "capitalizar" uma string significa converter todas as letras em maiúsculas. Os programadores fazem isso para uniformizar dados, facilitando a comparação entre diferentes entradas.
 
-Ao programar em C, pode ser necessário alterar a capitalização de uma string. Isso significa mudar todas as letras para maiúsculas ou minúsculas. Os programadores geralmente fazem isso para padronizar o formato de entrada ou saída de dados ou para facilitar a comparação entre strings.
+## Como fazer:
+Veja o exemplo de código abaixo que demonstra como capitalizar uma string em C.
 
-# Como fazer:
-
-Aqui está um exemplo simples de como capitalizar uma string em C:
-
-```C
+```C 
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
-// Função para capitalizar uma string
-void capitalize(char* str) {
-    int i;
-    // Loop através de todos os caracteres da string
-    for(i = 0; i < strlen(str); i++) {
-        // Se o caractere atual for uma letra minúscula
-        if(str[i] >= 'a' && str[i] <= 'z') {
-            // Subtrai 32 para mudá-lo para maiúscula
-            str[i] = str[i] - 32;
-        }
+void capitalize(char* s) {
+    for(int i = 0; s[i]; i++) {
+        s[i] = toupper((unsigned char) s[i]);
     }
 }
 
-// Função principal
 int main() {
-    char string[] = "exemplo de string com várias letras maiúsculas e minúsculas";
-    // Chama a função capitalize
-    capitalize(string);
-    // Imprime a string capitalizada
-    printf("%s", string);
+    char s[] = "Oi, como você está?";
+    capitalize(s);
+    printf("%s\n", s);  // "OI, COMO VOCÊ ESTÁ?"
     return 0;
 }
-
 ```
+Experimente compilar e executar este código. A saída será `OI, COMO VOCÊ ESTÁ?`.
 
-Saída:
+## Mergulho Profundo
+A função `toupper()` usada no código acima é uma contribuição histórica do padrão C89. Este padrão deu aos programadores o acesso às funções da biblioteca ctype.h que lidam com a conversão e classificação de caracteres. Contudo, a função `toupper()` só converte um caractere por vez. Quando temos que capitalizar uma string inteira, precisamos usar uma função personalizada, como a função `capitalize()` que criamos acima.
 
-```
-EXEMPLO DE STRING COM VÁRIAS LETRAS MAIÚSCULAS E MINÚSCULAS
-```
+Existem outras maneiras de capitalizar uma string em C. Por exemplo, você pode usar a função `transform()` na biblioteca algoritmo C++ ou a biblioteca GNU `strupper()`. Mas essas não são soluções padronizadas e podem não funcionar em todas as plataformas.
 
-# Mais informações:
-
-A capitalização de strings pode ser rastreada até os primeiros dias da linguagem de programação C. Antes disso, era comum que os programadores usassem outras linguagens de programação, como Assembly, que não distinguiam maiúsculas de minúsculas. No entanto, com o aumento da complexidade dos programas, tornou-se importante padronizar a capitalização para facilitar a comparação entre strings.
-
-Existem outras maneiras de capitalizar uma string em C, como o uso da função ```toupper()``` na biblioteca ```<ctype.h>```. No entanto, a abordagem mostrada neste exemplo é mais simples e direta, especialmente em casos em que apenas letras minúsculas precisam ser capitalizadas.
-
-Uma consideração importante ao capitalizar strings é que o código acima só funcionará para caracteres ASCII. Para suportar outros tipos de conjunto de caracteres, é necessário uma abordagem mais complexa, utilizando funções como ```tolower()```, que podem lidar com caracteres acentuados.
-
-# Veja também:
-
-Mais informações sobre a função ```toupper()```:
-https://www.programiz.com/c-programming/library-function/ctype.h/toupper
+## Veja também
+- Documentação ctype.h: http://www.cplusplus.com/reference/cctype/
+- Documentação toupper: https://www.cplusplus.com/reference/cctype/toupper/ 
+- Documentação C99 Standard: http://www.open-std.org/jtc1/sc22/wg14/www/standards.html#9899

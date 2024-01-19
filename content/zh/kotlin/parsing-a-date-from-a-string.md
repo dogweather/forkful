@@ -1,7 +1,7 @@
 ---
-title:                "分析字符串中的日期"
-html_title:           "Kotlin: 分析字符串中的日期"
-simple_title:         "分析字符串中的日期"
+title:                "从字符串解析日期"
+html_title:           "C: 从字符串解析日期"
+simple_title:         "从字符串解析日期"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是日期字符串转换？为什么程序员这么做？
+## 什么以及为什么？
+解析一个日期从字符串就是从文本形式的日期信息中提取出实践上可用的日期数据。程序员之所以需要这样做，是因为它可以使得程序逻辑更加言简意赅，更适合数据的使用和管理。
 
-日期字符串转换是将一个文本形式的日期转换为程序可识别的日期格式的过程。程序员通常将日期字符串转换为日期对象，以便在程序中进行操作和计算。
-
-# 如何进行转换？
-
-Kotlin提供了一个简单的方法来解析日期字符串，使用```LocalDate.parse()```函数，接受一个日期字符串和日期格式作为参数。下面是一个示例代码：
-
+## 如何操作：
 ```Kotlin
-val input = "2021-08-15"
-val dateFormat = DateTimeFormatter.ISO_DATE
-val date = LocalDate.parse(input, dateFormat)
-println(date) // 输出：2021-08-15
+import java.text.SimpleDateFormat
+import java.util.Locale
+import java.util.Date
+  
+fun main(args: Array<String>) {
+   val string = "2022-04-13"
+   val date = SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH).parse(string)
+   println(date)
+}
 ```
+样本输出:
+```Kotlin
+Wed Apr 13 00:00:00 CST 2022
+```
+## 深入探索：
+在计算机程序的早期历史中，为了节省存储空间，日期和时间通常存储为字符串。但随着时间的推移，人们发现这种方法在处理某些日期或者时间的问题时，比如计算日期差或者日期排序等等是非常不方便的，因此人们开始将日期和时间解析并表示成可以进行各种操作的日期对象。
 
-# 深入探讨
+至于选择哪种解析，取决于问题的实际需要。例如，可以使用SimpleDateFormat类的parse()方法，也可以用LocalDate类的parse() 方法，或者你也可以自定义一个用于解析字符串中的日期的函数。
 
-在过去，程序员需要手动解析日期字符串，这非常耗时和繁琐。现在，有许多不同的库和API可以帮助程序员快速解析日期字符串，如Java 8中的日期和时间API和第三方库如Joda-Time。
+在使用SimpleDateFormat执行日期解析时，如果为不可解析的字符串提供日期格式，那么会抛出ParseException。为了处理这一问题，你需要使用try...catch结构来捕获异常。
 
-除了上述方式，还可以使用正则表达式来解析日期字符串，但这种方法需要更多的编程技巧和时间。
-
-# 查看相关资源
-
-如果你想了解更多有关日期字符串转换的内容，可以参考以下资料：
-
-- [Java 8中的日期和时间API](https://docs.oracle.com/javase/8/docs/technotes/guides/language/datetime.html)
-- [Joda-Time](https://www.joda.org/joda-time/)
-- [Java正则表达式教程](https://www.javatpoint.com/java-regex)
+## 另请参阅：
+1. Kotlin官方文档关于日期和时间处理的部分: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/
+2. Java SimpleDateFormat官方文档: https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+3. Oracle关于日期时间API的教程: https://docs.oracle.com/javase/tutorial/datetime/index.html

@@ -1,7 +1,7 @@
 ---
-title:                "HTTPリクエストを送信する"
-html_title:           "Fish Shell: HTTPリクエストを送信する"
-simple_title:         "HTTPリクエストを送信する"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,59 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何か & 何故？
+---
+## 何となぜ？
 
-HTTPリクエストを送信するとは何か？それは、プログラマーがウェブサイトやウェブアプリケーションを操作したり、データを取得したりするために使う方法です。HTTPリクエストを送信することで、インターネット上のさまざまな情報にアクセスすることができます。
+HTTPリクエストの送信とは、特定のウェブリソースへのリクエストを意味します。プログラマーはこれを用いて、データを取得・送信、または特定のリモートサーバーとのコミュニケーションを実現します。
 
 ## やり方：
 
-```
-Fish Shellを使用してHTTPリクエストを送信する方法を見てみましょう。
+Fish ShellでHTTPリクエストを送信する一例をご紹介します。`curl`コマンドを使います。
 
-最初に、以下のコマンドを入力します：
-
-```
-curl -i https://www.example.com/
-```
-
-これにより、指定したURLにGETリクエストが送信されます。そして、サーバーからのレスポンスを受け取り、その情報をターミナルに表示します。
-
-```
-HTTP/1.1 200 OK
-Date: Sun, 01 Mar 2020 12:00:00 GMT
-Server: Apache
-Content-Length: 120
-Content-Type: text/html; charset=UTF-8
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to Example.com</title>
-</head>
-<body>
-<h1>Hello World!</h1>
-</body>
-</html>
+```Fish Shell
+function http_get
+  set url $argv[1]
+  curl $url
+end
 ```
 
-このように、リクエストを送信することで、ウェブサイトのタイトルやHTMLコードなどの情報を取得することができます。
+例えば、Googleのホームページの情報を取得する場合、以下のコマンドを入力します。
 
-## 詳しく見る：
+```Fish Shell
+http_get https://www.google.com/
+```
 
-### 歴史的背景：
+このスクリプトは指定したURLの内容を画面に表示します。
 
-HTTPリクエストの送信方法には、さまざまな歴史的背景があります。最初のウェブサーバーは、HTTPリクエストを受け取って、ファイルを返すように設計されていました。しかし、今ではHTTPリクエストを使用して、データを取得するだけでなく、送信したり、削除したりすることもできるようになりました。
+## ディープ・ダイブ：
 
-### 代替案：
+HTTPリクエストの送信が最初に提唱されたのは、1990年代初頭のWorld Wide Webの誕生とともにです。それ以来、この技術はウェブのコアな部分となり、今日のインターネットの基盤を支えています。
 
-HTTPリクエストを送信する方法としては、Fish Shell以外にもさまざまな方法があります。例えば、PythonのrequestsモジュールやNode.jsのAxiosモジュールなどがあります。ただし、これらのモジュールを使用するには、それぞれの言語を学習する必要があります。
+Fish Shellでは`curl`のようなコマンドを使う以外にも、HTTPリクエストを送信する方法がいくつかあります。例えば`wget`や`httpie`コマンドもよく使われます。これらの方法を選ぶ際は、使いたい機能や好みによります。
 
-### 実装の詳細：
+Fish ShellにおけるHTTPリクエストの実装詳細については、POSIXベースのシェルと同様であり、BashやZshといった他のシェルと比較して大きな違いはありません。
 
-Fish Shellでは、curlコマンドを使用することで、簡単にHTTPリクエストを送信することができます。具体的には、URLを指定し、任意のメソッド（GET、POST、PUT、DELETEなど）を使用することができます。
+## 参照：
 
-## 関連情報：
+以下のリンクは、Fish ShellとHTTPリクエストに関する有用な情報源です。
 
-- [HTTPリクエストとは？](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
-- [curlコマンドの使い方](https://curl.haxx.se/docs/manpage.html)
-- [リクエストを送信する他の方法](https://github.com/ggreer/the_silver_searcher/wiki/Fish-Shell-パイプラインでリクエストを送信する方法)
+- Fish Shell公式ドキュメンテーション： [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- HTTPリクエストについての詳細： [https://developer.mozilla.org/ja/docs/Web/HTTP/Methods](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)
+- `curl`コマンドについての詳細： [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)

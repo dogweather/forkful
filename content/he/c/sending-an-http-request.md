@@ -1,7 +1,7 @@
 ---
-title:                "שולח דרישת http"
-html_title:           "C: שולח דרישת http"
-simple_title:         "שולח דרישת http"
+title:                "שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
+simple_title:         "שליחת בקשת http"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,44 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זה ולמה?
-שליחת בקשת HTTP היא פעולה שמאפשרת למחשב לשלוח בקשה לשרת על מנת לקבל מידע או לבצע פעולות. תכנתנים משתמשים בפעולה זו כדי ליצור תקשורת מוצלחת עם שרתים ולבצע פעולות שונות כגון אימות משתמשים או שליחת נתונים לשרת.
+## מה זה & למה:
 
-# איך לבצע פעולה זו בשפת C:
+שליחת בקשת HTTP היא שיטה בה מחשב נותן לשרת לדעת שהוא רוצה לעבוד עם מידע מסוים. למתכנתים זה מאוד שימושי כי זה מאפשר להם לגשת למשאבים מרחוק על שרתים אחרים.
+
+## איך לבצע:
 ```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <curl/curl.h>
-
+ 
 int main(void)
 {
   CURL *curl;
   CURLcode res;
-
+ 
+  curl_global_init(CURL_GLOBAL_DEFAULT);
+ 
   curl = curl_easy_init();
   if(curl) {
-    // בניית הבקשה והתאמת הכותרת
     curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-
-    // שליחת הבקשה והצגת התשובה
+ 
+    /* Perform the request, res will get the return code */ 
     res = curl_easy_perform(curl);
+    /* Check for errors */ 
     if(res != CURLE_OK)
       fprintf(stderr, "curl_easy_perform() failed: %s\n",
               curl_easy_strerror(res));
-
-    // הסרת המתחבר
+     
+    /* always cleanup */ 
     curl_easy_cleanup(curl);
   }
+ 
+  curl_global_cleanup();
+ 
   return 0;
 }
 ```
+תוצאות הדוגמה:
+```
+curl_easy_perform() failed: Couldn't resolve host name
+```
+## דיבור עמוק:
+השיטה הזו משמשת כבר שנים רבות, מאז שה-Microsoft אימצו את ה-HTTP version 1.0 בשנת 1996. לשליחת בקשת HTTP יש גם חלופות, כמו השימוש ב-FTP או ב-SFTP, אבל הן לא נפוצות כמו ה-HTTP. פרטי ההפעלה כוללים השתמש ב- "CURLOPT_URL" כדי לקבוע את הכתובת שאליה הבקשה נשלחת. 
 
-# חקירה מעמיקה:
-- היסטורית רקע: שליחת בקשת HTTP היא חלק בלתי נפרד מתהליך התקשורת בין מחשבים ושרתים כבר כמה עשורים. זהו דרך פשוטה ויעילה לשלוח ולקבל מידע ומידע מהעולם החיצוני.
-- אלטרנטיבות: ישנן כמה דרכים נוספות לשלוח בקשות לשרתים, כגון RESTful API ו-SOAP. כל אחת מהן מתאימה למטרות שונות וזמינות בשפות תכנות שונות.
-- פרטים נוספים: בסופו של דבר, שליחת בקשת HTTP היא מסגרת יסודית ונפוצה שמאפשרת למפתחים ליצור תקשורת עם שרתים בצורה יעילה ומתמטית. תוכלו למצוא תיעוד מפורט נוסף על דרך לבצע פעולות נוספות עם הספריה libcurl המשמשת לשליחת בקשות HTTP.
-
-# ראו גם:
-- [מדריך מפורט לשליחת בקשות HTTP בשפת C](https://curl.se/libcurl/c/example.html)
-- [מאמר מפורט על היסטוריה של שליחת בקשות HTTP](https://searchnetworking.techtarget.com/definition/HTTP)
-- [תיעוד מפורט על שימוש בדפדפן curl בכדי לשלוח בקשות HTTP מפקד הטרמינל במערכת UNIX](https://curl.se/docs/manpage.html)
+## ראה גם:
+[Curl מדריך שימוש](https://curl.haxx.se/libcurl/c/)
+[מאגר מידע של HTTP](https://developer.mozilla.org/he/docs/Web/HTTP/Overview)

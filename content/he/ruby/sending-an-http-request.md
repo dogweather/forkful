@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "Ruby: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,54 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## מה & למה?
 
-שליחת בקשת HTTP היא תהליך המאפשר למתכנתים לבצע פנייה לשרת אינטרנט כדי לקבל מידע ותגובות מהשרת. מתכנתים נעזרים בפעולה זו כדי לאפשר לאתרים ויישומים לתקשר עם שרתים חיצוניים ולקבל תוצאות דינאמיות.
+שליחת בקשת HTTP היא דרך להעביר מידע מהמחשב שלך לשרת. מתכנתים שולחים בקשות HTTP לגשת למידע חיצוני, כמו API, או לשנות מידע בבסיסי נתונים דרך שרתי אינטרנט.
 
-## כיצד לבצע:
+## איך ל:
 
-כדי לשלוח בקשה HTTP, ניתן להשתמש בספריות ומודולים שבנויים על Ruby, כגון ```Net::HTTP```, ```Open-URI```, או ```HTTParty```. השתמשו בדוגמאות הקוד המופיעות להלן כדי להבין איך להשתמש בכל זאת.
-
-### הדגמה עם Net::HTTP:
+קוד ב Ruby לשליחת בקשת HTTP:
 
 ```Ruby
 require 'net/http'
+require 'uri'
 
-uri = URI("https://www.example.com")
-response = Net::HTTP.get(uri)
+uri = URI.parse("http://example.com/search")
 
-puts response 
-```
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Get.new(uri.request_uri)
 
-### הדגמה עם Open-URI:
+response = http.request(request)
 
-```Ruby
-require 'open-uri'
-
-open("https://www.example.com") do |f|
-  puts f.read 
-end
-```
-
-### הדגמה עם HTTParty:
-
-```Ruby
-require 'httparty'
-
-response = HTTParty.get("https://www.example.com")
 puts response.body
 ```
 
-## מים עמוקים:
+אם תריצו את הקוד תוך הוספת URL של אתר אמתי, התגובה תהיה HTML של הדף.
 
-שליחת בקשת HTTP היא חלק אינטגרלי מתהליך התקשורת בין שרת ללקוח על האינטרנט. תהליך זה נמצא בשימוש כבר מאז תחילת האינטרנט בשנות ה-90 והוא נוסחה ליסוד לפתרון הרביעי של RFC.
+## הסוף העמוק
 
-החלופות הנפוצות לשליחת בקשת HTTP הן שימוש בכלים אחרים כמו cURL או Postman. עם זאת, פתרונות אלו מצריכים התקנת תוכנות נוספות, כאשר בשימוש בספריות בנויות על Ruby ניתן להתחיל ליצור בקשות בקלות.
+### הקשר ההיסטורי
+למדתי שפה שמקודמת ל Ruby להתמודד עם רשת האינטרנט, שפת C, השתמשה בספריות רשת מורכבות. כאשר מתכנתים בנו Ruby, הם רצו ליצור דרך קלה יותר לעבוד עם בקשות HTTP.
 
-כאשר משתמשים בספריות ומודולים שבנויים על Ruby, חשוב לאתר תיעוד נאות מתאים כדי שתוכלו להבין במהלך התקן לשלוח בקשות בצורה נכונה. כמו כן, בנוסף לפעולת הגישה לשרת, ניתן גם לפעול פעולות אחרות כגון שליחת קבצים, שליחת נתונים ועוד.
+### חלופות
+ישנן גם ספריות חיצוניות עזר שמספקות דרכים נוספות לשליחת בקשות HTTP, כמו `Rest-Client` ו` HTTParty`. אלה מציעות אפשרויות נוספות אך הן אינן חייבות.
 
-## ראו גם:
+### פרטי ביצוע
+בקשת HTTP מתנהלת כאשר המחשב שלך שולח מידע לשרת ובהמשך מקבל תגובה ממנו. הפרוטוקול HTTP מגדיר את הצורה שבה מתבצעת התקשורת הזו.
 
-כדי לקבל מידע נוסף על שליחת בקשת HTTP עם Ruby, ניתן לקרוא את התיעוד הרשמי של Ruby וגם לבדוק את הדוגמאות וההנחיות באתר הרשמי של הספריות והמודולים הנ"ל.
+## ראו גם
 
-תוכלו גם לראות את המאמר "שליחת בקשת HTTP בפייתון ורובי" עבור השוואה בין שפות התכנות השונות.
+"http://www.ruby-lang.org/": האתר הרשמי ל Ruby.
+"http://ruby-doc.org/stdlib-2.5.1/libdoc/net/http/rdoc/Net/HTTP.html": מסמך המתיחס ל Net::HTTP ב Ruby.
+"https://github.com/rest-client/rest-client": Rest-Client ב GitHub.
+"https://github.com/jnunemaker/httparty": HTTParty ב GitHub.

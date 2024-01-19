@@ -1,7 +1,7 @@
 ---
-title:                "Konvertera en sträng till gemener"
-html_title:           "Java: Konvertera en sträng till gemener"
-simple_title:         "Konvertera en sträng till gemener"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att konvertera en sträng till små bokstäver i Java är en vanlig uppgift för programmerare. Det innebär att man omvandlar alla bokstäver i en sträng till små bokstäver, oavsett om strängen består av både små och stora bokstäver. Detta behövs ofta för att underlätta jämförelser och sökningar i textsträngar.
+## Vad & Varför? 
 
-## Så här:
-För att konvertera en sträng till små bokstäver behöver vi använda metoden `toLowerCase()` i Java. Här är ett enkelt exempel på hur man kan göra det:
-```Java
-String str = "Hej";
-String lowerCaseStr = str.toLowerCase();
-System.out.println(lowerCaseStr); // output: hej
+Att konvertera en sträng till gemener innebär att förändra alla stora bokstäver till små bokstäver inom en given sträng. Programmerare gör detta för att standardisera dataingångar och underlättar jämforanden.
+
+## Hur man gör:
+
+Här är hur du konverterar en sträng till gemener i Java:
+
+```Java 
+String str = "Hej Världen!"; // din sträng
+String lowerCaseStr = str.toLowerCase(); // konvertera till gemener
+System.out.println(lowerCaseStr); // printa resultatet
 ```
+När du kör ovanstående kod kommer utfallet att vara:
 
-Det är också möjligt att konvertera strängen "på plats" genom att använda metoden `toLowerCase()` på varje enskild bokstav i strängen. Detta kan se ut så här:
 ```Java
-String str = "Hej";
-char[] chars = str.toCharArray();
-for(int i = 0; i < chars.length; i++){
-    chars[i] = Character.toLowerCase(chars[i]);
-}
-String lowerCaseStr = new String(chars);
-System.out.println(lowerCaseStr); // output: hej
+"hej världen!"
 ```
+## Djupdykning:
 
-## Utforska djupare:
-Konvertering av strängar till små bokstäver är ett vanligt problem som programmerare har stött på under lång tid. Faktum är att detta var en vanlig uppgift i äldre versioner av Java, eftersom strängar då behandlades som en array av tecken istället för en egen klass.
+Strängar till gemener används över hela världen och detta har pågått sedan ASCIIs tidiga dagar. Alternativen till denna metod i Java inkluderar att använda ASCII-värden direkt, eller använda tredje parts bibliotek.
 
-Ett alternativ till att använda `toLowerCase()` är att använda en `StringBuilder`-klass och dess `append()`-metod för att lägga till de små bokstäverna till en tom sträng. Detta kan vara mer effektivt för stora strängar, men det är viktigt att komma ihåg att det ändå innebär en extra loop.
+När det gäller informan om hur denna teknik implementeras i Java: metoden toLowerCase() i strängklassen använder internationella standarder fastställda av Unicode för att bestämma vilken liten bokstav som motsvarar varje stor bokstav.
 
 ## Se även:
-- [Java String Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [StringBuilder Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
-- [Java Character Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)
+
+För mer information om strängar och teckenhantering i Java, ta en titt på följande länkar:
+- [Oracle Official Java Documentation](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#toLowerCase())
+- [Java Tutorial Point](https://www.javatpoint.com/java-string-tolowercase)
+- [Geeks for Geeks Java library](https://www.geeksforgeeks.org/java-lang-string-tolowercase-java/)

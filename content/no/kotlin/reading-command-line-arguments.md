@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinjeargumenter"
-html_title:           "Kotlin: Lesing av kommandolinjeargumenter"
-simple_title:         "Lesing av kommandolinjeargumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,37 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## Hva og Hvorfor?
 
-Lesing av kommandolinjeargumenter er en måte for programmerere å få informasjon fra brukeren mens programmet kjører. Dette er nyttig for å tilpasse utførelsen av programmet eller for å ta brukerens valg og handlinger i betraktning.
+Kommandolinjeargumenter er data som sendes inn i et program når det kjøres. Det gi en fleksibel måte for brukere å påvirke en applikasjon, uten dets koden.
 
-## Hvordan:
+## Hvordan gjør man det:
 
-```Kotlin
+Her er et enkelt eksempel på hvordan vi kan lese kommandolinjeargumenter i Kotlin.
+
+```
 fun main(args: Array<String>) {
-    if (args.isNotEmpty()) { // Sjekker om det er argumenter som er gitt
-        println("Følgende argumenter ble gitt:")
-        for (arg in args) {
-            println(arg) // Skriver ut hvert argument
-        }
-    } else {
-        println("Ingen argumenter ble gitt.")
+    for (arg in args) {
+        println(arg)
     }
 }
-
-// Eksempel kjøring:
-// Inndata: kotlin article.kt hello world
-// Output: Følgende argumenter ble gitt:
-// hello
-// world
 ```
 
-## Dypdykk:
+Når vi kjører programmet vårt med `kotlin MainKt arg1 arg2 arg3`, får vi følgende utskrift:
 
-Historisk sett måtte programmer ta imot alle inndata fra terminalen ved hjelp av kommandolinjeargumenter. Alternativer til å lese kommandolinjeargumenter inkluderer å lese inndata fra en fil eller å bruke et grafisk brukergrensesnitt. I Kotlin, bruker vi `main`-funksjonen og dens `args`-parameter til å lese kommandolinjeargumenter.
+```
+arg1
+arg2
+arg3
+```
 
-## Se også:
+Dette eksemplet tar imot en liste av strenger (`args: Array<String>`) som argumenter til main-funksjonen. Den går igjennom hver streng i listen og skriver ut til konsollen.
 
-[Offisiell Kotlin Dokumentasjon](https://kotlinlang.org/docs/tutorials/command-line.html)
+## Dypdykk
 
-[Kotlin Dokumentasjon om funksjoner](https://kotlinlang.org/docs/reference/functions.html)
+Historisk sett, begynte ideen om å gi inpit til et program ved kommandolinjen med UNIX operativsystemer. Noen alternative måter å godta input på inkluderer interaktiv brukerinput, lesing av filer og bruk av en GUI.
+
+Når det gjelder implementeringsdetaljer, så vil telling og håndtering av kommandolinjeargumenter i Kotlin kraftig avhenge av hva du prøver å oppnå med applikasjonen din. For mer komplekse scenarier kan det være hensiktsmessig å bruke et bibliotek for kommandolinjevalg som JCommander eller Kotlin-Argparser.
+
+## Se Også
+
+Hvis du vil lese mer om dette emnet, sjekk ut disse lenkene:
+- Offisiell Kotlin Dokumentasjon: https://kotlinlang.org/docs/keyword-reference.html
+- Introduksjon til kommandolinjeargumenter: https://en.wikipedia.org/wiki/Command-line_interface#Arguments
+- JCommander: http://jcommander.org/
+- Kotlin-Argparser: https://github.com/xenomachina/kotlin-argparser

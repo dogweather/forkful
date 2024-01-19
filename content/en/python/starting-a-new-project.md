@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Python recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Python"
 category:             "Python"
@@ -11,58 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Starting a new project means creating the initial foundation for your code. Doing so allows programmers to plan out their code structure, design their data flow, and create an adaptable framework for future development.
+
+Starting a new Python project is basically setting up the building blocks and structures you need for your codebase. Why? It's about keeping things clean, organized, and easy-to-update.
 
 ## How to:
-Let's start a new Python project. Here's a basic setup:
 
-Directory structure:
+Here's a simple way to kickstart your Python project. 
+
+```Python
+# Create new project directory 
+mkdir new_project
+cd new_project
+
+# Initiate Python virtual environment
+python3 -m venv env
+
+# Activation
+source env/bin/activate
 ```
-project/
-├── bin/
-├── docs/
-├── project/
-│   └── __init__.py
-├── tests/
-│   └── __init__.py
-├── setup.py
-└── README.md
+What you'll see is this:
+
+```Output
+(new_project) $
 ```
-`__init__.py` tells Python that the directory should be treated as a package.
+The prefix indicates that you're in the Python virtual environment. Now let's create the main script:
 
-`setup.py`:
-```python
-from setuptools import setup, find_packages
+```Python
+# Create new Python script
+touch main.py
 
-setup(name='YourProject',
-      version='0.1',
-      description='Project Description',
-      author='Your Name',
-      packages=find_packages())
-```
+# Write simple Hello World code
+echo "print('Hello, World!')" > main.py
 
-Run `python setup.py install` for installing package.
-
-Initial test in `tests/test_initial.py`:
-```python
-def test_initial():
-    assert 1 == 1
+# Run the Python script
+python main.py
 ```
 
-Run `pytest tests` for starting tests.
+Here's your result:
+
+```Output
+Hello, World!
+```
+
+Great work! Your Python environment and project is up and running.
 
 ## Deep Dive
-Historically, Python developers used folder structures, and setup files to manage their projects manually. Over time, tools like `setuptools` and `pip` showed up to help automate and standardize practices.
 
-There are alternatives to manual project creation: cookiecutter provides project templates, and IDEs often include their own project management systems. But rolling your own can make sure your project structure suits your needs exactly.
+In the late 2000s, the Python community realized the need for project isolation. This led to the creation of virtual environments. There are alternatives like Docker and Pipenv, but Python's venv is lightweight and built-in, making it the first pick for many.
 
-Implementing a new project implies setting necessary directories, initializing your code base, and choosing your tech stack. This structure aids in managing source code, tests, and documentation, and helps other contributors get started easily.
+When initiating the project with venv, Python creates an isolated environment for your project, cloning your Python interpreter, pip, and other binaries into your project directory. This isolation helps manage dependencies and avoid version conflicts between different projects.
 
 ## See Also
-Some helpful links:
-- [The Hitchhiker’s Guide to Python!](https://docs.python-guide.org/)
-- [setuptools documentation](https://setuptools.readthedocs.io/)
-- [cookiecutter GitHub](https://github.com/cookiecutter/cookiecutter)
-- [pytest documentation](https://docs.pytest.org/)
 
-Now you're all set to start your own Python project! Happy coding!
+1. Python's venv documentation: https://docs.python.org/3/library/venv.html
+2. Docker: https://www.docker.com/what-docker
+3. Pipenv: https://pipenv.pypa.io/en/latest/

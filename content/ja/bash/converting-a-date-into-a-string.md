@@ -1,6 +1,6 @@
 ---
 title:                "日付を文字列に変換する"
-html_title:           "Bash: 日付を文字列に変換する"
+html_title:           "C++: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
-
-日付を文字列に変換するとは何か、なぜプログラマーがそれを行うのかを説明します。日付を文字列に変換することは、プログラムで日付を表示する際や、特定のフォーマットで保存する際に役立つ方法です。このような場合、日付をパーサーで処理するよりも、文字列として処理する方が簡単です。
+## 何となぜ？
+日付を文字列に変換するとは、日付のデータタイプを文字列のデータタイプに変更することです。プログラマーがこの変換を行う理由は、日付を人間が読める形式に変換したり、ログとして出力したりするためです。
 
 ## 方法：
-
-以下のコードブロックには、日付を文字列に変換するためのコーディング例とサンプル出力が含まれています。これらのコードを自分のプログラムに組み込むことで、日付の処理を簡単にすることができます。
+以下に、日付を文字列に変換するBashコード例とその出力結果を示します。
 
 ```Bash
-# 日付を文字列に変換する例
-date_string=$(date +"%Y年%m月%d日")
-echo $date_string
-# 出力結果： 2021年08月10日
-
-# 現在の時間を文字列に変換する例
-time_string=$(date +"%H時%M分%S秒")
-echo "現在の時間は" $time_string "です"
-# 出力結果： 現在の時間は 16時30分48秒 です
+current_date=`date +%Y-%m-%d`
+echo $current_date
 ```
 
-## 詳細を掘り下げる：
+上記のスクリプトは現在の日付を "年-月-日" 形式で出力します。例えば '2021-05-10' のような形式です。
 
-日付を文字列に変換する方法は、プログラミング言語やコマンドラインツールによって異なります。Bashでは、`date`コマンドを使用して、日付をフォーマットした文字列として出力することができます。他の言語やツールでは、ライブラリや関数を使用することで同様の機能を実現することができます。
+## ディープダイブ：
+### 歴史的文脈：
+UNIXシェルスクリプトにおいて、日付と時間の操作は常に重要な部分を占めています。特に、ログファイルやレポートの生成において、日付を文字列に変換することが需給されます。
 
-日付を文字列に変換する代替方法としては、時間データ型を使用する方法があります。しかし、時間データ型を利用する場合は、日付の表示形式を指定する必要があります。このため、日付を文字列に変換する方がより柔軟に使用することができます。
+### 代替案：
+他の言語、例えばPythonでも日付を文字列に変換することは可能です。また、日付形式を扱うための専用のツールもあります。
 
-## 関連リンク：
+```Python
+from datetime import date
+current_date = str(date.today())
+print(current_date)
+```
 
-- [dateコマンドの公式ドキュメント](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [バッシュスクリプトにおける日付の扱い方](https://qiita.com/hshimo/items/2f2bdec6565a5660ef9b)
-- [Pythonで日付を文字列に変換する方法](https://note.nkmk.me/python-datetime-date-today-yesterday/)
+### 実装の詳細：
+`date +%Y-%m-%d`コマンドは現在の日付を出力します。`+`オプションとそれに続くパラメータは出力形式を定義します。
+
+## 参考になるリンク：
+1. [Advanced Bash-Scripting Guide: Date and Timestamp](http://www.tldp.org/LDP/abs/html/timedate.html)
+2. [Unix StackExchange: How to convert date to string](https://unix.stackexchange.com/questions/72139/how-do-i-convert-date-to-a-string)
+3. [Python documentation: datetime module](https://docs.python.org/3/library/datetime.html)

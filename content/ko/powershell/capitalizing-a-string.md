@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자 변환"
-html_title:           "PowerShell: 문자열 대문자 변환"
-simple_title:         "문자열 대문자 변환"
+title:                "문자열 대문자로 바꾸기"
+html_title:           "PowerShell: 문자열 대문자로 바꾸기"
+simple_title:         "문자열 대문자로 바꾸기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -12,40 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-문자열을 대문자로 바꾸는 것은 글자들을 모두 대문자로 변환하는 것을 말합니다. 프로그래머들은 일반적으로 문자열을 대문자로 변환하기 위해 사용합니다.
+문자열 대문자화는 문자의 첫 글자를 대문자로 변경하는 것입니다. 이는 프로그래머들이 식별자 이름이나 사용자 입력을 표준화하는데 유용합니다.
 
 ## 어떻게:
 
-다음은 PowerShell을 사용하여 문자열을 대문자로 변환하는 예시입니다.
-
+```PowerShell
+$string = "hello world"
+$capitalizedString = (Get-Culture).TextInfo.ToTitleCase($string.ToLower())
+Write-Output $capitalizedString
 ```
-PowerShell "Hello, World!".ToUpper()
-```
+출력 결과는: `Hello World`
 
-결과:
+## Deep Dive:
 
-```
-HELLO, WORLD!
-```
+문자열 대문자화는 프로그래밍 언어의 기본 기능 중 하나이며 대부분의 언어에는 이와 유사한 기능이 내장되어 있습니다. PowerShell에서는 .NET의 Get-Culture 함수와 TextInfo의 ToTitleCase 메서드를 사용하여 이를 구현합니다.
 
-문자열의 일부분만 대문자로 변환하기 위해서는 다음과 같이 하면 됩니다.
+대안은 문자열을 소문자로 변환한 뒤 각 단어의 첫 문자를 대문자로 변경하는 것입니다. 그러나 이 방법은 모든 단어의 첫 글자를 대문자로 변경하게 됩니다.
 
-```
-PowerShell "Hello, World!".Substring(0,5).ToUpper() + " World!"
-```
+## 참고 자료:
 
-결과:
+- [PowerShell 문자열 다루기](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=kim_seok_bae&logNo=221388282285)
+- [.Net의 ToTitleCase 메서드에 대한 MSDN 문서](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
 
-```
-HELLO World!
-```
+## 총정리:
 
-## 깊이 파고들기:
-
-문자열을 대문자로 변환하는 것은 이전부터 프로그래밍에서 사용해온 기술입니다. 다른 대안으로 모든 문자를 소문자로 변환하는 방법도 있지만, 대문자로 변환하는 것은 간단하고 빠르게 사용할 수 있는 방법입니다. 이 문자열 변환 기술은 웹 개발에서 자주 사용되며, 다양한 언어에서 지원됩니다.
-
-## 또한 참고:
-
-- [PowerShell 문자열 작업 문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7)
-- [PowerShell 문서 공식 홈페이지](https://docs.microsoft.com/en-us/powershell/?view=powershell-7)
-- [PowerShell 코드 예제들](https://docs.microsoft.com/en-us/powershell/scripting/code-style/overview?view=powershell-7)
+이 기사에서는 PowerShell에서 문자열 대문자화를 사용하는 방법과 이에 대한 깊이 있는 정보를 배웠습니다. 이 때 배운 지식을 활용해 본인의 PowerShell 스크립트 개발을 더 효과적으로 수행할 수 있길 바랍니다. Kotlin, JavaScript 등 다른 언어에서도 비슷한 방식으로 이 기능을 활용할 수 있습니다. 시작은 어렵지만 연습하면 능력을 향상시킬 수 있습니다. 행운을 빕니다!

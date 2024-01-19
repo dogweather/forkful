@@ -1,7 +1,7 @@
 ---
-title:                "Excluindo caracteres correspondentes a um padrão"
-html_title:           "Ruby: Excluindo caracteres correspondentes a um padrão"
-simple_title:         "Excluindo caracteres correspondentes a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão"
+html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
+simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+# Deletando Caracteres Correspondentes a um Padrão em Ruby
 
-Deletar caracteres que correspondem a um padrão é um processo importante na programação em Ruby. Isso permite que os programadores removam caracteres específicos de uma string ou documento, economizando tempo e simplificando o código. É uma técnica útil para limpar dados ou formatar strings de maneira consistente.
+## O quê & Por quê?
+Deletar caracteres que correspondem a um padrão em uma string é uma tarefa comum em programação. Os programadores fazem isso para limpar dados, preparar entrada de texto para o processamento ou remover caracteres indesejados.
 
 ## Como Fazer:
-
-Para deletar caracteres que correspondem a um padrão, podemos usar o método `gsub` em uma string. Esse método substitui todos os caracteres que correspondem ao padrão com uma string vazia, ou seja, os deleta. Veja um exemplo abaixo:
-
-```Ruby
-test_string = "Olá Ruby!"
-new_string = test_string.gsub("a", "")
-puts new_string # Output: Ol Ruby!
-```
-
-Neste exemplo, usamos o método `gsub` para deletar todas as letras "a" de uma string. Isso pode ser útil em situações onde queremos remover caracteres desejados de uma string.
-
-## Mergulho Profundo:
-
-O método `gsub` é muito útil para deletar caracteres em uma string, mas é importante ter em mente que ele irá deletar todas as ocorrências do padrão. Se você deseja apenas deletar a primeira ocorrência de cada padrão, pode usar o método `sub`. Além disso, também é possível usar expressões regulares com o método `gsub`. Isso permite que você especifique padrões mais complexos para serem deletados. Por exemplo:
+Em Ruby, podemos usar o método `delete` para excluir caracteres de uma string que correspondem a um padrão específico. Em seguida, temos um exemplo simples demonstrando isso.
 
 ```Ruby
-test_string = "ruby123!%"
-new_string = test_string.gsub(/[^a-zA-Z]/, "")
-puts new_string # Output: ruby!
+str = "Olá, mundo! 123"
+str_limpo = str.delete "!, 123"
+puts str_limpo
+```
+Nesse caso, a saída seria:
+
+```Ruby
+Olámundo
 ```
 
-Neste exemplo, usamos uma expressão regular para selecionar apenas letras minúsculas e maiúsculas e deletar todos os outros caracteres.
+## Mergulho Profundo
+
+O método `delete` foi introduzido no Ruby 1.6.0 e tem sido mantido desde então devido à sua utilidade. Existem outras alternativas como `gsub` e `tr`, mas `delete` é mais direto quando se trata de remover caracteres que correspondem a um padrão.
+
+Vamos olhar um exemplo usando `tr`
+
+```Ruby
+str = "Olá, mundo! 123"
+str_limpo = str.tr("!, 123", "")
+puts str_limpo
+```
+
+Com `tr`, especificamos dois argumentos onde o segundo é sempre vazio se quisermos deletar caracteres. `delete` é um pouco mais intuitivo neste caso.
+
+O método `delete` na verdade cria uma nova string sem os caracteres especificados. Ele não modifica a string original, então se você precisa da string original inalterada, `delete` é a melhor escolha.
 
 ## Veja Também:
 
-Para mais informações sobre o método `gsub` e expressões regulares em Ruby, confira a [documentação oficial da linguagem](https://ruby-doc.org/core-2.7.0/src/doc/syntax/literals_rdoc.html#label-Basic+Patterns). Também é possível encontrar mais exemplos e dicas em fóruns de desenvolvedores e comunidades de Ruby. Experimente diferentes padrões e veja como eles afetam a saída para se familiarizar com essa técnica útil de manipulação de strings.
+- Documentação Ruby sobre `String#delete`: [https://ruby-doc.org/core-2.7.3/String.html#method-i-delete](https://ruby-doc.org/core-2.7.3/String.html#method-i-delete)
+- 'How to Remove a Character from String in Ruby' na Stack Overflow: [https://stackoverflow.com/questions/8437993/how-to-remove-a-character-from-string-in-ruby](https://stackoverflow.com/questions/8437993/how-to-remove-a-character-from-string-in-ruby)
+- 'Ruby String delete Method': [https://www.tutorialspoint.com/ruby/ruby_string_delete.htm](https://www.tutorialspoint.com/ruby/ruby_string_delete.htm)

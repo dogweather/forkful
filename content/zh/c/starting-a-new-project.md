@@ -1,7 +1,7 @@
 ---
-title:                "开始一个新项目"
-html_title:           "C: 开始一个新项目"
-simple_title:         "开始一个新项目"
+title:                "开始新项目"
+html_title:           "Lua: 开始新项目"
+simple_title:         "开始新项目"
 programming_language: "C"
 category:             "C"
 tag:                  "Getting Started"
@@ -10,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+## 什么和为什么?
 
-开始一个新项目意味着从头开始编写新的代码，以达到特定的目的。程序员们经常这样做是因为他们需要解决一个新的问题或者改进现有的项目。
+开始一个新项目意味着创建一个新的程序或应用。程序员之所以这样做，是因为这是表达创意，解决问题，或者提供用户需要的服务的一种方式。
 
-## 如何：
+## 如何做：
 
-```C 
+下面是如何在 C 语言中创建一个新项目的例子。
+我们将创建一个简单的 "Hello, World!" 程序。
+
+```C
 #include <stdio.h>
 
-int main()
-{
-    printf("Hello, world!\n");
-
-    return 0;
+int main() {
+   // printf() 显示Hello, World!
+   printf("Hello, World!");
+   return 0;
 }
 ```
 
-输出结果：Hello, world!
+如果一切正确，运行这段代码将在控制台上飘出"Hello, World!"。
 
-## 深入了解：
+## 深度探讨：
 
-- 历史背景：开始一个新项目无处不在，程序员们常常需要不断更新和改进现有的软件，以满足不断变化的需求。
-- 其他选择：在编写新代码之前，程序员们可以考虑使用现有的库或者框架来提高效率。
-- 实现细节：开始一个新项目通常包括创建新文件、编写代码、测试代码并最终部署到生产环境。
+**历史背景**：C 语言创建于 1970 年代初，主要用于创建操作系统，尤其是 Unix 操作系统。在那之后，它已经成为了开发新项目的一种流行方式。
 
-## 参考资料：
+**替代方案**：除了 C 语言，也有一些其他的选择可以创建新的项目。例如，Java，Python，和 JavaScript 等语言都可以用于开发各种各样的项目。
 
-- C语言官方网站：https://www.cprogramming.com/
-- C语言教程：https://www.runoob.com/cprogramming/c-tutorial.html
+**实现细节**：在 C 语言中，每个项目都从一个叫做 main 的函数开始。这个函数是程序运行的起点，它由操作系统在程序启动时调用。
+
+## 延伸阅读：
+
+1. "C programming for beginners" : https://www.learncpp.com/
+2. "The C Programming Language" (book by Brian Kernighan and Dennis Ritchie): http://www.amazon.com
+3. "Learn C" (freeCodeCamp Tractical Tutorial): https://www.freecodecamp.org/news/
+4. "C Programming" (Tutorials Point): https://tutorialspoint.com/

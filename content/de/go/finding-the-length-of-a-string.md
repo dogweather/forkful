@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden"
-html_title:           "Go: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,29 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Die Länge einer Zeichenkette zu finden, bedeutet, die Anzahl der Zeichen in der Zeichenkette zu bestimmen. Programmierer tun dies, um beispielsweise die Größe eines Textfeldes zu bestimmen oder zu überprüfen, ob die Eingabe vom Nutzer die erwartete Länge hat.
 
-## Wie geht's?
-Das Finden der Länge einer Zeichenkette in Go ist einfach. Verwenden Sie einfach die Funktion `len()`, die die Länge des übergebenen Strings zurückgibt. Hier ist ein Beispiel:
+Das Ermitteln der Länge eines Strings ist eine grundlegende Operation, die die Anzahl der Zeichen in einer Zeichenkette ermittelt. Programmierer benötigen diese Information oft, um die Kontrolle über Schleifen zu behalten, Arrays sicher zu indizieren und Text effizient zu verarbeiten.
 
-```
+## So geht's:
+
+In Go wird die Länge eines Strings mit der eingebauten Funktion `len()` gefunden. Hier ein kurzer Codeausschnitt:
+
+```Go
 package main
 
 import "fmt"
 
 func main() {
-    str := "Guten Tag!"
-    
-    fmt.Printf("Die Länge der Zeichenkette '%s' ist %d", str, len(str))
+	str := "Hallo, Welt!"
+	fmt.Println(len(str))
 }
 ```
 
-Die Ausgabe wäre: `Die Länge der Zeichenkette 'Guten Tag!' ist 10`.
+Dieser Code produziert die Ausgabe `13`, da der String "Hallo, Welt!" dreizehn Zeichen enthält.
 
-## Tiefere Einblicke
-Das Finden der Länge einer Zeichenkette ist keine neue Funktion. Es ist seit den Anfängen der Programmierung ein wichtiges Werkzeug. Früher wurde dies oft manuell durch das Zählen der Zeichen durchgeführt, aber mit der Entwicklung von Programmiersprachen gibt es nun Standardfunktionen wie `len()`. Alternativ zur `len()`-Funktion gibt es auch andere Methoden, um die Länge einer Zeichenkette zu bestimmen, wie z.B. `utf8.RuneCountInString()`, die die Anzahl der UTF-8 Codierungseinheiten zurückgibt.
+## Hintergrundinfo:
 
-## Siehe auch
-- [Dokumentation zur Go `len()` Funktion](https://golang.org/pkg/builtin/#len)
-- [Eine kurze Geschichte der Zeichenkettenmanipulation](http://web.psung.name/hstripping/ch01s06.xhtml)
-- [Weitere Details zur UTF-8 Codierung](https://www.w3.org/International/questions/qa-utf8-bom.de)
+**Historischer Kontext**: Das Konzept der Längenmessung von Zeichenketten ist so alt wie die Computerprogrammierung selbst. Ein-Byte-Zeichen und ASCII-Tabellen bildeten das klassische Modell.
+
+**Alternativen**: In manchen Sprachen, etwa in JavaScript, verwenden Sie `.length`. Go hält es einfach und konsistent - Sie verwenden `len()` für Arrays, Slices und Strings.
+
+**Implementierungsdetails**: Go verwendet UTF-8 für die String-Codierung. Daher gibt `len()` die Anzahl der Bytes, *nicht* der Zeichen, zurück. Zum Zählen der Unicode-Zeichen benötigen Sie die `utf8.RuneCountInString()` Funktion.
+
+```Go
+package main
+
+import (
+	"fmt"
+	"unicode/utf8"
+)
+
+func main() {
+	str := "Hallo, 世界!"
+	fmt.Println(len(str))                    // Gibt "14" zurück, die Anzahl der Bytes
+	fmt.Println(utf8.RuneCountInString(str)) // Gibt "10" zurück, die Anzahl der Zeichen
+}
+```
+
+## Weiterführende Informationen:
+
+1. [Go-Dokumentation für die eingebaute Funktionen](https://golang.org/pkg/builtin/): Bietet tiefergehende Informationen zu den eingebauten Funktionen von Go, einschließlich `len()`.
+2. [Go Strings Artikel](https://blog.golang.org/strings): Erläutert ausführlich, wie Strings in Go implementiert werden, einschließlich der Behandlung von Unicode-Zeichen.
+3. [Golang UTF-8 Paket](https://golang.org/pkg/unicode/utf8/): Details zur verwendeten `RuneCountInString()` Funktion, um echte Zeichen in UTF-8 codierten Strings zu zählen.

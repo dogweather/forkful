@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
-html_title:           "Go: Wyszukiwanie i zamiana tekstu"
-simple_title:         "Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Zamiana i wyszukiwanie tekstu to ważne czynności w programowaniu. Pozwalają one na szybkie i łatwe zmiany w kodzie oraz odnajdywanie określonych fragmentów, co przyspiesza i ułatwia pracę programistów.
+## Co to i dlaczego?
+Wyszukiwanie i zastępowanie tekstu to proste, acz potężne narzędzie, które umożliwia odnajdywanie określonej frazy i zmienianie jej na inną. Programiści robią to, aby modyfikować istniejący kod lub prościej przetwarzać dane.
 
-## Jak to zrobić:
-Aby dokonać zamiany oraz wyszukać tekst w kodzie za pomocą Go, można skorzystać z funkcji "Replace" lub wykorzystać wyrażenia regularne. Przykłady zastosowania są przedstawione poniżej:
-
-```Go
-// Przykład użycia funkcji Replace
-word := "hello"
-newWord := strings.Replace(word, "e", "s", 1) // output: "hsllo"
-```
+## Jak zrobić:
+W Go, aby wyszukać i zastąpić tekst, używamy `strings.Replace()`. Oto prosty przykład:
 
 ```Go
-// Przykład użycia wyrażeń regularnych w celu znalezienia określonego wzorca
-text := "Znajdź mnie, jeśli jestem liczbą"
-pattern := `\d+` // wzorzec pasujący do dowolnej liczby
-found := regexp.MustCompile(pattern).FindString(text) // output: "znajdź mnie 123"
+package main
+import "strings"
+import "fmt"
+func main() {
+   str := "Dzień dobry, świecie!"
+   str = strings.Replace(str, "świecie", "Poland", -1)
+   fmt.Println(str)
+}
 ```
 
-## Głębsze zagłębienie się w temat:
-Zamiana i wyszukiwanie tekstu jest powszechnie stosowanym narzędziem zarówno przez programistów, jak i użytkowników. W przypadku Go, możliwość wykorzystania wyrażeń regularnych daje duże możliwości w celu dostosowania i dopasowania funkcji do swoich potrzeb. Alternatywnie, można również skorzystać z bibliotek takich jak "strings" lub "regexp", które oferują dodatkowe funkcjonalności związane z wyszukiwaniem i zamianą tekstu w kodzie.
+Przykładowy wynik:
 
-## Zobacz też:
-- Dokumentacja Go dotycząca funkcji Replace: https://golang.org/pkg/strings/#Replace
-- Przykładowe wyrażenia regularne w Go: https://yourbasic.org/golang/regexp-cheat-sheet/
-- Dokumentacja Go dotycząca wyrażeń regularnych: https://golang.org/pkg/regexp/
+```Go
+Dzień dobry, Poland!
+```
+
+Możemy użyć trzeciego parametru w `Replace()`, aby kontrolować liczbę zastąpień. 
+
+## Głębsza analiza
+Historia wyszukiwania i zastępowania tekstu sięga czasy edytora vi, który jako pierwszy udostępnił te funkcje. W Go, `strings.Replace()` to niskopoziomowa funkcja, która działa skanując łańcuch od lewej do prawej. Co do zastępowania, w Go mamy również `ReplaceAll()` który działa podobnie jak `Replace()` z -1 jako trzecim argumentem.
+
+## Zobacz również
+Możesz odwiedzić oficjalna [dokumentację Go dla pakietu strings](https://golang.org/pkg/strings/) aby nauczyć się więcej o innych funkcjach dostępnych w pakiecie `strings`. Projekt Go ma również [kanał na YouTube](https://www.youtube.com/user/gocoding) gdzie regularnie udostępniają nowe filmy na temat różnych aspektów języka.

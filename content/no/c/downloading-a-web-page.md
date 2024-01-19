@@ -1,6 +1,6 @@
 ---
 title:                "Laste ned en nettside"
-html_title:           "C: Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
 simple_title:         "Laste ned en nettside"
 programming_language: "C"
 category:             "C"
@@ -10,43 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Nedlasting av en nettside handler om å få tilgang til informasjon og data som ligger på en nettside. Dette er en vanlig oppgave for programmerere, da det er nødvendig for å hente inn og behandle data fra nettsider.
+# Å Laste Ned en Webside i C
 
-# Hvordan:
+## Hva & Hvorfor?
+Når man laster ned en webside, henter PCen HTML-koden til siden fra serveren, og lagrer den lokalt. Denne operasjonen er brukt av programmerere for å skrape data, teste nettsider, eller for å ha en offline kopi av innholdet.
+
+## Hvordan Gjøre Det:
+Her er en enkel måte å laste ned en webside ved hjelp av biblioteket cURL i C. Det er nødvendig å ha cURL biblioteket installert for å kjøre koden.
+
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main(void) {
-  // Opprette en CURL-variabel
-  CURL *curl;
-  // Opprette en variabel for å lagre nettadressen
-  char *url = "https://example.com";
-  // Initialisere CURL-variabelen
-  curl = curl_easy_init();
-  // Sette nettadressen
-  curl_easy_setopt(curl, CURLOPT_URL, url);
-  // Utføre CURL-operasjonen og lagre resultatet i en variabel
-  CURLcode res = curl_easy_perform(curl);
-  // Sjekke om det skjedde en feil
-  if(res != CURLE_OK)
-    fprintf(stderr, "curl_easy_perform() failed: %s\n",
-            curl_easy_strerror(res));
-  // Rense opp etter CURL
-  curl_easy_cleanup(curl);
-  return 0;
+int main(void)
+{
+    CURL *curl;
+    CURLcode res;
+
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+
+        // Utfør forespørselen, res vil få returkoden
+        res = curl_easy_perform(curl);
+        
+        // Sjekk for feil
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() mislyktes: %s\n",
+                    curl_easy_strerror(res));
+    
+        // Alltid rydd opp
+        curl_easy_cleanup(curl);
+    }
+    curl_global_cleanup();
+    return 0;
 }
 ```
+## Dypdykk
+Henting av en webside har endret seg betydelig siden internett sine spede begynnelse. Fra å hente HTML utelukkende, til nå, med moderne webskraping teknikker, henter vi ikke bare HTML, men også CSS og Javascript. 
 
-**Output:** Ingen synlig output, men resultatet vil være lagret i variabelen 'res'. 
+Alternativer til cURL inkluderer biblioteker som libcurl i C, og Requests i Python. En implementeringsdetalj å merke seg er at cURL følger HTTP-omdirigeringer som standard, men du kan endre denne oppførselen ved bruk av riktig alternativ i cURL. 
 
-# Dypdykk:
-Nedlasting av nettsider har vært en vanlig oppgave for programmerere siden internettets begynnelse. Dette kan gjøres på flere måter, for eksempel ved å bruke biblioteker som CURL eller å skrive egne programmer som kommuniserer direkte med nettverket.
-
-En viktig ting å huske på er at nedlasting av en nettside kan være ulovlig hvis man ikke har tillatelse fra eierne av nettsiden.
-
-# Se også:
-- [CURL biblioteket](https://curl.haxx.se/libcurl/)
-- [Alternativer til CURL](https://alternativeto.net/software/curl/)
-- [Hvordan implementere download av nettsider i C++](https://www.codeproject.com/articles/590961/how-to-implement-download-an-html-page-in-Cplusplus)
+## Se Også 
+1. [cURL Official Documentation](https://curl.haxx.se/libcurl/c/)
+2. [How the web works - A beginner’s guide to HTTP and HTML](https://www.freecodecamp.org/news/how-the-web-works-a-beginners-guide-to-http-html-db3e7f7961e1/)
+3. [A complete tutorial on Web Scraping](https://www.datacamp.com/community/tutorials/web-scraping-using-python)

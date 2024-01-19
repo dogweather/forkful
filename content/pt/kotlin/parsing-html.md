@@ -1,7 +1,7 @@
 ---
-title:                "Analisando html"
-html_title:           "Kotlin: Analisando html"
-simple_title:         "Analisando html"
+title:                "Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,24 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer?
-HTML é a linguagem padrão para criação de páginas na internet. Entretanto, muitas vezes é necessário acessar e manipular esse código de forma automatizada. É aí que entra o parsing HTML. Parsing HTML é o processo de analisar o código HTML para extrair e usar as informações nele contidas. Programadores utilizam essa técnica para tarefas como web scraping, onde é necessário coletar dados de diferentes páginas.
+## O Que & Por Quê?
+
+A análise de HTML, ou parsing, é o processo de extrair dados a partir de documentos HTML. Programadores fazem isso para coletar e manipular informações específicas de páginas da web.
 
 ## Como fazer:
-Usando Kotlin, é possível realizar parsing HTML de forma simples e eficiente. Segue abaixo um exemplo de código e a saída correspondente para a página "https://www.google.com.br/":
+
+Aqui está uma amostra do código em Kotlin para parsear HTML utilizando a biblioteca jsoup:
 
 ```Kotlin
-val url = "https://www.google.com.br/"
-val conn = URL(url).openConnection() as HttpURLConnection
-val html = BufferedReader(InputStreamReader(conn.inputStream)).use { it.readText() }
-val doc = Jsoup.parse(html)
-println(doc.title()) // output: "Google"
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+
+fun parseHTML(html: String): Document {
+    val doc: Document = Jsoup.parse(html)
+    return doc
+}
 ```
+Em seguida, você pode facilmente extrair detalhes de elementos específicos:
 
-## Mergulho profundo:
-Parsing HTML não é uma técnica nova. Desde os primórdios da internet, já havia a necessidade de manipular o código para fins específicos. Além de Kotlin, existem outras linguagens que possuem bibliotecas dedicadas a realizar essa tarefa, como por exemplo o Python com a biblioteca BeautifulSoup. Em termos de implementação, o processo de parsing envolve principalmente a utilização de expressões regulares para identificar e extrair as informações desejadas.
+```Kotlin
+fun getElements(doc: Document, tagName: String) {
+    val elements = doc.getElementsByTag(tagName)
+    elements.forEach { element ->
+        println(element.text())
+    }
+}
+```
+Executando o exemplo acima, você verá algo assim:
 
-## Veja também:
-- Documentação do Jsoup: https://jsoup.org/
-- Tutorial sobre parsing HTML com Kotlin: https://www.tutorialspoint.com/jsoup/jsoup_parsing_html.htm
-- Biblioteca BeautifulSoup para Python: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+```Kotlin
+heading1
+heading2
+heading3
+```
+## Mergulho Profundo:
+
+Muitas bibliotecas de análise de HTML têm suas raízes no início da web, quando os documentos HTML não eram tão padronizados como são hoje. Antes da jsoup, muitas das bibliotecas disponíveis eram difíceis de usar e incompletas.
+
+Existem alternativas à biblioteca jsoup, como o HtmlCleaner e o Jericho.
+
+A implementação básica do parsing de HTML em Kotlin envolve o uso de uma biblioteca externa para fazer o heavy lifting. No caso de jsoup, a biblioteca faz o trabalho de construir uma árvore a partir do HTML, depois você pode simplesmente consultar essa árvore para extrair as informações que precisa.
+
+## Veja Também:
+
+1. [Jsoup - Library de Parsing em Java](https://jsoup.org/)
+2. [HtmlCleaner - Java HTML Parser](https://htmlcleaner.sourceforge.io/)
+3. [Jericho HTML Parser](https://jericho.htmlparser.net/docs/index.html)
+4. [Análise de HTML no Android](https://developer.android.com/guide/topics/ui/declaring-layout)
+5. [Parseando HTML em Kotlin com Jsoup](https://www.baeldung.com/kotlin-jsoup)

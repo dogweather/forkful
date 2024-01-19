@@ -1,7 +1,7 @@
 ---
-title:                "Verkettung von Zeichenketten"
-html_title:           "Fish Shell: Verkettung von Zeichenketten"
-simple_title:         "Verkettung von Zeichenketten"
+title:                "Strings verketten"
+html_title:           "Bash: Strings verketten"
+simple_title:         "Strings verketten"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -12,45 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Beim Programmieren geht es oft darum, Texte zu manipulieren und zu kombinieren, um die gewünschte Ausgabe zu erzielen. Eines der Werkzeuge, die wir dafür verwenden können, ist das Verketten von Zeichenketten. Dadurch können wir mehrere Textabschnitte zu einem einzigen String zusammenfügen.
+Die Verkettung von Zeichenketten ist das Aneinanderfügen von zwei oder mehr Strings. Programmierer tun dies um komplexe Nachrichten zu erstellen, Dateinamen zu erstellen oder um Daten zu formatieren.
 
 ## Wie geht's:
 
-```Fish Shell``` hat die Funktion ```string concat``` eingebaut, die uns ermöglicht, Strings zu verketten. Wir geben einfach die zu verbindenden Strings als Argumente ein und die Funktion gibt uns den kombinierten String zurück.
+Im Fish Shell verwenden wir das "echo" Kommando um Zeichenketten zu verketten. Hier ist ein einfacher Code:
 
-Beispielcode:
-
+```Fish Shell
+set string1 "Hallo"
+set string2 ", Welt"
+echo $string1$string2
 ```
-string concat "Hallo" "Welt"
-```
+Das Ergebnis wäre:
 
-Ausgabe:
-
-```
-HalloWelt
-```
-
-Wir können auch Variablen mit ```string concat``` kombinieren:
-
-```
-set var1 "Hallo"
-set var2 "Welt"
-string concat $var1 $var2
+```Fish Shell
+Hallo, Welt
 ```
 
-Ausgabe:
+## Tiefere Einblicke
 
+Die Verkettung von Strings hat einen historischen Kontext, der bis in die Anfänge der Programmierung zurückreicht. In Fish Shell, im Gegensatz zu anderen Shells wie BASH, gibt es keine spezielle Syntax für eine Zeichenkettenverkettung. Sie wird einfach durch das direkte Schreiben von Variablen nebenläufig erreicht.
+
+Alternativ können Sie auch den "string join" Befehl verwenden, aber das ist in der Praxis weniger üblich. Es sieht so aus:
+
+```Fish Shell
+string join "" $string1 $string2
 ```
-HalloWelt
-```
 
-## Tiefentauchen:
+In Bezug auf die Implementierungsdetails, Fish Shell interpretiert einfach die direkte Nebeneinanderstellung von Zeichenketten als Anforderung zur Verkettung.
 
-Das Konkatenieren von Strings wird bereits seit den Anfängen der Programmierung verwendet und ist eine der grundlegenden Operationen. Es gibt auch andere Möglichkeiten, Strings zu verbinden, wie zum Beispiel die Verwendung des Operators ```+``` oder der Funktion ```strcat```.
+## Siehe Auch
 
-Die Implementierung von ```string concat``` in der Fish Shell basiert auf der C-Funktion ```strcat```, die zwei Strings miteinander verbindet.
+Um mehr über Verkettung von Zeichenketten zu lernen, schauen Sie sich diese Ressourcen an:
 
-## Siehe auch:
-
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/cmds/string.html)
-- [Alternative Methoden zum Verketten von Strings](https://www.quora.com/What-are-the-different-ways-of-concatenating-strings-in-Python)
+1. [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+2. [String Join Doku](https://fishshell.com/docs/current/cmds/string-join.html)
+3. [Tutorial zur Fish Shell Programmierung](https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell)

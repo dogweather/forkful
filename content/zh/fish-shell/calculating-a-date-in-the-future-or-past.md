@@ -10,40 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是日期计算？为什么程序员要做这种事情？
+## 什么 & 为什么？
 
-在编程中，我们经常需要计算一段时间后或之前的日期，例如在管理任务或事件时，我们需要知道何时某项任务应该开始或结束。这就是日期计算的概念。程序员经常做这项工作，因为它可以帮助他们更有效地管理时间和任务。
+计算未来或过去的日期，即根据给定日期确定将来或过去的某一天。程序员经常这么做以便于处理时间敏感的任务，并确保其准确性。
 
-## 如何进行日期计算：
+## 演示如何：
 
-```Fish Shell 中的代码块，展示如何使用日期计算功能。```
+在 Fish Shell （当前版本）中，我们使用 `date` 命令和适当的选项。下面是几个示例：
 
-首先，我们需要使用 `date` 命令来指示计算日期的格式。例如，我们可以使用 `+%d-%m-%y` 来显示日期以日、月、年的顺序。然后，我们使用 `-d` 参数来指定日期的上下文，例如 `now` 或 `yesterday`。最后，我们使用 `+/- <number> <date unit>` 来表示我们想要计算的日期数量和单位。
+```Fish Shell
+# 计算三天后的日期
+set future_date (date -v+3d "+%Y%m%d")
 
-```fish
-# 计算3天后的日期
-date +%d-%m-%y -d "now +3 days"
+# 输出示例 ：20220403
+echo $future_date
 
-# 计算1个月前的日期
-date +%d-%m-%y -d "now -1 month"
+# 计算一周前的日期
+set past_date (date -v-1w "+%Y%m%d")
+
+# 输出示例： 20220326
+echo $past_date
 ```
 
-输出：
+## 深入了解
 
-```fish
-# 计算3天后的日期
-15-08-19
+1. 历史背景：计算未来或过去的日期这一功能源自于早期的 Unix 系统，后来被包含在了各种现代 shell 如 Fish Shell 中。
+2. 替代方案：除了 `date` 命令，其他方法如使用 Python 或 Perl 中的日期函数库也可以实现同样的功能。
+3. 实现细节：Fish Shell 通过解析 `date` 命令的参数来进行日期计算。例如，"+%Y%m%d" 格式的字符串就被解析成具体的日期。
 
-# 计算1个月前的日期
-16-06-19
-```
+## 另请参见
 
-## 深入了解：
-
-日期计算在历史上有着重要的作用。在计算机发明之前，人们使用各种日历来记录时间，每个文化和国家都有自己的日历系统。但是随着计算机的发展，人们开始使用数字来表示日期，因此计算日期在计算机编程中变得非常重要。除了使用 `date` 命令之外，还有其他替代方法，例如使用 `awk` 或 `sed` 命令来计算日期。日期计算也是编程语言中常用的功能之一，例如 Python 中的 `datetime` 模块。在实现日期计算的过程中，程序员需要考虑多种因素，例如不同的日历系统、闰年以及时区的影响等等。
-
-## 相关阅读：
-
-- [日期计算的更多实例](https://fishshell.com/docs/current/commands.html#date)
-- [使用 awk 计算日期](https://www.gnu.org/software/gawk/manual/html_node/Time-Functions.html)
-- [Python 中的日期和时间功能](https://docs.python.org/3/library/datetime.html)
+1. [Fish Shell 官网](https://fishshell.com)
+2. [计算日期的更多方法](https://www.cyberciti.biz/faq/unix-linux-appleosx-bsd-shell-appending-date-to-filename/)
+3. [详细的 date 命令用法](https://ss64.com/bash/date.html)

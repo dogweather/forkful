@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "Rust: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -12,29 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-Stringin pituuden löytäminen on yksinkertainen tehtävä, jossa ohjelmoijat löytävät merkkijonon pituuden, eli kuinka monta merkkiä merkkijonossa on. Tämä on usein tarpeellista esimerkiksi merkkijonojen käsittelyssä tai laskutoimituksissa.
-
-Ohjelmoijat tekevät tätä tehtävää löytääkseen tarvittavat tiedot merkkijonon manipuloimiseksi halutulla tavalla. Ilman merkkijonon pituuden tuntemista, ohjelmoijat eivät pystyisi luomaan tehokasta ja tarkkaa koodia, joten tämä taito on erittäin tärkeä osa ohjelmointia.
+Merkkijonojen pituuden selvittämisessä on kyse merkkien lukumäärän laskemisesta jokaiselle merkkijonolle. Tämä on oleellista esimerkiksi silloin, kun halut järjestää tai verrata merkkijonoja, tai varmistaa, että ne mahtuvat tiettyyn tilaan.
 
 ## Miten:
 
+Rustissa voit hakea merkkijonon pituuden `.len()` -metodilla. Tässä on esimerkki sen käytöstä:
+
 ```Rust
-let s = "Tämä on esimerkki merkkijonosta";
-let length = s.len();
-println!("Merkkijonon pituus on {}", length);
-```
-#### Output:
-```
-Merkkijonon pituus on 29
+fn main() {
+    let s = "Tervetuloa";
+    println!("{}", s.len());
+}
 ```
 
-## Syventyminen:
+Tämä tuottaa tulosteen `11`, koska `"Tervetuloa"` sisältää 11 merkkiä.
 
-Ohjelmoijien ei tarvitse usein miettiä merkkijonon pituuden löytämistä, sillä lähes jokaisessa ohjelmointikielessä on käytettävissä valmiina funktio, joka hoitaa tämän tehtävän. Stringin pituuden löytäminen on myös yksi tapa käsitellä merkkijonoja, mutta on myös muita tapoja, kuten esimerkiksi kääntää merkkijono taulukoksi ja laskea sen pituus.
+## Syvempää tietoa:
 
-Rustin tapauksessa merkkijonon pituuden löytämisen taustalla on käytännössä UTF-8 merkistöandardi, joka määrittelee miten merkkijonoja käsitellään ja lasketaan. Tämän ansiosta Rust pystyy käsittelemään erikoismerkkejä ja erilaisia kielialueita tarkasti.
+Historiallinen viite: Rust-ohjelmointikielessä merkkijonot ovat UTF-8-koodattuja, joten merkkijonon pituus voidaan laskea nopeasti ottamatta huomioon monitavuisia merkkejä.
+
+Vaihtoehtoja: Rustissa on olemassa myös `.chars().count()` -tekniikka, joka laskee todelliset Unicode-skalaarit, mutta se on suhteellisen hidas
+```Rust
+fn main() {
+    let s = "こんにちは";
+    println!("{}", s.chars().count());
+}
+```
+Tämän esimerkin tulostus olisi `5`, koska jokainen merkki koostuu useista biteistä.
+
+Merkkijonojen pituuden määrittäminen perustuu sisäisesti kapasiteetin ja aloituspisteen eron laskemiseen.
 
 ## Katso myös:
 
-- Rustin virallinen dokumentaatio: https://doc.rust-lang.org/std/primitive.str.html#method.len
-- UTF-8 merkistöandardi: https://www.utf8-chartable.de/unicode-utf8-table.pl
+[Rust-ohjelmointidokumentaatio, String](https://doc.rust-lang.org/std/string/)
+
+[Rust by Example, Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
+
+[Rust-turvatyypit, String](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

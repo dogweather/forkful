@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comandos"
-html_title:           "Java: Leyendo argumentos de línea de comandos"
-simple_title:         "Leyendo argumentos de línea de comandos"
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,50 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola lectores de Java!
+---
+## ¿Qué y Por Qué?
 
-En este artículo, hablaremos sobre cómo leer argumentos de línea de comando en Java. Así es, esa pequeña (pero útil) parte de su programa que le permite recibir entrada del usuario directamente desde la línea de comando.
+Leer argumentos de la línea de comandos significa obtener datos de entrada directamente desde tu terminal o consola. Programadores lo usan para personalizar cómo funciona su programa dependiendo de las entradas que el usuario proporciona.
 
-## ¿Qué y por qué?
+## ¿Cómo se hace?
 
-Leer argumentos de línea de comando en Java simplemente significa permitir que su programa reciba entradas directamente desde la línea de comando. Los programadores hacen esto para hacer que su código sea más interactivo, ya que permite que los usuarios ingresen información mientras el programa se está ejecutando.
+Considere este sencillo ejemplo:
 
-## ¿Cómo hacerlo?
-
-Veamos un ejemplo de código para mostrar cómo leer argumentos de línea de comando en Java:
 ```Java
-public class CommandLineArguments {
-
-  public static void main(String[] args) {
-    // Primer argumento (índice 0) es el nombre del programa
-    System.out.println("Argumento 1: " + args[0]);
-    
-    // Segundo argumento (índice 1) es el primer argumento ingresado por el usuario
-    System.out.println("Argumento 2: " + args[1]);
-    
-    // Y así sucesivamente
-    System.out.println("Argumento 3: " + args[2]);
-  }
+public class Main {
+    public static void main(String[] args) {
+        for (String arg: args) {
+            System.out.println(arg);
+        }
+    }
 }
 ```
-Y aquí está cómo se vería la salida cuando se ejecuta este programa desde la línea de comando:
+
+Para ejecutar este programa con argumentos de línea de comandos, escriba algo similar en su terminal:
+
+```shell
+java Main Hola Mundo
 ```
-$ java CommandLineArguments primero segundo tercero
-Argumento 1: primero
-Argumento 2: segundo
-Argumento 3: tercero
+
+El output será:
+
+```
+Hola
+Mundo
 ```
 
-## Profundizando
+## Profundizamos
 
-Ahora, un dato interesante: los argumentos de línea de comando en Java no siempre han sido compatibles. Antes de Java 5, los programadores tenían que usar una biblioteca externa o escribir su propio código para leer los argumentos de línea de comando.
+Los argumentos de la línea de comandos no son nada nuevo. Han existido desde los primeros días del desarrollo de software. Sin embargo, aunque pueda parecer un concepto simple, surgen complejidades durante la implementación, como el manejo de tipos de datos, las referencias a archivos o la gestión de múltiples argumentos.
 
-Una alternativa para leer argumentos de línea de comando en Java es usar la clase Scanner de la biblioteca estándar para recibir entrada del usuario. Sin embargo, leer argumentos de línea de comando es más eficiente ya que evita las operaciones innecesarias de conversión de tipo.
+Existen alternativas para leer inputs, como las entradas estándar y los archivos de configuración. Sin embargo, para una entrada rápida y eficiente, los argumentos de la línea de comandos suelen ser suficientes.
 
-La implementación de la lectura de argumentos de línea de comando en Java se basa en la clase StringBuffer, que usa un búfer para almacenar la entrada de usuario antes de convertirla en tipos de datos adecuados.
+El array `args` en el `main` funciona como el receptor de los argumentos de la línea de comandos en Java. Cada elemento de la matriz `args` es una `String`, aunque usted introduzca un número como argumento. Si necesita utilizar el argumento como un tipo de dato distinto, tendrá que convertirlo apropiadamente.
 
-## Ver también
+## Ver También
 
-Para obtener más información sobre la lectura de argumentos de línea de comando en Java, puede consultar la documentación oficial de Oracle: https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html
+[Documentación Oficial de Oracle](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
 
-¡Eso es todo por hoy! Esperamos que este artículo haya sido útil y que ahora tengas una mejor comprensión de cómo leer argumentos de línea de comando en Java. ¡Hasta la próxima vez!
+[Cómo usar Argumentos de Línea de Comandos en Java](https://www.baeldung.com/java-command-line-arguments)

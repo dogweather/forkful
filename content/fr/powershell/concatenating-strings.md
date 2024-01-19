@@ -1,7 +1,7 @@
 ---
-title:                "Concaténation de chaînes de caractères"
-html_title:           "PowerShell: Concaténation de chaînes de caractères"
-simple_title:         "Concaténation de chaînes de caractères"
+title:                "Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
+simple_title:         "Concaténation de chaînes"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,30 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & pourquoi?
+# Concaténation de chaînes de caractères en PowerShell #
 
-La concaténation de chaînes de caractères consiste à fusionner plusieurs chaînes pour en créer une seule qui contienne toutes les informations. Les programmeurs utilisent cette technique pour combiner différentes données afin de créer des messages personnalisés, des rapports ou des requêtes de recherche.
+## Quoi et Pourquoi ? ##
 
-## Comment faire:
+La concaténation de chaînes est l'action de relier deux chaînes de caractères ou plus en une seule. Les programmeurs le font pour manipuler et présenter des données de manière plus efficace et affinée.
+
+## Comment faire : ##
+
+Concaténer des chaînes en PowerShell est assez simple. Jetons un coup d'oeil à quelques exemples.
 
 ```PowerShell
-# Utilisation de l'opérateur +
-"Bonjour" + "le" + "monde"
-
-# Sortie: Bonjourlemonde
-
-# Utilisation de la méthode .Concat()
-"Hello ".Concat("world")
-
-# Sortie: Hello world 
+$premiereChaine = "calmement,"
+$deuxiemeChaine = " coder."
+$chaineFinale = $premiereChaine + $deuxiemeChaine
+Write-Output $chaineFinale
+```
+**Sortie :**
+```
+calmement, coder.
 ```
 
-## Plongeon en profondeur:
+Utilisez également la méthode Format. Regardons un autre exemple :
 
-La concaténation de chaînes de caractères existe depuis les premiers jours de la programmation informatique et reste aujourd'hui une technique couramment utilisée. Il existe différentes façons de concaténer des chaînes, notamment en utilisant l'opérateur "+" ou la méthode .Concat(). Cependant, il est important de noter que la concaténation de chaînes peut entraîner des problèmes de performance lorsqu'elle est utilisée avec de grandes quantités de données.
+```PowerShell
+$nom = "Alex"
+$salutation = "Salut, {0}!"
+$salutationFormatee = [String]::Format($salutation, $nom)
+Write-Output $salutationFormatee
+```
 
-## Voir aussi:
+**Sortie :**
+```
+Salut, Alex!
+```
 
-- [Documentation Microsoft sur la concaténation de chaînes en PowerShell](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7)
-- [Tutorialspoint : Concaténation de chaînes en PowerShell](https://www.tutorialspoint.com/powershell/powershell_concatenation_of_strings.htm)
-- [Le guide complet pour les débutants en PowerShell](https://www.lemonway.fr/ressources/Tutoriel_PowerShell.pdf)
+## Immersion profonde ##
+
+Historiquement, la concaténation de chaînes a toujours été un élément fondamental de la programmation. En revanche, il est important de noter que la concaténation peut être coûteuse en termes de performance, en particulier avec de grandes chaînes ou de nombreuses opérations.
+
+Des alternatives existent, comme les littéraux de modèle (aussi connus comme chaînes interpolées) qui simplifient la syntaxe:
+
+```PowerShell
+$nom = "Alex"
+$salutation = "Salut, $nom!"
+Write-Output $salutation
+```
+
+**Sortie :**
+```
+Salut, Alex!
+```
+
+Aussi, implémentation de la concaténation en PowerShell accorde indirectement de la flexibilité, permettant différentes approches pour atteindre le même objectif.
+
+## Voir Also ##
+
+Posez un coup d'oeil à ces ressources pour plus d'informations :
+
+1. Documentation Microsoft sur les opérations de chaîne de caractères : [Lien](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/strings/)
+2. Article sur la manipulation de chaînes en PowerShell : [Lien](https://devblogs.microsoft.com/scripting/manipulating-strings-with-powershell/)
+3. Documentation Microsoft sur la méthode Format : [Lien](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.format?view=net-5.0)

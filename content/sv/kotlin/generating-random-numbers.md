@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga tal"
-html_title:           "Kotlin: Generering av slumpmässiga tal"
-simple_title:         "Generering av slumpmässiga tal"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
@@ -10,23 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Slumpmässig nummergenerering i Kotlin
+Det här är din grundläggande, snabba guide utan krusiduller till att generera slumpmässiga nummer i Kotlin.
+
 ## Vad & Varför?
-Generering av slumpmässiga nummer är en viktig del av programmering, eftersom det tillåter oss att skapa variation och slumpmässighet i våra program. Detta är särskilt användbart när det kommer till spel, simuleringar, och kryptering.
+Att generera slumpmässiga tal är processen för att skapa siffror som inte kan förutses bättre än av en tillfällig chans. Programmerare gör detta för olika ändamål: simuleringar, tester, spel och mer.
 
-## Så här gör du:
+## Hur man gör det:
+I Kotlin kan vi generera slumpmässiga tal med ett par smidiga metoder. Nedan följer exempel på hur man genererar olika typer av slumpmässiga tal.
+
+För ett slumpmässigt heltal mellan 0 och en angiven gräns:
+
 ```Kotlin
-// Genererar ett slumpmässigt heltal mellan 1 och 10
-val slumpNumber = (1..10).random() 
-println(slumpNumber) // Kan genereras olika varje gång programmet körs
+val randomInt = Random.nextInt(100)  // Ger ett slumptal mellan 0 och 99
+println(randomInt)
+```
+För ett slumpmässigt flyttal (Double) mellan 0.0 (inklusive) och 1.0 (uteslutande):
 
-// Genererar ett slumpmässigt flyttal mellan 0.0 och 1.0
-val slumpTal = Math.random() 
-println(slumpTal) // Kan genereras olika varje gång programmet körs
+```Kotlin
+val randomDouble = Random.nextDouble()  // Ger ett slumptal mellan 0.0 och 1.0
+println(randomDouble)
 ```
 
-## Djupdykning:
-Generering av slumpmässiga nummer är en viktig del av datavetenskapens historia, och algoritmer för detta har utvecklats sedan 1940-talet. Det finns olika sätt att generera slumpmässiga nummer, inklusive pseudo-slumpmässiga algoritmer (som den som används av Kotlin i exemplet ovan) och sann-slumpmässiga algoritmer som använder sig av yttre faktorer, som exempelvis brus från mikrofonen på din dator. Om du behöver generera slumpmässiga nummer med extra hög säkerhet, kan du överväga att använda en krypto-mappare.
+## Djupdykning
+Att generera slumpmässiga siffror är en gammal konst i datorprogrammering. Gamla metoder inbegrep komplexa algoritmer och externa datakällor. Historiskt sett finns det dock några problem. Vanliga pseudoslumpgeneratorer skapar 'slumpmässiga' tal som faktiskt kan förutses genom att känna till tidigare tal. För att åtgärda det, tar Kotlin's `Random` funktionalitet från moderna kryptografiskt säkra pseudoslumpmässiga nummergeneratorer (CSPRNG).
 
-## Se även:
-- [Kotlin Random Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-kotlin.-random/)
-- [Sualin Random (Sann-slumpmässig algoritm)](https://www.cs.princeton.edu/~rs/AlgsDS07/11RadomnessS71.pdf)
+Alternativt kan du använda `ThreadLocalRandom` om du har flera trådar som genererar slumpmässiga tal.
+
+## Se Även
+- [Kotlin dokumentation om Random](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html)
+- [Wikipedia om pseudoslumpmässiga nummergeneratorer](https://sv.wikipedia.org/wiki/Pseudoslumptal)
+- [En bra diskussion på StackOverflow om `Random` vs `ThreadLocalRandom` i Java](https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java) 
+
+Ingen TL;DR i detta inlägg, okej? Bra programmering!

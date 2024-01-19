@@ -1,6 +1,6 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "Go: Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Go"
 category:             "Go"
@@ -10,44 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Dlaczego i po co?
 
-Usuwanie znaków pasujących do wzorca jest procesem polegającym na usunięciu wszystkich wystąpień danego znaku lub ciągu znaków w tekście. Programiści często wykonują tę czynność, aby wyczyścić lub przekształcić dane.
+Usunięcie znaków pasujących do wzorca ma na celu manipulację tekstami w celu uzyskania pozbycia się niepotrzebnych znaków w ciągu danych. Programiści robią to, gdy pragną oczyszczenia swojego tekstu z niechcianych lub zbędnych znaków.
 
 ## Jak to zrobić:
+
+Go zapewnia wbudowaną funkcję `strings.ReplaceAll(s, old, new)`, która jest używana do zastępowania wszystkich wystąpień podciągu `old` w ciągu `s` na ciąg `new`. 
+
+Sprawdźmy to na przykładzie:
 
 ```Go
 package main
 
-import "fmt"
-import "regexp"
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-    // Przykładowy tekst, z którego chcemy usunąć znaki pasujące do wzorca
-    text := "Ala ma 12 kotów i lubi je karmić"
-    // Wzorzec, określający jakie znaki chcemy usunąć (cyfry w tym przypadku)
-    pattern := regexp.MustCompile("[0-9]+")
-    // Wykorzystanie funkcji ReplaceAllString z pakietu "strings" do zastąpienia pasujących znaków pustym stringiem
-    result := strings.ReplaceAllString(text, pattern, "")
-
-    fmt.Println("Wynik:", result)
+	str := "Witaj, Witaj, świecie!"
+	
+	// Usunięcie wszystkich liter 'W' ze ciągu
+	newStr := strings.ReplaceAll(str, "W", "")
+	
+	fmt.Println(newStr) // "itaj, itaj, świecie!"
 }
 ```
 
-Output: 
-```
-Wynik: Ala ma kotów i lubi je karmić
-```
+## Pogłębione informacje:
 
-## Wnikliwe spojrzenie:
+Usunięcie znaków pasujących do wzorca jest częstą praktyką programistyczną od czasów, gdy zaczęto manipulować danymi tekstowymi. 
 
-1. Usuwanie znaków pasujących do wzorca jest powszechną czynnością w wielu językach programowania i jest wykorzystywane do wstępnej obróbki danych lub przekształcania ich do pożądanego formatu.
-2. W języku Go, oprócz funkcji ReplaceAllString z pakietu "strings", można również wykorzystać funkcję ReplaceAllStringFunc, która pozwala na zastosowanie własnej funkcji do zastąpienia pasujących znaków.
-3. Implementacja usuwania znaków pasujących do wzorca zazwyczaj wykorzystuje wyrażenia regularne, które są zestawem reguł do wyszukiwania i manipulacji tekstu.
+Co do alternatyw, możemy używać funkcji `regexp.ReplaceAllString(src, repl)`, która pozwala na bardziej skomplikowane operacje usuwania znaków.
 
-## Zobacz także:
+Oto szczegóły implementacji dla funkcji `strings.ReplaceAll(s, old, new)`. Ta funkcja najpierw wyszukuje indeksy wszystkich wystąpień `old` w ciągu `s` za pomocą algorytmu wyszukiwania tekstu Boyer-Moore'a. Następnie, tworzy nowy ciąg, kopiując fragmenty ciągu `s` między tymi indeksami, a następnie wstawia `new` zamiast `old`.
 
-- Dokumentacja pakietu "strings" w języku Go: https://golang.org/pkg/strings/
-- Dokumentacja funkcji ReplaceAllString i ReplaceAllStringFunc: https://golang.org/pkg/strings/#ReplaceAllString, https://golang.org/pkg/strings/#ReplaceAllStringFunc
-- Wyrażenia regularne w języku Go: https://golang.org/pkg/regexp/
+## Zobacz też:
+
+1. Dokumentacja Go dla pakietu "strings": https://golang.org/pkg/strings/
+2. Dokumentacja Go dla pakietu "regexp": https://golang.org/pkg/regexp/
+3. Algorytm Boyer-Moore’a: https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm
