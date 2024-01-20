@@ -1,7 +1,7 @@
 ---
-title:                "Gör en sträng versal"
-html_title:           "TypeScript: Gör en sträng versal"
-simple_title:         "Gör en sträng versal"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,49 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## Vad och varför?
+Att kapitalisera en sträng innebär att omvandla första bokstaven i varje ord till stor bokstav medan övriga blir små bokstäver. Programmerare gör det för att standardisera textdata, förbättra läsbarheten och uppfylla stilistiska krav.
 
-# "String" Stor Bokstav i TypeScript
-
-## Vad & Varför?
-
-Att göra första bokstaven stor (capitalizing a string) betyder helt enkelt att omvandla den första bokstaven i en textsträng från små till stora bokstäver. Som programmerare gör vi detta för att förbättra läsbarheten eller för att uppfylla specifika programmeringsbehov.
-
-## Hur man:
-
-Här är ett exempel på hur du gör detta i TypeScript. 
-
-```typescript
-function capitalizeFirstLetter(str: string) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+## Hur gör man:
+```TypeScript
+function capitalizeString(str: string): string {
+  return str.replace(/\b\w/g, (firstLetter) => firstLetter.toUpperCase()).toLowerCase();
 }
 
-let myStr = 'hej världen';
-myStr = capitalizeFirstLetter(myStr);
-
-console.log(myStr);
+const title = "här är en titel att kapitalisera";
+const capitalizedTitle = capitalizeString(title);
+console.log(capitalizedTitle); // Output: "Här Är En Titel Att Kapitalisera"
 ```
 
-Och detta kommer att skriva ut:
+## Djupdykning:
+En lång tid tillbaka, innan programmeringsspråken, var textformatering en manuell uppgift. Idag har vi automatiska funktioner, som `capitalizeString` i TypeScript, som sköter jobbet åt oss. Alternativt kan man använda RegExp-funktioner som i exemplet ovan eller externa bibliotek såsom Lodash med metoden `_.startCase()`, men den inbyggda funktionen är oftast smidigast. När det gäller implementation, se upp för speciella fall som förkortningar och icke-alfabetiska tecken som inte bör förändras.
 
-```
-Hej världen
-```
-## Djupdykning
-
-1. Historisk kontext: Denna funktion har historiskt varit del av många programmeringsspråk, vilket underlättar textmanipulation för programmerare.
-  
-2. Alternativ: Ett annat gängse sätt att göra det första tecknet stort i string i TypeScript är att använda `substring()` istället för `slice()`.
-
-```typescript
-function capitalizeFirstLetter(str: string) {
-  return str.charAt(0).toUpperCase() + str.substring(1);
-}
-```
-
-3. Implementeringsdetaljer: Funktionen `toUpperCase()` konverterar alla bokstäver i en sträng till versaler, men genom att använda `charAt(0)` fokuserar vi bara på det första tecknet. `slice(1)` och `substring(1)` används för att hämta resten av strängen utan att ändra det.
-
-## Se också
-
-- [MDN dokumentation](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) för `toUpperCase()`, `charAt()`, `slice()` och `substring()`.
-- [Stack Overflow konversation](https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript) om att göra första bokstaven stor i JavaScript.
+## Se även:
+- MDN Web Docs om `String.prototype.replace()`: [MDN - String.replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- Lodashs `startCase` metod: [Lodash - startCase](https://lodash.com/docs/4.17.15#startCase)
+- TypeScript officiella dokumentation: [TypeScript Lang - Docs](https://www.typescriptlang.org/docs/)

@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando uma string"
-html_title:           "PowerShell: Capitalizando uma string"
+html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Quê e Porquê?
-
-Capitalizar uma string é o processo de transformar a primeira letra de cada palavra em uma letra maiúscula. Os programadores fazem isso para melhorar a legibilidade ou para a formatação de dados de texto na apresentação ao usuário.
+## O Que & Porquê?
+Capitalizar uma string significa tornar a primeira letra de cada palavra em maiúscula, mantendo as outras em minúscula. Programadores fazem isso para padronizar dados, como nomes próprios, ou para atender a requisitos estilísticos em interfaces de usuário, documentos e relatórios.
 
 ## Como fazer:
-
-No PowerShell, pode capitalizar uma string usando o método `.ToTitleCase()`. Aqui está um exemplo:
+Com o PowerShell, capitalizar uma string é simples. Aqui estão algumas maneiras:
 
 ```PowerShell
-$str = "olá, mundo!"
-$cultura = new-object System.Globalization.CultureInfo("pt-BR")
-$textInfo = $cultura.TextInfo
-$resultado = $textInfo.ToTitleCase($str)
-
-Escreva-Saída $resultado
+# Usando o método ToTitleCase da classe CultureInfo
+$texto = "isto é um exemplo"
+$culture = [System.Globalization.CultureInfo]::CurrentCulture
+$titleCaseText = $culture.TextInfo.ToTitleCase($texto)
+Write-Output $titleCaseText
 ```
 
-Isto te dará a seguinte saída:
-
-```PowerShell
-Olá, Mundo!
+Saída da amostra:
+```
+Isto É Um Exemplo
 ```
 
 ## Aprofundamento:
+Capitalizar palavras numa string não é uma invenção recente. Isso remonta ao desenvolvimento das primeiras linguagens de programação que lidam com texto, e regras tipográficas muito antes disso.
 
-As strings são um elemento fundamental em muitos programas, e manipular corretamente essas strings é crítico para muitos sistemas. A função ToTitleCase() foi introduzida para facilitar este processo, fornecendo uma maneira rápida e eficiente para capitalizar strings. 
-
-Como alternativa, pode usar outros métodos para chegar no mesmo resultado. Por exemplo, o método `.ToUpper()` capitalizaria toda a string, não apenas as primeiras letras de cada palavra. 
-
-Tecnicamente, o método `.ToTitleCase()` funciona analisando cada caractere da string. Se o caractere anterior era um tipo de caractere não-letral (como um espaço, símbolo ou número), ele converte o próximo caractere em letra maiúscula.
+Alternativas:
+- Além do método `ToTitleCase`, você pode usar expressões regulares ou iterar pela string e capitalizar cada palavra manualmente, mas isso geralmente é desnecessário e pode ser mais propenso a erros.
+  
+Detalhes de Implementação:
+- O método `ToTitleCase` não capitaliza palavras já em maiúsculas por questões de design, como em siglas. Se você precisar de um comportamento diferente, terá de implementar uma solução personalizada.
 
 ## Veja Também:
-
-- [Documentação Oficial do PowerShell](https://docs.microsoft.com/pt-br/powershell/)
-- [Como Usar o Método ToTitleCase](https://docs.microsoft.com/pt-br/dotnet/api/system.globalization.textinfo.totitlecase)
+- Documentação da classe `TextInfo`: [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=net-6.0)

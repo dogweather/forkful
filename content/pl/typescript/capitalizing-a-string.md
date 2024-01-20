@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana tekstu na wielkie litery"
-html_title:           "TypeScript: Zamiana tekstu na wielkie litery"
-simple_title:         "Zamiana tekstu na wielkie litery"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to i dlaczego?
+## What & Why?
+(Co i Dlaczego?)
+Kapitalizacja tekstu to zmiana pierwszej litery w wyrazie na wielką. Programiści używają jej do formatowania tekstów w interfejsach użytkownika czy dokumentach, aby poprawić czytelność i estetykę.
 
-Zwiększanie pierwszej litery stringa to proces zamiany pierwszej litery słowa na dużą. Programiści robią to, aby poprawić czytelność tekstu lub spełnić określone wymagania formatowania.
-
-## Jak to zrobić:
-
-Przykładowego kodu TypeScript, który zwiększa pierwszą literę stringa, można napisać tak:
-
+## How to:
+(Jak to zrobić:)
 ```TypeScript
-function capitalizeFirstLetter(str: string) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+function capitalize(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-console.log(capitalizeFirstLetter('tekst'));
+// Użycie funkcji:
+console.log(capitalize('witaj świecie')); // 'Witaj świecie'
+console.log(capitalize('typescript jest fajny')); // 'Typescript jest fajny'
 ```
 
-To wyświetli 'Tekst' w konsoli.
+## Deep Dive
+(Zanurzamy się głębiej)
+Kapitalizacja tekstu nie jest niczym nowym; używamy jej w pisowni od wieków. W kontekście programowania, jest szczególnie przydatna w językach interfejsów użytkownika, takich jak HTML i CSS, oraz w praktykach backendowych, np. przy formatowaniu danych przed zapisem do bazy. 
 
-## Szczegółowe omówienie:
+Alternatywy kapitalizacji pierwszej litery obejmują kompletną zamianę na wielkie litery (`toUpperCase()`) albo zmniejszenie ich (`toLowerCase()`). Istnieje też 'title case', gdzie wielką literą zapisujemy każdy wyraz. 
 
-Zwiększanie pierwszej litery stringa nie jest konceptem specyficznym dla TypeScript. Jest często stosowane we większości języków programowania, takich jak Python, JavaScript, C#, itp.
+W TypeScript nie ma wbudowanej funkcji do kapitalizacji każdego słowa, więc musimy pisać własne. Sprawdźcie też `localeCompare` dla poprawy porównań stringów w różnych językach i ustawień regionalnych.
 
-Alternatywnie, możemy zastosować bibliotekę Lodash do celów tego zadania. Ta biblioteka zawiera skrypt „capitalize”, który ułatwia tę pracę.
-
-Jednym z ważniejszych aspektów implementacji jest upewnienie się, że jeśli string zawiera więcej niż jedno słowo, tylko pierwsze słowo jest kapitalizowane. Załóżmy, że mówimy o kontekście tekstów headlinerów, gdzie tylko pierwsze słowo w zdaniu powinno być z dużej litery.
-
-## Zobacz także:
-
-Dla dalszego czytania i więcej przykładów, polecam to następujące źródła:
-- Typy danych w TypeScript: https://www.typescriptlang.org/docs/handbook/basic-types.html
-- Zasoby dotyczące Lodash: https://lodash.com/docs/
-- Zasoby dotyczące JavaScript i TypeScript: https://www.typescriptlang.org/docs/handbook/javascript-apis.html
+## See Also
+(Zobacz także)
+- MDN Web Docs na temat `toUpperCase()` i `toLowerCase()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+- Opis `localeCompare()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
+- CSS Text - Transformacje tekstu: https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform

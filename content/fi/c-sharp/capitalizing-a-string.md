@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pääkirjaintaminen"
-html_title:           "C#: Merkkijonon pääkirjaintaminen"
-simple_title:         "Merkkijonon pääkirjaintaminen"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,43 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Isoilla kirjaimilla kirjoittaminen tarkoittaa merkkijonon muuttamista niin, että jokainen sana alkaa isolla alkukirjaimella. Ohjelmoijat käyttävät tätä parantaakseen tekstin ulkoasua tai noudattaakseen standardoituja muotoilusääntöjä.
 
-Stringin pääkirjainmuunnos tarkoittaa kielen tai ohjelmiston pääkirjainten vaihtoehtoista käyttöä. Ohjelmoijat tekevät niin esimerkiksi tekstin muotoilun tai uniikkitunnuksien luomisen vuoksi.
-
-## Kuinka toimii:
-
-Voit muuntaa C# stringin pääkirjaimiksi käyttäen ToUpper()-metodia. Esimerkkikoodi:
+## How to: (Kuinka tehdä:)
 
 ```C#
-string muuttuja = "moi, maailma!";
-muuttuja = muuttuja.ToUpper();
-Console.WriteLine(muuttuja);  
+using System;
+using System.Globalization;
+
+class Program
+{
+    static void Main()
+    {
+        string originalText = "finnish lake district";
+        TextInfo textInfo = new CultureInfo("fi-FI", false).TextInfo;
+
+        // Muuttaa jokaisen sanan alkamaan isolla kirjaimella
+        string capitalizedText = textInfo.ToTitleCase(originalText);
+
+        Console.WriteLine(capitalizedText);  // Tulostaa "Finnish Lake District"
+    }
+}
 ```
 
-Tämän tulokset:
+## Deep Dive (Syväsukellus)
+Isojen kirjainten käyttöön alkoi nousta tarve, kun tekstinlukuohjelmat ja tietokoneet yleistyivät 1900-luvulla, ja tekstin selkeys muuttui tärkeäksi. Isoilla kirjaimilla alkavat sanat erotetaan paremmin toisistaan, ja se helpottaa lukemista.
 
-```C#
-"MOI, MAAILMA!"
-```
+Vaihtoehtoisesti C#:ssa voit käyttää LINQ-metodia tai kirjoittaa oman algoritmin stringin kapitalisointiin. `ToUpper()` ja `ToLower()`-metodeja voidaan myös soveltaa tietyn tyylin säilyttämiseksi, kuten akronyymien kanssa.
 
-## Syvempi sukellus:
+Kun ajatellaan toteutusta, `CultureInfo`-olion `TextInfo`-ominaisuus on tärkeä, koska se huomioi kulttuuriset säännöt, esimerkiksi erikoistapaukset tai poikkeukset.
 
-Stringin pääkirjainmuunnos on ollut osa ohjelmointikieliä jo pitkään, ja toisin kuin C#, jotkut kielet (kuten JavaScript) sisältävät string-metodin, joka muuntaa vain stringin ensimmäisen kirjaimen isoksi.
+## See Also (Katso Myös)
 
-C#-ssa on myös muita tapoja tehdä sama. Esimerkiksi, voit käyttää Culture- tai TextInfo-luokkaa. Tässä on esimerkki, jossa käytetään TextInfoa:
-
-```C#
-CultureInfo cultureInfo = CultureInfo.CurrentCulture;
-TextInfo textInfo = cultureInfo.TextInfo;
-string muuttuja = "moi, maailma!";
-muuttuja = textInfo.ToTitleCase(muuttuja);
-Console.WriteLine(muuttuja);  
-```
-
-Huomaa, että ToTitleCase()-metodi päivittää vain stringin ensimmäisen kirjaimen, joten se saattaa olla hyvä vaihtoehto tietyissä tapauksissa.
-
-## Katso myös:
-
-- [Microsoftin dokumentaatio ToUpper()-metodista](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [Microsoftin dokumentaatio ToTitleCase()-metodista](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
+- Microsoftin virallinen `TextInfo.ToTitleCase` dokumentaatio: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase
+- C# CultureInfo-luokan käyttö: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo
+- C# string-metodien kattava lista: https://docs.microsoft.com/en-us/dotnet/api/system.string

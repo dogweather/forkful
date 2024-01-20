@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pääkirjoitus"
-html_title:           "Javascript: Merkkijonon pääkirjoitus"
-simple_title:         "Merkkijonon pääkirjoitus"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Merkkijonon isoiksi kirjoittaminen tarkoittaa jokaisen merkkijonon sisältämän sanan ensimmäisen kirjaimen muuttamista isoiksi kirjaimiksi. Ohjelmoijat tekevät tämän tehdäkseen tekstistä helpommin luettavan tai korostaakseen tiettyjen sanojen merkitystä.
+## What & Why? (Mitä ja Miksi?)
+Kirjainkokojen muuttaminen tarkoittaa sanan tai lauseen alkukirjaimen muuttamista isoksi. Tämä parantaa lukemisen selkeyttä ja korostaa tärkeät nimet tai otsikot.
 
-## Kuinka näin:
-Yksinkertainen esimerkki merkkijonon alkukirjainten muuttamisesta isoiksi Javascriptissä.
-
+## How to (Kuinka toteuttaa):
 ```Javascript
+// Esimerkki 1: Yksinkertainen tapa muuttaa ensimmäinen kirjain isoksi
 function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-console.log(capitalizeFirstLetter('javascript on upeaa!'));
-```
-Tämän palaute olisi seuraava:
+console.log(capitalizeFirstLetter('mökki')); // Output: Mökki
 
-```Javascript
-'Javascript on upeaa!'
-```
-## Syvempi sukellus:
-Ison kirjaimen käyttö otsikoinnissa on peräisin kirjapainotavasta, jossa tärkeiden sanojen korostaminen tehtiin painamalla niiden alkukirjain isommalla fontilla. Javascriptissä kuin muissakin ohjelmointikielissä, merkkijonon kapitalisointiin on eri tapoja. Esimerkiksi voit käyttää `toUpperCase()` metodia koko merkkijonon muuttamiseen isoihin kirjaimiin.
-
-```Javascript
-function capitalizeAllLetters(string) {
-    return string.toUpperCase();
+// Esimerkki 2: Kaikkien sanojen ensimmäisen kirjaimen muuttaminen isoksi
+function capitalizeWords(string) {
+  return string.split(' ').map(word => capitalizeFirstLetter(word)).join(' ');
 }
 
-console.log(capitalizeAllLetters('Javascript on upeaa!'));
+console.log(capitalizeWords('hyvää huomenta!')); // Output: Hyvää Huomenta!
 ```
 
-Tämän palaute olisi seuraava:
+## Deep Dive (Syväkatsaus):
+Ennen kuin oli valmiita funktioita, kehittäjät joutuivat käsin käsittelemään merkkijonoja. Historiallisesti merkkijonokäsittely on aina ollut ohjelmoinnin keskeinen osa. JavaScriptissä ei ole sisäänrakennettua toimintoa joka suoraan muuntais koko merkkijonon alkukirjaimet isoiksi, mutta yllä olevat ratkaisut ovat tulleet standardiksi.
 
-```Javascript
-'JAVASCRIPT ON UPEAA!'
-```
-## Katso myös:
-Lisätietoja merkkijonojen muokkaamisesta Javascriptin avulla löytyy seuraavista lähteistä:
-1. [Mozilla Developer Network - String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-2. [Mozilla Developer Network - String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-3. [W3Schools - Javascript String Methods](https://www.w3schools.com/jsref/jsref_obj_string.asp)
+Vaihtoehtoisesti voisi käyttää CSS:n `text-transform: capitalize;` ominaisuutta, mutta se vaikuttaa vain näyttötapaan, ei itse merkkijonon dataan.
+
+Toteutuksen kannalta tärkeää on muistaa, että JavaScriptissä merkkijono on muuttumaton (immutable), eli alkuperäistä merkkijonoa ei voi muuttaa - sen sijaan luodaan uusi merkkijono kun halutaan tehdä muutoksia.
+
+## See Also (Katso Myös):
+- MDN String.prototype.toUpperCase(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+- MDN String.prototype.charAt(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+- MDN Array.prototype.map(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map

@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana liter w ciągu na wielkie"
-html_title:           "Clojure: Zamiana liter w ciągu na wielkie"
-simple_title:         "Zamiana liter w ciągu na wielkie"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,40 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kapitalizacja łańcuchów znaków w Clojure 
+## What & Why?
+(Co i Dlaczego?)
 
-## Co i dlaczego?
+Capitalizing strings means changing the first letter of each word to uppercase. We do it to standardize data entries, for titles, or just to make text look cleaner and more formal.
 
-Kapitalizacja łańcuchów znaków polega na zmianie pierwszego znaku w łańcuchu znaków na duży literę. Programiści robią to, by poprawić prezentację tekstu, np. przy wywietlaniu imion i nazwisk.
+## How to:
+(Jak to zrobić:)
 
-## Jak to zrobić:
+```Clojure
+(defn capitalize-string [s]
+  (clojure.string/capitalize s))
 
-Clojure (wersja obecna to 1.10) posiada wbudowaną funkcję `capitalize` w bibliotece `clojure.string`. Oto przykład:
+;; Example: Capitalizing a single word
+(println (capitalize-string "clojure"))
 
-```clojure
-(require '[clojure.string :as str])
+;; Example: Capitalizing multiple words using split and map
+(println (map capitalize-string (clojure.string/split "hello clojure world" #"\s")))
 
-(defn show-capitalized [s]
-   (str/capitalize s))
+;; Output for single word:
+;; "Clojure"
 
-(println (show-capitalized "jan kowalski"))
+;; Output for multiple words:
+;; ("Hello" "Clojure" "World")
 ```
 
-Wynik:
+## Deep Dive
+(Zagłębienie się)
 
-```clojure
-"Jan kowalski"
-```
+Historically, string capitalization isn't novel—it has roots in early typesetting practices. In Clojure, capitalization can be done using built-in functions like `clojure.string/capitalize`, or you can roll your own with `map` and `reduce` for more complex rules. 
 
-## Głębokie zanurzenie:
+The default `capitalize` function will only uppercase the first character of the entire string. For titling purposes, where you might want to capitalize each word, you might utilize `split`, `map`, and `capitalize` together, as shown in the example. Be mindful of limitations: this doesn't account for exceptions in titling like 'of', 'and', or 'the'. 
 
-Kapitalizacja łańcuchów znaków jest praktyką stosowaną od początku informatyki. W Clojure jest to realizowane przez funkcje biblioteki `clojure.string`, która jest częścią standardowej dystrybucji Clojure.
+Implementation wise, when you capitalize a string in Clojure, it's usually done in a functional style—transforming the data without changing the original string (immutability). This is different from some languages that allow directly modifying the original string (mutability).
 
-Jest kilka alternatyw dla funkcji `capitalize`. Dwie wartościowe to `upper-case` i `lower-case`, które zmieniają wszystkie litery łańcucha znaków na duże lub małe litery.
+## See Also
+(Zobacz także)
 
-Detale implementacji funkcji `capitalize` są dość proste. Funkcja dzieli łańcuch na dwa łańcuchy: pierwszy znak i resztę łańcucha. Następnie zamienia pierwszy znak na wielką literę i łączy go z resztą.
-
-## Zobacz też:
-
-Dokumentacja funkcji `capitalize` Clojure: [tutaj](https://clojuredocs.org/clojure.string/capitalize)
-Blog na temat operacji na łańcuchach znaków w Clojure: [tutaj](https://www.braveclojure.com/core-functions-in-depth/)
+- [ClojureDocs on clojure.string/capitalize](https://clojuredocs.org/clojure.string/capitalize)
+- [The Java Platform toUpperCase method (Clojure runs on the JVM)](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())
+- [Clojure Style Guide](https://guide.clojure.style/#capitalize)

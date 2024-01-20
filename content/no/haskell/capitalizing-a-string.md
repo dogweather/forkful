@@ -1,7 +1,7 @@
 ---
-title:                "Å sette en streng med store bokstaver"
-html_title:           "Haskell: Å sette en streng med store bokstaver"
-simple_title:         "Å sette en streng med store bokstaver"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,39 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Kapitalisering av en streng betyr å gjøre første bokstav i hvert ord stor. Programmerere gjør dette for å standardisere tekstvisning, for eksempel i titler eller navn.
 
-Stor bokstavering av en streng innebærer å endre de første bokstavene i alle ord i strengen til store bokstaver. Programmerere gjør dette for å forbedre lesbarheten av tekst og følge konvensjoner innen programmeringsspråk.
-
-## Hvordan:
+## Hvordan gjøre det:
+For å kapitalisere hver bokstav i en Haskell-streng, bruker vi en kombinasjon av innebygde funksjoner. Se på eksemplene nedenfor.
 
 ```Haskell
-import Data.Char(toUpper)
+import Data.Char (toUpper)
 
--- Definere funksjonen for å endre første karakter av et ord til stor bokstav
-capitaliserOrd :: String -> String
-capitaliserOrd [] = []
-capitaliserOrd (head:tail) = toUpper head : tail
+-- Kapitaliserer den første bokstaven i et ord
+capitalize :: String -> String
+capitalize "" = ""
+capitalize (head:tail) = toUpper head : tail
 
--- Bruk funksjonen på en hel setning.
-capitaliserSetning :: String -> String
-capitaliserSetning text = unwords . map capitaliserOrd . words $ text
+-- Kapitaliserer den første bokstaven i hvert ord i en setning
+capitalizeWords :: String -> String
+capitalizeWords = unwords . map capitalize . words
 
--- Test
-main = putStrLn $ capitaliserSetning "hello, world!"
+-- Eksempel på bruk
+main = do
+    let sentence = "haskell programmering er gøy"
+    putStrLn $ capitalizeWords sentence
 ```
 
-Når du kjører programmet, vil utgangen være: `Hello, World!`.
+Output:
+```
+"Haskell Programmering Er Gøy"
+```
 
-## Dykk dypere 
+## Dypdykk
+Kapitalisering av strenger i Haskell kan spore sine røtter tilbake til tidlige tekstbehandlingssystemer, hvor slike manipulasjoner var vanlige for å oppnå korrekt typografisk utforming. Mens Haskell standardbibliotek har basisfunksjoner som `toUpper`, finnes det flere biblioteker som `Data.Text` som tilbyr mer effektive metoder for tekstmanipulasjon.
 
-Haskell ble introdusert i 1990, og er berømt for sin nøyaktighet. I eldre språk som C og Python, må man skrive flere linjer kode for å utføre operasjonen. Men i Haskell, kan samme operasjon gjøres med færre linjer, noe som gjør det til et mer effektivt programmeringsspråk.
+En alternativ metode for å kapitalisere en streng er å bruke listekomprehensjon:
 
-Alternativer til denne funksjonen inkluderer bruk av innebygde funksjoner som `map` og `toUpper`. `map` brukes for å utføre en bestemt operasjon på hvert element i en liste eller i vårt tilfelle, på hvert ord i strengen. `toUpper` brukes for å endre små bokstaver til store bokstaver i strengen.
+```Haskell
+capitalizeWords' :: String -> String
+capitalizeWords' s = unwords [toUpper (head w) : tail w | w <- words s, not (null w)]
+```
 
-Implementering av større bokstaver i Haskell er enkel og tar mindre tid enn andre programmeringsspråk. Det bruker funksjonell programmerings paradigmer, og lar deg manipulere strenger effektivt.
+Når det gjelder implementasjon, er det viktig å håndtere kanterilfeller, som tomme strenger eller strenger som inneholder tegn som ikke er bokstaver.
 
-## Se Også:
-
-Ytterligere lesinger om string manipulasjon i Haskell på den offisielle Haskell wikien: https://wiki.haskell.org/How_to_work_on_lists
-
-Og artikler om bruk av `map` funksjonen for å manipulere lister i Haskell: https://www.schoolofhaskell.com/school/starting-with-haskell/lists-and-tuples
+## Se Også
+- Haskell sin offisielle dokumentasjon om `Data.Char`: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
+- `Data.Text` bibliotek for effektiv tekstmanipulasjon: https://hackage.haskell.org/package/text
+- En nyttig Stack Overflow-tråd om emnet: https://stackoverflow.com/questions/1959715/how-to-make-a-char-uppercase-in-haskell

@@ -1,7 +1,7 @@
 ---
-title:                "Sette stor bokstav i en streng"
-html_title:           "Fish Shell: Sette stor bokstav i en streng"
-simple_title:         "Sette stor bokstav i en streng"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kapitalisering av tekststrenger i Fish Shell for Norske Programmerere
-
 ## Hva & Hvorfor?
+Kapitalisering av strenger innebærer å gjøre første bokstav i hvert ord til en stor forbokstav. Programmerere bruker det for å møte språknormer eller forbedre tekstutseende for brukergrensesnitt.
 
-Kapitalisering av en tekststreng innebærer å forvandle de små bokstavene i en streng til store bokstaver. Dette er viktig når programmerere ønsker å standardisere tekstdata eller gjøre sammenligninger av tekststrengene som er ikke følsomme for små og store bokstaver.
+## Hvordan gjøre det:
+I Fish Shell, forvandler du små til store forbokstaver slik:
 
-## Slik gjør du det:
+```fish
+function capitalize
+    for word in $argv
+        echo -n (string collect (string sub -s 1 -- $word | string upper) (string sub -s 2 -- $word)) " "
+    end
+    echo
+end
 
-I Fish Shell, kan du lettvint kapitalisere en tekststreng med 'string' kommandoen. Her er et eksempel:
-
-```
-Fish Shell
-> set -l tekst "hej verden"
-> string upper -q $tekst
-```
-
-Utgangen vil være:
-
-```
-HEJ VERDEN
+# Bruk
+capitalize "fisk er vennlig og fin"
 ```
 
-## Dypdykk 
+Eksempel på utdata:
 
-Historisk sett, har kapitalisering av tekststreng vært en viktig del av databehandlingsprosessen, spesielt når det gjelder datarensing og standardisering. Som alternativ i Fish kan du bruke 'tr' kommandoen som følger: 
-
-```Fish Shell
-> echo "hej verden" | tr '[:lower:]' '[:upper:]'
+```
+Fisk Er Vennlig Og Fin
 ```
 
-Dette vil også gi utgangen "HEJ VERDEN".
+## Dypdykk
+I gamle dager brukte enkelte skall begrensede, innebygde strengoperasjoner. Med Fish, som er et moderne skall, får programmerere innebyggede strengfunksjoner som `string` som kan dele opp, erstatte og transformere tekst på kraftfulle måter. Alternativer til Fish-funksjonen `capitalize` kan inkludere bruk av `awk` eller kall til eksterne programmer som `sed`, men Fish tilbyr en renere og mer effektiv syntaks uten behov for eksterne verktøy. `string sub` og `string upper` er Fish-funksjoner som henholdsvis henter en delstreng og konverterer til store bokstaver.
 
-Både 'string' kommandoen og 'tr' fungerer på samme måte, ved å iterere over hver karakter i strengen og forvandle den til en stor bokstav hvis det er en liten bokstav. Valget mellom de to vil som regel være et spørsmål om personlig preferanse og behov.
-
-## Se også:
-
-1. Fish Shell's offisielle dokumentasjon på 'string' kommandoen: https://fishshell.com/docs/current/cmds/string.html
-2. GNU 'tr' kommando: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
+## Se Også
+- Offisiell Fish Shell-dokumentasjon: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- String-manipluasjon i Fish Shell: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+- Generell tekstbehandling i Unix-skall: [https://en.wikipedia.org/wiki/Text_processing](https://en.wikipedia.org/wiki/Text_processing)

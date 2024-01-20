@@ -1,7 +1,7 @@
 ---
-title:                "文字列を大文字にする"
-html_title:           "TypeScript: 文字列を大文字にする"
-simple_title:         "文字列を大文字にする"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,44 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (なにとなぜ?)
+文字列を大文字にするとは、全ての文字を大文字に変換することです。これは、タイトル、見出し、または特定の単語を強調するためによく行われます。
 
-文字列の先頭を大文字にするとは、文字列内の各単語の最初の文字を大文字にする操作を指します。プログラマがこれを行う主要な理由は、ユーザーが読みやすい形式でデータを表示することです。
-
-##方法：
-
-TypeScriptで文字列の先頭を大文字にする基本的な方法は以下のようになります:
-
-```TypeScript
-function capitalize(s: string): string {
-    return s.charAt(0).toUpperCase() + s.slice(1);
+## How to: (方法)
+```typescript
+function capitalizeString(input: string): string {
+  return input.toUpperCase();
 }
 
-console.log(capitalize('typeScript article')); // Output: 'TypeScript article'
+// 使用例
+const title = "typescriptの魅力";
+console.log(capitalizeString(title));  // "TYPESCRIPTの魅力"
 ```
 
-次に、型安全な方式を示します。型チェックが追加され、引数が文字列であることが保証されます：
+## Deep Dive (掘り下げ)
+文字列の大文字化は、古くからある操作です。JavaScriptでは `.toUpperCase()` メソッドが使われ、TypeScriptでも同じです。代替手段として、`.map()` と ASCII コードを使用する方法もありますが、`.toUpperCase()` が最も直接的で速いです。内部的には、JavaScript の実行エンジンが各文字の大文字に対応する Unicode 値を見つけ、それに基づいて新しい文字列を生成します。
 
-```TypeScript
-type StringFunction = (s: string) => string;
-
-const safeCapitalize: StringFunction = (s) => s.charAt(0).toUpperCase() + s.slice(1);
-
-console.log(safeCapitalize('typeScript tutorial')); // Output: 'TypeScript tutorial'
-```
-
-##深掘り：
-
-文字列の最初を大文字にする技術は古くからありますが、この考え方の一部は、古代の手書き文書に由来していると言われています。ここでは、新しいセクションの最初の文字がしばしば大きく、装飾的に書かれていました。
-
-また、大文字変換の代替手段としては、CSSを使用したスタイル変化もあります。しかし、これは表示のみを変更し、文字列そのものを変更するわけではないことに注意が必要です。
-
-TypeScriptの実装では、`toUpperCase`関数と`charAt`関数を使用して最初の文字を取得し、大文字に変換します。その後、`slice`関数を使用して元の文字列の残りの部分を取得し、大文字に変換した先頭文字と結合します。
-
-##関連リンク：
-
-TypeScriptの他の要素との連携については、以下のリンクが参考になるでしょう。
-
-- [TypeScriptの公式文書](https://www.typescriptlang.org/docs/)
-- [JavaScriptでの文字列操作](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [TypeScriptとJavaScriptの比較](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+## See Also (関連情報)
+- TypeScript公式ドキュメント: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- MDN Web Docs の `.toUpperCase()` メソッド: [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)

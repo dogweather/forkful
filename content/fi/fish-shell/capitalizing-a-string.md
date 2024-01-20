@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon isoilla alkukirjaimilla"
-html_title:           "Fish Shell: Merkkijonon isoilla alkukirjaimilla"
-simple_title:         "Merkkijonon isoilla alkukirjaimilla"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,23 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
-Kaikkiin jono-merkistöihin kirjainten muuttaminen isoiksi, eli 'capitalizing', tarkoittaa kaikkien merkistön merkkien muuttamista suuriksi kirjaimiksi. Ohjelmoijat tekevät tämän datan yhtenäistämiseksi ja vertailun helpottamiseksi.
+## What & Why? 
+Mikä ja miksi?
 
-## Miten:
-Tässä on koodiesimerkki siitä, kuinka tämä tehdään Fish Shell -kuoressa:
-```fish
-set lower 'hei mitä kuuluu'
-set upper (string upper $lower)
-echo $upper
-```
-Sample output:
-```fish
-HEI MITÄ KUULUU
-```
-## Syventävä sukellus
-Historiallisessa kontekstissa, merkkijonojen capitalisointi tuli ensin "C" -kielestä, jossa funktio to_upper() käytettiin tähän tarkoitukseen. Vaihtoehtoisesti, jotkut ohjelmointikielet, kuten JavaScript, käyttävät toUpperCase()-metodia. Fish shell:ssa, `string upper` käytetään merkkijonon muuntamiseksi isoihin kirjaimiin. Komento ottaa yhden argumentin – alkuperäisen merkkijonon – ja palauttaa uuden merkkijonon, jossa kaikki merkit ovat isoja kirjaimia.
+Tekstijonojen kirjainten muuttaminen suuriksi eli kapitalisointi on usein tarpeen, kun halutaan standardisoida datan ulkoasu, esimerkiksi otsikoissa tai kun muotoillaan käyttäjän nimiä. Ohjelmoijat tekevät tätä esittääkseen tekstin selkeämmin tai täyttääkseen tekniset vaatimukset.
 
-## Katso myös
-Fish Shell Ohjekirja merkkijono-operaatioista: https://fishshell.com/docs/current/ (Finnish version not available)
-Ohjelmoijan oppaita ja resursseja W3Schools-sivustosta: https://www.w3schools.com/Jsref/jsref_touppercase.asp
+## How to:
+Miten:
+
+```Fish Shell
+function capitalize
+    for word in $argv
+        echo -n (string sub -s 1 -- $word | string upper)(string sub -l (math (string length $word) - 1) -- $word)
+        echo -n " "
+    end
+    echo ""
+end
+
+# Esimerkin käyttö:
+set name "teppo testaaja"
+capitalize $name
+```
+
+Tulostaa:
+
+```
+Teppo Testaaja
+```
+
+## Deep Dive
+Syväsukellus:
+
+Fish Shellissä ei ole sisäänrakennettua komentoa yksittäisen merkkijonon kapitalisoimiseksi. Olemme luoneet `capitalize` funktion, joka käy läpi sanat ja muuttaa jokaisen sanan ensimmäisen kirjaimen suureksi. Näin voi käsitellä lauseita, ei pelkästään sanoja. Kapitalisointi on käytännöllistä otsikoiden tai nimien käsittelyssä, missä erottuvuus ja muotoilusäännöt ovat tärkeitä.
+
+Vaihtoehtoisesti, jos olisi tarve vain tehdä kaikki kirjaimet suuriksi, voimme käyttää `string upper`-komentoa suoraan. Tarinan toisessa päässä `string lower` pienentää kaikki kirjaimet. Nämä komennot esiteltiin Fish-kalvoilla kauan ennen kuin ohjelmointi oli niin selkeä ja johdonmukainen kuin tänä päivänä. Uudemmissa versioissa käytetään sanojen ensimmäisen kirjaimen käsittelyyn alistring-toimintoja (`string sub`) yhdistettynä merkkijonojen muuntamiseen (`string upper/lower`).
+
+## See Also
+Katso myös:
+
+- Fish Shell dokumentaatio: string-komennot: https://fishshell.com/docs/current/cmds/string.html
+- Shell-ohjelmoinnin perusteet: https://linuxcommand.org/lc3_learning_the_shell.php
+- Suuret ja pienet kirjaimet ohjelmoinnissa: https://en.wikipedia.org/wiki/Letter_case#Programs

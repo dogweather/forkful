@@ -1,7 +1,7 @@
 ---
-title:                "将字符串转化为大写"
-html_title:           "C#: 将字符串转化为大写"
-simple_title:         "将字符串转化为大写"
+title:                "字符串首字母大写"
+html_title:           "Arduino: 字符串首字母大写"
+simple_title:         "字符串首字母大写"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,43 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-将字符串的首字母大写就是将字符串中的每个单词的首字母变为大写字母。程序员之所以要这样做，是因为它可以方便我们在阅读代码时更加清晰，同时也符合编程的一些规范。
+## What & Why? (是什么？为什么要做？)
+字符串大写，就是将字符串中的字母转换成大写格式。程序员这么做可能是为了格式统一，也可能是处理编程中的文本数据。
 
-## 如何操作：
-我们可以使用C#中的 `TextInfo.ToTitleCase` 方法来实现首字母大写。下面是一段示例代码：
+## How to: (如何操作：)
+在C#中，使用`.ToUpper()`方法可以轻松实现字符串大写转换。
+
 ```C#
-using System;
-using System.Globalization;
- 
-public class Example
-{
-    public static void Main()
-    {
-        TextInfo myTI = new CultureInfo("en-US",false).TextInfo;
-        string myString = "hello world";
+string originalText = "hello, world!";
+string uppercasedText = originalText.ToUpper();
 
-        Console.WriteLine($"原文：{myString}");
-        Console.WriteLine($"修改后: {myTI.ToTitleCase(myString)}");
-    }
-}
+Console.WriteLine(uppercasedText);  // 输出：HELLO, WORLD!
 ```
-当你运行这段程序，你会得到以下输出：
-```C#
-原文：hello world
-修改后: Hello World
-```
-这个代码简洁明了，它构建了一个字符串 "hello world"，然后使用 `TextInfo.ToTitleCase`方法改变了每个单词的首字母为大写字母。
 
-## 深入了解
-首字母大写在编程历史上就有其特定的作用和意义。在C#之前的语言中，如C和C++，我们通常需要手动编写函数去实现首字母大写。随着.NET框架的出现，我们现在可以使用内建的`TextInfo.ToTitleCase`方法来进行操作。
+## Deep Dive (深入了解)
+早期的编程语言处理字符串时，并没有提供现成的大写转换方法。开发者需要手动实现逐字符的大小写转换。`.ToUpper()`方法提供了一个简单、高效的方式来转换整个字符串。除了`.ToUpper()`，C#还有`.ToUpperInvariant()`，它在进行大写转换时忽略了特定文化的大小写规则，保证了结果的一致性。在内部，这些方法通过字符映射表来实现转换。
 
-当然，我们也可以使用其他方式来实现首字母大写。例如，我们可以使用 `ToUpper` 方法加上字符串拆分和拼接操作，但这种方式相比使用 `TextInfo.ToTitleCase`更为复杂。
-
-`TextInfo.ToTitleCase` 控制首字母大写是通过对某些特定的Unicode类别生效。如果您对这方面感兴趣，可以查看`.NET`的官方文档。
-
-## 见所未见
-关于C#字符串更深入的资料，可以参考以下链接：
-- Microsoft官方C#编程指南 [C# programming guide](https://docs.microsoft.com/en-us/dotnet/csharp/)
-- 关于.NET的 `TextInfo`类的 [详细文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.globalization.textinfo?view=netframework-4.7.2)
-- 更深入了解字符串处理的 [字符串处理和正则表达式](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/)
+## See Also (参见)
+- MSDN 文档上的 `.ToUpper()` 方法说明：[https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+- 字符串操作最佳实践：[https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings)
+- 关于编程文化差异和`.ToUpperInvariant()`方法的讨论：[https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant)

@@ -1,7 +1,7 @@
 ---
-title:                "文字列の大文字化"
-html_title:           "C: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,47 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# C言語：文字列を大文字にする方法 
+## What & Why? (なに？ どうして？)
 
-## 何と何のため？
-文字列の大文字化とは、文字列中の小文字を全て大文字に変換する作業を指します。より読みやすく、検索・比較を容易にするため、プログラマーはこれを行います。
+文字列の大文字化とは、小文字を全部大文字に変える処理です。それは見た目の統一や、入力データの標準化のために使います。
 
-## ハウツー：
-以下にC言語で文字列を大文字にする実装例とその出力を示します。
+## How to: (やり方)
 
-```C
+C言語で文字列を大文字にする例を見てみましょう。
+
+```c
 #include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 
-void capitalize(char *s) {
-    for(int i = 0; s[i] != '\0'; i++){
-        s[i] = toupper(s[i]);
+void capitalize(char *str) {
+    while (*str) {
+        *str = toupper((unsigned char) *str);
+        str++;
     }
 }
 
 int main() {
-    char str[] = "Hello, World!";
-    capitalize(str);
-    printf("%s", str); 
+    char text[] = "こんにちは、プログラマー!";
+    
+    capitalize(text);
+    printf("大文字化: %s\n", text);
+    
     return 0;
 }
 ```
-
-このコードを実行すると、出力は次のようになります。
-
-```C
-HELLO, WORLD!
+サンプル出力:
+```
+大文字化: こんにちは、プログラマー!
 ```
 
-## ディープダイブ：
-1. 歴史的な文脈 : C言語では、ctype.hライブラリに`toupper`関数が用意されており、これを使って文字列を大文字に変換します。この関数は1970年代から存在しています。
-2. 代替手段 : 大文字化を求めるより複雑な操作が必要な場合、正規表現ライブラリを使用することもあります。しかし、単純な大文字化には`toupper`関数が最も効果的です。
-3. 実装の詳細 : `toupper`関数は引数として与えられた文字がアルファベットの小文字であれば該当する大文字に変換し、そうでなければそのままの文字を返します。そのため、この関数を文字列の各文字に適用することで、文字列全体を大文字に変換することができます。
+注意：上記のコードはASCII文字にのみ適用されます。日本語の文字など、非ASCIIは大文字化されません。
 
-## 参考情報：
-以下にこの記事と関連するいくつかのソースを紹介します：
+## Deep Dive (掘り下げ)
 
-1. [C Library - <ctype.h>](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
-2. [C Programming/Strings](https://en.wikibooks.org/wiki/C_Programming/Strings)
-3. [C++ Reference: toupper](https://en.cppreference.com/w/c/string/byte/toupper)
+文字列の大文字化は、C言語が始まった1970年代初頭から利用されています。`toupper`関数は標準ライブラリに含まれ、文字ごとに大文字への変換を行います。
+
+代替手段として、`<locale.h>`ヘッダを使い、ロケールに基づいた大文字化が可能です。しかし、この方法は設定が少々複雑です。
+
+実装の詳細として、`toupper`関数は引数として与えられた文字が小文字の場合にだけ、対応する大文字を返します。ASCIIテーブルに基づいて変換が行われるので、他の文字セットでは別の方法が必要になります。
+
+## See Also (関連する情報源)
+
+- C標準ライブラリ - `ctype.h`: http://www.cplusplus.com/reference/cctype/
+- さらなる文字列操作については、`<string.h>` を参照してください: http://www.cplusplus.com/reference/cstring/
+- ロケールに基づいた操作の例 (`setlocale`関数を使う): https://en.cppreference.com/w/c/locale/setlocale

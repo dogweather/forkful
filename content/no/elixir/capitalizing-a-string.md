@@ -1,7 +1,7 @@
 ---
-title:                "Sette en streng i store bokstaver"
-html_title:           "Elixir: Sette en streng i store bokstaver"
-simple_title:         "Sette en streng i store bokstaver"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,36 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å kapitalisere en streng betyr å gjøre første bokstav i ord til en stor bokstav. Programmerere gjør dette for lesbarhet og for å møte tekstformatkrav.
 
-Å forstørre en streng betyr å gjøre den første bokstaven i hver ord i strengen til en stor bokstav. Programmerere gjør dette for å forbedre lesbarheten og presentasjonen av tekstdata.
-
-## Hvordan: 
-
-Vi bruker `String.capitalize/2` funksjonen i Elixir:
-
+## Hvordan gjøre det:
 ```elixir
-IO.puts String.capitalize("elixir programmering")
+defmodule StringHelpers do
+  def capitalize_string(str) do
+    String.capitalize(str)
+  end
+end
+
+IO.puts StringHelpers.capitalize_string("hei, elixir fans!")  # Output: "Hei, elixir fans!"
+
 ```
 
-Output:
-  
-```elixir 
-"Elixir Programmering"
-```
+## Deep Dive
+Kapitalisering av strenger har eksistert siden typemaskintiden. Det hjelper med å merke begynnelsen på setninger og egennavn, noe som gjør teksten mer tiltalende visuelt. I Elixir, `String.capitalize/1` er den innebygde funksjonen som gjør dette; den kapitaliserer bare det første tegnet og gjør resten av strengen liten. Det finnes alternativer som `titleize` fra `elixir_titleize` biblioteket som kapitaliserer første bokstav i hvert ord.
 
-## Dypdykk: 
+Implementeringsdetaljer kan variere. `String.capitalize/1` i Elixir håndterer unicode og lar ikke bare ASCII-tegn bruke den. Det er smart nok til å kjenne igjen små og store unicode-tegn og gjøre endringer deretter.
 
-Historisk sett handler strengkapitalisering om typografiske konvensjoner, hvor stor forbokstav brukes for egennavn, setningsstarting, titler osv.
-
-Alternativer til `String.capitalize/2` i Elixir kan være direkte manipulering av strenger, men dette kan være mer komplisert og feilutsatt. `String.capitalize/2` tilbyr en pålitelig og enkel løsning.
-
-Ved en nærmere titt, `String.capitalize/2` funksjonen bruker Unicode datatabeller og regler for å transformere strenger. Derfor fungerer det på tvers av forskjellige språk og skrifter, noe som sikrer pålitelighet og omfattende støtte.
-
-## Se også: 
-
-For detaljert informasjon og ytterligere lesning, se følgende ressurser:
-
-- Elixir offisiell dokumentasjon på `String.capitalize/2` [her](https://hexdocs.pm/elixir/String.html#capitalize/2)
-
-
-- For en bredere forståelse av hvordan Elixir håndterer strenger og Unicode, se [dette](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html).
+## Se Også
+- Elixir's offisielle dokumentasjon for String-modulen: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)

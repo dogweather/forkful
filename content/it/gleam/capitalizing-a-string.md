@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizzare una stringa"
-html_title:           "Gleam: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscolizzare una stringa"
+html_title:           "Bash: Maiuscolizzare una stringa"
+simple_title:         "Maiuscolizzare una stringa"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Capitale di una Stringa in Gleam
+## What & Why?
+Capitalizzare una stringa significa trasformare tutti i suoi caratteri in lettere maiuscole. I programmatori lo fanno per uniformare l'output dei testi, per esempio nei titoli o quando si confrontano stringhe senza tenere conto della loro capitalizzazione.
 
-## Che Cosa e Perché?
-Mettere in maiuscolo una stringa significa convertire tutte le sue lettere minuscole in maiuscole. I programmatori lo fanno per motivi estetici, di formattazione o per confrontare stringhe in modo insensibile al caso.
+## How to:
+In Gleam, capitalizzare una stringa è semplice. Ecco un esempio con l'output corrispondente:
 
-## Come Fare:
-In Gleam, possiamo utilizzare la funzione `string.to_upper` per capitalizzare una stringa. Ecco un esempio:
-
-```
+```gleam
 import gleam/string
 
 pub fn main() {
-    let message = "ciao mondo"
-    let uppercase_message = string.to_upper(message)
-    io.println(uppercase_message) // Stampa: "CIAO MONDO"
+  let my_string = "ciao, mondo!"
+  let capitalised_string = string.to_uppercase(my_string)
+  capitalised_string
 }
 ```
 
-## Approfondimento
-Historicamente, il concetto di "maiuscolo" e "minuscolo" deriva dalla tipografia. In termini di programmi, non tutte le lingue hanno il concetto di maiuscolo e minuscolo. Dunque, il comportamento di `string.to_upper` può variare a seconda dell'insieme di caratteri utilizzato.
+Output:
 
-Un'alternativa al metodo `string.to_upper` sarebbe di implementare la tua funzione per percorrere ciascuno carattere nella stringa e convertirlo in maiuscolo.
+```
+"CIAO, MONDO!"
+```
 
-Ecco un dettaglio importante: la funzione `string.to_upper` di Gleam non modifica la stringa originale. Invece, restituisce una nuova stringa con tutte le lettere convertite in maiuscole. Questo perché le stringhe in Gleam sono immutabili.
+## Deep Dive
+Historicamente, la capitalizzazione è servita per enfatizzare parole o frasi e nella programmazione non è diversa. La capitalizzazione può aiutare nell'ordinamento alfabetico o nel confronto di stringhe senza distinzione tra maiuscole e minuscole.
 
-## Vedi Anche
-Per ulteriori informazioni sulle stringhe in Gleam, consulta la [documentazione ufficiale](https://gleam.run/book/tour/strings.html). Per una trattazione approfondita sulla capitalizzazione delle stringhe, [questo articolo](https://softwareengineering.stackexchange.com/questions/102122/is-avoiding-capitalisation-in-programming-considered-bad-practice) è un buon punto di partenza.
+Alternative all'uso della funzione `string.to_uppercase` potrebbero includere l'implementazione di una tua funzione personalizzata tramite la mappatura di ogni carattere da minuscolo a maiuscolo. Tuttavia, questo approccio non sarebbe altrettanto efficiente o semplice.
+
+Per quanto riguarda i dettagli di implementazione, la funzione `to_uppercase` gestisce tutte le particolarità delle stringhe Unicode, che vanno oltre la semplice A-Z dell'alfabeto inglese. La standardizzazione Unicode è fondamentale per assicurarsi che la capitalizzazione funzioni correttamente in diversi alfabeti e lingue.
+
+## See Also
+- Articolo su Unicode e normalizzazione delle stringhe: [https://unicode.org/reports/tr15/](https://unicode.org/reports/tr15/)
+- Guida alla conversione di stringhe in Rust, un linguaggio con cui Gleam condivide alcuni obiettivi di performance e sicurezza: [https://doc.rust-lang.org/book/ch08-02-strings.html](https://doc.rust-lang.org/book/ch08-02-strings.html)

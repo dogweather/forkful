@@ -1,7 +1,7 @@
 ---
-title:                "将字符串大写"
-html_title:           "Rust: 将字符串大写"
-simple_title:         "将字符串大写"
+title:                "字符串首字母大写"
+html_title:           "Arduino: 字符串首字母大写"
+simple_title:         "字符串首字母大写"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何为 & 为何？ (What & Why?)
+## What & Why? 什么和为什么?
+字符串大写，就是把所有字母变成大写字母。程序员这么做为了统一格式，提升可读性，或者满足编程需求。
 
-将字符串大写，就是把字符串中的所有小写字母转化成大写字母。 这对于增强显眼度、格式统一或者识别性能优化非常有用。
-
-## 如何: (How to)
+## How to: 怎么做
 
 ```Rust
-let s = "hello";
-let capitalized_s = s.to_uppercase();
-println!("{}", capitalized_s);
-// Output: HELLO
+fn main() {
+    let greeting = "hello, world!";
+    println!("{}", greeting.to_uppercase());
+}
 ```
 
-## 深度了解 (Deep Dive)
+输出：
+```
+HELLO, WORLD!
+```
 
-- 历史背景：Rust语言保持了大写转化的传统，对 Unicode 字符串也能正确处理，这比早期编程语言更虹霓。
+## Deep Dive 深入探索
 
-- 变体：将字符串首字母大写。这在某些情况下，比如处理人名时，常常使用。
-  ```Rust
-  let s = "rust programming";
-  let capitalized_s = s.chars().enumerate().map(|(i, c)| if i == 0 { c.to_uppercase().to_string() } else { c.to_string() } ).collect::<String>();
-  println!("{}", capitalized_s);
-  // Output: Rust programming
-  ```
+字符串大写不是Rust特有的；其他编程语言也有类似功能。在 Rust 中，`.to_uppercase()` 方法会遍历字符串中的每个字符，将其转换为大写形式。如果字符没有大写等价形式，就会保持不变。这一过程遵循Unicode标准。
 
-- 实现细节：Rust语言通过标准库函数`to_uppercase`来大写字符串。这个函数对于Unicode字符串兼容性良好，不仅可以处理ASCII字符，还可以处理其他任何Unicode字符。
+Rust提供的`.to_uppercase()`方法与其他语言不同之处在于它对Unicode字符有很好的支持。不像某些语言只能处理ASCII码，Rust可以正确大写所有语言的字母，包括带变音符的字母。
 
-## 查看更多 (See Also)
+此外，还有其它方法可以改变字符串的大小写，比如`.make_ascii_uppercase()`，但这个方法只对ASCII字符有效，对Unicode字符无效。
 
-- [官方字串大写文档](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
-- [字符串和Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)
+## See Also 相关链接
+
+- Rust 标准库中的 `.to_uppercase()` 方法文档: https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase
+- Unicode标准: http://www.unicode.org/standard/standard.html
+- Rust `char` 类型和它的方法，包括 `.to_uppercase()`: https://doc.rust-lang.org/std/primitive.char.html
+- 更广泛的字符串处理方法讨论: https://rust-lang-nursery.github.io/rust-cookbook/strings.html

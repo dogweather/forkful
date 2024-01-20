@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "Kotlin: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-
-Capitalizar una cadena significa convertir la primera letra de cada palabra en mayúsculas. Los programadores lo hacen para mejorar la legibilidad y la presentación visual del texto en las interfaces de usuario.
+## ¿Qué y Por Qué?
+Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programadores lo hacen para normalizar la presentación de textos, títulos o para cumplir con ciertas reglas gramaticales.
 
 ## Cómo hacerlo:
-```Kotlin
-val cadena = "hola, mundo kotlin"
-val cadenaCapitalizada = cadena.capitalize()
-println(cadenaCapitalizada)
+```kotlin
+fun main() {
+    val texto = "esto es un ejemplo"
+    val textoCapitalizado = texto.split(" ").joinToString(" ") { it.capitalize() }
+    println(textoCapitalizado) // Salida: Esto Es Un Ejemplo
+}
 ```
-Salida:
-```
-Hola, mundo kotlin
-```
-En la cadena de ejemplos, `"hola, mundo kotlin"` se convirtió en `"Hola, mundo kotlin"` después de usar el método `capitalize()`.
 
-## Análisis Profundo
-Kotlin hereda muchas de sus funciones de manejo de cadenas de Java, incluida la función para capitalizar una cadena. Como alternativa, puedes usar la función `toLowerCase()`, que convierte todas las letras de la cadena a minúsculas, y luego convertir solo la primera letra a mayúsculas. Cabe destacar que solo se capitaliza la primera letra del primer valor de la cadena, y no cada palabra individual.
+```kotlin
+// En Kotlin 1.5 o superior, "capitalize()" ha sido reemplazado por "replaceFirstChar".
+fun main() {
+    val texto = "otra cadena de ejemplo"
+    val textoCapitalizado = texto.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+    println(textoCapitalizado) // Salida: Otra cadena de ejemplo
+}
+```
 
-```Kotlin
-val cadena = "hola, mundo kotlin"
-val primeraLetra = cadena[0].uppercase()
-val restoDeCadena = cadena.substring(1)
-val cadenaCapitalizada = primeraLetra + restoDeCadena
-println(cadenaCapitalizada)
-```
-Salida:
-```
-Hola, mundo kotlin
-```
-Mencionar también que la función `uppercase()` está disponible a partir de Kotlin 1.5, reemplazando la función `toUpperCase()`.
+## Profundizando
+Originalmente, Kotlin incluía funciones como `capitalize()` para cambiar la primera letra de una cadena a una mayúscula. En versiones recientes, como en Kotlin 1.4 y posteriores, `capitalize()` está marcada como obsoleta debido a problemas de localización y consistencia. 
+
+Como alternativa, `replaceFirstChar()` se recomienda por ser más explicita sobre la intención de cambiar sólo el primer carácter. Esta función permite la manipulación más flexible de cadenas, incluyendo capitalizar teniendo en cuenta las reglas específicas de un idioma al pasar una función como `{ it.titlecase(Locale) }`.
+
+La implementación al trabajar con la capitalización de cadenas en Kotlin es directa. Sin embargo, los desarrolladores deben tener en cuenta las peculiaridades del idioma y las reglas de mayúsculas y minúsculas asociadas, lo que puede aumentar la complejidad al tratar con localizaciones o soporte de idiomas múltiples.
 
 ## Ver También
-Consulta la documentación oficial de Kotlin para más detalles:
-1. [capitalize()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-2. [toUpperCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
-3. [toLowerCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
-4. [uppercase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/uppercase.html)
+- [Kotlin Standard Library Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/)
+- [Using replaceFirstChar in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-first-char.html)
+- [Unicode Character Database](https://unicode.org/ucd/) - para entender cómo trabajar con diferentes normas de caracteres.
+- [Kotlin and the Java Locale Class](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html) - para más detalles sobre cómo trabajar con Locale en Kotlin y Java.

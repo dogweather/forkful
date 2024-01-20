@@ -1,7 +1,7 @@
 ---
-title:                "Gjøre en streng stor"
-html_title:           "PHP: Gjøre en streng stor"
-simple_title:         "Gjøre en streng stor"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,45 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
 ## Hva & Hvorfor?
-Å kapitalisere en string betyr å gjøre første bokstav i en setning eller en ord til en stor bokstav. Programmers gjør dette for å forbedre lesbarheten og presentasjonen av data, for eksempel titler eller navn.
+Å kapitalisere en streng betyr å gjøre første bokstav i hvert ord til en stor bokstav. Programmerere gjør dette for å forbedre lesbarheten av tekst, som i titler eller navn.
 
-## Hvordan utføre:
-I PHP kan vi bruke den innebygde `ucfirst()` funksjonen for å kapitalisere en streng. Her er et eksempel:
+## Slik gjør du:
+Kapitaliser en streng med `ucwords()` for hvert ord eller `strtoupper()` for hele strenger. Her er et eksempel:
 
-```PHP
+```php
 <?php
-    $streng = "heisann, verden!";
-    $kapitalisert_streng = ucfirst($streng);
-    echo $kapitalisert_streng;
+$tekst = "hallo verden!";
+$kapitalisert = ucwords($tekst);
+$fullStor = strtoupper($tekst);
+
+echo $kapitalisert; // Output: Hallo Verden!
+echo "\n";
+echo $fullStor; // Output: HALLO VERDEN!
 ?>
 ```
-Dette vil returnere:
-```PHP
-"Heisann, verden!"
-```
 
-## Dyp Dykk
-Historisk sett, har kapitalisering av strenger blitt brukt i bøker og dokumenter lenge før datamaskinene ble oppfunnet. I forbindelse med programmering, lar det oss håndtere data på en mer leservennlig måte.
+## Dypdykk:
+Tilbake på 80-tallet, i C programmeringsspråket, startet vi å manipulere tekst med funksjoner som `toupper()`. I PHP har vi flere verktøy for dette. `ucfirst()` gjør kun første bokstav i en streng stor, mens `ucwords()` tar seg av hvert ord. Det er også `mb_convert_case()` for multibyte (UTF-8) strenger, viktig for å støtte internasjonale språk korrekt. Hver funksjon bruker litt CPU-tid, så tenk på behovet før du bruker dem på store tekststykker.
 
-Alternativt til `ucfirst()`, kan vi også bruke `mb_convert_case()` i PHP når vi trenger å håndtere multibyte strenger (for eksempel, strenger med spesielle tegn eller emojis).
-
-Her er et eksempel:
-```PHP
-<?php
-   $streng = "hei𝄞san, verden!"; // her bruker vi et musikalsk symbol som ikke er en del av det normale ASCII-settet
-   $kapitalisert_streng = mb_convert_case($streng, MB_CASE_TITLE, "UTF-8");
-   echo $kapitalisert_streng;
-?>
-```
-Dette vil returnere:
-```PHP
-"Hei𝄞San, Verden!"
-```
-Vær oppmerksom på at `mb_convert_case()` ikke bare kapitaliserte begynnelsen av strengen, men også etter hvert symbol som ikke er en del av det normale ASCII-settet.
-
-## Se Også
-- PHP offisielle dokumentasjon på `ucfirst()` : http://php.net/manual/en/function.ucfirst.php
-- PHP offisielle dokumentasjon på `mb_convert_case()` : http://php.net/manual/en/function.mb-convert-case.php
-- W3Schools' tutorial på PHP String Functions: http://www.w3schools.com/php/php_ref_string.asp
+## Se Også:
+- PHP offisiell dokumentasjon for strengfunksjoner: [PHP: String Functions - Manual](https://www.php.net/manual/en/ref.strings.php)
+- Utforsk `mb_convert_case()` for UTF-8 støtte: [PHP: mb_convert_case - Manual](https://www.php.net/manual/en/function.mb-convert-case.php)
+- Lær om funksjonen `strtolower()` for å gjøre tekst til små bokstaver: [PHP: strtolower - Manual](https://www.php.net/manual/en/function.strtolower.php)

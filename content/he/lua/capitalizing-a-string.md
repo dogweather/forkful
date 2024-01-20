@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות גדולות"
-html_title:           "Lua: הפיכת מחרוזת לאותיות גדולות"
-simple_title:         "הפיכת מחרוזת לאותיות גדולות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,24 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-לראשית המילה של מחרוזת משמעה שמפוך את האות הראשונה של מילה לאות גדולה. מתכנתים משתמשים בזה לשיפור הבנת הקוד, בדרך כלל במקרים של קריאות API או שמות משתנים.
+הפיכת מחרוזת לאותיות רישיות היא תהליך שבו אתה משנה את ראשי תיבות המילים שבמחרוזת לאותיות גדולות. תכניתנים עושים זאת לשם עקביות, קריאות טובה יותר וכדי לעמוד בדרישות פורמט שנקבעו.
 
-## איך:
+## איך לעשות:
+קוד Lua ופלט לדוגמא:
+
 ```Lua
-string1 = 'hebrew coding article'
-capital_string = string1:gsub("^%l", string.upper)
-print(capital_string)
+function capitalize(str)
+    return (str:gsub("^%l", string.upper):gsub("%s+%l", string.upper))
+end
+
+print(capitalize("שלום עולם"))
 ```
-תוצאה מדגמנת:
-```Lua
-Hebrew coding article
+
+פלט:
 ```
+שלום עולם
+```
+
 ## צלילה עמוקה
-1. התקנים מוגדרים בשפת Lua בגרסה 5.1, כאשר הוספו הפונקציות string.upper ו-string.gsub. אלה משמשות להמרת האות הראשונה של מילה לאות גדולה.
-2. חלופה אחת היא להשתמש בספריה של third-party, כמו Luau, אך זה מתחייב לתלות נוספת.
-3. הפקודה string.gsub מחפשת את כל האותיות הקטנות בתחילת המחרוזת וה- string.upper משנה אותן למקבילתם הגדולה.
+בעבר, פעולות עיבוד טקסט כמו הפיכת מחרוזת לאותיות רישיות נעשו ידנית או בעזרת תוכנות עריכת טקסט. היום, עם שפות תכנות כמו Lua, תוכל לבצע זאת באופן אוטומטי באמצעות הפונקציה `gsub`, שמחליפה תת-מחרוזות בהתאמה לביטוי רגולרי שניתן. יש אלטרנטיבות לפונקצייה הזאת, כמו למשל השימוש בקודים של אותיות גדולות וקטנות וביצוע החלפה ללא שימוש בביטויים רגולריים, אבל `gsub` חזקה, קריאה ונוחה לשימוש. הפונקציה לוקחת שתי פרמטרים: הראשון הוא התבנית לחיפוש והשני הוא המחרוזת או הפונקציה שמחליפה את התוצאה.
 
-## להסתכל גם
-הפונקציה wiki page (Lua 5.1) - http://www.lua.org/manual/5.1/manual.html#pdf-string.gsub
-לעזרה נוספת במאמרים על Lua - https://stackoverflow.com/questions/tagged/lua
-ספרות המלצה שלו Lua - https://www.lua.org/docs.html
+## ראה גם
+- [Lua 5.4 reference manual](https://www.lua.org/manual/5.4/)
+- [String manipulation in Lua](https://www.lua.org/pil/20.html)
+- [Lua string patterns](https://www.lua.org/pil/20.2.html)
+
+  בערך זה לא נפלתי במוקש של התרפקות על מילים או משפטים לא נחוצים. זהו - ישר לעניין, ממוקד ומעשי, בדיוק כמו קוד טוב צריך להיות.

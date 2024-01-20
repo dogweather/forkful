@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज करना"
-html_title:           "TypeScript: स्ट्रिंग को कैपिटलाइज करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-स्ट्रिंग को कैपिटलाइज करने से हमारे मोड्यूल, चर, या किसी भी वाक्यांश के पहले अक्षर को बड़ा अक्षर (Uppercase) में बदला जा सकता है। कार्यक्रमकर्ता इसे चीजों की पहचान को बेहतर और पठनीयता को बढ़ाने के लिए करते हैं।
+String capitalization मतलब string के पहले अक्षर को बड़े आकार (uppercase) में बदलना है। Programmers इसे पढ़ने में आसानी के लिए और खास formatting नियमों को पालन करने के लिए करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-```TypeScript
-function capitalize(s: string): string {
-  return s.charAt(0).toUpperCase() + s.slice(1);
+```typescript
+function capitalizeFirstLetter(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-console.log(capitalize("typescript"));
+let greeting = 'namaste world';
+console.log(capitalizeFirstLetter(greeting)); // Namaste world
 ```
 
-Output:
+Sample Output:
 
 ```
-TypeScript
+Namaste world
 ```
 
-## गहरी चर्चा
+## Deep Dive (गहरा डाइव)
 
-अक्सर capitalization का उपयोग वाक्यों, शीर्षकों और उपयोगकर्ता नामों को प्रमुख बनाने के लिए किया जाता है। इसका लोगों में यह धारना पैदा करने का इतिहासिक प्रयोग होता है कि बड़े अक्षर की उपेक्षा की जा सकती है।
-JavaScript method `.toUpperCase()` या Lodash जैसी बाहरी लाइब्रेरियों का इस्तेमाल करने का वैकल्पिक तरीका भी है, लेकिन TypeScript में हमें स्थायी टाइप सुरक्षा मिलती है। 
-यह सुनिश्चित करता है कि केवल स्ट्रिंग्स को ही capitalize किया जा सकता है, और उन्हें सही ढंग से handling किया जाता है।
+String capitalization का इस्तेमाल बहुत पहले से होता आ रहा है। Headings, book titles, और sentences की शुरुआत में पहले अक्षर को बड़ा किया जाता है। JavaScript या TypeScript में इसे manually करना पड़ता है, क्योंकि built-in function नहीं है इसके लिए।
 
-## देखें भी
+दो alternatives हैं `charAt()` के अलावा: string index `[0]` का उपयोग करना, और `substring()` function का इस्तेमाल करना `slice()` के जगह। दोनों ही तरीके सही हैं, पर `charAt()` खाली string पर काम करने में safe है, क्योंकि यह खाली string लौटाएगा जबकि `[0]` undefined लौटाएगा।
 
-- TypeScript डॉक्युमेंटेशन: [https://www.typescriptlang.org/docs/](https://www.typescriptlang.org/docs/)
-- MDN Web Docs (JavaScript .toUpperCase()): [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- Lodash Library: [https://lodash.com/](https://lodash.com/)
+## See Also (इसे भी देखें)
+
+- MDN Web Docs [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- TypeScript Handbook [Basic Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)

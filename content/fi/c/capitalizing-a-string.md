@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pääkirjainten käyttö"
-html_title:           "C: Merkkijonon pääkirjainten käyttö"
-simple_title:         "Merkkijonon pääkirjainten käyttö"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Kun puhutaan merkkijonojen suurentamisesta, tarkoitetaan prosessia, jossa jokainen merkkijonon kirjain muunnetaan isoksi kirjaimeksi. Se tehdään usein käyttöliittymissä tai datan esittämisessä, jotta teksti erottuisi tai olisi yhdenmukaista.
 
-Merkkijonon pääomittaminen tarkoittaa kaikkien merkkijonon kirjainten muuttamista suuriksi kirjaimiksi. Se auttaa tekemään tekstistä helposti luettavampaa ja erottuvampaa.
-
-## Näin teet sen:
-
+## How to: (Kuinka tehdään:)
 ```C
-#include <ctype.h>
 #include <stdio.h>
+#include <ctype.h>
 
-void Paaomita(char s[]) {
-    for(int i = 0; s[i] != '\0'; i++) {
-        s[i] = toupper(s[i]);
+void capitalizeString(char *str) {
+    while (*str) {
+        *str = toupper((unsigned char) *str);
+        str++;
     }
 }
 
 int main() {
-    char teksti[] = "ohjelmointi on hauskaa";
-    Paaomita(teksti);
-    printf("%s\n", teksti); 
+    char myString[] = "tervetuloa ohjelmointiin!";
+    capitalizeString(myString);
+    printf("Capitalized string: %s\n", myString);
     return 0;
 }
 ```
 
-Tämä ohjelma tulostaa: `OHJELMOINTI ON HAUSKAA`
+### Sample output:
+```
+Capitalized string: TERVETULOA OHJELMOINTIIN!
+```
 
-## Syvällä sukelluksella
+## Deep Dive (Sukellus syvyyksiin)
+Historian valossa merkkijonojen suurentamisella on juurensa kirjoituskoneissa ja varhaisissa tietojenkäsittelyjärjestelmissä, joissa oli vain isoja kirjaimia. Nykyisissä ohjelmointikielessä se on enemmän kysymys muotoilusta ja standardisaatiosta. Vaihtoehtoisia tapoja toteuttaa suurentaminen ovat kirjastofunktiot, kuten `strupper` eri kielissä tai oman funktion kirjoittaminen, kuten yllä. Tärkeintä on tiedostaa, että funktio `toupper` odottaa merkkejä, joiden tyyppi on `unsigned char`, jotta laajennetun ASCII-taulukon merkit käsitellään oikein.
 
-Ohjelmoinnin alkupäivinä, kun järjestelmät olivat rajoitettuja, merkkijonon pääomittaminen auttoi säästämään arvokasta laskentatehoa. Nykypäivänä se on edelleen hyödyllinen, mutta syistä, jotka liittyvät enemmän käytettävyyteen ja luettavuuteen.
-
-Vaihtoehtoisia tapoja merkkijonon pääomittamiseksi ovat esimerkiksi yksittäisten merkkien käsittely iteraattoreiden, kuten `for_each`, kanssa tai käyttämällä korkeamman tason kirjaston funktioita, kuten `boost::to_upper_copy`.
-
-C:n standardikirjastossa `toupper` -funktio on toteutettu tavallisesti käyttämällä merkkikohtaista taulukkoa, joka sisältää vastaavat suuret kirjaimet. Tämä on tehokasta muistin ja nopeuden kannalta.
-
-## Katso myös
-
-- C-kirjasto: ctype.h ([Linkki](https://en.cppreference.com/w/c/string/byte/toupper))
-- Boost kirjasto: to_upper_copy ([Linkki](https://www.boost.org/doc/libs/1_73_0/doc/html/string_algo/usage.html#id-2.9.5.8.5))
-- ISO C-Standardi ([Linkki](https://www.iso.org/standard/74528.html))
+## See Also (Lisää luettavaa)
+- C Standard Library documentation for `ctype.h`: https://en.cppreference.com/w/c/header/ctype
+- ASCII table reference: https://www.asciitable.com/
+- Stack Overflow discussions about string manipulation in C: https://stackoverflow.com/questions/tagged/c+strings

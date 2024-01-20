@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana małych liter na wielkie w ciągu znaków"
-html_title:           "C++: Zamiana małych liter na wielkie w ciągu znaków"
-simple_title:         "Zamiana małych liter na wielkie w ciągu znaków"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,30 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Kapitalizacja stringa to proces zamieniania pierwszych liter słów na wielkie litery. Programiści używają tej techniki dla lepszego czytania tekstu przez ludzi lub ustalonych standardów formatowania danych.
 
-Zamiana małych liter na wielkie, czyli tzw. 'capitalization', to proste przekształcenie tekstu, używane w programowaniu do poprawy czytelności kodu. Programiści robią to na przykład po to, żeby odróżniać stałe od zmiennych. 
-
-## Jak to zrobić:
-
+## How to: (Jak to zrobić:)
 ```C++
-#include <algorithm>
+#include <iostream>
+#include <string>
 #include <cctype>
 
-std::string wejsciowyTekst = "witaj, świecie";
-std::transform(wejsciowyTekst.begin(), wejsciowyTekst.end(), wejsciowyTekst.begin(), ::toupper);
+// Funkcja kapitalizująca string
+std::string capitalizeString(const std::string &str) {
+    std::string capitalized = str;
+    bool capitalizeNext = true;
+
+    for (char &ch : capitalized) {
+        if (capitalizeNext && std::isalpha(ch)) {
+            ch = std::toupper(ch);
+            capitalizeNext = false;
+        } else if (!std::isalnum(ch)) {
+            capitalizeNext = true;
+        }
+    }
+    return capitalized;
+}
+
+int main() {
+    std::string text = "to jest przykład tekstu.";
+    std::string capitalizedText = capitalizeString(text);
+    std::cout << capitalizedText << std::endl; // Wydrukuj kapitalizowany tekst
+    return 0;
+}
 ```
-Przykładowe wyjście:
-
-```C++
-"WITAJ, ŚWIECIE"
+Sample output:
+```
+To Jest Przykład Tekstu.
 ```
 
-## Głębsze zanurzenie:
+## Deep Dive (Dogłębna analiza)
+Capitalizing a string isn't a new problem; it's been around since computers started processing text. Historically, systems like UNIX had tools (`awk`, `sed`, etc.) that could transform text. In C++, capitalization can be done manually (as shown) or with libraries like Boost.
 
-Historia funkcji `toupper` sięga pierwszych dni języka C, jako jednej z wbudowanych funkcji obsługujących znaki. Alternatywą dla `transform` i `toupper` byłoby manualne przekształcenie każdego znaku w naszym łańcuchu, ale jest to mniej wydajne. Implementacja `toupper` jest specyficzna dla platformy, ale zazwyczaj polega na dodaniu stałej wartości do kodowania ASCII danego znaku. 
+There's more than one way to capitalize a string. One alternative is the `transform` method with a proper function from algorithms header. You could also use a regex (though it's overkill for simple cases).
 
-## Zobacz też:
+The implementation detail to notice is `std::isalpha` and `std::toupper` usage, which checks for alphabetical characters and converts to uppercase, respectively. These functions handle ASCII text. For Unicode, other solutions (like ICU library) are needed.
 
-Więcej informacji o transformacji i funkcjach znakowych w C++ można znaleźć tutaj: 
-[link do www.cplusplus.com](https://www.cplusplus.com/reference/string/string/transform/)
+## See Also (Zobacz także)
+- [C++ reference for std::toupper](https://en.cppreference.com/w/cpp/string/byte/toupper)
+- [C++ reference for std::isalpha](https://en.cppreference.com/w/cpp/string/byte/isalpha)
+- [Boost String Algorithms Library](https://www.boost.org/doc/libs/release/libs/algorithm/string/)
+- [C++ reference for std::transform](https://en.cppreference.com/w/cpp/algorithm/transform)
+- [International Components for Unicode (ICU)](http://site.icu-project.org/home)

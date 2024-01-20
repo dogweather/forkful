@@ -1,7 +1,7 @@
 ---
-title:                "Приголосний рядок"
-html_title:           "Python: Приголосний рядок"
-simple_title:         "Приголосний рядок"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,53 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це & навіщо? 
+## Що це таке і навіщо?
+У Python приведення рядків до великих літер — це зміна всіх символів тексту на великі. Програмісти це роблять для нормалізації введення або щоб забезпечити візуальну послідовність у текстових даних.
 
-Створення великої літери у рядку – це перетворення першої букви рядка в верхній регістр. Програмісти використовують це, наприклад, для нормалізації даних під час обробки тексту.
-
-## Як виконати:
-
-Просто використовуйте рядковий метод `.capitalize()`. Ось два приклади:
-
-```Python 
-s = "hello, python world!"
-capitalized_s = s.capitalize()
-print(capitalized_s)
-```
-
-Це дасть такий результат:
+## Як це зробити:
 ```Python
-"Hello, python world!"
-```
-Цей метод робить лише першу букву великою, решту букв в рядку переводить у нижній регістр.
+# Приклад використання функції upper() для капіталізації рядка
+text = "привіт світ"
+capitalized_text = text.upper()
+print(capitalized_text)  # Виведе: 'ПРИВІТ СВІТ'
 
-```Python 
-s = "HELLO, PYTHON WORLD!"
-capitalized_s = s.capitalize()
-print(capitalized_s)
-```
-
-Це дасть такий результат:
-```Python
-"Hello, python world!"
+# Приклад капіталізації лише першої літери
+title_text = text.capitalize()
+print(title_text)  # Виведе: 'Привіт світ'
 ```
 
-## Поглиблено:
-
-Історично, велику букву використовували на початку речень або для імені особи. В Python метод `capitalize()` був включений у початкову версію (Python 1.0). Як альтернатива, ви можете використовувати функцію `title()`, яка робить великою першу букву кожного слова. Метод `capitalize()` працює шляхом перетворення рядка в Unicode, змінення першого символу і повернення його назад у рядок.
-
-```Python 
-s = "hello, python world!"
-title_s = s.title()
-print(title_s)
-```
-
-Це дасть такий результат:
-```Python
-"Hello, Python World!"
-```
+## Поглиблений розгляд:
+Ключові функції для роботи з текстом у Python беруть свій початок ще з ранніх версій мови. Метод `.upper()` існує практично у всіх стрічкових об'єктах, що дозволяє легко перетворювати рядки на верхній регістр. Альтернативою `.upper()` є `.capitalize()`, який робить лише першу літеру великою, та `.title()`, який приводить до великої літери перші букви всіх слів. Під капотом ці методи працюють з Unicode таблицею, перевіряючи та замінюючи символи відповідно до їх кодів.
 
 ## Дивіться також:
-
-1. [Python Strings](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) (документація про рядки Python)
-3. [Difference between str.title() and str.capitalize()](https://stackoverflow.com/questions/23877049/difference-between-str-title-and-str-capitalize) (обговорення на StackOverflow)
+- Документація по рядковим методам у Python: https://docs.python.org/3/library/stdtypes.html#string-methods
+- Unicode стандарт для символів у Python: https://www.unicode.org/standard/standard.html
+- Рекомендації по стилю написання коду у Python, PEP 8: https://www.python.org/dev/peps/pep-0008/

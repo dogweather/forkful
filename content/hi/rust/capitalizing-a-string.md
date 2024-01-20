@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज करना"
-html_title:           "Rust: स्ट्रिंग को कैपिटलाइज करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+स्ट्रिंग कैपिटलाइज़ेशन मतलब है हर शब्द के पहले अक्षर को बड़ा (कैपिटल) बनाना। प्रोग्रामर्स यह इसलिए करते हैं ताकि टेक्स्ट और भी साफ और औपचारिक लगे, जैसे कि खिताब या नाम में।
 
-एक स्ट्रिंग को कैपिटलाइज़ करना इसके पहले अक्षर को बड़ा करना होता है। प्रोग्रामर इसे यूज़र्स को तब प्रस्तुत करने के लिए करते हैं जब वे एक विशेष संदर्भ को हाइलाइट करना चाहते हैं।
-
-## कैसे करें:
-
+## How to: (कैसे करें:)
 ```Rust
-fn main() {
-    let my_str = "hello, rust!";
-    let capitalized_str = my_str.chars()
-                                .enumerate()
-                                .map(|(i,c)| if i==0 { c.to_uppercase().collect() } else { c.to_lowercase().collect() })
-                                .collect::<String>();
-    println!("{}", capitalized_str);                                
+fn capitalize_words(s: &str) -> String {
+    s.split_whitespace()
+        .map(|word| word.chars().enumerate().map(|(i, c)| if i == 0 { c.to_uppercase().to_string() } else { c.to_string() }).collect())
+        .collect::<Vec<_>>()
+        .join(" ")
 }
+
+fn main() {
+    let my_sentence = "नमस्ते, यह एक स्ट्रिंग है।";
+    println!("{}", capitalize_words(my_sentence));
+}
+
+// आउटपुट: "नमस्ते, यह एक स्ट्रिंग है।"
 ```
-ऊपर दिए गए कोड का आउटपुट होगा:
 
-```Rust
-"Hello, rust!"
-```
-## गहराई में: 
+## Deep Dive (गहराई में जानकारी):
+स्ट्रिंग कैपिटलाइज़ेशन का इस्तेमाल बहुत पहले से हो रहा है, शुरुआती प्रिटिंग प्रेस डिजाइन से लेकर डिजिटल टेक्स्ट प्रोसेसिंग तक। Rust में स्ट्रिंग कैपिटलाइज़ेशन नहीं होती एक सरल फंक्शन के रूप में; हमें मैन्युअली हर शब्द के पहले अक्षर को बड़ा करना पड़ता है जैसा कि `capitalize_words` फंक्शन में दिखाया गया है।
 
-हिस्टोरीचल कॉन्टेक्स्ट: यह कन्वेंशन टाइपराइटर से आया है, जहां पराग्राफ की शुरुआत या महत्वपूर्ण श्रृंखलाओं के लिए पहला अक्षर कैपिटलाइज़ होता था। 
+`split_whitespace` का इस्तेमाल हर शब्द को अलग करने के लिए किया जाता है, फिर `map` और `enumerate` का उपयोग कर के हर अक्षर पर चलते हुए पहले अक्षर को बड़ा किया जाता है। अंत में, `join` से सभी शब्दों को वापस एक स्ट्रिंग में जोड़ा जाता है।
 
-वैकल्पिक: Rust में कई तरीके हैं जिससे हम स्ट्रिंग को कैपिटलाइज़ कर सकते हैं। `to_uppercase()` और `enumerate()` का उपयोग करने के अलावा, हम `char_indices()` फंक्शन का उपयोग भी कर सकते हैं। 
+विकल्प के तौर पर, कुछ लाइब्रेरीज़ भी मिलती हैं जो स्ट्रिंग कैपिटलाइज़ेशन के लिए अधिक उन्नत टूल्स प्रदान करती हैं।
 
-खुदराविस्तारी: `to_uppercase()` और `to_lowercase()` फंक्शन Unicode के लिए नियमों को अनुसरण करते हैं, जो कि साधारणतया ASCII से अधिक विशेषज्ञता प्रदान करते हैं।
-
-## और भी देखें:
-
-1. [Rust स्ट्रिंग और उनकі Performance](https://cheats.rs/#strings)
-2. [Rust Documentation: Strings](https://doc.rust-lang.org/stable/rust-by-example/primitives.html)
+## See Also (और देखें):
+- Rust Documentation: https://doc.rust-lang.org/book/
+- The `capitalize` crate on crates.io: https://crates.io/crates/capitalize
+- Rust by Example: https://doc.rust-lang.org/rust-by-example/

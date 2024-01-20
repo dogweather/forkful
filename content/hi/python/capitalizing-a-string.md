@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को बड़े अक्षरों में बदलना"
-html_title:           "Python: स्ट्रिंग को बड़े अक्षरों में बदलना"
-simple_title:         "स्ट्रिंग को बड़े अक्षरों में बदलना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,54 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-
-(What & Why?)
-
-'String को Capitalize करना' यानी कि string के पहले character को बड़ा (Capital) करना। यह गर्मजोशी और संदेश के आधिकारिक तौर पर प्रस्तुत करने के लिए प्रोग्रामर्स द्वारा किया जाता है।
+स्ट्रिंग को कैपिटलाइज़ करना मतलब हर वर्ड के पहले अक्षर को बड़ा करना होता है। प्रोग्रामर इसे डेटा को मानक स्वरूप देने के लिए और पठनीयता बढ़ाने के लिए करते हैं।
 
 ## कैसे करें:
-
-(How to:)
-
-Python में, हम `capitalize()` फ़ंक्शन का उपयोग कर सकते हैं। यहां एक उदाहरण है:
+जानिए एक स्ट्रिंग को कैसे कैपिटलाइज़ करें:
 
 ```Python
-s = "hello world"
-print(s.capitalize())
-```
+# .title() का उपयोग करके
+text = "मेरा नाम अजय है"
+capitalized_text = text.title()
+print(capitalized_text)
 
-आउटपुट:
+# Output: मेरा नाम अजय है
+```
 
 ```Python
-Hello world
+# स्ट्रिंग मेथड्स का कॉम्बिनेशन
+def capitalize_words(string):
+    return ' '.join(word.capitalize() for word in string.split())
+
+example_text = "मेरा नाम अजय है"
+print(capitalize_words(example_text))
+
+# Output: मेरा नाम अजय है
 ```
 
-इस code में, `"hello world"` string का पहला character 'h' को 'H' में बदल दिया जाता है।
+## गहराई से जानकारी:
+स्ट्रिंग्स को कैपिटलाइज़ करना बहुत साधारण परंतु उपयोगी कार्य है। `.title()` पायथन की बिल्ट-इन फंक्शन है, जो 1980 के दशक में पायथन की शुरुआत के समय से ही है। यह फंक्शन हर शब्द के पहले अक्षर को बड़ा कर देता है परंतु इसमें कुछ सीमायें हैं, जैसे कि यह सिर्फ अल्फान्युमैरिक शब्दों के लिए काम करता है और नॉन-लैटिन अक्षरों पे भिन्न परिणाम हो सकता है।
 
-## गहराई में:
+इसलिए अक्सर प्रोग्रामर अपने कस्टम फंक्शन लिखते हैं जैसे कि `capitalize_words`. यह फ़ंक्शन `.split()` से स्ट्रिंग को शब्दों में बांटता है, फिर `.capitalize()` से हर शब्द को कैपिटलाइज़ करता है, और अंत में `' '.join()` से सबको वापस एक साथ जोड़ता है।
 
-(Deep Dive)
-
-स्ट्रींग को कैपटलाइज़ करने की संभावना शायद Python के पहले ही संस्करण से थी। इस विचार का मुख्य उद्देश्य था कि किसी भी string को आधिकारिक और प्रभावशाली रूप से प्रदर्शित किया जा सकता है।
-
-वैकल्पिक रूप से, आप `title()` फ़ंक्शन को भी उपयोग कर सकते हैं, जिससे string के हर शब्द का पहला अक्षर कैपिटल हो जाता है:
-
-```Python
-s = "hello world"
-print(s.title())
-```
-
-आउटपुट:
-
-```Python
-Hello World
-```
-
-Python के `str` वर्ग में `capitalize()` फ़ंक्शन को लागू करने से सबसे पहले character को बड़ा कर दिया जाता है और शेष string को छोटा कर दिया जाता है।
-
-## और भी देखें:
-
-(See Also)
-
-1. [Python documentation for str.capitalize()](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
-2. [Python documentation for str.title()](https://docs.python.org/3/library/stdtypes.html#str.title)
+## देखिये भी:
+- [Python’s str.capitalize() method](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
+- [Python’s str.title() method](https://docs.python.org/3/library/stdtypes.html#str.title)
+- [Python’s Official Documentation](https://docs.python.org/3/)

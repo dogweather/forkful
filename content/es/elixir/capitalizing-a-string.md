@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "Elixir: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Elixir y El Arte de Capitalizar Cadenas de Texto
+## Qué y Por Qué?
 
-## ¿Qué & Por Qué?
+Capitalizar un string significa convertir la primera letra de una palabra a mayúscula. Los programadores lo hacen para asegurarse de que los nombres propios y títulos sigan las convenciones de escritura, o para mejorar la legibilidad de los textos.
 
-Capitalizar una cadena de texto significa convertir su primera letra en mayúscula. Los programadores lo hacen para mejorar la legibilidad o para cumplir convenciones estilísticas.
+## Cómo hacerlo:
 
-## Cómo se hace:
+En Elixir, puedes capitalizar strings usando la función `capitalize/1` de la librería `String`.
 
-Aquí te muestro un pedazo de código ilustrativo. Esto es cómo capitalizarías una cadena de texto en Elixir:
-
-```Elixir
-"elixir es asombroso"
-|> String.split
-|> Enum.map(&String.capitalize/1)
-|> Enum.join(" ")
+```elixir
+original = "elixir es fantástico"
+capitalizado = String.capitalize(original)
+IO.puts capitalizado
 ```
 
-La salida sería:
+Salida:
 
-```Elixir
-"Elixir Es Asombroso"
+```
+Elixir es fantástico
 ```
 
-## Un Buceo Más Profundo:
+## Inmersión Profunda
 
-A lo largo de la historia, los lenguajes de programación han proporcionado diferentes formas de capitalizar una cadena de texto. En Elixir, puedes usar funciones integradas como `String.capitalize/1`. No obstante, si estás trabajando con cadenas más grandes o necesitas un mayor control, puedes utilizar la combinación de `String.split` y `Enum.map`.
+La capitalización de strings es un concepto sencillo pero con muchas reglas lingüísticas si consideramos los distintos idiomas. En Elixir, la función `capitalize/1` pertenece al módulo `String`, que utiliza reglas de Unicode para manipular texto, lo cual es relevante debido a la diversidad de caracteres existente. Las alternativas incluyen el uso de expresiones regulares o el manejo manual de la posición de los caracteres para idiomas con reglas específicas que el módulo `String` no maneje por defecto.
 
-Alternativamente, si tienes una cadena en español con caracteres no ASCII, podrías usar `:unicode.characters_to_nfc_binary/1` para obtener una capitalización adecuada. Sin embargo, esta función actualmente no soporta todas las características de capitalización del español.
+Bajo el capó, Elixir se vale de la librería de Erlang para procesamiento de strings, la cual a su vez depende de la biblioteca ICU (International Components for Unicode), lo que asegura compatibilidad y manejo correcto de una amplia gama de caracteres y casuísticas.
 
-La implementación de `String.capitalize/1` en Elixir utiliza la función `downcase` de la biblioteca estándar de Erlang para convertir toda la cadena a minúsculas antes de hacer la primera letra mayúscula.
+## Ver También
 
-## Ver También:
-
-Para leer más sobre las funciones de cadena de Elixir, visita la [documentación oficial](https://hexdocs.pm/elixir/String.html). La [documentación de Erlang](https://erlang.org/doc/man/string.html) también puede resultar útil para aquellos interesados en entender las interacciones más bajas del lenguaje.
+- Documentación oficial de Elixir para el módulo `String`: https://hexdocs.pm/elixir/String.html
+- Guía de inicio rápido de Elixir: https://elixir-lang.org/getting-started/introduction.html
+- ICU Project para entender cómo se manejan strings a nivel internacional: http://site.icu-project.org/

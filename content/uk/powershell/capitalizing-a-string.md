@@ -1,7 +1,7 @@
 ---
-title:                "Переведення рядка в верхній регістр"
-html_title:           "PowerShell: Переведення рядка в верхній регістр"
-simple_title:         "Переведення рядка в верхній регістр"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Навіщо?
+## What & Why? (Що і Чому?)
+Capitalizing a string means turning all the letters to uppercase. Programmers often do this to standardize text data, like making headers uniform or ensuring case-insensitive comparisons.
 
-Перетворення рядка на верхній регістр — це зміна усіх символів рядка таким чином, що вони стають великими буквами. Програмісти роблять це для уніфікації даних, зручності порівняння рядків чи визначення ключових слів.
-
-## Як зробити:
-
-Переведемо рядок у верхній регістр у PowerShell. Подивимося на цей код:
+## How to: (Як це зробити:)
+In PowerShell, capitalizing is straightforward. Use the `.ToUpper()` method. Here's how:
 
 ```PowerShell
-$string = "Hello, World!"
-$upperCase = $string.ToUpper()
-Write-Output $upperCase
+$text = "hello, world"
+$capitalizedText = $text.ToUpper()
+Write-Host $capitalizedText
 ```
 
-Цей код виведе:
+Sample output:
 
-```PowerShell
-HELLO, WORLD!
+```
+HELLO, WORLD
 ```
 
-## Підводимо підсумки:
+## Deep Dive (Поглиблений Розгляд)
+Capitalizing strings in programming languages is a common task. In PowerShell, it's been simple since its inception, using the method mentioned above. The `.ToUpper()` method originates from .NET, which PowerShell is built upon.
 
-Переведення рядка в верхній регістр встановлює всі символи рядка у великі букви. Це полезно для того, щоб зробити порівняння рядків нечутливими до регістра, або визначити ключові слова в коді. 
+Alternative ways to capitalize include:
 
-У минулому, програмісти використовували цю технологію для тривіального завдання як простого порівняння рядків. 
+- Using culture-specific methods if needed (like `.ToUpperInvariant()`).
+- With PowerShell 7+, you can utilize the `ToUpperInvariant()` method, which ignores current culture settings for consistency across different systems.
 
-Альтернативами є використання `ToLower()` для переведення всіх символів у нижній регістр або `Compare()` для порівняння рядків без урахування регістру. 
+The critical thing to remember is that capitalizing affects the original string's meaning and sort order in some cultures, so know your data before you transform it.
 
-Ця функція реалізована в .NET, на якому базується PowerShell. 
-
-## Дивіться також:
-
-1. [Official Microsoft Documentation for ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
+## See Also (Дивіться Також)
+- Explore the .NET method details: [.NET String Methods](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0)
+- Understand how culture can affect string operations: [Culture in .NET](https://docs.microsoft.com/en-us/dotnet/standard/globalization-localization/globalization)

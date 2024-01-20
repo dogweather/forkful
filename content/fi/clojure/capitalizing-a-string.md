@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon suuraakkostaminen"
-html_title:           "Clojure: Merkkijonon suuraakkostaminen"
-simple_title:         "Merkkijonon suuraakkostaminen"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,42 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
 
-Merkkijonon suurella alkukirjaimella tarkoitetaan prosessia, jossa muutetaan merkkijonon ensimmäinen kirjain isoksi. Ohjelmoijat käyttävät tätä luomaan selkeämmän ja helposti luettavan koodin esim. koodin nimissä ja otsikoissa.
+Isoskirjaimiksi muuntaminen tarkoittaa tekstijonon muuttamista niin, että jokainen sana alkaa suurella alkukirjaimella. Ohjelmoijat käyttävät tätä tekstin ulkoasun parantamiseen ja johdonmukaisuuden ylläpitämiseen.
 
-## Kuinka tehdään:
+## How to:
 
-Clojure-ohjelmointikielessä voit suurentaa merkkijonon ensimmäisen kirjaimen käyttämällä `clojure.string/capitalize` -funktiota.
+Clojuren `clojure.string` -kirjasto sisältää funktioita merkkijonojen käsittelyyn. `capitalize` ja `join` yhdistelmällä saamme jokaisen sanan alkamaan isolla alkukirjaimella.
 
-```Clojure 
+```Clojure
 (require '[clojure.string :as str])
 
-(defn suuri-alkukirjain [s]
-    (str/capitalize s))
+(defn capitalize-words [s]
+  (str/join " " (map str/capitalize (str/split s #" "))))
+
+(println (capitalize-words "clojure taitaa olla paras!"))
 ```
 
-Jos esimerkiksi annat syötteen "moi maailma", ohjelma antaa tuloksen "Moi maailma".
+Tulostus:
+```
+"Clojure Taitaa Olla Paras!"
+```
+
+Tämä funktionaalisesti ketjuttaen:
 
 ```Clojure
-(suuri-alkukirjain "moi maailma")
+(->> "clojure taitaa olla paras!"
+     (str/split #" ")
+     (map str/capitalize)
+     (str/join " ")
+     (println))
+
 ```
 
-## Syvällisemmin:
+Tulostus edelleen:
+```
+"Clojure Taitaa Olla Paras!"
+```
 
-Merkkijonon ensimmäisen kirjaimen suurentaminen on ollut käytössä pitkään, sillä se parantaa merkittävästi koodin luettavuutta ja ymmärrystä. Koko merkkijonon muuttaminen isoksi ei ole usein käytännöllistä tai tarkoituksenmukaista, sillä se saattaa haitata tekstin luettavuutta.
+## Deep Dive
 
-Voit korjata merkkijonon jokaisen sanan suuren alkukirjaimen käyttämällä `clojure.string/capitalize` -funktiota yhdistettynä `clojure.string/split` -funktioon ja `clojure.string/join` -funktioon.
+Ennen nykyaikaisten ohjelmointikielten kuten Clojuren esiintuloa, merkkijonojen käsittely oli usein melko karkeaa. Vanhemmissa kielissä, kuten C:ssä, jouduttiin käsittelemään merkkejä ja merkkijonoja manuaalisesti, joka saattoi olla työlästä ja virhealtista.
+
+Clojuren tapaan toimivia vaihtoehtoja on monia, esimerkiksi JavaScriptin `toLowerCase()` ja `toUpperCase()` kombinaation avulla. Clojuren etu on, että sen funktiot ovat puhtaita ja se käyttää funktionaalista lähestymistapaa, mikä tekee koodista lyhyempää ja helpommin ymmärrettävää.
+
+Clojuren `capitalize` on melko suoraviivainen. Se ottaa merkkijonon ja muuttaa ainoastaan ensimmäisen merkin isoksi, loput jäävät alkuperäisen kaltaisiksi. Tämä saattaa aiheuttaa ongelmia, jos haluamme varmistaa, että loput sanasta ovat pienellä (esim. nimenmuotoilussa). Silloin saattaa tarvita yhdistelmää `capitalize` ja `lower-case` funktioita.
 
 ```Clojure
-(defn suuri-alkukirjain-koko-merkkijono [s]
-    (str/join " " (map str/capitalize (str/split s #" "))))
+(defn proper-name [s]
+  (str/capitalize (str/lower-case s)))
+
+(println (proper-name "sUOMI"))
 ```
 
-Tämä funktio jakaa merkkijonon sanoihin, suurentaa jokaisen sanan ensimmäisen kirjaimen ja liittää sanat takaisin yhteen.
+Tulostus:
+```
+"Suomi"
+```
 
-## Katso myös:
+## See Also
 
-Lisää tietoa merkkijonon käsittelystä Clojurella löydät näistä lähteistä:
+Clojure `capitalize`: https://clojuredocs.org/clojure.string/capitalize
 
-- Clojuren virallinen dokumentaatio: [clojure.string](https://clojure.github.io/clojure/clojure.string-api.html)
+Clojure `lower-case`: https://clojuredocs.org/clojure.string/lower-case
+
+Clojure `map`: https://clojuredocs.org/clojure.core/map
+
+String manipulation in Clojure: https://www.braveclojure.com/strings/

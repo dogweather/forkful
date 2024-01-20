@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자화"
-html_title:           "C#: 문자열 대문자화"
-simple_title:         "문자열 대문자화"
+title:                "문자열 대문자로 변환하기"
+html_title:           "Arduino: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,35 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하는가?
+## What & Why? (무엇이며, 왜?)
 
-문자열 대문자화는 모든 문자를 대문자로 바꾸는 것을 말합니다. 프로그래머들은 사용자 입력에서 일관성을 유지하거나, 텍스트를 비교할 때 대소문자를 무시하기 위해 이를 사용합니다.
+문자열을 대문자로 만든다는 것은 문자열 속 모든 글자를 대문자 형태로 변환하는 것을 말합니다. 프로그래머들은 일관성 있게 데이터를 표시하거나 사용자에게 보일 때 중요한 부분을 강조하기 위해 이를 사용합니다.
 
-## 어떻게 사용하는가:
+## How to: (어떻게 할까?)
 
-다음은 C#에서 문자열을 대문자로 변경하는 방법을 보여주는 코드 예제입니다:
+C#에는 문자열을 대문자로 쉽게 바꿀 수 있는 메서드들이 있습니다. 예시를 통해 살펴봅시다.
 
 ```C#
-string originalText = "hello world";
-string upperCaseText = originalText.ToUpper();
+using System;
 
-Console.WriteLine(upperCaseText);
+class CapitalizeString
+{
+    static void Main()
+    {
+        var example = "hello, world!";
+        var capitalizedExample = example.ToUpper();
+        Console.WriteLine(capitalizedExample);
+    }
+}
 ```
 
-이 코드를 실행하면 다음과 같은 출력이 나옵니다:
-
+출력:
 ```
-HELLO WORLD
+HELLO, WORLD!
 ```
 
-## 깊이 있는 분석:
+## Deep Dive (심층 분석)
 
-문자열 대문자화는 매우 오래전부터 사용되어 왔습니다. C#에서는 `ToUpper` 메서드를 사용하여 쉽게 구현할 수 있습니다. 물론, `TextInfo.ToTitleCase` 같은 대안도 있지만, 이는 첫 글자만 대문자로 변경합니다.
+대문자 변환은 프로그래밍 언어가 발전하면서 도입되었습니다. C#의 경우 `.ToUpper()`는 간단하게 모든 소문자를 대문자로 변환해 줄 수 있는 메서드입니다. 이 메서드는 문화권과 관련된 문자에 대응하여 `.ToUpperInvariant()` 같은 대안도 제공합니다. 문자열을 대문자로 변환 시 내부적으로는 각 문자의 유니코드 값을 참조하여 대응하는 대문자로 매핑합니다.
 
-C#의 `ToUpper` 메서드는 원본 문자열을 수정하지 않습니다. 대신 새로운 문자열을 생성하여 반환합니다. 따라서 원본 문자열이 대문자화 과정에 영향을 받지 않습니다.
+## See Also (참고 자료)
 
-## 참고 자료:
-
-다음 자료에서 더 많은 정보를 얻을 수 있습니다:
-- [Microsoft - ToUpper 메서드](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.toupper)
-- [Microsoft - ToTitleCase 메서드](https://docs.microsoft.com/ko-kr/dotnet/api/system.globalization.textinfo.totitlecase)
+- [Microsoft Documentation on ToUpper](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+- [Microsoft Documentation on ToUpperInvariant](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant)
+- [Unicode Standard](https://home.unicode.org/)

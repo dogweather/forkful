@@ -1,7 +1,7 @@
 ---
-title:                "Mettre une chaîne en majuscules"
-html_title:           "Lua: Mettre une chaîne en majuscules"
-simple_title:         "Mettre une chaîne en majuscules"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,35 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
+## What & Why?
+Capitaliser une chaîne signifie transformer toutes les lettres en majuscules. Les programmeurs utilisent la capitalisation pour normaliser les entrées texte ou mettre en évidence des éléments importants.
 
-Capitaliser une chaîne signifie transformer toutes ses lettres en majuscules. Les programmeurs le font pour des raisons d'esthétique, de lisibilité et pour gérer uniformément les entrées des utilisateurs.
-
-## Comment faire :
-
+## How to:
 ```Lua
---Voici un code simple pour capitaliser une chaîne en Lua
-ma_chaine = "bonjour le monde"
-ma_chaine = ma_chaine:upper()
+-- Capitalisation d'une chaîne de caractères en Lua
+local texte = "bonjour, le monde!"
+local texte_capitalise = texte:upper()
 
-print(ma_chaine) -- Affiche : BONJOUR LE MONDE
+print(texte_capitalise)  -- Affiche: "BONJOUR, LE MONDE!"
 ```
-Dans cet exemple, nous utilisons la fonction `upper()` intégrée à Lua. Elle convertit toute la chaîne en majuscules.
+Résultat : `BONJOUR, LE MONDE!`
 
-## Approfondissement
+## Deep Dive
+Historiquement, capitaliser une chaîne en Lua est facilité par la méthode `upper`. Cette fonctionnalité existe depuis les premières versions, montrant que la manipulation des chaînes de caractères est un besoin de base en programmation.
 
-1. **Contexte historique :**
-   Avant l'introduction des méthodes standard `upper()`, les programmeurs Lua devaient écrire des boucles manuelles pour parcourir chaque caractère d'une chaîne et le convertir en majuscule, une tâche qui pouvait être fastidieuse.
+Des alternatives? Oui. Utiliser des boucles et travailler caractère par caractère, mais c'est plus complexe. Côté performance, `upper` est optimisée; donc, c'est le choix judicieux.
 
-2. **Alternatives :**
-   En plus de `upper()`, Lua fournit également `lower()` pour convertir une chaîne en minuscules. Il existe également des fonctions pour manipuler la casse des lettres dans les chaînes.
+Détails d'implémentation? La standardisation des encodages texte, comme UTF-8, influe sur la gestion des majuscules/minuscules dans un contexte international. Lua traite correctement les lettres accentuées dans la majorité des cas, mais pour des alphabets non-latins, des libraries supplémentaires peuvent être requises.
 
-3. **Détails d'implémentation :**
-   La fonction `upper()` est une méthode intégrée de la bibliothèque de chaînes de Lua. Elle fonctionne en parcourant toute la chaîne et en remplaçant chaque caractère par son équivalent en majuscules.
-
-## A Voir Aussi
-
-Voici quelques ressources pour en savoir plus sur Lua et la manipulation des chaînes de caractères :
-
-- [Manuel de référence Lua 5.4](https://www.lua.org/manual/5.4/manual.html#6.4)
-- [Gestion des chaînes en Lua - Tutorialspoint](https://www.tutorialspoint.com/lua/lua_strings.htm)
+## See Also
+- Documentation Lua sur les chaînes de caractères : https://www.lua.org/manual/5.4/manual.html#6.4
+- Forum Lua : https://www.lua.org/forums.html
+- Pour les questions d'encodage en Lua, le module `luautf8` peut aider : https://github.com/starwing/luautf8

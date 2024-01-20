@@ -1,7 +1,7 @@
 ---
-title:                "Mettre en majuscule une chaîne"
-html_title:           "Swift: Mettre en majuscule une chaîne"
-simple_title:         "Mettre en majuscule une chaîne"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,44 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi ?
-
-Mettre en majuscule une chaîne de caractères signifie convertir la première lettre de chaque mot en majuscule. Les programmeurs utilisent souvent cette méthode pour rendre les sorties de texte plus lisibles et plus professionnelles.
+Capitaliser une chaîne de caractères, c'est transformer toutes les lettres en majuscules. Ça sert à standardiser les textes, pour les titres ou pour s'assurer que les mots-clés soient cohérents malgré la variété des saisies.
 
 ## Comment faire :
-
-Voici un simple exemple de mise en majuscule d'une chaîne en Swift :
-
-```Swift
-let phrase = "bonjour le monde"
-let capitalizedPhrase = phrase.capitalized
-print(capitalizedPhrase)
-```
-Cela produira l'affichage :
+Voici comment capitaliser une chaîne en Swift :
 
 ```Swift
-"Bonnejour Le Monde"
+let smallText = "bonjour, comment ça va?"
+let capitalizedText = smallText.uppercased()
+print(capitalizedText) // "BONJOUR, COMMENT ÇA VA?"
 ```
 
-## Plongée Profonde 
+Très simple, non ? 
 
-Mettre en majuscule une chaîne était une pratique courante dans les journaux imprimés pour mettre en évidence les titres. En Swift, l'opération est simple avec la propriété `capitalized` de la classe `String`.
+## Exploration approfondie
+Historiquement, la capitalisation remonte aux manuscrits médiévaux, pour accentuer ou distinguer des sections. Dans les programmes informatiques, on capitalise pour des raisons semblables : lisibilité et conformité.
 
-Alternativement, vous pouvez utiliser la fonction `uppercased()` pour convertir toutes les lettres en majuscules, pas seulement la première lettre de chaque mot.
+Alternativement, vous voudrez peut-être seulement mettre en majuscule la première lettre de chaque mot (capitalisation de titre) :
 
 ```Swift
-let phrase = "bonjour le monde"
-let upperCasedPhrase = phrase.uppercased()
-print(upperCasedPhrase)
+let title = "le seigneur des anneaux"
+let titleCased = title.capitalized // "Le Seigneur Des Anneaux"
 ```
 
-Cela produira l'affichage :
+Il est important de noter que `uppercased()` et `capitalized` tiennent compte de la locale par défaut. Cela peut affecter le comportement des opérations de majuscule dans certaines langues.
 
-```Swift
-"BONJOUR LE MONDE"
-```
-Sachez que ces méthodes ne modifient pas la chaîne originale car les chaînes en Swift sont immuables.
+Les détails d'implémentation sont ajustés pour être efficaces et insensibles à la casse, mais méfiez-vous des implications de performance sur de très grandes strings.
 
-## Voir Aussi 
-
-Pour en savoir plus sur la manipulation des chaînes en Swift, consultez le [guide officiel de Apple](https://developer.apple.com/documentation/swift/string). 
-Les [documents de la Fondation Swift](https://developer.apple.com/documentation/foundation/nsstring) expliquent également de nombreux détails d'implémentation supplémentaires.
+## Voir également
+- [Documentation Swift sur les strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Guide de style Unicode pour la capitalisation](http://www.unicode.org/versions/Unicode13.0.0/ch03.pdf) 
+- [Stack Overflow : discussion sur les performances de `uppercased()` en Swift](https://stackoverflow.com/questions/28288148/making-my-function-calculate-faster)

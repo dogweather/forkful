@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando uma string"
-html_title:           "Javascript: Capitalizando uma string"
+html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,50 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Quê e Por Quê?
+## What & Why?
+Capitalizar uma string é transformar todas as letras iniciais de palavras numa cadeia de texto para maiúsculas. Programadores fazem isso para formatar títulos, cabeçalhos ou para atender a normas específicas de apresentação de dados.
 
-Capitalizar uma string significa transformar a primeira letra de cada palavra em maiúscula. Os programadores fazem isso para melhorar a legibilidade dos textos e dados do usuário.
-
-## Como Faz:
-
-Para capitalizar uma string no JavaScript, usamos a função `replace()`. Vamos dar uma olhada agora:
-
+## How to:
 ```Javascript
-function capitalizarString(str) { 
-  return str.replace(/\b\w/g, function(char) { 
-    return char.toUpperCase(); 
-  }); 
+function capitalizarString(texto) {
+  return texto.replace(/(^|\s)\S/g, letra => letra.toUpperCase());
 }
 
-console.log(capitalizarString("olá, mundo!")); 
-// Saída: "Olá, Mundo!"
+console.log(capitalizarString('olá, mundo!')); // Olá, Mundo!
+
+// Usando funções de string do ECMAScript 2021
+console.log('olá, mundo!'.replace(/\b\w/g, char => char.toUpperCase())); // Olá, Mundo!
 ```
-Neste exemplo, `/\b\w/g` é uma expressão regular que encontra a primeira letra de cada palavra. A função então transforma cada letra encontrada em maiúscula.
 
-## O Mergulho
+## Deep Dive
+Historicamente, capitalizar palavras em textos é uma prática que remonta à criação do livro impresso para diferenciar seções ou iniciar frases. No mundo da programação, a função para capitalização de strings em JavaScript não é nativa e precisa ser criada manualmente ou obtida de bibliotecas.
 
-A função `replace()` foi introduzida no JavaScript desde o seu início - a sua versatilidade e uso extensivo definem a sua longevidade. As alternativas para capitalização no JavaScript incluem o uso de `charAt()` com `substring()`, e a aplicação da função `map()` em um array criado através da função `split()`. 
+Duas abordagens são comuns: a primeira usa uma expressão regular combinada com a função `replace()` para encontrar o primeiro caractere de cada palavra e convertê-lo em maiúsculo. A segunda, mais moderna e introduzida no ECMAScript 2021, utiliza métodos de cadeia de caracteres (string) para um resultado semelhante com uma sintaxe mais limpa.
 
-No entanto, devemos ter cuidado com esses métodos em situações de alto desempenho. O método `replace()` com expressão regular pode ser mais lento que os outros quando lidando com textos muito grandes, pelo fato de que as expressões regulares tendem a ser mais lentas que os métodos de string nativa.
+Apesar da simplicidade, a capitalização em JavaScript deve levar em conta peculiaridades, como a possibilidade de caracteres especiais, números ou símbolos aparecerem no início de uma palavra, o que pode exigir ajustes na expressão regular.
 
-Aqui está um exemplo alternativo usando `charAt()` e `substring()`:
+Alternativas incluem o uso de bibliotecas como Lodash com sua função `_.startCase` para obter um resultado similar com uma linha de código:
+
 ```Javascript
-function capitalizarString(str) { 
-  return str
-    .split(' ')
-    .map(word => word.charAt(0).toUpperCase() + word.substring(1))
-    .join(' '); 
-}
-
-console.log(capitalizarString("olá, mundo!")); 
-// Saída: "Olá, Mundo!"
+_.startCase('olá, mundo!'); // Olá Mundo!
 ```
 
-## Veja Também
+No entanto, o uso de bibliotecas para tal tarefa simples pode ser um exagero, então saber como implementar a capitalização manualmente é uma habilidade útil.
 
-Para mais explicações e exemplos sobre modificações de string no JavaScript, você pode visitar os seguintes links:
-
-1. [MDN Web Docs on replace()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace) - Documentação oficial sobre a função `replace()`.
-2. [MDN Web Docs on charAt()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/charAt) - Documentação oficial sobre a função `charAt()`.
-3. [MDN Web Docs on substring()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring) - Documentação oficial sobre a função `substring()`.
-4. [JavaScript.info: String Methods](https://javascript.info/string#capitalizing) - Uma visão geral útil de outros métodos de string no JavaScript.
+## See Also
+- MDN Web Docs sobre `String.prototype.replace()`: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+- Documentação do Lodash `_.startCase`: https://lodash.com/docs/#startCase
+- ECMAScript 2021 specifications: https://www.ecma-international.org/publications-and-standards/standards/ecma-262/

@@ -1,7 +1,7 @@
 ---
-title:                "文字列を大文字にする"
-html_title:           "Java: 文字列を大文字にする"
-simple_title:         "文字列を大文字にする"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 文字列の大文字化: Javaプログラミング
+## What & Why? (何となぜ？)
+文字列を大文字にすることは、文字列の各単語の最初の文字を大文字に変換することです。プログラマは一貫性ある表示を保ったり、タイトルや見出しを適切にフォーマットしたりするためにこれを行います。
 
-## 何と何故？
+## How to: (方法)
+Javaで文字列を大文字にする一般的な方法は、`toUpperCase()` メソッドもしくは Apache Commons Lang の `WordUtils.capitalize()` を使用することです。以下に例を示します。
 
-文字列の大文字化とは、文字列の中のすべての文字を大文字にすることです。プログラマーがこれを行う主な理由は、ユーザーが入力した文字列を正規化し、ケースに依存しない検索や比較を可能にするためです。
+```java
+public class CapitalizeExample {
+    public static void main(String[] args) {
+        // Using String.toUpperCase() to capitalize the entire string
+        String message = "hello world";
+        String capitalized = message.toUpperCase();
+        System.out.println(capitalized); // Output: HELLO WORLD
 
-## やり方:
-
-Javaでの文字列の大文字化は非常に簡単です。`toUpperCase()`メソッドを用いて、以下のように行います。
-
-```Java
-String str = "Hello, World!";
-String upperStr = str.toUpperCase();
-System.out.println(upperStr);  // Outputs: "HELLO, WORLD!"
+        // Using WordUtils.capitalize() from Apache Commons Lang to capitalize each word
+        // Add the dependency: org.apache.commons:commons-lang3:3.12.0
+        String title = "the lord of the rings";
+        String bookTitle = org.apache.commons.text.WordUtils.capitalize(title);
+        System.out.println(bookTitle); // Output: The Lord Of The Rings
+    }
+}
 ```
 
-このコードの実行結果は"HELLO, WORLD!"となります。
+## Deep Dive (掘り下げ)
+歴史的には、Javaは文字列操作の基本機能を提供してきました。`toUpperCase()` はその一例で、全ての文字を大文字にします。しかし、各単語の先頭文字だけを大文字にするには、外部ライブラリを使ったり、独自のロジックを書いたりする必要があります。
 
-## 深掘り：
+Apache Commons Langライブラリの `WordUtils.capitalize()` は、この特定のタスクを簡単にこなすためによく使われます。これは内部的に文字列を走査し、単語の区切りを認識した後に該当する文字を大文字に変換します。
 
-文字列の大文字化は、古くから存在する基本的なプログラミングのタスクで、多くのプログラミング言語でサポートされています。Javaでは、`toUpperCase()`メソッドがこのタスクを実行します。
+実装の詳細では、大文字化の対象となる言語や地域特有の規則、Unicode文字の大文字/小文字の対応を考慮に入れる必要があります。Javaはこれらを `Locale` クラスを通じてサポートしており、多言語対応のアプリケーションに有益です。
 
-このメソッドは内部でUnicode文字列を処理し、すべての文字を対応する大文字に変換します。このメソッドはlocaleに依存するバージョンと依存しないバージョンの2つが存在します。localeに依存するバージョンは特定の言語環境の大文字と小文字のルールを適用します。
+また、パフォーマンスが懸念される場合は、`StringBuilder` や `StringBuffer` を使って大文字化のロジックを最適化できる場合があります。大規模な文字列操作を行う時には重要な観点です。
 
-Java言語以外でも、文字列の大文字化は通常、組み込み関数やメソッドによって簡単に行うことができます。たとえば、Pythonでは`upper()`メソッド、JavaScriptでは`toUpperCase()`メソッドを使用します。
-
-## 関連情報：
-
-* OracleのJavaドキュメンテーション: [Stringクラス](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
-* Stack Overflow: ["How to convert a string to all caps in java?"](https://stackoverflow.com/questions/5054995/how-to-convert-a-string-to-all-caps-in-java)
+## See Also (関連情報)
+- Java String Documentation: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+- Apache Commons Lang - WordUtils: https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/WordUtils.html
+- Stack Overflow discussion on string capitalization in Java: https://stackoverflow.com/questions/1892765/how-to-capitalize-the-first-character-of-each-word-in-a-string

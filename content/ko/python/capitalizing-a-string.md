@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자화"
-html_title:           "Python: 문자열 대문자화"
-simple_title:         "문자열 대문자화"
+title:                "문자열 대문자로 변환하기"
+html_title:           "Arduino: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 그렇게 하는가?
+## What & Why? (무엇이며 왜?)
+문자열 대문자화는 모든 글자를 대문자로 바꾸는 것입니다. 이를 통해 텍스트가 더 눈에 띄게 하거나, 데이터를 표준화하는 데 종종 사용됩니다.
 
-문자열을 대문자화는 글자들을 모두 대문자로 바꾸는 과정을 의미합니다. 프로그래머는 이를 통해 사용자 입력을 표준화하고, 데이터의 일관성을 유지하기 위해 이 작업을 수행합니다.
-
-## 어떻게 하는가:
-
-Python에서는 문자열을 대문자로 바꾸는 것이 매우 간단합니다. `upper()` 메소드를 사용하면 됩니다. 예를 들면,
-
-```Python
+## How to: (어떻게 하나요?)
+```python
+# 문자열 대문자로 변환하기
 text = "hello world"
 capitalized_text = text.upper()
-print(capitalized_text)
+
+print(capitalized_text)  # HELLO WORLD
 ```
 
-이 코드를 실행하면 다음과 같은 결과가 출력됩니다:
+```python
+# 리스트 안의 문자열 대문자로 변환하기
+words = ["python", "programming", "tutorial"]
+capitalized_words = [word.upper() for word in words]
 
-```Python
-'HELLO WORLD'
+print(capitalized_words)  # ['PYTHON', 'PROGRAMMING', 'TUTORIAL']
 ```
 
-## 깊은 이해:
+## Deep Dive (심층 탐구)
+- **역사적 배경**: 과거에는 대문자만 표기할 수 있는 타자기가 있었습니다. 오늘날, 프로그래밍에 있어서 대소문자 변환 기능은 사용자 입력을 표준화하고, 다양한 컴퓨터 시스템 간 호환성을 확보하는 데 중요해졌습니다.
+- **대안**: 파이썬에서 `.capitalize()` 는 첫 글자만 대문자로 변환합니다, `.upper()` 는 모든 문자를 대문자로 변환합니다. 또한 `.title()`은 모든 단어의 시작 글자를 대문자로 변환합니다.
+- **구현 디테일**: `.upper()` 메소드는 유니코드 표준에 따라 문자열 속의 각 문자를 해당하는 대문자로 매핑합니다. 어떤 문자에는 대문자가 존재하지 않을 수도 있는데, 이 경우 해당 문자는 변하지 않습니다.
 
-문자열을 대문자로 바꾸는 기능이 Python에 첫 도입된 것은 아닙니다. 이는 초기 프로그래밍 언어에서도 볼 수 있는 기능으로, C 언어의 `toupper()` 함수를 생각하면 됩니다.
-
-Python의 `upper()` 메소드의 대안으로 `capitalize()` 메소드가 있습니다. 이는 문자열의 첫 글자만 대문자로 만드는 함수입니다. 예를 들면,
-
-```Python
-text = "hello world"
-capitalized_text = text.capitalize()
-print(capitalized_text)
-```
-
-이 코드를 실행하면, 결과는 다음과 같습니다:
-
-```Python
-'Hello world'
-```
-
-먼저, `upper()` 메소드는 Python의 문자열 클래스의 내장 함수로, 문자열 내의 모든 ASCII 문자를 대문자로 변환합니다. 유니코드 문자열에도 동작합니다만, 대문자 변환이 가능하지 않은 유니코드 문자는 그대로 둡니다.
-
-## 참고할 만한 자료:
-
-- Python 공식 문서의 문자열 메소드 페이지: https://docs.python.org/3/library/stdtypes.html#string-methods
-- 같은 주제에 대한 StackOverflow 토론: https://stackoverflow.com/questions/6797984/how-do-i-uppercase-a-string-in-python
-- Python 문자열 메소드에 대한 w3schools 가이드: https://www.w3schools.com/python/python_ref_string.asp
+## See Also (추가 정보)
+- 파이썬 공식 문서: https://docs.python.org/3/library/stdtypes.html#str.upper
+- 유니코드 표준: http://www.unicode.org/reports/tr21/tr21-5.html
+- 문자열 메서드 관련 튜토리얼: https://realpython.com/python-strings/#built-in-string-methods

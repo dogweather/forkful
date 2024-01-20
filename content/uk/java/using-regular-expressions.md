@@ -45,4 +45,3 @@ public class RegexExample {
 - [Java Pattern Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
 - [Java Matcher Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Matcher.html)
 - [Oracle's regex tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/)
-- [Regular Expressions in Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)

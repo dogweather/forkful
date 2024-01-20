@@ -1,7 +1,7 @@
 ---
-title:                "Gör en sträng versal"
-html_title:           "Bash: Gör en sträng versal"
-simple_title:         "Gör en sträng versal"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,35 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kapitalisera en sträng innebär att omvandla dess första tecken till stort. Programmerare gör detta för att förbättra läsbarheten och formaliteten i deras kod, eller för att uppfylla vissa kodkonventioner.
+Att göra en textsträng versal innebär att konvertera alla bokstäver till stora bokstäver. Programmerare gör detta för att standardisera textdata, förbättra läslighet eller uppfylla tekniska krav.
 
-## Hur man gör:
-I Bash kan du kapitalisera en sträng genom funktionen `tr`. Följande är ett exempel:
+## Hur gör man:
+```Bash
+# Kapitalisera en sträng med tr-kommandot
+echo "hej världen" | tr '[:lower:]' '[:upper:]'
+```
+Output: HEJ VÄRLDEN
 
 ```Bash
+# Använda Bash inbyggda funktioner för att kapitalisera en sträng
 str="hej världen"
-echo "${str^}"
+echo "${str^^}"
 ```
+Output: HEJ VÄRLDEN
 
-Resultatet blir:
+## Fördjupning
+Från jokertecken i UNIX till dagens Bash har textmanipulering alltid varit centralt. `tr` är ett äldre kommando som står för "translate" och modifierar strömmar av text. Bash introducerade senare inbyggda funktioner för strängmanipulering, som `${str^^}`, som gör koden enklare och snabbare.
 
-```Bash
-Hej världen
-```
+Alternativ kan vara att använda `awk`, `sed`, eller till och med Perl och Python för komplex bearbetning. Varje verktyg har sina för- och nackdelar, beroende på behov och miljö.
 
-Det första bokstaven i strängen har nu kapitaliserats.
-
-
-## Djupdykning
-Denna förmåga att kapitalisera en sträng introducerades först i Bash 4.0. Innan dessa funktioner lades till, behövde Bash-programmerare använda fler verktyg som `awk` eller `sed` för att uppnå samma resultat.
-
-Ett alternativ till `${str^}` kan vara att använda `tr`-kommandot för att explicit byta ut små till stora bokstäver. Dock ska du vara medveten om att detta kommer att omvandla alla bokstäver i strängen till stora och inte bara det första tecknet.
-
-För att se till att bara det första tecknet kommer att kapitaliseras, finns det ingen implementation i standardbiblioteket; funktionen `${str^}` tar hand om att erbjuda denna funktionalitet.
+Implementationen av strängkapitalisering skiljer sig i skalkriptning. Det beror på vilket skal som används och dess version. I Bash 4.0 och senare är ${str^^} och ${str,,} inbyggda för att respektive konvertera till versaler eller gemener.
 
 ## Se även
-För mer information, se följande länkar:
-
-- GNU Bash Manual: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
-- Stack Overflow discussion on string capitalization in Bash: https://stackoverflow.com/questions/2264428/how-to-convert-a-string-to-lower-case-in-bash
-- Bash String Manipulation Guide: http://tldp.org/LDP/abs/html/string-manipulation.html
+- Bash manualen: https://www.gnu.org/software/bash/manual/
+- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/
+- POSIX specifikationen för `tr`: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/tr.html

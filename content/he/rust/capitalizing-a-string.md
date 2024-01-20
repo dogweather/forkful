@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות ראשונות גדולות"
-html_title:           "Rust: הפיכת מחרוזת לאותיות ראשונות גדולות"
-simple_title:         "הפיכת מחרוזת לאותיות ראשונות גדולות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,40 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-הפיכה של מחרוזת לראשי תיבות הוא הגדרה של אות פתיחה של כל מילה בראשי תיבות. מתכנתים משתמשים בה כדי לשפר את קריאות הקוד ולמקד את החשיבה שלם המשתמש על הידע הרלוונטי.
+הפיכת מחרוזת לאותיות רישיות אומר לשנות את כל האותיות במחרוזת לאותיות גדולות. תוכניתנים עושים זאת להדגשה או להתאמה לקונבנציות קוד.
 
 ## איך לעשות:
-
-להלן שני דרכים להפוך מחרוזות לראשי תיבות בשפת Rust:
+ב־Rust, אפשר להפוך מחרוזת לאותיות רישיות בעזרת המתודה `to_uppercase`. הנה דוגמה:
 
 ```rust
-// ספריית עזר
-extern crate unicode_segmentation;
-use unicode_segmentation::UnicodeSegmentation;
-
 fn main() {
-    let my_string = "rust תכנות בשפת";
-    let capitalized = my_string
-           .unicode_words()
-           .map(|word| word.chars().next().unwrap().to_uppercase() + &word[1..])
-           .collect::<Vec<_>>()
-           .join(" ");
-    println!("{}", capitalized);
+    let lowercase = "shalom, olam!";
+    let uppercase = lowercase.to_uppercase();
+    println!("{}", uppercase);
 }
 ```
 
-והתוצאה תהיה:
+פלט דוגמה:
+
 ```
-Rust תכנות בשפת
+SHALOM, OLAM!
 ```
 
-## Deep Dive:
+## צלילה עמוקה:
+המתודה `to_uppercase` מופיעה בסטנדרט של ראסט ומשתמשת בתקנים של Unicode להמרה נכונה של האותיות. יש גם אלטרנטיבות, כמו `to_ascii_uppercase`, שמטפלת רק באותיות לטיניות. השימוש ב`to_uppercase` יכול להיות יקר זמן-ריצה ביחס ל`to_ascii_uppercase` בגלל התמיכה בינלאומית. בעברית, למשל, לא תמיד יהיה שינוי משמעותי, אך בשפות אחרות ההבדלים יכולים להיות משמעותיים.
 
-בראייה ההיסטורית, אנחנו מכירים את הפיכת מחרוזת לראשי תיבות משפת C, אך Rust מציעה גישה אלגנטית יותר לבעיה זו בעזרת ספריית UnicodeSegmentation. עשויות להיות פעמים שהפתרון של Rust לא מתאים, ולכן עשוי להיות שווה לבדוק את ספריות חיצוניות אחרות. מבחינת פרטי המימוש, אנו משתמשים במתודה unicode_words לגזור את המחרוזת למילים, ולאחר מכן מפצלים את כל מילה לתווים ומסדירים את התו הראשון.
-
-## ראו גם:
-
-למידע נוסף על הפיכת מחרוזת לראשי תיבות, ראה את המקורות הבאים:
-1. [קוד המקור של UnicodeSegmentation](https://github.com/unicode-rs/unicode-segmentation)
-2. [דוקומנטציה רשמית של Rust](https://doc.rust-lang.org/stable/rust-by-example/trait/iter.html)
+## ראה גם:
+- [Rust Documentation for `to_uppercase`](https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase)
+- [Unicode Case Mapping](https://www.unicode.org/reports/tr21/tr21-5.html)
+- [Rust by Example on Custom Types/Enums](https://doc.rust-lang.org/rust-by-example/custom_types/enum.html)

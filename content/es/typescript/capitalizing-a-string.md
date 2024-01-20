@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "TypeScript: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,50 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## ¿Qué y Por Qué?
 
-Capitalizar una cadena significa convertir la primera letra de cada palabra en mayúsculas. Los programadores lo hacen para mejorar la legibilidad y la consistencia del texto en la salida.
+Capitalizar una cadena de texto significa convertir la primera letra en mayúscula. Los programadores a menudo lo hacen para asegurar que los nombres propios o los títulos se muestren correctamente según las normas gramaticales.
 
 ## Cómo hacerlo:
 
-Aquí hay una función básica en TypeScript para capitalizar una cadena de texto:
+Para capitalizar una cadena en TypeScript, puedes crear una función simple que tome la primera letra, la convierta en mayúscula y la concatene con el resto de la cadena.
 
 ```TypeScript
-function capitalizarCadena(cadena: string): string {
-    return cadena
-        .toLowerCase()
-        .split(' ')
-        .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1))
-        .join(' ');
+function capitalizar(cadena: string): string {
+  return cadena.charAt(0).toUpperCase() + cadena.slice(1);
 }
 
-console.log(capitalizarCadena("hola mundo"));  // Salida: "Hola Mundo"
+// Muestra de uso:
+const titulo = "hola mundo";
+console.log(capitalizar(titulo)); // Salida: Hola mundo
 ```
 
-La función convierte toda la cadena a minúsculas y luego divide la cadena en palabras. Luego, toma la primera letra de cada palabra, la convierte en mayúsculas y se mantiene el resto sin cambios. Finalmente, se unen las palabras en una cadena.
-
-## Profundizando:
-
-**Contexto histórico:** La capitalización ha existido desde los primeros idiomas escritos, donde se utilizaba para destacar nombres propios y comienzos de oraciones. La capitalización en la programación sigue el mismo principio para mejorar la legibilidad y destacar partes importantes del texto.
-
-**Alternativas:** TypeScript no tiene una función incorporada para capitalizar una cadena. Si quisieras evitar escribir tu propia función, podrías usar una biblioteca de funciones útiles llamada Lodash. Su función `_.capitalize` convierte la primera letra de una cadena a mayúsculas y el resto a minúsculas:
+Si necesitas capitalizar cada palabra de una frase, aquí tienes otro ejemplo:
 
 ```TypeScript
-import _ from 'lodash';
+function capitalizarPalabras(frase: string): string {
+  return frase
+    .split(' ')
+    .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1))
+    .join(' ');
+}
 
-console.log(_.capitalize('hola mundo'));  // Salida: "Hola mundo"
+// Muestra de uso:
+const frase = "bienvenidos a TypeScript";
+console.log(capitalizarPalabras(frase)); // Salida: Bienvenidos A TypeScript
 ```
 
-**Detalles de implementación:** Nuestra función `capitalizarCadena` utiliza varios métodos de cadena en JavaScript, que están disponibles porque TypeScript es un superconjunto de JavaScript. Esas funciones incluyen `toLowerCase`, `split`, `map`, `charAt`, `toUpperCase`, `slice` y `join`.
+## Profundizando
 
-## Ver también:
+Capitalizar una cadena es un procedimiento común. En lenguajes como Python, hay métodos incorporados, como `.title()` y `.capitalize()`, pero TypeScript, al ser un superconjunto de JavaScript, no tiene estos métodos predefinidos para strings, así que los creamos.
 
-Si buscas más profundidad, aquí te dejo algunos enlaces para aprender más acerca de las cadenas en TypeScript:
+¿Existen alternativas? Claro, algunas bibliotecas como Lodash tienen funciones como `_.capitalize`, pero para algo tan simple, una función personalizada es suficiente y evita dependencias externas.
 
-1. [Documentación oficial de TypeScript sobre cadenas][1]
-2. [Métodos de cadenas en JavaScript en MDN][2]
-3. [Biblioteca Lodash][3]
+En lo que respecta a detalles de implementación, ten en cuenta que la función `charAt()` puede devolver un string vacío si el index no existe, mientras que acceder a un carácter con `[0]` podría devolver `undefined`. Por eso, `charAt()` es más seguro para esta operación.
 
-[1]: https://www.typescriptlang.org/docs/handbook/2/strings.html
-[2]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-[3]: https://lodash.com/docs/4.17.15
+Además, si estás trabajando con localización o i18n, considera las reglas de capitalización de diferentes idiomas. No todos capitalizan de la misma manera y podrías necesitar una solución más compleja.
+
+## Véase También
+
+Para profundizar más, puedes revisar los siguientes enlaces:
+
+- Documentación oficial de TypeScript: [TypeScript Lang](https://www.typescriptlang.org/)
+- Librería Lodash para trabajar con strings y otros: [Lodash](https://lodash.com/)
+- Fundamentos de JavaScript, ya que TypeScript se basa en JavaScript: [MDN Web Docs](https://developer.mozilla.org/es/docs/Web/JavaScript)

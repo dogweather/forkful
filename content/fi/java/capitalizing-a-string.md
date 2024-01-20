@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-html_title:           "Java: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
 simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Java"
 category:             "Java"
@@ -10,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+"Mikä & Miksi?"
 
-Merkkijonon kapitalisointi tarkoittaa, että muutat merkkijonon ensimmäisen kirjaimen suureksi. Ohjelmoijat tekevät sen usein parantaakseen tekstien luettavuutta ja jäsentelyä.
+Merkkijonon muotoilu isoiksi kirjaimiksi tarkoittaa, että jokainen merkkijonon kirjain muutetaan isoksi alkukirjaimeksi. Ohjelmoijat käyttävät tätä esimerkiksi kun halutaan standardoida tekstin ulkoasu tai korostaa otsikkoa.
 
-## Kuinka:
+## How to:
+"Miten tehdään:"
 
-Voit muuttaa merkkijonon ensimmäisen kirjaimen isoksi käyttämällä Java:n `substring()` ja `toUpperCase()` metodeja näin:
-
-```Java
-public class Main {
-
-    public static String capitalize(String str) {
-        if(str.isEmpty()){
-            return str;
-        }else{
-            return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
-        }
-    }
-
+```java
+public class StringCapitalizer {
+    
     public static void main(String[] args) {
-        System.out.println(capitalize("hello world"));  // Outputs: Hello world
+        String original = "moikka maailma";
+        String capitalized = original.toUpperCase();
+        
+        System.out.println(capitalized); // MOIKKA MAAILMA
     }
 }
 ```
 
-## Syvempi sukellus:
+## Deep Dive
+"Sukellus syvemmälle"
 
-Historiallisesti merkkijonojen kapitalisointi juontaa juurensa ajoista, jolloin tietokoneohjelmat kirjoitettiin kirjoituskoneilla - pääoman alkukirjain teki komentoriveistä helpommin luettavia.
+Stringien muotoilu isoiksi kirjaimiksi juontaa juurensa kirjoituskoneiden ja varhaisten tietokoneiden ajoista, jolloin pieniä ja suuria kirjaimia käytettiin korostamaan tai standardoimaan tekstejä. Java tarjoaa `toUpperCase()`-metodin, mutta voit myös itse toteuttaa muunnoksen käymällä läpi merkkijonon karakterit ja muuntamalla ne käyttäen `Character.toTitleCase()`-metodia yhdistettynä `Character.isWhitespace()`-metodiin sanojen alun tunnistamiseksi.
 
-Vaihtoehtoina, voit käyttää Apache Commons Stringutils-kirjastoa, joka tarjoaa `capitalize()`-metodin, mutta se lisää ylimääräisen riippuvuuden projektiisi.
+Vaihtoehtoiset menetelmät:
+- `StringUtils.capitalize()` Apache Commons Lang -kirjastosta vielä yksinkertaisempien tapojen toteuttamiseksi.
+- Käytä `Text`-olioita JavaFX:ssä, jos haluat esittää muotoiltua tekstiä graafisesti.
 
-Merkkijonon kapitalisoinnin toteutus voi vaihdella. Esimerkiksi jotkut ohjelmoijat saattavat valita vain ensimmäisen kirjaimen suurentamisen jättämällä loput kirjaimet muuttumattomiksi sen sijaan, että muuttavat ne pieniksi.
+Toteutuksen yksityiskohdat:
+- `toUpperCase()` ei erottele eri kieliä tai localeja, joten se saattaa toimia odottamattomasti erikoismerkkien kanssa.
+- Käyttäytymistä voi säätää `Locale`-objekteilla, jos tarvitsee huomioida tietty kieli tai kulttuurillinen konteksti.
 
-## Katso myös:
+## See Also
+"Katso myös"
 
-Voit lukea lisää Java:n `substring()` ja `toUpperCase()` metodeista Javan virallisessa dokumentaatiossa:
-- [substring()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#substring(int,int))
-- [toUpperCase()](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#toUpperCase())
-
-Lisätietoja merkkijonojen kapitalisoinnista yleisesti ja sen eri tekniikoista on täällä: 
-- [Capitalization in Wikipedia](https://en.wikipedia.org/wiki/Capitalization)
-- [Apache Commons StringUtils](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html)
+- [Java String Documentation](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
+- [Character Documentation](https://docs.oracle.com/javase/10/docs/api/java/lang/Character.html)
+- [Apache Commons Lang](https://commons.apache.org/proper/commons-lang/)

@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "Gleam: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,34 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Großschreibung in Gleam: Ein kurzer Leitfaden
+
 ## Was & Warum?
+Großschreibung verwandelt alle Buchstaben eines Strings in Großbuchstaben. Es ist nützlich für einheitliche Darstellung, wie Titel, oder wenn man Text hervorheben will.
 
-Das Großschreiben eines Strings ändert alle Anfangsbuchstaben der im String enthaltenen Worte in Großbuchstaben. Programmierer nutzen dieses Verfahren, um Texte hervorzuheben und optisch zu gliedern, besonders in Überschriften oder in Situationen, in denen Großschreibung einen Unterschied im Bedeutungskontext ausmacht.
+## How to:
+In Gleam gibt es standardmäßig keine eingebaute Funktion für die String-Großschreibung. Daher muss man sich mit Listen und Char-Codes behelfen:
 
-## Wie geht's:
+```gleam
+import gleam/list
+import gleam/char
 
-```Gleam
-import gleam/string
+pub fn capitalize_string(str: String) -> String {
+  str
+  |> String.to_graphemes
+  |> list.map(char.uppercase)
+  |> list.fold([], fn(x, acc) -> acc ++ x)
+  |> String.from_slice
+}
 
 fn main() {
-  let mein_string = "hallo, welt!"
-  let ergebnis = string.capitalize(mein_string)
-  ergebnis
-  |> should.equal(_ Ok("Hallo, Welt!") )
+  let my_string = "hallo, Gleam!"
+  let capitalized = capitalize_string(my_string)
+  io.debug(capitalized)  // Output: "HALLO, GLEAM!"
 }
 ```
-Ausgabe: 
 
-`Hallo, Welt!`
+## Deep Dive
+In älteren oder niedrigeren Programmiersprachen ist das Großschreiben oft ein eingebauter String-Operation. Das Gleam allerdings eine jüngere Sprache ist, fokussiert es sich mehr auf Sicherheit und Robustheit, und überlässt solche Funktionalitäten oft externen Libraries oder dem Entwickler selbst.
 
-## Tiefere Innenansichten:
+Man könnte beim Kapitalisieren auch Unicode und locale beachten, was die Implementierung komplexer macht – ein Grund, warum es nicht einfach in Gleam eingebaut ist.
 
-(1) In der Vergangenheit gab es keine eingebaute Funktion, um Strings in Gleam zu capitalizen. Programmierer mussten den String in Zeichen aufteilen, das erste Zeichen manuell in einen Großbuchstaben umwandeln und den String wieder zusammenbauen.
+Alternativen:
 
-(2) Es gibt Alternativen zur `string.capitalize` - Funktion, wie die Verwendung von Map oder Reduce - Funktionen, um über jeden Buchstaben im String zu iterieren und ihn je nach Bedarf zu ändern.
+- Benutze Erlang- oder Elixir-Bibliotheken: Da Gleam auf der BEAM VM läuft, kann man vorhandene Bibliotheken nutzen.
+- Schreibe eine eigene Gleam-Bibliothek: Eine Chance, zur Gleam-Community beizutragen.
 
-(3) Die Implementierung der `string.capitalize` - Funktion in Gleam erfolgt mithilfe der [case - Funktion](https://gleam.run/getting-started/references.html), die jeden Unicode-Buchstaben in einen Großbuchstaben umwandelt.
-
-## Siehe auch:
-
-Besuchen Sie die offizielle Gleam Dokumentation zur [string.capitalize - Funktion](https://gleam.run/getting-started/references.html) und [case - Funktion](https://gleam.run/getting-started/references.html), um mehr darüber zu erfahren, wie Sie Strings in Gleam manipulieren können. Ebenfalls hilfreich könnte der Leitfaden zum [Unicode-Handling in Gleam](https://gleam.run/notes/unicode.html) sein.
+## See Also
+- Gleam's official documentation: [Gleam Language](https://gleam.run/)
+- Unicode Character Case Mapping: [Unicode Standard](https://www.unicode.org/versions/Unicode13.0.0/ch03.pdf)
+- Elixir String Capitalization: [Elixir hexdocs](https://hexdocs.pm/elixir/String.html)

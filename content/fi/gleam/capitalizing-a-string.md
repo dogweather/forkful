@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pääkirjaintaminen"
-html_title:           "Gleam: Merkkijonon pääkirjaintaminen"
-simple_title:         "Merkkijonon pääkirjaintaminen"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,28 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Kirjainten muuttaminen isoiksi on ohjelmoinnissa käytetty toiminto, jolla muutetaan annetun merkkijonon kaikki kirjaimet isoiksi kirjaimiksi. Tämä on hyödyllistä esimerkiksi vakiomuotoistamisessa ja yhtenäisyyden luomisessa tiedon käsittelyssä.
+## What & Why?
+Kirjainkokon muuttaminen viittaa prosessiin, jossa muunnetaan kirjaimet isoiksi kirjaimiksi. Ohjelmoijat käyttävät sitä esimerkiksi käyttöliittymien yhdenmukaistamiseen ja tietojen muotoiluun.
 
-## Näin se tehdään:
-Gleam kielen avulla merkkijonon voi muuttaa isoiksi kirjaimiksi käyttämällä `to_uppercase` funktiota. Tässä esimerkki ja sen tuottama tulos:
+## How to:
+Seuraavassa esimerkissä käytämme Gleam-funktiota merkkijonon ensimmäisen kirjaimen isontamiseen. Esimerkissä string `moi` muuttuu `Moi`:
 
-```GLEAM
-import gleam/str
+```gleam
+import gleam/string
 
-pub fn main() {
-  let kotona = "olen kotona"
-  let tulostus = str.to_uppercase(kotona)
-  io.println(tulostus)
+pub fn capitalize_first_letter(text: String) -> String {
+  string.capitalize(text)
+}
+
+fn main() {
+  let greeting = capitalize_first_letter("moi")
+  println(greeting) // Outputs: "Moi"
 }
 ```
-Tulostus:
-```
-OLEN KOTONA
-```
 
-## Syvempi tarkastelu
-Historiallisessa kontekstissa kirjainten muuttaminen isoiksi on pitkäaikainen ohjelmointikäytäntö, joka juontaa juurensa aikoihin, jolloin tietokoneiden näytöt kykenivät tuottamaan vain suuria kirjaimia. Gleam tarjoaa helposti käytettävän `to_uppercase` funktion merkkijonojen muuttamiseen isoiksi kirjaimiksi. Vaihtoehtona on luoda oma funktio, mutta se on yleensä tarpeetonta, koska Gleam tarjoaa jo valmiin ja tehokkaan työkalun. 
+## Deep Dive
+Kun kapitalisointi otettiin käyttöön ohjelmoinnissa, ideana oli parantaa luettavuutta ja formaatti elintärkeitä tietoja, kuten nimiä ja otsikoita. Gleamissa, joka on moderni, turvallinen ja yhteensopiva kieli, merkkijonon kapitalisointi on yksinkertaista käyttäen standardikirjaston `string`-moduulia.
 
-## Katso myös
-Gleam-koodin kirjoittamista ja ymmärtämistä voi oppia lisää seuraavista lähteistä:
+Vaihtoehtoina kapitalisoinnille ovat esimerkiksi kaikkien kirjainten isontaminen tai muuttaminen pieniksi. Toteutustiedoissa on syytä huomioida, että eri kielet ja kirjoitusjärjestelmät voivat vaikuttaa kapitalisoinnin logiikkaan.
+
+## See Also
+- Unicode standard for case mapping: [https://www.unicode.org/reports/tr21/tr21-5.html](https://www.unicode.org/reports/tr21/tr21-5.html)

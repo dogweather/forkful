@@ -1,7 +1,7 @@
 ---
-title:                "Mettre en majuscule une chaîne de caractères"
-html_title:           "Elm: Mettre en majuscule une chaîne de caractères"
-simple_title:         "Mettre en majuscule une chaîne de caractères"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,48 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+Capitaliser une chaîne signifie transformer toutes ses lettres en majuscules. Les développeurs utilisent cette technique pour standardiser le texte pour des comparaisons ou pour l'afficher de manière plus visible et formelle.
 
-Capitaliser une chaîne signifie transformer la première lettre de chaque mot en majuscule. Les programmeurs font cela pour améliorer la présentation du texte et rendre les titres ou les noms de variables plus visibles.
+## How to:
+Elm n'a pas de fonction intégrée pour capitaliser une chaîne entière, on doit donc créer la sienne ou utiliser un package externe.
 
-## Comment faire:
-
-En Elm, vous pouvez capitaliser une chaîne à l'aide de la fonction `toUpper` appliquée à la première lettre et en concaténant le reste de la chaîne. Voici un exemple de mise en œuvre:
-
-``` Elm
+```elm
 import String
 
 capitalize : String -> String
 capitalize str =
-    case String.uncons str of
-        Nothing ->
-            ""
+  String.toUpper str
 
-        Just ( first, rest ) ->
-            String.toUpper (String.fromChar first) ++ rest
-```
-Ainsi, si vous exécutez:
+-- Utilisation:
+resultat = capitalize "bonjour, elm!"
 
-``` Elm
-capitalize "bonjour, monde"
+-- Sortie:
+-- "BONJOUR, ELM!"
 ```
 
-La sortie sera:
+## Deep Dive
+Elm, axé sur la simplicité, offre `String.toUpper` pour transformer des lettres en majuscules. Historiquement, différentes langues traitent la capitalisation différemment; Elm fait simple avec `toUpper` et `toLower` pour tout convertir. Si vous avez besoin de comportements plus complexes (comme capitaliser seulement la première lettre), vous devrez éventuellement chercher un package tiers comme `elm-community/string-extra`. Côté implémentation, la gestion de la casse dépend du navigateur, Elm délégant cette tâche au JavaScript sous-jacent.
 
-``` Elm
-"Bonjour, Monde"
-```
-
-## Vue approfondie:
-
-La fonction `capitalize` n'est pas intégrée dans le langage Elm contradictoirement à d'autres langages de programmation tels que Java ou Python. Cette fonctionnalité est plus une convention dans le monde de la programmation pour améliorer l'apparence du texte pour l'utilisateur.
-
-Pour capitaliser une chaîne en Elm, la meilleure façon est de convertir la première lettre en majuscule à l'aide de la fonction 'toUpper' tout en laissant le reste de la chaîne inchangé. Cette approche est simple et efficace, mais elle n'est pas adaptée pour les chaînes multi-mots. Pour capitaliser chaque mot dans une chaîne, une approche plus complexe serait nécessaire, comme séparer la chaîne en mots, capitaliser chaque mot puis les réunir.
-
-## Voir Aussi:
-
-Pour plus de détails, consultez les ressources en ligne suivantes:
-
-- Documentation Elm sur les chaînes de caractères: https://elm-lang.org/docs/string
-- Discussion sur le forum Elm concernant la capitalisation des chaînes: https://discourse.elm-lang.org/t/capitalization-in-string/338
-- Guide de style Elm officiel: https://github.com/elm/style-guide/blob/master/README.md
+## See Also
+- Elm String Documentation: https://package.elm-lang.org/packages/elm/core/latest/String#toUpper
+- String-Extra Package for more string operations: https://package.elm-lang.org/packages/elm-community/string-extra/latest/

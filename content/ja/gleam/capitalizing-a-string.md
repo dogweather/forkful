@@ -1,7 +1,7 @@
 ---
-title:                "文字列を大文字にする"
-html_title:           "Gleam: 文字列を大文字にする"
-simple_title:         "文字列を大文字にする"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何とその理由?)
+文字列を大文字化するとは、文字列内の各単語の最初の文字を大文字に変換することです。これは、タイトル、見出し、または固有名詞を表記する際によく行われます。
 
-文字列を大文字化するとは、文字列内のすべての文字を大文字に変換することを指します。これは、プログラム内で一貫性を維持するため、またはユーザ入力の正規化を行うためによく行われます。
-
-## 使い方：
-
-Gleamでは、`to_upper`関数を使用して文字列を大文字に変換できます。例は以下のとおりです。
+## How to: (やり方)
+Gleamでは文字列の大文字化は`String.to_uppercase`関数を使いましょう。例と出力は以下の通りです。
 
 ```gleam
 import gleam/string
 
-string.to_upper("こんにちは、Gleamの世界！")
-// 出力: "こんにちは、gleAMの世界！"
+pub fn main() {
+  let greeting = "hello world"
+  let shout = string.to_uppercase(greeting)
+  shout
+}
 ```
-このコードは、主要な文字列の各文字を大文字に変換します。
 
-## ディープダイブ：
+サンプル出力:
 
-大文字化は遠い昔から存在する技術で、コンピュータが登場する前から行われていました。大文字と小文字の概念自体が存在しない言語に対する考慮が必要であり、より新しいUnicode対応関数を使用することが推奨されます。
+```
+"HELLO WORLD"
+```
 
-Gleamの`to_upper`関数は、Unicode文字列を正確に大文字化します。つまり、ASCIIだけでなく、非ASCII文字もサポートします。ただし、あらゆる言語、特に大文字・小文字の区別しない言語の全てのエッジケースを正確に考慮しているわけではありません。
+## Deep Dive (詳細な情報)
+歴史的には、大文字使用は文献で重要な単語を際立たせるためです。Gleamの`String.to_uppercase`は、さまざまな文字エンコーディングと言語に対応するUnicodeの大文字変換を採用しています。これはUTF-8によく最適化されているため、多くの言語で効率的に使えます。代替手段として、文字列の特定の部分だけを大文字にすることも可能ですが、その際には追加の関数や手作業が必要です。実装の詳細では、性能と互換性のバランスが重要になります。
 
-大文字化には代替方法も多く存在します。独自のロジックを作成して大文字化することも可能ですが、通常は標準ライブラリの関数を使用することが推奨されます。独自の方法では、特殊なエッジケースを処理するのが難しく、時間も労力も消費します。
-
-## ほかの情報：
-
-以下に、Gleamと関連する追加資料へのリンクをいくつか提供します。
-
-- Gleam公式文書：https://gleam.run/docs/
-- Gleamの文字列操作に関する詳細：https://gleam.run/stdlib/string.html
-- ASCIIとUnicodeについての詳細：https://en.wikipedia.org/wiki/ASCII, https://en.wikipedia.org/wiki/Unicode
+## See Also (関連情報)
+- Unicodeについての詳細: [Unicode.org](http://unicode.org/)

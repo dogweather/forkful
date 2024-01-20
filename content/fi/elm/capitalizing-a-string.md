@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pääkaupunkikirjaintaminen"
-html_title:           "Elm: Merkkijonon pääkaupunkikirjaintaminen"
-simple_title:         "Merkkijonon pääkaupunkikirjaintaminen"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,47 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Stringien Isoilla Kirjaimilla Aloitaminen Elm Ohjelmoinnissa
+## What & Why?
+Isojen kirjainten käyttö stringissä tarkoittaa, että muutetaan kaikki merkit isoiksi kirjaimiksi. Ohjelmoijat tekevät tämän esimerkiksi korostaakseen otsikkoja tai varmistaakseen, että käyttäjän syöte käsitellään yhdenmukaisesti.
 
-## Mikä & Miksi?
-
-Isoilla kirjaimilla aloittaminen muuntaa stringin ensimmäisen kirjaimen isoksi. Ohjelmoijat käyttävät tätä tehdäkseen teksteistä helpommin luettavia ja ymmärrettäviä.
-
-## Kuinka Näin:
-
-Seuraava koodiesimerkki näyttää, kuinka tämä toimii Elm-ohjelmointikielessä:
+## How to:
+Elm:ssä stringien käsittely on suoraviivaista. Tässä esimerkki, miten muutetaan merkkijono isoiksi kirjaimiksi:
 
 ```Elm
-import String exposing (left, toUpper, dropLeft)
+toUpper : String -> String
+toUpper str =
+    String.toUpper str
 
-capitalize : String -> String
-capitalize string = 
+main =
     let
-        firstLetter = String.left 1 string
-        restOfTheString = String.dropLeft 1 string
-    in 
-        String.toUpper firstLetter ++ restOfTheString
-
-main = 
-    capitalize "hello"
+        original = "terveisiä suomesta!"
+        capitalized = toUpper original
+    in
+    Html.text capitalized
+-- Output: "TERVEISIÄ SUOMESTA!"
 ```
 
-Käynnistäessäsi tämän ohjelman, se tulostaa: 
+## Deep Dive
+Elm ei sisällä samanlaista `toUpperCase` -funktiota kuin JavaScript, mutta `String.toUpper` ajaa saman asian. Historiallisesti, merkkijonojen muokkaus on ollut tärkeää, koska vanhemmissa järjestelmissä isoilla kirjaimilla oli erilaisia käyttötarkoituksia, kuten komentojen ja nimien erottaminen. Vaihtoehtoisesti, jos haluat vain ensimmäisen kirjaimen isoksi etkä koko stringiä, joudut toteuttamaan sen itse, koska Elm ei tarjoa valmista funktiota sille.
 
-```
-"Hello"
-```
+Toinen vaihtoehto isoille kirjaimille on käyttää CSS:tä näyttövaiheessa, mutta Elm:ssä muutetaan merkkijono ohjelmallisesti ennen näyttöä. Suorituskyvyn suhteen stringien muuttaminen isoksi kirjaimin Elm:ssä on yhtä nopeaa kuin missä tahansa muussa modernissa ohjelmointikielessä.
 
-## Syvällisempää Tietoa:
-
-Historiallisesti useat ohjelmointikielet, kuten JavaScript ja Python, ovat sisällyttäneet tämän ominaisuuden standardikirjastoihinsa. Elm, ollen funktionaalisen ohjelmoinnin kieli, kuitenkin vaatii tekemään tämän manuaalisesti. 
-
-On olemassa useita tapoja saavuttaa tämä Elm:ssä ja yllä näytetty on ainoastaan yksi niistä. Jotkut ohjelmoijat saattavat esimerkiksi jakaa stringin listaksi, käsitellä ensimmäisen alkioksen isolla kirjaimella ja yhdistää listan takaisin stringiksi. 
-
-Jos käsittelet erittäin suurta määrää tietoa, voit huomata joitain suorituskyvyn vaihteluita eri toteutustapojen välillä. Stringin jakaminen ja yhdistäminen voi olla hitaampaa kuin ensimmäisen kirjaimen muuttaminen isolla kirjaimella suoraan stringissä.
-
-## Katso Myös:
-
-1. Elm String funktion dokumentaatio: https://package.elm-lang.org/packages/elm/core/latest/String
-2. Elm yhteisön keskusteluja string manipulointi: https://discourse.elm-lang.org/t/string-manipulation-in-elm/5743
-3. String manipuloinnin opas Elm:ssä: https://korban.net/posts/elm/2019-12-14-practical-guide-string-manipulation-elm/
+## See Also
+Elm String dokumentaatio: [Elm String Docs](https://package.elm-lang.org/packages/elm/core/latest/String#toUpper)
+Stringin työskentelyn perusteet: [Working with Strings in Elm](https://elmprogramming.com/working-with-strings.html)
+Elm opas aloittelijoille: [Elm Guide for Beginners](https://guide.elm-lang.org/)

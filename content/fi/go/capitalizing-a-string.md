@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon suuraakkostaminen"
-html_title:           "Go: Merkkijonon suuraakkostaminen"
-simple_title:         "Merkkijonon suuraakkostaminen"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,13 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Mikä on merkkijonojen suurentaminen ja miksi sitä tehdään? Turnaus suurentaa kaikki merkkijonon kirjaimet suuriksi kirjaimiksi. Sitä käytetään, kun haluamme yhdenmukaistaa tekstin esitystapaa, esimerkiksi käyttäjänimen tai avainsanojen käsittelyssä.
 
-Merkkijonon isoksi muuttaminen tarkoittaa jokaisen merkin muuttamista isoksi kirjaimiksi. Ohjelmoijat tekevät tämän siksi, että järjestelmät voivat tulkita merkkijonot herkästi kirjainkoosta riippuen.
-
-## Näin teet:
-
-Go:n tarjoamassa `strings` kirjastossa on funktio `ToUpper()`, jolla voit muuttaa merkkijonon isoksi. Tässä on esimerkki sen käyttömisestä:
+## How to:
+Go-kielen standardikirjasto tarjoaa helpon tavan suurentaa merkkijonot. Käytä `strings`-pakettia ja sen `ToUpper`-funktiota:
 
 ```Go
 package main
@@ -27,24 +25,20 @@ import (
 )
 
 func main() {
-	s := "hei maailma"
-	fmt.Println(strings.ToUpper(s))
+	original := "moikka maailma!"
+	capitalized := strings.ToUpper(original)
+	fmt.Println(capitalized) // MOIKKA MAAILMA!
 }
 ```
-Tämä tulostaa:
-```
-HEI MAAILMA
-```
 
-## Syvällisempi tieto:
+## Deep Dive
+Turnaus Go-kielessä on suoraviivaista, mutta on hyvä ymmärtää, mitä kulissien takana tapahtuu. Kun merkkijono suurennetaan, jokainen Unicode-koodipiste mapataan vastaavaan suureen versioon, jos sellainen on olemassa. Historiallisesti eri ohjelmointikielet ovat toteuttaneet tämän eri tavoin, ja Go käyttää tehokasta Unicode-tietokantaa taatakseen oikeellisuuden.
 
-Historia: Merkkijonon isoksi muuttamisen käyttö juontaa juurensa aikaan, jolloin tietokonejärjestelmät ja ohjelmat olivat suuria herkkiä kirjainkoosta, esimerkiksi käyttäjätunnukset ja salasanat.
+Jos turnausta ei tarvita kaikille merkeille, voit käyttää `ToTitle` tai `ToUpperSpecial` funktioita. Esimerkiksi `ToTitle` suurentaa vain sanojen ensimmäiset kirjaimet. Funktio `ToUpperSpecial` sallii mukautetun kielikohtaisen suurentamisen.
 
-Vaihtoehdot: Voit myös muuttaa merkkijonon pelkästään ensimmäisen kirjaimen isoksi käyttäen `Title()` funktiota samassa `strings` kirjastossa.
+Go:n standardikirjasto hoitaa erikoistapaukset toisistaan poikkeavissa kirjaimissa ja kielissä. Tämä osoittaa tehokkaasti erilaisia kirjaimistoja käyttävien yhteisöjen välillä.
 
-Yksityiskohdat: Go:n `ToUpper` funktio käy läpi merkkijonon ja muuttaa jokaisen pienaakkosen isoakseliksi käyttäen Unicode:n yleisiä töyssyjä määritellä, mikä merkkijono muuttuu isoksi.
-
-## Katso myös:
-
-Muita liittyviä funktioita Go:n `strings` kirjastossa - https://pkg.go.dev/strings.
-Tietoa Unicode säännöstöstä - https://www.unicode.org/standard/standard.html.
+## See Also
+- Go `strings` paketti: https://pkg.go.dev/strings
+- Unicode standardi: https://unicode.org/standard/standard.html
+- Go blogi kirjoitus merkkijonon käsittelystä: https://blog.golang.org/strings

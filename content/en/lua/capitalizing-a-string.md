@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "Lua recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,38 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Capitalizing a string means changing the first letter of each word to uppercase and all other letters to lowercase. Programmers do this for text normalization and readability, especially in user interfaces.
+Capitalizing a string means making the first letter of each word uppercase. Programmers do it for formatting consistency, user readability, or data normalization.
 
 ## How to:
 
-Lua doesn't have a built-in function to capitalize strings. So we'll use the `gsub` function along with a pattern to achieve it. Here's an example:
+Lua doesn't have a built-in capitalization function, so let's create one:
 
-```Lua
+```lua
 function capitalize(str)
-    return (str:gsub("^%l", string.upper))
+  return (str:gsub("(%l)(%w*)", function(first, rest) return first:upper()..rest end))
 end
 
-print(capitalize("hello, world")) -- Prints "Hello, world" 
+print(capitalize("hello world"))  -- Output: Hello World
 ```
-
-In this example, `gsub` function changes the first character if it's a lowercase letter (`^%l`) to uppercase using `string.upper`.
 
 ## Deep Dive
 
-Lua, first appeared in 1993, has been a lightweight yet versatile language for scripting. It's been flexible but the compromise often comes as lack of some built-in string manipulation functions, like capitalizing strings. But, the powerful pattern-matching functions provided in Lua easily compensate for it.
+Capitalization functions are standard in many programming languages. In Lua, we make one using `string.gsub()`, a powerful pattern-matching function. Our custom `capitalize` function uses a pattern to find lowercase letters (`%l`) followed by zero or more word characters (`%w*`), and replaces them with the uppercase letter and the rest of the word.
 
-Alternate ways of capitalizing can be using ASCII values or the `utf8` library. Also note that our example only capitalizes the first letter of the string, not each word. To capitalize each word, use `"%w+"` instead of `"^%l"` in our function:
-
-```Lua
-function capitalize(str)
-  return (str:gsub("%w+", function(word)
-    return word:sub(1,1):upper()..word:sub(2):lower()
-  end))
+```lua
+-- Here's another way to just capitalize the first word
+function capitalizeFirst(str)
+  if str == "" then return str end
+  return str:sub(1, 1):upper()..str:sub(2)
 end
-
-print(capitalize("hello, world"))  -- Prints "Hello, World"
 ```
+
+Lua's pattern matching capabilities are less powerful than full regular expressions but are suitable for many string manipulation tasks. Note that our `capitalize` function won't capitalize words following certain punctuation marks, so it's not foolproof. For more robust solutions, you may consider additional pattern matching or external libraries.
+
+Historically, the need for capitalization functions arose from the desire to present text data uniformly, especially in user interfaces. However, care must be taken to understand the context: different languages and cultures have their own rules for capitalization beyond simply the first letter of a sentence or name.
 
 ## See Also
 
-Learn more about Lua strings from its official documents, "Programming in Lua" is also a great resource. Also, dive deep into string patterns in this [Lua-Users Wiki](http://lua-users.org/wiki/PatternsTutorial).
+- Lua `string` library: https://www.lua.org/manual/5.4/manual.html#6.4
+- Lua Patterns: https://www.lua.org/pil/20.2.html
+- Text Processing in Lua: https://www.lua.org/pil/20.html

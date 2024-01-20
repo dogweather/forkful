@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "PowerShell: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,32 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# PowerShell: String-Transformation - Wie man Strings in Großbuchstaben umwandelt
-
 ## Was & Warum?
+Das Großschreiben eines Strings ist die Umwandlung aller Buchstaben in Großbuchstaben. Programmierer verwenden dies, um Konsistenz in Benutzereingaben zu gewährleisten oder um Schriftzüge hervorzuheben.
 
-Das Umwandeln eines Strings in Großbuchstaben, auch als Capitalizing bekannt, ist eine gängige Operation in der Textbearbeitung. Programmierer nutzen dies, um die Lesbarkeit zu verbessern oder um Textvergleiche unempfindlich gegenüber Groß- und Kleinschreibung zu gestalten.
-
-## Anleitung:
-
-In PowerShell geschieht dies mittels der `.ToUpper()` Funktion. Hier ist ein einfaches Beispiel:
+## Vorgehensweise:
+Um in PowerShell einen String zu großzuschreiben, nutzt du die `.ToUpper()` Methode:
 
 ```PowerShell
-$var = "hallo welt"
-$upperCaseVar = $var.ToUpper()
-Write-Host $upperCaseVar
+$text = "hallo welt"
+$capitalizedText = $text.ToUpper()
+Write-Host $capitalizedText
 ```
 
-Die Ausgabe davon wäre:
+Ergebnis:
 
-```PowerShell
+```
 HALLO WELT
 ```
 
-## Deep Dive:
+Ein weiteres Beispiel, wenn man nur den ersten Buchstaben großschreiben möchte:
 
-Das Capitalizing von Strings hat lange Tradition und kann bis zu den Anfängen der Textverarbeitungsystems zurückverfolgt werden. Es gibt Alternativen wie zum Beispiel die Funktion `.ToLower()`, die alle Zeichen eines Strings in Kleinbuchstaben umwandelt. Diese hilft ebenfalls dabei, Textvergleiche durchzuführen, die unempfindlich gegenüber Groß- und Kleinschreibung sind. Bei der Implementierung von `.ToUpper()` in PowerShell handelt es sich eigentlich um eine Methode des String-Typs im .NET Framework, das die Grundlage für PowerShell bildet.
+```PowerShell
+$text = "hallo welt"
+$capitalizedText = $text.Substring(0,1).ToUpper()+$text.Substring(1)
+Write-Host $capitalizedText
+```
 
-## Siehe auch:
+Ergebnis:
 
-- [.NET Framework String.ToUpper Methode](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+```
+Hallo welt
+```
+
+## Vertiefung:
+Das Großschreiben von Strings war schon immer ein Teil von Programmiersprachen, um Text formatieren zu können. In PowerShell verwendet man `.ToUpper()` zum Großschreiben kompletter Strings oder `.Substring()` in Kombination mit `.ToUpper()`, um nur den ersten Buchstaben zu großzuschreiben.
+
+Es gibt Alternativen, wie etwa kulturell spezifische Methoden, die beim Großschreiben Buchstaben entsprechend der Sprachregeln verändern, zum Beispiel in der türkischen Sprache.
+
+In älteren Programmiersprachen oder bei sehr spezifischen Anforderungen könnte man jeden Buchstaben einzeln durchlaufen und in einen Großbuchstaben umwandeln. Dies ist aber in PowerShell selten erforderlich.
+
+## Siehe Auch:
+- [PowerShell Dokumentation zur String-Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.string?view=netcore-3.1)
+- [StackOverflow: Großschreibung in PowerShell](https://stackoverflow.com/questions/tagged/powershell+uppercase)
+- [Microsoft Dokumentation: Kulturinformationen in .NET](https://docs.microsoft.com/de-de/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1)

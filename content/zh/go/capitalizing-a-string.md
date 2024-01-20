@@ -1,7 +1,7 @@
 ---
-title:                "将字符串大写"
-html_title:           "Go: 将字符串大写"
-simple_title:         "将字符串大写"
+title:                "字符串首字母大写"
+html_title:           "Arduino: 字符串首字母大写"
+simple_title:         "字符串首字母大写"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,11 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-字符串大写化是将所有字符都改成大写。程序员这么做主要是为了使数据具有一致性，便于比较和排序.
+## What & Why? (什么与为什么？)
+将字符串变为大写意味着把所有字母都转换为它们的大写形式。程序员这样做主要是为了统一数据格式或进行不区分大小写的比较。
 
-## 如何做：
-在Go语言中，`strings`包提供了`ToUpper`函数来实现这一功能：
+## How to: (如何做：)
+Go提供了一个标准库`strings`，其中包含一个ToUpper函数，用于将字符串转换成大写。让我们来看看怎么用。
 
 ```Go
 package main
@@ -25,21 +25,19 @@ import (
 )
 
 func main() {
-	str := "hello, world!"
-	fmt.Println(strings.ToUpper(str))
+	str := "hello, 世界"
+	upperStr := strings.ToUpper(str)
+	fmt.Println(upperStr) // 输出: HELLO, 世界
 }
 ```
-运行结果输出为：
-```
-HELLO, WORLD!
-```
-## 深入挖掘
-1. 历史背景：在早期的编程语言如COBOL中，只支持大写字母。这也是今天在很多编程语言中我们提供这类函数的历史原因.
-2. 替代方式：除了使用内置函数，你也可以使用循环遍历字符串中的每个字符，然后使用`unicode`包中的`ToUpper`函数将其转化为大写.
-3. 实现细节：`ToUpper`函数在内部遍历字符串中的每个字符，然后使用`unicode`包中的`ToUpper`函数将其转化为大写。有了这个背景知识，你就可以理解为什么`ToUpper`函数可以处理包括Unicode在内的所有文本。
 
-## 另请参阅
-- Go语言标准库文档：https://golang.org/pkg/
-- Unicode字符数据库：https://www.unicode.org/charts/
-- Go语言字符串和字符的介绍: https://studygolang.com/articles/11802
-- Go语言strings包的源码: https://github.com/golang/go/tree/master/src/strings
+## Deep Dive (深入探索)
+在Go语言的早期版本中，也有将字符串变为大写的需求，但随着国际化的增长，处理各种语言的大写转换变得复杂。`strings.ToUpper`不仅对ASCII码有效，它兼顾Unicode字符，使得它可以处理包括汉字在内的世界上大多数写作系统。
+
+替代方案中，如果你关心性能或特定场景，你可能会编写自定义的大写转化函数。例如，使用`unicode`标准库中的`To`函数可以更细粒度地控制转换过程。
+
+实现细节上，`ToUpper`函数内部使用`unicode.SimpleFold`函数，遍历每个字符，查找它的大小写对应形式。
+
+## See Also (另请参阅)
+- Go标准库文档中的strings包：[strings package](https://pkg.go.dev/strings)
+- Unicode标准库文档：[unicode package](https://pkg.go.dev/unicode)

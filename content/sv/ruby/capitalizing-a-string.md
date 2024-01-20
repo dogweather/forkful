@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "Ruby: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,31 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att omvandla en sträng till stora bokstäver innebär att ändra alla bokstäver i en sträng till deras majuskelformer. Programmerare gör det för att underlätta jämförelser mellan strängar och förbättra läsbarheten.
+Att "capitalizing a string” innebär att göra den första bokstaven i en textsträng stor (eller versal). Programmerare gör detta för att följa språkliga normer, förbättra läsbarheten och hantera användarinmatningar.
 
-## Hur man gör:
-Ruby gör det enkelt genom att erbjuda den inbyggda metoden `upcase`. Så här använder du den:
+## Så här gör du:
+```Ruby
+# Exempel 1: Använda `capitalize`
+greeting = "hej värld"
+puts greeting.capitalize  # Output: "Hej värld"
 
-```ruby
-# Skapar en sträng
-s = "hej världen!"
+# Exempel 2: Capitalize alla ord
+phrase = "välkommen till ruby"
+puts phrase.split.map(&:capitalize).join(' ')  # Output: "Välkommen Till Ruby"
 
-# Omvandlar strängen till stora bokstäver
-puts s.upcase
+# Exempel 3: Capitalize med 'unicode-utils'
+require 'unicode_utils/upcase'
+puts UnicodeUtils.upcase("köttbullar är gott", :sv)  # Output: "Köttbullar Är Gott"
 ```
 
-Det här kommer att skriva ut:
+## Fördjupning
+Att göra bokstäver stora är inte något nytt. Historiskt har vi använt detta i skriftspråket för att markera namn och början på meningar. I Ruby kan `.capitalize` göra första bokstaven stor, men bara den. För varierande behov och andra språk än engelska kan metoden vara begränsad, eftersom den inte hanterar speciella tecken eller fler ord. 
 
-```
-HEJ VÄRLDEN!
-```
+Alternativ inkluderar `.titleize` från Rails som stora bokstäver på alla ord i en sträng, eller externa bibliotek som 'unicode-utils' som hanterar internationella tecken på ett mer fullständigt sätt. I utförandet påpekar vi att `capitalize` endast gör det första tecknet stort och omvandlar resten av strängen till små bokstäver, medan `upcase` från 'unicode-utils' kan stora bokstäver på alla tecken i enlighet med Unicode-standarder.
 
-## Djupdykning
-Metoden `upcase` har varit en del av Ruby sedan de tidigaste versionerna av språket. Det är en del av standardbiblioteket för strängar, vilket innebär att du kan använda den direkt på alla strängobjekt du skapar.
-
-Om du vill omvandla en sträng till stora bokstäver samtidigt som du bevarar några av dess ursprungliga bokstäver, t.ex. första bokstaven i varje ord, kan du använda `capitalize` eller` titleize` (det senare kräver aktiveringsdräkten).
-
-Intern implementation av `upcase` i Ruby tar hänsyn till tecken uppslukning, vilket gör den mer tillförlitlig än att bara byta ASCII-värden.
-
-## Se Även
-Se [Ruby officiella dokumentationen](https://ruby-doc.org/core-2.5.1/String.html) för mer information om `upcase` och andra strängmetoder. Om du är intresserad av att förstå mer om strängars intern representation i Ruby, ta en titt på [denna artikel](https://www.honeybadger.io/blog/ruby-s-unicode-support/).
+## Se även
+- Ruby-dokumentationen: https://ruby-doc.org/core-3.1.2/String.html#method-i-capitalize
+- Rails-guide för `titleize`: https://api.rubyonrails.org/classes/String.html#method-i-titleize
+- Unicode Utils gem: https://github.com/lang/unicode_utils
+- Ruby Style Guide: https://rubystyle.guide/#strings

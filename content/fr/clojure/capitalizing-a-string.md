@@ -1,7 +1,7 @@
 ---
-title:                "Mettre une chaîne en majuscules"
-html_title:           "Clojure: Mettre une chaîne en majuscules"
-simple_title:         "Mettre une chaîne en majuscules"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,58 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-------
+## What & Why?
+Majusculer une chaîne, c'est transformer toutes les lettres en majuscules. Les programmeurs l'utilisent pour normaliser des textes en vue de comparaisons ou d'affichages uniformes.
 
-## Quoi & Pourquoi ?
+## How to:
+En Clojure, on majuscule avec `clojure.string/upper-case` :
 
-Capitaliser une chaîne de caractères, c'est transformer chaque première lettre d'un mot en majuscule. Les programmeurs le font généralement pour faciliter la lecture ou pour suivre les conventions stylistiques.
+```clojure
+(require '[clojure.string :as str])
 
-------
-
-## Comment faire :
-
-Capitalisation de base :
-
-```Clojure 
-(clojure.string/capitalize "bonjour tout le monde")
-```
-Sortie :
-```Clojure 
-"Bonjour tout le monde"
+(str/upper-case "Salut Clojure !")
+;; Résultat: "SALUT CLOJURE !"
 ```
 
-Capitalisation de chaque mot :
+## Deep Dive
+Dans le monde de la programmation, majusculer une chaîne est un concept ancien. Avant Unicode, travailler avec des ASCII était plus simple. Maintenant, la fonction `clojure.string/upper-case` gère Unicode, donc c'est plus complexe sous le capot.
 
-```Clojure 
-(->> "bonjour tout le monde"
-     (clojure.string/split #" ")
-     (map clojure.string/capitalize)
-     (clojure.string/join " "))
+Avant `clojure.string/upper-case`, on aurait pu utiliser `map` et `char` pour faire une fonction soi-même :
+
+```clojure
+(defn to-upper-case [s]
+  (apply str (map #(Character/toUpperCase %) s)))
 ```
+Cependant, cette méthode brute ne gère pas les spécificités de chaque langue. Le passage à `clojure.string/upper-case` offre une abstraction qui gère ces détails.
 
-Sortie :
-```Clojure 
-"Bonjour Tout Le Monde"
-```
+Alternativement, on peut dire que majusculer est contextuel. Par exemple, pour le turc, la lettre "i" majuscule n'est pas "I" avec un point. Ces subtilités linguistiques rendent `upper-case` plus complexe qu'il paraît.
 
-------
-
-## Plongée en profondeur :
-
-La fonction `clojure.string/capitalize` convertit le premier caractère de la chaîne en majuscule et les caractères restants en minuscules. Historiquement, cela fait partie des opérations de base sur les chaînes de caractères dans de nombreux langages de programmation.
-
-Alternativement, on pourrait utiliser Java interopérabilité pour capitaliser une chaîne :
-
-```Clojure 
-(.toUpperCase "bonjour tout le monde")
-```
-
-Cependant, cette opération ne capitalise pas chaque mot de la chaîne, seulement la première lettre.
-
-Note : L'opération de capitalisation dans Clojure n'est pas locale (elle ne tient pas compte de la langue utilisée). Si vous avez besoin d'une capitalisation sensible à la langue, il est recommandé d'utiliser l'interopérabilité Java avec `java.text.Collator`.
-
-------
-
-## Voir aussi :
-
-3. [API Java pour la manipulation en majuscules/minuscules de la chaîne](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())
+## See Also
+- La [documentation officielle de Clojure](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/upper-case), pour le détail des fonctions de chaîne.
+- La [page de Unicode](http://www.unicode.org) pour comprendre comment les majuscules fonctionnent dans différents alphabets.
+- [Wikipedia sur ASCII](https://en.wikipedia.org/wiki/ASCII) pour l'histoire du codage de caractères avant Unicode.

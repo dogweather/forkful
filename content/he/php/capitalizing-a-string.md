@@ -1,7 +1,7 @@
 ---
-title:                "הגדלת אותיות במחרוזת"
-html_title:           "PHP: הגדלת אותיות במחרוזת"
-simple_title:         "הגדלת אותיות במחרוזת"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,25 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-אילוץ אותיות במחרוזת מתייחס לפעולה של שינוי אות הראשונה בכל מילה לאות גדולה. מתכנתים משתמשים בזה למטרות עיצוב וקריאות, תוך שמירה על חוקי התחביר של שפה מסוימת.
+## מה ולמה?
 
-# איך לעשות את זה:
-עיבוד מחרוזות ב-PHP הוא משימה פשוטה עם הפונקציה ucwords().
+בעברית: עיצוב מחרוזת לאותיות גדולות הוא שינוי של טקסט כך שכל האותיות בו יהיו גדולות. תוכניתנים עושים זאת לצורך אחידות, קריאות או עמידה בדרישות פורמט.
 
-```PHP
-$text = "מה היום השבוע?";
-$capitalizedText = ucwords($text);
-echo $capitalizedText;
+## איך לעשות:
+
+כדי להפוך מחרוזת לאותיות רישיות בקלות, השתמש בפונקציה `strtoupper`. פה יש דוגמה:
+
+```php
+<?php
+$text = "שלום עולם";
+$capitalizedText = strtoupper($text);
+
+echo $capitalizedText; // תוצאה: שלום עולם באותיות רישיות
+?>
 ```
 
-הפלט של קוד זה יהיה: "מה היום השבוע?" - שימו לב שכל אות ראשונה בכל מילה הפכה לאות גדולה.
+שים לב: בעברית אין הבדל בין אותיות קטנות לגדולות, אבל זה יעבוד על אנגלית ושפות אחרות.
 
-# צלילה עמוקה:
-אילוצי שפות אחרות (למשל, שפות שמשתמשות באותיות לועזיות) מוסיפות אות גדולה ראשונה لלמילה בלבד. אבל, זה לא עובד עם כל השפות. לדוגמה, עברית לא משתמשת בחוקי Case כך ש ucwords() לא ישנה ראשי תיבות. כדי לטפל בראשי תיבות בשפות אחרות, תוכל ליצור פונקציה משלך.
-אלטרנטיבית, אם אתה מטפל במחרוזות גדולות, varchar() יהיה יותר מהיר.
+## עיון מעמיק:
 
-# ראה גם:
-1. [PHP: ucwords](https://www.php.net/manual/en/function.ucwords.php)
-2. [PHP for Beginners by PHP Official Site](https://www.php.net/manual/en/tutorial.php)
-3. [PHP String functions by W3Schools](https://www.w3schools.com/php/php_string.asp)
+השימוש באותיות גדולות במחשבים מתחיל בשנות ה-60 וה-70 עם תקני ASCII ו-EBCDIC שהיו מבוססים רק על אותיות רישיות. כיום, הצורך באותיות גדולות משמש גם לעיצוב ויזואלי וגם לתכנות קייס-סנסיטיב. ב-PHP, למשל, יש פונקציות נוספות כגון `strtolower` להפוך לאותיות קטנות, ו`ucfirst` לראשית גדולה. כל הפונקציות האלו משחקות עם היצוג הבינארי של האותיות במחשב.
+
+בפיתוח ווב ואפליקציות, חשוב לזכור שמעבר ל-PHP, פעמים רבות מבוצעת עיבוד ועיצוב של מחרוזות בצד הלקוח (עם JavaScript, למשל), או בשכבת הנתונים (עם SQL או נוסחאות של מסד נתונים).
+
+## ראה גם:
+
+- [PHP strtolower](https://www.php.net/manual/en/function.strtolower.php)
+- [PHP ucfirst](https://www.php.net/manual/en/function.ucfirst.php)
+- [PHP ucwords](https://www.php.net/manual/en/function.ucwords.php)
+- [ASCII Table and Description](https://www.asciitable.com/)

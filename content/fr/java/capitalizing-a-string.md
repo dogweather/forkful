@@ -1,7 +1,7 @@
 ---
-title:                "Mettre une chaîne en majuscules"
-html_title:           "Java: Mettre une chaîne en majuscules"
-simple_title:         "Mettre une chaîne en majuscules"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,50 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi & Pour quoi?
+## Quoi & Pourquoi ?
 
-(What & Why?)
+Mettre en majuscules une chaîne de caractères signifie transformer toutes ses lettres en caractères majuscules. Les programmeurs le font souvent pour uniformiser les données textuelles ou pour des besoins esthétiques, comme dans les titres.
 
-La mise en majuscule d'une chaîne consiste à changer la première lettre de chaque mot en majuscule. Les programmeurs le font souvent pour améliorer la lisibilité et l'esthétique d'une interface utilisateur ou pour normaliser les entrées de données.
+## Comment faire :
 
-## Comment faire:
-
-(How to:)
-
-Voici un exemple simple d'utilisation de la méthode `toTitleCase` de l'`java.lang.Character` pour mettre en majuscule une chaîne en Java. 
-
-```Java
-String phrase = "c'est un joli jour";
-String[] mots = phrase.split("\\s");
-StringBuilder nouveauTitre = new StringBuilder();
-
-for(String mot : mots){
-    nouveauTitre.append(Character.toTitleCase(mot.charAt(0))).append(mot.substring(1)).append(" ");
+```java
+public class CapitalizeExample {
+    public static void main(String[] args) {
+        String original = "bonjour le monde!";
+        String capitalized = original.toUpperCase();
+        System.out.println(capitalized);
+    }
 }
-
-System.out.println(nouveauTitre.toString().trim());
 ```
 
-Ce code va produire le résultat suivant :
-
+Sortie :
 ```
-"C'est Un Joli Jour"
+BONJOUR LE MONDE!
 ```
 
-## Plongée en profondeur :
+## Plongée Profonde
 
-(Deep Dive)
+Historiquement, la conversion de textes en majuscules remonte aux premières machines à écrire et aux premiers ordinateurs qui ne distinguaient pas toujours les majuscules des minuscules. Dans Java, `toUpperCase()` est la méthode utilisée pour capitaliser des chaînes. Elle est sensible à la locale : par défaut, elle utilise la locale de l'environnement d'exécution, mais on peut spécifier une locale si nécessaire. Une alternative est d'utiliser la bibliothèque Apache Commons Lang avec `StringUtils.upperCase(String str)`, qui peut être pratique pour ses nombreuses méthodes de manipulation de chaînes. En interne, `toUpperCase()` va itérer sur les caractères de la chaîne, les convertir un par un en majuscules en utilisant leur code Unicode et reconstruire une nouvelle chaîne.
 
-La précédente méthode `toTitleCase` a été introduite dans Java 8. Avant cela, les programmeurs utilisaient une combinaison de méthodes de la classe `String`. 
+## Voir Aussi
 
-Comme alternative à la méthode `toTitleCase`, vous pouvez utiliser `WordUtils.capitalizeFully` de `org.apache.commons.lang3.text` si vous utilisez `Apache Commons`.
-
-D'un point de vue de l'implémentation, `toTitleCase` convertit le caractère en une majuscule Unicode, ce qui est aligné avec le standard Unicode pour le changement de casse.
-
-## Voir aussi :
-
-(See Also)
-
-- Pour plus d'informations sur le changement de casse en Java, consultez la documentation officielle de Java : [java.lang.Character](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html)
-- Pour le traitement de chaînes de caractères avec Apache Commons, voir [org.apache.commons.lang3.text.WordUtils](https://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/text/WordUtils.html)
-- Pour une compréhension plus approfondie du standard Unicode, visitez le site officiel : [Unicode Standard](https://www.unicode.org/standard/standard.html)
+- La documentation officielle de la méthode `String.toUpperCase()` : [Oracle Docs](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#toUpperCase())
+- Un guide sur la classe `String` de Java : [Java String Guide](https://www.baeldung.com/java-string)
+- Apache Commons Lang `StringUtils` : [Apache Commons Lang](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html)

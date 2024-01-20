@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon kirjainten muuttaminen isoiksi"
-html_title:           "Arduino: Merkkijonon kirjainten muuttaminen isoiksi"
-simple_title:         "Merkkijonon kirjainten muuttaminen isoiksi"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,43 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? (Mikä & Miksi?)
+Isoilla kirjaimilla kirjoittaminen tarkoittaa merkkijonon muuntamista siten, että kaikki kirjaimet ovat suuraakkosia. Ohjelmoijat käyttävät tätä standardoidakseen tekstin esittämisen, helpottamaan vertailua tai korostamaan tietyn tekstin osan tärkeyttä.
 
-Merkkijonojen isoiksi kirjoittaminen on prosessi, jossa kaikki merkkijonokirjeet muunnetaan isoihin kirjaimiin. Ohjelmoijat tekevät sen tehdäkseen merkkijonoista huomattavampia tai yhdenmukaistavat tiedon ulkoasun.
-
-## Kuinka Tehdä:
-
-Tässä on perusesimerkki siitä, kuinka muunnat merkkijonon isoiksi kirjaimiksi Arduino-ympäristössä:
+## How to: (Kuinka tehdä:)
 ```Arduino
 void setup() {
-  // Sarjaportin määrittäminen kommunikointia varten.
   Serial.begin(9600);
 }
 
 void loop() {
-  
-  String s = "ohjelmointia suomeksi";
-  s.toUpperCase();
-  
-  Serial.println(s);
-  delay(2000);
-  
+  String message = "Moi Suomi!";
+  String upperCaseMessage = message.toUpperCase();
+  Serial.println(upperCaseMessage);
+  delay(2000); // Odotetaan kaksi sekuntia ennen seuraavaa toistoa.
 }
 ```
-Kun tämä koodi toteutetaan, tulostus on seuraava:
-```Arduino
-OHJELMOINTIA SUOMEKSI
-```
+Näyteväli: "MOI SUOMI!"
 
-## Sukellus syvyyksiin:
+## Deep Dive (Sukellus syvemmälle)
+String-objektin muuntaminen kokonaan suuraakkosiin on yksinkertainen toiminto, mutta mutkistuu, jos otetaan huomioon kansainvälinen merkistökoodaus ja eri kielet. Arduino käyttää `toUpperCase()`-metodia, joka on ollut osa kielen standardeja kirjastoja jo vuosia. Tämä metodi käsittelee ANSI:n määrittämiä merkkejä, mutta voi kohdata ongelmia erikoismerkkien tai esimerkiksi skandinaavisten merkkien kanssa. Vaihtoehtoisena ratkaisuna voit käyttää kirjastoja, jotka tukevat laajempaa merkistöä. Kapitalisointiin liittyvä suorituskyky on harvoin huolenaihe, mutta tietyn pituisten merkkijonojen käsittely voi hidastaa mikrokontrollerin toimintaa.
 
-Tämä merkkijonojen pääoman vaihto ei ole uusi käsite. Se on ollut mukana ohjelmointikielessä jo pitkään, ja sitä käytetään usein, kun haluat tehdä tekstistäsi sääntöjen mukaista tai kun haluat tehdä tekstin erottuvammaksi.
-
-On olemassa vaihtoehtoinen tapa isontaa merkkijonoja tikutusfunktion avulla. Se on yksityiskohtaisempi ja monimutkaisempi lähestymistapa, mutta se tarjoaa enemmän joustavuutta. Tämä tapa on kuitenkin harvinaisempi, koska useimmissa tapauksissa `toUpperCase` -metodi on riittävä.
-
-On tärkeää myös ymmärtää, että `toUpperCase`-metodi muuttaa alkuperäisen merkkijonon. Jos haluat säilyttää alkuperäisen merkkijonon samalla kun luot iso kirjain version, sinun on ensin kopioitava merkkijono.
-
-## Katso Myös:
-
-Jos haluat oppia lisää merkkijonojen muuntamisesta, tässä on muutamia linkkejä, jotka voivat olla hyödyllisiä:
-3. Arduino Programming Course: [Link](https://startingelectronics.org/software/arduino/learn-to-program-course/)
+## See Also (Katso myös)
+- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Unicode-koodaus: https://en.wikipedia.org/wiki/Unicode
+- C++ STL string transform -funktio: http://www.cplusplus.com/reference/algorithm/transform/

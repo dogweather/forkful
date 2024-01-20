@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "Elixir recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -12,36 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Capitalizing a string means making the first character of the string a capital letter. Programmers use this for better readability and data preprocessing, and when the output string must start with a capital letter.
+Capitalizing a string means making the first letter of a given string uppercase — if it's a letter. Programmers do it for formatting consistency, user interface polish, or meeting data standards.
 
 ## How to:
 
-In Elixir, we use the `String.capitalize/2` function to capitalize a string. Here's a straightforward example:
-
 ```elixir
-IO.puts(String.capitalize("elixir"))
+# Capitalize a string in Elixir
+string = "elixir programming"
+capitalized_string = String.capitalize(string)
+IO.puts capitalized_string
+
+# Output will be:
+# Elixir programming
 ```
 
-The output will be:
-
 ```elixir
-Elixir
-```
+# Capitalize all words in a string
+string = "elixir programming language"
+capitalized_words = String.split(string)
+                    |> Enum.map(&String.capitalize/1)
+                    |> Enum.join(" ")
 
-Piece of cake, right? It not only capitalizes the first character but also turns the rest of the string to lowercase. Handy!
+IO.puts capitalized_words
+
+# Output will be:
+# Elixir Programming Language
+```
 
 ## Deep Dive
 
-Now, let's go a bit deeper. Historically, this functionality isn't unique to Elixir; it exists in most of the other programming languages like Python, JavaScript, etc.
+Back in the early days of computing, programming languages often didn't worry about string manipulation as part of the core language. Elixir, however, comes with a robust module of string functions out of the box, thanks to its roots in the mature Erlang VM (BEAM). Capitalizing strings in Elixir is a breeze with the `String` module.
 
-An alternative would be to do the capitalizing manually with `String.slice` but that's reinventing the wheel. Always use built-in functions whenever possible - they're optimized for performance.
+Beyond the straightforward `String.capitalize/1`, you might encounter scenarios requiring more complex behavior. Say you need to capitalize titles or names in a culturally sensitive manner. Elixir's `String` module alone won't cut it; you'd look toward libraries like `Cldr` for internationalization support.
 
-As for implementation details, Elixir's `String.capitalize/2` function follows Unicode Standard Annex rules (#29) for sentence boundaries, treating CR, LF, and other paragraph separators as sentence boundaries. Word boundaries aren't treated as sentence boundaries though.
+Under the hood, `String.capitalize/1` takes into account Unicode and multibyte characters, not just ASCII. This means it handles a wide range of languages and alphabets correctly, rather than just English text.
+
+As an alternative, you could roll your own capitalization function, but in most cases, the built-in methods should suffice. With custom implementations, you open the door to subtle bugs, especially with international text. Why reinvent the wheel when you've got high-quality tools ready to go?
 
 ## See Also
 
-Ready to learn more about strings in Elixir? Explore these links:
-
-- Elixir's guide to [Strings and Binaries](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html).
-- Documentation for [String.capitalize/2](https://hexdocs.pm/elixir/String.html#capitalize/2)
-- Unicode Standard Annex [#29](https://www.unicode.org/reports/tr29/) with sentence boundaries rules.
+- Elixir's official `String` documentation: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
+- Elixir School for learning more about strings and other basics: [https://elixirschool.com/en/lessons/basics/strings/](https://elixirschool.com/en/lessons/basics/strings/)
+- ExCldr library for internationalization support: [https://hex.pm/packages/ex_cldr](https://hex.pm/packages/ex_cldr)

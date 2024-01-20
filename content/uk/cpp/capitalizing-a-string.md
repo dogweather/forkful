@@ -1,7 +1,7 @@
 ---
-title:                "Переведення рядка в верхній регістр"
-html_title:           "C++: Переведення рядка в верхній регістр"
-simple_title:         "Переведення рядка в верхній регістр"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,44 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
+## What & Why? (Що і Чому?)
+Capitalizing a string means transforming all its characters into uppercase. Programmers do it for formatting, user interface consistency, or to ensure case-insensitive comparisons.
 
-Заглушання рядків - це процес перетворення всіх букв рядка на великі. Програмісти роблять це для уніфікації тексту та спрощення подальшого порівняння рядків.
-
-## Ось як:
-
-У C++ можна використовувати стандартну бібліотеку `<algorithm>` та `<cctype>` для того, щоб заглушити рядок. Ось швидкий приклад:
-
+## How to: (Як це зробити:)
 ```C++
-#include <algorithm>
-#include <cctype>
 #include <iostream>
+#include <algorithm>
 #include <string>
 
 int main() {
-    std::string str = "Hello, World!";
-    std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-    std::cout << str << std::endl;
+    std::string text = "Привіт, як справи?";
+    std::transform(text.begin(), text.end(), text.begin(),
+                   [](unsigned char c){ return std::toupper(c); });
+
+    std::cout << text << std::endl; // Виведе: ПРИВІТ, ЯК СПРАВИ?
     return 0;
 }
 ```
 
-Коли ви запустите цей код, ви побачите наступний вивід:
-```
-HELLO, WORLD!
-```
+## Deep Dive (Занурення вглиб)
+In the past, capitalizing a string in C++ meant manually iterating over each character and using functions from the `cctype` library. Today, `<algorithm>` and lambda expressions simplify the process. Alternatives include creating a custom function for transformation or using a third-party library.
 
-## Занурення у деталі
+The `std::toupper` function works per character and might not handle locale-specific rules perfectly. If you need to handle internationalization properly, consider using a library like ICU (International Components for Unicode) which is designed for such tasks.
 
-Заглушання рядка було відомо десятиліттями та широко використовується у багатьох мовах програмування. І хоча на перший погляд це може здатися тривіальним завданням, є декілька нюансів, які слід взяти до уваги.
+Implementation-wise, remember that characters in C++ are ASCII by default. Unicode strings, common in Ukrainian text, need encoding-aware functions to capitalize correctly.
 
-Метод `::toupper`, який використовується вище, працює зі знаками ASCII і не розрахований на роботу з не-ASCII символами. Це може бути проблемою, якщо ви працюєте з міжнародними рядками. Для таких ситуацій краще використовувати більш універсальні бібліотеки, такі як ICU.
-
-У C++ є кілька альтернатив заглушанню рядка, таких як `std::toupper` та `boost::algorithm::to_upper_copy`. Вибір між ними залежить від вашого конкретного випадку використання.
-
-## Це може вас зацікавити
-
-1. [Документація C++ по `::toupper`](https://en.cppreference.com/w/cpp/string/byte/toupper)
-2. [Документація Boost `to_upper_copy`](https://www.boost.org/doc/libs/1_75_0/doc/html/boost/algorithm/to_upper_copy.html)
-3. [ICU - Бібліотека для роботи з міжнародними рядками](http://userguide.icu-project.org/strings)
-4. [Що таке ASCII?](https://uk.wikipedia.org/wiki/ASCII)
+## See Also (Дивіться також)
+- C++ `<locale>` library: http://www.cplusplus.com/reference/locale/
+- ICU project: http://site.icu-project.org/
+- C++ `<algorithm>` library: http://www.cplusplus.com/reference/algorithm/

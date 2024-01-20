@@ -1,6 +1,6 @@
 ---
 title:                "Zamiana liter na wielkie w ciągu znaków"
-html_title:           "C#: Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
 simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "C#"
 category:             "C#"
@@ -10,40 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Poradnik do Kapitalizacji Tekstu w języku C# 
+## What & Why? (Co & Dlaczego?)
+Capitalizing a string means converting the first character of each word to uppercase. Programmers do it for formatting output, making titles, or simply because some data standards demand it.
 
-## Co i Dlaczego?
-Kapitalizacja tekstu oznacza konwersję pierwszych liter każdego słowa do wielkich liter. Programiści robią to z wielu powodów, takich jak poprawa czytelności i zgodność z konwencjami dotyczącymi tytułów.
+## How to: (Jak to zrobić:)
+To capitalize a string in C#, you can use the built-in `TextInfo` class from the `System.Globalization` namespace or roll out your custom method. Here's how you can do it:
 
-## Jak to zrobić:
-Metodą kapitalizacji w C# jest `TextInfo.ToTitleCase`. Poniżej znajduje się przykładowy kod:
 ```C#
 using System;
 using System.Globalization;
 
-class MainClass {
-  public static void Main (string[] args) {
-    TextInfo myTI = new CultureInfo("en-US",false).TextInfo;
-    string myString = "witaj świecie";
-    string myCapitalizedString = myTI.ToTitleCase(myString);
-    Console.WriteLine (myCapitalizedString);
-  }
+public class Program
+{
+    public static void Main()
+    {
+        string originalText = "warszawa jest stolicą polski";
+        
+        // Using CultureInfo
+        TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+        string capitalizedText = textInfo.ToTitleCase(originalText);
+        Console.WriteLine(capitalizedText); // Output: Warszawa Jest Stolicą Polski
+
+        // Custom method
+        string CustomCapitalize(string text)
+        {
+            if (string.IsNullOrEmpty(text)) return text;
+            return char.ToUpper(text[0]) + text.Substring(1);
+        }
+
+        string customCapitalizedText = CustomCapitalize(originalText);
+        Console.WriteLine(customCapitalizedText); // Output: Warszawa jest stolicą polski
+    }
 }
-
 ```
-Output:
-```
-Witaj Świecie
-```
-## Dogłębne zrozumienie
-C# nie zawiera wbudowanej metody do kapitalizacji, ale `ToTitleCase` w klasie `TextInfo` jest najbliższym odpowiednikiem. 
 
-Projektanci języka C# mogli zdecydować, że nie ma potrzeby włączenia takiej funkcji z naruszeniem zasady jednego odpowiedzialnego za najmniejszą możliwą funkcję.
+## Deep Dive (W głąb tematu):
+Capitalizing strings dates back to typewriters and early computers, where typography conventions transitioned into code. Today, C#'s `TextInfo.ToTitleCase` is great but not perfect; it doesn't lower the case of the rest of the words, for example.
 
-Alternatywą dla użycia `ToTitleCase` jest napisanie własnej funkcji lub korzystanie z bibliotek zewnętrznych, które oferują tę funkcję.
+There are two common alternatives to the `TextInfo` class:
+1. Using regular expressions with `Regex.Replace` to find word boundaries and capitalize letters.
+2. Implementing a custom method, which allows more control and enables you to handle edge cases, like acronyms or culture-specific rules.
 
-Ważnym elementem projektu `ToTitleCase` jest to, że nie zmienia wielkości liter w środku słów. Dlatego "iPhone" zostanie zachowane, zamiast stawać się "IPhone".
+Implementation wise, think about things like performance and memory usage. A custom method is potentially leaner, but the `TextInfo` approach—a product of many developers’ work—is often more robust and handles many language-specific quirks right out of the box.
 
-## Zobacz także
-- Microsoft Documentation on TextInfo.ToTitleCase: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase
-- StackOverflow Discussion on Capitalizing in C#: https://stackoverflow.com/questions/4483886/how-can-i-convert-a-string-to-title-case
+## See Also (Zobacz również):
+- Microsoft Documentation on `TextInfo.ToTitleCase`: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase
+- Stack Overflow discussion on string capitalization in C#: https://stackoverflow.com/questions/4135317/make-first-letter-of-a-string-upper-case-with-maximum-performance
+- In-depth exploration of string manipulation performance in C#: https://dotnetcoretutorials.com/2020/07/07/performance-of-string-manipulation-in-csharp/

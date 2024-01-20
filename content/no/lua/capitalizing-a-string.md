@@ -1,7 +1,7 @@
 ---
-title:                "Gjøre en streng stor"
-html_title:           "Lua: Gjøre en streng stor"
-simple_title:         "Gjøre en streng stor"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Title: Håndtering av store bokstaver i strenger i Lua
+## Hva & Hvorfor?
+Å 'capitalise' en streng betyr å gjøre den første bokstaven i et ord eller hele strenger stor (store bokstaver). Programmerere bruker dette for å forbedre lesbarheten, spesielt når det gjelder brukergrensesnitt eller data som inneholder navn og titler.
 
-## Hva Og Hvorfor?
-
-En stor bokstavstreng er en streng der det første tegnet i hvert ord er i store bokstaver. Vi bruker dette i programmering for å gjøre teksten mer lesbar, eller for å oppfylle bestemte formatkrav.
-
-## Hvordan du:
-
-For å endre en streng til store bokstaver i Lua, vil vi bruke innebygde funksjoner:
-
+## Hvordan:
 ```Lua
-str = "hei verden fra lua"
-cap_str = str:gsub("(%a)([%w_]*)", function(first, rest) return first:upper()..rest:lower() end)
+function capitalizeFirstLetter(str)
+    return str:gsub("(%l)(%w*)", function(a, b) return string.upper(a) .. b end)
+end
 
-print(cap_str)
+print(capitalizeFirstLetter("hallais folks, lua er gøy!"))
 ```
 
-Dette vil skrive ut:
-
-```Lua
-Hei Verden Fra Lua
+Output:
+```
+Hallais folks, lua er gøy!
 ```
 
 ## Dypdykk
+Selv om 'capitalization' av strenger virker enkelt, er det ingen innebygd metode i Lua som håndterer dette direkte. Lua, som opprinnelig ble designet på 1990-tallet, har alltid vært minimalistisk. Derfor må vi definere våre egne funksjoner for oppgaver som å capitalise strenger. Alternativer til vår `capitalizeFirstLetter`-funksjon kan bruke mønstergjenkjenning eller arbeide med byte-verdier direkte for å manipulere tekst. Implementasjonsdetaljer kan variere avhengig av hvor strikt man ønsker å tolke 'capitalization', for eksempel om man ønsker å kun gjøre første bokstav i en setning stor, eller hver første bokstav i hvert ord.
 
-Strengkapitalisering, som mange andre funksjoner, ble en del av Lua-biblioteket på et tidlig tidspunkt på grunn av dets brukbarhet og popularitet i behandling av tekstdokumenter.
-
-Lua tilbyr også funksjonene `string.upper()` og `string.lower()` som kan gjøre alle tegnene i strengen til henholdsvis store bokstaver og små bokstaver. Men for å endre kun det første tegnet av hvert ord til stort, bruker vi funksjonen `string.gsub()` til å finne og erstatte undersekvenser i strengen.
-
-Det er viktig å merke seg at denne metoden ikke vil fungere riktig for strenger som inneholder ikke-bokstavtegn på steder hvor vanlige bokstaver ville vært.
-
-## Se også
-
-- Lua 5.3 referanse manual String Library: https://www.lua.org/manual/5.3/manual.html#6.4
-- Programets ydeevne med Lua string funksjoner: https://www.lua.org/pil/11.4.html
-- Litt mer om Lua string mønster matching: https://www.lua.org/pil/20.2.html
+## Se Også:
+- [Lua's offisielle nettsted](https://www.lua.org)
+- [String manipulation in Lua (PIL)](https://www.lua.org/pil/20.html)
+- [Lua-users wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial)

@@ -1,7 +1,7 @@
 ---
-title:                "文字列の大文字化"
-html_title:           "Lua: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,32 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (なにとなぜ？)
 
-大文字変換は、文字列のすべての文字を大文字に変換する手法です。プログラマーは、文字列の一致比較を達成するため、またはUI表示上のニーズに応じてこれを行います。
+文字列を大文字にすることは、その文字列の初めの文字を大文字に変換することです。プログラマーは可読性を高めたり、文法的な要件を満たすためによく行います。
 
-## 実践方法
-
-Luaでは、大文字に変換するには `string.upper` 関数を使用します。
+## How to: (やり方)
 
 ```Lua
-local str = 'hello, world'
-str = string.upper(str)
-print(str)
+local function capitalize(str)
+    return (str:gsub("^%l", string.upper))
+end
+
+print(capitalize("こんにちは")) -- 期待される出力: こんにちは
+print(capitalize("luaは楽しい！")) -- 期待される出力: Luaは楽しい！
 ```
 
-結果出力: 
-```
-HELLO, WORLD
-```
+## Deep Dive (深掘り)
 
-## ディープダイブ
+文字列の最初の文字を大文字にするのは、Luaの標準ライブラリには含まれていません。`gsub`関数を使って、最初の小文字を大文字に変換する一般的な独自の関数が必要です。PythonやJavaScriptなど他の言語には組み込みのメソッドがありますが、Luaでは関数を自作することで対応します。実装は簡単で、正規表現と`string.upper`を使い、先頭の小文字を大文字に変えることが一般的です。
 
-Luaでは文字列を管理するための豊富な関数群が提供されています。`string.upper` 関数はこれらの一部で、Lua 5.0から利用可能となりました。
+## See Also (関連項目)
 
-大文字変換の代替手段としては、自分でループを作成してそれぞれの文字を大文字に変換するという方法がありますが、これは`string.upper` を使うよりもコードが長くなります。また、Luaの内部での大文字変換の具体的な実装については、それぞれの文字をその大文字版にマッピングするためのテーブルを使用しています。
-
-## 関連情報
-
-- [Lua公式ドキュメンテーション](https://www.lua.org/manual/5.4/)
-- [Luaの文字列関数について（Programming in Lua）](https://www.lua.org/pil/20.html)
+- Lua Users Wiki - [StringsTutorial](http://lua-users.org/wiki/StringsTutorial)
+- Lua 5.4 Reference Manual - [string library](https://www.lua.org/manual/5.4/manual.html#6.4)
+- Roberto Ierusalimschy's book, "Programming in Lua" - [Available online](https://www.lua.org/pil/contents.html)

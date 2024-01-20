@@ -1,7 +1,7 @@
 ---
-title:                "Переведення рядка в верхній регістр"
-html_title:           "Gleam: Переведення рядка в верхній регістр"
-simple_title:         "Переведення рядка в верхній регістр"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,49 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і навіщо?
+## What & Why? (Що і чому?)
+Capitalizing a string means making its first character uppercase and the rest lowercase. It's often done to standardize the formatting of user input for names, titles, or to begin sentences properly.
 
-Капіталізація рядка - це процес зміни першої літери рядка на велику. Програмісти використовують це, наприклад, для форматування виведення даних або поліпшення читабельності коду.
-
-## Як це робити:
-
-Все настільки просто, що вам не запаморочується голова. Подивимось:
+## How to: (Як це зробити:)
+In Gleam, you'll write a function to capitalize strings. Check this out:
 
 ```gleam
-import gleam/string.{concat, slice, to_upper, to_lower}
-
-fn capitalize(s: String) -> String {
-  let first_char = s
-  |> slice(0, 1)
-  |> to_upper()
-
-  let rest = s
-  |> slice(1, None)
-  |> to_lower()
-
-  concat([first_char, rest])
+pub fn capitalize(text: String) -> String {
+  let first = text
+    |> String.slice(0, 1)
+    |> String.uppercase()
+  
+  let rest = text
+    |> String.slice(1, text.len())
+    |> String.lowercase()
+  
+  first + rest
 }
 
-fn main(_) {
-  let _ = capitalize("hello, world")
-  |> should.equal("Hello, world")
+pub fn main() {
+  let message = "hello, world!"
+  capitalize(message)
+  |> io.println
 }
 ```
-Програма вище спочатку вирізає першу літеру з рядка `s`, перетворює її в верхній регістр, потім вирізає решту рядка, перетворює її на нижній регістр, і потім конкатенує (об'єднує) ці дві частини разом.
 
-## Детальніше:
+If you run this, your output will look like this:
 
-Історично, капіталізація рядків була важливою в типографії для визначення імен, власних назв, та іншого. В програмуванні, це може допомогти уникнути помилок і зрозуміти код краще.
+```
+Hello, world!
+```
 
-Крім `Gleam`, мови програмування, такі як `Python` і `JavaScript`, також мають вбудовані функції для капіталізації рядків.
+## Deep Dive (Поглиблений аналіз)
+Before programming, capitalization rules were set by language experts and typesetters. In the digital age, we mimic those rules in code. We could also use libraries or external tools but writing a custom function gives us control and understanding. Under the hood, Gleam and most programming languages define string manipulation functions that respect Unicode, which is essential for proper capitalization, especially with non-ASCII characters.
 
-Насправді, `Gleam` здійснює капіталізацію рядків через об'єднання трьох операцій: витягування частини рядка (`slice`), конвертації рядка до верхнього/нижнього регістра (`to_upper`/`to_lower`), та конкатенації рядків (`concat`).
+Some languages provide built-in methods; for instance, Python has `.capitalize()`. Gleam doesn't have a built-in capitalization function – hence our custom one.
 
-## Додатково:
+## See Also (Додатково)
+To go further into string manipulation in Gleam, check out the official documentation:
 
-Ось деякі посилання на інші ресурси, які пов'язані з темою:
 
-- Документація `Gleam`: https://gleam.run/docs/
-- GitHub `Gleam`: https://github.com/gleam-lang/gleam
-- Як капіталізувати рядки в `Python`: https://docs.python.org/3/library/stdtypes.html#str.capitalize
-- Як капіталізувати рядки в `JavaScript`: https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+And for general understanding of Unicode and character properties:
+
+- The Unicode Consortium: [https://unicode.org](https://unicode.org)

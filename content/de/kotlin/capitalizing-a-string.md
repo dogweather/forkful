@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "Kotlin: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Großschreibung von Zeichenketten in Kotlin
+## Was & Warum?
+Das Großschreiben eines Strings bedeutet, alle Buchstaben in Großbuchstaben umzuwandeln. Programmierer nutzen dies, um Text konsistent zu gestalten oder um Schlüsselwörter hervorzuheben.
 
-## Was und Warum?
-Großschreibung der Zeichenkette (oder das Capitalizing) bedeutet, den ersten Buchstaben jedes Wortes in einer Zeichenkette in Großbuchstaben zu konvertieren. Programmierer machen das oft, um Texte menschenlesbar zu machen, z.B. in Titeln oder am Anfang von Sätzen.
-
-## So geht's:
-In Kotlin verwenden wir die Methode `capitalize()` oder `replaceFirstChar()`, um den ersten Buchstaben eines Strings zu großzuschreiben. Hier sind einige Beispiele:
-
+## Wie geht das?
 ```Kotlin
-val kleinerText = "hallo Welt"
-println(kleinerText.capitalize()) // Ausgabe: "Hallo Welt"
+fun main() {
+    val kleinerText = "kotlin ist spaß"
+    val großerText = kleinerText.uppercase()
 
-val meinText = "kotlin macht Spaß"
-val meinGroßerText = meinText.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
-println(meinGroßerText) // Ausgabe: "Kotlin macht Spaß"
+    println(großerText)  // KOTLIN IST SPAß
+}
 ```
 
-## Vertiefung
-Die Großschreibung von Zeichenketten ist ein gängiges Konzept in vielen Programmiersprachen und gibt es schon seit den frühen Tagen der Informatik. In Kotlin gab es vor der Version 1.5 die Methode `capitalize()`, die jedoch als veraltet gekennzeichnet und durch die Methode `replaceFirstChar()` ersetzt wurde, um mehr Klarheit zu schaffen.
+## Deep Dive
+Großschreibung war schon in frühen Computersystemen wichtig, um Befehle oder Konstanten hervorzuheben. In Kotlin verwendet `uppercase()`, um einen String zu kapitalisieren. Früher gab es `toUpperCase()`, aber seit Kotlin 1.5 ist `uppercase()` die bevorzugte Option. Es befolgt Unicode-Standards und ist damit international einsetzbar. Zusätzlich gibt es auch `capitalize()`, welches nur den ersten Buchstaben eines Strings in einen Großbuchstaben umwandelt. Dies wurde jedoch seit Kotlin 1.5 als veraltet markiert und durch `replaceFirstChar` ersetzt, sollte man dies individuell anwenden wollen.
 
-Als Alternativen zur Großschreibung des gesamten Strings können Sie nur den ersten Buchstaben großschreiben oder die Methode `toUpperCase()` verwenden, um jeden Buchstaben des Strings in Großbuchstaben zu konvertieren.
+Alternativen:
+- Man kann `map` und `joinToString` nutzen, um eigene Konvertierungsfunktionen zu schreiben. Nicht benötigt für einfache Kapitalisierung, aber nützlich für spezifische Anpassungen.
+- Bibliotheken wie Apache Commons bieten `StringUtils.capitalize` an, falls man in einem umfangreichen Projekt arbeitet, wo diese Bibliotheken bereits im Einsatz sind.
 
-Wenn Sie scharfsinnig auf die Implementierungsdetails achten: `capitalize()` und `replaceFirstChar()` verwenden intern `Char.titlecase()`, was bedeutet, dass sie den Unicode-Standard für die Großschreibung von Zeichen respektieren.
+Implementierungsdetails:
+- `uppercase()` nutzt intern die Funktion `toUpperCase` des Java `String` Objekts, kümmert sich jedoch um spezielle Fälle, wie es Unicode-Standard erfordert.
+- In Performance-kritischen Anwendungen sollte man sich bewusst sein, dass Großschreibung eine neue String-Instanz erzeugt und die Original-Instanz unverändert lässt. 
 
 ## Siehe auch
-
-Durch den Einsatz sinnvoller Funktionen wie `capitalize()` und `replaceFirstChar()` können Sie die Qualität Ihres Kotlin-Codes erheblich verbessern und sowohl Ihre Arbeitskollegen als auch Ihre Nutzer glücklich machen.
+- [Kotlin Dokumentation zu upperCase()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/uppercase.html)
+- [Unicode Standard für Groß- und Kleinschreibung](https://unicode.org/reports/tr21/tr21-5.html)
+- [Apache Commons StringUtils](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html)

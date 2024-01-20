@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "Swift recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,35 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Capitalizing a string means converting the first character of each word in the text, to uppercase. It enhances readability, makes text visually appealing, and enables programmers to establish text standards for their projects.
+Capitalization means changing the first letter of words to uppercase; in strings, it's often about formatting or making text user-friendly. Programmers capitalize strings for readability, to follow grammatical rules, or to match a style guide.
 
 ## How to:
-In Swift, use `capitalized` property of the string to change its first character to upper case. Remember, it only affects the first letter of a word, and leaves the rest of the string as it is.
+Swift makes capitalizing strings straightforward. Here's a quick tour:
 
 ```Swift
-let myString = "hello world"
-let capitalizedString = myString.capitalized
-print(capitalizedString)   //"Hello World"
+let lowercasedString = "hello, world!"
+let titleCased = lowercasedString.capitalized // "Hello, World!"
+let uppercasedString = lowercasedString.uppercased() // "HELLO, WORLD!"
+
+// Sample Output:
+print(titleCased)  // Prints "Hello, World!"
+print(uppercasedString)  // Prints "HELLO, WORLD!"
 ```
-The above code will output: "Hello World"
+
+For more control, we'll dabble with the `Locale`:
+
+```Swift
+let sentence = "the quick brown fox"
+let titleCasedWithLocale = sentence.capitalized(with: Locale(identifier: "en_US"))
+// "The Quick Brown Fox"
+
+// Sample Output:
+print(titleCasedWithLocale)  // Prints "The Quick Brown Fox"
+```
 
 ## Deep Dive
-Historically, capitalizing strings helped typographers distinguish elements in documents. Swift's `capitalized` follows Unicode standards for capitalization, considering language-specific rules. 
+Capitalization in programming has been around as long as we've had digital text processing - it's all about meeting user expectations. While `capitalized` in Swift standardizes strings to Title Case, where the first character of each word is uppercase, there are nuances.
 
-An alternative way to capitalize a string is:
+Historically, programmers needed custom methods to capitalize, handling edge cases themselves. Swift’s `capitalized` takes a locale into account, which matters for proper nouns or locale-specific casing rules.
+
+Speaking of alternatives, those dissatisfied with `capitalized` often turn to regex or write extensions on `String` for more complex rules. Implementation-wise, `capitalized` is essentially a built-in method that loops through the string, applying uppercase to the first letter after a non-letter character.
 
 ```Swift
-myString.uppercased()
+extension String {
+    func customCapitalized() -> String {
+        return self.lowercased().replacingOccurrences(of: "\\b\\w", with: { 
+            guard let firstChar = $0.first else { return $0 }
+            return String(firstChar).uppercased() + $0.dropFirst()
+        }, options: .regularExpression)
+    }
+}
 ```
-This will turn all characters to uppercase, however. If your use case requires only first-letter capitalization, stick with `capitalized`.
 
-Remember, `capitalized` is a computed property, not a method. It returns a new string each call. When using it extensively, consider its effect on performance.
+The above extension uses a regular expression to capitalize the first letter of each word.
 
 ## See Also
-Capitalize strings with special rules? Check out `uppercased(with: Locale?)`:
-
-Expecting a string already in memory when capitalizing? Dive into:
-- [Swift's copy on write.](https://developer.apple.com/videos/play/wwdc2015/414/)
-
-Please note, `capitalized`, `lowercased()` and `uppercased()` are part of `Foundation`. List of String transformations:
-- [Apple Documentation](https://developer.apple.com/documentation/foundation/stringtransform)
+For a deeper dive into Swift string manipulation, here are some helpful resources:
+- [Swift Documentation on Strings](https://developer.apple.com/documentation/swift/string)
+- [Ray Wenderlich's String Tutorial for Swift](https://www.raywenderlich.com/5492-working-with-strings-in-swift)

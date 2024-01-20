@@ -82,4 +82,3 @@ YAML（YAML Ain't Markup Language）は2001年に開始され、データを直�
 - PHP公式ドキュメント内のYAML関数: [https://www.php.net/manual/en/ref.yaml.php](https://www.php.net/manual/en/ref.yaml.php)
 - YAML公式サイト: [https://yaml.org](https://yaml.org)
 - YAML仕様: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
-- PECL yamlパッケージ: [https://pecl.php.net/package/yaml](https://pecl.php.net/package/yaml)

@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग को बड़े अक्षरों में बदलना"
-html_title:           "Elixir: एक स्ट्रिंग को बड़े अक्षरों में बदलना"
-simple_title:         "एक स्ट्रिंग को बड़े अक्षरों में बदलना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-स्ट्रिंग को कैपिटलाइज करना मतलब होता है उसका पहला अक्षर बड़ा (यानी अपरकेस) करना। किसी भी केस को यानी लोअरकेस को अपरकेस में बदलने के लिए प्रोग्रामर इसे उपयोग करते हैं, यह उपयोगी होता हैं जब उन्हें किसी शब्द को स्पष्ट रूप से दर्शाने की आवश्यकता होती है।
+## क्या और क्यों? (What & Why?)
 
-## कैसे करें:
-Elixir में, आप `String.capitalize/2` फ़ंक्शन का उपयोग करके स्ट्रिंग के पहले अक्षर को कैपिटलाइज कर सकते हैं। जैसे की:
+स्ट्रिंग्स को कैपिटलाइज़ करने का मतलब है प्रत्येक शब्द की पहली अक्षर को बड़ा (कैपिटल लेटर) करना। प्रोग्रामर्स यह तब करते हैं जब उन्हें यूजर इंटरफ़ेस या डॉक्युमेंट्स में खास नामों या टाइटल्स को साफ और स्पष्ट दिखाना होता है।
 
-```Elixir
-IO.puts String.capitalize("namaste duniya")
+## कैसे करें? (How to:)
+
+```elixir
+defmodule StringHelper do
+  def capitalize_string(str) when is_binary(str) do
+    str
+    |> String.split()
+    |> Enum.map(&String.capitalize/1)
+    |> Enum.join(" ")
+  end
+end
+
+StringHelper.capitalize_string("नमस्ते, यह एक टेस्ट स्ट्रिंग है।")
 ```
-आउटपुट होता है:
-```
-Namaste duniya
-```
 
-## गहरी जानकारी
+सैंपल आउटपुट: `"नमस्ते, यह एक टेस्ट स्ट्रिंग है।"`
 
-कैपिटलाइजेशन का आविष्कार संचार के उद्देश्यों को और अधिक प्रभावी तरीके से पूरा करने के लिए हुआ। इसे उपयोग में लेने से शब्दों और वाक्यांशों का स्पष्टीकरण करना आसान होता है। 
+## गहराई से जानकारी (Deep Dive)
 
-Elixir में `String.upcase/1` जैसे विकल्प भी हैं, जो स्ट्रिंग के सभी अक्षरों को अपरकेस में बदल देता है, लेकिन यदि आप केवल पहले अक्षर को बदलना चाहते हैं, तो `String.capitalize/2` शायद बेहतर हो सकता है। 
+ईलिक्सिर में स्ट्रिंग को कैपिटलाइज़ करने की कार्यप्रणाली बहुत सरल है। `String.capitalize/1` फंक्शन हर शब्द के पहले अक्षर को बड़ा कर देता है। ऐतिहासिक संदर्भ में, यह कंसेप्ट पुरानी प्रोग्रामिंग भाषाओं से आया है। विकल्प के रूप में, कुछ प्रोग्रामिंग भाषाओं में अलग बिल्ट-इन फंक्शंस होते हैं पर ईलिक्सिर इसे बहुत आसान बनाता है। `Enum.map/2` के साथ सम्मिलन करके, हम पूरी स्ट्रिंग के हर शब्द को लूप कर सकते हैं।
 
-`String.capitalize/2` फ़ंक्शन Elixir के `String` मॉड्यूल का हिस्सा है, जो UTF-8 संकोच को समर्थन करता है। इसका मतलब है कि यह Unicode आधारित भाषाओं के साथ काम करने में सक्षम है।
+## सम्बंधित स्रोत (See Also)
 
-## और भी देखें:
-   
-String.capitalize/2 - [https://hexdocs.pm/elixir/String.html#capitalize/2](https://hexdocs.pm/elixir/String.html#capitalize/2)
-
-String.upcase/1 - [https://hexdocs.pm/elixir/String.html#upcase/1](https://hexdocs.pm/elixir/String.html#upcase/1)
+- [Elixir String Module Documentation](https://hexdocs.pm/elixir/String.html)
+- [Elixir School: Strings](https://elixirschool.com/en/lessons/basics/strings/)
+- [Programming Elixir 1.6 by Dave Thomas](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)

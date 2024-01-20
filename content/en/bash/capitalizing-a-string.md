@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "Bash recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Bash"
 category:             "Bash"
@@ -12,49 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Capitalizing a string in programming refers to converting the first letter of each word in a string to uppercase. Programmers usually do this to format text for readability, especially for titles, headings, or when presenting data to end-users.
+Capitalizing a string means changing the first letter of each word to uppercase. Programmers do this for formatting, consistency, and readability, especially in titles or headings.
 
 ## How to:
 
-The Bash commands to capitalize a string depend on string manipulation capabilities of the shell. In the latest version of Bash, you use string substitution. Here's how:
+In Bash, you can capitalize strings in several ways. Here's a classic approach using `awk`:
 
 ```Bash
-string="hello, world"
-echo "${string^}"
+echo "hello world" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'
 ```
 
-This would output:
+Output:
+```
+Hello World
+```
+
+Or, with pure Bash:
 
 ```Bash
-Hello, world
+string="hello world"
+capitalize() {
+  echo "$1" | while IFS=" " read -r word; do 
+    echo -n "${word^} " 
+  done
+  echo
+}
+capitalize "$string"
 ```
 
-To capitalize every word in a string:
-
-```Bash
-echo "${string^^}"
+Output:
+```
+Hello World 
 ```
 
-Which would output:
+## Deep Dive:
 
-```Bash
-HELLO, WORLD
-```
+Back in the day, ‘awk’ was the go-to tool for text manipulation. It’s robust but less intuitive for beginners. With the evolution of Bash, especially from version 4 onwards, capabilities like string manipulation have improved.
 
-## Deep Dive
+The `awk` way is classic, iterating through each word and capitalizing the first letter. Pure Bash uses parameter expansion: `${word^}` capitalizes the first letter of `$word`. Parameter expansion is direct and quick, cutting down on the number of external tools needed.
 
-Historically, string manipulation wasn't Bash's strong suit. Early versions didn't support it. However, with Bash 4.0, things changed. Features like string substitution were introduced, making it easier to manipulate strings.
+Why does this matter? Well, capitalizing strings is a common need across programming tasks. Proper capitalization can be critical for user interfaces or data processing where presentation matters. Knowing how to do this in your shell can save the day.
 
-However, Bash isn't the only way. Other programming languages like Python, Java, JavaScript etc., have built-in methods to capitalize strings. They can often be more efficient, especially for complicated manipulations.
+## See Also:
 
-As for implementation, when Bash capitalizes a string, it changes the ASCII value of the lowercase characters to their uppercase equivalents. Specifically, it subtracts 32 from the ASCII value of each lowercase letter, which gives the uppercase equivalent - this happens behind the scenes when you use the "^" or "^^" substitution operators.
-
-## See Also
-
-Here are a few resources for more in-depth information:
-
-
-For capitalizing strings in other programming languages:
-
-2. [JavaScript: Capitalizing Strings](https://www.w3schools.com/jsref/jsref_touppercase.asp)
-3. [Java: String Manipulation](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+- Bash manual for parameter expansion: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
+- `awk` introduction and usage: https://www.gnu.org/software/gawk/manual/gawk.html
+- StackOverflow discussions on text manipulation in Bash: https://stackoverflow.com/questions/tagged/bash+string+capitalization

@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando uma string"
-html_title:           "C#: Capitalizando uma string"
+html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 programming_language: "C#"
 category:             "C#"
@@ -10,15 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Capitalizando uma String em C#
+## What & Why?
+Capitalizar uma string significa transformar todas as letras iniciais das palavras em maiúsculas. Fazemos isso para garantir a consistência da formatação nos dados e melhorar a legibilidade, especialmente em títulos e nomes próprios.
 
-## O que & Porquê?
-
-Capitalizar uma string refere-se a transformar o primeiro caractere de cada palavra em maiúscula. Os programadores fazem isso para melhorar a legibilidade e aparência dos dados de texto.
-
-## Como fazer:
-
-Em C#, temos o método ToTitleCase em TextInfo que é uma parte do sistema.Globalization namespace. Aqui está um exemplo básico:
+## How to:
+Para capitalizar uma string em C#, você pode usar o método `ToTitleCase()` da classe `TextInfo`, que faz parte da biblioteca `System.Globalization`. Aqui está um exemplo rápido:
 
 ```C#
 using System;
@@ -28,41 +24,23 @@ class Program
 {
     static void Main()
     {
-        string minhaString = "olá mundo!";
-        TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
-        minhaString = myTI.ToTitleCase(minhaString);
-        Console.WriteLine(minhaString); // Saída: Olá Mundo!
+        TextInfo textInfo = new CultureInfo("pt-BR", false).TextInfo;
+        string exemplo = "este é um exemplo de capitalização.";
+        string resultado = textInfo.ToTitleCase(exemplo);
+        
+        Console.WriteLine(resultado); // Saída: Este É Um Exemplo De Capitalização.
     }
 }
 ```
 
-## Mergulho Profundo
+## Deep Dive
+Antigamente, a capitalização em programação nem sempre foi tão direta, especialmente ao lidar com diferentes idiomas e convenções de escrita. No C#, o `ToTitleCase()` simplificou bastante o processo, mas ainda é importante entender suas nuances. Por exemplo, ele não alterará as palavras já em maiúsculas (para evitar mudanças em siglas, por exemplo).
 
-O método ToTitleCase tem raízes na criação do .NET Framework, fazendo parte da classe TextInfo. Como alternativa, os programadores podem usar a combinação de métodos ToLower() e ToUpper(), mas isso é mais demorado.
+Existem alternativas como o uso de expressões regulares (`Regex`) ou programação LINQ para manipular strings mais complexas. A implementação de uma função personalizada também é possível caso precise de uma lógica de capitalização específica.
 
-Sobre a implementação, ToTitleCase itera sobre cada caractere da string, transformando-o para maiúsculo se é o primeiro caractere de uma palavra, e para minúsculo caso contrário.
+## See Also
+Para se aprofundar em manipulação de strings e outras funcionalidades da classe `TextInfo`, confira:
 
-```C#
-public string ToTitleCase(string str) 
-{
-    string[] words = str.Split(' ');
-    for (int i = 0; i < words.Length; i++)
-    {
-        if (words[i].Length > 0)
-        {
-            char firstLetter = char.ToUpper(words[i][0]);
-            string restOfWord = words[i].Substring(1).ToLower();
-            words[i] = firstLetter + restOfWord;
-        }
-    }
-    return string.Join(' ', words);
-}
-```
-Note que este método não funciona perfeitamente com palavras conectadas por hífens ou apóstrofos.
-
-## Veja Também
-
-1. [Método ToTitleCase](https://docs.microsoft.com/pt-br/dotnet/api/system.globalization.textinfo.totitlecase)
-2. [Namespace System.Globalization](https://docs.microsoft.com/pt-br/dotnet/api/system.globalization)
-3. [Métodos de String em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.string)
-4. [C# Programação](https://www.tutorialsteacher.com/csharp/csharp-tutorials)
+- Documentação da Microsoft sobre TextInfo: https://docs.microsoft.com/pt-br/dotnet/api/system.globalization.textinfo
+- Guia sobre expressões regulares em C#: https://docs.microsoft.com/pt-br/dotnet/standard/base-types/regular-expressions
+- Introdução ao LINQ em C#: https://docs.microsoft.com/pt-br/dotnet/standard/linq/

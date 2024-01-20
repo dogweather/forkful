@@ -1,7 +1,7 @@
 ---
-title:                "Приведення рядка до великої букви"
-html_title:           "Arduino: Приведення рядка до великої букви"
-simple_title:         "Приведення рядка до великої букви"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,38 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це та навіщо це потрібно?
+## What & Why? / Що таке і навіщо?
 
-Капіталізація рядка - це перетворення першого символу цього рядка на велику букву. Програмісти роблять це для того, щоб покращити читабельність та оформлення тексту в коді.
+Capitalize a string means converting the first letter of each word to uppercase, while keeping the rest lowercase. Programmers use it to normalize data input, for readability, or to meet coding standards.
 
-## Як це зробити:
+## How to: / Як це зробити:
 
-На жаль, в Arduino немає вбудованої функції для капіталізації рядків. Однак це не проблема - ми можемо створити власну функцію, яка це робить:
+In Arduino, you handle strings with the `String` object. Here's how you can capitalize words:
 
 ```Arduino
-String capitalize(String str) {
-  if (str.length() > 0) { 
-       str[0] = toupper(str[0]); 
-  }  
-  return str; 
+String capitalize(String input) {
+  String output = "";
+  bool capitalizeNext = true;
+
+  for (int i = 0; i < input.length(); i++) {
+    if (capitalizeNext && isLowerCase(input[i])) {
+      output += (char)(input[i] - 32); // convert to uppercase
+    } else {
+      output += input[i];
+    }
+    capitalizeNext = isspace(input[i]); // check for space
+  }
+  return output;
 }
 
 void setup() {
-  String myString = "hello world!";
   Serial.begin(9600);
-  Serial.println(capitalize(myString)); 
-  // Outputs: "Hello world!"
+  String myString = "hello world"; // String to capitalize
+  Serial.println(capitalize(myString));
 }
 
-void loop() {}
+void loop() {
+  // Nothing to do here
+}
 ```
-На виході ми отримуємо: "Hello world!"
 
-## Занурення у деталі:
+Sample output:
+```
+Hello World
+```
 
-Капіталізація рядків була важливою операцією з часів, коли люди вперше почали використовувати комп'ютери для обробки тексту. Ця проста акція може значно покращити зрозумілість тексту, коли відповідно використовується. Однак, існує кілька альтернатив капіталізації, включаючи переведення всього тексту у верхній регістр або нижній регістр.
+## Deep Dive / Поглиблене занурення:
 
-## Дивись також:
+Capitalizing strings isn't new. It's been around since the early days of computing. In C, you'd iterate over each character and use ASCII values to transform lowercase to uppercase. Arduino's `String` makes it a bit easier.
 
-- [Офіційна документація до Arduino](https://www.arduino.cc/reference/pl/)
-- [Детальніше про функцію toupper()](http://www.cplusplus.com/reference/cctype/toupper/)
+Alternatives? Sure. You could use `charAt()` and `setCharAt()` to modify the string in place. But this is simpler and cleaner.
+
+As for implementation details, remember that ASCII value of 'a' is 97, and 'A' is 65. The difference is 32, which is why you see `input[i] - 32` in the code.
+
+## See Also / Дивіться також:
+
+- Arduino `String` reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- ASCII table for understanding character conversions: https://www.asciitable.com/
+- More on C/C++ strings for background knowledge: http://www.cplusplus.com/reference/string/string/

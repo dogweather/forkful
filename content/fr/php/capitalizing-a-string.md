@@ -1,7 +1,7 @@
 ---
-title:                "Mettre en majuscule une chaîne"
-html_title:           "PHP: Mettre en majuscule une chaîne"
-simple_title:         "Mettre en majuscule une chaîne"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,37 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## What & Why?
+(Majuscule : Quoi et Pourquoi ?)
 
-Capitaliser une chaîne de caractères, c'est-à-dire rendre la première lettre de chaque mot en majuscule. Les programmeurs font cela pour améliorer l'ergonomie et rendre le texte plus attrayant pour l'utilisateur.
+Capitaliser une chaîne de caractères, c'est transformer la première lettre de chaque mot en majuscule. Les programmeurs l'utilisent souvent pour normaliser des titres ou des noms propres afin de préserver une constance esthétique et une lisibilité dans les interfaces utilisateurs.
 
-## Comment faire :
+## How to:
+(Comment faire : )
 
-Voyez l'exemple de code PHP simple ci-dessous qui utilise la fonction ucfirst():
-```PHP
-<?php
-    $str = 'bonjour, monde!';
-    echo ucfirst($str);
-    // Outputs: Bonjour, monde!
-?>
+PHP facilite la capitalisation des chaînes avec quelques fonctions prêtes à l'emploi. Voici comment utiliser `ucwords()` et `mb_convert_case()` :
+
+```php
+$texte = "bonjour le monde!";
+// Capitalise chaque mot.
+$texteCap = ucwords($texte);
+echo $texteCap; // Affiche : Bonjour Le Monde!
+
+// Pour gérer les caractères multioctets (comme les lettres accentuées) :
+$texteUtf8 = "salut à tous!";
+$texteCapUtf8 = mb_convert_case($texteUtf8, MB_CASE_TITLE, "UTF-8");
+echo $texteCapUtf8; // Affiche : Salut À Tous!
 ```
-Si vous souhaitez capitaliser chaque mot dans la chaîne, utilisez la fonction ucwords():
-```PHP
-<?php
-    $str = 'bonjour, monde!';
-    echo ucwords($str);
-    // Outputs: Bonjour, Monde!
-?>
+
+## Deep Dive
+(Exploration approfondie)
+
+Historiquement, PHP a ajouté `ucwords()` dans les premières versions pour répondre aux besoins de mise en forme des chaines de caractères. Cependant, avec l'internationalisation, `mb_convert_case()` est devenu essentiel pour gérer correctement les caractères hors de la table ASCII standard, comme les accents.
+
+Alternativement, certains préfèrent travailler au niveau des tableaux pour plus de contrôle :
+
+```php
+$texteArray = explode(' ', $texteUtf8);
+$texteArray = array_map(function($mot){
+    return mb_convert_case($mot, MB_CASE_TITLE, "UTF-8");
+}, $texteArray);
+echo implode(' ', $texteArray); // Salut À Tous!
 ```
 
-## Plongée plus profonde :
+Cette technique décompose et reconstruit les chaînes, offrant une flexibilité pour appliquer des règles de capitalisation plus spécifiques.
 
-La capitalisation des chaînes était initialement une convention typographique en anglais utilisée pour mettre en évidence les noms propres et les débuts de phrases. Dans PHP, les fonctions ucfirst() et ucwords() sont disponibles depuis PHP 4 et restent les pistes les plus couramment utilisées pour la capitalisation des chaînes.
+## See Also
+(Voir aussi)
 
-Il existe également d'autres méthodes, comme strtoupper(), qui convertit toute la chaîne en majuscules. En revanche, cette méthode n'est pas recommandée en raison de ses implications sur l'accessibilité.
-
-## Voir aussi :
-
-1. [Documentation PHP: ucwords()](https://www.php.net/manual/fr/function.ucwords.php)
-2. [Documentation PHP: ucfirst()](https://www.php.net/manual/fr/function.ucfirst.php)
-3. [Documentation PHP: strtoupper()](https://www.php.net/manual/fr/function.strtoupper.php)
+- La [documentation officielle de PHP](https://www.php.net/manual/fr/function.ucwords.php) sur `ucwords()`.
+- La [documentation officielle de PHP](https://www.php.net/manual/fr/function.mb-convert-case.php) sur `mb_convert_case()`.
+- Un [guide sur l'utilisation des expressions régulières en PHP](https://www.php.net/manual/fr/reference.pcre.pattern.syntax.php) si vous voulez plus de contrôle dans la manipulation des chaînes.

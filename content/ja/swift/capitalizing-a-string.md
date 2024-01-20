@@ -1,7 +1,7 @@
 ---
-title:                "文字列を大文字化する"
-html_title:           "Swift: 文字列を大文字化する"
-simple_title:         "文字列を大文字化する"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,44 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ?
+## What & Why? (何となぜ？)
+文字列を大文字にするっていうのは、例えば「hello」を「HELLO」に変換することだよ。これをする理由は、タイトルやユーザー入力の正規化、そして視認性の向上のためだね。
 
-文字列の大文字化とは文字列内のすべての単語の最初の文字を大文字にすることを言います。プログラマーたちはコードを整理したり、ユーザーフレンドリな表示を作るためによくこれを使用します。
-
-## どうやって:
-
-Swiftでは、 `uppercased()` メソッドを使用して文字列を簡単に大文字化できます。以下にその方法を示します:
-
+## How to: (方法)
 ```Swift
-let lowerCaseString = "hello world"
-let upperCaseString = lowerCaseString.uppercased()
-print(upperCaseString)
+// Swiftでの文字列を大文字に変換する方法
+let lowercaseString = "hello, japan!"
+let uppercaseString = lowercaseString.uppercased()
+
+print(uppercaseString)  // 出力: "HELLO, JAPAN!"
 ```
 
-出力:
-```
-HELLO WORLD
-```
+## Deep Dive (掘り下げ)
+文字列を大文字に変換するのは、プログラミングにおいてよく使用される操作の一つ。Swift では `uppercased()` 関数を使うことでこれを簡単に行うことができる。
 
-## ディープダイブ
+歴史的には、古いコンピューターシステムやプログラミング言語では大文字と小文字を区別しないことが多かった。しかし、今日では大文字と小文字を明確に区別し、それぞれが異なる意味を持つことが一般的だ。
 
-文字列を大文字化するこの概念は、コンピューターが開発されて以来ずっと存在しています。早い時期には、大文字と小文字の区別がありませんでしたが、やがて異なるケースが導入され、この操作が重要になりました。
+Swift以外にも、他の言語で似たような機能がある。例えば、JavaScript では `toUpperCase()`、Python では `upper()` と書く。違いはあるけど、基本的なアイデアは同じだね。
 
-代替手段として、各単語の最初だけ大文字にする `capitalized` メソッドもあります。
+実装の詳細としては、`uppercased()` 関数はUnicodeをサポートしている。だから、様々な言語の特殊な文字も正しく大文字に変換されるよ。
 
-```Swift
-let lowerCaseString = "hello world"
-let capitalizedString = lowerCaseString.capitalized
-print(capitalizedString)
-```
-
-出力:
-```
-Hello World
-```
-
-Swiftでは、 `uppercased()` と `capitalized` は共に `String` タイプのインスタンスメソッドです。これらは元の文字列を変更せず、新しい大文字化された文字列を返します。
-
-## 参照
-
-2. [スタック・オーバーフロー - Swiftで文字列を大文字にする](https://stackoverflow.com/questions/24159386/swift-capitalize-words-in-string)
+## See Also (関連情報)
+- Swiftの公式ドキュメント: [String](https://developer.apple.com/documentation/swift/string)
+- Unicodeについての詳細: [Unicode.org](http://unicode.org/)
+- 他言語の文字列大文字化機能比較: [Wikipedia - Case Conversion](https://en.wikipedia.org/wiki/Letter_case#Case_conversion)

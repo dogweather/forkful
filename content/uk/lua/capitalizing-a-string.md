@@ -1,7 +1,7 @@
 ---
-title:                "Приведення рядка до великих букв"
-html_title:           "Lua: Приведення рядка до великих букв"
-simple_title:         "Приведення рядка до великих букв"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,27 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Іноді, у програмуванні, нам потрібно зробити усі літери у рядку великими - це називається "capitalizing". Програмісти роблять це, щоб забезпечити уніформність даних та полегшити порівняння рядків.
+## What & Why? (Що і Чому?)
+Capitalizing a string means making the first letter of each word uppercase. Programmers do it to make text look nicer or follow certain writing rules.
 
-## Як це зробити:
-Lua має вбудовану функцію `string.upper`, яка перетворює всі літери рядка в верхній регістр. Ось приклад:
-
+## How to: (Як це зробити:)
 ```Lua
-s = "hello, world"
-print(s:upper())
+-- Capitalize each word in a string
+function capitalize(str)
+  return (str:gsub("(%l)(%w*)", function(a,b) return a:upper()..b end))
+end
+
+print(capitalize("привіт, це lua стаття!"))  -- Output: Привіт, Це Lua Стаття!
 ```
 
-При виконанні цього коду ви побачите наступне:
+## Deep Dive (Занурення у деталі)
+In Lua, there's no built-in function to capitalize strings. Historically, programmers write their own or use libraries. `gsub` is versatile, applying a function to pattern matches – perfect for capitalization, where we match the first letter of each word. An alternative is iterating over words, but `gsub` keeps our code concise. Understanding the Lua pattern matching system enhances implementation – `%l` matches lowercase letters, `%w` matches a word's remaining letters.
 
-```Lua
-"HELLO, WORLD"
-```
-
-## Поглиблений аналіз
-В історії програмування, потреба в capitalizing з'явилася дуже рано, коли програмісти зрозуміли, що рядки повинні потребувати щось більше, ніж просто формування. Іноді вам потрібно змінити регістр літер у рядку, щоб зробити його більш привітним або легше читати. Окрім string.upper, існують і інші способи реалізації цього: можна використовувати цикли, регулярні вирази або навіть написати свою маленьку функцію capitalization.
-
-## Дивіться також:
-1. Офіційна документація Lua про роботу з рядками: https://www.lua.org/pil/20.html
-2. Уроки про програмування на Lua: https://www.tutorialspoint.com/lua/index.htm
-3. Вікі-сторінка про Capitalization (англійською мовою): https://en.wikipedia.org/wiki/Capitalization
+## See Also (Див. також)
+- [Lua 5.4 Reference Manual: Patterns](https://www.lua.org/manual/5.4/manual.html#6.4.1)
+- [Stack Overflow: How do I capitalize the first letter of each word in a string?](https://stackoverflow.com/questions/20284515/how-do-i-capitalize-first-letter-of-first-name-and-last-name-in-lua)

@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות ראשונות גדולות"
-html_title:           "C: הפיכת מחרוזת לאותיות ראשונות גדולות"
-simple_title:         "הפיכת מחרוזת לאותיות ראשונות גדולות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,46 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הפיכת מחרוזת לאותיות גדולות היא פעולה שבה הופכים את האותיות הקטנות במחרוזת לאותיות גדולות. מתכנתים עשויים להשתמש בפעולה זו לשימושים שונים, כולל ניתוח של נתונים, ׸ידוא של קלט, ויצירת ממשק משתמש מגויס.
-
+הפיכת מחרוזת לאותיות רישיות היא התהליך שבו אתה משנה את כל אותיות המחרוזת לאותיות גדולות. תוכניתנים עושים זאת לשם עקביות, קריאות, או לתפוקה שדורשת את זה, כמו כותרות או קודים.
 
 ## איך לעשות:
-נספר איך להפוך מחרודת לאותיות גדולות בשפת התכנות C:
+קטע קוד ב-C להמחשה:
 
 ```C
-#include <ctype.h>
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-void to_upper(char* str) {
-    for(int i = 0; str[i]; i++){
-        str[i] = toupper(str[i]);
+void capitalize(char *str) {
+    while (*str) {
+        *str = toupper((unsigned char) *str);
+        str++;
     }
 }
 
 int main() {
-    char str[] = "hebrew programming";
-    to_upper(str);
-    printf("%s\n", str);
+    char myString[] = "shalom, world!";
+    capitalize(myString);
+    printf("%s\n", myString);    // Output: SHALOM, WORLD!
+    return 0;
 }
-
-```
-פלט מדגם:
-
-```C
-HEBREW PROGRAMMING
 ```
 
-## צלילה עמוקה:
-הפיכת מחרוזת לאותיות גדולות היא פעולה לא אופציונלית בכלל השפות.ב- ANSI C, הם כללו את `toupper` כחלק מ- `ctype.h`, אבל חלופות נוספות עשויות לשרת צרכים שונים בשפות תכנות אחרות.
-
-אם תרצו לנסות גרסה בראשי תיבות (על-פי ASCII), אתם יכולים לעשות את השינוי הפשוט הבא:
-
-```C
-str[i] = str[i] & 0xDF;
+כאשר אתה מריץ את הקוד הזה, הפלט יהיה:
+```
+SHALOM, WORLD!
 ```
 
-## ראה עוד:
-- [מדריך תכנות בC](https://www.learn-c.org)
-- [תיעוד `toupper`](https://www.cplusplus.com/reference/cctype/toupper/)
-- [תיעוד שפת C](http://www.open-std.org/jtc1/sc22/wg14/)
+## עיון נוסף:
+בחלוף השנים, שפות תכנות התפתחו עם פונקציות פנימיות למניפולציות מחרוזת. ב-C, אתה צריך לעשות את זה בעצמך, כמודגם. דוגמאות אלטרנטיביות כוללות שימוש ב-fgetc ו-fputc לקריאה וכתיבה אות לאות, או בשפות גבוהות יותר כמו Python עם .upper(). הכי חשוב לזכור שהפונקציה toupper מצריכה קלט מסוג unsigned char לקידוד נכון של האותיות.
+
+## ראה גם:
+- התיעוד הרשמי של C לפונקציה `toupper`: https://en.cppreference.com/w/c/string/byte/toupper
+- מדריך לפונקציות למחרוזות ב-C: https://www.tutorialspoint.com/c_standard_library/string_h.htm
+- תיעוד שפת C: http://www.iso-9899.info/wiki/The_Standard

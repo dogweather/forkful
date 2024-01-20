@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon suuraakkostaminen"
-html_title:           "Ruby: Merkkijonon suuraakkostaminen"
-simple_title:         "Merkkijonon suuraakkostaminen"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,27 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pikkukirjaimen korvaaminen isolla kirjaimella Rubyssa: Miksi ja Miten?
+## What & Why? (Mikä & Miksi?)
+Isoilla kirjaimilla kirjoittaminen muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Ohjelmoijat käyttävät sitä, kun haluavat korostaa jotain, kuten nimen alun tai otsikon.
 
-## Mikä & Miksi?
-Kirjaimen suurentaminen eli "capitalizing" tarkoittaa pikkukirjaimen muuttamista isolla kirjaimellä. Ohjelmoijat tekevät tämän usein tekstin esittämiseksi paremmin - esimerkiksi, nimet usein aloitetaan isolla kirjaimella.
-
-## Miten:
-Ruby tekee tämän helpoksi `.capitalize` -metodin avulla. Se muuttaa merkkijonon ensimmäisen kirjaimen isoksi ja muut pieniksi.
-
+## How to: (Kuinka tehdä:)
 ```Ruby
-name = "kalle"
-puts name.capitalize
+# Käytä 'capitalize' metodia aloittaaksesi merkkijonon isolla kirjaimella
+puts "suomi".capitalize  # Tulostaa "Suomi"
+
+# Ketjuta 'capitalize' toisiin metodeihin muokkauksen laajentamiseksi
+puts "hei maailma".split.each(&:capitalize).join(' ')  # Tulostaa "Hei Maailma"
+
+# Rails-kehyksessä 'titleize' metodi voi olla kätevä
+puts "hei maailma".titleize  # Tulostaa "Hei Maailma" (vain Railsissa)
 ```
 
-Tämän koodinpätkän tuloste on `Kalle`. Helppoa, eikö niin?
+## Deep Dive (Sukellus syvälle):
+String-objektin pääkuori on ollut Rubyssa alusta asti. 'Capitalize'-metodi on suoraviivainen: se tekee ensimmäisestä kirjaimesta ison ja loput pieniksi. Historiallisesti tämä on yksinkertaistanut tekstinkäsittelyä. Vaihtoehtoja sisältävät 'upcase' (muuttaa kaikki kirjaimet isoiksi), 'downcase' (muuttaa kaikki pieniksi), ja 'swapcase' (vaihtaa isoja ja pieniä kirjaimia päittäin).
 
-## Syvällisempi katsaus
-Historiallisessa kontekstissa, iso kirjain markkinoi erityisesti nimiä tai aloituslauseita. Rubyssa `.capitalize` on peräisin alkuperäisestä String-luokasta, jonka vuoksi sen tyypillinen käyttö on säilynyt samanlaisena.
+Rails-kehyksen 'titleize' metodi menee pidemmälle muuttaen jokaisen sanan ensimmäisen kirjaimen isoksi. Se on osa Railsin 'Active Support' -kirjastoa, ei puhtaan Rubyn kielen sisäänrakennettua toiminnallisuutta.
 
-Tietysti on myös vaihtoehtoja. `.upcase` muuttaa kaikki kirjaimet isoiksi, ja `.downcase` muuttaa kaikki kirjaimet pieniksi. Kuitenkin, `.capitalize` on ainutlaatuinen, koska se tekee molempia: Muuntaa ensimmäisen kirjaimen isoksi ja loput pieniksi.
+Rubiini toteuttaa merkkijono-operaatiot erittäin tehokkaasti, joten vaikka käsitteletkin suuria tekstimääriä, 'capitalize' ja muut vastaavat metodit toimivat sulavasti.
 
-`.capitalize` toteutetaan sisäisesti verraten verraten ensimmäistä merkkiä ASCII-koodistossa ja muuttamalla se isoksi, jos se on pieni.
-
-## Katso myös
-2. ASCII-koodiston taulukko: [https://www.asciitable.com/](https://www.asciitable.com/)
+## See Also (Katso myös):
+- Rubyn dokumentaatio String#capitalize -metodista: [ruby-doc.org/core/String.html#method-i-capitalize](https://ruby-doc.org/core/String.html#method-i-capitalize)
+- Rails-dokumentaatio String#titleize -metodista Active Support -kirjastosta (vain jos käytät Railsia): [api.rubyonrails.org/classes/String.html#method-i-titleize](https://api.rubyonrails.org/classes/String.html#method-i-titleize)
+- Ruby Style Guide, hyvät käytännöt Rubyn kirjoittamiseen: [rubystyle.guide](https://rubystyle.guide)

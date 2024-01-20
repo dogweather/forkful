@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana tekstu na wielkie litery"
-html_title:           "C: Zamiana tekstu na wielkie litery"
-simple_title:         "Zamiana tekstu na wielkie litery"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,44 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+## What & Why?
 ## Co i dlaczego?
 
-Zmienianie wszystkich liter w napisie na duże, zwane też kapitalizacją, to proste zadanie w programowaniu. Programiści używają tej techniki, by na przykład ułatwić użytkownikom czytanie wyjścia programu.
+Capitalizing a string means converting the first letter of each word to uppercase. Programmers do it to format text for consistency, readability, or to meet specific data standards.
 
+## How to:
 ## Jak to zrobić:
 
-Podajemy tu kod z użyciem standardowej biblioteki `ctype.h` w wersji C99:
-
 ```C
-#include <ctype.h>
 #include <stdio.h>
+#include <ctype.h>
 
-void naDuze(char *napis) {
-    while(*napis) {
-        *napis = toupper((unsigned char) *napis);
-        napis++;
+// Function to capitalize each word in a string
+void capitalizeString(char *str) {
+    int inWord = 0;
+    
+    while (*str) {
+        if (isalpha(*str) && !inWord) {
+            *str = toupper((unsigned char) *str);
+            inWord = 1;
+        } else if (!isalpha(*str)) {
+            inWord = 0;
+        }
+        str++;
     }
 }
 
 int main() {
-    char napis[] = "dzień dobry, panie programisto!";
-    naDuze(napis);
-    printf("%s\n", napis); 
-    // Wyjście: "DZIEŃ DOBRY, PANIE PROGRAMISTO!"
+    char text[] = "witaj, świecie! jak się masz?";
+    capitalizeString(text);
+    printf("Capitalized: %s\n", text);
     return 0;
 }
+
+```
+Sample Output:
+```
+Capitalized: Witaj, Świecie! Jak Się Masz?
 ```
 
-## Głębsze spojrzenie
+## Deep Dive
+## Uwagi dodatkowe
 
-Kapitalizacja napisów pojawiła się w bardzo wczesnych językach programowania. Bazuje ona na różnicy wartości ASCII pomiędzy dużymi a małymi literami.
+Back in the day, data was often stored in uppercase only, partially because early computers lacked the capability to display lowercase letters. Now, capitalizing strings is commonplace, especially in user interfaces.
 
-Istnieją też alternatywne sposoby kapitalizacji napisów, np. używanie funkcji `toupper` bezpośrednio z biblioteki `ctype.h`.
+Alternatives to consider: Instead of rolling out your own function, third-party libraries like `Boost` in C++ offer string manipulation utilities with more features and error handling.
 
-Główne szczegóły implementacyjne polegają na przechodzeniu przez każdy znak w napisie i użyciu funkcji `toupper` na każdym znaku łanucha. Ważne jest jednak, że `toupper` działa tylko na małe litery. Dlatego też konieczne jest rzutowanie na `(unsigned char)`, aby uniknąć niezdefiniowanych zachowań.
+Implementation details: When capitalizing a string that contains multibyte encoding like UTF-8, you'd need a more sophisticated approach than `toupper`, which is designed for single-byte characters. Libraries like `ICU` provide this functionality.
 
-## Zobacz też
+## See Also
+## Zobacz także
 
-1. Dokumentacja <ctype.h>: https://pl.wikibooks.org/wiki/C/Biblioteki_standardowe/ctype.h
-2. Kod ASCII: https://pl.wikipedia.org/wiki/ASCII
-3. Inne techniki na kapitalizację napisów: https://stackoverflow.com/questions/15508570/c-program-to-capitalize-first-letter-of-each-word-in-string
+- C Standard Library documentation: https://en.cppreference.com/w/c/string/byte
+- The ICU Project for Unicode support: http://site.icu-project.org/
+- Boost Libraries: https://www.boost.org/

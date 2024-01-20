@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "Swift: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,36 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum? Und Wofür?
+## What & Why? (Was & Warum?)
+String-Kapitalisierung verwandelt alle Buchstaben in Großbuchstaben oder macht den ersten Buchstaben eines Satzes groß. Das hilft bei der Konsistenz in Nutzeroberflächen oder beim Vergleichen von Text ohne Groß- und Kleinschreibung zu beachten.
 
-Kapitalisieren eines Strings bedeutet, den ersten Buchstaben eines Satzes oder Wortes groß zu schreiben. Programmierer machen dies oft, um Benutzereingaben zu formatieren oder Text für die Ausgabe angemessen darzustellen.
-
-# Wie man:
-In Swift können wir den ersten Buchstaben eines Strings mit der Funktion `capitalized` groß schreiben. Hier ist ein einfacher Code und seine Ausgabe:
-
+## How to: (Wie geht das?)
 ```Swift
-let title = "swift programmierung"
-let capitalizedTitle = title.capitalized
-print(capitalizedTitle)
+let smallTalk = "hallo, wie geht's?"
+let shouting = smallTalk.uppercased() // "HALLO, WIE GEHT'S?"
+let properGreeting = smallTalk.capitalized // "Hallo, Wie Geht's?"
+
+// Beispiel-Ausgabe
+print(shouting)      // HALLO, WIE GEHT'S?
+print(properGreeting) // Hallo, Wie Geht's?
 ```
-Ausgabe:
-```Swift
-Swift Programmierung
-```
-So einfach ist das, Strings in Swift zu kapitalisieren!
 
-# Mehr Einzelheiten
+## Deep Dive (Tiefgang)
+String-Kapitalisierung in Swift verwendet Funktionen wie `uppercased()` und `capitalized`. `uppercased()` verwandelt jeden Buchstaben in Großbuchstaben, während `capitalized` nur den ersten Buchstaben jedes Wortes groß macht. Seit Swift 1.0 ist das möglich, und es hilft bei der Textverarbeitung enorm.
 
-Historisch gesehen wurde das Kapitalisieren von Strings in der Programmierung verwendet, um das einheitliche Format von Text zu gewährleisten. Kapitalisierte Wörter werden oft verwendet, um Überschriften, Titel und den Beginn neuer Sätze zu kennzeichnen.
+Alternativen gibt es nicht wirklich, da diese Funktionen Teil der Swift-Standardbibliothek sind und alles Nötige abdecken. Intern verwenden diese Methoden Unicode, um auch mit nicht-lateinischen Alphabeten umgehen zu können.
 
-Es gibt auch alternative Methoden zur Kapitalisierung von Strings in Swift, wie das Durchlaufen des Strings und das Kapitalisieren jedes ersten Zeichens, obwohl dies weniger effizient ist. Die `capitalized` Methode ist jedoch die einfachste und am besten geeignete Methode für die meisten Situationen.
+Die Implementierung hängt von `Locale` ab – zum Beispiel werden bei `capitalized` mit einer türkischen Locale 'i's zu 'İ' anstatt 'I'. Das ist wichtig für korrekte Darstellung von Texten in verschiedenen Sprachen.
 
-Unter der Haube verwendet `capitalized` die Unicode-Informationen jedes Zeichens, um zu bestimmen, ob eine Kapitalisierung erforderlich ist. Dies gewährleistet die Genauigkeit und Effizienz der Funktion.
-
-# Weitere Informationen
-
-Hier sind einige weitere Quellen, die Sie möglicherweise hilfreich finden:
-
-- [Apple's Swift String Dokumentation](https://developer.apple.com/documentation/swift/string/)
-- [Verwendung von `capitalized` in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-words-in-a-string)
-- [Swift String-Handling Guide](https://developer.apple.com/documentation/swift/string/)
+## See Also (Siehe auch)
+- Swift Standard Library Reference: [Apple's Documentation](https://developer.apple.com/documentation/swift/string)
+- Unicode Standard: [unicode.org](https://www.unicode.org/)
+- Locale in Swift: [NSLocale Documentation](https://developer.apple.com/documentation/foundation/nslocale)

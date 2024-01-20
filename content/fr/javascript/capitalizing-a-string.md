@@ -1,7 +1,7 @@
 ---
-title:                "Mettre une chaîne en majuscules"
-html_title:           "Javascript: Mettre une chaîne en majuscules"
-simple_title:         "Mettre une chaîne en majuscules"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que & Pourquoi ?
+## What & Why? (Quoi & Pourquoi?)
+Capitaliser une chaîne, c'est transformer toutes ses lettres en majuscules. Les développeurs font ça pour uniformiser les données, pour l'importance visuelle ou pour respecter des conventions de nommage.
 
-Mettre en majuscule une chaîne de caractères signifie convertir les premières lettres de chaque mot en majuscules. Les développeurs le font pour améliorer la lisibilité et normaliser les données.
+## How to: (Comment faire : )
+En JavaScript, pour capitaliser une chaîne, on utilise souvent la méthode `toUpperCase()` :
 
-## Comment faire :
+```Javascript
+let phrase = "bonjour le monde!";
+let phraseCapitale = phrase.toUpperCase();
 
-Voici un exemple simple pour mettre en majuscule la première lettre d'une chaîne de caractères dans JavaScript.
-```javascript
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+console.log(phraseCapitale); // Affiche "BONJOUR LE MONDE!"
+```
+
+Et pour changer le premier caractère seul en majuscule :
+
+```Javascript
+let mot = "paris";
+let motCapitalise = mot.charAt(0).toUpperCase() + mot.slice(1);
+
+console.log(motCapitalise); // Affiche "Paris"
+```
+
+## Deep Dive (Plongée en profondeur)
+Historiquement, capitaliser une chaîne n'était pas aussi direct qu'aujourd'hui. Les premières versions de JavaScript ne disposaient pas de méthodes natives pour changer la casse. Les développeurs utilisaient des boucles pour transformer chaque lettre.
+
+La méthode `toUpperCase()` est la plus directe, mais pas la seule. Pour seulement capitaliser la première lettre, l'exemple précédent est utile. Ceci est aussi pertinent si vous travaillez avec des systèmes qui exigent certaines conventions, comme un prénom toujours débutant par une majuscule.
+
+Si on a besoin de plus de flexibilité, par exemple changer la casse dans différents contextes (comme camelCase ou PascalCase), on doit implémenter des fonctions personnalisées. Voici un aperçu :
+
+```Javascript
+function toPascalCase(str) {
+    return str
+        .match(/[a-z]+/gi)
+        .map(word => word.charAt(0).toUpperCase() + word.substr(1).toLowerCase())
+        .join('');
 }
+
+console.log(toPascalCase("envie d'apprendre")); // Affiche "EnvieDApprendre"
 ```
-Utilisons cette fonction :
-```javascript
-let str = 'bonjour, les programmeurs!';
-console.log(capitalizeFirstLetter(str)); 
-// Résultat: 'Bonjour, les programmeurs!'
-```
-## Immersion profonde
 
-Historiquement, en JavaScript, on utilisait la technique du splice comme dans l'exemple ci-dessus pour capitaliser les chaînes. Mais l'ES6 a introduit les modèles de chaînes qui facilitent encore plus ce processus.
-Voici une alternative ES6 :
-```javascript
-const capitalizeFirstLetterES6 = string => 
-`${string.charAt(0).toUpperCase()}${string.slice(1)}`;
-```
-Il existe également d'autres solutions comme utiliser `split` pour diviser la chaîne en mots, puis capitaliser chaque mot individuellement, surtout lorsque vous travaillez avec une phrase.
+Cette fonction recherche les mots, capitalise la première lettre de chacun, puis les assemble.
 
-Il est important de noter que `toUpperCase` est une fonction intégrée en JavaScript, elle n'a donc pas besoin d'une implémentation manuelle.
-
-## Voir aussi 
-
-1. La documentation officielle de JavaScript sur MDN pour `toUpperCase`: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/toUpperCase
-2. La documentation es6: https://exploringjs.com/es6/ch_template-literals.html
-3. Une discussion StackOverflow sur diverses manières de capitaliser les chaînes en JavaScript: https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript
+## See Also (Voir aussi)
+- MDN Web Docs pour `toUpperCase()`: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+- MDN Web Docs pour `charAt()`: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+- W3Schools sur JavaScript String Methods: https://www.w3schools.com/js/js_string_methods.asp

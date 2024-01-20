@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자화"
-html_title:           "PHP: 문자열 대문자화"
-simple_title:         "문자열 대문자화"
+title:                "문자열 대문자로 변환하기"
+html_title:           "Arduino: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,41 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
-문자열의 첫 문자를 대문자로 만드는 것을 'capitalizing a string'이라고 합니다. 이렇게 하는 이유는 다양한데, 특히 이름이나 제목 등의 경우 첫 글자를 대문자로 만들어 사용자에게 제공하려는 경우가 많습니다.
+## What & Why? (무엇을 왜?)
+문자열 대문자화는 문자열 내의 모든 문자를 대문자로 바꾸는 것입니다. 명확성을 높이거나, UI 일관성을 유지하거나, 프로그램에서 문자열을 표준화하기 위해 사용합니다.
 
-## 사용 방법:
-다음은 PHP에서 문자열 첫 글자를 대문자로 만드는 방법을 보여주는 코드입니다.
-
-```PHP
-<?php
-$my_str = 'hello, world!';
-$my_str = ucfirst($my_str);
-echo $my_str;
-?>
-```
-
-이 코드를 실행하면, 다음과 같은 결과를 얻을 수 있습니다.
-
-```PHP
-Hello, world!
-```
-
-## 심층적인 정보:
-문자열의 첫 문자를 대문자로 만드는 것은 오래 전부터 이루어져 왔습니다. 이를 수행하는 다양한 방법이 있지만 PHP에서는 ucfirst 함수를 사용하는 것이 가장 간단합니다.
-
-또한, 문자열의 모든 단어의 첫 문자를 대문자로 만들고 싶다면 ucwords 함수를 사용할 수 있습니다.
+## How to: (하는 방법)
+PHP에서 문자열을 대문자로 변환하는 기본 함수는 `strtoupper`입니다. 여기 사용 예제가 있습니다:
 
 ```PHP
 <?php
-$my_str = 'hello, world!';
-$my_str = ucwords($my_str);
-echo $my_str;
-?>
-```    
-위 코드를 사용하면 결과는 ‘Hello, World!’가 됩니다.
+$originalString = "hello world";
+$capitalizedString = strtoupper($originalString);
 
-## 참고 자료:
-다음은 대문자로 만드는 함수에 대한 PHP 공식 문서 링크입니다.
-- ucfirst(): [https://www.php.net/manual/function.ucfirst.php](https://www.php.net/manual/function.ucfirst.php)
-- ucwords(): [https://www.php.net/manual/function.ucwords.php](https://www.php.net/manual/function.ucwords.php)
+echo $capitalizedString; // HELLO WORLD
+?>
+```
+
+`mb_strtoupper`는 멀티바이트 문자(예: 한글)에 대해서 사용됩니다:
+
+```PHP
+<?php
+$originalString = "안녕하세요";
+$capitalizedString = mb_strtoupper($originalString);
+
+echo $capitalizedString; // 안녕하세요
+?>
+```
+
+**참고:** PHP의 `mb_strtoupper` 함수는 기본적으로 한글에 대해 대문자로 변환하는 기능을 지원하지 않습니다.
+
+## Deep Dive (심층 분석)
+대소문자 변환은 초기 프로그래밍에서부터 있었습니다. 예전에는 데이터를 대문자로 표기하는 것이 일반적이었습니다. 오늘날에는 사용자 인터페이스 및 데이터 처리에서 컨벤션을 일관되게 유지하기 위해 문자열을 대문자로 변환합니다.
+
+대안으로 `ucfirst`와 `ucwords` 함수가 있는데, 각각 문자열의 첫 문자와 모든 단어의 첫 문자를 대문자로 바꿉니다:
+
+```PHP
+<?php
+$lowerString = "hello world";
+echo ucfirst($lowerString); // Hello world
+echo ucwords($lowerString); // Hello World
+?>
+```
+
+구현 세부 사항은 `mb_strtoupper` 함수가 다국어 지원을 위해 구성된 `mbstring` 확장에 의존하는 점에서 복잡해집니다. 멀티바이트 문자열을 처리할 때 주의가 필요합니다.
+
+## See Also (참고할 사항)
+- PHP 공식 문서에서 `strtoupper`: https://www.php.net/manual/en/function.strtoupper.php
+- PHP 공식 문서에서 `mb_strtoupper`: https://www.php.net/manual/en/function.mb-strtoupper.php
+- PHP 문자 인코딩에 대한 정보: https://www.php.net/manual/en/mbstring.supported-encodings.php

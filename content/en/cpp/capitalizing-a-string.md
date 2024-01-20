@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "C++ recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "C++"
 category:             "C++"
@@ -11,45 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Capitalizing a string means converting all the alphabetic characters in the string to uppercase. Programmers do it to make the text unambiguous, or to meet certain standards (e.g., usernames, file formats).
+Capitalizing a string means turning all the characters in the text to uppercase. Programmers do it for uniformity, emphasis, or sometimes to meet certain data standards.
 
 ## How to:
+C++ offers various ways to capitalize a string, but here's a straightforward example:
 
-Here's a simple way to capitalize a string using C++:
-
-```C++
+```cpp
+#include <iostream>
 #include <algorithm>
-#include <cctype>
 #include <string>
-...
-std::string stringToCapitalize = "c++ programming";
-std::transform(stringToCapitalize.begin(), stringToCapitalize.end(), stringToCapitalize.begin(), ::toupper);
 
-std::cout << stringToCapitalize << std::endl;
+std::string capitalizeString(std::string str) {
+    std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+    return str;
+}
+
+int main() {
+    std::string text = "Hello, World!";
+    std::string capitalizedText = capitalizeString(text);
+    std::cout << capitalizedText << std::endl;
+    return 0;
+}
 ```
-After running this code, the output should be:
+
+Sample Output:
 ```
-C++ PROGRAMMING
+HELLO, WORLD!
 ```
 
 ## Deep Dive
+To capitalize strings in C++, we historically relied on a loop to iterate through each character, applying the `toupper` function from `<cctype>`. 
 
-Historically, ASCII-based systems used capital letters because they were easier to read on primitive displays. These days, we like to use lowercase more often, but capitalization is still handy for standardization and ease of reading.
+As C++ evolved, the Standard Template Library (STL) provided algorithms like `std::transform` which can apply a function over a sequence. This style promotes cleaner code and potentially better performance due to algorithmic optimizations.
 
-Alternatives to the transform method can occasionally be more efficient. For example, using a for-loop and the toupper function, like this:
+Beyond `std::transform`, there's also the option to use ranges (from C++20) which makes the code even more concise and expressive. But that's a topic for another day.
 
-```C++
-std::string s = "c++ programming";
-for(char &c : s)
-    c = toupper(c);
-```
+Alternatives for capitalizing strings include writing your own function or using external libraries like Boost. It really comes down to how much control you need and what dependencies you're willing to take on.
 
-The actual capitalization happens in the `::toupper` function. This is part of the C++ Standard Library, inherited from the C language. It translates each alphabetical character into its uppercase equivalent according to the current locale. Non-alphabetical characters remain unchanged.
+When using `std::transform`, be mindful that it directly modifies the string. If maintaining the original string's case matters, always work on a copy.
 
 ## See Also
-
-Beyond this intro, you'll want to explore these resources:
-- [cppreference - std::transform](https://en.cppreference.com/w/cpp/algorithm/transform) for more ways you can leverage the transform function.
-- [cplusplus - toupper](http://www.cplusplus.com/reference/cctype/toupper/) for a deeper dive into the toupper function.
-- [StackOverflow questions tagged with 'uppercase'](https://stackoverflow.com/questions/tagged/uppercase) for practical issues and solutions shared by other programmers.
+- C++ Reference for `std::transform`: https://en.cppreference.com/w/cpp/algorithm/transform
+- C++ Reference for `toupper`: https://en.cppreference.com/w/cpp/string/byte/toupper
+- An overview of C++20 Ranges: https://en.cppreference.com/w/cpp/ranges

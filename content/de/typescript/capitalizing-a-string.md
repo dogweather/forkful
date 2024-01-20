@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "TypeScript: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,58 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und warum?
+## Was & Warum?
+Das Großschreiben eines Strings bedeutet, jeden Buchstaben in Großbuchstaben umzuwandeln. Programmierer nutzen es, um Einheitlichkeit zu erzielen, den Text hervorzuheben oder bestimmte Datenformate einzuhalten.
 
-Das Kapitalisieren eines Strings bedeutet, dass wir den ersten Buchstaben eines Worts oder aller Wörter im String zu Großbuchstaben machen. Das wird oft gemacht, um Texte formal aussehen zu lassen oder bestimmte Wörter hervorzuheben.
-
-## So machst du's:
-
-Unten findest du ein Beispiel, wie du das in TypeScript machen kannst:
-
+## So geht's:
 ```TypeScript
-function capitalizeFirstLetter(string: string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+function capitalizeString(input: string): string {
+    return input.toUpperCase();
 }
 
-let beispiel = 'hallo Welt';
-console.log(capitalizeFirstLetter(beispiel));
+console.log(capitalizeString("hallo welt!")); // Output: HALLO WELT!
 ```
 
-Wenn du das in einem TypeScript-Projekt ausführst, wird es 'Hallo Welt' ausgeben.
+## Tiefgang:
+Das Großschreiben von Strings ist so alt wie die Textverarbeitung selbst. In den Anfängen der Computerei musste zwischen Groß- und Kleinschreibung unterschieden werden, da Zeichencodes wie ASCII unterschiedliche Werte für Groß- und Kleinbuchstaben hatten. Heutzutage bieten die meisten Programmiersprachen Funktionen zum Großschreiben. In TypeScript/JavaScript ist `.toUpperCase()` die direkte Methode, um diesen Effekt zu erzielen. Alternativ kann man auch reguläre Ausdrücke verwenden, um nur bestimmte Teile eines Strings zu transformieren, aber das ist komplexer und für einfache Szenarien nicht benötigt. Die Implementierung von `.toUpperCase()` in JavaScript-Engines berücksichtigt auch Lokalisierung, so dass Buchstaben in verschiedenen Sprachen korrekt großgeschrieben werden.
 
-Für die Kapitalisierung aller Wörter könnte man diese Funktion so anpassen:
-
-```TypeScript
-function capitalizeAllWords(string: string) {
-    return string.split(' ').map(function(word) {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-    }).join(' ');
-}
-
-let beispiel2 = 'hallo schöne welt';
-console.log(capitalizeAllWords(beispiel2));
-```
-
-Das wird dann 'Hallo Schöne Welt' ausgeben.
-
-## Vertiefung:
-
-Die Praxis, den first Buchstaben in Großbuchstaben zu verwandeln, ist ein Überbleibsel aus der Zeit, als Texte noch mit einer Schreibmaschine oder per Hand geschrieben wurden. Bei diesen alten Techniken war es schwierig, einzelne Wörter hervorzuheben, daher wurden wichtige Wörter oft großgeschrieben.
-
-Es gibt andere Möglichkeiten, dieses Ziel zu erreichen. Statt `.charAt(0).toUpperCase() + .slice(1)` könntest du eine reguläre Expression verwenden:
-
-```TypeScript
-function capitalizeFirstLetterRegEx(string: string) {
-    return string.replace(/^(.)/, function(match, group1) {
-        return group1.toUpperCase();
-    });
-}
-```
-
-Beachte, dass diese Techniken nicht für alle Schriftsysteme funktionieren. Viele nicht-lateinische Alphabete haben keine Groß-/Kleinschreibung.
-
-## Weiterführende Links:
-
-- [MDN Web Docs zu String.prototype.toUpperCase()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN Web Docs zu String.prototype.charAt()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [StackOverflow Diskussion zum Kapitalisieren von Strings in TypeScript](https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript)
+## Siehe auch:
+- [MDN Web Docs - toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [Unicode Standard](https://unicode.org/standard/standard.html)
+- [ECMAScript Language Specification](https://www.ecma-international.org/ecma-262/10.0/index.html#sec-string.prototype.touppercase)

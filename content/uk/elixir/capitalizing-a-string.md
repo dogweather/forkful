@@ -1,7 +1,7 @@
 ---
-title:                "Великі букви в рядку"
-html_title:           "Elixir: Великі букви в рядку"
-simple_title:         "Великі букви в рядку"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,31 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Для чого?
+## Що це таке та навіщо?
+Капіталізація рядків — процес перетворення першої літери слова у верхній регістр. Це корисно для відформатування тексту, наприклад, при підготовці заголовків або імен.
 
-Стилізація рядка до верхнього регістру - це процес перетворення всіх маленьких літер у рядку в великі. Програмісти роблять це для забезпечення коректності користувацького введення або для поліпшення читабельності виводу.
-
-## Як це зробити:
-
+## Як робити:
 ```elixir
-defmodule Capitalize do
-  def upcase_string(str) when is_binary(str) do
-    String.upcase(str)
+# Основний спосіб капіталізації рядка
+defmodule MyString do
+  def capitalize(string) do
+    string
+    |> String.trim()
+    |> String.capitalize()
   end
 end
 
-IO.puts Capitalize.upcase_string("hello")
+IO.puts MyString.capitalize("еліксир")  # "Еліксир"
 ```
 
-Виходом цього коду буде `"HELLO"`.
+```elixir
+# Капіталізація всіх слів у реченні
+defmodule MyString do
+  def capitalize_each_word(sentence) do
+    sentence
+    |> String.split()
+    |> Enum.map(&String.capitalize/1)
+    |> Enum.join(" ")
+  end
+end
+
+IO.puts MyString.capitalize_each_word("вітаю в світі еліксир!")  # "Вітаю В Світі Еліксир!"
+```
 
 ## Поглиблений аналіз
+Еліксир, як і більшість мов програмування, надає вбудовані інструменти для роботи з текстовими рядками. Функція `String.capitalize/1` є частиною стандартної бібліотеки і з'явилась у ранніх версіях мови.
 
-1. Історичний контекст: Функція `String.upcase/1` була введена в Elixir від самого початку. Важливо відзначити, що ця функція враховує Unicode.
-2. Альтернативи: Ви також можете використовувати `:string.to_upper/1` з Erlang, але вона не враховує Unicode.
-3. Деталі реалізації: `String.upcase/1` працює, проходячи по кожному символу в рядку і змінюючи його в верхній регістр, якщо він є літерою в нижньому регістрі.
+Капіталізація рядків може відрізнятися залежно від локалізації, але, на жаль, `String.capitalize/1` працює однаково для всіх мов і може не враховувати особливості української мови. Тому вам може бути потрібно писати власне рішення для капіталізації, яке краще враховує локалізацію.
 
-## Дивись також
+Також є альтернативні способи капіталізації, наприклад, при використанні регулярних виразів або інших мов програмування, де можуть бути різні функції для цього. У кожній мові своя ідіоматика і оптимальні шляхи досягнення результату.
 
-1. Офіційну документацію Elixir про `String.upcase/1`: [https://hexdocs.pm/elixir/String.html#upcase/2](https://hexdocs.pm/elixir/String.html#upcase/2)
-2. Пост у блозі про роботу з рядками в Elixir: [https://www.jungledisk.com/blog/2017/06/05/string-handling-in-elixir](https://www.jungledisk.com/blog/2017/06/05/string-handling-in-elixir)
+## Дивіться також
+- [Elixir String Module Documentation](https://hexdocs.pm/elixir/String.html)
+- [Unicode Standard Annex #29](https://unicode.org/reports/tr29/) – для розуміння, як правильно працювати з символами Unicode
+- [Elixir School — Strings](https://elixirschool.com/en/lessons/basics/strings) – більше про рядки в Еліксир

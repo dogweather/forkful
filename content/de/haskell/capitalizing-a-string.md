@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "Haskell: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# "Haskell: Zeichenketten kapitalisieren"
-
 ## Was & Warum?
+Großschreibung eines Strings bedeutet, alle Buchstaben in Großbuchstaben umzuwandeln. Programmierer nutzen sie, um Konsistenz für Datenvergleiche oder Benutzeroberflächen zu gewährleisten.
 
-Eine Zeichenkette zu kapitalisieren bedeutet, jeden Buchstaben in Großbuchstaben zu verwandeln. Programmierer machen das oft, um programminternen Text konsistent oder für die Benutzer leicht lesbar zu machen.
-
-## Wie geht's:
-
-Die Funktion `toUpper` aus dem `Data.Char`-Modul wird verwendet, um eine Zeichenkette zu kapitalisieren. Hier ein einfaches Beispiel:
-
+## How to:
 ```Haskell
-import Data.Char (toUpper)
+import Data.Char(toUpper)
 
-capitalizeStr :: String -> String
-capitalizeStr = map toUpper
+capitalize :: String -> String
+capitalize = map toUpper
+
+-- Beispielnutzung:
+main = putStrLn (capitalize "Haskell ist toll!")
+```
+Output:
+```Haskell
+HASKELL IST TOLL!
 ```
 
-```shell
-> capitalizeStr "hallo Welt"
-"Hallo Welt"
-```
+## Deep Dive
+Die Großschreibung von Zeichenketten ist keine neue Idee. In den ersten Tagen der Computer gab es nur Großbuchstaben! Die Funktion `toUpper` in Haskell setzt diese Tradition fort, adaptiert sie aber für die moderne, vielschichtige Welt der Textverarbeitung. Alternativ könnten Programmierer auch externen Bibliotheken wie `text` für verbesserte Performance bei großen Textmengen nutzen. Die Implementierung der `toUpper`-Funktion berücksichtigt Unicode, sodass sie auch mit nicht-ASCII-Zeichen funktioniert.
 
-So einfach ist das!
-
-## Tief eintauchen
-
-Die `toUpper`-Funktion in Haskell gibt es schon seit Jahren. Sie stützt sich auf die Unicode-Zeichentabelle, um die korrespondierenden Großbuchstaben zu finden.
-
-Es könnte auch Alternativen geben, wie das Schreiben einer eigenen Funktion, die speziell auf bestimmte Anwendungsfälle zugeschnitten ist, aber generell ist `toUpper` die einfachste und effizienteste Methode.
-
-Beachten Sie, dass `map toUpper` nur grundlegende Unicode-Zeichen korrekt behandelt. Bei komplexeren Zeichen kann es zu unerwarteten Ergebnissen kommen. Wenn Sie spezifische Anforderungen an die Behandlung von Groß- und Kleinschreibung in verschiedenen Kulturen haben, können Sie Bibliotheken wie `text-icu` in Erwägung ziehen.
-
-## Siehe auch
-
-* Haskell-Dokumentation für das Data.Char-Modul: http://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html
-* Haskell's String Typ: http://learnyouahaskell.com/starting-out#an-intro-to-lists
+## See Also
+- Haskell `Data.Char` Modul: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
+- `text` Paket für effiziente Stringverarbeitung: https://hackage.haskell.org/package/text

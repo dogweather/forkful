@@ -1,6 +1,6 @@
 ---
 title:                "Zamiana liter na wielkie w ciągu znaków"
-html_title:           "Java: Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
 simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Java"
 category:             "Java"
@@ -10,61 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Zmiana na wielkie litery (ang. capitalizing) to przekształcenie pierwszej litery każdego słowa w łańcuchu znaków na wielką. Robimy to dla poprawy estetyki tekstu, nagłówków lub do zastosowań, gdzie konwencja wymaga użycia wielkich liter, jak w tytułach.
 
-Zmiana pierwszej litery w łańcuchu znaków (string) na wielką w języku Java to tzw. *kapitalizacja*. Programiści stosują to do poprawienia formatowania tekstu, na przykład nazw własnych, tytułów książek i artykułów.
-
-## Jak to zrobić?
-
-Metoda na kapitalizację to proste zadanie w Javie. Możemy skorzystać ze wbudowanej metody `substring()`, jak pokazano poniżej:
-
-```Java
-public class Main {
+## How to: (Jak to zrobić:)
+```java
+public class CapitalizeExample {
     public static void main(String[] args) {
+        String text = "tu jest przykład tekstu";
+        String capitalizedText = capitalizeString(text);
+        System.out.println(capitalizedText); // Wyjście: Tu Jest Przykład Tekstu
+    }
 
-        String tekst = "jestem programistą java";
-        String kapitalizowanyTekst = tekst.substring(0, 1).toUpperCase() + tekst.substring(1);
+    public static String capitalizeString(String str) {
+        String words[] = str.split("\\s");
+        StringBuilder capitalizedStr = new StringBuilder();
 
-        System.out.println(kapitalizowanyTekst);
+        for(String word : words){
+            String firstLetter = word.substring(0, 1).toUpperCase();
+            String remainingLetters = word.substring(1);
+            capitalizedStr.append(firstLetter).append(remainingLetters).append(" ");
+        }
+
+        return capitalizedStr.toString().trim();
     }
 }
 ```
 
-Wynik:
+## Deep Dive (Zagłębienie się)
+Kapitalizacja łańcuchów znaków ma długi rodowód, sięgający maszyn do pisania i wczesnych systemów komputerowych, gdzie wszystkie litery były wielkie z braku innych opcji. Współcześnie mamy biblioteki i metody wbudowane w języki, jak `toUpperCase()` w Javie, jednak one zmieniają wszystkie litery na wielkie, a nie tylko pierwsze w słowie.
 
-```Java
-Jestem programistą java
-```
+Alternatywami są wykorzystanie `StringTokenizer`, biblioteki Apache `StringUtils.capitalize` lub `WordUtils.capitalizeFully`, a także wyrażeń regularnych. Każda metoda ma swoje plusy i minusy, dotyczące czytelności kodu i wydajności. Na przykład, wyrażenia regularne mogą być trudne do zrozumienia, ale świetne, gdy zależy nam na szybkości.
 
-## Przyjrzyjmy się bliżej
+Implementacja zakłada, że tekst jest rozdzielony białymi znakami (spacjami, tabulatorami itd.), co jest typowym rozróżnikiem słów. Warto pamiętać, że metoda `split("\\s")` nie uwzględni kolejnych spacji i może nie działać poprawnie z niektórymi znakami diakrytycznymi we wszystkich kulturach.
 
-Historia back-endu jest pełna sytuacji, w których kapitalizacja łańcuchów była koniecznością. W przeszłości, zanim HTML i CSS pozwoliły na kontrolowanie wielkości liter, zależało to od języka back-endowego. 
-
-Alternatywą do powyższego rozwiązania jest użycie biblioteki Apache Commons Lang, która ma bezpośrednią metodę do kapitalizacji.
-
-```Java
-import org.apache.commons.lang3.text.WordUtils;
-public class Main {
-    public static void main(String[] args) {
-
-        String tekst = "jestem programistą java";
-        String kapitalizowanyTekst = WordUtils.capitalize(tekst);
-
-        System.out.println(kapitalizowanyTekst);
-    }
-}
-```
-
-Wynik:
-
-```Java
-Jestem Programistą Java
-```
-
-Niektóre detale implementacji to, że metoda `substring()` w Javie tworzy nowy łańcuch, co może prowadzić do nieefektywności przy dużej ilości danych.
-
-## Zobacz również
-
-* Dokumentacja Java na temat `substring()`: [https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int)](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int))
-* Apache Commons Lang: [https://commons.apache.org/proper/commons-lang/](https://commons.apache.org/proper/commons-lang/)
-* Dokumentacja WordUtils.capitalize(): [https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/WordUtils.html#capitalize-java.lang.String-](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/WordUtils.html#capitalize-java.lang.String-)
+## See Also (Zobacz także)
+- Java String Documentation: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+- Apache Commons Lang StringUtils: https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html
+- Regular Expressions in Java: https://docs.oracle.com/javase/tutorial/essential/regex/

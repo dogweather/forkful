@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज करना"
-html_title:           "Haskell: स्ट्रिंग को कैपिटलाइज करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -12,38 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-वर्णमाला को बड़ा करना (capitalizing a string) से मतलब है प्रत्येक शब्द के पहले अक्षर को बड़े अक्षर में परिवर्तित करना। फ़िर यह सवाल उठता है कि प्रोग्रामर्स ऐसा क्यों करते हैं? यह तब किया जाता है जब हमें उपयोगकर्ता इनपुट को विन्यास-संवेदनशील (format-sensitive) तरीके से साद्धारित करने की आवश्यकता होती है।
+एक स्ट्रिंग कैपिटलाइज़ करना मतलब है हर शब्द के पहले अक्षर को बड़ा (कैपिटल लेटर) करना। प्रोग्रामर इसे डेटा फॉर्मेटिंग, यूजर इंटरफेस को सुधारने, या टेक्स्ट नॉर्मलाइजेशन के लिए करते हैं।
 
 ## कैसे करें:
 
-हास्केल में, हम `Data.Char` मॉड्यूल का उपयोग करके `toUpper` फ़ंक्शन के साथ कोई भी इनपुट स्ट्रिंग को कैपिटलाइज़ कर सकते हैं। 
-
 ```Haskell
-import Data.Char
+import Data.Char (toUpper)
 
+-- सिम्पल फंक्शन जो पहले अक्षर को बड़ा करता है।
 capitalize :: String -> String
-capitalize = unwords . map (capitalizeWord) . words
-    where
-        capitalizeWord [] = []
-        capitalizeWord (x:xs) = toUpper x : map toLower xs
-      
-main = print(capitalize "hello world")
+capitalize "" = ""
+capitalize (x:xs) = toUpper x : xs
+
+-- प्रत्येक शब्द को कैपिटलाइज़ करने वाला फंक्शन।
+capitalizeWords :: String -> String
+capitalizeWords = unwords . map capitalize . words
+
+main :: IO ()
+main = do
+    let exampleString = "यह हास्केल उदाहरण है।"
+    putStrLn $ capitalizeWords exampleString
 ```
-इसका स्क्रीन पर प्रिंट होने वाला आउटपुट होगा: "Hello World".
 
-## गहरा डाइव:
+**Sample Output:**
+```
+"यह हास्केल उदाहरण है।"
+```
 
-#### ऐतिहासिक प्रसंग:
-`toUpper` फ़ंक्शन का उपयोग करने वाले कोड की विचारणीयता हास्केल 98 के निर्माण के समय से ही थी। यह विस्तार के लिए डिज़ाइन किया गया था, जो यह सुनिश्चित करता है कि यह सामर्थ्य और उपयोगकर्ता मानकों के अनुसार स्केल कर सके।
+## गहराई से जानकारी:
 
-#### वैकल्पिक:
-म्यूटेबल विकल्प में, `Data.Text` का `toUpper` फ़ंक्शन उपयोग कर सकते हैं।
+जब हम टेक्स्ट प्रोसेसिंग करते हैं, तो कभी-कभी हमें स्ट्रिंग्स को नाम, शीर्षक या दूसरे डोमेन-विशेष कारणों के लिए स्टैण्डर्डाइज़ करने की जरूरत होती है। हास्केल में `Data.Char` मॉड्यूल `toUpper` फंक्शन के जरिए हमें ये कार्यशीलता प्रदान करता है। इसका विकल्प हो सकता है एक लाइब्रेरी जैसे कि `text` पैकेज जो दक्षता और अधिक कार्यक्षमता के लिए हास्केल में टेक्स्ट प्रोसेसिंग में सहायक होती है।
 
-#### कार्यान्वयन विवरण:
-पहले `words` फ़ंक्शन इनपुट स्ट्रिंग को शब्दों में विभाजित करता है, फिर `map` फ़ंक्शन `capitalizeWord` को प्रत्येक शब्द पर लागू करता है, और अंत में `unwords` फ़ंक्शन शब्दों को फिर से एक स्ट्रिंग में जोड़ता है।
+## यह भी देखें:
 
-## देखें भी:
+- Haskell `Data.Char` Module Documentation: [Hackage Data.Char](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html)
+- Haskell Text Processing with the `text` Package: [Hackage Text](https://hackage.haskell.org/package/text)
+- "Learn You a Haskell for Great Good!" कैपिटलाइज़ेशन संबंधित अध्याय: [Learn You a Haskell](http://learnyouahaskell.com/)
 
-1. Learn You a Haskell for Great Good: [http://learnyouahaskell.com/](http://learnyouahaskell.com/)
-2. Real World Haskell: [http://book.realworldhaskell.org/](http://book.realworldhaskell.org/)
-3. Hoogle - Haskell API Search: [https://www.haskell.org/hoogle/](https://www.haskell.org/hoogle/)
+**नोट:** आउटपुट में बदलाव हो सकता है यदि हास्केल संस्करण या पर्यावरण विभिन्न हो।

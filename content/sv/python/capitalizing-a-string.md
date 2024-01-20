@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "Python: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,52 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför? 
-Att omvandla en sträng (string) till versaler (helt stora bokstäver) kan i programmering kallas att "capitalizing". Vi gör det för att forma och standardisera data, så att exempelvis användarnamn eller mailadresser tillåter både koppling och variation, men normalt inte skiljer mellan stora och små bokstäver.
+## Vad & Varför?
+Att kapitalisera en sträng innebär att omvandla första bokstaven i varje ord till en stor bokstav. Programmerare gör detta för att uppfylla språkliga regler, förbättra läsbarheten eller upprätthålla konsistens i användargränssnitt.
 
-## Hur man gör: 
-Här är exempel på hur du gör för att konvertera sträng till versaler i Python:
-
-```Python 
-text = 'jag älskar python programmering'
-capitalized_text = text.upper()
-print(capitalized_text)
-```
-Output:
-``` 
-JAG ÄLSKAR PYTHON PROGRAMMERING
-```
-
-## Djupdykning 
-I gamla programmeringsspråk var stora och små bokstäver mycket viktiga. Exempelvis i språket C måste du skriva all kod med små bokstäver. I moderna språk, inklusive Python, finns funktioner som autokonverterar strängar. 
-
-Alternativ till metoden .upper() är metoden .capitalize(), som bara gör den första bokstaven i strängen stor:
+## Så Här Gör Du:
+Python gör det lätt att kapitalisera strängar. Använd `title()` för varje ord, eller `capitalize()` för bara första ordet.
 
 ```Python
-text = 'jag älskar python programmering'
-capitalized_text = text.capitalize()
-print(capitalized_text)
-```
-Output: 
-```
-Jag älskar python programmering
+text = "välkommen till python programmering"
+print(text.title())  # Välkommen Till Python Programmering
+print(text.capitalize())  # Välkommen till python programmering
 ```
 
-Om du vill ha vart ord med stor bokstav, kan du använda .title():
+## Djupdykning:
+Att kapitalisera strängar är inget nytt. I tidiga datorsystem behövdes detta ofta för att hantera begränsningar i teckenuppsättningar. Alternativt kan du använda `upper()` för att göra hela strängen versal, eller kombinera flera metoder för mer kontroll.
 
 ```Python
-text = 'jag älskar python programmering'
-capitalized_text = text.title()
-print(capitalized_text)
-```
-Output: 
-```
-Jag Älskar Python Programmering
+text = "göteborg är trevligt"
+# Alla ord med stor bokstav
+print(text.title())  # Göteborg Är Trevligt
+# HELA STRÄNGEN STOR
+print(text.upper())  # GÖTEBORG ÄR TREVLIGT
+# Varje ord för sig
+words = text.split()
+capitalized_words = [word.capitalize() for word in words]
+print(' '.join(capitalized_words))  # Göteborg Är Trevligt
 ```
 
-I praktiken beror det vilken metod du ska använda på vad du vill uppnå.
+Observera att `title()` och `capitalize()` inte alltid hanterar apostrofer och andra tecken korrekt. I Unicode-text kan det blir ännu mer komplicerat – vi pratar inte bara ASCII längre.
 
-## Se också 
-För ytterligare information, se följande länkar:
-1. Python Dokumentation: Strängmetoder - [Länk](https://docs.python.org/3/library/stdtypes.html#string-methods)
-2. W3Schools Python Strängmetoder - [Länk](https://www.w3schools.com/python/python_ref_string.asp)
+## Se Även:
+För mer detaljerade exempel och förklaringar kan dessa länkar vara till hjälp:
+
+- Python dokumentation för sträng-metoder: https://docs.python.org/3/library/stdtypes.html#string-methods
+- Unicode standard för textbehandling: https://unicode.org/reports/tr29/
+- Python Wiki om sträng manipulation: https://wiki.python.org/moin/StringManipulation
+
+Observera att länkarna är på engelska och kan innehålla mer tekniska detaljer än vad som presenterats här.

@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "Java: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,39 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Kapitalisieren eines Strings bedeutet, alle Buchstaben darin in Großbuchstaben umzuwandeln. Programmierer nutzen das, um Konsistenz in Nutzereingaben zu gewährleisten oder um Bedeutungen hervorzuheben.
 
-Das Großschreiben eines Strings bedeutet, jeden Buchstaben des Strings in Großbuchstaben umzuwandeln. Programmierer tun dies, um Text hervorzuheben oder ein einheitliches Format zu gewährleisten.
+## Wie geht das?
+Java macht das Kapitalisieren dank der `toUpperCase()`-Methode der `String`-Klasse einfach. Hier ein kurzes Beispiel:
 
-## So geht's:
-
-Mit Java können Sie einen String ganz einfach mit der Methode `toUpperCase()` in Großbuchstaben umwandeln. Hier ist ein Beispiel:
-
-```Java
-public class Hauptprogramm {
+```java
+public class CapitalizeExample {
     public static void main(String[] args) {
-        String kleinerText = "das ist ein kleiner text";
-        String grosserText = kleinerText.toUpperCase();
+        String lowerCaseString = "das ist ein beispiel.";
+        String capitalizedString = lowerCaseString.toUpperCase();
 
-        System.out.println(grosserText);  //"DAS IST EIN KLEINER TEXT"
+        System.out.println(capitalizedString); // Output: DAS IST EIN BEISPIEL.
     }
 }
 ```
-Die Ausgabe dieses Codes ist "DAS IST EIN KLEINER TEXT".
+Ruf einfach `toUpperCase()` auf und dein String erstrahlt in Großbuchstaben – so simpel ist das.
 
-## Vertiefung:
+## Tiefgehende Einblicke
+Historisch gesehen existieren Großbuchstaben seit den Tagen der Römischen Reiches. In digitalen Zeiten nutzen wir Kapitalisierung aus praktischen Gründen: Suchoperationen, Textvergleiche oder Gestaltung von Benutzeroberflächen. Andererseits gibt es Alternativen wie die `toLowerCase()`-Methode, wenn man alles klein haben möchte. Und wenn du spezielle Regeln für die Kapitalisierung, wie beispielsweise Titel in einem Buch, umsetzen möchtest, brauchst du speziellere Methoden als `toUpperCase()`. Dabei kann es knifflig werden, da Sprachen wie Deutsch mit Umlauten oder dem ß arbeiten, die besondere Regeln bei der Umwandlung in Großbuchstaben haben.
 
-Geschichte: Die Methode `toUpperCase()` existiert seit der ersten Version von Java und ist eine der am häufigsten verwendeten Methoden beim Arbeiten mit Strings.
+Du solltest wissen, dass `toUpperCase()` die Groß- und Kleinschreibung gemäß den Regeln der Standardlokalität (Standard locale) des Systems umwandelt. In manchen Fällen willst du vielleicht eine spezifische Locale verwenden, um sicherzustellen, dass deine Umwandlung kulturellen und sprachlichen Standards entspricht:
 
-Alternativen: Sie können auch die Methode `Locale.ROOT` verwenden, um sicherzustellen, dass die Großschreibung unabhängig von der Landeseinstellung des Benutzers korrekt erfolgt:
-
-```Java
-String grosserText = kleinerText.toUpperCase(Locale.ROOT);
+```java
+String lowerCaseStringWithUmlaut = "straße";
+String capitalizedStringWithUmlaut = lowerCaseStringWithUmlaut.toUpperCase(Locale.GERMANY); // Output: STRASSE
 ```
 
-Implementierung: Unter der Haube verwendet Java einen speziellen Algorithmus, um jeden Kleinbuchstaben im String in einen Großbuchstaben umzuwandeln. Dies wird durch die Anwendung von Unicode-Werten erreicht.
+Beachte, dass `ß` zu `SS` in Großbuchstaben mit der deutschen Locale wird.
 
-## Siehe auch:
-
-Um mehr über die Arbeit mit Strings in Java zu erfahren, sehen Sie sich die Java-Dokumentation an: 
-- [Java String-Klasse](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java-Dokumentation für Locale](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html).
+## Siehe auch
+- [Java String Documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
+- [Locale Class in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)
+- [Understanding Java String](https://www.baeldung.com/java-string)
+  
+Mit diesen Links kannst du tiefer in die Welt der Java-Strings eintauchen. Frohes Codieren!

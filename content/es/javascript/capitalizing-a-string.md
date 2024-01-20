@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "Javascript: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,52 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-
-Capitalizar una cadena significa convertir la primera letra de cada palabra en mayúscula. Los programadores a menudo hacen esto para mejorar la visibilidad y la interpretación de la información.
+## Qué y por qué?
+Capitalizar un texto en JavaScript significa convertir la primera letra de una cadena a mayúscula. Es útil para nombres, títulos o siempre que necesitas que tu texto se vea formal y pulido.
 
 ## Cómo hacerlo:
+Para capitalizar una cadena, crearemos una función llamada `capitalizar` y usaremos métodos de cadenas como `slice()` y `toUpperCase()`.
 
-```Javascript
-var str = 'hola mundo'; 
-var capitalizado = str.charAt(0).toUpperCase() + str.slice(1); 
-console.log(capitalizado);
+```javascript
+function capitalizar(cadena) {
+  if(cadena && typeof cadena === 'string') {
+    return cadena.charAt(0).toUpperCase() + cadena.slice(1);
+  }
+  return cadena;
+}
+
+console.log(capitalizar("hola mundo")); // "Hola mundo"
 ```
 
-Esto imprimirá en la consola:
+Este código verifica primero si `cadena` existe y es una cadena de texto. Después, capitaliza la primera letra y la une con el resto de la cadena.
 
-```Javascript
-"Hola mundo"
-```
+## Deep Dive
+Históricamente, JavaScript no incluyó una función de capitalización como tal. Esto llevó a los desarrolladores a crear sus propias soluciones, comúnmente a través de funciones como la que acabamos de hacer.
 
-## Repaso profundo:
+Alternativas para capitalizar incluyen el uso de expresiones regulares o librerías de terceros como Lodash con su método `_.capitalize`. Cada opción tiene sus propio pros y contras en términos de rendimiento y legibilidad.
 
-Durante muchos años, los desarrolladores han aplicado diferentes métodos para capitalizar cadenas. Esto puede variar desde el uso de una función en bibliotecas como Lodash, hasta implementaciones propias usando Javascript puro.
+En términos de implementación:
+- `charAt(0).toUpperCase()` obtiene y capitaliza la primera letra.
+- `slice(1)` obtiene el resto de la cadena.
+- Asegúrate de manejar casos en los que el input no sea una cadena o esté vacío.
 
-Algunas alternativas podrían ser:
+## Ver también
+Para ampliar tus conocimientos y explorar más técnicas y funciones, aquí hay algunos recursos:
 
-```Javascript
-// Lodash
-var _ = require('lodash');
-console.log(_.capitalize('hola mundo'));
-
-// Javascript puro
-var capMethod2 = 'hola mundo'.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-console.log(capMethod2);
-```
-
-Ambos códigos imprimirán en la consola:
-
-```Javascript
-"Hola mundo"
-```
-
-Para capitalizar una cadena, Javascript primero accede al primer carácter utilizando `charAt(0)`, luego convierte este carácter a mayúscula con `toUpperCase()`, y finalmente fusiona este carácter con el resto de la cadena omitiendo el primer carácter con `slice(1)`.
-
-## Ver también:
-
-Aquí tienes algunos recursos adicionales sobre cómo capitalizar cadenas:
-
-* Documentación oficial de Javascript: [MDN String.prototype.toUpperCase()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-* Método Lodash capitalize: [Lodash capitalize](https://lodash.com/docs/4.17.15#capitalize)
-* Discusión sobre capitalización en Stackoverflow: [Stackoverflow Capitalize](https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript)
+- MDN Web Docs para `String.prototype.toUpperCase()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+- MDN Web Docs para `String.prototype.slice()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+- Documentación de Lodash para `_.capitalize`: https://lodash.com/docs/#capitalize

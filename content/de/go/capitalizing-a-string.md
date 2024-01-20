@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "Go: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,13 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+Das Großschreiben eines Strings bedeutet, alle Zeichen im String in Großbuchstaben zu konvertieren. Es wird oft für die Vereinheitlichung von Nutzereingaben oder für das Anzeigen von Text in einer standardisierten Formatierung verwendet.
 
-Das Kapitalisieren eines Strings in der Programmierung beschreibt das Umwandeln aller Anfangsbuchstaben eines Textes in Großbuchstaben. Programmeure verwenden es, um Inhalte für den Benutzer lesbar und ästhetisch ansprechend zu machen.
-
-## Wie zu:
-
-Im Folgenden finden Sie Codebeispiele, die zeigen, wie man einen String in Go kapitalisiert. 
+## How to:
+In Go kannst du den String mit der `ToUpper` Funktion aus dem `strings` Paket großschreiben. Hier ist ein kurzes Beispiel:
 
 ```Go
 package main
@@ -27,36 +25,28 @@ import (
 )
 
 func main() {
-	text := "hallo, Welt!"
-	fmt.Println(strings.Title(text)) // Ausgabe: Hallo, Welt!
+	original := "hallo, welt!"
+	capitalized := strings.ToUpper(original)
+	fmt.Println(capitalized)
 }
 ```
 
-In diesem Code benutzen wir die `Title`-Funktion aus dem `strings`-Paket, um den ersten Buchstaben jedes Worts im String in einen Großbuchstaben umzuwandeln.
+Ausgabe:
 
-## Vertiefung:
-
-Die Methode zur Kapitalisierung von Strings stammte ursprünglich von älteren Computersprachen, die standardmäßig keine Funktion zur Umwandlung von Buchstaben in Großbuchstaben besitzen. Obwohl Go ein `strings`-Paket enthält, das die `Title`-Funktion aufweist, kann man auch eigene Funktionen erstellen.
-
-Man kann sogar Text in UNICODE zu kapitalisieren, indem man den Codepunkt jedes Buchstabens prüft und ihn von Klein- auf Großbuchstaben umwandelt, falls er ein Kleinbuchstabe ist.
-
-```Go
-package main
-
-import (
-	"fmt"
-	"unicode"
-)
-
-func main() {
-	text := "hallo, Welt!"
-	fmt.Println(strings.Map(unicode.ToTitle, text)) // Ausgabe: HALLO, WELT!
-}
+```
+HALLO, WELT!
 ```
 
-## Siehe auch:
+## Deep Dive
+Das Großschreiben von Strings existiert seit den Anfängen der Textverarbeitung. In Go erfolgt dies durch die `ToUpper` Funktion im `strings` Paket, die Unicode-zeichenweise operiert. 
 
-- Go Standard Library: strings (https://golang.org/pkg/strings/)
-- Go by Example: String Functions (https://gobyexample.com/string-functions) 
+Alternativen zur Standardmethode `ToUpper` sind:
+- `ToUpperSpecial` für kulturspezifische Großschreibung
+- Manuelle Iteration über den String und Anwendung der `unicode.ToUpper` Funktion auf jedes Zeichen
 
-Erfahren Sie mehr über die Go-Standardbibliothek und die Möglichkeiten der String-Manipulation, um die Effizienz und Leistung Ihrer Go-Programme zu verbessern.
+Bei der Implementierung sollte bedacht werden, dass nicht alle Sprachen das Konzept von Groß- und Kleinbuchstaben wie im lateinischen Alphabet handhaben. Außerdem müssen Sonderfälle wie deutsche Umlaute (`ä`, `ö`, `ü`) und das `ß`, das zu `SS` wird, korrekt umgesetzt werden. Die Standardbibliothek von Go handhabt diese Eigenheiten bereits.
+
+## See Also
+- Go-Strings-Paket: https://golang.org/pkg/strings/
+- Unicode-Paket in Go: https://golang.org/pkg/unicode/
+- Diskussion über Zeichen und ihre Groß-/Kleinschreibung: https://blog.golang.org/strings

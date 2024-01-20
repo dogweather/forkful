@@ -1,7 +1,7 @@
 ---
-title:                "Gjøre en streng stor"
-html_title:           "C++: Gjøre en streng stor"
-simple_title:         "Gjøre en streng stor"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,36 +11,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sette en streng til store bokstaver betyr å endre alle små bokstaver i en streng til store bokstaver. Dette gjøres ofte for å kjøre case-insensitive sammenligninger, parseIntput eller forbedre lesebarhet.
+Capitalizing a string betyr å gjøre det første tegnet i hvert ord stort, som i titler eller starten av setninger. Programmerere bruker dette for å forbedre lesbarheten og sikre konsistent tekstformat.
 
-## Hvordan:
-Her er en enkel metode for å endre en streng til store bokstaver ved hjelp av C++ Standard Template Library (STL):
+## Hvordan gjøre det:
+Her er et raskt eksempel på hvordan du kan gjøre om en streng til bare store bokstaver i C++ med funksjonen `std::transform` og `::toupper`.
 
 ```C++
 #include <iostream>
-#include <algorithm>
 #include <string>
+#include <algorithm>
+#include <cctype>
 
 int main() {
-    std::string str = "Hei, verden!";
-    std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-    std::cout << str;
+    std::string text = "halla norge";
+    std::transform(text.begin(), text.end(), text.begin(),
+                   [](unsigned char c) { return std::toupper(c); });
+
+    std::cout << "Capitalized String: " << text << std::endl;  
     return 0;
 }
 ```
-Når dette programmet kjøres, vil utdata være:
+
+Sample output:
+```
+Capitalized String: HALLA NORGE
+```
+
+Hvis du ønsker kun første bokstav i hvert ord stort, kan du tweake koden litt:
 
 ```C++
-HEI, VERDEN!
+#include <iostream>
+#include <string>
+#include <cctype>
+
+void CapitalizeFirstLetter(std::string &s) {
+    bool cap = true;
+    for (char &c : s) {
+        if (isspace(c)) {
+            cap = true;
+        } else if (cap && islower(c)) {
+            c = toupper(c);
+            cap = false;
+        }
+    }
+}
+
+int main() {
+    std::string text = "welcome to oslo";
+    CapitalizeFirstLetter(text);
+    std::cout << "Capitalized String: " << text << std::endl;
+    return 0;
+}
 ```
-## Dybdeplunge
-Historisk sett er bruken av å sette til store bokstaver i programmeringssammenheng stammer fra tiden av trykte teletypemaskiner. I moderne praksis brukes det som nevnt for å ignorere case når du sammenligner strenger.
 
-Det er flere andre måter å gjøre dette på i C++, for eksempel bruk av egen funksjon gjennom å løkke gjennom hver karakter i strengen og bruke `toupper` funksjonen.
+Sample output:
+```
+Capitalized String: Welcome To Oslo
+```
 
-I C++, når du bruker `std::transform` funksjonen, utføres operasjonen på plass, noe som betyr at den opprinnelige strengen blir endret. Hvis du vil beholde den opprinnelige strengen intakt, du vil trenge å kopiere strengen til en ny variabel før du setter den til store bokstaver.
+## Dypdykk
+Tidligere var det vanlig å bruke for-løkker og manuell manipulasjon av tegn for å endre store og små bokstaver i C++-strenger. Nå foretrekker vi standardbibliotekfunksjoner som `std::transform` og `::toupper`. Alternativer til `::toupper` inkluderer å bruke ASCII-verdier direkte for å utføre transformasjoner, men dette er ikke anbefalt da det kan bli ulesbart og feilutsatt.
+
+`std::transform` er en del av standardbiblioteket som ble introdusert i C++98 og har blitt en del av kodevanen for mange C++ utviklere siden da. Bruk av lambda-uttrykk for å definere funksjoner on-the-fly, som vist i eksempelet ovenfor, ble introdusert i C++11 og gjør koden mer kompakt og lettlest.
+
+Det er også viktig å merke seg at `::toupper` er en C-bibliotekfunksjon og krever `#include <cctype>`. Det er en type-safe versjon i C++ standardbiblioteket, `std::toupper`, som kan være å foretrekke i strengt typekontrollerte situasjoner.
+
+Hvorvidt man velger å bruke slike innebygde funksjoner eller utarbeide sin egen løsning, avhenger av det spesifikke bruksområdet og kravene i prosjektet. For eksempel, hvis man trenger å vekte fremfor ytelse, kan man velge en mer detaljert og finjustert tilnærming.
 
 ## Se Også
-- [C++ Standard Template Library (STL) Documentation](http://www.cplusplus.com/reference/stl/)
-- [`std::transform` på cppreference](https://en.cppreference.com/w/cpp/algorithm/transform)
-- [`toupper` på cppreference](https://en.cppreference.com/w/cpp/string/byte/toupper)
+- [cppreference std::transform](https://en.cppreference.com/w/cpp/algorithm/transform)
+- [cppreference std::toupper](https://en.cppreference.com/w/cpp/string/byte/toupper)

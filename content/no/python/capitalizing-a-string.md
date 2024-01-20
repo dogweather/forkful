@@ -1,7 +1,7 @@
 ---
-title:                "Å sette en streng i store bokstaver"
-html_title:           "Python: Å sette en streng i store bokstaver"
-simple_title:         "Å sette en streng i store bokstaver"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,51 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Å gjøre en streng stor, eller "capitalize", betyr å gjøre det første bokstavet i en streng til en stor bokstav. Programmerere gjør dette for å formatere tekst for lesbarhet, som når man skal starte setninger eller gjøre navn konsekvente.
 
-Gjøre store bokstaver i en streng, eller "string", er å endre det første bokstavet i en tekststreng til en stor bokstav. Programmerere gjør dette for å forbedre lesbarhet og for gnistrende tekstbehandling.
-
-## Hvordan det gjøres:
-
-Du kan gjøre dette i Python ved hjelp av innebygd `capitalize()` funksjonen. Her er et eksempel på bruken av det:
+## How to:
+Python gjør det lett å stor-bokstavere strenger. Her er noen eksempler:
 
 ```python
-text = "heisann, verden!"
-capitalized_text = text.capitalize()
+# Bruk capitalize() for å stor-bokstavere den første bokstaven i en streng
+tekst = "norge"
+kapitalisert_tekst = tekst.capitalize()
+print(kapitalisert_tekst)  # Output: Norge
 
-print(capitalized_text)
-```
-Når du kjører dette, vil utdata være:
-
-```
-Heisann, verden!
-```
-
-Som du kan se, har det første bokstavet i strengen blitt endret til en stor bokstav.
-
-## Dypere inn i detaljene:
-
-Historisk sett har programmerere søkt å forbedre lesbarhet og presentasjon av tekst ved bruk av slike metoder som "capitalization". Imidlertid har noen programmeringsspråk forskjellige tilnærminger til dette.
-
-I Python brukes `capitalize()` funksjonen, men du må være oppmerksom på at den kun gjør det første bokstavet til en stor bokstav. Den gjør alle andre bokstaver om til små bokstaver. For eksempel:
-
-```python
-text = "hEISeNN, VeRDeN!"
-capitalized_text = text.capitalize()
-
-print(capitalized_text)
-```
-Resultatet er:
-
-```
-Heisann, verden!
+# Bruk title() for å stor-bokstavere den første bokstaven i hvert ord
+tittel = "python programmering"
+formell_tittel = tittel.title()
+print(formell_tittel)  # Output: Python Programmering
 ```
 
-Hvis du trenger å beholde de opprinnelige store bokstavene i teksten, bør du vurdere å bruke `title()` funksjonen.
+Kodeblokkene viser enkle måter å gjøre første bokstav eller alle ord startbokstaver storer.
 
-## Se også:
+## Deep Dive
+Strengkapitalisering har eksistert like lenge som programmeringsspråk har hatt behov for å manipulere tekst. Python har alltid gjort det enkelt å jobbe med tekststrenger.
 
-For mer informasjon og relaterte ressurser, sjekk ut følgende lenker:
-1. Python offisielle dokumentasjon på streng metoder: https://docs.python.org/3/library/stdtypes.html#string-methods
-2. Detaljert guide om `capitalize()` og `title()` funksjoner: https://www.w3schools.com/python/ref_string_capitalize.asp
-3. Tips og triks for å arbeide med strenger i Python: https://realpython.com/courses/working-python-strings/
+Historisk sett kommer behovet for kapitalisering fra ønsket om standardisert formatering, som i bøker og dokumenter. I tidlige dagers databehandling var behandling av tekst en viktig del av programvareutvikling, og dette inkluderte å kunne kontrollere hvordan bokstaver ble presentert.
+
+I Python har `.capitalize()` og `.title()` metoder vært de konvensjonelle måtene å kapitalisere strenger. Det finnes alternativer, som:
+
+- Bruke `.upper()` for å gjøre alle bokstaver til store bokstaver.
+- Bruke `.lower()` etterfulgt av indexering og konkatinasjon for å selv skape en capitalize-funksjon.
+- Regex (regular expression) for mer kompleks tekstmanipulasjon som kan inkludere kapitalisering basert på mønstre.
+
+Kapitalisering i Python utføres på Unicode-strenger, noe som betyr at den tar høyde for internasjonale skriftsystemer og språk-spesifikke bokstaver.
+
+## See Also
+Her er noen nyttige lenker:
+
+- Python String Methods: https://docs.python.org/3/library/stdtypes.html#string-methods
+- Unicode in Python: https://docs.python.org/3/howto/unicode.html
+- Regular Expressions in Python: https://docs.python.org/3/library/re.html
+
+Disse lenkene gir en grundig forklaring av strengmetoder, håndtering av Unicode i Python, og bruk av regex for tekstbehandling.

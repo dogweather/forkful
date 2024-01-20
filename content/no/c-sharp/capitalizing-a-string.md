@@ -1,7 +1,7 @@
 ---
-title:                "Sette stor bokstav i en streng"
-html_title:           "C#: Sette stor bokstav i en streng"
-simple_title:         "Sette stor bokstav i en streng"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-
-Å kapitalisere en streng i programmering betyr å endre bokstavene i strengen til store bokstaver. Programmerere gjør dette for å standardisere datainnganger eller skape et mer estetisk brukergrensesnitt.
+## Hva & Hvorfor?
+I C# er det å kapitalisere en streng å endre dens første bokstav til en stor bokstav. Det brukes for å standardisere tekstdata, forbedre lesbarheten, eller tilpasse seg stil- og formatteringsregler.
 
 ## Hvordan:
-
-Her er noen metoder for å kapitalisere en streng i C#:
-
 ```C#
-// Bruk av ToUpper()-metode
-string liten_streng = "hei der";
-string stor_streng = liten_streng.ToUpper();
+using System;
+using System.Globalization;
 
-Console.WriteLine(stor_streng);   
-// Utdata vil være: "HEI DER"
+class Program
+{
+    static void Main()
+    {
+        string original = "oslo er kult.";
+        string capitalized = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(original);
 
-// Bruk av TextInfo.ToTitleCase() for tittelkapitalisering
-System.Globalization.CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
-System.Globalization.TextInfo textInfo = cultureInfo.TextInfo;
+        Console.WriteLine(capitalized); // Output: Oslo Er Kult.
+    }
+}
+```
+Her behandler `ToTitleCase` hvert ord. For bare første bokstav:
+```C#
+string original = "oslo";
+string capitalized = original[0].ToString().ToUpper() + original.Substring(1);
 
-string lavtittel = "hei verden";
-string stortittel = textInfo.ToTitleCase(lavtittel);
-
-Console.WriteLine(stortittel); 
-// Utdata vil være: "Hei Verden"
+Console.WriteLine(capitalized); // Output: Oslo
 ```
 
-## Dyp Dykk:
+## Dypdykk
+Kapitalisering av strenger i programmering har eksistert like lenge som behovet for tekstbehandling. Metoder og funksjoner for å gjøre dette har utviklet seg gjennom språk og standardbiblioteker.
 
-Historisk sett, transformationsmetoder som ToUpper() har blitt brukt på grunn av dens enkelhet og bekvemmelighet. Imidlertid, det handler om alle bokstavene i strengen, ikke bare den første som i Title Case.
+I C# er `ToTitleCase` fra `TextInfo` klassen i `System.Globalization` namespace ofte brukt, men husk at den gjør mer enn å bare kapitalisere første bokstav - den påvirker hele strengen. Noen kulturer har ikke konseptet med store bokstaver, så pass på kulturell sensitivitet ved internasjonalisering.
 
-Alternativt kan du bruke TextInfo.ToTitleCase() metoden for å bare kapitalisere det første tegnet av hvert ord i en streng, det er spesielt nyttig når du arbeider med titler eller navn.
+En enklere metode er å bruke `ToUpper` på den første bokstaven og så legge til resten av strengen. Det er direkte og kontrollerbart, men ikke internasjonaliserbart. `ToTitleCase` har sine quirks, for eksempel vil den ikke endre allerede store bokstaver, så "iOS" blir til "IOS".
 
-Det er viktig å understreke at disse metodene ikke endrer originale strengen. I stedet returnerer de en ny streng med de bearbeidede endringene. Det er fordi strenger i C# er uforanderlige - når de er opprettet, kan de ikke endres.
+Et alternativ er å bruke `char.ToUpper` hvis du bare vil behandle én bokstav. `ToUpperInvariant` er nyttig når du vil at den kapitaliserte strengen skal se lik ut uansett kulturell kontekst.
 
-## Se også:
-
-For mer informasjon om streng manipulasjon i C#, sjekk ut disse ressursene:
-
-   
-Husk, det er mange veier til å oppnå samme resultat i programmering, så eksperimenter og finn det som fungerer best for deg.
+## Se Også:
+- [Microsoft Docs: TextInfo.ToTitleCase](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
+- [Microsoft Docs: String.ToUpperInvariant Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant)
+- [Stack Overflow: Capitalize First Character of each word](https://stackoverflow.com/questions/4135317/make-first-letter-of-a-string-upper-case-with-maximum-performance) for diskusjoner og ytterligere løsninger.

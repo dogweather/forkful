@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "C: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "C"
 category:             "C"
@@ -10,40 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
+## What & Why?
+Capitalizar una cadena significa convertir todas las letras a mayúsculas. Los programadores lo hacen para normalizar los datos de entrada o mejorar la legibilidad del texto.
 
-Capitalizar una cadena significa convertir la primera letra de cada palabra en mayúsculas. Los programadores a menudo lo hacen para mejorar la legibilidad y estandarizar los datos de entrada.
-
-## Cómo se hace:
-
-Aquí te muestro un ejemplo de cómo capitalizar una cadena en C:
-
+## How to:
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
 void capitalizarCadena(char *str) {
-    while (*str != '\0') {
+    while (*str) {
         *str = toupper((unsigned char) *str);
         str++;
     }
 }
 
 int main() {
-    char str[] = "hola mundo!";
-    capitalizarCadena(str);
-    printf("%s\n", str);  // Salida: "HOLA MUNDO!"
+    char miCadena[] = "¡Hola, mundo!";
+    capitalizarCadena(miCadena);
+    printf("Cadena Capitalizada: %s\n", miCadena);
     return 0;
 }
 ```
+Salida:
+```
+Cadena Capitalizada: ¡HOLA, MUNDO!
+```
 
-## Un Vistazo Más Profundo
+## Deep Dive
+Capitalizar cadenas es un proceso antiguo en la programación, utilizado en varios lenguajes desde los primeros días de la informática. En C, la función `toupper` de la biblioteca estándar es una manera sencilla de convertir un carácter individual a mayúscula. Para capitalizar una cadena completa, recórrela carácter por carácter, aplicando `toupper` a cada uno.
 
-La capitalización de cadenas tiene sus raíces en la mecanografía y los lenguajes de programación la han adoptado desde entonces. En C, la capitalización es simple pero hay variaciones en la implementación dependiendo de tus necesidades. Podrías usar `toupper`, que es la forma utilizada en el ejemplo anterior, o podrías usar `towupper` en el caso de las cadenas ancha que soporta la internacionalización del lenguaje. Sin embargo, recuerda que estas funciones solo convierten las letras a mayúsculas. Si quieres convertir cada primera letra de una palabra, tendrías que implementar lógica adicional para detectar los espacios.
+Existen alternativas como usar funciones de bibliotecas de terceros o escribir tu propios algoritmos adaptados a un caso de uso particular, pero `toupper` es suficiente para la mayoría de las situaciones y está ampliamente disponible.
 
-## Ver También:
+Detalles a considerar al implementar la capitalización de cadenas incluyen:
+1. Trabajar cuidadosamente con caracteres que no son ASCII, ya que `toupper` puede no manejarlos correctamente sin configuraciones adicionales.
+2. Asegurarte de que la cadena de entrada está terminada correctamente con un carácter nulo para evitar problemas de memoria.
 
-Aquí tienes algunos recursos útiles para entender más profundamente este concepto:
-
-- "toupper", la función estándar de C - [Documentación](https://www.cplusplus.com/reference/cctype/toupper/)
-- "towupper", para cadenas anchas - [Documentación](https://en.cppreference.com/w/c/string/wide/towupper)
+## See Also
+- Documentación de la función `toupper`: https://en.cppreference.com/w/c/string/byte/toupper
+- Recomendaciones de estilo de codificación en C: https://www.gnu.org/prep/standards/standards.html
+- Unicode y programación en C: https://www.unicode.org/reports/tr35/tr35-6.html

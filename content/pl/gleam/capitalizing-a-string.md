@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana tekstu na wielkie litery"
-html_title:           "Gleam: Zamiana tekstu na wielkie litery"
-simple_title:         "Zamiana tekstu na wielkie litery"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+W informatyce, zamienianie znaków w łańcuchu na wielkie litery to znany zabieg. Programiści używają go głównie dla ujednolicenia danych i poprawienia czytelności tekstów używanych w interfejsie użytkownika.
 
-Zmiana liter na wielkie w ciągu znaków to proces, który przekształca małe litery w duża; na przykład, 'programowanie' staje się 'PROGRAMOWANIE'. Programiści często korzystają z tej techniki, aby podkreślić ważne fragmenty tekstu lub zmienić wygląd napisów.
+## How to: (Jak to zrobić:)
+```gleam
+import gleam/string
 
-## Jak to zrobić:
-
-Zobaczmy, jak możemy to zrobić w Gleam:
-
-```Gleam
-fn capitalize(text: String) -> String {
-  text
-  |> String.codepoints
-  |> List.map(String.uppercase)
-  |> List.reduce("", append)
+pub fn capitalize(text: String) -> String {
+  string.capitalize(text)
 }
 
-fn main(_) {
-  let text = "cześć świecie"
-  capitalize(text)
-  |> Io.format("{}.n", [text])
+fn main() {
+  let example = "witaj, świecie!"
+  let capitalized_example = capitalize(example)
+  io.println(capitalized_example)
 }
 ```
-
-Przykładowe wyjście:
-
+Wynik działania:
 ```
-CZEŚĆ ŚWIECIE
+Witaj, świecie!
 ```
 
-## Na głębszy poziom
-
-Historia i kontekst: Pierwotnie, konwersja liter na wielkie było istotnym elementem starszych systemów komputerowych i języków programowania, które nie obsługiwały małych liter. Chociaż nowoczesne systemy mają o wiele większą elastyczność, wielkie litery nadal są używane do podkreślania i formatowania tekstu.
-
-Alternatywy: Alternatywą dla metody, którą przedstawiliśmy, jest użycie funkcji `String.to_uppercase`. Ten sposób jest bardziej bezpośredni, ale mniej elastyczny, jeśli chcesz dopasować specyficzne znaki lub użyć niestandardowych reguł kapitalizacji.
-
-Szczegóły implementacji: nasz kod najpierw przekształca tekst na listę punktów kodowych, po czym każdy punkt kodowy jest zamieniany na wielką literę. Na koniec, wszystkie te pojedyncze punkty kodu są łączone w jeden ciąg. Dzięki temu metoda jest bardzo skuteczna dla dowolnej długości tekstu, a także obsługuje znaki specjalne i diakrytyczne.
+## Deep Dive (Dogłębna analiza)
+Funkcja zmiany tekstu na wielkie litery ma swoje korzenie w maszynach do pisania i wczesnych komputerach, gdzie niektóre modele miały tylko wielkie litery. Stosowanie wielkich liter ułatwia wyróżnienie ważnej informacji lub nagłówków. Alternatywą może być użycie funkcji `toUpperCase`, która zmienia wszystkie znaki na wielkie, co jednak może nie być pożądane w niektórych kontekstach. W języku Gleam, używamy funkcji `capitalize` z modułu `string`, która zmienia pierwszą literę na wielką, resztę pozostawiając bez zmian. Ważne jest, aby pamiętać, że zachowanie tej funkcji może być zależne od lokalizacji i specyfiki języka, szczególnie w kontekście znaków diakrytycznych.

@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pääkirjaimet suuriksi"
-html_title:           "Lua: Merkkijonon pääkirjaimet suuriksi"
-simple_title:         "Merkkijonon pääkirjaimet suuriksi"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,29 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
-Merkkijonon isojen alkukirjainten tekeminen tarkoittaa jokaisen sanan ensimmäisen kirjaimen muuttamista kirjoitusasuun, jossa se on suuri. Ohjelmoijat käyttävät tätä tehokkaasti parantaakseen käyttöliittymää ja tekstin luettavuutta.
+## What & Why? (Mikä & Miksi?)
+Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi parantaa luettavuutta. Sitä käytetään erityisesti otsikoissa ja nimissä.
 
-## Kuinka Tehdään:
-Tässä on esimerkki siitä, kuinka suuriksi muunnos voidaan tehdä Lua-ohjelmointikielellä:
+## How to: (Kuinka tehdä:)
 ```Lua
-function string.cap(s)
-   return s:lower():gsub("^%l", string.upper)
+-- Esimerkki: merkkijonon ensimmäisen kirjaimen suurentaminen
+function suurennaEkaKirjain(str)
+    return (str:gsub("^%l", string.upper))
 end
-print(string.cap("hello world"))
+
+-- Käyttö
+local esimerkki = "lua on kiva"
+print(suurennaEkaKirjain(esimerkki)) -- "Lua on kiva"
 ```
-Tämä esimerkkikoodi antaa tuloksen:
-```Lua
-Hello world
-```
-## Syvä Sukellus:
-Alkuperäisessä Lua versiossa ei ollut sisäänrakennettua toimintoa tämäntyyppiseen muunnokseen. Kuitenkin nykyaikaisissa versioissa se voidaan tehdä gsub-menetelmää ja muita merkkijonojen käsittelymetodeja käyttämällä, kuten esimerkiksi yllä olevassa koodinpätkässä.
 
-Vaihtoehtoja ovat sen tekeminen manuaalisesti loop-iteraatioilla ja tilapäisten muuttujien avulla. Jotkut kehittäjät saattavat käyttää myös kolmannen osapuolen kirjastoja tälle toimenpiteelle.
+## Deep Dive (Syväsukellus)
+Ennen `string.upper` ja gsub-menetelmien tuloa Luaan, merkkijonojen muokkaaminen vaati manuaalista koodausta. Nykyisin suurennaEkaKirjain-funktio tekee sen näppärästi patern matchingin ja korvausfunktion avulla. Vaihtoehtoina voisi myös käyttää ulkopuolisia kirjastoja, mutta Luassa kaikki tarvittava löytyy jo valmiiksi. Suorituskyvyn osalta tämä Luassa sisäänrakennettu menetelmä on tehokas ja nopea.
 
-Tällaisen toiminnon toteuttamisen monimutkaisuus riippuu siitä, kuinka kattavasti kehittäjä haluaa ottaa huomioon erilaiset edge-case-tilanteet, kuten erikoismerkit, numerot tai ääkköset.
-
-## Katso Myös:
-- Lua string library: [String Manipulation](https://www.lua.org/pil/20.html)
-- Advanced string manipulation: [Lua-Users wiki strings tutorial](http://lua-users.org/wiki/StringsTutorial) 
-- Usage of upper function: [Lua string.upper](https://www.lua.org/manual/5.4/manual.html#6.4)
+## See Also (Katso Myös)
+- Lua Users Wiki: http://lua-users.org/wiki/
+- Programming in Lua (book): https://www.lua.org/pil/
+- String Manipulation with Lua: https://www.tutorialspoint.com/lua/lua_strings.htm

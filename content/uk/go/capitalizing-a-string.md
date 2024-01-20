@@ -1,7 +1,7 @@
 ---
-title:                "Зробити першу літеру рядка великою"
-html_title:           "Go: Зробити першу літеру рядка великою"
-simple_title:         "Зробити першу літеру рядка великою"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,11 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
+## What & Why?
+## Що і чому?
 
-Перетворення рядка на великі літери - це процес зміни всіх маленьких літер у рядку на великі. Програмісти роблять це для стандартизації даних та кращого порівняння рядків.
+Capitalizing a string means making the first character in each word uppercase. Programmers often use this to format text for a human-friendly display - like turning "john doe" into "John Doe."
 
-## Як зробити:
+## How to:
+## Як це зробити:
 
 ```Go
 package main
@@ -25,26 +27,25 @@ import (
 )
 
 func main() {
-	my_string := "привіт, світ"
-	cap_string := strings.ToUpper(my_string)
-	fmt.Println(cap_string)
+	text := "це приклад рядка"
+	capitalized := strings.Title(strings.ToLower(text))
+	fmt.Println(capitalized)
 }
 ```
-При виконанні цього коду виведення буде:
 
-```Go
-ПРИВІТ, СВІТ
+Sample output:
+```
+Це Приклад Рядка
 ```
 
-## Поглиблений огляд:
+## Deep Dive
+## Поглиблений огляд
 
-- Історичний контекст: Пригадайте часи машинопису та механічних друкарок, коли велика літера буквально означала натискання клавіші Caps Lock. Та ситуація змінилася. Тепер ми можемо легко маніпулювати рядками за допомогою функцій, таких як ToUpper в Go.
+In Go, strings are immutable sequences of bytes. Capitalizing strings has been around since people started computerizing records - helping sort and present data neatly. The `strings` package in Go provides the `Title` function, which capitalizes the first letter of each word. But beware, `Title` is quite simple minded - it doesn't properly handle cases like "McDonald" or "O'Neil" or some non-English letter capitalization rules. For these cases, custom logic or libraries like `golang.org/x/text` are used.
 
-- Альтернативи: Якщо ви хочете змінити першу букву рядка на велику, ви можете використати функцію `Title` в бібліотеці `strings`. 
+## See Also
+## Дивись також
 
-- Деталі реалізації: Функція `ToUpper` працює, йдучи по всьому вхідному рядку та замінюючи кожну малу літеру відповідною великою літерою.
-
-## Дивись також:
-
-- [Документація Go по бібліотеці `strings`](https://golang.org/pkg/strings/)
-- [Go by Example: String Functions](https://gobyexample.com/string-functions)
+- Go strings package: https://pkg.go.dev/strings
+- Go `golang.org/x/text` package: https://pkg.go.dev/golang.org/x/text
+- Unicode Standard Annex #29 on text boundaries (for complex capitalization logic): https://unicode.org/reports/tr29/

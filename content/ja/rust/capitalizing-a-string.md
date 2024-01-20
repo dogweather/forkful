@@ -1,7 +1,7 @@
 ---
-title:                "文字列を大文字にする"
-html_title:           "Rust: 文字列を大文字にする"
-simple_title:         "文字列を大文字にする"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,49 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rustによる文字列の最初の文字を大文字に変換する（キャピタライズする）
+## What & Why? (なにとなぜ？)
 
-## 何となぜ？
+文字列を大文字化するとは、すべての文字を大文字に変換することです。読みやすさを向上させたり、データの一貫性を保つためにプログラマーはこれを行います。
 
-文字列キャピタライズとは、文字列の最初の文字を大文字に変換することを指します。プログラマーはこれを行うことで、タイトルや文章の初めなどでエイリアスを正しく表示するために使用します。
+## How to: (やり方)
 
-##やり方:
-
-Rustでは、文字列の最初の文字を大文字にするには、`to_uppercase()`と`chars()`を使用します。以下に例を示します。
+Rustでは`.to_uppercase()`メソッドを使って文字列を大文字に変換できます。以下が例です。
 
 ```Rust
 fn main() {
-    let s = "hello world";
-    let capitalized = s.chars().enumerate()
-        .map(|(i,c)| if i == 0 { c.to_uppercase().collect::<String>() } else { c.to_string() })
-        .collect::<String>();
-    println!("{}", capitalized);
-}
-```
-上記のコードを実行すると、出力として"Hello world"を得ることができます。
-
-## 深層
-
-文字列のキャピタライズは、プログラミングの歴史の初期段階から存在する機能の一つです。この操作を行ったり、他の文字列操作を行ったりするためのさまざまな方法が歴史的に存在します。
-
-Rustでは他の方法も試すことができます。例えば、`match`文を使用する方法です。
-
-```Rust
-fn main() {
-    let s = "hello world";
-    let capitalized = match s.chars().next() {
-        None => String::new(),
-        Some(first_char) => first_char.to_uppercase().collect::<String>() + &s[1..],
-    };
-    println!("{}", capitalized);
+    let greeting = "hello, world!";
+    println!("{}", greeting.to_uppercase());
 }
 ```
 
-上記のコードも同様に"Hello world"を出力します。
+実行結果:
 
-ただし、Rustでは文字列のインデクシングが一筋縄ではいかないため、この方法には注意が必要です。
+```
+HELLO, WORLD!
+```
 
-## さらに詳しく
+## Deep Dive (深掘り)
 
-- [Rustの文字列ドキュメンテーション](https://doc.rust-lang.org/std/string/index.html)
-- [Rustのcharメソッドドキュメンテーション](https://doc.rust-lang.org/std/primitive.char.html)
+文字列を大文字化するのは新しいことではありませんが、Rust での方法は UTF-8 エンコーディングの完全なサポートとメモリ安全な操作を確保する点で独特です。ほかの言語では、`.toUpperCase()`や`.ToUpper()`などのメソッドが存在します。Rustの`.to_uppercase()`はイテレータを返すため、直接操作が可能ですが、その分、他の言語よりも少し手間がかかります。Rustでは、Unicodeのルールに従って効率的に文字列を大文字に変換するために多くの詳細が処理されています。
+
+## See Also (関連情報)
+
+- Rustの公式ドキュメント: [.to_uppercase()](https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase)
+- Rust by Example: [文字列の操作](https://doc.rust-jp.rs/rust-by-example-ja/std/str.html)
+- Unicode: [大文字と小文字のマッピング](https://www.unicode.org/Public/UCD/latest/ucd/CaseFolding.txt)

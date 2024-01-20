@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana liter w ciągu na wielkie"
-html_title:           "Arduino: Zamiana liter w ciągu na wielkie"
-simple_title:         "Zamiana liter w ciągu na wielkie"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,23 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i Dlaczego?)
+Zamiana łańcucha znaków na wielkie litery oznacza, że wszystkie litery w tekście stają się dużymi literami. Programiści używają tej techniki, by ujednolicić dane, na przykład żeby nazwy użytkowników były spójne niezależnie od sposobu wprowadzenia.
 
-Zwiększanie wartości stringa jest procesem zmieniania wszystkich małych liter w stringach na duże litery. Programiści robią to, aby łatwo porównywać ciągi lub skoncentrować uwagę użytkownika na określonym tekście.
-
-## Jak to zrobić:
-
+## How to: (Jak to zrobić:)
 ```Arduino
-String s = "witam";
-s.toUpperCase();
+void setup() {
+  Serial.begin(9600); 
+  String myString = "Witaj, Arduino!";
+  Serial.println(capitalize(myString)); 
+}
+
+void loop() {
+  // Tę funkcję zostawiamy pustą, w naszym przykładzie nie będzie używana.
+}
+
+String capitalize(String input) {
+  for (int i = 0; i < input.length(); i++) {
+    input[i] = toupper(input[i]);
+  }
+  return input;
+}
 ```
 
-Podczas wykonania kodu wejściowego `"witam"`, wyjście będzie wyglądało jak `"WITAM"`.
+Output:
+```
+WITAJ, ARDUINO!
+```
 
-## Głębsze zrozumienie:
+## Deep Dive (Dogłębna analiza)
+Zamiana tekstu na same wielkie litery nie jest nowym pomysłem – używa się jej od czasów maszyn do pisania, aby podkreślić ważne fragmenty tekstu. Na Arduino i innych platformach mikrokontrolerów często brakuje wbudowanych funkcji do manipulowania tekstami, co wymusza na programistach pisanie własnych funkcji, takich jak `capitalize`. Alternatywne podejścia mogłyby polegać na użyciu funkcji zewnętrznych bibliotek, lecz to zwiększa rozmiar i złożoność kodu. Przy implementacji pamiętaj, że `String` w Arduino jest obiektem, który zarządza dynamiczną pamięcią, a nieprawidłowe jej używanie może prowadzić do fragmentacji pamięci.
 
-1. Historyczne zaplecze: Koncepcję zwiększania wartości stringów wprowadzono już na wczesnym etapie w językach programowania, aby ułatwić porównywanie ciągów i ułatwić odczytanie pewnych ciągów.
-
-2. Alternatywy: W Arduino możesz także zamienić ciągi na małe litery, używając funkcji `toLowerCase()`.
-
-3. Szczegóły implementacji: Metoda `toUpperCase()` jest wbudowana w bibliotekę łańcuchów Arduino. Przechodzi przez każdą literę w łańcuchu i zamienia ją na wielką literą, jeśli jest to litera mała.
+## See Also (Zobacz również)
+- Dokumentacja Arduino `String` Class: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Funkcje manipulujące ciągami znaków w C++: http://www.cplusplus.com/reference/cstring/
+- Wprowadzenie do zarządzania pamięcią w Arduino: https://learn.adafruit.com/memories-of-an-arduino/more-memories

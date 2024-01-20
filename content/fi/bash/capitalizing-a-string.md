@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon isoilla kirjaimilla"
-html_title:           "Bash: Merkkijonon isoilla kirjaimilla"
-simple_title:         "Merkkijonon isoilla kirjaimilla"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,28 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Bash-ohjelmointi: Merkkijonojen Suuraakkosten Käyttö 
-## Mikä & Miksi?
-Suuraakkosten käyttö muuntaa merkkijonon kaikki kirjaimet suuriksi. Tämä on hyödyllistä esimerkiksi kun halutaan välttyä kirainkoista johtuvilta virheiltä tai kun halutaan tehdä vertailuja, jotka ovat riippumattomia kirjainkoosta.
+## What & Why?
+Merkkijonojen suurentaminen tarkoittaa joko jokaisen sanan ensimmäisen kirjaimen tai koko merkkijonon muuttamista isoksi kirjaimeksi. Tämä auttaa tekstin erottumaan tai noudattamaan formaattistandardeja, kuten otsikoissa tai tunnisteissa.
 
-## Kuinka:
-Merkkijonon muuntaminen suuraakkosiksi Bashissa on helppoa. Tässä on esimerkki.
-
+## How to:
 ```Bash
-teksti="hello world"
-teksti=${teksti^^}
-echo $teksti
-```
-Näytön tulos olisi:
+# Merkkijonon muuttaminen kokonaan isoksi kirjaimeksi
+echo "moikka maailma" | tr '[:lower:]' '[:upper:]'
+# Tulostuu: MOIKKA MAAILMA
 
-```Bash
-HELLO WORLD
+# Vain sanan ensimmäisen kirjaimen suurentaminen
+echo "moikka maailma" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)} 1'
+# Tulostuu: Moikka Maailma
 ```
 
-## Tarkempi tarkastelu:
-Suuraakkosten muunnos kehittyi samassa yhteydessä ASCII-merkkijärjestelmän kanssa, joka erottaa pien- ja suuraakkoset. Vaikka Bash tarjoaa kätevän suuraakkosten muunnoksen, muita tapoja on olemassa. Awkin tai sed-komentojen avulla voidaan käyttää säännöllisiä lausekkeita mukautettuun muunnokseen. Ja sisäiset yksityiskohdat? Tämä muutos käyttää sisäisesti C:n toupper-funktiota.
+## Deep Dive:
+Komentotulkissa merkkijonojen suurentaminen ei ole uusin konsepti. Se on peräisin ajoilta, kun ohjelmat ja järjestelmät alkoivat käsitellä tekstiä ja kaipasivat tapoja muotoilla sitä. `tr` ja `awk` ovat klassisia työkaluja, jotka ovat olleet käytössä jo vuosikymmeniä.
 
-## Katso myös:
-1. Bash Programming Guide: https://tiswww.case.edu/php/chet/bash/bashref.html  
-2. Awk-ohjelma: https://www.gnu.org/software/gawk/manual/gawk.html  
-3. Sed-komento: https://www.gnu.org/software/sed/manual/sed.html
+`tr` on yksinkertainen työkalu merkkien muuntamiseen; se ei ymmärrä sanoja, rivejä eikä lausekkeita, vain merkkejä. `awk` on tehokas tekstinkäsittelykieli, joka kykenee suorittamaan monimutkaisempia manipulaatioita, kuten sanakohtaisen pääkirjainmuunnoksen.
+
+Bash-funktioita tai moderneja työkaluja kuten `sed` voi myös käyttää, mutta tässä on tärkeää tuntea työkalun syntaksi ja kyvyt. Pelkistetysti, Bash ei sisällä sisäänrakennettua komentoa pääkirjainmuunnokselle, mutta sen sijasta se tukee useita yleisiä työkaluja, joilla sama lopputulos saavutetaan.
+
+## See Also:
+- `man tr`: Kertoo lisää tr-komennon käyttämisestä ja vaihtoehdoista.
+- `man awk`: Antaa tietoa awk-komennosta ja sen syntaksista.
+- Bash String Manipulation -opas: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
+- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/

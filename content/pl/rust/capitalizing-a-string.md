@@ -1,6 +1,6 @@
 ---
 title:                "Zamiana liter na wielkie w ciągu znaków"
-html_title:           "Rust: Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
 simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,43 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Kapitalizacja tekstu w Rust przekształca pierwszy znak w ciągu na wielką literę. Programiści robią to dla poprawy czytelności, formatowania danych oraz dostosowania do konwencji stylistycznych.
 
-Zmiana rozkładu liter na duże (tzw. wielkie litery) to proces, w którym pierwsza litera każdego słowa w ciągu jest zamieniana na wielką literę. Programiści robią to, aby dane wejściowe były bardziej czytelne dla użytkowników.
-
-## Jak to zrobić:
-
-Rust ma wiele metod do przekształcania ciągów w wielkie litery. Najprostszy to `.to_uppercase()` na ciągu. Sprawdźmy to.
+## How to (Jak to zrobić):
+Rust nie ma wbudowanej metody do kapitalizacji, ale można to łatwo zrobić samemu. Dawaj:
 
 ```Rust
-fn main() {
-    let small_str = "cześć, świecie";
-    let big_str = small_str.to_uppercase();
-    println!("{}", big_str);
+fn capitalize_first(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(first) => first.to_uppercase().collect::<String>() + c.as_str(),
+    }
 }
-```
-Po uruchomieniu powyższego kodu, wyjście powinno wyglądać tak:
-
-```Rust
-"CZEŚĆ, ŚWIECIE"
-```
-
-## W Głąb:
-
-Innym sposobem manipulacji wielkością liter na dużą w Rust jest użycie standardowej biblioteki `unicode_segmentation` i metody `to_titlecase`, która pozwala zamieniać pierwszą literę każdego wyrazu na duże litery, zamiast konwertować cały ciąg. 
-
-```Rust
-use unicode_segmentation::UnicodeSegmentation;
 
 fn main() {
-    let s = "witaj, świecie".to_string();
-    let title_s = s.unicode_words().map(|w| w.chars().next().unwrap().to_uppercase() + &w.chars().skip(1).collect::<String>()).collect::<Vec<_>>().join(" ");
-    println!("{}", title_s);
+    let my_string = "witaj, świecie!";
+    println!("{}", capitalize_first(my_string)); // Wyświetla: "Witaj, świecie!"
 }
 ```
 
-## Zobacz Też:
+## Deep Dive (Głębsze zagłębienie):
+Kapitalizacja ciągów w Rust może być niestandardowa, ponieważ język nie ma wbudowanej funkcjonalności jak np. metoda `toUpperCase()` w JavaScript. Historia tego przeoczenia nie jest dokładnie opisana, ale wynika to z filozofii Rust, która preferuje minimalizm i wydajność.
 
-1. Dokumentacja Rust do metody `to_uppercase`: https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase
+Jako alternatywę, możesz użyć zewnętrznych crate'ów takich jak `heck`, które oferują różne metody manipulacji stringami, w tym `to_title_case()`.
 
-2. Dokumentacja Rust do metody `to_titlecase`: https://unicode-rs.github.io/unicode-segmentation/unicode_segmentation/trait.UnicodeSegmentation.html#method.unicode_words
+Implementacja customowej funkcji, jak `capitalize_first`, wymaga zrozumienia iteratorów w Rust. Warto też zauważyć, że `.to_uppercase()` zwraca iterator, więc używamy `collect::<String>()`, aby zamienić go z powrotem na `String`.
+
+## See Also (Zobacz również):
+- Dokumentacja Rust na temat iteratorów: https://doc.rust-lang.org/std/iter/
+- Crates.io, gdzie znajdziesz `heck` i inne przydatne biblioteki: https://crates.io/
+- Rust String method docs dla innych operacji na ciągach znaków: https://doc.rust-lang.org/std/string/struct.String.html

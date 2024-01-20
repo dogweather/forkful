@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando uma string"
-html_title:           "Kotlin: Capitalizando uma string"
+html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,47 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## O Que & Porquê?
-Ao capitalizar uma string, transformamos a primeira letra de cada palavra para maiúscula. Os programadores costumam fazer isso para melhorar a legibilidade e apresentação dos dados, como por exemplo, ao exibir nomes próprios.
+
+Capitalizar uma string significa transformar todas as letras iniciais de palavras em maiúsculas, ou apenas a primeira letra da string inteira. Programadores fazem isso para formatar textos, como nomes próprios ou títulos, seguindo padrões de legibilidade e estilo.
 
 ## Como Fazer:
-Em Kotlin, podemos capitalizar strings usando a função `capitalize`. Veja o exemplo abaixo:
-```Kotlin
+
+Capitalizar a primeira letra:
+
+```kotlin
 fun main() {
-    val frase = "olá, mundo!"
-    println(frase.capitalize())
+    val texto = "kotlin é legal!"
+    val capitalizado = texto.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+    println(capitalizado)
 }
-```
-Saída:
-```
-Olá, mundo!
+// Saída: Kotlin é legal!
 ```
 
-Se quisermos todas as palavras com a primeira letra maiúscula, podemos dividir a string em palavras e capitalizar cada uma delas:
+Capitalizar todas as palavras:
 
-```Kotlin
+```kotlin
 fun main() {
-    val frase = "olá, mundo maravilhoso!"
-    
-    val fraseCapitalizada = frase.split(" ").joinToString(" ") { it.capitalize() }
-    
-    println(fraseCapitalizada)
+    val texto = "kotlin é muito legal!"
+    val capitalizado = texto.split(" ").joinToString(" ") { it.capitalize() }
+    println(capitalizado)
 }
-```
-Saída:
-```
-Olá, Mundo Maravilhoso!
+// Saída: Kotlin É Muito Legal!
 ```
 
 ## Aprofundamento
-Embora a capitalização de strings pareça uma tarefa simples, sua implementação varia de acordo com o idioma e as regras de formatação. Historicamente, a capitalização se originou dos manuscritos medievais para destacar certas palavras e evoluiu para uso comum em textos e programação. 
 
-Em Kotlin, além da função `capitalize`, temos a função `replaceFirstChar` que pode ser usada para o mesmo propósito mas oferece mais controle, permitindo-nos definir como queremos alterar o primeiro caractere.
-
-Também vale considerar a capitalização em contextos multilíngues - a capitalização pode não funcionar da mesma maneira em diferentes idiomas. A localização adequada pode exigir o uso de bibliotecas e métodos específicos que respeitam as regras gramaticais dos idiomas em questão.
+Historicamente, a função `capitalize()` era usada para capitalizar a primeira letra de strings no Kotlin, mas a partir do Kotlin 1.5, ela foi substituída por `replaceFirstChar`, pois a função original estava limitada ao idioma inglês e não tratava adequadamente os caracteres Unicode. Além disso, existem diversas bibliotecas Java que também podem ser usadas em Kotlin para capitalizar strings, como a Apache Commons Lang. A implementação de capitalização em Kotlin pode variar, pois alguns idiomas têm regras específicas para capitalização que podem não ser seguidas utilizando métodos simples.
 
 ## Veja Também
-[Aqui](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html) está a documentação oficial para a função `capitalize` no Kotlin.
 
-Para uma lista mais completa de funções de strings em Kotlin, consulte [esta página](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/index.html).
-
-Para discutir tópicos mais avançados, como a capitalização correta de strings em vários idiomas, você pode explorar [esta discussão](https://stackoverflow.com/questions/5054995/how-to-capitalize-the-first-character-of-each-word-in-a-string) no StackOverflow.
+- Documentação oficial da Kotlin Standard Library sobre manipulação de strings: [Kotlinlang - Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
+- Projeto Apache Commons Lang para manipulação de strings: [Apache Commons Lang - StringUtils](https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)
+- Aprofunde seus conhecimentos sobre os caracteres Unicode e suas particularidades na capitalização: [Unicode Character Database](https://www.unicode.org/ucd/)

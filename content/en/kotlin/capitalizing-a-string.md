@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "Kotlin recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,41 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-String capitalization is making the first letter of a string uppercase. It's useful for formatting data, especially when formal correctness matters, like names, places, and to start sentences correctly.
+Capitalizing a string means turning the first letter of each word to uppercase. Programmers do it to format text, ensuring names, titles, or UI elements look neat and standardized.
 
 ## How to:
 
-In Kotlin, there are in-built functions: `capitalize()` and `replaceFirstChar()`. Here's how to do it:
+In Kotlin, you can capitalize strings easily. Here's a quick example:
 
-```Kotlin
-// Using capitalize function
-val str = "hello there!"
-val capitalizedStr = str.capitalize()
-println(capitalizedStr)  // Output: Hello there!
-
-// Using replaceFirstChar function on Kotlin 1.5 and above
-val newCapitalizedStr = str.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
-println(newCapitalizedStr)  // Output: Hello there!
+```kotlin
+fun main() {
+    val text = "kotlin programming"
+    val capitalizedText = text.split(" ").joinToString(" ") { it.capitalize() }
+    println(capitalizedText)
+}
 ```
+
+Sample Output:
+```
+Kotlin Programming
+```
+To capitalize just the first letter of a sentence:
+
+```kotlin
+fun main() {
+    val sentence = "hello, kotlin enthusiasts!"
+    val capitalizedSentence = sentence.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
+    println(capitalizedSentence)
+}
+
+```
+
+Sample Output:
+```
+Hello, kotlin enthusiasts!
+```
+
+Note that `capitalize()` is deprecated. Use `replaceFirstChar { it.titlecase() }` for better future compatibility.
 
 ## Deep Dive
 
-The `capitalize()` function was introduced in Kotlin 1.0. It does not follow Unicode titlecase rules, instead, it just converts ASCII characters. As of Kotlin 1.5, `capitalize()` is deprecated in favor of `replaceFirstChar()` function which now respects the Unicode rules for titlecasing characters.
+Capitalization methods changed in Kotlin. `capitalize()` was used broadly but got deprecated in favor of `replaceFirstChar { it.titlecase() }`. This change makes code clearer about what’s happening—it's not just capitalizing but replacing the first character with its titlecase equivalent.
 
-An alternative way for string capitalization in earlier versions of Kotlin could be using the `substring()` function. Here's how:
+Why capitalize strings? It's often a user interface thing. Think book titles, names, or any list where you need consistency. It helps with readability and aesthetics.
 
-```Kotlin
-val str = "hello there!"
-val capitalizedStr = str[0].toUpperCase() + str.substring(1)
-println(capitalizedStr)  // Output: Hello there!
-```
+Alternatives to capitalizing include:
+- `.toLowerCase()`: For lowercasing.
+- `.toUpperCase()`: For making everything uppercase.
+- CSS in web development: sometimes text is capitalized in the frontend.
 
-Keep in mind that these string functions make a new string and do not modify the original string because strings in Kotlin are immutable.
+Under the hood, capitalization functions interact with Unicode characters. Characters have specific uppercase versions. It's not just about slapping an 'A' where there was an 'a', it's about understanding language-specific rules.
 
-## See Also
+Don't forget about locales. In Turkish, for instance, 'i' capitalizes to 'İ', not 'I'. So, doing it locale-agnostic might trip you up in multi-language applications.
 
-For more information, it would be beneficial to check out:
+## See Also:
 
-- [Unicode Standard](https://unicode.org/standard/standard.html)
-- [Kotlin capitalize() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-- [Kotlin replaceFirstChar() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-first-char.html)
+- Kotlin docs on `replaceFirstChar`: [Kotlin replaceFirstChar](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-first-char.html)
+- Unicode capitalization rules: [Unicode Capitalization Guidelines](http://unicode.org/versions/Unicode9.0.0/ch03.pdf#G33992)
+- Capitalization in different locales: [Locale-Specific Capitalization](https://garygregory.wordpress.com/2015/11/03/java-lowercase-conversion-turkey/)

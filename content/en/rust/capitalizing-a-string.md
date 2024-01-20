@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "Rust recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,44 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Capitalize Strings in Rust
-
 ## What & Why?
 
-Capitalizing strings is making all the first letters of the words within the string uppercase. It makes your program user interface tidy and readable.
+Capitalizing a string means making the first letter of each word uppercase while the rest remain lowercase. Programmers do this for formatting purposes, to adhere to linguistic norms in user interfaces, or to ensure data consistency in text processing.
 
-## How To:
+## How to:
 
-Take a look at this simple way to capitalize a string in Rust.  
+Rust does not include a built-in method to capitalize each word in a string, but we can easily implement our own using the `to_ascii_uppercase` method for single characters and looping through the words.
 
 ```Rust
-fn capitalize(s: &str) -> String {
-    let mut cap = String::new();
-    let mut new_word = true; 
-    for c in s.chars() {
-        if c.is_alphanumeric() {
-            if new_word { cap.extend(c.to_uppercase()); new_word = false; }
-            else { cap.push(c); }
-        } else { cap.push(c); new_word = true; }
-    }
-    cap
+fn capitalize_words(s: &str) -> String {
+    s.split_whitespace()
+        .map(|word| {
+            let mut chars = word.chars();
+            match chars.next() {
+                None => String::new(),
+                Some(first) => first.to_ascii_uppercase().to_string() + chars.as_str(),
+            }
+        })
+        .collect::<Vec<_>>()
+        .join(" ")
 }
 
 fn main() {
-    println!("{}", capitalize("hello, rust programming!")); //Output: "Hello, Rust Programming!"
+    let sentence = "hello world";
+    println!("{}", capitalize_words(sentence));
 }
 ```
-In this code snippet, `capitalize()` is a utility function that receives a str (slice of a string) and returns a new string that includes capitalized characters according to the rules defined by the logic enclosed within the loop.
 
-## Deep Dive
+Sample output:
 
-Historical context: Rust doesn't come with a built-in method to capitalize strings - that's why we need a custom function as above. 
+```
+Hello World
+```
 
-Alternatives: There may be alternative libraries/add-ons providing this functionality such as the popular `heck` crate in Rust that gives solution for string case conversions. 
+## Deep Dive:
 
-Implementation details: The function above checks for alphabetic characters to capitalize the first letter after each non-alphabetic character (indicating a new word). Uppercased characters use more memory than lowercase, so this version avoids unnecessary creations of uppercase characters that aren't needed. Only the first character of each word is uppercased, reducing storage and computation.
+Historically, Rust has prioritized a minimal standard library, with many utility functions provided by the community through crates. For string capitalization, you can use the `heck` crate for more advanced case conversions, such as CamelCase, snake_case, and more.
 
-## See Also
+Capitalizing a string can be tricky with unicode characters. Rust's `char` type is a Unicode scalar value, allowing for proper handling of most characters. When dealing with full Unicode normalization, more advanced libraries, such as `unicode-segmentation`, should be considered for operations that are mindful of grapheme clusters.
 
-Heck crate: https://crates.io/crates/heck
-Guide to Strings in Rust: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html#str-is-a-view-into-a-string
+Implementation-wise, our `capitalize_words` function is not highly performant as it allocates a new `String` for each word. In applications that require high performance, it would be beneficial to optimize string manipulation to avoid excessive memory allocations.
+
+## See Also:
+
+- Rust documentation for 'char': https://doc.rust-lang.org/std/primitive.char.html
+- 'Heck' crate for case conversions: https://crates.io/crates/heck
+- 'Unicode Normalization Forms' in Rust: https://unicode-rs.github.io/unicode-normalization/unicode_normalization/index.html
+- Rust Book for more on strings: https://doc.rust-lang.org/book/ch08-02-strings.html

@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות גדולות"
-html_title:           "Swift: הפיכת מחרוזת לאותיות גדולות"
-simple_title:         "הפיכת מחרוזת לאותיות גדולות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,21 +11,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-האיפיון של מחרוזת הוא פעולה שבה כל אות במחרוזת הופך לאות גדולה. מתכנתים משתמשים בזה כדי להפוך את התוכן ליותר קריא או למרכז את הטקסט.
+הקפלה לראשי תיבות של מחרוזת משנה את כל האותיות קטנות לגדולות. תכנתים עושים זאת לנוחות, כדי להקל על קריאת טקסט וכדי להבטיח התאמה למוסכמות קוד (כגון קבועים).
 
-## איך לעשות?
-הנה דוגמה של קוד בשפת Swift שמאפיין מחרוזת:
+## איך לעשות:
 ```Swift
-let smallString = "בדיקה"
-let capitalizedString = smallString.uppercased()
-print(capitalizedString)
-// Outputs: "בדיקה"
+let lowerCaseString = "shalom, swift!"
+let capitalizedString = lowerCaseString.uppercased()
+print(capitalizedString) // Outputs: "SHALOM, SWIFT!"
 ```
-עבודה זו משנה את כל האותיות הקטנות במחרוזת לאותיות גדולות.
+השימוש בפונקציה `uppercased()` של Swift הופך את כל האותיות במחרוזת לראשי תיבות.
 
-## הפלונגה
-האיפיון של מחרוזות התחיל בכדי למרכז את הטקסט במסמכים. ישנם שיטות חלופיות, כולל כיתוב עם אותיות גדולות ידנית או שימוש בספריות חיצוניות. הגרסה הנוכחית של Swift מכילה פעולה מובנית שמאפשרת לך להפוך את כל האותיות במחרוזת לאותיות גדולות.
+## עיון נוסף:
+בעבר, קפליזציה אולי יכלה להשתנות בין מערכות שונות בגלל קידודי תווים ייחודיים. היום, Swift משתמשת ב-Unicode, מה שמאפשר התנהגות עקבית בכל פלטפורמה. ראו חלופות כמו `.lowercased()` להקטנת אותיות, או `.capitalized` שרק האות הראשונה של כל מילה הופכת לראשית.
 
-## ראה גם
-- [דוקומנטציה של Swift](https://developer.apple.com/documentation/swift)
-- [StackOverflow: איך להפוך מחרוזת לאותיות גדולות ב-Swift](https://stackoverflow.com/questions/26350709/upper-case-string-in-swift)
+## ראו גם:
+- תיעוד Swift של Apple על מחרוזות ותווים: https://developer.apple.com/documentation/swift/string
+- Unicode Standard: https://unicode.org/standard/standard.html
+- קהילת מפתחי Swift: https://swift.org/community/

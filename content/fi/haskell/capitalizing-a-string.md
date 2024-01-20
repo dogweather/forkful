@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pääkirjaintaminen"
-html_title:           "Haskell: Merkkijonon pääkirjaintaminen"
-simple_title:         "Merkkijonon pääkirjaintaminen"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? / Mikä & Miksi?
+Stringin kapitalisointi muuttaa tekstin kirjaimet isoiksi kirjaimiksi. Ohjelmoijat käyttävät sitä datan yhtenäistämiseen ja formaattien standardointiin, kuten nimien ja otsikoiden muodostukseen.
 
-Kielen merkkijonojen kirjainten muuttaminen isoiksi on helppo tapa tehdä teksti näkyvämmäksi tai standardoida muoto. Yleisimmin tämä on tehtävä, missä se riskejä pienenee typoista tai erilaisista kirjoitustavoista.
-
-## Miten:
-
-Haskellissa voit pääoman kaikki lähdetekstin merkit käyttämällä sisäänrakennettua funktiota 'toUpper'. Se toimii yksittäisille merkkeille, joten meidän täytyy 'map':ata se kokonaiseen merkkijonoon:
-
+## How to: / Kuinka tehdä:
 ```Haskell
-import Data.Char (toUpper)
+import Data.Char(toUpper)
 
-capitalized :: String -> String
-capitalized = map toUpper
+-- Perusfunktio stringin kapitalisointiin
+capitalize :: String -> String
+capitalize = map toUpper
 
+-- Esimerkki ja tuloste
 main :: IO ()
-main = putStrLn $ capitalized "hello, world"
-```
-Esimerkkitulostus olisi:
+main = putStrLn (capitalize "hei maailma")
 
-```Haskell
-"HELLO, WORLD"
+-- Tuloste
+-- "HEI MAAILMA"
 ```
 
-## Syväsukellus:
+## Deep Dive / Sukellus syvyyksiin:
+Stringin kapitalisointi on Haskellissa selvää kauraa: käytä `map`-funktiota yhdessä `toUpper`-funktion kanssa `Data.Char`-kirjastosta. Historiallisesti tämä lähestymistapa on perua funktio-ohjelmoinnista, jossa dataa käsitellään yhdistelemällä funktioita. Vaihtoehtoisia tapoja voi löytää kirjoittelemalla omia funktioita tai käyttämällä muita kirjastoja, mutta `map` ja `toUpper` ovat tehokas pari.
 
-Haskellissa 'map' sijoittaa funktion kaikkiin listan elementteihin - tässä tapauksessa, kaikkiin Stringin merkkeihin, koska Haskellissa String on vain merkkien luettelo.
+Haskell ei suoraan sisällä merkkijonon kapitalisointifunktiota, joten yksinkertainen `capitalize`-funktio onkin usein itse tehty. Kielen luonteen vuoksi tämä opettaa ohjelmoijille toiminnallisen ajattelun tapoja, kun he muovautuvat käyttämään olemassa olevia funktioita uusiin tarkoituksiin.
 
-Historiallisesti tämä toiminto on peräisin vanhemmista koodauskielistä, joissa merkkijonot koostuivat ASCII-merkeistä. 'A':n ja 'a':n ASCII-arvojen vaihtelevat pääoman mukaan, joten tekstin kirjoittaminen isoksi oli yksinkertainen laskutoimitustapa.
+Ohjelmoijat käyttävät joskus `toUpper`-funktioon vastinparina `toLower`-funktiota pienten kirjainten tuottamiseen. Muita kirjastoja voivat olla mukana esimerkiksi käsittelemässä monimutkaisempia tekstiformaatteja tai lokaaliin liittyviä erikoistapauksia.
 
-Vaihtoehtoja takomiselle on Haskellissa useita, mukaan lukien 'mapM_' ja 'forM_', mutta 'map' on yleisin ja yksinkertaisin.
-
-## Katso myös:
-
-1. Learn You a Haskell For Great Good: http://learnyouahaskell.com/
-2. Real World Haskell: https://book.realworldhaskell.org/
-3. Haskell Wiki: https://wiki.haskell.org/
-4. Stackage for available Haskell packages: https://www.stackage.org/
+## See Also / Lisätietoja:
+- Haskell Documentation for `Data.Char`: [Haskell Data.Char](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html)
+- Functional Programming Basics: [Learn You a Haskell for Great Good](http://learnyouahaskell.com/)

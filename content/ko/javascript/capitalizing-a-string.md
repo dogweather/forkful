@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자화"
-html_title:           "Javascript: 문자열 대문자화"
-simple_title:         "문자열 대문자화"
+title:                "문자열 대문자로 변환하기"
+html_title:           "Arduino: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 문자열 대문자화란 무엇인가 & 왜 필요한가?
+## What & Why? (무엇과 왜?)
+문자열 대문자화는 문자열의 첫 글자를 대문자로 바꾸는 것입니다. 프로그래머들은 사용자 인터페이스를 일관되게 보이게 하고, 데이터를 정규화하기 위해 이 작업을 종종 수행합니다.
 
-문자열 대문자화란 코드상의 모든 소문자를 대문자로 바꾸는 작업입니다. 자바스크립트에서 우리는 이 작업을 많이 하는데, 이유는 가독성과 통일성을 높이기 위해서입니다.
+## How to: (어떻게 하나요?)
+```javascript
+// 간단한 대문자화 함수
+function capitalize(str) {
+  if(str && typeof str === 'string') {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+  return str;
+}
 
-## 어떻게 사용하는가:
-
-```Javascript
-let msg = "안녕하세요, 자바스크립트!";
-let msgUpper = msg.toUpperCase();
-console.log(msgUpper);
+// 사용 예시
+console.log(capitalize('hello')); // 'Hello'
+console.log(capitalize('')); // ''
+console.log(capitalize(null)); // null
 ```
-출력 결과:
-```Javascript
-"안녕하세요, 자바스크립트!"
+
+## Deep Dive (심층 분석)
+대소문자 변환은 프로그래밍 초기부터 있어왔습니다. 문자열의 가독성을 높이는 간단하지만 강력한 방법이죠. JavaScript에서는 `.toUpperCase()`와 `.toLowerCase()` 메서드를 내장하여 각 문자의 대문자와 소문자 변환이 가능합니다.
+
+대문자로 만들 때 주의할 점은 로케일(Locales)입니다. 특정 언어에서는 특수한 대문자 규칙을 가지고 있습니다. 이를 위해 `toLocaleUpperCase()` 메소드를 사용할 수 있습니다.
+
+```javascript
+// 'i'의 터키어 대문자 변환 예시
+console.log('i'.toLocaleUpperCase('tr-TR')); // 'İ'
 ```
 
-## 심층분석
+대문자화는 프로그래밍 언어가 진화하면서 여러 방법으로 구현할 수 있게 되었습니다. 이러한 방법 중 하나는 첫 글자만 대문자로 만드는 것입니다. `charAt()`, `slice()` 메서드를 사용하여 이를 쉽게 구현할 수 있습니다.
 
-### 역사적 배경
-ES5에서 소개된 `toUpperCase()` 메서드는 문자열을 다루는데 필요한 기본 도구 중 하나입니다.
+자바스크립트 프레임워크나 라이브러리에서도 유사한 기능을 제공합니다. 예를 들어, Lodash 라이브러리는 `_.capitalize` 함수를 제공합니다.
 
-### 대안
-다른 방법으로는 CSS의 `text-transform` 속성을 사용해 웹 페이지에서 텍스트를 대문자로 바꿀 수도 있습니다. 하지만 이는 코드 측면에서 문자열을 대문자로 바꾸는 것이 아니라, 디스플레이 단에서 보이는 문자를 대문자로 바꾸는 것입니다.
-
-### 세부 구현
-`toUpperCase()`는 내부적으로 유니코드 테이블을 참조하여 작동합니다. 소문자와 대문자 간에는 일정한 차이가 있어, 이차이를 더하거나 빼서 변환을 진행합니다.
-
-## 추천 자료
-
-- [MDN Web Docs, String.prototype.toUpperCase()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [W3Schools, JavaScript String toUpperCase() Method](https://www.w3schools.com/jsref/jsref_touppercase.asp)
-- [The Unicode Consortium](https://home.unicode.org)
+## See Also (참고 자료)
+- MDN Web Docs: String.prototype.toUpperCase() - [MDN toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- MDN Web Docs: String.prototype.toLocaleUpperCase() - [MDN toLocaleUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)
+- Lodash capitalize documentation - [Lodash capitalize](https://lodash.com/docs/#capitalize)

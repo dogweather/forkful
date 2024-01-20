@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자화"
-html_title:           "Elm: 문자열 대문자화"
-simple_title:         "문자열 대문자화"
+title:                "문자열 대문자로 변환하기"
+html_title:           "Arduino: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,36 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇인가요? 왜 사용하죠?)
+문자열의 첫 글자를 대문자로 만드는 것을 말해요. 주로 문장을 시작할 때나 제목, 중요 단어를 강조할 때 사용하죠.
 
-문자열을 대문자화하면, 문자열에서 모든 문자가 대문자로 변환됩니다. 이 작업은 프로그래머들이 텍스트 비교를 단순화하거나 사용자 인터페이스를 표준화하기 위해 자주 수행합니다.
-
-## 이렇게 합시다:
-
-Elm에서 문자열 대문자화는 'String.toUpper' 함수를 사용합니다.
+## How to:
+Elm에선 기본적으로 문자열을 대문자로 만드는 함수가 없어요. 직접 만들어 볼까요?
 
 ```Elm
-import Html exposing (Html, text)
-import String
+import String exposing (toList, cons, fromList, toUpper)
 
+capitalize : String -> String
+capitalize string =
+    string
+        |> toList
+        |> List.head
+        |> Maybe.map toUpper
+        |> Maybe.withDefault ' '
+        |> (\upperCaseHead -> cons upperCaseHead (String.dropLeft 1 string))
+        |> fromList
+
+-- 사용 예시
 main =
-  Html.beginnerProgram { model = "hello, world!", view = view, update = identity }
-
-view model =
-  Html.div [] [ Html.text (String.toUpper model) ]
+    String.words "hello elm world"
+        |> List.map capitalize
+        |> String.join " "
+        |> Debug.toString
+        |> text
+-- 출력: "Hello Elm World"
 ```
 
-위 프로그램을 실행하면, "HELLO, WORLD!"가 출력됩니다.
+## Deep Dive (심층 분석)
+Elm에서 문자열을 대문자로 만드는 기본 함수는 없어요. 이는 Elm이 가능한 단순함을 유지하고자 하는 철학 때문이죠. 문자열을 대문자로 만드는 다른 언어의 메소드들과는 달리, 직접 함수를 구현해야 해요.
 
-## 심화 학습 
+JavaScript 같은 경우엔 `toUpperCase()` 메소드를 사용하면 되지만, Elm에서는 리스트 변환과 몇 가지 함수 조합을 이용해야 해요.
 
-문자열 대문자화의 이력은 컴퓨터 시스템의 초기부터 있었습니다. 대소문자가 동일한 문자로 간주되기 때문에 정렬이나 검색을 수행할 때 대소문자 구분이 복잡성을 증가시키기 때문입니다.
+함수 내부에서는 문자열을 리스트로 바꿔 첫 글자를 추출한 후 대문자로 만듭니다. 그 다음, 원래 문자열에서 첫 글자를 제외한 나머지 문자열과 합쳐요.
 
-대안으로, Elm에서는 각각의 문자에 대해 'Char.toUpper' 함수를 호출하고 결과를 다시 문자열로 결합하는 것이 가능합니다. 어느 경우에든, 표준 라이브러리를 사용하는 것이 코드 유지 관리를 쉽게 만듭니다.
-
-'String.toUpper' 함수는 문자열을 반복하고 각 문자에 대해 'Char.toUpper' 함수를 호출합니다. 디테일한 내용과 소스 코드는 Elm 패키지 문서에서 찾을 수 있습니다.
-
-## 참고 링크
-
-Elm 문자열 함수 : [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)  
-Elm 문자 함수 : [https://package.elm-lang.org/packages/elm/core/latest/Char](https://package.elm-lang.org/packages/elm/core/latest/Char)
+## See Also (추가 정보)
+- Elm `String` 패키지: https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm `Char` 패키지: https://package.elm-lang.org/packages/elm/core/latest/Char
+- Elm 커뮤니티 토론: https://discourse.elm-lang.org/

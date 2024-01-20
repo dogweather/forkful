@@ -1,7 +1,7 @@
 ---
-title:                "Переведення рядка в верхній регістр"
-html_title:           "PHP: Переведення рядка в верхній регістр"
-simple_title:         "Переведення рядка в верхній регістр"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-
-Трансформація рядка у верхній регістр - це процесс перетворення всіх маленьких літер великими. Програмісти часто користуються цим, щоб створити рядки-константи або зробити текст більш зрозумілим для користувача.
+## Що та Чому?
+Capitalizing a string means shifting all letters to uppercase. Programmers capitalize for emphasis, titles, or consistency in data presentation.
 
 ## Як це зробити:
-
-PHP має вбудовану функцію `strtoupper()` для такої задачі. Ось приклад:
-
-```PHP
+```php
 <?php
-$text = "привіт, світ!";
-$capsText = strtoupper($text);
-echo $capsText;
+$lowercaseStr = 'це приклад рядка';
+$uppercaseStr = mb_strtoupper($lowercaseStr, 'UTF-8');
+
+echo $uppercaseStr; // Виведе: 'ЦЕ ПРИКЛАД РЯДКА'
+?>
+```
+Simple and works for most cases. Here's another method for just the first letter:
+```php
+<?php
+$lowercaseStr = 'київ';
+$capitalizedStr = mb_convert_case($lowercaseStr, MB_CASE_TITLE, "UTF-8");
+
+echo $capitalizedStr; // Виведе: 'Київ'
 ?>
 ```
 
-Цей код виведе: "ПРИВІТ, СВІТ!".
+## Поглиблений Розбір
+Back in the PHP 4 days, `strtoupper()` was your go-to. But with PHP 5+, `mb_strtoupper()` became crucial for multibyte strings, like those with Ukrainian characters.
 
-## Поглиблення у тему
+Why multiple functions? `strtoupper()` struggles with non-English alphabets. `mb_strtoupper()` steps up, handling the nuances of different encodings, like UTF-8.
 
-Функція `strtoupper()` була частиною PHP ще з його початкової версії, PHP/FI 2.0, яка була випущена в 1997 році.
+Under the hood, `mb_strtoupper()` respects the character encoding parameter, ensuring that capitalization works universally. This isn't just about going big on all characters. It's also about preserving the integrity of the data.
 
-Є чимало альтернатив для трансформації рядка у верхній регістр, включаючи використання `mb_strtoupper()`, яка корисна для рядків з багатьма кодуваннями.
+Alternatives like `mb_convert_case()` allow for more nuanced changes, like capitalizing just the first letter of each word (title case), which is particularly handy for names or titles.
 
-Невеликий момент до розуміння: `strtoupper()` та `mb_strtoupper()` працюють так, що їх виклик спершу поділяє рядок на частини або "символи" і перетворює кожний елемент окремо.
-
-## Що ще подивитися:
-
-Варто подивитися документацію PHP на функції [strtoupper()](https://www.php.net/manual/function.strtoupper) і [mb_strtoupper()](https://www.php.net/manual/function.mb-strtoupper), а також огляд їх використання на [Stack Overflow](https://stackoverflow.com/questions/1326672/make-a-string-uppercase-in-php).
+## Дивіться також
+- PHP Manual on String Functions: [php.net/manual/en/ref.strings.php](https://www.php.net/manual/en/ref.strings.php)
+- PHP Multibyte String Functions: [php.net/manual/en/ref.mbstring.php](https://www.php.net/manual/en/ref.mbstring.php)
+- UTF-8 Encoding and PHP: [php.net/manual/en/mbstring.supported-encodings.php](https://www.php.net/manual/en/mbstring.supported-encodings.php)

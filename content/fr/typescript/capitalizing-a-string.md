@@ -1,7 +1,7 @@
 ---
-title:                "Capitaliser une chaîne"
-html_title:           "TypeScript: Capitaliser une chaîne"
-simple_title:         "Capitaliser une chaîne"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
-Capitaliser une chaîne en TypeScript signifie transformer la première lettre de chaque mot d'une chaîne en majuscule. On le fait souvent pour donner une forme plus présentable à un texte ou à une entrée utilisateur.
+## What & Why?
+Capitaliser une chaîne consiste à convertir la première lettre en majuscule. Les développeurs font ça pour standardiser les données et améliorer l'affichage des textes.
 
-## Comment faire :
-Voici un exemple de code pour capitaliser une chaîne en TypeScript :
+## How to:
 
-```TypeScript
-function capitalize(str: string): string {
-    return str.split(' ')
-              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(' ');
+Voici un exemple de capitalisation d'une chaîne de caractères en TypeScript:
+
+```typescript
+function capitalizeFirstLetter(text: string): string {
+  return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
-console.log(capitalize("bonjour le monde.")); // Output : "Bonjour Le Monde."
+const myString = 'bonjour monde';
+console.log(capitalizeFirstLetter(myString)); // Bonjour monde
 ```
-Le code ci-dessus divise la chaîne en mots, transforme la première lettre de chaque mot en majuscule, puis fusionne les mots pour former la chaîne finale.
 
-## Plongée en Profondeur:
-Historiquement, la capitalisation est un concept issu de l'anglais où les mots d'une phrase, d'un titre ou d'une entrée ont souvent leur première lettre en majuscule pour des raisons d'esthétique ou de lisibilité.
+## Deep Dive:
 
-En TypeScript, une alternative à la fonction ci-dessus pourrait être d'utiliser une expression régulière à la place de `split()` et `map()`:
+Historiquement, capitaliser un texte est un concept ancien, utilisé pour mettre en avant des noms propres et débuter des phrases. En programmation, la capitalisation permet de normaliser les saisies des utilisateurs, surtout pour les noms propres ou les titres.
 
-```TypeScript
-function capitalizeRegex(str: string): string {
-    return str.replace(/\b\w/g, l => l.toUpperCase());
-}
+Des alternatives existent : on pourrait utiliser des librairies comme `lodash` avec sa fonction `_.capitalize`, ou bien étendre le prototype `String` (mais c'est généralement une mauvaise pratique qui peut mener à des conflits).
 
-console.log(capitalizeRegex("bonjour le monde.")); // Output : "Bonjour Le Monde."
-```
-Cette alternative peut être plus performante sur de grandes chaînes, mais peut aussi être plus difficile à comprendre pour les novices.
+Du point de vue de l'implémentation, notez que `charAt(0)` et `slice(1)` ne bégayent pas avec les chaînes multibytes (comme les emojis ou certains caractères spéciaux). Il est important de tester ces cas-là pour s'assurer que la fonction agit comme on le souhaite.
 
-La méthode initiale divise d'abord la chaîne en mots en utilisant `split()`, puis utilise `map()` pour transformer la première lettre de chaque mot en majuscule avec `toUpperCase()`, et enfin `join()` pour fusionner les mots en une seule chaîne.
+## See Also:
 
-## Voir Aussi :
-- [Méthode toUpperCase()](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/toUpperCase)
-- [Méthode split()](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [Méthode join()](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+- MDN Web Docs sur `toUpperCase()`: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- Lodash library pour des opérations sur les chaînes de caractères: [https://lodash.com/docs/4.17.15#capitalize](https://lodash.com/docs/4.17.15#capitalize)

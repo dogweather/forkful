@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "Haskell recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Capitalizing Strings in Haskell
-
 ## What & Why?
-Capitalizing a string simply means converting its initial character to uppercase while leaving the rest unchanged. Programmers often capitalize strings for text normalization, enhancing readability, or satisfying specific data requirements. 
+
+Capitalizing a string means fixing its casing so the first letter is uppercase, and the rest are lowercase. Programmers do this for consistency, readability, and to meet data formatting standards.
 
 ## How to:
-In Haskell, the `toUpper` function from the `Data.Char` module capitalizes a letter. To capitalize a string, apply this function to the first character.
+
+To capitalize strings in Haskell, the language itself doesn't have a built-in `capitalize` function. So, we'll make our own using the `toUpper` and `toLower` functions from the `Data.Char` module.
 
 ```Haskell
-import Data.Char
+import Data.Char (toUpper, toLower)
 
+-- Capitalizes the first character of a string and lowercases the rest
 capitalize :: String -> String
-capitalize "" = ""
-capitalize (head:tail) = toUpper head : tail
+capitalize ""     = ""
+capitalize (x:xs) = toUpper x : map toLower xs
 
-main = print (capitalize "haskell is cool!")
+main = do
+  print $ capitalize "haskell"       -- Outputs "Haskell"
+  print $ capitalize "hASKELL"       -- Outputs "Haskell"
+  print $ capitalize ""              -- Outputs ""
+  print $ capitalize "hello world!"  -- Outputs "Hello world!"
 ```
-When you run the `main` function, output would be: `Haskell is cool!`
 
 ## Deep Dive
-Capitalization methods may vary across languages, but the basic principle remains constant: transforming the first character to uppercase. Relatively young in the programming language landscape, Haskell takes a more functional approach.
 
-Haskell's `toUpper` function originates from the Unicode consortium's standard casing rules, which is why it works well for letters beyond ASCII.
+Haskell, a functional programming language, doesn't include simple string capitalization in its standard library, possibly because it's trivial to implement and not a common necessity in the type of programming it's designed for.
 
-Alternatives to the `toUpper` method include direct unicode manipulation or custom functions, but such solutions are often more complicated and unnecessary. 
+Alternatives to the `capitalize` function could use `Data.Text` which may provide performance benefits for large texts due to more efficient internal representations. Or look into libraries like `text-icu` for robust locale-sensitive capitalization.
 
-Haskell capitalizes a string lazily, meaning it only operates on the string when it's needed. This feeds into the language's efficiency, ensuring that not a single computation cycle goes to waste.
+Implementation wise, it's worth noting that our `capitalize` function doesn't deal with non-ASCII characters. If you need full Unicode support, you'd have to look for a library solution or handle complex cases of Unicode capitalization where simple character-by-character transformations don't cut it.
 
 ## See Also
-* `toUpper` function from `Data.Char` module: http://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html#v:toUpper
-* Haskell official documentation: https://www.haskell.org/documentation/
-* Text normalization in NLP: https://nlp.stanford.edu/IR-book/html/htmledition/normalization-equivalence-classing-of-terms-1.html
+
+- Haskell's `Data.Char` module: http://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
+- `Data.Text` for efficient text manipulation: http://hackage.haskell.org/package/text
+- Introduction to text processing in Haskell: https://wiki.haskell.org/Text_Processing
+- Unicode considerations in Haskell: https://wiki.haskell.org/Unicode_input_and_output

@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग को बड़े अक्षरों में बदलना"
-html_title:           "Clojure: एक स्ट्रिंग को बड़े अक्षरों में बदलना"
-simple_title:         "एक स्ट्रिंग को बड़े अक्षरों में बदलना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+एक स्ट्रिंग को कैपिटलाइज़ करना मतलब है हर शब्द के पहले अक्षर को बड़े अक्षर (कैपिटल लेटर) में बदलना। प्रोग्रामर्स ऐसा सामान्यत: यूज़र इंटरफेस और डॉक्युमेंटेशन में शीर्षक और नामों को उचित रूप से प्रदर्शित करने के लिए करते हैं।
 
-वर्णमाला में भागों को बड़ा करना होता है, जैसे कि "hello" को बदलकर "HELLO" । यह काम करना उपयोगी होता है क्योंकि बार-बार कुछ भी बड़ा या छोटा करने के लिए यह तैयार नहीं होते।
-
-## कैसे करें:
-
-आप Clojure के `upper-case` फ़ंक्शन का उपयोग करके स्ट्रिंग्स को कैपिटलाइज़ कर सकते हैं। 
+## How to: (कैसे करें:)
+Clojure में स्ट्रिंग को कैपिटलाइज़ करने के लिए हम `clojure.string/capitalize` फंक्शन का उपयोग करते हैं। ध्यान दें, यह हर शब्द के पहले अक्षर को कैपिटलाइज़ नहीं करता, केवल स्ट्रिंग के पहले अक्षर को बड़ा करता है। हर शब्द को कैपिटलाइज़ करने के लिए आपको अतिरिक्त कोड लिखना पड़ेगा।
 
 ```Clojure
-;; Clojure example
-(clojure.string/upper-case "hello world") ;; Outputs: "HELLO WORLD"
+(require '[clojure.string :as str])
+
+;; पहले अक्षर को कैपिटलाइज़ करना:
+(str/capitalize "clojure मजेदार है.")
+;; Output: "Clojure मजेदार है."
+
+;; हर शब्द को कैपिटलाइज़ करने के लिए:
+(defn capitalize-words [s]
+  (->> s
+       (str/split #"\s")
+       (map str/capitalize)
+       (str/join " ")))
+
+(capitalize-words "clojure मजेदार है.")
+;; Output: "Clojure मजेदार है."
 ```
 
-## गहनावरण:
+## Deep Dive (गहराई में जानकारी)
+स्ट्रिंग कैपिटलाइजेशन प्रोग्रामिंग भाषाओं में एक सामान्य फीचर है। `clojure.string/capitalize` फंक्शन Clojure 1.3 के रिलीज में शामिल किया गया था। हालांकि यह केवल पहले अक्षर को बड़ा करता है, कई बार हमें पूरे टाइटल को कैपिटलाइज़ करने की जरूरत पड़ती है। इस स्थिति में, हमें मैप और ज्वाइन का उपयोग करके अपना कस्टम फंक्शन बनाना पड़ता है। इससे हमें Clojure के फंक्शनल प्रोग्रामिंग प्रावधानों की शक्ति का भी पता चलता है।
 
-१. ऐतिहासिक प्रसंग: Clojure 1.3 के रिलीज के साथ 2011 में, `clojure.string/upper-case` फ़ंक्शन का परिचय दिया गया। इससे पहले, कोई बिल्ट-इन फ़ंक्शन नहीं होता था, और कोडर्स को यह स्वयं लागू करना पड़ता।
+विकल्पों की बात करें तो, Apache Commons Lang library जैसी कुछ जावा लाइब्रेरीज में भी कैपिटलाइजेशन फंक्शंस उपलब्ध हैं जिन्हें Clojure से उपयोग किया जा सकता है।
 
-२. विकल्प: Clojure के एकेरी "java interop" फ़ंक्शन का उपयोग करके, आप जावा के `toUpperCase` मेथोड का उपयोग कर सकते हैं। 
-
-```Clojure
-;; Clojure example
-(.toUpperCase "hello world") ;; Outputs: "HELLO WORLD"
-```
-
-३. क्रियान्वयन विवरण: `clojure.string/upper-case` फ़ंक्शन का पीछा करें, आपको `java.lang.String` के `toUpperCase` मेथड के पास फ़ंक्शन को ले जाएगा। 
-
-## और देखें:
-
-1. [Clojure Documentation on clojure.string/upper-case](https://clojuredocs.org/clojure.string/upper-case) - एक अधिक विस्तृत वर्णन और उदाहरण देखने के लिए।
-2. [Java Documentation on String.toUpperCase](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--) - जावा कार्यान्वयन विवरण देखने के लिए।
+## See Also (संबंधित स्रोत)
+- Clojure Documentation for `clojure.string`: [Official Docs](https://clojuredocs.org/clojure.string/capitalize)
+- Clojure from the ground up: strings: [Guide](https://aphyr.com/posts/305-clojure-from-the-ground-up-strings)
+- Java String Utilities in Clojure - Apache Commons Lang: [Commons Lang](https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)

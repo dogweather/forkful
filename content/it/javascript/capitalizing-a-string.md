@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizzare una stringa"
-html_title:           "Javascript: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscolizzare una stringa"
+html_title:           "Bash: Maiuscolizzare una stringa"
+simple_title:         "Maiuscolizzare una stringa"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,37 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che Cosa & Perché?
+## What & Why?
+Capitalizzare una stringa significa rendere maiuscola la prima lettera di ogni parola. Lo facciamo per questioni di formattazione, nomi propri, titoli o per rendere il testo più leggibile e professionale.
 
-Capitalizzare una stringa significa trasformare la prima lettera di ogni parola in una lettera maiuscola. I programmatori lo fanno per migliorare la leggibilità e l'estetica del testo.
-
-## Come Fare:
-
-Ecco un esempio di come capitalizzare una stringa in Javascript:
+## How to:
 ```Javascript
-function capitalizzaStringa(stringa) {
-    return stringa.charAt(0).toUpperCase() + stringa.slice(1).toLowerCase();
+function capitalize(str) {
+  return str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
 }
 
-console.log(capitalizzaStringa("ciao mondo")); // Output: "Ciao mondo"
+console.log(capitalize('ciao mondo, siamo qui per imparare!'));
+// Output: Ciao Mondo, Siamo Qui Per Imparare!
 ```
 
-## Approfondimento:
+## Deep Dive
+La capitalizzazione delle stringhe in JavaScript non ha una funzione nativa, dunque usiamo il metodo `replace()` con un'espressione regolare. Questo approccio è ormai consolidato nella comunità di sviluppatori. Oltre alla soluzione mostrata, esistono alternative come loop manuali o l'utilizzo di librerie esterne. Tuttavia, la `replace()` con regex è efficiente e largamente adottata per la sua brevità e chiarezza nel codice.
 
-- **Contesto storico**: Il bisogno di capitalizzare le stringhe risale agli albori della programmazione, da quando i calcolatori sono stati usati per manipolare il testo.
-- **Alternative**: Oltre al metodo mostrato sopra, possiamo usare `split()` per dividere la stringa in parole, capitalizzare ogni parola e poi unirle con `join()`.
-```Javascript
-function capitalizzaStringa(stringa) {
-    return stringa.split(' ').map(parola => parola.charAt(0).toUpperCase() + parola.slice(1).toLowerCase()).join(' ');
-}
+In contesti più complessi, come la gestione di casi speciali (ad esempio acronimi o particolari regole di capitalizzazione), potresti dover implementare una logica aggiuntiva o scegliere una libreria che già gestisce tali eventualità.
 
-console.log(capitalizzaStringa("ciao mondo")); // Output: "Ciao Mondo"
-```
-- **Dettagli implementativi**: `charAt(0)` restituisce la prima lettera della stringa. `toUpperCase()` la trasforma in maiuscolo. `slice(1)` restituisce il resto della stringa, e `toLowerCase()` lo trasforma in minuscolo.
-
-## Guarda Anche:
-
-- [MDN String.prototype.charAt()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [MDN String.prototype.toUpperCase()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN String.prototype.slice()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [MDN String.prototype.toLowerCase()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+## See Also
+- MDN Web Docs sulla funzione `replace()`: [MDN - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- Espressioni regolari in JavaScript: [MDN - RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- Una libreria per la manipolazione delle stringhe che supporta diverse operazioni di capitalizzazione: [Lodash](https://lodash.com/docs/#capitalize)

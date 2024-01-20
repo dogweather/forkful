@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "PHP recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,67 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Capitalizing a string means changing the first letter of each word in the string to upper-case. Programmers do this to improve legibility and readability of the text, or for standardizing text input.
+Capitalizing a string means making the first letter of each word uppercase. Programmers capitalize strings for visual consistency, branding, or user experience design.
 
 ## How to:
+In PHP, we capitalize strings with the `ucwords()` function for full titles or `ucfirst()` for single lines or sentences.
 
-Here's a short and sweet code example that capitalizes a string in PHP.
-
-```PHP
+```php
 <?php
-$string = 'say hello to PHP';
-$capString = ucwords($string);
-echo $capString;
+$lowercase_title = "the quick brown fox jumps over the lazy dog";
+$capitalized_title = ucwords($lowercase_title);
+
+echo $capitalized_title; // Outputs: The Quick Brown Fox Jumps Over The Lazy Dog
+
+$sentence = "an example sentence.";
+$capitalized_sentence = ucfirst($sentence);
+
+echo $capitalized_sentence; // Outputs: An example sentence.
 ?>
 ```
-The `ucwords()` function in PHP changes the first letter of each word in the string to uppercase. The output you'll see is:
 
-```
-Say Hello To PHP
-```
+## Deep Dive
+Capitalizing strings is not a new concept. In the print world, title capitalization is a standard convention. In PHP, `ucwords` and `ucfirst` have been around for a while, empowering such conventions digitally. PHP's `mb_convert_case` function allows more complex manipulations, like `MB_CASE_TITLE`, especially useful for multibyte (non-ASCII) strings.
 
-Now let's see an example that only capitalizes the first character of the string:
+Alternatives to `ucwords` include `strtoupper`, which converts the whole string to uppercase, and `strtolower` which makes the string lowercase. Be mindful of locale: certain languages have unique capitalization rules.
 
-```PHP
-<?php
-$string = 'say hello to PHP';
-$capString = ucfirst($string);
-echo $capString;
-?>
-```
-The `ucfirst()` function capitalizes the first letter of the string. The output you'll get is:
-
-```
-Say hello to PHP
-```
-
-## Deep Dive 
-
-PHP's `ucwords()` and `ucfirst()` functions were introduced back in PHP 4, so they are well-established in the language. 
-
-An alternative to `ucwords()` for capitalizing every word would be using the `mb_convert_case()` function with the `MB_CASE_TITLE` parameter. This is particularly useful when dealing with multibyte encodings, as `ucwords()` doesn't play well with non-ASCII characters. 
-
-```PHP
-<?php
-$string = 'say hello to PHP';
-$capString = mb_convert_case($string, MB_CASE_TITLE, "UTF-8");
-echo $capString;
-?>
-```
-This will output:
-
-```
-Say Hello To PHP
-```
-
-These PHP string functions are implemented at the C level, using ASCII logic for capitalization. That's why they're super speedy and reliable.
+Implementation wise, `ucwords` applies uppercase to the first character after any whitespace, not just spaces. This means new lines, tabs, etc., all trigger capitalization.
 
 ## See Also
+For more information check out:
 
-For more in-depth knowledge about these functions and string manipulation in PHP, check out the following resources:
-
-- [PHP ucwords() function](https://www.php.net/manual/en/function.ucwords.php)
-- [PHP ucfirst() function](https://www.php.net/manual/en/function.ucfirst.php)
-- [PHP mb_convert_case() function](https://www.php.net/manual/en/function.mb-convert-case.php)
-- [PHP Manual: String Functions](https://www.php.net/manual/en/ref.strings.php)
+- PHP Manual on `ucwords()`: https://www.php.net/manual/en/function.ucwords.php
+- PHP Manual on `ucfirst()`: https://www.php.net/manual/en/function.ucfirst.php
+- PHP Manual on `mb_convert_case()`: https://www.php.net/manual/en/function.mb-convert-case.php
+- PHP string functions: https://www.php.net/manual/en/ref.strings.php

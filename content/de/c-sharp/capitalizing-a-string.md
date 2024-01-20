@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "C#: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## What & Why?
+Ein String zu kapitalisieren bedeutet, alle Buchstaben in einem Textstring in Großbuchstaben umzuwandeln. Programmierer verwenden diese Methode, um Konsistenz zu gewährleisten oder Text hervorzuheben.
 
-Großbuchstaben in einer Zeichenkette (engl. "string") bedeutet, alle kleingeschriebenen Zeichen in Großbuchstaben zu konvertieren. Programmierer verwenden es, um die Lesbarkeit zu verbessern oder Zeichenkettenvergleiche zu vereinfachen.
-
-## Wie geht das?
-
-Mit C# können Sie eine Zeichenkette einfach mit der `ToUpper()` Methode in Großbuchstaben konvertieren. Hier ist ein einfaches Beispiel:
+## How to:
+C# bietet einfache Möglichkeiten, Strings zu kapitalisieren, wie z.B. die `ToUpper()`-Methode:
 
 ```C#
-  string kleingeschrieben = "hallo welt";
-  string großgeschrieben = kleingeschrieben.ToUpper();
+string originalText = "Hallo Welt!";
+string capitalizedText = originalText.ToUpper();
 
-  Console.WriteLine(großgeschrieben);
-  // Ausgabe: HALLO WELT
+Console.WriteLine(capitalizedText);  // Ausgabe: HALLO WELT!
 ```
 
-In diesem Code wird unser ursprünglicher kleingeschriebener Text zur "Hallo-Welt"-Zeichenkette und dann in Großbuchstaben umgewandelt.
-
-## Tieferer Einblick
-
-Die `ToUpper()` Methode ist in C# seit .NET Framework 1.1 enthalten und ist seitdem die grundlegende Methode zur Konvertierung von Zeichenketten in Großbuchstaben. 
-
-Es gibt Alternativen, wie die `TextInfo.ToTitleCase()` Methode, die jedoch nur das erste Zeichen jedes Wortes groß macht und nicht wirklich dasselbe ist. 
-
-Die `ToUpper()` Methode verwendet im Hintergrund eine Zuordnungstabelle, um die entsprechenden Großbuchstaben aus kleinen Zeichen zu ermitteln.  Sie ist auch kulturgebunden, d.h., sie konvertiert Zeichen basierend auf den kulturspezifischen Regeln der aktuellen oder angegebenen Kultur.
+Um nur den ersten Buchstaben zu kapitalisieren:
 
 ```C#
-  string kleingeschrieben = "hallo welt";
-  string großgeschrieben = kleingeschrieben.ToUpper(new CultureInfo("de-DE"));
+string originalText = "hallo welt!";
+string capitalizedText = char.ToUpper(originalText[0]) + originalText.Substring(1);
 
-  Console.WriteLine(großgeschrieben);
-  // Ausgabe: HALLO WELT
+Console.WriteLine(capitalizedText);  // Ausgabe: Hallo welt!
 ```
 
-## Weiterführende Links
+## Deep Dive:
+In früheren Programmiersprachen mussten Entwickler Schleifen und ASCII-Werte benutzen, um Zeichen für Zeichen zu verarbeiten. Heutzutage erleichtern Methoden wie `ToUpper()` und `ToLower()` den Umgang mit Groß- und Kleinschreibung.
 
-[Microsoft Dokumentation zur ToUpper Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.toupper?view=net-5.0)
+Es gibt auch Alternativen zur `ToUpper()`-Methode, wie `ToUpperInvariant()`, die bei der Internationalisierung hilfreich sein kann, da sie die kulturellen Unterschiede in der Zeichenumschreibung ignoriert.
 
-[Microsoft Dokumentation zur TextInfo.ToTitleCase Methode](https://docs.microsoft.com/de-de/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0)
+Außerdem ist die Implementierung von `ToUpper()` effizienter als eine manuelle Umsetzung, da sie auf optimierten Systembibliotheken basiert und spezielle Fälle wie Ligaturen und Sonderzeichen berücksichtigt.
+
+## See Also:
+- [Microsoft Docs - ToUpper Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+- [Microsoft Docs - ToUpperInvariant Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant)
+- [Stack Overflow - Capitalize First Letter of String](https://stackoverflow.com/questions/4135317/make-first-letter-of-a-string-upper-case-for-maximum-performance)

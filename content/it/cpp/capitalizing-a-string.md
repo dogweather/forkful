@@ -1,7 +1,7 @@
 ---
-title:                "Mettere in Maiuscolo una Stringa"
-html_title:           "C++: Mettere in Maiuscolo una Stringa"
-simple_title:         "Mettere in Maiuscolo una Stringa"
+title:                "Maiuscolizzare una stringa"
+html_title:           "Bash: Maiuscolizzare una stringa"
+simple_title:         "Maiuscolizzare una stringa"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,46 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+## What & Why?
+Capitalizzare una stringa significa trasformare tutti i suoi caratteri in lettere maiuscole. I programmatori lo fanno per uniformità, enfasizzare qualcosa, o preparare i dati per confronti che non tengono conto della differenza tra maiuscole e minuscole.
 
-La capitalizzazione di una stringa implica la trasformazione di tutti i suoi caratteri in maiuscolo. I programmatori lo fanno per diverse ragioni, ad esempio per migliorare la leggibilità o per normalizzare i dati input.
-
-## Come fare: 
-
-Ecco un esempio di come capitalizzare una stringa in C++ utilizzando la libreria `algorithm` e la funzione `::toupper`.
-
+## How to:
 ```C++
+#include <iostream>
 #include <algorithm>
 #include <cctype>
-#include <iostream>
-#include <string> 
+#include <string>
 
 int main() {
-    std::string s = "questa è una stringa";
-    std::transform(s.begin(), s.end(), s.begin(),
-                   [](unsigned char c) { return std::toupper(c); });
- 
-    std::cout << s; 
+    std::string testo = "Ciao, come va?";
+    std::transform(testo.begin(), testo.end(),testo.begin(), 
+        [](unsigned char c){ return std::toupper(c); });
+
+    std::cout << testo << std::endl; // Output: CIAO, COME VA?
+    return 0;
 }
 ```
 
-Output:
+## Deep Dive
+Capitalizzare stringhe è una pratica comune da decenni. In C++, funzioni come `std::toupper` sono parte della libreria standard e fanno esattamente questo. Alternativamente, puoi scrivere il tuo ciclo per passare attraverso la stringa e usare `std::toupper` su ogni carattere. Prima di C++11, i programmatori usavano spesso cicli manuali, ma l’introduzione delle lambda functions e l'ampliamento delle funzionalità di `<algorithm>` hanno reso il codice più espressivo e compatto.
 
-```
-QUESTA È UNA STRINGA
-```
+La funzione `std::toupper` funziona con `unsigned char` per evitare problemi di overflow con i caratteri firmati, quindi, quando usi questa funzione, è consigliabile effettuare un cast esplicito.
 
-## Approfondimento 
+Inoltre, in contesti non C++, come i database o le interfacce utente, capitalizzare potrebbe aiutare a garantire coerenza indipendentemente dall'input degli utenti.
 
-La funzione `toupper` esiste già da molto tempo nelle librerie standard del C, prima ancora dell'arrivo del C++. 
-
-Un'alternativa è l'uso del locale con `std::toupper`, che rispetta le caratteristiche della lingua locale.
-
-Dettaglio implementativo: `std::transform` modifica direttamente la stringa originale, risparmiando memoria.
-
-## Vedere Anche 
-
-- [Funzione std::toupper](http://www.cplusplus.com/reference/cctype/toupper/)
-- [Funzione std::transform](http://www.cplusplus.com/reference/algorithm/transform/)
-- [Standard Library cctype](http://www.cplusplus.com/reference/cctype/)
-- [Libreria Standard di algoritmi](http://www.cplusplus.com/reference/algorithm/)
+## See Also
+- Documentazione di `std::transform`: https://en.cppreference.com/w/cpp/algorithm/transform
+- Documentazione di `std::toupper`: https://en.cppreference.com/w/cpp/string/byte/toupper
+- Articolo di CPP Reference su lambda functions: https://en.cppreference.com/w/cpp/language/lambda

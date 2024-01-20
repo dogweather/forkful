@@ -10,40 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
+## What & Why? (क्या और क्यों?)
 
-स्ट्रिंग को कैपिटलाइज़ करना इसके अक्षरों को बड़े अक्षरों में बदलने का काम होता है। प्रोग्रामर इसे उद्घोष, उपयोगकर्ता की सहायता और स्थिरता के लिए करते हैं। 
+String को capitalize करने का मतलब है हर शब्द के पहले अक्षर को बड़ा (uppercase) करना। Programmers इसे इसलिए करते हैं ताकि text औपचारिक और पढ़ने में आसान लगे, जैसे कि titles या headings में।
 
-## कैसे करें:
+## How to: (कैसे करें:)
+
+C में string को capitalize करने के लिए, आप `toupper` function का इस्तेमाल कर सकते हैं। यहाँ एक उदाहरण है:
 
 ```C
-#include <ctype.h>
 #include <stdio.h>
+#include <ctype.h>
 
-void capitalize(char s[]) {
-    for(int i = 0; s[i] != '\0'; i++) {
-      s[i] = toupper(s[i]);
+void capitalize(char *s) {
+    int i = 0;
+    int was_space = 1; // True if the previous character was a space or the string just started
+    
+    // Loop through each character
+    while (s[i]) {
+        if (was_space && islower(s[i])) { 
+            s[i] = toupper(s[i]);
+        }
+        was_space = isspace(s[i]);
+        i++;
     }
 }
 
 int main() {
-    char str[] = "programming is fun!";
+    char str[] = "hello, world! नमस्ते दुनिया!";
     capitalize(str);
-    printf("%s\n", str);  // Prints: PROGRAMMING IS FUN!
-
+    printf("Capitalized: %s\n", str);
+    
     return 0;
 }
 ```
-## गहराई में:
 
-(1) ऐतिहासिक प्रशंग: इस तरीके का उपयोग के लम्बे समय से किया जा रहा है, यह ASCII मानक में बड़े एवं छोटे अक्षरों के बीच में अंतर को बढ़ाने के लिए किया जाता है।
+Sample Output:
+```
+Capitalized: Hello, World! नमस्ते दुनिया!
+```
+यहाँ, `capitalize` function हर शब्द के पहले अक्षर को बड़ा कर देता है।
 
-(2) विकल्प: आप यदि स्क्रिप्ट भाषाओं (जैसे पायथन या जावास्क्रिप्ट) उपयोग कर रहे हैं तो आप 'toUpperCase()' जैसे फ़ंक्शन का उपयोग कर सकते हैं।
+## Deep Dive (गहराई से जानकारी)
 
-(3) कैसे काम करता है: toupper() फ़ंक्शन का उपयोग ASCII मानक के अनुसार स्ट्रिंग के प्रत्येक कैरेक्टर को बड़े अक्षर में बदलने के लिए किया जाता है। 
+पुराने समय से ही capitalization का काफी महत्व रहा है - हाथ से लिखे ग्रंथों में भी और printing के दौरान भी। 
 
-## संबंधित लिंक्स:
+C में, `toupper` और `tolower` functions पारंपरिक हैं जो `<ctype.h>` header file में मिलते हैं और इनकी मदद से characters को बदलना संभव होता है। लेकिन इन functions को सही तरीके से इस्तेमाल करना महत्वपूर्ण है, खासकर जब non-ASCII characters involved हों जैसे कि Unicode characters। 
 
-1. ASCII परिचय: http://www.asciitable.com/
-2. ctype.h लाइब्रेरी डिटेल्स: https://www.cplusplus.com/reference/cctype/
-3. जावास्क्रिप्ट toUpperCase(): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+पारंपरिक `toupper` function वाला तरीका ASCII characters के लिए तो ठीक है, पर Unicode characters के साथ सही ढंग से काम नहीं करता। Unicode के लिए, आपको विस्तृत library functions का इस्तेमाल करना पड़ सकता है, जैसे कि `wchar_t` type और `wctype.h` header file के functions। 
+
+साथ ही, प्रोग्राम की efficiency बेहतर बनाने के लिए loops और conditions को सही ढंग से structure करना चाहिए।
+
+## See Also (और जानकारी के लिए)
+
+- [C Standard Library - ctype.h](https://www.cplusplus.com/reference/cctype/)
+- [ASCII Table and Description](https://www.asciitable.com/)
+- [GNU C Library: Character Handling](https://www.gnu.org/software/libc/manual/html_node/Character-Handling.html)
+- [Unicode Standard](https://home.unicode.org/)

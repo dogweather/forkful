@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "Clojure: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
+## Vad & Varför?
+Att kapitalisera en sträng innebär att omvandla första tecknet i varje ord till versal, det vill säga stora bokstäver. Programmerare använder detta för att formatera text på ett enhetligt sätt, exempelvis för rubriker eller namn.
 
-Att kapitalisera en sträng innebär att man ändrar de första bokstäverna i varje ord till stora bokstäver. Programmerare gör detta för att förbättra läsbarheten och presentera data på ett mer formellt sätt.
-
-## Hur man gör:
-
-Använd `clojure.string/capitalize` funktionen från Clojure biblioteket. Här är ett exempel:
+## Hur gör man:
+Clojure saknar en inbyggd funktion för att kapitalisera varje ord i en sträng, men det är enkelt att bygga en själv. Här är ett exempel:
 
 ```Clojure
-(require '[clojure.string :as str])
+(defn capitalize-word [word]
+  (str (clojure.string/upper-case (subs word 0 1)) (subs word 1)))
 
-(defn capitalize-str [s]
-    (str/capitalize s))
+(defn capitalize [s]
+  (clojure.string/join " " (map capitalize-word (clojure.string/split s #"\s+"))))
 
-(println (capitalize-str "hej världen"))
+(println (capitalize "hej hörni, detta är clojure!"))
 ```
 
-Den producerar följande output:
+Exempelutmatning:
 
-```Clojure
-"Hej Världen"
+```
+"Hej Hörni, Detta Är Clojure!"
 ```
 
 ## Djupdykning
+Kapitalisering av strängar är inte nytt och har använts länge inom programmering och textbehandling. I Clojure kan du kapitalisera en hel sträng med `clojure.string/capitalize`, men det påverkar bara det första ordet. För att kapitalisera alla ord måste du dela upp strängen och bearbeta varje ord individuellt. 
 
-Historiska sammanhang: Funktionen capitalized från Clojure's `clojure.string` biblioteket används ofta för att bearbeta och presentera textdata.
+Ett alternativ är att använda Java-metoden `capitalize` från Apache Commons Lang biblioteket, som kan importeras med Leiningen eller Maven. Dock är det vanligt att Clojure-utvecklare bygger egen enkel funktion för att undvika externa beroenden.
 
-Alternativ: Det finns andra sätt att kapitalisera en sträng, såsom att använda `clojure.string/upper-case` funktionen, men den kommer att göra alla bokstäver stora, inte bara den första bokstaven.
+Detaljer i implementeringen ovan innehåller användning av `clojure.string/upper-case` för att omvandla bokstäver till versaler och `subs` för att dela upp strängen. `map` applicerar `capitalize-word` funktionen på varje ord och `clojure.string/join` sammansätter ord till en fullständig sträng igen.
 
-Detaljer om implementeringen: Funktionen `clojure.string/capitalize` är en högre ordningens funktion som tar en sträng som indata och returnerar en ny sträng där varje ordstartsbokstav är stor.
-
-## Se också
-
-1. [Clojure Programmering](https://clojuredocs.org/clojure.string/capitalize) Här kan du läsa mer om `capitalize` funktionen.
-
-2. [Källkod för clojure.string/capitalize](https://github.com/clojure/clojure/blob/master/src/clj/clojure/string.clj) här hittar du den faktiska implementeringen i Clojure's källkod.
-
-3. [Alternativ för strängmanipulation i Clojure](https://clojuredocs.org/quickref/Clojure%20Core/string) en samling av andra användbara metoder för att manipulera strängar i Clojure.
+## Se även
+- Clojure's built-in string functions: https://clojuredocs.org/clojure.string
+- Java String Documentation for additional methods that can be used with interop: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+- Apache Commons Lang, a library that includes string utilities: https://commons.apache.org/proper/commons-lang/

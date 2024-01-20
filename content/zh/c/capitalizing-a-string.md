@@ -1,7 +1,7 @@
 ---
-title:                "将字符串大写化"
-html_title:           "C: 将字符串大写化"
-simple_title:         "将字符串大写化"
+title:                "字符串首字母大写"
+html_title:           "Arduino: 字符串首字母大写"
+simple_title:         "字符串首字母大写"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 第一部分: 什么和为何？
+## What & Why? (什么和为什么？)
 
-将字符串大写是指将字符串中的所有字符都转换为大写形式。开发者会这样做是因为在某些情况下，忽视大小写可以简化字符串的比较和搜索。
+大写字符串就是将所有字符转换成大写字母。程序员这么做通常为了统一格式或者提高可读性。
 
-# 第二部分：怎么做？
+## How to: (怎么做：)
 
-```C
-#include <ctype.h>
+在C语言中，你可以使用`<ctype.h>`库中的`toupper`函数来实现：
+
+```c
 #include <stdio.h>
+#include <ctype.h>
 
-//函数：使字符串全部大写
-void capitalize(char* str)
-{
-    for(int i = 0; str[i] != '\0'; i++){
-        str[i] = toupper(str[i]);
+void capitalizeString(char *str) {
+    while(*str) {
+        *str = toupper((unsigned char) *str);
+        str++;
     }
 }
 
-int main()
-{
-    char str[] = "hello, world!";
-    capitalize(str);
-    printf("%s", str);  // 输出 "HELLO, WORLD!"
+int main() {
+    char text[] = "hello world";
+    capitalizeString(text);
+    printf("Capitalized String: %s\n", text);
     return 0;
 }
+
+// 输出: Capitalized String: HELLO WORLD
 ```
 
-以上代码定义了一个名为`capitalize`的函数，用于将输入的字符串`str`转换为全大写形式。使用`ctype.h`库的`toupper`函数实现每个字符的转换。
+## Deep Dive (深入研究)
 
-# 第三部分：深度剖析
+在历史上，大写字母是书写时用于开始句子和名称的规则。在计算机编程中，大写转换通常用于用户输入规范化，比如搜索引擎忽略大小写进行搜索匹配。
 
-字符串大写化在早期的计算机科学中已广为使用，尤其在用户输入和文本数据处理之中。尽管这个操作在过去的编程语言中并不直观，但是在C语言等现代编程语言中已经变得很直观。
+在C中除了`<ctype.h>`和`toupper`，你还可以直接通过ASCII值来做转换。这种方式需要手动检查字符范围。大写字母的ASCII值从65到90，小写字母的ASCII值从97到122。
 
-大写化字符串的另一种方式是通过ASCII值的操作。我们知道，小写字母的ASCII值是其对应的大写字母的ASCII值加32。因此，对字符串中的每个字符，我们可以减去32，这样就可以得到对应的大写字母。
+关于实现，你需要小心地处理多个字符集和本地化问题。比如，某些欧洲语言有特殊字符无法简单地通过ASCII转换来大写化。
 
-另外，`toupper`函数在内部处理了大写转换。它接受一个`int`类型的参数。如果参数在ASCII中对应的字符为小写字母，那么它返回的结果将是对应的大写字母的ASCII值，否则返回原值。
+## See Also (另请参见)
 
-# 第四部分：参考资源
-
-- C库函数 - toupper() - http://www.cplusplus.com/reference/cctype/toupper
-- C Programming/Strings - https://en.wikibooks.org/wiki/C_Programming/Strings
-- C语言字符串处理 - https://www.runoob.com/cprogramming/c-string.html
+- C标准库参考: http://www.cplusplus.com/reference/cctype/
+- ASCII码表: https://www.asciitable.com/
+- 字符编码和国际化支持: https://www.unicode.org/

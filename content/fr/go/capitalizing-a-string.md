@@ -1,7 +1,7 @@
 ---
-title:                "Mettre en majuscules une chaîne de caractères"
-html_title:           "Go: Mettre en majuscules une chaîne de caractères"
-simple_title:         "Mettre en majuscules une chaîne de caractères"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,14 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi & Pourquoi ?
+Capitaliser une chaîne transforme les premières lettres de chaque mot en majuscules, un peu comme pour les titres. Cela aide à uniformiser les données en entrée et à les rendre visuellement agréables.
 
-La mise en majuscule d'une chaîne fait référence à la conversion de toutes les lettres d'une chaîne en majuscules. Les programmeurs le font souvent pour normaliser les entrées de l'utilisateur ou pour des raisons d'esthétique dans l'interface utilisateur.
-
-## Comment faire:
-Voici un exemple simple de la façon dont vous pouvez mettre en majuscule une chaîne en Go:
-
-```Go 
+## Comment faire :
+```Go
 package main
 
 import (
@@ -26,26 +23,20 @@ import (
 )
 
 func main() {
-	myString := "bonjour tout le monde"
-	fmt.Println(strings.ToUpper(myString))
+	phrase := "le langage go est super!"
+	phraseCapitalisee := strings.Title(strings.ToLower(phrase))
+	fmt.Println(phraseCapitalisee) // Affiche : "Le Langage Go Est Super!"
 }
 ```
 
-Lors de l'exécution de ce code, la sortie sera:
+## Exploration approfondie
+Historiquement, capitaliser chaque mot d'une chaîne reflète des conventions typographiques, comme pour les titres de livres. En Go, `strings.Title()` fait le boulot, mais attention, il capitalise chaque premier caractère après un espace. Si vous avez besoin de respecter certaines règles typographiques particulières (comme celles des titres APA), envisagez une solution personnalisée. 
 
-```Go
-"BONJOUR TOUT LE MONDE"
-```
+`strings.ToUpper()` transforme en majuscules, mais touche toute la chaîne, pas idéal pour les titres mais utile pour les acronymes ou quand la distinction de casse n'est pas voulue.
 
-## Plongée en profondeur
+D'un point de vue implémentation, soyez conscients des langues qui utilisent des caractères non latins ou des cas spéciaux comme le turc, où la capitalisation ne suit pas les mêmes règles que l'anglais.
 
-Historiquement, la mise en majuscule d'une chaîne était plus courante dans des langages comme le COBOL où toutes les instructions étaient en majuscules. Aujourd'hui, c'est une pratique courante dans la manipulation des chaînes pour des raisons diverses telles que l'harmonisation et la mise en forme des données. 
-
-En termes d'alternatives, vous pouvez également utiliser `strings.Title()` pour mettre en majuscule la première lettre de chaque mot dans une chaîne. Cependant, pour mettre en majuscule toute la chaîne, `strings.ToUpper()` est la meilleure option en Go. 
-
-En Go, la fonction `strings.ToUpper()` fonctionne en parcourant chaque point de code Unicode dans la chaîne et en le remplaçant par son équivalent en majuscules, si un tel équivalent existe.
-
-## Voir aussi
-
-1. Documentation sur la bibliothèque de chaînes Go : https://pkg.go.dev/strings
-2. Plus d'informations sur la mise en majuscule des chaînes : https://golangbyexample.com/uppercase-lowercase-string-golang/
+## Voir également
+- `strings` package doc: https://pkg.go.dev/strings
+- Article sur la typographie des titres: https://www.grammarly.com/blog/capitalization-in-the-titles/
+- Unicode et capitalisation : https://blog.golang.org/strings

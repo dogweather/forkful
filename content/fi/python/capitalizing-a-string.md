@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pääkirjaintaminen"
-html_title:           "Python: Merkkijonon pääkirjaintaminen"
-simple_title:         "Merkkijonon pääkirjaintaminen"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why? - Mitä & Miksi?
+Stringin pääkirjaimet tarkoittaa tekstijonon muuttamista niin, että kirjaimet ovat isoina - kuten otsikoissa tai nimissä. Koodarit käyttävät sitä parantaakseen luettavuutta ja standardoimaan datan ulkoasua.
 
-Tekstijonon "capitalisoiminen" tarkoittaa sen muuttamista niin, että jokainen sanan ensimmäinen kirjain on suuri (esimerkiksi 'hello world' muuttuu 'Hello World'). Tätä tarvitaan tyypillisesti, kun halutaan esittää tekstiä ihmisille lukemisen helpottamiseksi tai tietyt formaatit vaativat sitä.
-
-## Miten teen sen:
-
-Pythonissa stringin capitalisointi on erittäin helppoa. Tässä on esimerkki miten se tapahtuu:
+## How to - Näin teet:
+Pythonissa stringin saa isolla käyttäen `upper()`-metodia. Pienillä kirjaimilla `lower()` ja alkukirjain isoksi `capitalize()`. Katsotaanpa esimerkkejä.
 
 ```Python
-s = 'hello world'
-capitalized_s = s.title()
-print(capitalized_s)
+# Tekstin muuttaminen kokonaan suuraakkosiksi
+text = "tervetuloa ohjelmointimaailmaan"
+print(text.upper())
+# Output: TERVETULOA OHJELMOINTIMAAILMAAN
+
+# Jokaisen sanan alkukirjaimen muuttaminen isoksi
+title = "python ohjelmoinnin perusteet"
+print(title.title())
+# Output: Python Ohjelmoinnin Perusteet
+
+# Vain ensimmäisen kirjaimen muuttaminen isoksi
+greeting = "moi kaikille"
+print(greeting.capitalize())
+# Output: Moi kaikille
 ```
 
-Suorittamalla tämän koodin saatte tulostuksen "Hello World".
+## Deep Dive - Syväsukellus
+Stringien pääkirjainten historia juontaa juurensa kirjoituskoneista ja varhaisesta tietojenkäsittelystä, jossa erottelu isoilla kirjaimilla oli tarpeen. Myös nykypäivänä esimerkiksi osoitteet ja henkilönimet standardoidaan usein pääkirjaimin.
 
-## Syvempi sukellus:
+Kielitieteilijät puhuvat "title casesta", joka on iso alkukirjain jokaisessa merkittävässä sanassa. Pythonissa tämä toimii `title()`-metodilla. Jotkut käyttävät myös `str.capitalize()`-metodia, joka kuitenkin suurentaa vain ensimmäisen kirjaimen.
 
-Historiallinen yhteys - Pythonin 'title()' -metodi, jota käytetään merkkijonon capitalisoimiseen, lisättiin Python 2.6 -versiossa sujuvoittamaan tekstinkäsittelyä.
+Alkuperäiset funktiot `upper()`, `lower()` ja `capitalize()` ovat osa Pythonin standardikirjastoa, ja niiden tehtävä on tekstikäsittely. Ne toimivat Unicode-merkkijonoihin, jossa kirjaimet voivat olla monimutkaisempia ja isot/pienet kirjaimet eivät aina määräydy yksiselitteisesti.
 
-Vaihtoehdot - Vaikka 'title()' on suosittu tapa tehdä tämä, on myös muita vaihtoehtoja. Yksi yleisimmin käytetty on 'capitalize()', mutta se tekee suureksi vain merkkijonon ensimmäisen kirjaimen.
+Python-koodareille on tarjolla myös kolmansien osapuolten kirjastoja, kuten `stringcase`, joka sisältää lisää tapoja muokata merkkijonoja eri tapauksiin.
 
-```Python
-s = 'hello world'
-capitalized_s = s.capitalize()
-print(capitalized_s)
-```
-
-Tämän koodin tuotoksen on "Hello world".
-
-Implementaation yksityiskohdat - Pythonin 'title()' -metodin toiminnan ymmärtämiseen tulee tietää, että se käy merkkijonon läpi ja muuttaa jokaisen sanan ensimmäisen kirjaimen suureksi, samalla muuttaen loput kirjaimet pieniksi.
-
-## Katso myös:
-
-Pythonin virallinen dokumentaatio tarjoaa paljon tietoa tekstinkäsittelyfunktioista:
-
-- 'title()' -metodin dokumentaatio: https://docs.python.org/3/library/stdtypes.html#str.title
-- 'capitalize()' -metodin dokumentaio: https://docs.python.org/3/library/stdtypes.html#str.capitalize
-- Lisää tekstinkäsittelytoimintoja: https://docs.python.org/3/library/stdtypes.html#string-methods
+## See Also - Katso Myös
+- Pythonin virallinen dokumentaatio string-metodeista: [Python 3 string methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- Unicode ja python: [Unicode HOWTO](https://docs.python.org/3/howto/unicode.html)
+- String formatting in Python: [PyFormat](https://pyformat.info/)

@@ -1,7 +1,7 @@
 ---
-title:                "Mettre en majuscule une chaîne"
-html_title:           "C++: Mettre en majuscule une chaîne"
-simple_title:         "Mettre en majuscule une chaîne"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,41 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
---------
+## Quoi et Pourquoi ?
 
-## Qu'est-ce que c'est & Pourquoi ? 
-Capitaliser une chaîne de caractères revient à convertir tous les caractères alphabétiques d'une chaîne en majuscules. Les programmeurs le font souvent pour normaliser ou standardiser les données textuelles, ce qui facilite les comparaisons et les recherches.
+Capitaliser une chaîne de caractères, c’est transformer toutes ses lettres en majuscules. Les programmeurs le font pour uniformiser des textes, comme les titres ou pour faciliter les comparaisons insensibles à la casse.
 
 ## Comment faire :
-Voici un exemple de code en C++ pour capitaliser une chaîne de caractères:
 
 ```C++
-#include<iostream>
-#include<algorithm>
-#include<string>
+#include <iostream>
+#include <algorithm>
+#include <string>
 
-int main(){
-    std::string str = "programmation en c++";
-    std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-    std::cout<<str<<std::endl;
+int main() {
+    std::string s = "Bonjour, le monde!";
+    std::transform(s.begin(), s.end(), s.begin(), 
+        [](unsigned char c){ return std::toupper(c); });
 
+    std::cout << s << std::endl; // Affiche "BONJOUR, LE MONDE!"
     return 0;
 }
 ```
 
-Et voici ce que ça donne en sortie:
+## Exploration Approfondie
 
-```C++
-PROGRAMMATION EN C++
-```
+Dans les premiers jours de l'informatique, capitaliser était important pour les systèmes qui ne supportaient que les majuscules. Aujourd'hui, bien que les systèmes soient plus souples, la capitalisation aide à éviter les soucis de comparaison de chaînes de caractères. Alternativement, au lieu de `std::transform`, on pourrait parcourir la chaîne manuellement ou utiliser des bibliothèques tierces.
 
-## Plongée en profondeur
-Historiquement, la capitalisation des chaînes de caractères est largement utilisée dans des contextes où l'uniformité est requise, comme la saisie de données, le traitement de texte et l'analyse syntaxique. En C++, on capitalise généralement une chaîne en utilisant la fonction `transform` de la bibliothèque algorithmique, combinée à la fonction `toupper` de la bibliothèque cctype.
+Détail d'implémentation : `std::toupper` prend un `unsigned char` pour gérer correctement les caractères non ASCII. La conversion est basée sur la localisation par défaut, qui peut être changée avec `std::setlocale`.
 
-Il existe d'autres moyens de capitaliser une chaîne, par exemple en passant par le caractère ASCII pour chaque caractère de la chaîne. Cependant, l'approche mentionnée ci-dessus est généralement plus sûre et plus intuitive.
+## Voir Aussi
 
-En termes de détails d'implémentation, la fonction `toupper` convertit chaque caractère minuscule en majuscule. Si le caractère n'est pas une minuscule alphabétique, il est retourné sans modification.
-
-## Voir également
-- [std::transform](https://en.cppreference.com/w/cpp/algorithm/transform) pour une explication plus approfondie sur `std::transform`.
-- [std::toupper](http://www.cplusplus.com/reference/cctype/toupper/) pour une connaissance complète de `std::toupper`.
+- Documentation de la bibliothèque standard C++ sur `std::transform` : http://www.cplusplus.com/reference/algorithm/transform/
+- Documentation sur `std::toupper` : http://www.cplusplus.com/reference/cctype/toupper/
+- Article sur la sensibilité à la casse dans les comparaisons de chaînes (en anglais) : https://en.cppreference.com/w/cpp/string/byte/toupper

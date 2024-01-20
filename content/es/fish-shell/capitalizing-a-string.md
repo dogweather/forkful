@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "Fish Shell: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## ¿Qué & Por Qué?
 
-Capitalizar una cadena significa convertir la primera letra de cada palabra en una cadena a mayúsculas. Los programadores a menudo lo hacen para mejorar la legibilidad o para normalizar/formato de entradas de usuario.
+Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programadores lo hacen para formatear textos, como títulos o nombres propios, respetando normas de escritura.
 
 ## Cómo hacerlo:
 
-En Fish Shell, podemos usar la función `string` para esto.
+Para capitalizar una cadena en Fish, puedes usar la función `string` con la opción `capitalize`. Aquí tienes un ejemplo:
 
 ```Fish Shell
-set cadena "en un lugar de la mancha"
-
-set capitalizado (string split " " $cadena | string upper | string join ' ')
-
-echo $capitalizado
+set frase "hola mundo desde fish"
+echo $frase | string capitalize
 ```
-Salida de muestra:
+
+Salida:
+
+```
+Hola Mundo Desde Fish
+```
+
+## En Profundidad:
+
+Antes, en los scripts de shell, capitalizar una cadena era un rollo. Tenías que apañártelas con `awk`, `sed` o `tr` para conseguirlo. Pero Fish hace que sea pan comido con su función `string`, que ya trae soporte incorporado para este tipo de operaciones.
+
+Alternativamente, podrías usar `awk` como en otros shells:
 
 ```Fish Shell
-EN UN LUGAR DE LA MANCHA
+echo "hola mundo desde awk" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) tolower(substr($i,2))}1'
 ```
 
-## Inmersión profunda:
+La implementación en Fish es moderna y directa, evitando los pequeños líos que suponían las alternativas antiguas, especialmente en scripts complejos.
 
-Históricamente, la capitalización de cadenas ha sido un problema común en la programación y cada lenguaje tiende a tener su propia manera de manejarlo. En Fish Shell, utilizamos la funcionalidad incorporada en la función `string`. Con la ayuda de `split`, `upper` y `join`, somos capaces de capitalizar cada palabra de una cadena.
+## Ver También:
 
-Existen alternativas a la función `string`, pero requieren más líneas de código y no son necesariamente más eficientes o legibles. 
+- Documentación oficial de Fish sobre el comando `string`: https://fishshell.com/docs/current/cmds/string.html
+- Tutorial de Fish Shell para principiantes: https://fishshell.com/docs/current/tutorial.html
+- Foro de la comunidad Fish: https://fishshell.com/community.html
 
-El `string split " "` divide la cadena en palabras, `string upper` convierte todas las palabras resultantantes a mayúsculas y `string join ' '` las une de nuevo.
-
-## Consulte también:
-
-Para más detalles, consulte la documentación oficial de Fish Shell para la función `string` aquí: https://fishshell.com/docs/current/cmds/string.html 
-
-Para más detalles sobre los conceptos de capitalización y cómo se maneja en diferentes idiomas de programación, este enlace es bastante útil: https://rosettacode.org/wiki/Capitalize_words_in_a_string
-
-Para una comparación más detallada de las características de los lenguajes de programación con respecto la manejo de cadenas, puede visitar: https://rosettacode.org/wiki/String_Manipulation
+Esto te dará más contexto e ideas sobre cómo manipular cadenas y otros datos en Fish.

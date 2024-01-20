@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "Swift: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,43 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att kapitalisera en sträng innebär att göra varje bokstav i strängen till en stor bokstav. Programmerare gör detta för att standardisera textdata, förbättra läsbarheten eller för estetiska skäl, till exempel att börja varje ord i en rubrik med stor bokstav.
 
-Att förstora en sträng innebär att konvertera alla bokstäver i en text till stora bokstäver. Programmerare gör detta för att standardisera inmatning och för att göra text jämförbar oavsett format.
-
-## Så här gör du:
-
-I Swift, vi kan förstora en sträng genom att använda `uppercased()` funktion.
+## Hur man gör:
+Swift har inbyggda metoder för att jobba med text. Där ingår `uppercased()` för att göra alla bokstäver stora och `capitalized` för att storstil varje ord. Här är några exempel:
 
 ```Swift
-let sentence = "hej världen"
-let capitalizedSentence = sentence.uppercased()
-print(capitalizedSentence)
+let smallText = "jag älskar programmering."
+let uppercasedText = smallText.uppercased() // "JAG ÄLSKAR PROGRAMMERING."
+print(uppercasedText)
+
+let title = "detta är en titel"
+let capitalizedTitle = title.capitalized // "Detta Är En Titel"
+print(capitalizedTitle)
 ```
 
-Detta kommer att producera: 
+Sample output:
 
-```Swift
-"HEJ VÄRLDEN"
+```
+JAG ÄLSKAR PROGRAMMERING.
+Detta Är En Titel
 ```
 
-## Fördjupning:
+## Fördjupning
+Att ändra storlek på bokstäver har varit viktigt ända sedan tryckpressens dagar. Det gör text enhetlig och förbättrar läsbarheten. `uppercased()` och `capitalized` är Swifts verktyg för detta. Historiskt har andra språk som Python och Java liknande metoder, som `.upper()` eller `.toUpperCase()`.
 
-Historiskt sett används förstoring av strängar för att ta bort inkonsekvenser vid jämförelse av strängar. Alternativt, om du bara vill förstora den första bokstaven i varje ord, kan du använda `capitalized` egenskap.
+Swifts `capitalized` är smart. Den kapitaliserar inte bara första bokstaven i ett ord, utan tar hänsyn till punktuering och andra skiljetecken. Det är bra för korrekt formattering av meningar. Men vara medveten, den hanterar inte lokala regler, som speciella regler för svenska språket.
 
-```Swift
-let sentence = "hej världen"
-let capitalizedSentence = sentence.capitalized
-print(capitalizedSentence)
-```
+Det finns alternativ som `localizedUppercaseString` i Swift som kan hantera lokala regler bättre, om det behövs för specifika användningsfall.
 
-Och resultatet blir:
-
-```Swift
-"Hej Världen"
-```
-
-Förstoring av en sträng i Swift använder Unicode-skalningar, vilket gör att den fungerar med alla språk som stöds av Unicode, inte bara engelska.
-
-## Se även:
-
-För mer information om strängmanipulation i Swift, se dokumentationen: [Apple Swift String Documentation](https://developer.apple.com/documentation/swift/string). Om du är intresserad av att lära dig mer om Unicode, läs denna artikel: [Unicode Explained](https://www.joelonsoftware.com/2003/10/08/unicode-explained/).
+## Se även
+- Swifts officiella dokumentation om Strings: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- En guide till Swifts `String` API: [https://www.hackingwithswift.com/articles/141/8-swift-string-functions](https://www.hackingwithswift.com/articles/141/8-swift-string-functions)

@@ -1,7 +1,7 @@
 ---
-title:                "文字列を大文字にする"
-html_title:           "Ruby: 文字列を大文字にする"
-simple_title:         "文字列を大文字にする"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,34 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+大文字化とは、文字列の先頭を大文字にすることです。一貫性を持たせたり、タイトルや固有名詞を適切に表示するためにプログラマーはこれを行います。
 
-文字列のキャピタライズは、文字列の最初の文字を大文字にすることを指します。プログラマーがこれを行う理由は、適切な読みやすさと一貫性を提供するためです。
+## How to (やり方)
+```ruby
+# capitalizeメソッドを使う
+phrase = "ruby programming"
+puts phrase.capitalize
+# 出力: "Ruby programming"
 
-## 方法：
-
-Ruby言語では、文字列のキャピタライズは非常に簡単になります。 `capitaliza`メソッドを使用して実行できます。
-
-```Ruby
-str = "hello world"
-cap_str = str.capitalize
-puts cap_str
-```
-これを実行すると、以下の出力が得られます。
-
-```Ruby
-"Hello world"
+# 文字列の各単語を大文字化するには
+puts phrase.split.map(&:capitalize).join(' ')
+# 出力: "Ruby Programming"
 ```
 
-## 深掘り：
+## Deep Dive (詳細な解説)
+文字列を大文字化する方法は、Rubyが登場した1995年から存在します。`.capitalize` は単純で便利ですが、他にも方法があります。例えば、「Active Support」の `titleize` はRailsで使用でき、より複雑なケースに対応します。実装の内部では、`capitalize` は最初の文字のASCIIコードを使って変換を行います。
 
-文字列のキャピタライズは、プログラミングの初期から存在します。これはある種の標準化を可能にし、読解性を高めるのに役立ちます。
-
-代替策としては、 `upcase` メソッドを使用して文字列全体を大文字にするか、または `downcase` メソッドを用いて文字列全体を小文字にすることもできます。ただし、キャピタライズは特定のケース、特にタイトルや文章の始めなどで最も一般的です。
-
-具体的な実装としては、Rubyは実際に `capitalize`メソッドを呼び出すことにより、文字列の最初の文字を大文字にし、残りの文字を小文字に変換します。
-
-## 参考に：
-
-1. [Ruby API 文書](https://docs.ruby-lang.org/ja/latest/method/String/i/capitalize.html)
-2. [文字列をキャピタライズする方法](https://www.rubyguides.com/2018/01/ruby-string-methods/#capitalize)
+## See Also (関連情報)
+- Railsガイド：[Active Support Core Extensions](https://guides.rubyonrails.org/active_support_core_extensions.html)
+- ASCIIコード表：[ASCII codes](https://www.asciitable.com/)

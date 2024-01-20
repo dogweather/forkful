@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizzare una stringa"
-html_title:           "TypeScript: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscolizzare una stringa"
+html_title:           "Bash: Maiuscolizzare una stringa"
+simple_title:         "Maiuscolizzare una stringa"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,56 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## Che Cos'è & Perché?
+Capitalizzare una stringa significa trasformare la prima lettera di ogni parola in maiuscolo. I programmatori lo fanno per uniformare i formati dei testi, ad esempio nei titoli o nei nomi.
 
-La capitalizzazione di una stringa significa trasformare la prima lettera di ogni parola in maiuscolo. Questo viene fatto per migliorare la leggibilità del testo, per esempio, in titoli, nomi propri o frasi di benvenuto.
-
-## Come fare:
-Ecco un esempio di come si può capitalizzare una stringa in TypeScript:
-
+## Come Fare:
 ```TypeScript
-function capitalizeStr(input: string): string {
-    return input.replace(/\b\w/g, function (letter) {
-        return letter.toUpperCase();
-    });
+function capitalizeString(input: string): string {
+  return input.replace(/\b\w/g, firstChar => firstChar.toUpperCase());
 }
 
-console.log(capitalizeStr('ciao mondo'));
-```
-Output:
-```TypeScript
-'Ciao Mondo'
-```
+const title = 'buongiorno a tutti, benvenuti alla programmazione TypeScript!';
+const capitalizedTitle = capitalizeString(title);
 
-In questa funzione, utilizziamo l'espressione regolare `\b\w` per trovare la prima lettera di ogni parola e la funzione `toUpperCase()` per convertirla in maiuscolo.
+console.log(capitalizedTitle);
+// Output: 'Buongiorno A Tutti, Benvenuti Alla Programmazione TypeScript!'
+```
 
 ## Approfondimento
+Nel mondo della programmazione, la necessità di capitalizzare le stringhe risale ai primi giorni dell'elaborazione dei dati testuali. Nei contesti UI/UX, ad esempio, migliorare la leggibilità di titoli o intestazioni è essenziale.
 
-La capitalizzazione di stringhe è un concetto comune in programmazione, presente fin dai primi linguaggi di programmazione. In TypeScript, si può utilizzare il metodo `replace` con un'espressione regolare, come nel nostro esempio.
+Puoi anche trasformare in maiuscolo solo la prima lettera della stringa, o usare metodi di librerie esterne come Lodash (`_.capitalize`). Sotto al cofano, queste funzioni lavorano su ogni singolo carattere, confrontando e sostituendo le lettere dove necessario.
 
-Un'alternativa può essere l'utilizzo del metodo `split` per dividere la stringa in parole, trasformare la prima lettera di ogni parola in maiuscolo con `toUpperCase()`, e poi rigenerare la stringa con `join`.
+TypeScript non fornisce una funzione built-in per capitalizzare, quindi spesso si ricorre a funzioni personalizzate come sopra o si utilizzano estensioni di terze parti. Altre alternative includono l'uso di CSS per trasformazioni puramente visive (`text-transform: capitalize;`), ma questo non cambia il valore della stringa nel codice.
 
-Dettagli di implementazione: ricorda che in JavaScript (e quindi TypeScript), le stringhe sono immutabili. Quindi ogni volta che "modifichi" una stringa, in realtà stai creando una nuova stringa.
-
-```TypeScript
-function capitalizeStrAlternative(input: string): string {
-    return input.split(' ')
-        .map(word => word[0].toUpperCase() + word.substr(1))
-        .join(' ');
-}
-
-console.log(capitalizeStrAlternative('ciao mondo'));
-```
-Output:
-
-```TypeScript
-'Ciao Mondo'
-```
-
-## Per saperne di più
-
-Per approfondire l'argomento, ecco alcuni link utili:
-
-1. La documentazione MDN sulla funzione `replace()`: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/replace
-2. Dettagli sulla funzione `toUpperCase()`: https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
-3. Vue Mastery: https://www.vuemastery.com/courses/advanced-components/build-a-reactivity-system/ (Inglese)
+## Vedi Anche
+- [MDN - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [Lodash - capitalize method](https://lodash.com/docs/4.17.15#capitalize)
+- [CSS Text Capitalization](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)

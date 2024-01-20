@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizzare una stringa"
-html_title:           "PowerShell: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscolizzare una stringa"
+html_title:           "Bash: Maiuscolizzare una stringa"
+simple_title:         "Maiuscolizzare una stringa"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,39 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-# Capitalizza una Stringa in PowerShell: Un Semplice Tutorial
+## What & Why?
+Capitalizzare una stringa significa trasformare tutte le sue lettere in maiuscole. Lo facciamo per conformità, evidenza o per rispettare certi protocolli di formattazione.
 
-## Perché e Perché?
-
-Capitalizzare una stringa significa trasformare la prima lettera di ogni parola in un carattere maiuscolo. Programmatori lo fanno per migliorare la leggibilità e la presentazione dei dati.
-
-## Come fare:
-
-Usiamo la funzione `ToUpper()`, per capitalizzare le stringhe in PowerShell. Ecco un esempio:
+## How to:
+Utilizza il metodo `.ToUpper()` per capitalizzare una stringa. Ecco un esempio semplice:
 
 ```PowerShell
 $stringa = "ciao mondo"
-$stringa = $stringa.Split(' ').ForEach({$_.Substring(0,1).ToUpper()+$_.Substring(1)})
-$stringa -join ' '
+$stringaMaiuscola = $stringa.ToUpper()
+$stringaMaiuscola
 ```
 
-Quando si esegue il codice sopra, il risultato sarà:
+Output:
+```
+CIAO MONDO
+```
+
+E se vuoi solo la prima lettera di ogni parola in maiuscolo:
 
 ```PowerShell
-"Ciao Mondo"
+$stringa = "buongiorno italia"
+$stringaTitolo = $stringa.ToTitleCase()
+$stringaTitolo
+```
+Occhio: `ToTitleCase()` non è direttamente disponibile. 
+
+Usa `[CultureInfo]` per prima cosa:
+```PowerShell
+$culture = [System.Globalization.CultureInfo]::CurrentCulture
+$textInfo = $culture.TextInfo
+$stringaTitolo = $textInfo.ToTitleCase($stringa)
+$stringaTitolo
 ```
 
-## Approfondimenti:
+Output:
+```
+Buongiorno Italia
+```
 
-Nel tempo, molti metodi sono stati sviluppati per capitalizzare stringhe. In passato, programmatori spesso usavano `TextInfo.ToTitleCase()`, ma questa funzione non cambia i caratteri maiuscoli esistenti in minuscoli. Ad esempio, `TextInfo.ToTitleCase("CIAO")` restituirebbe `CIAO`, non `Ciao`.
+## Deep Dive:
+Capitalizzare una stringa è basilare ma importante. Nasce dall’esigenza di uniformare l'input per confronti o per estetica. In PowerShell, `.ToUpper()` è intuitivo e diretto. Storicamente, il linguaggio ha sempre fornito modi per manipolare stringhe, riflettendo l'importanza di questo compito.
 
-Una scelta moderna potrebbe essere usare i metodi `ToLower()` o `ToUpper()`, insieme alla manipolazione delle stringhe, come nell'esempio sopra. In realtà, c'è una grande varietà di metodi che potresti scegliere basati sulla tua situazione specifica.
+Ci sono alternative: puoi usare metodi nativi come `.ToUpperInvariant()` per ignorare le specificità culturali durante la capitalizzazione, utile per assicurare consistenza in contesti internazionali.
 
-Per quanto riguarda i dettagli di implementazione, `ToUpper()` e `Substring()` sono metodi forniti dalla classe `String` di .NET. Questo significa che sono molto efficienti, poiché sono implementati a un livello molto basso.
+Su come funzionano: chiamare questi metodi su una stringa genera una nuova stringa con le modifiche desiderate. PowerShell, come .NET, tratta le stringhe come immutabili. Questo significa che non puoi cambiare una stringa esistente, ma ne crei una nuova.
 
-## Vedi anche:
-
-1. [Microsoft Docs: Metodi String](https://docs.microsoft.com/it-it/dotnet/api/system.string?view=netframework-4.8)
-2. [PowerShell: Manipolazione delle stringhe](https://powertheshell.com/powershell-string-manipulation/)
-3. [Microsoft Docs: Metodi TextInfo](https://docs.microsoft.com/it-it/dotnet/api/system.globalization.textinfo?view=net-5.0)
+## See Also:
+- [Cosa significa immutabile?](https://docs.microsoft.com/it-it/dotnet/csharp/programming-guide/strings/)
+- [Documentazione .NET su String.ToUpper](https://docs.microsoft.com/it-it/dotnet/api/system.string.toupper?view=net-7.0)
+- [Documentazione .NET su CultureInfo](https://docs.microsoft.com/it-it/dotnet/api/system.globalization.cultureinfo?view=net-7.0)

@@ -42,4 +42,3 @@ end
 
 - Rubyの公式ドキュメントにおけるRegexpクラス: [Ruby-Doc Regexp](https://ruby-doc.org/core/Regexp.html)
 - さらに学ぶためのRegExr: [RegExr](https://regexr.com/)
-- Ruby正規表現チートシート: [Ruby Regexp Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)

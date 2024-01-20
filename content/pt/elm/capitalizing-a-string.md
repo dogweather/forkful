@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando uma string"
-html_title:           "Elm: Capitalizando uma string"
+html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,35 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## O Que & Por Quê?
 
-Capitalização de strings se refere a transformar a primeira letra de uma string em maiúscula. Programadores utilizam estes métodos para formatar saídas ou ordenar alfabeticamente, dependendo do caso.
+Capitalizar uma string significa converter todos os caracteres da string para maiúsculas. Programadores fazem isso para normalizar dados para comparação ou para fins estéticos, como em títulos ou cabeçalhos.
 
-## Como fazer:
+## Como Fazer:
 
-No Elm, para capitalizar uma string, vamos usar a função `toUpper` do módulo `String` para transformar a primeira letra em maiúscula e a função `toLowerCase` para deixar o restante da string em minúsculas. Aqui está o exemplo:
+Elm não possui uma função embutida para capitalizar todas as letras de uma string, mas podemos criar uma função para isso:
 
 ```Elm
-import String
+import String exposing (toUpper)
 
 capitalize : String -> String
-capitalize word =
-    case String.uncons word of
-        Nothing ->
-            ""
+capitalize str =
+    toUpper str
 
-        Just ( first, rest ) ->
-            String.toUpper (String.fromChar first) ++ String.toLower rest
+-- Exemplo de uso:
+main =
+    String.words "olá, mundo!"
+        |> List.map capitalize
+        |> String.join " "
+        |> Html.text
 ```
 
-Essa função 'capitalize' recebe uma string e devolve a mesma string, mas com a primeira letra em maiúscula. Se a string for vazia, ela devolve uma string vazia.
+Saída esperada:
+```
+"OLÁ, MUNDO!"
+```
 
-## Aprofundamento
+## Mergulho Profundo:
 
-A capitalização de strings se originou da necessidade de manipular texto em software para criar uma saída formatada ou para ordenação alfabética. No caso do Elm, essa funcionalidade não é incorporada diretamente na linguagem, mas pode ser conseguida combinando outras funções de string.
+Em alguns contextos, capitalizar strings é simples como no exemplo acima. No entanto, linguagens diferentes têm casos especiais (como caracteres acentuados ou cedilha), e a função `toUpper` pode não cobrir todos esses casos se baseando unicamente nas regras do idioma inglês.
 
-A alternativa à função 'capitalize' que construímos seria usar uma biblioteca externa que provavelmente teria uma implementação semelhante.
+Uma alternativa é usar bibliotecas que entendem a localização para garantir uma capitalização apropriada em diversos idiomas. A implementação de capitalizar strings geralmente envolve mapear cada caractere para sua forma maiúscula de acordo com uma tabela de caracteres, como a Unicode.
 
-Além disso, um detalhe de implementação a notar é que as funções `toUpper` e `toLower` não suportam todos os idiomas. Por exemplo, eles não funcionarão corretamente com caracteres não latinos.
+Na história da programação, funções de manipulação de strings sempre foram essenciais. Em linguagens de mais baixo nível, essas operações podiam ser mais complexas, exigindo manipulação direta de bytes. Em Elm, graças a funções de alto nível como `toUpper`, o processo é muito mais direto.
 
-## Veja também
+## Veja Também:
 
-Para mais informações sobre o módulo String e suas funções, você pode acessar a documentação oficial [aqui](https://package.elm-lang.org/packages/elm/core/latest/String).
+- [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Unicode Character Table](https://www.unicode.org/charts/)
+
+Lembre-se de verificar a documentação oficial do Elm para qualquer atualização em métodos de manipulação de strings e considere explorar pacotes adicionais para suporte avançado a localização se suas necessidades de capitalização forem além dos exemplos simples.

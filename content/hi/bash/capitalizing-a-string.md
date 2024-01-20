@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग को बड़े अक्षरों में बदलना"
-html_title:           "Bash: एक स्ट्रिंग को बड़े अक्षरों में बदलना"
-simple_title:         "एक स्ट्रिंग को बड़े अक्षरों में बदलना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,32 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-वर्णमाला के निर्देशन (यानी कोई string capitalizing) का मतलब है कि string के अक्षरों को बड़ा (upper-case) करना। प्रोग्रामर इसे readability सुधारने और डाटा को consistent रखने के लिए करते हैं।
+String capitalization मतलब हर शब्द के पहले अक्षर को बड़ा (Capital Letter) करना। Programmers इसे readability और user interfaces को अच्छा बनाने के लिए करते हैं।
 
-## कैसे करें:
+## How to: (कैसे करें:)
 
-Bash में आप `tr` command का उपयोग करके string को capitalize कर सकते हैं। यह command एक से अधिक character को replace करती है।
+Bash में string को capitalize करने का सीधा तरीका नहीं है, पर workarounds हैं। यहां दो examples हैं:
 
-```Bash
-echo 'hello world' | tr '[:lower:]' '[:upper:]'
-```
-
-इसे चलाने से आपको 'HELLO WORLD' का output मिलेगा।
-
-## गहराई की जांच:
-
-कई पुराने Unix और Linux systems में यह `tr` command पहले से मौजूद थी, इसलिए इसे बहुत commonly use किया गया। लेकिन, Bash (4.0 और इसके ऊपर) का upcase function इस task के लिए और अधिक suitable है। यह इस प्रकार होता है:
+1. पूरी string के हर शब्द का पहला अक्षर बड़ा करना।
 
 ```Bash
-string="hello world"
-echo "${string^^}"
+#!/bin/bash
+capitalize_string() {
+  echo "$1" | awk '{for(i=1;i<=NF;i++) $i=toupper(substr($i,1,1)) substr($i,2)}1'
+}
+
+input="namaste duniya"
+capitalized=$(capitalize_string "$input")
+echo $capitalized
 ```
 
-इस के चलने पर आपको 'HELLO WORLD' जैसा output मिलेगा।
+Sample Output:
+```
+Namaste Duniya
+```
 
-## और देखें:
+2. केवल पहले शब्द का पहला अक्षर बड़ा करना।
 
-1. [Bash scripting guide](https://devhints.io/bash)
-3. [FreeCodeCamp article on Bash commands](https://www.freecodecamp.org/news/the-linux-commands-handbook/)
+```Bash
+#!/bin/bash
+capitalize_first_word() {
+  echo "$1" | sed 's/^\(.\)/\U\1/'
+}
+
+input="namaste duniya"
+capitalized=$(capitalize_first_word "$input")
+echo $capitalized
+```
+
+Sample Output:
+```
+Namaste duniya
+```
+
+## Deep Dive (गहराई से जानकारी):
+
+Bash में string manipulation को directly support नहीं किया जाता जैसे कि कुछ high-level programming languages में होता है। इसे script में शामिल करने के लिए awk और sed जैसे tools का इस्तेमाल करते हैं। awk powerful text-processing language है जो complex pattern recognition और processing को संभव बनाता हैं। sed, यानी stream editor, भी text manipulation के लिए उपयोग में लिया जाता है।
+
+ऐतिहासिक रूप से, text processing के लिए dedicated utilities का उपयोग करने का प्रचलन इसलिए है क्योंकि original Unix philosophy में छोटे और विशेषीकृत प्रोग्राम्स का महत्व था जो एक साथ पाइप किये जा सकते हैं।
+
+इन-built string manipulation capabilities, जैसे कि `bash parameter expansion`, भी हैं, पर वे capitalization के लिए नहीं हैं।
+
+## See Also (और देखें):
+
+- [GNU Awk User's Guide](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [GNU sed Manual](https://www.gnu.org/software/sed/manual/sed.html)
+- [Bash Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)

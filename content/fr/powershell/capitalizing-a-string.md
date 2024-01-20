@@ -1,6 +1,6 @@
 ---
 title:                "Mettre une chaîne de caractères en majuscules"
-html_title:           "PowerShell: Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
 simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,46 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce & Pourquoi?
+## Quoi & Pourquoi ?
+La capitalisation d'une chaîne signifie transformer les premières lettres de chaque mot en majuscules, pour des questions de présentation ou de formalité. Les programmeurs utilisent cette technique pour améliorer la lisibilité des titres, des noms propres ou des débuts de phrases.
 
-La capitalisation d'une chaîne de caractères est l'action de convertir toutes les premières lettres d'un texte en majuscules. Les programmeurs utilisent cette technique pour améliorer la lisibilité ou pour l'assortir à une norme de mise en forme spécifique.
-
-## Comment faire:
-
-Voici comment vous pouvez capitaliser une chaîne de caractères en PowerShell:
-
+## Comment faire :
 ```PowerShell
-$maChaine = "bonjour le monde"
-$maChaineCapitalisée = (Get-Culture).TextInfo.ToTitleCase($maChaine.ToLower())
-echo $maChaineCapitalisée
+# Capitalisation simple d'une chaîne
+$phrase = "bonjour le monde"
+$phraseCapitalisee = $phrase | ForEach-Object { $_.Substring(0,1).ToUpper()+$_.Substring(1).ToLower() }
+$phraseCapitalisee
+# Résultat: Bonjour le monde
+
+# Utilisation de la culture (française par exemple)
+$cultureInfo = [System.Globalization.CultureInfo]::GetCultureInfo("fr-FR")
+$phrase = "être ou ne pas être, telle est la question"
+$phraseCapitalisee = (Get-Culture).TextInfo.ToTitleCase($phrase)
+$phraseCapitalisee
+# Résultat: Être Ou Ne Pas Être, Telle Est La Question
 ```
 
-Résultat affiché:
+## Immersion
+La capitalisation de chaîne existe depuis longtemps, dès lors que les systèmes ont dû traiter du texte. Dans le passé, elle pouvait être plus compliquée, car les langages de programmation offraient moins de fonctions intégrées. En PowerShell, avant que `[CultureInfo]` n'offre une gestion élégante des casse selon les cultures, il fallait écrire des fonctions manuelles pour capitaliser correctement selon les règles linguistiques. Aujourd'hui, il existe des alternatives comme `.ToTitleCase` pour respecter les différences culturelles, vital lors de la localisation des logiciels. L'implémentation sous-jacente utilise des tables de caractères et des règles de transformation pour chaque culture.
 
-```PowerShell
-Bonjour Le Monde
-```
-
-## Approfondissement:
-
-La capitalisation de chaînes est assez courante en programmation et a été facilitée dans les versions récentes de PowerShell. En termes d'alternatives, vous pouvez également utiliser la méthode `.ToUpper()` pour convertir la chaîne entière en majuscules, et non pas seulement la première lettre de chaque mot.
-
-```PowerShell
-$maChaine = "bonjour le monde"
-$maChaineMajuscule = $maChaine.ToUpper()
-echo $maChaineMajuscule
-```
-
-Résultat affiché:
-
-```PowerShell
-BONJOUR LE MONDE
-```
-
-Pour information, la méthode `(Get-Culture).TextInfo.ToTitleCase()` fonctionne en convertissant d'abord toute la chaîne en minuscules, puis en mettant chaque première lettre de chaque mot en majuscule.
-
-## Voir aussi:
-
-Pour d'autres ressources sur PowerShell, consultez les liens ci-dessous:
-
-1. [_Documentation officielle de PowerShell_](https://docs.microsoft.com/fr-fr/powershell/)
+## À consulter aussi :
+- [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+- [Microsoft's guide to CultureInfo class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)

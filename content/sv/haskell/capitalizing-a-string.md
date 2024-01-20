@@ -1,7 +1,7 @@
 ---
-title:                "Gör en sträng versal"
-html_title:           "Haskell: Gör en sträng versal"
-simple_title:         "Gör en sträng versal"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Kapitalisering av en sträng innebär att ändra varje tecken i början av varje ord till en stor bokstav. Programmerare gör detta för att förbättra läsbarheten och indikera viktiga ord och fraser.
+## Vad & Varför?
+Att kapitalisera en sträng innebär att göra den första bokstaven i varje ord stor. Programmerare gör detta för att formatera text på ett enhetligt sätt, ofta för gränssnitt eller dokumentation.
 
-## Hur gör man:
-Här är ett enkelt exempel på hur man kapitaliserar varje ord i en sträng i Haskell:
-
+## Hur man gör:
 ```Haskell
 import Data.Char (toUpper)
 
+-- Kapitaliserar första bokstaven i ett ord
 capitalize :: String -> String
-capitalize [] = []
+capitalize []     = []
 capitalize (x:xs) = toUpper x : xs
+
+-- Använd exempel
+main :: IO ()
+main = do
+    let text = "haskell är kul"
+    putStrLn $ unwords $ map capitalize $ words text
 ```
-I det här exemplet konverterar ``toUpper`` varje enskilt tecken till stora bokstäver vilket resulterar i en huvudbokstav vid början av varje ord.
+Kör koden. Du får:
+```
+Haskell Är Kul
+```
 
-## Fördjupning
-Kapitalisering av strängar går tillbaka till begynnelsen av programmeringsspråk. Dess primära användning är att främja läsbarhet och förståelse, särskilt inom områden som naturalspråksbehandling.
+## Djupdykning
+I tidiga datorsystem, var text ofta begränsad till stora bokstäver på grund av begränsad teckenstöd och enkelhet. Idag används textkapitalisering för att uppfylla språkliga konventioner och förbättra läsbarheten. Alternativ till `Data.Char` inkluderar att använda bibliotek som `text` eller `bytestring` för prestanda med större textmängder. Vid kapitalisering är det även viktigt att tänka på lokala konventioner, exempelvis olika regler i olika språk när det gäller vilka ord som skall börja med stor bokstav.
 
-I Haskell, till exempel, har vi "Data.Char" biblioteket, vilket ger oss funktionen `toUpper`. Haskell tillhandahåller också "words" och "unwords" funktioner som bryter upp och kombinerar strängar respektive.
-
-Det är dock viktigt att notera att denna metod bara ändrar det första tecknet i varje sträng. Om du vill göra mer komplexa manipulationer, såsom att upprätthålla stavning med första bokstavsstorleken för specifika termer, kan du behöva skapa mer detaljerade funktioner eller använda mer avancerade bibliotek.
-
-## Se även 
-Om du är intresserad av att lära dig mer om Haskell och dess bibliotek, kan du kolla följande länkar:
-
-1. [Learn You a Haskell](http://learnyouahaskell.com/) : En gratis onlinebok för att lära sig Haskell från grunden.
-2. [Haskell Documentation](https://www.haskell.org/documentation/) : Officiella dokument för Haskell, inklusive detaljer om strängbearbetning och mer.
-3. [Hoogle](https://www.haskell.org/hoogle/) : En Haskell-specifik sökmotor som låter dig söka efter bibliotek, moduler och funktioner.
+## Se också
+- Haskell's `Data.Char` modul: https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Char.html
+- `text` library: https://hackage.haskell.org/package/text
+- `bytestring` library: https://hackage.haskell.org/package/bytestring

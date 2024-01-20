@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות גדולות"
-html_title:           "Arduino: הפיכת מחרוזת לאותיות גדולות"
-simple_title:         "הפיכת מחרוזת לאותיות גדולות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה & למה?
-בהון ציונים למעשה של הפיכת מחרוזת לאותיות ראשיות. מתכנתים משתמשים בזה כדי ליצור תחסית בין ערכים שונים קופצים.
+## מה ולמה?
 
-## איך עושים
-הנה דוגמא של קוד ופלט בקינונות של Arduino:
+אותיות רישיות במחרוזת הן כאשר כל אות במילה תחילת באות גדולה. תכניתנים משתמשים בזה להדגשת כותרות, שמות ומשתנים כדי לשפר קריאות ועקביות.
 
-```Arduino
-String myString = "hello world";
-myString.toUpperCase();
-Serial.println(myString); // Prints: "HELLO WORLD"
-```
+## איך לעשות:
 
-זהו קוד פשוט שמשנה את myString לאותיות ראשיות, ואז מדפיס את התוצאה.
-
-## צליל עמוק
-המרת מחרוזת לאותיות ראשיות היא אחת מהתוכנמות הבסיסיות בשפות תכנות רבות. ניתן גם להשתמש בדרכים אחרות לביצוע זה, למשל בעזרת ניתוח משולש עם Arduino. ניתן לחשוב על זה כאינדיקציה למעגל-אותיות:
+הנה דוגמא פשוטה להמרת מחרוזת לאותיות רישיות בארדואינו:
 
 ```Arduino
-String myString = "hello world";
-for(int i = 0; i < myString.length(); i++){
-   myString[i] = toupper(myString[i]);
+void setup() {
+  Serial.begin(9600);
+  String text = "arduino programming";
+  text.toUpperCase();
+  Serial.println(text);
 }
-Serial.println(myString); // Prints: "HELLO WORLD"
+
+void loop() {
+  // לא נדרש לקוד זה
+}
 ```
 
-בקוד זה, אנו מעברים על כל אות במחרוזת ומשנים אותה לאות ראשונה.
+פלט לדוגמא:
+```
+ARDUINO PROGRAMMING
+```
 
-## ראו גם
-לינקים למקורות קשורים:
+## עיון מעמיק
 
-- אתר הבית של Arduino: https://www.arduino.cc/
-- המדריך למתחילים של Arduino: https://www.arduino.cc/en/Guide/HomePage
-- התיעוד של פונקציית toUpperCase: https://www.arduino.cc/en/Reference/StringToUpperCase
-- מאמרים נוספים על תכנות Arduino: https://create.arduino.cc/projecthub?query=&category=&difficulty=&sort=trending&type=guide
+העלאת האות הראשונה במילה היא מושג עתיק, מקורו בכתב יד וספרים מודפסים. ב-C, למשל, היית צריך לעבור על כל המחרוזת ולהמיר אות לאות בעזרת הפונקציה `toupper`. בארדואינו, `String.toUpperCase()` הפך את התהליך לפשוט וקומפקטי. חשוב לדעת שהפונקציה משנה את המחרוזת עצמה ולא יוצרת עותק חדש שלה. אם צריך את המחרוזת המקורית, תזדקק לשמור עותק לפני השימוש בפונקציה.
+
+## ראה גם
+
+- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [ASCII Table](https://www.asciitable.com/)

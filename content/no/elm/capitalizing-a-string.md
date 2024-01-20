@@ -1,7 +1,7 @@
 ---
-title:                "Gjøre en streng stor"
-html_title:           "Elm: Gjøre en streng stor"
-simple_title:         "Gjøre en streng stor"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,55 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Setninger på kaptal er når det første tegnet i en streng (eller hvert ord) er et stort tegn. Programmerere gjør dette for å skape mer lesbare betingelser, eller å formaterer data for å matche visse regler.
+Kapitalisering av en streng betyr å gjøre første bokstav i hvert ord stort, ofte for å fremheve titler eller navn. Programmerere gjør dette for å forbedre lesbarheten eller tilpasse tekst til bestemte stilkrav.
 
-## Hvordan Gjør Man Det:
-Å bytte til store) bokstaver i Elm er rett fram. Du kan bruke `String.toUpper` funksjon
-
-Her er et eksempel:
+## Hvordan:
+Elm har ikke en innebygd funksjon for å kapitalisere hele strenger, men vi kan lage en selv. Her er et lite eksempel:
 
 ```Elm
-import String
+import String exposing (toUpper, toLower, words, unwords)
+import List exposing (map, head, tail)
 
-main =
-  String.toUpper "dette er en setning."
-```
-
-Og utdata vil være:
-
-`DETTE ER EN SETNING.`
-
-For å bare sette den første bokstaven til stor kan du dele opp strengen og hente den første bokstaven, sette den til stor, og deretter sette sammen strengen igjen:
-
-```Elm
-import String
-
-capitalize : String -> String
-capitalize str =
-    case String.uncons str of
+capitalizeWord : String -> String
+capitalizeWord word =
+    case head word of
         Nothing ->
             ""
+        
+        Just firstChar ->
+            String.cons (toUpper firstChar) (toLower (String.dropLeft 1 word))
 
-        Just ( first, rest ) ->
-            String.toUpper (String.fromChar first) ++ rest
+capitalize : String -> String
+capitalize =
+    words >> map capitalizeWord >> unwords
 
+-- Bruk slik:
 main =
-  capitalize "dette er en setning."
+    String.toText (capitalize "elm er fantastisk!")
 ```
 
-Og utdata skal være:
+Forventet output:
 
-`Dette er en setning.`
+```
+"Elm Er Fantastisk!"
+```
 
 ## Dypdykk
-Det å sette tegn til stor bokstav i strenger er en viktig programmeringsfunksjon som har vært tilgjengelig i mange språk lenge. I eldre språk kan du ha måtte skrive din egen funksjon for å gjøre det. Elm tillater dette gjennom innebygde funksjoner som `String.toUpper` og `String.uncons`.
+Etter å ha dukket litt rundt, finner vi ingen innebygd `capitalize` funksjon i Elm, i motsetning til noen andre språk. I eldre språk som C, håndteres dette ofte ved lavnivå-manipulasjon av ASCII-verdier. I moderne språk som JavaScript, finnes innebygde metoder som `.toUpperCase()`.
 
-Det er verdt å merke seg at det finnes alternative metoder for å oppnå det samme målet. Du kan bruke regex (også tilgjengelig i andre språk) for å oppnå lignende resultater.
+Alternativer i Elm inkluderer å lage egne funksjoner, som vist ovenfor, eller å bruke pakker som `elm-string-extra` som inkluderer flere nyttige strengoperasjoner.
 
-Implementeringsdetaljer handler om hvordan Elm håndterer strenger. Elm ser på strenger som lister av tegn, som gjør det lett å bruke funksjoner som `String.uncons` for å hente ut og manipulere enkelttegn.
+Implementasjonsdetaljer bør vurdere locale. Visse språk har forskjellig regler for stor bokstav. Elm håndterer ikke locale-spesifikk logikk innbygd, så dette må gjøres manuelt om nødvendig.
 
 ## Se Også
-Elms offisielle dokumentasjon gir mer informasjon om strenger og innebygde string-funksjoner som kan være nyttige:
-
-- Elm String API: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- For dem som ønsker å dykke dypere inn i hvordan strenger håndteres i Elm: [https://guide.elm-lang.org/core_language.html](https://guide.elm-lang.org/core_language.html)
+For å utvide din Elm-strengbehandling, sjekk ut:
+- Elm docs for `String`-modulen: https://package.elm-lang.org/packages/elm/core/latest/String
+- `elm-string-extra` for flere strengfunksjoner: https://package.elm-lang.org/packages/elm-community/string-extra/latest/
+- W3C sin anbefaling om språk-spesifikk typografi: https://www.w3.org/TR/i18n-html-tech-lang/

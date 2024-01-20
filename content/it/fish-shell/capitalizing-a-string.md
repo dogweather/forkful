@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizzare una stringa"
-html_title:           "Fish Shell: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscolizzare una stringa"
+html_title:           "Bash: Maiuscolizzare una stringa"
+simple_title:         "Maiuscolizzare una stringa"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,29 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che Cosa & Perché?
-Capitalizzare una stringa significa trasformare tutte le sue lettere minuscole in maiuscole. I programmatori lo fanno per vari motivi, come rendere il testo più leggibile o per confrontare stringhe in modo insensibile al case.
+## What & Why?
+Capitalizzare una stringa vuol dire trasformare tutte le lettere in maiuscole. I programmatori lo fanno per uniformità, confronti di testi o per estetica.
 
-## Come fare:
-Ecco come puoi capitalizzare una stringa in Fish Shell:
+## How to:
+Fish non ha un comando integrato per capitalizzare tutto, ma possiamo usare 'string' e 'awk' così:
+
 ```Fish Shell
-function capitalize
-    echo $argv | tr '[:lower:]' '[:upper:]'
-end
+echo "cia mondo" | string upper # usa 'string upper' per capitalizzare
 ```
-Ecco un esempio di output:
+
+Output:
+```
+CIA MONDO
+```
+
+Oppure con awk:
+
 ```Fish Shell
-> capitalize "ciao mondo"
-CIAO MONDO
+echo "cia mondo" | awk '{ print toupper($0) }' # awk per capitalizzare
 ```
-Questo codice definisce una funzione `capitalize` che usa il comando `tr` per trasformare tutte le lettere minuscole in maiuscole.
 
-## Analisi Approfondita
-La capitalizzazione delle stringhe è un concetto antico nella programmazione, presente sin da quando i computer comunicavano attraverso terminali di testo. Esistono alternative alla funzione `capitalize` mostrata sopra, come l'uso di loop o di comandi di sostituzione di stringhe built-in.
+Output:
+```
+CIA MONDO
+```
 
-I dettagli di implementazione della funzione `tr` possono variare, ma nella maggior parte dei casi questa, quando usata con i qualifier `[:lower:]` e `[:upper:]`, semplicemente scorre la stringa di input e converte ciascun carattere minuscolo in majuscolo. Questo è un processo molto efficiente dal punto di vista computazionale e funziona bene per stringhe di qualsiasi lunghezza.
+## Deep Dive
+Prima dell'introduzione di `string`, capitava di dover installare strumenti esterni o scrivere script complicati. Con `string`, da Fish 2.3.0, la manipolazione delle stringhe è diventata semplice. Tuttavia, alcuni preferiscono usare `awk`, `tr` o `sed` per abitudine o per compatibilità con altri shell.
 
-## Vedi Anche 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Unix TR Command Tutorial](http://www.theunixschool.com/2012/07/linuxunix-15-examples-of-tr-command.html)
-- [Stackoverflow: Fish Shell Convert String to Uppercase](https://stackoverflow.com/questions/63369937/fish-shell-convert-string-to-uppercase)
+`awk` è potente per il processamento di testi e file. `tr` è un comando UNIX più vecchio che trasforma o elimina caratteri. `sed` è per l'editing di flussi di testi.
+
+Ognuno ha i suoi casi d'uso, ma in Fish, `string` è spesso il modo più diretto e pulito.
+
+## See Also
+- Documentazione di Fish su `string`: https://fishshell.com/docs/current/cmds/string.html
+- AWK User’s Guide: https://www.gnu.org/software/gawk/manual/gawk.html
+- Unix `tr` command: https://man7.org/linux/man-pages/man1/tr.1.html
+- GNU `sed`: https://www.gnu.org/software/sed/manual/sed.html

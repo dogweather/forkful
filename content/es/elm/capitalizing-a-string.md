@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "Elm: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,13 +12,15 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Qué y Por Qué?
 
-Capitalizar una cadena significa convertir la primera letra de la cadena a su forma mayúscula. Los programadores lo hacen para mejorar la claridad y legibilidad.
+Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programar lo hacen para normalizar textos, como nombres propios o títulos, asegurando consistencia y legibilidad.
 
-## Cómo hacerlo:
+## Cómo Hacerlo:
 
-Para capitalizar una cadena en Elm, usaremos la función `toUpperCase` del módulo `String`, junto con `left` y `dropLeft` para manipular el primer carácter.
+Elm no tiene una función incorporada para capitalizar automáticamente las strings, así que vamos a crear una nosotros mismos. El truco está en convertir la primera letra a mayúscula y luego concatenarla con el resto de la cadena.
 
 ```Elm
+import String exposing (toUpper, toLower, right, left)
+
 capitalize : String -> String
 capitalize str =
     case String.uncons str of
@@ -26,35 +28,29 @@ capitalize str =
             ""
 
         Just ( first, rest ) ->
-            String.toUpper (String.fromChar first) ++ rest
+            toUpper (String.fromChar first) ++ toLower rest
+
+-- Uso
+main =
+    String.split " " "hola mundo" -- separamos la cadena por espacios
+    |> List.map capitalize -- capitalizamos cada palabra
+    |> String.join " " -- reconcatenamos la cadena
+
+-- Salida: "Hola Mundo"
 ```
 
-En el código de arriba, `String.uncons` divide la cadena en su primer carácter y el resto. Si `str` está vacío (`Nothing`), devolvemos una cadena vacía. De lo contrario, convertimos el primer carácter a mayúsculas y lo concatenamos con el resto.
+## Análisis Profundo
 
-Ejemplo:
+Históricamente, la capitalización de cadenas de texto no es algo nuevo y ha sido aplicada en múltiples lenguajes de programación. En Elm, como es un lenguaje funcional, se prefiere manipular las cadenas de manera explícita mediante funciones. 
 
-```Elm
-capitalize "hola mundo"
-```
+Además de la función `capitalize` que creamos, podemos tener alternativas que, por ejemplo, solo capitalicen la primera letra de toda la cadena, no cada palabra. Esto resulta útil para ciertos casos específicos donde no se requiere capitalizar todo.
 
-Salida:
-
-```Elm
-"Hola mundo"
-```
-
-## Profundizando
-
-La manipulación de cadenas es una tarea común en la programación, remontándose a los primeros días de la computación. Al manipular cadenas en Elm, es importante recordar que las cadenas son inmutables y que cada operación de manipulación produce una nueva cadena.
-
-Si bien hemos utilizado el módulo `String` de Elm para esta tarea, existen otras funciones y módulos que también podrían usarse para resolverlo, como la librería `elm-string-extra`.
-
-En términos de implementación, Elm instancia internamente un motor de JavaScript para realizar operaciones en las cadenas. Sin embargo, esto es transparente para los programadores de Elm, al igual que la mayoría de los detalles de implementación del lenguaje.
+Detalles de implementación: La clave aquí es la función `String.uncons`, que divide la cadena en su primer carácter y el resto. Luego usamos `toUpper` y `toLower` del módulo `String` para cambiar el caso de los caracteres. Es una solución eficiente y elegante que se adapta bien al estilo funcional de Elm.
 
 ## Ver También
 
-Para más información sobre las cadenas y sus usos en Elm, puede consultar los siguientes recursos:
+Para más información sobre las funciones que utilizamos, puedes visitar la documentación oficial de Elm:
 
-- [Documentación oficial de Elm - String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm String Extra](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)
-- [Stack Overflow - Elm string manipulation](https://stackoverflow.com/questions/tagged/elm+string)
+- String module: https://package.elm-lang.org/packages/elm/core/latest/String
+- Función uncons: https://package.elm-lang.org/packages/elm/core/latest/String#uncons
+- List.map: https://package.elm-lang.org/packages/elm/core/latest/List#map

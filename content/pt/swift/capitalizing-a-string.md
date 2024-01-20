@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando uma string"
-html_title:           "Swift: Capitalizando uma string"
+html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Capitalizar uma string em Swift: uma exploração fácil
+## O Que É & Por Que Fazer?
+Capitalizar uma string é simplesmente transformar as letras iniciais de cada palavra em maiúsculas. Programadores fazem isso para formatar textos, seja para títulos, nomes próprios ou para padronizar a entrada de dados.
 
-## O que e por quê?
-
-Capitalizar uma string significa transformar a primeira letra de cada palavra nessa string em maiúscula. Programadores fazem isso para melhorar a apresentação e leitura dos dados textuais, tais como os nomes dos usuários.
-
-## Como fazer:
-
-Podemos fazer isto usando a função `capitalized` que vem embutido em Swift.
-
-Aqui um exemplo de código em Swift que capitaliza uma string:
-
+## Como Fazer:
 ```Swift
-let minhaString = "olá, mundo"
-let minhaStringCapitalizada = minhaString.capitalized
-print(minhaStringCapitalizada)
+let pequenaFrase = "olá, mundo da programação!"
+let fraseCapitalizada = pequenaFrase.capitalized
+
+print(fraseCapitalizada)
+// Saída: "Olá, Mundo Da Programação!"
+```
+Se você quer capitalizar só a primeira letra:
+```Swift
+let apenasPrimeiraMaiuscula = pequenaFrase.prefix(1).uppercased() + pequenaFrase.dropFirst()
+
+print(apenasPrimeiraMaiuscula)
+// Saída: "Olá, mundo da programação!"
 ```
 
-E a saída deste código será:
+## Mergulho Profundo
+Historicamente, capitalizar strings é uma convenção vinda da escrita e gramática normativa. Em programação, essa prática começou para refletir padrões de texto humano. Existem diferentes maneiras de capitalizar strings. A função `.capitalized` do Swift é uma convenção que segue as regras de capitalização específicas: ela capitaliza a primeira letra de cada palavra.
 
-```Swift
-Olá, Mundo
-```
+Além do `.capitalized`, Swift tem funções como `.uppercased()` que transformam todos os caracteres em maiúsculas, e `.lowercased()` para todos em minúsculas. Importante saber que a capitalização é dependente do locale: idiomas como o turco têm regras de capitalização especiais que o Swift leva em conta.
 
-## Mergulhando fundo
+Sob o capô, essas funções usam a Unicode Standard para determinar o que é uma "letra" e como transformar de minúscula para maiúscula e vice-versa. Cada caractere tem um código específico que define sua representação.
 
-Historicamente, a capitalização de strings não era uma preocupação nas primeiras linguagens de programação. Com a crescente interação com o utilizador e necessidade de formatação dos dados textuais, surgiram funções de capitalização.
+Quando o assunto é performance, capitalizar strings é relativamente trivial para textos curtos. Entretanto, para grandes volumes de texto, é importante considerar a eficiência do método utilizado.
 
-Existem várias formas de capitalizar uma string em Swift além de `capitalized`. Por exemplo, `uppercased` irá converter todas as letras da string em maiúsculas, e `lowercased` irá converte-las em minúsculas.
-
-A função `capitalized` em Swift faz mais do que apenas capitalizar a primeira letra de cada palavra em uma string. Ela também transforma todas as outras letras em minúscula.
-
-## Ver também
-
-Para mais informações sobre a manipulação de strings em Swift, consulte os seguintes recursos:
-
-- A documentação oficial da Swift da Apple: [The Swift String Manifesto](https://github.com/apple/swift/blob/main/docs/StringManifesto.md)
-- Do Stack Overflow, exemplos de como capitalizar cada palavra de uma string: [Stack Overflow Swift capitalized](https://stackoverflow.com/questions/26306326/swift-capitalization-of-words-in-a-string)  
-
-Espero que isto tenha ajudado a pôr um pouco mais de clareza sobre a capitalização de strings em Swift. Feliz codificação!
+## Veja Também
+- Swift Standard Library: [String](https://developer.apple.com/documentation/swift/string)
+- Unicode Standard: [Character Properties](https://www.unicode.org/reports/tr44/#CharacterProperties)

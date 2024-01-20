@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות גדולות"
-html_title:           "Elixir: הפיכת מחרוזת לאותיות גדולות"
-simple_title:         "הפיכת מחרוזת לאותיות גדולות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,28 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+קיבוע אותיות ראשיות היא שיטה שבה האות הראשונה במחרוזת הופכת לאות רישית (גדולה) ושאר האותיות לקטנות. תוכניתנים משתמשים בה לתקן טקסט לתצוגה נקיה וקונסיסטנטית, לדוגמה, שמות אנשים או כותרות.
 
-שינוי האות הראשונה של מחרוזת לאות ראשונה גדולה נקרא "הגבהת מחרוזת". זה נעשה כדי להדגיש/להבליט מידע כלשהו, או למדוד את התאימות לפורמט מסוים.
+## איך לעשות:
+```elixir
+defmodule StringTools do
+  def capitalize(string) do
+    string
+    |> String.downcase()
+    |> String.capitalize()
+  end
+end
 
-## איך נעשית זאת:
-
-אפשר להגביה מחרוזת באליקסיר עם הפונקציה `String.capitalize/1`. יש לך להראות לדוגמה:
-
-```Elixir
-IO.puts String.capitalize("hello world")
+IO.puts StringTools.capitalize("שלום עולם") # Outputs: "שלום עולם"
+IO.puts StringTools.capitalize("HELLO") # Outputs: "Hello"
 ```
+הערה: באליקסיר אין שינוי עבור אותיות ראשיות בעברית.
 
-זה ייצא:
+## נחפור עמוק יותר
+לקיבוע אות ראשית יש תולדות ארוכות בתכנות מחשבים, שמתחילות עם צורך בתקנון ערכים שמכילים טקסט, כמו שמות פרטיים ועסקיים. באליקסיר, `String.capitalize/1` ידאג לזה שהאות הראשונה תהיה רישית ושאר המחרוזת באותיות קטנות. ישנם גם דרכים חלופיות לביצוע המשימה הזו, כמו לשלב פונקציות כמו `String.slice/2` ו-`String.upcase/1`, אבל הפתרונות המובנים הם הבחירה הנקייה והיעילה ביותר. הקפד לבדוק שהמחרוזת לא תתחיל בסימן שאינו אות אם התוצאה חשובה לך.
 
-```Elixir
-Hello world
-```
-
-## צלילה עמוקה:
-
-אף אחד לא יכול להיות בטוח, אך נראה שהחלה התקנת מונח "הגבהת מחרוזת" באנגלית מסביב לשנות ה-60 כשהמחשבים נהיו לפופולאריים. ישנן גם אלטרנטיבות לפונקציה שלנו, כמו  `titlecase/1` שאינה מהפכת את האות בפותחת פסקא. לחלופין, אם תצטרך להעלים את כל האותיות, שימוש ב `String.upcase/1` יהיה נכון. בהנחה שאנו מבצעים את הגבהה, מהלך העיבוד משנה את האות הראשונה של המחרוזת לאות גדולה תוך שמירה על האותיות האחרות כאותיות קטנות.
-
-## ראו גם:
-
-דף המסמך הרשמי של ספרייה רדיקס `String` באליקסיר הוא מקור מצוין למידע נוסף על `String.capitalize/1` ואחרות: 
-[https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
+## ראו גם
+- [Elixir String Module Documentation](https://hexdocs.pm/elixir/String.html)
+- [Elixir School - Strings](https://elixirschool.com/en/lessons/basics/strings/)
+- [Unicode Normalization Forms](https://unicode.org/reports/tr15/)

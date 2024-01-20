@@ -1,7 +1,7 @@
 ---
-title:                "文字列の大文字化"
-html_title:           "C#: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-文字列の大文字化とは文字列内の各単語の最初の文字を大文字にすることです。これはデータの一貫性を保つため、またはプログラムの出力を整形するためにプログラマーが行います。
+## What & Why? (なぜ？とは？)
+文字列を大文字にすることは、単純に文字列内の小文字を大文字に変換する操作です。これは、タイトル、見出し、ユーザー名など特定のテキストを強調したい場合や、一貫性のあるデータフォーマットを実現するために行われます。
 
-## 方法：
-C#では`ToUpper()`または`TextInfo.ToTitleCase()`メソッドで文字列を簡単に大文字化できます。 
-
+## How to: (やり方)
 ```C#
-string name = "hello world";
-// Using ToUpper method
-string upperName = name.ToUpper();
-Console.WriteLine(upperName); // Output: HELLO WORLD
+string original = "こんにちは、世界！";
+string capitalized = original.ToUpper();
 
-// Using TextInfo.ToTitleCase method
-System.Globalization.CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
-System.Globalization.TextInfo textInfo = cultureInfo.TextInfo;
-string properName = textInfo.ToTitleCase(name);
-Console.WriteLine(properName); // Output: Hello World
+Console.WriteLine(capitalized); // 出力: こんにちは、世界！
+```
+`.ToUpper()` メソッドを使って簡単に文字列を大文字化できます。このコードは `"こんにちは、世界！"` を出力します。なぜなら、`.ToUpper()` は英字のみを大文字に変換し、日本語のテキストには影響を与えないからです。英語圏のテキストを大文字にする場合は以下のようになります。
+```C#
+string greeting = "hello, world!";
+string capitalizedGreeting = greeting.ToUpper();
+
+Console.WriteLine(capitalizedGreeting); // 出力: HELLO, WORLD!
 ```
 
-## 深堀り
-- **歴史**: 文字列の大文字化はプログラミングの初期から存在しています。
-- **代替手段**: 大文字化には他の方法もありますが、C#ではこれらのメソッドが最も直接的で手軽に利用できます。
-- **実装詳細**: `ToUpper()`メソッドは文字列すべてを大文字にします。一方、`TextInfo.ToTitleCase()`は文字列内の各単語の最初の文字を大文字にします。
+## Deep Dive (深掘り)
+`.ToUpper()` は .NET Framework の初期から存在し、文字列内の全ての英字を大文字に変換する最も一般的な方法です。当然ながら、日本語を含む unicode 文字対応していますが、大文字・小文字の区別がない言語には影響を与えません。
 
-## 参考情報：
-- [Microsoft Docs: TextInfo.ToTitleCase](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
-- [Microsoft Docs: String.ToUpper](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+`ToUpperInvariant` と `TextInfo.ToUpper` などの代替手段もあります。これらは異なるロケールやカルチャ設定に対応しており、一般的な `.ToUpper()` より柔軟に大文字への変換を行うことができます。
+
+詳細な実装では、拡張メソッドを作成して特定のシナリオやカルチャ固有のルールに合わせることも可能です。 .NET Core および .NET 5.0 以降では、パフォーマンスの向上と共に大文字・小文字変換の正確性が改善されています。
+
+## See Also (関連情報)
+- [.NET API Documentation: ToUpper Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netframework-4.8)
+- [.NET API Documentation: ToUpperInvariant Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupperinvariant?view=netframework-4.8)

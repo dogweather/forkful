@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana liter w ciągu na wielkie"
-html_title:           "Go: Zamiana liter w ciągu na wielkie"
-simple_title:         "Zamiana liter w ciągu na wielkie"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,12 +10,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Zmiana pierwszej litery ciągu na wielką to tzw. kapitalizacja. Programiści robią to, aby zachować poprawną gramatykę w interfejsach użytkownika lub do porównywania ciągów bez uwzględnienia wielkości liter.
+## What & Why? (Co i Dlaczego?)
+Kapitalizowanie stringa to proces zamiany pierwszych liter wyrazów na duże. Robimy to dla poprawienia czytelności, formalności lub spraw by tekst był bardziej wpadający w oko.
 
-## Jak to zrobić:
-W Go, możemy użyć wbudowanej funkcji `strings.Title()` do kapitalizacji ciągu. Oto jak:
-
+## How to: (Jak Zrobić:)
 ```Go
 package main
 
@@ -25,24 +23,22 @@ import (
 )
 
 func main() {
-	str := "witaj, świecie!"
-	result := strings.Title(str)
-	fmt.Println(result)
+	text := "żółw szybko biega po plaży"
+	capitalizedText := strings.Title(text)
+	fmt.Println(capitalizedText) // Żółw Szybko Biega Po Plaży
 }
 ```
 
-Wyjście:
-```Go
-Witaj, Świecie!
-```
+## Deep Dive (Dogłębna Analiza)
+W Go, strings.Title() jest często używany do kapitalizacji każdego wyrazu w stringu, ale ma swoje ograniczenia - postrzega każdą literę po spacji jako początek nowego słowa. Dla dokładniejszej kontroli, stosuje się własne funkcje. Dawniej, gdy jeszcze nie było takich funkcji jak `Title`, kapitalizacja wymagała więcej ręcznej pracy.
 
-## Głębsze zanurzenie
-Kapitalizacja ciągów ma swoje korzenie w dawnych językach programowania i jest powszechnie stosowana w różnych językach, nie tylko w Go. 
+Rozważ używanie `strings.ToTitle` gdy potrzebujesz WIELKICH LITER. Pamiętaj też, że kapitalizacja może zmieniać znaczenie wyrazów w niektórych językach, więc używaj z uwagą.
 
-Alternatywą do `strings.Title()` w Go jest napisanie własnej funkcji. Na przykład, możemy zastosować `unicode.ToTitle()`, który konwertuje jednoznakowe runy.
+Alternatywą jest `text.Title` z pakietu "golang.org/x/text", który oferuje pełniejsze wsparcie dla języków i unikodowych reguł kapitalizacji.
 
-Detale implementacji `strings.Title()` polegają na kolejnym iterowaniu po ciągu i zamianie każdej litery, która znajduje się po nie-literze, na literę wielką. 
+Za kulisami, funkcje jak `strings.Title` działają poprzez iterację po stringu i aplikacje transformacji do kodów unicode znaków, bazując na prostych regułach.
 
-## Zobacz też
-[Go Docs: Pakiet „strings”](https://pkg.go.dev/strings)  
-[Dokumentacja Go: unicode.ToTitle](https://golang.org/pkg/unicode/#ToTitle)
+## See Also (Zobacz Również)
+- Dokumentacja Go strings pakietu: https://pkg.go.dev/strings
+- Pakiet 'text' z extended support: https://pkg.go.dev/golang.org/x/text
+- Unicode Standard on Case: http://unicode.org/reports/tr21/

@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "Java recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Java"
 category:             "Java"
@@ -10,68 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Capitalizing a String in Java 
-
 ## What & Why?
 
-Capitalizing a string means converting the first letter of the string to uppercase. This comes in handy when dealing with titles, names, or anywhere the beginning of a sentence needs emphasis.
+Capitalizing a string means making the first letter uppercase with the rest of the letters lowercase. Programmers use this to standardize text data, like user input or names, ensuring consistency across a dataset.
 
 ## How to:
 
-Here's a nifty way to capitalize a string in Java:
+In Java, there's no built-in method to capitalize a string fully (first letter uppercase, rest lowercase), but here's a quick function to do just that:
 
-```Java
-public class Capitalize {
+```java
+public class StringCapitalizer {
     public static void main(String[] args) {
-        String name = "john doe";
-        String capitalizedName = name.substring(0, 1).toUpperCase() + name.substring(1);
-        System.out.println(capitalizedName);
+        String input = "java is fun!"; // example string
+        String output = capitalizeString(input);
+        System.out.println(output); // Java is fun!
     }
-}
-```
 
-Running the above code will produce:
-
-```Java
-John doe
-```
-
-What about capitalizing every word in a string, you ask? Easy peasy:
-
-```Java
-public class Capitalize {
-    public static void main(String[] args) {
-        String name = "john doe";
-        String[] words = name.split("\\s");
-        String capitalizedName = "";
-        for (int i = 0; i < words.length; i++){
-            capitalizedName += words[i].substring(0, 1).toUpperCase() + words[i].substring(1) + " ";
+    public static String capitalizeString(String str) {
+        if(str == null || str.isEmpty()) {
+            return str;
         }
-        System.out.println(capitalizedName.trim());
+        return str.substring(0, 1).toUpperCase() + str.substring(1).toLowerCase();
     }
 }
-```
-
-This produces:
-
-```Java
-John Doe
 ```
 
 ## Deep Dive
 
-Capitalizing strings has been a staple operation since the dawn of computer languages — performing crucial roles in text processing, language localization, and string manipulation tasks.
+Before Java 8, the above method was a common way to capitalize a string. Since the introduction of streams in Java 8, we can also manipulate strings with greater flexibility.
 
-While Java provides no built-in method to capitalize a string, the community offers a number of solutions, including Apache Commons Lang's `WordUtils.capitalize()`. These libraries can handle complex scenarios out of the box, but for simple capitalizing, the above code snippets do the trick.
+An alternative way to capitalize using streams:
 
-Under the hood, Java's `toUpperCase()` uses Unicode data to map lower case characters to their upper case counterparts. If dealing with locale-sensitive text, consider using the overloads that take a `Locale` argument.
+```java
+import java.util.stream.*;
+
+public class StringCapitalizer {
+    public static void main(String[] args) {
+        String input = "java is cool!";
+        String output = Arrays.stream(input.split("\\s"))
+                              .map(word -> word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase())
+                              .collect(Collectors.joining(" "));
+        System.out.println(output); // Java Is Cool!
+    }
+}
+```
+
+This splits the string into words, capitalizes each one, and joins them back together. Note the difference: each word is capitalized, not just the first one.
+
+Strings are immutable in Java—meaning, once created, they can't change. Methods that seem to alter strings, like `toUpperCase` or `toLowerCase`, actually create new strings with changes applied.
+
+Performance-wise, StringBuilder is often used for string manipulation, because it's mutable. It avoids the cost of creating multiple string objects. However, for simple capitalization, the performance gain isn't a big deal, hence a `StringBuilder` example is omitted.
 
 ## See Also
 
-Interested in diving deeper into Java's string manipulation? These resources are a good place to start:
-
-1. [Java's official String documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-
-2. [Apache's Common Lang library](https://commons.apache.org/proper/commons-lang/)
-
-3. [Java's char data type and Unicode](https://docs.oracle.com/javase/tutorial/i18n/text/unicode.html)
+- [Java String API Docs](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Collector Docs](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html)
+- [StringJoiner Docs](https://docs.oracle.com/javase/8/docs/api/java/util/StringJoiner.html)

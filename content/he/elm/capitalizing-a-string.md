@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות ראשיות"
-html_title:           "Elm: הפיכת מחרוזת לאותיות ראשיות"
-simple_title:         "הפיכת מחרוזת לאותיות ראשיות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,11 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-הרישום של מחרוזת הוא פעולה שבה כל האותיות במחרוזת הופכות לאותיות גדולות. מתכנתים מעלים מחרוזות להודעות משתמש או שם משתמש עצמי, לאיתור טקסט רגיש למקרה או למניעת טעויות בעת הזנת נתונים.
+## What & Why? (מה ולמה?)
+גדלת אותיות במחרוזת פירושו להפוך את כל האותיות לאותיות גדולות. תכניתנים עושים זאת לצורך עקביות, הדגשה או כחלק מפורמט שדה קלט.
 
-## איך ליצור:
-ב-Elm, אפשר להרים את האותיות במחרוזת באמצעות מסיבי ספריית ה-string. לדוגמה:
+## How to: (איך לעשות:)
+ב-Elm אין פונקציה פנימית לגדלת מחרוזת, אבל זה פשוט ליישם בעצמך. נשתמש ב-package שנוסף לשפה:
 
 ```Elm
 import String
@@ -23,15 +23,16 @@ capitalize : String -> String
 capitalize str =
     String.toUpper str
 
+-- דוגמת שימוש
 main =
-    print (capitalize "hello, world!")
+    capitalize "hebrew"
+    -- פלט: "HEBREW"
 ```
 
-הפלט המצופה הוא: "HELLO, WORLD!"
+## Deep Dive (עומק הנושא)
+Elm לא מציע המרת אותיות קטנות לגדולות באופן ישיר ב-`core libraries`, אבל תוכל להשתמש ב-`String.toUpper` מ-package קהילתי כמו `elm-string-transform`. לשוניות אחרות כמו JavaScript כן כוללות פונקציונליות זו ישירות, כאשר `toUpperCase` היא שיטה פנימית של אובייקט ה-string.
 
-## צלילה עמוקה:
-היסטורית, הרישום של מחרוזת היה משימה שנדרשה מניפולציות של מערכים של תווים. אך בשפות ברמה גבוהה כמו Elm, זה פשוט מתוך גישת ה-String API. נוסף על זה, יש אפשרויות אחרות ב-Elm שבהם אתה יכול להמיר את כל האותיות לאותיות קטנות, או סינגולרית את האות הראשונה של מחרוזת.
+התיקון מצריך שימוש ב-package חיצוני או כתיבת פונקציה באופן ידני. יתרה מזו, כאשר אתה משתמש בהמרה לאותיות גדולות, זכור שזה יכול להשפיע על מיון והשוואות בינלאומיות, שכן אותיות מהגדלות בשפות שונות יכולות להיות סוג של תווים שונים לחלוטין.
 
-## לגיפוי:
-תוכל לחפש מידע נוסף בנושא זה בדפים הבאים:
-- Elm String Module Documentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+## See Also (ראה גם)
+- Elm `String` documentation: [String](https://package.elm-lang.org/packages/elm/core/latest/String)

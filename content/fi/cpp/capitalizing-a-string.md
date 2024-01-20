@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon isoilla kirjaimilla"
-html_title:           "C++: Merkkijonon isoilla kirjaimilla"
-simple_title:         "Merkkijonon isoilla kirjaimilla"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,43 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & miksi?
+## What & Why?
+"Mikä ja Miksi?"  
+Tekstijonon kaikki merkit suuraakkosiksi muuttaminen on yksinkertaista: muutetaan kirjaimet A:sta Z:hen. Koodarit tekevät tätä yhtenäistämään tulosteita tai helpottaakseen vertailua, koska koneet erottavat isot ja pienet kirjaimet.
 
-Merkkijonojen muuntaminen isoiksi kirjaimiksi tarkoittaa, että jokainen merkkijonon kirjain muutetaan isoksi kirjaimeksi. Ohjelmoijat tekevät tämän yleisimmin tiedon käsittelyssä ja vertailussa, erityisesti silloin kun halutaan tehdä kirjainkoosta riippumattomia vertailuja.
-
-## Kuinka:
-
-```C++
-#include <algorithm>
-#include <cctype>
+## How to:
+"Näin toimit:"  
+```cpp
 #include <iostream>
+#include <algorithm>
 #include <string>
 
-// Funktio joka muuntaa merkkijonon isoiksi kirjaimiksi
-void muutaIsoiksiKirjaimiksi(std::string &s) {
-    std::transform(s.begin(), s.end(), s.begin(), 
-        [](unsigned char c){ return std::toupper(c); }
-    );
-}
-
 int main() {
-    std::string s = "tervetuloa c++ ohjelmointiin!";
-    muutaIsoiksiKirjaimiksi(s);
-    std::cout << s << std::endl;  // TULOS: TERVETULOA C++ OHJELMOINTIIN!
+    std::string viesti = "Ohjelmointi on hauskaa!";
+    std::transform(viesti.begin(), viesti.end(), viesti.begin(), ::toupper);
+
+    std::cout << viesti << std::endl; // OUTPUT: OHJELMOINTI ON HAUSKAA!
     return 0;
 }
 ```
 
-## Syvempi sukellus:
+## Deep Dive
+"Sukellus syvyyksiin"  
+C++ ei suoraan tarjoa funktiota kokonaisen stringin suurentamiseen, mutta `<algorithm>`-kirjastossa on `transform`, joka sopii tähän käyttöön. Historiallisesti, tiedon käsittely on ollut kirjainkoosta riippumatonta, joten kielissä kuten C++ vaaditaan ylimääräisiä toimia tämän saavuttamiseksi. Vaihtoehtoina voi kirjoittaa oman toiminnallisuuden tai käyttää ulkopuolisia kirjastoja, kuten Boost.Algorithm-string-modifierit. Muutamassa yksityiskohdassa: `::toupper` on lokaalista riippumaton versio, mutta voi käyttää `std::toupper` tarpeen mukaan lokaalista riippuvaan muunnokseen.
 
-Historiallisesti merkkijonojen muuntaminen isoiksi kirjaimiksi on ollut yksinkertainen tapa tehdä vertailuja, jotka ovat herkkiä kirjainkoostumiselle. 
-
-Kuten näemme, C++ tarjoaa erittäin tehokkaan ja yksinkertaisen tavan tehdä tämä `std::toupper` funktion avulla , joka on osa standardikirjastoa. Voimme myös käyttää `std::transform` funktiota läpikäymään merkkijonon ja soveltamaan `std::toupper` funktiota jokaiseen merkkiin.
-
-Muut ohjelmointikielet saattavat tarjota myös muut metodit tai funktiot merkkijonojen käsittelyyn. Esimerkiksi Pythonissa löytyy sisäänrakennettu `upper` metodi.
-
-## Katso myös:
-
-- C++ Standard Library: http://www.cplusplus.com/reference/
-- Transform function in C++ STL: https://www.geeksforgeeks.org/stdtransform-c-stl/?ref=lbp
-- ASCII Table: https://ascii.cl/
+## See Also
+"Katso myös"  
+- C++ Standard Library documentation: https://en.cppreference.com/w/
+- Boost Algorithm Library: https://www.boost.org/doc/libs/release/libs/algorithm/
+- C++ string handling tutorials: http://www.cplusplus.com/reference/string/string/

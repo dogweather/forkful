@@ -1,7 +1,7 @@
 ---
-title:                "Перетворення рядка в верхній регістр"
-html_title:           "Clojure: Перетворення рядка в верхній регістр"
-simple_title:         "Перетворення рядка в верхній регістр"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це та навіщо?
+## What & Why? (Що та Чому?)
+Капіталізація рядків — це перетворення першої букви слова в верхній регістр. Програмісти використовують це для форматування тексту, наприклад, для назв статей чи для іменування сутностей у коді.
 
-Ми маємо на увазі зробити першу букву у рядках великою, тобто "капіталізувати" їх. Програмісти роблять це для більшої чіткості в тексті: заголовках, іменах чи реченнях.
+## How to: (Як це зробити:)
+```Clojure
+;; Простий приклад капіталізації
+(defn capitalize-str [s]
+  (string/capitalize s))
 
-## Як це робити:
+;; Використання
+(println (capitalize-str "вітаємо у clojure!"))
+;; Вихідні дані: Вітаємо у clojure!
+```
+```Clojure
+;; Капіталізація кожного слова у рядку
+(defn capitalize-words [s]
+  (string/join " " (map string/capitalize (string/split s #" "))))
 
-Clojure дає нам чудову функцію `clojure.string/capitalize` щоб саме це і реалізувати. Використовуйте її так:
-
-```clojure
-(require '[clojure.string :as str])
-
-(defn capitalize-string [s]
-  (str/capitalize s))
-
-(prn (capitalize-string "ukrainian text"))
+;; Використання
+(println (capitalize-words "запрошуємо до svit clojure!"))
+;; Вихідні дані: Запрошуємо До Svit Clojure!
 ```
 
-Виведе:
+## Deep Dive (Поглиблений аналіз)
+Капіталізація була суттєвою для мов спілкування, а успішний перенос її у програмування залежав від стандартизації лінгвістичних правил у коді. У Clojure, капіталізацію можна реалізувати використовуючи стандартну бібліотеку `clojure.string`. Альтернативи включають самостійну реалізацію функцій для специфічних випадків.
 
-```clojure
-"Ukrainian text"
-```
+Технічні деталі:
+- `clojure.string/capitalize` перетворює перший символ рядку в uppercase.
+- `map` застосовує функцію до кожного елементу колекції.
+- `string/join` з'єднує елементи колекції в один рядок.
+- `string/split` ділить рядок на колекцію рядків за допомогою регулярного виразу.
 
-## Занурення у деталі:
-
-1. **Історичний контекст**: Якщо ви знайомі з іншими мовами (наприклад, JavaScript), ви можете знати, що ця функція є поширеною. Clojure також має її, але з додатковою родзинкою: вона не тільки робить першу букву великою, але і решту рядка перетворює в нижній регістр. 
-
-2. **Альтернативи**: Якщо вам потрібно лише зробити першу букву великою (функція JS-сучасно), ви можете створити свою власну функцію:
-
-```clojure
-(defn capitalize-first [s]
-  (str/replace-first s (str/first s) (str/upper-case (str/first s))))
-```
-
-3. **Деталі реалізації**: Якщо ви заглибитеся у вихідний код `clojure.string/capitalize`, ви побачите, що він використовує Java для роботи з рядками. Це надає йому високу продуктивність і надійність.
-
-## Більше інформації:
-
-1. [Офіційна документація Clojure](https://clojure.org/api/api)
-2. [Про бібліотеку clojure.string](https://clojuredocs.org/clojure.string)
-3. [Інтерактивне навчання Clojure](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
+## See Also (Дивіться також)
+- Clojure Official Documentation: [string functions](https://clojure.github.io/clojure/clojure.string-api.html)
+- Clojure Style Guide: [naming conventions](https://guide.clojure.style/#naming)
+- Clojure from the ground up: [strings](https://aphyr.com/posts/305-clojure-from-the-ground-up-strings)

@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "Fish Shell: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,39 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Kapitalisering av en sträng innebär att göra den första bokstaven i varje ord stort. Programmerare gör detta för att förbättra läsbarheten och presentationen av text i program.
+Att kapitalisera en sträng innebär att omvandla dess första bokstav i varje ord till versal, eller hela strängen till versaler. Programmerare gör detta för att standardisera textdata, förbättra läsbarheten eller följa konventioner i brukargränssnitt.
 
 ## Hur man gör:
-
-Här är ett exempel om hur man kapitaliserar en sträng i Fish Shell.
-
 ```Fish Shell
-function to_uppercase --description "Konverterar första bokstaven i varje ord till stor"
-    set -l str $argv
-    echo (string upper $str)
-end
+# För att göra första bokstaven i varje ord till versal:
+echo "hej världen" | string capitalize
+
+# Output
+Hej Världen
+
+# För att göra hela strängen till versaler:
+echo "hej världen" | string upper
+
+# Output
+HEJ VÄRLDEN
 ```
 
-Låt oss pröva det.
+## Djupdykning
+Kapitalisering i Fish Shell utförs enkelt med inbyggda kommandon som `string capitalize` och `string upper`. Historiskt sett har shell-skripting använt olika externa verktyg som `awk` eller `tr` för textmanipulation, men Fish erbjuder en inbyggd syntax som gör det enklare.
 
-```Fish Shell
-> to_uppercase "detta är en teststräng"
-DETTA ÄR EN TESTSTRÄNG
-```
+Alternativ till Fishs inbyggda funktioner inkluderar att använda `awk '{print toupper($0)}'` för att konvertera till versaler eller att implementera en skräddarsydd funktion i Fish som hanterar specifika kapitaliseringsbehov.
 
-## Fördjupning:
+När det gäller genomförandet, använder `string capitalize` Unicode för att korrekt identifiera ordgränser och hantera versaliseringen även för icke-engelska språk. Detta är ett exempel på Fishs förmåga att hantera modern och internationell textbehandling.
 
-Historiskt sett har metoder för strängkapitalisering sitt ursprung i behovet av att framhäva titlar och avsnittsöverskrifter inom textbehandling. 
-
-I Fish Shell 3.0 inleddes stöd för inbyggda strängfunktioner som 'string upper', vilket förenklade strängmanipulering.
-
-Alternativt kan du använda awk eller sed för att kapitalisera en sträng, men detta kan bli mer komplicerat och mindre läsbart, särskilt för större scripts.
-
-För implementering, se till att använda (string upper) operatören som förvandlar alla små bokstäver i ett strängargument till stora bokstäver. Om ingen string ges, läser och bearbetar den från stdin.
-
-## Se även:
-
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
-- [Tutorial för Fish Shell Scripting](http://fishshell.com/docs/current/tutorial.html)
-- [Fish Shell GitHub Repo](https://github.com/fish-shell/fish-shell)
+## Se även
+- Fish Shell officiella dokumentation om strängar: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+- Unicode standard för textbehandling: [https://home.unicode.org](https://home.unicode.org)
+- AWK handbok för textbehandling: [https://www.gnu.org/software/gawk/manual/gawk.html](https://www.gnu.org/software/gawk/manual/gawk.html)

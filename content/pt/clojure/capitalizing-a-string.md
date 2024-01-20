@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando uma string"
-html_title:           "Clojure: Capitalizando uma string"
+html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Quê e Por Quê?
+## O Que & Porquê?
+Capitalizar uma string significa transformar todas as letras iniciais das palavras em maiúsculas. Programadores fazem isso para padronizar dados, formatar textos de modo apresentável ou atender a regras gramaticais específicas.
 
-Capitalizar uma string consiste em alterar a primeira letra de cada palavra da string para maiúscula. Os programadores fazem isso para melhorar a aparência dos textos em suas aplicações, aumentando a legibilidade e a consistência do conteúdo.
+## Como Fazer:
+```Clojure
+(defn capitalize [s]
+  (clojure.string/capitalize s))
 
-## Como fazer:
-
-```clojure
-(defn capitlizar [s]
-  (apply str
-    (interleave (string/capitalize s) " ")))
-
-(capitlizar "fazendo uma string em caixa alta")
-;; "Fazendo Uma String Em Caixa Alta"
+(capitalize "olá, mundo!") ; => "Olá, Mundo!"
+(capitalize "clojure é demais!") ; => "Clojure É Demais!"
 ```
 
 ## Mergulho Profundo
+Capitalizar strings não é um conceito novo; sua utilidade estende-se desde os primórdios da tipografia. Em Clojure, a função `clojure.string/capitalize` é prática, mas capitaliza apenas a primeira letra da string inteira. Para capitalizar todas as palavras, você terá que fazer um pouco mais: divida a string em palavras, capitalize cada uma e junte tudo de novo.
 
-Historicamente, capitalizar strings é uma prática que vem desde os primeiros sistemas de processamento de texto. No Clojure, como vimos, usamos a função `string/capitalize`.
+Outra abordagem é usar expressões regulares com `clojure.string/replace` para buscar o início de cada palavra e capitalizá-lo, ou seja, uma função personalizada que lida com casos mais complicados, como abreviações e nomes próprios.
 
-No entanto, existem alternativas. Uma delas é usar a função `clojure.string/capitalize`, que capitaliza a primeira letra da string e transforma o restante em caixa baixa.
+A implementação também deve considerar caracteres especiais e acertos de desempenho para strings muito longas, mas, no dia a dia, a biblioteca `clojure.string` já resolve a maioria das necessidades.
 
-```clojure
-(clojure.string/capitalize "FAZENDO uma STRING em caixa ALTA")
-;; "Fazendo uma string em caixa alta"
+```Clojure
+(defn capitalize-words [s]
+  (->> s
+       (clojure.string/split #" ")
+       (map clojure.string/capitalize)
+       (clojure.string/join " ")))
+
+(capitalize-words "bem-vindo ao mundo de clojure!") ; => "Bem-Vindo Ao Mundo De Clojure!"
 ```
 
-Isso pode ser útil quando precisamos garantir que todas as outras letras da string estejam em minúsculas.
-
-Sobre a implementação, o Clojure na verdade usa as funções de string do Java subjacente. Portanto a função `string/capitalize` é eficiente e bem testada, já que tem acesso à bem estabelecida API de String do Java.
-
-## Veja Também
-
-Para mais informações sobre manipulação de strings em Clojure, consulte o seguinte:
-- Documentação oficial da Clojure para strings: https://clojuredocs.org/clojure.string
-- Guia de Clojure sobre strings (em inglês): https://learnxinyminutes.com/docs/clojure/
-- Página da Wikipedia sobre capitalização: https://pt.wikipedia.org/wiki/Capitalização
+## Veja Também:
+- Documentação oficial do Clojure para `clojure.string`: [clojure.org](https://clojure.org/api/cheatsheet)
+- Uma discussão sobre a manipulação de strings no StackOverflow: [StackOverflow Clojure Strings](https://stackoverflow.com/questions/tagged/clojure+string)

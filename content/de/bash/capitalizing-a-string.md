@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "Bash: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,39 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Kapitalisieren eines Strings bedeutet, alle Buchstaben in Großbuchstaben umzuwandeln. Programmierer nutzen dies, um Konsistenz in der Benutzereingabe sicherzustellen oder bestimmte Textelemente hervorzuheben.
 
-Großschreibung von Strings bezieht sich auf die Umwandlung aller Zeichen in einem Textstring in Großbuchstaben. Programmierer machen das oft für Konsistenz in ihrer Datenausgabe oder um Text leichter lesbar zu machen.
+## How to:
+Capitalizing a string in Bash can be done using `tr`, `awk`, or native Bash parameter expansion. Here's how:
 
-## Wie es geht
-
-Im Scripting mit Bash können sie die eingebaute Funktion `tr` verwenden, um einen String zu kapitalisieren. Hier ist ein einfaches Beispiel:
-
+Mit `tr`:
 ```Bash
-string="hallo welt"
-echo "$string" | tr '[:lower:]' '[:upper:]'
+echo "kleiner Buchstabe" | tr a-z A-Z
+```
+Ausgabe:
+```
+KLEINER BUCHSTABE
 ```
 
-Die Ausgabe dieses Befehls ist `HALLO WELT`.
-
-## Vertiefung
-
-Historisch gesehen war die Funktion `tr` schon immer ein Teil der UNIX- und Linux-Shell-Skripts, noch bevor es modernere Shells wie Bash gab. 
-
-Es gibt andere Möglichkeiten, Strings in Bash zu kapitalisieren. Zum Beispiel:
-
+Mit `awk`:
 ```Bash
-string="hallo welt"
-echo "${string^^}"
+echo "kleiner Buchstabe" | awk '{print toupper($0)}'
+```
+Ausgabe:
+```
+KLEINER BUCHSTABE
 ```
 
-Diese Methode ist speziell für Bash und funktioniert nicht in anderen Shells.
+Mit Bash Erweiterung:
+```Bash
+str="kleiner Buchstabe"
+echo "${str^^}"
+```
+Ausgabe:
+```
+KLEINER BUCHSTABE
+```
 
-Die Kapitalisierung von Strings beeinflusst nicht die ursprüngliche Variable, es sei denn, Sie weisen das Ergebnis der Transformation wieder der Variable zu.
+## Deep Dive:
+Historisch kommt das Kapitalisieren von Strings aus dem Bedürfnis, Texte gleichförmig zu gestalten – beispielsweise in Titeln oder beim Setzen von Umgebungsvariablen in Unix-Systemen. Alternative Methoden, wie die Verwendung von `sed` oder das Umwandeln einzelner Buchstaben mit Hilfe von ASCII-Werten, sind ebenfalls möglich, aber die gezeigten Methoden mit `tr`, `awk` und Bash Erweiterungen sind eleganter und kürzer.
 
-## Siehe auch
+Die `tr`-Methode ist direkt und schnell, perfekt für einfaches Umwandeln. `awk` ist mächtiger und bietet mehr Flexibilität für komplexe Manipulationen. Bash Erweiterungen sind sehr prägnant, jedoch sind ältere Versionen von Bash möglicherweise nicht kompatibel.
 
-Bitte checken Sie auch diese nützlichen Links für weitere Informationen:
+Für die Bash-Erweiterung: Das doppelte `^^` wandelt den gesamten String in Großbuchstaben um. Ein einfaches `^` würde nur den ersten Buchstaben ändern.
 
-- GNU `tr` Handbuch: [https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-- Bash Beginner's Guide Kapitalisierung: [http://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html)
-- Advanced Bash-Scripting Guide `tr` command: [https://tldp.org/LDP/abs/html/string-manipulation.html](https://tldp.org/LDP/abs/html/string-manipulation.html)
+## See Also:
+- GNU `tr` Manual: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
+- GNU `awk` Manual: https://www.gnu.org/software/gawk/manual/gawk.html
+- Bash Parameter Expansion: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html

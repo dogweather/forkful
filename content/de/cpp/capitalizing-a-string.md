@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "C++: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,37 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Großschreiben einer Zeichenkette bedeutet, jede Kleinbuchstaben in eine Großbuchstaben zu verwandeln. Programmierer machen es, um Text bereinigungen oder zum gruppieren ähnlicher Gegenstände zu ermöglichen.
+## What & Why?
 
-## So geht's:
+String-Kapitalisierung wandelt alle Buchstaben eines Strings in Großbuchstaben um. Das dient häufig der Benutzerfreundlichkeit oder uniformen Datenverarbeitung.
+
+## How to:
+
+Die C++-Bibliothek `<algorithm>` enthält `std::transform`, das wir hierfür nutzen:
+
 ```C++
-#include<iostream>
-#include<algorithm>
-#include<string>
-
-using namespace std;
-
-string to_upper(string s){
-   transform(s.begin(), s.end(), s.begin(), ::toupper);
-   return s;
-}
+#include <iostream>
+#include <string>
+#include <algorithm>
 
 int main() {
-   string my_str = "hallo, Welt!";
-   cout << to_upper(my_str) << endl; // Gibt "HALLO, WELT!" aus.
-   return 0;
+    std::string text = "Hallo Welt!";
+    
+    std::transform(text.begin(), text.end(), text.begin(), 
+                   [](unsigned char c) { return std::toupper(c); });
+
+    std::cout << text << std::endl;  // Ausgabe: HALLO WELT!
+    return 0;
 }
 ```
-Ein typischer Ausdruck wäre:
-```
-HALLO, WELT!
-```
-## Tiefere Einblicke
-Historisch gesehen stammt das Konzept des Großschreibens einer Zeichenkette aus der Zeit vor Computern, als es verwendet wurde, um Wichtigkeit oder Betonung hervorzuheben. In Programmierung gibt es viele Alternativ-Methoden, darunter ASCII-Konvertierung oder andere eingebaute Funktionen in verschiedenen Sprachen. In C++ verwenden wir die Transform-Funktion der STL. Sie nimmt vier Parameter: die Anfangs- und Endpunkte des Eingabebereichs, den Anfangspunkt des Ausgabebereichs und die zu verwendende Operation (in diesem Fall ::toupper).
 
-## Siehe auch
-Für mehr Information, bitte besuchen Sie:
-- [C++ String transform()](https://www.cplusplus.com/reference/algorithm/transform/)
-- [ASCII Table](http://www.asciitable.com/) 
-- [C++ String-Handling](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+Auch die C-Bibliothek `<cctype>` ist nützlich für `std::toupper`:
+
+```C++
+#include <iostream>
+#include <string>
+#include <cctype>
+
+int main() {
+    std::string text = "Servus!";
+    for(char &c : text) {
+        c = std::toupper(static_cast<unsigned char>(c));
+    }
+
+    std::cout << text << std::endl;  // Ausgabe: SERVUS!
+    return 0;
+}
+```
+
+## Deep Dive:
+
+Früher gab es keine Standardmethoden in C++ zur String-Kapitalisierung, also griffen Entwickler auf C-Bibliotheken zurück. Nun bieten moderne C++-Versionen wie C++17 bequeme Algorithmen für diese Operationen.
+
+Alternativ könnten Entwickler ihre eigene Funktion schreiben, um mehr Kontrolle über das Verhalten zu haben, z.B. Lokalisierung oder Sonderfälle. Bei der Implementierung ist Vorsicht geboten, um nicht in die Falle von Lokalisierungsfehlern oder Unicode-Problemen zu tappen - `std::toupper` funktioniert nicht für alle Sprachen oder spezielle Buchstaben.
+
+Mit der Einführung von Bibliotheken wie Boost oder sogar Features im C++17-Standard, sind viele dieser Herausforderungen leichter zu handhaben. Dennoch ist Verständnis über die zugrundeliegenden Prozesse wichtig.
+
+## See Also:
+
+- [cppreference to std::transform](https://en.cppreference.com/w/cpp/algorithm/transform)
+- [cppreference to std::toupper](https://en.cppreference.com/w/cpp/string/byte/toupper)
+- [Boost String Algorithm Library](https://www.boost.org/doc/libs/release/libs/algorithm/string/)

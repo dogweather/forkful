@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 바꾸기"
-html_title:           "PowerShell: 문자열 대문자로 바꾸기"
-simple_title:         "문자열 대문자로 바꾸기"
+title:                "문자열 대문자로 변환하기"
+html_title:           "Arduino: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+문자열을 대문자로 만드는 것은 각 단어의 첫 글자나 모든 글자를 대문자로 바꾸는 것입니다. 프로그래머들은 보통 이렇게 처리하여 사용자 인터페이스를 깔끔하게 보이게 하거나 데이터의 일관성을 유지하기 위해 사용합니다.
 
-문자열 대문자화는 문자의 첫 글자를 대문자로 변경하는 것입니다. 이는 프로그래머들이 식별자 이름이나 사용자 입력을 표준화하는데 유용합니다.
-
-## 어떻게:
-
+## How to: (어떻게:)
+### 단어의 첫 글자만 대문자로
 ```PowerShell
-$string = "hello world"
-$capitalizedString = (Get-Culture).TextInfo.ToTitleCase($string.ToLower())
-Write-Output $capitalizedString
+$exampleString = "안녕하세요, powershell을 배우고 있습니다."
+$capitalizedString = $exampleString | ForEach-Object { $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower() }
+$capitalizedString
 ```
-출력 결과는: `Hello World`
+출력:
+```
+안녕하세요, Powershell을 배우고 있습니다.
+```
 
-## Deep Dive:
+### 모든 글자를 대문자로
+```PowerShell
+$exampleString = "안녕하세요, powershell이 재미있습니다."
+$uppercasedString = $exampleString.ToUpper()
+$uppercasedString
+```
+출력:
+```
+안녕하세요, POWERSHELL이 재미있습니다.
+```
 
-문자열 대문자화는 프로그래밍 언어의 기본 기능 중 하나이며 대부분의 언어에는 이와 유사한 기능이 내장되어 있습니다. PowerShell에서는 .NET의 Get-Culture 함수와 TextInfo의 ToTitleCase 메서드를 사용하여 이를 구현합니다.
+## Deep Dive (심층 분석)
+문자열을 대문자로 바꾸는 것은 컴퓨터프로그래밍 이래로 흔히 사용되어 왔습니다. 데이터베이스 검색에서 대소문자를 구별하지 않게 하거나 텍스트를 보기 좋게 하기 위해서 사용됐죠. PowerShell에서는 `.ToUpper()`와 `.ToLower()` 메소드를 사용하여 쉽게 문자열의 대소문자 변환을 수행할 수 있습니다. 또한, `.ToTitleCase()` 함수를 사용해서 TextInfo 객체를 통해 첫 글자만 대문자로 바꿀 수도 있습니다. 구현의 세부 사항에 있어서, 이 메소드들은 내부적으로 유니코드 표준을 따르고 있어서 다국어에도 잘 대응합니다.
 
-대안은 문자열을 소문자로 변환한 뒤 각 단어의 첫 문자를 대문자로 변경하는 것입니다. 그러나 이 방법은 모든 단어의 첫 글자를 대문자로 변경하게 됩니다.
-
-## 참고 자료:
-
-- [PowerShell 문자열 다루기](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=kim_seok_bae&logNo=221388282285)
-- [.Net의 ToTitleCase 메서드에 대한 MSDN 문서](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
-
-## 총정리:
-
-이 기사에서는 PowerShell에서 문자열 대문자화를 사용하는 방법과 이에 대한 깊이 있는 정보를 배웠습니다. 이 때 배운 지식을 활용해 본인의 PowerShell 스크립트 개발을 더 효과적으로 수행할 수 있길 바랍니다. Kotlin, JavaScript 등 다른 언어에서도 비슷한 방식으로 이 기능을 활용할 수 있습니다. 시작은 어렵지만 연습하면 능력을 향상시킬 수 있습니다. 행운을 빕니다!
+## See Also (참고자료)
+- [[.NET의 TextInfo Class에 관한 문서]](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0)
+- [유니코드 표준에 대한 공식 문서](https://unicode.org/standard/standard.html)

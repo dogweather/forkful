@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज करना"
-html_title:           "Kotlin: स्ट्रिंग को कैपिटलाइज करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,35 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?: 
-
-1. एक string को capitalize करने का मतलब होता है हर शब्द की पहली अक्षर को बड़े (Capital) अक्षर में परिवर्तित करना। 
-2. यह super user और basic user के बीच अंतर स्थापित करने में सहायक होता है, और यह user interface को व्यावसायिक और आकर्षक बनाता है। 
+## क्या और क्यों?
+एक स्ट्रिंग को capitalize करना मतलब उसके पहले अक्षर को बड़े (uppercase) में बदलना। इसे प्रोग्रामर अक्सर यूजर इंटरफेस में सही ढंग से नाम और खिताब दिखाने के लिए करते हैं।
 
 ## कैसे करें:
+```kotlin
+fun capitalizeFirstChar(string: String): String {
+    if (string.isEmpty()) return ""
+    return string.first().uppercase() + string.substring(1)
+}
 
-```Kotlin
 fun main() {
-  val string = "hello, कैसे है आप?"
-  val result = string.split(" ").joinToString(" ") { it.capitalize() }
-  println(result)  
+    val result = capitalizeFirstChar("कोटलिन शानदार है!")
+    println(result) // Output: "कोटलिन शानदार है!"
 }
 ```
 
-ऊपर दिए गए कोड से आपको निम्नलिखित आउटपुट मिलेगा
+## गहराई से समझाईये:
+पहले, Kotlin में `.capitalize()` फंक्शन होता था जो स्ट्रिंग के पहले अक्षर को एक शॉर्टकट के जरिए बड़ा बना देता था। पर, यह धीरे-धीरे हटा दिया गया क्योंकि यह लोकलाइजेशन के मुद्दों को उठा सकता था, जैसे कि गैर-Latin लिपियों में।
 
-```Kotlin
-Hello, कैसे है आप?
-```
+जब हम इस कार्य के लिए कस्टम फंक्शन बनाते हैं, तो हम खुद को यह सुनिश्चित करने की आजादी देते हैं कि यह बैकग्राउंड में कैसे व्यवहार करेगा।
 
-## गहराई का अध्ययन :
+`.uppercase()` Kotlin 1.5 में जोड़ा गया था और यह किसी भी अक्षर को उसके uppercase वर्शन में बदल देता है, इसे सही तरीके से हैंडल करते हुए कि परिणाम लोकलाइज हो।
 
-1. string को capitalize करनेका अभ्यास 1970 के दशक के उत्कृष्ट computer user interfaces (UIs) के साथ आया था। 
-2. Kotlin में "capitalize" function के इलावा, आप "toUpperCase" और "toLowerCase" function का भी use कर सकते हैं। 
-3. string को capitalize करने के लिए, हम वाक्य में हर शब्द को अलग करने के लिए split() function का उपयोग करते हैं, और फिर हर शब्द को join करते हैं ।
-
-## अधिक जानने के लिए:
-
-1. String capitalize documentation: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html 
-2. String toUpperCase function: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html 
-3. String toLowerCase function: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html
+## देखें भी:
+- Kotlin String Documentation: [Kotlin String Functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- Kotlin Standard Library Reference: [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/)
+- Unicode Standard for Case Operations: [Unicode Standard](http://www.unicode.org/versions/Unicode13.0.0/)

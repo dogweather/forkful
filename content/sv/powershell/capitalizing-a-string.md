@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "PowerShell: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -11,34 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Att kapitalisera en sträng innebär att ändra alla dess tecken till stora bokstäver. Programmerare gör detta för standardisering och för att göra sträng jämförelser oberoende av skiftläge.
+Att kapitalisera en sträng innebär att omvandla första tecknet i ordet till versal (stort bokstav), detta kan vara viktigt för att standardisera data eller för presentationssyften.
 
 ## Hur man gör:
-
-Här kommer vi att se hur vi kapitaliserar en sträng i PowerShell med hjälp av metoden `ToUpper()`:
+Använd `.ToUpper()` för att göra hela strängen versal eller `.ToLower()` följt av `.Substring()` och `+` operatorn för att kapitalisera bara det första tecknet.
 
 ```PowerShell
-$str = 'hej världen'
-$capitalizedStr = $str.ToUpper()
-Write-Output $capitalizedStr
+$text = "välkommen till PowerShell"
+$text.ToUpper() # Gör hela strängen versal
+$text.Substring(0,1).ToUpper() + $text.Substring(1) # Gör första tecknet versalt
+```
+Sample Output:
+```
+VÄLKOMMEN TILL POWERSHELL
+Välkommen till PowerShell
 ```
 
-När du kör ovanstående skript blir utdata:
+## Fördjupning
+Historiskt sett användes stora bokstäver i början av meningar för att förbättra läsbarheten. I PowerShell, precis som i många andra programmeringsspråk, kan strängmanipulation vara en del av programmets logik för att till exempel ordna data eller ändra utseendet i användargränssnitt.
+
+Det finns alternativ till att använda `.Substring()` som att använda `-creplace '^.', {$_.Value.ToUpper()}` för att kapitalisera första tecknet med regular expressions.
 
 ```PowerShell
-HEJ VÄRLDEN
-``` 
+$text = "välkommen"
+$text -creplace '^.', {$_.Value.ToUpper()}
+```
 
-## Djup Dykning:
+I omständigheter där prestanda är kritisk, är det värt att komma ihåg att konkatenering med '+' kan vara mindre effektivt än att använda en StringBuilder-klass i .NET om det handlar om stora eller många strängmanipulationer.
 
-Historiskt sett har datorprogram skrivits för att vara skiftkänsliga som ett sätt att spara på processorkraft och minne. Kapitalisering av strängar blev ett vanligt sätt att förhindra problem med detta. 
-
-Som ett alternativ till `ToUpper()` kan du använda `.ToString().ToUpperInvariant()` om du vill göra konverteringen oberoende av tidsinställningar och kultur. 
-
-Vid implementering, `ToUpper()`-metoden i PowerShell använder .NET ramverket under huven för att konvertera alla tecken i en sträng till stora bokstäver. 
-
-## Se Också:
-
-- [Microsoft .NET Documentation - ToUpper](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
-- [Microsoft PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+## Se också
+- Regular expression stöd i PowerShell: [about_Regular_Expressions](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions)
+- En guide till .NET:s StringBuilder-klass: [StringBuilder Class](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder)

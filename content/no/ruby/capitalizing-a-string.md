@@ -1,7 +1,7 @@
 ---
-title:                "Gjøre en streng stor"
-html_title:           "Ruby: Gjøre en streng stor"
-simple_title:         "Gjøre en streng stor"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,46 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-
-Kapitalisering av en streng, på programmeringsspråket, betyr å gjøre den første bokstaven i strengen stor. Programmerere gjør dette for å forbedre lesbarheten og for brukergrensesnittring (GUI).
+## Hva & Hvorfor?
+Å kapitalisere en streng betyr å gjøre det første bokstaven i strengen stor (uppercase). Programmerere bruker dette for å formatere tekst etter grammatiske regler eller brukergrensesnittkrav.
 
 ## Hvordan gjøre det:
-
-I Ruby kan vi kapitalisere en streng ved å bruke `.capitalize` metode. Her er et enkelt eksempel:
-
 ```Ruby
-streng = "hej verden"
-puts streng.capitalize
+# Eksempel på å kapitalisere en streng
+navn = "oslo"
+puts navn.capitalize  # Output: Oslo
+
+# Kapitalisering av alle ord i en streng
+tittel = "velkommen til norge"
+puts tittel.split.map(&:capitalize).join(' ')  # Output: Velkommen Til Norge
 ```
-
-Når du kjører koden ovenfor, vil du se denne utdataen: 
-
-`Hej verden`
-
-Om du vil gjøre første bokstav i hvert ord stort, bruk `.titleize` i stedet:
-
-```Ruby
-streng = "hej verden"
-puts streng.titleize
-```
-
-Resultatet vil da se slik ut: 
-
-`Hej Verden`
 
 ## Dypdykk
+Kapitalisering av strenger i Ruby har gamle røtter, mye brukt i andre programmeringsspråk også. Ruby tilbyr metoder som `.capitalize` og `.titleize` (Rails) for å gjøre dette enkelt. Det er alternativer som `.upcase`, som gjør alle bokstavene store, eller `.downcase` for å gjøre dem små. Implementeringsdetaljer viktig å merke seg: `.capitalize` endrer bare den første bokstaven av hele strengen, mens en kjede av `.split.map` og `.capitalize` kombinerer flere metoder for å kapitalisere hvert ord individuelt.
 
-Historisk sett, stammer konseptet om å kapitalisere bokstavene fra typografibransjen. I programmeringens verden, hjelper denne funksjonen med å gjøre innholdet mer leselig og tiltalende.
-
-Et alternativ til `.capitalize` og `.titleize` kan være å bruke metoden `.upcase` på den første bokstaven selv, men dette krever ekstra kode.
-
-I Ruby, tilsvarer `.capitalize` metoden fungerer ved å bruke den innebygde `CHRUPCASE`-funksjonen til Ruby, noe som gjør den både enkel og effektiv.
-
-## Se Også
-
-For mer informasjon og ressurser angående dette emnet, kan du se på følgende lenker:
-
-Rubys Dokumentasjon for Streng-metoder: https://ruby-doc.org/core-2.7.1/String.html
-Detaljert blogginnlegg om strengkapitalisering: https://www.rubyguides.com/2018/10/ruby-capitalization/
-Tutorial for Ruby streng-manipulering: https://www.tutorialspoint.com/ruby/ruby_strings.htm
+## Se også
+- Ruby dokumentasjon om strenger: [Ruby Docs](https://ruby-doc.org/core-3.1.0/String.html)
+- Rails guide til inflections: [Rails Guides](https://guides.rubyonrails.org/active_support_core_extensions.html#inflections)
+- Stack Overflow tråder om strengkapitalisering: [Stack Overflow](https://stackoverflow.com/questions/tagged/ruby+capitalize)

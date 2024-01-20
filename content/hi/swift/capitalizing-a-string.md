@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग को कैपिटलाइज करना"
-html_title:           "Swift: एक स्ट्रिंग को कैपिटलाइज करना"
-simple_title:         "एक स्ट्रिंग को कैपिटलाइज करना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,22 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
-`String` उच्चाक्षर करना एक प्रोसिजर है जो किसी शबद के पहले अक्षर को बड़ा करता है। प्रोग्रामर्स इसे उपयोगकर्ता इनपुट को फॉर्मैट करने और विशिष्ट तरीके से डिस्प्ले करने के लिए इस्तेमाल करते हैं। 
+## What & Why? (क्या और क्यों?)
 
-## मार्गदर्शन:
-Swift में, आप `capitalized` गुण उपयोग करके string को कैपिटलाइज़ कर सकते हैं। यहाँ एक उदाहरण है:
+स्ट्रिंग को कैपिटलाइज़ करना मतलब है हर शब्ड के पहले अक्षर को बड़ा (अपरकेस) करना. प्रोग्रामर्स यह तब करते हैं जब उन्हें टेक्स्ट को औपचारिक या आकर्षक दिखाना होता है, जैसे कि शीर्षकों या नामों में.
+
+## How to: (कैसे करें:)
+
+Swift में, आप `capitalized` प्रॉपर्टी का इस्तेमाल करके स्ट्रिंग को कैपिटलाइज़ कर सकते हैं:
 
 ```Swift
-let greeting = "नमस्ते, दुनिया!"
-let capitalizedGreeting = greeting.capitalized
-print(capitalizedGreeting)
-// Outputs "नमस्ते, दुनिया!"
+let sentence = "यह एक उदाहरण वाक्य है."
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence)
 ```
-जैसा कि आप देख सकते हैं, पहला अक्षर प्रत्येक शब्द का उच्चाक्षर हो गया है। 
 
-## गहराई में:
-यद्यपि Swift अच्छा स्थान है शुरुआत करने के लिए, ध्यान दें कि केवल एक या दो स्विफ्ट संयोगों के द्वारा यह कार्य नहीं किया जा सकता है। पहले, Swift का 'String' क्लास बहु-बाइट UTF8 चरित्रों को सही ढंग से संभाल सकता है, जो कि ऑटोमेटिक उच्चाक्षरण के लिए महत्वपूर्ण है।दूसरा, `capitalized` गुण "उच्चाक्षर अक्षर अनुसार" काम करता है, जो कि मुख्य रूप से पश्चिमी भाषा लिपियों के साथ काम करता है, लेकिन दूसरी भाषाओं में भ्रमित हो सकता है। 
+सैंपल आउटपुट:
 
-## और भी देखें:
-यदि आपने किसी विशिष्ट भाषा में उच्चाक्षरण करने की जरूरत है, तो [Apple's Internationalization and Localization Guide](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/Introduction/Introduction.html) एक महत्वपूर्ण संसाधन है। इसके अलावा, [Swift String documentation](https://developer.apple.com/documentation/swift/string) भी विस्तार में वर्णमाला और कैसे नाम दिए जाते हैं, पर गहराई में जाता है।
+```
+यह एक उदाहरण वाक्य है.
+```
+
+सिर्फ पहला अक्षर कैपिटलाइज़ करने के लिए:
+
+```Swift
+let word = "स्विफ्ट"
+let capitalizedWord = word.prefix(1).uppercased() + word.dropFirst()
+print(capitalizedWord)
+```
+
+सैंपल आउटपुट:
+
+```
+स्विफ्ट
+```
+
+## Deep Dive (गहराई में जानकारी)
+
+पहले, Swift में `capitalized` नहीं था, केवल `uppercaseString` और `lowercaseString` थे. समय के साथ, `capitalized` जोड़ा गया ताकि विशेष रूप से प्रत्येक शब्द को कैपिटलाइज़ किया जा सके. ऑल्टरनेटिव में, आप एक फंक्शन भी बना सकते हैं जो `string` को लूप करके हर शब्द के पहले अक्षर को बड़ा कर दे.
+
+कैपिटलाइज़ करना आमतौर पर यूनिकोड स्कैलर्स का प्रयोग करते हुए होता है. यूनिकोड स्टैंडर्ड में प्रत्येक अक्षर या ग्लिफ के लिए एक अद्वितीय नंबर होता है. जब आप कोई स्ट्रिंग कैपिटलाइज़ करते हैं, स्विफ्ट इंटरनली उन्हें उनके अपरकेस वर्शन में तब्दील कर देता है.
+
+## See Also (और देखें)
+
+- [Swift Documentation on Strings](https://developer.apple.com/documentation/swift/string)
+- [Unicode.org](http://www.unicode.org/)
+- [Swift String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

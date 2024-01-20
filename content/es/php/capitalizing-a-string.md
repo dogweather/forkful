@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "PHP: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-
-Capitalizar una cadena significa convertir la primera letra de cada palabra en mayúsculas. Los programadores lo hacen para mejorar la legibilidad y la presentación de los textos en la interfaz del usuario.
+## Qué y por qué?
+Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programadores lo hacen para asegurar que los nombres propios, títulos o para dar énfasis visual sigan las reglas de la gramática y mejoren la legibilidad.
 
 ## Cómo hacerlo:
-
-Para capitalizar una cadena de texto en PHP, usamos la función `ucwords()`. Mira este ejemplo:
+Capitaliza cadenas en PHP con `ucwords` o `mb_convert_case` si necesitas soporte para UTF-8:
 
 ```PHP
 <?php
-$cadena = "hola mundo";
-$cadena_capitalizada = ucwords($cadena);
+$texto = "bienvenidos a mi blog de programación en php.";
 
-echo $cadena_capitalizada; // Se imprimirá: "Hola Mundo"
+// Capitalizar con ucwords:
+echo ucwords($texto);
+// Salida: "Bienvenidos A Mi Blog De Programación En Php."
+
+// Si necesitas considerar caracteres UTF-8:
+echo mb_convert_case($texto, MB_CASE_TITLE, "UTF-8");
+// Salida: "Bienvenidos A Mi Blog De Programación En Php."
 ?>
 ```
+## Inmersión Profunda
+Antes, PHP no manejaba bien los caracteres no ASCII. `ucwords` y `strtoupper` podían fallar con caracteres especiales o acentuados. Desde PHP 5.4.0, `mb_convert_case` mejora el tratamiento de caracteres multibyte como los acentos en español.
 
-Como puedes observar, `ucwords()` convierte la primera letra de cada palabra a mayúscula.
+Alternativas incluyen:
+- `strtoupper` para convertir toda la cadena a mayúsculas.
+- `strtolower` para todo en minúsculas y luego `ucfirst` para capitalizar solo la primera letra de la cadena.
 
-## Inmersión Profunda:
+Detalles de implementación:
+- `ucwords` es rápido y adecuado para la mayoría de las necesidades, pero con limitaciones en cuanto a locales.
+- `mb_convert_case` usa la extensión `mbstring` para soporte extendido de codificación de caracteres, incluyendo caracteres no latinos.
 
-Historia breve: PHP no siempre tuvo una función integrada para capitalizar cadenas. Antes de la versión 5, tenías que escribir manualmente esta función.
-
-Alternativas: También tenemos `strtoupper()` que convierte todas las letras a mayúsculas, y `lcfirst()` que convierte la primera letra a minúscula.
-
-Sobre el rendimiento: `ucwords()` es bastante eficiente. Pero si estás trabajando con cadenas muy grandes, ten en cuenta que puede llevar un poco de tiempo procesarlas.
-
-## Ver También:
-
-Para más detalles y ejemplos, echa un vistazo a los siguientes recursos:
-
-- Documentación oficial de PHP para `ucwords()`: [https://www.php.net/manual/es/function.ucwords.php](https://www.php.net/manual/es/function.ucwords.php)
-  
-- Para aprender más acerca de `strtoupper()` y `lcfirst()`: [https://www.php.net/manual/es/function.strtoupper.php](https://www.php.net/manual/es/function.strtoupper.php) y [https://www.php.net/manual/es/function.lcfirst.php](https://www.php.net/manual/es/function.lcfirst.php)
+## Ver también
+- [PHP String Functions](https://www.php.net/manual/en/ref.strings.php) - Funciones de cadenas en PHP.
+- [PHP Multibyte String Functions](https://www.php.net/manual/en/ref.mbstring.php) - Funciones de la extensión mbstring en PHP.
+- [PHP ucwords](https://www.php.net/manual/en/function.ucwords.php) - Documentación oficial de `ucwords`.
+- [PHP mb_convert_case](https://www.php.net/manual/en/function.mb-convert-case.php) - Documentación oficial de `mb_convert_case`.

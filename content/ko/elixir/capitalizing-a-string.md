@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자화"
-html_title:           "Elixir: 문자열 대문자화"
-simple_title:         "문자열 대문자화"
+title:                "문자열 대문자로 변환하기"
+html_title:           "Arduino: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜? 
+## What & Why? (무엇인가요? 왜 사용하나요?)
+문자열의 첫 글자를 대문자로 바꾸는 것을 말합니다. 주로 문장을 시작할 때나 제목, 이름 등을 명확하게 구분하기 위해 사용합니다.
 
-문자열을 대문자로 바꾸는 것은 모든 첫 글자를 대문자로 만드는 것을 의미합니다. 이렇게하는 이유는 대개 텍스트를 명확하게 구분하고, 읽기 쉽게 만들기 위해서입니다.
+## How to (어떻게 하나요?)
+Elixir에서 문자열의 첫 글자를 대문자로 바꾸기 위해서는 `String.capitalize/1` 함수를 사용합니다.
 
-## 방법:
-
-Elixir의 String 모듈에서 제공하는 `capitalize/2` 함수를 사용하여 문자열을 대문자로 바꿀 수 있습니다. 아래에 코드 예시를 참고해보세요.
-
-```Elixir
-IO.puts String.capitalize("elixir programming")
+```elixir
+IO.puts String.capitalize("elixir")
+IO.puts String.capitalize("처음 시작하는")
 ```
 
-위 코드의 출력은 다음과 같습니다:
+예상 결과:
 
-```Elixir
-Elixir programming
+```
+Elixir
+처음 시작하는
 ```
 
-## 깊이 들여다보기:
+## Deep Dive (심층 분석)
+Elixir에서의 문자열 대문자화는 `String.capitalize/1` 함수로 처리됩니다. 이 함수는 문자열의 첫 글자를 대문자로, 나머지는 소문자로 변환합니다. 역사적으로는 각 프로그래밍 언어마다 이런 기능을 제공하는데, Elixir는 매우 간단하고 이해하기 쉬운 방법을 제공합니다. 비슷한 기능으로는 `upcase`와 `downcase`가 있으며 각각 문자열을 전부 대문자나 소문자로 변환합니다. 구현면에서는 유니코드 문자열 처리를 위해 Elixir는 내부적으로 `String.Normalize`를 사용합니다.
 
-사실, 과거의 프로그래밍 언어들은 대소문자 변환 기능을 내장하고 있지 않았습니다. 이 기능이 생겨난 이유는 위에서 언급한 것처럼 텍스트를 더욱 명확하게 구분하고 읽기 쉽게 만들기 위해서입니다. 
-
-대안으로 `upcase/1`와 `downcase/1` 함수를 사용할 수도 있지만, 이러한 함수들은 문자열의 모든 글자를 대문자 혹은 소문자로 바꿉니다. 
-
-`capitalize/2` 함수는 첫 글자만 대문자로 바꾸고, 나머지 글자들은 소문자로 변경합니다. 이 함수의 두번째 매개변수로 언어를 지정할 수 있으며, 기본값은 언어 기본 설정입니다.
-
-## 참고 자료:
-
-1. Elixir 공식 문서: [String.capitalize/2](https://hexdocs.pm/elixir/String.html#capitalize/2)
-2. Elixir School: [Strings](https://elixirschool.com/en/lessons/basics/strings/)
+## See Also (관련 링크)
+- Elixir 공식 문서 [`String.capitalize/1`](https://hexdocs.pm/elixir/String.html#capitalize/1)
+- [`String.upcase/1`](https://hexdocs.pm/elixir/String.html#upcase/1)
+- [`String.Normalize`](https://hexdocs.pm/elixir/String.html#normalize/2)

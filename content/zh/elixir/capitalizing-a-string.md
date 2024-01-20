@@ -1,7 +1,7 @@
 ---
-title:                "将字符串大写"
-html_title:           "Elixir: 将字符串大写"
-simple_title:         "将字符串大写"
+title:                "字符串首字母大写"
+html_title:           "Arduino: 字符串首字母大写"
+simple_title:         "字符串首字母大写"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什麼 & 為什麼？
-首字母大寫字串是指將文字串中的每個單詞的首字母變成大寫。程序員這麼做主要是為了格式設定和權限管理。
+## What & Why? (什么及为什么？)
+字符串首字母大写就是把开头的小写字母变成大写字母。程序员这样做通常是为了格式化文本数据，比如人名或标题。
 
-# 如何跑？
-用Elixir語言完成首字母大寫字串的功能，你可以用到\`String.capitalize/2\`這個函數。
-```Elixir
-IO.puts String.capitalize("elixir")
-```
-輸出結果就會是：
-```
-Elixir
+## How to (如何操作):
+```elixir
+# Elixir 中的字符串首字母大写
+string = "elixir programming language"
+capitalized_string = String.capitalize(string)
+
+IO.puts(capitalized_string) # 输出: "Elixir programming language"
 ```
 
-# 更深層次的探索
-首字母大寫字串的概念可以追溯至古老的打字機時代，為了讓文字更清楚易讀，人們將重要的字詞首字母大寫。在Elixir中，除了`String.capitalize/2`我們還可以用`String.upcase/1`和`String.downcase/1`結合起來創造首字母大寫字串的功能。
-例如：
-```Elixir
-IO.puts String.upcase(String.slice("elixir", 0)) <> String.slice("elixir", 1..-1)
-```
-這樣輸出結果還是會是：
-```
-Elixir
-```
-這兩種方法的實現，底層都依賴於Erlang的字串操作函數。
+```elixir
+# 对列表中的所有字符串首字母大写
+strings = ["elixir", "programming", "language"]
+capitalized_strings = Enum.map(strings, &String.capitalize/1)
 
-# 更多資源
-如果你想深入學習Elixir的String模型和函數操作，我推薦給你下面幾個是學習資源：
-- [Elixir 官方String模組文檔](https://hexdocs.pm/elixir/String.html)
-- [Erlang 字串操作函數列表](http://erlang.org/doc/man/string.html)
-- [Elixir 學習手冊:字串操作](https://elixirschool.com/zh-hans/lessons/basics/strings/)
+IO.inspect(capitalized_strings) # 输出: ["Elixir", "Programming", "Language"]
+```
+
+## Deep Dive (深入探讨):
+Elixir 使用 UTF-8 编码，这意味着它天生支持多语言文本处理。首字母大写功能在很早前就存在于许多语言中，因为它用于人名、地名和文本开头，符合书写规范。
+
+除了`String.capitalize/1`，还可以使用`String.upcase/1`来把整个字符串转成大写，或者`String.downcase/1`转成小写。
+
+关于实现，首字母大写的功能会检测字符串的第一个字符，如果它是小写字母，则将其转为大写。Elixir处理字符串的方式允许快速且准确地操作文字，尤其是在涉及Unicode字符时。
+
+## See Also (另见资源):
+- Elixir官方文档的[String模块](https://hexdocs.pm/elixir/String.html)
+- [Elixir School](https://elixirschool.com/en/) - 提供Elixir编程语言的教程
+- [Programming Elixir](https://pragprog.com/book/elixir16/programming-elixir-1-6) - 一本关于Elixir编程的书，适合想深入了解语言的读者

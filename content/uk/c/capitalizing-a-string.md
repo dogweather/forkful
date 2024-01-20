@@ -1,7 +1,7 @@
 ---
-title:                "Великі літери в рядках"
-html_title:           "C: Великі літери в рядках"
-simple_title:         "Великі літери в рядках"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
+## What & Why? (Що та чому?)
+Capitalizing a string means converting all its letters to uppercase. Programmers do this to normalize input, emphasize text, or meet coding standards.
 
-Великі літери в рядку означають перетворення всіх символів рядка на великі літери. Програмісти це роблять, щоб полегшити порівняння і сортування рядків або підкреслити певну інформацію в тексті.
+## How to: (Як це зробити)
+Here's a simple C function to capitalize a string:
 
-## Як це зробити:
-
-Ось деякі прості приклади того, як виконати це в C:
-
-```C
-#include <ctype.h>
+```c
 #include <stdio.h>
+#include <ctype.h>
 
-void capitalize(char* str) {
-    for (int i = 0; str[i]!='\0'; i++){
-        str[i] = toupper(str[i]);
+void capitalizeString(char *str) {
+    while (*str) {
+        *str = toupper((unsigned char) *str);
+        str++;
     }
 }
 
 int main() {
-    char str[] = "programming in c";
-    capitalize(str);
-    printf("%s\n", str);
-
+    char text[] = "привіт світ!";
+    capitalizeString(text);
+    printf("Capitalized: %s\n", text);
     return 0;
 }
 ```
-
-Output:
-
-```C
-PROGRAMMING IN C
+Sample output:
+```
+Capitalized: ПРИВІТ СВІТ!
 ```
 
-## Поглиблений огляд:
+## Deep Dive (Поглиблене вивчення)
+Capitalizing strings isn't new—people have been doing it in writing for emphasis for centuries. In C, it became common with the standardization of functions like `toupper` in the `<ctype.h>` library.
 
-Historically, C has not had built-in string manipulation functions like some high-level languages. You could, of course, write your own functions to convert strings to uppercase or lowercase, but this would be time-consuming and prone to errors. Therefore, functions like `toupper()` were born, found in `<ctype.h>`, to facilitate the transformation of string case.
+Alternatives to the `toupper` function include writing your custom function or using libraries like `glib` for more complex linguistic rules.
 
-Alternatively, you can manually convert each character to uppercase by taking advantage of the ASCII representation of characters. This isn't recommended, though, because it's more error-prone and less portable.
+It's crucial to handle multi-byte encodings correctly, like UTF-8 in international applications. Simple `toupper` might not work as expected with such encodings, requiring additional libraries like `wchar.h` for wide characters.
 
-## Дивіться також:
-
-For more on the `toupper()` function: https://en.cppreference.com/w/c/string/byte/toupper
-
-For alternatives to `toupper()`: stackoverflow.com/questions/26696718/do-i-really-need-toupper-to-make-a-string-uppercase-in-c
-For a full guide on string manipulation in C: www.tutorialspoint.com/c_standard_library/c_function_toupper.htm
+## See Also (Дивіться також)
+- C Standard Library reference: https://en.cppreference.com/w/c/header
+- GNU C Library (glibc) documentation: https://www.gnu.org/software/libc/manual/
+- UTF-8 handling in C: https://www.gnu.org/software/libunistring/

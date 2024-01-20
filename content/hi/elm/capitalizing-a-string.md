@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग को कैपिटलाइज करना"
-html_title:           "Elm: एक स्ट्रिंग को कैपिटलाइज करना"
-simple_title:         "एक स्ट्रिंग को कैपिटलाइज करना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,42 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+स्ट्रिंग को कैपिटलाइज़ करना मतलब होता है कि एक टेक्स्ट में प्रत्येक शब्द का पहला अक्षर बड़ा (या अपरकेस) होना। प्रोग्रामर अक्सर विशिष्ट शब्दों को हाइलाइट करने, हेडिंग्स या टाइटल्स को फॉर्मेट करने के लिए स्ट्रिंग्स को कैपिटलाइज़ करते हैं।
 
-String को Capitalize करना का मतलब होता है उसके पहले अक्षर को बड़ा करना। यह इसलिए किया जाता है ताकि टेक्स्ट को पढ़ने में सुगमता महसूस की जा सके।
-
-## कैसे करें:
-
-Elm में, हम `toUpperCase` और `uncons` फंक्शंस का उपयोग करके किसी वाक्यांश को कैपिटलाइज कर सकते हैं:
+## How to: (कैसे करें:)
+Elm में String module एक built-in function `toUpper` प्रदान करता है जिसे कैपिटलाइज़ करने के लिए इस्तेमाल किया जा सकता है।
 
 ```Elm
-import String exposing (uncons, toUpper)
+import String
 
-capitalize : String -> String
-capitalize str =
-   case uncons str of
-      Nothing ->
-         ""
+capitalizeString : String -> String
+capitalizeString str =
+    String.toUpper str
 
-      Just (firstChar, restOfString) ->
-         String.toUpper (String.fromChar firstChar) ++ restOfString
-```
-यहाँ साउटपुट कैसा दिखाई देगा:
-```Elm
-capitalize "programming in Elm is fun"
---> "Programming in Elm is fun"
+main =
+    String.words "नमस्ते दुनिया!" |> List.map capitalizeString |> String.join " "
 ```
 
-## गहराई से:
+उपरोक्त एक्ज़ाम्पल में, `capitalizeString` फंक्शन सभी इनपुट स्ट्रिंग्स को अपरकेस में बदल देता है। सैंपल आउटपुट होगा:
 
-1. Elm में String capitalize करने की कई संभावनाएं हैं, लेकिन `toUpperCase` और `uncons` फंक्शंस का उपयोग करना सर्वश्रेष्ठ और सरल तरीका है। 
+```
+"नमस्ते दुनिया!"
+```
 
-2. Elm प्राचीन फन्क्शनल प्रोग्रामिंग भाषाओं, जैसे कि ML और Haskell, के concepts पर आधारित है, लेकिन यह उनसे अधिक सुविधाजनक और उपयोगीरत है। 
+## Deep Dive (गहराई से जानकारी)
+स्ट्रिंग कैपिटलाइजेशन पहले महत्वपूर्ण था जब कम्प्यूटर्स के इंटरफेस पत्रिकाओं और टाइपराइटर्स से प्रेरित थे। आज भी यह उपयोगी है जैसे कि प्रोटोकॉल और एपीआई में के-वैल्यू पेयर्स की कुंजियों में। Elm में, `String.toUpper` को पूरे स्ट्रिंग कैपिटलाइजेशन के लिए इस्तेमाल किया जाता है, और अब तक इबिल्ट `capitalize` फंक्शन मौजूद नहीं है।
 
-3. यह implement करने में महत्वपूर्ण होता है की `uncons` फंक्शन कुछ भी हो सकता है - खाली string, एक single character, या और भी बड़े string। यह `Nothing` या `Just (firstChar, restOfString)` वापस करेगा जिससे `toUpperCase` फंक्शन को काम करने का आश्वासन होता है।
+जैसा कि Elm एक purely functional language है, आपको अपने `capitalize` फंक्शन को लिखने के लिए इम्यूटेबल डेटा स्ट्रक्चर्स और फंक्शन्स का इस्तेमाल करना चाहिए। यह कीपॉइंट ईकोसिस्टम में स्थिरता और प्रिडिक्टेबिलिटी लाते हैं।
 
-## और देखें:
-
-- [Elm प्रोग्रामिंग गाइड](https://guide.elm-lang.org/)
-- [String functions for Elm](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm के लिए ऑनलाइन प्लेग्राउंड](https://ellie-app.com/new)
+## See Also (देखें भी)
+- Elm `String` module documentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Elm style guide for string manipulation: [https://elm-lang.org/docs/style-guide](https://elm-lang.org/docs/style-guide)
+- Elm-community/string-extra package for additional string functions: [https://package.elm-lang.org/packages/elm-community/string-extra/latest/](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)

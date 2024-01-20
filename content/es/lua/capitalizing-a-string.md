@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "Lua: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & por qué?
-Convertir a mayúsculas una cadena de texto simplemente significa cambiar todas las letras minúsculas de esta a letras mayúsculas. Los programadores lo hacen para normalizar los datos de entrada del usuario y para evitar problemas en la interpretación del texto.
+## ¿Qué y Por Qué?
+Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programadores lo hacen para formatear títulos o nombres propios, asegurando uniformidad y legibilidad en el texto.
 
-## Cómo hacerlo:
-En Lua, podemos usar la función `upper()`. Esta es una función predefinida, que básicamente convierte toda una cadena de texto a letras mayúsculas. Aquí tienes un ejemplo sencillo:
+## Cómo hacer:
+Aquí tienes un ejemplo de cómo capitalizar una cadena en Lua:
 
 ```Lua
-texto = "hola mundo"
-texto_mayus = string.upper(texto)
-print(texto_mayus) 
+function capitalizar(cadena)
+    return (cadena:gsub("%f[%a](%a)", function(letra) return letra:upper() end))
+end
+
+-- Uso de la función
+local frase = "lua es divertido"
+print(capitalizar(frase))  -- Output: Lua Es Divertido
 ```
 
-Este script retornará:
+## Inmersión Profunda
+En el pasado convierte rápidamente las cadenas a mayúsculas con funciones básicas. Hoy Lua no tiene una función incorporada para capitalizar, así que creamos una usando patrones de coincidencia (`gsub`) y manipulando cada palabra.
 
-```
-HOLA MUNDO
-```
+Alternativas incluyen usar librerías externas o escribir funciones adicionales para manejar casos especiales, como abreviaturas o acrónimos.
 
-## Viaje al centro del asunto
-Esta funcionalidad existe desde las primeras versiones de los lenguajes de programación. En Lua, capitalizar una cadena es un proceso directo gracias a la función incorporada `string.upper()`. Sin embargo, hay muchas otras formas de hacerlo si deseas evitar la función estándar, aunque no es recomendable.
+La función `gsub` es poderosa; permite modificar texto con gran precisión. En nuestro caso, `%f[%a]` es un patrón que encuentra la frontera entre un carácter no alfabético y uno alfabético, y `(%a)` coincide con la primera letra alfabética encontrada.
 
-En cuanto a los detalles de implementación, la función `string.upper()` de Lua opera en el nivel del carácter, cambiando cada carácter individualmente en lugar de manejar la cadena de texto como un todo. Esto significa que este método es efectivo y eficiente sin importar el tamaño de la cadena de entrada.
-
-## Ver también
-Para obtener más información sobre las funciones de cadena en Lua, te recomendamos el siguiente recurso:
-
-- Manual de referencia de Lua: https://www.lua.org/manual/5.4/manual.html#6.4 
-
-Para prácticas y ejercicios adicionales sobre la manipulación de cadenas en Lua, puedes consultar:
-
-- Tuna Lua: https://www.tutorialspoint.com/lua/index.htm
+## Ver También
+- [Documentación oficial de Lua](https://www.lua.org/manual/5.4/)
+- [Tutorial de los patrones de Lua](https://www.lua.org/pil/20.2.html)
+- [Foros de la comunidad Lua](http://www.lua.org/community.html)

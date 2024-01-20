@@ -1,7 +1,7 @@
 ---
-title:                "Mettre une chaîne en majuscules"
-html_title:           "Kotlin: Mettre une chaîne en majuscules"
-simple_title:         "Mettre une chaîne en majuscules"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ? 
+## What & Why?
+La capitalisation d'une chaîne de caractères convertit la première lettre en majuscule. Les programmeurs l'utilisent pour normaliser les entrées des utilisateurs ou pour suivre les conventions de formatage, comme les noms propres ou les titres.
 
-La mise en majuscule d'une chaîne consiste à transformer les premières lettres de chaque mot en majuscules. Les programmeurs le font souvent pour améliorer la lisibilité et la présentation des éléments textuels dans l'interface utilisateur.
+## How to:
+Kotlin simplifie la capitalisation avec la fonction `replaceFirstChar`. Voici comment ça marche :
 
-## Comment faire:
+```kotlin
+fun main() {
+    val phrase = "voici un exemple."
+    val phraseCapitalizee = phrase.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
 
-En Kotlin, vous pouvez utiliser la fonction `capitalize()` pour mettre en majuscule une chaîne.
-```Kotlin
-val maChaine = "bonjour tout le monde"
-val resultat = maChaine.split(" ").joinToString(" ") { it.capitalize() }
-println(resultat)
-```
-Sortie échantillon
-```Kotlin
-Bonjour Tout Le Monde
+    println(phraseCapitalizee) // Affiche: Voici un exemple.
+}
 ```
 
-## Plongée en profondeur
+Si vous avez un texte entier à transformer :
 
-1. _Contexte historique_ : À l'origine, les ordinateurs ne distinguaient pas les caractères minuscules des majuscules. Avec l'évolution de la technologie, la distinction entre les deux est devenue possible, améliorant ainsi la lisibilité et l'efficacité du traitement des chaînes.
+```kotlin
+fun String.capitalizeEachWord(): String =
+    split(" ").joinToString(" ") { it.replaceFirstChar { char -> if (char.isLowerCase()) char.titlecase() else char.toString() } }
 
-2. _Alternatives_ : En Kotlin, vous pouvez également utiliser la fonction `toUpperCase` pour convertir tous les caractères d'une chaîne en majuscules. Cependant, `capitalize` est préférée lorsque vous ne voulez mettre en majuscule que le premier caractère de chaque mot.
+fun main() {
+    val texte = "un autre exemple de texte."
+    println(texte.capitalizeEachWord()) // Affiche: Un Autre Exemple De Texte.
+}
+```
 
-3. _Détails de mise en œuvre_ : La fonction `capitalize` de Kotlin utilise l'algorithme Unicode pour déterminer quels caractères doivent être convertis en majuscules. Cela permet de gérer correctement même les langues non latines.
+## Deep Dive
+Historiquement, Kotlin utilisait `capitalize()` pour majusculer le premier caractère, mais cette fonction a été dépréciée à partir de Kotlin 1.5 au profit de `replaceFirstChar` pour une meilleure gestion des cas spécifiques comme les caractères unicode.
 
-## Voir aussi
+Il y a des alternatives, comme `toUpperCase()` ou `toLowerCase()` sur tous les caractères, pas juste le premier. Mais attention, ces méthodes affectent toute la chaîne et pas uniquement la première lettre.
 
-2. Guide de l'utilisateur Kotlin sur la gestion des chaînes : [https://kotlinlang.org/docs/basic-types.html#string-literals](https://kotlinlang.org/docs/basic-types.html#string-literals)
-3. Autres techniques de manipulation de chaînes en Kotlin : [https://www.programiz.com/kotlin-programming/string](https://www.programiz.com/kotlin-programming/string)
+Niveau réalisation, `replaceFirstChar` est intelligent. Il vérifie si le premier caractère a besoin d'être changé avant de procéder, ce qui en fait une solution efficace pour ne pas créer inutilement de nouvel objet `String`.
+
+## See Also
+- Kotlin Documentation: [Text](https://kotlinlang.org/docs/basic-types.html#string-literals)
+- Article sur la dépréciation de `capitalize`: [Restrictive String Capitalization](https://blog.jetbrains.com/kotlin/2021/05/kotlin-1-5-0-released/#restrictive_string_capitalization)
+- Guide du style Kotlin: [Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html#functions-vs-properties)

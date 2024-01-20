@@ -1,7 +1,7 @@
 ---
-title:                "Mettre en majuscule une chaîne"
-html_title:           "Bash: Mettre en majuscule une chaîne"
-simple_title:         "Mettre en majuscule une chaîne"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,52 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# La capitalisation des chaînes de caractères en Bash
+## What & Why?
+Capitaliser une chaîne, c'est transformer toutes ses lettres en majuscules. C'est pratique pour normaliser des données textuelles et pour mettre en avant des éléments importants.
 
-## Qu'est-ce que c'est et pourquoi?
-
-La capitalisation d'une chaîne est l'opération qui consiste à transformer toutes les lettres en majuscules. Les développeurs l'utilisent pour harmoniser les entrées de l'utilisateur ou pour mettre en évidence certains textes.
-
-## Comment faire:
-
-Bash offre plusieurs façons de capitaliser une chaîne. En voici quelques exemples:
+## How to:
+Bash utilise `tr` pour transformer les lettres en majuscules :
 
 ```Bash
-# Utiliser ^ (Ceci mettra la première lettre en majuscule)
-string="bonjour tout le monde"
-echo "${string^}"
+$ chaine="bonjour, le monde!"
+$ echo $chaine | tr '[:lower:]' '[:upper:]'
+BONJOUR, LE MONDE!
 ```
-Sortie:
-```Bash
-Bonjour tout le monde
-```
+
+Plus court avec une variable en Bash 4+ :
 
 ```Bash
-# Utilisez ^^ (Cela va capitaliser toute la chaîne)
-string="bonjour tout le monde"
-echo "${string^^}"
-```
-Sortie:
-```Bash
-BONJOUR TOUT LE MONDE
+$ chaine="bonjour, le monde!"
+$ echo "${chaine^^}"
+BONJOUR, LE MONDE!
 ```
 
-## Plongée en profondeur:
+## Deep Dive
+Historique : `tr` (translate) existe depuis les premières versions d'UNIX, utilisé pour substituer ou supprimer des caractères. 
 
-Bien que Bash ne soit pas un langage traditionnellement utilisé pour manipuler des chaînes, ces fonctionnalités ont été ajoutées dans la version 4.0. 
+Alternatives : `awk`, `sed`, ou des langages de script comme Python offrent aussi des moyens de capitaliser des chaînes.
 
-Il existe d'autres alternatives pour la capitalisation si vous utilisez une version antérieure de Bash, ou si vous préférez une autre approche. Par exemple, vous pouvez utiliser 'tr':
+Détails : Dans Bash 4+, `^^` rend toute la chaîne capitale, alors que `^` capitalise uniquement le premier caractère. Pour les versions antérieures, `tr` est souvent la meilleure solution intégrée.
 
-```Bash
-echo 'bonjour tout le monde' | tr '[:lower:]' '[:upper:]'
-```
-
-Cette façon d’opérer est plus ancienne et universelle, elle fonctionne sur des systèmes Unix plus anciens qui pourraient ne pas avoir une version récente de Bash.
-
-## Voir également:
-
-Pour un aperçu plus détaillé de la manipulation de chaînes dans Bash, consultez ces ressources:
-
-- [GNU Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [String Operations in Bash](http://tldp.org/LDP/abs/html/string-manipulation.html)
-- [Bash Guide for Beginners](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
+## See Also
+- La page manuel de `tr`: [`man tr`](https://linux.die.net/man/1/tr)
+- Guide de Bash : [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/)
+- Développer vos connaissances sur les expressions régulières : [Regular-Expressions.info](https://www.regular-expressions.info/)

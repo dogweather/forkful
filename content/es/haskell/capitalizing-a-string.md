@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "Haskell: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,43 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué es y Por Qué?
 
-Capitalizar una cadena implica convertir el primer caracter de cada palabra en mayúsculas. Los programadores a menudo lo hacen para mejorar la legibilidad y consistencia de los resultados en la interfaz de usuario.
+Capitalizar una cadena significa convertir la primera letra de cada palabra a mayúscula. Los programadores a menudo lo hacen para garantizar que los nombres propios o títulos se muestren correctamente en una interfaz de usuario o en documentos generados por programas.
 
 ## Cómo hacerlo:
 
-Puedes capitalizar una cadena en Haskell con la biblioteca `Data.Char`:
-
 ```Haskell
-import Data.Char (toUpper)
+import Data.Char(toUpper)
+import Data.List.Split(splitOn)
 
-capitaliza :: String -> String
-capitaliza [] = []
-capitaliza (x:xs) = toUpper x : xs
+capitalize :: String -> String
+capitalize [] = []
+capitalize str = unwords $ map (\(x:xs) -> toUpper x : xs) $ words $ lowerString str
+
+lowerString :: String -> String
+lowerString = map toLower
+
+-- Usando la función capitalize
+main :: IO ()
+main = putStrLn $ capitalize "hola, este es un ejemplo en haskell."
+
+-- Salida: "Hola, Este Es Un Ejemplo En Haskell."
 ```
 
-Ejecutar `capitaliza "hola mundo"` te dará `"Hola mundo"`.
+## Análisis Profundo:
 
-Pero si quieres capitalizar cada palabra puedes usar la función `words` y `unwords`:
+Capitalizar cadenas no es nuevo; es un concepto ya presente en los días de las máquinas de escribir para enfatizar títulos o nombres. En Haskell, se puede hacer funcionalmente con funciones como `map` y `toUpper`. Una alternativa es usar bibliotecas como `Data.Text`, que tiene funciones incorporadas para esto. La implementación manual implica convertir cada palabra a su forma en minúsculas y luego capitalizar la primera letra, asegurando la uniformidad independientemente de la entrada original.
 
-```Haskell
-import Data.Char (toUpper)
+## Ver También:
 
-capitalizaCadaPalabra :: String -> String
-capitalizaCadaPalabra = unwords . map capitaliza . words 
-```
-
-Ahora `capitalizaCadaPalabra "hola mundo"` retorna `"Hola Mundo"`.
-
-## Buceo Profundo 
-
-Originariamente, la capitalización se usaba en la antigua Roma, donde todas las letras eran mayúsculas. En la era de las computadoras, es utilizado para mejorar la legibilidad.
-
-Alternativamente, puede usar funciones de librerías de terceros como Text.ICU.Transform (requiere la librería icu). Yet, Haskell's standard `Data.Char` library is sufficient for most use cases.
-
-Haskell implementa la capitalización en un estilo funcional, tomando una cadena y devolviendo una nueva cadena con los cambios. Esta inmutabilidad es parte de por qué Haskell puede ser más predecible que otros lenguajes.
-
-## Ver También 
-
-- Documento de la biblioteca de Haskell [Data.Char](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+- Haskell Documentation for `Data.Char`: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
+- Haskell Documentation for `Data.List.Split`: https://hackage.haskell.org/package/split-0.2.3.4/docs/Data-List-Split.html
+- StackOverflow para preguntas prácticas: https://stackoverflow.com/questions/tagged/haskell

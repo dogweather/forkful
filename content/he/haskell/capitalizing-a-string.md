@@ -1,7 +1,7 @@
 ---
-title:                "הגדלת אותיות במחרוזת"
-html_title:           "Haskell: הגדלת אותיות במחרוזת"
-simple_title:         "הגדלת אותיות במחרוזת"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,32 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## המה ולמה?
-הכתובת הגדולה במחרוזת אומרת להמיר את האות הראשונה של מילה לאות גדולה. תכנתים משתמשים בזה כדי להגיע לקוראים או לפניית שמות, כמו שמות ערים או אנשים.
+## מה ולמה?
+מדובר בהפיכת כל אות לאות גדולה במחרוזת, פעולה ששימושית לייצור קונסיסטנטיות וסדר בטקסטים, כמו כותרות.
 
 ## איך לעשות:
-כדי להמיר את המחרוזת לתוך כתובה גדולה ב-Haskell, אנו משתמשים בפונקציה 'toUpper'. דוגמה:
-
 ```Haskell
-import Data.Char(toUpper)
+import Data.Char (toUpper)
 
 capitalize :: String -> String
-capitalize [] = []
-capitalize (x:xs) = toUpper x : xs
+capitalize = map toUpper
+
+main :: IO ()
+main = putStrLn (capitalize "שלום עולם!")
+-- Output: שלום עולם!
 ```
 
-יציאה מדגם:
-```Haskell
-capitalize "hello world"
--- "Hello world"
-```
+## צלילה עמוקה
+במערכות כתב היד ההשוואתיות, תוכנות כמו ASCII או Unicode מאפשרות המרה של אותיות קטנות לגדולות. בהאסקל, פונקציית `toUpper` מהמודול `Data.Char` מבצעת זאת לכל תו. חשוב לזכור שכל תו מומר בנפרד ואין התחשבות במבנה המילה. בנוסף ל`map toUpper`, יש אלטרנטיבות כמו כתיבת פונקציה רקורסיבית משלך או השימוש ב-fold. כפונקציה מובנית, `toUpper` היא אופטימלית ומבוססת על טבלת התמרות סטנדרטית.
 
-## צלילה עמוקה:
-הפונקציה 'toUpper' מבית 'Data.Char' מגיעה מגרסה מוקדמת של השפה Haskell. ישנם שיטות חלופות להכתיב את התו הראשונ של מחרוזת, כמו שימוש במודולים של חיצים או applicative. לחלקם יתרונות וחסרונות, אך הפתרון שמוצג כאן הוא הגירסה הפשוטה והנקייה ביותר.
-
-## עיין גם:
-מספר מקורות שימושיים אחרים שעשויים לעזור לך לפתח את מיומנויות ה-Haskell שלך מציגים את כמות המעטה של הידע שלך, כולל:
-
-- [[Haskell: סיכום מחרוזות]](http://learnyouahaskell.com/chapters/strings)
-- [[LYAH: קישור גדול]](http://learnyouahaskell.com/chapters/functors-applicative-functors-and-monoids)
-- [[Haskell Wiki: מונדות]](https://wiki.haskell.org/Monads_as_containers)
+## ראה גם
+- [Haskell `Data.Char` documentation](http://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html)
+- [Unicode Character Database](https://www.unicode.org/ucd/)
+- מדריך למתחילים בהאסקל: [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)

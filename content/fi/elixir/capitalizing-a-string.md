@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon alkukirjaimen suurentaminen"
-html_title:           "Elixir: Merkkijonon alkukirjaimen suurentaminen"
-simple_title:         "Merkkijonon alkukirjaimen suurentaminen"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,34 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-"Stringin" kirjainten muuttaminen isoksi on ohjelmoinnin rutiini, jossa muutetaan merkkijonon jokainen merkki isoiksi kirjaimiksi. Ohjelmoijat tekevät tämän esimerkiksi parantaakseen luettavuutta tai vertailun yhtenäistämiseksi, koska kirjainkoko mielletään usein semanttiseksi eikä sisällölliseksi eroksi.
+## Mitä & Miksi?
+Kirjamerkkijonon suurentaminen tarkoittaa tekstin ensimmäisen kirjaimen muuttamista suureksi. Ohjelmoijat käyttävät toimintoa esimerkiksi käyttäjän nimen muotoiluun tai lauseiden yhdenmukaistamiseen.
 
-## Näin teet:
-Voit "capitalisoida" merkkijonon Elixirissä käyttämällä `String.upcase/1` -toimintoa.
+## Kuinka:
+```elixir
+defmodule StringHelpers do
+  def capitalize_string(str) when is_binary(str) do
+    String.capitalize(str)
+  end
+end
 
-```Elixir
-io |> format("~s\n", [String.upcase("hello world")])
+IO.puts StringHelpers.capitalize_string("moi, maailma!") # => "Moi, maailma!"
 ```
 
-Koodin palautusarvo on:
+## Syväsukellus
+Kirjamerkkijonon suurentaminen on ollut osa ohjelmistokehitystä alusta lähtien, jolloin tekstinpätkien oikeaoppista esittämistä pidettiin tärkeänä. Elixir mahdollistaa merkkijonojen suurentamisen `String.capitalize/1`-funktiolla. Vaihtoehtoisesti voidaan käyttää `Regex`-kirjastoa, mutta se ei ole useimmiten tarpeen. `String.capitalize/1` komennossa suurennetuksi tulee aina ensimmäinen kirjain eikä esimerkiksi joka sana (kuten joissakin kielissä tehdään).
 
-```Elixir
-"HELLO WORLD"
-```
-
-## Syvällisemmin:
-Historiassa merkkijonot esitettiin aluksi vain isoilla kirjaimilla, koska varhaiset tietokonejärjestelmät eivät tukeneet pieniä kirjaimia. Nykyisin sekä isojen että pienten kirjainten tukeminen on standardi.
-
-Merkkijonojen isojen kirjainten vaihtoehtona voidaan käyttää funktiota `String.capitalize/1`, joka muuttaa merkkijonon ensimmäisen kirjaimen isoksi ja muiden kirjainten pieniksi.
-
-```Elixir
-String.capitalize("hello world")
-```
-
-Koodin lopputulos on "Hello world".
-
-Toteutuksen yksityiskohdista tärkeä seikka on, että `String.upcase/1` -toiminnolla on Unicode-tuki, joten se toimii oikein myös esimerkiksi ääkkösten kanssa.
-
-## Katso myös:
-Lisää tietoa Elixirin merkkijonoista löytyy [virallisesta dokumentaatiosta](https://hexdocs.pm/elixir/String.html). Älä unohda tutustua myös muita hyödyllisiä funktioita, kuten `String.downcase/1` ja `String.capitalize/1`.
+## Katso Myös
+- Elixirin virallinen dokumentaatio String-moduulista: https://hexdocs.pm/elixir/String.html
+- Unicode standardi ja suur-/pienkirjaimet: http://www.unicode.org/reports/tr21/tr21-5.html

@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग को बड़े अक्षर में बदलना"
-html_title:           "C++: एक स्ट्रिंग को बड़े अक्षर में बदलना"
-simple_title:         "एक स्ट्रिंग को बड़े अक्षर में बदलना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,31 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? :
-किसी स्ट्रिंग को कैपिटलाइज करना यानि उसमें जीवन्तता और स्पष्टता लाने के लिए उसके प्रथम अक्षरों को बड़े अक्षरों में बदलना। प्रोग्रामर इसे डाटा को सजीला और पढ़ने योग्य बनाने के लिए करते हैं।
+## What & Why? (क्या और क्यों?)
 
-## कैसे :
-C++ में string के पहले अक्षर को uppercase में कैसे बदलें;
+स्ट्रिंग कैपिटलाइज़ेशन यानी स्ट्रिंग के शुरुआती अक्षर को बड़ा (कैपिटल लेटर) करना। प्रोग्रामर्स इसे डेटा को औपचारिकता देने, उपयोगकर्ता-इंटरफेस में सुधार और पढ़ने में सहजता के लिए करते हैं।
+
+## How to (कैसे करें):
+
 ```C++
 #include <iostream>
-#include <cctype> //For using toupper function
+#include <cctype>
+#include <algorithm>
+
+std::string capitalizeString(const std::string& str) {
+    std::string capitalized = str;
+    if (!capitalized.empty()) {
+        capitalized[0] = std::toupper(capitalized[0]);
+    }
+    return capitalized;
+}
 
 int main() {
-    std::string s = "hello world!";
-    s[0] = std::toupper(s[0]);
-    std::cout <<  s;
+    std::string myStr = "namaste duniya!";
+    std::string capitalizedStr = capitalizeString(myStr);
+
+    std::cout << "Original String: " << myStr << std::endl;
+    std::cout << "Capitalized String: " << capitalizedStr << std::endl;
+
     return 0;
 }
 ```
-आउटपुट :
-```C++
-Hello world!
+
+आउटपुट:
 ```
-## गहराई में:
-ऐतिहासिक दृष्टिकोण से, strings को capitalize करने की आवशयकता इसलिए होती है क्योंकि यह उसे पढ़ने में मदद करता है। विकल्पों में, Java जैसी अन्य प्रोग्रामिंग भाषाओं में string method का उपयोग करके string को capitalize करने का विकल्प होता है। C++ में string को capitalize करने के लिए, आपको अपने कोड में toupper function का उपयोग करना होता है, जो इस परिवर्तन को संभावित बनाता है।
+Original String: namaste duniya!
+Capitalized String: Namaste duniya!
+```
 
-## देखें भी :
-1. [cplusplus.com: toupper](http://www.cplusplus.com/reference/cctype/toupper/)
-2. [tutorialspoint: C++ Strings](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm) 
+## Deep Dive (गहन जानकारी)
 
-आवश्यकता होने पर उपयोगी संसाधनों को खोजें, प्रयास करें, और जानें। सीखने का यही सबसे अच्छा तरीका है।
+जब हम स्ट्रिंग के हर शब्द को कैपिटलाइज़ करना चाहते हैं, तो इसे Title case कहा जाता है। C++ में इसके लिए सीधा फंक्शन नहीं होता, तो हमें मैन्युअली इसे कोड करना पड़ता है। पुराने ज़माने में स्ट्रिंग ऑपरेशन्स काफी धीमे थे क्योंकि कंप्यूटर्स की गति कम होती थी। आज, हम std::transform फंक्शन जैसे टूल्स का इस्तेमाल करके तेज़ी से स्ट्रिंग्स को मॉडिफाई कर सकते हैं।
+
+शब्दों की शुरुआत को बड़ा करने की प्रक्रिया में, एक-एक करके सभी अक्षरों पर जाना पड़ता है। स्ट्रिंग की लेंथ जितनी ज्यादा होगी, प्रोसेसिंग टाइम उतना ही लंबा होगा। इसलिए अगर प्रदर्शन महत्वपूर्ण है, तो स्ट्रिंग को कम से कम टाइम्स में हैंडल करना चाहिए।
+
+तकनिकी विस्तार में जाएं, तो जहां टाइम कम्प्लेक्सिटी और स्पेस कम्प्लेक्सिटी का मामला हो, वहां स्ट्रिंग कैपिटलाइजेशन के लिए कुछ अलग एल्गोरिदम्स भी इस्तेमाल कर सकते हैं।
+
+## See Also (और जानकारी के लिए)
+
+1. [cplusplus.com - std::toupper](http://www.cplusplus.com/reference/cctype/toupper/)
+2. [cppreference.com - std::transform](https://en.cppreference.com/w/cpp/algorithm/transform)

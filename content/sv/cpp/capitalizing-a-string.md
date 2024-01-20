@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "C++: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Att göra en sträng versaler innebär att ändra alla bokstäver i en given sträng till stora bokstäver. Programmerare gör detta ofta för att göra sökningar och matchningar av strängvärden okänsliga för gemener och versaler.
+## Vad & Varför?
+Att göra om en textsträng till enbart versaler innebär att omvandla alla små bokstäver till stora. Programmerare gör detta för att standardisera data, förbättra användarupplevelse eller göra texten mer synlig.
 
-## Hur man gör:
+## Hur gör man:
 ```C++
-#include <algorithm>
-#include <cctype>
 #include <iostream>
 #include <string>
+#include <algorithm>
 
-void ConvertToUpper(std::string &input_str) {
-    std::for_each(input_str.begin(), input_str.end(), [](char &c){
-        c = ::toupper(c);
-    });
+// Funktion för att omvandla en sträng till versaler
+std::string to_uppercase(std::string s) {
+    std::transform(s.begin(), s.end(), s.begin(), ::toupper);
+    return s;
 }
 
 int main() {
-
-    std::string test_str = "Hej världen!";
-    ConvertToUpper(test_str);
-    std::cout << test_str; // Utdata: "HEJ VÄRLDEN!"
-
+    std::string text = "Hej, jag är en sträng!";
+    std::string uppercase_text = to_uppercase(text);
+    std::cout << uppercase_text << std::endl; // Output: "HEJ, JAG ÄR EN STRÄNG!"
     return 0;
 }
 ```
-## Djupdykning
 
-Historiskt sett har versalisering av strängar använts för att göra textmatchningar enklare och mer tillförlitliga. Alternativen till denna metod kan vara att använda reguljära uttryck eller andra strängmanipulerande funktioner.
+## Deep Dive
+Funktionen `std::transform` är en del av standardbiblioteket sedan C++98 och används för att tillämpa en operation på en sekvens. Här använder vi den med `::toupper`, som konverterar en enskild tecken till versal. 
 
-Implementeringen av att konvertera en sträng till versaler i C++ är ganska enkel, tack vare dess rika standardbibliotek. I vår kodbeteckning använder vi `std::for_each` funktionen från `<algorithm>` biblioteket. Den tar en räckvidd (i detta fall början och slutet på vår sträng) och en funktion att tillämpa på varje objekt inom den räckvidden.
+Ett alternativ är att använda en range-based for-loop och uppdatera varje tecken manuellt. Det blev dock omständligare och `std::transform` är att föredra för sin enkelhet och effektivitet.
 
-Notera att vi använder en lambda funktion som tar varje 'char' i vår sträng och använder `::toupper`.
+Förr i tiden kunde stora datamängder vara svåra att bearbeta på grund av begränsad processorkraft och minne. Nu är operationer som strängmanipulation mer överkomliga, men att skriva effektiv kod är fortfarande viktigt för systemets prestanda. 
 
-## Se också
-
-1. C++ referens om för varje: <http://en.cppreference.com/w/cpp/algorithm/for_each>
-2. C++ referens om std::toupper: <http://en.cppreference.com/w/cpp/string/byte/toupper>
-3. C++ referens om reguljära uttryck: <http://en.cppreference.com/w/cpp/regex>
-4. C++ referens om lambda funktionalitet: <http://en.cppreference.com/w/cpp/language/lambda>
+## Se även
+- [C++ reference for `std::transform`](https://en.cppreference.com/w/cpp/algorithm/transform)
+- [C++ reference for `toupper`](https://en.cppreference.com/w/cpp/string/byte/toupper)
+- [C++ Standard Library](https://www.iso.org/standard/79358.html)

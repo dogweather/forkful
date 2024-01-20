@@ -1,7 +1,7 @@
 ---
-title:                "文字列を大文字にする"
-html_title:           "C++: 文字列を大文字にする"
-simple_title:         "文字列を大文字にする"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,45 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 文字列の大文字化を行うC++のプログラミング
+## What & Why? (何となぜ？)
+文字列を大文字にするとは、例えば "hello world" を "HELLO WORLD" に変換することです。読みやすさを高めたり、ユーザーインターフェースでの一貫性を確保したり、特定のプログラミング要件を満たすために行います。
 
-## 何と何故？
-文字列の大文字化とは、文字列内の全ての小文字を大文字に変換することを言います。プログラマーは統一性を持たせ、比較を容易にするために文字列を大文字化します。
-
-## 方法:
-以下に示すのがC++で文字列を大文字に変換する一例です。
-
+## How to: (方法)
 ```C++
-#include <algorithm>
-#include <cctype>
 #include <iostream>
+#include <algorithm>
+#include <string>
+
+std::string capitalizeString(std::string s) {
+    std::transform(s.begin(), s.end(), s.begin(),
+                   [](unsigned char c) -> unsigned char { return std::toupper(c); });
+    return s;
+}
 
 int main() {
-    std::string s = "Hello, World!";
-    std::transform(s.begin(), s.end(), s.begin(), ::toupper);
-    std::cout << s;
+    std::string original = "konbanwa world";
+    std::string capitalized = capitalizeString(original);
+    std::cout << "Original: " << original << "\n";
+    std::cout << "Capitalized: " << capitalized << std::endl;
     return 0;
 }
 ```
-以上を実行すると、アウトプットは全て大文字の"HELLO, WORLD!"になります。
 
-## 詳細の掘り下げ
-**1.  歴史的背景:** C++には文字列操作のための標準関数とライブラリが提供されていますが、それらはC言語がベースで、'std::transform'と'toupper'の組み合わせは現代的なC++スタイルとなります。
-
-**2.  代替案:** 'for'ループを使って各文字を大文字に変換する方法もあります。しかし'std::transform'関数は機能的なアプローチを提供し、コードの可読性を高めます。
-
-``` C++
-std::string s = "Hello, World!";
-for(char &c : s) c = std::toupper(c);
-std::cout << s;
+実行すると、この出力が得られます:
 ```
-こちらのコードでも同じ結果が得られます。
+Original: konbanwa world
+Capitalized: KONBANWA WORLD
+```
 
-**3.  実装の詳細:** 'std::transform'関数は範囲全体に一定の操作を適用します。ここでは各文字にtoupper関数が適用され、小文字が大文字に変換されます。
+## Deep Dive (詳細な解説)
+文字列を大文字にするという行為は、元はタイプライターや印刷技術から始まりました。大文字は重要な単語や文を際立たせるために使われてきました。プログラミングにおいても、ユーザーがすべて大文字のテキストを目にしやすくするため、またはデータベースの一貫性を保つために使われます。
 
-## 参照リンク
-以下に、関連する参考リンクをいくつか掲載します:
+C++では、`<algorithm>` ヘッダの `std::transform` 関数と`<cctype>` ヘッダの `std::toupper` を使うのが一般的です。他の言語でも似たような機能を持つ関数があります。
 
-1. [C++ String Library - cppreference.com](https://en.cppreference.com/w/cpp/string)
-2. [std::toupper - cppreference.com](https://en.cppreference.com/w/cpp/string/byte/toupper)
-3. [std::transform - cppreference.com](https://en.cppreference.com/w/cpp/algorithm/transform)
+実装の詳細では、ラムダ式が使われていて、各文字を大文字に変換するために `std::toupper` を適用しています。これはエレガントであり、また効率的です。
+
+また、これ以外の手法としては、C++の古いバージョンでのループや`<locale>` ヘッダでのロケールに依存した方法などがあります。
+
+## See Also (関連情報)
+- C++ reference for `std::transform`: https://en.cppreference.com/w/cpp/algorithm/transform
+- C++ reference for `std::toupper`: https://en.cppreference.com/w/cpp/string/byte/toupper
+- Locale-specific capitalization with `std::toupper`: https://en.cppreference.com/w/cpp/locale/toupper

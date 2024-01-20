@@ -1,6 +1,6 @@
 ---
 title:                "Mettre une chaîne de caractères en majuscules"
-html_title:           "Gleam: Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
 simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,34 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Capitaliser une chaîne signifie transformer la première lettre de chaque mot de la chaîne en majuscule. Les programmeurs font cela pour améliorer la lisibilité et rendre les données plus présentables aux utilisateurs.
+# Capitaliser des chaînes en Gleam
 
-## Comment faire:
-Voici un exemple simple dans Gleam pour capitaliser une chaîne.
+## What & Why? (Quoi & Pourquoi ?)
+Capitaliser une chaîne, c'est transformer la première lettre en majuscule. Les programmeurs utilisent cette technique pour normaliser des données ou pour des aspects esthétiques, comme les titres ou les noms propres.
 
-```Gleam
+## How to: (Comment faire :)
+```gleam
 import gleam/string
 
-fn capitalise_example() {
-  let example_string = "bonjour, le monde!"
-  let capitalised_string = string.capitalise(example_string)
-  capitalised_string
-}
-
-fn main(_) {
-  capitalise_example()
+pub fn main() {
+  let example = "bonjour le monde!"
+  let capitalized = string.capitalize(example)
+  io.println(capitalized) // Output: "Bonjour le monde!"
 }
 ```
 
-Dans cet exemple, si vous exécutez `capitalise_example()`, vous obtiendrez `"Bonjour, le monde!"` en sortie.
+## Deep Dive (Plongée profonde)
+Historiquement, capitaliser était crucial pour les anciens manuscrits où les majuscules signalaient le début d'un texte important. En programmation, cela aide à uniformiser les entrées utilisateur, surtout quand la casse (majuscule/minuscule) varie. Alternativement, on peut tout mettre en majuscules ou en minuscules, mais c'est moins subtil. Techniquement, Gleam utilise les propriétés Unicode pour déterminer les transformations, ce qui assure une bonne prise en charge des diverses langues.
 
-## Plongée en profondeur
-Historiquement, la capitalisation a commencé avec l'écriture manuscrite, où l'utilisation des majuscules servait à mettre l'accent sur certains mots. En programmation, c'est un moyen de traiter les chaînes pour les présenter de manière plus formelle ou pour respecter certaines conventions syntaxiques.
-
-Il existe plusieurs alternatives à `string.capitalise()` dans Gleam, comme `string.uppercase()` ou `string.lowercase()` pour rendre toute la chaîne en majuscules ou en minuscules, respectivement. Cependant, la fonction `capitalise()` est généralement préférée pour capitaliser proprement une phrase ou un titre.
-
-Derrière les coulisses, la fonction `capitalise()` de Gleam examine chaque mot dans la chaîne, transforme la première lettre en majuscule et laisse les autres lettres en minuscules. Elle fait ceci en parcourant la chaîne une fois, ce qui rend cette fonction très efficace.
-
-## Voir aussi
-Pour plus de détails sur les fonctions de chaîne en Gleam, consultez la documentation officielle sur [Gleam/string](https://gleam.run/stdlib/string/). Vous pouvez également trouver des exemples de code supplémentaires et des explications détaillées sur le traitement des chaînes dans le guide d'apprentissage Gleam, disponible [ici](https://gleam.run/learning/).
+## See Also (Voir aussi)
+- Unicode standard for text processing: [https://unicode.org/reports/tr15/](https://unicode.org/reports/tr15/)
+- Practical use cases for text capitalization: [https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)

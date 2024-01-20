@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon isoilla kirjaimilla"
-html_title:           "PHP: Merkkijonon isoilla kirjaimilla"
-simple_title:         "Merkkijonon isoilla kirjaimilla"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Merkkijonon isoilla alkukirjaimilla tarkoitetaan sitä, että muutetaan merkkijonon kaikki kirjaimet isoiksi alkukirjaimiksi. Ohjelmoijat tekevät tämän helpottaakseen tietojen vertailua ja järjestämistä.
+## What & Why? (Mitä & Miksi?)
+Isot alkukirjaimet tekevät merkkijonosta helpommin luettavan ja tekevät siitä näyttävämmän – kuten otsikoissa tai nimissä. Ohjelmoijat käyttävät tätä parantaakseen käyttöliittymän ulkoasua ja käyttäjäkokemusta.
 
-## Näin se tehdään:
-Tässä on yksinkertainen esimerkki PHP:n `strtoupper()`-funktion käytöstä merkkijonon kaikkien kirjainten muuttamiseksi isoksi:
+## How to: (Näin toimit)
+PHP:ssä merkkijonon muuttaminen kokonaan isoilla kirjaimilla voidaan tehdä `strtoupper()`-funktiolla ja alkukirjaimen isontaminen `ucfirst()`-funktiolla. Esimerkki:
 
-```PHP
+```php
 <?php
-$alkuperainen = 'tämä on alkuperäinen merkkijono';
-$isoilla_kirjaimilla = strtoupper($alkuperainen);
-echo $isoilla_kirjaimilla;
+$small_text = "tämä on testi";
+$capitalized_text = ucfirst($small_text);
+$uppercased_text = strtoupper($small_text);
+
+echo $capitalized_text; // Tulostuu: Tämä on testi
+echo "\n";
+echo $uppercased_text;  // Tulostuu: TÄMÄ ON TESTI
 ?>
 ```
 
-Kun suoritat tämän koodin, tulostuu seuraava:
+## Deep Dive (Syväsukellus)
+Merkin isontaminen on yleinen käytäntö monissa ohjelmointikielissä, ja PHP ei tee tästä poikkeusta. Historiallisesti, kun tietokoneet olivat nuorempia ja käyttöliittymät pelkistetympiä, isot kirjaimet olivat hyvin tärkeässä roolissa painottaessaan tärkeää tietoa. PHP:ssä `strtoupper()` ja `ucfirst()` suorittavat tämän tehtävän muuttamalla merkkijonon UTF-8-yhteensopivaksi, mikä varmistaa, että myös suurin osa erikoismerkeistä käsitellään oikein. Vaihtoehtoisesti `mb_strtoupper()`-funktio tarjoaa tuen monille eri merkistöille, mikä on tärkeää, kun työskentelet monikielisissä sovelluksissa.
 
-```
-TÄMÄ ON ALKUPERÄINEN MERKKIJONO
-```
-
-## Syvällisempi katsaus
-Historiallisesti merkkijonojen isojen kirjainten käyttö tunnettiin jo varhaisissa tietokonekielissä, kuten FORTRAN:ssa. PHP:n `strtoupper()`-funktio hyödyntää näitä historiallisia käsityksiä.
-
-Vaihtoehtona `strtoupper()`-funktiolle on `mb_strtoupper()`, jota käytetään, kun työskennellään monikielisten merkkijonojen kanssa. Tämä on hyödyllistä, kun käsitellään kirjaimia, jotka vaihtelevat kielestä toiseen.
-
-PHP:n `strtoupper` toteutus muuntaa yksinkertaisesti jokaisen merkkijonon merkin vastaavaksi isoksi kirjaimeksi käyttäen sisäistä sanakirjaa, jossa on pieniä ja isoja kirjainpareja.
-
-## Lisätietoja
-Lisätietoja php:n `strtoupper`- ja `mb_strtoupper`-funktioista löydät PHP:n virallisesta dokumentaatiosta seuraavista linkeistä:
+## See Also (Katso Myös)
+- PHP:n virallinen dokumentaatio `strtoupper()`: https://www.php.net/manual/en/function.strtoupper.php
+- PHP:n virallinen dokumentaatio `ucfirst()`: https://www.php.net/manual/en/function.ucfirst.php
+- PHP:n virallinen dokumentaatio `mb_strtoupper()` (monikielisille merkkijonoille): https://www.php.net/manual/en/function.mb-strtoupper.php

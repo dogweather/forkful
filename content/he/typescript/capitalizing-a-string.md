@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות ראשיות"
-html_title:           "TypeScript: הפיכת מחרוזת לאותיות ראשיות"
-simple_title:         "הפיכת מחרוזת לאותיות ראשיות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,37 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-דילוג לאות הראשונה במחרוזת משרת להיכנס אל מצב כתוב. זה נחוץ למגוון של מצבים, אחת השימושים הנפוץ ביותר היא לקלוט שמות.
+## What & Why? (מה ולמה?)
+קיבוץ של מחרוזת הוא שינוי האותיות הראשונות של כל מילה במחרוזת להיות אותיות רישיות. מתכנתים משתמשים בזה כדי לתת דגש ויזואלי לכותרות ושמות, ולשפר קריאות.
 
-## כיצד ל:
-נבנה מחרוזת עם האות הראשונה לא באותיות ראשיות, ואז נשנה אותה. 
-
+## How to (איך לעשות?)
 ```TypeScript
-let str = 'hello world';
-str = str.charAt(0).toUpperCase() + str.slice(1);  
-console.log(str);  // Outputs: 'Hello world'
+function capitalize(sentence: string): string {
+  return sentence.replace(/\b(\w)/g, (match, char) => char.toUpperCase());
+}
+
+// דוגמת שימוש
+const title = 'hello, מתכנתים יקרים!';
+console.log(capitalize(title));  // 'Hello, מתכנתים יקרים!'
 ```
 
-## הצצה מעמיקה
-אם נהסטוריה של השפות התכנות משחקת כל שום דבר, הרעיון להפוך את האות הראשונה של מחרוזת לאותיות ראשיות הוא די חדשני. JavaScript, השפה שעליה TypeScript מתבססת, לא כללה את הפונקציה הזו לתחילה, כך שהפכה לדרך נפוצה להראות את היכולת שלך לפתור בעיות.
- 
-תחליף מהיר אך פחות אלגנטי היה להפוך את כל המחרוזת לאותיות ראשיות:
+## Deep Dive (צלילה עמוקה)
+קיבוץ מחרוזות התחיל כחלק מכללי עריכה באנגלית לפני שהתפשט למחשוב. האלטרנטיבות כוללות שימוש בCSS לקיבוץ במסמכי HTML, או שימוש במתודות מובנות כמו `toLowerCase()` ולאחר מכן `toUpperCase()` לקיבוץ תווים בודדים. הדרך שהצגנו עובדת בJavaScript ו-TypeScript, והיא מנצלת את הRegEx לזיהוי האות הראשונה של כל מילה.
 
-```TypeScript
-let str = 'hello world';
-str = str.toUpperCase();  
-console.log(str);  // Outputs: 'HELLO WORLD'
-```
-
-אם אתה רוצה להפוך רק את האות הראשונה של כל מילה במחרוד לאותיות גדולות, אתה יכול להשתמש בשיטה זו:
-
-```TypeScript
-let str = 'hello world';
-str = str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(' ');
-console.log(str);  // Outputs: 'Hello World'
-```
-
-## ראה גם:
-1. [TypeScript ב-Vscode](https://code.visualstudio.com/docs/languages/typescript)
-2. [המדריך הרשמי ל-TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+## See Also (ראה גם)
+- MDN Web Docs on String methods: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+- TypeScript Documentation: https://www.typescriptlang.org/docs/
+- RegEx Tester for practice: https://regexr.com/

@@ -1,7 +1,7 @@
 ---
-title:                "Sette stor forbokstav i en streng"
-html_title:           "TypeScript: Sette stor forbokstav i en streng"
-simple_title:         "Sette stor forbokstav i en streng"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Bogstavaktivering av Streng i TypeScript
+## What & Why?
+En tekststreng blir stor bokstav når hvert ord starter med en stor bokstav. Dette er nyttig for å formatere tekst slik at titler, navn eller overskrifter ser korrekte og profesjonelle ut.
 
-## Hva & Hvorfor?
+## How to:
+For å gjøre om en string til stor bokstav i TypeScript, kan du bruke `toLowerCase()` og `replace()` metodene, eller lage din egen funksjon. Her er et eksempel:
 
-'Bogstavaktivering' av en streng betyr å endre første bokstav av hver ord til en stor bokstav. Programmerere gjør dette for bedre lesbarethet og organisering av data, spesielt i tekstbehandlingssystemer.
-
-## Hvordan:
-
-Her er et enkelt eksempel på hvordan du kan gjøre det i TypeScript:
-
-```TypeScript
-function capitalize(s: string): string {
-  return s.split(' ')
-    .map(word => word[0].toUpperCase() + word.substr(1))
-    .join(' ');
+```typescript
+function capitalizeString(input: string): string {
+  return input.toLowerCase().replace(/\b\w/g, letter => letter.toUpperCase());
 }
 
-console.log(capitalize("hei, hva skjer")); // Output: "Hei, Hva Skjer"
+// Brukseksempel
+const title = "hallo, dette er et eksempel.";
+const capitalizedTitle = capitalizeString(title);
+
+console.log(capitalizedTitle);  // Output: "Hallo, Dette Er Et Eksempel."
 ```
 
-## Dypere dykk:
+## Deep Dive
+I tidligere epoker av programmering, var det ikke uvanlig å håndtere bokstaver og tekst manuelt. Dette, som mye annet, har blitt lettere med moderne programmeringsspråk og deres innebygde stringfunksjoner. Alternativer til `replace()` kunne være å bruke biblioteker som lodash sine `_.startCase()`.
 
-Historisk har 'bokstavaktivering' av strenger blitt brukt i mange kontekster, ikke bare programmering. Det er vanlig i typografi, der første bokstaven i et avsnitt ofte blir gjort større for å indikere begynnelsen av en ny tanke.
+Når det gjelder implementasjonsdetaljer, tar `replace()`-metoden i eksempelet over en regex som første argument som finner alle ordgrenser etterfulgt av et alfanumerisk tegn. Den andre parameteren er en funksjon som gjør det individuelle bokstavet stor bokstav.
 
-Det finnes flere alternative måter å gjøre denne handlingen på i forskjellige programmeringsspråk. I JavaScript kan det for eksempel gjøres med en kombinasjon av `charAt()` og `slice()` metoder:
+En annen ting å vurdere er lokaliseringsbehov – noen språk har bokstaver som ikke er dekket av standard `toUpperCase()`-metoden.
 
-```TypeScript
-let string = 'hei, hva skjer';
-let result = string.charAt(0).toUpperCase() + string.slice(1);
-```
-
-Vær oppmerksom på at 'bogstavaktivering' handler om teksttransformasjon, ikke datamanipulasjon. Det vil si, vi endrer måten dataene vises på, men ikke deres underliggende verdi.
-
-## Se Også:
-
-- String-metoder i JavaScript: https://developer.mozilla.org/no/docs/Web/JavaScript/Reference/Global_Objects/String
-- En mer detaljert introduksjon til TypeScript: https://www.typescriptlang.org/docs/handbook/basic-types.html
+## See Also
+- MDN Web Docs for String operations: [String - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- Lodash biblioteket for diverse stringmanipulasjoner: [Lodash](https://lodash.com/docs/4.17.15#startCase)
+- TypeScript offisielle dokumentasjon for mer avansert type manipulation: [TypeScript Documentation](https://www.typescriptlang.org/docs/)

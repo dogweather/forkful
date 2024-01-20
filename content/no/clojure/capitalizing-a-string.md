@@ -1,7 +1,7 @@
 ---
-title:                "Gjør en streng stor"
-html_title:           "Clojure: Gjør en streng stor"
-simple_title:         "Gjør en streng stor"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,45 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Store bokstaver i en tekststreng handler om å endre alle begynnelsesbokstaver i ordene til store bokstaver. Programmerer gjør dette for lesbarhet og data normalisering.
+## What & Why? (Hva & Hvorfor?)
+Kapitalisering av en streng betyr å gjøre første bokstav i hvert ord til en stor bokstav. Programmerere kapitaliserer strenger for å følge språkregler, forbedre lesbarhet eller formatere tekstdata etter standarder.
 
-## Hvordan til:
-Her er hvordan vi gjør det i Clojure, med en kodeeksempel:
+## How to (Hvordan gjøre det)
+I Clojure, for å kapitalisere hver ord i en streng, bruker vi ikke en innebygd funksjon, men du kan kombinere flere funksjoner for å oppnå dette. Her er et eksempel:
 
-```clojure
-(require '[clojure.string :as str])
-
-(defn capitalize
-  [text]
-  (->> (str/split text #" ")
-       (map str/capitalize)
-       (str/join " ")))
+```Clojure
+(defn capitalize-string [s]
+  (clojure.string/join " " (map clojure.string/capitalize (clojure.string/split s #"\s+"))))
+  
+(capitalize-string "hei verden, dette er clojure!")
+```
+Output:
+```
+"Hei Verden, Dette Er Clojure!"
 ```
 
-La oss teste det ut:
+## Deep Dive (Dypdykk)
+Clojure har ikke en innebygd funksjon for å kapitalisere alle ord i en streng direkte, til forskjell fra noen andre språk. Dette skyldes Clojures fokus på funksjonell programmering og komponerbare funksjoner. 
 
-```clojure
-(println (capitalize "Hallo, verden!")) 
-```
+Alternativet vist over er å splitte strengen ved whitespace med `clojure.string/split`, kapitalisere hvert ord med `clojure.string/capitalize`, og så sette sammen ordene igjen med `clojure.string/join`. Dette er en komposisjon av funksjoner.
 
-Dette vil skrive ut:
+Implementasjonsdetaljer for `clojure.string/capitalize` inkluderer at den bare gjør første bokstav stor, om bokstaven er lav. Resten av ordet påvirkes ikke. Om du vil ha streng konvertering hvor kun første bokstav er stor og resten små, må du selv definere en ny funksjon eller komponere eksisterende på en annen måte.
 
-```clojure
-"Hallo, Verden!"
-```
+Siden Clojure opererer på en Java Virtual Machine (JVM), kan du som alternativ også bruke Java sine strengmetoder direkte i Clojure.
 
-## Dypdykk
-Store bokstaver i strenger har en lang historie, med røtter fra eldre programmeringsspråk som Cobol og Fortran. 
+## See Also (Se Også)
+Kode og dokumentasjon:
+- [Clojure Strings](https://clojuredocs.org/clojure.string)
+- [ClojureDocs](https://clojuredocs.org)
 
-Clojure tilbyr mange alternative måter å takle denne oppgaven, takket være sin fleksible syntaks og fokus på funksjonell programmering. Du kan også bruke regulære uttrykk for å matche og erstatte små bokstaver, eller utnytte Java Bibliotek funksjoner som Java's 'java.lang.Character/toTitleCase'.
-
-Fordi Clojure kjører på JVM (Java Virtual Machine), bruker vår funksjon underliggende Java-metode `java.lang.Character/toTitleCase` for å utføre selve kapitaliseringen.
-
-## Se også:
-For et dypere dykk inn i tekstmanipulasjon i Clojure, sjekk ut disse kildene:
-
-
-2. [Clojure Docs](https://clojuredocs.org): En omfattende kilde til dokumentasjon som dekker Clojure's mange innebygde funksjoner, inkludert de for tekstmanipulasjon.
-
-3. [Official Clojure API Reference](https://clojure.github.io/clojure/): Den offisielle API-referansen for Clojure, inkludert detaljerte beskrivelser av funksjonene i string-biblioteket.
+Relaterte emner:
+- [Functional Programming](https://clojure.org/about/functional_programming)
+- [Clojure - Java Interop](https://clojure.org/reference/java_interop)

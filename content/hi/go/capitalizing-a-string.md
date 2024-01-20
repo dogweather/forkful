@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को बड़े अक्षरों में बदलना"
-html_title:           "Go: स्ट्रिंग को बड़े अक्षरों में बदलना"
-simple_title:         "स्ट्रिंग को बड़े अक्षरों में बदलना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,13 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+String का पहला अक्षर बड़ा (capita) करने का मतलब है कि हम string के प्रारंभ में आने वाले अक्षर को uppercase में परिवर्तित करें। Programmers अक्सर user interface में consistency लाने या proper nouns को highlight करने के लिए इसका इस्तेमाल करते हैं।
 
-स्ट्रिंग को कैपिटलाइज करना मतलब उसके पहले अक्षर को बड़े (अगर वह छोटे हो) में बदलना। प्रोग्रामर्स इसे स्वरूपानुसार अलग-थलग वाक्यांशों को पहचानने के लिए करते हैं।
-
-## कैसे करें:
-
-```Go
+## How to: (कैसे करें:)
+```go
 package main
 
 import (
@@ -25,24 +23,25 @@ import (
 )
 
 func main() {
-
-	myString := "यह एक संदर्भ स्ट्रिंग है।"
-	
-	fmt.Println(strings.Title(myString))
-
+	originalString := "नमस्ते दुनिया"
+	capitalizedString := strings.Title(strings.ToLower(originalString))
+	fmt.Println(capitalizedString) // नमस्ते दुनिया
 }
 ```
-ऊपर का कोड स्ट्रिंग को कैपिटलाइज करता है। आउटपुट इस प्रकार होगा:
-
-```Go
-यह एक संदर्भ स्ट्रिंग है।
+Sample Output:
 ```
+नमस्ते दुनिया
+```
+ध्यान रहे कि `strings.Title()` हर शब्द के पहले अक्षर को capital करता है। अगर आपको सिर्फ पहला अक्षर बड़ा करना है, तो अलग फंक्शन बनाना पड़ेगा।
 
-## गहराई में:
+## Deep Dive (गहराई में जानकारी)
+String को capitalize करने की क्रिया सिंपल है, परंतु इसका विकास टाइपराइटर के युग से हुआ है जहां capital letters का उपयोग important text को बताने के लिए होता था।
 
-स्ट्रिंग कैपिटलाइजेशन पहलियों से ही उपयोग में रहा है, यह विशेष लक्षीयता हमें वाक्यांशों और विशिष्ट शब्दों को पहचानने में मदद करती है। जैसे की Go में: `strings.Title()` और `strings.ToTitle()` जैसे फंक्शन होते हैं। स्ट्रिंग कैपिटलाइजेशन को हांडल करने के लिए अन्य भाषाओं में भी भिन्न-भिन्न में फंक्शन्स होते हैं। 
+Go में `strings` पैकेज से `Title` फंक्शन title casing प्रदान करता है, जो हर शब्द के पहले अक्षर को capital बनाता है। UTF-8 support की वजह से, यह सभी languages के लिए काम करता है जिसमें special characters और accents होते हैं। फिर भी, कई बार locale-specific rules होते हैं; इसलिए और भी libraries जैसे कि `golang.org/x/text` का उपयोग बेहतर हो सकता है।  
 
-## देखने के लिए भी:
+एक और महत्वपूर्ण बिंदु यह है कि `Title` function विशेष रूप से Buddha को "Buddha" की तरह capitalize करता है, न कि "BUDDHA" के रूप में। आपके कोड में ऐसे संवेदनशील मामलों के लिए अतिरिक्त logic शामिल करना पड़ सकता है। 
 
-1. [Go strings package documentation](https://golang.org/pkg/strings/)
-3. [Go by Example: String Functions](https://gobyexample.com/string-functions)
+## See Also (और भी जानकारी)
+- Go documentation for strings package: https://pkg.go.dev/strings
+- Go by Example: String Functions: https://gobyexample.com/strings
+- `golang.org/x/text`: https://pkg.go.dev/golang.org/x/text

@@ -1,7 +1,7 @@
 ---
-title:                "Gör en sträng storstilad"
-html_title:           "C#: Gör en sträng storstilad"
-simple_title:         "Gör en sträng storstilad"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,37 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-
-Att göra om en sträng till versaler innebär att förvandla alla tecken i strängen till stora bokstäver. Programmerare gör detta för att förbättra läsbarheten och för att få jämförelser mellan strängdata att bli okänsliga för utseendet på tecknen.
+## Vad & Varför?
+Att 'capitaliza' en sträng innebär att göra så att varje bokstav i strängen blir en stor bokstav. Programmerare gör detta för att standardisera data, förbättra användarupplevelsen eller göra text mer synlig.
 
 ## Hur gör man:
-
-Nedan är ett exempel på hur du kan använda C# för att förvandla en sträng till versaler.
-
-```C#
-string SträngInMatning = "hej världen!";
-string SträngUtMatning = SträngInMatning.ToUpper();
-Console.WriteLine(SträngUtMatning);
-```
-Utskriften blir:
+Kolla kodexemplen nedan för att se hur man förvandlar text till versaler i C#.
 
 ```C#
-"HEJ VÄRLDEN!"
+using System;
+
+class CapitalizeString
+{
+    static void Main()
+    {
+        string originalText = "hej sverige!";
+        string upperText = originalText.ToUpper();
+
+        Console.WriteLine(upperText);  // Output: HEJ SVERIGE!
+    }
+}
 ```
 
-## Mer i detalj
+Andra verktyg i .NET använder CultureInfo för att specificera kulturella konventioner:
 
-Historiskt sett användes text i versaler för att visa makt och auktoritet. I programmering används det nu för att förbättra läsbarheten och göra kod mer robust genom att göra det enklare att jämföra strängar. Ett alternativ till att använda metoden ToUpper() är att skapa en slinga som går igenom varje tecken i strängen och konverterar det individuellt. Implementationen av metoden ToUpper() är dock ofta effektivare och ger mer läsbar kod.
+```C#
+using System;
+using System.Globalization;
+
+class CapitalizeString
+{
+    static void Main()
+    {
+        string originalText = "hej sverige!";
+        // Specific for Swedish culture
+        string upperText = originalText.ToUpper(new CultureInfo("sv-SE"));
+
+        Console.WriteLine(upperText);  // Output: HEJ SVERIGE!
+    }
+}
+```
+## Deep Dive
+Att göra bokstäver i en sträng till versaler är något som har stötts sedan de tidigaste programmeringsspråken. I C#, `ToUpper()` är metoden som används oftast för detta, och den kommer från .NET Frameworks `System.String` klass. Det är viktigt att tänka på att vissa språk har unika regler för kapitalisering, vilket C#'s `CultureInfo` kan hjälpa till med att hantera.
+
+Om prestanda är en fråga, eller om endast specifika delar av strängen ska vara i versaler, kan andra metoder eller tekniker vara mer lämpliga:
+
+- Använde `StringBuilder` om du ska förändra en sträng många gånger.
+- Att använda LINQ för att capitaliza endast vissa bokstäver eller ord.
+
+Men kom ihåg: `ToUpper()` är ditt go-to för enkelhet och direkt användning inbyggd direkt i .NET.
 
 ## Se även
+För vidare läsning och relaterade ämnen:
 
-För mer information om hur du använder versaler i C#, se Microsofts officiella dokumentation:
-
-[Microsoft .NET dokumentation om ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netcore-3.1)
-
-Och här är ett bra inlägg på StackOverflow om ämnet:
-
-[StackOverflow diskussion om att göra om en sträng till versaler](https://stackoverflow.com/questions/4673398/how-do-i-make-all-text-upper-case-in-c-sharp)
-
-Observera att det är viktigt att tänka på att metoden ToUpper() kan bete sig olika beroende på aktuell kulturinställning.
+- [Microsoft Docs – ToUpper Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-6.0)
+- [Microsoft Docs – CultureInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-6.0)
+- [Stack Overflow – When to use CultureInfo](https://stackoverflow.com/questions/20978/when-to-use-cultureinfo-currentculture-or-cultureinfo-currentuiculture)

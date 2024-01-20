@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자화"
-html_title:           "Swift: 문자열 대문자화"
-simple_title:         "문자열 대문자화"
+title:                "문자열 대문자로 변환하기"
+html_title:           "Arduino: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,33 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇 그리고 왜?)
+문자열 대문자화는 모든 문자를 대문자로 바꾸거나 첫 글자만 대문자로 만듭니다. 가독성을 높이거나, 정형화된 데이터 형식을 맞추기 위해 사용합니다.
 
-문자열 대문자 변환은 소문자 문자를 대문자로 변환하는 것을 의미합니다. 프로그래머들은 규현, 사용자 입력 정규화, 출력 포맷팅 등의 이유로 이 작업을 수행합니다.
+## How to: (방법)
+```Swift
+let lowerCaseString = "안녕하세요, 여러분!"
+let upperCasedString = lowerCaseString.uppercased() // 모든 문자를 대문자로
+let capitalizedString = lowerCaseString.capitalized // 문장의 첫 글자만 대문자로
 
-## 방법:
-
-Swift에서는 `.uppercased()` 함수를 사용하여 문자열을 대문자로 바꿀 수 있습니다. 간단히 사용하기에 아주 적합한 함수입니다.
-
-```swift
-let example = "hello world"
-let uppercased = example.uppercased()
-
-print(uppercased) // Output: HELLO WORLD
+print(upperCasedString) // 출력: "안녕하세요, 여러분!"
+print(capitalizedString) // 출력: "안녕하세요, 여러분!"
 ```
-위의 예제 코드에서, `uppercased()` 함수는 원본 문자열인 "hello world"를 "HELLO WORLD"로 변환합니다.
 
-## 디피 다이브:
+## Deep Dive (심층 분석)
+옛날에 컴퓨터가 없던 시절, 대문자는 중요한 단어나 문장을 강조하기 위해 사용되었습니다. 프로그래밍에서는 이를 데이터 정규화의 한 형태로 사용하여, 예를 들어 사용자 입력이나 데이터베이스에서 일관된 문자 형식을 유지합니다.
 
-문자열의 대문자 변환은 오래전부터 있던 기능입니다. 예를 들어, 기존의 Fortran 언어에서는 `ACHAR` 함수를 사용하여 이 작업을 수행했습니다.
+대문자화에는 여러 방법이 있는데, `uppercased()`는 모든 문자를 대문자로 바꾸고, `capitalized`는 각 단어의 첫 글자만 대문자로 바꿉니다. 그 밖에 특정 조건에 따라 대문자화를 하는 방법도 있으며, 이는 사용자가 직접 함수를 만들어 조정할 수 있습니다.
 
-대문자 변환에 대한 대안으로는 문자열을 반복하면서 각 문자를 개별적으로 대문자로 변환하는 방법이 있습니다. 다만, Swift에서는 `.uppercased()` 함수를 제공하여 이런 작업을 더욱 쉽게 할 수 있게 하였습니다.
+Swift의 문자열 처리는 Unicode를 완벽하게 지원합니다, 즉, 다양한 언어와 기호에 대해서도 대문자화 작업을 정확하게 수행할 수 있음을 의미합니다. 그러나 주의할 점은, 특정 언어에서는 대문자와 소문자 개념이 없거나 다르게 작동할 수 있다는 것입니다.
 
-Swift의 `.uppercased()` 함수는 문자열을 통해 호출되며, 모든 문자를 대문자로 변환하여 새로운 문자열을 반환합니다. 이 함수는 원래 문자열을 변경하지 않으므로, Swift의 문자열 불변성을 유지합니다.
-
-## 추천도서:
-
-1. "The Swift Programming Language" Apple의 공식 소개서에서 Swift에 대해 더욱 자세히 배울 수 있습니다. [링크](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-
-
-3. "Pro Swift"는 Swift를 사용하여 실제 프로젝트를 어떻게 수행할 수 있는지에 대해 설명합니다. [링크](https://www.hackingwithswift.com/store/pro-swift)
+## See Also (참고자료)
+- Swift 문자열 관련 공식 문서: [String — Swift Documentation](https://developer.apple.com/documentation/swift/string)
+- Unicode에 대한 더 많은 정보: [Unicode Standard](http://www.unicode.org/standard/standard.html)

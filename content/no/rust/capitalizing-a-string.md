@@ -1,7 +1,7 @@
 ---
-title:                "Gjøre en streng stor"
-html_title:           "Rust: Gjøre en streng stor"
-simple_title:         "Gjøre en streng stor"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,54 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust Programmering: Hvordan Kapitalisere en Streng
-
 ## Hva & Hvorfor?
-Å kapitalisere en streng innebærer å gjøre det første bokstavet i strengen stort, mens resten av strengen blir små bokstaver. Programmers bruker det for å standardisere input-data eller øke lesbarheten. 
+Å kapitalisere en tekststreng betyr å gjøre første bokstav i hvert ord til en stor bokstav. Programmere gjør dette for å standardisere formatering, ofte for visning av titler eller overskrifter.
 
-## Hvordan gjør man dette:
-Her er et eksempel på hvordan du kan kapitalisere strenger i Rust:
+## Slik gjør du:
+Rusts standardbibliotek tilbyr ingen innebygd metode for å kapitalisere hver ord i en streng, men vi kan bruke `to_uppercase()` sammen med egendefinert logikk. Her er et eksempel:
 
 ```Rust
-fn main() {
-    let my_string = "hello world".to_string();
-    let capitalized_string = capitalize(&my_string);
-
-    println!("{}", capitalized_string);
+fn capitalize_words(s: &str) -> String {
+    s.split_whitespace()
+        .map(|word| {
+            let mut chars = word.chars();
+            match chars.next() {
+                Some(first_char) => first_char.to_uppercase().collect::<String>() + chars.as_str(),
+                None => String::new(),
+            }
+        })
+        .collect::<Vec<_>>()
+        .join(" ")
 }
-
-fn capitalize(s: &str) -> String {
-    let mut chars = s.chars();
-    match chars.next() {
-        None => String::new(),
-        Some(first_char) => first_char.to_uppercase().chain(chars).collect(),
-    }
-}
-```
-Når du kjører dette programmet, vil output være:
-
-```Rust
-Hello world
-```
-
-## Dypdykk
-Historisk sett har kapitalisering av strenger værem en viktig del av mange programmeringsspråk for å tillate bedre manipulering og representasjon av tekstbasert data.
-
-Alternativt, i Rust, kan du også bruke biblioteket `titlecase` for å kapitalisere strengene dine:
-
-```Rust
-use titlecase::titlecase;
 
 fn main() {
-    let my_string = "hello world";
-
-    println!("{}", titlecase(my_string));
+    let greeting = "hei på deg, verden!";
+    let capitalized = capitalize_words(greeting);
+    println!("{}", capitalized); // "Hei På Deg, Verden!"
 }
 ```
-Men det er verdt å merke seg at `titlecase` omformer hele strengen til tittelstil, ikke bare det første bokstavet.
+
+## Dykk dypere
+Historisk sett har kapitalkonvertering av tekst vært standard praksis i typografi, brukt til å fremheve titler og navn. I mange programmeringsspråk er operasjonen tilgjengelig som en enkel funksjon. Rust, derimot, fokuserer på sikkerhet og ytelse fremfor å inkludere mange hjelpefunksjoner.
+
+Alternativer for kapitalisering inkluderer biblioteker som `regex` for komplekse mønstergjenkjenninger, eller `unicode-segmentation` for riktig behandling av Unicode tekst.
+
+Når du implementerer en slik funksjon, er det viktig å håndtere Unicode og flerbyte-karakterer korrekt. Rust bruker UTF-8-strenger, så operasjonen håndteres på et skalerbart og internasjonalt nivå.
 
 ## Se også
-Hvis du ønsker å fordype deg mer i strengbehandling i Rust, anbefaler vi disse kildene:
-- [The Rust Programming Language Book](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [Rust by Example: Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
-- [Rust String Methods Documentation](https://doc.rust-lang.org/std/string/struct.String.html)
+- Rust Docs på `to_uppercase()`: https://doc.rust-lang.org/std/primitive.char.html#method.to_uppercase
+- Regex Crate: https://crates.io/crates/regex
+- Unicode Segmentation Crate: https://crates.io/crates/unicode-segmentation

@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות ראשונות גדולות"
-html_title:           "Go: הפיכת מחרוזת לאותיות ראשונות גדולות"
-simple_title:         "הפיכת מחרוזת לאותיות ראשונות גדולות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,12 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-ה"הפיכת מחרוזת לאותיות גדולות" היא פעולה שבה משנים את כל האותיות במחרוזת לאותיות גדולות. מתכנתים מבצעים את הפעולה הזו כדי להבטיח שקוד מסוים לא יתנהג באופן שונה בהתאם לתווים הגדולים או הקטנים.
+## What & Why?
+מה זה גדלת אותיות, ולמה זה נחוץ? גדילת אותיות היא המרה של טקסט לאותיות גדולות. תכנתים עושים זאת לשם עקביות, בולטות, או תקנים (כמו תזונתי בתחילת משפט).
 
-## איך לעשות את זה:
-הפיכת מחרוזת לאותיות גדולות בשפת Go היא פשוטה מאוד עם שימוש בפונקציה `strings.ToUpper`. הנה הדוגמא:
-
+## How to:
+דוגמאות קוד ופלט דוגמאית תחת בלוקי קוד של Go.
 ```Go
 package main
 
@@ -25,19 +24,24 @@ import (
 )
 
 func main() {
-	text := "Hello, World!"
-	fmt.Println(strings.ToUpper(text))
+	originalText := "שלום עולם!"
+	capitalizedText := strings.ToUpper(originalText)
+
+	fmt.Println(capitalizedText)  // שלום עולם!
 }
 ```
-הפלט של הקוד הזה הוא:
+
+פלט דוגמא:
 ```
-HELLO, WORLD!
+שלום עולם!
 ```
 
-## צלילה עמוקה
-ארכיאולוגיה של המחשב מצביעה ששמירה על ההבחנה בין אותיות גדולות לקטנות היתה קלה יותר למחשבים הראשונים. נכון לשפת Go, יש חלופה ל `strings.ToUpper` באמצעות שימוש בלולאה ובפונקציה `unicode.ToUpper`. הבחירה בין השניים מתבצעת אי-פעם בהתאם לצרכים המסוימים.
+## Deep Dive
+ההקשר ההיסטורי: בשפות תכנות רבות, המרת מחרוזות לאותיות גדולות נעשתה לצורך עיבוד טקסט והשוואות, לפני שהיו תקנים להתעלמות מרישיות.
+אלטרנטיבות: לGo יש גם את `strings.Title()` ו`strings.ToTitle()` שמגדילות כל מילה או כל תו, בהתאמה.
+פרטי יישום: המרת טקסט בGo לאותיות גדולות מתחשבת ביוניקוד ובתווים מיוחדים בשפות שונות.
 
-## ראה גם
-- [מסמך הפונקציה strings.ToUpper](https://pkg.go.dev/strings#ToUpper)
-- [מסמך הפונקציה unicode.ToUpper](https://pkg.go.dev/unicode#ToUpper)
-- [מדריך לשפת Go למתחילים](https://tour.golang.org/welcome/1)
+## See Also
+- מסמכי ה-API של הפונקציה `ToUpper`: https://pkg.go.dev/strings#ToUpper
+- איך להשוות מחרוזות ברגישות לרישיות: https://golang.org/pkg/strings/#EqualFold
+- הבלוג הרשמי של Go על עבודה עם מחרוזות: https://blog.golang.org/strings

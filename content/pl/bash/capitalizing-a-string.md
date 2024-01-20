@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana liter w łańcuchu na wielkie"
-html_title:           "Bash: Zamiana liter w łańcuchu na wielkie"
-simple_title:         "Zamiana liter w łańcuchu na wielkie"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
 ## Co i dlaczego?
+Zamiana liter na wielkie w stringu oznacza, że zmieniamy wszystkie litery na ich wielkie odpowiedniki, tzw. kapitalizację. Programiści robią to, by ujednolicić tekst, np. w tytułach, nazwach własnych albo na początku zdania.
 
-Zmiana literek na wielkie w łańcuchach znaków polega na przekształceniu wszystkich liter małych na duże. Programiści robią to by ułatwić czytelność tekstu lub zapewnić spójność danych.
-
-## Jak to zrobić?
-
-Kod w Bashu, który zmienia małe litery na wielkie w podanym łańcuchu, wygląda tak:
-
+## Jak to zrobić:
 ```Bash
-string="tekst do zamiany"
-echo "${string^^}"
+# Prosty sposób na zamianę na wielkie litery
+text="witaj, świecie"
+capitalized_text=$(echo "$text" | tr '[:lower:]' '[:upper:]')
+echo $capitalized_text
+```
+Wyjście:
+```
+WITAJ, ŚWIECIE
 ```
 
-Gdy uruchomisz ten skrypt, na ekranie pojawi się:
+## Zanurzmy się głębiej
+Kapitalizacja stringów w Bashu to nic nowego. Już wcześniejsze wersje Unix i jego potomków oferowały narzędzia jak `tr`, `awk`, czy `sed`, do manipulacji tekstem. `tr` jest szybkie i proste, ale alternatywy jak `awk` pozwalają na skomplikowane przetwarzanie w skrypcie. Co więcej, w nowych wersjach Bash (4.0+) można użyć wbudowanych funkcji do manipulacji stringami, np. `${text^^}` by zamienić na wielkie litery, gdzie `text` to zmienna zawierająca stringa. To efektywniejsze, bo unikasz wywołania zewnętrznych komend.
 
+Alternatywnie:
 ```Bash
-TEKST DO ZAMIANY
+# Używanie wbudowanego mechanizmu Bash do kapitalizacji
+text="witaj, świecie"
+echo "${text^^}"
+```
+Wyjście jest takie samo:
+```
+WITAJ, ŚWIECIE
 ```
 
-## Dogłębna analiza
-
-1) Kontekst historyczny: Bash wprowadził możliwość zmiany liter w wersji 4.0, wydanej w 2009 roku.
-2) Alternatywy: Inne języki programowania, takie jak Python czy JavaScript, mają wbudowane metody służące do tego celu, np. `.toUpperCase()` w JavaScript i `.upper()` w Python.
-3) Szczegóły implementacji: Bash zamienia małe litery na wielkie, przechodząc przez każdy znak ciągu i sprawdzając, czy jest on literą. Jeśli jest literą, Bash zamienia ją na odpowiednik dużych liter.
-
-## Zobacz również
-
-Do dalszych źródeł związanych z tym tematem należą:
-
-- Dokumentacji Bash (obsługa łańcucha znaków): https://tldp.org/LDP/abs/html/string-manipulation.html
-- Poradnik o obsłudze liter wielkich i małych w Bashu: http://www.linuxtopia.org/online_books/scripting_guide/bash_string_manipulation.html
-- Wyjaśnienie, dlaczego i kiedy zmienić łańcuch na wielkie litery: https://unix.stackexchange.com/questions/605331/why-and-when-to-convert-string-to-uppercase
+## Zobacz także
+- Bash manual: [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
+- Advanced Bash-Scripting Guide: [https://tldp.org/LDP/abs/html/](https://tldp.org/LDP/abs/html/)
+- Ogólna dokumentacja GNU `tr`: [https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)

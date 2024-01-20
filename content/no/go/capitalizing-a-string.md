@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstav i en streng"
-html_title:           "Go: Stor bokstav i en streng"
-simple_title:         "Stor bokstav i en streng"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,11 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Kapitalisering av en streng innebærer å endre første bokstav i en streng til en stor bokstav. Programmerere gjør dette for å forbedre lesbarheten og for å skille mellom forskjellige ord som funksjonsnavn og variabler.
+## What & Why?
+I Go, å endre en streng til å ha stor bokstav betyr at vi gjør det første tegnet i strengen om til en stor bokstav og lar resten være uendret. Det gjør vi for å følge språklig korrekthet, som i titler, eller for å standardisere tekstdata før lagring og analyse.
 
-## Hvordan gjøre det:
-Her er en rask skisse over hvordan du kapitaliserer en streng i Go:
+## How to:
+Go har ingen innebygd metode for å kapitalisere strenger, men du kan bruke `strings` pakken sammen med noen enkle operasjoner. Eksemplet under viser hvordan:
 
 ```Go
 package main
@@ -22,45 +22,33 @@ package main
 import (
 	"fmt"
 	"strings"
+	"unicode"
 )
 
+func capitalize(s string) string {
+	if s == "" {
+		return ""
+	}
+	r := []rune(s)
+	return string(unicode.ToUpper(r[0])) + string(r[1:])
+}
+
 func main() {
-	str := "hei, verden!"
-	capStr := strings.Title(str)
-	fmt.Println(capStr)
+	fmt.Println(capitalize("hei, verden!")) // Output: Hei, verden!
+	fmt.Println(capitalize("go er gøy!"))    // Output: Go er gøy!
 }
 ```
-Når du kjører koden ovenfor, vil output være:
 
-```Go
-"Hei, Verden!"
-```
+## Deep Dive
+Å kapitalisere en streng er ikke alltid rett frem i Go fordi språket behandler strenger som en sekvens av bytes, ikke tegn. Det betyr at tegnsett som UTF-8, hvor noen tegn tar mer enn én byte, krever ekstra håndtering. Derfor bruker vi `rune` typen i funksjonen `capitalize` for å støtte multibyte tegn.
 
-## Et dypdykk 
-#### Historisk kontekst:
-Konseptet med strengkapitalisering har faktisk en ganske lang historie. Det stammer fra dager da datamaskiner var begrenset til tekstbaserte grensesnitt.
+Historisk sett, har programmeringsspråk ofte tilbudt string manipulasjonsfunksjoner som en del av standardbiblioteket. Go velger en mer minimalistisk tilnærming, hvor den grunnleggende streng typen er enkel, og ytterligere funksjoner leveres via pakker som `strings` og `unicode`.
 
-#### Alternativer:
-Go's innebygde `strings` pakke tilbyr flere metoder for å manipulere strenger, ikke bare `Title`. Du kan for eksempel bruke `ToUpper`, som vil gjøre alle bokstavene i strengen store, ikke bare den første.
+En alternativ måte å kapitalisere på ville vært ved bruk av `Title` funksjonen i `strings` pakken, men den konverterer alle ord i strengen, ikke bare det første, så for mange situasjoner er ikke `Title` det du trenger.
 
-```Go
-str := "hei, verden!"
-upperStr := strings.ToUpper(str)
-fmt.Println(upperStr)
-```
-Output vil være:
+Det viktigste å merke seg er at vår `capitalize` metode er enkel og håndterer bare det mest grunnleggende scenariet. I et virkelig use-case scenario kan du møte på strenger med komplekse regler rundt hva som bør være stor bokstav, som i akronymer eller faguttrykk.
 
-```Go
-"HEI, VERDEN!"
-```
-
-#### Implementasjonsdetaljer:
-`strings.Title` i Go bruker `unicode.ToTitle` funksjonen for å konvertere den første bokstaven i hvert ord til en tittelbokstav (som er identisk med en stor bokstav for de fleste språk)
-
-## Se også:
-For ytterligere lesing, ta en titt på følgende kilder:
-
-1. Go's offisielle dokumentasjon om strenger: https://golang.org/pkg/strings/
-2. Go's innebygde funksjon `ToUpper`: https://golang.org/pkg/strings/#ToUpper
-3. Go's innebygde funksjon `Title`: https://golang.org/pkg/strings/#Title
-4. Utforsk utfyllende innhold rundt strengmanipulasjon i Go på nettstedet GoByExample: https://gobyexample.com/string-functions.
+## See Also
+- Go `strings` pakke: https://pkg.go.dev/strings
+- Go `unicode` pakke: https://pkg.go.dev/unicode
+- Blogg om streng manipulasjon i Go: https://blog.golang.org/strings

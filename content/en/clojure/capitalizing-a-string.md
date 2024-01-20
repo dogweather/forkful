@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "Clojure recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,39 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Capitalizing a string means making the first letter uppercase and the rest lowercase. We do it to normalize data and improve readability, like turning 'alice' into 'Alice' for names.
 
-Capitalizing a string refers to the conversion of the first character of a string to uppercase. Programmers do this quite commonly for formatting purposes, for enhanced readability, and to ensure proper display of user or system data.
+## How to:
+In Clojure, there's no built-in function to directly capitalize strings. You roll your own with `clojure.string` library. Here's a quick way:
 
-## How To:
+```clojure
+(require '[clojure.string :as str])
 
-Here's a quick Clojure function to handle string capitalization:
+(defn capitalize [s]
+  (when s
+    (str/capitalize s)))
 
-```Clojure
-(defn capitalize-string [s] 
-  (if (empty? s)
-    ""
-    (str (clojure.string/upper-case (first s)) (subs s 1))))
+(capitalize "hello world") ; => "Hello world"
 ```
 
-Test run it to see the result:
+Sample output for `capitalize` function:
 
-```Clojure
-(capitalize-string "hello world!") ; results in: "Hello world!"
+```clojure
+(capitalize "clojure") ; => "Clojure"
+(capitalize "123clojure") ; => "123clojure"
+(capitalize "") ; => nil
+(capitalize nil) ; => nil
 ```
-
-There you go - that's string capitalizing!
 
 ## Deep Dive
+Clojure's standard library, `clojure.string`, prefers simplicity. Thus, no ready-made `capitalize` function like you'd find in other languages. Historically, Clojure leans on Java's String methods, which offer basic manipulation, but not `capitalize`. 
 
-In Clojure, capitalizing a string is pretty straightforward, though there exists no built-in function specifically for that task. However, the nature of the language with its fundamental operations on sequences allows us to have a way around. The standard sequence operations combined with the built-in `clojure.string/upper-case` function allows for an effective implementation.
+This lack pushes you towards either writing your own solution, like above, or leveraging external libraries. There's also `capitalize` from `clojure.contrib.string`, a historical separate contrib library before being deprecated and partly merged with clojure.string in later versions.
 
-Historically, capitalizing strings is a common operation in many systems ranging from relational databases to GUI forms. It's also useful to convert user input or filenames to a standardized format.
+The `str/capitalize` function's simplicity means it only concerns itself with the first character. For more nuanced capitalization, like title-case or handling international characters, you must write a custom solution or grab a Java library.
 
-There are different alternatives, for instance, we can use Java Interop to capitalize a string. However, idiomatic Clojure sticks to using sequences and its inbuilt functions where possible.
+Here's an alternate custom function that handles strings with multiple words:
 
-Implementation-wise, we combine Clojure's `first` to get the first character, `clojure.string/upper-case` to convert it to uppercase, and `subs` to get the rest of the string, finally stringing it all up together with `str`.
+```clojure
+(defn title-case [s]
+  (->> s
+       (str/split #"\s+")
+       (map str/capitalize)
+       (str/join " ")))
 
-## See Also:
+(title-case "the lord of the rings") ; => "The Lord Of The Rings"
+```
 
-- If you need more details about Clojure's string functions you can visit [Clojure.String API](https://clojuredocs.org/clojure.string)
-- For more information regarding Clojure's sequences, check out [Clojure - Sequences](https://clojure.org/reference/sequences)
+Again, internationalization (i18n) isn't covered here; handling Unicode correctly is a whole other beast, often requiring specialized libraries.
+
+## See Also
+- Clojure Strings API: https://clojure.github.io/clojure/clojure.string-api.html
+- Java String Documentation: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+- Clojure Contrib library (archived): https://github.com/clojure/clojure-contrib
+- `clojure.string` source code: https://github.com/clojure/clojure/blob/master/src/clj/clojure/string.clj

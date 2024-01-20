@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות גדולות"
-html_title:           "PowerShell: הפיכת מחרוזת לאותיות גדולות"
-simple_title:         "הפיכת מחרוזת לאותיות גדולות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,26 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-האפשרות להפוך את האות הראשונה בכל מילה של מחרוזת לאות גדולה נקראת "Capitalization" או הופעה של מילה. מתכנתים מצטרכים להשתמש בכלי זה מעת לעת, במקרים בהם הפורמט המוצג משנה את החוויה של המשתמש או משפיע על תנהג הדינמיקה של הקוד. 
+## What & Why? (מה ולמה?)
+קידוד אותיות בגדול הוא ההפיכה של מחרוזת לאותיות ראשיות גדולות. תכניתנים עושים את זה לנורמליזציה של טקסט, לדוגמה, כשמבצעים השוואות או כשכותבים בתבניות עקביות למשתמש.
 
-## כיצד:
-הפונקציה "ToTitleCase" ב-PowerShell מביאה מענה לכך:
-```PowerShell 
-$TextInfo = (Get-Host).CurrentCulture.TextInfo
-$MyString = "יום עבודה נוסף"
-$CapitalizedString = $TextInfo.ToTitleCase($MyString)
-Write-Host $CapitalizedString
-```
-הקוד יציג:
+## How to (איך לעשות:)
 ```PowerShell
-"יום עבודה נוסף"
+# Capitalizing a single word
+$word = "shalom"
+$capitalizedWord = $word.Substring(0,1).ToUpper() + $word.Substring(1).ToLower()
+$capitalizedWord # Outputs: Shalom
+
+# Capitalizing each word in a string
+$sentence = "baruch haba l'yerushalayim"
+$capitalizedSentence = $sentence -split ' ' | % { $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower() } -join ' '
+$capitalizedSentence # Outputs: Baruch Haba L'Yerushalayim
 ```
 
-## צלילה עמוקה:
-מרססס לחליפה, יצירת מחרוזות באות גדולה היא אסטרטגיה נפוצה שנמצאה בראש ובראשונה בשפות תכנות שונות. ToTitleCase הוא מקרה מיוחד של מבחן השאלה הכללי שנפוץ בראיונות עבודה על משתנים ומחרוזות. שימוש ב-ToTitleCase יפרוס יותר טוב בהתאמה לתרבויות שונות ולכן נמנע מלגרום לשגיאות חפיפה של אותיות גדולות במקומות בהם הן אינן נדרשות. אולם, על מגבלת הפונקציה של hc הערה: הוא נותן הכנה אקראית לאותיות שאינן נכונות ולכן עשוי להחזיר תוצאות בלתי מקופלות. 
+## Deep Dive (צלילה עמוקה)
+בעבר, פונקציונליות להפיכת טקסט לאותיות ראשיות גדולות הייתה חלק ממערכות עיבוד טקסט ומערכות דואר אלקטרוני בשביל טפלוגרפיה נכונה. ב-PowerShell, אנחנו עושים זאת עם שילוב של מתודות המחלקה String של .NET. אלטרנטיבות כוללות שימוש ב cmdlet `ToUpper()` להפוך את המחרוזת שלמה לאותיות גדולות או cmdlet `ToLower()` לאותיות קטנות, ואז עיבוד נוסף להפיכה של האותיות הראשונות בכל מילה לגדולה. פעולה זו אינה כלולה ב-PowerShell באופן ישיר אך תמיד ניתן לבנות פונקציה מותאמת אישית.
 
-## ראה גם:
-קראו עוד על שימושים אחרים של עיבוד מחרוזות ב- PowerShell:
- - Capitalize First Letter: https://www.cyberciti.biz/faq/unix-linux-bash-uppercase-string-shellscript/
- - Capitalization and String Formatting: https://ss64.com/ps/syntax-f-operator.html
+## See Also (ראה גם)
+- [About Automatic Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables) - מידע על משתנים אוטומטיים ב-PowerShell.
+- [.NET String Class](https://docs.microsoft.com/en-us/dotnet/api/system.string) - מידע מעמיק על המחלקה String ב-.NET.

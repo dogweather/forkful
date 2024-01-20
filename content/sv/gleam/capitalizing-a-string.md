@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "Gleam: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,35 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kapitalisera en string innebär att omvandla alla bokstäver i strängen till deras motsvarande versaler. Programmerare gör detta för att förbättra läsbarheten och för att skilja viktig text från mindre betydande information.
+Att kapitalisera en sträng innebär att omvandla första bokstaven i varje ord till versal (stor bokstav), vilket ofta används för att framhäva titlar eller rubriker. Programmerare gör detta för att följa stilguider eller förbättra textens läsbarhet.
 
-## Så här gör du:
-Här är hur du kapitaliserar en sträng i Gleam:
+## How to:
+Kapitalisera en sträng i Gleam är rakt på sak. Använd funktionen `string.capitalize` på din sträng. Här är ett enkelt exempel:
 
-```Gleam
+```gleam
 import gleam/string
 
-fn capitalise_string(given_string: String) -> String {
-  string.capitalise(given_string)
+fn main() {
+  let greeting = "hej världen!"
+  let capitalized_greeting = string.capitalize(greeting)
+  capitalized_greeting
 }
-
-let capitalised_string = capitalise_string("Hej, världen!")
-```
-När du kör koden blir output:
-
-```Gleam
-"Hej, Världen!"
 ```
 
-## Djupdykning
-Historiskt sett har text som skrivits i versaler använts för att signalera betydelse eller vikt. Det gäller också i kod: det kan hjälpa oss att lätt identifiera titlar, rubriker eller annan viktig text.
+Kört detta skulle ge oss:
+```
+"Hej världen!"
+```
 
-I Gleam, kan `string.capitalize/1` användas för att göra om en sträng till en sträng med enbart versaler. Denna funktion är enklare och mindre ansträngande än att manuellt hantera varje tecken ett och ett.
+## Deep Dive
+I historiskt perspektiv har string-kapitalisering funnits så länge som vi har haft behov av att behandla text i datorer. I Gleam och andra funktionella programmeringsspråk är string-kapitalisering ofta inbyggd i standardbiblioteket. 
 
-Detta är inte den enda metoden för att lösa uppgiften. Nackdelen med denna metod är att den inte hanterar accenterad text korrekt. För dessa fall kanske du vill använda en anpassad kapitaliseringsfunktion istället.
+Det finns olika sätt att kapitalisera en sträng. Förutom `string.capitalize`, som kapitaliserar endast det första ordet, kan man använda andra funktioner för att exempelvis göra alla bokstäver till versaler (uppercasing) eller gemen (lowercasing). Implementationen av `string.capitalize` i Gleam hanterar unicode korrekt, vilket är viktigt eftersom olika språk har olika regler för kapitalisering.
 
-Kapitalisering utförs med UTF-8 teckenkodning, som ger stöd för nästan alla skrivna språk. Det innebär att den fungerar bra med internationell text.
-
-## Se även
-Se Gleams officiella dokumentation för mer information om [`string.capitalise`](https://hexdocs.pm/gleam_stdlib/gleam/string/#capitalise).
-Kolla in denna artikel för att lära dig mer om [UTF-8](https://en.wikipedia.org/wiki/UTF-8).
+## See Also
+- En artikel om Unicode och behandling av strängar: [https://unicode.org/reports/tr15/](https://unicode.org/reports/tr15/)
+- Stilguider för programmerare: [https://google.github.io/styleguide/javaguide.html](https://google.github.io/styleguide/javaguide.html)

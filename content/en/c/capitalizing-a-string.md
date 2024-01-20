@@ -11,51 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Capitalizing a string refers to converting its first letter to uppercase. Programmers often use it for formatting, such as when a sentence starts with that string or to follow title case conventions in UI display.
+Capitalizing a string means turning all lowercase letters to uppercase. Programmers often capitalize strings for consistency, display formatting, or as part of data normalization processes.
 
 ## How to:
+The C language doesn’t have a built-in function to capitalize strings. You'll typically loop through each character, capitalizing as you go:
 
-Here are some code snippets to capitalize a string:
+```c
+#include <stdio.h>
+#include <ctype.h>
 
-```C
-#include <stdio.h> 
-#include <ctype.h> 
+void capitalizeString(char *str) {
+    while (*str) {
+        *str = toupper((unsigned char) *str);
+        str++;
+    }
+}
 
-void capitalize(char* str) 
-{ 
-   // If the first char in the string is lower case  
-    if(islower(str[0])) 
-    { 
-        // change it to upper case 
-        str[0] = toupper(str[0]); 
-    } 
-
-    printf("Capitalized string: %s", str); 
-} 
-
-int main() 
-{ 
-   char str[] = "hello world!";
-   capitalize(str);
-   return 0; 
-} 
+int main() {
+    char myString[] = "hello world!";
+    capitalizeString(myString);
+    printf("%s\n", myString);  // Output: HELLO WORLD!
+    return 0;
+}
 ```
 
-This snippet will output:
+## Deep Dive
+In the early days of computing, operations on strings were basic and manual. C, developed in the early 1970s, reflects this with simple string manipulation functions in its standard library. The function `toupper` is designed to convert a single character to uppercase. It’s part of `<ctype.h>`, a header containing functions to test and map characters.
 
-```C
-Capitalized string: Hello world!
-```
+There are alternatives to looping through a string to capitalize it. Libraries like `libCStringUtils` offer more complex string operations, including capitalization. Some developers also write their own functions with features like local sensitivity.
 
-## Deep Dive:
+Internally, ASCII characters have numeric equivalents, which differ by 32 between uppercase and lowercase. The `toupper` function uses this difference to convert characters. However, relying on ASCII values directly isn't advisable due to readability and localization issues.
 
-- Historical context: Since the inception of C programming, string manipulation, including capitalization, has been a common practice. Early use cases stem from the need to standardize input data, enhance readability, and follow linguistic and lexical rules. 
-- Alternatives: Apart from the function used above (`toupper`), we could use other standard library functions like `strlwr` and `strupr` for full lower and upper case conversion respectively. Note that these aren't part of the standard C library but are often provided by compilers.
-- Implementation details: `toupper` in the code snippet converts a single character to upper case if it is in lower case; it leaves the character unchanged if it's either in upper case already or it's not an alphabetic character. This function deals with single characters, not strings, the reason why it's applied to the first character of the string only.
-
-## See Also:
-
-- [More on String Manipulation in C](http://www.learn-c.org/en/Strings)
-- [C Standard Library ctype.h](https://www.cplusplus.com/reference/cctype/)
-- [C Function Implementation Details](https://en.wikipedia.org/wiki/C_standard_library)
+## See Also
+- C Standard Library documentation: https://en.cppreference.com/w/c/header
+- ASCII Table and Description: http://www.asciitable.com/
+- GNU Libc manual: https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html

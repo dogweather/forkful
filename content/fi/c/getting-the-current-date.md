@@ -39,6 +39,5 @@ Alkujaan nykyisen päivämäärän saamiseen on käytetty `time()`-funktiota. Se
 Tässä esitellyssä menetelmässä käytetään `time()`-funktiota, joka palauttaa ajan sekunteina sitten UNIX Epochin (1. tammikuuta 1970, UTC). Tämä arvo tallennetaan `time_t`-tyyppiseen muuttujaan. Sitten `ctime()`-funktiota käytetään muuntamaan tämä sekuntiaika merkkijonoksi.
 
 ## Katso myös
-- [Linuxin `time()`-manuaali](https://man7.org/linux/man-pages/man2/time.2.html)
 - [cplusplus.com `ctime` library reference](http://www.cplusplus.com/reference/ctime/)
 - [Boost.Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)

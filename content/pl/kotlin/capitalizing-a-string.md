@@ -1,6 +1,6 @@
 ---
 title:                "Zamiana liter na wielkie w ciągu znaków"
-html_title:           "Kotlin: Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
 simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,49 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+Capitalizing a string means changing the first letter of each word to uppercase. Programmers do it to ensure names, titles, and other important elements are formatted correctly and are easily readable.
+ 
+## How to:
+In Kotlin, you can capitalize a string using `replaceFirstChar` and `uppercase`.
 
-Zamiana tekstu na duże litery to proces przekształcania wszystkich liter małych w stringu na duże. Programiści robią to aby ułatwić odczyt i sortowanie tekstów, czy też do normalizacji danych.
-
-## Jak to zrobić:
-
-W Kotlinie, operację tę wykonujemy za pomocą funkcji `toUpperCase()`. 
-
-```kotlin
+```Kotlin
 fun main() {
-    val s = "witaj, świecie"
-    val result = s.toUpperCase()
+    val lowercaseString = "kotlin jest fajny"
+    val capitalizedString = lowercaseString.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
 
-    println(result) // Wypisuje: WITAJ, ŚWIECIE
+    println(capitalizedString) // Output: Kotlin jest fajny
 }
 ```
 
-Prosty i skuteczny sposób, prawda?
+## Deep Dive
+Before Kotlin 1.5, developers commonly used `capitalize()` for this purpose. However, it was deprecated because it only worked with the English alphabet correctly. Now, `replaceFirstChar` combined with `titlecase()` or `uppercase` covers more languages respecting Unicode standards.
 
-## Pogłębiamy temat
+An alternative approach would use the `split` function to create a list, capitalize each element, and then `joinToString`:
 
-1. Kontekst historyczny: Przeważnie w starszych językach programowania istniały podobne funkcje. Często nazywały się `uppercase()` lub `toUpper()`.
-2. Alternatywy: Jeśli chcesz tylko kapitalizować pierwszą literę w stringu, użyj `capitalize()`. W przypadku pierwszej litery każdego słowa - `capitalizeEachWord()`.
-3. Szczegóły Implementacji: `toUpperCase()` w Kotlinie korzysta z metody `Character.toUpperCase(int codePoint)` której działanie jest zgodne z Unicode Case Mapping.
+```Kotlin
+fun String.capitalizeWords(): String =
+    split(" ").joinToString(" ") { it.replaceFirstChar { char -> char.uppercase() } }
 
-```kotlin
 fun main() {
-    val s = "witaj, świecie"
-    val firstLetterCap = s.capitalize()
-    val eachWordCap = s.split(" ").joinToString(" ") { it.capitalize() }
+    val title = "pan tadeusz"
+    val capitalizedTitle = title.capitalizeWords()
 
-    println(firstLetterCap) // Wypisuje: Witaj, świecie
-    println(eachWordCap) // Wypisuje: Witaj, Świecie
+    println(capitalizedTitle) // Output: Pan Tadeusz
 }
 ```
 
-## Zobacz również 
+This method capitalizes the first letter of each word, not just the first letter of the string.
 
-Jest dużo źródeł na temat operacji na stringach w Kotlinie. 
-
-1. [Dokumentacja Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
-2. [Unicode Case Mapping](https://unicode.org/reports/tr21/)
-3. [Dokumentacja Kotlin na temat `capitalize()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-4. [Dokumentacja Kotlin na temat `toUpperCase()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
-
-Pamiętaj! Znajomość operacji na stringach jest kluczowa dla każdego programisty. Sprawdź powyższe linki!
+## See Also
+- Kotlin Standard Library Documentation: https://kotlinlang.org/api/latest/jvm/stdlib/
+- Unicode Standard: http://www.unicode.org/standard/standard.html
+- Practical applications of string capitalization: https://developer.android.com/guide/topics/resources/string-resource#FormattingAndStyling

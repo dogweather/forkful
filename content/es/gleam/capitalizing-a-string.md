@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "Gleam: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por Qué?
+## What & Why?
+Capitalizar una cadena significa convertir la primera letra de la cadena en mayúscula. Los programadores lo hacen para asegurar la consistencia en la presentación de datos o para cumplir con normas estilísticas específicas.
 
-Capitalizar una cadena significa convertir la primera letra de esta a mayúscula. Los programadores lo hacen por razones estéticas o para resaltar ciertas palabras en un texto.
+## How to:
+En Gleam, podrías hacerlo utilizando una función que manipule los caracteres de la cadena. Aquí tienes un ejemplo sencillo:
 
-## ¿Cómo se hace?
-
-En Gleam, capitalizamos una cadena utilizando la función `to_title` del módulo `string`.
- 
 ```gleam
-let mensaje = "hola mundo"
-let mensajeTitulo = string.to_title(mensaje)
+import gleam/string
+
+pub fn capitalize(str: String) -> String {
+  string.capitalize(str)
+}
+
+fn main() {
+  let my_string = "hola mundo"
+  let capitalized = capitalize(my_string)
+  assert capitalized == "Hola mundo"
+}
 ```
 
-El código anterior convertirá "hola mundo" en "Hola Mundo".
+Salida:
+```
+"Hola mundo"
+```
 
-## Vamos a profundizar 
+## Deep Dive
+En otros lenguajes de programación, capitalizar cadenas puede ser más complicado debido a su manejo de caracteres Unicode. Sin embargo, en Gleam, el módulo `string` proporciona una función `capitalize` que facilita la tarea.
 
-1. **Contexto Histórico**: Las funciones para capitalizar cadenas tienen raíces en la tipografía y en la necesidad de destacar ciertos elementos textuales en documentos impresos. Hoy en día, en programación, se utilizan con frecuencia en interfaces de usuario, reportes, etc.
+Históricamente, Gleam está inspirado en lenguajes como Erlang y Rust, y al igual que sus precursores, se ha diseñado para ser robusto y concurrente. La capitalización de cadenas es una operación común en la mayoría de los lenguajes, y, aunque Gleam es relativamente nuevo, adopta esta funcionalidad comúnmente utilizada.
 
-2. **Alternativas**: Además de `to_title`, Gleam ofrece otras funciones para trabajar con mayúsculas y minúsculas en cadenas, como `to_upper` y `to_lower`, que cambian todas las letras de la cadena a mayúsculas o minúsculas respectivamente. 
+Una alternativa al método `string.capitalize` sería escribir una implementación personalizada donde se pueda controlar más aspectos específicos, como el tratamiento de conjuntos especiales de caracteres o reglas de localización.
 
-3. **Detalles de Implementación**: La función `to_title` de Gleam recorre la cadena de caracteres y, cada vez que encuentra un carácter de espacio seguido de una letra, convierte esa letra a mayúscula.
+En cuanto a detalles de implementación, el soporte de Gleam para Unicode en la capitalización de cadenas hace que sea más seguro y adecuado para un conjunto diverso de aplicaciones. Por debajo, utiliza la potencia de la BEAM (la máquina virtual de Erlang) para el manejo eficiente de caracteres y cadenas.
 
-## Ver También
-
-Para obtener más información sobre la manipulación de cadenas en Gleam, te recomendamos visitar:
-
-2. [Capitalization in different programming languages](https://en.wikipedia.org/wiki/Capitalization#Computing) for a broad view.
+## See Also
+- [Unicode Standard](http://www.unicode.org/versions/latest/)
+- [Erlang's String Module](http://erlang.org/doc/man/string.html)

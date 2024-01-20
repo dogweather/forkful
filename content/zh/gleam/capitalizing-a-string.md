@@ -1,7 +1,7 @@
 ---
-title:                "将字符串大写化"
-html_title:           "Gleam: 将字符串大写化"
-simple_title:         "将字符串大写化"
+title:                "字符串首字母大写"
+html_title:           "Arduino: 字符串首字母大写"
+simple_title:         "字符串首字母大写"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,38 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
+## What & Why? (是什么以及为什么？)
+首先，将字符串大写就是将所有字符转成其对应的大写形式。程序员这么做是为了统一数据格式，或者在用户界面上强调某些文本。
 
-大写字符串是指将字符串中的所有小写字母转为大写字母。编程开发者经常使用它来格式化输出或对比字符串，因为它能忽略字符串大小写的区分。
+## How to (如何操作)
+```Gleam
+import gleam/string
 
-## 如何操作：
+pub fn main() {
+  let greeting = "hello, world!"
+  let shout = string.uppercase(greeting)
 
-在Gleam中，你可以借助`to_upper`方法将字符串大写。下面是很直接的一个例子：
-
-```gleam
-import gleam/string.{from_utf8, to_utf8, to_upper}
-
-fn main() {
-  let str = "hello, gleam!"
-  let capitalized = str |> to_utf8 |> to_upper |> from_utf8
-  case capitalized {
-    Ok(value) -> value
-    Error(_) -> "Invalid string"
-  }
+  shout
 }
 ```
+输出：
+```
+"HELLO, WORLD!"
+```
 
-输出会是：`"HELLO, GLEAM!"`
+## Deep Dive (深入探讨)
+字符串大写转换并不是一个新鲜事，这个功能在编程里面已经使用很多年了。Gleam中使用`string.uppercase`函数是最直接的方法。替代方案依赖于具体的编程环境，如在JavaScript中可以使用`toUpperCase()`。实现字符串大写的细节可能依赖于Unicode标准，因为处理不同语言中的特殊字符时需要特别注意。
 
-## 深入探讨
-
-在大多数编程语言历史中，字符串的大写都是首选的格式化方法，并用于各种任务，如排序，过滤，和搜索等。
-
-也许你可能会想，有其他方法可以大写字符串么？答案是肯定的。你可以手动遍历整个字符串，将每个小写字母转换为大写，但这显然不是最有效的办法。
-
-`to_upper`函数的实现就是Gleam为我们提供了一种内置的方法来方便处理这一操作。它能通过二进制的形式处理字符串，并利用Erlang的字符串处理功能将其转换为大写。
-
-## 另请参阅
-
-1. Gleam文档, [Gleam string module](https://hexdocs.pm/gleam_stdlib/gleam/string.html#to_upper)
-2. Erlang的大写字符串，[Erlang string to upper](http://erlang.org/doc/man/string.html#to_upper-1)
+## See Also (参考链接)
+- Unicode标准: [Unicode's official website](http://www.unicode.org/)

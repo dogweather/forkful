@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana liter w ciągu na wielkie"
-html_title:           "PowerShell: Zamiana liter w ciągu na wielkie"
-simple_title:         "Zamiana liter w ciągu na wielkie"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,54 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+Capitalizing a string means changing the first letter of each word to uppercase. Programmers do this to format text data consistently or for aesthetic reasons in user interfaces.
 
-Zamiana stringów na wielkie litery oznacza, że zamieniamy wszystkie małe litery znaków w ciągu na duże litery. Programiści często robią to, żeby zachować spójność danych wejściowych lub ułatwić porównywanie stringów.
-
-## Jak to zrobić:
-
-W PowerShell, możesz to zrobić używając metody `.ToUpper()` na stringu. 
+## How to:
+PowerShell ma wbudowany sposób na zamianę stringów na formę z wielkimi literami. Użyj `ToTitleCase` z `TextInfo`:
 
 ```PowerShell
-$string = "cześć, jak się masz?"
-$capitalizedString = $string.ToUpper()
-
-Write-Output $capitalizedString
+$text = "oto przykład tekstu"
+$culture = [System.Globalization.CultureInfo]::CurrentCulture
+$textInfo = $culture.TextInfo
+$titleCasedText = $textInfo.ToTitleCase($text)
+$titleCasedText
+```
+Output:
+```
+Oto Przykład Tekstu
 ```
 
-Wynik:
+Możesz też użyć metody `.ToUpper()` i `.ToLower()` do manipulacji całością:
 
 ```PowerShell
-CZEŚĆ, JAK SIĘ MASZ?
+$lowerText = "oto inny przykład"
+$upperText = $lowerText.ToUpper()
+$upperText
+```
+Output:
+```
+OTO INNY PRZYKŁAD
 ```
 
-## Głębsze spojrzenie
+## Deep Dive
+Capitalizing strings nie jest nowością. W językach programowania takich jak C# czy JavaScript, operacje na capitalization są standardem. PowerShell korzysta z .NET, więc możemy używać tych samych metod.
 
-Historycznie, konwersja stringów na wielkie litery była używana, aby ułatwić porównywanie stringów, ponieważ `ABC` jest traktowane tak samo jak `abc` gdy przejdzie przez funkcję `.ToUpper()`. 
-
-W PowerShell, inna metoda do porównywania stringów bez sensu na wielkość liter to używanie `-ieq` operatora. Przykład:
+Inną opcją jest manualne przejście przez string i zmiana liter. Jest to bardziej skomplikowane i mniej wydajne, ale pokazuje, jak działa proces:
 
 ```PowerShell
-$string1 = "cześć"
-$string2 = "CZEŚĆ"
-
-if ($string1 -ieq $string2) {
-    Write-Output "Stringi są takie same"
-} else {
-    Write-Output "Stringi są różne"
+function Convert-ToTitleCase($inputString) {
+    $words = $inputString -split ' '
+    $titleCasedWords = $words | ForEach-Object { $_.Substring(0,1).ToUpper() + $_.Substring(1).ToLower() }
+    return $titleCasedWords -join ' '
 }
+
+Convert-ToTitleCase "kolejny przykład do pokazania"
 ```
 
-Wynik:
+Alternatywnie, istnieją gotowe narzędzia i biblioteki pomocnicze, takie jak Humanizer, które można zintegrować z PowerShell, aby ułatwić różne manipulacje stringami.
 
-```PowerShell
-Stringi są takie same
-```
+Gdy mowa o implementacji, ważne jest, aby pamiętać o różnych konwencjach pisowni związanych z językiem, kulturą czy specjalnymi przypadkami, jak skróty czy akronimy.
 
-Chociaż `.ToUpper()` jest proste i łatwe do zrozumienia, operator `-ieq` jest bardziej wydajny pod względem zasobów, jeśli tylko chcemy porównać stringi.
-
-## Zobacz też
-
-[A Guide to Strings in PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-data-basics-part-1/)
-[String Methods in PowerShell](https://www.urtech.ca/2017/08/solved-powershell-string-manipulation/)
-[String Comparison in PowerShell](https://ss64.com/ps/syntax-compare.html)
+## See Also
+- Microsoft Documentation on `ToTitleCase`: [Link](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
+- Humanizer Library: [Link](https://github.com/Humanizr/Humanizer)

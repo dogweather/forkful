@@ -1,6 +1,6 @@
 ---
 title:                "Att göra en sträng versal"
-html_title:           "C: Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
 simple_title:         "Att göra en sträng versal"
 programming_language: "C"
 category:             "C"
@@ -11,47 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att skriva med versaler innebär att omvandla alla bokstäver i en sträng till stora bokstäver. Programmerare gör detta för tydlighet, för att framhäva text eller följa dataformatkrav.
 
-Att göra om en textsträng till versaler (eller 'stora bokstäver') innebär att varje bokstav i strängen byts ut till dess motsvarighet i versaler. Programmerare gör det ofta för att standardisera textdata för jämförelser eller för att förbättra läsbarheten.
+## Hur man gör:
+För att omvandla en sträng till versaler i C kan du använda standardbiblioteksfunktionerna. Här är ett enkelt exempel:
 
-## Så här gör du:
-
-Här är ett enkelt exempel på hur du kan använda C-programmeringsspråket för att omvandla en sträng till versaler.
-
-```C
-#include <ctype.h>
+```c
 #include <stdio.h>
+#include <ctype.h>
 
-void skriv_ut_i_versaler(char str[]) {
-    for(int i = 0; str[i]; i++){
-        putchar(toupper(str[i]));
+void capitalizeString(char *str) {
+    while(*str) {
+        *str = toupper((unsigned char) *str);
+        str++;
     }
-    printf("\n");
 }
 
-int main(){
-    char mening[] = "hej, världen!";
-    printf("Ursprungliga meningen: %s\n", mening);
-    printf("Meningen i versaler: ");
-    skriv_ut_i_versaler(mening);
+int main() {
+    char myString[] = "hej världen!";
+    capitalizeString(myString);
+    printf("Capitalized: %s\n", myString);
+    // Output: Capitalized: HEJ VÄRLDEN!
     return 0;
 }
 ```
-När du kör koden ovan ska den producera följande resultat:
 
-```
-Ursprungliga meningen: hej, världen!
-Meningen i versaler: HEJ, VÄRLDEN!
-```
 ## Djupdykning
+Att skriva med versaler är inget nytt inom programmering. Historiskt sett har det använts i många sammanhang, från att hantera assemblerinstruktioner till att formatera utskrifter. Det finns alternativ till `toupper` som `transform` i C++ STL om du behöver mer flexibilitet.
 
-Att omvandla en sträng till versaler har en lång historia i programmering, speciellt i applikationer där textjämförelser är nödvändiga och där textdata inte alltid anges med samma bokstavsstorlek.
+Implementeringsdetaljer som är viktiga att notera:
 
-När det gäller alternativ till `toupper` funktionen, finns det ingen inbyggd funktion för att omvandla hela strängar till versaler i C. Men man kan byta ut `toupper` med en egen funktion om behovet uppstår.
 
-Funktionen för att omvandla en sträng till versaler i detalj: först går vi igenom varje tecken i strängen med en `for`-loop. Sedan använder vi `toupper`-funktionen som omvandlar det nuvarande tecknet till versaler om det är en liten bokstav, och gör inget om det redan är en stor bokstav eller något annat tecken (som kommatecken, punkter, etc). Slutligen skriver vi ut den omvandlade strängen med `putchar`.
+1. `toupper` fungerar per tecken.
+2. Du måste casta tecknet till `unsigned char` för att undvika undefined behavior på tecken med negativa värden.
+3. Glöm inte att inkludera `ctype.h` för `toupper`.
+4. Var försiktig med teckenkodningar som UTF-8; standard `toupper` kanske inte fungerar som förväntat med icke-ASCII-tecken.
 
-## Se också
+Det finns bibliotek som stödjer bokstavsomvandlingar för olika språk och teckenkodningar om du behöver stöd för internationella teckenuppsättningar.
 
-- [toupper() funktion i C på tutorialspoint.com](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
-- [Teckensträngar i C på programiz.com](https://www.programiz.com/c-programming/c-strings)
+## Se även
+- C Standard Library documentation: https://en.cppreference.com/w/c/header/ctype.h
+- Utförlig diskussion om teckenkodningar: https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/
+- Alternativ till `toupper` med C++ `transform`: https://en.cppreference.com/w/cpp/algorithm/transform

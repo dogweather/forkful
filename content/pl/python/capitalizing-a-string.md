@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana tekstu na wielkie litery"
-html_title:           "Python: Zamiana tekstu na wielkie litery"
-simple_title:         "Zamiana tekstu na wielkie litery"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Arduino: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+"Co to jest i dlaczego?"
 
-Za dużymi literami w programowaniu rozumiemy proces zamiany małych liter na duże w napisie. Programiści korzystają z tej funkcji, głównie do ułatwienia odczytywania tekstu lub wprowadzenia standardów programistycznych.
+Kapitalizacja to proces zmiany pierwszej litery wyrazu na dużą. Programiści używają kapitalizacji, by poprawić czytelność tekstu lub wyznaczyć standard formatowania, np. w nazwach tytułów czy własnych.
 
-## Jak to zrobić:
+## How to:
+"Jak to zrobić:"
 
-Oto jak to zrobić w Pythonie:
-```Python
-# Przykład 1: Capitalize() funkcja
-napis = 'witaj, świecie'
-print(napis.capitalize())
+```python
+# Kapitalizacja pojedynczego słowa
+word = "python"
+capitalized_word = word.capitalize()
+print(capitalized_word) # Wyjście: Python
 
-# Przykład 2: Title() funkcja
-napis = 'witaj, świecie'
-print(napis.title())
+# Kapitalizacja każdego wyrazu w stringu
+title = "przykład kapitalizacji tytułu"
+capitalized_title = title.title()
+print(capitalized_title) # Wyjście: Przykład Kapitalizacji Tytułu
 ```
 
-Pierwszy kawałek kodu zwróci: 'Witaj, świecie'. Natomiast drugi: 'Witaj, Świecie'.
+## Deep Dive
+"Dogłębna analiza"
 
-## Deep Dive:
+Kapitalizacja w informatyce nie zawsze była standardem, ale stała się popularna wraz z potrzebą lepszego dostosowywania tekstu dla użytkownika. Inne metody to np. `upper()` (wszystkie litery duże) czy `lower()` (wszystkie litery małe). Implementacja kapitalizacji zależy od języka programowania i użytego zestawu znaków (np. ASCII, Unicode). Python, korzystając z Unicode, pozwala na kapitalizację znaków z różnych alfabetów, nie tylko łacińskiego.
 
-Zastosowanie powyższych funkcji ma swoje genezy w starszych językach programowania, takich jak C, które nie miały wbudowanych funkcji do tej zmiany. Python dostarcza wiele ułatwień typu `capitalize()` i `title()`, które zwiększają wydajność i czytelność kodu.
+## See Also
+"Zobacz także"
 
-Alternatywą jest używanie metody `upper()`, ale stosuje ona kapitalizację do całego ciągu, co nie zawsze może być pożądane.
-
-Szczegóły implementacji zależą od specyficznej implementacji Pythona. Ale na ogół polega to na iteracji przez ciąg i zamianie każdego znaku na jego równoważnik wielką literą.
-
-## Zobacz też:
-
-Dla dalszej lektury i nauki, sprawdź te zasoby:
-
-1. [Python String capitalize()](https://www.programiz.com/python-programming/methods/string/capitalize)
-2. [Python String title()](https://www.w3schools.com/python/ref_string_title.asp)
+- Dokumentacja Pythona o metodach stringów: https://docs.python.org/3/library/stdtypes.html#string-methods
+- Unicode Standard: https://www.unicode.org/standard/standard.html
+- PEP 8 – Style Guide for Python Code, który opisuje konwencje nazewnictwa: https://www.python.org/dev/peps/pep-0008/

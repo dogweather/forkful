@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon kirjainten muuttaminen isoiksi"
-html_title:           "TypeScript: Merkkijonon kirjainten muuttaminen isoiksi"
-simple_title:         "Merkkijonon kirjainten muuttaminen isoiksi"
+title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+html_title:           "Arduino: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,34 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+"Capitalizing a String" tarkoittaa tekstin aloittamista isolla alkukirjaimella. Ohjelmoijat käyttävät sitä luodakseen johdonmukaisen ulkoasun käyttöliittymiin tai muotoillakseen dataa käyttäjäystävällisesti.
 
-Merkkijonon isoalkukirjoituksella tarkoitetaan sitä, että muutetaan merkkijonon ensimmäinen kirjain isoksi. Ohjelmoijat tekevät tämän usein, kun halutaan parantaa käyttäjäkokemusta tai tehdä tekstistä helpommin luettavaa. 
-
-## Näin se tehdään:
-
+## How to:
 ```TypeScript
-function teeIsoalkukirjaiminen(merkkijono: string): string {
-    return merkkijono.charAt(0).toUpperCase() + merkkijono.slice(1);
+function capitalizeFirstLetter(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-console.log(teeIsoalkukirjaiminen('hei maailma')); // Tulostaa: 'Hei maailma'
+console.log(capitalizeFirstLetter('moi kaikki')); // Moi kaikki
+console.log(capitalizeFirstLetter('typescript on hauska')); // Typescript on hauska
 ```
-Toiminnon takana on se, että otamme merkkijonon ensimmäisen kirjaimen, muutamme sen isoksi ja sitten liitämme lopun merkkijonon.
 
-## Syvempi tarkastelu
+## Deep Dive
+Alkukirjainten suurentaminen on peräisin painotuotteista, jossa tärkeät sanat alkavat usein isolla alkukirjaimella. Vaihtoehtoina on käyttää kirjastoja, kuten Lodash, mutta perusmetodiikoista riittää usein. TypeScriptissä, kuten JavaScriptissä, tämä toteutetaan yleensä yhdistämällä `toUpperCase()`-metodia ensimmäiseen kirjaimeen ja `slice()`-metodia loppustringiin.
 
-Isoalkukirjoituksen historia ulottuu aina kirjoituksen alkuaikoihin asti, ja sen tarkoitus on ollut tehdä tekstistä selkeää ja ymmärrettävää. TypeScriptissä ei ole sisäänrakennettua funktionaalisuutta merkkijonon ensimmäisen kirjaimen muuttamiseksi isoksi, joten yleisesti käytetty tapa on yllä kuvattu.
-
-Vaihtoehtoina voitaisiin käyttää kirjastoa, kuten Lodash, mutta useimmissa tapauksissa yksinkertainen funktio toimii yhtä hyvin. Tämän tyyppinen funktio ei vaadi muistia tai laskentatehoa merkittävästi, joten sen toteuttaminen itse on järkevää.
-
-Toteutuksessa yksityiskohta on, että `charAt(0).toUpperCase()` muuttaa ensimmäisen kirjaimen isoksi, mutta mikäli merkkijono alkaa ei-kirjaimellisella merkillä, tämä merkki jätetään siihen sellaisenaan. `slice(1)` ottaa lopun merkkijonosta alkuperäisessä muodossa.
-
-## Katso myös
-
-Lisätietoja ja syventävää materiaalia:
-
-- [MDN web docs, CharAt](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [MDN web docs, Slice](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [MDN web docs, toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [Lodash](https://lodash.com/docs/)
+## See Also
+- MDN Web Docs: String.charAt() - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
+- String.prototype.toUpperCase() - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+- Lodash capitalize - https://lodash.com/docs/#capitalize

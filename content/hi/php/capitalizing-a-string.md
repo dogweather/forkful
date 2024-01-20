@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज करना"
-html_title:           "PHP: स्ट्रिंग को कैपिटलाइज करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-स्ट्रिंग को कैपिटलाइज करना मतलब होता है उसके हर शब्द के पहले अक्षर को बड़ा कर देना। कार्यक्रमकर्ता इसे स्पष्ट करने के लिए करते हैं कि कौन से शब्द महत्वपूर्ण हैं, जैसे कि टाइटल या मेन्यू विकल्प।
+पूंजीकरण का मतलब है एक स्ट्रिंग के अक्षरों को बड़ा (capital) करना। प्रोग्रामर इस तरह करते हैं ताकि डेटा को साफ-सुथरा और एकरूपता से प्रस्तुत कर सकें, जैसे कि पहला नाम या किसी शीर्षक को सुधारना।
 
-## कैसे करें:
+## How to: (कैसे करें?)
 
-PHP में, हम इसे `ucwords` फ़ंक्शन का उपयोग करके कर सकते हैं:
+PHP में स्ट्रिंग को कैपिटलाइज़ करना बहुत सरल है। नीचे दिए गए कोड में कुछ फ़ंक्शन के उदाहरण हैं:
 
 ```PHP
 <?php
-$string = "नमस्ते दुनिया!";
-$capitalizedString = ucwords($string);
-echo $capitalizedString;
+// सभी अक्षरों को ऊपरी मामले में बदलना
+$upperCaseString = strtoupper("namaste duniya!");
+echo $upperCaseString; // Output: NAMASTE DUNIYA!
+
+// केवल पहले अक्षर को ऊपरी मामले में बदलना
+$capitalizedString = ucfirst("namaste duniya!");
+echo $capitalizedString; // Output: Namaste duniya!
+
+// हर शब्द के पहले अक्षर को ऊपरी मामले में बदलना
+$titleCaseString = ucwords("namaste duniya!");
+echo $titleCaseString; // Output: Namaste Duniya!
 ?>
 ```
 
-इस कोड का आउटपुट होगा:
+## Deep Dive (गहराई से समझें)
 
-```
-"नमस्ते दुनिया!"
-```
+स्ट्रिंग को कैपिटलाइज़ करने की ज़रूरत तब देखी गई जब डेटा प्रदर्शन में एकरूपता महत्वपूर्ण हो गई। `strtoupper()`, `ucfirst()`, और `ucwords()` PHP के बुनियादी फ़ंक्शन हैं जो अलग-अलग केसिंग जरूरतों के लिए हैं। ये फ़ंक्शन मल्टीबाइट चरित्र से तालमेल नहीं रखते (जैसे यूनिकोड), ऐसे में `mb_strtoupper()`, `mb_convert_case()` आदि मल्टीबाइट फ़ंक्शन का इस्तेमाल कर सकते हैं। इसी तरह के कार्यों के लिए, जैसा कि स्ट्रिंग को कम मामले में बदलना, संबंधित फंक्शंस `strtolower()` और `mb_strtolower()` भी हैं।
 
-(नोट: यह सब लिपियों पर काम करता है, न कि हिंदी पर ही।)
+## See Also (और देखें)
 
-## गहरी जानकारी
-
-`ucwords` फ़ंक्शन का इस्तेमाल PHP 4 से शुरू हुआ था। इसके विकल्प स्वरूप, PHP 5.4.32 और 5.5.16 में `mb_convert_case` फ़ंक्शन को जोड़ा गया, जिसने विभिन्न बायट एन्कोडिंग समर्थन का विकल्प दिया। `ucwords` फ़ंक्शन केवल शब्दों के पहले अक्षर को केपिटलाइज करता है, जबकि `mb_convert_case` फ़ंक्शन विभिन्न मामलों के साथ काम कर सकता है, जैसे `MB_CASE_UPPER`, `MB_CASE_LOWER`, और `MB_CASE_TITLE`।
-
-## अन्य स्रोत देखें
-
-अधिक जानकारी के लिए, आप PHP की आधिकारिक डॉक्युमेंटेशन की जांच कर सकते हैं:
-
-1. [`ucwords` function documentation](https://www.php.net/manual/en/function.ucwords.php)
-2. [`mb_convert_case` function documentation](https://www.php.net/manual/en/function.mb-convert-case.php)
-3. [String functions in PHP](https://www.php.net/manual/en/ref.strings.php)
+- PHP String Functions - [PHP.net Manual](https://www.php.net/manual/en/ref.strings.php)
+- Multibyte String Functions - [PHP.net Manual](https://www.php.net/manual/en/ref.mbstring.php)
+- PHP ucwords() Function - [W3Schools](https://www.w3schools.com/php/func_string_ucwords.asp)

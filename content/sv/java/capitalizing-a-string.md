@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "Java: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -11,37 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att göra en sträng till versaler innebär att ändra alla tecken i en sträng till stora bokstäver. Programmerare gör detta för att standardisera strängdata och förbättra jämförelse av strängar.
+Att kapitalisera en sträng innebär att förvandla alla bokstäver i strängen till versaler. Programmerare gör detta för att standardisera textdata, betona viktiga ord eller för att uppfylla tekniska krav.
 
-## Hur man gör:
-Java tillhandahåller inbyggda metoder för att byta ut små bokstäver till stora. Här är ett exempel:
-
-```Java
-public class Main {
+## Hur gör man:
+```java
+public class StringCapitalizer {
+    
     public static void main(String[] args) {
-        String str = "hej världen";
-        String upperStr = str.toUpperCase();
-        System.out.println("Ursprunglig sträng: " + str);
-        System.out.println("Sträng i versaler: " + upperStr);
+        String text = "hej världen";
+        String capitalizedText = text.toUpperCase();
+        System.out.println(capitalizedText); // HEJ VÄRLDEN
     }
 }
 ```
+Kör programmet. Utmatningen blir `HEJ VÄRLDEN`.
 
-När du kör ovanstående kod kommer du att få följande utdata:
+## Djupdykning:
+Kapitalisering av strängar har länge varit en grundläggande operation i programmering. I tidiga dagar av datoranvändning, speciellt i system som bara stödde versaler, var detta absolut nödvändigt.
 
-```
-Ursprunglig sträng: hej världen
-Sträng i versaler: HEJ VÄRLDEN
-```
+Det finns alternativ till metoden `toUpperCase()`, till exempel `toLowerCase()` som gör motsatsen. Man kan också använda Apache Commons `StringUtils.capitalize()` för att endast göra första bokstaven stor.
 
-## Djupdykning
-Även om Java: s `toUpperCase()` -metod är den mest använda metoden för att konvertera strängar till versaler, finns det andra alternativ, som `StringUtils.upperCase()`, som tillhandahålls av Apache Commons-biblioteket.
+När du kapitaliserar en sträng i Java, används under huven Unicode och Character-klassen för korrekt konvertering, även för bokstäver utanför ASCII-omfånget.
 
-Historiskt sett behövde tidigare versioner av Java implementera denna funktionalitet manuellt genom att iterera över strängen och använda `Character.toUpperCase()` på varje tecken. Dagens versioner har dock inbyggda metoder för att förenkla denna process.
-
-Att göra en sträng till versaler kan tyckas vara en trivial uppgift, men det finns viktiga detaljer bakom implementeringen. Java: s `toUpperCase()` -metod tar hänsyn till språkinställningar och användarinställningarna för att säkerställa korrekt resultat för alla bokstäver, som accent- och specialbokstäver.
-
-## Se även
-- [Java String toUpperCase() Metod](https://www.javatpoint.com/java-string-touppercase)
-- [Apache Commons StringUtils](https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)
-- [Java String-dokumentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+## Se även:
+- [Oracle Java docs on toUpperCase](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#toUpperCase())
+- [Wikipedia om Unicode](https://sv.wikipedia.org/wiki/Unicode)
+- [Apache Commons Lang StringUtils](https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)

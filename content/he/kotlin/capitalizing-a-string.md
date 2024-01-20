@@ -1,7 +1,7 @@
 ---
-title:                "הפיכת מחרוזת לאותיות גדולות"
-html_title:           "Kotlin: הפיכת מחרוזת לאותיות גדולות"
-simple_title:         "הפיכת מחרוזת לאותיות גדולות"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,32 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בגירוי מחרוזת ("string") אנחנו משנים את האות הראשונה של כל מילה במחרוזת לאות גדולה. זה נעשה לשדרג את הצורה של הטקסט ולשפר את הקריאות שלו.
+מונח "הגדלת אותיות" בהקשר של מחרוזות מתייחס להמרת כל התווים במחרוזת לאותיות גדולות (רישיות). תכניתנים משתמשים בזה לצורכי עקביות, עיבוד טקסט וממשק משתמש.
 
-## הוראות:
-נראה איך מתבצעת הפונקציה בקוד. בקוטלין, קיימת פונקציה שנקראת `capitalize`.
-```Kotlin
-fun main() {
-    val str = "שלום עולם"
-    println(str.capitalize()) // prints "שלום עולם"
-}
-```
-לשימוש באנגלית או שפות נוספות שבהן שימוש רחב באותיות גדולות:
-```Kotlin
-fun main() {
-    val str = "hello world"
-    println(str.capitalize()) // prints "Hello world"
-}
-```
-## עומק:
-אפשר לשאול, למה בכלל צריך להשתמש בגירוי מחרוזת? מאז הימים הראשונים של המחשבים, היו צריכים להבחין בין מילים מפורשות ומילים המכילות ראשי תיבות. באמצעות הפיכת האות הראשונה במילה לאות גדולה, המחשב יכול להבחין ביניהן. למשל, בהודעות שגיאה.
+## איך לעשות:
+ב-Kotlin, תהליך ההגדלת אותיות פשוט. נעשה שימוש בפונקציה `.uppercase()`:
 
-ישנן אלטרנטיבות לפונקציה `capitalize`. אם אתה רוצה להפוך את כל האותיות לאותיות גדולות, תשתמש בפונקציה `toUpperCase`.
 ```Kotlin
 fun main() {
-    val str = "hello world"
-    println(str.toUpperCase()) // prints "HELLO WORLD"
+    val original = "shalom"
+    val capitalized = original.uppercase()
+    println(capitalized) // Output: SHALOM
 }
 ```
-## ראה גם:
-ניתן לקרוא עוד על מחרוזות בקוטלין ב[תיעוד הרשמי](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/). שם תוכלו למצוא מידע על כל פונקציות המחרוזת השונות, לרבות `capitalize` ו `toUpperCase`.
+
+קל וברור, נכון?
+
+## להתעמקות
+
+בעבר, בשפות תכנות אחרות ואף בגרסאות ישנות יותר של Kotlin, השימוש היה בפונקציה אחרת בשם `.toUpperCase()`. מאז Kotlin 1.5, `.uppercase()` היא האפשרות המומלצת. 
+
+למרות שהמרה לאותיות גדולות נראית פשוטה, יש מקרים מורכבים, כמו תווים בשפות שונות שהתנהגותם שונה בעת ההמרה. 
+
+אלטרנטיבה אחרת היא `.capitalize()` שמגדילה רק את האות הראשונה של המחרוזת, אך שימו לב שהיא נחשבת ללא מומלצת (deprecated) מ-Kotlin 1.5 ואילך.
+
+## לקרוא גם
+
+- [Kotlin's Standard Library Documentation for String functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
+- [Kotlin's REPL (Read-Eval-Print Loop) to test code snippets](https://try.kotlinlang.org/)
+- [Official Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
+
+במידה ואתם מעוניינים להתמקצע יותר בנושאים הקשורים לעיבוד מחרוזות והמרות תווים, כדאי לחפש מאמרים ומדריכים שספציפיים לשפה שעובדים איתה, כי כל שפה יש את הדרכים הייחודיות שלה להתמודד עם אתגרים אלה.

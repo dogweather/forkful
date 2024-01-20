@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "Clojure: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,37 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Die Großschreibung eines Strings bedeutet, alle Buchstaben in einem String in Großbuchstaben umzuwandeln. Programmierer nutzen diese Methode, um Konsistenz zu gewährleisten, beispielsweise bei Nutzereingaben oder um Text hervorzuheben.
 
-Eine Zeichenkette zu kapitalisieren bedeutet, jeden ersten Buchstaben eines Wortes in Großbuchstaben umzuwandeln. Programmierer tun dies oft, um Text lesbar zu machen oder bestimmte Wörter hervorzuheben.
+## So geht's:
+Clojure bietet verschiedene Wege, einen String großzuschreiben. Hier ein paar Beispiele:
 
-## Wie geht's:
+```clojure
+;; Einfacher Weg, um einen String komplett großzuschreiben
+(.toUpperCase "Ich bin ein kleiner Satz.")
+;; Ausgabe: "ICH BIN EIN KLEINER SATZ."
 
-Hier ist eine Beispiel von einer Funktion, die eine Zeichenkette in Clojure kapitalisiert.
-
-```Clojure
-(defn capitalize-str [str]
-  (->> (clojure.string/split str #" ")
-       (map clojure.string/capitalize)
-       (clojure.string/join " ")))
+;; Benutzung der `clojure.string` Bibliothek
+(require '[clojure.string :as str])
+(str/upper-case "Fuchs springt über den faulen Hund.")
+;; Ausgabe: "FUCHS SPRINGT ÜBER DEN FAULEN HUND."
 ```
 
-Verwendung der Funktion:
+## Tiefgang:
+Ursprünglich kommt die Praxis, Text großzuschreiben, aus der Zeit, als ausschließlich Großbuchstaben genutzt wurden – denken wir an römische Inschriften. In Clojure, wie in vielen modernen Sprachen, gibt es mehrere Wege, Strings zu manipulieren, wobei `.toUpperCase` und `clojure.string/upper-case` am gebräuchlichsten sind.
 
-``` Clojure
-(capitalize-str "clojure ist eine Pracht!")
-;; Ausgabe: "Clojure Ist Eine Pracht!"
-```
+Beim Umgang mit internationalen Strings ist Vorsicht geboten: bestimmte Sprachen haben spezielle Großschreibregeln. Clojure folgt Java's Methode, um Großschreibung Unicode-kompatibel zu machen, aber es ist wichtig, die kulturellen Besonderheiten zu beachten.
 
-## Vertiefung
+`.toUpperCase` ist eine Methode, die auf Java's `String` Klasse operiert, während `clojure.string/upper-case` Teil von Clojures eigener string manipulation library ist, die auf Clojure's Datenstrukturen zugeschnitten ist. Beide liefern ähnliche Ergebnisse, doch die Wahl hängt oft davon ab, ob man innerhalb einer "Clojure-nativen" Umgebung bleiben oder die Interoperabilität mit Java nutzen möchte.
 
-(1) Historischer Kontext: Das Kapitalisieren von Zeichenketten ist eine typische Funktion in vielen Sprachen, nicht nur in Clojure. Es hat seine Wurzeln in der typografischen Tradition, wichtige Wörter oder Phrasen hervorzuheben.
-
-(2) Alternativen: Abhängig von den Anforderungen der Aufgabe, kann es vorzuziehen sein, nur den ersten Buchstaben eines Satzes zu kapitalisieren, oder jede Zeichenkette völlig in Großbuchstaben umzuwandeln. Für Letztere, `clojure.string/upper-case` wäre eine passende Funktion.
-
-(3) Implementierungsdetails: `clojure.string/capitalize` capitalizes the first character of the string and downcase all the trailing characters. To just capitalize the first character while keeping the rest of the string intact, you'd need a different implementation. The provided `capitalize-str` function splits the string into words, capitalizes each word and then joins the words back together with spaces in between.
-
-## Siehe auch
-
-- [Clojure Cheatsheet, String Functions](https://clojure.org/api/cheatsheet)
-- [ClojureDocs on clojure.string](https://clojuredocs.org/clojure.string)
-- [Stackoverflow Discussion on Capitalizing Strings](https://stackoverflow.com/questions/9551104/string-capitalization-in-clojure)
+## Siehe Auch:
+- ClojureDocs zu `clojure.string`: https://clojuredocs.org/clojure.string
+- Ein Guide zu Clojure Strings: https://www.clojure-toolbox.com/
+- Unicode Groß- und Kleinschreibung: https://unicode.org/reports/tr21/
+- Java String Dokumentation: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html

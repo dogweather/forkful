@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "Kotlin: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,30 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att kapitalisera en sträng betyder att omvandla bokstäverna till versaler (stora bokstäver). Programmerare gör detta för att standardisera textdata, till exempel för att visa titlar eller namn konsekvent.
 
-Att markera en sträng innebär att ändra strängens första tecken till versaler (stora bokstäver). Programmerare gör detta för att göra text mer lättläst eller för att följa specifika formateringsregler.
-
-## Hur gör man:
-
-I Kotlin, kan du enkelt konvertera en sträng till versaler genom att använda `capitalize()` funktionen. Här är ett exempel:
+## Så här gör du:
+I Kotlin används metoden `.uppercase()` för att kapitalisera en sträng.
 
 ```Kotlin
-val str = "hej världen"
-val capitalStr = str.capitalize()
-println(capitalStr) //Skriva ut: "Hej världen"
+fun main() {
+    val exampleString = "kotlin är kul"
+    val capitalizedString = exampleString.uppercase()
+
+    println(capitalizedString) // Output: KOTLIN ÄR KUL
+}
 ```
-Den här koden tar strängen "hej världen", konverterar det första tecknet till versaler, och skriver ut det nya strängvärdet "Hej världen".
 
-## Fördjupning
+Metoden hanterar också svenska å, ä och ö så att de blir Å, Ä och Ö korrekt.
 
-Att konvertera en sträng till versaler är en vanlig operation i programmering och dess ursprung går tillbaka till de tidiga dagarna av datorkodning. Det finns olika sätt att utföra denna operation i olika programmeringsspråk, till exempel `toUpperCase()` i Java och typer-konvertering i C++. I Kotlin implementation är `capitalize()` funktionen ganska rakt på sak - den ändrar bara utfärdat tecknet till versaler.
+```Kotlin
+fun main() {
+    val swedishString = "vår älskade ö"
+    val capitalizedSwedishString = swedishString.uppercase()
 
-Observera att `capitalize()` i Kotlin returnerar en ny sträng där bara det första tecknet är versaler och alla andra tecken är oförändrade. Om strängen redan börjar med ett versaltecken, returnerar den samma sträng. 
+    println(capitalizedSwedishString) // Output: VÅR ÄLSKADE Ö
+}
+```
 
-En annan intressant detalj är att denna metod är case-insensitive, vilket betyder att den inte påverkas av om tecknen redan är i versaler eller gemener.
+## Utförligare Information
+Kapitalisering i programmering har funnits nästan lika länge som programmeringsspråken själva. I tidigare versioner av Kotlin användes `.toUpperCase()`, men den är nu ersatt med `.uppercase()` för att möta förändringar i standardbiblioteket och för att förbättra läsbarheten.
+
+Det finns alternativ till `.uppercase()` när du vill manipulera strängar i Kotlin:
+
+- `.lowercase()`: Gör alla bokstäver i en sträng till gemener (små bokstäver).
+- `.capitalize()`: Ökar bara den första bokstaven i en sträng, men är föråldrad sedan Kotlin 1.5.
+- `java.lang.String.toUpperCase(Locale)`: Om du behöver specificera en lokal inställning för kapitalisering, så som Turkiska som har speciella regler för tecknet 'i'.
+
+Kapitalisering implementeras internationellt genom Unicode och tar därmed hänsyn till språkspecifika regler. I Kotlin är detta särskilt enkelt eftersom standardbiblioteksfunktionerna hanterar dessa komplexiteter åt dig.
 
 ## Se även
-
-För mer information om string manipulation i Kotlin, se dessa länkar:
-- Officiell Kotlin dokumentation för `capitalize()` funktion: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html
-- StackOverflow tråd om strängkapitalisering: https://stackoverflow.com/questions/50549955/how-to-capitalize-the-first-letter-in-kotlin
+- Kotlin Standard Library documentation for `String`: [Kotlin String Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- Unicode standard for case mapping: [Unicode Case Mapping](https://unicode.org/reports/tr21/)
+- Kotlin style guide for idiomatic kotlin code: [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando uma string"
-html_title:           "Haskell: Capitalizando uma string"
+html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,32 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Capitalizando Strings em Haskell
+## O Quê & Por Quê?
 
-## O Que & Por Quê?
-Capitalizar uma string significa transformar a primeira letra de cada palavra em maiúscula. Programadores usam essa operação frequentemente para formatar textos adequadamente, especialmente para UIs (Interfaces de Usuário) e apresentações de dados.
+Capitalizar uma string significa transformar todas as letras de uma palavra ou sentença em maiúsculas. Programadores fazem isso para padronizar dados, como nomes próprios em formulários, e para destacar certos elementos textuais em interfaces de usuário.
 
 ## Como Fazer:
-Em Haskell, uma função básica para capitalizar uma string pode ser escrita usando a biblioteca de "Data.Char".
 
 ```Haskell
 import Data.Char (toUpper)
 
-capitalizarString :: String -> String
-capitalizarString "" = ""
-capitalizarString (x:xs) = toUpper x : xs
+capitalize :: String -> String
+capitalize = map toUpper
+
+-- Exemplo de uso:
+main :: IO ()
+main = putStrLn (capitalize "olá, Haskell!")
+
+-- Saída:
+-- OLÁ, HASKELL!
 ```
-Ao testarmos com a string "olá, mundo!", teremos:
+
+## Mergulho Profundo
+
+Capitalizar strings não é complicado, mas é um ponto de entrada classicão para se familiarizar com funções em Haskell. Historicamente, o tratamento de strings em programação muitas vezes inclui capitalização, que pode ser feito de várias maneiras. Por exemplo, em Haskell, você pode criar uma função personalizada como `capitalize` ou usar funções prontas de bibliotecas. No nosso caso, usamos `toUpper` do módulo `Data.Char`. Detalhe importante: esta função lida bem com caracteres ASCII, mas se você precisa de suporte a Unicode, considere o módulo `Data.Text`, que é mais robusto para manipulação de textos.
+
+Alternativas incluem o uso da biblioteca `Data.Text` para lidar com `Text` em vez de `String`, o que é mais eficiente em termos de desempenho e memória. 
+
+Exemplo com `Data.Text`:
 
 ```Haskell
-main = putStrLn (capitalizarString "olá, mundo!") -- Impressão: "Olá, mundo!"
+import qualified Data.Text as T
+import Data.Text (Text)
+import Data.Char (toUpper)
+
+capitalizeText :: Text -> Text
+capitalizeText = T.map toUpper
+
+-- Exemplo de uso com Data.Text:
+main :: IO ()
+main = putStrLn . T.unpack $ capitalizeText (T.pack "olá, mundo com Text!")
+
+-- Saída:
+-- OLÁ, MUNDO COM TEXT!
 ```
-## Aprofundando
-Haskell, sendo uma linguagem funcional, oferece uma abordagem distinta e elegante para capitalizar strings. A função `toUpper` da biblioteca de `Data.Char` converte um caractere em letra maiúscula.
 
-Alternativas para a mesma operação poderiam incluir o uso da função `map` para aplicar `toUpper` em cada palavra de uma lista de palavras, que por sua vez é produzida pela função pré-definida `words`. No entanto, essa abordagem capitalizaria todas as letras, não apenas a primeira de cada palavra.
+## Veja Também
 
-Quanto à implementação, numa visão mais aprofundada, o código `(x:xs)` usa pattern matching para distinguir o primeiro caractere (`x`) e o restante da string (`xs`). Assim, apenas o primeiro caractere é transformado em maiúsculo.
-
-## Veja Também: 
-1. Biblioteca [Haskell `Data.Char`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+- Documentação do `Data.Char`: https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
+- Documentação do `Data.Text`: https://hackage.haskell.org/package/text-2.0/docs/Data-Text.html
+- Haskell Wiki sobre `String`: https://wiki.haskell.org/String
+- Artigo sobre performance de `String` vs `Text`: https://wiki.haskell.org/Performance/String

@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "C# recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "C#"
 category:             "C#"
@@ -10,59 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Title: Capitalizing Strings in C#: A Compact Guide for Developers 
-
 ## What & Why?
-Capitalizing a string in programming refers to converting its first character to uppercase while leaving the rest in lowercase. Programmers use this to format text for display, validate user input, or meet syntactic requirements in coding languages.
+
+Capitalizing a string in programming means making all letters in a string uppercase. It's a common task for formatting output, improving readability, or preparing data for comparison or storage consistency.
 
 ## How to:
-Here's a simple code snippet that shows how to capitalize a string in C#. We're using the `TextInfo.ToTitleCase()` method from `System.Globalization`.
+
+In C#, you can capitalize a string using the `ToUpper` method on a string instance. Here's how it looks:
 
 ```C#
-using System;
-using System.Globalization;
+string original = "hello world!";
+string capitalized = original.ToUpper();
 
-class Program
-{
-    static void Main()
-    {
-        TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
-        string lowercase = "hello world!";
-        string capitalized = textInfo.ToTitleCase(lowercase);
-
-        Console.WriteLine(capitalized);  // Outputs: Hello World!
-    }
-}
+Console.WriteLine(capitalized); // Output: HELLO WORLD!
 ```
+
+Simple as that – your string is now shouting at you in all caps.
 
 ## Deep Dive
-Historically, the need for capitalization functions came from programming's roots in English, where capitalization varies depending on the context.
 
-There are a few alternatives to `TextInfo.ToTitleCase()`. For example, you can use LINQ:
+Capitalizing isn't a modern invention. In fact, old manuscripts often started with large, decorative capitulum, or capital letters. Fast forward to computing: capitalizing serves practical roles, such as making titles stand out or ensuring case-insensitive comparisons.
+
+While `.ToUpper()` is straightforward, be aware of alternatives and quirks:
+
+1. **Culture Sensitivity**: By default, `ToUpper()` uses the casing rules of the current culture. If you need a culture-invariant result, use `ToUpperInvariant()`.
+
+2. **Performance**: Repeatedly capitalizing strings can be costly, especially in loops. Keep an eye out for unnecessary conversions.
+
+3. **Alternatives**: There's also `ToLower()`, for the opposite effect (making a string all lowercase), and `TextInfo.ToTitleCase()`, for capitalizing just the first letter of each word.
+
+4. **Security Practices**: Be cautious about transformations with security implications. For example, password comparisons should always be case-sensitive to maintain complexity.
+
+Here's how you'd capitalize while being culture-invariant:
 
 ```C#
-using System;
-using System.Linq;
+string original = "iççe";
+string capitalizedInvariant = original.ToUpperInvariant();
 
-class Program
-{
-    static void Main()
-    {
-        string lowercase = "hello world!";
-        string capitalized = string.Concat(lowercase.Take(1).ToUpper().Concat(lowercase.Skip(1)));
-
-        Console.WriteLine(capitalized);  // Outputs: Hello world!
-    }
-}
+Console.WriteLine(capitalizedInvariant); // Output: İÇÇE
 ```
 
-`TextInfo.ToTitleCase()` ignores already uppercase letters, while the LINQ alternative capitalizes only the first character, altering the rest to lower. Choose the method that suits your specific needs.
+Note that the dot over the 'i' remains after capitalizing per invariant culture rules.
 
-## See Also
-For more details on methods used:
+## See Also:
 
-1. [`TextInfo.ToTitleCase()`](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0)
-2. [LINQ](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/)
-3. [Globalization](https://docs.microsoft.com/en-us/dotnet/standard/globalization-localization/) in .NET
+- Microsoft's official documentation on `.ToUpper()`:
+  [MSDN - String.ToUpper Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+  
+- Introduction to CultureInfo:
+  [MSDN - CultureInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)
 
-This guide was a crash course on capitalizing strings. Explore related topics for more depth!
+- Best practices for using strings in .NET:
+  [MSDN - Best Practices for Using Strings in .NET](https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings)

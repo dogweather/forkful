@@ -59,5 +59,4 @@ Se vuoi approfondire l'argomento di interpolazione di stringhe in Elixir, consul
 
 1. Documentazione ufficiale Elixir: [String Interpolation](https://hexdocs.pm/elixir/String.html) 
 2. Libro: [Programming Elixir >= 1.6](https://pragprog.com/titles/elixir16/programming-elixir-1-6/)
-3. Sito web: [Elixir School](https://elixirschool.com/it/) - per altre lezioni interattive sulla sintassi e le strutture di Elixir.
 4. [Elixir String Interpolation](https://www.educative.io/edpresso/elixir-string-interpolation) - un conciso tutorial da Educative.

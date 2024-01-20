@@ -1,7 +1,7 @@
 ---
-title:                "Einen String großschreiben"
-html_title:           "PHP: Einen String großschreiben"
-simple_title:         "Einen String großschreiben"
+title:                "String in Großbuchstaben umwandeln"
+html_title:           "C: String in Großbuchstaben umwandeln"
+simple_title:         "String in Großbuchstaben umwandeln"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# String großschreiben in PHP
-
 ## Was & Warum?
+Das Großschreiben eines Strings bedeutet, alle Buchstaben in einem Text zu Großbuchstaben zu konvertieren; praktisch für Titel oder wenn Konsistenz erforderlich ist. Entwickler nutzen das, um Lesbarkeit zu verbessern oder um Daten zu normalisieren, bevor sie verglichen oder gespeichert werden.
 
-Ein String in Großbuchstaben zu konvertieren bedeutet, jeden Buchstaben im String in seine Großbuchstabenform zu ändern. Programmierer tun dies, um Nutzereingaben zu standardisieren oder Text hervorzuheben.
+## How to:
+Hier ein einfaches Beispiel, wie du einen String in PHP großschreiben kannst:
 
-## Anleitung:
-
-In PHP verwenden wir die Funktion `strtoupper()`, um einen String zu kapitalisieren. Schauen wir uns ein Beispiel an:
-
-```PHP
-$text = "hallo welt!";
-$capitalizedText = strtoupper($text);
-echo $capitalizedText;
+```php
+<?php
+$originalString = "das ist ein test";
+$capitalizedString = strtoupper($originalString);
+echo $capitalizedString; // Ausgabe: DAS IST EIN TEST
+?>
 ```
 
-Ausgabe:
+Und so verwendest du `mb_strtoupper()` für Strings mit Multibyte-Zeichen (wie Umlaute oder andere nicht-ASCII-Zeichen):
 
-```PHP
-"HALLO WELT!"
+```php
+<?php
+$originalString = "füße überflüssig";
+$capitalizedString = mb_strtoupper($originalString);
+echo $capitalizedString; // Ausgabe: FÜßE ÜBERFLÜSSIG
+?>
 ```
-So einfach ist das! Geben Sie Ihren String an `strtoupper()` weiter und der Text wird vollständig in Großbuchstaben umgewandelt.
 
-## Tiefgehende Details:
+## Deep Dive:
+Das Großschreiben von Strings ist seit den Anfängen von PHP ein grundlegendes Feature, das durch Funktionen wie `strtoupper()` ermöglicht wird. PHP bietet auch `mb_strtoupper()` für die Arbeit mit Multibyte-Zeichen, die in verschiedenen Sprachen und Kodierungen wichtig sind (z.B. UTF-8). Während `strtoupper()` nur für Single-Byte-Zeichen (ASCII) geeignet ist, ist `mb_strtoupper()` flexibel genug, um beispielsweise deutsche Umlaute korrekt zu verarbeiten.
 
-Die Funktion `strtoupper()` ist seit PHP 4 verfügbar und hat eine hohe Leistung. PHP bietet auch alternative Funktionen wie `ucwords()` oder `ucfirst()`, welche die erste Buchstaben jedes Wortes bzw. des gesamten Strings respektive in Großbuchstaben umwandeln. Beachten Sie, dass `strtoupper()` keine Auswirkungen auf Zahlen oder Sonderzeichen hat, nur auf Buchstaben.
+Alternativ zur vollständigen Großschreibung gibt es auch `ucfirst()` zum Großschreiben des ersten Buchstabens und `ucwords()`, um den ersten Buchstaben jedes Wortes in einem String zu großzuschreiben. Die Wahl der Funktion hängt vom gewünschten Ergebnis ab.
 
-Es ist auch wichtig zu wissen, dass `strtoupper()` Multibyte-Zeichenketten (MB: Multibyte) unterstützt. Wenn Sie Multibyte-Zeichen in Großbuchstaben umwandeln möchten, stellen Sie sicher, dass Sie die korrekte MB-Funktion, `mb_strtoupper()`, verwenden.
+Die Implementierungsdetails von `strtoupper()` und `mb_strtoupper()` unterscheiden sich in der Art, wie sie mit Zeichensätzen umgehen. `strtoupper()` betrachtet den String als Sammlung von Einzelbyte-Zeichen, während `mb_strtoupper()` eine Multibyte-freundliche Betrachtung hat und auf die angegebene Zeichenkodierung in `mb_internal_encoding()` oder einen optionalen Parameter achtet.
 
-## Siehe auch:
+## See Also:
+Die offizielle PHP-Dokumentation ist deine Anlaufstelle, um tiefer in die Materie einzutauchen und weitere Funktionen rund um die String-Behandlung in PHP zu entdecken:
 
-Zum weiteren Studium:
-
-- Die offizielle PHP-Dokumentation zu [`strtoupper()`](https://www.php.net/manual/de/function.strtoupper.php)
-- Ein nützliches Tutorial auf [W3Schools](https://www.w3schools.com/php/func_string_strtoupper.asp)
-
-Bitte verwenden Sie diese Ressourcen, um mehr über die Verwendung und Funktionalität von `strtoupper()` in PHP zu erfahren. Happy coding!
+- PHP `strtoupper()` Funktion: [php.net/manual/de/function.strtoupper.php](https://www.php.net/manual/de/function.strtoupper.php)
+- PHP `mb_strtoupper()` Funktion: [php.net/manual/de/function.mb-strtoupper.php](https://www.php.net/manual/de/function.mb-strtoupper.php)
+- PHP String-Funktionen: [php.net/manual/de/ref.strings.php](https://www.php.net/manual/de/ref.strings.php)

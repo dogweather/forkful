@@ -1,7 +1,7 @@
 ---
-title:                "Mettere in maiuscolo una stringa"
-html_title:           "C: Mettere in maiuscolo una stringa"
-simple_title:         "Mettere in maiuscolo una stringa"
+title:                "Maiuscolizzare una stringa"
+html_title:           "Bash: Maiuscolizzare una stringa"
+simple_title:         "Maiuscolizzare una stringa"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
-## Che Cos'è & Perché?
-
-Capitalizzare una stringa significa convertire tutte le sue lettere in maiuscole. I programmatori lo fanno per formattare l'output o per confrontare le stringhe in modo non sensibile alla distinzione tra maiuscole e minuscole.
+## Cosa & Perché?
+Capitalizzare una stringa significa convertire ogni lettera minuscola in maiuscola. Programmers do it to standardize text input or make titles and headers more visible.
 
 ## Come fare:
-
-Qui mostriamo come capitalizzare una stringa in C, usando la funzione `toupper()`. Ecco un esempio di codice:
-
 ```C
-#include <ctype.h>
 #include <stdio.h>
+#include <ctype.h>
 
-void ConvertiMaiuscolo(char s[]) {
-   for(int i = 0; s[i]!= '\0'; i++){
-      s[i] = toupper(s[i]);
-   }
+void capitalize(char *str) {
+    while (*str) {
+        *str = toupper((unsigned char) *str);
+        str++;
+    }
 }
 
 int main() {
-   char stringa[] = "ciao mondo";
-   ConvertiMaiuscolo(stringa);
-   
-   printf("%s\n", stringa);
-   return 0;
+    char testo[] = "ciao mondo!";
+    capitalize(testo);
+    printf("Testo capitalizzato: %s\n", testo);
+    return 0;
 }
 ```
-Questo codice restituirà:
-
+Output:
 ```
-CIAO MONDO
+Testo capitalizzato: CIAO MONDO!
 ```
 
 ## Approfondimento
+Capitalizzare una stringa è un'esigenza comune nata quando i computer hanno cominciato a elaborare testi. Storicamente, la funzione `toupper` esiste da quando lo standard ANSI C è stato definito nel 1989. Alternatives include creating a custom function or using libraries like `string.h`. Dettagli implementativi ricordano che `toupper` funziona con singoli caratteri. Per gestire l'intera stringa, iteriamo su ogni carattere.
 
-Capitalize è un concetto vecchio quanto la programmazione stessa. Oltre a `toupper()`, una funzione built-in, la libreria C standard fornisce anche la funzione `transform` con l'locale C++ per manipolare le stringhe. Tieni però a mente che queste funzioni gestiscono caratteri ASCII standard e potrebbero non funzionare come previsto con stringhe Unicode o altri caratteri non-ASCII. Nel mondo moderno, librarie come ICU forniscono funzioni di conversione più robuste che possono gestire una vasta gamma di lingue e codifiche di caratteri.
-
-## Vedi Anche
-
-- [Documentazione ufficiale delle funzioni della libreria `<ctype.h>`](https://en.cppreference.com/w/c/string/byte)
-- [Libreria di codifica dei caratteri internazionali ICU](http://site.icu-project.org/)
-- [Tutorial su stringhe C e loro manipolazioni](https://www.programiz.com/c-programming/c-strings)
+## Vedere anche
+- Standard C library (ISO/IEC 9899:2018): http://www.open-std.org/jtc1/sc22/wg14/
+- Documentazione su funzioni di carattere in C: https://en.cppreference.com/w/c/string/byte
+- Stack Overflow discussions on string manipulation in C: https://stackoverflow.com/questions/tagged/c+strings

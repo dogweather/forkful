@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## Qué y Por Qué?
+Capitalizar una cadena significa convertir todas las letras de una palabra o frase a mayúsculas. Los programadores lo hacen para normalizar los datos para comparaciones o para mejorar la estética de la interfaz de usuario.
 
-Capitalizar una cadena significa convertir el primer caracter de la cadena en mayúscula, mientras que el resto permanece en minúscula. Los programadores lo hacen para mejorar la legibilidad y el formato de los textos en sus programas.
-
-## Cómo hacerlo:
-
-Aquí tienes un sencillo ejemplo de cómo capitalizar una cadena en Arduino:
+## Cómo Hacerlo:
+En Arduino, aún no hay una función incorporada para capitalizar cadenas directamente, pero eso no nos detiene. Aquí tienes un ejemplo sencillo:
 
 ```Arduino
-String cadena = "hola mundo";
-cadena.setCharAt(0, toupper(cadena.charAt(0)));
-Serial.println(cadena);
+void setup() {
+  Serial.begin(9600);
+  String mensaje = "¡hola, mundo!";
+  mensaje.toUpperCase();
+  Serial.println(mensaje);  // Salida: "¡HOLA, MUNDO!"
+}
+
+void loop() {
+  // No necesitamos nada aquí por ahora.
+}
 ```
-La salida será: `Hola mundo`.
 
-## Un Viaje Profundo:
+## Inmersión Profunda:
+Originalmente, Arduino no se diseñó para manipulación avanzada de texto, se enfocaba más en interactuar con el hardware. La función `toUpperCase()` es fácil de usar, pero no es muy eficiente con la memoria, algo a tener en cuenta con Arduino.
 
-El proceso de capitalización de cadenas tiene sus raíces en las primeras computadoras mainframe, donde la correcta escritura y formato era fundamental para que el sistema funcionara correctamente. 
+Alternativas incluirían trabajar con arrays de caracteres (`char[]`) y modificar cada letra individualmente, aprovechando la tabla ASCII para realizar la conversión de minúsculas a mayúsculas, que es sumando o restando 32 a los valores ASCII de letras minúsculas.
 
-En Arduino, la forma más común de capitalizar una cadena es usando la función setCharAt() en combinación con toupper(). Sin embargo, también puedes usar toUpperCase() si deseas convertir toda la cadena en mayúsculas.
-
-Por último, recuerda que estas funciones consumirán cierta cantidad de memoria y tiempo de procesamiento, así que úsalas solo cuando sea necesario para mantener tu programa eficiente.
+Detalles de implementación: Al hacer `mensaje.toUpperCase()`, la cadena original se modifica en lugar de crear una nueva. Si necesitas conservar la original, tendrías que duplicarla antes de cambiarla.
 
 ## Ver También:
-
-Aquí tienes algunos enlaces útiles para obtener más información sobre las cadenas en Arduino. 
-
-1. [Arduino - String setCharAt()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/setcharat/)
-2. [Arduino - String charAt() ](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/charat/)
-3. [Arduino - String toUpperCase() ](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)
+- Documentación oficial de Arduino sobre la clase String: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Tutorial sobre el manejo de cadenas en Arduino: https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringAdditionOperator
+- Explicación de ASCII y su aplicación en Arduino: https://www.arduino.cc/en/Reference/ASCIIchart

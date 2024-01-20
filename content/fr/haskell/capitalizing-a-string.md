@@ -1,7 +1,7 @@
 ---
-title:                "Mettre en majuscule une chaîne"
-html_title:           "Haskell: Mettre en majuscule une chaîne"
-simple_title:         "Mettre en majuscule une chaîne"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "C: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,41 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
+## Quoi & Pourquoi ?
+Capitaliser une chaîne, c'est convertir les premières lettres de chaque mot en majuscules. Les programmeurs utilisent cette technique pour uniformiser les données textuelles ou pour respecter les conventions typographiques.
 
-Capitaliser une chaîne signifie transfomer la première lettre de chaque mot en majuscule. Les développeurs le font généralement pour des raisons esthétiques, pour mettre l'accent sur les noms propres, les titres etc.
-
-## Comment faire:
-
-La façon habituelle de capitaliser une chaîne en Haskell est d'utiliser la fonction `toUpper`, fournie par `Data.Char`. Voici un exemple précis:
+## Comment ça marche :
 
 ```Haskell
-import Data.Char (toUpper)
+import Data.Char(toUpper)
 
-capitaliser :: String -> String
-capitaliser [] = []
-capitaliser (premier:reste) = toUpper premier : map toLower reste
-```
-Cela transforme la première lettre en majuscule, et garantit que le reste de la phrase est en minuscule.
+-- Capitalize the first letter of each word
+capitalize :: String -> String
+capitalize = unwords . map (\(x:xs) -> toUpper x : xs) . words
 
-Exemple de sortie:
- 
-```Haskell
-capitaliser "bonjour, monde!"
-"Bonjour, monde!"
+-- Usage
+main = putStrLn $ capitalize "bonjour, comment ça va ?"
+
+-- Output:
+-- "Bonjour, Comment ça Va ?"
 ```
 
-## Approfondissement:
+## Plongée en profondeur
+Capitaliser des chaînes est un concept qui remonte à l'époque des premières machines à écrire et de la typographie, servant à mettre en avant des noms propres et des début de phrases. En Haskell, l'approche typique comprend la fonction `words` pour découper la chaîne en mots, et `map` pour appliquer la capitalisation à chaque mot. La fonction `toUpper` de `Data.Char` est standard pour la conversion en majuscule. 
 
-L'idée de capitaliser les chaînes est assez ancienne dans l'histoire de la programmation. En Haskell, `Data.Char` fournit une gamme de fonctions pour manipuler les caractères. L'utilisation de `toUpper` et de `map toLower` est une méthode courante pour capitaliser les chaînes.
+Des alternatives incluent l'utilisation de bibliothèques telles que `text` ou `bytestring` pour gérer de grands volumes de données plus efficacement. Au sujet de l'implémentation, `toUpper` gère déjà les caractères accentués en conformité avec les standards Unicode, ce qui est crucial pour les langues comme le français.
 
-Il existe aussi d'autres façons de capitaliser une chaîne. Par exemple, vous pourriez utiliser une approche récursive pour cela. Cependant, dans les cas courants, le code démontré ci-dessus est suffisant et efficace.
+## Voir également
 
-À l'intérieur de la fonction `capitaliser`, la structure `(premier:reste)` est utilisée pour diviser la chaîne d'entrée en son premier caractère (la tête) et le reste de la chaîne (la queue). Le premier caractère est transformé en majuscules tandis que le reste de la chaîne est mis en minuscules.
-
-## Voir aussi:
-
-Les références suivantes sont utiles pour une étude plus approfondie de ce sujet :
-
-- Documentation officielle de Haskell sur Data.Char : http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html
-- Un excellent article sur la manipulation de chaînes en Haskell : https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/string
+- Haskell `Data.Char` documentation: https://hackage.haskell.org/package/base/docs/Data-Char.html
+- Article sur Unicode et Haskell: https://wiki.haskell.org/Unicode_input
+- Documentation de la bibliothèque `text`: https://hackage.haskell.org/package/text

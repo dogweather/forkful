@@ -1,7 +1,7 @@
 ---
-title:                "Kapitalisering av en streng"
-html_title:           "Arduino: Kapitalisering av en streng"
-simple_title:         "Kapitalisering av en streng"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,48 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å sette store bokstaver i en streng betyr å endre alle bokstavene til versaler (store bokstaver). Programmerere gjør dette for å standardisere tekstdata, for eksempel for å vise navn og titler konsekvent.
 
-Å skrive en tekststreng med store bokstaver betyr å gjøre alle bokstavene i en tekststreng til blokkbokstaver. Programmerere gjør dette for å standardisere tekstdataene, noe som forenkler sammenligninger og søk.
+## Slik gjør du:
+Husk at Arduino ikke har innebygd strengbehandling som andre programmeringsspråk. Vi må selv lage en funksjon for dette:
 
-## Hvordan:
-
-Følgende viser hvordan du kan kapitalisere en streng i Arduino.
-
-```Arduino
+```arduino
 void setup() {
   Serial.begin(9600);
-  
-  char myString[] = "heisann verden!";
-  for (int i = 0; myString[i]; i++){
-    myString[i] = toupper(myString[i]);
-  }
-  
-  Serial.print("Kapitaliserte streng: ");
-  Serial.println(myString);
+  char tekst[] = "Arduino er gøy!";
+  kapitaliserStreng(tekst);
+  Serial.println(tekst);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Ingenting her
+}
+
+void kapitaliserStreng(char* linje) {
+  for (int i = 0; linje[i] != '\0'; i++) {
+    linje[i] = toupper(linje[i]);
+  }
 }
 ```
-Når du kjører dette eksemplet, vil output være:
 
+Kjører du koden, ser du dette i Serial Monitor:
 ```
-Kapitaliserte streng: HEISANN VERDEN!
+ARDUINO ER GØY!
 ```
 
-## Dyp Dykk:
+## Dypdykk
+Historisk sett kommer behovet for å kapitalisere fra tidlige datamaskiner og brukergrensesnitt som hadde begrenset grafikk, der store bokstaver skilte seg mer ut. Et alternativ til vår `kapitaliserStreng`-funksjon er å bruke String-objekter som inkluderer `.toUpperCase()`-metoden, men disse kan føre til minnelekkasje på minnebegrensede systemer som Arduinoer. Detaljert, streng-kapitalisering i Arduino krever manuell iterasjon over hver karakter i et array og å bruke `toupper()` funksjonen fra `ctype.h`-biblioteket.
 
-I historikken til programmering, har behovet for å standardisere tekstdata vært nøkkelen til mye funksjoner i datatjenester. Det å kapitalisere en streng, er bare ett av mange verktøy som hjelper oss å oppnå dette.
-
-En alternativ måte å kapitalisere en streng på, er å bruke funksjonen `strtransform()` i kombinasjon med `::toupper` i `ArduinoSTL` biblioteket. Men denne funksjonen er ikke alltid tilgengelig på alle plattformer, og kan føre til større bruk av minne.
-
-I praksis forvandles hver bokstav i strengen til en stor bokstav ved hjelp av ASCII-verdiene. ASCII-verdien til hver lille bokstav er redusert med 32 for å få store bokstaver.
-
-## Se Også:
-
-For å utvide kunnskapen din, sjekk ut følgende:
-
-1. [Arduino Reference Page on ASCII Characters](https://www.arduino.cc/en/Reference/ASCIIchart)
-
-2. [Arduino Language Reference Page](https://www.arduino.cc/reference/en/)
+## Se Også
+- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- ASCII Table and Description: http://www.asciitable.com/
+- `ctype.h` library documentation: https://www.cplusplus.com/reference/cctype/

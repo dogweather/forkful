@@ -1,7 +1,7 @@
 ---
-title:                "Gör om en sträng till versaler"
-html_title:           "Elm: Gör om en sträng till versaler"
-simple_title:         "Gör om en sträng till versaler"
+title:                "Att göra en sträng versal"
+html_title:           "Bash: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Att göra första bokstav stor i en sträng innebär att ändra strängens första tecken till dess stora motsvarighet. Programmerare gör detta för att öka läsbarheten och göra datum, titlar och namn mer formella.
+## What & Why?
+Att sätta stor bokstav ("capitalize") betyder att ändra första bokstaven i en sträng till versal. Programmerare gör detta för att formatera texter, som i titlar eller för att följa språkliga konventioner.
 
-## Hur till:
-Här är ett exempel på hur du kan göra om det första tecknet i en sträng till stort i Elm.
+## How to:
+Elm har inget inbyggt bibliotek för att göra strängar till versaler. Men vi kan bygga en funktion själva. Här är ett enkelt exempel:
 
 ```Elm
-capitalise : String -> String
-capitalise string =
-    String.toUpper (String.left 1 string) ++ String.dropLeft 1 string
+import String exposing (toUpper, left, dropLeft)
+
+capitalize : String -> String
+capitalize str =
+  let
+    firstChar =
+      str
+        |> left 1
+        |> toUpper
+    restOfString =
+      dropLeft 1 str
+  in
+    firstChar ++ restOfString
+
+-- Användning
+capitalize "hej värld"
+-- Output: "Hej värld"
 ```
 
-Anropar du `capitalise "hej"` får du svaret "Hej".
+## Deep Dive
+Elm är byggt för funktionell programmering och sidoeffektsfrihet, därför finns det inga metoder som direkt modifierar strängar; du behöver skapa nya strängar istället.
 
-## Djup Dykning:
-Historiskt sett, stora bokstäver användes i början av meningar och egennamn för att indikera början på en ny tanke eller att något är unikt. Samma princip använder programmerare när de skriver kod.
+Historiskt sett har andra språk som JavaScript haft inbyggda metoder som `.toUpperCase()`, men i Elm föredrar vi rena funktioner för mer förutsägbar kod. Ett alternativ är att använda ett paket som `elm-string-extra`, men att känna till grunderna är alltid användbart.
 
-Ett alternativ till `String.toUpper` + `String.left` +` String.dropLeft` i Elm kan vara att använda `String.fromChar << Char.toUpper << Char.fromCode << Char.toCode << String.left 1`.
+Implementationsdetaljer: `toUpper` konverterar alla bokstäver till versaler, vilket är överflödigt om vi bara vill ha första bokstaven i versal. Därför använder vi `left` för att få första tecknet, gör det till versal, och `dropLeft` för att slänga första tecknet och sammanfoga resten utan ändring.
 
-Details i implementeringen inkluderar hur man handskas med strängar som börjar med icke-alfabetiska tecken. I de fallen returneras den ursprungliga strängen utan att ändras.
-
-## Se Också:
-- Elm: String (https://package.elm-lang.org/packages/elm/core/latest/String) för mer information om strängfunktioner i Elm.
-- Elm: Char (https://package.elm-lang.org/packages/elm/core/latest/Char) för mer information om att arbeta med enskilda tecken i Elm.
-- Stack Overflow: "How do you capitalize the first letter of a string in Elm?" (https://stackoverflow.com/questions/38545464/how-do-you-capitalize-the-first-letter-of-a-string-in-elm) för diskussioner om olika sätt att uppnå detta.
+## See Also
+- Elm String documentation: https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm package for extra string functions: https://package.elm-lang.org/packages/pzp1997/elm-string-extra/latest/

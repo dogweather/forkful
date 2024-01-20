@@ -1,7 +1,7 @@
 ---
-title:                "Переведення рядка в верхній регістр"
-html_title:           "Kotlin: Переведення рядка в верхній регістр"
-simple_title:         "Переведення рядка в верхній регістр"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Arduino: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,40 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та для чого?
-Коли ми говоримо про "капіталізацію рядка", маємо на увазі перетворення першої букви рядка на велику. Пограмісти роблять це для покращення зручності читання тексту, правильного форматування виводу, або тонкої роботи з даними.
+## Що це таке & Навіщо?
+Коли ми кажемо про "капіталізацію рядків", маємо на увазі зміну першої літери слова на велику. Програмісти це роблять для форматування тексту, наприклад, на початку речень або для назв.
 
 ## Як це зробити:
-Для капіталізації рядка в Kotlin, використовуйте метод `capitalize()`. Розглянемо приклад.
-
-```Kotlin
+```kotlin
 fun main() {
-    val helloWorld = "вітаю світ"
-    val capitalizedHelloWorld = helloWorld.capitalize()
-
-    println(capitalizedHelloWorld)  // Output: "Вітаю світ"
+    val originalText = "карпати - перлина україни."
+    val capitalizedText = originalText.split(" ").joinToString(" ") { it.capitalize() }
+    println(capitalizedText)
 }
+
+// Вивід:
+// Карпати - Перлина України.
 ```
-В даному прикладі, `capitalize()` змінив першу літеру рядка helloWorld на велику і вивели це за допомогою `println()`. 
+Метод `capitalize()` замінюється на `replaceFirstChar` у нових версіях Kotlin:
+```kotlin
+fun String.capitalizeFirstLetter(): String = 
+    this.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
 
-## Поглиблений огляд
-Функцію `capitalize()` було вперше введено в Kotlin 1.0 для того, щоб програмісти могли легко працювати з текстовими даними. Хоча `capitalize()` є вельми зручною, вона має альтернативу в Kotlin 1.5 і вище - `replaceFirstChar()`. Суть використання та ж, але ви можете задати більш складну логіку перетворення першого символу.
-
-```Kotlin
 fun main() {
-    val helloWorld = "вітаю світ"
-    val capitalizedHelloWorld = helloWorld.replaceFirstChar{ if (it.isLowerCase()) it.titlecase() else it.toString() }
-
-    println(capitalizedHelloWorld)  // Output: "Вітаю світ"
+    val originalText = "львів - столиця кави."
+    val capitalizedText = originalText.split(" ").joinToString(" ") { it.capitalizeFirstLetter() }
+    println(capitalizedText)
 }
+
+// Вивід:
+// Львів - Столиця Кави.
 ```
 
-У багатьох випадках ви можете використовувати будь-яку з цих функцій, але важливо знати про наявність обох і розуміти різницю.
+## Глибинне занурення
+Раніше в Kotlin для капіталізації використовувався метод `capitalize()`, але через його неоднозначність - не коректну роботу з різними мовами та культурами, від версії 1.5 його замінено методом `replaceFirstChar`. "Title case" у більшості мов відноситься до трансформації першої літери слова у велику літеру. Важливо, що різні мови мають різні правила капіталізації.
 
-## Див. також
-Для більш детального вивчення можете використати такі джерела:
-- [capitalize() документація Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-- [replaceFirstChar() документація Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-first-char.html)
-- [Офіційна документація Kotlin](https://kotlinlang.org/docs/home.html)
+Щодо альтернатив, ви також можете використовувати бібліотеки сторонніх розробників або регулярні вирази, хоча для більшості потреб вбудовані засоби Kotlin виявляться досить зручними.
 
-Програмуйте з насолодою!
+## Дивіться також
+- Kotlin Documentation on Strings: [https://kotlinlang.org/docs/reference/basic-types.html#strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- Kotlin Standard Library: [https://kotlinlang.org/api/latest/jvm/stdlib/](https://kotlinlang.org/api/latest/jvm/stdlib/)
+- Unicode Standard Annex #29: Text Boundaries: [https://unicode.org/reports/tr29/#Word_Boundaries](https://unicode.org/reports/tr29/#Word_Boundaries), який може бути корисний для розуміння, як робити капіталізацію враховуючи різні мови.

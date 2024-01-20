@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizing a string"
-html_title:           "Arduino recipe: Capitalizing a string"
+html_title:           "C recipe: Capitalizing a string"
 simple_title:         "Capitalizing a string"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,43 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Capitalizing a string is the process of converting all the letters in the text to uppercase. Programmers often use this to standardize data inputs, improving readability and facilitating data analysis.
+
+Capitalizing a string means making every character an uppercase letter. Programmers do this for consistency, especially in user interfaces or when preparing data for storage or comparison.
 
 ## How to:
-You can capitalize a string in Arduino using the `toUpperCase()` function linked to a string object. 
 
-Here's a quick example:
-
-```Arduino
-String sentence = "this is an Example sentence.";
-sentence.toUpperCase();
-Serial.begin(9600);
-Serial.println(sentence);
-```
-
-After uploading this code to your Arduino board and opening your serial monitor, you will see this:
+In the Arduino environment, there isn't a built-in function to capitalize a whole string, so we'll write a simple function to do it:
 
 ```Arduino
-THIS IS AN EXAMPLE SENTENCE.
+void setup() {
+  Serial.begin(9600);
+  char example[] = "hello, world!";
+  capitalizeString(example);
+  Serial.println(example);
+}
+
+void loop() {
+  // Nothing to do here
+}
+
+void capitalizeString(char* str) {
+  for (int i = 0; str[i] != '\0'; i++) {
+    str[i] = toupper((unsigned char)str[i]);
+  }
+}
 ```
 
-All the characters in the string are now in uppercase. 
+After running the sketch, the serial monitor output shows:
+```
+HELLO, WORLD!
+```
 
 ## Deep Dive
-Although the `toUpperCase()` function is convenient, it hasn't always been available. In previous versions of Arduino language, people would create a custom function to change lowercase characters to uppercase. This would involve ASCII value conversion, and it's not as efficient.
 
-An alternative way to convert a string to uppercase is using character arrays in combination with the `toupper()` function. However, this method is recommended for more experienced coders as it requires a good understanding of pointers and memory management in C++:
+Historically, manipulating strings in lower-level languages like C requires working with individual characters due to the absence of high-level string manipulation functions. This tradition carries over to Arduino's C++ derivatives.
 
-```Arduino
-char str[] = "example sentence";
-for(int i=0; str[i]!='\0'; i++) str[i]=toupper(str[i]);
-Serial.begin(9600);
-Serial.println(str);
-```
+Alternatives include using `String` objects available in Arduino's C++ and calling the `.toUpperCase()` method. However, this consumes more memory. For memory-constrained environments like microcontrollers, it's often better to work with C-style character arrays (strings) and manipulate these in place.
 
-The `toUpperCase()` function operates by iterating through the string and converting each character separately. Essentially, it automates the `for` loop used in the alternative method. It's worth noting that `toUpperCase()` only operates on ASCII characters, special or Unicode characters may not be affected.
+Implementation details to remember when capitalizing a string in Arduino:
+- Make sure the string is mutable (i.e., a character array).
+- Use the `toupper` function from `<ctype.h>` to convert individual characters.
+- String manipulation can lead to memory issues like buffer overflow if not handled carefully.
 
 ## See Also
-For more insights and examples in Arduino Programming, visit:
 
-1. [Official Arduino Language Reference](https://www.arduino.cc/reference/en/)
+- Arduino Reference for String `.toUpperCase()` method: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/
+- Cplusplus.com `toupper` reference: http://www.cplusplus.com/reference/cctype/toupper/ 
+- Arduino String manipulation examples: https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringAdditionOperator

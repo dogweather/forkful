@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando uma string"
-html_title:           "Python: Capitalizando uma string"
+html_title:           "Bash: Capitalizando uma string"
 simple_title:         "Capitalizando uma string"
 programming_language: "Python"
 category:             "Python"
@@ -10,46 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é & Por quê?
+## What & Why?
+Capitalizar uma string é transformar todas as letras iniciais de palavras para maiúsculas. Programadores fazem isso para padronizar textos, destacar títulos ou por convenções de código.
 
-Capitalizar uma string significa tornar a primeira letra de cada palavra em maiúsculo. Programadores fazem isso para melhorar a estética do texto, tornar textos consistentes e facilitar a leitura.
+## How to:
+Python torna capitalização de strings tranquilo. Vamos ver o método `title()` e `capitalize()`:
 
-## Como fazer:
+```python
+texto = "programação em python é demais"
 
-No Python, temos o método title() para capitalizar strings. Aqui está um exemplo:
+# Capitaliza cada palavra:
+texto_capitalizado = texto.title()
+print(texto_capitalizado)  # Saída: Programação Em Python É Demais
 
-```Python
-texto = 'programação em python é divertida.'
-texto = texto.title()
-print(texto)
+# Capitaliza apenas a primeira letra da string:
+primeira_letra_maiuscula = texto.capitalize()
+print(primeira_letra_maiuscula)  # Saída: Programação em python é demais
 ```
 
-A saída será:
+## Deep Dive
+Antigamente, a consistência na escrita não era tão rigorosa. Com computadores, veio a necessidade de padronizar textos. Em Python, o método `title()` capitaliza todas as palavras numa string, útil para títulos, mas não lida bem com apóstrofos. Já o `capitalize()` é melhor para sentenças, pois só capitaliza o primeiro caractere.
 
-```Python
-'Programação Em Python É Divertida.'
+Alternativas incluem o uso de expressões regulares para controle fino:
+
+```python
+import re
+texto = "o python é bacana"
+
+# Capitaliza palavras levando em conta apóstrofos e outras exceções
+def capitaliza_com_regex(txt):
+    return re.sub(r"(\b[a-z](?!\s))", lambda x: x.group().upper(), txt)
+
+texto_capitalizado_regex = capitaliza_com_regex(texto)
+print(texto_capitalizado_regex)  # Saída: O Python É Bacana
 ```
 
-## Mergulho profundo:
+Implementação no estilo Python é direta, mas há sutilezas. Por exemplo, `title()` não capitaliza após algumas pontuações. Isso tem melhorado ao longo das versões.
 
-O método title() existe desde o início do Python. Foi uma maneira fácil de trazer a funcionalidade comum de processadores de texto para a linguagem de programação.
-
-Uma alternativa ao método title() é o método capitalize(). No entanto, o método capitalize() torna a primeira letra da string em maiúsculo e todas as demais em minúsculo.
-
-```Python
-texto = 'python é DIVERTIDO.'
-texto = texto.capitalize()
-print(texto)
-```
-
-A saída será:
-
-```Python
-'Python é divertido.'
-```
-
-Em termos de implementação, esses métodos de string percorrem a string e alteram os caracteres para maiúsculas ou minúsculas conforme necessário.
-
-## Veja também:
-
-Para mais informações sobre strings no Python, consulte a documentação oficial do Python sobre strings em: https://docs.python.org/3/tutorial/introduction.html#strings
+## See Also
+- Documentação oficial do Python sobre métodos de string: [Python String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- Tutorial Python sobre expressões regulares: [Python Regex](https://docs.python.org/3/library/re.html)
+- Guia de estilo para Python, PEP 8, que inclui convenções de capitalização: [PEP 8](https://www.python.org/dev/peps/pep-0008/#prescriptive-naming-conventions)

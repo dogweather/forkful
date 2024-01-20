@@ -1,7 +1,7 @@
 ---
-title:                "Gjør en streng stor"
-html_title:           "Javascript: Gjør en streng stor"
-simple_title:         "Gjør en streng stor"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -11,36 +11,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Å "capitalisere" en streng betyr å konvertere enkelte eller alle tegn i strengen til store bokstaver. Programmerere gjør dette for å forbedre lesbarheten eller for å oppfylle visse formatkrav.
+Store bokstaver i en streng betyr å gjøre den første bokstaven i hvert ord til en stor bokstav. Vi gjør dette for å følge typografiske normer, forbedre lesbarheten eller formatere tekst etter visse krav, for eksempel i titler eller overskrifter.
 
 ## Hvordan:
-
-Her er en kort kodebit for å "capitalisere" en streng i JavaScript:
-
-```Javascript
+```javascript
 function capitalizeString(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+  return str.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
 }
 
-console.log(capitalizeString("programming is cool.")); \\ Output: "Programming is cool."
-```
-Hvis du vil gjøre alle ordene i strengen med store bokstaver, kan du bruke følgende kode:
-
-```Javascript
-function capitalizeWords(str) {
-    return str.toLowerCase().split(' ').map(function(word) {
-        return word.charAt(0).toUpperCase() + word.slice(1);
-    }).join(' ');
-}
-
-console.log(capitalizeWords("programming is cool.")); \\ Output: "Programming Is Cool."
+console.log(capitalizeString("hei, dette er et eksempel!")); // Output: "Hei, Dette Er Et Eksempel!"
 ```
 
-## Dyp Dykk
+## Dypdykk
+Kapitalisering av strenger er ikke en ny idé. Tilbake til skrivemaskinens dager, manuelle endringer ble gjort for viktige ord. I JavaScript, uten en innebygd funksjon som direkte kapitaliserer hver ord i en streng, må vi lage vår egen løsning. Det finnes alternativer til vår `capitalizeString` funksjon, for eksempel, biblioteker som Lodash har en `_.startCase` som gjør noe likt. Implementasjonen ovenfor bruker en regular expression som finner det første tegnet i et ord og en `.toUpperCase()` funksjon for å konvertere det til stor bokstav. Husk at funksjonen ikke skiller mellom ord, og vil også kapitalisere etter spesialtegn som bindestreker eller apostrofer.
 
-Å "capitalisere" en streng har vært en del av programmeringsspråk som JavaScript i mange år, og det har blitt en standard funksjon for strengmanipulasjon.
-
-Det er andre metoder for å oppnå samme resultat, som bruk av CSS (Cascading Style Sheets) i nettutviklingskontekst. `text-transform: capitalize;` i CSS vil automatisk "capitalisere" alle ord i en tekst, uten å måtte manipulere selve strengen med JavaScript.
-
-Når det gjelder implementeringsdetaljer, vil du kanskje merke at vi først konverterer alle tegnene til små bokstaver i den andre funksjonen (`capitalizeWords(str)`). Dette gjøres for å sikre at alle ordene starter med små bokstaver, slik at vi deretter bare kan konvertere det første tegnet til stort bokstav.
+## Se Også:
+- MDN Web Docs String's `toUpperCase()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+- Lodash `_.startCase`: https://lodash.com/docs/4.17.15#startCase
+- CSS tekst-transformasjon for kapitalisering: https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform

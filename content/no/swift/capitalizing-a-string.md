@@ -1,7 +1,7 @@
 ---
-title:                "Sette stor bokstav i en streng"
-html_title:           "Swift: Sette stor bokstav i en streng"
-simple_title:         "Sette stor bokstav i en streng"
+title:                "Sette streng til store bokstaver"
+html_title:           "Arduino: Sette streng til store bokstaver"
+simple_title:         "Sette streng til store bokstaver"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Kapitalisering av en tekststreng betyr å gjøre bokstavene i strengen til store bokstaver. Programmerere kapitaliserer strenger for å standardisere data, for eksempel for å gjøre brukerinput konsekvent eller for å fremheve seksjoner av tekst.
 
-Kapitalisering av en streng betyr å gjøre den første bokstaven i hver eneste ord i strengen stor. Programmers gjør dette for å forbedre lesbarheten og legge til estetisk verdi til en tekst. 
-
-## Hvordan gjør man det:
-
-Her er et kodeeksempel i Swift:
+## How to:
+I Swift bruker du `uppercased()` for å kapitalisere en streng. Her er et raskt eksempel:
 
 ```Swift
-let navn = "henrik ibsen"
-let kapitalisertNavn = navn.capitalized
-print(kapitalisertNavn)
+let smallText = "norsk elghund"
+let capitalizedText = smallText.uppercased()
+print(capitalizedText) // Output: "NORSK ELGHUND"
 ```
 
-En kjøringssekvens av koden ovenfor vil gi:
+Veldig greit, ikke sant?
 
+## Deep Dive
+Kapitalisering av strenger er viktig for å skille mellom vanlig tekst og viktig tekst, som overskrifter eller akronymer. Før Swift og moderne programmeringsspråk, trengte utviklere å manipulere ASCII-verdier direkte for å kapitalisere bokstaver. Men nå, med Swifts `uppercased()`-metode, er dette mye enklere.
+
+Alternativer til `uppercased()` inkluderer `lowercased()` for å gjøre alt til små bokstaver og `capitalized` som gjør bare første bokstav i hvert ord til en stor bokstav. Her er et eksempel:
+
+```Swift
+let mixedText = "Norsk ELGHUND vinner løp"
+print(mixedText.lowercased()) // Output: "norsk elghund vinner løp"
+print(mixedText.capitalized)  // Output: "Norsk Elghund Vinner Løp"
 ```
-Henrik Ibsen
-```
 
-## Dypdykk:
+Implementeringen av `uppercased()` tar hensyn til lokale innstillinger – eller 'locales' – som bestemmer riktige kapitaliseringsregler basert på språk og region.
 
-Historisk kontekst: kapitalisering av strenger har vært et vanlig verktøy i typografi i hundrevis av år. 
+## See Also
+For videre lesing, sjekk ut Swift-dokumentasjonen:
+- [String](https://developer.apple.com/documentation/swift/string/)
+- [StringTransform](https://developer.apple.com/documentation/foundation/stringtransform/)
+- [Locale](https://developer.apple.com/documentation/foundation/locale)
 
-Alternativer: Swift gir en alternativ metode, `uppercased()`, som gjør alle tegnene i strengen til store bokstaver. 
-
-Implementeringsdetaljer: I Swift skjer kapitalisering ved å gå gjennom strengen ord for ord, og konvertere det første tegnet i hvert ord til en stor bokstav.
-
-## Se også:
-
-For mer informasjon om strengmanipulasjon i Swift, ta en titt på disse lenkene:
-
-- [Offisiell Swift dokumentasjon](https://docs.swift.org)
-- [Strengmanipulasjon Guide fra Ray Wenderlich](https://www.raywenderlich.com/449-swift-string-manipulation-operators-and-more)
-- [Stack Overflow Diskusjon om Strengkapitalisering](https://stackoverflow.com/questions/26364914)
+Du kan også lære mer om Unicode og kapitalisering på:

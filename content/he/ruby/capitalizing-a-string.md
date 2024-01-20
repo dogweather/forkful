@@ -1,7 +1,7 @@
 ---
-title:                "הגדלת אותיות במחרוזת"
-html_title:           "Ruby: הגדלת אותיות במחרוזת"
-simple_title:         "הגדלת אותיות במחרוזת"
+title:                "הפיכת מחרוזת לאותיות רישיות"
+html_title:           "Bash: הפיכת מחרוזת לאותיות רישיות"
+simple_title:         "הפיכת מחרוזת לאותיות רישיות"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,29 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הפונקציה של אות גדולה במחרוזת (string) היא אין סיום. לראשית, הוא מאפשר לנו להבליט מילים מסוימות. לדוג' בשפות תכנות אחרות, אולי תרצה להראות מילים קטלניות כמו ERRORS או WARNING גדול. זה לא רק עניין של עיצוב, אלא יכול גם לעזור לקורא למצוא את המידע החשוב באופן מהיר.
+הופכים מחרוזת לאותיות גדולות כשרוצים שהטקסט יהיה גלוי ובולט יותר. זה שימושי בעיקר לכותרות או כשמובילים לדבר מרכזי.
 
-## נסיון:
-בעזרת Ruby, אפשר להעלים את כל מחרוזת באמצעות השיטה `upcase`. הנה איך זה נראה:
+## איך לעשות:
+ב-Ruby, כשרוצים להפוך תווים לאותיות גדולות משתמשים ב-methods כמו `.upcase` או `.capitalize`. נתחיל עם `.capitalize`:
 
-```Ruby
-str = "hello there, programmers!"
-puts str.upcase
-
-# התוצאה תהיה: "HELLO THERE, PROGRAMMERS!"
+```ruby
+puts "shalom".capitalize
+# Output: Shalom
 ```
-או, אם ברצוננו להפוך רק את האות הראשונה של כל מילה לאותיות גדולות, אנו יכולים להשתמש בפעולה `capitalize` או `titleize`: 
 
-```Ruby
-str = "hello there, programmers!"
-puts str.capitalize
+עכשיו `.upcase`:
 
-# התוצאה תהיה "Hello there, programmers!"
+```ruby
+puts "shalom".upcase
+# Output: SHALOM
 ```
-## ברוך טבילה:
-הוא נפוצה מספיק בשפות תכנות שיש לו פונקציונאליות משלו ברוב המקרים, ובכל המקרה הוא תמיד מאוד פשוט להשג אם אתה מכיר מעט מדי סינטקס של השפה. ישנם גם דרכים נוספות להגיע לאותו התוצאה, למשל, בעזרת תכנות מערך או באמצעות שימוש בספריות מקודדות.
 
-הזהרת והתחפושת הכי טובה ברוב המקרים תהיה להשתמש בפונקציה כדי להפוך את המחרוזת לאותיות גדולות, אבל בשעה האחרונה אתה יכול למצוא את הכוח של הגדרת משתנה חדש של מידע המקיים את המחרוזת המקורית.
+`.capitalize` מגדיל רק את האות הראשונה, בעוד `.upcase` מגדיל הכל.
+
+## צלילה לעומק:
+בעברית, עניין ההפיכה לאותיות גדולות פחות רלוונטי, אבל באנגלית זו פעולה נפוצה. שיטות כמו `.upcase` ו`.capitalize` זמינות כבר מהתחלה ב-Ruby. אלטרנטיבה פחות ידועה היא `.swapcase` שמחליפה בין גדולות לקטנות.
+
+```ruby
+puts "Shalom".swapcase
+# Output: sHALOM
+```
+
+מבחינת היישום, Ruby משתמש בטבלת ASCII או Unicode כדי להפוך אותיות קטנות לגדולות ולהפך. הפעולה הזו אינה משנה את המחרוזת המקורית אלא יוצרת מחרוזת חדשה.
 
 ## ראה גם:
-[מדריך תיעוד של Ruby](https://www.rubydoc.info/stdlib/core/String:capitalize) - ראה איך `capitalize` `upcase` ו `titleize` עובדים. וכן [מדריך עזרה](https://www.tutorialspoint.com/ruby/ruby_strings.htm) ולראות איך להשתמש באילו עזרים.
+- תיעוד Ruby למתודות של מחרוזת: [Ruby String Documentation](https://ruby-doc.org/core-3.1.2/String.html)
+- פורום תכנות Ruby עבור שאלות ותמיכה: [Ruby Forum](https://www.ruby-forum.com/)

@@ -1,6 +1,6 @@
 ---
 title:                "Capitalizando una cadena de texto"
-html_title:           "Ruby: Capitalizando una cadena de texto"
+html_title:           "Arduino: Capitalizando una cadena de texto"
 simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## ¿Qué & Por Qué?
 
-Capitalizar una cadena de texto en programación se refiere a convertir su primera letra a mayúscula. Los programadores lo hacen para mejorar la legibilidad y el formato de la salida.
+Capitalizar una cadena en Ruby significa convertir la primera letra de cada palabra a mayúscula. Los programadores hacen esto para estandarizar datos, mejorar la legibilidad o cumplir con requisitos de formato de texto en aplicaciones.
 
 ## Cómo hacerlo:
 
-Aquí hay un ejemplo en Ruby de cómo capitalizar una cadena:
+Ruby facilita capitalizar cadenas con el método `capitalize`. Pero si quieres capitalizar todas las palabras en una cadena, tendrás que dividir la cadena en palabras y capitalizar cada una. 
 
 ```Ruby
-string = "¡hola mundo!"
-capitalized_string = string.capitalize
-puts capitalized_string
+# Capitaliza solo la primera palabra de una cadena
+puts "hola mundo".capitalize    #=> "Hola mundo"
+
+# Capitaliza todas las palabras de una cadena
+puts "hola mundo".split.map(&:capitalize).join(' ')   #=> "Hola Mundo"
+
+# O usando el método titleize de ActiveSupport (Rails)
+require 'active_support/core_ext/string/inflections'
+puts "hola mundo".titleize      #=> "Hola Mundo"
 ```
 
-Salida esperada:
-```Ruby
-"¡Hola mundo!"
-```
+## Profundizando:
 
-## Profundizamos
+Antes de que Ruby ofreciera métodos convenientes para capitalizar, los programadores tenían que manipular cadenas manualmente, lo cual era propenso a errores y no muy eficiente. Además de `capitalize`, ahora también tenemos métodos como `upcase`, `downcase`, y `swapcase`, útiles para diferentes necesidades.
 
-Historiamente, las cadenas han sido capitalizadas por necesidades de formato y presentación visual. Sin embargo, en Ruby, hay alternativas a la función .capitalize. Por ejemplo, puedes usar .upcase para convertir toda la cadena en mayúsculas.
+La capitalización automática puede no ser perfecta para todos los idiomas o casos (por ejemplo, no maneja bien las abreviaturas o acrónimos). En entornos como Rails, ActiveSupport agrega el método `titleize`, que es más completo y configurado para lidiar con los casos más comunes en titulación de palabras.
 
-Los detalles de implementación para capitalizar una cadena en Ruby son bastante sencillos. La función .capitalize es uno de los muchos métodos incorporados disponibles para las cadenas. Solo afecta a la primera letra de la cadena y deja el resto tal cual.
-
-```Ruby
-string = "¡hola mundo!"
-uppercased_string = string.upcase
-puts uppercased_string
-```
-
-Salida esperada:
-```Ruby
-"¡HOLA MUNDO!"
-```
+Es importante mencionar que la capitalización es dependiente del contexto y de las reglas de cada idioma. Ruby maneja bastante bien la mayoría de las reglas de capitalización en inglés, pero para otros idiomas pueden ser necesarias soluciones personalizadas.
 
 ## Ver También:
 
-1. Documentación oficial de Ruby para el método String.capitalize: https://ruby-doc.org/core-2.7.0/String.html#method-i-capitalize
-2. Una lista de métodos de String en Ruby: https://ruby-doc.org/core-2.7.0/String.html
-3. Más ejemplos y uso de métodos de cadena en Ruby, como .capitalize y .upcase: https://www.rubyguides.com/2018/01/ruby-string-methods/
+Para más información, puedes consultar la documentación oficial de Ruby sobre los métodos de [String](https://ruby-doc.org/core-2.7.0/String.html), así como la [guía de ActiveSupport sobre inflections](https://api.rubyonrails.org/classes/ActiveSupport/Inflector.html). Si estás interesado en el manejo más avanzado de cadenas y capitalización en diferentes idiomas, podrías explorar gemas como [Rails i18n](https://github.com/svenfuchs/rails-i18n).

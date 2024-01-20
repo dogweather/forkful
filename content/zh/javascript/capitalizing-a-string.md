@@ -1,7 +1,7 @@
 ---
-title:                "将字符串大写"
-html_title:           "Javascript: 将字符串大写"
-simple_title:         "将字符串大写"
+title:                "字符串首字母大写"
+html_title:           "Arduino: 字符串首字母大写"
+simple_title:         "字符串首字母大写"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 是什么以及为什么？
+## What & Why? (什么以及为什么？)
+在JavaScript中，大写化字符串意味着将文本中的所有字母统一转换为大写形式。程序员通常这样做来规范数据输入，或者在用户界面中为了一致性或强调某些文字。
 
-大写字符串的操作是什么呢？这是一种将字符串中的每个单词的第一个字母转换为大写的过程。那为什么程序员需要这样做呢？通常，这样做是为了格式化输出，例如标题、人名等。
-
-## 如何做？
-
-以下是大写字符串的Javascript代码示例：
+## How to: (怎么做：)
+JavaScript提供了一个简单的方法来大写字符串。用`.toUpperCase()`这个方法就可以了，示例代码如下：
 
 ```Javascript
-function titleCase(str) {
-    return str.toLowerCase().split(' ').map(function(word) {
-        return (word.charAt(0).toUpperCase() + word.slice(1));
-    }).join(' ');
-}
+let greeting = '你好，世界！';
+let shout = greeting.toUpperCase();
 
-console.log(titleCase('javascript is cool'));
+console.log(shout);  // 输出：你好，世界！
 ```
 
-程序的输出结果是`"Javascript Is Cool"`。
+如果要每个单词的首字母大写，可以这样做：
 
-## 深入了解
+```Javascript
+let title = 'javascript编程简介';
+let capitalizedTitle = title.split(' ')
+                             .map(word => word[0].toUpperCase() + word.substring(1))
+                             .join(' ');
 
-历史背景: 大写字符串的需要早在计算机编程之前就存在了，用于书写规范、印刷媒体等。
+console.log(capitalizedTitle);  // 输出：Javascript编程简介
+```
 
-替代方法: 在特定的情况下，你可以使用CSS实现大写功能，例如标题、名称等。CSS的`text-transform`属性就可以用于这样的转换。
+## Deep Dive (深度解析)
+在早期的编程语言中，大写化字符串通常需要通过遍历每个字符并手动转换来实现。现在，JavaScript 的 `.toUpperCase()` 方法为我们提供了一种快速、简便的大写化方式。但要注意的是，它对于某些语言中的特殊字符可能不会按预期工作。
 
-实现细节: `toLowerCase()`和`split(' ')`这两个方法会先将整个字符串所有字母转换为小写，然后将其分割成一个个单词，然后map函数会遍历这些单词，将每个单词的首字母转为大写，并返回新的数组，最后使用`join(' ')`将数组中的每一个词重组成一个新的字符串。
+若不使用 JavaScript 自带的方法，你也可以自己实现一个大写化函数。譬如，你可以利用 ASCII 值来转换英文字符。
 
-## 参考文献
+除了 `.toUpperCase()`，还有 `.toLowerCase()` 转为小写，`.toLocaleUpperCase()` 和 `.toLocaleLowerCase()` 分别根据本地语言环境转换大小写，更适合某些特定语言。
 
-要了解更多关于字符串大写转换的内容，你可以访问以下链接:
+在处理用户输入或显示数据时，大小写通常需要根据上下文适当转换。大写化通常用于表头、标题或用户界面的按钮上的文本。
 
-1. [JavaScript String toUpperCase() Method - W3schools](https://www.w3schools.com/jsref/jsref_touppercase.asp)
-2. [JavaScript String toLowerCase() Method - W3schools](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
-3. [JavaScript String split() Method - W3schools](https://www.w3schools.com/jsref/jsref_split.asp)
-4. [Array.prototype.map() - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+## See Also (参考链接)
+- JavaScript String reference on MDN: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- String methods in JavaScript: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- ASCII table and description: [https://www.asciitable.com/](https://www.asciitable.com/)

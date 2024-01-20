@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज करना"
-html_title:           "PowerShell: स्ट्रिंग को कैपिटलाइज करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-शीर्षक: PowerShell में स्ट्रिंग्स की मूंटनी कैसे करें?
+## What & Why? (क्या है और क्यों?)
+**क्या है**: स्ट्रिंग कैपिटलाइज़ेशन का मतलब होता है हर शब्द के पहले अक्षर को बड़ा (कैपिटल) करना।
+**क्यों**: प्रोग्रामर्स अकसर टेक्स्ट को औपचारिकता देने या नाम और शीर्षक को स्पष्टता से प्रदर्शित करने के लिए स्ट्रिंग कैपिटलाइज़ करते हैं।
 
-## क्या और क्यों?
-अक्षरों की मूंटनी करना का मतलब है कि स्ट्रिंग में हर शब्द के पहले अक्षर को बड़ा (capital) करना। कोडों में इसका इस्तेमाल तब किया जाता है, जब हमें उपयोगकर्ता की इनपुट को किसी निर्धारित फॉर्मैट में दर्ज करना होती है। 
-
-## कैसे करें:
-जी हाँ, यह उत्कृष्ट है। PowerShell में, हम `ToTitleCase` मेथड का उपयोग करके यह कर सकते हैं। यहां एक उदाहरण है:
+## How to: (कैसे करें?)
+PowerShell में, स्ट्रिंग्स को कैपिटलाइज़ करने के लिए आप `ToTitleCase` मेथड का उपयोग कर सकते हैं:
 
 ```PowerShell
-[string] $myString = "powershell में स्ट्रिंग्स की मूंटनी"
+# ग्लोबलाइज़ेशन क्लास लोड करें
+Add-Type -AssemblyName System.Globalization
+
+# कल्चर इन्फो ऑब्जेक्ट तैयार करें
 $textInfo = [Globalization.CultureInfo]::CurrentCulture.TextInfo
-[string] $capitalizedString = $textInfo.ToTitleCase($myString)
-Write-Output $capitalizedString
+
+# स्ट्रिंग कैपिटलाइज़ करें
+$capitalizedString = $textInfo.ToTitleCase("yeh ek udaharan hai")
+$capitalizedString
 ```
-सैंपल आउटपुट:
-
-```PowerShell
-Powershell में स्ट्रिंग्स की मूंटनी 
+नतीजा:
+```
+Yeh Ek Udaharan Hai
 ```
 
-## गहराई में:
-`ToTitleCase` मेथड का उपयोग करना एक पुराना और प्रभावी तरीका है स्ट्रिंग की मूंटनी करने का। इसके विकल्प आपकी भाषा या प्लेटफार्म पर निर्भर कर सकते हैं। PowerShell में, आप इसे पाइप ट्रिक का उपयोग करके आसानी से लागू कर सकते हैं। `ToTitleCase` मेथड `Globalization.CultureInfo`  क्लास का हिस्सा है, जो `.NET`  का हिस्सा है। 
+## Deep Dive (गहराई से जानकारी)
+PowerShell स्ट्रिंग मेथड `ToTitleCase` .NET क्लास `TextInfo` से आता है, जो `System.Globalization` नेमस्पेस का हिस्सा है। यह प्रकार्य पहली बार .NET Framework में शामिल किया गया था। आज भी, यह मेथड प्रोग्रामर्स को स्ट्रिंग्स के हर शब्द के पहले अक्षर को बड़ा करने की अनुमति देता है।
 
-## अधिक जानकारी:
-यदि आप PowerShell के कठिन समस्याओं का समाधान करने में रुचि रखते हैं, तो निम्नलिखित लिंक आपके लिए उपयोगी हो सकते हैं:
+विकल्प: PowerShell में डायरेक्ट स्ट्रिंग मेथड `ToUpper()` और `ToLower()` भी हैं, जो क्रमश: पूरे स्ट्रिंग को कैपिटल या स्मॉल केस में बदल देते हैं। लेकिन `ToTitleCase` प्रत्येक शब्द के लिए कैपिटलाइज़ेशन प्रदान करता है, जो हेडिंग्स या टाइटल्स में उपयोगी होता है।
 
-2. [.NET डॉक्यूमेंटेशन](https://docs.microsoft.com/hi-in/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0): `ToTitleCase` मेथड का विस्तृत विवरण।
+इम्प्लीमेंटेशन डीटेल्स: `ToTitleCase` को इस्तेमाल करते वक्त, यह ध्यान देना जरुरी है कि यह मेथड शब्दों की सामान्य सीमा पर ध्यान देता है। यदि स्ट्रिंग पहले से ही अप्पर केस में हैं, तो इसे प्रत्येक शब्द की पहचान नहीं हो पाएगी। इसलिए इसे स्ट्रिंग्स के साथ उपयोग से पहले उसे `ToLower()` या `ToLowerCase()` से छोटा करना उत्तम होगा।
+
+## See Also (और भी जानकारी)
+- [Microsoft Docs on TextInfo](
+  https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo)
+- [Microsoft Docs on ToTitleCase](
+  https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
+- [PowerShell string manipulation](
+  https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-strings?view=powershell-7.1)

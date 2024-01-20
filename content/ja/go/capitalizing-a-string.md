@@ -1,7 +1,7 @@
 ---
-title:                "文字列を大文字にする"
-html_title:           "Go: 文字列を大文字にする"
-simple_title:         "文字列を大文字にする"
+title:                "文字列の先頭を大文字にする"
+html_title:           "C: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,12 +10,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+文字列を大文字化するって？単純に、文字列の中の小文字を全部大文字に変換することだよ。なぜやるの？読みやすさを上げたり、データを統一するためだね。
 
-文字列の先頭を大文字にする、これは一般的に文字列のキャピタライゼーションと呼ばれます。プログラマはコード内で認識しやすくするためや、データ整形、表示改善のためにこの操作を使用します。
-
-## 手順：
-
+## How to: (実装方法)
 ```Go
 package main
 
@@ -25,24 +23,21 @@ import (
 )
 
 func main() {
-	text := "go プログラム"
-	capitalized := strings.Title(text)
-	fmt.Println(capitalized)
+	original := "こんにちは、世界！"
+	upper := strings.ToUpper(original)
+	fmt.Println(upper)
 }
 ```
 実行結果:
-```Go
-Go プログラム
+```
+こんにちは、世界！
 ```
 
-## ディープダイブ
+## Deep Dive (深掘り)
+Goの`strings.ToUpper`関数を使うと、簡単に文字列を大文字にできるよ。実は、Go言語における大文字化は、Unicodeを完全にサポートしてる。だから、多言語の文字も正しく大文字になる。細かい実装詳細は、Goのソースコードを見ると良い理解が得られるよ。以前のプログラミング言語では、ASCIIコードのみをサポートしてたけど、Goはグローバルな使用を考慮して作られているからね。
 
-文字列のキャピタライゼーションは歴史的に様々な言語の特性として存在しています。例えば、Pythonでは`capitalize()`メソッド、Javaでは`toUppercase()`メソッド等があります。Go 言語では、`strings`パッケージの`Title`関数を用いることで文字列の先頭を大文字にできます。これは、文や単語の先頭を大文字にするだけでなく、非英語のアルファベット文字に対しても利用できます。
+もし手軽に使える他の方法を探しているなら、`bytes`パッケージもあり、`bytes.ToUpper`という関数でbyte sliceを大文字化することが可能だよ。
 
-文字列を大文字にする別の方法としては、文字列内の全ての文字を大文字にする `strings.ToUpper()` もあります。しかし、これは全ての文字が大文字になるため、特定の単語だけ先頭を大文字にしたい場合には `Title`関数を使うべきです。
-
-## 参照：
-
-- Go ドキュメンテーション: 文字列操作 https://pkg.go.dev/strings
-- Go ドキュメンテーション: strings.Title https://pkg.go.dev/strings#Title
-- Go ドキュメンテーション: strings.ToUpper https://pkg.go.dev/strings#ToUpper
+## See Also (参考文献)
+- Goの公式ドキュメント: [strings package](https://pkg.go.dev/strings)
+- Unicodeについて詳しく: [Unicode's official website](https://unicode.org)
