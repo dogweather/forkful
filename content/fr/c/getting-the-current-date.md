@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:12:54.672793-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "C"
 category:             "C"
@@ -10,36 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Obtenir la date courante dans une application C donne la date et l'heure actuelles. Les programmeurs l'utilisent pour générer des rapports liés à la date ou pour des fonctionnalités basées sur le temps.
+# Récupérer la date actuelle en C : Simple et pratique
 
-## Comment faire:
-Voici comment obtenir la date actuelle en C:
-```C
-//Inclure la bibliothèque time.h
-#include<time.h>
- 
-int main(){
-    //initialiser temp
-    time_t temps;
-    
-    //obtenir le temps actuel
-    temps = time(NULL);
- 
-    // Afficher la date et l'heure actuelles
-    printf("%s", ctime(&temps));
-    
+## Quoi et Pourquoi ?
+La récupération de la date actuelle c'est juste demander à votre ordi 'Quel jour on est?'. Les développeurs font ça pour des logs, des timestamps, des fonctionnalités basées sur la date... bref, plein de raisons.
+
+## Comment faire :
+Voilà le code. Simple, direct.
+
+```c
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    time_t now = time(NULL);
+    struct tm *local = localtime(&now);
+
+    printf("Date: %02d/%02d/%04d\n", local->tm_mday, local->tm_mon + 1, local->tm_year + 1900);
     return 0;
 }
 ```
-La sortie ressemblerait à ceci: `Mon Mar 15 01:16:46 2021`
+
+Si on exécute, ça donne :
+
+```
+Date: 22/03/2023
+```
 
 ## Plongée profonde
-Historiquement, en C, la date et l'heure actuelles ont toujours été obtenues à l'aide de la bibliothèque `time.h`. 
-Alternativement, vous pouvez utiliser `gettimeofday()` or `clock_gettime()`. Cependant, `time(NULL)` est plus portable et plus précis jusqu'à la seconde. 
-Cela fonctionne en renvoyant le nombre actuel de secondes écoulées depuis l'époque UNIX (00:00:00 UTC, le 1 janvier 1970), pas compter les secondes bissextiles.
+Historiquement, `time.h` est là depuis les premiers jours du C. On a aussi `gettimeofday` et `clock_gettime` pour plus de précision. La struct `tm` stocke des infos détaillées, et faire `local->tm_year + 1900` c'est parce que `tm_year` compte depuis 1900. Oui, c'est un peu vintage.
 
-## Voir aussi
-Pour plus d'informations, vous pouvez consulter ces ressources:
-- Document de la bibliothèque C Standard, Section 7.27: [Time.h](http://www.open-std.org/JTC1/SC22/WG14/www/docs/n1256.pdf)
-- L'Epoch Unix: [Explication](https://www.epochconverter.com/)
+## Voir également :
+- [Documentation de la librairie C - time.h](https://en.cppreference.com/w/c/chrono)
+- [Man page de localtime(3)](https://linux.die.net/man/3/localtime)
+- [Tutoriel sur les Dates et Heures en C](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)

@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:16:51.855993-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,33 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why?
+(Po co i dlaczego?)
+Pobieranie bieżącej daty pozwala nam reagować na czas rzeczywisty. Używamy tego w logowaniu, w odmierzaniu czasu, w harmonogramach – wszędzie, gdzie czas jest kluczowy.
 
-Pobieranie aktualnej daty w programowaniu to proces wyznaczania bieżącej daty i godziny. Programiści często korzystają z tej funkcji do znacznikowania danych, monitorowania pamięci podręcznej lub ustalania interwałów czasowych.
-
-## Jak to zrobić:
-
-Rozważmy proces za pomocą kodu Swift. Dla uzyskania aktualnej daty, używamy klasa `Date()`.
-
+## How to:
+(Jak to zrobić:)
 ```Swift
-let AktualnaData = Date()
-print(AktualnaData)
+import Foundation
+
+// Pobranie bieżącej daty i czasu
+let currentDate = Date()
+
+// Wydrukowanie bieżącej daty i czasu do konsoli
+print(currentDate)
+```
+Przykładowe wyjście:
+```
+2023-04-14 07:38:46 +0000
 ```
 
-W przypadku uruchomienia tego kodu uzyskalibyśmy wydruk bieżącej daty i czasu, np.:
+## Deep Dive:
+(Zagłębiając się:)
+Pobranie bieżącej daty w Swift jest proste, ale kryje w sobie więcej zaawansowanych możliwości. W roku 1998, poprzednik Swifta, Objective-C, był już wykorzystywany do obsługi dat. Swift przyniósł uproszczenie dzięki typowi `Date`.
+
+W alternatywie, możemy użyć `Calendar` do bardziej złożonych operacji z datami, jak różnice czasowe czy formatowanie. `DateFormatter` pozwala nam konwertować daty na czytelne stringi i odwrotnie, biorąc pod uwagę lokalizacje i preferencje użytkownika.
+
+W praktyce, warto też pamiętać o strefach czasowych (`TimeZone`) i ustawieniach lokalnych (`Locale`), aby czas był właściwie interpretowany na całym świecie.
 
 ```Swift
-2022-10-01 17:50:53 +0000
+import Foundation
+
+// Przykład formatowania daty
+let formatter = DateFormatter()
+formatter.dateStyle = .medium
+formatter.timeStyle = .medium
+
+let formattedDate = formatter.string(from: currentDate)
+print(formattedDate)
+```
+Przykładowe wyjście dla lokalizacji w USA:
+```
+Apr 14, 2023, 7:38:46 AM
 ```
 
-## Pogłębiona analiza
-
-Pobieranie aktualnej daty to stara praktyka w programowaniu, stosowana na przykład w systemach operacyjnych UNIX już w latach 70. XX wieku. W Swift istnieją również alternatywne metody pobierania daty, takie jak korzystanie z `DateComponents()` lub `NSDate()`.
-
-Szczegóły implementacji `Date()` polegają na wykorzystaniu czasu UTC. Oznacza to, że data i godzina są zawsze przedstawiane w odniesieniu do czasu uniwersalnego, a nie lokalnego czasu użytkownika. Aby przeliczyć na czas lokalny, potrzebny jest obiekt `TimeZone`.
-
-## Zobacz też 
-
-1. Dokumentacja Swift `Date`: https://developer.apple.com/documentation/foundation/date
-2. Dokumentacja Swift `DateComponents`: https://developer.apple.com/documentation/foundation/datecomponents
-3. Przewodnik po czasie i dacie w Swift: https://www.hackingwithswift.com/articles/141/8-practical-time-and-date-handling-with-swift
+## See Also:
+(Zobacz też:)
+- Dokumentacja Swift `Date`: https://developer.apple.com/documentation/foundation/date
+- Przewodnik po `DateFormatter`: https://developer.apple.com/documentation/foundation/dateformatter
+- Informacje o `Calendar` w Swift: https://developer.apple.com/documentation/foundation/calendar

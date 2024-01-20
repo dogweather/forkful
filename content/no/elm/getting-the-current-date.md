@@ -1,7 +1,8 @@
 ---
-title:                "Få den gjeldende datoen"
-html_title:           "Haskell: Få den gjeldende datoen"
-simple_title:         "Få den gjeldende datoen"
+title:                "Slik får du tak i dagens dato"
+date:                  2024-01-20T15:14:18.979784-07:00
+html_title:           "C: Slik får du tak i dagens dato"
+simple_title:         "Slik får du tak i dagens dato"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,46 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? 
+Å hente nåværende dato betyr å tilgjengeliggjøre akkurat hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er nyttig for alt fra å tidsstemple hendelser til å vise oppdaterte tidspunkter for brukerne.
 
-Å hente den nåværende datoen betyr å få tilgang til den eksakte datoen og klokkeslettet akkurat nå i programmet ditt. Dette kan være nyttig for en rekke programmeringskrav, f.eks for å registrere tidspunktet for en bestemt hendelse i en applikasjon.
-
-## Hvordan gjør du det:
-Her er enkel kode for å hente den nåværende datoen i Elm:
+## How to:
+Elm har ikke innebygd dato-behandling, så du må bruke `elm/time` biblioteket. Her er et eksempel på hvordan du kan få den nåværende datoen:
 
 ```Elm
 import Time
 import Task
 import Browser
 
-type alias Model = 
-  { time : Time.Posix }
+type Msg = Tick Time.Posix
 
-init : flags -> ( Model, Cmd Msg )
-init flags =
-  ( Model Time.millisToPosix 0
-  , Task.perform GetCurrentTime Time.now
-  )
+main =
+    Browser.element
+        { init = init
+        , update = update
+        , view = view
+        , subscriptions = subscriptions
+        }
 
-type Msg =
-  GetCurrentTime Time.Posix
+init : () -> ( (), Cmd Msg )
+init _ =
+    ( (), Task.perform Tick Time.now )
+
+update : Msg -> model -> ( model, Cmd Msg )
+update (Tick currentTime) model =
+    ( model, Cmd.none )
+
+view : model -> Html.Html Msg
+view model =
+    -- Gjerne legg til kode her for hvordan du vil vise datoen på skjermen.
+    Html.text "Her ville den nåværende datoen dukke opp"
+
+subscriptions : model -> Sub Msg
+subscriptions model =
+    Time.every 1000 Tick -- Oppdaterer hver sekund.
 ```
-Koden over vil hente den nåværende datoen ved å bruke funksjonene tilgjengelig i `Time`-modulen.
 
-## Dyp Dykk
+Dette koden vil kjøre en `Tick` melding hver sekund med den nåværende datoen som `Time.Posix` verdi.
 
-Hente den nåværende datoen har sin rot i de tidligste dagene av databehandling. Data og tid er kritiske datatyper som brukes i nesten alle moderne applikasjon.
+## Deep Dive
+Elm er et funksjonelt språk som standardiserer håndteringen av tid gjennom `elm/time` biblioteket. Hvis du kommer fra JavaScript-verdenen, er det verdt å merke seg at Elm behandler sideeffekter, som å hente nåværende dato, annerledes. Innføring av `elm/time` var en måte å gi Elm ren tidshåndtering samtidig som språket holder seg funksjonelt og forutsigbart.
 
-I Elm, vi bruker `Time` modul for å håndtere dato og tid funksjonaliteter. Den gir deg funksjonalitet til å konvertere datoen til forskjellige formater som du kan bruke for forskjellige formål i applikasjonen din.
+Tidligere tilnærminger, som `Date` i JS, har mange bivirkninger og inkonsistenser. Elm forenkler dette ved å introdusere `Time.Posix`, som representerer tidspunkter i den såkalte POSIX formatet (antall millisekunder siden midnatt, 1. januar 1970 UTC).
 
-Alternativene for å få dagens dato i Elm kan variere basert på dine spesifikke behov. For eksempel, hvis du bare er interessert i datoen, kan du konvertere `Time.Posix` verdien til en dato-streng.
+Det finnes også alternativer til `elm/time` for mer kompleks dato-håndtering, som `justinmimbs/date` for Elm, som utvider funksjonaliteten for å inkludere operasjoner på kalenderdatoer.
 
-Implementasjonsdetaljer i Elm er rett frem. `Time.now`-funksjonen brukes til å hente den nåværende datoen og tiden. Den returnerer en oppgave som resultat, som deretter kan utføres for å få en `Time.Posix` verdi som representerer den nåværende datoen.
-
-## Se Også
-
-For mer informasjon om bruk av dato og tid i Elm, kan du referere til følgende dokumenter:
-
-1. Elm Time Modul Dokumentasjon: [https://package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/)
-2. Introduksjon til Funksjonell Programmering i Elm: [https://github.com/dwyl/learn-elm](https://github.com/dwyl/learn-elm)
-3. Elm Real World Eksempler på Github: [https://github.com/elm-community/elm-time](https://github.com/elm-community/elm-time)
+## See Also
+- Elm `Time` modul dokumentasjon: https://package.elm-lang.org/packages/elm/time/latest/
+- Elm diskusjonsforum for spesifikke spørsmål: https://discourse.elm-lang.org/
+- 'justinmimbs/date' bibliotek for flere dato-operasjoner: https://package.elm-lang.org/packages/justinmimbs/date/latest/

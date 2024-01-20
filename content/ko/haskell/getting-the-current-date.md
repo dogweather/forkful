@@ -1,6 +1,7 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "C: 현재 날짜 가져오기"
+date:                  2024-01-20T15:15:09.219806-07:00
+html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,43 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+현재 날짜를 가져오는 것은 여러분의 프로그램이 '오늘'이라는 개념을 알 필요가 있을 때 중요합니다. 로그 파일 작성, 데이터 처리, 사용자 경험 개선 등에 사용됩니다.
 
-날짜를 받아오는 것은 현재 시각을 알아내는 과정입니다. 프로그래머들은 이를 사용해 시간에서 다양한 기능을 구현합니다. 
-
-## 구현 방법:
-
-Haskell에서 현재 날짜를 받아오기 위해, 우리는 다음의 라이브러리를 사용합니다: `Data.Time`
+## How to: (방법)
+Haskell에서 현재 날짜를 가져오려면 `Data.Time` 라이브러리를 사용해야 합니다. 간단한 예제는 다음과 같습니다:
 
 ```Haskell
 import Data.Time
 
-main = getCurrentTime >>= print
+-- 현재 날짜와 시간을 가져옵니다
+getCurrentTimeExample :: IO ()
+getCurrentTimeExample = do
+    current <- getCurrentTime
+    print current
+
+-- 오직 날짜 정보만 가져옵니다
+getCurrentDateExample :: IO ()
+getCurrentDateExample = do
+    today <- fmap utctDay getCurrentTime
+    print today
+```
+실행 결과:
+```
+2023-04-15 15:24:36.123 UTC
+2023-04-15
 ```
 
-위의 코드를 실행하면 출력값으로 현재 시각이 나옵니다.
-
-```Haskell
-2021-10-14 17:42:00.6138317 UTC
-```
-
-## 깊게 알아보기
-
-날짜와 시간에 대한 작업은 많은 컴퓨팅 업무에서 중요한 부분을 차지하고 있으며, Haskell은 `Data.Time` 라이브러리를 통해 이를 제공합니다. 이 라이브러리는 2004년에 추가되었으며, 문서화가 잘 되어 있습니다.
-
-Haskell에서 날짜를 얻는 다른 방법으로는, 시스템의 로컬 타임을 바로 얻는 `getZonedTime` 함수가 있습니다.
+## Deep Dive (심층 분석)
+Haskell의 `Data.Time` 라이브러리는 시간과 관련된 다양한 기능을 제공합니다. `getCurrentTime` 함수는 UTC로 현재 시각을 반환하는데, 이는 1970년부터 시작된 Unix Time으로부터 계산됩니다. 대안으로, 로컬 타임존을 적용하고 싶다면, `getCurrentTimeZone`과 `utcToLocalTime` 함수를 사용할 수 있습니다.
 
 ```Haskell
 import Data.Time
 
-main = getZonedTime >>= print
+getCurrentLocalTimeExample :: IO ()
+getCurrentLocalTimeExample = do
+  zone <- getCurrentTimeZone
+  utc <- getCurrentTime
+  let localTime = utcToLocalTime zone utc
+  print localTime
 ```
 
-`getCurrentTime` 함수는 UTC 타임을, `getZonedTime`은 사용자의 시간대에 따라 타임을 반환합니다.
+실행 결과:
+```
+2023-04-15 18:24:36.123 KST
+```
 
-## 관련 자료
+구현상의 특이점으로는, Haskell의 날짜와 시간 함수들은 `IO` 타입을 사용합니다. 이는 실행할 때마다 다를 수 있는 '부수 효과(side effects)'를 가지기 때문입니다. 순수 함수로 시간을 다루지 않는 것이 이 부수 효과 때문에 일어나는 오류를 막을 수 있습니다.
 
-아래의 문서들에서 Haskell의 `Data.Time` 라이브러리에 대해 더 많은 정보를 얻을 수 있습니다.
-
-
-- [Haskell Date and Time Guide](https://two-wrongs.com/haskell-time-library-tutorial)
+## See Also (더보기)
+- `Data.Time` 라이브러리 문서: [Hackage Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- 시간 관련 어플리케이션 개발 이론: [Time and its abstractions](https://en.wikipedia.org/wiki/Time_standard)

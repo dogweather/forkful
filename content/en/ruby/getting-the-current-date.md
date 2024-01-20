@@ -1,6 +1,7 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elm recipe: Getting the current date"
+date:                  2024-01-20T15:16:20.667739-07:00
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,51 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Grabbing the current date in Ruby is as simple as it sounds: retrieving today's date. Programmers need it for tasks ranging from logging and timestamping to scheduling and validity checks.
 
-Getting the current date in a program refers to retrieving the accurate real-time date from the system. Programmers do this for time-tracking, setting deadlines, or managing events in their applications.
+## How to:
+Ruby makes it easy-peasy to get the current date. Here’s how:
 
-## How to: 
-
-To fetch the current date in Ruby, you just need to use the `Date` class from Ruby's standard library. Here's the basic way:
-
-```Ruby
+```ruby
 require 'date'
 
-puts Date.today
+# Get the current date
+current_date = Date.today
+puts current_date
 ```
-When you run this code, your output will look something like this:
 
-```Ruby
-2022-10-05
+Running this snippet will print something like this (depending on the day you run it):
+
 ```
-That's your current date in a YYYY-MM-DD format!
+2023-04-07
+```
+
+Want the time too? Here's the code:
+
+```ruby
+require 'time'
+
+# Get the current date and time
+current_datetime = Time.now
+puts current_datetime
+```
+
+And the output will include the timestamp:
+
+```
+2023-04-07 12:34:56 +0900
+```
 
 ## Deep Dive
+Once upon a time, Rubyists needed external libraries to manage dates and times. Enter the standard Ruby library with `Date` and `Time` classes, and the need for extras was mostly history.
 
-Initially, developers manually calculated dates and handled timezones. But with evolution of programming languages like Ruby, these tasks have become much easier.
+`Date` handles, well, dates - day, month, and year. For more precision, `DateTime` combines date and time, but if you need just the time or more granular details like seconds or time zones, `Time` has your back.
 
-There are a couple of alternatives for the `Date.today` method in Ruby:
+Alternatives to Ruby's built-in classes include gems like 'timecop' for testing time-dependent code, and 'chronic' for parsing natural language dates.
 
-1. `Time.new`: It provides both the date and time.
-2. `DateTime.now`: Similar to `Time.new`, but with date/time data available down to a fraction of a second.
-
-Here's the implementation of these alternatives:
- 
-```Ruby
-require 'time'
-require 'date'
-
-puts Time.new
-puts DateTime.now
-```
-The `Date` class automatically handles Leap years and varying days in different months complication, so you don't have to. It also provides a bunch of handy methods to manipulate and format date/time data.
+Under the hood, `Date.today` pulls your system's date. It keeps things simple but ignores time zones. `Time.now` goes farther, accounting for time zones with a default offset from Coordinated Universal Time (UTC).
 
 ## See Also
- 
-Ruby's standard library documentation has a lot of details on managing date & time:
-
-1. [Date Class](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html)
-2. [Time Class](https://ruby-doc.org/stdlib-3.1.1/libdoc/time/rdoc/Time.html)
-3. [DateTime Class](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/DateTime.html)
-
-They are your go-to references when dealing with date/time in Ruby. Happy coding!
+* Ruby's docs on the Time class: [https://ruby-doc.org/core-2.7.0/Time.html](https://ruby-doc.org/core-2.7.0/Time.html)
+* The 'timecop' gem for mocking with time: [https://github.com/travisjeffery/timecop](https://github.com/travisjeffery/timecop)
+* The 'chronic' gem for natural language date parsing: [https://github.com/mojombo/chronic](https://github.com/mojombo/chronic)

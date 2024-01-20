@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:15:33.335088-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,53 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i po co?
+## What & Why? (Co i dlaczego?)
+Pobieranie bieżącej daty to odczytanie daty i czasu, w którym znajduje się system. Programiści wykorzystują to do logowania, ograniczeń czasowych funkcji, czy personalizacji treści.
 
-Pobieranie aktualnej daty to metoda wykorzystania wbudowanych funkcji JavaScript do określenia bieżącej daty i czasu. Robimy to, aby śledzić zmiany, rejestrować zdarzenia lub kontekst i kiedykolwiek musimy wykonać czynność w określonym czasie.
-
-## Jak to zrobić:
-
-Pozyskujmy aktualną datę za pomocą obiektu `Date` JavaScript. 
-
+## How to: (Jak to zrobić:)
 ```Javascript
-let teraz = new Date();
-console.log(teraz);
+// Pobranie bieżącej daty i czasu
+let currentDate = new Date();
+
+// Wyświetlenie bieżącej daty i czasu
+console.log(currentDate);
 ```
-
-Wykonywanie tego kodu będzie zwracać coś w stylu:
-
-``` 
-2022-06-28T19:15:28.484Z
+Sample output:
 ```
-
-## Szerzej na temat:
-
-(1) Historia:
-Początkowo JavaScript nie zawierał funkcji do obsługi daty i czasu. Dodano je do języka w 1997 roku wraz z wprowadzeniem ECMAScript.
-
-(2) Alternatywy:
-Istnieją biblioteki, takie jak moment.js, które oferują zaawansowane funkcje do manipulacji i formatowania dat.
-
-(3) Implementacja:
-Obiekt `Date` JavaScript korzysta z systemu czasu Unix, pomiaru czasu jako liczby milisekund od północy 1 stycznia 1970 roku.
-
+2023-03-17T12:45:30.789Z
+```
+Aby uzyskać bardziej czytelny format:
 ```Javascript
-let teraz = Date.now();
-console.log(teraz);
+// Pobranie i formatowanie daty do postaci YYYY-MM-DD
+let date = currentDate.toISOString().split('T')[0];
+
+// Wyświetlenie sformatowanej daty
+console.log(date);
+```
+Sample output:
+```
+2023-03-17
 ```
 
-Ten fragment kodu zwróci coś takiego:
+## Deep Dive (Dogłębna analiza)
+JavaScript od lat 90 używa obiektu `Date` do obsługi dat i czasu. Mimo że istnieją nowocześniejsze biblioteki jak Moment.js czy date-fns, `Date` pozostaje natywnym i wszechstronnym narzędziem.
 
-```
-1640837769632
-```
+`new Date()` tworzy obiekt z aktualną datą i czasem, zależnym od strefy czasowej systemu. `toISOString()` konwertuje datę na format ISO 8601 (np. 2023-03-17T12:45:30.789Z). Dzielenie wyniku metody `split('T')` pozwala oddzielić datę od czasu.
 
-Oznacza to, że upłynęło 1640837769632 milisekundy od początku ery Unix.
+Zaletą `Date` jest brak zewnętrznych zależności, ale może wymagać więcej kodu do prostych zadań i nie obsługuje stref czasowych tak łatwo jak inne biblioteki. Z drugiej strony, użycie zewnętrznych bibliotek może nie być potrzebne dla prostych zastosowań i może wprowadzać niepotrzebny narzut.
 
-## Zobacz też:
-
-1. Dokumentacja MDN na temat obiektu Date: https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date
-
-2. Dokumentacja moment.js: https://momentjs.com/ 
-
-Pamiętaj, inteligentne korzystanie z daty i czasu może sprawić, że Twój kod będzie bardziej efektywny i użyteczny!
+## See Also (Zobacz także)
+- [MDN - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [You Don't Need Moment.js](https://github.com/you-dont-need/You-Dont-Need-Momentjs)
+- [date-fns library](https://date-fns.org/)

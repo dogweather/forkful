@@ -1,6 +1,7 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "C#: वर्तमान तारीख प्राप्त करना"
+date:                  2024-01-20T15:14:42.355610-07:00
+html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Go"
 category:             "Go"
@@ -10,14 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+वर्तमान तिथि प्राप्त करने का मतलब है सिस्टम का समय पुकारना। प्रोग्रामर्स ऐसा लॉगिंग, टाइमस्टैम्प्स और समय पर आधारित फंक्शनालिटी के लिए करते हैं।
 
-वर्तमान तारीख प्राप्त करना का तरीका सोचना सीधा सा लगता है, लेकिन यह कई प्रोग्राम को बेहतर बनाने के लिए अत्यंत महत्वपूर्ण हो सकता है। उदाहरण के लिए, लॉग फाइलों का समयांकन, प्रयोगकर्ता की गतिविधियों का ट्रेकिंग या किसी ईवेंट को ट्रिगर करने के लिए।
-
-## कैसे करें:
-
-यहां गो लैंग्वेज में वर्तमान तारीख प्राप्त करने का उदाहरण है:
-
+## How to: (कैसे करें:)
 ```Go
 package main
 
@@ -27,21 +24,20 @@ import (
 )
 
 func main() {
-    currentTime := time.Now()
-    fmt.Println("Current Time in Go:", currentTime)
+	currentTime := time.Now() // वर्तमान तिथि और समय
+	fmt.Println("वर्तमान समय है:", currentTime)
 }
 ```
 
-जब आप इस प्रोग्राम को चलाते हैं, आपको वर्तमान तारीख और समय के साथ एक लाइन मिलेगी।
+सैंपल आउटपुट:
+```
+वर्तमान समय है: 2023-03-29 12:04:05.123456789 +0530 IST m=+0.000123456
+```
 
-## गहरी डाइव:
+## Deep Dive (गहराई से जानकारी)
+Go में, `time` पैकेज समय से संबंधित सभी कार्यों को संभालता है। यह पैकेज Go के साथ विकसित होता गया है, इसलिए यह सटीक और लचीला है। `time.Now()` फंक्शन सिस्टम क्लॉक से वर्तमान समय पाने का सीधा तरीका है। विकल्पों में `time.Ticker` और `time.Timer` जैसे टूल्स भी शामिल हैं जो निर्धारित समय के बाद कार्य चलाने में मददगार हैं। Go की समय संबंधित कार्यक्षमता बहुत ही व्यापक है और इसमें समय ज़ोन, टाइमस्टैम्प्स, और ड्यूरेशन जैसे महत्वपूर्ण अवधारणाओं को संभालने का समावेश है।
 
-गो में वर्तमान तारीख प्राप्त करने के कई तरीके हैं, लेकिन `time.Now()` सबसे आम तरीका है। इसे डेज़ाइन किया गया है ताकि यह विभिन्न वातावरणों और समय क्षेत्रों में ठीक से काम कर सके।
-
-आप या तो `time` पैकेज का उपयोग कर सकते हैं जो सीधे गो में बिल्ट-इन है या आप अन्य पैकेज, जैसे `jinzhu/now` का उपयोग कर सकते हैं जो कुछ अधिक विविधता प्रदान करते हैं।
-
-## यह भी देखें:
-
-* [Go time package documentation (गो समय पैकेज का डॉक्यूमेंटेशन)](https://pkg.go.dev/time)
-* [jinzhu/now package on GitHub (जिनज़ु / अब पैकेज GitHub पर)](https://github.com/jinzhu/now)
-* [Dealing with times and dates in Go, on Stack Overflow (स्टैक ओवरफ़्लो पर गो में समय और तारीख के साथ सीन यात्रा)](https://stackoverflow.com/questions/22852781/how-to-handle-date-time-format-with-zone-in-golang)
+## See Also (और भी जानकारी)
+- Go `time` package documentation: [pkg.go.dev/time](https://pkg.go.dev/time)
+- Go by Example: Time: [gobyexample.com/time](https://gobyexample.com/time)
+- Go Time Formatting and Parsing: [yourbasic.org/golang/format-parse-string-time-date-example](https://yourbasic.org/golang/format-parse-string-time-date-example)

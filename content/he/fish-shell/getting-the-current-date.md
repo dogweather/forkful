@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:14:24.774415-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,25 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-קבלת התאריך הנוכחי היא פקודה שמחזירה את התאריך והשעה של המערכת בשעת הריצה. פרוגרמיסטים משתמשים בזה לשלל סיבות, כמו לתת תווית זמן למידע הנוכחי או למדד משך זמן של ביצוע משימה.
+שגריר התאריך הנוכחי בפיש של זה פשוט – זה הצגת הזמן והתאריך של "עכשיו". תכנתים צריכים את זה ליומנים, טיימרים, וכשהם מייצרים קבצים עם חותמות זמן.
 
-## איך עושים:
-ב-Fish Shell, אפשר לרשום את הפקודה הבאה:
+## איך לעשות:
+קוד פיש להשגת התאריך הנוכחי:
+
 ```Fish Shell
-echo (date)
-```
-זה יחזיר את התאריך והשעה בפורמט: 'תאריך שעה'.
-לדוגמה:
-```Fish Shell
-Fri 29 Oct 2021 10:32:58 BST
+set -l current_date (date)
+echo $current_date
 ```
 
-## צלילה עמוקה
-קבלת התאריך הנוכחי אינה מסובך, אבל יש לה היסטוריה ואפשרויות מאתגרות. בעבר, זה היה מחויב שימוש ב-APIs מסוימים של מערכת ההפעלה. עם השנים, שפות תכנות פיתחו דרכים פשוטות יותר להשיג את המידע הזה. 
-לדוגמה, ב-Python יש אפשרות לקבלת התאריך הנוכחי באמצעות `datetime.datetime.now()`.   
-ב-JavaScript יש את `Date()`.
+דוגמת פלט:
+```
+Thu Mar 4 12:05:36 PST 2023
+```
+להחלפת פורמט תאריך:
 
-## ראו גם
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Getting the current date in other programming languages](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [More about bash command: date](https://www.computerhope.com/unix/udate.htm)
+```Fish Shell
+set -l formatted_date (date "+%Y-%m-%d %H:%M:%S")
+echo $formatted_date
+```
+
+דוגמת פלט:
+```
+2023-03-04 12:05:36
+```
+
+## צלילה עמוקה:
+בעולם Unix, הפקודה `date` משמשת מאז שנות ה-70 להשגת מידע על הזמן והתאריך. בפיש, דומה לשל קלאסיות אחרות, `date` מופעל ישירות מהשורת הפקודה עם אפשרויות לפורמטינג חופשי. בעוד שיש אלטרנטיבות כמו פיתון או פי.אייץ'פי המאפשרים פעולות מתקדמות יותר עם תאריכים, הפקודה `date` בשל נותרת מהירה ונפוצה לשימושים פשוטים וכשמהירות היא קריטית.
+
+## ראה גם:
+- [פיש של דוקומנטציה – עבודה עם תאריכים](https://fishshell.com/docs/current/index.html#dates)
+- [תיעוד פקודת Date של GNU](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [מדריך לפורמטינג תאריכים ב-Unix](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)

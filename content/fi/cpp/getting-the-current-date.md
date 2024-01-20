@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:13:09.749915-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "C++"
 category:             "C++"
@@ -10,47 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Nykyisen päivämäärän hakeminen C++: lla
+## What & Why?
+"Mikä & Miksi?"
+Haet nykyistä päivämäärää, koska sovellukset tarvitsevat kontekstia. Syntymäpäivien seuranta, aikaleimat tai päivittäiset tehtävät – päivämäärät ovat tärkeitä.
 
-## Mikä & Miksi?
-
-Nykyisen päivämäärän hankkiminen C++:lla on tapa saada tietokoneeltasi tämänhetkinen vuosi, kuukausi ja päivä. Ohjelmoijat tarvitsevat tätä tietoa moniin asioihin, kuten lokitiedostojen luomiseen tai ajan leimojen asettamiseen tietoihin.
-
-## Näin teet:
-
-Käytämme C++17:aa ja `chrono` -kirjastoa tässä esimerkissä.
+## How to:
+"Kuinka:"
+C++17 sisältää kirjaston `<chrono>`, joka helpottaa nykyisen päivämäärän noutamista. Tässä käytännön esimerkki:
 
 ```C++
-#include <chrono>
 #include <iostream>
+#include <chrono>
 #include <iomanip>
 
-int main()
-{
-    auto nykyaika = std::chrono::system_clock::now();
-    std::time_t aika = std::chrono::system_clock::to_time_t(nykyaika);
-
-    std::cout << "Nykyinen päivä: " << std::put_time(std::localtime(&aika), "%Y-%m-%d") << '\n';
+int main() {
+    auto nyt = std::chrono::system_clock::now(); // Haetaan nykyhetki
+    std::time_t aika_nyt = std::chrono::system_clock::to_time_t(nyt);
+    
+    // Tulostetaan hetki, standardeissa muodoissa
+    std::cout << "Tänään on: " << std::put_time(std::localtime(&aika_nyt), "%Y-%m-%d") << std::endl;
 
     return 0;
 }
 ```
 
-Mahdollinen tuloste:
+Esimerkkituloste:
 
 ```
-Nykyinen päivä: 2022-09-21
+Tänään on: 2023-05-20
 ```
-## Syvemmälle:
 
-Viime vuosina C++:n standardi on kehittynyt tarjoamaan meille paremman tavan työskennellä päivämäärien ja ajan kanssa: `chrono`-kirjasto, joka lisättiin C++11:ssä ja sitä on paranneltu C++14:ssä ja C++17:ssä. Ennen `chrono`:a, ohjelmoijat luottivat C-kielen aikafunktioihin, kuten `time_t` ja `tm`.
+## Deep Dive
+"Sukellus syvemmälle"
+Ennen C++11-versiota käytettiin `ctime`-kirjastoa, mutta `<chrono>` teki kaikesta siistimpää ja turvallisempaa. Vaihtoehtoisia menetelmiä ovat esimerkiksi kolmansien osapuolien kirjastot tai alustakohtaiset kutsut. Implementointi `<chrono>`:ssa on tarkoituksellisesti abstraktoitu, jotta se toimii kaikkialla samalla tavalla.
 
-C++20 tuo mukanaan kalenteripohjaisen päivämäärän tuen `chrono`-kirjastoon, mikä tekee päivämäärän käsittelystä vielä helpompaa.
-
-## Katso myös:
-
-Täydellinen opas `chrono`-kirjastoon: https://en.cppreference.com/w/cpp/chrono
-
-C++17:n standardikirjaston dokumentointi: http://www.cplusplus.com/reference/chrono/
-
-C++20:n uudet ominaisuudet, mukaan lukien kalenteriin perustuvat päivämäärät: https://en.cppreference.com/w/cpp/chrono/calendar
+## See Also
+"Katso myös"
+- C++-standardikirjasto: [cppreference.com](https://en.cppreference.com/w/)
+- `<chrono>`-kirjaston syventävä opas: [C++ `<chrono>`](https://en.cppreference.com/w/cpp/chrono)
+- C++:n aikaisemmat päivämäärä- ja aikakirjastot `ctime`: [C `<ctime>`](https://en.cppreference.com/w/c/chrono)
+- ISO C++ -standardeista ja niiden kehityksestä: [isocpp.org](https://isocpp.org/)

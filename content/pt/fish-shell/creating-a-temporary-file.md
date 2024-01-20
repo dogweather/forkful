@@ -44,7 +44,6 @@ A implementação dos arquivos temporários no Fish Shell de fato utiliza a ferr
 Por favor, revise as seguintes fontes para mais informações:
 
 1. Documentação oficial do Fish Shell: [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-2. Mais informações sobre `mktemp`: [man mktemp](https://man7.org/linux/man-pages/man1/mktemp.1.html)
 3. Alternativas de Banco de Dados em Memória: [Redis](https://redis.io/)
 
 ## Conclusão:

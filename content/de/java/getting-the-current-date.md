@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:14:50.316266-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,39 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Java Programmierung: So holen Sie das aktuelle Datum
-
 ## Was & Warum?
-`date` und `time` sind Schlüsselkonzepte in der Programmierung. Sie sind unabdingbar, wenn man Logfiles erstellt, Zeitstempel setzt oder eine Zeiterfassung implementiert.
+Das Abrufen des aktuellen Datums in Java bedeutet einfach, den heutigen Tag aus dem System zu holen. Programmierer machen das häufig, um Zeitstempel zu erzeugen, Berichte zu datieren, oder um Funktionen zu planen, die auf der Zeit basieren.
 
-## So geht's:
-Java bietet mehrere Möglichkeiten, das aktuelle Datum zu ermitteln. Ein gängiger Weg ist die Nutzung der Klasse `LocalDate`. Hier ein Codebeispiel dazu:
+## How to:
+Den aktuellen Tag in Java zu bekommen ist simpel. Hier sind ein paar Beispiele, die das LocalDate und das Calendar-Objekt von Java verwenden:
 
-```Java
+```java
 import java.time.LocalDate;
+import java.util.Calendar;
 
-public class Main {
-  public static void main(String[] args) {
-    LocalDate currentDate = LocalDate.now();
-    System.out.println("Heutiges Datum: " + currentDate);
-  }
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        // Mit LocalDate
+        LocalDate today = LocalDate.now();
+        System.out.println("Heute ist: " + today);
+
+        // Mit Calendar
+        Calendar cal = Calendar.getInstance();
+        System.out.println("Heute ist: " + cal.getTime());
+    }
 }
 ```
-Beim Ausführen gibt es die Ausgabe:
 
-```Java
-Heutiges Datum: 2023-04-05
+Wenn du das ausführst, könntest du so etwas sehen:
+
+```
+Heute ist: 2023-04-02
+Heute ist: Sun Apr 02 15:20:34 CEST 2023
 ```
 
-## Deep Dive
-Früher hat man das aktuelle Datum oft mit `java.util.Date` ermittelt. Aber diese Klasse ist nicht sehr benutzerfreundlich und daher heute veraltet. Stattdessen wird nun `java.time.LocalDate` oder `java.time.LocalDateTime` empfohlen. 
+## Deep Dive:
+`LocalDate` ist Teil des modernen Java Date & Time API, das in Java 8 eingeführt wurde, um die Datums- und Zeitfunktionalität besser zu verwalten. Vor Java 8 benutzten Programmierer hauptsächlich das `Date` und `Calendar`-Objekt, obwohl diese nicht ohne Probleme waren – sie waren nicht unveränderlich und hatten weniger intuitive Methoden.
 
-Alternativ kann man auch die Klasse `java.util.Calendar` verwenden, aber `LocalDate` und `LocalDateTime` bieten viele Vorteile. Unter anderem ist die API intuitiver und es gibt mehr eingebaute Methoden, z.B. zum Formatieren des Datums.
+Alternativ können Entwickler auch `java.time.Instant` nutzen, um ein Datum mit Zeitstempel im Unix-Format zu bekommen, das mit der Epoche (1. Januar 1970, 00:00:00 GMT) beginnt.
 
-Die Implementierungsdetails von `LocalDate.now()` sind auch interessant. Die Methode ruft intern `Clock.systemDefaultZone().instant()` auf. Das bedeutet, es wird die Systemzeitzone verwendet, um das aktuelle Datum zu ermitteln. 
+Was die Implementierung betrifft, liefert `LocalDate.now()` das heutige Datum bezogen auf die Systemuhr und die Standardzeitzone. Das `Calendar` ist älter und davor brauchten wir `getInstance()` um eine `Calendar`-Instanz zu bekommen, die etwas komplizierter im Umgang ist.
 
-## Siehe auch
-Für weitere Informationen zu diesem Thema, schauen Sie sich bitte folgende Ressourcen an:
-- [Oracle Java Documentation](https://docs.oracle.com/en/java/)
-- [Baeldung Tutorials - Java Dates](https://www.baeldung.com/java-8-date-time-intro)
-- [StackOverflow - Get current date in java](https://stackoverflow.com/questions/368094/get-current-date-in-java)
+## See Also:
+- Die offizielle Java-Dokumentation zur `LocalDate`-Klasse: [Oracle Docs: LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- Infos über die `Calendar`-Klasse: [Oracle Docs: Calendar](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- Mehr zum umfassenden Java Date and Time API: [Oracle Tutorials - Date Time](https://docs.oracle.com/javase/tutorial/datetime/)

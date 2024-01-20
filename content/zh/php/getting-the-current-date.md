@@ -1,6 +1,7 @@
 ---
 title:                "获取当前日期"
-html_title:           "Arduino: 获取当前日期"
+date:                  2024-01-20T15:15:48.050643-07:00
+html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,56 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# PHP 中的当前日期：为什么和怎么做？
+## What & Why? 什么和为什么？
+获取当前日期在编程中是指通过代码取得系统当前的日期时间。程序员经常需要这个功能，原因包括记录日志、用户交互或数据时间戳。
 
-## 什么 & 为什么？
-获取当前日期是提取当前系统日期的过程。程序员会利用这个功能在编写程序时存储或显示特定时间，如记录事件发生的时间和生成详细的日志。
-
-## 怎么做：
-在 PHP 中，可以使用 `date()` 函数或 `DateTime` 类来获取当前日期。以下是一些示例：
-
-使用 `date()` 函数：
-
+## How to: 怎么做？
 ```PHP
 <?php
+// 获取当前日期和时间
 echo date('Y-m-d H:i:s');
 ?>
 ```
 
-输出：
-
-```PHP
-2022-04-20 12:34:56
+输出示例：
 ```
-
-使用 `DateTime` 类：
+2023-03-28 14:45:12
+```
 
 ```PHP
 <?php
-$date = new DateTime();
-echo $date->format('Y-m-d H:i:s');
+// 只获取当前日期
+echo date('Y-m-d');
 ?>
 ```
 
-输出：
-
-```PHP
-2022-04-20 12:34:56
+输出示例：
+```
+2023-03-28
 ```
 
-## 深入理解
-获取当前日期虽然看起来简单，但其实在底层，PHP 处理这个功能的过程却相当复杂。
+```PHP
+<?php
+// 获取其他时区的日期和时间
+date_default_timezone_set('Asia/Shanghai');
+echo date('Y-m-d H:i:s');
+?>
+```
 
-首先，理解一下历史背景，在早期的 PHP 版本中，只能通过 `date()` 函数来获取日期，但在 PHP 5.2.0 中引入了 `DateTime` 类，提供了更多的功能并提高了处理日期和时间的灵活性。
+输出示例：
+```
+2023-03-28 14:45:12
+```
 
-另外，除了上述的方法之外，还有其他获取日期的方法，如 `getdate()`，该函数返回的是一个关联数组，包含了日期和时间的信息。
+## Deep Dive 深入探索
+PHP 自从1995年就开始提供日期时间功能。其中`date()`函数是用来获取当前日期和时间的最基本方式。程序员可通过修改`date()`函数的参数来定制输出格式。
 
-最后，关于 `date()` 和 `DateTime` 类的区别，
+除了`date()`函数，PHP 还有`DateTime`类提供更完整的日期时间功能。例如，可以处理时间区间和不同格式的日期时间。
 
-- `date()` 是一个函数，需要提供日期格式作为参数，并且它是依赖于时区设置的。
-- `DateTime` 类提供了更多的方法和选项，可以处理日期和时间相关复杂的计算，如加减日期等。
+默认情况下，`date()`函数使用服务器配置的时区。而`date_default_timezone_set()`函数允许改变脚本运行时的时区设置。
 
-## 参考信息
-- PHP 官方文档 - date() 函数：https://www.php.net/manual/zh/function.date.php
-- PHP 官方文档 - DateTime 类：https://www.php.net/manual/zh/class.datetime.php
-- PHP 官方文档 - getdate() 函数：https://www.php.net/manual/zh/function.getdate.php
+## See Also 另请参阅
+- [PHP 官方日期时间文档](https://www.php.net/manual/en/book.datetime.php)
+- [PHP `date()` 函数](https://www.php.net/manual/en/function.date.php)
+- [PHP `DateTime` 类](https://www.php.net/manual/en/class.datetime.php)
+- [PHP 时区设置](https://www.php.net/manual/en/timezones.php)

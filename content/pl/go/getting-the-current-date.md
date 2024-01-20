@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:14:40.517621-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Go"
 category:             "Go"
@@ -10,16 +11,15 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why? (Co i dlaczego?)
 
-Pobieranie bieżącej daty polega na wydobyciu aktualnych informacji na temat dnia, miesiąca i roku z systemu komputera. Programiści robią to w różnych celach, takich jak logowanie, timelining czy porównanie dat. 
+Pobieranie bieżącej daty to uzyskanie informacji o obecnej dacie i czasie z systemu komputerowego. Programiści robią to, by logować zdarzenia, obliczać różnice czasowe lub wyświetlać daty użytkownikom.
 
-## Jak to zrobić:
-
-Oto przykład, jak możemy uzyskać bieżącą datę w języku Go:
+## How to (Jak to zrobić):
 
 ```Go
 package main
+
 import (
 	"fmt"
 	"time"
@@ -27,23 +27,21 @@ import (
 
 func main() {
 	currentTime := time.Now()
-	fmt.Println("Bieżąca Data :", currentTime.Format("2006-01-02"))
+	fmt.Println("Aktualna data i czas:", currentTime)
 }
+
+// Przykładowe wyjście:
+// Aktualna data i czas: 2023-03-15 11:06:39.123456 +0100 CET
 ```
 
-Po uruchomieniu powyższego kodu, otrzymamy output:
+## Deep Dive (Dogłębna analiza):
 
-```
-Bieżąca Data : 2021-12-15
-```
+Go (jako młody język stworzony w Google w 2009 r.) oferuje natywne wsparcie dla operacji na datach i czasie za pośrednictwem pakietu `time`. Ta biblioteka dostarcza wiele funkcji, np. `Now()` do pobierania aktualnego czasu. Alternatywą jest użycie zewnętrznych bibliotek, jak `dateparse` dla bardziej złożonych zadań. 
 
-## Deep Dive:
+Niemniej, standardowy pakiet `time` zwykle wystarcza. Pozwala na formatowanie czy porównywanie dat, a także operowanie strefami czasowymi. Użycie funkcji `Now()` jest proste, ale pozostaje potężne narzędzie, dzięki możliwości rozszerzenia poprzez metody pakietu `time`, takie jak `Add()` czy `Sub()`.
 
-1. *Kontekst historyczny*: Biblioteka `time` w Go była częścią języka od pierwszej stabilnej wersji, opublikowanej w 2007 roku. Została zoptymalizowana na przestrzeni lat, aby obsługiwać wiele różnych formatów daty i czasu.
-2. *Alternatywy*: Możemy też użyć pakietu `time` do pobierania innych informacji, takich jak godzina, minuta, sekunda, dzień tygodnia itp. Jednakże, do bardziej szczegółowych zadaniań, jak manipulacja strefami czasowymi, możemy użyć pakietu `time/tzdata`.
-3. *Szczegóły implementacji*: Funkcja `Now()` z pakietu `time` zwraca bieżący lokalny czas. Metoda `Format` pozwala na formatowanie czasu do dowolnego pożądanego wyglądu.
+## See Also (Zobacz również):
 
-## Zobacz też:
-
-1. Dokumentacja Go na temat pakietu `time`: [Kliknij tutaj](https://golang.org/pkg/time/)
-2. Artykuł na temat formatowania czasu w Go: [Kliknij tutaj](https://yourbasic.org/golang/format-parse-string-time-date-example/)
+- Oficjalna dokumentacja pakietu `time` w Go: https://pkg.go.dev/time
+- Artykuł "Understanding Time and Date in Go": https://www.digitalocean.com/community/tutorials/understanding-time-and-date-in-go
+- Wprowadzenie do formatowania i parsowania dat w Go: https://gobyexample.com/time-formatting-parsing

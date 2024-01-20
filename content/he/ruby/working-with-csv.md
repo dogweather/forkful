@@ -40,6 +40,5 @@ end
 CSV הוא פורמט שמקורו בשנות ה-70 ומשמש כתקן עד היום. ישנם אלטרנטיבות כמו קובץ JSON או XML, אך CSV נשאר פופולרי בשל הפשטות שלו. הספרייה המובנית בRuby לעבודה עם CSV מאפשרת מניפולציית נתונים בקלות ובאופן יעיל.
 
 ## ראה גם:
-- [מדריך לספריית CSV של רובי](https://ruby-doc.org/stdlib-3.0.0/libdoc/csv/rdoc/CSV.html)
 - [Ruby CSV Parsing and Writing (מאמר על ניתוח וכתיבה של CSV בRuby)](https://www.rubyguides.com/2018/10/parse-csv-ruby/)
 - [Stack Overflow: Questions tagged 'ruby' and 'csv'](https://stackoverflow.com/questions/tagged/ruby+csv)

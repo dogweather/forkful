@@ -1,6 +1,7 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elm recipe: Getting the current date"
+date:                  2024-01-20T15:13:49.092090-07:00
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,31 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Fetching the current date refers to obtaining the exact day, month and year at a particular moment in time. This is crucial in programming for logging activities, timestamping data entries, and implementing features based on real-time or date-specific conditions.
+Getting the current date in Elm means fetching the current calendar date from the system. We do this to timestamp events, schedule tasks, or track durations.
 
 ## How to:
+Elm handles dates with the `Time` module. You'll get the current time as a POSIX timestamp, then convert to a date.
 
-Getting the current date in Elm is quite straightforward. Here's a simple snippet:
 ```Elm
+import Browser
+import Task
 import Time
 
-currentDate : Task.Task Time.Error Time.Posix
-currentDate =
-    Time.now
+type Msg = GetCurrentTime Time.Posix
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GetCurrentTime posixTime ->
+            let
+                -- Convert POSIX time to a date record
+                date = Time.toDate posixTime
+            in
+            -- Update your model accordingly here
+            ({ model | date = date }, Cmd.none)
+
+-- To initiate getting the current time
+getCurrentTime : Cmd Msg
+getCurrentTime =
+    Task.perform GetCurrentTime Time.now
+
+-- Example output:
+-- date { year = 2023, month = Mar, day = 26 }
 ```
-Within Elm, the `Time.now` function is not synchronous like in some other languages. It creates a `Task` instead; when executed, the task will give us the current time.
 
 ## Deep Dive
+In older web languages, grabbing the date is one-liner code. Elm is different. It makes side-effects like getting the current time explicit through the Elm Architecture. This encourages purity and maintainability of code.
 
-Historically, obtaining the current date and time was a simple task in many languages, but often led to common mistakes related to time zones and daylight saving time. Elm, eager to avoid such pitfalls, provides the `Posix` time representation that captures an instant in time, independent of time zones.
+Alternatives include using third-party packages or handling dates in your server code and passing them to Elm through flags or ports.
 
-Whilst `Time.now` is probably the most used technique, remember that it returns a `Task`. This behavior can be surprising if coming from a language like JavaScript, where `Date.now()` returns the current date as a simple value. Tasks in Elm enable handling asynchronous operations and side-effects in a pure functional language.
-
-The specific time format you use (ISO, Unix, etc.) will mostly depend on your particular needs. Elm provides `Time.toIsoString`, `Time.fromIsoString`, `Time.toMillis` and `Time.fromMillis` functions to convert `Posix` values to and from these common formats.
+Implementation-wise, Elm's `Time.now` gets the time as a POSIX timestamp (milliseconds since Unix epoch). This is timezone-agnostic, and you can format it as needed using functions from the `Time` module.
 
 ## See Also
-
-Elm's documentation provides more specific details about working with time:
-
-1. [Elm - Time](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Elm Time documentation](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm's guide to commands and subscriptions](https://guide.elm-lang.org/effects/)

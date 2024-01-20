@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:16:17.921374-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,40 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust - Nykyisen päivämäärän saaminen
+## What & Why? / Mitä & Miksi?
+Nykyisen päivämäärän hakeminen tarkoittaa järjestelmän kalenterista päivämäärätiedon saamista. Ohjelmoijat tarvitsevat tätä toimintoa raportointiin, aikaleimojen luomiseen ja päivämääräriippuvaisten toimintojen hallintaan.
 
-## Mitä & Miksi?
-
-Nykyisen päivämäärän saaminen tarkoittaa siis, että ohjelma saa selville, mikä päivä tänään on. Se on hyödyllistä aikaleimatiedoissa, raportoinnissa, päivämäärälaskennassa ja monissa muissa tilanteissa. 
-
-## Näin teet:
-
-Rust-kielissä voit saada nykyisen päivämäärän `chrono`-nimisellä kirjastolla. Näin se toimii:
-
+## How to: / Kuinka:
 ```Rust
-use chrono::{Date, Local};
+use chrono::{DateTime, Local};
 
 fn main() {
-    let today: Date<Local> = Local::today();
-    println!("Tänään on: {}", today);
+    let local_date: DateTime<Local> = Local::now();
+    println!("Nykyinen päivämäärä: {}", local_date.format("%Y-%m-%d").to_string());
 }
 ```
 
-Kun suoritat tämän ohjelman, saat tulosteen, joka ilmoittaa nykyisen päivämäärän, esimerkiksi "Tänään on: 2022-07-21".
+Esimerkin tulostus:
+```
+Nykyinen päivämäärä: 2023-04-14
+```
 
-## Syväluotaus
+## Deep Dive / Syväsukellus
+Rustin `chrono`-kirjasto on yleinen valinta ajan käsittelyyn. Historiallisesti `std::time` ja `std::date` tarjosivat rajallisemmat työkalut. `chrono` tarjoaa laajat ominaisuudet ja helppokäyttöisen API:n. Vaihtoehtoiset kirjastot, kuten `time`, ovat myös käytössä, mutta `chrono` on suosituin.
 
-Rust-ohjelmakielessä käytetään `chrono`-kirjastoa päivämäärän ja ajan käsittelyyn. Kirjasto otettiin käyttöön vuonna 2014 ja siitä on tullut de facto työkalu ajan ja päivämäärän hoitoon Rust-kehityksessä. 
+`Local::now()` kutsu palauttaa paikallisen ajan `DateTime`-objektina, joka sisältää sekä päivämäärän että kellonajan. `format`-metodi muuntaa tämän merkkijonoksi halutussa muodossa.
 
-Vaihtoehtoisesti voit käyttää `time`-kirjastoa, mutta `chrono` tarjoaa usein yksinkertaisemman ja mukautuvamman API:n.
-
-Hankkimalla nykyisen päivämäärän, `chrono`-kirjasto hankkii ensin nykyisen ajan `std::time::SystemTime`-moduulista ja muuntaa sen päivämääräksi. Tämä prosessi saattaa poiketa alustan ja käyttöjärjestelmän mukaan.
-
-## Katso myös:
-
-Perehdy lisää `chrono`- ja `time` -kirjastoihin seuraavista linkeistä:
-
-- [Chrono-kirjaston dokumentaatio](https://docs.rs/chrono/0.4.19/chrono/)
-- [Time-kirjaston dokumentaatio](https://docs.rs/time/0.1.42/time/)
-
-Saadaksesi tietoa Rustin `std::time::SystemTime`-moduulista, voit katsoa tätä [SystemTime-dokumentaatiota](https://doc.rust-lang.org/std/time/struct.SystemTime.html).
+## See Also / Katso Myös
+- Rust `chrono` kirjaston dokumentaatio: https://docs.rs/chrono
+- 'The Rust Programming Language' -kirjan luku ajan käsittelystä: https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html
+- Rust 'time' kirjaston dokumentaatio: https://docs.rs/time

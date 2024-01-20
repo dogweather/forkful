@@ -1,6 +1,7 @@
 ---
 title:                "获取当前日期"
-html_title:           "Arduino: 获取当前日期"
+date:                  2024-01-20T15:16:06.757792-07:00
+html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,24 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是获取当前日期与为何程序员需要获取当前日期？
-获取当前日期是获取消耗电脑时间的过程。程序员是因为许多原因需要获取当前日期的：日志，任务调度，数据分析，和技术支持，等等。
+## What & Why? 什么和为什么？
+获取当前日期是指在PowerShell脚本中得到现在的日期和时间。程序员这么做是为了记录事件、处理定时任务或者仅仅是为了显示。
 
-## 如何获取当前日期：使用 PowerShell 示例
-你可以使用 `Get-Date` 命令在 PowerShell 中获取当前日期。以下是使用案例：
-
+## How to: 怎么做？
 ```PowerShell
+# 获取当前日期和时间
 Get-Date
+
+# 显示格式化的日期
+Get-Date -Format "yyyy/MM/dd HH:mm:ss"
+
+# 仅显示日期部分
+(Get-Date).ToShortDateString()
+
+# 仅显示时间部分
+(Get-Date).ToShortTimeString()
 ```
 
-运行上述命令后的输出如下：
-
+样本输出：
 ```PowerShell
-Sunday, January 9, 2022 10:05:30 PM
+星期二, 23 三月, 2023 14:20:36
+2023/03/23 14:20:36
+2023/03/23
+14:20
 ```
-## 深入研究
-PowerShell 中获取当前日期的方式有着悠久的历史。自从 PowerShell 1.0 版本开始，微软就为190+个命令提供支持，其中包括 `Get-Date`。对于获取当前日期，我们还有其他替代的命令，如 `.NET` 里面的 `[DateTime]::Now`。不过，处理日期的实现细节，例如日期格式和时区，将会根据你的操作系统和语言设置而略有不同。
 
-## 延伸阅读
-1. Microsoft Docs, [Get-Date](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
-2. Stack Overflow, [How to get current datetime on Windows command line, in a suitable format for using in a filename?](https://stackoverflow.com/questions/203090/how-to-get-current-datetime-on-windows-command-line-in-a-suitable-format-for-us)
+## Deep Dive 深入探索
+PowerShell使用的Get-Date命令来自.NET的DateTime类，在2006年随着首个版本的PowerShell一起问世。你还可以使用.NET类直接来获取当前日期。相比于其他语言的日期处理，PowerShell提供了一种更直观且易于理解的方式来操作日期和时间。
+
+历史上，Shell脚本比如Bash需要调用外部程序如`date`来获取日期。PowerShell简化了流程，让日期和时间的获取与格式化变得简单。
+
+实现细节上，PowerShell的Get-Date思路是基于系统时钟和时区来显示日期。当你需要更加复杂的日期运算时，可以利用DateTime对象提供的方法和属性。
+
+## See Also 参见
+- [PowerShell Get-Date documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+- [Custom date and time format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [.NET DateTime Structure](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)

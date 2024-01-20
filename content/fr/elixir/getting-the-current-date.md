@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:13:58.836125-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,40 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## What & Why? (Quoi & Pourquoi ?)
+Obtenir la date actuelle est essentiel pour horodater les événements, analyser les tendances temporelles ou simplement afficher la date d'aujourd'hui. Les programmeurs utilisent cette fonction pour tout, de la validation de la durée de vie des tokens à la planification des tâches récurrentes.
 
-Obtenir la date actuelle en programmation, cela signifie récupérer les informations en temps réel sur le jour, le mois, l'année, voire l'heure. Les développeurs le font souvent pour suivre les événements ou enregistrer des horodatages.
+## How to: (Comment faire : )
+Elixir rend la capture de la date actuelle assez simple avec le module `DateTime`.
 
-## Comment faire :
+```elixir
+# Obtenir la date et l'heure courantes en UTC
+DateTime.utc_now()
+# => #DateTime<2023-04-06 15:34:25.123456Z>
 
-Voici comment vous pouvez obtenir la date actuelle en Elixir :
-
-```Elixir
-Date.utc_today()
+# Pour obtenir la date actuelle dans un fuseau horaire spécifique, utilisez Timezone 
+# (après avoir ajouté `:tzdata` à vos dépendances)
+{:ok, paris_datetime} = DateTime.now("Europe/Paris")
+paris_datetime
+# => #DateTime<2023-04-06 17:34:25.123456+02:00 Europe/Paris>
 ```
 
-Cela renvoie la date d'aujourd'hui en UTC.
+## Deep Dive (Plongée en profondeur)
+L'importance de gérer le temps correctement dans la programmation ne peut être sous-estimée - des bugs comme le problème de l'an 2000 rappellent les pièges d'une mauvaise gestion du temps. Historiquement, Elixir s'appuie sur l'Erlang VM, qui offre d'excellentes fonctionnalités de gestion du temps. `DateTime` est maintenant la manière standard en Elixir de manipuler les dates et les heures. Les alternatives incluent l'ancien module `:calendar` d'Erlang ou des bibliothèques tierces comme `Timex`, qui peuvent offrir des fonctionnalités supplémentaires.
 
-Par exemple,
+## See Also (Voir Aussi)
+Pour aller plus loin, voici quelques liens utiles :
 
-```Elixir
-iex> Date.utc_today()
-~D[2023-09-20]
-```
-
-## Plongée en profondeur
-
-Depuis sa création, Elixir utilise le système de dates d'Erlang, qui est basé sur le POSIX time. Cependant, ce système a ses limites telles que le manque du support des zones horaires. Elixir 1.3 a introduit de nouvelles structures pour résoudre ces problèmes : Date, Time, DateTime, et NaiveDateTime.
-
-Une alternative à `Date.utc_today()` serait d'obtenir le DateTime UTC actuel, puis de le convertir en date.
-
-```Elixir
-iex> DateTime.now("Etc/UTC") |> DateTime.to_date
-~D[2023-09-20]
-```
-
-L'obtention de la date actuelle en Elixir peut être différente en fonction de l'utilisation du système d'exploitation et du fuseau horaire de l'utilisateur.
-
-## Voir aussi
-
-Pour plus de détails sur la manipulation de la date et de l'heure en Elixir, vous pouvez consulter la documentation officielle de Elixir [ici](https://hexdocs.pm/elixir/Date.html) et ce [guide pratique](https://www.amberbit.com/blog/2018/6/29/dates-and-time-in-elixir/).
+- Elixir `DateTime` documentation: https://hexdocs.pm/elixir/DateTime.html
+- Erlang `:calendar` module: http://erlang.org/doc/man/calendar.html
+- `Timex` documentation: https://hexdocs.pm/timex/Timex.html
+- Working with time zones in Elixir: https://elixirschool.com/en/lessons/basics/date_time/

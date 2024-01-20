@@ -1,6 +1,7 @@
 ---
 title:                "获取当前日期"
-html_title:           "Arduino: 获取当前日期"
+date:                  2024-01-20T15:12:54.690352-07:00
+html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,55 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-获取当前日期是一种获取编程时的实时日期的方法。程序员这么做是为了跟踪和记录程序运行和操作的实时数据。
+## What & Why? 什么和为什么?
+获取当前日期是读取当前日历时间的过程。 程序员需要日期来跟踪事件、记录数据、执行定时任务。
 
-## 如何做：
-获取Arduino的当前日期很简单。
+## How to 如何操作:
+Arduino本身没有内建的时钟来得到日期。你需要一个外部的实时时钟(RTC)模块，比如DS3231。下面是如何使用它的示例。
 
 ```Arduino
+#include <Wire.h>
 #include <RTClib.h>
 
-RTC_DS1307 rtc;
+RTC_DS3231 rtc;
 
 void setup() {
+  Wire.begin();
   Serial.begin(9600);
 
-  if (! rtc.begin()) {
-    Serial.println("Couldn't find RTC");
+  if (!rtc.begin()) {
+    Serial.println("找不到RTC");
     while (1);
   }
 
-  if (! rtc.isrunning()) {
-    Serial.println("RTC is NOT running!");
-    // following line sets the RTC to the date & time this sketch was compiled
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  if (rtc.lostPower()) {
+    Serial.println("RTC失电，需要设置时间！");
+    // 当RTC失电时，使用下面的行来设置时间
+    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
 void loop() {
   DateTime now = rtc.now();
-
+  
   Serial.print(now.year(), DEC);
   Serial.print('/');
   Serial.print(now.month(), DEC);
   Serial.print('/');
   Serial.print(now.day(), DEC);
+  Serial.print(" ");
+  Serial.print(now.hour(), DEC);
+  Serial.print(':');
+  Serial.print(now.minute(), DEC);
+  Serial.print(':');
+  Serial.print(now.second(), DEC);
   Serial.println();
+  
+  delay(1000);
 }
 ```
-输出：
-```Arduino
-2021/7/19
+
+输出样例:
+```
+2023/9/17 15:45:32
 ```
 
-## 深入探究
-获取当前日期的流程起源于早期的编程，旨在帮助程序员更好地了解他们程序的运行状态。这被广泛应用于系统日志和实时事件跟踪。
+## Deep Dive 深入了解:
+最早的微控制器没有内建的时钟，因此需要外部硬件来跟踪时间。RTC模块，例如DS3231，通常使用一个小型的硬币型电池，可以在主电源断开时继续运行。除了DS3231，还有其他许多RTC模块可供选择，例如DS1307或者更高精度的模块。
 
-与该方法的一个主要的替代方法是使用系统时间库（例如time.h或sys/time.h）。不过，获取 Arduino 的当前日期会更方便，因为它直接与板上的实时时钟（RTC）集成在一起。
+RTC模块通过I2C总线与Arduino通信，这意味着只需要两个引脚（SDA和SCL）。RTClib库使得使用这些RTC模块更为简单，因为库封装了所有复杂的底层操作。
 
-在实现细节方面，本方法使用了 RTClib 库， 它是 Arduino 的一个实时时钟库。
+除了使用RTC模块，你还可以通过网络获取时间，如使用NTP(Network Time Protocol)客户端。但这将会需要互联网连接并且相对复杂。
 
-## 另请参阅
-了解 RTClib 的更多信息，可访问[这个链接](https://www.arduino.cc/reference/en/libraries/rtclib/)。
-使用不同 Arduino 板的日期和时间的其它方法可以在[这个链接](https://create.arduino.cc/projecthub/Arduino_Scuola/date-and-time-using-only-the-arduino-uno-board-6c6f4d)看到。
+## See Also 查看更多:
+1. [RTClib库文档](https://github.com/adafruit/RTClib)
+2. [DS3231产品手册](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf)
+3. [I2C通信教程](https://www.arduino.cc/en/Tutorial/LibraryExamples/MasterReader)

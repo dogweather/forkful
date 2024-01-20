@@ -1,7 +1,8 @@
 ---
-title:                "Hämta aktuellt datum"
-html_title:           "Arduino: Hämta aktuellt datum"
-simple_title:         "Hämta aktuellt datum"
+title:                "Att hämta aktuellt datum"
+date:                  2024-01-20T15:12:57.992837-07:00
+html_title:           "Bash: Att hämta aktuellt datum"
+simple_title:         "Att hämta aktuellt datum"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,37 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Bash-programmering: Så här får du nuvarande datum
+# Att Hämta Nuvarande Datum i Bash
 
 ## Vad & Varför?
-Att hämta det nuvarande datumet innebär att hämta systemets verkliga tidspunkt. Programmeurs gör detta för att logga händelser, tidstämpla filändringar, eller för att schemalägga uppgifter.
+Att hämta det aktuella datumet innebär att du får fram dagens datum på din dator. Programmerare gör detta för att logga händelser, tidsstämpla filer eller för att hantera schemaläggning och deadlines.
 
-## Så här gör du:
-Här är några exempel på hur du får datum och tid i Bash. Prova det.
-
+## Hur gör man:
 ```Bash
-# Få det nuvarande datumet
-datum=$(date)
-echo "Det nuvarande datumet är: $datum"
-
-# Få nuvarande datum och tid
-datetime=$(date '+%Y/%m/%d_%H:%M:%S')
-echo "Det nuvarande datumet och tiden är: $datetime"
+# Visar bara datumet
+date +"%Y-%m-%d"
+```
+```bash
+# Exempelutskrift
+2023-04-05
 ```
 
-När du exekverar koden ovan kommer din terminal att visa nuvarande datum och tid.
+```Bash
+# Visar datum och tid
+date +"%Y-%m-%d %H:%M:%S"
+```
+```bash
+# Exempelutskrift
+2023-04-05 15:21:34
+```
 
-## På Djupet
-Historiskt har systemtiden varit avgörande för att få maskiner att fungera tillsammans. Den POSIX-definierade `date` kommandot har varit standard för Unix-liknande operativsystem sedan 80-talet.
+```Bash
+# Sätter en variabel till dagens datum
+TODAYS_DATE=$(date +"%Y-%m-%d")
+echo $TODAYS_DATE
+```
+```bash
+# Exempelutskrift
+2023-04-05
+```
 
-Det finns alternativ till `date`, såsom `strftime` i C/C++. Det är mjukvara som bestämmer vilket alternativ som är mest lämpligt.
+## Djupdykning
+Kommandot `date` i Bash har varit standard för Unix-liknande system sedan urminnes tider för att hämta tidsdata. Alternativ till `date` inkluderar att använda andra kommandon som `awk` eller att skriva egna skript i högre programmeringsspråk som Python eller Perl. Implementationen av `date` använder systemklockan och tidszonskonfigurationen för att ge korrekt datum och tid.
 
-`date`-kommandot i sig är ganska rakt på sak. Det ringer till systemklockan och formaterar output till en sträng. Du kan skräddarsy formatet genom att använda olika format, som i det andra exemplet ovan.
-
-## Se Även 
-Mer information om `date` och relaterade ämnen:
-
-1. [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
-3. [Datetime i Bash - Stack Overflow](https://stackoverflow.com/questions/1401482/yyyy-mm-dd-format-date-in-shell-script)
-
-Lycka till med dina Bash-programmeringsäventyr!
+## Se också
+- Bash manualen: https://www.gnu.org/software/bash/manual/
+- Datumformateringsguide: https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/
+- Tidszoner och `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html

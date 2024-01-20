@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:13:07.107280-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,58 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Arduino-Datumsabfrage: Der ultimative Leitfaden
+## Was & Warum?
+Das Abrufen des aktuellen Datums auf einem Arduino zeigt dir das heutige Datum. Das ist nützlich für Zeitstempel, Logger, Uhrenanwendungen oder fürs Event-Management.
 
-## Was ist das und warum?
-
-Die Abfrage des aktuellen Datums ermöglicht es Arduino-Programmierern, aktuelle Daten und Uhrzeit in ihren Projekten zu verwenden. Dies ist besonders nützlich für Protokollierungszwecke, Zeitmessungen und ereignisbasierte Funktionen.
-
-## Wie macht man es:
-
-Die RTC (Real Time Clock) Bibliothek für Arduino ermöglicht es uns, das aktuelle Datum und die Uhrzeit abzurufen.
+## How to:
+Um das aktuelle Datum auf einem Arduino zu erhalten, verwenden wir ein RTC (Real Time Clock) Modul wie das DS3231. Hier ist ein einfaches Beispiel, das die Zeit ausliest und ausgibt.
 
 ```Arduino
 #include <Wire.h>
-#include "RTClib.h"
+#include <RTClib.h>
 
-RTC_DS1307 rtc;
+RTC_DS3231 rtc;
 
-void setup () {
-  Serial.begin(57600);
-  if (! rtc.begin()) {
-    Serial.println("Couldn't find RTC");
+void setup() {
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("RTC nicht gefunden!");
     while (1);
   }
-  if (! rtc.isrunning()) {
-    Serial.println("RTC is NOT running!");
+  
+  if (rtc.lostPower()) {
+    Serial.println("RTC hat die Zeit verloren!");
+    // Hier könntest du die Zeit mit rtc.adjust(...) neu setzen.
   }
 }
 
-void loop () {
-    DateTime now = rtc.now();
-    
-    Serial.print(now.year(), DEC);
-    Serial.print('/');
-    Serial.print(now.month(), DEC);
-    Serial.print('/');
-    Serial.print(now.day(), DEC);
-    Serial.print(' ');
-    delay(3000);
+void loop() {
+  DateTime now = rtc.now();
+  Serial.print(now.day());
+  Serial.print('.');
+  Serial.print(now.month());
+  Serial.print('.');
+  Serial.println(now.year());
+  delay(1000); // Update jede Sekunde
 }
 ```
+Beispielausgabe:
+```
+17.3.2023
+```
 
-Dieser Sketch wird in Ihrer Seriellen Konsole ein Datum im Format JJJJ/MM/DD ausgeben.
+## Deep Dive
+In den frühen Tagen von Mikrocontrollern war das Abrufen der aktuellen Zeit nicht direkt möglich. RTC-Module lösten dieses Problem. Alternativen zum DS3231 sind z.B. das DS1307 oder Internet-basierte Zeit-Services mittels eines ESP8266.
 
-## Tiefere Einblicke
+Der Schlüssel zu solch einem System ist die RTC-Bibliothek (`RTClib.h`), die verschiedene Funktionen zur Interaktion mit dem RTC-Modul bietet. Sie wandelt beispielsweise die Zeit in ein benutzerfreundliches Format um. Wichtig ist, bei Projekten, die auf die genaue Zeit angewiesen sind, die Batterie des RTC-Moduls im Auge zu behalten, da ein Stromverlust die Datum- und Zeitinformationen verliert.
 
-Historisch gesehen konnten Arduino Boards ohne zusätzliche Hardware keine Echtzeitinformationen bereitstellen. Aus diesem Grund haben Entwickler Echtzeituhrmodule (RTC) entwickelt, die über die I2C-Schnittstelle mit dem Arduino Board verbunden werden können.
-
-Es gibt Alternativen zur RTC-Bibliothek, wie z.B. die TimeLib.h. Diese Bibliothek ist jedoch komplexer und bietet Funktionen, die über die Bedürfnisse der meisten einfachen Projekte hinausgehen.
-
-Die RTC-Bibliothek greift auf die systemeigene I2C-Schnittstelle des Arduino zu. Das Modul übermittelt die aktuelle Uhrzeit durch eine Kombination aus integriertem Oszillator und Batterie.
-
-## Siehe auch:
-
+## See Also
 - RTClib Bibliothek: https://github.com/adafruit/RTClib
-- Einführung in das I2C-Protokoll: http://www.i2c-bus.org/
-- Adafruit DS1307 Real Time Clock Assembled Breakout Board: https://www.adafruit.com/product/3296
+- Arduino Zeitbibliothek (`TimeLib.h`): https://www.pjrc.com/teensy/td_libs_Time.html
+- NTP-Zeit synchronisieren mit ESP8266: https://randomnerdtutorials.com/esp8266-nodemcu-date-time-ntp-client-server-arduino/

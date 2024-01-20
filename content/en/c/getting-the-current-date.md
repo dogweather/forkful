@@ -1,6 +1,7 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elm recipe: Getting the current date"
+date:                  2024-01-20T15:12:57.271115-07:00
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "C"
 category:             "C"
@@ -12,11 +13,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Getting the current date within a software is often required when you want to log activities, apply time stamps or query data based on date. C programmers do it to keep track of real-time events or schedule tasks.
+Getting the current date means finding out today's date as per the system's internal clock. Programmers do this to stamp logs, validate events, and time-stamp data.
 
 ## How to:
 
-C library provides `time.h` header file that houses several functions to get and manipulate date and time. Here's a quick example:
+You'll want to include `time.h` to deal with time in C.
 
 ```C
 #include <stdio.h>
@@ -25,30 +26,32 @@ C library provides `time.h` header file that houses several functions to get and
 int main() {
     time_t t = time(NULL);
     struct tm tm = *localtime(&t);
-
-    printf("Current date: %02d-%02d-%04d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
-
+    
+    printf("Current Date: %02d-%02d-%d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+    
     return 0;
 }
 ```
-This will output:
 
-```C
-Current date: xx-xx-xxxx
+Sample output:
 ```
-'Replace the `xx-xx-xxxx` with the current date.
+Current Date: 15-04-2023
+```
 
-## Deep Dive:
+## Deep Dive
 
-Using `time.h` for getting the current date is standard from C89/C90 standard. However, beware of the `tm_year` field as it is years since 1900. Also, `tm_mon` operates with range 0-11, these idiosyncrasies cause confusion.
+Historically, dealing with time in C goes way back to the early days of UNIX, thanks to C's strong system-level capabilities. For current dates, we rely on the `time.h` library, which has been around since C was standardized by ANSI. 
 
-An alternative for getting the current date is using external libraries like `boost` in C++, but it tends to increase complexity with its heavy features.
+The `time_t` type stores the current time since Epoch (00:00:00 UTC on 1 January 1970) in seconds. The `localtime` function translates this time into a `struct tm` that holds calendar date and time broken down into its components.
 
-Implementation-wise, `time.h` generates the date based on your operating system's Internal Clock. Remember the precision is up to seconds and doesn't cover milliseconds.
+Alternatives? There are other ways to manipulate and represent time in C. For instance, `gmtime` converts `time_t` to coordinated universal time (UTC) instead of local time, which `localtime` does. Using `strftime`, you can customize your date and time format extensively.
 
-## See Also:
+As for details, `time_t` is typically an integer or a floating-point type. Implementation can vary across systems but the standard doesn't mandate the precise type, just that it's capable of representing times.
 
-- C library function - time(): https://www.tutorialspoint.com/c_standard_library/c_function_time.htm
-- struct tm: https://www.tutorialspoint.com/c_standard_library/c_struct_tm.htm
-- C date and time programming: https://en.wikibooks.org/wiki/C_Programming/time.h
-- Boost Date Time Library: https://www.boost.org/doc/libs/1_72_0/doc/html/date_time.html
+When using time-related functions, remember to consider daylight saving time and locale-specific data if your application is sensitive to those.
+
+## See Also
+
+- The GNU C Library Reference Manual on Time: https://www.gnu.org/software/libc/manual/html_node/Time.html 
+- C Standard Library - time.h: https://en.cppreference.com/w/c/chrono 
+- Learn more about time formats with strftime: https://en.cppreference.com/w/c/chrono/strftime

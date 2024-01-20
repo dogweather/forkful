@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:14:28.489671-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Go"
 category:             "Go"
@@ -10,14 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Allons directement au but: Manipuler les dates courantes en Go
+## Quoi & Pourquoi ?
+Obtenir la date actuelle en programmation, c'est comme demander à votre montre quelle heure il est. Les développeurs en ont besoin pour tout, que ce soit pour horodater des événements, planifier des tâches ou simplement afficher la date d'aujourd'hui à l'utilisateur.
 
-## Quoi & Pourquoi?
-Obtenir la date courante est un processus qui vous donne l'heure exacte à chaque instant. Les programmeurs en ont besoin pour des tâches comme le marquage des logs, la génération des timestamps, etc.
-
-## Comment faire:
-Obtenir la date courante en Go est assez simple. Jetez un coup d’œil au bout de code ci-dessous:
-
+## Comment faire :
 ```Go
 package main
 
@@ -27,24 +24,27 @@ import (
 )
 
 func main() {
-	fmt.Println("La date et l'heure courante est:", time.Now())
+	// Obtenir la date actuelle
+	currentTime := time.Now()
+	
+	// Afficher la date actuelle au format standard
+	fmt.Println("Date actuelle :", currentTime.Format("2006-01-02 15:04:05"))
+	
+	// Juste la date sans l'heure
+	fmt.Println("Juste la date :", currentTime.Format("2006-01-02"))
 }
 ```
-Quand vous exécutez ce code, vous obtiendrez une sortie ressemblant à ceci:
 
-```Go
-La date et l'heure courante est: 2022-01-01 00:00:00.000000 +0000 UTC
+Sortie :
 ```
+Date actuelle : 2023-04-05 14:07:31
+Juste la date : 2023-04-05
+```
+
 ## Plongée en profondeur
-En abordant l'histoire, les dates et les heures ont toujours été cruciales en programmation dès les premières machines jusqu'aux systèmes actuels. 
+Historiquement, obtenir la date et l'heure était une affaire de système d'exploitation. En Go, le package `time` simplifie cette tâche, gérant les complexités des zones horaires et de la localisation. Assigner `time.Now()` à une variable nous donne un objet `Time` contenant la date et l'heure actuelle. Go utilise un formatage date/heure basé sur un moment précis : `Mon Jan 2 15:04:05 MST 2006`. C'est amusant, c'est comme les développeurs Go utilisaient une phrase mnémonique pour se souvenir du format. En alternative, on peut aussi utiliser des bibliothèques tierces pour plus de fonctionnalités, mais `time` suffit en général.
 
-Concernant les alternatives, Go dispose d'autres bibliothèques comme "Joda-Time" qui peut être utilisée pour un besoin spécifique, mais "time" reste la bibliothèque standard.
-
-En termes d'implémentation, "time.Now()" interroge le système d'exploitation pour obtenir l'heure courante et la convertit au format approprié.
-
-## Voir aussi 
-Pour plus d'informations:
- 
-1. Documentation Go sur le package 'time': https://golang.org/pkg/time/
-2. Tutoriel sur la gestion du temps en Go: https://www.golangprograms.com/golang-program-for-working-with-dates.html
-3. Plus sur le temps et les dates en Go: https://yourbasic.org/golang/time-date-format/
+## Voir également
+- [Documentation du package `time`](https://pkg.go.dev/time)
+- [Formatage et parsing de dates en Go](https://yourbasic.org/golang/format-parse-string-time-date-example/)
+- [Gestion des fuseaux horaires avec Go](https://medium.com/@dhanushgopinath/working-with-time-packages-and-timezones-in-go-9a4b1ae3a8a2)

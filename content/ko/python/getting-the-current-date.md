@@ -1,6 +1,7 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "C: 현재 날짜 가져오기"
+date:                  2024-01-20T15:16:14.479247-07:00
+html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Python"
 category:             "Python"
@@ -10,37 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-현재 날짜를 얻는 것은, 오늘 날짜를 출력하거나, 날짜 기반의 함수를 수행하는 코드를 작성하는 것을 말합니다. 프로그래머들이 이것을 하는 이유는 로그 파일에 타임스탬프를 새기거나, 데이터 추적 등의 목적으로 시간 관리를 할 수 있게 하기 위해서입니다. 
+## What & Why?
+현재 날짜를 얻는 것과 그 필요성
+프로그래밍에서 현재 날짜를 얻는다는 것은 단순히 오늘의 날짜를 파악하는 것을 의미합니다. 이 정보는 로깅, 데이터 타임스탬핑, 기능 스케줄링 등 다양한 상황에서 필수적입니다.
 
-## 어떻게:
+## How to:
+코드 예제 및 샘플 출력
+
 ```Python
 from datetime import date
 
 # 현재 날짜 얻기
 today = date.today()
-print("오늘의 날짜는 ", today)
-```
-이 코드를 실행한다면, 출력 결과는 다음과 같습니다.
-```
-오늘의 날짜는  2022-03-26
+
+# 날짜를 문자열로 출력하기: yyyy-mm-dd
+print(f"오늘의 날짜: {today}")
 ```
 
-## 딥 다이브
-현재 날짜를 얻는 데는 여러 방법이 있습니다. `time` 모듈을 사용하는 방법도 있지만, 일반적으로 `datetime` 모듈을 사용하는 것이 더 명확하고 편리합니다. `datetime` 모듈은 Python 2.3 버전부터 추가되었습니다. 
+출력:
+```
+오늘의 날짜: 2023-04-01
+```
 
-대안으로, `strftime` 함수를 사용하여 날짜를 문자열 형태로 다룰 수도 있습니다. 예를 들어, `%Y-%m-%d` 형식을 사용하면 연도-월-일 형식으로 날짜를 출력할 수 있습니다.
 ```Python
-from datetime import date
+import datetime
 
-today = date.today()
+# 현재 날짜와 시각 얻기
+now = datetime.datetime.now()
 
-# strftime 함수를 사용
-d = today.strftime("%Y-%m-%d")
-print("오늘의 날짜는 ", d)
+# 출력 형식: yyyy-mm-dd hh:mm:ss.ffffff
+print(f"현재 시각: {now}")
 ```
 
-## 추가 정보
-다른 관련 자료를 탐색하려면 아래의 링크를 참고하십시오.
-- Python 공식 문서: https://docs.python.org/ko/3/library/datetime.html
-- Python 날짜와 시간 다루기 튜토리얼: https://dojang.io/mod/page/view.php?id=2463
+출력:
+```
+현재 시각: 2023-04-01 15:20:12.463374
+```
+
+## Deep Dive
+현재 날짜를 얻는 상세한 정보
+
+현재 날짜와 시간은 컴퓨터 시스템의 내부 클록을 기반으로 합니다. 파이썬은 내장된 `datetime` 모듈을 통해 이 정보에 쉽게 접근할 수 있게 해줍니다. 이 모듈은 1990년대 후반에 파이썬에 도입되었고 시간을 다루는 데에 표준적인 방법을 제공합니다.
+
+대안으로, `time` 모듈을 사용해 유닉스 타임스탬프를 얻을 수 있으며, 이는 1970년 1월 1일부터의 총 초를 나타냅니다. 또한 `calendar` 모듈을 사용하여 더 복잡한 날짜 계산을 수행할 수 있습니다.
+
+또한, 파이썬의 시간 함수들은 운영체제의 시간 설정과 시계를 따릅니다. 이는 시스템의 타임존 설정에 따라 결과가 달라질 수 있다는 것을 의미합니다.
+
+## See Also
+관련 자료 링크
+
+- 파이썬 공식 문서 `datetime` 모듈:
+  [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)
+- 파이썬 `time` 모듈에 대한 개요:
+  [https://docs.python.org/3/library/time.html](https://docs.python.org/3/library/time.html)
+- 파이써의 `calendar` 모듈 사용 방법:
+  [https://docs.python.org/3/library/calendar.html](https://docs.python.org/3/library/calendar.html)

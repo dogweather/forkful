@@ -1,6 +1,7 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "C#: Obteniendo la fecha actual"
+date:                  2024-01-20T15:16:23.525311-07:00
+html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,38 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Trabajando con fechas en Ruby: Cómo obtener la fecha actual
+## What & Why?
+Obtener la fecha actual es coger la fecha de hoy desde nuestro código. Los programadores usamos esta función para tareas como guardar un timestamp, marcar eventos, o simplemente mostrar la fecha en una aplicación.
 
-## ¿Qué y Por qué?
+## How to:
+En Ruby, puedes obtener la fecha actual de manera sencilla usando la clase `Date` o `Time`. Aquí te dejo unos ejemplos:
 
-Obtener la fecha actual en un programa es una forma de capturar el estado temporal preciso al momento de ejecución. Es esencial cuando manejamos estadísticas, trazabilidad en registros(logs), posts en un blog, entre otros.
-
-## Cómo hacerlo: 
 ```Ruby
 require 'date'
-puts Date.today
-``` 
-Esto imprimirá la fecha en formato 'yyyy-mm-dd'. Por ejemplo, si hoy es 22 de febrero de 2023, la salida será `2023-02-22`.
 
-Si deseas agregar la hora, solo usa `DateTime` en lugar de `Date`:
-```Ruby
-require 'date'
-puts DateTime.now
-``` 
-Esto generará una salida parecida a `2023-02-22T11:20:30+00:00`, que incluye la fecha, la hora, los minutos, los segundos y el huso horario.
+# Obtener la fecha actual con Date
+fecha_actual_date = Date.today
+puts fecha_actual_date
+# => 2023-04-14 (esto variará según el día en que ejecutes el código)
 
-## Buceo Profundo
+# Obtener la fecha y hora actual con Time
+fecha_actual_time = Time.now
+puts fecha_actual_time
+# => 2023-04-14 21:03:39 +0200 (esto también variará)
+```
 
-Historia: Ruby ha incluido el módulo de `Date` desde su versión 1.9 para facilitar el trabajo con fechas. Antes de eso, los programadores tenían que recurrir a la biblioteca estándar de `Time`, que no tiene tantas funciones relacionadas con las fechas.
+## Deep Dive:
+En Ruby, tradicionalmente se ha usado la clase `Time` para manejar fecha y hora. Pero `Time` tiene sus limitaciones, especialmente en cuanto a la representación de fechas históricas o futuras lejanas. Ahí es donde entra en juego la gema `date`, que fue estandarizada en Ruby 1.9.
 
-Alternativas: Aunque `Date` y `DateTime` son suficientes para la mayoría de los casos, también puedes usar `Time` para obtener una marca de tiempo de Unix (segundos desde la época 1970-01-01 00:00:00 UTC). Aquí tienes un ejemplo:
-```Ruby
-puts Time.now.to_i
-``` 
+La gema `date` trae la clase `Date`, que se enfoca en fechas (sin hora), y `DateTime`, para cuando necesitás más precisión incluyendo la hora. Estas clases pueden manejar un rango de fechas mucho más amplio: `Date` desde el año -4712 hasta el año infinito, y `DateTime` con precisiones de segundo o fracción de segundo.
 
-Un detalle de implementación a tener en cuenta es la precisión. `DateTime.now` sólo tiene precisión hasta el segundo, mientras que `Time.now` puede tener una precisión de hasta un nanosegundo.
+Un detalle curioso es que `Time` en versiones antiguas de Ruby estaba limitada al rango de tiempo del sistema operativo. Pero con Ruby 1.9.2 en adelante, `Time` utiliza una representación interna que no depende del sistema, por lo que también puede representar un rango de fechas tan amplio como `DateTime`.
 
-## Ver También
+En cuando a la zona horaria, `Time` maneja zonas horarias y `Date` y `DateTime` no. Sin embargo, puedes usar la gema `tzinfo` para trabajar con zonas horarias si usas `Date` o `DateTime`.
 
-- La documentación oficial de `Date`: [https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
-- La documentación oficial de `DateTime`: [https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html)
+Alternativas como la gema `active_support` (parte de Rails) también ofrecen extensiones para manejar fechas, pero para uso estándar en Ruby puro, `Date` y `Time` son más que suficientes.
+
+## See Also:
+- Documentación oficial de Ruby para la clase `Time`: [https://ruby-doc.org/core-2.7.0/Time.html](https://ruby-doc.org/core-2.7.0/Time.html)
+- Documentación oficial de Ruby para la clase `Date`: [https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
+- Guía sobre gestión de zonas horarias con `tzinfo`: [https://www.rubydoc.info/gems/tzinfo/frames](https://www.rubydoc.info/gems/tzinfo/frames)
+- Gema `active_support` y sus extensiones para manejo de tiempo: [https://guides.rubyonrails.org/active_support_core_extensions.html#extensions-to-time](https://guides.rubyonrails.org/active_support_core_extensions.html#extensions-to-time)

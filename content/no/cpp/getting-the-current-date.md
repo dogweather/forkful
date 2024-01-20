@@ -1,7 +1,8 @@
 ---
-title:                "Få den gjeldende datoen"
-html_title:           "Haskell: Få den gjeldende datoen"
-simple_title:         "Få den gjeldende datoen"
+title:                "Slik får du tak i dagens dato"
+date:                  2024-01-20T15:13:38.234887-07:00
+html_title:           "C: Slik får du tak i dagens dato"
+simple_title:         "Slik får du tak i dagens dato"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,41 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Hente nåværende dato i programmer: enhver funksjon som gir oss dagens dato. Vi gjør dette for å tidsstemple hendelser, opprette rapporter eller sjekke gyldighetsperioder.
 
-I C++ programmering er det å hente dagens dato noe som betyr å få tidsstempel som representerer det aktuelle øyeblikket. Dette er ofte nødvendig for loggføring, tidsstempling av transaksjoner, eller å håndtere tidsavhengige funksjoner.
-
-## Hvordan:
-
-Her er en enkel måte å få dagens dato på i C++:
+## How to (Slik gjør du det):
+I C++ bruker vi `<chrono>` biblioteket for å få nåværende dato. Her er et raskt eksempel:
 
 ```C++
-#include <ctime>
 #include <iostream>
+#include <chrono>
+#include <ctime>
 
 int main() {
-    std::time_t t = std::time(0);
-    std::tm* now = std::localtime(&t);
-    std::cout << (now->tm_year + 1900) << '-' 
-              << (now->tm_mon + 1) << '-'
-              << now->tm_mday
-              << "\n";
+    // Får nåværende tidspunkt som time_point
+    auto nå = std::chrono::system_clock::now();
+
+    // Konverterer time_point til en time_t objekt for å representere kalendertid
+    std::time_t nå_tid = std::chrono::system_clock::to_time_t(nå);
+
+    // Konverterer time_t til en lesbar streng 
+    std::cout << "Nåværende dato: " << std::ctime(&nå_tid);
+
     return 0;
 }
 ```
-Utskriften blir datoen i 'ÅÅÅÅ-MM-DD' format, som for eksempel '2022-03-06'.
 
-## Dypdykk
+Sample Output:
+```
+Nåværende dato: Wed Mar 10 11:21:54 2021
+```
 
-Historisk sett har programmerere fått tak i systemets lokale tid for å få den nåværende datoen. I eldre C++, brukte vi 'time.h' biblioteket. Det fungerer fortsatt i dag, men den moderne C++ versjonen anbefaler 'ctime'.
+## Deep Dive (Dypdykk):
+Historisk sett har C++ brukt `<ctime>` for dato og tid, men dette hadde sine begrensninger og komplikasjoner. Med C++11 introduserte `<chrono>` stor forbedring. Det gir type-sikkerheter og enkel bearbeidelse av tid. Alternativer inkluderer tredjepartsbiblioteker som `Boost` eller operativsystem-spesifikke kall, men `<chrono>` er standard og anbefalt.
 
-Som alternativer er det biblioteker som Chrono (fra C++11 og videre) eller tredjeparts biblioteker som Date eller Boost. Disse gir mer robuste funksjoner for dato og tid håndtering.
+Når vi bruker `<chrono>`, er det viktig å forstå `time_point` konseptet, som representerer et punkt i tid, og `duration`, som er en tidsintervall. Ved å konvertere til `time_t`, kan vi bruke familiære tid/dato funksjoner som `std::ctime` for å lage en strengrepresentasjon.
 
-I vårt eksempel bruker vi std::time for å hente antall sekunder siden epoch (Midnatt UTC, 1. januar 1970). Så bruker vi std::localtime til å konvertere det til en tm struct, som holder individuelle komponenter av tid (time, min, sec) og dato (day, month, year).
-
-## Se Også
-
-- Offisiell C++ dokumentasjon [ctime](http://www.cplusplus.com/reference/ctime/)
-- Krono biblioteket [Chrono](https://en.cppreference.com/w/cpp/chrono)
-- Boost bibliotekets tidsfunksjoner [Boost](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)
-- Tredje-part biblioteket [Date](https://github.com/HowardHinnant/date)
+## See Also (Se også):
+- C++ `<chrono>` documentation: https://en.cppreference.com/w/cpp/header/chrono
+- C++ `<ctime>` documentation: https://en.cppreference.com/w/cpp/header/ctime
+- `Boost` Date Time: https://www.boost.org/doc/libs/release/libs/date_time/
+- For dybdeforståelse, se Howard Hinnant's dato og tid bibliotek som inspirerte deler av `<chrono>`: https://github.com/HowardHinnant/date

@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:14:52.828407-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Java"
 category:             "Java"
@@ -10,57 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## What & Why? (Mikä ja Miksi?)
+Päivämäärän haaliminen ohjelmallisesti Java-kielessä tarkoittaa nykyhetken päivämäärän ja ajan selvittämistä. Sitä tehdään esimerkiksi logitiedostojen aikaleimoja varten tai kun käyttäjille näytetään päivän dataa.
 
-Nykyisen päivämäärän hankkiminen  on prosessi, jossa saat nyt käynnissä oleva päivämäärä ja aika. Ohjelmoijat tekevät sen esimerkiksi aikaleimojen luomiseksi, ajanhallinnan toteuttamiseksi ja päivämääräriippuvaisten toimintojen suorittamiseksi.
-
-## Kuinka:
-
-Seuraavat ovat esimerkkejä siitä, kuinka hankkia nykyinen päivämäärä Javassa:
-
-```Java
-// Java 8:sta lähtien
+## How to: (Miten tehdään:)
+```java
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-public class TamaPaiva {
-    public static void main(String[] args){
-        LocalDate tamaPaiva = LocalDate.now(); 
-        System.out.println("Tämän päivän päivämäärä on: " + tamaPaiva);
+public class CurrentDateExample {
+    public static void main(String[] args) {
+        // Päivämäärä ilman kellonaikaa
+        LocalDate date = LocalDate.now();
+        System.out.println("Päivämäärä: " + date);
+
+        // Päivämäärä kellonajalla
+        LocalDateTime dateTime = LocalDateTime.now();
+        System.out.println("Päivämäärä ja aika: " + dateTime);
+
+        // Muotoiltu päivämäärä
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+        String formattedDateTime = dateTime.format(formatter);
+        System.out.println("Muotoiltu päivämäärä ja aika: " + formattedDateTime);
     }
 }
 ```
-Kun suoritat tämän koodin, saat tulostuksen:
-
-```Java
-Tämän päivän päivämäärä on: 2022-08-30
+### Näyte ulostulosta:
 ```
-## Deep Dive
-
-Ennen Java 8:aa nykyisen päivämäärän saaminen oli hieman mutkikkaampaa ja sisälsi `java.util.Date`- tai `java.util.Calendar`-olio. Uusi `java.time`-paketti on käyttäjäystävällisempi ja tarjoaa parempaa aikavyöhykehallintaa.
-
-Seuraavat ovat vaihtoehtoisia tapoja saada nykyinen päivämäärä Javassa:
-
-```Java
-// Vaihtoehto 1: käyttää java.util.Date
-import java.util.Date;
-
-Date nykyinenPaivamaara = new Date();
-System.out.println("Tämän päivän päivämäärä on: " + nykyinenPaivamaara);
+Päivämäärä: 2023-04-05
+Päivämäärä ja aika: 2023-04-05T15:24:33.648
+Muotoiltu päivämäärä ja aika: 05.04.2023 15:24:33
 ```
 
-```Java
-// Vaihtoehto 2: käyttää java.util.Calendar
-import java.util.Calendar;
+## Deep Dive (Syväsukellus):
+Päivämäärän hakeminen Javassa on selvempää `java.time` -pakettia käytettäessä, joka tuli osaksi standardia Java 8 -versiossa (maaliskuu 2014). Ennen Java 8:aa käytettiin `java.util.Date` luokkaa, joka oli sekava ja epäjohdonmukainen. `java.time` -paketti, joka on myös tunnettu nimellä JSR-310, tuo mukanaan helpompaa APIa ja selkeämmän mallin päivämäärän käsittelyyn. Huomattavaa on, että paketti tukee myös aikavyöhykkeitä ja tarkkoja aikaleimoja, jotka ovat välttämättömiä globaaleissa sovelluksissa.
 
-Calendar kalenteri = Calendar.getInstance();
-Date nykyinenPaivamaara = kalenteri.getTime();
-System.out.println("Tämän päivän päivämäärä on: " + nykyinenPaivamaara);
-```
+Vaihtoehtoja `LocalDate` ja `LocalDateTime` ovat esimerkiksi `ZonedDateTime` aikavyöhykkeellisen ajan käsittelyyn ja `Instant` tarkan hetkellisen aikaleiman saamiseksi.
 
-## Katso Myös
-
-Lisätietoja Javan päivämääristä ja ajoista löytyy seuraavista lähteistä:
-
-1. [Oracle Java Docs: java.time package](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-2. [Tutorial Point: Java - Date & Time](https://www.tutorialspoint.com/java/java_date_time.htm)
-3. [Baeldung: A Guide to Java's LocalDate](https://www.baeldung.com/java-8-date-time-intro)
+## See Also (Katso Myös):
+- [Oracle Java Documentation for java.time Package](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Baeldung Guide on Java 8 Date and Time](https://www.baeldung.com/java-8-date-time-intro)
+- [Oracle Tutorial – Date Time explaining how to use java.time](https://docs.oracle.com/javase/tutorial/datetime/)

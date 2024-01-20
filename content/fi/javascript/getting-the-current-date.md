@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:15:20.285590-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,37 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# JavaScriptin Nykyisen Päivämäärän Haku
+## What & Why? (Mitä & Miksi?)
+JavaScriptillä saa nykyisen päivämäärän `Date`-objektilla. Koodaajat tarvitsevat tätä usein: päivämäärien vertailuun, aikaleimojen luomiseen, ja käyttäjälle ajan näyttämiseen.
 
-## Mitä & Miksi?
-
-Nykyisen päivämäärän hakeminen tarkoittaa tämänhetkisen päivämäärän ja kellonajan selvittämistä ohjelmoimalla. Se on välttämätöntä ajanherkkien tehtävien, kuten aikaleimojen, aikataulutuksen ja päivämäärärajoitettujen ominaisuuksien, hallitsemiseksi.
-
-## Näin teet:
-
-Käytämme `Date`-luokkaa nykyisen päivämäärän saamiseksi JavaScriptissa.
-
+## How to: (Kuinka tehdä:)
 ```Javascript
-let päivämäärä = new Date();
-console.log(päivämäärä);
+// Luodaan uusi Date-objekti
+const nyt = new Date();
+
+// Tulostetaan koko päivämäärä ja aika
+console.log(nyt.toString()); // "Wed Apr 05 2023 15:46:11 GMT+0300 (Eastern European Summer Time)"
+
+// Tulostetaan vain päivämäärä
+console.log(nyt.toDateString()); // "Wed Apr 05 2023"
+
+// Tulostetaan vain aika
+console.log(nyt.toTimeString()); // "15:46:11 GMT+0300 (Eastern European Summer Time)"
+
+// Tulostetaan ISO-muodossa
+console.log(nyt.toISOString()); // "2023-04-05T12:46:11.318Z"
 ```
 
-Tämä koodipätkä tulostaa jotakin seuraavanlaista:
+## Deep Dive: (Syväsukellus)
+`Date`-objekti tuli JavaScriptiin 1.0-versiossa vuonna 1995. Helppoa päivämäärän käsittelyä varten. Mutta `Date` on rajoittunut. Se ei ota kantaa aikavyöhykkeisiin kovin hyvin, ja kansainvälistä tukea voisi parantaa.
 
-```Javascript
-2022-05-28T12:34:56.789Z
-```
+Vaihtoehtoja:
+- `moment.js`: Kirjasto, joka tarjoaa joustavuutta ja lisäominaisuuksia, muttei ole enää yhtä suosiossa kuin ennen.
+- `date-fns`: Modulaarinen, ja kätevä käyttää. Sisältää tuen aikavyöhykkeille.
+- `Luxon`: Moderni kirjasto, joka on syntynyt `moment.js`:n heikkouksien pohjalta. Tuettu hyvin.
 
-## Syvä sukellus
+JavaScript-kielellä käsitellään päivämäärää millisekunteina, jotka ovat kuluneet 1. tammikuuta 1970 (UNIX-aika). Varmista, että selaimet ja palvelimet käyttävät samaa aikavyöhykettä tai käsittele niiden erot koodissa.
 
-Historiallisesti JavaScriptin `Date`-luokka on ollut perustana kaikille päivämäärä- ja aikatoiminnoille siitä lähtien, kun se lisättiin kielen spesifikaatioon. Se käyttää vuodesta 1970 lähtevää Unix-aikaa sisäisenä pohjanaan - arkkitehtoninen päätös, joka heijastaa JavaScriptin juuria web-selausympäristönä.
-
-Vaihtoehtoisia päivämääräkirjastoja, kuten `Moment.js` ja `date-fns`, käytetään usein parantamaan päivämäärätoimintojen käyttöä selkeämmällä syntaksilla ja lisäominaisuuksilla. Kuitenkin suurimmalle osalle sovelluksia `Date`-luokka tarjoaa riittävät työkalut.
-
-JavaScriptin `Date`-objekti ei ota huomioon aikavyöhykkeitä luodessaan uuden instanssin. Sitä voidaan käyttää aikavyöhyke-spesifisten juttujen tekemiseen ajamalla aika UTC-muotoon.
-
-## Katso myös 
-
-- MDN Web Docs, [JavaScript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- Moment.js, [Moment.js documentation](https://momentjs.com/)
-- date-fns, [date-fns documentation](https://date-fns.org/docs/Getting-Started)
+## See Also: (Katso Myös)
+- MDN Web Docs Date: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- `moment.js`: https://momentjs.com/
+- `date-fns` kirjasto: https://date-fns.org/
+- `Luxon` dokumentaatio: https://moment.github.io/luxon/#/

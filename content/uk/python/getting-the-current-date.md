@@ -1,5 +1,6 @@
 ---
 title:                "Отримання поточної дати"
+date:                  2024-01-20T15:16:27.778828-07:00
 html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "Python"
@@ -10,35 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Python: Як отримати поточну дату?
+## Що це таке і навіщо?
+Отримати поточну дату - це значить запитати у вашої системи "який сьогодні день?" Це роблять, щоб маркувати час створення файлів, логування подій чи обмежити доступ до ресурсу за часом.
 
-## Що і чому?
-
-Отримання поточної дати в Python - це швидкий спосіб знати дату і час прямо зараз. Програмісти використовують це для логічних рішень, аудиту активності, відстеження часу виконання програми, чи теж для штампів дати/часу.
-
-## Як зробити:
-
-Модуль datetime в Python включає всі основні операції з датою і часом. Ось приклад отримання поточної дати:
-
+## Як це зробити:
 ```Python
-import datetime
+from datetime import datetime
 
-current_date = datetime.date.today()
-print(current_date)
+# Отримати поточну дату і час
+now = datetime.now()
+
+# Вивести поточну дату і час
+print("Дата та час зараз:", now)
+
+# Вивести тільки дату
+print("Тільки сьогоднішня дата:", now.date())
+
+# Вивести в форматі рррр-мм-дд
+print("Форматована дата:", now.strftime("%Y-%m-%d"))
 ```
 
-Виходом буде поточна дата у форматі YYYY-MM-DD (наприклад, 2022-09-25).
+Вивід:
+```
+Дата та час зараз: 2023-04-02 15:37:21.091417
+Тільки сьогоднішня дата: 2023-04-02
+Форматована дата: 2023-04-02
+```
 
 ## Поглиблений огляд:
+Отримання поточної дати має коріння в операційних системах і часах початкових комп'ютерів. Це пов'язано з потребою відстежування подій. Альтернативи `datetime` в Python включають модулі `time` та `calendar`. `datetime` має методи для аналізу, форматування і проведення операцій з датами. Использование `timezone` важливо для точності з урахуванням часових поясів.
 
-**Історичний контекст**: У ранніх версіях Python для роботи з датою та часом були модулі time та calendar. Згодом було вирішено створити unified interface, тому було створено модуль datetime.
-
-**Альтернативи**: Якщо вам потрібно більше функціональності для роботи з датою та часом, можна використовувати модулі, такі як Pendulum, arrow, або delorean.
-
-**Деталі реалізації**: datetime використовує Gregorian calendar (такий самий, як у нас в усьому світі), тому враховуеться високосний рік і інші особливості такого календаря.
-
-## Дивись також:
-
-1. [Python's official documentation for datetime](https://docs.python.org/3/library/datetime.html)
-2. [Arrow: Python library for date & time manipulation](https://arrow.readthedocs.io/en/latest/)
-3. [How to convert a date string into different formats in Python?](https://stackoverflow.com/questions/466345/converting-string-into-datetime)
+## Також дивіться:
+- [Документація по модулю datetime](https://docs.python.org/3/library/datetime.html)
+- [Документація по модулю time](https://docs.python.org/3/library/time.html)
+- [PEP 495 -- Local Time Disambiguation](https://www.python.org/dev/peps/pep-0495/)
+- [ISO 8601 Date and time format](https://www.iso.org/iso-8601-date-and-time-format.html)

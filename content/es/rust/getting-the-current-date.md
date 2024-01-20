@@ -1,6 +1,7 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "C#: Obteniendo la fecha actual"
+date:                  2024-01-20T15:16:26.420829-07:00
+html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,41 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Programar En Rust: Cómo obtener la fecha actual
+## Qué & Por Qué?
 
-## ¿Qué y Por Qué?
-Obtener la fecha actual en la programación es el proceso de acceder a la fecha y hora del sistema actual. Los programadores suelen hacerlo para registrar eventos, marcar el tiempo o realizar cálculos basados en fechas.
+Obtener la fecha actual en Rust significa acceder al momento presente en el sistema. Los programadores lo hacen para registros, medidas de tiempo, o funciones que dependen de la fecha.
 
-## Cómo hacerlo:
-Primero, usa el módulo `chrono` para manipular fechas y horas. Para instalarlo añade `chrono = "0.4"` a tu archivo `Cargo.toml`.
-
-A continuación te mostramos cómo obtener la fecha actual en Rust:
+## Cómo:
 
 ```Rust
-extern crate chrono;
-use chrono::prelude::*;
+use chrono::{Local, Datelike};
 
 fn main() {
-    let now = Utc::now();
-    println!("{}", now);
+    let hoy = Local::today();
+    println!("Hoy es: {}", hoy.format("%Y-%m-%d"));  // Formato: Año-Mes-Día
 }
-```
-Este código imprimirá la fecha y hora UTC actual, como:
 
-```
-2022-02-15T08:45:23.323422901Z
+// Salida esperada (varía según el día en que ejecutes el código):
+// Hoy es: 2023-04-07
 ```
 
-## Profundización:
-Durante mucho tiempo, los programadores de Rust han utilizado `time` para obtener la fecha y hora. Sin embargo, `chrono` es ahora la opción preferida debido a su mayor funcionalidad y facilidad de uso. Mientras que `time` solo proporciona tiempo en segundos desde la época UNIX, `chrono` ofrece una gran cantidad de funcionalidades adicionales, como la capacidad de representar fechas, horas e instantes, así como periodos y duraciones.
+## Análisis Profundo
 
-Una alternativa a `chrono` es `time`, otro módulo de Rust. Aunque es menos versátil, puede ser suficiente para proyectos más simples.
+Históricamente, Rust siempre ha valorado la seguridad y la precisión en el manejo del tiempo, y la biblioteca `chrono` es el estándar de facto para trabajar con fechas y horas. Aunque la biblioteca estándar de Rust incluye funcionalidades básicas para manejar el tiempo a través del módulo `std::time`, `chrono` ofrece abstracciones más ricas y fáciles de usar.
 
-A nivel de implementación, cuando solicitas la fecha y hora actual, `chrono` recurre a llamadas al sistema de bajo nivel que interactúan con el reloj de tu sistema operativo.
+Alternativas incluyen el uso de la biblioteca `time`, que también tiene funciones para manejar tiempo y fechas, pero puede tener diferencias en la API y en cómo se manejan las zonas horarias.
 
-## Ver También:
-Si quieres profundizar más, te recomiendo los siguientes recursos:
+En cuanto a implementación, `chrono` maneja fechas con tipos robustos como `DateTime` para fechas y horas, y `Date` para solo fechas, cada uno con asociaciones a zonas horarias específicas o al horario universal coordinado (UTC). Es importante tener en cuenta la zona horaria; `Local::today()` devuelve la fecha actual en la zona horaria local de la máquina donde se ejecuta el código.
 
-1. Documentación oficial de Chrono: https://docs.rs/chrono/0.4.19/chrono/
-2. Tutorial de Rust sobre el manejo de fecha y hora: https://www.tutorialspoint.com/rust/rust_date_time.htm
-3. Documentación de la librería Time: https://docs.rs/time/0.2.16/time/
+## Ver También
+
+- Documentación oficial de `chrono`: https://docs.rs/chrono/
+- Crates.io, donde puedes encontrar la biblioteca `chrono`: https://crates.io/crates/chrono
+- Módulo oficial de Rust para el tiempo: https://doc.rust-lang.org/std/time/index.html
+- Documentación alternativa para la biblioteca `time`: https://docs.rs/time/

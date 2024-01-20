@@ -1,6 +1,7 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elm recipe: Getting the current date"
+date:                  2024-01-20T15:12:54.604939-07:00
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,55 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Getting the current date on an Arduino means querying a real-time clock (RTC) or internet-based time service to find out the date right now. Why do this? Logging events, timestamping data, or scheduling actions—knowing the date can be crucial for these tasks.
 
-Getting the current date in Arduino means retrieving the present day, month, and year. We do this for time-tracking, event logging, and managing time-sensitive processes.
+## How to:
 
-## How To:
+Let's make our Arduino smart about the date. We'll use an RTC module, like the DS3231, which is precise and has a backup battery.
 
-To get the current date with an Arduino board, you need a Real Time Clock (RTC) module, like the DS1307. Here's a way to do it:
-
-```Arduino
+```arduino
 #include <Wire.h>
-#include "RTClib.h"
-RTC_DS1307 rtc;
+#include <RTClib.h>
 
-void setup () {
+RTC_DS3231 rtc;
+
+void setup() {
   Serial.begin(9600);
-  if (! rtc.begin()) {
+
+  if (!rtc.begin()) {
     Serial.println("Couldn't find RTC");
     while (1);
   }
+
+  if (rtc.lostPower()) {
+    Serial.println("RTC lost power, let's set the time!");
+    // following line sets the RTC to the date & time this sketch was compiled
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
 }
 
-void loop () {
+void loop() {
   DateTime now = rtc.now();
+
   Serial.print(now.year(), DEC);
   Serial.print('/');
   Serial.print(now.month(), DEC);
   Serial.print('/');
-  Serial.println(now.day(), DEC);
+  Serial.print(now.day(), DEC);
+  
+  delay(3000); // wait for 3 seconds before updating the date
 }
 ```
 
-Output with sample date:
-
-```Arduino
-2022/12/25
+Sample Output:
+```
+2023/4/5
 ```
 
-## Deep Dive
+## Deep Dive:
+Historical context? Early computers didn't need to know the date. It wasn't until we got into logging and multi-user systems that it mattered. Nowadays, it's just expected.
 
-Historically, embedded systems typically barely kept track of time, let alone date, due to their tight hardware constraints. As technology advanced, RTC modules were built to alleviate this issue.
+Alternatives to RTCs include using the Network Time Protocol (NTP) when connected to the internet, or GPS modules that provide precise time and date information.
 
-One alternative to the DS1307 RTC would be the DS3231 RTC. The DS3231 has built-in temperature-compensated crystal oscillator (TCXO) and crystal, making it more accurate than the DS1307.
+Implementation details matter. Not all RTCs are created equal. Some, like the DS1307, are less accurate and can drift more over time. Libraries like `RTClib.h` abstract away the differences between modules, making your life easier.
 
-In terms of implementation, the `now()` function of the RTC library fetches the current date. Importantly: your RTC must be correctly set before the `now()` function can return the right date, either via the Arduino or manually.
+Using NTP over WiFi requires a different approach. You'd need an ESP8266 or ESP32 with internet access, and to include libraries like `WiFi.h` and `NTPClient.h`. The coding pattern changes— you make periodic requests to a time server and parse the results for the date.
 
 ## See Also:
- 
-For more information, you might find these links useful:
- 
-1. Official Arduino Website: https://www.arduino.cc/
-2. RTC Library: https://github.com/adafruit/RTClib
-3. More on DS1307 RTC: https://circuitdigest.com/microcontroller-projects/arduino-based-real-time-clock.
-4. More on DS3231 RTC: https://lastminuteengineers.com/ds3231-rtc-arduino-tutorial/
+- [RTClib library](https://github.com/adafruit/RTClib): A library that makes interfacing with RTCs a breeze.
+- [DS3231 datasheet](https://datasheets.maximintegrated.com/en/ds/DS3231.pdf): The nitty-gritty on the DS3231 RTC module.
+- [NTPClient library](https://github.com/arduino-libraries/NTPClient): For getting time over the internet.
+- [Time and Date on Arduino Without a RTC](https://create.arduino.cc/projecthub/Arnov_Sharma_makes/time-and-date-on-arduino-without-a-rtc-module-c7d2d6): Alternative methods if you're going RTC-less.

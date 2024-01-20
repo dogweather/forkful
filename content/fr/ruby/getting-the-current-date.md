@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:16:29.945177-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,42 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
-Récupérer la date actuelle signifie obtenir la date et l'heure au moment où le code est exécuté. Les programmeurs font cela pour suivre des événements en temps réel, étiqueter des données avec un horodatage, ou comparer les dates.
+## What & Why? (Quoi et Pourquoi ?)
+Récupérer la date actuelle en Ruby, c'est juste savoir quel jour on est. Les développeurs le font pour enregistrer des timestamps, des fonctionnalités basées sur la date, ou simplement afficher la date d'aujourd'hui.
 
-## Comment faire :
-Voici un moyen simple de le faire. Juste utiliser `DateTime.now`.
+## How to: (Comment faire :)
+Pour mettre la main sur la date d'aujourd'hui dans Ruby, rien de plus simple. Utilise la classe `Date` ou `Time` :
 
-```Ruby
+```ruby
 require 'date'
 
-now = DateTime.now
-puts now
+# Utilise Date pour la date actuelle
+puts Date.today
+# => 2023-04-12
+
+# Utilise Time pour la date et l'heure actuelle
+puts Time.now.strftime("%Y-%m-%d")
+# => 2023-04-12
 ```
+La sortie varie selon le jour où tu exécutes le code, bien sûr.
 
-Quand vous exécutez ça, vous obtiendrez quelque chose comme ceci :
+## Deep Dive (Plongée en Profondeur)
+Historiquement, Ruby n'a pas toujours eu une gestion du temps aussi robuste. Avant la standardisation, des gems comme `time` et `date` ont été créées pour enrichir les fonctionnalités de base. Il y a aussi `DateTime`, mais on l'utilise moins car `Time` gère maintenant les fuseaux horaires à merveille.
 
-```Ruby
-2022-03-27T13:42:00+02:00
-```
+Pour les alternatifs, t'as le choix entre :
+- `Chronic` pour parser des dates en texte naturel.
+- `ActiveSupport::TimeWithZone` si t'es sur Rails et que tu veux gérer le temps avec des fuseaux horaires.
 
-## Plongée en Profondeur
-La manière dont Ruby gère le temps et la date a une longue histoire. À l'origine, il n'y avait que la classe Time. Mais ensuite, les classes Date et DateTime ont été introduites pour donner plus de flexibilité.
+Concernant l'implémentation, `Time.now` te donne un objet `Time` plein d'informations, tandis que `Date.today` te file une instance de `Date` qui est plus légère, sans l'heure.
 
-Si vous voulez juste l'heure, vous pouvez utiliser la classe Time :
-
-```Ruby
-now = Time.now
-puts now
-```
-
-Mais si vous voulez quelque chose comme une date julienne ou le jour de l'année, vous auriez besoin de la classe Date.
-
-En ce qui concerne l'implémentation, la plupart du temps, les dates et les heures de Ruby sont gérées par le système d'exploitation sous-jacent. Donc, si vous exécutez votre code sur une machine avec un fuseau horaire différent, vous obtiendrez une heure différente.
-
-## Voir aussi 
-Pour plus d'informations, vous pouvez consulter ces liens :
-
-[Ruby Doc Date](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html),
-[Ruby Doc Time](https://ruby-doc.org/core-3.0.0/Time.html),
-[Ruby Doc DateTime](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html).
+## See Also (Voir Aussi)
+- [Documentation Ruby pour Time](https://ruby-doc.org/core-2.7.0/Time.html)
+- [Documentation Ruby pour Date](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
+- [RubyGem pour Chronic](https://rubygems.org/gems/chronic)
+- [Rails API pour ActiveSupport::TimeWithZone](https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html)

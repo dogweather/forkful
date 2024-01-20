@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:13:50.171026-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,46 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Das aktuelle Datum in Clojure: Wie und Warum
-
 ## Was & Warum?
 
-Das Abrufen des aktuellen Datums ist einfach das Holen des momentanen Datums und der Uhrzeit, an dem/zu der dein Programm läuft. Programmierer tun dies oft, um Zeitstempel für Datenprotokollierung, allgemeine Verfolgung und Zeitgesteuerte Funktionen zu erzeugen.
+Beim Programmieren ist das Abrufen des aktuellen Datums ein häufig erforderlicher Vorgang, um zeitabhängige Funktionen zu implementieren. Man braucht es für alles Mögliche, von Zeitstempeln in Log-Dateien bis hin zur Überprüfung der Gültigkeit von Verträgen.
 
-## Wie:
+## So geht's:
 
-Enter Clojure! Hier ist, wie man das aktuelle Datum abruft:
+Um das aktuelle Datum in Clojure zu bekommen, nutzt man das Java-Interoperabilitätsfeature, weil Clojure auf der Java Virtual Machine (JVM) läuft. Hier ein einfaches Beispiel:
 
 ```clojure
-(require '[clj-time.core :as t])
+(import java.util.Date)
+(import java.text.SimpleDateFormat)
 
 (defn get-current-date []
-  (t/now))
+  (let [format (SimpleDateFormat. "dd.MM.yyyy")]
+    (.format format (Date.))))
+
+(println (get-current-date)) ; Beispiel Ausgabe: 01.04.2023
 ```
 
-Beispieloutput:
+Oder, für nur das Datum ohne Zeit:
 
 ```clojure
-(get-current-date)
-=> #object[org.joda.time.DateTime 2022-01-20T16:55:36.144Z]
+(import java.time.LocalDate)
+
+(defn get-current-date-only []
+  (.toString (LocalDate/now)))
+
+(println (get-current-date-only)) ; Beispiel Ausgabe: 2023-04-01
 ```
-## Tief tauchen:
 
-### Historischer Kontext
-Die Verwendung des Joda-Time-Pakets für Datums- und Zeitoperationen war eine übliche Praxis in der Java-Welt, bevor Java 8 veröffentlicht wurde. Clojure, eine JVM-Sprache, folgte dem Trend und clj-time wurde erstellt.
+## Tiefergehend:
 
-### Alternativen
-Alternativ könnten Sie auch die eingebaute Java-Funktionalität verwenden:
+Historisch gesehen basiert die Datumsbehandlung in Clojure, wie in vielen anderen JVM-Sprachen, auf den Java-Klassen `java.util.Date` und `java.util.Calendar`. Seit Java 8 gibt es das neue `java.time`-Paket mit `LocalDate`, `LocalTime` und `LocalDateTime` für eine verbesserte und intuitivere Arbeit mit Daten und Zeiten.
 
-```clojure
-(java.util.Date.)
-```
-Aber die clj-time-Bibliothek bietet mehr Funktionen und bessere Zeitzonentools.
+Alternativen zur Standard-Java-Bibliothek in Clojure umfassen Bibliotheken wie `clj-time`, eine Wrapper-Bibliothek, die jedoch zunehmend obsolet wird, da `java.time` eine verbesserte Funktionalität bietet. Für einfache Anwendungen reicht die Java-Interoperabilität aus, für komplexere Datumsmanipulationen kann `java.time` direkt oder über eine Clojure-Bibliothek genutzt werden, die diese Funktionalitäten einbindet.
 
-### Implementierungsdetails
-Im Hintergrund ruft `t/now` die Joda-Time-Methode `DateTime.now` auf, um den aktuellen Zeitstempel zu erzeugen.
+Beim Implementieren sollte man Zeitzonen bedenken. Während `Date` und `LocalDate.now` das System-Standarddatum und -zeit zurückgeben, kann man mit `ZonedDateTime` oder `OffsetDateTime` explizite Zeitangaben machen.
 
 ## Siehe auch:
-- Offizielle Dokumentation von Clojure: https://clojure.org/
-- clj-time GitHub: https://github.com/clj-time/clj-time
-- Joda-Time in Java: https://www.joda.org/joda-time/
+
+- Die `java.time`-Dokumentation für tiefergehende Informationen: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Die Clojure-Dokumentation zur Java-Interoperabilität: https://clojure.org/reference/java_interop
+- Einblick in die Clojure-Bibliothek `clj-time`: https://github.com/clj-time/clj-time

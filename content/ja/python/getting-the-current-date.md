@@ -1,7 +1,8 @@
 ---
-title:                "現在の日付の取得"
-html_title:           "Bash: 現在の日付の取得"
-simple_title:         "現在の日付の取得"
+title:                "現在の日付を取得する"
+date:                  2024-01-20T15:16:05.369845-07:00
+html_title:           "Bash: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,30 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-現在の日付を取得するとは、コンピュータシステムが現在の日時を特定するプロセスです。これは日々のロギング、時刻依存の機能、または日付を使ったソフトウェア更新などを行うためにプログラマーによって行われます。
+## What & Why? (何となぜ？)
+コードで現在の日付を取るってことは、単に今日の日付を指すんだ。プログラマはログ, 日付依存の機能, ユーザーのタイムゾーン表示などで使う。
 
-## 実行方法：
-Pythonで現在の日付を取得するのは非常に直感的で、以下の`datetime`モジュールを使います：
+## How to: (やり方)
+Pythonでは、`datetime`モジュールで今の日付をサクッと取れる。こんな感じだ:
 
 ```Python
 from datetime import date
+
+# 現在の日付を取得する
 today = date.today()
-print("Today's date:", today)
+
+# 日付を文字列で表示する
+print("今日の日付:", today)
 ```
 
-これを実行すると、出力は以下のようになります：
-
-```Python
-Today's date: 2022-01-22
+実行結果:
+```
+今日の日付: 2023-04-12
 ```
 
-## 深堀り：
-`datetime`モジュールはPythonの標準ライブラリの一部で、日付と時間を操作するためのクラスを提供しています。将来的には、`datetime`モジュールに代わる方法が存在するかもしれません。例えば、`time`モジュールはより低レベルの時間関連の操作に使用されますが、日付を直接取得するには`datetime`モジュールが最も適しています。
+タイムゾーンを考慮したいなら、`pytz`ライブラリも使える。
 
-取得された日付の具体的な形式はシステムのロケール設定とPythonのバージョンに依存します。デフォルトでは、日付は「YYYY-MM-DD」形式の文字列として返されます。
+## Deep Dive (詳細情報)
+`datetime`はPythonにおける日付と時刻を扱うための標準ライブラリだ。Python初期からあって、バージョンアップが続いている。`datetime.today()`などのメソッドでシステムのローカル日付と時刻を取得できるが、`datetime.now()`を使って`pytz`ライブラリでタイムゾーンを指定することもできる。
 
-## 参照：
-- Python公式ドキュメンテーションの [datetimeモジュール](https://docs.python.org/ja/3/library/datetime.html)
-- Python公式ドキュメンテーションの [timeモジュール](https://docs.python.org/ja/3/library/time.html)
-- Python日付と時刻の取扱の詳細についての [参考記事](https://realpython.com/python-datetime/)
+他の方法には、`time`モジュールや外部ライブラリの`arrow`や`delorean`などがある。これらは機能や使い心地に差があるから、プロジェクトの必要に応じて選ぶといい。
+
+実装の詳細だが、`date.today()`は内部でコンピュータのシステムクロックを参照してる。だから、システムの日付と時刻設定が間違ってると、おかしい値が出るかもしれない。注意が必要だ。
+
+## See Also (関連情報)
+- Pythonの`datetime`モジュールのドキュメント: https://docs.python.org/3/library/datetime.html
+- `pytz`ライブラリに関する情報: http://pytz.sourceforge.net/
+- `time`モジュールについて: https://docs.python.org/3/library/time.html
+- `arrow`ライブラリ: https://arrow.readthedocs.io/en/latest/
+- `delorean`ライブラリ: https://delorean.readthedocs.io/en/latest/

@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:13:28.429755-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "C#"
 category:             "C#"
@@ -10,48 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Päivämäärän hankkiminen C#-ohjelmointikielessä
+## What & Why?
+"Nykyisen päivämäärän haku C#:lla"
+Ohjelmointimaailmassa ajantasaisen päivämäärän hankkiminen on perustoiminto, jota käytetään aikaleimojen luomiseen, päivittäisiin tehtäviin ja tapahtumien seurantaan.
 
-## Mikä ja miksi?
-Päivämäärän hankkiminen tarkoittaa järjestelmän hetkellisen päivämäärän ja kellonajan noutamista. Ohjelmoijat tekevät tämän lukuisista syistä, kuten tiedostojen ajastamiseen, tapahtumien ajoittamiseen tai aikaleimojen luomiseen.
-
-## Näin se tehdään:
-Päivämäärän hankkimiseksi C#-kielessä voimme hyödyntää DateTime-oliota.
-
-```C#
-using System;
-
-public class Program
-{
-    public static void Main()
-    {
-        DateTime currentDate = DateTime.Now;
-        Console.WriteLine("Current date: " + currentDate);
-    }
-}
-```
-Tämän koodin suorittaminen tulostaa hetkellisen päivämäärän ja kellonajan, esimerkiksi `Current date: 4.5.2022 16:30:55`
-
-## Syvä sukellus
-Historiallisesti päivämäärän ja ajan hankkiminen ei ole aina ollut yhtä helppoa kuin tänä päivänä. Vanhemmissa kielissä, kuten C:ssä, tämä vaati usein monimutkaisempia menetelmiä.
-
-Vaihtoehtoisesti C#-kielessä on myös mahdollista käyttää DateTime.UtcNow –metodia, jolla saadaan UTC-muotoinen hetkellinen päivämäärä ja aika. Tämä on hyödyllistä, kun halutaan välttää aikavyöhykkeistä johtuvat erot.
+## How to:
+Helppo tapa hakea nykyinen päivämäärä C#-kielellä on käyttää `DateTime`-luokkaa. Tässä on pari riviä koodia ja esimerkkituloste:
 
 ```C#
-using System;
+// Tämänhetkisen päivämäärän ja kellonajan saaminen
+DateTime now = DateTime.Now;
+// Tulosta nykyinen päivämäärä ja aika
+Console.WriteLine(now.ToString());
 
-public class Program
-{
-    public static void Main()
-    {
-        DateTime currentDate = DateTime.UtcNow;
-        Console.WriteLine("Current UTC date: " + currentDate);
-    }
-}
+// Tulostaa vain nykyisen päivämäärän
+Console.WriteLine(now.ToShortDateString());
 ```
 
-C# implementoi päivämäärän ja ajan hankinnan DateTime-olion avulla, joka on osa System-nimiavaruutta. DateTime sisältää monia metodeja, joilla voimme manipuloida ja kysellä päivämäärää ja aikaa.
+Odotettavissa oleva tuloste:
+```
+// Esimerkki tuloksesta (riippuu järjestelmän paikallisesta ajasta)
+2.4.2023 14:56:01
+2.4.2023
+```
 
-## Katso myös
-- Microsoftin ohjeet DateTime-olion käyttämiseen: [Tutustu DateTime-dokumentaatioon](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime)
-- Stack Overflow -keskustelu eri tavasta hankkia aikaa: [Tutustu keskusteluun](https://stackoverflow.com/questions/215497/in-c-how-do-i-get-the-current-date)
+## Deep Dive
+C# kehittyi Microsoftin toimesta 2000-luvun alussa, ja `DateTime` on aina ollut sen vakiokirjastoissa. Mitä vaihtoehtoja sitten on? Voisit harkita `DateTimeOffset`-luokkaa, jos tarvitset aikavyöhyketietoja tai `TimeSpan`-luokkaa, jolla mitataan ajan kulu.
+
+Implementaation kannalta `DateTime.Now` hakee laitteen paikallisen ajan, kun taas `DateTime.UtcNow` hakee koordinoidun yleisajan (UTC). Järjestelmän kello ja aikavyöhyke määrittävät `DateTime`-arvot, joten ne eivät ole aikavyöhykeitsenäisiä. Tämä tarkoittaa, että kun työskentelet kansainvälisten projektien parissa, ajanhallinnan tulisi olla UTC-muodossa.
+
+## See Also
+- Microsoftin ohjeet `DateTime`-luokasta: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- Aikavyöhykkeet ja `DateTimeOffset`: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime)
+- Ajanhallinta .NET:ssä: [Microsoft DevBlogs](https://devblogs.microsoft.com/dotnet/date-time-and-time-zone-enhancements-in-net-6/)

@@ -1,6 +1,7 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "C: 현재 날짜 가져오기"
+date:                  2024-01-20T15:13:39.773282-07:00
+html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "C++"
 category:             "C++"
@@ -10,54 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇, 왜요?
+## What & Why? (무엇과 왜?)
+현재 날짜 가져오기는 컴퓨터의 시스템 시간을 사용하여 현재 날짜를 확인하는 과정입니다. 이 기능은 기록, 이벤트 로깅, 유저 트래킹과 같이 타임스탬프가 필요한 상황에서 중요합니다.
 
-현재 날짜를 가져오기란, 컴퓨터의 시스템 클럭에서 현재 날짜를 읽는 것입니다. 프로그래머들은 파일들의 타임스탬프를 생성하거나, 시간의 흐름을 표현하기 위해 이를 많이 활용합니다.
-
-## 어떻게?
-
-다음은 C++에서 현재 날짜를 얻는 방법입니다.
+## How to: (실행 방법)
+C++20 라이브러리는 `<chrono>`를 사용하여 날짜와 시간을 쉽게 다룰 수 있습니다. 아래 예시 코드를 보고 따라 해 보세요.
 
 ```C++
 #include <iostream>
-#include <ctime>
- 
-int main()
-{
-    time_t now = time(0);
-  
-    tm *ltm = localtime(&now);
-  
-    std::cout << "Year: "<< 1900 + ltm->tm_year << std::endl;
-    std::cout << "Month: "<< 1 + ltm->tm_mon << std::endl;
-    std::cout << "Day: "<< ltm->tm_mday << std::endl;
+#include <chrono>
+#include <format>
+
+int main() {
+    using namespace std::chrono;
+    auto current_time = system_clock::now(); // 현재 시간 가져오기
+    time_t time = system_clock::to_time_t(current_time);
+    auto local_time = *std::localtime(&time);
+
+    std::cout << "Current Date (YYYY-MM-DD): ";
+    std::cout << std::format("{:0>4}-{:0>2}-{:0>2}\n", local_time.tm_year + 1900, local_time.tm_mon + 1, local_time.tm_mday);
 
     return 0;
 }
 ```
-
-이 프로그램을 실행하면 현재 날짜가 출력됩니다. 예를 들어,
-
-```C++
-Year: 2022
-Month: 10
-Day: 16
+Sample Output:
 ```
+Current Date (YYYY-MM-DD): 2023-04-15
+```
+이 코드는 현재 시스템 시간을 년-월-일 형식으로 표시합니다.
 
-## 깊게 알아보기
+## Deep Dive (심층 분석)
+C++에서 현재 날짜를 얻는 여러 방법 중 `<chrono>` 라이브러리가 가장 최신이며 다루기 쉽습니다. C++11 버전 이후로 많은 개선이 이루어져서, 복잡한 날짜 계산에서 사용할 수 있는 풍부한 기능을 제공합니다. 과거에는 `<ctime>`이 주로 사용되었지만, `<chrono>`가 표준으로 자리잡음에 따라 더 안전하고 직관적인 API를 사용할 수 있게 되었습니다. 대안으로는 각 운영 체제마다 제공하는 네이티브 API를 직접 호출하는 방법이 있지만, 이 방법은 이식성이 떨어질 수 있습니다. `<chrono>`는 타입 안전성과 함께 시간 존(zone)을 고려한 처리도 가능하게 합니다, 무엇보다도 표준 라이브러리의 일부이기 때문에 확장성과 호환성 면에서 추천합니다.
 
-현재 날짜 가져오기는 매우 오래전부터 있었으며, 오늘날 많은 프로그래밍 언어들이 이를 기본 라이브러리로 제공합니다.
+## See Also (참고 자료)
+- [cppreference.com's chrono library page](https://en.cppreference.com/w/cpp/chrono)
+- [cppreference.com's ctime library page](https://en.cppreference.com/w/cpp/header/ctime)
+- [The ISO C++ site for learning about the latest features](https://isocpp.org/)
 
-여러 방법이 있습니다만, 가장 간단하고 흔하게 사용하는 방법이 `ctime` 라이브러리를 이용하는 것입니다. 이 라이브러리는 C 언어에서 물려받은 것이기 때문에 기본적으로 사용되기도 합니다.
-
-하지만, 만약 더 높은 정확도가 필요하거나, 시간대를 다루고 싶다면, C++20의 `chrono` 라이브러리를 확인해보세요. 이 라이브러리는 복잡하지만, 매우 강력하고 세밀하게 시간을 다룰 수 있습니다.
-
-## 참고하기
-
-더 많은 정보를 얻기 위해선 다음 링크들을 참조하세요:
-
-[chrono library](https://en.cppreference.com/w/cpp/chrono)
-
-[how to get current time and date in C++](https://www.geeksforgeeks.org/how-to-get-current-time-and-date-in-c/)
-
-[Time, Date and Time zones in Modern C++](https://akrzemi1.wordpress.com/2011/05/13/dates-and-times-in-c/)
+기본적인 내용을 다뤘지만, 날짜와 시간을 다루는 것에는 더 많은 면이 있습니다. 위 링크에서 좀 더 깊이 있는 정보를 찾을 수 있습니다.

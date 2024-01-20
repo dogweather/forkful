@@ -1,6 +1,7 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "C: 현재 날짜 가져오기"
+date:                  2024-01-20T15:16:09.895215-07:00
+html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,45 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-# PowerShell로 현재 날짜 얻기
----
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
+날짜를 확인하는 것은 단순히 현재 날짜와 시간을 얻는 과정입니다. 프로그래머들은 로깅, 타임스탬프, 기간 측정 등을 위해 이를 사용합니다.
 
-현재 날짜를 얻는 것이란, 우리가 사용중인 컴퓨터의 시간에 따라 현재의 결정적인 날짜가 무엇인지 계산하는 것입니다. 이를 통해 우리는 로그를 구분하거나, 시간 간격을 계산하거나, 특정 일에 자동화 작업을 실행할 수 있습니다.
-
-## 어떻게:
-
-이런 식으로 명령어를 배치해 보세요.
+## How to: (어떻게 하나요?)
+실제 코드를 통해 현재 날짜를 얻는 법을 배워봅시다.
 
 ```PowerShell
-# 현재 날짜 및 시간을 얻습니다.
-$현재일시 = Get-Date
-echo $현재일시
+# 현재 날짜와 시간을 얻습니다
+Get-Date
+
+# 현재 날짜를 'yyyy-MM-dd' 형식으로 출력합니다
+Get-Date -Format "yyyy-MM-dd"
+
+# 현재 시간을 'HH:mm:ss' 형식으로 출력합니다
+Get-Date -Format "HH:mm:ss"
 ```
 
-샘플 출력은 다음과 같습니다:
+실행 결과는 이렇게 나옵니다:
 
 ```PowerShell
-2021-09-15T14:32:00.3647008+09:00
+Sunday, April 2, 2023 12:05:28 PM
+2023-04-02
+12:05:28
 ```
 
-## 깊게 들어가보기
+## Deep Dive (심층 분석)
+`Get-Date` 명령은 PowerShell에서 처음 시작할 때부터 있었습니다. `.NET` 기반으로, 정확하고 다양한 날짜 형식을 지원합니다. 
 
-PowerShell에서 현재 날짜를 얻는 방법은 오래 전부터 표준화되어 왔습니다. 이렇게 간단한 작업을 수행하기 때문에, 이제는 거의 모든 프로그래밍 언어에서 이와 유사한 함수나 메서드를 제공하고 있습니다. 
-
-PowerShell은 다른 방식으로도 날짜를 얻을 수 있습니다. 예를 들어, .NET Framework의 DateTime 클래스를 직접 사용할 수도 있습니다:
+이 외에도, `[System.DateTime]` 타입을 직접 사용하여 날짜와 시간 정보를 얻을 수 있습니다.
 
 ```PowerShell
-$현재일시 = [DateTime]::Now
-echo $현재일시
+[System.DateTime]::Now
 ```
 
-또한 "Get-Date" cmdlet는 현재 시스템의 지역 설정에 따라 날짜 및 시간을 반환합니다. 
+다른 언어나 쉘에 비해 PowerShell은 날짜 조작이 간편합니다. 예를 들어, 하루 전의 날짜를 구하고 싶을 때:
 
-## 참고 자료
+```PowerShell
+(Get-Date).AddDays(-1)
+```
 
-1. [PowerShell 공식 문서](https://docs.microsoft.com/en-us/powershell/)
-2. [Get-Date 공식 문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7)
+이 기능은 스크립트 내에서 일정 관리, 경과 시간 계산 등에 유용하게 쓰입니다.
 
-이런 간략하고 핵심적인 스타일을 선호하는 여러분에게 유용한 정보가 되었기를 바랍니다.
+## See Also (관련 자료)
+- [Get-Date (Microsoft Docs)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date)
+- [DateTime Struct (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)

@@ -1,6 +1,7 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elm recipe: Getting the current date"
+date:                  2024-01-20T15:14:18.448352-07:00
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,46 +13,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Grabbing the current date is a way programmers capture the system's current day, month, and year. This is handy for logging, generating reports, timestamps, and many other time-based functionalities.
+Getting the current date means grabbing the present calendar date from your system. Programmers do this to timestamp events, schedule tasks, or just display the date for users.
 
 ## How to:
 
-To get the current date in Fish Shell (the currents version), use the `date` command. 
+In Fish Shell, snagging the current date is a breeze. Use the `date` command:
 
 ```fish
-set current_date (date)
+# Get the current date in the default format
+date
+
+# Sample output
+Wed Apr  5 15:26:42 PDT 2023
+
+# Get the current date in a custom format, e.g., YYYY-MM-DD
+date "+%Y-%m-%d"
+
+# Sample output
+2023-04-05
+```
+
+If you want to assign it to a variable, just do:
+
+```fish
+# Store the current date in a variable
+set current_date (date "+%Y-%m-%d")
+
+# Echo the variable
 echo $current_date
-```
 
-This will print the current date, something like:
-
-```fish
-Thu Sep 30 21:31:01 UTC 2021
-```
-
-For more granularity and formatting options, pass arguments to the `date` command. For instance, to get just the day:
-
-```fish
-set day (date +%A)
-echo $day
-```
-
-That typically generates:
-
-```fish
-Thursday
+# Sample output
+2023-04-05
 ```
 
 ## Deep Dive
 
-Fish (Friendly interactive shell) is a Unix shell that focuses on user-friendliness and interactivity. The ability to fetch the current date isn't new or unique to Fish, similar functionality can be seen in older shells like Bash or Zsh.
+Historically, the `date` command comes from UNIX, and it has been around for decades. In Fish Shell, you're using a friendlier version of this ancient tool. The `%Y-%m-%d` format for the `date` command gives you the year, month, and day, but you've got a ton of other options like `%H` for hours or `%M` for minutes.
 
-There are a few alternatives to the `date` command approach depending on your needs. For instance, the `strftime` function in a language like C, which gives more control over the output format. Alternatively, higher-level languages such as Python, Java, and JavaScript provide their own methods to fetch the current date.
+Why use Fish instead of Bash or Zsh for this? Well, Fish is known for its more straightforward, more readable syntax. For example, setting variables is a lot clearer (`set varname value` vs. `varname=value`), and you don't need to prefix with `$` when using them.
 
-Under the hood, when you run the `date` command, Fish is calling a system function that interfaces with the operating system to pull the current date and time. It then formats this information based on the provided format strings, like `%A` for the day of the week.
+Alternatives to Fish's built-in `date` could involve installing more hefty tools like `GNU date` for more features or harnessing other Fish functions or even external programs if you need more custom behavior.
+
+Implementation-wise, when you run `date` in Fish, you're using Fish's wrapper around the system's date command. That means on Linux, you're probably using `GNU date`, while on macOS, you're using the BSD version. They're pretty similar, but there are some subtle differences in the options they support.
 
 ## See Also
 
-To dive deeper into the date command and the Fish shell coding, check out these resources:
-
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [GNU Coreutils `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

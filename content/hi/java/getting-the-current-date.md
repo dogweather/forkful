@@ -1,6 +1,7 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "C#: वर्तमान तारीख प्राप्त करना"
+date:                  2024-01-20T15:15:25.450640-07:00
+html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Java"
 category:             "Java"
@@ -10,59 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**शीर्षक**: जावा में वर्तमान तारीख प्राप्त करना
+## What & Why? (क्या और क्यों?)
+जावा में मौजूदा तारीख पाना यानी सिस्टम की तारीख को प्राप्त करना होता है। प्रोग्रामर्स यह इसलिए करते हैं ताकि वे टाइमस्टैम्प बना सकें, यूजर्स को ग्रीटिंग्स दिखा सकें या रिपोर्ट्स में डेट डाल सकें।
 
-## क्या और क्यों?
-
-वर्तमान तारीख प्राप्त करना का अर्थ है सिस्टम के अनुसार वर्तमान तारीख और समय को प्राप्त करना। प्रोग्रामर्स के लिए यह महत्वपूर्ण हो सकता है ताकि वे कोई रिपोर्ट या लॉग फ़ाइल तैयार कर सकें।
-
-## कैसे करें:
-
-आइए देखते हैं कि कोड कैसे लिखा जाए।
-
-```Java
-import java.time.LocalDateTime;
+## How to: (कैसे करें:)
+```java
+import java.time.LocalDate;
 
 public class CurrentDateExample {
-   public static void main(String args[]) {
-       LocalDateTime current = LocalDateTime.now();
-       System.out.println("वर्तमान तारीख और समय: "+ current);
-   }
+    public static void main(String[] args) {
+        LocalDate today = LocalDate.now();
+        System.out.println("आज की तारीख: " + today);
+    }
 }
 ```
-
-उपरोक्त कोड का आउटपुट कुछ इस तरह होगा:
-
+उदाहरण आउटपुट:
 ```
-वर्तमान तारीख और समय: 2021-10-28T14:57:52.212
+आज की तारीख: 2023-03-31
 ```
 
-## गहरे प्रवेश:
+## Deep Dive (गहन जानकारी)
+जावा में तारीख को प्राप्त करने के लिए `java.util.Date`, `java.util.Calendar` और `java.time.LocalDate` जैसी कई क्लासेस हैं। पहले `Date` और `Calendar` का इस्तेमाल ज्यादा था, पर Java 8 के बाद से `java.time` पैकेज पसंदीदा हो गया, क्योंकि इसमें immutable classes और बेहतर API design हैं। `LocalDate.now()` का इस्तेमाल करना सबसे आसान और सीधा है। `java.time.ZonedDateTime` या `java.time.LocalDateTime` का उपयोग टाइमज़ोन के साथ तारीख और समय पाने के लिए किया जा सकता है।
 
-### ऐतिहासिक प्रसंग:
-
-Java 8 में java.time package को जोड़ा गया था। पहले डेवलपर्स java.util.Date और java.util.Calendar का उपयोग करते थे, जिनमें काफी अभियोजन थीं।
-
-### वैकल्पिक तरीके:
-
-इन पुराने क्लासेज का अब भी इस्तेमाल किया जा सकता है:
-
-```Java
-import java.util.Date;
-
-public class AlternateCurrentDateExample {
-   public static void main(String args[]) {
-       Date current = new Date();
-       System.out.println("वर्तमान तारीख और समय: "+ current);
-   }
-}
-```
-
-### क्रियान्वयन विवरण:
-
-`LocalDateTime.now()` एक मशीन का वर्तमान टाइमज़ोन के अनुसार तारीख और समय वापस करता है। 
-
-## और भी देखें:
-
-- Oracle की Java Docs: [www.oracle.com/technetwork/java/javase/documentation/index.html](http://www.oracle.com/technetwork/java/javase/documentation/index.html)
-- Java Date & Time ट्यूटोरियल्स: [www.baeldung.com/java-8-date-time-intro](http://www.baeldung.com/java-8-date-time-intro)
+## See Also (अन्य सूत्र)
+- [Java API Documentation for LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java Date and Time - Baeldung](https://www.baeldung.com/java-8-date-time-intro)
+- [Java 8 Date Time API - JournalDev](https://www.journaldev.com/2800/java-8-date-localdate-localdatetime-instant)

@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:13:36.836303-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "C#"
 category:             "C#"
@@ -11,38 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בתיכנות, קבלת התאריך הנוכחי היא פעולה שמאפשרת לנו לקבל את התאריך והשעה בימים, שעות, דקות, ושניות של המערכת. תכנתים משתמשים בפונקציונאליות הזו כדי לאכוף תוקף לנתונים, לארגן איבנטים בהתאם לזמן, ועוד.
+קודים במחשב רבים מצריכים את התאריך הנוכחי כדי לתעד אירועים, לעבד נתונים ולהציג אינפורמציה שוטפת למשתמשים. לכן, לדעת להשיג את התאריך והשעה הנוכחיים הוא כלי מרכזי בארסנל של כל מתכנת.
 
 ## איך לעשות:
-הי מתכנתים, בואו ניכנס לעניין. לקבלת התאריך הנוכחי ב-C#, משתמשים בפונקציה `DateTime.Now`. קוד פשוט שמדגים את השימוש בפונקציה הזו:
+בשפת C#, מחלקת `DateTime` בחבילת `System` היא זו שתשמש אותנו לצורך זה. כך אפשר להשיג את התאריך והשעה הנוכחיים:
 
-```C#
+```c#
 using System;
 
-public class Program
+class Program
 {
-    public static void Main()
+    static void Main()
     {
-        DateTime currentDateTime = DateTime.Now;
-        Console.WriteLine("התאריך והשעה הנוכחיים הם: " + currentDateTime);
+        DateTime currentDate = DateTime.Now;
+        Console.WriteLine(currentDate);
     }
 }
 ```
 
-הפלט מעל יהיה:
-```C#
-התאריך והשעה הנוכחיים הם: 2022-07-08 13:40:00
+פלט דוגמה:
+
+```
+2/28/2023 9:30:41 PM
+```
+לקבלת התאריך בלבד, השתמשו ב`DateTime.Today`.
+
+```c#
+Console.WriteLine(DateTime.Today);
+```
+פלט דוגמה:
+
+```
+2/28/2023
 ```
 
-לפלט הזה יהיו תאריך ושעה שונים, בהתאמה לזמן ברגע ההרצה.
+## סוגייה לעומק:
+`DateTime` הוצגה ב-C# מגרסת 1.0. היא מתמקדת בתאריכים וזמנים בלוח הגרגוריאני. תאריכים בלוחות אחרים דורשים רכיבים נוספים.
 
-## מבט עמוק
-המחלקה `DateTime` אכן מועילה מאוד, אך היא לא הייתה חלק מהשפה מההתחלה. שיפורים בשפה וב.Net Framework עזרו לפתח את היכולות הזו.
+ישנן אלטרנטיבות כמו `Stopwatch` למדידת פערי זמן ו`TimeZoneInfo` לעבודה עם אזורי זמן. גרסאות חדשות של C# מציעות את מחלקת `System.DateTimeOffset` שכוללת מידע על ההפרש מ-UTC, נתון שמועיל ביישומים מבוזרים וגלובליים.
 
-ישנן חלופות לפונקציה `DateTime.Now`. למשל, `DateTime.UtcNow` נותן לך את התאריך והשעה הנוכחיים לפי הזמן הים-תיכוני המתואם (UTC).
+בעבודה עם תאריכים, חשוב לדעת שמחלקת `DateTime` לא כוללת נתוני אזור זמן. זה יכול לגרום לבעיות אם לא מתייחסים לזה בישומים שמנהלים נתונים במסדר גודל גלובלי.
 
-אגב, הפונקציה `DateTime.Now` מחזירה את התאריך והשעה לפי הזמן המקומי של המערכת, כך שאם שניות הקפיצה ושניות השחזור הן בעייתיות או אם התאריך והשעה שונים באופן עצמאי, זמן UTC יעשה את העבודה.
-
-## ראו גם
-ביקור בקישורים הבאים יספק לך מידע נרחב יותר:
-2. [ראיון עם מפתחים של C# על DateTime](https://youtu.be/N_fb4-BHNWc)
+## לקרוא גם:
+- [Microsoft Docs - DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)
+- [Microsoft Docs - DateTimeOffset](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netcore-3.1)
+- [Stack Overflow - When to use DateTime vs DateTimeOffset](https://stackoverflow.com/questions/4331189/when-to-use-datetime-vs-datetimeoffset)

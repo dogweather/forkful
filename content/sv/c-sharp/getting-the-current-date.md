@@ -1,7 +1,8 @@
 ---
-title:                "Hämta aktuellt datum"
-html_title:           "Arduino: Hämta aktuellt datum"
-simple_title:         "Hämta aktuellt datum"
+title:                "Att hämta aktuellt datum"
+date:                  2024-01-20T15:13:29.290723-07:00
+html_title:           "Bash: Att hämta aktuellt datum"
+simple_title:         "Att hämta aktuellt datum"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,36 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why?
+Att hämta det aktuella datumet i C# är grundläggande. Det låter oss spåra händelser, tidstämpla data och hantera schemalagda uppgifter. Man använder det för allt från loggfilers tidstämplar till att utlösa dagliga jobb.
 
-## Vad & Varför?
-Att hämta aktuellt datum innebär att erhålla datumet för nuvarande dag direkt från systemklockan. Det är användbart för programmerare att ha denna funktion för att kunna spåra händelser, generera tidsstämpel, schemalägga uppgifter och mycket mer.
-
-## Hur gör man:
-Att få tag på dagens datum i C# är en ganska enkel process. Nedan är en kodsnutt som visar hur man gör detta:
+## How to:
+För att få tag på dagens datum använder vi `DateTime`. Här är hur det ser ut:
 
 ```C#
-DateTime nu = DateTime.Now;
-Console.WriteLine($"Dagens datum är: {nu.ToShortDateString()}");
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        DateTime currentDate = DateTime.Now;
+        Console.WriteLine(currentDate.ToString("yyyy-MM-dd"));
+    }
+}
 ```
 
-När du kör den här koden skulle den se ut så här:
-
+Och så här ser resultatet ut:
 ```
-Dagens datum är: 28/12/2021
+2023-03-15
 ```
-Notera att datumet kommer att variera beroende på den nuvarande datumet.
 
-## Djupdykning
-Historiskt sätt, C# har alltid tillhandahållit inbyggda metoder för tid och datum i `DateTime` klassen. För att få aktuellt datum använder vi `DateTime.Now` vilket ger oss en `DateTime`-instans, vilket innebär att vi kan komma åt dag, månad, år, timme, minut och sekund för det nuvarande datumet och tiden.
+Men om du bara vill ha datumet utan tid, använd `DateTime.Today` så här:
 
-Även om `DateTime.Now` är det mest använda alternativet för att få nuvarande datum och tid, erbjuder C# även `DateTime.UtcNow` och `DateTime.Today`. `DateTime.UtcNow` ger den aktuella datumen och tiden i UTC-format medan `DateTime.Today` ger dagens datum vid midnatt (00:00:00).
+```C#
+using System;
 
-Vad gäller internt implementation, när `DateTime.Now` anropas, hämtas systemklockan för datorn och konverteras till en läsbar form som programmerare kan använda och manipulera i deras kod.
+class Program
+{
+    static void Main()
+    {
+        DateTime currentDate = DateTime.Today;
+        Console.WriteLine(currentDate.ToString("yyyy-MM-dd"));
+    }
+}
+```
 
-## Se Även
-Här är några usefulla länkar relaterade till att arbeta med datum och tider i C#:
+Resultat:
+```
+2023-03-15
+```
 
-- Microsoft dokumentation om DateTime: https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0
-- Tutorial på arbeta med datum och tider i C#: https://www.c-sharpcorner.com/article/date-and-time-data-types-in-c-sharp/
-- C# Date and time formatter: https://www.csharp-examples.net/string-format-datetime/
+## Deep Dive
+`DateTime.Now` och `DateTime.Today` är byggstenar i .NET. `DateTime.Now` ger oss nuvarande datum och tid, medan `DateTime.Today` ger oss datumet med tiden satt till midnatt.
+
+Före .NET fanns det systemanrop på varje operativsystem för att hämta datum och tid. Nu ger .NET oss en enhetlig gränssnitt över plattformar.
+
+Om du behöver hantera tidszoner, då finns `DateTimeOffset`. För prestandakritiska behov, titta på `Stopwatch`.
+
+## See Also
+- Microsofts datum och tid guide: [DateTime Struktur](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8)
+- För djupare förståelse kring tidzoner: [DateTimeOffset Struktur](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=net-6.0)
+- `DateTime` vs `DateTimeOffset` jämförelse: [Välja mellan DateTime, DateTimeOffset, TimeSpan, and TimeZoneInfo](https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime)
+- För precision med tid: [Stopwatch Klass](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.stopwatch?view=net-6.0)

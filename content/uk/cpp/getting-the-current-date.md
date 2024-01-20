@@ -1,5 +1,6 @@
 ---
 title:                "Отримання поточної дати"
+date:                  2024-01-20T15:13:21.390421-07:00
 html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "C++"
@@ -10,50 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
+## What & Why? / Що і Чому?
+Getting the current date in C++ means grabbing the date from your system's clock. Programmers do this to timestamp events, measure performance, and for features like daily tasks or reminders.
 
-Отримання поточної дати в C++ - це процес виведення часу, що ідеться просто зараз. Програмісти роблять це для відстеження часу виконання, журналів, таймстампів та інших задач.
-
-## Як здійснити:
-
-Це приклад коду для отримання поточної дати в C++.
-
+## How to: / Як це зробити:
 ```C++
-#include<iostream>
-#include<ctime>
+#include <iostream>
+#include <chrono>
+#include <ctime>
 
 int main() {
-    time_t now = time(0);
-    char* theDate = ctime(&now);
-    std::cout << "The current date and time is: " << theDate << std::endl;
-    return 0;
-}
-```
-
-Якщо ви скомпілюєте і виконаєте це, отримаєте вивід, подібний до наведеного нижче:
-
-```C++
-The current date and time is: Wed Apr 7 14:42:10 2021
-```
-
-## Занурення в тему:
-
-Пам'ятайте, що в C++ існує декілька способів отримання поточної дати чи часу. Бібліотека `<ctime>` є вбудованою в C++, але є ще новіту бібліотеку `chrono` в C++11. Семантика останньої важча для розуміння, але вона надає більше можливостей і точність.
-
-```C++
-#include<iostream>
-#include<chrono>
-#include<ctime>
-
-int main() {
+    // Get system's current time
     auto now = std::chrono::system_clock::now();
-    std::time_t theDate = std::chrono::system_clock::to_time_t(now);
-    std::cout << "The current date and time is: " << std::ctime(&theDate) << std::endl;
+    // Convert to time_t for easy manipulation
+    std::time_t time_now = std::chrono::system_clock::to_time_t(now);
+    // Convert to human-readable form
+    std::cout << std::ctime(&time_now);
+    
     return 0;
 }
 ```
+Sample Output:
+```
+Mon Mar 27 22:31:57 2023
+```
 
-## Див. також:
+## Deep Dive / Поглиблений Аналіз:
+- *Historical context*: Before C++11, programmers typically used `std::time()` and other C-style date and time functions. C++11 introduced `<chrono>` to handle time in a more type-safe and flexible way.
+- *Alternatives*: Third-party libraries like Boost.Date_Time can also get the current date. Before `<chrono>`, this was a go-to solution for complex time operations.
+- *Implementation details*: `<chrono>` abstracts time into durations and time points. Get the current time point using `system_clock`, and manipulate it with the time utilities in C++ Standard Library.
 
-1. Туторіал Cplusplus по роботі з часом: http://www.cplusplus.com/reference/ctime/
-2. Офіційна документація C++11 chrono: http://www.cplusplus.com/reference/chrono/
+## See Also / Дивіться Також:
+- [cppreference.com - <chrono>](https://en.cppreference.com/w/cpp/header/chrono)
+- [cplusplus.com - Time tutorial](http://www.cplusplus.com/reference/ctime/)
+- [ISO C++ Working Group - Date & Time proposal](https://cplusplus.github.io/LWG/lwg-active.html#998)
+- [Boost.Date_Time documentation](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)

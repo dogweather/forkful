@@ -1,6 +1,7 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "C: Obtendo a data atual"
+date:                  2024-01-20T15:16:55.558140-07:00
+html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,25 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Obter a data atual significa acessar a data e hora atuais conforme informado pelo sistema. É útil quando um programador precisa registrar quando um evento ocorreu ou usar a data e hora em cálculos ou condicionais.
+## O Que & Porquê?
+Pegar a data atual é capturar o momento exato em que algo acontece no seu código. Programadores fazem isso para registrar eventos, comparar datas ou controlar prazos.
 
 ## Como fazer:
-No TypeScript, você pode obter a data e hora atuais usando o objeto Date. Veja um exemplo simples:
-
 ```TypeScript
-let agora = new Date();
-console.log(agora);
+const agora = new Date();
+console.log(agora); // Exemplo de saída: 2023-04-02T15:47:11.446Z
 ```
 
-Este exemplo irá imprimir a data e a hora atuais no console.
+Para formatar a data de maneira legível:
+```TypeScript
+const agora = new Date();
+console.log(agora.toLocaleDateString('pt-BR')); // Exemplo de saída: 02/04/2023
+```
 
-## Aprofundando um pouco
-O objeto Date do JavaScript (e, por extensão, o TypeScript) tem suas raízes nos primórdios do Netscape Navigator. Embora existam algumas bibliotecas alternativas lá fora que oferecem mais funcionalidades (como moment.js ou date-fns), o objeto Date ainda é uma opção sólida para a maioria dos casos de uso.
+Exibindo a hora:
+```TypeScript
+const agora = new Date();
+console.log(agora.toLocaleTimeString('pt-BR')); // Exemplo de saída: 15:47:11
+```
 
-Quando você cria um novo objeto Date sem argumentos, o JavaScript o preenche com a data e hora atuais do sistema. Ele retorna os valores como uma string no horário local. Se quiser trabalhar com fusos horários diferentes, provavelmente precisará de uma biblioteca como o moment.js, que oferece suporte mais sólido para fusos.
+## Mergulho Profundo
+Pegar a data e a hora sempre foi crucial para sistemas de computador. No JavaScript, a raiz do TypeScript, a classe `Date` está disponível desde o início. Alternativas, como as bibliotecas Moment.js ou date-fns, oferecem mais opções e zonas horárias, mas com a evolução do ECMAScript, a API nativa está ficando mais robusta.
 
-## Veja também:
-- [MDN Web Docs: Date](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/)
-- [date-fns.org](https://date-fns.org/)
-- [momentjs.com](https://momentjs.com/)
+Detalhe de implementação: `Date` no JavaScript/TypeScript é baseado na mesma data e hora do sistema, e usa o formato de tempo UTC para representar o momento. Contudo, com `toLocaleDateString` e `toLocaleTimeString`, é possível converter para o fuso horário local facilmente.
+
+## Veja Também
+- [MDN Web Docs: Date](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
+- [date-fns Documentation](https://date-fns.org/v2.28.0/docs/Getting-Started)

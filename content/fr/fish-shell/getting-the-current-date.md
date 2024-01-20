@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:14:06.719855-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,49 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Fish Shell: Récupérer la date actuelle
+## What & Why?
+Obtenir la date actuelle, c'est savoir quel jour on est. Les programmeurs l'utilisent pour des logs, des timestamps, ou pour gérer des événements basés sur la date.
 
-## Pourquoi et Pourquoi faire?
-
-Obtenir la date actuelle signifie récupérer le jour actuel selon le calendrier. Les programmeurs font cela pour enregistrer des informations chronologiques, comme le moment exact où une action se produit.
-
-## Comment Faire:
-
-En Fish Shell, le code suivant renvoie la date et l'heure actuelles:
+## How to:
+Voici comment afficher la date et l'heure actuelles dans Fish :
 
 ```Fish Shell
-date
+set current_date (date)
+echo $current_date
 ```
 
-Cela devrait retourner quelque chose ressemblant à cela:
+Et si on veut juste la date sans l'heure :
 
 ```Fish Shell
-Tue May 28 15:52:02 PDT 2021
+set current_date (date +%Y-%m-%d)
+echo $current_date
 ```
 
-Si vous voulez juste le jour du mois, alors utilisez ce code:
+Résultat pour la deuxième commande, par exemple :
 
-```Fish Shell
-date +%D
+```
+2023-04-01
 ```
 
-Ce qui donne:
+## Deep Dive
+Historiquement, Fish, short pour "friendly interactive shell", s'est distingué par sa simplicité et ses fonctionnalités avancées. En comparant avec d'autres shells, comme Bash, Fish propose un scripting plus clair et des fonctions intégrées qui simplifient de nombreuses tâches. 
 
-```Fish Shell
-05/28/21
-```
+Pour la date, `date` est une commande Unix standard, aussi accessible dans Fish. Les alternatives incluent l'utilisation de commandes intégrées Fish ou de scripts externes, mais `date` reste un choix fiable et universel.
 
-## Plongée Profonde
+Au niveau de l'implémentation, `date` se sert du système d'exploitation pour obtenir les informations temporelles. Avec le paramètre `+%Y-%m-%d`, on formate cette sortie pour obtenir une chaîne de caractères représentant l'année, le mois et le jour.
 
-Historiquement, dans le Unix original (1969), il n'y avait pas réellement de manière standard pour obtenir la date. `date` est venu plus tard (1983) pour standardiser cette fonctionnalité à travers les systèmes Unix.
-
-Il existe diverses alternatives à la fonction `date`. Vous pourriez par exemple, pour certaines tâches spécifiques, utiliser `strftime` ou `clock_gettime`.
-
-Au niveau de l'implémentation, la commande `date` en Fish fait essentiellement un appel système pour récupérer l'horloge du système, qui est maintenue par le système d'exploitation.
-
-## Voir Aussi
-
-Plus d'informations peuvent être trouvées sur la commande `date` en Fish Shell: 
-- La page de manuel de `date`: https://fishshell.com/docs/current/cmds/date.html
-- Un guide sur la programmation en Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Une explication plus détaillée de `strftime`: http://man7.org/linux/man-pages/man3/strftime.3.html
+## See Also
+- Pour savoir plus sur la commande `date` : [man7.org/linux/man-pages/man1/date.1.html](https://man7.org/linux/man-pages/man1/date.1.html)
+- Comparaison entre Fish et autres shells : [github.com/fish-shell/fish-shell/wiki/Design-Philosophy](https://github.com/fish-shell/fish-shell/wiki/Design-Philosophy)

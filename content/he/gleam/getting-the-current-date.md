@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:14:34.589280-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,31 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-הוצאת התאריך הנוכחי בתכנות היא ביצוע של פונקציה שמחזירה את התאריך והשעה הנוכחית. תכניתאים עשויים להשתמש בזה ללוגים, ציוני זמן, ואפשרויות נוספות.
+לקבל את התאריך הנוכחי בקוד זה כמו לשאול את שעון העולם מה שעה - זה פשוט לומר למחשב "תגיד לי איזה יום אנחנו". תכנתים עושים את זה כדי לתעד אירועים, לחשב זמנים, או לתזמן משימות.
 
 ## איך לעשות:
-
-בשפת Gleam, אתמול שהתאריך הנוכחי נגיש אמצעות קוד מסוים:
+בגלים עדכני, לקבל את התאריך והשעה הנוכחיים זה יחסית ישר לעניין. להלן דוגמא:
 
 ```gleam
-import gleam/otp/time.{Now}
-import gleam/int
+import gleam/io
+import gleam/os/time
 
-fn main() {
-  let {year, month, day, hour, _, _} = Now.now()
-  let formatted_date = int.to_string(year) ++ "-" ++ int.to_string(month) ++ "-" ++ int.to_string(day) ++ " " ++ int.to_string(hour)
-  formatted_date
+pub fn main() {
+  case time.now() {
+    Ok(now) -> io.println("The current date and time is: " ++ now.to_string())
+    Error(_) -> io.println("Unable to get the current date and time.")
+  }
 }
 ```
-אם תריצו את הקוד, הפלט יהיה (התאריך ישתנה בהתאם לזמן):
 
-```gleam
-2022-2-24 14
+דוגמה לפלט:
+```
+The current date and time is: 2023-04-14T12:34:56Z
 ```
 
-## מעומק הנושא
+## צלילה לעומק
+ההיסטוריה של קביעת זמן במחשבים היא מורכבת, אבל מה שחשוב לדעת זה שגלים משתמש בפונקציה `time.now()` כדי לקבל את הזמן המוחשי מהמערכת. יש אלטרנטיבות כמו ספריות צד שלישי ואפילו שימוש בפונקציות מערכת הפעלה ישירות, אבל הדרך שניתנה כאן היא הכי נוחה ו"גלימית". לגבי הפרטים הטכניים, `time.now()` מחזירה `Result(DateTime, TimeError)`, כלומר או תאריך ושעה או שגיאה, ומדוע זה חשוב? כי המשימה של להבטיח שתמיד יש לנו תאריך נוכחי לא תמיד פשוטה כמו שנראית.
 
-הגעת לתאריך הנוכחי היה נושא מעניין בעבר. בתי קודמים, קארנילס השתמשו בהתקן ה"תאריך מן האפוכה" כדי לשמור על התאריך הנוכחי. כמובן זה לא רלוונטי יותר, אך מדוע לדעת.
-
-פלטפורמות ושפות תכנות יש שונות במימוש שלהם אך בגלים, אנחנו משתמשים `gleam/otp/time.Now` לקבלת הזמן הנוכחי.
+## ראו גם
+- המדריך הרשמי לשפת גלים: https://gleam.run/book/
+- תיעוד Gleam לספריית הזמן: https://hexdocs.pm/gleam_stdlib/gleam/time/
+- קורס קצר על עיבוד תאריכים וזמנים בפרוגרמינג: https://futurelearn.com/courses/programming-dates-and-times

@@ -1,6 +1,7 @@
 ---
 title:                "Ottenere la data corrente"
-html_title:           "Java: Ottenere la data corrente"
+date:                  2024-01-20T15:15:53.865681-07:00
+html_title:           "Arduino: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,46 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è & Perché?
+## What & Why?
+Ottenere la data corrente in PHP è come dare un'occhiata all'orologio. Si fa perché spesso si vuole registrare un evento, comparare le date, o semplicemente visualizzarla.
 
-Ottenere la data corrente è un compito comune in PHP e si riferisce all'azione di determinare la data e l'orario precisi del momento in cui viene eseguito il codice. Gli sviluppatori lo fanno per tracciare eventi, emettere timestamp e gestire funzionalità di pianificazione.
-
-## Come fare:
-
-In PHP otteniamo la data corrente usando la funzione `date()`. Ecco un esempio:
+## How to:
+Ecco il modo più diretto per ottenere la data corrente:
 
 ```PHP
 <?php
-echo date('d-m-Y');
+echo date('Y-m-d'); // output: YYYY-MM-DD
 ?>
 ```
 
-Questo restituirà la data corrente nel formato 'gg-mm-aaaa'. 
+Vuoi anche l'ora? Nessun problema:
 
-## Approfondimenti:
+```PHP
+<?php
+echo date('Y-m-d H:i:s'); // output: YYYY-MM-DD HH:MM:SS
+?>
+```
 
-Storicamente, PHP ha avuto un supporto limitato per la gestione del tempo e delle date, ma dal PHP 5.2.0 è stato introdotto un approccio molto più robusto grazie alla classe `DateTime`. Questa classe fornisce metodi per manipolare date e tempi in vari formati. Ecco un esempio:
+O magari vuoi l'ora in formato italiano? Facile:
+
+```PHP
+<?php
+setlocale(LC_TIME, 'it_IT');
+echo strftime('%e %B %Y'); // output: 1 gennaio 2023
+?>
+```
+
+## Deep Dive
+L'uso della funzione `date()` è un classico in PHP. Nata insieme al linguaggio negli anni '90, è rimasta il modo più semplice per gestire date e orari. Alternative moderne includono l'oggetto `DateTime`, che offre maggior flessibilità e funzioni aggiuntive:
 
 ```PHP
 <?php
 $oggi = new DateTime();
-echo $oggi->format('d-m-Y');
+echo $oggi->format('Y-m-d H:i:s'); // stessa output di date()
 ?>
 ```
 
-In aggiunta alla funzione `date()`, PHP offre anche la funzione `time()`, che restituisce il timestamp Unix corrente, un grande numero che rappresenta i secondi trascorsi dal 1° gennaio 1970. Questa funzione può essere utile se devi calcolare la differenza tra due date.
+La funzione `strftime()`, invece, è stata deprecata in PHP 8.1. Meglio usare `DateTime` per formati localizzati:
 
 ```PHP
 <?php
-$timestamp = time();
-echo $timestamp;
+$formatter = new IntlDateFormatter('it_IT', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
+echo $formatter->format(new DateTime()); // output simile a strftime()
 ?>
 ```
 
-## Vedi anche:
+La gestione di date e orari si basa sulle impostazioni di configurazione del server PHP (php.ini) e sulla libreria ICU per la localizzazione.
 
-Per una comprensione più profonda delle funzioni di data e ora in PHP, controlla i seguenti link:
-
-1. [PHP: date - Manual](https://www.php.net/manual/en/function.date.php)
-2. [PHP: DateTime - Manual](https://www.php.net/manual/en/class.datetime.php)
-3. [PHP: time - Manual](https://www.php.net/manual/en/function.time.php)
+## See Also
+- La documentazione ufficiale di PHP sulle date: [https://www.php.net/manual/en/book.datetime.php](https://www.php.net/manual/en/book.datetime.php)
+- Informazioni sull'oggetto DateTime: [https://www.php.net/manual/en/class.datetime.php](https://www.php.net/manual/en/class.datetime.php)
+- Guida alle configurazioni php.ini: [https://www.php.net/manual/en/ini.core.php#ini.date.timezone](https://www.php.net/manual/en/ini.core.php#ini.date.timezone)

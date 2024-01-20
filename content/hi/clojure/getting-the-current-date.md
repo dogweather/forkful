@@ -1,6 +1,7 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "C#: वर्तमान तारीख प्राप्त करना"
+date:                  2024-01-20T15:13:47.080778-07:00
+html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,38 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-वर्त्तमान तारीख प्राप्त करना का अर्थ होता है, सटीक समय व दिनांक प्राप्त करना।प्रोग्रामर्स यह इसलिए करते हैं ताकि वे डाटा को समय के साथ संबंधित कर सकें और समय पर आधारित प्रवाहों को मॉनिटर कर सकें।
+वर्तमान तारीख प्राप्त करना कंप्यूटर सिस्टम का समय जानने की प्रक्रिया है। प्रोग्रामर इसे लॉगिंग, टाइमस्टैम्प, और अन्य समय-संवेदी कार्यवाहियों के लिए करते हैं।
 
-## कैसे करें:
+## How to (कैसे करें):
 
-Clojure में, वर्तमान तारीख प्राप्त करने के लिए मैं आपको java.time.LocalDate का use करने की सलाह देता हूँ। 
+Clojure में वर्तमान तारीख प्राप्त करने के लिए, java.util.Date लाइब्रेरी का उपयोग करें:
 
-```
-(defn get-current-date []
-  (.toString (java.time.LocalDate/now)))
-```
+```Clojure
+(import 'java.util.Date)
 
-जब आप इसे चलाते हैं:
+(defn current-date []
+  (str (Date.)))
 
-```
-(get-current-date)
+(println (current-date))
 ```
 
-आपको मिलेगा:
+जब आप ऊपर दिए गए कोड को चलाएंगे, आपको एक आउटपुट मिलेगा जो वर्तमान तारीख और समय दिखाता है। 
+
+सैम्पल आउटपुट यूँ होगा:
 
 ```
-"2021-06-10"
+"Wed Apr 05 15:49:23 IST 2023"
 ```
-## गहरी डुबकी:
 
-वर्तमान तारीख प्राप्त करने के लिए Java.time API का सर्वश्रेष्ठ उपयोग करने की सिफारिश की जाती है, जो Java 8 में जोड़ी गई। Java.util.date और java.util.calendar के ऐतिहासिक उपयोग के मुकाबले में, यह अधिक समझ के लायक और सुगम है।
+## Deep Dive (गहराई में जानकारी):
 
-## यह भी देखें:
+Clojure एक लिस्प डायलेक्ट है जो JVM (Java Virtual Machine) पर चलता है। इसलिए, Java के क्लासेज को इसमें आसानी से इस्तेमाल किया जा सकता है। java.util.Date एक पुराना API है; नए कोड में java.time (JSR-310) के लिए ऑप्ट करना बेहतर होता है, जो दिनांक और समय प्रबंधन के लिए नए फीचर्स लाता है।
 
-अधिक जानकारी के लिए, आपको कुछ उपयोगी संसाधन मिल सकते हैं:
+Clojure में जावा.time का इस्तेमाल कुछ ऐसे हो सकता है:
 
-- [Clojure की आधिकारिक वेबसाइट](https://www.clojure.org/)
-- [Java.time API documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Practical Clojure बुक](http://www.apress.com/9781430272311)
+```Clojure
+(import 'java.time.LocalDateTime)
+(import 'java.time.format.DateTimeFormatter)
+
+(defn current-date-time []
+  (.format (LocalDateTime/now)
+           (DateTimeFormatter/ofPattern "dd-MM-yyyy HH:mm:ss")))
+
+(println (current-date-time))
+```
+
+इस तरह से आपको फॉर्मेटेड डेट और टाइम मिल जाएगा। इसके अतिरिक्त, Clojure में clj-time लाइब्रेरी भी है जो Joda-Time लाइब्रेरी पर आधारित है।
+
+## See Also (और भी देखें):
+
+- [Clojure Documentation](https://clojure.org/guides/getting_started)
+- [java.util.Date JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [java.time package JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [clj-time GitHub Repository](https://github.com/clj-time/clj-time)

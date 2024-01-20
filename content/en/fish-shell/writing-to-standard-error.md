@@ -38,4 +38,3 @@ Early on, Unix established separate streams for data and errors: stdout and stde
 
 - The Fish Shell documentation: [Using stderr](https://fishshell.com/docs/current/index.html#redirection)
 - POSIX shell scripting guidelines, applicable to stderr handling: [GNU Bash Manual](https://www.gnu.org/software/bash/manual/)
-- For an in-depth discussion: [StackOverflow - When to use STDERR instead of STDOUT](https://stackoverflow.com/questions/3385201/when-should-stdout-and-stderr-be-used)

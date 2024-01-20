@@ -1,6 +1,7 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "C: 현재 날짜 가져오기"
+date:                  2024-01-20T15:15:25.642076-07:00
+html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,36 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇인가요? 왜 사용하나요?)
+자바스크립트에서 현재 날짜를 알아내는 것은 흔한 작업입니다. 사용자에게 날짜를 보여주거나, 특정 시간에 기반한 기능을 실행하기 위해 필요합니다.
 
-현재 날짜를 알아내는 것은 프로그램이 오늘의 날짜를 인지할 수 있게 하는 방법입니다. 프로그래머는 사용자가 입력한 정보를 시간 순으로 정렬하거나, 정해진 기간 동안 특정 작업을 수행하게 하려는 이유로 이를 사용합니다.
-
-## 어떻게 수행할까요:
-
-JavaScript에서 현재 날짜 및 시간을 가져오려면, Date 객체를 사용합니다. 단순한 예제에서는 다음과 같이 사용할 수 있습니다.
-
+## How to: (어떻게 하나요?)
 ```Javascript
-let currentDate = new Date();
-console.log(currentDate);
+// 현재 날짜와 시간을 가져오기
+const now = new Date();
+console.log(now);
+
+// 현재 년도, 월, 일을 출력하기
+console.log(now.getFullYear());    // 2023 (가정)
+console.log(now.getMonth() + 1);   // 1 (1월이면, 0부터 시작하므로 +1을 해야함)
+console.log(now.getDate());        // 15 (가정)
+```
+- 출력 예시:
+```
+2023-01-15T12:34:56.789Z
+2023
+1
+15
 ```
 
-이 코드를 실행하면, 아래와 같은 출력을 확인할 수 있습니다.
+## Deep Dive (심도 있는 정보)
+자바스크립트의 `Date` 객체는 1995년 ECMAScript 언어 표준의 첫 번째 버전에서 소개되었습니다. 처음부터 현재 날짜와 시간을 제공하는 기본적인 방법이었죠. 대체할 수 있는 방법들, 예를 들면 `Date.now()`, `moment.js` 라이브러리 등이 존재하지만, `new Date()`는 가장 간단하고 자주 쓰이는 방법입니다. `get` 메서드들은 연도, 월, 일, 시간 등을 따로 가져올 수 있도록 해줍니다.
 
-```Javascript
-2020-12-01T14:48:00.000Z
-```
-
-## 깊게 들어가보기:
-
-JavaScript의 Date 객체는 1995년에 최초로 도입되었으며, 다른 많은 프로그래밍 언어와 마찬가지로 날짜 및 시간 조작을 위한 기능을 제공합니다. 
-
-가능한 대안으로는 라이브러리를 사용하는 것이 있습니다. 예를 들어, `moment.js`는 Date 객체를 더욱 쉽게 조작할 수 있도록 해주는 인기 있는 라이브러리입니다. 
-
-구현 세부 사항에 대해서는, JavaScript의 Date 객체는 1970년 1월 1일을 기점으로 밀리초 단위로 시간을 측정합니다. 이는 당시 Unix 시간 시스템이 사용되기 시작한 시각입니다.
-
-## 참고하기:
-
-더욱 깊게 공부하려면, 다음 자료를 참고하세요.
-1. [Mozilla Developer Network (MDN)에서의 Date 객체 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-2. [JavaScript Tutorial의 날짜 및 시간 부분](http://javascript.info/date)
-3. [moment.js 공식 홈페이지](https://momentjs.com/)
+## See Also (관련 자료)
+- Mozilla Developer Network (MDN) 'Date' 참조 문서: [MDN Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Moment.js 라이브러리 (다른 날짜 처리 방법을 제공함): [Moment.js](https://momentjs.com/)
+- ECMAScript 현재 표준: [ECMAScript](https://www.ecma-international.org/ecma-262/)

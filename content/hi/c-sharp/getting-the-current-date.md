@@ -1,6 +1,7 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "C#: वर्तमान तारीख प्राप्त करना"
+date:                  2024-01-20T15:14:09.738123-07:00
+html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "C#"
 category:             "C#"
@@ -10,14 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
 
-C# में वर्तमान दिनांक प्राप्त करना हमारे समय / तारीख कोड का केंद्रीय हिस्सा हो सकता है। 
-यह तब किया जाता है जब हमें टाइमस्टाम्प, ये जानने की आवश्यकता होती है कि कोई कार्य कब हुआ था, या हमें समय-संबंधित लॉगिंग की आवश्यकता हो।
+मौजूदा तारीख को प्राप्त करने का मतलब है वह तिथि जो आज की है। प्रोग्रामर्स इसे लॉगिंग, टाइमस्टैंप्स, फीचर्स को एक्टिवेट या डिएक्टिवेट करने और यूजर्स को समय से संबंधित जानकारी देने के लिए करते हैं। 
 
-## कैसे:
-
-C# में, आप DateTime.Now प्रॉपर्टी का उपयोग करके वर्तमान दिनांक और समय प्राप्त कर सकते हैं।
+## How to: (कैसे करें?)
 
 ```C#
 using System;
@@ -26,25 +24,28 @@ class Program
 {
     static void Main()
     {
-        DateTime currentDate = DateTime.Now;
-        Console.WriteLine("Current date and time: " + currentDate);
+        DateTime currentDate = DateTime.Now; // मौजूदा समय और तारीख
+        Console.WriteLine(currentDate.ToShortDateString()); // केवल तारीख दिखाएँ
     }
 }
 ```
 
-चलाने पर, आपको कुछ ऐसा उत्तर मिलेगा (उत्तर उस समय पर निर्भर करेगा जब आप यह चलाते हैं):
+उपरोक्त कोड को जब चलाएंगे, आउटपुट कुछ इस प्रकार होगा:
 
 ```
-Current date and time: 2/3/2023 1:34:22 PM
+10-04-2023
 ```
 
-## गहराई में:
+## Deep Dive (गहराई से समझें)
 
-1. **ऐतिहासिक प्रसंग**: C# के पुराने संस्करणों में, हमें DateTime.Now.ToString() का उपयोग करने की आवश्यकता होती थी।
-2. **विकल्प:** केवल वर्तमान दिनांक के लिए, DateTime.Today प्रॉपर्टी भी है।
-3. **विन्यास विवरण**: DateTime.Now आंतरिक रूप से व्यवस्था की घड़ी से समय प्राप्त करता है और इसे DateTime ऑब्जेक्ट में रूपांतरित करता है।
+DateTime.Now प्रॉपर्टी सिस्टम क्लॉक का इस्तेमाल करके मौजूदा तारीख और समय देती है। यह .NET फ्रेमवर्क का हिस्सा है और C# समेत .NET लैंग्वेजेस में बहुप्रचलित है। UtcNow और Today जैसे विकल्प भी हैं जो क्रमशः UTC समय और केवल मौजूदा तारीख (समय के बिना) प्रदान करते हैं।
 
-## यदि आप और पढ़ना चाहते हैं:
+डेट-टाइम डेटा को संभालना कभी-कभी जटिल हो सकता है, जैसे टाइम ज़ोन के बीच परिवर्तन, डेलाइट सेविंग टाइम एडजस्टमेंट्स, और कैलेंडर सिस्टम की विविधताएं। इन्हें संभालने के लिए, .NET अन्य वर्ग जैसे TimeZoneInfo और DateTimeOffset प्रदान करता है।
 
-- DateTime.Now प्रॉपर्टी ([Microsoft दस्तावेज़ीकरण](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.now?view=netframework-4.7.2))
-- DateTime.Today प्रॉपर्टी ([Microsoft दस्तावेज़ीकरण](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.today?view=netframework-4.7.2))
+इतिहास में जाएं तो, DateTime वर्ग .NET के पहले संस्करण से ही मौजूद है, और इसे समय के साथ सुधारा गया है। हालांकि, DateTime की अपनी सीमाएँ हैं, और कुछ परिस्थितियों में, थर्ड-पार्टी लाइब्रेरीज जैसे कि NodaTime का इस्तेमाल अधिक उपयुक्त हो सकता है।
+
+## See Also (और जानकारी)
+
+- [DateTime Struct (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- [Handling Dates and Times in .NET (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/standard/datetime/)
+- [NodaTime Library](https://nodatime.org/)

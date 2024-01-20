@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:14:28.505810-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Go"
 category:             "Go"
@@ -10,11 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Päivämäärän haku Go:ssa: Mikä & Miksi?
-Päivämäärän haku on toiminto, joka hakee aktiivisen järjestelmän tämänhetkisen päivämäärän. Ohjelmoijat tekevät tämän vastaavien tapahtumien ajanrekisteröinnin, lokiin kirjaamisen ja aikaperusteisten toimintojen mahdollistamiseksi.
+## What & Why? 
+Mikä ja mihin? Käsittelemme nykyisen päivämäärän hakemista. Ohjelmoijat tarvitsevat tätä usein, kuten aikaleimoja, ajan mittauksia tai päiväkohtaisia tehtäviä varten.
 
-# Kuinka tehdä?
-Esimerkiksi, Go:ssa saat nykyisen päivämäärän seuraavasti:
+## How to:
+Näin se tehdään:
 
 ```Go
 package main
@@ -25,28 +26,24 @@ import (
 )
 
 func main() {
-	fmt.Println(time.Now())
+	currentTime := time.Now()
+	fmt.Println("Nykyinen päivämäärä ja aika:", currentTime)
 }
 ```
-Ohjelman ajaessa saamme tulosteena nykyisen ajan GMT:ssä (Greenwich Mean Time), esimerkiksi: `2022-04-14 15:01:51.6176565 +0000 UTC m=+0.000579401`.
 
-# Syväluotaus
-**Historiallinen konteksti**: Go (tunnetaan myös nimellä Golang) lanseerattiin vuonna 2007 ja on suunniteltu tekemään ohjelmointi helpoksi ja tuottavaksi. Luodaan tunnisteita luontaisen kalenteriajan tavanomaisten operaatioiden suorittamiseksi, kuten päivämäärän haku. 
+Tuloste:
 
-**Vaihtoehtoja**: Go:ssa voit muokata päivämäärämuotoa seuraavasti:
-```Go
-func main() {
-	t = time.Now()
-	fmt.Println(t.Format("2006-01-02"))
-}
 ```
-Tämä tulostaa päivämäärän muodossa `YYYY-MM-DD`, kuten `2022-04-14`.
+Nykyinen päivämäärä ja aika: 2023-03-04 15:04:05.123456 +0200 EET
+```
 
-**Toteutustiedot**: Go:ssa päivämäärän haku on toteutettu aikapaketissa (`time package`) ja `Now`-funktio palauttaa nykyisen ajan sekuntin tarkkuudella.
+## Deep Dive
+Syväsukellus: `time.Now()` on Go-ohjelmoinnin standardikirjaston ajanottoa varten. Historiallisesti, päivämäärien ja aikojen käsittely on ollut eri ohjelmointikielissä hankalaa. Go tekee siitä suhteellisen suoraviivaista. Vaihtoehtoisia tapoja saada nykyinen päivämäärä: NTP-palvelimelta verkossa, käyttöjärjestelmän komentorivit tai ulkoiset kirjastot, kuten `github.com/arrow-py/arrow` Go:ssa. Implementation yksityiskohdissa on hyvä muistaa aikavyöhykkeet ja kesäaikaan siirtymiset.
 
-# Katso myös
-Lisätietoja päivämäärän hakutoiminnoista Go:ssa on saatavilla seuraavissa lähteissä:
+## See Also
+Katso myös:
 
-- Go:n virallisen dokumentaation `time package`: [https://golang.org/pkg/time/](https://golang.org/pkg/time/)
-- Go:n päivämäärien ja aikojen muotoilu: [https://gobyexample.com/time-formatting-parsing](https://gobyexample.com/time-formatting-parsing)
-- Stack Overflow keskustelu Go:n päivämäärätoiminnoista: [https://stackoverflow.com/questions/20234104/how-to-format-current-time-using-a-yyyymmddhhmmss-format](https://stackoverflow.com/questions/20234104/how-to-format-current-time-using-a-yyyymmddhhmmss-format)
+- Go:n dokumentaatio: https://golang.org/pkg/time/
+- Aikaan liittyvät ISO standardit: https://www.iso.org/iso-8601-date-and-time-format.html
+- Tietoa NTP:stä: http://www.ntp.org/
+- Arrow-kirjaston Go-versio: https://github.com/arrow-py/arrow

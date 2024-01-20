@@ -1,6 +1,7 @@
 ---
 title:                "Ottenere la data corrente"
-html_title:           "Java: Ottenere la data corrente"
+date:                  2024-01-20T15:14:30.025488-07:00
+html_title:           "Arduino: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,39 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
+## Cosa & Perché?
+Ottenere la data corrente nel programmazione significa catturare il momento presente in termini di giorno, mese e anno. I programmatori lo fanno per registrare eventi, scadenze, o semplicemente mostrare la data e l'ora agli utenti.
 
-Prendere la data corrente in programmazione significa ottenere istantaneamente la data e l'ora del sistema. Lo facciamo per segnare eventi, registrare le transazioni o semplicemente visualizzare l'ora e la data attuali.
-
-## Come si fa:
-
-Iniziamo con un esempio di codice Gleam per ottenere la data corrente. Nota: Gleam utilizza il modulo Erlang :calendar per gestire la data e l'ora.
-
+## Come Fare:
 ```gleam
-import erlang
+import gleam/io
+import gleam/calendar.{local_now, DateTime}
 
-fn today() {
-  let erlang.Tuple(_, month, day) = erlang.localtime()
-  day
+fn main() {
+  let DateTime(year, month, day, _, _, _, _) = local_now()
+  io.println("La data corrente è: " ++ int_to_string(day) ++ "/" ++ int_to_string(month) ++ "/" ++ int_to_string(year))
 }
 ```
-
-Quando esegui questo codice otterai il giorno corrente.
-
-```shell
-gleam run today
--> 15 (se oggi è il 15esimo giorno del mese)
+Output (esempio):
+```
+La data corrente è: 21/3/2023
 ```
 
 ## Approfondimento
+Storicamente, ottenere la data corrente in programmazione è sempre stato essenziale per applicazioni e sistemi operativi. In Gleam, usiamo il modulo `gleam/calendar` per accedere alle funzioni legate al tempo e alla data. La funzione `local_now` restituisce un `DateTime` che possiamo destrutturare per ottenere i componenti che ci interessano, come anno, mese e giorno. Alternative a questo approccio includono l'utilizzo di librerie di terze parti o dirette chiamate a API del sistema operativo. Tieni presente che la gestione del tempo in programmazione può diventare complicata a causa del supporto per i fusi orari e le transizioni da ora solare a ora legale.
 
-Storicamente, molti linguaggi di programmazione si affidano a librerie o moduli built-in per l'ottenimento della data corrente. Ad esempio, in Gleam utilizziamo il modulo :calendar di Erlang, come abbiamo mostrato sopra.
-
-Ci sono alternative a questa implementazione. Alcuni linguaggi ti permettono di creare il tuo modulo per gestire il tempo e la data. Tuttavia, in Gleam, probabilmente troverai più facile ed efficiente utilizzare le funzioni di Erlang come ```erlang.localtime()```.
-
-## Vedi anche
-
-Per approfondire la gestione delle date e delle ore in Gleam (e in Erlang), dai un'occhiata a queste fonti:
-
-- Documentazione ufficiale di Gleam: https://gleam.run/book/tour/dynamic-typing.html
-- Documentazione ufficiale di Erlang :calendar: https://erlang.org/doc/man/calendar.html
+## Vedi Anche:
+- Documentazione su `DateTime` in altre lingue di programmazione per confrontare l'approccio di Gleam.

@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:16:23.293433-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,43 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Datum in Rust abrufen: Warum, wie und mehr
-
-Rust ist eine moderne Programmiersprache, die auf Leistung, Zuverlässigkeit und produktive Entwicklung ausgerichtet ist. In diesem Artikel werden wir uns darauf konzentrieren, wie wir in Rust das aktuelle Datum abrufen.
-
 ## Was & Warum?
+Das Abrufen des aktuellen Datums ist essentiell, um in Programmen zeitlich relevante Aktionen zu tätigen. Programmierer tun dies, um etwa Zeitstempel zu generieren, Nutzeraktivitäten zu loggen oder datumsabhängige Funktionen auszuführen.
 
-Das Abrufen des aktuellen Datums ist das Erfassen des aktuellen Tags, Monats und Jahres. Dies ist äußerst nützlich für die Protokollierung von Ereignissen, das Festlegen von Zeitstempeln und das Verfolgen von Zeitfenstern in einer Anwendung.
-
-## So geht's:
-
-Rust bietet mit dem Modul `chrono` eine einfache Möglichkeit, das aktuelle Datum zu erhalten. Hier ist ein Codebeispiel:
+## Anleitung:
+Die Verwendung des `chrono` Crates ermöglicht ein problemloses Abrufen des aktuellen Datums.
 
 ```Rust
-use chrono::{Date, Local};
+extern crate chrono; // Beginne mit dem Einfügen des Crates an den Anfang des Code
+use chrono::{Local, Datelike}; // Lade die benötigten Traits
 
 fn main() {
-    let today: Date<Local> = Local::today();
-    println!("{}", today.format("%d-%m-%Y").to_string());
+    let heute = Local::today(); // Hol das heutige Datum
+    println!("Heutiges Datum: {}", heute.format("%Y-%m-%d")); // Gibt das Datum im Format JJJJ-MM-TT aus
 }
+
+// Mögliche Ausgabe:
+// Heutiges Datum: 2023-04-05
 ```
 
-Wenn Sie dieses Programm ausführen, erhalten Sie das aktuelle Datum im Format dd-mm-yyyy.
+## Vertiefung:
+Historisch gesehen bot Rusts Standardbibliothek (`std`) keine ausgereiften Zeitfunktionen, deswegen ist der `chrono` Crate zur De-facto-Lösung geworden. Alternativen wie die `time` Crate oder die Nutzung der `SystemTime` Klasse aus `std` bieten unterschiedliche Abstraktionsebenen und Möglichkeiten. Beim Abrufen des Datums muss man auch Zeitzonen beachten – `Local::today()` greift auf die lokale Zeit des Computers zu.
 
-## Deep Dive:
-
-### Historischer Kontext:
-Chrono ist das Standardmodul zum Arbeiten mit Datum und Zeit in Rust. Es wurde entwickelt, um die Komplexität der Datums- und Zeitverarbeitung in anderen Sprachen zu beseitigen.
-
-### Alternativen:
-Es gibt auch Alternativen wie `time` Modul, die zum Abrufen des aktuellen Datums in Rust verwendet werden können. 
-
-### Implementierungsdetails:
-Die `chrono`-Bibliothek bietet Zeitzonen-unterstützte, genaue und bequeme Datums- und Zeitfunktionen. Die Funktion `Local::today()` gibt das aktuelle Datum als `Date<Local>` zurück.
-
-## Siehe auch:
-
-Weitere Informationen finden Sie in der offiziellen `chrono`-Dokumentation: [Chrono auf crates.io](https://docs.rs/chrono/0.4.11/chrono/)
-Für eine detailliertere Anleitung zur Verwendung von `chrono` schauen Sie hier: [Offizielles Chrono Tutorial](https://lifthrasiir.github.io/rustlog/why-is-chrono-a-modern-date-and-time-library.html)
-
-Viel Spaß beim Programmieren mit Rust!
+## Siehe Auch:
+- Rust `chrono` Crate Dokumentation: [https://docs.rs/chrono](https://docs.rs/chrono)
+- Rust Zeit- und Datumsprimitiven in `std`: [https://doc.rust-lang.org/std/time/index.html](https://doc.rust-lang.org/std/time/index.html)

@@ -1,6 +1,7 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "C#: वर्तमान तारीख प्राप्त करना"
+date:                  2024-01-20T15:14:41.409871-07:00
+html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,29 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-प्रोग्रामर्स "मौजूदा दिनांक प्राप्त करना" का उपयोग वास्तविक समय की जानकारी के लिए करते हैं – चाहे वह लॉग लिखना हो, संस्करणोत्तर जानकारी प्रदान करना हो, या समय-आधारित काम को नियंत्रित करना हो।
+## What & Why? (क्या है और क्यों?)
 
-## कैसे?
-मोजूदा दिनांक को Elm में प्राप्त करने के लिए नीचे दिए गए कोड का उपयोग करें।
+वर्तमान तारीख पाना यह सुनिश्चित करता है कि आप कार्यक्रम में आज की तारीख का इस्तेमाल कर सकें। कोडर्स इसे फीचर्स जैसे कैलेंडर, टाइम्लाइन्स और लॉगिंग में इस्तेमाल करते हैं।
+
+## How to: (कैसे करें:)
+
+Elm में वर्तमान तारीख पाने के लिए Time मॉड्यूल का उपयोग होता है। यहां एक साधारण उदाहरण दिखाया गया है:
 
 ```Elm
-import Task exposing (Task)
 import Time exposing (Posix)
+import Task exposing (Task)
 
+-- सर्वर से वर्तमान समय प्राप्त करें
 getCurrentTime : Task x Posix
 getCurrentTime =
     Time.now
+
+-- Posix समय को तारीख में बदलें
+toDateString : Posix -> String
+toDateString posix =
+    Time.posixToMillis posix
+        |> fromMillis
+        |> (\date -> date.year ++ "-" ++ date.month ++ "-" ++ date.day)
+
+-- उदाहरण का उपयोग
+main =
+    getCurrentTime
+        |> Task.perform (always ()) (\posix -> Debug.log "Current Date" (toDateString posix))
 ```
 
-यह कोड एक टास्क उत्पन्न करेगा जो मौजूदा दिनांक और समय को Posix में वापस करेगा।
+यह कोड संख्येय प्रारूप (Posix) में वर्तमान समय प्राप्त करेगा और इसे एक ह्यूमन-रीडेबल तारीख में परिवर्तित करेगा।
 
-## गहरी जानकारी
-1. **ऐतिहासिक प्रकटीकरण**: पहली बार 1970 में Unix परिवार के तहत POSIX समय की परिभाषा परिचलित हुई थी, जिसे एल्म ने अपनाया है।
-2. **विकल्प**: `Date` पैकेज भी है जिसका उपयोग मौजूदा दिनांक का प्रतिनिधित्व करने के लिए Elm में किया जाता है लेकिन इसे या `posix` का उपयोग करना व्यावसायिक अनुप्रयोगों में `posix` की अधिकता होती है।
-3. **विन्यास विवरण**: अधिक शुद्धता के लिए, Elm में POSIX समय की उच्चतम समय-विन्यास शृंखला को समय घटकों के रूप में पदानुक्रमित किया जाता है।
+## Deep Dive (गहन जानकारी)
 
-## यदि आपको भी देखना हो
-1. [Elm समय पुस्तिका](https://package.elm-lang.org/packages/elm/time/latest/)
-3. [Unix समय की परिभाषा](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now)
-4. [POSIX समय निर्देशिका](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_343)
+Elm में `Time` मॉड्यूल का निर्माण समय-संबंधित सुविधाओं को सरल और सुरक्षित तरीके से हासिल करने के लिए किया गया था। `Time.now` एक Task देता है जिसे perform करने पर, आपको सर्वर पर वर्तमान UTC समय मिलता है। यह समय `Posix` प्रारूप में होता है, जिसे मिलीसेकैंड्स या ह्यूमन-रीडेबल फॉर्मैट में परिवर्तित किया जा सकता है।
+
+विकल्पों की बात करें तो, अन्य प्रोग्रामिंग भाषाओं में समय को पाने के और भी तरीके हो सकते हैं। जैसे कि, JavaScript में `new Date()` का उपयोग होता है, जबकि Python में `datetime.datetime.now()` का। Elm के पहले के संस्करणों में समय को प्राप्त करने के लिए सीधे पॉजिक्स मानों का उपयोग होता था, जिसे अब Task के साथ किया जाता है ताकि साइड इफेक्ट्स को संभाला जा सके।
+
+## See Also (देखें भी)
+
+- Elm के `Time` मॉड्यूल की आधिकारिक दस्तावेज़ीकरण: [Elm Time Module](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- Elm भाषा का आधिकारिक गाइड: [Elm Guide](https://guide.elm-lang.org/)
+- Elm के साथ कार्य करने के लिए संदर्भित प्रोजेक्ट्स: [Awesome Elm](https://github.com/sporto/awesome-elm)

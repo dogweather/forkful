@@ -1,6 +1,7 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "C: Obtendo a data atual"
+date:                  2024-01-20T15:15:30.506555-07:00
+html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,47 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Quê?
+## O Que & Porquê?
+Pegar a data atual é simplesmente saber qual é o dia de hoje segundo o computador. Programadores fazem isso para registrar eventos, comparar datas ou qualquer coisa que dependa de quando acontece.
 
-Obter a data atual em qualquer linguagem de programação, incluindo Lua, é um aspecto básico no desenvolvimento de software. Isso é útil em situações onde o carimbo de data/hora é necessário também para o armazenamento e recuperação eficazes de dados.
-
-## Como fazer!
-
-Para obter a data atual em Lua, usamos a função *os.date()*, a qual devolve uma string formatada com a data e o tempo atual, quando não há argumento. Veja o exemplo abaixo:
-
+## Como Fazer:
 ```Lua
-data_atual = os.date()
-print("Data e Hora atual: " .. data_atual)
+-- Pegar a data e a hora atuais
+local agora = os.date("*t") -- retorna uma tabela com a data atual
+
+-- Exibir a data e hora no formato: "dd/mm/yyyy hh:mm:ss"
+print(string.format("%02d/%02d/%02d %02d:%02d:%02d", 
+      agora.day, agora.month, agora.year, agora.hour, agora.min, agora.sec))
 ```
 
-Quando você executa este código, o saída no console seria algo como:
-
-```Lua
-Data e Hora atual: Tue Sep 17 12:36:23 2022
+Saída de exemplo:
 ```
+05/04/2023 14:20:35
+```
+
 ## Mergulho Profundo
+Historicamente, Lua incorporou funções para manejar datas e tempos diretamente através da biblioteca `os`. Há uma função, `os.time()`, que te dá o tempo em segundos desde a Era Unix (o famoso "timestamp") e `os.date()`, que formata esse tempo de maneira legível para humanos. Ambas são herdadas do C, onde manipulação de tempo é tradicionalmente um tanto críptica.
 
-Historicamente, Lua foi concebido com interação fácil com softwares de C em mente, e assim, a função *os.date()* foi diretamente inspirada pela função homônima em biblioteca padrão de C. 
+Alternativas incluem usar bibliotecas de terceiros, como o `LuaDate` para mais funcionalidade. Porém, para aplicações simples, as funções nativas geralmente bastam.
 
-Existem também bibliotecas de terceiros, como date.lua ou lua-date que oferecem implementações de manipulação de data e hora mais avançadas e versáteis do que a biblioteca padrão.
-
-Além disso, Se você precisar de um controle mais preciso sobre o formato da string de data, você pode passar um argumento de formato para a função *os.date()*. Por exemplo, para obter apenas a data no formato DD/MM/YYYY, você poderá fazer o seguinte:
-
-```Lua
-data_atual_formatada = os.date("%d/%m/%Y")
-print("Data atual: " .. data_atual_formatada)
-```
-
-Isso imprimiria a data atual no formato mencionado, enquanto o símbolo de porcentagem (%) usado na string de formato é o prefixo necessário para todos os especificadores de formato em Lua.
+Detalhes de implementação: `os.date("*t")` devolve uma tabela contendo todos os componentes da data e hora. Pode-se usar outros formatos de string como argumentos para `os.date()` para obter representações diferentes da data e hora.
 
 ## Veja Também
-
-Aqui estão algumas referências úteis para você explorar mais sobre este tópico:
-
-1. Documentação oficial Lua sobre o módulo os: https://www.lua.org/manual/5.4/manual.html#6.9
-
-2. Documentação da função os.date(): http://www.lua.org/pil/22.1.html
-
-3. date.lua, uma biblioteca de terceiros para manipulação de date e hora: https://github.com/Tieske/date
-
-4. lua-date, uma biblioteca de data/hora para Lua bastante completa: https://github.com/torusjkl/lua-date
+- [Documentação Oficial do Lua `os.date`](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)
+- [Tutorial sobre datetime em Lua](http://lua-users.org/wiki/DateTime)
+- [Repositório LuaDate no GitHub](https://github.com/Tieske/date)

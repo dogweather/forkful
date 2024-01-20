@@ -1,6 +1,7 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "C#: वर्तमान तारीख प्राप्त करना"
+date:                  2024-01-20T15:14:49.324837-07:00
+html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,30 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या और क्यों? (What & Why?)
+वर्तमान तारीख प्राप्त करना यह है कि आप प्रोग्राम में आज की तारीख कैसे ले सकते हैं। कार्यक्रमकर्ता लॉगिंग, समयसीमा की जांच और उपयोगकर्ता इंटरफेस में तारीख दिखाने के लिए इसका उपयोग करते हैं।
 
-'वर्तमान तारीख' प्राप्त करना - यह वह संघटन है, जबकि प्रोग्रामर आवश्यकता अनुसार वर्तमान काल के विवरण को प्राप्त करते हैं। यह तारीख और समय संग्रहीत करने, डेटा को ट्रैक करने और लॉग बनाने की उपयोगिता में आती है।
+## कैसे करें: (How to:)
+```gleam
+import gleam/calendar
+import gleam/io
 
-## कैसे?
-
-वर्तमान में, Gleam में 'वर्तमान तारीख' के लिए कोई मूल फ़ंक्शन नहीं है। हालांकि, इरलैंग का `:calendar.universal_time/0` फ़ंक्शन का उपयोग करके इसका समाधान किया जा सकता है। 
-
-```Gleam
-import erlang
-
-fn get_current_date() {
-  erlang.(:calendar.universal_time())
+// वर्तमान तारीख प्राप्त करें
+fn main() {
+  let today = calendar.local_now()
+  io.print(today)
 }
 ```
 
-जब आप इसे चलाते हैं, आपको वर्तमान यूनिवर्सल टाइम मिलेगा।
+उत्पादित होने वाला प्रिंट आउटपुट:
+```
+{calendar.Date(year: 2023, month: 4, day: 1)}
+```
 
-## गहरियाँ
+## गहराई से जानकारी (Deep Dive)
+वर्तमान तारीख को प्राप्त करने के लिए `gleam/calendar` मॉड्यूल Gleam में एक नया अतिरिक्त है। पहले, डेवलपर्स को बाहरी लाइब्रेरी जैसे कि `calendar` के साथ काम करना पड़ता था। इरलांग और ईलिक्सिर जैसे विकल्पों के साथ ग्लीम के संयोजन से इस कार्यक्षमता को सरल और अधिक कुशल बनाया गया है। इसे कार्यान्वित करते समय समय क्षेत्रों और स्थानीयकरण का भारी ध्यान रखा जाता है।
 
-1. **ऐतिहासिक प्रकटी:** वर्तमान दिनांक / समय का पता लगाना कंप्यूटर प्रोग्रामर का एक पुराना अभ्यास है जिसे डेटा की टाइम स्टैम्पिंग, डेटा ट्रैकिंग, और समाधान देखने के लिए उपयोग किया जाता है।
-2. **विकल्प:** आप `:erlang.localtime/0` फ़ंक्शन का उपयोग भी कर सकते हैं जो व्यवस्था के क्षेत्रीय समय के अनुसार वर्तमान समय की जानकारी प्रदान करते हैं।
-3. **लागू करने का विवरण:** इरलैंग के :calendar.universal_time() फ़ंक्शन का उपयोग Gleam में वर्तमान तारीख प्राप्त करने के लिए किया जाता हैं।
-
-## यह भी देखें
-
-1. [Erlang Documentation - Time and Date](https://erlang.org/doc/apps/erts/time_correction.html)
+## यह भी देखें (See Also)
+- Gleam's official documentation on the `calendar` module: https://hexdocs.pm/gleam_stdlib/gleam/calendar/
+- Working with time zones in Gleam: https://hexdocs.pm/gleam_stdlib/gleam/time/
+- Erlang's calendar documentation for background understanding: http://erlang.org/doc/man/calendar.html

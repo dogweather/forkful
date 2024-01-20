@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:12:53.293410-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,49 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-title: Jak Uzyskać Aktualną Datę w Bashu?
----
+## What & Why?
+W Bashu polecenie daty zwraca aktualną datę i czas, a programiści wykorzystują to do logowania, harmonogramowania zadań lub do wyświetlania informacji o czasie w skryptach.
 
-## Co i Dlaczego?
-
-Pobieranie aktualnej daty to proces odczytywania bieżących informacji o dacie i czasie. Programiści robią to, aby monitorować aktualne zdarzenia lub logować informacje.
-
-## Jak to zrobić:
-
-W Bashu, możemy użyć polecenia `date` do uzyskania aktualnej daty i czasu.
+## How to:
+Aby wyświetlić aktualną datę i czas, użyj polecenia `date`. Sprawdź kilka przykładów:
 
 ```Bash
-# Pobranie aktualnej daty
+# Wyświetla aktualną datę i czas w domyślnym formacie
 date
+
+# Wyświetla datę w określonym formacie, np. RRRR-MM-DD
+date +"%Y-%m-%d"
+
+# Wyświetla czas w określonym formacie, np. GG:MM:SS
+date +"%H:%M:%S"
 ```
 
-Domyślnie, polecenie `date` zwróci pełną datę, razem z dniem tygodnia, miesiącem, dniem miesiąca, aktualną godziną, strefą czasową i rokiem.
-
-Przykładowe wyjście:
+Przykładowe wyjścia:
 
 ```Bash
-Thu Sep 23 15:48:00 CEST 2021
+Tue Mar  9 15:20:45 PST 2021
+2021-03-09
+15:20:45
 ```
 
-## Głębsze Zrozumienie
+## Deep Dive
+Polecenie `date` w systemach Unix-like, w tym Linux, pochodzi z tradycji narzędzi systemowych zapewnionych przez AT&T System V oraz BSD (Berkeley Software Distribution). Alternatywnie, możesz użyć `strftime` w skryptach Bash do jeszcze większej kontroli nad formatowaniem, a `date` jest często używane razem z cronem do planowania zadań. 
 
-### Kontekst Historyczny
-Polecenie `date` jest niesłychanie stare, istnieje w Unixie od lat 70-tych, a w Bashu od kiedy tylko Bash zaczął istnieć.
+Implementacja `date` opiera się na standardzie C POSIX library i może pokazywać różne strefy czasowe, co jest przydatne w pracy globalnej lub z rozproszonymi systemami. Dodatkowo, dla zaawansowanego formatowania możesz łączyć różne sekwencje formatowania w jednym wywołaniu polecenia.
 
-### Alternatywy
-Innym sposobem na pobranie daty jest użycie polecenia `printf` wraz z funkcją `strftime` z `awk`:
-
-```Bash
-# Pobranie aktualnej daty za pomocą awk
-awk "BEGIN {printf \"%s\", strftime()}"
-```
-
-### Implementacja
-Polecenie `date` w Bashu jest zaimplementowane za pomocą funkcji systemowej `gettimeofday()` lub `clock_gettime()`. Używa ona strefy czasowej systemu do wygenerowania bieżącej daty i czasu.
-
-## Zobacz Również
-
-- [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html): Dokumentacja Bash zawiera więcej szczegółów na temat polecenia `date`.
-- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/): Szczegółowy przewodnik po skrypcie Bash, który mówi więcej o manipulacji datą i czasem.
-- [Unix Time-Stamp](https://www.unixtimestamp.com/): Narzędzie online do konwersji czasu Unix na zrozumiały format daty.
+## See Also
+- GNU Coreutils `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Bash scripting cheatsheet: https://devhints.io/bash
+- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/

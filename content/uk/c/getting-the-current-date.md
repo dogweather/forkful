@@ -1,5 +1,6 @@
 ---
 title:                "Отримання поточної дати"
+date:                  2024-01-20T15:13:14.746830-07:00
 html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "C"
@@ -10,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та чому?
-Отримання поточної дати - це процес зчитування системного часу та дати у програмі. Програмісти роблять це для трекінгу подій, часового позначення логів та для відстеження та впорядкування даних за часом. 
+## What & Why?
+Що та Навіщо?
+Getting the current date means accessing the system's date and time. Programmers track time to log events, schedule tasks, or display timestamps.
 
-## Як це робити: 
-
-Ви можете отримати поточну системну дату в C, використовуючи стандартну бібліотеку `time.h`. Ось як це виглядає:
+## How to:
+Як це зробити:
+Here's how to get the current date in C using the `time.h` library:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main( ){
-  time_t current_time;
-  time(&current_time);
-  
-  printf("Поточна дата та час: %s", ctime(&current_time));
-  return 0;
+int main() {
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+
+    printf("Current date: %02d-%02d-%04d\n", tm.tm_mday, tm.tm_mon + 1, tm.tm_year + 1900);
+    return 0;
 }
 ```
-В результаті виконання програми ми отримаємо поточну дату та час у читаємому форматі, наприклад:
 
-```C
-Поточна дата та час: Срд Січ 19 22:42:37 2022
+Sample output might look like:
+```
+Current date: 24-04-2023
 ```
 
-## Поглиблений аналіз:
+## Deep Dive
+Занурення в Деталі
+In 1972, `time.h` was standardized in C. Now, `time()` gives seconds since the epoch (00:00:00 UTC, January 1, 1970), and `localtime()` converts it to local time. Alternatives like `gettimeofday()` exist, but it's Unix-specific. `time.h` is widely supported and simple, with `strftime()` to format dates.
 
-**Історичний контекст**: Функція `time` була інтродукована в C89 (також відомий як ANSI C) і прописана в бібліотеці `time.h`. 
-
-**Альтернативи**: У C є інші бібліотеки для роботи з часом. Наприклад, `sys/time.h` має структуру `timeval`, яка надає більш точний час, ніж `time.h`.
-
-**Деталі реалізації**: Функція `time` повертає поточний час в секундах, що минули з полуночі 1 січня 1970 року (відомий як UNIX timestamp). `ctime` конвертує цей час у читаємий формат.
-
-## Дивіться також:
-
-Документація стандартної бібліотеки C: https://www.cplusplus.com/reference/ctime/
-Матеріали з програмування на мові С: https://prog-cpp.mksat.net/
+## See Also
+Додаткова Інформація:
+- C Standard Library documentation on `time.h`: https://en.cppreference.com/w/c/chrono
+- GNU C Library manual for date and time: https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html
+- Stack Overflow discussions on handling dates and times in C: https://stackoverflow.com/questions/tagged/c+datetime

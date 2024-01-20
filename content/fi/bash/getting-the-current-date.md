@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:12:54.278240-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,44 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
+Komentorivillä nykyisen päivämäärän hakeminen on pientä digitalista taikuutta: näpäytä komento ja näyttöön ilmestyy päiväys. Miksi? Skriptit käyttävät päivämääriä lokien luomiseen, tiedostonimien merkkaamiseen ja aikasidonnaisten tehtävien automatisointiin.
 
-Reaaliaikaisen päivämäärän hankinta on toiminto, jonka avulla ohjelmat saavat nykyisen päivämäärän ja kellonajan tietyn ajovyöhykkeen mukaisesti. Käyttötarkoituksia ovat muun muassa aikaleimojen luominen, tehtävien ajoitus tai tapahtumien lokitiedot.
-
-## Näin se toimii:
-
-Bash-syntaksi komentoa varten on melko yksinkertainen. Voit saada nykyisen päivämäärän käyttämällä `date` komentoa.
-
+## How to: (Kuinka tehdään:)
 ```Bash
+# Peruskomento päivämäärän näyttämiseen
 date
+
+# Esimerkkituloste
+pe maali 12 15:23:08 EET 2023
+
+# Mukautettu muotoilu
+date "+%Y-%m-%d"
+
+# Esimerkkituloste
+2023-03-12
+
+# Aikaleiman lisääminen tiedostonimeen
+echo "Tämä on esimerkkitiedosto" > "tiedosto_$(date "+%Y-%m-%d").txt"
 ```
 
-Tämän pitäisi tulostaa jotakin, mikä näyttää tämän kaltaiselta (muuttuu ajan perusteella):
+## Deep Dive (Sukellus syvyyksiin):
+Unix-tyyppisissä käyttöjärjestelmissä `date` on perinyt geeneissään 70-luvun alusta asti ajan ja päivämäärien käsittelyn. Vaihtoehtoja? `strftime` C-ohjelmointikielessä tai modernit skriptikielet, kuten Python, jossa `datetime`-moduuli. Unix-aika, aikaleimat sekä alueelliset aika-asetukset ovat osa `date`:n taustamagiaa.
 
-```Bash
-Ke Heinä  7 14:30:55 EEST 2021
-```
-
-Jos haluat mukauttaa tulosteen muotoa, voit käyttää plusmerkkiä + ja tarjoamalla erityisiä muotoilukoodeja. 
-
-```Bash
-date +"%Y-%m-%d"
-```
-
-Tämä tulostaa päivämäärän yleisessä muodossa:
-
-```Bash
-2021-07-07
-```
-
-## Syvällisempää tarkastelua:
-
-Historiallisesti `date` komento alkoi mukaan UNIX-ympäristössä 1970-luvulla. Korvaavia komentoja voivat olla esimerkiksi `ncal` ja `cal`, jotka näyttävät kuukausia ja vuosia, mutta ne eivät ole yhtä joustavia kuin `date`.
-
-Bashin `date` komento tulkitsee syötteet C-kirjaston `strftime`-funktion mukaisesti. Voit käyttää moninaisia muotoilukoodeja esittämään päivämäärätietoja monilla yksityiskohtaisilla tavoilla.
-
-## Lue lisää:
-
-- Man-sivu `date`: https://man7.org/linux/man-pages/man1/date.1.html
-- GNU Core Utilities (`date` sisältyy): https://www.gnu.org/software/coreutils/coreutils.html
-- strftime-funktion dokumentaatio: https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html#index-strftime
+## See Also (Katso myös):
+- `man date`: Komentorivin ohje `date`-komennolle
+- GNU Coreutils: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/x23170.html
+- Linux Date Command Tutorial for Beginners (8 Examples): https://www.howtoforge.com/linux-date-command/

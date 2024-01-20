@@ -1,6 +1,7 @@
 ---
 title:                "获取当前日期"
-html_title:           "Arduino: 获取当前日期"
+date:                  2024-01-20T15:14:13.918507-07:00
+html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,35 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么与为什么?
+## What & Why? 什么和为什么?
+获取当前日期是读取计算机系统日期的过程。程序员这么做通常是为了记录事件、生成时间戳或展示给用户。
 
-获取当前日期是在程序中从系统中获取当前日期和时间的过程。程序员由此可以记录事件发生的时间，进行时间比较，或在指定时间后执行操作。
-
-## 如何操作:
+## How to: 如何操作
+Clojure 使用 `java.util.Date` 类和 `clj-time` 库来处理日期和时间。下面是获取当前日期的代码示例：
 
 ```Clojure
-; 导入Java的date类
 (import 'java.util.Date)
 
-(println (Date.))
+(defn get-current-date []
+  (let [today (Date.)]
+    (println "今天的日期是：" today)))
+
+(get-current-date)
 ```
 
-示例输出:
+运行代码，你可能看到类似这样的输出：
+
+```
+今天的日期是：Thu Mar 31 15:20:45 CST 2022
+```
+
+如果要更优雅地处理日期和时间，可以使用 `clj-time` 库：
 
 ```Clojure
-; 输出以服务器的当前日期和时间
-Tue Mar 24 15:43:09 CST 2021
+(require '[clj-time.core :as time])
+(require '[clj-time.format :as fmt])
+
+(defn get-current-date-clj-time []
+  (let [formatter (fmt/formatters :basic-date-time)
+        now (time/now)]
+    (println "现在的日期和时间是：" (fmt/unparse formatter now))))
+
+(get-current-date-clj-time)
 ```
-## 深入了解
 
-**历史背景:** 从计算机的早期开始，日期和时间就在计算中起着重要的作用。这在事件日志记录、调度程序操作和监控活动趋势等功能中具有重大意义。
+输出将是这样的：
 
-**替代方案:** 除了上述例子中提到的 `java.util.Date` 类, Clojure 同样支持 `java.time` 类库，这是 Java 8 引入的一套更为现代和全面的时间日期库。此外，对于更复杂的日期时间操作，你还可以使用像 `clj-time` 这样的库。
+```
+现在的日期和时间是：20220331T152045.000Z
+```
 
-**实施细节:** 在 Clojure 中，你可以使用 Java 类的方式来获取日期和时间，然后使用各种内置函数进行操作。你也可以使用类库来扩展对日期和时间的操作。
+## Deep Dive 深入了解
+在过去，Clojure 开发者常用 `java.util.Date`，但这个类不太灵活也不易于使用。`clj-time` 库基于 Joda-Time，带来更好的日期和时间处理实践。
 
-## 另请参阅
+另外，Java 8 引入了新的日期和时间 API，例如 `java.time.*`，提供了新的类比如 `LocalDate` 和 `LocalDateTime`。
 
-- `java.util.Date` 类的详细用法请参考： [Java Date Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- `java.time` 类的详细用法请参考： [Java Time Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- `clj-time` 类库的使用说明请参考： [clj-time GitHub](https://github.com/clj-time/clj-time)
+这些新的类方法优于老旧的 `java.util.Date`，提供更强的时区处理，更直观的 API，并且都是不可变的（immutable），这使得它们更安全，尤其是在并发环境中。
+
+Clojure 作为一个运行在 JVM 上的语言，可以直接利用这些改进。如今，推荐使用 `java.time` 或通过 `clj-time` 库间接使用 Joda-Time 的 Clojure 封装。
+
+## See Also 参考链接
+- Clojure 官方网站：[https://clojure.org](https://clojure.org)
+- clj-time GitHub 仓库：[https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+- Joda-Time 官方网站：[https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)
+- Java 8 Date/Time API 文档：[https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

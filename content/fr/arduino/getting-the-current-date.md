@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:12:55.830001-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,54 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce & Pourquoi?
+## What & Why?
+Obtenir la date actuelle, c'est lire la valeur temporelle du moment présent. Les programmeurs le font pour enregistrer des événements, programmer des actions ou créer des journaux de débogage.
 
-Obtenir la date actuelle consiste à récupérer l'information sur le moment présent dans le format Jour/Mois/Année. Les programmeurs le font pour gérer et suivre le temps dans leurs projets.
-
-## Comment faire:
-
-Voici un exemple de code pour obtenir la date actuelle sur Arduino. Assurez-vous d'avoir un shield RTC connecté à votre Arduino. 
+## How to:
+Pour avoir la date sur Arduino, utilisez un module RTC (Real Time Clock) comme le DS3231. Voici comment ça se passe:
 
 ```Arduino
 #include <Wire.h>
-#include "RTClib.h"
+#include <RTClib.h>
 
-RTC_DS1307 rtc;
+RTC_DS3231 rtc;
 
-void setup () {
-  Serial.begin(57600);
-  Wire.begin();
-  rtc.begin();
-
-  if (! rtc.isrunning()) {
-    Serial.println("RTC n'est pas en cours d'execution!");
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+void setup() {
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("Impossible de trouver RTC");
+    while (1);
+  }
+  if (rtc.lostPower()) {
+    Serial.println("RTC perdu puissance, definir l'heure!");
+    // Ligne ci-dessous à utiliser si l'horloge a perdu l'heure, après la première configuration.
+    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
-void loop () {
+void loop() {
   DateTime now = rtc.now();
   
-  Serial.print(now.year(), DEC);
+  Serial.print(now.year());
   Serial.print('/');
-  Serial.print(now.month(), DEC);
+  Serial.print(now.month());
   Serial.print('/');
-  Serial.println(now.day(), DEC);
+  Serial.println(now.day());
+  
+  delay(1000);
 }
 ```
 
-Ce code affiche la date actuelle dans la console série à chaque fois que vous démarrez votre Arduino.
+Sample output:
+```
+2023/4/10
+```
 
 ## Deep Dive
+L'historique d'Arduino et des RTC remonte à des horloges externes en raison de l'absence d'horloge interne dans la plupart des microcontrôleurs Arduino. Avant les RTC, les gens utilisaient les temporisateurs ou des services de temps internet pour une date approximative.
 
-Historiquement, les fonctions de gestion du temps étaient déjà intégrées aux premiers systèmes de calcul analogiques. Aujourd'hui, avec la prolifération des appareils numériques, il est encore plus essentiel de suivre le temps de façon précise.
+Le DS3231 est apprécié pour sa précision. Alternatives? DS1307 (moins cher, moins précis) ou utilisez un module WiFi/Bluetooth pour synchroniser avec un serveur de temps.
 
-Il existe de nombreuses alternatives pour obtenir la date actuelle, comme utiliser un module GPS ou même se connecter à un serveur NTP pour obtenir la date et l'heure exactes. Chaque alternative a ses propres avantages et inconvénients, il faut donc choisir celle qui convient le mieux à votre projet.
+Niveau implémentation, le DS3231 communique via I2C. Installation `RTClib` facile via le gestionnaire de bibliothèque de l'IDE Arduino. Une fois initialisé, un objet `DateTime` offre l'accès aux composants de la date.
 
-Pour obtenir la date actuelle avec Arduino, vous pouvez utiliser la bibliothèque RTClib, qui offre des fonctions faciles à utiliser pour gérer le temps. Elle implémente une interface de communication avec la puce RTC DS1307 qui est largement utilisée dans de nombreux shields RTC pour Arduino. 
-
-## Voir Aussi
-
-Vous pouvez approfondir vos connaissances sur la gestion du temps dans Arduino en consultant ces sources:
-- La documentation officielle du RTC DS1307: [DS1307](https://datasheets.maximintegrated.com/en/ds/DS1307.pdf)
-- Guide d'introduction à la bibliothèque RTClib: [RTClib](https://github.com/adafruit/RTClib)
+## See Also
+- `RTClib` library sur GitHub : [https://github.com/adafruit/RTClib](https://github.com/adafruit/RTClib)
+- Documentation de `Wire` (pour I2C) : [https://www.arduino.cc/en/Reference/Wire](https://www.arduino.cc/en/Reference/Wire)
+- Arduino Time Library pour des tâches temporelles avancées : [https://www.arduino.cc/playground/Code/Time](https://www.arduino.cc/playground/Code/Time)
+- Module DS3231 sur Adafruit : [https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout](https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout)

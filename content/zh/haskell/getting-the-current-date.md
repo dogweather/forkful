@@ -1,6 +1,7 @@
 ---
 title:                "获取当前日期"
-html_title:           "Arduino: 获取当前日期"
+date:                  2024-01-20T15:14:47.843346-07:00
+html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,36 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
-获取当前日期意味着让计算机告诉我们今天是几号。开发人员用这个来跟踪事件，记录日志，或者只是显示日期给用户。
+## What & Why? (什么与为什么？)
+获取当前日期是读取操作系统提供的日期和时间。程序员这样做为了记录事件、处理过期数据或显示动态信息。
 
-## 办法:
-在Haskell中，我们可以使用 `Data.Time.Clock` 和 `Data.Time.Calendar` 库来得到当前日期。先让我们引入这些库。
-
+## How to: (如何操作：)
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
-```
-然后我们可以写一个函数来获取今天的日期:
+import Data.Time
 
-```Haskell
-getCurrentDate :: IO (Integer, Int, Int) -- Year, Month, Day
-getCurrentDate = getCurrentTime >>= return . toGregorian . utctDay
-```
-这个函数先获取当前的UTC时间，然后从中提取出日期，最后转为公历（格里高利历）格式。
-
-运行这个函数会显示当前的年，月，日:
-
-```Haskell
+main :: IO ()
 main = do
-    (year, month, day) <- getCurrentDate
-    putStrLn $ "Today is " ++ show day ++ "." ++ show month ++ "." ++ show year
+  currentDate <- getCurrentTime
+  print $ utctDay currentDate
 ```
-## 深入探究
-获取当前日期是一个常见操作。大部分语言都有自己获取当前日期的方法。在Haskell的早期版本中，日期和时间是由操作系统提供的，所以具体实现在不同的平台上会有所不同。现在，Haskell有了一个全新的、跨平台兼容的日期和时间库。
 
-此外，当前日期的实现依赖于你的机器所在的时区，所以在有些情况下，你可能需要吧UTC时间转为本地时间。
+示例输出：
+```
+2023-04-07
+```
 
-## 另请参见
-* Haskell的`Data.Time`文档 [Data.Time](https://hackage.haskell.org/package/time-1.5.0.1/docs/Data-Time.html)
-* 了解更多关于时间和日期的知识 [Time and Date](https://www.timeanddate.com/)
+## Deep Dive (深入探究)
+Haskell的`Data.Time`库，特别是`getCurrentTime`函数，是获取当前日期和时间的主流方法。它是基于世界时（UTC）的，确保标准一致性。不过，如果你需要特定时区的日期，可能得使用`Data.Time.LocalTime`的相关函数。历史上，Haskell发展了多个处理日期和时间的库，但`Data.Time`由于其全面性和相对直接的接口，已成为事实上的标准。
+
+## See Also (参见)
+- Haskell `Data.Time`库：http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
+- Haskell `Data.Time.LocalTime`：http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-LocalTime.html
+- 关于UTC的解释：https://en.wikipedia.org/wiki/Coordinated_Universal_Time

@@ -1,7 +1,8 @@
 ---
-title:                "現在の日付の取得"
-html_title:           "Bash: 現在の日付の取得"
-simple_title:         "現在の日付の取得"
+title:                "現在の日付を取得する"
+date:                  2024-01-20T15:13:26.902050-07:00
+html_title:           "Bash: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,40 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (なに？そしてなぜ？)
+現在の日付を取得するっていうのは、今日が何年何月何日かをプログラムで知ることさ。なぜそうするかって？ログ、レポート、時間依存の機能を実装するためだね。
 
-プログラマが現在の日付を取得するのは、特定のイベントが起きた日をトラッキングするため、または日付に依存する機能をプログラムに実装するためです。これは、ログを出力するときやトランザクションのタイムスタンプを追跡する際に特に便利です。
-
-## 使い方:
-
-C++の`<chrono>`や`<ctime>`ライブラリを使って現在の日付を取得する基本的な例を見てみましょう。
-
+## How to: (やり方)
 ```C++
 #include <iostream>
 #include <chrono>
 #include <ctime>
 
 int main() {
-    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
-    std::time_t now_c = std::chrono::system_clock::to_time_t(now - std::chrono::hours(24));
-    std::cout << "Yesterday was " << std::ctime(&now_c);
+    // chronoを使ってシステム時計から現在の時間を取得
+    auto now = std::chrono::system_clock::now();
+    // time_t型に変換
+    std::time_t now_time = std::chrono::system_clock::to_time_t(now);
+    
+    // tm型に変換して読みやすくする
+    std::tm* now_tm = std::localtime(&now_time);
+    std::cout << "年: " << 1900 + now_tm->tm_year << "\n";
+    std::cout << "月: " << 1 + now_tm->tm_mon << "\n";
+    std::cout << "日: " << now_tm->tm_mday << std::endl;
+
     return 0;
 }
 ```
-実行結果は以下の通りです:
+出力例：
 ```
-Yesterday was Sun Jul  4 16:48:52 2022
+年: 2023
+月: 2
+日: 15
 ```
-このコードは、現在の日付と時間を取得し、それを24時間前にバックデートすることで「昨日」を取得します。
 
-## 深堀り
+## Deep Dive (深掘り)
+`<chrono>`ライブラリはC++11で導入されて、時間に関する強力な操作を扱えるようになった。`std::chrono::system_clock`はシステムの現在時刻を表す。`std::time_t`は古くからあるC言語の標準で、UNIXエポック（1970年1月1日からの秒数）を表す。C++では`std::tm`と組み合わせて年月日などを取り出すことが多い。
 
-以前は`ctime`ライブラリの`time()`と`localtime()`関数を用いて現在の日付と時間を取得していましたが、C++11から`chrono`ライブラリが導入され、より簡単かつ安全に時間計算が可能になりました。他の方法として、オペレーティングシステム固有のAPIを使用する方法もありますが、これはプラットフォーム間での移植性に問題があります。
+ちなみに、他にも日付や時間を取得する方法はある。`<ctime>`の`std::localtime`などが古いやり方だね。しかし`<chrono>`はより安全で、精度が高く、使いやすい。
 
-## 関連情報
+具体的には、`std::chrono`系はタイムゾーンの問題や細かい時間の計算を扱う際に有利だ。時代と共にプログラミングも進化している、今日のC++では`<chrono>`を使うのが一般的だ。
 
-関連する情報については以下のリンクをご参照ください:
-
-1. `<chrono>`ライブラリの詳細: https://en.cppreference.com/w/cpp/chrono
-2. `<ctime>`ライブラリの詳細: https://en.cppreference.com/w/cpp/chrono/c
-3. C++の日付と時間についての更なる情報: https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm
+## See Also (関連情報)
+- [cppreference std::chrono](https://en.cppreference.com/w/cpp/chrono)
+- [cppreference std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t)
+- [cppreference std::tm](https://en.cppreference.com/w/cpp/chrono/c/tm)

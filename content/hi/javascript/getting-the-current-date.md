@@ -1,6 +1,7 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "C#: वर्तमान तारीख प्राप्त करना"
+date:                  2024-01-20T15:15:48.470981-07:00
+html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,35 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+जावास्क्रिप्ट में वर्तमान तारीख (current date) प्राप्त करना वक्त के साथ डेटा के संबंध बनाना है। डेवेलपर्स इसे लॉग्स, यूजर्स की एक्टिविटी और टाइम-सेंसिटिव फीचर्स के लिए इस्तेमाल करते हैं। 
 
-वर्तमान दिनांक प्राप्त करना मतलब किसी कंप्यूटर की स्थानीय समय को पढ़ने की क्रिया है। निरंतर बदलते हुए डेटा को संभालने, लॉग फ़ाइलों को टाइमस्टैंप करने और डेटा ट्रैक करने के लिए प्रोग्रामर्स इसे करते हैं। 
+## How to: (कैसे करें:)
+```javascript
+// वर्तमान तारीख और समय प्राप्त करना
+const now = new Date();
+console.log(now);
+// Output कुछ इस तरह हो सकता है: Thu Mar 31 2022 19:45:00 GMT+0530 (India Standard Time)
 
-## कैसे करें:
+// केवल वर्तमान दिनांक प्राप्त करना
+console.log(now.toDateString());
+// Output: 'Thu Mar 31 2022'
 
-नीचे दी हुई साधारण जावास्क्रिप्ट कोड की मदद से हम वर्तमान दिनांक प्राप्त करते हैं। यह कोड इसे कंसोल में प्रिंट करेगा। 
-
-```Javascript
-let vartmaanDinaank = new Date();
-console.log(vartmaanDinaank);
+// केवल वर्तमान समय प्राप्त करना
+console.log(now.toTimeString());
+// Output: '19:45:00 GMT+0530 (India Standard Time)'
 ```
 
-जो नतीजा है-
+## Deep Dive (गहराई में जानकारी)
+जावास्क्रिप्ट में तारीख की माहिती `Date` ऑब्जेक्ट से आती है जो 1970 से मिलान करता है। इसमें मिलीसेकंड्स को माप कर समय को प्रस्तुत किया जाता है।
 
-```
-2022-04-20T15:23:42.511Z
-```
+वैकल्पिक तरीकों में `moment.js`, `date-fns` जैसी लाइब्रेरीज़ हैं, पर `Date` ऑब्जेक्ट की सादगी इसे लोकप्रिय बनाती है। 
 
-## गहराई में:
+हम `Date` का इस्तेमाल कर के केवल वर्ष, महीना, हफ्ते के दिन आदि प्राप्त कर सकते हैं। जावास्क्रिप्ट रनटाइम की लोकल समय-सेटिंग्स और टाइमज़ोन के हिसाब से `Date` के फ़ंक्शन्स बदलते हैं।
 
-जावास्क्रिप्ट में दिनांक और समय को प्राप्त करने के अन्य तरीके भी हैं, जैसे कि `.toDateString()` , `.toGMTString()` आदि। इसका प्रयोग स्पेसिफिक दिनांक स्वरूप के लिए किया जा सकता है।
+## See Also (और देखें)
+- MDN Web Docs on Date: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Moment.js: [https://momentjs.com/](https://momentjs.com/)
+- date-fns library: [https://date-fns.org/](https://date-fns.org/) 
 
-जावास्क्रिप्ट अपने पहले वर्जन में ही `Date()` ऑब्जेक्ट का समर्थन करता था। हालांकि, इसे समय के साथ विकसित किया गया है और इसमें समय के लिए अधिक क्षमताएं जोड़ी गई हैं।
-
-## और देखें:
-
-1. Mozilla का [जावास्क्रिप्ट दिनांक प्रलेखन](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
-
-2. W3Schools का [जावास्क्रिप्ट दिनांक ट्यूटोरियल](https://www.w3schools.com/js/js_date_methods.asp). 
-
-3. Stack Overflow पर [दिनांक से सम्बंधित प्रश्नोत्तर](https://stackoverflow.com/questions/tagged/javascript+date).
+इन लिंक्स से आप `Date` ऑब्जेक्ट और इसके साथ काम करने के और भी तरीके सीख सकते हैं।

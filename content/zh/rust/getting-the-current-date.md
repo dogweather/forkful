@@ -1,6 +1,7 @@
 ---
 title:                "获取当前日期"
-html_title:           "Arduino: 获取当前日期"
+date:                  2024-01-20T15:16:51.447180-07:00
+html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,44 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么与为什么?
-获取当前日期是一种编程任务，它允许您的程序知道现在的日期。程序员这样做是因为他们需要在他们的程序中以某种方式与时间交互，比如计算持续时间，或者在某个具体的日期和时间执行任务。
+## What & Why?
+什么和为什么？获取当前日期可以帮助你记录事件发生的时间，用于日志、用户界面或时间戳。编程时常有这种需求，就像记录一个交易的时间或显示今天的日历。
 
-## 如何做:
-```Rust
-use chrono::{Datelocal, Local};
+## How to:
+怎么办：
 
-fn main() {
-    let now = Local::now();
-    println!("{}", now.format("%Y-%m-%d"));
-}
-```
-运行以上代码将会打印出当前日期，格式是 "YYYY-MM-DD"。
+要在Rust中获取当前日期，我们会使用`chrono`这个crate。这是一个处理日期和时间的库。
 
-再看看如何获取当前的日期和时间:
-```Rust
-use chrono::{DateTime, Local};
+首先，把`chrono`加到你的`Cargo.toml`：
 
-fn main() {
-    let now: DateTime<Local> = Local::now();
-    println!("{}", now);
-}
+```toml
+[dependencies]
+chrono = "0.4.19"
 ```
 
-## 深入挖掘
-历史上，Rust语言在日期和时间处理方面并不像某些其他语言那么强大，也没有内置的日期和时间库。 chrono是Rust中最广泛使用的日期和时间库，它提供了一个全面，有效的日期和时间处理解冓方。
+然后，以下面的代码为例来获取并打印当前日期：
 
-至于获取当前日期的替代方案，在某些情况下，您可能不需要足够准确的日期和时间。 在这种情况下，您可以使用标准库中的SystemTime:
 ```Rust
-use std::time::SystemTime;
+extern crate chrono;
+use chrono::{Local, Datelike};
 
 fn main() {
-    let now = SystemTime::now();
-    println!("{:?}", now);
+    let today = Local::today();
+    println!("今天的日期是: {}-{}-{}", today.year(), today.month(), today.day());
 }
 ```
-但是，记住这个方法提供的是自UNIX epoch以来的毫秒数，而不是具体的日期格式。
 
-## 参考资料
-* chrono库的文档：[https://docs.rs/chrono/0.4.19/chrono/](https://docs.rs/chrono/0.4.19/chrono/)
-* Rust官方时间库的文档：[https://doc.rust-lang.org/stable/std/time/](https://doc.rust-lang.org/stable/std/time/)
+运行程序应该会看到类似的输出：
+
+```
+今天的日期是: 2023-04-01
+```
+
+## Deep Dive
+深入探索：
+
+`chrono`是Rust中最受欢迎的日期和时间库。它基于C++的`boost::date_time`库，但有更安全、简洁的Rust风格。
+
+你还可以用标准库中的`std::time`，但它只提供了一些基本功能。`chrono`提供了全面的日期和时间处理，包括时区和格式化。
+
+实现细节上，`chrono`处理日期和时间是基于一个叫做`NaiveDateTime`的概念，这是一个不考虑时区的时间，然后结合时区信息来提供本地化的日期和时间。
+
+## See Also
+相关链接：
+
+- `chrono` crate官方文档：https://docs.rs/chrono/0.4.19/chrono/
+- Rust编程语言官网：https://www.rust-lang.org/
+- Rust `std::time`模块文档：https://doc.rust-lang.org/std/time/index.html

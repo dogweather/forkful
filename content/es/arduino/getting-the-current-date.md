@@ -1,6 +1,7 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "C#: Obteniendo la fecha actual"
+date:                  2024-01-20T15:13:02.391780-07:00
+html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,50 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Obtener la fecha actual en Arduino es la acción de adquirir la fecha y hora exacta donde se encuentra el programa ejecutándose. Es esencial para el registro de datos, control horario y marcar eventos.
+## Qué y Por Qué?
+En programación, obtener la fecha actual significa acceder al día, mes y año en tiempo real. Los programadores lo hacen para registrar eventos, controlar procesos temporizados o mostrar información relevante en sus proyectos.
 
 ## Cómo hacerlo:
-Usaremos el módulo RTC (Real Time Clock) DS3231 que es muy preciso. Mira el ejemplo de código.
+Para obtener la fecha en Arduino, necesitarás un módulo de reloj de tiempo real (RTC) como el DS3231. Primero, conecta el módulo a tu Arduino, luego usa este código:
 
 ```Arduino
-#include <Wire.h> 
-#include "RTClib.h" 
+#include <Wire.h>
+#include <RTClib.h>
 
-RTC_DS3231 rtc; 
+RTC_DS3231 rtc;
 
-void setup () 
-{ 
-   while (!Serial); 
-   if (! rtc.begin()) 
-   { 
-     Serial.println("No se encuentra el RTC"); 
-     while (1); 
-   }
-   
-   if (rtc.lostPower()) 
-   { 
-     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-   } 
+void setup() {
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("No se encuentra el RTC");
+    while (1);
+  }
 }
 
-void loop () 
-{ 
-   DateTime now = rtc.now(); 
-   Serial.print(now.year(), DEC);
-   Serial.print('/');
-   Serial.print(now.month(), DEC);
-   Serial.print('/');
-   Serial.println(now.day(), DEC);
-   delay(3000);
-} 
+void loop() {
+  DateTime now = rtc.now();
+  
+  Serial.print("Fecha: ");
+  Serial.print(now.day());
+  Serial.print('/');
+  Serial.print(now.month());
+  Serial.print('/');
+  Serial.println(now.year());
+  delay(1000);
+}
 ```
-Al ejecutarse, esta porción de código producirá una salida que muestre la fecha actual en el formato AAAA / MM / DD.
+Salida de ejemplo en el monitor serie:
+```
+Fecha: 28/3/2023
+```
 
-## Profundización:
-Arduino no tiene una función incorporada para obtener la fecha y hora actual. En sus inicios, la idea era construir una plataforma de microcontrolador simple y de bajo costo que no incluía un reloj en tiempo real. Ahora hay varias formas de obtener la fecha/hora actual, como usar un módulo RTC externo (como el DS3231 en nuestro ejemplo), o conectándose a Internet y obteniendo los datos de un servidor de hora en red.
+## Inmersión Profunda
+Históricamente, los Arduinos carecen de un reloj en tiempo real incorporado, por eso se usa un módulo externo como el DS3231 que mantiene la fecha y la hora con precisión. Existen alternativas como usar un módulo GPS o sincronizar con un servidor de tiempo en internet. Implementar la fecha y hora en hardware externo libera recursos del microcontrolador y proporciona precisión incluso con reinicios o pérdidas de energía.
 
-## Ver también:
-1. Biblioteca RTClib: https://github.com/adafruit/RTClib 
-2. Módulo DS3231: http://www.alldatasheet.es/datasheet-pdf/pdf/502461/DALLAS/DS3231.html
-3. Más detalles sobre Arduino: https://www.arduino.cc/
+## Ver También
+- Documentación de RTClib: https://github.com/adafruit/RTClib
+- Instructivo sobre cómo usar un módulo RTC con Arduino: https://www.arduino.cc/en/Tutorial/LibraryExamples/DS1302RTC
+- Información sobre cómo sincronizar hora con NTP: https://lastminuteengineers.com/esp32-ntp-server-date-time-tutorial/

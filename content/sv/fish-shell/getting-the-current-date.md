@@ -1,7 +1,8 @@
 ---
-title:                "Hämta aktuellt datum"
-html_title:           "Arduino: Hämta aktuellt datum"
-simple_title:         "Hämta aktuellt datum"
+title:                "Att hämta aktuellt datum"
+date:                  2024-01-20T15:14:19.459122-07:00
+html_title:           "Bash: Att hämta aktuellt datum"
+simple_title:         "Att hämta aktuellt datum"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -11,33 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att hämta dagens datum innebär att få fram det aktuella datumet som en sträng eller ett tal. Programmerare gör detta för att logga händelser, sortera data eller som en del av användargränssnitt.
 
-Att hämta det nuvarande datumet är en viktig funktion som ger programmerare möjligheten att ändra beteende baserat på när ett skript eller kommando körs. Det är användbart för att logga, tidstämpla filer, och schemalägga händelser.
+## Hur man gör:
+```Fish Shell
+# Hämta nuvarande datum och tid
+set -l nu (date)
+echo $nu
 
-## Hur man gör det:
-
-Hämta det nuvarande datumet i Fish Shell är lätt som en plätt. Använd bara kommandot `date`.
+# Resultat: tis 25 apr 2023 15:42:36 CEST
+```
 
 ```Fish Shell
-> date
-Onsdag 9 mars 2022 kl. 16:00:00 CET
+# Hämta enbart datumet i formatet ÅÅÅÅ-MM-DD
+set -l datum (date "+%Y-%m-%d")
+echo $datum
+
+# Resultat: 2023-04-25
 ```
-## Djupdykning
 
-Det att hämta datum har historiskt sett alltid varit en grundläggande komponent i programmering. I Unix-baserade system, som Fish Shell, används `date` kommandot. Det är ett kraftfullt verktyg, vilket kan skräddarsys för att passa en mängd olika behov.
+## Djupdykning:
+Historiskt sett har kommandon som `date` använts i shell-skript sedan de tidiga dagarna av operativsystem med tidsdelning. I Fish Shell använder du liknande kommandon som i andra skal, men syntaxen kan vara lite annorlunda, då Fish inte följer POSIX-standarder till fullo.
 
-Om du behöver mer kraft från ditt datumkommando, överväg att använda `strftime` funktionen i Fish. Det låter dig ange en anpassad formatsträng för att få exakt den output du behöver.
+Alternativ till `date` kan vara inbyggda Fish-funktioner eller externa verktyg som `ntpdate` för att synkronisera tiden via nätet. Detaljmässigt använder `date` systemklockan för att generera datum och tidsinformation. Du kan ändra formatet med argumentet `+"%Y-%m-%d"` där varje specifierare ger en del av datumet som år, månad eller dag.
 
-```Fish Shell
-> date "+%A %d %B %Y kl. %H:%M:%S %Z"
-Onsdag 09 Mars 2022 kl. 16:00:00 CET
-```
-I vissa fall kan du använda alternativa sätt för att hämta datumet, som `clock_gettime` funktionen i C++. Detta kan ge mer precision, men det kan också vara mer komplicerat att använda.
-
-## Se också:
-
-För mer information om att använda datumkommandot och andra relaterade ämnen, kolla in följande länkar:
-
-1. Fish Shell dokumentation: [Fish Shell](https://fishshell.com/docs/current/index.html)
-2. GNU Core Utilities manual: [Date-command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-3. Strftime manuella sidan: [Strftime](https://man7.org/linux/man-pages/man3/strftime.3.html)
+## Se även:
+- Fish dokumentation för datum och tidsvariabler: https://fishshell.com/docs/current/index.html#variables-date-and-time
+- GNU Coreutils `date` dokumentation för olika formatoptioner: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html

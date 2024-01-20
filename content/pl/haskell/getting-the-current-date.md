@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:14:40.315157-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,53 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pobieranie aktualnej daty w Haskellu
-
-## Co i Dlaczego?
-Pobieranie aktualnej daty to powszechne zadanie, które polega na uzyskaniu bieżącego dnia, miesiąca i roku. Programiści robią to, aby móc śledzić czas wykonania operacji, rejestrowaniem danych czy prostym produkowaniem stempli czasowych.
+## Co & Dlaczego?
+Pobieranie aktualnej daty to procedura uzupełniająca aplikacje o informację czasową. Programiści wykorzystują datę do logowania zdarzeń, okresowych funkcji i danych czasozależnych. 
 
 ## Jak to zrobić:
+W Haskellu możemy użyć pakietu `time` do pracy z datą i czasem:
 
-```Haskell
+```haskell
 import Data.Time
 
+main :: IO ()
 main = do
-    current <- getCurrentTime
-    print current
+    currentDate <- getCurrentTime
+    print currentDate
+```
+Wykonanie powyższego kodu wyświetli aktualną datę i czas w formacie UTC, np.:
+
+```
+2023-04-05 12:34:56.789876 UTC
 ```
 
-Podczas uruchomienia tego kodu, uzyskamy wynik podobny do poniższego:
+## Deep Dive
+Pobieranie daty w Haskellu wydaje się trywialne, ale warto poznać kilka faktów:
+1. Historia: Moduł `Data.Time` pojawił się w Haskellu jako część Package time, który ewoluował na przestrzeni lat, aby zapewnić bardziej obszerne i wszechstronne wsparcie dla obliczeń daty i czasu.
+2. Alternatywy: Poza `Data.Time`, istnieją inne biblioteki, np. `old-time`, ale są mniej preferowane z uwagi na ograniczenia i starszą konstrukcję.
+3. Szczegóły implementacji: `getCurrentTime` pochodzi z systemu operacyjnego, który odpowiada za śledzenie czasu UTC. Haskell jedynie udostępnia przyjazny interfejs do tych informacji.
 
-```Haskell
-2021-04-29 11:15:41.703853 UTC
-```
-
-## Głębsze omówienie
-
-**Kontekst historyczny**
-Biblioteka `Data.Time` w Haskellu istnieje już od dłuższego czasu i jest standardowym rozwiązaniem do obsługi czasu w tym języku.
-
-**Alternatywy**
-Możliwe są również bardziej szczegółowe manipulacje z datą i czasem, używając innych bibliotek, takich jak `time-lens`, `time-parsers` itd.
-
-**Szczegóły implementacji**
-Możemy pobrać bardziej szczegółowe dane o czasie stosując różne funkcje, które zgłębiają typy danych z biblioteki `Data.Time`. Na przykład, `utctDay current` zwraca tylko datę bez czasu.
-
-```Haskell
-import Data.Time
-
-main = do
-    current <- getCurrentTime
-    print $ utctDay current
-```
-
-Gdzie wynikiem powyższego kodu będzie:
-
-```Haskell
-2021-04-29
-```
-
-## Zobacz także
-
-- [Dokumentacja Data.Time](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [Projekt time-lens w GitHub](https://github.com/ekmett/lens)
+## Zobacz również
+- [Dokumentacja pakietu `time`](https://hackage.haskell.org/package/time)
+- [Haskell.org – Artykuły o Data.Time](https://wiki.haskell.org/Time)
+- [SO - Haskell: Jak uzyskać aktualną datę i czas](https://stackoverflow.com/questions/4702325/how-to-get-the-current-date-and-time-in-haskell)

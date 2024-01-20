@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:14:26.220140-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,32 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
-לקבלת התאריך הנוכחי באמצעות הקוד מאפשר לנו לעקובאחרי זמן ריצת התוכנית, ליצור תגיות תאריך לאירועים, ולהתמודד עם זמן ממשי. זה חיוני למגוון של יישומים, כולל יישומים של שרת וממשק משתמש.
+## מה ולמה?
+קבלת התאריך הנוכחי בתכנות זה לשלוף את התאריך והשעה כרגע. תוכניתנים עושים את זה לתיעוד, תיזמון פעולות ושלל פיצ'רים שתלויים בזמן אמיתי.
 
-## איך לעשות: 
-
-קוד Elm צפוי לשליפת התאריך הנוכחי הוא בעצם פונקציה שמחזירה `Task`, אשר מציין פעולה שצריכה להתבצע בזמן ריצה:
-
+## איך לעשות:
+ב-Elm, לקבל את התאריך הנוכחי זה קצת שונה משפות אחרות כי אתה צריך לעבוד עם מערכת ההודעות של הסביבה.
 ```Elm
-import Time
+import Browser
+import Task
+import Time exposing (Posix)
 
-getTime : Task x Time.Posix
-getTime =
-    Time.now
+type Msg = GotTime Posix
+
+type alias Model = Maybe Posix
+
+init : () -> (Model, Cmd Msg)
+init () =
+    (Nothing, Task.perform GotTime Time.now)
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GotTime posixTime ->
+            (Just posixTime, Cmd.none)
+
+-- זה יפעיל את 'init', וכאשר התאריך הנוכחי יתקבל, 'update' יעבד את המידע.
+main =
+    Browser.element
+        { init = init
+        , update = update
+        , view = view
+        , subscriptions = always Sub.none
+        }
+
+view : Model -> Html msg
+view model =
+    case model of
+        Nothing -> 
+            text "Fetching current date and time..."
+        Just posixTime ->
+            text <| "Current date and time: " ++ (Time.posixToHuman posixTime)
 ```
-בחלק זה של הקוד, פונקצית ה`now` ממודול `Time` נקראת להחזיר את השנייה הנוכחית מאז אפס הזמן, מאגר POSIX.
+הפלט יהיה כמו `"Current date and time: Sat, 24 Jun 2023 12:45:27 GMT"` אחרי שהזמן יתעדכן.
 
-## צלילה עמוקה: 
+## עיון מעמיק
+לפני Elm 0.19, היה יותר קל לקבל את התאריך הנוכחי בזמנים סינכרוניים. אבל בגרסה הזו, מבנה הקוד הפך להיות מבוסס יותר על הודעות כדי לקדם את היבטי תכנות הפונקציונלי של Elm ולתת ניהול טוב יותר של תהליכים א-סינכרוניים. יש אלטרנטיבות כמו שימוש ב`Time.every` לקבלת עדכוני זמן באופן מחזורי, אבל לקבלת התאריך הנוכחי בזמן פתיחת האפליקציה, הדוגמה למעלה היא הנכונה. מודל ה`Posix` מתייחס לפורמט זמן אוניברסלי שמקל על עבודה עם זמנים בצורה מתמטית ובמעבר בין אזורי זמן.
 
-באופן היסטורי, אותה טכניקה של שליפת התאריך והשעה משמשת מתחילת המחשב. השפה של Elm רק מבצעת אותה בצורה הפשוטה והמפורשת ביותר.
-
-למרות שהגישה הזו היא המקובלת ביותר על ידי הקהל של Elm, דרכים אחרות יכולות לעזור לטפל בתאריך ובזמן בכדי להתאים יותר לצורכים שונים.
-
-המידע שמחזירה הפונקציה, `Time.Posix`, הוא תאריך ושעה 
-בפורמט POSIX, זמן אוניברסלי מתאים, המציין את מספר השניות שחלפו מאז 1 בינואר 1970.
-
-## ראו גם:
-
-1. [Time.Posix documentation](https://package.elm-lang.org/packages/elm/time/latest/Time-Posix): הסביר את זה באופן מפורט יותר. 
-3. [Elm’s Time module documentation](https://package.elm-lang.org/packages/elm/time/latest/Time): כל אפשרויות השימוש של מודול Time.
+## ראה גם
+- [Elm Time documentation](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm Browser documentation](https://package.elm-lang.org/packages/elm/browser/latest/)

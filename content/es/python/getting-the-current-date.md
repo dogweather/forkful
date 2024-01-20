@@ -1,6 +1,7 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "C#: Obteniendo la fecha actual"
+date:                  2024-01-20T15:16:15.345637-07:00
+html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Python"
 category:             "Python"
@@ -10,50 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Obtener la fecha actual en Python significa saber exactamente qué día es hoy de acuerdo al sistema. Los programadores hacen esto por razones como registro de transacciones, timestamp de eventos o cálculos de tiempo.
+## Qué y Por Qué?
+Obtener la fecha actual en Python significa capturar la fecha del sistema en el momento de la ejecución. Los programadores usan esta funcionalidad para registros de tiempo, funciones de caducidad, y cualquier tarea que necesite sincronización con el calendario real.
 
-## ¿Cómo hacerlo?:
-Aquí se muestra cómo obtener la fecha actual utilizando la biblioteca `datetime` en Python:
-
-```Python
-import datetime
-
-# Obtener la fecha y hora actuales
-now = datetime.datetime.now()
-
-# Imprimir la fecha actual
-print("La fecha actual es: ", now)
-```
-
-Y aquí está la muestra de la salida:
-
-```Python 
-La fecha actual es:  2022-05-15 09:24:55.850674
-```
-
-## Profundización:
-Luego de sumergirse en la biblioteca `datetime`, esto es lo que necesitas saber.
-
-**Contexto histórico**: antes de la biblioteca `datetime`, los programadores a menudo lidiaban con la fecha y hora en Python a un nivel muy bajo. Con la introducción de `datetime` en Python 2.3 en 2003, trabajar con fechas y horas se volvió mucho más natural y fácil.
-
-**Alternativas**: también puedes utilizar la biblioteca `time` para trabajar con fechas y horas.
+## Cómo hacerlo:
+La forma más fácil y común de obtener la fecha actual en Python es usando el módulo `datetime`. Aquí, un ejemplo sencillo:
 
 ```Python
-import time
+from datetime import date
 
-# Obtén el tiempo actual en segundos desde la Época de Unix
-seconds = time.time()
+hoy = date.today()
 
-# Conviértelo en una estructura de tiempo y luego imprímelo
-print("La fecha actual es: ", time.ctime(seconds))
+print(f"La fecha de hoy es: {hoy}")
 ```
 
-**Detalles de implementación**: `datetime.datetime.now()` devuelve la fecha y hora actuales. `datetime` provee tanto la fecha como la hora, por lo que es más versátil que `time.time()`, que sólo proporciona la hora.
+Ejecútalo y verás algo similar a:
 
-## Ver también:
-Para más información, revisa estos recursos:
+```
+La fecha de hoy es: 2023-04-01
+```
 
-- Documentación oficial de Python para `datetime`: [link](https://docs.python.org/3/library/datetime.html)
-- Otros módulos en Python para trabajar con fecha y hora: `time`, `calendar`: [link](https://docs.python.org/3/library/time.html), [link](https://docs.python.org/3/library/calendar.html)
-- Tutorial de Python sobre el trabajo con fecha y hora: [link](https://www.w3schools.com/python/python_datetime.asp)
+## Inmersión Profunda
+La biblioteca estándar de Python ha incluido `datetime` desde la versión 2.3. Antes de `datetime`, los programadores solían lidiar con el módulo `time`, que era menos intuitivo para manejar fechas. Una alternativa moderna es `arrow`, una librería que simplifica muchas operaciones de tiempo y fecha.
+
+Cada objeto de fecha en `datetime` se trata de un objeto inmutable con tres atributos: `year`, `month` y `day`. Python almacena la fecha y hora en UTC internamente, pero con `datetime` puedes fácilmente convertirlas a cualquier zona horaria.
+
+## Ver También
+- La documentación oficial de `datetime`: https://docs.python.org/3/library/datetime.html
+- Python `time` module documentation for historical context: https://docs.python.org/3/library/time.html
+- Arrow: A sensible, human-friendly library for dealing with dates and times: https://arrow.readthedocs.io/en/latest/

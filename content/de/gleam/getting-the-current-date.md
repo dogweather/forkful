@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:14:30.620548-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,37 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+# Was & Warum?
+Das Abrufen des aktuellen Datums ist eine Möglichkeit für Programme, sich zeitlich zu orientieren. Programmierer nutzen dies für alles Mögliche: Von Log-Einträgen bis zu zeitabhängigen Funktionen.
 
-Das Abrufen des aktuellen Datums ist eine Standardfunktion in der Programmierung. Es wird oft von Programmierern verwendet, um Zeitstempel für Benutzeraktivitäten zu erstellen oder Termine und Fristen zu verwalten.
-
-## So geht's:
-
-`scheduler` von Gleam enthält die Möglichkeit, Datum und Uhrzeit abzurufen. Hier ist ein Beispiel, wie es aussieht:
+# Wie geht das:
+In Gleam geht's so:
 
 ```gleam
-import gleam/otp/scheduler.{now}
+import gleam/utc_now.{utc_now}
+import gleam/io
 
-pub fn current_date() {
-  let timestamp = now(Native)
-  let {_year, _month, _day} = timestamp.date()
-
-  println("Jahr: {year}, Monat: {month}, Tag: {day}")
+pub fn main() {
+  let heute = utc_now()
+  io.println(heute)
 }
 ```
 
-Dieser Code gibt das aktuelle Jahr, Monat und Tag zurück. 
+Wenn du das laufen lässt, siehst du etwa so etwas:
 
-## Tief tauchen:
+```
+{{2023, 4, 10}, {12, 34, 56}}
+```
 
-Früher musste man die Uhrzeit und das Datum manuell vom Betriebssystem abrufen und umwandeln, was unzuverlässig und ineffizient war. Gleam hat diesen Prozess durch die Einbeziehung von eingebauten Funktionen vereinfacht, die Zeit und Datum in einer viel mehr handhabbaren Weise abrufen.
+# Tiefergehend
+Fangen wir historisch an. In vielen älteren Sprachen gab es komplizierte Wege, um an das aktuelle Datum zu kommen. Heute hat jedes respektable Sprachsystem eine eingebaute Funktion dafür – so auch Gleam.
 
-Ein alternativer Ansatz zum Abrufen des aktuellen Datums besteht darin, auf interne Funktionen von Gleam zu verzichten und stattdessen eine Drittanbieter-Bibliothek zu verwenden. Obwohl dies zusätzliche Funktionen bereitstellen könnte, erhöht es auch die Komplexität und möglicherweise die Unzuverlässigkeit des Programms.
+Alternativen? Andere Sprachen und Bibliotheken bieten manchmal mehr Customization oder komplexe Zeitberechnungen. In Gleam hält man es einfach und konkret.
 
-In Bezug auf die Implementierungsdetails extrahiert die `now` Funktion von Gleam das aktuelle Datum und die aktuelle Uhrzeit aus dem internen Managementsystem. Diese Information wird dann in ein leicht zugängliches Format umgewandelt, das für weitere Manipulationen oder Ausgaben genutzt werden kann.
+Die `utc_now` Funktion gibt dir UTC-Zeit. Für lokale Zeiten musst du weitere Bibliotheken nutzen oder eigene Berechnungen anstellen.
 
-## Siehe auch:
-
-Für weitere Informationen über Gleam und seine Funktionen, besuchen Sie:
-
-2. [Gleam Repositorium auf Github](https://github.com/gleam-lang/gleam)
+# Siehe auch
+- Gleam's Standard Library Docs: [https://hexdocs.pm/gleam_stdlib/](https://hexdocs.pm/gleam_stdlib/)
+- Erlang's Calendar Module für mehr Tiefgang: [https://erlang.org/doc/man/calendar.html](https://erlang.org/doc/man/calendar.html)
+- Zeitzone-Berechnungen verstehen: [https://www.iana.org/time-zones](https://www.iana.org/time-zones)

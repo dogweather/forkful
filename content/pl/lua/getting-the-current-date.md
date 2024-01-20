@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:15:32.445186-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,43 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Pobranie aktualnej daty oznacza uzyskanie informacji o dokładnym momencie, w którym znajdujemy się w czasie. Programiści używają tej funkcji do logowania, ustalania terminów, i wielu innych zadań wymagających śledzenia czasu.
 
-W programowaniu nieraz musimy pozyskać aktualną datę. Czy to do logowania danych, wprowadzania odnośników czasowych czy śledzenia wydarzeń w czasie - znajomość sposobów na dostęp do bieżącej daty jest niezbędna.
-
-## Jak to zrobić:
-
-W Lua zdobycie bieżącej daty jest proste. Używamy do tego funkcji `os.date`.
-
+## How to: (Jak to zrobić:)
 ```Lua
-print(os.date())
+-- Wczytanie modułu odpowiedzialnego za czas
+local os_date = os.date
+
+-- Pobranie aktualnej daty i czasu jako string
+print(os_date("%Y-%m-%d %H:%M:%S")) -- output: 2023-04-01 12:30:45
+
+-- Pobranie aktualnej daty jako tabeli
+local date_table = os_date("*t")
+print(date_table.year, date_table.month, date_table.day) -- output: 2023 4 1
 ```
 
-Wynik powyższego kodu wyglądałby mniej więcej tak:
+## Deep Dive (Wgłębiając się)
+Lua oferuje funkcje języka os.date, które służą do uzyskiwania bieżących informacji o czasie. Po raz pierwszy zostały wprowadzone w Lua 5.1. Oto alternatywne sposoby:
 
-```Lua
-Tue Sep 21 14:36:07 2021
-```
+- **os.time()**: Zwraca czas jako timestamp (sekundy od epoch, czyli od 1 stycznia 1970).
+- **os.clock()**: Mierzy czas CPU używany przez program.
 
-Możemy też dostosować format wyjściowy, na przykład tak:
+Datę można formatować w wielu stylach, korzystając z różnych ciągów formatujących zgodnych z funkcją strftime w C. Na przykład, "%A" wyświetli pełną nazwę dnia tygodnia, a "%B" pełną nazwę miesiąca. Implementacja czasu w Lua wynika bezpośrednio z funkcji ANSI C, co sprawia, że jest zarówno wydajna, jak i znana dla programistów w innych językach.
 
-```Lua
-print(os.date("%A, %B %d, %Y"))
-```
-
-Rezultatem powyższego kodu będzie data w formacie "dzień tygodnia, miesiąc dzień, rok":
-
-```Lua
-Tuesday, September 21, 2021
-```
-
-## Deep Dive
-
-`os.date` jest częścią biblioteki OS w Lua. Pierwotnie w Lua istniała tylko funkcja `os.time`, służąca do uzyskiwania liczby sekund od pewnego punktu odniesienia (zwanego czasem epoki), zwykle od 1 stycznia 1970 roku. Funkcja `os.date` została dodana później, aby ułatwić programistom manipulowanie i wyświetlanie dat.
-
-W przypadku większego stopnia personalizacji, możemy użyć alternatywnych bibliotek, takich jak `LuaDate` lub `chrono`. Właściwy wybór zależy od szczegółowych wymagań projektu.
-
-## Zobacz też:
-
-- Dokumentacja Lua: [os.date](https://www.lua.org/pil/22.1.html)
-- GitHub: [LuaDate](https://github.com/Tieske/date)
+## See Also (Zobacz również)
+- Dokumentacja Lua `os` library: [https://www.lua.org/manual/5.4/manual.html#6.9](https://www.lua.org/manual/5.4/manual.html#6.9)
+- Strftime format specifiers reference: [http://man7.org/linux/man-pages/man3/strftime.3.html](http://man7.org/linux/man-pages/man3/strftime.3.html)

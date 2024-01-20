@@ -1,6 +1,7 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "C#: Obteniendo la fecha actual"
+date:                  2024-01-20T15:14:01.855312-07:00
+html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,66 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
-Obtener la fecha actual en la programación permite a los codificadores rastrear y registrar eventos en tiempo real. Esto es crucial en aplicaciones donde los registros precisos de fechas y horas son fundamentales, como en las operaciones de comercio electrónico o el seguimiento de proyectos.
+## Qué & Por Qué?
+
+Obtener la fecha actual significa acceder al valor de la fecha y hora del momento presente. Los programadores lo hacen para funciones como registros, marcas de tiempo, o funciones dependientes del tiempo real.
 
 ## Cómo hacerlo:
-Para obtener la fecha actual en Elm, usamos el módulo `Task` y `Time`. Vamos a crear un simple programa con Elm:
 
 ```Elm
+module Main exposing (main)
+
 import Browser
 import Html exposing (Html, text)
 import Task
-import Time
+import Time exposing (Posix)
 
--- Modelo
-type alias Model =
-    Maybe Time.Posix
+type alias Model = Posix
 
+type Msg = UpdateTime Posix
+
+-- Iniciar la aplicación y suscribirse a cambios en el tiempo
+main : Program () Model Msg
 main =
     Browser.element
         { init = init
-        , view = view
         , update = update
-        , subscriptions = always Sub.none
+        , view = view
+        , subscriptions = subscriptions
         }
 
--- Inicialización
-init : () -> ( Model, Cmd Msg )
+-- Inicializar el modelo con un tiempo en cero
+init : () -> (Model, Cmd Msg)
 init _ =
-    ( Nothing, Task.perform NewTime Time.now )
+    (Time.millisToPosix 0, Task.perform UpdateTime Time.now)
 
--- Actualización
-type Msg
-    = NewTime Time.Posix
+-- Actualizar el modelo con el nuevo tiempo
+update : Msg -> Model -> (Model, Cmd Msg)
+update (UpdateTime newTime) _ =
+    (newTime, Cmd.none)
 
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        NewTime newTime ->
-            ( Just newTime, Cmd.none )
-
--- Vista
+-- Mostrar la fecha actual
 view : Model -> Html Msg
-view model =
-    case model of
-        Nothing ->
-            text "Cargando..."
+view currentTime =
+    text (String.fromInt (Time.posixToMillis currentTime))
 
-        Just posix ->
-            text (Time.toString posix)
+-- Suscribirse a Time.every para recibir ticks del reloj
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    Time.every 1000 (UpdateTime)
 
--- Corre el programa
--- Verás la hora actual impresa en la pantalla
 ```
 
-## Análisis más Profundo
-En versiones anteriores de Elm, obtener el tiempo actual involucraba el uso de `Signal`, pero se decidió mover la funcionalidad de tiempo a `Task` y `Sub` en la versión 0.17 para simplificar la arquitectura general del idioma.
+Sample output:
+```
+1616265392390
+```
 
-Las alternativas a la función `Time.now` incluyen el uso de otras bibliotecas de manejo de tiempo (si se necesita una funcionalidad más compleja) o realizar solicitudes HTTP a servicios de tiempo en línea.
+## Profundización
 
-El detalle de la implementación es que, debajo del capó, Elm recurre a la función del objeto `Date` integrado en JavaScript para obtener la fecha y hora actuales. Luego, Elm toma esta información y la convierte en un valor `Posix`, que es esencialmente un recuento de milisegundos desde la época.
+Históricamente, obtener la fecha en programación ha estado vinculado al sistema operativo del host. En Elm, se usa el módulo `Time` para interactuar con fechas y horas. Alternativas incluyen utilizar bibliotecas de terceros para funcionalidades más complejas. Elm trata la hora como Posix, que representa milisegundos desde la época Unix (1 de enero de 1970). Se prefiere usar `Cmd Msg` para mantener las actualizaciones dentro del arquitectura de Elm.
 
-## Consultar También
-1. Documentación oficial de Elm sobre `Time`: [elm/time](https://package.elm-lang.org/packages/elm/time/latest/)
-3. Para más preguntas sobre Elm en Español: [discord de Elm en español](https://discord.com/invite/elm-es)
+## Ver También
+
+- [Documentación oficial de Elm - Time](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm Guide - Effects](https://guide.elm-lang.org/effects/)
+- [Paquete `justinmimbs/time-extra` para funciones adicionales de tiempo](https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/)

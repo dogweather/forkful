@@ -1,6 +1,7 @@
 ---
 title:                "Ottenere la data corrente"
-html_title:           "Java: Ottenere la data corrente"
+date:                  2024-01-20T15:12:52.139468-07:00
+html_title:           "Arduino: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,35 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
+## What & Why? (Cosa & Perché?)
+Ottenere la data corrente permette ai tuoi progetti di sapere "quando". È utile per tracciare eventi, loggare dati o creare timestamp.
 
-Ottenere la data corrente significa sapere quale data è nel momento specifico in cui viene eseguita la funzione. Questo è utile per i programmatori quando hanno bisogno di tenere traccia del tempo o per organizzare eventi in base alla data.
-
-## Come fare:
-
-Nell'Arduino, non è possibile ottenere direttamente la data corrente. Pertanto, è necessario utilizzare un modulo RTC (Real Time Clock) esterno, come il DS1307. Ecco un esempio di come fare:
+## How to: (Come fare:)
+Prima, connetti un modulo RTC (Real Time Clock) come il DS3231 al tuo Arduino. Poi, usa questa libreria per leggere la data.
 
 ```Arduino
 #include <Wire.h>
-#include "RTClib.h"
+#include <RTClib.h>
 
-RTC_DS1307 rtc;
+RTC_DS3231 rtc;
 
-void setup () {
+void setup() {
   Serial.begin(9600);
   
-  if (! rtc.begin()) {
-    Serial.println("Non riesco a trovare RTC");
+  if (!rtc.begin()) {
+    Serial.println("Impossibile trovare RTC");
     while (1);
   }
 
-  if (! rtc.isrunning()) {
-    Serial.println("RTC non è in esecuzione!");
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  if (rtc.lostPower()) {
+    Serial.println("RTC perso alimentazione, imposta la data e ora!");
+    // Impostazione manuale della data e dell'ora
+    // rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
-void loop () {
+void loop() {
   DateTime now = rtc.now();
   
   Serial.print(now.year(), DEC);
@@ -46,25 +46,29 @@ void loop () {
   Serial.print(now.month(), DEC);
   Serial.print('/');
   Serial.print(now.day(), DEC);
+  Serial.print(" ");
+  Serial.print(now.hour(), DEC);
+  Serial.print(':');
+  Serial.print(now.minute(), DEC);
+  Serial.print(':');
+  Serial.print(now.second(), DEC);
   Serial.println();
   
-  delay(3000);
+  delay(1000);
 }
 ```
+Output Campione:
+```
+2023/3/30 15:46:10
+```
 
-Nell'output seriale, vedrai la data corrente visualizzata ogni tre secondi.
+## Deep Dive (Approfondimento)
+Historically, keeping time on a microcontroller non era facile: no internal clock or battery. RTC modules hanno cambiato il gioco.
 
-## Approfondimento
+Esistono alternative all'RTC, come NTP (Network Time Protocol) per dispositivi connessi o aggiornamenti orari tramite GPS.
 
-Dal punto di vista storico, prima dell'introduzione dei moduli RTC, i programmatori usavano metodi complicati e imprecisi per tracciare il tempo. Oggi, con i moduli RTC come il DS1307, ottenere la data corrente è un'operazione molto più semplice.
+Dettagli implementativi: RTC lib gestisce la comunicazione tramite I2C, mantenendo il codice semplice per l'utente finale.
 
-Come alternativa al DS1307, si può utilizzare anche il modulo RTC DS3231, più accurato e con una batteria di backup integrata.
-
-Dettagli di implementazione: In questa implementazione specifica, usiamo la libreria `RTClib` per interfacciarci con il modulo RTC. La funzione `rtc.now()` ritorna un oggetto `DateTime` che contiene la data e l'ora corrente.
-
-## Vedi Anche:
-
-Per saperne di più sul modulo RTC DS1307 e sulla libreria RTClib, visita i seguenti link:
-
-1. [Modulo RTC DS1307](https://lastminuteengineers.com/ds1307-rtc-arduino-tutorial/)
-2. [Libreria RTClib](https://github.com/adafruit/RTClib)
+## See Also (Vedi Anche)
+- [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
+- [DS3231 RTC Library](https://github.com/adafruit/RTClib)

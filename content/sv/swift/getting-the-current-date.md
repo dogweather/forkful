@@ -1,7 +1,8 @@
 ---
-title:                "Hämta aktuellt datum"
-html_title:           "Arduino: Hämta aktuellt datum"
-simple_title:         "Hämta aktuellt datum"
+title:                "Att hämta aktuellt datum"
+date:                  2024-01-20T15:16:57.519172-07:00
+html_title:           "Bash: Att hämta aktuellt datum"
+simple_title:         "Att hämta aktuellt datum"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,47 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Programmera med Swift: Så får du datumet för idag
-
 ## Vad & Varför?
+Att hämta aktuellt datum innebär att få tag på datum och tid just nu. Programmerare gör detta för att hantera deadlines, tidstämplar, schemaläggningar och mycket mer.
 
-Att få dagens datum är processen att hämta aktuellt datum och tid från systemet. Programmerare gör detta för att spåra händelseförlopp, logga data eller för rent visuella syften i en app.
-
-## Så här gör du:
-
-Det är inte svårt att få dagens datum i Swift. Här är ett exempel på hur du gör:
-
+## Hur man gör:
 ```Swift
+import Foundation
+
 let nu = Date()
 print(nu)
 ```
-
-Koden ovan kommer att producera något liknande följande utmatning:
-
-```Swift
-2023-02-01 14:37:42 +0000
+Exempel på utskrift:
+```
+2023-04-01 12:00:00 +0000
 ```
 
-Denna kod kommer att producera dagens datum och tid i GMT format.
-
-## Djupdykning
-
-Det har alltid varit viktigt för system och program att kunna hålla reda på tid och datum. I Swift, som släpptes av Apple 2014, kan detta uppnås med inbyggda metoder tillgängliga i `Date` klassen.
-
-Alternativt kan du också använda `Calendar` klassen för mer komplexa datumoperationer. Till exempel:
-
+För finjustering och format:
 ```Swift
-let nu = Date()
+let formatter = DateFormatter()
+formatter.dateStyle = .short
+formatter.timeStyle = .long
+
+let formatDatum = formatter.string(from: nu)
+print(formatDatum)
+```
+Exempel på utskrift:
+```
+01/04/2023, 12:00:00 GMT+1
+```
+
+## Djupdykning:
+Historiskt sett har hantering av datum och tid varit knepigt. Tidszoner, skottsekunder och olika kalendrar komplicerar. I Swift hanteras detta genom `Date`-klassen i Foundation-biblioteket. 
+
+Ett alternativ till `Date()` är att använda `DateComponents` för mer kontroll:
+```Swift
+var komponenter = DateComponents()
+komponenter.year = 2023
+komponenter.month = 4
+komponenter.day = 1
+komponenter.timeZone = TimeZone(abbreviation: "CET") // Centraleuropeisk tid
+komponenter.hour = 12
+komponenter.minute = 0
+
 let kalender = Calendar.current
-let komponenter = kalender.dateComponents([.year, .month, .day], from: nu)
+if let specifiktDatum = kalender.date(from: komponenter) {
+    print(specifiktDatum)
+}
 ```
 
-Ovanstående kod kommer att ge dig året, månaden och dagen för dagens datum.
+När det gäller prestanda är `Date()` snabb och effektiv för de flesta användningsfall. Det hanterar automatiskt tidzoner baserat på användarens enhetsinställningar.
 
-Däremot kan enklare användningar, som att helt enkelt få dagens datum, uppnås med en enda linje kod genom klassen `Date`.
-
-## Se också:
-
-- Apple officiella dokumentation om Swifts `Date` och `Calendar` klasser: 
-  - [Date](https://developer.apple.com/documentation/foundation/date)
-  - [Calendar](https://developer.apple.com/documentation/foundation/calendar)
+## Se även:
+- [TimeZone dokumentation på Apple Developer](https://developer.apple.com/documentation/foundation/timezone)
+- [DateFormatter dokumentation på Apple Developer](https://developer.apple.com/documentation/foundation/dateformatter)

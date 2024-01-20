@@ -1,7 +1,8 @@
 ---
-title:                "Få den gjeldende datoen"
-html_title:           "Haskell: Få den gjeldende datoen"
-simple_title:         "Få den gjeldende datoen"
+title:                "Slik får du tak i dagens dato"
+date:                  2024-01-20T15:13:13.077196-07:00
+html_title:           "C: Slik får du tak i dagens dato"
+simple_title:         "Slik får du tak i dagens dato"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -11,43 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Å hente den nåværende datoen er å få datoen på dette nøyaktige tidspunktet fra systemet. Programmerere gjør det for å merke data, loggføre hendelser, eller kanskje sette en tidsfrist.
+Å hente gjeldende dato betyr å få tak i dagens kalenderdato. Programmerere gjør dette for å merke hendelser, styre tidssensitive funksjoner, eller bare for å vise dato for brukere.
 
 ## Hvordan:
+For å hente nåværende dato i Arduino, trenger du et RTC (Real Time Clock) modul. Her er et eksempel med en DS3231 RTC:
 
-Arduino har ingen innebygd funksjon for å hente nåværende dato, men vi kan bruke en RTC-modul (Real Time Clock). Her er et eksempel på hvordan du kan bruke DS3231 RTC-modulen med Arduino.
+```arduino
+#include <Wire.h>
+#include <RTClib.h>
 
-```Arduino
-#include <DS3231.h>
+RTC_DS3231 rtc;
 
-DS3231  rtc(SDA, SCL);
-
-void setup()
-{
-  rtc.begin();
+void setup() {
+  Serial.begin(9600);
+  if (!rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+  if (rtc.lostPower()) {
+    Serial.println("RTC lost power, let's set the time!");
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
 }
 
-void loop()
-{
-  Serial.print(rtc.getDateStr());
+void loop() {
+  DateTime now = rtc.now();
+  
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.println(now.day(), DEC);
+  
   delay(1000);
 }
 ```
-Så når du laster ned og kjører dette programmet, vil utskriften på serielporten se slik ut:
 
-```Arduino
-2023-05-04 
-2023-05-04
-...
+Eksempelutdata:
+```
+2023/3/15
 ```
 
-## Deep Dive
+## Dypdykk:
+Å holde styr på tid og dato har vært essensielt siden de første datamaskinene. RTC-moduler som DS3231 beholder tid selv uten mikrokontrollerens hjelp, takket være et lite batteri. Alternativer inkluderer nettverksbaserte tidsinnhentinger via NTP (Network Time Protocol), men RTC-moduler gir deg offline funksjonalitet. Implementeringen av datofunksjonene i Arduino krever at du holder biblioteker oppdatert og forstår hvordan tiden vedlikeholdes i din spesifikke RTC-modul.
 
-Historisk sett, siden Arduinos ikke har en innebygd klokke, har de alltid vært avhengige av eksterne moduler for å få sanntidsdata. Det finnes flere alternative moduler, som DS1307, som også kan gi deg nåværende tid og dato. Disse modulene lagrer tidspunktet selv når Arduino er slått av og holdes nøyaktige ved hjelp av et lite klokkebatteri. 
+## Se Også:
 
-Å hente den nåværende datoen med en RTC-modul er ganske rett fram, men krever riktig kobling og oppsett av modulen. For DS3231 er SDA og SCL (I2C) tilkoblet for kommunikasjon med Arduino. I eksemplet ovenfor er rtc.getDateStr() koden som henter og returnerer en streng med datoen.
-
-## Se Også
-
-For å lære mer om dette, kan du lese disse:
+- [RTClib Library GitHub](https://github.com/adafruit/RTClib)

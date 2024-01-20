@@ -1,6 +1,7 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "C: Obtendo a data atual"
+date:                  2024-01-20T15:14:02.712219-07:00
+html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,40 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Aprenda a Obter a Data Atual em Elm
+## O que & Porquê?
 
-## O Que & Por Quê?
+Conseguir a data atual significa acessar o momento exato em que o código está sendo executado. Programadores fazem isso para marcar eventos, gerenciar prazos ou qualquer lógica temporal no app.
 
-Obter a data atual em programação é o ato de recuperar a data e a hora no momento em que o código é executado. Programadores fazem isso frequentemente quando precisam marcar eventos, registrar informações ou realizar tarefas baseadas em tempo.
+## Como fazer:
 
-## Como Fazer:
-
-Não há um jeito direto de pegar a data atual puramente em Elm, pois isso vai contra sua natureza funcional e previsível. No entanto, você pode usar um `Task` para retornar o tempo atual em milissegundos desde a Época Unix. 
+Elm torna um pouco mais envolvente pegar a data, já que funciona com imutabilidade e efeitos gerenciados. Primeiro, vamos pedir a data e depois reagir quando a conseguirmos.
 
 ```Elm
-import Task exposing (Task)
-import Time exposing (Posix, toMillis, utc)
-import Task.Perform as Perform
+import Browser
+import Html exposing (..)
+import Task
+import Time exposing (Posix)
 
-GetTime : Task.Task x Posix
-GetTime =
-    Time.now
+type Msg = GotTime Posix
 
 main =
-    Perform.task GetTime
+    Browser.element
+    { init = init
+    , view = view
+    , update = update
+    , subscriptions = subscriptions
+    }
+
+init : () -> ( Model, Cmd Msg )
+init _ =
+    ( Model Nothing, Task.perform GotTime Time.now )
+
+type alias Model =
+    { currentTime : Maybe Posix }
+
+view : Model -> Html Msg
+view model =
+    div []
+        [ text (case model.currentTime of
+                  Just time -> String.fromInt (Time.posixToMillis time)
+                  Nothing -> "Carregando..."
+              )
+        ]
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        GotTime time ->
+            ( { model | currentTime = Just time }, Cmd.none )
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
 ```
-E ao executar o código acima, você terá um valor que representa os milissegundos desde a Época Unix.
 
-## Mergulhando Fundo
+Saída de exemplo (formato timestamp Unix): "1619372789534".
 
-Não há uma função inerente em Elm para obter a data atual como há em outras linguagens devido à sua orientação funcional onde todas as funções devem ser determinísticas. Nesta alternativa, estamos usando a função `Time.now` que retorna um `Task`. 
+## Aprofundamento
 
-A Época Unix, mencionada anteriormente, é o número de milissegundos que se passaram desde 1º de janeiro de 1970. A maioria das linguagens de programação baseia-se nesta Época para calcular datas e horários.
+Elm preza pelo controle de efeitos colaterais, por isso, obter a data atual é um efeito e deve ser tratado como uma tarefa. Historicamente, Elm sempre buscou ter um modelo simples e previsível de programação, diferentemente de JavaScript que pode ser mais direto mas imprevisível em comportamento. Alternativas incluem usar flags ou portas para passar a hora do servidor para Elm, mas Time.now é a maneira canônica standard.
 
-Note que a função `Time.now` pode produzir resultados diferentes cada vez que é chamada, quebrando a garantia fundamental de Elm que funções com o mesmo input produzirão sempre o mesmo output. É por isso que `Time.now` retorna um `Task` ao invés de um valor direto.
+## Veja também
 
-Lembre-se que lidar com datas e horas em programação pode ser complicado devido a fatores como fusos horários e horário de verão. Portanto, sempre use bibliotecas confiáveis e testadas ao lidar com datas e horas em um aplicativo real.
-
-## Veja Também
-
-1. Documentação oficial Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
+- [Elm Time documentation](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm Architecture Tutorial](https://guide.elm-lang.org/architecture/)
+- [Elm Lang Discuss](https://discourse.elm-lang.org/)

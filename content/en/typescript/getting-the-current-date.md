@@ -1,6 +1,7 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elm recipe: Getting the current date"
+date:                  2024-01-20T15:16:53.602312-07:00
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,49 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Getting the current date programmatically, in TypeScript or any other language, is about retrieving the real-world, present-time date from your system. This can help to keep track of when some data was recorded or processed.
+Getting the current date in your code means grabbing the present moment down to the day. Programmers do this to timestamp events, handle scheduling, and track duration or intervals.
 
 ## How to:
+Here's how you snag the current date in TypeScript:
 
-The simplest way to get the current Date and Time in TypeScript is:
+```typescript
+// Get the current date and time
+const now = new Date();
 
-```TypeScript
-let current_date = new Date();
-console.log(current_date);
+// Log it to the console
+console.log(now);
 ```
 
-This will output something like:
+Sample output might look like this:
 
-```shell
-2022-05-03T15:37:22.875Z
+```
+2023-04-01T12:34:56.789Z
 ```
 
-If you just need the date, you can extract it using the `toDateString()` function:
+But if you just want the date without the time:
 
-```TypeScript
-let current_date = new Date().toDateString();
-console.log(current_date);
+```typescript
+const today = new Date().toISOString().split('T')[0];
+
+console.log(today);
 ```
 
-This will output the date in this format:
+And that'll give you:
 
-```shell
-Tue May 03 2022
+```
+2023-04-01
 ```
 
-## Deep Dive:
+## Deep Dive
+JavaScript's `Date` object is what you're working with in TypeScript for dates and times. It's been there since the early days, created as part of ECMAScript 1 in 1997. Alternatives to the native `Date` include libraries like `moment.js` or `date-fns`, which offer more features and better parsing.
 
-The `Date` object in JavaScript (which TypeScript extends) really came to life with ECMAScript 1 (1997). It provides the tools to work with date and time, which are essential in almost any application you can think of. 
+Under the hood, `new Date()` gets you the number of milliseconds since the Unix Epoch (January 1, 1970). That's how computers track time. Timezones can be tricky, especially when you need to display dates to users across the globe. By default, `new Date()` will use the system's local time. The `toISOString()` method converts the date to Coordinated Universal Time (UTC) and formats it as an ISO string.
 
-There are built-in JavaScript methods for getting the full year, month, day, and time. These can be combined in various ways depending on what's needed.
-
-An alternative to the JavaScript Date object is libraries such as Moment.js, which provides more comprehensive and flexible functionality. However, for simple date tasks like getting the current date, using the built-in JavaScript methods will suffice, plus there's no need to add extra dependencies into your project. 
-
-The implementation details of how the Date object gets the system's current date can vary across different runtime environments, but today most of them will refer to the system's internal clock.
-
-## See Also:
-
-For more detailed information on the JavaScript Date object, visit [Mozilla Developer Network's Date Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-
-For a comprehensive library for handling date and time, check out [Moment.js](https://momentjs.com/).
+## See Also
+- MDN Web Docs on `Date`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Moment.js: https://momentjs.com/
+- Date-fns: https://date-fns.org/
+- Timezone handling in JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString

@@ -1,6 +1,7 @@
 ---
 title:                "获取当前日期"
-html_title:           "Arduino: 获取当前日期"
+date:                  2024-01-20T15:12:47.981037-07:00
+html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,49 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 是什么 & 为什么？
+## What & Why? (是什么？为什么？)
+获取当前日期让你知道现在是什么时候。程序员用它来记录事件、设置时间戳或检查时效性。
 
-获取当前日期是检索系统当前日期和时间的过程。程序员之所以需要做这个，主要是为了记录时间戳，跟踪错误，产生特定的日期/时间，或者用在定时任务等等。
-
-## 如何操作：
-
-在Bash中，我们可以使用`date`命令来获取当前的日期和时间。代码和样例输出如下：
-
+## How to: (如何操作：)
 ```Bash
-#!/bin/bash
+# 获取当前日期并显示
 date
+
+# 输出样例：
+# 星期二 三月  21 14:23:42 CST 2023
+
+# 自定义格式输出
+date +"%Y-%m-%d %H:%M:%S"
+
+# 输出样例：
+# 2023-03-21 14:23:42
 ```
 
-这将返回当前的日期和时间。
+## Deep Dive (深入了解)
+Bash中`date`命令是从Unix时代继承下来的，用于显示和设置系统日期和时间。其他方法比如`hwclock`直接跟硬件通讯。`date`命令因其简单性和灵活性（可自定义输出格式）而受欢迎。在脚本里，正确使用日期时间数据是很重要的，比如创建日志文件名或进行日期计算。
 
-```Bash
-Sat Sep 19 21:16:06 UTC 2021
-```
-
-## 深入研究：
-
-在古老的UNIX系统和Shell编程中，`date`就已经存在了。这种命令用于在程序中处理和格式化日期和时间。除了`date`命令，你也可以选择其他命令像`printf`或者特定的语言构造方式（像Python的datetime模块）来实现。
-
-在Bash中，`date`命令接受`+`后接格式指示符参数，来控制显示的时间和日期的格式。例如：
-
-```Bash
-#!/bin/bash
-date "+%Y-%m-%d"
-```
-
-将返回以下的格式:
-
-```Bash
-2021-09-19
-```
-
-## 查看其他：
-
-在编程中获取当前日期是一个非常常见的需求，以下链接提供了更多的相关信息和样例：
-- Bash `date` 命令手册：
-    `https://man7.org/linux/man-pages/man1/date.1.html`
-- `printf` 命令手册：
-    `https://man7.org/linux/man-pages/man1/printf.1p.html`
-- Python `datetime` 模块文档：
-    `https://docs.python.org/3/library/datetime.html`
-- 阮一峰的网络日志：Linux 命令行教程 - `date`命令：`http://www.ruanyifeng.com/blog/2015/05/date.html`
+## See Also (另见)
+- GNU Coreutils: https://www.gnu.org/software/coreutils/manual/coreutils.html#date-invocation
+- Bash 手册: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html 
+- Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/

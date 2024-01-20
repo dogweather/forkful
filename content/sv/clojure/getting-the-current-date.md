@@ -1,7 +1,8 @@
 ---
-title:                "Hämta aktuellt datum"
-html_title:           "Arduino: Hämta aktuellt datum"
-simple_title:         "Hämta aktuellt datum"
+title:                "Att hämta aktuellt datum"
+date:                  2024-01-20T15:13:55.286068-07:00
+html_title:           "Bash: Att hämta aktuellt datum"
+simple_title:         "Att hämta aktuellt datum"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,49 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Klä på sig med Datum i Clojure
-
 ## Vad & Varför?
+Att hämta aktuellt datum i Clojure innebär att vi får tag på dagens datum. Det används för att logga händelser, spåra användaraktivitet, eller helt enkelt för funktioner som kräver dagens dato.
 
-Att få det aktuella datumet handlar om att hämta den aktuella tiden, ned till sekunden, för ögonblicket när koden körs. Det är ovärderligt för att logga, tidstämpla, beräkna tidsskillnader, och många fler applikationer.
-
-## Hur göra:
-
-Att hämta det nuvarande datumet i Clojure är överraskande simpelt. Vi kan använda `java.util.Date` klassen. Här är hur:
+## How to:
+För att hämta aktuellt datum i Clojure kan vi använda Java interoperability, eftersom Clojure körs på JVM. Här är ett exempel:
 
 ```Clojure
-(import 'java.util.Date)
-(def current-date (Date.))
+(import java.time.LocalDate)
+
+(defn get-current-date []
+  (str (LocalDate/now)))
+
+;; Använd funktionen
+(println "Dagens datum är: " (get-current-date))
 ```
 
-När du kör ovanstående kod, kommer `current-date` att vara ett `java.util.Date` objekt som representerar den exakta tidpunkten när objektet skapades. Pröva och skriv ut det:
+Sample output:
 
-```Clojure
-(println current-date)
+```
+Dagens datum är: 2023-03-23
 ```
 
-Du borde se något ungefär som det här:
-`Tue Sep 28 11:43:22 CEST 2021`
+## Deep Dive
+Clojure bygger på JVM, vilket innebär att Java's omfattande datum- och tidsbibliotek är tillgängligt. `LocalDate/now` hämtar det lokala datumet utan tid. Historiskt sätt, innan Java 8, användes `java.util.Date` men det var infamt för sitt komplexa API och timezone-frågor. Alternativ inkluderar användning av tredjepartsbibliotek som clj-time, som bygger på Joda-Time, men `java.time`-paketet är nu det föredragna valet för datumhantering i både Java och Clojure.
 
-## Fördjupning
+Det finns ett par olika alternativ när det gäller att hämta datum och tid i Clojure:
 
-Att hämta det aktuella datumet kanske verkar rakt på sak, men det finns en del saker att tänka på. För det första, `java.util.Date`-objekt representerar ett exakt ögonblick i tiden, ner till millisekunder. Detta gör det perfekt för loggning och tidstämpling, men om du bara behöver datumet kan det bli knepigt.
+1. Använda `java.util.Calendar` för mer specifika krav.
+2. Använda `java.time.ZonedDateTime` för datum och tid med tidszonsstöd.
+3. Tredjepartspaketet clj-time för de som föredrar en Clojure-idiomatisk känsla.
 
-För detta ändamål kan du använda `java.time.LocalDate` klassen:
+Dock, med introduktionen av `java.time` i Java 8, har det blivit standarden för datum- och tidshantering.
 
-```Clojure
-(import 'java.time.LocalDate)
-(def only-date (.toString LocalDate/now))
-```
+## See Also
+För mer information och relaterad läsning, ta en titt på följande källor:
 
-Detta kommer att returnera dagens datum som en sträng i formatet `yyyy-mm-dd`.
-
-Histories sett har Java haft problem med datum- och tidsmanipulering, men tack vare valfriheten i Clojure och tillgången till Java's inbyggda klasser, är att hantera datum och tid i Clojure inget att oroa sig för.
-
-## Se också
-
-För mer information och alternativ för att hämta och hantera datum och tid i Clojure, se följande resurser:
-
-- Clojure Cookbook: [https://www.braveclojure.com/zombie-metaphysics/](https://www.braveclojure.com/zombie-metaphysics/)
-  
-Där har du det, ett snabbt sätt att hämta det aktuella datumet i Clojure!
+- Clojure Documentation: https://clojure.org/
+- Java 8 Date-Time API: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- clj-time GitHub repository: https://github.com/clj-time/clj-time

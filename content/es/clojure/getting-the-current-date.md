@@ -1,6 +1,7 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "C#: Obteniendo la fecha actual"
+date:                  2024-01-20T15:13:39.121420-07:00
+html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,43 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
-
 ## ¿Qué y Por Qué?
+Obtener la fecha actual en Clojure es simplemente acceder al momento presente en tu programa. Los programadores hacen esto para registrar eventos, controlar el flujo de datos o manejar tareas programadas.
 
-Obtener la fecha actual en programación es un proceso de recuperar el dato del tiempo presente en el sistema operativo. Los programadores a menudo lo requieren para registrar eventos, marcar operaciones con una estampa de tiempo en logs o manipular fechas para calcular la duración.
-
----
-
-## Cómo Hacerlo:
-
-En Clojure, la función de biblioteca `clojure.java-time` es tu amiga. La llamamos así:
+## Cómo hacerlo:
+Clojure usa la biblioteca `java.util.Date` para trabajar con fechas. Aquí está cómo puedes obtener la fecha actual:
 
 ```Clojure
-(require '[java.time :as jt])
-(jt/local-date)
+(import java.util.Date)
+
+(defn current-date []
+  (str (Date.)))
+
+(println (current-date))
 ```
 
-Devolverá la fecha en este formato : `yyyy-mm-dd`. Aquí estás un ejemplo de salida:
+Salida de muestra:
+```
+"Tue Mar 14 21:02:33 CET 2023"
+```
+
+Para obtener una representación más detallada o modificada, podés usar `clj-time`, una biblioteca inspirada por Joda-Time pero más idiomática para Clojure:
 
 ```Clojure
-2022-05-18
+(require '[clj-time.core :as time]
+         '[clj-time.format :as format])
+
+(defn formatted-current-date []
+  (format/unparse (format/formatters :basic-date-time) (time/now)))
+
+(println (formatted-current-date))
 ```
 
----
+Salida de muestra:
+```
+"20230314T202233.000Z"
+```
 
-## Inmersión Profunda:
+## Profundización
+Históricamente, manejar fechas en programación ha sido complejo debido a zonas horarias, formatos y cálculos de fecha. En Java, `java.util.Date` y `java.util.Calendar` han sido reemplazados por clases de la API `java.time` en Java 8 debido a sus limitaciones y complicaciones de uso. Clojure, corriendo en la JVM, puede usar `java.time` directamente, pero bibliotecas como `clj-time` simplifican el proceso ofreciendo una abstracción más adecuada para trabajar con fechas y tiempos de manera funcional.
 
-Historicamente, Clojure maneja fechas a través de las bibliotecas existentes de Java. En las primeras versiones se usaba `java.util.Date`, pero su diseño presentaba varias fallas y confusión, lo que llevó a la introducción del paquete `java.time` en Java 8 que solucionó muchos problemas.
+Alternativas para obtener la fecha incluyen usar las clases `java.time.LocalDateTime` o `java.time.ZonedDateTime` para más precisión en el manejo de zonas horarias. La implementación depende del nivel de detalle y las operaciones que necesites hacer con la fecha.
 
-Alternativamente, existen otras bibliotecas que puedes usar, como `clj-time` que es un wrapper alrededor de la librería Joda-Time de Java. Pero, se recomienda utilizar `java.time` ya que está basado en estándares ISO y es nativo en Java 8 y versiones superiores.
-
-Detalles de Implementación: Cuando solicitas la fecha/hora actual en Clojure (o en Java), estás obteniendo el tiempo del sistema operativo del host. Esto significa que la fecha/hora que obtienes depende del reloj del sistema de tu ordenador.
-
----
-
-## Ver También:
-
-1. Documentación de `java.time`: https://clojure.github.io/clojure/clojure.java-time-api.html
-2. El uso de `clj-time`: https://github.com/clj-time/clj-time
-3. Librería `Joda-Time` para Java: https://www.joda.org/joda-time/
+## Ver También
+- [clj-time GitHub Repository](https://github.com/clj-time/clj-time)
+- [Clojure documentation on java interop](https://clojure.org/reference/java_interop)
+- [Java 8 java.time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

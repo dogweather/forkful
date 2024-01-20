@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:13:56.287247-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,46 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# L'obtention de la date actuelle en Clojure
+## What & Why?
+Obtenir la date actuelle, c'est saisir l'instant présent en code. Les développeurs s'en servent pour des journaux, des timestamps ou la gestion d'événements temporels. 
 
-## Quoi & Pourquoi?
-L'obtention de la date actuelle est une tâche qui récupère la date et l'heure à l'instant T. Les programmeurs font cela pour enregistrer quand un événement se produit, pour suivre le temps, ou pour comparer des dates.
+## How to:
+Clojure utilise `java.util.Date` et la bibliothèque `clj-time` pour gérer les dates. Voilà comment capturer le moment :
 
-## Comment faire :
-En Clojure, on utilise `java.util.Date` pour obtenir la date actuelle.
-
-```Clojure
+```clojure
+;; Avec java.util.Date
 (import 'java.util.Date)
-(defn courant-date []
-  (Date.))
-```
+(str (Date.))
 
-Pour voir le résultat, appelez simplement la fonction:
-
-```Clojure
-(courant-date)
-```
-
-Le code va renvoyer la date et l'heure actuelles en fonction du système sur lequel il est exécuté.
-
-## Approfondissement
-
-Historiquement, en Clojure, l'obtention de la date actuelle a toujours été effectuée en utilisant la bibliothèque Java intégrée. Cependant, il existe une alternative plus moderne: l'utilisation de la bibliothèque clj-time.
-
-```Clojure
+;; Avec clj-time
 (require '[clj-time.core :as time])
-
-(defn courant-date []
-  (time/now))
+(require '[clj-time.format :as fmt])
+(str (time/now))
+(fmt/unparse (fmt/formatters :basic-date-time) (time/now))
 ```
 
-L'avantage de clj-time est qu'il offre une API plus riche et plus conviviale que java.util.Date, surtout pour les manipulations de date complexes. 
+Exemple de sortie :
 
-Il est important de noter que clj-time, comme java.util.Date, utilise le temps de l'horloge système pour obtenir la date. Ceci est normalement suffisant, mais peut poser des problèmes si l'horloge système est modifiée pendant l'exécution du programme.
+```
+"Tue Mar 21 14:52:03 EDT 2021"
+"2021-03-21T14:52:03.123Z"
+```
 
-## Voir Aussi:
+## Deep Dive
+Clojure, étant une JVM language, puise dans les ressources de Java, comme `java.util.Date` depuis 1995. C'est utile mais vieux jeu; vous n'avez pas toutes les fonctionnalités modernes. 
 
-1. Documentation officielle de Clojure: https://clojure.org/
-2. Bibliothèque clj-time : https://github.com/clj-time/clj-time
-3. Guide Java Date : https://www.javatpoint.com/java-date
-4. Post sur StackOverflow sur l'utilisation de java.util.Date : https://stackoverflow.com/questions/5270225/working-with-date-time-in-clojure
+La bibliothèque `clj-time` est une façade Clojure pour Joda-Time, une meilleure prise en main des concepts de temps. Avec `clj-time`, vous formatez, parsez, et manipulez les dates avec facilité. 
+
+`java.time`, présent depuis Java 8, est une autre option robuste à considérer, malgré qu'elle soit moins idiomatique à Clojure sans couche d'abstraction.
+
+## See Also
+- Clojure `clj-time` bibliothèque: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
+- Java `Date` documentation: [https://docs.oracle.com/javase/7/docs/api/java/util/Date.html](https://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
+- Joda-Time: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)
+- Java `java.time` package (Java 8+): [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

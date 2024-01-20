@@ -1,6 +1,7 @@
 ---
 title:                "Ottenere la data corrente"
-html_title:           "Java: Ottenere la data corrente"
+date:                  2024-01-20T15:15:06.127514-07:00
+html_title:           "Arduino: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,49 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perchè?
+## What & Why?
+Ottenere la data corrente in Haskell è fondamentale per interagire con il tempo reale nei nostri programmi, da semplici log a funzionalità basate sulla data.
 
-Ottenere la data corrente significa recuperare la data e l'ora esatte in cui il tuo programma sta girando. Questo può essere utile per molte cose, come la registrazione di quando un evento specifico si è verificato nel sistema o la tracciatura di date di scadenza.
-
-## Come Fare:
-
-Per ottenere la data corrente in Haskell, useremo la libreria `Data.Time.Clock`. Ecco un esempio:
+## How to:
+Per ottenere la data corrente in Haskell, utilizza il modulo `Data.Time`. Prima, assicurati che la libreria `time` sia elencata nel tuo file cabal o stack.
 
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
+import Data.Time
 
+main :: IO ()
 main = do
-    tempo_corrente <- getCurrentTime
-    let giorno_corrente = utctDay tempo_corrente
-    print giorno_corrente
+  currentDate <- getCurrentTime
+  print $ utctDay currentDate
 ```
 
-Eseguendo questo codice, otterrai un output simile a questo:
+Eseguendo il programma riceverai un output simile al seguente:
 
-```Haskell
->>> main
-2022-02-22
+```
+2023-04-05
 ```
 
-## Approfondimento:
+## Deep Dive
+Haskell non include funzioni per il tempo nel suo Prelude, quindi usiamo `Data.Time`, una libreria standard disponibile da `ghc-6.6.1`. L'alternativa meno diretta sarebbe utilizzare la libreria `old-time`, ma è più complicata e, beh, vecchia. `Data.Time` è preferibile perché segue gli standard internazionali (ISO 8601) e offre una maggiore flessibilità.
 
-Historicamente, ottenere la data corrente è un problema comune in programmazione, indipendentemente dal linguaggio utilizzato. In Haskell, la libreria `Data.Time.Clock` è molto comune per ottenere la data corrente. Tuttavia ci sono alternative, come `System.Time` che fornisce la funzione `getClockTime`. 
+Una specifica attenzione va al trattamento dei fusi orari. Per default, `getCurrentTime` ti restituisce l'UTC. Se necessiti del fuso orario locale, entra in gioco `getCurrentTimeZone`. Ecco come:
 
 ```Haskell
-import System.Time
+import Data.Time
 
+main :: IO ()
 main = do
-    tempo_corrente <- getClockTime
-    print tempo_corrente
+  timeZone <- getCurrentTimeZone
+  zonedTime <- getZonedTime
+  print zonedTime
+  let localTime = utcToLocalTime timeZone $ zonedTimeToUTC zonedTime
+  putStrLn $ "Data locale: " ++ show (localDay localTime)
 ```
 
-Però, `System.Time` è deprecato nella versione attuale di Haskell. Preferiamo usare `Data.Time.Clock` che ha un'implementazione più robusta e flessibile.
+Dovresti vedere un output che rispecchia il tuo fuso orario locale:
 
-## Da Vedere Anche:
+```
+Data locale: 2023-04-05
+```
 
-Per ottenere ulteriori informazioni, consulta le seguenti risorse:
+Questo riporta l'attenzione sui dettagli di implementazione, come la rappresentazione del tempo in Haskell tramite la struttura `UTCTime`. Questo fa sì che le operazioni sul tempo siano coerenti a livello globale, evitando confusione su diverse rappresentazioni.
 
-1. Documentazione ufficiale per [`Data.Time.Clock`](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
-2. Una guida completa alla [programmazione di data e ora in Haskell](http://two-wrongs.com/haskell-time-library-tutorial)
-3. Domande e risposte correlate su [Stack Overflow](https://stackoverflow.com/questions/tagged/haskell+date)
+## See Also
+Per una panoramica più completa delle funzionalità relative alla data e ora in Haskell, consulta le seguenti risorse:
+
+- Data.Time library on Hackage: [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- Layering Time: [http://chrisdone.com/posts/measuring-duration-in-haskell](http://chrisdone.com/posts/measuring-duration-in-haskell)

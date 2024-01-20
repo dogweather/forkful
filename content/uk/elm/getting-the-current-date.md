@@ -1,5 +1,6 @@
 ---
 title:                "Отримання поточної дати"
+date:                  2024-01-20T15:14:26.320874-07:00
 html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "Elm"
@@ -10,57 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
+## What & Why? (Що і Чому?)
+Отримання поточної дати – це зчитування системного часу девайсу, щоб знати дату та час зараз. Програмісти роблять це для логування, таймштампів, або функціоналу, що базується на даті.
 
-Отримання поточної дати - це процес визначення дати (й часу, якщо потрібно) зараз. Розробники використовують його для створення імен файлів, журналування, тайм-стемпів, синхронізації даних та ін.
-
-## Як це зробити:
-
-Перш ніж отримати поточну дату, нам потрібно встановити пакет `justinmimbs/date`.
-
-```
-elm install justinmimbs/date
-```
-
-Потім у вашому Elm файлі, імпортуйте `Date` і створіть `Model` з полем `dateNow : Maybe Date.Date`.
-
+## How to: (Як зробити:)
 ```Elm
-import Date exposing (Date)
+import Browser
+import Html exposing (Html, text)
 import Task
-import Time exposing (Posix, Zone, utc)
 
-type alias Model =
-  { dateNow : Maybe Date }
+type Msg = GotTime Posix
 
-init : Flags -> ( Model, Cmd Msg )
-init flags =
-   ( { dateNow = Nothing }
-   , Task.perform NewDate Date.now 
-   )
-...
+type alias Model = Posix
 
-type Msg
-  = NewDate Date
+init : () -> (Model, Cmd Msg)
+init _ =
+    (Posix.fromMillis 0, Task.perform GotTime Time.now)
 
-...
-
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
-  case msg of
-    NewDate newDate ->
-      { model | dateNow = Just newDate } ! []
+    case msg of
+        GotTime newTime ->
+            (newTime, Cmd.none)
+
+view : Model -> Html Msg
+view model =
+    text (String.fromInt (Posix.toMillis model))
+
+main =
+    Browser.element
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
+        }
+```
+Sample output: 
+```
+1617632023765
 ```
 
-Тепер, коли ви запустите програму, вона надішле команду, щоб отримати поточну дату. Ця дата збережеться в `model.dateNow`.
+## Deep Dive (Поглиблений Огляд)
+Elm має чітку архітектуру, яка розділяє логіку отримання часу та відображення його у в'ю. Історично, Elm зазнав великих змін у версіях 0.17 та 0.18, спростивши роботу зі сторонніми бібліотеками JS та забезпечивши сильнішу систему типів. Для отримання часу Elm використовує власний тип Posix, який репрезентує точку часу в UTC. Альтернативою може бути передача часу з сервера для синхронізації, особливо важливо це, коли точність критична і можуть бути проблеми з часовими зонами.
 
-## Поглиблений огляд:
-
-1. Історичний контекст: Elm був створений для спрощення фронт-енд коду та покращення надійності веб-додатків через більш строгу структуру. Раніше Elm не мав вбудованого рішення для отримання дати та часу, тому була створена бібліотека `justinmimbs/date`.
-2. Альтернативи: Іншою опцією є використання зовнішніх JS-бібліотек через порти. Однак цього варто уникати, оскільки Elm намагається мінімізувати залежності від JS.
-3. Деталі реалізації: `Date.now` використовує Time API у Elm для отримання поточного часу в мілісекундах від початку епохи Unix (1970-01-01 00:00:00 UTC) і конвертує його в тип `Date`.
-
-## Дивіться також:
-
-- [Документація Elm за Date](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Бібліотека justinmimbs/date](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
-- [Elm Time API](https://package.elm-lang.org/packages/elm/time/latest/)
+## See Also (Детальніше)
+- Elm Time package documentation: https://package.elm-lang.org/packages/elm/time/latest/
+- Handling time zones in Elm: https://medium.com/elm-shorts/handling-time-zones-in-elm-e0e1872e7d2b
+- Elm architecture tutorial: https://guide.elm-lang.org/architecture/

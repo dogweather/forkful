@@ -1,7 +1,8 @@
 ---
-title:                "Hämta aktuellt datum"
-html_title:           "Arduino: Hämta aktuellt datum"
-simple_title:         "Hämta aktuellt datum"
+title:                "Att hämta aktuellt datum"
+date:                  2024-01-20T15:13:21.731953-07:00
+html_title:           "Bash: Att hämta aktuellt datum"
+simple_title:         "Att hämta aktuellt datum"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,47 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-
-Att hämta och använda det aktuella datumet i en C++-kod är något alla programmerare står inför. Vi behöver göra det för att hålla koll på händelser, logga data, skapa tidstemplar och för många andra viktiga uppgifter.
+## Vad & Varför?
+Att få aktuellt datum i programmering innebär att man hämtar datumet just nu, som systemet rapporterar. Programmerare gör detta för att tidsstämpla händelser, hantera kalenderfunktioner eller bara visa datumet för användaren.
 
 ## Hur man gör:
-
-Hämta det nuvarande datumet i C++ är enkelt med biblioteket `<chrono>`. Nedan är en kodsnutt:
+Kolla på det här enkla exemplet med C++20:
 
 ```C++
 #include <iostream>
 #include <chrono>
-#include <ctime>
+#include <format>
 
 int main() {
-    auto nu = std::chrono::system_clock::now();
-    std::time_t nu_t = std::chrono::system_clock::to_time_t(nu);
-    std::cout << "Det nuvarande datumet och tiden är: " << std::ctime(&nu_t) << std::endl;
+    auto current_time = std::chrono::system_clock::now();
+    std::time_t time_now = std::chrono::system_clock::to_time_t(current_time);
+    
+    // Klassiskt sätt att visa datum
+    std::cout << std::ctime(&time_now);
+
+    // Med C++20 kan du använda std::format för ett mer kontrollerat format
+    auto local_time = *std::localtime(&time_now);
+    std::cout << std::format("{:%Y-%m-%d}", local_time) << std::endl;
+
     return 0;
 }
 ```
 
-Om du kör denna kod, kommer utdata ser ut något så här:
-
+Output:
 ```
-Det nuvarande datumet och tiden är: Thu Jan 20 14:20:50 2022
+Tue Mar 14 12:45:23 2023
+2023-03-14
 ```
 
-## Djup Dykning
+## Fördjupning
+För att hämta nuvarande datum i C++, använd `chrono` biblioteket som introducerades i C++11 och har utökats i C++20. Historiskt sett hade programmerare begränsningar kring tid och datum, och lösningar var beroende av operativsystemets funktioner och C-bibliotek.
 
-För att förstå detta kodsnutt helt, finns det några punkter att notera. Dessa inkluderar historisk kontext, alternativ och implementation detaljer.
+Alternativa sätt att hantera datum och tid inkluderar `ctime` och POSIX-bibliotek. C++20 medförde `std::format`, som förenklar formatering av datum och text.
 
-Det bibliotek vi använde här, `<chrono>`, är en del av C++11 och senare. Det förser oss med klasser och funktioner för att mäta tid. 
-
-För att få det nuvarande datumet i C++, kan vi också använda `time_t`-typen från `<ctime>` bibliotek. Men, `<chrono>` är mer flexibel och precist. Båda dessa bibliotek förändrar inte systemklockan.
-
-När du vill ha ännu mer exakt tidsmätning, skulle `<chrono>` vara ditt bästa val. Dess noggrannhet kommer från dess förmåga att mäta tidsintervaller i nanosekunder.
+Detaljerna i att hämta och representera tid är komplexa på grund av tidszoner, sommartid och andra systemspecifika detaljer. C++ tar hand om dessa genom `std::chrono` och `std::localtime` för plattformsoberoende användning.
 
 ## Se även
-
-Om du är intresserad av att lära dig mer om tidshantering i C++, kolla in dessa resurser:
-
-- [cppreference.com: <chrono>](https://en.cppreference.com/w/cpp/chrono) 
-- [cplusplus.com: Time library](http://www.cplusplus.com/reference/ctime/) 
-- [StackOverflow: Getting current date and time](https://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c)
+- [cppreference.com](https://en.cppreference.com/w/cpp/chrono) för mer info om `<chrono>`
+- [fmtlib](https://fmt.dev/latest/index.html) för dokumentation om `std::format` i C++20
+- [cplusplus.com](http://www.cplusplus.com/reference/ctime/localtime/) för info om `std::localtime`

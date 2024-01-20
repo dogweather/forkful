@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:16:35.296837-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
 
-Pobieranie bieżącej daty to proces odczytywania aktualnej daty z systemu operacyjnego. Programiści korzystają z tego, aby śledzić daty i czasy wydarzeń, logi systemowe, a także generować dynamiczne treści.
+`Date` w Ruby to klasa pozwalająca na operacje na datach. Programiści często sprawdzają aktualną datę, by rejestrować czas zdarzeń, ustalać terminy czy tworzyć harmonogramy.
 
-## Jak zrobić:
-
- Zobaczmy, jak w języku Ruby pobrać aktualną datę:
+## Jak to zrobić:
 
 ```Ruby
-# Dzisiejsza data
 require 'date'
-puts Date.today
+
+# Pobranie aktualnej daty
+current_date = Date.today
+puts current_date
+# => 2023-04-01 (przykładowy wynik, będzie różnić się w zależności od dnia uruchomienia)
+
+# Jeśli potrzebujesz większej precyzji, z czasem
+require 'time'
+
+current_time = Time.now
+puts current_time
+# => 2023-04-01 12:34:56 +0200 (przykładowy wynik, będzie różnić się w zależności od momentu uruchomienia i strefy czasowej)
 ```
 
-Tak więc, za pomocą wbudowanej biblioteki `date` i metody `today`, możemy wywołać bieżącą datę. Po uruchomieniu powyższego kodu, otrzymasz coś w stylu:
-  
-```Ruby
-2025-08-30
-```
+## Głębsze spojrzenie:
 
-## Wgłębiając się
+W przeszłości, przed stdlib `date` i `time`, developerzy Ruby często polegali na zewnętrznych gemach lub własnych implementacjach do zarządzania czasem. Wersja Ruby 1.9 wprowadziła wiele udoskonaleń w klasie `Time`, a `Date` oraz `DateTime` powstały, aby obsłużyć różne potrzeby związane z datami.
 
-1. **Historia**: Z początku, odczytywanie daty było dość kłopotliwe i złożone. Wraz z rozwojem technologii i języków programowania, takich jak Ruby, stało się to łatwiejsze i bardziej efektywne. 
+Alternatywy dla `Date.today` i `Time.now` mogą obejmować użycie gemu `ActiveSupport` z Rails, który dodaje metody takie jak `Time.zone.now` dla obsługi stref czasowych. Kolejną opcją jest gem `TimeCop` dla testowania, który umożliwia "zamrożenie" czasu na potrzeby testów.
 
-2. **Alternatywy**: Istnieją alternatywne sposoby na pobieranie bieżącej daty w rubym, np. za pomocą metody `Time.now`.
- 
-   ```Ruby
-    # Dzisiejsza data
-    puts Time.now
-    ```
+Warto wspomnieć, że `Time.now` zwraca obiekt `Time` z sekundami i frakcjami sekund, a `Date.today` zwraca obiekt `Date` bez informacji o czasie. Ruby używa systemu GMT do przechowywania czasów, co oznacza, że czas jest przechowywany jako liczba sekund od epoki Unix.
 
-3. **Szczegóły implementacji**: `Date.today()` działa, lokalizując Twój czas systemowy i strefę czasową, a następnie konwertuje je na obiekt `Date`. Metoda ta jest tylko do odczytu i nie wpłynie na czas systemowy.
+## Zobacz również:
 
-## Zobacz także
-
-1. Oficjalna dokumentacja Ruby dla klasy [Date](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
-
-2. Dokumentacja Ruby dla klasy [Time](https://ruby-doc.org/core-2.5.0/Time.html)
-
-3. Doskonałe [szczegółowe omówienie](https://www.rubyguides.com/2015/12/ruby-time/) obsługi daty i godziny w Ruby na RubyGuides.
+- Dokumentacja klasy Time: https://ruby-doc.org/core-2.7.0/Time.html
+- Dokumentacja klasy Date: https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html
+- Ruby API doc o klasie DateTime: https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/DateTime.html
+- ActiveSupport Core Extensions: https://api.rubyonrails.org/classes/ActiveSupport/CoreExtensions.html
+- Dokumentacja TimeCop: https://github.com/travisjeffery/timecop

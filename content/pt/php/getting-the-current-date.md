@@ -1,6 +1,7 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "C: Obtendo a data atual"
+date:                  2024-01-20T15:16:12.125192-07:00
+html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,40 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pegar a data atual em PHP
-
-## O quê & Por quê?
-
-Pegar a data atual consiste em recuperar a data e hora correntes do sistema. Programadores fazem isso para registrar quando um evento ocorre, como um login de usuário.
+## O Quê & Porquê?
+Obter a data atual em PHP é pegar o dia, mês e ano em que o código está sendo executado. Programadores fazem isso para registrar eventos, validar sessões, criar timestamps e personalizar conteúdo para o usuário.
 
 ## Como fazer:
-
-Em PHP, recuperar a data atual é um processo simples. Vamos examinar um código de exemplo e a saída correspondente:
-
 ```PHP
 <?php
-echo date("d/m/Y");
+echo "Hoje é: " . date("d/m/Y") . "<br>";
+echo "Agora são: " . date("H:i:s");
 ?>
 ```
-Este código irá mostrar a data atual no formato dia/mês/ano. Se você executar esse código hoje, a saída será:
-
-```PHP
-26/10/2021
+Saída de exemplo:
 ```
-## Mergulho profundo:
-
-A função `date()` do PHP existe desde as primeiras versões da linguagem, tornando-se um recurso padrão para lidar com datas e horas. Alternativamente, você pode usar a classe DateTime, mais moderna e versátil.
-
-```PHP
-<?php
-$hoje = new DateTime();
-echo $hoje->format('d/m/Y');
-?>
+Hoje é: 10/04/2023
+Agora são: 15:42:01
 ```
-Note-se que a função `date()` retorna a data/hora local, a não ser que seja especificado um timezone. Para trabalhar com fusos horários diferentes, a classe DateTime é uma escolha mais adequada.
 
-## Ver também:
+## Mergulho Profundo
+Antes de PHP 5.2.0, a função `date_default_timezone_get()` requer a diretiva `date.timezone` no arquivo php.ini para obter o fusohorário correto. Atualmente, com `date_default_timezone_set('America/Sao_Paulo')`, você pode definir o fusohorário no próprio script. Alternativamente, `DateTime` e `DateTimeZone` objetos oferecem uma abordagem orientada a objetos. É importante usar essas funções por questões de internacionalização e para evitar problemas com horário de verão e fusos horários.
 
-- Documentação oficial PHP `date()`: https://www.php.net/manual/pt_BR/function.date.php
-- Documentação oficial PHP `DateTime`: https://www.php.net/manual/pt_BR/class.datetime.php
-- Tutorial sobre manipulação de datas em PHP: https://www.w3schools.com/php/php_date.asp
+## Veja Também
+- [Documentação oficial da função date](https://www.php.net/manual/pt_BR/function.date.php)
+- [Como configurar o fuso horário no PHP](https://www.php.net/manual/pt_BR/function.date-default-timezone-set.php)
+- [Classe DateTime](https://www.php.net/manual/pt_BR/class.datetime.php)
+- [Classe DateTimeZone](https://www.php.net/manual/pt_BR/class.datetimezone.php)

@@ -1,7 +1,8 @@
 ---
-title:                "Få den gjeldende datoen"
-html_title:           "Haskell: Få den gjeldende datoen"
-simple_title:         "Få den gjeldende datoen"
+title:                "Slik får du tak i dagens dato"
+date:                  2024-01-20T15:14:02.082285-07:00
+html_title:           "C: Slik får du tak i dagens dato"
+simple_title:         "Slik får du tak i dagens dato"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,31 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor? 
+## What & Why?
+Få dagens dato: ganske enkelt, det betyr å hente dagens kalenderdato fra systemet. Programmerere trenger dette for å timestamp data, håndtere oppgaver, og for tidssensitive applikasjoner.
 
-Å få dagens dato handler om å få den nøyaktige tiden og datoen i det nåværende øyeblikket. Dette er nyttig for mange programmeringsoppgaver, som å spore brukeraktivitet, timestamping og planlegging av fremtidige hendelser.
-
-## Hvordan:
-
-La oss se på hvordan du kan få dagens dato i Elixir. Vi bruker DateTime-funksjonene tilgjengelig i Elixir’s innebyggede bibliotek.
+## How to:
+Elixir gjør det enkelt å få dagens dato med `Date` modulen:
 
 ```elixir
-dagens_dato = DateTime.now("Europe/Oslo")
-IO.puts(dagens_dato)
+date = Date.utc_today()
+IO.inspect(date)
 ```
 
-Når du kjører koden ovenfor, vil du få en output som inneholder dagens dato. Eksempelet ovenfor bruker tidszonen for Oslo, Norge.
+Output:
 
-## Dyp Dykk:
+```elixir
+~D[2023-04-12]
+```
 
-1. Historisk Kontekst: Elixir, et dynamisk, funksjonelt språk utviklet for bygging og vedlikehold av skalerbare og vedlikeholdbare applikasjoner, inneholder innebyggede DateTime-moduler. Disse har blitt brukt til å hente og representere tid og dato siden versjon 1.3, sluppet i 2016.
-2. Alternativer: I tillegg til DateTime-funksjoner, kan du også hente den nåværende tiden og dato ved bruk av :os.system_time eller :calendar.local_time i Erlang.
-3. Implementeringsdetaljer: DateTime.now funksjonen i Elixir bruker systemets klokke og tidssoneinformasjon til å generere gjeldende tidspunkt.
+For å inkludere tid, bruk `DateTime`:
 
-## Se Også:
+```elixir
+datetime = DateTime.utc_now()
+IO.inspect(datetime)
+```
 
-For dypere veiledning og dokumentasjon på dato og tid i Elixir, sjekk ut følgende kilder:
+Output:
 
-1. Offisiell Elixir Dokumentasjon for DateTime: https://hexdocs.pm/elixir/DateTime.html
-2. Bruk av Elixir's innebygde DateTime module: http://learningelixir.joekain.com/learn-elixir-datetime/
-3. Diskusjoner rundt DateTime i Elixir forum: https://elixirforum.com/t/date-time-in-elixir/14946
+```elixir
+#DateTime<2023-04-12 09:00:00Z>
+```
+
+## Deep Dive
+I Elixir, introduserte `Date` og `DateTime` med versjon 1.3 for å støtte dato- og tidshåndtering. Dette var en del av en større innsats for å inkludere mer robuste standardbiblioteker.
+
+Det finnes alternativer også. For eksempel, biblioteket `Timex` gir mer funksjonalitet rundt dato- og tidshåndtering hvis du trenger det.
+
+Under hetten konverterer Elixir systemtid til en mer håndterlig format, `"Calendar"`. `Calendar.ISO` er standardkalendermodulen som gir oss `Date` og `DateTime`.
+
+## See Also
+- Elixir's offisielle dokumentasjon for `Date`: [https://hexdocs.pm/elixir/Date.html](https://hexdocs.pm/elixir/Date.html)
+- Elixir's offisielle dokumentasjon for `DateTime`: [https://hexdocs.pm/elixir/DateTime.html](https://hexdocs.pm/elixir/DateTime.html)
+- Timex, en rik tredjepartsbibliotek: [https://hexdocs.pm/timex/Timex.html](https://hexdocs.pm/timex/Timex.html)
+- Internett UTC tid: [https://www.timeanddate.com/worldclock/timezone/utc](https://www.timeanddate.com/worldclock/timezone/utc)

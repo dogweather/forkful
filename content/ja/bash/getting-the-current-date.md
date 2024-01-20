@@ -1,7 +1,8 @@
 ---
-title:                "現在の日付の取得"
-html_title:           "Bash: 現在の日付の取得"
-simple_title:         "現在の日付の取得"
+title:                "現在の日付を取得する"
+date:                  2024-01-20T15:12:56.792615-07:00
+html_title:           "Bash: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,40 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (なぜとは？)
+プログラマは日付データをよく使います。ログ作成、スケジューリング、有効期限の管理などに現在日付を取得することが必要です。
 
-現在の日付を取得とは、システムの現在の日付と時刻を取得することを指します。これは、ログファイルのタイムスタンプや、特定のイベントがいつ発生したかを追跡するために、プログラマーが実行します。
-
-## 方法：
-
-以下にBashで現在の日付を取得する際の基本的なコードを示します：
+## How to: (方法)
 ```Bash
-date
-```
-このコードを実行すると、出力は以下のようになります：
-```Bash
-Thu Mar 26 12:34:56 UTC 2020
-```
-
-日付のフォーマットを指定したい場合は、"+％Y-％m-％d"のようなフォーマットを 'date' コマンドに指定します：
-```Bash
+# 現在の日付を表示
 date "+%Y-%m-%d"
 ```
-そして、出力包含の日付部分は次のようになります：
-```Bash
-2020-03-26
+
+出力例:
+```
+2023-04-05
 ```
 
-## ディープダイブ：
+```Bash
+# 時間も含めて表示
+date "+%Y-%m-%d %H:%M:%S"
+```
 
-現在の日付を取得するための 'date' コマンドは、Unixの初期のバージョンから存在し、GNUプロジェクトによって改善されました。他の方法として、 'printf' 関数または 'strftime' 関数を使用することも可能です。
+出力例:
+```
+2023-04-05 15:21:30
+```
 
-また、'date' コマンドは内部的に 'time' システムコールを使用して現在の日時を取得します。これは、システムクロックを読み取り、結果をUTC（協定世界時）で返します。
+## Deep Dive (詳細情報)
+UNIX系システムでは、1970年1月1日を初めとするエポックタイムからの経過時間で日付が計算されます。`date` コマンドはこのエポックタイムを元に現在日付を提供します。他の方法として `awk` や `perl` を使うことも可能ですが、`date` コマンドが最も直接的で簡単です。スクリプト内で `$(date)` 構文を使用し、コマンドの出力を変数に代入し操作を行うことが一般的です。タイムゾーンやロケールによって表示形式が変わることも重要な点です。
 
-## 参考に：
-
-関連するリソースを以下にリンクします。
-
-1. [GNU date command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-2. [Unix time system call](http://man7.org/linux/man-pages/man2/time.2.html)
-3. [POSIX strftime function](http://pubs.opengroup.org/onlinepubs/007904975/functions/strftime.html)
+## See Also (関連情報)
+- GNU Coreutils `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Bash Scripting Tutorial: https://ryanstutorials.net/bash-scripting-tutorial/
+- Epoch & Unix Timestamp Conversion Tools: https://www.epochconverter.com/

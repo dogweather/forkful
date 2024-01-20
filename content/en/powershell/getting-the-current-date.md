@@ -1,6 +1,7 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elm recipe: Getting the current date"
+date:                  2024-01-20T15:15:52.998123-07:00
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -12,50 +13,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Getting the current date in PowerShell is retrieving the present day, month, and year data. Programmers do it to log events, timestamp documents, or compare dates for various application needs.
+Grabbing the current date in PowerShell is just fetching the system's idea of today's date. Coders use this to timestamp logs, calculate time spans, or trigger time-specific operations.
 
 ## How to:
 
-Get the current date using the `Get-Date` cmdlet as seen in the block below:
+Here's the straight-up code to snag today's date:
 
-```PowerShell 
-$currentDate = Get-date
-$currentDate
+```PowerShell
+Get-Date
 ```
 
-It will display the present date including the time:
+And voila, output:
 
-```PowerShell 
-Thursday, March 10, 2022 11:05:25 PM
+```plaintext
+Tuesday, March 14, 2023 10:15:42 AM
 ```
 
-If you want just the date, format it this way:
+Maybe you want something more specific, like just the day:
 
-```PowerShell 
-$currentDate = (Get-Date).ToString('MM/dd/yyyy')
-$currentDate
+```PowerShell
+(Get-Date).Day
+```
+Output:
+
+```plaintext
+14
 ```
 
-Your output will look like this, depending on the present day:
+How about we go international? Get the date in ISO 8601 format:
 
-```PowerShell 
-03/10/2022
+```PowerShell
+Get-Date -Format 'yyyy-MM-dd'
+```
+
+Output:
+
+```plaintext
+2023-03-14
 ```
 
 ## Deep Dive
 
-Historically, PowerShell derived the `Get-Date` cmdlet from .NET's `DateTime` objects, hence the almost similar functionalities. Different methods of `DateTime` objects can be applied to it.
+Back in the day, getting the date in scripting languages was no trivial matter. But PowerShell, having learned from the complexities and necessities of computing history, made it a one-liner.
 
-Alternatives to `Get-date` include `.NET classes` directly:
+Beyond `Get-Date`, alternatives include diving into the .NET System.DateTime class for more complex needs, or using WMI (Windows Management Instrumentation) to fetch system info. Still, `Get-Date` is the go-to for simplicity and effectiveness.
 
-```PowerShell
-[System.DateTime]::Now
-```
+Under the hood, `Get-Date` taps into your system's clock and regional settings to ensure the date and time are accurately represented, reflective of time zones and daylight saving adjustments.
 
-A fun fact with PowerShell getting the current date is its ability to retrieve it in many ways. Not just 'now' but 'yesterday', 'last month', 'next week', etc. with `Get-Date`. It also easily formats dates, crucial for developers dealing with data presentation.
+It's also fully customizable. You can mold the output format to your heart's content using standard or custom format strings - a handy feature for logs that need to follow certain conventions or for visual harmony in your output.
 
 ## See Also
 
-For more details, you can check out these resources:
-1. Get-Date cmdlet:[Microsoft Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2)
-3. .NET DateTime methods: [.NET API Browser](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+Here are a few resources to check out:
+
+- [Get-Date documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+- [.NET DateTime structure](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [Custom date and time format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

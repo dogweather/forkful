@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:15:11.575044-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,40 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+קבלת התאריך הנוכחי בתכנות מאפשרת לך לטעון ולהשתמש בנתוני זמן חיים כדי להפוך את יישומך לדינמי ורלוונטי. זה חיוני לתפקודים כגון לוגים, תזכורות וכל דבר שתלוי זמן.
 
-משימה פשוטה שהמתכנתים מבצעים שוב ושוב היא קבלת התאריך הנוכחי. זה עוזר לנו לדעת מתי הוצעו נתונים, לסמן מועדים, או למדוד כמה זמן עבר.
-
-## איך מבצעים זאת:
-
-אז איך אנו מקבלים את התאריך הנוכחי ב־Haskell? בואו נראה דוגמה עם הספרייה `Data.Time`.
+## איך לעשות:
+כדי לקבל את התאריך הנוכחי ב-Haskell, תצטרך להשתמש בחבילת `time`. תחילה, תצטרך לייבא את המודולים הנכונים:
 
 ```Haskell
 import Data.Time
+```
+
+אז, לקבל את הזמן המקומי הנוכחי:
+
+```Haskell
+getCurrentTime :: IO UTCTime
+getCurrentTime = getCurrentTime
 
 main :: IO ()
 main = do
-   current <- getCurrentTime
-   print current
+    now <- getCurrentTime
+    print now
 ```
 
-פלט לדוגמה:
+דוגמא לפלט:
 
-```Haskell
-2022-05-09 12:46:00 UTC
+```
+2023-03-17 13:45:23.123456 UTC
 ```
 
-## חקירה מעמיקה:
-
-הצורה המקובלת לקבלת התאריך הנוכחי התפתחה מהצורך לקבלת מידע מתוארזם.
-
-החלופות לקבלת הזמן הנוכחי הן לבנות מנגנון מותאם אישית, או להשתמש בספריות של שפות אחרות.
-
-תחת המסך, `getCurrentTime` מושך את הזמן מהמערכת המרחיבה וממשטרת זאת בעזרת הספרייה 'Data.Time'.
+## עיון מעמיק:
+קבלת התאריך הנוכחי אינה חידוש ב-Haskell; זה עניין סטנדרטי בכל שפה. החבילה `time` ב-Haskell קיימת מזמן, והיא מאפשרת טיפול בתאריכים וזמנים עם דיוק גבוה. חלופות ל-`time` כוללות חבילות כמו `old-time` או גישות זמן מרובות בעידן פרה-`time`. פרטי היישום לפונקציה `getCurrentTime` כוללים קריאה למערכת ההפעלה כדי לקבל את הזמן לפי השעון האוניברסלי (UTC), והפונקציה עצמה מחזירה אובייקט מסוג `UTCTime`.
 
 ## ראה גם:
+- המידע הרשמי על החבילת `time`: http://hackage.haskell.org/package/time
+- מדריך כללי יותר לעבודה עם תאריכים וזמנים ב-Haskell: https://www.haskell.org/haskellwiki/Working_with_time
+- דוקומנטציה לסוג `UTCTime`: http://hackage.haskell.org/package/time-1.9/docs/Data-Time-Clock.html#t:UTCTime
 
-ניתן למצוא מקורות נוספים בנושא באינטרנט, כולל תיעוד, מדריכים ומאמרים המסבירים בהרחבה:
-
-- [Bedrock-time: ראשית מאמרים של Haskell(hackage.haskell.org)](http://hackage.haskell.org/package/time)
-- [טיפים לתכנות Haskell למתכנתים מתחילים (www.haskell.org)](https://www.haskell.org/haskellwiki/Haskell_in_5_steps)
-- [כתיבת ביטויים בהכנת תאריך ב־ Haskell (stackoverflow.com)](https://stackoverflow.com/questions/30229412/writing-date-expressions-in-haskell)
+נקווה שעכשיו יש לך כלי יותר טוב לעבוד עם זמנים ותאריכים ב-Haskell. Happy coding!

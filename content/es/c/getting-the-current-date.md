@@ -1,6 +1,7 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "C#: Obteniendo la fecha actual"
+date:                  2024-01-20T15:13:06.912061-07:00
+html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "C"
 category:             "C"
@@ -10,46 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## Qué y Por Qué?
 
-Obtener la fecha actual en programación significa obtener la fecha y hora del momento actual del sistema. Los programadores lo hacen para registrar cuándo ocurren determinados eventos, o para realizar operaciones basadas en horarios.
+Obtener la fecha actual en un programa es tan sencillo como preguntarle al sistema "¿qué día es hoy?". Los programadores hacemos esto para registrar eventos, marcar tiempos de ejecución o simplemente para mostrar la fecha al usuario.
 
 ## Cómo hacerlo:
 
-```C
-#include <time.h>
+```c
 #include <stdio.h>
+#include <time.h>
 
-int main()
-{
-    // Obtén el tiempo actual
-    time_t now = time(NULL);
-
-    // Conviértelo en estructura tm
-    struct tm *right_now = localtime(&now);
-
-    // Imprime la fecha y hora
-    printf("La fecha y hora actual son: %s", asctime(right_now));
-
+int main() {
+    time_t t = time(NULL);
+    struct tm fecha = *localtime(&t);
+    
+    printf("Hoy es: %d-%02d-%02d\n", fecha.tm_year + 1900, fecha.tm_mon + 1, fecha.tm_mday);
+    
     return 0;
 }
+
 ```
+
 Salida de muestra:
 
-```C
-La fecha y hora actual son: Wed Sep 15 14:06:21 2021
+```
+Hoy es: 2023-04-10
 ```
 
-## Profundización
+## Análisis Profundo:
 
-Históricamente las funciones de tiempo en C provienen de Unix, donde el tiempo se mide en segundos desde el primero de enero de 1970, conocido como época Unix.
+En los viejos tiempos de la programación, obtener la fecha no era tan directo como lo es hoy. Antes, dependíamos de sistemas operativos y su manera de entender el tiempo.
 
-Para obtener la fecha actual, C ofrece alternativas como `time()`, `localtime()` y `asctime()`. La función `time()` obtiene el tiempo actual en segundos. `Localtime()` convierte ese tiempo en una estructura `tm` más fácil de manejar. `Asctime()` toma esa estructura `tm` y la convierte en un string legible.
+`time(NULL)` nos da el tiempo actual en segundos desde la "Epoch" (1 de enero de 1970). La estructura `tm` de `localtime` transforma esos segundos en una forma amigable.
 
-Una implementación detallada podría implicar el manejo de zonas horarias y ajustes para tener en cuenta el horario de verano. Sin embargo, esos son detalles avanzados más allá de esta introducción.
+Existen alternativas para obtener la fecha y hora, como `gettimeofday` o bibliotecas externas, pero `time` y `localtime` son suficientes para la mayoría de los casos y vienen estándar en C.
 
-## Ver también:
-- Documentación de C en [cplusplus.com](http://www.cplusplus.com/)
-- Guía avanzada de programación en C [learn-c.org](https://www.learn-c.org/)
+Implementar una función que obtiene la fecha actual es simple, pero hay que tener en cuenta los detalles. Por ejemplo, `tm_year` devuelve los años desde 1900, así que hay que ajustar sumándole 1900. Otro detalle es que `tm_mon` va de 0 a 11, así que sumamos 1 para obtener el mes correcto.
 
----
+## Ver También:
+
+- Manual de `time.h` en la página de manuales de GNU: [time.h](https://www.gnu.org/software/libc/manual/html_node/Time-Types.html)
+- Artículo de Wikipedia sobre la "Epoch" de Unix: [Unix Time](https://en.wikipedia.org/wiki/Unix_time)
+- Referencia de la biblioteca estándar C de GNU: [GNU C Library](https://www.gnu.org/software/libc/)

@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:14:03.998868-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,31 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+לקבל את התאריך הנוכחי זה פשוט לשאול את המחשב "איזה יום אנחנו?" זה מועיל במיוחד כשאתה רוצה לתייג יומנים, לבדוק זמנים או לתזמן משימות.
 
-שליפת התאריך הנוכחי היא פעולה של קבלת התאריך והשעה של הרגע הנוכחי. מתכנתים משתמשים בזה לשם רישום, איתור טעויות וקביעת זמנים תקפים.
+## איך לעשות:
+ב-Elixir, שימוש במודול `Date` יתן את התאריך הנוכחי כך:
 
-## איך:
-
-אפשר להשיג את תאריך והשעה הנוכחיים באמצעות הפונקציה DateTime.utc_now().
-
-```elixir
-iex> DateTime.utc_now()
-~U[2022-01-31T13:37:08.635876Z]
+```Elixir
+today = Date.utc_today()
+IO.inspect(today)
 ```
-הפלט של הפקודה הוא תאריך ושעה בפורמט ISO8601.
 
-## הצצה מעמיקה:
-
-במקרה של DateTime.utc_now(), נכונה מהדורה 1.8 של Elixir.
-
-לחלופות ל־DateTime.utc_now() כוללות את פונקציות התאריך והשעה של Erlang, כגון :erlang.localtime() ו:erlang.universaltime().
-```elixir
-iex> :erlang.localtime()
-{{2022, 1, 31}, {13, 37, 8}}
-iex> :erlang.universaltime()
-{{2022, 1, 31}, {13, 37, 8}}
+פלט לדוגמה:
 ```
-## ראה גם:
+~D[2023-04-12]
+```
 
-[דוקומנטציה של Elixir](https://hexdocs.pm/elixir/DateTime.html)
-[דוקומנטציה של Erlang](https://erlang.org/doc/man/time_offset.html)
+אם אתה רוצה שעה ודקות:
+
+```Elixir
+time = DateTime.utc_now()
+IO.inspect(time)
+```
+
+פלט לדוגמה:
+```
+#DateTime<2023-04-12 15:30:45.123456Z>
+```
+
+## עומק הנושא
+בעבר, פונקציות זמן ותאריך לא היו חלק מ-Elixir עצמו, אלא דרך ספריות צד שלישי. עכשיו, עם מודולים כמו `Date` ו-`DateTime`, זה חלק מהשפה.
+
+דרך נוספת לקבל תאריך וזמן היא להשתמש בספריית Timex שמציעה יותר גמישות ואופציות.
+
+על מנת להבין איך המערכת שומרת ומנהלת זמנים, חשוב לדעת על המושגים של UTC ו-Time Zones. Elixir משתמשת ב-UTC (`Coordinated Universal Time`) ברירת מחדל.
+
+## ראה גם
+- [Elixir Date Documentation](https://hexdocs.pm/elixir/Date.html)
+- [Elixir DateTime Documentation](https://hexdocs.pm/elixir/DateTime.html)
+- [Timex Documentation](https://hexdocs.pm/timex/Timex.html)
+- [Understanding Date, Time, and Time Zones in Elixir](https://elixirschool.com/en/lessons/basics/date-time/)
+- [UTC and Time Zone in Elixir](https://hexdocs.pm/elixir/1.12/Time.html)

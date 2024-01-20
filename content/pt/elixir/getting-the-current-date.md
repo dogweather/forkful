@@ -1,6 +1,7 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "C: Obtendo a data atual"
+date:                  2024-01-20T15:13:57.818892-07:00
+html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,40 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Programação em Elixir: Obtendo a Data Atual
+## O Que & Porquê?
+Obter a data atual no Elixir é simplesmente pegar a data do momento em que o código é executado. Programadores fazem isso para registrar quando eventos ocorrem, executar funções baseadas em datas ou simplesmente apresentar datas aos usuários.
 
-## O Que & Por Quê?
+## Como Fazer:
+```elixir
+# Para pegar a data atual no Elixir, você pode usar o módulo Date.
+date = Date.utc_today()
+IO.inspect(date)
 
-Obter a data atual é um recurso comum em programação. É usado para registrar eventos, marcar postagens, lidar com expiração de sessões, entre outros. 
-
-## Como fazer:
-
-Em Elixir, você pode obter a data atual facilmente com o módulo `DateTime`. Veja os exemplos:
-
-```Elixir
-# Simplesmente pegar a data e a hora atuais:
-DateTime.utc_now()
-# Saída: ~U[2021-03-01T13:59:09.103Z]
+# Saida esperada (depende do dia em que você rodar o código):
+# ~D[2023-04-01]
 ```
 
-```Elixir
-# Apenas a data atual:
-DateTime.to_date(DateTime.utc_now())
-# Saída: ~D[2021-03-01]
-```
+## Mergulho Profundo
+O Elixir, assim como outras linguagens funcionais modernas, possui uma biblioteca padrão rica, o que inclui manipulação de datas e tempo. Uma alternativa ao `Date.utc_today/0` é usar o `DateTime`, que também fornece informações sobre o horário e fuso horário, oferecendo maior precisão se necessário. A implementação dessas funções depende do calendário ISO 8601, adotado como padrão desde 1988 devido à sua ampla aceitação e a facilidade de implementação em sistemas computacionais.
 
-## Mergulho Profundo:
-
-A captura da data atual é um conceito que data de tempos em que os computadores eram programados para registrar eventos com uma marca de horário.
-
-Existem outros módulos na linguagem Elixir para manipulação de datas e horários além da `DateTime`, como `Date` ou `Time`. Cada um com suas peculiaridades dependendo do uso.
-
-O método `DateTime.utc_now()` retorna a data e a hora atuais no horário universal coordenado (UTC). Elixir usa estruturas em vez de objetos de data. Isso pode tornar a manipulação de datas mais simples, uma vez que não há orientação para objetos.
-
-## Veja Também:
-
-Links para documentações relacionadas para mais informações.
-
-- DateTime em Elixir: https://hexdocs.pm/elixir/DateTime.html
-- Módulo Date: https://hexdocs.pm/elixir/Date.html
-- Time em Elixir: https://hexdocs.pm/elixir/Time.html
+## Veja Também
+- [Documentação oficial do Módulo Date](https://hexdocs.pm/elixir/Date.html)
+- [Documentação oficial do Módulo DateTime](https://hexdocs.pm/elixir/DateTime.html)
+- [ISO 8601 na Wikipedia](https://pt.wikipedia.org/wiki/ISO_8601)

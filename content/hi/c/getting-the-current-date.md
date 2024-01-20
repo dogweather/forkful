@@ -1,6 +1,7 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "C#: वर्तमान तारीख प्राप्त करना"
+date:                  2024-01-20T15:13:20.628005-07:00
+html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "C"
 category:             "C"
@@ -10,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?(What & Why?)
+## What & Why? (क्या और क्यों?)
+करेंट डेट प्राप्त करना मतलब आज की तारीख का डेटा निकालना। प्रोग्रामर्स यह काम लॉग्स, यूजर इंटरैक्शंस, और टाइम-सेंसिटिव फीचर्स के लिए करते हैं। 
 
-"मौजूदा तारीख" मिलाने का अर्थ होता है कंप्यूटर के सिस्टम कैलेंडर से वर्तमान तारीख प्राप्त करना। इसे कुछ ब्राउज़र की कुकी सेट करने, लॉग फ़ाइल में टाइमस्टैंप जोड़ने या यूज़र की गतिविधियों की ट्रैकिंग करने जैसे कई कारणों के लिए प्रोग्रामर कर सकते हैं।
+## How to: (कैसे करें:)
+C में करेंट डेट पाने के लिए `time.h` हेडर फाइल इस्तेमाल होती है। यहाँ एक सिंपल कोड उदाहरण है:
 
-## कैसे? (How to?)
-C में हम आमतौर पर टाइम लाइब्रेरी का उपयोग करके मौजूदा तारीख मिलता है।
-
-```C
+```c
 #include <stdio.h>
 #include <time.h>
- 
+
 int main() {
-   time_t t;
-   
-   time(&t);
-   printf("Today's date and time: %s", ctime(&t));
-   
-   return(0);
+    time_t current_time;
+    struct tm * time_info;
+    char timeString[9]; // space for "HH:MM:SS\0"
+
+    time(&current_time);
+    time_info = localtime(&current_time);
+
+    strftime(timeString, sizeof(timeString), "%H:%M:%S", time_info);
+    printf("Current Time: %s\n", timeString);
+
+    return 0;
 }
 ```
-उपरोक्त कोड चलाने पर आपको निम्नलिखित उत्तर मिलेगा:
+सैंपल आउटपुट होगा कुछ ऐसा:
 ```
-Today's date and time: Sun Jun 13 14:27:55 2023
+Current Time: 21:58:07
 ```
 
-## गहन अध्ययन (Deep Dive)
-C प्रोग्रामिंग भाषा के माध्यम से वर्तमान तारीख प्राप्त करने का इतिहास उस के ANSI कार्यक्रम में शुरू हुआ। जब ANSI C को निर्माण किया गया था, केवल उसकी स्तर C लाइब्रेरी में "time.h" लाइब्रेरी शामिल थी। 
+## Deep Dive (गहराई से जानकारी):
+`time.h` लाइब्रेरी C में समय और तारीख से जुड़े फंक्शन्स प्रदान करती है। `time` फंक्शन सिस्टम का करेंट टाइम `time_t` टाइप में देता है, और `localtime` इसे `tm` स्ट्रक्चर में बदलता है जो आसानी से पढ़े जा सकें। `strftime` फंक्शन इस डेटा को स्ट्रिंग में फॉर्मेट करता है। इतिहास में पहले कई दूसरे तरीके थे जैसे `gettimeofday` लेकिन `time` की सादगी और क्रॉस-प्लेटफॉर्म सपोर्ट ने इसे ज्यादा लोकप्रिय बना दिया।
 
-वैकल्पिक रूप से, आप POSIX टाइम फ़ंक्शंस का उपयोग कर सकते हैं, जिनमें `strftime()` फ़ंक्शं शामिल है, जिसे कस्टम तारिख़ और समय प्रारूप के लिए उपयोग किया जा सकता है। 
+अल्टरनेटिव्स में, सी++ में `chrono` लाइब्रेरी और Java में `java.util.Date` वैसे ही काम करते हैं। C में भी कुछ ओएस-स्पेसिफिक API होते हैं जो सीधे सिस्टम क्लॉक से डेटा निकालते हैं।
 
-## यह भी देखें (See Also)
-लिंक से जुड़े विषय और स्रोत 
-1. C प्रोग्रामिंग- मौजूदा टाइम: https://www.tutorialspoint.com/c_standard_library/c_function_time.htm
-2. ANSI C और पहले: https://www.learnc.org/
-3. विकिपीडिया पर ANSI कार्यक्रम: https://en.wikipedia.org/wiki/ANSI_C.
+## See Also (देखें भी):
+- The GNU C Library manual on Time: https://www.gnu.org/software/libc/manual/html_node/Time.html
+- Microsoft C Run-Time Libraries (CRT) - Date and Time: https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/time-functions?view=msvc-160
+- POSIX strftime function reference: https://pubs.opengroup.org/onlinepubs/009695399/functions/strftime.html

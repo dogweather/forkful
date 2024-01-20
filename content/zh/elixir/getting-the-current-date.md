@@ -1,6 +1,7 @@
 ---
 title:                "获取当前日期"
-html_title:           "Arduino: 获取当前日期"
+date:                  2024-01-20T15:13:46.283242-07:00
+html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,48 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
+## What & Why? (什么以及为什么？)
+获取当前日期是指让程序显示系统当前的日期。程序员这么做通常是要记录事件、处理日志或者日期相关的逻辑。
 
-获取当前日期是指编程代码为你提供今天的确切日期。程序员执行此操作的主要原因是跟踪、记录数据或日志，以及提供时间戳功能。
+## How to: (如何操作：)
+在Elixir中，获取当前日期可以使用`Date`模块。看下面例子：
 
-## 如何操作：
+```elixir
+# 引入Date模块
+import Date
 
-在Elixir中，我们依靠DateTime模块获取当前日期。以下为你操作的代码示例以及输出结果：
+# 获取当前日期
+today = utc_today()
 
-```Elixir
-DateTime.now("Etc/UTC")
+# 打印当前日期
+IO.inspect(today)
 ```
 
-输出示例：
+这个代码会输出类似：
 
-```Elixir
-{:ok, #DateTime<2021-09-24 03:44:01.266302Z>}
+```
+~D[2023-04-05]
 ```
 
-上述代码段中，“Etc/UTC”是官方标准的世界时区，你可以根据需求更改为其他标准时区字符串。
+## Deep Dive (深入探讨)
+历史上，Elixir是由José Valim发起的，他是个Ruby社区的成员，目的是创建一个更高效、可伸缩的语言。在Elixir中获取当前日期与许多其他语言获取日期的方式类似。`utc_today/0`是获取世界标准时间(UTC)当前日期的一个方法，如果你需要时区支持，可以使用`Timex`这样的第三方库。实现的细节方面，Elixir的`Date`模块是构建在Erlang的`:calendar`模块上的，提供了简单易用的函数。
 
-## 深入了解
-
-使用Elixir获取当前日期的历史并不是特别悠久。Elixir 1.3版本开始引入了DateTime模块，将这个功能更好地集成到语言中。
-
-在获取日期时，还有一些替代方法，比如我们也可以使用Date.today函数：
-
-```Elixir
-Date.today
-#输出示例：
-#~D[2021-09-23]
-```
-
-这段代码会根据本地时区输出当前日期。
-
-在Elixir中取得当前日期的实现细节主要依靠DateTime和Date模块，这两个模块都使用了内部结构，并考虑了各种可能的边界情况，以提供最准确的日期和时间。
-
-## 另请参见
-
-以下链接提供了Elixir获取当前日期的相关内容：
-
-1. Elixir官方网站-DateTime：https://hexdocs.pm/elixir/DateTime.html
-2. Elixir之PhO – 获取当前日期和时间：https://pragtob.wordpress.com/2017/04/17/getting-the-current-date-and-time-in-elixir-a-journey/
-3. Elixir中的日期和时间：https://www.poeticoding.com/working-with-dates-and-times-in-elixir-with-elixir
-
-这些链接让你更深入地了解Elixir中获取日期和时间的知识，并提供更多操作实例和教程。
+## See Also (另请参阅)
+- Elixir官方文档：[Date](https://hexdocs.pm/elixir/Date.html)
+- Timex库：[GitHub - bitwalker/timex](https://github.com/bitwalker/timex)

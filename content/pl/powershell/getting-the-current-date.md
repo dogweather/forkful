@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:15:57.594095-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,30 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Pobieranie bieżącej daty to proste zadanie, które polega na jednym z najbardziej podstawowych aspektów programowania. Kiedy programiści to robią? Zawsze, kiedy potrzebują założyć kontrolę nad czasem, na przykład do znaczników czasu, do wywołań API, do logów i jeszcze więcej.
+## What & Why?
+W skrócie, pobieranie bieżącej daty to nic innego jak sprawdzenie, jakie jest dzisiaj. Programiści często to robią, by logować zdarzenia, ustalać ramy czasowe czy też po prostu wyświetlać datę użytkownikom.
 
-## Jak to zrobić:
-W PowerShell (obecnej wersji) pobieranie bieżącej daty jest tak proste, jak wpisanie jednej komendy.
+## How to:
+Zobaczmy, jak to zrobić w PowerShell:
 
 ```PowerShell
+# Pobranie i wyświetlenie aktualnej daty i czasu
 Get-Date
+
+# Formatowanie wyświetlanej daty
+Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+
+# Zapisanie aktualnej daty do zmiennej
+$currentDate = Get-Date
+$currentDate
 ```
 
-Podczas uruchomienia, wydrukuje bieżącą datę i czas, na przykład:
+Sample output:
 
-```PowerShell
-środa, 20 października 2021 14:04:15
+```
+środa, 12 kwietnia 2023 14:05:46
+
+2023-04-12 14:05:46
+
+środa, 12 kwietnia 2023 14:05:46
 ```
 
 ## Deep Dive
-Powyższa komenda, Get-Date, można znaleźć w wersji PowerShell 2.0 i jest integralną częścią narzędzi od momentu jej wprowadzenia. Nie jest to jedyny sposób na pobranie bieżącej daty w PowerShell. Innymi opcjami są [System.DateTime]::Now i [System.DateTime]::Today, które zwracają pełny zestaw informacji czasowych i samą datę bez czasu odpowiednio.
+W PowerShell, `Get-Date` to podstawowe polecenie do pobierania aktualnej daty i czasu systemowego. Istnieje od początków PowerShell i, co ciekawe, jest wrapperem do .NETowej klasy `DateTime`. Jeśli potrzebujesz większej kontroli, alternatywnie możesz użyć `[datetime]::Now` z .NET, zaś do zapisywania i porównywania dat przydatny może być obiekt `DateTimeOffset`.
 
-Szczegóły implementacji dotyczące Get-Date wystarczają, aby dostarczyć aktualną datę i czas, jednak czasem możesz potrzebować bardziej szczegółowych informacji lub specyficznych elementów, takich jak miesiąc, dzień tygodnia itp. Dla tego można wykorzystać inne metody jak 'Get-Date -Format'.
+Opcje formatowania, jak `-Format`, pozwalają dostosować wyświetlanie daty do potrzeb. Da się też z łatwością dodać lub odjąć określony czas, używając metod `AddDays()`, `AddMonths()` itp. na zwróconym obiekcie.
 
-
-## Zobacz też:
-Emocjonujące jest, że istnieje wiele źródeł do nauki i doskonalenia umiejętności codingu w PowerShell!
-
-- [Get-Date - Dokumentacja Microsoft](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
-- [System.DateTime Struktura](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-5.0)
+## See Also
+- [Dokumentacja polecenia Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+- [Dokumentacja .NET DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- [Formatowanie daty i czasu w PowerShell](https://ss64.com/ps/syntax-dateformats.html)

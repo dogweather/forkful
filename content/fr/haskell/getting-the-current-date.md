@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:14:41.973384-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## What & Why?
+Obtenir la date actuelle en Haskell est fondamental. Les programmeurs le font pour des logs, des timestamps ou des fonctionnalités dépendantes du temps.
 
-La récupération de la date actuelle est une tâche courante en programmation qui consiste à obtenir et à stocker la date du moment. C'est essentiel pour le suivi des événements, la journalisation et la gestion du temps dans les applications.
-
-## Comment faire :
-
-Pour obtenir la date actuelle en Haskell, le module Data.Time est votre ami. Voici un simple morceau de code pour obtenir la date actuelle :
+## How to:
+Pour choper la date du jour, Haskell est ton ami. Utilise `Data.Time` ; check l'exemple :
 
 ```Haskell
 import Data.Time
 
 main :: IO ()
 main = do
-    currentDay <- fmap utctDay getCurrentTime
-    putStrLn ("La date du jour est: " ++ show currentDay)
+    currentDay <- getCurrentTime
+    putStrLn $ "La date et l'heure actuelles sont : " ++ show currentDay
 ```
 
-Lorsque vous exécutez ce code, il affiche la date actuelle sous la forme `aaaa-mm-jj`.
+Si tu lances ça, voici ce que tu auras :
 
-## Plongée en profondeur :
+```
+La date et l'heure actuelles sont : 2023-04-14 12:34:56.7891011 UTC
+```
 
-Historiquement, obtenir la date et l'heure actuelles est une tâche basique mais indispensable en programmation, quel que soit le langage que vous utilisez.
+Simple, non ?
 
-En Haskell, on peut aussi utiliser le module System.Time, mais il est obsolète. Data.Time est le module de choix pour gérer le temps et les dates en Haskell.
+## Deep Dive
+Haskell et les dates, c'est une vieille histoire. `Data.Time` est l'évolution moderne, plus simple d'usage que l'antique `System.Time`. Côté alternatives, tu peux tenter `old-time` mais franchement, `Data.Time` t'offre tout ce qu'il te faut. Pense à `TimeZone` et `FormatTime` pour des manip' plus complexes (comme gérer les fuseaux horaires). Haskell gère les dates système via les types de données comme `UTCTime`, et tu peux formatter à ta sauce avec le package `time`.
 
-Il existe d'autres fonctions dans le module Data.Time pour gérer le format de la date et l'heure, comme formatTime, parseTimeM etc.
+## See Also
+Pour creuser :
 
-## A voir aussi :
-
-- Pour un aperçu complet du module Data.Time, consultez la [documentation officielle](http://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)
+- [`Data.Time` documentation](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Time package sur Hackage](https://hackage.haskell.org/package/time)

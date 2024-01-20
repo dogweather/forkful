@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:14:14.752219-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,56 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Hankkiminen nykyinen päivämäärä tarkoittaa päästä tietää, minkä päivämäärän tänään on. Ohjelmoijat tekevät tämän, jotta sovellus voi toimia ajantasaisesti tai viitata siihen, milloin jokin tapahtuma tapahtui.
+## What & Why? ("Mitä & Miksi?")
+Saada nykyinen päivämäärä tarkoittaa kellonaikaan sidotun päivämäärätiedon hyödyntämistä. Käytämme tätä toiminnallisuutta esimerkiksi lokeissa, aikaleimoissa tai käyttäjän toiminnan ajastamisessa.
 
-## Kuinka tehdä:
-Alla on esimerkki siitä, miten saat nykyisen päivämäärän Elm-ohjelmointikielellä.
-
-```Elm
-import Time exposing (Posix, Zone, utc, posixToTime)
-import Task
-
-nykyinenPäivämäärä : Task.Task x Posix
-nykyinenPäivämäärä =
-    Time.now
-```
-Kun suoritat tämän koodin, tuotos on Posix-timestamp, joka on nykyinen aika. Voit muuntaa sen ihmisen luettavaksi.
+## How to: ("Kuinka tehdään:")
+Elmissä työskennellessä voit käyttää `Time` moduulia nykyisen päivämäärän saamiseksi. Tässä pikainen esimerkki:
 
 ```Elm
-import Time exposing (Posix, toHour, toMinute, utc, posixToTime)
+import Browser
+import Html exposing (Html, text)
 import Task
+import Time exposing (Posix)
 
-timestampToString : Posix -> String
-timestampToString posix =
-    let
-        hour =
-            toHour utc posix
+main =
+    Browser.element
+    { init = init
+    , update = update
+    , subscriptions = subscriptions
+    , view = view
+    }
 
-        minute =
-            toMinute utc posix
-    in
-    (String.fromInt hour) ++ ":" ++ (String.fromInt minute)
+type alias Model = Posix
 
-getHumanReadableDate : Task.Task x String
-getHumanReadableDate =
-    Time.now
-        |> Task.andThen (Task.succeed << timestampToString)
+init : () -> (Model, Cmd Msg)
+init _ =
+    (Time.millisToPosix 0, Task.perform NewTime Time.now)
+
+type Msg
+    = NewTime Posix
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        NewTime posix ->
+            (posix, Cmd.none)
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    Sub.none
+
+view : Model -> Html Msg
+view model =
+    text (String.fromInt (Time.toMillis model))
+
+type alias Flags = ()
+
 ```
 
-## Syvempi Sukellus
-Historiallisesti ottaen, Elm-version 0.19 esitteli uuden tavan työskennellä päivämäärä- ja aikatietojen kanssa, joka korvasi vanhemman `Time`-moduulin. Tämä uusi lähestymistapa on ottanut käyttöön `Posix`-tyypin, jonka avulla voimme käsitellä ajanhetkiä, kuten 'nykyinen päivämäärä'.
+Ajamalla yllä olevan koodin saat tulostettua selaimen konsoliin nykyisen ajan millisekunteina Unix Epochista (1. tammikuuta 1970) lähtien.
 
-Tapoja on kaksi:
+## Deep Dive ("Syväsukellus"):
+Elmin `Time` moduuli perustuu JavaScriptin `Date`-objektiin, mutta tarjoaa turvallisemman ja funktionaalisemman käyttöliittymän. Historiallisesti päivämäärät ovat olleet monelle ohjelmointikielle haasteellisia muun muassa aikavyöhykkeiden ja karkaussekuntien vuoksi.
 
-- `Time.now` on epäsynkroninen prosessi, joka palauttaa nykyisen ajan `Posix`-muodossa.
-- `Time.here` palauttaa paikallisen aikavyöhykkeen, minkä avulla voit muuntaa aika-arvoja käyttäjän nykyisen aikavyöhykkeen mukaisesti.
+Unix Epoch, eli ajanlaskun nollakohta, on valittu sen yksinkertaisuuden ja laajalti tuetun standardin takia. Elm käyttää Posix-aikaa, joka on millisekuntien muodossa oleva kokonaisluku.
 
-Tämänhetkisen päivämäärän hankkimisen toteutus perustuu suurelta osin JavaScriptin `Date`-objektiin. Elm suorittaa JavaScript-koodin haastaakseen laitteen nykyisen päivämäärän ja kellonajan.
+Vaikka Elm suoraviivaistaa päivämäärähallintaa, ole tietoinen, että serveri- ja asiakaskoneiden välinen ajanhallinta voi aiheuttaa ongelmia. Aikavyöhykkeet ja kesäaika voivat sekoittaa pakkaa, joten niitä käsitteleviä kirjastoja (kuten `elm/time`) saattaa tarvita kompleksisemmissa sovelluksissa.
 
-## Katso Myös
-Lisätietoja Elm-kielestä ja ajan käsittelystä Elm:ssä muihin lähteisiin:
-
-- Elm:n virallinen dokumentaatio: https://elm-lang.org/docs
-- Elm Time-paketti: https://package.elm-lang.org/packages/elm/time/latest/
-- Elm-kielen perusteet: https://elmprogramming.com/
+## See Also ("Katso myös"):
+- Elm Time dokumentaatio: https://package.elm-lang.org/packages/elm/time/latest/
+- Elm Browser paketti: https://package.elm-lang.org/packages/elm/browser/latest
+- Elm in Action kirja: https://www.manning.com/books/elm-in-action

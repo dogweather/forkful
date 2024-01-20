@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:14:28.556702-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,37 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hae päivämäärää Gleamilla
+## What & Why?
+"Mikä ja Miksi?"
+Kun ohjelmoijat nappaavat nykyhetken päivämäärän, he yleensä tarvitsevat aikaleimoja, aikavälejä tai haluavat tehdä päätöksiä reaaliajassa. Nykyinen päivämäärä auttaa sovelluksia pysymään ajantasaisina ja vuorovaikutuksessa käyttäjän kanssa.
 
-## Mikä & Miksi?
-Päivämäärän hakeminen viittaa siihen, kun ohjelmoija saa selville nykyisen päivämäärän. Sitä tarvitaan useissa sovelluksissa, kuten lokienseurannassa, aikaleimojen luomisessa, tai dynaamisissa tehtävissä, jotka perustuvat päivän aikaan.
-
-## Näin se tehdään:
-Gleam-ohjelmointikielessä päivämäärän hakeminen tapahtuu seuravasti:
-
+## How to:
+"Näin se tehdään:"
 ```gleam
-import gleam/locale.{month, second, day, year}
-import gleam/date_time.now
+import gleam/utc_now.{utc_now}
+import gleam/io.{println}
 
-fn main() {
-  let nyt = now()
-  let paiva = day(now)
-  let kuukausi = month(now)
-  let vuosi = year(now)
-  let sekunti = second(now)
-  
-  io.println("Tämän hetkinen päivämäärä on " ++ paiva ++ "/" ++ kuukausi ++ "/" ++ vuosi)
-  io.println("Tämän hetkinen sekunti on " ++ sekunti)
+fn show_current_date() {
+  let today = utc_now() // Hakee nykyhetken UTC-aikaan
+  println(today)        // Tulostaa päivämäärän
+}
+
+pub fn main() {
+  show_current_date()
 }
 ```
-Se tulostaa nykyisen päivämäärän ja sekunnin.
+Esimerkkituloste: `2023-03-14T15:09:12Z`
 
-## Syvempi sukellus
-Historiallisesti päivämäärän hakeminen on ollut tärkeä osa ohjelmointia ja sen merkitys on vain kasvanut. Gleam tarjoaa selkeän ja intuitiivisen tavan hakea nykyistä päivämäärää ja aikaa. 
+## Deep Dive
+"Syväsukellus"
+Ensimmäisen kerran päivämäärän hakeminen ohjelmallisesti tuli mahdolliseksi jo varhaisissa tietokoneissa. Gleamissa päivämäärän hallinta on yksinkertaista, mutta muitakin kirjastoja ja menetelmiä on olemassa, kuten `calendar` ja `datetime`. UTC on yleensä suositeltavampi aikavyöhyke, koska se on standardoitu eikä se muutu kesä- tai talviajan mukana.
 
-Vaihtoehtoisesti, voit käyttää myös muita Gleam-kirjastoja kuten `time`-kirjastoa. Kummassakin tapauksessa, päivämäärä ja aika lasketaan senhetkisen järjestelmän ajasta, jossa koodi suoritetaan.
-
-Gleamissa päivämäärän haku perustuu Erlangin kerrosalustaan, joka antaa hyvän tarkkuuden ja suorituskyvyn.
-
-## Katso myös
-4. Erlangin DateTime-moduuli: [https://erlang.org/doc/man/calendar.html](https://erlang.org/doc/man/calendar.html)
+## See Also
+"Lisätietoja"
+- Official Gleam language website: [Gleam Language](https://gleam.run)
+- World Clock API for real-time applications: [World Clock API](http://worldclockapi.com)

@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:15:55.045219-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,27 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הזמן הנוכחי מסייע למתכנתים ליצור גרסאות, לניתוח נתונים כרוניים ולנטר את ביצועי המערכת. זה מספק מידע נוסף שקשור לנתונים ולביצועים.
+קבלת התאריך הנוכחי ב-PowerShell היא פשוט לשלוף את התאריך והשעה בשניה זו. תכניתנים עושים את זה ללוגים, זמנים ותיזמון פעולות.
 
 ## איך לעשות:
-השג את התאריך הנוכחי ב-PowerShell באמצעות הפקודה הבאה:
-
+כדי לקבל את התאריך והשעה הנוכחיים, השתמש בקוד הבא:
 ```PowerShell
-Get-Date
+# קבלת התאריך הנוכחי
+$התאריך = Get-Date
+$התאריך
+
+# פורמט מותאם אישית
+$התאריך.ToString("yyyy-MM-dd")
 ```
-הפלט ייראה כך:
 
-```PowerShell
-יום ראשון, 26 בדצמבר 2021 10:39:20
+דוגמא לפלט:
+```
+יום רביעי 15 מרץ 2023 10:34:56
+2023-03-15
 ```
 
-## צלילה עמוקה:
-בעצם, הפקודה ``Get-Date`` כבר קיימת מאז הגרסא הראשונה של PowerShell. האפשרויות הדינאמיות שלה, תרגומי השפה השונות והתמיכה הרחבה שלה הפכו אותה לברירת מחדל של רבים.
-
-ישנן גם דרכים אחרות להשיג תאריך נוכחי, כמו ``[datetime]::Now`` - אך ``Get-Date`` מומלץ לרוב התרחישים עקב הנוחות שבה.
-
-פירוט על מאחורי הקלעים: PowerShell למעשה מנצל את .NET framework לביצוע של פקודת ``Get-Date``, כאשר הוא מפעיל את המטודה ``System.DateTime.Now``
+## טבילה עמוקה:
+הפקודה `Get-Date` זמינה ב-PowerShell מאז הגרסה הראשונה. זו הדרך המובנית והפשוטה ביותר לשליפת תאריך ושעה. אפשרויות חלופיות כוללות שימוש ב-NET בעזרת `[System.DateTime]::Now` או `[System.DateTime]::UtcNow` לזמן אוניברסלי. לגבי פרטים טכניים, `Get-Date` משתמש במערכת ה-API של .NET Framework או .NET Core לקבלת התאריך והשעה תוך שימוש בהגדרות האזור הזמני של המערכת.
 
 ## ראה גם:
-1. [PowerShell Get-Date documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date)
-3. [.NET DateTime class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+- [תיעוד הרשמי של `Get-Date`](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+- [PowerShell ב-GitHub](https://github.com/PowerShell/PowerShell)

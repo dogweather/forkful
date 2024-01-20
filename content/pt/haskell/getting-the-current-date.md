@@ -1,6 +1,7 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "C: Obtendo a data atual"
+date:                  2024-01-20T15:14:58.394027-07:00
+html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,42 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## O Quê e Por Quê?
+Obter a data atual no Haskell significa acessar a data do sistema onde o programa está rodando. Isso é útil para registrar eventos, fazer operações baseadas em datas ou simplesmente exibir a data para o usuário.
 
-Obter a data atual é uma ação programática para se descobrir a data do sistema em tempo real. Esta técnica é útil para uma multitude de aplicações, como marcação de eventos de log, clima em tempo real em jogos, ou para simplesmente mostrar a data atual para um usuário.
-
-## Como fazer:
-
-Em Haskell, obter a data atual é feito com poucas linhas de código utilizando a biblioteca `Data.Time.Clock`. Aqui vai um exemplo:
-
+## Como Fazer:
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
+import Data.Time
 
+-- Obtendo a data atual
+main :: IO ()
 main = do
-  atual <- getCurrentTime
-  print $ utctDay atual
-```
-Ao executar este código, verá algo assim:
-
-```Haskell
-2022-07-29
+    currentDay <- fmap utctDay getCurrentTime
+    print currentDay
 ```
 
-## Mergulho Profundo:
+Saída de exemplo:
+```
+2023-04-05
+```
 
-Historicamente, obter a hora e a data do sistema foi algo desafiador desde o princípio da programação. Hoje em dia, bibliotecas como `Data.Time.Clock` em Haskell o tornaram simples e direto.
+## Mergulho Profundo
+Antigamente em Haskell, acessar a data e a hora era uma tarefa menos direta, exigindo bibliotecas adicionais ou funções mais complexas. Hoje, a biblioteca `Data.Time` facilita esse processo, encapsulando a maioria das funcionalidades que precisamos.
 
-Existem alternativas para obter a data atual em Haskell, como a biblioteca `System.Time`, mas ela está depreciada e não é recomendada para casos de uso modernos.
+Existem alternativas a `Data.Time`, como `old-time` e `time`, mas `Data.Time` é a biblioteca recomendada hoje em dia por ser mais moderna e ter suporte contínuo.
 
-A implementação de `getCurrentTime` em Haskell usa bindings para a função C `time()`, que retorna o tempo atual. É uma chamada simples, mas que representa a evolução de muitos anos de programação.
+Quando você chama `getCurrentTime`, o Haskell internamente acessa o relógio do sistema operacional para buscar a hora universal coordenada (UTC). Ao aplicar `utctDay`, convertemos esse valor para apenas a data, ignorando o tempo.
 
-## Veja Também:
-
-Há várias fontes disponíveis se você estiver interessado em aprofundar mais no uso de `Data.Time.Clock` ou outras maneiras de lidar com as horas em Haskell:
-
-* Documentação oficial de `Data.Time.Clock`: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html
-* Perguntas e respostas no StackOverflow sobre `Data.Time`: https://stackoverflow.com/questions/tagged/haskell+datetime
-* O livro "Real World Haskell" tem um ótimo capítulo sobre isso: https://book.realworldhaskell.org/read/using-typeclasses.html
-
-Lembre-se, a melhor maneira de aprender é fazendo, então continue escrevendo código e fazendo perguntas.
+## Veja Também
+- Para mais sobre `Data.Time`: http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
+- Tutorial sobre datas e horas em Haskell: https://wiki.haskell.org/Working_with_time
+- Documentação da biblioteca `old-time`: http://hackage.haskell.org/package/old-time-1.1.0.3/docs/Old-Time.html

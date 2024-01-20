@@ -36,4 +36,3 @@ Vanhat Unix-perinteet elävät `test`-komennossa; Fish Shell käyttää sitä, k
 
 ## See Also - Katso Myös:
 - Fish Shell:n virallinen dokumentaatio: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Unix `test` komennon manuaalisivu: [https://man7.org/linux/man-pages/man1/test.1.html](https://man7.org/linux/man-pages/man1/test.1.html)

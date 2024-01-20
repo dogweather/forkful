@@ -1,6 +1,7 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elm recipe: Getting the current date"
+date:                  2024-01-20T15:16:28.225959-07:00
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,55 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Getting the current date in Swift is a common programming task. This is useful in applications where you need time-stamping, or to program processes based on a time schedule, for example, an alarm or a reminder system.
+In Swift, getting the current date involves accessing the system's current time and date settings. Programmers do this to timestamp events, schedule tasks, or just display the date and time in their apps.
 
 ## How to:
-
-Below is a simple piece of code to get the current date:
+Grabbing the current date and time in Swift is straightforward:
 
 ```Swift
 import Foundation
 
 let currentDate = Date()
-print("Current date and time: \(currentDate)")
+print(currentDate)
 ```
-
-This may output something like:
-
-``` 
-Current date and time: 2023-04-17 12:06:45 +0000
+Sample Output:
 ```
-
-If you just want the date, you can use:
+2023-04-10 16:20:32 +0000
+```
+If you want a specific format:
 
 ```Swift
 import Foundation
 
 let formatter = DateFormatter()
-formatter.dateStyle = .long
-let dateString = formatter.string(from: Date())
-print("Current date: \(dateString)")
+formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+let formattedDate = formatter.string(from: Date())
+print(formattedDate)
 ```
-
-This will output the date in a long format such as:
-
-``` 
-Current date: April 17, 2023
+Sample Output:
+```
+2023-04-10 16:20:32
 ```
 
 ## Deep Dive
+The `Date` struct in Swift is part of the Foundation framework, which came from Objective-C's `NSDate`. Over time, Swift provided a modern approach with `Date` that's more expressive and safer.
 
-Swift uses the `Date` class, a part of Foundation, to manage date and time data. It's been in Swift since its birth in 2014. Before Swift, Objective-C developers relied on `NSDate`.
+There are alternatives to `Date()` for getting the current time. For instance, `NSDate()`, which is roughly the same but less Swift-friendly, and lower-level APIs like `gettimeofday()` for getting more precise system time. But, `Date()` is the go-to for most Swift developers because it balances ease of use with sufficient precision for typical use cases.
 
-Getting the current date is simple, but date-time manipulation can get more complex. Be cautious with time zones and daylight-saving times. If you run services in different countries, it's essential to consider these.
-
-There are alternatives like third-party libraries (e.g., SwiftDate), but sticking to Foundation tools is sometimes best to keep your project lightweight.
+`Date()` in Swift gets system time, which is often in Coordinated Universal Time (UTC). So when you print it directly without a format, it appears with a UTC offset. That's why formatters are popular; they adjust the date and time to any specified timezone and format, rendering it human-friendly on display. Implementing your own timezone adjustments without formatters is possible but reinventing the wheel and prone to errors due to daylight saving changes and leap seconds.
 
 ## See Also
-
-1. [Apple Documentation – Date](https://developer.apple.com/documentation/foundation/date)
-
-2. [Apple Documentation – DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-
-3. [SwiftDate Github](https://github.com/malcommac/SwiftDate)
+- Apple's official `Date` documentation: [Date - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/date)
+- DateFormatter guide: [DateFormatter - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
+- For deeper insights into date and time in computer systems, check [Computerphile’s video on YouTube](https://www.youtube.com/watch?v=-5wpm-gesOY).

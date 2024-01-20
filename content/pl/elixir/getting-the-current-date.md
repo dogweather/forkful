@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:13:51.562349-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,32 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Co i Dlaczego?
+## What & Why? (Co i dlaczego?)
+Pobieranie aktualnej daty to sposób na uzyskanie informacji o bieżącym dniu, miesiącu i roku. Programiści robią to by zapisywać znaczniki czasu, harmonogramować zadania i generować raporty.
 
-Praca z bieżącą datą to jedno z wielu zadań, które programiści muszą wykonywać, umożliwiaj też śledzenie czasu, logowanie zdarzeń, generowanie raportów itp.
-
-## Jak to zrobić:
-
-By pobrac aktualną datę w Elixire, używamy modułu `DateTime`. Poniżej znajduje się kod, który zwroci dzisiejszą datę.
+## How to: (Jak to zrobić:)
+Elixir używa modułu `DateTime` do pracy z datami. Oto jak łatwo uzyskać bieżącą datę:
 
 ```elixir
-DateTime.utc_now() |> DateTime.to_string()
+# Pobranie aktualnej daty i czasu w strefie UTC
+{:ok, current_datetime} = DateTime.now("Etc/UTC")
+IO.inspect(current_datetime)
+
+# Jeśli interesuje nas tylko data
+{:ok, date} = Date.today()
+IO.inspect(date)
 ```
 
-Po uruchomieniu tego kodu, otrzymasz efekt podobny do tego:
+Na wyjściu zobaczysz coś w stylu:
 
-```elixir
-"2023-08-23T12:33:27.125681Z"
+```
+# DateTime
+%DateTime{
+  year: 2023,
+  month: 4,
+  day: 5,
+  ...
+}
+
+# Date
+~D[2023-04-05]
 ```
 
-## Głębsze spojrzenie:
+## Deep Dive (Dogłębna analiza)
+Elixir, język funkcyjny zrodzony w 2012 roku na fundamencie Erlanga, ma dobre wsparcie dla operacji na czasie. Moduł `DateTime` pochodzi z biblioteki standardowej, a Elixir korzysta z `Calendar` do obsługi różnych kalendarzy. Zanim powstał `DateTime`, programiści musieli polegać na zewnętrznych bibliotekach lub własnych implementacjach. Ważną rzeczą jest świadomość stref czasowych, co rozwiązuje moduł `Timezone`. Alternatywą dla wbudowanych modułów jest popularna biblioteka `Timex`, która oferuje więcej funkcji.
 
-Mimo że jest wiele sposobów na odczytanie aktualnej daty w Elixir, `DateTime.utc_now()` jest najczęściej używanym. Ta funkcja zwraca bieżącą datę i czas w strefie czasowej UTC, co jest przydatne dla programistów, którzy pracują nad aplikacjami obsługującymi różne strefy czasowe.
-
-Ale warto pamiętać, że Elixir ma również inne moduły do obsługi dat i czasu - jak `NaiveDateTime` i `Date`. `NaiveDateTime` obchodzi się bez strefy czasowej, co czyni go mniej precyzyjnym, ale prostszym w użyciu. W międzyczasie, `Date` obsługuje tylko daty, bez odniesienia do czasu.
-
-## Zobacz również:
-
-- Dokumentacja Elixira na temat DateTime: https://hexdocs.pm/elixir/DateTime.html
-- Dokumentacja Elixira na temat Date: https://hexdocs.pm/elixir/Date.html
-- Dokumentacja Elixira na temat NaiveDateTime: https://hexdocs.pm/elixir/NaiveDateTime.html
+## See Also (Zobacz również)
+- Dokumentacja Elixir `DateTime`: https://hexdocs.pm/elixir/DateTime.html
+- Dokumentacja Elixir `Date`: https://hexdocs.pm/elixir/Date.html
+- Timex, zaawansowana biblioteka do pracy z czasem: https://hexdocs.pm/timex/Timex.html
+- Erlang/OTP, platforma dla Elixir: https://www.erlang.org/

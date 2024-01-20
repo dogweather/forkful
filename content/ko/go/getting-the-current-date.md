@@ -1,6 +1,7 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "C: 현재 날짜 가져오기"
+date:                  2024-01-20T15:15:18.774984-07:00
+html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Go"
 category:             "Go"
@@ -10,45 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇과 왜?)
 
-현재 날짜를 가져오는 것은 특정 시점의 날짜와 시간 정보를 프로그램에 제공하는 것입니다. 프로그래머들이 이를 수행하는 이유는 로깅, 타임스탬프 작성 및 실시간 기능을 제공하기 위해서입니다.
+시스템의 현재 날짜와 시간을 얻는 것은 기본적이지만 필수적인 기능입니다. 로깅, 타임스탬프, 사용자 이벤트 기록 등 다양한 목적으로 프로그래머들은 이를 사용합니다.
 
-## 어떻게 하나요?
+## How to: (방법)
 
-아래는 현재 날짜를 얻는 Go 프로그램의 예제입니다:
+Go에서 현재 날짜와 시간을 얻으려면 `time` 패키지를 사용하세요.
 
 ```Go
 package main
 
-import "fmt"
-import "time"
+import (
+    "fmt"
+    "time"
+)
 
 func main() {
-	currentTime := time.Now()
-	fmt.Println("현재 시간:", currentTime)
+    now := time.Now()
+    fmt.Println("현재 날짜와 시간: ", now)
 }
 ```
 
-이 코드를 실행하면 출력은 다음과 같습니다:
+Sample Output:
 
-```Go
-현재 시간: 2022-03-01 15:04:05.999999999 +0900 KST m=+0.000000001
+```
+현재 날짜와 시간: 2023-04-05 17:45:42.371625 +0000 UTC
 ```
 
-이 코드는 `time` 패키지의 `Now` 함수를 사용하여 현재 시간을 얻습니다. 그런 다음 이것을 출력으로 반환하여 현재 시간을 출력합니다.
+## Deep Dive (심화 탐구)
 
-## 깊게 알아보기
+컴퓨터의 시간은 일반적으로 표준 시간대에 맞춰지며, UTC (협정 세계시)를 기준으로 합니다. `time` 패키지는 2009년에 Go의 초창기 버전에 도입되었으며, 타임존과 시간 포맷을 다룰 수 있는 강력한 기능을 제공합니다. 
 
-과거에는 날짜와 시간 정보를 얻는 방법이 제한적이었습니다. 그러나 현재 Go의 `time` 패키지 덕분에 프로그래머들이 쉽게 현재 날짜와 시간 정보에 액세스할 수 있게 되었습니다.
+UTC와의 차이를 고려해서 로컬 타임을 얻거나 타임존에 맞는 시간을 설정할 수도 있습니다. 예를 들어, 서울의 경우 `Asia/Seoul` 타임존을 사용합니다.
 
-현재 날짜를 얻는 대안은 `time` 패키지 외부에 있는 라이브러리를 사용하는 것이 있습니다. 그러나 이는 일반적으로 권장되지 않습니다. 왜냐하면 `time` 패키지는 그 자체로 충분하며, 외부 라이브러리는 종종 불필요한 복잡성을 추가하기 때문입니다.
+```Go
+seoul, _ := time.LoadLocation("Asia/Seoul")
+nowInSeoul := time.Now().In(seoul)
+fmt.Println("서울 현재 시간: ", nowInSeoul)
+```
 
-우리가 사용한 `Now` 함수는 현재 날짜와 시간을 리턴하는데 있어 매우 중요한 역할을 합니다. 이것은 UTC (국제 표준시)를 사용하여 시간 정보를 제공하는데, 코드에 분명히 날짜와 시간 정보를 제공하는 방법입니다.
+Sample Output:
 
-## 참고 자료
+```
+서울 현재 시간: 2023-04-06 02:45:42.371625 +0900 KST
+```
 
-시간과 관련된 더 많은 예제와 토픽을 탐색하려면 다음 링크를 참조하십시오:
+스탠다드 라이브러리 외에도, 일부 서드파티 라이브러리들이 더 복잡한 날짜와 시간 조작을 위해 사용할 수 있지만, 표준 `time` 패키지는 대부분의 요구를 만족시킵니다.
 
-- Go 공식 문서: https://golang.org/pkg/time/
-- Go에서의 날짜 및 시간 다루기: https://yourbasic.org/golang/format-parse-string-time-date-example/
+## See Also (관련 자료)
+
+- [Go `time` Package Documentation](https://pkg.go.dev/time)
+- [Go by Example: Time](https://gobyexample.com/time)
+- [The Go Programming Language Specification](https://golang.org/ref/spec#Time_and_duration_types)

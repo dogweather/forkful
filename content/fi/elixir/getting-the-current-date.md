@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:14:14.046216-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,37 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## Mitä & Miksi?
+Päivämäärän haku tarkoittaa nykyhetken päivämäärän selvittämistä ohjelmassa. Tämä on hyödyllistä lokituksessa, aikaleimoissa ja päivämääräriippuvaisten toimintojen hallinnassa.
 
-Nykyisen päivämäärän saaminen ohjelmoinnissa tarkoittaa sitä, että saat työkalut aikaleiman lisäämiseen tietueisiin tai ajan seurantaan reaaliaikaisesti. Se on olennainen osa monia toimintoja, kuten lokiin kirjoittamista, tehtävien ajoitusta ja datan aikasarjojen hallintaa.
+## Kuinka:
+```elixir
+# Käytetään Elixirin sisäänrakennettua DateTime-moduulia
+# Hankitaan nykyhetken päivämäärä ja aika UTC-muodossa
+nykyhetki = DateTime.utc_now()
 
-## Näin tehdään:
+# Tulostetaan se näytölle
+IO.inspect(nykyhetki)
 
-Tässä on Elixir-ohjelmointiesimerkki, joka näyttää kuinka saada nykyinen päivämäärä:
+# Määritellään myös aikavyöhyke, esim. Helsinki (+2 tai +3 UTC riippuen kesä- tai talviajasta)
+helsinki_aikavyohyke = "Europe/Helsinki"
 
-```Elixir
-iex> date = Date.utc_today()
-~D[2021-11-11]
+# Muunnetaan nykyhetki Helsinki-ajaksi käyttäen Calendar-moduulin toiminnallisuutta
+helsinki_aika = nykyhetki |> DateTime.shift_zone!(helsinki_aikavyohyke)
+
+# Tulostetaan Helsinki-ajan
+IO.inspect(helsinki_aika)
 ```
 
-Tämä esimerkki palauttaa nykyisen päivämäärän UTC-muodossa.
-
-## Syvällisemmin:
-
-**Historiallinen yhteys**: Nykyisen päivämäärän hankinta on peräisin päivistä, jolloin tietokonejärjestelmien oli seurattava aikaa ja päivämääriä. Elixir periytti tämän ominaisuuden Erlangilta, sen perustalta.
-
-**Vaihtoehdot**: Jos tarvitset kellonajan lisäksi päivämäärän, voit käyttää `DateTime.utc_now/0`-funktiota:
-
-```Elixir
-iex> datetime = DateTime.utc_now()
-~U[2021-11-11T08:44:50.044476Z]
+Sample output:
 ```
-Nämä funktiot palauttavat tietueen nykyisestä päivämäärästä ja ajasta UTC-muodossa.
+# UTC-aika
+~U[2023-04-02 12:34:56Z]
 
-**Toteutuksen yksityiskohdat**: Elixir käyttää `:erlang.localtime/0`-funktiota saatuaan päivämäärän ja kellonajan. 
+# Helsinki-aika
+# Huom: Lähtökohta otaksuu että nyt on kesäaika
+~U[2023-04-02 15:34:56+03]
+```
 
-## Katso myös:
+## Syväsukellus
+Elixirin `DateTime`-moduuli on osa Elixirin peruskirjastoa jo versiosta 1.3 lähtien. Elixir käyttää sisäisesti Erlangin aikatoiminnoita, mutta tarjoaa niiden käyttöön helpomman ja Elixiriin sopivamman rajapinnan. Aikavyöhykkeiden käsittelyyn `DateTime.shift_zone!` funktio hyödyntää tz-databasea, joten aikavyöhyketiedot ovat ajan tasalla. Vaihtoehtoisia kirjastoja aikasempien Elixiriin ei sisäänrakennettuja aikatoiminnallisuuksien kanssa on esimerkiksi Timex, mutta moderni Elixir sisältää jo kaiken tarpeellisen useimmille aikaan liittyville tehtäville.
 
-[Nykyisen päivämäärän ohjeet Elixir-langissa](https://elixir-lang.org/getting-started/io-and-the-file-system.html#getting-date-and-time)
-
-Lisää tietoa siitä, kuinka käsitellä päivämääriä Elixirissä, löytyy tästä opetusohjelma: [Päivämäärät ja ajat Elixirissä](https://www.learnwithjason.dev/blog/working-with-dates-and-times-in-elixir).
+## Katso Myös
+- Elixirin viralliset DateTime-dokumentaatiot: https://hexdocs.pm/elixir/DateTime.html
+- Elixirin viralliset Calendar-dokumentaatiot: https://hexdocs.pm/elixir/Calendar.html
+- tz-database informaatio: https://www.iana.org/time-zones
+- Timex-kirjaston GitHub-sivu: https://github.com/bitwalker/timex

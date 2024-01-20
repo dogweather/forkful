@@ -1,7 +1,8 @@
 ---
-title:                "Få den gjeldende datoen"
-html_title:           "Haskell: Få den gjeldende datoen"
-simple_title:         "Få den gjeldende datoen"
+title:                "Slik får du tak i dagens dato"
+date:                  2024-01-20T15:14:22.866990-07:00
+html_title:           "C: Slik får du tak i dagens dato"
+simple_title:         "Slik får du tak i dagens dato"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Fish Shell Programmering: Hvordan få tak i dagens dato
+## What & Why?
+"Hva & Hvorfor?" - Å hente dagens dato i programmering betyr å lese det nøyaktige dato og klokkeslett fra systemet. Vi gjør dette for å legge til tidsstempler, håndtere tidsfrister eller for datodrevne logikk.
 
-## Hva & Hvorfor?
+## How to:
+"Slik gjør du det:" - I Fish Shell henter du enkelt dato med innebygde funksjoner.
 
-Å få tak i dagens dato innebærer å hente informasjonen om dagens dato og tid. Dette er essensielt for programmerere når de vil spore tidspunktet for bestemte handlinger eller lage tidspesifikke funksjoner i en applikasjon.
-
-## Hvordan gjøre det:
-
-I en Fish Shell, å få dagens dato er ganske enkelt. Her er kodeeksempelet og utdataen:
-
+For å få dagens dato i formatet ÅÅÅÅ-MM-DD:
 ```Fish Shell
-# Få dagens dato
-set -l dagensDato (date +"%Y-%m-%d")
-echo $dagensDato
+set -l today (date +%Y-%m-%d)
+echo $today
+```
+Sample output:
+```
+2023-04-02
 ```
 
-Output vil være på formatet 'ÅÅÅÅ-MM-DD', for eksempel:
-
+For å inkludere klokkeslett:
 ```Fish Shell
-2022-12-14
+set -l now (date +%Y-%m-%d\ %H:%M:%S)
+echo $now
+```
+Sample output:
+```
+2023-04-02 15:45:10
 ```
 
-## Dypdykk
+## Deep Dive
+"Dypdykk:" - Før Fish Shell eksisterte, brukte mange Bash. Overgangen til Fish introduserte en mer moderne og brukervennlig opplevelse med fokus på interaktivitet og smidighet. I begge skallene er `date`-kommandoen sentral for tidshåndtering, men Fishens skriptsyntaks skiller seg ut for sin rene og leslige natur.
 
-Historisk sett var tids- og datostyring en kompleks oppgave for tidlige programmerere. Språk som C nødvendig mange linjer kode for å utføre det som nå kan gjøres i en enkelt linje i Fish Shell.
+Videre har alternativer som Python, JavaScript, og PHP sine egne innebygde måter å hente dato på, men `date`-kommandoen i skallet ditt er ofte den raskeste veien til mål for enkle oppgaver.
 
-Alternativt kan du i noen tilfeller ønske å bruke (date + "%s") for å hente Unix-tidstempel, som representerer sekundene som har gått siden 1. januar 1970 kl. 00:00 UTC.
+Når det kommer til implementasjon, bruker Fish `date`-kommandoen som kjører i underliggende operativsystemet. Outputformatet bestemmes ved å sette argumenter som `%Y` for år, `%m` for måned, og `%d` for dag, som åpner for fleksibel datoformatting.
 
-Implementeringen av 'date' -kommandoen i Fish Shell stammer fra Unix 'Date' -kommando. Den bringer Unix kraft og fleksibilitet til oppgaven med å hente det nåværende tidspunktet, med den ekstra fordelen av å være enklere å bruke.
+## See Also
+"Se Også:" - For mer utfyllende info om Fish Shell:
 
-## Se også:
-
-For ytterligere lesing og beslektede kilder, se følgende lenker:
-- Fish Shell Dokumentasjon: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Unix 'Date' -kommando: [https://man7.org/linux/man-pages/man1/date.1.html](https://man7.org/linux/man-pages/man1/date.1.html)
+- Fish Shell GitHub-repositoriet: [github.com/fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
+- En guide til dato og klokkeslett i Unix/Linux: [man7.org/linux/man-pages/man1/date.1.html](https://man7.org/linux/man-pages/man1/date.1.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "C: Obtendo a data atual"
+date:                  2024-01-20T15:13:18.331158-07:00
+html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,60 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Artigo de Programação Arduino: Obtendo a Data Atual
+## What & Why?
+Saber a data atual é útil para registrar eventos ou realizar ações programadas. Programadores o fazem para adicionar contexto temporal aos projetos ou controlar eventos que dependem da data.
 
-## O Que & Por quê?
+## How to:
+Para pegar a data atual no Arduino, usamos um módulo RTC (Real Time Clock), como o DS3231. Segue um exemplo de código para ler a data:
 
-Identificar a data atual significa ler a data e o horário calculados no momento exato da execução. Fazê-lo ajuda os programadores a criar os registros de eventos, realizar automações baseadas no tempo e inserir marcas temporais nos dados.
-
-## Como Fazer:
-
-Utilizando o modelo de relógio em tempo real DS3231, podemos obter a data e a hora atual com o Arduino. Aqui está um exemplo de como:
 ```Arduino
-#include "RTClib.h"
+#include <Wire.h>
+#include <RTClib.h>
 
 RTC_DS3231 rtc;
 
-void setup () {
+void setup() {
   Serial.begin(9600);
-  if (! rtc.begin()) {
-    Serial.println("DS3231 RTC não encontrado!");
+  if (!rtc.begin()) {
+    Serial.println("Não foi possível encontrar o RTC");
     while (1);
+  }
+  if (rtc.lostPower()) {
+    Serial.println("RTC perdeu a energia, vamos definir a data e hora!");
+    // A linha abaixo ajusta a data e hora para a data e hora da compilação do sketch
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
-void loop () {
-  DateTime agora = rtc.now();
-  Serial.print(agora.day(), DEC);
+void loop() {
+  DateTime now = rtc.now();
+  
+  Serial.print("Data atual: ");
+  Serial.print(now.day());
   Serial.print('/');
-  Serial.print(agora.month(), DEC);
+  Serial.print(now.month());
   Serial.print('/');
-  Serial.print(agora.year(), DEC);
-  Serial.print(' ');
-  Serial.print(agora.hour(), DEC);
-  Serial.print(':');
-  Serial.print(agora.minute(), DEC);
-  Serial.print(':');
-  Serial.println(agora.second(), DEC);
+  Serial.println(now.year());
+  
   delay(1000);
 }
 ```
-A saída desse código seria algo como:
-```Arduino
-24/04/2023 14:25:15
+
+Saída de exemplo:
 ```
-Essa saída representa a data (dia/mês/ano) e a hora (hora:minuto:segundo) atual.
+Data atual: 31/3/2023
+```
 
-## Mergulho Profundo:
+## Deep Dive
+O uso de módulos RTC é comum em projetos com Arduino para adicionar a função de relógio em tempo real. O DS3231 é popular por sua precisão e facilidade de uso. Alternativas incluem o DS1307, que é menos preciso. Implementar a data atual envolve comunicar-se com o módulo via I2C e interpretar os dados. É importante notar que configuramos a data e hora automaticamente para a ocasião da compilação; ainda assim, pode-se ajustar manualmente se necessário.
 
-Ao longo dos anos, os arduínos têm sido tradicionalmente impopulares para manter a hora do sistema devido à falta de um RTC (Relógio em Tempo Real) interno. Mas com o advento de módulos RTC externos como o DS3231, eles agora têm a capacidade de manter a data e a hora precisas.
+Em termos históricos, antes dos módulos RTC, era complexo e impreciso manter a noção de tempo em sistemas embarcados. Hoje, com módulos RTC acessíveis, o controle temporal é uma questão de algumas linhas de código.
 
-Em alternativa ao DS3231, existem outros módulos RTC, como o DS1307, que também são compatíveis com o Arduino.
-
-Para obter a data e a hora atuais do RTC, você precisa inicializá-lo previamente com a data e a hora corretas. Isso é feito normalmente usando um sketch de configuração separado. A hora é mantida com a ajuda de uma bateria de célula de moeda, mesmo quando o Arduino está desligado. O DS3231 tem a vantagem adicional de ter uma precisão de ± 2 minutos por ano, o que o torna muito útil para projetos de longa duração.
-
-## Veja Também:
-
-2. Módulo RTC DS3231: [https://lastminuteengineers.com/ds3231-rtc-arduino-tutorial/](https://lastminuteengineers.com/ds3231-rtc-arduino-tutorial/)
-3. Biblioteca RTClib (usada neste artigo): [https://github.com/adafruit/RTClib](https://github.com/adafruit/RTClib)
-4. Módulo alternativo RTC DS1307: [https://lastminuteengineers.com/ds1307-rtc-arduino-tutorial/](https://lastminuteengineers.com/ds1307-rtc-arduino-tutorial/)
+## See Also
+- [Documentação da biblioteca RTClib](https://github.com/adafruit/RTClib)
+- [Guia sobre módulos RTC com Arduino](https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout)

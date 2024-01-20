@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:14:15.974179-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,48 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Aktualna Data w Elm: Jak i Dlaczego?
+## What & Why?
+(Co i Dlaczego?)
+Pobieranie aktualnej daty to jedno z zadań, które pozwala aplikacji rozumieć „teraz". Programiści robią to, aby śledzić czas, rejestrować zdarzenia lub wyświetlać odświeżone informacje użytkownikom.
 
-## Czym Jest i Dlaczego?
-
-Pobieranie aktualnej daty oznacza odczytanie systemowego zegara w wyniku czego otrzymujemy bieżącą datę i czas. Programiści robią to w celu zapisywania strumienia zdarzeń, trackowania czasu rzeczywistego albo generowania unikalnych timestampów.
-
-## Jak to zrobić:
-
-Elm oferuje wbudowany moduł `Time`. Używamy funkcji `now` do odczytania aktualnej daty i czasu. Poniżej przykład w kodzie:
+## How to:
+(Jak to zrobić:)
+W Elm do pobierania aktualnej daty używamy pakietu `elm/time`. Oto jak to zrobić:
 
 ```Elm
-import Time
+import Time exposing (Posix)
+import Task
 
-main =
-    Time.now 
-    |> Task.perform DataReceived
+-- Pozyskanie aktualnej daty i czsu jako Posix (milisekundy od epoki)
+getCurrentDate : Task.Task Time.Error Posix
+getCurrentDate = Time.now
+
+-- Przykład użycia w aplikacji
+type Msg = SaveTheDate Posix
+
+saveCurrentDate : Cmd Msg
+saveCurrentDate =
+  Task.perform SaveTheDate getCurrentDate
 ```
 
-Zwróć uwagę, że `Time.now` zwraca Task,a nie bezpośrednio datę i czas. W Elm, operacje wejścia/wyjścia są obsługiwane jako zadania ("tasks"), które są niemutowalne i efekty boczne są definiowane razem z danymi dla czystych funkcji.
+Jeśli uruchomisz `saveCurrentDate`, otrzymasz komendę, która zapisze aktualny czas i datę i wyśle jako wiadomość `SaveTheDate`.
 
-Wynik może zostać następnie przetworzony przez `Task.perform`, który spowoduje jego wykonanie.
+## Deep Dive
+(Zanurzenie się głębiej)
+Elm korzysta z typu Posix by reprezentować czas; to liczba milisekund od północy UTC, 1 stycznia 1970 r. Alternatywy? W językach frontendowych często używamy `Date` w JavaScript, ale Elm preferuje czysto funkcyjne podejście, stąd `Posix`. Szczegóły implementacyjne? `Time.now` wykonuje zadanie, a `Task.perform` przetwarza wynik do wiadomości w Twojej aplikacji.
 
-## Zagłębienie się w szczegóły:
-
-Elm to język programowania stworzony przez Evana Spyzgla w 2012 roku. Dzięki swojej czystej, niemutowalnej i funkcyjnej naturze, doradza się używanie Tasków do operacji I/O, które mogą wpływać na stan systemu, takich jak odczytanie aktualnej daty i czasu.
-
-Istnieje kilka alternatyw sposobu uzyskania aktualnej daty i czasu. Możemy użyć funkcji `Time.every` do utworzenia sygnału, który będzie emitowany co pewien określony interwał czasu.
-
-```Elm
-import Time
-import Signal
-
-main = 
-    let
-        tick = Time.every Time.second
-    in
-        Signal.map second tick
-```
-
-Podczas implementacji pamiętaj, że Elm jest czystym językiem funkcyjnym – co oznacza, że nie możemy bezpośrednio zmodyfikować stanów, tak jak w większości języków obiektowych. Zamiast tego, następuje transformacja stanu z jednej postaci do drugiej.
-
-## Zobacz więcej:
-
-- Dokumentacja Elm `Time` module: [Elm Time](http://package.elm-lang.org/packages/elm-lang/core/latest/Time)
-- Elm Architecture Tutorial: [Elm Architecture](https://guide.elm-lang.org/architecture/)
+## See Also
+(Zobacz również)
+- Oficjalna dokumentacja pakietu `elm/time`: [https://package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/)
+- Elm Guide na temat obsługi czasu: [https://guide.elm-lang.org/effects/time.html](https://guide.elm-lang.org/effects/time.html)
+- Elm Discourse, jeśli masz pytania: [https://discourse.elm-lang.org/](https://discourse.elm-lang.org/)

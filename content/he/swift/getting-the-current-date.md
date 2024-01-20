@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:17:11.049293-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,32 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+השגת התאריך הנוכחי בתכנות היא כשאנחנו מבקשים מהמחשב לתת לנו את היום, החודש והשנה העכשוויים. זה נחוץ לכשרוצים לתייג אירועים בזמן, לוגים, או לחשב פרקי זמן.
 
-לקבל את התאריך הנוכחי הוא בסופו של דבר להביא את הזמן מהעכשיו, מהשנייה הזו. תוכניתים מנצלים את זה למגוון מטרות כמו ניהול אירועים, עדכונים, תקופות עבודה ותזכורות.
-
-## איך?
-
-קבלת התאריך הנוכחי בשפת התכנות Swift מתבצעת דרך קלאס נוסף של המערכת, `Date`. הנה דוגמה:
-
+## איך לעשות:
 ```Swift
+import Foundation
+
+// קבלת התאריך הנוכחי
 let currentDate = Date()
+
+// הדפסת התאריך הנוכחי
 print(currentDate)
 ```
-
-הפלט יהיה ממד כזה:
-
-```Swift
-2022-03-01 13:20:45 +0000
+פלט לדוגמה:
+```
+2023-04-12 07:46:23 +0000
 ```
 
-## הצצה לעומק
+כדי לפורמט את התאריך:
+```Swift
+// פורמטר להצגת תאריך
+let dateFormatter = DateFormatter()
+dateFormatter.dateStyle = .medium
+dateFormatter.timeStyle = .medium
 
-אף פעם לא הייתה אחת שמה דרך היכולה להוציא את התאריך והשעה הנוכחיים עד להופעת הפקודה `Date()` בשפת Swift. על אף השילוב הנוח שלה, ישנם דרכים נוספות לקבלת התאריך, כמו למשל יצירת מופע של `NSDate` .
+// הדפסת תאריך מעוצב
+let formattedDate = dateFormatter.string(from: currentDate)
+print(formattedDate)
+```
+פלט לדוגמה:
+```
+Apr 12, 2023, 10:46:23 AM
+```
 
-Swift משתמשת ב-Time Interval או בגרגוריאני כדי לעבוד עם תאריכים. זו עובדת על ידי שמירה על מספר שניות שעברו מאז מועד כלשהו (כמו תחילת המאה ה-21). מספרי השניות הממוזגים הם בפורמט fractional, מה שמאפשר להם לחשב יותר משנייה אחת.
+## ניתוח עמוק:
+הוצאת התאריך הנוכחי היא פעולה פשוטה היום, אבל זה לקח זמן עד שהפכה לסטנדרט בשפות תכנות. בעידן דוס, למשל, היה צורך להתעסק יותר עם החומרה כדי לקבל כזה פרט. אלטרנטיבות כוללות שימוש ב-Calendar API לפרטים מדוקדקים יותר או ספריות זמן חיצוניות כמו SwiftDate.
 
-## לעיון נוסף
+בשפת Swift, ה-Date() פונקציה מחזירה תאריך ושעה בפורמט UTC. ניתן להשתמש ב-DateFormatter להפיכתו לפורמט אנושי קריא יותר. כדי להתמודד עם בעיות שעון קיץ וחורף, תיקון לאזורי זמן, ועוד, כדאי להבין טוב את ה-API של Foundation המתייחס לטיפול בזמן ותאריכים.
 
-1. [הדרכה מקיפה לתאריך ושעה ב-Swift](https://www.hackingwithswift.com/articles/141/8-important-swift-dates)
-2. [תיעוד ה-Date الرسمي](https://developer.apple.com/documentation/foundation/date)
-3. [צפון ה-NSDate](https://developer.apple.com/documentation/foundation/nsdate)
+## ראו גם:
+- [Apple Developer Documentation: Date](https://developer.apple.com/documentation/foundation/date)
+- [Apple Developer Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [SwiftDate](https://github.com/malcommac/SwiftDate)

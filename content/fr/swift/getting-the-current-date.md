@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:16:41.974622-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,52 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Swift: Comment obtenir la date actuelle
+## Quoi et Pourquoi ?
+Obtenir la date actuelle en Swift, c'est capturer le moment présent dans notre code. Les développeurs s'en servent pour tout, des logs à la gestion des évènements temps-réel.
 
-## Quoi & Pourquoi?
-
-Obtenir la date actuelle est une manière pour les programmeurs de marquer des événements ou des actions dans leurs scripts. Cela peut être utilisé pour le suivi des erreurs, les horodatages et la quantification du temps écoulé.
-
-## Comment faire:
-
-La méthode standard d'obtention de la date courante en Swift implique l'utilisation de la classe `Date`. Regardez cet exemple:
-
+## Comment faire :
 ```Swift
-let maintenant = Date()
-print("Date et heure actuelles: \(maintenant)")
+import Foundation
+
+// Obtenir la date et l'heure actuelle
+let now = Date()
+
+print(now)
 ```
 
-Et l'affichage serait:
-
-```Swift
-Date et heure actuelles: 2022-01-15 15:37:30 +0000
+Exemple de sortie :
+```
+2023-04-05 12:24:06 +0000
 ```
 
-## Plongée en profondeur
-
-Historiquement, Swift dérive la classe `Date` de sa bibliothèque de fondation. Autrefois, nous utilisions `NSDate` en Objective-C.
-
-Des alternatives existent, comme l'utilisation de `DateFormatter` pour personnaliser l'affichage de la date. Exemple:
-
-```Swift
-let maintenant = Date()
-
-let formatteur = DateFormatter()
-formatteur.dateStyle = .long
-
-let dateString = formatteur.string(from: maintenant)
-print("Date formatée: \(dateString)")
-```
-
-Cela afficherait:
-
-```Swift
-Date formatée: 15 janvier 2022
-```
-
-La classe `Date` enregistre le temps écoulé depuis une date de référence (1er janvier 2001, 00:00:00 GMT). Ainsi, lorsque vous créez une nouvelle instance de `Date`, vous obtenez l'intervalle de temps entre maintenant et cette date de référence.
+## Plongée Profonde
+Historiquement, Swift a hérité de la gestion du temps de Objective-C et de ses classes fondationnelles comme `NSDate`. Mais avec `Date` en Swift, tout est plus swifty – plus simple à écrire et à lire. Pour les alternatives, on pourrait se tourner vers des bibliothèques tierces comme `SwiftDate`, mais pour une utilisation de base, `Date` suffit et est ultra performant. Le détail qui compte : `Date()` en Swift renvoie le temps universel coordonné (UTC), donc pensez à gérer les fuseaux horaires pour une utilisation locale.
 
 ## Voir Aussi
-
-- Documentation Apple sur [Date](https://developer.apple.com/documentation/foundation/date)
-- How to format dates with [Swift DateFormatter](https://www.hackingwithswift.com/example-code/system/how-to-format-dates-with-dateformatter)
+- La documentation Apple sur la classe Date : [Date - Foundation | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/date)
+- Pour des besoins avancés, SwiftDate pourrait être intéressant : [SwiftDate Documentation](https://malcommac.github.io/SwiftDate/)

@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:12:57.606395-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,30 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Datum und Uhrzeit abzurufen, ist wie nachzusehen, wie spät es ist – nur für Scripts. Nutzbar für Logs, Zeitstempel oder um Zeitspannen zu messen.
 
-Als Programmierer kann es erforderlich sein, das aktuelle Datum zu ermitteln - sei es zur zeitbezogenen Protokollierung, zur Generierung einzigartiger IDs oder für jegliche Datums-/Zeitstempelverwendung. Bash ermöglicht es uns, das aktuelle Datum einfach und effizient zu erfassen.
-
-## So geht's:
-
-Bash-Benutzer können das date-Kommando verwenden, um das aktuelle Datum zu bekommen. Hier ist ein Beispiel:
+## How to:
+Das aktuelle Datum und die Uhrzeit in Bash abzurufen ist einfach. Hier ist ein grundlegendes Beispiel:
 
 ```Bash
-datum=$(date)
-echo "Aktuelles Datum: $datum"
+date
 ```
-Wenn man den obigen Code ausführt, erhält man eine Ausgabe ähnlich dieser:
+
+Sample output:
+
+```
+Mi 5. Apr 00:34:07 CEST 2023
+```
+
+Mit `date` können wir auch Formate anpassen:
 
 ```Bash
-Aktuelles Datum: Di Feb 8 12:01:53 CET 2022
+date "+%Y-%m-%d %H:%M:%S"
 ```
-##Tieftauchgang
 
-Historisch gesehen ist `date` ein altes Unix-Programm, das schon seit den Anfängen dabei ist und in der Bourne-Shell eingepackt ist. Es gibt viele Möglichkeiten, die Nutzung des date-Befehls anzupassen. Mit der Verwendung von Formatierungsoptionen können Benutzer das Datum und die Uhrzeit in nahezu jedem gewünschten Format anzeigen.
+Sample output:
 
-Alternativ zu `date` können Sie auch die Funktion `strftime` aus dem `time.h`-Header in C oder `DateTime.Now` in C# verwenden. Bash bietet jedoch eine einfachere Möglichkeit, diese Aufgabe direkt aus der Kommandozeile zu erfüllen.
+```
+2023-04-05 00:34:07
+```
 
-## Auch Sehen
+## Deep Dive
+Der `date`-Befehl stammt aus den Anfängen von Unix und ist seitdem ein Standard-Tool in allen Unix-ähnlichen Systemen, einschließlich Linux und macOS. Alternativen sind Skriptsprachen oder Funktionen in Programmiersprachen wie Python's `datetime` oder PHP's `date()` Funktion. Diese sind nützlich, wenn kompliziertere Zeitberechnungen notwendig sind oder das Datum in einer anderen als der Server-Zeitzone benötigt wird. Beim Bash `date` Befehl hängt die Ausgabe von der lokalen Systemuhr und der eingestellten Zeitzone ab.
 
-Weitere Informationen zur Verwendung des date-Befehls und zur Formatierung von Datum und Uhrzeit finden Sie in den Unix/Linux-Handbüchern:
-* [Date Command in Linux with examples](https://www.geeksforgeeks.org/date-command-linux-examples/)
-* [How To Format Date For Display or Use In a Shell Script](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
+## See Also
+Hier weitere Quellen, um vertiefende Informationen zu bekommen:
+
+- Bash man page: https://www.gnu.org/software/bash/manual/bash.html
+- Datum und Zeit im Bash Script: https://www.tldp.org/LDP/abs/html/timedate.html
+- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/index.html

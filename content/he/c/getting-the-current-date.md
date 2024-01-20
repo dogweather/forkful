@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:13:18.481091-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "C"
 category:             "C"
@@ -10,41 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## मा ולמה?
-משום שזה מאפשר למתכנתים לשלוט ולשמש את התאריך והשעה הנוכחיים, זהו אלמנט הכרחי בפונקציונליות מערכת ההפעלה. אתה יכול להשתמש בזה לבצע לוגים, השוואות זמן, או ספירות מדוברות ביישומים שונים.
+## מה ולמה? (What & Why?)
+לקבל את התאריך הנוכחי ב-C זה כמו להגיד למחשב "מה השעה?". תכניתנים עושים את זה כי לפעמים תאריכים הם חלק מהמשחק - חותמות זמן, תיעוד, והתאמות.
 
-## איך משיגים:
-להלן דוגמאות קוד ופלטי דגימה בקודי C:
+## איך לעשות: (How to:)
+הנה קוד פשוט שמציג את התאריך והשעה הנוכחיים:
+
 ```C
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
 
 int main() {
-    time_t current_time;
-    char* c_time_string;
+    time_t now;
+    time(&now); // קבל את הזמן הנוכחי
 
-    /* Obtain current time. */
-    current_time = time(NULL);
+    struct tm *local = localtime(&now); // המיר לזמן מקומי
 
-    /* Convert to local time format. */
-    c_time_string = ctime(&current_time);
+    printf("התאריך והשעה הנוכחיים: %02d/%02d/%d %02d:%02d:%02d\n",
+           local->tm_mday, local->tm_mon + 1, local->tm_year + 1900,
+           local->tm_hour, local->tm_min, local->tm_sec);
 
-    /* Print to stdout. */
-    printf("Current time is %s", c_time_string);
     return 0;
 }
 ```
-פלט מנעד זה יכול להיות משהו בסגנון:
-```
-Current time is Wed Jun 2 19:19:31 2021
-```
-## Deep Dive
-1. **הקשר היסטורי:** תיאור הזמן הנוכחי באמצע של מערכת ההפעלה הוא מרכזי להגדרה של ה"תקן C", תקן מתכנת המחשב שהעיד בעשור של שימוש שוטף, התנסות, וחידוש.
-2. **אלטרנטיבות:** ב- C++, אפשר להשתמש ב- `std::chrono` לקבלת הזמן הנוכחי. ב- Python, ניתן להשתמש במודול הספרייה `datetime`.
-3. **פרטי הגשמה:** הפונקציה `time` מחזירה את הזמן הנוכחי מאז שנת 1970 (epoch), והפונקציה `ctime` ממירה את הזמן הזה לפורמט מחרוזת אנושי.
 
-## ראו גם
-1. [תיעוד הפונקציה `time`](http://www.cplusplus.com/reference/ctime/time/)
-2. [תיעוד הפונקציה `ctime`](http://www.cplusplus.com/reference/ctime/ctime/)
-3. [היסטורית תקן C](https://en.wikipedia.org/wiki/C_%28programming_language%29#History)
-4. ['epoch'](https://en.wikipedia.org/wiki/Unix_time) של Unix.
+שימו לב, הפלט יראה כך (עם התאריך והשעה בזמן הריצה):
+```
+התאריך והשעה הנוכחיים: 12/04/2023 15:41:30
+```
+
+## להבין את העומק: (Deep Dive)
+בימים הראשונים של התכנות ב-C, לא היה סטנדרט אחיד לניהול תאריכים. הספרייה `<time.h>` שמוספה ב-ANSI C תיקנה את זה. יש גם אלטרנטיבות כמו ה-Funׁׁction strftime() שנותנת יותר גמישות בתבניות פלט. כל זה עובד בזכות מערכת המחשב ששומרת חותמות זמן מהידוע כ-'Epoch' (1 בינואר 1970).
+
+## ראה גם: (See Also)
+- תיעוד [`<time.h>`](http://en.cppreference.com/w/c/chrono) ב-CPP Reference.
+- [`strftime`](http://en.cppreference.com/w/c/chrono/strftime) לפורמטים מורכבים יותר של זמן ותאריך.
+- קורס מקוון ל-C שכולל יחידה על ניהול זמן ותאריכים.

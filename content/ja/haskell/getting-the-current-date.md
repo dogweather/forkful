@@ -1,7 +1,8 @@
 ---
-title:                "現在の日付の取得"
-html_title:           "Bash: 現在の日付の取得"
-simple_title:         "現在の日付の取得"
+title:                "現在の日付を取得する"
+date:                  2024-01-20T15:14:40.231948-07:00
+html_title:           "Bash: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,34 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何とその理由？
+## What & Why? (何となぜ？)
+プログラマが現在の日付を取得する理由: ログにタイムスタンプを追加したり、日付依存ではたらく関数やタスクを扱うためです。
 
-プログラミング言語Haskellで現在の日付を取得するとは、現在時刻から日付部分を抽出することを言います。これはログのタイムスタンプや日次レポートなど、日付情報が重要な場面で頻繁に行われます。
-
-## 手順:
-
-Haskellの標準ライブラリ`Data.Time`を使用して現在の日付を取得する基本的な方法を紹介します。
+## How to: (方法)
+Haskellで現在の日付を取得するには`Data.Time`モジュールを使います。以下の例を見てください。
 
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
+import Data.Time
 
+main :: IO ()
 main = do
-    currentDay <- getCurrentTime >>= return . utctDay
-    print currentDay
+  currentDate <- getCurrentTime
+  print currentDate
 ```
 
-このコードを実行すると、現在の日付がYYYY-MM-DD形式で出力されます（例:2021-05-20）。
+実行した時の出力例:
 
-## ディープダイブ:
+```
+2023-03-14 13:45:02.345 UTC
+```
 
-Haskellでは2001年のリリース以来、`Data.Time`パッケージが広く使用されています。他の選択肢としては古くから使われている`System.Time`ライブラリがありますが、現代のコードではほとんど使われていません。
+## Deep Dive (深堀り)
+現在の日付と時刻を取得する機能は長い歴史を持つ。Haskellの`Data.Time`モジュールはそれを容易にし、広く使われている。過去には`old-time`パッケージもありましたが、今は非推奨です。`getCurrentTime`関数はUTC (協定世界時)を返しますが、タイムゾーン変換を行うこともできます。実装の詳細については、内部でシステムの時計と連携し、実行時の時刻を取得しています。
 
-Haskellの日付取得関数は、実装の詳細を抽象化し、システムの時刻を素早く簡単に取得できます。しかし、この情報はUTC（協定世界時）であり、特定のタイムゾーンに変換したい場合には追加の変換が必要となります。
-
-## 関連情報:
-
-より詳細な情報については以下のリンクを参照してください。
-
-* [HaskellのData.Timeライブラリ](https://hackage.haskell.org/package/time)
-* [タイムゾーン変換を伴う日付操作](https://stackoverflow.com/questions/13080592/whats-the-haskell-time-library-to-use)
+## See Also (関連リンク)
+- [`Data.Time` モジュール](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [The `time` package on Hackage](https://hackage.haskell.org/package/time)

@@ -1,6 +1,7 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "C: 현재 날짜 가져오기"
+date:                  2024-01-20T15:13:11.366999-07:00
+html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,43 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하나요?
+## What & Why? (무엇과 왜?)
+현재 날짜 가져오기는 시스템의 현재 날짜와 시간을 찾는 것입니다. 로그 파일 작성, 백업 스크립트 실행 또는 타임스탬프 생성 등의 목적으로 프로그래머들이 사용합니다.
 
-현재 날짜를 얻는 것은 복잡하지 않은데, 현재의 시간 번위를 코드에 반영하기 위한 방법입니다. 이를 통해 애플리케이션 로그에 타임스탬프를 붙이거나 예정된 작업을 및 그 외 다양한 상황에서 유용하게 사용할 수 있습니다.
-
-## 어떻게 사용하나요:
-
-아래의 코드를 쓰면 현재 날짜를 얻을 수 있습니다:
-
+## How to: (방법)
 ```Bash
+# 현재 날짜와 시간 출력
 date
+
+# 형식을 지정하여 날짜 출력
+date +"%Y-%m-%d %H:%M:%S"
+
+# 예제 출력
+2023-04-01 12:34:56
 ```
 
-이 코드를 실행하면 아래와 같이 출력됩니다:
+## Deep Dive (심층 분석)
+쉘 프로그래밍에서 날짜는 중요한 역할을 합니다. `date` 명령은 UNIX 시스템에서 시작되어 리눅스 배포판까지 이어져 왔습니다. 대체 방법으로는 `printf` 내장 명령을 사용하거나 Perl이나 Python과 같은 스크립팅 언어를 활용할 수 있습니다. `date`의 활용은 스크립트 효율성과 가독성을 향상시킵니다. 단순한 명령이지만 시스템의 타임존 설정이나 여름시간제(Daylight Saving Time) 같은 요소에 영향을 받습니다.
 
-```Bash
-Tue Sep 14 15:30:29 KST 2021
-```
-
-다양한 패턴으로 날짜와 시간을 표시할 수 있습니다:
-
-```Bash
-date '+%Y-%m-%d'
-```
-
-위의 코드를 실행하면 아래와 같이 출력됩니다:
-
-```Bash
-2021-09-14
-```
-
-## 깊이 보기
-
-Unix 시스템의 첫 번째 버전에서부터 `date` 커맨드는 현재 날짜 및 시간을 얻어 사용자에게 표시하는 기본 도구였습니다. `date` 커맨드에 다양한 포맷 옵션을 전달함으로써 원하는 날짜와 시간 패턴을 출력할 수 있습니다.
-
-대안으로, 날짜와 시간 정보를 얻기 위해 쉘 스크립트에서 Perl 또는 Python 등의 다른 스크립트 언어를 사용할 수도 있습니다. 
-
-## 참고자료:
-
-- Bash Manual: https://www.gnu.org/software/bash/manual/bash.html
-- Date Command in Linux with examples: https://www.geeksforgeeks.org/date-command-linux-examples/
+## See Also (참고 자료)
+- GNU Coreutils `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Bash Scripting Guide: https://www.tldp.org/LDP/abs/html/
+- Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/datetime.html

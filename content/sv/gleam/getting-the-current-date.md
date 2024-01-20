@@ -1,7 +1,8 @@
 ---
-title:                "Hämta aktuellt datum"
-html_title:           "Arduino: Hämta aktuellt datum"
-simple_title:         "Hämta aktuellt datum"
+title:                "Att hämta aktuellt datum"
+date:                  2024-01-20T15:14:33.205121-07:00
+html_title:           "Bash: Att hämta aktuellt datum"
+simple_title:         "Att hämta aktuellt datum"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,36 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att hämta aktuellt datum innebär att få fram dagens datum på servern där din kod körs. Detta används ofta för att logga händelser, hantera tidsspecifika data eller tidstämpla användaraktiviteter.
 
-Att få det aktuella datumet innebär hämta dagens datum från systemet. Detta används ofta för att märka uppgifter eller händelser med tidsstämpel, och göra tidsberoende beräkningar.
-
-## Hur man gör:
-
-Här är kodexempel om hur man får aktuellt datum i Gleam:
+## How to:
+I Gleam använder du Standardbiblioteket för sådant som tidsberäkningar. Här är en snippet för att få det aktuella datumet:
 
 ```gleam
-import gleam/datetime.{Date, calendar, day, month, year, utc_now}
+import gleam/calendar
 
-fn main() -> Nil {
-  let current_date = utc_now()
-  |> calendar
-  |> to_string
-  print(current_date)
+pub fn main() {
+  let today = calendar.local_now()
+  today
 }
 ```
 
-Detta skickar ut något liknande: "2022-02-05 14:53:52"
+Kör koden och utdatan visar något i stil med:
 
-## Fördjupning
+```
+# output
+calendar.DateTime(...)
+```
 
-Redan långt före Gleam användes liknande funktioner för att få tillgång till det aktuella datumet och tiden i många programmeringsspråk. Detta inkluderar lågnivåspråk som C och högnivåspråk som Python. Gleam har imponerade av dessa system och har implementerat lättillgängliga funktioner för att extrahera datum- och tidsinformation.
+## Deep Dive
+Funktionsanropet `calendar.local_now()` i Gleam ger oss en `DateTime` struktur som representerar aktuellt datum och tid baserat på serverns lokal tid. I äldre språk eller plattformar kunde det vara mer komplicerat, men Gleam håller det enkelt och säkert.
 
-Även om Gleam funktionen `utc_now()` är det enklaste sättet att få det aktuella datumet, finns det alternativ. Till exempel kan du använda funktionen `os::system_time` för att få tiden i millisekunder sen systemstart, och sedan konvertera detta till ett datum och en tid.
+Alternativet till `calendar.local_now()` är att använda `calendar.utc_now()`, som ger dig den aktuella tiden i UTC-format. Vilken du väljer beror på ditt behov – lokal tid eller universell tid.
 
-I Gleam `utc_now()` funktion används Elixir :calendar.utc_now för att få UTC-datum och tid. Denna funktion ger oss en tupel och för att få en strängversion av datumet används `calendar` funktionen.
+När det gäller implementationen, så hanterar Gleam datumen genom att använda Erlang:s underliggande system, vilket är pålitligt och väl testat genom åren. Det är glädjande okomplicerat – något Gleam strävar efter i alla aspekter av språket.
 
-## Se även
-
-1. Gleams officiella dokumentation om datum och tid (http://gleam.run/documentation/)
-
-2. Elixir :calendar.utf_now funktion (https://hexdocs.pm/elixir/Calendar.html#module-utc-now)
+## See Also
+- Erlang's documentation on date and time: [Erlang DateTime](http://erlang.org/doc/man/calendar.html)  
+- Time and date programming best practices: [Time and Date Best Practices](https://www.w3.org/TR/timezone/)

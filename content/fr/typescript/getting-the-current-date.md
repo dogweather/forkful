@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:16:46.582308-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Manipulation de la date courante en TypeScript: un guide simplifié
+## Quoi & Pourquoi ?
 
-## Quoi et pourquoi ?
-
-Obtenir la date courante en programmation fait référence à l'extraction des informations de calendrier précises à l'instant présent. Pourquoi les programmeurs font-ils cela ? C'est essentiel pour suivre les événements, marquer les enregistrements de la base de données, traiter les transactions et plus encore.
+Obtenir la date courante, c'est récupérer la date et l'heure actuelles de l'ordinateur où s'exécute le programme. Les développeurs font ça pour des tâches comme horodater des événements, des logs, ou pour manipuler des données temporelles.
 
 ## Comment faire :
 
-En TypeScript, on peut obtenir la date et l'heure actuelles via l'objet intégré `Date`. Voici comment ça fonctionne:
-
-```TypeScript
-let currentDate = new Date();
-console.log(currentDate);
+```typescript
+const maintenant: Date = new Date();
+console.log(maintenant);
 ```
 
-La sortie sera quelque chose comme:
-
-```TypeScript
-2022-03-01T08:50:00.000Z
+Sortie (exemple) :
+```
+2023-03-25T14:45:30.655Z
 ```
 
-Notez que TypeScript retourne toujours la date et l'heure au format UTC. 
+## Plongée en profondeur
 
-## Plongée en profondeur:
+La classe `Date` en JavaScript, que TypeScript étend, date des premières versions de ECMAScript. C'est la méthode standard pour gérer les dates heure. Il y a d'autres bibliothèques comme `moment.js` ou `date-fns` qui offrent plus de fonctionnalités et une meilleure gestion des zones horaires, mais pour les bases, `Date` est suffisant.
 
-L'objet `Date` existe depuis les premiers jours de JavaScript, et TypeScript, en tant que surcouche de JavaScript, hérite de toutes ses fonctionnalités.
+`Date` utilise l'heure UTC (Temps Universel Coordonné) pour créer des dates, mais vous pouvez manipuler des données selon le fuseau horaire local avec des méthodes telles que `toLocaleDateString()` ou `toLocaleTimeString()`.
 
-Il existe des alternatives pour obtenir la date courante comme les bibliothèques de dates externes telles que `moment.js` ou `day.js`, qui fournissent des fonctionnalités supplémentaires pour la manipulation des dates.
+Exemple de ces méthodes:
 
-Concernant les détails d'implémentation, l'objet `Date` de TypeScript accède à l'horloge système de l'ordinateur pour obtenir les informations actuelles de date et d'heure.
+```typescript
+console.log(maintenant.toLocaleDateString()); // '25/03/2023' en fonction de la localisation
+console.log(maintenant.toLocaleTimeString()); // '14:45:30' en fonction de la localisation
+```
 
-## Voir aussi :
+Il est également important de se rappeler que le temps est mesuré en millisecondes depuis l'époque UNIX, qui est le 1er janvier 1970. Cette mesure est ce qui permet de calculer les intervalles de temps et de comparer des dates.
 
-1. Le guide officiel de Mozilla sur l'objet [`Date`](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date) en JavaScript.
-2. Documentation officielle de [`moment.js`](https://momentjs.com/docs/).
-3. Documentation officielle de [`day.js`](https://day.js.org/).
+## Voir aussi
+
+- MDN Web Docs sur l'objet Date : [MDN Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Moment.js, une bibliothèque populaire pour gérer les dates : [Moment.js](https://momentjs.com/)
+- Date-fns, une bibliothèque moderne pour manipuler les dates : [date-fns](https://date-fns.org/)
+- ECMAScript, la spécification sur laquelle se base JavaScript : [ECMAScript](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)

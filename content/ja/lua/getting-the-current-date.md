@@ -1,7 +1,8 @@
 ---
-title:                "現在の日付の取得"
-html_title:           "Bash: 現在の日付の取得"
-simple_title:         "現在の日付の取得"
+title:                "現在の日付を取得する"
+date:                  2024-01-20T15:15:50.297297-07:00
+html_title:           "Bash: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,48 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何と何故？)
+現在の日付を取得することは、文字通りシステムの今の日付と時刻を得ることです。プログラマーはログのタイムスタンプ、有効期限、日付計算などにこれを使います。
 
-現在の日付の取得は、その瞬間の年、月、日をプログラムに取り込むことを意味します。これは、ログファイルのタイムスタンプ付けやユーザーの行動のタイムスタンプ付けなど、時間に敏感なデータを扱うときによく使われます。
-
-## どういう手順で？
-
-Luaで現在の日付を取得する一番シンプルな方法を見ていきましょう。
-
+## How to: (やり方)
 ```Lua
--- require the os library
-os = require("os")
+-- 現在の日付と時刻を取得
+local current_time = os.date("*t")  -- テーブル形式で日付と時刻を取得
 
--- Get the current date and time
-print(os.date())
+-- 様々なフォーマットで出力
+print("今日の日付:", os.date("%Y-%m-%d"))  -- yyyy-mm-dd 形式
+print("時刻:", os.date("%H:%M:%S"))  -- hh:mm:ss 形式
 ```
 
-このコードは、現在の日付と時刻を次のように表示します：
-
-```Lua
-"Tue Feb 4 23:48:10 2022"
+サンプル出力:
 ```
-これは一般的な日付の表記方ですが、特定の形式で日付を取得することも可能です：
-
-```Lua
--- example for specific date format
-print(os.date("%A, %B %d, %Y"))
-```
-これで、次のような出力が得られます：
-
-```Lua
-"Tuesday, February 4, 2022"
+今日の日付: 2023-04-01
+時刻: 15:42:07
 ```
 
-## 深掘り
+## Deep Dive (探求)
+Luaの`os.date`関数は、C言語の`strftime`関数に影響を受けています。パフォーマンスへの影響が最小限であるために、多くのLuaプログラムで使われています。`os.date("*t")`は、ローカル時間で日時のテーブルを返しますが、`os.date("!%X")`は世界協定時刻（UTC）を使います。
 
-Luaのos.date関数は、C言語の標準ライブラリの便利な関数を利用しています。`os.date`は、時間を組み立てるための形式文字列を取り、現在のシステム時間を取得するか、指定した時間を取得します。
+他の言語やフレームワークでは、日付取得に特専のライブラリやモジュールを提供することがありますが、Luaでは`os`モジュールがその役割を果たします。Luaを組み込んでいるアプリケーションでは、この機能がサンドボックス化されている場合があるので注意が必要です。
 
-また、より高度な日付と時間の操作を行いたい場合は、LuaRocksを通じて利用できるLuaの日付と時間のライブラリ、たとえば、`lua-date` などを検討することもできます。
-
-## 参考資料
-
-以下は、Luaで日付を扱うためのさらに詳しい情報を見つけるためのリンク先です。
-
-- Luaの公式ドキュメンテーション: [os.date](https://www.lua.org/manual/5.2/manual.html#pdf-os.date)
-- lua-dateライブラリ公式ドキュメンテーション: [lua-date](https://github.com/Tieske/date)
+## See Also (参考文献)
+- Lua 5.4 Reference Manual: https://www.lua.org/manual/5.4/manual.html#6.9
+- strftime (C言語の時間関数): https://www.cplusplus.com/reference/ctime/strftime/
+- Lua-users wiki (日付と時刻): http://lua-users.org/wiki/DateAndTime

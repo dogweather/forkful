@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:13:26.344006-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,59 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-
-Das Abrufen des aktuellen Datums ist ein weit verbreitetes Verfahren, bei dem der aktuelle Tag, Monat und Jahr vom Computer in Echtzeit abgerufen wird. Dies ist für viele Anwendungsfälle nützlich, z.B. zur Zeiterfassung, zur Generierung von Zeitstempeln oder zur Durchführung von Berechnungen, die das aktuelle Datum erfordern.
+Das Aktualdatum zu erhalten bedeutet, das momentane Datum des Systems abzufragen. Programmierer nutzen das, um datumsbezogene Funktionen zu implementieren, von einfachen Zeitstempeln bis zu wiederkehrenden Ereignissen.
 
 ## So geht's:
-
-In C++ können Sie das aktuelle Datum über die `<chrono>`-Bibliothek abrufen. Hier ist ein kurzes Beispiel:
-
 ```C++
 #include <iostream>
 #include <chrono>
+#include <iomanip>
 #include <ctime>
 
 int main() {
-    auto currentTime = std::chrono::system_clock::now();
-    std::time_t date = std::chrono::system_clock::to_time_t(currentTime);
+    // Hol dir die aktuelle Zeit
+    auto jetzt = std::chrono::system_clock::now();
+    
+    // Wandele sie in eine lesbare Form um
+    std::time_t end_time = std::chrono::system_clock::to_time_t(jetzt);
 
-    std::cout << "Das aktuelle Datum ist: " << std::ctime(&date);
+    // Ausgabe im Jahr-Monat-Tag Format
+    std::cout << "Aktuelles Datum: " 
+              << std::put_time(std::localtime(&end_time), "%Y-%m-%d") 
+              << std::endl;
+
     return 0;
 }
 ```
-
-Wenn Sie das ausführen, könnte die Ausgabe wie folgt aussehen:
-
+Ausgabe könnte sein:
 ```
-Das aktuelle Datum ist: Tue Jun 15 14:33:59 2021
+Aktuelles Datum: 2023-04-01
 ```
 
-## Tiefere Einblicke
+## Tiefgang:
+Früher nutzten viele C++ Programmierer die C Standardbibliothek Funktion `time.h` für Datums- und Zeitfunktionalitäten. Seit C++11 gibt es `std::chrono`, das für Zeitpunkt- und Dauerberechnungen genutzt wird. Alternativen umfassen Bibliotheken wie Boost.DateTime. Die `std::chrono` Bibliothek bietet eine typsichere Schnittstelle und ist vorzuziehen, um Probleme mit Zeitzonen und Sommer-/Winterzeit zu vermeiden. Einstellungen wie Zeitzonen und Lokalisierung werden in `std::put_time` berücksichtigt, um das Datum entsprechend zu formatieren.
 
-#### Historischer Kontext
-In älteren C++-Versionen wurde das aktuelle Datum meist über die `<ctime>`-Bibliothek mit Funktionen wie `time()` und `localtime()` abgerufen. Mit C++11 kamen die `<chrono>`-Bibliothek und verbesserte Verfahren zum Abrufen des aktuellen Datums hinzu.
+## Siehe auch:
+- CPP Reference zu `<chrono>`: https://en.cppreference.com/w/cpp/header/chrono
+- CPP Reference zu `<iomanip>`: https://en.cppreference.com/w/cpp/header/iomanip
+- Informationen zu Boost.DateTime: https://www.boost.org/doc/libs/release/libs/date_time/
 
-#### Alternativen
-Alternativ können Sie nach wie vor die Funktionen `time()` und `localtime()` der `<ctime>`-Bibliothek verwenden, um das aktuelle Datum zu ermitteln.
-
-```C++
-#include <ctime>
-#include <iostream>
-
-int main() {
-    std::time_t now = std::time(nullptr);
-    std::tm *ltm = localtime(&now);
-
-    std::cout << "Heute ist: " << ltm->tm_mday <<"."<< 1 + ltm->tm_mon <<"."<< 1900 + ltm->tm_year;
-    return 0;
-}
-```
-
-#### Implementierungsdetails
-Die `system_clock`-Funktion in der `<chrono>`-Bibliothek gibt die Zeit seit dem Epoch (00:00:00 UTC, 1. Januar 1970) zurück. Mit der Funktion `to_time_t` wird diese Zeit in Sekunden seit dem Epoch ausgegeben, was vom `ctime` zur Generierung eines lesbaren Datumsstrings genutzt wird.
-
-## Siehe Auch
-
-- C++ `<chrono>`-Bibliothek: [cplusplus.com](https://www.cplusplus.com/reference/chrono/)
-- C++ `<ctime>`-Bibliothek: [cplusplus.com](https://www.cplusplus.com/reference/ctime/)
-- Mehr über das Unix Epoch: [Wikipedia](https://de.wikipedia.org/wiki/Unixzeit)
+Das waren die Grundlagen, um in C++ das aktuelle Datum abzufragen. Etwas einfaches, aber ein essentielles Werkzeug in deiner Programmierkiste.

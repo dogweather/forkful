@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:16:22.572257-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,32 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Mikä ja miksi? Tietää päivämäärän merkitys: saada tietää juuri nyt vallitseva päivämäärä. Ohjelmoijat tarvitsevat tätä aikaleimojen luomiseen, päivämäärien vertailuun ja aikataulutukseen.
 
-"Getting the current date" on ohjelmointitermi, joka tarkoittaa tietokonejärjestelmän nykyisen päivämäärän hankkimista. Ohjelmoijat tarvitsevat sitä vastaamaan moniin käyttäjän tarpeita, kuten lokitiedostojen merkintöjen aikaleimoja varten.
+## How to:
+```
+Ruby
+require 'date'
 
-## Näin teet:
+# Haetaan nykyinen päivämäärä
+today = Date.today
 
-Ruby tarjoaa `Time`-luokan, jolla voit helposti hankkia nykyisen päivämäärän. Koodaamme esimerkin:
-
-```Ruby
-nykyinen_pvm = Time.now
-puts nykyinen_pvm.strftime("%d/%m/%Y")
+# Tulostetaan se
+puts today
+```
+Tulostus:
+```
+2023-04-05
 ```
 
-Suoritettaessa saat vastauksen muodossa `DD/MM/YYYY`, esimerkiksi: `19/03/2022`.
+## Deep Dive
+Syväsukellus: Rubyssa päivämäärän saaminen on yksinkertaista, kiitos sisäänrakennetun Date-luokan. Historiallisesti tätä toiminnallisuutta on käytetty alusta lähtien, koska päivämäärien käsittely on yleinen tarve ohjelmoinnissa. Vaihtoehtoisesti voit käyttää Time-luokkaa, jos tarvitset sekunteja ja aikavyöhykkeitä. Toteutuksessa Date.today kutsuu Date::civil-metodia, joka palauttaa civil-päivämäärän tämänhetkisen gregoriaanisen kalenterin mukaisesti.
 
-## Syvempi sukellus:
+## See Also
+Lähteet ja lisätietoa:
 
-Historiallinen tausta: Kaikki alkoi silloin kun tietokoneet ja ohjelmistot alkoivat tarvita päivämäärää ja aikaa tehtävien suoritusajan seurannan ja aikaleimojen perusteella. Ruby otti käyttöön `Time` luokan helpottamaan tätä tarvetta.
-
-Vaihtoehtoja: Rubyssa voit myös käyttää `Date.today` saadaksesi vain nykyisen päivämäärän. On olemassa myös muita gemmejä, kuten `chronic`, jotka voivat tarjota lisätoimintoja.
-
-Toteutuksen yksityiskohdat: `Time.now` palauttaa ajan, joka sisältää nykyisen päivämäärän sekä kellonajan. `strftime` on metodi, joka muotoilee ajan käyttäjän haluamaksi päivämääräksi.
-
-## Katso myös:
-
-Linkkejä, joista saat lisätietoja:
-
-- Ruby-dokumentaatio: [Time-luokka](https://ruby-doc.org/core-2.7.0/Time.html)
-- Ruby-dokumentaatio: [Date-luokka](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
+- Ruby Date-dokumentaatio: [https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- Time-luokka: [https://ruby-doc.org/core-3.0.0/Time.html](https://ruby-doc.org/core-3.0.0/Time.html)
+- Ymmärtääkseen aikavyöhykkeet Rubyssa: [https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html](https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html) (Rails-kehys tarvitaan)

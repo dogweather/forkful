@@ -1,7 +1,8 @@
 ---
-title:                "Få den gjeldende datoen"
-html_title:           "Haskell: Få den gjeldende datoen"
-simple_title:         "Få den gjeldende datoen"
+title:                "Slik får du tak i dagens dato"
+date:                  2024-01-20T15:13:55.066582-07:00
+html_title:           "C: Slik får du tak i dagens dato"
+simple_title:         "Slik får du tak i dagens dato"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,49 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Hente nåværende dato i Clojure lar deg merke hendelser og spore endringer over tid. Programmerere bruker det for logging, tidsstyring og funksjonaliteten som krever tidsspesifikke data.
 
-Å hente gjeldende dato handler om å få programmet ditt til å forstå dagens dato i virkelige verden. Dette er nyttig for programmerere til blant annet logging, tidspunktstamping og tidsavhengige operasjoner som aftaler eller påminnelser.
-
-## Hvordan:
-
-Clojure gir lett tilgang til funksjoner som kan hente dagens dato. En enkel måte å få det på er å bruke `java.util.Date` klassen.
+## How to:
+I Clojure får du tak i dagens dato slik:
 
 ```Clojure
-(import 'java.util.Date)
-
+(import 'java.util.Calendar)
 (defn current-date []
-  (Date.))
+  (let [cal (Calendar/getInstance)]
+    (.getTime cal)))
 
-(println (current-date))
+(println (current-date)) ;; => Sat Mar 25 14:34:56 CET 2023
 ```
 
-Når dette programmet kjøres, vil det skrive ut dagens dato og klokkeslett, for eksempel:
-
-```Clojure
-Tue Sep 07 17:20:56 CEST 2021
-```
-
-## Dyp Dykk
-
-Å hente dagens dato i programmering har en lang historie og mange varianter avhengig av spesifikke use-case og tidssonebehov. Noen programmerere kan foretrekke å bruke `java.time.LocalDate`, som gir LocalDate-objektet som representerer dagens dato uten tidspunkt. Det kan være mer hensiktsmessig for noen applikasjoner. For eksempel:
+Enklere, bruk `java.time.LocalDate`:
 
 ```Clojure
 (import 'java.time.LocalDate)
+(defn today []
+  (str (LocalDate/now)))
 
-(defn current-date []
-  (.now LocalDate))
-
-(println (current-date))
+(println (today)) ;; => 2023-03-25
 ```
 
-Dette vil gi noe som ligner: `2021-09-07`.
+Output blir dagens dato.
 
-Clojure implementerer disse funksjonene ved å bruke Java Platform, Standard Edition (Java SE) API-et, som gir robuste tids- og datofunksjoner.
+## Deep Dive
+Tilbake i Java's tidlige dager brukte vi `java.util.Date`, men det hadde mangler, som datosikkerhet og tidsone-håndtering. `java.util.Calendar` ble introdusert for å gi mer fleksibilitet, men ganske snart kom Java 8 med `java.time` pakken, en sterkere og mer intuitiv API for dato og tid.
 
-## Se Også
+I Clojure, en funksjonell LISP-inspirert språk på JVM, er det vanlig å bruke Java-klasser for tid- og dato-operasjoner. Å bruke `java.time.LocalDate/now` er effektivt og gir et ISO-8601 representasjon av datoen, som er et globalt anerkjent format.
 
-For mer detaljerte instruksjoner og eksempler på dato- og tidsfunksjoner i Clojure, besøk disse linkene:
+Alternativer inkluderer biblioteker som clj-time, et wrapper-bibliotek rundt Joda-Time, men siden Joda-Time nå anbefaler `java.time`, anbefales det kun for eldre prosjekter.
 
-- [Clojure official documentation](https://clojure.org/guides/getting_started)
-- [Java Platform Standard Edition 8 API Specification](https://docs.oracle.com/javase/8/docs/api/)
+## See Also
+- [Clojure's java-time library](https://github.com/dm3/clojure.java-time)
+- [Java 8 Date/Time API documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [clj-time GitHub repository](https://github.com/clj-time/clj-time)

@@ -1,6 +1,7 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elm recipe: Getting the current date"
+date:                  2024-01-20T15:14:37.691751-07:00
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,61 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Getting the current date in Haskell means fetching the present system date. Programmers use this feature in instances where date stamping or time-related calculations are necessary in the code.
+Grabbing the current date in your code lets you stamp events right as they happen. It's key for logging, tracking time-sensitive data, and customizing user experiences based on the date.
 
 ## How to:
+In Haskell, you get the current date using the `Data.Time` library. First, import what you need:
 
-First, import the Data.Time library:
-
-```Haskell
+```haskell
 import Data.Time
 ```
 
-Then, get the current date using the `getCurrentTime` function:
+Now, snag today's date:
 
-```Haskell
+```haskell
 main :: IO ()
 main = do
-    current_date <- getCurrentTime
-    print current_date
+    today <- getCurrentTime
+    putStrLn $ "Today's date is: " ++ show (utctDay today)
 ```
 
-This will print the current date and time including precise nanoseconds: 
+Sample output might look like this:
 
-```Haskell
-2022-03-06 14:35:12.1975212 UTC
 ```
-
-If you want just the date and not the time, get the Day value, which is one part of the UTCTime value:
-
-```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
-
-main :: IO ()
-main = do
-    now <- getCurrentTime
-    let currentDay = utctDay now
-    print currentDay
-```
-
-This will output:
-
-```Haskell
-2022-03-06
+Today's date is: 2023-03-23
 ```
 
 ## Deep Dive
+Haskell's been doing date-time since its earlier days, the `Data.Time` library evolving from older time libraries. It's got what you need out of the box, but can be a bit intimidating. Alternatives exist, like `time-recurrence` for patterned date calculations, or `old-time`, Haskell's former go-to for date-time operations.
 
-Getting the current date has long been a standard feature in many programming languages, with Haskell no exception. UTCTime is the typical method of dealing with date and time in Haskell and it's represented as the number of seconds since the UNIX epoch - 00:00:00 UTC, Thursday, 1 January 1970.
-
-There are alternative ways to get the current date and time in Haskell, such as using the `getZonedTime` function to get the current date and time in the local time zone.
-
-The `getCurrentTime` function comes from the base library, and it uses a straightforward system call to fetch the time. It's a reliable lightweight function with a minimal footprint in your code.
+`Data.Time` works a lot with `UTCTime`, the universal time standard. But you can also deal with time zones using `ZonedTime` under the same library. It works by combining a `LocalTime` (date and time without a zone) and a `TimeZone` that specifies the offset from `UTC`.
 
 ## See Also
-
-For more details on Haskell's date and time functions, check the following links:
-
-- [Haskell Data.Time library documentation](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- "Learn You a Haskell" for time-related operations: [http://learnyouahaskell.com](http://learnyouahaskell.com/)
+- Time zone handling in Haskell: [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-LocalTime.html](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-LocalTime.html)

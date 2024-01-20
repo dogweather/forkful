@@ -1,6 +1,7 @@
 ---
 title:                "वर्तमान तारीख प्राप्त करना"
-html_title:           "C#: वर्तमान तारीख प्राप्त करना"
+date:                  2024-01-20T15:14:09.758483-07:00
+html_title:           "C: वर्तमान तारीख प्राप्त करना"
 simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "C++"
 category:             "C++"
@@ -10,11 +11,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+वर्तमान तारीख प्राप्त करना मतलब है कम्प्यूटर के सिस्टम क्लॉक से आज की तारीख निकालना। प्रोग्रामर्स इसे लॉग्स बनाने, यूजर के एक्शन को टाइमस्टैम्प करने या फीचर्स जैसे कैलेंडर और रिमाइंडर्स को इम्प्लिमेंट करने के लिए करते हैं।
 
-एक प्रोग्रामर के लिए "Current Date" पाना मतलब है कंप्यूटर की सिस्टम डेट को प्राप्त करना। इसे तब किया जाता है जब आपको आपके कोड में वर्तमान तारीख की आवश्यकता हो, जैसे कि डेटाबेस लॉग/सहेजती फ़ाइलों का टाइम स्टाम्प बनाने के लिए।
-
-## कैसे करें:
+## How to: (कैसे करें:)
 
 ```C++
 #include <iostream>
@@ -22,20 +22,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 #include <ctime>
 
 int main() {
+    // chrono library का इस्तेमाल करके वर्तमान समय को प्राप्त करें
     auto now = std::chrono::system_clock::now();
-    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
-    std::cout << std::ctime(&now_c);
+    // time_t में कन्वर्ट करें
+    std::time_t current_time = std::chrono::system_clock::to_time_t(now);
+    
+    // और currentTime में प्राप्त वर्तमान समय को प्रिंट करें
+    std::cout << "वर्तमान तारीख और समय: " << std::ctime(&current_time);
     return 0;
 }
 ```
-ऊपरी कोड उदाहरण में, हमने C++ chrono और ctime Libraries का उपयोग करके वर्तमान डेट और समय प्रिंट किया है।
 
-## गहरा गोता:
+सैंपल आउटपुट:
 
-वर्तमान डेट और समय को प्राप्त करनेका तरीका एक बहुत पुराना क्रियाकलाप है, जिसका उपयोग प्रायः लॉग फ़ाइल बनाने, यूज़र एक्टिविटी ट्रैक करने या डेटा को टाइम-स्टाम्प करने के लिए किया जाता है। इसके विकल्प में आप boost date_time library या `std::chrono` का उपयोग कर सकते हैं। `std::chrono` C++11 के बाद जोड़ा गया, जो दिनांक और समय को हैंडल करने के लिए अधिक नवीनता और क्षमता प्रदान करता है।
+```
+वर्तमान तारीख और समय: Wed Mar 23 17:46:00 2023
+```
 
-## अन्य स्रोत देखें:
+## Deep Dive (गहराई से जानकारी)
 
-1. [Cppreference के लिए std::chrono](https://en.cppreference.com/w/cpp/chrono)
-2. [Cplusplus से ctime functions](http://www.cplusplus.com/reference/ctime/)
-3. [Boost Library के लिए Date Time](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+समय प्राप्त करने के लिए C++ में `<chrono>` लाइब्रेरी मॉडर्न और सिफारिश की जाने वाली तकनीक है। पिछले दिनों में, `<ctime>` या `<time.h>` इस्तेमाल होता था, पर `<chrono>` ज़्यादा फ्लेक्सिबल और टाइप सेफ है। 
+
+`<chrono>` C++11 में जोड़ी गई थी और यह टाइम पॉइंट्स, ड्यूरेशंस, और क्लॉक्स पर काम करती है। इसका इस्तेमाल करके, आप ऑपरेशन्स को अलग-अलग टाइम यूनिट्स में कन्वर्ट और कैलकुलेट कर सकते हैं। 
+
+वर्तमान तारीख प्राप्त करते समय, `system_clock` हमें सिस्टम के रियल वर्ल्ड क्लॉक से समय देता है। `to_time_t` फंक्शन chrono के समय को traditional C-style time_t structure में बदल देता है, जिसे हम `ctime` के साथ पढ़ और प्रिंट कर सकते हैं।
+
+## See Also (अन्य स्रोतों का लिंक)
+
+समय और तारीख से संबंधित और भी क्षमताओं के लिए, नीचे दिए गए लिंक्स पर जाएं:
+
+- C++ Reference for `<chrono>` library: [https://en.cppreference.com/w/cpp/header/chrono](https://en.cppreference.com/w/cpp/header/chrono)
+- std::time documentation: [https://en.cppreference.com/w/cpp/chrono/c/time](https://en.cppreference.com/w/cpp/chrono/c/time)
+- C++ Date and Time tutorial: [https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)

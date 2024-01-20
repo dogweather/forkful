@@ -1,6 +1,7 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "C: 현재 날짜 가져오기"
+date:                  2024-01-20T15:17:05.795419-07:00
+html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,26 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 필요한가? 
-현재 날짜를 얻는 것은 컴퓨터에서 현재의 시간을 표시하거나 추적하기 위한 과정입니다. 프로그래머들은 이 기능을 이용하여 작업의 타임스탬프를 생성하거나, 사용자에게 실시간 정보를 보여주기 위해 사용합니다.
+## What & Why? (무엇이며, 왜?)
+현재 날짜를 얻는 것은 단순히 오늘의 날짜와 시간을 파악하는 것입니다. 프로그래머들은 로깅, 타임스탬프, 기능적 기간 제한 설정 등을 위해 이를 사용합니다.
 
-## 실행 방법:
-TypeScript에서 현재 날짜를 얻는 가장 간단한 방법은 다음의 코드처럼 새로운 Date 객체를 생성하는 것입니다:
-
+## How to: (방법)
 ```TypeScript
-let currentDate = new Date();
-console.log(currentDate);
+// 현재 날짜와 시간을 얻는 방법
+const now: Date = new Date();
+console.log(now);
+// 예시 출력: 2023-04-02T15:23:31.123Z (출력값은 실행할 때마다 다릅니다)
+
+// 현재 날짜만 얻는 방법 (시간 정보는 무시)
+const today: Date = new Date();
+today.setHours(0, 0, 0, 0);
+console.log(today);
+// 예시 출력: 2023-04-02T00:00:00.000Z (출력값은 실행할 때마다 다릅니다)
 ```
-이 코드를 실행하면, 현재 날짜와 시간이 표시됩니다.
 
-## 심화 학습
-일찍이, 컴퓨터 시스템에서는 시간을 수치로 변환하여 처리했습니다. Unix 시간 ("UNIX timestamp")은 이러한 예로, 1970년 1월 1일부터 세기마다 숫자가 증가합니다. 
+## Deep Dive (심도 있는 분석)
+JavaScript에서 날짜와 시간은 `Date` 객체로 다루어진다. 이는 1970년 1월 1일 00:00:00 UTC로부터 경과한 밀리초를 기반으로 한다. 더 많은 방법은 `moment.js` 같은 라이브러리를 사용할 수 있지만, `Date` 객체를 사용하는 것이 TypeScript를 포함한 모든 JavaScript 환경에서 기본적이고, 직접적인 방법이다.
 
-다른 방법으로는 'moment.js'와 같은 라이브러리를 활용할 수 있지만, 최근에는 JavaScript의 Date 객체의 표준화로 인해 이러한 라이브러리의 필요성이 줄고 있습니다.
-
-'new Date()' 는 JavaScript의 클래스이며, TypeScript에서는 이를 그대로 사용합니다. 이 내부에서는 현재 시스템의 로케일 설정과 시간대에 따라 결과가 달라질 수 있습니다.
-
-## 참조 링크
-- [MDN Web Docs - Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [moment.js 라이브러리](https://momentjs.com/)
-- [UNIX 타임스탬프 계산기](https://www.unixtimestamp.com/index.php)
+## See Also (참조)
+- MDN Web Docs의 `Date` 객체: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- `moment.js` 라이브러리: https://momentjs.com/
+- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html

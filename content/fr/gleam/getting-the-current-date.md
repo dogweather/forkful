@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:14:19.801835-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,36 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce Que C'est et Pourquoi?
+## Quoi & Pourquoi ?
+Obtenir la date actuelle c'est simplement demander à l'ordinateur "quelle est la date aujourd'hui?" Les programmeurs font ça pour tout : horodater les logs, mesurer le temps qui passe ou programmer des évènements futurs.
 
-Obtenir la date actuelle est lorsque vous commandez à votre application d'afficher ou d'utiliser la date et l'heure réelles. Les programmeurs le font pour enregistrer des moments précis dans les logs d'événements, pour le dépannage, ou pour des fonctionnalités basées sur le temps dans les applications.
+## Comment faire :
+```gleam
+import gleam/erlang
+import gleam/calendar.{Datetime, Zone}
 
-## Comment Faire:
+pub fn main() {
+  // Obtenir le DateTime actuel en UTC
+  let maintenant_utc = erlang.now()
+  // Convertir en DateTime structuré
+  let datetime_utc = Datetime.from_erlang(maintenant_utc)
+  // Afficher le DateTime UTC
+  erlang.display(datetime_utc)
 
-Dans Gleam, nous avons besoin d'interopérer avec Erlang - la plateforme sous-jacente à Gleam.
-
-```Gleam
-import erlang/date as Date
-
-fn get_today() {
-  let date = Date.today()
-  date.to_string()
+  // Si vous voulez la date et l'heure dans un fuseau horaire spécifique
+  let paris_zone = Zone.named("Europe/Paris").unwrap()
+  let maintenant_paris = Datetime.from_erlang_with_zone(maintenant_utc, paris_zone)
+  // Afficher le DateTime de Paris
+  erlang.display(maintenant_paris)
 }
 ```
-La sortie sera:
-
-```Gleam
-"2022-05-25"
+Sortie probable :
+```
+Datetime(year: 2023, month: 4, day: 7, hour: 13, minute: 46, second: 34, millisecond: 657, zone: Zone.utc)
+Datetime(year: 2023, month: 4, day: 7, hour: 15, minute: 46, second: 34, millisecond: 657, zone: Zone.named("Europe/Paris"))
 ```
 
-## Plus de Détails:
+## Plongée profonde
+Historiquement, obtenir la date actuelle est crucial pour l'organisation et la coordination. En informatique, on prend souvent le temps universel coordonné (UTC) comme référence. Gleam s'intègre à l'écosystème Erlang/OTP, donc on utilise souvent des fonctions natives d'Erlang pour ce genre de tâche.
 
-Historiquement, Erlang a été développé pour les systèmes de télécommunication; où la date et l'heure sont essentiels aux journaux. Ainsi, Gleam bénéficie de ces outils intégrés. 
+Concernant les alternatives, on peut citer NTP (Network Time Protocol) pour synchroniser les horloges. En Gleam, travailler avec les dates implique de manipuler des tuples Erlang ou d'utiliser des fonctions de haut niveau pour plus de commodité. 
 
-Une alternative pourrait être de passer par le module 'calendar' pour des opérations plus complexes, comme obtenir le jour de la semaine.
+Dans l'implémentation, la clé est de gérer correctement les différentes zones horaires. Elles peuvent affecter les applications de manière significative, particulièrement pour des utilisateurs dans différents fuseaux horaires ou pour des tâches planifiées en fonction de l'heure locale.
 
-Au niveau de l'implémentation, quand nous appelons `Date.today()`, nous interrogeons le système d'exploitation pour obtenir la date actuelle, que nous convertissons ensuite en format lisible à l'aide de `to_string()`.
-
-## Voir Aussi:
-
-- Documentation Erlang pour date module: [http://erlang.org/doc/man/calendar.html](http://erlang.org/doc/man/calendar.html)
+## Voir aussi
+- [Erlang's time functions](http://erlang.org/doc/man/erlang.html#time-0)
+- [About the Network Time Protocol (NTP)](https://www.ntp.org/)

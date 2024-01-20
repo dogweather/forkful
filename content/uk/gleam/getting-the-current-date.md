@@ -1,5 +1,6 @@
 ---
 title:                "Отримання поточної дати"
+date:                  2024-01-20T15:14:24.117404-07:00
 html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "Gleam"
@@ -10,30 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & чому?
+## What & Why? (Що таке та Навіщо?)
+To get the current date in programming means snagging the precise moment in time right now. We do this to timestamp events, handle schedules, or cook up reminders – real world tasks need real-time data.
 
-Отримання поточної дати - це процес витягнення дати й часу в момент запуску програми. Програмісти роблять це, щоб відстежувати події, логувати помилки або відзначати збереження даних.
+## How to: (Як це зробити:)
+Gleam's stdlib doesn't come with a date-time function out of the box, but let's rope in an Erlang function to get the job done. Here's a simple example:
 
-## Як це зробити:
+```gleam
+import gleam/erlang
 
-Ми можемо отримати поточну дату в Gleam за допомогою модуля `gleam/calendar`.
+fn get_current_date() {
+  erlang.date() // Returns a tuple like {2023, 4, 9}
+}
 
-```Gleam
-import gleam/calendar
-
-calendar.now()
+pub fn main() {
+  let current_date = get_current_date()
+  current_date
+}
 ```
-Ваш результат буде виглядати приблизно так:
-```Gleam
-# Ok(#(Year(2022), Month(5), Day(27), ZonelessTime(11, 35, 20)))
+
+Sample output might look like this:
+
+```gleam
+{2023, 4, 9}
 ```
 
-## Підводимо підсумок:
+## Deep Dive (Поглиблений аналіз)
+Now, why are we borrowing Erlang's powers? Well, Gleam is a static-typed language that compiles to Erlang, so it can use Erlang functions directly. Historically, many languages have their own way to handle dates, but they often lean on underlying system calls. Alternatives? You can install external libraries for more fancy features or different formats, though for basic needs, the Erlang function nails it. 
 
-Отримання поточної дати це важливий аспект роботи з часом у будь-якій мові програмування. В історичному контексті, це було важливо для відслідковування часу виконання операцій. Зараз воно використовується дуже широко, наприклад, для логів, штампів часу тощо. Є інші способи отримати поточну дату з іншими мовами програмування, але в Gleam це робиться за допомогою одного простого виклику `calendar.now ()`. Це просто виводить поточну дату і час у вигляді кортежу.
+As for implementation, think about time zones and locale formatting if your project goes global. Erlang's `:calendar` module is a starting point, but more robust timezone support would require the `:tzdata` package, for instance.
 
-## Дивіться також:
-
-[Система календаря Gleam](https://hexdocs.pm/gleam_stdlib/gleam/calendar.html)  
-[Довідник про час і дату в Gleam](https://gleam.run/tour/dates-and-times/)  
-[Стандартна бібліотека Gleam](https://hexdocs.pm/gleam_stdlib/overview.html)
+## See Also (Дивіться також):
+- Gleam's documentation on external libraries: https://gleam.run/book/tour/external-functions.html
+- Erlang's `:calendar` module: http://erlang.org/doc/man/calendar.html
+- Timezone data package `:tzdata` in Erlang: https://hex.pm/packages/tzdata

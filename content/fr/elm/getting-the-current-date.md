@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:14:08.905113-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,55 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
-Obtenir la date actuelle dans un programme consiste à récupérer et à utiliser la date et l'heure système. Les développeurs le font pour diverses raisons, dont notamment le suivi des événements, les timestamps et la périodisation des données.
+## Quoi et Pourquoi ?
+En programmation, obtenir la date actuelle c'est récupérer la date et l'heure précises à l'instant T. Les développeurs en ont besoin pour tout : des timestamps jusqu'aux fonctionnalités basées sur la date.
 
-## Comment faire:
-Voici comment obtenir la date actuelle en Elm
-
+## Comment faire :
 ```Elm
-import Time
-import Task
-import Browser
+-- Vous aurez besoin du paquet elm/time
+import Time exposing (Posix)
 
-type alias Model =
-    { time : Time.Posix }
+-- Exemple de fonction pour obtenir le temps actuel (Posix)
+obtenirDateActuelle : Task.Task Time.Error Posix
+obtenirDateActuelle = Time.now
 
-init : flags -> ( Model, Cmd Msg )
-init _ =
-    ( Model Time.millisToPosix 0
-    , Task.perform NewTime Time.now
-    )
-
+-- Utilisation de la fonction dans le cadre d'un programme Elm
 type Msg
-    = NewTime Time.Posix
+    = RecevoirDateActuelle Posix
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+subscription : Sub Msg
+subscription =
+    Time.every 1000 RecevoirDateActuelle
+
+update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
-        NewTime newTime ->
-            ( { model | time = newTime }
+        RecevoirDateActuelle newPosix ->
+            ( { model | currentTime = newPosix }
             , Cmd.none
             )
 
-main =
-    Browser.element
-        { init = init
-        , update = update
-        , view = \_ -> Html.text ""
-        , subscriptions = \_ -> Sub.none
-        }
+-- Affichage de la timestamp dans le view, nécessite une conversion
+view : Model -> Html Msg
+view model =
+    let
+        dateString =
+            Time.posixToMillis model.currentTime
+            |> String.fromInt
+    in
+    Html.text ("Timestamp actuel: " ++ dateString)
+
 ```
+Sortie échantillon : `Timestamp actuel: 1615322342819`
 
-Cette section de code va obtenir la date et l'heure système.
-        
 ## Approfondissement
-Historiquement, Elm n'avait pas de moyen natif d'obtenir la date actuelle, mais avec l'introduction de l'API Time, cette fonctionnalité est désormais disponible.
+Historiquement, Elm a évolué pour inclure des fonctionnalités de date et d'heure avec le module `elm/time`. Des méthodes alternatives incluent l'utilisation de paquets tiers mais l'approche standard reste l'utilisation du module `Time`. Le type `Posix` représente le temps en Elm, ce qui garantit un format universel plutôt que des strings ou des timestamps basés sur des locales spécifiques.
 
-Une alternative à l'utilisation de `Time.now` serait de faire appel à une API externe ou à un serveur pour obtenir l'heure, bien que ce ne soit pas très pratique ou efficace.
-
-En interne, Elm utilise la fonction `Date.now()` de JavaScript pour obtenir la date et l'heure actuelles, puis il les convertit en un format compatible avec l'architecture Elm.
-
-## À Voir Aussi
-[Documentation Elm Time](https://package.elm-lang.org/packages/elm/time/latest/) : Celui-ci est le package officiel Elm qui vous permet d'obtenir le temps POSIX.
-[Elm Guide](https://guide.elm-lang.org/) : Le guide officiel d'Elm qui couvre une grande variété de sujets en lien avec ce langage de programmation.
+## Voir Aussi
+- Documentation officielle d'Elm time : https://package.elm-lang.org/packages/elm/time/latest/
+- Guide sur les tasks en Elm : https://guide.elm-lang.org/effects/task.html
+- Pour une conversion de date avancée, le paquet justinmimbs/date: https://package.elm-lang.org/packages/justinmimbs/date/latest/

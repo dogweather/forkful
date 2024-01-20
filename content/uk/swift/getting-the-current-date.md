@@ -1,5 +1,6 @@
 ---
 title:                "Отримання поточної дати"
+date:                  2024-01-20T15:17:10.385560-07:00
 html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "Swift"
@@ -10,48 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це таке і чому це важливо?
+## Що та Чому?
+Отримання поточної дати – це процес зчитування дати та часу, на які встановлено системні годинники пристрою. Програмісти використовують це, аби відслідковувати події, логувати відмітки часу або управляти завданнями та розкладами.
 
-Отримання поточної дати в Swift — це процес зчитування даних про дату та час у реальному часі. Програмісти роблять це для відправки часових позначок, створення функцій зворотного відліку, обробки даних, що залежать від часу.
-
-## Як це робити:
-
-Ось як ви можете отримати поточну дату в Swift:
+## Як це зробити:
+Swift пропонує простий спосіб отримати поточну дату через стандартний клас `Date`. Ось як це зробити:
 
 ```Swift
 import Foundation
 
-let currentDateTime = Date()
-print(currentDateTime)
+let currentDate = Date()
+print(currentDate)
 ```
 
-Вивід:
+Приклад виводу:
+
+```
+2023-04-12 14:23:36 +0000
+```
+
+Якщо вам потрібен рядковий формат, використовуйте `DateFormatter`:
 
 ```Swift
-2022-03-16T18:31:42Z
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+let dateString = formatter.string(from: currentDate)
+print(dateString)
 ```
 
-Код вище повертає поточну дату та час у форматі ISO.
+Приклад виводу:
 
-## Погрузимося глибше
-
-Історично, функції для отримання поточної дати відмінно працювали з Unix часом, проте, з розвитком Swift, постала потреба в більш гнучкому і масштабованому способі.
-
-Альтернативний спосіб отримати дату - використати `Calendar` API. Щоб витягнути день, місяць, рік або годину:
-
-```Swift
-let date = Date()
-let calendar = Calendar.current
-
-let year = calendar.component(.year, from: date)
-let month = calendar.component(.month, from: date)
-let day = calendar.component(.day, from: date)
+```
+2023-04-12 14:23:36
 ```
 
-Дати під керуванням Swift використовують структуру `Date`, що є частиною бібліотеки Foundation. `Date` визначає певний момент в часі, незалежно від часового поясу.
+## Глибше занурення
+`Date` у Swift — це структура, що представляє конкретний момент у часі незалежно від часового поясу. Для роботи з часом і датами альтернатив є багато – `Calendar`, `DateComponents`, часові конверсії через `TimeZone` та інші.
 
-## Варто побачити
+Історично `Date` надає цілісність при маніпулюванні часом, проте важливо пам'ятати про часові пояси при роботі з датами, особливо, коли мова йде про міжнародні застосунки. `DateComponents` дозволяє ізолювати різні частини дати, як-то рік, місяць чи день.
 
-- Поглиблена інформація про роботу з датами в Swift: https://developer.apple.com/documentation/foundation/date
-- DateFormatter: більше деталей про налаштування формату дати: https://developer.apple.com/documentation/foundation/dateformatter
-- Calendar: як розбити дату на дні, місяці, роки та ін.: https://developer.apple.com/documentation/foundation/calendar
+Якщо потрібно виконувати операції з датами, типу додання днів або обчислення різниці, використовують `Calendar`. Для упорядкування дати у різних форматах необхідний `DateFormatter`.
+
+## Додатково
+Рекомендуємо ознайомитись з наступними ресурсами для розширеного розуміння роботи з датами і часом у Swift:
+
+- [DateFormatter Documentation](https://developer.apple.com/documentation/foundation/dateformatter) (англ.)
+- [NSHipster on Date, DateComponents, and DateFormatter](https://nshipster.com/datecomponents/) (англ.)

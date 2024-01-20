@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:15:59.459846-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,35 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-
-לקבלת התאריך הנוכחי, זה להוציא מידע בנוגע לזמן הנוכחי בחלל, את ץום והתאריך שבו אנחנו נמצאים. נבנה כדי לעזור למתכנתים למדוד את הזמן, ליצור תיעוד זמני לעסקאות, או כל מטרה שמחייבת תאריך וזמן מדויק.
+להשיג את התאריך הנוכחי בקוד משמעו לקבל את התאריך והשעה בזמן אמיתי בו הקוד רץ. מתכנתים עושים זאת ללוגים, תיעוד תהליכים, תזמונים ועוד.
 
 ## איך לעשות:
-
-בקוטלין, ישנן כמה שיטות לקבלת התאריך הנוכחי. נוכל להשתמש במחלקה LocalDate, LocalDateTime או ZonedDateTime.
-
 ```Kotlin
-import java.time.LocalDateTime
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 fun main() {
-    val current = LocalDateTime.now()
-    println("התאריך והשעה הנוכחיים: " + current)
+    // קבלת התאריך הנוכחי
+    val today = LocalDate.now()
+    println("התאריך הנוכחי: $today")
+
+    // פורמט מותאם אישית של התאריך
+    val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+    val formattedDate = today.format(formatter)
+    println("התאריך הנוכחי בפורמט dd/MM/yyyy: $formattedDate")
 }
 ```
-פלט:
+פלט דוגמא (ישתנה בהתאם ליום הריצה של הקוד):
 ```
-התאריך והשעה הנוכחיים: 2022-03-10T15:45:20.556042
+התאריך הנוכחי: 2023-04-12
+התאריך הנוכחי בפורמט dd/MM/yyyy: 12/04/2023
 ```
 
 ## צלילה עמוקה
+המודול `java.time.LocalDate` הוצג ב-Java 8 והוא חלק מה-Java Date and Time API החדשני, שתכננו לתת פתרון לחסרונות ב-API הקודם (`java.util.Date`). זה נותן לנו מטרה ממוקדת של תאריך בלי זמן ואיזור זמן. אלטרנטיבות כוללות את השימוש ב-`java.util.Calendar` או ספריות חיצוניות כמו Joda-Time, אבל `LocalDate` הוא הבחירה המועדפת מאז Java 8 כי הוא בלתי נתון לשינויים (immutable), ברור וידידותי למשתמש. כשאנחנו קוראים `LocalDate.now()`, זה למעשה שואל את השעון המערכתי על התאריך הנתון לפי איזור הזמן של המחשב שהתכנית פועלת עליו.
 
-מאז שקוטלין הוקם ב-2011, כולם הפקדו את הזמן בצורות שונות. מחלקת Java.util.Date הייתה ראשונה שהציעה את היכולת הזו אך הועקפה ב-2014 עם הכנסת Java.time, והמחלקות LocalDateTime, LocalDate, ו -ZonedDateTime.
-
-האלטרנטיבות כוללות ספריות חיצוניות או הטמעת שיטות אישיות שמניהלות הקבלה של התאריך והשעה.
-
-המחלקות מסופקות על ידי מערכת ההפעלה, כך שהתוצאות שלהן יכולות להשתנות בהתאם לזמן המערכת ולאזור הזמן של המשתמש.
-
-## ראו גם
-
-[מדריך מקיף לקוטלין](https://kotlinlang.org/docs/home.html)
-[מערכת Java Time](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/time/package-summary.html) 
-[המחלקה LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-local-date/)
+## ראה גם
+- Java Date and Time API: https://docs.oracle.com/javase/tutorial/datetime/iso/
+- Joda-Time – הייתה אלטרנטיבה נפוצה לטיפול בתאריכים ובזמנים לפני Java 8: https://www.joda.org/joda-time/
+- על mutable ו-immutable objects בג'אווה: https://docs.oracle.com/javase/tutorial/essential/concurrency/immutable.html

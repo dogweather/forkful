@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:14:15.658251-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,48 +12,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen diese Funktion für Features wie Kalender, Zeitstempel oder Gültigkeitsprüfungen.
 
-Als Programmierer holen wir oft das aktuelle Datum und die Uhrzeit ab. Dies hilft uns, wichtige Zeitschritte zu markieren, Ereignisse zu protokollieren, oder auch um abhängige Funktionen wie Countdowns zu erstellen.
+## Anleitung:
+In Elm, holen Sie das aktuelle Datum mit der `Time`-Modul. Verbinden Sie dies mit einer Subscription, um das Datum im Model zu aktualisieren.
 
-## Wie zu:
-
-Um das aktuelle Datum in Elm zu bekommen, verwenden wir die `Time.now` Funktion innerhalb einer `Task`, gefolgt von `Task.perform` um die Task auszuführen:
-
-```Elm 
-import Time exposing (Posix, second, toTime)
-
-type alias Model =
-    { time : Maybe Posix
-    }
-
-init : ( Model, Cmd Msg )
-init =
-    ( { time = Nothing }
-    , Task.perform TimeUpdate Time.now
-    )
+```Elm
+import Browser
+import Html exposing (Html, text)
+import Task
+import Time
 
 type Msg
-    = TimeUpdate Posix
+    = Tick Time.Posix
 
-update : Msg -> Model -> ( Model, Cmd Msg )
+type alias Model =
+    { currentTime : Time.Posix }
+
+main =
+    Browser.element
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        }
+
+init : () -> (Model, Cmd Msg)
+init _ =
+    (Model (Time.millisToPosix 0), Cmd.none)
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    Time.every 1000 Tick
+
+update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
-        TimeUpdate newTime ->
-            ( { model | time = Just newTime }
-            , Cmd.none
-            )
+        Tick newTime ->
+            ({ model | currentTime = newTime }, Cmd.none)
+
+view : Model -> Html Msg
+view model =
+    let
+        currentTimeString = Time.posixToMillis model.currentTime |> String.fromInt
+    in
+    text ("Aktuelles Datum und Uhrzeit: " ++ currentTimeString)
+
 ```
 
-Wenn das Programm läuft, wird `Time.now` aufgerufen und speichert das aktuelle Datum in Millisekunden seit der Unix-Ära (1. Januar 1970). 
+Die `view`-Funktion konvertiert die Posix-Zeit in einen String, um sie anzuzeigen. Beachten Sie, dass das Datum als Millisekunden seit dem 1. Januar 1970 (Epochenzeit) dargestellt ist.
 
-## Tiefere Erklärung:
+## Tiefgang:
+Historisch gesehen ist die Posix-Zeit ein Standard, der in den 70er Jahren für Unix-Systeme entwickelt wurde. Alternativ gibt es Bibliotheken wie `justinmimbs/time-extra`, die zusätzliche Funktionen für Datumsoperationen bieten. Die Elm-Uhrzeit wird als Posix-Zeit in Millisekunden gespeichert; das erlaubt einfache Umrechnungen und Manipulationen.
 
-Das Konzept der Zeit in Computerprogrammen ist seit den Anfängen der Computersoftware weit verbreitet. Doof nur, dass Elm rein funktionell ist und sich damit bedeckt hält, Zustände und Seiteneffekte zu verwalten, wie die aktuelle Zeit und Datum. Dafür verwendet Elm die `Task` um asynchrone arbeiten, wie die Anforderung der aktuellen Zeit, zu managen.
-
-Es gibt Alternativen zur `Time.now` Funktion, z.B. `Time.utc`, welche die Zeit in UTC zurückgibt, oder `Time.posixToMillis`, welcher das Datum vom Typ `Posix` zu Millisekunden konvertiert.
-
-## Weiterführende Links:
-
-1. Elm Time Dokumentation: http://package.elm-lang.org/packages/elm/time/latest/
-2. Elm Task Beispiele: https://elmprogramming.com/tasks.html
-3. Funktionsweise des Unix Zeitstempels: https://de.wikipedia.org/wiki/Unixzeit
+## Siehe Auch:
+- Elm Time Dokumentation: [https://package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/)
+- Justinmimbs Zeit-Extra: [https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/](https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/)
+- Elm Guide zu Zeit: [https://guide.elm-lang.org/effects/time.html](https://guide.elm-lang.org/effects/time.html)

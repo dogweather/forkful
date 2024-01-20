@@ -1,6 +1,7 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "C: Obtendo a data atual"
+date:                  2024-01-20T15:14:24.296722-07:00
+html_title:           "Bash: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,37 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why? ["O Que e Porquê?"]
+## O Que & Por Quê?
+Obter a data atual é pegar o momento presente do sistema. Programadores fazem isso para registrar eventos, comparar datas ou simplesmente exibir informações temporais.
 
-Capturar a data atual em programação permite rastrear eventos em tempo real. Esta ação é essencial para registros, log de eventos ou até para agendar tarefas.
+## Como Fazer:
+```gleam
+import gleam/erlang/time
+import gleam/io
 
-## How to:  ["Como Fazer:"]
-
-No Gleam, você pode obter a data atual usando a biblioteca `gleam/calendar`. Veja um exemplo simples:
-
-```Gleam
-import gleam/calendar.{now, to_erlang}
-
-fn main() {
-  let {calendar.year, calendar.month, calendar.day} = now()
-  |> to_erlang()
-  let _: String = io.println("A data atual é: " ++ year.to_string() ++ "-" ++ month.to_string() ++ "-" ++ day.to_string())
+pub fn main() {
+  let data_atual = time.now()
+  io.println(data_atual)
 }
 ```
+Saída de amostra:
+```
+{{2023, 2, 18}, {17, 54, 32}}
+```
 
-Ao ser executado, obtenha uma saída no format "A data atual é: AAAA-MM-DD".
+## Aprofundando:
+No passado, Gleam herdou suas funções de manipulação de tempo do Erlang, uma linguagem de programação madura e robusta usada em sistemas de telecomunicações. Hoje, Gleam fornece sua própria interface de alto nível para tarefas comuns. Existem alternativas como bibliotecas de terceiros para trabalhar com datas e horas, mas a biblioteca padrão geralmente é suficiente para as necessidades básicas. Por baixo dos panos, a função `time.now()` do Gleam engloba a função do Erlang `:erlang.timestamp()`, que fornece o tempo do sistema operacional em uma tupla com data e hora.
 
-## Deep Dive ["Aprofundando"]
-
-Historicamente, muitas linguagens de programação manipulam datas e horas de maneira semelhante. No entanto, as diferenças surgem quando consideramos a região do usuário, fusos horários, horário de verão, entre outros.
-
-Alternativas para a obtenção da data atual incluem o uso de APIs ou bibliotecas externas. No Gleam, a utilização da biblioteca `gleam/calendar` é a escolha de muitos por sua simplicidade e eficiência.
-
-A função `now` do `gleam/calendar` busca a data e a hora atual do sistema. Para extrair somente a data, convertemos o resultado para format Erlang e, em seguida, selecionamos ano, mês e dia.
-
-## See Also ["Veja Também"]
-
-- Documentação oficial de Gleam: https://gleam.run/documentation/
-- Biblioteca `gleam/calendar`: https://hexdocs.pm/gleam_stdlib/gleam/calendar.html
-
-Espero que este artigo tenha sido útil para você entender como obter a data atual no Gleam. Feliz programação!
+## Veja Também:
+- [Gleam stdlib documentation](https://hexdocs.pm/gleam_stdlib/)
+- [Erlang's time functions](http://erlang.org/doc/man/os.html)

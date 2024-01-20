@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:15:53.264059-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,36 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-PowerShellilla päivämäärän hakeminen tarkoittaa tarkalleen sitä miltä se kuulostaakin: saat tietoonsa tämänhetkisen päivämäärän ja kellonajan. Tämä on hyödyllistä aikaleimojen luomisessa, tapahtumien ajoittamisessa tai ohjelman suoritusajasta seuraamisessa.
+## What & Why? (Mikä ja miksi?)
+Nykyisen päivämäärän haku on ajan tietojen saamista järjestelmästä. Ohjelmoijat käyttävät sitä, kun tarvitaan aikaleimoja, päivämäärien validointia tai ajastettuja toimintoja.
 
-## Miten se tehdään:
-Haetaan päivämäärä PowerShellilla näin:
-
+## How to: (Kuinka tehdä:)
 ```PowerShell
-$NykyinenPäivämäärä = Get-Date
-Write-Output $NykyinenPäivämäärä
+# Hae nykyinen päivämäärä ja aika
+$nyt = Get-Date
+Write-Output $nyt
+
+# Tulostaa esimerkiksi: sunnuntai 9. huhtikuuta 2023 14:56:35
 ```
 
-Näin saat tulostettua nykyisen päivämäärän ja kellonajan. Esimerkki tulosteesta saattaa näyttää tällaiselta:
-
 ```PowerShell
-maanantai, 1. marraskuuta 2021 12:00:00
+# Hae nykyinen päivämäärä ilman aikaa
+$paivamaara = (Get-Date).Date
+Write-Output $paivamaara
+
+# Tulostaa esimerkiksi: 9.4.2023 0:00:00
 ```
 
-## Syvällisempi tieto
-PowerShellilla päivämäärän hakeminen on ollut mahdollista sen julkaisusta lähtien, ja se on pysynyt melko muuttumattomana. Tosin, on olemassa erilaisia tapoja hakea päivämäärätietoja PowerShellilla. Esimerkiksi, voit määrittää tietyn muodon päivämäärälle käyttäen "ToShortDateString()" tai "ToLongTimeString()" metodeja.
+```PowerShell
+# Muotoile päivämäärä haluamallasi tavalla
+$muotoiltu = Get-Date -Format "dd.MM.yyyy"
+Write-Output $muotoiltu
 
-Implementointiyksityiskohdista, `Get-Date` cmdlet palauttaa nykyisen päivämäärän ja kellonajan objektina, joka on System.DateTime tyyppiä. Se sisältää valtavan määrän tietoja, kuten vuoden, kuukauden, viikonpäivän ja kellonajan sekunnin tarkkuudella.
+# Tulostaa esimerkiksi: 09.04.2023
+```
 
-## Katso myös
-Lisätietoja PowerShellin Get-Date cmdletistä, päivämäärän muotoilusta ja muista päivämäärätoiminnoista löydät seuraavista lähteistä:
+## Deep Dive (Syväsukellus)
+PowerShellin `Get-Date` cmdlet on ollut käytössä alusta alkaen, ja se on yleinen tapa hakea koneen paikallinen aika. Vaihtoehtoisia tapoja sisältävät .NET-luokat, kuten `[System.DateTime]`, mutta `Get-Date` on yksinkertaisempi PowerShellissa. Haku perustuu käyttöjärjestelmän kelloon, ja tulokseen vaikuttavat käyttäjän alueasetukset. Cmdlet mahdollistaa päivämäärän muotoilun ja parsimisen, jolloin pystyt luomaan juuri tarvitsemasi esitystavan aikatiedoille.
 
-- Microsoftin virallinen dokumentaatio Get-Date cmdletistä: 
-  [Täältä](https://docs.microsoft.com/fi-fi/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1).
-  
-- Yksityiskohtainen opas päivämäärän ja ajan käsittelystä PowerShellissa: 
-  [Täältä](https://devblogs.microsoft.com/scripting/weekend-scripter-working-with-powershell-date-commands/). 
-
-- Sovelluksia päivämäärälle ja aikaleimoille PowerShellissa: 
-  [Täältä](https://4sysops.com/archives/use-powershell-to-work-with-date-and-time/).
+## See Also (Katso myös)
+- Microsoftin dokumentaatio `Get-Date`-cmdletistä: [PowerShell Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2)
+- Tietoa .NET:n `System.DateTime` luokasta: [DateTime Struct](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- Lisää muotoilumerkkijonoja päivämäärien esitystapaan: [Standard DateTime Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)

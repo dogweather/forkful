@@ -1,6 +1,7 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "C#: Obteniendo la fecha actual"
+date:                  2024-01-20T15:15:33.450057-07:00
+html_title:           "Bash: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Java"
 category:             "Java"
@@ -11,35 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué & Por Qué?
-Obtener la fecha actual en programación permite rastrear eventos en tiempo real. Los programadores lo utilizan para funciones de registro, marcar transacciones, o incluso programar tareas.
 
-## Cómo hacerlo:
-En Java puedes conseguir la fecha actual utilizando la clase `java.time.LocalDate'. Aquí está el ejemplo:
+Obtener la fecha actual en Java es simplemente capturar el momento presente del sistema. Los programadores lo hacen para registros, marcas de tiempo, y funciones que dependen de la fecha y hora actuales.
 
-```Java
+## Cómo:
+
+La forma más moderna y recomendada de obtener la fecha actual:
+
+```java
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class Main {
+public class FechaActual {
     public static void main(String[] args) {
-        LocalDate currentDate = LocalDate.now();
-        System.out.println("La fecha actual es: " + currentDate);
+        LocalDate fechaHoy = LocalDate.now();
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String fechaFormateada = fechaHoy.format(formato);
+        
+        System.out.println("Fecha actual: " + fechaFormateada);
     }
 }
 ```
-El resultado será algo similar a: `La fecha actual es: 2022-09-21`
 
-## Inmersión Profunda
-Al inicio, los programadores de Java utilizaban la clase `java.util.Date` para obtener la fecha actual, pero con la introducción de Java 8, la clase `java.time.LocalDate` se convirtió en la forma preferida debido a su simplicidad y eficacia.
+Ejecutando el código anterior, podría obtener un resultado parecido a:
 
-Existen opciones alternativas, como `java.util.Calendar` que ofrece una variedad de métodos para manipular fechas, sin embargo, es más pesado y complicado en comparación con `LocalDate`.
+```
+Fecha actual: 05/04/2023
+```
 
-Obtener la fecha actual no es un proceso tremendamente difícil en Java. `LocalDate.now()` internamente utiliza el reloj del sistema para obtener la fecha actual, convirtiéndolo en una herramienta apropiada para usos comúnmente necesitados.
+## Profundización:
 
-## Ver También:
-Para mayor comprensión, puedes referirte a estas fuentes:
+Históricamente, antes de Java 8, `java.util.Date` y `java.util.Calendar` eran las clases comunes para manejar fechas, pero no eran sin sus problemas, como la mutabilidad y la pobre diseño de API. Desde Java 8 en adelante, se introdujo `java.time` (conocido como JSR-310), una API robusta y a prueba de fallos diseñada por los expertos en tiempo Joda-Time.
 
-- Documentación oficial Java para LocalDate: [aquí](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html) 
+Alternativas antiguas y por qué no usarlas:
 
-- Un tutorial útil en inglés para manejar fechas y tiempo en Java: [aquí](https://www.baeldung.com/java-8-date-time-intro)
+- `java.util.Date`: Es mutable y su uso en un contexto complejo podría llevar a errores. Además, no maneja bien los husos horarios.
+- `java.util.Calendar`: Más poderosa que Date, pero sigue siendo mutable y un poco complicada de usar.
 
-- Un artículo detallado sobre la evolución de la manipulación de la fecha y hora en Java: [aquí](https://www.journaldev.com/2800/java-8-date-localdate-localdatetime-instant)
+Detalles de implementación actuales:
+
+- `java.time.LocalDate`: Representa una fecha sin información de hora o huso horario. Perfecta para cuando solo necesitas la fecha.
+- `java.time.LocalDateTime`: Fecha y hora sin huso horario.
+- `java.time.ZonedDateTime`: Fecha y hora con información de huso horario.
+
+La API de tiempo de Java es inmutable, lo que significa que cualquier operación devuelve una nueva instancia, preservando la original. Esto es excelente para prevenir errores comunes de programación.
+
+## Ver Además:
+
+Para más detalles sobre el trabajo con fechas y horas en Java:
+
+- [Date and Time API Guide - Oracle](https://docs.oracle.com/javase/tutorial/datetime/)
+- [Java 8 Date Time API - Baeldung](https://www.baeldung.com/java-8-date-time-intro)
+- [Understanding Java 8 Date and Time API - Medium](https://medium.com/@randerson112358/understand-java-8-date-time-api-ee8377059cfd)
+
+Si necesitas un repaso de por qué es importante manejar correctamente la inmutabilidad en programación:
+
+- [Inmutabilidad en Programación - Java Deep](https://deepinjava.wordpress.com/2017/09/29/inmutabilidad-en-java/)

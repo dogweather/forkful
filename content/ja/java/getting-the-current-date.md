@@ -1,7 +1,8 @@
 ---
-title:                "現在の日付の取得"
-html_title:           "Bash: 現在の日付の取得"
-simple_title:         "現在の日付の取得"
+title:                "現在の日付を取得する"
+date:                  2024-01-20T15:15:18.377456-07:00
+html_title:           "Bash: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,39 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ？)
+プログラムで「現在の日付」を取得するってどういうこと？メインは、今日の日付や時間を知る方法だ。なぜこれが必要か？ログ記録、タイムスタンプやタイムゾーンの管理など、様々なケースで重要になる。
 
-コンピュータ上で現在の日付を取得することは、多くのプログラムやアプリケーションで一般的な操作です。これは、ログのタイムスタンプ、データの時間制限、スケジューリングなど、様々な目的で使用されます。
+## How to: (やり方)
+Javaで現在の日付を取得する基本的なコード：
 
-## 方法:
-
-Javaで現在の日付を取得する基本的な方法を以下に示します。
-
-```Java
+```java
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class Main {
-  public static void main(String[] args) {
-    LocalDate date = LocalDate.now();
-    System.out.println("Today's date is: " + date);
-  }
+public class GetCurrentDate {
+    public static void main(String[] args) {
+        LocalDate today = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        String formattedDate = today.format(formatter);
+        
+        System.out.println(formattedDate);  // 出力: 2023/01/30 (例)
+    }
 }
 ```
-実行すると、以下のような出力が得られます：
-```
-Today's date is: 2021-12-13
-```
 
-## ディープダイブ
+## Deep Dive (深掘り)
+昔々、`java.util.Date`が日付操作の全てだった。でも、このクラスは扱いづらいと評判だった。2014年、Java 8が`java.time`パッケージを導入し、日付と時間の作業を劇的に改善した。この新しいAPIは不変(Immutable)で、スレッドセーフだ。`LocalDate`、`LocalTime`、`LocalDateTime`クラスが主役だ。
 
-Javaでは、`java.util.Date`が元々日付および時刻を扱うためのクラスとして提供されていましたが、その設計は多くの問題を抱えていました。そのため、Java 8で導入された`java.time`パッケージが現在では広く推奨されています。
+代替として、古い`java.util.Calendar`を使うこともできるけど、新しいAPIを使うのが今はスタンダード。タイムゾーンを扱う必要がある場合は、`ZonedDateTime`や`OffsetDateTime`を使おう。
 
-日付を入手する別の方法として`java.util.Calendar`があります。しかし、これも設計問題があるため、可能ならば新しいAPIを使用することが推奨されます。
+実装の詳細にオリエントするなら、`DateTimeFormatter`を使って日付を任意の形式に変換できる。それに加え、`java.time`パッケージはテストを容易にするためのクロックの概念を提供する。
 
-`LocalDate.now()`メソッドの実装は、基本的にシステムクロックを使用して現在の日付を取得します。
-
-## 関連リンク
-
-以下のリンクで、Javaの日付と時刻に関するさらに詳しい情報を得ることができます：
-
-1. [Oracle Official Documentation](https://docs.oracle.com/javase/tutorial/datetime/)
+## See Also (参照)
+- [Oracle's Java Tutorials on Date Time](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+- [Java 8 Date/Time API Guide by Baeldung](https://www.baeldung.com/java-8-date-time-intro)
+- [`java.time` package JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

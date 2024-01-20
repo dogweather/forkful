@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:16:03.919373-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,46 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Aktuelles Datum in Ruby bekommen
-
 ## Was & Warum?
+Das Abrufen des aktuellen Datums in Ruby ist ein Weg, das heutige Datum zu bekommen. Programmierer nutzen das für Features wie Datumsstempel, Zeitleisten oder einfach nur, um zu wissen, welcher Tag heute ist.
 
-In der Programmierung bezieht sich "aktuelles Datum" auf das Abrufen der aktuellen, realen Weltzeit und -datums bei jeder Ausführung. Warum machen wir das? Nun, um Beiträge zu zeitstempeln, Berechnungsdaten zu aktualisierten, einer Benutzerebene Relevanz zu bieten oder Daten verknüpfte Ereignisse zu erstellen.
-
-## Wie man es macht:
-
-In Ruby, das aktuelle Datum ist nur einen Codeabschnitt von Ihnen entfernt. 
-
+## So geht's:
 ```Ruby
 require 'date'
 
+# Das aktuelle Datum erhalten
 heute = Date.today
-puts heute
+puts "Heute ist der #{heute}"
+
+# Ausgabe
+# Heute ist der 2023-04-12
 ```
 
-Wenn Sie diesen Code ausführen, sehen Sie ein Ausgabe, die Ihrer aktuellen Datum entspricht. Versuchen Sie es!
+## Deep Dive
+Ruby bietet mit der Standardbibliothek 'date' einfache Möglichkeiten für die Arbeit mit Daten. Früher mussten Entwickler oft externe Bibliotheken verwenden oder eigenes Code-Geraffel schreiben, um mit Daten zu hantieren.
 
-## Vertiefung
-
-_Ab dem Anfang_
-
-Für historischen Kontext, seit Version 1.9 hat Ruby ein eingebautes Modul namens "Date", das dieses Problem elegant löst. 
-
-_Alternativen_
-
-Es gibt noch andere Wege, das aktuelle Datum in Ruby zu erhalten. Zum Beispiel, die `Time`-klasse gibt Ihnen Datum und Zeit.
-
-```Ruby
-puts Time.now
-```
-
-_Funktionsweise_
-
-Intern konvertiert das `Date.today`-Verfahren das Gregorianische Datum, das es von `::new!` erhält, in ein Zivil- oder Julianisches Datum, abhängig von dem aktuell `ITALY` (der Standard) oder `ENGLAND` Startdatenmodus.
+Es gibt Alternativen wie 'Time.now' oder 'DateTime.now', aber 'Date.today' ist oft die beste Wahl, wenn man nur das Datum ohne Zeitangaben braucht. Unter der Haube verwendet Ruby Methoden, die plattformunabhängig sind, also keine Sorgen, ob Ihr Code auf verschiedenen Systemen gleich läuft.
 
 ## Siehe auch
-
-Für weitere Informationen sehen Sie es sich bitte die folgenden Resourcen an:
-
-2. [Getting the current Time instance](https://ruby-doc.org/core-2.5.1/Time.html#method-c-now)
-3. [About Date and DateTime Implementation (StackOverflow)](https://stackoverflow.com/questions/5937082/what-difference-between-date-and-datetime-in-ruby)
+- Ruby-Dokumentation für die 'Time'-Klasse: [Ruby Time Class](https://ruby-doc.org/core/Time.html)

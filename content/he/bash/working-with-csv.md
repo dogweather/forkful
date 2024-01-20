@@ -37,5 +37,4 @@ CSV הוא פורמט ותיק, נוצר בשנות ה-70 כדרך פשוטה ל
 
 ## ראו גם:
 - [RFC 4180](https://tools.ietf.org/html/rfc4180) - המפרט הפורמלי לפורמט CSV.
-- [Text CSV](https://perldoc.perl.org/Text/CSV.html) - מודול ב-PERL לעבודה עם קובצי CSV.
 - [Pandas](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html) - ספריה ב-Python המאפשרת עבודה נוחה ומתקדמת עם נתוני CSV.

@@ -1,6 +1,7 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "C#: קבלת התאריך הנוכחי"
+date:                  2024-01-20T15:13:43.734769-07:00
+html_title:           "C: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,29 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה & למה?
-קבלת התאריך הנוכחי הוא הפרוצדורה של שליפת נתוני תאריך ושעה "חיים" מהמערכת. תכנתים משתמשים בזה לצורך ניתוחים, רישום ומעקב אירועים, וארגונים של נתונים.
+## מה ולמה?
+מציאת התאריך הנוכחי בתכנות זה סתם דרך לשאול את המחשב: "איזה יום זה היום?" תכניתנים עושים את זה כדי לתייג אירועים, לחשב פרקי זמן, או לתזמן פעולות.
 
 ## איך לעשות:
-קוד ב-Clojure שמקבל את התאריך ושעה הנוכחיים הינו:
-```Clojure 
-    (require '[java-time :as jt])
-    (jt/local-date)
-```
-הקוד מדפיס תאריך מופשט בצורת `YYYY-MM-DD` , על פי שעת המשתמש.
+Clojure מספק ספרייה שנקראת `java.time` דרך Java Interop לעבוד עם תאריכים. ככה תעשו את זה:
 
-## צלילה עמוקה:
-מימי התכנות הראשונים, התאריך הנוכחי תמיד היה משאב חיוני.
-### אלטרנטיבות:
-אפשר גם לחלץ את הזמן, בנוסף לתאריך, עם פונקציה `(jt/local-date-time)` :
-```Clojure
-    (require '[java-time :as jt])
-    (jt/local-date-time)
-```
-### פרטים על היישום:
-מודול `java-time` ב-Clojure מספק גישה יעילה ל-Kotlin's java.time API. זה מאפשר לנו ליהנות מכלל התכונות של הממשק.
+```clojure
+;; ייבוא של הספרייה
+(require '[java.time :as time])
 
-## ראו גם:
-* פוסט נהדר של סקוט וודוורד העוסק ב- `java.time` : https://clojure.java-time.org/
-* הוראות להתקנת סביבת Clojure: https://clojure.org/guides/getting_started
-* `java.time` API ב- Java 8: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+;; קבלת התאריך הנוכחי
+(defn get-current-date []
+  (str (time/LocalDate/now)))
+
+;; דוגמה לשימוש
+(get-current-date)  ; => "2023-04-07"
+```
+
+## ריקוד עמוק:
+בעבר, בג'אווה ולכן גם ב-Clojure, היה נהוג להשתמש בספריית `java.util.Date`. אבל, זו הייתה בעייתית ולא נוחה. העולם התקדם, והחליף ל`java.time` בג'אווה 8, שהיא בהרבה יותר תקינה ואינטואיטיבית. ב-Clojure, גישה נפוצה היא להשתמש בJava Interop כדי לממש את אותן פקודות, אבל בצורה "קלוג'רית". אפשרויות אלטרנטיביות כוללות ספריות כמו `clj-time`, אבל כיום רבים יעדיפו את הממשק המובנה של `java.time`. 
+
+## ראה גם:
+- [Clojure Documentation](https://clojure.org/)
+- [java.time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [clj-time GitHub repository](https://github.com/clj-time/clj-time)

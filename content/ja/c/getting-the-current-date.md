@@ -1,7 +1,8 @@
 ---
-title:                "現在の日付の取得"
-html_title:           "Bash: 現在の日付の取得"
-simple_title:         "現在の日付の取得"
+title:                "現在の日付を取得する"
+date:                  2024-01-20T15:13:08.718351-07:00
+html_title:           "Bash: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,44 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 現在の日付の取得：C言語による実装ガイド
+## What & Why? (何とは？それはなぜ必要？)
+コードに現在の日付を取得するのは、ログ、レポート、タイムスタンプに日付を付けたい時のこと。なぜプログラマーがそれをするかというと、情報を時系列で追跡し管理するためだ。
 
-## 何と何のため？
-
-現在の日付の取得は、システムの現在時刻を日付形式で示す処理です。これにより、日付や時間ベースの重要な操作（ログ生成、エンティティのタイムスタンプ付けなど）をプログラムで制御できます。
-
-## 実装方法：
-
+## How to: (方法)
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main(){
-    time_t t = time(NULL);
-    struct tm tm = *localtime(&t);
+int main() {
+    time_t now;
+    struct tm *now_tm;
+    int year, month, day;
 
-    printf("今日の日付:%d-%d-%d ", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+    now = time(NULL);
+    now_tm = localtime(&now);
+    year = now_tm->tm_year + 1900; // tm_year is years since 1900
+    month = now_tm->tm_mon + 1;    // tm_mon is months since January (0-11)
+    day = now_tm->tm_mday;         // tm_mday is day of the month (1-31)
 
+    printf("Today's Date: %d-%02d-%02d\n", year, month, day);
     return 0;
-    }
+}
+```
+出力例:
+```
+Today's Date: 2023-03-15
 ```
 
-サンプルの出力：
+## Deep Dive (深堀り)
+### 歴史的背景
+`time.h`ヘッダーはC標準ライブラリの一部で、時間関連の関数を含んでいる。`time()`関数は1970年1月1日からの秒数を返す。これを`localtime()`に渡すと、ローカル時間に変換される。
 
-```C
-今日の日付:2022-3-10 //現在の日時に応じて結果が変わります
-```
+### 代替案
+`gettimeofday()`はもっと正確な時間（マイクロ秒単位）を提供する。ただし、`time.h`だけでなく`sys/time.h`もインクルードする必要がある。
 
-## ディープダイブ
+### 実装詳細
+`time_t`は時刻を表すデータ型であり、`struct tm`は時刻を分解した構造体。`tm_year`は1900年からの年数を、`tm_mon`は0から始まる月数を、`tm_mday`はその月の日付をそれぞれ表す。
 
-1. **歴史的な背景**: C言語は1970年代初めにUnixシステムのために開発されました。そのため、`time.h`ライブラリがUNIX時間（UNIXエポック）で日時を管理するための複数の関数を提供しています。UNIX時間は、1970年1月1日0時00分00秒（UTC）から現在までの経過秒数です。
-
-2. **代替方法**: POSIX準拠のシステムでは、`gettimeofday`関数を使用しても日時を取得できますが、この関数は非推奨とされ、将来的には廃止される可能性があります。
-
-3. **実装に関する詳細**: `time()`関数は現在のカレンダー時間を秒単位で返し、`localtime()`関数はその秒数をローカル時間に変換します。次に、`printf`を使って年、月、日を表示します。注意が必要な点として、年は1900年から開始し、月は0から開始しますので、適切な日付表示の為に年には1900を加え、月には1を加えています。
-
-## 参照リンク：
-
-- [公式C11規格ドキュメント](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)
-- [time.h](https://en.cppreference.com/w/c/chrono)
-- [`gettimeofday`](http://man7.org/linux/man-pages/man2/gettimeofday.2.html)関数についての詳細
+## See Also (参照)
+- C Standard Library: https://en.cppreference.com/w/c/header
+- `localtime()` function: https://en.cppreference.com/w/c/chrono/localtime
+- `time()` function: https://en.cppreference.com/w/c/chrono/time

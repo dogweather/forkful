@@ -1,7 +1,8 @@
 ---
-title:                "Få den gjeldende datoen"
-html_title:           "Haskell: Få den gjeldende datoen"
-simple_title:         "Få den gjeldende datoen"
+title:                "Slik får du tak i dagens dato"
+date:                  2024-01-20T15:15:40.270733-07:00
+html_title:           "C: Slik får du tak i dagens dato"
+simple_title:         "Slik får du tak i dagens dato"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,32 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Å hente dagens dato er å finne ut eksakt dato akkurat nå. Programmerere bruker dette for funksjoner som tidsstempler, dato-logging og tidsavhengige events.
 
-Å få dagens dato handler om å hente nåværende dato og tid. Programmerere gjør dette for å spore hendelser, generere tidsspesifikke data eller bare vise tiden.
+## How to:
+Lua-scriptet nedenfor viser hvordan du henter og viser dagens dato:
 
-## Slik gjør du:
+```lua
+-- Henter dagens dato
+local dagens_dato = os.date("*t") -- lagrer dato og tid som en tabell
 
-Lua gir `os.date` funksjonen for å få dagens dato. Her er et enkelt eksempel på hvordan du bruker det.
-
-```Lua
-dato = os.date("*t") -- Få den nåværende datoen
-print(os.date("I dag er det %d/%m/%Y", os.time(dato))) -- Skriver ut: I dag er det dd/mm/åååå
+-- Skriver ut dagens dato formatert som DD/MM/YYYY
+print(string.format("%02d/%02d/%04d", dagens_dato.day, dagens_dato.month, dagens_dato.year))
 ```
 
-Dette vil hente og formatere datoen til en mer lesbar streng.
+Sample output:
+```
+31/03/2023
+```
 
 ## Deep Dive
+I Lua, bruker `os.date` funksjonen for å hente systemets dato og tid. Dette er en del av standardbiblioteket og krever ingen eksterne avhengigheter. Historisk sett har Lua-miljøet vektlagt en enkel, lettvekts opplevelse, og `os.date` tilbyr en grei måte å hente tid data uten å måtte installere tunge tidspakker.
 
-Historisk har Lua alltid hatt innebygde funksjoner for å håndtere dato og tid. `os.date` funksjonen har sin opprinnelse i C programming språket, som Lua er skrevet i. 
+Alternativer til `os.date` inkluderer biblioteker som `luadate`, men for de fleste brukstilfeller er `os.date` tilstrekkelig. Lua gir deg også `os.time` for å få tiden som et Unix-tidsstempel, noe som kan være praktisk for å beregne tidsforskjeller eller lagre tidspunkter på en standardisert format.
 
-Alternativer for å få dagens dato i Lua inkluderer bruk av tredjeparts biblioteker som `luadate` eller `lua-timestamp`. Disse bibliotekene kan gi mer funksjonalitet, men de krever ekstra avhengigheter.
+Detaljene i implementasjonen er ganske rett frem: `os.date` formaterer tid basert på systemklokken og kan returnere en tabell (som over), eller en formatert streng hvis du spesifiserer formatet selv. Lua justerer seg også etter tidszonen til systemet det kjører på.
 
-Implementasjonen av `os.date` funksjonen i Lua bruker C standardbibliotekets `time.h` headerfil. Dette gjør det enkelt og effektivt, men også plattformavhengig i noen tilfeller.
-
-## Se Også
-
-- Lua 5.4 manual: https://www.lua.org/manual/5.4/
-- Lua users wiki: http://lua-users.org/wiki/
-- Tredjeparts bibliotek - luadate: https://github.com/Tieske/date
-- Tredjeparts bibliotek - lua-timestamp: https://github.com/leafo/lua-date
+## See Also
+- Lua 5.4 referansemanual: https://www.lua.org/manual/5.4/
+- lua-users Wiki om dato og tid: http://lua-users.org/wiki/DateTime
+- GitHub-repositorium for luadate: https://github.com/Tieske/date

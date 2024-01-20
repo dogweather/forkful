@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:15:50.286020-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -11,41 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Abrufen des aktuellen Datums in PHP ist ein häufig gebrauchtes Verfahren, um zeitbezogene Funktionen zu realisieren – von Timestamps für Log-Einträge bis zu Datumsangaben auf Benutzeroberflächen. Es ist wichtig, weil Zeitstempel oft zentral für die Logik einer Anwendung sind.
 
-Die aktuelle Datumsabfrage ist eine häufig genutzte Funktion in der Programmierung, die es uns ermöglicht, das aktuelle Datum und die Uhrzeit abzurufen. Programmierer nutzen diese Funktion in einer Vielzahl von Szenarien, wie zum Beispiel bei der Zeiterfassung, der Erstellung von Zeitstempeln oder der Durchführung von zeitkritischen Berechnungen.
-
-## Wie geht das?
-
-Hier ist ein einfacher Code, um das aktuelle Datum in PHP zu erhalten:
-
-```PHP
+## So geht's:
+```php
 <?php
-$heute = date("Y-m-d H:i:s");
-echo $heute;
+// Aktuelles Datum und Uhrzeit in der Standard-Formatierung
+echo date('Y-m-d H:i:s');
+
+// Aktuelles Datum ohne Uhrzeit
+echo date('Y-m-d');
+
+// Zeitstempel der aktuellen Zeit
+echo time();
 ?>
 ```
-
-In diesem Code steht `Y-m-d H:i:s` für Jahr-Monat-Tag Stunde:Minute:Sekunde entsprechend. Wenn Sie den Code ausführen, erhalten Sie eine Ausgabe wie die folgende:
-
-```PHP
-2022-02-14 20:45:32
+Möglicher Output:
+```
+2023-03-15 15:42:01
+2023-03-15
+1678902121
 ```
 
-## In die Tiefe gehen
+## Tiefergehende Infos:
+Zeit- und Datumsfunktionen sind seit den frühen Versionen von PHP integriert. `date()` und `time()` sind die Basisfunktionen für zeitbezogene Operationen. Es gibt Alternativen wie das DateTime-Objekt, das mit PHP 5.2 eingeführt wurde. DateTime bietet mehr Möglichkeiten und bessere Objektorientierung.
 
-Die Art und Weise, wie wir in PHP das aktuelle Datum abrufen, hat sich im Laufe der Jahre nicht wesentlich verändert. Frühere Versionen verwendeten eine ähnliche `date` Funktion. Alternativ könnten Sie auch die Funktion `DateTime()` verwenden, die genauer und flexibler sein kann, besonders wenn es um Zeitzonen geht:
+`date()` ist abhängig von der Standard-Zeitzone des Servers, die mit `date_default_timezone_set()` gesetzt werden kann. `time()` gibt einen Unix-Zeitstempel zurück - die Anzahl der Sekunden seit dem 1. Januar 1970 (UTC).
 
-```PHP
+Mit DateTime:
+```php
 <?php
-$datum = new DateTime();
-echo $datum->format('Y-m-d H:i:s');
+$jetzt = new DateTime();
+echo $jetzt->format('Y-m-d H:i:s');
 ?>
 ```
-Bezüglich der Implementierungsdetails verwendet PHP intern die `time()` Funktion, um das aktuelle Unix Timestamp zu erhalten, das dann in das menschenlesbare Format konvertiert wird.
+Das gibt uns mehr Flexibilität und Ausnahmebehandlung, und die Möglichkeit, Zeitzonen direkt beim Erstellen des Objekts zu berücksichtigen.
 
-## Siehe auch
-
-Für weitere Details über Datums- und Zeitfunktionen in PHP, schauen Sie sich diese Links an:
-
-- PHP date() Funktion: https://www.php.net/manual/de/function.date.php
-- PHP Zeit- und Datumsformatierung: https://www.php.net/manual/de/datetime.format.php
+## Weiterführende Links:
+- [PHP date() Funktion](https://www.php.net/manual/de/function.date.php)
+- [PHP DateTime Klasse](https://www.php.net/manual/de/class.datetime.php)
+- [Zeitzonen in PHP](https://www.php.net/manual/de/timezones.php)

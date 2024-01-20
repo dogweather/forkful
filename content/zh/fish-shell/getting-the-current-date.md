@@ -1,6 +1,7 @@
 ---
 title:                "获取当前日期"
-html_title:           "Arduino: 获取当前日期"
+date:                  2024-01-20T15:14:08.644441-07:00
+html_title:           "Bash: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,34 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
+## What & Why? (是什么 & 为什么?)
+获取当前日期是一个查看或者使用系统日期和时间的动作。程序员经常需要这样做来记录日志、生成时间戳或为功能比如定时任务提供支持。
 
-"获取当前日期"就是获取现在准确的日期时间。程序员常做这事，因为许多程序、函数和脚本都需要使用到日期时间信息。
-
-## 如何操作：
-
-在Fish Shell中，获取当前日期的代码如下：
+## How to (怎么做)
+在Fish Shell里，你可以用内置的`date`命令获取当前日期。直接敲入`date`，就会输出当前的日期和时间。
 
 ```Fish Shell
-set current_date (date)
-echo $current_date
+date
 ```
 
-运行上述代码后，输出结果（样例）将如下：
+输出可能会像这样：
+
+```
+周三 三月  8 12:34:56 CST 2023
+```
+
+想要自定义日期格式，可以加上`+%Y-%m-%d`这样的参数。
 
 ```Fish Shell
-Tue Apr 16 12:38:24 PDT 2022
+date "+%Y-%m-%d"
 ```
 
-## 深度信息:
+输出：
 
-历史背景：Fish Shell在2019年推出3.1.0版本时，增加了`date`命令。
+```
+2023-03-08
+```
 
-替代方案：您也可以使用Python，JavaScript等语言获取当前日期。
+## Deep Dive (深入了解)
+在UNIX系统和类UNIX系统中，获取当前日期的指令由来已久，基本每个系统都支持。Fish Shell自带`date`命令，其实是调用了底层系统的提供的`date`功能。
 
-实现细节：`date`命令在UNIX-like系统（如：Linux, MacOS）中，通过系统调用来读取系统时间。
+其他Shell, 比如Bash和Zsh, 也有类似的功能，但Fish的设计更简单、更人性化。在使用上，尽管不同Shell的命令参数可能小有不同，核心是相通的。
 
-## 参见：
+获取当前日期的实现细节，主要是调用了操作系统底层的时间和日期服务。操作系统通常会使用硬件时钟维护时间，并提供系统调用供不同应用和服务读取和设置时间。
 
-- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
-- [UNIX 'date' 命令说明](http://man7.org/linux/man-pages/man1/date.1.html)
+## See Also (另见)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html) - 了解更多关于Fish Shell的信息。

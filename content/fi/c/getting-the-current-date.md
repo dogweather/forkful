@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:12:54.342783-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "C"
 category:             "C"
@@ -10,34 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Hankitaan nykyisen päivämäärän tieto tarkoittaa järjestelmäaikaan, erityisesti päivämäärään, pääsemistä. Ohjelmoijat tekevät tämän yleensä ajastimen, aikaleiman tai päivitystarpeen määrittämiseksi.
+## What & Why? (Mitä & Miksi?)
+Kellonajan ja päivämäärän haku tarkoittaa nykyhetken ajastamptimperkin selvittämistä. Ohjelmoijat tarvitsevat tätä muun muassa logien aikaansaamiseen, aikaleimojen antamiseen tiedostoille ja käyttäjien toimien aikajanan seuraamiseen.
 
-## Näin teet:
+## How to: (Miten tehdään:)
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // Luodaan time_t-tyyppinen objekti
-    time_t current_time;
+    time_t nykyhetki;
+    struct tm *aikaRakenne;
 
-    // Otetaan aika talteen
-    time(&current_time);
+    time(&nykyhetki);  // Nykyinen aika epoch-lukuna
+    aikaRakenne = localtime(&nykyhetki);  // Muunna ihmismuotoon
 
-    // Tulostetaan nykyinen päivämäärä
-    printf("Nykyinen päivämäärä: %s", ctime(&current_time));
+    // Tulosta päivämäärä ja aika
+    printf("Tänään on: %02d.%02d.%d klo %02d:%02d\n",
+           aikaRakenne->tm_mday, aikaRakenne->tm_mon + 1, aikaRakenne->tm_year + 1900,
+           aikaRakenne->tm_hour, aikaRakenne->tm_min);
 
     return 0;
 }
+
 ```
-Esimerkin tulostus näyttää jotain tältä: `Nykyinen päivämäärä: Thu May 27 00:00:00 2021`.
 
-## Syväsukellus
-Alkujaan nykyisen päivämäärän saamiseen on käytetty `time()`-funktiota. Sen sijaan nykyään usein käytetään `gettimeofday()`-funktiota, joka tarjoaa sekunnin murto-osan tarkkuutta. On olemassa myös muita tapoja saada nykyinen päivämäärä, kuten kirjastot `Boost.Date_Time` tai `libC`.
+Esimerkki tulostus:
+```
+Tänään on: 02.04.2023 klo 15:30
+```
 
-Tässä esitellyssä menetelmässä käytetään `time()`-funktiota, joka palauttaa ajan sekunteina sitten UNIX Epochin (1. tammikuuta 1970, UTC). Tämä arvo tallennetaan `time_t`-tyyppiseen muuttujaan. Sitten `ctime()`-funktiota käytetään muuntamaan tämä sekuntiaika merkkijonoksi.
+## Deep Dive (Sukellus syvemmälle):
+Nykyhetken päivämäärän ja ajan saanti C-kielessä juontaa juurensa `time.h` kirjastoon, joka ilmestyi C:n standardikirjastoon 70-luvulla. Vaihtoehtojakin toki on: voit käyttää POSIX `gettimeofday` funktiota tai C11:n `timespec_get`. Implementaation ymmärtäminen auttaa välttämään aikavyöhyke- ja kesäaikavirheitä – `localtime` huomioi ne puolestasi.
 
-## Katso myös
-- [cplusplus.com `ctime` library reference](http://www.cplusplus.com/reference/ctime/)
-- [Boost.Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+## See Also (Katso myös):
+- C Standard Library: https://en.cppreference.com/w/c/chrono
+- Linux Manual page for `time(2)`: https://man7.org/linux/man-pages/man2/time.2.html
+- Linux Manual page for `localtime(3)`: https://man7.org/linux/man-pages/man3/localtime.3.html
+- Stack Overflow discussion about retrieving the current date and time in C: https://stackoverflow.com/questions/5141960/get-the-current-time-in-c

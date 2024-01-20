@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:14:18.966895-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,44 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pobieranie Aktualnej Daty w Fish Shell
+## Co i dlaczego?
+Pobranie aktualnej daty to podstawowa operacja polegająca na uzyskaniu informacji o bieżącym dniu, miesiącu i roku. Programiści robią to z wielu powodów, od logowania i timestampów po wyzwalanie zdarzeń związanych z czasem.
 
-## Co i Dlaczego?
-
-Pobieranie aktualnej daty polega na wywołaniu funkcji przekazującej rzeczywistą datę i czas w wyznaczonym formacie. Programiści robią to na wiele powodów, np. do oznaczania wyników logów, śledzenia czasu wykonywania zadań, czy tworzenia plików kopii zapasowych z datą w nazwie.
-
-## Jak To Zrobić:
-
-Oto kilka prostych przykładów uzyskania aktualnej daty w Fish Shell:
-
+## Jak to zrobić:
 ```Fish Shell
-# Pobranie aktualnej daty
-echo (date)
+# Pobranie bieżącej daty w standardowym formacie
+set current_date (date)
+echo $current_date
+# Przykładowe wyjście: Śro, 20 Kwi 2023 14:35:58
 
-# Pobranie aktualnej daty w formacie YYYY-MM-DD
-echo (date "+%Y-%m-%d")
+# Pobranie składników daty po kolei
+set day (date "+%d")
+set month (date "+%m")
+set year (date "+%Y")
+echo "$day/$month/$year"
+# Przykładowe wyjście: 20/04/2023
 ```
 
-Wyjście takiego kodu może wyglądać na przykład tak:
+## Uważne spojrzenie
+Pobieranie daty to stary jak świat koncept w programowaniu. W systemach Unix do tej pory używa się komendy `date`. Alternatywą może być językowy sposób dostępu do daty poprzez wbudowane biblioteki, jak np. `datetime` w Pythonie. Implementacja i formatowanie daty są zależne od systemu oraz ustawień regionalnych – warto o tym pamiętać, zwłaszcza przy pisaniu skryptów międzyplatformowych.
 
-```Fish Shell
-# Wyjście dla echo (date)
-Sun Sep 12 17:13:44 CEST 2021
-
-# Wyjście dla echo (date "+%Y-%m-%d")
-2021-09-12
-```
-
-## Pod Dno:
-
-Fish Shell, czyli Friendly Interactive Shell, to interaktywna powłoka dla UNIX-a, która wyszła w 2005 roku. Zawiera wiele funkcji, w tym wbudowane obsługi daty i czasu za pomocą komendy `date`, którą widzieliśmy w naszych przykładach.
-
-Alternatywą dla wykorzystania 'date' w Fish jest wykorzystanie innych narzędzi systemowych lub zewnętrznych. Na przykład, jeśli korzystasz także z Pythona, możesz wykorzystać moduł `datetime`.
-
-Szczegóły implementacji komendy `date` różnią się w zależności od systemu. Na systemach Unixowych `date` jest zwykle częścią pakietu coreutils, a jego kod źródłowy jest dostępny do przejrzenia i modyfikacji.
-
-## Zobacz Też:
-
-- Dokumentacja Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-- Manual GNU coreutils `date`: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- Python `datetime` module: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)
+## Zobacz też
+- Pełna dokumentacja Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- Informacje o poleceniu `date` na stronie man: [https://man7.org/linux/man-pages/man1/date.1.html](https://man7.org/linux/man-pages/man1/date.1.html)
+- Tutorial dotyczący skryptów Fish: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)

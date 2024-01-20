@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:15:40.247961-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,31 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Récupérer la date actuelle est un procédé courant en programmation pour avoir le jour, le mois et l'année actuels. Les programmeurs font cela pour diverses raisons comme le suivi des événements, la tenue des journaux (logs) ou la datation des données.
+## Quoi et Pourquoi ?
 
-## Comment faire:
-En Lua, obtenir la date actuelle est simple. Utilisez le module `os` et sa fonction `date`.
+Obtenir la date actuelle en programmation, c'est récupérer la date et l'heure à l'instant où le code s'exécute. Les développeurs font cela pour enregistrer des événements, gérer des tâches planifiées ou tout simplement afficher la date et l'heure à l'utilisateur.
 
-```Lua
--- Récupérer la date actuelle
-date_actuelle = os.date("*t")
+## Comment faire :
 
--- Afficher la date
-print(date_actuelle.year .. "/" .. date_actuelle.month .. "/" .. date_actuelle.day)
+En Lua, la récupération de la date et de l'heure actuelles est simple avec la fonction `os.date`. Voici un exemple :
+
+```lua
+local date_actuelle = os.date("%Y-%m-%d")
+print("La date d'aujourd'hui est : " .. date_actuelle)
+
+local heure_actuelle = os.date("%H:%M:%S")
+print("L'heure actuelle est : " .. heure_actuelle)
 ```
 
-Exemple de sortie :
-```Lua
-2022/3/1
+Sortie possible:
+```
+La date d'aujourd'hui est : 2023-04-01
+L'heure actuelle est : 14:23:45
 ```
 
-## Plongée profonde
-Historiquement, Lua s’appuyait sur les bibliothèques C pour des opérations comme obtenir la date et l’heure. C'est pourquoi le module `os` existe. En termes d'alternatives, vous pouvez utiliser d'autres bibliothèques Lua telles que `luadate` si vous needs plus de fonctionnalités. Concernant les détails d'implémentation, `os.date("*t")` renvoie une table avec des champs pour l'année, le mois, le jour et ainsi de suite.
+## Exploration Approfondie :
 
-## Voir Aussi
-Pour plus d'informations sur le module `os` et la manipulation des dates en Lua, consultez les ressources suivantes :
+Historiquement, Lua a souvent été utilisé pour des jeux vidéo et des scripts intégrés, où la gestion du temps peut être cruciale. La fonction `os.date` est basée sur la fonction C standard `strftime`, donc elle est très performante.
 
-1. [Documentation Lua](https://www.lua.org/pil/22.1.html)
-2. [Bibliothèque Luadate](https://github.com/Tieske/date) 
-3. [Tutoriel sur les bibliothèques standards Lua](https://www.tutorialspoint.com/lua/lua_standard_libraries.htm)
+Alternatives: Pour des besoins plus spécifiques, comme des manipulations plus complexes de dates, on peut se tourner vers des bibliothèques externes comme `luadate`.
+
+Détails d’implémentation : `os.date("*t")` donne une table avec tous les composants de la date et de l'heure, ce qui permet de les manipuler avec une plus grande finesse.
+
+## Voir Aussi :
+
+- La documentation Lua sur la bibliothèque `os`: https://www.lua.org/manual/5.4/manual.html#6.9
+- ‘luadate’, une bibliothèque de dates pour Lua : https://github.com/Tieske/date

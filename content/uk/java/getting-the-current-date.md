@@ -1,5 +1,6 @@
 ---
 title:                "Отримання поточної дати"
+date:                  2024-01-20T15:15:31.978937-07:00
 html_title:           "Bash: Отримання поточної дати"
 simple_title:         "Отримання поточної дати"
 programming_language: "Java"
@@ -10,38 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що й навіщо?
-Отримання поточної дати в Java - це спосіб отримати інформацію про дату та час в момент виконання програми. Це важливо для логування, відстеження подій або виведення дати на екран.
+## What & Why? (Що і Чому?)
+Отримання поточної дати в Java – це як глянути на годинник. Ми робимо це, щоб маркувати час подій, логувати дії, міряти проміжки часу та багато іншого.
 
-## Як це зробити:
-Щоб отримати поточну дату і час в Java, використовуйте клас `LocalDateTime` з пакету `java.time`.
+## How to: (Як зробити:)
+```java
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-```Java
-import java.time.LocalDateTime;
-
-public class Main {
+public class GetCurrentDate {
     public static void main(String[] args) {
-        LocalDateTime current = LocalDateTime.now();
-        System.out.println("Поточна дата та час: " + current);
+        // Стандартний спосіб отримання поточної дати
+        LocalDate currentDate = LocalDate.now();
+        System.out.println("Current Date: " + currentDate);
+
+        // Форматування дати
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String formattedDate = currentDate.format(formatter);
+        System.out.println("Formatted Date: " + formattedDate);
     }
 }
 ```
-
-Коли ви виконуєте цей код, вихід буде подібний до:
-
-```Shell
-Поточна дата та час: 2020-12-05T10:15:30.908873
+Sample Output:
+```
+Current Date: 2023-03-15
+Formatted Date: 15-03-2023
 ```
 
-## Занурення в деталі:
-Перші версії Java надавали доступ до поточної дати через клас `Date`. Однак цей клас був важким для розуміння і використання, тому в Java 8 було додано новий API часу, зокрема клас `LocalDateTime`.
+## Deep Dive (Поглиблений огляд):
+Once upon a time in Java, we were limited to `java.util.Date`, but it was troublesome, particularly with timezone quirks. Java 8 introduced `java.time`, the more robust and intuitive date and time API. 
 
-Ви також можете використовувати `ZonedDateTime` або `Instant` для отримання дати і часу з урахуванням часового поясу.
+Alternatives? Of course, there's `Calendar`, but it's a bit clunky. Libraries like Joda-Time were the go-to before Java 8 but are now somewhat obsolete. 
 
-Наявність кількох варіантів може бути збентежливою, але вибір між ними залежить від вимог до вашої програми. Виберіть той, який найкраще підходить для ваших потреб.
+Internals? `LocalDate.now()` grabs the system clock from the default time-zone. Under the hood, it ultimately calls `Clock.systemDefaultZone().instant()` to get the current instant in time, which it converts to a date. 
 
-## На сторінках інших джерел:
-1. Oracle Java Documentation: [LocalDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
-2. Oracle Java Documentation: [ZonedDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html)
-3. Oracle Java Documentation: [Instant](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html)
-4. [Java - Getting Current Date and Time](https://www.javatpoint.com/java-get-current-date)
+Note that `LocalDate` doesn't contain time or timezone data. If you need those, look into `LocalDateTime` or `ZonedDateTime`.
+
+## See Also (Дивіться також):
+- Official Oracle tutorials: [Date Time](https://docs.oracle.com/javase/tutorial/datetime/)
+- JavaDoc for `LocalDate`: [LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
+- Want timezone management? [ZonedDateTime](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/ZonedDateTime.html)
+- Compare with old: [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) vs [Calendar](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Calendar.html)

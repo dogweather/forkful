@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:15:43.106330-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,50 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+Obtenir la date actuelle dans un script, c'est facile et über utile. Programmation d'échéances, logs, ou pour juste savoir le jour, on fait ça tout le temps.
 
-Obtenir la date actuelle signifie récupérer la date et l'heure courantes depuis l'ordinateur local ou un serveur distant. Les programmeurs en ont besoin pour enregistrer le moment précis des événements, comme lorsqu'un utilisateur se connecte à un système.
-
-## Comment faire:
-
-Voici comment obtenir la date actuelle dans PowerShell :
-
+## How to:
 ```PowerShell
+# Obtenir la date et l'heure actuelles
 Get-Date
+
+# Format personnalisé de la date
+Get-Date -Format "yyyy-MM-dd"
+
+# Seulement l'heure
+Get-Date -Format "HH:mm:ss"
 ```
 
-Voici un exemple de résultat : 
-
-```PowerShell
-Monday, January 18, 2021 08:20:32 AM
+Sortie exemple pour le deuxième exemple:
+```
+2023-04-05
 ```
 
-Pour un format spécifique, utilisez le paramètre `-Format` ainsi :
+## Deep Dive
+En PowerShell, `Get-Date` est votre baguette magique pour tout ce qui est temps et date. C'est un héritage de la nuit des temps informatiques, où déjà on timbrait des événements et analyses.
 
-```PowerShell
-Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-```
+Alternative? Oui, `[System.DateTime]::Now`, mais pourquoi se compliquer la vie ?
 
-Exemple de résultat : 
+Les détails ? `Get-Date` vous offre le pouvoir de formater la sortie avec presque tous les morceaux d'une date dont vous pourriez rêver. Des millisecondes aux fuseaux horaires, tentez, experimentez.
 
-```PowerShell
-2021-01-18 08:20:32
-```
-
-## En Profondeur
-
-Historiquement, les programmeurs utilisaient des commandes `date` et `time` en batch file ou même en C pour obtenir la date et l'heure. Mais avec PowerShell, tout devient plus simple et plus manipulable.
-
-Comme alternative à `Get-Date`, vous pouvez également utiliser la méthode `Now` de la classe `System.DateTime` :
-
-```PowerShell
-[System.DateTime]::Now
-```
-
-La commande `Get-Date` est en fait une enveloppe autour de cette méthode, avec plus de flexibilité pour formater les résultats.
-
-## Voir Aussi
-
-- Documentation officielle sur `Get-Date` : https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.utility/get-date 
-- Pour une présentation plus complète de la classe `DateTime`, vous pouvez consulter : https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime
-- Articles d'introduction à PowerShell : https://learn.microsoft.com/fr-fr/powershell/scripting/overview
+## See Also
+- [Get-Date Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+- [Standard Date and Time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
+- [Custom Date and Time Format Strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

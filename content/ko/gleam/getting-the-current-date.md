@@ -1,6 +1,7 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "C: 현재 날짜 가져오기"
+date:                  2024-01-20T15:14:43.874847-07:00
+html_title:           "Bash: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 사용하는가?
-현재 날짜를 가져오는 것이란 현재의 시간 정보를 볼 때 사용하는 프로그래밍 함수입니다. 이는 타임스탬프 생성 또는 사용자에게 날짜 정보를 제공하는 등 다양한 상황에서 사용됩니다.
+## What & Why? (무엇과 왜?)
+현재 날짜 가져오기란 시스템에서 지금 날짜와 시간을 찾는 것입니다. 프로그래머는 로그, 사용자 이벤트 추적 또는 콘텐츠 타임스탬프와 같은 기능에 이를 사용합니다.
 
-## 어떻게 사용하는가:
-Gleam 언어에서 현재 날짜를 가져오는 방법은 다음과 같습니다.
+## How to: (어떻게 하기:)
+Gleam에서 현재 날짜와 시간을 얻기 위해, 우리는 표준 라이브러리를 사용합니다. 예제와 출력을 봅시다.
 
-```Gleam
-import gleam/date.{now, format}
+```gleam
+import gleam/calendar.{Year, Month, Day, Hour, Minute, Second, Datetime}
+import gleam/erlang
 
-fn main() {
-  let current_date = now()
-  format(current_date) // "2022-05-22"
+pub fn get_current_datetime() -> Result(Datetime, String) {
+  erlang.now()
+  |> datetime.from_timestamp()
+}
+
+pub fn main() {
+  let Ok(datetime) = get_current_datetime()
+  datetime
 }
 ```
 
-이 코드를 실행하면 2022년 5월 22일과 같은 현재 날짜를 받을 수 있습니다.
+실행 예시:
 
-## 깊이 알아보기
-현재 날짜를 가져오는 것은 거의 모든 프로그래밍 언어에서 사용하는 기본적인 기능입니다. 이 기능은 파일이나 데이터베이스 항목의 타임스탬프를 생성하거나 특정 일자의 이벤트를 로깅하는데 사용됩니다.
+```
+# Output
+Ok(
+  Datetime(
+    Year(2023),
+    Month(4),
+    Day(11),
+    Hour(14),
+    Minute(9),
+    Second(26),
+  )
+)
+```
 
-대안으로는 시스템 시간을 직접 조회하거나 특정 서비스를 이용하는 방법이 있습니다. 하지만 이 경우 시간대 문제나 네트워크 지연 등 추가적인 문제를 고려해야 합니다.
+## Deep Dive (깊은 탐구)
+과거엔 현재 날짜를 얻기 위해 여러 언어와 라이브러리에서 다르게 접근해왔습니다. 다른 언어에는 다른 기능이 있지만, Gleam은 `erlang.now()`와 `datetime.from_timestamp()`를 제공하여 간단하게 현재의 날짜와 시간 정보를 얻을 수 있습니다.
 
-Gleam 프로그래밍 언어에서는 `gleam/date` 라이브러리를 통해 이 기능을 단순하고 정확하게 사용할 수 있습니다. 이 라이브러리는 더 많은 날짜와 시간 관련 기능을 제공하며, 또한 시간대를 고려한 날짜와 시간 계산도 가능합니다.
+시간 데이터를 다룰 때 주의할 점은, Gleam은 UTC(협정 세계시) 기준의 값으로 결과를 생성한다는 것입니다. 로컬 타임존에 맞추려면 추가 변환 작업을 해야 합니다.
 
-## 참고 자료
-날짜와 시간에 대한 Gleam 프로그래밍의 더 자세한 내용은 아래 링크를 참조하세요:
+`erlang.now()` 함수는 내부적으로 Erlang의 시스템 클록을 사용합니다. 이것은 강력하지만, 시스템의 시간 설정이 잘못되었을 때 문제가 발생할 수 있습니다.
 
-2. [Gleam 시간대 처리에 대한 블로그 글](https://gleam.run/news/gleam-v0.14-released/)
-3. [ISO 8601 날짜와 시간 표준에 대한 위키백과 글](https://en.wikipedia.org/wiki/ISO_8601)
+## See Also (관련 자료)
+- Gleam 공식 문서: [https://gleam.run](https://gleam.run)
+- Erlang 시간 관련 기능 문서: [http://erlang.org/doc/man/erlang.html](http://erlang.org/doc/man/erlang.html)
+- UTC와 타임존에 대한 추가 정보: [https://www.worldtimeserver.com](https://www.worldtimeserver.com)

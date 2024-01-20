@@ -1,6 +1,7 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+date:                  2024-01-20T15:14:45.560251-07:00
+html_title:           "Bash: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,39 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+Mitä ja miksi? Kellonaika ja päiväys, me kaikki tiedämme ne. Ohjelmointimaailmassa niitä tarvitaan lokien kirjoittamiseen, aikaleimojen luontiin ja moniin muihin. Sen tietäminen on työkalu, jonka haluat vyöllesi.
 
-Haskell-ohjelmissa nykyisen päivämäärän hankkiminen tarkoittaa järjestelmän kellosta ajankohtaisen päivämäärän ja kellonajan selvittämistä. Ohjelmoijat tekevät näin, kun he haluavat seurata tai merkitä tapahtumia ajassa.
-
-## Kuinka:
-
-Ohjelman kuivaamiseksi, joka hakee nykyisen päivämäärän Haskellilla, voit käyttää Data.Time.kirjastoa. Tässä on yksinkertainen esimerkki:
+## How to:
+Miten:
 
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
+import Data.Time
 
-tulostaPaivamäärä :: IO ()
-tulostaPaivamäärä = do
-    aika <- getCurrentTime
-    let paiva = utctDay aika
-    putStrLn $ "Tänään on " ++ show paiva
+-- Näin saat nykyisen päiväyksen
+main :: IO ()
+main = do
+  currentDay <- getCurrentTime
+  print $ utctDay currentDay
 ```
 
-Kun ajat tämän ohjelman, saat vastauksen muodossa "Tänään on YYYY-MM-DD", missä YYYY-MM-DD on nykyinen päivämäärä ISO 8601 -muodossa.
+Tulostus voisi näyttää tältä:
 
-## Syvempi Sukellus:
+```
+2023-03-15
+```
 
-Haskellin tarve hakea järjestelmän päivämäärä ja kellonaika juontavat juurensa ohjelmointikielten varhaiseen historiaan. Järjestelmän aika on aina ollut keskeinen osa päivämäärä- ja kellonaikafunktioita. Haskellin "getCurrentTime"-funktio tekee tämän tietojen hankkimisen vaivattomaksi.
+## Deep Dive
+Syvä sukellus: `Data.Time` on moduuli, joka on osa `time`-kirjastoa. Se julkaistiin osana GHC:n standardikirjastoa aika päiviä sitten. Vaihtoehtoja? Vanhemmissa ohjelmissa on käytetty `old-time`-kirjastoa, mutta nykyaikana `time` on se juttu. Implementaatio? `getCurrentTime` hakee UTC-aikaleiman järjestelmästä. 
 
-Vaihtoehtoisesti, voit käyttää "Data.Time.LocalTime" -kirjastoa saadaksesi paikallisen ajan UTC:n sijaan. 
+## See Also
+Katso myös:
 
-Tärkeä detaili ottaa huomioon on, että "getCurrentTime" palauttaa ajan Universal Coordinated Time (UTC) muodossa. Tämä tarkoittaa, että jos haluat näyttää ajankohdan jossa tahansa muussa aikavyöhykkeessä, sinun täytyy muuntaa aika itse.
-
-## Katso Myös:
-
-[Kuinka käyttää Data.Time -kirjastoa](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-
-[Haskellin ajan ja päivämäärän käsittelyn perusteet](https://williamyaoh.com/posts/2020-12-20-dates-and-times-in-haskell.html) 
-
-[Haskellin päivämäärä- ja kellonaikatyyppien dokumentaatio](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- Haskell `time` library documentation: [https://hackage.haskell.org/package/time/docs/Data-Time.html](https://hackage.haskell.org/package/time/docs/Data-Time.html)

@@ -1,6 +1,7 @@
 ---
 title:                "Getting the current date"
-html_title:           "Elm recipe: Getting the current date"
+date:                  2024-01-20T15:15:33.324576-07:00
+html_title:           "Arduino recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,37 +13,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Getting the current date in programming is simply retrieving the ongoing date as per the system's time and calendar. Programmers use this to reference or record real-time events, like timestamps for data handling or order tracking.
+Grabbing the current date in programming lets us track when stuff happens. We need timestamps for logs, records, or just to throw a "Happy New Year" message at the right time.
 
 ## How to:
 
-Here's an easy Lua code for fetching the current date:
+In Lua, snagging the current date and time is a breeze with the `os.date` function. Check it out:
 
-```Lua
-os_date = os.date("*t")
-print("Date: "..os_date.day.."/"..os_date.month.."/"..os_date.year)
+```lua
+local current_time = os.date("*t")  -- gets table with date and time components
+print("Year:", current_time.year)
+print("Month:", current_time.month)
+print("Day:", current_time.day)
+
+-- Want a formatted string instead? Easy.
+print(os.date("%Y-%m-%d")) -- prints in YYYY-MM-DD format
 ```
 
-When run, it may display:
-
-```Lua
-Date: 17/4/2023
+Sample Output:
 ```
-
-In this case, the 'os' module's 'date' method is used to get a table containing the current date details, which we then print in a specific format.
+Year: 2023
+Month: 4
+Day: 14
+2023-04-14
+```
 
 ## Deep Dive
 
-Historically in Lua, the 'os' library's date function has been the easiest way to get the current date. No special libraries required - it's all in-built.
+Lua's `os.date` has been around since the earliest days, a staple for when you need the date/time. It's based on the C `time.h` library functions, so it's not reinventing the wheel – Lua keeps it familiar.
 
-Alternatives include libraries like 'luadate', which provides more comprehensive date/time functions - but for basic needs, 'os.date' serves well.
+Alternatives? Sure, you can also use `os.time` to get the seconds since the UNIX epoch and play with it, or use external libraries for broader functionality if needed. But `os.date` and `os.time` cover most bases just fine.
 
-The 'os.date' function internally calls the C library function 'localtime', which converts the time in seconds since the Unix epoch into a broken-down time, used here as a table of date and time values. It's fast, efficient, and accurate based on your system's clock.
+Implementation wise, `os.date("*t")` gets you a table with year, month, day, and more. Format it with `os.date()` by passing a format string, like `"%Y-%m-%d"` for a standard date.
+
+Pro tip: Working with time zones? `os.date` can handle that too – use the `!"` prefix in your format string, and Lua will use Coordinated Universal Time (UTC) instead of local time.
 
 ## See Also
 
-Find more Lua tricks at:
-
-- [Programming in Lua (official manual)](http://www.lua.org/pil/index.html)
-- [Lua-Users wiki (community-contributed snippets)](http://lua-users.org/wiki/)
-- [LuaRocks (Lua package manager, with 'luadate' and other libraries)](https://luarocks.org/)
+- Lua's `os` library documentation: http://www.lua.org/manual/5.4/manual.html#6.9
+- Online Lua demo environment to test code snippets: https://www.lua.org/cgi-bin/demo
+- Format specifiers for `os.date`: https://www.lua.org/manual/5.4/manual.html#pdf-os.date

@@ -1,6 +1,7 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
+date:                  2024-01-20T15:13:37.872986-07:00
+html_title:           "Bash: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "C#"
 category:             "C#"
@@ -10,41 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pobieranie Aktualnej Daty w C# 
+## What & Why?
+Wczytanie bieżącej daty to chleb powszedni w programowaniu - używamy tego do logów, timestampów i wszelkich funkcji opartych na czasie.
 
-## Co to jest i dlaczego?
+## How to:
+Pobranie dzisiejszej daty w C# jest proste jak bułka z masłem. Używamy klasy `DateTime`. Oto jak to zrobimy:
 
-Pobieranie aktualnej daty to proces, w którym program komputerowy odczytuje datę i czas z systemu operacyjnego. Programiści robią to, aby zapisywać daty zdarzeń, logi, czy tworzyć funkcjonalności zależne od czasu.
+```csharp
+using System;
 
-## Jak to zrobić:
-
-Aby uzyskać bieżącą datę w C#, wystarczy wywołać ```DateTime.Now``` . Oto jak to zrobić:
-
-```C#
-DateTime currentDateTime = DateTime.Now;
-Console.WriteLine($"Aktualna data i czas: {currentDateTime}");
-```
-Wyjście tego kodu to:
-```C#
-Aktualna data i czas: 2022-03-21 17:45:23
-```
-
-## W Głąb Tematu
-
-Pobieranie aktualnej daty to jeden z najstarszych elementów programowania i istniało prawie od początku istnienia komputerów. Historycznie, zwykle jest to zrobione poprzez API systemu operacyjnego.
-
-Alternatywą dla pobierania bieżącej daty w C# jest używanie ```DateTime.UtcNow``` . Ta metoda zwraca uniwersalny czas koordynowany (UTC), który jest niezależny od strefy czasowej.
-
-Podczas gdy ```DateTime.Now``` zwraca datę i czas lokalne dla strefy czasowej systemu, ```DateTime.UtcNow``` zwraca datę i czas UTC. Oto jak to zrobić:
-
-```C#
-DateTime currentDateTimeUtc = DateTime.UtcNow;
-Console.WriteLine($"Aktualna data i czas UTC: {currentDateTimeUtc}");
+namespace GetCurrentDateExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            DateTime currentDate = DateTime.Now;
+            Console.WriteLine(currentDate.ToString("yyyy-MM-dd"));
+        }
+    }
+}
 ```
 
-Pod względem implementacji, ```DateTime.Now``` i ```DateTime.UtcNow``` odwołują się do zegara systemu operacyjnego, aby uzyskać aktualną datę i czas.
+Przykładowe wyjście:
+```
+2023-04-05
+```
 
-## Zobacz Też:
+## Deep Dive
+`DateTime` jest standardowym typem w .NET do obsługi dat i czasu. Debiutowała w pierwszej wersji frameworka, a od tego czasu jest stałym elementem ekosystemu .NET. Kluczowe metody to `Now` i `UtcNow`, jedna daje ci lokalną datę i czas, druga - uniwersalny czas koordynowany. Alternatywą dla `DateTime` jest `DateTimeOffset`, które zawiera informacje o strefie czasowej - to ważne, gdy aplikacja działa globalnie. Warto też wiedzieć o `TimeZoneInfo`, aby poprawnie zarządzać czasem w różnych strefach.
 
-- Microsoft Documentation: [System.DateTime (Microsoft Docs)](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-6.0)
-- Stack Overflow: [“How to get the current date and time in C#?” (Stack Overflow)](https://stackoverflow.com/questions/453161/best-method-to-get-date-of-last-week)
+## See Also
+- Dokumentacja Microsoft dla `DateTime`: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- Wskazówki dotyczące użycia stref czasowych: [docs.microsoft.com](https://docs.microsoft.com/pl-pl/dotnet/standard/datetime/choosing-between-datetime)
+- `DateTimeOffset` dokumentacja: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=net-6.0)

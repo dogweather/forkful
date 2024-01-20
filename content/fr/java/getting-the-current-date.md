@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:15:03.959181-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Java"
 category:             "Java"
@@ -10,48 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce et Pourquoi?
-Obtenir la date actuelle en Java se réfère simplement à recevoir la date du moment où le programme s'exécute. Les programmeurs l'utilisent souvent pour suivre les événements, les journaux d'audit ou simplement pour ajouter des informations temporelles aux données.
+## What & Why?
+Obtenir la date actuelle en Java, c'est lire l'horloge système pour connaître le moment présent. On le fait pour des raisons telles que l'enregistrement de logs, les timestamps de transactions ou encore la planification d’événements futurs.
 
-## Comment faire:
-La classe `LocalDate` de Java, qui fait partie de l'API `java.time`, est couramment utilisée pour obtenir la date actuelle. Voici comment:
+## How to:
+Voici comment obtenir la date du jour en Java :
 
-```Java
+```java
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public class Main {
+public class GetCurrentDate {
     public static void main(String[] args) {
-        LocalDate currentDate = LocalDate.now();
-        System.out.println("La date actuelle est: " + currentDate);
+        LocalDate today = LocalDate.now();
+        System.out.println("La date d'aujourd'hui est : " + today);
+
+        // Bonus: formater la date
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String formattedDate = today.format(formatter);
+        System.out.println("Formatée, cela donne : " + formattedDate);
     }
 }
 ```
 
-Lors de l'exécution, ce code renvoie quelque chose comme:
-
-```Java
-La date actuelle est: 2022-03-28
+Sortie :
+```
+La date d'aujourd'hui est : 2023-04-12
+Formatée, cela donne : 12/04/2023
 ```
 
-## Plongée Profonde
-Historiquement, les programmeurs utilisaient la classe `Date` de `java.util`. Cependant, à partir de Java 8, l'API Date/Time a connu une refonte majeure améliorant sa lisibilité et sa précision.
+## Deep Dive
+Avant Java 8, on utilisait `java.util.Date` ou `java.util.Calendar` pour les dates, mais ces classes avaient des problèmes: elles n'étaient pas thread-safe et leur utilisation était compliquée. Java 8 a introduit `java.time`, le package qui simplifie la gestion du temps et est inspiré de Joda-Time. `LocalDate.now()`que nous avons utilisé est thread-safe et immuable, ce qui est bien vu côté sécurité. Pour des formats précis, on utilise `DateTimeFormatter`. Si tu as besoin de l'heure en plus, jette un oeil à `LocalDateTime`.
 
-En alternative, `LocalDateTime` peut être utilisé pour obtenir l'heure en plus de la date. Son utilisation est presque identique à `LocalDate` :
+## See Also
+Pour approfondir ou explorer des cas spécifiques :
 
-```Java
-import java.time.LocalDateTime;
-
-public class Main {
-    public static void main(String[] args) {
-        LocalDateTime currentDateTime = LocalDateTime.now();
-        System.out.println("La date et l'heure actuelles sont: " + currentDateTime);
-    }
-}
-```
-
-Rappelez-vous, `java.time` est immuable et thread-safe, contrairement à `java.util.Date`, ce qui le rend plus sûre d'utilisation dans un environnement multi-thread.
-
-## Voir Aussi
-1. Documentation officielle de Java sur `java.time`: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-2. Guide Oracle sur le travail avec les dates et les heures: https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html
-3. Une intro de Baeldung à 'java.time': https://www.baeldung.com/java-8-date-time-intro
+- La documentation oracle sur `java.time`: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Un guide sur `DateTimeFormatter`: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+- Tutoriel complet sur la date et l'heure en Java: https://www.baeldung.com/java-8-date-time-intro

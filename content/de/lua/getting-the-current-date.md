@@ -1,7 +1,8 @@
 ---
-title:                "Das aktuelle Datum abrufen"
-html_title:           "Gleam: Das aktuelle Datum abrufen"
-simple_title:         "Das aktuelle Datum abrufen"
+title:                "Aktuelles Datum abrufen"
+date:                  2024-01-20T15:15:24.945568-07:00
+html_title:           "C: Aktuelles Datum abrufen"
+simple_title:         "Aktuelles Datum abrufen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -11,33 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Abrufen des aktuellen Datums ist das Lesen des gegenwärtigen Tages, Monats und Jahres vom System. Programmierer nutzen es, um zeitgesteuerte Funktionen, Protokollierungen oder Datumsstempel für Ereignisse zu realisieren.
 
-In Lua können wir das aktuelle Datum abrufen, das oft zur Registrierung von Zeitstempeln, zur Berechnung der verstrichenen Zeit oder zur Planung zukünftiger Ereignisse eingesetzt wird.
+## So geht's:
+Du kannst das aktuelle Datum in Lua mit der `os.date()`-Funktion erhalten. Hier ein paar Beispiele:
 
-## Wie tut man das:
+```Lua
+-- Vollständiges Datum und Uhrzeit
+print(os.date())
 
-Hier sind einige Möglichkeiten, wie Sie das aktuelle Datum in Lua abrufen können.
+-- Nur das aktuelle Jahr
+print("Jahr: " .. os.date("%Y"))
 
-```lua
-os.date() -- Gibt das aktuelle Datum und die Uhrzeit im Format "Tue Feb 14 02:48:10 2012" aus.
+-- Nur der aktuelle Monat
+print("Monat: " .. os.date("%m"))
 
-os.date("%x") -- Gibt das aktuelle Datum im lokalen Datumsformat aus. Zum Beispiel "02/14/12".
-
-os.date("%Y-%m-%d") -- Gibt das aktuelle Datum im Format "2012-02-14" aus.
+-- Nur der aktuelle Tag
+print("Tag: " .. os.date("%d"))
 ```
 
-## Deep Dive
+Beispielausgabe:
+```
+Thu Mar 12 23:22:48 2023
+Jahr: 2023
+Monat: 03
+Tag: 12
+```
 
-Lua, in der ersten Übersetzung im Jahr 1993 veröffentlicht, hat eine `os.date` Funktion zum Abrufen des aktuellen Datums. Diese Funktion gibt eine formatierte Zeichenkette zurück, die das Datum und die Uhrzeit repräsentiert. Default formatiert es nach C's `strftime`. 
+## Tiefere Einblicke:
+`os.date()` gibt es schon eine Weile in Lua und lehnt sich an die C Standardbibliothek an. Alternativen umfassen das os.time() zur Ermittlung von Unix-Zeitstempeln und das nutzerdefinierte Parsing von `os.date()` für spezifische Formate. Die Implementierung verwendet die Systemzeit des Host-Rechners, was bedeutet, dass sie von den Systemeinstellungen für Zeitzone und Lokalisierung abhängt. Lua selbst bietet keine Zeitzonenberechnungen; dafür müssen externe Bibliotheken genutzt werden. 
 
-Es gibt alternativen zu `os.date` wie die `os.time` Funktion, welche die Anzahl der Sekunden seit 1970 (the Unix time) liefert. Diese kann dann benutzt werden, um das aktuelle Datum zu bestimmen.
-
-In Bezug auf die Implementierung, nutzt die Funktion `os.date` die C Funktion `strftime` um das Datum und die Uhrzeit in einer Zeichenkette darzustellen. Es bedient sich dabei verschiedener Direktiven, um verschiedene Formate zu erzeugen.
-
-## Siehe auch
-
-Die Lua-Dokumentation für die `os.date` Funktion: http://www.lua.org/manual/5.4/manual.html#6.9
-
-StackOverflow-Thread über die Datumsformatierung in Lua: https://stackoverflow.com/questions/36054930/how-to-format-date-in-lua
-
-C's strftime Funktion: https://www.cplusplus.com/reference/ctime/strftime/
+## Siehe Auch:
+- Lua-Handbuch: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+- os.date() Referenz: [https://www.lua.org/manual/5.4/manual.html#pdf-os.date](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)
+- Lua Users Wiki zu Datums- und Zeitfunktionen: [http://lua-users.org/wiki/DateTime](http://lua-users.org/wiki/DateTime)

@@ -1,6 +1,7 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Bash: Obtenir la date actuelle"
+date:                  2024-01-20T15:15:13.410826-07:00
+html_title:           "C: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
-Récupérer la date actuelle consiste à obtenir la date et l'heure exactes au moment de l'exécution du programme. Les programmeurs font cela pour des tâches diverses, allant du suivi du temps à générer des enregistrements de date / heure pour le journalisation, et même pour créer des fonctionnalités telles que des comptes à rebours.
+## What & Why?
+Récupérer la date actuelle en JavaScript, c'est obtenir le jour exact où on se trouve — date, mois, année, et plus. Ça sert à enregistrer des événements, faire des chronomètres, afficher des décomptes, etc.
 
-## Comment faire :
-
-Voici un petit bout de code qui démontre comment récupérer la date et l'heure actuelles en utilisant JavaScript.
-
+## How to:
+Pour attraper la date d'aujourd'hui:
 ```Javascript
-let currentDate = new Date();
-console.log(currentDate);
+let today = new Date();
+console.log(today);
 ```
-Cela renverra quelque chose comme:
+Sortie possible:
+```
+2023-04-02T12:00:00.000Z
+```
 
+Pour afficher jolie:
 ```Javascript
-2022-05-21T10:11:09.803Z
+console.log(today.toLocaleDateString());
 ```
-Ceci est le format d'horodatage ISO, qui est largement utilisé et accepté dans le monde de la programmation.
+Sortie exemple:
+```
+02/04/2023
+```
 
-## Plongée profonde:
+## Deep Dive
+JavaScript utilise l'objet `Date` qui date des débuts du langage. C'est l'outil de base pour manipuler dates et heures. Il y a des alternatives comme `Moment.js`, mais c'est souvent plus que nécessaire. L'objet `Date` est construit sur le temps universel coordonné (UTC) et les fuseaux horaires sont gérés avec des méthodes comme `getUTC...()` ou le réglage de `getTimezoneOffset()`.
 
-Historiquement, JavaScript a toujours eu l'objet Date intégré pour gérer tout ce qui concerne la date et l'heure. Cependant, des bibliothèques comme Moment.js sont apparues en réponse à la complexité de la gestion des dates et des heures dans différents fuseaux horaires. Ceci est en partie dû au fait que JavaScript utilise le fuseau horaire de l'utilisateur pour déterminer le temps actuel.
-
-Une alternative à l'utilisation de l'objet Date ou de Moment.js est la bibliothèque day.js, qui est légère et similaire à Moment.js en termes de syntaxe et d'API, mais sans les dépendances volumineuses.
-
-L'implémentation de `new Date()` en JavaScript crée une instance de l'objet Date JavaScript qui représente un seul moment dans le temps. Cet objet Date est basé sur la valeur temps Unix - le nombre de millisecondes écoulées depuis le 1er janvier 1970 00:00:00 UTC.
-
-## Voir aussi: 
-
-Pour plus de détails sur l'objet de la date JavaScript, consultez [Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date)
-
-Pour en savoir plus sur Moment.js et day.js:
-
-- [Moment.js](https://momentjs.com/)
-- [Day.js](https://day.js.org/)
+## See Also
+- Documentation MDN sur `Date`: [MDN Date](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Libraries de date alternatives: [Date-fns](https://date-fns.org/), [day.js](https://day.js.org/)
+- Formatage de dates: [Intl.DateTimeFormat](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat)

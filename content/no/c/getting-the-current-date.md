@@ -1,7 +1,8 @@
 ---
-title:                "Få den gjeldende datoen"
-html_title:           "Haskell: Få den gjeldende datoen"
-simple_title:         "Få den gjeldende datoen"
+title:                "Slik får du tak i dagens dato"
+date:                  2024-01-20T15:13:10.499195-07:00
+html_title:           "C: Slik får du tak i dagens dato"
+simple_title:         "Slik får du tak i dagens dato"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,41 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Få tak i dagens dato med C: En guide for programmerere
+## What & Why?
+("Hva & Hvorfor?")
+Å hente gjeldende dato i C betyr å finne ut den nøyaktige datoen akkurat nå. Programmerere gjør dette for funksjonalitet som logger, tidsstempel og tid-sensitive operasjoner.
 
-## Hva & Hvordan?
-Å hente dagens dato innebærer å hente informasjon om dagens år, måned og dag. Vi, programmerere, gjør dette for å holde oversikt over tid og dato i programmer, logger og rapportgenerering.
-
-## Hvordan gjøre det:
-Her er koden for hvordan du henter og skriver ut dagens dato i C:
+## How to:
+("Hvordan gjøre det:")
+Nedenfor finner du en enkel kode for å hente og vise gjeldende dato:
 
 ```C
-#include <time.h>
 #include <stdio.h>
+#include <time.h>
 
-int main()
-{
+int main() {
     time_t t = time(NULL);
-    struct tm *local = localtime(&t);
-    
-    printf("Dagens dato: %02d.%02d.%d\n", local->tm_mday, local->tm_mon + 1, local->tm_year + 1900);
-
+    struct tm *tm = localtime(&t);
+    printf("Dagens dato er: %02d-%02d-%d\n",
+           tm->tm_mday, tm->tm_mon + 1, tm->tm_year + 1900);
     return 0;
 }
 ```
 
-Koden ovenfor vil generere output som er avhengig av dagens dato, for eksempel:
-
+Når du kjører denne koden, får du noe sånt:
 ```
-Dagens dato: 05.12.2022
+Dagens dato er: 24-03-2023
 ```
 
-## Dypdykk
-Historisk sett har programmerere brukt forskjellige metoder for å hente dagens dato, som å bruke `gettimeofday()` eller `ctime()`. Men på grunn av bedre kompatibilitet og enkel bruk, er bruk av `time.h` bibliotek og funksjonene det kommer med, mer utbredt.
+## Deep Dive:
+("Dypdykk")
+Historisk sett har håndtering av datoer og klokkeslett i C ikke forandret seg mye. `time.h` biblioteket har vært standarden siden C ble til. Andre biblioteker som `sys/time.h` gir noe høyere presisjon og funksjoner, men `time.h` dekker de grunnleggende behovene.
 
-Alternativer til denne metoden kan være å bruke tredjepartsbibliotek eller kommandolinjemetoder som er spesifikke for operativsystemet, som kanskje kan gi mer presise eller varierte resultater.
+Det finnes alternative måter å hente datoer på, som POSIX funksjoner `gettimeofday` og tidssoner håndtert av `gmtime`, men for mange behov er `localtime` mer enn nok.
 
-Når det gjelder implementeringsdetaljer, henter `time(NULL)` det nåværende tidsstempelet, som deretter blir konvertert til lokal tid med `localtime()`. `struct tm` er en innebygd struktur i C for å holde tid og dato.
+Når du henter den lokale tiden med `localtime`, tolkes tiden som om den er i systemets lokale tidssone. Dette kan være viktig å vurdere om programmet ditt skal fungere i flere tidssoner.
 
-## Se også
-For mer detaljert informasjon og relaterte emner, bra kilder cygwin.com/cygwin-ug-net/ntcime.html for mer om `ctime()`, og cplusplus.com/reference/ctime/ for mer om tidsbehandling i C generelt.
+## See Also:
+("Se også")
+For mer informasjon, se den offisielle dokumentasjonen for `time.h`:
+- https://en.cppreference.com/w/c/chrono
+
+Introduksjoner til tidshåndtering i C:
+- https://www.tutorialspoint.com/c_standard_library/time_h.htm
+- https://www.geeksforgeeks.org/time-h-header-file-in-c-with-examples/
+
+Å lære mer om tidssoner og `gmtime`:
+- https://man7.org/linux/man-pages/man3/gmtime.3.html
